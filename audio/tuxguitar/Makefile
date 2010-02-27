@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tuxguitar
-PORTVERSION=	1.1
-PORTREVISION=	4
+PORTVERSION=	1.2
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/TuxGuitar/TuxGuitar-${PORTVERSION}:src \
 		${MASTER_SITE_LOCAL}/gahr/:fluid \
@@ -21,19 +20,17 @@ EXTRACT_ONLY=	${PORTNAME}-src-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Multitrack tablature editor and player
 
-BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
-		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
-		${JAVALIBDIR}/gervill.jar:${PORTSDIR}/audio/gervill \
-		ant:${PORTSDIR}/devel/apache-ant
-RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt \
+BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
 		${JAVALIBDIR}/gervill.jar:${PORTSDIR}/audio/gervill
+RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth
 
 MAKE_ENV+=	PREFIX=${PREFIX} INSTALL_DOC_DIR=${DOCSDIR} \
 		INSTALL_SHARE_DIR=${DATADIR}
 
 USE_JAVA=	yes
+USE_ANT=	yes
 USE_GECKO=	libxul
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -41,7 +38,7 @@ JAVA_VERSION=	1.4+
 JAVA_VENDOR=	freebsd bsdjava sun blackdown
 NOCCACHE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}/TuxGuitar
 
 .if !defined(WITHOUT_MAN)
 MAN1=		tuxguitar.1
@@ -61,70 +58,67 @@ post-extract:
 	${CP} ${DISTDIR}/8MBGMSFX.SF2 ${WRKDIR}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|linux|freebsd|;s|JAVA_VERS|JAVA_PORT_VERSION|g; \
-		/TuxGuitar-alsa/d; s|/usr/lib/jvm/java-6-sun/|${JAVA_HOME}|;' \
-		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e \
-		's|%%LOCALBASE%%|${LOCALBASE}|g; \
-		 s|%%JAVAJARDIR%%|${JAVAJARDIR}|g; \
-		 s|%%PREFIX%%|${PREFIX}|g; \
-		 s|%%DATADIR%%|${DATADIR}|g; \
-		 s|%%DISTVERSION%%|${DISTVERSION}|g; \
-		 s|%%DOCSDIR%%|${DOCSDIR}|g' \
-		${WRKSRC}/TuxGuitar/build.properties
-.for p in ${PLUGINS}
-	${REINPLACE_CMD} -e \
-	    's|$${path.swt}|${JAVALIBDIR}/swt.jar|; \
-	     s|$${path.itext}|${JAVALIBDIR}/itext.jar|' \
-		${WRKSRC}/TuxGuitar-${p}/build.xml
-.endfor
-	${REINPLACE_CMD} -e 's|$${lib.swt.jar}|${JAVALIBDIR}/swt.jar|g' \
-		${WRKSRC}/TuxGuitar/build.xml
-	${REINPLACE_CMD} -e 's|$${path.gervill}|${JAVALIBDIR}/gervill.jar|g' \
-		${WRKSRC}/TuxGuitar-gervill/build.xml
+	${FIND} ${WRKSRC}/.. -name build.properties | ${XARGS} ${REINPLACE_CMD} -e '\
+	    s|path\.swt=.*|path.swt=${JAVAJARDIR}/swt-devel.jar|; \
+	    s|path\.itext=.*|path.itext=${JAVAJARDIR}/itext.jar|; \
+	    s|path\.gervill=.*|path.gervill=${JAVAJARDIR}/gervill.jar|'
+	${FIND} ${WRKSRC}/.. -name GNUmakefile | ${XARGS} ${REINPLACE_CMD} -e '\
+	    s|-I$$(shell gcj -print-file-name=include/)|-I${JAVA_HOME}/include \
+	    -I${JAVA_HOME}/include/freebsd -I${LOCALBASE}/include|; \
+	    s|LDFLAGS\?=.*|LDFLAGS?=-L${LOCALBASE}/lib|'
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g; \
+	    s|%%PREFIX%%|${PREFIX}|g; \
+	    s|%%JAVAJARDIR%%|${JAVAJARDIR}|g; \
+	    s|%%JAVASHAREDIR%%|${JAVASHAREDIR}|g; \
+	    s|%%DATADIR%%|${DATADIR}|g; \
+	    s|%%DOCSDIR%%|${DOCSDIR}|g' \
+	    ${WRKSRC}/build.properties
 
-	${REINPLACE_CMD} -e 's|CFLAGS?|CFLAGS+|g;\
-	    s|$$(shell gcj -print-file-name=include/)|${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd -I${LOCALBASE}/include|;\
-	    s|/usr/lib|${LOCALBASE}/lib|' \
-	    ${WRKSRC}/TuxGuitar-oss/jni/GNUmakefile \
-	    ${WRKSRC}/TuxGuitar-fluidsynth/jni/GNUmakefile
+post-build:
+.for p in ${PLUGINS}
+	(cd ${WRKSRC}/../TuxGuitar-${p}; \
+	    ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${ALL_TARGET})
+.endfor
+	cd ${WRKSRC}/../TuxGuitar-oss/jni && ${GMAKE}
+	cd ${WRKSRC}/../TuxGuitar-fluidsynth/jni && ${GMAKE}
+	cd ${WRKSRC}/../TuxGuitar-jack/jni && ${GMAKE}
 
 do-install:
 	${INSTALL} -d ${DATADIR}
 	${INSTALL} -d ${DATADIR}/plugins
 	# Main program and plugins
 	${INSTALL_SCRIPT} ${WRKDIR}/tuxguitar ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/TuxGuitar/tuxguitar.jar ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/misc/*.tg ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/tuxguitar.jar ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../misc/*.tg ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/8MBGMSFX.SF2 ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-oss/jni/libtuxguitar-oss-jni.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-fluidsynth/jni/libtuxguitar-fluidsynth-jni.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/../TuxGuitar-oss/jni/libtuxguitar-oss-jni.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/../TuxGuitar-fluidsynth/jni/libtuxguitar-fluidsynth-jni.so ${PREFIX}/lib
 .for p in ${PLUGINS}
-	${INSTALL_DATA} ${WRKSRC}/TuxGuitar-${p}/tuxguitar-${p}.jar ${DATADIR}/plugins
+	${INSTALL_DATA} ${WRKSRC}/../TuxGuitar-${p}/tuxguitar-${p}.jar ${DATADIR}/plugins
 .endfor
 	# Inline documentation
-	cd ${WRKSRC}/TuxGuitar/share/help &&   ${COPYTREE_SHARE} \* ${DATADIR}/help
-	cd ${WRKSRC}/TuxGuitar/share/lang &&   ${COPYTREE_SHARE} \* ${DATADIR}/lang
-	cd ${WRKSRC}/TuxGuitar/share/scales && ${COPYTREE_SHARE} \* ${DATADIR}/scales
-	cd ${WRKSRC}/TuxGuitar/share/skins &&  ${COPYTREE_SHARE} \* ${DATADIR}/skins
+	cd ${WRKSRC}/share/help &&   ${COPYTREE_SHARE} \* ${DATADIR}/help
+	cd ${WRKSRC}/share/lang &&   ${COPYTREE_SHARE} \* ${DATADIR}/lang
+	cd ${WRKSRC}/share/scales && ${COPYTREE_SHARE} \* ${DATADIR}/scales
+	cd ${WRKSRC}/share/skins &&  ${COPYTREE_SHARE} \* ${DATADIR}/skins
 
 	# XPM icon
 	${INSTALL} -d ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/misc/tuxguitar.xpm ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/../misc/tuxguitar.xpm ${PREFIX}/share/pixmaps
 
 	# Desktop entry
 	${INSTALL} -d ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/misc/tuxguitar.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/../misc/tuxguitar.desktop ${PREFIX}/share/applications
 
 .if !defined(WITHOUT_MAN)
 	# MAN page
-	${INSTALL_MAN} ${WRKSRC}/misc/tuxguitar.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/../misc/tuxguitar.1 ${MANPREFIX}/man/man1
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/TuxGuitar/doc && ${COPYTREE_SHARE} \* ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR}
 .endif
 	@${ECHO}
 	@${ECHO} "SoundFonts for the FluidSynth plugin are available at:"

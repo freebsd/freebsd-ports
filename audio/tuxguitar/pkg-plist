@@ -64,6 +64,7 @@ lib/libtuxguitar-oss-jni.so
 %%DATADIR%%/lang/messages_de.properties
 %%DATADIR%%/lang/messages_en.properties
 %%DATADIR%%/lang/messages_es.properties
+%%DATADIR%%/lang/messages_eu.properties
 %%DATADIR%%/lang/messages_fr.properties
 %%DATADIR%%/lang/messages_hu.properties
 %%DATADIR%%/lang/messages_it.properties
@@ -114,6 +115,7 @@ lib/libtuxguitar-oss-jni.so
 %%DATADIR%%/skins/Lavender/browser_root.png
 %%DATADIR%%/skins/Lavender/chord.png
 %%DATADIR%%/skins/Lavender/closerepeat.png
+%%DATADIR%%/skins/Lavender/division-type.png
 %%DATADIR%%/skins/Lavender/dotted.png
 %%DATADIR%%/skins/Lavender/doubledotted.png
 %%DATADIR%%/skins/Lavender/dynamic_f.png
@@ -232,7 +234,6 @@ lib/libtuxguitar-oss-jni.so
 %%DATADIR%%/skins/Lavender/transport_previous_2.png
 %%DATADIR%%/skins/Lavender/transport_stop_1.png
 %%DATADIR%%/skins/Lavender/transport_stop_2.png
-%%DATADIR%%/skins/Lavender/tupleto.png
 %%DATADIR%%/skins/blue_serious/1.png
 %%DATADIR%%/skins/blue_serious/16.png
 %%DATADIR%%/skins/blue_serious/2.png
@@ -251,6 +252,7 @@ lib/libtuxguitar-oss-jni.so
 %%DATADIR%%/skins/blue_serious/browser_root.png
 %%DATADIR%%/skins/blue_serious/chord.png
 %%DATADIR%%/skins/blue_serious/closerepeat.png
+%%DATADIR%%/skins/blue_serious/division-type.png
 %%DATADIR%%/skins/blue_serious/dotted.png
 %%DATADIR%%/skins/blue_serious/doubledotted.png
 %%DATADIR%%/skins/blue_serious/dynamic_f.png
@@ -387,6 +389,7 @@ lib/libtuxguitar-oss-jni.so
 %%DATADIR%%/skins/ersplus/browser_root.png
 %%DATADIR%%/skins/ersplus/chord.png
 %%DATADIR%%/skins/ersplus/closerepeat.png
+%%DATADIR%%/skins/ersplus/division-type.png
 %%DATADIR%%/skins/ersplus/dotted.png
 %%DATADIR%%/skins/ersplus/doubledotted.png
 %%DATADIR%%/skins/ersplus/dynamic_f.png
@@ -504,7 +507,6 @@ lib/libtuxguitar-oss-jni.so
 %%DATADIR%%/skins/ersplus/transport_previous_2.png
 %%DATADIR%%/skins/ersplus/transport_stop_1.png
 %%DATADIR%%/skins/ersplus/transport_stop_2.png
-%%DATADIR%%/skins/ersplus/tupleto.png
 %%DATADIR%%/tuxguitar.jar
 %%DATADIR%%/tuxguitar.tg
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -529,3 +531,5 @@ share/pixmaps/tuxguitar.xpm
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+
+
