@@ -23,6 +23,9 @@ LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 
 CONFLICTS=	mongodb-devel-[0-9]*
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
+
 USE_SCONS=	yes
 SCONS_TARGET=	all
 
