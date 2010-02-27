@@ -35,4 +35,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/text
 MAN1=	eggdbus-binding-tool.1
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Wl,--as-needed||' \
+	    	${WRKSRC}/configure
+
 .include <bsd.port.mk>
