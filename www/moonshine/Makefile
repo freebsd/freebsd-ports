@@ -29,6 +29,9 @@ WEBPLUGINS_FILES=	libmoonshine-plugin.so
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
+
 .if ${ARCH} == "amd64"
 ARCH=		x86_64
 .endif
@@ -41,7 +44,7 @@ PLIST_FILES=	${WEBPLUGINS_DIR}/${PKGNAME}-freebsd-${OSREL}.xpi
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^SHELL=.*|SHELL=${LOCALBASE}/bin/bash|' \
-		${WRKSRC}/configure 
+		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|sed -r|sed -E|' \
 		${WRKSRC}/plugin/Makefile.in \
 		${WRKSRC}/plugin/generate-resource
