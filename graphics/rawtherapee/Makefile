@@ -40,9 +40,11 @@ OPTIONS=	OPTIMIZED_CFLAGS "Use optimized CFLAGS" on
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
 		-funroll-loops -msse
+.endif
 .endif
 
 do-install:
