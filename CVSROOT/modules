@@ -23425,6 +23425,7 @@ trac-tags                       ports/www/trac-tags
 trac-themeengine                ports/www/trac-themeengine
 trac-ticketdelete               ports/www/trac-ticketdelete
 trac-ticketimport               ports/www/trac-ticketimport
+trac-timingandestimation        ports/www/trac-timingandestimation
 trac-tocmacro                   ports/www/trac-tocmacro
 trac-tweakui                    ports/www/trac-tweakui
 trac-vote                       ports/www/trac-vote
