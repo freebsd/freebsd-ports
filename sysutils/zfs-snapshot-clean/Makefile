@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	zfs-snapshot-clean
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.github.com/ \
 		ftp://ftp.iDaemons.org/pub/distfiles/
-DISTNAME=	knu-${PORTNAME}-d46cc04
+DISTNAME=	knu-${PORTNAME}-f7131aa
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A tool to sieve ZFS snapshots as per given spec a la 'pdumpfs-clean'
