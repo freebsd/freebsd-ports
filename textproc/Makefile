@@ -1233,7 +1233,6 @@
     SUBDIR += xml-lite.el
     SUBDIR += xml-parse.el
     SUBDIR += xml2rfc
-    SUBDIR += xmlada-gcc
     SUBDIR += xmlcatmgr
     SUBDIR += xmlcharent
     SUBDIR += xmldiff
