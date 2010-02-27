@@ -46,6 +46,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		MAIL_SSL_MODULE		"Enable mail_ssl module" off \
 		WWW			"Enable html sample files" on \
 		CACHE_PURGE_MODULE	"3rd party cache_purge module" off \
+		HEADERS_MORE_MODULE	"3rd party headers_more module" off \
 		HTTP_ACCEPT_LANGUAGE	"3rd party accept_language module" off \
 		HTTP_ACCESSKEY_MODULE	"3rd party http_accesskey module" off \
 		HTTP_AUTH_PAM_MODULE	"3rd party http_auth_pam module" off \
@@ -171,6 +172,14 @@ NGINX_CACHE_PURGE_MODULE_VERSION=	1.0
 MASTER_SITES+=	http://labs.frickle.com/files/:cache_purge
 DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_MODULE_VERSION}.tar.gz:cache_purge
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_MODULE_VERSION}
+.endif
+
+.if defined(WITH_HEADERS_MORE_MODULE)
+NGINX_HEADERS_MORE_MODULE_VERSION=	0.07
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:headers_more/}
+MASTER_SITE_SUBDIR+=	osa/:headers_more
+DISTFILES+=	ngx_headers_more_module-${NGINX_HEADERS_MORE_MODULE_VERSION}.tar.gz:headers_more
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_headers_more_module-${NGINX_HEADERS_MORE_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_DAV_MODULE)
