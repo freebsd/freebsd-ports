@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icons-tango
-PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTVERSION=	0.8.90
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://tango.freedesktop.org/releases/ \
 		${MASTER_SITE_GENTOO}
@@ -21,6 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/ico
 		Magick-config:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intlhack gnomehack
 INSTALLS_ICONS=	yes
