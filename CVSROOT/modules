@@ -23396,6 +23396,7 @@ trac-customroadmap              ports/www/trac-customroadmap
 trac-datefield                  ports/www/trac-datefield
 trac-down                       ports/www/trac-down
 trac-email2trac                 ports/www/trac-email2trac
+trac-estimator                  ports/www/trac-estimator
 trac-fivestarvote               ports/www/trac-fivestarvote
 trac-fullblog                   ports/www/trac-fullblog
 trac-gantt                      ports/www/trac-gantt
@@ -23419,6 +23420,7 @@ trac-pydotorgtheme              ports/www/trac-pydotorgtheme
 trac-remind                     ports/www/trac-remind
 trac-revtree                    ports/www/trac-revtree
 trac-robotstxt                  ports/www/trac-robotstxt
+trac-scrumburndown              ports/www/trac-scrumburndown
 trac-simpleticket               ports/www/trac-simpleticket
 trac-spam-filter                ports/www/trac-spam-filter
 trac-tags                       ports/www/trac-tags
