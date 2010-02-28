@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.14.8
+PORTVERSION=	0.14.9
 CATEGORIES=	net-p2p ipv6
-MASTER_SITES=	http://libtorrent.googlecode.com/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	libtorrent
 
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	A C++ library implementing a BitTorrent client
 
+LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
+		GeoIP.5:${PORTSDIR}/net/GeoIP
+
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	rblibtorrent-[0-9]* libtorrent-rasterbar*-0.15.*
-
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
-		GeoIP.5:${PORTSDIR}/net/GeoIP
 
 USE_GNOME=	gnomehack
 USE_OPENSSL=	yes
@@ -27,36 +28,37 @@ ACLOCAL_ARGS=	-I m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug \
 		--disable-python-binding \
+		--with-boost=${LOCALBASE} \
+		--with-boost-asio=boost_system \
 		--with-boost-system=boost_system \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-thread=boost_thread \
 		--with-boost-regex=boost_regex \
 		--with-boost-program-options=boost_program_options \
-		--with-asio=shipped \
 		--with-dht=on \
 		--with-encryption=on \
 		--with-libgeoip \
 		--with-zlib=system
 USE_LDCONFIG=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS=	${PTHREAD_CFLAGS}
+LDFLAGS=	${PTHREAD_LIBS}
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.x
+BROKEN=		does not compile on FreeBSD versions prior to 7.x
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|AM_CPPFLAGS|g ; \
-		 s|@BOOST_SYSTEM_LIB@||g' ${WRKSRC}/src/Makefile.am
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|@BOOST_SYSTEM_LIB@|-lboost_system|' \
-		${WRKSRC}/libtorrent-rasterbar.pc
+	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|AM_CPPFLAGS|g' \
+		 ${WRKSRC}/src/Makefile.am
 
 post-install:
 .if !defined(NOPORTDOCS)
