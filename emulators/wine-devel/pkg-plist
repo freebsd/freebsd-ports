@@ -1637,6 +1637,11 @@ share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/wine/fonts
+@dirrm %%DATADIR%%/wine
+@dirrmtry %%DATADIR%%/aclocal
+@dirrmtry %%DATADIR%%
+@dirrmtry share/applications
 @dirrm lib/wine/fakedlls
 @dirrm lib/wine
 @dirrm include/wine/windows/ddk
@@ -1644,8 +1649,3 @@ share/applications/wine.desktop
 @dirrm include/wine/msvcrt/sys
 @dirrm include/wine/msvcrt
 @dirrm include/wine
-@dirrm %%DATADIR%%/wine/fonts
-@dirrm %%DATADIR%%/wine
-@dirrmtry %%DATADIR%%/aclocal
-@dirrmtry %%DATADIR%%/applications
-@dirrmtry %%DATADIR%%
