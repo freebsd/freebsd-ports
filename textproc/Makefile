@@ -1139,6 +1139,11 @@
     SUBDIR += sr-aspell
     SUBDIR += srilm
     SUBDIR += ssddiff
+    SUBDIR += stardict-BritannicaConcise
+    SUBDIR += stardict-MerrianWebster
+    SUBDIR += stardict-OxfordCollocation
+    SUBDIR += stardict-longman
+    SUBDIR += stardict-oald
     SUBDIR += stardict2
     SUBDIR += stardict2-dictd_mova
     SUBDIR += stardict2-quick
