@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupod
-PORTVERSION=	0.99.7
-PORTREVISION=	2
+PORTVERSION=	0.99.8
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://www.blinkenlights.ch/gnupod-dist/stable/
