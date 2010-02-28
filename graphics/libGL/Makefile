@@ -25,5 +25,5 @@ do-install:
 	${RM} ${WRKSRC}/include/GL/glu*.h
 	cd ${WRKSRC}/src/mesa; ${GMAKE} install-libgl
 
-.include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
+.include "${.CURDIR}/bsd.mesalib.mk"
 .include <bsd.port.mk>
