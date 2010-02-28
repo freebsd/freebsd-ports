@@ -37,6 +37,10 @@
     SUBDIR += rubygem-rutils
     SUBDIR += rus-ispell
     SUBDIR += rux
+    SUBDIR += stardict-bars
+    SUBDIR += stardict-dal
+    SUBDIR += stardict-mueller7
+    SUBDIR += stardict-mueller7accent
     SUBDIR += tac+ia
     SUBDIR += tidyup-mail
     SUBDIR += unzip
