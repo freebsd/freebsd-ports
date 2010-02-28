@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.12.6
-PORTREVISION=	2
+PORTVERSION=	0.12.7
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,6 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Audio player for GNOME
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
     		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
@@ -52,6 +52,8 @@ OPTIONS=	DAAP "Enable iTunes music sharing" off \
 		LIRC "Enable Infrared syncing support" off \
 		MTP "Enable MS Media Transfer Protocol support" off \
 		ITMS_PLUGIN "Enable iTunes browser plugin" on
+
+MAN1=		rhythmbox-client.1 rhythmbox.1
 
 .include <bsd.port.pre.mk>
 
