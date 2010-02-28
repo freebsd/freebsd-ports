@@ -30,7 +30,7 @@ MAN3=	Log::Dispatch.3 \
 	Log::Dispatch::File.3 \
 	Log::Dispatch::File::Locked.3 \
 	Log::Dispatch::Handle.3 \
-    	Log::Dispatch::Null.3 \
+	Log::Dispatch::Null.3 \
 	Log::Dispatch::Output.3 \
 	Log::Dispatch::Screen.3 \
 	Log::Dispatch::Syslog.3
@@ -50,13 +50,19 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
+.include <bsd.port.options.mk>
+
+.if defined(WITH_APACHELOG)
+USE_APACHE=	1.3+
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_APACHELOG)
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	mod_perl2>=2.0:${PORTSDIR}/www/mod_perl2
-.else
+.if ${APACHE_VERSION} == 13
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
+.else
+RUN_DEPENDS+=	mod_perl2>=2.0:${PORTSDIR}/www/mod_perl2
 .endif
 .endif
 
