@@ -476,6 +476,7 @@
     SUBDIR += p5-BBS-UserInfo-SOB
     SUBDIR += p5-BBS-UserInfo-Wretch
     SUBDIR += p5-Beanstalk-Client
+    SUBDIR += p5-Crypt-DH-GMP
     SUBDIR += p5-Cisco-IPPhone
     SUBDIR += p5-Daemon-Generic
     SUBDIR += p5-EasyTCP
