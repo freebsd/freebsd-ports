@@ -40,6 +40,8 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>openoffice.org</name>
 	<range><lt>3.2.0</lt></range>
+	<range><ge>3.2.20010101</ge><lt>3.2.20100203</lt></range>
+	<range><ge>3.3.20010101</ge><lt>3.3.20100207</lt></range>
       </package>
     </affects>
     <description>
@@ -81,6 +83,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-08-24</discovery>
       <entry>2010-02-25</entry>
+      <modified>2010-02-27</modified>
     </dates>
   </vuln>
 
