@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-LMLM
-PORTVERSION=	0.6500
+PORTVERSION=	0.6801
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Mail
@@ -20,6 +20,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Mail::LMLM.3 Mail::LMLM::Object.3 Mail::LMLM::Render.3 \
 		Mail::LMLM::Render::HTML.3 Mail::LMLM::Types::Base.3 \
 		Mail::LMLM::Types::Egroups.3 Mail::LMLM::Types::Ezmlm.3 \
+		Mail::LMLM::Types::GoogleGroups.3 \
 		Mail::LMLM::Types::Listar.3 Mail::LMLM::Types::Listserv.3 \
 		Mail::LMLM::Types::Mailman.3 Mail::LMLM::Types::Majordomo.3
 
