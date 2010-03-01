@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pythk
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 CATEGORIES=	devel
-MASTER_SITES=	https://opensvn.csie.org/traccgi/PumperWeb/raw-attachment/wiki/sqlcc/ \
-		http://master.branda.to/downloads/pythk/
+MASTER_SITES=	http://pypi.python.org/packages/source/p/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
