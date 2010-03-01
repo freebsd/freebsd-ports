@@ -7,7 +7,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}:src \
 		SF/${PORTNAME}/${PORTNAME}-doc-dev/${PORTVERSION}:doc
@@ -147,10 +147,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Doc/zsh.info ${PREFIX}/info/zsh.info
 .endif
 	@${ECHO_MSG} "Updating ${SHELLS}"
-	@${CP} ${SHELLS} ${SHELLS}.bak
-	@(${GREP} -v ${PREFIX}/bin/zsh ${SHELLS}.bak; \
-	  ${ECHO_CMD} ${PREFIX}/bin/zsh) > ${SHELLS}
-	@${RM} ${SHELLS}.bak
+	@${GREP} -v ${PREFIX}/bin/r?zsh ${SHELLS}	 > ${SHELLS}.new
+	@${ECHO_CMD} ${PREFIX}/bin/zsh			>> ${SHELLS}.new
+	@${ECHO_CMD} ${PREFIX}/bin/rzsh			>> ${SHELLS}.new
+	@${MV} ${SHELLS}.new ${SHELLS}
 	@${PREFIX}/bin/zsh -fc ' \
 		setopt extendedglob nomark_dirs; \
 		for i in ${DATADIR}/${ZSH_VER}/functions/**/*(/) ; do \
