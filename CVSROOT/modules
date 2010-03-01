@@ -11190,6 +11190,7 @@ p5-Crypt-DES                    ports/security/p5-Crypt-DES
 p5-Crypt-DES_EDE3               ports/security/p5-Crypt-DES_EDE3
 p5-Crypt-DES_PP                 ports/security/p5-Crypt-DES_PP
 p5-Crypt-DH                     ports/security/p5-Crypt-DH
+p5-Crypt-DH-GMP                 ports/net/p5-Crypt-DH-GMP
 p5-Crypt-DSA                    ports/security/p5-Crypt-DSA
 p5-Crypt-Dining                 ports/security/p5-Crypt-Dining
 p5-Crypt-ECB                    ports/security/p5-Crypt-ECB
@@ -14891,6 +14892,7 @@ p5-crypt-des                    ports/security/p5-Crypt-DES
 p5-crypt-des_ede3               ports/security/p5-Crypt-DES_EDE3
 p5-crypt-des_pp                 ports/security/p5-Crypt-DES_PP
 p5-crypt-dh                     ports/security/p5-Crypt-DH
+p5-crypt-dh-gmp                 ports/net/p5-Crypt-DH-GMP
 p5-crypt-dining                 ports/security/p5-Crypt-Dining
 p5-crypt-dsa                    ports/security/p5-Crypt-DSA
 p5-crypt-ecb                    ports/security/p5-Crypt-ECB
@@ -24950,7 +24952,6 @@ xml-i18n-tools                  ports/textproc/xml-i18n-tools
 xml-lite.el                     ports/textproc/xml-lite.el
 xml-parse.el                    ports/textproc/xml-parse.el
 xml2rfc                         ports/textproc/xml2rfc
-xmlada-gcc                      ports/textproc/xmlada-gcc
 xmlcatmgr                       ports/textproc/xmlcatmgr
 xmlcharent                      ports/textproc/xmlcharent
 xmlcopyeditor                   ports/editors/xmlcopyeditor
