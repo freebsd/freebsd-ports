@@ -1,0 +1,26 @@
+--- data/bflang/Makefile.in.orig	2010-02-27 19:09:52.000000000 -0300
++++ data/bflang/Makefile.in	2010-02-27 19:53:42.000000000 -0300
+@@ -369,23 +369,6 @@
+ 	  echo " rm -f '$(DESTDIR)$(bflangrngdir)/$$f'"; \
+ 	  rm -f "$(DESTDIR)$(bflangrngdir)/$$f"; \
+ 	done
+-install-bflangsampleDATA: $(bflangsample_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(bflangsampledir)" || $(MKDIR_P) "$(DESTDIR)$(bflangsampledir)"
+-	@list='$(bflangsample_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(bflangsampleDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(bflangsampledir)/$$f'"; \
+-	  $(bflangsampleDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(bflangsampledir)/$$f"; \
+-	done
+-
+-uninstall-bflangsampleDATA:
+-	@$(NORMAL_UNINSTALL)
+-	@list='$(bflangsample_DATA)'; for p in $$list; do \
+-	  f=$(am__strip_dir) \
+-	  echo " rm -f '$(DESTDIR)$(bflangsampledir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(bflangsampledir)/$$f"; \
+-	done
+ install-bflangxmlDATA: $(bflangxml_DATA)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(bflangxmldir)" || $(MKDIR_P) "$(DESTDIR)$(bflangxmldir)"

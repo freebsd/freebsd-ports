@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	1.0.7
-PORTREVISION=	7
+PORTVERSION=	2.0.0
 CATEGORIES=	www editors
 MASTER_SITES=	SF
 
@@ -18,6 +17,9 @@ COMMENT=	HTML editor designed for the experienced web designer
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		aspell.16:${PORTSDIR}/textproc/aspell
 
+INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
+
 .if !defined(WITHOUT_WEBLINT)
 RUN_DEPENDS+=	weblint:${PORTSDIR}/www/weblint
 .endif
@@ -26,6 +28,7 @@ RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
 .endif
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtk20 gnomevfs2 gnomemimedata desktopfileutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -77,4 +80,10 @@ USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .endif
 
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/bflang
+	${INSTALL_DATA} ${WRKSRC}/data/bflang/sample.bflang2 ${DOCSDIR}/bflang
+.endif
 .include <bsd.port.post.mk>
