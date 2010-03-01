@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08119
+PORTVERSION=	0.08120
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -97,7 +97,6 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage.3 \
 	DBIx::Class::Storage::DBI.3 \
 	DBIx::Class::Storage::DBI::ADO::Microsoft_SQL_Server.3 \
-	DBIx::Class::Storage::DBI::AmbiguousGlob.3 \
 	DBIx::Class::Storage::DBI::AutoCast.3 \
 	DBIx::Class::Storage::DBI::Cursor.3 \
 	DBIx::Class::Storage::DBI::DB2.3 \

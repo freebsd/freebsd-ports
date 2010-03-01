@@ -4,7 +4,9 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class.pm
 %%SITE_PERL%%/DBIx/Class/AccessorGroup.pm
 %%SITE_PERL%%/DBIx/Class/Admin.pm
+%%SITE_PERL%%/DBIx/Class/Admin/Descriptive.pm
 %%SITE_PERL%%/DBIx/Class/Admin/Types.pm
+%%SITE_PERL%%/DBIx/Class/Admin/Usage.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/AbstractSearch.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/AccessorMapping.pm
@@ -97,7 +99,6 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Storage/DBI.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/ADO/Microsoft_SQL_Server.pm
-%%SITE_PERL%%/DBIx/Class/Storage/DBI/AmbiguousGlob.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/AutoCast.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/Cursor.pm
 %%SITE_PERL%%/DBIx/Class/Storage/DBI/DB2.pm
