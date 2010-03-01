@@ -2,7 +2,7 @@
 # Date created:         Jun 21. 2004
 # Whom:                 netchild@FreeBSD.org
 #
-# Maintainers:		Beech Rintoul <beech@FreeBSD.org>
+# Maintainers:		Ion-Mihai Tetcu <itetcu@FreeBSD.org>
 #			Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
@@ -25,7 +25,7 @@ USE_LINUX_APPS+=xorglibs
 USE_LINUX_APPS+=dri
 .endif
 
-BROKEN=		fails to fetch
+BROKEN=		This is the last version of skype that works on FreeBSD, but the distfile is no longer available from the vendor, and won't be in the future. We are working on alternative solutions.
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
