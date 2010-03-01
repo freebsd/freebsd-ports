@@ -1,5 +1,5 @@
---- ./examples/data/uzbl/scripts/uzbl-cookie-daemon.orig	2010-01-05 20:17:29.000000000 +0100
-+++ ./examples/data/uzbl/scripts/uzbl-cookie-daemon	2010-01-07 13:24:58.000000000 +0100
+--- ./examples/data/scripts/uzbl-cookie-daemon.orig	2010-01-05 20:17:29.000000000 +0100
++++ ./examples/data/scripts/uzbl-cookie-daemon	2010-01-07 13:24:58.000000000 +0100
 @@ -187,7 +187,7 @@
          raise Exception("directory at %r is not a socket" % cookie_socket)
  
