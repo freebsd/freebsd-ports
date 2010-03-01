@@ -1,0 +1,27 @@
+POST-INSTALL CONFIGURATION FOR MOODLE
+=====================================
+
+1) Create a MySQL user and a database for Magento to store all
+   its tables in (or choose an existing database).
+
+2) Add the following to your Apache configuration, and
+   restart the server:
+
+   ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
+   Alias /magento %%PREFIX%%/%%MAGENTODIR%%/
+   AcceptPathInfo On
+   <Directory %%PREFIX%%/%%MAGENTODIR%%>
+      AllowOverride None
+      Order Allow,Deny
+      Allow from all 
+   </Directory>
+
+3) Visit your Magento site with a browser (i.e.,
+   http://your.server.com/magento/), and you should
+   be taken to the install.php script, which will lead
+   you through creating a config.php file and then
+   setting up Moodle, creating an admin account, etc.
+
+For more information, see the INSTALL DOCUMENTATION:
+
+   http://www.magentocommerce.com/install
