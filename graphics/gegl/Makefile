@@ -7,7 +7,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.0.${GEGL_MINOR}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.0/
 
@@ -15,6 +15,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A graph based image processing framework
 
 LIB_DEPENDS=	babl-0.0:${PORTSDIR}/x11/babl
+BUILD_DEPENDS=	enscript:${PORTSDIR}/print/enscript-a4
 
 OPTIONS=	CAIRO		"Enable Cairo" on \
 		FFMPEG		"Enable videos through ffmpeg" on \
