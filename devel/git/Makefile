@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.6.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -159,13 +159,16 @@ MAN7=		gitcli.7 \
 		gittutorial-2.7
 
 SUB_FILES=	pkg-message
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_PYTHON=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAKE_ENV+=	LIBMD_SHA1=yes \
-		V=1
+		V=1 \
+		PYTHON_PATH=${LOCALBASE}/bin/python
 MAKE_ARGS+=	prefix="${PREFIX}"
 USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
@@ -259,12 +262,6 @@ IGNORE=	using GITWEB support requires PERL support
 .endif
 
 .ifdef (WITH_P4)
-#USE_PYTHON=	yes
-# Can't set USE_PYTHON here just yet.  See ports/89648.
-# Instead we will do it this way:
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-RUN_DEPENDS+=	python:${PORTSDIR}/lang/python
-MAKE_ENV+=	PYTHON_PATH=${LOCALBASE}/bin/python
 PLIST_SUB+=	P4=""
 .else
 PLIST_SUB+=	P4="@comment "

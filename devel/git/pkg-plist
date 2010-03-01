@@ -6,6 +6,15 @@ bin/git-receive-pack
 bin/git-upload-archive
 %%CVS%%bin/git-cvsserver
 bin/git-shell
+%%PYTHON_SITELIBDIR%%/git_remote_helpers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/git_remote_helpers/__init__.py
+%%PYTHON_SITELIBDIR%%/git_remote_helpers/util.pyc
+%%PYTHON_SITELIBDIR%%/git_remote_helpers/util.py
+%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/git.pyc
+%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/git.py
+%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/__init__.py
+%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/__init__.pyc
+%%PYTHON_SITELIBDIR%%/git_remote_helpers-0.1.0-py%%PYTHON_VER%%.egg-info
 libexec/git-core/git
 libexec/git-core/git-add
 libexec/git-core/git-add--interactive
@@ -112,7 +121,10 @@ libexec/git-core/git-receive-pack
 libexec/git-core/git-reflog
 libexec/git-core/git-relink
 libexec/git-core/git-remote
-%%CURL%%libexec/git-core/git-remote-curl
+%%CURL%%libexec/git-core/git-remote-http
+%%CURL%%libexec/git-core/git-remote-https
+%%CURL%%libexec/git-core/git-remote-ftp
+%%CURL%%libexec/git-core/git-remote-ftps
 libexec/git-core/git-repack
 libexec/git-core/git-repo-config
 libexec/git-core/git-replace
@@ -210,6 +222,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/spellcheck.tcl
 %%GUI%%share/git-gui/lib/sshkey.tcl
 %%GUI%%share/git-gui/lib/status_bar.tcl
+%%GUI%%share/git-gui/lib/themed.tcl
 %%GUI%%share/git-gui/lib/tools_dlg.tcl
 %%GUI%%share/git-gui/lib/tools.tcl
 %%GUI%%share/git-gui/lib/transport.tcl
@@ -227,6 +240,8 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/msgs/zh_cn.msg
 %%GUI%%share/gitk/lib/msgs/es.msg
 %%GUI%%share/gitk/lib/msgs/de.msg
+%%GUI%%share/gitk/lib/msgs/fr.msg
+%%GUI%%share/gitk/lib/msgs/hu.msg
 %%GUI%%share/gitk/lib/msgs/it.msg
 %%GUI%%share/gitk/lib/msgs/ja.msg
 %%GUI%%share/gitk/lib/msgs/ru.msg
@@ -418,6 +433,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-revert.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-stash.txt
 %%HTMLDOCS%%%%DOCSDIR%%/pretty-formats.txt
+%%HTMLDOCS%%%%DOCSDIR%%/date-formats.txt
 %%HTMLDOCS%%%%DOCSDIR%%/diff-options.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-send-pack.txt
 %%HTMLDOCS%%%%DOCSDIR%%/merge-options.txt
@@ -735,6 +751,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.6.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.6.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.6.6.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.0.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
@@ -764,3 +781,5 @@ share/git-core/templates/info/exclude
 @dirrm share/git-core/templates/info
 @dirrmtry share/git-core/templates
 @dirrm share/git-core
+@dirrm %%PYTHON_SITELIBDIR%%/git_remote_helpers/git
+@dirrm %%PYTHON_SITELIBDIR%%/git_remote_helpers
