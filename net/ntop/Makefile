@@ -29,8 +29,6 @@ BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
 RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 		${LOCALBASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
 
-BROKEN=		does not build
-
 DBDIR?=		/var/db
 
 MAKE_JOBS_SAFE=	yes
