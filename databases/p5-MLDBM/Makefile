@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MLDBM
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,6 @@ COMMENT=	Store multi-level hash structure in single level tied hash
 BUILD_DEPENDS=	${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_ZIP=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		MLDBM.3
