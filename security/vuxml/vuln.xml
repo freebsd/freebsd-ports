@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="018a84d0-2548-11df-b4a3-00e0815b8da8">
+    <topic>sudo -- Privilege escalation with sudoedit</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.7.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Todd Miller reports:</p>
+	<blockquote cite="">
+	  <p>When sudo performs its command matching, there is a special case
+	    for pseudo-commands in the sudoers file (currently, the only
+	    pseudo-command is sudoedit). Unlike a regular command,
+	    pseudo-commands do not begin with a slash ('/'). The flaw is that
+	    sudo's the matching code would only check against the list of
+	    pseudo-commands if the user-specified command also contained no
+	    slashes. As a result, if the user ran "sudo ./sudoedit" the normal
+	    matching code path was followed, which uses stat(2) to verify that
+	    the user-specified command matches the one in sudoers. In this
+	    case, it would compare the "./sudoedit" specified by the user with
+	    "sudoedit" from the sudoers file, resulting in a positive
+	    match.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.sudo.ws/pipermail/sudo-announce/2010-February/000092.html</url>
+      <url>http://www.sudo.ws/sudo/alerts/sudoedit_escalate.html</url>
+      <url>http://secunia.com/advisories/38659</url>
+      <cvename>CVE-2010-0426</cvename>
+      <bid>38362</bid>
+    </references>
+    <dates>
+      <discovery>2010-01-29</discovery>
+      <entry>2010-03-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c97d7a37-2233-11df-96dd-001b2134ef46">
     <topic>openoffice.org -- multiple vulnerabilities</topic>
     <affects>
