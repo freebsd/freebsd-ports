@@ -26,7 +26,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose --disable-tests \
-		--without-capi --without-gnutls --without-gphoto \
+		--without-capi --without-gphoto \
 		--without-gsm --without-mpg123 --without-openal \
 		--without-sane --without-xcursor
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -48,6 +48,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	Off \
+		GNUTLS	"Use GnuTLS"					Off \
 		HAL	"Use HAL (Hardware Abstraction Layer)"		Off \
 		LDAP	"Use LDAP"					Off \
 		LIBXSLT	"Use libxslt (only used by msxml3.dll)"		Off
@@ -59,6 +60,13 @@ CONFIGURE_ARGS+=	--without-cups
 .else
 CONFIGURE_ARGS+=	--with-cups
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+.endif
+
+.ifdef WITH_GNUTLS
+CONFIGURE_ARGS+=	--with-gnutls
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+.else
+CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
 .ifdef WITH_HAL
