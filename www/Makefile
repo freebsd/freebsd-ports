@@ -396,6 +396,7 @@
     SUBDIR += lws
     SUBDIR += lynx
     SUBDIR += lynx-current
+    SUBDIR += magento
     SUBDIR += mahara
     SUBDIR += mambo
     SUBDIR += man2web
