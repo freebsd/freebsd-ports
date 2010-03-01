@@ -211,10 +211,24 @@ lib/gegl-0.0/write-buffer.so
 lib/gegl-0.0/xor.la
 lib/gegl-0.0/xor.so
 libdata/pkgconfig/gegl.pc
-%%PORTDOCS%%share/gtk-doc/html/gegl/operations.html
 %%PORTDOCS%%share/gtk-doc/html/gegl/api.html
-%%PORTDOCS%%share/gtk-doc/html/gegl/gegl.devhelp
+%%PORTDOCS%%share/gtk-doc/html/gegl/brightness-contrast.c.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-area-filter.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-composer.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-filter.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-meta.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-point-composer.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-point-filter.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-point-render.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-sink.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-source.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation-temporal.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-operation.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl-plugin.h.html
 %%PORTDOCS%%share/gtk-doc/html/gegl/gegl.css
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl.devhelp
+%%PORTDOCS%%share/gtk-doc/html/gegl/gegl.h.html
+%%PORTDOCS%%share/gtk-doc/html/gegl/operations.html
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/api.html
 %%PORTDOCS%%%%DOCSDIR%%/brightness-contrast.c.html
@@ -267,3 +281,4 @@ libdata/pkgconfig/gegl.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+
