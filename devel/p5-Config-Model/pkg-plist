@@ -1,12 +1,15 @@
 @comment $FreeBSD$
+bin/config-edit
 %%SITE_PERL%%/Config/Model.pm
 %%SITE_PERL%%/Config/Model/AnyId.pm
 %%SITE_PERL%%/Config/Model/AnyThing.pm
 %%SITE_PERL%%/Config/Model/AutoRead.pm
+%%SITE_PERL%%/Config/Model/Backend/Any.pm
+%%SITE_PERL%%/Config/Model/Backend/Yaml.pm
 %%SITE_PERL%%/Config/Model/CheckList.pm
 %%SITE_PERL%%/Config/Model/Describe.pm
-%%SITE_PERL%%/Config/Model/Dumper.pm
 %%SITE_PERL%%/Config/Model/DumpAsData.pm
+%%SITE_PERL%%/Config/Model/Dumper.pm
 %%SITE_PERL%%/Config/Model/Exception.pm
 %%SITE_PERL%%/Config/Model/HashId.pm
 %%SITE_PERL%%/Config/Model/IdElementReference.pm
@@ -16,15 +19,15 @@
 %%SITE_PERL%%/Config/Model/Node.pm
 %%SITE_PERL%%/Config/Model/ObjTreeScanner.pm
 %%SITE_PERL%%/Config/Model/Report.pm
-%%SITE_PERL%%/Config/Model/SimpleUI.pm
 %%SITE_PERL%%/Config/Model/Searcher.pm
+%%SITE_PERL%%/Config/Model/SimpleUI.pm
 %%SITE_PERL%%/Config/Model/TermUI.pm
 %%SITE_PERL%%/Config/Model/Value.pm
 %%SITE_PERL%%/Config/Model/ValueComputer.pm
 %%SITE_PERL%%/Config/Model/WarpedNode.pm
 %%SITE_PERL%%/Config/Model/WarpedThing.pm
 %%SITE_PERL%%/Config/Model/WizardHelper.pm
-bin/config-edit
+@dirrmtry %%SITE_PERL%%/Config/Model/Backend
 @dirrmtry %%SITE_PERL%%/Config/Model
 @dirrmtry %%SITE_PERL%%/Config
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config-Model
