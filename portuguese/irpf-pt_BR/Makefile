@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	irpf
-PORTVERSION=	2009.1.0
-PORTREVISION=	4
+PORTVERSION=	2010.1.0
 CATEGORIES=	portuguese finance java
-MASTER_SITES=	http://www.receita.fazenda.gov.br/Publico/programas/irpf/2009/PGDIrpf2009/Java/ZIP/
+MASTER_SITES=	http://www.receita.fazenda.gov.br/publico/programas/IRPF/2010/PGDIrpf2010/Java/zip/
 PKGNAMEPREFIX?=	pt_BR-
-DISTNAME=	IRPF2009v1.0
+DISTNAME=	irpf2010-v1.0
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2009 versao Java
+COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2010 versao Java
 
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}2009
+WRKSRC=		${WRKDIR}/${PORTNAME}2010
 
 USE_JAVA=	yes
 JAVA_RUN=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.6+
 JAVA_OS=	native
 
 NO_BUILD=	yes
@@ -31,7 +30,7 @@ JAVAVM=		${LOCALBASE}/bin/java
 
 JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
 
-DESKTOP_ENTRIES=	"Imposto de Renda Pessoa Fisica 2009" \
+DESKTOP_ENTRIES=	"Imposto de Renda Pessoa Fisica 2010" \
 			"${COMMENT}" \
 			"" \
 			"${PORTNAME}" \
@@ -60,12 +59,14 @@ JAR_FILES=	\
 		lib/jdt-compiler-3.1.1.jar \
 		lib/jhall.jar \
 		lib/looks-1.3.1.jar \
-		lib/ppgd-gui-2.9.jar \
-		lib/ppgd-gui-beans-2.9.jar \
-		lib/ppgd-infra-2.9.jar \
-		lib/ppgd-negocio-2.9.jar \
-		lib/ppgd-persistencia-2.9.jar \
-		lib/ppgd-swixml.jar \
+		lib/ppgd-forms-compat-0.2.jar \
+		lib/ppgd-gui-4.0.jar \
+		lib/ppgd-gui-beans-4.0.jar \
+		lib/ppgd-gui-utils-4.0.jar \
+		lib/ppgd-infra-4.0.jar \
+		lib/ppgd-negocio-4.0.jar \
+		lib/ppgd-persistencia-4.0.jar \
+		lib/ppgd-pgd-utils-4.0.jar \
 		lib/swing-layout-0.7.jar \
 		lib/xalan.jar
 
