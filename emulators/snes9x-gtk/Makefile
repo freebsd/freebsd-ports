@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	snes9x
-PORTVERSION=	1.51r78
-PORTREVISION=	1
+PORTVERSION=	1.52r79
 CATEGORIES=	emulators
 MASTER_SITES=	http://snes9x-gtk.googlecode.com/files/
 PKGNAMESUFFIX=	-gtk
-DISTNAME=	snes9x-1.51-src-gtk-78
+DISTNAME=	snes9x-1.52-src
 
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
@@ -29,7 +28,7 @@ USE_SDL=	sdl
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-WRKSRC=		${WRKDIR}/snes9x-1.51-src/gtk
+WRKSRC=		${WRKDIR}/${DISTNAME}/gtk
 
 OPTIONS=	DEBUG	"Enable debug information"	off \
 		OPENGL	"Enable OpenGL support"	off \
