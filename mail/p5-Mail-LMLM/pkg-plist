@@ -16,6 +16,7 @@
 %%SITE_PERL%%/Mail/LMLM/Types/Base.pm
 %%SITE_PERL%%/Mail/LMLM/Types/Egroups.pm
 %%SITE_PERL%%/Mail/LMLM/Types/Ezmlm.pm
+%%SITE_PERL%%/Mail/LMLM/Types/GoogleGroups.pm
 %%SITE_PERL%%/Mail/LMLM/Types/Listar.pm
 %%SITE_PERL%%/Mail/LMLM/Types/Listserv.pm
 %%SITE_PERL%%/Mail/LMLM/Types/Mailman.pm
