@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdotool
-DISTVERSION=	20091210.01
+DISTVERSION=	1.20100227.2679
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
@@ -19,7 +19,7 @@ USE_GNOME=	pkgconfig
 USE_XORG=	x11 xtst
 
 MAN1=		xdotool.1
-PLIST_FILES=	bin/xdotool lib/libxdo.so lib/libxdo.so.0
+PLIST_FILES=	bin/xdotool lib/libxdo.so lib/libxdo.so.1 include/xdo.h
 MAKE_JOBS_SAFE=	yes
 
 # Older GCC on RELENG_6 doesn't like -Wno-missing-field-initializers
