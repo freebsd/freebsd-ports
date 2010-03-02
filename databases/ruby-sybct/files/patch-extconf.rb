@@ -8,7 +8,7 @@
 -# $CFLAGS = "-g -Wall -DFREETDS -I#{sybase}/include"
 -# $LDFLAGS = " -L#{sybase}/lib " 
 -# $LOCAL_LIBS = "-lct  -lsybdb -ltds -rdynamic -ldl -lnsl -lm"
-+ sybase = "/usr/local"
++ sybase = "%%LOCALBASE%%"
 + $CFLAGS = "-g -Wall -DFREETDS -I#{sybase}/include"
 + $LDFLAGS = " -L#{sybase}/lib " 
 + $LOCAL_LIBS = "-lct  -lsybdb -ltds -rdynamic -lm -liconv"
