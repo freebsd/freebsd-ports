@@ -21,6 +21,8 @@ COMMENT=	The New Numeric Extension to Python
 
 RUN_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 
+BROKEN=		does not build
+
 OPTIONS=	ATLAS "Use optimized blas library" Off
 
 USE_FORTRAN=	yes
