@@ -7,7 +7,6 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.7.r${SVN_REV}
-PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -33,12 +32,18 @@ USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_PYTHON_RUN=	yes
 MAKE_JOBS_SAFE=	yes
-MAKE_ARGS=	REQUIRES_RTTI=1
+
+# Suggested tweaks from http://llvm.org/docs/Packaging.html
+# Commented out ones are currently broken.
+MAKE_ARGS+=		REQUIRES_RTTI=1
+#CONFIGURE_ARGS+=	--enable-shared
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--enable-optimized
+CONFIGURE_ARGS+=	--disable-assertions \
+			--enable-debug-symbols \
+			--enable-optimized
 .endif
 
 CONFIGURE_ARGS+=	--enable-bindings=none

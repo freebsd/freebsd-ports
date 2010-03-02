@@ -71,6 +71,7 @@ include/clang/AST/TypeVisitor.h
 include/clang/AST/UnresolvedSet.h
 include/clang/Analysis/Analyses/LiveVariables.h
 include/clang/Analysis/Analyses/PrintfFormatString.h
+include/clang/Analysis/Analyses/ReachableCode.h
 include/clang/Analysis/Analyses/UninitializedValues.h
 include/clang/Analysis/AnalysisContext.h
 include/clang/Analysis/AnalysisDiagnostic.h
@@ -110,15 +111,15 @@ include/clang/Basic/OperatorKinds.def
 include/clang/Basic/OperatorKinds.h
 include/clang/Basic/PartialDiagnostic.h
 include/clang/Basic/PrettyStackTrace.h
-include/clang/Basic/Release/DiagnosticASTKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticAnalysisKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticCommonKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticDriverKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticFrontendKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticGroups.inc.tmp
-include/clang/Basic/Release/DiagnosticLexKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticParseKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticSemaKinds.inc.tmp
+include/clang/Basic/Release+Debug/DiagnosticASTKinds.inc.tmp
+include/clang/Basic/Release+Debug/DiagnosticAnalysisKinds.inc.tmp
+include/clang/Basic/Release+Debug/DiagnosticCommonKinds.inc.tmp
+include/clang/Basic/Release+Debug/DiagnosticDriverKinds.inc.tmp
+include/clang/Basic/Release+Debug/DiagnosticFrontendKinds.inc.tmp
+include/clang/Basic/Release+Debug/DiagnosticGroups.inc.tmp
+include/clang/Basic/Release+Debug/DiagnosticLexKinds.inc.tmp
+include/clang/Basic/Release+Debug/DiagnosticParseKinds.inc.tmp
+include/clang/Basic/Release+Debug/DiagnosticSemaKinds.inc.tmp
 include/clang/Basic/SourceLocation.h
 include/clang/Basic/SourceManager.h
 include/clang/Basic/SourceManagerInternals.h
@@ -182,8 +183,8 @@ include/clang/Driver/Option.h
 include/clang/Driver/Options.h
 include/clang/Driver/Options.inc
 include/clang/Driver/Phases.h
-include/clang/Driver/Release/CC1Options.inc.tmp
-include/clang/Driver/Release/Options.inc.tmp
+include/clang/Driver/Release+Debug/CC1Options.inc.tmp
+include/clang/Driver/Release+Debug/Options.inc.tmp
 include/clang/Driver/Tool.h
 include/clang/Driver/ToolChain.h
 include/clang/Driver/Types.def
@@ -194,6 +195,7 @@ include/clang/Frontend/ASTUnit.h
 include/clang/Frontend/Analyses.def
 include/clang/Frontend/AnalysisConsumer.h
 include/clang/Frontend/ChainedDiagnosticClient.h
+include/clang/Frontend/CodeGenAction.h
 include/clang/Frontend/CommandLineSourceLoc.h
 include/clang/Frontend/CompilerInstance.h
 include/clang/Frontend/CompilerInvocation.h
@@ -627,6 +629,7 @@ include/llvm/System/TimeValue.h
 include/llvm/Target/Mangler.h
 include/llvm/Target/SubtargetFeature.h
 include/llvm/Target/Target.td
+include/llvm/Target/TargetAsmBackend.h
 include/llvm/Target/TargetAsmLexer.h
 include/llvm/Target/TargetAsmParser.h
 include/llvm/Target/TargetCallingConv.td
@@ -715,6 +718,9 @@ lib/libLLVMInstrumentation.a
 lib/libLLVMInterpreter.a
 lib/libLLVMJIT.a
 lib/libLLVMLinker.a
+lib/libLLVMMBlazeAsmPrinter.a
+lib/libLLVMMBlazeCodeGen.a
+lib/libLLVMMBlazeInfo.a
 lib/libLLVMMC.a
 lib/libLLVMMCParser.a
 lib/libLLVMMSIL.a
@@ -832,6 +838,7 @@ lib/libprofile_rt.so
 %%DOCSDIR%%/html/MakefileGuide.html
 %%DOCSDIR%%/html/PCHInternals.html
 %%DOCSDIR%%/html/PTHInternals.html
+%%DOCSDIR%%/html/Packaging.html
 %%DOCSDIR%%/html/Passes.html
 %%DOCSDIR%%/html/ProgrammersManual.html
 %%DOCSDIR%%/html/Projects.html
@@ -921,7 +928,7 @@ lib/libprofile_rt.so
 @dirrm include/clang/Lex
 @dirrm include/clang/Index
 @dirrm include/clang/Frontend
-@dirrm include/clang/Driver/Release
+@dirrm include/clang/Driver/Release+Debug
 @dirrm include/clang/Driver
 @dirrm include/clang/CodeGen
 @dirrm include/clang/Checker/PathSensitive
@@ -929,7 +936,7 @@ lib/libprofile_rt.so
 @dirrm include/clang/Checker/Checkers
 @dirrm include/clang/Checker/BugReporter
 @dirrm include/clang/Checker
-@dirrm include/clang/Basic/Release
+@dirrm include/clang/Basic/Release+Debug
 @dirrm include/clang/Basic
 @dirrm include/clang/Analysis/Visitors
 @dirrm include/clang/Analysis/Support
