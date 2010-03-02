@@ -30,7 +30,6 @@ bin/rmdic
 bin/splitword
 bin/syncdic
 bin/wtoc
-%%DATADIR%%/default.canna
 %%DATADIR%%/dic/canna/bushu.cld
 %%DATADIR%%/dic/canna/chimei.ctd
 %%DATADIR%%/dic/canna/dics.dir
@@ -46,55 +45,9 @@ bin/wtoc
 %%DATADIR%%/dic/canna/number.ctd
 %%DATADIR%%/dic/canna/software.ctd
 %%DATADIR%%/dic/canna/suffix.ctd
-%%DATADIR%%/dic/default.cbp
-%%DATADIR%%/dic/english.cbp
-%%DATADIR%%/dic/jdaemon.cbp
-%%DATADIR%%/dic/just.cbp
-%%DATADIR%%/dic/kaisoku.cbp
-%%DATADIR%%/dic/kana.cbp
-%%DATADIR%%/dic/lan5.cbp
-%%DATADIR%%/dic/matsu.cbp
-%%DATADIR%%/dic/newjis.cbp
-%%DATADIR%%/dic/romaji.cbp
-%%DATADIR%%/dic/sokuon.cbp
-%%DATADIR%%/dic/tut.cbp
-%%DATADIR%%/dic/vje.cbp
-%%DATADIR%%/dic/wx2+.cbp
-%%DATADIR%%/sample/1.1.canna
-%%DATADIR%%/sample/1.2.canna
-%%DATADIR%%/sample/fixer.canna
-%%DATADIR%%/sample/jdemon.canna
-%%DATADIR%%/sample/just.canna
-%%DATADIR%%/sample/lan5.canna
-%%DATADIR%%/sample/matsu.canna
-%%DATADIR%%/sample/modes.canna
-%%DATADIR%%/sample/sample.canna
-%%DATADIR%%/sample/skk.canna
-%%DATADIR%%/sample/src/default.ctd
-%%DATADIR%%/sample/src/english.ctd
-%%DATADIR%%/sample/src/is.c
-%%DATADIR%%/sample/src/jdaemon.ctd
-%%DATADIR%%/sample/src/just.ctd
-%%DATADIR%%/sample/src/kaisoku.ctd
-%%DATADIR%%/sample/src/kana.ctd
-%%DATADIR%%/sample/src/lan5.ctd
-%%DATADIR%%/sample/src/matsu.ctd
-%%DATADIR%%/sample/src/newjis.ctd
-%%DATADIR%%/sample/src/romaji.ctd
-%%DATADIR%%/sample/src/sokuon.ctd
-%%DATADIR%%/sample/src/tut.ctd
-%%DATADIR%%/sample/src/vje.ctd
-%%DATADIR%%/sample/src/wx2+.ctd
-%%DATADIR%%/sample/tut.canna
-%%DATADIR%%/sample/unix.canna
-%%DATADIR%%/sample/verbose.canna
-%%DATADIR%%/sample/vje.canna
-%%DATADIR%%/sample/wx2+.canna
 sbin/cannaserver
 sbin/cannakill
-@dirrm %%DATADIR%%/sample/src
-@dirrm %%DATADIR%%/sample
-@dirrm %%DATADIR%%/dic/canna
+@dirrmtry %%DATADIR%%/dic/canna
 @dirrmtry %%DATADIR%%/dic/user/user
 @dirrmtry %%DATADIR%%/dic/user
 @dirrmtry %%DATADIR%%/dic/group
