@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Proc/WaitStat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/WaitStat/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/WaitStat
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
+@dirrmtry %%SITE_PERL%%/Proc
