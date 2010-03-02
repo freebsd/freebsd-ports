@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	font-ipa
-PORTVERSION=	00301
-PORTREVISION=	2
+PORTVERSION=	00302
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/
 DISTNAME=	IPAfont${PORTVERSION}
@@ -27,10 +26,13 @@ SUB_LIST=	X_FONTSDIR=${PREFIX}/${X_FONTSDIR}
 PLIST_SUB=	X_FONTSDIR=${X_FONTSDIR} \
 		LOCAL_FONTSDIR=${LOCAL_FONTSDIR}
 PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt \
-		Readme${PORTVERSION}.txt
+		Readme_IPAfont${PORTVERSION}.txt
 
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
+
+post-extract:
+	cd ${WRKSRC} && for F in *.ttf; do ${MV} $${F} $${F%.ttf}.otf; done
 
 do-install:
 	${MKDIR} ${DATADIR}
