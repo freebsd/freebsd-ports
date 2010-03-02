@@ -1,5 +1,5 @@
---- egg/wnn.el.orig	2008-11-08 14:09:35.000000000 +0900
-+++ egg/wnn.el	2008-11-08 14:23:22.000000000 +0900
+--- egg/wnn.el.2	2010-03-02 10:35:45.000000000 +0900
++++ egg/wnn.el	2010-03-02 11:54:30.000000000 +0900
 @@ -82,6 +82,10 @@
  			     (const wnn-uniq)
  			     (const wnn-uniq-kanji)))
@@ -93,7 +93,7 @@
 -	      (setq port-off (string-to-int (substring hostname (match-end 0)))
 -		    hostname (substring hostname 0 (match-beginning 0))))
 -	    (and (equal hostname "") (setq hostname "localhost"))
-+		  hostname-list (cdr hostname-list))
++		hostname-list (cdr hostname-list))
 +	    (if (or (and (getenv serverenv)
 +			 (string-match "^unix$" (getenv serverenv)))
 +		    (and (null (getenv serverenv))
@@ -103,7 +103,7 @@
 +		  (setq hostname "unix"
 +			family 'local
 +			port udpath))
-+	      (progn
++	       (progn
 +		(setq hostname (or (getenv serverenv) hostname "localhost"))
 +		(if (null (string-match ":" hostname))
 +		    (setq port-off 0)
@@ -123,17 +123,17 @@
 -						  (+ port port-off)))
 -		((error quit))))
 -	    (when proc
-+	      (if (fboundp 'make-network-process)
-+		  (condition-case nil
-+		      (setq proc (make-network-process :name proc-name :buffer buf :host host :service port :family family))
-+		    ((error quit)))
-+		(if (string-match "^unix$" hostname)
-+		    (let ((process-connection-type nil))
-+		      (setq proc (start-process proc-name buf egg-wnn-helper-path port)))
-+		  (condition-case nil
-+		      (setq proc (open-network-stream proc-name buf hostname port))
-+		    (error quit)))))
-+	    (when (processp proc)
++             (if (fboundp 'make-network-process)
++                 (condition-case nil
++                     (setq proc (make-network-process :name proc-name :buffer buf :host host :service port :family family))
++                   ((error quit)))
++               (if (string-match "^unix$" hostname)
++                   (let ((process-connection-type nil))
++                     (setq proc (start-process proc-name buf egg-wnn-helper-path port)))
++                 (condition-case nil
++                     (setq proc (open-network-stream proc-name buf hostname port))
++                   (error quit)))))
++           (when (processp proc)
  	      (process-kill-without-query proc)
  	      (set-process-coding-system proc 'binary 'binary)
  	      (set-process-sentinel proc 'wnn-comm-sentinel)
