@@ -307,7 +307,7 @@ CONFIGURE_ARGS+=--with-http_sub_module
 .endif
 
 .if defined(WITH_HTTP_UPLOAD_MODULE)
-NGINX_UPLOAD_MODULE_VERSION=	2.0.11
+NGINX_UPLOAD_MODULE_VERSION=	2.0.12
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:upload
 DISTFILES+=	nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}.tar.gz:upload
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upload_module-${NGINX_UPLOAD_MODULE_VERSION}
@@ -459,10 +459,6 @@ post-patch:
 .if defined(WITH_HTTP_NOTICE_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_notice_module.c
-.endif
-.if defined(WITH_HTTP_UPLOAD_MODULE)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_upload_module.c
 .endif
 .if defined(WITH_PASSENGER_MODULE)
 	@${REINPLACE_CMD} 's!g++!${CXX}!' \
