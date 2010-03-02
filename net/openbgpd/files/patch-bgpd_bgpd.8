@@ -2,10 +2,10 @@ Index: bgpd/bgpd.8
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.8,v
 retrieving revision 1.1.1.8
-retrieving revision 1.7
-diff -u -p -r1.1.1.8 -r1.7
+retrieving revision 1.8
+diff -u -p -r1.1.1.8 -r1.8
 --- bgpd/bgpd.8	14 Feb 2010 20:19:57 -0000	1.1.1.8
-+++ bgpd/bgpd.8	4 Feb 2010 16:22:23 -0000	1.7
++++ bgpd/bgpd.8	2 Mar 2010 05:48:19 -0000	1.8
 @@ -1,4 +1,4 @@
 -.\" $OpenBSD: bgpd.8,v 1.28 2009/01/13 23:01:36 sthen Exp $
 +.\" $OpenBSD: bgpd.8,v 1.33 2009/12/16 15:40:55 claudio Exp $
@@ -17,10 +17,23 @@ diff -u -p -r1.1.1.8 -r1.7
  .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  .\"
 -.Dd $Mdocdate: January 13 2009 $
-+.Dd $Mdocdate: October 26 2009 $
++.Dd $Mdocdate: December 16 2009 $
  .Dt BGPD 8
  .Os
  .Sh NAME
+@@ -24,9 +24,9 @@
+ .Nm bgpd
+ .Bk -words
+ .Op Fl cdnv
+-.Oo Xo
+-.Fl D Ar macro Ns = Ns Ar value Oc
+-.Xc
++.Oo
++.Fl D Ar macro Ns = Ns Ar value
++.Oc
+ .Op Fl f Ar file
+ .Op Fl r Ar path
+ .Op Fl s Ar path
 @@ -48,9 +48,9 @@ Please refer to that document for more i
  .Nm
  is usually started at boot time, and can be enabled by
