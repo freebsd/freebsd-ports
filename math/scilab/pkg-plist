@@ -56,6 +56,7 @@ include/scilab/gw_history_manager.h
 include/scilab/hashtable.h
 include/scilab/hashtable_itr.h
 include/scilab/hashtable_utility.h
+include/scilab/libinter.h
 include/scilab/localization.h
 include/scilab/machine.h
 include/scilab/mex.h
@@ -319,7 +320,6 @@ lib/scilab/libscixpad-disable.so.5
 %%HDF5%%lib/scilab/libscihdf5-forceload.so
 %%HDF5%%lib/scilab/libscihdf5-forceload.so.5
 libdata/pkgconfig/scilab.pc
-%%GUI%%share/applications/scilab.desktop
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/en_US/LC_MESSAGES/scilab.mo
@@ -329,6 +329,7 @@ libdata/pkgconfig/scilab.pc
 %%NLS%%share/locale/ja_JP/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/scilab.mo
+%%NLS%%share/locale/uk_UA/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/scilab.mo
 %%DATADIR%%/ACKNOWLEDGEMENTS
@@ -616,6 +617,8 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/atoms/macros/atoms_internals/atomsGetInstalledVers.sci
 %%DATADIR%%/modules/atoms/macros/atoms_internals/atomsGetMRVersion.bin
 %%DATADIR%%/modules/atoms/macros/atoms_internals/atomsGetMRVersion.sci
+%%DATADIR%%/modules/atoms/macros/atoms_internals/atomsGetPlatform.bin
+%%DATADIR%%/modules/atoms/macros/atoms_internals/atomsGetPlatform.sci
 %%DATADIR%%/modules/atoms/macros/atoms_internals/atomsGetTOOLBOXES.bin
 %%DATADIR%%/modules/atoms/macros/atoms_internals/atomsGetTOOLBOXES.sci
 %%DATADIR%%/modules/atoms/macros/atoms_internals/atomsGetVersions.bin
@@ -725,6 +728,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/atoms/tests/unit_tests/atomsVersionSort.tst
 %%DATADIR%%/modules/atoms/tests/unit_tests/scene1.test.atoms.scilab.org.txt
 %%DATADIR%%/modules/atoms/tests/unit_tests/scene2.test.atoms.scilab.org.txt
+%%DATADIR%%/modules/atoms/tests/unit_tests/toolbox_7_1.0-1.bin.zip
 %%DATADIR%%/modules/atoms/version.xml
 %%DATADIR%%/modules/boolean/changelog.txt
 %%DATADIR%%/modules/boolean/etc/boolean.quit
@@ -1796,6 +1800,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_1962.tst
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_1985.dia.ref
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_1985.tst
+%%DATADIR%%/modules/core/tests/nonreg_tests/bug_2030.tst
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_2039.dia.ref
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_2039.tst
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_2072.dia.ref
@@ -1922,6 +1927,12 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_566.tst
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_604.dia.ref
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_604.tst
+%%DATADIR%%/modules/core/tests/nonreg_tests/bug_6461.dia.ref
+%%DATADIR%%/modules/core/tests/nonreg_tests/bug_6461.tst
+%%DATADIR%%/modules/core/tests/nonreg_tests/bug_6521.dia.ref
+%%DATADIR%%/modules/core/tests/nonreg_tests/bug_6521.tst
+%%DATADIR%%/modules/core/tests/nonreg_tests/bug_6586.dia.ref
+%%DATADIR%%/modules/core/tests/nonreg_tests/bug_6586.tst
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_71.dia.ref
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_71.tst
 %%DATADIR%%/modules/core/tests/nonreg_tests/bug_743.dia.ref
@@ -3032,6 +3043,8 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/elementary_functions/tests/nonreg_tests/bug_4460.tst
 %%DATADIR%%/modules/elementary_functions/tests/nonreg_tests/bug_4810.dia.ref
 %%DATADIR%%/modules/elementary_functions/tests/nonreg_tests/bug_4810.tst
+%%DATADIR%%/modules/elementary_functions/tests/nonreg_tests/bug_5722.dia.ref
+%%DATADIR%%/modules/elementary_functions/tests/nonreg_tests/bug_5722.tst
 %%DATADIR%%/modules/elementary_functions/tests/nonreg_tests/bug_575.dia.ref
 %%DATADIR%%/modules/elementary_functions/tests/nonreg_tests/bug_575.tst
 %%DATADIR%%/modules/elementary_functions/tests/nonreg_tests/bug_584.dia.ref
@@ -3139,12 +3152,16 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/elementary_functions/tests/unit_tests/tand.dia.ref
 %%DATADIR%%/modules/elementary_functions/tests/unit_tests/tand.tst
 %%DATADIR%%/modules/elementary_functions/version.xml
+%%FFTW%%%%DATADIR%%/modules/fftw/changelog.txt
 %%DATADIR%%/modules/fftw/etc/fftw.quit
 %%DATADIR%%/modules/fftw/etc/fftw.start
 %%DATADIR%%/modules/fftw/help/en_US/addchapter.sce
 %%DATADIR%%/modules/fftw/help/fr_FR/addchapter.sce
 %%DATADIR%%/modules/fftw/help/pt_BR/addchapter.sce
+%%FFTW%%%%DATADIR%%/modules/fftw/license.txt
 %%DATADIR%%/modules/fftw/macros/buildmacros.sce
+%%FFTW%%%%DATADIR%%/modules/fftw/readme.txt
+%%FFTW%%%%DATADIR%%/modules/fftw/sci_gateway/fftw_gateway.xml
 %%DATADIR%%/modules/fftw/tests/benchmarks/bench_fft.tst
 %%DATADIR%%/modules/fftw/tests/nonreg_tests/bug_5081.dia.ref
 %%DATADIR%%/modules/fftw/tests/nonreg_tests/bug_5081.tst
@@ -3154,6 +3171,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/fftw/tests/unit_tests/fftw_flag.tst
 %%DATADIR%%/modules/fftw/tests/unit_tests/setget_fftw_wisdom.dia.ref
 %%DATADIR%%/modules/fftw/tests/unit_tests/setget_fftw_wisdom.tst
+%%FFTW%%%%DATADIR%%/modules/fftw/version.xml
 %%DATADIR%%/modules/fileio/changelog.txt
 %%DATADIR%%/modules/fileio/etc/fileio.quit
 %%DATADIR%%/modules/fileio/etc/fileio.start
@@ -3340,6 +3358,8 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/fileio/tests/nonreg_tests/bug_4917.dia.ref
 %%DATADIR%%/modules/fileio/tests/nonreg_tests/bug_4917.tst
 %%DATADIR%%/modules/fileio/tests/nonreg_tests/bug_4918.tst
+%%DATADIR%%/modules/fileio/tests/nonreg_tests/bug_6437.dia.ref
+%%DATADIR%%/modules/fileio/tests/nonreg_tests/bug_6437.tst
 %%DATADIR%%/modules/fileio/tests/nonreg_tests/bug_654.dia.ref
 %%DATADIR%%/modules/fileio/tests/nonreg_tests/bug_654.tst
 %%DATADIR%%/modules/fileio/tests/nonreg_tests/bug_656.dia.ref
@@ -3721,6 +3741,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/graphic_export/tests/nonreg_tests/bug_4812.tst
 %%DATADIR%%/modules/graphic_export/tests/nonreg_tests/bug_4944.dia.ref
 %%DATADIR%%/modules/graphic_export/tests/nonreg_tests/bug_4944.tst
+%%DATADIR%%/modules/graphic_export/tests/nonreg_tests/bug_5436.tst
 %%DATADIR%%/modules/graphic_export/tests/nonreg_tests/bug_685.dia.ref
 %%DATADIR%%/modules/graphic_export/tests/nonreg_tests/bug_685.tst
 %%DATADIR%%/modules/graphic_export/tests/unit_tests/bmp_non_empty_file.dia.ref
@@ -4653,6 +4674,8 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_487.tst
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_4964.dia.ref
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_4964.tst
+%%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_4979.dia.ref
+%%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_4979.tst
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_502.dia.ref
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_502.tst
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_5148.dia.ref
@@ -4662,9 +4685,12 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_5637.dia.ref
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_5637.tst
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_569.tst
+%%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_5702.tst
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_612.tst
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_625.dia.ref
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_625.tst
+%%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_6420.dia.ref
+%%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_6420.tst
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_711.dia.ref
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_711.tst
 %%DATADIR%%/modules/graphics/tests/nonreg_tests/bug_805.dia.ref
@@ -4915,6 +4941,8 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_4347.tst
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_4426.tst
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_4486.tst
+%%DATADIR%%/modules/gui/tests/nonreg_tests/bug_4543.dia.ref
+%%DATADIR%%/modules/gui/tests/nonreg_tests/bug_4543.tst
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_4564.tst
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_4607.dia.ref
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_4607.tst
@@ -4924,10 +4952,15 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_4983.tst
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_56.dia.ref
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_56.tst
+%%DATADIR%%/modules/gui/tests/nonreg_tests/bug_5687.tst
+%%DATADIR%%/modules/gui/tests/nonreg_tests/bug_5695.tst
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_595.dia.ref
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_595.tst
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_596.dia.ref
 %%DATADIR%%/modules/gui/tests/nonreg_tests/bug_596.tst
+%%DATADIR%%/modules/gui/tests/nonreg_tests/bug_6436.tst
+%%DATADIR%%/modules/gui/tests/nonreg_tests/bug_6441.tst
+%%DATADIR%%/modules/gui/tests/nonreg_tests/bug_6547.tst
 %%DATADIR%%/modules/gui/tests/unit_tests/addmenu.dia.ref
 %%DATADIR%%/modules/gui/tests/unit_tests/addmenu.tst
 %%DATADIR%%/modules/gui/tests/unit_tests/checkbox.dia.ref
@@ -4981,6 +5014,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/hdf5/etc/hdf5.start
 %%DATADIR%%/modules/hdf5/license.txt
 %%DATADIR%%/modules/hdf5/macros/buildmacros.sce
+%%HDF5%%%%DATADIR%%/modules/hdf5/jar/org.scilab.modules.hdf5.jar
 %%DATADIR%%/modules/hdf5/readme.txt
 %%DATADIR%%/modules/hdf5/sci_gateway/hdf5_gateway.xml
 %%DATADIR%%/modules/hdf5/tests/unit_tests/testScilabBoolean.java
@@ -4989,7 +5023,6 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/hdf5/tests/unit_tests/testScilabList.java
 %%DATADIR%%/modules/hdf5/tests/unit_tests/testScilabString.java
 %%DATADIR%%/modules/hdf5/version.xml
-%%HDF5%%%%DATADIR%%/modules/hdf5/jar/org.scilab.modules.hdf5.jar
 %%DATADIR%%/modules/helptools/bin/man2sci
 %%DATADIR%%/modules/helptools/bin/manrev2sci
 %%DATADIR%%/modules/helptools/bin/scivalid
@@ -5127,6 +5160,9 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/helptools/tests/nonreg_tests/bug_4938.tst
 %%DATADIR%%/modules/helptools/tests/nonreg_tests/bug_5330.dia.ref
 %%DATADIR%%/modules/helptools/tests/nonreg_tests/bug_5330.tst
+%%DATADIR%%/modules/helptools/tests/nonreg_tests/bug_5413.dia.ref
+%%DATADIR%%/modules/helptools/tests/nonreg_tests/bug_5413.sci
+%%DATADIR%%/modules/helptools/tests/nonreg_tests/bug_5413.tst
 %%DATADIR%%/modules/helptools/tests/nonreg_tests/bug_5487.dia.ref
 %%DATADIR%%/modules/helptools/tests/nonreg_tests/bug_5487.sci
 %%DATADIR%%/modules/helptools/tests/nonreg_tests/bug_5487.tst
@@ -5483,6 +5519,8 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/io/tests/nonreg_tests/bug_5586.dia.ref
 %%DATADIR%%/modules/io/tests/nonreg_tests/bug_5586.tst
 %%DATADIR%%/modules/io/tests/nonreg_tests/bug_576.tst
+%%DATADIR%%/modules/io/tests/nonreg_tests/bug_6399.dia.ref
+%%DATADIR%%/modules/io/tests/nonreg_tests/bug_6399.tst
 %%DATADIR%%/modules/io/tests/unit_tests/getenv.dia.ref
 %%DATADIR%%/modules/io/tests/unit_tests/getenv.tst
 %%DATADIR%%/modules/io/tests/unit_tests/saveload.dia.ref
@@ -5577,6 +5615,9 @@ libdata/pkgconfig/scilab.pc
 %%GUI%%%%DATADIR%%/modules/javasci/tests/nonreg_tests/bug_3673.tst
 %%GUI%%%%DATADIR%%/modules/javasci/tests/nonreg_tests/bug_3909.tst
 %%GUI%%%%DATADIR%%/modules/javasci/tests/nonreg_tests/bug_4547.tst
+%%GUI%%%%DATADIR%%/modules/javasci/tests/nonreg_tests/bug_6388.dia.ref
+%%GUI%%%%DATADIR%%/modules/javasci/tests/nonreg_tests/bug_6388.java
+%%GUI%%%%DATADIR%%/modules/javasci/tests/nonreg_tests/bug_6388.tst
 %%GUI%%%%DATADIR%%/modules/javasci/tests/nonreg_tests/java.sci
 %%GUI%%%%DATADIR%%/modules/javasci/tests/nonreg_tests/javac.sci
 %%GUI%%%%DATADIR%%/modules/javasci/tests/nonreg_tests/test_java.sci
@@ -6798,17 +6839,17 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/matio/help/fr_FR/addchapter.sce
 %%DATADIR%%/modules/matio/help/pt_BR/addchapter.sce
 %%DATADIR%%/modules/matio/license.txt
+%%MATIO%%%%DATADIR%%/modules/matio/macros/ReadmiMatrix.bin
 %%DATADIR%%/modules/matio/macros/ReadmiMatrix.sci
+%%MATIO%%%%DATADIR%%/modules/matio/macros/WritemiMatrix.bin
 %%DATADIR%%/modules/matio/macros/WritemiMatrix.sci
 %%DATADIR%%/modules/matio/macros/buildmacros.sce
-%%DATADIR%%/modules/matio/macros/loadmatfile.sci
-%%DATADIR%%/modules/matio/macros/savematfile.sci
-%%MATIO%%%%DATADIR%%/modules/matio/macros/savematfile.bin
-%%MATIO%%%%DATADIR%%/modules/matio/macros/loadmatfile.bin
-%%MATIO%%%%DATADIR%%/modules/matio/macros/WritemiMatrix.bin
-%%MATIO%%%%DATADIR%%/modules/matio/macros/ReadmiMatrix.bin
 %%MATIO%%%%DATADIR%%/modules/matio/macros/lib
+%%MATIO%%%%DATADIR%%/modules/matio/macros/loadmatfile.bin
+%%DATADIR%%/modules/matio/macros/loadmatfile.sci
 %%MATIO%%%%DATADIR%%/modules/matio/macros/names
+%%MATIO%%%%DATADIR%%/modules/matio/macros/savematfile.bin
+%%DATADIR%%/modules/matio/macros/savematfile.sci
 %%DATADIR%%/modules/matio/readme.txt
 %%DATADIR%%/modules/matio/sci_gateway/matio_gateway.xml
 %%DATADIR%%/modules/matio/tests/nonreg_tests/bug_2731.dia.ref
@@ -9049,6 +9090,8 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/polynomials/tests/nonreg_tests/bug_201.tst
 %%DATADIR%%/modules/polynomials/tests/nonreg_tests/bug_205.dia.ref
 %%DATADIR%%/modules/polynomials/tests/nonreg_tests/bug_205.tst
+%%DATADIR%%/modules/polynomials/tests/nonreg_tests/bug_2177.dia.ref
+%%DATADIR%%/modules/polynomials/tests/nonreg_tests/bug_2177.tst
 %%DATADIR%%/modules/polynomials/tests/nonreg_tests/bug_2264.dia.ref
 %%DATADIR%%/modules/polynomials/tests/nonreg_tests/bug_2264.tst
 %%DATADIR%%/modules/polynomials/tests/nonreg_tests/bug_2391.dia.ref
@@ -9136,6 +9179,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/renderer/readme.txt
 %%DATADIR%%/modules/renderer/tests/nonreg_tests/bug_4055.dia.ref
 %%DATADIR%%/modules/renderer/tests/nonreg_tests/bug_4055.tst
+%%DATADIR%%/modules/renderer/tests/nonreg_tests/bug_6558.tst
 %%DATADIR%%/modules/renderer/version.xml
 %%GUI%%%%DATADIR%%/modules/scicos/changelog.txt
 %%DATADIR%%/modules/scicos/demos/Bouncing_ball.cosf
@@ -12055,6 +12099,10 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/sparse/tests/nonreg_tests/bug_4654.tst
 %%DATADIR%%/modules/sparse/tests/nonreg_tests/bug_490.dia.ref
 %%DATADIR%%/modules/sparse/tests/nonreg_tests/bug_490.tst
+%%DATADIR%%/modules/sparse/tests/nonreg_tests/bug_6401.dia.ref
+%%DATADIR%%/modules/sparse/tests/nonreg_tests/bug_6401.tst
+%%DATADIR%%/modules/sparse/tests/nonreg_tests/bug_6412.dia.ref
+%%DATADIR%%/modules/sparse/tests/nonreg_tests/bug_6412.tst
 %%DATADIR%%/modules/sparse/tests/unit_tests/lsparse.dia.ref
 %%DATADIR%%/modules/sparse/tests/unit_tests/lsparse.tst
 %%DATADIR%%/modules/sparse/tests/unit_tests/pcg.dia.ref
@@ -12512,6 +12560,8 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/string/tests/nonreg_tests/bug_5375.tst
 %%DATADIR%%/modules/string/tests/nonreg_tests/bug_55.dia.ref
 %%DATADIR%%/modules/string/tests/nonreg_tests/bug_55.tst
+%%DATADIR%%/modules/string/tests/nonreg_tests/bug_5659.dia.ref
+%%DATADIR%%/modules/string/tests/nonreg_tests/bug_5659.tst
 %%DATADIR%%/modules/string/tests/unit_tests/ascii.dia.ref
 %%DATADIR%%/modules/string/tests/unit_tests/ascii.tst
 %%DATADIR%%/modules/string/tests/unit_tests/base.dia.ref
@@ -12841,6 +12891,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/tclsci/tests/nonreg_tests/bug_4149.tst
 %%DATADIR%%/modules/tclsci/tests/nonreg_tests/bug_488.dia.ref
 %%DATADIR%%/modules/tclsci/tests/nonreg_tests/bug_488.tst
+%%DATADIR%%/modules/tclsci/tests/nonreg_tests/bug_5035.tst
 %%DATADIR%%/modules/tclsci/tests/nonreg_tests/bug_539.tst
 %%DATADIR%%/modules/tclsci/tests/nonreg_tests/bug_5456.dia.ref
 %%DATADIR%%/modules/tclsci/tests/nonreg_tests/bug_5456.tst
@@ -12955,6 +13006,8 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/time/tests/nonreg_tests/bug_2786.tst
 %%DATADIR%%/modules/time/tests/nonreg_tests/bug_4663.dia.ref
 %%DATADIR%%/modules/time/tests/nonreg_tests/bug_4663.tst
+%%DATADIR%%/modules/time/tests/nonreg_tests/bug_6400.dia.ref
+%%DATADIR%%/modules/time/tests/nonreg_tests/bug_6400.tst
 %%DATADIR%%/modules/time/tests/nonreg_tests/bug_793.dia.ref
 %%DATADIR%%/modules/time/tests/nonreg_tests/bug_793.tst
 %%DATADIR%%/modules/time/tests/unit_tests/calendar.dia.ref
@@ -13052,6 +13105,9 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/windows_tools/tests/nonreg_tests/bug_4702.dia.ref
 %%DATADIR%%/modules/windows_tools/tests/nonreg_tests/bug_4702.tst
 %%DATADIR%%/modules/windows_tools/tests/nonreg_tests/bug_5155.tst
+%%DATADIR%%/modules/windows_tools/tests/nonreg_tests/bug_6387.tst
+%%DATADIR%%/modules/windows_tools/tests/nonreg_tests/bug_6489.dia.ref
+%%DATADIR%%/modules/windows_tools/tests/nonreg_tests/bug_6489.tst
 %%DATADIR%%/modules/windows_tools/tests/unit_tests/createGUID.dia.ref
 %%DATADIR%%/modules/windows_tools/tests/unit_tests/createGUID.tst
 %%DATADIR%%/modules/windows_tools/tests/unit_tests/findfileassociation.dia.ref
@@ -13453,6 +13509,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/xcos/images/palettes/freq_div.jpg
 %%DATADIR%%/modules/xcos/images/palettes/generic_block3.jpg
 %%DATADIR%%/modules/xcos/images/palettes/scifunc_block_m.jpg
+%%HDF5%%%%DATADIR%%/modules/xcos/jar/org.scilab.modules.xcos.jar
 %%DATADIR%%/modules/xcos/license.txt
 %%GUI%%%%DATADIR%%/modules/xcos/macros/%diagram_xcos.bin
 %%DATADIR%%/modules/xcos/macros/%diagram_xcos.sci
@@ -13463,6 +13520,10 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/xcos/macros/errorDiagramPath.sci
 %%GUI%%%%DATADIR%%/modules/xcos/macros/generateBlockImages.bin
 %%DATADIR%%/modules/xcos/macros/generateBlockImages.sci
+%%GUI%%%%DATADIR%%/modules/xcos/macros/getDiagramVersion.bin
+%%DATADIR%%/modules/xcos/macros/getDiagramVersion.sci
+%%GUI%%%%DATADIR%%/modules/xcos/macros/importScicosDiagram.bin
+%%DATADIR%%/modules/xcos/macros/importScicosDiagram.sci
 %%GUI%%%%DATADIR%%/modules/xcos/macros/importScicosPal.bin
 %%DATADIR%%/modules/xcos/macros/importScicosPal.sci
 %%GUI%%%%DATADIR%%/modules/xcos/macros/importXcosDiagram.bin
@@ -13517,11 +13578,22 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5403.tst
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5403.xcos
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5405.tst
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5411.tst
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5412.tst
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5416.tst
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5441.tst
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5444.tst
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5444.xcos
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5508.tst
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5701.tst
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_5701.xcos
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_6386.tst
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_6386.xcos
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_6474.tst
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_6517.tst
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_6517.xcos
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_6578.tst
+%%DATADIR%%/modules/xcos/tests/nonreg_tests/bug_6578.xcos
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/constant.unix.err.ref
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/constant.unix.log.ref
 %%DATADIR%%/modules/xcos/tests/nonreg_tests/constant.unix.out.ref
@@ -13774,7 +13846,6 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/xcos/tests/unit_tests/xcos.tst
 %%DATADIR%%/modules/xcos/tests/unit_tests/xcos_tests.sci
 %%DATADIR%%/modules/xcos/version.xml
-%%HDF5%%%%DATADIR%%/modules/xcos/jar/org.scilab.modules.xcos.jar
 %%DATADIR%%/modules/xpad/changelog.txt
 %%DATADIR%%/modules/xpad/etc/xpad.quit
 %%DATADIR%%/modules/xpad/etc/xpad.start
@@ -13872,16 +13943,12 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/xpad/tests/nonreg_tests/bug_5516.tst
 %%DATADIR%%/modules/xpad/tests/nonreg_tests/bug_5519.tst
 %%DATADIR%%/modules/xpad/tests/nonreg_tests/bug_5532.tst
+%%DATADIR%%/modules/xpad/tests/nonreg_tests/bug_5707.tst
 %%DATADIR%%/modules/xpad/tests/nonreg_tests/xpad_indent_test.sci
 %%DATADIR%%/modules/xpad/tests/nonreg_tests/xpad_linux_eol.sci
 %%DATADIR%%/modules/xpad/tests/nonreg_tests/xpad_macosx_eol.sci
 %%DATADIR%%/modules/xpad/version.xml
 %%DATADIR%%/tools/profiling/valgrind.supp
-%%FFTW%%%%DATADIR%%/modules/fftw/readme.txt
-%%FFTW%%%%DATADIR%%/modules/fftw/license.txt
-%%FFTW%%%%DATADIR%%/modules/fftw/version.xml
-%%FFTW%%%%DATADIR%%/modules/fftw/changelog.txt
-%%FFTW%%%%DATADIR%%/modules/fftw/sci_gateway/fftw_gateway.xml
 @dirrm %%DATADIR%%/tools/profiling
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/modules/xpad/tests/nonreg_tests
@@ -13902,6 +13969,7 @@ libdata/pkgconfig/scilab.pc
 @dirrm %%DATADIR%%/modules/xcos/tests
 @dirrm %%DATADIR%%/modules/xcos/sci_gateway
 @dirrm %%DATADIR%%/modules/xcos/macros
+%%HDF5%%@dirrm %%DATADIR%%/modules/xcos/jar
 @dirrm %%DATADIR%%/modules/xcos/images/palettes
 @dirrm %%DATADIR%%/modules/xcos/images/icons
 @dirrm %%DATADIR%%/modules/xcos/images/blocks
@@ -13915,7 +13983,6 @@ libdata/pkgconfig/scilab.pc
 @dirrm %%DATADIR%%/modules/xcos/demos/Electrical
 @dirrm %%DATADIR%%/modules/xcos/demos/CodeGen
 @dirrm %%DATADIR%%/modules/xcos/demos
-%%HDF5%%@dirrm %%DATADIR%%/modules/xcos/jar
 @dirrm %%DATADIR%%/modules/xcos
 @dirrm %%DATADIR%%/modules/windows_tools/tests/unit_tests
 @dirrm %%DATADIR%%/modules/windows_tools/tests/nonreg_tests
@@ -14166,6 +14233,7 @@ libdata/pkgconfig/scilab.pc
 @dirrm %%DATADIR%%/modules/randlib
 @dirrm %%DATADIR%%/modules/pvm/tests/unit_tests
 @dirrm %%DATADIR%%/modules/pvm/tests
+%%PVM%%@dirrm %%DATADIR%%/modules/pvm/sci_gateway
 @dirrm %%DATADIR%%/modules/pvm/macros
 @dirrm %%DATADIR%%/modules/pvm/help/pt_BR
 @dirrm %%DATADIR%%/modules/pvm/help/fr_FR
@@ -14173,7 +14241,6 @@ libdata/pkgconfig/scilab.pc
 @dirrm %%DATADIR%%/modules/pvm/help
 @dirrm %%DATADIR%%/modules/pvm/etc
 @dirrm %%DATADIR%%/modules/pvm/demos
-%%PVM%%@dirrm %%DATADIR%%/modules/pvm/sci_gateway
 @dirrm %%DATADIR%%/modules/pvm
 @dirrm %%DATADIR%%/modules/polynomials/tests/unit_tests
 @dirrm %%DATADIR%%/modules/polynomials/tests/nonreg_tests
@@ -14559,13 +14626,13 @@ libdata/pkgconfig/scilab.pc
 @dirrm %%DATADIR%%/modules/fftw/tests/nonreg_tests
 @dirrm %%DATADIR%%/modules/fftw/tests/benchmarks
 @dirrm %%DATADIR%%/modules/fftw/tests
+%%FFTW%%@dirrm %%DATADIR%%/modules/fftw/sci_gateway
 @dirrm %%DATADIR%%/modules/fftw/macros
 @dirrm %%DATADIR%%/modules/fftw/help/pt_BR
 @dirrm %%DATADIR%%/modules/fftw/help/fr_FR
 @dirrm %%DATADIR%%/modules/fftw/help/en_US
 @dirrm %%DATADIR%%/modules/fftw/help
 @dirrm %%DATADIR%%/modules/fftw/etc
-%%FFTW%%@dirrm %%DATADIR%%/modules/fftw/sci_gateway
 @dirrm %%DATADIR%%/modules/fftw
 @dirrm %%DATADIR%%/modules/elementary_functions/tests/unit_tests
 @dirrm %%DATADIR%%/modules/elementary_functions/tests/nonreg_tests
@@ -14864,6 +14931,7 @@ libdata/pkgconfig/scilab.pc
 %%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk_UA/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ca_ES
@@ -14873,6 +14941,7 @@ libdata/pkgconfig/scilab.pc
 %%NLS%%@dirrmtry share/locale/ja_JP
 %%NLS%%@dirrmtry share/locale/pt_BR
 %%NLS%%@dirrmtry share/locale/ru_RU
+%%NLS%%@dirrmtry share/locale/uk_UA
 %%NLS%%@dirrmtry share/locale/zh_CN
 %%NLS%%@dirrmtry share/locale/zh_TW
 @exec mkdir -p %D/%%DATADIR%%/modules/malloc/macros

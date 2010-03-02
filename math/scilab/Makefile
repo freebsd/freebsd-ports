@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scilab
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.1
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -20,10 +20,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		readline.6:${PORTSDIR}/devel/readline
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/catalog:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/share/examples/saxon/data/books.dtd:${PORTSDIR}/textproc/saxon \
-		xsltproc:${PORTSDIR}/textproc/libxslt
-
 MAKE_JOBS_UNSAFE=	yes
 
 USE_FORTRAN=	yes
@@ -31,14 +27,13 @@ USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--without-ocaml \
-		--with-docbook=${LOCALBASE}/share/xsl/docbook
+CONFIGURE_ARGS=	--without-ocaml
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 		FFTW "Use FFTW" ON \
-		GUI "Build GUI (requires Java)" ON \
+		GUI "Build GUI (requires Java and required for docs)" ON \
 		HDF5 "Use HDF5 (requires GUI)" OFF \
 		NLS "Build localization" OFF \
 		MATIO "Matlab compatibility" OFF \
@@ -62,6 +57,7 @@ MAKE_ENV+=	BLAS_LIBS="-L${LOCALBASE}/lib ${BLAS_LIBS}"
 CONFIGURE_ARGS+=	--disable-build-localization
 PLIST_SUB+=	NLS="@comment "
 .else
+CONFIGURE_ARGS+=	--enable-build-localization
 PLIST_SUB+=	NLS=""
 .endif
 
@@ -83,6 +79,7 @@ CONFIGURE_ARGS+=	--without-gui \
 			--disable-build-help
 PLIST_SUB+=	GUI="@comment "
 PLIST_SUB+=	NOGUI=""
+NOPORTDOCS=	YES
 .else
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
@@ -101,7 +98,10 @@ BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/xmlgraphics-commons.jar:${PORTSDIR}/graphics/xmlgraphics-commons \
 		${JAVALIBDIR}/xml-apis-ext.jar:${PORTSDIR}/textproc/xml-commons \
 		${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
-		swig:${PORTSDIR}/devel/swig13
+		${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		xsltproc:${PORTSDIR}/textproc/libxslt \
+		swig:${PORTSDIR}/devel/swig13 \
+		${LOCALBASE}/share/examples/saxon/data/books.dtd:${PORTSDIR}/textproc/saxon
 
 RUN_DEPENDS+=	${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
@@ -118,7 +118,9 @@ RUN_DEPENDS+=	${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/commons-io.jar:${PORTSDIR}/devel/jakarta-commons-io \
 		${JAVALIBDIR}/xmlgraphics-commons.jar:${PORTSDIR}/graphics/xmlgraphics-commons \
 		${JAVALIBDIR}/xml-apis-ext.jar:${PORTSDIR}/textproc/xml-commons \
-		${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework
+		${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
+		${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
@@ -126,7 +128,8 @@ JAVA_BUILD=	yes
 JAVA_RUN=	yes
 USE_XORG=	x11
 
-CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME}
+CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME} \
+			--with-docbook=${LOCALBASE}/share/xsl/docbook
 
 DESKTOP_ENTRIES=	"SciLab" "A free Matlab clone by INRIA & ENPC" \
 			"${DATADIR}/icons/scilab.xpm" "scilab" \
@@ -174,7 +177,7 @@ PLIST_SUB+=	UMFPACK=""
 CONFIGURE_ARGS+=	--without-matio
 PLIST_SUB+=	MATIO="@comment "
 .else
-LIB_DEPENDS+=	matio.0:${PORTSDIR}/math/matio
+LIB_DEPENDS+=	matio.1:${PORTSDIR}/math/matio
 PLIST_SUB+=	MATIO=""
 .endif
 
@@ -205,7 +208,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|$$FFLAGS -DNDEBUG|$$FFLAGS -DNDEBUG -fPIC|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$(CFLAGS:-O%=)|-I${LOCALBASE}/include -L${LOCALBASE}/lib|' ${WRKSRC}/modules/elementary_functions/Makefile.in
 	${REINPLACE_CMD} -e 's|freebsd|__FreeBSD__|g' ${WRKSRC}/modules/sparse/includes/spConfig.h
-	${REINPLACE_CMD} -e 1715d ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 1730d ${WRKSRC}/Makefile.in
 	@# malloc.h -> stdlib.h conversions
 	@${GREP} -lr "<malloc.h>" ${WRKSRC} \
 		| ${XARGS} ${REINPLACE_CMD} -e \
@@ -214,7 +217,7 @@ post-patch:
 	${MV} ${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/My\ Project/ \
 		${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/My_Project/
 	${REINPLACE_CMD} -e 's|My Project|My_Project|g' ${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/VB.NET.vbproj
-	${REINPLACE_CMD} -e 317d ${WRKSRC}/contrib/Makefile.in
+	${REINPLACE_CMD} -e 319d ${WRKSRC}/contrib/Makefile.in
 	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/%%PORTDOCS%%/d' ${WRKSRC}/Makefile.in
