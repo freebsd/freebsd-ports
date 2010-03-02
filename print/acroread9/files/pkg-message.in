@@ -1,4 +1,16 @@
-====
+=== WARNING ===
+
+Adobe Reader 9 is currently not compatible with the latest version of
+Linux emulation on FreeBSD. Specifically, you may see the following
+error message:
+
+ terminate called after throwing an instance of 'RSException'
+
+If this happens, please try print/acroread8 instead.  Developments for
+improving the compatibility are in progress.  If you have any questions
+on this port, contact hrs@FreeBSD.org.
+
+==
 To run this, set ADOBE_LANG=%%ADOBE_LANG%% and use %%PREFIX%%/bin/acroread.
 (when LANG is set, ADOBE_LANG will be set automatically based on it)
-====
+==
