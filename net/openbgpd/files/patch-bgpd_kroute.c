@@ -2,10 +2,10 @@ Index: bgpd/kroute.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/kroute.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.7
-diff -u -p -r1.1.1.7 -r1.7
+retrieving revision 1.8
+diff -u -p -r1.1.1.7 -r1.8
 --- bgpd/kroute.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/kroute.c	19 Feb 2010 01:29:05 -0000	1.7
++++ bgpd/kroute.c	2 Mar 2010 05:48:19 -0000	1.8
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: kroute.c,v 1.169 2009/06/25 15:54:22 claudio Exp $ */
 +/*	$OpenBSD: kroute.c,v 1.173 2009/12/01 14:28:05 claudio Exp $ */
@@ -255,6 +255,15 @@ diff -u -p -r1.1.1.7 -r1.7
  			k6 = kn->kroute;
  			k6->r.flags &= ~F_NEXTHOP;
  			break;
+@@ -1675,7 +1684,7 @@ protect_lo(void)
+ 		log_warn("protect_lo");
+ 		return (-1);
+ 	}
+-	kr->r.prefix.s_addr = htonl(INADDR_LOOPBACK);
++	kr->r.prefix.s_addr = htonl(INADDR_LOOPBACK & IN_CLASSA_NET);
+ 	kr->r.prefixlen = 8;
+ 	kr->r.flags = F_KERNEL|F_CONNECTED;
+ 
 @@ -1689,7 +1698,7 @@ protect_lo(void)
  	}
  	memcpy(&kr6->r.prefix, &in6addr_loopback, sizeof(kr6->r.prefix));
@@ -264,6 +273,15 @@ diff -u -p -r1.1.1.7 -r1.7
  
  	if (RB_INSERT(kroute6_tree, &krt6, kr6) != NULL)
  		free(kr6);	/* kernel route already there, no problem */
+@@ -1788,7 +1797,7 @@ prefixlen2mask6(u_int8_t prefixlen)
+ }
+ 
+ #define	ROUNDUP(a)	\
+-    (((a) & ((sizeof(long)) - 1)) ? (1 + ((a) | ((sizeof(long)) - 1))) : (a))
++    (((a) & (sizeof(long) - 1)) ? (1 + ((a) | (sizeof(long) - 1))) : (a))
+ 
+ void
+ get_rtaddrs(int addrs, struct sockaddr *sa, struct sockaddr **rti_info)
 @@ -1849,7 +1858,7 @@ if_change(u_short ifindex, int flags, st
  					nh.connected = 1;
  					if ((nh.gateway.v4.s_addr =
