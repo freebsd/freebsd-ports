@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	pydance
-PORTVERSION=	1.0.3
-PORTREVISION=	4
+PORTVERSION=	1.1.0
 CATEGORIES=	games
-MASTER_SITES=	\
+MASTER_SITES=	http://people.freebsd.org/~sylvio/pydance/ \
+		http://icculus.org/pyddr/ \
 		http://offload1.icculus.org/pyddr/ \
-		http://www.icculus.org/pyddr/ \
 		http://www.informatik.uni-frankfurt.de/~polzer/distfiles/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${SONGS}
 DIST_SUBDIR=	pydance
@@ -27,13 +26,8 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_NOEGGINFO=	yes
 
-.if !defined(WITHOUT_PYDANCE_SONGS)
 PLIST_SUB=	SONGS=""
 SONGS=		forkbomb.ogg forkbomb.dance forkbomb-bg.jpg forkbomb-banner.png 6jan.ogg 6jan.dance 6jan-bg.jpg 6jan-banner.png synrg.ogg synrg.dance synrg-bg.png pydance-cdtitle.png
-.else
-PLIST_SUB=	SONGS="@comment "
-SONGS=
-.endif
 
 SUB_FILES=	pkg-message
 
@@ -56,10 +50,8 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_MAN} docs/man/pydance.6 ${MANPREFIX}/man/man6/
 	${LN} -sf ${PREFIX}/share/games/pydance/pydance.py ${PREFIX}/bin/pydance
 	cd ${WRKSRC} && ${INSTALL_DATA} pydance.posix.cfg ${PREFIX}/etc/pydance.cfg.sample
-.if !defined(WITHOUT_PYDANCE_SONGS)
 	for SONG in ${SONGS}; do ${INSTALL_DATA} ${_DISTDIR}/$$SONG ${PREFIX}/share/games/pydance/songs; done
 	${MV} ${PREFIX}/share/games/pydance/songs/pydance-cdtitle.png ${PREFIX}/share/games/pydance/songs/pydance.png
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
