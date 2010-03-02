@@ -1,11 +1,11 @@
---- ./Makefile.in.orig	2008-11-10 13:28:25.000000000 -0500
-+++ ./Makefile.in	2008-11-10 13:28:33.000000000 -0500
-@@ -347,7 +347,7 @@
- xdg_appsdir = @xdg_appsdir@
- xdg_directorydir = @xdg_directorydir@
+--- Makefile.in.orig	2010-02-23 22:14:08.000000000 -0300
++++ Makefile.in	2010-02-12 12:02:37.000000000 -0200
+@@ -342,7 +342,7 @@
  xdg_menudir = @xdg_menudir@
--SUBDIRS = libkgpgfile kmymoney2 po doc developer-doc
-+SUBDIRS = libkgpgfile kmymoney2 po doc
  
- # The following line adds the required admin files
- EXTRA_DIST = kmymoney2.kdevprj AUTHORS COPYING ChangeLog INSTALL \
+ # just make sure, we don't ship the sqlite subdirectory with the tarball
+-SOURCEDIRS = libkgpgfile libkdchart kmymoney2 po doc developer-doc
++SOURCEDIRS = libkgpgfile libkdchart kmymoney2 po doc
+ SUBDIRS = @SQLITE3@ $(SOURCEDIRS)
+ DIST_SUBDIRS = $(SOURCEDIRS) contrib
+ 

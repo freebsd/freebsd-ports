@@ -1,18 +1,18 @@
---- ./doc/en/Makefile.in.orig	2008-11-11 12:54:15.000000000 -0500
-+++ ./doc/en/Makefile.in	2008-11-11 13:03:11.000000000 -0500
-@@ -340,9 +340,9 @@
- 	qifimport-qifprofiledate.png qifimport-qifprofileeditor.png \
- 	report_configuration-reporttab.png \
- 	report_configuration-rowscolumns.png reports_view-all.png
+--- doc/en/Makefile.in.orig	2010-02-12 12:02:37.000000000 -0200
++++ doc/en/Makefile.in	2010-02-23 22:20:32.000000000 -0300
+@@ -338,9 +338,9 @@
+ 	select_database.png budgets_view.png forecast_view.png \
+ 	newfile-2.png newfile-3.png newfile-4.png newfile-5.png \
+ 	newfile-6.png
 -EXTRA_DIST = kmymoney2.1 $(DOCBOOK_FILES)
 +EXTRA_DIST = kmymoney2.1
  MOSTLYCLEANFILES = index.cache.bz2 kmymoney2.1.gz index.xml *.aux *.tex *.log **.out *.pdf errorlog *.ps *.html online-manual.tar.bz2
 -BUILT_SOURCES = index.cache.bz2 kmymoney2.1.gz $(PDF_TARGET)
 +BUILT_SOURCES = kmymoney2.1.gz
+ CHARSET = 
  KDE_LANG = en
  KDE_DOCS = kmymoney2 - $(DOCBOOK_FILES) $(SCREENSHOT_FILES)
- @HAVE_DSSSLCONVERSIONTOOLS_FALSE@@HAVE_HTMLCONVERSIONTOOLS_TRUE@PDF_TARGET = kmymoney-user.pdf
-@@ -495,7 +495,7 @@
+@@ -492,7 +492,7 @@
  
  #>- install-data-am:
  #>+ 1
@@ -21,7 +21,7 @@
  	@$(NORMAL_INSTALL)
  	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
  
-@@ -638,7 +638,7 @@
+@@ -652,7 +652,7 @@
  # Also install the man pages on this system
  .PHONY: install-docs uninstall-docs
  

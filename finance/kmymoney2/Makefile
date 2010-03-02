@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	kmymoney2
-PORTVERSION=	0.8.9
-PORTREVISION=	4
+PORTVERSION=	1.0.3
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/KMyMoney/${PORTVERSION}
 
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	KDE-based personal finance assistant
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+
 LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
 
@@ -39,18 +39,20 @@ DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS=	--enable-ofxplugin --enable-ofxbanking
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in \
-		${FILESDIR}/extra-patch-doc__en__Makefile.in
-.else
+.if !defined(NOPORTDOCS)
 CONFIGURE_ARGS=	--enable-ofxplugin --enable-ofxbanking --enable-pdf-docs
 
 # Add more build-time dependencies to generate the PDF docs
 BUILD_DEPENDS+=	jade:${PORTSDIR}/textproc/jade \
 		pdfjadetex:${PORTSDIR}/print/jadetex \
 		html2ps:${PORTSDIR}/print/html2ps-letter \
-		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular
+		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular \
+		cppunit-config:${PORTSDIR}/devel/cppunit \
+		recode:${PORTSDIR}/converters/recode
+.else
+CONFIGURE_ARGS=	--enable-ofxplugin --enable-ofxbanking
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in \
+		${FILESDIR}/extra-patch-doc__en__Makefile.in
 .endif
 
 post-patch:
