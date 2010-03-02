@@ -21,6 +21,8 @@ BUILD_DEPENDS=	openbabel:${PORTSDIR}/science/openbabel \
 LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc \
 		f2c:${PORTSDIR}/lang/f2c
 
+BROKEN=		does not compile
+
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_GL=		gl
