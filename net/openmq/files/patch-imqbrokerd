@@ -1,0 +1,16 @@
+--- src/solaris/bin/imqbrokerd.sh.orig	2009-09-11 20:39:07.000000000 +0200
++++ src/solaris/bin/imqbrokerd.sh	2009-12-09 23:42:43.000000000 +0100
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/sh -T
+ #############################################################################
+ #
+ # DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+@@ -53,6 +53,7 @@
+     # The broker's shutdown hooks will make sure it exits cleanly
+     if [ -n "$_javapid" ]; then
+         kill -TERM $_javapid
++        wait $_javapid
+     fi
+ }
+ 

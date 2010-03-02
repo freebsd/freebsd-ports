@@ -454,6 +454,7 @@
     SUBDIR += openldap24-server
     SUBDIR += openmcu
     SUBDIR += openmpi
+    SUBDIR += openmq
     SUBDIR += openntpd
     SUBDIR += openospfd
     SUBDIR += openradius
