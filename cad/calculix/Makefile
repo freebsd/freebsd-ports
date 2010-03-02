@@ -34,6 +34,8 @@ LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack	\
 		metis.1:${PORTSDIR}/math/metis	\
 		taucs.1:${PORTSDIR}/math/taucs
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 
 DIST_SOURCES=	ccx_${PORTVERSION}.src${EXTRACT_SUFX}	\
