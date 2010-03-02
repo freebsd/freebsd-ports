@@ -169,7 +169,7 @@ you update your ports collection, before attempting any port upgrades.
 
   If you use portupgrade:
 
-	portupgrade -or audio/openal audio/openal-soft
+	portupgrade -ro audio/openal audio/openal-soft
 
   If you want to stick with audio/openal, please specify the following ports
   make flag within /etc/make.conf (or an appropriate configuration file for
