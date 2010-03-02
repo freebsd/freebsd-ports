@@ -1,0 +1,21 @@
+%%SITE_PERL%%/WWW/Contact.pm
+%%SITE_PERL%%/WWW/Contact/Base.pm
+%%SITE_PERL%%/WWW/Contact/Plaxo.pm
+%%SITE_PERL%%/WWW/Contact/Rediffmail.pm
+%%SITE_PERL%%/WWW/Contact/GoogleContactsAPI.pm
+%%SITE_PERL%%/WWW/Contact/Lycos.pm
+%%SITE_PERL%%/WWW/Contact/Yahoo.pm
+%%SITE_PERL%%/WWW/Contact/Indiatimes.pm
+%%SITE_PERL%%/WWW/Contact/Mail.pm
+%%SITE_PERL%%/WWW/Contact/Hotmail.pm
+%%SITE_PERL%%/WWW/Contact/AOL.pm
+%%SITE_PERL%%/WWW/Contact/Gmail.pm
+%%SITE_PERL%%/WWW/Contact/CN/163.pm
+%%SITE_PERL%%/WWW/Contact/BG/Abv.pm
+%%SITE_PERL%%/WWW/Contact/BG/Mail.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Contact/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Contact
+@dirrmtry  %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrm %%SITE_PERL%%/WWW/Contact/BG
+@dirrm %%SITE_PERL%%/WWW/Contact/CN
+@dirrm %%SITE_PERL%%/WWW/Contact
