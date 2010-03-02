@@ -1,6 +1,15 @@
 --- Imakefile.orig	2004-05-20 00:39:22.000000000 +0900
-+++ Imakefile	2008-09-07 15:25:52.000000000 +0900
-@@ -129,7 +129,7 @@
++++ Imakefile	2009-04-13 02:34:56.483862702 +0900
+@@ -122,14 +122,14 @@
+ 
+ CANNAROOT = .
+ SERVERDIR = server dic/phono dic/ideo
+-CLIENTDIR = cmd dic/phono misc
+-SGSDIR = canna lib
++CLIENTDIR = cmd
++SGSDIR = canna lib dic/phono misc
+ MOSTDIR = lib canna server cmd dic/phono misc doc
+ 
  install:: mkbindir mklibdir mkdicdir mkerrdir
  instserver:: mkdicdir mkerrdir
  instclient:: mkbindir mkdicdir
