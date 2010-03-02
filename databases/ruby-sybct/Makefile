@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sybct
-PORTVERSION=	0.2.11
+PORTVERSION=	0.2.12
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://enjoy1.bb-east.ne.jp/~tetsu/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,6 +21,10 @@ LIB_DEPENDS=	tds.5:${PORTSDIR}/databases/freetds
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_ICONV=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/extconf.rb
 
 post-install:
 	@${MKDIR} ${RUBY_SITELIBDIR}
