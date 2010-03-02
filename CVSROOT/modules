@@ -8688,6 +8688,7 @@ madman                          ports/audio/madman
 madplay                         ports/audio/madplay
 maelstrom                       ports/games/maelstrom
 mafft                           ports/biology/mafft
+magento                         ports/www/magento
 magic                           ports/cad/magic
 magiccube4d                     ports/games/magiccube4d
 magicfilter                     ports/print/magicfilter
@@ -10691,6 +10692,7 @@ p5-Best                         ports/devel/p5-Best
 p5-Bigtop                       ports/www/p5-Bigtop
 p5-Bio-ASN1-EntrezGene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-Bio-Das                      ports/biology/p5-Bio-Das
+p5-Bio-Das-Lite                 ports/biology/p5-Bio-Das-Lite
 p5-Bio-Glite                    ports/biology/p5-Bio-Glite
 p5-Bio-Graphics                 ports/biology/p5-Bio-Graphics
 p5-Bio-MAGETAB                  ports/biology/p5-Bio-MAGETAB
@@ -14384,6 +14386,7 @@ p5-bigtop                       ports/www/p5-Bigtop
 p5-bind-conf_parser             ports/dns/p5-BIND-Conf_Parser
 p5-bio-asn1-entrezgene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-bio-das                      ports/biology/p5-Bio-Das
+p5-bio-das-lite                 ports/biology/p5-Bio-Das-Lite
 p5-bio-glite                    ports/biology/p5-Bio-Glite
 p5-bio-graphics                 ports/biology/p5-Bio-Graphics
 p5-bio-magetab                  ports/biology/p5-Bio-MAGETAB
@@ -21294,6 +21297,10 @@ ru-rubygem-russian              ports/russian/rubygem-russian
 ru-rubygem-rutils               ports/russian/rubygem-rutils
 ru-rus-ispell                   ports/russian/rus-ispell
 ru-rux                          ports/russian/rux
+ru-stardict-bars                ports/russian/stardict-bars
+ru-stardict-dal                 ports/russian/stardict-dal
+ru-stardict-mueller7            ports/russian/stardict-mueller7
+ru-stardict-mueller7accent      ports/russian/stardict-mueller7accent
 ru-tac+ia                       ports/russian/tac+ia
 ru-tidyup-mail                  ports/russian/tidyup-mail
 ru-unzip                        ports/russian/unzip
@@ -22682,6 +22689,14 @@ stamp                           ports/graphics/stamp
 stan                            ports/misc/stan
 star                            ports/archivers/star
 stardates                       ports/astro/stardates
+stardict-BritannicaConcise      ports/textproc/stardict-BritannicaConcise
+stardict-MerrianWebster         ports/textproc/stardict-MerrianWebster
+stardict-OxfordCollocation      ports/textproc/stardict-OxfordCollocation
+stardict-britannicaconcise      ports/textproc/stardict-BritannicaConcise
+stardict-longman                ports/textproc/stardict-longman
+stardict-merrianwebster         ports/textproc/stardict-MerrianWebster
+stardict-oald                   ports/textproc/stardict-oald
+stardict-oxfordcollocation      ports/textproc/stardict-OxfordCollocation
 stardict2                       ports/textproc/stardict2
 stardict2-dictd_mova            ports/textproc/stardict2-dictd_mova
 stardict2-quick                 ports/textproc/stardict2-quick
