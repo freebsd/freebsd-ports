@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	3.4.3
-PORTREVISION=	2
+PORTVERSION=	3.4.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
@@ -63,9 +62,6 @@ CMAKE_ARGS += -DWITH_DBUS=YES
 .else
 CMAKE_ARGS += -DWITH_DBUS=NO
 .endif
-
-post-patch:
-	@${RM} ${WRKSRC}/lib/awful/*.orig
 
 pre-configure:
 	@${REINPLACE_CMD} \
