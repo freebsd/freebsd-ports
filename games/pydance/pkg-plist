@@ -27,11 +27,13 @@ share/games/pydance/endless.py
 share/games/pydance/error.py
 share/games/pydance/fileparsers.py
 share/games/pydance/fontfx.py
+share/games/pydance/fonttheme.py
 share/games/pydance/games.py
 share/games/pydance/gameselect.py
 share/games/pydance/gfxtheme.py
 share/games/pydance/grades.py
 share/games/pydance/gradescreen.py
+share/games/pydance/i18n.py
 share/games/pydance/images/bg.png
 share/games/pydance/images/button.png
 share/games/pydance/images/courseselect-bg.png
@@ -39,6 +41,7 @@ share/games/pydance/images/endless-bg.png
 share/games/pydance/images/error-bg.png
 share/games/pydance/images/gameselect-bg.png
 share/games/pydance/images/go.png
+share/games/pydance/images/go_ca.png
 share/games/pydance/images/grade-bg.png
 share/games/pydance/images/indicator.png
 share/games/pydance/images/menu-bg.png
@@ -54,6 +57,7 @@ share/games/pydance/images/rating-d.png
 share/games/pydance/images/rating-ee.png
 share/games/pydance/images/rating-f.png
 share/games/pydance/images/ready.png
+share/games/pydance/images/ready_ca.png
 share/games/pydance/images/select-3p.png
 share/games/pydance/images/select-4p.png
 share/games/pydance/images/select-5p.png
@@ -128,6 +132,9 @@ share/games/pydance/themes/dj/djenzay/rankings/secondchances.ogg
 share/games/pydance/themes/dj/djenzay/rankings/sure.ogg
 share/games/pydance/themes/dj/djenzay/rankings/tobe.ogg
 share/games/pydance/themes/dj/none/djtheme.cfg
+share/games/pydance/themes/font/default.cfg
+share/games/pydance/themes/font/VL-PGothic-Regular.ttf
+share/games/pydance/themes/font/VL PGothic.cfg
 share/games/pydance/themes/gfx/32x32/ddresque.zip
 share/games/pydance/themes/gfx/32x32/default/arr_c_c_0.png
 share/games/pydance/themes/gfx/32x32/default/arr_c_c_1.png
@@ -364,6 +371,7 @@ share/games/pydance/util.py
 @dirrm share/games/pydance/themes/gfx/32x32/default
 @dirrm share/games/pydance/themes/gfx/32x32
 @dirrm share/games/pydance/themes/gfx
+@dirrm share/games/pydance/themes/font
 @dirrm share/games/pydance/themes/dj/none
 @dirrm share/games/pydance/themes/dj/djenzay/rankings
 @dirrm share/games/pydance/themes/dj/djenzay/positive
