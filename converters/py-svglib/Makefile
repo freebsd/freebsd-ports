@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	svglib
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	converters python
 MASTER_SITES=	CHEESESHOP \
 		http://www.dinu-gherman.net/tmp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Library For Reading And Converting SVG
 
 USE_PYTHON=	yes
