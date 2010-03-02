@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -52,7 +51,7 @@ MAKE_ENV+=	V=1
 .endif
 
 .ifndef(WITHOUT_WXGTK)
-USE_WX=		yes
+USE_WX=		2.8+
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 MAN1+=		mmg.1
