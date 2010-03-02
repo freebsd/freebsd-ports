@@ -1,0 +1,104 @@
+#!/bin/sh
+#
+# Copyright (c) 2009 Radim Kolar. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#
+# 1. Redistributions of source code must retain the above copyright
+#   notice, this list of conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright
+#   notice, this list of conditions and the following disclaimer in the
+#   documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+
+# $Id$
+
+# PROVIDE: imq
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable Open MQ:
+#
+#  imq_enable="YES"
+#  # optional
+#  imq_data="/var/spool/imq"
+#  imq_vmargs="-Xms192m -Xmx192m -Xss128k -XX:MaxGCPauseMillis=5000"
+
+name="imq"
+. %%RC_SUBR%%
+
+# set defaults
+imq_enable=${imq_enable:-"NO"}
+imq_data=${imq_data:-"/var/spool/imq"}
+
+rcvar=`set_rcvar`
+load_rc_config $name
+pidfile=/var/run/imq.pid
+start_cmd="${name}_start"
+command=/usr/local/imq/bin/imqbrokerd
+command_args="-bgnd -silent"
+command_interpreter="/bin/sh"
+sigstop=INT
+CONF_FILE=%%PREFIX%%/etc/mq/imqbrokerd.conf
+
+#Check if we have enabled AUTOSTART feature, which overrides rcvar=NO
+if ! checkyesno ${rcvar}; then
+  if [ -f $CONF_FILE -a -r $CONF_FILE ]; then
+     autostart=`grep "^AUTOSTART=" $CONF_FILE | cut -c11-`
+     if checkyesno autostart; then
+       eval ${rcvar}=YES
+     fi
+  fi
+fi
+
+#check if RESTART feature is enabled
+if [ -f $CONF_FILE -a -r $CONF_FILE ]; then
+     autorestart=`grep "^RESTART=" $CONF_FILE | cut -c9-`
+     autoargs=`grep "^ARGS=" $CONF_FILE | cut -c6-`
+     if checkyesno autorestart; then
+       command_args="$command_args -autorestart"
+     fi
+fi
+
+#add vmargs if needed
+if [ -n "$imq_vmargs" ]; then
+  command_args="$command_args -vmargs \"$imq_vmargs\""
+fi
+
+#load aditional command line arguments from broker config file
+if [ -n $autoargs ]; then
+   echo "$autoargs" | grep -q -- '-varhome'
+   if [ ! $? -eq 0 ]; then
+       command_args="$command_args -varhome $imq_data $autoargs"
+   else
+       command_args="$command_args $autoargs"
+   fi
+fi
+
+imq_start()
+{
+  if [ -z "$rc_pid" ]; then
+	   echo -n "Starting $name"
+	   ${command} ${command_args} &
+	   echo -n $! > $pidfile
+	   echo "."
+  else
+           echo "imq is already running with pid=$rc_pid."
+  fi
+}
+
+run_rc_command "$1"
