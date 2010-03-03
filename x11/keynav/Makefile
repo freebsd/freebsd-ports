@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	keynav
-DISTVERSION=	20091108
+DISTVERSION=	0.20100302.2713
+PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Quickly select a portion of the screen using minimal keystrokes
 
-USE_GNOME=	pkgconfig
+LIB_DEPENDS=	xdo.1:${PORTSDIR}/x11/xdotool
+
+USE_GNOME=	glib20
 USE_XORG=	xtst x11 xinerama
-ALL_TARGET=	${PORTNAME}
+USE_GMAKE=	yes
 
 PLIST_FILES=	bin/keynav
 PORTEXAMPLES=	keynavrc
@@ -27,9 +30,5 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/keynavrc ${EXAMPLESDIR}
 .endif
-
-# Because gcc in RELENG_6 doesn't support -Wno-missing-field-initializers
-post-patch:
-	@${REINPLACE_CMD} -e 's,-Wno-missing-field-initializers,,' ${WRKSRC}/xdotool/Makefile
 
 .include <bsd.port.mk>
