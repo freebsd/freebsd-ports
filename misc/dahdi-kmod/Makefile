@@ -7,6 +7,7 @@
 
 PORTNAME=	dahdi
 PORTVERSION=	${DAHDI_VERSION:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	misc kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fjoe
@@ -42,13 +43,13 @@ MAN8=	dahdi_cfg.8\
 
 pre-everything::
 	@if [ ! -f /usr/src/sys/Makefile ]; then \
-		${ECHO_MSG} ">> The zaptel port needs FreeBSD kernel source code to compile."; \
+		${ECHO_MSG} ">> The dahdi port needs FreeBSD kernel source code to compile."; \
 		${ECHO_MSG} ">> Please install FreeBSD kernel source code in /usr/src/sys."; \
 		${FALSE}; \
 	fi
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,g'\
+	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,g'\
 		${WRKSRC}/tools/dahdi_cfg.c ${WRKSRC}/tools/fxotune.c\
 		${WRKSRC}/tools/doc/dahdi_cfg.8 ${WRKSRC}/tools/doc/fxotune.8
 
