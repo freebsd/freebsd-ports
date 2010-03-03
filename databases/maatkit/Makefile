@@ -7,6 +7,7 @@
 
 PORTNAME=	maatkit
 PORTVERSION=	5686
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -16,7 +17,8 @@ COMMENT=	Collection of essential command-line utilities for MySQL
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+		p5-IO-Compress-Zlib>=2.015:${PORTSDIR}/archivers/p5-IO-Compress-Zlib
 
 PERL_CONFIGURE=	yes
 
