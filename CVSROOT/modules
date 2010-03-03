@@ -5995,6 +5995,7 @@ ja-flower-fpw                   ports/japanese/flower-fpw
 ja-foldoc-fpw                   ports/japanese/foldoc-fpw
 ja-font-ipa                     ports/japanese/font-ipa
 ja-font-ipa-uigothic            ports/japanese/font-ipa-uigothic
+ja-font-ipaex                   ports/japanese/font-ipaex
 ja-font-kochi                   ports/japanese/font-kochi
 ja-font-mona-ipa                ports/japanese/font-mona-ipa
 ja-font-mplus                   ports/japanese/font-mplus
@@ -13137,6 +13138,7 @@ p5-Proc-Queue                   ports/devel/p5-Proc-Queue
 p5-Proc-Reliable                ports/devel/p5-Proc-Reliable
 p5-Proc-Simple                  ports/devel/p5-Proc-Simple
 p5-Proc-Wait3                   ports/devel/p5-Proc-Wait3
+p5-Proc-WaitStat                ports/devel/p5-Proc-WaitStat
 p5-Project-Gantt                ports/devel/p5-Project-Gantt
 p5-Pugs-Compiler-Rule           ports/lang/p5-Pugs-Compiler-Rule
 p5-Qmail-Envelope               ports/mail/p5-Qmail-Envelope
@@ -13868,6 +13870,7 @@ p5-WWW-Babelfish                ports/www/p5-WWW-Babelfish
 p5-WWW-Baseball-NPB             ports/www/p5-WWW-Baseball-NPB
 p5-WWW-BitTorrent               ports/net-p2p/p5-WWW-BitTorrent
 p5-WWW-Comic                    ports/www/p5-WWW-Comic
+p5-WWW-Contact                  ports/www/p5-WWW-Contact
 p5-WWW-Curl                     ports/www/p5-WWW-Curl
 p5-WWW-DHL                      ports/www/p5-WWW-DHL
 p5-WWW-Dilbert                  ports/www/p5-WWW-Dilbert
@@ -16894,6 +16897,7 @@ p5-proc-queue                   ports/devel/p5-Proc-Queue
 p5-proc-reliable                ports/devel/p5-Proc-Reliable
 p5-proc-simple                  ports/devel/p5-Proc-Simple
 p5-proc-wait3                   ports/devel/p5-Proc-Wait3
+p5-proc-waitstat                ports/devel/p5-Proc-WaitStat
 p5-project-gantt                ports/devel/p5-Project-Gantt
 p5-psgi                         ports/www/p5-PSGI
 p5-pugs-compiler-rule           ports/lang/p5-Pugs-Compiler-Rule
@@ -17673,6 +17677,7 @@ p5-www-babelfish                ports/www/p5-WWW-Babelfish
 p5-www-baseball-npb             ports/www/p5-WWW-Baseball-NPB
 p5-www-bittorrent               ports/net-p2p/p5-WWW-BitTorrent
 p5-www-comic                    ports/www/p5-WWW-Comic
+p5-www-contact                  ports/www/p5-WWW-Contact
 p5-www-curl                     ports/www/p5-WWW-Curl
 p5-www-dhl                      ports/www/p5-WWW-DHL
 p5-www-dilbert                  ports/www/p5-WWW-Dilbert
