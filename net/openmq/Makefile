@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	openmq
-PORTVERSION=	4.5.b03
+PORTVERSION=	4.4.u1.b7
+PORTEPOCH=	1
 CATEGORIES=	net java
-MASTER_SITES=	http://download.java.net/mq/open-mq/4.5/b03/
-DISTNAME=	openmq4_5-source
+MASTER_SITES=	http://download.java.net/mq/open-mq/4.4u1/b7-final/
+DISTNAME=	openmq4_4-source
 
 MAINTAINER=	hsn@sendmail.cz
-COMMENT=	Open Message Queue - OSS Java Message Service Broker
+COMMENT=	Open Message Queue - Java Message Service Broker ${CLIENT_COMMENT}
 
 BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
@@ -93,7 +94,7 @@ post-install:
 .ifdef IMQ_CLIENT
 		@${CAT} ${PKGMESSAGE}
 .else
-		PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 .include <bsd.port.mk>
