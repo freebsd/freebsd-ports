@@ -6,6 +6,7 @@
 
 PORTNAME=	gdcm
 PORTVERSION=	${GDCM_MAJ}.${GDCM_MIN}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/gdcm/gdcm%202.x/GDCM%20${PORTVERSION}
 
@@ -44,5 +45,8 @@ post-install:
 .else
 CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=NO
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's| NAMELINK_SKIP||; s| NAMELINK_ONLY||' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
