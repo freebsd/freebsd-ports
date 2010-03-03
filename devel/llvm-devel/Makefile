@@ -16,7 +16,7 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
-BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 .endif
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
@@ -118,7 +118,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
 
-TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
+TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
 	if [ `${ID} -u` = 0 ]; then \
 		${CHOWN} -R nobody ${WRKSRC}/test; \
