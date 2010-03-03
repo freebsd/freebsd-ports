@@ -401,7 +401,6 @@ include/llvm/CodeGen/AsmPrinter.h
 include/llvm/CodeGen/BinaryObject.h
 include/llvm/CodeGen/CalcSpillWeights.h
 include/llvm/CodeGen/CallingConvLower.h
-include/llvm/CodeGen/DAGISelHeader.h
 include/llvm/CodeGen/DwarfWriter.h
 include/llvm/CodeGen/ELFRelocation.h
 include/llvm/CodeGen/FastISel.h
