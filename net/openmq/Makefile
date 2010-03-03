@@ -9,13 +9,20 @@ PORTNAME=	openmq
 PORTVERSION=	4.4.u1.b7
 PORTEPOCH=	1
 CATEGORIES=	net java
-MASTER_SITES=	http://download.java.net/mq/open-mq/4.4u1/b7-final/
-DISTNAME=	openmq4_4-source
+MASTER_SITES=	http://download.java.net/mq/open-mq/4.4u1/b7-final/ \
+		http://download.java.net/maven/2/javax/javaee-api/6.0-SNAPSHOT/:2 \
+		http://download.java.net/maven/2/com/sun/grizzly/grizzly-nio-framework/1.9.18a/:3 \
+		http://download.java.net/maven/2/com/sun/woodstock/dependlibs/jhall/2.0/:4
+DISTFILES=	${SRCDIST} ${BOOTJARS}
+EXTRACT_ONLY=	${SRCDIST}
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Open Message Queue - Java Message Service Broker ${CLIENT_COMMENT}
 
-BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+SRCDIST=	openmq4_4-source.zip
+BOOTJARS=	javaee-api-6.0-SNAPSHOT.jar:2 \
+		grizzly-nio-framework-1.9.18a.jar:3 \
+		jhall-2.0.jar:4
 
 USE_ZIP=	yes
 USE_JAVA=	yes
@@ -26,12 +33,23 @@ WRKSRC=		${WRKDIR}/mq
 PLIST=		${WRKDIR}/pkg-plist
 
 USE_ANT=	yes
-ALL_TARGET=	bootstrap all
 .ifndef IMQ_CLIENT
 USE_RC_SUBR=	imq
 .else
 SUB_FILES=	pkg-message
 .endif
+
+# Get the bootstrap jars in place before the build starts, because
+# pointyhat doesn't allow them to be downloaded by the "bootstrap"
+# target in the Ant file.
+pre-build:
+		@${MKDIR} ${WRKSRC}/extlib
+		@${CP} ${DISTDIR}/javaee-api-6.0-SNAPSHOT.jar \
+			${WRKSRC}/extlib/javaee-api-6.0.jar
+		@${CP} ${DISTDIR}/grizzly-nio-framework-1.9.18a.jar \
+			${WRKSRC}/extlib/grizzly.jar
+		@${CP} ${DISTDIR}/jhall-2.0.jar \
+			${WRKSRC}/extlib/jhall.jar
 
 post-build:
 		@${RM} ${WRKSRC}/dist/mq/bin/*.exe
