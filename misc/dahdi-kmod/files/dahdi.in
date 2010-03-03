@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dahdi
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+# BEFORE: asterisk
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dahdi_enable (bool):			YES/NO (default: NO)
+# dahdi_modules (list of strings):	dahdi modules to load at boot (default: dahdi)
+#	Valid modules are: dahdi, wct4xxp, wcb4xxp
+#
+# Example:
+#
+# dahdi_enable="YES"
+# dahdi_modules="wct4xxp"
+#
+
+. %%RC_SUBR%%
+
+name="dahdi"
+start_cmd="dahdi_start"
+stop_cmd="dahdi_stop"
+load_rc_config $name
+
+kmod_dir=%%PREFIX%%/lib/dahdi
+dahdi_modules=${dahdi_modules:-dahdi}
+# reverse list
+dahdi_modules_unload=""
+for m in ${dahdi_modules}; do
+	dahdi_modules_unload="$m ${dahdi_modules_unload}"
+done
+
+dahdi_start()
+{
+	echo -n " ${name}"
+
+	for m in ${dahdi_modules}; do
+		kldload ${kmod_dir}/$m.ko || exit 1
+	done
+	%%PREFIX%%/sbin/dahdi_cfg
+}
+
+dahdi_stop()
+{
+        echo -n " ${name}"
+	for m in ${dahdi_modules_unload}; do
+		kldunload $m
+	done
+}
+
+run_rc_command "$1"
