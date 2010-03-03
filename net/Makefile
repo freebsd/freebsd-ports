@@ -455,6 +455,7 @@
     SUBDIR += openmcu
     SUBDIR += openmpi
     SUBDIR += openmq
+    SUBDIR += openmq-client
     SUBDIR += openntpd
     SUBDIR += openospfd
     SUBDIR += openradius
