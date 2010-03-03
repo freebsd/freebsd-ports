@@ -15,8 +15,10 @@
 #					Default: none (which respects CFLAGS)
 # CMAKE_VERBOSE		- Verbose build
 #					Default: not set
+# CMAKE_OUTSOURCE	- Instruct to perform an out-of-source build
+# 					Default: not set
 # CMAKE_SOURCE_PATH	- Path to sourcedir for cmake
-#					Default: .
+#					Default: ${WRKSRC}
 # CMAKE_INSTALL_PREFIX	- prefix for cmake to use for installation.
 #					Default: ${PREFIX}
 #
@@ -54,7 +56,12 @@ CMAKE_ARGS+=	-DCMAKE_C_COMPILER:STRING="${CC}" \
 #
 # Default build type and sourcedir
 #
-CMAKE_SOURCE_PATH?=	.
+CMAKE_SOURCE_PATH?=	${WRKSRC}
+.if defined(CMAKE_OUTSOURCE)
+CONFIGURE_WRKSRC=	${WRKDIR}/.build
+BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
+.endif
 CMAKE_INSTALL_PREFIX?=	${PREFIX}
 CMAKE_BUILD_TYPE?=	#none
 
@@ -89,6 +96,6 @@ CMAKE_ARGS+=	-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 #
 .if !target(do-configure)
 do-configure:
+	${MKDIR} ${CONFIGURE_WRKSRC}
 	@cd ${CONFIGURE_WRKSRC}; ${SETENV} ${CMAKE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_SOURCE_PATH}
 .endif
-
