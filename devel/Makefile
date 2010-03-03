@@ -435,6 +435,7 @@
     SUBDIR += gdb53-act
     SUBDIR += gdb6
     SUBDIR += gdbmods
+    SUBDIR += gdcm
     SUBDIR += geany
     SUBDIR += gearmand
     SUBDIR += generate
