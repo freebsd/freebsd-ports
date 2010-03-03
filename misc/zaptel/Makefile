@@ -21,12 +21,13 @@ LIB_DEPENDS=	newt.52:${PORTSDIR}/devel/newt
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
 ONLY_FOR_ARCHS=	i386 amd64
+CONFLICTS=	dahdi-[0-9]*
 
 MAKE_ENV=	KMODDIR=${PREFIX}/lib/zaptel
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	zaptel
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}-bsd-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-bsd-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
