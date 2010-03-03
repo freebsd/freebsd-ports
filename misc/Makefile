@@ -59,6 +59,7 @@
     SUBDIR += cstream
     SUBDIR += cuecat
     SUBDIR += cwish
+    SUBDIR += dahdi
     SUBDIR += datedif
     SUBDIR += ddate
     SUBDIR += deco
