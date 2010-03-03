@@ -1,21 +1,14 @@
---- src/Makefile.orig	Sun Jan 28 01:57:12 2007
-+++ src/Makefile	Sun Jan 28 01:59:57 2007
-@@ -20,10 +20,18 @@
-   LDLIBS = -lpthread
-   RESULT_DIR = ../lib/
+
+$FreeBSD$
+
+--- src/Makefile.orig
++++ src/Makefile
+@@ -20,7 +20,7 @@
+   override LDFLAGS += --shared -Wl,-soname=$(SHARED_LIB_VERSIONED) -fPIC
+   LDLIBS := -lpthread
  else
-+ifeq ($(OS), FreeBSD)
-+  SHARED_LIB_BASE = libloki.so
-+  SHARED_LIB_VERSIONED = libloki.so.0
-+  LDFLAGS = --shared -Wl,-soname=$(SHARED_LIB_VERSIONED)
-+  LDLIBS = -pthread
-+  RESULT_DIR = ../lib/
-+else
-   SHARED_LIB_BASE = libloki.dll
-   LDFLAGS = --shared
-   LDLIBS =
-   RESULT_DIR = ../lib/
-+endif
- endif
- endif
- 
+-ifeq ($(OS), GNU/kFreeBSD)
++ifeq ($(OS), $(filter $(OS),GNU/kFreeBSD FreeBSD))
+   SHARED_LIB_BASE := libloki.so
+   SHARED_LIB_VERSIONED := libloki.so.$(VERSION)
+   override LDFLAGS += --shared -Wl,-soname=$(SHARED_LIB_VERSIONED) -fPIC

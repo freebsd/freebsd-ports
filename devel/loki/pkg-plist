@@ -1,5 +1,9 @@
 include/loki/AbstractFactory.h
+include/loki/Allocator.h
 include/loki/AssocVector.h
+include/loki/CachedFactory.h
+include/loki/CheckReturn.h
+include/loki/Checker.h
 include/loki/ConstPolicy.h
 include/loki/DataGenerators.h
 include/loki/EmptyType.h
@@ -7,6 +11,8 @@ include/loki/Factory.h
 include/loki/Function.h
 include/loki/Functor.h
 include/loki/HierarchyGenerators.h
+include/loki/Key.h
+include/loki/LevelMutex.h
 include/loki/LockingPtr.h
 include/loki/LokiExport.h
 include/loki/LokiTypeInfo.h
@@ -16,6 +22,8 @@ include/loki/OrderedStatic.h
 include/loki/Pimpl.h
 include/loki/RefToValue.h
 include/loki/Register.h
+include/loki/SPCachedFactory.h
+include/loki/SafeBits.h
 include/loki/SafeFormat.h
 include/loki/ScopeGuard.h
 include/loki/Sequence.h
@@ -48,7 +56,7 @@ include/loki/yasli/yasli_traits.h
 include/loki/yasli/yasli_vector.h
 lib/libloki.a
 lib/libloki.so
-lib/libloki.so.0
+lib/libloki.so.0.1.7
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/Notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/README

@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- test/SingletonDll/Makefile.orig
++++ test/SingletonDll/Makefile
+@@ -5,6 +5,11 @@
+   LIB2 := libsingletondll.dylib
+   SHARED_LIB_FLAG := -dynamiclib -fPIC
+ else
++ifeq ($(OS),FreeBSD)
++  LIB1 := libfoo.so
++  LIB2 := libsingletondll.so
++  SHARED_LIB_FLAG := --shared -fPIC
++else
+ ifeq ($(OS),Linux)
+   LIB1 := libfoo.so
+   LIB2 := libsingletondll.so
+@@ -15,6 +20,7 @@
+   SHARED_LIB_FLAG := --shared
+ endif
+ endif
++endif
+ 
+ BIN1 := client$(BIN_SUFFIX)
+ SRC1 := client.cpp
