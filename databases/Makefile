@@ -460,6 +460,7 @@
     SUBDIR += pecl-mongo
     SUBDIR += pecl-sqlite
     SUBDIR += pg_filedump
+    SUBDIR += pg_rman
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgbouncer
