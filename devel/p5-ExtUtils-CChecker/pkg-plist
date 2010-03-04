@@ -1,0 +1,5 @@
+%%SITE_PERL%%/ExtUtils/CChecker.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/CChecker/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/CChecker
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils
+@dirrmtry %%SITE_PERL%%/ExtUtils

@@ -1,0 +1,10 @@
+Often Perl modules are written to wrap functionallity found in existing 
+C headers, libraries, or to use OS-specific features. It is useful in 
+the Build.PL or Makefile.PL file to check for the existance of these 
+requirements before attempting to actually build the module.
+
+Objects in this class provide an extension around ExtUtils::CBuilder to 
+simplify the creation of a .c file, compiling, linking and running it, 
+to test if a certain feature is present.
+
+WWW: http://search.cpan.org/~pevans/ExtUtils-CChecker-0.02/
