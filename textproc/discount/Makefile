@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	discount
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/markdown/
 
@@ -22,6 +22,7 @@ INSTALL_TARGET=	install install.man
 
 MAN1=		markdown.1
 MAN3=		markdown.3 \
+		mkd-callbacks.3 \
 		mkd-functions.3 \
 		mkd-line.3 \
 		mkd_cleanup.3 \
