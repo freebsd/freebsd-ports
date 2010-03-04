@@ -8,14 +8,14 @@
 #
 
 PORTNAME=	nikto
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 PORTEPOCH=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
 		http://www.mirrors.wiretapped.net/security/vulnerability-assessment/${PORTNAME}/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	niels@heinen.ws
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 MAN1=		nikto.1
@@ -24,7 +24,7 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
-PORTDOCS=	CHANGES.txt LICENSE.txt nikto_manual.html
+PORTDOCS=	CHANGES.txt LICENSE.txt nikto.dtd nikto_manual.html
 
 OPTIONS+=	SSLEAY "Use NET::SSLeay for ssl scanning" on
 OPTIONS+=	NMAP "Use security/nmap for port scanning" on
