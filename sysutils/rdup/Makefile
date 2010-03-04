@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rdup
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://miek.nl/projects/rdup/
 
@@ -29,7 +29,6 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/rdup \
-		bin/rdup-ln \
 		bin/rdup-simple \
 		bin/rdup-tr \
 		bin/rdup-up
@@ -42,6 +41,5 @@ MAN7=		rdup-backups.7
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/sh/rdup-simple.in
-	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/sh/rdup-ln
 
 .include <bsd.port.mk>
