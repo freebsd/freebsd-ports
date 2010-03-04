@@ -1,5 +1,5 @@
---- GNUmakefile.in.orig	2009-08-10 04:09:38.000000000 -0700
-+++ GNUmakefile.in	2009-10-09 20:27:57.000000000 -0700
+--- GNUmakefile.in.orig	2010-03-02 11:04:44.000000000 -0800
++++ GNUmakefile.in	2010-03-02 11:06:56.000000000 -0800
 @@ -19,7 +19,7 @@
  sbindir=@sbindir@
  mandir=@mandir@
@@ -9,12 +9,11 @@
  
  ARCHIVE_L=@ARCHIVE_L@
  NETTLE_L=@NETTLE_L@
-@@ -89,8 +89,6 @@
+@@ -93,7 +93,6 @@
  
  install: all
  	mkdir -p ${DESTDIR}${mandir}/man1
 -	mkdir -p ${DESTDIR}${datadir}
--	mkdir -p ${DESTDIR}${libdir}/rdup
  	for i in ${CMD}; do ${INSTALL} $$i ${DESTDIR}${bindir}/$$i ; done
  	for i in ${SH}; do ${INSTALL} sh/$$i ${DESTDIR}${bindir}/$$i ; done
  	for i in ${MAN1}; do [ -f $$i ] &&  ${INSTALL_DATA} $$i ${DESTDIR}${mandir}/man1/`basename $$i` ; done; exit 0
