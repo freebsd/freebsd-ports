@@ -8,9 +8,10 @@
 PORTNAME=	corkscrew
 PORTVERSION=	2.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.agroman.net/corkscrew/
+MASTER_SITES=	http://www.agroman.net/corkscrew/ \
+		CRITICAL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A HTTP tunnelling utility for SSH
 
 GNU_CONFIGURE=	yes
