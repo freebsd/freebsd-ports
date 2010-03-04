@@ -1,7 +1,7 @@
-diff -ur ../binutils-2.19.orig/bfd/archures.c ./bfd/archures.c
---- ../binutils-2.19.orig/bfd/archures.c	2008-08-09 07:35:12.000000000 +0200
-+++ ./bfd/archures.c	2009-08-07 13:25:45.000000000 +0200
-@@ -357,6 +357,13 @@
+diff -Nur ../binutils-2.20.orig/bfd/archures.c ./bfd/archures.c
+--- ../binutils-2.20.orig/bfd/archures.c	2009-09-10 13:47:11.000000000 +0200
++++ ./bfd/archures.c	2010-03-04 11:34:08.000000000 +0100
+@@ -368,6 +368,13 @@
  .#define bfd_mach_avr5		5
  .#define bfd_mach_avr51		51
  .#define bfd_mach_avr6		6
@@ -15,11 +15,27 @@ diff -ur ../binutils-2.19.orig/bfd/archures.c ./bfd/archures.c
  .  bfd_arch_bfin,        {* ADI Blackfin *}
  .#define bfd_mach_bfin          1
  .  bfd_arch_cr16,       {* National Semiconductor CompactRISC (ie CR16). *}
-Only in ./bfd: archures.c.orig
-diff -ur ../binutils-2.19.orig/bfd/cpu-avr.c ./bfd/cpu-avr.c
---- ../binutils-2.19.orig/bfd/cpu-avr.c	2008-08-09 07:35:12.000000000 +0200
-+++ ./bfd/cpu-avr.c	2009-08-07 13:25:45.000000000 +0200
-@@ -126,7 +126,29 @@
+diff -Nur ../binutils-2.20.orig/bfd/bfd-in2.h ./bfd/bfd-in2.h
+--- ../binutils-2.20.orig/bfd/bfd-in2.h	2009-09-10 13:47:11.000000000 +0200
++++ ./bfd/bfd-in2.h	2010-03-04 11:34:08.000000000 +0100
+@@ -2035,6 +2035,13 @@
+ #define bfd_mach_avr5          5
+ #define bfd_mach_avr51         51
+ #define bfd_mach_avr6          6
++#define bfd_mach_avrxmega1 101
++#define bfd_mach_avrxmega2 102
++#define bfd_mach_avrxmega3 103
++#define bfd_mach_avrxmega4 104
++#define bfd_mach_avrxmega5 105
++#define bfd_mach_avrxmega6 106
++#define bfd_mach_avrxmega7 107
+   bfd_arch_bfin,        /* ADI Blackfin */
+ #define bfd_mach_bfin          1
+   bfd_arch_cr16,       /* National Semiconductor CompactRISC (ie CR16). */
+diff -Nur ../binutils-2.20.orig/bfd/cpu-avr.c ./bfd/cpu-avr.c
+--- ../binutils-2.20.orig/bfd/cpu-avr.c	2009-09-02 09:18:36.000000000 +0200
++++ ./bfd/cpu-avr.c	2010-03-04 11:34:08.000000000 +0100
+@@ -133,7 +133,29 @@
    N (22, bfd_mach_avr51, "avr:51", FALSE, & arch_info_struct[9]),
  
    /* 3-Byte PC.  */
@@ -50,10 +66,10 @@ diff -ur ../binutils-2.19.orig/bfd/cpu-avr.c ./bfd/cpu-avr.c
  };
  
  const bfd_arch_info_type bfd_avr_arch =
-diff -ur ../binutils-2.19.orig/bfd/elf32-avr.c ./bfd/elf32-avr.c
---- ../binutils-2.19.orig/bfd/elf32-avr.c	2008-08-09 07:35:12.000000000 +0200
-+++ ./bfd/elf32-avr.c	2009-08-07 13:25:45.000000000 +0200
-@@ -1324,6 +1324,34 @@
+diff -Nur ../binutils-2.20.orig/bfd/elf32-avr.c ./bfd/elf32-avr.c
+--- ../binutils-2.20.orig/bfd/elf32-avr.c	2009-09-02 09:18:36.000000000 +0200
++++ ./bfd/elf32-avr.c	2010-03-04 11:34:08.000000000 +0100
+@@ -1328,6 +1328,34 @@
      case bfd_mach_avr6:
        val = E_AVR_MACH_AVR6;
        break;
@@ -88,7 +104,7 @@ diff -ur ../binutils-2.19.orig/bfd/elf32-avr.c ./bfd/elf32-avr.c
      }
  
    elf_elfheader (abfd)->e_machine = EM_AVR;
-@@ -1386,6 +1414,34 @@
+@@ -1390,6 +1418,34 @@
  	case E_AVR_MACH_AVR6:
  	  e_set = bfd_mach_avr6;
  	  break;
@@ -123,9 +139,9 @@ diff -ur ../binutils-2.19.orig/bfd/elf32-avr.c ./bfd/elf32-avr.c
  	}
      }
    return bfd_default_set_arch_mach (abfd, bfd_arch_avr,
-diff -ur ../binutils-2.19.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
---- ../binutils-2.19.orig/gas/config/tc-avr.c	2009-08-07 13:24:59.000000000 +0200
-+++ ./gas/config/tc-avr.c	2009-08-07 13:30:52.000000000 +0200
+diff -Nur ../binutils-2.20.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
+--- ../binutils-2.20.orig/gas/config/tc-avr.c	2010-03-04 11:19:26.000000000 +0100
++++ ./gas/config/tc-avr.c	2010-03-04 11:34:09.000000000 +0100
 @@ -27,20 +27,21 @@
  
  struct avr_opcodes_s
@@ -168,8 +184,8 @@ diff -ur ../binutils-2.19.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
    {"at90s1200",  AVR_ISA_1200,    bfd_mach_avr1},
    {"attiny11",   AVR_ISA_AVR1,    bfd_mach_avr1},
    {"attiny12",   AVR_ISA_AVR1,    bfd_mach_avr1},
-@@ -186,6 +194,16 @@
-   {"at90usb1287",AVR_ISA_AVR51,   bfd_mach_avr51},
+@@ -241,6 +249,21 @@
+   {"m3001b",     AVR_ISA_AVR51,   bfd_mach_avr51},
    {"atmega2560", AVR_ISA_AVR6,    bfd_mach_avr6},
    {"atmega2561", AVR_ISA_AVR6,    bfd_mach_avr6},
 +  {"atxmega16a4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
@@ -177,15 +193,20 @@ diff -ur ../binutils-2.19.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
 +  {"atxmega32d4", AVR_ISA_XMEGA,  bfd_mach_avrxmega2},
 +  {"atxmega32a4", AVR_ISA_XMEGA,  bfd_mach_avrxmega3},
 +  {"atxmega64a3", AVR_ISA_XMEGA,  bfd_mach_avrxmega4},
++  {"atxmega64d3", AVR_ISA_XMEGA,  bfd_mach_avrxmega4},
 +  {"atxmega64a1", AVR_ISA_XMEGA,  bfd_mach_avrxmega5},
 +  {"atxmega128a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega128d3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega192a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega192d3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
 +  {"atxmega256a3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
 +  {"atxmega256a3b",AVR_ISA_XMEGA, bfd_mach_avrxmega6},
++  {"atxmega256d3", AVR_ISA_XMEGA, bfd_mach_avrxmega6},
 +  {"atxmega128a1", AVR_ISA_XMEGA, bfd_mach_avrxmega7},
    {NULL, 0, 0}
  };
  
-@@ -363,6 +381,11 @@
+@@ -418,6 +441,11 @@
  	"                   avr5  - enhanced AVR core with up to 64K program memory\n"
  	"                   avr51 - enhanced AVR core with up to 128K program memory\n"
  	"                   avr6  - enhanced AVR core with up to 256K program memory\n"
@@ -197,7 +218,7 @@ diff -ur ../binutils-2.19.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
  	"                   or immediate microcontroller name.\n"));
    fprintf (stream,
        _("  -mall-opcodes    accept all AVR opcodes, even if not supported by MCU\n"
-@@ -790,7 +813,12 @@
+@@ -845,7 +873,12 @@
        if (*str == '+')
  	{
  	  ++str;
@@ -211,7 +232,7 @@ diff -ur ../binutils-2.19.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
  	}
  
        /* attiny26 can do "lpm" and "lpm r,Z" but not "lpm r,Z+".  */
-@@ -907,6 +935,16 @@
+@@ -962,6 +995,16 @@
        }
        break;
  
@@ -228,11 +249,10 @@ diff -ur ../binutils-2.19.orig/gas/config/tc-avr.c ./gas/config/tc-avr.c
      case '?':
        break;
  
-Only in ./gas/config: tc-avr.c.orig
-diff -ur ../binutils-2.19.orig/gas/doc/c-avr.texi ./gas/doc/c-avr.texi
---- ../binutils-2.19.orig/gas/doc/c-avr.texi	2009-08-07 13:24:59.000000000 +0200
-+++ ./gas/doc/c-avr.texi	2009-08-07 13:30:52.000000000 +0200
-@@ -76,6 +76,26 @@
+diff -Nur ../binutils-2.20.orig/gas/doc/c-avr.texi ./gas/doc/c-avr.texi
+--- ../binutils-2.20.orig/gas/doc/c-avr.texi	2010-03-04 11:19:26.000000000 +0100
++++ ./gas/doc/c-avr.texi	2010-03-04 11:34:09.000000000 +0100
+@@ -86,6 +86,27 @@
  Instruction set avr6 is for the enhanced AVR core with a 3-byte PC (MCU types:
  atmega2560, atmega2561).
  
@@ -244,14 +264,15 @@ diff -ur ../binutils-2.19.orig/gas/doc/c-avr.texi ./gas/doc/c-avr.texi
 +memory space and greater than 64K data space (MCU types: atxmega32a4).
 +
 +Instruction set avrxmega4 is for the XMEGA AVR core with up to 64K program
-+memory space and less than 64K data space (MCU types: atxmega64a3).
++memory space and less than 64K data space (MCU types: atxmega64a3, atxmega64d3).
 +
 +Instruction set avrxmega5 is for the XMEGA AVR core with up to 64K program 
 +memory space and greater than 64K data space (MCU types: atxmega64a1).
 +
 +Instruction set avrxmega6 is for the XMEGA AVR core with up to 256K program
 +memory space and less than 64K data space (MCU types: atxmega128a3,
-+atxmega256a3, atxmega256a3b).
++atxmega128d3, atxmega192a3, atxmega192d3, atxmega256a3, atxmega256a3b,
++atxmega192d3).
 +
 +Instruction set avrxmega7 is for the XMEGA AVR core with up to 256K program
 +memory space and greater than 64K data space (MCU types: atxmega128a1).
@@ -259,10 +280,9 @@ diff -ur ../binutils-2.19.orig/gas/doc/c-avr.texi ./gas/doc/c-avr.texi
  @cindex @code{-mall-opcodes} command line option, AVR
  @item -mall-opcodes
  Accept all AVR opcodes, even if not supported by @code{-mmcu}.
-Only in ./gas/doc: c-avr.texi.orig
-diff -ur ../binutils-2.19.orig/include/elf/avr.h ./include/elf/avr.h
---- ../binutils-2.19.orig/include/elf/avr.h	2008-08-09 07:35:13.000000000 +0200
-+++ ./include/elf/avr.h	2009-08-07 13:25:45.000000000 +0200
+diff -Nur ../binutils-2.20.orig/include/elf/avr.h ./include/elf/avr.h
+--- ../binutils-2.20.orig/include/elf/avr.h	2008-08-09 07:35:13.000000000 +0200
++++ ./include/elf/avr.h	2010-03-04 11:34:09.000000000 +0100
 @@ -40,6 +40,13 @@
  #define E_AVR_MACH_AVR5 5
  #define E_AVR_MACH_AVR51 51
@@ -277,9 +297,9 @@ diff -ur ../binutils-2.19.orig/include/elf/avr.h ./include/elf/avr.h
  
  /* Relocations.  */
  START_RELOC_NUMBERS (elf_avr_reloc_type)
-diff -ur ../binutils-2.19.orig/include/opcode/avr.h ./include/opcode/avr.h
---- ../binutils-2.19.orig/include/opcode/avr.h	2008-08-09 07:35:13.000000000 +0200
-+++ ./include/opcode/avr.h	2009-08-07 13:25:45.000000000 +0200
+diff -Nur ../binutils-2.20.orig/include/opcode/avr.h ./include/opcode/avr.h
+--- ../binutils-2.20.orig/include/opcode/avr.h	2008-08-09 07:35:13.000000000 +0200
++++ ./include/opcode/avr.h	2010-03-04 11:34:09.000000000 +0100
 @@ -30,6 +30,8 @@
  #define AVR_ISA_BRK   0x0400 /* device has BREAK (on-chip debug) */
  #define AVR_ISA_EIND  0x0800 /* device has >128K program memory (none yet) */
@@ -323,11 +343,10 @@ diff -ur ../binutils-2.19.orig/include/opcode/avr.h ./include/opcode/avr.h
 +/* DES instruction for encryption and decryption */
 +AVR_INSN (des,  "E",   "10010100EEEE1011", 1, AVR_ISA_DES,  0x940B)
 +
-Only in ./include/opcode: avr.h.orig
-diff -ur ../binutils-2.19.orig/ld/Makefile.am ./ld/Makefile.am
---- ../binutils-2.19.orig/ld/Makefile.am	2008-09-09 10:02:19.000000000 +0200
-+++ ./ld/Makefile.am	2009-08-07 13:25:45.000000000 +0200
-@@ -142,6 +142,13 @@
+diff -Nur ../binutils-2.20.orig/ld/Makefile.am ./ld/Makefile.am
+--- ../binutils-2.20.orig/ld/Makefile.am	2009-09-01 22:56:51.000000000 +0200
++++ ./ld/Makefile.am	2010-03-04 11:34:09.000000000 +0100
+@@ -148,6 +148,13 @@
  	eavr5.o \
  	eavr51.o \
  	eavr6.o \
@@ -341,7 +360,7 @@ diff -ur ../binutils-2.19.orig/ld/Makefile.am ./ld/Makefile.am
  	ecoff_i860.o \
  	ecoff_sparc.o \
  	eelf32_spu.o \
-@@ -646,6 +653,34 @@
+@@ -727,6 +734,34 @@
    $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
    ${GEN_DEPENDS}
  	${GENSCRIPTS} avr6 "$(tdir_avr2)"
@@ -376,11 +395,10 @@ diff -ur ../binutils-2.19.orig/ld/Makefile.am ./ld/Makefile.am
  ecoff_i860.c: $(srcdir)/emulparams/coff_i860.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/i860coff.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} coff_i860 "$(tdir_coff_i860)"
-Only in ./ld: Makefile.am.orig
-diff -ur ../binutils-2.19.orig/ld/Makefile.in ./ld/Makefile.in
---- ../binutils-2.19.orig/ld/Makefile.in	2008-09-09 10:02:19.000000000 +0200
-+++ ./ld/Makefile.in	2009-08-07 13:25:45.000000000 +0200
-@@ -393,6 +393,13 @@
+diff -Nur ../binutils-2.20.orig/ld/Makefile.in ./ld/Makefile.in
+--- ../binutils-2.20.orig/ld/Makefile.in	2009-09-07 14:10:24.000000000 +0200
++++ ./ld/Makefile.in	2010-03-04 11:34:09.000000000 +0100
+@@ -434,6 +434,13 @@
  	eavr5.o \
  	eavr51.o \
  	eavr6.o \
@@ -394,7 +412,7 @@ diff -ur ../binutils-2.19.orig/ld/Makefile.in ./ld/Makefile.in
  	ecoff_i860.o \
  	ecoff_sparc.o \
  	eelf32_spu.o \
-@@ -1476,6 +1483,34 @@
+@@ -2068,6 +2075,34 @@
    $(ELF_DEPS) $(srcdir)/scripttempl/avr.sc \
    ${GEN_DEPENDS}
  	${GENSCRIPTS} avr6 "$(tdir_avr2)"
@@ -429,11 +447,10 @@ diff -ur ../binutils-2.19.orig/ld/Makefile.in ./ld/Makefile.in
  ecoff_i860.c: $(srcdir)/emulparams/coff_i860.sh \
    $(srcdir)/emultempl/generic.em $(srcdir)/scripttempl/i860coff.sc ${GEN_DEPENDS}
  	${GENSCRIPTS} coff_i860 "$(tdir_coff_i860)"
-Only in ./ld: Makefile.in.orig
-diff -ur ../binutils-2.19.orig/ld/configure.tgt ./ld/configure.tgt
---- ../binutils-2.19.orig/ld/configure.tgt	2008-08-09 07:35:13.000000000 +0200
-+++ ./ld/configure.tgt	2009-08-07 13:25:45.000000000 +0200
-@@ -107,7 +107,7 @@
+diff -Nur ../binutils-2.20.orig/ld/configure.tgt ./ld/configure.tgt
+--- ../binutils-2.20.orig/ld/configure.tgt	2009-08-06 19:38:03.000000000 +0200
++++ ./ld/configure.tgt	2010-03-04 11:34:09.000000000 +0100
+@@ -110,7 +110,7 @@
  xscale-*-elf)		targ_emul=armelf
  			;;
  avr-*-*)		targ_emul=avr2
@@ -442,8 +459,9 @@ diff -ur ../binutils-2.19.orig/ld/configure.tgt ./ld/configure.tgt
  			;;
  bfin-*-elf)		targ_emul=elf32bfin;
  			targ_extra_emuls="elf32bfinfd"
---- ./ld/emulparams/avrxmega1.sh.orig   2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega1.sh        2009-01-07 17:46:15.000000000 +0100
+diff -Nur ../binutils-2.20.orig/ld/emulparams/avrxmega1.sh ./ld/emulparams/avrxmega1.sh
+--- ../binutils-2.20.orig/ld/emulparams/avrxmega1.sh	1970-01-01 01:00:00.000000000 +0100
++++ ./ld/emulparams/avrxmega1.sh	2010-03-04 11:34:09.000000000 +0100
 @@ -0,0 +1,12 @@
 +ARCH=avr:101
 +MACHINE=
@@ -457,38 +475,9 @@ diff -ur ../binutils-2.19.orig/ld/configure.tgt ./ld/configure.tgt
 +DATA_ORIGIN=0x802000
 +DATA_LENGTH=0xffa0
 +EXTRA_EM_FILE=avrelf
---- ./ld/emulparams/avrxmega4.sh.orig   2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega4.sh        2009-01-07 17:46:15.000000000 +0100
-@@ -0,0 +1,12 @@
-+ARCH=avr:104
-+MACHINE=
-+SCRIPT_NAME=avr
-+OUTPUT_FORMAT="elf32-avr"
-+MAXPAGESIZE=1
-+EMBEDDED=yes
-+TEMPLATE_NAME=elf32
-+
-+TEXT_LENGTH=1024K
-+DATA_ORIGIN=0x802000
-+DATA_LENGTH=0xffa0
-+EXTRA_EM_FILE=avrelf
---- ./ld/emulparams/avrxmega5.sh.orig   2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega5.sh        2009-01-07 17:46:15.000000000 +0100
-@@ -0,0 +1,12 @@
-+ARCH=avr:105
-+MACHINE=
-+SCRIPT_NAME=avr
-+OUTPUT_FORMAT="elf32-avr"
-+MAXPAGESIZE=1
-+EMBEDDED=yes
-+TEMPLATE_NAME=elf32
-+
-+TEXT_LENGTH=1024K
-+DATA_ORIGIN=0x802000
-+DATA_LENGTH=0xffa0
-+EXTRA_EM_FILE=avrelf
---- ./ld/emulparams/avrxmega2.sh.orig   2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega2.sh        2009-01-07 17:46:15.000000000 +0100
+diff -Nur ../binutils-2.20.orig/ld/emulparams/avrxmega2.sh ./ld/emulparams/avrxmega2.sh
+--- ../binutils-2.20.orig/ld/emulparams/avrxmega2.sh	1970-01-01 01:00:00.000000000 +0100
++++ ./ld/emulparams/avrxmega2.sh	2010-03-04 11:34:09.000000000 +0100
 @@ -0,0 +1,12 @@
 +ARCH=avr:102
 +MACHINE=
@@ -502,8 +491,9 @@ diff -ur ../binutils-2.19.orig/ld/configure.tgt ./ld/configure.tgt
 +DATA_ORIGIN=0x802000
 +DATA_LENGTH=0xffa0
 +EXTRA_EM_FILE=avrelf
---- ./ld/emulparams/avrxmega3.sh.orig   2009-01-07 17:46:15.000000000 +0100
-+++ ./ld/emulparams/avrxmega3.sh        2009-01-07 17:46:15.000000000 +0100
+diff -Nur ../binutils-2.20.orig/ld/emulparams/avrxmega3.sh ./ld/emulparams/avrxmega3.sh
+--- ../binutils-2.20.orig/ld/emulparams/avrxmega3.sh	1970-01-01 01:00:00.000000000 +0100
++++ ./ld/emulparams/avrxmega3.sh	2010-03-04 11:34:09.000000000 +0100
 @@ -0,0 +1,12 @@
 +ARCH=avr:103
 +MACHINE=
@@ -517,8 +507,41 @@ diff -ur ../binutils-2.19.orig/ld/configure.tgt ./ld/configure.tgt
 +DATA_ORIGIN=0x802000
 +DATA_LENGTH=0xffa0
 +EXTRA_EM_FILE=avrelf
---- /dev/null   2008-02-14 11:03:25.784465400 -0700
-+++ ld/emulparams/avrxmega6.sh  2008-02-14 09:08:29.546875000 -0700
+diff -Nur ../binutils-2.20.orig/ld/emulparams/avrxmega4.sh ./ld/emulparams/avrxmega4.sh
+--- ../binutils-2.20.orig/ld/emulparams/avrxmega4.sh	1970-01-01 01:00:00.000000000 +0100
++++ ./ld/emulparams/avrxmega4.sh	2010-03-04 11:34:09.000000000 +0100
+@@ -0,0 +1,12 @@
++ARCH=avr:104
++MACHINE=
++SCRIPT_NAME=avr
++OUTPUT_FORMAT="elf32-avr"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=elf32
++
++TEXT_LENGTH=1024K
++DATA_ORIGIN=0x802000
++DATA_LENGTH=0xffa0
++EXTRA_EM_FILE=avrelf
+diff -Nur ../binutils-2.20.orig/ld/emulparams/avrxmega5.sh ./ld/emulparams/avrxmega5.sh
+--- ../binutils-2.20.orig/ld/emulparams/avrxmega5.sh	1970-01-01 01:00:00.000000000 +0100
++++ ./ld/emulparams/avrxmega5.sh	2010-03-04 11:34:09.000000000 +0100
+@@ -0,0 +1,12 @@
++ARCH=avr:105
++MACHINE=
++SCRIPT_NAME=avr
++OUTPUT_FORMAT="elf32-avr"
++MAXPAGESIZE=1
++EMBEDDED=yes
++TEMPLATE_NAME=elf32
++
++TEXT_LENGTH=1024K
++DATA_ORIGIN=0x802000
++DATA_LENGTH=0xffa0
++EXTRA_EM_FILE=avrelf
+diff -Nur ../binutils-2.20.orig/ld/emulparams/avrxmega6.sh ./ld/emulparams/avrxmega6.sh
+--- ../binutils-2.20.orig/ld/emulparams/avrxmega6.sh	1970-01-01 01:00:00.000000000 +0100
++++ ./ld/emulparams/avrxmega6.sh	2010-03-04 11:34:09.000000000 +0100
 @@ -0,0 +1,12 @@
 +ARCH=avr:106
 +MACHINE=
@@ -532,8 +555,9 @@ diff -ur ../binutils-2.19.orig/ld/configure.tgt ./ld/configure.tgt
 +DATA_ORIGIN=0x802000
 +DATA_LENGTH=0xffa0
 +EXTRA_EM_FILE=avrelf
---- /dev/null   2008-02-14 11:03:25.784465400 -0700
-+++ ld/emulparams/avrxmega7.sh  2008-02-14 09:08:29.546875000 -0700
+diff -Nur ../binutils-2.20.orig/ld/emulparams/avrxmega7.sh ./ld/emulparams/avrxmega7.sh
+--- ../binutils-2.20.orig/ld/emulparams/avrxmega7.sh	1970-01-01 01:00:00.000000000 +0100
++++ ./ld/emulparams/avrxmega7.sh	2010-03-04 11:34:09.000000000 +0100
 @@ -0,0 +1,12 @@
 +ARCH=avr:107
 +MACHINE=
@@ -547,9 +571,9 @@ diff -ur ../binutils-2.19.orig/ld/configure.tgt ./ld/configure.tgt
 +DATA_ORIGIN=0x802000
 +DATA_LENGTH=0xffa0
 +EXTRA_EM_FILE=avrelf
-diff -ur ../binutils-2.19.orig/ld/emultempl/avrelf.em ./ld/emultempl/avrelf.em
---- ../binutils-2.19.orig/ld/emultempl/avrelf.em	2008-07-07 02:46:51.000000000 +0200
-+++ ./ld/emultempl/avrelf.em	2009-08-07 13:25:45.000000000 +0200
+diff -Nur ../binutils-2.20.orig/ld/emultempl/avrelf.em ./ld/emultempl/avrelf.em
+--- ../binutils-2.20.orig/ld/emultempl/avrelf.em	2009-09-02 09:25:35.000000000 +0200
++++ ./ld/emultempl/avrelf.em	2010-03-04 11:34:09.000000000 +0100
 @@ -71,8 +71,10 @@
  
    gld${EMULATION_NAME}_before_allocation ();
@@ -563,9 +587,9 @@ diff -ur ../binutils-2.19.orig/ld/emultempl/avrelf.em ./ld/emultempl/avrelf.em
      avr_no_stubs = TRUE;
  
    avr_elf_set_global_bfd_parameters ();
-diff -ur ../binutils-2.19.orig/opcodes/avr-dis.c ./opcodes/avr-dis.c
---- ../binutils-2.19.orig/opcodes/avr-dis.c	2007-07-05 11:49:00.000000000 +0200
-+++ ./opcodes/avr-dis.c	2009-08-07 13:25:45.000000000 +0200
+diff -Nur ../binutils-2.20.orig/opcodes/avr-dis.c ./opcodes/avr-dis.c
+--- ../binutils-2.20.orig/opcodes/avr-dis.c	2008-11-06 13:03:24.000000000 +0100
++++ ./opcodes/avr-dis.c	2010-03-04 11:34:09.000000000 +0100
 @@ -50,7 +50,7 @@
  
  static int
@@ -637,19 +661,3 @@ diff -ur ../binutils-2.19.orig/opcodes/avr-dis.c ./opcodes/avr-dis.c
  			      *comment1 ? comment2 : comment1, regs, &sym_op2, &sym_addr2);
  	}
      }
---- ./bfd/bfd-in2.h.orig	2009-01-08 17:41:43.000000000 +0100
-+++ ./bfd/bfd-in2.h	2009-01-08 17:42:06.000000000 +0100
-@@ -1979,6 +1979,13 @@
- #define bfd_mach_avr5          5
- #define bfd_mach_avr51         51
- #define bfd_mach_avr6          6
-+#define bfd_mach_avrxmega1 101
-+#define bfd_mach_avrxmega2 102
-+#define bfd_mach_avrxmega3 103
-+#define bfd_mach_avrxmega4 104
-+#define bfd_mach_avrxmega5 105
-+#define bfd_mach_avrxmega6 106
-+#define bfd_mach_avrxmega7 107
-   bfd_arch_bfin,        /* ADI Blackfin */
- #define bfd_mach_bfin          1
-   bfd_arch_cr16,       /* National Semiconductor CompactRISC (ie CR16). */

@@ -1,0 +1,10 @@
+diff -ru binutils-2.19.1.orig/gas/config/tc-avr.h binutils-2.19.1/gas/config/tc-avr.h
+--- gas/config/tc-avr.h	Tue Jul  3 14:01:04 2007
++++ gas/config/tc-avr.h	Thu Apr 16 20:46:54 2009
+@@ -147,3 +147,6 @@
+ 
+ /* This target is buggy, and sets fix size too large.  */
+ #define TC_FX_SIZE_SLACK(FIX) 2
++
++/* keep DWARF2_ADDR_SIZE in consistency with C compiler produced information */
++#define DWARF2_ADDR_SIZE(bfd) 4

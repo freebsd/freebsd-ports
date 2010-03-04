@@ -1,22 +1,17 @@
---- ld/scripttempl/avr.sc.old	2007-09-14 06:32:02.437500000 -0600
-+++ ld/scripttempl/avr.sc	2007-09-14 06:50:28.854125000 -0600
-@@ -4,9 +4,12 @@ OUTPUT_ARCH(${ARCH})
- 
- MEMORY
- {
--  text   (rx)   : ORIGIN = 0, LENGTH = $TEXT_LENGTH
--  data   (rw!x) : ORIGIN = $DATA_ORIGIN, LENGTH = $DATA_LENGTH
--  eeprom (rw!x) : ORIGIN = 0x810000, LENGTH = 64K
-+  text      (rx)   : ORIGIN = 0, LENGTH = $TEXT_LENGTH
-+  data      (rw!x) : ORIGIN = $DATA_ORIGIN, LENGTH = $DATA_LENGTH
-+  eeprom    (rw!x) : ORIGIN = 0x810000, LENGTH = 64K
+diff -ruw ld/scripttempl/avr.sc ld/scripttempl/avr.sc
+--- ld/scripttempl/avr.sc	2009-10-09 18:42:35.000000000 +0530
++++ ld/scripttempl/avr.sc	2010-02-12 20:09:24.070812400 +0530
+@@ -7,6 +7,9 @@
+   text   (rx)   : ORIGIN = 0, LENGTH = $TEXT_LENGTH
+   data   (rw!x) : ORIGIN = $DATA_ORIGIN, LENGTH = $DATA_LENGTH
+   eeprom (rw!x) : ORIGIN = 0x810000, LENGTH = 64K
 +  fuse      (rw!x) : ORIGIN = 0x820000, LENGTH = 1K
 +  lock      (rw!x) : ORIGIN = 0x830000, LENGTH = 1K
 +  signature (rw!x) : ORIGIN = 0x840000, LENGTH = 1K
  }
  
  SECTIONS
-@@ -196,6 +199,24 @@ SECTIONS
+@@ -196,6 +199,24 @@
      ${RELOCATING+ __eeprom_end = . ; }
    } ${RELOCATING+ > eeprom}
  
