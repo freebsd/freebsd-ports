@@ -466,6 +466,7 @@
     SUBDIR += pgcluster
     SUBDIR += pgdbf
     SUBDIR += pgfouine
+    SUBDIR += pglesslog
     SUBDIR += pgloader
     SUBDIR += pgpool
     SUBDIR += pgpool-II

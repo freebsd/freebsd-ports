@@ -1,0 +1,5 @@
+This project aims to reduce the size of archive log files by replacing
+backup blocks (full page writes) marked as "removable" (introduced in
+8.3) with corresponding incremental logs.
+
+WWW: http://pglesslog.projects.postgresql.org/
