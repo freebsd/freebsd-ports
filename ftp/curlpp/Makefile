@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	curlpp
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.7.3
 CATEGORIES=	ftp
-MASTER_SITES=	http://rrette.com/files/curlpp/curlpp-${PORTVERSION:R}/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		http://rrette.com/files/curlpp/curlpp-${PORTVERSION:R}/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A C++ wrapper for libcurl
@@ -20,7 +20,7 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-ewarning
+CONFIGURE_ARGS=	--disable-ewarning --without-boost
 USE_LDCONFIG=	yes
 
 post-patch:
