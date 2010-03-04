@@ -1480,6 +1480,7 @@
     SUBDIR += p5-Exporter-Tidy
     SUBDIR += p5-ExtUtils-AutoInstall
     SUBDIR += p5-ExtUtils-CBuilder
+    SUBDIR += p5-ExtUtils-CChecker
     SUBDIR += p5-ExtUtils-Command
     SUBDIR += p5-ExtUtils-Constant
     SUBDIR += p5-ExtUtils-Depends
