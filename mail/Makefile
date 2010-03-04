@@ -508,6 +508,7 @@
     SUBDIR += postfix23
     SUBDIR += postfix24
     SUBDIR += postfix25
+    SUBDIR += postfix26
     SUBDIR += postfixadmin
     SUBDIR += postgrey
     SUBDIR += prayer
