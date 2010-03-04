@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.6.5
+PORTVERSION=	2.7.0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -23,7 +23,7 @@ MAINTAINER=	sahil@tandon.net
 COMMENT=	A secure alternative to widely-used Sendmail
 
 VDAVERSION=	2.6.5
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-current-2.* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-68-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
 USE_SUBMAKE=	yes
@@ -132,7 +132,7 @@ _REQUIRE+=		dovecot
 
 .if defined(WITH_SASLKRB)
 .if defined(WITH_SASLKRB5) || defined(WITH_SASLKMIT)
-BROKEN=			Select only one SASL Kerberos option	
+BROKEN=			Select only one SASL Kerberos option
 .endif
 POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
 .endif
