@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ezjail
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/ezjail/
 
