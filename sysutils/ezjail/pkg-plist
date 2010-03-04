@@ -1,15 +1,28 @@
 etc/ezjail.conf.sample
 etc/rc.d/ezjail.sh
 bin/ezjail-admin
-%%EXAMPLESDIR%%/default/etc/make.conf
-%%EXAMPLESDIR%%/default/etc/periodic.conf
-%%EXAMPLESDIR%%/default/etc/rc.conf
-%%EXAMPLESDIR%%/default/ezjail.flavour
-%%EXAMPLESDIR%%/default/usr/local/etc/sudoers
+%%EXAMPLESDIR%%/example/etc/make.conf
+%%EXAMPLESDIR%%/example/etc/periodic.conf
+%%EXAMPLESDIR%%/example/etc/rc.conf
+%%EXAMPLESDIR%%/example/ezjail.flavour
+%%EXAMPLESDIR%%/example/usr/local/etc/sudoers
+%%EXAMPLESDIR%%/example/etc/make.conf
+%%EXAMPLESDIR%%/nullmailer-example/ezjail.flavour
+%%EXAMPLESDIR%%/nullmailer-example/etc/rc.conf
+%%EXAMPLESDIR%%/nullmailer-example/etc/mail/mailer.conf
+%%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer/remotes
+
 @dirrm etc/ezjail/
-@dirrm %%EXAMPLESDIR%%/default/usr/local/etc/
-@dirrm %%EXAMPLESDIR%%/default/usr/local/
-@dirrm %%EXAMPLESDIR%%/default/usr/
-@dirrm %%EXAMPLESDIR%%/default/etc/
-@dirrm %%EXAMPLESDIR%%/default/
+@dirrm %%EXAMPLESDIR%%/example/usr/local/etc/
+@dirrm %%EXAMPLESDIR%%/example/usr/local/
+@dirrm %%EXAMPLESDIR%%/example/usr/
+@dirrm %%EXAMPLESDIR%%/example/etc/
+@dirrm %%EXAMPLESDIR%%/example/
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer/
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc/mail/
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc/
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/
 @dirrm %%EXAMPLESDIR%%
