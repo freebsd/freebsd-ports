@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-MobileCarrierJP
-PORTVERSION=	0.38
+PORTVERSION=	0.40
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	CPAN
 
@@ -37,9 +37,11 @@ MAN3=		WWW::MobileCarrierJP::EZWeb::PictogramInfo.3 \
 		WWW::MobileCarrierJP::EZWeb::Model.3 \
 		WWW::MobileCarrierJP::ThirdForce::PictogramInfo.3 \
 		WWW::MobileCarrierJP::ThirdForce::UserAgent.3 \
+		WWW::MobileCarrierJP::ThirdForce::Java.3 \
 		WWW::MobileCarrierJP::DoCoMo::CIDR.3 \
 		WWW::MobileCarrierJP::EZWeb::BREW.3 \
 		WWW::MobileCarrierJP::DoCoMo::HTMLVersion.3 \
+		WWW::MobileCarrierJP::DoCoMo::Java.3 \
 		WWW::MobileCarrierJP.3
 
 .include <bsd.port.pre.mk>
