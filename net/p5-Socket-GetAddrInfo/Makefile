@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	Socket-GetAddrInfo
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sahil@tandon.net
 COMMENT=	RFC 2553's getaddrinfo and getnameinfo functions
+
+BUILD_DEPENDS=	p5-ExtUtils-CChecker>=0:${PORTSDIR}/devel/p5-ExtUtils-CChecker
 
 MAN3=		Socket::GetAddrInfo.3
 
