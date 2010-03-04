@@ -2065,6 +2065,7 @@ daemonlogger                    ports/net/daemonlogger
 daemontools                     ports/sysutils/daemontools
 daemontools53                   ports/sysutils/daemontools53
 dagrab                          ports/audio/dagrab
+dahdi                           ports/misc/dahdi
 dailystrips                     ports/deskutils/dailystrips
 daimonin-client                 ports/games/daimonin-client
 dalbum                          ports/www/dalbum
@@ -4078,6 +4079,7 @@ gdbmods                         ports/devel/gdbmods
 gdc                             ports/lang/gdc
 gdcalc                          ports/math/gdcalc
 gdchart                         ports/graphics/gdchart
+gdcm                            ports/devel/gdcm
 gdesklets                       ports/deskutils/gdesklets
 gdesklets-clock                 ports/x11-clocks/gdesklets-clock
 gdesklets-countdown             ports/x11-clocks/gdesklets-countdown
@@ -10291,6 +10293,8 @@ openmcu                         ports/net/openmcu
 openmortal                      ports/games/openmortal
 openmovieeditor                 ports/multimedia/openmovieeditor
 openmpi                         ports/net/openmpi
+openmq                          ports/net/openmq
+openmq-client                   ports/net/openmq-client
 openmsx                         ports/emulators/openmsx
 opennap                         ports/net-p2p/opennap
 openntpd                        ports/net/openntpd
@@ -11706,6 +11710,7 @@ p5-File-CounterFile             ports/misc/p5-File-CounterFile
 p5-File-CreationTime            ports/devel/p5-File-CreationTime
 p5-File-DesktopEntry            ports/devel/p5-File-DesktopEntry
 p5-File-Dir-Dumper              ports/devel/p5-File-Dir-Dumper
+p5-File-DirCompare              ports/sysutils/p5-File-DirCompare
 p5-File-DirSync                 ports/devel/p5-File-DirSync
 p5-File-ExtAttr                 ports/devel/p5-File-ExtAttr
 p5-File-FTS                     ports/devel/p5-File-FTS
@@ -15427,6 +15432,7 @@ p5-file-counterfile             ports/misc/p5-File-CounterFile
 p5-file-creationtime            ports/devel/p5-File-CreationTime
 p5-file-desktopentry            ports/devel/p5-File-DesktopEntry
 p5-file-dir-dumper              ports/devel/p5-File-Dir-Dumper
+p5-file-dircompare              ports/sysutils/p5-File-DirCompare
 p5-file-dirsync                 ports/devel/p5-File-DirSync
 p5-file-extattr                 ports/devel/p5-File-ExtAttr
 p5-file-fetch                   ports/ftp/p5-File-Fetch
