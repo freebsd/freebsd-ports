@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	sharutils
-PORTVERSION=	4.7
-PORTREVISION=	1
+PORTVERSION=	4.8
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}/REL-${PORTVERSION}
+MASTER_SITES=	GNU
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Pack, send and unpack shell archives; synchronize via e-mail
 
+USE_BZIP2=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
-MAN1=		gshar.1 gunshar.1 gcompress-dummy.1
+MAN1=		gshar.1 gunshar.1
 INFO=		sharutils
 
 .if defined(WITHOUT_NLS)
@@ -36,7 +35,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@SH@|${SH}|' \
 		${WRKSRC}/src/mail-files.in ${WRKSRC}/src/mailshar.in
 	@${REINPLACE_CMD} -e 's|@PERL@|${PERL}|' ${WRKSRC}/src/remsync.in
-	@${FIND} ${WRKSRC} -name \*.c  -or -name \*.h | ${XARGS} \
-		${REINPLACE_CMD} -e 's|uintmax_t|unsigned long long|;s|intmax_t|long long|'
+	@${REINPLACE_CMD} -e 's|gnu_basename|base_name|' ${WRKSRC}/lib/basename.h
 
 .include <bsd.port.mk>
