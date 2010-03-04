@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	validator
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	www
 MASTER_SITES=	http://validator.w3.org/dist/ \
 		http://www.cyberbotx.com/w3c-validator/
@@ -69,27 +68,29 @@ do-install:
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/IETF
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/ISO-HTML
-	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021
-	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021/html
-	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021/iso8879
-	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021/iso9573-13
-	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021/mathml
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SMIL2-20051213
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SMIL3-20081201
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SVG-20010904
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SVG11-20030114
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-html32-19970114
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-html40-19980424
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-html401-19991224
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-rdfa-syntax-20081014
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-smil-19980615
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-smil20-20050107
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml1-20020801
-	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml11-20010531
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/Specification
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/WD-MathML3-20090924
 	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809
-	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705
-	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/WD-xhtml11-20070216
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/XX-MathML2-20031104
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso8879
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso9573-13
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/XX-MathML2-20031104/mathml
+	${MKDIR} ${PREFIX}/www/validator/htdocs/sgml-lib/XX-xhtml11-20090630
 	${MKDIR} ${PREFIX}/www/validator/htdocs/source
 	${MKDIR} ${PREFIX}/www/validator/htdocs/style
 	${MKDIR} ${PREFIX}/www/validator/httpd
@@ -111,27 +112,29 @@ do-install:
 	${INSTALL_DATA} `${FIND} ${WRKSRC}/htdocs/sgml-lib -type f -depth 1` ${PREFIX}/www/validator/htdocs/sgml-lib
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/IETF/* ${PREFIX}/www/validator/htdocs/sgml-lib/IETF
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/ISO-HTML/* ${PREFIX}/www/validator/htdocs/sgml-lib/ISO-HTML
-	${INSTALL_DATA} `${FIND} ${WRKSRC}/htdocs/sgml-lib/REC-MathML2-20031021 -type f -depth 1` ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021
-	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-MathML2-20031021/html/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021/html
-	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-MathML2-20031021/iso8879/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021/iso8879
-	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-MathML2-20031021/iso9573-13/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021/iso9573-13
-	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-MathML2-20031021/mathml/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-MathML2-20031021/mathml
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-SMIL2-20051213/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SMIL2-20051213
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-SMIL3-20081201/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SMIL3-20081201
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-SVG-20010904/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SVG-20010904
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-SVG11-20030114/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-SVG11-20030114
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-html32-19970114/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-html32-19970114
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-html40-19980424/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-html40-19980424
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-html401-19991224/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-html401-19991224
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-rdfa-syntax-20081014/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-rdfa-syntax-20081014
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-smil-19980615/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-smil-19980615
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-smil20-20050107/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-smil20-20050107
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml-basic-20001219/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-basic-20001219
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml-basic-20080729/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-basic-20080729
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml-modularization-20081008/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-modularization-20081008
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml-print-20060920/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml-print-20060920
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml1-20020801/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml1-20020801
-	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/REC-xhtml11-20010531/* ${PREFIX}/www/validator/htdocs/sgml-lib/REC-xhtml11-20010531
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/Specification/* ${PREFIX}/www/validator/htdocs/sgml-lib/Specification
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/WD-MathML3-20090924/* ${PREFIX}/www/validator/htdocs/sgml-lib/WD-MathML3-20090924
 	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809/* ${PREFIX}/www/validator/htdocs/sgml-lib/WD-XHTMLplusMathMLplusSVG-20020809
-	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/WD-xhtml-basic-20060705/* ${PREFIX}/www/validator/htdocs/sgml-lib/WD-xhtml-basic-20060705
-	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/WD-xhtml11-20070216/* ${PREFIX}/www/validator/htdocs/sgml-lib/WD-xhtml11-20070216
+	${INSTALL_DATA} `${FIND} ${WRKSRC}/htdocs/sgml-lib/XX-MathML2-20031104 -type f -depth 1` ${PREFIX}/www/validator/htdocs/sgml-lib/XX-MathML2-20031104
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/XX-MathML2-20031104/iso8879/* ${PREFIX}/www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso8879
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/XX-MathML2-20031104/iso9573-13/* ${PREFIX}/www/validator/htdocs/sgml-lib/XX-MathML2-20031104/iso9573-13
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/XX-MathML2-20031104/mathml/* ${PREFIX}/www/validator/htdocs/sgml-lib/XX-MathML2-20031104/mathml
+	${INSTALL_DATA} ${WRKSRC}/htdocs/sgml-lib/XX-xhtml11-20090630/* ${PREFIX}/www/validator/htdocs/sgml-lib/XX-xhtml11-20090630
 	${INSTALL_DATA} ${WRKSRC}/htdocs/source/* ${PREFIX}/www/validator/htdocs/source
 	${INSTALL_DATA} ${WRKSRC}/htdocs/style/* ${PREFIX}/www/validator/htdocs/style
 	${INSTALL_SCRIPT} ${WRKSRC}/httpd/cgi-bin/* ${PREFIX}/www/validator/httpd/cgi-bin
