@@ -7,26 +7,21 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www linux emulators
-MASTER_SITES=	http://gwenole.beauchesne.info/projects/nspluginwrapper/files/:hostsrc \
-		LOCAL/jkim:hostsrc \
-		LOCAL/jkim:targetbin
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:hostsrc \
-		${RPMFILE}:targetbin
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	LOCAL/jkim
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}${EXTRACT_SUFX}
 
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	A compatibility plugin for Mozilla NPAPI (development version)
 
-EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
 
 LATEST_LINK=	${PORTNAME}-devel
 
 CONFLICTS=	nspluginwrapper-1.2.*
 
-RPMFILE=	${PORTNAME}-i386-${PORTVERSION}-1.x86_64.rpm
+BINFILE=	${PORTNAME}-i386-${PORTVERSION}-2
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -42,9 +37,10 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--enable-generic --prefix=${PREFIX} --target-os=linux \
-		--target-cpu=i386 --with-x11-prefix=${LOCALBASE} \
-		--with-cc=${CC} --with-cxx=${CXX}
+CONFIGURE_ARGS=	--enable-generic --enable-strip --prefix=${PREFIX} \
+		--target-os=linux --target-cpu=i386 \
+		--with-cc=${CC} --with-cxx=${CXX} \
+		--with-x11-prefix=${LOCALBASE}
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
@@ -60,10 +56,10 @@ HOST_ARCH=	${ARCH}
 
 # We must manually extract, modify, and install the Linux version of npviewer.
 post-extract:
-	cd ${WRKSRC} &&	rpm2cpio ${DISTDIR}/${RPMFILE} | ${CPIO} -id
 	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
-	    ${WRKSRC}/usr/lib/nspluginwrapper/i386/linux/npviewer
-	@${RM} ${WRKSRC}/usr/lib/nspluginwrapper/i386/linux/npviewer.bak
+	    ${WRKDIR}/usr/lib/nspluginwrapper/i386/linux/npviewer
+	@${RM} ${WRKDIR}/usr/lib/nspluginwrapper/i386/linux/npviewer.bak
+	@${MV} ${WRKDIR}/usr ${WRKSRC}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
