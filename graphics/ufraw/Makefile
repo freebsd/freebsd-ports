@@ -31,12 +31,12 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 PC_FALSE+=	cinepaint
 
 OPTIONS=	CONTRAST "Enable contrast setting"		on	\
-		DST	" Use local time for timestamps"	off	\
+		DST	"Use local time for timestamps"	off	\
 		EXIV2	"EXIF support via exiv2 library"	on	\
 		FITS	"Enable FITS output support"		off	\
 		GIMP	"Install GIMP UFRaw plugin"		on	\
 		HOTPIXEL "Enable hot pixels elimination"	on	\
-		LENSFUN	"Build with LenFun library support"	on
+		LENSFUN	"Build with LensFun library support"	on
 
 .include <bsd.port.pre.mk>
 
