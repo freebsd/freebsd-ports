@@ -1,0 +1,5 @@
+%%SITE_PERL%%/autobox/Core.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/autobox/Core/.packlist
+@dirrmtry %%SITE_PERL%%/autobox
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/autobox/Core
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/autobox
