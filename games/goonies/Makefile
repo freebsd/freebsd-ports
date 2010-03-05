@@ -28,9 +28,13 @@ MAKE_ENV=	DATADIR="${DATADIR}"
 DATADIRS=	sound graphics maps
 PORTDOCS=	*
 
+.include <bsd.port.pre.mk>
+
 post-patch:
+.if ${OSVERSION} < 800501 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900006)
 	@${REINPLACE_CMD} -e 's|__APPLE__|__FreeBSD__|' \
 		${WRKSRC}/src/SFXManager.cpp
+.endif
 	@${REINPLACE_CMD} -e 's|sound/|${DATADIR}/sound/|g' \
 		${WRKSRC}/src/SFXManager.cpp
 	@${REINPLACE_CMD} -e 's|graphics/|${DATADIR}/graphics/|g' \
@@ -49,4 +53,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
