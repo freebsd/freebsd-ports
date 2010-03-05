@@ -11673,6 +11673,7 @@ p5-Exporter-Lite                ports/devel/p5-Exporter-Lite
 p5-Exporter-Tidy                ports/devel/p5-Exporter-Tidy
 p5-ExtUtils-AutoInstall         ports/devel/p5-ExtUtils-AutoInstall
 p5-ExtUtils-CBuilder            ports/devel/p5-ExtUtils-CBuilder
+p5-ExtUtils-CChecker            ports/devel/p5-ExtUtils-CChecker
 p5-ExtUtils-Command             ports/devel/p5-ExtUtils-Command
 p5-ExtUtils-Constant            ports/devel/p5-ExtUtils-Constant
 p5-ExtUtils-Depends             ports/devel/p5-ExtUtils-Depends
@@ -15395,6 +15396,7 @@ p5-exporter-lite                ports/devel/p5-Exporter-Lite
 p5-exporter-tidy                ports/devel/p5-Exporter-Tidy
 p5-extutils-autoinstall         ports/devel/p5-ExtUtils-AutoInstall
 p5-extutils-cbuilder            ports/devel/p5-ExtUtils-CBuilder
+p5-extutils-cchecker            ports/devel/p5-ExtUtils-CChecker
 p5-extutils-command             ports/devel/p5-ExtUtils-Command
 p5-extutils-constant            ports/devel/p5-ExtUtils-Constant
 p5-extutils-depends             ports/devel/p5-ExtUtils-Depends
@@ -18799,6 +18801,7 @@ pftabled                        ports/net-mgmt/pftabled
 pftop                           ports/sysutils/pftop
 pftpd                           ports/ftp/pftpd
 pg_filedump                     ports/databases/pg_filedump
+pg_rman                         ports/databases/pg_rman
 pgaccess                        ports/databases/pgaccess
 pgadmin3                        ports/databases/pgadmin3
 pgbouncer                       ports/databases/pgbouncer
@@ -18807,6 +18810,7 @@ pgcluster                       ports/databases/pgcluster
 pgdbf                           ports/databases/pgdbf
 pgen                            ports/mail/pgen
 pgfouine                        ports/databases/pgfouine
+pglesslog                       ports/databases/pglesslog
 pgloader                        ports/databases/pgloader
 pglogd                          ports/www/pglogd
 pgp                             ports/security/pgp
@@ -19474,6 +19478,7 @@ postfix-postfwd                 ports/mail/postfix-postfwd
 postfix23                       ports/mail/postfix23
 postfix24                       ports/mail/postfix24
 postfix25                       ports/mail/postfix25
+postfix26                       ports/mail/postfix26
 postfixadmin                    ports/mail/postfixadmin
 postgis                         ports/databases/postgis
 postgis-jdbc                    ports/databases/postgis-jdbc
