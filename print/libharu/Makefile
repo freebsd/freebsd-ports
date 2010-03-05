@@ -17,6 +17,7 @@ COMMENT=	Haru Free PDF Library
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-png=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
