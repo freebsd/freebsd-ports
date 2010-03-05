@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sharutils
-PORTVERSION=	4.8
+PORTVERSION=	4.9
 CATEGORIES=	archivers
 MASTER_SITES=	GNU
 
@@ -35,6 +35,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@SH@|${SH}|' \
 		${WRKSRC}/src/mail-files.in ${WRKSRC}/src/mailshar.in
 	@${REINPLACE_CMD} -e 's|@PERL@|${PERL}|' ${WRKSRC}/src/remsync.in
-	@${REINPLACE_CMD} -e 's|gnu_basename|base_name|' ${WRKSRC}/lib/basename.h
 
 .include <bsd.port.mk>
