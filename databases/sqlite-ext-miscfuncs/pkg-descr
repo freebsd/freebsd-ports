@@ -1,0 +1,19 @@
+Provide mathematical, string and aggregate functions for SQL queries
+using the SQLite loadable extensions mechanism.
+
+Math functions:
+
+  acos, asin, atan, atn2, atan2, acosh, asinh, atanh, difference,
+  degrees, radians, cos, sin, tan, cot, cosh, sinh, tanh, coth,
+  exp, log, log10, power, sign, sqrt, square, ceil, floor, pi
+
+String functions:
+
+  replicate, charindex, leftstr, rightstr, ltrim, rtrim, trim,
+  replace, reverse, proper, padl, padr, padc, strfilter
+
+Aggregate functions:
+
+  stdev, variance, mode, median, lower_quartile, upper_quartile
+
+WWW: http://www.sqlite.org/contrib
