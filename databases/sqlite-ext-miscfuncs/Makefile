@@ -8,8 +8,7 @@
 PORTNAME=	sqlite-ext-miscfuncs
 PORTVERSION=	1.0
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sqlite.org/contrib/download/${DISTFILES}/download/ \
-		LOCAL/glarkin
+MASTER_SITES=	LOCAL/glarkin
 DISTNAME=	${SRCFILE}
 EXTRACT_SUFX=
 
@@ -27,8 +26,6 @@ USE_LDCONFIG=	${INST_DIR}
 
 SUB_FILES=	${PORTDOCS}
 SUB_LIST+=	LIBFILE=${LIBFILE}
-
-FETCH_BEFORE_ARGS=	-o ${SRCFILE}?get=25
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
