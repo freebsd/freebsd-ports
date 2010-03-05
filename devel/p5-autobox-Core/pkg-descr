@@ -1,0 +1,12 @@
+autobox::CORE defines methods for core operations such as join,
+print, most everything in perlfunc, some things from Scalar::Util
+and List::Util, and some Perl 5 versions of methods taken from
+Perl6.
+
+These methods expose as methods the built-in functions for
+minipulating numbers, strings, arrays, hashes, and code references.
+
+It can be handy to use built-in functions as methods to avoid messy
+dereferencing syntaxes and parentheses pile ups.
+
+WWW: http://search.cpan.org/dist/autobox-Core/
