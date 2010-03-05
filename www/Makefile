@@ -1368,6 +1368,7 @@
     SUBDIR += py-ez_web
     SUBDIR += py-fcgi
     SUBDIR += py-feedfinder
+    SUBDIR += py-flexget
     SUBDIR += py-flup
     SUBDIR += py-forgethtml
     SUBDIR += py-formencode
