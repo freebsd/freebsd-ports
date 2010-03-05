@@ -545,6 +545,7 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.storage.zip-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.tools-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.tools.build_tmdb-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.tools.phppo2pypo-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.tools.poclean-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.tools.pocompile-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.tools.poconflicts-module.html
@@ -558,6 +559,7 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.tools.poterminology-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.tools.pretranslate-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.tools.pydiff-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/toc-translate.tools.pypo2phppo-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/toc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/todo-index.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate-module.html
@@ -1221,6 +1223,10 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.statsdb.StatsCache-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.subtitles-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.subtitles-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.subtitles.AdvSubStationAlphaFile-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.subtitles.MicroDVDFile-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.subtitles.SubRipFile-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.subtitles.SubStationAlphaFile-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.subtitles.SubtitleFile-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.subtitles.SubtitleUnit-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.storage.symbian-module.html
@@ -1320,6 +1326,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.build_tmdb-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.build_tmdb-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.build_tmdb.Builder-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.phppo2pypo-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.phppo2pypo-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.phppo2pypo.phppo2pypo-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.poclean-module.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.poclean-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.pocompile-module.html
@@ -1359,6 +1368,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.pydiff-pysrc.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.pydiff.DirDiffer-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.pydiff.FileDiffer-class.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.pypo2phppo-module.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.pypo2phppo-pysrc.html
+%%PYTHON_SITELIBDIR%%/translate/doc/api/translate.tools.pypo2phppo.pypo2phppo-class.html
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_10.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_100.png
@@ -1593,9 +1605,13 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_307.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_308.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_309.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_31.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_310.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_311.png
-%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_31.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_312.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_313.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_314.png
+%%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_315.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_32.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_33.png
 %%PYTHON_SITELIBDIR%%/translate/doc/api/uml_class_diagram_for_translat_34.png
@@ -1718,6 +1734,7 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/doc/user/toolkit-multifile_multifilestyle.html
 %%PYTHON_SITELIBDIR%%/translate/doc/user/toolkit-odf.html
 %%PYTHON_SITELIBDIR%%/translate/doc/user/toolkit-odf2xliff.html
+%%PYTHON_SITELIBDIR%%/translate/doc/user/toolkit-omegat_glossary.html
 %%PYTHON_SITELIBDIR%%/translate/doc/user/toolkit-oo2po.html
 %%PYTHON_SITELIBDIR%%/translate/doc/user/toolkit-oo2xliff.html
 %%PYTHON_SITELIBDIR%%/translate/doc/user/toolkit-personality_type.html
@@ -1945,12 +1962,18 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/lang/test_el.py
 %%PYTHON_SITELIBDIR%%/translate/lang/test_el.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/test_el.pyo
+%%PYTHON_SITELIBDIR%%/translate/lang/test_es.py
+%%PYTHON_SITELIBDIR%%/translate/lang/test_es.pyc
+%%PYTHON_SITELIBDIR%%/translate/lang/test_es.pyo
 %%PYTHON_SITELIBDIR%%/translate/lang/test_factory.py
 %%PYTHON_SITELIBDIR%%/translate/lang/test_factory.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/test_factory.pyo
 %%PYTHON_SITELIBDIR%%/translate/lang/test_fr.py
 %%PYTHON_SITELIBDIR%%/translate/lang/test_fr.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/test_fr.pyo
+%%PYTHON_SITELIBDIR%%/translate/lang/test_hy.py
+%%PYTHON_SITELIBDIR%%/translate/lang/test_hy.pyc
+%%PYTHON_SITELIBDIR%%/translate/lang/test_hy.pyo
 %%PYTHON_SITELIBDIR%%/translate/lang/test_identify.py
 %%PYTHON_SITELIBDIR%%/translate/lang/test_identify.pyc
 %%PYTHON_SITELIBDIR%%/translate/lang/test_identify.pyo
@@ -2508,6 +2531,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/tools/build_tmdb.py
 %%PYTHON_SITELIBDIR%%/translate/tools/build_tmdb.pyc
 %%PYTHON_SITELIBDIR%%/translate/tools/build_tmdb.pyo
+%%PYTHON_SITELIBDIR%%/translate/tools/phppo2pypo.py
+%%PYTHON_SITELIBDIR%%/translate/tools/phppo2pypo.pyc
+%%PYTHON_SITELIBDIR%%/translate/tools/phppo2pypo.pyo
 %%PYTHON_SITELIBDIR%%/translate/tools/poclean.py
 %%PYTHON_SITELIBDIR%%/translate/tools/poclean.pyc
 %%PYTHON_SITELIBDIR%%/translate/tools/poclean.pyo
@@ -2547,6 +2573,12 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/tools/pydiff.py
 %%PYTHON_SITELIBDIR%%/translate/tools/pydiff.pyc
 %%PYTHON_SITELIBDIR%%/translate/tools/pydiff.pyo
+%%PYTHON_SITELIBDIR%%/translate/tools/pypo2phppo.py
+%%PYTHON_SITELIBDIR%%/translate/tools/pypo2phppo.pyc
+%%PYTHON_SITELIBDIR%%/translate/tools/pypo2phppo.pyo
+%%PYTHON_SITELIBDIR%%/translate/tools/test_phppo2pypo.py
+%%PYTHON_SITELIBDIR%%/translate/tools/test_phppo2pypo.pyc
+%%PYTHON_SITELIBDIR%%/translate/tools/test_phppo2pypo.pyo
 %%PYTHON_SITELIBDIR%%/translate/tools/test_pocount.py
 %%PYTHON_SITELIBDIR%%/translate/tools/test_pocount.pyc
 %%PYTHON_SITELIBDIR%%/translate/tools/test_pocount.pyo
@@ -2562,6 +2594,9 @@ bin/xliff2po
 %%PYTHON_SITELIBDIR%%/translate/tools/test_pretranslate.py
 %%PYTHON_SITELIBDIR%%/translate/tools/test_pretranslate.pyc
 %%PYTHON_SITELIBDIR%%/translate/tools/test_pretranslate.pyo
+%%PYTHON_SITELIBDIR%%/translate/tools/test_pypo2phppo.py
+%%PYTHON_SITELIBDIR%%/translate/tools/test_pypo2phppo.pyc
+%%PYTHON_SITELIBDIR%%/translate/tools/test_pypo2phppo.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/translate/tools
 @dirrm %%PYTHON_SITELIBDIR%%/translate/storage/xml_extract
 @dirrm %%PYTHON_SITELIBDIR%%/translate/storage/versioncontrol
