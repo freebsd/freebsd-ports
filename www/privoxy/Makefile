@@ -7,6 +7,7 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.16
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
@@ -66,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-toggle
 
 .if defined(WITH_PRIVOXY_TOOLS)
 USE_PERL5_RUN=	yes
-RUN_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	PRIVOXY_TOOLS=""
 .else
 PLIST_SUB+=	PRIVOXY_TOOLS="@comment "
