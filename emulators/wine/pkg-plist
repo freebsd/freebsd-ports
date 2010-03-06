@@ -187,6 +187,8 @@ include/wine/windows/devenum.idl
 include/wine/windows/devguid.h
 include/wine/windows/devicetopology.h
 include/wine/windows/devicetopology.idl
+include/wine/windows/devpkey.h
+include/wine/windows/devpropdef.h
 include/wine/windows/digitalv.h
 include/wine/windows/dimm.h
 include/wine/windows/dimm.idl
@@ -708,6 +710,7 @@ lib/wine/devenum.dll.so
 lib/wine/dinput.dll.so
 lib/wine/dinput8.dll.so
 lib/wine/dispdib.dll16.so
+lib/wine/dispex.dll.so
 lib/wine/display.drv16.so
 lib/wine/dmband.dll.so
 lib/wine/dmcompos.dll.so
@@ -816,6 +819,7 @@ lib/wine/fakedlls/devenum.dll
 lib/wine/fakedlls/dinput.dll
 lib/wine/fakedlls/dinput8.dll
 lib/wine/fakedlls/dispdib.dll16
+lib/wine/fakedlls/dispex.dll
 lib/wine/fakedlls/display.drv16
 lib/wine/fakedlls/dmband.dll
 lib/wine/fakedlls/dmcompos.dll
