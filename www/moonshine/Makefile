@@ -33,7 +33,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
 
 .if ${ARCH} == "amd64"
-ARCH=		x86_64
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
 .if defined(WITH_XPI_PLUGIN_ONLY)
