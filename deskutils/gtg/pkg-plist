@@ -30,10 +30,6 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/core/plugins/engine.py
 %%PYTHON_SITELIBDIR%%/GTG/core/plugins/engine.pyc
 %%PYTHON_SITELIBDIR%%/GTG/core/plugins/engine.pyo
-%%PYTHON_SITELIBDIR%%/GTG/core/plugins/manager.py
-%%PYTHON_SITELIBDIR%%/GTG/core/plugins/manager.pyc
-%%PYTHON_SITELIBDIR%%/GTG/core/plugins/manager.pyo
-%%PYTHON_SITELIBDIR%%/GTG/core/plugins/pluginmanager.glade
 %%PYTHON_SITELIBDIR%%/GTG/core/requester.py
 %%PYTHON_SITELIBDIR%%/GTG/core/requester.pyc
 %%PYTHON_SITELIBDIR%%/GTG/core/requester.pyo
@@ -68,6 +64,34 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/plugins/bugzilla/server.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/bugzilla/server.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/bugzilla/server.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution-sync.gtg-plugin
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/evolutionProxy.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/evolutionProxy.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/evolutionProxy.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/evolutionSync.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/evolutionSync.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/evolutionSync.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/evolutionTask.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/evolutionTask.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/evolutionTask.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/genericProxy.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/genericProxy.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/genericProxy.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/genericTask.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/genericTask.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/genericTask.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/gtgProxy.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/gtgProxy.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/gtgProxy.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/gtgTask.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/gtgTask.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/gtgTask.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/syncEngine.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/syncEngine.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync/syncEngine.pyo
 %%PYTHON_SITELIBDIR%%/GTG/plugins/export.gtg-plugin
 %%PYTHON_SITELIBDIR%%/GTG/plugins/export/__init__.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/export/__init__.pyc
@@ -76,10 +100,6 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/plugins/export/export.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/export/export.pyo
 %%PYTHON_SITELIBDIR%%/GTG/plugins/export/export.ui
-%%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates/template_simple.html
-%%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates/template_textual.txt
-%%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates/thumbnail_simple.html
-%%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates/thumbnail_textual.txt
 %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized-tasks.gtg-plugin
 %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks/__init__.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks/__init__.pyc
@@ -102,6 +122,7 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/plugins/hamster/hamster.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/hamster/hamster.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/hamster/hamster.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/hamster/prefs.ui
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld.gtg-plugin
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/__init__.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/__init__.pyc
@@ -109,6 +130,14 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/helloworld.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/helloworld.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/helloworld.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/import-json.gtg-plugin
+%%PYTHON_SITELIBDIR%%/GTG/plugins/import_json/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/import_json/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/import_json/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/import_json/import_json.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/import_json/import_json.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/import_json/import_json.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/import_json/import_json.ui
 %%PYTHON_SITELIBDIR%%/GTG/plugins/notification-area.gtg-plugin
 %%PYTHON_SITELIBDIR%%/GTG/plugins/notification_area/__init__.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/notification_area/__init__.pyc
@@ -121,15 +150,18 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/__init__.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/__init__.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/__init__.pyo
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/generic_proxy.py
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/generic_proxy.pyc
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/generic_proxy.pyo
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/generic_task.py
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/generic_task.pyc
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/generic_task.pyo
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/gtg_proxy.py
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/gtg_proxy.pyc
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/gtg_proxy.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/genericProxy.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/genericProxy.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/genericProxy.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/genericTask.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/genericTask.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/genericTask.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/gtgProxy.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/gtgProxy.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/gtgProxy.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/gtgTask.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/gtgTask.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/gtgTask.pyo
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/icons/hicolor/16x16/rtm_image.png
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/icons/hicolor/24x24/rtm_image.png
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/icons/hicolor/svg/rtm_image.svg
@@ -137,18 +169,33 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/pyrtm/rtm.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/pyrtm/rtm.pyo
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtm.ui
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtm_proxy.py
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtm_proxy.pyc
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtm_proxy.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtmProxy.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtmProxy.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtmProxy.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtmTask.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtmTask.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtmTask.pyo
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtm_sync.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtm_sync.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/rtm_sync.pyo
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/syncengine.py
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/syncengine.pyc
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/syncengine.pyo
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/utility.py
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/utility.pyc
-%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/utility.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/syncEngine.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/syncEngine.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/syncEngine.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/send-email.gtg-plugin
+%%PYTHON_SITELIBDIR%%/GTG/plugins/send_email/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/send_email/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/send_email/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/send_email/sendEmail.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/send_email/sendEmail.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/send_email/sendEmail.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/task-reaper.gtg-plugin
+%%PYTHON_SITELIBDIR%%/GTG/plugins/task_reaper/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/task_reaper/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/task_reaper/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/task_reaper/reaper.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/task_reaper/reaper.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/task_reaper/reaper.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/task_reaper/reaper.ui
 %%PYTHON_SITELIBDIR%%/GTG/plugins/tomboy.gtg-plugin
 %%PYTHON_SITELIBDIR%%/GTG/plugins/tomboy/__init__.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/tomboy/__init__.pyc
@@ -169,6 +216,9 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/taskbrowser/browser.py
 %%PYTHON_SITELIBDIR%%/GTG/taskbrowser/browser.pyc
 %%PYTHON_SITELIBDIR%%/GTG/taskbrowser/browser.pyo
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/preferences.py
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/preferences.pyc
+%%PYTHON_SITELIBDIR%%/GTG/taskbrowser/preferences.pyo
 %%PYTHON_SITELIBDIR%%/GTG/taskbrowser/tagtree.py
 %%PYTHON_SITELIBDIR%%/GTG/taskbrowser/tagtree.pyc
 %%PYTHON_SITELIBDIR%%/GTG/taskbrowser/tagtree.pyo
@@ -211,7 +261,9 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/tools/taskxml.pyc
 %%PYTHON_SITELIBDIR%%/GTG/tools/taskxml.pyo
 share/applications/gtg.desktop
+share/dbus-1/services/org.GTG.service
 %%DATADIR%%/icons/hicolor/16x16/actions/gtg-note-new.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gtg-plugin.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gtg-tag-new.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gtg-tag.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gtg-task-dismiss.png
@@ -226,6 +278,7 @@ share/applications/gtg.desktop
 %%DATADIR%%/icons/hicolor/16x16/emblems/gtg-people.png
 %%DATADIR%%/icons/hicolor/16x16/emblems/gtg-work.png
 %%DATADIR%%/icons/hicolor/22x22/actions/gtg-note-new.png
+%%DATADIR%%/icons/hicolor/22x22/actions/gtg-plugin.png
 %%DATADIR%%/icons/hicolor/22x22/actions/gtg-tag-new.png
 %%DATADIR%%/icons/hicolor/22x22/actions/gtg-tag.png
 %%DATADIR%%/icons/hicolor/22x22/actions/gtg-task-dismiss.png
@@ -237,8 +290,10 @@ share/applications/gtg.desktop
 %%DATADIR%%/icons/hicolor/22x22/categories/items-tags.png
 %%DATADIR%%/icons/hicolor/24x24/actions/gtg-tag-new.png
 %%DATADIR%%/icons/hicolor/24x24/apps/gtg.png
+%%DATADIR%%/icons/hicolor/32x32/actions/gtg-plugin.png
 %%DATADIR%%/icons/hicolor/32x32/apps/gtg.png
 %%DATADIR%%/icons/hicolor/scalable/apps/gtg.svg
+%%DATADIR%%/icons/hicolor/svg/gtg-plugin.svg
 %%DATADIR%%/icons/hicolor/svg/gtg.svg
 share/icons/hicolor/16x16/apps/gtg.png
 share/icons/hicolor/22x22/apps/gtg.png
@@ -250,6 +305,7 @@ share/locale/ar/LC_MESSAGES/gtg.mo
 share/locale/ast/LC_MESSAGES/gtg.mo
 share/locale/be/LC_MESSAGES/gtg.mo
 share/locale/bg/LC_MESSAGES/gtg.mo
+share/locale/bn/LC_MESSAGES/gtg.mo
 share/locale/ca/LC_MESSAGES/gtg.mo
 share/locale/cs/LC_MESSAGES/gtg.mo
 share/locale/da/LC_MESSAGES/gtg.mo
@@ -260,6 +316,8 @@ share/locale/es/LC_MESSAGES/gtg.mo
 share/locale/fi/LC_MESSAGES/gtg.mo
 share/locale/fr/LC_MESSAGES/gtg.mo
 share/locale/gl/LC_MESSAGES/gtg.mo
+share/locale/he/LC_MESSAGES/gtg.mo
+share/locale/hr/LC_MESSAGES/gtg.mo
 share/locale/hu/LC_MESSAGES/gtg.mo
 share/locale/id/LC_MESSAGES/gtg.mo
 share/locale/is/LC_MESSAGES/gtg.mo
@@ -276,6 +334,7 @@ share/locale/pt/LC_MESSAGES/gtg.mo
 share/locale/pt_BR/LC_MESSAGES/gtg.mo
 share/locale/ro/LC_MESSAGES/gtg.mo
 share/locale/ru/LC_MESSAGES/gtg.mo
+share/locale/si/LC_MESSAGES/gtg.mo
 share/locale/sl/LC_MESSAGES/gtg.mo
 share/locale/sq/LC_MESSAGES/gtg.mo
 share/locale/sv/LC_MESSAGES/gtg.mo
@@ -285,6 +344,8 @@ share/locale/uk/LC_MESSAGES/gtg.mo
 share/locale/zh_CN/LC_MESSAGES/gtg.mo
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/locale/nds
 @dirrmtry share/locale/jbo/LC_MESSAGES
@@ -295,6 +356,7 @@ share/locale/zh_CN/LC_MESSAGES/gtg.mo
 @dirrm %%DATADIR%%/icons/hicolor/scalable/apps
 @dirrm %%DATADIR%%/icons/hicolor/scalable
 @dirrm %%DATADIR%%/icons/hicolor/32x32/apps
+@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
 @dirrm %%DATADIR%%/icons/hicolor/32x32
 @dirrm %%DATADIR%%/icons/hicolor/24x24/apps
 @dirrm %%DATADIR%%/icons/hicolor/24x24/actions
@@ -311,11 +373,15 @@ share/locale/zh_CN/LC_MESSAGES/gtg.mo
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/dbus-1/services
+@dirrmtry share/dbus-1
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/tools
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/taskeditor
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/taskbrowser
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/tomboy
+@dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/task_reaper
+@dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/send_email
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/pyrtm
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/icons/hicolor/svg
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/icons/hicolor/24x24
@@ -324,6 +390,7 @@ share/locale/zh_CN/LC_MESSAGES/gtg.mo
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/icons
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/notification_area
+@dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/import_json
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/hamster
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks/icons/hicolor/svg
@@ -332,8 +399,8 @@ share/locale/zh_CN/LC_MESSAGES/gtg.mo
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks/icons/hicolor
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks/icons
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks
-@dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/export
+@dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/bugzilla
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/core/plugins

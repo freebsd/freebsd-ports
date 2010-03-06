@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtg
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	deskutils gnome python
 MASTER_SITES=	http://launchpad.net/gtg/0.2/${PORTVERSION}/+download/
 
@@ -39,7 +38,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/gtg.desktop ${WRKSRC}/GTG/__init__.py
-	${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' ${WRKSRC}/gtg.desktop
+	${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
+		${WRKSRC}/gtg.desktop ${WRKSRC}/org.GTG.service
 
 post-install:
 	@-update-desktop-database
