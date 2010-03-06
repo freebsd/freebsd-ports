@@ -39,6 +39,7 @@ OPTIONS+=	MYSQL40 "Use MySQL 4.0.x as back-end" off
 OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" off
 OPTIONS+=	MYSQL50 "Use MySQL 5.0.x as back-end" on
 OPTIONS+=	MYSQL51 "Use MySQL 5.1.x as back-end" off
+OPTIONS+=	MYSQL55 "Use MySQL 5.5.x as back-end" off
 OPTIONS+=	MYSQL_COMPRESS "Compress dspam <--> MySQL" off
 OPTIONS+=	MYSQL_LOCAL "RUN_DEPEND on selected MySQL server ver." off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL as back-end" on
@@ -71,7 +72,7 @@ OPTIONS+=	SENDMAIL "Play nice with sendmail server" off
 OPTIONS+=	POSTFIX_MBC "Dspam as mailbox_command in Postfix" off
 OPTIONS+=	QMAIL "Play nice with Qmail mail server" off
 
-OPTIONS+=	WebUI "Install WebUI (pulls in Apache / see below)" off
+OPTIONS+=	WebUI "Install WebUI - pulls in Apache or see below" off
 OPTIONS+=	LIGHTTPD "RUN_DEPEND on LightHTTPD, not Apache" off
 
 USE_PERL5=	yes
@@ -250,10 +251,13 @@ WANT_MYSQL_VER=	50
 .elifdef(WITH_MYSQL51)
 WANT_MYSQL_VER=	51
 #PKGNAMESUFFIX=	-mysql51
+.elifdef(WITH_MYSQL55)
+WANT_MYSQL_VER=	55
+#PKGNAMESUFFIX=	-mysql55
 .endif
 
 .if defined(WITH_MYSQL40) || defined(WITH_MYSQL41) || \
-	!defined(WITHOUT_MYSQL50) || defined(WITH_MYSQL51)
+	!defined(WITHOUT_MYSQL50) || defined(WITH_MYSQL51) || defined(WITH_MYSQL55)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
