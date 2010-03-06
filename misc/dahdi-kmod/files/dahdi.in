@@ -39,8 +39,9 @@ dahdi_start()
 {
 	echo -n " ${name}"
 
+	kldconfig -mf ${kmod_dir}
 	for m in ${dahdi_modules}; do
-		kldload ${kmod_dir}/$m.ko || exit 1
+		kldload $m || exit 1
 	done
 	%%PREFIX%%/sbin/dahdi_cfg
 }
