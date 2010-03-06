@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	isbg
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	mail
 MASTER_SITES=	http://cloud.github.com/downloads/ook/isbg/ \
 		http://home.bluelife.at/ports/distfiles/
@@ -18,7 +18,7 @@ COMMENT=	Scan an IMAP inbox for spam using SpamAssassin
 
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
-DISTDATE=	20091130
+DISTDATE=	20100303
 NO_BUILD=	yes
 USE_PYTHON=	2.5+
 
