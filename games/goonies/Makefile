@@ -24,6 +24,7 @@ USE_GL=		yes
 BUILD_WRKSRC=	${WRKSRC}/src
 MAKEFILE=	../build/linux/Makefile
 MAKE_ENV=	DATADIR="${DATADIR}"
+MAKE_JOBS_SAFE=	yes
 
 DATADIRS=	sound graphics maps
 PORTDOCS=	*
