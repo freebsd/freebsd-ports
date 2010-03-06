@@ -4,6 +4,8 @@ etc/nb.conf.sample
 @exec if [ ! -f %D/etc/nb.conf ] ; then cp -p %D/%F %B/nb.conf; fi
 @exec mkdir -p %D/share/nanoblogger/default/cache
 @exec mkdir -p %D/share/nanoblogger/default/plugins
+@exec mkdir -p %D/share/nanoblogger/plugins/entry/mod
+@exec mkdir -p %D/share/nanoblogger/plugins/page/mod
 %%DATADIR%%/default/articles/example.txt
 %%DATADIR%%/default/blog.conf
 %%DATADIR%%/default/data/cat_1.db
@@ -13,6 +15,7 @@ etc/nb.conf.sample
 %%DATADIR%%/default/styles/nb_clean.css
 %%DATADIR%%/default/styles/nb_default.css
 %%DATADIR%%/default/styles/print.css
+%%DATADIR%%/default/templates/archive_index.htm
 %%DATADIR%%/default/templates/category_archive.htm
 %%DATADIR%%/default/templates/category_entry.htm
 %%DATADIR%%/default/templates/day_archive.htm
@@ -62,7 +65,7 @@ etc/nb.conf.sample
 %%DATADIR%%/plugins/atom.sh
 %%DATADIR%%/plugins/calendar.sh
 %%DATADIR%%/plugins/entry/category_links.sh
-%%DATADIR%%/plugins/entry/format/autobr.sh
+%%DATADIR%%/plugins/entry/format/autotag-br.sh
 %%DATADIR%%/plugins/entry/format/markdown.sh
 %%DATADIR%%/plugins/entry/format/raw.sh
 %%DATADIR%%/plugins/makepage/tidy.sh
@@ -90,30 +93,30 @@ etc/nb.conf.sample
 @dirrm %%DATADIR%%/default/cache
 @dirrm %%DATADIR%%/default/data
 @dirrm %%DATADIR%%/default/images
-@dirrmtry %%DATADIR%%/default/plugins
-@dirrm %%DATADIR%%/default/styles
-@dirrm %%DATADIR%%/default/templates
-@dirrm %%DATADIR%%/default
+@dirrm %%DATADIR%%/default/plugins
+@dirrmtry %%DATADIR%%/default/styles
+@dirrmtry %%DATADIR%%/default/templates
+@dirrmtry %%DATADIR%%/default
 @dirrm %%DATADIR%%/lang/en
-@dirrm %%DATADIR%%/lang
+@dirrmtry %%DATADIR%%/lang
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/moods/smilies
 @dirrm %%DATADIR%%/moods
 @dirrmtry %%DATADIR%%/plugins/archive/category
-@dirrmtry %%DATADIR%%/plugins/archive/day
-@dirrmtry %%DATADIR%%/plugins/archive/month
-@dirrmtry %%DATADIR%%/plugins/archive/year
+@dirrm %%DATADIR%%/plugins/archive/day
+@dirrm %%DATADIR%%/plugins/archive/month
+@dirrm %%DATADIR%%/plugins/archive/year
 @dirrmtry %%DATADIR%%/plugins/archive
 @dirrmtry %%DATADIR%%/plugins/entry/format
-@dirrmtry %%DATADIR%%/plugins/entry/mod
+@dirrm %%DATADIR%%/plugins/entry/mod
 @dirrmtry %%DATADIR%%/plugins/entry
 @dirrm %%DATADIR%%/plugins/makepage
-@dirrm %%DATADIR%%/plugins/page/format
-@dirrmtry %%DATADIR%%/plugins/page/mod
+@dirrmtry %%DATADIR%%/plugins/page/format
+@dirrm %%DATADIR%%/plugins/page/mod
 @dirrmtry %%DATADIR%%/plugins/page
 @dirrm %%DATADIR%%/plugins/post
-@dirrm %%DATADIR%%/plugins/shortcode
-@dirrm %%DATADIR%%/plugins
-@dirrm %%DATADIR%%/
+@dirrmtry %%DATADIR%%/plugins/shortcode
+@dirrmtry %%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/

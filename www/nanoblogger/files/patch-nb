@@ -1,17 +1,17 @@
---- ./nb.orig	2009-04-26 03:55:07.000000000 +0200
-+++ ./nb	2009-06-22 09:31:59.000000000 +0200
+--- ./nb.orig	2010-02-15 22:01:53.000000000 +0100
++++ ./nb	2010-03-01 22:12:55.000000000 +0100
 @@ -1,4 +1,4 @@
 -#! /bin/bash
 +#! %%LOCALBASE%%/bin/bash
  ############################################################
- #  NanoBlogger 3.4 Copyright 2009 n1xt3r (Kevin R. Wood)   #
+ #  NanoBlogger 3.4.2 Copyright 2010 n1xt3r (Kevin R. Wood) #
  ############################################################
-@@ -9,11 +9,11 @@
+@@ -11,11 +11,11 @@
  
  # -- hardcoded paths --
  # where to expect nanoblogger's base
 -NB_BASE_DIR=`dirname $0`
-+NB_BASE_DIR=%%DATADIR%%
++NB_BASE_DIR="%%DATADIR%%"
  # where to expect nanoblogger's documentation
 -NB_DOC_DIR="$NB_BASE_DIR/docs"
 +NB_DOC_DIR="%%DOCSDIR%%"
@@ -21,7 +21,7 @@
  # nanoblogger's language definitions directory.
  NB_LANG_DIR="${NB_BASE_DIR}/lang"
  # nanoblogger's module directory.
-@@ -863,6 +863,9 @@
+@@ -875,6 +875,9 @@
  			for weblog_dir in "$NB_BASE_DIR"/default/*; do
  				cp -R "$weblog_dir" "$BLOG_DIR"
  			done
