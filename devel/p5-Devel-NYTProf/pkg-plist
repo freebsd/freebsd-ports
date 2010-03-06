@@ -36,7 +36,6 @@ bin/nytprofmerge
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf/NYTProf.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Run.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/FileHandle.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/PgPLPerl.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel/NYTProf

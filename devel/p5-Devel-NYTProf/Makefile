@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-NYTProf
-PORTVERSION=	3.01
+PORTVERSION=	3.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	vovkasm@gmail.com
 COMMENT=	Powerful feature-rich perl source code profiler
 
 BUILD_DEPENDS=	p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	5.8.1+
 
@@ -29,7 +29,6 @@ MAN3=	Devel::NYTProf.3 \
 	Devel::NYTProf::Apache.3 \
 	Devel::NYTProf::Core.3 \
 	Devel::NYTProf::Data.3 \
-	Devel::NYTProf::PgPLPerl.3 \
 	Devel::NYTProf::ReadStream.3 \
 	Devel::NYTProf::Reader.3 \
 	Devel::NYTProf::Run.3 \
