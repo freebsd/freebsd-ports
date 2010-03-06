@@ -176,8 +176,6 @@ bin/ncat
 @dirrmtry man/sk
 @dirrmtry man/zh/man1
 @dirrmtry man/zh
-man/pt_PT
-
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/nmap.dtd
