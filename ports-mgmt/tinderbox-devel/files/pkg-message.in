@@ -6,7 +6,25 @@ ports-mgmt/tinderbox is now installed, but it requires some additional setup.
 Please do read: %%PREFIX%%/tinderbox/scripts/README
 ****************************************************
 
-The following walkthrough is the webserver setup:
+=============================================================================
+
+If you installed the port with WITH_TMPFS option:
+To enable the usage of FreeBSD's tmpfs implementation you need to add the
+tmpfs kernel module to your /boot/loader.conf:
+tmpfs_load="YES"
+
+If you installed the port WITH_PARALLEL option:
+The parallel patch allows to run multiple tinderd instances at the same time.
+You can enable multiple tinderd instances via /etc/rc.conf with:
+tinderd_instances="N"
+
+Both patches are experimental and are not official supported by the Tinderbox
+distribution.
+
+=============================================================================
+
+
+The following walkthrough is the webserver setup, if you installed the WebUI:
 
 - In your Apache configuration add the following lines:
 
@@ -33,20 +51,3 @@ dir-listing.activate = "enable"
 
 =============================================================================
 
-tmpfs options:
-To enable the usage of FreeBSD's tmpfs implementation
-you need to add the tmpfs kernel module to your
-loader.conf
-
-tmpfs_load="YES"
-
-parallels options:
-
-The parallel patch allows to run multiple tinderd instances at the same time.
-You can enable multiple tinderd instances via /etc/rc.conf with
-tinderd_instances="X"
-
-Both patches are experimental and are not official supported by the Tinderbox
-distribution.
-
-=============================================================================
