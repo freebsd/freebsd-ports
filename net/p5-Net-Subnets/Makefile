@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-Subnets
-PORTVERSION=	1.0
+PORTVERSION=	1.01
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Computing subnets in large scale networks
 
 PERL_CONFIGURE=	yes
