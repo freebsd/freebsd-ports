@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dulwich
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://samba.org/~jelmer/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,6 @@ PORTDOCS=	AUTHORS COPYING HACKING NEWS README
 post-patch:
 	${REINPLACE_CMD} -e 's|PYTHON = python|PYTHON = /usr/bin/env python|g; \
 		s|/usr|${PREFIX}|g' ${WRKSRC}/Makefile
-
 	${REINPLACE_CMD} -e 's|/usr/bin/python|/usr/bin/env python|g' \
 		${WRKSRC}/setup.py
 

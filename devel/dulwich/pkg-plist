@@ -1,4 +1,5 @@
 bin/dul-daemon
+bin/dul-web
 bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/__init__.py
 %%PYTHON_SITELIBDIR%%/dulwich/__init__.pyc
@@ -11,6 +12,9 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/errors.py
 %%PYTHON_SITELIBDIR%%/dulwich/errors.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/errors.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/file.py
+%%PYTHON_SITELIBDIR%%/dulwich/file.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/file.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/index.py
 %%PYTHON_SITELIBDIR%%/dulwich/index.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/index.pyo
@@ -41,12 +45,18 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/server.py
 %%PYTHON_SITELIBDIR%%/dulwich/server.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/server.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/web.py
+%%PYTHON_SITELIBDIR%%/dulwich/web.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/web.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_client.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_client.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_client.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_file.py
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_file.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_file.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_index.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_index.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_index.pyo
@@ -68,5 +78,11 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_repository.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_repository.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_repository.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_server.py
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_server.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_server.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_web.py
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_web.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_web.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/dulwich/tests
 @dirrm %%PYTHON_SITELIBDIR%%/dulwich
