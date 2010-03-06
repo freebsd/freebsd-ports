@@ -11,6 +11,7 @@ share/icons/hicolor/16x16/apps/kid3.png
 share/icons/hicolor/32x32/apps/kid3.png
 share/icons/hicolor/48x48/apps/kid3.png
 share/icons/hicolor/scalable/apps/kid3.svgz
+share/locale/cs/LC_MESSAGES/kid3.mo
 share/locale/de/LC_MESSAGES/kid3.mo
 share/locale/es/LC_MESSAGES/kid3.mo
 share/locale/et/LC_MESSAGES/kid3.mo
