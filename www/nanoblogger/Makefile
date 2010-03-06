@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	nanoblogger
-PORTVERSION=	3.4
+PORTVERSION=	3.4.2
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION}
+MASTER_SITES=	http://nanoblogger.sourceforge.net/downloads/
 
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Small weblog engine written in Bash for the command line
@@ -27,27 +27,27 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%DOCSDIR%%,${DOCSDIR},g" ${WRKSRC}/nb
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/nb ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/nb.conf ${PREFIX}/etc/nb.conf.sample
-	${MKDIR} ${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/nb ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/nb.conf ${PREFIX}/etc/nb.conf.sample
+	@${MKDIR} ${DATADIR}
 .for data in default lang lib moods plugins
-	${MKDIR} ${DATADIR}/${data} && \
+	@${MKDIR} ${DATADIR}/${data} && \
 		( cd ${WRKSRC}/${data} && \
 			${COPYTREE_SHARE} \* ${DATADIR}/${data} "! -name *.orig" )
 .endfor
-	${CP} ${WRKSRC}/welcome-to-nb.txt ${DATADIR}
+	@${CP} ${WRKSRC}/welcome-to-nb.txt ${DATADIR}
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/nb.conf ]; then \
 		${CP} -p ${PREFIX}/etc/nb.conf.sample ${PREFIX}/etc/nb.conf; \
 	fi
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for doc in COPYING ChangeLog README TODO copyright
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
-	${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/docs/nanoblogger.html ${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/docs/nanoblogger.html ${DOCSDIR}/html
 .endif
 	@${CAT} ${PKGMESSAGE}
 

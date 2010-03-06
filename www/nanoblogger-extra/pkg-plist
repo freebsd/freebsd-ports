@@ -1,4 +1,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/html/nanoblogger_de.html
 %%PORTDOCS%%%%DOCSDIR%%/html/nanoblogger_fr.html
@@ -24,15 +25,11 @@
 %%DATADIR%%/lang/tr/messages.lang
 %%DATADIR%%/lang/tr/plugins.lang
 %%DATADIR%%/lang/tr/templates.lang
-%%DATADIR%%/lang/zh_TW/help.txt
-%%DATADIR%%/lang/zh_TW/messages.lang
-%%DATADIR%%/lang/zh_TW/plugins.lang
-%%DATADIR%%/lang/zh_TW/templates.lang
 %%DATADIR%%/plugins/001_mymood.off
 %%DATADIR%%/plugins/archive/category/include_listings.sh
 %%DATADIR%%/plugins/archive/master_fullindex.off
-%%DATADIR%%/plugins/entry/format/autopbr.sh
 %%DATADIR%%/plugins/entry/z0_excerpt.off
+%%DATADIR%%/plugins/entry/format/autotag-p.sh
 %%DATADIR%%/plugins/file_links.sh
 %%DATADIR%%/plugins/fortune.sh
 %%DATADIR%%/plugins/page/format/autopbr.sh
@@ -40,6 +37,7 @@
 %%DATADIR%%/plugins/rss.sh
 %%DATADIR%%/plugins/shortcode/yahoobuzz.sh
 %%DATADIR%%/plugins/shortcode/youtube.sh
+%%DATADIR%%/plugins/z001_articles_text.off
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/
@@ -50,14 +48,13 @@
 @dirrmtry %%DATADIR%%/lang/es
 @dirrmtry %%DATADIR%%/lang/fr
 @dirrmtry %%DATADIR%%/lang/tr
-@dirrmtry %%DATADIR%%/lang/zh_TW
 @dirrmtry %%DATADIR%%/lang
 @dirrmtry %%DATADIR%%/plugins/archive/category
 @dirrmtry %%DATADIR%%/plugins/archive
 @dirrmtry %%DATADIR%%/plugins/entry/format
 @dirrmtry %%DATADIR%%/plugins/entry
 @dirrmtry %%DATADIR%%/plugins/page/format
-@dirrmtry %%DATADIR%%/plugins/shortcode
 @dirrmtry %%DATADIR%%/plugins/page
+@dirrmtry %%DATADIR%%/plugins/shortcode
 @dirrmtry %%DATADIR%%/plugins
 @dirrmtry %%DATADIR%%
