@@ -13,5 +13,7 @@ MASTER_SITES=	SF/stardict/stardict-dictionaries-dictd/${PORTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Longman Dictionary of Contemporary English
 
+IGNORE=		does not fetch
+
 .include "${.CURDIR}/../../russian/stardict-mueller7/files/Makefile.common"
 .include <bsd.port.mk>
