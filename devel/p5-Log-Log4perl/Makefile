@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,6 +35,7 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Appender::TestArrayBuffer.3 \
 		Log::Log4perl::Appender::TestBuffer.3 \
 		Log::Log4perl::Appender::TestFileCreeper.3 \
+		Log::Log4perl::Catalyst.3 \
 		Log::Log4perl::Config.3 \
 		Log::Log4perl::Config::BaseConfigurator.3 \
 		Log::Log4perl::Config::DOMConfigurator.3 \
