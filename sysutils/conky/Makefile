@@ -7,12 +7,12 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER?=	ntarmos@cs.uoi.gr
-COMMENT?=	An advanced, highly configurable system monitor for X
+MAINTAINER=	ntarmos@cs.uoi.gr
+COMMENT=	An advanced, highly configurable system monitor for X
 
 CONFLICTS?=	conky-awesome-[0-9]*
 SLAVEDIRS=	sysutils/conky-awesome
@@ -26,7 +26,6 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-hddtemp \
-			--disable-apcupsd \
 			--disable-iostats
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -37,10 +36,13 @@ PORTEXAMPLES=	conkyrc.sample
 PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 		docs.html variables.html config_settings.html
 
-OPTIONS+=	AUDACIOUS "Enable Audacious support" Off \
+OPTIONS+=	APCUPSD "Enable APCUPSD support" Off \
+		AUDACIOUS "Enable Audacious support" Off \
 		BMPX "Enable BMPX support" Off \
 		MPD "Enable MPD support" Off \
 		RSS "Enable RSS support" Off \
+		METAR "Enable METAR Weather support" Off \
+		XOAP "Enable XOAP Weather support" Off \
 		XMMS2 "Enable XMMS2 support" Off
 
 .if !empty(USE_XORG)
@@ -63,6 +65,13 @@ CONFIGURE_ARGS+=	--disable-x11 --disable-own-window
 .undef WITH_LUA_CAIRO
 .undef WITH_LUA_IMLIB2
 .undef WITH_XFT
+.endif
+
+.if defined(WITH_APCUPSD)
+RUN_DEPENDS+=		${LOCALBASE}/sbin/apcupsd:${PORTSDIR}/sysutils/apcupsd
+CONFIGURE_ARGS+=	--enable-apcupsd
+.else
+CONFIGURE_ARGS+=	--disable-apcupsd
 .endif
 
 .if defined(WITH_AUDACIOUS)
@@ -122,6 +131,17 @@ LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl \
 			xml2.5:${PORTSDIR}/textproc/libxml2
 CONFIGURE_ARGS+=	--enable-rss
 USE_GNOME+=		glib20
+.endif
+
+.if defined(WITH_METAR)
+LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--enable-weather-metar
+.endif
+
+.if defined(WITH_XOAP)
+LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl \
+			xml2.5:${PORTSDIR}/textproc/libxml2
+CONFIGURE_ARGS+=	--enable-weather-xoap
 .endif
 
 .if defined(WITH_XMMS2)
