@@ -2,7 +2,28 @@ $FreeBSD$
 
 --- 2.4.5/dgd/sys/driver.c.orig	1996-11-28 14:23:11.000000000 -0800
 +++ 2.4.5/dgd/sys/driver.c	2009-07-05 19:04:50.000000000 -0700
-@@ -143,12 +143,40 @@
+@@ -3,6 +3,10 @@
+ # include <status.h>
+ # include "/dgd/lib/privilege.h"
+ 
++#ifdef __NETWORK_EXTENSIONS__
++#define	TELNET_PORT	2000
++#endif
++
+ object *usr;		/* user array just before a swapout */
+ 
+ /*
+@@ -50,6 +54,9 @@
+ 	}
+     }
+     send_message("Setting up ipc.\n");
++#ifdef __NETWORK_EXTENSIONS__
++    open_port("telnet", TELNET_PORT);
++#endif
+ }
+ 
+ /*
+@@ -143,12 +147,40 @@
  }
  
  /*
@@ -45,7 +66,7 @@ $FreeBSD$
  }
  
  /*
-@@ -183,7 +211,7 @@
+@@ -183,7 +215,7 @@
   * NAME:	telnet_connect()
   * DESCRIPTION:	return a player object
   */
@@ -54,7 +75,7 @@ $FreeBSD$
  {
      object user, player;
  
-@@ -204,7 +232,7 @@
+@@ -204,7 +236,7 @@
   * NAME:	binary_connect()
   * DESCRIPTION:	return another player object (just to test)
   */
@@ -63,7 +84,7 @@ $FreeBSD$
  {
      object user, player;
  
-@@ -225,7 +253,7 @@
+@@ -225,7 +257,7 @@
   * NAME:	runtime_error()
   * DESCRIPTION:	log a runtime error
   */
@@ -72,7 +93,24 @@ $FreeBSD$
  {
      mixed **trace;
      string progname, objname, function, str;
-@@ -315,6 +343,15 @@
+@@ -249,6 +281,16 @@
+     return user;
+ }
+ 
++#ifdef __NETWORK_EXTENSIONS__
++/*
++ * NAME:	connection()
++ * DESCRIPTION:	return a user object.
++ */
++object connection(string ipnumber, int port) {
++    return telnet_connect(port);
++}
++#endif
++
+ /*
+  * NAME:	runtime_error()
+  * DESCRIPTION:	log a runtime error
+@@ -315,6 +357,15 @@
  }
  
  /*
@@ -88,7 +126,7 @@ $FreeBSD$
   * NAME:	interrupt()
   * DESCRIPTION:	deal with a kill signal
   */
-@@ -377,3 +414,12 @@
+@@ -377,3 +428,12 @@
  {
      return 0;	/* No. */
  }
