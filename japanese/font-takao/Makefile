@@ -5,10 +5,10 @@
 #
 
 PORTNAME=	font-takao
-PORTVERSION=	003.01.20100214.1
+PORTVERSION=	003.02.01
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://launchpadlibrarian.net/39193744/
-DISTNAME=	takao-fonts-otf-${PORTVERSION}
+MASTER_SITES=	http://launchpadlibrarian.net/40218948/
+DISTNAME=	takao-fonts-ttf-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	An improved IPA Japanese fonts
@@ -29,6 +29,9 @@ PORTDOCS=	IPA_Font_License_Agreement_v1.0.txt \
 
 LOCAL_FONTSDIR=	share/fonts
 X_FONTSDIR=	lib/X11/fonts
+
+post-extract:
+	cd ${WRKSRC} && for F in *.ttf; do ${MV} $${F} $${F%.ttf}.otf; done
 
 do-install:
 	${MKDIR} ${DATADIR}

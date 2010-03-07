@@ -61,9 +61,11 @@ addentries ()
 		make_xlfd $ENC TakaoGothic.otf ipa TakaoGothic c
 		make_xlfd $ENC TakaoPGothic.otf ipa TakaoPGothic p
 		make_xlfd $ENC TakaoPGothic.otf ipa TakaoGothic p
+		make_xlfd $ENC TakaoExGothic.otf ipa TakaoExGothic p
 		make_xlfd $ENC TakaoMincho.otf ipa TakaoMincho c
 		make_xlfd $ENC TakaoPMincho.otf ipa TakaoPMincho p
 		make_xlfd $ENC TakaoPMincho.otf ipa TakaoMincho p
+		make_xlfd $ENC TakaoExMincho.otf ipa TakaoExMincho p
 	done
 }
 
