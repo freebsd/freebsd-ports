@@ -1,0 +1,18 @@
+$FreeBSD$
+
+--- mud.dgd.orig	2010-02-20 08:46:29.000000000 -0800
++++ mud.dgd	2010-02-20 08:47:38.000000000 -0800
+@@ -1,11 +1,11 @@
+ telnet_port	= 6047;			/* telnet port number */
+ binary_port	= 6048;			/* binary port number */
+-directory	= "/home/dworkin/dgd/mud";/* base directory (MUST be absolute) */
++directory	= "%%DATADIR%%/kernel";	/* base directory (MUST be absolute) */
+ users		= 40;			/* max # of users */
+ editors		= 40;			/* max # of editor sessions */
+ ports           = 16;                   /* max number of open ports (for network extensions) */
+ ed_tmpfile	= "../tmp/ed";		/* proto editor tmpfile */
+-swap_file	= "../tmp/swap";	/* swap file */
++swap_file	= "../tmp/dgd.swap";	/* swap file */
+ swap_size	= 1024;			/* # sectors in swap file */
+ cache_size	= 50;			/* # sectors in swap cache */
+ sector_size	= 512;			/* swap sector size */

@@ -1,8 +1,16 @@
 $FreeBSD$
 
---- src/Makefile.orig	2009-07-03 17:24:28.000000000 -0700
-+++ src/Makefile	2009-07-03 17:26:10.000000000 -0700
-@@ -8,9 +8,9 @@
+--- src/Makefile.orig	2010-02-12 13:38:01.000000000 -0800
++++ src/Makefile	2010-02-20 08:54:47.000000000 -0800
+@@ -16,16 +16,15 @@
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ #
+ HOST=	DARWIN
+-DEFINES=-D$(HOST) #-DNETWORK_EXTENSIONS #-DDUMP_FUNCS
+-DEBUG=	-O -g
++DEFINES=-D$(HOST) $(EXTRA_DEFINES) #-DNETWORK_EXTENSIONS #-DDUMP_FUNCS
+ CCFLAGS=$(DEFINES) $(DEBUG)
+ CFLAGS=	-I. -Icomp -Ilex -Ied -Iparser -Ikfun $(CCFLAGS)
  LDFLAGS=
  LIBS=
  LINTFLAGS=-abcehpruz
@@ -14,7 +22,7 @@ $FreeBSD$
  YACC=	yacc
  BIN=	../bin
  
-@@ -22,6 +21,8 @@
+@@ -36,6 +35,8 @@
  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o sdata.o data.o \
  	interpret.o config.o
  
@@ -23,7 +31,7 @@ $FreeBSD$
  a.out:	$(OBJ) always
  	cd comp; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' 'YACC=$(YACC)' dgd
  	cd lex; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
-@@ -39,10 +40,15 @@
+@@ -53,10 +54,15 @@
  	@rm -f a.out
  
  $(BIN)/driver: a.out
@@ -40,7 +48,7 @@ $FreeBSD$
  
  lint:
  	lint $(LINTFLAGS) $(CFLAGS) $(SRC)
-@@ -68,7 +74,8 @@
+@@ -82,7 +88,8 @@
  
  comp/a.out:
  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
