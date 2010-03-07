@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snd
-PORTVERSION=	11.1
-PORTREVISION=	1
+PORTVERSION=	11.3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/
@@ -21,7 +20,6 @@ OPTIONS=	ESD	"Use Enlightened Sound Daemon"		on  \
 		GUILE	"Use Guile as the extension language"	on  \
 		S7	"Use S7 as the extension language"	off  \
 		LADSPA	"Include support for LADSPA plugins"	on  \
-		NLS	"Native Language Support"		on  \
 		MOTIF	"Make Snd with Motif graphics support"	off \
 		GTK2	"Make Snd with Gtk+ graphics support"	on \
 		X11	"Make Snd with GUI support"	on
@@ -31,7 +29,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-float-samples
 MAKEFILE=	makefile
-ALL_TARGET=	audinfo snd snd-info sndplay sndrecord
+ALL_TARGET=	audinfo snd snd-info sndplay
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		snd.1
@@ -85,14 +83,6 @@ RUN_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 CONFIGURE_ARGS+=	--without-ladspa
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gtk
@@ -113,22 +103,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^ _Complex| Vaiolate _Complex|g ; \
 		 s|-O2 -I|-I|g ; \
 		 s|LDFLAGS -ldl|LDFLAGS|g' ${WRKSRC}/configure
-.for i in makefile.in makefile.no-gettext
 	@${REINPLACE_CMD} -e 's|^sndinfo:|snd-info:|g ; \
-		 s|-o sndinfo|-o snd-info|g' ${WRKSRC}/${i}
-.endfor
+		 s|-o sndinfo|-o snd-info|g' ${WRKSRC}/makefile.in
 
 do-install:
-.for i in audinfo snd snd-info sndplay sndrecord
+.for i in audinfo snd snd-info sndplay
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/snd.1 ${MANPREFIX}/man/man1/
 .if !defined(WITHOUT_X11)
 	${INSTALL_DATA} ${WRKSRC}/Snd.ad ${PREFIX}/lib/X11/app-defaults/
-.endif
-.if !defined(WITHOUT_NLS)
-	${INSTALL_DATA} ${WRKSRC}/po/de.gmo \
-		${PREFIX}/share/locale/de/LC_MESSAGES/snd.mo
 .endif
 .if !defined(WITHOUT_GUILE)
 	@${MKDIR} ${DATADIR}
