@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		http://freeradius.portal-to-web.de/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 
-MAINTAINER?=	david@wood2.org.uk
+MAINTAINER?=	rpsfa@rit.edu
 COMMENT?=	A free RADIUS server implementation
 
 USE_BZIP2=	yes
