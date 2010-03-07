@@ -1,6 +1,6 @@
---- Makefile.orig	2009-05-05 17:59:32.000000000 +0200
-+++ Makefile	2009-05-06 21:49:06.000000000 +0200
-@@ -213,7 +213,7 @@
+--- Makefile.orig	2010-03-04 19:18:39.000000000 +0100
++++ Makefile	2010-03-04 19:19:42.000000000 +0100
+@@ -228,7 +228,7 @@
  
  #setup linking
  # -lrt needed for clock_gettime()
@@ -9,7 +9,7 @@
  ifeq ($(USE_FAM),1)
  lLIBS += -lfam
  endif
-@@ -247,10 +247,6 @@
+@@ -266,10 +266,6 @@
  	@for file in `ls $(ICONS)/ |grep -v svn`; do \
  		install -m 644 $(ICONS)/$$file $(ICON_DIR); \
  	done
