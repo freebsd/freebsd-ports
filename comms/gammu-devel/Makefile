@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.27.90
+PORTVERSION=	1.27.92
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
@@ -38,8 +38,8 @@ CMAKE_ARGS+=	-DINSTALL_DOC=OFF -DINSTALL_PHP_EXAMPLES=OFF -DINSTALL_MEDIA=OFF \
 MAN1=		gammu.1 gammu-config.1 jadmaker.1 gammu-smsd.1 gammu-smsd-inject.1 \
 		gammu-smsd-monitor.1
 MAN5=		gammu-smsdrc.5 gammurc.5
-MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
-		gammu-smsd-dbi.7 gammu-smsd-tables.7
+MAN7=		gammu-smsd-dbi.7 gammu-smsd-files.7 gammu-smsd-mysql.7 \
+		gammu-smsd-null.7 gammu-smsd-pgsql.7 gammu-smsd-run.7 gammu-smsd-tables.7
 .endif
 
 .include <bsd.port.pre.mk>
