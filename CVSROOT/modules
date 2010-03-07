@@ -22582,6 +22582,7 @@ sqldeveloper                    ports/databases/sqldeveloper
 sqldjbdns                       ports/dns/sqldjbdns
 sqlgrey                         ports/mail/sqlgrey
 sqlite-ext-inet                 ports/databases/sqlite-ext-inet
+sqlite-ext-miscfuncs            ports/databases/sqlite-ext-miscfuncs
 sqlite2                         ports/databases/sqlite2
 sqlite3                         ports/databases/sqlite3
 sqlite34                        ports/databases/sqlite34
