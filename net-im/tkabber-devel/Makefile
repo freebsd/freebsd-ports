@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.11.1.a.20091117
-PORTREVISION=	1
+PORTVERSION=	0.11.1.a.20100207
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -15,8 +14,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Tcl/Tk based jabber client, development version
 
-LIB_DEPENDS=	img.1:${PORTSDIR}/graphics/libimg \
-		tkXwin.1:${PORTSDIR}/x11/tkXwin
+LIB_DEPENDS=	tkXwin.1:${PORTSDIR}/x11/tkXwin
 RUN_DEPENDS=	tcllib>=1.10:${PORTSDIR}/devel/tcllib \
 		tcltls>=1.5.0:${PORTSDIR}/devel/tcltls \
 		bwidget>=1.8.0:${PORTSDIR}/x11-toolkits/bwidget
