@@ -101,12 +101,13 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 post-extract:
 	@${REINPLACE_CMD} -e 's/^POD3/#POD3/' ${WRKSRC}/doc/Makefile.in
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's/install-idocDATA install-ihtmlDATA//g' \
-		-e 's/^	cd .* rrdtool.html index.html/	#/' \
+	@${REINPLACE_CMD} -e 's/[[:space:]]install-idocDATA//g' \
+		-e 's/[[:space:]]install-ihtmlDATA//g' \
+		-e 's/^[[:space:]].*cd .* rrdtool.html index.html/	#/' \
 		${WRKSRC}/doc/Makefile.in
 .endif
 .if defined(NOPORTEXAMPLES)
-	${REINPLACE_CMD} -e 's|SUBDIRS = po src examples doc bindings intl|SUBDIRS = po src doc bindings intl|' \
+	${REINPLACE_CMD} -e '/^SUBDIRS = /s| examples | |' \
 		${WRKSRC}/Makefile.in
 .endif
 
