@@ -48,7 +48,7 @@
   # define BINARY_CONN		("/kernel" + CLONABLE_SUBDIR + "binary")
   # define API_USER		("/kernel" + INHERITABLE_SUBDIR + "api/user")
   
-+ #ifdef __NETWORK_PACKAGE__
++ #ifdef __NETWORK_EXTENSIONS__
 + #define LIB_PORT                "/kernel/lib/network/port"
 + #endif
 + 
@@ -60,7 +60,7 @@
 ***************
 *** 1,2 ****
 --- 1,8 ----
-+ #ifdef __NETWORK_PACKAGE__
++ #ifdef __NETWORK_EXTENSIONS__
 + #ifndef SYS_NETWORKING
 + #define SYS_NETWORKING
 + #endif
@@ -583,7 +583,7 @@
   # include <kernel/access.h>
   # include <kernel/user.h>
   # include <kernel/tls.h>
-+ # ifdef __NETWORK_PACKAGE__
++ # ifdef __NETWORK_EXTENSIONS__
 + # ifndef SYS_NETWORKING
 + # define SYS_NETWORKING
 + # endif
