@@ -1055,6 +1055,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/ccf2perm-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/cycles-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/cycles-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-sdc-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permrand-sdc-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/perm-decomp-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/perm-decomp-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/perm/permfunc-demo.cc
