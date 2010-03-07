@@ -1,10 +1,11 @@
-bin/js_demo
-bin/fgjs
+bin/fgfs
+bin/js_server
+bin/gl-info
 bin/est-epsilon
+bin/fgviewer
+bin/js_demo
+bin/alcinfo
+bin/fgjs
 bin/metar
 bin/terrasync
-bin/gl-info
 bin/yasim
-bin/js_server
-bin/al-info
-bin/fgfs

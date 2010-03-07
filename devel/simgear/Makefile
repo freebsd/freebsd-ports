@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	SimGear
-PORTVERSION=	1.9.1
-PORTREVISION=	5
+PORTVERSION=	2.0.0
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.de.simgear.org/pub/simgear/Source/ \
-		ftp://ftp.simgear.org/pub/simgear/Source/
+		ftp://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/ \
+		ftp://goflyflightgear.com/simgear/Source/
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	A toolkit for 3D games and simulations
