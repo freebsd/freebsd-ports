@@ -20,7 +20,7 @@ COMMENT=	Broadcom AirForce IEEE 802.11 Firmware Kernel Module
 BUILD_DEPENDS=	b43-fwcutter:${PORTSDIR}/sysutils/b43-fwcutter
 
 FIRMWARES=								\
-	ucode5 ucode11 ucode13 ucode14 ucode15				\
+	ucode ucode5 ucode11 ucode13 ucode14 ucode15			\
 	pcm5 a0g1initvals5 a0g0initvals5				\
 	b0g0initvals5 b0g0initvals13 a0g1bsinitvals5 a0g0bsinitvals5	\
 	b0g0bsinitvals5 						\
@@ -29,7 +29,7 @@ FIRMWARES=								\
 	n0bsinitvals11
 
 FIRMWARES_LP=								\
-	ucode5 ucode11 ucode13 ucode14 ucode15				\
+	ucode ucode5 ucode11 ucode13 ucode14 ucode15			\
 	pcm5 a0g1initvals5 a0g0initvals5				\
 	b0g0initvals5 b0g0initvals13 a0g1bsinitvals5 a0g0bsinitvals5	\
 	b0g0bsinitvals5 						\
