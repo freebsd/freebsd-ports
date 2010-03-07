@@ -399,6 +399,7 @@ MLINKS+=\
 	curs_terminfo.3x tigetflag.3x \
 	curs_terminfo.3x tigetnum.3x \
 	curs_terminfo.3x tigetstr.3x \
+	curs_terminfo.3x tiparm.3x \
 	curs_terminfo.3x tparm.3x \
 	curs_terminfo.3x tputs.3x \
 	curs_terminfo.3x vid_attr.3x \
