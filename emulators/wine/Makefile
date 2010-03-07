@@ -120,7 +120,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
 .endif
 	@${MKDIR} ${DESKTOPDIR}
-	@${MV} ${DATADIR}/applications/wine.desktop ${DESKTOPDIR}/
+	${MV} ${DATADIR}/applications/wine.desktop ${DESKTOPDIR}/
+	@${RMDIR} ${DATADIR}/applications
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
