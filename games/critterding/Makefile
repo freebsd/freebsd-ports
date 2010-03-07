@@ -7,6 +7,7 @@
 
 PORTNAME=	critterding
 DISTVERSION=	beta12
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sources
 
@@ -27,6 +28,10 @@ USE_GCC=	4.2+
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	README AUTHORS Changelog
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|../share/critterding|${DATADIR}|' \
+		${WRKSRC}/src/gui/textprinter.cpp ${WRKSRC}/src/gl/glwindow.cpp
 
 pre-configure:
 	cd ${WRKSRC} && ${AUTORECONF} -fi
