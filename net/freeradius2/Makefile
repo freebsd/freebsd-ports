@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	freeradius-server-${DISTVERSION}
 
-MAINTAINER=	david@wood2.org.uk
+MAINTAINER=	rpsfa@rit.edu
 COMMENT=	A free RADIUS server implementation
 
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
