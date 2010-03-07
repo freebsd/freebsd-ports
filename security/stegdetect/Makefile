@@ -7,19 +7,22 @@
 
 PORTNAME=	stegdetect
 PORTVERSION=	0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	http://www.outguess.org/ \
-		http://distfiles.master.finkmirrors.net/
+		http://distfiles.master.finkmirrors.net/ \
+		http://www.predatorlabs.net/dl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Automated tool for detecting steganographic content in JPEGs
+
+OPTIONS=	X11 "Build xsteg" On
+
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 .endif
-
-BROKEN=		does not build
 
 # Note: stegdetect includes a modified version of jpeg-6b linked statically
 GNU_CONFIGURE=	yes
