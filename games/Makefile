@@ -151,6 +151,7 @@
     SUBDIR += cre
     SUBDIR += crimson
     SUBDIR += criticalmass
+    SUBDIR += critterding
     SUBDIR += crossfire-client
     SUBDIR += crossfire-server
     SUBDIR += crrcsim
