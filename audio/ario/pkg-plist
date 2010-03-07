@@ -110,6 +110,8 @@ share/locale/en_GB/LC_MESSAGES/ario.mo
 share/locale/et/LC_MESSAGES/ario.mo
 share/locale/nb/LC_MESSAGES/ario.mo
 share/locale/ga/LC_MESSAGES/ario.mo
+share/locale/oc/LC_MESSAGES/ario.mo
+share/locale/vi/LC_MESSAGES/ario.mo
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/96x96/apps
