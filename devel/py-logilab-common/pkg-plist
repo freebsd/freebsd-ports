@@ -8,6 +8,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/__pkginfo__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/__pkginfo__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/__pkginfo__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/_pyodbcwrap.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/_pyodbcwrap.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/_pyodbcwrap.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/adbh.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/adbh.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/adbh.pyo
