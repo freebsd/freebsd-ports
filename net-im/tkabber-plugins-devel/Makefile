@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	tkabber-plugins
-PORTVERSION=	20091027
-PORTREVISION=	1
+PORTVERSION=	20100131
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	External Plugins for Tkabber
 
-RUN_DEPENDS=	tkabber-devel>=0.11.1.a.20091117:${PORTSDIR}/net-im/tkabber-devel
+RUN_DEPENDS=	tkabber-devel>=0.11.1.a.20100207:${PORTSDIR}/net-im/tkabber-devel
 
 USE_BZIP2=	yes
 
