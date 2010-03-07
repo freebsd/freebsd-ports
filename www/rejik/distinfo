@@ -7,3 +7,6 @@ SIZE (banlists-2.x.x.tgz) = 116100
 MD5 (squid-like-www-en.tgz) = 49220556b1b5c4fb82c5954175746b09
 SHA256 (squid-like-www-en.tgz) = c4f32179c742cec5f0f03891f8bf0eb4825bfff3a36e6bf0952d641a0973332a
 SIZE (squid-like-www-en.tgz) = 920
+MD5 (dbl-2.0.tgz) = f8d51329458aaac5b7fe1a89ad9bbd4a
+SHA256 (dbl-2.0.tgz) = 45577958a9f9519919e0b61ccfdbda30a467f55721d94a67cb07e8f1c1e55c55
+SIZE (dbl-2.0.tgz) = 3355
