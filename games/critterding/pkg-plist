@@ -1,0 +1,5 @@
+bin/critterding
+%%DATADIR%%/font.ttf
+%%DATADIR%%/pixmaps/cd.bmp
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
