@@ -1,5 +1,14 @@
 --- configure.orig
 +++ configure
+@@ -12805,7 +12805,7 @@
+ 
+ 
+ if test x$want_apcupsd = xyes; then
+-  if test x"$uname" != xLinux; then
++  if test x"$uname" != xLinux -a x"$uname" != xFreeBSD; then
+       { $as_echo "$as_me:$LINENO: apcupsd not supported on $uname... disabling" >&5
+ $as_echo "$as_me: apcupsd not supported on $uname... disabling" >&6;}
+       want_apcupsd=no
 @@ -15930,7 +15930,7 @@
  
  			fi
