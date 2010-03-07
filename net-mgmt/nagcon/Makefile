@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagcon
-PORTVERSION=	0.0.26
+PORTVERSION=	0.0.30
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.vanheusden.com/nagcon/ \
 		${MASTER_SITE_LOCAL}
