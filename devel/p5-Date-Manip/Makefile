@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Date-Manip
-PORTVERSION=	5.54
+PORTVERSION=	5.56
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,6 @@ COMMENT=	Perl5 module containing date manipulation routines
 
 PERL_CONFIGURE=	YES
 
-MAN3=		Date::Manip.3
+MAN3=		Date::Manip.3 Date::Manip::DM5abbrevs.3
 
 .include <bsd.port.mk>
