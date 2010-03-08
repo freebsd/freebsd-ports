@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	znc
-PORTVERSION=	0.078
+PORTVERSION=	0.080
 CATEGORIES=	irc ipv6
 MASTER_SITES=	SF
 
@@ -26,6 +26,7 @@ OPTIONS=	DEBUG		"Enable debugging" off \
 		EXTRA		"Build extra modules" off \
 		PERL		"Enable Perl module support" on \
 		TCL		"Enable TCL module support" off \
+		TCLALLOWALL	"Allow non-admin users to load TCL module" off \
 		SASL		"Enable SASL module support" off
 
 .include <bsd.port.pre.mk>
@@ -75,6 +76,13 @@ PLIST_SUB+=		TCL=""
 .else
 CONFIGURE_ARGS+=	--without-tcl
 PLIST_SUB+=		TCL="@comment "
+.endif
+
+.if defined(WITH_TCLALLOWALL)
+.if defined(WITHOUT_TCL)
+IGNORE=			tcl allow all support requires TCL. Please re-rerun 'make config' and enable TCL
+.endif
+CXXFLAGS+=		-DMOD_MODTCL_ALLOW_EVERYONE
 .endif
 
 .if defined(WITH_SASL)
