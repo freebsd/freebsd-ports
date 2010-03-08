@@ -1,20 +1,4 @@
-share/themes/Envy/metacity-1/close-i.png
-share/themes/Envy/metacity-1/close-inv.png
-share/themes/Envy/metacity-1/close-pre.png
-share/themes/Envy/metacity-1/close.png
-share/themes/Envy/metacity-1/maximize-i.png
-share/themes/Envy/metacity-1/maximize-inv.png
-share/themes/Envy/metacity-1/maximize-pre.png
-share/themes/Envy/metacity-1/maximize.png
-share/themes/Envy/metacity-1/metacity-theme-1.xml
-share/themes/Envy/metacity-1/minimize-i.png
-share/themes/Envy/metacity-1/minimize-inv.png
-share/themes/Envy/metacity-1/minimize-pre.png
-share/themes/Envy/metacity-1/minimize.png
-share/themes/Envy/metacity-1/restore-i.png
-share/themes/Envy/metacity-1/restore-inv.png
-share/themes/Envy/metacity-1/restore-pre.png
-share/themes/Envy/metacity-1/restore.png
+share/themes/Envy/README
 share/themes/Envy/gtk-2.0/button-default.png
 share/themes/Envy/gtk-2.0/button-insensitive.png
 share/themes/Envy/gtk-2.0/button-normal.png
@@ -123,8 +107,24 @@ share/themes/Envy/gtk-2.0/trough.png
 share/themes/Envy/gtk-2.0/trough2-h.png
 share/themes/Envy/gtk-2.0/trough2.png
 share/themes/Envy/index.theme
-@dirrm share/themes/Envy/gtk-2.0
-@dirrm share/themes/Envy
+share/themes/Envy/metacity-1/close-i.png
+share/themes/Envy/metacity-1/close-inv.png
+share/themes/Envy/metacity-1/close-pre.png
+share/themes/Envy/metacity-1/close.png
+share/themes/Envy/metacity-1/maximize-i.png
+share/themes/Envy/metacity-1/maximize-inv.png
+share/themes/Envy/metacity-1/maximize-pre.png
+share/themes/Envy/metacity-1/maximize.png
+share/themes/Envy/metacity-1/metacity-theme-1.xml
+share/themes/Envy/metacity-1/minimize-i.png
+share/themes/Envy/metacity-1/minimize-inv.png
+share/themes/Envy/metacity-1/minimize-pre.png
+share/themes/Envy/metacity-1/minimize.png
+share/themes/Envy/metacity-1/restore-i.png
+share/themes/Envy/metacity-1/restore-inv.png
+share/themes/Envy/metacity-1/restore-pre.png
+share/themes/Envy/metacity-1/restore.png
 @dirrm share/themes/Envy/metacity-1
+@dirrm share/themes/Envy/gtk-2.0
 @dirrm share/themes/Envy
 @dirrmtry share/themes
