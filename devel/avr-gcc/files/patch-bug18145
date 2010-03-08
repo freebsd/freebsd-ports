@@ -1,0 +1,186 @@
+--- ./gcc/config/avr/avr.c.orig	2010-03-05 15:10:10.000000000 +0100
++++ ./gcc/config/avr/avr.c	2010-03-05 15:20:53.000000000 +0100
+@@ -72,6 +72,12 @@
+ static void avr_insert_attributes (tree, tree *);
+ static void avr_asm_init_sections (void);
+ static unsigned int avr_section_type_flags (tree, const char *, int);
++static void avr_asm_named_section (const char *name, unsigned int flags, tree decl);
++/* Track if code will use .bss and/or .data */
++static int avr_need_clear_bss_p = 0;
++static int avr_need_copy_data_p = 0;
++static void avr_output_data_section_asm_op (const void*);
++static void avr_output_bss_section_asm_op (const void*);
+ 
+ static void avr_reorg (void);
+ static void avr_asm_out_ctor (rtx, int);
+@@ -4782,6 +4788,54 @@
+   fprintf (asm_out_file, "\t.p2align 1\n");
+ }
+ 
++/* ASM_OUTPUT_COMMON */
++/* Track need of __do_clear_bss */
++
++void
++avr_asm_output_common (FILE *stream, const char *name,
++                       unsigned HOST_WIDE_INT size,
++                       unsigned HOST_WIDE_INT rounded ATTRIBUTE_UNUSED)
++{
++    avr_need_clear_bss_p = 1;
++    fputs ("\t.comm ", stream);
++    assemble_name (stream, name);
++    fprintf (stream, ",%lu,1\n", (unsigned long) size);  
++}
++
++/* ASM_OUTPUT_LOCAL */
++/* Track need of __do_clear_bss */
++
++void
++avr_asm_output_local (FILE *stream, const char *name,
++                      unsigned HOST_WIDE_INT size,
++                      unsigned HOST_WIDE_INT rounded ATTRIBUTE_UNUSED)
++{                                                    
++    avr_need_clear_bss_p = 1;                           
++    fputs ("\t.lcomm ", stream);                      
++    assemble_name (stream, name);                   
++    fprintf (stream, ",%d\n", (int) size);           
++}
++
++/* Unnamed section callback to track need of __do_copy_data */
++
++static void
++avr_output_data_section_asm_op (const void *data)
++{
++    avr_need_copy_data_p = 1;
++    /* Dispatch to default */
++    output_section_asm_op (data);
++}
++
++/* Unnamed section callback to track need of __do_clear_bss */
++
++static void
++avr_output_bss_section_asm_op (const void *data)
++{
++    avr_need_clear_bss_p = 1;
++    /* Dispatch to default */
++    output_section_asm_op (data);
++}
++
+ /* Implement TARGET_ASM_INIT_SECTIONS.  */
+ 
+ static void
+@@ -4791,6 +4845,27 @@
+ 					 avr_output_progmem_section_asm_op,
+ 					 NULL);
+   readonly_data_section = data_section;
++
++  data_section->unnamed.callback = avr_output_data_section_asm_op;
++  bss_section->unnamed.callback = avr_output_bss_section_asm_op;
++}
++
++/* TARGET_ASM_NAMED_SECTION */
++/* Track need of __do_clear_bss, __do_copy_data for named sections */
++
++static void
++avr_asm_named_section (const char *name, unsigned int flags, tree decl)
++{
++    if (!avr_need_copy_data_p)
++        avr_need_copy_data_p =
++            (0 == strncmp (name, ".data", 5)
++             || 0 == strncmp (name, ".rodata", 7)
++             || 0 == strncmp (name, ".gnu.linkonce.", 14));
++    
++    if (!avr_need_clear_bss_p)
++        avr_need_clear_bss_p = (0 == strncmp (name, ".bss", 4));
++    
++    default_elf_asm_named_section (name, flags, decl);
+ }
+ 
+ static unsigned int
+@@ -4829,12 +4904,6 @@
+   
+   fputs ("__tmp_reg__ = 0\n" 
+          "__zero_reg__ = 1\n", asm_out_file);
+-
+-  /* FIXME: output these only if there is anything in the .data / .bss
+-     sections - some code size could be saved by not linking in the
+-     initialization code from libgcc if one or both sections are empty.  */
+-  fputs ("\t.global __do_copy_data\n", asm_out_file);
+-  fputs ("\t.global __do_clear_bss\n", asm_out_file);
+ }
+ 
+ /* Outputs to the stdio stream FILE some
+@@ -4843,6 +4912,16 @@
+ static void
+ avr_file_end (void)
+ {
++    /* Output these only if there is anything in the
++       .data* / .rodata* / .gnu.linkonce.* resp. .bss*
++       input section(s) - some code size can be saved by not
++       linking in the initialization code from libgcc if resp.
++       sections are empty. */
++    if (avr_need_copy_data_p)
++        fputs (".global __do_copy_data\n", asm_out_file);
++    
++    if (avr_need_clear_bss_p)
++        fputs (".global __do_clear_bss\n", asm_out_file);
+ }
+ 
+ /* Choose the order in which to allocate hard registers for
+--- ./gcc/config/avr/avr.h.orig	2010-03-05 15:10:10.000000000 +0100
++++ ./gcc/config/avr/avr.h	2010-03-05 15:20:53.000000000 +0100
+@@ -533,29 +533,21 @@
+ #define ASM_APP_OFF "/* #NOAPP */\n"
+ 
+ /* Switch into a generic section.  */
+-#define TARGET_ASM_NAMED_SECTION default_elf_asm_named_section
++#define TARGET_ASM_NAMED_SECTION avr_asm_named_section
+ #define TARGET_ASM_INIT_SECTIONS avr_asm_init_sections
+ 
+ #define ASM_OUTPUT_ASCII(FILE, P, SIZE)	 gas_output_ascii (FILE,P,SIZE)
+ 
+ #define IS_ASM_LOGICAL_LINE_SEPARATOR(C, STR) ((C) == '\n' || ((C) == '$'))
+ 
+-#define ASM_OUTPUT_COMMON(STREAM, NAME, SIZE, ROUNDED)			   \
+-do {									   \
+-     fputs ("\t.comm ", (STREAM));					   \
+-     assemble_name ((STREAM), (NAME));					   \
+-     fprintf ((STREAM), ",%lu,1\n", (unsigned long)(SIZE));		   \
+-} while (0)
++#define ASM_OUTPUT_COMMON(STREAM, NAME, SIZE, ROUNDED) \
++        avr_asm_output_common (STREAM, NAME, SIZE, ROUNDED)
+ 
+-#define ASM_OUTPUT_BSS(FILE, DECL, NAME, SIZE, ROUNDED)			\
+-  asm_output_bss ((FILE), (DECL), (NAME), (SIZE), (ROUNDED))
++#define ASM_OUTPUT_BSS(FILE, DECL, NAME, SIZE, ROUNDED) \
++        asm_output_bss ((FILE), (DECL), (NAME), (SIZE), (ROUNDED))
+ 
+-#define ASM_OUTPUT_LOCAL(STREAM, NAME, SIZE, ROUNDED)			\
+-do {									\
+-     fputs ("\t.lcomm ", (STREAM));					\
+-     assemble_name ((STREAM), (NAME));					\
+-     fprintf ((STREAM), ",%d\n", (int)(SIZE));				\
+-} while (0)
++#define ASM_OUTPUT_LOCAL(STREAM, NAME, SIZE, ROUNDED) \
++        avr_asm_output_local (STREAM, NAME, SIZE, ROUNDED)
+ 
+ #undef TYPE_ASM_OP
+ #undef SIZE_ASM_OP
+--- ./gcc/config/avr/avr-protos.h.orig	2008-06-15 23:32:29.000000000 +0200
++++ ./gcc/config/avr/avr-protos.h	2010-03-05 15:20:53.000000000 +0100
+@@ -38,6 +38,8 @@
+ extern void gas_output_limited_string (FILE *file, const char *str);
+ extern void gas_output_ascii (FILE *file, const char *str, size_t length);
+ extern int avr_hard_regno_rename_ok (unsigned int, unsigned int);
++extern void avr_asm_output_common (FILE *stream, const char *name, unsigned HOST_WIDE_INT size, unsigned HOST_WIDE_INT rounded);
++extern void avr_asm_output_local (FILE *stream, const char *name, unsigned HOST_WIDE_INT size, unsigned HOST_WIDE_INT rounded);
+ 
+ #ifdef TREE_CODE
+ extern void asm_output_external (FILE *file, tree decl, char *name);
+@@ -123,6 +125,7 @@
+ extern int compare_eq_p (rtx insn);
+ extern void out_shift_with_cnt (const char *template, rtx insn,
+ 				rtx operands[], int *len, int t_len);
++extern rtx avr_return_addr_rtx (int count, rtx tem);
+ extern int avr_io_address_p (rtx x, int size);
+ extern int avr_peep2_scratch_safe (rtx reg_rtx);
+ #endif /* RTX_CODE */

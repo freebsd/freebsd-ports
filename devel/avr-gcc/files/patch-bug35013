@@ -1,10 +1,6 @@
-Patch to fix GCC bug #35013.
-
-Index: avr-protos.h
-===================================================================
---- gcc/config/avr/avr-protos.h	(revision 132369)
-+++ gcc/config/avr/avr-protos.h	(working copy)
-@@ -111,6 +111,7 @@
+--- ./gcc/config/avr/avr-protos.h.orig	2010-03-05 15:20:53.000000000 +0100
++++ ./gcc/config/avr/avr-protos.h	2010-03-05 15:24:52.000000000 +0100
+@@ -114,6 +114,7 @@
  extern int _reg_unused_after (rtx insn, rtx reg);
  extern int avr_jump_mode (rtx x, rtx insn);
  extern int byte_immediate_operand (rtx op, enum machine_mode mode);
@@ -12,11 +8,9 @@ Index: avr-protos.h
  extern int test_hard_reg_class (enum reg_class class, rtx x);
  extern int jump_over_one_insn_p (rtx insn, rtx dest);
  
-Index: avr.c
-===================================================================
---- gcc/config/avr/avr.c	(revision 132366)
-+++ gcc/config/avr/avr.c	(working copy)
-@@ -1116,8 +1116,7 @@
+--- ./gcc/config/avr/avr.c.orig	2010-03-05 15:22:53.000000000 +0100
++++ ./gcc/config/avr/avr.c	2010-03-05 15:24:52.000000000 +0100
+@@ -1136,8 +1136,7 @@
  
      default:
        if (CONSTANT_ADDRESS_P (addr)
@@ -24,9 +18,9 @@ Index: avr.c
 -	      || GET_CODE (addr) == LABEL_REF))
 +	  && text_segment_operand (addr, VOIDmode))
  	{
- 	  fprintf (file, "pm(");
+ 	  fprintf (file, "gs(");
  	  output_addr_const (file,addr);
-@@ -1428,6 +1427,26 @@
+@@ -1453,6 +1452,26 @@
            && INTVAL (op) <= 0xff && INTVAL (op) >= 0);
  }
  
@@ -53,7 +47,7 @@ Index: avr.c
  /* Output all insn addresses and their sizes into the assembly language
     output file.  This is helpful for debugging whether the length attributes
     in the md file are correct.
-@@ -4465,8 +4484,7 @@
+@@ -4490,8 +4509,7 @@
  avr_assemble_integer (rtx x, unsigned int size, int aligned_p)
  {
    if (size == POINTER_SIZE / BITS_PER_UNIT && aligned_p
@@ -61,5 +55,5 @@ Index: avr.c
 -	  || GET_CODE (x) == LABEL_REF))
 +      && text_segment_operand (x, VOIDmode) )
      {
-       fputs ("\t.word\tpm(", asm_out_file);
+       fputs ("\t.word\tgs(", asm_out_file);
        output_addr_const (asm_out_file, x);

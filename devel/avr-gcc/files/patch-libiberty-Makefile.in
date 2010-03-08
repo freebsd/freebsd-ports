@@ -1,6 +1,7 @@
---- libiberty/Makefile.in.orig	Mon Sep 26 22:55:10 2005
-+++ libiberty/Makefile.in	Wed Mar 22 22:13:44 2006
-@@ -275,7 +275,8 @@
+diff -ur ../gcc-4.3.4.orig/libiberty/Makefile.in ./libiberty/Makefile.in
+--- ../gcc-4.3.4.orig/libiberty/Makefile.in	2007-07-25 08:26:45.000000000 +0200
++++ ./libiberty/Makefile.in	2009-10-02 15:20:13.000000000 +0200
+@@ -344,7 +344,8 @@
  @MAINT@	echo stamp > stamp-functions
  
  INSTALL_DEST = @INSTALL_DEST@
@@ -8,5 +9,6 @@
 +#install: install_to_$(INSTALL_DEST) install-subdir
 +install:
  
- install_to_libdir: all
- 	${mkinstalldirs} $(DESTDIR)$(libdir)$(MULTISUBDIR)
+ # This is tricky.  Even though CC in the Makefile contains
+ # multilib-specific flags, it's overridden by FLAGS_TO_PASS from the
+Only in ./libiberty: Makefile.in.orig

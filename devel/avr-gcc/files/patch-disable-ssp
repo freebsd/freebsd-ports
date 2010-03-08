@@ -1,0 +1,22 @@
+--- configure.orig	2009-04-25 07:55:24.000000000 +0200
++++ configure	2010-03-05 15:28:10.000000000 +0100
+@@ -2277,7 +2277,7 @@
+     noconfigdirs="$noconfigdirs ld target-libgloss ${libgcj}"
+     ;;
+   avr-*-*)
+-    noconfigdirs="$noconfigdirs target-libiberty target-libstdc++-v3 ${libgcj}"
++    noconfigdirs="$noconfigdirs target-libiberty target-libstdc++-v3 ${libgcj} target-libssp"
+     ;;
+   bfin-*-*)
+     noconfigdirs="$noconfigdirs gdb"
+--- configure.ac.orig	2009-04-25 07:55:24.000000000 +0200
++++ configure.ac	2010-03-05 15:28:10.000000000 +0100
+@@ -554,7 +554,7 @@
+     noconfigdirs="$noconfigdirs ld target-libgloss ${libgcj}"
+     ;;
+   avr-*-*)
+-    noconfigdirs="$noconfigdirs target-libiberty target-libstdc++-v3 ${libgcj}"
++    noconfigdirs="$noconfigdirs target-libiberty target-libstdc++-v3 ${libgcj} target-libssp"
+     ;;
+   bfin-*-*)
+     noconfigdirs="$noconfigdirs gdb"
