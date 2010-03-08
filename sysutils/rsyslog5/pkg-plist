@@ -126,6 +126,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_mysql.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_ng_comparison.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_packages.html
+%%PORTDOCS%%%%DOCSDIR%%/rsyslog_pgsql.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_php_syslog_ng.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_recording_pri.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_reliable_forwarding.html
