@@ -6,7 +6,7 @@
 
 PORTNAME=	speech-dispatcher
 PORTVERSION=	0.6.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	accessibility audio
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/speechd/
 
@@ -132,5 +132,6 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

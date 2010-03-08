@@ -17,7 +17,7 @@ rcvar=`set_rcvar`
 
 real_name="speech-dispatcher"
 command="%%PREFIX%%/bin/${real_name}"
-command_args="--config-dir %%ETCDIR%%"
+command_args="-C %%ETCDIR%%"
 pidfile="/var/run/${real_name}.pid"
 
 start_precmd="${name}_prestart"
