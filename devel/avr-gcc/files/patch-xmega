@@ -1,7 +1,6 @@
-diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
---- ../gcc-4.3.2.orig/gcc/config/avr/avr.c	2009-08-11 14:17:06.000000000 +0200
-+++ ./gcc/config/avr/avr.c	2009-08-11 14:38:44.000000000 +0200
-@@ -51,6 +51,7 @@
+--- ./gcc/config/avr/avr.c.orig	2010-03-08 12:55:13.000000000 +0100
++++ ./gcc/config/avr/avr.c	2010-03-08 12:55:36.000000000 +0100
+@@ -55,6 +55,7 @@
  static int avr_naked_function_p (tree);
  static int interrupt_function_p (tree);
  static int signal_function_p (tree);
@@ -9,7 +8,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  static int avr_OS_task_function_p (tree);
  static int avr_regs_to_save (HARD_REG_SET *);
  static int sequent_regs_live (void);
-@@ -118,17 +119,24 @@
+@@ -131,17 +132,24 @@
  int avr_have_movw_lpmx_p = 0;
  
  static const struct base_arch_s avr_arch_types[] = {
@@ -45,7 +44,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  };
  
  /* These names are used as the index into the avr_arch_types[] table 
-@@ -146,7 +154,14 @@
+@@ -159,7 +167,14 @@
    ARCH_AVR4,
    ARCH_AVR5,
    ARCH_AVR51,
@@ -61,34 +60,43 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  };
  
  struct mcu_type_s {
-@@ -297,6 +312,26 @@
+@@ -349,6 +364,35 @@
    { "avr6",         ARCH_AVR6, NULL },
    { "atmega2560",   ARCH_AVR6, "__AVR_ATmega2560__" },
    { "atmega2561",   ARCH_AVR6, "__AVR_ATmega2561__" },
 +    /* Enhanced, == 256K.  */
 +    /* Xmega, <= 8K FLASH.  */
 +    /* Xmega, > 8K, <= 64K FLASH, <= 64K RAM.  */
++  { "avrxmega2",    ARCH_AVRXMEGA2, NULL },
++  { "atxmega16a4",  ARCH_AVRXMEGA2, "__AVR_ATxmega16A4__" },
++  { "atxmega16d4",  ARCH_AVRXMEGA2, "__AVR_ATxmega16D4__" },
++  { "atxmega32d4",  ARCH_AVRXMEGA2, "__AVR_ATxmega32D4__" },
 +    /* Xmega, > 8K, <= 64K FLASH, > 64K RAM.  */
 +  { "avrxmega3",    ARCH_AVRXMEGA3, NULL },
 +  { "atxmega32a4",  ARCH_AVRXMEGA3, "__AVR_ATxmega32A4__" },
 +    /* Xmega, > 64K, <= 128K FLASH, <= 64K RAM.  */
 +  { "avrxmega4",    ARCH_AVRXMEGA4, NULL },
 +  { "atxmega64a3",  ARCH_AVRXMEGA4, "__AVR_ATxmega64A3__" },
++  { "atxmega64d3",  ARCH_AVRXMEGA4, "__AVR_ATxmega64D3__" },
 +    /* Xmega, > 64K, <= 128K FLASH, > 64K RAM.  */
 +  { "avrxmega5",    ARCH_AVRXMEGA5, NULL },
 +  { "atxmega64a1",  ARCH_AVRXMEGA5, "__AVR_ATxmega64A1__" },
 +    /* Xmega, > 128K, <= 256K FLASH, <= 64K RAM.  */
 +  { "avrxmega6",    ARCH_AVRXMEGA6, NULL },
 +  { "atxmega128a3", ARCH_AVRXMEGA6, "__AVR_ATxmega128A3__" },
++  { "atxmega128d3", ARCH_AVRXMEGA6, "__AVR_ATxmega128D3__" },
++  { "atxmega192a3", ARCH_AVRXMEGA6, "__AVR_ATxmega192A3__" },
++  { "atxmega192d3", ARCH_AVRXMEGA6, "__AVR_ATxmega192D3__" },
 +  { "atxmega256a3", ARCH_AVRXMEGA6, "__AVR_ATxmega256A3__" },
 +  { "atxmega256a3b",ARCH_AVRXMEGA6, "__AVR_ATxmega256A3B__" },
++  { "atxmega256d3", ARCH_AVRXMEGA6, "__AVR_ATxmega256D3__" },
 +    /* Xmega, > 128K, <= 256K FLASH, > 64K RAM.  */
 +  { "avrxmega7",    ARCH_AVRXMEGA7, NULL },
 +  { "atxmega128a1", ARCH_AVRXMEGA7, "__AVR_ATxmega128A1__" },
      /* Assembler only.  */
    { "avr1",         ARCH_AVR1, NULL },
    { "at90s1200",    ARCH_AVR1, "__AVR_AT90S1200__" },
-@@ -470,6 +505,21 @@
+@@ -531,6 +575,21 @@
    return a != NULL_TREE;
  }
  
@@ -110,7 +118,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  /* Return nonzero if FUNC is a OS_task function.  */
  
  static int
-@@ -629,6 +679,7 @@
+@@ -690,6 +749,7 @@
    cfun->machine->is_naked = avr_naked_function_p (current_function_decl);
    cfun->machine->is_interrupt = interrupt_function_p (current_function_decl);
    cfun->machine->is_signal = signal_function_p (current_function_decl);
@@ -118,7 +126,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
    cfun->machine->is_OS_task = avr_OS_task_function_p (current_function_decl);
    
    /* Prologue: naked.  */
-@@ -664,20 +715,78 @@
+@@ -725,17 +785,48 @@
  
        /* Push SREG.  */
        insn = emit_move_insn (tmp_reg_rtx, 
@@ -138,11 +146,6 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
 +          insn = emit_move_insn (pushbyte, tmp_reg_rtx);
 +          RTX_FRAME_RELATED_P (insn) = 1;
 +
-+          /* Set RAMPD to 0. */
-+          insn = emit_move_insn (gen_rtx_MEM (QImode, GEN_INT (AVR_RAMPD_ADDR)),
-+                                 const0_rtx);
-+          RTX_FRAME_RELATED_P (insn) = 1;
-+
 +          /* Push RAMPX. */
 +          if (TEST_HARD_REG_BIT (set, REG_X) && TEST_HARD_REG_BIT (set, REG_X + 1))
 +            {
@@ -150,11 +153,6 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
 +                                     gen_rtx_MEM (QImode, GEN_INT (AVR_RAMPX_ADDR)));
 +              RTX_FRAME_RELATED_P (insn) = 1;
 +              insn = emit_move_insn (pushbyte, tmp_reg_rtx);
-+              RTX_FRAME_RELATED_P (insn) = 1;
-+
-+              /* Set RAMPX to 0. */
-+              insn = emit_move_insn (gen_rtx_MEM (QImode, GEN_INT (AVR_RAMPX_ADDR)),
-+                                     const0_rtx);
 +              RTX_FRAME_RELATED_P (insn) = 1;
 +            }
 +
@@ -165,11 +163,6 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
 +                                     gen_rtx_MEM (QImode, GEN_INT (AVR_RAMPY_ADDR)));
 +              RTX_FRAME_RELATED_P (insn) = 1;
 +              insn = emit_move_insn (pushbyte, tmp_reg_rtx);
-+              RTX_FRAME_RELATED_P (insn) = 1;
-+
-+              /* Set RAMPY to 0. */
-+              insn = emit_move_insn (gen_rtx_MEM (QImode, GEN_INT (AVR_RAMPY_ADDR)),
-+                                     const0_rtx);
 +              RTX_FRAME_RELATED_P (insn) = 1;
 +            }
 +        }
@@ -184,22 +177,55 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
            RTX_FRAME_RELATED_P (insn) = 1;
            insn = emit_move_insn (pushbyte, tmp_reg_rtx);
            RTX_FRAME_RELATED_P (insn) = 1;
+@@ -744,9 +835,46 @@
+       /* Clear zero reg.  */
+       insn = emit_move_insn (zero_reg_rtx, const0_rtx);
+       RTX_FRAME_RELATED_P (insn) = 1;
+-
++      
+       /* Prevent any attempt to delete the setting of ZERO_REG!  */
+       emit_insn (gen_rtx_USE (VOIDmode, zero_reg_rtx));
 +
-+          /* 
-+          Clearing the RAMPZ register is needed only if it is used for data
-+          space access.
-+          */
-+          if (AVR_HAVE_RAMPX_Y_D)
++      /* 
++      Clear RAMP? registers if used for data access in the interrupt/signal
++      context.  Do this after the zero register has been explictly cleared. 
++      */
++      if (AVR_HAVE_RAMPX_Y_D)
++        {
++          /* Set RAMPD to 0. */
++          insn = emit_move_insn (gen_rtx_MEM (QImode, GEN_INT (AVR_RAMPD_ADDR)),
++                                 const0_rtx);
++          RTX_FRAME_RELATED_P (insn) = 1;
++
++          if (TEST_HARD_REG_BIT (set, REG_X) && TEST_HARD_REG_BIT (set, REG_X + 1))
++            {
++              /* Set RAMPX to 0. */
++              insn = emit_move_insn (gen_rtx_MEM (QImode, GEN_INT (AVR_RAMPX_ADDR)),
++                                     const0_rtx);
++              RTX_FRAME_RELATED_P (insn) = 1;
++            }
++
++          if (TEST_HARD_REG_BIT (set, REG_Y) && TEST_HARD_REG_BIT (set, REG_Y + 1))
++            {
++              /* Set RAMPY to 0. */
++              insn = emit_move_insn (gen_rtx_MEM (QImode, GEN_INT (AVR_RAMPY_ADDR)),
++                                     const0_rtx);
++              RTX_FRAME_RELATED_P (insn) = 1;
++            }
++
++          if(AVR_HAVE_RAMPZ 
++             && (TEST_HARD_REG_BIT (set, REG_Z) && TEST_HARD_REG_BIT (set, REG_Z + 1)))
 +            {
 +              /* Set RAMPZ to 0. */
 +              insn = emit_move_insn (gen_rtx_MEM (QImode, GEN_INT (AVR_RAMPZ_ADDR)),
-+                                 const0_rtx);
++                                     const0_rtx);
 +              RTX_FRAME_RELATED_P (insn) = 1;
 +            }
-         }
- 	
-       /* Clear zero reg.  */
-@@ -949,14 +1058,39 @@
++        }
+     }
+   if (minimize && (frame_pointer_needed 
+                   || (AVR_2_BYTE_PC && live_seq > 6)
+@@ -1010,14 +1138,39 @@
               && (TEST_HARD_REG_BIT (set, REG_Z) && TEST_HARD_REG_BIT (set, REG_Z + 1)))
              {
  	      emit_insn (gen_popqi (tmp_reg_rtx));
@@ -241,7 +267,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  			  tmp_reg_rtx);
  
            /* Restore tmp REG.  */
-@@ -1725,8 +1859,9 @@
+@@ -1786,8 +1939,9 @@
  		}
                /*  Use simple load of stack pointer if no interrupts are used
                or inside main or signal function prologue where they disabled.  */
@@ -253,7 +279,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
                              && cfun->machine->is_signal 
                              && prologue_epilogue_contains (insn)))
                  {
-@@ -1735,7 +1870,8 @@
+@@ -1796,7 +1950,8 @@
                            AS2 (out,__SP_L__,%A1));
                  }
                /*  In interrupt prolog we know interrupts are enabled.  */
@@ -263,7 +289,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
                          && cfun->machine->is_interrupt
                          && prologue_epilogue_contains (insn))
                  {
-@@ -1745,12 +1881,21 @@
+@@ -1806,12 +1961,21 @@
                             "sei"                   CR_TAB
                             AS2 (out,__SP_L__,%A1));
                  }
@@ -291,7 +317,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  	    }
  	  else if (test_hard_reg_class (STACK_REG, src))
  	    {
-@@ -1885,7 +2030,7 @@
+@@ -1946,7 +2110,7 @@
    
    if (CONSTANT_ADDRESS_P (x))
      {
@@ -300,7 +326,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  	{
  	  *l = 1;
  	  return AS2 (in,%0,__SREG__);
-@@ -1893,7 +2038,8 @@
+@@ -1954,7 +2118,8 @@
        if (avr_io_address_p (x, 1))
  	{
  	  *l = 1;
@@ -310,7 +336,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  	}
        *l = 2;
        return AS2 (lds,%0,%1);
-@@ -2081,8 +2227,9 @@
+@@ -2142,8 +2307,9 @@
        if (avr_io_address_p (base, 2))
  	{
  	  *l = 2;
@@ -322,7 +348,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  	}
        *l = 4;
        return (AS2 (lds,%A0,%A1) CR_TAB
-@@ -2573,7 +2720,7 @@
+@@ -2634,7 +2800,7 @@
    
    if (CONSTANT_ADDRESS_P (x))
      {
@@ -331,7 +357,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  	{
  	  *l = 1;
  	  return AS2 (out,__SREG__,%1);
-@@ -2581,7 +2728,8 @@
+@@ -2642,7 +2808,8 @@
        if (avr_io_address_p (x, 1))
  	{
  	  *l = 1;
@@ -341,7 +367,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  	}
        *l = 2;
        return AS2 (sts,%0,%1);
-@@ -2660,11 +2808,20 @@
+@@ -2721,11 +2888,20 @@
        if (avr_io_address_p (base, 2))
  	{
  	  *l = 2;
@@ -366,7 +392,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
      }
    if (reg_base > 0)
      {
-@@ -2679,11 +2836,20 @@
+@@ -2740,11 +2916,20 @@
  			      AS2 (adiw,r26,1)          CR_TAB
  			      AS2 (st,X,__tmp_reg__));
                else
@@ -392,7 +418,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
              }
            else
              {
-@@ -2691,14 +2857,27 @@
+@@ -2752,14 +2937,27 @@
                  return *l=2, (AS2 (st,X+,%A1) CR_TAB
                                AS2 (st,X,%B1));
                else
@@ -425,7 +451,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
      }
    else if (GET_CODE (base) == PLUS)
      {
-@@ -2709,48 +2888,104 @@
+@@ -2770,48 +2968,104 @@
  	  if (reg_base != REG_Y)
  	    fatal_insn ("incorrect insn:",insn);
  
@@ -559,7 +585,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
          {
            if (REGNO (XEXP (base, 0)) == REG_X)
              {
-@@ -2771,7 +3006,7 @@
+@@ -2832,7 +3086,7 @@
  
        *l = 2;
        return (AS2 (st,%0,%A1)  CR_TAB
@@ -568,7 +594,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
      }
    fatal_insn ("unknown move insn:",insn);
    return "";
-@@ -4651,6 +4886,7 @@
+@@ -4712,6 +4966,7 @@
    { "progmem",   0, 0, false, false, false,  avr_handle_progmem_attribute },
    { "signal",    0, 0, true,  false, false,  avr_handle_fndecl_attribute },
    { "interrupt", 0, 0, true,  false, false,  avr_handle_fndecl_attribute },
@@ -576,7 +602,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
    { "naked",     0, 0, false, true,  true,   avr_handle_fntype_attribute },
    { "OS_task",   0, 0, false, true,  true,   avr_handle_fntype_attribute },
    { NULL,        0, 0, false, false, false, NULL }
-@@ -4739,6 +4975,14 @@
+@@ -4800,6 +5055,14 @@
                         func_name);
              }
          }
@@ -591,7 +617,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
      }
  
    return NULL_TREE;
-@@ -4864,7 +5108,8 @@
+@@ -4994,7 +5257,8 @@
  /*  fprintf (asm_out_file, "\t.arch %s\n", avr_mcu_name);*/
    fputs ("__SREG__ = 0x3f\n"
  	 "__SP_H__ = 0x3e\n"
@@ -601,7 +627,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
    
    fputs ("__tmp_reg__ = 0\n" 
           "__zero_reg__ = 1\n", asm_out_file);
-@@ -5754,15 +5999,18 @@
+@@ -5888,15 +6152,18 @@
    return !(regno & 1);
  }
  
@@ -625,7 +651,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  }
  
  const char *
-@@ -5940,16 +6188,17 @@
+@@ -6074,16 +6341,17 @@
  
    if (GET_CODE (operands[1]) == CONST_INT)
      {
@@ -647,9 +673,8 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.c ./gcc/config/avr/avr.c
  	  if (comp == EQ)
  	    output_asm_insn (AS2 (sbrs,__tmp_reg__,%2), operands);
  	  else
-diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
---- ../gcc-4.3.2.orig/gcc/config/avr/avr.h	2009-08-11 14:17:06.000000000 +0200
-+++ ./gcc/config/avr/avr.h	2009-08-11 14:40:01.000000000 +0200
+--- ./gcc/config/avr/avr.h.orig	2010-03-08 12:55:09.000000000 +0100
++++ ./gcc/config/avr/avr.h	2010-03-08 12:55:36.000000000 +0100
 @@ -44,8 +44,11 @@
    /* Core have 'EICALL' and 'EIJMP' instructions.  */
    int have_eijmp_eicall;
@@ -716,37 +741,52 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
  #define TARGET_VERSION fprintf (stderr, " (GNU assembler syntax)");
  
  #define OVERRIDE_OPTIONS avr_override_options ()
-@@ -848,6 +878,12 @@
+@@ -935,6 +965,20 @@
    mmcu=m3000*|\
    mmcu=m3001*: -m avr5}\
  %{mmcu=atmega256*:-m avr6}\
++%{mmcu=atxmega16a4|\
++  mmcu=atxmega16d4|\
++  mmcu=atxmega32d4:-m avrxmega2}\
 +%{mmcu=atxmega32a4:-m avrxmega3} \
-+%{mmcu=atxmega64a3:-m avrxmega4} \
++%{mmcu=atxmega64a3|\
++  mmcu=atxmega64d3:-m avrxmega4} \
 +%{mmcu=atxmega64a1:-m avrxmega5} \
-+%{mmcu=atxmega128a3| \
-+  mmcu=atxmega256a3*:-m avrxmega6} \
++%{mmcu=atxmega128a3|\
++  mmcu=atxmega128d3|\
++  mmcu=atxmega192a3|\
++  mmcu=atxmega192d3|\
++  mmcu=atxmega256a3*|\
++  mmcu=atxmega256d3:-m avrxmega6} \
 +%{mmcu=atxmega128a1:-m avrxmega7} \
- %{mmcu=atmega324*|\
-   mmcu=atmega325*|\
-   mmcu=atmega328p|\
-@@ -1024,7 +1060,15 @@
+ %{mmcu=atmega324a|\
+   mmcu=atmega324p|\
+   mmcu=atmega324pa|\
+@@ -1190,7 +1234,22 @@
  %{mmcu=m3000s:crtm3000s.o%s} \
  %{mmcu=m3001b:crtm3001b.o%s} \
  %{mmcu=atmega2560|mmcu=avr6:crtm2560.o%s} \
 -%{mmcu=atmega2561:crtm2561.o%s}"
 +%{mmcu=atmega2561:crtm2561.o%s} \
++%{mmcu=avrxmega2|mmcu=atxmega32d4:crtx32d4.o%s} \
++%{mmcu=atxmega16a4:crtx16a4.o%s} \
++%{mmcu=atxmega16d4:crtx16d4.o%s} \
 +%{mmcu=atxmega3|mmcu=atxmega32a4:crtx32a4.o%s} \
 +%{mmcu=atxmega4|mmcu=atxmega64a3:crtx64a3.o%s} \
++%{mmcu=atxmega64d3:crtx64d3.o%s} \
 +%{mmcu=atxmega5|mmcu=atxmega64a1:crtx64a1.o%s} \
 +%{mmcu=atxmega6|mmcu=atxmega128a3:crtx128a3.o%s} \
++%{mmcu=atxmega128d3:crtx128d3.o%s}\
++%{mmcu=atxmega192a3:crtx192a3.o%s}\
++%{mmcu=atxmega192d3:crtx192d3.o%s}\
 +%{mmcu=atxmega256a3:crtx256a3.o%s} \
 +%{mmcu=atxmega256a3b:crtx256a3b.o%s} \
++%{mmcu=atxmega256d3:crtx256d3.o%s} \
 +%{mmcu=atxmega7|mmcu=atxmega128a1:crtx128a1.o%s}"
-+
  
  #define EXTRA_SPECS {"crt_binutils", CRT_BINUTILS_SPECS},
  
-@@ -1086,8 +1130,12 @@
+@@ -1252,8 +1311,12 @@
    /* 'true' - if current function is a signal function 
       as specified by the "signal" attribute.  */
    int is_signal;
@@ -760,9 +800,45 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.h ./gcc/config/avr/avr.h
       as specified by the "OS_task" attribute.  */
    int is_OS_task;
  };
-diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.md ./gcc/config/avr/avr.md
---- ../gcc-4.3.2.orig/gcc/config/avr/avr.md	2009-08-11 14:16:22.000000000 +0200
-+++ ./gcc/config/avr/avr.md	2009-08-11 14:34:10.000000000 +0200
+--- ./gcc/config/avr/t-avr.orig	2010-03-08 12:55:09.000000000 +0100
++++ ./gcc/config/avr/t-avr	2010-03-08 12:55:36.000000000 +0100
+@@ -37,8 +37,8 @@
+ 
+ FPBIT = fp-bit.c
+ 
+-MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr31/mmcu=avr35/mmcu=avr4/mmcu=avr5/mmcu=avr51/mmcu=avr6
+-MULTILIB_DIRNAMES = avr2 avr25 avr3 avr31 avr35 avr4 avr5 avr51 avr6
++MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr31/mmcu=avr35/mmcu=avr4/mmcu=avr5/mmcu=avr51/mmcu=avr6/mmcu=avrxmega2/mmcu=avrxmega3/mmcu=avrxmega4/mmcu=avrxmega5/mmcu=avrxmega6/mmcu=avrxmega7
++MULTILIB_DIRNAMES = avr2 avr25 avr3 avr31 avr35 avr4 avr5 avr51 avr6 avrxmega2 avrxmega3 avrxmega4 avrxmega5 avrxmega6 avrxmega7
+ 
+ # The many avr2 matches are not listed here - this is the default.
+ MULTILIB_MATCHES = \
+@@ -182,7 +182,22 @@
+ 	mmcu?avr51=mmcu?m3000s \
+ 	mmcu?avr51=mmcu?m3001b \
+ 	mmcu?avr6=mmcu?atmega2560 \
+-	mmcu?avr6=mmcu?atmega2561
++	mmcu?avr6=mmcu?atmega2561 \
++	mmcu?avrxmega2=mmcu?atxmega16a4 \
++	mmcu?avrxmega2=mmcu?atxmega16d4 \
++	mmcu?avrxmega2=mmcu?atxmega32d4 \
++	mmcu?avrxmega3=mmcu?atxmega32a4 \
++	mmcu?avrxmega4=mmcu?atxmega64a3 \
++	mmcu?avrxmega4=mmcu?atxmega64d3 \
++	mmcu?avrxmega5=mmcu?atxmega64a1 \
++	mmcu?avrxmega6=mmcu?atxmega128a3 \
++	mmcu?avrxmega6=mmcu?atxmega128d3 \
++	mmcu?avrxmega6=mmcu?atxmega192a3 \
++	mmcu?avrxmega6=mmcu?atxmega192d3 \
++	mmcu?avrxmega6=mmcu?atxmega256a3 \
++	mmcu?avrxmega6=mmcu?atxmega256a3b \
++	mmcu?avrxmega6=mmcu?atxmega256d3 \
++	mmcu?avrxmega7=mmcu?atxmega128a1
+ MULTILIB_EXCEPTIONS =
+ 
+ LIBGCC = stmp-multilib
+--- ./gcc/config/avr/avr.md.orig	2010-03-08 12:54:57.000000000 +0100
++++ ./gcc/config/avr/avr.md	2010-03-08 12:55:36.000000000 +0100
 @@ -47,9 +47,6 @@
     (TMP_REGNO	0)	; temporary register r0
     (ZERO_REGNO	1)	; zero register r1
@@ -772,8 +848,8 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.md ./gcc/config/avr/avr.md
 -   
     (UNSPEC_STRLEN	0)
     (UNSPEC_INDEX_JMP	1)
-    (UNSPEC_SEI		2)
-@@ -2669,7 +2666,8 @@
+    (UNSPEC_SWAP		2)
+@@ -2677,7 +2674,8 @@
    "(optimize > 0)"
  {
    operands[2] = GEN_INT (exact_log2 (~INTVAL (operands[1]) & 0xff));
@@ -783,7 +859,7 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.md ./gcc/config/avr/avr.md
  }
    [(set_attr "length" "1")
     (set_attr "cc" "none")])
-@@ -2681,7 +2679,8 @@
+@@ -2689,7 +2687,8 @@
    "(optimize > 0)"
  {
    operands[2] = GEN_INT (exact_log2 (INTVAL (operands[1]) & 0xff));
@@ -793,10 +869,9 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/avr.md ./gcc/config/avr/avr.md
  }
    [(set_attr "length" "1")
     (set_attr "cc" "none")])
-diff -ur ../gcc-4.3.2.orig/gcc/config/avr/predicates.md ./gcc/config/avr/predicates.md
---- ../gcc-4.3.2.orig/gcc/config/avr/predicates.md	2007-08-02 12:49:31.000000000 +0200
-+++ ./gcc/config/avr/predicates.md	2009-08-11 14:34:10.000000000 +0200
-@@ -45,12 +45,16 @@
+--- ./gcc/config/avr/predicates.md.orig	2010-03-08 12:54:57.000000000 +0100
++++ ./gcc/config/avr/predicates.md	2010-03-08 12:55:36.000000000 +0100
+@@ -50,12 +50,16 @@
  ;; Return true if OP is a valid address for lower half of I/O space.
  (define_predicate "low_io_address_operand"
    (and (match_code "const_int")
@@ -815,34 +890,3 @@ diff -ur ../gcc-4.3.2.orig/gcc/config/avr/predicates.md ./gcc/config/avr/predica
  
  ;; Return 1 if OP is the zero constant for MODE.
  (define_predicate "const0_operand"
-diff -ur ../gcc-4.3.2.orig/gcc/config/avr/t-avr ./gcc/config/avr/t-avr
---- ../gcc-4.3.2.orig/gcc/config/avr/t-avr	2009-08-11 14:17:06.000000000 +0200
-+++ ./gcc/config/avr/t-avr	2009-08-11 14:39:16.000000000 +0200
-@@ -37,8 +37,8 @@
- 
- FPBIT = fp-bit.c
- 
--MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr31/mmcu=avr35/mmcu=avr4/mmcu=avr5/mmcu=avr51/mmcu=avr6
--MULTILIB_DIRNAMES = avr2 avr25 avr3 avr31 avr35 avr4 avr5 avr51 avr6
-+MULTILIB_OPTIONS = mmcu=avr2/mmcu=avr25/mmcu=avr3/mmcu=avr31/mmcu=avr35/mmcu=avr4/mmcu=avr5/mmcu=avr51/mmcu=avr6/mmcu=avrxmega3/mmcu=avrxmega4/mmcu=avrxmega5/mmcu=avrxmega6/mmcu=avrxmega7
-+MULTILIB_DIRNAMES = avr2 avr25 avr3 avr31 avr35 avr4 avr5 avr51 avr6 avrxmega3 avrxmega4 avrxmega5 avrxmega6 avrxmega7
- 
- # The many avr2 matches are not listed here - this is the default.
- MULTILIB_MATCHES = \
-@@ -143,7 +143,15 @@
- 	mmcu?avr51=mmcu?m3000s \
- 	mmcu?avr51=mmcu?m3001b \
-  	mmcu?avr6=mmcu?atmega2560 \
-- 	mmcu?avr6=mmcu?atmega2561
-+ 	mmcu?avr6=mmcu?atmega2561 \
-+	mmcu?avrxmega3=mmcu?atxmega32a4 \
-+	mmcu?avrxmega4=mmcu?atxmega64a3 \
-+	mmcu?avrxmega5=mmcu?atxmega64a1 \
-+	mmcu?avrxmega6=mmcu?atxmega128a3 \
-+	mmcu?avrxmega6=mmcu?atxmega256a3 \
-+	mmcu?avrxmega6=mmcu?atxmega256a3b \
-+	mmcu?avrxmega7=mmcu?atxmega128a1
-+
- 
- MULTILIB_EXCEPTIONS =
- 

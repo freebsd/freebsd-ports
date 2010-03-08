@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.3.2
-PORTREVISION=	2
+PORTVERSION=	4.3.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
@@ -34,7 +33,6 @@ BUILD_WRKSRC=		${WRKDIR}/build
 CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
 INSTALL_WRKSRC=		${BUILD_WRKSRC}
 CONFIGURE_SCRIPT=	../gcc-${PORTVERSION}/configure
-NO_LATEST_LINK=	Use devel/avr-gcc for a stable version.
 
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes

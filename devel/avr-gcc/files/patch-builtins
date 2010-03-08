@@ -1,0 +1,581 @@
+--- ./gcc/config/avr/predicates.md.orig	2007-08-02 12:49:31.000000000 +0200
++++ ./gcc/config/avr/predicates.md	2010-03-05 15:25:53.000000000 +0100
+@@ -27,6 +27,11 @@
+   (and (match_code "reg")
+        (match_test "REGNO (op) >= 16 && REGNO (op) <= 31")))
+ 
++;; Registers from r16 to 24.
++(define_predicate "a_register_operand"
++  (and (match_code "reg")
++       (match_test "REGNO (op) >= 16 && REGNO (op) <= 24")))
++
+ (define_predicate "even_register_operand"
+   (and (match_code "reg")
+        (and (match_test "REGNO (op) <= 31")
+--- ./gcc/config/avr/avr.md.orig	2010-03-05 15:20:25.000000000 +0100
++++ ./gcc/config/avr/avr.md	2010-03-05 15:25:53.000000000 +0100
+@@ -52,12 +52,26 @@
+    
+    (UNSPEC_STRLEN	0)
+    (UNSPEC_INDEX_JMP	1)
+-   (UNSPEC_SEI		2)
+-   (UNSPEC_CLI		3)
+-   (UNSPEC_SWAP		4)
+-
++   (UNSPEC_SWAP		2)
++   (UNSPEC_FMUL		3)
++   (UNSPEC_FMULS	4)
++   (UNSPEC_FMULSU	5)
++  
+    (UNSPECV_PROLOGUE_SAVES	0)
+-   (UNSPECV_EPILOGUE_RESTORES	1)])
++   (UNSPECV_EPILOGUE_RESTORES	1)
++   (UNSPECV_SEI			2)
++   (UNSPECV_CLI			3)   
++   (UNSPECV_NOP			4)   
++   (UNSPECV_NOP2		5)   
++   (UNSPECV_SLEEP		6)   
++   (UNSPECV_WDR			7)   
++
++   (UNSPECV_DELAY_CYCLES	100)
++   (UNSPECV_DELAY_CYCLES_1	101)
++   (UNSPECV_DELAY_CYCLES_2	102)
++   (UNSPECV_DELAY_CYCLES_3	103)
++   (UNSPECV_DELAY_CYCLES_4	104)])
++
+ 
+ (include "predicates.md")
+ (include "constraints.md")
+@@ -2541,13 +2555,6 @@
+ 					(const_int 1))
+ 			  (const_int 3)])])
+ 
+-(define_insn "nop"
+-  [(const_int 0)]
+-  ""
+-  "nop"
+-  [(set_attr "cc" "none")
+-   (set_attr "length" "1")])
+-
+ ; indirect jump
+ (define_insn "indirect_jump"
+   [(set (pc) (match_operand:HI 0 "register_operand" "!z,*r"))]
+@@ -2925,7 +2932,7 @@
+ 
+ ;; Enable Interrupts
+ (define_insn "enable_interrupt"
+-  [(unspec [(const_int 0)] UNSPEC_SEI)]
++  [(unspec_volatile [(const_int 0)] UNSPECV_SEI)]
+   ""
+   "sei"
+   [(set_attr "length" "1")
+@@ -2934,7 +2941,7 @@
+ 
+ ;; Disable Interrupts
+ (define_insn "disable_interrupt"
+-  [(unspec [(const_int 0)] UNSPEC_CLI)]
++  [(unspec_volatile [(const_int 0)] UNSPECV_CLI)]
+   ""
+   "cli"
+   [(set_attr "length" "1")
+@@ -3034,3 +3041,219 @@
+     expand_epilogue (); 
+     DONE;
+   }")
++
++;;delay_cycles_delay_cycles_delay_cycles_delay_cycles_delay_cycles_delay
++;; delay_cycles
++
++(define_expand "delay_cycles"
++  [(unspec_volatile [(match_operand:SI 0 "const_int_operand" "i")]
++                    UNSPECV_DELAY_CYCLES)]
++  ""
++  "
++  rtx loop_reg;
++  unsigned int cycles = INTVAL (operands[0]);
++  if (IN_RANGE(cycles, 83886082, 0xFFFFFFFF))
++    {
++      unsigned int loop_count = ((cycles - 9) / 6) + 1;
++      unsigned int cycles_used = (((loop_count - 1) * 6) + 9);
++      emit_insn (gen_delay_cycles_4 (gen_int_mode (loop_count, SImode)));
++      cycles -= cycles_used;
++    }
++  if (IN_RANGE(cycles, 262145, 83886081))
++    {
++      unsigned int loop_count = ((cycles - 7) / 5) + 1;
++      if (loop_count > 0xFFFFFF)
++        loop_count = 0xFFFFFF;
++      unsigned int cycles_used = (((loop_count - 1) * 5) + 7);
++      emit_insn (gen_delay_cycles_3 (gen_int_mode (loop_count, SImode)));
++      cycles -= cycles_used;
++    }
++  if (IN_RANGE(cycles, 768, 262144))
++    {
++      unsigned int loop_count = ((cycles - 5) / 4) + 1;
++      if (loop_count > 0xFFFF)
++        loop_count = 0xFFFF;
++      unsigned int cycles_used = (((loop_count - 1) * 4) + 5);
++      emit_insn (gen_delay_cycles_2 (gen_int_mode (loop_count, HImode)));
++      cycles -= cycles_used;
++    }
++  if (IN_RANGE(cycles, 6, 767))
++    {
++      unsigned int loop_count = (cycles/ 3);
++      if (loop_count > 255) 
++        loop_count = 255;
++      unsigned int cycles_used = (loop_count * 3);
++      emit_insn (gen_delay_cycles_1 (gen_int_mode (loop_count, QImode)));
++      cycles -= cycles_used;
++    }
++  while (cycles >= 2)
++    {
++      emit_insn (gen_nop2 ());
++      cycles -= 2;
++    }
++  if (cycles == 1)
++    {
++      emit_insn (gen_nop ());
++      cycles--;
++    }
++  DONE;
++  ")
++
++(define_insn "delay_cycles_1"
++[(unspec_volatile [(const_int 0)] UNSPECV_DELAY_CYCLES_1)
++  (match_operand:QI 0 "immediate_operand" "")
++  (clobber (match_scratch:QI 1 "=&d"))]
++  ""
++  " ldi %1,lo8(%0)
++    1:dec %1
++    brne 1b"
++  [(set_attr "length" "3")
++   (set_attr "cc" "clobber")]) 
++
++(define_insn "delay_cycles_2"
++  [(unspec_volatile [(const_int 0)] UNSPECV_DELAY_CYCLES_2)
++   (match_operand:HI 0 "immediate_operand" "")
++   (clobber (match_scratch:HI 1 "=&w"))]
++  ""
++  " ldi %A1,lo8(%0)
++    ldi %B1,hi8(%0)
++    1:sbiw %A1,1
++    brne 1b"
++  [(set_attr "length" "4")
++   (set_attr "cc" "clobber")])
++
++(define_insn "delay_cycles_3"
++  [(unspec_volatile [(const_int 0)] UNSPECV_DELAY_CYCLES_3)
++   (match_operand:SI 0 "immediate_operand" "")
++   (clobber (match_scratch:SI 1 "=&d"))]
++  ""
++  " ldi %A1,lo8(%0)
++    ldi %B1,hi8(%0)
++    ldi %C1,hlo8(%0)
++    1:subi %A1,1
++    sbci %B1,0
++    sbci %C1,0
++    brne 1b"
++  [(set_attr "length" "7")
++   (set_attr "cc" "clobber")])
++
++(define_insn "delay_cycles_4"
++  [(unspec_volatile [(const_int 0)] UNSPECV_DELAY_CYCLES_4)
++   (match_operand:SI 0 "immediate_operand" "")
++   (clobber (match_scratch:SI 1 "=&d"))]
++  ""
++  " ldi %A1,lo8(%0)
++    ldi %B1,hi8(%0)
++    ldi %C1,hlo8(%0)
++    ldi %D1,hhi8(%0)
++    1:subi %A1,1
++    sbci %B1,0
++    sbci %C1,0
++    sbci %D1,0
++    brne 1b"
++  [(set_attr "length" "9")
++   (set_attr "cc" "clobber")])
++
++;; CPU instructions
++
++;; NOP
++(define_insn "nop"
++  [(unspec_volatile [(const_int 0)] UNSPECV_NOP)]
++  ""
++  "nop"
++  [(set_attr "length" "1")
++  (set_attr "cc" "none")])
++
++;; NOP2
++(define_insn "nop2"
++  [(unspec_volatile [(const_int 0)] UNSPECV_NOP2)]
++  ""
++  "rjmp ."
++  [(set_attr "length" "1")
++  (set_attr "cc" "none")])
++
++;; SEI, Enable Interrupts
++;(define_insn "sei"
++;  [(unspec_volatile [(const_int 0)] UNSPECV_SEI)]
++;  ""
++;  "sei"
++;  [(set_attr "length" "1")
++;  (set_attr "cc" "none")
++;  ])
++
++;; CLI, Disable Interrupts
++;(define_insn "cli"
++;  [(unspec_volatile [(const_int 0)] UNSPECV_CLI)]
++;  ""
++;  "cli"
++;  [(set_attr "length" "1")
++;  (set_attr "cc" "none")
++;  ])
++
++;; SLEEP
++(define_insn "sleep"
++  [(unspec_volatile [(const_int 0)] UNSPECV_SLEEP)]
++  ""
++  "sleep"
++  [(set_attr "length" "1")
++  (set_attr "cc" "none")
++  ])
++ 
++;; WDR
++(define_insn "wdr"
++  [(unspec_volatile [(const_int 0)] UNSPECV_WDR)]
++  ""
++  "wdr"
++  [(set_attr "length" "1")
++  (set_attr "cc" "none")
++  ])
++  
++;; SWAP
++(define_insn "swap"
++  [(set (match_operand:QI 0 "register_operand" "=r")
++	(unspec:QI [(match_operand:QI 1 "register_operand" "0")]
++		   UNSPEC_SWAP))]
++  ""
++  "swap %0"
++  [(set_attr "length" "1")
++   (set_attr "cc" "none")])
++
++;; FMUL
++(define_insn "fmul"
++  [(set (match_operand:HI 0 "a_register_operand" "=r")
++	(unspec:HI [(match_operand:QI 1 "a_register_operand" "r")
++		    (match_operand:QI 2 "a_register_operand" "r")]
++		    UNSPEC_FMUL))]
++  "AVR_HAVE_MUL"
++  "fmul %1,%2
++	movw %0,r0
++	clr r1"
++  [(set_attr "length" "3")
++   (set_attr "cc" "clobber")])
++
++;; FMULS
++(define_insn "fmuls"
++  [(set (match_operand:HI 0 "a_register_operand" "=r")
++	(unspec:HI [(match_operand:QI 1 "a_register_operand" "r")
++		    (match_operand:QI 2 "a_register_operand" "r")]
++		    UNSPEC_FMULS))]
++  "AVR_HAVE_MUL"
++  "fmuls %1,%2
++	movw %0,r0
++	clr r1"
++  [(set_attr "length" "3")
++   (set_attr "cc" "clobber")])
++
++;; FMULSU
++(define_insn "fmulsu"
++  [(set (match_operand:HI 0 "a_register_operand" "=r")
++	(unspec:HI [(match_operand:QI 1 "a_register_operand" "r")
++		    (match_operand:QI 2 "a_register_operand" "r")]
++		    UNSPEC_FMULSU))]
++  "AVR_HAVE_MUL"
++  "fmulsu %1,%2
++	movw %0,r0
++	clr r1"
++  [(set_attr "length" "3")
++   (set_attr "cc" "clobber")])
++
+--- ./gcc/config/avr/avr.c.orig	2010-03-05 15:24:52.000000000 +0100
++++ ./gcc/config/avr/avr.c	2010-03-05 15:25:53.000000000 +0100
+@@ -30,6 +30,7 @@
+ #include "insn-config.h"
+ #include "conditions.h"
+ #include "insn-attr.h"
++#include "insn-codes.h"
+ #include "flags.h"
+ #include "reload.h"
+ #include "tree.h"
+@@ -39,7 +40,9 @@
+ #include "obstack.h"
+ #include "function.h"
+ #include "recog.h"
++#include "optabs.h"
+ #include "ggc.h"
++#include "langhooks.h"
+ #include "tm_p.h"
+ #include "target.h"
+ #include "target-def.h"
+@@ -87,6 +90,9 @@
+ static int avr_address_cost (rtx);
+ static bool avr_return_in_memory (const_tree, const_tree);
+ static struct machine_function * avr_init_machine_status (void);
++static void avr_init_builtins (void);
++static rtx avr_expand_builtin (tree, rtx, rtx, enum machine_mode, int);
++
+ /* Allocate registers from r25 to r8 for parameters for function calls.  */
+ #define FIRST_CUM_REG 26
+ 
+@@ -340,6 +346,12 @@
+ #undef TARGET_STRICT_ARGUMENT_NAMING
+ #define TARGET_STRICT_ARGUMENT_NAMING hook_bool_CUMULATIVE_ARGS_true
+ 
++#undef TARGET_INIT_BUILTINS
++#define TARGET_INIT_BUILTINS avr_init_builtins
++
++#undef TARGET_EXPAND_BUILTIN
++#define TARGET_EXPAND_BUILTIN avr_expand_builtin
++
+ struct gcc_target targetm = TARGET_INITIALIZER;
+ 
+ void
+@@ -6079,4 +6091,237 @@
+     return false;
+ }
+ 
++/* Codes for all the AVR builtins.  */
++
++enum avr_builtins
++{
++  AVR_BUILTIN_SEI,
++  AVR_BUILTIN_CLI,
++  AVR_BUILTIN_WDR,
++  AVR_BUILTIN_SLEEP,
++  AVR_BUILTIN_SWAP,
++  AVR_BUILTIN_FMUL,
++  AVR_BUILTIN_FMULS,
++  AVR_BUILTIN_FMULSU,
++  AVR_BUILTIN_DELAY_CYCLES
++};
++
++#define def_builtin(NAME, TYPE, CODE)					\
++do {									\
++  add_builtin_function ((NAME), (TYPE), (CODE), BUILT_IN_MD,		\
++		       NULL, NULL_TREE);				\
++} while (0)
++
++/* Set up all builtin functions for this target.  */
++
++static void
++avr_init_builtins (void)
++{
++  tree void_ftype_void
++    = build_function_type (void_type_node, void_list_node);
++  tree uchar_ftype_uchar
++    = build_function_type_list (unsigned_char_type_node, 
++                                unsigned_char_type_node,
++				NULL_TREE);
++  tree uint_ftype_uchar_uchar
++    = build_function_type_list (unsigned_type_node, 
++                                unsigned_char_type_node,
++				unsigned_char_type_node, 
++				NULL_TREE);
++  tree int_ftype_char_char
++    = build_function_type_list (integer_type_node, 
++                                char_type_node,
++				char_type_node, 
++				NULL_TREE);
++  tree int_ftype_char_uchar
++    = build_function_type_list (integer_type_node, 
++                                char_type_node,
++				unsigned_char_type_node, 
++				NULL_TREE);
++  tree void_ftype_ulong
++    = build_function_type_list (void_type_node, 
++                                long_unsigned_type_node,
++				NULL_TREE);
++
++  def_builtin ("__builtin_avr_sei", void_ftype_void, AVR_BUILTIN_SEI);
++  def_builtin ("__builtin_avr_cli", void_ftype_void, AVR_BUILTIN_CLI);
++  def_builtin ("__builtin_avr_wdr", void_ftype_void, AVR_BUILTIN_WDR);
++  def_builtin ("__builtin_avr_sleep", void_ftype_void, AVR_BUILTIN_SLEEP);
++
++  if (AVR_HAVE_MUL)
++    {
++      def_builtin ("__builtin_avr_fmul", uint_ftype_uchar_uchar, 
++                   AVR_BUILTIN_FMUL);
++      def_builtin ("__builtin_avr_fmuls", int_ftype_char_char, 
++                   AVR_BUILTIN_FMULS);
++      def_builtin ("__builtin_avr_fmulsu", int_ftype_char_uchar, 
++                   AVR_BUILTIN_FMULSU);
++    }
++
++  def_builtin ("__builtin_avr_swap", uchar_ftype_uchar, AVR_BUILTIN_SWAP);
++  def_builtin ("__builtin_avr_delay_cycles", void_ftype_ulong, 
++               AVR_BUILTIN_DELAY_CYCLES);
++}
++
++struct builtin_description
++{
++  const enum insn_code icode;
++  const char *const name;
++  const enum avr_builtins code;
++};
++
++static const struct builtin_description bdesc_1arg[] =
++{
++  { CODE_FOR_swap, "__builtin_avr_swap", AVR_BUILTIN_SWAP }
++};
++
++static const struct builtin_description bdesc_2arg[] =
++{
++  { CODE_FOR_fmul, "__builtin_avr_fmul", AVR_BUILTIN_FMUL },
++  { CODE_FOR_fmuls, "__builtin_avr_fmuls", AVR_BUILTIN_FMULS },
++  { CODE_FOR_fmulsu, "__builtin_avr_fmulsu", AVR_BUILTIN_FMULSU }
++};
++
++/* Subroutine of avr_expand_builtin to take care of unop insns.  */
++
++static rtx
++avr_expand_unop_builtin (enum insn_code icode, tree exp,
++			  rtx target)
++{
++  rtx pat;
++  tree arg0 = CALL_EXPR_ARG (exp, 0);
++  rtx op0 = expand_expr (arg0, NULL_RTX, VOIDmode, 0);
++  enum machine_mode op0mode = GET_MODE (op0);
++  enum machine_mode tmode = insn_data[icode].operand[0].mode;
++  enum machine_mode mode0 = insn_data[icode].operand[1].mode;
++
++  if (! target
++      || GET_MODE (target) != tmode
++      || ! (*insn_data[icode].operand[0].predicate) (target, tmode))
++    target = gen_reg_rtx (tmode);
++
++  if (op0mode == SImode && mode0 == HImode)
++    {
++      op0mode = HImode;
++      op0 = gen_lowpart (HImode, op0);
++    }
++  gcc_assert (op0mode == mode0 || op0mode == VOIDmode);
++
++  if (! (*insn_data[icode].operand[1].predicate) (op0, mode0))
++    op0 = copy_to_mode_reg (mode0, op0);
++
++  pat = GEN_FCN (icode) (target, op0);
++  if (! pat)
++    return 0;
++  emit_insn (pat);
++  return target;
++}
++
++/* Subroutine of avr_expand_builtin to take care of binop insns.  */
++
++static rtx
++avr_expand_binop_builtin (enum insn_code icode, tree exp, rtx target)
++{
++  rtx pat;
++  tree arg0 = CALL_EXPR_ARG (exp, 0);
++  tree arg1 = CALL_EXPR_ARG (exp, 1);
++  rtx op0 = expand_expr (arg0, NULL_RTX, VOIDmode, 0);
++  rtx op1 = expand_expr (arg1, NULL_RTX, VOIDmode, 0);
++  enum machine_mode op0mode = GET_MODE (op0);
++  enum machine_mode op1mode = GET_MODE (op1);
++  enum machine_mode tmode = insn_data[icode].operand[0].mode;
++  enum machine_mode mode0 = insn_data[icode].operand[1].mode;
++  enum machine_mode mode1 = insn_data[icode].operand[2].mode;
++
++  if (! target
++      || GET_MODE (target) != tmode
++      || ! (*insn_data[icode].operand[0].predicate) (target, tmode))
++    target = gen_reg_rtx (tmode);
++
++  if ((op0mode == SImode || op0mode == VOIDmode) && mode0 == HImode)
++    {
++      op0mode = HImode;
++      op0 = gen_lowpart (HImode, op0);
++    }
++  if ((op1mode == SImode || op1mode == VOIDmode) && mode1 == HImode)
++    {
++      op1mode = HImode;
++      op1 = gen_lowpart (HImode, op1);
++    }
++  /* In case the insn wants input operands in modes different from
++     the result, abort.  */
++  gcc_assert ((op0mode == mode0 || op0mode == VOIDmode)
++	      && (op1mode == mode1 || op1mode == VOIDmode));
++
++  if (! (*insn_data[icode].operand[1].predicate) (op0, mode0))
++    op0 = copy_to_mode_reg (mode0, op0);
++  if (! (*insn_data[icode].operand[2].predicate) (op1, mode1))
++    op1 = copy_to_mode_reg (mode1, op1);
++
++  pat = GEN_FCN (icode) (target, op0, op1);
++  if (! pat)
++    return 0;
++
++  emit_insn (pat);
++  return target;
++}
++
++/* Expand an expression EXP that calls a built-in function,
++   with result going to TARGET if that's convenient
++   (and in mode MODE if that's convenient).
++   SUBTARGET may be used as the target for computing one of EXP's operands.
++   IGNORE is nonzero if the value is to be ignored.  */
++
++static rtx
++avr_expand_builtin (tree exp, rtx target,
++		     rtx subtarget ATTRIBUTE_UNUSED,
++		     enum machine_mode mode ATTRIBUTE_UNUSED,
++		     int ignore ATTRIBUTE_UNUSED)
++{
++  size_t i;
++  const struct builtin_description *d;
++  tree fndecl = TREE_OPERAND (CALL_EXPR_FN (exp), 0);
++  unsigned int fcode = DECL_FUNCTION_CODE (fndecl);
++  rtx pat;
++  tree arg0;
++  rtx op0;
++
++  switch (fcode)
++    {
++    case AVR_BUILTIN_SEI:
++      emit_insn (gen_enable_interrupt ());
++      return 0;
++    case AVR_BUILTIN_CLI:
++      emit_insn (gen_disable_interrupt ());
++      return 0;
++    case AVR_BUILTIN_WDR:
++      emit_insn (gen_wdr ());
++      return 0;
++    case AVR_BUILTIN_SLEEP:
++      emit_insn (gen_sleep ());
++      return 0;
++    case AVR_BUILTIN_DELAY_CYCLES:
++      {
++        arg0 = CALL_EXPR_ARG (exp, 0);
++        op0 = expand_expr (arg0, NULL_RTX, VOIDmode, 0);
++
++        if (!CONSTANT_P (op0))
++          error ("__builtin_avr_delay_cycles expects an integer constant.");
++
++        emit_insn (gen_delay_cycles (op0));
++        return 0;
++      }
++    }
++
++  for (i = 0, d = bdesc_1arg; i < ARRAY_SIZE (bdesc_1arg); i++, d++)
++    if (d->code == fcode)
++      return avr_expand_unop_builtin (d->icode, exp, target);
++
++  for (i = 0, d = bdesc_1arg; i < ARRAY_SIZE (bdesc_2arg); i++, d++)
++    if (d->code == fcode)
++      return avr_expand_binop_builtin (d->icode, exp, target);
++
++  gcc_unreachable ();
++}
++
+ #include "gt-avr.h"

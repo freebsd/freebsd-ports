@@ -1,0 +1,20 @@
+--- gcc/config/avr/avr.c.orig	2010-03-05 17:21:19.000000000 +0100
++++ gcc/config/avr/avr.c	2010-03-05 17:22:02.000000000 +0100
+@@ -46,6 +46,7 @@
+ #include "tm_p.h"
+ #include "target.h"
+ #include "target-def.h"
++#include "params.h"
+ #include "df.h"
+ 
+ /* Maximal allowed offset for an address in the LD command */
+@@ -419,6 +420,9 @@
+ 
+   flag_delete_null_pointer_checks = 0;
+ 
++  if (!PARAM_SET_P (PARAM_INLINE_CALL_COST))
++    set_param_value ("inline-call-cost", 5);
++
+   for (t = avr_mcu_types; t->name; t++)
+     if (strcmp (t->name, avr_mcu_name) == 0)
+       break;
