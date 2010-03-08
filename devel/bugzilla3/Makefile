@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	3.4.5
-PORTREVISION=	1
+PORTVERSION?=	3.4.6
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -35,8 +34,8 @@ OPTIONS=	MYSQL "MySQL database support" off \
 
 RUN_DEPENDS+=	\
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		p5-Template-Toolkit>=2.15:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-DBI>=1.41:${PORTSDIR}/databases/p5-DBI \
+		p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0.71:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
@@ -72,25 +71,25 @@ NO_BUILD=
 .include <bsd.port.pre.mk>
 
 .ifdef WITH_MYSQL
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS+=	p5-DBD-mysql>=2.9003:${PORTSDIR}/databases/p5-DBD-mysql
 USE_MYSQL=	yes
 IGNORE_WITH_MYSQL=	323
 .endif
 
 .ifdef WITH_PGSQL
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=1.45:${PORTSDIR}/databases/p5-DBD-Pg
 USE_PGSQL=	yes
 .endif
 
 .ifdef WITH_GRAPH_REPORTS
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
+RUN_DEPENDS+=	p5-GD>=1.20:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
 		${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
 		${SITE_PERL}/Template/Plugin/GD/Image.pm:${PORTSDIR}/www/p5-Template-GD
 .endif
 
 .ifdef WITH_CHARTING_MODULES
-RUN_DEPENDS+=	${SITE_PERL}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart
+RUN_DEPENDS+=	p5-chart>=1.0:${PORTSDIR}/graphics/p5-chart
 .endif
 
 .ifdef WITH_PATCH_VIEWER
@@ -99,7 +98,7 @@ RUN_DEPENDS+=	p5-PatchReader>=0.9.4:${PORTSDIR}/devel/p5-PatchReader \
 .endif
 
 .ifdef WITH_MORE_HTML
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+RUN_DEPENDS+=	p5-HTML-Parser>=3.40:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber
 .endif
 
@@ -158,7 +157,7 @@ post-patch:
 	@${PERL} -pi -e "s!(?<=webservergroup_default = ')apache!www!" \
 		${WRKSRC}/checksetup.pl
 	@${FIND} ${WRKSRC} \( -name "CVS" -or -name ".cvsignore" -or -name "*.orig" \
-		-or -name "README.docs" \) | ${XARGS} ${RM} -rf
+		-or -name ".bzr*" -or -name "README.docs" \) | ${XARGS} ${RM} -rf
 	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' \
 		-e 's!/usr/lib/sendmail!/usr/sbin/sendmail!g; s=/usr/bin/perl=${PERL}=g' {} \+
 	@${FIND} ${WRKSRC}/docs -type f | \
