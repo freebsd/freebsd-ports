@@ -7,50 +7,47 @@
 
 PORTNAME=	gtk-qnxtheme
 PORTVERSION=	0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
-MASTER_SITES=	${MASTER_SITE_THEMES}
-MASTER_SITE_SUBDIR=	qnxtheme
-DISTNAME=	qnxtheme-default-${PORTVERSION}
+MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
+DISTNAME=	3414-qnxtheme-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QNX-inspired theme for GTK1 and GTK2
 
-WANT_GNOME=	yes
+OPTIONS=	GTK2     "Build the GTK2 theme as well"     on
+
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/QNX
 
-OPTIONS+=	GTK2	"Build the GTK2 theme as well." off
+WANT_GNOME=	yes
 
-.include	<bsd.port.pre.mk>
+.include <bsd.port.pre.mk>
 
-.if defined(WITH_GTK2)
+.if defined(WITHOUT_GTK2)
+PLIST_SUB+=	GTK2="@comment "
+.else
 USE_GNOME=	gtk20
 PLIST_SUB+=	GTK2=""
-.else
-PLIST_SUB+=	GTK2="@comment "
 .endif
 
-# XXX - port build fails unless I create dummy file if OPTIONS aren't yet set
-post-extract:
-	@${ECHO_CMD} "all:" > ${WRKSRC}/Makefile
+post-patch:
+.for file in gtk/gtkrc gtk-2.0/gtkrc
+	@${REINPLACE_CMD} -i "" -e \
+		's|/usr/share|${LOCALBASE}/share|g ; \
+		 s|themes/QNX|themes/qnxtheme|g' ${WRKSRC}/QNX/${file}
+.endfor
 
 do-install:
-	@${REINPLACE_CMD} -e 's@/usr@${LOCALBASE}@g' ${WRKSRC}/gtk/gtkrc
-	@${REINPLACE_CMD} -e 's@QNX@qnxtheme@g' ${WRKSRC}/gtk/gtkrc
-	@${RM} -f ${WRKSRC}/gtk/gtkrc.bak
-	@${MKDIR} ${LOCALBASE}/share/themes/qnxtheme/gtk
-	@for i in ${WRKSRC}/gtk/*; do \
-		${INSTALL_DATA} $$i ${LOCALBASE}/share/themes/qnxtheme/gtk; \
-	done
-.if defined(WITH_GTK2)
-	@${REINPLACE_CMD} -e 's@/usr@${LOCALBASE}@g' ${WRKSRC}/gtk-2.0/gtkrc
-	@${REINPLACE_CMD} -e 's@QNX@qnxtheme@g' ${WRKSRC}/gtk-2.0/gtkrc
-	@${RM} -f ${WRKSRC}/gtk-2.0/gtkrc.bak
-	@${MKDIR} ${LOCALBASE}/share/themes/qnxtheme/gtk-2.0
-	@for i in ${WRKSRC}/gtk-2.0/*; do \
-		 ${INSTALL_DATA} $$i ${LOCALBASE}/share/themes/qnxtheme/gtk-2.0; \
-	done
+	@${MKDIR} ${PREFIX}/share/themes/qnxtheme
+	${INSTALL_DATA} ${WRKSRC}/QNX/README ${PREFIX}/share/themes/qnxtheme
+	@${MKDIR} ${PREFIX}/share/themes/qnxtheme/gtk
+	@(cd ${WRKSRC}/QNX/gtk \
+		&& ${COPYTREE_SHARE} . ${PREFIX}/share/themes/qnxtheme/gtk)
+.if !defined(WITHOUT_GTK2)
+	@${MKDIR} ${PREFIX}/share/themes/qnxtheme/gtk-2.0
+	@(cd ${WRKSRC}/QNX/gtk-2.0 \
+		&& ${COPYTREE_SHARE} . ${PREFIX}/share/themes/qnxtheme/gtk-2.0)
 .endif
 
 .include <bsd.port.post.mk>
