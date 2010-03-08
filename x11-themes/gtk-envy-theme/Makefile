@@ -7,26 +7,28 @@
 
 PORTNAME=	gtk-envy-theme
 PORTVERSION=	1.0.${SNAPSHOT}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
-DISTNAME=	35093-Envy
+DISTNAME=	60029-Envy
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Envy theme for GTK+ 2.0
 
 #RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango:${PORTSDIR}/x11-themes/icons-tango
 
-SNAPSHOT=	20060211
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+
 USE_GNOME=	gtk20
-WRKSRC=		${WRKDIR}/Envy
+
+SNAPSHOT=	20060211
 
 do-install:
-	${MKDIR} ${PREFIX}/share/themes/Envy/gtk-2.0
-	${MKDIR} ${PREFIX}/share/themes/Envy/metacity-1
-	@${CP} ${FILESDIR}/index.theme.in ${PREFIX}/share/themes/Envy/index.theme
-	@${CP} -R ${WRKDIR}/Envy/gtk-2.0/* ${PREFIX}/share/themes/Envy/gtk-2.0
-	@${CP} -R ${WRKDIR}/Envy/metacity-1/* ${PREFIX}/share/themes/Envy/metacity-1
+	@${MKDIR} ${PREFIX}/share/themes/Envy
+	${INSTALL_DATA} ${FILESDIR}/index.theme.in \
+		${PREFIX}/share/themes/Envy/index.theme
+	@(cd ${WRKSRC}/Envy \
+		&& ${COPYTREE_SHARE} . ${PREFIX}/share/themes/Envy)
 
 .include <bsd.port.mk>
