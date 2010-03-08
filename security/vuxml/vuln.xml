@@ -34,6 +34,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b3531fe1-2b03-11df-b6db-00248c9b4be7">
+    <topic>drupal -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal5</name>
+	<range><lt>5.22</lt></range>
+      </package>
+      <package>
+        <name>drupal6</name>
+	<range><lt>6.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Team reports:</p>
+	<blockquote cite="http://drupal.org/node/731710">
+	  <p>A user-supplied value is directly output during installation
+	    allowing a malicious user to craft a URL and perform a cross-site
+	    scripting attack. The exploit can only be conducted on sites not yet
+	    installed.</p>
+	  <p>The API function drupal_goto() is susceptible to a phishing attack.
+	    An attacker could formulate a redirect in a way that gets the Drupal
+	    site to send the user to an arbitrarily provided URL. No user
+	    submitted data will be sent to that URL.</p>
+	  <p>Locale module and dependent contributed modules do not sanitize the
+	    display of language codes, native and English language names properly.
+	    While these usually come from a preselected list, arbitrary
+	    administrator input is allowed. This vulnerability is mitigated by the
+	    fact that the attacker must have a role with the 'administer
+	    languages' permission.</p>
+	  <p>Under certain circumstances, a user with an open session that is
+	    blocked can maintain his/her session on the Drupal site, despite being
+	    blocked.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/731710</url>
+    </references>
+    <dates>
+      <discovery>2010-03-03</discovery>
+      <entry>2010-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="018a84d0-2548-11df-b4a3-00e0815b8da8">
     <topic>sudo -- Privilege escalation with sudoedit</topic>
     <affects>
