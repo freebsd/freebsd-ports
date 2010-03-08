@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Damn/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Damn
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme
+@dirrmtry %%SITE_PERL%%/Acme/Damn
+@dirrmtry %%SITE_PERL%%/Acme
