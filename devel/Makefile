@@ -1237,6 +1237,7 @@
     SUBDIR += p5-Config-Any
     SUBDIR += p5-Config-ApacheFormat
     SUBDIR += p5-Config-Auto
+    SUBDIR += p5-Config-AutoConf
     SUBDIR += p5-Config-Fast
     SUBDIR += p5-Config-General
     SUBDIR += p5-Config-INI
