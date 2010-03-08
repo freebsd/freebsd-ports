@@ -26,6 +26,7 @@ VDAVERSION=	2.6.5
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-57-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
+NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_RC_SUBR=	postfix.sh
@@ -132,7 +133,7 @@ _REQUIRE+=		dovecot
 
 .if defined(WITH_SASLKRB)
 .if defined(WITH_SASLKRB5) || defined(WITH_SASLKMIT)
-BROKEN=			Select only one SASL Kerberos option	
+BROKEN=			Select only one SASL Kerberos option
 .endif
 POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
 .endif
