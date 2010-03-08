@@ -1,0 +1,55 @@
+# Example configuration file for OpenERP-server
+#
+# This is an example configuration file, just copy it
+# to openerp-server.conf and edit it to suit your needs.
+
+[options]
+# Basic daemon configuration options ##################
+root_path = %%PYTHON_SITELIBDIR%%/openerp-server/
+addons_path = %%PYTHON_SITELIBDIR%%/openerp-server/addons
+# netinterface = 
+# interface = 
+port = 8069
+netport = 8070
+debug_mode = False
+stop_after_init = False
+soap = False
+xmlrpc = True
+netrpc = True
+secure = False
+cache_timeout = 100000
+pidfile = /var/run/openerp-server/openerp-server.pid
+reportgz = False
+admin_passwd = admin
+login_message = False
+price_accuracy = 2
+csv_internal_sep = ,
+translate_modules = ['all']
+
+# Logging options #####################################
+syslog = False
+log_level = info
+logfile = /var/log/openerp-server.log
+assert_exit_level = warn
+
+# Database options ####################################
+db_name = openerp-server
+db_user = openerp-server
+db_password = openerp-server
+db_host = localhost
+db_maxconn = 64
+pg_path = /usr/local/bin
+list_db = True
+# import_partial = 
+
+# SMTP options ########################################
+smtp_server = localhost
+smtp_port = 25
+smtp_user = False
+smtp_password = False
+email_from = False
+
+# Use demo files? #####################################
+# without_demo = True
+# demo = {}
+

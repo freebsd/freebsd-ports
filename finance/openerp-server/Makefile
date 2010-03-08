@@ -7,7 +7,7 @@
 
 PORTNAME=	openerp-server
 PORTVERSION=	5.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	finance python
 MASTER_SITES=	http://openerp.com/download/stable/source/
 
@@ -26,6 +26,10 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imag
 		${PYTHON_PKGNAMEPREFIX}xml>0:${PORTSDIR}/textproc/py-xml \
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_RC_SUBR=	openerpd
+SUB_FILES=	openerp-server.conf pkg-message
+SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 
 USE_PYTHON=			2.4+
 USE_PYDISTUTILS=		yes
@@ -47,10 +51,15 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/openerp-server.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/openerp_serverrc.5 ${PREFIX}/man/man5
 
+	${INSTALL_DATA} ${WRKDIR}/openerp-server.conf ${PREFIX}/etc/openerp-server.conf
+	@${ECHO} etc/openerp-server.conf >> ${TMPPLIST}
+	
 	@${ECHO} bin/openerp-server >> ${TMPPLIST}
 	@${FIND} -s -d ${PYTHON_SITELIBDIR}/${PORTNAME} \
 		-type f | ${SED} 's#${PREFIX}/##g' >> ${TMPPLIST}
 	@${FIND} -s -d ${PYTHON_SITELIBDIR}/${PORTNAME} \
 		-type d | ${SED} 's#${PREFIX}/#@dirrm #g' >> ${TMPPLIST}
+
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: openerpd
+# REQUIRE: postgresql LOGIN
+#
+# Add the following lines to /etc/rc.conf
+# to enable this service:
+#
+# openerpd_enable (bool):   Set to NO by default.
+#               Set it to YES to enable mongod.
+#
+# Additional configurable variables:
+# openerpd_config (path):   Set to %%PREFIX%%/etc/openerp-server.conf
+#               by default. Additional configuration. You
+#               can also use openerpd_flags for additional
+#               command line arguments.
+
+. %%RC_SUBR%%
+
+name="openerpd"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/openerp-server
+
+load_rc_config $name
+
+: ${openerpd_enable="NO"}
+: ${openerpd_config="%%PREFIX%%/etc/openerp-server.conf"}
+
+command_args="-c /usr/local/bin/openerp-server.conf >/dev/null 2>&1 &"
+
+run_rc_command "$1"
