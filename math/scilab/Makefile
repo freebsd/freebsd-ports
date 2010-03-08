@@ -11,7 +11,7 @@ CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	utisoft@googlemail.com
+MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	A free Matlab clone by INRIA & ENPC
 
 # A partial dependencies list can be found at:
