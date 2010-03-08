@@ -1,0 +1,10 @@
+************************************************************************
+
+
+Now you can run the program with %%PREFIX%%/bin/openerp-server,
+
+If you want start it when the system boot, please add this line
+to your /etc/rc.conf:
+    openerpd_enable="YES"
+
+************************************************************************
