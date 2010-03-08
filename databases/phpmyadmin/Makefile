@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.2.5
+DISTVERSION=	3.3.0
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -20,7 +20,7 @@ IGNORE_WITH_MYSQL=	323 40 41
 USE_BZIP2=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype mysql session spl filter
+USE_PHP=	ctype mysql session spl filter mbstring mcrypt
 .endif
 
 OPTIONS=	SUPHP	 "suPHP support" off \
@@ -30,8 +30,6 @@ OPTIONS=	SUPHP	 "suPHP support" off \
 		OPENSSL	 "OpenSSL support" on \
 		PDF	 "PDFlib support (implies GD)" on \
 		ZLIB	 "ZLIB support" on \
-		MCRYPT	 "MCrypt library support" on \
-		MBSTRING "Multi-byte character-set string support" on \
 		ZIP	 "Zip compression support" on
 
 .include <bsd.port.options.mk>
@@ -88,9 +86,6 @@ USE_PHP+=	${opt:L}
 
 .SILENT:
 
-do-build:
-	@${DO_NADA}
-
 pre-everything::
 	${ECHO_MSG} "This version of phpmyadmin requires PHP 5.2+ and MySQL"
 	${ECHO_MSG} "5.0+.  If you need to use an older version of PHP or"
@@ -101,30 +96,38 @@ pre-everything::
 # When creating a package, empty directories will not be generated
 # from the pkg tarball.	 Therefore make sure no directories are empty.
 
+# Aaargh! A curse on all filenames with spaces in.
 post-patch:
+	cd ${WRKSRC}/documentation-gsoc ; \
+	${MV} "Synchronization_User Manual.htm" \
+	    Synchronization_User_Manual.htm ; \
+	${MV} "Synchronization_User Manual_files" \
+	    Synchronization_User_Manual_files ; \
 	cd ${WRKSRC} ; \
+	${REINPLACE_CMD} -e 's/_User%20Manual/_User_Manual/' \
+	    Documentation.html \
+	    documentation-gsoc/Synchronization_User_Manual.htm ; \
 	for emptydir in $$( ${FIND} . -type d -empty -print ) ; do \
 	    ${TOUCH} $${emptydir}/.keep-me ; \
-	done
-	${CP} ${FILESDIR}/${CFGFILE}.sample ${WRKSRC}/${CFGFILE}.sample
-	cd ${WRKSRC} ; \
-	${FIND} . ! -type d ! -name ${CFGFILE}.sample | ${SORT} | \
-	    ${SED} -e "s,^\.,%%WWWDIR%%,"	      >${PLIST} ; \
+	done ; \
+	${CP} ${FILESDIR}/${CFGFILE}.sample ${WRKSRC}/${CFGFILE}.sample ; \
+	${FIND} . ! -type d ! -name ${CFGFILE}.sample ! -name '*.bak' | \
+	    ${SORT} | ${SED} -e "s,^\.,%%WWWDIR%%,"   >${PLIST} ; \
 	${CAT} ${PKGDIR}/pkg-plist-chunk	     >>${PLIST} ; \
 	${FIND} . -type d | ${SORT} -r | ${SED} \
-	     -e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
-	     -e "s,^\.,@dirrm %%WWWDIR%%,"	     >>${PLIST}
+	    -e "s,^\.$$,@dirrmtry %%WWWDIR%%," \
+	    -e "s,^\.,@dirrm %%WWWDIR%%,"	     >>${PLIST}
 
 do-install: install-app install-conf
 
 install-app:
 	cd ${WRKSRC} ; \
-	for src in $$( ${FIND} . ! -name .cvsignore ) ; do \
+	for src in $$( ${FIND} . ! -name .cvsignore ! -name '*.bak' ) ; do \
 	    dst=${WWWDIR}$${src#.} ; \
-	    if ${TEST} -d $$src ; then \
-		${MKDIR} $$dst ; \
+	    if ${TEST} -d "$$src" ; then \
+		${MKDIR} "$$dst" ; \
 	    else \
-		${INSTALL_DATA} $$src $$dst ; \
+		${INSTALL_DATA} "$$src" "$$dst" ; \
 	    fi \
 	done
 

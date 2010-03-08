@@ -5,7 +5,7 @@
  * installaton of phpmyadmin.
  * 
  * Copy any settings you want to override from
- * libraries/config.default.php or use scripts/setup.php to generate a
+ * libraries/config.default.php or visit /phpmyadmin/setup/ to generate a
  * basic configuration file
  * 
  */
