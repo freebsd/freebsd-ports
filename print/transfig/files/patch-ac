@@ -48,7 +48,19 @@
  I18N_DEV_DEFS = $(I18N_DEFS) -DFIG2DEV_LIBDIR=$(FIG2DEV_LIBDIR) -DFIG2DEV_LIBDIR_STR=\\\"$(FIG2DEV_LIBDIR)\\\"
  
  #endif /* I18N */
-@@ -229,7 +229,7 @@
+@@ -188,11 +188,7 @@
+ INCLUDES = -I..
+ 
+ LOCAL_LIBRARIES = $(LIBTRANSFIG)
+-#if defined(NetBSDArchitecture) || defined(FreeBSDArchitecture)
+-SYS_LIBRARIES = $(PNGLIBS) $(XPMLIBS) -lm -lcompat
+-#else
+ SYS_LIBRARIES = $(PNGLIBS) $(XPMLIBS) -lm
+-#endif
+ DEPLIBS = $(LIBTRANSFIG)
+ 
+ #if !(defined(SunOSPlatform) && (OSMajorVersion>=5))
+@@ -229,7 +225,7 @@
  	else (set -x; $(MKDIRHIER) $(DESTDIR)$(XFIGLIBDIR)/bitmaps ); fi ; \
  	echo Copying bitmap files for tk to $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
  	for f in * ; do \
