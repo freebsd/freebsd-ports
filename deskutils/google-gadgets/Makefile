@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	google-gadgets
-PORTVERSION=	0.11.1
-PORTREVISION=	1
+PORTVERSION=	0.11.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
