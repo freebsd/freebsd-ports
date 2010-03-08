@@ -34,7 +34,7 @@
 -#CCFLAGS = -DM_LITTLE_ENDIAN
 -#LFLAGS = -lcurses -ltermcap -lcompat -lm
 +CCFLAGS = -DM_LITTLE_ENDIAN -DAUDIO_BLOCKING -DNEEDED_LINEAR -DLINUX_DSP_SMALL_BUFFER
-+LFLAGS = -lcurses -ltermcap -lcompat -lm
++LFLAGS = -lcurses -ltermcap -lm
  
  #			   Hewlett-Packard
  #		      (courtesy of Marc Kilian)
