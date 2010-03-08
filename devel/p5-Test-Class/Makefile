@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Class
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Test::Class - Easily create test classes in an xUnit style
 
 RUN_DEPENDS=	p5-Attribute-Handlers>=0.77:${PORTSDIR}/devel/p5-Attribute-Handlers \
 		p5-Class-ISA>=0.32:${PORTSDIR}/devel/p5-Class-ISA \
-		p5-Devel-Symdump>=2.03:${PORTSDIR}/devel/p5-Devel-Symdump \
+		p5-MRO-Compat>=0.11:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Test-Exception>=0.25:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_MODBUILD=	yes
