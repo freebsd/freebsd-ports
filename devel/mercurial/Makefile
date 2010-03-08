@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -27,10 +27,12 @@ CONTRIB_FILES=	bash_completion \
 		hgdiff \
 		hgk \
 		logo-droplets.svg \
+		memory.py \
 		mercurial.el \
 		mergetools.hgrc \
 		mq.el \
 		perf.py \
+		pylintrc \
 		python-hook-examples.py \
 		rewrite-log \
 		sample.hgrc \
