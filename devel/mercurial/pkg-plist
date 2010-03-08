@@ -110,6 +110,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/patchbomb.py
 %%PYTHON_SITELIBDIR%%/hgext/patchbomb.pyc
 %%PYTHON_SITELIBDIR%%/hgext/patchbomb.pyo
+%%PYTHON_SITELIBDIR%%/hgext/progress.py
+%%PYTHON_SITELIBDIR%%/hgext/progress.pyc
+%%PYTHON_SITELIBDIR%%/hgext/progress.pyo
 %%PYTHON_SITELIBDIR%%/hgext/purge.py
 %%PYTHON_SITELIBDIR%%/hgext/purge.pyc
 %%PYTHON_SITELIBDIR%%/hgext/purge.pyo
@@ -381,6 +384,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templatefilters.py
 %%PYTHON_SITELIBDIR%%/mercurial/templatefilters.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/templatefilters.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/templatekw.py
+%%PYTHON_SITELIBDIR%%/mercurial/templatekw.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/templatekw.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/templater.py
 %%PYTHON_SITELIBDIR%%/mercurial/templater.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/templater.pyo
@@ -417,6 +423,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.changelog
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.compact
 %%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.default
+%%PYTHON_SITELIBDIR%%/mercurial/templates/map-cmdline.xml
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/branches.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/changelog.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/changelogentry.tmpl
