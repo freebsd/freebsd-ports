@@ -6,18 +6,25 @@
 #
 
 PORTNAME=	udunits
-PORTVERSION=	2.1.9
+PORTVERSION=	2.1.14
 CATEGORIES=	science math
-MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/${PORTNAME}/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/udunits|}
+MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for manipulating units of physical quantities
 
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+
 USE_PERL5=	yes
+USE_AUTOTOOLS=	libtool:22
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		ac_cv_header_CUnit_CUnit_h=no
+MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
-CFLAGS+=	-fPIC
+
+INFO=		udunits2 udunits2lib udunits2prog
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
