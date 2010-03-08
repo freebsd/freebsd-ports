@@ -7,14 +7,14 @@
 #  A version of malloc/free/realloc written by Doug Lea and released to the 
 #  public domain. 
 #
-#  preliminary VERSION 2.8.3
+#  preliminary VERSION 2.8.4
 #
 #  working version; unreleased.
 #
 # $FreeBSD$
 #
 
-VER=2.8.3
+VER=2.8.4
 
 LIBDIR=${PREFIX}/lib
 INCDIR=${PREFIX}/include/dlmalloc
