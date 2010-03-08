@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.8.1b
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	GNU \
 		http://gnunet.org/download/
@@ -91,6 +90,9 @@ PLIST_SUB+=		SQLITE="@comment "
 post-patch:
 .for i in configure src/applications/sqstore_postgres/postgres.c
 	@${REINPLACE_CMD} -e 's|postgresql/||g' ${WRKSRC}/${i}
+.endfor
+.for i in src/util/crypto/Makefile.in
+	@${REINPLACE_CMD} -e 's|)[[:space:]]-O3|)|g' ${WRKSRC}/${i}
 .endfor
 
 post-install:
