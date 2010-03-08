@@ -10,7 +10,7 @@ PORTVERSION=	1.0.6.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://public.yahoo.com/%7Emmk/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	rh9.${PORTNAME}-${PORTVERSION:C/\.([^\.]+)$/-\1/}.${MACHINE_ARCH}
+DISTNAME=	rh9.${PORTNAME}-${PORTVERSION:C/\.([^\.]+)$/-\1/}.i386
 DISTFILES=	${DISTNAME}.rpm ymessenger.bin
 EXTRACT_ONLY=	${DISTNAME}.rpm
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgdk_pixbuf.so.2:${PORTSDIR}/graphics/linux-
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 STRIP=
 
 SHARE_FILES=	yahoo_gnome.png yahoo_kde.xpm ymessenger.desktop\

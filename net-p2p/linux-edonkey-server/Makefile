@@ -19,12 +19,12 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A decentralized peer-to-peer file-sharing server (eDonkey2000 server)
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 #
-PKGDEINSTALL=   ${PKGINSTALL}
+PKGDEINSTALL=	${PKGINSTALL}
 
 BINARY_NAME=	dserver
 RC_SAMPLE=	edonkey2000-server.sh.sample

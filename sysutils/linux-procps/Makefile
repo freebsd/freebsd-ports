@@ -14,7 +14,7 @@ MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux psproc binaries
 
 USE_LINUX_RPM=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 BRANDELF_DIRS=	bin sbin usr/bin

@@ -22,7 +22,7 @@ RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim
 
 NO_CDROM=	"Sale for profit is not permitted"
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
