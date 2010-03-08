@@ -552,6 +552,7 @@
     SUBDIR += p5-Net-Jaiku
     SUBDIR += p5-Net-Jifty
     SUBDIR += p5-Net-LDAP-AutoDNs
+    SUBDIR += p5-Net-LDAP-AutoServer
     SUBDIR += p5-Net-LDAP-Express
     SUBDIR += p5-Net-LDAP-LDAPhash
     SUBDIR += p5-Net-LDAP-Makepath
