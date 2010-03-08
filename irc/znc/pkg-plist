@@ -17,7 +17,6 @@ include/znc/Server.h
 include/znc/SHA256.h
 include/znc/Socket.h
 include/znc/Template.h
-include/znc/Timers.h
 include/znc/User.h
 include/znc/Utils.h
 include/znc/ZNCString.h
@@ -34,6 +33,7 @@ libdata/pkgconfig/znc.pc
 %%MODULES%%lib/znc/awaynick.so
 %%MODULES%%lib/znc/buffextras.so
 %%MODULES%%lib/znc/chansaver.so
+%%MODULES%%lib/znc/clientnotify.so
 %%MODULES%%lib/znc/email.so
 %%MODULES%%lib/znc/fail2ban.so
 %%MODULES%%lib/znc/fixfreenode.so
@@ -100,11 +100,13 @@ libdata/pkgconfig/znc.pc
 %%MODULES%%%%EXTRA%%lib/znc/log.so
 %%MODULES%%%%EXTRA%%lib/znc/antiidle.so
 %%MODULES%%%%EXTRA%%lib/znc/autovoice.so
+%%MODULES%%%%EXTRA%%lib/znc/block_motd.so
 %%MODULES%%%%EXTRA%%lib/znc/blockuser.so
 %%MODULES%%%%EXTRA%%lib/znc/ctcpflood.so
 %%MODULES%%%%EXTRA%%lib/znc/discon_kick.so
 %%MODULES%%%%EXTRA%%lib/znc/droproot.so
 %%MODULES%%%%EXTRA%%lib/znc/fakeonline.so
+%%MODULES%%%%EXTRA%%lib/znc/flooddetach.so
 %%MODULES%%%%EXTRA%%lib/znc/lastseen.so
 %%MODULES%%%%EXTRA%%lib/znc/listsockets.so
 %%MODULES%%%%EXTRA%%lib/znc/motdfile.so
