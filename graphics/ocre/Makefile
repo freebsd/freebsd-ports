@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ocre
-PORTVERSION=	0.033
-PORTREVISION=	1
+PORTVERSION=	0.034
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lem.eui.upm.es/pub/ocre/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
@@ -36,7 +35,8 @@ post-patch:
 		 s|^CFLAGS1=|CFLAGS1 ?=| ; \
 		 s|-O2||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|, sys_nerr||' ${WRKSRC}/src/errors.c
-	@${GREP} -lR "/usr/" ${WRKSRC}/src | ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "*.[1ch]" -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
 		's|/usr/bin|${PREFIX}/bin|g ; \
 		 s|/usr/share/locale|${PREFIX}/share/locale|g ; \
 		 s|/usr/share/ocre|${DATADIR}|g'
@@ -49,7 +49,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
 	@${MKDIR} ${MAN1PREFIX}/man/es/man1
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}-es.1 ${MAN1PREFIX}/man/es/man1/${PORTNAME}.1
-	${INSTALL_DATA} ${WRKSRC}/../po/es.mo ${PREFIX}/share/locale/es/LC_MESSAGES/${PORTNAME}.mo
+	${INSTALL_DATA} ${WRKSRC}/po/es.mo ${PREFIX}/share/locale/es/LC_MESSAGES/${PORTNAME}.mo
 	@${MKDIR} ${DATADIR}
 	@${TAR} --exclude "*.orig" -xof ${WRKSRC}/ocre-decsWood-${PORTVERSION}.tgz -C ${DATADIR}
 	@${CHMOD} -h 755 ${DATADIR}/decsWood
