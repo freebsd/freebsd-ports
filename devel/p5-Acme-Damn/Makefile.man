@@ -1,3 +1,0 @@
-# $FreeBSD$
-
-MAN3 += Acme::Damn.3

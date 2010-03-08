@@ -19,5 +19,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-.include "Makefile.man"
+MAN3 += Acme::Damn.3
+
 .include <bsd.port.mk>
