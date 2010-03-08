@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dlmalloc
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/  \
 		ftp://ftp.netsw.org/system/libs/memory/optimize/
