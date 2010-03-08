@@ -559,6 +559,7 @@
     SUBDIR += p5-Net-LDAP-posixAccount
     SUBDIR += p5-Net-LDAP-posixGroup
     SUBDIR += p5-Net-Libdnet
+    SUBDIR += p5-Net-LimeLight-Purge
     SUBDIR += p5-Net-MAC
     SUBDIR += p5-Net-MAC-Vendor
     SUBDIR += p5-Net-Mosso-CloudFiles
