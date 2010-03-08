@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Eval-Context
-PORTVERSION=	0.07
+PORTVERSION=	0.09.11
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://cpan.mirror.solnet.ch/authors/id/N/NK/NKH/ \
-		CRITICAL
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	../by-authors/id/N/NK/NKH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ehaupt@FreeBSD.org
