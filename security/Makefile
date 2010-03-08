@@ -50,6 +50,7 @@
     SUBDIR += bsp_upektfmess
     SUBDIR += bubblegum
     SUBDIR += bugs
+    SUBDIR += burpsuite
     SUBDIR += ca_root_nss
     SUBDIR += calife
     SUBDIR += calife-devel
