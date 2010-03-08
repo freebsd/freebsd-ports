@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flickcurl
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://download.dajobe.org/flickcurl/

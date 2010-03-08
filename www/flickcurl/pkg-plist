@@ -39,6 +39,7 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-section-core.html
 %%DOCSDIR%%/flickcurl-section-exif.html
 %%DOCSDIR%%/flickcurl-section-favorite.html
+%%DOCSDIR%%/flickcurl-section-gallery.html
 %%DOCSDIR%%/flickcurl-section-general.html
 %%DOCSDIR%%/flickcurl-section-group.html
 %%DOCSDIR%%/flickcurl-section-machinetags.html
@@ -47,6 +48,7 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-section-people.html
 %%DOCSDIR%%/flickcurl-section-person.html
 %%DOCSDIR%%/flickcurl-section-photo.html
+%%DOCSDIR%%/flickcurl-section-photos-people.html
 %%DOCSDIR%%/flickcurl-section-photoset.html
 %%DOCSDIR%%/flickcurl-section-photoslist.html
 %%DOCSDIR%%/flickcurl-section-place.html
@@ -54,6 +56,7 @@ libdata/pkgconfig/flickcurl.pc
 %%DOCSDIR%%/flickcurl-section-reflection.html
 %%DOCSDIR%%/flickcurl-section-tag.html
 %%DOCSDIR%%/flickcurl-section-serializer.html
+%%DOCSDIR%%/flickcurl-section-stats.html
 %%DOCSDIR%%/flickcurl-section-test.html
 %%DOCSDIR%%/flickcurl-section-upload.html
 %%DOCSDIR%%/flickcurl-section-urls.html
