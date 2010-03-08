@@ -7,6 +7,7 @@
 
 PORTNAME=	rrdbot
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://memberwebs.com/stef/software/rrdbot/
 
@@ -28,6 +29,10 @@ MAN8=		rrdbot-create.8 rrdbotd.8
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-install:
