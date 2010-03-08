@@ -157,6 +157,12 @@ share/dbus-1/services/org.gpodder.service
 %%PORTDOCS%%%%DOCSDIR%%/PKG-INFO
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/credits.txt
+%%DATADIR%%/podcast-0.png
+%%DATADIR%%/podcast-1.png
+%%DATADIR%%/podcast-2.png
+%%DATADIR%%/podcast-3.png
+%%DATADIR%%/podcast-4.png
+%%DATADIR%%/podcast-all.png
 %%DATADIR%%/ui/desktop/gpodder.ui
 %%DATADIR%%/ui/desktop/gpodderaddpodcast.ui
 %%DATADIR%%/ui/desktop/gpodderchannel.ui
@@ -189,6 +195,7 @@ share/locale/nn/LC_MESSAGES/gpodder.mo
 share/locale/pl/LC_MESSAGES/gpodder.mo
 share/locale/pt/LC_MESSAGES/gpodder.mo
 share/locale/pt_BR/LC_MESSAGES/gpodder.mo
+share/locale/ro/LC_MESSAGES/gpodder.mo
 share/locale/ru/LC_MESSAGES/gpodder.mo
 share/locale/sv/LC_MESSAGES/gpodder.mo
 share/locale/uk/LC_MESSAGES/gpodder.mo
