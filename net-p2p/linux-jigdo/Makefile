@@ -20,7 +20,7 @@ COMMENT=	A tool designed to ease the distribution of very large files
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	YES
 USE_LINUX=	yes
 NO_BUILD=	yes

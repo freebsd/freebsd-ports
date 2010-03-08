@@ -18,7 +18,7 @@ COMMENT=	Create your own VCD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 STRIP=		#empty
 
 do-install:

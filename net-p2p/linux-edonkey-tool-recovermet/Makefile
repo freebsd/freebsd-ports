@@ -18,7 +18,7 @@ DISTNAME=	ed2k_recovermet-0.2_alpha
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that tries to re-create x.part.met files compromised due to crash
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes

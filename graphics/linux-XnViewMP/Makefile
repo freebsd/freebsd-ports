@@ -18,7 +18,7 @@ MAINTAINER=	petr@petrovich.kiev.ua
 COMMENT=	XnView Multi Platform, graphics viewer and converer
 
 NO_CDROM=	For commercial use and distribution, it is necessary to register
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/XnViewMP
 
