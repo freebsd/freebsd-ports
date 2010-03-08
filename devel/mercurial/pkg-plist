@@ -276,17 +276,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/i18n.py
 %%PYTHON_SITELIBDIR%%/mercurial/i18n.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/i18n.pyo
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/da.po
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/de.po
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/el.po
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/fr.po
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/hggettext
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/it.po
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/ja.po
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/sv.po
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/pt_BR.po
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/zh_CN.po
-%%PYTHON_SITELIBDIR%%/mercurial/i18n/zh_TW.po
 %%PYTHON_SITELIBDIR%%/mercurial/ignore.py
 %%PYTHON_SITELIBDIR%%/mercurial/ignore.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/ignore.pyo
@@ -553,10 +542,12 @@ bin/hg
 %%PORTDATA%%%%DATADIR%%/contrib/hgdiff
 %%PORTDATA%%%%DATADIR%%/contrib/hgk
 %%PORTDATA%%%%DATADIR%%/contrib/logo-droplets.svg
+%%PORTDATA%%%%DATADIR%%/contrib/memory.py
 %%PORTDATA%%%%DATADIR%%/contrib/mercurial.el
 %%PORTDATA%%%%DATADIR%%/contrib/mergetools.hgrc
 %%PORTDATA%%%%DATADIR%%/contrib/mq.el
 %%PORTDATA%%%%DATADIR%%/contrib/perf.py
+%%PORTDATA%%%%DATADIR%%/contrib/pylintrc
 %%PORTDATA%%%%DATADIR%%/contrib/python-hook-examples.py
 %%PORTDATA%%%%DATADIR%%/contrib/rewrite-log
 %%PORTDATA%%%%DATADIR%%/contrib/sample.hgrc
@@ -621,7 +612,6 @@ bin/hg
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_TW/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_TW
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/help
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/hgweb
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial
