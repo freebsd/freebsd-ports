@@ -182,6 +182,7 @@
     SUBDIR += drupal6-nodewords
     SUBDIR += drupal6-page_title
     SUBDIR += drupal6-panels
+    SUBDIR += drupal6-path_redirect
     SUBDIR += drupal6-pathauto
     SUBDIR += drupal6-print
     SUBDIR += drupal6-seo_checklist
