@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pilot-link
-PORTVERSION=	0.12.4
+PORTVERSION=	0.12.5
 PORTEPOCH=	1
 CATEGORIES=	palm comms
 MASTER_SITES=	http://downloads.pilot-link.org/ \
