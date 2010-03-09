@@ -43,15 +43,6 @@
  #endif
  
  SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \
-@@ -56,7 +55,7 @@
- OBJS=sunclock.o astro.o widgets.o tildepath.o dirlist.o \
-      readvmf.o readxpm.o readgif.o readjpeg.o readpng.o
- LOCAL_LIBRARIES=$(XLIB) $(XPMLIBDIR) -lXpm $(ZLIBDIR) -lz \
--     $(JLIBDIR) -ljpeg -lpng -lm
-+     $(JLIBDIR) -ljpeg -lpng -lm -lcompat
- DEPLIBS=		# I don't know what I'm doing, and I hate imake!
- 
- ComplexProgramTarget(sunclock)
 @@ -64,7 +63,7 @@
  all::
  	cd editkit ; xmkmf ; make emx \

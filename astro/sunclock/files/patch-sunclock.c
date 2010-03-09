@@ -1,6 +1,14 @@
---- sunclock.c.orig	Mon Jun 19 23:30:02 2006
-+++ sunclock.c	Sun Aug  6 09:55:41 2006
-@@ -125,7 +125,6 @@
+--- sunclock.c
++++ sunclock.c
+@@ -113,7 +113,6 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <sys/types.h>
+-#include <sys/timeb.h>
+ #include <sys/stat.h>
+ #include <string.h>
+ #include <X11/Xatom.h>
+@@ -127,7 +126,6 @@
   *  external routines
   */
  
@@ -8,7 +16,7 @@
  #ifdef NEW_CTIME
  extern char *   timezone();
  #endif
-@@ -2197,8 +2196,8 @@
+@@ -2197,8 +2195,8 @@
  
          if (!Context->mark1.city) return;
  
@@ -19,7 +27,19 @@
  
          /* Get local time at given location */
          setTZ(Context->mark1.city);
-@@ -2347,8 +2346,8 @@
+@@ -2335,20 +2333,11 @@
+         char            s[128];
+         char            slat[20], slon[20], slatp[20], slonp[20];
+         double          dist;
+-#ifdef NEW_CTIME
+-        struct timeb            tp;
+-
+-        if (ftime(&tp) == -1) {
+-                fprintf(stderr, "%s: ftime failed: ", ProgName);
+-                perror("");
+-                exit(1);
+-        }
+-#endif
  
  	if (!Context->flags.mapped) return;
  
@@ -30,7 +50,7 @@
  
          if (!Context->wintype) {
                  char num[80];
-@@ -2696,7 +2695,7 @@
+@@ -2696,7 +2685,7 @@
  
          Context->bits = 0;
          Context->flags.update = 4;
@@ -39,7 +59,7 @@
          Context->projtime = -1L;
          Context->roottime = -1L;
          Context->animtime = -1L;
-@@ -3133,8 +3132,8 @@
+@@ -3142,8 +3131,8 @@
  {
     int ilon, ilat, width, dw = 0;
     struct TextLabel * label;
@@ -49,7 +69,7 @@
  
     label = Context->label;
     while (label) if (label->text && *label->text) {
-@@ -3909,7 +3908,7 @@
+@@ -3918,7 +3907,7 @@
  
          if (button_pressed) return;
  
@@ -58,7 +78,7 @@
  
  	erase_obj = 1;
  	if (Context->flags.colorlevel == MONOCHROME ||
-@@ -3917,10 +3916,10 @@
+@@ -3926,10 +3915,10 @@
              drawSunAndMoon(Context);
          erase_obj = 0;
  
@@ -71,7 +91,7 @@
                &Context->moondec, &Context->moonlon, 
                &junk,  &junk, &junk, &junk, &junk, &junk );
  	Context->moonlon = fixangle(Context->moonlon+180.0) - 180.0;
-@@ -3937,10 +3936,10 @@
+@@ -3946,10 +3935,10 @@
             update the illuminated area on the screen.   */
  
          if (Context->projtime < 0 || 
@@ -84,7 +104,7 @@
                  Context->noon = noon;
                  Context->fnoon = fnoon;
                  moveNightArea(Context);
-@@ -4548,8 +4547,8 @@
+@@ -4557,8 +4546,8 @@
       hw = Context->geom.height;
       if (do_root == 2) hw += Context->hstrip;
  
@@ -95,7 +115,7 @@
       else
          if (do_root == 2 && mode==0 && rootpix) update = 0;
  
-@@ -4560,7 +4559,7 @@
+@@ -4569,7 +4558,7 @@
          XSetForeground(dpy, Context->gdata->wingc, 
                           Context->gdata->pixel[ROOTCOLOR]);
          XFillRectangle(dpy, rootpix, Context->gdata->wingc, 0, 0, wr, hr);
@@ -104,7 +124,7 @@
          if (random_rootpos) {
             rootdx = (double)(random() % 10001)/10000.0;
             rootdy = (double)(random() % 10001)/10000.0;
-@@ -5533,7 +5532,7 @@
+@@ -5542,7 +5531,7 @@
               Context->flags.update = 2;
               break;
             case XK_w: 
@@ -113,7 +133,7 @@
               if (do_menu) do_menu = -1;
               if (do_filesel) do_filesel = -1;
               if (do_zoom) do_zoom = -1;
-@@ -5949,9 +5948,9 @@
+@@ -5958,9 +5947,9 @@
                drawImageToRootWindow(Context, 0);
  	   XFlush(dpy);
  	   if (Context->flags.animate) {
