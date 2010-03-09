@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yawp
-PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTVERSION=	0.3.2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	plasma-applet-
@@ -17,11 +16,14 @@ COMMENT=	Weather plasma applet for KDE4
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_KDE4=	automoc4 kdeprefix kdelibs
+USE_KDE4=	automoc4 kdeprefix workspace
 USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
+QT_COMPONENTS=	gui dbus network opengl phonon svg webkit xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
+
+post-patch:
+	${ECHO_CMD} >> ${WRKSRC}/applet/utils.h
 
 .include <bsd.port.mk>
