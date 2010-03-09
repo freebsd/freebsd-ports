@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	playwolf
-PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTVERSION=	0.8.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	plasma-applet-
@@ -19,7 +18,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdeprefix kdelibs
 USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network opengl svg webkit xml \
+QT_COMPONENTS=	gui dbus network opengl phonon svg webkit xml xmlpatterns \
 		qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
@@ -28,17 +27,17 @@ PLIST_FILES=	lib/kde4/plasma_applet_playwolf.so \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-ADD_NEWLINE_TO=	flowlayout.cpp flowlayout.h playwolf.cpp playwolf.h \
-		wolfbuttons.cpp wolflabel.h
-
-.include <bsd.port.pre.mk>
+ADD_NEWLINE_TO=	flowlayout.cpp \
+		flowlayout.h \
+		lyricswidget.cpp \
+		playwolf.cpp \
+		playwolf.h \
+		wolfbuttons.cpp \
+		wolflabel.h
 
 post-patch:
 .for i in ${ADD_NEWLINE_TO}
 	${ECHO_CMD} >> ${WRKSRC}/${i}
 .endfor
 
-	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|usr|${KDE4_PREFIX}|g' \
-		infomanager.cpp wolflabel.cpp
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
