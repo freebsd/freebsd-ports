@@ -1,0 +1,11 @@
+The "Ogg Video Tools" is a toolbox for manipulating Ogg video files,
+which usually consist of a video stream (Theora) and an audio stream
+(Vorbis). It includes a number of handy command line tools for
+creating an manipulating these video files, such as for splitting the
+different streams.
+
+At the moment there are the following tools available: oggResize,
+oggThumb, oggSlideshow, oggCut, oggCat, oggSplit, oggJoin, oggDump,
+oggLength, oggSilence and oggScroll.
+
+WWW: http://dev.streamnik.de/oggvideotools.html

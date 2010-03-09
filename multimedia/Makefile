@@ -208,6 +208,7 @@
     SUBDIR += netshow
     SUBDIR += noatun-plugins
     SUBDIR += nxtvepg
+    SUBDIR += oggvideotools
     SUBDIR += ogle
     SUBDIR += ogle-gui
     SUBDIR += ogmrip
