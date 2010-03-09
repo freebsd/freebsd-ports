@@ -7,11 +7,12 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		ftp://ftp.uu.net/graphics/jpeg/ \
 		http://sylvana.net/jpegcrop/:exif
-DISTNAME=	jpegsrc.v${PORTVERSION}
+DISTNAME=	jpegsrc.v${PORTVERSION}a
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jpegexiforient.c:exif exifautotran.txt:exif
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -19,7 +20,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IJG's jpeg compression utilities
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}a
 
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
