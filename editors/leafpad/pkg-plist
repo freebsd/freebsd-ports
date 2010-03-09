@@ -6,6 +6,7 @@ share/icons/hicolor/24x24/apps/leafpad.png
 share/icons/hicolor/32x32/apps/leafpad.png
 share/icons/hicolor/scalable/apps/leafpad.svg
 share/locale/bg/LC_MESSAGES/leafpad.mo
+share/locale/br/LC_MESSAGES/leafpad.mo
 share/locale/ca/LC_MESSAGES/leafpad.mo
 share/locale/cs/LC_MESSAGES/leafpad.mo
 share/locale/da/LC_MESSAGES/leafpad.mo
@@ -23,12 +24,16 @@ share/locale/it/LC_MESSAGES/leafpad.mo
 share/locale/ja/LC_MESSAGES/leafpad.mo
 share/locale/ko/LC_MESSAGES/leafpad.mo
 share/locale/lt/LC_MESSAGES/leafpad.mo
+share/locale/lv/LC_MESSAGES/leafpad.mo
 share/locale/nl/LC_MESSAGES/leafpad.mo
+share/locale/nn/LC_MESSAGES/leafpad.mo
 share/locale/pl/LC_MESSAGES/leafpad.mo
 share/locale/pt/LC_MESSAGES/leafpad.mo
 share/locale/pt_BR/LC_MESSAGES/leafpad.mo
 share/locale/ru/LC_MESSAGES/leafpad.mo
 share/locale/sk/LC_MESSAGES/leafpad.mo
+share/locale/sl/LC_MESSAGES/leafpad.mo
+share/locale/sr/LC_MESSAGES/leafpad.mo
 share/locale/sv/LC_MESSAGES/leafpad.mo
 share/locale/ta/LC_MESSAGES/leafpad.mo
 share/locale/tr/LC_MESSAGES/leafpad.mo
