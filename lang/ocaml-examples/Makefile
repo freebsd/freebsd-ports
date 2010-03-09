@@ -7,6 +7,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	3.11
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=   http://cristal.inria.fr/caml_examples/
 PKGNAMESUFFIX=	-examples
@@ -19,7 +20,7 @@ NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	@${TAR} -cf- -C ${WRKSRC} --exclude Makefile --exclude Imakefile . | \
+	@${TAR} -cf- -C ${WRKSRC} --exclude Imakefile . | \
 		${TAR} -xf- -C ${EXAMPLESDIR}
 	@${FIND} ${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 	@${FIND} ${EXAMPLESDIR} -exec ${CHOWN} ${SHAREOWN} {} \;
