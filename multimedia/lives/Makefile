@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTVERSION=	1.0.9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -63,8 +62,8 @@ DOC_FILES=	AUTHORS BUGS ChangeLog FEATURES GETTING.STARTED README \
 
 PORT_VERBS=	lives LiVES _encoder.py midistart midistop smogrify sendOSC
 
-# Restrict to stable (even) versions, indicated by the second component.
-PORTSCOUT=	limitw:1,even
+# Restrict to stable versions.
+PORTSCOUT=	limit:^1\.0\.[0-9]*
 
 .include <bsd.port.pre.mk>
 
