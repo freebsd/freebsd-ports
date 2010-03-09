@@ -101,6 +101,7 @@
     SUBDIR += destroy
     SUBDIR += didentd
     SUBDIR += digest
+    SUBDIR += dirbuster
     SUBDIR += dirmngr
     SUBDIR += dissembler
     SUBDIR += distcache
