@@ -1,14 +1,5 @@
 --- pqiv.c.orig	2009-10-08 19:49:20.000000000 +0900
 +++ pqiv.c	2009-10-10 17:43:14.000000000 +0900
-@@ -234,7 +234,7 @@
- 		}}}		
- 	 */
- 	g_print("usage: pqiv [options] <files or folders>\n"
--		"(p)qiv version " RELEASE " by Phillip Berndt\n"
-+		"PQIV version " RELEASE " by Phillip Berndt\n"
- 		"\n");
- 	if(claim != 0) {
- 		g_print("I don't understand the meaning of %c\n\n", claim);
 @@ -273,7 +273,7 @@
                  #ifndef NO_COMMANDS
                  " -<n> s         Set command number n (1-9) to s \n"
