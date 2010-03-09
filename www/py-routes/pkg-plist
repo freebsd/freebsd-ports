@@ -21,9 +21,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/routes/route.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/routes/route.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/routes/route.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/routes/threadinglocal.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/routes/threadinglocal.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/routes/threadinglocal.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/routes/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/routes/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/routes/util.pyo
