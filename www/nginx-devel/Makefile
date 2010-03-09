@@ -78,6 +78,7 @@ MAKE_JOBS_SAFE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(WITH_PASSENGER_MODULE)
+CATEGORIES+=	ruby
 USE_RUBY=	yes
 USE_RAKE=	yes
 .endif
