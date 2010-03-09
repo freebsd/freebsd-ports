@@ -76,10 +76,6 @@ Maintainer = www-validator@w3.org
 # The "Home Page" for the service.  Make sure this ends with a slash.
 Home Page = http://validator.w3.org/
 
-#
-# Base URI for the Element Reference.
-Element Ref URI = http://www.htmlhelp.com/reference/html40/
-
 # Localization
 # only English available for now
 Languages = en
@@ -89,12 +85,6 @@ Languages = en
 #
 # Mapping tables etc...
 #
-
-#
-# Maps element names to URLs (cf. "Element Ref URI" above).
-<Elements>
-  Include %%PREFIX%%/www/validator/htdocs/config/eref.cfg
-</Elements>
 
 #
 # Main document Type Registry; contains all information on the types
