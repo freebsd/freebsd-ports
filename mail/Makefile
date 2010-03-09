@@ -280,6 +280,7 @@
     SUBDIR += milter-manager
     SUBDIR += milter-regex
     SUBDIR += milter-skem
+    SUBDIR += mime-construct
     SUBDIR += mime4j
     SUBDIR += mimedefang
     SUBDIR += mini_sendmail
