@@ -607,6 +607,7 @@
     SUBDIR += inilib
     SUBDIR += initutil
     SUBDIR += invitation_to_ruby
+    SUBDIR += ioncube
     SUBDIR += ipython
     SUBDIR += ireport
     SUBDIR += itext
