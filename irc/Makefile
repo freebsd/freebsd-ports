@@ -137,6 +137,7 @@
     SUBDIR += undernet-ircu
     SUBDIR += unreal
     SUBDIR += weechat
+    SUBDIR += weechat-devel
     SUBDIR += xaric
     SUBDIR += xchat
     SUBDIR += xchat-fish
