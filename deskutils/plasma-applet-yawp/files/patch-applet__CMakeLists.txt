@@ -1,0 +1,26 @@
+--- ./applet/CMakeLists.txt.orig	2009-12-06 15:08:29.000000000 -0500
++++ ./applet/CMakeLists.txt	2010-02-05 03:23:32.000000000 -0500
+@@ -54,23 +54,3 @@
+         DESTINATION     ${DATA_INSTALL_DIR}/desktoptheme/default/widgets/
+         )
+ 
+-
+-## This is needed for the CPack package generator.
+-#
+-INSTALL(TARGETS plasma_yawp
+-        LIBRARY DESTINATION   "${YAWP_PACK_INSTALL_LIB_DIR}"
+-        ARCHIVE DESTINATION   "${YAWP_PACK_INSTALL_LIB_DIR}"
+-        RUNTIME DESTINATION   "${YAWP_PACK_INSTALL_LIB_DIR}"
+-        COMPONENT Libraries
+-        )
+-
+-INSTALL(FILES         plasma_yawp.desktop
+-        DESTINATION   "${YAWP_PACK_SERVICES_DIR}"
+-        COMPONENT     ApplicationData
+-        )
+-
+-STRING(REGEX REPLACE "/usr/" "" YAWP_PACK_DATA_DIR "${DATA_INSTALL_DIR}/desktoptheme/default/widgets/")
+-INSTALL(FILES         yawp_theme15.svg
+-        DESTINATION   "${YAWP_PACK_DATA_DIR}"
+-        COMPONENT     ApplicationData
+-        )
