@@ -2,8 +2,6 @@ bin/blkcalc
 bin/blkcat
 bin/blkls
 bin/blkstat
-bin/disk_sreset
-bin/disk_stat
 bin/ffind
 bin/fls
 bin/fsstat
@@ -51,7 +49,7 @@ include/tsk3/tsk_incs.h
 lib/libtsk3.a
 lib/libtsk3.la
 lib/libtsk3.so
-lib/libtsk3.so.4
+lib/libtsk3.so.5
 %%DATADIR%%/sorter/default.sort
 %%DATADIR%%/sorter/freebsd.sort
 %%DATADIR%%/sorter/images.sort
@@ -61,14 +59,3 @@ lib/libtsk3.so.4
 %%DATADIR%%/sorter/windows.sort
 @dirrm %%DATADIR%%/sorter
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/library-api.txt
-%%PORTDOCS%%%%DOCSDIR%%/other.txt
-%%PORTDOCS%%%%DOCSDIR%%/ref_fs.txt
-%%PORTDOCS%%%%DOCSDIR%%/ref_timeline.txt
-%%PORTDOCS%%%%DOCSDIR%%/skins_fat.txt
-%%PORTDOCS%%%%DOCSDIR%%/skins_iso9660.txt
-%%PORTDOCS%%%%DOCSDIR%%/skins_ntfs.txt
-%%PORTDOCS%%%%DOCSDIR%%/skins_windows.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
