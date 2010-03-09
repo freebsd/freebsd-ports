@@ -237,9 +237,6 @@ bin/uls.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/svg.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/svg.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/svg.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/sxtl.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/sxtl.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/sxtl.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/tal.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/tal.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/ns/tal.pyo
