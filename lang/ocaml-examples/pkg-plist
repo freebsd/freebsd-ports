@@ -1,4 +1,6 @@
+%%EXAMPLESDIR%%/Makefile
 %%EXAMPLESDIR%%/TODO
+%%EXAMPLESDIR%%/asl/Makefile
 %%EXAMPLESDIR%%/asl/README
 %%EXAMPLESDIR%%/asl/asl.ml
 %%EXAMPLESDIR%%/asl/asl.mli
@@ -16,6 +18,7 @@
 %%EXAMPLESDIR%%/asl/token.ml
 %%EXAMPLESDIR%%/asl/token.mli
 %%EXAMPLESDIR%%/asl/typing.ml
+%%EXAMPLESDIR%%/basics/Makefile
 %%EXAMPLESDIR%%/basics/README
 %%EXAMPLESDIR%%/basics/argcargv.ml
 %%EXAMPLESDIR%%/basics/eng.html
@@ -45,12 +48,14 @@
 %%EXAMPLESDIR%%/basics/strpos.ml
 %%EXAMPLESDIR%%/basics/wc.ml
 %%EXAMPLESDIR%%/basics/wc_unix.ml
+%%EXAMPLESDIR%%/calc/Makefile
 %%EXAMPLESDIR%%/calc/README
 %%EXAMPLESDIR%%/calc/calc.ml
 %%EXAMPLESDIR%%/calc/lexer.mll
 %%EXAMPLESDIR%%/calc/loadall.ml
 %%EXAMPLESDIR%%/calc/main.ml
 %%EXAMPLESDIR%%/calc/parser.mly
+%%EXAMPLESDIR%%/camltk/Makefile
 %%EXAMPLESDIR%%/camltk/README
 %%EXAMPLESDIR%%/camltk/addition.ml
 %%EXAMPLESDIR%%/camltk/bonjour.ml
@@ -65,6 +70,7 @@
 %%EXAMPLESDIR%%/camltk/hello_quit.ml
 %%EXAMPLESDIR%%/camltk/images/CamlBook.gif
 %%EXAMPLESDIR%%/camltk/images/Lambda2.back.gif
+%%EXAMPLESDIR%%/camltk/images/Makefile
 %%EXAMPLESDIR%%/camltk/images/dojoji.back.gif
 %%EXAMPLESDIR%%/camltk/joconde.gif
 %%EXAMPLESDIR%%/camltk/loadall.ml
@@ -79,6 +85,7 @@
 %%EXAMPLESDIR%%/camltktutorial/complexe0.ml
 %%EXAMPLESDIR%%/camltktutorial/complexegui.ml
 %%EXAMPLESDIR%%/camltktutorial/complexegui0.ml
+%%EXAMPLESDIR%%/camltktutorial/servers/Makefile
 %%EXAMPLESDIR%%/camltktutorial/servers/biconnect.ml
 %%EXAMPLESDIR%%/camltktutorial/servers/biout.ml
 %%EXAMPLESDIR%%/camltktutorial/servers/bipipe.ml
@@ -92,8 +99,10 @@
 %%EXAMPLESDIR%%/camltktutorial/servers/multiconnect
 %%EXAMPLESDIR%%/camltktutorial/servers/pipe.ml
 %%EXAMPLESDIR%%/camltktutorial/simple.ml
+%%EXAMPLESDIR%%/colwheel/Makefile
 %%EXAMPLESDIR%%/colwheel/colwheel.ml
 %%EXAMPLESDIR%%/colwheel/loadall.ml
+%%EXAMPLESDIR%%/compress/Makefile
 %%EXAMPLESDIR%%/compress/compr.ml
 %%EXAMPLESDIR%%/compress/decompr.ml
 %%EXAMPLESDIR%%/compress/esbit.ml
@@ -105,7 +114,9 @@
 %%EXAMPLESDIR%%/compress/loadall.ml
 %%EXAMPLESDIR%%/config/Imake.rules
 %%EXAMPLESDIR%%/config/Imake.tmpl
+%%EXAMPLESDIR%%/config/Makefile
 %%EXAMPLESDIR%%/config/coldboot
+%%EXAMPLESDIR%%/demonstr/Makefile
 %%EXAMPLESDIR%%/demonstr/asynt.ml
 %%EXAMPLESDIR%%/demonstr/asynt.mli
 %%EXAMPLESDIR%%/demonstr/demo.ml
@@ -114,21 +125,26 @@
 %%EXAMPLESDIR%%/demonstr/loadall.ml
 %%EXAMPLESDIR%%/demonstr/prop.ml
 %%EXAMPLESDIR%%/demonstr/prop.mli
+%%EXAMPLESDIR%%/dlls/unix/Makefile
 %%EXAMPLESDIR%%/dlls/unix/client.c
 %%EXAMPLESDIR%%/dlls/unix/fib.ml
 %%EXAMPLESDIR%%/dlls/unix/fib_wrappers.c
+%%EXAMPLESDIR%%/dlls/windows/Makefile
 %%EXAMPLESDIR%%/dlls/windows/MakefileByteCode
 %%EXAMPLESDIR%%/dlls/windows/MakefileNative
 %%EXAMPLESDIR%%/dlls/windows/client.c
 %%EXAMPLESDIR%%/dlls/windows/fib.ml
 %%EXAMPLESDIR%%/dlls/windows/fibwrap.c
 %%EXAMPLESDIR%%/dlls/windows/modwrap.c
+%%EXAMPLESDIR%%/docteur/Makefile
 %%EXAMPLESDIR%%/docteur/docteur.ml
 %%EXAMPLESDIR%%/docteur/loadall.ml
+%%EXAMPLESDIR%%/doctor/Makefile
 %%EXAMPLESDIR%%/doctor/doctor.ml
 %%EXAMPLESDIR%%/doctor/loadall.ml
 %%EXAMPLESDIR%%/eng.html
 %%EXAMPLESDIR%%/fra.html
+%%EXAMPLESDIR%%/grep/Makefile
 %%EXAMPLESDIR%%/grep/auto.ml
 %%EXAMPLESDIR%%/grep/auto.mli
 %%EXAMPLESDIR%%/grep/determ.ml
@@ -143,6 +159,7 @@
 %%EXAMPLESDIR%%/grep/grep.ml
 %%EXAMPLESDIR%%/grep/loadall.ml
 %%EXAMPLESDIR%%/grep/makefast
+%%EXAMPLESDIR%%/hanoi/Makefile
 %%EXAMPLESDIR%%/hanoi/grahanoi_eng.ml
 %%EXAMPLESDIR%%/hanoi/grahanoi_fra.ml
 %%EXAMPLESDIR%%/hanoi/hanoi_eng.ml
@@ -151,6 +168,7 @@
 %%EXAMPLESDIR%%/hanoi/loadall.ml
 %%EXAMPLESDIR%%/hanoi/txthanoi_eng.ml
 %%EXAMPLESDIR%%/hanoi/txthanoi_fra.ml
+%%EXAMPLESDIR%%/kb/Makefile
 %%EXAMPLESDIR%%/kb/README
 %%EXAMPLESDIR%%/kb/equation.ml
 %%EXAMPLESDIR%%/kb/go.ml
@@ -159,6 +177,7 @@
 %%EXAMPLESDIR%%/kb/order.ml
 %%EXAMPLESDIR%%/kb/prelude.ml
 %%EXAMPLESDIR%%/kb/terms.ml
+%%EXAMPLESDIR%%/minicaml/Makefile
 %%EXAMPLESDIR%%/minicaml/caml.ml
 %%EXAMPLESDIR%%/minicaml/eval.ml
 %%EXAMPLESDIR%%/minicaml/eval.mli
@@ -173,6 +192,7 @@
 %%EXAMPLESDIR%%/minicaml/types.ml
 %%EXAMPLESDIR%%/minicaml/types.mli
 %%EXAMPLESDIR%%/minicaml/typeur.ml
+%%EXAMPLESDIR%%/minilogo/Makefile
 %%EXAMPLESDIR%%/minilogo/abstract.ml
 %%EXAMPLESDIR%%/minilogo/alex.ml
 %%EXAMPLESDIR%%/minilogo/alex.mli
@@ -215,10 +235,12 @@
 %%EXAMPLESDIR%%/modules/functors/wrong/itype.mli
 %%EXAMPLESDIR%%/modules/functors/wrong/main.ml
 %%EXAMPLESDIR%%/modules/functors/wrong/restype.mli
+%%EXAMPLESDIR%%/modules/libraries/restriction/src/Makefile
 %%EXAMPLESDIR%%/modules/libraries/restriction/src/inside.ml
 %%EXAMPLESDIR%%/modules/libraries/restriction/src/inside.mli
 %%EXAMPLESDIR%%/modules/libraries/restriction/src/outside.ml
 %%EXAMPLESDIR%%/modules/libraries/restriction/src/outside.mli
+%%EXAMPLESDIR%%/modules/libraries/restriction/test/Makefile
 %%EXAMPLESDIR%%/modules/libraries/restriction/test/use_inside_my_lib.ml
 %%EXAMPLESDIR%%/modules/libraries/restriction/test/use_my_lib.ml
 %%EXAMPLESDIR%%/modules/module_inclusion/with_include/base_module.ml
@@ -251,6 +273,7 @@
 %%EXAMPLESDIR%%/parsing/polish/scoping.mli
 %%EXAMPLESDIR%%/parsing/polish/treat.ml
 %%EXAMPLESDIR%%/parsing/polish/treat.mli
+%%EXAMPLESDIR%%/pascal/Makefile
 %%EXAMPLESDIR%%/pascal/compil.ml
 %%EXAMPLESDIR%%/pascal/compil.mli
 %%EXAMPLESDIR%%/pascal/cpascal.ml
@@ -271,6 +294,7 @@
 %%EXAMPLESDIR%%/pascal/typage.mli
 %%EXAMPLESDIR%%/pascal/valeur.ml
 %%EXAMPLESDIR%%/pascal/valeur.mli
+%%EXAMPLESDIR%%/picomach/Makefile
 %%EXAMPLESDIR%%/picomach/asm.ml
 %%EXAMPLESDIR%%/picomach/code.ml
 %%EXAMPLESDIR%%/picomach/code.mli
@@ -285,6 +309,7 @@
 %%EXAMPLESDIR%%/picomach/simul.mli
 %%EXAMPLESDIR%%/picomach/stockage.ml
 %%EXAMPLESDIR%%/picomach/stockage.mli
+%%EXAMPLESDIR%%/showsort/Makefile
 %%EXAMPLESDIR%%/showsort/loadall.ml
 %%EXAMPLESDIR%%/showsort/showsort.ml
 %%EXAMPLESDIR%%/simples/date.ml
@@ -296,8 +321,10 @@
 %%EXAMPLESDIR%%/simples/test_chomp.pl
 %%EXAMPLESDIR%%/simples/trad.ml
 %%EXAMPLESDIR%%/simples/trad.pl
+%%EXAMPLESDIR%%/soli/Makefile
 %%EXAMPLESDIR%%/soli/soli.ml
 %%EXAMPLESDIR%%/soli/soli_opt.ml
+%%EXAMPLESDIR%%/spirals/Makefile
 %%EXAMPLESDIR%%/spirals/loadall-bw.ml
 %%EXAMPLESDIR%%/spirals/loadall.ml
 %%EXAMPLESDIR%%/spirals/spir_bw.ml
