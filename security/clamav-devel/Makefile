@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20100127
-PORTREVISION=	1
+PORTVERSION=	20100308
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -117,6 +116,11 @@ PORTSCOUT=	ignore:1
 CFLAGS+=	-march=i486
 .endif
 
+.if ${OSVERSION} >= 700000
+BUILD_DEPENDS+=		${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
+CONFIGURE_ARGS+=	--enable-check
+.endif
+
 .if defined(WITH_ARC)
 RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
 .endif
@@ -179,8 +183,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
 
+.if ${OSVERSION} >= 700000
 post-build:
 	@${MAKE} -C ${WRKSRC} check
+.endif
 
 pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
