@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	squirrelmail
-PORTVERSION=	1.4.20.r2
-PORTREVISION=	4
+PORTVERSION=	1.4.20
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION:S/.r/-RC/}:squirrelmail \
 		SF/${PORTNAME}/locales/1.4.18-20090526:locales
