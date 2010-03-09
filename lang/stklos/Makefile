@@ -9,7 +9,7 @@ PORTNAME=	stklos
 PORTVERSION=	0.98
 PORTREVISION=	1
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://www.stklos.org/download/ \
+MASTER_SITES=	http://www.stklos.net/download/ \
 		ftp://kaolin.essi.fr/pub/STklos/
 
 MAINTAINER=	vmagerya@gmail.com
