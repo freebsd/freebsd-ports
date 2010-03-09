@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyassl
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.yassl.com/
 
@@ -25,8 +25,8 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 post-configure:
 	${REINPLACE_CMD} \
-		-e 's|/usr/local/cyassl/include|${PREFIX}/include/cyassl|' \
-		-e 's|/usr/local/cyassl/lib|${PREFIX}/lib/cyassl|' \
+		-e 's|$${prefix}/cyassl/include|$${prefix}/include/cyassl|' \
+		-e 's|$${prefix}/cyassl/lib|$${prefix}/lib/cyassl|' \
 		${WRKSRC}/Makefile
 
 post-install:
