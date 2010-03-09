@@ -27,6 +27,8 @@ load_rc_config $name
 : ${openerpd_enable="NO"}
 : ${openerpd_config="%%PREFIX%%/etc/openerp-server.conf"}
 
-command_args="-c /usr/local/bin/openerp-server.conf >/dev/null 2>&1 &"
+required_files="$openerpd_config"
+
+command_args="-c $openerpd_config >/dev/null 2>&1 &"
 
 run_rc_command "$1"
