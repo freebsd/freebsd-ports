@@ -7,11 +7,11 @@
 #      $Id: Makefile 23 2006-10-25 14:24:32Z buhnux $
 
 PORTNAME=	liboil
-PORTVERSION=	0.3.16
+PORTVERSION=	0.3.17
 CATEGORIES=	devel
 MASTER_SITES=	http://liboil.freedesktop.org/download/
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
 USE_GNOME=	pkgconfig gnomehack gnometarget ltverhack
