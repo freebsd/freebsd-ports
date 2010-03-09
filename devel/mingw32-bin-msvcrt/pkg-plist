@@ -452,6 +452,7 @@ mingw32/lib/libmgmtapi.a
 mingw32/lib/libmingw32.a
 mingw32/lib/libmingwex.a
 mingw32/lib/libmingwthrd.a
+mingw32/lib/libmingwthrd_old.a
 mingw32/lib/libmoldname.a
 mingw32/lib/libmoldname70.a
 mingw32/lib/libmoldname70d.a
