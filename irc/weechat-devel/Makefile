@@ -1,17 +1,22 @@
-# New ports collection makefile for:    weechat
-# Date created:                         2003-03-07
-# Whom:                                 clement
+# New ports collection makefile for:	weechat-devel
+# Date created:			2010-01-06
+# Whom:				Jase Thew <freebsd@beardz.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	weechat
-PORTVERSION=	0.3.1.1
+PORTVERSION=	20100212
 CATEGORIES=	irc
-MASTER_SITES=	http://weechat.org/files/src/
+MASTER_SITES=	http://perturb.me.uk/distfiles/ \
+		http://freebsd.unixfreunde.de/sources/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	weechat-devel-8cea059feb1da63a4d0ad91ba8c2df6fa9c12c48
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	freebsd@beardz.net
 COMMENT=	A lightweight and user friendly ncurse based IRC client
+
+CONFLICTS=	weechat-0.3*
 
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
@@ -26,11 +31,13 @@ OPTIONS=	RUBY		"Ruby scripting support."	Off	\
 		TCL		"TCL scripting support."	Off	\
 		LUA		"Lua scripting support."	Off	\
 		CHARSET		"Charset support."		On	\
-		DEBUG		"Debugging."			Off	\
+		DEBUG		"Debugging."			On	\
 		ASPELL		"Spell checking."		Off	\
 		GNUTLS		"GNU TLS."			Off	\
 		NLS		"NLS support."			On	\
 		DOCUMENTATION	"Build documentation."		Off
+
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
@@ -119,6 +126,9 @@ PLIST_SUB+=	DOCUMENTATION="@comment "
 .endif
 
 MAN1=	weechat-curses.1
+
+post-extract:
+	@${CP} ${WRKSRC}/doc/weechat-curses.1 ${WRKSRC}/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
