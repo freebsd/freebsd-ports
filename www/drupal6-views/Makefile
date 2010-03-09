@@ -6,20 +6,40 @@
 #
 
 PORTNAME=	views
-DISTVERSION=	6.x-2.6
-PORTREVISION=	1
+DISTVERSION=	6.x-2.8
 CATEGORIES=	www
 
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Controls how content lists are generated
 
 DRUPAL6_MODULE=	yes
-MODULE_DIRS=	css docs handlers help/images help images includes js \
-		modules/aggregator modules/comment modules/contact \
-		modules/filter modules/locale modules/node modules/profile \
-		modules/search modules/statistics modules/system \
-		modules/taxonomy modules/translation modules/upload \
-		modules/user modules plugins theme translations views_export
+MODULE_DIRS=	css \
+		docs \
+		handlers \
+		help/images \
+		help \
+		images \
+		includes \
+		js \
+		modules/aggregator \
+		modules/comment \
+		modules/contact \
+		modules/filter \
+		modules/locale \
+		modules/node \
+		modules/profile \
+		modules/search \
+		modules/statistics \
+		modules/system \
+		modules/taxonomy \
+		modules/translation \
+		modules/upload \
+		modules/user \
+		modules \
+		plugins \
+		theme \
+		translations \
+		views_export
 
 MODULE_FILES=	css/views-admin.css \
 		css/views-list-rtl.css \
@@ -27,12 +47,6 @@ MODULE_FILES=	css/views-admin.css \
 		css/views-tabs.css \
 		css/views.css \
 		docs/docs.php \
-		views.info \
-		views.install \
-		views.module \
-		views2.doxy \
-		views_ui.info \
-		views_ui.module \
 		handlers/views_handler_argument.inc \
 		handlers/views_handler_argument_date.inc \
 		handlers/views_handler_argument_formula.inc \
@@ -65,6 +79,29 @@ MODULE_FILES=	css/views-admin.css \
 		handlers/views_handler_sort_formula.inc \
 		handlers/views_handler_sort_menu_hierarchy.inc \
 		handlers/views_handler_sort_random.inc \
+		help/about.html \
+		help/analyze-theme.html \
+		help/api-default-views.html \
+		help/api-example.html \
+		help/api-handlers.html \
+		help/api-plugins.html \
+		help/api-tables.html \
+		help/api.html \
+		help/argument.html \
+		help/display-attachment.html \
+		help/display-block.html \
+		help/display-default.html \
+		help/display-feed.html \
+		help/display-page.html \
+		help/display.html \
+		help/embed.html \
+		help/example-author-block.html \
+		help/example-recent-stories.html \
+		help/example-user-feed.html \
+		help/example-users-by-role.html \
+		help/field.html \
+		help/filter.html \
+		help/getting-started.html \
 		help/images/node-term_node-term_data-large.png \
 		help/images/node-term_node-term_data.png \
 		help/images/overview-ui-large.png \
@@ -95,28 +132,6 @@ MODULE_FILES=	css/views-admin.css \
 		help/images/views2-rearrangefields.png \
 		help/images/views2-tablestyle-large.png \
 		help/images/views2-tablestyle.png \
-		help/about.html \
-		help/analyze-theme.html \
-		help/api-default-views.html \
-		help/api-handlers.html \
-		help/api-plugins.html \
-		help/api-tables.html \
-		help/api.html \
-		help/argument.html \
-		help/display-attachment.html \
-		help/display-block.html \
-		help/display-default.html \
-		help/display-feed.html \
-		help/display-page.html \
-		help/display.html \
-		help/embed.html \
-		help/example-author-block.html \
-		help/example-recent-stories.html \
-		help/example-user-feed.html \
-		help/example-users-by-role.html \
-		help/field.html \
-		help/filter.html \
-		help/getting-started.html \
 		help/menu.html \
 		help/new.html \
 		help/overrides.html \
@@ -131,8 +146,8 @@ MODULE_FILES=	css/views-admin.css \
 		help/style-node.html \
 		help/style-row.html \
 		help/style-rss.html \
-		help/style-summary.html \
 		help/style-summary-unformatted.html \
+		help/style-summary.html \
 		help/style-table.html \
 		help/style-unformatted.html \
 		help/style.html \
@@ -142,6 +157,7 @@ MODULE_FILES=	css/views-admin.css \
 		help/view-type.html \
 		help/views.help.ini \
 		images/arrow-active.png \
+		images/expanded-options.png \
 		images/overridden.gif \
 		images/sprites.png \
 		images/status-active.gif \
@@ -157,10 +173,10 @@ MODULE_FILES=	css/views-admin.css \
 		includes/query.inc \
 		includes/tabs.inc \
 		includes/view.inc \
-		js/ajax_view.js \
 		js/ajax.js \
-		js/dependent.js \
+		js/ajax_view.js \
 		js/base.js \
+		js/dependent.js \
 		js/tabs.js \
 		modules/aggregator/views_handler_argument_aggregator_category_cid.inc \
 		modules/aggregator/views_handler_argument_aggregator_fid.inc \
@@ -171,34 +187,6 @@ MODULE_FILES=	css/views-admin.css \
 		modules/aggregator.views.inc \
 		modules/book.views.inc \
 		modules/book.views_convert.inc \
-		modules/comment.views.inc \
-		modules/comment.views_convert.inc \
-		modules/comment.views_default.inc \
-		modules/contact.views.inc \
-		modules/filter.views.inc \
-		modules/locale.views.inc \
-		modules/node.views.inc \
-		modules/node.views_convert.inc \
-		modules/node.views_default.inc \
-		modules/poll.views.inc \
-		modules/profile.views.inc \
-		modules/profile.views_convert.inc \
-		modules/search.views.inc \
-		modules/search.views_convert.inc \
-		modules/search.views_default.inc \
-		modules/statistics.views.inc \
-		modules/statistics.views_convert.inc \
-		modules/statistics.views_default.inc \
-		modules/system.views.inc \
-		modules/taxonomy.views.inc \
-		modules/taxonomy.views_convert.inc \
-		modules/taxonomy.views_default.inc \
-		modules/translation.views.inc \
-		modules/upload.views.inc \
-		modules/upload.views_convert.inc \
-		modules/user.views.inc \
-		modules/user.views_convert.inc \
-		modules/views.views.inc \
 		modules/comment/views_handler_argument_comment_user_uid.inc \
 		modules/comment/views_handler_field_comment.inc \
 		modules/comment/views_handler_field_comment_depth.inc \
@@ -220,8 +208,13 @@ MODULE_FILES=	css/views-admin.css \
 		modules/comment/views_handler_sort_ncs_last_updated.inc \
 		modules/comment/views_plugin_row_comment_rss.inc \
 		modules/comment/views_plugin_row_comment_view.inc \
+		modules/comment.views.inc \
+		modules/comment.views_convert.inc \
+		modules/comment.views_default.inc \
 		modules/contact/views_handler_field_contact_link.inc \
+		modules/contact.views.inc \
 		modules/filter/views_handler_field_filter_format_name.inc \
+		modules/filter.views.inc \
 		modules/locale/views_handler_argument_locale_group.inc \
 		modules/locale/views_handler_argument_locale_language.inc \
 		modules/locale/views_handler_field_locale_group.inc \
@@ -230,6 +223,7 @@ MODULE_FILES=	css/views-admin.css \
 		modules/locale/views_handler_filter_locale_group.inc \
 		modules/locale/views_handler_filter_locale_language.inc \
 		modules/locale/views_handler_filter_locale_version.inc \
+		modules/locale.views.inc \
 		modules/node/views_handler_argument_dates_various.inc \
 		modules/node/views_handler_argument_node_language.inc \
 		modules/node/views_handler_argument_node_nid.inc \
@@ -251,18 +245,31 @@ MODULE_FILES=	css/views-admin.css \
 		modules/node/views_plugin_argument_validate_node.inc \
 		modules/node/views_plugin_row_node_rss.inc \
 		modules/node/views_plugin_row_node_view.inc \
+		modules/node.views.inc \
+		modules/node.views_convert.inc \
+		modules/node.views_default.inc \
+		modules/poll.views.inc \
 		modules/profile/views_handler_field_profile_date.inc \
 		modules/profile/views_handler_field_profile_list.inc \
 		modules/profile/views_handler_filter_profile_selection.inc \
+		modules/profile.views.inc \
+		modules/profile.views_convert.inc \
 		modules/search/views_handler_field_search_score.inc \
 		modules/search/views_handler_filter_search.inc \
 		modules/search/views_handler_sort_search_score.inc \
 		modules/search/views_plugin_row_search_view.inc \
+		modules/search.views.inc \
+		modules/search.views_convert.inc \
+		modules/search.views_default.inc \
 		modules/statistics/views_handler_field_accesslog_path.inc \
+		modules/statistics.views.inc \
+		modules/statistics.views_convert.inc \
+		modules/statistics.views_default.inc \
 		modules/system/views_handler_argument_file_fid.inc \
 		modules/system/views_handler_field_file.inc \
 		modules/system/views_handler_field_file_status.inc \
 		modules/system/views_handler_filter_file_status.inc \
+		modules/system.views.inc \
 		modules/taxonomy/views_handler_argument_taxonomy.inc \
 		modules/taxonomy/views_handler_argument_term_node_tid.inc \
 		modules/taxonomy/views_handler_argument_term_node_tid_depth.inc \
@@ -273,7 +280,11 @@ MODULE_FILES=	css/views-admin.css \
 		modules/taxonomy/views_handler_filter_term_node_tid.inc \
 		modules/taxonomy/views_handler_filter_term_node_tid_depth.inc \
 		modules/taxonomy/views_handler_filter_vocabulary_vid.inc \
+		modules/taxonomy/views_handler_relationship_node_term_data.inc \
 		modules/taxonomy/views_plugin_argument_validate_taxonomy_term.inc \
+		modules/taxonomy.views.inc \
+		modules/taxonomy.views_convert.inc \
+		modules/taxonomy.views_default.inc \
 		modules/translation/views_handler_argument_node_language.inc \
 		modules/translation/views_handler_argument_node_tnid.inc \
 		modules/translation/views_handler_field_node_language.inc \
@@ -282,9 +293,12 @@ MODULE_FILES=	css/views-admin.css \
 		modules/translation/views_handler_filter_node_tnid.inc \
 		modules/translation/views_handler_filter_node_tnid_child.inc \
 		modules/translation/views_handler_relationship_translation.inc \
+		modules/translation.views.inc \
 		modules/upload/views_handler_field_upload_description.inc \
 		modules/upload/views_handler_field_upload_fid.inc \
 		modules/upload/views_handler_filter_upload_fid.inc \
+		modules/upload.views.inc \
+		modules/upload.views_convert.inc \
 		modules/user/views_handler_argument_user_uid.inc \
 		modules/user/views_handler_argument_users_roles_rid.inc \
 		modules/user/views_handler_field_user.inc \
@@ -302,6 +316,9 @@ MODULE_FILES=	css/views-admin.css \
 		modules/user/views_plugin_argument_default_current_user.inc \
 		modules/user/views_plugin_argument_default_user.inc \
 		modules/user/views_plugin_argument_validate_user.inc \
+		modules/user.views.inc \
+		modules/user.views_convert.inc \
+		modules/views.views.inc \
 		plugins/views_plugin_access.inc \
 		plugins/views_plugin_access_none.inc \
 		plugins/views_plugin_access_perm.inc \
@@ -313,7 +330,6 @@ MODULE_FILES=	css/views-admin.css \
 		plugins/views_plugin_argument_validate_php.inc \
 		plugins/views_plugin_cache.inc \
 		plugins/views_plugin_cache_none.inc \
-		plugins/views_plugin_row.inc \
 		plugins/views_plugin_cache_time.inc \
 		plugins/views_plugin_display.inc \
 		plugins/views_plugin_display_attachment.inc \
@@ -321,13 +337,16 @@ MODULE_FILES=	css/views-admin.css \
 		plugins/views_plugin_display_default.inc \
 		plugins/views_plugin_display_feed.inc \
 		plugins/views_plugin_display_page.inc \
+		plugins/views_plugin_row.inc \
 		plugins/views_plugin_row_fields.inc \
 		plugins/views_plugin_style.inc \
 		plugins/views_plugin_style_default.inc \
 		plugins/views_plugin_style_grid.inc \
+		plugins/views_plugin_style_jump_menu.inc \
 		plugins/views_plugin_style_list.inc \
 		plugins/views_plugin_style_rss.inc \
 		plugins/views_plugin_style_summary.inc \
+		plugins/views_plugin_style_summary_jump_menu.inc \
 		plugins/views_plugin_style_summary_unformatted.inc \
 		plugins/views_plugin_style_table.inc \
 		theme/theme.inc \
@@ -350,20 +369,34 @@ MODULE_FILES=	css/views-admin.css \
 		theme/views-view-table.tpl.php \
 		theme/views-view-unformatted.tpl.php \
 		theme/views-view.tpl.php \
-		translations/uk-ua.po \
 		translations/de.po \
 		translations/eo.po \
 		translations/fr.po \
 		translations/it.po \
 		translations/pl.po \
 		translations/sv.po \
-		translations/views.pot \
+		translations/uk-ua.po \
 		translations/uk.po \
+		translations/views.pot \
+		views.info \
+		views.install \
+		views.module \
+		views2.doxy \
 		views_export/views_export.css \
 		views_export/views_export.info \
-		views_export/views_export.module
+		views_export/views_export.module \
+		views_ui.info \
+		views_ui.module
+
 DOC_FILES=	LICENSE.txt README.txt CHANGELOG.txt \
 		documentation-standards.txt
+
+## Maintenance targets for creating lists of directories and files.
+module-dirs: patch
+	@cd ${WRKSRC}; ${FIND} -s . -type d -d -mindepth 1 | ${SED} -e's|^\./|		|;s|$$| \\|'
+
+module-files: patch
+	@cd ${WRKSRC}; ${FIND} -s . -type f -d | ${SED} -e's|^\./|		|;s|$$| \\|'
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
