@@ -1026,6 +1026,7 @@
     SUBDIR += openwince-include
     SUBDIR += openzz
     SUBDIR += orbitcpp
+    SUBDIR += orc
     SUBDIR += ossp-al
     SUBDIR += ossp-cfg
     SUBDIR += ossp-ex
