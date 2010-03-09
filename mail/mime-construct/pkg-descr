@@ -1,0 +1,5 @@
+mime-construct constructs and (by default) mails MIME messages. It is entirely
+driven from the command line, it is designed to be used by other programs, or
+people who act like programs.
+
+WWW: http://www.argon.org/~roderick/
