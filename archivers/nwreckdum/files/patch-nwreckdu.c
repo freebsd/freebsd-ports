@@ -1,6 +1,11 @@
 --- nwreckdu.c.orig	Mon Jun  8 17:47:02 1998
 +++ nwreckdu.c	Fri Nov  3 02:30:05 2006
-@@ -27,7 +27,7 @@
+@@ -23,11 +23,11 @@
+ 
+ typedef struct {
+ 	char	name[56];
+-	unsigned long	offset, length;
++	uint32_t	offset, length;
  } dirrec;
  
  int	asmpak(FILE *);
