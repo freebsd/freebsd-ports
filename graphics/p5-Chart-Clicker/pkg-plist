@@ -26,6 +26,7 @@
 %%SITE_PERL%%/Chart/Clicker/Renderer/Bar.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Bubble.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/CandleStick.pm
+%%SITE_PERL%%/Chart/Clicker/Renderer/HeatMap.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Line.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Pie.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Point.pm
