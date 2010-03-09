@@ -46,12 +46,12 @@ server can be started by running:
 
 Important UPGRADE Note:
 -----------------------
-Upgrading to this current release will require modifications to the
-services configuration file and database so everything doesn't break.
-You must check the example configuration file and read the UPDATING docs
+Upgrading from 1.1.x to this current release will require modifications to
+the services configuration file and database so everything doesn't break.
+You must check the example configuration file and read the UPGRADING docs
 for information on how to do this before starting services.
 
-	%%DOCSDIR%%/UPDATING
+	%%DOCSDIR%%/UPGRADING
 
 Common database update tools and scripts referenced in ratbox-services
 documentation can be found in:
