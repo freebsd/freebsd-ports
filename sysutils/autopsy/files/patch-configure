@@ -9,17 +9,7 @@
  
  
  echo ""
-@@ -115,8 +115,7 @@
- fi;
- 
- # Get current working directory for lib
--echo "use lib '$PWD/';" >> ./config.tmp
--echo "use lib '$PWD/lib/';" >> ./config.tmp
-+echo "use lib '${PREFIX}/lib/autopsy/';" >> ./config.tmp
- 
- # Write autopsy
- if (test -f ./autopsy) then
-@@ -206,7 +206,7 @@
+@@ -96,7 +96,7 @@
  # INSTALLATION DIRECTORY
  #############################################################################
  echo '' >> $conf;
@@ -28,22 +18,13 @@
  
  
  # Now add the variables that need user interaction
-@@ -271,8 +271,9 @@
- echo '          http://www.sleuthkit.org/sleuthkit/'
- echo ''
- echo 'Enter the directory where you installed it:'
-+tskdir=${LOCALBASE}
- while (test 1 -eq 1) 
--  do read tskdir;
-+  do 
-   if (test -x "${tskdir}/bin/icat") then
-     if (test -x "${tskdir}/bin/fls") then
-       echo '  Sleuth Kit bin directory was found';
-@@ -284,6 +285,7 @@
-   else
-     echo 'The Sleuth Kit was not found (try again):';
-   fi;
-+  read tskdir;
- done
+@@ -438,8 +438,7 @@
+ fi;
  
+ # Get current working directory for lib
+-echo "use lib '$PWD/';" >> ./config.tmp
+-echo "use lib '$PWD/lib/';" >> ./config.tmp
++echo "use lib '${PREFIX}/lib/autopsy/';" >> ./config.tmp
  
+ if (test -f ./autopsy) then
+   echo "autopsy already exists, overwrite? (y/n):";

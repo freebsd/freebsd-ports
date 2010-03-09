@@ -1,4 +1,4 @@
-# New ports collection makefile for:	autopsy
+# New ports collection makefile for:	Autopsy
 # Date created:				2003-08-12
 # Whom:					Pieter Danhieux <opr@bsdaemon.be>
 #
@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	autopsy
-PORTVERSION=	2.08
+PORTVERSION=	2.23
 CATEGORIES=	sysutils security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to The Sleuth Kit
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ifind:${PORTSDIR}/sysutils/sleuthkit
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
 IS_INTERACTIVE=	yes
