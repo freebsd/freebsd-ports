@@ -1,25 +1,35 @@
-etc/nagios/nagiosgraph/hostdb.conf.example
-etc/nagios/nagiosgraph/map.example
-etc/nagios/nagiosgraph/nagiosgraph.conf.example
-etc/nagios/nagiosgraph/ngshared.pm
-etc/nagios/nagiosgraph/servdb.conf.example
-libexec/nagiosgraph/insert.pl
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/groupdb.conf.sample %D/etc/nagios/%%PORTNAME%%/groupdb.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/groupdb.conf; fi
+etc/nagios/%%PORTNAME%%/groupdb.conf.sample
+@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/groupdb.conf ] ; then cp -p %D/%F %B/groupdb.conf; fi
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/hostdb.conf.sample %D/etc/nagios/%%PORTNAME%%/hostdb.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/hostdb.conf; fi
+etc/nagios/%%PORTNAME%%/hostdb.conf.sample
+@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/hostdb.conf ] ; then cp -p %D/%F %B/hostdb.conf; fi
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/map.sample %D/etc/nagios/%%PORTNAME%%/map; then rm -f %D/etc/nagios/%%PORTNAME%%/map; fi
+etc/nagios/%%PORTNAME%%/map.sample
+@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/map ] ; then cp -p %D/%F %B/map; fi
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/nagiosgraph.conf.sample %D/etc/nagios/%%PORTNAME%%/nagiosgraph.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/nagiosgraph.conf; fi
+etc/nagios/%%PORTNAME%%/nagiosgraph.conf.sample
+@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/nagiosgraph.conf ] ; then cp -p %D/%F %B/nagiosgraph.conf; fi
+etc/nagios/%%PORTNAME%%/ngshared.pm
+@unexec if cmp -s %D/etc/nagios/%%PORTNAME%%/servdb.conf.sample %D/etc/nagios/%%PORTNAME%%/servdb.conf; then rm -f %D/etc/nagios/%%PORTNAME%%/servdb.conf; fi
+etc/nagios/%%PORTNAME%%/servdb.conf.sample
+@exec if [ ! -f %D/etc/nagios/%%PORTNAME%%/servdb.conf ] ; then cp -p %D/%F %B/servdb.conf; fi
+libexec/%%PORTNAME%%/insert.pl
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/show.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showgraph.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showgroup.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showhost.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/showservice.cgi
+%%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%/testcolor.cgi
+@exec mv %D/%%NAGIOSWWWDIR%%%/images/action.gif %D/%%NAGIOSWWWDIR%%/images/action.gif.bak
+%%NAGIOSWWWDIR%%/images/action.gif
+@unexec mv %D/%%NAGIOSWWWDIR%%%/images/action.gif.bak %D/%%NAGIOSWWWDIR%%/images/action.gif
+%%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.css
+%%NAGIOSWWWDIR%%/stylesheets/%%PORTNAME%%.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/authz.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testentry.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/upgrade.pl
-%%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/show.cgi
-%%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/showgraph.cgi
-%%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/showhost.cgi
-%%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/showservice.cgi
-%%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph/testcolor.cgi
-%%NAGIOSWWWDIR%%/stylesheets/action.gif
-%%NAGIOSWWWDIR%%/stylesheets/nagiosgraph.css
-%%NAGIOSWWWDIR%%/stylesheets/nagiosgraph.js
-@dirrmtry %%NAGIOSWWWDIR%%/stylesheets
-@dirrm %%NAGIOSWWWDIR%%/cgi-bin/nagiosgraph
-@dirrmtry %%NAGIOSWWWDIR%%/cgi-bin
-@dirrmtry %%NAGIOSWWWDIR%%
-@dirrm libexec/nagiosgraph
-@dirrm etc/nagios/nagiosgraph
-@dirrmtry etc/nagios
+@dirrm libexec/%%PORTNAME%%
+@dirrmtry %%NAGIOSWWWDIR%%/cgi-bin/%%PORTNAME%%
+@dirrmtry etc/nagios/%%PORTNAME%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
