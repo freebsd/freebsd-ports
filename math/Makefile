@@ -418,6 +418,7 @@
     SUBDIR += plplot
     SUBDIR += polymake
     SUBDIR += primegen
+    SUBDIR += prng
     SUBDIR += proofgeneral
     SUBDIR += pspp
     SUBDIR += py-basemap
