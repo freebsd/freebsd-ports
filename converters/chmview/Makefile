@@ -7,6 +7,7 @@
 
 PORTNAME=	chmview
 DISTVERSION=	2.0b3
+PORTREVISION=	1
 CATEGORIES=	converters textproc
 MASTER_SITES=	SF/trexinc/CHMView/2.0%20beta%203
 DISTNAME=	CHMView_${DISTVERSION}
@@ -19,6 +20,7 @@ USE_DOS2UNIX=	yes
 
 WRKSRC=		${WRKDIR}/src
 PLIST_FILES=	bin/chmview
+MAKE_JOBS_SAFE=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 

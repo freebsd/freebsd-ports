@@ -26,7 +26,7 @@ diff -ruN src.old/chmview.c src/chmview.c
  
 +#ifdef UNIX
 +#define _strnicmp strncasecmp
-+#define MODE 755
++#define MODE 0755
 +#endif
 +
  struct cb_data
