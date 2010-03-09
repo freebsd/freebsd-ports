@@ -1,0 +1,82 @@
+bin/orcc
+include/orc-0.4/orc-float/orcfloat.h
+include/orc-0.4/orc-pixel/orcpixel.h
+include/orc-0.4/orc-test/orcarray.h
+include/orc-0.4/orc-test/orcprofile.h
+include/orc-0.4/orc-test/orcrandom.h
+include/orc-0.4/orc-test/orctest.h
+include/orc-0.4/orc/opcodes.h
+include/orc-0.4/orc/orc-stdint.h
+include/orc-0.4/orc/orc.h
+include/orc-0.4/orc/orcarm.h
+include/orc-0.4/orc/orcdebug.h
+include/orc-0.4/orc/orcfunctions.h
+include/orc-0.4/orc/orcmmx.h
+include/orc-0.4/orc/orconce.h
+include/orc-0.4/orc/orcparse.h
+include/orc-0.4/orc/orcpowerpc.h
+include/orc-0.4/orc/orcprogram.h
+include/orc-0.4/orc/orcsse.h
+include/orc-0.4/orc/orcutils.h
+include/orc-0.4/orc/orcx86.h
+lib/liborc-0.4.a
+lib/liborc-0.4.la
+lib/liborc-0.4.so
+lib/liborc-0.4.so.0
+lib/liborc-float-0.4.a
+lib/liborc-float-0.4.la
+lib/liborc-float-0.4.so
+lib/liborc-float-0.4.so.0
+lib/liborc-pixel-0.4.a
+lib/liborc-pixel-0.4.la
+lib/liborc-pixel-0.4.so
+lib/liborc-pixel-0.4.so.0
+lib/liborc-test-0.4.a
+lib/liborc-test-0.4.la
+lib/liborc-test-0.4.so
+lib/liborc-test-0.4.so.0
+%%PORTEXAMPLES%%lib/orc/example1
+%%PORTEXAMPLES%%lib/orc/mt19937ar
+%%PORTEXAMPLES%%lib/orc/volscale
+lib/pkgconfig/orc-0.4.pc
+%%PORTDOCS%%share/gtk-doc/html/orc/ch01.html
+%%PORTDOCS%%share/gtk-doc/html/orc/ch02.html
+%%PORTDOCS%%share/gtk-doc/html/orc/ch03.html
+%%PORTDOCS%%share/gtk-doc/html/orc/ch04.html
+%%PORTDOCS%%share/gtk-doc/html/orc/ch05.html
+%%PORTDOCS%%share/gtk-doc/html/orc/home.png
+%%PORTDOCS%%share/gtk-doc/html/orc/index.html
+%%PORTDOCS%%share/gtk-doc/html/orc/index.sgml
+%%PORTDOCS%%share/gtk-doc/html/orc/left.png
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-building.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-concepts.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-misc.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-opcodes.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orc.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcarm.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orccompiler.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcdebug.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcexecutor.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcmmx.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcopcode.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcpowerpc.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcprogram.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcrule.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcsse.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcutils.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcx86.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc.devhelp
+%%PORTDOCS%%share/gtk-doc/html/orc/orc.devhelp2
+%%PORTDOCS%%share/gtk-doc/html/orc/right.png
+%%PORTDOCS%%share/gtk-doc/html/orc/style.css
+%%PORTDOCS%%share/gtk-doc/html/orc/up.png
+@dirrmtry lib/pkgconfig
+@dirrm include/orc-0.4/orc
+@dirrm include/orc-0.4/orc-float
+@dirrm include/orc-0.4/orc-pixel
+@dirrm include/orc-0.4/orc-test
+@dirrm include/orc-0.4
+%%PORTEXAMPLES%%@dirrm lib/orc
+%%PORTDOCS%%@dirrm share/gtk-doc/html/orc
+%%PORTDOCS%%@dirrmtry share/gtk-doc/html
+%%PORTDOCS%%@dirrmtry share/gtk-doc
