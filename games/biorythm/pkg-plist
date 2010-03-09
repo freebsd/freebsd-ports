@@ -1,5 +1,0 @@
-bin/biorythm
-%%PORTDOCS%%share/doc/biorythm/CREDITS
-%%PORTDOCS%%share/doc/biorythm/ChangeLog
-%%PORTDOCS%%share/doc/biorythm/README
-%%PORTDOCS%%@dirrm share/doc/biorythm
