@@ -2552,6 +2552,7 @@
     SUBDIR += py-flakes
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
+    SUBDIR += py-fudge
     SUBDIR += py-fusefs
     SUBDIR += py-game
     SUBDIR += py-gamin
