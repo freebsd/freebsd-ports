@@ -11139,6 +11139,7 @@ p5-Compress-Zlib                ports/archivers/p5-Compress-Zlib
 p5-Config-Any                   ports/devel/p5-Config-Any
 p5-Config-ApacheFormat          ports/devel/p5-Config-ApacheFormat
 p5-Config-Auto                  ports/devel/p5-Config-Auto
+p5-Config-AutoConf              ports/devel/p5-Config-AutoConf
 p5-Config-Fast                  ports/devel/p5-Config-Fast
 p5-Config-General               ports/devel/p5-Config-General
 p5-Config-INI                   ports/devel/p5-Config-INI
@@ -12761,6 +12762,7 @@ p5-Net-LDAP-posixAccount        ports/net/p5-Net-LDAP-posixAccount
 p5-Net-LDAP-posixGroup          ports/net/p5-Net-LDAP-posixGroup
 p5-Net-LibIDN                   ports/dns/p5-Net-LibIDN
 p5-Net-Libdnet                  ports/net/p5-Net-Libdnet
+p5-Net-LimeLight-Purge          ports/net/p5-Net-LimeLight-Purge
 p5-Net-MAC                      ports/net/p5-Net-MAC
 p5-Net-MAC-Vendor               ports/net/p5-Net-MAC-Vendor
 p5-Net-MSN                      ports/net-im/p5-Net-MSN
@@ -14836,6 +14838,7 @@ p5-compress-zlib                ports/archivers/p5-Compress-Zlib
 p5-config-any                   ports/devel/p5-Config-Any
 p5-config-apacheformat          ports/devel/p5-Config-ApacheFormat
 p5-config-auto                  ports/devel/p5-Config-Auto
+p5-config-autoconf              ports/devel/p5-Config-AutoConf
 p5-config-fast                  ports/devel/p5-Config-Fast
 p5-config-general               ports/devel/p5-Config-General
 p5-config-ini                   ports/devel/p5-Config-INI
@@ -16506,6 +16509,7 @@ p5-net-ldap-posixgroup          ports/net/p5-Net-LDAP-posixGroup
 p5-net-ldap-server              ports/net/p5-Net-LDAP-Server
 p5-net-libdnet                  ports/net/p5-Net-Libdnet
 p5-net-libidn                   ports/dns/p5-Net-LibIDN
+p5-net-limelight-purge          ports/net/p5-Net-LimeLight-Purge
 p5-net-mac                      ports/net/p5-Net-MAC
 p5-net-mac-vendor               ports/net/p5-Net-MAC-Vendor
 p5-net-managesieve              ports/mail/p5-Net-ManageSieve
