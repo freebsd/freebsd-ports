@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.18
+PORTVERSION=	0.21
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,8 +22,6 @@ BUILD_DEPENDS=	p5-Exception-Class>1.22:${PORTSDIR}/devel/p5-Exception-Class \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Bio::Phylo.3 \
-	Bio::Phylo::Annotation.3 \
-	Bio::Phylo::Dictionary.3 \
 	Bio::Phylo::Factory.3 \
 	Bio::Phylo::Forest::DrawNode.3 \
 	Bio::Phylo::Forest::DrawTree.3 \
@@ -47,23 +45,23 @@ MAN3=	Bio::Phylo.3 \
 	Bio::Phylo::Matrices::Datatype::Continuous.3 \
 	Bio::Phylo::Matrices::Datatype::Standard.3 \
 	Bio::Phylo::Matrices::Datatype::Mixed.3 \
-	Bio::Phylo::Meta.3 \
-	Bio::Phylo::Meta::XMLLiteral.3 \
-	Bio::Phylo::Mediators::NodeMediator.3 \
 	Bio::Phylo::Mediators::TaxaMediator.3 \
+	Bio::Phylo::NeXML::DOM::Element::Twig.3 \
+	Bio::Phylo::NeXML::DOM::Document::Twig.3 \
+	Bio::Phylo::NeXML::DOM::Document::Libxml.3 \
+	Bio::Phylo::NeXML::DOM.3 \
+	Bio::Phylo::NeXML::Meta.3 \
+	Bio::Phylo::NeXML::Writable.3 \
+	Bio::Phylo::NeXML::DOM::Document.3 \
+	Bio::Phylo::NeXML::DOM::Element::Libxml.3 \
+	Bio::Phylo::NeXML::DOM::Element.3 \
+	Bio::Phylo::NeXML::Meta::XMLLiteral.3 \
 	Bio::Phylo::Parsers::Newick.3 \
 	Bio::Phylo::Parsers::Nexml.3 \
 	Bio::Phylo::Parsers::Nexus.3 \
 	Bio::Phylo::Parsers::Table.3 \
 	Bio::Phylo::Parsers::Taxlist.3 \
 	Bio::Phylo::Parsers::Tolweb.3 \
-	Bio::Phylo::PhyloWS::Client.3 \
-	Bio::Phylo::PhyloWS::Service::Tolweb.3 \
-	Bio::Phylo::PhyloWS::Service.3 \
-	Bio::Phylo::PhyloWS::Resource::Description.3 \
-	Bio::Phylo::PhyloWS.3 \
-	Bio::Phylo::PhyloWS::Resource.3 \
-	Bio::Phylo::PhyloWS::Service::Timetree.3 \
 	Bio::Phylo::Project.3 \
 	Bio::Phylo::Set.3 \
 	Bio::Phylo::Taxa.3 \
@@ -78,17 +76,10 @@ MAN3=	Bio::Phylo.3 \
 	Bio::Phylo::Unparsers::Nexus.3 \
 	Bio::Phylo::Unparsers::Pagel.3 \
 	Bio::Phylo::Util::CONSTANT.3 \
-	Bio::Phylo::Util::DOM.3 \
-	Bio::Phylo::Util::DOM::Document::libxml.3 \
-	Bio::Phylo::Util::DOM::Document::twig.3 \
-	Bio::Phylo::Util::DOM::DocumentI.3 \
-	Bio::Phylo::Util::DOM::Element::libxml.3 \
-	Bio::Phylo::Util::DOM::Element::twig.3 \
-	Bio::Phylo::Util::DOM::ElementI.3 \
-	Bio::Phylo::Util::Exceptions.3 \
-	Bio::Phylo::Util::IDPool.3 \
 	Bio::Phylo::Util::Logger.3 \
-	Bio::Phylo::Util::XMLWritable.3
+	Bio::Phylo::Util::IDPool.3 \
+	Bio::Phylo::Util::Exceptions.3 \
+	Bio::Phylo::Util::StackTrace.3
 
 PERL_CONFIGURE=	yes
 
