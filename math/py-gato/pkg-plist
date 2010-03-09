@@ -18,6 +18,9 @@ bin/Gred
 %%PYTHON_SITELIBDIR%%/Gato/Embedder.py
 %%PYTHON_SITELIBDIR%%/Gato/Embedder.pyc
 %%PYTHON_SITELIBDIR%%/Gato/Embedder.pyo
+%%PYTHON_SITELIBDIR%%/Gato/Gato.py
+%%PYTHON_SITELIBDIR%%/Gato/Gato.pyc
+%%PYTHON_SITELIBDIR%%/Gato/Gato.pyo
 %%PYTHON_SITELIBDIR%%/Gato/GatoConfiguration.py
 %%PYTHON_SITELIBDIR%%/Gato/GatoConfiguration.pyc
 %%PYTHON_SITELIBDIR%%/Gato/GatoConfiguration.pyo
@@ -33,9 +36,6 @@ bin/Gred
 %%PYTHON_SITELIBDIR%%/Gato/GatoIcons.py
 %%PYTHON_SITELIBDIR%%/Gato/GatoIcons.pyc
 %%PYTHON_SITELIBDIR%%/Gato/GatoIcons.pyo
-%%PYTHON_SITELIBDIR%%/Gato/GatoSystemConfiguration.py
-%%PYTHON_SITELIBDIR%%/Gato/GatoSystemConfiguration.pyc
-%%PYTHON_SITELIBDIR%%/Gato/GatoSystemConfiguration.pyo
 %%PYTHON_SITELIBDIR%%/Gato/GatoTest.py
 %%PYTHON_SITELIBDIR%%/Gato/GatoTest.pyc
 %%PYTHON_SITELIBDIR%%/Gato/GatoTest.pyo
@@ -66,19 +66,13 @@ bin/Gred
 %%PYTHON_SITELIBDIR%%/Gato/PlanarityTest.py
 %%PYTHON_SITELIBDIR%%/Gato/PlanarityTest.pyc
 %%PYTHON_SITELIBDIR%%/Gato/PlanarityTest.pyo
-%%PYTHON_SITELIBDIR%%/Gato/TextTreeWidget.py
-%%PYTHON_SITELIBDIR%%/Gato/TextTreeWidget.pyc
-%%PYTHON_SITELIBDIR%%/Gato/TextTreeWidget.pyo
-%%PYTHON_SITELIBDIR%%/Gato/TreeWidget.py
-%%PYTHON_SITELIBDIR%%/Gato/TreeWidget.pyc
-%%PYTHON_SITELIBDIR%%/Gato/TreeWidget.pyo
 %%PYTHON_SITELIBDIR%%/Gato/__init__.py
 %%PYTHON_SITELIBDIR%%/Gato/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Gato/__init__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/Gato
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BFS.alg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/BFS.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/DFS.alg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/DFS.pro
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.cat
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/Gato

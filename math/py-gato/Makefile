@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gato
-PORTVERSION=	0.99D
+PORTVERSION=	1.02
 CATEGORIES=	math python
 MASTER_SITES=	http://gato.sourceforge.net/Download/
 MASTER_SITE_SUBDIR=	gato
@@ -18,35 +18,37 @@ COMMENT=	A Python-based toolbox to visualise algorithms on graphs
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/Gato
-GATO_DIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/Gato
+
+USE_PYTHON=	yes
+
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 post-patch:
-	@ ${REINPLACE_CMD} -e 's,^.*__future__.*$$,,' ${WRKSRC}/DataStructures.py
+	@${REINPLACE_CMD} -e 's,^.*__future__.*$$,,' ${WRKSRC}/DataStructures.py
+	@${GREP} -lR "^#!" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		'/^#!/s|python.*$$|python|g'
 
 pre-build:
-	@ ${TOUCH} ${WRKSRC}/__init__.py
+	@${TOUCH} ${WRKSRC}/__init__.py
 
 do-build:
-	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@ ${MKDIR} ${GATO_DIR}
-	@ cd ${WRKSRC} && ${FIND} *.py *.pyc *.pyo \
-	  -name Gato.py\* -o -print \
-	  | ${CPIO} --verbose -pdum -R ${BINOWN}:${BINGRP} ${GATO_DIR}
-.for script in Gato Gred
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/${script}.py ${PREFIX}/bin/${script}
+	@${MKDIR} ${PYTHON_SITELIBDIR}/Gato
+.for pyfile in *.py *.pyc *.pyo
+	${INSTALL_DATA} ${WRKSRC}/${pyfile} ${PYTHON_SITELIBDIR}/Gato
 .endfor
-
-post-install:
+.for script in Gato Gred
+	@${CHMOD} ${BINMODE} ${PYTHON_SITELIBDIR}/Gato/${script}.py
+	@${LN} -sf ${PYTHON_SITELIBDIR}/Gato/${script}.py ${PREFIX}/bin/${script}
+.endfor
 .if !defined(NOPORTEXAMPLES)
-	@ ${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 .for egfile in *.alg *.pro *.cat
-	@ ${INSTALL_DATA} ${WRKSRC}/${egfile} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${egfile} ${EXAMPLESDIR}
 .endfor
 .endif
 
