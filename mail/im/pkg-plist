@@ -19,7 +19,7 @@ bin/imsetup
 bin/imsort
 bin/imstore
 bin/imtar
-etc/im/SiteConfig
+%%ETCDIR%%/SiteConfig
 @unexec if [ -f %B/SiteConfig.new ]; then rm -f %B/SiteConfig.new; fi
 lib/IM/Address.pm
 lib/IM/Alias.pm
@@ -72,18 +72,18 @@ lib/IM/Util.pm
 %%PORTDOCS%%%%DOCSDIR%%/man/imsort.jis
 %%PORTDOCS%%%%DOCSDIR%%/man/imstore.jis
 %%PORTDOCS%%%%DOCSDIR%%/man/imtar.jis
-%%PORTDOCS%%%%EXAMPLESDIR%%/Config
-%%PORTDOCS%%%%EXAMPLESDIR%%/Petnames
-%%PORTDOCS%%%%EXAMPLESDIR%%/get.sbr
-%%PORTDOCS%%%%EXAMPLESDIR%%/get.sbr.refile
-%%PORTDOCS%%%%EXAMPLESDIR%%/getchk.sbr
-%%PORTDOCS%%%%EXAMPLESDIR%%/getchk.sbr.postpet
-%%PORTDOCS%%%%EXAMPLESDIR%%/password
-%%PORTDOCS%%%%EXAMPLESDIR%%/scan.sbr
-%%PORTDOCS%%%%EXAMPLESDIR%%/scan.sbr.sample1
-%%PORTDOCS%%%%EXAMPLESDIR%%/scan.sbr.sample2
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Petnames
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get.sbr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/get.sbr.refile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getchk.sbr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/getchk.sbr.postpet
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/password
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scan.sbr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scan.sbr.sample1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scan.sbr.sample2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/IM
-@dirrm etc/im
+@dirrm %%ETCDIR%%

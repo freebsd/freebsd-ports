@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	im
-PORTVERSION=	149
+PORTVERSION=	150
 CATEGORIES=	mail
 MASTER_SITES=	http://tats.haun.org/im/ \
 		${MASTER_SITE_PORTS_JP}
@@ -16,8 +16,9 @@ COMMENT=	Set of user interfaces of Email and NetNews
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir=${PREFIX}/etc
-MAKE_ARGS=	prefix=${PREFIX} imlibdir=${PREFIX}/etc/im
+CONFIGURE_ARGS=	--libdir=${PREFIX}/etc \
+		--with-hostname=_domain_of_your_mail_address_
+MAKE_ARGS=	prefix=${PREFIX} imlibdir=${ETCDIR}
 
 # Use RPOP instead of APOP
 .if defined(WITH_RPOP)
@@ -30,6 +31,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/00* ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/man
 	${INSTALL_DATA} ${WRKSRC}/man/* ${DOCSDIR}/man
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/dot.im/* ${EXAMPLESDIR}
 .endif
