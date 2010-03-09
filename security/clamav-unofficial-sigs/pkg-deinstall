@@ -1,0 +1,29 @@
+#!/bin/sh
+# $FreeBSD$
+
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+
+	echo "**********************************************************************"
+	echo ""
+	echo "In order to completely remove clamav-unofficial-sigs you need to"
+	echo "completely remove its working directory and installed third-party"
+	echo "signature databases from ClamAV's database directory."
+	
+	if [ -f "/var/db/clamav-unofficial-sigs/configs/purge.txt" ]; then
+	
+		echo ""
+		echo "As a guide what needs to be removed you can take a look at the:"
+		echo ""
+		echo "/var/db/clamav-unofficial-sigs/configs/purge.txt"
+		echo ""
+		echo "file, which lists all files related to clamav-unofficial-sigs."
+	fi
+	
+	echo ""
+	echo "**********************************************************************"
+
+fi
+
+exit 0
