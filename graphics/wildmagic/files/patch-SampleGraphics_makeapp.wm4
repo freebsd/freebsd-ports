@@ -5,7 +5,7 @@
  CORELIBS := -lWm4$(GRF)Application -lWm4$(GRF)Renderer  -lWm4Graphics \
              -lWm4Foundation
 -            
-+LIBS := $(CORELIBS) $(XLIBS) $(GLIBS) -lcompat -lm
++LIBS := $(CORELIBS) $(XLIBS) $(GLIBS) -lm
 +
  ifeq (Soft,$(findstring Soft,$(GRF)))
  CFLAGS += -DWM4_HAS_SOFT_SHADER
