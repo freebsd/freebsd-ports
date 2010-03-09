@@ -41,13 +41,13 @@ OPTIONS=	X11 "X11 support" off \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_X11)
-
 .if defined(WITH_XPM)
 USE_XORG=	xpm x11
 CPPFLAGS+=	-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include -DHAVE_LIBXPM
 LDFLAGS+=	-L${LOCALBASE}/lib -lXpm -lX11
 LDFLAGS2+=	-L${LOCALBASE}/lib
 FEATURES+=	GD_XPM
+.endif
 .endif
 
 .if defined(WITH_FONTCONFIG)
@@ -56,8 +56,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_LIBFONTCONFIG -DHAVE_PTHREAD ${PTHREAD_
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lfontconfig
 LDFLAGS2+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 FEATURES+=	GD_FONTCONFIG
-.endif
-
 .endif
 
 .if defined(WITH_ICONV)
