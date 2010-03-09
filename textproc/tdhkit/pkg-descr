@@ -1,0 +1,8 @@
+The TDH utilities are a set of programs and filters useful in working
+with ordinary tabular ascii data from the command line or in shell
+scripts. They were developed to supplement standard unix utilities
+such as sort and uniq. Two of the utilities are designed to work
+specifically with tab-delimited exports from Excel/spreadsheets.
+A full-featured date and time package (libchron) is also included.
+
+WWW: http://quisp.sourceforge.net/tdhkit

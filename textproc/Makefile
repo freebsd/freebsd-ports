@@ -1157,6 +1157,7 @@
     SUBDIR += syck
     SUBDIR += ta-aspell
     SUBDIR += tclExpat
+    SUBDIR += tdhkit
     SUBDIR += tdtd.el
     SUBDIR += te-aspell
     SUBDIR += teckit
