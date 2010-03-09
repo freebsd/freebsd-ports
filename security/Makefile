@@ -71,6 +71,7 @@
     SUBDIR += clamassassin
     SUBDIR += clamav
     SUBDIR += clamav-devel
+    SUBDIR += clamav-unofficial-sigs
     SUBDIR += clamcour
     SUBDIR += clamsmtp
     SUBDIR += clamtk
