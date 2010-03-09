@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.3.14
+PORTVERSION=	2.3.15
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -27,8 +27,6 @@ LDFLAGS=	-lgnuregex
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-pedantic||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|: install-exec-local|:|g' ${WRKSRC}/lib/Makefile.in
+		'/need_charset_alias=/s|true|false|g' ${WRKSRC}/lib/Makefile.in
 
 .include <bsd.port.mk>
