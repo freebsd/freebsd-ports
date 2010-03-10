@@ -1,0 +1,7 @@
+--- config.h.in.orig	2010-03-10 07:19:26.023348777 +0000
++++ config.h.in	2010-03-10 07:20:03.718760903 +0000
+@@ -20,3 +20,4 @@
+ #pragma once
+ 
+ #define BLOBBY_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}"
++#define GAMEDATADIR "${DATADIR}"

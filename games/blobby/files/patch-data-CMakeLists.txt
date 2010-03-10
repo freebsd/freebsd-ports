@@ -1,0 +1,9 @@
+--- data/CMakeLists.txt.orig	2010-03-10 06:56:11.633734175 +0000
++++ data/CMakeLists.txt	2010-03-10 06:59:30.458786242 +0000
+@@ -29,5 +29,5 @@
+ if (WIN32)
+ 	install(FILES ${install_files} DESTINATION data)
+ elseif (UNIX)
+-	install(FILES ${install_files} DESTINATION share/blobby)
++	install(FILES ${install_files} DESTINATION ${DATADIR})
+ endif (WIN32)
