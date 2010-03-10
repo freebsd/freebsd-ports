@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	smartmontools
-PORTVERSION=	5.39
-PORTREVISION=	2
+PORTVERSION=	5.39.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	marck@FreeBSD.org
+MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	S.M.A.R.T. disk monitoring tools
 
 CONFLICTS=	smartmontools-devel-[0-9]*
@@ -20,7 +19,8 @@ USE_GMAKE=	yes
 # hack to prevent gmake failure on 6.xx
 GMAKE=		make
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --enable-sample
+CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --enable-sample \
+    --disable-dependency-tracking --enable-drivedb
 
 SUB_FILES=	pkg-message smart
 USE_RC_SUBR=	smartd
