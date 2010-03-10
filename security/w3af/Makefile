@@ -55,6 +55,7 @@ do-patch:
 			-E "s!/usr/bin/python2?!${PYTHON_CMD}!"
 
 do-build:
+	@${MKDIR} ${WRKDIR}/build
 	@${MKDIR} ${WRKSRC}/build/extlib
 	@${CP} -R ${WRKSRC}/w3af_console ${WRKDIR}/build/w3af_console.py
 .if defined(WITH_GUI)
