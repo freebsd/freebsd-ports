@@ -10,7 +10,7 @@ PORTVERSION=	0.12.5
 PORTEPOCH=	1
 CATEGORIES=	palm comms
 MASTER_SITES=	http://downloads.pilot-link.org/ \
-		ftp://ftp.estpak.ee/pub/archlinux/sources/
+		http://miwibox.org/distfiles/
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Suite of tools used to connect and sync your Palm handled
