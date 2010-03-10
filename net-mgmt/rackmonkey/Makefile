@@ -7,6 +7,7 @@
 
 PORTNAME=	rackmonkey
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -17,14 +18,15 @@ COMMENT=	A web-based tool for managing racks of equipment
 RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-HTML-Template>=0:${PORTSDIR}/www/p5-HTML-Template \
 		p5-Spreadsheet-WriteExcel>=0:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
-		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS
+		p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser
 
 OPTIONS=	\
-	SQLITE		"Use SQLite Backend" 							on  \
-	MYSQL		"Use MySQL Backend" 							off \
-	POSTGRES	"Use Posgres Backend" 							off \
-	INIT_DB		"Initialize DB at installation (SQLite Only)" 	on  \
-	SAMPLE		"Install sample data (SQLite Only)" 			on
+	SQLITE		"Use SQLite Backend"	on  \
+	MYSQL		"Use MySQL Backend" 	off \
+	POSTGRES	"Use Posgres Backend"	off \
+	INIT_DB		"Initialize DB at installation (SQLite Only)"	on  \
+	SAMPLE		"Install sample data (SQLite Only)"	on
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-1
 NO_BUILD=	YES
