@@ -341,6 +341,7 @@
     SUBDIR += ttftot42
     SUBDIR += txtbdf2ps
     SUBDIR += typetools
+    SUBDIR += utopia
     SUBDIR += wmlpq
     SUBDIR += wprint
     SUBDIR += xdvi

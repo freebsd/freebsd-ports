@@ -1,0 +1,20 @@
+%%DATADIR%%/devps/DESC
+%%DATADIR%%/devps/UB
+%%DATADIR%%/devps/UBI
+%%DATADIR%%/devps/UI
+%%DATADIR%%/devps/UR
+%%DATADIR%%/devps/putr.afm
+%%DATADIR%%/devps/putr.pfa
+%%DATADIR%%/devps/putri.afm
+%%DATADIR%%/devps/putri.pfa
+%%DATADIR%%/devps/putb.afm
+%%DATADIR%%/devps/putb.pfa
+%%DATADIR%%/devps/putbi.afm
+%%DATADIR%%/devps/putbi.pfa
+%%DATADIR%%/devps/LICENSE
+%%DATADIR%%/devps/text.enc
+%%DATADIR%%/devps/textmap
+%%DATADIR%%/devps/download.old
+@unexec /usr/bin/sed -I backup -e "/Utopia Begin/,/Utopia End/d" 
+@dirrm %%DATADIR%%/devps
+@dirrm %%DATADIR%%
