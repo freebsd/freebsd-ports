@@ -196,8 +196,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_eval_module-${NGINX_EVAL_MODULE_VER
 .endif
 
 .if defined(WITH_HTTP_FANCYINDEX_MODULE)
-NGINX_FANCYINDEX_MODULE_VERSION=	0.2.1
-MASTER_SITES+=	http://connectical.com/attachments/download/21/:fancyindex
+NGINX_FANCYINDEX_MODULE_VERSION=	0.2.2
+MASTER_SITES+=	http://connectical.com/attachments/download/26/:fancyindex
 DISTFILES+=	ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION}.tar.bz2:fancyindex
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION}
 .endif
