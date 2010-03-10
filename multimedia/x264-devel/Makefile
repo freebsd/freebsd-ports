@@ -7,6 +7,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.0.20090119
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -49,6 +50,8 @@ LDFLAGS+=	-fstack-protector
 
 .if ${ARCH}=="i386"
 MAKE_ENV+=	ARCH_X86="1"
+.elif ${ARCH} == "powerpc"
+MAKE_ENV+=	ARCH_PPC="1"
 .endif
 
 MAKE_ENV+=	ARCH=${ARCH}
