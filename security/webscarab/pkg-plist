@@ -1,0 +1,20 @@
+bin/webscarab
+bin/webscarab_lite
+%%DATADIR%%/lib/tagsoup-1.0rc2.jar
+%%DATADIR%%/lib/bsh-2.0b1.jar
+%%DATADIR%%/lib/chardet.jar
+%%DATADIR%%/lib/commons-logging-1.0.4.jar
+%%DATADIR%%/lib/concurrent.jar
+%%DATADIR%%/lib/flex-messaging-common.jar
+%%DATADIR%%/lib/flex-messaging-core.jar
+%%DATADIR%%/lib/flex-messaging-remoting.jar
+%%DATADIR%%/lib/help.jnlp
+%%DATADIR%%/lib/htmlparser.jar
+%%DATADIR%%/lib/jcommon-0.8.7.jar
+%%DATADIR%%/lib/jfreechart-0.9.12.jar
+%%DATADIR%%/lib/jhall-2.0_02.jar
+%%DATADIR%%/lib/openamf.jar
+%%DATADIR%%/lib/bsf-2.3.0.jar
+%%DATADIR%%/webscarab.jar
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/
