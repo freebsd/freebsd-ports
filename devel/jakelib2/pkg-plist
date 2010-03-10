@@ -4,10 +4,6 @@ bin/jakelib2-skeleton
 bin/jlpp
 include/jakelib2.h
 include/jakelib2/config.h
-include/jakelib2/gc/gc.h
-include/jakelib2/gc/gc_config_macros.h
-include/jakelib2/gc/gc_cpp.h
-include/jakelib2/gc/gc_pthread_redirects.h
 include/jakelib2/io/BufferedReader.h
 include/jakelib2/io/BufferedWriter.h
 include/jakelib2/io/ByteArrayInputStream.h
@@ -173,7 +169,14 @@ include/jakelib2/util/regex/Pattern.h
 include/jakelib2/util/regex/PatternSyntaxException.h
 include/jakelib2/util/regex/pcre.h
 include/jakelib2/win32config.h
-@dirrm include/jakelib2/gc
+lib/libjake2.a
+lib/libjake2.la
+lib/libjake2.so
+lib/libjake2.so.2
+share/aclocal/jakelib2.m4
+%%DATADIR%%/template/COPYING
+%%DATADIR%%/template/Main.jlc
+%%DATADIR%%/template/Sub.jlc
 @dirrm include/jakelib2/io
 @dirrm include/jakelib2/lang
 @dirrm include/jakelib2/net
@@ -182,13 +185,5 @@ include/jakelib2/win32config.h
 @dirrm include/jakelib2/util/regex
 @dirrm include/jakelib2/util
 @dirrm include/jakelib2
-lib/libjake2.a
-lib/libjake2.la
-lib/libjake2.so
-lib/libjake2.so.1
-share/aclocal/jakelib2.m4
-%%DATADIR%%/template/COPYING
-%%DATADIR%%/template/Main.jlc
-%%DATADIR%%/template/Sub.jlc
 @dirrm %%DATADIR%%/template
 @dirrm %%DATADIR%%
