@@ -5,10 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	rospell
-DISTVERSION=	2007.02.rc1
-PORTREVISION=	3
+PORTVERSION=	2009.02.r2
+PORTREVISION=	0
 CATEGORIES=	editors textproc # this should/will be romanian ;)
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	rospell/rospell/2008.00
+DISTNAME=	${PORTNAME}-2009.00-rc2
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	QT-based editor with support for romanian charsets and spell checking
@@ -26,6 +28,11 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 MAKEFILE=	BSDmakefile
 
 MAN1=	rospell.1
+
+.ifdef NOPORTDOCS
+ALL_TARGET=	all-bin
+INSTALL_TARGET=	install-bin
+.endif
 
 .include <bsd.port.pre.mk>
 
