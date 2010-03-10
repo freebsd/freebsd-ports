@@ -19,6 +19,8 @@ sbin/smartd
 %%DOCSDIR%%/examplescripts/Example4
 %%DOCSDIR%%/examplescripts/README
 %%DOCSDIR%%/smartd.conf
+%%DATADIR%%/drivedb.h
+@dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/examplescripts
 @dirrm %%DOCSDIR%%
 @dirrmtry etc/periodic/daily
