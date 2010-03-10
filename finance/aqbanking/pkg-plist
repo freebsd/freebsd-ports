@@ -2,12 +2,12 @@ bin/aqbanking-cli
 bin/aqbanking-config
 bin/aqhbci-tool4
 bin/hbcixml3
-bin/qb-help8
+%%WITH_QT4%%bin/q4b-help1
+%%WITH_QT3%%bin/qb-help8
 include/aqbanking/abgui.h
 include/aqbanking/account.h
 include/aqbanking/account_be.h
 include/aqbanking/accstatus.h
-include/aqbanking/aqbanking_plugins.h
 include/aqbanking/balance.h
 include/aqbanking/bankinfo.h
 include/aqbanking/bankinfoplugin.h
@@ -89,60 +89,114 @@ include/aqofxconnect/aqofxconnect.h
 include/aqofxconnect/provider.h
 include/aqofxconnect/user.h
 include/aqofxconnect/version.h
-include/qbanking/api.h
-include/qbanking/banking.h
-include/qbanking/cppgui.h
-include/qbanking/qbaccountlist.h
-include/qbanking/qbanking.h
-include/qbanking/qbbankselector.h
-include/qbanking/qbbankselector.ui.h
-include/qbanking/qbcfgmodule.h
-include/qbanking/qbcfgtab.h
-include/qbanking/qbcfgtab.ui.h
-include/qbanking/qbcfgtabpage.h
-include/qbanking/qbcfgtabpageaccount.h
-include/qbanking/qbcfgtabpageaccountgen.h
-include/qbanking/qbcfgtabpageaccountgen.ui.h
-include/qbanking/qbcfgtabpageaccounts.h
-include/qbanking/qbcfgtabpageaccounts.ui.h
-include/qbanking/qbcfgtabpagebackends.h
-include/qbanking/qbcfgtabpagebackends.ui.h
-include/qbanking/qbcfgtabpageuser.h
-include/qbanking/qbcfgtabpageusergen.h
-include/qbanking/qbcfgtabpageusergen.ui.h
-include/qbanking/qbcfgtabpageusers.h
-include/qbanking/qbcfgtabpageusers.ui.h
-include/qbanking/qbcfgtabsettings.h
-include/qbanking/qbeditaccount.h
-include/qbanking/qbedituser.h
-include/qbanking/qbflagstaff.h
-include/qbanking/qbgui.h
-include/qbanking/qbimporter.h
-include/qbanking/qbimporter.ui.h
-include/qbanking/qbjoblist.h
-include/qbanking/qbmapaccount.h
-include/qbanking/qbmapaccount.ui.h
-include/qbanking/qbpickstartdate.h
-include/qbanking/qbpickstartdate.ui.h
-include/qbanking/qbplugindescrlist.h
-include/qbanking/qbprintdialog.h
-include/qbanking/qbprintdialog.ui.h
-include/qbanking/qbprocesswatcher.h
-include/qbanking/qbprocesswatcher.ui.h
-include/qbanking/qbselectbackend.h
-include/qbanking/qbselectbackend.ui.h
-include/qbanking/qbselectbank.h
-include/qbanking/qbselectbank.ui.h
-include/qbanking/qbselectfromlist.h
-include/qbanking/qbselectfromlist.ui.h
-include/qbanking/qbuserlist.h
-include/qbanking/qgui.h
-include/qbanking/qguiinputbox.h
-include/qbanking/qguiprogress.h
-include/qbanking/qguiprogresswidget.h
-include/qbanking/qguiprogresswidget.ui.h
-include/qbanking/qguisimplebox.h
-include/qbanking/qguisimplebox.ui.h
+%%WITH_QT4%%include/q4banking/api.h
+%%WITH_QT4%%include/q4banking/banking.h
+%%WITH_QT4%%include/q4banking/cppgui.h
+%%WITH_QT4%%include/q4banking/qbaccountlist.h
+%%WITH_QT4%%include/q4banking/qbanking.h
+%%WITH_QT4%%include/q4banking/qbbankselector.h
+%%WITH_QT4%%include/q4banking/qbbankselector.ui.h
+%%WITH_QT4%%include/q4banking/qbcfgmodule.h
+%%WITH_QT4%%include/q4banking/qbcfgtab.h
+%%WITH_QT4%%include/q4banking/qbcfgtab.ui.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpage.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpageaccount.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpageaccountgen.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpageaccountgen.ui.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpageaccounts.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpageaccounts.ui.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpagebackends.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpagebackends.ui.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpageuser.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpageusergen.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpageusergen.ui.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpageusers.h
+%%WITH_QT4%%include/q4banking/qbcfgtabpageusers.ui.h
+%%WITH_QT4%%include/q4banking/qbcfgtabsettings.h
+%%WITH_QT4%%include/q4banking/qbeditaccount.h
+%%WITH_QT4%%include/q4banking/qbedituser.h
+%%WITH_QT4%%include/q4banking/qbflagstaff.h
+%%WITH_QT4%%include/q4banking/qbgui.h
+%%WITH_QT4%%include/q4banking/qbimporter.h
+%%WITH_QT4%%include/q4banking/qbimporter.ui.h
+%%WITH_QT4%%include/q4banking/qbjoblist.h
+%%WITH_QT4%%include/q4banking/qbmapaccount.h
+%%WITH_QT4%%include/q4banking/qbmapaccount.ui.h
+%%WITH_QT4%%include/q4banking/qbpickstartdate.h
+%%WITH_QT4%%include/q4banking/qbpickstartdate.ui.h
+%%WITH_QT4%%include/q4banking/qbplugindescrlist.h
+%%WITH_QT4%%include/q4banking/qbprintdialog.h
+%%WITH_QT4%%include/q4banking/qbprintdialog.ui.h
+%%WITH_QT4%%include/q4banking/qbprocesswatcher.h
+%%WITH_QT4%%include/q4banking/qbprocesswatcher.ui.h
+%%WITH_QT4%%include/q4banking/qbselectbackend.h
+%%WITH_QT4%%include/q4banking/qbselectbackend.ui.h
+%%WITH_QT4%%include/q4banking/qbselectbank.h
+%%WITH_QT4%%include/q4banking/qbselectbank.ui.h
+%%WITH_QT4%%include/q4banking/qbselectfromlist.h
+%%WITH_QT4%%include/q4banking/qbselectfromlist.ui.h
+%%WITH_QT4%%include/q4banking/qbuserlist.h
+%%WITH_QT4%%include/q4banking/qgui.h
+%%WITH_QT4%%include/q4banking/qguiinputbox.h
+%%WITH_QT4%%include/q4banking/qguiprogress.h
+%%WITH_QT4%%include/q4banking/qguiprogresswidget.h
+%%WITH_QT4%%include/q4banking/qguiprogresswidget.ui.h
+%%WITH_QT4%%include/q4banking/qguisimplebox.h
+%%WITH_QT4%%include/q4banking/qguisimplebox.ui.h
+%%WITH_QT3%%include/qbanking/api.h
+%%WITH_QT3%%include/qbanking/banking.h
+%%WITH_QT3%%include/qbanking/cppgui.h
+%%WITH_QT3%%include/qbanking/qbaccountlist.h
+%%WITH_QT3%%include/qbanking/qbanking.h
+%%WITH_QT3%%include/qbanking/qbbankselector.h
+%%WITH_QT3%%include/qbanking/qbbankselector.ui.h
+%%WITH_QT3%%include/qbanking/qbcfgmodule.h
+%%WITH_QT3%%include/qbanking/qbcfgtab.h
+%%WITH_QT3%%include/qbanking/qbcfgtab.ui.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpage.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpageaccount.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpageaccountgen.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpageaccountgen.ui.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpageaccounts.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpageaccounts.ui.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpagebackends.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpagebackends.ui.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpageuser.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpageusergen.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpageusergen.ui.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpageusers.h
+%%WITH_QT3%%include/qbanking/qbcfgtabpageusers.ui.h
+%%WITH_QT3%%include/qbanking/qbcfgtabsettings.h
+%%WITH_QT3%%include/qbanking/qbeditaccount.h
+%%WITH_QT3%%include/qbanking/qbedituser.h
+%%WITH_QT3%%include/qbanking/qbflagstaff.h
+%%WITH_QT3%%include/qbanking/qbgui.h
+%%WITH_QT3%%include/qbanking/qbimporter.h
+%%WITH_QT3%%include/qbanking/qbimporter.ui.h
+%%WITH_QT3%%include/qbanking/qbjoblist.h
+%%WITH_QT3%%include/qbanking/qbmapaccount.h
+%%WITH_QT3%%include/qbanking/qbmapaccount.ui.h
+%%WITH_QT3%%include/qbanking/qbpickstartdate.h
+%%WITH_QT3%%include/qbanking/qbpickstartdate.ui.h
+%%WITH_QT3%%include/qbanking/qbplugindescrlist.h
+%%WITH_QT3%%include/qbanking/qbprintdialog.h
+%%WITH_QT3%%include/qbanking/qbprintdialog.ui.h
+%%WITH_QT3%%include/qbanking/qbprocesswatcher.h
+%%WITH_QT3%%include/qbanking/qbprocesswatcher.ui.h
+%%WITH_QT3%%include/qbanking/qbselectbackend.h
+%%WITH_QT3%%include/qbanking/qbselectbackend.ui.h
+%%WITH_QT3%%include/qbanking/qbselectbank.h
+%%WITH_QT3%%include/qbanking/qbselectbank.ui.h
+%%WITH_QT3%%include/qbanking/qbselectfromlist.h
+%%WITH_QT3%%include/qbanking/qbselectfromlist.ui.h
+%%WITH_QT3%%include/qbanking/qbuserlist.h
+%%WITH_QT3%%include/qbanking/qgui.h
+%%WITH_QT3%%include/qbanking/qguiinputbox.h
+%%WITH_QT3%%include/qbanking/qguiprogress.h
+%%WITH_QT3%%include/qbanking/qguiprogresswidget.h
+%%WITH_QT3%%include/qbanking/qguiprogresswidget.ui.h
+%%WITH_QT3%%include/qbanking/qguisimplebox.h
+%%WITH_QT3%%include/qbanking/qguisimplebox.ui.h
 lib/aqbanking/plugins/29/bankinfo/at.la
 lib/aqbanking/plugins/29/bankinfo/at.so
 lib/aqbanking/plugins/29/bankinfo/at.xml
@@ -158,14 +212,25 @@ lib/aqbanking/plugins/29/bankinfo/de.xml
 lib/aqbanking/plugins/29/bankinfo/us.la
 lib/aqbanking/plugins/29/bankinfo/us.so
 lib/aqbanking/plugins/29/bankinfo/us.xml
-lib/aqbanking/plugins/29/debugger/aqhbci/aqhbci-qt3-debug
-lib/aqbanking/plugins/29/debugger/aqhbci/qt_debug.xml
-lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.la
-lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.so
-lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.so.0
-lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.la
-lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.so
-lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.so.0
+lib/aqbanking/plugins/29/debugger/.keep_me
+lib/aqbanking/plugins/29/debugger/aqhbci/.keep_me
+%%WITH_QT3%%lib/aqbanking/plugins/29/debugger/aqhbci/aqhbci-qt3-debug
+%%WITH_QT4%%lib/aqbanking/plugins/29/debugger/aqhbci/aqhbci-qt4-debug
+%%WITH_QT4%%lib/aqbanking/plugins/29/debugger/aqhbci/qt4_debug.xml
+%%WITH_QT3%%lib/aqbanking/plugins/29/debugger/aqhbci/qt_debug.xml
+lib/aqbanking/plugins/29/frontends/.keep_me
+%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqhbci.la
+%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqhbci.so
+%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqhbci.so.0
+%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqofxconnect.la
+%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqofxconnect.so
+%%WITH_QT4%%lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules/aqofxconnect.so.0
+%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.la
+%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.so
+%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqhbci.so.0
+%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.la
+%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.so
+%%WITH_QT3%%lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules/aqofxconnect.so.0
 lib/aqbanking/plugins/29/imexporters/csv.la
 lib/aqbanking/plugins/29/imexporters/csv.so
 lib/aqbanking/plugins/29/imexporters/csv.xml
@@ -205,8 +270,11 @@ lib/aqbanking/plugins/29/providers/aqnone.xml
 lib/aqbanking/plugins/29/providers/aqofxconnect.la
 lib/aqbanking/plugins/29/providers/aqofxconnect.so
 lib/aqbanking/plugins/29/providers/aqofxconnect.xml
-lib/aqbanking/plugins/29/wizards/qt3-wizard
-lib/aqbanking/plugins/29/wizards/qt3_wizard.xml
+lib/aqbanking/plugins/29/wizards/.keep_me
+%%WITH_QT3%%lib/aqbanking/plugins/29/wizards/qt3-wizard
+%%WITH_QT3%%lib/aqbanking/plugins/29/wizards/qt3_wizard.xml
+%%WITH_QT4%%lib/aqbanking/plugins/29/wizards/qt4-wizard
+%%WITH_QT4%%lib/aqbanking/plugins/29/wizards/qt4_wizard.xml
 lib/gwenhywfar/plugins/47/dbio/dtaus.la
 lib/gwenhywfar/plugins/47/dbio/dtaus.so
 lib/gwenhywfar/plugins/47/dbio/dtaus.xml
@@ -215,19 +283,22 @@ lib/gwenhywfar/plugins/47/dbio/swift.so
 lib/gwenhywfar/plugins/47/dbio/swift.xml
 lib/libaqbanking.la
 lib/libaqbanking.so
-lib/libaqbanking.so.30
+lib/libaqbanking.so.31
 lib/libaqhbci.la
 lib/libaqhbci.so
-lib/libaqhbci.so.16
+lib/libaqhbci.so.17
 lib/libaqnone.la
 lib/libaqnone.so
-lib/libaqnone.so.30
+lib/libaqnone.so.31
 lib/libaqofxconnect.la
 lib/libaqofxconnect.so
 lib/libaqofxconnect.so.5
-lib/libqbanking.la
-lib/libqbanking.so
-lib/libqbanking.so.8
+%%WITH_QT4%%lib/libq4banking.la
+%%WITH_QT4%%lib/libq4banking.so
+%%WITH_QT4%%lib/libq4banking.so.1
+%%WITH_QT3%%lib/libqbanking.la
+%%WITH_QT3%%lib/libqbanking.so
+%%WITH_QT3%%lib/libqbanking.so.8
 libdata/pkgconfig/aqbanking.pc
 share/aclocal/aqbanking.m4
 share/aqbanking/backends/aqhbci/hbci.xml
@@ -251,21 +322,33 @@ share/aqbanking/bankinfo/us/banks.data
 share/aqbanking/bankinfo/us/bic.idx
 share/aqbanking/bankinfo/us/blz.idx
 share/aqbanking/bankinfo/us/namloc.idx
-share/aqbanking/frontends/qbanking/help/de/images/qbcfgtabsettings-1.png
-share/aqbanking/frontends/qbanking/help/de/images/qbcfgtabsettings-2.png
-share/aqbanking/frontends/qbanking/help/de/images/qbcfgtabsettings-3.png
-share/aqbanking/frontends/qbanking/help/de/images/qbeditaccount-1.png
-share/aqbanking/frontends/qbanking/help/de/images/qbeditaccount-2.png
-share/aqbanking/frontends/qbanking/help/de/images/qbedituser-1.png
-share/aqbanking/frontends/qbanking/help/de/images/qbedituser-2.png
-share/aqbanking/frontends/qbanking/help/de/qbcfgtabsettings.html
-share/aqbanking/frontends/qbanking/help/de/qbeditaccount.html
-share/aqbanking/frontends/qbanking/help/de/qbedituser.html
-share/aqbanking/i18n/de.qm
+share/aqbanking/frontends/.keep_me
+%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbcfgtabsettings-1.png
+%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbcfgtabsettings-2.png
+%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbcfgtabsettings-3.png
+%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbeditaccount-1.png
+%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbeditaccount-2.png
+%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbedituser-1.png
+%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/images/qbedituser-2.png
+%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/qbcfgtabsettings.html
+%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/qbeditaccount.html
+%%WITH_QT4%%share/aqbanking/frontends/q4banking/help/de/qbedituser.html
+%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbcfgtabsettings-1.png
+%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbcfgtabsettings-2.png
+%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbcfgtabsettings-3.png
+%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbeditaccount-1.png
+%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbeditaccount-2.png
+%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbedituser-1.png
+%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/images/qbedituser-2.png
+%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/qbcfgtabsettings.html
+%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/qbeditaccount.html
+%%WITH_QT3%%share/aqbanking/frontends/qbanking/help/de/qbedituser.html
+%%WITH_QT3%%share/aqbanking/i18n/de.qm
 share/aqbanking/imexporters/csv/profiles/amex.conf
 share/aqbanking/imexporters/csv/profiles/aqmoney1.conf
 share/aqbanking/imexporters/csv/profiles/aqmoney2.conf
 share/aqbanking/imexporters/csv/profiles/bankaustria.conf
+share/aqbanking/imexporters/csv/profiles/cli-transfers.conf
 share/aqbanking/imexporters/csv/profiles/comdirect.conf
 share/aqbanking/imexporters/csv/profiles/default.conf
 share/aqbanking/imexporters/csv/profiles/diba.conf
@@ -275,7 +358,9 @@ share/aqbanking/imexporters/csv/profiles/hypovereinsbank.conf
 share/aqbanking/imexporters/csv/profiles/lbbberlin.conf
 share/aqbanking/imexporters/csv/profiles/mijnpostbank.conf
 share/aqbanking/imexporters/csv/profiles/oko.conf
+share/aqbanking/imexporters/csv/profiles/postbankffm.conf
 share/aqbanking/imexporters/csv/profiles/psk.conf
+share/aqbanking/imexporters/csv/profiles/sns.conf
 share/aqbanking/imexporters/csv/profiles/sparda.conf
 share/aqbanking/imexporters/csv/profiles/spk-aachen.conf
 share/aqbanking/imexporters/csv/profiles/spk-steiermark.conf
@@ -328,11 +413,15 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 @dirrm share/aqbanking/imexporters/csv/profiles
 @dirrm share/aqbanking/imexporters/csv
 @dirrm share/aqbanking/imexporters
-@dirrm share/aqbanking/i18n
-@dirrm share/aqbanking/frontends/qbanking/help/de/images
-@dirrm share/aqbanking/frontends/qbanking/help/de
-@dirrm share/aqbanking/frontends/qbanking/help
-@dirrm share/aqbanking/frontends/qbanking
+%%WITH_QT3%%@dirrm share/aqbanking/i18n
+%%WITH_QT3%%@dirrm share/aqbanking/frontends/qbanking/help/de/images
+%%WITH_QT3%%@dirrm share/aqbanking/frontends/qbanking/help/de
+%%WITH_QT3%%@dirrm share/aqbanking/frontends/qbanking/help
+%%WITH_QT3%%@dirrm share/aqbanking/frontends/qbanking
+%%WITH_QT4%%@dirrm share/aqbanking/frontends/q4banking/help/de/images
+%%WITH_QT4%%@dirrm share/aqbanking/frontends/q4banking/help/de
+%%WITH_QT4%%@dirrm share/aqbanking/frontends/q4banking/help
+%%WITH_QT4%%@dirrm share/aqbanking/frontends/q4banking
 @dirrm share/aqbanking/frontends
 @dirrm share/aqbanking/bankinfo/us
 @dirrm share/aqbanking/bankinfo/de
@@ -346,8 +435,10 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 @dirrm lib/aqbanking/plugins/29/wizards
 @dirrm lib/aqbanking/plugins/29/providers
 @dirrm lib/aqbanking/plugins/29/imexporters
-@dirrm lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules
-@dirrm lib/aqbanking/plugins/29/frontends/qbanking
+%%WITH_QT3%%@dirrm lib/aqbanking/plugins/29/frontends/qbanking/cfgmodules
+%%WITH_QT3%%@dirrm lib/aqbanking/plugins/29/frontends/qbanking
+%%WITH_QT4%%@dirrm lib/aqbanking/plugins/29/frontends/q4banking/cfgmodules
+%%WITH_QT4%%@dirrm lib/aqbanking/plugins/29/frontends/q4banking
 @dirrm lib/aqbanking/plugins/29/frontends
 @dirrm lib/aqbanking/plugins/29/debugger/aqhbci
 @dirrm lib/aqbanking/plugins/29/debugger
@@ -355,7 +446,8 @@ share/locale/de/LC_MESSAGES/aqbanking.mo
 @dirrm lib/aqbanking/plugins/29
 @dirrm lib/aqbanking/plugins
 @dirrm lib/aqbanking
-@dirrm include/qbanking
+%%WITH_QT3%%@dirrm include/qbanking
+%%WITH_QT4%%@dirrm include/q4banking
 @dirrm include/aqofxconnect
 @dirrm include/aqhbci
 @dirrm include/aqbanking
