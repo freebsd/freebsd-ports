@@ -7,7 +7,7 @@
 
 PORTNAME=	mlterm
 PORTVERSION=	2.9.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01%20release/${PORTNAME}-${PORTVERSION}
 
@@ -81,6 +81,10 @@ CONFIGURE_ARGS+=	--disable-scim
 PLIST_SUB+=	SCIM="@comment "
 .endif
 
+.if ${OSVERSION} >= 900004
+MAKE_ENV=	LIBS_LOCAL=-lutempter
+.endif
+
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 
@@ -94,6 +98,10 @@ post-configure:
 	@${CP} ${LIBTOOL} ${WRKSRC}
 	@${REINPLACE_CMD} -e "s,@CGI_BIN@,${PREFIX}/libexec/w3mmlconfig," \
 		${WRKSRC}/tool/w3mmlconfig/mlconfig.cgi
+.if ${OSVERSION} >= 900004
+	@${REINPLACE_CMD} -e 's|kik_utmp_bsd|kik_utmp_utmper|' \
+		${WRKSRC}/kiklib/src/Makefile
+.endif
 
 post-install:
 	(cd ${WRKSRC}/tool/w3mmlconfig; ${MAKE} install)
