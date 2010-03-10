@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	javaservicewrapper
-PORTVERSION=	3.3.5
-PORTREVISION=	1
+PORTVERSION=	3.3.9
 CATEGORIES=	sysutils java
-MASTER_SITES=	http://wrapper.tanukisoftware.org/download/${PORTVERSION}/
+MASTER_SITES=	http://dl.wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
 
 MAINTAINER=	mikej@rogers.com

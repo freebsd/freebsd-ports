@@ -6,8 +6,6 @@ bin/javaservicewrapper
 %%DATADIR%%/lib/wrapper.jar
 %%DATADIR%%/lib/wrappertest.jar
 %%DATADIR%%/lib/wrappertest2.jar
-%%DATADIR%%/test/action
-%%DATADIR%%/test/action.conf
 %%DATADIR%%/test/backgroundthreads
 %%DATADIR%%/test/backgroundthreads.conf
 %%DATADIR%%/test/daemonthreads
@@ -17,7 +15,9 @@ bin/javaservicewrapper
 %%DATADIR%%/test/executablejar
 %%DATADIR%%/test/executablejar.conf
 %%DATADIR%%/test/executablejarcp
+%%DATADIR%%/test/executablejarinitfail.conf
 %%DATADIR%%/test/executablejarcp.conf
+%%DATADIR%%/test/executablejarinitfail
 %%DATADIR%%/test/filter
 %%DATADIR%%/test/filter.conf
 %%DATADIR%%/test/loadedwrapperlistener
@@ -39,6 +39,8 @@ bin/javaservicewrapper
 %%DATADIR%%/test/quickcomplete
 %%DATADIR%%/test/quickcomplete.conf
 %%DATADIR%%/test/restarter
+%%DATADIR%%/test/runtimeexec.conf
+%%DATADIR%%/test/runtimeexec
 %%DATADIR%%/test/restarter.conf
 %%DATADIR%%/test/shutdownhook
 %%DATADIR%%/test/shutdownhook.conf
