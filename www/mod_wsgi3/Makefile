@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_wsgi
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://apt.douglasthrift.net/files/${PORTNAME}/ \
