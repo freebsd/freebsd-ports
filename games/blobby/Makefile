@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	blobby
-PORTVERSION=	0.6a
-PORTREVISION=	1
+PORTVERSION=	0.8a
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/Alpha%206
+MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/Alpha%208
 DISTNAME=	blobby2-linux-${PORTVERSION}
 
 MAINTAINER=	ganael.laplanche@martymac.com
@@ -17,14 +16,15 @@ COMMENT=	Official continuation of the famous Blobby Volley 1.x game
 
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
 		drm:${PORTSDIR}/graphics/libdrm
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		${LOCALBASE}/include/boost/crc.hpp:${PORTSDIR}/devel/boost-libs
 
-USE_XORG=	x11 xext xxf86vm xdamage xfixes xau xdmcp xrandr xrender
+USE_XORG=	ice x11 xext xxf86vm xdamage xfixes xau xdmcp xrandr xrender
 USE_SDL=	sdl
 USE_GL=		glu
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-WRKSRC=		${WRKDIR}/blobby-alpha-6
+USE_CMAKE=	yes
+CMAKE_ARGS+=	-DDATADIR:PATH="${DATADIR}"
+WRKSRC=		${WRKDIR}/blobby-alpha-8
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 
