@@ -1,0 +1,8 @@
+WebScarab is a framework for analysing applications that communicate
+using the HTTP and HTTPS protocols. In its most common usage,
+WebScarab operates as an intercepting proxy, allowing the user to
+review and modify requests created by the browser before they are
+sent to the server, and to review and modify responses returned
+from the server before they are received by the browser.
+
+WWW: http://www.owasp.org/index.php/Category:OWASP_WebScarab_Project

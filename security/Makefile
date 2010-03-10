@@ -859,6 +859,7 @@
     SUBDIR += w3af
     SUBDIR += wapiti
     SUBDIR += webfwlog
+    SUBDIR += webscarab
     SUBDIR += wipe
     SUBDIR += xca
     SUBDIR += xinetd
