@@ -57,31 +57,33 @@ do-patch:
 do-build:
 	@${MKDIR} ${WRKDIR}/build
 	@${MKDIR} ${WRKSRC}/build/extlib
-	@${CP} -R ${WRKSRC}/w3af_console ${WRKDIR}/build/w3af_console.py
+	@${CP} ${WRKSRC}/w3af_console ${WRKDIR}/build/w3af_console.py
 .if defined(WITH_GUI)
-	@${CP} -R ${WRKSRC}/w3af_gui ${WRKDIR}/build/w3af_gui.py
+	@${CP} ${WRKSRC}/w3af_gui ${WRKDIR}/build/w3af_gui.py
 .endif
 .for f in core locales plugins profiles readme scripts tools
-	@${CP} -R ${WRKSRC}/${f} ${WRKDIR}/build/
+	@${MKDIR} ${WRKDIR}/build/${f}
+	@(cd ${WRKSRC}/${f}/ && ${COPYTREE_SHARE} \* ${WRKDIR}/build/${f})
 .endfor
 .for ext in cluster pygoogle socksipy xdot
-	@${CP} -R ${WRKSRC}/extlib/${ext} ${WRKDIR}/build/extlib/
+	@${MKDIR} ${WRKDIR}/build/extlib/${ext}
+	@(cd ${WRKSRC}/extlib/${ext}/ && ${COPYTREE_SHARE} \* ${WRKDIR}/build/extlib/${ext})
 .endfor
 	@${CP} ${WRKSRC}/extlib/__init__.py ${WRKDIR}/build/extlib/
 	@${PYTHON_CMD} -m compileall ${WRKDIR}/build
 	@${PYTHON_CMD} -O -m compileall ${WRKDIR}/build
 .for f in w3af_console w3af_gui
-	@${SED} -e 's:%%PATH%%:${PYTHON_SITELIBDIR}/${PORTNAME}/:' \
+	@${SED} -e 's:%%PATH%%:${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/:' \
 		-e 's:%%PYTHON_CMD%%:${PYTHON_CMD}:' \
 		< ${FILESDIR}/${f}.sh > ${WRKDIR}/${f}.sh
 .endfor
 
 do-install:
-	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}/
-	@${CP} -R ${WRKDIR}/build/* ${PYTHON_SITELIBDIR}/${PORTNAME}/
-	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_console.sh ${LOCALBASE}/bin/w3af_console
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/
+	@(cd ${WRKDIR}/build && ${COPYTREE_SHARE} \* ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/)
+	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_console.sh ${PREFIX}/bin/w3af_console
 .if defined(WITH_GUI)
-	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_gui.sh ${LOCALBASE}/bin/w3af_gui
+	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_gui.sh ${PREFIX}/bin/w3af_gui
 .endif
 
 .include <bsd.port.mk>
