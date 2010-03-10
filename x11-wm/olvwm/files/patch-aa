@@ -281,7 +281,18 @@
  #define nil(type) ((type *) 0)
 --- virtual.c.orig	Thu Jan 13 15:36:22 1994
 +++ virtual.c	Mon Oct 19 14:13:27 1998
-@@ -48,6 +48,9 @@
+@@ -39,15 +39,18 @@
+ #define TRUE 1
+ #define FALSE 0
+ 
+-#include <regexp.h>
++#include <regex.h>
+ #ifdef REGEXP
+-regexp *expbuf;
++regex_t expbuf;
+ #endif
+ 
+ #ifdef IDENT
  #ident "@(#)virtual.c	1.6 olvwm version 07 Jan 1994"
  #endif
  
@@ -291,7 +302,7 @@
  /* Class Function Vector; a virtual pane is the VDM window in which all
   * the little virtual windows appear (and to which said windows are
   * parented)
-@@ -2108,7 +2111,9 @@
+@@ -2108,14 +2111,16 @@
      }
  }
  
@@ -301,6 +312,23 @@
  
  static
  rexMatch(string)
+     char *string;
+ {
+ #ifdef REGEXP
+-    return regexec(expbuf, string);
++    return regexec(&expbuf, string, 0, NULL, 0);
+ #else
+     return step(string,expbuf);
+ #endif
+@@ -2152,7 +2157,7 @@
+     newPattern[j++] = '$';
+     newPattern[j++] = '\0';
+ #ifdef REGEXP
+-    expbuf = regcomp(newPattern);
++    regcomp(&expbuf, newPattern, 0);
+ #else
+     compile(newPattern, expbuf, &expbuf[256], '\0');
+ #endif
 --- winframe.c.orig	Thu Jan 13 15:36:25 1994
 +++ winframe.c	Mon Oct 19 14:14:26 1998
 @@ -52,6 +52,8 @@
