@@ -7,6 +7,7 @@
 
 PORTNAME=	Services_Twitter
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	net www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/HTTP/Request2.php:${PORTSDIR}/www/pear-HTTP_Request2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PHP=	json simplexml
+USE_PHP=	json simplexml mbstring
 
 FILES=		Services/Twitter.php Services/Twitter/Exception.php
 DATA=		api.rng api.xml
