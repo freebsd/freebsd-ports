@@ -60,7 +60,7 @@ include/libswscale/swscale.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.1
-lib/libavcodec.so.52.20.0
+lib/libavcodec.so.52.20.1
 lib/libavdevice.a
 lib/libavdevice.so
 lib/libavdevice.so.1
