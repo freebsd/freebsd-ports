@@ -85,6 +85,11 @@ include/ql/experimental/commodities/unitofmeasureconversionmanager.hpp
 include/ql/experimental/compoundoption/all.hpp
 include/ql/experimental/compoundoption/analyticcompoundoptionengine.hpp
 include/ql/experimental/compoundoption/compoundoption.hpp
+include/ql/experimental/convertiblebonds/all.hpp
+include/ql/experimental/convertiblebonds/binomialconvertibleengine.hpp
+include/ql/experimental/convertiblebonds/convertiblebond.hpp
+include/ql/experimental/convertiblebonds/discretizedconvertible.hpp
+include/ql/experimental/convertiblebonds/tflattice.hpp
 include/ql/experimental/coupons/all.hpp
 include/ql/experimental/coupons/quantocouponpricer.hpp
 include/ql/experimental/coupons/subperiodcoupons.hpp
@@ -116,6 +121,13 @@ include/ql/experimental/credit/riskybond.hpp
 include/ql/experimental/credit/spreadedhazardratecurve.hpp
 include/ql/experimental/credit/syntheticcdo.hpp
 include/ql/experimental/credit/syntheticcdoengines.hpp
+include/ql/experimental/exoticoptions/all.hpp
+include/ql/experimental/exoticoptions/everestoption.hpp
+include/ql/experimental/exoticoptions/himalayaoption.hpp
+include/ql/experimental/exoticoptions/mceverestengine.hpp
+include/ql/experimental/exoticoptions/mchimalayaengine.hpp
+include/ql/experimental/exoticoptions/mcpagodaengine.hpp
+include/ql/experimental/exoticoptions/pagodaoption.hpp
 include/ql/experimental/finitedifferences/all.hpp
 include/ql/experimental/finitedifferences/bicgstab.hpp
 include/ql/experimental/finitedifferences/concentrating1dmesher.hpp
@@ -165,6 +177,7 @@ include/ql/experimental/finitedifferences/modifiedcraigsneydscheme.hpp
 include/ql/experimental/finitedifferences/ninepointlinearop.hpp
 include/ql/experimental/finitedifferences/secondderivativeop.hpp
 include/ql/experimental/finitedifferences/secondordermixedderivativeop.hpp
+include/ql/experimental/finitedifferences/sparseilupreconditioner.hpp
 include/ql/experimental/finitedifferences/triplebandlinearop.hpp
 include/ql/experimental/finitedifferences/uniform1dmesher.hpp
 include/ql/experimental/finitedifferences/uniformgridmesher.hpp
@@ -182,7 +195,11 @@ include/ql/experimental/lattices/all.hpp
 include/ql/experimental/lattices/extendedbinomialtree.hpp
 include/ql/experimental/math/all.hpp
 include/ql/experimental/math/fastfouriertransform.hpp
+include/ql/experimental/mcbasket/adaptedpathpayoff.hpp
 include/ql/experimental/mcbasket/all.hpp
+include/ql/experimental/mcbasket/longstaffschwartzmultipathpricer.hpp
+include/ql/experimental/mcbasket/mcamericanpathengine.hpp
+include/ql/experimental/mcbasket/mclongstaffschwartzpathengine.hpp
 include/ql/experimental/mcbasket/mcpathbasketengine.hpp
 include/ql/experimental/mcbasket/pathmultiassetoption.hpp
 include/ql/experimental/mcbasket/pathpayoff.hpp
@@ -258,7 +275,6 @@ include/ql/instruments/bmaswap.hpp
 include/ql/instruments/bond.hpp
 include/ql/instruments/bonds/all.hpp
 include/ql/instruments/bonds/cmsratebond.hpp
-include/ql/instruments/bonds/convertiblebond.hpp
 include/ql/instruments/bonds/fixedratebond.hpp
 include/ql/instruments/bonds/floatingratebond.hpp
 include/ql/instruments/bonds/zerocouponbond.hpp
@@ -271,12 +287,10 @@ include/ql/instruments/creditdefaultswap.hpp
 include/ql/instruments/dividendschedule.hpp
 include/ql/instruments/dividendvanillaoption.hpp
 include/ql/instruments/europeanoption.hpp
-include/ql/instruments/everestoption.hpp
 include/ql/instruments/fixedratebondforward.hpp
 include/ql/instruments/forward.hpp
 include/ql/instruments/forwardrateagreement.hpp
 include/ql/instruments/forwardvanillaoption.hpp
-include/ql/instruments/himalayaoption.hpp
 include/ql/instruments/impliedvolatility.hpp
 include/ql/instruments/inflationcapfloor.hpp
 include/ql/instruments/lookbackoption.hpp
@@ -289,7 +303,6 @@ include/ql/instruments/makeyoyinflationcapfloor.hpp
 include/ql/instruments/multiassetoption.hpp
 include/ql/instruments/oneassetoption.hpp
 include/ql/instruments/overnightindexedswap.hpp
-include/ql/instruments/pagodaoption.hpp
 include/ql/instruments/payoffs.hpp
 include/ql/instruments/quantobarrieroption.hpp
 include/ql/instruments/quantoforwardvanillaoption.hpp
@@ -488,7 +501,6 @@ include/ql/methods/lattices/bsmlattice.hpp
 include/ql/methods/lattices/lattice.hpp
 include/ql/methods/lattices/lattice1d.hpp
 include/ql/methods/lattices/lattice2d.hpp
-include/ql/methods/lattices/tflattice.hpp
 include/ql/methods/lattices/tree.hpp
 include/ql/methods/lattices/trinomialtree.hpp
 include/ql/methods/montecarlo/all.hpp
@@ -532,6 +544,7 @@ include/ql/models/marketmodels/callability/nodedataprovider.hpp
 include/ql/models/marketmodels/callability/nothingexercisevalue.hpp
 include/ql/models/marketmodels/callability/parametricexerciseadapter.hpp
 include/ql/models/marketmodels/callability/swapbasissystem.hpp
+include/ql/models/marketmodels/callability/swapforwardbasissystem.hpp
 include/ql/models/marketmodels/callability/swapratetrigger.hpp
 include/ql/models/marketmodels/callability/triggeredswapexercise.hpp
 include/ql/models/marketmodels/callability/upperboundengine.hpp
@@ -560,6 +573,7 @@ include/ql/models/marketmodels/evolvers/lognormalcotswapratepc.hpp
 include/ql/models/marketmodels/evolvers/lognormalfwdrateballand.hpp
 include/ql/models/marketmodels/evolvers/lognormalfwdrateeuler.hpp
 include/ql/models/marketmodels/evolvers/lognormalfwdrateeulerconstrained.hpp
+include/ql/models/marketmodels/evolvers/lognormalfwdrateiballand.hpp
 include/ql/models/marketmodels/evolvers/lognormalfwdrateipc.hpp
 include/ql/models/marketmodels/evolvers/lognormalfwdratepc.hpp
 include/ql/models/marketmodels/evolvers/marketmodelvolprocess.hpp
@@ -614,8 +628,10 @@ include/ql/models/marketmodels/products/multistep/multistepcoinitialswaps.hpp
 include/ql/models/marketmodels/products/multistep/multistepcoterminalswaps.hpp
 include/ql/models/marketmodels/products/multistep/multistepcoterminalswaptions.hpp
 include/ql/models/marketmodels/products/multistep/multistepforwards.hpp
+include/ql/models/marketmodels/products/multistep/multistepinversefloater.hpp
 include/ql/models/marketmodels/products/multistep/multistepnothing.hpp
 include/ql/models/marketmodels/products/multistep/multistepoptionlets.hpp
+include/ql/models/marketmodels/products/multistep/multisteppathwisewrapper.hpp
 include/ql/models/marketmodels/products/multistep/multistepperiodcapletswaptions.hpp
 include/ql/models/marketmodels/products/multistep/multistepratchet.hpp
 include/ql/models/marketmodels/products/multistep/multistepswap.hpp
@@ -626,7 +642,11 @@ include/ql/models/marketmodels/products/onestep/onestepcoterminalswaps.hpp
 include/ql/models/marketmodels/products/onestep/onestepforwards.hpp
 include/ql/models/marketmodels/products/onestep/onestepoptionlets.hpp
 include/ql/models/marketmodels/products/pathwise/all.hpp
+include/ql/models/marketmodels/products/pathwise/pathwiseproductcallspecified.hpp
 include/ql/models/marketmodels/products/pathwise/pathwiseproductcaplet.hpp
+include/ql/models/marketmodels/products/pathwise/pathwiseproductcashrebate.hpp
+include/ql/models/marketmodels/products/pathwise/pathwiseproductinversefloater.hpp
+include/ql/models/marketmodels/products/pathwise/pathwiseproductswap.hpp
 include/ql/models/marketmodels/products/pathwise/pathwiseproductswaption.hpp
 include/ql/models/marketmodels/products/singleproductcomposite.hpp
 include/ql/models/marketmodels/proxygreekengine.hpp
@@ -684,9 +704,6 @@ include/ql/pricingengines/barrier/mcbarrierengine.hpp
 include/ql/pricingengines/basket/all.hpp
 include/ql/pricingengines/basket/mcamericanbasketengine.hpp
 include/ql/pricingengines/basket/mceuropeanbasketengine.hpp
-include/ql/pricingengines/basket/mceverestengine.hpp
-include/ql/pricingengines/basket/mchimalayaengine.hpp
-include/ql/pricingengines/basket/mcpagodaengine.hpp
 include/ql/pricingengines/basket/stulzengine.hpp
 include/ql/pricingengines/blackcalculator.hpp
 include/ql/pricingengines/blackformula.hpp
@@ -714,9 +731,6 @@ include/ql/pricingengines/forward/mcvarianceswapengine.hpp
 include/ql/pricingengines/forward/replicatingvarianceswapengine.hpp
 include/ql/pricingengines/genericmodelengine.hpp
 include/ql/pricingengines/greeks.hpp
-include/ql/pricingengines/hybrid/all.hpp
-include/ql/pricingengines/hybrid/binomialconvertibleengine.hpp
-include/ql/pricingengines/hybrid/discretizedconvertible.hpp
 include/ql/pricingengines/inflation/all.hpp
 include/ql/pricingengines/inflation/inflationcapfloorengines.hpp
 include/ql/pricingengines/latticeshortratemodelengine.hpp
@@ -1004,7 +1018,6 @@ share/emacs/site-lisp/quantlib.el
 @dirrm include/ql/pricingengines/quanto
 @dirrm include/ql/pricingengines/lookback
 @dirrm include/ql/pricingengines/inflation
-@dirrm include/ql/pricingengines/hybrid
 @dirrm include/ql/pricingengines/forward
 @dirrm include/ql/pricingengines/credit
 @dirrm include/ql/pricingengines/cliquet
@@ -1067,8 +1080,10 @@ share/emacs/site-lisp/quantlib.el
 @dirrm include/ql/experimental/lattices
 @dirrm include/ql/experimental/inflation
 @dirrm include/ql/experimental/finitedifferences
+@dirrm include/ql/experimental/exoticoptions
 @dirrm include/ql/experimental/credit
 @dirrm include/ql/experimental/coupons
+@dirrm include/ql/experimental/convertiblebonds
 @dirrm include/ql/experimental/compoundoption
 @dirrm include/ql/experimental/commodities
 @dirrm include/ql/experimental/callablebonds
