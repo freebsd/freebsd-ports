@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_Facebook
-PORTVERSION=	0.2.9
+PORTVERSION=	0.2.10
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -16,7 +16,6 @@ BUILD_DEPENDS=	${PEARDIR}/Validate.php:${PORTSDIR}/devel/pear-Validate
 RUN_DEPENDS=	${PEARDIR}/Validate.php:${PORTSDIR}/devel/pear-Validate
 
 USE_PHP=	curl
-CATEGORY=	Services
 
 FILES=		Services/Facebook.php \
 		Services/Facebook/Users.php \
