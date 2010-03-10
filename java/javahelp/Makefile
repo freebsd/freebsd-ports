@@ -7,6 +7,7 @@
 
 PORTNAME=	javahelp
 PORTVERSION=	2.0.05
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/javadesktop/javahelp/ \
 		http://www.predatorlabs.net/dl/
@@ -47,7 +48,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}]
+	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 	(cd ${WRKSRC}/demos/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif

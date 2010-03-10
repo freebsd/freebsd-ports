@@ -315,7 +315,7 @@ bin/jhsearch
 %%PORTDOCS%%%%DOCSDIR%%/jhug/release/requirements.html
 %%PORTDOCS%%%%DOCSDIR%%/jhug/titlepage.html
 %%PORTDOCS%%%%DOCSDIR%%/spec/JavaHelp_V2_0_Specification.pdf
-%%PORTDOCS%%%%DOCSDIR%%]
+%%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bin/UserGuide.jar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bin/apiviewer.jar
