@@ -89,8 +89,6 @@ lib/cherokee/libplugin_extensions.la
 lib/cherokee/libplugin_extensions.so
 lib/cherokee/libplugin_evhost.la
 lib/cherokee/libplugin_evhost.so
-lib/cherokee/libplugin_fastcgi.la
-lib/cherokee/libplugin_fastcgi.so
 lib/cherokee/libplugin_fcgi.la
 lib/cherokee/libplugin_fcgi.so
 lib/cherokee/libplugin_file.la
@@ -131,6 +129,10 @@ lib/cherokee/libplugin_plain.la
 lib/cherokee/libplugin_plain.so
 lib/cherokee/libplugin_proxy.la
 lib/cherokee/libplugin_proxy.so
+lib/cherokee/libplugin_post_track.so
+lib/cherokee/libplugin_post_track.la
+lib/cherokee/libplugin_post_report.so
+lib/cherokee/libplugin_post_report.la
 lib/cherokee/libplugin_redir.la
 lib/cherokee/libplugin_redir.so
 lib/cherokee/libplugin_rehost.la
@@ -322,6 +324,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/PageVServers.pyc
 %%ADMIN%%%%DATADIR%%/admin/Post.py
 %%ADMIN%%%%DATADIR%%/admin/Post.pyc
+%%ADMIN%%%%DATADIR%%/admin/ModulePostReport.py
+%%ADMIN%%%%DATADIR%%/admin/ModulePostReport.pyc
 %%ADMIN%%%%DATADIR%%/admin/Rule.py
 %%ADMIN%%%%DATADIR%%/admin/Rule.pyc
 %%ADMIN%%%%DATADIR%%/admin/RuleList.py
@@ -751,9 +755,9 @@ share/aclocal/cherokee.m4
 %%DATADIR%%/deps/combined.deps
 %%DATADIR%%/deps/common.deps
 %%DATADIR%%/deps/error_redir.deps
-%%DATADIR%%/deps/fastcgi.deps
 %%DATADIR%%/deps/fcgi.deps
 %%DATADIR%%/deps/render_rrd.deps
+%%DATADIR%%/deps/post_report.deps
 %%DATADIR%%/deps/scgi.deps
 %%DATADIR%%/deps/secdownload.deps
 %%DATADIR%%/deps/streaming.deps
