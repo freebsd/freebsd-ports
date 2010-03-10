@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	jakelib2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.donuz.de/lib/jakelib2/download/
+MASTER_SITES=	http://www.donuz.de/download/${PORTNAME}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A cross platform C++ class library with a Java-like API
@@ -25,15 +25,8 @@ CONFIGURE_ARGS=	--disable-debug
 USE_LDCONFIG=	yes
 INFO=		jakelib2
 
-PORTSCOUT=	limit:2.0.3
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/configure
-# Fixes for GCC 4.2
-	@${REINPLACE_CMD} -e '178s|gc::||' \
-		${WRKSRC}/include/jakelib2/gc/gc_cpp.h
-	@${REINPLACE_CMD} -e 's|SimpleDateFormat::||' \
-		${WRKSRC}/include/jakelib2/text/SimpleDateFormat.h
 
 .include <bsd.port.mk>
