@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	3.9.0
-PORTREVISION=	2
+PORTVERSION=	3.11.3
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
-DISTFILES=	download.php\?package=01\&release=25\&file=01\&dummy=gwenhywfar-${PORTVERSION}.tar.gz
+DISTFILES=	download.php\?package=01\&release=31\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Multi-platform helper library for networking and security applications
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
@@ -32,6 +31,7 @@ USE_LDCONFIG=	${PREFIX}/lib \
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_SAFE=	yes
 
 .if !defined(NOPORTEXAMPLES)
 # Examples to be installed from ${WRKSRC}/doc
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--enable-memtrace
 .if defined(WITH_PORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 CONFIGURE_ARGS+=	--enable-full-doc
-PORTDOCS=	*
+PORTDOCS=	apidoc
 .endif
 
 post-build:
@@ -65,10 +65,10 @@ post-build:
 post-install:
 .if !defined(NOPORTDOCS) && defined(WITH_PORTDOCS)
 	@${ECHO_CMD} Installing documentation...
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/apidoc
 	@cd ${WRKSRC} && ${FIND} apidoc -mindepth 1 \! -type d \
 		-exec ${ECHO_CMD} "{} -> ${DOCSDIR}/{}" \; \
-		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DOCSDIR} \;
+		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DOCSDIR}/apidoc \;
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${ECHO_CMD} Installing examples...

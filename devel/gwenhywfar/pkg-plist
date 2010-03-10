@@ -2,6 +2,7 @@ bin/gct-tool
 bin/gwenhywfar-config
 bin/mklistdoc
 bin/typemaker
+bin/typemaker2
 bin/xmlmerge
 include/gwenhywfar3/gwenhywfar/args.h
 include/gwenhywfar3/gwenhywfar/base64.h
@@ -42,7 +43,7 @@ include/gwenhywfar3/gwenhywfar/filter.h
 include/gwenhywfar3/gwenhywfar/fslock.h
 include/gwenhywfar3/gwenhywfar/gui.h
 include/gwenhywfar3/gwenhywfar/gui_be.h
-include/gwenhywfar3/gwenhywfar/gwen_plugins.h
+include/gwenhywfar3/gwenhywfar/gwendate.h
 include/gwenhywfar3/gwenhywfar/gwenhywfar.h
 include/gwenhywfar3/gwenhywfar/gwenhywfarapi.h
 include/gwenhywfar3/gwenhywfar/gwensemaphore.h
@@ -141,11 +142,24 @@ lib/gwenhywfar/plugins/47/dbio/xmldb.xml
 lib/libgwenhywfar.a
 lib/libgwenhywfar.la
 lib/libgwenhywfar.so
-lib/libgwenhywfar.so.56
+lib/libgwenhywfar.so.58
 libdata/pkgconfig/gwenhywfar.pc
 share/aclocal/gwenhywfar.m4
 share/gwenhywfar/ca-bundle.crt
+share/gwenhywfar/typemaker2/c/char.tm2
+share/gwenhywfar/typemaker2/c/char_array.tm2
+share/gwenhywfar/typemaker2/c/char_ptr.tm2
+share/gwenhywfar/typemaker2/c/gwen_date.tm2
+share/gwenhywfar/typemaker2/c/gwen_time.tm2
+share/gwenhywfar/typemaker2/c/int.tm2
+share/gwenhywfar/typemaker2/c/int_base.tm2
+share/gwenhywfar/typemaker2/c/list1_base.tm2
+share/gwenhywfar/typemaker2/c/list2_base.tm2
+share/gwenhywfar/typemaker2/c/struct_base.tm2
+share/gwenhywfar/typemaker2/c/uint32_t.tm2
 share/locale/de/LC_MESSAGES/gwenhywfar.mo
+@dirrm share/gwenhywfar/typemaker2/c
+@dirrm share/gwenhywfar/typemaker2
 @dirrm share/gwenhywfar
 @dirrm lib/gwenhywfar/plugins/47/dbio
 @dirrm lib/gwenhywfar/plugins/47/ct
