@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-WWW-Mechanize-Catalyst
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ COMMENT=	Test::WWW::Mechanize for Catalyst
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-libwww>=5.816:${PORTSDIR}/www/p5-libwww \
 		p5-Test-WWW-Mechanize>=1.14:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
-		p5-WWW-Mechanize>=1.50:${PORTSDIR}/www/p5-WWW-Mechanize \
+		p5-WWW-Mechanize>=1.54:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-Moose>=0.67:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-clean>=0.09:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS=	${RUN_DEPENDS}
