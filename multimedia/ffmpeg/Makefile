@@ -170,7 +170,7 @@ CONFIGURE_ARGS+=	--disable-libdirac
 # faac
 .ifdef(WITH_FAAC)
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
-CONFIGURE_ARGS+=	--enable-libfaac
+CONFIGURE_ARGS+=	--enable-libfaac --enable-nonfree
 .else
 CONFIGURE_ARGS+=	--disable-libfaac
 .endif
