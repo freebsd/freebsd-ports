@@ -6,23 +6,17 @@
 #
 
 PORTNAME=	slimmer
-PORTVERSION=	0.1.21
+PORTVERSION=	0.1.30
 CATEGORIES=	www python
-MASTER_SITES=	http://www.issuetrackerproduct.com/Download/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	A whitespace optimizer for CSS, HTML and XHTML output
 
-WRKSRC=		${WRKDIR}/slimmer
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGVERSION=	0.1.19
+USE_PYDISTUTILS=easy_install
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/slimmer.py \
-		%%PYTHON_SITELIBDIR%%/slimmer.pyc \
-		%%PYTHON_SITELIBDIR%%/slimmer.pyo
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.mk>
