@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zeropoint
-DISTVERSION=	6.x-1.10
+DISTVERSION=	6.x-2.3
 CATEGORIES=	www
 
 MAINTAINER=	whitekid@gmail.com
@@ -17,7 +17,6 @@ DRUPAL6_THEME=	yes
 MODULE_DIRS=	_custom/headerimg _custom css images/all images/ink \
 		images/icons/blocks images/icons images/ivy images/lime \
 		images/nature images/sangue images/sky images js
-
 MODULE_FILES=	_custom/custom-style.css _custom/headerimg/credits.txt \
 		_custom/headerimg/ephemeral_a.jpg \
 		_custom/headerimg/ephemeral_b.jpg \
@@ -25,19 +24,21 @@ MODULE_FILES=	_custom/custom-style.css _custom/headerimg/credits.txt \
 		_custom/headerimg/ephemeral_d.jpg \
 		_custom/headerimg/ephemeral_e.jpg _custom/headerimg/rotate.php \
 		block.tpl.php box.tpl.php comment-wrapper-forum.tpl.php \
-		comment-wrapper.tpl.php comment.tpl.php css/ie6.css css/ie7.css \
-		css/iepngfix.htc css/ink.css css/ivy.css css/lime.css \
-		css/nature.css css/print.css css/round.css css/sangue.css \
-		css/sky.css css/style-zero-rtl.css css/style-zero.css \
-		favicon.ico images/all/_brand.png images/all/_sidebarimg.png \
-		images/all/fill_left.png images/all/fill_right.png \
-		images/all/forum-container.jpg images/all/forum-link.png \
-		images/all/icon-comment.png images/all/ltr_forum-container.jpg \
+		comment-wrapper.tpl.php comment.tpl.php css/ie6.css \
+		css/ie7.css css/iepngfix.htc css/ink.css css/ivy.css \
+		css/lime.css css/nature.css css/print.css css/round.css \
+		css/sangue.css css/sky.css css/style-zero-rtl.css \
+		css/style-zero.css favicon.ico images/all/_brand.png \
+		images/all/_sidebarimg.png images/all/fill_left.png \
+		images/all/fill_right.png images/all/forum-container.jpg \
+		images/all/forum-link.png images/all/icon-comment.png \
+		images/all/ltr_forum-container.jpg \
 		images/all/ltr_forum-link.png images/all/ltr_icon-comment.png \
-		images/all/ltr_menu-collapsed.png images/all/menu-collapsed.png \
-		images/all/menu-expanded.png images/all/menu-leaf.png \
-		images/all/menu-up.png images/all/spacer.gif images/arr.png \
-		images/fill_block.png images/fill_block2.png images/fill_top.png \
+		images/all/ltr_menu-collapsed.png \
+		images/all/menu-collapsed.png images/all/menu-expanded.png \
+		images/all/menu-leaf.png images/all/menu-up.png \
+		images/all/spacer.gif images/arr.png images/fill_block.png \
+		images/fill_block2.png images/fill_top.png \
 		images/fill_top_left.png images/fill_top_right.png \
 		images/icons/attach.png images/icons/blocks/icon_01_32.png \
 		images/icons/blocks/icon_01_48.png \
@@ -137,12 +138,13 @@ MODULE_FILES=	_custom/custom-style.css _custom/headerimg/credits.txt \
 		images/sky/fill_top_right.png js/preloadCssImages.jQuery_v5.js \
 		js/suckerfish.js logo.png maintenance-page.tpl.php \
 		node-product.tpl.php node-webform.tpl.php node.tpl.php \
-		page.tpl.php screenshot-drupal.org.jpg screenshot-drupal.org.png \
-		screenshot.png search-result.tpl.php search-theme-form.tpl.php \
-		template.php theme-settings.php views-view.tpl.php \
-		zeropoint.info
+		page.tpl.php screenshot-drupal.org.jpg \
+		screenshot-drupal.org.png screenshot.png search-result.tpl.php \
+		search-theme-form.tpl.php template.php theme-settings.php \
+		views-view.tpl.php zeropoint.info
 DOC_FILES=	CHANGELOG.txt LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
 .include <bsd.port.post.mk>
+
