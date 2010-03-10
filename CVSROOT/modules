@@ -1185,6 +1185,7 @@ bpft                            ports/net-mgmt/bpft
 bpkg                            ports/ports-mgmt/bpkg
 bpl+                            ports/comms/bpl+
 bpm                             ports/ports-mgmt/bpm
+bpython                         ports/devel/bpython
 br-aspell                       ports/textproc/br-aspell
 braa                            ports/net-mgmt/braa
 brag                            ports/news/brag
@@ -1274,6 +1275,7 @@ bunny                           ports/devel/bunny
 buoh                            ports/deskutils/buoh
 burgerspace                     ports/games/burgerspace
 burn                            ports/sysutils/burn
+burpsuite                       ports/security/burpsuite
 burrtools                       ports/games/burrtools
 busybox                         ports/sysutils/busybox
 buttonbox                       ports/x11/buttonbox
@@ -10162,6 +10164,7 @@ offlineimap                     ports/mail/offlineimap
 oftpd                           ports/ftp/oftpd
 ogg2mp3                         ports/audio/ogg2mp3
 oggsplit                        ports/audio/oggsplit
+oggvideotools                   ports/multimedia/oggvideotools
 ogle                            ports/multimedia/ogle
 ogle-gui                        ports/multimedia/ogle-gui
 oglext                          ports/graphics/oglext
@@ -10377,6 +10380,7 @@ orbit2                          ports/devel/ORBit2
 orbit2-reference                ports/devel/ORBit2-reference
 orbital_eunuchs_sniper          ports/games/orbital_eunuchs_sniper
 orbitcpp                        ports/devel/orbitcpp
+orc                             ports/devel/orc
 oregano                         ports/cad/oregano
 org-mode.el                     ports/deskutils/org-mode.el
 org-mode.el6                    ports/deskutils/org-mode.el6
@@ -12482,6 +12486,7 @@ p5-Math-Geometry-Planar         ports/math/p5-Math-Geometry-Planar
 p5-Math-Geometry-Planar-GPC     ports/math/p5-Math-Geometry-Planar-GPC
 p5-Math-Geometry-Planar-Offset  ports/math/p5-Math-Geometry-Planar-Offset
 p5-Math-Geometry-Voronoi        ports/math/p5-Math-Geometry-Voronoi
+p5-Math-Gradient                ports/math/p5-Math-Gradient
 p5-Math-Interpolate             ports/math/p5-Math-Interpolate
 p5-Math-Intersection-StraightLine  ports/math/p5-Math-Intersection-StraightLine
 p5-Math-LinearCombination       ports/math/p5-Math-LinearCombination
@@ -12754,6 +12759,7 @@ p5-Net-Jabber                   ports/net-im/p5-Net-Jabber
 p5-Net-Jaiku                    ports/net/p5-Net-Jaiku
 p5-Net-Jifty                    ports/net/p5-Net-Jifty
 p5-Net-LDAP-AutoDNs             ports/net/p5-Net-LDAP-AutoDNs
+p5-Net-LDAP-AutoServer          ports/net/p5-Net-LDAP-AutoServer
 p5-Net-LDAP-Express             ports/net/p5-Net-LDAP-Express
 p5-Net-LDAP-LDAPhash            ports/net/p5-Net-LDAP-LDAPhash
 p5-Net-LDAP-Makepath            ports/net/p5-Net-LDAP-Makepath
@@ -16197,6 +16203,7 @@ p5-math-geometry-planar-gpc     ports/math/p5-Math-Geometry-Planar-GPC
 p5-math-geometry-planar-offset  ports/math/p5-Math-Geometry-Planar-Offset
 p5-math-geometry-voronoi        ports/math/p5-Math-Geometry-Voronoi
 p5-math-gmp                     ports/math/p5-Math-GMP
+p5-math-gradient                ports/math/p5-Math-Gradient
 p5-math-gsl                     ports/math/p5-Math-GSL
 p5-math-interpolate             ports/math/p5-Math-Interpolate
 p5-math-intersection-straightline  ports/math/p5-Math-Intersection-StraightLine
@@ -16501,6 +16508,7 @@ p5-net-jabber                   ports/net-im/p5-Net-Jabber
 p5-net-jaiku                    ports/net/p5-Net-Jaiku
 p5-net-jifty                    ports/net/p5-Net-Jifty
 p5-net-ldap-autodns             ports/net/p5-Net-LDAP-AutoDNs
+p5-net-ldap-autoserver          ports/net/p5-Net-LDAP-AutoServer
 p5-net-ldap-express             ports/net/p5-Net-LDAP-Express
 p5-net-ldap-ldaphash            ports/net/p5-Net-LDAP-LDAPhash
 p5-net-ldap-makepath            ports/net/p5-Net-LDAP-Makepath
@@ -19960,6 +19968,7 @@ py-fpconst                      ports/math/py-fpconst
 py-freebsd                      ports/devel/py-freebsd
 py-freeimagepy                  ports/graphics/py-freeimagepy
 py-ftputil                      ports/ftp/py-ftputil
+py-fudge                        ports/devel/py-fudge
 py-funkload                     ports/www/py-funkload
 py-fusefs                       ports/devel/py-fusefs
 py-game                         ports/devel/py-game
@@ -24235,6 +24244,7 @@ webstone                        ports/www/webstone
 webstone-ssl                    ports/www/webstone-ssl
 websvn                          ports/devel/websvn
 weechat                         ports/irc/weechat
+weechat-devel                   ports/irc/weechat-devel
 weedit                          ports/sysutils/weedit
 weewm                           ports/x11-wm/weewm
 weex                            ports/ftp/weex
