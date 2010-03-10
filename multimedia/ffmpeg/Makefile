@@ -6,8 +6,7 @@
 #      $Id: Makefile 77 2008-07-27 21:50:37Z buhnux $
 
 PORTNAME=	ffmpeg
-PORTVERSION=	0.5
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -95,8 +94,9 @@ SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
 
-DOC_FILES=	Changelog COPYING.GPL COPYING.LGPL \
-		CREDITS INSTALL MAINTAINERS README
+DOC_FILES=	Changelog COPYING.GPLv2 COPYING.GPLv3 \
+		COPYING.LGPLv2.1 COPYING.LGPLv3 \
+		CREDITS INSTALL MAINTAINERS README RELEASE
 # under doc subdirectory
 DOC_DOCFILES=	APIchanges avutil.txt faq.html ffmpeg-doc.html \
 		ffmpeg_powerpc_performance_evaluation_howto.txt \
