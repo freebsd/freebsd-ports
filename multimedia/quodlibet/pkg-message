@@ -1,0 +1,13 @@
+For additional Quod Libet plugins:
+
+1. Fetch plugins archive.
+
+	fetch http://quodlibet.googlecode.com/files/quodlibet-plugins-2.2.tar.gz
+
+2. Extract archive.
+
+	tar xvfz quodlibet-plugins-2.2.tar.gz
+
+3. Copy extracted files to Quod Libet plugins directory.
+
+	cp -R quodlibet-plugins-2.2/* ~/.quodlibet/plugins/

@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	quodlibet
-PORTVERSION=	1.0
-PORTREVISION=	5
+PORTVERSION=	2.2
 CATEGORIES=	multimedia audio python gnome
-MASTER_SITES=	http://www.sacredchao.net/~piman/software/ \
-		http://www.tortall.net/mirrors/piman-software/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A GTK+-based audio player written in Python
@@ -21,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutag
 USE_PYTHON=	2.4+
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
+USE_PYDISTUTILS=	yes
 USE_DISPLAY=	yes
 USE_GSTREAMER=	gconf good python
 
@@ -105,22 +103,9 @@ PLIST_SUB+=	EXTENSIONS=""
 PLIST_SUB+=	EXTENSIONS="@comment "
 .endif
 
-do-configure:
-	@${PYTHON_CMD} ${WRKSRC}/check.py
-
-do-build:
-	@cd ${WRKSRC}/po && ${GMAKE} po
-.if defined(WITH_EXTENSIONS)
-	@cd ${WRKSRC} && ${GMAKE} extensions
-.endif
-
-pre-install:
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
-	@${MKDIR} ${PREFIX}/share/applications
-
 post-install:
-	@${MKDIR} ${DATADIR}/plugins
-	@${MKDIR} ${DATADIR}/plugins/events
-	@${INSTALL_DATA} ${FILESDIR}/qlscrobbler.py ${DATADIR}/plugins/events
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
