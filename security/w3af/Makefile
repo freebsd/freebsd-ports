@@ -6,52 +6,81 @@
 #
 
 PORTNAME=	w3af
-PORTVERSION=	0.1.20070610
+DISTVERSION=	1.0-rc2
 CATEGORIES=	security python www
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
-DISTNAME=	${PORTNAME}-10Jun2007
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME}%20${DISTVERSION}%20%5bshorty%5d
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Web Application Attack and Audit Framework
 
-LIB_DEPENDS=	tidy-0.99.0:$(PORTSDIR)/www/py-utidy
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/SOAPpy:${PORTSDIR}/net/py-soappy \
+LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/py-utidy
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup \
+		${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
+		${PYTHON_SITELIBDIR}/SOAPpy:${PORTSDIR}/net/py-soappy \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
-		${PYTHON_SITELIBDIR}/wordnet.py:${PORTSDIR}/textproc/py-wordnet
-#		${PYTHON_SITELIBDIR}/google.py:${PORTSDIR}/net/py-google \
+		${PYTHON_SITELIBDIR}/json.py:${PORTSDIR}/devel/py-json-py \
+		${PYTHON_SITELIBDIR}/nltk/util.py:${PORTSDIR}/textproc/nltk \
+		${PYTHON_SITELIBDIR}/pyPdf/pdf.py:${PORTSDIR}/print/py-pdf \
+		${PYTHON_SITELIBDIR}/scapy/main.py:${PORTSDIR}/net/scapy \
+		${PYTHON_SITELIBDIR}/wordnet.py:${PORTSDIR}/textproc/py-wordnet \
+		${PYTHON_SITELIBDIR}/yaml/loader.py:${PORTSDIR}/devel/py-yaml
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+
 
-post-patch:
+OPTIONS=	GUI "Support for graphical user interface" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_GUI)
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/pygraphviz/graphviz.py:${PORTSDIR}/graphics/py-graphviz \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
+PLIST_SUB+=	GUI=""
+.else
+PLIST_SUB+=	GUI="@comment "
+.endif
+
+do-patch:
+.for f in SOAPpy fpconst-0.7.2 jsonpy nltk nltk_contrib pyPdf scapy yaml
+	@${RM} -rf ${WRKSRC}/extlib/${f}
+.endfor
 	@${GREP} -lr '/usr/bin/python' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -i "" \
 			-E "s!/usr/bin/python2?!${PYTHON_CMD}!"
 
 do-build:
-	${MKDIR} ${WRKDIR}/build
-	${CP} -R ${WRKSRC}/w3af ${WRKDIR}/build/w3af.py
-.for f in core plugins scripts tools webroot
-	${CP} -R ${WRKSRC}/${f} ${WRKDIR}/build/
+	@${MKDIR} ${WRKSRC}/build/extlib
+	@${CP} -R ${WRKSRC}/w3af_console ${WRKDIR}/build/w3af_console.py
+.if defined(WITH_GUI)
+	@${CP} -R ${WRKSRC}/w3af_gui ${WRKDIR}/build/w3af_gui.py
+.endif
+.for f in core locales plugins profiles readme scripts tools
+	@${CP} -R ${WRKSRC}/${f} ${WRKDIR}/build/
 .endfor
-# The next 5 lines are temporary, until dependency on py-google port works
-	${MKDIR} ${WRKDIR}/build/extlib
-	${RM} -rf ${WRKSRC}/extlib/pygoogle/build
-	${RM} -rf ${WRKSRC}/extlib/pygoogle/doc
-	${CP} -R ${WRKSRC}/extlib/pygoogle ${WRKDIR}/build/extlib
-	${CP} ${WRKSRC}/extlib/__init__.py ${WRKDIR}/build/extlib
-# ----
-	${PYTHON_CMD} -m compileall ${WRKDIR}/build
-	${PYTHON_CMD} -O -m compileall ${WRKDIR}/build
-	${SED} -e 's:%%PATH%%:${PYTHON_SITELIBDIR}/${PORTNAME}/:' \
+.for ext in cluster pygoogle socksipy xdot
+	@${CP} -R ${WRKSRC}/extlib/${ext} ${WRKDIR}/build/extlib/
+.endfor
+	@${CP} ${WRKSRC}/extlib/__init__.py ${WRKDIR}/build/extlib/
+	@${PYTHON_CMD} -m compileall ${WRKDIR}/build
+	@${PYTHON_CMD} -O -m compileall ${WRKDIR}/build
+.for f in w3af_console w3af_gui
+	@${SED} -e 's:%%PATH%%:${PYTHON_SITELIBDIR}/${PORTNAME}/:' \
 		-e 's:%%PYTHON_CMD%%:${PYTHON_CMD}:' \
-		< ${FILESDIR}/w3af.sh > ${WRKDIR}/w3af.sh
+		< ${FILESDIR}/${f}.sh > ${WRKDIR}/${f}.sh
+.endfor
 
 do-install:
-	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}/
-	${CP} -R ${WRKDIR}/build/* ${PYTHON_SITELIBDIR}/${PORTNAME}/
-	${INSTALL_SCRIPT} ${WRKDIR}/w3af.sh ${LOCALBASE}/bin/w3af
+	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}/
+	@${CP} -R ${WRKDIR}/build/* ${PYTHON_SITELIBDIR}/${PORTNAME}/
+	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_console.sh ${LOCALBASE}/bin/w3af_console
+.if defined(WITH_GUI)
+	@${INSTALL_SCRIPT} ${WRKDIR}/w3af_gui.sh ${LOCALBASE}/bin/w3af_gui
+.endif
 
 .include <bsd.port.mk>
