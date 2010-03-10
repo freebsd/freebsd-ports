@@ -1,0 +1,6 @@
+Pdsh is a an efficient, multithreaded remote shell client which executes
+commands on multiple remote hosts in parallel. Pdsh implements dynamically
+loadable modules for extended functionality such as new remote shell services
+and remote host selection.
+
+WWW:	http://pdsh.sourceforge.net
