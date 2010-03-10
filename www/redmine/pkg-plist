@@ -623,6 +623,7 @@
 %%WWWDIR%%/db/migrate/20091220184736_add_indexes_to_issue_status.rb
 %%WWWDIR%%/db/migrate/20091225164732_remove_enumerations_opt.rb
 %%WWWDIR%%/db/migrate/20091227112908_change_wiki_contents_text_limit.rb
+%%WWWDIR%%/db/migrate/20100221100219_add_index_on_changesets_scmid.rb
 %%WWWDIR%%/doc/CHANGELOG
 %%WWWDIR%%/doc/COPYING
 %%WWWDIR%%/doc/INSTALL
@@ -1029,6 +1030,7 @@
 %%WWWDIR%%/test/fixtures/diffs/subversion.diff
 %%WWWDIR%%/test/fixtures/documents.yml
 %%WWWDIR%%/test/fixtures/enabled_modules.yml
+%%WWWDIR%%/test/fixtures/encoding/iso-8859-1.txt
 %%WWWDIR%%/test/fixtures/enumerations.yml
 %%WWWDIR%%/test/fixtures/files/060719210727_archive.zip
 %%WWWDIR%%/test/fixtures/files/060719210727_changeset.diff
@@ -3613,6 +3615,7 @@
 @dirrm %%WWWDIR%%/test/fixtures/mailer
 @dirrm %%WWWDIR%%/test/fixtures/mail_handler
 @dirrm %%WWWDIR%%/test/fixtures/files
+@dirrm %%WWWDIR%%/test/fixtures/encoding
 @dirrm %%WWWDIR%%/test/fixtures/diffs
 @dirrm %%WWWDIR%%/test/fixtures
 @dirrm %%WWWDIR%%/test/exemplars
