@@ -36,7 +36,7 @@ OPTIONS=	IGBINARY "Binary serializer support" off
 
 .if defined(WITH_IGBINARY)
 CONFIGURE_ARGS+=--enable-memcached-igbinary
-BUILD_DEPENDS+=	${LOCALBASE}lib/php/${PHP_EXT_DIR}/igbinary.so:${PORTSDIR}/converters/igbinary
+BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/igbinary.so:${PORTSDIR}/converters/igbinary
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/igbinary.so:${PORTSDIR}/converters/igbinary
 .endif
 
