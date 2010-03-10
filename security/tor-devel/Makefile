@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.8-alpha
+DISTVERSION=	0.2.2.10-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -24,7 +24,7 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 WITH_OPENSSL_PORT=	yes
-CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
+CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
@@ -40,9 +40,6 @@ USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
 
 CONFLICTS=	tor-[0-9]*
-
-MANCOMPRESSED=	no
-MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 
 .include <bsd.port.pre.mk>
 
