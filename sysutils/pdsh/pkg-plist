@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+bin/dshbak
+bin/pdcp
+bin/pdsh
+bin/rpdcp
+lib/pdsh/execcmd.a
+lib/pdsh/execcmd.la
+lib/pdsh/execcmd.so
+lib/pdsh/xrcmd.a
+lib/pdsh/xrcmd.la
+lib/pdsh/xrcmd.so
+@dirrm lib/pdsh

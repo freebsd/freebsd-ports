@@ -588,6 +588,7 @@
     SUBDIR += pcfclock
     SUBDIR += pciutils
     SUBDIR += pdixtract
+    SUBDIR += pdsh
     SUBDIR += pdumpfs
     SUBDIR += pdumpfs-clean
     SUBDIR += pdumpfs-rsync
