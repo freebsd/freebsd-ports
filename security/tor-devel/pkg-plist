@@ -4,6 +4,7 @@ bin/tor-resolve
 bin/torify
 etc/tor/tor-tsocks.conf.sample
 etc/tor/torrc.sample
-share/tor/geoip
-@dirrm share/tor
+%%DATADIR%%/geoip
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 @dirrm etc/tor
