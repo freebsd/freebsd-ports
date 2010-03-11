@@ -89,6 +89,7 @@
     SUBDIR += cuttlefish
     SUBDIR += danpei
     SUBDIR += darknock
+    SUBDIR += darktable
     SUBDIR += dataplot
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack
