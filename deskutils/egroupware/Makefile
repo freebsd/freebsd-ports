@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	1.6.002
+PORTVERSION=	1.6.003
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}-egw-pear-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A web based GroupWare system
 
 BUILD_DEPENDS=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \
