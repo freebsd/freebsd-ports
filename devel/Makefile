@@ -1507,6 +1507,7 @@
     SUBDIR += p5-File-Cat
     SUBDIR += p5-File-ChangeNotify
     SUBDIR += p5-File-Copy-Recursive
+    SUBDIR += p5-File-CountLines
     SUBDIR += p5-File-CreationTime
     SUBDIR += p5-File-DesktopEntry
     SUBDIR += p5-File-Dir-Dumper
