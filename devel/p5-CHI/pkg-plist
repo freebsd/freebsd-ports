@@ -15,8 +15,8 @@
 %%SITE_PERL%%/CHI/Driver/Role/IsSizeAware.pm
 %%SITE_PERL%%/CHI/Driver/Role/IsSubcache.pm
 %%SITE_PERL%%/CHI/Driver/Role/Universal.pm
-%%SITE_PERL%%/CHI/NullLogger.pm
 %%SITE_PERL%%/CHI/Serializer/Storable.pm
+%%SITE_PERL%%/CHI/Stats.pm
 %%SITE_PERL%%/CHI/Test.pm
 %%SITE_PERL%%/CHI/Test/Class.pm
 %%SITE_PERL%%/CHI/Test/Driver/NonMoose.pm

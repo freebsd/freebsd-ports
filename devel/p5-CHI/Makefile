@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	CHI
-PORTVERSION=	0.330
+PORTVERSION=	0.340
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/J/JS/JSWARTZ
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.33
+DISTNAME=	${PORTNAME}-0.34
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for unified cache interface
@@ -45,6 +45,7 @@ MAN3=	CHI.3 \
 	CHI::Driver::Metacache.3 \
 	CHI::Driver::Null.3 \
 	CHI::Driver::Role::Universal.3 \
+	CHI::Stats.3 \
 	CHI::Util.3
 
 .include <bsd.port.mk>
