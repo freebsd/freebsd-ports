@@ -1,32 +1,18 @@
 To complete the installation of DAViCal:
 
-1. Create the database user:
+1. Create DAViCal's database
 
-	createuser -U pgsql -S --no-createdb --no-createrole general
+       su pgsql %%DOCSDIR%%/dba/create-database.sh
 
-2. Create DAViCal's database
+2. Edit pg_hba.conf file to add the davical_app user close to the
+top of the accounts
 
-	su pgsql %%DOCSDIR%%/dba/create-database.sh
+	local   davical     davical_app   trust
 
-3. Fix permissions
+3. Copy and edit your config file
 
-	psql -U pgsql davical -c "grant all on \
-	awl_db_revision, caldav_data, calendar_item, collection, \
-	dav_resource, dav_resource_type, freebusy_ticket, \
-	group_member, locks, principal, principal_type, privilege, \
-	property, relationship, relationship_type, role_member, \
-	roles, session, supported_locales, time_zone, tmp_password, \
-	usr, usr_setting, dav_id_seq, dav_resource_type_resource_type_id_seq, \
-	principal_principal_id_seq, principal_type_principal_type_id_seq, \
-	relationship_type_rt_id_seq, roles_role_no_seq, \
-	session_session_id_seq, usr_user_no_seq \
-	to general;"
+       cp %%WWWDIR%%/config/example-config.php %%WWWDIR%%/config/config.php
 
-	psql -U pgsql davical -c "grant all on database davical to general;"
-
-4. Copy and edit your config file 
-
-	cp %%WWWDIR%%/config/example-config.php %%WWWDIR%%/config/config.php
-
-5. Enable in apache by copying the httpd-davical.conf from the
-documentation directory to the Apache Include directory and restart Apache. 
+4. Enable in apache by copying the httpd-davical.conf from the
+documentation directory to the Apache Include directory and restart
+Apache.

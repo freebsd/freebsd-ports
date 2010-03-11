@@ -1,52 +1,18 @@
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/config/debug-config.php
 %%PORTDOCS%%%%DOCSDIR%%/config/example-administration.yml
 %%PORTDOCS%%%%DOCSDIR%%/config/example-config.php
 %%PORTDOCS%%%%DOCSDIR%%/config/other-config.php
-%%PORTDOCS%%%%DOCSDIR%%/dba/appuser_permissions.txt
-%%PORTDOCS%%%%DOCSDIR%%/dba/base-data.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/caldav_functions.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/create-database.sh
-%%PORTDOCS%%%%DOCSDIR%%/dba/davical.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.10.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.11.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.11a.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.12.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.12a.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.2.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.3.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.4.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.5.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.6.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.7.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.8.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.9.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.1.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.1a.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.1b.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.2.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.3.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.3a.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.4.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.5.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/rrule_functions-8.1.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/rrule_functions.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/rrule_tests.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/sample-data.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/supported_locales.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/update-davical-database
-%%PORTDOCS%%%%DOCSDIR%%/dba/windows/awl-tables.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/windows/create-database.bat
-%%PORTDOCS%%%%DOCSDIR%%/dba/windows/rscds.sql
-%%PORTDOCS%%%%DOCSDIR%%/dba/windows/schema-management.sql
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/PdoQuery/PdoDatabase.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/PdoQuery/PdoDialect.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/PdoQuery/PdoQuery.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/PdoQuery/_inc---PdoQuery.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/AWLDB/AwlQuery.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/AWLDB/_inc---AwlQuery.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/AwlDatabase/AwlDBDialect.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/AwlDatabase/AwlDatabase.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/AwlDatabase/_inc---AwlDBDialect.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/AwlDatabase/_inc---AwlDatabase.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/CalDAVClient.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/CalendarInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/RRule.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/_inc---RRule.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/_inc---caldav-client-v2.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/_inc---caldav-client.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/awl/caldav/iCalDate.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/blank.html
@@ -66,28 +32,44 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/PublicSession/PublicSession.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/PublicSession/_inc---PublicSession.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/RRuleTest.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/RSCDSSession/RSCDSSession.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/RSCDSSession/Tools.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/RSCDSSession/_htdocs---tools.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/RSCDSSession/_inc---RSCDSSession.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/RSCDSUser/RSCDSUser.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/RSCDSUser/_inc---RSCDSUser.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/Request/CalDAVRequest.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/Request/_inc---CalDAVRequest.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/Resource/DAVResource.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/Resource/_inc---DAVResource.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---admin.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---collection.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---freebusy.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---help.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---index.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---relationship_types.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---roles.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---setup.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---test.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---testpdo.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---upgrade.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_htdocs---usr.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---always.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---auth-famjama.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---caldav-LOCK.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---caldav-REPORT-calquery.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---caldav-REPORT-expand-property.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---caldav-REPORT-freebusy.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---caldav-REPORT-multiget.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---caldav-REPORT-principal.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_htdocs---caldav.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_htdocs---public.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-ACL.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-DELETE.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-GET.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-MKCOL.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-MOVE.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-OPTIONS.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-POST.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-PROPPATCH.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-PUT-functions.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-PUT.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-REPORT-sync-collection.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-REPORT.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---check_UTF8.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---davical_configuration_missing.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---freebusy-GET.php.html
@@ -95,25 +77,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---other_translated_strings.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---page-footer.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---page-header.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---pubsub.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---test-RRULE.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---collection-edit.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---principal-browse.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/_inc---ui---principal-edit.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/authentication/_inc---auth-functions.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_htdocs---caldav.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_htdocs---public.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-DELETE.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-GET.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-MKCALENDAR.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-OPTIONS.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-POST.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-PROPPATCH.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-PUT-functions.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-PUT.php.html
-%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/caldav/_inc---caldav-REPORT.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/ldap/_inc---drivers_ldap.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/ldap/_inc---drivers_squid_pam.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/ldap/ldapDrivers.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/ldap/squidPamDrivers.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/logging/_inc---log_caldav_action.php.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/propfind/_inc---caldav-PROPFIND.php.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/api/davical/xmpp.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/elementindex.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/elementindex_awl.html
 %%PORTDOCS%%%%DOCSDIR%%/docs/api/elementindex_davical.html
@@ -225,14 +201,58 @@
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/installation.php
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/style.css
 %%PORTDOCS%%%%DOCSDIR%%/docs/website/wikiheader.css
-%%PORTDOCS%%%%DOCSDIR%%/httpd-davical.conf
+%%PORTDOCS%%%%DOCSDIR%%/scripts/build-always.sh
 %%PORTDOCS%%%%DOCSDIR%%/scripts/po/extract.pl
 %%PORTDOCS%%%%DOCSDIR%%/scripts/po/rebuild-translations.sh
-%%WWWDIR%%/config/example-config.php
+%%PORTDOCS%%%%DOCSDIR%%/dba/appuser_permissions.txt
+%%PORTDOCS%%%%DOCSDIR%%/dba/base-data.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/better_perms.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/caldav_functions.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/create-database.sh
+%%PORTDOCS%%%%DOCSDIR%%/dba/davical.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.10.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.11.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.11a.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.12.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.12a.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.2.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.3.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.4.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.5.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.6.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.7.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.8.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.1.9.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.1.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.1a.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.1b.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.2.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.3.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.3a.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.4.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.5.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.6.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/patches/1.2.7.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/rrule_functions-8.1.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/rrule_functions.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/rrule_tests.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/sample-data.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/supported_locales.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/update-davical-database
+%%PORTDOCS%%%%DOCSDIR%%/dba/views/dav_principal.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/windows/awl-tables.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/windows/create-database.bat
+%%PORTDOCS%%%%DOCSDIR%%/dba/windows/rscds.sql
+%%PORTDOCS%%%%DOCSDIR%%/dba/windows/schema-management.sql
+%%PORTDOCS%%%%DOCSDIR%%/httpd-davical.conf
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%WWWDIR%%/htdocs/.htaccess
+%%WWWDIR%%/htdocs/admin.php
 %%WWWDIR%%/htdocs/caldav.php
 %%WWWDIR%%/htdocs/collection.php
 %%WWWDIR%%/htdocs/css/browse.css
+%%WWWDIR%%/htdocs/css/edit.css
 %%WWWDIR%%/htdocs/davical.css
 %%WWWDIR%%/htdocs/freebusy.php
 %%WWWDIR%%/htdocs/help.php
@@ -243,25 +263,32 @@
 %%WWWDIR%%/htdocs/public.php
 %%WWWDIR%%/htdocs/relationship_types.php
 %%WWWDIR%%/htdocs/roles.php
+%%WWWDIR%%/htdocs/setup.php
 %%WWWDIR%%/htdocs/testpdo.php
 %%WWWDIR%%/htdocs/tools.php
+%%WWWDIR%%/htdocs/upgrade.php
 %%WWWDIR%%/htdocs/users.php
 %%WWWDIR%%/htdocs/usr.php
+%%WWWDIR%%/inc/AwlDBDialect.php
+%%WWWDIR%%/inc/AwlDatabase.php
+%%WWWDIR%%/inc/AwlQuery.php
 %%WWWDIR%%/inc/CalDAVPrincipal.php
 %%WWWDIR%%/inc/CalDAVRequest.php
+%%WWWDIR%%/inc/DAVResource.php
 %%WWWDIR%%/inc/DAViCalSession.php
 %%WWWDIR%%/inc/DAViCalUser.php
 %%WWWDIR%%/inc/HTTPAuthSession.php
-%%WWWDIR%%/inc/PdoQuery.php
 %%WWWDIR%%/inc/PublicSession.php
 %%WWWDIR%%/inc/RRule.php
 %%WWWDIR%%/inc/always.php
 %%WWWDIR%%/inc/always.php.in
 %%WWWDIR%%/inc/auth-functions.php
+%%WWWDIR%%/inc/caldav-ACL.php
 %%WWWDIR%%/inc/caldav-DELETE.php
 %%WWWDIR%%/inc/caldav-GET.php
 %%WWWDIR%%/inc/caldav-LOCK.php
-%%WWWDIR%%/inc/caldav-MKCALENDAR.php
+%%WWWDIR%%/inc/caldav-MKCOL.php
+%%WWWDIR%%/inc/caldav-MOVE.php
 %%WWWDIR%%/inc/caldav-OPTIONS.php
 %%WWWDIR%%/inc/caldav-POST.php
 %%WWWDIR%%/inc/caldav-PROPFIND.php
@@ -269,10 +296,15 @@
 %%WWWDIR%%/inc/caldav-PUT-functions.php
 %%WWWDIR%%/inc/caldav-PUT.php
 %%WWWDIR%%/inc/caldav-REPORT-calquery.php
+%%WWWDIR%%/inc/caldav-REPORT-expand-property.php
 %%WWWDIR%%/inc/caldav-REPORT-freebusy.php
 %%WWWDIR%%/inc/caldav-REPORT-multiget.php
+%%WWWDIR%%/inc/caldav-REPORT-pps-set.php
 %%WWWDIR%%/inc/caldav-REPORT-principal.php
+%%WWWDIR%%/inc/caldav-REPORT-sync-collection.php
 %%WWWDIR%%/inc/caldav-REPORT.php
+%%WWWDIR%%/inc/pubsub.php
+%%WWWDIR%%/inc/caldav-client-v2.php
 %%WWWDIR%%/inc/caldav-client.php
 %%WWWDIR%%/inc/check_UTF8.php
 %%WWWDIR%%/inc/davical_configuration_missing.php
@@ -285,6 +317,11 @@
 %%WWWDIR%%/inc/page-footer.php
 %%WWWDIR%%/inc/page-header.php
 %%WWWDIR%%/inc/test-RRULE.php
+%%WWWDIR%%/inc/ui/collection-edit.php
+%%WWWDIR%%/inc/ui/principal-browse.php
+%%WWWDIR%%/inc/ui/principal-edit.php
+%%WWWDIR%%/config/example-config.php
+@dirrm %%WWWDIR%%/inc/ui
 @dirrm %%WWWDIR%%/inc
 @dirrm %%WWWDIR%%/htdocs/js
 @dirrm %%WWWDIR%%/htdocs/images
@@ -306,8 +343,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/caldav
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/authentication
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/Request
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/RSCDSUser
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/RSCDSSession
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/Resource
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/PublicSession
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/Principal
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/HTTPAuthSession
@@ -316,12 +352,14 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical/Admin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/davical
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/awl/caldav
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/awl/PdoQuery
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/awl/AWLDB
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/awl/AwlDatabase
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api/awl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/dba/windows
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/dba/patches
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/dba/views
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/dba
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/config
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
