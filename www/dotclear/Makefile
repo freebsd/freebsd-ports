@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dotclear
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.6
 CATEGORIES=	www
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
