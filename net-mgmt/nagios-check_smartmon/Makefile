@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	check_smartmon
-PORTVERSION=	20060324
+PORTVERSION=	20100125
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://nognu.de/s/FreeBSD/distfiles/
 PKGNAMEPREFIX=	nagios-
