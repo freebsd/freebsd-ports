@@ -1,10 +1,10 @@
---- lib/Makefile.orig	Thu Dec 26 22:28:33 2002
-+++ lib/Makefile	Sat Jun 28 05:39:36 2003
-@@ -56,6 +56,7 @@
+--- lib/Makefile.orig	2009-07-04 13:11:04.000000000 -0300
++++ lib/Makefile	2010-03-08 19:39:24.000000000 -0300
+@@ -49,6 +49,7 @@
  	rm -f $@
  	$(AR) rcs $@ $^
  	$(RANLIB) $@
 +	$(CC) $(CFLAGS) -shared $^ -o libpci.so
- 
- $(PCILIBPC): $(PCILIBPC).in
- 	sed <$< >$@ -e 's,@PREFIX@,$(PREFIX),' \
+ else
+ CFLAGS += -fPIC -fvisibility=hidden
+ $(PCILIB): $(addsuffix .o,$(OBJS))

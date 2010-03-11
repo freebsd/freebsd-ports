@@ -1,15 +1,17 @@
---- lib/pci.h.orig	Thu Oct 30 15:57:58 2003
-+++ lib/pci.h	Thu Oct 30 16:04:23 2003
-@@ -9,9 +9,9 @@
- #ifndef _PCI_LIB_H
+--- lib/pci.h.orig	2009-07-04 13:11:04.000000000 -0300
++++ lib/pci.h	2010-03-08 19:46:36.000000000 -0300
+@@ -10,11 +10,11 @@
  #define _PCI_LIB_H
  
+ #ifndef PCI_CONFIG_H
 -#include "config.h"
++#include "pci/config.h"
+ #endif
+ 
 -#include "header.h"
 -#include "types.h"
-+#include <pci/config.h>
-+#include <pci/header.h>
-+#include <pci/types.h>
++#include "pci/header.h"
++#include "pci/types.h"
  
- #define PCI_LIB_VERSION 0x020204
+ #define PCI_LIB_VERSION 0x030100
  

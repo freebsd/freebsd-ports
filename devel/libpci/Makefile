@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libpci
-PORTVERSION=	2.2.8
-PORTREVISION=	1
+PORTVERSION=	3.1.7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		${MASTER_SITE_KERNEL_ORG} \
