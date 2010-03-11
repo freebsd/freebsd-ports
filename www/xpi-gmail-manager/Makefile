@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gmail-manager
-DISTVERSION=	0.5.3
-DISTVERSIONSUFFIX=	-fx+fl+mz+ns+zm
+DISTVERSION=	0.6.1
 CATEGORIES=	www mail
+MASTER_SITES=	http://www.longfocus.com/firefox/gmanager/releases/
+DISTFILES=	gmanager061.xpi
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Manage multiple Gmail accounts and receive new mail notifications
