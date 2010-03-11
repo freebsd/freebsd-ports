@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Collect
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Module::Collect.3 \
+		Module::README.3 \
 		Module::Collect::Package.3
 
 .include <bsd.port.mk>
