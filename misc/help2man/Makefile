@@ -8,34 +8,35 @@
 
 PORTNAME=	help2man
 PORTVERSION=	1.37.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Automatically generating simple manual pages from program output
 
 .if !defined(WITHOUT_NLS)
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 
+CFLAGS+=	-lintl
+INSTALL_TARGET=	install install_l10n
 MANLANG=	"" de fi fr pl pt_BR sv
 PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
-INSTALL_TARGET=	install install_l10n
 .else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
+CONFIGURE_ARGS+=--disable-nls
 INSTALL_TARGET=	install
+PLIST_SUB+=	NLS="@comment "
 .endif
 
+CFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
-CFLAGS+=	-L${LOCALBASE}/lib -lintl
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
-MAN1=		help2man.1
 INFO=		help2man
+MAN1=		help2man.1
 
 .include <bsd.port.mk>
