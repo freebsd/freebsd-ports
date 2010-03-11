@@ -72,6 +72,17 @@
 %%XPI_XPIDIR%%/locale/en-US/manage.properties
 %%XPI_XPIDIR%%/locale/en-US/overlay.dtd
 %%XPI_XPIDIR%%/locale/en-US/overlay.properties
+%%XPI_XPIDIR%%/locale/es-AR/common.dtd
+%%XPI_XPIDIR%%/locale/es-AR/common.properties
+%%XPI_XPIDIR%%/locale/es-AR/domi.dtd
+%%XPI_XPIDIR%%/locale/es-AR/edit.dtd
+%%XPI_XPIDIR%%/locale/es-AR/edit.properties
+%%XPI_XPIDIR%%/locale/es-AR/install.dtd
+%%XPI_XPIDIR%%/locale/es-AR/install.properties
+%%XPI_XPIDIR%%/locale/es-AR/manage.dtd
+%%XPI_XPIDIR%%/locale/es-AR/manage.properties
+%%XPI_XPIDIR%%/locale/es-AR/overlay.dtd
+%%XPI_XPIDIR%%/locale/es-AR/overlay.properties
 %%XPI_XPIDIR%%/locale/es-ES/common.dtd
 %%XPI_XPIDIR%%/locale/es-ES/common.properties
 %%XPI_XPIDIR%%/locale/es-ES/domi.dtd
@@ -83,17 +94,39 @@
 %%XPI_XPIDIR%%/locale/es-ES/manage.properties
 %%XPI_XPIDIR%%/locale/es-ES/overlay.dtd
 %%XPI_XPIDIR%%/locale/es-ES/overlay.properties
-%%XPI_XPIDIR%%/locale/fr-FR/common.dtd
-%%XPI_XPIDIR%%/locale/fr-FR/common.properties
-%%XPI_XPIDIR%%/locale/fr-FR/domi.dtd
-%%XPI_XPIDIR%%/locale/fr-FR/edit.dtd
-%%XPI_XPIDIR%%/locale/fr-FR/edit.properties
-%%XPI_XPIDIR%%/locale/fr-FR/install.dtd
-%%XPI_XPIDIR%%/locale/fr-FR/install.properties
-%%XPI_XPIDIR%%/locale/fr-FR/manage.dtd
-%%XPI_XPIDIR%%/locale/fr-FR/manage.properties
-%%XPI_XPIDIR%%/locale/fr-FR/overlay.dtd
-%%XPI_XPIDIR%%/locale/fr-FR/overlay.properties
+%%XPI_XPIDIR%%/locale/et-EE/common.dtd
+%%XPI_XPIDIR%%/locale/et-EE/common.properties
+%%XPI_XPIDIR%%/locale/et-EE/domi.dtd
+%%XPI_XPIDIR%%/locale/et-EE/edit.dtd
+%%XPI_XPIDIR%%/locale/et-EE/edit.properties
+%%XPI_XPIDIR%%/locale/et-EE/install.dtd
+%%XPI_XPIDIR%%/locale/et-EE/install.properties
+%%XPI_XPIDIR%%/locale/et-EE/manage.dtd
+%%XPI_XPIDIR%%/locale/et-EE/manage.properties
+%%XPI_XPIDIR%%/locale/et-EE/overlay.dtd
+%%XPI_XPIDIR%%/locale/et-EE/overlay.properties
+%%XPI_XPIDIR%%/locale/fr/common.dtd
+%%XPI_XPIDIR%%/locale/fr/common.properties
+%%XPI_XPIDIR%%/locale/fr/domi.dtd
+%%XPI_XPIDIR%%/locale/fr/edit.dtd
+%%XPI_XPIDIR%%/locale/fr/edit.properties
+%%XPI_XPIDIR%%/locale/fr/install.dtd
+%%XPI_XPIDIR%%/locale/fr/install.properties
+%%XPI_XPIDIR%%/locale/fr/manage.dtd
+%%XPI_XPIDIR%%/locale/fr/manage.properties
+%%XPI_XPIDIR%%/locale/fr/overlay.dtd
+%%XPI_XPIDIR%%/locale/fr/overlay.properties
+%%XPI_XPIDIR%%/locale/he-IL/common.dtd
+%%XPI_XPIDIR%%/locale/he-IL/common.properties
+%%XPI_XPIDIR%%/locale/he-IL/domi.dtd
+%%XPI_XPIDIR%%/locale/he-IL/edit.dtd
+%%XPI_XPIDIR%%/locale/he-IL/edit.properties
+%%XPI_XPIDIR%%/locale/he-IL/install.dtd
+%%XPI_XPIDIR%%/locale/he-IL/install.properties
+%%XPI_XPIDIR%%/locale/he-IL/manage.dtd
+%%XPI_XPIDIR%%/locale/he-IL/manage.properties
+%%XPI_XPIDIR%%/locale/he-IL/overlay.dtd
+%%XPI_XPIDIR%%/locale/he-IL/overlay.properties
 %%XPI_XPIDIR%%/locale/it-IT/common.dtd
 %%XPI_XPIDIR%%/locale/it-IT/common.properties
 %%XPI_XPIDIR%%/locale/it-IT/domi.dtd
@@ -105,17 +138,28 @@
 %%XPI_XPIDIR%%/locale/it-IT/manage.properties
 %%XPI_XPIDIR%%/locale/it-IT/overlay.dtd
 %%XPI_XPIDIR%%/locale/it-IT/overlay.properties
-%%XPI_XPIDIR%%/locale/ja-JP/common.dtd
-%%XPI_XPIDIR%%/locale/ja-JP/common.properties
-%%XPI_XPIDIR%%/locale/ja-JP/domi.dtd
-%%XPI_XPIDIR%%/locale/ja-JP/edit.dtd
-%%XPI_XPIDIR%%/locale/ja-JP/edit.properties
-%%XPI_XPIDIR%%/locale/ja-JP/install.dtd
-%%XPI_XPIDIR%%/locale/ja-JP/install.properties
-%%XPI_XPIDIR%%/locale/ja-JP/manage.dtd
-%%XPI_XPIDIR%%/locale/ja-JP/manage.properties
-%%XPI_XPIDIR%%/locale/ja-JP/overlay.dtd
-%%XPI_XPIDIR%%/locale/ja-JP/overlay.properties
+%%XPI_XPIDIR%%/locale/ja/common.dtd
+%%XPI_XPIDIR%%/locale/ja/common.properties
+%%XPI_XPIDIR%%/locale/ja/domi.dtd
+%%XPI_XPIDIR%%/locale/ja/edit.dtd
+%%XPI_XPIDIR%%/locale/ja/edit.properties
+%%XPI_XPIDIR%%/locale/ja/install.dtd
+%%XPI_XPIDIR%%/locale/ja/install.properties
+%%XPI_XPIDIR%%/locale/ja/manage.dtd
+%%XPI_XPIDIR%%/locale/ja/manage.properties
+%%XPI_XPIDIR%%/locale/ja/overlay.dtd
+%%XPI_XPIDIR%%/locale/ja/overlay.properties
+%%XPI_XPIDIR%%/locale/ko-KR/common.dtd
+%%XPI_XPIDIR%%/locale/ko-KR/common.properties
+%%XPI_XPIDIR%%/locale/ko-KR/domi.dtd
+%%XPI_XPIDIR%%/locale/ko-KR/edit.dtd
+%%XPI_XPIDIR%%/locale/ko-KR/edit.properties
+%%XPI_XPIDIR%%/locale/ko-KR/install.dtd
+%%XPI_XPIDIR%%/locale/ko-KR/install.properties
+%%XPI_XPIDIR%%/locale/ko-KR/manage.dtd
+%%XPI_XPIDIR%%/locale/ko-KR/manage.properties
+%%XPI_XPIDIR%%/locale/ko-KR/overlay.dtd
+%%XPI_XPIDIR%%/locale/ko-KR/overlay.properties
 %%XPI_XPIDIR%%/locale/nl-NL/common.dtd
 %%XPI_XPIDIR%%/locale/nl-NL/common.properties
 %%XPI_XPIDIR%%/locale/nl-NL/domi.dtd
@@ -171,17 +215,6 @@
 %%XPI_XPIDIR%%/locale/sv-SE/manage.properties
 %%XPI_XPIDIR%%/locale/sv-SE/overlay.dtd
 %%XPI_XPIDIR%%/locale/sv-SE/overlay.properties
-%%XPI_XPIDIR%%/locale/tr-TR/common.dtd
-%%XPI_XPIDIR%%/locale/tr-TR/common.properties
-%%XPI_XPIDIR%%/locale/tr-TR/domi.dtd
-%%XPI_XPIDIR%%/locale/tr-TR/edit.dtd
-%%XPI_XPIDIR%%/locale/tr-TR/edit.properties
-%%XPI_XPIDIR%%/locale/tr-TR/install.dtd
-%%XPI_XPIDIR%%/locale/tr-TR/install.properties
-%%XPI_XPIDIR%%/locale/tr-TR/manage.dtd
-%%XPI_XPIDIR%%/locale/tr-TR/manage.properties
-%%XPI_XPIDIR%%/locale/tr-TR/overlay.dtd
-%%XPI_XPIDIR%%/locale/tr-TR/overlay.properties
 %%XPI_XPIDIR%%/locale/uk/common.dtd
 %%XPI_XPIDIR%%/locale/uk/common.properties
 %%XPI_XPIDIR%%/locale/uk/domi.dtd
@@ -193,17 +226,17 @@
 %%XPI_XPIDIR%%/locale/uk/manage.properties
 %%XPI_XPIDIR%%/locale/uk/overlay.dtd
 %%XPI_XPIDIR%%/locale/uk/overlay.properties
-%%XPI_XPIDIR%%/locale/vi-VN/common.dtd
-%%XPI_XPIDIR%%/locale/vi-VN/common.properties
-%%XPI_XPIDIR%%/locale/vi-VN/domi.dtd
-%%XPI_XPIDIR%%/locale/vi-VN/edit.dtd
-%%XPI_XPIDIR%%/locale/vi-VN/edit.properties
-%%XPI_XPIDIR%%/locale/vi-VN/install.dtd
-%%XPI_XPIDIR%%/locale/vi-VN/install.properties
-%%XPI_XPIDIR%%/locale/vi-VN/manage.dtd
-%%XPI_XPIDIR%%/locale/vi-VN/manage.properties
-%%XPI_XPIDIR%%/locale/vi-VN/overlay.dtd
-%%XPI_XPIDIR%%/locale/vi-VN/overlay.properties
+%%XPI_XPIDIR%%/locale/vi/common.dtd
+%%XPI_XPIDIR%%/locale/vi/common.properties
+%%XPI_XPIDIR%%/locale/vi/domi.dtd
+%%XPI_XPIDIR%%/locale/vi/edit.dtd
+%%XPI_XPIDIR%%/locale/vi/edit.properties
+%%XPI_XPIDIR%%/locale/vi/install.dtd
+%%XPI_XPIDIR%%/locale/vi/install.properties
+%%XPI_XPIDIR%%/locale/vi/manage.dtd
+%%XPI_XPIDIR%%/locale/vi/manage.properties
+%%XPI_XPIDIR%%/locale/vi/overlay.dtd
+%%XPI_XPIDIR%%/locale/vi/overlay.properties
 %%XPI_XPIDIR%%/locale/zh-CN/common.dtd
 %%XPI_XPIDIR%%/locale/zh-CN/common.properties
 %%XPI_XPIDIR%%/locale/zh-CN/domi.dtd
@@ -251,18 +284,21 @@
 @dirrm %%XPI_XPIDIR%%/locale/de-DE
 @dirrm %%XPI_XPIDIR%%/locale/en-GB
 @dirrm %%XPI_XPIDIR%%/locale/en-US
+@dirrm %%XPI_XPIDIR%%/locale/es-AR
 @dirrm %%XPI_XPIDIR%%/locale/es-ES
-@dirrm %%XPI_XPIDIR%%/locale/fr-FR
+@dirrm %%XPI_XPIDIR%%/locale/et-EE
+@dirrm %%XPI_XPIDIR%%/locale/fr
+@dirrm %%XPI_XPIDIR%%/locale/he-IL
 @dirrm %%XPI_XPIDIR%%/locale/it-IT
-@dirrm %%XPI_XPIDIR%%/locale/ja-JP
+@dirrm %%XPI_XPIDIR%%/locale/ja
+@dirrm %%XPI_XPIDIR%%/locale/ko-KR
 @dirrm %%XPI_XPIDIR%%/locale/nl-NL
 @dirrm %%XPI_XPIDIR%%/locale/pl-PL
 @dirrm %%XPI_XPIDIR%%/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/locale/ru-RU
 @dirrm %%XPI_XPIDIR%%/locale/sv-SE
-@dirrm %%XPI_XPIDIR%%/locale/tr-TR
 @dirrm %%XPI_XPIDIR%%/locale/uk
-@dirrm %%XPI_XPIDIR%%/locale/vi-VN
+@dirrm %%XPI_XPIDIR%%/locale/vi
 @dirrm %%XPI_XPIDIR%%/locale/zh-CN
 @dirrm %%XPI_XPIDIR%%/locale/zh-TW
 @dirrm %%XPI_XPIDIR%%/locale
