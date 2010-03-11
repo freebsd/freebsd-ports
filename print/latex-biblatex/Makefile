@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	biblatex
-PORTVERSION=	0.8i
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/exptl
 PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	vj562001@yahoo.de
+MAINTAINER=	idolum@users.sourceforge.net
 COMMENT=	A reimplementation of the LaTeX biliographic facilities
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
@@ -34,15 +33,20 @@ TEX_BIN=	${LOCALBASE}/bin/latex
 
 CLASSNAME=	${PORTNAME}
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${CLASSNAME}
-BSTDIR=		${TEXMFLOCAL}/bibtex/bst
+BSTDIR=		${TEXMFLOCAL}/bibtex/bst/biblatex
+CSFDIR=		${TEXMFLOCAL}/bibtex/csf/biblatex
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 CLASS_FILES=	biblatex.cfg biblatex.def bibnatex.def biblatex.sty
-DOC_FILES=	README RELEASE doc/biblatex.pdf LICENSE VERSION
+DOC_FILES=	README RELEASE doc/biblatex.pdf VERSION
 BST_FILES=	biblatex.bst
 
 WRKSRC=		${WRKDIR}/${CLASSNAME}
+
+OPTIONS=	BIBTEXT8_CSF "Install BibTeX8 sort definition files" OFF
+
+.include <bsd.port.options.mk>
 
 pre-install:
 	(for F in ${CLASS_FILES}; do \
@@ -58,6 +62,13 @@ pre-install:
 	(for F in ${BST_FILES}; do \
 			${ECHO_CMD} "${BSTDIR}/$${F}"; \
 		done;) >> ${PLIST}
+	${ECHO_CMD} "@dirrm ${BSTDIR}" >> ${PLIST}
+.if defined(WITH_BIBTEXT8_CSF)
+	(for F in `${LS} -F ${WRKSRC}/bibtex/csf`; do \
+			${ECHO_CMD} "${CSFDIR}/$${F}"; \
+		done;) >> ${PLIST}
+	${ECHO_CMD} "@dirrm ${CSFDIR}" >> ${PLIST}
+.endif
 .if !defined(NOPORTDOCS)
 	(for F in ${DOC_FILES:S,^doc/,,}; do \
 		${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
@@ -78,7 +89,12 @@ pre-install:
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
 	(cd ${WRKSRC}/latex/ && ${COPYTREE_SHARE} \* ${PREFIX}/${CLASSDIR})
-	${INSTALL_DATA} ${BST_FILES:S@^@${WRKSRC}/bibtex/@} ${PREFIX}/${BSTDIR}
+	${MKDIR} ${PREFIX}/${BSTDIR}
+	${INSTALL_DATA} ${BST_FILES:S@^@${WRKSRC}/bibtex/bst/@} ${PREFIX}/${BSTDIR}
+.if defined(WITH_BIBTEXT8_CSF)
+	${MKDIR} ${PREFIX}/${CSFDIR}
+	(cd ${WRKSRC}/bibtex/csf && ${COPYTREE_SHARE} \* ${PREFIX}/${CSFDIR})
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/resources
