@@ -1,6 +1,0 @@
-
-overlay	chrome://browser/content/browser.xul	chrome://gbutts/content/gbuttsOverlay.xul
-overlay	chrome://navigator/content/navigator.xul	chrome://gbutts/content/gbuttsOverlay.xul
-content	gbutts	jar:chrome/gbutts.jar!/content/
-
-skin	gbutts	classic/1.0	jar:chrome/gbutts.jar!/skin/

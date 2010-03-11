@@ -1,7 +1,0 @@
-A Haskell binding to the X11 library.
-
-The binding is a direct translation of C binding;
-for documentation of these calls, refer to /The Xlib Programming Manual/,
-available online at <http://tronche.com/gui/x/xlib/>.
-
-WWW: http://darcs.haskell.org/X11

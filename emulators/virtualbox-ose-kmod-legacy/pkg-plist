@@ -1,7 +1,0 @@
-@comment $FreeBSD$
-@cwd /
-%%KMODDIR%%/vboxdrv.ko
-%%KMODDIR%%/vboxnetadp.ko
-%%KMODDIR%%/vboxnetflt.ko
-@exec /usr/sbin/kldxref %%KMODDIR%%
-@unexec /usr/sbin/kldxref %%KMODDIR%%

@@ -1,5 +1,0 @@
-etc/%%CONFIG%%.conf
-%%NSS%%lib/nss_ldap.so.1
-%%NSLCD%%sbin/nslcd
-%%PAM%%lib/pam_ldap.so
-%%PAM%%lib/pam_ldap.so.1

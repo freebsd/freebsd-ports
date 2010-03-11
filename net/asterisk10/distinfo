@@ -1,6 +1,0 @@
-MD5 (asterisk-1.4.26.2.tar.gz) = 58181c29d998f883f567dc9757a04167
-SHA256 (asterisk-1.4.26.2.tar.gz) = 384e080e359ae28ca9323800a3fa0586210342039b96ecbdced9ea285516efe9
-SIZE (asterisk-1.4.26.2.tar.gz) = 21436723
-MD5 (asterisk-1.4.26.2-codec-negotiation-20090916.diff.gz) = ae433b0c9574e0616cf014703641f62a
-SHA256 (asterisk-1.4.26.2-codec-negotiation-20090916.diff.gz) = 65bd0d773a2ddc56bfa60a1bd9269eded2edf0062adf4f8afe393c6d41f27039
-SIZE (asterisk-1.4.26.2-codec-negotiation-20090916.diff.gz) = 40621

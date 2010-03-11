@@ -1,5 +1,0 @@
-A UTF8 layer for IO and Strings. The utf8-string package provides operations for
-encoding UTF8 strings to Word8 lists and back, and for reading and writing UTF8
-without truncation.
-
-WWW: http://github.com/glguy/utf8-string/
