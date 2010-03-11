@@ -1603,6 +1603,7 @@ cl-uffi-sbcl                    ports/devel/cl-uffi-sbcl
 clamassassin                    ports/security/clamassassin
 clamav                          ports/security/clamav
 clamav-devel                    ports/security/clamav-devel
+clamav-unofficial-sigs          ports/security/clamav-unofficial-sigs
 clamcour                        ports/security/clamcour
 clamfilter                      ports/mail/clamfilter
 clamsmtp                        ports/security/clamsmtp
@@ -2342,6 +2343,7 @@ dinotrace                       ports/cad/dinotrace
 dir2ogg                         ports/audio/dir2ogg
 dirac                           ports/multimedia/dirac
 diradmin                        ports/net/diradmin
+dirbuster                       ports/security/dirbuster
 dircomp                         ports/sysutils/dircomp
 dircproxy                       ports/irc/dircproxy
 dircproxy-devel                 ports/irc/dircproxy-devel
@@ -2573,6 +2575,7 @@ drupal6-nice_menus              ports/www/drupal6-nice_menus
 drupal6-nodewords               ports/www/drupal6-nodewords
 drupal6-page_title              ports/www/drupal6-page_title
 drupal6-panels                  ports/www/drupal6-panels
+drupal6-path_redirect           ports/www/drupal6-path_redirect
 drupal6-pathauto                ports/www/drupal6-pathauto
 drupal6-print                   ports/www/drupal6-print
 drupal6-seo_checklist           ports/www/drupal6-seo_checklist
@@ -2581,6 +2584,7 @@ drupal6-token                   ports/www/drupal6-token
 drupal6-views                   ports/www/drupal6-views
 drupal6-webform                 ports/www/drupal6-webform
 drupal6-wysiwyg                 ports/www/drupal6-wysiwyg
+drupal6-zeropoint               ports/www/drupal6-zeropoint
 drweb                           ports/security/drweb
 drweb-postfix                   ports/security/drweb-postfix
 drweb-qmail                     ports/security/drweb-qmail
@@ -5770,6 +5774,7 @@ iog                             ports/net-mgmt/iog
 iograph                         ports/sysutils/iograph
 iolib                           ports/biology/iolib
 ion                             ports/x11-wm/ion
+ioncube                         ports/devel/ioncube
 ioquake3                        ports/games/ioquake3
 ioquake3-devel                  ports/games/ioquake3-devel
 iourbanterror                   ports/games/iourbanterror
@@ -8972,6 +8977,7 @@ milter-manager                  ports/mail/milter-manager
 milter-regex                    ports/mail/milter-regex
 milter-skem                     ports/mail/milter-skem
 mime                            ports/devel/mime
+mime-construct                  ports/mail/mime-construct
 mime-support                    ports/misc/mime-support
 mime4j                          ports/mail/mime4j
 mimedefang                      ports/mail/mimedefang
@@ -19598,6 +19604,7 @@ prips                           ports/sysutils/prips
 privman                         ports/devel/privman
 privoxy                         ports/www/privoxy
 privoxy+ipv6                    ports/www/privoxy+ipv6
+prng                            ports/math/prng
 processing                      ports/graphics/processing
 procmail                        ports/mail/procmail
 procmap                         ports/sysutils/procmap
@@ -23080,6 +23087,7 @@ tcshrc                          ports/shells/tcshrc
 tdb                             ports/databases/tdb
 tdetect                         ports/net/tdetect
 tdfsb                           ports/x11-fm/tdfsb
+tdhkit                          ports/textproc/tdhkit
 tdiary                          ports/www/tdiary
 tdiary-devel                    ports/www/tdiary-devel
 tdir                            ports/sysutils/tdir
