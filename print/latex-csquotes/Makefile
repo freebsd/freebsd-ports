@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	csquotes
-PORTVERSION=	4.4c
-PORTREVISION=	1
+PORTVERSION=	4.4d
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib
 PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	vj562001@yahoo.de
+MAINTAINER=	idolum@users.sourceforge.net
 COMMENT=	Context sensitive quotation facilities
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
