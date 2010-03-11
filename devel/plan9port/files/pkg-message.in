@@ -8,16 +8,17 @@ port's directory and type (being your normal user):
 
 	make install-user
 
-BEWARE:  This port can cause some problems if you try install certain
+BEWARE:  This port can cause some problems if you try to install certain
 software (including, but not limited to our Ports Collection):
 
   - Ports that require `archivers/zip' to build (e.g. `www/mozilla').  If
    `$PLAN9/bin/zip' would be found as `zip' command (via $PATH) and used,
-    it could easily fail since does not share options with "standard" `zip'
+    it could easily fail since it does not share options with "standard"
+   `zip' (at least not all of them)
 
   - `x11/kdebase3' build can result in crash in `fish.cpp' file if you try
-    to build it with $PLAN9.  We suggest you to unset $PLAN9 before building
-    any other ports that fail with similar symptoms (or unset it for all
-    ports just to be on the safe side)
+    to build it with $PLAN9.  We suggest you to unset PLAN9 before building
+    any ports that fail with similar symptoms (or unset it for all ports
+    just to be on the safe side)
 
   - venti/fmt* commands work only with normal files
