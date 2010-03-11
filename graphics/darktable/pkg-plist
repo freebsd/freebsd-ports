@@ -1,0 +1,85 @@
+bin/darktable
+share/applications/darktable.desktop
+share/locale/ru/LC_MESSAGES/darktable.mo
+share/locale/sv/LC_MESSAGES/darktable.mo
+share/pixmaps/darktable.png
+%%DATADIR%%/darktable.glade
+%%DATADIR%%/darktable.gtkrc
+%%DATADIR%%/pixmaps/darktable-16.png
+%%DATADIR%%/pixmaps/darktable-32.png
+%%DATADIR%%/pixmaps/darktable-48.png
+%%DATADIR%%/pixmaps/darktable.png
+%%DATADIR%%/pixmaps/off.png
+%%DATADIR%%/pixmaps/plugins/darkroom/clipping.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colorcorrection.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colorin.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colorout.png
+%%DATADIR%%/pixmaps/plugins/darkroom/equalizer.png
+%%DATADIR%%/pixmaps/plugins/darkroom/exposure.png
+%%DATADIR%%/pixmaps/plugins/darkroom/gamma.png
+%%DATADIR%%/pixmaps/plugins/darkroom/lens.png
+%%DATADIR%%/pixmaps/plugins/darkroom/monochrome.png
+%%DATADIR%%/pixmaps/plugins/darkroom/rawimport.png
+%%DATADIR%%/pixmaps/plugins/darkroom/sharpen.png
+%%DATADIR%%/pixmaps/plugins/darkroom/temperature.png
+%%DATADIR%%/pixmaps/plugins/darkroom/template.png
+%%DATADIR%%/pixmaps/plugins/darkroom/tonecurve.png
+%%DATADIR%%/plugins/libclipping.a
+%%DATADIR%%/plugins/libclipping.la
+%%DATADIR%%/plugins/libclipping.so
+%%DATADIR%%/plugins/libcolorcorrection.a
+%%DATADIR%%/plugins/libcolorcorrection.la
+%%DATADIR%%/plugins/libcolorcorrection.so
+%%DATADIR%%/plugins/libcolorin.a
+%%DATADIR%%/plugins/libcolorin.la
+%%DATADIR%%/plugins/libcolorin.so
+%%DATADIR%%/plugins/libcolorout.a
+%%DATADIR%%/plugins/libcolorout.la
+%%DATADIR%%/plugins/libcolorout.so
+%%DATADIR%%/plugins/libequalizer.a
+%%DATADIR%%/plugins/libequalizer.la
+%%DATADIR%%/plugins/libequalizer.so
+%%DATADIR%%/plugins/libexposure.a
+%%DATADIR%%/plugins/libexposure.la
+%%DATADIR%%/plugins/libexposure.so
+%%DATADIR%%/plugins/libgamma.a
+%%DATADIR%%/plugins/libgamma.la
+%%DATADIR%%/plugins/libgamma.so
+%%DATADIR%%/plugins/liblens.a
+%%DATADIR%%/plugins/liblens.la
+%%DATADIR%%/plugins/liblens.so
+%%DATADIR%%/plugins/libmonochrome.a
+%%DATADIR%%/plugins/libmonochrome.la
+%%DATADIR%%/plugins/libmonochrome.so
+%%DATADIR%%/plugins/librawimport.a
+%%DATADIR%%/plugins/librawimport.la
+%%DATADIR%%/plugins/librawimport.so
+%%DATADIR%%/plugins/libsharpen.a
+%%DATADIR%%/plugins/libsharpen.la
+%%DATADIR%%/plugins/libsharpen.so
+%%DATADIR%%/plugins/libtemperature.a
+%%DATADIR%%/plugins/libtemperature.la
+%%DATADIR%%/plugins/libtemperature.so
+%%DATADIR%%/plugins/libtonecurve.a
+%%DATADIR%%/plugins/libtonecurve.la
+%%DATADIR%%/plugins/libtonecurve.so
+%%DATADIR%%/plugins/lighttable/libcopy_history.a
+%%DATADIR%%/plugins/lighttable/libcopy_history.la
+%%DATADIR%%/plugins/lighttable/libcopy_history.so
+%%DATADIR%%/plugins/lighttable/libexport.a
+%%DATADIR%%/plugins/lighttable/libexport.la
+%%DATADIR%%/plugins/lighttable/libexport.so
+%%DATADIR%%/views/libdarkroom.a
+%%DATADIR%%/views/libdarkroom.la
+%%DATADIR%%/views/libdarkroom.so
+%%DATADIR%%/views/liblighttable.a
+%%DATADIR%%/views/liblighttable.la
+%%DATADIR%%/views/liblighttable.so
+@dirrm %%DATADIR%%/views
+@dirrm %%DATADIR%%/plugins/lighttable
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/pixmaps/plugins/darkroom
+@dirrm %%DATADIR%%/pixmaps/plugins
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
