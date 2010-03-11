@@ -6,6 +6,7 @@
     SUBDIR += 2mandvd
     SUBDIR += abby
     SUBDIR += acidrip
+    SUBDIR += aegisub
     SUBDIR += arista
     SUBDIR += atomicparsley
     SUBDIR += audacious

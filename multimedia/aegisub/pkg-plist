@@ -1,0 +1,72 @@
+bin/aegisub-2.1
+%%DATADIR%%/2.1/automation/autoload/cleantags-autoload.lua
+%%DATADIR%%/2.1/automation/autoload/kara-templater.lua
+%%DATADIR%%/2.1/automation/autoload/karaoke-auto-leadin.lua
+%%DATADIR%%/2.1/automation/autoload/macro-1-edgeblur.lua
+%%DATADIR%%/2.1/automation/autoload/macro-1p-edgeblur.pl
+%%DATADIR%%/2.1/automation/autoload/macro-2-mkfullwitdh.lua
+%%DATADIR%%/2.1/automation/include/Aegisub.pm
+%%DATADIR%%/2.1/automation/include/Aegisub/PerlConsole.pm
+%%DATADIR%%/2.1/automation/include/Aegisub/Progress.pm
+%%DATADIR%%/2.1/automation/include/Aegisub/Script.pm
+%%DATADIR%%/2.1/automation/include/Auto4Utils.pm
+%%DATADIR%%/2.1/automation/include/cleantags.lua
+%%DATADIR%%/2.1/automation/include/karaskel-adv.lua
+%%DATADIR%%/2.1/automation/include/karaskel-auto4.lua
+%%DATADIR%%/2.1/automation/include/karaskel-base.lua
+%%DATADIR%%/2.1/automation/include/karaskel.lua
+%%DATADIR%%/2.1/automation/include/unicode.lua
+%%DATADIR%%/2.1/automation/include/utils-auto4.lua
+%%DATADIR%%/2.1/automation/include/utils.lua
+share/applications/aegisub.desktop
+%%DOCSDIR%%/2.1/automation3.txt
+%%DOCSDIR%%/2.1/demos/future-windy-blur.lua
+%%DOCSDIR%%/2.1/demos/perl-console.pl
+%%DOCSDIR%%/2.1/demos/raytracer-test1.ass
+%%DOCSDIR%%/2.1/demos/raytracer.lua
+%%DOCSDIR%%/2.1/v4-docs/basic-function-interface.txt
+%%DOCSDIR%%/2.1/v4-docs/configuration-dialogs.txt
+%%DOCSDIR%%/2.1/v4-docs/file-streams.txt
+%%DOCSDIR%%/2.1/v4-docs/misc.txt
+%%DOCSDIR%%/2.1/v4-docs/overview.txt
+%%DOCSDIR%%/2.1/v4-docs/perl-api.txt
+%%DOCSDIR%%/2.1/v4-docs/progress-reporting.txt
+%%DOCSDIR%%/2.1/v4-docs/subtitle-data.txt
+%%DOCSDIR%%/2.1/v4-docs/template-scripting-ideas.ass
+share/icons/hicolor/16x16/apps/aegisub.png
+share/icons/hicolor/22x22/apps/aegisub.png
+share/icons/hicolor/24x24/apps/aegisub.png
+share/icons/hicolor/32x32/apps/aegisub.png
+share/icons/hicolor/48x48/apps/aegisub.png
+share/icons/hicolor/64x64/apps/aegisub.png
+share/icons/hicolor/scalable/apps/aegisub.svg
+share/locale/ca/LC_MESSAGES/aegisub21.mo
+share/locale/cs/LC_MESSAGES/aegisub21.mo
+share/locale/da/LC_MESSAGES/aegisub21.mo
+share/locale/de/LC_MESSAGES/aegisub21.mo
+share/locale/el/LC_MESSAGES/aegisub21.mo
+share/locale/es/LC_MESSAGES/aegisub21.mo
+share/locale/fi/LC_MESSAGES/aegisub21.mo
+share/locale/fr_FR/LC_MESSAGES/aegisub21.mo
+share/locale/hu/LC_MESSAGES/aegisub21.mo
+share/locale/it/LC_MESSAGES/aegisub21.mo
+share/locale/ja/LC_MESSAGES/aegisub21.mo
+share/locale/ko/LC_MESSAGES/aegisub21.mo
+share/locale/pt_BR/LC_MESSAGES/aegisub21.mo
+share/locale/ru/LC_MESSAGES/aegisub21.mo
+share/locale/vi/LC_MESSAGES/aegisub21.mo
+share/locale/zh_CN/LC_MESSAGES/aegisub21.mo
+share/locale/zh_TW/LC_MESSAGES/aegisub21.mo
+@dirrmtry share/applications
+@dirrmtry share/icons/hicolor
+@dirrmtry share/locale
+@dirrmtry %%DATADIR%%/2.1/automation/autoload
+@dirrmtry %%DATADIR%%/2.1/automation/include/Aegisub
+@dirrmtry %%DATADIR%%/2.1/automation/include
+@dirrmtry %%DATADIR%%/2.1/automation
+@dirrmtry %%DATADIR%%/2.1
+@dirrmtry %%DATADIR%%
+@dirrmtry %%DOCSDIR%%/2.1/demos
+@dirrmtry %%DOCSDIR%%/2.1/v4-docs
+@dirrmtry %%DOCSDIR%%/2.1
+@dirrmtry %%DOCSDIR%%
