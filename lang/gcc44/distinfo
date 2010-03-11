@@ -10,3 +10,6 @@ SIZE (gcc-g++-4.4-20100309.tar.bz2) = 5918343
 MD5 (gcc-testsuite-4.4-20100309.tar.bz2) = 855707c279a1206b1e827d6b87300eab
 SHA256 (gcc-testsuite-4.4-20100309.tar.bz2) = ddb52eebc09ffe2637f055cfe55978a845c2f58c9cce6658b1939ed9a963c59a
 SIZE (gcc-testsuite-4.4-20100309.tar.bz2) = 5128501
+MD5 (gcc-java-4.4-20100309.tar.bz2) = 5dd5e1d2c06c0f829b45ddf4d38b7c9f
+SHA256 (gcc-java-4.4-20100309.tar.bz2) = 66446d9d44e750252dc75f831c3aaa0324911e0567ba6787ba4f8c57744871d1
+SIZE (gcc-java-4.4-20100309.tar.bz2) = 18517401
