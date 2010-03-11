@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	speed-dial
-PORTVERSION=	0.9.0.8
+PORTVERSION=	0.9.5.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 MASTER_SITES=	http://speeddial.uworks.net/
