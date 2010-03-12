@@ -2673,6 +2673,7 @@
     SUBDIR += py-rtree
     SUBDIR += py-ruledispatch
     SUBDIR += py-sendfile
+    SUBDIR += py-setproctitle
     SUBDIR += py-setuptools
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-shapely
