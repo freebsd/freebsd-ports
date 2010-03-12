@@ -7,17 +7,19 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Development snapshot of the world-renown nvi editor
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 CONFLICTS=	nvi-m17n-*
+
+OPTIONS=	WIDECHAR "Enable wide-character support (UTF-8)" On
 
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
@@ -27,6 +29,12 @@ CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE} \
 			--program-prefix=n
 CONFIGURE_SCRIPT=	../dist/configure
 MAN1=			nex.1 nvi.1 nview.1
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_WIDE_CHARS)
+CONFIGURE_ARGS+=    --enable-widechar
+.endif
 
 # configure is 555, so you can't do a "make configure" as non-root.
 post-patch:
