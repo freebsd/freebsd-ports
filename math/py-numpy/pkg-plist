@@ -64,6 +64,8 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/_numpyconfig.h
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/arrayobject.h
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/arrayscalars.h
+%%FENV%%%%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/fenv/fenv.c
+%%FENV%%%%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/fenv/fenv.h
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/multiarray_api.txt
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/ndarrayobject.h
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/noprefix.h
@@ -966,6 +968,7 @@ bin/f2py
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/core/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/core/lib/npy-pkg-config
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/core/lib
+%%FENV%%@dirrm %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/fenv
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/core/include
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/core
