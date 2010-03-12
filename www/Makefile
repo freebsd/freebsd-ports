@@ -724,6 +724,7 @@
     SUBDIR += p5-CGI-Cookie-Splitter
     SUBDIR += p5-CGI-Cookie-XS
     SUBDIR += p5-CGI-Deurl-XS
+    SUBDIR += p5-CGI-Emulate-PSGI
     SUBDIR += p5-CGI-Ex
     SUBDIR += p5-CGI-Expand
     SUBDIR += p5-CGI-FCKeditor
