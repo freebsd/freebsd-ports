@@ -16,6 +16,9 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 MAINTAINER?=	gahr@FreeBSD.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.2
 
+DEPRECATED=	Unsupported, please use x11-toolkits/fox14 or x11-toolkits/fox16 instead.
+EXPIRATION_DATE=2010-04-30
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
