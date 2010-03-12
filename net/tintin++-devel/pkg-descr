@@ -1,8 +1,9 @@
-TINTIN++ is a client program specialized to help playing MUDs. This
-is a souped up version of TINTIN III, many new features have been
-added since III.  We saw room for improvement on the features
-available from TINTIN, and since we like the format of the program,
-we decided to use TINTIN as a base for what we hope to make one of
-the most powerful clients around.
+TinTin++ is a console MUD client for Windows, Linux, and Mac OS X. Its main
+assets are an easy to learn and use scripting language, full telnet support,
+a split screen interface to separate mud output from client input, and
+keyboard macros that work on all systems. 
+
+TinTin++ projet is now hosted on Google Code sine version 1.99.6b1.
 
 WWW:    http://tintin.sourceforge.net/
+	http://code.google.com/p/tintin-mud-client
