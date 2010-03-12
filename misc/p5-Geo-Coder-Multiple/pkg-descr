@@ -1,0 +1,11 @@
+Geo::Coder::Multiple is a wrapper for multiple Geo::Coder::* modules.
+
+Most free geocoding datasource specify a limit to the number of queries which
+can be sent from an IP or made using an API key in a 24 hour period. This
+module balances the incoming requests across the available sources to ensure
+individual limits are exceeded only when the total limit is exceeded.
+
+The algorithm for load balancing takes into account the limit imposed by the
+source per 24 hour period.
+
+WWW: http://search.cpan.org/dist/Geo-Coder-Multiple/
