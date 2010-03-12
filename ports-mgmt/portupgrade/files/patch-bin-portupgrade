@@ -1,5 +1,5 @@
---- bin/portupgrade.orig	2009-07-21 23:59:59.000000000 +0400
-+++ bin/portupgrade	2009-07-22 00:02:08.000000000 +0400
+--- bin/portupgrade.orig	2008-07-01 20:32:25.000000000 +0900
++++ bin/portupgrade	2010-03-12 17:58:41.298887026 +0900
 @@ -597,6 +597,7 @@
  	      exit 1
  	    end
@@ -22,3 +22,16 @@
  		begin
  		  pkg = PkgInfo.new(task)
  	        rescue ArgumentError => e
+@@ -827,8 +828,12 @@
+ # Returns:
+ #      Set: all recursive depends list
+ def get_all_depends(origin, parents_list = nil)
++  if $use_packages_only
++    depends_vars = %w{LIB_DEPENDS RUN_DEPENDS}
++  else
+   depends_vars = %w{FETCH_DEPENDS EXTRACT_DEPENDS PATCH_DEPENDS
+ 		      BUILD_DEPENDS LIB_DEPENDS RUN_DEPENDS}
++  end
+ 
+   unless $depends.has_key?(origin)
+     depends = Set.new
