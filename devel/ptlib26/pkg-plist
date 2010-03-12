@@ -163,6 +163,7 @@ lib/libpt-%%PVERSION_MAJOR%%.so.%%PVERSION_MINOR%%
 lib/ptlib-%%PORTVERSION%%/devices/sound/oss_pwplugin.so
 %%BSDVIDEO%%lib/ptlib-%%PORTVERSION%%/devices/videoinput/bsdvideo_pwplugin.so
 %%V4L%%lib/ptlib-%%PORTVERSION%%/devices/videoinput/v4l_pwplugin.so
+%%V4L%%lib/ptlib-%%PORTVERSION%%/devices/videoinput/v4l2_pwplugin.so
 libdata/pkgconfig/ptlib.pc
 %%DATADIR%%/make/common.mak
 %%DATADIR%%/make/lib.mak
