@@ -1,11 +1,11 @@
---- pdns_recursor.1.orig	2010-01-03 15:26:42.000000000 +0100
-+++ pdns_recursor.1	2010-01-05 10:36:30.000000000 +0100
+--- pdns_recursor.1.orig	2010-02-11 11:28:22.000000000 +0100
++++ pdns_recursor.1	2010-02-11 11:27:38.000000000 +0100
 @@ -5,7 +5,7 @@
  .\"    Manual: 
  .\"    Source: 
  .\"
--.TH "PDNS_RECURSOR" "1" "12/29/2009" "" ""
-+.TH "PDNS_RECURSOR" "8" "12/29/2009" "" ""
+-.TH "PDNS_RECURSOR" "1" "03/22/2008" "" ""
++.TH "PDNS_RECURSOR" "8" "03/22/2008" "" ""
  .\" disable hyphenation
  .nh
  .\" disable justification (adjust text to left margin only)
@@ -13,28 +13,28 @@
  \fIpdns_recursor\fR [\-\-daemon] [\-\-local\-address] [\-\-help, \-h] [\-\-allow\-from]
  .sp
  .SH "DESCRIPTION"
--pdns_recursor(1) is a high performance, simple and secure recursing nameserver\&. It currently powers over two million internet connections\&.
-+pdns_recursor(8) is a high performance, simple and secure recursing nameserver\&. It currently powers over two million internet connections\&.
+-pdns_recursor(1) is a high performance, simple and secure recursing nameserver. It currently powers over two million internet connections.
++pdns_recursor(8) is a high performance, simple and secure recursing nameserver. It currently powers over two million internet connections.
  .sp
- The recursor is configured via a configuration file, but each item in that file can be overridden on the command line\&.
+ The recursor is configured via a configuration file, but each item in that file can be overridden on the command line.
  .sp
-@@ -242,7 +242,7 @@
- Website: http://wiki\&.powerdns\&.com, http://www\&.powerdns\&.com
+@@ -243,7 +243,7 @@
+ Website: http://wiki.powerdns.com, http://www.powerdns.com
  .sp
  .SH "SEE ALSO"
 -rec_control(1)
 +rec_control(8)
  .sp
  .SH "COPYING"
- Copyright \(co 2006 PowerDNS\&.COM BV\&. Free use of this software is granted under the terms of the GNU General Public License (GPL) version 2\&.
---- rec_control.1.orig	2010-01-03 15:26:42.000000000 +0100
-+++ rec_control.1	2010-01-05 10:35:14.000000000 +0100
+ Copyright \(co 2006 PowerDNS.COM BV. Free use of this software is granted under the terms of the GNU General Public License (GPL) version 2.
+--- rec_control.1.orig	2010-02-11 11:28:12.000000000 +0100
++++ rec_control.1	2010-02-11 11:27:38.000000000 +0100
 @@ -5,7 +5,7 @@
  .\"    Manual: 
  .\"    Source: 
  .\"
--.TH "REC_CONTROL" "1" "12/29/2009" "" ""
-+.TH "REC_CONTROL" "8" "12/29/2009" "" ""
+-.TH "REC_CONTROL" "1" "09/22/2009" "" ""
++.TH "REC_CONTROL" "8" "09/22/2009" "" ""
  .\" disable hyphenation
  .nh
  .\" disable justification (adjust text to left margin only)
@@ -47,7 +47,7 @@
  .sp
  The commands that can be passed to the recursor are described on http://doc\&.powerdns\&.com/rec\-control\&.html
  .sp
-@@ -105,7 +105,7 @@
+@@ -110,7 +110,7 @@
  Website: http://wiki\&.powerdns\&.com, http://www\&.powerdns\&.com
  .sp
  .SH "SEE ALSO"

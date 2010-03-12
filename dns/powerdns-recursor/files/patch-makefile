@@ -1,27 +1,19 @@
---- Makefile.orig	2010-01-03 15:26:42.000000000 +0100
-+++ Makefile	2010-01-05 10:32:00.000000000 +0100
-@@ -2,7 +2,6 @@
- SBINDIR=/usr/sbin/
- BINDIR=/usr/bin/
- CONFIGDIR="/etc/powerdns/"
--OPTFLAGS?=-O3
- CXXFLAGS:= $(CXXFLAGS) -Wall -DBOOST_SP_DISABLE_THREADS $(OPTFLAGS) $(PROFILEFLAGS)
- CFLAGS:=$(CFLAGS) -Wall $(OPTFLAGS) $(PROFILEFLAGS)
- LINKCC=$(CXX)
-@@ -41,10 +40,10 @@
+--- Makefile.orig	2010-02-10 20:46:15.000000000 +0100
++++ Makefile	2010-02-11 13:22:25.000000000 +0100
+@@ -38,10 +38,10 @@
  ifeq ($(STATIC),semi)
  	STATICFLAGS=-Wl,-Bstatic -lstdc++ $(LUALIBS) -lgcc -Wl,-Bdynamic -static-libgcc -lm -lc
  	LINKCC=$(CC)
--	LDFLAGS += malloc.o -ldl -lm
-+	LDFLAGS += malloc.o -lm
- else
- ifeq ($(STATIC),full)
+-	LDFLAGS += -ldl -lm
++	LDFLAGS += -lm
+ else 
+    ifeq ($(STATIC),full)
 -	STATICFLAGS=-lstdc++ $(LUALIBS) -ldl -lm -static 
 +	STATICFLAGS=-lstdc++ $(LUALIBS) -lm -static 
  	LINKCC=$(CC)
- else
- 	LDFLAGS += malloc.o $(LUALIBS)
-@@ -72,16 +71,14 @@
+    else
+ 	LDFLAGS +=  $(LUALIBS)
+@@ -69,16 +69,14 @@
  	 fi
  
  install: all
@@ -39,4 +31,4 @@
 +	mv rec_control.1 rec_control.8
  	$(OS_SPECIFIC_INSTALL)	
  
- clean:
+ clean: binclean
