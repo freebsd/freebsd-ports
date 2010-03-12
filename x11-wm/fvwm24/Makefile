@@ -7,7 +7,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.4.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
