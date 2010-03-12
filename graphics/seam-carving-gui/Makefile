@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	seam-carving-gui
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+DISTNAME=	SeamCarvingGui-Src-${PORTVERSION}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	The Seam Carving GUI is a GUI front end to CAIR
@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui imageformats_run moc_build qmake_build uic_build
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/Src\ Seam\ Carving\ GUI\ ${PORTVERSION}
 
 PLIST_FILES=	bin/SeamCarvingGui
 
