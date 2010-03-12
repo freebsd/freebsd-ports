@@ -6,12 +6,15 @@ share/icons/hicolor/48x48/apps/viking.png
 %%NLS%%share/locale/da/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/de/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/el/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/es/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/he/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/id/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/it/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/viking.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/viking.mo
