@@ -1,0 +1,90 @@
+--- framebuffer.c.orig	2009-02-23 18:23:54.000000000 -0500
++++ framebuffer.c	2010-02-22 19:26:38.000000000 -0500
+@@ -442,6 +442,11 @@
+ 	assert(initialized);
+ 
+ 	if (self->memory != MAP_FAILED) {
++		if (writecombine.enable) {
++			memctl_clearWriteCombine(writecombine.base,
++			    writecombine.size);
++			writecombine.enable = false;
++		}
+ 		if (munmap(self->memory, self->length) == -1)
+ 			warn("munmap()");
+ 		self->memory = MAP_FAILED;
+@@ -1162,18 +1167,21 @@
+ 			warnx("Invalid write-combining base detected. "
+ 			      "Start of framebuffer memory is %#x.",
+ 			      video_adapter_info.va_window);
+-		writecombine.base = video_adapter_info.va_window;
++		writecombine.base = (u_long)video_adapter_info.va_window;
+ 		if (writecombine.size != 0 &&
+ 		    video_adapter_info.va_window_size != writecombine.size)
+ 			warnx("Invalid write-combining size detected. "
+ 			      "Framebuffer size is %#x.",
+ 			      video_adapter_info.va_window_size);
+ 		writecombine.size = video_adapter_info.va_window_size;
++		writecombine.size = powerof2(writecombine.size) ?
++		    writecombine.size : 1UL << flsl(writecombine.size);
+ #endif
+-		if (writecombine.base != 0 && writecombine.size != 0)
+-			memctl_setWriteCombine(writecombine.base,
+-					       writecombine.size);
++		if (writecombine.base == 0 || writecombine.size == 0)
++			writecombine.enable = false;
+ 	}
++	if (writecombine.enable)
++		memctl_setWriteCombine(writecombine.base, writecombine.size);
+ 
+ 	/* VGA */
+ #ifdef ENABLE_VGA16FB
+--- memctl.c.orig	2009-01-23 10:53:36.000000000 -0500
++++ memctl.c	2010-02-22 19:26:38.000000000 -0500
+@@ -92,7 +92,7 @@
+ 		mem_range_desc.mr_owner[sizeof(mem_range_desc.mr_owner) - 1] =
+ 			'\0';
+ 		mem_range_op.mo_desc   = &mem_range_desc;
+-		mem_range_op.mo_arg[0] = 0;
++		mem_range_op.mo_arg[0] = MEMRANGE_SET_UPDATE;
+ 		if (ioctl(fd, MEMRANGE_SET, &mem_range_op) != -1)
+ 			result = true;
+ 		close(fd);
+@@ -130,3 +130,28 @@
+ #endif
+ }
+ 
++void memctl_clearWriteCombine(unsigned long base, unsigned long size)
++{
++#if defined (__FreeBSD__) && (defined (__amd64__) || defined (__i386__))
++	struct mem_range_desc mem_range_desc;
++	struct mem_range_op mem_range_op;
++	int fd;
++
++	assert(base != 0);
++	assert(size != 0);
++
++	privilege_on();
++	fd = open(_PATH_MEM, O_RDONLY);
++	privilege_off();
++	if (fd != -1) {
++		mem_range_desc.mr_base = base;
++		mem_range_desc.mr_len  = size;
++		mem_range_op.mo_desc   = &mem_range_desc;
++		mem_range_op.mo_arg[0] = MEMRANGE_SET_REMOVE;
++		if (ioctl(fd, MEMRANGE_SET, &mem_range_op) == -1)
++			warn("failed to clear mtrr (0x%lx/0x%lx)\n",
++			    base, size);
++		close(fd);
++	}
++#endif
++}
+--- memctl.h.orig	2009-01-23 10:53:36.000000000 -0500
++++ memctl.h	2010-02-22 19:26:38.000000000 -0500
+@@ -31,6 +31,7 @@
+ #include <stdbool.h>
+ 
+ bool memctl_setWriteCombine(unsigned long base, unsigned long size);
++void memctl_clearWriteCombine(unsigned long base, unsigned long size);
+ 
+ #endif /* INCLUDE_MEMCTL_H */
+ 
