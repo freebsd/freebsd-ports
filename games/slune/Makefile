@@ -7,7 +7,7 @@
 
 PORTNAME=	slune
 PORTVERSION=	1.0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/slune/
 DISTNAME=	Slune-${PORTVERSION}
@@ -32,6 +32,13 @@ USE_SDL=	sdl mixer
 
 PYDISTUTILS_PKGNAME=	Slune
 PYDISTUTILS_EGGINFODIR=	${PREFIX}/share
+
+DESKTOP_ENTRIES=	"Slune" \
+			"3D racing game" \
+			"${DATADIR}/images/slune.48.png" \
+			"slune" \
+			"Game;ArcadeGame;" \
+			false
 
 post-extract:
 .for FILE in slune.po.orig slune.po.rej
