@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Emulate/PSGI/.packlist
+%%SITE_PERL%%/CGI/Emulate/PSGI.pm
+%%SITE_PERL%%/CGI/Parse/PSGI.pm
+@dirrmtry %%SITE_PERL%%/CGI/Parse
+@dirrmtry %%SITE_PERL%%/CGI/Emulate
+@dirrmtry %%SITE_PERL%%/CGI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Emulate/PSGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Emulate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
