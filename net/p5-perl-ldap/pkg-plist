@@ -1,6 +1,8 @@
 @comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP/.packlist
 %%SITE_PERL%%/Bundle/Net/LDAP.pm
 %%SITE_PERL%%/LWP/Protocol/ldap.pm
+%%SITE_PERL%%/LWP/Protocol/ldaps.pm
 %%SITE_PERL%%/Net/LDAP.pm
 %%SITE_PERL%%/Net/LDAP.pod
 %%SITE_PERL%%/Net/LDAP/ASN.pm
@@ -27,6 +29,7 @@
 %%SITE_PERL%%/Net/LDAP/Entry.pod
 %%SITE_PERL%%/Net/LDAP/Examples.pod
 %%SITE_PERL%%/Net/LDAP/Extension.pm
+%%SITE_PERL%%/Net/LDAP/Extension/Refresh.pm
 %%SITE_PERL%%/Net/LDAP/Extension/SetPassword.pm
 %%SITE_PERL%%/Net/LDAP/Extension/WhoAmI.pm
 %%SITE_PERL%%/Net/LDAP/Extra.pm
@@ -51,15 +54,14 @@
 %%SITE_PERL%%/Net/LDAP/Util.pm
 %%SITE_PERL%%/Net/LDAPI.pm
 %%SITE_PERL%%/Net/LDAPS.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrm %%SITE_PERL%%/Net/LDAP/Control
-@dirrm %%SITE_PERL%%/Net/LDAP/Intermediate
-@dirrm %%SITE_PERL%%/Net/LDAP/Extension
-@dirrm %%SITE_PERL%%/Net/LDAP
-@dirrm %%SITE_PERL%%/Bundle/Net
-@dirrmtry %%SITE_PERL%%/Bundle
+@dirrmtry %%SITE_PERL%%/Net/LDAP/Intermediate
+@dirrmtry %%SITE_PERL%%/Net/LDAP/Extension
+@dirrmtry %%SITE_PERL%%/Net/LDAP/Control
+@dirrmtry %%SITE_PERL%%/Net/LDAP
 @dirrmtry %%SITE_PERL%%/Net
 @dirrmtry %%SITE_PERL%%/LWP/Protocol
 @dirrmtry %%SITE_PERL%%/LWP
+@dirrmtry %%SITE_PERL%%/Bundle/Net
+@dirrmtry %%SITE_PERL%%/Bundle
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/LDAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
