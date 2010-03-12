@@ -335,6 +335,7 @@ advi                            ports/print/advi
 adzap                           ports/www/adzap
 aee                             ports/editors/aee
 aegis                           ports/devel/aegis
+aegisub                         ports/multimedia/aegisub
 aescrypt                        ports/security/aescrypt
 aespipe                         ports/security/aespipe
 aestats                         ports/games/aestats
@@ -18106,6 +18107,7 @@ pdmenu                          ports/misc/pdmenu
 pdnmesh                         ports/cad/pdnmesh
 pdnsd                           ports/dns/pdnsd
 pdq                             ports/print/pdq
+pdsh                            ports/sysutils/pdsh
 pdumpfs                         ports/sysutils/pdumpfs
 pdumpfs-clean                   ports/sysutils/pdumpfs-clean
 pdumpfs-rsync                   ports/sysutils/pdumpfs-rsync
@@ -23911,6 +23913,7 @@ utf8proc                        ports/textproc/utf8proc
 utftools                        ports/misc/utftools
 utftpd                          ports/net/utftpd
 uticom                          ports/comms/uticom
+utopia                          ports/print/utopia
 utserver                        ports/games/utserver
 uudeview                        ports/converters/uudeview
 uudx                            ports/converters/uudx
@@ -24242,6 +24245,7 @@ webpy                           ports/www/webpy
 webredirect                     ports/www/webredirect
 webreport                       ports/www/webreport
 webresolve                      ports/www/webresolve
+webscarab                       ports/security/webscarab
 webserver                       ports/www/webserver
 webservices                     ports/www/webservices
 websh                           ports/www/websh
