@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	discount
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/markdown/
 
