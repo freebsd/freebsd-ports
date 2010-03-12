@@ -40,6 +40,8 @@ do-install:
 
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
 .include <bsd.port.pre.mk>
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
 .if defined(WITH_NVIDIA_GL)
 CFLAGS+=	-DWITH_NVIDIA_GL=1
