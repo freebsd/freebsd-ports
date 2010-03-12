@@ -27,13 +27,14 @@ post-build:
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/pci.h
 
 do-install:
-	@(${INSTALL_DATA} ${WRKSRC}/lib/libpci.so ${PREFIX}/lib/libpci.so.2)
+	@(${INSTALL_DATA} ${WRKSRC}/lib/libpci.so ${PREFIX}/lib/libpci.so.3)
 	@(${INSTALL_DATA} ${WRKSRC}/lib/libpci.a ${PREFIX}/lib/libpci.a)
-	@(${LN} -sf ${PREFIX}/lib/libpci.so.2 ${PREFIX}/lib/libpci.so)
+	@(${LN} -sf ${PREFIX}/lib/libpci.so.3 ${PREFIX}/lib/libpci.so)
 	@(${MKDIR} ${PREFIX}/include/pci)
 	@(${INSTALL_DATA} ${WRKSRC}/lib/config.h ${PREFIX}/include/pci/config.h)
 	@(${INSTALL_DATA} ${WRKSRC}/lib/header.h ${PREFIX}/include/pci/header.h)
 	@(${INSTALL_DATA} ${WRKSRC}/lib/pci.h ${PREFIX}/include/pci/pci.h)
 	@(${INSTALL_DATA} ${WRKSRC}/lib/types.h ${PREFIX}/include/pci/types.h)
+	@(${INSTALL_DATA} ${WRKSRC}/lib/libpci.pc ${PREFIX}/libdata/pkgconfig/libpci.pc)
 
 .include <bsd.port.mk>
