@@ -16,12 +16,12 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A photorealistic rendering system
 
 LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		fltk-threads>=0:${PORTSDIR}/x11-toolkits/fltk-threads
+    		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+		xsltproc:${PORTSDIR}/textproc/libxslt \
+		fltk-threads>=0:${PORTSDIR}/x11-toolkits/fltk-threads
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
