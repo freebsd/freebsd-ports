@@ -6,6 +6,7 @@
 
 PORTNAME=	jfbterm
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ac.auone-net.jp/~baba/jfbterm/ \
 		http://chirashi-no-ura.net/files/
