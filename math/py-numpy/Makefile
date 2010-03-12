@@ -21,8 +21,6 @@ COMMENT=	The New Numeric Extension to Python
 
 RUN_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 
-BROKEN=		does not build
-
 OPTIONS=	ATLAS "Use optimized blas library" Off
 
 USE_FORTRAN=	yes
@@ -34,6 +32,16 @@ LATEST_LINK=	py-${PORTNAME}
 WRKSRC=	${WRKDIR}/${DISTNAME:S/r/rc/}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 900009 && (${ARCH} == "i386" || ${ARCH} == "amd64")
+MASTER_SITES+=	http://svn.freebsd.org/base/head/lib/msun/:fp
+.if ${ARCH} == "i386"
+FP_ARCH=	i387
+.elif ${ARCH} == "amd64"
+FP_ARCH=	${ARCH}
+.endif
+DISTFILES+=	${FP_ARCH}/fenv.c?p=203441:fp ${FP_ARCH}/fenv.h?p=203441:fp
+.endif
 
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
@@ -61,6 +69,14 @@ post-patch:
 
 GCCLIBDIR=	`${FC} -print-file-name=libgfortran.so|${SED} -e s/libgfortran.so//`
 pre-configure:
+.if ${OSVERSION} <= 900009 && (${ARCH} == "i386" || ${ARCH} == "amd64")
+	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
+		${CP} ${DISTDIR}/${FP_ARCH}/fenv.c?p=203441 ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.c; \
+		${CP} ${DISTDIR}/${FP_ARCH}/fenv.h?p=203441 ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.h; \
+		${REINPLACE_CMD} -e 's|<fenv.h>|"fenv.h"|' ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.c; \
+		${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/fenv.patch; \
+ 	fi
+.endif
 .ifdef WITH_ATLAS
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" \
 	    -e "s+%%LOCALBASE%%+${LOCALBASE}+g" \
@@ -74,11 +90,27 @@ pre-configure:
 .endif
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" ${WRKSRC}/numpy/distutils/system_info.py
 
+pre-install:
+.if ${OSVERSION} <= 900009 && (${ARCH} == "i386" || ${ARCH} == "amd64")
+	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
+		${RM} ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.c.bak; \
+	fi
+.endif
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/numpy/f2py/f2py.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/numpybook.pdf ${DOCSDIR}
+.endif
+.if ${OSVERSION} <= 900009 && (${ARCH} == "i386" || ${ARCH} == "amd64")
+	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
+		${REINPLACE_CMD} -e "s|%%FENV%%||g" ${TMPPLIST}; \
+	else \
+		${REINPLACE_CMD} -e "s|%%FENV%%|@comment |g" ${TMPPLIST}; \
+	fi
+.else
+	@${REINPLACE_CMD} -e "s|%%FENV%%|@comment |g" ${TMPPLIST}
 .endif
 
 .include <bsd.port.post.mk>
