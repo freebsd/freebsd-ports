@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	wormux
-DISTVERSION=	0.8.3
-PORTREVISION=	4
+DISTVERSION=	0.9.0
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/wormux/ \
 		http://download.gna.org/wormux/archive/
 
-MAINTAINER=	toha@toha.org.ua
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Wormux game
 
 LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
