@@ -7,6 +7,7 @@
 
 PORTNAME=	vbetool
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codon.org.uk/~mjg59/vbetool/download/	\
 		${MASTER_SITE_LOCAL}
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	An application for executing video card BIOS code
 
-LIB_DEPENDS=	pci.2:${PORTSDIR}/devel/libpci	\
+LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci	\
 		x86.1:${PORTSDIR}/devel/libx86
 
 PLIST_FILES=	sbin/vbetool
