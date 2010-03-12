@@ -1,6 +1,6 @@
---- plugins/configure.orig	2008-09-15 16:26:48.000000000 +0800
-+++ plugins/configure	2009-02-23 20:09:39.000000000 +0800
-@@ -4993,6 +4993,268 @@ fi
+--- plugins/configure.orig	2009-09-20 20:25:31.000000000 -0400
++++ plugins/configure	2010-01-27 16:45:51.000000000 -0500
+@@ -4994,6 +4994,268 @@
  
  
  if test "${enable_bsdvideo}z" = "yesz" ; then
@@ -269,7 +269,7 @@
    if test "${ac_cv_header_machine_ioctl_meteor_h+set}" = set; then
    { echo "$as_me:$LINENO: checking for machine/ioctl_meteor.h" >&5
  echo $ECHO_N "checking for machine/ioctl_meteor.h... $ECHO_C" >&6; }
-@@ -5123,18 +5385,18 @@ if test $ac_cv_header_machine_ioctl_mete
+@@ -5124,18 +5386,18 @@
  fi
  
  
@@ -296,7 +296,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -5142,7 +5404,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -5143,7 +5405,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -305,7 +305,7 @@
  _ACEOF
  rm -f conftest.$ac_objext
  if { (ac_try="$ac_compile"
-@@ -5174,15 +5436,15 @@ rm -f core conftest.err conftest.$ac_obj
+@@ -5175,15 +5437,15 @@
  echo "${ECHO_T}$ac_header_compiler" >&6; }
  
  # Is the header present?
@@ -324,7 +324,7 @@
  _ACEOF
  if { (ac_try="$ac_cpp conftest.$ac_ext"
  case "(($ac_try" in
-@@ -5215,43 +5477,44 @@ echo "${ECHO_T}$ac_header_preproc" >&6; 
+@@ -5216,43 +5478,44 @@
  # So?  What about this header?
  case $ac_header_compiler:$ac_header_preproc:$ac_c_preproc_warn_flag in
    yes:no: )
@@ -393,3 +393,12 @@
  
    if test "${ac_cv_header_dev_ic_bt8xx_h+set}" = set; then
    { echo "$as_me:$LINENO: checking for dev/ic/bt8xx.h" >&5
+@@ -6161,6 +6424,8 @@
+ 
+ ac_config_files="$ac_config_files Makefile"
+ 
++ac_config_files="$ac_config_files vidinput_v4l/Makefile"
++
+ ac_config_files="$ac_config_files vidinput_v4l2/Makefile"
+ 
+ ac_config_files="$ac_config_files vidinput_dc/Makefile"

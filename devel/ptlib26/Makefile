@@ -7,7 +7,7 @@
 
 PORTNAME=	ptlib
 PORTVERSION=	2.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ptlib/2.6
@@ -65,9 +65,12 @@ PLIST_SUB+=	BSDVIDEO="@comment "
 .endif
 
 .if defined(WITH_V4L)
-CONFIGURE_ARGS+=--enable-v4l
+CONFIGURE_ARGS+=--enable-v4l --enable-v4l2
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${CPPFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 PLIST_SUB+=	V4L=""
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS+=	v4l1.0:${PORTSDIR}/multimedia/libv4l
 WITH_VIDEO=1
 .else
 CONFIGURE_ARGS+=--disable-v4l
