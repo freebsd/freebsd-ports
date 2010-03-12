@@ -1,6 +1,7 @@
 bin/plackup
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/.packlist
 %%SITE_PERL%%/HTTP/Message/PSGI.pm
+%%SITE_PERL%%/HTTP/Server/PSGI.pm
 %%SITE_PERL%%/Plack.pm
 %%SITE_PERL%%/Plack/App/CGIBin.pm
 %%SITE_PERL%%/Plack/App/Cascade.pm
@@ -9,29 +10,50 @@ bin/plackup
 %%SITE_PERL%%/Plack/App/File.pm
 %%SITE_PERL%%/Plack/App/PSGIBin.pm
 %%SITE_PERL%%/Plack/App/URLMap.pm
+%%SITE_PERL%%/Plack/App/WrapCGI.pm
 %%SITE_PERL%%/Plack/Builder.pm
 %%SITE_PERL%%/Plack/Component.pm
 %%SITE_PERL%%/Plack/HTTPParser.pm
 %%SITE_PERL%%/Plack/HTTPParser/PP.pm
+%%SITE_PERL%%/Plack/Handler.pm
+%%SITE_PERL%%/Plack/Handler/Apache1.pm
+%%SITE_PERL%%/Plack/Handler/Apache2.pm
+%%SITE_PERL%%/Plack/Handler/CGI.pm
+%%SITE_PERL%%/Plack/Handler/FCGI.pm
+%%SITE_PERL%%/Plack/Handler/HTTP/Server/PSGI.pm
+%%SITE_PERL%%/Plack/Handler/HTTP/Server/Simple.pm
+%%SITE_PERL%%/Plack/Handler/Standalone.pm
 %%SITE_PERL%%/Plack/Loader.pm
-%%SITE_PERL%%/Plack/Loader/Reloadable.pm
+%%SITE_PERL%%/Plack/Loader/Restarter.pm
+%%SITE_PERL%%/Plack/Loader/Shotgun.pm
 %%SITE_PERL%%/Plack/MIME.pm
+%%SITE_PERL%%/Plack/Request.pm
+%%SITE_PERL%%/Plack/Request/Upload.pm
+%%SITE_PERL%%/Plack/Response.pm
 %%SITE_PERL%%/Plack/Middleware.pm
 %%SITE_PERL%%/Plack/Middleware/AccessLog.pm
 %%SITE_PERL%%/Plack/Middleware/AccessLog/Timed.pm
 %%SITE_PERL%%/Plack/Middleware/Auth/Basic.pm
+%%SITE_PERL%%/Plack/Middleware/BufferedStreaming.pm
 %%SITE_PERL%%/Plack/Middleware/Chunked.pm
 %%SITE_PERL%%/Plack/Middleware/Conditional.pm
 %%SITE_PERL%%/Plack/Middleware/ConditionalGET.pm
 %%SITE_PERL%%/Plack/Middleware/ContentLength.pm
 %%SITE_PERL%%/Plack/Middleware/ContentMD5.pm
 %%SITE_PERL%%/Plack/Middleware/ErrorDocument.pm
+%%SITE_PERL%%/Plack/Middleware/HTTPExceptions.pm
 %%SITE_PERL%%/Plack/Middleware/JSONP.pm
 %%SITE_PERL%%/Plack/Middleware/Lint.pm
+%%SITE_PERL%%/Plack/Middleware/Log4perl.pm
+%%SITE_PERL%%/Plack/Middleware/LogDispatch.pm
 %%SITE_PERL%%/Plack/Middleware/MethodOverride.pm
+%%SITE_PERL%%/Plack/Middleware/NullLogger.pm
 %%SITE_PERL%%/Plack/Middleware/RearrangeHeaders.pm
+%%SITE_PERL%%/Plack/Middleware/Recursive.pm
+%%SITE_PERL%%/Plack/Middleware/Refresh.pm
 %%SITE_PERL%%/Plack/Middleware/Runtime.pm
 %%SITE_PERL%%/Plack/Middleware/SimpleContentFilter.pm
+%%SITE_PERL%%/Plack/Middleware/SimpleLogger.pm
 %%SITE_PERL%%/Plack/Middleware/StackTrace.pm
 %%SITE_PERL%%/Plack/Middleware/Static.pm
 %%SITE_PERL%%/Plack/Middleware/Writer.pm
@@ -43,8 +65,14 @@ bin/plackup
 %%SITE_PERL%%/Plack/Server/Apache2.pm
 %%SITE_PERL%%/Plack/Server/CGI.pm
 %%SITE_PERL%%/Plack/Server/FCGI.pm
+%%SITE_PERL%%/Plack/Server/README
+%%SITE_PERL%%/Plack/Server/ServerSimple.pm
 %%SITE_PERL%%/Plack/Server/Standalone.pm
 %%SITE_PERL%%/Plack/Server/Standalone/Prefork.pm
+%%SITE_PERL%%/Plack/TempBuffer.pm
+%%SITE_PERL%%/Plack/TempBuffer/Auto.pm
+%%SITE_PERL%%/Plack/TempBuffer/File.pm
+%%SITE_PERL%%/Plack/TempBuffer/PerlIO.pm
 %%SITE_PERL%%/Plack/Test.pm
 %%SITE_PERL%%/Plack/Test/MockHTTP.pm
 %%SITE_PERL%%/Plack/Test/Server.pm
@@ -56,14 +84,20 @@ bin/plackup
 @dirrm %%SITE_PERL%%/auto/share/dist/Plack
 @dirrm %%SITE_PERL%%/Plack/Util
 @dirrm %%SITE_PERL%%/Plack/Test
+@dirrm %%SITE_PERL%%/Plack/TempBuffer
 @dirrm %%SITE_PERL%%/Plack/Server/Standalone
 @dirrm %%SITE_PERL%%/Plack/Server
+@dirrm %%SITE_PERL%%/Plack/Request
 @dirrm %%SITE_PERL%%/Plack/Middleware/Auth
 @dirrm %%SITE_PERL%%/Plack/Middleware/AccessLog
 @dirrm %%SITE_PERL%%/Plack/Middleware
 @dirrm %%SITE_PERL%%/Plack/Loader
+@dirrm %%SITE_PERL%%/Plack/Handler/HTTP/Server
+@dirrm %%SITE_PERL%%/Plack/Handler/HTTP
+@dirrm %%SITE_PERL%%/Plack/Handler
 @dirrm %%SITE_PERL%%/Plack/HTTPParser
 @dirrm %%SITE_PERL%%/Plack/App
 @dirrm %%SITE_PERL%%/Plack
+@dirrmtry %%SITE_PERL%%/HTTP/Server
 @dirrmtry %%SITE_PERL%%/HTTP/Message
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
