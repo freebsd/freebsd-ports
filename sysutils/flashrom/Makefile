@@ -7,13 +7,14 @@
 
 PORTNAME=	flashrom
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://qa.coreboot.org/releases/
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A utility for reading, writing, verifying and erasing flash ROM chips
 
-LIB_DEPENDS=	pci.2:${PORTSDIR}/devel/libpci
+LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

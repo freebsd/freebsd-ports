@@ -7,7 +7,7 @@
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -26,7 +26,7 @@ MAN4=	radeonhd.4x
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_UTILS)
-LIB_DEPENDS+=	pci.2:${PORTSDIR}/devel/libpci
+LIB_DEPENDS+=	pci.3:${PORTSDIR}/devel/libpci
 PLIST_SUB=	UTILS=""
 CONFIGURE_ENV+=	PCIUTILS_CFLAGS="-I${LOCALBASE}/include -lpci -lz" \
 		PCIUTILS_LIBS="-L${LOCALBASE}/lib"
