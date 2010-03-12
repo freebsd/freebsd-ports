@@ -7,7 +7,7 @@
 
 PORTNAME=	pingus
 PORTVERSION=	0.7.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://pingus.seul.org/files/
 
@@ -24,6 +24,9 @@ USE_SCONS=	yes
 SCONS_ARGS=	with_linuxusbmouse=0 \
 		with_linuxevdev=0
 USE_SDL=	sdl image mixer
+
+DESKTOP_ENTRIES=	"Pingus" "${COMMENT}" "" \
+			"pingus" "" false
 
 PLIST=		${WRKDIR}/pkg-plist
 
