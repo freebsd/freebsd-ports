@@ -13,7 +13,15 @@
  
  # Prevent multiple expansion
  
-@@ -27631,6 +27631,8 @@ _ACEOF
+@@ -22335,6 +22335,7 @@
+ #define USE_ICONV 1
+ _ACEOF
+ 
++LIBS="${LIBS} -liconv"
+ 
+ for ac_func in iswblank
+ do
+@@ -27631,6 +27632,8 @@
  cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
@@ -22,7 +30,7 @@
  main(){char buf[20]; exit(sprintf(buf, "XXX") != 3);}
  _ACEOF
  rm -f conftest$ac_exeext
-@@ -28624,7 +28626,7 @@ cat confdefs.h >>conftest.$ac_ext
+@@ -28624,7 +28627,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  #include <stdio.h>
@@ -31,7 +39,7 @@
  
  int
  main ()
-@@ -28755,18 +28757,19 @@ fi
+@@ -28755,18 +28758,19 @@
  SAVELDFLAGS="$LDFLAGS"
  if test "x$with_db_prefix" != "x"; then
  	LDFLAGS="-L$with_db_prefix/lib $LDFLAGS"
@@ -53,7 +61,7 @@
  #include <db.h>
  int
  main ()
-@@ -28958,7 +28961,7 @@ _ACEOF
+@@ -28958,7 +28962,7 @@
  	dl_src=../common/dldb.c
  	LIBS="-ldl $LIBS"
  else
