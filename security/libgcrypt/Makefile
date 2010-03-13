@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
-MASTER_SITE_SUBDIR=	libgcrypt
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	General purpose crypto library based on code used in GnuPG
