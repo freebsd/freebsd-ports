@@ -7,6 +7,7 @@
 
 PORTNAME=	scite
 PORTVERSION=	2.03
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -16,14 +17,13 @@ MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A full-featured SCIntilla based Text Editor for GTK/GNOME
 
 LIB_DEPENDS=	scintilla.2:${PORTSDIR}/x11-toolkits/scintilla
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 MAKEFILE=	makefile
-
-SUB_FILES=	pkg-message
 
 MAN1=		scite.1
 
@@ -33,6 +33,8 @@ post-patch:
 .if defined(WITH_FULL_BUFFER_MENU)
 	@${REINPLACE_CMD} -e 's|30, "/Buffers|props.GetInt("buffers") > 30 ? props.GetInt("buffers") - 10 : 30, "/Buffers|g' ${WRKSRC}/SciTEGTK.cxx
 .endif
+	@${REINPLACE_CMD} -e 's|netscape "file://$$(SciteDefaultHome)|xdg-open "file://${DOCSDIR}|' \
+		${WRKSRC}/../src/SciTEGlobal.properties
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/SciTE ${PREFIX}/bin
@@ -48,11 +50,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.jpg ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.png ${DOCSDIR}
-.endif
-
-.if !defined(NOPORTDOCS)
-post-install:
-	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
