@@ -26,6 +26,16 @@
 		courier_enable="YES"
 		sendmail_enable="NONE"
 
+	Note: in newer OS versions you should change variables
+	used in /etc/rc.conf file, as NONE for sendmail_enable
+	is deprecated and will be not supported in future:
+
+		courier_enable="YES"
+		sendmail_enable="NO"
+		sendmail_submit_enable="NO"
+		sendmail_outbound_enable="NO"
+		sendmail_msp_queue_enable="NO"
+
 	Also, you will want to disable some Sendmail 
 	specific daily maintenance routines in your
 	/etc/periodic.conf file:

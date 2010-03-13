@@ -1,0 +1,10 @@
+--- courier/Makefile.in.orig	2010-02-15 18:58:00.000000000 +0100
++++ courier/Makefile.in	2010-02-15 19:11:12.000000000 +0100
+@@ -441,6 +441,7 @@
+ mkdir_p = @mkdir_p@
+ oldincludedir = @oldincludedir@
+ pdfdir = @pdfdir@
++piddir = @piddir@
+ prefix = @prefix@
+ program_transform_name = @program_transform_name@
+ psdir = @psdir@
