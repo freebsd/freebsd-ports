@@ -1,0 +1,32 @@
+.\" -*- coding: us-ascii -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH pee 1 2006-03-14 "" ""
+.SH NAME
+pee \- tee standard input to pipes
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBpee\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[\fI"command"\fR\&...]
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH DESCRIPTION
+\fBpee\fR is like \fBtee\fR
+but for pipes. Each command is run and fed a copy of the
+standard input. The output of all commands is sent to
+stdout.
+.PP
+Note that while this is similar to
+\fBtee\fR, a copy of the input is not sent
+to stdout, like tee does.
+.SH "SEE ALSO"
+\fBtee\fR(1)

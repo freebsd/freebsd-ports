@@ -1,0 +1,41 @@
+.\" -*- coding: us-ascii -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH isutf8 1 2006-02-19 "" ""
+.SH NAME
+isutf8 \- check whether files are valid UTF-8
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBisutf8\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[\fB-hq\fR] [\fB--help\fR] [\fB--quiet\fR] [\fIfile\fR\&...]
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH DESCRIPTION
+\fBisutf8\fR checks whether files are
+syntactically valid UTF-8. Input is either files named on the
+command line, or the standard input. Notices about files with
+invalid UTF-8 are printed to standard output.
+.SH OPTIONS
+.TP 
+\*(T<\fB\-h\fR\*(T>, \*(T<\fB\-\-help\fR\*(T>
+Print out a help summary.
+.TP 
+\*(T<\fB\-q\fR\*(T>, \*(T<\fB\-\-quiet\fR\*(T>
+Don't print messages telling which files are
+invalid UTF-8, merely indicate it with the exit
+status.
+.SH "EXIT STATUS"
+If the file is valid UTF-8, the exit status is zero.
+If the file is not valid UTF-8, or there is some
+error, the exit status is non-zero.
+.SH "SEE ALSO"
+\fButf8\fR(7)

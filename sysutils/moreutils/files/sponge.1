@@ -1,0 +1,30 @@
+.\" -*- coding: us-ascii -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH sponge 1 2006-02-19 "" ""
+.SH NAME
+sponge \- soak up standard input and write to a file
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBsed '...' file | grep '...' | sponge file\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH DESCRIPTION
+\fBsponge\fR reads standard input and
+writes it out to the specified file. Unlike a shell
+redirect, sponge soaks up all its input before
+opening the output file. This allows constricting
+pipelines that read from and write to
+the same file. 
+.PP
+If no output file is specified, sponge outputs to
+stdout.

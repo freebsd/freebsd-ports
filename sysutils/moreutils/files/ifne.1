@@ -1,0 +1,44 @@
+.\" -*- coding: us-ascii -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH ifne 1 2008-05-01 "" ""
+.SH NAME
+ifne \- Run command if the standard input is not empty
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBifne [-n] command\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH DESCRIPTION
+\fBifne\fR runs the following command if and only if
+the standard input is not empty.
+.SH OPTIONS
+.TP 
+\*(T<\fB\-n\fR\*(T>
+Reverse operation. Run the command if the standard input is empty.
+
+Note that if the standard input is not empty, it is passed through ifne
+in this case.
+.SH EXAMPLE
+'nh
+.fi
+.ad l
+\fBfind . -name core | ifne mail -s "Core files found" root\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH AUTHOR
+Copyright 2008 by Javier Merino <cibervicho@gmail.com>
+.PP
+Licensed under the GNU GPL
