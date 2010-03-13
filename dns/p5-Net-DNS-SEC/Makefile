@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-DNS-SEC
-PORTVERSION=	0.15
-PORTREVISION=	1
+PORTVERSION=	0.16
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN \
 		http://www.ripe.net/ripencc/pub-services/np/DISI/SRC/
