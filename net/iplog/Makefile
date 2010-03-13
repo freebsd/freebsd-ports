@@ -19,8 +19,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-MAN5=	iplog.conf.5
-MAN8=	iplog.8
+MAN5=		iplog.conf.5
+MAN8=		iplog.8
+
+USE_RC_SUBR=	iplog
+SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 post-patch:
@@ -43,16 +46,6 @@ post-install:
 	@${ECHO_MSG} "See ${PREFIX}/etc/example-iplog.conf for an example"
 	@${ECHO_MSG} "============================================================================"
 .endif
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/iplog.sh.sample file."
-	@${CAT} ${FILESDIR}/iplog.sh.tmpl | \
-		${SED} -e 's;PREFIX;${PREFIX};' \
-		> ${PREFIX}/etc/rc.d/iplog.sh.sample
-	@${CHMOD} 555 ${PREFIX}/etc/rc.d/iplog.sh.sample
-	@${ECHO_MSG} "----------------------------------------------------------------------------"
-	@${ECHO_MSG} "If you want iplog to be run as a daemon then do:"
-	@${ECHO_MSG} "cp -p ${PREFIX}/etc/rc.d/iplog.sh.sample ${PREFIX}/etc/rc.d/iplog.sh"
-	@${ECHO_MSG} "----------------------------------------------------------------------------"
-	@${ECHO_MSG}
+	@${MKDIR} /var/run/iplog
 
 .include <bsd.port.post.mk>
