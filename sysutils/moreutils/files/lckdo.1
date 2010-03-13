@@ -1,0 +1,66 @@
+.\" -*- coding: us-ascii -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH lckdo 1 2007-08-15 "" ""
+.SH NAME
+lckdo \- run a program with a lock held
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBlckdo\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[options] {lockfile} {program} [arguments]
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH DESCRIPTION
+\fBlckdo\fR runs a program with a lock
+held, in order to prevent multiple processes from running in
+parallel. Use just like \fBnice\fR or
+\fBnohup\fR.
+.SH OPTIONS
+.TP 
+\*(T<\fB\-w\fR\*(T>
+If the lock is already held by another process,
+wait for it to complete instead of failing
+immediately.
+.TP 
+\*(T<\fB\-W {sec}\fR\*(T>
+The same as -w but wait not more than sec
+seconds.
+.TP 
+\*(T<\fB\-e\fR\*(T>
+Execute the program directly without forking and
+waiting (keeps an extra file descriptor open).
+.TP 
+\*(T<\fB\-E {nnn}\fR\*(T>
+Set the file descriptor number to keep open when
+exec()ing (implies -e).
+.TP 
+\*(T<\fB\-n\fR\*(T>
+Do not create the lock file if it does not
+exist.
+.TP 
+\*(T<\fB\-q\fR\*(T>
+Produce no output if lock is already held.
+.TP 
+\*(T<\fB\-s\fR\*(T>
+Lock in shared (read) mode.
+.TP 
+\*(T<\fB\-x\fR\*(T>
+Lock in exclusive (write) mode (default).
+.TP 
+\*(T<\fB\-t\fR\*(T>
+Test for lock existence.
+.SH "EXIT STATUS"
+If the lock was successfully acquired, the return value is that
+of the program invoked by \fBlckdo\fR. If the lock
+couldn't be acquired, EX_TEMPFAIL is returned. If there was a problem
+opening/creating or locking the lock file, EX_CANTCREAT or EX_OSERR
+will be returned.

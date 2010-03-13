@@ -1,0 +1,35 @@
+.\" -*- coding: us-ascii -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH mispipe 1 2006-09-07 "" ""
+.SH NAME
+mispipe \- pipe two commands, returning the exit status of the first
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBmispipe\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[\fI"command1"\fR] [\fI"command2"\fR]
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH DESCRIPTION
+\fBmispipe\fR pipes two commands
+together like the shell does, but unlike piping in the
+shell, the exit status of the first command is returned.
+.PP
+Note that some shells, notably \fBbash\fR,
+do offer a pipefail option, however, that option does not
+behave the same since it makes a failure of any command in
+the pipeline be returned, not just the exit status of the
+first.
+.SH "EXIT STATUS"
+The exit status of the first command. If the process
+terminated abnormally (due to a signal), 128 will be added
+to its exit status.
