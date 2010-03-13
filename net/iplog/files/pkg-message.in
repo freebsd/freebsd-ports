@@ -1,0 +1,5 @@
+=========================================================
+To daemonise iplog add iplog_enable="YES" to /etc/rc.conf
+& run
+%%PREFIX%%/etc/rc.d/iplog start
+=========================================================
