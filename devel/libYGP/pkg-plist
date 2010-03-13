@@ -19,7 +19,6 @@
 %%YGP%%include/YGP/File.h
 %%YGP%%include/YGP/FileRExp.h
 %%YGP%%include/YGP/FileTypeChk.h
-%%YGP%%include/YGP/Handle.h
 %%YGP%%include/YGP/IDirSrch.h
 %%YGP%%include/YGP/INIFile.h
 %%YGP%%include/YGP/IVIOAppl.h
@@ -28,22 +27,20 @@
 %%YGP%%include/YGP/Module.h
 %%YGP%%include/YGP/Mutex.h
 %%YGP%%include/YGP/Parse.h
+%%YGP%%include/YGP/Path.h
 %%YGP%%include/YGP/PathDirSrch.h
-%%YGP%%include/YGP/PathSrch.h
 %%YGP%%include/YGP/Process.h
 %%YGP%%include/YGP/RDirSrch.h
 %%YGP%%include/YGP/RDirSrchSrv.h
 %%YGP%%include/YGP/RegExp.h
 %%YGP%%include/YGP/Relation.h
 %%YGP%%include/YGP/RemoteFile.h
-%%YGP%%include/YGP/SmartPtr.h
 %%YGP%%include/YGP/Socket.h
 %%YGP%%include/YGP/SortDirSrch.h
 %%YGP%%include/YGP/StackTrc.h
 %%YGP%%include/YGP/StatusObj.h
 %%YGP%%include/YGP/TableWriter.h
 %%YGP%%include/YGP/Thread.h
-%%YGP%%include/YGP/Tokenize.h
 %%YGP%%include/YGP/Trace.h
 %%YGP%%include/YGP/Utility.h
 %%YGP%%include/YGP/XDirSrch.h
@@ -76,6 +73,7 @@
 %%XGP%%include/XGP/XFileList.h
 %%XGP%%include/XGP/XPrintDlg.h
 %%XGP%%include/XGP/XValue.h
+%%XGP%%include/XGP/WebkitViewer.h
 %%YGP%%lib/libYGP.la
 %%YGP%%lib/libYGP-0.so
 %%YGP%%lib/libYGP.so
@@ -97,6 +95,7 @@
 %%XGP%%share/XGP/Browser_netscape.png
 %%XGP%%share/XGP/Browser_opera.png
 %%XGP%%share/XGP/Browser_seamonkey.png
+%%XGP%%share/XGP/Browser_WEBKIT.png
 %%XGP%%share/XGP/Default.png
 %%XGP%%share/XGP/Directory.png
 %%XGP%%share/XGP/Executable.png
