@@ -37,6 +37,10 @@ MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX} OV_INCLUDE=${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800501
+BROKEN=		does not build
+.endif
+
 .if !defined(WITHOUT_OVIMArray)
 PLIST_SUB+=	OVIMArray=""
 .else
