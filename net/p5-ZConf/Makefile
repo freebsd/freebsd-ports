@@ -7,6 +7,7 @@
 
 PORTNAME=	ZConf
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -20,7 +21,10 @@ RUN_DEPENDS=	${SITE_PERL}/Net/LDAP/Entry.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Net/LDAP/Makepath.pm:${PORTSDIR}/net/p5-Net-LDAP-Makepath \
 		${SITE_PERL}/ZML.pm:${PORTSDIR}/devel/p5-ZML \
 		${SITE_PERL}/Chooser.pm:${PORTSDIR}/devel/p5-Chooser \
-		${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir
+		${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir \
+		${SITE_PERL}/Net/LDAP/AutoDNs.pm:${PORTSDIR}/net/p5-Net-LDAP-AutoDNs \
+		${SITE_PERL}/Net/LDAP/AutoServer.pm:${PORTSDIR}/net/p5-Net-LDAP-AutoServer
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
