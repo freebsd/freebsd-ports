@@ -6,15 +6,16 @@
 #
 
 PORTNAME?=	libYGP
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.30
 CATEGORIES=	devel
 MASTER_SITES=	SF/libymp/libymp/libYGP-${PORTVERSION}
 DISTNAME=	libYGP-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	Yet another General Purpose library
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
+		boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
