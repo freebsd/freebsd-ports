@@ -43,6 +43,10 @@ OPTIONS=	MPG123 "mpg123 support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800501
+BROKEN=		does not build
+.endif
+
 .if !defined(WITHOUT_MPG123)
 BUILD_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 .else
