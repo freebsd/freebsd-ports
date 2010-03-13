@@ -41,6 +41,10 @@ OPTIONS=	GAME	"Build the main game .so file"		off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800501
+BROKEN=		does not build
+.endif
+
 .if !defined(WITHOUT_GAME)
 PLIST_SUB+=	GAME=""
 Q2GAMES+=	baseq2
