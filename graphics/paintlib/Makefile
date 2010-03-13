@@ -39,7 +39,7 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
+.if ${OSVERSION} >= 800501
 BROKEN=		does not build
 .endif
 
