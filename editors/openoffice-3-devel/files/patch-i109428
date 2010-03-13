@@ -9,14 +9,15 @@
      AC_MSG_RESULT([yes])
      ENABLE_GRAPHITE="TRUE"
      AC_MSG_CHECKING([which graphite to use])
---- configure.orig	2010-02-26 08:02:44.000000000 +0900
-+++ configure	2010-03-13 14:09:51.000000000 +0900
-@@ -19036,7 +19036,7 @@
+
+--- configure.orig	2010-03-10 05:08:35.000000000 +0900
++++ configure	2010-03-13 18:48:47.000000000 +0900
+@@ -15913,7 +15913,7 @@
  
- echo "$as_me:$LINENO: checking whether to enable graphite support" >&5
- echo $ECHO_N "checking whether to enable graphite support... $ECHO_C" >&6
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to enable graphite support" >&5
+ $as_echo_n "checking whether to enable graphite support... " >&6; }
 -if test "$_os" = "WINNT" -o "$_os" = "Linux" && test "z$enable_graphite" == "z" -o "$enable_graphite" != "no" ; then
 +if test "$_os" = "WINNT" -o "$_os" = "Linux" -o "$_os" = "FreeBSD" && test "z$enable_graphite" = "z" -o "$enable_graphite" != "no" ; then
-     echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
      ENABLE_GRAPHITE="TRUE"
