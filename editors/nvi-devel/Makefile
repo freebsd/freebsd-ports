@@ -27,12 +27,13 @@ USE_AUTOTOOLS=		libtool:22
 USE_LDCONFIG=		yes
 CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE} \
 			--program-prefix=n
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 CONFIGURE_SCRIPT=	../dist/configure
 MAN1=			nex.1 nvi.1 nview.1
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_WIDE_CHARS)
+.if defined(WITH_WIDECHAR)
 CONFIGURE_ARGS+=    --enable-widechar
 .endif
 
