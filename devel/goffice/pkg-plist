@@ -16,6 +16,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/app/goffice-app.h
 include/libgoffice-%%SHORT_VER%%/goffice/app/io-context-priv.h
 include/libgoffice-%%SHORT_VER%%/goffice/app/io-context.h
 include/libgoffice-%%SHORT_VER%%/goffice/app/module-plugin-defs.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-arc.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-canvas.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-circle.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-ellipse.h
