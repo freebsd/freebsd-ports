@@ -7,12 +7,15 @@
 
 PORTNAME=	Module-List
 PORTVERSION=	0.002
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	oleg@mamontov.net
 COMMENT=	Module 'directory' listing
+
+RUN_DEPENDS=	${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
 
 PERL_MODBUILD=	yes
 
