@@ -38,4 +38,10 @@ MAKE_ENV+=	LD_LIBRARY_PATH="${WRKSRC}/lib"
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xext
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800501
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
