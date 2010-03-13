@@ -1,6 +1,63 @@
---- courier/configure.orig	Sun Jul  3 00:06:22 2005
-+++ courier/configure	Sun Jul  3 00:06:22 2005
-@@ -22109,9 +22109,9 @@
+--- courier/configure.orig	2009-09-05 13:59:59.000000000 +0200
++++ courier/configure	2010-02-15 20:05:20.000000000 +0100
+@@ -819,6 +819,7 @@
+ dirlist
+ transport
+ MODE
++piddir
+ COPYRIGHT
+ testmode
+ COURIERAUTHCONFIG
+@@ -954,6 +955,7 @@
+ enable_libtool_lock
+ with_softlinkdir
+ with_testmode
++with_piddir
+ with_transport
+ with_db
+ with_courierlogger
+@@ -1629,6 +1631,7 @@
+   --with-softlinks=dir:link,dir:link...   specify soft links for
+                                           installation subdirectories.
+  -- This space intentionally left blank --
++  --with-piddir         Directory where webmlm.pid is created
+   --with-transport='local esmtp ...'
+                           Specify list of modules to install
+ 
+@@ -2553,7 +2556,7 @@
+ fi
+ 
+ fi
+-INSTALL_STRIP_PROGRAM="\$(install_sh) -c -s"
++INSTALL_STRIP_PROGRAM="install  -s -o root -g wheel -m 555 -s"
+ 
+ { $as_echo "$as_me:$LINENO: checking for a thread-safe mkdir -p" >&5
+ $as_echo_n "checking for a thread-safe mkdir -p... " >&6; }
+@@ -15882,6 +15885,14 @@
+ esac
+ 
+ 
++# Check whether --with-piddir was given.
++if test "${with_piddir+set}" = set; then
++  withval=$with_piddir; piddir="$withval"
++  else
++    piddir=$localstatedir/run
++fi
++
++
+ version=`cat ../version`
+ 
+ COPYRIGHT="Courier $version Copyright 1999-2008 Double Precision, Inc."
+@@ -17008,7 +17019,7 @@
+ 
+ # Check whether --with-ldapaliasd was given.
+ if test "${with_ldapaliasd+set}" = set; then
+-  withval=$with_ldapaliasd; ldapaliasd="$withval"; ldapaliasd="yes"
++  withval=$with_ldapaliasd; ldapaliasd="$withval"
+ fi
+ 
+ 
+@@ -18397,9 +18408,9 @@
  
  if test "$testmode" = "0"
  then
@@ -12,4 +69,4 @@
 +	INSTALL_DATA='${BSD_INSTALL_DATA}'
  fi
  
- ac_ext=cc
+ ac_ext=cpp

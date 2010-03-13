@@ -1,0 +1,61 @@
+--- courier/webmlmd.rc.in.orig	2007-03-05 05:43:24.000000000 +0100
++++ courier/webmlmd.rc.in	2009-10-03 22:18:39.000000000 +0200
+@@ -1,48 +1,48 @@
+ #! @SHELL@
+ 
+-case "$1" in
++case "$0" in
+ 
+ /*)
+-	prog="$1"
++	prog="$0"
+ 	;;
+ *)
+-	prog="`which $1`"
++	prog="`which $0`"
+ 	;;
+ esac
+ 
+ set -e
+ 
+-case "$2" in
++case "$1" in
+ start)
+-	if test "$3" = ""
++	if test "$2" = ""
+ 	then
+ 		echo "Usage: $prog start [configfile]" >&2
+ 		exit 1
+ 	fi
+ 
+-	@SETENV@ -i @SHELL@ -c "set -a; . $3; $prog check || exit 1; \
++	@SETENV@ -i @SHELL@ -c "set -a; . $2; $prog check || exit 1; \
+ 		@courierlogger@ -pid="'"${PIDFILE}"'" $LOGGEROPTS -start $prog"
+ 	exit $?
+ 	;;
+ stop)
+-	if test "$3" = ""
++	if test "$2" = ""
+ 	then
+ 		echo "Usage: $prog stop [configfile]" >&2
+ 		exit 1
+ 	fi
+ 
+-	@SETENV@ -i @SHELL@ -c "set -a; . $3;\
++	@SETENV@ -i @SHELL@ -c "set -a; . $2;\
+ 		@courierlogger@ -pid="'"${PIDFILE}"'" $LOGGEROPTS -stop $prog"
+ 	exit $?
+ 	;;
+ restart)
+-	if test "$3" = ""
++	if test "$2" = ""
+ 	then
+ 		echo "Usage: $prog restart [configfile]" >&2
+ 		exit 1
+ 	fi
+ 
+-	@SETENV@ -i @SHELL@ -c "set -a; . $3; $prog check || exit 1; \
++	@SETENV@ -i @SHELL@ -c "set -a; . $2; $prog check || exit 1; \
+ 		@courierlogger@ -pid="'"${PIDFILE}"'" $LOGGEROPTS -restart $prog"
+ 	exit $?
+ 	;;

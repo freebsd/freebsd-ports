@@ -52,16 +52,16 @@ replace() {
 }
 
 if [ ":$2" = ":POST-INSTALL" ]; then
-        if yesno "Would you like to activate Courier in /etc/mail/mailer.conf" n; then
-            mv -f /etc/mail/mailer.conf /etc/mail/mailer.conf.old
-            echo "#"						>  /etc/mail/mailer.conf
-            echo -n "# Execute the Courier sendmail program"	>> /etc/mail/mailer.conf
-            echo ", named ${PKG_PREFIX}/bin/sendmail"		>> /etc/mail/mailer.conf
-            echo "#"						>> /etc/mail/mailer.conf
-            echo "sendmail	${PKG_PREFIX}/bin/sendmail"	>> /etc/mail/mailer.conf
-            echo "send-mail	${PKG_PREFIX}/bin/sendmail"	>> /etc/mail/mailer.conf
-            echo "mailq		${PKG_PREFIX}/bin/mailq"	>> /etc/mail/mailer.conf
-            echo "newaliases	${PKG_PREFIX}/sbin/makealiases"	>> /etc/mail/mailer.conf
-            echo "Done."
-        fi
+    if yesno "Would you like to activate Courier in /etc/mail/mailer.conf" n; then
+        mv -f /etc/mail/mailer.conf /etc/mail/mailer.conf.old
+        echo "#"						>  /etc/mail/mailer.conf
+        echo -n "# Execute the Courier sendmail program"	>> /etc/mail/mailer.conf
+        echo ", named ${PKG_PREFIX}/bin/sendmail"		>> /etc/mail/mailer.conf
+        echo "#"						>> /etc/mail/mailer.conf
+        echo "sendmail	${PKG_PREFIX}/bin/sendmail"	>> /etc/mail/mailer.conf
+        echo "send-mail	${PKG_PREFIX}/bin/sendmail"	>> /etc/mail/mailer.conf
+        echo "mailq		${PKG_PREFIX}/bin/mailq"	>> /etc/mail/mailer.conf
+        echo "newaliases	${PKG_PREFIX}/sbin/makealiases"	>> /etc/mail/mailer.conf
+        echo "Done."
+    fi
 fi

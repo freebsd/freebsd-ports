@@ -15,7 +15,7 @@
  
  .message-number { }
 -.message-status { }
-+.message-flag { padding: 0}
++.message-flag { padding: 0 }
 +.message-select { padding: 0 }
 +.message-status { padding: 0 }
  .message-date { }

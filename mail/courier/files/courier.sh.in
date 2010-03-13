@@ -246,19 +246,18 @@ courier_start()
 			;;
 		esac
 	fi
-	echo "."
 
 	LISTS=""
 	if [ -f ${sysconfdir}/webmlmrc ]; then 
 		. ${sysconfdir}/webmlmrc
-		if [ -n "$LISTS" ];then
-			if [ -x ${bindir}/webmlmd \
-			  -a -x ${bindir}/webmlmd.rc ]; then
-				echo -n " webmlmd"
-				${bindir}/webmlmd.rc start ${sysconfdir}/webmlmrc
-			fi
+		if [ -n "$LISTS" \
+		  -a -x ${bindir}/webmlmd \
+		  -a -x ${bindir}/webmlmd.rc ]; then
+			echo -n " webmlmd"
+			${bindir}/webmlmd.rc start ${sysconfdir}/webmlmrc
 		fi
 	fi
+	echo "."
 }
 
 courier_stop()

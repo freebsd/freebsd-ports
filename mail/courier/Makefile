@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.62.0
+PORTVERSION=	0.63.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -315,16 +315,16 @@ CONFIGURE_ARGS+=--without-ipv6
 .endif
 
 .if defined(WITH_MAILDROPFLAGS) || !defined(WITHOUT_MAILDROPFLAGS)
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-maildrop__maildir.C
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-maildrop__maildir.C
 .endif
 
 .if defined(WITH_WEBMAILXFACE) || !defined(WITHOUT_WEBMAILXFACE)
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-webmail__msg2html.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webmail__msg2html.c
 .endif
 
 .if defined(WITH_WEBMAILFLAGS) || !defined(WITHOUT_WEBMAILFLAGS)
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-webmail__folder.c ${FILESDIR}/extra-patch-webmail__maildir.c
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-webmail__maildir.h ${FILESDIR}/extra-patch-webmail__images__sqwebmail.css
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webmail__folder.c ${FILESDIR}/extra-patch-webmail__maildir.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webmail__maildir.h ${FILESDIR}/extra-patch-webmail__images__sqwebmail.css
 .endif
 
 .if defined(WITH_WEBMAILRSENT) || !defined(WITHOUT_WEBMAILRSENT)

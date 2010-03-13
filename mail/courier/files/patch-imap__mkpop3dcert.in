@@ -1,0 +1,11 @@
+--- imap/mkpop3dcert.in.orig	2010-02-15 21:45:23.000000000 +0100
++++ imap/mkpop3dcert.in	2010-02-15 21:37:01.000000000 +0100
+@@ -40,7 +40,7 @@
+ then
+ 	cp /dev/null @mydatadir@/pop3d.pem
+ 	chmod 600 @mydatadir@/pop3d.pem
+-	chown @mailuser@ @mydatadir@/pop3d.pem
++	/usr/sbin/chown @mailuser@ @mydatadir@/pop3d.pem
+ 
+ 	dd if=@RANDOMV@ of=@mydatadir@/pop3d.rand count=1 2>/dev/null
+ 	@OPENSSL@ req -new -x509 -days 365 -nodes \

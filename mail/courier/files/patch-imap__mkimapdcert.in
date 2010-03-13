@@ -1,0 +1,11 @@
+--- imap/mkimapdcert.in.orig	2010-02-15 21:42:15.000000000 +0100
++++ imap/mkimapdcert.in	2010-02-15 21:36:46.000000000 +0100
+@@ -40,7 +40,7 @@
+ then
+ 	cp /dev/null @mydatadir@/imapd.pem
+ 	chmod 600 @mydatadir@/imapd.pem
+-	chown @mailuser@ @mydatadir@/imapd.pem
++	/usr/sbin/chown @mailuser@ @mydatadir@/imapd.pem
+ 
+ 	dd if=@RANDOMV@ of=@mydatadir@/imapd.rand count=1 2>/dev/null
+ 	@OPENSSL@ req -new -x509 -days 365 -nodes \

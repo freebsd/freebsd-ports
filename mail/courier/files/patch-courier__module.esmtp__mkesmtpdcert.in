@@ -1,0 +1,11 @@
+--- courier/module.esmtp/mkesmtpdcert.in.orig	2010-02-15 21:37:57.000000000 +0100
++++ courier/module.esmtp/mkesmtpdcert.in	2010-02-15 21:37:16.000000000 +0100
+@@ -36,7 +36,7 @@
+ then
+ 	cp /dev/null @mydatadir@/esmtpd.pem
+ 	chmod 600 @mydatadir@/esmtpd.pem
+-	chown @mailuser@ @mydatadir@/esmtpd.pem
++	/usr/sbin/chown @mailuser@ @mydatadir@/esmtpd.pem
+ 	dd if=@RANDOMV@ of=@mydatadir@/esmtpd.rand count=1 2>/dev/null
+ 	@OPENSSL@ req -new -x509 -days 365 -nodes \
+ 		  -config @sysconfdir@/esmtpd.cnf -out @mydatadir@/esmtpd.pem -keyout @mydatadir@/esmtpd.pem || cleanup
