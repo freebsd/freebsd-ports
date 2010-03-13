@@ -2093,6 +2093,7 @@ darkice                         ports/audio/darkice
 darknock                        ports/graphics/darknock
 darkplaces                      ports/games/darkplaces
 darkstat                        ports/net-mgmt/darkstat
+darktable                       ports/graphics/darktable
 darts                           ports/devel/darts
 darwinstreamingserver           ports/net/DarwinStreamingServer
 dash                            ports/shells/dash
@@ -10806,6 +10807,7 @@ p5-CGI-Compress-Gzip            ports/www/p5-CGI-Compress-Gzip
 p5-CGI-Cookie-Splitter          ports/www/p5-CGI-Cookie-Splitter
 p5-CGI-Cookie-XS                ports/www/p5-CGI-Cookie-XS
 p5-CGI-Deurl-XS                 ports/www/p5-CGI-Deurl-XS
+p5-CGI-Emulate-PSGI             ports/www/p5-CGI-Emulate-PSGI
 p5-CGI-Ex                       ports/www/p5-CGI-Ex
 p5-CGI-Expand                   ports/www/p5-CGI-Expand
 p5-CGI-FCKeditor                ports/www/p5-CGI-FCKeditor
@@ -11720,6 +11722,7 @@ p5-File-Cache                   ports/devel/p5-File-Cache
 p5-File-Cat                     ports/devel/p5-File-Cat
 p5-File-ChangeNotify            ports/devel/p5-File-ChangeNotify
 p5-File-Copy-Recursive          ports/devel/p5-File-Copy-Recursive
+p5-File-CountLines              ports/devel/p5-File-CountLines
 p5-File-CounterFile             ports/misc/p5-File-CounterFile
 p5-File-CreationTime            ports/devel/p5-File-CreationTime
 p5-File-DesktopEntry            ports/devel/p5-File-DesktopEntry
@@ -11874,6 +11877,7 @@ p5-Genezzo                      ports/databases/p5-Genezzo
 p5-Geo-Cache                    ports/misc/p5-Geo-Cache
 p5-Geo-Caching                  ports/www/p5-Geo-Caching
 p5-Geo-Coder-Google             ports/misc/p5-Geo-Coder-Google
+p5-Geo-Coder-Multiple           ports/misc/p5-Geo-Coder-Multiple
 p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
 p5-Geo-Distance                 ports/math/p5-Geo-Distance
 p5-Geo-Distance-XS              ports/math/p5-Geo-Distance-XS
@@ -12114,6 +12118,7 @@ p5-Hash-Merge                   ports/textproc/p5-Hash-Merge
 p5-Hash-Merge-Simple            ports/devel/p5-Hash-Merge-Simple
 p5-Hash-MoreUtils               ports/devel/p5-Hash-MoreUtils
 p5-Hash-MultiKey                ports/devel/p5-Hash-MultiKey
+p5-Hash-MultiValue              ports/devel/p5-Hash-MultiValue
 p5-Hash-Union                   ports/devel/p5-Hash-Union
 p5-Hash-Util-FieldHash-Compat   ports/devel/p5-Hash-Util-FieldHash-Compat
 p5-Hash-WithDefaults            ports/devel/p5-Hash-WithDefaults
@@ -12325,6 +12330,7 @@ p5-List-Permutor                ports/devel/p5-List-Permutor
 p5-List-PowerSet                ports/devel/p5-List-PowerSet
 p5-List-Rotation-Cycle          ports/devel/p5-List-Rotation-Cycle
 p5-List-Uniq                    ports/devel/p5-List-Uniq
+p5-List-Util-WeightedRoundRobin  ports/misc/p5-List-Util-WeightedRoundRobin
 p5-Locale-Codes                 ports/misc/p5-Locale-Codes
 p5-Locale-Currency-Format       ports/finance/p5-Locale-Currency-Format
 p5-Locale-Geocode               ports/misc/p5-Locale-Geocode
@@ -14663,6 +14669,7 @@ p5-cgi-compress-gzip            ports/www/p5-CGI-Compress-Gzip
 p5-cgi-cookie-splitter          ports/www/p5-CGI-Cookie-Splitter
 p5-cgi-cookie-xs                ports/www/p5-CGI-Cookie-XS
 p5-cgi-deurl-xs                 ports/www/p5-CGI-Deurl-XS
+p5-cgi-emulate-psgi             ports/www/p5-CGI-Emulate-PSGI
 p5-cgi-ex                       ports/www/p5-CGI-Ex
 p5-cgi-expand                   ports/www/p5-CGI-Expand
 p5-cgi-fasttemplate             ports/www/p5-CGI-FastTemplate
@@ -15450,6 +15457,7 @@ p5-file-chdir                   ports/devel/p5-File-chdir
 p5-file-chmod                   ports/devel/p5-File-chmod
 p5-file-copy-recursive          ports/devel/p5-File-Copy-Recursive
 p5-file-counterfile             ports/misc/p5-File-CounterFile
+p5-file-countlines              ports/devel/p5-File-CountLines
 p5-file-creationtime            ports/devel/p5-File-CreationTime
 p5-file-desktopentry            ports/devel/p5-File-DesktopEntry
 p5-file-dir-dumper              ports/devel/p5-File-Dir-Dumper
@@ -15597,6 +15605,7 @@ p5-genezzo                      ports/databases/p5-Genezzo
 p5-geo-cache                    ports/misc/p5-Geo-Cache
 p5-geo-caching                  ports/www/p5-Geo-Caching
 p5-geo-coder-google             ports/misc/p5-Geo-Coder-Google
+p5-geo-coder-multiple           ports/misc/p5-Geo-Coder-Multiple
 p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
 p5-geo-distance                 ports/math/p5-Geo-Distance
 p5-geo-distance-xs              ports/math/p5-Geo-Distance-XS
@@ -15694,6 +15703,7 @@ p5-hash-merge                   ports/textproc/p5-Hash-Merge
 p5-hash-merge-simple            ports/devel/p5-Hash-Merge-Simple
 p5-hash-moreutils               ports/devel/p5-Hash-MoreUtils
 p5-hash-multikey                ports/devel/p5-Hash-MultiKey
+p5-hash-multivalue              ports/devel/p5-Hash-MultiValue
 p5-hash-union                   ports/devel/p5-Hash-Union
 p5-hash-util-fieldhash-compat   ports/devel/p5-Hash-Util-FieldHash-Compat
 p5-hash-withdefaults            ports/devel/p5-Hash-WithDefaults
@@ -16058,6 +16068,7 @@ p5-list-permutor                ports/devel/p5-List-Permutor
 p5-list-powerset                ports/devel/p5-List-PowerSet
 p5-list-rotation-cycle          ports/devel/p5-List-Rotation-Cycle
 p5-list-uniq                    ports/devel/p5-List-Uniq
+p5-list-util-weightedroundrobin  ports/misc/p5-List-Util-WeightedRoundRobin
 p5-lj-cache                     ports/sysutils/p5-LJ-Cache
 p5-lj-spellcheck                ports/textproc/p5-LJ-SpellCheck
 p5-lj-textmessage               ports/sysutils/p5-LJ-TextMessage
@@ -20355,6 +20366,7 @@ py-scrapy                       ports/www/py-scrapy
 py-scriptaculous                ports/www/py-scriptaculous
 py-sendfile                     ports/devel/py-sendfile
 py-serial                       ports/comms/py-serial
+py-setproctitle                 ports/devel/py-setproctitle
 py-setuptools                   ports/devel/py-setuptools
 py-setuptools_darcs             ports/devel/py-setuptools_darcs
 py-sexy                         ports/x11-toolkits/py-sexy
