@@ -1,6 +1,5 @@
 bin/ninix
 bin/ninix-install
-bin/ninix-update
 libexec/ninix/ninix/dll/textcopy.py
 libexec/ninix/ninix/dll/aya.py
 libexec/ninix/ninix/dll/bln.py
@@ -84,10 +83,8 @@ libexec/ninix/ninix/entry_db.pyc
 libexec/ninix/ninix/script.pyc
 libexec/ninix/ninix/version.pyc
 libexec/ninix/sstplib.py
-libexec/ninix/ninix-update.py
 libexec/ninix/ninix-install.py
 libexec/ninix/ninix-install.pyc
-libexec/ninix/ninix-update.pyc
 libexec/ninix/sstplib.pyc
 share/locale/ja/LC_MESSAGES/ninix.mo
 share/locale/zh_TW/LC_MESSAGES/ninix.mo
