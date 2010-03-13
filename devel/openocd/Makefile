@@ -6,22 +6,16 @@
 #
 
 PORTNAME=	openocd
-PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	devel
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	BERLIOS \
+		SF
 
 MAINTAINER=	tomek.cedro@gmail.com
 COMMENT=	Open On-Chip Debugger
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/
-MAN1=		${PORTNAME}.1
-INFO=		${PORTNAME}
-USE_GMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-werror
+CONFIGURE_ARGS+=	--disable-werror --enable-doxygen-pdf
 OPTIONS=	VERBOSE "Enable verbose JTAG I/O messages" off \
 		JTAG_IO "Enable verbose JTAG I/O messages" off \
 		USB_IO "Enable verbose USB I/O messages" off \
@@ -37,15 +31,21 @@ OPTIONS=	VERBOSE "Enable verbose JTAG I/O messages" off \
 		RLINK "Raisonance RLink JTAG Programmer" on \
 		ARMJTAGEW "Olimex ARM-JTAG-EW Programmer" on \
 		MINIDRIVER "Dummy minidriver  (will exclude others!)" off
+
+MAN1=		${PORTNAME}.1
+INFO=		${PORTNAME}
+USE_GMAKE=	yes
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
 #Below are the interfaces that need source rewitre to work with FreeBSD
 # They are hidden because they break a build. Patches are welcome :-)
 # Type: make WITH_{OPTION}=1 to try the broken build (ie: make WITH_PARPORT=1)
 #		PARPORT "PC parallel port driver" off\
 # Parport: parport.c:68:20: error: sys/io.h: No such file or directory
 #		AMTJTAGACCEL "Amontec JTAG-Accelerator driver" off \
+# AMTJtagAccel: amt_jtagaccel.c:29:27: error: linux/parport.h: No such file or directory
 #		MALLOC "Include free space in logging messages" off \
 # Malloc: log.c:41:2: error: #error "malloc.h is required to use --enable-malloc-logging"
-# Amtjtagaccel: amt_jtagaccel.c:45:20: error: sys/io.h: No such file or directory
 #		ECOSBOARD "eCos based JTAG debugger" off \
 # Ecosboard:	replacements.h:36:28: error: pkgconf/system.h: No such file or directory
 #		HTTPD "Enable builtin httpd server" off\
@@ -135,7 +135,7 @@ CONFIGURE_ARGS+=	--disable-ioutil
 
 .if defined(WITH_HTTPD)
 CONFIGURE_ARGS+=	--enable-httpd
-BUILD_DEPENDS+=	libmicrohttpd:${PORTSDIR}/www/libmicrohttpd
+BUILD_DEPENDS+=		libmicrohttpd:${PORTSDIR}/www/libmicrohttpd
 LIB_DEPENDS+=		microhttpd:${PORTSDIR}/www/libmicrohttpd
 .else
 CONFIGURE_ARGS+=	--disable-httpd
