@@ -33,6 +33,10 @@ MAN5=		pam_ldap.5
 post-extract:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
+	    	${WRKSRC}/vers_string
+
 post-install:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
 		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
