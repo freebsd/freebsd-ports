@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openerp-server
-PORTVERSION=	5.0.6
-PORTREVISION=	4
+PORTVERSION=	5.0.7
 CATEGORIES=	finance python
 MASTER_SITES=	http://openerp.com/download/stable/source/
 
@@ -33,7 +32,7 @@ SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 
 USE_PYTHON=			2.4+
 USE_PYDISTUTILS=		yes
-PYDISTUTILS_EGGINFO=		openerp_server-5.0.6-${PYTHON_VERSION:S/thon//}.egg-info
+PYDISTUTILS_EGGINFO=		openerp_server-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
 
 MAN1=		openerp-server.1
 MAN5=		openerp_serverrc.5
@@ -53,7 +52,7 @@ post-install:
 
 	${INSTALL_DATA} ${WRKDIR}/openerp-server.conf ${PREFIX}/etc/openerp-server.conf
 	@${ECHO} etc/openerp-server.conf >> ${TMPPLIST}
-	
+
 	@${ECHO} bin/openerp-server >> ${TMPPLIST}
 	@${FIND} -s -d ${PYTHON_SITELIBDIR}/${PORTNAME} \
 		-type f | ${SED} 's#${PREFIX}/##g' >> ${TMPPLIST}
