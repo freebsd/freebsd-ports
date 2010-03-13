@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sakura
-PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTVERSION=	2.3.7
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/
 
@@ -18,9 +17,12 @@ USE_GNOME=	vte
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 
+MAN1=		sakura.1
+
 post-patch:
 	@${REINPLACE_CMD} -e '/NOT MATCHES "Debug"/d ; \
 		 /"-O2"/d ; \
+		's,share/man,man,g' ; \
 		 /FILES INSTALL/d' ${WRKSRC}/CMakeLists.txt
 
 post-install:
