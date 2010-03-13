@@ -163,6 +163,7 @@
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f8-libtheora
     SUBDIR += linux-gspca-kmod
+    SUBDIR += linux-huludesktop
     SUBDIR += linux-libtheora
     SUBDIR += linux-ov511-kmod
     SUBDIR += linux-realplayer
