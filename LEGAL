@@ -279,6 +279,9 @@ hptools-src*		devel/hptools		Not made or distributed for
 						resale
 httprint_freebsd_*.zip	security/httprint	No cost for personal, education
 						and non-commercial use
+huludesktop-i386.rpm	multimedia/linux-huludesktop No redistribution allowed,
+						not for commercial use, export
+						controlled
 HyperSpec-*.tar.gz	devel/clisp-hyperspec	Commercial redistribution
 						prohibited
 ICON-AquaFusion.*	x11-themes/gnome-icons-aqua-fusion Author rights unclear
