@@ -53,6 +53,10 @@ MAN1=		lmms.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800501
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
