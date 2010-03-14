@@ -39,7 +39,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} < 800501) || \
-    (${OSVERSION} >= 900000 && ${OSVERSION} < 900006)
+    ((${OSVERSION} >= 900000) && (${OSVERSION} < 900006))
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-compiz.cpp
 .endif
 
