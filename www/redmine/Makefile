@@ -7,6 +7,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +15,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	decke@bluelife.at
 COMMENT=	A flexible project management web application
 
+RUN_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack \
+		thin:${PORTSDIR}/www/rubygem-thin
+
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 USE_RAKE=	yes
 NO_BUILD=	yes
+USE_RC_SUBR=	redmine
+SUB_LIST+=	RUBY_NAME=${RUBY_NAME}
 
 OPTIONS=	MYSQL	"Enable MySQL Support" on \
 		POSTGRESQL "Enable PostgreSQL Support" off
