@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	smake
-PORTVERSION=	1.2.a.49
+PORTVERSION=	1.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/alpha/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
 
 MAINTAINER=	mm@FreeBSD.org
