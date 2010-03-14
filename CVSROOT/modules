@@ -8351,6 +8351,7 @@ linux-gtk-bluecurve-theme       ports/x11-themes/linux-gtk-bluecurve-theme
 linux-gtk2                      ports/x11-toolkits/linux-gtk2
 linux-hdb-demo                  ports/games/linux-hdb-demo
 linux-hicolor-icon-theme        ports/x11-themes/linux-hicolor-icon-theme
+linux-huludesktop               ports/multimedia/linux-huludesktop
 linux-imlib                     ports/graphics/linux-imlib
 linux-j                         ports/lang/linux-j
 linux-jigdo                     ports/net-p2p/linux-jigdo
