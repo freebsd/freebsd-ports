@@ -12,9 +12,9 @@
 # flow_fanout_enable (bool):	Set it to "YES" to enable flow-fanout daemon.
 #				Set to "NO" by default.
 # flow_fanout_ip (str):		IP address to bind to
-#				Default to "0.0.0.0"
+#				Default is "0.0.0.0"
 # flow_fanout_remoteip (str):	IP address to accept flows from
-#				Default to "0.0.0.0" or all IPs
+#				Default is "0.0.0.0" or all IPs
 # flow_fanout_port (int):	Port to accept flow data on
 #				Default is "8787"
 # flow_fanout_export (str):	Where to send flows to. Default is "0/0/8788"
@@ -36,7 +36,7 @@
 #				with parameters taken from appropriate
 #				flow_fanout_PROFILENAME_xxx variables. For
 #				unspecified parameters flow_fanout_xxx
-#				varialbes will be used.
+#				variables will be used.
 
 . /etc/rc.subr
 
@@ -73,6 +73,15 @@ stop_profiles()
 	done
 }
 
+status_profiles()
+{
+	unset status_cmd
+	for _profile in ${flow_fanout_profiles}; do
+		setup_profile_vars $_profile
+		run_rc_command "${rc_arg}"
+	done
+}
+
 load_rc_config $name
 
 : ${flow_fanout_enable="NO"}
@@ -99,6 +108,7 @@ fi
 if [ "${flow_fanout_profiles}" ]; then
 	start_cmd="start_profiles"
 	stop_cmd="stop_profiles"
+	status_cmd="status_profiles"
 fi
 
 run_rc_command "$cmd"
