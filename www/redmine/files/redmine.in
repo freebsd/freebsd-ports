@@ -1,7 +1,9 @@
 #!/bin/sh
 
+# $FreeBSD$
+
 # PROVIDE: redmine
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf[.local] to enable redmine
@@ -10,23 +12,22 @@
 #                               Set it to "YES" to enable redmine.
 # redmine_flags (str):          Custom additional arguments to be passed
 #                               to redmine.
-#
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="redmine"
 rcvar=`set_rcvar`
 command=%%RUBY_NAME%%
-redmine_home="%%WWWDIR%%"
-pidfile="${redmine_home}/tmp/pids/thin.pid"
+
+pidfile="%%WWWDIR%%/tmp/pids/thin.pid"
 
 load_rc_config $name
 
 # set defaults
 : ${redmine_enable="NO"}
-: ${redmine_flags="-a 0.0.0.0 -p 3000 -e production -u www -g www"}
+: ${redmine_flags="-a 0.0.0.0 -p 3000 -e production"}
 
-command_args="-d -D -c ${redmine_home} ${redmine_flags}"
+command_args="-d -D -c %%WWWDIR%% -u www -g www"
 start_cmd="%%PREFIX%%/bin/thin ${command_args} start"
 
 run_rc_command "$1"
