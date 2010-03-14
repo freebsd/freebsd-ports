@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncftpd
-PORTVERSION=	2.8.5
+PORTVERSION=	2.8.6
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/ \
 		ftp://ftp.nl.uu.net/pub/unix/ftp/ncftpd/${PORTVERSION}/ \
@@ -30,7 +30,9 @@ PORTDOCS=	install.html README README.freebsd LICENSE
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
+.if ${OSVERSION} >= 800000
+BINVER=		8.0
+.elif ${OSVERSION} >= 700000
 BINVER=		7.0
 .else
 BINVER=		6.0
