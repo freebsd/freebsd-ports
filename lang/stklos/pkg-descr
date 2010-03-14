@@ -4,4 +4,4 @@ implementation is based on an ad-hoc Virtual Machine.  STklos can also
 be compiled as a library, so that one can easily embed it in an
 application.
 
-WWW: http://www.stklos.org/
+WWW: http://www.stklos.net/
