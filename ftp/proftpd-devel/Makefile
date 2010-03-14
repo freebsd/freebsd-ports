@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proftpd
-DISTVERSION=	1.3.3rc2
-PORTREVISION=	1
+DISTVERSION=	1.3.3rc4
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
@@ -23,7 +22,7 @@ PKGNAMESUFFIX=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	guzik@anka.net.pl
 COMMENT=	Highly configurable ftp daemon
 
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
