@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	torque
-PORTVERSION=	2.3.7
+PORTVERSION=	2.4.6
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.clusterresources.com/downloads/torque/
 
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 
 MAN1=		qalter.1 qdel.1 qhold.1 qmove.1 qmsg.1 qorder.1 qrerun.1 \
 		qrls.1 qselect.1 qsig.1 qstat.1 qsub.1 pbs.1 pbsdsh.1 \
-		nqs2pbs.1 basl2c.1 xpbs.1 xpbsmon.1 qmgr.1
+		nqs2pbs.1 basl2c.1 xpbs.1 xpbsmon.1 qmgr.1 qchkpt.1
 
 MAN3=		rpp.3 tm.3 pbs_alterjob.3 pbs_connect.3 pbs_default.3 \
 		pbs_deljob.3 pbs_disconnect.3 pbs_geterrmsg.3 pbs_holdjob.3 \
