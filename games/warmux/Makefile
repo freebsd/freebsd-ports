@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wormux
-DISTVERSION=	0.9.0
+DISTVERSION=	0.9.1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/wormux/ \
 		http://download.gna.org/wormux/archive/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.gna.org/wormux/ \
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Wormux game
 
-LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
+LIB_DEPENDS=	xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		curl:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
@@ -28,6 +28,7 @@ MAN6=	wormux.6
 post-patch:
 	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/Makefile.in \
 	${WRKSRC}/src/Makefile.in
+	${FIND} -d ${WRKSRC}/data/ -name "*.*~" -delete
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
