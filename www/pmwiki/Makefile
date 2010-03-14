@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmwiki
-PORTVERSION=	2.2.10
+PORTVERSION=	2.2.14
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://pmwiki.org/pub/pmwiki/
