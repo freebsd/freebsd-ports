@@ -21,8 +21,6 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
-IGNORE=		OOO320_m12 has been released
-
 NO_LATEST_LINK=	yes
 
 .if !defined(WITHOUT_MOZILLA)
@@ -74,11 +72,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		12
+MILESTONE?=		13
 OOOTAG?=		OOO320_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20100203
+SNAPDATE=		20100314
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
