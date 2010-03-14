@@ -1,41 +1,41 @@
 bin/wormux
 bin/wormux-list-games
 share/applications/wormux.desktop
-share/locale/bg/LC_MESSAGES/wormux.mo
-share/locale/bs/LC_MESSAGES/wormux.mo
-share/locale/ca/LC_MESSAGES/wormux.mo
-share/locale/cpf/LC_MESSAGES/wormux.mo
-share/locale/cs/LC_MESSAGES/wormux.mo
-share/locale/da/LC_MESSAGES/wormux.mo
-share/locale/de/LC_MESSAGES/wormux.mo
-share/locale/el/LC_MESSAGES/wormux.mo
-share/locale/eo/LC_MESSAGES/wormux.mo
-share/locale/es/LC_MESSAGES/wormux.mo
-share/locale/et/LC_MESSAGES/wormux.mo
-share/locale/fa/LC_MESSAGES/wormux.mo
-share/locale/fi/LC_MESSAGES/wormux.mo
-share/locale/fr/LC_MESSAGES/wormux.mo
-share/locale/gl/LC_MESSAGES/wormux.mo
-share/locale/he/LC_MESSAGES/wormux.mo
-share/locale/hu/LC_MESSAGES/wormux.mo
-share/locale/it/LC_MESSAGES/wormux.mo
-share/locale/ja_JP/LC_MESSAGES/wormux.mo
-share/locale/kw/LC_MESSAGES/wormux.mo
-share/locale/lv/LC_MESSAGES/wormux.mo
-share/locale/nb/LC_MESSAGES/wormux.mo
-share/locale/nl/LC_MESSAGES/wormux.mo
-share/locale/nn/LC_MESSAGES/wormux.mo
-share/locale/pl/LC_MESSAGES/wormux.mo
-share/locale/pt/LC_MESSAGES/wormux.mo
-share/locale/pt_BR/LC_MESSAGES/wormux.mo
-share/locale/ro/LC_MESSAGES/wormux.mo
-share/locale/ru/LC_MESSAGES/wormux.mo
-share/locale/sk/LC_MESSAGES/wormux.mo
-share/locale/sl/LC_MESSAGES/wormux.mo
-share/locale/sv/LC_MESSAGES/wormux.mo
-share/locale/tr/LC_MESSAGES/wormux.mo
-share/locale/zh_CN/LC_MESSAGES/wormux.mo
-share/locale/zh_TW/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/cpf/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/da/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/de/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/el/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/es/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/et/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/he/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/it/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/ja_JP/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/kw/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/wormux.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/wormux.mo
 share/pixmaps/wormux_128x128.png
 %%DATADIR%%/authors.dtd
 %%DATADIR%%/authors.xml
@@ -96,6 +96,48 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/body/beastie/sick_head.png
 %%DATADIR%%/body/beastie/tail.png
 %%DATADIR%%/body/body.dtd
+%%DATADIR%%/body/bugzilla/arm1left.png
+%%DATADIR%%/body/bugzilla/arm1right.png
+%%DATADIR%%/body/bugzilla/arm2left.png
+%%DATADIR%%/body/bugzilla/arm2right.png
+%%DATADIR%%/body/bugzilla/arm3left.png
+%%DATADIR%%/body/bugzilla/arm3right.png
+%%DATADIR%%/body/bugzilla/back.png
+%%DATADIR%%/body/bugzilla/black_arm1left.png
+%%DATADIR%%/body/bugzilla/black_arm1right.png
+%%DATADIR%%/body/bugzilla/black_arm2left.png
+%%DATADIR%%/body/bugzilla/black_arm2right.png
+%%DATADIR%%/body/bugzilla/black_arm3left.png
+%%DATADIR%%/body/bugzilla/black_arm3right.png
+%%DATADIR%%/body/bugzilla/black_back.png
+%%DATADIR%%/body/bugzilla/black_body.png
+%%DATADIR%%/body/bugzilla/black_eyelid.png
+%%DATADIR%%/body/bugzilla/black_eyes.png
+%%DATADIR%%/body/bugzilla/black_footleft.png
+%%DATADIR%%/body/bugzilla/black_footright.png
+%%DATADIR%%/body/bugzilla/black_hair.png
+%%DATADIR%%/body/bugzilla/black_head.png
+%%DATADIR%%/body/bugzilla/black_hornleft.png
+%%DATADIR%%/body/bugzilla/black_hornright.png
+%%DATADIR%%/body/bugzilla/black_noze.png
+%%DATADIR%%/body/bugzilla/black_pupil.png
+%%DATADIR%%/body/bugzilla/black_tail.png
+%%DATADIR%%/body/bugzilla/blackfootright.png
+%%DATADIR%%/body/bugzilla/body.png
+%%DATADIR%%/body/bugzilla/config.xml
+%%DATADIR%%/body/bugzilla/dead.png
+%%DATADIR%%/body/bugzilla/eyelid.png
+%%DATADIR%%/body/bugzilla/eyes.png
+%%DATADIR%%/body/bugzilla/footleft.png
+%%DATADIR%%/body/bugzilla/footright.png
+%%DATADIR%%/body/bugzilla/hair.png
+%%DATADIR%%/body/bugzilla/head.png
+%%DATADIR%%/body/bugzilla/hornleft.png
+%%DATADIR%%/body/bugzilla/hornright.png
+%%DATADIR%%/body/bugzilla/noze.png
+%%DATADIR%%/body/bugzilla/pupil.png
+%%DATADIR%%/body/bugzilla/sick_head.png
+%%DATADIR%%/body/bugzilla/tail.png
 %%DATADIR%%/body/clothes.xml
 %%DATADIR%%/body/firefox/arm1left.png
 %%DATADIR%%/body/firefox/arm1right.png
@@ -847,6 +889,12 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/cheese/minicheese.png
 %%DATADIR%%/map/cheese/preview.jpg
 %%DATADIR%%/map/cheese/sky.jpg
+%%DATADIR%%/map/chess/config.xml
+%%DATADIR%%/map/chess/map.png
+%%DATADIR%%/map/chess/preview.jpg
+%%DATADIR%%/map/chess/sky.jpg
+%%DATADIR%%/map/chess/sky0.png
+%%DATADIR%%/map/chess/sky1.png
 %%DATADIR%%/map/construction/config.xml
 %%DATADIR%%/map/construction/map.png
 %%DATADIR%%/map/construction/preview.jpg
@@ -863,11 +911,6 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/crystal/crystal.png
 %%DATADIR%%/map/crystal/preview.jpg
 %%DATADIR%%/map/crystal/sky.jpg
-%%DATADIR%%/map/cyclades/config.xml
-%%DATADIR%%/map/cyclades/map.png
-%%DATADIR%%/map/cyclades/preview.png
-%%DATADIR%%/map/cyclades/rameau_dolivier.png
-%%DATADIR%%/map/cyclades/sky.png
 %%DATADIR%%/map/desert/config.xml
 %%DATADIR%%/map/desert/desert.png
 %%DATADIR%%/map/desert/desert_bg.jpg
@@ -894,11 +937,11 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/frog/map.png
 %%DATADIR%%/map/frog/preview.jpg
 %%DATADIR%%/map/frog/sky.jpg
-%%DATADIR%%/map/funkyIsland/clouds.png
-%%DATADIR%%/map/funkyIsland/config.xml
-%%DATADIR%%/map/funkyIsland/island.png
-%%DATADIR%%/map/funkyIsland/island_bg.jpg
-%%DATADIR%%/map/funkyIsland/preview.jpg
+%%DATADIR%%/map/funkyisland/clouds.png
+%%DATADIR%%/map/funkyisland/config.xml
+%%DATADIR%%/map/funkyisland/island.png
+%%DATADIR%%/map/funkyisland/island_bg.jpg
+%%DATADIR%%/map/funkyisland/preview.jpg
 %%DATADIR%%/map/goodandevil/config.xml
 %%DATADIR%%/map/goodandevil/goodandevil.png
 %%DATADIR%%/map/goodandevil/preview.jpg
@@ -918,9 +961,9 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/hell/hell.png
 %%DATADIR%%/map/hell/hellsky.jpg
 %%DATADIR%%/map/hell/preview.jpg
-%%DATADIR%%/map/hive/BG.jpg
-%%DATADIR%%/map/hive/FG.png
+%%DATADIR%%/map/hive/bg.jpg
 %%DATADIR%%/map/hive/config.xml
+%%DATADIR%%/map/hive/fg.png
 %%DATADIR%%/map/hive/part_effect_strip.png
 %%DATADIR%%/map/hive/preview.jpg
 %%DATADIR%%/map/icebergs/config.xml
@@ -972,11 +1015,11 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/paint/sky.png
 %%DATADIR%%/map/paradis/config.xml
 %%DATADIR%%/map/paradis/decor_paradis.png
-%%DATADIR%%/map/paradis/decor_paradis_BG.jpg
+%%DATADIR%%/map/paradis/decor_paradis_bg.jpg
 %%DATADIR%%/map/paradis/paradis_preview.jpg
-%%DATADIR%%/map/pillars/BG.jpg
-%%DATADIR%%/map/pillars/FG.png
+%%DATADIR%%/map/pillars/bg.jpg
 %%DATADIR%%/map/pillars/config.xml
+%%DATADIR%%/map/pillars/fg.png
 %%DATADIR%%/map/pillars/preview.jpg
 %%DATADIR%%/map/pirates/config.xml
 %%DATADIR%%/map/pirates/islands.jpg
@@ -1016,9 +1059,9 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/map/space2/map.png
 %%DATADIR%%/map/space2/preview.jpg
 %%DATADIR%%/map/space2/sky.jpg
-%%DATADIR%%/map/tic-tac-toe/BG.jpg
-%%DATADIR%%/map/tic-tac-toe/FG.png
+%%DATADIR%%/map/tic-tac-toe/bg.jpg
 %%DATADIR%%/map/tic-tac-toe/config.xml
+%%DATADIR%%/map/tic-tac-toe/fg.png
 %%DATADIR%%/map/tic-tac-toe/part_effect_strip.png
 %%DATADIR%%/map/tic-tac-toe/preview.jpg
 %%DATADIR%%/map/towers/config.xml
@@ -1110,13 +1153,21 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/music/ingame/Olivier_Militon.-.Like_a_rock.ogg
 %%DATADIR%%/music/ingame/Olivier_Militon.-.Vers_solitaire.ogg
 %%DATADIR%%/music/ingame/Olivier_Militon.-.Vogue_a_lame.ogg
+%%DATADIR%%/music/ingame/circux.m3u
+%%DATADIR%%/music/ingame/circux.ogg
 %%DATADIR%%/music/ingame/construction.m3u
 %%DATADIR%%/music/ingame/construction.ogg
+%%DATADIR%%/music/ingame/diabolicux.m3u
+%%DATADIR%%/music/ingame/diabolicux.ogg
+%%DATADIR%%/music/ingame/exoticux.m3u
+%%DATADIR%%/music/ingame/exoticux.ogg
 %%DATADIR%%/music/ingame/fear.m3u
 %%DATADIR%%/music/ingame/funfair.m3u
 %%DATADIR%%/music/ingame/ingame.m3u
 %%DATADIR%%/music/ingame/monkey.m3u
 %%DATADIR%%/music/ingame/sea.m3u
+%%DATADIR%%/music/ingame/woodlux.m3u
+%%DATADIR%%/music/ingame/woodlux.ogg
 %%DATADIR%%/music/menu/Divertissement_pour_flute.ogg
 %%DATADIR%%/music/menu/menu.m3u
 %%DATADIR%%/music/profile.xml
@@ -1239,6 +1290,10 @@ share/pixmaps/wormux_128x128.png
 %%DATADIR%%/team/beastie/flag.png
 %%DATADIR%%/team/beastie/flag64.png
 %%DATADIR%%/team/beastie/team.xml
+%%DATADIR%%/team/bugzilla/dead.png
+%%DATADIR%%/team/bugzilla/flag.png
+%%DATADIR%%/team/bugzilla/flag64.png
+%%DATADIR%%/team/bugzilla/team.xml
 %%DATADIR%%/team/firefox/dead.png
 %%DATADIR%%/team/firefox/flag.png
 %%DATADIR%%/team/firefox/flag64.png
@@ -1484,6 +1539,7 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/team/hexley
 @dirrm %%DATADIR%%/team/gnu
 @dirrm %%DATADIR%%/team/firefox
+@dirrm %%DATADIR%%/team/bugzilla
 @dirrm %%DATADIR%%/team/beastie
 @dirrm %%DATADIR%%/team
 @dirrm %%DATADIR%%/sound/default/weapons
@@ -1524,16 +1580,16 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/map/halloween
 @dirrm %%DATADIR%%/map/greehills
 @dirrm %%DATADIR%%/map/goodandevil
-@dirrm %%DATADIR%%/map/funkyIsland
+@dirrm %%DATADIR%%/map/funkyisland
 @dirrm %%DATADIR%%/map/frog
 @dirrm %%DATADIR%%/map/farm
 @dirrm %%DATADIR%%/map/electronik
 @dirrm %%DATADIR%%/map/easterisland
 @dirrm %%DATADIR%%/map/desert
-@dirrm %%DATADIR%%/map/cyclades
 @dirrm %%DATADIR%%/map/crystal
 @dirrm %%DATADIR%%/map/country
 @dirrm %%DATADIR%%/map/construction
+@dirrm %%DATADIR%%/map/chess
 @dirrm %%DATADIR%%/map/cheese
 @dirrm %%DATADIR%%/map/champignon
 @dirrm %%DATADIR%%/map/catacombes
@@ -1567,14 +1623,15 @@ share/pixmaps/wormux_128x128.png
 @dirrm %%DATADIR%%/body/hexley
 @dirrm %%DATADIR%%/body/gnu
 @dirrm %%DATADIR%%/body/firefox
+@dirrm %%DATADIR%%/body/bugzilla
 @dirrm %%DATADIR%%/body/beastie
 @dirrm %%DATADIR%%/body/all_skins_objects
 @dirrm %%DATADIR%%/body
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/kw/LC_MESSAGES
-@dirrmtry share/locale/kw
-@dirrmtry share/locale/ja_JP/LC_MESSAGES
-@dirrmtry share/locale/ja_JP
-@dirrmtry share/locale/cpf/LC_MESSAGES
-@dirrmtry share/locale/cpf
+%%NLS%%@dirrmtry share/locale/kw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kw
+%%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja_JP
+%%NLS%%@dirrmtry share/locale/cpf/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cpf
 @dirrmtry share/applications
