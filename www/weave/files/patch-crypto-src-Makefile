@@ -41,7 +41,7 @@
    arch = x86_64
  else
 +ifeq ($(machine), amd64)
-+  arch = x86_64
++  arch = amd64
 +else
    $(error: Sorry, your architecture is unknown/unsupported: $(machine))
  endif

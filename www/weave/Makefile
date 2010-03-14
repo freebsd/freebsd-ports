@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	weave
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://files.roorback.net/ \
@@ -29,7 +28,7 @@ USE_GMAKE=	yes
 .if ${ARCH} == i386
 PLATFORM=	FreeBSD_x86-gcc3
 .elif ${ARCH} == amd64
-PLATFORM=	FreeBSD_x86_64-gcc3
+PLATFORM=	FreeBSD_amd64-gcc3
 .endif
 
 GMAKE_FLAGS=	sdkdir=${PREFIX}/lib/firefox3/sdk rebuild_crypto=1 release_build=1 platform_target=${PLATFORM}
