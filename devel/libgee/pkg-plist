@@ -1,0 +1,11 @@
+include/gee-1.0/gee.h
+lib/libgee.la
+lib/libgee.so
+lib/libgee.so.2
+libdata/pkgconfig/gee-1.0.pc
+share/gir-1.0/Gee-1.0.gir
+share/vala/vapi/gee-1.0.vapi
+@dirrm share/vala/vapi
+@dirrm share/vala
+@dirrm share/gir-1.0
+@dirrm include/gee-1.0

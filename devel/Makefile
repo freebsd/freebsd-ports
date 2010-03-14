@@ -725,6 +725,7 @@
     SUBDIR += libgamepad
     SUBDIR += libgconf-java
     SUBDIR += libgdata
+    SUBDIR += libgee
     SUBDIR += libgetline
     SUBDIR += libghthash
     SUBDIR += libgii
