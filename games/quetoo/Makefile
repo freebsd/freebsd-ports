@@ -41,10 +41,6 @@ OPTIONS=	GAME	"Build the main game .so file"		off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800501
-BROKEN=		does not build
-.endif
-
 .if !defined(WITHOUT_GAME)
 PLIST_SUB+=	GAME=""
 Q2GAMES+=	baseq2
@@ -88,7 +84,6 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's,^(eval PKGDATADIR=).*$$,\1"${Q2DIR}", ; \
 		19752s,sdl-config,${SDL_CONFIG}, ; \
 		s,^(GAME_MODULES=")baseq2",\1",' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,const struct,struct,' ${WRKSRC}/src/files.c
 	${REINPLACE_CMD} -e 's,-ldl,,' ${WRKSRC}/src/Makefile.in
 
 do-install:
