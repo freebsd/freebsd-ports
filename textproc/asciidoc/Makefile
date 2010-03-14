@@ -7,15 +7,13 @@
 
 PORTNAME=	asciidoc
 PORTVERSION=	8.5.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
 		SF
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A text document format for writing short documents and man pages
-
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
-		getopt>=0:${PORTSDIR}/misc/getopt
 
 USE_PYTHON=	2.4+
 USE_GMAKE=	yes
