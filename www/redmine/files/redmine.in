@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# PROVIDE: redmine
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf[.local] to enable redmine
+#
+# redmine_enable (bool):        Set to "NO" by default.
+#                               Set it to "YES" to enable redmine.
+# redmine_flags (str):          Custom additional arguments to be passed
+#                               to redmine.
+#
+
+. %%RC_SUBR%%
+
+name="redmine"
+rcvar=`set_rcvar`
+command=%%RUBY_NAME%%
+redmine_home="%%WWWDIR%%"
+pidfile="${redmine_home}/tmp/pids/thin.pid"
+
+load_rc_config $name
+
+# set defaults
+: ${redmine_enable="NO"}
+: ${redmine_flags="-a 0.0.0.0 -p 3000 -e production -u www -g www"}
+
+command_args="-d -D -c ${redmine_home} ${redmine_flags}"
+start_cmd="%%PREFIX%%/bin/thin ${command_args} start"
+
+run_rc_command "$1"
