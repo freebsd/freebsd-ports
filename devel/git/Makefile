@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.0.1
+PORTVERSION=	1.7.0.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -222,7 +222,8 @@ PLIST_SUB+=	CURL="@comment "
 
 .ifdef (WITH_HTMLDOCS)
 RUN_DEPENDS+=	${LOCALBASE}/bin/asciidoc:${PORTSDIR}/textproc/asciidoc \
-		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
+		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 PLIST_SUB+=	HTMLDOCS=""
 .else
 PLIST_SUB+=	HTMLDOCS="@comment "
