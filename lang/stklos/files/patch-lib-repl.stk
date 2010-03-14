@@ -1,0 +1,11 @@
+--- lib/repl.stk.orig	2010-02-19 19:43:51.000000000 +0200
++++ lib/repl.stk	2010-02-19 19:44:11.000000000 +0200
+@@ -44,7 +44,7 @@
+ (define do-color
+   (if (and (not (key-get *%program-args* :interactive #f))
+ 	   (member (getenv "TERM")
+-		   '("rxvt" "xterm" "xterm-color" "linux" "cygwin")))
++		   '("rxvt" "xterm" "xterm-color" "linux" "cygwin" "cons25")))
+       ;; Terminal accepts color
+       ansi-color
+       ;; Provide a procedure which ignore color indications
