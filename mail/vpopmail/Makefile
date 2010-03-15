@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.30
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
@@ -142,7 +142,7 @@ USE_OPENLDAP=	yes
 WANT_OPENLDAP_SASL=	yes
 .endif
 CONFIGURE_ARGS+=	--enable-auth-module=ldap
-LDAP_FILES=		${WRKSRC}/README.ldap \
+LDAP_FILES=		${WRKSRC}/doc/README.ldap \
 			${WRKSRC}/ldap/nsswitch.conf \
 			${WRKSRC}/ldap/pam_ldap.conf \
 			${WRKSRC}/ldap/pam_ldap.secret \
