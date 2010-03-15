@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Test-Cukes
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A BBD test tool inspired by Cucumber
 
 BUILD_DEPENDS=	p5-Any-Moose>=0.10:${PORTSDIR}/devel/p5-Any-Moose \
