@@ -314,9 +314,9 @@
 %%WWWDIR%%/dijit/nls/dijit-all_ja.js
 %%WWWDIR%%/dijit/nls/dijit-all_ko-kr.js
 %%WWWDIR%%/dijit/nls/dijit-all_ko.js
+%%WWWDIR%%/dijit/nls/dijit-all_nb.js
 %%WWWDIR%%/dijit/nls/dijit-all_nl-nl.js
 %%WWWDIR%%/dijit/nls/dijit-all_nl.js
-%%WWWDIR%%/dijit/nls/dijit-all_no.js
 %%WWWDIR%%/dijit/nls/dijit-all_pl.js
 %%WWWDIR%%/dijit/nls/dijit-all_pt-br.js
 %%WWWDIR%%/dijit/nls/dijit-all_pt-pt.js
@@ -1037,8 +1037,6 @@
 %%WWWDIR%%/dojox/analytics/README
 %%WWWDIR%%/dojox/analytics/Urchin.js
 %%WWWDIR%%/dojox/analytics/_base.js
-%%WWWDIR%%/dojox/analytics/logger/JSON.php
-%%WWWDIR%%/dojox/analytics/logger/dojoxAnalytics.php
 %%WWWDIR%%/dojox/analytics/plugins/consoleMessages.js
 %%WWWDIR%%/dojox/analytics/plugins/dojo.js
 %%WWWDIR%%/dojox/analytics/plugins/idle.js
@@ -1494,17 +1492,80 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ar/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ca/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/cs/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/cs/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/da/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/de/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/de/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/el/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/es/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/es/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fi/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/fr/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/fr/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/he/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/hu/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/hu/latinEntities.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/it/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/it/latinEntities.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ja/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ja/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/Breadcrumb.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/FindReplace.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/InsertEntity.js
@@ -1512,21 +1573,68 @@
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/Preview.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/Save.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ko/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ko/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nb/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/nl/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pl/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pl/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt-pt/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/pt/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/pt/latinEntities.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/ru/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/ru/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sk/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sl/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/sv/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/th/TableDialog.js
 %%WWWDIR%%/dojox/editor/plugins/nls/tr/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh-tw/latinEntities.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/Breadcrumb.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/FindReplace.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/InsertEntity.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/PageBreak.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/Preview.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/Save.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/ShowBlockNodes.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/Smiley.js
 %%WWWDIR%%/dojox/editor/plugins/nls/zh/TableDialog.js
+%%WWWDIR%%/dojox/editor/plugins/nls/zh/latinEntities.js
 %%WWWDIR%%/dojox/editor/plugins/resources/css/Breadcrumb.css
 %%WWWDIR%%/dojox/editor/plugins/resources/css/FindReplace.css
 %%WWWDIR%%/dojox/editor/plugins/resources/css/InsertEntity.css
@@ -1709,7 +1817,6 @@
 %%WWWDIR%%/dojox/form/resources/PasswordValidator.html
 %%WWWDIR%%/dojox/form/resources/RangeSlider.css
 %%WWWDIR%%/dojox/form/resources/Rating.css
-%%WWWDIR%%/dojox/form/resources/RecieveFile.php
 %%WWWDIR%%/dojox/form/resources/VerticalRangeSlider.html
 %%WWWDIR%%/dojox/form/resources/_CheckedMultiSelectItem.html
 %%WWWDIR%%/dojox/form/resources/images/loading_wheel.gif
@@ -1819,6 +1926,18 @@
 %%WWWDIR%%/dojox/grid/enhanced/dnd/_DndRowSelector.js
 %%WWWDIR%%/dojox/grid/enhanced/dnd/_DndSelectingManager.js
 %%WWWDIR%%/dojox/grid/enhanced/nls/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/cs/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/de/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/es/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/fr/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/hu/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/it/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/ja/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/ko/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/pl/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/pt/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/ru/EnhancedGrid.js
+%%WWWDIR%%/dojox/grid/enhanced/nls/zh-tw/EnhancedGrid.js
 %%WWWDIR%%/dojox/grid/enhanced/nls/zh/EnhancedGrid.js
 %%WWWDIR%%/dojox/grid/enhanced/plugins/DnD.js
 %%WWWDIR%%/dojox/grid/enhanced/plugins/IndirectSelection.js
@@ -1854,9 +1973,9 @@
 %%WWWDIR%%/dojox/grid/nls/DataGrid_ja.js
 %%WWWDIR%%/dojox/grid/nls/DataGrid_ko-kr.js
 %%WWWDIR%%/dojox/grid/nls/DataGrid_ko.js
+%%WWWDIR%%/dojox/grid/nls/DataGrid_nb.js
 %%WWWDIR%%/dojox/grid/nls/DataGrid_nl-nl.js
 %%WWWDIR%%/dojox/grid/nls/DataGrid_nl.js
-%%WWWDIR%%/dojox/grid/nls/DataGrid_no.js
 %%WWWDIR%%/dojox/grid/nls/DataGrid_pl.js
 %%WWWDIR%%/dojox/grid/nls/DataGrid_pt-br.js
 %%WWWDIR%%/dojox/grid/nls/DataGrid_pt-pt.js
@@ -1971,8 +2090,6 @@
 %%WWWDIR%%/dojox/io/README
 %%WWWDIR%%/dojox/io/httpParse.js
 %%WWWDIR%%/dojox/io/proxy/README
-%%WWWDIR%%/dojox/io/proxy/tests/frag.xml
-%%WWWDIR%%/dojox/io/proxy/tests/xip.html
 %%WWWDIR%%/dojox/io/proxy/xip.js
 %%WWWDIR%%/dojox/io/proxy/xip_client.html
 %%WWWDIR%%/dojox/io/proxy/xip_server.html
@@ -2076,7 +2193,6 @@
 %%WWWDIR%%/dojox/math/stats.js
 %%WWWDIR%%/dojox/resources/README.template
 %%WWWDIR%%/dojox/resources/_modules.js
-%%WWWDIR%%/dojox/resources/explore.php
 %%WWWDIR%%/dojox/robot/README
 %%WWWDIR%%/dojox/robot/recorder.js
 %%WWWDIR%%/dojox/rpc/Client.js
@@ -2257,40 +2373,51 @@
 %%WWWDIR%%/dojox/widget/nls/ar/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/ca/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/ca/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/cs/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/cs/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/cs/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/da/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/da/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/de/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/de/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/de/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/el/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/el/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/es/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/es/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/es/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/fi/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/fi/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/fr/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/fr/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/fr/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/he/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/he/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/hu/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/hu/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/hu/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/it/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/it/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/it/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/ja/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/ja/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/ja/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/ko/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/ko/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/ko/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/nb/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/nb/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/nl/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/nl/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/pl/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/pl/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/pl/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/pt-pt/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/pt-pt/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/pt/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/pt/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/pt/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/ru/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/ru/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/ru/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/sk/FilePicker.js
@@ -2304,8 +2431,10 @@
 %%WWWDIR%%/dojox/widget/nls/th/Wizard.js
 %%WWWDIR%%/dojox/widget/nls/tr/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/tr/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/zh-tw/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/zh-tw/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/zh-tw/Wizard.js
+%%WWWDIR%%/dojox/widget/nls/zh/ColorPicker.js
 %%WWWDIR%%/dojox/widget/nls/zh/FilePicker.js
 %%WWWDIR%%/dojox/widget/nls/zh/Wizard.js
 %%WWWDIR%%/dojox/widget/rotator/Controller.js
@@ -2436,7 +2565,6 @@
 @dirrm %%WWWDIR%%/dojox/jsonPath
 @dirrm %%WWWDIR%%/dojox/json
 @dirrm %%WWWDIR%%/dojox/jq
-@dirrm %%WWWDIR%%/dojox/io/proxy/tests
 @dirrm %%WWWDIR%%/dojox/io/proxy
 @dirrm %%WWWDIR%%/dojox/io
 @dirrm %%WWWDIR%%/dojox/image/resources/images
@@ -2456,7 +2584,19 @@
 @dirrm %%WWWDIR%%/dojox/grid/enhanced/resources/images
 @dirrm %%WWWDIR%%/dojox/grid/enhanced/resources
 @dirrm %%WWWDIR%%/dojox/grid/enhanced/plugins
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/zh-tw
 @dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/zh
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/ru
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/pt
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/pl
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/ko
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/ja
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/it
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/hu
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/fr
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/es
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/de
+@dirrm %%WWWDIR%%/dojox/grid/enhanced/nls/cs
 @dirrm %%WWWDIR%%/dojox/grid/enhanced/nls
 @dirrm %%WWWDIR%%/dojox/grid/enhanced/dnd
 @dirrm %%WWWDIR%%/dojox/grid/enhanced
@@ -2627,7 +2767,6 @@
 @dirrm %%WWWDIR%%/dojox/atom
 @dirrm %%WWWDIR%%/dojox/analytics/profiles
 @dirrm %%WWWDIR%%/dojox/analytics/plugins
-@dirrm %%WWWDIR%%/dojox/analytics/logger
 @dirrm %%WWWDIR%%/dojox/analytics
 @dirrm %%WWWDIR%%/dojox
 @dirrm %%WWWDIR%%/dojo/rpc
