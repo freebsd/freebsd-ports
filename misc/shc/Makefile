@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	shc
-PORTVERSION=	3.8.6
+PORTVERSION=	3.8.7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.datsi.fi.upm.es/~frosal/sources/ \
 		CRITICAL
