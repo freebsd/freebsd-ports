@@ -16,13 +16,16 @@ bin/zope-testrunner
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/cleanup.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/cleanup.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/cleanup.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctest.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctest.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctest.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctest.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctest/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctest/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctest/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctestunit.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctestunit.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctestunit.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/exceptions.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/formparser.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/formparser.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/formparser.pyo
@@ -47,6 +50,9 @@ bin/zope-testrunner
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/setupstack.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/setupstack.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/setupstack.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/_doctest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/_doctest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/_doctest.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/__init__.pyo
@@ -56,9 +62,6 @@ bin/zope-testrunner
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/debug.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/debug.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/debug.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/doctest.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/doctest.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/doctest.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/eggsupport.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/eggsupport.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/eggsupport.pyo
@@ -393,6 +396,9 @@ bin/zope-testrunner
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-repeat.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-simple.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-shuffle.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-subunit-err.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-subunit-leaks.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-subunit.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-tb-format.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-test-selection.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-verbose.txt
@@ -405,6 +411,7 @@ bin/zope-testrunner
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/tests.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/tests.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctest
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-ex/sample1/sample11
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-ex/sample1/sample12
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-ex/sample1/sample13
