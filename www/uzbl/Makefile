@@ -8,8 +8,7 @@
 PORTNAME=	uzbl
 DISTVERSION=	0.0.0.${GITDATE}
 CATEGORIES=	www
-MASTER_SITES=	http://www.linta.de/distfiles/ \
-		LOCAL/ehaupt
+MASTER_SITES=	http://www.linta.de/distfiles/
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Web interface tools which adhere to the unix philosophy
@@ -20,8 +19,8 @@ USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
-GITDATE=	2010.02.02
-GITVERSION=	f8d6c93
+GITDATE=	2010.03.14
+GITVERSION=	38ef86e
 
 WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
 
@@ -40,6 +39,8 @@ post-patch:
 		${WRKSRC}/src/uzbl-browser \
 		${WRKSRC}/examples/data/scripts/uzbl-event-manager
 	@${REINPLACE_CMD} -e "s|share/uzbl|${DATADIR_REL}|" \
+		${WRKSRC}/examples/config/config \
+		${WRKSRC}/src/uzbl-browser \
 		${WRKSRC}/examples/data/scripts/uzbl-event-manager
 
 post-build:
