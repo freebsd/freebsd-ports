@@ -60,6 +60,7 @@
     SUBDIR += ffmpegthumbnailer
     SUBDIR += flv2mpeg4
     SUBDIR += flvmeta
+    SUBDIR += flvstreamer
     SUBDIR += flvtool++
     SUBDIR += freevo
     SUBDIR += fxtv
