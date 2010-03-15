@@ -1,11 +1,11 @@
---- Makefile.in.orig	2009-01-21 18:48:08.000000000 -0200
-+++ Makefile.in	2009-01-21 18:48:34.000000000 -0200
-@@ -1302,7 +1302,7 @@
+--- Makefile.in.orig	2010-03-02 10:20:09.000000000 -0300
++++ Makefile.in	2010-03-05 21:39:05.000000000 -0300
+@@ -1399,7 +1399,7 @@
+ 	include/boost/version.hpp \
  	include/boost/visit_each.hpp
- 
  
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(exec_prefix)/libdata/pkgconfig
  pkgconfig_DATA = Coin.pc
- 
  BUILT_SOURCES = \
+ 	include/Inventor/C/basic.h \
