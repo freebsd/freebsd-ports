@@ -17,7 +17,7 @@ COMMENT=	X11-based printer manager for CUPS
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
-BUILD_DEPENDS=	cupsd:${PORTSDIR}/print/cups-base
+BUILD_DEPENDS=	${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -32,7 +32,7 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS +=|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|printFiles::get|get|' ${WRKSRC}/xpp.h
 
-post-install:	 
+post-install:
 	${MKDIR} ${PREFIX}/share/doc/xpp
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xpp
 
