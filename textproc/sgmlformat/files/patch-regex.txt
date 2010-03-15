@@ -1,0 +1,176 @@
+--- instant/tables.c
++++ instant/tables.c
+@@ -84,7 +84,7 @@
+ #include <sys/types.h>
+ #include <errno.h>
+ 
+-#include <regexp.h>
++#include <regex.h>
+ #include "general.h"
+ #include "translate.h"
+ 
+--- instant/translate.h
++++ instant/translate.h
+@@ -75,7 +75,7 @@
+ typedef struct {
+     char	*name;		/* attribute name string */
+     char	*val;		/* attribute value string */
+-    regexp	*rex;		/* attribute value reg expr (compiled) */
++    regex_t	rex;		/* attribute value reg expr (compiled) */
+ } AttPair_t;
+ 
+ typedef struct _Trans {
+@@ -83,19 +83,19 @@
+     char	*gi;		/* element name of tag under consideration */
+     char	**gilist;	/* list of element names (multiple gi's) */
+     char	*context;	/* context in tree - looking depth levels up */
+-    regexp	*context_re;	/* tree heirarchy looking depth levels up */
++    regex_t	context_re;	/* tree heirarchy looking depth levels up */
+     int		depth;		/* number of levels to look up the tree */
+     AttPair_t	*attpair;	/* attr name-value pairs */
+     int		nattpairs;	/* number of name-value pairs */
+     char	*parent;	/* GI has this element as parent */
+     int		nth_child;	/* GI is Nth child of this of parent element */
+     char	*content;	/* element has this string in content */
+-    regexp	*content_re;	/* content reg expr (compiled) */
++    regex_t	content_re;	/* content reg expr (compiled) */
+     char	*pattrset;	/* is this attr set (any value) in parent? */
+     char	*var_name;	/* variable name */
+     char	*var_value;	/* variable value */
+     char	*var_RE_name;	/* variable name (for VarREValue) */
+-    regexp	*var_RE_value;	/* variable value (compiled, for VarREValue) */
++    regex_t	var_RE_value;	/* variable value (compiled, for VarREValue) */
+     Map_t	*relations;	/* various relations to check */
+ 
+     /* actions */
+--- instant/traninit.c
++++ instant/traninit.c
+@@ -69,7 +69,7 @@
+ #include <memory.h>
+ #include <sys/types.h>
+ #include <errno.h>
+-#include <regexp.h>
++#include <regex.h>
+ 
+ #include "general.h"
+ #include "translate.h"
+@@ -392,7 +392,7 @@
+ 	tok = Split(cp, &i, S_STRDUP);
+ 	T.var_RE_name = tok[0];
+ 	ExpandVariables(tok[1], buf, 0);
+-	if (!(T.var_RE_value=regcomp(buf)))	{
++	if (regcomp(&T.var_RE_value, buf, 0) != 0) {
+ 	    fprintf(stderr, "Regex error in VarREValue Content: %s\n",
+ 				    tok[1]);
+ 	}
+@@ -454,7 +454,7 @@
+ 
+ 	if (do_regex) {
+ 	    t->depth = MAX_DEPTH;
+-	    if (!(t->context_re=regcomp(t->context))) {
++	    if (regcomp(&t->context_re, t->context, 0) != 0) {
+ 		fprintf(stderr, "Regex error in Context: %s\n", t->context);
+ 	    }
+ 	}
+@@ -493,17 +493,17 @@
+ 	else {		/* value not found */
+ 	    t->attpair[i].val = ".";
+ 	}
+-	if (!(t->attpair[i].rex=regcomp(t->attpair[i].val))) {
++	if (regcomp(&t->attpair[i].rex, t->attpair[i].val, 0) != 0) {
+ 	    fprintf(stderr, "Regex error in AttValue: %s %s\n",
+ 		    t->attpair[i].name, t->attpair[i].val);
+ 	}
+     }
+ 
+     /* Compile regular expression for content */
+-    t->content_re = 0;
++    //t->content_re = 0;
+     if (t->content) {
+ 	ExpandVariables(t->content, buf, 0);
+-	if (!(t->content_re=regcomp(buf)))
++	if (regcomp(&t->content_re, buf, 0) != 0)
+ 	    fprintf(stderr, "Regex error in Content: %s\n",
+ 		    t->content);
+     }
+--- instant/translate.c
++++ instant/translate.c
+@@ -69,7 +69,7 @@
+ #include <memory.h>
+ #include <sys/types.h>
+ #include <errno.h>
+-#include <regexp.h>
++#include <regex.h>
+ 
+ #include "general.h"
+ #define STORAGE
+@@ -418,9 +418,9 @@
+ 	    FindContext(e, t->depth, context);
+ 
+ 	    /* If reg expr set, do regex compare; else just string compare. */
+-	    if (t->context_re) {
+-		if (! regexec(t->context_re, context)) continue;
+-	    }
++	    //if (t->context_re) {
++		if (! regexec(&t->context_re, context, 0, NULL, 0)) continue;
++	    //}
+ 	    else {
+ 		/* Is depth of spec deeper than element's depth? */
+ 		if (t->depth > e->depth) continue;
+@@ -439,7 +439,7 @@
+ 		    match = 0;
+ 		    break;
+ 		}
+-		if (!regexec(t->attpair[a].rex, atval)) match = 0;
++		if (!regexec(&t->attpair[a].rex, atval, 0, NULL, 0)) match = 0;
+ 	    }
+ 	    if (!match) continue;
+ 	}
+@@ -499,13 +499,13 @@
+ 	/* check for variable regular expression match */
+ 	if ( t->var_RE_name )	{
+ 	    cp = FindMappingVal(Variables, t->var_RE_name);
+-	    if (!cp || !regexec(t->var_RE_value, cp)) continue;
++	    if (!cp || !regexec(&t->var_RE_value, cp, 0, NULL, 0)) continue;
+ 	}
+ 
+ 	/* check content */
+ 	if (t->content) {		/* no att specified -> a match */
+ 	    for (match=0,i=0; i<e->ndcont; i++) {
+-		if (regexec(t->content_re, e->dcont[i])) {
++		if (regexec(&t->content_re, e->dcont[i], 0, NULL, 0)) {
+ 		    match = 1;
+ 		    break;
+ 		}
+--- instant/tranvar.c
++++ instant/tranvar.c
+@@ -66,7 +66,7 @@
+ #include <sys/types.h>
+ #include <errno.h>
+ 
+-#include <regexp.h>
++#include <regex.h>
+ #include "general.h"
+ #include "translate.h"
+ 
+--- instant/util.c
++++ instant/util.c
+@@ -85,7 +85,7 @@
+ #include <sys/stat.h>
+ #include <sys/file.h>
+ #include <errno.h>
+-#include <regexp.h>
++#include <regex.h>
+ /* CSS don't have it and I don't see where it's used
+ #include <values.h>
+ */
+--- instant/Makefile
++++ instant/Makefile
+@@ -6,7 +6,6 @@
+ SRCS+=	sgmls.c
+ 
+ CFLAGS+=-DTRANSPEC_DIR=\"${TRANSPEC_DIR}\"
+-LDADD=  -lcompat
+ 
+ MAN1=	instant.1
+ MAN5=	transpec.5
