@@ -22,7 +22,9 @@ USE_LDCONFIG=	yes
 
 MAKE_JOBS_SAFE=	yes
 
-.ifdef	WITHOUT_NOUVEAU
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NOUVEAU)
 LIBDRM_VERSION=	2.4.17
 CONFIGURE_ARGS=	--disable-nouveau-experimental-api \
 		--disable-radeon-experimental-api
@@ -37,4 +39,4 @@ pre-patch:
 	@${REINPLACE_CMD} 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' \
 	    ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
