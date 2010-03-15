@@ -1,6 +1,7 @@
 %%WWWDIR%%/changelog.txt
 %%WWWDIR%%/examples/css/content.css
 %%WWWDIR%%/examples/css/word.css
+%%WWWDIR%%/examples/custom_formats.html
 %%WWWDIR%%/examples/full.html
 %%WWWDIR%%/examples/index.html
 %%WWWDIR%%/examples/lists/image_list.js
@@ -43,10 +44,13 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/js/advlink.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/link.htm
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advlist/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/advlist/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/langs/en.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
@@ -107,6 +111,8 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/layer/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/layer/editor_plugin_src.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/legacyoutput/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/media/css/content.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/media/css/media.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/media/editor_plugin.js
@@ -145,9 +151,6 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/preview/preview.html
 %%WWWDIR%%/jscripts/tiny_mce/plugins/print/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/print/editor_plugin_src.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/safari/blank.htm
-%%WWWDIR%%/jscripts/tiny_mce/plugins/safari/editor_plugin.js
-%%WWWDIR%%/jscripts/tiny_mce/plugins/safari/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/save/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/save/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css
@@ -309,7 +312,6 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/searchreplace
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/save
-@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/safari
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/print
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/preview/jscripts
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/preview
@@ -326,6 +328,7 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/img
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/media
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/legacyoutput
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/layer
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/insertdatetime
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/inlinepopups/skins/clearlooks2/img
@@ -349,8 +352,11 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/directionality
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/contextmenu
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/bbcode
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/langs
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/images
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autosave
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/autoresize
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlist
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/advlink/css
