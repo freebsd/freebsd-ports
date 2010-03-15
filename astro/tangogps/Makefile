@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	tangogps
-PORTVERSION=	0.99.2
-PORTREVISION=	1
+PORTVERSION=	0.99.3
+PORTREVISION=	0
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.tangogps.org/downloads/
 
