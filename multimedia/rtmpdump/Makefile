@@ -1,0 +1,37 @@
+# Ports collection makefile for:	rtmpdump
+# Date created:				March 15, 2010
+# Whom:					hrs
+#
+# $FreeBSD$
+
+PORTNAME=	rtmpdump
+PORTVERSION=	2.2
+CATEGORIES=	multimedia net
+MASTER_SITES=	http://rtmpdump.mplayerhq.hu/download/
+
+MAINTAINER=	hrs@FreeBSD.org
+COMMENT=	A tool to download RTMP streams
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+ALL_TARGET=	posix
+
+MAN1=		rtmpdump.1
+MAN8=		rtmpgw.8
+
+PLIST_FILES_PROG=	bin/rtmpdump bin/rtmpgw bin/rtmpsrv bin/rtmpsuck
+PORTDOCS=	ChangeLog README
+
+do-install:
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES_PROG:S,^bin/,,} \
+		${PREFIX}/bin \
+		&& ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 \
+		&& ${INSTALL_MAN} ${MAN8} ${MAN1PREFIX}/man/man8
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>
