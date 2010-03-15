@@ -1,0 +1,8 @@
+This is the the client and protocol library for the Drizzle project.
+The server, drizzled, will use this as for protocol library. Client
+utilities and any new projects that require low-level protocol
+communication (like proxies). Other language interfaces (PHP
+extensions, Python DBI, Perl DBD, SWIG, ...) should be built off
+of this library.
+
+WWW:    https://launchpad.net/libdrizzle
