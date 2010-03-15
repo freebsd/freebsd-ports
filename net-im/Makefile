@@ -124,6 +124,7 @@
     SUBDIR += pidgin-rhythmbox
     SUBDIR += pidgin-sipe
     SUBDIR += pidgin-twitter
+    SUBDIR += pino
     SUBDIR += pork
     SUBDIR += prosody
     SUBDIR += psi
