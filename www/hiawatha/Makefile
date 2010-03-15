@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	6.19
+PORTVERSION=	7.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/
 
@@ -32,10 +32,11 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 OPTIONS=	COMMAND "Enable the Hiawatha CommandChannel" Off \
 		CACHE "Internal file caching support" On \
-		IPV6 "Enable IPv6 Support" Off \
+		IPV6 "Enable IPv6 Support" On \
+		MONITOR "Enable Hiawatha Monitor" On \
 		SSL "Support for Secure Sockets Layer (SSL)" On \
 		TOOLKIT "Enable URL Toolkit" On \
-		XSLT "XSLT support" Off
+		XSLT "XSLT support" On
 
 .include <bsd.port.pre.mk>
 
@@ -59,8 +60,13 @@ CONFIGURE_ARGS+=	--enable-command
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_XSLT)
-CONFIGURE_ARGS+=	--enable-xslt
+.if !defined(WITH_MONITOR)
+CONFIGURE_ARGS+=	--disable-monitor
+.endif
+
+.if !defined(WITH_XSLT)
+CONFIGURE_ARGS+=	--disable-xslt
+.else
 USE_GNOME+=	libxslt
 CPPFLAGS+=	-I${LOCALBASE}/include/libxml2
 .endif
