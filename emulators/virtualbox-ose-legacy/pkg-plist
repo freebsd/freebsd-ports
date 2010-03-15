@@ -59,6 +59,7 @@ lib/virtualbox/components/VBoxXPCOMBase.xpt
 %%NLS%%%%DATADIR%%/nls/VirtualBox_ar.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_bg.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_ca.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_ca_VA.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_cs.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_da.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_de.qm
@@ -91,6 +92,7 @@ lib/virtualbox/components/VBoxXPCOMBase.xpt
 %%NLS%%%%DATADIR%%/nls/qt_ar.qm
 %%NLS%%%%DATADIR%%/nls/qt_bg.qm
 %%NLS%%%%DATADIR%%/nls/qt_ca.qm
+%%NLS%%%%DATADIR%%/nls/qt_ca_VA.qm
 %%NLS%%%%DATADIR%%/nls/qt_cs.qm
 %%NLS%%%%DATADIR%%/nls/qt_da.qm
 %%NLS%%%%DATADIR%%/nls/qt_de.qm

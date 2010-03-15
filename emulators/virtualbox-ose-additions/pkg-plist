@@ -12,5 +12,5 @@ sbin/VBoxService
 %%X11%%@dirrmtry lib
 @cwd /
 %%KMODDIR%%/vboxguest.ko
-@exec /usr/sbin/kldxref %%KMODDIR%%
-@unexec /usr/sbin/kldxref %%KMODDIR%%
+@exec /usr/sbin/kldxref /%%KMODDIR%%
+@unexec /usr/sbin/kldxref /%%KMODDIR%%
