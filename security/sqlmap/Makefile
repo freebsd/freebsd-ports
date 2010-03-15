@@ -6,48 +6,41 @@
 #
 
 PORTNAME=	sqlmap
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	security python
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	niels@FreeBSD.org
 COMMENT=	An automatic SQL injection tool
 
 USE_PYTHON=	yes
-NO_BUILD=	yes
-# XXX report to upstream
-WRKSRC=		${WRKDIR}/${PORTNAME}
-SQLMAP_TXT_FILES=	fuzz_vectors.txt user-agents.txt
-SQLMAP_DOC_FILES=	AUTHORS ChangeLog README.html THANKS TODO
+SQLMAP_DOCS=	AUTHORS COPYING ChangeLog README.html README.pdf THANKS
+SUB_FILES=	${PORTNAME}
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
+		PATH=${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
 post-patch:
-# XXX report to upstream
-	${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
-		-e 's|%%PORTNAME%%|${PORTNAME}|g' ${WRKSRC}/sqlmap.py
-	${REINPLACE_CMD} -e 's|from lib\.|from ${PORTNAME}.|' \
-		-e 's|from plugins\.|from ${PORTNAME}.plugins.|' ${WRKSRC}/lib/*
-	${REINPLACE_CMD} -e 's|from lib\.|from ${PORTNAME}.|' \
-		-e 's|from plugins\.|from ${PORTNAME}.plugins.|' ${WRKSRC}/plugins/*
+	@${GREP} -lr '/usr/bin/env python' ${WRKSRC} | \
+		${XARGS} ${REINPLACE_CMD} -i "" \
+		-e "s!/usr/bin/env python!${PYTHON_CMD}!"
+
+do-build:
+	@${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/sqlmap.py ${PREFIX}/bin/sqlmap
-	${RM} -rf ${WRKSRC}/lib/.svn
-	${RM} -rf ${WRKSRC}/lib/*.bak
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/sqlmap
-	( cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${PYTHONPREFIX_SITELIBDIR}/sqlmap )
-	${RM} -rf ${WRKSRC}/plugins/.svn
-	${RM} -rf ${WRKSRC}/plugins/*.bak
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR:}/sqlmap/plugins
-	( cd ${WRKSRC}/plugins && ${COPYTREE_SHARE} . ${PYTHONPREFIX_SITELIBDIR}/sqlmap/plugins )
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}/txt
-.for F in ${SQLMAP_TXT_FILES}
-	${INSTALL_DATA} ${WRKSRC}/txt/${F} ${DATADIR}/txt/
-.endfor
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
+.	for F in lib shell plugins txt udf xml
+		${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/${F}
+		( cd ${WRKSRC}/${F} && ${COPYTREE_SHARE} . ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/${F} )
+.	endfor
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf-dist
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for F in ${SQLMAP_DOC_FILES}
+.for F in ${SQLMAP_DOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${F} ${DOCSDIR}/
 .endfor
 .endif
