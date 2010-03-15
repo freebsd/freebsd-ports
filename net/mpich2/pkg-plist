@@ -124,7 +124,7 @@ include/clog_uuid.h
 include/mpe.h
 include/mpe_callstack.h
 include/mpe_graphics.h
-%%X11%%include/mpe_graphicsf.h
+include/mpe_graphicsf.h
 include/mpe_log.h
 include/mpe_log_thread.h
 include/mpe_logf.h
@@ -164,7 +164,7 @@ include/primitives/opa_unsafe.h
 %%JAVA%%lib/clogprint.jar
 %%JAVA%%lib/jumpshot.jar
 %%JAVA%%lib/jumpshot_launcher.jar
-%%X11%%lib/libampe.a
+lib/libampe.a
 lib/libfmpich.a
 lib/libfmpich.so
 lib/libfmpich.so.1
@@ -725,10 +725,10 @@ sbin/mpeuninstall
 %%DATADIR%%/examples_collchk/wrong_reals.f
 %%DATADIR%%/examples_collchk/wrong_root.c
 %%DATADIR%%/examples_collchk/wrong_scatterv.c
-%%X11%%%%DATADIR%%/examples_graphics/Makefile
-%%X11%%%%DATADIR%%/examples_graphics/cpi.c
-%%X11%%%%DATADIR%%/examples_graphics/cxgraphics.c
-%%X11%%%%DATADIR%%/examples_graphics/fxgraphics.f
+%%DATADIR%%/examples_graphics/Makefile
+%%DATADIR%%/examples_graphics/cpi.c
+%%DATADIR%%/examples_graphics/cxgraphics.c
+%%DATADIR%%/examples_graphics/fxgraphics.f
 %%DATADIR%%/examples_logging/Makefile
 %%DATADIR%%/examples_logging/comm1_isr.c
 %%DATADIR%%/examples_logging/comm1_isr_loop.c
@@ -749,15 +749,15 @@ sbin/mpeuninstall
 %%DATADIR%%/examples_logging/pthread_sendrecv.c
 %%DATADIR%%/examples_logging/pthread_sendrecv_user.c
 %%DATADIR%%/examples_logging/srtest.c
-%%JAVA%%%%DATADIR%%/logfiles/barrier.rlog
-%%JAVA%%%%DATADIR%%/logfiles/fpilog.clog
-%%JAVA%%%%DATADIR%%/logfiles/fpilog.slog2
+%%X11%%%%DATADIR%%/logfiles/barrier.rlog
+%%X11%%%%DATADIR%%/logfiles/fpilog.clog
+%%X11%%%%DATADIR%%/logfiles/fpilog.slog2
 @unexec if diff -q %D/etc/mpd.conf %D/etc/mpd.conf.dist; then rm %D/etc/mpd.conf; fi
 etc/mpd.conf.dist
 @exec if [ ! -f %B/mpd.conf ]; then cp %B/mpd.conf.dist %B/mpd.conf; fi
 %%JAVA%%@dirrm %%DATADIR%%/logfiles
 @dirrm %%DATADIR%%/examples_logging
-%%X11%%@dirrm %%DATADIR%%/examples_graphics
+@dirrm %%DATADIR%%/examples_graphics
 @dirrm %%DATADIR%%/examples_collchk
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www4
@@ -770,3 +770,4 @@ etc/mpd.conf.dist
 @dirrm include/primitives
 @cwd %%LOCALBASE%%
 libdata/pkgconfig/mpich2-ch3.pc
+@comment libdata/pkgconfig/openpa.pc
