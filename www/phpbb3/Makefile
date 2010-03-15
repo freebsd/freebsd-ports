@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES=	www
-MASTER_SITES=	http://d10xg45o6p6dbl.cloudfront.net/projects/p/phpbb/
-DISTNAME=	phpBB-${PORTVERSION}
+MASTER_SITES=	http://www.phpbb.com/files/release/ \
+		http://d10xg45o6p6dbl.cloudfront.net/projects/p/phpbb/
+DISTNAME=	phpBB-${PORTVERSION}-PL1
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	A PHP-based bulletin board / discussion forum system

@@ -113,6 +113,7 @@
 %%PHPBBDIR%%/adm/style/captcha_recaptcha.html
 %%PHPBBDIR%%/adm/style/captcha_recaptcha_acp.html
 %%PHPBBDIR%%/adm/style/colour_swatch.html
+%%PHPBBDIR%%/adm/style/confirm_bbcode.html
 %%PHPBBDIR%%/adm/style/confirm_body.html
 %%PHPBBDIR%%/adm/style/confirm_body_prune.html
 %%PHPBBDIR%%/adm/style/custom_profile_fields.html
