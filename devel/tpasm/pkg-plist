@@ -5,4 +5,6 @@ libdata/tpasm/80c390.inc
 libdata/tpasm/avr.inc
 libdata/tpasm/p16c505.inc
 libdata/tpasm/picmacros.inc
+libdata/tpasm/reg_167.inc
+libdata/tpasm/reg_xe167xm.inc
 @dirrm libdata/tpasm
