@@ -55,7 +55,8 @@ MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 \
 		cherokee-tweak.1 cherokee-worker.1
 PORTDOCS=	*
 
-OPTIONS=	IPV6	"IPv6 support"	on	\
+OPTIONS=	WWWUSER	"Run as www:www user"	on \
+		IPV6	"IPv6 support"	on	\
 		MYSQL	"MySQL Database"	off	\
 		LDAP	"LDAP Support"	off	\
 		GEOIP	"GeoIP Support (recommended)"	on	\
@@ -76,34 +77,38 @@ PLIST_SUB+=	ADMIN="@comment "
 
 .include <bsd.port.pre.mk>
 
+.ifdef WITH_WWWUSER
+CONFIGURE_ARGS+=	--with-wwwuser=www --with-wwwgroup=www
+.endif
+
 .ifdef WITHOUT_IPV6
-CONFIGURE_ARGS+=--disable-ipv6
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 .ifdef WITH_MYSQL
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql=yes
+CONFIGURE_ARGS+=	--with-mysql=yes
 PLIST_SUB+=	MYSQL=""
 .else
-CONFIGURE_ARGS+=--with-mysql=no
+CONFIGURE_ARGS+=	--with-mysql=no
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .ifdef WITH_LDAP
 USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-ldap=yes
+CONFIGURE_ARGS+=	--with-ldap=yes
 PLIST_SUB+=	LDAP=""
 .else
-CONFIGURE_ARGS+=--with-ldap=no
+CONFIGURE_ARGS+=	--with-ldap=no
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .ifdef WITH_GEOIP
 LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
-CONFIGURE_ARGS+=--with-geoip=yes
+CONFIGURE_ARGS+=	--with-geoip=yes
 PLIST_SUB+=	GEOIP=""
 .else
-CONFIGURE_ARGS+=--with-geoip=no
+CONFIGURE_ARGS+=	--with-geoip=no
 PLIST_SUB+=	GEOIP="@comment "
 .endif
 
@@ -111,20 +116,20 @@ PLIST_SUB+=	GEOIP="@comment "
 LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg \
 		avcodec:${PORTSDIR}/multimedia/ffmpeg \
 		avutil:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=--with-ffmpeg=yes
+CONFIGURE_ARGS+=	--with-ffmpeg=yes
 .else
-CONFIGURE_ARGS+=--with-ffmpeg=no
+CONFIGURE_ARGS+=	--with-ffmpeg=no
 .endif
 
 .ifdef WITH_NLS
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-nls
+CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
 .ifdef WITH_INTPCRE
-CONFIGURE_ARGS+=--enable-internal-pcre
+CONFIGURE_ARGS+=	--enable-internal-pcre
 .else
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
@@ -190,5 +195,9 @@ post-install:
 	@cd ${DATADIR}/admin && ${FIND} . -name "*.py" |\
 	${XARGS} ${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py
 .endif
+
+	@${ECHO_MSG} "==============================================================="
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG} "==============================================================="
 
 .include <bsd.port.post.mk>

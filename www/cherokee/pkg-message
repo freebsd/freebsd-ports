@@ -1,0 +1,23 @@
+Please note that if you intend to run Cherokee as www user,
+you'll have to manually create the log files and set the
+proper ownership and permissions on them.
+
+You can do it with (as root):
+
+  touch /var/log/cherokee.error /var/log/cherokee.access
+  chown -v www:www /var/log/cherokee.*
+  chmod -v 0640 /var/log/cherokee.*
+
+If you run Cherokee as root (NOT recommended) this is not
+necessary.
+
+To run Cherokee at startup or using the rc script, add
+'cherokee_enable="YES"' to /etc/rc.conf
+
+To start the Cherokee administrative interface, run (as root)
+
+  cherokee-admin
+
+For more information on cherokee-admin(1), please refer to
+the official documentation and manpage.
+
