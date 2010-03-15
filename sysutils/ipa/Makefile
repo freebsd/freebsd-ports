@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://ipa-system.sourceforge.net/
+MASTER_SITES=	SF/ipa-system
 
 MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
 COMMENT=	Pluggable accounting system
