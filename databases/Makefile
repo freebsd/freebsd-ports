@@ -126,6 +126,7 @@
     SUBDIR += kumofs
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
+    SUBDIR += libdrizzle
     SUBDIR += libgda
     SUBDIR += libgda2
     SUBDIR += libgda2-reference
