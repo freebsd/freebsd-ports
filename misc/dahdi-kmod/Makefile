@@ -19,8 +19,8 @@ COMMENT=	Digium/Asterisk Hardware Device Interface
 BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 LIB_DEPENDS=	newt.52:${PORTSDIR}/devel/newt
 
-DAHDI_VERSION=		2.2.1-rc1
-DAHDI_TOOLS_VERSION=	2.2.1
+DAHDI_VERSION=		2.2.1-rc2
+DAHDI_TOOLS_VERSION=	2.2.1.1-rc1
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 GNU_CONFIGURE=	yes
