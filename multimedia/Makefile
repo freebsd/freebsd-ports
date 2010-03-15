@@ -260,6 +260,7 @@
     SUBDIR += recordmydesktop
     SUBDIR += replex
     SUBDIR += rox-videothumbnail
+    SUBDIR += rtmpdump
     SUBDIR += ruby-flvtool2
     SUBDIR += sabbu
     SUBDIR += schroedinger
