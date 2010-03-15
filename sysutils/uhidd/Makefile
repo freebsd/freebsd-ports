@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	uhidd
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.freebsd.org/~kaiw/distfiles/
+MASTER_SITES=	GOOGLE_CODE \
+		http://people.freebsd.org/~kaiw/distfiles/
 
 MAINTAINER=	kaiwang27@gmail.com
 COMMENT=	Userland USB HID device driver using libusb20
@@ -22,6 +23,7 @@ KMODDIR?=	/boot/modules
 USE_RC_SUBR=	uhidd
 
 MAN4=		uvhid.4
+MAN5=		uhidd.conf.5
 MAN8=		uhidd.8
 
 .include <bsd.port.pre.mk>
@@ -46,6 +48,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uhidd/uhidd ${PREFIX}/sbin/uhidd
 	${INSTALL_KLD} ${WRKSRC}/uvhid/uvhid.ko ${KMODDIR}/uvhid.ko
 	${INSTALL_MAN} ${WRKSRC}/uhidd/uhidd.8 ${PREFIX}/man/man8/uhidd.8
+	${INSTALL_MAN} ${WRKSRC}/uhidd/uhidd.conf.5 ${PREFIX}/man/man5/uhidd.conf.5
 	${INSTALL_MAN} ${WRKSRC}/uvhid/uvhid.4 ${PREFIX}/man/man4/uvhid.4
 .if !defined(WITHOUT_DEVD)
 	${MKDIR} ${PREFIX}/etc/devd
