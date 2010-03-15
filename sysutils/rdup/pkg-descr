@@ -9,4 +9,4 @@ implement a simple snapshot-style backup strategy.  This bash script requires
 GNU date and cp, which are not installed by this FreeBSD port. If you want to 
 use the script, you should also install the sysutils/coreutils port.
 
-WWW: http://miek.nl/projects/rdup11
+WWW: http://miek.nl/projects/rdup

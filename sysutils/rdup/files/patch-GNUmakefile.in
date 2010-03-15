@@ -9,11 +9,3 @@
  
  ARCHIVE_L=@ARCHIVE_L@
  NETTLE_L=@NETTLE_L@
-@@ -93,7 +93,6 @@
- 
- install: all
- 	mkdir -p ${DESTDIR}${mandir}/man1
--	mkdir -p ${DESTDIR}${datadir}
- 	for i in ${CMD}; do ${INSTALL} $$i ${DESTDIR}${bindir}/$$i ; done
- 	for i in ${SH}; do ${INSTALL} sh/$$i ${DESTDIR}${bindir}/$$i ; done
- 	for i in ${MAN1}; do [ -f $$i ] &&  ${INSTALL_DATA} $$i ${DESTDIR}${mandir}/man1/`basename $$i` ; done; exit 0
