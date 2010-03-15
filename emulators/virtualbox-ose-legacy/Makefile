@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.1.2
-PORTREVISION=	1
+DISTVERSION=	3.1.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -44,7 +43,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}"
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
-CONFLICTS=	bcc-[0-9]* virtualbox-ose-additions-3*
+CONFLICTS=	bcc-[0-9]* virtualbox-ose-devel-3* virtualbox-ose-additions-3* virtualbox-ose-additions-devel-3*
 
 VBOXGROUP?=	vboxusers
 VBOXGID?=	920

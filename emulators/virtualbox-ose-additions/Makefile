@@ -7,7 +7,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	3.1.51r25618
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
 		kmk:${PORTSDIR}/devel/kBuild
 
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
 USE_RC_SUBR=	vboxguest
 ONLY_FOR_ARCHS=	i386 amd64

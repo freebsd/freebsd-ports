@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.1.2
-PORTREVISION=	1
+DISTVERSION=	3.1.4
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -23,6 +22,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
 		kmk:${PORTSDIR}/devel/kBuild
 
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
 USE_RC_SUBR=	vboxnet
 ONLY_FOR_ARCHS=	i386 amd64
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--disable-alsa --disable-dbus --disable-python \
 		--build-headless
 
-CONFLICTS=	bcc-[0-9]*
+CONFLICTS=	bcc-[0-9]* virtualbox-ose-kmod-devel-3*
 
 OPTIONS=	DEBUG "Build with debugging symbols" off
 
