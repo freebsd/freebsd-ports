@@ -6,7 +6,7 @@
 
 PORTNAME=	SAVI-Perl
 PORTVERSION=	0.30
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security perl5
 MASTER_SITES=	http://www.csupomona.edu/~henson/www/projects/SAVI-Perl/dist/
 MASTER_SITE_SUBDIR=	security
@@ -25,8 +25,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 .if exists(${PREFIX}/lib/libsavi.so.3) && !exists(${PREFIX}/lib/libsavi.so)
 FAKELIBDIR=${WRKDIR}/lib
 CONFIGURE_ARGS+=LDDLFLAGS='-shared -L ${FAKELIBDIR}'
-.else
-IGNORE=		"Please install first Sophos Anit-Virus."
+.elif !exists(${PREFIX}/lib/libsavi.so)
+IGNORE=		please install Sophos Anti-Virus first
 .endif
 
 .if defined(FAKELIBDIR)
