@@ -204,7 +204,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	glu.3 \
 	gs.3 \
 	heart.3 \
-	http.3 \
+	httpc.3 \
 	httpd.3 \
 	httpd_conf.3 \
 	httpd_socket.3 \
@@ -230,6 +230,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	inviso_rt_meta.3 \
 	io.3 \
 	io_lib.3 \
+	lcnt.3 \
 	leex.3 \
 	lib.3 \
 	lists.3 \
@@ -601,6 +602,7 @@ MAN6=	common_test.6 \
 	os_mon.6 \
 	runtime_tools.6 \
 	sasl.6 \
+	snmp.6 \
 	ssl.6 \
 	stdlib.6 \
 	test_server.6
