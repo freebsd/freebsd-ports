@@ -1,0 +1,10 @@
+flvstreamer is an open source command-line RTMP client intended to
+stream audio or video content from all types of flash or rtmp
+servers. Forked from rtmpdump v1.6 with encrypted rtmp and swf
+verification support removed. This tool provides free interoperability
+with the previously undocumented adobe RTMP protocol so widely in use
+on the internet today. It was developed entirely by reverse
+engineering methods and without access to any proprietary or
+restrictive-license protocol specifications.
+
+WWW:	http://savannah.nongnu.org/projects/flvstreamer/
