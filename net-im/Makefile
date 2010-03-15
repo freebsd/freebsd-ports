@@ -111,6 +111,7 @@
     SUBDIR += pecl-stomp
     SUBDIR += pidgin
     SUBDIR += pidgin-birthday_reminder
+    SUBDIR += pidgin-bs
     SUBDIR += pidgin-facebookchat
     SUBDIR += pidgin-fetion
     SUBDIR += pidgin-guifications
