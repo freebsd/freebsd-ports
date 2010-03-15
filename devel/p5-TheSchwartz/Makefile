@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	TheSchwartz
-PORTVERSION=	1.07
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
+MASTER_SITES=	CPAN/../../authors/id/S/SI/SIXAPART
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reliable job queue
 
-RUN_DEPENDS=	${SITE_PERL}/Data/ObjectDriver.pm:${PORTSDIR}/devel/p5-Data-ObjectDriver
+BUILD_DEPENDS=	p5-Data-ObjectDriver>=0:${PORTSDIR}/devel/p5-Data-ObjectDriver
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
-MAN3=		TheSchwartz.3 TheSchwartz::Job.3 TheSchwartz::Worker.3
+MAN1=	schwartzmon.1
+MAN3=	TheSchwartz.3 TheSchwartz::Job.3 TheSchwartz::Worker.3
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/extras/check_schwartz ${PREFIX}/bin/
