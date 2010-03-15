@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 DEPRECATED=	This module is obsoleted by www/p5-HTML-FormFu-Model-DBIC
+EXPIRATION_DATE=	2010-04-15
 
 MAN3=	DBIx::Class::HTML::FormFu.3
 
