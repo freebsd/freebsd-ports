@@ -1,0 +1,5 @@
+Pino is a simple and fast Twitter and Identi.ca client using GTK2.
+It is written in Vala language and compiled to the native binary
+code.
+
+WWW:	http://pino-app.appspot.com/
