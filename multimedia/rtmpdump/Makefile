@@ -19,11 +19,11 @@ ALL_TARGET=	posix
 MAN1=		rtmpdump.1
 MAN8=		rtmpgw.8
 
-PLIST_FILES_PROG=	bin/rtmpdump bin/rtmpgw bin/rtmpsrv bin/rtmpsuck
+PLIST_FILES=	bin/rtmpdump bin/rtmpgw bin/rtmpsrv bin/rtmpsuck
 PORTDOCS=	ChangeLog README
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES_PROG:S,^bin/,,} \
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES:S,^bin/,,} \
 		${PREFIX}/bin \
 		&& ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 \
 		&& ${INSTALL_MAN} ${MAN8} ${MAN1PREFIX}/man/man8
