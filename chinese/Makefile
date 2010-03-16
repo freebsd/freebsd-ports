@@ -137,6 +137,7 @@
     SUBDIR += vflib
     SUBDIR += wangttf
     SUBDIR += wenju
+    SUBDIR += wordpress-zh_CN
     SUBDIR += xemacs21
     SUBDIR += xmms
     SUBDIR += xpdf
