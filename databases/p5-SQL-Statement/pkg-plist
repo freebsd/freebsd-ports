@@ -1,6 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Statement/.packlist
 %%SITE_PERL%%/SQL/Dialects/ANSI.pm
 %%SITE_PERL%%/SQL/Dialects/AnyData.pm
 %%SITE_PERL%%/SQL/Dialects/CSV.pm
+%%SITE_PERL%%/SQL/Dialects/Role.pm
 %%SITE_PERL%%/SQL/Eval.pm
 %%SITE_PERL%%/SQL/Parser.pm
 %%SITE_PERL%%/SQL/Statement.pm
@@ -16,10 +18,8 @@
 %%SITE_PERL%%/SQL/Statement/Term.pm
 %%SITE_PERL%%/SQL/Statement/TermFactory.pm
 %%SITE_PERL%%/SQL/Statement/Util.pm
-@dirrm %%SITE_PERL%%/SQL/Statement
+@dirrmtry %%SITE_PERL%%/SQL/Statement
 @dirrmtry %%SITE_PERL%%/SQL/Dialects
 @dirrmtry %%SITE_PERL%%/SQL
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Statement/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Statement
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL/Statement
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SQL
