@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.7.10
+PORTVERSION=	1.7.15
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://www.wesnoth.org/files/
@@ -37,8 +37,8 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-localedir=${PREFIX}/share/locale
 
 MANLANG_GAME=	gl sk zh_TW
-MANLANG=	"" cs de en_GB es et fi fr hu it lt pl pt_BR sr sr@latin \
-		tr zh_CN
+MANLANG=	"" cs de en_GB es et fi fr hu it ja lt pl pt_BR sr \
+		sr@latin tr zh_CN
 
 MAN6=		wesnoth.6
 
