@@ -26,7 +26,6 @@ include/parrot/%%PARROT_VER%%/parrot/dynext.h
 include/parrot/%%PARROT_VER%%/parrot/embed.h
 include/parrot/%%PARROT_VER%%/parrot/encoding.h
 include/parrot/%%PARROT_VER%%/parrot/enums.h
-include/parrot/%%PARROT_VER%%/parrot/events.h
 include/parrot/%%PARROT_VER%%/parrot/exceptions.h
 include/parrot/%%PARROT_VER%%/parrot/exit.h
 include/parrot/%%PARROT_VER%%/parrot/extend.h
@@ -83,7 +82,6 @@ include/parrot/%%PARROT_VER%%/parrot/sub.h
 include/parrot/%%PARROT_VER%%/parrot/thr_pthread.h
 include/parrot/%%PARROT_VER%%/parrot/thr_windows.h
 include/parrot/%%PARROT_VER%%/parrot/thread.h
-include/parrot/%%PARROT_VER%%/parrot/tsq.h
 include/parrot/%%PARROT_VER%%/parrot/vtable.h
 include/parrot/%%PARROT_VER%%/parrot/vtables.h
 include/parrot/%%PARROT_VER%%/parrot/warnings.h
@@ -227,8 +225,6 @@ lib/parrot/%%PARROT_VER%%/library/MIME/Base64.pbc
 lib/parrot/%%PARROT_VER%%/library/MIME/Base64.pir
 lib/parrot/%%PARROT_VER%%/library/Math/Rand.pbc
 lib/parrot/%%PARROT_VER%%/library/Math/Rand.pir
-lib/parrot/%%PARROT_VER%%/library/Math/Random/mt19937ar.pbc
-lib/parrot/%%PARROT_VER%%/library/Math/Random/mt19937ar.pir
 lib/parrot/%%PARROT_VER%%/library/NCI/Utils.pir
 lib/parrot/%%PARROT_VER%%/library/OpenGL.pir
 lib/parrot/%%PARROT_VER%%/library/OpenGL/Math.pir
@@ -474,7 +470,6 @@ lib/pkgconfig/parrot/%%PARROT_VER%%/parrot.pc
 %%PARROT_DOCS%%/README_win32.pod
 %%PARROT_DOCS%%/RESPONSIBLE_PARTIES
 %%PARROT_DOCS%%/TODO
-src/parrot/%%PARROT_VER%%/call_list.txt
 src/parrot/%%PARROT_VER%%/dynpmc/dynlexpad.pmc
 src/parrot/%%PARROT_VER%%/dynpmc/foo.pmc
 src/parrot/%%PARROT_VER%%/dynpmc/foo2.pmc
@@ -523,6 +518,7 @@ src/parrot/%%PARROT_VER%%/pmc/hash.pmc
 src/parrot/%%PARROT_VER%%/pmc/hashiterator.pmc
 src/parrot/%%PARROT_VER%%/pmc/hashiteratorkey.pmc
 src/parrot/%%PARROT_VER%%/pmc/imageio.pmc
+src/parrot/%%PARROT_VER%%/pmc/imageiosize.pmc
 src/parrot/%%PARROT_VER%%/pmc/integer.dump
 src/parrot/%%PARROT_VER%%/pmc/integer.pmc
 src/parrot/%%PARROT_VER%%/pmc/iterator.pmc
@@ -537,6 +533,8 @@ src/parrot/%%PARROT_VER%%/pmc/nci.pmc
 src/parrot/%%PARROT_VER%%/pmc/null.pmc
 src/parrot/%%PARROT_VER%%/pmc/object.dump
 src/parrot/%%PARROT_VER%%/pmc/object.pmc
+src/parrot/%%PARROT_VER%%/pmc/opcode.pmc
+src/parrot/%%PARROT_VER%%/pmc/oplib.pmc
 src/parrot/%%PARROT_VER%%/pmc/orderedhash.pmc
 src/parrot/%%PARROT_VER%%/pmc/orderedhashiterator.pmc
 src/parrot/%%PARROT_VER%%/pmc/os.pmc
@@ -632,7 +630,6 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VER%%/library/PCT
 @dirrm lib/parrot/%%PARROT_VER%%/library/OpenGL
 @dirrm lib/parrot/%%PARROT_VER%%/library/NCI
-@dirrm lib/parrot/%%PARROT_VER%%/library/Math/Random
 @dirrm lib/parrot/%%PARROT_VER%%/library/Math
 @dirrm lib/parrot/%%PARROT_VER%%/library/MIME
 @dirrm lib/parrot/%%PARROT_VER%%/library/HTTP
