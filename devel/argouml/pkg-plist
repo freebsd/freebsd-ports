@@ -1,10 +1,11 @@
 bin/argouml
 %%DATADIR%%/antlr-2.7.7.jar
+%%DATADIR%%/argouml-euml.jar
 %%DATADIR%%/argouml-mdr.jar
 %%DATADIR%%/argouml-model.jar
 %%DATADIR%%/argouml.jar
 %%DATADIR%%/commons-logging-1.0.2.jar
-%%DATADIR%%/gef-0.13.jar
+%%DATADIR%%/gef-0.13.1.jar
 %%DATADIR%%/java-interfaces.jar
 %%DATADIR%%/jmi.jar
 %%DATADIR%%/jmiutils.jar
@@ -14,6 +15,21 @@ bin/argouml
 %%DATADIR%%/nbmdr.jar
 %%DATADIR%%/ocl-argo-1.1.jar
 %%DATADIR%%/openide-util.jar
+%%DATADIR%%/org.eclipse.emf.common_2.5.0.v200906151043.jar
+%%DATADIR%%/org.eclipse.emf.ecore.change.edit_2.5.0.v200906151043.jar
+%%DATADIR%%/org.eclipse.emf.ecore.change_2.5.0.v200906151043.jar
+%%DATADIR%%/org.eclipse.emf.ecore.edit_2.5.0.v200906151043.jar
+%%DATADIR%%/org.eclipse.emf.ecore.xmi_2.5.0.v200906151043.jar
+%%DATADIR%%/org.eclipse.emf.ecore_2.5.0.v200906151043.jar
+%%DATADIR%%/org.eclipse.emf.edit_2.5.0.v200906151043.jar
+%%DATADIR%%/org.eclipse.emf.mapping.ecore2xml_2.5.0.v200906151043.jar
+%%DATADIR%%/org.eclipse.emf.mapping.ecore_2.5.0.v200906151043.jar
+%%DATADIR%%/org.eclipse.emf.mapping_2.5.0.v200906151043.jar
+%%DATADIR%%/org.eclipse.uml2.common.edit_1.5.0.v200905041045.jar
+%%DATADIR%%/org.eclipse.uml2.common_1.5.0.v200905041045.jar
+%%DATADIR%%/org.eclipse.uml2.uml.edit_3.0.0.v200905041045.jar
+%%DATADIR%%/org.eclipse.uml2.uml.resources_3.0.0.v200906011111.jar
+%%DATADIR%%/org.eclipse.uml2.uml_3.0.1.v200908281330.jar
 %%DATADIR%%/swidgets-0.1.4.jar
 %%DATADIR%%/toolbar-1.4.1-20071227.jar
 %%DATADIR%%/ext/anarres-cpp-no-dependencies-1.2.3.jar
@@ -36,6 +52,7 @@ bin/argouml
 %%DATADIR%%/ext/argouml-i18n-ru.jar
 %%DATADIR%%/ext/argouml-i18n-zh.jar
 %%DATADIR%%/ext/argouml-sql.jar
+%%DATADIR%%/ext/argouml-umlpropertypanels.jar
 %%DATADIR%%/ext/domainmapping.xml
 @dirrm %%DATADIR%%/ext
 @dirrm %%DATADIR%%
