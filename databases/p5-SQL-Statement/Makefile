@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Statement
-PORTVERSION=	1.23
+PORTVERSION=	1.25
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,7 @@ PERL_CONFIGURE=	yes
 MAN3=		SQL::Dialects::ANSI.3 \
 		SQL::Dialects::AnyData.3 \
 		SQL::Dialects::CSV.3 \
+		SQL::Dialects::Role.3 \
 		SQL::Eval.3 \
 		SQL::Parser.3 \
 		SQL::Statement.3 \
@@ -38,8 +39,5 @@ MAN3=		SQL::Dialects::ANSI.3 \
 		SQL::Statement::Term.3 \
 		SQL::Statement::TermFactory.3 \
 		SQL::Statement::Util.3
-
-post-extract:
-	@${RM} ${WRKSRC}/lib/SQL/Parser.pm.rej
 
 .include <bsd.port.mk>
