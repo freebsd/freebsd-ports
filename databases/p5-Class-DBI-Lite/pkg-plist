@@ -1,0 +1,22 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Lite/.packlist
+%%SITE_PERL%%/Class/DBI/Lite.pm
+%%SITE_PERL%%/Class/DBI/Lite/Fixture.pm
+%%SITE_PERL%%/Class/DBI/Lite/CacheManager/InMemory.pm
+%%SITE_PERL%%/Class/DBI/Lite/CacheManager/Memcached.pm
+%%SITE_PERL%%/Class/DBI/Lite/EntityMeta.pm
+%%SITE_PERL%%/Class/DBI/Lite/SQLite.pm
+%%SITE_PERL%%/Class/DBI/Lite/ColumnInfo.pm
+%%SITE_PERL%%/Class/DBI/Lite/CacheManager.pm
+%%SITE_PERL%%/Class/DBI/Lite/RootMeta.pm
+%%SITE_PERL%%/Class/DBI/Lite/Tutorial.pod
+%%SITE_PERL%%/Class/DBI/Lite/AdHocEntity.pm
+%%SITE_PERL%%/Class/DBI/Lite/mysql.pm
+%%SITE_PERL%%/Class/DBI/Lite/Iterator.pm
+%%SITE_PERL%%/Class/DBI/Lite/TableInfo.pm
+@dirrm %%SITE_PERL%%/Class/DBI/Lite/CacheManager
+@dirrmtry %%SITE_PERL%%/Class/DBI/Lite
+@dirrmtry %%SITE_PERL%%/Class/DBI
+@dirrmtry %%SITE_PERL%%/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Lite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
