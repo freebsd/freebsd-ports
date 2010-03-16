@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpi
-DISTVERSION=	0.72.3
+DISTVERSION=	0.72.4
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
