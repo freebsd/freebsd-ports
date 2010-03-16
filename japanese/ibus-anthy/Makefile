@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus-anthy
 PORTVERSION=	1.2.0.20100313
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -33,6 +33,14 @@ PLIST_SUB+=	NLS="@comment "
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
+
+REPLACE_FILES=	engine/engine.py setup/anthyprefs.py setup/main.py
+
+post-patch:
+	@for FILE in ${REPLACE_FILES}; do \
+	    ${SED} -i .bak -e "s/@@LOCALBASE@@/${LOCALBASE:S/\//\\\//g}/g" \
+	    ${WRKSRC}/$${FILE}; \
+	done;
 
 port-build:
 .if !defined(WITHOUT_NLS)
