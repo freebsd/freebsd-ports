@@ -1,5 +1,5 @@
---- engine/Makefile.am.orig	2010-01-15 20:54:45.000000000 +0900
-+++ engine/Makefile.am	2010-01-15 20:37:19.000000000 +0900
+--- engine/Makefile.am.orig	2010-03-16 10:43:50.056295118 +0900
++++ engine/Makefile.am	2010-03-16 10:38:02.428703901 +0900
 @@ -62,7 +62,7 @@
  enginedir = $(datadir)/ibus/component
  
