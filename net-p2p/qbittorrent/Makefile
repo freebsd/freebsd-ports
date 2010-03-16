@@ -16,6 +16,10 @@ COMMENT=	Bittorrent client using Qt4 and libtorrent-rasterbar
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
 
+NO_LATEST_LINK=	yes
+DEPRECATED=	The most recent release version is in net-p2p/qbittorrent-22
+EXPIRATION_DATE=	2010-05-01
+
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	qbittorrent*-2.2.*
