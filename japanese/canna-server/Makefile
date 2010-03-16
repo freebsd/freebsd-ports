@@ -21,6 +21,8 @@ COMMENT=	A Kana-to-Kanji conversion system, binary part
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/canna-lib
 
+BROKEN=		changes ownership and permissions on /usr/local/share/canna/dic
+
 USE_RC_SUBR=	canna.sh
 USE_BZIP2=	yes
 ALL_TARGET=	canna
