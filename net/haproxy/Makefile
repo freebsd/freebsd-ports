@@ -6,54 +6,43 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.2.18
+PORTVERSION=	1.4.1
 CATEGORIES=	net www
-MASTER_SITES=	http://haproxy.1wt.eu/download/1.2/src/
+MASTER_SITES=	http://haproxy.1wt.eu/download/1.4/src/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
+MAINTAINER=	freebsd@linepoint.com
+COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 
-USE_RC_SUBR=	haproxy.sh
+USE_RC_SUBR=	haproxy
+USE_GMAKE=	YES
+SUB_FILES=	pkg-message
+MAN1=		haproxy.1
 
-STATS_INTERVAL?=	0
-CFLAGS+=	-DSTATTIME=${STATS_INTERVAL}
+OPTIONS=	PCRE		"Use PCRE regex library"	On\
+		STATIC_PCRE	"Use static PCRE regex library"	Off
 
-.if defined(WITH_TPROXY)
-CFLAGS+=	-DTPROXY
-.endif
+.include <bsd.port.options.mk>
+
+MAKE_ARGS=	"TARGET=freebsd"
 
 .if defined(WITH_PCRE)
-PKGNAMESUFFIX=	-pcre
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
-MAKE_ENV+=	"REGEX=pcre"
-CFLAGS+=	-DUSE_PCRE -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lpcreposix -lpcre
+MAKE_ARGS+=	"USE_PCRE=1"
 .endif
 
-.if defined(WITH_SMALLOPTS)
-CFLAGS+=	-DBUFSIZE=8030 -DMAXREWRITE=1030 -DSYSTEM_MAXCONN=1024
+.if defined(WITH_STATIC_PCRE)
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+MAKE_ARGS+=	"USE_STATIC_PCRE=1"
 .endif
-
-MAKEFILE=	Makefile.bsd
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Available options:"
-	@${ECHO_MSG} "WITH_PCRE:            Use pcre regex engine"
-	@${ECHO_MSG} "WITH_TPROXY:         Enable Transparent proxy support"
-	@${ECHO_MSG} "WITH_SMALLOPTS:         Enable low memory footprint support"
-	@${ECHO_MSG} "STATS_INTERVAL=###:   Statistics interval in milliseconds,"
-	@${ECHO_MSG} "                         (default to 0, disabled)"
-	@${ECHO_MSG} ""
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
+	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin/
+	@${INSTALL_MAN} ${WRKSRC}/doc/haproxy.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
-			${EXAMPLESDIR}/haproxy.cfg
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 post-install:
