@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	c-a-i-r
-PORTVERSION=	2.17
+PORTVERSION=	2.19
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CAIR%20v${PORTVERSION}
-DISTNAME=	CAIR_MT_v2.17
+DISTNAME=	CAIR_v${PORTVERSION}
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Content Aware Image Resizer is an implementation of seam carving
@@ -22,6 +22,6 @@ WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/cair
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/cair ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cair ${PREFIX}/bin
 
 .include <bsd.port.mk>
