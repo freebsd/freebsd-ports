@@ -1159,14 +1159,14 @@ MASTER_SITE_SAMBA+= \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/samba/&,}
 .endif
 
-# List:		http://dl.sv.gnu.org/releases/00_MIRRORS.html
+# List:	http://download.savannah.gnu.org/mirmon/
 .if !defined(IGNORE_MASTER_SITE_SAVANNAH)
 MASTER_SITE_SAVANNAH+= \
-	http://download.savannah.gnu.org/releases/%SUBDIR%/ \
-	http://ftp.cc.uoc.gr/mirrors/nongnu.org/%SUBDIR%/ \
-	http://www.very-clever.com/download/nongnu/%SUBDIR%/ \
+	http://mirrors.aixtools.net/sv/%SUBDIR%/ \
+	http://mirrors.zerg.biz/nongnu/%SUBDIR%/ \
+	http://nongnu.askapache.com/%SUBDIR%/ \
+	http://mirror.lihnidos.org/GNU/savannah/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
-	ftp://ftp.cc.uoc.gr/mirrors/nongnu.org/%SUBDIR%/ \
 	ftp://ftp.twaren.net/Unix/NonGNU/%SUBDIR%/ \
 	http://download.savannah.gnu.org/releases-noredirect/%SUBDIR%/
 .endif
