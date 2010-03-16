@@ -1,0 +1,15 @@
+*************************************************************************************
+Please read following note for installation steps before the first use of WordPress.
+
+1. Copy wp-config-sample.php to wp-config.php 
+   in %%WWWDIR%% .
+
+2. Modify it to fit your MySQL.
+
+3. Modify your web server configuration.
+
+
+If you are upgrading from prior version, please browse this URL :
+
+  http://[WORDPRESS_URL]/wp-admin/upgrade.php
+
