@@ -71,15 +71,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/input/package-use.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/ChoraIntegration.html
-%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/ChurnPageMaker.html
-%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/LOCChurnChartMaker.html
-%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/RepoMapPageMaker.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/SvnCommandLineParser.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/SvnConfigurationOptions.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/ChoraIntegration.html
-%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/ChurnPageMaker.html
-%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/LOCChurnChartMaker.html
-%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/RepoMapPageMaker.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/SvnCommandLineParser.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/class-use/SvnConfigurationOptions.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/output/package-frame.html
@@ -94,10 +88,17 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/ConsoleTaskLogger.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/EnvReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/FilenameComparator.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/ISvnDiffProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/ISvnInfoProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/ISvnProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/ISvnPropgetProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/ISvnVersionProcessor.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/JavaUtilTaskLogger.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/ProcessUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SilentLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/StringUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnCommandHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnCommandLineProcessor.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnDiffUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnInfoUtils.SvnInfoHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/SvnInfoUtils.html
@@ -110,10 +111,17 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/ConsoleTaskLogger.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/EnvReport.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/FilenameComparator.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/ISvnDiffProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/ISvnInfoProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/ISvnProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/ISvnPropgetProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/ISvnVersionProcessor.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/JavaUtilTaskLogger.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/ProcessUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SilentLogger.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/StringUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnCommandHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnCommandLineProcessor.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnDiffUtils.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnInfoUtils.SvnInfoHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/class-use/SvnInfoUtils.html
@@ -126,6 +134,24 @@
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/package-use.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/SvnKitDiff.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/SvnKitInfo.SvnKitInfoHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/SvnKitInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/SvnKitProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/SvnKitPropget.SvnKitPropertyHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/SvnKitPropget.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/SvnKitVersion.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/class-use/SvnKitDiff.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/class-use/SvnKitInfo.SvnKitInfoHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/class-use/SvnKitInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/class-use/SvnKitProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/class-use/SvnKitPropget.SvnKitPropertyHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/class-use/SvnKitPropget.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/class-use/SvnKitVersion.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/net/sf/statsvn/util/svnkit/package-use.html
 %%PORTDOCS%%%%DOCSDIR%%/overview-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/overview-tree.html
@@ -136,6 +162,8 @@
 %%DATADIR%%/statsvn.jar
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util/svnkit/class-use
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util/svnkit
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util/class-use
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/util
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/net/sf/statsvn/output/class-use
