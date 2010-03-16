@@ -42,6 +42,12 @@ CONFIGURE_ARGS=	--disable-debug \
 
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -52,4 +58,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/*.png ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
