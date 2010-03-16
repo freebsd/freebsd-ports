@@ -3,6 +3,7 @@
 %%PYTHON_SITELIBDIR%%/anthy.py
 libexec/ibus-engine-anthy
 libexec/ibus-setup-anthy
+%%DATADIR%%/dicts/symbol.t
 %%DATADIR%%/engine/engine.py
 %%DATADIR%%/engine/engine.pyc
 %%DATADIR%%/engine/engine.pyo
@@ -48,4 +49,5 @@ share/ibus/component/anthy.xml
 @dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/engine
+@dirrm %%DATADIR%%/dicts
 @dirrm %%DATADIR%%

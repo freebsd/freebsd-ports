@@ -1,16 +1,5 @@
---- configure.orig	2010-01-15 20:53:37.000000000 +0900
-+++ configure	2010-01-15 20:27:48.000000000 +0900
-@@ -17832,8 +17832,8 @@
- 	:
- fi
- 
--{ $as_echo "$as_me:$LINENO: checking whether NTH_UNCONVERTED_CANDIDATE is declared" >&5
--$as_echo_n "checking whether NTH_UNCONVERTED_CANDIDATE is declared... " >&6; }
-+#{ $as_echo "$as_me:$LINENO: checking whether NTH_UNCONVERTED_CANDIDATE is declared" >&5
-+#$as_echo_n "checking whether NTH_UNCONVERTED_CANDIDATE is declared... " >&6; }
- if test "${ac_cv_have_decl_NTH_UNCONVERTED_CANDIDATE+set}" = set; then
-   $as_echo_n "(cached) " >&6
- else
+--- configure.orig	2010-03-16 10:42:56.913074122 +0900
++++ configure	2010-03-16 10:36:06.999930133 +0900
 @@ -17898,9 +17898,9 @@
  #define HAVE_DECL_NTH_UNCONVERTED_CANDIDATE 0
  _ACEOF
