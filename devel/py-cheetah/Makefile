@@ -17,8 +17,6 @@ COMMENT=	HTML template engine for Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>=2.0.3:${PORTSDIR}/textproc/py-markdown
 
-CONFLICTS=	cheetah-[0-9]*
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	Cheetah

@@ -4329,3 +4329,4 @@ multimedia/tsMuxeR|multimedia/linux-tsmuxer|2010-02-24|Port was given a better n
 japanese/stardict2-dict-ja||2010-02-25|Please use japanese/stardict-dict-ja
 net/mpd||2010-02-25|Has expired: obsoleted, unsupported port. Use net/mpd4, net/mpd5 instead
 textproc/xmlada-gcc||2010-02-27|Has expired: broken and practically unmaintained
+www/cheetah||2010-03-16|Has expired: broken, unmaintained, development ceased in 2001
