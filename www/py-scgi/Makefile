@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	scgi
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	www python
 MASTER_SITES=	http://python.ca/scgi/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@freebsd.org
 COMMENT=	Python server implementation of the Simple Common Gateway Protocol
 
 USE_PYTHON=	yes
