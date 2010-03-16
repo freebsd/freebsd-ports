@@ -28,6 +28,6 @@ load_rc_config $name
 : ${redmine_flags="-a 0.0.0.0 -p 3000 -e production"}
 
 command_args="-d -D -c %%WWWDIR%% -u www -g www"
-start_cmd="%%PREFIX%%/bin/thin ${command_args} start"
+start_cmd="%%PREFIX%%/bin/thin ${command_args} ${redmine_flags} start"
 
 run_rc_command "$1"
