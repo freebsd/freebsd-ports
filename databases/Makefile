@@ -261,6 +261,7 @@
     SUBDIR += p5-Class-DBI-DDL
     SUBDIR += p5-Class-DBI-FromCGI
     SUBDIR += p5-Class-DBI-LazyInflate
+    SUBDIR += p5-Class-DBI-Lite
     SUBDIR += p5-Class-DBI-Loader
     SUBDIR += p5-Class-DBI-Loader-Relationship
     SUBDIR += p5-Class-DBI-Oracle
