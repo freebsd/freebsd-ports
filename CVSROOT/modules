@@ -3498,6 +3498,7 @@ fluxconf                        ports/x11-wm/fluxconf
 fluxter                         ports/x11-wm/fluxter
 flv2mpeg4                       ports/multimedia/flv2mpeg4
 flvmeta                         ports/multimedia/flvmeta
+flvstreamer                     ports/multimedia/flvstreamer
 flvtool++                       ports/multimedia/flvtool++
 flvw                            ports/x11-toolkits/flvw
 flwm                            ports/x11-wm/flwm
@@ -7555,6 +7556,7 @@ libdnet                         ports/net/libdnet
 libdnsres                       ports/devel/libdnsres
 libdockapp                      ports/x11-wm/libdockapp
 libdomainkeys                   ports/mail/libdomainkeys
+libdrizzle                      ports/databases/libdrizzle
 libdrm                          ports/graphics/libdrm
 libds                           ports/devel/libds
 libdsk                          ports/emulators/libdsk
@@ -7636,6 +7638,7 @@ libgdamm                        ports/databases/libgdamm
 libgdata                        ports/devel/libgdata
 libgdiplus                      ports/x11-toolkits/libgdiplus
 libgeda                         ports/cad/libgeda
+libgee                          ports/devel/libgee
 libgenome                       ports/biology/libgenome
 libgeotiff                      ports/graphics/libgeotiff
 libgetline                      ports/devel/libgetline
@@ -19159,6 +19162,7 @@ pinentry-qt4                    ports/security/pinentry-qt4
 pinfo                           ports/misc/pinfo
 pingus                          ports/games/pingus
 pink-pony                       ports/games/pink-pony
+pino                            ports/net-im/pino
 pinot                           ports/deskutils/pinot
 pinstall                        ports/devel/pinstall
 pioneers                        ports/games/pioneers
@@ -21309,6 +21313,7 @@ rtfx                            ports/textproc/rtfx
 rtg                             ports/net/rtg
 rtgui                           ports/net-p2p/rtgui
 rth                             ports/devel/rth
+rtmpdump                        ports/multimedia/rtmpdump
 rtorrent                        ports/net-p2p/rtorrent
 rtorrent-devel                  ports/net-p2p/rtorrent-devel
 rtpbreak                        ports/net/rtpbreak
