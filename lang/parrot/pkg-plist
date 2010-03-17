@@ -2,6 +2,7 @@ bin/parrot
 bin/parrot-nqp
 bin/parrot_config
 bin/parrot_debugger
+bin/parrot_nci_thunk_gen
 bin/pbc_disassemble
 bin/pbc_dump
 bin/pbc_merge
