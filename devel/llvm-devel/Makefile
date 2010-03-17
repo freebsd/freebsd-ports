@@ -25,7 +25,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 
 CONFLICTS=	clang-2.[0-9]* llvm-2.[0-9]*
 
-BROKEN=		fails to package
+MANUAL_PACKAGE_BUILD=	produces package over 500 MB large
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
