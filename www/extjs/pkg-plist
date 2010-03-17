@@ -15,6 +15,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.CycleButton.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.DataView.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.DatePicker.html
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.Direct.Transaction.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.Direct.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.DomHelper.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.DomQuery.html
@@ -133,7 +134,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.PollingProvider.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.Provider.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.RemotingProvider.html
-%%PORTDOCS%%%%DOCSDIR%%/output/Ext.direct.Transaction.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.Action.DirectLoad.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.Action.DirectSubmit.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.form.Action.Load.html
@@ -184,6 +184,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.AbsoluteLayout.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.AccordionLayout.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.AnchorLayout.html
+%%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.AutoLayout.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.BorderLayout.Region.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.BorderLayout.SplitRegion.html
 %%PORTDOCS%%%%DOCSDIR%%/output/Ext.layout.BorderLayout.html
@@ -289,8 +290,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/box/r.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/box/tb-blue.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/box/tb.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/arrow.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/btn-arrow.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/btn-sprite.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/btn.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/group-cs.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/group-lr.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/group-tb.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/s-arrow-b-noline.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/s-arrow-b.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/s-arrow-bo.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/s-arrow-noline.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/s-arrow-o.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/button/s-arrow.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/dd/drop-add.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/dd/drop-no.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/dd/drop-yes.gif
@@ -332,7 +344,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/grid3-special-col-bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/grid3-special-col-sel-bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/group-by.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/group-collapse.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/group-expand-sprite.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/group-expand.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/hd-pop.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/hmenu-asc.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/hmenu-desc.gif
@@ -358,6 +372,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/row-expand-sprite.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/row-over.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/row-sel.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/sort-hd.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/sort_asc.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/sort_desc.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/grid/wait.gif
@@ -397,6 +412,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/progress/progress-bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/qtip/bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/qtip/close.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/qtip/tip-anchor-sprite.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/qtip/tip-sprite.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/s.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/shadow-c.png
@@ -435,6 +451,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tabs/tab-btm-inactive-left-bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tabs/tab-btm-inactive-right-bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tabs/tab-btm-left-bg.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tabs/tab-btm-over-left-bg.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tabs/tab-btm-over-right-bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tabs/tab-btm-right-bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tabs/tab-close.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tabs/tab-strip-bg.gif
@@ -446,8 +464,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/toolbar/btn-arrow.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/toolbar/btn-over-bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/toolbar/gray-bg.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/toolbar/more.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/toolbar/tb-bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/toolbar/tb-btn-sprite.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/toolbar/tb-xl-btn-sprite.gif
+%%PORTDOCS%%%%DOCSDIR%%/resources/images/default/toolbar/tb-xl-sep.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tree/arrows.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tree/drop-add.gif
 %%PORTDOCS%%%%DOCSDIR%%/resources/images/default/tree/drop-between.gif
@@ -517,6 +538,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/ArrayReader.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ArrayStore.html
 %%PORTDOCS%%%%DOCSDIR%%/source/AsyncTreeNode.html
+%%PORTDOCS%%%%DOCSDIR%%/source/AutoLayout.html
 %%PORTDOCS%%%%DOCSDIR%%/source/BaseItem.html
 %%PORTDOCS%%%%DOCSDIR%%/source/BasicForm.html
 %%PORTDOCS%%%%DOCSDIR%%/source/BorderLayout.html
@@ -636,6 +658,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/LoadMask.html
 %%PORTDOCS%%%%DOCSDIR%%/source/MemoryProxy.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Menu.html
+%%PORTDOCS%%%%DOCSDIR%%/source/MenuLayout.html
 %%PORTDOCS%%%%DOCSDIR%%/source/MenuMgr.html
 %%PORTDOCS%%%%DOCSDIR%%/source/MessageBox.html
 %%PORTDOCS%%%%DOCSDIR%%/source/MixedCollection.html
@@ -688,6 +711,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/Tip.html
 %%PORTDOCS%%%%DOCSDIR%%/source/ToolTip.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Toolbar.html
+%%PORTDOCS%%%%DOCSDIR%%/source/ToolbarLayout.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Transaction.html
 %%PORTDOCS%%%%DOCSDIR%%/source/Tree.html
 %%PORTDOCS%%%%DOCSDIR%%/source/TreeDragZone.html
@@ -772,7 +796,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/source/swfobject.html
 %%PORTDOCS%%%%DOCSDIR%%/source/yui-bridge.html
 %%PORTDOCS%%%%DOCSDIR%%/welcome.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.DS_Store
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/buttons.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/button/buttons.html
@@ -936,6 +959,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/combos.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/combos.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/combos.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/custom-access.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/custom-access.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/custom.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/custom.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/dynamic.html
@@ -943,6 +968,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/file-upload.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/file-upload.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/file-upload.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/form-grid-access.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/form-grid-access.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/form-grid.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/form-grid.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/form/forms.css
@@ -1081,6 +1108,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/key-feed-viewer/FeedWindow.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/key-feed-viewer/MainPanel.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/key-feed-viewer/feed-proxy.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/key-feed-viewer/feed-viewer-access.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/key-feed-viewer/feed-viewer.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/key-feed-viewer/images/article.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/key-feed-viewer/images/bg.gif
@@ -1324,9 +1352,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/feeds.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-adv-vtypes.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-check-radio.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-custom-access.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-custom.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-dynamic.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-file-upload.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-grid-binding-access.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-grid-binding.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-multiselect.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared/screens/form-spinner.gif
@@ -1457,17 +1487,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/tasks.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/tasks.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tasks/tasks.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/.DS_Store
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/index.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/index303.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/resources/application_add.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/resources/bubble-cs-f1eedd.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/resources/bubble-f1eedd.css
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/resources/bubble-lr.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/resources/bubble-tb.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/resources/form-configs.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/resources/grid-configs.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-case-2b/resources/tabs.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toolbar/images/add.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toolbar/images/add16.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toolbar/images/add24.gif
@@ -1661,9 +1680,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/writer.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/writer.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/writer/writer.js
-%%WWWDIR%%/CHANGES_ext-3.1.0.html
 %%WWWDIR%%/INCLUDE_ORDER.txt
-%%WWWDIR%%/adapter/ext/ext-base-debug-w-comments.js
 %%WWWDIR%%/adapter/ext/ext-base-debug.js
 %%WWWDIR%%/adapter/ext/ext-base.js
 %%WWWDIR%%/adapter/jquery/ext-jquery-adapter-debug.js
@@ -1676,6 +1693,7 @@
 %%WWWDIR%%/ext-all.js
 %%WWWDIR%%/ext.jsb2
 %%WWWDIR%%/gpl-3.0.txt
+%%WWWDIR%%/index.html
 %%WWWDIR%%/license.txt
 %%WWWDIR%%/pkgs/cmp-foundation-debug.js
 %%WWWDIR%%/pkgs/cmp-foundation.js
@@ -1759,6 +1777,54 @@
 %%WWWDIR%%/resources/css/structure/toolbar.css
 %%WWWDIR%%/resources/css/structure/tree.css
 %%WWWDIR%%/resources/css/structure/window.css
+%%WWWDIR%%/resources/css/theme-access/borders.css
+%%WWWDIR%%/resources/css/theme-access/box.css
+%%WWWDIR%%/resources/css/theme-access/button.css
+%%WWWDIR%%/resources/css/theme-access/combo.css
+%%WWWDIR%%/resources/css/theme-access/core.css
+%%WWWDIR%%/resources/css/theme-access/date-picker.css
+%%WWWDIR%%/resources/css/theme-access/dd.css
+%%WWWDIR%%/resources/css/theme-access/debug.css
+%%WWWDIR%%/resources/css/theme-access/dialog.css
+%%WWWDIR%%/resources/css/theme-access/editor.css
+%%WWWDIR%%/resources/css/theme-access/form.css
+%%WWWDIR%%/resources/css/theme-access/grid.css
+%%WWWDIR%%/resources/css/theme-access/layout.css
+%%WWWDIR%%/resources/css/theme-access/list-view.css
+%%WWWDIR%%/resources/css/theme-access/menu.css
+%%WWWDIR%%/resources/css/theme-access/panel.css
+%%WWWDIR%%/resources/css/theme-access/progress.css
+%%WWWDIR%%/resources/css/theme-access/qtips.css
+%%WWWDIR%%/resources/css/theme-access/resizable.css
+%%WWWDIR%%/resources/css/theme-access/slider.css
+%%WWWDIR%%/resources/css/theme-access/tabs.css
+%%WWWDIR%%/resources/css/theme-access/toolbar.css
+%%WWWDIR%%/resources/css/theme-access/tree.css
+%%WWWDIR%%/resources/css/theme-access/window.css
+%%WWWDIR%%/resources/css/theme-gray/borders.css
+%%WWWDIR%%/resources/css/theme-gray/box.css
+%%WWWDIR%%/resources/css/theme-gray/button.css
+%%WWWDIR%%/resources/css/theme-gray/combo.css
+%%WWWDIR%%/resources/css/theme-gray/core.css
+%%WWWDIR%%/resources/css/theme-gray/date-picker.css
+%%WWWDIR%%/resources/css/theme-gray/dd.css
+%%WWWDIR%%/resources/css/theme-gray/debug.css
+%%WWWDIR%%/resources/css/theme-gray/dialog.css
+%%WWWDIR%%/resources/css/theme-gray/editor.css
+%%WWWDIR%%/resources/css/theme-gray/form.css
+%%WWWDIR%%/resources/css/theme-gray/grid.css
+%%WWWDIR%%/resources/css/theme-gray/layout.css
+%%WWWDIR%%/resources/css/theme-gray/list-view.css
+%%WWWDIR%%/resources/css/theme-gray/menu.css
+%%WWWDIR%%/resources/css/theme-gray/panel.css
+%%WWWDIR%%/resources/css/theme-gray/progress.css
+%%WWWDIR%%/resources/css/theme-gray/qtips.css
+%%WWWDIR%%/resources/css/theme-gray/resizable.css
+%%WWWDIR%%/resources/css/theme-gray/slider.css
+%%WWWDIR%%/resources/css/theme-gray/tabs.css
+%%WWWDIR%%/resources/css/theme-gray/toolbar.css
+%%WWWDIR%%/resources/css/theme-gray/tree.css
+%%WWWDIR%%/resources/css/theme-gray/window.css
 %%WWWDIR%%/resources/css/visual/borders.css
 %%WWWDIR%%/resources/css/visual/box.css
 %%WWWDIR%%/resources/css/visual/button.css
@@ -1783,9 +1849,194 @@
 %%WWWDIR%%/resources/css/visual/toolbar.css
 %%WWWDIR%%/resources/css/visual/tree.css
 %%WWWDIR%%/resources/css/visual/window.css
+%%WWWDIR%%/resources/css/xtheme-access.css
 %%WWWDIR%%/resources/css/xtheme-blue.css
 %%WWWDIR%%/resources/css/xtheme-gray.css
 %%WWWDIR%%/resources/expressinstall.swf
+%%WWWDIR%%/resources/images/access/box/corners-blue.gif
+%%WWWDIR%%/resources/images/access/box/corners.gif
+%%WWWDIR%%/resources/images/access/box/l-blue.gif
+%%WWWDIR%%/resources/images/access/box/l.gif
+%%WWWDIR%%/resources/images/access/box/r-blue.gif
+%%WWWDIR%%/resources/images/access/box/r.gif
+%%WWWDIR%%/resources/images/access/box/tb-blue.gif
+%%WWWDIR%%/resources/images/access/box/tb.gif
+%%WWWDIR%%/resources/images/access/button/arrow.gif
+%%WWWDIR%%/resources/images/access/button/btn.gif
+%%WWWDIR%%/resources/images/access/button/group-cs.gif
+%%WWWDIR%%/resources/images/access/button/group-lr.gif
+%%WWWDIR%%/resources/images/access/button/group-tb.gif
+%%WWWDIR%%/resources/images/access/button/s-arrow-b-noline.gif
+%%WWWDIR%%/resources/images/access/button/s-arrow-b.gif
+%%WWWDIR%%/resources/images/access/button/s-arrow-bo.gif
+%%WWWDIR%%/resources/images/access/button/s-arrow-noline.gif
+%%WWWDIR%%/resources/images/access/button/s-arrow-o.gif
+%%WWWDIR%%/resources/images/access/button/s-arrow.gif
+%%WWWDIR%%/resources/images/access/editor/tb-sprite.gif
+%%WWWDIR%%/resources/images/access/form/checkbox.gif
+%%WWWDIR%%/resources/images/access/form/clear-trigger.gif
+%%WWWDIR%%/resources/images/access/form/clear-trigger.psd
+%%WWWDIR%%/resources/images/access/form/date-trigger - Copy.gif
+%%WWWDIR%%/resources/images/access/form/date-trigger.gif
+%%WWWDIR%%/resources/images/access/form/date-trigger.psd
+%%WWWDIR%%/resources/images/access/form/error-tip-corners.gif
+%%WWWDIR%%/resources/images/access/form/exclamation.gif
+%%WWWDIR%%/resources/images/access/form/radio.gif
+%%WWWDIR%%/resources/images/access/form/search-trigger - Copy.gif
+%%WWWDIR%%/resources/images/access/form/search-trigger.gif
+%%WWWDIR%%/resources/images/access/form/search-trigger.psd
+%%WWWDIR%%/resources/images/access/form/text-bg.gif
+%%WWWDIR%%/resources/images/access/form/trigger - Copy.gif
+%%WWWDIR%%/resources/images/access/form/trigger-tpl.gif
+%%WWWDIR%%/resources/images/access/form/trigger.gif
+%%WWWDIR%%/resources/images/access/form/trigger.psd
+%%WWWDIR%%/resources/images/access/grid/arrow-left-white.gif
+%%WWWDIR%%/resources/images/access/grid/arrow-right-white.gif
+%%WWWDIR%%/resources/images/access/grid/col-move-bottom.gif
+%%WWWDIR%%/resources/images/access/grid/col-move-top.gif
+%%WWWDIR%%/resources/images/access/grid/columns.gif
+%%WWWDIR%%/resources/images/access/grid/dirty.gif
+%%WWWDIR%%/resources/images/access/grid/done.gif
+%%WWWDIR%%/resources/images/access/grid/drop-no.gif
+%%WWWDIR%%/resources/images/access/grid/drop-yes.gif
+%%WWWDIR%%/resources/images/access/grid/footer-bg.gif
+%%WWWDIR%%/resources/images/access/grid/grid-blue-hd.gif
+%%WWWDIR%%/resources/images/access/grid/grid-blue-split.gif
+%%WWWDIR%%/resources/images/access/grid/grid-hrow.gif
+%%WWWDIR%%/resources/images/access/grid/grid-loading.gif
+%%WWWDIR%%/resources/images/access/grid/grid-split.gif
+%%WWWDIR%%/resources/images/access/grid/grid-vista-hd.gif
+%%WWWDIR%%/resources/images/access/grid/grid3-hd-btn.gif
+%%WWWDIR%%/resources/images/access/grid/grid3-hrow-over.gif
+%%WWWDIR%%/resources/images/access/grid/grid3-hrow.gif
+%%WWWDIR%%/resources/images/access/grid/grid3-special-col-bg.gif
+%%WWWDIR%%/resources/images/access/grid/grid3-special-col-sel-bg.gif
+%%WWWDIR%%/resources/images/access/grid/group-by.gif
+%%WWWDIR%%/resources/images/access/grid/group-collapse.gif
+%%WWWDIR%%/resources/images/access/grid/group-expand-sprite.gif
+%%WWWDIR%%/resources/images/access/grid/group-expand.gif
+%%WWWDIR%%/resources/images/access/grid/hd-pop.gif
+%%WWWDIR%%/resources/images/access/grid/hmenu-asc.gif
+%%WWWDIR%%/resources/images/access/grid/hmenu-desc.gif
+%%WWWDIR%%/resources/images/access/grid/hmenu-lock.gif
+%%WWWDIR%%/resources/images/access/grid/hmenu-lock.png
+%%WWWDIR%%/resources/images/access/grid/hmenu-unlock.gif
+%%WWWDIR%%/resources/images/access/grid/hmenu-unlock.png
+%%WWWDIR%%/resources/images/access/grid/invalid_line.gif
+%%WWWDIR%%/resources/images/access/grid/loading.gif
+%%WWWDIR%%/resources/images/access/grid/mso-hd.gif
+%%WWWDIR%%/resources/images/access/grid/nowait.gif
+%%WWWDIR%%/resources/images/access/grid/page-first-disabled.gif
+%%WWWDIR%%/resources/images/access/grid/page-first.gif
+%%WWWDIR%%/resources/images/access/grid/page-last-disabled.gif
+%%WWWDIR%%/resources/images/access/grid/page-last.gif
+%%WWWDIR%%/resources/images/access/grid/page-next-disabled.gif
+%%WWWDIR%%/resources/images/access/grid/page-next.gif
+%%WWWDIR%%/resources/images/access/grid/page-prev-disabled.gif
+%%WWWDIR%%/resources/images/access/grid/page-prev.gif
+%%WWWDIR%%/resources/images/access/grid/pick-button.gif
+%%WWWDIR%%/resources/images/access/grid/refresh.gif
+%%WWWDIR%%/resources/images/access/grid/row-check-sprite.gif
+%%WWWDIR%%/resources/images/access/grid/row-expand-sprite.gif
+%%WWWDIR%%/resources/images/access/grid/row-over.gif
+%%WWWDIR%%/resources/images/access/grid/row-sel.gif
+%%WWWDIR%%/resources/images/access/grid/sort-hd.gif
+%%WWWDIR%%/resources/images/access/grid/sort_asc.gif
+%%WWWDIR%%/resources/images/access/grid/sort_desc.gif
+%%WWWDIR%%/resources/images/access/grid/wait.gif
+%%WWWDIR%%/resources/images/access/menu/checked.gif
+%%WWWDIR%%/resources/images/access/menu/group-checked.gif
+%%WWWDIR%%/resources/images/access/menu/item-over.gif
+%%WWWDIR%%/resources/images/access/menu/menu-parent.gif
+%%WWWDIR%%/resources/images/access/menu/menu.gif
+%%WWWDIR%%/resources/images/access/menu/unchecked.gif
+%%WWWDIR%%/resources/images/access/panel/corners-sprite.gif
+%%WWWDIR%%/resources/images/access/panel/left-right.gif
+%%WWWDIR%%/resources/images/access/panel/light-hd.gif
+%%WWWDIR%%/resources/images/access/panel/tool-sprite-tpl.gif
+%%WWWDIR%%/resources/images/access/panel/tool-sprites - Copy.gif
+%%WWWDIR%%/resources/images/access/panel/tool-sprites.gif
+%%WWWDIR%%/resources/images/access/panel/tools-sprites-trans.gif
+%%WWWDIR%%/resources/images/access/panel/top-bottom.gif
+%%WWWDIR%%/resources/images/access/panel/white-corners-sprite.gif
+%%WWWDIR%%/resources/images/access/panel/white-left-right.gif
+%%WWWDIR%%/resources/images/access/panel/white-top-bottom.gif
+%%WWWDIR%%/resources/images/access/progress/progress-bg.gif
+%%WWWDIR%%/resources/images/access/qtip/close.gif
+%%WWWDIR%%/resources/images/access/qtip/tip-anchor-sprite.gif
+%%WWWDIR%%/resources/images/access/qtip/tip-sprite.gif
+%%WWWDIR%%/resources/images/access/shared/glass-bg.gif
+%%WWWDIR%%/resources/images/access/shared/hd-sprite.gif
+%%WWWDIR%%/resources/images/access/shared/left-btn.gif
+%%WWWDIR%%/resources/images/access/shared/right-btn.gif
+%%WWWDIR%%/resources/images/access/sizer/e-handle-dark.gif
+%%WWWDIR%%/resources/images/access/sizer/e-handle.gif
+%%WWWDIR%%/resources/images/access/sizer/ne-handle-dark.gif
+%%WWWDIR%%/resources/images/access/sizer/ne-handle.gif
+%%WWWDIR%%/resources/images/access/sizer/nw-handle-dark.gif
+%%WWWDIR%%/resources/images/access/sizer/nw-handle.gif
+%%WWWDIR%%/resources/images/access/sizer/s-handle-dark.gif
+%%WWWDIR%%/resources/images/access/sizer/s-handle.gif
+%%WWWDIR%%/resources/images/access/sizer/se-handle-dark.gif
+%%WWWDIR%%/resources/images/access/sizer/se-handle.gif
+%%WWWDIR%%/resources/images/access/sizer/square.gif
+%%WWWDIR%%/resources/images/access/sizer/sw-handle-dark.gif
+%%WWWDIR%%/resources/images/access/sizer/sw-handle.gif
+%%WWWDIR%%/resources/images/access/slider/slider-bg.png
+%%WWWDIR%%/resources/images/access/slider/slider-thumb.png
+%%WWWDIR%%/resources/images/access/slider/slider-v-bg.png
+%%WWWDIR%%/resources/images/access/slider/slider-v-thumb.png
+%%WWWDIR%%/resources/images/access/tabs/scroll-left.gif
+%%WWWDIR%%/resources/images/access/tabs/scroll-right.gif
+%%WWWDIR%%/resources/images/access/tabs/tab-btm-inactive-left-bg.gif
+%%WWWDIR%%/resources/images/access/tabs/tab-btm-inactive-right-bg.gif
+%%WWWDIR%%/resources/images/access/tabs/tab-btm-left-bg.gif
+%%WWWDIR%%/resources/images/access/tabs/tab-btm-right-bg.gif
+%%WWWDIR%%/resources/images/access/tabs/tab-close.gif
+%%WWWDIR%%/resources/images/access/tabs/tab-strip-bg.gif
+%%WWWDIR%%/resources/images/access/tabs/tab-strip-btm-bg.gif
+%%WWWDIR%%/resources/images/access/tabs/tabs-sprite.gif
+%%WWWDIR%%/resources/images/access/toolbar/bg.gif
+%%WWWDIR%%/resources/images/access/toolbar/btn-arrow-light.gif
+%%WWWDIR%%/resources/images/access/toolbar/btn-arrow.gif
+%%WWWDIR%%/resources/images/access/toolbar/btn-over-bg.gif
+%%WWWDIR%%/resources/images/access/toolbar/gray-bg.gif
+%%WWWDIR%%/resources/images/access/toolbar/more.gif
+%%WWWDIR%%/resources/images/access/toolbar/s-arrow-bo.gif
+%%WWWDIR%%/resources/images/access/toolbar/tb-btn-sprite.gif
+%%WWWDIR%%/resources/images/access/toolbar/tb-xl-btn-sprite.gif
+%%WWWDIR%%/resources/images/access/toolbar/tb-xl-sep.gif
+%%WWWDIR%%/resources/images/access/tree/arrows.gif
+%%WWWDIR%%/resources/images/access/tree/drop-add.gif
+%%WWWDIR%%/resources/images/access/tree/drop-between.gif
+%%WWWDIR%%/resources/images/access/tree/drop-no.gif
+%%WWWDIR%%/resources/images/access/tree/drop-over.gif
+%%WWWDIR%%/resources/images/access/tree/drop-under.gif
+%%WWWDIR%%/resources/images/access/tree/drop-yes.gif
+%%WWWDIR%%/resources/images/access/tree/elbow-end-minus-nl.gif
+%%WWWDIR%%/resources/images/access/tree/elbow-end-minus.gif
+%%WWWDIR%%/resources/images/access/tree/elbow-end-plus-nl.gif
+%%WWWDIR%%/resources/images/access/tree/elbow-end-plus.gif
+%%WWWDIR%%/resources/images/access/tree/elbow-end.gif
+%%WWWDIR%%/resources/images/access/tree/elbow-line.gif
+%%WWWDIR%%/resources/images/access/tree/elbow-minus-nl.gif
+%%WWWDIR%%/resources/images/access/tree/elbow-minus.gif
+%%WWWDIR%%/resources/images/access/tree/elbow-plus-nl.gif
+%%WWWDIR%%/resources/images/access/tree/elbow-plus.gif
+%%WWWDIR%%/resources/images/access/tree/elbow.gif
+%%WWWDIR%%/resources/images/access/tree/folder-open.gif
+%%WWWDIR%%/resources/images/access/tree/folder.gif
+%%WWWDIR%%/resources/images/access/tree/leaf.gif
+%%WWWDIR%%/resources/images/access/tree/loading.gif
+%%WWWDIR%%/resources/images/access/tree/s.gif
+%%WWWDIR%%/resources/images/access/window/icon-error.gif
+%%WWWDIR%%/resources/images/access/window/icon-info.gif
+%%WWWDIR%%/resources/images/access/window/icon-question.gif
+%%WWWDIR%%/resources/images/access/window/icon-warning.gif
+%%WWWDIR%%/resources/images/access/window/left-corners.png
+%%WWWDIR%%/resources/images/access/window/left-right.png
+%%WWWDIR%%/resources/images/access/window/right-corners.png
+%%WWWDIR%%/resources/images/access/window/top-bottom.png
 %%WWWDIR%%/resources/images/default/box/corners-blue.gif
 %%WWWDIR%%/resources/images/default/box/corners.gif
 %%WWWDIR%%/resources/images/default/box/l-blue.gif
@@ -2011,7 +2262,38 @@
 %%WWWDIR%%/resources/images/gray/button/group-cs.gif
 %%WWWDIR%%/resources/images/gray/button/group-lr.gif
 %%WWWDIR%%/resources/images/gray/button/group-tb.gif
+%%WWWDIR%%/resources/images/gray/button/s-arrow-bo.gif
+%%WWWDIR%%/resources/images/gray/button/s-arrow-o.gif
+%%WWWDIR%%/resources/images/gray/form/clear-trigger.gif
+%%WWWDIR%%/resources/images/gray/form/date-trigger.gif
+%%WWWDIR%%/resources/images/gray/form/search-trigger.gif
+%%WWWDIR%%/resources/images/gray/form/trigger.gif
 %%WWWDIR%%/resources/images/gray/gradient-bg.gif
+%%WWWDIR%%/resources/images/gray/grid/col-move-bottom.gif
+%%WWWDIR%%/resources/images/gray/grid/col-move-top.gif
+%%WWWDIR%%/resources/images/gray/grid/grid3-hd-btn.gif
+%%WWWDIR%%/resources/images/gray/grid/grid3-hrow-over.gif
+%%WWWDIR%%/resources/images/gray/grid/grid3-hrow-over2.gif
+%%WWWDIR%%/resources/images/gray/grid/grid3-hrow.gif
+%%WWWDIR%%/resources/images/gray/grid/grid3-hrow2.gif
+%%WWWDIR%%/resources/images/gray/grid/grid3-special-col-bg.gif
+%%WWWDIR%%/resources/images/gray/grid/grid3-special-col-bg2.gif
+%%WWWDIR%%/resources/images/gray/grid/grid3-special-col-sel-bg.gif
+%%WWWDIR%%/resources/images/gray/grid/group-collapse.gif
+%%WWWDIR%%/resources/images/gray/grid/group-expand-sprite.gif
+%%WWWDIR%%/resources/images/gray/grid/group-expand.gif
+%%WWWDIR%%/resources/images/gray/grid/page-first.gif
+%%WWWDIR%%/resources/images/gray/grid/page-last.gif
+%%WWWDIR%%/resources/images/gray/grid/page-next.gif
+%%WWWDIR%%/resources/images/gray/grid/page-prev.gif
+%%WWWDIR%%/resources/images/gray/grid/refresh.gif
+%%WWWDIR%%/resources/images/gray/grid/row-expand-sprite.gif
+%%WWWDIR%%/resources/images/gray/grid/sort_asc.gif
+%%WWWDIR%%/resources/images/gray/grid/sort_desc.gif
+%%WWWDIR%%/resources/images/gray/menu/group-checked.gif
+%%WWWDIR%%/resources/images/gray/menu/item-over-disabled.gif
+%%WWWDIR%%/resources/images/gray/menu/item-over.gif
+%%WWWDIR%%/resources/images/gray/menu/menu-parent.gif
 %%WWWDIR%%/resources/images/gray/panel/corners-sprite.gif
 %%WWWDIR%%/resources/images/gray/panel/left-right.gif
 %%WWWDIR%%/resources/images/gray/panel/light-hd.gif
@@ -2023,16 +2305,32 @@
 %%WWWDIR%%/resources/images/gray/panel/white-corners-sprite.gif
 %%WWWDIR%%/resources/images/gray/panel/white-left-right.gif
 %%WWWDIR%%/resources/images/gray/panel/white-top-bottom.gif
+%%WWWDIR%%/resources/images/gray/progress/progress-bg.gif
 %%WWWDIR%%/resources/images/gray/qtip/bg.gif
 %%WWWDIR%%/resources/images/gray/qtip/close.gif
+%%WWWDIR%%/resources/images/gray/qtip/tip-anchor-sprite.gif
 %%WWWDIR%%/resources/images/gray/qtip/tip-sprite.gif
 %%WWWDIR%%/resources/images/gray/s.gif
+%%WWWDIR%%/resources/images/gray/shared/hd-sprite.gif
+%%WWWDIR%%/resources/images/gray/shared/left-btn.gif
+%%WWWDIR%%/resources/images/gray/shared/right-btn.gif
+%%WWWDIR%%/resources/images/gray/sizer/e-handle.gif
+%%WWWDIR%%/resources/images/gray/sizer/ne-handle.gif
+%%WWWDIR%%/resources/images/gray/sizer/nw-handle.gif
+%%WWWDIR%%/resources/images/gray/sizer/s-handle.gif
+%%WWWDIR%%/resources/images/gray/sizer/se-handle.gif
+%%WWWDIR%%/resources/images/gray/sizer/square.gif
+%%WWWDIR%%/resources/images/gray/sizer/sw-handle.gif
+%%WWWDIR%%/resources/images/gray/slider/slider-thumb.png
+%%WWWDIR%%/resources/images/gray/slider/slider-v-thumb.png
 %%WWWDIR%%/resources/images/gray/tabs/scroll-left.gif
 %%WWWDIR%%/resources/images/gray/tabs/scroll-right.gif
 %%WWWDIR%%/resources/images/gray/tabs/scroller-bg.gif
 %%WWWDIR%%/resources/images/gray/tabs/tab-btm-inactive-left-bg.gif
 %%WWWDIR%%/resources/images/gray/tabs/tab-btm-inactive-right-bg.gif
 %%WWWDIR%%/resources/images/gray/tabs/tab-btm-left-bg.gif
+%%WWWDIR%%/resources/images/gray/tabs/tab-btm-over-left-bg.gif
+%%WWWDIR%%/resources/images/gray/tabs/tab-btm-over-right-bg.gif
 %%WWWDIR%%/resources/images/gray/tabs/tab-btm-right-bg.gif
 %%WWWDIR%%/resources/images/gray/tabs/tab-close.gif
 %%WWWDIR%%/resources/images/gray/tabs/tab-strip-bg.gif
@@ -2047,6 +2345,11 @@
 %%WWWDIR%%/resources/images/gray/toolbar/more.gif
 %%WWWDIR%%/resources/images/gray/toolbar/tb-bg.gif
 %%WWWDIR%%/resources/images/gray/toolbar/tb-btn-sprite.gif
+%%WWWDIR%%/resources/images/gray/tree/arrows.gif
+%%WWWDIR%%/resources/images/gray/tree/elbow-end-minus-nl.gif
+%%WWWDIR%%/resources/images/gray/tree/elbow-end-minus.gif
+%%WWWDIR%%/resources/images/gray/tree/elbow-end-plus-nl.gif
+%%WWWDIR%%/resources/images/gray/tree/elbow-end-plus.gif
 %%WWWDIR%%/resources/images/gray/window/icon-error.gif
 %%WWWDIR%%/resources/images/gray/window/icon-info.gif
 %%WWWDIR%%/resources/images/gray/window/icon-question.gif
@@ -2105,7 +2408,6 @@
 %%WWWDIR%%/resources/images/vista/toolbar/gray-bg.gif
 %%WWWDIR%%/resources/images/vista/toolbar/tb-btn-sprite.gif
 %%WWWDIR%%/resources/resources.jsb
-%%WWWDIR%%/src/.DS_Store
 %%WWWDIR%%/src/adapter/core/ext-base-ajax.js
 %%WWWDIR%%/src/adapter/core/ext-base-anim-extra.js
 %%WWWDIR%%/src/adapter/core/ext-base-anim.js
@@ -2333,6 +2635,7 @@
 %%WWWDIR%%/src/widgets/layout/AbsoluteLayout.js
 %%WWWDIR%%/src/widgets/layout/AccordionLayout.js
 %%WWWDIR%%/src/widgets/layout/AnchorLayout.js
+%%WWWDIR%%/src/widgets/layout/AutoLayout.js
 %%WWWDIR%%/src/widgets/layout/BorderLayout.js
 %%WWWDIR%%/src/widgets/layout/BoxLayout.js
 %%WWWDIR%%/src/widgets/layout/CardLayout.js
@@ -2340,7 +2643,9 @@
 %%WWWDIR%%/src/widgets/layout/ContainerLayout.js
 %%WWWDIR%%/src/widgets/layout/FitLayout.js
 %%WWWDIR%%/src/widgets/layout/FormLayout.js
+%%WWWDIR%%/src/widgets/layout/MenuLayout.js
 %%WWWDIR%%/src/widgets/layout/TableLayout.js
+%%WWWDIR%%/src/widgets/layout/ToolbarLayout.js
 %%WWWDIR%%/src/widgets/list/Column.js
 %%WWWDIR%%/src/widgets/list/ColumnResizer.js
 %%WWWDIR%%/src/widgets/list/ListView.js
@@ -2370,6 +2675,23 @@
 %%WWWDIR%%/src/widgets/tree/TreePanel.js
 %%WWWDIR%%/src/widgets/tree/TreeSelectionModel.js
 %%WWWDIR%%/src/widgets/tree/TreeSorter.js
+%%WWWDIR%%/welcome/images/bg-x.png
+%%WWWDIR%%/welcome/images/button_join_us.png
+%%WWWDIR%%/welcome/images/comm.png
+%%WWWDIR%%/welcome/images/h_engage.png
+%%WWWDIR%%/welcome/images/h_engage_ie6.png
+%%WWWDIR%%/welcome/images/h_learn.png
+%%WWWDIR%%/welcome/images/h_learn_ie6.png
+%%WWWDIR%%/welcome/images/h_license.png
+%%WWWDIR%%/welcome/images/h_license_ie6.png
+%%WWWDIR%%/welcome/images/header.png
+%%WWWDIR%%/welcome/images/header_ie6.png
+%%WWWDIR%%/welcome/images/li.png
+%%WWWDIR%%/welcome/images/social_sprite.gif
+%%WWWDIR%%/welcome/images/social_sprite.png
+%%WWWDIR%%/welcome/images/whiteout.png
+@dirrm %%WWWDIR%%/welcome/images
+@dirrm %%WWWDIR%%/welcome
 @dirrm %%WWWDIR%%/src/widgets/tree
 @dirrm %%WWWDIR%%/src/widgets/tips
 @dirrm %%WWWDIR%%/src/widgets/menu
@@ -2403,10 +2725,18 @@
 @dirrm %%WWWDIR%%/resources/images/vista/basic-dialog
 @dirrm %%WWWDIR%%/resources/images/vista
 @dirrm %%WWWDIR%%/resources/images/gray/window
+@dirrm %%WWWDIR%%/resources/images/gray/tree
 @dirrm %%WWWDIR%%/resources/images/gray/toolbar
 @dirrm %%WWWDIR%%/resources/images/gray/tabs
+@dirrm %%WWWDIR%%/resources/images/gray/slider
+@dirrm %%WWWDIR%%/resources/images/gray/sizer
+@dirrm %%WWWDIR%%/resources/images/gray/shared
 @dirrm %%WWWDIR%%/resources/images/gray/qtip
+@dirrm %%WWWDIR%%/resources/images/gray/progress
 @dirrm %%WWWDIR%%/resources/images/gray/panel
+@dirrm %%WWWDIR%%/resources/images/gray/menu
+@dirrm %%WWWDIR%%/resources/images/gray/grid
+@dirrm %%WWWDIR%%/resources/images/gray/form
 @dirrm %%WWWDIR%%/resources/images/gray/button
 @dirrm %%WWWDIR%%/resources/images/gray
 @dirrm %%WWWDIR%%/resources/images/default/window
@@ -2428,8 +2758,27 @@
 @dirrm %%WWWDIR%%/resources/images/default/button
 @dirrm %%WWWDIR%%/resources/images/default/box
 @dirrm %%WWWDIR%%/resources/images/default
+@dirrm %%WWWDIR%%/resources/images/access/window
+@dirrm %%WWWDIR%%/resources/images/access/tree
+@dirrm %%WWWDIR%%/resources/images/access/toolbar
+@dirrm %%WWWDIR%%/resources/images/access/tabs
+@dirrm %%WWWDIR%%/resources/images/access/slider
+@dirrm %%WWWDIR%%/resources/images/access/sizer
+@dirrm %%WWWDIR%%/resources/images/access/shared
+@dirrm %%WWWDIR%%/resources/images/access/qtip
+@dirrm %%WWWDIR%%/resources/images/access/progress
+@dirrm %%WWWDIR%%/resources/images/access/panel
+@dirrm %%WWWDIR%%/resources/images/access/menu
+@dirrm %%WWWDIR%%/resources/images/access/grid
+@dirrm %%WWWDIR%%/resources/images/access/form
+@dirrm %%WWWDIR%%/resources/images/access/editor
+@dirrm %%WWWDIR%%/resources/images/access/button
+@dirrm %%WWWDIR%%/resources/images/access/box
+@dirrm %%WWWDIR%%/resources/images/access
 @dirrm %%WWWDIR%%/resources/images
 @dirrm %%WWWDIR%%/resources/css/visual
+@dirrm %%WWWDIR%%/resources/css/theme-gray
+@dirrm %%WWWDIR%%/resources/css/theme-access
 @dirrm %%WWWDIR%%/resources/css/structure
 @dirrm %%WWWDIR%%/resources/css
 @dirrm %%WWWDIR%%/resources
@@ -2470,8 +2819,6 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tree
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/toolbar/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/toolbar
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test-case-2b/resources
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test-case-2b
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks/db
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tasks

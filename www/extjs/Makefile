@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extjs
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.extjs.com/deploy/
 DISTNAME=	ext-${PORTVERSION}
@@ -22,8 +22,9 @@ NO_BUILD=	yes
 OPTIONS=	DOC	"Install with documents" on \
 		EXAMPLE "Install with examples" on
 
-WWW_SUB=	"CHANGES_ext-3.1.0.html INCLUDE_ORDER.txt adapter ext-all-debug.js \
-		 ext-all.js ext.jsb2 gpl-3.0.txt license.txt pkgs resources src"
+WWW_SUB=	"INCLUDE_ORDER.txt adapter ext-all-debug.js ext-all.js \
+		 ext.jsb2 index.html gpl-3.0.txt license.txt \
+		 pkgs resources src welcome"
 
 .include <bsd.port.pre.mk>
 
