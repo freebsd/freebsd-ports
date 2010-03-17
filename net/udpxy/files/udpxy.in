@@ -6,20 +6,29 @@
 # PROVIDE: udpxy
 # REQUIRE: NETWORKING
 
-# The following variables are provided to control startup of udpxy:
-# rc configuration file (eg /etc/rc.conf):
+# Define these udpxy_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/udpxy
+#
 # udpxy_enable (bool):	Set to "NO" by default.
 #			Set it to "YES" to enable udpxy.
-# udpxy_flags (str):	Set to "" by default.
-#			Extra flags passed to start command.
+# udpxy_port (number):	Set to "4022" by default.
+#			Set listening port number.
+# udpxy_flags (str):    Set to "-S" by default.
+#                       Extra flags passed to start command.
 
 . %%RC_SUBR%%
 
 name="udpxy"
-rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/${name}"
-command_args="${udpxy_flags}"
+rcvar=$(set_rcvar)
+
 udpxy_enable=${udpxy_enable-"NO"}
+udpxy_port=${udpxy_port-"4022"}
+udpxy_flags=${udpxy_flags-"-S"}
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}${udpxy_port}.pid"
+command_args="-p ${udpxy_port} ${udpxy_flags}"
 
 load_rc_config $name
 run_rc_command "$1"
