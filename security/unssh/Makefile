@@ -8,8 +8,7 @@
 PORTNAME=	unssh
 PORTVERSION=	1.4
 CATEGORIES=	security
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	${PORTNAME:L}/${PORTNAME:L}/${PORTNAME:L}-${PORTVERSION}
+MASTER_SITES=	http://www.semprixd.com/shares/ports/
 
 MAINTAINER=	semprix@bsdmail.org
 COMMENT=	Fast way to delete entries from OpenSSH known_hosts file
