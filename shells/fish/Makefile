@@ -7,7 +7,7 @@
 
 PORTNAME=	fish
 PORTVERSION=	1.23.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
@@ -24,6 +24,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LIBS="${LDFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 
 OPTIONS=	XSEL	"Build with xsel"		on \
 		DOXYGEN "Build docs with doxygen"	on
@@ -50,15 +51,14 @@ CONFIGURE_ARGS+=	--without-xsel
 RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel-conrad
 .endif
 
-.if defined(WITHOUT_DOXYGEN) || defined(NOPORTDOCS)
-PLIST_SUB+=	DOCS="@comment "
+.if defined(WITHOUT_DOXYGEN)
+NOPORTDOCS=	yes
 .else
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-PLIST_SUB+=	DOCS=""
 .endif
 
 post-patch:
-.if defined(WITHOUT_DOXYGEN) || defined(NOPORTDOCS)
+.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|$(PROGRAMS) user_doc|$(PROGRAMS)|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 589,593d ${WRKSRC}/Makefile.in
