@@ -12,11 +12,13 @@
 %%XPI_XPIDIR%%/chrome/content/colorpicker2.css
 %%XPI_XPIDIR%%/chrome/content/colorpicker2.xml
 %%XPI_XPIDIR%%/chrome/content/colorvalidator.js
+%%XPI_XPIDIR%%/chrome/content/confirmation.html
 %%XPI_XPIDIR%%/chrome/content/firefoxOptionsOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/firefoxOverlay-svg.xul
 %%XPI_XPIDIR%%/chrome/content/firefoxOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/foxyproxy.css
 %%XPI_XPIDIR%%/chrome/content/foxyproxySongbird.css
+%%XPI_XPIDIR%%/chrome/content/images/16x16.gif
 %%XPI_XPIDIR%%/chrome/content/images/arrow_refresh.png
 %%XPI_XPIDIR%%/chrome/content/images/cbox-check.gif
 %%XPI_XPIDIR%%/chrome/content/images/delete-disabled.png
@@ -217,6 +219,7 @@
 %%XPI_XPIDIR%%/components/commandlinehandler.js
 %%XPI_XPIDIR%%/components/common.js
 %%XPI_XPIDIR%%/components/foxyproxy.js
+%%XPI_XPIDIR%%/components/foxyproxyprotocolhandler.js
 %%XPI_XPIDIR%%/components/match.js
 %%XPI_XPIDIR%%/components/proxy.js
 %%XPI_XPIDIR%%/components/relativeprotocolhandler.js
