@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsd
-PORTVERSION=	1.0.16
+PORTVERSION=	1.0.18
 CATEGORIES=	devel
 MASTER_SITES=	http://arthurdejong.org/cvsd/ \
 		http://wiftp.com/
