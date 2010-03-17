@@ -2,25 +2,25 @@ bin/fish
 bin/fish_indent
 bin/fish_pager
 bin/fishd
-bin/mimedb
 bin/seq
+bin/mimedb
 bin/set_color
 %%ETCDIR%%/config.fish
-%%DOCS%%share/doc/ChangeLog
-%%DOCS%%share/doc/commands.html
-%%DOCS%%share/doc/design.html
-%%DOCS%%share/doc/doc_8h-source.html
-%%DOCS%%share/doc/doxygen.css
-%%DOCS%%share/doc/doxygen.png
-%%DOCS%%share/doc/faq.html
-%%DOCS%%share/doc/files.html
-%%DOCS%%share/doc/index.html
-%%DOCS%%share/doc/license.html
-%%DOCS%%share/doc/pages.html
-%%DOCS%%share/doc/tab_b.gif
-%%DOCS%%share/doc/tab_l.gif
-%%DOCS%%share/doc/tab_r.gif
-%%DOCS%%share/doc/tabs.css
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/commands.html
+%%PORTDOCS%%%%DOCSDIR%%/design.html
+%%PORTDOCS%%%%DOCSDIR%%/doc_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/files.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/pages.html
+%%PORTDOCS%%%%DOCSDIR%%/tab_b.gif
+%%PORTDOCS%%%%DOCSDIR%%/tab_l.gif
+%%PORTDOCS%%%%DOCSDIR%%/tab_r.gif
+%%PORTDOCS%%%%DOCSDIR%%/tabs.css
 %%DATADIR%%/completions/acpi.fish
 %%DATADIR%%/completions/adduser.fish
 %%DATADIR%%/completions/and.fish
@@ -353,6 +353,7 @@ share/locale/sv/LC_MESSAGES/fish.mo
 @dirrm %%DATADIR%%/functions
 @dirrm %%DATADIR%%/completions
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
 @dirrm %%ETCDIR%%
 @exec cp /etc/shells /etc/shells.bak; (grep -v %D/bin/fish /etc/shells.bak; echo %D/bin/fish) > /etc/shells; rm -f /etc/shells.bak
 @unexec cp /etc/shells /etc/shells.bak; (grep -v %D/bin/fish /etc/shells.bak) > /etc/shells; rm -f /etc/shells.bak
