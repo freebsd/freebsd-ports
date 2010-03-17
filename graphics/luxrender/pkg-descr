@@ -1,0 +1,25 @@
+LuxRender is a physically based and unbiased rendering engine.  Based on
+state of the art algorithms, LuxRender simulates the flow of light according
+to physical equations, thus producing realistic images of photographic
+quality.  Some of the main features of LuxRender are:
+
+  * biased and unbiased rendering: Users can choose between physical
+    accuracy (unbiased) and speed (biased);
+  * full spectral rendering: Instead of the RGB colour spectrum, full
+    spectra are used for internal calculations;
+  * hierarchical procedural and image based texture system: Procedural and
+    image based textures can be mixed in various ways, making it possible to
+    create complex materials;
+  * displacement mapping and subdivision: Based on procedural or image
+    textures, object surfaces can be transformed;
+  * network and co-operative rendering: Rendering time can be reduced by
+    combining the processing power of multiple computers;
+  * perspective (including shift lens), orthographic, and environment
+    cameras;
+  * HDR output: Render output can be saved in various file formats,
+    including .png, .tga, and .exr.
+
+Fully functional exporters are available for Blender and Maya, while
+exporters for a growing number of 3D applications are under development.
+
+WWW: http://www.luxrender.net/
