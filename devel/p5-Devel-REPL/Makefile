@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Devel-REPL
-PORTVERSION=	1.003007
-PORTREVISION=	1
+PORTVERSION=	1.003009
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,16 +23,19 @@ BUILD_DEPENDS=	p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
 	p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken \
 	p5-PPI>0:${PORTSDIR}/textproc/p5-PPI \
 	p5-Data-Dump-Streamer>0:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
+	p5-Data-Dumper-Concise>0:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
 	p5-File-Next>0:${PORTSDIR}/sysutils/p5-File-Next \
 	p5-B-Keywords>0:${PORTSDIR}/devel/p5-B-Keywords \
 	p5-Lexical-Persistence>0:${PORTSDIR}/devel/p5-Lexical-Persistence \
 	p5-App-Nopaste>0:${PORTSDIR}/www/p5-App-Nopaste \
-	p5-Module-Refresh>0:${PORTSDIR}/devel/p5-Module-Refresh
+	p5-Module-Refresh>0:${PORTSDIR}/devel/p5-Module-Refresh \
+	p5-Sys-SigAction>0:${PORTSDIR}/devel/p5-Sys-SigAction
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
 MAN3=	Devel::REPL.3 \
+	Devel::REPL::Overview.3 \
 	Devel::REPL::Plugin::B::Concise.3 \
 	Devel::REPL::Plugin::Colors.3 \
 	Devel::REPL::Plugin::Commands.3 \
@@ -44,6 +46,7 @@ MAN3=	Devel::REPL.3 \
 	Devel::REPL::Plugin::CompletionDriver::LexEnv.3 \
 	Devel::REPL::Plugin::CompletionDriver::Methods.3 \
 	Devel::REPL::Plugin::CompletionDriver::Turtles.3 \
+	Devel::REPL::Plugin::DDC.3 \
 	Devel::REPL::Plugin::DDS.3 \
 	Devel::REPL::Plugin::DumpHistory.3 \
 	Devel::REPL::Plugin::FancyPrompt.3 \
@@ -64,8 +67,5 @@ MAN3=	Devel::REPL.3 \
 	Devel::REPL::Plugin::Timing.3 \
 	Devel::REPL::Plugin::Turtles.3 \
 	Devel::REPL::Profile.3
-
-post-patch:
-	@${RM} ${WRKSRC}/lib/Devel/REPL/Meta/Plugin.pm.orig
 
 .include <bsd.port.mk>

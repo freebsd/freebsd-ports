@@ -2,6 +2,7 @@ bin/re.pl
 %%SITE_PERL%%/Devel/REPL.pm
 %%SITE_PERL%%/Devel/REPL/Error.pm
 %%SITE_PERL%%/Devel/REPL/Meta/Plugin.pm
+%%SITE_PERL%%/Devel/REPL/Overview.pod
 %%SITE_PERL%%/Devel/REPL/Plugin.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/B/Concise.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/Colors.pm
@@ -13,6 +14,7 @@ bin/re.pl
 %%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver/LexEnv.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver/Methods.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/CompletionDriver/Turtles.pm
+%%SITE_PERL%%/Devel/REPL/Plugin/DDC.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/DDS.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/DumpHistory.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/FancyPrompt.pm
