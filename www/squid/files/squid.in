@@ -32,7 +32,7 @@
 # squid_pidfile:
 #		The name (including the full path) of the Squid
 #		master process' PID file.
-#		Default: %%PREFIX%%/squid/squid.pid.
+#		Default: %%PREFIX%%/logs/squid/squid.pid.
 #		You only need to change this if you changed the
 #		corresponding entry in your Squid configuration.
 #
