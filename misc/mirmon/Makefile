@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	mirmon
-PORTVERSION=	1.38
+PORTVERSION=	2.3
 CATEGORIES=	misc
-MASTER_SITES=	http://jadawin.tuxaco.net/freebsd/ \
-		http://www.cs.uu.nl/people/henkp/mirmon/src/
+MASTER_SITES=	http://people.cs.uu.nl/henkp/mirmon/
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Monitor the status of mirrors
@@ -21,7 +20,8 @@ USE_PERL5_RUN=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PREFIX=${PREFIX}
 
-PLIST_FILES=	bin/mirmon
+PLIST_FILES=	bin/mirmon bin/probe
+MAN1=		mirmon.1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -29,18 +29,20 @@ PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/etc,${LOCALBASE}/etc," \
-		-e "s,/sw/bin/perl,/usr/bin/env perl," \
-		-e "s,/sw,${LOCALBASE}," \
-		${WRKSRC}/mirmon ${WRKSRC}/mirmon.html
+		${WRKSRC}/mirmon ${WRKSRC}/mirmon.html ${WRKSRC}/probe
+	@${REINPLACE_CMD} -e "s,/usr/bin/wget,${LOCALBASE}/bin/wget," \
+		-e "s,/usr/bin/rsync,${LOCALBASE}/bin/rsync," ${WRKSRC}/probe
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mirmon ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/probe ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${CP} -R ${WRKSRC}/countries.list ${WRKSRC}/icons ${DATADIR}
 	@${FIND} ${DATADIR} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	${INSTALL_MAN} ${WRKSRC}/mirmon.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} ${WRKSRC}/mirmon.html ${DOCSDIR}
