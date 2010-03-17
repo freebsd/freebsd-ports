@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	fcgi
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	www ruby
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	RF
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	avl@FreeBSD.org
@@ -21,10 +20,10 @@ LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-RUBY_SETUP=	install.rb
-CONFIGURE_ARGS=	-- --with-opt-dir="${LOCALBASE}"
+CONFIGURE_ARGS=	-- --with-fcgi-include=${LOCALBASE}/include \
+		--with-fcgi-lib=${LOCALBASE}/lib
 
-DOCS=		README README.signals
+DOCS=		ChangeLog README README.signals
 
 post-install:
 .if !defined(NOPORTDOCS)
