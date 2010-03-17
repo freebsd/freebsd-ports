@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	frost
-PORTVERSION=	1.2.0.20080304
-PORTREVISION=	1
+PORTVERSION=	1.2.0.20090314
 PORTEPOCH=	2
 CATEGORIES=	net-p2p java
-MASTER_SITES=	SF/jtc${PORTNAME}/${PORTNAME}/04-Mar-2008
-DISTNAME=	${PORTNAME}-04-Mar-2008
+MASTER_SITES=	SF/jtc${PORTNAME}/${PORTNAME}/14-Mar-2009
+DISTNAME=	${PORTNAME}-14-Mar-2009
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Frost is a Freenet client that provides messenger and file services
 
 USE_JAVA=	yes
