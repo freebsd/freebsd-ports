@@ -76,7 +76,6 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.7.${SQUID_STABLE_VER}
-PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
@@ -107,13 +106,13 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.7/changesets
-PATCHFILES=	12600.patch
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
 
-SQUID_STABLE_VER=	7
+SQUID_STABLE_VER=	8
 
 CONFLICTS=	squid-2.[^7]* squid-3.* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -248,7 +247,7 @@ CONFIGURE_ARGS+=	--enable-auth="basic digest negotiate ntlm" \
 # POLA: allow the old global make.conf(5) (pre src.conf(5)) defines, too:
 .if defined(WITH_SQUID_KERB_AUTH) && !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
 # XXX This currently only works with heimdal from the base system,
-#     see files/patch-helpers_negotiate_auth-squid_kerb_auth_*
+#     see files/patch-squid_kerb_auth:
 CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
 libexec+=	squid_kerb_auth
 .endif
