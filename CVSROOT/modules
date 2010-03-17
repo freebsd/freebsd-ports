@@ -1501,7 +1501,6 @@ checkservice                    ports/sysutils/checkservice
 cheech                          ports/games/cheech
 cheese                          ports/multimedia/cheese
 cheesetracker                   ports/audio/cheesetracker
-cheetah                         ports/www/cheetah
 chef                            ports/misc/chef
 chemeq                          ports/biology/chemeq
 chemical-mime-data              ports/science/chemical-mime-data
@@ -11051,6 +11050,7 @@ p5-Class-DBI-DDL                ports/databases/p5-Class-DBI-DDL
 p5-Class-DBI-FromCGI            ports/databases/p5-Class-DBI-FromCGI
 p5-Class-DBI-FromForm           ports/www/p5-Class-DBI-FromForm
 p5-Class-DBI-LazyInflate        ports/databases/p5-Class-DBI-LazyInflate
+p5-Class-DBI-Lite               ports/databases/p5-Class-DBI-Lite
 p5-Class-DBI-Loader             ports/databases/p5-Class-DBI-Loader
 p5-Class-DBI-Loader-Relationship  ports/databases/p5-Class-DBI-Loader-Relationship
 p5-Class-DBI-Oracle             ports/databases/p5-Class-DBI-Oracle
@@ -14759,6 +14759,7 @@ p5-class-dbi-ddl                ports/databases/p5-Class-DBI-DDL
 p5-class-dbi-fromcgi            ports/databases/p5-Class-DBI-FromCGI
 p5-class-dbi-fromform           ports/www/p5-Class-DBI-FromForm
 p5-class-dbi-lazyinflate        ports/databases/p5-Class-DBI-LazyInflate
+p5-class-dbi-lite               ports/databases/p5-Class-DBI-Lite
 p5-class-dbi-loader             ports/databases/p5-Class-DBI-Loader
 p5-class-dbi-loader-relationship  ports/databases/p5-Class-DBI-Loader-Relationship
 p5-class-dbi-mysql              ports/databases/p5-Class-DBI-mysql
@@ -19121,6 +19122,7 @@ piddle                          ports/graphics/piddle
 pidentd                         ports/security/pidentd
 pidgin                          ports/net-im/pidgin
 pidgin-birthday_reminder        ports/net-im/pidgin-birthday_reminder
+pidgin-bs                       ports/net-im/pidgin-bs
 pidgin-encryption               ports/security/pidgin-encryption
 pidgin-facebookchat             ports/net-im/pidgin-facebookchat
 pidgin-fetion                   ports/net-im/pidgin-fetion
@@ -21032,7 +21034,6 @@ razor-agents                    ports/mail/razor-agents
 rbl-milter                      ports/mail/rbl-milter
 rblcheck                        ports/mail/rblcheck
 rbldnsd                         ports/dns/rbldnsd
-rblibtorrent                    ports/net-p2p/rblibtorrent
 rbllookup                       ports/dns/rbllookup
 rbllookup-ng                    ports/dns/rbllookup-ng
 rbot                            ports/irc/rbot
@@ -25817,6 +25818,8 @@ zh-ve                           ports/chinese/ve
 zh-vflib                        ports/chinese/vflib
 zh-wangttf                      ports/chinese/wangttf
 zh-wenju                        ports/chinese/wenju
+zh-wordpress-zh_CN              ports/chinese/wordpress-zh_CN
+zh-wordpress-zh_cn              ports/chinese/wordpress-zh_CN
 zh-xemacs21                     ports/chinese/xemacs21
 zh-xmms                         ports/chinese/xmms
 zh-xpdf                         ports/chinese/xpdf
