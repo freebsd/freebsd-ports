@@ -8,6 +8,7 @@
 PORTNAME=	modify_headers
 PORTVERSION=	0.6.6
 DISTVERSIONSUFFIX=	-fx+sm+mz
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	kamikaze@bsdforen.de
