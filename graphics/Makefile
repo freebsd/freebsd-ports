@@ -516,6 +516,7 @@
     SUBDIR += long-exposure-tools
     SUBDIR += lphoto
     SUBDIR += lprof-devel
+    SUBDIR += luxrender
     SUBDIR += makehuman
     SUBDIR += mapnik
     SUBDIR += mapserver
