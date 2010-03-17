@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	camlp5
-PORTVERSION=	5.12
+PORTVERSION=	5.13
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~ddr/camlp5/distrib/src/ \
 		http://pauillac.inria.fr/~ddr/camlp5/distrib/src/
