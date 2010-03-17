@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	downthemall
-PORTVERSION=	1.1.7
-DISTVERSIONSUFFIX=	-fx+tb+sm
+PORTVERSION=	1.1.8
+DISTVERSIONSUFFIX=	-fx+sm
 CATEGORIES=	www
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/addons/201/
 
@@ -31,6 +31,7 @@ XPI_FILES=	GPL LGPL LICENSE MPL chrome/chrome.jar \
 		defaults/preferences/dta.js defaults/preferences/filters.js \
 		defaults/preferences/privacycontrol.js install.rdf \
 		modules/cothread.jsm modules/mediator.jsm \
+		modules/loggedprompter.jsm \
 		modules/preallocator.jsm modules/preferences.jsm \
 		modules/prompts.jsm modules/utils.jsm modules/version.jsm
 XPI_DIRS=	chrome/icons/default chrome/icons chrome components \
