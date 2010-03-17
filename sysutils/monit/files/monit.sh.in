@@ -22,8 +22,7 @@ rcvar=`set_rcvar`
 
 restart_precmd="monit_checkconfig"
 reload_precmd="monit_checkconfig"
-[ -z "monit_enable" ] && monit_enable="NO"
-[ -z "$monit_flags" ] && monit_flags=""
+[ -z "$monit_enable" ] && monit_enable="NO"
 
 load_rc_config $name
 
