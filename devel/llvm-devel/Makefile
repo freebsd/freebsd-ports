@@ -25,6 +25,8 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 
 CONFLICTS=	clang-2.[0-9]* llvm-2.[0-9]*
 
+BROKEN=		fails to package
+
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
 USE_GMAKE=	yes
