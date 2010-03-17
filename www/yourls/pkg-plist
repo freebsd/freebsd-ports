@@ -4,6 +4,7 @@
 %%WWWDIR%%/admin/tools.php
 %%WWWDIR%%/admin/upgrade.php
 %%WWWDIR%%/changelog.txt
+%%WWWDIR%%/css/cal.css
 %%WWWDIR%%/css/infos.css
 %%WWWDIR%%/css/share.css
 %%WWWDIR%%/css/style.css
@@ -30,6 +31,7 @@
 %%WWWDIR%%/includes/config-sample.php
 %%WWWDIR%%/includes/functions-auth.php
 %%WWWDIR%%/includes/functions-baseconvert.php
+%%WWWDIR%%/includes/functions-html.php
 %%WWWDIR%%/includes/functions-infos.php
 %%WWWDIR%%/includes/functions-install.php
 %%WWWDIR%%/includes/functions-json.php
@@ -307,11 +309,13 @@
 %%WWWDIR%%/js/infos.js
 %%WWWDIR%%/js/insert.js
 %%WWWDIR%%/js/jquery-1.3.2.min.js
+%%WWWDIR%%/js/jquery.cal.js
 %%WWWDIR%%/js/jquery.tablesorter.min.js
 %%WWWDIR%%/js/share.js
 %%WWWDIR%%/pages/about.php
 %%WWWDIR%%/readme.html
 %%WWWDIR%%/robots.txt
+%%WWWDIR%%/sample-public-api.php.txt
 %%WWWDIR%%/sample-public-front-page.php.txt
 %%WWWDIR%%/sample-remote-api-call.php.txt
 %%WWWDIR%%/yourls-api.php
