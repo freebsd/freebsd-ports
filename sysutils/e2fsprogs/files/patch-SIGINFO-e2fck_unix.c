@@ -52,7 +52,7 @@
  static void signal_progress_off(int sig EXT2FS_ATTR((unused)))
  {
  	e2fsck_t ctx = e2fsck_global_ctx;
-@@ -847,6 +874,8 @@
+@@ -862,6 +889,8 @@
  	sigaction(SIGUSR1, &sa, 0);
  	sa.sa_handler = signal_progress_off;
  	sigaction(SIGUSR2, &sa, 0);
