@@ -1,0 +1,65 @@
+thunder/etc/thunder.conf
+thunder/etc/log.sh
+thunder/etc/thunder.php
+thunder/etc/thunder_postgre.sql
+thunder/logs/error.log
+thunder/logs/access.log
+thunder/plugins/4shared.com.so
+thunder/plugins/avast.com.so
+thunder/plugins/avg.com.so
+thunder/plugins/avgate.com.so
+thunder/plugins/avgate.net.so
+thunder/plugins/bitgravity.com.so
+thunder/plugins/dailymotion.com.so
+thunder/plugins/doubleclick.net.so
+thunder/plugins/edgecastcdn.net.so
+thunder/plugins/eset.com.so
+thunder/plugins/etrustdownloads.ca.com.so
+thunder/plugins/freeav.com.so
+thunder/plugins/freeav.net.so
+thunder/plugins/globo.com.so
+thunder/plugins/sambatech.com.br.so
+thunder/plugins/googlevideo.com.so
+thunder/plugins/grandchase.com.br.so
+thunder/plugins/grisoft.com.so
+thunder/plugins/nai.com.so
+thunder/plugins/grisoft.cz.so
+thunder/plugins/kaspersky-labs.com.so
+thunder/plugins/kaspersky.com.so
+thunder/plugins/mccont.com.so
+thunder/plugins/mediafire.com.so
+thunder/plugins/megaupload.com.so
+thunder/plugins/megavideo.com.so
+thunder/plugins/metacafe.com.so
+thunder/plugins/microsoft.com.so
+thunder/plugins/orkut.com.br.so
+thunder/plugins/orkut.com.so
+thunder/plugins/photobucket.com.so
+thunder/plugins/pop6.com.so
+thunder/plugins/pornhub.com.so
+thunder/plugins/pornotube.com.so
+thunder/plugins/rad.msn.com.so
+thunder/plugins/rapidshare.com.so
+thunder/plugins/redtube.com.so
+thunder/plugins/symantecliveupdate.com.so
+thunder/plugins/terra.com.so
+thunder/plugins/tube8.com.so
+thunder/plugins/uol.com.br.so
+thunder/plugins/update.nai.com.so
+thunder/plugins/viddler.com.so
+thunder/plugins/video.msn.com.so
+thunder/plugins/vimeo.com.so
+thunder/plugins/windowsupdate.com.so
+thunder/plugins/xtube.com.so
+thunder/plugins/xvideos.com.so
+thunder/plugins/youtube.com.so
+thunder/plugins/ziddu.com.so
+thunder/sbin/thunder
+thunder/sbin/thunderlog.php
+thunder/sbin/log.sh
+@dirrm thunder/etc
+@dirrm thunder/logs/tmp
+@dirrm thunder/logs
+@dirrm thunder/plugins
+@dirrm thunder/sbin
+@dirrm thunder
