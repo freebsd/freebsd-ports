@@ -1,28 +1,3 @@
-%%DATADIR%%/data/glade/about_dialog.glade
-%%DATADIR%%/data/glade/appearance_prefs_pane.glade
-%%DATADIR%%/data/glade/collection_manager.glade
-%%DATADIR%%/data/glade/collection_panel.glade
-%%DATADIR%%/data/glade/cover_prefs_pane.glade
-%%DATADIR%%/data/glade/coverchooser.glade
-%%DATADIR%%/data/glade/covermanager.glade
-%%DATADIR%%/data/glade/coverwindow.glade
-%%DATADIR%%/data/glade/device_manager.glade
-%%DATADIR%%/data/glade/device_panel.glade
-%%DATADIR%%/data/glade/files_panel.glade
-%%DATADIR%%/data/glade/flatplaylist_panel.glade
-%%DATADIR%%/data/glade/general_prefs_pane.glade
-%%DATADIR%%/data/glade/main.glade
-%%DATADIR%%/data/glade/osd_prefs_pane.glade
-%%DATADIR%%/data/glade/osd_window.glade
-%%DATADIR%%/data/glade/playback_prefs_pane.glade
-%%DATADIR%%/data/glade/playlists_panel.glade
-%%DATADIR%%/data/glade/playlists_prefs_pane.glade
-%%DATADIR%%/data/glade/plugin_prefs_pane.glade
-%%DATADIR%%/data/glade/preferences_dialog.glade
-%%DATADIR%%/data/glade/queue_dialog.glade
-%%DATADIR%%/data/glade/radio_panel.glade
-%%DATADIR%%/data/glade/splash.glade
-%%DATADIR%%/data/glade/trackproperties_dialog.glade
 %%DATADIR%%/data/images/16x16/exaile-pause.png
 %%DATADIR%%/data/images/16x16/exaile-play.png
 %%DATADIR%%/data/images/16x16/exaile.png
@@ -56,11 +31,11 @@
 %%DATADIR%%/data/images/genre.png
 %%DATADIR%%/data/images/nocover.png
 %%DATADIR%%/data/images/playlist.png
+%%DATADIR%%/data/images/scalable/exaile-pause.svg
+%%DATADIR%%/data/images/scalable/exaile-play.svg
+%%DATADIR%%/data/images/scalable/exaile.svg
 %%DATADIR%%/data/images/splash.png
 %%DATADIR%%/data/images/star.png
-%%DATADIR%%/data/images/svg/exaile-pause.svg
-%%DATADIR%%/data/images/svg/exaile-play.svg
-%%DATADIR%%/data/images/svg/exaile.svg
 %%DATADIR%%/data/images/track.png
 %%DATADIR%%/data/images/year.png
 %%DATADIR%%/data/migrations/__init__.py
@@ -69,6 +44,32 @@
 %%DATADIR%%/data/migrations/migration_200907100931/oldexailelib.py
 %%DATADIR%%/data/migrations/migration_200907100931/oldtrack.py
 %%DATADIR%%/data/migrations/migration_200907100931/xlmisc.py
+%%DATADIR%%/data/ui/about_dialog.ui
+%%DATADIR%%/data/ui/appearance_prefs_pane.ui
+%%DATADIR%%/data/ui/collection_manager.ui
+%%DATADIR%%/data/ui/collection_panel.ui
+%%DATADIR%%/data/ui/collection_prefs_pane.ui
+%%DATADIR%%/data/ui/cover_prefs_pane.ui
+%%DATADIR%%/data/ui/coverchooser.ui
+%%DATADIR%%/data/ui/covermanager.ui
+%%DATADIR%%/data/ui/coverwindow.ui
+%%DATADIR%%/data/ui/device_manager.ui
+%%DATADIR%%/data/ui/device_panel.ui
+%%DATADIR%%/data/ui/files_panel.ui
+%%DATADIR%%/data/ui/flatplaylist_panel.ui
+%%DATADIR%%/data/ui/general_prefs_pane.ui
+%%DATADIR%%/data/ui/main.ui
+%%DATADIR%%/data/ui/osd_prefs_pane.ui
+%%DATADIR%%/data/ui/osd_window.ui
+%%DATADIR%%/data/ui/playback_prefs_pane.ui
+%%DATADIR%%/data/ui/playlists_panel.ui
+%%DATADIR%%/data/ui/playlists_prefs_pane.ui
+%%DATADIR%%/data/ui/plugin_prefs_pane.ui
+%%DATADIR%%/data/ui/preferences_dialog.ui
+%%DATADIR%%/data/ui/queue_dialog.ui
+%%DATADIR%%/data/ui/radio_panel.ui
+%%DATADIR%%/data/ui/splash.ui
+%%DATADIR%%/data/ui/trackproperties_dialog.ui
 %%DATADIR%%/plugins/alarmclock/PLUGININFO
 %%DATADIR%%/plugins/alarmclock/__init__.py
 %%DATADIR%%/plugins/alarmclock/__init__.pyc
@@ -76,7 +77,7 @@
 %%DATADIR%%/plugins/alarmclock/acprefs.py
 %%DATADIR%%/plugins/alarmclock/acprefs.pyc
 %%DATADIR%%/plugins/alarmclock/acprefs.pyo
-%%DATADIR%%/plugins/alarmclock/acprefs_pane.glade
+%%DATADIR%%/plugins/alarmclock/acprefs_pane.ui
 %%DATADIR%%/plugins/amazoncovers/PLUGININFO
 %%DATADIR%%/plugins/amazoncovers/__init__.py
 %%DATADIR%%/plugins/amazoncovers/__init__.pyc
@@ -87,10 +88,7 @@
 %%DATADIR%%/plugins/amazoncovers/amazonprefs.py
 %%DATADIR%%/plugins/amazoncovers/amazonprefs.pyc
 %%DATADIR%%/plugins/amazoncovers/amazonprefs.pyo
-%%DATADIR%%/plugins/amazoncovers/amazonprefs_pane.glade
-%%DATADIR%%/plugins/amazoncovers/test.py
-%%DATADIR%%/plugins/amazoncovers/test.pyc
-%%DATADIR%%/plugins/amazoncovers/test.pyo
+%%DATADIR%%/plugins/amazoncovers/amazonprefs_pane.ui
 %%DATADIR%%/plugins/audioscrobbler/PLUGININFO
 %%DATADIR%%/plugins/audioscrobbler/__init__.py
 %%DATADIR%%/plugins/audioscrobbler/__init__.pyc
@@ -101,12 +99,20 @@
 %%DATADIR%%/plugins/audioscrobbler/asprefs.py
 %%DATADIR%%/plugins/audioscrobbler/asprefs.pyc
 %%DATADIR%%/plugins/audioscrobbler/asprefs.pyo
-%%DATADIR%%/plugins/audioscrobbler/asprefs_pane.glade
+%%DATADIR%%/plugins/audioscrobbler/asprefs_pane.ui
+%%DATADIR%%/plugins/awn/PLUGININFO
+%%DATADIR%%/plugins/awn/__init__.py
+%%DATADIR%%/plugins/awn/__init__.pyc
+%%DATADIR%%/plugins/awn/__init__.pyo
+%%DATADIR%%/plugins/awn/awn_prefs.py
+%%DATADIR%%/plugins/awn/awn_prefs.pyc
+%%DATADIR%%/plugins/awn/awn_prefs.pyo
+%%DATADIR%%/plugins/awn/awn_prefs_pane.ui
 %%DATADIR%%/plugins/bookmarks/PLUGININFO
 %%DATADIR%%/plugins/bookmarks/__init__.py
 %%DATADIR%%/plugins/bookmarks/__init__.pyc
 %%DATADIR%%/plugins/bookmarks/__init__.pyo
-%%DATADIR%%/plugins/bookmarks/bookmarks_pane.glade
+%%DATADIR%%/plugins/bookmarks/bookmarks_pane.ui
 %%DATADIR%%/plugins/bookmarks/bookmarksprefs.py
 %%DATADIR%%/plugins/bookmarks/bookmarksprefs.pyc
 %%DATADIR%%/plugins/bookmarks/bookmarksprefs.pyo
@@ -120,7 +126,7 @@
 %%DATADIR%%/plugins/cd/cdprefs.py
 %%DATADIR%%/plugins/cd/cdprefs.pyc
 %%DATADIR%%/plugins/cd/cdprefs.pyo
-%%DATADIR%%/plugins/cd/cdprefs_pane.glade
+%%DATADIR%%/plugins/cd/cdprefs_pane.ui
 %%DATADIR%%/plugins/cd/importer.py
 %%DATADIR%%/plugins/cd/importer.pyc
 %%DATADIR%%/plugins/cd/importer.pyo
@@ -140,7 +146,11 @@
 %%DATADIR%%/plugins/contextinfo/classic/playing.html
 %%DATADIR%%/plugins/contextinfo/classic/style.css
 %%DATADIR%%/plugins/contextinfo/classic/tag.html
-%%DATADIR%%/plugins/contextinfo/context.glade
+%%DATADIR%%/plugins/contextinfo/context.ui
+%%DATADIR%%/plugins/contextinfo/context_pane.ui
+%%DATADIR%%/plugins/contextinfo/contextprefs.py
+%%DATADIR%%/plugins/contextinfo/contextprefs.pyc
+%%DATADIR%%/plugins/contextinfo/contextprefs.pyo
 %%DATADIR%%/plugins/contextinfo/extended/artist.html
 %%DATADIR%%/plugins/contextinfo/extended/default.html
 %%DATADIR%%/plugins/contextinfo/extended/images/bg-bottom.png
@@ -153,13 +163,98 @@
 %%DATADIR%%/plugins/contextinfo/extended/playing.html
 %%DATADIR%%/plugins/contextinfo/extended/style.css
 %%DATADIR%%/plugins/contextinfo/extended/tag.html
-%%DATADIR%%/plugins/contextinfo/loader.gif
 %%DATADIR%%/plugins/contextinfo/inspector.py
 %%DATADIR%%/plugins/contextinfo/inspector.pyc
 %%DATADIR%%/plugins/contextinfo/inspector.pyo
+%%DATADIR%%/plugins/contextinfo/loader.gif
 %%DATADIR%%/plugins/contextinfo/pylast.py
 %%DATADIR%%/plugins/contextinfo/pylast.pyc
 %%DATADIR%%/plugins/contextinfo/pylast.pyo
+%%DATADIR%%/plugins/currentsong/PLUGININFO
+%%DATADIR%%/plugins/currentsong/__init__.py
+%%DATADIR%%/plugins/currentsong/__init__.pyc
+%%DATADIR%%/plugins/currentsong/__init__.pyo
+%%DATADIR%%/plugins/daapclient/PLUGININFO
+%%DATADIR%%/plugins/daapclient/__init__.py
+%%DATADIR%%/plugins/daapclient/__init__.pyc
+%%DATADIR%%/plugins/daapclient/__init__.pyo
+%%DATADIR%%/plugins/daapclient/daap.py
+%%DATADIR%%/plugins/daapclient/daap.pyc
+%%DATADIR%%/plugins/daapclient/daap.pyo
+%%DATADIR%%/plugins/daapclient/daap_data.py
+%%DATADIR%%/plugins/daapclient/daap_data.pyc
+%%DATADIR%%/plugins/daapclient/daap_data.pyo
+%%DATADIR%%/plugins/daapserver/COPYING
+%%DATADIR%%/plugins/daapserver/PLUGININFO
+%%DATADIR%%/plugins/daapserver/README
+%%DATADIR%%/plugins/daapserver/TODO
+%%DATADIR%%/plugins/daapserver/__init__.py
+%%DATADIR%%/plugins/daapserver/__init__.pyc
+%%DATADIR%%/plugins/daapserver/__init__.pyo
+%%DATADIR%%/plugins/daapserver/config.py
+%%DATADIR%%/plugins/daapserver/config.pyc
+%%DATADIR%%/plugins/daapserver/config.pyo
+%%DATADIR%%/plugins/daapserver/daapserver_prefs.ui
+%%DATADIR%%/plugins/daapserver/daapserverprefs.py
+%%DATADIR%%/plugins/daapserver/daapserverprefs.pyc
+%%DATADIR%%/plugins/daapserver/daapserverprefs.pyo
+%%DATADIR%%/plugins/daapserver/server.py
+%%DATADIR%%/plugins/daapserver/server.pyc
+%%DATADIR%%/plugins/daapserver/server.pyo
+%%DATADIR%%/plugins/daapserver/spydaap.py
+%%DATADIR%%/plugins/daapserver/spydaap.pyc
+%%DATADIR%%/plugins/daapserver/spydaap.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/__init__.py
+%%DATADIR%%/plugins/daapserver/spydaap/__init__.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/__init__.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/cache.py
+%%DATADIR%%/plugins/daapserver/spydaap/cache.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/cache.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/containers.py
+%%DATADIR%%/plugins/daapserver/spydaap/containers.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/containers.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/daap.py
+%%DATADIR%%/plugins/daapserver/spydaap/daap.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/daap.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/daap_data.py
+%%DATADIR%%/plugins/daapserver/spydaap/daap_data.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/daap_data.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/metadata.py
+%%DATADIR%%/plugins/daapserver/spydaap/metadata.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/metadata.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/parser/__init__.py
+%%DATADIR%%/plugins/daapserver/spydaap/parser/__init__.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/parser/__init__.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/parser/avi.py
+%%DATADIR%%/plugins/daapserver/spydaap/parser/avi.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/parser/avi.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/parser/exaile.py
+%%DATADIR%%/plugins/daapserver/spydaap/parser/exaile.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/parser/exaile.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/parser/flac.py
+%%DATADIR%%/plugins/daapserver/spydaap/parser/flac.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/parser/flac.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/parser/mov.py
+%%DATADIR%%/plugins/daapserver/spydaap/parser/mov.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/parser/mov.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/parser/mp3.py
+%%DATADIR%%/plugins/daapserver/spydaap/parser/mp3.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/parser/mp3.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/parser/ogg.py
+%%DATADIR%%/plugins/daapserver/spydaap/parser/ogg.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/parser/ogg.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/parser/vorbis.py
+%%DATADIR%%/plugins/daapserver/spydaap/parser/vorbis.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/parser/vorbis.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/playlists.py
+%%DATADIR%%/plugins/daapserver/spydaap/playlists.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/playlists.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/server.py
+%%DATADIR%%/plugins/daapserver/spydaap/server.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/server.pyo
+%%DATADIR%%/plugins/daapserver/spydaap/zeroconf.py
+%%DATADIR%%/plugins/daapserver/spydaap/zeroconf.pyc
+%%DATADIR%%/plugins/daapserver/spydaap/zeroconf.pyo
 %%DATADIR%%/plugins/desktopcover/PLUGININFO
 %%DATADIR%%/plugins/desktopcover/__init__.py
 %%DATADIR%%/plugins/desktopcover/__init__.pyc
@@ -168,6 +263,20 @@
 %%DATADIR%%/plugins/desktopcover/prefs.pyc
 %%DATADIR%%/plugins/desktopcover/prefs.pyo
 %%DATADIR%%/plugins/desktopcover/prefs.ui
+%%DATADIR%%/plugins/droptrayicon/PLUGININFO
+%%DATADIR%%/plugins/droptrayicon/__init__.py
+%%DATADIR%%/plugins/droptrayicon/__init__.pyc
+%%DATADIR%%/plugins/droptrayicon/__init__.pyo
+%%DATADIR%%/plugins/droptrayicon/drop_target_window.ui
+%%DATADIR%%/plugins/equalizer/PLUGININFO
+%%DATADIR%%/plugins/equalizer/__init__.py
+%%DATADIR%%/plugins/equalizer/__init__.pyc
+%%DATADIR%%/plugins/equalizer/__init__.pyo
+%%DATADIR%%/plugins/equalizer/equalizer.ui
+%%DATADIR%%/plugins/exfalso/PLUGININFO
+%%DATADIR%%/plugins/exfalso/__init__.py
+%%DATADIR%%/plugins/exfalso/__init__.pyc
+%%DATADIR%%/plugins/exfalso/__init__.pyo
 %%DATADIR%%/plugins/gnomemmkeys/PLUGININFO
 %%DATADIR%%/plugins/gnomemmkeys/__init__.py
 %%DATADIR%%/plugins/gnomemmkeys/__init__.pyc
@@ -176,9 +285,6 @@
 %%DATADIR%%/plugins/helloworld/__init__.py
 %%DATADIR%%/plugins/helloworld/__init__.pyc
 %%DATADIR%%/plugins/helloworld/__init__.pyo
-%%DATADIR%%/plugins/helloworld/test.py
-%%DATADIR%%/plugins/helloworld/test.pyc
-%%DATADIR%%/plugins/helloworld/test.pyo
 %%DATADIR%%/plugins/helloworld/testlib.py
 %%DATADIR%%/plugins/helloworld/testlib.pyc
 %%DATADIR%%/plugins/helloworld/testlib.pyo
@@ -186,7 +292,7 @@
 %%DATADIR%%/plugins/ipconsole/__init__.py
 %%DATADIR%%/plugins/ipconsole/__init__.pyc
 %%DATADIR%%/plugins/ipconsole/__init__.pyo
-%%DATADIR%%/plugins/ipconsole/ipconsole_prefs.glade
+%%DATADIR%%/plugins/ipconsole/ipconsole_prefs.ui
 %%DATADIR%%/plugins/ipconsole/ipconsoleprefs.py
 %%DATADIR%%/plugins/ipconsole/ipconsoleprefs.pyc
 %%DATADIR%%/plugins/ipconsole/ipconsoleprefs.pyo
@@ -197,20 +303,96 @@
 %%DATADIR%%/plugins/ipod/__init__.py
 %%DATADIR%%/plugins/ipod/__init__.pyc
 %%DATADIR%%/plugins/ipod/__init__.pyo
+%%DATADIR%%/plugins/jamendo/PLUGININFO
+%%DATADIR%%/plugins/jamendo/__init__.py
+%%DATADIR%%/plugins/jamendo/__init__.pyc
+%%DATADIR%%/plugins/jamendo/__init__.pyo
+%%DATADIR%%/plugins/jamendo/jamapi.py
+%%DATADIR%%/plugins/jamendo/jamapi.pyc
+%%DATADIR%%/plugins/jamendo/jamapi.pyo
+%%DATADIR%%/plugins/jamendo/jamtree.py
+%%DATADIR%%/plugins/jamendo/jamtree.pyc
+%%DATADIR%%/plugins/jamendo/jamtree.pyo
+%%DATADIR%%/plugins/jamendo/menu.py
+%%DATADIR%%/plugins/jamendo/menu.pyc
+%%DATADIR%%/plugins/jamendo/menu.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/__init__.py
+%%DATADIR%%/plugins/jamendo/simplejson/__init__.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/__init__.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/_speedups.c
+%%DATADIR%%/plugins/jamendo/simplejson/decoder.py
+%%DATADIR%%/plugins/jamendo/simplejson/decoder.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/decoder.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/encoder.py
+%%DATADIR%%/plugins/jamendo/simplejson/encoder.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/encoder.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/scanner.py
+%%DATADIR%%/plugins/jamendo/simplejson/scanner.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/scanner.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/__init__.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/__init__.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/__init__.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_check_circular.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_check_circular.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_check_circular.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_decode.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_decode.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_decode.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_default.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_default.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_default.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_dump.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_dump.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_dump.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_encode_basestring_ascii.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_encode_basestring_ascii.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_encode_basestring_ascii.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_fail.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_fail.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_fail.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_float.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_float.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_float.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_indent.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_indent.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_indent.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_pass1.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_pass1.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_pass1.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_pass2.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_pass2.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_pass2.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_pass3.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_pass3.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_pass3.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_recursion.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_recursion.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_recursion.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_scanstring.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_scanstring.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_scanstring.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_separators.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_separators.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_separators.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_unicode.py
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_unicode.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tests/test_unicode.pyo
+%%DATADIR%%/plugins/jamendo/simplejson/tool.py
+%%DATADIR%%/plugins/jamendo/simplejson/tool.pyc
+%%DATADIR%%/plugins/jamendo/simplejson/tool.pyo
+%%DATADIR%%/plugins/jamendo/ui/jamendo_panel.ui
+%%DATADIR%%/plugins/karaoke/PLUGININFO
+%%DATADIR%%/plugins/karaoke/__init__.py
+%%DATADIR%%/plugins/karaoke/__init__.pyc
+%%DATADIR%%/plugins/karaoke/__init__.pyo
 %%DATADIR%%/plugins/lastfmcovers/PLUGININFO
 %%DATADIR%%/plugins/lastfmcovers/__init__.py
 %%DATADIR%%/plugins/lastfmcovers/__init__.pyc
 %%DATADIR%%/plugins/lastfmcovers/__init__.pyo
-%%DATADIR%%/plugins/lastfmcovers/test.py
-%%DATADIR%%/plugins/lastfmcovers/test.pyc
-%%DATADIR%%/plugins/lastfmcovers/test.pyo
 %%DATADIR%%/plugins/lastfmdynamic/PLUGININFO
 %%DATADIR%%/plugins/lastfmdynamic/__init__.py
 %%DATADIR%%/plugins/lastfmdynamic/__init__.pyc
 %%DATADIR%%/plugins/lastfmdynamic/__init__.pyo
-%%DATADIR%%/plugins/lastfmdynamic/test.py
-%%DATADIR%%/plugins/lastfmdynamic/test.pyc
-%%DATADIR%%/plugins/lastfmdynamic/test.pyo
 %%DATADIR%%/plugins/librivox/PLUGININFO
 %%DATADIR%%/plugins/librivox/__init__.py
 %%DATADIR%%/plugins/librivox/__init__.pyc
@@ -228,16 +410,14 @@
 %%DATADIR%%/plugins/lyricsfly/__init__.py
 %%DATADIR%%/plugins/lyricsfly/__init__.pyc
 %%DATADIR%%/plugins/lyricsfly/__init__.pyo
-%%DATADIR%%/plugins/lyricsfly/test.py
-%%DATADIR%%/plugins/lyricsfly/test.pyc
-%%DATADIR%%/plugins/lyricsfly/test.pyo
+%%DATADIR%%/plugins/lyricsviewer/PLUGININFO
+%%DATADIR%%/plugins/lyricsviewer/__init__.py
+%%DATADIR%%/plugins/lyricsviewer/__init__.pyc
+%%DATADIR%%/plugins/lyricsviewer/__init__.pyo
 %%DATADIR%%/plugins/lyricwiki/PLUGININFO
 %%DATADIR%%/plugins/lyricwiki/__init__.py
 %%DATADIR%%/plugins/lyricwiki/__init__.pyc
 %%DATADIR%%/plugins/lyricwiki/__init__.pyo
-%%DATADIR%%/plugins/lyricwiki/test.py
-%%DATADIR%%/plugins/lyricwiki/test.pyc
-%%DATADIR%%/plugins/lyricwiki/test.pyo
 %%DATADIR%%/plugins/massstorage/PLUGININFO
 %%DATADIR%%/plugins/massstorage/__init__.py
 %%DATADIR%%/plugins/massstorage/__init__.pyc
@@ -253,7 +433,7 @@
 %%DATADIR%%/plugins/minimode/minimodeprefs.py
 %%DATADIR%%/plugins/minimode/minimodeprefs.pyc
 %%DATADIR%%/plugins/minimode/minimodeprefs.pyo
-%%DATADIR%%/plugins/minimode/minimodeprefs_pane.glade
+%%DATADIR%%/plugins/minimode/minimodeprefs_pane.ui
 %%DATADIR%%/plugins/minimode/mmwidgets.py
 %%DATADIR%%/plugins/minimode/mmwidgets.pyc
 %%DATADIR%%/plugins/minimode/mmwidgets.pyo
@@ -261,6 +441,10 @@
 %%DATADIR%%/plugins/moodbar/__init__.py
 %%DATADIR%%/plugins/moodbar/__init__.pyc
 %%DATADIR%%/plugins/moodbar/__init__.pyo
+%%DATADIR%%/plugins/moodbar/moodbarprefs.py
+%%DATADIR%%/plugins/moodbar/moodbarprefs.pyc
+%%DATADIR%%/plugins/moodbar/moodbarprefs.pyo
+%%DATADIR%%/plugins/moodbar/moodbarprefs_pane.ui
 %%DATADIR%%/plugins/mpris/PLUGININFO
 %%DATADIR%%/plugins/mpris/__init__.py
 %%DATADIR%%/plugins/mpris/__init__.pyc
@@ -280,14 +464,11 @@
 %%DATADIR%%/plugins/mpris/mpris_tracklist.py
 %%DATADIR%%/plugins/mpris/mpris_tracklist.pyc
 %%DATADIR%%/plugins/mpris/mpris_tracklist.pyo
-%%DATADIR%%/plugins/mpris/test.py
-%%DATADIR%%/plugins/mpris/test.pyc
-%%DATADIR%%/plugins/mpris/test.pyo
 %%DATADIR%%/plugins/multialarmclock/PLUGININFO
 %%DATADIR%%/plugins/multialarmclock/__init__.py
 %%DATADIR%%/plugins/multialarmclock/__init__.pyc
 %%DATADIR%%/plugins/multialarmclock/__init__.pyo
-%%DATADIR%%/plugins/multialarmclock/alarmclk.glade
+%%DATADIR%%/plugins/multialarmclock/alarmclk.ui
 %%DATADIR%%/plugins/multialarmclock/clock32.png
 %%DATADIR%%/plugins/notify/PLUGININFO
 %%DATADIR%%/plugins/notify/__init__.py
@@ -299,10 +480,7 @@
 %%DATADIR%%/plugins/notify/notifyprefs.py
 %%DATADIR%%/plugins/notify/notifyprefs.pyc
 %%DATADIR%%/plugins/notify/notifyprefs.pyo
-%%DATADIR%%/plugins/notify/notifyprefs_pane.glade
-%%DATADIR%%/plugins/notify/test.py
-%%DATADIR%%/plugins/notify/test.pyc
-%%DATADIR%%/plugins/notify/test.pyo
+%%DATADIR%%/plugins/notify/notifyprefs_pane.ui
 %%DATADIR%%/plugins/notifyosd/PLUGININFO
 %%DATADIR%%/plugins/notifyosd/__init__.py
 %%DATADIR%%/plugins/notifyosd/__init__.pyc
@@ -313,10 +491,7 @@
 %%DATADIR%%/plugins/notifyosd/notifyosdprefs.py
 %%DATADIR%%/plugins/notifyosd/notifyosdprefs.pyc
 %%DATADIR%%/plugins/notifyosd/notifyosdprefs.pyo
-%%DATADIR%%/plugins/notifyosd/notifyosdprefs_pane.glade
-%%DATADIR%%/plugins/notifyosd/test.py
-%%DATADIR%%/plugins/notifyosd/test.pyc
-%%DATADIR%%/plugins/notifyosd/test.pyo
+%%DATADIR%%/plugins/notifyosd/notifyosdprefs_pane.ui
 %%DATADIR%%/plugins/podcasts/PLUGININFO
 %%DATADIR%%/plugins/podcasts/__init__.py
 %%DATADIR%%/plugins/podcasts/__init__.pyc
@@ -324,7 +499,7 @@
 %%DATADIR%%/plugins/podcasts/_feedparser.py
 %%DATADIR%%/plugins/podcasts/_feedparser.pyc
 %%DATADIR%%/plugins/podcasts/_feedparser.pyo
-%%DATADIR%%/plugins/podcasts/podcasts.glade
+%%DATADIR%%/plugins/podcasts/podcasts.ui
 %%DATADIR%%/plugins/replaygain/PLUGININFO
 %%DATADIR%%/plugins/replaygain/__init__.py
 %%DATADIR%%/plugins/replaygain/__init__.pyc
@@ -332,7 +507,7 @@
 %%DATADIR%%/plugins/replaygain/replaygainprefs.py
 %%DATADIR%%/plugins/replaygain/replaygainprefs.pyc
 %%DATADIR%%/plugins/replaygain/replaygainprefs.pyo
-%%DATADIR%%/plugins/replaygain/replaygainprefs_pane.glade
+%%DATADIR%%/plugins/replaygain/replaygainprefs_pane.ui
 %%DATADIR%%/plugins/screensaverpause/PLUGININFO
 %%DATADIR%%/plugins/screensaverpause/__init__.py
 %%DATADIR%%/plugins/screensaverpause/__init__.pyc
@@ -341,9 +516,6 @@
 %%DATADIR%%/plugins/shoutcast/__init__.py
 %%DATADIR%%/plugins/shoutcast/__init__.pyc
 %%DATADIR%%/plugins/shoutcast/__init__.pyo
-%%DATADIR%%/plugins/shoutcast/test.py
-%%DATADIR%%/plugins/shoutcast/test.pyc
-%%DATADIR%%/plugins/shoutcast/test.pyo
 %%DATADIR%%/plugins/streamripper/PLUGININFO
 %%DATADIR%%/plugins/streamripper/__init__.py
 %%DATADIR%%/plugins/streamripper/__init__.pyc
@@ -351,26 +523,24 @@
 %%DATADIR%%/plugins/streamripper/srprefs.py
 %%DATADIR%%/plugins/streamripper/srprefs.pyc
 %%DATADIR%%/plugins/streamripper/srprefs.pyo
-%%DATADIR%%/plugins/streamripper/streamripper.glade
-%%DATADIR%%/plugins/tagcovers/PLUGININFO
-%%DATADIR%%/plugins/tagcovers/__init__.py
-%%DATADIR%%/plugins/tagcovers/__init__.pyc
-%%DATADIR%%/plugins/tagcovers/__init__.pyo
+%%DATADIR%%/plugins/streamripper/streamripper.ui
 %%DATADIR%%/plugins/xkeys/PLUGININFO
 %%DATADIR%%/plugins/xkeys/__init__.py
 %%DATADIR%%/plugins/xkeys/__init__.pyc
 %%DATADIR%%/plugins/xkeys/__init__.pyo
 %%NLS%%share/locale/ar/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/be/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/csb/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/cy/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/da/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/de/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/el/LC_MESSAGES/exaile.mo
-%%NLS%%share/locale/en/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/exaile.mo
@@ -396,6 +566,8 @@
 %%NLS%%share/locale/lt/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/exaile.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/exaile.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/exaile.mo
@@ -464,6 +636,9 @@ lib/exaile/xl/metadata/_base.pyo
 lib/exaile/xl/metadata/_id3.py
 lib/exaile/xl/metadata/_id3.pyc
 lib/exaile/xl/metadata/_id3.pyo
+lib/exaile/xl/metadata/ape.py
+lib/exaile/xl/metadata/ape.pyc
+lib/exaile/xl/metadata/ape.pyo
 lib/exaile/xl/metadata/asf.py
 lib/exaile/xl/metadata/asf.pyc
 lib/exaile/xl/metadata/asf.pyo
@@ -500,9 +675,15 @@ lib/exaile/xl/metadata/wav.pyo
 lib/exaile/xl/metadata/wv.py
 lib/exaile/xl/metadata/wv.pyc
 lib/exaile/xl/metadata/wv.pyo
-lib/exaile/xl/migration.py
-lib/exaile/xl/migration.pyc
-lib/exaile/xl/migration.pyo
+lib/exaile/xl/migrations/__init__.py
+lib/exaile/xl/migrations/__init__.pyc
+lib/exaile/xl/migrations/__init__.pyo
+lib/exaile/xl/migrations/database/__init__.py
+lib/exaile/xl/migrations/database/__init__.pyc
+lib/exaile/xl/migrations/database/__init__.pyo
+lib/exaile/xl/migrations/database/from1to2.py
+lib/exaile/xl/migrations/database/from1to2.pyc
+lib/exaile/xl/migrations/database/from1to2.pyo
 lib/exaile/xl/nls.py
 lib/exaile/xl/nls.pyc
 lib/exaile/xl/nls.pyo
@@ -539,15 +720,27 @@ lib/exaile/xl/radio.pyo
 lib/exaile/xl/settings.py
 lib/exaile/xl/settings.pyc
 lib/exaile/xl/settings.pyo
-lib/exaile/xl/track.py
-lib/exaile/xl/track.pyc
-lib/exaile/xl/track.pyo
-lib/exaile/xl/trackdb.py
-lib/exaile/xl/trackdb.pyc
-lib/exaile/xl/trackdb.pyo
 lib/exaile/xl/transcoder.py
 lib/exaile/xl/transcoder.pyc
 lib/exaile/xl/transcoder.pyo
+lib/exaile/xl/trax/__init__.py
+lib/exaile/xl/trax/__init__.pyc
+lib/exaile/xl/trax/__init__.pyo
+lib/exaile/xl/trax/search.py
+lib/exaile/xl/trax/search.pyc
+lib/exaile/xl/trax/search.pyo
+lib/exaile/xl/trax/track.py
+lib/exaile/xl/trax/track.pyc
+lib/exaile/xl/trax/track.pyo
+lib/exaile/xl/trax/trackdb.py
+lib/exaile/xl/trax/trackdb.pyc
+lib/exaile/xl/trax/trackdb.pyo
+lib/exaile/xl/trax/util.py
+lib/exaile/xl/trax/util.pyc
+lib/exaile/xl/trax/util.pyo
+lib/exaile/xl/version.py
+lib/exaile/xl/version.pyc
+lib/exaile/xl/version.pyo
 lib/exaile/xl/xdg.py
 lib/exaile/xl/xdg.pyc
 lib/exaile/xl/xdg.pyo
@@ -620,6 +813,9 @@ lib/exaile/xlgui/prefs/__init__.pyo
 lib/exaile/xlgui/prefs/appearance_prefs.py
 lib/exaile/xlgui/prefs/appearance_prefs.pyc
 lib/exaile/xlgui/prefs/appearance_prefs.pyo
+lib/exaile/xlgui/prefs/collection_prefs.py
+lib/exaile/xlgui/prefs/collection_prefs.pyc
+lib/exaile/xlgui/prefs/collection_prefs.pyo
 lib/exaile/xlgui/prefs/cover_prefs.py
 lib/exaile/xlgui/prefs/cover_prefs.pyc
 lib/exaile/xlgui/prefs/cover_prefs.pyo
@@ -661,7 +857,10 @@ share/pixmaps/exaile.png
 @dirrm lib/exaile/xlgui/prefs
 @dirrm lib/exaile/xlgui/panel
 @dirrm lib/exaile/xlgui
+@dirrm lib/exaile/xl/trax
 @dirrm lib/exaile/xl/player
+@dirrm lib/exaile/xl/migrations/database
+@dirrm lib/exaile/xl/migrations
 @dirrm lib/exaile/xl/metadata
 @dirrm lib/exaile/xl
 @dirrm lib/exaile
@@ -673,18 +872,17 @@ share/pixmaps/exaile.png
 %%NLS%%@dirrmtry share/locale/sw
 %%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/oc
-%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/mr
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/frp
+%%NLS%%@dirrmtry share/locale/csb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/csb
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
 %%NLS%%@dirrmtry share/locale/an/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/an
 @dirrm %%DATADIR%%/plugins/xkeys
-@dirrm %%DATADIR%%/plugins/tagcovers
 @dirrm %%DATADIR%%/plugins/streamripper
 @dirrm %%DATADIR%%/plugins/shoutcast
 @dirrm %%DATADIR%%/plugins/screensaverpause
@@ -699,15 +897,29 @@ share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/plugins/minimode
 @dirrm %%DATADIR%%/plugins/massstorage
 @dirrm %%DATADIR%%/plugins/lyricwiki
+@dirrm %%DATADIR%%/plugins/lyricsviewer
 @dirrm %%DATADIR%%/plugins/lyricsfly
 @dirrm %%DATADIR%%/plugins/librivox
 @dirrm %%DATADIR%%/plugins/lastfmdynamic
 @dirrm %%DATADIR%%/plugins/lastfmcovers
+@dirrm %%DATADIR%%/plugins/karaoke
+@dirrm %%DATADIR%%/plugins/jamendo/ui
+@dirrm %%DATADIR%%/plugins/jamendo/simplejson/tests
+@dirrm %%DATADIR%%/plugins/jamendo/simplejson
+@dirrm %%DATADIR%%/plugins/jamendo
 @dirrm %%DATADIR%%/plugins/ipod
 @dirrm %%DATADIR%%/plugins/ipconsole
 @dirrm %%DATADIR%%/plugins/helloworld
 @dirrm %%DATADIR%%/plugins/gnomemmkeys
+@dirrm %%DATADIR%%/plugins/exfalso
+@dirrm %%DATADIR%%/plugins/equalizer
+@dirrm %%DATADIR%%/plugins/droptrayicon
 @dirrm %%DATADIR%%/plugins/desktopcover
+@dirrm %%DATADIR%%/plugins/daapserver/spydaap/parser
+@dirrm %%DATADIR%%/plugins/daapserver/spydaap
+@dirrm %%DATADIR%%/plugins/daapserver
+@dirrm %%DATADIR%%/plugins/daapclient
+@dirrm %%DATADIR%%/plugins/currentsong
 @dirrm %%DATADIR%%/plugins/contextinfo/extended/js
 @dirrm %%DATADIR%%/plugins/contextinfo/extended/images
 @dirrm %%DATADIR%%/plugins/contextinfo/extended
@@ -717,19 +929,20 @@ share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/plugins/contextinfo
 @dirrm %%DATADIR%%/plugins/cd
 @dirrm %%DATADIR%%/plugins/bookmarks
+@dirrm %%DATADIR%%/plugins/awn
 @dirrm %%DATADIR%%/plugins/audioscrobbler
 @dirrm %%DATADIR%%/plugins/amazoncovers
 @dirrm %%DATADIR%%/plugins/alarmclock
 @dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/data/ui
 @dirrm %%DATADIR%%/data/migrations/migration_200907100931
 @dirrm %%DATADIR%%/data/migrations
-@dirrm %%DATADIR%%/data/images/svg
+@dirrm %%DATADIR%%/data/images/scalable
 @dirrm %%DATADIR%%/data/images/48x48
 @dirrm %%DATADIR%%/data/images/32x32
 @dirrm %%DATADIR%%/data/images/24x24
 @dirrm %%DATADIR%%/data/images/22x22
 @dirrm %%DATADIR%%/data/images/16x16
 @dirrm %%DATADIR%%/data/images
-@dirrm %%DATADIR%%/data/glade
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
