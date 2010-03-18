@@ -7,6 +7,7 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.bmsoftware.org/freebsd/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
@@ -22,6 +23,8 @@ USE_OPENSSL=	yes
 USE_BZIP2=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
+
+USE_RC_SUBR=	thundercache
 
 NO_BUILD=	yes
 LICENSE=	shareware / commercial
@@ -49,7 +52,7 @@ RUN_DEPENDS+=	sudo:${PORTSDIR}/security/sudo \
 		postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server \
 		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
 
-SUB_FILES=	pkg-message thunder-rcNG log.sh
+SUB_FILES=	pkg-message log.sh
 
 pre-everything::
 .if !defined(WITH_DEPENDACK)
@@ -73,7 +76,6 @@ pre-everything::
 
 do-install:
 	@${CP} -r ${WRKSRC} ${PREFIX}/
-	${INSTALL_SCRIPT} ${WRKDIR}/thunder-rcNG ${PREFIX}/etc/rc.d/thunder
 	${INSTALL_SCRIPT} ${WRKDIR}/log.sh ${PREFIX}/thunder/sbin/
 
 post-install:
