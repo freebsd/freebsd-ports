@@ -4,7 +4,6 @@ include/dahdi/tonezone.h
 include/dahdi/user.h
 include/dahdi/wctdm_user.h
 lib/dahdi/dahdi.ko
-lib/dahdi/dahdi_dummy.ko
 lib/dahdi/dahdi_dynamic.ko
 lib/dahdi/dahdi_dynamic_eth.ko
 lib/dahdi/dahdi_dynamic_ethmf.ko
