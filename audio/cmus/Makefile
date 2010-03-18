@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cmus
-PORTVERSION=	2.2.0
-PORTREVISION=	4
+PORTVERSION=	2.3.1
 CATEGORIES=	audio
-MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
-		http://mirror.greaterscope.net/cmus/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Console-based music player with really cool features
@@ -21,8 +21,6 @@ USE_ICONV=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=prefix=${PREFIX} mandir=${MANPREFIX}/man \
 		exampledir=${EXAMPLESDIR}
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	FLAC "FLAC (Free Lossless Audio Codec) support" Off \
 		MAD "MPEG Audio Decoder (libmad) support" On \
@@ -36,6 +34,7 @@ OPTIONS=	FLAC "FLAC (Free Lossless Audio Codec) support" Off \
 		WAVPACK "Wavpack support" Off \
 		FFMPEG "FFMPEG support" Off \
 		LIBAO "Libao cross-platform audio library" Off \
+		PULSEAUDIO "Pulseaudio support" Off \
 		ARTS "ARTS support" Off
 
 .include <bsd.port.pre.mk>
@@ -148,6 +147,15 @@ CONFIGURE_ARGS+=CONFIG_AO=n
 PLIST_SUB+=	AO="@comment "
 .endif
 
+.if defined(WITH_PULSEAUDIO)
+LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=CONFIG_PULSE=y
+PLIST_SUB+=	PULSEAUDIO=""
+.else
+CONFIGURE_ARGS+=CONFIG_PULSE=n
+PLIST_SUB+=	PULSEAUDIO="@comment "
+.endif
+
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=CONFIG_ARTS=y
@@ -158,6 +166,7 @@ PLIST_SUB+=	ARTS="@comment "
 .endif
 
 MAN1=	cmus.1 cmus-remote.1
+MAN7=	cmus-tutorial.7
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,doc/cmus/examples,examples/cmus,g' \

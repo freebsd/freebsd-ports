@@ -13,6 +13,7 @@ lib/cmus/ip/wav.so
 %%FFMPEG%%lib/cmus/ip/ffmpeg.so
 lib/cmus/op/oss.so
 %%AO%%lib/cmus/op/ao.so
+%%PULSEAUDIO%%lib/cmus/op/pulse.so
 %%ARTS%%lib/cmus/op/arts.so
 %%DATADIR%%/cyan.theme
 %%DATADIR%%/default.theme
