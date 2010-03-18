@@ -7,6 +7,7 @@
 
 PORTNAME=	papi
 PORTVERSION=	3.7.1
+PORTREVESION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
@@ -258,6 +259,7 @@ do-install:
 .for f in ${PAPI_LIBS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/lib
 .endfor
+	${LN} -s ${PREFIX}/lib/libpapi.so.3 ${PREFIX}/lib/libpapi.so
 .for f in ${MAN1}
 	${INSTALL_MAN} ${WRKMAN}/man1/${f} ${PREFIX}/man/man1
 .endfor
