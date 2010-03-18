@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: thundercache
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Remember to thundercache_enable="YES" in /etc/rc.conf
+# You can also add optional flags to thundercache_flags
+#
+# FreeBSD Brasil LTDA <consultoria@freebsdbrasil.com.br>
+#
+
+. /etc/rc.subr
+
+name="thundercache"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/thunder/sbin/thunder"
+required_files="%%PREFIX%%/thunder/etc/thunder.conf"
+command_args="-c $required_files"
+pidfile="/var/run/thunder/thunder.pid"
+
+load_rc_config $name
+: ${thundercache_enable="NO"}
+
+run_rc_command "$1"
