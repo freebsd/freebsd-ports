@@ -743,3 +743,7 @@ rsmb-*			net/rsmb		Must register for account
 						to license before downloading,
 						and no redistribution allowed
 yEd*			graphics/yed		Must acknowledge license
+thundercache		www/thundercache	Shareware license for 50 threads.
+						Requires license key to run more
+						than 50 threads, which can be
+						obtained from their website.
