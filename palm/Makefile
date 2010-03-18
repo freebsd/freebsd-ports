@@ -14,6 +14,7 @@
     SUBDIR += jfconv
     SUBDIR += jpilot
     SUBDIR += jpilot-db
+    SUBDIR += jpilot-picsnvideos
     SUBDIR += libmal
     SUBDIR += makeztxt
     SUBDIR += mdbconv
