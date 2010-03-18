@@ -6,27 +6,37 @@
 #
 
 PORTNAME=	qdecoder
-PORTVERSION=	9.0.2
+PORTVERSION=	10.1.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.qdecoder.org/pub/qDecoder/
 DISTNAME=	qDecoder-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	C/C++ language library including CGI supports
 
-CONFLICTS=	qDecoder-[5-7]*
-
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	Q_DEBUG "enable debuging output" off
-OPTIONS+=	Q_CGI "enable CGI APIs" on
-OPTIONS+=	Q_SOCKET "enable socket APIs" on
-OPTIONS+=	Q_IPC "enable IPC APIs" on
-OPTIONS+=	Q_DATASTRUCTURE "enable data-structure APIs" on
-OPTIONS+=	Q_MYSQL "enable MySQL database supports" off
-OPTIONS+=	Q_LFS "enable large-file supports" off
-OPTIONS+=	Q_SENDFILE "use sendfile() if possible" off
+OPTIONS=	Q_DEBUG "enable debuging output" off \
+		Q_CGI "enable CGI APIs" on \
+		Q_SOCKET "enable socket APIs" on \
+		Q_IPC "enable IPC APIs" on \
+		Q_DATASTRUCTURE "enable data-structure APIs" on \
+		Q_MYSQL "enable MySQL database supports" off \
+		Q_LFS "enable large-file supports" off \
+		Q_SENDFILE "use sendfile() if possible" off
+
+PLIST_FILES=	include/qDecoder.h \
+		lib/libqDecoder.a \
+		lib/libqDecoder.so \
+		lib/libqDecoder.so.8
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+.endif
 
 .include <bsd.port.pre.mk>
 
