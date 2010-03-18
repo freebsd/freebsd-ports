@@ -1,0 +1,17 @@
+--- ./tools/generate-launcher.orig	2010-03-16 08:29:13.000000000 -0400
++++ ./tools/generate-launcher	2010-03-16 08:35:43.000000000 -0400
+@@ -8,10 +8,12 @@
+ PREFIX=${2:-/usr/local}
+ LIBDIR=${3:-/lib}
+ 
+-if (which readlink > /dev/null); then
++if (which realpath > /dev/null); then
++  PREFIX=`realpath $PREFIX`
++elif (which readlink > /dev/null); then
+   PREFIX=`readlink -f $PREFIX`
+ elif test "${PREFIX:0:1}" != "/"; then
+-  echo "Please install using an absolute path for a prefix, or install readlink"
++  echo "Please use an absolute path for PREFIX, or install either realpath or readlink"
+   exit 1
+ fi
+ 

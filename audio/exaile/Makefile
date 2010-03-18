@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	exaile
-DISTVERSION=	0.3.0.2
-PORTREVISION=	2
+PORTVERSION=	0.3.1.0
 CATEGORIES=	audio
-MASTER_SITES=	http://launchpadlibrarian.net/35452349/ \
+MASTER_SITES=	http://launchpadlibrarian.net/40974604/ \
 		http://wickedmachine.net/mirror/
 
 MAINTAINER=	jsa@wickedmachine.net
@@ -21,7 +20,7 @@ USE_GNOME=	pygtk2 librsvg2
 USE_GSTREAMER=	python good
 USE_PYTHON=	2.5+
 
-CONFLICTS=	exaile-devel-*
+CONFLICTS=	exaile-devel-[0-9]*
 
 # The reality with these options is that they all will be autodetected and used
 # if already installed. These just force Exaile to bring them in as well.
