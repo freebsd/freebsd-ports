@@ -1,0 +1,12 @@
+tircd presents Twitter as an irc channel. You can connect to tircd
+with any IRC client, and tweet as if you were on IRC.  The daemon
+supports authentication via OAuth or standard http and https
+authentication, and supports direct messages, automatic URL shortening,
+and Twitter searching.
+
+Quickstart: in irssi, "/connect localhost 6667 twitpass twituser"
+and join #twitter
+
+    - @gavinatkinson
+
+WWW: http://code.google.com/p/tircd/
