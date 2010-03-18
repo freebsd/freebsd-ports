@@ -23,12 +23,15 @@
 . %%RC_SUBR%%
 
 name="dahdi"
+rcvar=`set_rcvar`
+
 start_cmd="dahdi_start"
 stop_cmd="dahdi_stop"
 load_rc_config $name
+: ${dahdi_enable="NO"}
+: ${dahdi_modules="dahdi"}
 
 kmod_dir=%%PREFIX%%/lib/dahdi
-dahdi_modules=${dahdi_modules:-dahdi}
 # reverse list
 dahdi_modules_unload=""
 for m in ${dahdi_modules}; do
