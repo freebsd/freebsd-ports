@@ -5,8 +5,8 @@ sbin/keytab2shishi
 sbin/shishid
 etc/shishi/shisa.conf
 etc/shishi/shishi.conf
-etc/shishi/shishi.skel
 etc/shishi/shishi.keys
+etc/shishi/shishi.skel
 include/shisa.h
 include/shishi-int.h
 include/shishi.h
