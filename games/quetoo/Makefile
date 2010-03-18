@@ -84,6 +84,9 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's,^(eval PKGDATADIR=).*$$,\1"${Q2DIR}", ; \
 		19752s,sdl-config,${SDL_CONFIG}, ; \
 		s,^(GAME_MODULES=")baseq2",\1",' ${WRKSRC}/configure
+.if ${OSVERSION} < 800501
+	${REINPLACE_CMD} -e 's,const struct,struct,' ${WRKSRC}/src/files.c
+.endif
 	${REINPLACE_CMD} -e 's,-ldl,,' ${WRKSRC}/src/Makefile.in
 
 do-install:
