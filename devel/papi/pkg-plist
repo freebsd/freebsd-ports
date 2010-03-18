@@ -12,6 +12,7 @@ include/fpapi.h
 include/papi.h
 include/papiStdEventDefs.h
 lib/libpapi.a
+lib/libpapi.so
 lib/libpapi.so.3
 %%CTESTS%%share/papi/ctests/all_events
 %%CTESTS%%share/papi/ctests/all_native_events
