@@ -1,0 +1,11 @@
+--- examples/config/config.orig	2010-03-18 15:48:18.000000000 +0100
++++ examples/config/config	2010-03-18 15:48:39.000000000 +0100
+@@ -120,7 +120,7 @@
+ 
+ # === Core settings ==========================================================
+ 
+-set useragent         = Uzbl (Webkit @WEBKIT_MAJOR.@WEBKIT_MINOR.@WEBKIT_MICRO) (@(+uname -o)@ @(+uname -m)@ [@ARCH_UZBL]) (Commit @COMMIT)
++set useragent         = Uzbl (Webkit @WEBKIT_MAJOR.@WEBKIT_MINOR.@WEBKIT_MICRO) (@(+uname)@ @(+uname -m)@ [@ARCH_UZBL]) (Commit @COMMIT)
+ set fifo_dir          = /tmp
+ set socket_dir        = /tmp
+ 
