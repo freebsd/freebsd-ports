@@ -1,0 +1,4 @@
+bin/tircd.pl
+@unexec if cmp -s %D/etc/tircd.cfg.example %D/etc/tircd.cfg; then rm -f %D/etc/tircd.cfg; fi
+etc/tircd.cfg.example
+@exec if [ ! -f %D/etc/tircd.cfg ] ; then cp -p %D/%F %B/tircd.cfg; fi

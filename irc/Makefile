@@ -130,6 +130,7 @@
     SUBDIR += srvx
     SUBDIR += talksoup
     SUBDIR += thales
+    SUBDIR += tircd
     SUBDIR += tircproxy
     SUBDIR += tkirc
     SUBDIR += tr-ircd
