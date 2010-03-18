@@ -5,6 +5,7 @@ bin/pgfouine_vacuum
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/pgfouine-tutorial.txt
 %%DATADIR%%/include/Accumulator.class.php
+%%DATADIR%%/include/CsvlogLogReader.class.php
 %%DATADIR%%/include/DurationLogObject.class.php
 %%DATADIR%%/include/ErrorLogObject.class.php
 %%DATADIR%%/include/GenericLogReader.class.php
@@ -42,6 +43,7 @@ bin/pgfouine_vacuum
 %%DATADIR%%/include/postgresql/lines/PostgreSQLDurationLine.class.php
 %%DATADIR%%/include/postgresql/lines/PostgreSQLErrorLine.class.php
 %%DATADIR%%/include/postgresql/lines/PostgreSQLHintLine.class.php
+%%DATADIR%%/include/postgresql/lines/PostgreSQLLocationLine.class.php
 %%DATADIR%%/include/postgresql/lines/PostgreSQLLogLine.class.php
 %%DATADIR%%/include/postgresql/lines/PostgreSQLNoticeLine.class.php
 %%DATADIR%%/include/postgresql/lines/PostgreSQLPreparedStatementExecuteLine.class.php
@@ -51,6 +53,7 @@ bin/pgfouine_vacuum
 %%DATADIR%%/include/postgresql/lines/PostgreSQLQueryStartWithDurationLine.class.php
 %%DATADIR%%/include/postgresql/lines/PostgreSQLStatementLine.class.php
 %%DATADIR%%/include/postgresql/lines/PostgreSQLStatusLine.class.php
+%%DATADIR%%/include/postgresql/parsers/CsvlogPostgreSQLParser.class.php
 %%DATADIR%%/include/postgresql/parsers/PostgreSQLParser.class.php
 %%DATADIR%%/include/postgresql/parsers/StderrPostgreSQLParser.class.php
 %%DATADIR%%/include/postgresql/parsers/SyslogPostgreSQLParser.class.php
@@ -102,8 +105,9 @@ bin/pgfouine_vacuum
 %%DATADIR%%/include/reporting/artichow/Pie.class.php
 %%DATADIR%%/include/reporting/artichow/README
 %%DATADIR%%/include/reporting/artichow/ScatterPlot.class.php
-%%DATADIR%%/include/reporting/artichow/font/COPYRIGHT.TXT
-%%DATADIR%%/include/reporting/artichow/font/Vera.ttf
+%%DATADIR%%/include/reporting/artichow/font/DejaVuSans.ttf
+%%DATADIR%%/include/reporting/artichow/font/LICENSE
+%%DATADIR%%/include/reporting/artichow/font/README
 %%DATADIR%%/include/reporting/artichow/patterns/BarDepth.php
 %%DATADIR%%/include/reporting/artichow/patterns/LightLine.php
 %%DATADIR%%/include/reporting/artichow/php4/AntiSpam.class.php
@@ -166,10 +170,12 @@ bin/pgfouine_vacuum
 %%DATADIR%%/include/reporting/geshi/docs/CHANGES
 %%DATADIR%%/include/reporting/geshi/docs/COPYING
 %%DATADIR%%/include/reporting/geshi/docs/README
+%%DATADIR%%/include/reporting/geshi/docs/TODO
 %%DATADIR%%/include/reporting/geshi/docs/THANKS
 %%DATADIR%%/include/reporting/geshi/geshi.php
 %%DATADIR%%/include/reporting/geshi/geshi/sql.php
 %%DATADIR%%/include/reporting/reports.lib.php
+%%DATADIR%%/include/reporting/reports/CsvQueriesHistoryReport.class.php
 %%DATADIR%%/include/reporting/reports/HourlyStatsReport.class.php
 %%DATADIR%%/include/reporting/reports/NormalizedErrorsMostFrequentReport.class.php
 %%DATADIR%%/include/reporting/reports/NormalizedErrorsReport.class.php
