@@ -35,6 +35,7 @@ include/clang/AST/Decl.h
 include/clang/AST/DeclBase.h
 include/clang/AST/DeclCXX.h
 include/clang/AST/DeclContextInternals.h
+include/clang/AST/DeclFriend.h
 include/clang/AST/DeclGroup.h
 include/clang/AST/DeclNodes.def
 include/clang/AST/DeclObjC.h
@@ -88,6 +89,7 @@ include/clang/Analysis/Visitors/CFGRecStmtVisitor.h
 include/clang/Analysis/Visitors/CFGStmtVisitor.h
 include/clang/Basic/Builtins.def
 include/clang/Basic/Builtins.h
+include/clang/Basic/BuiltinsARM.def
 include/clang/Basic/BuiltinsPPC.def
 include/clang/Basic/BuiltinsX86.def
 include/clang/Basic/ConvertUTF.h
@@ -111,15 +113,15 @@ include/clang/Basic/OperatorKinds.def
 include/clang/Basic/OperatorKinds.h
 include/clang/Basic/PartialDiagnostic.h
 include/clang/Basic/PrettyStackTrace.h
-include/clang/Basic/Release+Debug/DiagnosticASTKinds.inc.tmp
-include/clang/Basic/Release+Debug/DiagnosticAnalysisKinds.inc.tmp
-include/clang/Basic/Release+Debug/DiagnosticCommonKinds.inc.tmp
-include/clang/Basic/Release+Debug/DiagnosticDriverKinds.inc.tmp
-include/clang/Basic/Release+Debug/DiagnosticFrontendKinds.inc.tmp
-include/clang/Basic/Release+Debug/DiagnosticGroups.inc.tmp
-include/clang/Basic/Release+Debug/DiagnosticLexKinds.inc.tmp
-include/clang/Basic/Release+Debug/DiagnosticParseKinds.inc.tmp
-include/clang/Basic/Release+Debug/DiagnosticSemaKinds.inc.tmp
+include/clang/Basic/Release/DiagnosticASTKinds.inc.tmp
+include/clang/Basic/Release/DiagnosticAnalysisKinds.inc.tmp
+include/clang/Basic/Release/DiagnosticCommonKinds.inc.tmp
+include/clang/Basic/Release/DiagnosticDriverKinds.inc.tmp
+include/clang/Basic/Release/DiagnosticFrontendKinds.inc.tmp
+include/clang/Basic/Release/DiagnosticGroups.inc.tmp
+include/clang/Basic/Release/DiagnosticLexKinds.inc.tmp
+include/clang/Basic/Release/DiagnosticParseKinds.inc.tmp
+include/clang/Basic/Release/DiagnosticSemaKinds.inc.tmp
 include/clang/Basic/SourceLocation.h
 include/clang/Basic/SourceManager.h
 include/clang/Basic/SourceManagerInternals.h
@@ -183,8 +185,8 @@ include/clang/Driver/Option.h
 include/clang/Driver/Options.h
 include/clang/Driver/Options.inc
 include/clang/Driver/Phases.h
-include/clang/Driver/Release+Debug/CC1Options.inc.tmp
-include/clang/Driver/Release+Debug/Options.inc.tmp
+include/clang/Driver/Release/CC1Options.inc.tmp
+include/clang/Driver/Release/Options.inc.tmp
 include/clang/Driver/Tool.h
 include/clang/Driver/ToolChain.h
 include/clang/Driver/Types.def
@@ -510,6 +512,7 @@ include/llvm/Linker.h
 include/llvm/MC/MCAsmInfo.h
 include/llvm/MC/MCAsmInfoCOFF.h
 include/llvm/MC/MCAsmInfoDarwin.h
+include/llvm/MC/MCAsmLayout.h
 include/llvm/MC/MCAssembler.h
 include/llvm/MC/MCCodeEmitter.h
 include/llvm/MC/MCContext.h
@@ -625,6 +628,7 @@ include/llvm/System/Solaris.h
 include/llvm/System/ThreadLocal.h
 include/llvm/System/Threading.h
 include/llvm/System/TimeValue.h
+include/llvm/System/Valgrind.h
 include/llvm/Target/Mangler.h
 include/llvm/Target/SubtargetFeature.h
 include/llvm/Target/Target.td
@@ -659,6 +663,7 @@ include/llvm/Transforms/Scalar.h
 include/llvm/Transforms/Utils/AddrModeMatcher.h
 include/llvm/Transforms/Utils/BasicBlockUtils.h
 include/llvm/Transforms/Utils/BasicInliner.h
+include/llvm/Transforms/Utils/BuildLibCalls.h
 include/llvm/Transforms/Utils/Cloning.h
 include/llvm/Transforms/Utils/FunctionUtils.h
 include/llvm/Transforms/Utils/Local.h
@@ -674,12 +679,13 @@ include/llvm/Use.h
 include/llvm/User.h
 include/llvm/Value.h
 include/llvm/ValueSymbolTable.h
-lib/clang/1.1/include/emmintrin.h
-lib/clang/1.1/include/mm_malloc.h
-lib/clang/1.1/include/mmintrin.h
-lib/clang/1.1/include/pmmintrin.h
-lib/clang/1.1/include/tmmintrin.h
-lib/clang/1.1/include/xmmintrin.h
+lib/clang/1.5/include/emmintrin.h
+lib/clang/1.5/include/mm_malloc.h
+lib/clang/1.5/include/mmintrin.h
+lib/clang/1.5/include/pmmintrin.h
+lib/clang/1.5/include/smmintrin.h
+lib/clang/1.5/include/tmmintrin.h
+lib/clang/1.5/include/xmmintrin.h
 lib/libCIndex.a
 lib/libCIndex.so
 lib/libCompilerDriver.a
@@ -899,8 +905,8 @@ lib/libprofile_rt.so
 %%DOCSDIR%%/ps/llvmgxx.ps
 %%DOCSDIR%%/ps/opt.ps
 %%DOCSDIR%%/ps/tblgen.ps
-@dirrm lib/clang/1.1/include
-@dirrm lib/clang/1.1
+@dirrm lib/clang/1.5/include
+@dirrm lib/clang/1.5
 @dirrm lib/clang
 @dirrm include/llvm/Transforms/Utils
 @dirrm include/llvm/Transforms/IPO
@@ -927,7 +933,7 @@ lib/libprofile_rt.so
 @dirrm include/clang/Lex
 @dirrm include/clang/Index
 @dirrm include/clang/Frontend
-@dirrm include/clang/Driver/Release+Debug
+@dirrm include/clang/Driver/Release
 @dirrm include/clang/Driver
 @dirrm include/clang/CodeGen
 @dirrm include/clang/Checker/PathSensitive
@@ -935,7 +941,7 @@ lib/libprofile_rt.so
 @dirrm include/clang/Checker/Checkers
 @dirrm include/clang/Checker/BugReporter
 @dirrm include/clang/Checker
-@dirrm include/clang/Basic/Release+Debug
+@dirrm include/clang/Basic/Release
 @dirrm include/clang/Basic
 @dirrm include/clang/Analysis/Visitors
 @dirrm include/clang/Analysis/Support

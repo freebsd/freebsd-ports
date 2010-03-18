@@ -7,7 +7,6 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.7.r${SVN_REV}
-PORTREVISON=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -24,8 +23,6 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
 CONFLICTS=	clang-2.[0-9]* llvm-2.[0-9]*
-
-MANUAL_PACKAGE_BUILD=	produces package over 500 MB large
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
@@ -45,7 +42,6 @@ MAKE_ARGS+=		REQUIRES_RTTI=1
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-assertions \
-			--enable-debug-symbols \
 			--enable-optimized
 .endif
 
