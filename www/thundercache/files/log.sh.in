@@ -1,0 +1,27 @@
+#!/bin/sh
+export PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/root/bin"
+#
+# Patrick Tracanelli <eksffa@freebsdbrasil.com.br>
+#
+# Config
+#
+PHP="%%PREFIX%%/bin/php"
+THUNDERLOG="%%PREFIX%%/thunder/sbin/thunderlog.php"
+DB="thunder"
+HOST="localhost"
+USER="thunder"
+PASS="thundercache"
+LOG="%%PREFIX%%/thunder/logs"
+LOGTEMP="%%PREFIX%%/thunder/logs/tmp"
+SCRIPTLOG="/dev/null" # mude para /tmp/scriptlog.log para debugar se preciso
+
+#
+# Simply populate some stats andresets access.log
+#
+
+cp -f ${LOG}/access.log ${LOGTEMP}/access.log
+
+:> ${LOG}/access.log
+
+$PHP $THUNDERLOG $HOST $DB $USER $PASS $LOGTEMP/access.log >>$ {SCRIPTLOG} 2>&1 && rm -f $LOGTEMP/access.log
+

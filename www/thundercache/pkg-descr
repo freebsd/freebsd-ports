@@ -1,0 +1,12 @@
+ThunderCache 4 is an enhaced standalone high-performance web caching system.
+
+It's main goal is to be able to cache dynamic contents, the content most
+proxing systems are unable to do caching. This is how ThunderCache becomes
+high-performance and high-eficiency.
+
+ThunderCache is freeware up to 50 concurrent sessions, and needs commercial
+license to run more than 50 concurrent sessions. It's designed to run on
+FreeBSD. Advanced features include TProxy support (IP_BINDANY), ToS/DiffService
+marking.
+
+WWW:	http://www.bmsoftware.org

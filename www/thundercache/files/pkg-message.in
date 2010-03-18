@@ -1,0 +1,39 @@
+
+Please note that you have just installed ThunderCache 4 on
+
+	%%PREFIX%%/thunder
+
+Now you have to configure your system according to these instructions:
+
+Enable PostgreSQL database and set a special login class o rc.conf:
+
+	postgresql_enable="YES"
+	postgresql_class="postgres"
+
+Create the special login class on login.conf:
+
+	postgres:\
+		:lang=en_US.UTF-8:\
+		:setenv=LC_COLLATE=C:\
+		:tc=default:
+
+Update the login database:
+
+	cap_mkdb /etc/login.conf
+
+Create the needed database:
+
+	%%PREFIX%%/bin/psql postgres -U pgsql < \
+			%%PREFIX%%/thunder/etc/thunder_postgre.sql
+
+Copy %%PREFIX%%/thunder/etc/thunder.php to some adequated place, like:
+
+	cp -p %%PREFIX%%/thunder/etc/thunder.php \
+		%%PREFIX%%/www/data/
+
+Add %%PREFIX%%/thunder/sbin/log.sh to /etc/crontab according to your needs:
+
+	@hourly			root	%%PREFIX%%/thunder/sbin/log.sh 
+
+Configure %%PREFIX%%/thunder/etc/thunder.conf accordingly.
+

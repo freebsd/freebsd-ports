@@ -1572,6 +1572,7 @@
     SUBDIR += textpattern
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
+    SUBDIR += thundercache
     SUBDIR += tidy
     SUBDIR += tidy-devel
     SUBDIR += tidy-lib
