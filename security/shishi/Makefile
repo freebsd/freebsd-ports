@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	shishi
-PORTVERSION=	0.0.40
+PORTVERSION=	0.0.42
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -48,8 +48,20 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
+.if ${OSVERSION} < 800000
+CONFIGURE_ARGS+=	gl_cv_func_stat_dir_slash="guessing yes" \
+			gl_cv_func_stat_file_slash="guessing yes"
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/shishi.info*
+	@cd ${WRKSRC}/db/gl && ${LN} -s ../../build-aux/link-warning.h
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/$$(LINK_WARNING_H)/link-warning.h/' \
+		${WRKSRC}/db/gl/Makefile.in
+	@${REINPLACE_CMD} -e 's:\.\./gl/libgnu.la:../db/gl/libgnu.la &:' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
