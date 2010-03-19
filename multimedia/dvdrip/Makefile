@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.98.10
-PORTREVISION=	2
+PORTVERSION=	0.98.11
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.exit1.org/dvdrip/dist/ \
 		CPAN
