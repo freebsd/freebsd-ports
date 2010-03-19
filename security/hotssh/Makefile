@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hotssh
-PORTVERSION=	0.2.6
-PORTREVISION=	4
+PORTVERSION=	0.2.7
 CATEGORIES=	security gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -28,9 +27,17 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 USE_GNOME=	pygtk2 gnomedocutils libxslt glib20
 USE_GETTEXT=	yes
 USE_PYTHON=	2.5+
+INSTALLS_ICONS=	yes
+USE_BZIP2=	yes
+
+B64DECODE?=	/usr/bin/b64decode
+BSPATCH?=	/usr/bin/bspatch
 
 post-extract:
 	${GREP} -Rl '^#!/usr/bin/python$$' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -e 's|^#!/usr/bin/python$$|#!/usr/bin/env python|g'
+	${MV} ${WRKSRC}/waf ${WRKSRC}/waf.beforepatch
+	cd ${WRKSRC} && ${B64DECODE} -o waf.diff ${FILESDIR}/waf.diff && ${BSPATCH} waf.beforepatch waf waf.diff && ${CHMOD} 755 waf
+	${GREP} -Rl '%%LOCALBASE%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g"
 
 do-configure:
 	cd ${WRKSRC} && ./waf configure --prefix=${PREFIX}
