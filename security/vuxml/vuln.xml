@@ -62,16 +62,16 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>2010-0161</cvename>
-      <cvename>2010-0163</cvename>
-      <cvename>2009-3075</cvename>
-      <cvename>2009-3072</cvename>
-      <cvename>2009-2463</cvename>
-      <cvename>2009-3385</cvename>
-      <cvename>2009-3983</cvename>
-      <cvename>2009-3376</cvename>
-      <cvename>2009-0689</cvename>
-      <cvename>2009-3077</cvename>
+      <cvename>CVE-2010-0161</cvename>
+      <cvename>CVE-2010-0163</cvename>
+      <cvename>CVE-2009-3075</cvename>
+      <cvename>CVE-2009-3072</cvename>
+      <cvename>CVE-2009-2463</cvename>
+      <cvename>CVE-2009-3385</cvename>
+      <cvename>CVE-2009-3983</cvename>
+      <cvename>CVE-2009-3376</cvename>
+      <cvename>CVE-2009-0689</cvename>
+      <cvename>CVE-2009-3077</cvename>
       <url>http://www.mozilla.org/security/announce/2010/mfsa2010-07.html</url>
       <url>http://www.mozilla.org/security/announce/2010/mfsa2010-06.html</url>
       <url>http://www.mozilla.org/security/announce/2009/mfsa2009-68.html</url>
