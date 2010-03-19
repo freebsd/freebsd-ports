@@ -36,22 +36,34 @@ bin/hotssh
 %%PYTHON_SITELIBDIR%%/hotssh/version.pyc
 %%PYTHON_SITELIBDIR%%/hotssh/version.pyo
 share/applications/hotssh.desktop
-share/doc/hotssh-0.2.6/COPYING
+share/doc/hotssh-0.2.7/COPYING
+share/icons/hicolor/192x192/apps/hotwire-openssh.png
 share/locale/ar/LC_MESSAGES/hotssh.mo
 share/locale/ca/LC_MESSAGES/hotssh.mo
+share/locale/cs/LC_MESSAGES/hotssh.mo
+share/locale/da/LC_MESSAGES/hotssh.mo
+share/locale/de/LC_MESSAGES/hotssh.mo
 share/locale/es/LC_MESSAGES/hotssh.mo
 share/locale/fi/LC_MESSAGES/hotssh.mo
 share/locale/fr/LC_MESSAGES/hotssh.mo
+share/locale/gl/LC_MESSAGES/hotssh.mo
+share/locale/hu/LC_MESSAGES/hotssh.mo
+share/locale/it/LC_MESSAGES/hotssh.mo
 share/locale/ja/LC_MESSAGES/hotssh.mo
 share/locale/nb/LC_MESSAGES/hotssh.mo
+share/locale/pa/LC_MESSAGES/hotssh.mo
+share/locale/pl/LC_MESSAGES/hotssh.mo
 share/locale/pt/LC_MESSAGES/hotssh.mo
 share/locale/pt_BR/LC_MESSAGES/hotssh.mo
 share/locale/sl/LC_MESSAGES/hotssh.mo
 share/locale/sv/LC_MESSAGES/hotssh.mo
-@dirrm share/applications
-@dirrm share/doc/hotssh-0.2.6
+share/locale/zh_CN/LC_MESSAGES/hotssh.mo
+@dirrm share/doc/hotssh-0.2.7
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/hotssh/hotvte
 @dirrm %%PYTHON_SITELIBDIR%%/hotssh/hotlib_ui
 @dirrm %%PYTHON_SITELIBDIR%%/hotssh/hotlib
 @dirrm %%PYTHON_SITELIBDIR%%/hotssh
 @dirrmtry %%PYTHON_SITELIBDIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
