@@ -8,7 +8,7 @@ bin/newlispdoc
 %%PORTDOCS%%%%DOCSDIR%%/ExpressionEvaluation.html
 %%PORTDOCS%%%%DOCSDIR%%/MemoryManagement.html
 %%PORTDOCS%%%%DOCSDIR%%/manual_frame.html
-%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.1-Release.html
+%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.2-Release.html
 %%PORTDOCS%%%%DOCSDIR%%/newLISPdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_index.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_manual.html
