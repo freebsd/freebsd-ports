@@ -8,9 +8,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/__pkginfo__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/__pkginfo__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/__pkginfo__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/_pyodbcwrap.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/_pyodbcwrap.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/_pyodbcwrap.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/adbh.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/adbh.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/adbh.pyo
@@ -193,9 +190,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/foomod.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/foomod.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/foomod.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_adbh.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_adbh.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_adbh.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_cache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_cache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_cache.pyo
@@ -211,9 +205,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_date.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_date.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_date.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_db.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_db.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_db.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_decorators.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_decorators.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/test/unittest_decorators.pyo
