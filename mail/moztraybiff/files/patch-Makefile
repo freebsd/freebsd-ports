@@ -1,11 +1,11 @@
---- Makefile.orig	Fri Sep  1 17:13:10 2006
-+++ Makefile	Fri Sep  1 17:13:42 2006
+--- Makefile.orig	2010-03-12 21:35:57.000000000 -0300
++++ Makefile	2010-03-12 21:36:27.000000000 -0300
 @@ -19,7 +19,7 @@
  XPI_EXTRA_FILES = install.js
  endif
  ifeq ($(MOZILLA_PLATFORM),tbird)
--REAL_CONFIG = mozilla-thunderbird-config
-+REAL_CONFIG = thunderbird-config
+-REAL_CONFIG = $(shell which thunderbird-config mozilla-thunderbird-config | head -1)
++REAL_CONFIG = $(shell which thunderbird-config | head -1)
  XPI_VERSION := $(XPI_VERSION)-tb${MOZILLA_VERSION}
  XPI_EXTRA_FILES = install.rdf
  endif
