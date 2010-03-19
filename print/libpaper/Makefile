@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpaper
-PORTVERSION=	1.1.23+nmu1
+PORTVERSION=	1.1.23+nmu2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/libp/libpaper
