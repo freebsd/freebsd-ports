@@ -19,6 +19,8 @@ COMMENT=	Development release of port bluefish
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		aspell.16:${PORTSDIR}/textproc/aspell
 
+IGNORE=		the devel release are currently suspended, install www/bluefish, new release is 2.0
+
 INSTALLS_ICONS=	yes
 
 DATADIR=	share/${PORTNAME}-unstable
