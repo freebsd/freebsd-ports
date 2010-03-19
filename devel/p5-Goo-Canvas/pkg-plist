@@ -1,0 +1,46 @@
+bin/perlmine.pl
+bin/perltetris.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Cairo/Matrix.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Cairo/Pattern.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Bounds.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Ellipse.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/EllipseModel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Group.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/GroupModel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Image.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/ImageModel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Install/goocanvas-perl-autogen.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Install/goocanvas-perl-version.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Install/goocanvas-perl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Install/goocanvas-perl.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Install/goocanvas.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Item.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/ItemModel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/ItemSimple.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/LineDash.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Path.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/PathModel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Points.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Polyline.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/PolylineModel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Rect.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/RectModel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Style.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Table.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/TableModel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Text.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/TextModel.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Widget.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/index.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/Canvas/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/Canvas/Canvas.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/Canvas/Canvas.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo/Canvas
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Goo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Cairo
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Goo/Canvas
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Goo
