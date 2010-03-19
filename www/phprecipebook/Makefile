@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	phprecipebook
-PORTVERSION=	2.39
+PORTVERSION=	2.41
 CATEGORIES=	www deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Small php webapp to manage your recipes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	xml
 WANT_PHP_WEB=	yes
