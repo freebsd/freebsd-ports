@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libbgpdump
-PORTVERSION=	1.4.99.10
+PORTVERSION=	1.4.99.11
 CATEGORIES=	net
 MASTER_SITES=	http://www.ris.ripe.net/source/
 
