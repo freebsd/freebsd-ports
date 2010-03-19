@@ -6577,6 +6577,7 @@ jpgraph2                        ports/graphics/jpgraph2
 jpgtn                           ports/graphics/jpgtn
 jpilot                          ports/palm/jpilot
 jpilot-db                       ports/palm/jpilot-db
+jpilot-picsnvideos              ports/palm/jpilot-picsnvideos
 jps                             ports/sysutils/jps
 jrdesktop                       ports/net/jrdesktop
 jrefentry                       ports/textproc/jrefentry
@@ -8647,6 +8648,7 @@ lupe                            ports/x11/lupe
 lusca-head                      ports/www/lusca-head
 lusernet                        ports/news/lusernet
 lush                            ports/lang/lush
+luxrender                       ports/graphics/luxrender
 lv                              ports/misc/lv
 lv-aspell                       ports/textproc/lv-aspell
 lv2core                         ports/audio/lv2core
@@ -23312,6 +23314,7 @@ tinytinyhttpd                   ports/www/tinytinyhttpd
 tinywm                          ports/x11-wm/tinywm
 tinyxml                         ports/textproc/tinyxml
 tipograf                        ports/print/tipograf
+tircd                           ports/irc/tircd
 tircproxy                       ports/irc/tircproxy
 titano                          ports/devel/titano
 titlefix                        ports/sysutils/titlefix
