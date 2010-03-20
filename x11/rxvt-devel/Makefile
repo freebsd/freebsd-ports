@@ -48,6 +48,10 @@ MAN1=		rxvt.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 # enable 256 color
 .if defined(WITH_256_COLOR)
 CONFIGURE_ARGS+=	--enable-256-color

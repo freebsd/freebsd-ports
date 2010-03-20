@@ -21,4 +21,10 @@ MAN3=		Sys::Utmp.3 Sys::Utmp::Utent.3
 post-patch:
 	@${REINPLACE_CMD} -e '254 s,strcpy,strncpy,' ${WRKSRC}/Utmp.xs
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>

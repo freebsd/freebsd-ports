@@ -22,6 +22,12 @@ WRKSRC=		${WRKDIR}/mars_nwe
 
 PLIST=	${WRKDIR}/PLIST.DYN
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 do-install:
 	@(cd ${WRKSRC} && ./mk.li install)
 	@${INSTALL_DATA} ${WRKSRC}/examples/nw.ini ${PREFIX}/etc/nwserv.conf.example
@@ -45,4 +51,4 @@ post-install:
 .endif
 	@${ECHO_MSG} "Look in ${DOCSDIR} for documentation."
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

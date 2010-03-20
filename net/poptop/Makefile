@@ -39,4 +39,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \
 		${PREFIX}/etc/pptpd.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>
