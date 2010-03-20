@@ -45,6 +45,10 @@ OPTIONS=		KRB5_RENAME_FTP "Rename ftp to kftp" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if defined(WITH_KRB5_DOC)
 BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/texinfo \
 			dvips:${PORTSDIR}/print/dvipsk-tetex
