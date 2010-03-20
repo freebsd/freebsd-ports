@@ -40,6 +40,10 @@ PLIST_FILES=	bin/rxvt
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 # enable big5 support
 .if defined(WITH_BIG5)
 CONFIGURE_ARGS+=	--enable-big5

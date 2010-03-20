@@ -44,6 +44,10 @@ X11BASE2FIX=	clients/olwmslave/help_file.c	lib/libxview/help/help_file.c	\
 CFLAGS+=	-DCOMPAT_43TTY
 .endif
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's+/usr/local+${PREFIX}+;' \
 	  ${WRKSRC}/config/XView.cf

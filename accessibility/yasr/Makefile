@@ -36,6 +36,12 @@ PLIST_FILES=	bin/yasr \
 		%%NLS%%share/locale/fr/LC_MESSAGES/yasr.mo
 PLIST_DIRS=	%%DATADIR%%
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/csh|' ${WRKSRC}/yasr.conf
 
@@ -48,4 +54,4 @@ post-install:
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
