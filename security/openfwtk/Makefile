@@ -24,6 +24,10 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if defined(WITH_WATCH)
 PLIST_SUB+=	WATCH=""
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
