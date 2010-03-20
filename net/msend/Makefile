@@ -20,4 +20,10 @@ CFLAGS+=	-DUSE_READLINE
 MAN1=		msend.1
 MAN8=		mesgd.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>
