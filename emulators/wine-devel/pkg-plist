@@ -161,6 +161,7 @@ include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx9.h
 include/wine/windows/d3dx9core.h
+include/wine/windows/d3dx9effect.h
 include/wine/windows/d3dx9math.h
 include/wine/windows/d3dx9math.inl
 include/wine/windows/d3dx9mesh.h
@@ -641,6 +642,7 @@ lib/wine/advpack.dll.so
 lib/wine/amstream.dll.so
 lib/wine/appwiz.cpl.so
 lib/wine/atl.dll.so
+lib/wine/attrib.exe.so
 lib/wine/authz.dll.so
 lib/wine/avicap32.dll.so
 lib/wine/avifil32.dll.so
@@ -750,6 +752,7 @@ lib/wine/fakedlls/advpack.dll
 lib/wine/fakedlls/amstream.dll
 lib/wine/fakedlls/appwiz.cpl
 lib/wine/fakedlls/atl.dll
+lib/wine/fakedlls/attrib.exe
 lib/wine/fakedlls/authz.dll
 lib/wine/fakedlls/avicap32.dll
 lib/wine/fakedlls/avifil32.dll
@@ -940,7 +943,10 @@ lib/wine/fakedlls/mssign32.dll
 lib/wine/fakedlls/mssip32.dll
 lib/wine/fakedlls/mstask.dll
 lib/wine/fakedlls/msvcirt.dll
+lib/wine/fakedlls/msvcr70.dll
 lib/wine/fakedlls/msvcr71.dll
+lib/wine/fakedlls/msvcr80.dll
+lib/wine/fakedlls/msvcr90.dll
 lib/wine/fakedlls/msvcrt.dll
 lib/wine/fakedlls/msvcrt20.dll
 lib/wine/fakedlls/msvcrt40.dll
@@ -984,6 +990,7 @@ lib/wine/fakedlls/oleview.exe
 lib/wine/fakedlls/opengl32.dll
 lib/wine/fakedlls/pdh.dll
 lib/wine/fakedlls/pidgen.dll
+lib/wine/fakedlls/ping.exe
 lib/wine/fakedlls/powrprof.dll
 lib/wine/fakedlls/printui.dll
 lib/wine/fakedlls/progman.exe
@@ -1062,6 +1069,7 @@ lib/wine/fakedlls/unlodctr.exe
 lib/wine/fakedlls/updspapi.dll
 lib/wine/fakedlls/url.dll
 lib/wine/fakedlls/urlmon.dll
+lib/wine/fakedlls/usbd.sys
 lib/wine/fakedlls/user.exe16
 lib/wine/fakedlls/user32.dll
 lib/wine/fakedlls/userenv.dll
@@ -1255,7 +1263,10 @@ lib/wine/libmsdmo.def
 lib/wine/libmshtml.def
 lib/wine/libmsi.def
 lib/wine/libmsimg32.def
+lib/wine/libmsvcr70.def
 lib/wine/libmsvcr71.def
+lib/wine/libmsvcr80.def
+lib/wine/libmsvcr90.def
 lib/wine/libmsvcrt.def
 lib/wine/libmsvcrt20.def
 lib/wine/libmsvcrt40.def
@@ -1308,6 +1319,7 @@ lib/wine/libtapi32.def
 lib/wine/libunicows.def
 lib/wine/liburl.def
 lib/wine/liburlmon.def
+lib/wine/libusbd.sys.def
 lib/wine/libuser32.def
 lib/wine/libuserenv.def
 lib/wine/libusp10.def
@@ -1384,7 +1396,10 @@ lib/wine/mssign32.dll.so
 lib/wine/mssip32.dll.so
 lib/wine/mstask.dll.so
 lib/wine/msvcirt.dll.so
+lib/wine/msvcr70.dll.so
 lib/wine/msvcr71.dll.so
+lib/wine/msvcr80.dll.so
+lib/wine/msvcr90.dll.so
 lib/wine/msvcrt.dll.so
 lib/wine/msvcrt20.dll.so
 lib/wine/msvcrt40.dll.so
@@ -1428,6 +1443,7 @@ lib/wine/oleview.exe.so
 lib/wine/opengl32.dll.so
 lib/wine/pdh.dll.so
 lib/wine/pidgen.dll.so
+lib/wine/ping.exe.so
 lib/wine/powrprof.dll.so
 lib/wine/printui.dll.so
 lib/wine/progman.exe.so
@@ -1506,6 +1522,7 @@ lib/wine/unlodctr.exe.so
 lib/wine/updspapi.dll.so
 lib/wine/url.dll.so
 lib/wine/urlmon.dll.so
+lib/wine/usbd.sys.so
 lib/wine/user.exe16.so
 lib/wine/user32.dll.so
 lib/wine/userenv.dll.so
