@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	check_smartmon
-PORTVERSION=	20100125
+PORTVERSION=	20100318
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://nognu.de/s/FreeBSD/distfiles/
 PKGNAMEPREFIX=	nagios-
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Nagios plug-in to get status from smartmontools
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/smartctl:${PORTSDIR}/sysutils/smartmontools
