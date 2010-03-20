@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Perl/Critic.pm:${PORTSDIR}/textproc/p5-Test-Per
 		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
 		${SITE_PERL}/${PERL_ARCH}/Goo/Canvas.pm:${PORTSDIR}/devel/p5-Goo-Canvas \
 		${SITE_PERL}/${PERL_ARCH}/Pango.pm:${PORTSDIR}/x11-toolkits/p5-Pango \
-		${SITE_PERL}/${PERL_ARCH}/Acme/Damn.pm:${PORTSDIR}/devel/p5-Acme-Damn \
 		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
 		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
