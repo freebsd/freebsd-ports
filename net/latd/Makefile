@@ -22,4 +22,10 @@ MAN1=		llogin.1
 MAN5=		latd.conf.5
 MAN8=		latd.8 latcp.8 moprc.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>

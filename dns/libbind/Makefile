@@ -27,6 +27,10 @@ OPTIONS=	IPV6 "Compile with IPv6 support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
