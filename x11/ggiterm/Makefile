@@ -30,6 +30,10 @@ PORTDOCS=	AUTHORS README
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if !defined(WITHOUT_FREETYPE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 USE_ICONV=	yes

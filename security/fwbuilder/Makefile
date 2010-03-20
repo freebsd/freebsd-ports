@@ -63,8 +63,13 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 800107
 MAKE_ENV+=	CCACHE_DISABLE=yes
+.endif
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
 .endif
 
 post-install:
