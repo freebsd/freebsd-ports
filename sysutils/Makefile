@@ -274,6 +274,7 @@
     SUBDIR += fusefs-wikipediafs
     SUBDIR += fuser
     SUBDIR += fvcool
+    SUBDIR += gaffitter
     SUBDIR += gag
     SUBDIR += gai-leds
     SUBDIR += ganglia-monitor-core
