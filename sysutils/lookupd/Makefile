@@ -31,4 +31,8 @@ post-install:
 CFLAGS+=	-fPIC
 .endif
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .include <bsd.port.post.mk>
