@@ -23,10 +23,16 @@ USE_ANT=	yes
 USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/include ${PREFIX}/lib ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/sigar-bin/include/*.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/sigar-bin/lib/libsigar-*.so ${PREFIX}/lib/libsigar.so
 	${INSTALL_DATA} ${WRKSRC}/sigar-bin/lib/sigar.jar ${JAVAJARDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

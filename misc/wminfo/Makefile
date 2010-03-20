@@ -28,4 +28,10 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wminfo ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>

@@ -23,6 +23,12 @@ USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 NO_INSTALL_MANPAGES= yes
 ALL_TARGET=	hanterm
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hanterm ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Hanterm.ad \
@@ -33,4 +39,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -33,6 +33,10 @@ RXVTLIB=	${PREFIX}/lib/X11/rxvt
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 pre-install:
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${FILESDIR}/README.ja ${DOCDIR}

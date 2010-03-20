@@ -28,6 +28,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/WINGs"
 MAN1=		wterm.1
 PLIST_FILES=	bin/wterm
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-extract:
 	${RM} -f ${WRKSRC}/config.cache
 	${RM} -f ${WRKSRC}/src/*.o
@@ -35,4 +41,4 @@ post-extract:
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/wterm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -34,6 +34,12 @@ USE_RC_SUBR=	smfsav
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 pre-build:
 	@${ECHO}
 	@${ECHO} [*] Compiling BIND 8 to make SmfSav able to resolve DNS names
@@ -56,4 +62,4 @@ post-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

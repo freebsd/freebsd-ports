@@ -43,6 +43,10 @@ POSTPATCHES.nodocports= \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-patch:
 	cd ${WRKSRC} && ${CAT} ${POSTPATCHES} | ${PATCH}
 .if defined(NOPORTDOCS)

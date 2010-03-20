@@ -29,6 +29,12 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" LOCALBASE="${LOCALBASE}"
 MAN1=		Eterm.1
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 pre-patch:
 	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/libmej/debug.c ${WRKSRC}/libmej/strings.c
@@ -45,4 +51,4 @@ post-install:
 			${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

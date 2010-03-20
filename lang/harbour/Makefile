@@ -60,6 +60,8 @@ pre-install:
 BROKEN=		Leaves files behind on deinstall
 .elif ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64: assertion failed
+.elif ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
 .endif
 
 .include <bsd.port.post.mk>
