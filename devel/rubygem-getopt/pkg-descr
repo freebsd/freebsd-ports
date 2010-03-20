@@ -1,0 +1,4 @@
+Implements a simple Getopt::Std class for command line parsing, as well as a
+Getopt::Long class for more advanced command line parsing.
+
+WWW: http://www.rubyforge.org/projects/shards
