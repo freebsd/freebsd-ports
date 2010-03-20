@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aaphoto
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	graphics
 MASTER_SITES=	http://log69.com/downloads/
 DISTNAME=	${PORTNAME}_sources_v${PORTVERSION}
@@ -15,13 +15,14 @@ MAINTAINER=	han@log69.com
 COMMENT=	Auto Adjust Photo, automatic color correction of photos
 
 LIB_DEPENDS=	jasper:${PORTSDIR}/graphics/jasper \
+		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/aaphoto
 
