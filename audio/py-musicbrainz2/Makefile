@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicbrainz2
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.2
 CATEGORIES=	audio python
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
 		http://uk.musicbrainz.org/pub/musicbrainz/python-musicbrainz2/ \
@@ -25,10 +25,4 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python-musicbrainz2
 
-.include <bsd.port.pre.mk>
-
-post-extract:
-	@${REINPLACE_CMD} -e 's|libdiscid.so.0|libdiscid.so.2|g' \
-		${WRKSRC}/src/musicbrainz2/disc.py
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
