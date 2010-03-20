@@ -4,16 +4,9 @@ include/nice/address.h
 include/nice/agent.h
 include/nice/candidate.h
 include/nice/debug.h
-include/nice/http.h
 include/nice/interfaces.h
 include/nice/nice.h
-include/nice/pseudossl.h
-include/nice/socket.h
-include/nice/socks5.h
-include/nice/tcp-bsd.h
-include/nice/tcp-turn.h
-include/nice/turn.h
-include/nice/udp-bsd.h
+include/nice/pseudotcp.h
 include/stun/constants.h
 include/stun/debug.h
 include/stun/stunagent.h
@@ -36,6 +29,7 @@ share/gtk-doc/html/libnice/ch01.html
 share/gtk-doc/html/libnice/ch02.html
 share/gtk-doc/html/libnice/ch03.html
 share/gtk-doc/html/libnice/ch04.html
+share/gtk-doc/html/libnice/ch05.html
 share/gtk-doc/html/libnice/home.png
 share/gtk-doc/html/libnice/index.html
 share/gtk-doc/html/libnice/index.sgml
@@ -46,6 +40,7 @@ share/gtk-doc/html/libnice/libnice-ICE.html
 share/gtk-doc/html/libnice/libnice-Network-interfaces-discovery.html
 share/gtk-doc/html/libnice/libnice-NiceAddress.html
 share/gtk-doc/html/libnice/libnice-NiceCandidate.html
+share/gtk-doc/html/libnice/libnice-Pseudo-TCP-Socket.html
 share/gtk-doc/html/libnice/libnice-StunAgent.html
 share/gtk-doc/html/libnice/libnice-StunMessage.html
 share/gtk-doc/html/libnice/libnice-TURN.html
@@ -54,6 +49,7 @@ share/gtk-doc/html/libnice/libnice.devhelp
 share/gtk-doc/html/libnice/libnice.devhelp2
 share/gtk-doc/html/libnice/pt01.html
 share/gtk-doc/html/libnice/pt02.html
+share/gtk-doc/html/libnice/pt03.html
 share/gtk-doc/html/libnice/right.png
 share/gtk-doc/html/libnice/style.css
 share/gtk-doc/html/libnice/up.png
