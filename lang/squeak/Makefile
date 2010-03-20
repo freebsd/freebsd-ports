@@ -49,6 +49,10 @@ OPTIONS+=		XIM		"XIM support (Implies X)" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 ##################################################
 XIM_PATCH=		SqueakImmX11Plugin3a${EXTRACT_SUFX}
 PLUGIN_IMAGE=		SqueakPlugin.zip
