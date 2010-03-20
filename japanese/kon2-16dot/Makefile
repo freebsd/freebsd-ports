@@ -30,6 +30,12 @@ MANLANG=	ja
 PORTDOCS=	README README.FreeBSD
 DOCDIR=		${PREFIX}/share/doc/kon2
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if !defined(KONFONT)
 KONFONT=16dot
 KON16FONT=Startup
@@ -61,4 +67,4 @@ post-install:
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

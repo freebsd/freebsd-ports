@@ -59,6 +59,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .ifdef(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .else

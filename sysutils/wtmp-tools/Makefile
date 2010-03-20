@@ -19,6 +19,12 @@ MANCOMPRESSED=	yes
 PORTDOCS=	*
 PLIST_FILES=	bin/t2w
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^prefix.*=.*$$,prefix = ${PREFIX},' \
 		${WRKSRC}/Makefile
@@ -26,4 +32,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/$$(docdir)\/wtmp-tool/d' ${WRKSRC}/Makefile
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

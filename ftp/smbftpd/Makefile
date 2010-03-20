@@ -11,7 +11,6 @@ CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/SmbFTPD/${PORTVERSION}	\
 		http://www.twbsd.org/download/download.php?file=smbftpd/
 
-
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	FTP daemon using Samba-like share management mechanism
 
@@ -46,6 +45,10 @@ CONFIGURE_ARGS+=	"--with-iconv"
 
 .if defined(WITH_SSL)
 CONFIGURE_ARGS+=	"--with-ssl"
+.endif
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
 .endif
 
 .include <bsd.port.post.mk>

@@ -32,6 +32,12 @@ CONFIGURE_ARGS?= \
 		--enable-fading --enable-utmp --enable-wtmp \
 		--enable-kanji --enable-linespace --enable-xim
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if defined(WITH_MENUBAR)
 CONFIGURE_ARGS+= --enable-menubar
 .endif
@@ -47,4 +53,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/aterm.1 ${PREFIX}/man/man1/
 	@${CHMOD} 4711 ${PREFIX}/bin/aterm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

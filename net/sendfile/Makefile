@@ -36,4 +36,10 @@ post-install:
 	  ${CP} -p ${PREFIX}/etc/sendfile.deny.sample ${PREFIX}/etc/sendfile.deny ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>

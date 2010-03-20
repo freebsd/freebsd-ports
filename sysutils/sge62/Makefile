@@ -88,6 +88,8 @@ EXCEPTFILES=	arc_depend_irix.asc arc_depend_solaris.asc man testsuite
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not configure on sparc64
+.elif ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
 .endif
 
 .if defined(WITH_BDB)

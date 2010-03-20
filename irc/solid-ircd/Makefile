@@ -27,4 +27,10 @@ CONFIGURE_ARGS+=	--disable-openssl
 USE_OPENSSL=	yes
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>
