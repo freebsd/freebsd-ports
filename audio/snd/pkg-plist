@@ -12,6 +12,7 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/libxm.html
 %%PORTDOCS%%%%DOCSDIR%%/s7.html
 %%PORTDOCS%%%%DOCSDIR%%/pix/all57.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/all99.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/odd57.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/1f.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/2pole.png
