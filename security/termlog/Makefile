@@ -21,8 +21,14 @@ USE_RC_SUBR=	${PORTNAME}
 MAN1=		termlog.1
 PLIST_FILES=	bin/termlog
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/termlog ${PREFIX}/bin/termlog
 	${INSTALL_MAN} ${WRKSRC}/termlog.1 ${MANPREFIX}/man/man1/termlog.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -25,6 +25,10 @@ MAN1=		tac_plus.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tac_plus ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/tac_plus.1 ${PREFIX}/man/man1/tac_plus.1

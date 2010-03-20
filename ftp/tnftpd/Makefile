@@ -17,6 +17,12 @@ GNU_CONFIGURE=	yes
 
 CFLAGS+=	-DSUPPORT_UTMP
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if defined(WITH_SOCKS5)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--with-socks5
@@ -63,4 +69,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

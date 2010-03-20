@@ -42,6 +42,12 @@ HTDOCS=		command.php command_html.inc command_wml.inc          \
 		login_html.php login_wml.php scroll_wml.php           \
 		shortcuts_wml.php index.html
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-patch:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/htshd/htshd.c > ${WRKDIR}/foo && \
 		${MV} ${WRKDIR}/foo ${WRKSRC}/htshd/htshd.c
@@ -105,4 +111,4 @@ post-install:
 	@(${GREP} -v ^htsh /etc/services.bak; ${ECHO_CMD} "htsh		3001/tcp    # htsh/wapsh server") > /etc/services
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

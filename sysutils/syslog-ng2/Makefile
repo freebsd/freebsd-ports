@@ -33,6 +33,12 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags`" \
 		LDFLAGS="`${LIBNET_CONFIG} --libs`"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=--enable-tcp-wrapper
 .endif
@@ -58,4 +64,4 @@ post-install:
 	fi
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

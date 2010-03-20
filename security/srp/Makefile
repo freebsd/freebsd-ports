@@ -23,6 +23,10 @@ CONFIGURE_ARGS=	--with-openssl=/usr				\
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-patch:
 	@${GREP} -slR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib\.h|g'
