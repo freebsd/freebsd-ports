@@ -69,6 +69,12 @@ MLINKS=		pvf.1 pvfamp.1 \
 		pvf.1 wavtopvf.1
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 CFLAGS+=	-DAUTO_PPP
 .if defined(WITH_FIDO) && ${WITH_FIDO:L} != no
 CFLAGS+=	-DFIDO
@@ -100,4 +106,4 @@ post-install:
 	@(cd ${PKGDIR}; export PKG_PREFIX=${PREFIX}; ${PERL5} ${PKGINSTALL} _ POST-INSTALL)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
