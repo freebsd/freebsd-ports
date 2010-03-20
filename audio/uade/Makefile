@@ -24,7 +24,7 @@ DOCSDIR=	${PREFIX}/share/doc/uade2
 DATADIR=	${PREFIX}/share/uade2
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man/man1 \
-		--no-debug
+		--no-debug --without-audacious
 
 CONFIGURE_ENV=	SYSCFLAGS='${CFLAGS}'
 
@@ -35,20 +35,11 @@ PORTDOCS=	BUGS PLANS REDUNDANT_REPLAYERS UAE-CREDITS UAE-README \
 		play_loop_state_diagram.dia play_loop_state_diagram.eps \
 		play_loop_state_diagram.txt uade.html
 
-OPTIONS=	AUDACIOUS "Audacious plugin" off \
-		TEXT_SCOPE "Audio register debug mode" off \
+OPTIONS=	TEXT_SCOPE "Audio register debug mode" off \
 		UADEFS "FUSE filesystem" off \
 		XMMS "XMMS plugin" off
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_AUDACIOUS)
-LIB_DEPENDS+=	audclient.2:${PORTSDIR}/multimedia/audacious
-PLIST_SUB+=	AUDACIOUS=""
-.else
-CONFIGURE_ARGS+=--without-audacious
-PLIST_SUB+=	AUDACIOUS="@comment "
-.endif
 
 .if !defined(WITHOUT_TEXT_SCOPE)
 CONFIGURE_ARGS+=--with-text-scope
