@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FormValidator-Lite
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Lightleight form validation library
 
 RUN_DEPENDS=	${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	5.10.1+
 
 MAN3=		FormValidator::Lite.3
 
