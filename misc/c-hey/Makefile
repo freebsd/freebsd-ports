@@ -18,4 +18,10 @@ MAN1=		c-hey.1
 MLINKS=		c-hey.1 hey.1
 PLIST_FILES=	bin/c-hey bin/hey
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>

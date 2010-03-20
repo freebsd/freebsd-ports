@@ -21,4 +21,10 @@ MAN1=		fsp.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/fsp
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>

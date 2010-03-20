@@ -40,6 +40,12 @@ PLIST_FILES=	${ALL_TARGET:C,^,sbin/,}
 
 BINMODE=	0700
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E "s/^(CC|CFLAGS)[^a-zA-Z]*=/\1 ?=/" \
 		${WRKSRC}/Makefile
@@ -57,4 +63,4 @@ do-install:
 	${INSTALL_DATA} ${PORTDOCS:C,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

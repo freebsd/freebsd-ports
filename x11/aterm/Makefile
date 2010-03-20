@@ -23,6 +23,12 @@ CONFIGURE_ARGS+=	--enable-transparency \
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if !defined(WITHOUT_BACKGROUND_IMAGE)
 LIB_DEPENDS+=	AfterImage.0:${PORTSDIR}/graphics/libafterimage
 CONFIGURE_ARGS+=	--enable-background-image
@@ -71,4 +77,4 @@ MAN1=		aterm.1
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/aterm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
