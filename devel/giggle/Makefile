@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	giggle
-PORTVERSION=	0.4.96
+PORTVERSION=	0.4.97
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -21,12 +21,14 @@ OPTIONS=	EDS	"Evolution Data Server support"	On \
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_GNOME=	glib20 gtk20 gtksourceview2 libglade2
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+PLIST_SUB+=	GIGGLE_VER=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
