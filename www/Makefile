@@ -1017,6 +1017,7 @@
     SUBDIR += p5-HTTP-Router
     SUBDIR += p5-HTTP-Server-Simple
     SUBDIR += p5-HTTP-Server-Simple-Mason
+    SUBDIR += p5-HTTP-Server-Simple-PSGI
     SUBDIR += p5-HTTP-Server-Simple-Recorder
     SUBDIR += p5-HTTP-Server-Simple-Static
     SUBDIR += p5-HTTP-Session
