@@ -20,6 +20,12 @@ COMMENT=	PPP over SSL virtual private networking (server part)
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-client
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if defined(WITH_TCPWRAPPERS)
 CONFIGURE_ARGS+=	--with-libwrap
 .endif
@@ -33,4 +39,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/server/pppserver.sh ${PREFIX}/etc/rc.d/ssltunnel.sh.sample
 	${INSTALL_DATA} ${WRKSRC}/server/users ${PREFIX}/etc/ssltunnel/users.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

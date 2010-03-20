@@ -17,6 +17,12 @@ COMMENT=	Execute processes with special privileges in a nosuid environment
 GNU_CONFIGURE=	yes
 MAN1=		sud.1 suz.1 ilogin.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
 		${WRKSRC}/ilogin.1 ${WRKSRC}/sud.1 ${WRKSRC}/login/login.c ${WRKSRC}/sud/main.c
@@ -35,4 +41,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/sud.conf.sample ${PREFIX}/etc/sud.conf ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

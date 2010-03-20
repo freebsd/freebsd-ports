@@ -19,4 +19,10 @@ GNU_CONFIGURE=	yes
 MAN1=		ui.1
 MLINKS=		ui.1 userinfo.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
+.include <bsd.port.post.mk>
