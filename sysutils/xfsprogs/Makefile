@@ -42,6 +42,8 @@ BROKEN=		Does not compile on less than FreeBSD 7.x
 
 post-extract:
 	${LN} -sf ${WRKDIR}/${PORTNAME}-${PORTVERSION} ${WRKSRC}
+	${REINPLACE_CMD} -e '/utmp/d' \
+		${WRKSRC}/quota/report.c ${WRKSRC}/quota/util.c
 
 pre-configure:
 	${RM} -f ${WRKSRC}/configure
