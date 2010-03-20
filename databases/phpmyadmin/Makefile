@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.3.0
+DISTVERSION=	3.3.1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -96,17 +96,8 @@ pre-everything::
 # When creating a package, empty directories will not be generated
 # from the pkg tarball.	 Therefore make sure no directories are empty.
 
-# Aaargh! A curse on all filenames with spaces in.
 post-patch:
-	cd ${WRKSRC}/documentation-gsoc ; \
-	${MV} "Synchronization_User Manual.htm" \
-	    Synchronization_User_Manual.htm ; \
-	${MV} "Synchronization_User Manual_files" \
-	    Synchronization_User_Manual_files ; \
 	cd ${WRKSRC} ; \
-	${REINPLACE_CMD} -e 's/_User%20Manual/_User_Manual/' \
-	    Documentation.html \
-	    documentation-gsoc/Synchronization_User_Manual.htm ; \
 	for emptydir in $$( ${FIND} . -type d -empty -print ) ; do \
 	    ${TOUCH} $${emptydir}/.keep-me ; \
 	done ; \
