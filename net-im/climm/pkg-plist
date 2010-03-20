@@ -1,5 +1,4 @@
 bin/climm
-bin/micq
 %%PORTDOCS%%%%DOCSDIR%%/README.i18n
 %%PORTDOCS%%%%DOCSDIR%%/README.logformat
 %%PORTDOCS%%%%DOCSDIR%%/icq091.txt
