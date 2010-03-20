@@ -437,6 +437,7 @@
     SUBDIR += maplay
     SUBDIR += mbox
     SUBDIR += mbrolavox
+    SUBDIR += mcplay
     SUBDIR += mctoolame-decoder
     SUBDIR += mctoolame-encoder
     SUBDIR += mehdiaplayer

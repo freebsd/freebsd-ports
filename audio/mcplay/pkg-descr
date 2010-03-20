@@ -1,0 +1,11 @@
+mcplay is a curses based front-end for various audio players.  It
+is a reimplementation in C of the well-known python program 'cplay'.
+
+Supported players currently include:
+- mpg123
+- ogg123
+- sox
+
+Author: Tobias Rapp
+
+WWW:	http://www.yahuxo.de/mcplay/
