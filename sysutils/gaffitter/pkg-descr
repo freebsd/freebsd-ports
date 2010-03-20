@@ -1,0 +1,15 @@
+Genetic Algorithm File Fitter, GAFFitter for short, is a tool based
+on a genetic algorithm (GA) that tries to fit a collection of items
+into as few as possible volumes of a specific size.
+
+For example, the items might be files/directories and the volumes
+might be CDs or DVDs.
+
+The task of arranging items in such manner that the number of
+required bins is minimized is called Bin Packing, a NP-hard
+combinatorial problem for which no deterministic polynomial-time
+algorithm is known. Using heuristics, such as GAs, it is usually
+possible to approximate -- and often reach -- the best solution for
+the problem within a reasonable time.
+
+WWW: http://gaffitter.sourceforge.net
