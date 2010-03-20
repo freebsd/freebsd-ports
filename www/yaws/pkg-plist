@@ -107,6 +107,7 @@ bin/yaws
 %%WWWDIR%%/END
 %%WWWDIR%%/END2
 %%WWWDIR%%/HEAD
+%%WWWDIR%%/Makefile
 %%WWWDIR%%/TAB.inc
 %%WWWDIR%%/api.yaws
 %%WWWDIR%%/appmods.yaws
@@ -134,7 +135,6 @@ bin/yaws
 %%WWWDIR%%/haxe_intro.yaws
 %%WWWDIR%%/haxe_sample.html
 %%WWWDIR%%/haxe_sample.yaws
-%%WWWDIR%%/history.yaws
 %%WWWDIR%%/icons/README
 %%WWWDIR%%/icons/a.gif
 %%WWWDIR%%/icons/alert.black.gif
@@ -339,6 +339,6 @@ bin/yaws
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin
 @dirrm %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%
-@dirrmtry %%ETCDIR%%
+@dirrm %%ETCDIR%%
 @exec ln -sf yaws-%%VERSION%% %D/lib/erlang/lib/yaws
 @unexec rm -f %D/lib/erlang/lib/yaws
