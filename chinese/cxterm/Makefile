@@ -47,6 +47,10 @@ MAKE_JOBS_UNSAFE=	yes
 BROKEN=		Coredump during build on ia64
 .endif
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/CXterm.sh ${PREFIX}/bin/CXterm
 	# standard X11 place

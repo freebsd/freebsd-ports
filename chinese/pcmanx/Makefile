@@ -25,6 +25,12 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	WGET	"enable wget support for download articles" on
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if !defined(WITHOUT_WGET)
 RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 CONFIGURE_ARGS+=--enable-wget
@@ -51,4 +57,4 @@ post-extract:
 	@${REINPLACE_CMD} -e '136 s/, \(.*\)/,1\);/' \
 	  	${WRKSRC}/src/view/telnetview.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

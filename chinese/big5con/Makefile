@@ -15,6 +15,12 @@ COMMENT=	Big5 Chinese console
 
 ONLY_FOR_ARCHS=	i386
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/dev/vga,/dev/ttyv0,g' ${WRKSRC}/src/*c
 	@${REINPLACE_CMD} -e 's,GetShmem(),GetShmem(char),g' ${WRKSRC}/src/fnld.c
@@ -24,4 +30,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
