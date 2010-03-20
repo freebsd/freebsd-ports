@@ -23250,6 +23250,7 @@ thunderbird-dictionaries        ports/mail/thunderbird-dictionaries
 thunderbird-i18n                ports/mail/thunderbird-i18n
 thunderbird3                    ports/mail/thunderbird3
 thunderbird3-i18n               ports/mail/thunderbird3-i18n
+thundercache                    ports/www/thundercache
 ticker.app                      ports/sysutils/ticker.app
 tide                            ports/devel/tide
 tidy                            ports/www/tidy
