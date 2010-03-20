@@ -1,0 +1,15 @@
+Template::Tiny is a reimplementation of a partial subset of the Template
+Toolkit in as few lines of code as possible.
+
+It is intended for use in light-usage, low-memory, or low-cpu templating
+situations, where you may need to upgrade to the full feature set in the
+future, or if you want the familiarity of TT-style templates.
+
+It is intended to have fully-compatible template and stash usage, with a
+limited by similar Perl API.
+
+Unlike Template Toolkit, Template::Tiny will process templates without a
+compile phase (but despite this is still quicker, owing to heavy use of
+the Perl regular expression engine.
+
+WWW:	http://search.cpan.org/dist/Template-Tiny/
