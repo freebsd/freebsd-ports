@@ -24,6 +24,12 @@ USE_DISPLAY=	yes
 
 WRKSRC=		${WRKDIR}/emu
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if (!defined(DISPLAY) || ${DISPLAY} == "") && !defined(PACKAGE_BUILDING)
 IGNORE=		requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X
 .endif
@@ -33,4 +39,4 @@ MAN1=		emu.1
 pre-configure:
 	cd ${WRKSRC}/client ; ${LN} -s ../doc/emu.man .
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

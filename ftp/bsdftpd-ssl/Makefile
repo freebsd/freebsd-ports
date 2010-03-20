@@ -18,6 +18,10 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 # Client only part
 .if defined(CLIENT_ONLY)
 PKGNAMESUFFIX=	-client

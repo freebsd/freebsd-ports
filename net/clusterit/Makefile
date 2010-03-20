@@ -18,6 +18,12 @@ GNU_CONFIGURE=	yes
 MAN1=		barrier.1 barrierd.1 clustersed.1 dsh.1 dshbak.1 \
 		dtop.1 jsh.1 jsd.1 pcp.1 pdf.1 prm.1 rseq.1 run.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if defined (WITHOUT_X11)
 PLIST_SUB+=	X11='@comment '
 .else
@@ -31,4 +37,4 @@ post-patch:
 	${REINPLACE_CMD} -E 's,^(SUBDIRS) = .*,\1 = barrier dsh jsd pcp dtop tools,' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

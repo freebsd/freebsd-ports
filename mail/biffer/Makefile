@@ -21,6 +21,12 @@ MAKE_JOBS_UNSAFE=	yes
 MAN1=		biffopt.1
 MAN8=		biffer.8 biffer_comsat.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/biffer_comsat/Makefile
 
@@ -35,4 +41,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
 	    POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

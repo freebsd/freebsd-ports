@@ -25,6 +25,12 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_EFL=	edje
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900007
+BROKEN=		fails to build with new utmpx
+.endif
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -33,4 +39,4 @@ CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
