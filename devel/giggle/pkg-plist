@@ -22,12 +22,12 @@ include/giggle/libgiggle-git/giggle-git-revisions.h
 include/giggle/libgiggle-git/giggle-git.h
 include/giggle/libgiggle/giggle-enums.h
 include/giggle/libgiggle/giggle-marshal.h
-lib/giggle/plugins/0.4.96/libpersonal-details.la
-lib/giggle/plugins/0.4.96/libpersonal-details.so
-%%VTE%%lib/giggle/plugins/0.4.96/libterminal-view.la
-%%VTE%%lib/giggle/plugins/0.4.96/libterminal-view.so
-lib/giggle/plugins/0.4.96/personal-details.xml
-%%VTE%%lib/giggle/plugins/0.4.96/terminal-view.xml
+lib/giggle/plugins/%%GIGGLE_VER%%/libpersonal-details.la
+lib/giggle/plugins/%%GIGGLE_VER%%/libpersonal-details.so
+%%VTE%%lib/giggle/plugins/%%GIGGLE_VER%%/libterminal-view.la
+%%VTE%%lib/giggle/plugins/%%GIGGLE_VER%%/libterminal-view.so
+lib/giggle/plugins/%%GIGGLE_VER%%/personal-details.xml
+%%VTE%%lib/giggle/plugins/%%GIGGLE_VER%%/terminal-view.xml
 lib/libgiggle-git.la
 lib/libgiggle-git.so
 lib/libgiggle-git.so.0
@@ -54,6 +54,7 @@ share/icons/hicolor/48x48/apps/giggle-scm-svn.png
 share/icons/hicolor/48x48/apps/giggle.png
 share/icons/hicolor/scalable/apps/giggle.svg
 share/locale/ca/LC_MESSAGES/giggle.mo
+share/locale/cs/LC_MESSAGES/giggle.mo
 share/locale/de/LC_MESSAGES/giggle.mo
 share/locale/en_GB/LC_MESSAGES/giggle.mo
 share/locale/es/LC_MESSAGES/giggle.mo
@@ -70,7 +71,7 @@ share/locale/zh_CN/LC_MESSAGES/giggle.mo
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrm lib/giggle/plugins/0.4.96
+@dirrm lib/giggle/plugins/%%GIGGLE_VER%%
 @dirrm lib/giggle/plugins
 @dirrm lib/giggle
 @dirrm include/giggle/libgiggle-git
