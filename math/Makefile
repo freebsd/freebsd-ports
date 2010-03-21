@@ -125,6 +125,7 @@
     SUBDIR += hs-vector-space
     SUBDIR += igraph
     SUBDIR += isabelle
+    SUBDIR += ised
     SUBDIR += itl
     SUBDIR += jacal
     SUBDIR += jags
