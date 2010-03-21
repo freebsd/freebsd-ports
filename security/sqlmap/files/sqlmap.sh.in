@@ -1,0 +1,6 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/security/sqlmap/files/sqlmap.sh.in,v 1.1 2010-03-21 20:25:08 niels Exp $
+
+cd %%PATH%%
+exec %%PYTHON_CMD%% sqlmap.py "$@"
+
