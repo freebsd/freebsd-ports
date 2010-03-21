@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	rats
-PORTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.fortify.com/servlet/downloads/public/ \
-		${MASTER_SITE_PACKETSTORM}
-MASTER_SITE_SUBDIR=	UNIX/security
+MASTER_SITES=	http://www.fortify.com/servlet/download/public/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Source code auditing tool
@@ -19,15 +16,17 @@ COMMENT=	Source code auditing tool
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS+=--with-expat-lib=${LOCALBASE}/lib \
-		--with-expat-include=${LOCALBASE}/include/xml
+		--with-expat-include=${LOCALBASE}/include/xml \
+		--datadir=${DATADIR}
 
-ALL_TARGET=	rats
+ALL_TARGET=	${PORTNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/rats
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rats
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 MAN1=		rats.1
 
