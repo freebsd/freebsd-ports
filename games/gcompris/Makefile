@@ -1,4 +1,3 @@
-
 # New ports collection makefile for:	gcompris2
 # Date created:				23 April 2003
 # Whom:					Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
@@ -7,10 +6,10 @@
 #
 
 PORTNAME=	gcompris
-DISTVERSION=	8.4.12
-PORTREVISION=	3
+PORTVERSION=	9.2
 CATEGORIES=	games gnome
 MASTER_SITES=	SF
+DISTNAME=	gcompris-9.2-2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome2 educational games and activities for kids ages 2 to 10
@@ -22,10 +21,12 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ao.3:${PORTSDIR}/audio/libao \
 		assetml.0:${PORTSDIR}/devel/libassetml \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		gnet-2.0.0:${PORTSDIR}/net/gnet2
+		gnet-2.0.0:${PORTSDIR}/net/gnet2 \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -33,8 +34,9 @@ USE_GSTREAMER=	yes
 USE_PYTHON=	yes
 USE_SDL=	mixer
 USE_DISPLAY=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui pygnome2
-CONFIGURE_ARGS=	--enable-gnet
+USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 pygtk2 libxml2 librsvg2
+CONFIGURE_ARGS=	--enable-gnet \
+		--enable-dbus
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="${PTHREAD_LIBS} -lm"
