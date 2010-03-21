@@ -1404,6 +1404,7 @@
     SUBDIR += p5-DateTime-Util-Astro
     SUBDIR += p5-DateTime-Util-Calc
     SUBDIR += p5-DateTimeX-Easy
+    SUBDIR += p5-Debug-Client
     SUBDIR += p5-Decision-ACL
     SUBDIR += p5-Devel-Arena
     SUBDIR += p5-Devel-Backtrace

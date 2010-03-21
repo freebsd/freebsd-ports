@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Debug/Client.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Debug/Client/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Debug/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Debug
+@dirrmtry %%SITE_PERL%%/Debug
