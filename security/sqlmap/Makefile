@@ -6,20 +6,34 @@
 #
 
 PORTNAME=	sqlmap
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	security python
 MASTER_SITES=	SF
 
 MAINTAINER=	niels@FreeBSD.org
 COMMENT=	An automatic SQL injection tool
 
-USE_PYTHON=	yes
-SQLMAP_DOCS=	AUTHORS COPYING ChangeLog README.html README.pdf THANKS
-SUB_FILES=	${PORTNAME}
+USE_PYTHON=	2.5+
+USE_BZIP2=	YES
+WRKSRC=		${WRKDIR}/${PORTNAME}
+SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 		PATH=${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
+OPTIONS=	MSF "Enable Metasploit Framework integration" off \
+		PSY "Enable Psyco optimizer (recommended)" on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_MSF)
+RUN_DEPENDS+=	${LOCALBASE}/bin/msfcli:${PORTSDIR}/security/metasploit
+.endif
+.if defined(WITH_PSY)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/core.py:${PORTSDIR}/devel/py-psyco
+.endif
+
 post-patch:
+	(cd ${WRKSRC} && ${RM} -rf `${FIND} . -type d -name .svn`)
 	@${GREP} -lr '/usr/bin/env python' ${WRKSRC} | \
 		${XARGS} ${REINPLACE_CMD} -i "" \
 		-e "s!/usr/bin/env python!${PYTHON_CMD}!"
@@ -27,22 +41,25 @@ post-patch:
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
+	${MKDIR} ${WRKDIR}/build/extra/
+	${MV} ${WRKSRC}/doc/ ${WRKDIR}/build/
+.	for F in msfauxmod runcmd udfhack
+		${MV} ${WRKSRC}/extra/${F} ${WRKDIR}/build/extra/${F}
+.	endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
-.	for F in lib shell plugins txt udf xml
-		${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/${F}
-		( cd ${WRKSRC}/${F} && ${COPYTREE_SHARE} . ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/${F} )
-.	endfor
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf-dist
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/
-
-.if !defined(NOPORTDOCS)
+.	if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for F in ${SQLMAP_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${F} ${DOCSDIR}/
-.endfor
+.	for F in AUTHORS COPYING ChangeLog README.html README.pdf THANKS
+		${INSTALL_DATA} ${WRKDIR}/build/doc/${F} ${DOCSDIR}/
+.	endfor
 .endif
+
+	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/extra
+	( cd ${WRKDIR}/build/extra/ && ${COPYTREE_SHARE} . ${DATADIR} )
+	( cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME} )
+
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf-dist
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
