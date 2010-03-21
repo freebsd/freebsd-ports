@@ -20,6 +20,7 @@
     SUBDIR += bmp-docklet
     SUBDIR += bookreader
     SUBDIR += buoh
+    SUBDIR += cairo-dock
     SUBDIR += cal
     SUBDIR += calcurse
     SUBDIR += calibre
