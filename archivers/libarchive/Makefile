@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8.3
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -13,8 +13,11 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
 
+LIB_DEPENDS=	lzma.0:${PORTSDIR}/archivers/xz
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GNOME=	libxml2
 
 PLIST_FILES=	bin/bsdcpio \
 		bin/bsdtar \
@@ -23,7 +26,8 @@ PLIST_FILES=	bin/bsdcpio \
 		lib/libarchive.a \
 		lib/libarchive.la \
 		lib/libarchive.so \
-		lib/libarchive.so.9
+		lib/libarchive.so.10 \
+		lib/pkgconfig/libarchive.pc
 
 MANCOMPRESSED=	no
 MAN1=		bsdcpio.1 \
@@ -41,9 +45,13 @@ MAN5=		cpio.5 \
 		mtree.5 \
 		tar.5
 
-.include <bsd.port.pre.mk>
+CFLAGS+=	"-I${LOCALBASE}/include"
+MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 
-regression-test:
+check:
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
