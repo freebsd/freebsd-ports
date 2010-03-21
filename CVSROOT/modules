@@ -4647,6 +4647,7 @@ gnugo                           ports/games/gnugo
 gnugrep                         ports/textproc/gnugrep
 gnuit                           ports/misc/gnuit
 gnuitar                         ports/audio/gnuitar
+gnulib                          ports/devel/gnulib
 gnulibiberty                    ports/devel/gnulibiberty
 gnuls                           ports/misc/gnuls
 gnumail                         ports/mail/gnumail
@@ -11927,6 +11928,7 @@ p5-Gnome2-GConf                 ports/devel/p5-Gnome2-GConf
 p5-Gnome2-VFS                   ports/x11-toolkits/p5-Gnome2-VFS
 p5-GnuPG-Interface              ports/security/p5-GnuPG-Interface
 p5-Goo                          ports/deskutils/p5-Goo
+p5-Goo-Canvas                   ports/devel/p5-Goo-Canvas
 p5-Google-Chart                 ports/graphics/p5-Google-Chart
 p5-Google-Checkout              ports/devel/p5-Google-Checkout
 p5-Google-Data-JSON             ports/textproc/p5-Google-Data-JSON
@@ -15660,6 +15662,7 @@ p5-gnome2-gconf                 ports/devel/p5-Gnome2-GConf
 p5-gnome2-vfs                   ports/x11-toolkits/p5-Gnome2-VFS
 p5-gnupg-interface              ports/security/p5-GnuPG-Interface
 p5-goo                          ports/deskutils/p5-Goo
+p5-goo-canvas                   ports/devel/p5-Goo-Canvas
 p5-google-chart                 ports/graphics/p5-Google-Chart
 p5-google-checkout              ports/devel/p5-Google-Checkout
 p5-google-data-json             ports/textproc/p5-Google-Data-JSON
