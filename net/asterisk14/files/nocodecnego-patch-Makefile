@@ -1,6 +1,6 @@
---- Makefile.orig	2009-06-11 15:20:31.000000000 -0700
-+++ Makefile	2009-09-18 02:47:39.000000000 -0700
-@@ -95,7 +95,7 @@
+--- Makefile.orig	2009-10-23 17:00:01.000000000 +0300
++++ Makefile	2009-11-23 16:44:36.000000000 +0200
+@@ -101,7 +101,7 @@
  OVERWRITE=y
  
  # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
@@ -9,7 +9,7 @@
  
  # Staging directory
  # Files are copied here temporarily during the install process
-@@ -129,7 +129,7 @@
+@@ -135,7 +135,7 @@
    ASTMANDIR=$(mandir)
  ifneq ($(findstring BSD,$(OSARCH)),)
    ASTVARLIBDIR=$(prefix)/share/asterisk
@@ -18,33 +18,37 @@
  else
    ASTVARLIBDIR=$(localstatedir)/lib/asterisk
  endif
-@@ -219,9 +219,11 @@
-   ASTLDFLAGS+=-L/usr/local/lib
+@@ -225,9 +225,11 @@
+   _ASTLDFLAGS+=-L/usr/local/lib
  endif
  
 +ifneq ($(OSARCH),FreeBSD)
  ifneq ($(PROC),ultrasparc)
-   ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+   _ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
  endif
 +endif
  
  ifeq ($(PROC),ppc)
-   ASTCFLAGS+=-fsigned-char
-@@ -229,7 +231,7 @@
+   _ASTCFLAGS+=-fsigned-char
+@@ -235,7 +237,7 @@
  
  ifeq ($(OSARCH),FreeBSD)
    # -V is understood by BSD Make, not by GNU make.
 -  BSDVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
 +  BSDVERSION=$(OSVERSION)
-   ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
+   _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
    AST_LIBS+=$(shell if test  $(BSDVERSION) -lt 502102 ; then echo "-lc_r"; else echo "-pthread"; fi)
  endif
-@@ -404,19 +406,19 @@
+@@ -410,21 +412,21 @@
  	rm -f build_tools/menuselect-deps
  
  datafiles: _all
--	if [ x`$(ID) -un` = xroot ]; then CFLAGS="$(ASTCFLAGS)" bash build_tools/mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
-+	#if [ x`$(ID) -un` = xroot ]; then CFLAGS="$(ASTCFLAGS)" bash build_tools/mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
+-	if [ `$(ID) -u` = 0 ]; then \
+-		CFLAGS="$(_ASTCFLAGS) $(ASTCFLAGS)" build_tools/mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; \
+-	fi
++	#if [ `$(ID) -u` = 0 ]; then \
++	#	CFLAGS="$(_ASTCFLAGS) $(ASTCFLAGS)" build_tools/mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; \
++	#fi
  # Should static HTTP be installed during make samples or even with its own target ala
  # webvoicemail?  There are portions here that *could* be customized but might also be
  # improved a lot.  I'll put it here for now.
@@ -65,7 +69,7 @@
  	$(MAKE) -C sounds install
  
  update: 
-@@ -437,47 +439,47 @@
+@@ -445,47 +447,47 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  installdirs:
@@ -145,7 +149,7 @@
  	fi
  
  $(SUBDIRS_INSTALL):
-@@ -513,7 +515,7 @@
+@@ -521,7 +523,7 @@
  	@exit 1
  endif
  
@@ -154,7 +158,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -551,31 +553,23 @@
+@@ -559,31 +561,23 @@
  upgrade: bininstall
  
  adsi:
@@ -194,7 +198,7 @@
  		( \
  		echo "[directories]" ; \
  		echo "astetcdir => $(ASTETCDIR)" ; \
-@@ -621,20 +615,23 @@
+@@ -629,20 +623,23 @@
  		echo ";astctlowner = root" ; \
  		echo ";astctlgroup = apache" ; \
  		echo ";astctl = asterisk.ctl" ; \

@@ -49,9 +49,9 @@
  /*! \brief Set rtp timeout */
  void ast_rtp_set_rtptimeout(struct ast_rtp *rtp, int timeout);
  /*! \brief Set rtp hold timeout */
---- main/rtp.c.orig	2009-05-13 16:38:01.000000000 +0300
-+++ main/rtp.c	2009-05-26 12:52:30.000000000 +0300
-@@ -80,6 +80,7 @@
+--- main/rtp.c.orig	2009-11-20 17:51:49.000000000 +0200
++++ main/rtp.c	2009-11-20 17:53:11.000000000 +0200
+@@ -81,6 +81,7 @@
  static int rtpstart;			/*!< First port for RTP sessions (set in rtp.conf) */
  static int rtpend;			/*!< Last port for RTP sessions (set in rtp.conf) */
  static int rtpdebug;			/*!< Are we debugging? */
@@ -59,16 +59,16 @@
  static int rtcpdebug;			/*!< Are we debugging RTCP? */
  static int rtcpstats;			/*!< Are we debugging RTCP? */
  static int rtcpinterval = RTCP_DEFAULT_INTERVALMS; /*!< Time between rtcp reports in millisecs */
-@@ -173,6 +174,8 @@
- 	struct ast_codec_pref pref;
+@@ -170,6 +171,8 @@
  	struct ast_rtp *bridged;        /*!< Who we are Packet bridged to */
  	int set_marker_bit:1;           /*!< Whether to set the marker bit or not */
-+	char chan_name[100];
-+	char chan_id[100];
+ 	unsigned int constantssrc:1;
++        char chan_name[100];
++        char chan_id[100];
  };
  
  /* Forward declarations */
-@@ -673,8 +676,8 @@
+@@ -676,8 +679,8 @@
  	struct ast_frame *f = NULL;
  	event = ntohl(*((unsigned int *)(data)));
  	event &= 0x001F;
@@ -79,7 +79,7 @@
  	if (event < 10) {
  		resp = '0' + event;
  	} else if (event < 11) {
-@@ -688,12 +691,25 @@
+@@ -691,12 +694,25 @@
  	}
  	if (rtp->resp && (rtp->resp != resp)) {
  		f = send_dtmf(rtp, AST_FRAME_DTMF_END);
@@ -105,7 +105,7 @@
  /*! 
   * \brief Process RTP DTMF and events according to RFC 2833.
   * 
-@@ -1090,6 +1106,10 @@
+@@ -1101,6 +1117,10 @@
  	struct rtpPayloadType rtpPT;
  	int reconstruct = ntohl(rtpheader[0]);
  
@@ -116,7 +116,7 @@
  	/* Get fields from packet */
  	payload = (reconstruct & 0x7f0000) >> 16;
  	mark = (((reconstruct & 0x800000) >> 23) != 0);
-@@ -1097,10 +1117,6 @@
+@@ -1108,10 +1128,6 @@
  	/* Check what the payload value should be */
  	rtpPT = ast_rtp_lookup_pt(rtp, payload);
  
@@ -127,7 +127,7 @@
  	/* Otherwise adjust bridged payload to match */
  	bridged_payload = ast_rtp_lookup_code(bridged, rtpPT.isAstFormat, rtpPT.code);
  
-@@ -1293,11 +1309,12 @@
+@@ -1306,11 +1322,12 @@
  		/* This is special in-band data that's not one of our codecs */
  		if (rtpPT.code == AST_RTP_DTMF) {
  			/* It's special -- rfc2833 process it */
@@ -141,7 +141,7 @@
  				data = rtp->rawdata + AST_FRIENDLY_OFFSET + hdrlen;
  				event = ntohl(*((unsigned int *)(data)));
  				event >>= 24;
-@@ -1306,9 +1323,12 @@
+@@ -1319,9 +1336,12 @@
  				event_end >>= 24;
  				duration = ntohl(*((unsigned int *)(data)));
  				duration &= 0xFFFF;
@@ -155,7 +155,7 @@
  		} else if (rtpPT.code == AST_RTP_CISCO_DTMF) {
  			/* It's really special -- process it the Cisco way */
  			if (rtp->lastevent <= seqno || (rtp->lastevent >= 65530 && seqno <= 6)) {
-@@ -2272,8 +2292,9 @@
+@@ -2287,8 +2307,9 @@
  			ast_log(LOG_ERROR, "RTP Transmission error to %s:%u: %s\n",
  				ast_inet_ntoa(rtp->them.sin_addr),
  				ntohs(rtp->them.sin_port), strerror(errno));
@@ -167,7 +167,7 @@
  				    ast_inet_ntoa(rtp->them.sin_addr),
  				    ntohs(rtp->them.sin_port), payload, rtp->seqno, rtp->lastdigitts, res - hdrlen);
  		/* Increment sequence number */
-@@ -2316,8 +2337,9 @@
+@@ -2331,8 +2352,9 @@
  		ast_log(LOG_ERROR, "RTP Transmission error to %s:%d: %s\n",
  			ast_inet_ntoa(rtp->them.sin_addr),
  			ntohs(rtp->them.sin_port), strerror(errno));
@@ -179,7 +179,7 @@
  			    ast_inet_ntoa(rtp->them.sin_addr),
  			    ntohs(rtp->them.sin_port), rtp->send_payload, rtp->seqno, rtp->lastdigitts, res - hdrlen);
  
-@@ -3609,6 +3631,16 @@
+@@ -3621,6 +3643,16 @@
  	return RESULT_SUCCESS;
  }
  
@@ -196,7 +196,7 @@
  static int rtp_do_debug(int fd, int argc, char *argv[])
  {
  	if (argc != 2) {
-@@ -3669,6 +3701,7 @@
+@@ -3681,6 +3713,7 @@
  	if (argc != 3)
  		return RESULT_SHOWUSAGE;
  	rtpdebug = 0;
@@ -204,7 +204,7 @@
  	ast_cli(fd,"RTP Debugging Disabled\n");
  	return RESULT_SUCCESS;
  }
-@@ -3729,7 +3762,7 @@
+@@ -3741,7 +3774,7 @@
  }
  
  static char debug_usage[] =
@@ -213,7 +213,7 @@
    "       Enable dumping of all RTP packets to and from host.\n";
  
  static char no_debug_usage[] =
-@@ -3804,6 +3837,10 @@
+@@ -3816,6 +3849,10 @@
  	rtp_do_debug, "Enable RTP debugging",
  	debug_usage },
  
