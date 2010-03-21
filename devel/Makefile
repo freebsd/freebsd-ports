@@ -1047,6 +1047,7 @@
     SUBDIR += p4v
     SUBDIR += p5-AI-Pathfinding-AStar
     SUBDIR += p5-AI-Prolog
+    SUBDIR += p5-Acme-Damn
     SUBDIR += p5-Acme-MetaSyntactic
     SUBDIR += p5-Agent
     SUBDIR += p5-Algorithm-Accounting
