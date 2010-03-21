@@ -21,6 +21,7 @@
     SUBDIR += bookreader
     SUBDIR += buoh
     SUBDIR += cairo-dock
+    SUBDIR += cairo-dock-plugins
     SUBDIR += cal
     SUBDIR += calcurse
     SUBDIR += calibre
