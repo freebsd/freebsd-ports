@@ -8464,4 +8464,5 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/advanced_colors
 @dirrm %%DATADIR%%/boards/administration
 @dirrm %%DATADIR%%/boards
+@dirrm %%DATADIR%%
 @dirrm lib/gcompris
