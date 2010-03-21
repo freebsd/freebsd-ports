@@ -234,6 +234,7 @@
     SUBDIR += html2fo
     SUBDIR += html2tex
     SUBDIR += html2text
+    SUBDIR += htmlc
     SUBDIR += htmldoc
     SUBDIR += htmlise
     SUBDIR += htmlize.el
