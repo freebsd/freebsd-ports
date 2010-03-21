@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epic5
-PORTVERSION=	1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/ \
 		http://tehran.lain.pl/epic-mirror/EPIC5-PRODUCTION/ \
@@ -31,8 +31,7 @@ OPTIONS=	IPV6	"IPv6 support"		on \
 		TCL	"TCL support"		on \
 		PERL	"Perl scripting support" on \
 		RUBY	"Ruby scripting support" on \
-		TERMCAP	"Refuse to use terminfo/ncurses" off \
-		ICONV	"Enable experimental iconv support" off
+		TERMCAP	"Refuse to use terminfo/ncurses" off
 
 .include <bsd.port.pre.mk>
 
@@ -77,14 +76,7 @@ CONFIGURE_ARGS+=	--without-ruby
 CONFIGURE_ARGS+=	--with-termcap
 .endif
 
-## WITH_ICON	experimental iconv support
-#
-.if defined(WITH_ICONV)
-LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv
-CONFIGURE_ARGS+=	--with-iconv
-.else
-CONFIGURE_ARGS+=	--without-iconv
-.endif
+CONFIGURE_ARGS+=	--with-iconv=${LOCALBASE}
 
 post-extract:
 	@${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf
