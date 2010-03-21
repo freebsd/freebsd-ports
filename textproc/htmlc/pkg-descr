@@ -1,0 +1,15 @@
+Htmlc is an HTML template files expander that produces regular HTML pages from
+source files that contain text fragments that require some computation to be
+written. Those fragments can be the output of an arbitrary Unix command, for
+instance the last modification date of a page, or parts of HTML pages to be
+included in the page, or pieces of the page that are common to the entire WEB
+site (a presentation header or a footer section for each page). Providing the
+automatic inclusion of those text fragments into your HTML source pages, Htmlc
+offers a server independent way of defining templates to factorize out the
+repetitive parts of HTML pages. Htmlc also provides a variable expansion
+facility (using definitions in the template file or in simple environment files
+using a syntax a la objective Caml). In short, Htmlc ensures the static
+verification and the static expansion of the Server Side Includes directives of
+the Web pages in the efficient and friendly way of a command-line compiler.
+
+WWW: http://htmlc.inria.fr/eng.htm
