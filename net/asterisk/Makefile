@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.26.2
-PORTREVISION=	1
+PORTVERSION=	1.4.29
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -32,14 +31,13 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_RC_SUBR=	asterisk.sh
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		MKDIR="${MKDIR}" \
+MAKE_ENV=	MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
 		OPENH323DIR=${LOCALBASE}/share/openh323 \
 		OSVERSION=${OSVERSION} \
 		NOISY_BUILD=YES \
-		ASTCFLAGS="${CFLAGS}"
+		ASTCFLAGS="${PTHREAD_CFLAGS} ${CFLAGS}" \
+		ASTLDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 CONFLICTS=	asterisk*-1.2* asterisk*-1.6*
 
@@ -171,7 +169,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/ilbc_enable.diff
 .endif
 
 .if defined(WITH_CODEC_PATCH)
-PATCHFILES=	asterisk-1.4.26.2-codec-negotiation-20090916.diff.gz
+PATCHFILES=	asterisk-1.4.27-codec-negotiation-20091120.diff.gz
 PATCH_SITES=	http://b2bua.org/chrome/site/
 EXTRA_PATCHES+=	${PATCHDIR}/codecnego-patch-Makefile
 .else
