@@ -1,0 +1,539 @@
+--- Animated-icons/src/Makefile.am.orig	2010-02-03 22:31:08.000000000 +0200
++++ Animated-icons/src/Makefile.am	2010-02-03 22:31:31.000000000 +0200
+@@ -49,8 +49,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- Cairo-Penguin/src/Makefile.am.orig	2010-02-03 22:31:59.000000000 +0200
++++ Cairo-Penguin/src/Makefile.am	2010-02-03 22:32:09.000000000 +0200
+@@ -35,8 +35,7 @@
+ 	-DCD_APPLET_MULTI_INSTANCE=\"1\"\
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- Clipper/src/Makefile.am.orig	2010-02-03 22:32:25.000000000 +0200
++++ Clipper/src/Makefile.am	2010-02-03 22:32:33.000000000 +0200
+@@ -31,8 +31,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- Dbus/src/Makefile.am.orig	2010-02-03 22:32:46.000000000 +0200
++++ Dbus/src/Makefile.am	2010-02-03 22:33:00.000000000 +0200
+@@ -38,8 +38,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- GMenu/src/Makefile.am.orig	2010-02-03 22:33:12.000000000 +0200
++++ GMenu/src/Makefile.am	2010-02-03 22:33:19.000000000 +0200
+@@ -46,8 +46,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- Network-Monitor/src/Makefile.am.orig	2010-02-03 22:33:42.000000000 +0200
++++ Network-Monitor/src/Makefile.am	2010-02-03 22:33:49.000000000 +0200
+@@ -32,8 +32,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- Scooby-Do/src/Makefile.am.orig	2010-02-03 22:34:01.000000000 +0200
++++ Scooby-Do/src/Makefile.am	2010-02-03 22:34:06.000000000 +0200
+@@ -47,8 +47,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- System-Monitor/src/Makefile.am.orig	2010-02-03 22:34:17.000000000 +0200
++++ System-Monitor/src/Makefile.am	2010-02-03 22:34:22.000000000 +0200
+@@ -39,8 +39,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-DCD_APPLET_MULTI_INSTANCE=\"1\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- Toons/src/Makefile.am.orig	2010-02-03 22:34:32.000000000 +0200
++++ Toons/src/Makefile.am	2010-02-03 22:34:37.000000000 +0200
+@@ -35,8 +35,7 @@
+ 	-DCD_APPLET_MULTI_INSTANCE=\"1\"\
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- Xgamma/src/Makefile.am.orig	2010-02-03 22:34:48.000000000 +0200
++++ Xgamma/src/Makefile.am	2010-02-03 22:34:53.000000000 +0200
+@@ -32,8 +32,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- alsaMixer/src/Makefile.am.orig	2010-02-03 22:35:05.000000000 +0200
++++ alsaMixer/src/Makefile.am	2010-02-03 22:35:10.000000000 +0200
+@@ -34,8 +34,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- clock/src/Makefile.am.orig	2010-02-03 22:35:20.000000000 +0200
++++ clock/src/Makefile.am	2010-02-03 22:35:27.000000000 +0200
+@@ -37,8 +37,7 @@
+ 	-DCD_APPLET_MULTI_INSTANCE=\"1\"\
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	 -Wall\
+-	-O3
++	 -Wall
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- compiz-icon/src/Makefile.am.orig	2010-02-03 22:36:28.000000000 +0200
++++ compiz-icon/src/Makefile.am	2010-02-03 22:36:32.000000000 +0200
+@@ -33,8 +33,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- desklet-rendering/src/Makefile.am.orig	2010-02-03 22:36:41.000000000 +0200
++++ desklet-rendering/src/Makefile.am	2010-02-03 22:36:48.000000000 +0200
+@@ -43,8 +43,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-Wno-unused-parameter
+ #	-g -ggdb -W -Wall
+ 
+--- dialog-rendering/src/Makefile.am.orig	2010-02-03 22:36:58.000000000 +0200
++++ dialog-rendering/src/Makefile.am	2010-02-03 22:37:03.000000000 +0200
+@@ -39,8 +39,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- dnd2share/src/Makefile.am.orig	2010-02-03 22:37:14.000000000 +0200
++++ dnd2share/src/Makefile.am	2010-02-03 22:37:18.000000000 +0200
+@@ -46,8 +46,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- dock-rendering/src/Makefile.am.orig	2010-02-03 22:37:28.000000000 +0200
++++ dock-rendering/src/Makefile.am	2010-02-03 22:37:33.000000000 +0200
+@@ -43,8 +43,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-Wno-unused-parameter
+ #	-g -ggdb -W -Wall
+ 
+--- drop-indicator/src/Makefile.am.orig	2010-02-03 22:37:45.000000000 +0200
++++ drop-indicator/src/Makefile.am	2010-02-03 22:37:50.000000000 +0200
+@@ -34,8 +34,7 @@
+ 	-DMY_APPLET_MASK_INDICATOR_NAME=\""texture-bilinear-gradation.png"\"\
+         -DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- dustbin/src/Makefile.am.orig	2010-02-03 22:38:05.000000000 +0200
++++ dustbin/src/Makefile.am	2010-02-03 22:38:10.000000000 +0200
+@@ -31,8 +31,7 @@
+ 	-DMY_APPLET_GETTEXT_DOMAIN=\""$(GETTEXT_DUSTBIN)"\"\
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+-	-std=c99\
+-	-O3
++	-std=c99
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- gnome-integration/src/Makefile.am.orig	2010-02-03 22:38:19.000000000 +0200
++++ gnome-integration/src/Makefile.am	2010-02-03 22:38:29.000000000 +0200
+@@ -29,8 +29,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- gnome-integration-old/src/Makefile.am.orig	2010-02-03 22:38:39.000000000 +0200
++++ gnome-integration-old/src/Makefile.am	2010-02-03 22:38:44.000000000 +0200
+@@ -29,8 +29,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- icon-effect/src/Makefile.am.orig	2010-02-03 22:38:53.000000000 +0200
++++ icon-effect/src/Makefile.am	2010-02-03 22:38:57.000000000 +0200
+@@ -41,8 +41,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+         -DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- illusion/src/Makefile.am.orig	2010-02-03 22:39:07.000000000 +0200
++++ illusion/src/Makefile.am	2010-02-03 22:39:11.000000000 +0200
+@@ -42,8 +42,7 @@
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- keyboard-indicator/src/Makefile.am.orig	2010-02-03 22:39:20.000000000 +0200
++++ keyboard-indicator/src/Makefile.am	2010-02-03 22:39:25.000000000 +0200
+@@ -34,8 +34,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- logout/src/Makefile.am.orig	2010-02-03 22:39:34.000000000 +0200
++++ logout/src/Makefile.am	2010-02-03 22:39:38.000000000 +0200
+@@ -28,8 +28,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- mail/src/Makefile.am.orig	2010-02-03 22:39:48.000000000 +0200
++++ mail/src/Makefile.am	2010-02-03 22:40:04.000000000 +0200
+@@ -37,7 +37,7 @@
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+ 	-Werror-implicit-function-declaration\
+-	-g -ggdb -W
++	-W
+ #	-fgnu89-inline\
+ #	-O3
+ 
+--- motion-blur/src/Makefile.am.orig	2010-02-03 22:40:16.000000000 +0200
++++ motion-blur/src/Makefile.am	2010-02-03 22:40:21.000000000 +0200
+@@ -29,8 +29,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- musicPlayer/src/Makefile.am.orig	2010-02-03 22:40:31.000000000 +0200
++++ musicPlayer/src/Makefile.am	2010-02-03 22:40:36.000000000 +0200
+@@ -63,8 +63,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- netspeed/src/Makefile.am.orig	2010-02-03 22:40:46.000000000 +0200
++++ netspeed/src/Makefile.am	2010-02-03 22:40:50.000000000 +0200
+@@ -32,8 +32,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-DCD_APPLET_MULTI_INSTANCE=\"1\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- powermanager/src/Makefile.am.orig	2010-02-03 22:41:05.000000000 +0200
++++ powermanager/src/Makefile.am	2010-02-03 22:41:09.000000000 +0200
+@@ -32,8 +32,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ libcd_powermanager_la_LIBADD = \
+--- quick-browser/src/Makefile.am.orig	2010-02-03 22:41:20.000000000 +0200
++++ quick-browser/src/Makefile.am	2010-02-03 22:41:24.000000000 +0200
+@@ -32,8 +32,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.svg"\"\
+ 	-DCD_APPLET_MULTI_INSTANCE=\"1\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- shortcuts/src/Makefile.am.orig	2010-02-03 22:41:33.000000000 +0200
++++ shortcuts/src/Makefile.am	2010-02-03 22:41:53.000000000 +0200
+@@ -35,8 +35,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-DCD_APPLET_MULTI_INSTANCE=\"1\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- show-mouse/src/Makefile.am.orig	2010-02-03 22:42:12.000000000 +0200
++++ show-mouse/src/Makefile.am	2010-02-03 22:42:17.000000000 +0200
+@@ -31,8 +31,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+         -DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- showDesklets/src/Makefile.am.orig	2010-02-03 22:42:25.000000000 +0200
++++ showDesklets/src/Makefile.am	2010-02-03 22:42:32.000000000 +0200
+@@ -29,8 +29,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- showDesktop/src/Makefile.am.orig	2010-02-03 22:42:42.000000000 +0200
++++ showDesktop/src/Makefile.am	2010-02-03 22:42:46.000000000 +0200
+@@ -29,8 +29,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- slider/src/Makefile.am.orig	2010-02-03 22:42:57.000000000 +0200
++++ slider/src/Makefile.am	2010-02-03 22:43:04.000000000 +0200
+@@ -41,8 +41,7 @@
+ 	-DCD_APPLET_MULTI_INSTANCE=\"1\"\
+ 	-DGL_GLEXT_PROTOTYPES=\""1"\"\
+ 	-Werror-implicit-function-declaration\
+-	-std=c99\
+-	-O3
++	-std=c99
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- stack/src/Makefile.am.orig	2010-02-03 22:43:13.000000000 +0200
++++ stack/src/Makefile.am	2010-02-03 22:43:18.000000000 +0200
+@@ -37,8 +37,7 @@
+ 	-DCD_STACK_DEFAULT_URL_ICON=\""url-icon.svg"\"\
+ 	-DCD_APPLET_MULTI_INSTANCE=\"1\"\
+ 	-Werror-implicit-function-declaration\
+-	-std=c99\
+-	-O3
++	-std=c99
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- switcher/src/Makefile.am.orig	2010-02-03 22:43:28.000000000 +0200
++++ switcher/src/Makefile.am	2010-02-03 22:43:31.000000000 +0200
+@@ -35,8 +35,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""workspaces.svg"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- systray/src/Makefile.am.orig	2010-02-03 22:43:40.000000000 +0200
++++ systray/src/Makefile.am	2010-02-03 22:43:45.000000000 +0200
+@@ -34,8 +34,7 @@
+         -DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall -W -Werror
+ 
+ libcd_systray_la_LIBADD = \
+--- terminal/src/Makefile.am.orig	2010-02-03 22:43:56.000000000 +0200
++++ terminal/src/Makefile.am	2010-02-03 22:44:01.000000000 +0200
+@@ -33,8 +33,7 @@
+         -DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall  -W -Werror
+ 
+ 
+--- tomboy/src/Makefile.am.orig	2010-02-03 22:44:12.000000000 +0200
++++ tomboy/src/Makefile.am	2010-02-03 22:44:18.000000000 +0200
+@@ -32,8 +32,7 @@
+ 	-DMY_APPLET_GETTEXT_DOMAIN=\""$(GETTEXT_TOMBOY)"\"\
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+-	-std=c99\
+-	-O3
++	-std=c99
+ #	-g -ggdb -W -Wall
+ #-Werror-implicit-function-declaration
+ 
+--- weather/src/Makefile.am.orig	2010-02-03 22:44:34.000000000 +0200
++++ weather/src/Makefile.am	2010-02-03 22:44:38.000000000 +0200
+@@ -33,8 +33,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-DCD_APPLET_MULTI_INSTANCE=\"1\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- weblets/src/Makefile.am.orig	2010-02-03 22:44:48.000000000 +0200
++++ weblets/src/Makefile.am	2010-02-03 22:44:55.000000000 +0200
+@@ -31,8 +31,7 @@
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-DCD_APPLET_MULTI_INSTANCE=1
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ libcd_weblets_la_LIBADD = \
+--- wifi/src/Makefile.am.orig	2010-02-03 22:45:07.000000000 +0200
++++ wifi/src/Makefile.am	2010-02-03 22:45:11.000000000 +0200
+@@ -33,8 +33,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
+--- xfce-integration/src/Makefile.am.orig	2010-02-03 22:45:21.000000000 +0200
++++ xfce-integration/src/Makefile.am	2010-02-03 22:45:25.000000000 +0200
+@@ -29,8 +29,7 @@
+ 	-DMY_APPLET_DOCK_VERSION=\""$(dock_version)"\"\
+ 	-DMY_APPLET_ICON_FILE=\""icon.png"\"\
+ 	-std=c99\
+-	-Werror-implicit-function-declaration\
+-	-O3
++	-Werror-implicit-function-declaration
+ #	-g -ggdb -W -Wall
+ 
+ 
