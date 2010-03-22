@@ -1,5 +1,5 @@
---- configure.orig	2009-05-20 19:33:09.000000000 +0400
-+++ configure	2009-06-29 14:12:59.000000000 +0400
+--- configure.orig	2009-05-20 08:33:09.000000000 -0700
++++ configure	2010-03-20 02:36:54.000000000 -0700
 @@ -85,6 +85,8 @@
          withcurses=no;;
      -no-shared-libs)
@@ -9,7 +9,15 @@
      -x11include*|--x11include*)
          x11_include_dir=$2; shift;;
      -x11lib*|--x11lib*)
-@@ -751,6 +753,7 @@
+@@ -642,6 +644,7 @@
+   hppa*-*-gnu*)                 arch=hppa; system=gnu;;
+   powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
+   powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
++  powerpc-*-freebsd*)           arch=power; model=ppc; system=bsd;;
+   powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
+   powerpc-*-darwin*)            arch=power; system=rhapsody
+                                 if $arch64; then model=ppc64; else model=ppc; fi;;
+@@ -751,6 +754,7 @@
    i386,*,bsd_elf) profiling='prof';;
    amd64,*,macosx) profiling='prof';;
    i386,*,macosx) profiling='prof';;
@@ -17,7 +25,7 @@
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -1195,133 +1198,24 @@
+@@ -1195,133 +1199,24 @@
  x11_include="not found"
  x11_link="not found"
  
@@ -162,7 +170,7 @@
  else
    echo "Location of X11 include files: $x11_include/X11"
    echo "Options for linking with X11: $x11_link"
-@@ -1448,7 +1342,7 @@
+@@ -1448,7 +1343,7 @@
    then tk_libs="$tk_libs $dllib"
    elif sh ./hasgot $tk_libs -ltcl$tclmaj.$tclmin $tkauxlibs Tcl_DoOneEvent
    then
