@@ -39,6 +39,10 @@ PLIST_SUB+=	TULIP_VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 800501
+BROKEN=		"broken by dirent.h update"
+.endif
+
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
