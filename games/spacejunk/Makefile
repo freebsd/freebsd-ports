@@ -17,6 +17,9 @@ USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	fails to compile on sparc64; not yet tested elsewhere
+
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS}"
 
