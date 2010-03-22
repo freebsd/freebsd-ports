@@ -29,4 +29,11 @@ do-install:
 	cd ${WRKSRC}/src/mesa; ${GMAKE} install-dri
 
 .include "${.CURDIR}/../../graphics/libGL/bsd.mesalib.mk"
-.include <bsd.port.mk>
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		Does not install on ia64 on sparc64
+.endif
+
+.include <bsd.port.post.mk>
