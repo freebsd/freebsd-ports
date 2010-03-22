@@ -28,6 +28,7 @@ PLIST_FILES=	bin/bsdcpio \
 		lib/libarchive.so \
 		lib/libarchive.so.10 \
 		lib/pkgconfig/libarchive.pc
+PLIST_DIRS=	lib/pkgconfig
 
 MANCOMPRESSED=	no
 MAN1=		bsdcpio.1 \
