@@ -1,11 +1,5 @@
-@unexec if cmp -s %D/libexec/postfix/main.cf %D/%%ETCDIR%%/main.cf; then rm -f %D/%%ETCDIR%%/main.cf; fi
-@unexec if cmp -s %D/libexec/postfix/master.cf %D/%%ETCDIR%%/master.cf; then rm -f %D/%%ETCDIR%%/master.cf; fi
-%%ETCDIR%%/LICENSE
-%%ETCDIR%%/TLS_LICENSE
-%%ETCDIR%%/bounce.cf.default
-%%ETCDIR%%/main.cf.default
-%%ETCDIR%%/makedefs.out
-@dirrmtry %%ETCDIR%%
+@unexec if cmp -s %D/libexec/postfix/main.cf %%PFETC%%/main.cf; then rm -f %%PFETC%%/main.cf; fi
+@unexec if cmp -s %D/libexec/postfix/master.cf %%PFETC%%/master.cf; then rm -f %%PFETC%%/master.cf; fi
 libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -230,3 +224,10 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/tlsmgr.8.html
 %%PORTDOCS%%%%DOCSDIR%%/generic.5.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cd /
+%%PFETC%%/LICENSE
+%%PFETC%%/TLS_LICENSE
+%%PFETC%%/bounce.cf.default
+%%PFETC%%/main.cf.default
+%%PFETC%%/makedefs.out
+@dirrmtry %%PFETC%%
