@@ -29,4 +29,10 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: TLS not supported
+.endif
+
+.include <bsd.port.post.mk>
