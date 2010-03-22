@@ -84,10 +84,6 @@ IGNORE=		only supports LIBSSH2 with OpenSSL
 IGNORE=		only supports NTLM with OpenSSL
 .endif
 
-.if defined(WITH_CARES) && defined(WITH_IPV6)
-IGNORE=		does not support both c-ares and IPv6 - disable one of them
-.endif
-
 .if defined(WITH_LDAPS)
 .if !defined(WITH_LDAP)
 IGNORE=			only supports LDAPS with LDAP
