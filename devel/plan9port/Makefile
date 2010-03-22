@@ -135,4 +135,10 @@ install-user:
 	@${MKDIR} ${HOME}/lib
 	${INSTALL_DATA} ${PLAN9}/plumb/initial.plumbing ${HOME}/lib/plumbing
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: cleanname not found
+.endif
+
+.include <bsd.port.post.mk>
