@@ -16,6 +16,7 @@ DISTNAME=	greenlet-${PORTVERSION}
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	Light-weight microthreads for Python
 
+ONLY_FOR_ARCHS=		amd64 i386
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	greenlet
