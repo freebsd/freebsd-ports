@@ -28,7 +28,6 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-68-9].* postfix-current-2.* \
 
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_RC_SUBR=	postfix.sh
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 # back compat pull in settings from POSTFIX_OPTIONS for convenience when
@@ -56,7 +55,8 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		CDB		"CDB maps lookups"					${STATUS_CDB} \
 		NIS		"NIS maps lookups"					${STATUS_NIS} \
 		VDA		"VDA (Virtual Delivery Agent 32Bit)"			${STATUS_VDA} \
-		TEST		"SMTP/LMTP test server and generator"			${STATUS_Test}
+		TEST		"SMTP/LMTP test server and generator"			${STATUS_Test} \
+		INST_BASE	"Install into /usr and /etc/postfix"			off
 
 .include <bsd.port.options.mk>
 
@@ -218,6 +218,17 @@ PLIST_SUB+=	TEST=""
 PLIST_SUB+=	TEST="@comment "
 .endif
 
+.if defined(WITH_INST_BASE)
+PKGNAMESUFFIX=	-base
+PREFIX=		/usr
+ETCDIR=		/etc/postfix
+USE_RCORDER=	postfix.sh
+.else
+USE_RC_SUBR=	postfix.sh
+.endif
+
+PLIST_SUB+=	PFETC=${ETCDIR}
+
 .if defined(NOPORTDOCS)
 READMEDIR=	no
 .else
@@ -238,7 +249,7 @@ REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}
 		s!^(newaliases_path =)!\1 ${PREFIX}/bin/newaliases!g;\
 		s!^(mailq_path =)!\1 ${PREFIX}/bin/mailq!g;\
 		s!^(setgid_group =)!\1 maildrop!g;\
-		s!^(manpage_directory =)!\1 ${PREFIX}/man!g;\
+		s!^(manpage_directory =)!\1 ${MANPREFIX}/man!g;\
 		s!^((html|readme)_directory =)!\1 ${READMEDIR}!g;\
 		\!^\#alias_database = dbm:/etc/mail/aliases$$!d;\
 		s!(:|= )/etc/postfix!\1$$config_directory!g;\
