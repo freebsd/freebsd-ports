@@ -1324,6 +1324,8 @@ cadaver                         ports/www/cadaver
 cadubi                          ports/graphics/cadubi
 cairo                           ports/graphics/cairo
 cairo-clock                     ports/x11-clocks/cairo-clock
+cairo-dock                      ports/deskutils/cairo-dock
+cairo-dock-plugins              ports/deskutils/cairo-dock-plugins
 cairo-java                      ports/graphics/cairo-java
 cairo-reference                 ports/graphics/cairo-reference
 cairomm                         ports/graphics/cairomm
@@ -3948,6 +3950,7 @@ gaddr                           ports/deskutils/gaddr
 gadfly                          ports/databases/gadfly
 gaeo                            ports/www/gaeo
 gaeutilities                    ports/www/gaeutilities
+gaffitter                       ports/sysutils/gaffitter
 gai                             ports/x11-toolkits/gai
 gai-leds                        ports/sysutils/gai-leds
 gaia                            ports/astro/gaia
@@ -5495,6 +5498,7 @@ html2ps-letter                  ports/print/html2ps-letter
 html2tex                        ports/textproc/html2tex
 html2text                       ports/textproc/html2text
 html2wml                        ports/www/html2wml
+htmlc                           ports/textproc/htmlc
 htmldoc                         ports/textproc/htmldoc
 htmlise                         ports/textproc/htmlise
 htmlize.el                      ports/textproc/htmlize.el
@@ -5879,6 +5883,7 @@ isc-dhcp31-relay                ports/net/isc-dhcp31-relay
 isc-dhcp31-server               ports/net/isc-dhcp31-server
 iscsi-target                    ports/net/iscsi-target
 isearch                         ports/textproc/isearch
+ised                            ports/math/ised
 iselect                         ports/misc/iselect
 iserverd                        ports/net-im/iserverd
 ish                             ports/converters/ish
@@ -8836,6 +8841,7 @@ mcal                            ports/deskutils/mcal
 mcast-tools                     ports/net/mcast-tools
 mcatalog                        ports/deskutils/mcatalog
 mcl                             ports/mbone/mcl
+mcplay                          ports/audio/mcplay
 mcpp                            ports/devel/mcpp
 mcron                           ports/sysutils/mcron
 mcrypt                          ports/security/mcrypt
@@ -10467,6 +10473,7 @@ p5-AI-Prolog                    ports/devel/p5-AI-Prolog
 p5-AMF-Perl                     ports/www/p5-AMF-Perl
 p5-AcePerl                      ports/biology/p5-AcePerl
 p5-Acme-ButFirst                ports/misc/p5-Acme-ButFirst
+p5-Acme-Damn                    ports/devel/p5-Acme-Damn
 p5-Acme-GuessNumber             ports/games/p5-Acme-GuessNumber
 p5-Acme-MetaSyntactic           ports/devel/p5-Acme-MetaSyntactic
 p5-Acme-Monta                   ports/www/p5-Acme-Monta
@@ -11529,6 +11536,7 @@ p5-DateTime-TimeZone-LMT        ports/devel/p5-DateTime-TimeZone-LMT
 p5-DateTime-Util-Astro          ports/devel/p5-DateTime-Util-Astro
 p5-DateTime-Util-Calc           ports/devel/p5-DateTime-Util-Calc
 p5-DateTimeX-Easy               ports/devel/p5-DateTimeX-Easy
+p5-Debug-Client                 ports/devel/p5-Debug-Client
 p5-Decision-ACL                 ports/devel/p5-Decision-ACL
 p5-DelimMatch                   ports/textproc/p5-DelimMatch
 p5-Devel-Arena                  ports/devel/p5-Devel-Arena
@@ -12110,6 +12118,7 @@ p5-HTTP-Response-Encoding       ports/www/p5-HTTP-Response-Encoding
 p5-HTTP-Router                  ports/www/p5-HTTP-Router
 p5-HTTP-Server-Simple           ports/www/p5-HTTP-Server-Simple
 p5-HTTP-Server-Simple-Mason     ports/www/p5-HTTP-Server-Simple-Mason
+p5-HTTP-Server-Simple-PSGI      ports/www/p5-HTTP-Server-Simple-PSGI
 p5-HTTP-Server-Simple-Recorder  ports/www/p5-HTTP-Server-Simple-Recorder
 p5-HTTP-Server-Simple-Static    ports/www/p5-HTTP-Server-Simple-Static
 p5-HTTP-Session                 ports/www/p5-HTTP-Session
@@ -13528,6 +13537,7 @@ p5-Template-Provider-Encode     ports/devel/p5-Template-Provider-Encode
 p5-Template-Provider-Encoding   ports/www/p5-Template-Provider-Encoding
 p5-Template-Provider-FromDATA   ports/www/p5-Template-Provider-FromDATA
 p5-Template-Timer               ports/www/p5-Template-Timer
+p5-Template-Tiny                ports/textproc/p5-Template-Tiny
 p5-Template-Toolkit             ports/www/p5-Template-Toolkit
 p5-Tenjin                       ports/www/p5-Tenjin
 p5-Term-ANSIColor               ports/devel/p5-Term-ANSIColor
@@ -14168,6 +14178,7 @@ p5-accessors                    ports/devel/p5-accessors
 p5-aceperl                      ports/biology/p5-AcePerl
 p5-ack                          ports/textproc/p5-ack
 p5-acme-butfirst                ports/misc/p5-Acme-ButFirst
+p5-acme-damn                    ports/devel/p5-Acme-Damn
 p5-acme-guessnumber             ports/games/p5-Acme-GuessNumber
 p5-acme-metasyntactic           ports/devel/p5-Acme-MetaSyntactic
 p5-acme-monta                   ports/www/p5-Acme-Monta
@@ -15252,6 +15263,7 @@ p5-dbix-xhtml_table             ports/databases/p5-DBIx-XHTML_Table
 p5-dbix-xml_rdb                 ports/databases/p5-DBIx-XML_RDB
 p5-dbm-deep                     ports/databases/p5-DBM-Deep
 p5-dbz_file                     ports/databases/p5-DBZ_File
+p5-debug-client                 ports/devel/p5-Debug-Client
 p5-decision-acl                 ports/devel/p5-Decision-ACL
 p5-delimmatch                   ports/textproc/p5-DelimMatch
 p5-devel-arena                  ports/devel/p5-Devel-Arena
@@ -15867,6 +15879,7 @@ p5-http-response-encoding       ports/www/p5-HTTP-Response-Encoding
 p5-http-router                  ports/www/p5-HTTP-Router
 p5-http-server-simple           ports/www/p5-HTTP-Server-Simple
 p5-http-server-simple-mason     ports/www/p5-HTTP-Server-Simple-Mason
+p5-http-server-simple-psgi      ports/www/p5-HTTP-Server-Simple-PSGI
 p5-http-server-simple-recorder  ports/www/p5-HTTP-Server-Simple-Recorder
 p5-http-server-simple-static    ports/www/p5-HTTP-Server-Simple-Static
 p5-http-session                 ports/www/p5-HTTP-Session
@@ -17315,6 +17328,7 @@ p5-template-provider-encode     ports/devel/p5-Template-Provider-Encode
 p5-template-provider-encoding   ports/www/p5-Template-Provider-Encoding
 p5-template-provider-fromdata   ports/www/p5-Template-Provider-FromDATA
 p5-template-timer               ports/www/p5-Template-Timer
+p5-template-tiny                ports/textproc/p5-Template-Tiny
 p5-template-toolkit             ports/www/p5-Template-Toolkit
 p5-tenjin                       ports/www/p5-Tenjin
 p5-term-animation               ports/devel/p5-Term-Animation
@@ -21709,6 +21723,7 @@ rubygem-gem_plugin              ports/devel/rubygem-gem_plugin
 rubygem-geoip                   ports/net/rubygem-geoip
 rubygem-geokit                  ports/graphics/rubygem-geokit
 rubygem-georuby                 ports/devel/rubygem-georuby
+rubygem-getopt                  ports/devel/rubygem-getopt
 rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
 rubygem-graphviz                ports/graphics/rubygem-graphviz
