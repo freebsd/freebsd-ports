@@ -6,31 +6,30 @@
 #
 
 PORTNAME=	xzgv
-PORTVERSION=	0.8
-PORTREVISION=	9
+PORTVERSION=	0.9
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	nosuzuki@postcard.st
 COMMENT=	An image viewer with thumbnail-based file selector for X
 
-USE_GNOME=	imlib
+BUILD_DEPENDS=  gawk:${PORTSDIR}/lang/gawk
+
+USE_GNOME=	imlib gdkpixbuf gtk20
 USE_GMAKE=	yes
 
 MAN1=		xzgv.1
-INFO=		xzgv
 PLIST_FILES=	bin/xzgv
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC|#CC|g ; \
 		 s|^CFLAGS|#CFLAGS|g ; \
 		 s|^PREFIX|#PREFIX|g' ${WRKSRC}/config.mk
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_MMX) && (${ARCH} == "i386")
-CFLAGS+=	-DINTERP_MMX
-.endif
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xzgv ${LOCALBASE}/bin/
+	${INSTALL_MAN} ${WRKSRC}/doc/xzgv.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
