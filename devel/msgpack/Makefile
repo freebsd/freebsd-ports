@@ -24,4 +24,10 @@ USE_GCC=	4.2+
 CONFIGURE_ARGS=	CFLAGS="${CFLAGS} -march=i686" CXXFLAGS="${CXXFLAGS} -march=i686"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64: sync_* atomic operations are not supported
+.endif
+
+.include <bsd.port.post.mk>
