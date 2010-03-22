@@ -1,8 +1,11 @@
-Add the ares_get_config() routine used by Unreal IRCd.
+Description: Add the ares_get_config() routine used by Unreal IRCd.
+Origin: the Unreal IRCd distribution
+Forwarded: no
+Last-Update: 2010-03-22
 
 --- ares.h.orig
 +++ ares.h
-@@ -218,6 +218,14 @@
+@@ -261,6 +261,14 @@
    int nsort;
  };
  
@@ -17,26 +20,25 @@ Add the ares_get_config() routine used by Unreal IRCd.
  struct hostent;
  struct timeval;
  struct sockaddr;
-@@ -313,7 +321,7 @@
- void ares_free_string(void *str);
- void ares_free_hostent(struct hostent *host);
- const char *ares_strerror(int code);
--
-+int ares_get_config(struct ares_config_info *d, ares_channel c);
+@@ -487,6 +495,8 @@
+ 
+ CARES_EXTERN const char *ares_strerror(int code);
+ 
++CARES_EXTERN int ares_get_config(struct ares_config_info *d, ares_channel c);
++
  #ifdef  __cplusplus
  }
  #endif
 --- ares_init.c.orig
 +++ ares_init.c
-@@ -1478,6 +1478,26 @@
-     pat->mask.addr4.s_addr = htonl(IN_CLASSC_NET);
+@@ -1498,6 +1498,26 @@
  }
- #endif
-+
+ #endif /* !WIN32 && !WATT32 */
+ 
 +int ares_get_config(struct ares_config_info *d, ares_channel c)
 +{
-+int i;
-+char *p;
++	int i;
++	char *p;
 +
 +	memset(d, 0, sizeof(struct ares_config_info));
 +
@@ -52,6 +54,7 @@ Add the ares_get_config() routine used by Unreal IRCd.
 +
 +	return ARES_SUCCESS;
 +}
++
  /* initialize an rc4 key. If possible a cryptographically secure random key
     is generated using a suitable function (for example win32's RtlGenRandom as
     described in
