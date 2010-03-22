@@ -26053,7 +26053,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>xzgv</name>
-	<range><gt>0</gt></range>
+	<range><lt>0.9</lt></range>
       </package>
     </affects>
     <description>
@@ -26080,7 +26080,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-04-21</discovery>
       <entry>2006-04-23</entry>
-      <modified>2006-10-09</modified>
+      <modified>2010-03-22</modified>
     </dates>
   </vuln>
 
