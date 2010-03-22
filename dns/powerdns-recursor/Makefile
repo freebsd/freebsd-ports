@@ -33,6 +33,10 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 USE_RC_SUBR+=	pdns-recursor
 
 .if defined(WITH_SETUID)
