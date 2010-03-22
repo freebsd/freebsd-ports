@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	rakudo
-PORTVERSION=	2010.02
+PORTVERSION=	2010.03
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/rakudo/
 
@@ -18,12 +17,6 @@ COMMENT=	The Rakudo Perl 6 Compiler targets the Parrot Virtual Machine
 BUILD_DEPENDS=	parrot>=${PARROT_VERSION}:${PORTSDIR}/lang/parrot
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 RUN_DEPENDS=	parrot>=${PARROT_VERSION}:${PORTSDIR}/lang/parrot
-
-#			amd64       i386	sparc
-#	9-current       pass        pass 
-#	8-stable       	pass        pass
-#	7-stable        pass        pass
-#	6-stable        icu         icu
 
 .include <bsd.port.pre.mk>
 
