@@ -18,6 +18,8 @@ BUILD_DEPENDS=	firefox3:${PORTSDIR}/www/firefox35 \
 		${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
 RUN_DEPENDS=	firefox3:${PORTSDIR}/www/firefox35
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
