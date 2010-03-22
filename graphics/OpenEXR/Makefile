@@ -47,4 +47,8 @@ test check:	build
 #.endif
 #.endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not configure on powerpc
+.endif
+
 .include <bsd.port.post.mk>
