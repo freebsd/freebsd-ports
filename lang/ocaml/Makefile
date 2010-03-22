@@ -39,6 +39,16 @@ PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == powerpc
+ARCH=	power
+.endif
+
+.if ${ARCH} == power
+PLIST_SUB+=	PROF="@comment "
+.else
+PLIST_SUB+=	PROF=""
+.endif
+
 MAN1!=	${CAT} ${FILESDIR}/man1
 MANN!=	${CAT} ${FILESDIR}/mann
 MLINKS!=${CAT} ${FILESDIR}/manlinks
@@ -83,6 +93,11 @@ CONFIGURE_ARGS+=	-tkdefs \
 
 .if ${ARCH} == sparc64
 BROKEN=	ocamlc.opt seg-faults on ${ARCH}, please try to fix
+.endif
+
+post-extract:
+.if ${ARCH} == power
+	${MV} ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
 .endif
 
 post-configure:
