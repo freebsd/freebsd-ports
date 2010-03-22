@@ -167,6 +167,7 @@
     SUBDIR += fig2pstricks
     SUBDIR += fig2sxd
     SUBDIR += figurine
+    SUBDIR += flam3
     SUBDIR += flashplayer
     SUBDIR += flasm
     SUBDIR += fli2gif

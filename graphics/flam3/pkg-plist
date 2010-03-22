@@ -1,0 +1,10 @@
+bin/flam3-animate
+bin/flam3-genome
+bin/flam3-render
+bin/flam3-convert
+include/flam3.h
+include/isaac.h
+include/isaacs.h
+lib/libflam3.la
+lib/libflam3.a
+libdata/pkgconfig/flam3.pc
