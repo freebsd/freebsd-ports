@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Text-MultiMarkdown
-PORTVERSION=	1.000032
-PORTREVISION=	1
+PORTVERSION=	1.000033
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +24,7 @@ RUN_DEPENDS=	\
 
 PERL_CONFIGURE=	yes
 
+MAN1=		MultiMarkdown.pl.1
 MAN3=		Text::MultiMarkdown.3
 
 .include <bsd.port.mk>
