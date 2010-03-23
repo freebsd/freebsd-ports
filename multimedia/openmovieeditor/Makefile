@@ -7,7 +7,7 @@
 
 PORTNAME=	openmovieeditor
 PORTVERSION=	0.0.20090105
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -33,7 +33,7 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_GNOME=	glib20
 CONFIGURE_ARGS=	CPPFLAGS="-I${WRKSRC}/src/tinyxml -I${LOCALBASE}/include/portaudio2 -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib/portaudio2 -L${LOCALBASE}/lib `fltk-config --ldflags`"
 
 PORTDOCS=	*
 

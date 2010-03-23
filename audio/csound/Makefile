@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	csound
-PORTVERSION=	5.11.1
-PORTREVISION=	3
+PORTVERSION=	5.12.1
 CATEGORIES=	audio lang
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.11/:src \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.12/:src \
 		SF/${PORTNAME}/${PORTNAME}5/${PORTNAME}5.10/:manual
 # Developer does not include a newer version of the manual.
 MASTER_SITE_SUBDIR=	${PORTNAME:S/$/:src/}
@@ -21,7 +20,7 @@ MAINTAINER=	chris@officialunix.com
 COMMENT=	Sound synthesizer
 
 LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk-threads
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/
@@ -45,10 +44,6 @@ USE_LDCONFIG=	yes
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 DISTFILES+=	Csound5.10_manual_html.zip:manual
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails to link
 .endif
 
 post-patch: apply-slist

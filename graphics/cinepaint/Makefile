@@ -7,7 +7,7 @@
 
 PORTNAME=	cinepaint
 PORTVERSION=	0.22
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${PORTVERSION}-1
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -43,9 +43,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENEXR)
-LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
-BUILD_DEPENDS+=	fltk-threads>0:${PORTSDIR}/x11-toolkits/fltk-threads
-RUN_DEPENDS+=	fltk-threads>0:${PORTSDIR}/x11-toolkits/fltk-threads
+LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+    		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 CONFIGURE_ARGS+=	--with-openexr-prefix=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include/openEXR
 PLIST_SUB+=	OPENEXR:=""

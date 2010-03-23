@@ -7,7 +7,7 @@
 
 PORTNAME=	spiralsynthmodular
 PORTVERSION=	0.2.2a
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/spiralmodular/spiralmodular/${PORTVERSION}%20%28Latest%20Version%29
 DISTNAME=	spiralmodular-${PORTVERSION}

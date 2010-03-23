@@ -7,7 +7,7 @@
 
 PORTNAME=	xdiskusage
 PORTVERSION=	1.48
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://xdiskusage.sourceforge.net/
 EXTRACT_SUFX=	.tgz
@@ -17,32 +17,19 @@ COMMENT=	Show where disk space is taken up
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-MAN1=		xdiskusage.1
 USE_GMAKE=	yes
-OPTIONS=	THREADS	"Threads support, necessary with threaded fltk" off
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/xdiskusage
+MAN1=		xdiskusage.1
 
-.if defined(WITH_THREADS)
-CXXFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-.endif
+post-patch:
+	${REINPLACE_CMD} -e '22,24d' ${WRKSRC}/Makefile
 
 do-build:
-.for i in panels xdiskusage
-	${CXX} ${CXXFLAGS} -I${LOCALBASE}/include -c \
-		${WRKSRC}/${i}.C -o ${WRKSRC}/${i}.o
-.endfor
-	${CXX} ${CXXFLAGS} -L${LOCALBASE}/lib -o \
-		${WRKSRC}/xdiskusage ${WRKSRC}/panels.o \
-		${WRKSRC}/xdiskusage.o -lfltk -lm -lXext -lX11 ${LDFLAGS}
+	cd ${WRKSRC} && ${GMAKE} CXXFLAGS="`fltk-config --cxxflags`" LDFLAGS="`fltk-config --ldflags`"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdiskusage ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xdiskusage.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -13,11 +13,10 @@ MASTER_SITES=	SF
 MAINTAINER=	buganini@gmail.com
 COMMENT=	A graphical frontend to run FlightGear Flight Simulator
 
-BUILD_DEPENDS=	fltk-threads>=1.1.9:${PORTSDIR}/x11-toolkits/fltk-threads \
-		SimGear>=2.0.0:${PORTSDIR}/devel/simgear \
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+BUILD_DEPENDS=	SimGear>=2.0.0:${PORTSDIR}/devel/simgear \
 		plib>=1.8.5:${PORTSDIR}/x11-toolkits/plib
-RUN_DEPENDS=	fltk-threads>=1.1.9:${PORTSDIR}/x11-toolkits/fltk-threads \
-		SimGear>=2.0.0:${PORTSDIR}/devel/simgear \
+RUN_DEPENDS=	SimGear>=2.0.0:${PORTSDIR}/devel/simgear \
 		fgfs:${PORTSDIR}/games/flightgear \
 		plib>=1.8.5:${PORTSDIR}/x11-toolkits/plib
 

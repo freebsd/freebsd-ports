@@ -8,7 +8,7 @@
 
 PORTNAME=	burrtools
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -23,8 +23,8 @@ USE_XORG=	x11 xt xext xmu xi
 USE_GL=		glu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="`fltk-config --cxxflags`" \
+		LDFLAGS="`fltk-config --ldflags`"
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

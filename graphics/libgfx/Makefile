@@ -7,7 +7,7 @@
 
 PORTNAME=	libgfx
 DISTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/ CENKES
 
@@ -37,6 +37,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\.a|.so|g;/RANLIB/d;s|[(]AR[)] cru|{CC} \
 		${CFLAGS} ${LDFLAGS} -shared $${GUI_LIBS} -lgzstream -o|'\
 		${WRKSRC}/src/${MAKEFILE}
+	@${REINPLACE_CMD} -e '6115s|-lfltk|`fltk-config --ldflags`|' \
+	    ${WRKSRC}/configure
 
 do-install:
 	@cd ${WRKSRC}/include/gfx/&&${COPYTREE_SHARE} . ${PREFIX}/include/gfx/

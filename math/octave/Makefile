@@ -7,7 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -31,7 +31,7 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3f:${PORTSDIR}/math/fftw3-float \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		ftgl:${PORTSDIR}/graphics/ftgl \
-		fltk:${PORTSDIR}/x11-toolkits/fltk \
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
 
 USE_BZIP2=	yes

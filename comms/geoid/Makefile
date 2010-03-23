@@ -7,7 +7,7 @@
 
 PORTNAME=	geoid
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/LinuxApps/ \
@@ -19,7 +19,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Geodetic computer for amateur radio use
 
-LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk-threads
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile

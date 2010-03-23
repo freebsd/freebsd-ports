@@ -7,7 +7,7 @@
 
 PORTNAME=	edge
 PORTVERSION=	1.29
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/EDGE%20Source%20Code/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -28,6 +28,7 @@ SCONS_ARGS=	release=true
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DMDIR%%|${DMDIR}|;' ${WRKSRC}/src/e_main.cc
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|;' ${WRKSRC}/SConstruct
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gledge32 ${PREFIX}/bin/${PORTNAME}
