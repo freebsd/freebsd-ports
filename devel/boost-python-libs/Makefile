@@ -20,7 +20,7 @@ OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 .include "${PORTSDIR}/devel/boost-all/compiled.mk"
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: invokes i386 asm
+CXXFLAGS=	-O0
 .endif
 
 MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
