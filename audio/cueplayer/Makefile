@@ -6,32 +6,31 @@
 #
 
 PORTNAME=	cueplayer
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	CUE player
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
-USE_GSTREAMER=	yes
+USE_GSTREAMER=	flac good dvd lame ugly ffmpeg taglib ogg vorbis soup libmms wavpack
 
 DESKTOP_ENTRIES="Cueplayer" "Lightweight media player based on Qt and Gstreamer" \
-		"${DATADIR}/knotify.png" "${PORTNAME}" \
+		"${DATADIR}/${PORTNAME}.png" "${PORTNAME}" \
 		"AudioVideo;Audio;Video;" ${FALSE}
 
 post-patch:
-	${REINPLACE_CMD} -e 's,images/,share/${PORTNAME}/,g' \
-		${WRKSRC}/*.cpp
+	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,/usr/share/cueplayer/,${DATADIR}/,g' \
+		main.cpp ${PORTNAME}.pro
+	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX},g' \
+		${WRKSRC}/${PORTNAME}.pro
 
 do-configure:
-	cd ${WRKSRC} && ${QMAKE}
+	cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} PREFIX=${PREFIX}
 
-do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/images/*.png ${DATADIR}
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/images/${PORTNAME}.png ${DATADIR}
 
 .include <bsd.port.mk>
