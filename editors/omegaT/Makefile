@@ -5,10 +5,10 @@
 #
 
 PORTNAME=	omegaT
-PORTVERSION=	1.8.1.5
+PORTVERSION=	2.0.5
 CATEGORIES=	editors java x11
-MASTER_SITES=	SF/${PORTNAME:L}/OmegaT%201.8%20%28Current%29/OmegaT%201.8.1%20update%205
-DISTNAME=	OmegaT_1.8.1_05_Source
+MASTER_SITES=   SF/${PORTNAME:L}/OmegaT%202.0%20%28Current%29/OmegaT%202.0.5%20update%202
+DISTNAME=       OmegaT_2.0.5_02_Source
 
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	A powerfull translation memory application written in Java
