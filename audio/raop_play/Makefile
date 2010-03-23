@@ -7,7 +7,7 @@
 
 PORTNAME=	raop_play
 PORTVERSION=	0.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF/raop-play/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -23,17 +23,11 @@ RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321 \
 		flac:${PORTSDIR}/audio/flac
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="`fltk-config --ldflags`"
 USE_GMAKE=	yes
 USE_GNOME=	glib20
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800000 && ( ${ARCH} == "amd64" || ${ARCH} == "sparc64" )
-BROKEN=		incomplete build
-.endif
 
 pre-build:
 	${CP} ${FILESDIR}/getline.c ${FILESDIR}/getline.h ${WRKSRC}/rendezvous/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

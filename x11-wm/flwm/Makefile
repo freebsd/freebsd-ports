@@ -7,7 +7,7 @@
 
 PORTNAME=	flwm
 PORTVERSION=	1.02
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -25,5 +25,6 @@ PLIST_FILES=	bin/flwm
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e 's|^LIBS =.*|LIBS = `fltk-config --ldflags`|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

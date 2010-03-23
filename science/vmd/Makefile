@@ -7,6 +7,7 @@
 
 PORTNAME=		vmd
 PORTVERSION=		1.8.7
+PORTREVISION=		1
 CATEGORIES=		science graphics python tcl tk
 MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.98.7/:tachyon \
 			http://www.ks.uiuc.edu/Research/vmd/extsrcs/:stride
@@ -21,7 +22,7 @@ BUILD_DEPENDS=		makedepend:${PORTSDIR}/devel/makedepend \
 			${PYNUMERIC}
 LIB_DEPENDS=		tcl85:${PORTSDIR}/lang/tcl85 \
 			tk85:${PORTSDIR}/x11-toolkits/tk85 \
-			fltk:${PORTSDIR}/x11-toolkits/fltk \
+			fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 			netcdf:${PORTSDIR}/science/netcdf
 RUN_DEPENDS=		${PYNUMERIC}
 

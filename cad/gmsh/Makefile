@@ -7,7 +7,7 @@
 
 PORTNAME=	gmsh
 PORTVERSION=	2.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -34,7 +34,9 @@ ALL_TARGET=	all
 
 MAN1=		gmsh.1
 
-CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=YES
+CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=YES \
+    		-DCMAKE_VERBOSE_MAKEFILE:BOOL=YES \
+		-DCMAKE_USE_PTHREADS:BOOL=YES
 
 .if !defined(WITHOUT_STATIC_LIB)
 ALL_TARGET+=	lib

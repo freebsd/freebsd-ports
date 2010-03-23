@@ -1,26 +1,25 @@
---- GUI_unx.mak.orig
-+++ GUI_unx.mak
-@@ -8,16 +8,16 @@
+--- GUI_unx.mak.orig	2005-09-16 07:29:39.000000000 +0200
++++ GUI_unx.mak	2010-01-08 15:40:37.000000000 +0100
+@@ -8,16 +8,15 @@
  
  PROGNAME=glBSPX
  
 -FLTK_PREFIX=../fltk-1.1.6
 -FLTK_CFLAGS=-I$(FLTK_PREFIX) -I$(FLTK_PREFIX)/zlib
 -FLTK_LIBS=-L$(FLTK_PREFIX)/lib -lfltk_images -lfltk_png -lfltk_z -lfltk_jpeg \
+-          -lfltk -lX11 -lXext
 +FLTK_PREFIX=${LOCALBASE}
-+FLTK_CFLAGS=-I$(FLTK_PREFIX)/include
-+FLTK_LIBS=-L$(FLTK_PREFIX)/lib -lfltk_images \
-           -lfltk -lX11 -lXext
++FLTK_CFLAGS=`fltk-config --use-images --cflags`
++FLTK_LIBS=`fltk-config --use-images --ldflags`
  
 -CC=gcc
 -CXX=g++
--CFLAGS=-O2 -Wall -DGLBSP_GUI -DUNIX -DINLINE_G=inline $(FLTK_CFLAGS)
 +CC?=gcc
 +CXX?=g++
-+CFLAGS+=-O2 -Wall -DGLBSP_GUI -DUNIX -DINLINE_G=inline $(FLTK_CFLAGS)
+ CFLAGS=-O2 -Wall -DGLBSP_GUI -DUNIX -DINLINE_G=inline $(FLTK_CFLAGS)
  CXXFLAGS=$(CFLAGS)
 -LDFLAGS=-L/usr/X11R6/lib
-+LDFLAGS=-L${LOCALBASE}/lib
++LDFLAGS?=-L/usr/X11R6/lib
  LIBS=-lm $(FLTK_LIBS)
  
  OBJS=$(SYSDIR)/main.o     \

@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Apr  3 16:30:03 2006
-+++ Makefile	Mon Apr  3 16:35:59 2006
+--- Makefile.orig	2010-01-08 13:42:25.000000000 +0100
++++ Makefile	2010-01-08 13:42:24.000000000 +0100
 @@ -1,18 +1,15 @@
 -FLTK = ../fltk
 -PDF = ../PDFlib-Lite-6.0.1/libs/pdflib
@@ -7,7 +7,7 @@
  CXX = g++
  
 -CFLAGS  = -Dunix  -U__APPLE__  -c $(OPT) -I$(FLTK) -I$(PDF) -I$(X11)/include 
-+CFLAGS+= -Dunix -U__APPLE__ -c $(OPT) -I$(LOCALBASE)/include
++CFLAGS+= -Dunix -U__APPLE__ -c $(OPT) `fltk-config --cflags`
  
  
  OBJECTS = seaview.o pdf.o custom.o use_mase_files.o regions.o load_seq.o align.o xfmatpt.o comlines.o chooser_plus.o resource.o nexus.o
@@ -17,7 +17,7 @@
 -	$(CXX) -o $@ $(OBJECTS) -L$(FLTK)/lib -lfltk \
 -             -Xlinker -Bstatic -L$(PDF)/.libs -lpdf -Xlinker -Bdynamic \
 -             -L$(X11)/lib -lX11 -lm 
-+	$(CXX) -o $@ $(OBJECTS) -L$(LOCALBASE)/lib -lfltk \
++	$(CXX) -o $@ $(OBJECTS) `fltk-config --ldflags` \
 +             -Xlinker -Bstatic -lpdf -Xlinker -Bdynamic \
 +             -L$(LOCALBASE)/lib -lX11 -lm 
  	strip $@

@@ -7,7 +7,7 @@
 
 PORTNAME=	flu
 PORTVERSION=	2.14
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.osc.edu/archive/FLU/
 DISTNAME=	FLU_${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	FLU_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library containing extra widgets for FLTK
 
-LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GL=		gl
 USE_LDCONFIG=	yes
@@ -39,10 +39,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

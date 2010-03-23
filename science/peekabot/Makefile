@@ -7,7 +7,7 @@
 
 PORTNAME=	peekabot
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7.x/ \
 		http://distfiles.officialunix.com/
@@ -20,17 +20,11 @@ LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	LDFLAGS="`fltk-config --ldflags`" \
+		CPPFLAGS="`fltk-config --cflags`"
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	4.2+
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

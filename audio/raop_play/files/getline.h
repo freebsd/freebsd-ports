@@ -11,6 +11,7 @@
 
 #define GETLINE_NO_LIMIT -1
 
+#ifndef _WITH_GETLINE
 int
   getline __PROTO ((char **_lineptr, size_t *_n, FILE *_stream));
 int
@@ -19,5 +20,5 @@ int
 int
   getstr __PROTO ((char **_lineptr, size_t *_n, FILE *_stream,
 		   int _terminator, int _offset, int limit));
-
+#endif
 #endif /* _getline_h_ */

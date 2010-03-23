@@ -7,7 +7,7 @@
 
 PORTNAME=	fldigi
 PORTVERSION=	3.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/fldigi-distro/ \
 		${MASTER_SITE_LOCAL}
@@ -16,12 +16,13 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
-		fltk-threads>=0:${PORTSDIR}/x11-toolkits/fltk-threads
+BUILD_DEPENDS=	${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 		sndfile:${PORTSDIR}/audio/libsndfile \
 		boost_wave:${PORTSDIR}/devel/boost-libs \
-		pulse:${PORTSDIR}/audio/pulseaudio
+		pulse:${PORTSDIR}/audio/pulseaudio \
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
