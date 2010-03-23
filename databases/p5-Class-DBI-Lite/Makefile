@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-Lite
-PORTVERSION=	1.002
+PORTVERSION=	1.005
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ MAN3=		Class::DBI::Lite.3 \
 		Class::DBI::Lite::ColumnInfo.3 \
 		Class::DBI::Lite::CacheManager::InMemory.3 \
 		Class::DBI::Lite::CacheManager.3 \
+		Class::DBI::Lite::Pager.3 \
 		Class::DBI::Lite::Tutorial.3 \
 		Class::DBI::Lite::Iterator.3 \
 		Class::DBI::Lite::TableInfo.3 \
