@@ -1,24 +1,36 @@
 Scilab is a scientific software package for numerical computations in a
-user-friendly environment. It features:
+user-friendly environment.
 
-   Elaborate data structures.
-   Sophisticated interpreter and programming language with Matlab-like syntax.
-   Hundreds of built-in math functions.
-   Stunning graphics.
-   Open structure.
-   Many built-in libraries:
-        Linear Algebra.
-        Control.
-        Package for linear matrix inequalities, optimization.
-        Signal processing.
-        Simulation.
-        Optimization.
-        Metanet.
-   Symbolic capabilities through Maple interface.
+Main features
+    * Hundreds of mathematical functions
+    * High level programming language
+    * 2-D and 3-D graphics
+    * Advanced data structures and user defined data types
+    * Xcos: hybrid dynamic systems modeler and simulator
+2-D and 3-D visualization
+    * Lines
+    * Pie charts
+    * Histograms
+    * Surfaces
+    * Animations
+    * Graphics export in many formats: GIF, BMP, JPEG, SVG, PDF...
+Numerical computation
+    * Linear algebra
+    * Sparse matrices
+    * Polynomials and rational functions
+    * Simulation: explicit and implicit systems of differential 
+      equations solvers
+    * Classic and robust control
+    * Differentiable and non-differentiable optimization
+Data analysis
+    * Interpolation, approximation
+    * Signal Processing
+    * Statistics
+Extended features
+    * Graphs and Networks
+    * Interface with Fortran, C, C++, Java
+    * Functions for calling Scilab from C, C++, Fortran and Java
+    * LabVIEW Gateway
+    * A large number of modules available via ATOMS
 
 WWW: http://www.scilab.org
-
-Note: To configure your local printers, add their names to the PRINTERS
- variable in the scilab script.
-
-Scilab (c)INRIA-ENPC

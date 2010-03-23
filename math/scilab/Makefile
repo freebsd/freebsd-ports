@@ -7,12 +7,13 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	rfarmer@predatorlabs.net
-COMMENT=	A free Matlab clone by INRIA & ENPC
+COMMENT=	Scientific software package for numerical computations
 
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
@@ -25,6 +26,7 @@ MAKE_JOBS_UNSAFE=	yes
 USE_FORTRAN=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--without-ocaml
@@ -34,7 +36,6 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 		FFTW "Use FFTW" ON \
 		GUI "Build GUI (requires Java and required for docs)" ON \
-		HDF5 "Use HDF5 (requires GUI)" OFF \
 		NLS "Build localization" OFF \
 		MATIO "Matlab compatibility" OFF \
 		PVM "Parallel Virtual Machine support" OFF \
@@ -76,11 +77,14 @@ PLIST_SUB+=	TK=""
 .if defined(WITHOUT_GUI)
 CONFIGURE_ARGS+=	--without-gui \
 			--without-javasci \
+			--without-hdf5 \
 			--disable-build-help
 PLIST_SUB+=	GUI="@comment "
 PLIST_SUB+=	NOGUI=""
 NOPORTDOCS=	YES
 .else
+LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
+
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
@@ -101,7 +105,8 @@ BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		swig:${PORTSDIR}/devel/swig13 \
-		${LOCALBASE}/share/examples/saxon/data/books.dtd:${PORTSDIR}/textproc/saxon
+		${LOCALBASE}/share/examples/saxon/data/books.dtd:${PORTSDIR}/textproc/saxon \
+		${JAVALIBDIR}/jhdf5.jar:${PORTSDIR}/science/hdf-java
 
 RUN_DEPENDS+=	${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
@@ -120,7 +125,8 @@ RUN_DEPENDS+=	${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/xml-apis-ext.jar:${PORTSDIR}/textproc/xml-commons \
 		${JAVALIBDIR}/avalon-framework.jar:${PORTSDIR}/devel/avalon-framework \
 		${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		xsltproc:${PORTSDIR}/textproc/libxslt
+		xsltproc:${PORTSDIR}/textproc/libxslt \
+		${JAVALIBDIR}/jhdf5.jar:${PORTSDIR}/science/hdf-java
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
@@ -179,16 +185,6 @@ PLIST_SUB+=	MATIO="@comment "
 .else
 LIB_DEPENDS+=	matio.1:${PORTSDIR}/math/matio
 PLIST_SUB+=	MATIO=""
-.endif
-
-.if defined(WITHOUT_HDF5)
-CONFIGURE_ARGS+=	--without-hdf5
-PLIST_SUB+=	HDF5="@comment "
-.else
-LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
-BUILD_DEPENDS+=	${JAVALIBDIR}/jhdf5.jar:${PORTSDIR}/science/hdf-java
-RUN_DEPENDS+=	${JAVALIBDIR}/jhdf5.jar:${PORTSDIR}/science/hdf-java
-PLIST_SUB+=	HDF5=""
 .endif
 
 post-patch:
