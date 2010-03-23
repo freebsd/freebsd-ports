@@ -51,6 +51,7 @@ lib/csound/plugins64/libampmidid.so
 lib/csound/plugins64/libbabo.so
 lib/csound/plugins64/libbarmodel.so
 lib/csound/plugins64/libcompress.so
+lib/csound/plugins64/libcrossfm.so
 lib/csound/plugins64/libcontrol.so
 lib/csound/plugins64/libeqfil.so
 lib/csound/plugins64/libftest.so
@@ -96,6 +97,7 @@ lib/csound/plugins64/libvosim.so
 lib/csound/plugins64/libimage.so
 lib/csound/plugins64/libhrtfnew.so
 lib/libcsladspa.so
+lib/libcsnd.so.5
 lib/libcsound64.so
 lib/libcsound64.so.5
 %%PORTDOCS%%%%DOCSDIR%%/ATSadd.html
