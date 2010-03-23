@@ -22954,7 +22954,7 @@ sybase_ase                      ports/databases/sybase_ase
 sybtcl                          ports/databases/sybtcl
 syck                            ports/textproc/syck
 sylpheed                        ports/mail/sylpheed
-sylpheed2                       ports/mail/sylpheed2
+sylpheed3                       ports/mail/sylpheed3
 symbion-sslproxy                ports/security/symbion-sslproxy
 symlinks                        ports/sysutils/symlinks
 symon                           ports/sysutils/symon

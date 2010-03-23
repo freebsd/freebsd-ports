@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	2.7.1
-PORTREVISION=	1
+PORTVERSION=	3.0.1
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/
+MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
+		CRITICAL
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--enable-ipv6 \
 		--with-libintl-prefix=${LOCALBASE} \
 		--program-transform-name=''
 
-CONFLICTS=	sylpheed-1.[0-8]* sylpheed-gtk2-[0-9]*
+CONFLICTS=	sylpheed-1.[0-8]* sylpheed-2.[0-9]* sylpheed-gtk2-[0-9]*
 
 OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
 		COMPFACE	"Enable X-Face support." off \

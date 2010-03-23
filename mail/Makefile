@@ -685,7 +685,7 @@
     SUBDIR += svnmailer
     SUBDIR += swaks
     SUBDIR += sylpheed
-    SUBDIR += sylpheed2
+    SUBDIR += sylpheed3
     SUBDIR += sympa
     SUBDIR += sympa-elixus
     SUBDIR += sympa5
