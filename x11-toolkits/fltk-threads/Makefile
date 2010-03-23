@@ -7,6 +7,6 @@
 
 MASTERDIR=	${.CURDIR}/../fltk/
 
-WITH_THREADS=	yes
+IGNORE=		Threads are enabled by default. Please use x11-toolkits/fltk
 
 .include "${MASTERDIR}/Makefile"
