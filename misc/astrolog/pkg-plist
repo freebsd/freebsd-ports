@@ -95,8 +95,9 @@ lib/astrolog/LRZ5_8
 lib/astrolog/LRZ5_9
 lib/astrolog/LRZ5_M1
 lib/astrolog/LRZ5_M2
-lib/astrolog/astrolog.dat
+@unexec if [ -f %D/lib/astrolog/astrolog.dat ] && cmp -s %D/lib/astrolog/astrolog.dat %D/lib/astrolog/astrolog.dat-dist; then rm -f %D/lib/astrolog/astrolog.dat; fi
 lib/astrolog/astrolog.dat-dist
+@exec if [ ! -f %D/lib/astrolog/astrolog.dat ] ; then cp -p %D/%F %B/astrolog.dat; fi
 share/doc/astrolog/Helpfile.540
 share/doc/astrolog/README.540
 share/doc/astrolog/Update.540
