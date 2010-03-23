@@ -34,6 +34,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5d5ed535-3653-11df-9edc-000f20797ede">
+    <topic>firefox -- WOFF heap corruption due to integer overflow</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.6,1</gt><lt>3.6.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2010-08  WOFF heap corruption due to integer overflow</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1028</cvename>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-08.html</url>
+    </references>
+    <dates>
+      <discovery>2010-03-22</discovery>
+      <entry>2010-03-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="56cfe192-329f-11df-abb2-000f20797ede">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
