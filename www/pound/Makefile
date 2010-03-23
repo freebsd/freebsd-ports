@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pound
-PORTVERSION=	2.4.5
+PORTVERSION=	2.5
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -22,49 +22,29 @@ USE_RC_SUBR=	${PORTNAME}.sh
 
 SUB_LIST=	NAME=${PORTNAME}
 
-POUND_CFLAGS=	${CFLAGS}
-POUND_LDFLAGS=	${LDFLAGS}
-MAKE_ARGS+=	F_CONF=${PREFIX}/etc/pound.cfg
-
 MAN8=	pound.8 poundctl.8
 
-OPTIONS=	DAEMON		"Running as a daemon" on \
-		LIBTHR		"Link against libthr for threading" on \
-		LOG		"With Syslog support" on \
-		MSDAV		"With the Microsoft WebDAV extensions support" off \
-		PCRE		"Build with libpcre support" off
+OPTIONS=	MSDAV		"With the Microsoft WebDAV extensions support" off \
+		PCRE		"Build with libpcre support" on
 
-.include <bsd.port.pre.mk>
-
+CONFIGURE_ARGS=	--disable--tcmalloc --disable-hoard
+PLIST_FILES=	sbin/pound sbin/poundctl
 PORTDOCS=	README FAQ CHANGELOG
 
-.if defined(WITHOUT_DAEMON)
-CONFIGURE_ARGS+=	--disable-daemon
-.endif
-
-.if defined(WITHOUT_LOG)
-CONFIGURE_ARGS+=	--disable-log
-.endif
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_MSDAV)
 CONFIGURE_ARGS+=	--enable-msdav
 .endif
 
-.if defined(WITH_PCRE)
+.if !defined(WITHOUT_PCRE)
 LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
-POUND_CFLAGS+=		"-I${LOCALBASE}/include"
-POUND_LDFLAGS+=		"-L${LOCALBASE}/lib"
+CFLAGS+=		"-I${LOCALBASE}/include"
+CPPFLAGS+=		"-I${LOCALBASE}/include"
+LDFLAGS+=		"-L${LOCALBASE}/lib"
+.else
+CONFIGURE_ARGS+=	--disable-pcreposix
 .endif
-
-.if !defined(WITHOUT_LIBTHR)
-PTHREAD_LIBS=		-lthr
-.endif
-
-CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		CFLAGS="${POUND_CFLAGS}" \
-		CPPFLAGS="${POUND_CFLAGS}" \
-		LDFLAGS="${POUND_LDFLAGS}"
 
 post-install:
 .if !defined(NOPORTDOCS)
