@@ -22,7 +22,6 @@ LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 		boost_wave:${PORTSDIR}/devel/boost-libs \
 		pulse:${PORTSDIR}/audio/pulseaudio \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
-LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
