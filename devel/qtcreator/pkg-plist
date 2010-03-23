@@ -27,6 +27,7 @@ lib/qtcreator/libUtils.so.1.0
 lib/qtcreator/libUtils.so.1.0.0
 lib/qtcreator/plugins/Nokia/BinEditor.pluginspec
 lib/qtcreator/plugins/Nokia/Bookmarks.pluginspec
+lib/qtcreator/plugins/Nokia/CVS.pluginspec
 lib/qtcreator/plugins/Nokia/CMakeProjectManager.pluginspec
 lib/qtcreator/plugins/Nokia/CodePaster.pluginspec
 lib/qtcreator/plugins/Nokia/Core.pluginspec
@@ -38,18 +39,22 @@ lib/qtcreator/plugins/Nokia/FakeVim.pluginspec
 lib/qtcreator/plugins/Nokia/Find.pluginspec
 lib/qtcreator/plugins/Nokia/GenericProjectManager.pluginspec
 lib/qtcreator/plugins/Nokia/Help.pluginspec
+lib/qtcreator/plugins/Nokia/Locator.pluginspec
 lib/qtcreator/plugins/Nokia/Perforce.pluginspec
 lib/qtcreator/plugins/Nokia/ProjectExplorer.pluginspec
+lib/qtcreator/plugins/Nokia/QmlEditor.pluginspec
+lib/qtcreator/plugins/Nokia/QmlProjectManager.pluginspec
 lib/qtcreator/plugins/Nokia/Qt4ProjectManager.pluginspec
 lib/qtcreator/plugins/Nokia/QtScriptEditor.pluginspec
-lib/qtcreator/plugins/Nokia/QuickOpen.pluginspec
 lib/qtcreator/plugins/Nokia/ResourceEditor.pluginspec
 lib/qtcreator/plugins/Nokia/ScmGit.pluginspec
 lib/qtcreator/plugins/Nokia/Subversion.pluginspec
 lib/qtcreator/plugins/Nokia/TextEditor.pluginspec
 lib/qtcreator/plugins/Nokia/VCSBase.pluginspec
+lib/qtcreator/plugins/Nokia/Welcome.pluginspec
 lib/qtcreator/plugins/Nokia/libBinEditor.so
 lib/qtcreator/plugins/Nokia/libBookmarks.so
+lib/qtcreator/plugins/Nokia/libCVS.so
 lib/qtcreator/plugins/Nokia/libCMakeProjectManager.so
 lib/qtcreator/plugins/Nokia/libCodePaster.so
 lib/qtcreator/plugins/Nokia/libCore.so
@@ -61,16 +66,19 @@ lib/qtcreator/plugins/Nokia/libFakeVim.so
 lib/qtcreator/plugins/Nokia/libFind.so
 lib/qtcreator/plugins/Nokia/libGenericProjectManager.so
 lib/qtcreator/plugins/Nokia/libHelp.so
+lib/qtcreator/plugins/Nokia/libLocator.so
 lib/qtcreator/plugins/Nokia/libPerforce.so
 lib/qtcreator/plugins/Nokia/libProjectExplorer.so
+lib/qtcreator/plugins/Nokia/libQmlEditor.so
+lib/qtcreator/plugins/Nokia/libQmlProjectManager.so
 lib/qtcreator/plugins/Nokia/libQt4ProjectManager.so
 lib/qtcreator/plugins/Nokia/libQtScriptEditor.so
-lib/qtcreator/plugins/Nokia/libQuickOpen.so
 lib/qtcreator/plugins/Nokia/libResourceEditor.so
 lib/qtcreator/plugins/Nokia/libScmGit.so
 lib/qtcreator/plugins/Nokia/libSubversion.so
 lib/qtcreator/plugins/Nokia/libTextEditor.so
 lib/qtcreator/plugins/Nokia/libVCSBase.so
+lib/qtcreator/plugins/Nokia/libWelcome.so
 share/doc/qtcreator/addressbook-sdk.qdoc
 share/doc/qtcreator/api/classic.css
 share/doc/qtcreator/api/qtcreator-api.qdoc
@@ -79,6 +87,7 @@ share/doc/qtcreator/classic.css
 share/doc/qtcreator/coding-style.qdoc
 share/doc/qtcreator/doc.pri
 share/doc/qtcreator/doxygen/Doxyfile
+share/doc/qtcreator/eike_doc.patch
 share/doc/qtcreator/examples/addressbook-sdk/part1/addressbook.cpp
 share/doc/qtcreator/examples/addressbook-sdk/part1/addressbook.h
 share/doc/qtcreator/examples/addressbook-sdk/part1/addressbook.ui
@@ -107,6 +116,22 @@ share/doc/qtcreator/examples/addressbook-sdk/part5/finddialog.h
 share/doc/qtcreator/examples/addressbook-sdk/part5/finddialog.ui
 share/doc/qtcreator/examples/addressbook-sdk/part5/main.cpp
 share/doc/qtcreator/examples/addressbook-sdk/part5/part5.pro
+share/doc/qtcreator/examples/addressbook-sdk/part6/finddialog.cpp
+share/doc/qtcreator/examples/addressbook-sdk/part6/addressbook.h
+share/doc/qtcreator/examples/addressbook-sdk/part6/main.cpp
+share/doc/qtcreator/examples/addressbook-sdk/part6/finddialog.ui
+share/doc/qtcreator/examples/addressbook-sdk/part6/addressbook.cpp
+share/doc/qtcreator/examples/addressbook-sdk/part6/part6.pro
+share/doc/qtcreator/examples/addressbook-sdk/part6/finddialog.h
+share/doc/qtcreator/examples/addressbook-sdk/part6/addressbook.ui
+share/doc/qtcreator/examples/addressbook-sdk/part7/main.cpp
+share/doc/qtcreator/examples/addressbook-sdk/part7/part7.pro
+share/doc/qtcreator/examples/addressbook-sdk/part7/addressbook.h
+share/doc/qtcreator/examples/addressbook-sdk/part7/addressbook.ui
+share/doc/qtcreator/examples/addressbook-sdk/part7/finddialog.cpp
+share/doc/qtcreator/examples/addressbook-sdk/part7/finddialog.h
+share/doc/qtcreator/examples/addressbook-sdk/part7/finddialog.ui
+share/doc/qtcreator/examples/addressbook-sdk/part7/addressbook.cpp
 share/doc/qtcreator/examples/textfinder/input.txt
 share/doc/qtcreator/examples/textfinder/main.cpp
 share/doc/qtcreator/examples/textfinder/textfinder.cpp
@@ -114,6 +139,9 @@ share/doc/qtcreator/examples/textfinder/textfinder.h
 share/doc/qtcreator/examples/textfinder/textfinder.pro
 share/doc/qtcreator/examples/textfinder/textfinder.qrc
 share/doc/qtcreator/examples/textfinder/textfinder.ui
+share/doc/qtcreator/fixnavi.pl
+share/doc/qtcreator/images/addressbook-tutorial-part1-creator-screenshot.png
+share/doc/qtcreator/images/addressbook-tutorial-part1-designer-screenshot.png
 share/doc/qtcreator/images/addressbook-tutorial-part1-labeled-screenshot.png
 share/doc/qtcreator/images/addressbook-tutorial-part1-screenshot.png
 share/doc/qtcreator/images/addressbook-tutorial-part2-add-contact.png
@@ -125,6 +153,15 @@ share/doc/qtcreator/images/addressbook-tutorial-part3-drop-in-gridlayout.png
 share/doc/qtcreator/images/addressbook-tutorial-part3-linkedlist.png
 share/doc/qtcreator/images/addressbook-tutorial-part3-screenshot.png
 share/doc/qtcreator/images/addressbook-tutorial-part4-drop-in-gridlayout.png
+share/doc/qtcreator/images/addressbook-tutorial-part5-signals-and-slots.png
+share/doc/qtcreator/images/addressbook-tutorial-part5-finddialog-in-designer.png
+share/doc/qtcreator/images/addressbook-tutorial-part5-dialogbox.png
+share/doc/qtcreator/images/addressbook-tutorial-part5-screenshot.png
+share/doc/qtcreator/images/addressbook-tutorial-part6-opendialog.png
+share/doc/qtcreator/images/addressbook-tutorial-part6-propertyeditor.png
+share/doc/qtcreator/images/addressbook-tutorial-part6-screenshot.png
+share/doc/qtcreator/images/addressbook-tutorial-part6-savedialog.png
+share/doc/qtcreator/images/addressbook-tutorial-part7-screenshot.png
 share/doc/qtcreator/images/addressbook-tutorial-screenshot.png
 share/doc/qtcreator/images/completion/class.png
 share/doc/qtcreator/images/completion/enum.png
@@ -149,9 +186,6 @@ share/doc/qtcreator/images/qtcreator-add-resource.png
 share/doc/qtcreator/images/qtcreator-application-output.png
 share/doc/qtcreator/images/qtcreator-breakdown.png
 share/doc/qtcreator/images/qtcreator-build-issues.png
-share/doc/qtcreator/images/qtcreator-buildenvironment.png
-share/doc/qtcreator/images/qtcreator-buildsettingstab.png
-share/doc/qtcreator/images/qtcreator-buildsteps.png
 share/doc/qtcreator/images/qtcreator-class-info.png
 share/doc/qtcreator/images/qtcreator-cmake-build-settings.png
 share/doc/qtcreator/images/qtcreator-cmake-import-wizard1.png
@@ -181,6 +215,18 @@ share/doc/qtcreator/images/qtcreator-navigate-customfilter.png
 share/doc/qtcreator/images/qtcreator-navigate-popup.png
 share/doc/qtcreator/images/qtcreator-new-project-summary.png
 share/doc/qtcreator/images/qtcreator-new-project.png
+share/doc/qtcreator/images/qtcreator-ppbuildsettings.png
+share/doc/qtcreator/images/qtcreator-ppbuildsettings_orig.png
+share/doc/qtcreator/images/qtcreator-pprunsettings.png
+share/doc/qtcreator/images/qtcreator-pprunsettings_orig.png
+share/doc/qtcreator/images/qtcreator-projectpane.png
+share/doc/qtcreator/images/qtcreator-projectpane_orig.png
+share/doc/qtcreator/images/qtcreator-qt4-s60sdks.png
+share/doc/qtcreator/images/qtcreator-qt4-qtversions.png
+share/doc/qtcreator/images/qtcreator-qt4-qtversions-win-symbian.png
+share/doc/qtcreator/images/qtcreator-qt4-qtversions-win-mingw.png
+share/doc/qtcreator/images/qtcreator-qt4-qtversions-win-msvc.png
+share/doc/qtcreator/images/qtcreator-welcome-session.png
 share/doc/qtcreator/images/qtcreator-run.png
 share/doc/qtcreator/images/qtcreator-screenshots.png
 share/doc/qtcreator/images/qtcreator-search-pane.png
@@ -189,6 +235,13 @@ share/doc/qtcreator/images/qtcreator-session-manager.png
 share/doc/qtcreator/images/qtcreator-session-menu.png
 share/doc/qtcreator/images/qtcreator-setting-breakpoint1.png
 share/doc/qtcreator/images/qtcreator-setting-breakpoint2.png
+share/doc/qtcreator/images/qtcreator-symbian-add-buildconfiguration.png
+share/doc/qtcreator/images/qtcreator-symbian-add-run-in-emulator.png
+share/doc/qtcreator/images/qtcreator-symbian-add-runconfiguration.png
+share/doc/qtcreator/images/qtcreator-symbian-change-buildconfiguration.png
+share/doc/qtcreator/images/qtcreator-symbian-change-runconfiguration.png
+share/doc/qtcreator/images/qtcreator-symbian-change-run-in-emulator.png
+share/doc/qtcreator/images/qtcreator-symbian-details-runconfiguration.png
 share/doc/qtcreator/images/qtcreator-task-list.png
 share/doc/qtcreator/images/qtcreator-texteditor-behavior.png
 share/doc/qtcreator/images/qtcreator-texteditor-completion.png
@@ -205,6 +258,7 @@ share/doc/qtcreator/images/qtcreator-vcs-log.png
 share/doc/qtcreator/images/qtcreator-vcs-pane.png
 share/doc/qtcreator/images/qtcreator-watcher.png
 share/doc/qtcreator/images/qtcreator.png
+share/doc/qtcreator/qt.index
 share/doc/qtcreator/qtcreator.qdoc
 share/doc/qtcreator/qtcreator.qdocconf
 share/doc/qtcreator/runframework.dia
@@ -218,6 +272,8 @@ share/qtcreator/designer/templates/Widget.ui
 share/qtcreator/gdbmacros/LGPL_EXCEPTION.TXT
 share/qtcreator/gdbmacros/LICENSE.LGPL
 share/qtcreator/gdbmacros/gdbmacros.cpp
+share/qtcreator/gdbmacros/gdbmacros.h
+share/qtcreator/gdbmacros/gdbmacros_p.h
 share/qtcreator/gdbmacros/gdbmacros.pro
 share/qtcreator/gdbmacros/test/dumpertest.pro
 share/qtcreator/gdbmacros/test/main.cpp
@@ -233,6 +289,19 @@ share/qtcreator/snippets/foreach.snp
 share/qtcreator/snippets/if.snp
 share/qtcreator/snippets/ifelse.snp
 share/qtcreator/static.pro
+share/qtcreator/styles/fakevim.xml
+share/qtcreator/styles/grayscale.xml
+share/qtcreator/styles/default.xml
+share/qtcreator/templates/qt4project/customwidgetwizard/tpl_widget_lib.pro
+share/qtcreator/templates/qt4project/customwidgetwizard/tpl_widget.cpp
+share/qtcreator/templates/qt4project/customwidgetwizard/tpl_collection.h
+share/qtcreator/templates/qt4project/customwidgetwizard/tpl_collection.cpp
+share/qtcreator/templates/qt4project/customwidgetwizard/tpl_widget.h
+share/qtcreator/templates/qt4project/customwidgetwizard/tpl_plugin.pro
+share/qtcreator/templates/qt4project/customwidgetwizard/tpl_single.cpp
+share/qtcreator/templates/qt4project/customwidgetwizard/tpl_resources.qrc
+share/qtcreator/templates/qt4project/customwidgetwizard/tpl_single.h
+share/qtcreator/templates/qt4project/customwidgetwizard/tpl_widget_include.pri
 share/qtcreator/templates/qt4project/main.cpp
 share/qtcreator/templates/qt4project/mywidget.cpp
 share/qtcreator/templates/qt4project/mywidget.h
@@ -241,16 +310,24 @@ share/qtcreator/templates/qt4project/mywidget_form.h
 share/qtcreator/templates/qt4project/widget.ui
 share/qtcreator/translations/Makefile
 share/qtcreator/translations/README
+share/qtcreator/translations/extract-mimetypes.xq
+share/qtcreator/translations/extract-mimetypes.xq.in
 share/qtcreator/translations/qtcreator_de.qm
 share/qtcreator/translations/qtcreator_de.ts
 share/qtcreator/translations/qtcreator_es.qm
 share/qtcreator/translations/qtcreator_es.ts
+share/qtcreator/translations/qtcreator_fr.qm
+share/qtcreator/translations/qtcreator_fr.ts
 share/qtcreator/translations/qtcreator_it.qm
 share/qtcreator/translations/qtcreator_it.ts
 share/qtcreator/translations/qtcreator_ja.qm
 share/qtcreator/translations/qtcreator_ja.ts
+share/qtcreator/translations/qtcreator_pl.qm
+share/qtcreator/translations/qtcreator_pl.ts
 share/qtcreator/translations/qtcreator_ru.qm
 share/qtcreator/translations/qtcreator_ru.ts
+share/qtcreator/translations/qtcreator_sl.qm
+share/qtcreator/translations/qtcreator_sl.ts
 share/qtcreator/translations/translations.pro
 share/qtcreator/translations/translations.pro.bak
 @dirrm lib/qtcreator/plugins/Nokia
@@ -263,6 +340,8 @@ share/qtcreator/translations/translations.pro.bak
 @dirrm share/doc/qtcreator/examples/addressbook-sdk/part3
 @dirrm share/doc/qtcreator/examples/addressbook-sdk/part4
 @dirrm share/doc/qtcreator/examples/addressbook-sdk/part5
+@dirrm share/doc/qtcreator/examples/addressbook-sdk/part6
+@dirrm share/doc/qtcreator/examples/addressbook-sdk/part7
 @dirrm share/doc/qtcreator/examples/addressbook-sdk
 @dirrm share/doc/qtcreator/examples/textfinder
 @dirrm share/doc/qtcreator/examples
@@ -275,6 +354,8 @@ share/qtcreator/translations/translations.pro.bak
 @dirrm share/qtcreator/gdbmacros
 @dirrm share/qtcreator/schemes
 @dirrm share/qtcreator/snippets
+@dirrm share/qtcreator/styles
+@dirrm share/qtcreator/templates/qt4project/customwidgetwizard
 @dirrm share/qtcreator/templates/qt4project
 @dirrm share/qtcreator/templates
 @dirrm share/qtcreator/translations
