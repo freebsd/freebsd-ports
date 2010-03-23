@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polarssl
-PORTVERSION=	0.12.1
+PORTVERSION=	0.13.0
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/code/download/
@@ -15,8 +15,25 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
+USE_CMAKE=	yes
+USE_PERL5_BUILD=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+CMAKE_BUILD_TYPE=	release
 PORTDOCS=	ChangeLog LICENSE README
+
+BINFILES=	aescrypt2 benchmark dh_client dh_genprime dh_server hello \
+		md5sum mpi_demo rsa_genkey rsa_sign rsa_verify selftest \
+		sha1sum sha2sum ssl_cert_test ssl_client1 ssl_client2 \
+		ssl_server ssl_test
+
+# cmake install is broken, so we do it by hand
+do-install:
+	@${TAR} -C ${WRKSRC}/include -cf - polarssl | ${TAR} -C ${PREFIX}/include -xf -
+	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.a ${PREFIX}/lib/
+.for i in ${BINFILES}
+	${INSTALL_DATA} ${WRKSRC}/programs/*/${i} ${PREFIX}/bin/polarssl_${i}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
