@@ -203,7 +203,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_
 .endif
 
 .if defined(WITH_HTTP_GUNZIP_FILTER)
-NGINX_GUNZIP_FILTER_MODULE_VERSION=	0.2
+NGINX_GUNZIP_FILTER_MODULE_VERSION=	0.3
 MASTER_SITES+=	http://mdounin.ru/files/:gunzipfilter
 DISTFILES+=	ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_MODULE_VERSION}.tar.gz:gunzipfilter
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_gunzip_filter_module-${NGINX_GUNZIP_FILTER_MODULE_VERSION}
