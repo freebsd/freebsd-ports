@@ -313,12 +313,12 @@ lib/scilab/libscixpad-disable.so.5
 %%GUI%%lib/scilab/libscixpad.la
 %%GUI%%lib/scilab/libscixpad.so
 %%GUI%%lib/scilab/libscixpad.so.5
-%%HDF5%%lib/scilab/libscihdf5-forceload-disable.so
-%%HDF5%%lib/scilab/libscihdf5-forceload.la
-%%HDF5%%lib/scilab/libscihdf5-forceload-disable.so.5
-%%HDF5%%lib/scilab/libscihdf5-forceload-disable.la
-%%HDF5%%lib/scilab/libscihdf5-forceload.so
-%%HDF5%%lib/scilab/libscihdf5-forceload.so.5
+%%GUI%%lib/scilab/libscihdf5-forceload-disable.so
+%%GUI%%lib/scilab/libscihdf5-forceload.la
+%%GUI%%lib/scilab/libscihdf5-forceload-disable.so.5
+%%GUI%%lib/scilab/libscihdf5-forceload-disable.la
+%%GUI%%lib/scilab/libscihdf5-forceload.so
+%%GUI%%lib/scilab/libscihdf5-forceload.so.5
 libdata/pkgconfig/scilab.pc
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/scilab.mo
@@ -5014,7 +5014,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/hdf5/etc/hdf5.start
 %%DATADIR%%/modules/hdf5/license.txt
 %%DATADIR%%/modules/hdf5/macros/buildmacros.sce
-%%HDF5%%%%DATADIR%%/modules/hdf5/jar/org.scilab.modules.hdf5.jar
+%%GUI%%%%DATADIR%%/modules/hdf5/jar/org.scilab.modules.hdf5.jar
 %%DATADIR%%/modules/hdf5/readme.txt
 %%DATADIR%%/modules/hdf5/sci_gateway/hdf5_gateway.xml
 %%DATADIR%%/modules/hdf5/tests/unit_tests/testScilabBoolean.java
@@ -13509,7 +13509,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/modules/xcos/images/palettes/freq_div.jpg
 %%DATADIR%%/modules/xcos/images/palettes/generic_block3.jpg
 %%DATADIR%%/modules/xcos/images/palettes/scifunc_block_m.jpg
-%%HDF5%%%%DATADIR%%/modules/xcos/jar/org.scilab.modules.xcos.jar
+%%GUI%%%%DATADIR%%/modules/xcos/jar/org.scilab.modules.xcos.jar
 %%DATADIR%%/modules/xcos/license.txt
 %%GUI%%%%DATADIR%%/modules/xcos/macros/%diagram_xcos.bin
 %%DATADIR%%/modules/xcos/macros/%diagram_xcos.sci
@@ -13969,7 +13969,7 @@ libdata/pkgconfig/scilab.pc
 @dirrm %%DATADIR%%/modules/xcos/tests
 @dirrm %%DATADIR%%/modules/xcos/sci_gateway
 @dirrm %%DATADIR%%/modules/xcos/macros
-%%HDF5%%@dirrm %%DATADIR%%/modules/xcos/jar
+%%GUI%%@dirrm %%DATADIR%%/modules/xcos/jar
 @dirrm %%DATADIR%%/modules/xcos/images/palettes
 @dirrm %%DATADIR%%/modules/xcos/images/icons
 @dirrm %%DATADIR%%/modules/xcos/images/blocks
@@ -14519,7 +14519,7 @@ libdata/pkgconfig/scilab.pc
 @dirrm %%DATADIR%%/modules/hdf5/sci_gateway
 @dirrm %%DATADIR%%/modules/hdf5/macros
 @dirrm %%DATADIR%%/modules/hdf5/etc
-%%HDF5%%@dirrm %%DATADIR%%/modules/hdf5/jar
+%%GUI%%@dirrm %%DATADIR%%/modules/hdf5/jar
 @dirrm %%DATADIR%%/modules/hdf5
 @dirrm %%DATADIR%%/modules/hashtable/macros
 @dirrm %%DATADIR%%/modules/hashtable
