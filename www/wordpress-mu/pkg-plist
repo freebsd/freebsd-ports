@@ -15,6 +15,7 @@
 %%WWWDIR%%/wp-admin/async-upload.php
 %%WWWDIR%%/wp-admin/categories.php
 %%WWWDIR%%/wp-admin/comment.php
+%%WWWDIR%%/wp-admin/wpmu-terms.php
 %%WWWDIR%%/wp-admin/css/colors-classic-rtl.css
 %%WWWDIR%%/wp-admin/css/colors-classic.css
 %%WWWDIR%%/wp-admin/css/colors-classic.dev.css
