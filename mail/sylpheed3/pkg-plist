@@ -48,10 +48,10 @@ include/sylpheed/sylph/virtual.h
 include/sylpheed/sylph/xml.h
 lib/libsylph-0.la
 lib/libsylph-0.so
-lib/libsylph-0.so.0
 lib/libsylpheed-plugin-0.la
 lib/libsylpheed-plugin-0.so
-lib/libsylpheed-plugin-0.so.0
+lib/libsylph-0.so.1
+lib/libsylpheed-plugin-0.so.1
 share/applications/sylpheed.desktop
 share/locale/be/LC_MESSAGES/sylpheed.mo
 share/locale/cs/LC_MESSAGES/sylpheed.mo
@@ -91,6 +91,7 @@ share/pixmaps/sylpheed.png
 %%PORTDOCS%%%%DOCSDIR%%/faq/en/sylpheed-faq-1.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/en/sylpheed-faq-2.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/en/sylpheed-faq-3.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/en/sylpheed-faq-4.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/en/sylpheed-faq.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/es/sylpheed-faq-1.html
 %%PORTDOCS%%%%DOCSDIR%%/faq/es/sylpheed-faq-2.html
@@ -143,6 +144,7 @@ share/pixmaps/sylpheed.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-23.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-24.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-25.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-26.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-4.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/ja/sylpheed-5.html
