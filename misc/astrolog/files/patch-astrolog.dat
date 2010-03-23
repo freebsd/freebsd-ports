@@ -1,0 +1,24 @@
+--- astrolog.dat.orig	1998-12-23 23:29:33.000000000 +0300
++++ astrolog.dat	2010-03-23 12:41:51.000000000 +0300
+@@ -1,7 +1,7 @@
+ @0308  ; Astrolog (5.40) default settings file astrolog.dat
+ 
+--z0 0             ; Default Daylight time setting   [0 standard, 1 daylight]
+--z +8:00          ; Default time zone               [hours before GMT      ]
++-z0 current       ; Default Daylight time setting   [0 standard, 1 daylight]
++-z current        ; Default time zone               [hours before GMT      ]
+ -zl 122W20 47N36  ; Default longitude and latitude
+ 
+ -Yz 0   ; Time minute addition to be used when "now" charts are off.
+@@ -14,9 +14,9 @@
+ _k      ; Ansi color text           ["=k" is color, "_k" is normal     ]
+ :d 12   ; Searching divisions       [Change "12" to desired divisions  ]
+ _b0     ; Print zodiac seconds      ["_b0" to minute, "=b0" to second  ]
+-_b      ; Use ephemeris files       ["=b" uses them, "_b" doesn't      ]
++=b      ; Use ephemeris files       ["=b" uses them, "_b" doesn't      ]
+ =C      ; Show house cusp objects   ["_C" hides them, "=C" shows them  ]
+-:w 4    ; Wheel chart text rows     [Change "4" to desired wheel rows  ]
++:w 6    ; Wheel chart text rows     [Change "4" to desired wheel rows  ]
+ :I 80   ; Text screen columns       [Change "80" to desired columns    ]
+ -YQ 0   ; Text screen scroll limit  [Change "24" or set to "0" for none]
+ _Yd     ; European date format      ["_Yd" is MDY, "=Yd" is DMY        ]
