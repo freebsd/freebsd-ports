@@ -7,7 +7,7 @@
 
 PORTNAME=	xdeview
 PORTVERSION=	0.5.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters tcl tk
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
@@ -22,18 +22,22 @@ GNU_CONFIGURE=	yes
 # Explicitly disable Tcl otherwise the configure script picks-up
 # crud from the $PATH lie /usr/opt/Simili/tcl/.
 CONFIGURE_ARGS=	--disable-tcl --disable-tk
-# Season to taste --- anything better or equal to tcl8.0 is probably okay
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib \
-			-lX11 -ltcl84 -ltk84 -lm" \
-		CPPFLAGS="-I${LOCALBASE}/include/tcl8.4 -DHAVE_TCL \
-			-I${LOCALBASE}/include/tk8.4 -DHAVE_TK \
-			-I${LOCALBASE}/include"
 
 ALL_TARGET=	xdeview
 INSTALL_TARGET=	install-tcl
 MAN1=		xdeview.1
 
 DOCFILES=	${FILESDIR}/porting.notes
+
+USE_TK=		82+
+
+.include <bsd.port.pre.mk>
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib \
+			-lX11 -ltcl${TCL_VER:S/.//} \
+			-ltk${TCL_VER:S/.//} -lm" \
+		CPPFLAGS="-I${TCL_INCLUDEDIR} -DHAVE_TCL \
+			-I${TK_INCLUDEDIR} -DHAVE_TK \
+			-I${LOCALBASE}/include"
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/uuwish
@@ -46,4 +50,4 @@ post-install:
 .endif
 	${INSTALL_MAN} ${WRKSRC}/man/xdeview.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
