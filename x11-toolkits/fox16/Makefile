@@ -27,7 +27,7 @@ CONFLICTS=	fox-1.0.* fox-1.2.* fox-1.4.*
 LATEST_LINK=	fox16
 
 MAJORVER=	1.6
-SHVER=		36
+SHVER=		37
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
 USE_GNOME=	lthack
@@ -92,7 +92,10 @@ PLIST_SUB+=	APPS="@comment "
 #
 .if defined(WITH_OPTIMIZED_CXXFLAGS)
 # turn distribution-recommended optimization flags back on
-CXXFLAGS+=	-O2 -Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations
+CXXFLAGS+=	-O2 -Wuninitialized -ffast-math -finline-functions -fexpensive-optimizations
+.if !defined(WITH_PROFILING)	# Incompatible with profiling flags
+CXXFLAGS+=	-fomit-frame-pointer
+.endif
 .endif
 #
 .if defined(WITH_PROFILING)
