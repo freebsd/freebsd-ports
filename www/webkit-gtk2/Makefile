@@ -50,8 +50,8 @@ OPTIONS=	VIDEO "Enable video support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64 or sparc64
+.if ${ARCH} == "ia64"
+BROKEN=		Does not compile on ia64
 .endif
 
 .if exists (${LOCALBASE}/lib/libicutu.so.43)
