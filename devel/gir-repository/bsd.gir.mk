@@ -33,7 +33,7 @@ gconf2_CATEGORY=	devel
 gconf2_GIR=	GConf-2.0
 
 babl_CATEGORY=	x11
-babl_GIR=	Babl-0.0
+babl_GIR=	Babl-0.1
 
 nautilus_CATEGORY=	x11-fm
 nautilus_GIR=	Nautilus-1.0
@@ -137,8 +137,8 @@ DEP_NAMES=	gconf
 .endif
 
 .if ${GIR_NAME} == "babl"
-LIB_DEPENDS+=	babl-0.0.0:${PORTSDIR}/x11/babl
-GIR_FILES=	Babl-0.0
+LIB_DEPENDS+=	babl-0.1.0:${PORTSDIR}/x11/babl
+GIR_FILES=	Babl-0.1
 .endif
 
 .if ${GIR_NAME} == "nautilus"

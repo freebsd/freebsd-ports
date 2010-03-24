@@ -7,6 +7,7 @@
 #
 
 CATEGORIES=	x11
+PORTREVISION=	4
 
 MASTERDIR=	${.CURDIR}/../../devel/gir-repository
 

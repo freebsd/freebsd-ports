@@ -1,5 +1,14 @@
---- gir/Makefile.in.orig	2009-09-10 16:15:05.000000000 -0400
-+++ gir/Makefile.in	2009-09-10 17:32:05.000000000 -0400
+--- gir/Makefile.in.orig	2010-03-24 14:45:41.000000000 +0100
++++ gir/Makefile.in	2010-03-24 14:45:41.000000000 +0100
+@@ -86,7 +86,7 @@ host_triplet = @host@
+ @BUILD_GSSDP_TRUE@am__append_33 = GSSDP-1.0.gir
+ @BUILD_GUPNP_TRUE@am__append_34 = GUPnP-1.0.gir
+ @BUILD_AVAHI_TRUE@am__append_35 = Avahi-0.6.gir
+-@BUILD_BABL_TRUE@am__append_36 = Babl-0.0.gir
++@BUILD_BABL_TRUE@am__append_36 = Babl-0.1.gir
+ @BUILD_UNIQUE_TRUE@am__append_37 = Unique-1.0.gir
+ @BUILD_NAUTILUS_TRUE@am__append_38 = Nautilus-1.0.gir
+ @BUILD_WNCK_TRUE@am__append_39 = Wnck-1.0.gir
 @@ -413,7 +413,7 @@ libgirepo_DBus_custom_la_SOURCES = \
  
  @BUILD_GCONF_TRUE@GCONF_INCLUDEDIR = `pkg-config --variable=includedir gconf-2.0`/gconf/2
@@ -9,6 +18,15 @@
  @BUILD_GNOMEKEYRING_TRUE@GNOMEKEYRING_INCLUDEDIR = `pkg-config --variable=includedir gnome-keyring-1`/gnome-keyring-1
  
  # pango
+@@ -549,7 +549,7 @@ libgirepo_Clutter_custom_la_SOURCES = \
+ @BUILD_GSSDP_TRUE@GSSDP_INCLUDEDIR = `pkg-config --variable=includedir gssdp-1.0`/gssdp-1.0
+ @BUILD_GUPNP_TRUE@GUPNP_INCLUDEDIR = `pkg-config --variable=includedir gupnp-1.0`/gupnp-1.0
+ @BUILD_AVAHI_TRUE@AVAHI_INCLUDEDIR = `pkg-config --variable=includedir avahi-gobject`/avahi-gobject
+-@BUILD_BABL_TRUE@BABL_INCLUDEDIR = `pkg-config --variable=includedir babl`/babl-0.0
++@BUILD_BABL_TRUE@BABL_INCLUDEDIR = `pkg-config --variable=includedir babl`/babl-0.1
+ @BUILD_UNIQUE_TRUE@UNIQUE_INCLUDEDIR = `pkg-config --variable=includedir unique-1.0`/unique-1.0/unique
+ @BUILD_NAUTILUS_TRUE@NAUTILUS_INCLUDEDIR = `pkg-config --variable=includedir libnautilus-extension`/nautilus/libnautilus-extension
+ @BUILD_WNCK_TRUE@WNCK_INCLUDEDIR = `pkg-config --variable=includedir libwnck-1.0`/libwnck-1.0/libwnck
 @@ -1384,16 +1384,16 @@ uninstall-am: uninstall-dist_girDATA uni
  @BUILD_GSTREAMER_PLUGINS_BASE_TRUE@             --output $@ \
  @BUILD_GSTREAMER_PLUGINS_BASE_TRUE@	     $(GSTFFT_INCLUDEDIR)/gst/fft/*h
@@ -37,3 +55,18 @@
  @BUILD_GSTREAMER_PLUGINS_BASE_TRUE@	     --libtool="$(LIBTOOL)" \
  @BUILD_GSTREAMER_PLUGINS_BASE_TRUE@             --pkg gobject-2.0 \
  @BUILD_GSTREAMER_PLUGINS_BASE_TRUE@             --pkg gstreamer-0.10 \
+@@ -1529,11 +1530,11 @@ uninstall-am: uninstall-dist_girDATA uni
+ @BUILD_AVAHI_TRUE@             --output $@ \
+ @BUILD_AVAHI_TRUE@             --pkg avahi-gobject \
+ @BUILD_AVAHI_TRUE@             $(AVAHI_INCLUDEDIR)/*.h
+-@BUILD_BABL_TRUE@Babl-0.0.gir: $(INTROSPECTION_SCANNER)
+-@BUILD_BABL_TRUE@	$(INTROSPECTION_SCANNER) -v --namespace Babl --nsversion=0.0 \
++@BUILD_BABL_TRUE@Babl-0.1.gir: $(INTROSPECTION_SCANNER)
++@BUILD_BABL_TRUE@	$(INTROSPECTION_SCANNER) -v --namespace Babl --nsversion=0.1 \
+ @BUILD_BABL_TRUE@            --add-include-path=$(srcdir) --add-include-path=. \
+ @BUILD_BABL_TRUE@	    --include=GObject-2.0 \
+-@BUILD_BABL_TRUE@            --library=babl-0.0 \
++@BUILD_BABL_TRUE@            --library=babl-0.1 \
+ @BUILD_BABL_TRUE@	    --libtool="$(LIBTOOL)" \
+ @BUILD_BABL_TRUE@            --output $@ \
+ @BUILD_BABL_TRUE@            --pkg babl \
