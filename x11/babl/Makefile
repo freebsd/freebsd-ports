@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	babl
-PORTVERSION=	0.0.22
-PORTREVISION=	1
+PORTVERSION=	0.1.2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
