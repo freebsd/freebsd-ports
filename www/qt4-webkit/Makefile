@@ -62,10 +62,4 @@ post-configure:
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 		${WRKSRC}/lib/pkgconfig/QtWebKit.pc
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
