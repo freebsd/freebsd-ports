@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	1.1.3
-PORTREVISION=	3
+PORTVERSION=	1.1.5
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -143,17 +142,11 @@ CONFIGURE_ARGS+=	--without-x264
 .endif
 
 .if !defined(WITHOUT_SCHROEDINGER)
-LIB_DEPENDS+=	schroedinger-1.0.2:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS+=	schroedinger-1.0.3:${PORTSDIR}/multimedia/schroedinger
 PLIST_SUB+=	SCHROEDINGER=""
 .else
 PLIST_SUB+=	SCHROEDINGER="@comment "
 CONFIGURE_ARGS+=	--without-schroedinger
-.endif
-
-.if ${MACHINE_CPU:Mmmx}
-CONFIGURE_ARGS+=	--enable-mmx
-.else
-CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
 .endif
