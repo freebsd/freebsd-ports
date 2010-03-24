@@ -1,0 +1,37 @@
+# New ports collection makefile for:	gmapcatcher
+# Date created:		24 March 2010
+# Whom:			Kevin Lo <kevlo@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gmapcatcher
+PORTVERSION=	0.6.3.0
+CATEGORIES=	astro geography
+MASTER_SITES=	http://gmapcatcher.googlecode.com/files/
+DISTNAME=	GMapCatcher-${PORTVERSION}
+
+MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	An offline map viewer
+
+USE_PYTHON=	yes
+USE_GNOME=	pygtk2
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+do-build:
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+
+do-install:
+	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/*.py* ${PYTHON_SITELIBDIR}/${PORTNAME}
+	@${CP} -R ${WRKSRC}/src ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${CHMOD} +x ${PYTHON_SITELIBDIR}/${PORTNAME}/maps.py
+	${CHMOD} +x ${PYTHON_SITELIBDIR}/${PORTNAME}/download.py
+	${LN} -fs ${PYTHON_SITELIBDIR}/${PORTNAME}/maps.py \
+		${PREFIX}/bin/gmapcatcher
+	${LN} -fs ${PYTHON_SITELIBDIR}/${PORTNAME}/download.py \
+		${PREFIX}/bin/gmapcatcher-download
+
+.include <bsd.port.mk>
