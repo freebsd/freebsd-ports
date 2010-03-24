@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.3.2e
+PORTVERSION=	1.3.3
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -28,26 +28,10 @@ COMMENT?=	Highly configurable ftp daemon
 
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
 MAN5=	xferlog.5
-MAN8=	proftpd.8 ftpshut.8 ftpdctl.8
+MAN8=	proftpd.8 ftpscrub.8 ftpshut.8 ftpdctl.8
 
 MAKE_JOBS_UNSAFE=	yes
-PORTDOCSdoc=	Configuration.html faq.html
-PORTDOCScontrib=mod_ifsession.html mod_radius.html mod_rewrite.html \
-		mod_tls.html mod_wrap2.html mod_wrap2_file.html mod_wrap2_sql.html \
-		mod_ban.html mod_quotatab_radius.html ftpasswd.html
-PORTDOCSreadme=	README README.DSO README.FreeBSD README.IPv6 README.LDAP README.PAM \
-		README.capabilities README.classes README.facl README.modules \
-		README.ports RELEASE_NOTES
-PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib} ${PORTDOCSreadme}
-
-PORTEXAMPLES=	ASCII.html CreateHome.html Filters.html SQL.html Umask.html \
-		AuthFiles.html DNS.html Globbing.html SSH.html Upgrade.html \
-		Authentication.html DSO.html Limit.html Scoreboard.html Vhost.html \
-		BCP.html Debugging.html ListOptions.html ServerType.html \
-		VirtualUsers.html Chroot.html Directory.html Logging.html Stopping.html \
-		index.html Classes.html DisplayFiles.html NAT.html TLS.html ConfigFile.html \
-		FTP.html Quotas.html Timestamps.html Controls.html \
-		FXP.html Regex.html Tracing.html
+PORTDOCS=	*
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -67,30 +51,43 @@ OPTIONS=	BAN "Include mod_ban (Requires CTRLS)" off \
 		CLAMAV "Include mod_clamav" off \
 		CTRLS "Include controls" off \
 		DIGEST "Include mod_digest" off \
+		EXEC "Include mod_exec" off \
+		HTMLDOCS "Include HTML documentation" off \
 		IFSESSION "Include mod_ifsession" on \
 		IPV6 "Use IPv6" on \
 		LDAP "Use LDAP" off \
-		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off \
-		NLS "Use nls (builds mod_lang)" on \
+		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off
+
+# Set the MYSQL option based upon the setting from the
+# slave port (ftp/proftpd-mysql).
+.if defined(WITH_MYSQL)
+OPTIONS+=	MYSQL "MySQL auth" on
+.else
+OPTIONS+=	MYSQL "MySQL auth" off
+.endif
+
+OPTIONS+=	NLS "Use nls (builds mod_lang)" on \
+		ODBC "ODBC" off \
 		OPENSSL "Include mod_tls" on \
-		PGSQL "Postgres auth (Can be combined with MYSQL)" off \
+		PGSQL "Postgres auth" off \
 		QUOTA "Include mod_quota" off \
 		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
+		SHAPER "Shaper module" off \
+		SQLITE "SQLite auth" off \
 		RADIUS "Include mod_radius" on \
 		RATIO "Include mod_ratio" on \
 		README "Include mod_readme" on \
 		REWRITE "Include mod_rewrite" on \
-		TDS "FreeTDS - Sybase & MS-SQL auth (Exclusive)" off \
+		TLS_SHMCACHE "TLS SHM session cache (requires OPENSSL)" off \
+		TDS "Include mod_sql_tds" off \
+		SFTP "Include mod_sftp" off\
+		SFTP_SQL "Include mod_sftp_sql" off \
+		SFTP_PAM "Include mod_sftp_pam" off \
+		SQL_PASSWD "Include mod_sql_passwd" off \
+		UNIQUE "Include mod_unique_id" off \
 		WRAP "Include mod_wrap2" on \
-		WRAP_FILE "Include mod_wrap2_file" off \
-		WRAP_SQL "Include mod_wrap2_sql" off
-# Set the MYSQL option based upon the setting from the
-# slave port (ftp/proftpd-mysql).
-.if defined(WITH_MYSQL)
-OPTIONS+=	MYSQL "MySQL auth (Can be combined with PGSQL)" on
-.else
-OPTIONS+=	MYSQL "MySQL auth (Can be combined with PGSQL)" off
-.endif
+		WRAP_FILE "Include mod_wrap2_file (requires WRAP)" off \
+		WRAP_SQL "Include mod_wrap2_sql (requires WRAP)" off
 
 MODULES?=
 LIBDIRS?=
@@ -119,26 +116,32 @@ PLIST_SUB+=	WRAP=""
 PLIST_SUB+=	WRAP="@comment "
 .endif
 
-.if defined(WITH_WRAP_FILE)
-.if defined(WITHOUT_WRAP)
-IGNORE=	WRAP_FILE and WRAP_FILE_SQL require WRAP.
+.if ( defined(WITH_WRAP_FILE) || defined(WITH_WRAP_SQL) ) && defined(WITHOUT_WRAP)
+IGNORE=	options WRAP_FILE and WRAP_FILE_SQL require WRAP
 .endif
+
+.if defined(WITH_WRAP_FILE)
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_wrap2_file
 .endif
 
 .if defined(WITH_WRAP_SQL)
-.if defined(WITHOUT_WRAP)
-IGNORE=	WRAP_FILE and WRAP_FILE_SQL require WRAP.
-.endif
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 MODULES:=${MODULES}:mod_wrap2_sql
 .endif
 
+.if defined(WITH_EXEC)
+MODULES:=${MODULES}:mod_exec
+.endif
+
 .if defined(WITH_RADIUS)
 MODULES:=${MODULES}:mod_radius
+.endif
+
+.if defined(WITH_SHAPER)
+MODULES:=${MODULES}:mod_shaper
 .endif
 
 .if defined(WITH_QUOTATAB_RADIUS)
@@ -146,7 +149,14 @@ MODULES:=${MODULES}:mod_quotatab_radius
 .endif
 
 .if defined(WITH_BAN)
+.if !defined(WITH_CTRLS)
+IGNORE=	option BAN requires CTRLS
+.endif
 MODULES:=${MODULES}:mod_ban
+.endif
+
+.if defined(WITH_UNIQUE)
+MODULES:=${MODULES}:mod_unique_id
 .endif
 
 .if defined(WITH_SETPASSENT)
@@ -163,7 +173,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if defined(WITH_NLS)
+.if !defined(WITHOUT_NLS)
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-nls
@@ -187,9 +197,15 @@ INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
 
-# MYSQL, PGSQL and TDS require mod_sql to be built but specifying it
-# more than once causes configure script to complain.
-.if defined(WITH_MYSQL) || defined(WITH_PGSQL) || defined(WITH_TDS)
+# LDAP_TLS and TLS_SHMCACHE require OPENSSL
+.if ( defined(WITH_LDAP_TLS) || defined(WITH_TLS_SHMCACHE) ) && !defined(WITH_OPENSSL)
+IGNORE=	options LDAP_TLS and TLS_SHMCACHE require OPENSSL
+.endif
+
+# MYSQL, PGSQL, SQLITE, ODBC, TDS, SFTP_SQL and SQL_PASSWD require mod_sql
+.if defined(WITH_MYSQL) || defined(WITH_PGSQL) || \
+defined(WITH_SQLITE) || defined(WITH_ODBC) || defined(WITH_TDS) \
+|| defined(WITH_SFTP_SQL) || defined (WITH_SQL_PASSWD)
 MODULES:=${MODULES}:mod_sql
 .endif
 
@@ -207,10 +223,43 @@ INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
 
-.if ${MODULES:M*mod_sql_*}
+.if defined(WITH_SQLITE)
+USE_SQLITE=     yes
+MODULES:=${MODULES}:mod_sql_sqlite
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+.endif
+
+.if defined(WITH_ODBC)
+LIB_DEPENDS=    iodbc.3:${PORTSDIR}/databases/libiodbc
+MODULES:=${MODULES}:mod_sql_odbc
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+CONFIGURE_ARGS+=LIBS=-liodbc LD_LIBRARY_PATH=${LOCALBASE}/lib LDFLAGS=-L${LOCALBASE}/lib
+.endif
+
+.if defined(WITH_TDS)
+DISTFILES+=	mod_sql_tds-4.11.tar.bz2:sql_tds
+EXTRACT_ONLY+=	mod_sql_tds-4.11.tar.bz2
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib-mod_sql_tds.c
+MODULES:=${MODULES}:mod_sql_tds
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
+.endif
+
+.if defined(WITH_SQL_PASSWD)
+MODULES:=${MODULES}:mod_sql_passwd
+.endif
+
+.if ${MODULES:M*mod_sql*}
 PLIST_SUB+=	SQL=""
 .else
 PLIST_SUB+=	SQL="@comment "
+.endif
+
+.if defined(WITH_TLS_SHMCACHE)
+MODULES:=${MODULES}:mod_tls_shmcache
 .endif
 
 .if defined(WITH_OPENSSL)
@@ -218,6 +267,9 @@ PLIST_SUB+=	SQL="@comment "
 CFLAGS+=	-DHAVE_OPENSSL -I${OPENSSLINC}
 PROFTPD_LIBS+=	-lssl -lcrypto -L${OPENSSLLIB}
 MODULES:=${MODULES}:mod_tls
+PLIST_SUB+=	TLS=""
+.else
+PLIST_SUB+=	TLS="@comment "
 .endif
 
 .if defined(WITH_CTRLS)
@@ -264,16 +316,34 @@ DISTFILES+=	mod_digest.c:digest
 MODULES:=${MODULES}:mod_digest
 .endif
 
-.if defined(WITH_TDS)
-DISTFILES+=	mod_sql_tds-4.11.tar.bz2:sql_tds
-EXTRACT_ONLY+=	mod_sql_tds-4.11.tar.bz2
-MODULES:=${MODULES}:mod_sql_tds
-PLIST_SUB+=	TDS=""
+.if defined(WITH_SFTP)
+USE_SQLITE=     yes
+MODULES:=${MODULES}:mod_sftp
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
-LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
+PLIST_SUB+=     SFTP=""
 .else
-PLIST_SUB+=	TDS="@comment "
+PLIST_SUB+=     SFTP="@comment "
+.endif
+
+.if defined(WITH_SFTP_SQL)
+USE_SQLITE=     yes
+MODULES:=${MODULES}:mod_sftp_sql
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+PLIST_SUB+=     SFTP_SQL=""
+.else
+PLIST_SUB+=     SFTP_SQL="@comment "
+.endif
+
+.if defined(WITH_SFTP_PAM)
+USE_SQLITE=     yes
+MODULES:=${MODULES}:mod_sftp_pam
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
+LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+PLIST_SUB+=     SFTP_PAM=""
+.else
+PLIST_SUB+=     SFTP_PAM="@comment "
 .endif
 
 # mod_ifsession should be the last item in the modules list
@@ -285,7 +355,7 @@ MODULES:=${MODULES}:mod_ifsession
 CONFIGURE_ENV+=	"LIBS=${PROFTPD_LIBS}"
 
 .if !empty(MODULES)
-CONFIGURE_ARGS+=	--with-modules=${MODULES}
+CONFIGURE_ARGS+=	--with-modules=${MODULES:C/^://g}
 .endif
 
 .if !empty(INCLUDEDIRS)
@@ -295,10 +365,6 @@ CONFIGURE_ARGS+=	--with-includes=${INCLUDEDIRS}
 .if !empty(LIBDIRS)
 CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 .endif
-
-#Todo: Fix this to not use != if possible.
-#      Will leave as is for now.
-MODULES!=${ECHO} ${MODULES} | ${SED} -e 's,^:,,' -e 's,:$$,,'
 
 post-extract:
 .if defined(WITH_CLAMAV)
@@ -323,7 +389,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|proftpd\.conf|proftpd.conf.sample|g' ${WRKSRC}/Makefile.in
 
 pre-configure:
-	@${ECHO_MSG} "==> Configuring with ${MODULES}"
+	@${ECHO_MSG} "==> Configuring with ${MODULES:C/^://g}"
 
 post-configure:
 	${REINPLACE_CMD} -e 's: -lnsl::' ${WRKSRC}/Make.rules
@@ -334,15 +400,22 @@ post-configure:
 
 post-install:
 	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCSdoc} ${DOCSDIR}/
-	@cd ${WRKSRC}/doc/contrib && ${INSTALL_DATA} ${PORTDOCScontrib} ${DOCSDIR}/
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCSreadme} ${DOCSDIR}/
+.if defined(WITH_SFTP)
+	@${INSTALL} -d ${PREFIX}/etc/proftpd
+	@cd  ${PREFIX}/etc/proftpd && ${CP} -n dhparams.pem.sample dhparams.pem
+	@cd  ${PREFIX}/etc/proftpd && ${CP} -n blacklist.dat.sample blacklist.dat
 .endif
-.if !defined(NOPORTEXAMPLES)
-	@${INSTALL} -d ${EXAMPLESDIR}/
-	@cd ${WRKSRC}/doc/howto/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d ${DOCSDIR}
+	@cd ${WRKSRC} && ${CP} README* RELEASE_NOTES ${DOCSDIR}
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} license.txt ${DOCSDIR}
+. if defined(WITH_HTMLDOCS)
+	@${INSTALL} -d ${DOCSDIR}/html
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} Configuration.html faq.html ${DOCSDIR}/html
+	@${CP} -RP ${WRKSRC}/doc/contrib ${DOCSDIR}/html/contrib
+	@${CP} -RP ${WRKSRC}/doc/modules ${DOCSDIR}/html/modules
+	@${CP} -RP ${WRKSRC}/doc/howto ${DOCSDIR}/html/howto
+. endif
 .endif
 .if defined(WITH_CTRLS)
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpdctl ${PREFIX}/sbin/
