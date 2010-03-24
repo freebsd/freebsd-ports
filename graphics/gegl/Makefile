@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A graph based image processing framework
 
-LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl
+LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl \
+    		execinfo.1:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	enscript:${PORTSDIR}/print/enscript-a4
 
 OPTIONS=	CAIRO		"Enable Cairo" on \
