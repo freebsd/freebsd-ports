@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SoQt
-PORTVERSION=	1.4.1
-PORTREVISION=	8
+PORTVERSION=	1.5.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/ \
 		ftp://ftp.coin3d.org/pub/coin/src/all/
@@ -19,8 +18,9 @@ COMMENT=	Qt4 toolkit library for Coin
 LIB_DEPENDS=	Coin.61:${PORTSDIR}/graphics/Coin
 
 USE_AUTOTOOLS=	libtool:22
+USE_GNOME=	gnomehack
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib qt3support opengl moc_build
+QT_COMPONENTS=	corelib opengl moc_build
 USE_GMAKE=	yes
 CPPFLAGS+=	-I${QT_INCDIR} -I${QT_INCDIR}/Qt -I${LOCALBASE}/include
 LDFLAGS+=	-L${QT_LIBDIR} -L${LOCALBASE}/lib
