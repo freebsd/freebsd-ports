@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	gegl
-PORTVERSION=	0.0.${GEGL_MINOR}
-PORTREVISION=	8
+PORTVERSION=	0.1.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.0/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A graph based image processing framework
 
-LIB_DEPENDS=	babl-0.0:${PORTSDIR}/x11/babl
+LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl
 BUILD_DEPENDS=	enscript:${PORTSDIR}/print/enscript-a4
 
 OPTIONS=	CAIRO		"Enable Cairo" on \
+		ENSCRIPT	"Enable Enscript" on \
 		FFMPEG		"Enable videos through ffmpeg" on \
 		GRAPHVIZ	"Enable Graphviz" on \
 		JPEG		"Enable JPEG format support" on \
@@ -35,13 +35,14 @@ OPTIONS=	CAIRO		"Enable Cairo" on \
 USE_GNOME=	gtk20 glib20 pkgconfig gnomehack
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_RUBY=	build
-USE_LDCONFIG=	${PREFIX}/lib/gegl-0.0
+USE_RUBY=	yes
+RUBY_NO_RUN_DEPENDS=	yes
+USE_LDCONFIG=	${PREFIX}/lib/gegl-0.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 
-GEGL_MINOR=	22
+GEGL_MINOR=	101
 PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}"
 
 EXAMPLES=	2geglbuffer gegl-paint geglbuffer-add-image \
@@ -55,6 +56,12 @@ PLIST_SUB+=	CAIRO=""
 .else
 CONFIGURE_ARGS+=--without-cairo
 PLIST_SUB+=	CAIRO="@comment "
+.endif
+
+.if !defined(WITHOUT_ENSCRIPT)
+BUILD_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
+.else
+CONFIGURE_ARGS+=--without-enscript
 .endif
 
 .if !defined(WITHOUT_FFMPEG)
@@ -159,6 +166,7 @@ CONFIGURE_ARGS+=	--disable-docs
 post-patch:
 	${REINPLACE_CMD} -e 's|-T||' ${WRKSRC}/docs/Makefile.am ${WRKSRC}/docs/Makefile.in
 	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|/usr/bin/ruby|/usr/bin/env ruby|' ${WRKSRC}/tools/gobj2dot.rb
 
 post-build:
 .if !defined(NOPORTDOCS)
