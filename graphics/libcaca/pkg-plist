@@ -8,7 +8,8 @@ bin/img2txt
 include/caca++.h
 include/caca.h
 include/caca0.h
-include/cucul++.h
+include/caca_conio.h
+include/caca_types.h
 include/cucul.h
 lib/libcaca++.a
 lib/libcaca++.la
@@ -18,15 +19,15 @@ lib/libcaca.a
 lib/libcaca.la
 lib/libcaca.so
 lib/libcaca.so.0
-lib/libcucul++.a
 lib/libcucul++.la
 lib/libcucul++.so
 lib/libcucul++.so.0
-lib/libcucul.a
 lib/libcucul.la
 lib/libcucul.so
 lib/libcucul.so.0
+libdata/pkgconfig/caca++.pc
 libdata/pkgconfig/caca.pc
+libdata/pkgconfig/cucul++.pc
 libdata/pkgconfig/cucul.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -37,7 +38,6 @@ libdata/pkgconfig/cucul.pc
 %%PORTDOCS%%%%DOCSDIR%%/NOTES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/caca.txt
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

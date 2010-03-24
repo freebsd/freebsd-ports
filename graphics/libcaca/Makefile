@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libcaca
-DISTVERSION=	0.99.beta13
-PORTREVISION=	3
+DISTVERSION=	0.99.beta17
 CATEGORIES=	graphics
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 
@@ -23,9 +22,9 @@ CONFIGURE_ARGS=	--disable-doc \
 		--disable-ruby
 
 DOCS=		AUTHORS COPYING COPYING.GPL COPYING.LGPL ChangeLog NEWS \
-		NOTES README THANKS TODO
-MAN1=		caca-config.1 cacafire.1 cacaplay.1 cacaserver.1 cacaview.1 \
-		img2txt.1
+		NOTES README THANKS
+MAN1=		caca-config.1 cacademo.1 cacafire.1 cacaplay.1 cacaserver.1 \
+		cacaview.1 img2txt.1
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--disable-x11
