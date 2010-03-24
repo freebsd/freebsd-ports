@@ -38,9 +38,12 @@
     SUBDIR += rus-ispell
     SUBDIR += rux
     SUBDIR += stardict-bars
+    SUBDIR += stardict-computer
     SUBDIR += stardict-dal
+    SUBDIR += stardict-engcom
     SUBDIR += stardict-mueller7
     SUBDIR += stardict-mueller7accent
+    SUBDIR += stardict-pc
     SUBDIR += tac+ia
     SUBDIR += tidyup-mail
     SUBDIR += unzip
