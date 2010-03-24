@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	migrate
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	biology
 MASTER_SITES=	http://people.sc.fsu.edu/~beerli/popgen/currentversion/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	A program to estimate population sizes and migration rates
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
