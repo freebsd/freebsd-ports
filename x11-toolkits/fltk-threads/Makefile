@@ -6,6 +6,7 @@
 #
 
 MASTERDIR=	${.CURDIR}/../fltk/
+PKGNAMESUFFIX=	-threads
 
 IGNORE=		Threads are enabled by default. Please use x11-toolkits/fltk
 
