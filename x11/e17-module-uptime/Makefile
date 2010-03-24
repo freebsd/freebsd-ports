@@ -27,8 +27,8 @@ USE_EFL=	edje
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
+.if ${OSVERSION} >= 900007
+EXTRA_PATCHES=	${FILESDIR}/extra::e_mod_main.c
 .endif
 
 .if !defined(WITHOUT_NLS)
