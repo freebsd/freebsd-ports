@@ -7,11 +7,11 @@
 
 PORTNAME=	dgd-lpmud
 PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net games
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/lpc/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|}
-DISTNAME=	2.4.5-for-1.1
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
+		http://ftp.dworkin.nl/dgd/lib/
+DISTNAME=	2.4.5-for-1.4
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glewis@FreeBSD.org

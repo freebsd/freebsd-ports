@@ -16,11 +16,3 @@ $FreeBSD$
  swap_size	= 20960;		/* # sectors in swap file */
  cache_size	= 100;			/* # sectors in swap cache */
  sector_size	= 1024;			/* swap sector size */
-@@ -12,6 +13,7 @@
- static_chunk	= 64512;		/* static memory chunk */
- dynamic_chunk	= 261120;		/* dynamic memory chunk */
- dump_file	= "../dump";		/* state dump file */
-+dump_interval	= 3600;			/* dump interval in seconds */
- 
- typechecking	= 0;			/* global typechecking */
- include_file	= "/dgd/include/auto.h"; /* standard include file */
