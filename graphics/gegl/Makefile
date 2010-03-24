@@ -33,6 +33,9 @@ OPTIONS=	CAIRO		"Enable Cairo" on \
 		SPIRO		"Enable Spiro" on \
 		V4L		"Enable Video4Linux" on
 
+# Disable docs until I fix the problem with graphviz's dot
+NOPORTDOCS=	yes
+
 USE_GNOME=	gtk20 glib20 pkgconfig gnomehack
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -165,6 +168,9 @@ CONFIGURE_ARGS+=	--disable-docs
 .endif
 
 post-patch:
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e '11,13d' ${WRKSRC}/Makefile.am
+.endif
 	${REINPLACE_CMD} -e 's|-T||' ${WRKSRC}/docs/Makefile.am ${WRKSRC}/docs/Makefile.in
 	${REINPLACE_CMD} -e 's|\(lua\)\(5\.1\)|\1-\2|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|/usr/bin/ruby|/usr/bin/env ruby|' ${WRKSRC}/tools/gobj2dot.rb
