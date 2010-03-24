@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	linux-pam-docs
-PORTVERSION=	0.76
+PORTVERSION=	1.1.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
-MASTER_SITE_SUBDIR=	linux/libs/pam/pre/history
+MASTER_SITE_SUBDIR=	linux/libs/pam/documentation/
 DISTNAME=	Linux-PAM-${PORTVERSION}-docs
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux-PAM offline documentation
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/Linux-PAM-${PORTVERSION} 
 NO_BUILD=	yes
-CPIO=		cpio --quiet -pdum -R
+
+.if defined(NOPORTDOCS)
+IGNORE=		can't be installed when NOPORTDOCS is defined
+.endif
 
 do-install:
-	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC} && ${FIND} * \
-	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} . ${DOCSDIR})
 
 .include <bsd.port.mk>
