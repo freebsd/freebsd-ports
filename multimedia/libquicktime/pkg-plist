@@ -12,7 +12,6 @@ bin/qtyuv4toyuv
 include/lqt/colormodels.h
 include/lqt/lqt.h
 include/lqt/lqt_atoms.h
-include/lqt/lqt_codecapi.h
 include/lqt/lqt_codecinfo.h
 include/lqt/lqt_qtvr.h
 include/lqt/lqt_version.h
