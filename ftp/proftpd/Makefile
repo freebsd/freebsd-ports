@@ -401,7 +401,6 @@ post-configure:
 post-install:
 	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf
 .if defined(WITH_SFTP)
-	@${INSTALL} -d ${PREFIX}/etc/proftpd
 	@cd  ${PREFIX}/etc/proftpd && ${CP} -n dhparams.pem.sample dhparams.pem
 	@cd  ${PREFIX}/etc/proftpd && ${CP} -n blacklist.dat.sample blacklist.dat
 .endif
