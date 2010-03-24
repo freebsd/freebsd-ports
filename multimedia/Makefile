@@ -104,7 +104,6 @@
     SUBDIR += gstreamer-plugins-ugly
     SUBDIR += gstreamer-plugins-x264
     SUBDIR += gstreamer-plugins-xvid
-    SUBDIR += gstreamer-schroedinger
     SUBDIR += gstreamermm
     SUBDIR += gsubedit
     SUBDIR += gtksubtitler
