@@ -21,6 +21,9 @@ USE_RC_SUBR=	yes
 PLIST_FILES=	sbin/vpnd etc/rc.d/vpnd.sh etc/vpnd.conf.sample etc/vpnd.chat.sample
 PORTDOCS=	README FAQ.TXT SPEED.TXT VERSIONS
 
+DEPRECATED=	This software is no longer developed
+EXPIRATION_DATE=	2010-04-30
+
 post-patch:
 .for f in README globals.c vpnd.c vpnd.conf
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,g' ${WRKSRC}/${f}
