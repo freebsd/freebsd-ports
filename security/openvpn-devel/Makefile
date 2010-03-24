@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	201010
+DISTVERSION=	201012
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
