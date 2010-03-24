@@ -850,6 +850,7 @@
     SUBDIR += yammi
     SUBDIR += yamt
     SUBDIR += yell
+    SUBDIR += ym2wav
     SUBDIR += zinf
     SUBDIR += zynaddsubfx
 
