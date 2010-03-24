@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xiphos
-PORTVERSION=	3.1.2
-PORTREVISION=	2
+PORTVERSION=	3.1.3
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
@@ -15,7 +14,8 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.1.so:${PORTSDIR}/misc/sword
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		nspr>=4.8:${PORTSDIR}/devel/nspr
 
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
@@ -24,7 +24,7 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget gnomelibs gtkhtml3 \
 		intlhack libgsf
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/nspr" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--disable-maintainer-mode
 
