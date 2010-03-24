@@ -1,0 +1,4 @@
+This port contains standard, useful autoconf macros for detecting
+OCaml, findlib, OCaml packages, etc.
+
+WWW:	http://forge.ocamlcore.org/projects/ocaml-autoconf/
