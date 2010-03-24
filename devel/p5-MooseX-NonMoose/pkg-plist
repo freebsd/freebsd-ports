@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/NonMoose/.packlist
+%%SITE_PERL%%/MooseX/NonMoose.pm
+%%SITE_PERL%%/MooseX/NonMoose/InsideOut.pm
+%%SITE_PERL%%/MooseX/NonMoose/Meta/Role/Class.pm
+%%SITE_PERL%%/MooseX/NonMoose/Meta/Role/Constructor.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/NonMoose
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrmtry %%SITE_PERL%%/MooseX/NonMoose/Meta/Role
+@dirrmtry %%SITE_PERL%%/MooseX/NonMoose/Meta
+@dirrmtry %%SITE_PERL%%/MooseX/NonMoose
+@dirrmtry %%SITE_PERL%%/MooseX

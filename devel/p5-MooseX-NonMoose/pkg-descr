@@ -1,0 +1,14 @@
+MooseX::NonMoose allows for easily subclassing non-Moose classes with
+Moose, taking care of the annoying details connected with doing this,
+such as setting up proper inheritance from Moose::Object and installing
+(and inlining, at make_immutable time) a constructor that makes sure
+things like BUILD methods are called. It tries to be as non-intrusive
+as possible - when this module is used, inheriting from non-Moose classes
+and inheriting from Moose classes should work identically, aside from the
+few caveats mentioned below. One of the goals of this module is that
+including it in a Moose::Exporter-based package used across an entire
+application should be possible, without interfering with classes that
+only inherit from Moose modules, or even classes that don't inherit from
+anything at all.
+
+WWW: http://search.cpan.org/dist/MooseX-NonMoose/
