@@ -3432,6 +3432,7 @@ fl0p                            ports/security/fl0p
 fl_editor                       ports/x11-toolkits/fl_editor
 flac                            ports/audio/flac
 flac123                         ports/audio/flac123
+flam3                           ports/graphics/flam3
 flamerobin                      ports/databases/flamerobin
 flash                           ports/shells/flash
 flasher                         ports/sysutils/flasher
@@ -7980,6 +7981,7 @@ libstocks                       ports/finance/libstocks
 libstree                        ports/textproc/libstree
 libstrfunc                      ports/devel/libstrfunc
 libstroke                       ports/devel/libstroke
+libsunacl                       ports/sysutils/libsunacl
 libsvg                          ports/graphics/libsvg
 libsvg-cairo                    ports/graphics/libsvg-cairo
 libsvm                          ports/science/libsvm
@@ -22954,7 +22956,7 @@ sybase_ase                      ports/databases/sybase_ase
 sybtcl                          ports/databases/sybtcl
 syck                            ports/textproc/syck
 sylpheed                        ports/mail/sylpheed
-sylpheed3                       ports/mail/sylpheed3
+sylpheed2                       ports/mail/sylpheed2
 symbion-sslproxy                ports/security/symbion-sslproxy
 symlinks                        ports/sysutils/symlinks
 symon                           ports/sysutils/symon
