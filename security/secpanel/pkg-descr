@@ -1,8 +1,7 @@
 SecPanel serves as a GUI for managing and running SSH (Secure Shell)
 and SCP (Secure Copy) connections. Nearly all connection-parameters
 are adjusted by one mouseclick (compression, port-forwarding, etc.).
-It also manages the SSH-agent. SecPanel works with ssh 1.2.x and
-OpenSSH.
+It also manages the SSH-agent.
 
 WWW: http://secpanel.net/
 Author: Steffen Leich <steffen.leich _at_ gmail.com>

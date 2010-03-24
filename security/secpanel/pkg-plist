@@ -6,24 +6,17 @@ bin/secpanel
 %%DATADIR%%/dppw.tcl
 %%DATADIR%%/export_profiles.tcl
 %%DATADIR%%/gui.tcl
-%%DATADIR%%/images/arrow_left.gif
-%%DATADIR%%/images/arrow_right.gif
 %%DATADIR%%/images/back.gif
 %%DATADIR%%/images/configs_gr.gif
 %%DATADIR%%/images/connects_gr.gif
 %%DATADIR%%/images/folder.gif
 %%DATADIR%%/images/keys_gr.gif
 %%DATADIR%%/images/profiles_gr.gif
-%%DATADIR%%/images/scp_gr.gif
 %%DATADIR%%/images/sscreen_gr.gif
-%%DATADIR%%/images/swinback.gif
 %%DATADIR%%/images/swinback_gr.gif
-%%DATADIR%%/listserver.tcl
-%%DATADIR%%/multixterm
-%%DATADIR%%/secpanel.dist
 %%DATADIR%%/secpanel.wait
 %%DATADIR%%/secpanel_remoteconf.sh
-%%DATADIR%%/sp_scp.tcl
-%%DATADIR%%/termdefs
+%%DATADIR%%/termdefs.txt
+%%DATADIR%%/spdistkey
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
