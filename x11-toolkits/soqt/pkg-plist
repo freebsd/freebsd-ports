@@ -10,7 +10,6 @@ include/Inventor/Qt/SoQtRenderArea.h
 include/Inventor/Qt/devices/SoQtDevice.h
 include/Inventor/Qt/devices/SoQtKeyboard.h
 include/Inventor/Qt/devices/SoQtMouse.h
-include/Inventor/Qt/devices/SoQtSpaceball.h
 include/Inventor/Qt/editors/SoQtColorEditor.h
 include/Inventor/Qt/editors/SoQtMaterialEditor.h
 include/Inventor/Qt/engines/.keep_me
@@ -27,9 +26,12 @@ include/Inventor/Qt/widgets/SoQtThumbWheel.h
 lib/libSoQt.a
 lib/libSoQt.la
 lib/libSoQt.so
-lib/libSoQt.so.24
+lib/libSoQt.so.25
+libdata/pkgconfig/SoQt.pc
 share/Coin/conf/soqt-default.cfg
 share/aclocal/soqt.m4
+@dirrmtry share/Coin/conf
+@dirrmtry share/Coin
 @dirrm include/Inventor/Qt/widgets
 @dirrm include/Inventor/Qt/viewers
 @dirrm include/Inventor/Qt/nodes
@@ -37,3 +39,4 @@ share/aclocal/soqt.m4
 @dirrm include/Inventor/Qt/editors
 @dirrm include/Inventor/Qt/devices
 @dirrm include/Inventor/Qt
+@dirrmtry include/Inventor
