@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		mapserver
-PORTVERSION=		5.6.1
-PORTREVISION=		2
+PORTVERSION=		5.6.3
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -30,7 +29,7 @@ OPTIONS=		AGG "Support for AGG image rendering (req: FreeType)" off \
 			PDF "Support for PDF output via pdflib" off \
 			GDAL "Support for a number of input raster formats" off \
 			GEOS "Use GEOS engine where possible" off \
-			POSTGIS "Support for PostGIS" off \
+			POSTGIS "Support for PostGIS" on \
 			PHP "Support for MapScript/PHP" off \
 			PERL "Support for MapScript/PERL" off \
 			WMS "Support for web map service server and client" off \
@@ -88,7 +87,7 @@ CONFIGURE_ARGS+=	--with-geos=${LOCALBASE}/bin/geos-config
 .endif
 
 .if defined(WITH_POSTGIS)
-USE_PGSQL=	YES
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libpgport.a:${PORTSDIR}/databases/postgresql82-server
 CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
 .endif
 
