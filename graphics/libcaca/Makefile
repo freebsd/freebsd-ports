@@ -7,6 +7,7 @@
 
 PORTNAME=	libcaca
 DISTVERSION=	0.99.beta17
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 
@@ -18,6 +19,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--disable-doc \
 		--enable-ncurses \
+		--disable-java \
 		--disable-csharp \
 		--disable-ruby
 

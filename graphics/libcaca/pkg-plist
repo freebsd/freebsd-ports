@@ -40,4 +40,5 @@ libdata/pkgconfig/cucul.pc
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%DATADIR%%/caca.txt
 @dirrm %%DATADIR%%
+@dirrmtry lib/jni
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
