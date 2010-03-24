@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2009-08-12
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://people.freebsd.org/~mm/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -226,7 +227,7 @@ CONFIGURE_ARGS+=	--disable-libopenjpeg
 
 # schroedinger
 .ifndef(WITHOUT_SCHROEDINGER)
-LIB_DEPENDS+=	schroedinger-1.0.2:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS+=	schroedinger-1.0.3:${PORTSDIR}/multimedia/schroedinger
 CONFIGURE_ARGS+=	--enable-libschroedinger
 .else
 CONFIGURE_ARGS+=	--disable-libschroedinger
