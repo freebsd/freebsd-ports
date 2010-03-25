@@ -6,16 +6,23 @@
 #
 
 PORTNAME=	workrave
-PORTVERSION=	1.8.5
-PORTREVISION=	6
+PORTVERSION=	1.9.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Gnome RSI prevention tool
+MAINTAINER=	lx@FreeBSD.org
+COMMENT=	An RSI prevention tool
+
+BUILD_DEPENDS=	gdome-config:${PORTSDIR}/textproc/gdome2
 
 OPTIONS=	GNOME "Build with Gnome support" on \
 		NETWORK "Build with network support" on
+
+DESKTOP_ENTRIES=	"Workrave" "An RSI prevention tool" \
+					"${DATADIR}/images/workrave-icon-small.png" \
+					"workrave" \
+					"Application;Utility;" \
+					false
 
 USE_XORG=	x11 xmu
 USE_GMAKE=	yes
