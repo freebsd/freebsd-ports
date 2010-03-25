@@ -8,8 +8,8 @@
 PORTNAME=	tdiary
 PORTVERSION=	2.3.3
 CATEGORIES?=	www ruby
-MASTER_SITES=	http://www.tdiary.org/download/ \
-		SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
+		http://www.tdiary.org/download/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
