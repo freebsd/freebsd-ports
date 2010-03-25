@@ -1,0 +1,11 @@
+--- gnu/Makefile.in.orig	2010-03-25 22:13:33.000000000 +0100
++++ gnu/Makefile.in	2010-03-25 22:14:21.000000000 +0100
+@@ -1720,7 +1720,7 @@ inttypes.h: inttypes.in.h $(WARN_ON_USE_
+ # avoid installing it.
+ 
+ all-local: charset.alias ref-add.sed ref-del.sed
+-install-exec-local: install-exec-localcharset
++install-exec-local:
+ install-exec-localcharset: all-local
+ 	if test $(GLIBC21) = no; then \
+ 	  case '$(host_os)' in \
