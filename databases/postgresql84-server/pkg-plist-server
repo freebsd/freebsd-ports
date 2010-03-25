@@ -252,6 +252,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Manaus
 %%TZDATA%%share/postgresql/timezone/America/Marigot
 %%TZDATA%%share/postgresql/timezone/America/Martinique
+%%TZDATA%%share/postgresql/timezone/America/Matamoros
 %%TZDATA%%share/postgresql/timezone/America/Mazatlan
 %%TZDATA%%share/postgresql/timezone/America/Mendoza
 %%TZDATA%%share/postgresql/timezone/America/Menominee
@@ -270,6 +271,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Noronha
 %%TZDATA%%share/postgresql/timezone/America/North_Dakota/Center
 %%TZDATA%%share/postgresql/timezone/America/North_Dakota/New_Salem
+%%TZDATA%%share/postgresql/timezone/America/Ojinaga
 %%TZDATA%%share/postgresql/timezone/America/Panama
 %%TZDATA%%share/postgresql/timezone/America/Pangnirtung
 %%TZDATA%%share/postgresql/timezone/America/Paramaribo
@@ -286,6 +288,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Resolute
 %%TZDATA%%share/postgresql/timezone/America/Rio_Branco
 %%TZDATA%%share/postgresql/timezone/America/Rosario
+%%TZDATA%%share/postgresql/timezone/America/Santa_Isabel
 %%TZDATA%%share/postgresql/timezone/America/Santarem
 %%TZDATA%%share/postgresql/timezone/America/Santiago
 %%TZDATA%%share/postgresql/timezone/America/Santo_Domingo
