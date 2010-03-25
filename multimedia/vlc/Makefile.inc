@@ -202,6 +202,8 @@
 #
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|__u32|uint32_t|g' \
+		${WRKSRC}/modules/access/v4l2.c
 # Do not assume LOCALBASE is /usr/local
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 # Subtitle default font
