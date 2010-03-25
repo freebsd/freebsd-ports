@@ -7,6 +7,7 @@
 
 PORTNAME=	gmapcatcher
 PORTVERSION=	0.6.3.0
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	http://gmapcatcher.googlecode.com/files/
 DISTNAME=	GMapCatcher-${PORTVERSION}
@@ -14,10 +15,15 @@ DISTNAME=	GMapCatcher-${PORTVERSION}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	An offline map viewer
 
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
