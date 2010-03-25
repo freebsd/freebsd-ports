@@ -1,0 +1,17 @@
+GNU cpio copies files into or out of a cpio or tar archive.  The
+archive can be another file on the disk, a magnetic tape, or a pipe.
+
+GNU cpio supports the following archive formats: binary, old ASCII,
+new ASCII, crc, HPUX binary, HPUX old ASCII, old tar, and POSIX.1
+tar.  The tar format is provided for compatibility with the tar
+program.  By default, cpio creates binary format archives, for
+compatibility with older cpio programs.  When extracting from
+archives, cpio automatically recognizes which kind of archive it
+is reading and can read archives created on machines with a different
+byte-order.
+
+Note that this port will install these utilities with a 'g' prefix,
+e.g. gcpio, but the texinfo documentation will refer to them without
+the 'g' prefix.
+
+WWW: http://www.gnu.org/software/cpio/

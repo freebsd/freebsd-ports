@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	2010-03-25 22:34:54.000000000 +0100
++++ doc/Makefile.in	2010-03-25 22:35:08.000000000 +0100
+@@ -813,7 +813,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ info_TEXINFOS = cpio.texi
+-man_MANS = cpio.1 mt.1
++man_MANS = cpio.1
+ EXTRA_DIST = $(man_MANS) gendocs_template
+ all: all-am
+ 

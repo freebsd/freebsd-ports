@@ -1,0 +1,32 @@
+--- doc/cpio.1.orig	2009-02-14 19:15:50.000000000 +0100
++++ doc/cpio.1	2010-03-25 22:35:50.000000000 +0100
+@@ -1,8 +1,8 @@
+-.TH CPIO 1L \" -*- nroff -*-
++.TH GCPIO 1L \" -*- nroff -*-
+ .SH NAME
+-cpio \- copy files to and from archives
++gcpio \- copy files to and from archives
+ .SH SYNOPSIS
+-.B cpio
++.B gcpio
+ {\-o|\-\-create} [\-0acvABLV] [\-C bytes] [\-H format] [\-M message]
+ [\-O [[user@]host:]archive] [\-F [[user@]host:]archive]
+ [\-\-file=[[user@]host:]archive] [\-\-format=format] [\-\-message=message]
+@@ -11,7 +11,7 @@ cpio \- copy files to and from archives
+ [\-\-force\-local] [\-\-rsh-command=command] [\-\-help] [\-\-version]
+ < name-list [> archive]
+ 
+-.B cpio
++.B gcpio
+ {\-i|\-\-extract} [\-bcdfmnrtsuvBSV] [\-C bytes] [\-E file] [\-H format]
+ [\-M message] [\-R [user][:.][group]] [\-I [[user@]host:]archive]
+ [\-F [[user@]host:]archive] [\-\-file=[[user@]host:]archive]
+@@ -24,7 +24,7 @@ cpio \- copy files to and from archives
+ [\-\-only\-verify\-crc] [\-\-to\-stdout] [\-\-quiet] [\-\-rsh-command=command]
+ [\-\-help] [\-\-version] [pattern...] [< archive]
+ 
+-.B cpio
++.B gcpio
+ {\-p|\-\-pass-through} [\-0adlmuvLV] [\-R [user][:.][group]]
+ [\-\-null] [\-\-reset-access-time] [\-\-make-directories] [\-\-link] [\-\-quiet]
+ [\-\-preserve-modification-time] [\-\-unconditional] [\-\-verbose] [\-\-dot]
