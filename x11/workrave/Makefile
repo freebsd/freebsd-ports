@@ -24,7 +24,7 @@ DESKTOP_ENTRIES=	"Workrave" "An RSI prevention tool" \
 					"Application;Utility;" \
 					false
 
-USE_XORG=	x11 xmu
+USE_XORG=	x11 xmu recordproto
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
