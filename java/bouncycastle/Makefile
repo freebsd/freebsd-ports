@@ -7,6 +7,7 @@
 
 PORTNAME=	bouncycastle
 PORTVERSION=	1.45
+PORTREVISION=	1
 CATEGORIES=	java security
 MASTER_SITES=	http://downloads.bouncycastle.org/java/ \
 		http://polydistortion.net/bc/download/ \
@@ -35,6 +36,10 @@ DISTVERSION=	${PORTVERSION:S/.//}
 JARS=		bcprov bcmail bctsp bcpg
 
 PORTDOCS=	*
+
+post-patch:
+	@${REINPLACE_CMD} s/BERConstructedOctetString/DEROctetString/ \
+		${WRKSRC}/src/org/bouncycastle/cms/CMS*DataGenerator.java
 
 do-install:
 	@${MKDIR} ${DATADIR}
