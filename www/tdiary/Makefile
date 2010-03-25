@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES?=	www ruby
-MASTER_SITES=	http://www.tdiary.org/download/ \
-		SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
+		http://www.tdiary.org/download/
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
