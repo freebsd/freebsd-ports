@@ -4424,6 +4424,7 @@ gmake                           ports/devel/gmake
 gman                            ports/misc/gman
 gmanedit                        ports/editors/gmanedit
 gmap                            ports/biology/gmap
+gmapcatcher                     ports/astro/gmapcatcher
 gmastermind                     ports/games/gmastermind
 gmcal                           ports/deskutils/gmcal
 gmencoder                       ports/multimedia/gmencoder
@@ -4970,7 +4971,6 @@ gstreamer-plugins-vorbis        ports/audio/gstreamer-plugins-vorbis
 gstreamer-plugins-wavpack       ports/audio/gstreamer-plugins-wavpack
 gstreamer-plugins-x264          ports/multimedia/gstreamer-plugins-x264
 gstreamer-plugins-xvid          ports/multimedia/gstreamer-plugins-xvid
-gstreamer-schroedinger          ports/multimedia/gstreamer-schroedinger
 gstreamermm                     ports/multimedia/gstreamermm
 gsubedit                        ports/multimedia/gsubedit
 gsview                          ports/print/gsview
@@ -10040,6 +10040,7 @@ obmenu                          ports/x11-wm/obmenu
 obpager                         ports/x11-wm/obpager
 ocaml                           ports/lang/ocaml
 ocaml-annexlib                  ports/devel/ocaml-annexlib
+ocaml-autoconf                  ports/lang/ocaml-autoconf
 ocaml-bz2                       ports/archivers/ocaml-bz2
 ocaml-calendar                  ports/devel/ocaml-calendar
 ocaml-camlidl                   ports/lang/ocaml-camlidl
@@ -12651,6 +12652,7 @@ p5-MooseX-Meta-TypeConstraint-ForceCoercion  ports/devel/p5-MooseX-Meta-TypeCons
 p5-MooseX-Method-Signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-MooseX-MethodAttributes      ports/devel/p5-MooseX-MethodAttributes
 p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
+p5-MooseX-NonMoose              ports/devel/p5-MooseX-NonMoose
 p5-MooseX-Object-Pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-MooseX-POE                   ports/devel/p5-MooseX-POE
 p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
@@ -16402,6 +16404,7 @@ p5-moosex-meta-typeconstraint-forcecoercion  ports/devel/p5-MooseX-Meta-TypeCons
 p5-moosex-method-signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-moosex-methodattributes      ports/devel/p5-MooseX-MethodAttributes
 p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
+p5-moosex-nonmoose              ports/devel/p5-MooseX-NonMoose
 p5-moosex-object-pluggable      ports/devel/p5-MooseX-Object-Pluggable
 p5-moosex-params-validate       ports/devel/p5-MooseX-Params-Validate
 p5-moosex-poe                   ports/devel/p5-MooseX-POE
@@ -22956,7 +22959,7 @@ sybase_ase                      ports/databases/sybase_ase
 sybtcl                          ports/databases/sybtcl
 syck                            ports/textproc/syck
 sylpheed                        ports/mail/sylpheed
-sylpheed2                       ports/mail/sylpheed2
+sylpheed3                       ports/mail/sylpheed3
 symbion-sslproxy                ports/security/symbion-sslproxy
 symlinks                        ports/sysutils/symlinks
 symon                           ports/sysutils/symon
@@ -25619,6 +25622,7 @@ yersinia                        ports/security/yersinia
 yfklog                          ports/comms/yfklog
 yi-aspell                       ports/textproc/yi-aspell
 yii                             ports/www/yii
+ym2wav                          ports/audio/ym2wav
 yodl                            ports/textproc/yodl
 yorick                          ports/lang/yorick
 yorick-doc                      ports/lang/yorick-doc
