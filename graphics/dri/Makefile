@@ -21,8 +21,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 
-.ifdef	WITH_NOUVEAU
-EXTRA_PATCHES=	mesalib74-configure
+.ifndef WITHOUT_NOUVEAU
+EXTRA_PATCHES+=	${FILESDIR}/mesalib74-configure
 .endif
 
 do-install:
@@ -32,8 +32,8 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not install on ia64 on sparc64
+.if ${ARCH} == "ia64"
+BROKEN=		Does not install on ia64
 .endif
 
 .include <bsd.port.post.mk>
