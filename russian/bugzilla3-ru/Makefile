@@ -16,7 +16,7 @@ COMMENT=	Russian localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla>=3.4.2:${PORTSDIR}/devel/bugzilla
 
-CONFLICTS?=	ja-bugzilla-2.* bugzilla-2.*
+CONFLICTS=	bugzilla-2.*
 
 PORTSCOUT=	limitw:1,even
 

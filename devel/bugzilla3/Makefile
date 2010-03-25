@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	bugzilla
-PORTVERSION?=	3.4.6
-CATEGORIES?=	devel
+PORTNAME=	bugzilla
+PORTVERSION=	3.4.6
+CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
 
-MAINTAINER?=	skv@FreeBSD.org
-COMMENT?=	Bug-tracking system developed by Mozilla Project
+MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Bug-tracking system developed by Mozilla Project
 
 OPTIONS=	MYSQL "MySQL database support" off \
 		PGSQL "PostgreSQL database support" off \
@@ -43,7 +43,7 @@ RUN_DEPENDS+=	\
 		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME
 
-CONFLICTS?=	ja-bugzilla-2.* bugzilla-2.*
+CONFLICTS=	bugzilla-2.*
 
 PORTSCOUT=	limitw:1,even
 

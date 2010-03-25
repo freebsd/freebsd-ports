@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	bugzilla
-PORTVERSION?=	2.22.7
+PORTNAME=	bugzilla
+PORTVERSION=	2.22.7
 PORTREVISION=	1
-CATEGORIES?=	devel
+CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
 
-MAINTAINER?=	skv@FreeBSD.org
-COMMENT?=	Bug-tracking system developed by Mozilla Project
+MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Bug-tracking system developed by Mozilla Project
 
 LATEST_LINK=	bugzilla2
 
@@ -33,8 +33,6 @@ RUN_DEPENDS+=	\
 		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/PatchReader.pm:${PORTSDIR}/devel/p5-PatchReader
-
-CONFLICTS?=	ja-bugzilla-2.*
 
 PORTSCOUT=	limitw:1,even
 
