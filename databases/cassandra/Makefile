@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cassandra
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.1
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	incubator/cassandra/${PORTVERSION}
-DISTNAME=	apache-cassandra-incubating-${PORTVERSION}
+MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
+DISTNAME=	apache-cassandra-${PORTVERSION}
 EXTRACT_SUFX=	-bin.tar.gz
 
 MAINTAINER=	gslin@gslin.org
