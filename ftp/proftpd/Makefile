@@ -317,7 +317,6 @@ MODULES:=${MODULES}:mod_digest
 .endif
 
 .if defined(WITH_SFTP)
-USE_SQLITE=     yes
 MODULES:=${MODULES}:mod_sftp
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
@@ -327,7 +326,6 @@ PLIST_SUB+=     SFTP="@comment "
 .endif
 
 .if defined(WITH_SFTP_SQL)
-USE_SQLITE=     yes
 MODULES:=${MODULES}:mod_sftp_sql
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
@@ -337,7 +335,6 @@ PLIST_SUB+=     SFTP_SQL="@comment "
 .endif
 
 .if defined(WITH_SFTP_PAM)
-USE_SQLITE=     yes
 MODULES:=${MODULES}:mod_sftp_pam
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
