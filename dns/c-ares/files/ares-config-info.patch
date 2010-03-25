@@ -1,7 +1,10 @@
 Description: Add the ares_get_config() routine used by Unreal IRCd.
+ Originally taken from the Unreal IRCd distribution, later modified
+ by me to properly support IPv6 nameserver addresses since c-ares-1.7.1.
 Origin: the Unreal IRCd distribution
+Author: Peter Pentchev <roam@FreeBSD.org>
 Forwarded: no
-Last-Update: 2010-03-22
+Last-Update: 2010-03-25
 
 --- ares.h.orig
 +++ ares.h
@@ -20,9 +23,9 @@ Last-Update: 2010-03-22
  struct hostent;
  struct timeval;
  struct sockaddr;
-@@ -487,6 +495,8 @@
- 
- CARES_EXTERN const char *ares_strerror(int code);
+@@ -502,6 +510,8 @@
+ CARES_EXTERN int ares_get_servers(ares_channel channel,
+                                   struct ares_addr_node **servers);
  
 +CARES_EXTERN int ares_get_config(struct ares_config_info *d, ares_channel c);
 +
@@ -31,14 +34,23 @@ Last-Update: 2010-03-22
  #endif
 --- ares_init.c.orig
 +++ ares_init.c
-@@ -1498,6 +1498,26 @@
+@@ -67,6 +67,7 @@
+ #include <errno.h>
+ #include "ares.h"
+ #include "inet_net_pton.h"
++#include "inet_ntop.h"
+ #include "ares_library_init.h"
+ #include "ares_private.h"
+ 
+@@ -1520,6 +1521,36 @@
  }
  #endif /* !WIN32 && !WATT32 */
  
 +int ares_get_config(struct ares_config_info *d, ares_channel c)
 +{
 +	int i;
-+	char *p;
++	const char *p;
++	char tmp[sizeof("ffff:ffff:ffff:ffff:ffff:ffff:255.255.255.255")];
 +
 +	memset(d, 0, sizeof(struct ares_config_info));
 +
@@ -48,7 +60,16 @@ Last-Update: 2010-03-22
 +	d->servers = calloc(sizeof(char *), c->nservers);
 +	for (i = 0; i < c->nservers; i++)
 +	{
-+		p = inet_ntoa(c->servers[i].addr);
++		if (c->servers[i].addr.family == AF_INET)
++			p = ares_inet_ntop(c->servers[i].addr.family,
++			    (const char *)&c->servers[i].addr.addrV4,
++			    tmp, sizeof(tmp));
++		else if (c->servers[i].addr.family == AF_INET6)
++			p = ares_inet_ntop(c->servers[i].addr.family,
++			    (const char *)&c->servers[i].addr.addrV6,
++			    tmp, sizeof(tmp));
++		else
++			p = NULL;
 +		d->servers[i] = p ? strdup(p) : NULL;
 +	}
 +

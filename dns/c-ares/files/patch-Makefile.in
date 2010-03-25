@@ -1,11 +1,11 @@
 Description: Place the pkgconfig file in the correct directory on FreeBSD.
 Author: Peter Pentchev <roam@FreeBSD.org>
 Forwarded: not-needed
-Last-Update: 2009-03-22
+Last-Update: 2009-03-25
 
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -316,7 +316,7 @@
+@@ -317,7 +317,7 @@
  
  CLEANFILES = $(PDFPAGES) $(HTMLPAGES)
  DISTCLEANFILES = ares_build.h
