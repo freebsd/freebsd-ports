@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Data-Localize
-PORTVERSION=	0.00011
-PORTREVISION=	1
+PORTVERSION=	0.00013
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,10 +24,12 @@ PERL_CONFIGURE=	yes
 MAN3=	Data::Localize.3 \
 	Data::Localize::Auto.3 \
 	Data::Localize::Gettext.3 \
+	Data::Localize::Gettext::Parser.3 \
 	Data::Localize::Localizer.3 \
 	Data::Localize::Namespace.3 \
 	Data::Localize::Storage.3 \
 	Data::Localize::Storage::BerkeleyDB.3 \
+	Data::Localize::Util.3 \
 	Data::Localize::Storage::Hash.3
 
 .include <bsd.port.mk>
