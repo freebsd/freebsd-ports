@@ -21,6 +21,8 @@ RUN_DEPENDS=	\
 	p5-Plack>0:${PORTSDIR}/www/p5-Plack
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+BROKEN=		installs same files as its dependency
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Plack::Server::ServerSimple.3
