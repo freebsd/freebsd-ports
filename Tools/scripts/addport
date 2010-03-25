@@ -226,7 +226,7 @@ foreach my $thisdir (@dirs) {
 		}
 	}
 	chomp(my $cvs_category = $category);
-	$cvs_category =~ s/-/_/g if ($cvs_category !~ /ports-mgmt/);
+	$cvs_category =~ s/-/_/g;
 
 	# Do commitfile checking but only if the user did not request automatic filling.
 	if (!$autofill) {
