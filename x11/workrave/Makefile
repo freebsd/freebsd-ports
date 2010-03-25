@@ -15,8 +15,8 @@ COMMENT=	An RSI prevention tool
 
 BUILD_DEPENDS=	gdome-config:${PORTSDIR}/textproc/gdome2
 
-OPTIONS=	GNOME "Build with Gnome support" on \
-		NETWORK "Build with network support" on
+OPTIONS=	GNOME "Build with Gnome support" off \
+		NETWORK "Build with network support" off
 
 DESKTOP_ENTRIES=	"Workrave" "An RSI prevention tool" \
 					"${DATADIR}/images/workrave-icon-small.png" \
@@ -24,7 +24,7 @@ DESKTOP_ENTRIES=	"Workrave" "An RSI prevention tool" \
 					"Application;Utility;" \
 					false
 
-USE_XORG=	x11 xmu recordproto
+USE_XORG=	x11 xmu recordproto xtst xext
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
