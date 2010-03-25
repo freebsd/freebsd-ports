@@ -18,6 +18,7 @@ bin/plackup
 %%SITE_PERL%%/Plack/Handler.pm
 %%SITE_PERL%%/Plack/Handler/Apache1.pm
 %%SITE_PERL%%/Plack/Handler/Apache2.pm
+%%SITE_PERL%%/Plack/Handler/Apache2/Registry.pm
 %%SITE_PERL%%/Plack/Handler/CGI.pm
 %%SITE_PERL%%/Plack/Handler/FCGI.pm
 %%SITE_PERL%%/Plack/Handler/HTTP/Server/PSGI.pm
@@ -41,6 +42,7 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware/ContentLength.pm
 %%SITE_PERL%%/Plack/Middleware/ContentMD5.pm
 %%SITE_PERL%%/Plack/Middleware/ErrorDocument.pm
+%%SITE_PERL%%/Plack/Middleware/Head.pm
 %%SITE_PERL%%/Plack/Middleware/HTTPExceptions.pm
 %%SITE_PERL%%/Plack/Middleware/JSONP.pm
 %%SITE_PERL%%/Plack/Middleware/Lint.pm
@@ -94,6 +96,7 @@ bin/plackup
 @dirrm %%SITE_PERL%%/Plack/Loader
 @dirrm %%SITE_PERL%%/Plack/Handler/HTTP/Server
 @dirrm %%SITE_PERL%%/Plack/Handler/HTTP
+@dirrm %%SITE_PERL%%/Plack/Handler/Apache2
 @dirrm %%SITE_PERL%%/Plack/Handler
 @dirrm %%SITE_PERL%%/Plack/HTTPParser
 @dirrm %%SITE_PERL%%/Plack/App
