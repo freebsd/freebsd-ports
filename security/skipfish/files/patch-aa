@@ -1,0 +1,15 @@
+--- Makefile.orig	2010-03-22 20:34:04.000000000 +0100
++++ Makefile	2010-03-22 20:34:40.000000000 +0100
+@@ -35,9 +35,9 @@
+ 
+ $(PROGNAME): $(PROGNAME).c $(OBJFILES) $(INCFILES)
+ 	$(CC) $(PROGNAME).c -o $(PROGNAME) $(CFLAGS_OPT) $(OBJFILES) $(LDFLAGS)
+-	@echo
+-	@echo "NOTE: See dictionaries/README-FIRST to pick a dictionary for the tool."
+-	@echo
++#	@echo
++#	@echo "NOTE: See dictionaries/README-FIRST to pick a dictionary for the tool."
++#	@echo
+ 
+ debug: $(PROGNAME).c $(OBJFILES) $(INCFILES)
+ 	$(CC) $(PROGNAME).c -o $(PROGNAME) $(CFLAGS_DBG) $(OBJFILES) $(LDFLAGS)

@@ -1,0 +1,16 @@
+A fully automated, active web application security reconnaissance
+tool. Key features:
+
+* High speed: pure C code, highly optimized HTTP handling, minimal
+  CPU footprint - easily achieving 2000 requests per second with 
+  responsive targets. 
+
+* Ease of use: heuristics to support a variety of quirky web 
+  frameworks and mixed-technology sites, with automatic learning 
+  capabilities, on-the-fly wordlist creation, and form autocompletion. 
+
+* Cutting-edge security logic: high quality, low false positive, 
+  differential security checks, capable of spotting a range of subtle 
+  flaws, including blind injection vectors. 
+
+WWW: http://code.google.com/p/skipfish

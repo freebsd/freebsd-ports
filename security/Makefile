@@ -768,6 +768,7 @@
     SUBDIR += signing-party
     SUBDIR += silktools
     SUBDIR += sinfp
+    SUBDIR += skipfish
     SUBDIR += sks
     SUBDIR += slurpie
     SUBDIR += slush
