@@ -28,6 +28,7 @@ USE_XORG=	x11 xmu
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
+USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
