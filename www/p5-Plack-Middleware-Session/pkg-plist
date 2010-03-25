@@ -1,0 +1,19 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Session/.packlist
+%%SITE_PERL%%/Plack/Middleware/Session.pm
+%%SITE_PERL%%/Plack/Middleware/Session/Cookie.pm
+%%SITE_PERL%%/Plack/Session.pm
+%%SITE_PERL%%/Plack/Session/State.pm
+%%SITE_PERL%%/Plack/Session/State/Cookie.pm
+%%SITE_PERL%%/Plack/Session/Store.pm
+%%SITE_PERL%%/Plack/Session/Store/Cache.pm
+%%SITE_PERL%%/Plack/Session/Store/DBI.pm
+%%SITE_PERL%%/Plack/Session/Store/File.pm
+%%SITE_PERL%%/Plack/Session/Store/Null.pm
+@dirrm %%SITE_PERL%%/Plack/Session/Store
+@dirrm %%SITE_PERL%%/Plack/Session/State
+@dirrm %%SITE_PERL%%/Plack/Session
+@dirrm %%SITE_PERL%%/Plack/Middleware/Session
+@dirrmtry %%SITE_PERL%%/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/Plack
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Session
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
