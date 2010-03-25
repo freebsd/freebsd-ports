@@ -31,6 +31,7 @@
     SUBDIR += clive-utils
     SUBDIR += clive1
     SUBDIR += clutter-gst
+    SUBDIR += cuse4bsd-kmod
     SUBDIR += cx88
     SUBDIR += devede
     SUBDIR += dirac
@@ -303,7 +304,6 @@
     SUBDIR += vcdimager
     SUBDIR += vcdpad
     SUBDIR += vcdtools
-    SUBDIR += video4bsd-kmod
     SUBDIR += vlc
     SUBDIR += vlconwooztalk
     SUBDIR += vodcatcher
