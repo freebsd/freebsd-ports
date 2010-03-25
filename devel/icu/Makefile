@@ -7,7 +7,7 @@
 
 PORTNAME=	icu
 PORTVERSION=	3.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/ICU4C/${PORTVERSION}
 DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
@@ -17,7 +17,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	International Components for Unicode (from IBM)
 
 OPTIONS=	THREADS "Build thread-safe version of the library" on
-CONFLICTS=	icu2-[0-9]*
+CONFLICTS=	icu2-[0-9]* icu-4*
 
 USE_LDCONFIG=		yes
 

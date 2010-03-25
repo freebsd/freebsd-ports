@@ -16,7 +16,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	International Components for Unicode (from IBM)
 
 OPTIONS=	THREADS "Build thread-safe version of the library" on
-CONFLICTS=	icu2-[0-9]* icu3-[0-9]
+CONFLICTS=	icu2-[0-9]* icu-3*
 LATEST_LINK=	icu4
 
 USE_LDCONFIG=	yes
