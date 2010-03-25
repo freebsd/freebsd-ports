@@ -1,0 +1,11 @@
+Manage your own packages build on a dedicated build system.
+
+The build system does the update of the ports tree,
+moving old packages out of the way, fetch and rebuild
+the packages you need. Its ports tree with packages
+is served to the production systems and desktops.
+
+On a system you can update installed ports with
+the clean build packages from the build system.
+
+WWW: http://people.freebsd.org/~dinoex/batch/README
