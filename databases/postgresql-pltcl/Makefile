@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases tcl
 PKGNAMESUFFIX=	-pltcl
 
@@ -16,9 +16,8 @@ COMMENT=	A module for using Tcl to write SQL functions
 MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
 
 RUN_DEPENDS=	postgres:${MASTERDIR}
-LIB_DEPENDS=	tcl${TCLVERSION:S/.//}:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//}
 
-DEFAULT_PGSQL_VER?=74
+DEFAULT_PGSQL_VER?=82
 
 # can't include <bsd.port.pre.mk> in a slave port
 # so set these instead:
@@ -34,15 +33,14 @@ PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]
 PGSQL_VER=	${DEFAULT_PGSQL_VER}
 .endif
 
-# you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
-TCLVERSION?=	8.4
+# you can use "make WITH_TCL_VER=84" or similar for your favourite tcl version
+USE_TCL=	84+
 CONFIGURE_ARGS=	--with-tcl --without-tk \
-		--with-tclconfig="${TCLCONFIG}" \
-		--with-includes="${TCL_INCDIR}"
+		--with-tclconfig="${TCL_LIBDIR}" \
+		--with-includes="${TCL_INCLUDEDIR}"
 
-TCL_INCDIR=	${LOCALBASE}/include/tcl${TCLVERSION}
-TCLCONFIG=	${LOCALBASE}/lib/tcl${TCLVERSION}
-MAKE_ENV+=	TCL_INCDIR=${TCL_INCDIR}
+CONFIGURE_ENV+=	TCLSH="${TCLSH}"
+MAKE_ENV+=	TCL_INCDIR="${TCL_INCLUDEDIR}"
 
 BUILD_DIRS=	src/pl/tcl
 SLAVE_ONLY=	yes
