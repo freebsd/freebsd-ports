@@ -54,7 +54,7 @@ OPTIONS=	A52 "a52 audio support, many DVDs use this" On \
 		SPEEX "Speex voice codec support" On \
 		THEORA "OGG/Vorbis video codec support" On \
 		TWOLAME "Twolame mpeg2 audio encoder support" On \
-		V4L "Enable Video for Linux" On \
+		V4L "Enable Video for Linux & DVB support" On \
 		VORBIS "Vorbis support" On \
 		WIN32_CODECS "win32 multimedia DLL's" Off \
 		X264 "Enable H.264/AVC codec support" On \
@@ -581,11 +581,12 @@ CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 CONFIGURE_ARGS+=--enable-optimizations
 .endif
 
+# Video for Linux and DVB (Digital Video Broadcast) support
 .if defined(WITHOUT_V4L)
-CONFIGURE_ARGS+=--disable-v4l
+CONFIGURE_ARGS+=--disable-v4l --disable-dvb
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-CONFIGURE_ARGS+=--enable-v4l
+BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
+CONFIGURE_ARGS+=--enable-v4l --enable-dvb
 .endif
 
 .if defined(WITHOUT_X11)
