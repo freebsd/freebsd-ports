@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	c-ares
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/
 
@@ -58,6 +58,7 @@ MAN3=	ares_cancel.3 \
 	ares_expand_name.3 ares_expand_string.3 \
 	ares_fds.3 \
 	ares_free_data.3 ares_free_hostent.3 ares_free_string.3 \
+	ares_get_servers.3 \
 	ares_gethostbyaddr.3 ares_gethostbyname.3 ares_gethostbyname_file.3 \
 	ares_getnameinfo.3 \
 	ares_getsock.3 \
@@ -70,6 +71,7 @@ MAN3=	ares_cancel.3 \
 	ares_query.3 \
 	ares_search.3 \
 	ares_send.3 ares_set_socket_callback.3 \
+	ares_set_servers.3 \
 	ares_strerror.3 \
 	ares_timeout.3 \
 	ares_version.3 \
