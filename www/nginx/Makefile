@@ -159,10 +159,10 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM
 .endif
 
 .if defined(WITH_HTTP_AUTH_REQ_MODULE)
-NGINX_AUTH_REQ_MODULE_VERSION=	0.1
+NGINX_AUTH_REQ_MODULE_VERSION=	0.2
 MASTER_SITES+=	http://mdounin.ru/files/:auth_request
-DISTFILES+=	ngx_http_auth_request-${NGINX_AUTH_REQ_MODULE_VERSION}.tar.gz:auth_request
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_request-${NGINX_AUTH_REQ_MODULE_VERSION}
+DISTFILES+=	ngx_http_auth_request_module-${NGINX_AUTH_REQ_MODULE_VERSION}.tar.gz:auth_request
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_request_module-${NGINX_AUTH_REQ_MODULE_VERSION}
 .endif
 
 .if defined(WITHOUT_HTTP_CACHE_MODULE)
