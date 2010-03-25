@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e050119b-3856-11df-b2b2-002170daae37">
+    <topic>postgresql -- bitsubstr overflow</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><ge>7.4</ge><lt>7.4.28</lt></range>
+	<range><ge>8.0</ge><lt>8.0.24</lt></range>
+	<range><ge>8.1</ge><lt>8.1.20</lt></range>
+	<range><ge>8.2</ge><lt>8.2.16</lt></range>
+	<range><ge>8.3</ge><lt>8.3.10</lt></range>
+	<range><ge>8.4</ge><lt>8.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>BugTraq reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/37973">
+	  <p>PostgreSQL is prone to a buffer-overflow
+	    vulnerability because the application fails to
+	    perform adequate boundary checks on user-supplied
+	    data.</p>
+	  <p>Attackers can exploit this issue to execute
+	    arbitrary code with elevated privileges or
+	    crash the affected application.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>37973</bid>
+      <cvename>CVE-2010-0442</cvename>
+    </references>
+    <dates>
+      <discovery>2010-01-27</discovery>
+      <entry>2010-03-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c175d72f-3773-11df-8bb8-0211d880e350">
     <topic>gtar -- buffer overflow in rmt client</topic>
     <affects>
