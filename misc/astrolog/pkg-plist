@@ -101,5 +101,5 @@ lib/astrolog/astrolog.dat-dist
 share/doc/astrolog/Helpfile.540
 share/doc/astrolog/README.540
 share/doc/astrolog/Update.540
-@dirrm lib/astrolog
+@dirrmtry lib/astrolog
 @dirrm share/doc/astrolog
