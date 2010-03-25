@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9915
+PORTVERSION=	0.9920
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -50,6 +50,7 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Handler.3 \
 	Plack::Handler::Apache1.3 \
 	Plack::Handler::Apache2.3 \
+	Plack::Handler::Apache2::Registry.3 \
 	Plack::Handler::CGI.3 \
 	Plack::Handler::FCGI.3 \
 	Plack::Handler::HTTP::Server::PSGI.3 \
@@ -71,6 +72,7 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Middleware::ContentMD5.3 \
 	Plack::Middleware::ErrorDocument.3 \
 	Plack::Middleware::HTTPExceptions.3 \
+	Plack::Middleware::Head.3 \
 	Plack::Middleware::JSONP.3 \
 	Plack::Middleware::Lint.3 \
 	Plack::Middleware::Log4perl.3 \
