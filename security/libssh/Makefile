@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libssh
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh.org/files/ \
 		LOCAL/avl
@@ -14,7 +14,8 @@ MASTER_SITES=	http://www.libssh.org/files/ \
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A library implementing the SSH1 and SSH2 protocol
 
-OPTIONS=	GCRYPT	"Build with libgcrypt"	off
+OPTIONS=	GCRYPT	"Build with libgcrypt"		off \
+		SSH1	"Build with SSH1 support"	off
 
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
@@ -31,6 +32,14 @@ LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
 CMAKE_ARGS+=	-DWITH_GCRYPT:BOOL=ON
 .else
 USE_OPENSSL=	yes
+.endif
+
+.if defined(WITH_SSH1)
+CMAKE_ARGS+=	-DWITH_SSH1:BOOL=ON
+PLIST_SUB+=	SSH1=""
+.else
+CMAKE_ARGS+=	-DWITH_SSH1:BOOL=OFF
+PLIST_SUB+=	SSH1="@comment "
 .endif
 
 post-patch:
