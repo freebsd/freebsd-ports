@@ -54,4 +54,10 @@ post-install:
 		${INSTALL_DATA} arjl.txt arjs.txt history.txt readme.txt unix.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc
+.endif
+
+.include <bsd.port.post.mk>
