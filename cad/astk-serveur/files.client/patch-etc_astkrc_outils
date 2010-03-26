@@ -1,6 +1,6 @@
---- lib/ASTK/astkrc/outils.orig	2006-12-07 12:33:42.000000000 +0100
-+++ lib/ASTK/astkrc/outils	2009-01-04 16:23:59.000000000 +0100
-@@ -8,13 +8,18 @@
+--- ./etc/astkrc/outils.orig	2009-12-23 15:53:05.000000000 +0100
++++ ./etc/astkrc/outils	2010-01-26 23:20:42.000000000 +0100
+@@ -8,6 +8,11 @@
  ext : comm com0 com1 com2
  dist : on
  #
@@ -12,14 +12,6 @@
  nom : Gmsh
  cmde : ?TOOLS_DIR?/gmsh (@F)
  ext : geo msh pos
- dist : on
- #
- nom : Gibi
--cmde : ?TOOLS_DIR?/gibi.x (@F)
-+cmde : ?TOOLS_DIR?/GIBI (@F)
- ext : datg dgibi
- dist : on
- #
 @@ -23,3 +28,8 @@
  ext : dat
  dist : on

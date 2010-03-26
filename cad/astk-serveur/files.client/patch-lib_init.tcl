@@ -1,8 +1,8 @@
---- lib/ASTK/init.tcl.orig	Tue Jun 10 08:58:13 2003
-+++ lib/ASTK/init.tcl	Wed Jul 16 12:36:23 2003
-@@ -429,6 +429,7 @@
- #################################################################
- proc init_pltf { } {
+--- ./lib/init.tcl.orig	2009-12-23 15:53:05.000000000 +0100
++++ ./lib/init.tcl	2010-01-26 23:25:44.000000000 +0100
+@@ -603,6 +603,7 @@
+    set astk::ihm(pltf,WIN32) "Windows"
+    
     set astk::ihm(pltf,P_LINUX) "Linux x86"
 +   set astk::ihm(pltf,FREEBSD) "%%unamesm%%"
     set astk::ihm(pltf,TRU64) "OSF1 TRU64"

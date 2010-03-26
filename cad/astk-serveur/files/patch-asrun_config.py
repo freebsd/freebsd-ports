@@ -1,6 +1,6 @@
---- lib/as_config.py.orig	Tue Dec 19 14:31:52 2006
-+++ lib/as_config.py	Sat Dec 23 22:07:31 2006
-@@ -75,8 +75,8 @@
+--- ./asrun/config.py.orig	2009-12-23 15:53:06.000000000 +0100
++++ ./asrun/config.py	2010-01-12 21:31:18.000000000 +0100
+@@ -68,8 +68,8 @@
           'SRCHIST'         : ['histor'],
           # name of "binaries" (as results of a make)
           'MAKE'            : ['debug nodebug'],

@@ -1,0 +1,33 @@
+--- ./bin/astk.orig	2009-12-23 15:53:05.000000000 +0100
++++ ./bin/astk	2010-02-02 19:30:34.000000000 +0100
+@@ -17,20 +17,14 @@
+ #    1 AVENUE DU GENERAL DE GAULLE, 92141 CLAMART CEDEX, FRANCE.
+ # ==============================================================================
+ 
+-set_prefix() {
+-   local this=`readlink -n -f $1`
+-   local bin=`dirname $this`
+-   prefix=`dirname $bin`
+-}
+-
+-set_prefix $0
++prefix=%%inst_dir%%/ASTK_CLIENT
+ 
+ # set environment
+ if [ -f /etc/codeaster/profile.sh ]; then
+    . /etc/codeaster/profile.sh
+ fi
+-if [ -f $prefix/etc/codeaster/profile.sh ]; then
+-   . $prefix/etc/codeaster/profile.sh
++if [ -f ?ASTER_ROOT?/etc/codeaster/profile.sh ]; then
++   . ?ASTER_ROOT?/etc/codeaster/profile.sh
+ fi
+ 
+ # start tcl/tk interpreter
+@@ -38,5 +32,5 @@
+    WISHEXECUTABLE=wish
+ fi
+ 
+-$WISHEXECUTABLE $prefix/lib/astk/astk.tcl -- $* &
++$WISHEXECUTABLE $prefix/lib/astk.tcl -- $* &
+ 

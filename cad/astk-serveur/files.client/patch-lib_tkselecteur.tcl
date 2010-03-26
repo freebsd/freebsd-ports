@@ -1,6 +1,6 @@
---- share/tkselecteur.tcl.orig	Mon Jun 23 08:50:54 2003
-+++ share/tkselecteur.tcl	Mon Jul 21 14:17:58 2003
-@@ -1699,10 +1699,10 @@
+--- ./lib/tkselecteur.tcl.orig	2009-12-23 15:53:05.000000000 +0100
++++ ./lib/tkselecteur.tcl	2010-01-26 23:31:01.000000000 +0100
+@@ -1925,10 +1925,10 @@
     set ExecCmde_shell $ini
  	radiobutton $fen.sh.sh   -font $astk::ihm(font,lab) -text /bin/sh   -value /bin/sh   -variable ExecCmde_shell
  	radiobutton $fen.sh.csh  -font $astk::ihm(font,lab) -text /bin/csh  -value /bin/csh  -variable ExecCmde_shell
