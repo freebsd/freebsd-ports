@@ -1,15 +1,15 @@
 bin/pgsql2shp
 bin/shp2pgsql
-lib/postgresql/postgis-1.4.so
-lib/postgresql/postgis.so
 lib/postgresql/liblwgeom.so
 lib/postgresql/liblwgeom.so.1
-%%DATADIR%%/contrib/postgis.sql
-%%DATADIR%%/contrib/postgis_upgrade_14_minor.sql
-%%DATADIR%%/contrib/postgis_upgrade_13_to_14.sql
-%%DATADIR%%/contrib/postgis_upgrade_12_to_14.sql
-%%DATADIR%%/contrib/spatial_ref_sys.sql
-%%DATADIR%%/contrib/uninstall_postgis.sql
+lib/postgresql/postgis-1.5.so
+lib/postgresql/postgis.so
+%%DATADIR%%/contrib/postgis-1.5/postgis.sql
+%%DATADIR%%/contrib/postgis-1.5/postgis_upgrade_13_to_15.sql
+%%DATADIR%%/contrib/postgis-1.5/postgis_upgrade_14_to_15.sql
+%%DATADIR%%/contrib/postgis-1.5/postgis_upgrade_15_minor.sql
+%%DATADIR%%/contrib/postgis-1.5/spatial_ref_sys.sql
+%%DATADIR%%/contrib/postgis-1.5/uninstall_postgis.sql
 %%DATADIR%%/utils/create_undef.pl
 %%DATADIR%%/utils/new_postgis_restore.pl
 %%DATADIR%%/utils/postgis_proc_upgrade.pl
@@ -17,7 +17,9 @@ lib/postgresql/liblwgeom.so.1
 %%DATADIR%%/utils/profile_intersects.pl
 %%DATADIR%%/utils/test_estimation.pl
 %%DATADIR%%/utils/test_joinestimation.pl
-@dirrm %%DATADIR%%/utils
-@dirrm %%DATADIR%%/contrib
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/utils
+@dirrmtry %%DATADIR%%/contrib/postgis-1.5
+@dirrmtry %%DATADIR%%/contrib
+@dirrmtry %%DATADIR%%
 @dirrmtry lib/postgresql
+@dirrmtry lib

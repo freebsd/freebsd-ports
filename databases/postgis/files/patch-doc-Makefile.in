@@ -1,6 +1,24 @@
---- doc/Makefile.in.orig	2009-07-08 12:16:53.000000000 -0300
-+++ doc/Makefile.in	2009-09-20 10:12:53.000000000 -0300
-@@ -135,12 +135,12 @@
+--- doc/Makefile.in.orig	2010-01-11 23:00:56.000000000 -0200
++++ doc/Makefile.in	2010-02-28 17:04:05.000000000 -0300
+@@ -111,14 +111,14 @@
+ 	doxygen $<
+ 
+ images: 
+-	make -C html/image_src images
++
+ 	
+ clean:
+-	make -C html/image_src clean
++	gmake -C html/image_src clean
+ 	@rm -f postgis-out.xml postgis_aggs_mm.xml
+ 
+ maintainer-clean: clean
+-	make -C html/image_src clean
++	gmake -C html/image_src clean
+ 	@rm -f html/*.html \
+ 		postgis-${POSTGIS_MAJOR_VERSION}.${POSTGIS_MINOR_VERSION}.${POSTGIS_MICRO_VERSION}.pdf
+ 
+@@ -131,12 +131,13 @@
  	rm -f $(PGSQL_SHAREDIR)/contrib/postgis_comments.sql
  
  install: html/postgis.html man/shp2pgsql.1 man/pgsql2shp.1
@@ -16,6 +34,7 @@
 +	cp ../README.postgis $(DOCSDIR)/README.postgis
 +	cp man/pgsql2shp.1 $(PREFIX)/man/man1/pgsql2shp.1
 +	cp man/shp2pgsql.1 $(PREFIX)/man/man1/shp2pgsql.1
++	gmake -C html/image_src install
  
  uninstall:
  	rm -f $(PGSQL_DOCDIR)/postgis/postgis.html
