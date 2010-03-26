@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cuse4bsd-kmod
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.9
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.selasky.org/hans_petter/cuse4bsd/releases/
 
