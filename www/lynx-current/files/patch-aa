@@ -1,6 +1,6 @@
---- makefile.in.orig	Fri May 18 02:53:22 2007
-+++ makefile.in	Fri May 25 05:06:51 2007
-@@ -365,14 +365,9 @@
+--- makefile.in.orig	2009-11-25 13:56:48.000000000 +0300
++++ makefile.in	2010-03-26 11:13:46.000000000 +0300
+@@ -384,14 +384,9 @@
  		if test "$(COMPRESS_PROG)" != "" ; then \
  			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
  		fi'
@@ -18,7 +18,7 @@
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
  		$(SYSCONFDIR)/lynx.tmp | \
-@@ -380,9 +375,10 @@
+@@ -399,9 +394,10 @@
  	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
  	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
@@ -29,9 +29,9 @@
  	-rm -f $(SYSCONFDIR)/lynx.tmp
 +	-[ ! -f $(SYSCONFDIR)/lynx.cfg ] && $(INSTALL_DATA) $(SYSCONFDIR)/lynx.cfg.default $(SYSCONFDIR)/lynx.cfg
  
- LYHelp.h : help_files.sed LYHelp.hin
+ LYHelp.h : help_files.sed $(srcdir)/LYHelp.hin
  	@echo Creating $@
-@@ -404,7 +400,7 @@
+@@ -423,10 +419,11 @@
  	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(SYSCONFDIR)
@@ -39,4 +39,9 @@
 +	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg.default
  
  install-lss : $(SYSCONFDIR)
- 	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss
+-	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss
++	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss.default
++	-[ ! -f $(SYSCONFDIR)/lynx.lss ] && $(INSTALL_DATA) $(SYSCONFDIR)/lynx.lss.default $(SYSCONFDIR)/lynx.lss
+ 
+ uninstall ::
+ @MSG_DIR_MAKE@	cd $(PO_DIR) && $(MAKE_RECUR) uninstall
