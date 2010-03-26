@@ -1,6 +1,6 @@
---- ./src/ci/MEDunvCr.c.orig	Thu May 18 11:43:58 2006
-+++ ./src/ci/MEDunvCr.c	Mon Dec 11 21:31:06 2006
-@@ -43,6 +43,12 @@
+--- ./src/ci/MEDunvCr.c.orig	2009-07-06 17:49:32.000000000 +0200
++++ ./src/ci/MEDunvCr.c	2010-01-31 14:20:10.000000000 +0100
+@@ -50,6 +50,12 @@
  
  #endif
  
@@ -13,15 +13,15 @@
  med_err 
  MEDunvCr(med_idt fid, char *maa)
  {
-@@ -87,7 +93,11 @@
-   nSize = strlen(nomu)-1;
-   if ( sprintf(&nomu[nSize]," %hu",tp.millitm) < 0 ) return -1;
- #else
+@@ -100,7 +106,11 @@
+    goto ERROR;
+   }
+   strcat(nomu,mypasswd->pw_name);*/
 +# ifdef __FreeBSD__
-+  if ( !getpwuid(geteuid()) ) return -1;
++  if ( !getpwuid(geteuid()) ) {
 +# else
-   if ( !cuserid(nomu) ) return -1;
+   if ( !cuserid(nomu) ) {
 +# endif
-   strcat(nomu," ");
-   temps=time(&temps);
-   strcat(nomu,ctime(&temps));
+    MESSAGE("Impossible d'obtenir le nom de l'utilisateur effectif");
+    goto ERROR;
+   }
