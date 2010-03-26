@@ -7,9 +7,8 @@
 
 PORTNAME=	eficas
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=	1.16.0-1
+DISTVERSION=	1.17.0-1
 DISTVERSIONSUFFIX=	.noarch
-PORTREVISION=	2
 CATEGORIES=	french cad
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
@@ -22,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw		\
 		${PYNUMERIC}							\
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-ASTER_VER=	10.0.3
-ASTER_DISTVERSION=	${ASTER_VER}-2
+ASTER_VER=	10.1.0
+ASTER_DISTVERSION=	${ASTER_VER}-4
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
 
 USE_PYTHON=	yes
@@ -45,7 +44,8 @@ EF_LANG=	ang
 .endif
 
 .if !defined(WITHOUT_QT)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/qt.so:${PORTSDIR}/x11-toolkits/py-qt
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui	\
+		${PYTHON_SITELIBDIR}/PyQt4/QtAssistant.so:${PORTSDIR}/devel/py-qt4-assistant
 SUB_FILES+=	qtEficas
 .endif
 
@@ -54,7 +54,8 @@ ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py	
 		Aster/qtEficas_aster.py generator/OpenturnsSTD.py	\
 		generator/generator_openturns_study.py generator/generator_openturns_wrapper.py
 FIXSHTK=	bureau.py cataediteur.py panels.py
-FIXSHQT=	qtCommun.py
+FIXSHQT4=	typeNode.py
+FIXBASH=	cataSTA9/Macro/macr_ecre_calc_ops.py cataSTA10/Macro/macr_ecre_calc_ops.py
 
 post-extract:
 	(cd ${WRKDIR} &&	\
@@ -67,7 +68,7 @@ pre-configure:
 	${REINPLACE_CMD} -e "s|^#!*./usr/bin/env python|#!${PYTHON_CMD}|"	\
 		-e "s|^#!*./bin/env python|#!${PYTHON_CMD}|" ${WRKSRC}/${FILE}
 .endfor
-.for tk in TK QT
+.for tk in TK QT4
 . for FILE in ${FIXSH${tk}}
 	${REINPLACE_CMD} -e "s|/usr/bin/sh|/bin/sh|" ${WRKSRC}/Interface${tk}/${FILE}
 . endfor
@@ -77,11 +78,14 @@ pre-configure:
 	${REINPLACE_CMD} -e "s#os.path.join(rep_cata,'..','Doc')#\"${DOCSDIR}\"#"	\
 		-e "s#os.path.join(prefs.REPINI,'../Pmw')#'${PYTHON_SITELIBDIR}/Pmw'#"	\
 		${WRKSRC}/Aster/editeur.ini
+.for cata in ${FIXBASH}
+	${REINPLACE_CMD} -e "s|'/bin/bash'|'${LOCALBASE}/bin/bash'|"	\
+		${WRKSRC}/Aster/Cata/${cata}
+.endfor
 
 do-install:
 	${MKDIR} ${EFICASDIR}
 	${CP} -R ${WRKSRC}/* ${EFICASDIR}
-	${RMDIR} ${EFICASDIR}/Aster/Doc
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin

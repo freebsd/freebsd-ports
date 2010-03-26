@@ -17,6 +17,9 @@ case $2 in
 	if [ -f ${CATADIR}/cataSTA9c_clefs_docu ]; then
 	    mv ${CATADIR}/cataSTA9c_clefs_docu ${CATADIR}/cataSTA9c_clefs_docu.orig
 	fi
+	if [ -f ${CATADIR}/cataSTA10c_clefs_docu ]; then
+	    mv ${CATADIR}/cataSTA10c_clefs_docu ${CATADIR}/cataSTA10c_clefs_docu.orig
+	fi
 	;;
     POST-INSTALL)
         ;;
