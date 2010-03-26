@@ -7,9 +7,8 @@
 
 PORTNAME=		aster
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=		10.0.3-2
+DISTVERSION=		10.1.0-4
 DISTVERSIONSUFFIX=	.noarch
-PORTREVISION=	2
 CATEGORIES=		french cad
 MASTER_SITES=		http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 
@@ -43,8 +42,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 LIB_DEPENDS+=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
 		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
 		hdf5.0:${PORTSDIR}/science/hdf5					\
-		med.2:${PORTSDIR}/french/med					\
-		f2c.2:${PORTSDIR}/lang/f2c
+		med.2:${PORTSDIR}/french/med
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
@@ -55,13 +53,13 @@ HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-full-src-${PORTVERSION:R}
-PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster} TOOLDIR=${PORTNAME}/${vaster}/outils
-PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster} TOOLDIR=${PORTNAME}/outils
 .if defined(WITHOUT_ASTK_CLI)
-PKGMESSIN=	pkg-message.sans-astk.in
+SUB_FILES=	pkg-message.sans-astk
 .else
-PKGMESSIN=	pkg-message.in
+SUB_FILES=	pkg-message
 .endif
+SUB_LIST=	tools_dir=${tools_dir}
 
 INTERACTIVE_SCRIPTS=	check_compilers.py setup.py
 
@@ -144,6 +142,7 @@ HOME_MPI=	${LOCALBASE}
 .endif
 
 USE_FORTRAN=	yes
+GCC_VER=	`${CC} -dumpversion`
 
 TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
@@ -199,9 +198,10 @@ vaster=		STA${PORTVERSION:R:R}
 INST_DAT=	LICENSE.TERMS astest cata_ele.pickled catalo catapy	\
 		elements etude materiau
 INST_PY=	bibpyt commande
+INST_SH=	as_run parallel_cp
 DAT2FIX=	astout.export config.txt forma01a.export
 inst_dir=	${PREFIX}/${PORTNAME}/${vaster}
-tools_dir=	${inst_dir}/outils
+tools_dir=	${PREFIX}/${PORTNAME}/outils
 v_ifdef=	${OPSYS:U}
 SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
 tcl_dir=	${LOCALBASE}
@@ -220,13 +220,15 @@ ${WRKSRC}/instdir/${vaster}/elements:	build
 
 pre-everything::
 .if defined(WITH_MPI)
-	@${ECHO_MSG} "To build Code_Aster with MPI enabled, you nedd to run `mpd &'"
+	@${ECHO_MSG} "To build Code_Aster with MPI enabled, you need to run `mpd &'"
 .endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|PREFER_SHARED_LIBS=False|PREFER_SHARED_LIBS=True|' ${WRKSRC}/setup.cfg
 	${REINPLACE_CMD} -e 's|/opt/aster|${WRKSRC}/instdir|'		\
 		${WRKSRC}/setup.cfg
+	${REINPLACE_CMD} -e 's|?ASTER_ROOT?|${WRKSRC}/instdir|'		\
+		${WRKSRC}/products.py
 	${REINPLACE_CMD} -e "s|'gfortran'|'${FC}'|g" ${WRKSRC}/check_compilers.py
 .if defined(WITH_ATLAS)
 	${REINPLACE_CMD} -e "s|cfg\['BLASLIB'\]|cfg['BLASLIB'], cfg['ATLASLIB']|"	\
@@ -255,6 +257,7 @@ pre-configure:
 	${ECHO_CMD} "_install_crpcrs = False"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_aster_Linux = False"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "_install_scotch  = False"			>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "OPT_ENV = 'verbose=True'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_SCOTCH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_METIS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 .if defined(WITH_MUMPS)
@@ -264,11 +267,15 @@ pre-configure:
 	${ECHO_CMD} "MUMPSLIB = '${MUMPSLIB}'"			>> ${WRKSRC}/setup.cfg
 . endif
 .endif
-	${ECHO_CMD} "LD='${CC}'"				>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90='${LOCALBASE}/bin/${FC}'"		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "SYSLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -L${FORTRANLIBDIR} -L${FORTRANLIBDIR2} -lgfortranbegin  -lgfortran'"	\
+	${ECHO_CMD} "CC='${CC}'"				>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "CXX='${CXX}'"				>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "CXXLIB = '-L${LOCALBASE}/lib/${CC} -lstdc++ -lsupc++'"	\
 		>> ${WRKSRC}/setup.cfg
-
+	${ECHO_CMD} "LD='${FC}'"				>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "F90='${LOCALBASE}/bin/${FC}'"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "OTHERLIB='-Xlinker -export-dynamic ${PTHREAD_LIBS} -lutil -lm -lz -lgfortran ${PTHREAD_LIBS} -lz'"	\
+		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "SYSLIB='${PTHREAD_LIBS} -lz'"		>> ${WRKSRC}/setup.cfg
 .if defined(WITH_MPI)
 	${ECHO_CMD} "HOME_MPI = '${HOME_MPI}'"			>> ${WRKSRC}/setup.cfg
 .else
@@ -285,6 +292,7 @@ pre-configure:
 	${ECHO_CMD} "LAPACKLIB='${LOCALBASE}/lib/liblapack.a'"	>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "GZIP='/usr/bin/gzip'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "TERMINAL='xterm'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "FFLAGS='-c ${FFLAGS} ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
@@ -323,43 +331,53 @@ do-configure:
 	@${ECHO_MSG} "------------ Fin debug ------------------"
 
 pre-build:
-	${MKDIR} ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf			\
-		${WRKSRC}/instdir/ASTK/ASTK_SERV/lib			\
-		${WRKSRC}/instdir/outils
-	${SED} -e 's|${LOCALBASE}/aster|${WRKSRC}/instdir|'		\
-		< ${LOCALBASE}/aster/ASTK/ASTK_SERV/conf/config		\
-		> ${WRKSRC}/instdir/ASTK/ASTK_SERV/conf/config
-	${CP} ${LOCALBASE}/aster/ASTK/ASTK_SERV/conf/aster_profile.sh	\
-		${WRKSRC}/instdir/ASTK/ASTK_SERV/conf
-	${CP} -R ${LOCALBASE}/aster/ASTK/ASTK_SERV/bin			\
-		${WRKSRC}/instdir/ASTK/ASTK_SERV
-	${CP} -R ${LOCALBASE}/aster/ASTK/ASTK_SERV/lib			\
-		${WRKSRC}/instdir/ASTK/ASTK_SERV/
+	${MKDIR} ${WRKSRC}/instdir/etc/codeaster
+	${CP} ${LOCALBASE}/aster/etc/codeaster/*		\
+		${WRKSRC}/instdir/etc/codeaster/
+	${CP} -R ${LOCALBASE}/aster/ASTK/ASTK_SERV/bin		\
+		${LOCALBASE}/aster/ASTK/ASTK_SERV/asrun		\
+		${WRKSRC}/instdir/
+	${REINPLACE_CMD} -e 's|${LOCALBASE}/aster|${WRKSRC}/instdir|'	\
+		${WRKSRC}/instdir/bin/as_run
+.for sf in etc/codeaster/profile.sh asrun/installation.py
+	${REINPLACE_CMD} -e 's|${LOCALBASE}/aster/ASTK/ASTK_SERV|${WRKSRC}/instdir|g'	\
+		-e 's|${LOCALBASE}/aster|${WRKSRC}/instdir|g'	\
+		${WRKSRC}/instdir/${sf}
+.endfor
 
 do-build:
 	(cd ${BUILD_WRKSRC} &&	\
-		${PYTHON_CMD} setup.pyo ${DEBUG_FLAGS} install aster	\
+	${PYTHON_CMD} setup.pyo ${DEBUG_FLAGS} install aster	\
 		| tee ${BUILD_WRKSRC}/build.log)
-
-pre-install:
 	${CHMOD} go-x ${WRKSRC}/instdir/${vaster}/materiau/A42_REF_A.NOMI
 
-do-install:	${WRKSRC}/instdir/${vaster}/elements
-	${MKDIR} ${tools_dir} ${inst_dir}
+do-install:
+	${MKDIR} ${tools_dir} ${inst_dir} ${PREFIX}/${PORTNAME}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/instdir/${vaster}/asteru ${inst_dir}
 	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/asterd ${inst_dir} # Don't strip!
 	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/profile.sh ${inst_dir}
+	${ECHO_CMD} "" >> ${inst_dir}/profile.sh
 	${ECHO_CMD} "HDF5_DISABLE_VERSION_CHECK=1" >> ${inst_dir}/profile.sh
 .for FILE in ${DAT2FIX}
 	${SED} -e 's|${WRKSRC}/instdir/${vaster}|${inst_dir}|g'		\
-		-e 's|${WRKSRC}/instdir|${inst_dir}|g'			\
 		-e 's|${WRKSRC}/instdir/outils|${tools_dir}|g'		\
+		-e 's|${WRKSRC}/instdir|${inst_dir}|g'			\
+		-e 's|^F list|@F list|'					\
+		-e 's|^#F list|F list|'					\
+		-e 's|^@F list|#F list|'				\
 		-e 's|P mode astout|P mode interactif|'			\
 		-e 's|P mode forma01a|P mode interactif|'		\
+		-e 's|R resu_test ${inst_dir}|R resu_test /tmp|'	\
 	< ${WRKSRC}/instdir/${vaster}/${FILE} > ${inst_dir}/${FILE}
 .endfor
+	${LN} -sf ${inst_dir}/config.txt ${PREFIX}/${PORTNAME}/
 .for FILE in ${INST_DAT} ${INST_PY}
 	${CP} -R ${WRKSRC}/instdir/${vaster}/${FILE} ${inst_dir}
+.endfor
+.for FILE in ${INST_SH}
+	${SED} -e 's|${WRKSRC}/instdir|${PREFIX}/${PORTNAME}|'	\
+	< ${WRKSRC}/instdir/bin/${FILE} > ${PREFIX}/${PORTNAME}/bin/${FILE}
+	${CHMOD} a+x ${PREFIX}/${PORTNAME}/bin/${FILE}
 .endfor
 	${REINPLACE_CMD} -e 's|cat ./fort.15 ./ficode|cat ./ficode|'	\
 		${inst_dir}/bibpyt/Execution/E_SUPERV.py
@@ -391,11 +409,7 @@ post-install:
 	${LN} -fs ${LOCALBASE}/bin/gracebat ${tools_dir}/
 	${LN} -fs ${LOCALBASE}/bin/xmgrace ${tools_dir}/
 .endif
-	${LN} -fs ${LOCALBASE}/${PORTNAME}/ASTK/ASTK_SERV/conf/aster_profile.sh	\
-		${PREFIX}/${PORTNAME}/
 	@${ECHO_MSG}
-	@${SED} -e "s#%%tools_dir%%#${tools_dir}#"	\
-		${FILESDIR}/${PKGMESSIN} > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
@@ -405,7 +419,7 @@ regression-test:	install
 	(cd ${inst_dir};	\
 	HDF5_DISABLE_VERSION_CHECK=1	\
 	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run astout.export)
-	@${ECHO_MSG} "Check ${inst_dir}/astest/*.erre"
+	@${ECHO_MSG} "Check /tmp/resu_test/*.erre"
 .endif
 
 .include <bsd.port.post.mk>
