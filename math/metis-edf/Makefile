@@ -7,7 +7,7 @@
 
 PORTNAME=	metis-edf
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=	4.1-1
+DISTVERSION=	4.1-2
 DISTVERSIONSUFFIX=	.noarch
 PORTREVISION=	1
 CATEGORIES=	math
@@ -19,8 +19,8 @@ COMMENT=	Meshes partionning tool used by Code_Aster
 
 CONFLICTS=	metis-[0-9]*
 
-ASTER_VER=	9.4.0
-ASTER_DISTVERSION=	${ASTER_VER}-2
+ASTER_VER=	10.1.0
+ASTER_DISTVERSION=	${ASTER_VER}-4
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
 
 ALL_TARGET=	default
@@ -31,7 +31,7 @@ REINPLACE_ARGS=	-i ""
 USE_FORTRAN=	yes
 FFLAGS+=	-O2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME:C/-/_/}-${PORTVERSION:R}
 
 PROGS=		kmetis onmetis.exe pmetis
 DOCS=		CHANGES Doc/manual.ps README_Code_Aster
@@ -44,7 +44,7 @@ GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 post-extract:
 	(cd ${WRKDIR} &&	\
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${PORTNAME}-${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${PORTNAME:C/-/_/}-${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
 
 pre-configure:
 .if ${MACHINEARCH} != "i386"
@@ -58,13 +58,14 @@ pre-configure:
 	${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	${REINPLACE_CMD} -e 's|%%FORTRANLIBS%%|${FORTRANLIBS}|g' -e 's|%%GCCLIBDIR%%|${GCCLIBDIR}|g'\
 		${WRKSRC}/Programs/Makefile
-	${REINPLACE_CMD} -e 's|/home01/courtois/PKG/BUILD/METIS/metis-edf-${PORTVERSION:R}|${WRKSRC}|'\
-		${WRKSRC}/onmetis
+	${REINPLACE_CMD} -e 's|$$prefix|${PREFIX}/bin|' ${WRKSRC}/CONFIG/onmetis.in
+	${REINPLACE_CMD} -e 's|$$prefix|${WRKSRC}|' ${WRKSRC}/onmetis
 
 do-install:
 	${CP} ${WRKSRC}/CONFIG/onmetis.in ${WRKSRC}/onmetis
 	${REINPLACE_CMD} -e "s#HOME_METIS#${PREFIX}/bin#" ${WRKSRC}/onmetis
 	${INSTALL_SCRIPT} ${WRKSRC}/onmetis ${PREFIX}/bin
+	${REINPLACE_CMD} -e 's|${WRKSRC}|${PREFIX}/bin|' ${PREFIX}/bin/onmetis
 	${INSTALL_PROGRAM} ${PROGS:S|^|${WRKSRC}/|} ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${PREFIX}/lib
 
