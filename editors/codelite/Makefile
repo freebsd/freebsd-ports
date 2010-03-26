@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	codelite
-DISTVERSION=	2.2.0.${SVN_REVISION}
-PORTREVISION=	1
+DISTVERSION=	2.3.0.${SVN_REVISION}
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/Releases/${PORTNAME}-${PORTVERSION}
 
@@ -15,18 +14,18 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An Open Source IDE for C/C++
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
 OPTIONS=	CSCOPE	"Enable CScope integration" OFF
 
 USE_WX=		2.8
 WX_UNICODE=	yes
-USE_GNOME=	gtk20
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-SVN_REVISION=	3681
+SVN_REVISION=	3833
 
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
@@ -44,9 +43,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|$${cur_rev}|${SVN_REVISION}|' \
 	    ${WRKSRC}/le_makerevision.sh
 # 	CTags already installed
-	(if [ -f ${LOCALBASE}/include/readtags.h ]; then \
-	    ${RM} ${WRKSRC}/CodeLite/readtags.h; \
-	 fi; \
-	)
+.if exists(${LOCALBASE}/include/readtags.h)
+    ${RM} ${WRKSRC}/CodeLite/readtags.h
+.endif
 
 .include <bsd.port.post.mk>
