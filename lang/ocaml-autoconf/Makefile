@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autoconf
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	lang
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/181/
 PKGNAMEPREFIX=	ocaml-
@@ -16,6 +16,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Autoconf module for ocaml
 
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-1.0
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 AC_SUBDIR=	${PREFIX}/share/aclocal
