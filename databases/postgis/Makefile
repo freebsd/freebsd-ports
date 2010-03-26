@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgis
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	databases geography
 MASTER_SITES=	http://postgis.refractions.net/download/ \
   		http://www.postgis.org/download/
@@ -14,12 +14,13 @@ MASTER_SITES=	http://postgis.refractions.net/download/ \
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/geos-config:${PORTSDIR}/graphics/geos
-LIB_DEPENDS=	proj.6:${PORTSDIR}/graphics/proj
+LIB_DEPENDS=	proj.6:${PORTSDIR}/graphics/proj \
+		geos.0:${PORTSDIR}/graphics/geos
 RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 USE_BISON=	build
 USE_PGSQL=	yes
+DEFAULT_PGSQL_VER=	83
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
@@ -28,6 +29,7 @@ USE_PERL5_BUILD=	yes
 INSTALL_TARGET=	install
 
 GNU_CONFIGURE=	yes
+USE_GNOME=	libxml2
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	DATADIR=${DATADIR} DOCSDIR=${DOCSDIR}

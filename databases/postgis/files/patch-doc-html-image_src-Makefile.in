@@ -1,0 +1,30 @@
+--- doc/html/image_src/Makefile.in.orig	2010-01-12 01:31:49.000000000 +0800
++++ doc/html/image_src/Makefile.in	2010-03-26 10:15:25.000000000 +0800
+@@ -83,7 +83,18 @@
+ 	../images/st_touches04.png \
+ 	../images/st_touches05.png \
+ 	../images/st_touches06.png \
+-	../images/st_within01.png
++	../images/st_within01.png \
++	../images/caution.png \
++	../images/check.png \
++	../images/important.png \
++	../images/note.png \
++	../images/tip.png \
++	../images/warning.png \
++	../images/matrix_autocast.png \
++	../images/matrix_transform.png \
++	../images/matrix_checkmark.png
++
++ 
+ 
+ # Images that are created with dimensions 100x100
+ IMAGES_RESIZED= \
+@@ -134,3 +145,7 @@
+ 	@rm -f generator
+ 	@rm -f tmp[0-9].png
+ 
++install:
++	@mkdir -p $(DOCSDIR)/images
++	cp $(IMAGES) $(DOCSDIR)/images
++
