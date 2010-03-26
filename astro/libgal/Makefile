@@ -21,7 +21,9 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: invokes i386 asm
+.elif ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64: gcc coredump
 .endif
 
