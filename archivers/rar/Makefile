@@ -24,15 +24,15 @@ PORTDOCS=	technote.txt license.txt whatsnew.txt order.htm \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=	fails to install on ia64/powerpc/sparc64: File format not recognized
+.elif ${ARCH} == "amd64" || ${ARCH} == "ia64"
 .if !defined(HAVE_COMPAT_IA32_KERN)
 HAVE_COMPAT_IA32_KERN!=	if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then ${ECHO_CMD} YES; fi
 .endif
 .if !defined(HAVE_COMPAT_IA32_KERN)
 IGNORE=	requires a kernel with compiled-in IA32 compatibility
 .endif
-.elif ${ARCH} == "sparc64"
-BROKEN=	fails to install on sparc64: File format not recognized
 .endif
 
 do-install:
