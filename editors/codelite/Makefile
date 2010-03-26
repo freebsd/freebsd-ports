@@ -44,7 +44,7 @@ post-patch:
 	    ${WRKSRC}/le_makerevision.sh
 # 	CTags already installed
 .if exists(${LOCALBASE}/include/readtags.h)
-    ${RM} ${WRKSRC}/CodeLite/readtags.h
+	${RM} ${WRKSRC}/CodeLite/readtags.h
 .endif
 
 .include <bsd.port.post.mk>
