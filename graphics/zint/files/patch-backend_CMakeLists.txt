@@ -1,0 +1,24 @@
+
+$FreeBSD$
+
+--- backend/CMakeLists.txt.orig
++++ backend/CMakeLists.txt
+@@ -2,7 +2,8 @@
+ 
+ project(zint)
+ 
+-find_package(PNG)
++find_package(PNG REQUIRED)
++include_directories(${PNG_INCLUDE_DIR})
+ 
+ set(zint_COMMON_SRCS common.c library.c ps.c large.c reedsol.c gs1.c svg.c png.c)
+ set(zint_ONEDIM_SRCS code.c code128.c 2of5.c upcean.c telepen.c medical.c plessey.c rss.c)
+@@ -21,7 +22,7 @@
+ set_target_properties(zint PROPERTIES 	SOVERSION "${ZINT_VERSION_MAJOR}.${ZINT_VERSION_MINOR}"
+ 					VERSION ${ZINT_VERSION})
+ 
+-target_link_libraries(zint ${PNG_LIBRARIES} )
++target_link_libraries(zint ${PNG_LIBRARY} )
+ 
+ install(TARGETS zint  ${INSTALL_TARGETS_DEFAULT_ARGS} )
+ install(FILES zint.h DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
