@@ -4,6 +4,7 @@ bin/codelite_exec
 bin/codelite_fix_files
 bin/codelite_indexer
 bin/codelite_kill_children
+bin/codelite_xterm
 %%DATADIR%%/astyle.sample
 %%DATADIR%%/config/accelerators.conf.default
 %%DATADIR%%/config/build_settings.xml.default
@@ -61,6 +62,7 @@ bin/codelite_kill_children
 %%DATADIR%%/plugins/QmakePlugin.so
 %%DATADIR%%/plugins/SnipWiz.so
 %%DATADIR%%/plugins/Subversion2.so
+%%DATADIR%%/plugins/SymbolView.so
 %%DATADIR%%/plugins/UnitTestCPP.so
 %%DATADIR%%/plugins/abbreviation.so
 %%DATADIR%%/plugins/cscope.so
