@@ -121,6 +121,7 @@ CONFIGURE_ARGS+=--disable-tests \
 		--disable-acm \
 		--disable-amrnb \
 		--disable-alsa \
+		--disable-dvb \
 		--disable-http \
 		--enable-cdrom \
 		--disable-gconf \
