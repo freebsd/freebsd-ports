@@ -2,8 +2,9 @@ include/libssh/callbacks.h
 include/libssh/libssh.h
 include/libssh/server.h
 include/libssh/sftp.h
+%%SSH1%%include/libssh/ssh1.h
 include/libssh/ssh2.h
 lib/libssh.so
 lib/libssh.so.4
-lib/libssh.so.4.0.1
+lib/libssh.so.4.0.2
 @dirrm include/libssh
