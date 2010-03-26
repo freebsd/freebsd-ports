@@ -37,5 +37,8 @@ post-patch:
 		${WRKSRC}/src/iop/Makefile.in \
 		${WRKSRC}/src/views/Makefile.in \
 		${WRKSRC}/src/libs/Makefile.in
+# FreeBSD 6.X does not have posix_memalign(3)
+	@${REINPLACE_CMD} -e 's,__APPLE__),& || __FreeBSD_version < 700013,' \
+		${WRKSRC}/src/common/darktable.c
 
 .include <bsd.port.mk>
