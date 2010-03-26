@@ -1,0 +1,17 @@
+--- bin/parallel_cp.orig	2009-12-23 15:53:06.000000000 +0100
++++ bin/parallel_cp	2010-02-02 19:23:00.000000000 +0100
+@@ -17,13 +17,7 @@
+ #    1 AVENUE DU GENERAL DE GAULLE, 92141 CLAMART CEDEX, FRANCE.
+ # ==============================================================================
+ 
+-set_prefix() {
+-   local this=`readlink -n -f $1`
+-   local bin=`dirname $this`
+-   prefix=`dirname $bin`
+-}
+-
+-set_prefix $0
++prefix=?ASTER_ROOT?
+ 
+ # set environment
+ if [ -f /etc/codeaster/profile.sh ]; then
