@@ -19,7 +19,7 @@
     SUBDIR += alias-fonts
     SUBDIR += another-htmllint
     SUBDIR += anthy
-    SUBDIR += asterisk-sound
+    SUBDIR += asterisk-sounds
     SUBDIR += aterm
     SUBDIR += awffull
     SUBDIR += bible_names-fpw
