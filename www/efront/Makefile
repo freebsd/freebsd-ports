@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	efront
-DISTVERSION=	3.5.2
+DISTVERSION=	3.6.1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}learning/${PORTNAME}learning/eFront%20v${PORTVERSION}%20build%203470
-DISTNAME=	${PORTNAME}_${PORTVERSION}_build3470
+MASTER_SITES=	SF/${PORTNAME}learning/
+DISTNAME=	${PORTNAME}_${PORTVERSION}_build6235
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Elearning and Human Capital Development platform
 
 USE_ZIP=	YES
