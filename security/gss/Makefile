@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gss
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,5 +44,10 @@ PLIST_SUB+=	NLS=""
 
 pre-install:
 	@${MKDIR} ${PREFIX}/${INFO_PATH}
+
+post-patch:
+	# There is no need to re-run automake after configure
+	@${REINPLACE_CMD} '/^Makefile.gdoc/s,$$(top_builddir)/configure,,' \
+		${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.post.mk>
