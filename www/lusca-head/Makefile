@@ -75,13 +75,13 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	lusca
-DISTVERSION=	r14281
-PORTREVISION=	3
+DISTVERSION=	r14499
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	lusca-cache
 PKGNAMESUFFIX=	-head
-DISTNAME=	LUSCA_HEAD-r14281
+DISTNAME=	LUSCA_HEAD-r14499
 # EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	adrian@freebsd.org
@@ -104,6 +104,7 @@ SUB_LIST+=	SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID}
 
 OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_SASL_AUTH "Install SASL authentication helpers" off \
+		SQUID_KERBEROS_HELPER "Install Keberos authentication helper" off \
 		SQUID_DELAY_POOLS "Enable delay pools" on \
 		SQUID_SNMP "Enable SNMP support" on \
 		SQUID_CARP "Enable CARP support" on \
@@ -181,7 +182,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800037
+.if defined(SQUID_KERBEROS_HELPER) && ${OSVERSION} >= 800037
 BROKEN=		does not compile with Heimdal 1.1 in 8.0-CURRENT
 .endif
 
@@ -223,7 +224,7 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 			--enable-digest-auth-helpers="${digest_auth}" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-ntlm-auth-helpers="SMB"
-.if !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
+.if defined(SQUID_KERBEROS_HELPER) && !defined(NO_KERBEROS) && !defined(WITHOUT_KERBEROS)
 # XXX This currently only works with heimdal from the base system,
 #     see ${FILES_DIR}/patch-helpers_negotiate_auth-squid_kerb_auth_*
 CONFIGURE_ARGS+=	--enable-negotiate-auth-helpers="squid_kerb_auth"
