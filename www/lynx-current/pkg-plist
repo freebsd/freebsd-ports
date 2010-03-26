@@ -2,7 +2,9 @@ bin/lynx
 @unexec if [ -f %D/etc/lynx.cfg ] && cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.default; then rm -f %D/etc/lynx.cfg; fi
 etc/lynx.cfg.default
 @exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
-etc/lynx.lss
+@unexec if [ -f %D/etc/lynx.lss ] && cmp -s %D/etc/lynx.lss %D/etc/lynx.lss.default; then rm -f %D/etc/lynx.lss; fi
+etc/lynx.lss.default
+@exec if [ ! -f %D/etc/lynx.lss ] ; then cp -p %D/%F %B/lynx.lss; fi
 @exec mkdir -p %D/share/lynx_help
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/COPYHEADER
@@ -32,6 +34,7 @@ etc/lynx.lss
 %%DOCSDIR%%/docs/README.jp
 %%DOCSDIR%%/docs/README.metrics
 %%DOCSDIR%%/docs/README.options
+%%DOCSDIR%%/docs/README.release
 %%DOCSDIR%%/docs/README.rootcerts
 %%DOCSDIR%%/docs/README.ssl
 %%DOCSDIR%%/docs/README.sslcerts
