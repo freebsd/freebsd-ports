@@ -1984,6 +1984,7 @@ cursor-grounation-theme         ports/x11-themes/cursor-grounation-theme
 cursor-jimmac-theme             ports/x11-themes/cursor-jimmac-theme
 cursor-neutral-theme            ports/x11-themes/cursor-neutral-theme
 cursor-polar-theme              ports/x11-themes/cursor-polar-theme
+cuse4bsd-kmod                   ports/multimedia/cuse4bsd-kmod
 cutecom                         ports/comms/cutecom
 cutils                          ports/devel/cutils
 cutmp3                          ports/audio/cutmp3
@@ -10714,6 +10715,7 @@ p5-BS-Event                     ports/devel/p5-BS-Event
 p5-BSD-Jail-Object              ports/sysutils/p5-BSD-Jail-Object
 p5-BSD-Resource                 ports/devel/p5-BSD-Resource
 p5-BSD-Sysctl                   ports/sysutils/p5-BSD-Sysctl
+p5-BSD-devstat                  ports/devel/p5-BSD-devstat
 p5-BSD-stat                     ports/devel/p5-BSD-stat
 p5-BZ-Client                    ports/devel/p5-BZ-Client
 p5-Badger                       ports/devel/p5-Badger
@@ -13137,6 +13139,7 @@ p5-Pipeline                     ports/devel/p5-Pipeline
 p5-PlRPC                        ports/net/p5-PlRPC
 p5-Plack                        ports/www/p5-Plack
 p5-Plack-Middleware-Deflater    ports/www/p5-Plack-Middleware-Deflater
+p5-Plack-Middleware-Session     ports/www/p5-Plack-Middleware-Session
 p5-Plack-Request                ports/www/p5-Plack-Request
 p5-Plack-Server-AnyEvent        ports/www/p5-Plack-Server-AnyEvent
 p5-Plack-Server-Coro            ports/www/p5-Plack-Server-Coro
@@ -14460,6 +14463,7 @@ p5-bot-basicbot                 ports/irc/p5-Bot-BasicBot
 p5-boulder                      ports/converters/p5-Boulder
 p5-brackup                      ports/sysutils/p5-Brackup
 p5-bs-event                     ports/devel/p5-BS-Event
+p5-bsd-devstat                  ports/devel/p5-BSD-devstat
 p5-bsd-jail-object              ports/sysutils/p5-BSD-Jail-Object
 p5-bsd-resource                 ports/devel/p5-BSD-Resource
 p5-bsd-stat                     ports/devel/p5-BSD-stat
@@ -16828,6 +16832,7 @@ p5-pip                          ports/devel/p5-pip
 p5-pipeline                     ports/devel/p5-Pipeline
 p5-plack                        ports/www/p5-Plack
 p5-plack-middleware-deflater    ports/www/p5-Plack-Middleware-Deflater
+p5-plack-middleware-session     ports/www/p5-Plack-Middleware-Session
 p5-plack-request                ports/www/p5-Plack-Request
 p5-plack-server-anyevent        ports/www/p5-Plack-Server-AnyEvent
 p5-plack-server-coro            ports/www/p5-Plack-Server-Coro
@@ -19264,6 +19269,7 @@ pkg-orphan                      ports/ports-mgmt/pkg-orphan
 pkg_add_it                      ports/ports-mgmt/pkg_add_it
 pkg_cleanup                     ports/ports-mgmt/pkg_cleanup
 pkg_cutleaves                   ports/ports-mgmt/pkg_cutleaves
+pkg_jail                        ports/ports-mgmt/pkg_jail
 pkg_remove                      ports/ports-mgmt/pkg_remove
 pkg_replace                     ports/ports-mgmt/pkg_replace
 pkg_rmleaves                    ports/ports-mgmt/pkg_rmleaves
@@ -21383,9 +21389,12 @@ ru-rubygem-rutils               ports/russian/rubygem-rutils
 ru-rus-ispell                   ports/russian/rus-ispell
 ru-rux                          ports/russian/rux
 ru-stardict-bars                ports/russian/stardict-bars
+ru-stardict-computer            ports/russian/stardict-computer
 ru-stardict-dal                 ports/russian/stardict-dal
+ru-stardict-engcom              ports/russian/stardict-engcom
 ru-stardict-mueller7            ports/russian/stardict-mueller7
 ru-stardict-mueller7accent      ports/russian/stardict-mueller7accent
+ru-stardict-pc                  ports/russian/stardict-pc
 ru-tac+ia                       ports/russian/tac+ia
 ru-tidyup-mail                  ports/russian/tidyup-mail
 ru-unzip                        ports/russian/unzip
@@ -22360,6 +22369,7 @@ ski                             ports/emulators/ski
 skill                           ports/sysutils/skill
 skim                            ports/textproc/skim
 skinlf                          ports/x11-toolkits/skinlf
+skipfish                        ports/security/skipfish
 skippy                          ports/x11-wm/skippy
 skippy-xd                       ports/x11-wm/skippy-xd
 skribe                          ports/textproc/skribe
@@ -24065,7 +24075,6 @@ vicq                            ports/net-im/vicq
 vid                             ports/graphics/vid
 vida                            ports/security/vida
 vidalia                         ports/net-mgmt/vidalia
-video4bsd-kmod                  ports/multimedia/video4bsd-kmod
 videocache                      ports/www/videocache
 videogen                        ports/sysutils/videogen
 videoproto                      ports/x11/videoproto
