@@ -1,3 +1,17 @@
+%%DOCSDIR%%/v10.1/man_u/u4/u4.11.03.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.33.03.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.42.01.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.43.01.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.44.01.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.44.11.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.51.03.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.53.01.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.81.22.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.82.08.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.82.11.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.82.21.pdf
+%%DOCSDIR%%/v10.1/man_u/u4/u4.92.02.pdf
+%%DOCSDIR%%/v10.1/man_u/u7/u7.04.11.pdf
 %%DOCSDIR%%/v9.5/man_u/u4/u4.02.01.pdf
 %%DOCSDIR%%/v9.5/man_u/u4/u4.11.01.pdf
 %%DOCSDIR%%/v9.5/man_u/u4/u4.11.02.pdf
@@ -209,7 +223,6 @@
 %%DOCSDIR%%/v9.5/man_u/u7/u7.03.11.pdf
 %%DOCSDIR%%/v9.5/man_u/u7/u7.03.31.pdf
 %%DOCSDIR%%/v9.5/man_u/u7/u7.04.11.pdf
-%%DOCSDIR%%/v9.5/man_u/u7/u7.04.32.pdf
 %%DOCSDIR%%/v9.5/man_u/u7/u7.04.33.pdf
 %%DOCSDIR%%/v9.5/man_u/u7/u7.04.41.pdf
 %%DOCSDIR%%/v9.5/man_u/u7/u7.04.51.pdf
@@ -220,14 +233,21 @@
 %%DOCSDIR%%/v9.5/man_u/u7/u7.05.32.pdf
 @exec [ -f %D/%%EFICASDIR%%/Aster/Cata/cataSTA8c_clefs_docu ] && /bin/mv %D/%%EFICASDIR%%/Aster/Cata/cataSTA8c_clefs_docu %D/%%EFICASDIR%%/Aster/Cata/cataSTA8c_clefs_docu.orig 2>/dev/null || /usr/bin/true
 @exec [ -f %D/%%EFICASDIR%%/Aster/Cata/cataSTA9c_clefs_docu ] && /bin/mv %D/%%EFICASDIR%%/Aster/Cata/cataSTA9c_clefs_docu %D/%%EFICASDIR%%/Aster/Cata/cataSTA9c_clefs_docu.orig 2>/dev/null || /usr/bin/true
+@exec [ -f %D/%%EFICASDIR%%/Aster/Cata/cataSTA10c_clefs_docu ] && /bin/mv %D/%%EFICASDIR%%/Aster/Cata/cataSTA10c_clefs_docu %D/%%EFICASDIR%%/Aster/Cata/cataSTA10c_clefs_docu.orig 2>/dev/null || /usr/bin/true
 %%EFICASDIR%%/Aster/Cata/cataSTA8c_clefs_docu
 %%EFICASDIR%%/Aster/Cata/cataSTA9c_clefs_docu
-@unexec [ -f %D/%%EFICASDIR%%/Aster/Cata/cataSTA9c_clefs_docu.orig ] && /bin/mv %D/%%EFICASDIR%%/Aster/Cata/cataSTA8c_clefs_docu.orig %D/%%EFICASDIR%%/Aster/Cata/cataSTA8c_clefs_docu 2>/dev/null || /usr/bin/true
+%%EFICASDIR%%/Aster/Cata/cataSTA10c_clefs_docu
+@unexec [ -f %D/%%EFICASDIR%%/Aster/Cata/cataSTA8c_clefs_docu.orig ] && /bin/mv %D/%%EFICASDIR%%/Aster/Cata/cataSTA8c_clefs_docu.orig %D/%%EFICASDIR%%/Aster/Cata/cataSTA8c_clefs_docu 2>/dev/null || /usr/bin/true
 @unexec [ -f %D/%%EFICASDIR%%/Aster/Cata/cataSTA9c_clefs_docu.orig ] && /bin/mv %D/%%EFICASDIR%%/Aster/Cata/cataSTA9c_clefs_docu.orig %D/%%EFICASDIR%%/Aster/Cata/cataSTA9c_clefs_docu 2>/dev/null || /usr/bin/true
+@unexec [ -f %D/%%EFICASDIR%%/Aster/Cata/cataSTA10c_clefs_docu.orig ] && /bin/mv %D/%%EFICASDIR%%/Aster/Cata/cataSTA10c_clefs_docu.orig %D/%%EFICASDIR%%/Aster/Cata/cataSTA10c_clefs_docu 2>/dev/null || /usr/bin/true
 @dirrm %%DOCSDIR%%/v9.5/man_u/u7
 @dirrm %%DOCSDIR%%/v9.5/man_u/u4
 @dirrm %%DOCSDIR%%/v9.5/man_u
 @dirrm %%DOCSDIR%%/v9.5
+@dirrm %%DOCSDIR%%/v10.1/man_u/u7
+@dirrm %%DOCSDIR%%/v10.1/man_u/u4
+@dirrm %%DOCSDIR%%/v10.1/man_u
+@dirrm %%DOCSDIR%%/v10.1
 @dirrm %%DOCSDIR%%
 @dirrmtry %%EFICASDIR%%/Aster/Cata
 @dirrmtry %%EFICASDIR%%/Aster
