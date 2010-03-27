@@ -27,9 +27,11 @@ MAN1=		chicken.1 chicken-bug.1 chicken-install.1 chicken-profile.1 \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
 .if ${ARCH} != ${NEW_ARCH}
 post-patch:
 	${MV} ${WRKSRC}/apply-hack.${NEW_ARCH}.s ${WRKSRC}/apply-hack.${ARCH}.s
+.endif
 .endif
 
 post-install:
