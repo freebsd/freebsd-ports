@@ -4335,15 +4335,15 @@ mail/sylpheed2|mail/sylpheed3|2010-03-23|Update to new major version
 multimedia/gstreamer-schroedinger||2010-03-24|Removed
 multimedia/video4bsd-kmod|multimedia/cuse4bsd-kmod|2010-03-25|Renamed.
 japanese/asterisk-sound|japanese/asterisk-sounds|2010-03-26|Fix port name typo
-x11-drivers/xf86-input-calcomp||2010-03-27|Removed
-x11-drivers/xf86-input-digitaledge||2010-03-27|Removed
-x11-drivers/xf86-input-dmc||2010-03-27|Removed
-x11-drivers/xf86-input-dynapro||2010-03-27|Removed
-x11-drivers/xf86-input-elo2300||2010-03-27|Removed
-x11-drivers/xf86-input-jamstudio||2010-03-27|Removed
-x11-drivers/xf86-input-magellan||2010-03-27|Removed
-x11-drivers/xf86-input-microtouch||2010-03-27|Removed
-x11-drivers/xf86-input-palmax||2010-03-27|Removed
-x11-drivers/xf86-input-spaceorb||2010-03-27|Removed
-x11-drivers/xf86-input-summa||2010-03-27|Removed
-x11-drivers/xf86-input-tek4957||2010-03-27|Removed
+x11-drivers/xf86-input-calcomp||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-digitaledge||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-dmc||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-dynapro||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-elo2300||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-jamstudio||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-magellan||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-microtouch||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-palmax||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-spaceorb||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-summa||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-tek4957||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
