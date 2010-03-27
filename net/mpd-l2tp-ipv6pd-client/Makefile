@@ -50,7 +50,6 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}" \
 		PREFIX="${PREFIX}" \
 		CONF_DIR="${CONF_DIR}" \
 		MPD_NAME="${MPD_NAME}" \
-		RC_SUBR="${RC_SUBR}" \
 		CAT="${CAT}" \
 		CP="${CP}" \
 		DIALOG="${DIALOG}" \

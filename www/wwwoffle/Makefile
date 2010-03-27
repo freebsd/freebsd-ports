@@ -35,8 +35,6 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc --with-ipv6 \
 		--docdir=${DOCSDIR} \
 		--mandir=${MANPREFIX}/man
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
 MAN1=		wwwoffle.1
 MAN5=		wwwoffle.conf.5
 MAN8=		wwwoffled.8

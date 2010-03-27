@@ -23,8 +23,6 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 MAN3=	3proxy.cfg.3
 MAN8=	3proxy.8 ftppr.8 pop3p.8 proxy.8 socks.8 tcppm.8 udppm.8
 
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
 post-patch:
 	${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|" \
 		${WRKSRC}/Makefile.unix
