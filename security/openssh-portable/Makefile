@@ -215,7 +215,7 @@ SUB_LIST+=		ETCSSH="${ETCSSH}"
 PLIST_SUB+=		EMPTYDIR="${EMPTYDIR}"
 CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH} --with-privsep-path=${EMPTYDIR}
 
-RC_SCRIPT_NAME=		openssh${RC_SUBR_SUFFIX}
+RC_SCRIPT_NAME=		openssh
 
 post-extract:
 .if defined(OPENSSH_SNAPSHOT)

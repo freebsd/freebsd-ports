@@ -1,6 +1,6 @@
 @comment $FreeBSD$
-@unexec %%RC_DIR%%/etc/rc.d/slapd%%RC_SUFX%% stop 2>&1 >/dev/null || true
-%%SLURPD%%@unexec %%RC_DIR%%/etc/rc.d/slurpd%%RC_SUFX%% stop 2>&1 >/dev/null || true
+@unexec %%RC_DIR%%/etc/rc.d/slapd stop 2>&1 >/dev/null || true
+%%SLURPD%%@unexec %%RC_DIR%%/etc/rc.d/slurpd stop 2>&1 >/dev/null || true
 etc/openldap/schema/README
 etc/openldap/schema/core.ldif
 etc/openldap/schema/openldap.ldif

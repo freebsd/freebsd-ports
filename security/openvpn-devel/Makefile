@@ -38,8 +38,6 @@ SUB_LIST+=	OSVERSION=${OSVERSION}
 
 .include <bsd.port.pre.mk>
 
-SUB_LIST+=	RCSFX=${RC_SUBR_SUFFIX}
-
 .ifdef (LOG_OPENVPN)
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif

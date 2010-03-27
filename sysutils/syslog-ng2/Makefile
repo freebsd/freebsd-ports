@@ -24,7 +24,6 @@ USE_RC_SUBR=	syslog-ng.sh
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message
-SUB_LIST=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 

@@ -27,16 +27,16 @@ radiusd_flags="-d /path/to/raddb"
 
 To start the server in normal (daemon) mode, run:
 
-%%PREFIX%%/etc/rc.d/radiusd%%RC_SUBR_SUFFIX%% start
+%%PREFIX%%/etc/rc.d/radiusd start
 
 and to stop the server, run:
 
-%%PREFIX%%/etc/rc.d/radiusd%%RC_SUBR_SUFFIX%% stop
+%%PREFIX%%/etc/rc.d/radiusd stop
 
 
 To start the server in debugging mode, run:
 
-%%PREFIX%%/etc/rc.d/radiusd%%RC_SUBR_SUFFIX%% debug
+%%PREFIX%%/etc/rc.d/radiusd debug
 
 
 You are advised to make cautious changes to the configuration, and to test
