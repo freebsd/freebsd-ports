@@ -38,6 +38,10 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc
+.endif
+
 .if defined(WITH_ARTWORK)
 ARTWORK=	maze armora asteroid astdelux astdelu1 atarifb barrier bzone \
 		boothill buckrog clowns demon destroyr dotron dragrace frogs \
