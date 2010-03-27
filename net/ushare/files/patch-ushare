@@ -94,7 +94,7 @@
 +#
 +#ushare_enable="YES"
 +
-+. "/etc/rc.subr"
++. /etc/rc.subr
 +
 +name=ushare
 +rcvar=`set_rcvar`

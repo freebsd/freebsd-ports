@@ -13,7 +13,7 @@
 # miltercallback_enable="YES"
 #
 
-. "/etc/rc.subr"
+. /etc/rc.subr
 
 name="miltercallback"
 rcvar=`set_rcvar`

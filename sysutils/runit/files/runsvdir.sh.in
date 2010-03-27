@@ -14,7 +14,7 @@
 #runsvdir_path="/service"	(default: %%SERVICE_DIR%%)
 #
 
-. "/etc/rc.subr"
+. /etc/rc.subr
 
 name="runsvdir"
 rcvar=`set_rcvar`

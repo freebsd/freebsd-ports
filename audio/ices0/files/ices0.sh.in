@@ -13,7 +13,7 @@
 # ices0_enable="YES"
 # ices0_flags="<set as needed>"
 
-. "/etc/rc.subr"
+. /etc/rc.subr
 
 name="ices0"
 rcvar=`set_rcvar`
