@@ -111,9 +111,6 @@ CONFIGURE_ARGS+=	--with-zeroconf --enable-howl
 
 PORTDOCS=	AUTHORS Permissions.ReadMeFirst README TLS.ReadMeFirst ChangeLog
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|@HAVE_PERL_TRUE@|#|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|" ${WRKSRC}/configure
