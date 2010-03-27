@@ -308,7 +308,7 @@ SUB_LIST+=	USER="${RADIUS_USER}" \
 		RADDB_WORK="${WRKSRC}/raddb" \
 		RADDB="${PREFIX}/etc/raddb" \
 		LOGDIR="${LOGDIR}" \
-		LIBDIR="${PREFIX}/${FREERADIUS_LIBDIR}" \
+		LIBDIR="${PREFIX}/${FREERADIUS_LIBDIR}"
 SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
