@@ -32,8 +32,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdenetwork-${PORTVERSION}
 USE_LDCONFIG=	yes
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX}
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>

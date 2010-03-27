@@ -191,7 +191,6 @@ ${_P}="@comment "
 .endif
 .endfor
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR} \
 		PRT_MODEL=${PRT_MODEL}
 WITH_EKPD?=	yes
 .endif
