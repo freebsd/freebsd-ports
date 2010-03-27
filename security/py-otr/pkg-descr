@@ -1,0 +1,5 @@
+Python-otr is a set of python bindings for libotr. This gives
+developers the flexibility to implement OTR encryption for
+their python-based Instant Messaging clients.
+
+WWW: http://python-otr.pentabarf.de/

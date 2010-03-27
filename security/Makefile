@@ -683,6 +683,7 @@
     SUBDIR += py-mhash
     SUBDIR += py-openid
     SUBDIR += py-openssl
+    SUBDIR += py-otr
     SUBDIR += py-paramiko
     SUBDIR += py-posix1e
     SUBDIR += py-pow
