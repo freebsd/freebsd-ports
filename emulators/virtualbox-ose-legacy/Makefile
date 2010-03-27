@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.1.4
+DISTVERSION=	3.1.6
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -84,8 +84,8 @@ BROKEN=		QT4 frontend requires X11 support. Run 'make config' again!
 
 .if !defined(WITHOUT_X11)
 USE_SDL=	sdl
-USE_XORG=	xcursor xmu
-VBOX_FRONTENDS+=VBoxBFE VBoxSDL VBoxTestOGL
+USE_XORG=	xcursor xmu inputproto
+VBOX_FRONTENDS+=VBoxBFE VBoxSDL
 PLIST_SUB+=	X11=""
 .else
 CONFIGURE_ARGS+=--build-headless
@@ -97,7 +97,7 @@ USE_QT_VER=	4
 QT_NONSTANDARD=	yes
 QT_COMPONENTS=	gui network moc_build uic_build rcc_build linguist
 INSTALLS_ICONS=	yes
-VBOX_FRONTENDS+=VirtualBox
+VBOX_FRONTENDS+=VirtualBox VBoxTestOGL
 PLIST_SUB+=	QT4=""
 .else
 CONFIGURE_ARGS+=--disable-qt4
