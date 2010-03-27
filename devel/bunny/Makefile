@@ -23,8 +23,8 @@ PORTDOCS=	README
 PLIST_FILES=	bin/bunny-trace bin/bunny-gcc bin/bunny-flow bin/bunny-exec \
 		bin/bunny-main
 
-NOT_FOR_ARCHS=	sparc64
-NOT_FOR_ARCHS_REASON_sparc64=	Fails to compile
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	Fails to compile: invokes i386 asm
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/${MAKEFILE}
