@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polarssl
-PORTVERSION=	0.13.0
+PORTVERSION=	0.13.1
 DISTVERSIONSUFFIX=	-gpl
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/code/download/
