@@ -12,7 +12,7 @@
 # ser2net_enable="YES"
 # ser2net_flags="<set as needed>"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ser2net"
 rcvar=`set_rcvar`

@@ -9,7 +9,7 @@
 # swapd_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=swapd
 rcvar=`set_rcvar`

@@ -19,7 +19,7 @@
 #cyrus_imapd_program="%%PREFIX%%/cyrus/bin/master"	# Location of imapd
 [ -z "$cyrus_imapd_flags" ] && cyrus_imapd_flags="-d" # Flags to imapd program
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="cyrus_imapd"
 rcvar=`set_rcvar`

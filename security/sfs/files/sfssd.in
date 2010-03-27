@@ -11,7 +11,7 @@
 # sfssd_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=sfssd
 rcvar=`set_rcvar`

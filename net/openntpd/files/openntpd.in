@@ -13,7 +13,7 @@
 # openntpd_enable (bool):	Set to NO by default.
 #				Set it to YES to enable openntpd.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=openntpd
 rcvar=`set_rcvar`

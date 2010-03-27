@@ -15,7 +15,7 @@
 #                               to cf-serverd (default empty).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="cf_serverd"
 rcvar=${name}_enable

@@ -51,7 +51,7 @@
 # Run `tproxy --help' for tproxy_flags.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="tproxy"
 rcvar=`set_rcvar`

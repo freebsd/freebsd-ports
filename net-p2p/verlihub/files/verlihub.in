@@ -10,7 +10,7 @@
 #               Set it to YES to enable verlihub.
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="verlihub"
 rcvar=${name}_enable

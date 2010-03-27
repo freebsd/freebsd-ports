@@ -12,7 +12,7 @@
 #               Additional flags to collectd, see manual page.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="collectd"
 rcvar=${name}_enable

@@ -30,7 +30,7 @@
 # Note: this value MUST be set in /etc/rc.conf if you do not accept the default
 # user created by the pkg-install script
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 load_rc_config sguild
 # set some defaults

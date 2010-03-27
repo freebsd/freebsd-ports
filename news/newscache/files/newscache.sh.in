@@ -12,7 +12,7 @@
 
 newscache_enable=${newscache_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=newscache
 rcvar=`set_rcvar`

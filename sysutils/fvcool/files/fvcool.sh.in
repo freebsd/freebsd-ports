@@ -16,7 +16,7 @@
 # %%PORTNAME%%_flags    Set to "-v" for verbose mode.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="%%PORTNAME%%"
 rcvar=`set_rcvar`

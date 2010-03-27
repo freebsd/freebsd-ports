@@ -13,7 +13,7 @@
 #				Default is "%%PREFIX%%/etc/ipcad.conf".
 # ipcad_flags="<set as needed>"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ipcad"
 rcvar=${name}_enable

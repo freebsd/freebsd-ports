@@ -17,7 +17,7 @@
 # gnugk_pidfile="path to the pidfile to use"	(def: /var/run/gnugk/gnugk.pid)
 # gnugk_flags="additional flags you need"	(def: -t)
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="gnugk"
 rcvar=`set_rcvar`

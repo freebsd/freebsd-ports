@@ -17,7 +17,7 @@ else
 	%%PERL%% %%DATADIR%%/rebuildspamdb.pl && rc_spamdb=0 || rc_spamdb=3
 fi
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 name=assp
 rcvar=`set_rcvar`
 load_rc_config $name

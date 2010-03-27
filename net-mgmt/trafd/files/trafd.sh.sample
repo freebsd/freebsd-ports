@@ -14,7 +14,7 @@
 #trafd_log="/var/log/traffic.log"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="trafd"
 rcvar=`set_rcvar`

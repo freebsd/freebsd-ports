@@ -11,7 +11,7 @@
 #         enable zabbix_agentd.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="zabbix_agentd"
 rcvar=${name}_enable

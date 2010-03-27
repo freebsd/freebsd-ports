@@ -19,7 +19,7 @@
 # See radmind(8) for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=radmind
 rcvar=`set_rcvar`

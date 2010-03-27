@@ -18,7 +18,7 @@
 # sshd2_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="sshd2"
 rcvar=${name}_enable

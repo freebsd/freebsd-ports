@@ -31,7 +31,7 @@
 # ucarp_facility:		Set syslog facility
 #				Default is "daemon"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ucarp"
 rcvar=`set_rcvar`

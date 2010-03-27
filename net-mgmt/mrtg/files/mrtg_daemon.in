@@ -6,7 +6,7 @@
 # PROVIDE: mrtg_daemon
 # REQUIRE: DAEMON bsnmpd snmpd
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 
 name="mrtg_daemon"

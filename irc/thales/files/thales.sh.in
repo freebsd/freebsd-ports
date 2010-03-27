@@ -14,7 +14,7 @@
 #			Set it to "YES" to enable Thales
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="thales"
 rcvar=`set_rcvar`

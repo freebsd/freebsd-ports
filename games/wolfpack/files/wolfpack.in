@@ -10,7 +10,7 @@
 # about configuring the server and creating a world first.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=wolfpack
 rcvar=`set_rcvar`

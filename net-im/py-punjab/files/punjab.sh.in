@@ -5,7 +5,7 @@
 # REQUIRE: DAEMON
 # BEFORE:  
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 punjab_enable=${punjab_enable-"NO"}
 punjab_chdir=${punjab_chdir-"%%HTMLDIR%%"}

@@ -14,7 +14,7 @@
 #                             Set it to "YES" to enable keepalived
 # apache2_profiles (string):  Undefined by default. Define here your profiles.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="keepalived"
 rcvar=`set_rcvar`

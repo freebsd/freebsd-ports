@@ -30,7 +30,7 @@
 #                                 Sockets must be different from each other.
 # miltermanager_flags (str):      Flags passed to start command.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="miltermanager"
 rcvar=`set_rcvar`

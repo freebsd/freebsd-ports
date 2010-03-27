@@ -15,7 +15,7 @@
 #
 # See bgpd(8) for openbgpd_flags
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="openbgpd"
 rcvar=`set_rcvar`

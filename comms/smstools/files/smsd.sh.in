@@ -10,7 +10,7 @@
 #
 smsd_enable=${smsd_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="smsd"
 rcvar=`set_rcvar`

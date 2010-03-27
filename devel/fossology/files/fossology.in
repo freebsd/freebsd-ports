@@ -6,7 +6,7 @@
 # PROVIDE: fossology
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="fossology"
 rcvar=`set_rcvar`

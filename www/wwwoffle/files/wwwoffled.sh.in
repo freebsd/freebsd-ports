@@ -18,7 +18,7 @@ wwwoffled_flags=${wwwoffled_flags-""}
 wwwoffled_pidfile=${wwwoffled_pidfile-"/var/run/wwwoffled.pid"}
 wwwoffled_conffile="%%PREFIX%%/etc/wwwoffle.conf"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="wwwoffled"
 rcvar=`set_rcvar`

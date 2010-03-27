@@ -24,7 +24,7 @@ check_user() {
 	/usr/sbin/pw usershow -n ${gatling_effective_user} -q >/dev/null
 }
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=gatling
 rcvar=`set_rcvar`

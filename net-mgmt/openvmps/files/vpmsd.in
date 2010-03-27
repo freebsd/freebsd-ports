@@ -18,7 +18,7 @@
 #vmpsd_program="%%PREFIX%%/sbin/vmpsd"       # Location of vmpsd
 [ -z "$vmpsd_flags" ] && vmpsd_flags="-f /usr/local/etc/vmps.db"   # Flags to vmpsd program
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="vmpsd"
 rcvar=`set_rcvar`

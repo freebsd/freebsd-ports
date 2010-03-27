@@ -17,7 +17,7 @@
 # rabl_server_user - user to run as (default: bind)
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=rabl_server
 rcvar=`set_rcvar`

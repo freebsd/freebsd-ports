@@ -25,7 +25,7 @@
 #                             module on start up and load if not loaded.
 # apache22_fib (str):	      Set an altered default network view for apache
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="apache22"
 rcvar=`set_rcvar`

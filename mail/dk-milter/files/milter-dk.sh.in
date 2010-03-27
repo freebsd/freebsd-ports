@@ -29,7 +29,7 @@
 #                             Sockets must be different from each other.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="milterdk"
 rcvar=`set_rcvar`

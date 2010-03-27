@@ -11,7 +11,7 @@
 #				Default is "NO".
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="maia"
 rcvar=${name}_enable

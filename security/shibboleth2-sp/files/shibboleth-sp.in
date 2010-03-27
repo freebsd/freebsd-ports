@@ -6,7 +6,7 @@
 # REQUIRE: DAEMON
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="shibboleth_sp"
 rcvar=${name}_enable

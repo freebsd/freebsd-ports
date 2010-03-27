@@ -4,7 +4,7 @@
 # PROVIDE: symux
 # REQUIRE: NETWORKING SERVERS
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="symux"
 rcvar=`set_rcvar`

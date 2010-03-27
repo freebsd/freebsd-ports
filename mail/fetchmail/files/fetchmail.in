@@ -56,7 +56,7 @@
 # the man page fetchmail(1), the documentation in %%PREFIX%%/share/doc/fetchmail/
 # and/or the material found at http://fetchmail.berlios.de/.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=fetchmail
 rcvar=`set_rcvar`

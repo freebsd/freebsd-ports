@@ -11,7 +11,7 @@
 # See ladvd(8) for flags.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=ladvd
 rcvar=`set_rcvar`

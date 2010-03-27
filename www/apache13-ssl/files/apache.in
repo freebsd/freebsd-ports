@@ -21,7 +21,7 @@
 # apachelimits_args (str):   Default to "-e -C daemon"
 #                             Arguments of pre-start limits run.
 #
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="apache"
 rcvar=`set_rcvar`

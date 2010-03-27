@@ -4,7 +4,7 @@
 # KEYWORD: nojail nostart
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 . /etc/network.subr
 
 name="dhcpcd"

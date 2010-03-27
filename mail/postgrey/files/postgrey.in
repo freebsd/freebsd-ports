@@ -15,7 +15,7 @@
 # See perldoc postgrey for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=postgrey
 rcvar=`set_rcvar`

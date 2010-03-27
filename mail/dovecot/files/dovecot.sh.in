@@ -12,7 +12,7 @@
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/dovecot
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=dovecot
 rcvar=`set_rcvar`

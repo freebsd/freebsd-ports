@@ -11,7 +11,7 @@
 # helma_config (str):           Custom config file for helma.
 #                               (default %%PREFIX%%/etc/helma/helma.conf)
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="helma"
 rcvar=`set_rcvar`

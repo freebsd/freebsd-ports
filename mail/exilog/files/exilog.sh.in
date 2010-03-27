@@ -12,7 +12,7 @@
 #
 # also uncomment  'use_pretty_names' => 'no' in exilog.conf file
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=exilog
 rcvar=`set_rcvar`

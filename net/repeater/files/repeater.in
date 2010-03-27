@@ -11,7 +11,7 @@
 # repeater_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=repeater
 rcvar=`set_rcvar`

@@ -15,7 +15,7 @@
 #				Default is empty "".
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ngircd"
 rcvar=`set_rcvar`

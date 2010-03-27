@@ -13,7 +13,7 @@
 #			Set it to "YES" to enable MyDNS.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mydns"
 rcvar=`set_rcvar`

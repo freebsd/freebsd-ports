@@ -8,7 +8,7 @@
 # BEFORE:  DAEMON
 # KEYWORD: nojail
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="isakmpd"
 rcvar=`set_rcvar`

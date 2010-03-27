@@ -6,7 +6,7 @@
 # PROVIDE: xrdp sesman
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="xrdp"
 rcvar=`set_rcvar`

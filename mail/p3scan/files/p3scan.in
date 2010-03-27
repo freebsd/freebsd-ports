@@ -12,7 +12,7 @@
 # p3scan_config="%%PREFIX%%/etc/p3scan/p3scan.conf
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=p3scan
 rcvar=`set_rcvar`

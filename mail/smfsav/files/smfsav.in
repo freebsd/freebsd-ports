@@ -13,7 +13,7 @@
 #
 # smfsav_enable="YES"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="smfsav"
 rcvar=`set_rcvar`

@@ -7,7 +7,7 @@
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=esecanna
 rcvar=`set_rcvar`

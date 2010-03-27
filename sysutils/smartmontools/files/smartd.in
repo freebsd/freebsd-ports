@@ -16,7 +16,7 @@
 smartd_enable="${smartd_enable-NO}"
 smartd_pidfile="/var/run/smartd.pid"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="smartd"
 rcvar=`set_rcvar`

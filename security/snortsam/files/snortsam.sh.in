@@ -16,7 +16,7 @@
 #
 # DO NOT CHANGE THE DEFAULT VALUES HERE
 #
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="snortsam"
 rcvar=`set_rcvar`

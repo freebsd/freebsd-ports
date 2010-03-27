@@ -8,7 +8,7 @@
 
 iiimd_enable=${iiimd_enable:-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="iiimd"
 rcvar=`set_rcvar`

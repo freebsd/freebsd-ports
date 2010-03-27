@@ -16,7 +16,7 @@
 # See mbmon(1) for mbmon_flags
 # Set mbmon_port to the TCP port to listen to, default is 12999
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mbmon"
 rcvar=`set_rcvar`

@@ -12,7 +12,7 @@
 # bcfg2_flags (str):    Flags passed to bcfg2 on startup.
 #                       Default is "".
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="bcfg2"
 rcvar=${name}_enable

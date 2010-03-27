@@ -16,7 +16,7 @@
 #				Default: ""
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="stone"
 rcvar=`set_rcvar`

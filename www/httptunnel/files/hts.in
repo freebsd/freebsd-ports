@@ -15,7 +15,7 @@
 # hts_flags (string): Additional flags for hts.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="hts"
 rcvar=${name}_enable

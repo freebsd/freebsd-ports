@@ -9,7 +9,7 @@ jscal_enable=${jscal_enable-"NO"}
 jscal_devices="${jscal_devices:-/dev/input/js*}"
 jscal_state="${jscal_state:-/var/db/jscal-state}"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="jscal"
 rcvar=`set_rcvar`

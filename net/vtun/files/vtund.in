@@ -13,7 +13,7 @@
 vtund_enable=${vtund_enable:-"NO"}
 vtund_flags=${vtund_flags:-"-s"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=vtund
 rcvar=`set_rcvar`

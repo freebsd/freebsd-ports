@@ -15,7 +15,7 @@
 # vboxguest_enable (bool):   Set to NO by default.
 #               Set it to YES to enable vboxguest on startup
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="vboxguest"
 rcvar=${name}_enable

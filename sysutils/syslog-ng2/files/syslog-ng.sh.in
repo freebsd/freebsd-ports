@@ -18,7 +18,7 @@
 
 syslog_ng_purgeklog=${syslog_ng_purgeklog-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=syslog_ng
 rcvar=`set_rcvar`

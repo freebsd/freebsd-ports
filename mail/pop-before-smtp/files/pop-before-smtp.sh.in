@@ -33,7 +33,7 @@
 #				  Default: /var/run/pop-before-smtp.pid
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 # sh interprets dash chars as the numeric minus operator...
 name="pop_before_smtp"

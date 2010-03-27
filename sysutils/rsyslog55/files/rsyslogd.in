@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/rsyslog55/files/Attic/rsyslogd.in,v 1.3 2010-03-08 23:15:09 pgollucci Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/rsyslog55/files/Attic/rsyslogd.in,v 1.4 2010-03-27 00:15:04 dougb Exp $
 #
 
 
@@ -8,7 +8,7 @@
 # REQUIRE: mountcritremote cleanvar newsyslog ldconfig
 # BEFORE:  SERVERS
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=rsyslogd
 rcvar=`set_rcvar`

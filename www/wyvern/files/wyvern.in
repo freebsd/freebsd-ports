@@ -17,7 +17,7 @@
 #
 wyvern_enable=${wyvern_enable:-"NO"}	# Enable wyvern
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="wyvern"
 rcvar=`set_rcvar`

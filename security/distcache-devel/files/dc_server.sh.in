@@ -16,7 +16,7 @@
 # See %%NAME%%(1)
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="%%NAME%%"
 rcvar=`set_rcvar`

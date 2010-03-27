@@ -13,7 +13,7 @@
 # See fprobe(8) for %%NAME%%_flags
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="%%NAME%%"
 rcvar=`set_rcvar`

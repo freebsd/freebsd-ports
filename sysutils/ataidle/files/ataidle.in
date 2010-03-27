@@ -23,7 +23,7 @@
 # ataidle_ad2="-I 60 -S 120 -A 127 -P 254"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ataidle"
 rcvar=${name}_enable

@@ -19,7 +19,7 @@ giftd_flags="-d -q"
 # giftd_user=""
 # giftd_local_dir=""
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=giftd
 rcvar=`set_rcvar`

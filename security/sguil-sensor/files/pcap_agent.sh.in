@@ -14,7 +14,7 @@
 # pcap_agent_flags (str):       Default: -D
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 load_rc_config pcap_agent
 

@@ -15,7 +15,7 @@
 # vboxnet_enable (bool):   Set to NO by default.
 #               Set it to YES to load network related kernel modules on startup
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="vboxnet"
 rcvar=${name}_enable

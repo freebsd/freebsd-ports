@@ -16,7 +16,7 @@
 # See bnbt(1) for bnbt_flags
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="bnbt"
 rcvar=`set_rcvar`

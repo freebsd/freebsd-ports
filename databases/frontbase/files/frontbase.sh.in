@@ -20,7 +20,7 @@ frontbase_flags="${frontbase_flags--autostart}"
 frontbase_pidfile="${frontbase_pidfile-/var/run/frontbase.pid}"
 frontbase_logfile="${frontbase_logfile-/var/log/frontbase.log}"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 rcvar=`set_rcvar`
 

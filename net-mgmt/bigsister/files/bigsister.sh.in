@@ -12,7 +12,7 @@
 # bigsister_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="bigsister"
 rcvar=`set_rcvar`

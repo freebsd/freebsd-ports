@@ -6,7 +6,7 @@
 # PROVIDE: hobbit_server
 # REQUIRE: DAEMON
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="hobbit_server"
 rcvar=`set_rcvar`

@@ -6,7 +6,7 @@
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=ventrilo
 homedir="%%PREFIX%%/ventrilo-server"

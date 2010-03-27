@@ -16,7 +16,7 @@
 # See frox(8) for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=frox
 rcvar=`set_rcvar`

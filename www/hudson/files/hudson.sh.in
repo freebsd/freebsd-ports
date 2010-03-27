@@ -41,7 +41,7 @@
 
 hudson_log_file=/var/log/hudson.log
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="hudson"
 rcvar=`set_rcvar`

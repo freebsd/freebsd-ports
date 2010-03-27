@@ -11,7 +11,7 @@
 +# order to spread virus updates round the clock. 1800 seconds = 30 minutes.
 +# Set this to 0 to disable it
 +
-+. %%RC_SUBR%%
++. /etc/rc.subr
 +
 +name="mailscanner"
 +rcvar=`set_rcvar`

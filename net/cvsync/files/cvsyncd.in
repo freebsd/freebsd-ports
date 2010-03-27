@@ -9,7 +9,7 @@ cvsyncd_enable=${cvsyncd_enable-"NO"}
 cvsyncd_pidfile=${cvsyncd_pidfile-"/var/run/cvsyncd.pid"}
 cvsyncd_conffile=${cvsyncd_conffile-"%%PREFIX%%/etc/cvsyncd.conf"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=cvsyncd
 rcvar=`set_rcvar`

@@ -21,7 +21,7 @@
 # htc_flags (string): additional arguments to htc. Default set to -S.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="htc"
 rcvar=${name}_enable

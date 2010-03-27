@@ -17,7 +17,7 @@
 # See freshclam(1) for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=clamav_freshclam
 rcvar=`set_rcvar`

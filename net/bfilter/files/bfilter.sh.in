@@ -10,7 +10,7 @@
 # bfilter_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=bfilter
 rcvar=`set_rcvar`

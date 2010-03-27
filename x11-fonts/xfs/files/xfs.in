@@ -16,7 +16,7 @@
 #
 # Please see xfs(1), rc.conf(5) and rc(8) for further details.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="xfs"
 rcvar=`set_rcvar`

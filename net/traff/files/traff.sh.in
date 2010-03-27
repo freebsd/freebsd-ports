@@ -13,7 +13,7 @@
 #
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=traff
 rcvar=`set_rcvar`

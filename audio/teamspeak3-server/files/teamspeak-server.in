@@ -13,7 +13,7 @@
 #				Set it to YES to enable teamspeak.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 # Set some defaults
 teamspeak_user=${teamspeak_user:-"teamspeak"}

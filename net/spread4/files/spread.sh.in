@@ -15,7 +15,7 @@
 #
 # See spread(1) for flags
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=spread
 rcvar=`set_rcvar`

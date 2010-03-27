@@ -9,7 +9,7 @@
 #                Set it to YES to enable Prosody
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="prosody"
 rcvar=`set_rcvar`

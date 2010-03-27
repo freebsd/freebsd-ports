@@ -20,7 +20,7 @@
 # Don't forget to include --background in either method!
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="inadyn"
 rcvar=`set_rcvar`

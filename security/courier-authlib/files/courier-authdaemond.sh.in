@@ -25,7 +25,7 @@ authdaemonvar="%%AUTHDAEMONVAR%%"
 
 courier_authdaemond_enable=${courier_authdaemond_enable-"NO"}	# Run courier-authdaemond (YES/NO).
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="courier_authdaemond"
 rcvar=`set_rcvar`

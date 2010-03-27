@@ -19,7 +19,7 @@
 # nginxlimits_args (str):	Default to "-e -U %%WWWOWN%%"
 #				Arguments of pre-start limits run.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="nginx"
 rcvar=`set_rcvar`

@@ -14,7 +14,7 @@
 # dhid_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dhid"
 rcvar=`set_rcvar`

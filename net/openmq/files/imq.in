@@ -39,7 +39,7 @@
 #  imq_vmargs="-Xms192m -Xmx192m -Xss128k -XX:MaxGCPauseMillis=5000"
 
 name="imq"
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 # set defaults
 imq_enable=${imq_enable:-"NO"}

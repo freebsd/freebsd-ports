@@ -4,7 +4,7 @@
 # REQUIRE: DAEMON drwebd
 # BEFORE: mail
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="drweb_smf"
 rcvar=`set_rcvar`

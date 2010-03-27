@@ -29,7 +29,7 @@
 
 # Note that we deliberately refrain from unloading drivers.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="hamachi"
 rcvar=`set_rcvar`

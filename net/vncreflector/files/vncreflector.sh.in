@@ -27,7 +27,7 @@ vncreflector_activefile=${vncreflector_logfile-"/var/log/vncreflector.log"}
 vncreflector_addr=${vncreflector_addr-""}
 #vncreflector_addr_5999=
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="vncreflector"
 rcvar=`set_rcvar`

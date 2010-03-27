@@ -12,7 +12,7 @@ prefix=%%PREFIX%%
 rskkserv_enable=${rskkserv_enable:-"NO"}
 rskkserv_flags=${rskkserv_flags:-""}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="rskkserv"
 rcvar=`set_rcvar`

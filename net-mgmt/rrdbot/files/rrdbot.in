@@ -17,7 +17,7 @@
 #			to rrdbotd (default: none).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="rrdbot"
 rcvar=`set_rcvar`

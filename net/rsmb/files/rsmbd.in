@@ -11,7 +11,7 @@
 # rsmbd_config (path):	Unset by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="rsmbd"
 rcvar=`set_rcvar`

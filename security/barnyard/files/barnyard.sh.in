@@ -39,7 +39,7 @@
 # Batch Processing Mode Options:
 #   -o         Enable batch processing mode
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="barnyard"
 load_rc_config $name

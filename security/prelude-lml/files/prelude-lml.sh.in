@@ -11,7 +11,7 @@
 # prelude_lml_flags  (flags):  Set arguments to use with Prelude LML
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="prelude_lml"
 rcvar=${name}_enable

@@ -18,7 +18,7 @@
 apache_enable=${apache_enable-"NO"}
 apache_pidfile=${apache_pidfile-"/var/run/httpd.pid"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="apache"
 rcvar=`set_rcvar`

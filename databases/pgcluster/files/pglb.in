@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pglb.in,v 1.2 2007-07-26 16:05:04 rafan Exp $
+# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pglb.in,v 1.3 2010-03-27 00:12:48 dougb Exp $
 #
 # PROVIDE: pglb
 # REQUIRE: DAEMON
@@ -10,7 +10,7 @@
 # pglb_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="pglb"
 rcvar=`set_rcvar`

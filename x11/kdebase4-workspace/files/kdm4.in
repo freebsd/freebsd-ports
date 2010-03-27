@@ -8,7 +8,7 @@
 # kdm4_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 kdm4_enable=${kdm4_enable-"NO"}
 

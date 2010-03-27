@@ -9,7 +9,7 @@
 # SET THEM IN THE /etc/rc.conf FILE
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="lcdexec"
 rcvar=`set_rcvar`

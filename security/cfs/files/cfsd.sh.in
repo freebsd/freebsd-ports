@@ -17,7 +17,7 @@
 # cfsd_mountpoint="/crypt"	# the CFS mountpoint
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="cfsd"
 rcvar=`set_rcvar`

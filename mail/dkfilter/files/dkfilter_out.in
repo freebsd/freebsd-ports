@@ -16,7 +16,7 @@
 # set it to DNS and configurate dkfilter_flags.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dkfilter_out"
 rcvar=`set_rcvar`

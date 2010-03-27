@@ -24,7 +24,7 @@ squid_stop() {
 	run_rc_command poll
 }
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=squid
 rcvar=${name}_enable

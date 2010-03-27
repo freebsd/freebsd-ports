@@ -11,7 +11,7 @@
 # cupsd_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=cupsd
 rcvar=`set_rcvar`

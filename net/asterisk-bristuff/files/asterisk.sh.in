@@ -9,7 +9,7 @@
 # asterisk_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 stop_precmd=asterisk_shutdown
 sig_stop=KILL

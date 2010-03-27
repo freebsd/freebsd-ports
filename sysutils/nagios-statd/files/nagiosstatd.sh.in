@@ -15,7 +15,7 @@
 nagiosstatd_enable=${nagiosstatd_enable-"NO"}
 nagiosstatd_pidfile=${nagiosstatd_pidfile-"/var/run/nagiosstatd.pid"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="nagiosstatd"
 #rcvar=`set_rcvar`

@@ -6,7 +6,7 @@
 # PROVIDE: hobbit_client
 # REQUIRE: DAEMON
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="hobbit_client"
 rcvar=`set_rcvar`

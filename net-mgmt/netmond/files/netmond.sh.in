@@ -13,7 +13,7 @@
 #	/etc/rc.conf.d/netmond
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="netmond"
 rcvar=`set_rcvar`

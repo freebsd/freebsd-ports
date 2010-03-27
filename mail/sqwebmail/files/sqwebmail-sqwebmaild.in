@@ -15,7 +15,7 @@
 
 sqwebmaild_enable=${sqwebmaild_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="sqwebmaild"
 rcvar=`set_rcvar`

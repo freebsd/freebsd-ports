@@ -16,7 +16,7 @@
 # See dbmail-pop3d(8) for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=dbmail_pop3d
 rcvar=`set_rcvar`

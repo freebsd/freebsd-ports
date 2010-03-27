@@ -20,7 +20,7 @@ i915resolution_modes=${i915resolution_modes:-"3c 4d 5c"} # Space separated list 
 i915resolution_width=${i915resolution_width:-"1920"}	 # the horisontal resolution in pixels
 i915resolution_height=${i915resolution_height:-"1080"}	 # the vertical resolution in pixels
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="i915resolution"
 rcvar=`set_rcvar`

@@ -72,7 +72,7 @@ wowza_config_url="${wowza_config_url:-""}"
 wowza_stdout_log="${wowza_stdout_log:-"%%STDOUT_LOG%%"}"
 wowza_stderr_log="${wowza_stderr_log:-"%%STDERR_LOG%%"}"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="wowza"
 rcvar=`set_rcvar`

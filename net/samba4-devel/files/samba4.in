@@ -17,7 +17,7 @@
 #samba4_config="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="samba4"
 rcvar=$(set_rcvar)

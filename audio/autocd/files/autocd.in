@@ -15,7 +15,7 @@
 # See autocd(8) for relevant values for autocd_flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=autocd
 rcvar=${name}_enable

@@ -26,7 +26,7 @@
 #
 widentd_enable=${widentd_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="widentd"
 rcvar=`set_rcvar`

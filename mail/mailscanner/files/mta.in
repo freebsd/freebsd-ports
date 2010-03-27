@@ -58,7 +58,7 @@
 
 PATH=$PATH:/sbin:/usr/sbin; export PATH
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mta"
 rcvar=`set_rcvar`

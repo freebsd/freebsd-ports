@@ -12,7 +12,7 @@
 # sshblock_flags (string):	Set sshblock flags (optional)
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="sshblock"
 rcvar=`set_rcvar`

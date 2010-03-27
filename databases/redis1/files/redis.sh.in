@@ -13,7 +13,7 @@
 #redis_enable="YES"
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="redis"
 rcvar=`set_rcvar`

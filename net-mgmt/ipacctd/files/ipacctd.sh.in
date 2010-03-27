@@ -28,7 +28,7 @@
 #ipacctd_rule_xl0_flags="-p 666"
 #ipacctd_rule_xl0_pid="/var/run/ipacctd.xl0"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ipacctd"
 rcvar=`set_rcvar`

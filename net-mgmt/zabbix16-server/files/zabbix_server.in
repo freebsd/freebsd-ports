@@ -11,7 +11,7 @@
 #         enable zabbix_server.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="zabbix_server"
 rcvar=${name}_enable

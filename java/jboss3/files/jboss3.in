@@ -16,7 +16,7 @@
 # %%APP_SHORTNAME%%_config (str):		Set to "" by default
 #				JBoss server config, eg {all|default|minimal|standard}
 #
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="%%APP_SHORTNAME%%"
 rcvar=`set_rcvar`

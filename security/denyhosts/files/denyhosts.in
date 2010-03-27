@@ -6,7 +6,7 @@
 # REQUIRE: DAEMON
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="denyhosts"
 rcvar=${name}_enable

@@ -13,7 +13,7 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 mediatomb_enable=${mediatomb_enable-"NO"}
 # mediatomb_flags="<set as needed>"

@@ -15,7 +15,7 @@
 # monit_flags (str):          Flags passed to monit on startup.
 #                             Default is "".
 #
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="monit"
 rcvar=`set_rcvar`

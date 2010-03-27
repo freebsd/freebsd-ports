@@ -21,7 +21,7 @@
 dnsproxy_enable=${dnsproxy_enable:-"NO"}
 command_args=${dnsproxy_flags:-"-c %%ETCDIR%%/dnsproxy.conf -d"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dnsproxy"
 rcvar=`set_rcvar`

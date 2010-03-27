@@ -14,7 +14,7 @@
 
 xsi_enable=${xsi_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=xsi
 rcvar=`set_rcvar`

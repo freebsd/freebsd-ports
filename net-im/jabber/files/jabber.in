@@ -11,7 +11,7 @@
 # jabber_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="jabber"
 rcvar=`set_rcvar`

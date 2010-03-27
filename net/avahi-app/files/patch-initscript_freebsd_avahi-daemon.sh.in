@@ -8,7 +8,7 @@
  avahi_daemon_flags=${avahi_daemon_flags-"-D"}
  
 -. /etc/rc.subr
-+. %%RC_SUBR%%
++. /etc/rc.subr
 +. %%GNOME_SUBR%%
 +
 +avahi_daemon_enable=${avahi_daemon_enable-${gnome_enable}}

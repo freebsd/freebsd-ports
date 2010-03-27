@@ -11,7 +11,7 @@
 # undernet_config (path):   Set to %%PREFIX%%/etc/ircd.conf
 #               by default.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=undernet
 rcvar=`set_rcvar`

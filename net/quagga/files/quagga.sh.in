@@ -24,7 +24,7 @@
 #quagga_extralibs_path="/usr/local/lib ..."
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="quagga"
 rcvar=`set_rcvar`

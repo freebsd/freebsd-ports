@@ -20,7 +20,7 @@
 # aureal_viakx133fix="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="aureal"
 rcvar=${name}_enable

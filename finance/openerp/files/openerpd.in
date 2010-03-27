@@ -15,7 +15,7 @@
 #               can also use openerpd_flags for additional
 #               command line arguments.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="openerpd"
 rcvar=${name}_enable

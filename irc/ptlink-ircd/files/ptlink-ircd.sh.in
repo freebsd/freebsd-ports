@@ -14,7 +14,7 @@
 ircd_enable=${ircd_enable-"NO"}
 ircd_user=${ircd_user-"ircd"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ircd"
 rcvar=`set_rcvar`

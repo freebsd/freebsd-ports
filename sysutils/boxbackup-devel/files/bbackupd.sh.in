@@ -16,7 +16,7 @@
 : ${bbackupd_flags:="%%PREFIX%%/etc/box/bbackupd.conf"}
 : ${bbackupd_pidfile:="/var/run/bbackupd.pid"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="bbackupd"
 rcvar=`set_rcvar`

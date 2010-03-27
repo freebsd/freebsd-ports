@@ -13,7 +13,7 @@
 #ez_ipupdate_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=ez_ipupdate
 rcvar=`set_rcvar`

@@ -16,7 +16,7 @@
 dbeacon_enable=${dbeacon_enable-"NO"}
 dbeacon_flags=${dbeacon_flags-""}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dbeacon"
 rcvar=`set_rcvar`

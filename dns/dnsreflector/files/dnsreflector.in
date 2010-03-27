@@ -21,7 +21,7 @@
 dnsreflector_enable=${dnsreflector_enable:-"NO"}
 command_args=${dnsreflector_flags:-"-d -a 127.0.0.1 -p 53000"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dnsreflector"
 rcvar=`set_rcvar`

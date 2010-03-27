@@ -14,7 +14,7 @@
 # 				Consult with the man page for more info.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="pftabled"
 rcvar=${name}_enable

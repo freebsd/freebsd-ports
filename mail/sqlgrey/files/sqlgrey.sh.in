@@ -15,7 +15,7 @@
 # See man sqlgrey for flags or the config file.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=sqlgrey
 rcvar=`set_rcvar`

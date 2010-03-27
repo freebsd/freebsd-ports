@@ -17,7 +17,7 @@
 # afbinit="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="afbinit"
 rcvar=${name}_enable

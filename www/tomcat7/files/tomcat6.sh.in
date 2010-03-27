@@ -69,7 +69,7 @@ tomcat%%TOMCAT_VERSION%%_stdout_log="${tomcat%%TOMCAT_VERSION%%_stdout_log:-"%%S
 tomcat%%TOMCAT_VERSION%%_stderr_log="${tomcat%%TOMCAT_VERSION%%_stderr_log:-"%%STDERR_LOG%%"}"
 tomcat%%TOMCAT_VERSION%%_stop_timeout="${tomcat%%TOMCAT_VERSION%%_stop_timeout:-"10"}"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="tomcat%%TOMCAT_VERSION%%"
 rcvar=`set_rcvar`

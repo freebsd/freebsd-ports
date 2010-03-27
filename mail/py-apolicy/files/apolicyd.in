@@ -15,7 +15,7 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="apolicyd"
 rcvar=`set_rcvar`

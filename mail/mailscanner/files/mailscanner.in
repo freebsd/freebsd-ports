@@ -13,7 +13,7 @@
 # mailscanner_user (str):         Set to "root" by default. If you changed the "Run As User" variable in MailScanner.conf and wish to disable taint mode, you MUST also set the same value here.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mailscanner"
 rcvar=`set_rcvar`

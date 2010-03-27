@@ -16,7 +16,7 @@
 # On BSD: compare sysctl -a outputs to /var/log/messages, bpf bufsizes should match!
 
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ourmon"
 rcvar=${name}_enable

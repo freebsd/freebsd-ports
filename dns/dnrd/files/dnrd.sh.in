@@ -12,7 +12,7 @@
 # override these variables in /etc/rc.conf
 dnrd_enable=${dnrd_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=dnrd
 rcvar=$(set_rcvar)

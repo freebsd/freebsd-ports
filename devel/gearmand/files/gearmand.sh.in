@@ -6,7 +6,7 @@
 # PROVIDE: gearmand
 # REQUIRE: DAEMON
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="gearmand"
 rcvar=`set_rcvar`

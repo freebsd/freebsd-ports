@@ -15,7 +15,7 @@
 #
 freqshpd_enable=${freqshpd_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=freqshpd
 rcvar=`set_rcvar`

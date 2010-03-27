@@ -22,7 +22,7 @@ prefix=%%PREFIX%%
 #openvasd_program="${prefix}/sbin/openvasd"	# Location of openvasd
 openvasd_flags="-D -q"				# Flags to openvasd program
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="openvasd"
 rcvar=`set_rcvar`

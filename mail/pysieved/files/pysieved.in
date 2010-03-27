@@ -10,7 +10,7 @@
 #       /etc/rc.conf.local
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="%%PORTNAME%%"
 rcvar=`set_rcvar`

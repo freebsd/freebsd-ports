@@ -13,7 +13,7 @@
 # sastatd_spamd_log="/var/log/spamd.log"
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 
 name="sastatd"

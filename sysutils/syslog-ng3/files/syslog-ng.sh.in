@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/syslog-ng3/files/Attic/syslog-ng.sh.in,v 1.5 2009-07-13 22:13:25 cy Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/syslog-ng3/files/Attic/syslog-ng.sh.in,v 1.6 2010-03-27 00:15:06 dougb Exp $
 #
 
 # PROVIDE: syslogd
@@ -18,7 +18,7 @@
 
 syslog_ng_purgeklog=${syslog_ng_purgeklog-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=syslog_ng
 rcvar=`set_rcvar`

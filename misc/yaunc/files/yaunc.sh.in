@@ -11,7 +11,7 @@
 #               by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="yaunc"
 rcvar=${name}_enable

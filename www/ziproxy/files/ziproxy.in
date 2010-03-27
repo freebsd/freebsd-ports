@@ -12,7 +12,7 @@
 #               by default.
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="ziproxy"
 rcvar=${name}_enable

@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/security/drweb/files/Attic/drwebd.in,v 1.1 2009-02-04 10:26:35 pgollucci Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/drweb/files/Attic/drwebd.in,v 1.2 2010-03-27 00:14:43 dougb Exp $
 
 # PROVIDE: drwebd
 # REQUIRE: DAEMON
 # BEFORE: mail
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="drwebd"
 rcvar=`set_rcvar`

@@ -5,7 +5,7 @@
 # REQUIRE: LOGIN syslogd
 # KEYWORD: nojail shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="cvsd"
 rcvar=${name}_enable

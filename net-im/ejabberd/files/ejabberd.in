@@ -16,7 +16,7 @@
 ejabberd_enable=${ejabberd_enable-"NO"}
 ejabberd_node=${ejabberd_node-"ejabberd@localhost"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ejabberd"
 rcvar=`set_rcvar`

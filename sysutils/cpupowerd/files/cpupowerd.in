@@ -15,7 +15,7 @@
 #                               to cpupowerd (default -d -c cpupowerd.conf).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="cpupowerd"
 rcvar=`set_rcvar`

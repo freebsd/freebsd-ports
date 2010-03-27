@@ -14,7 +14,7 @@
 # bacula_fd_flags (params):  Set params used to start bacula_fd.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="bacula_fd"
 rcvar=${name}_enable

@@ -16,7 +16,7 @@ snmpd_pidfile=${snmpd_pidfile-"/var/run/snmpd.pid"}
 snmpd_conffile=${snmpd_conffile-""}
 snmpd_flush_cache=${snmpd_flush_cache-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 load_rc_config net_snmpd
 

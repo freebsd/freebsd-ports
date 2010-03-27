@@ -15,7 +15,7 @@
 # See snmptt documentation for flags.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=snmptt
 rcvar=`set_rcvar`

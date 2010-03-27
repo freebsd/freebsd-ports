@@ -12,7 +12,7 @@
 # munin_node_config (path):      Set to "%%PREFIX%%/etc/munin/munin-node.conf" by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="munin_node"
 rcvar=`set_rcvar`

@@ -12,7 +12,7 @@
 # cntlm_flags (str):     Additional flags to pass to cntlm
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="cntlm"
 rcvar=${name}_enable

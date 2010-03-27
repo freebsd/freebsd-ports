@@ -10,7 +10,7 @@
 #
 #netdump_server_enable="YES"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 load_rc_config netdump_server
 

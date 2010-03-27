@@ -18,7 +18,7 @@
 dansguardian_enable=${dansguardian_enable:-"NO"}
 dansguardian_pidfile=${dansguardian_pidfile:-"/var/run/dansguardian.pid"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dansguardian"
 rcvar=${name}_enable

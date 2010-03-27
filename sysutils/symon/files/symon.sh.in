@@ -4,7 +4,7 @@
 # PROVIDE: symon
 # REQUIRE: NETWORKING SERVERS
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="symon"
 rcvar=`set_rcvar`

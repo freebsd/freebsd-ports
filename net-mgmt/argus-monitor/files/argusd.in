@@ -9,7 +9,7 @@
 #               Set it to YES to enable argusd
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="argusd"
 rcvar=${name}_enable

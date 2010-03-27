@@ -14,7 +14,7 @@
 #				Default is "-d --use-syslog=daemon". see ntop(8).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=ntop
 rcvar=${name}_enable

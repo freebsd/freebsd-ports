@@ -9,7 +9,7 @@
 #                                Set it to "YES" to enable daemonlogger 
 # daemonlogger_flags (string):           Set to "-d -l" by default.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="daemonlogger"
 rcvar=`set_rcvar`

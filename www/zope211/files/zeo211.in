@@ -21,7 +21,7 @@
 #   List of dirs with Zeo's instances ("" by default).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="zeo211"
 rcvar=`set_rcvar`

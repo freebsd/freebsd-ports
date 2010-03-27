@@ -11,7 +11,7 @@
 #       /etc/rc.conf.local
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="jabber_pyicq"
 rcvar=`set_rcvar`

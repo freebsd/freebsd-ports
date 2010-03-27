@@ -9,7 +9,7 @@
 # rsyncmanager_flags (str):        Set to "-C -c %%PREFIX%%/etc/rsyncmanager.conf" by default.
 #                             Extra flags passed to start command
 #
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="rsyncmanager"
 rcvar=`set_rcvar`

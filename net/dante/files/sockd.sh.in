@@ -13,7 +13,7 @@
 #sockd_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=sockd
 rcvar=`set_rcvar`

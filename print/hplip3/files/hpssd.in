@@ -4,7 +4,7 @@
 # BEFORE:  cupsd
 # KEYWORD: shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=hpssd
 rcvar=${name}_enable

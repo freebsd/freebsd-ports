@@ -13,7 +13,7 @@
 # twdm2_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=twdm2
 rcvar=`set_rcvar`

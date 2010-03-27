@@ -3,7 +3,7 @@
 # PROVIDE: iscsi_target
 # REQUIRE: NETWORKING mountall quota
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="iscsi_target"
 rcvar=`set_rcvar`

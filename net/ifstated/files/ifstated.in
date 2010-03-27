@@ -15,7 +15,7 @@
 # ifstated_flags (str):       Set to "-f %%PREFIX%%/etc/ifstated.conf" by default.
 #                             Extra flags passed to start command
 #
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ifstated"
 rcvar=`set_rcvar`

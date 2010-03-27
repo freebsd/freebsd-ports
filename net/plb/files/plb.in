@@ -14,7 +14,7 @@
 #                         Set it to "YES" to enable plb
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="plb"
 rcvar=`set_rcvar`

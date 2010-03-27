@@ -42,7 +42,7 @@ dhcprelya_postcmd() {
 	rm -f ${pidfile}
 }
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=dhcprelya
 rcvar=$(set_rcvar)

@@ -16,7 +16,7 @@
 # Run smtptrapd -h for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=smtptrapd
 rcvar=`set_rcvar`

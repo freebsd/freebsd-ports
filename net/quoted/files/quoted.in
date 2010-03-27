@@ -11,7 +11,7 @@ quoted_enable=${quoted_enable:-"NO"}
 
 user="nobody"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="quoted"
 rcvar=`set_rcvar`

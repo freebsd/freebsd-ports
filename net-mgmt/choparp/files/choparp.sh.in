@@ -10,7 +10,7 @@ choparp_iface=${choparp_iface-}
 choparp_macaddr=${choparp_macaddr-"auto"}
 choparp_network=${choparp_network-}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="choparp"
 rcvar=`set_rcvar`

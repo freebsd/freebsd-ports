@@ -10,7 +10,7 @@
 # gdm_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 . %%GNOME_SUBR%%
 
 gdm_enable=${gdm_enable-${gnome_enable}}

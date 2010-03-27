@@ -19,7 +19,7 @@
 #   Enable ("YES") or disable ("NO", the default) this startup script.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mu_conference"
 rcvar=`set_rcvar`

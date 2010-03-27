@@ -19,7 +19,7 @@ gkrellmd_enable=${gkrellmd_enable:-"NO"}	# Enable gkrellmd
 #gkrellmd_program="%%PREFIX%%/sbin/gkrellmd"	# Location of gkrellmd
 gkrellmd_flags=${gkrellmd_flags:-"-d"}		# Flags to gkrellmd
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="gkrellmd"
 rcvar=`set_rcvar`
