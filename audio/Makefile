@@ -695,6 +695,7 @@
     SUBDIR += streamripper
     SUBDIR += streamtranscoder
     SUBDIR += streamtuner
+    SUBDIR += stymulator
     SUBDIR += swami
     SUBDIR += sweep
     SUBDIR += swhplugins
