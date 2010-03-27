@@ -13,7 +13,7 @@
 #zmailer_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=zmailer
 rcvar=`set_rcvar`

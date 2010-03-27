@@ -15,7 +15,7 @@
 #xorp_conf="%%PREFIX%%/etc/xorp.conf.sample"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="xorp"
 rcvar=`set_rcvar`

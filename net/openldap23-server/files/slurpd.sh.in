@@ -16,7 +16,7 @@
 # See slurpd(8) for more flags
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="slurpd"
 rcvar=`set_rcvar`

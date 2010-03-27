@@ -14,7 +14,7 @@
 # pgbouncer_flags="<set as needed>"
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="pgbouncer"
 rcvar=`set_rcvar`

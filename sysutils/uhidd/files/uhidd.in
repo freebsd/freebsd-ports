@@ -7,7 +7,7 @@
 # REQUIRE: DAEMON cleanvar
 # KEYWORD: nojail shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 # Usage:
 #	uhidd start ugenX.Y	# start uhidd on device 'ugenX.Y'

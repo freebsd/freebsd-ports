@@ -9,7 +9,7 @@
 # dns_balance_enable="YES"
 # dns_balance_flags="<set as needed>"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=dns_balance
 rcvar=`set_rcvar`

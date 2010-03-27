@@ -21,7 +21,7 @@ dtcpc_server=${dtcpc_server:-""}		# DTCP server name
 dtcpc_username=${dtcpc_username:-""}		# DTCP user name
 dtcpc_flags=${dtcpc_flags:-"-t network -Dl"}	# Flags to dtcpc program
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dtcpc"
 rcvar=`set_rcvar`

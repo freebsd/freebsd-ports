@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/french/plgrenouille/files/Attic/plgrenouille.sh.in,v 1.1 2006-04-01 13:32:03 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/french/plgrenouille/files/Attic/plgrenouille.sh.in,v 1.2 2010-03-27 00:12:59 dougb Exp $
 #
 # PROVIDE: plgrenouille
 # REQUIRE: DAEMON
@@ -13,7 +13,7 @@
 plgrenouille_enable=NO
 plgrenouille_flags=-b
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=plgrenouille
 rcvar=$(set_rcvar)

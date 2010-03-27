@@ -12,7 +12,7 @@
 #sixxs_aiccu_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=sixxs_aiccu
 rcvar=`set_rcvar`

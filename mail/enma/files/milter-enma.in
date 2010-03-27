@@ -26,7 +26,7 @@ milterenma_cfgfile=${milterenma_cfgfile:-"%%PREFIX%%/etc/enma.conf"}
 milterenma_pid=${milterenma_pid:-"/var/run/milterenma/enma.pid"}
 milterenma_uid=${milterenma_uid:-"mailnull"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="milterenma"
 rcvar=`set_rcvar`

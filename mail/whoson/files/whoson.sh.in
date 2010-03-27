@@ -13,7 +13,7 @@
 #whosond="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=whosond
 rcvar=`set_rcvar`

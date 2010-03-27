@@ -19,7 +19,7 @@
 #   List of dirs with Zope's instances ("" by default).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="zope211"
 rcvar=`set_rcvar`

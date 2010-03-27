@@ -11,7 +11,7 @@
 # ncftpd_config="/path/to/general.cf /path/to/domain.cf" # Not required
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ncftpd"
 rcvar=`set_rcvar`

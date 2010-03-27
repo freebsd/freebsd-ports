@@ -23,7 +23,7 @@
 # ebhttpd_flags (str):   Set to "" by default.
 #                        Extra flags passed to start ebhttpd.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 # ebnetd
 name=ebnetd

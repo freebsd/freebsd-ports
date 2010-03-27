@@ -9,7 +9,7 @@
 # polipo_enable="YES"
 # polipo_flags="<set as needed>"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=polipo
 rcvar=`set_rcvar`

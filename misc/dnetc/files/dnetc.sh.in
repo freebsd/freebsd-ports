@@ -15,7 +15,7 @@
 # dnetc_idprio (priority):	Unset by default. See idprio manpage.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dnetc"
 rcvar=`set_rcvar`

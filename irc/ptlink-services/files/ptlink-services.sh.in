@@ -14,7 +14,7 @@
 services_enable=${services_enable-"NO"}
 services_user=${services_user-"ircd"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="services"
 rcvar=`set_rcvar`

@@ -14,7 +14,7 @@
 #smbd4wins_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="smbd4wins"
 rcvar=`set_rcvar`

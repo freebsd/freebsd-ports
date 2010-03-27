@@ -9,7 +9,7 @@
 # liquidsoap_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 sig_stop=KILL
 

@@ -20,7 +20,7 @@ case "$1" in
     *start) command_args="start";;
 esac
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="openxpki"
 rcvar=`set_rcvar`

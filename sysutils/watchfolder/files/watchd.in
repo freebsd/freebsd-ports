@@ -11,7 +11,7 @@
 # watchd_enable (bool):		Set to "NO" by default.
 #                               Set it to "YES" to enable watchd.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="watchd"
 rcvar=${name}_enable

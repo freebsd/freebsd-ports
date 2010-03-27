@@ -9,7 +9,7 @@
 # callweaver_enable="YES"
 #
 
-. . %%RC_SUBR%%
+. /etc/rc.subr
 
 stop_precmd=callweaver_shutdown
 sig_stop=KILL

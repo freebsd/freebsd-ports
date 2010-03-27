@@ -15,7 +15,7 @@
 
 wzdftpd_enable=${wzdftpd_enable:-"NO"}		# Enable wzdftpd
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="wzdftpd"
 rcvar=`set_rcvar`

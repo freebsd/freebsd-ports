@@ -10,7 +10,7 @@
 # snmpd_enable (bool):	Set to NO by default. Set it to YES to enable snmpd.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=snmpd
 rcvar=`set_rcvar`

@@ -11,7 +11,7 @@
 # hald_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 . %%GNOME_SUBR%%
 
 hald_enable=${hald_enable-${gnome_enable}}

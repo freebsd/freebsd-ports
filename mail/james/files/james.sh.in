@@ -49,7 +49,7 @@ james%%JAMES_VERSION%%_base="${james%%JAMES_VERSION%%_base:-"%%JAMES_HOME%%"}"
 james%%JAMES_VERSION%%_tmpdir="${james%%JAMES_VERSION%%_tmpdir:-"/tmp"}"
 james%%JAMES_VERSION%%_stop_timeout="${james%%JAMES_VERSION%%_stop_timeout:-"10"}"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="james%%JAMES_VERSION%%"
 rcvar=`set_rcvar`

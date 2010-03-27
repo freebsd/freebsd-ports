@@ -19,7 +19,7 @@
 # freenet6_flags="-f %%PREFIX%%/etc/gw6c.conf"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=freenet6
 rcvar=`set_rcvar`

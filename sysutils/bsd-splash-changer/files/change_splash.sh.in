@@ -16,7 +16,7 @@
 #					This is where the image file is copied to.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=change_splash
 rcvar=`set_rcvar splash_changer`

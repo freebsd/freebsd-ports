@@ -4,7 +4,7 @@
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="knockd"
 rcvar=`set_rcvar`

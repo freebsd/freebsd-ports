@@ -11,7 +11,7 @@
 
 name=iserverd
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 load_rc_config $name
 

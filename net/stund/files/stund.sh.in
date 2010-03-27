@@ -8,7 +8,7 @@
 # BEFORE: DAEMON
 # KEYWORD: shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 : ${stund_enable:=NO}
 : ${stund_pidfile:=/var/run/stund.pid}

@@ -15,7 +15,7 @@
 # pureftpd_uploadscript="/full/path/to/launch_script"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=pureftpd
 rcvar=`set_rcvar`

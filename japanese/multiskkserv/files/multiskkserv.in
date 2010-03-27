@@ -14,7 +14,7 @@
 # See `%%PREFIX%%/sbin/multiskkserv -h` for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=multiskkserv
 rcvar=`set_rcvar`

@@ -17,7 +17,7 @@
 #
 pips_enable=${pips_enable:-"YES"}		# Enable pips
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="pips"
 rcvar=`set_rcvar`

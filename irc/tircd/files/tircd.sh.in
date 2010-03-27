@@ -11,7 +11,7 @@
 # tircd_enable (bool):   Set to NO by default.
 #               Set it to YES to enable tircd.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="tircd"
 rcvar=${name}_enable

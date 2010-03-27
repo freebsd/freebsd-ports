@@ -19,7 +19,7 @@
 #               Additional flags to iodined, see manual page.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="iodined"
 rcvar=${name}_enable

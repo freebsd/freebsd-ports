@@ -13,7 +13,7 @@
 #
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="watchquagga"
 rcvar=`set_rcvar`

@@ -18,7 +18,7 @@
 sams_enable=${sams_enable-"NO"}
 sams_pidfile=${sams_pidfile-"/var/run/samsdaemon.pid"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="sams"
 rcvar=`set_rcvar`

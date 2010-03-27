@@ -9,7 +9,7 @@
 #
 oak_enable="${oak_enable-NO}"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="oak"
 rcvar=`set_rcvar`

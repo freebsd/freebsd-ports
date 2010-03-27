@@ -33,7 +33,7 @@
 # in /etc/rc.conf to have this script automatically run
 # ifconfig with the above parameter on the device opened by nstxd.
 #
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=nstxd
 rcvar=`set_rcvar`

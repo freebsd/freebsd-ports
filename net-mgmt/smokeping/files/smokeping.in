@@ -20,7 +20,7 @@ smokeping_logfile=${smokeping_logfile-"/var/log/smokeping.log"}
 smokeping_user=${smokeping_user-"%%USERS%%"}
 smokeping_group=${smokeping_group-"%%GROUPS%%"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="smokeping"
 rcvar=`set_rcvar`

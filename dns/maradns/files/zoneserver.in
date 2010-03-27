@@ -9,7 +9,7 @@
 # KEYWORD: shutdown
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 : ${zoneserver_enable="NO"}
 : ${maradns_conf="%%PREFIX%%/etc/mararc"}

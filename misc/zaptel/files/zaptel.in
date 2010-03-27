@@ -14,7 +14,7 @@
 #                               Set it to YES to enable zaptel.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 kmod_dir=%%PREFIX%%/lib/zaptel
 

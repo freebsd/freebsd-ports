@@ -11,7 +11,7 @@
 fail2ban_enable=${fail2ban_enable-"NO"}
 fail2ban_pidfile=${fail2ban_pidfile-"/var/run/fail2ban/fail2ban.pid"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="fail2ban"
 rcvar=`set_rcvar`

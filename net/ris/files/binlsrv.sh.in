@@ -12,7 +12,7 @@
 # binlsrv_infdir="/path/to/inf/files"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="binlsrv"
 rcvar=`set_rcvar`

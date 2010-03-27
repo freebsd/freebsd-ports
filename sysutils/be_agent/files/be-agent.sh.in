@@ -11,7 +11,7 @@
 #be_agent_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=be_agent
 rcvar=`set_rcvar`

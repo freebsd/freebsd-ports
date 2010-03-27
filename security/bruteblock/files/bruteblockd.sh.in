@@ -4,7 +4,7 @@
 # REQUIRE: NETWORKING syslogd
 # KEYWORD: nojail
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="bruteblockd"
 rcvar=`set_rcvar`

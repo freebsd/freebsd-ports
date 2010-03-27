@@ -8,7 +8,7 @@
 # BEFORE:  LOGIN
 # KEYWORD: shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=splatd
 rcvar=`set_rcvar`

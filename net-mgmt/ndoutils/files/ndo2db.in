@@ -15,7 +15,7 @@
 : ${ndo2db_enable="NO"}
 : ${ndo2db_configfile="%%PREFIX%%/etc/nagios/ndo2db.cfg"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ndo2db"
 rcvar=${name}_enable

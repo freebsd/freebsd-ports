@@ -12,7 +12,7 @@
 # pcheckd_enable="YES"   # enable pcheckd
 # pcheckd_user="pop"   # user for pcheckd
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="pcheckd"
 rcvar=`set_rcvar`

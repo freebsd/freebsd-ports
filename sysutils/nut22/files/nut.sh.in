@@ -18,7 +18,7 @@
 nut_enable=${nut_enable-"NO"}
 nut_prefix=${nut_prefix-"%%PREFIX%%"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="nut"
 rcvar=`set_rcvar`

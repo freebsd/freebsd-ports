@@ -6,7 +6,7 @@
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="boinc"
 rcvar=`set_rcvar`

@@ -16,7 +16,7 @@
 # npcd_configfile (str): Set to "%%PREFIX%%/etc/pnp/npcd.cfg" by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="npcd"
 rcvar=`set_rcvar`

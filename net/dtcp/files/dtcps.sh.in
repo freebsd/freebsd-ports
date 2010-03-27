@@ -33,7 +33,7 @@ dtcps_enable=${dtcps_enable:-"NO"}		# Enable dtcps
 # YOU MUST CHANGE TO ASSIGN THIS WITHIN YOUR ADDRESS BLOCK.
 #dtcps_prefix='3ffe:501:185b:8000::'
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dtcps"
 rcvar=`set_rcvar`

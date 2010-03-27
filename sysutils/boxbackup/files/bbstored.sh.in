@@ -16,7 +16,7 @@
 : ${bbstored_flags:="%%PREFIX%%/etc/box/bbstored.conf"}
 : ${bbstored_pidfile:="/var/run/bbstored.pid"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="bbstored"
 rcvar=`set_rcvar`

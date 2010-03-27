@@ -11,7 +11,7 @@
 
 webcamd_enable=${webcamd_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=webcamd
 rcvar=`set_rcvar`

@@ -10,7 +10,7 @@
 # ipguard_interface="iface"
 # ipguard_flags="-u 300 -xz"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=ipguard
 rcvar=`set_rcvar`

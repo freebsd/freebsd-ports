@@ -13,7 +13,7 @@
 snmptrapd_enable=${snmptrapd_enable-"NO"}
 snmptrapd_flags=${snmptrapd_flags-"-p /var/run/snmptrapd.pid"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 load_rc_config net_snmptrapd
 

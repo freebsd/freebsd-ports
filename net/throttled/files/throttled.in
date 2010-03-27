@@ -5,7 +5,7 @@
 # BEFORE: NETWORKING
 # KEYWORD: nojail
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="throttled"
 rcvar=`set_rcvar`

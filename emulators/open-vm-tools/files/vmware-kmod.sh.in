@@ -7,7 +7,7 @@
 # REQUIRE: FILESYSTEMS
 # BEFORE: netif
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 # Global
 checkvm_cmd="%%PREFIX%%/bin/vmware-checkvm > /dev/null"

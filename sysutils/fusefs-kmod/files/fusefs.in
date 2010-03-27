@@ -22,7 +22,7 @@
 #				while waiting for write operations.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 kmod="%%PREFIX%%/modules/fuse.ko"
 name="fusefs"

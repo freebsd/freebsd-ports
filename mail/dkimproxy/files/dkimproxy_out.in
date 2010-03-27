@@ -16,7 +16,7 @@
 # set it to DNS and configurate dkimproxy_out_flags.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dkimproxy_out"
 rcvar=`set_rcvar`

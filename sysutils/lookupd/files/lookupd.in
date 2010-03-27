@@ -15,7 +15,7 @@
 #
 # See lookupd(8) for flags
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=lookupd
 rcvar=`set_rcvar`

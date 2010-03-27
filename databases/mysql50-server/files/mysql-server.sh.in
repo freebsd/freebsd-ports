@@ -22,7 +22,7 @@
 #			to mysqld_safe (default empty).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mysql"
 rcvar=`set_rcvar`

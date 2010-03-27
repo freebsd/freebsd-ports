@@ -11,7 +11,7 @@
 #				Default is "". See ftp-proxy(8).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ftpproxy"
 rcvar=${name}_enable

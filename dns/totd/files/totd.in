@@ -17,7 +17,7 @@
 totd_enable=${totd_enable:-"NO"}		# Enable totd
 # totd_flags="<set as needed>"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="totd"
 rcvar=`set_rcvar`

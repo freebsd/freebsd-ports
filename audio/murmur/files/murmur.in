@@ -13,7 +13,7 @@
 #				Set it to YES to enable murmur.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 # Set some defaults
 murmur_user=${murmur_user:-"murmur"}

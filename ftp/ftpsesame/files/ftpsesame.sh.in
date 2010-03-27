@@ -17,7 +17,7 @@
 # ftpsesame_flags (str):	Additional options (See ftpsesame(8)).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=ftpsesame
 rcvar=`set_rcvar`

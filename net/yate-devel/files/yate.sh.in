@@ -11,7 +11,7 @@
 # yate_enable="YES"
 # 
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=yate
 rcvar=`set_rcvar`

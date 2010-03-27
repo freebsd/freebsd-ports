@@ -17,7 +17,7 @@
 # mongod_dbpath (path):   Set to /var/db/mongod by default
 # mongod_user (username): Set to "mongod" by default
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mongod"
 rcvar=${name}_enable

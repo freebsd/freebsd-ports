@@ -3,7 +3,7 @@
 # PROVIDE: xmpppyirc
 # REQUIRE: DAEMON
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="xmpppyirc"
 pidfile="/var/run/$name.pid"

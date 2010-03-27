@@ -6,7 +6,7 @@
 # PROVIDE: oops
 # REQUIRE: DAEMON
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="oops"
 rcvar=`set_rcvar`

@@ -9,7 +9,7 @@
 # radvd_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=radvd
 rcvar=`set_rcvar`

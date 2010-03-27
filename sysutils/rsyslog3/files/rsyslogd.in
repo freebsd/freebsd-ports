@@ -7,7 +7,7 @@
 # REQUIRE: mountcritremote cleanvar newsyslog ldconfig
 # BEFORE:  SERVERS
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=rsyslogd
 rcvar=`set_rcvar`

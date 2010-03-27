@@ -13,7 +13,7 @@
 #	/etc/rc.conf.d/miltersid
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="miltersid"
 rcvar=`set_rcvar`

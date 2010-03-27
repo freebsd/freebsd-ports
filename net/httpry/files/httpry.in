@@ -15,7 +15,7 @@
 #				See httpry(1) for more information.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=httpry
 rcvar=${name}_enable

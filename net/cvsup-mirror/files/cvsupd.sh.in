@@ -27,7 +27,7 @@
 # Note that answering the questions during the install will setup
 # %%PREFIX%%/etc/cvsup/config.sh for you.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="cvsupd"
 rcvar=`set_rcvar`

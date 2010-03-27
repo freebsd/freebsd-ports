@@ -13,7 +13,7 @@
 # scponlyc_shells (str):		Set to "/etc/shells" by default.
 # scponlyc_passwd (str):		Set to "/etc/passwd" by default.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 scponlyc_shells="${scponlyc_shells:-/etc/shells}"
 scponlyc_passwd="${scponlyc_passwd:-/etc/passwd}"

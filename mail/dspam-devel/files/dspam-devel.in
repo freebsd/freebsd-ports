@@ -15,7 +15,7 @@
 # you can also set the pid file via dspam_pidfile
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dspam"
 rcvar=${name}_enable

@@ -11,7 +11,7 @@
 # igmpproxy_enable (bool):	Set to "NO" by default.
 #				Set it to "YES" to enable igmpproxy.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="igmpproxy"
 rcvar=`set_rcvar`

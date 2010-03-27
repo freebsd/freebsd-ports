@@ -62,7 +62,7 @@ geronimo%%GERONIMO_VERSION%%_tmpdir="${geronimo%%GERONIMO_VERSION%%_tmpdir:-"/tm
 geronimo%%GERONIMO_VERSION%%_out="${geronimo%%GERONIMO_VERSION%%_out:-"%%GERONIMO_OUT%%"}"
 geronimo%%GERONIMO_VERSION%%_stop_timeout="${geronimo%%GERONIMO_VERSION%%_stop_timeout:-"10"}"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="geronimo%%GERONIMO_VERSION%%"
 rcvar=`set_rcvar`

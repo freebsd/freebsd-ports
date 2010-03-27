@@ -17,7 +17,7 @@
 # javaserver_user (str):    Set to "nobody" by default.
 #                              Define owner of the javaserver process.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="javaserver"
 rcvar=`set_rcvar`

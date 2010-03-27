@@ -8,7 +8,7 @@
 # speechd_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 speechd_enable=${speechd_enable-"NO"}
 

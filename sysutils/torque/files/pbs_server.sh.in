@@ -10,7 +10,7 @@
 #               Set it to YES to enable pbs_server.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="pbs_server"
 rcvar=${name}_enable

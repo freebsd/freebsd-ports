@@ -20,7 +20,7 @@
 # dahdi_modules="wct4xxp"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dahdi"
 rcvar=`set_rcvar`

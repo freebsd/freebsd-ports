@@ -13,7 +13,7 @@
 # nefu_flags (str):        Custom additional arguments to be passed to nefu
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="nefu"
 rcvar=`set_rcvar`

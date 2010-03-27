@@ -11,7 +11,7 @@
 # dhttpd_enable (bool):	Set it to "YES" to enable dhttpd
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dhttpd"
 rcvar=`set_rcvar`

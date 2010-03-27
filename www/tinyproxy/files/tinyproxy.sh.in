@@ -10,7 +10,7 @@
 # tinyproxy_config (path): Set to "%%PREFIX%%/etc/tinyproxy.conf" by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="tinyproxy"
 rcvar=`set_rcvar`

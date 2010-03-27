@@ -16,7 +16,7 @@
 # See spamass-milter(8) for flags.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=spamass_milter
 rcvar=`set_rcvar`

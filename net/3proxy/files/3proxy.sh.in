@@ -16,7 +16,7 @@
 threeproxy_enable=${threeproxy_enable-"NO"}
 threeproxy_flags=${threeproxy_flags-"%%PREFIX%%/etc/3proxy.cfg"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="threeproxy"
 rcvar=`set_rcvar`

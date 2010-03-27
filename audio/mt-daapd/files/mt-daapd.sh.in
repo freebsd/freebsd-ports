@@ -6,7 +6,7 @@
 # PROVIDE: mt-daapd
 # REQUIRE: LOGIN
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mtdaapd"
 rcvar="mt_daapd_enable"

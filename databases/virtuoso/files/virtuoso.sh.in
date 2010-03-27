@@ -20,7 +20,7 @@
 
 command=%%PREFIX%%/bin/virtuoso
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 load_rc_config virtuoso
 

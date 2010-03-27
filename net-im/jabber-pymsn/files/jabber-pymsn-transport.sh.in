@@ -11,7 +11,7 @@
 #       /etc/rc.conf.local
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="jabber_pymsn"
 rcvar=`set_rcvar`

@@ -13,7 +13,7 @@
 # PROVIDE: uuidd
 # BEFORE: DAEMON
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="uuidd"
 rcvar=`set_rcvar`

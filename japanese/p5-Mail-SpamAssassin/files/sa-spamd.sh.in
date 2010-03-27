@@ -16,7 +16,7 @@
 # See spamd(8) for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=spamd
 rcvar=`set_rcvar`

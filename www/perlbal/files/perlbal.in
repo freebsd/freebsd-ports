@@ -6,7 +6,7 @@
 # PROVIDE: perlbal
 # REQUIRE: DAEMON
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="perlbal"
 command="%%PREFIX%%/bin/perlbal"

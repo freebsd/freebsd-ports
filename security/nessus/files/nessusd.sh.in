@@ -19,7 +19,7 @@
 #nessusd_program="%%PREFIX%%/sbin/nessusd"	# Location of nessusd
 nessusd_flags="-D"				# Flags to nessusd program
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="nessusd"
 rcvar=`set_rcvar`

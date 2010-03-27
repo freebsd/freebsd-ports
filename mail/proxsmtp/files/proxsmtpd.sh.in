@@ -13,7 +13,7 @@
 #				Default is "%%PREFIX%%/etc/proxsmtpd.conf"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="proxsmtpd"
 rcvar=${name}_enable

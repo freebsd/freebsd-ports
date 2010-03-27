@@ -10,7 +10,7 @@
 # webredirect_flags=""        # webredirect command line flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="webredirect"
 rcvar=`set_rcvar`

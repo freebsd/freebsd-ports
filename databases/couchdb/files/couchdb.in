@@ -23,7 +23,7 @@ couchdb_enablelogs="${couchdb_enablelogs:-"YES"}"
 couchdb_etcdir="${couchdb_etcdir:-"%%PREFIX%%/etc/couchdb"}"
 couchdb_respawn="${couchdb_respawn:-"0"}"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="couchdb"
 rcvar=${name}_enable

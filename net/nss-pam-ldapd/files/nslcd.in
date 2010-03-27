@@ -12,7 +12,7 @@
 
 nslcd_enable=${nslcd_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=nslcd
 rcvar=$(set_rcvar)

@@ -7,7 +7,7 @@
 # sflowtool_enable="YES"
 # sflowtool_flags="<set as needed>"
 
-.  %%RC_SUBR%%
+. /etc/rc.subr
 
 name="sflowtool"
 rcvar=`set_rcvar`

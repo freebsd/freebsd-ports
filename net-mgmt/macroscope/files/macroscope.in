@@ -15,7 +15,7 @@
 # macroscope_flags=""		# additional command line arguments
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="macroscope"
 rcvar=$(set_rcvar)

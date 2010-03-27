@@ -10,7 +10,7 @@
 # bitlbee_enable="YES"
 # bitlbee_flags="<set as needed>"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="bitlbee"
 rcvar=`set_rcvar`

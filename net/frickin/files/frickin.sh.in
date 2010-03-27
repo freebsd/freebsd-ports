@@ -21,7 +21,7 @@
 frickin_enable=${frickin_enable-"NO"}
 frickin_conf=${frickin_conf-""}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 
 name="frickin"

@@ -14,7 +14,7 @@
 # pen_enable="YES"
 # pen_flags="<set as needed>"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=pen
 rcvar=`set_rcvar`

@@ -18,7 +18,7 @@
 zeo_enable=${zeo_enable:-"NO"}        # Enable zeo server
 zeo_instances=${zeo_instances:-""}    # List of instancehome dirs
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="zeo"
 rcvar=`set_rcvar`

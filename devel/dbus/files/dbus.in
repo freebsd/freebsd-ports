@@ -10,7 +10,7 @@
 # dbus_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 . %%GNOME_SUBR%%
 
 dbus_enable=${dbus_enable-${gnome_enable}}

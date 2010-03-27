@@ -16,7 +16,7 @@ tiarra_flags=${tiarra_flags:-"--quiet"}
 tiarra_user=${tiarra_user:-"%%TIARRA_USER%%"}
 tiarra_chdir=${tiarra_chdir:-"${prefix}/${name}"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 rcvar=`set_rcvar`
 

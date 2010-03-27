@@ -10,7 +10,7 @@
 # linuxigd_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=linuxigd
 rcvar=`set_rcvar`

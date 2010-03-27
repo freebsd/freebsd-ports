@@ -14,7 +14,7 @@
 # You must configure at least some flags to make it connect to a server. See -h.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=nagircbot
 rcvar=`set_rcvar`

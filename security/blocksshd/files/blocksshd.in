@@ -6,7 +6,7 @@
 # BEFORE: securelevel
 # KEYWORD: shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="blocksshd"
 rcvar="`set_rcvar`"

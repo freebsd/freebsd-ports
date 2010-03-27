@@ -14,7 +14,7 @@
 # postfix_policyd_sf_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=postfix_policyd_sf
 rcvar=`set_rcvar`

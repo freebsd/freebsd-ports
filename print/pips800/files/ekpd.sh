@@ -18,7 +18,7 @@
 # ekpd_enable="YES"
 # ekpd_flags=""			# Flags to ekpd program
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ekpd"
 rcvar=`set_rcvar`

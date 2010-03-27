@@ -17,7 +17,7 @@
 # not commented out - icecast refuses to run as root.
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="icecast"
 rcvar=`set_rcvar`

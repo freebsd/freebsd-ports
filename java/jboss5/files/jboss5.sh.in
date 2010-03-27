@@ -15,7 +15,7 @@
 # %%APP_SHORTNAME%%_logging (str)       JBoss log output. A pipe command may be used.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 %%APP_SHORTNAME%%_user="%%USER%%"
 %%APP_SHORTNAME%%_logdir="%%LOG_DIR%%"

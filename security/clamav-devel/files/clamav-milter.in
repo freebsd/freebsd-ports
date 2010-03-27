@@ -16,7 +16,7 @@
 # See clamav-milter(1) for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=clamav_milter
 rcvar=`set_rcvar`

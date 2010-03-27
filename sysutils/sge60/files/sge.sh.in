@@ -12,7 +12,7 @@
 # sge_qmaster_enable	Start the qmaster and scheduler (default=NO).
 # sge_execd_enable	Start the exec daemon (default=NO).
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 export SGE_ROOT=%%PREFIX%%/%%SGE_BASE%%
 

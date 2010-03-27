@@ -13,7 +13,7 @@
 # spreadlogd_enable="YES"
 # spreadlogd_flags="<set as needed>"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=spreadlogd
 rcvar=`set_rcvar`

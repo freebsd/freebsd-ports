@@ -15,7 +15,7 @@
 # amavisd_milter_flags="<set as needed>"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="amavisd_milter"
 rcvar=`set_rcvar`

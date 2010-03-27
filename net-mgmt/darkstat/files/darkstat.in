@@ -29,7 +29,7 @@
 #
 # Please refer to the darkstat(1) manual page for full documentation.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=darkstat
 rcvar=`set_rcvar`

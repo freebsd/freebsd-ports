@@ -17,7 +17,7 @@
 # See clamd(8) for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=clamav_clamd
 rcvar=`set_rcvar`

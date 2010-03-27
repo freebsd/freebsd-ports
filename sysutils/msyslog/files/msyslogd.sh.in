@@ -16,7 +16,7 @@
 # msyslogd_flags=""
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=msyslogd
 rcvar=`set_rcvar`

@@ -11,7 +11,7 @@
 # doorman_config (path):      Set to "%%PREFIX%%/etc/doormand/doormand.cf" by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="doorman"
 rcvar=`set_rcvar`

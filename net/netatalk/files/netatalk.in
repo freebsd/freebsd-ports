@@ -28,7 +28,7 @@ cnid_metad_enable=${cnid_metad_enable-"NO"}
 afpd_enable=${afpd_enable-"NO"}
 timelord_enable=${timelord_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=netatalk
 rcvar=`set_rcvar`

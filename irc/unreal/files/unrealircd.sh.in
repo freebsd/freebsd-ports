@@ -14,7 +14,7 @@
 #				Set it to "YES" to enable Unreal IRCd
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="unrealircd"
 rcvar=`set_rcvar`

@@ -10,7 +10,7 @@
 # lircd_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="lircd"
 rcvar=`set_rcvar`

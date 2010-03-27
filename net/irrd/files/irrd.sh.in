@@ -17,7 +17,7 @@ irrd_enable="${irrd_enable:-NO}"		# Enable irrd
 #irrd_program="%%PREFIX%%/sbin/irrd"		# Location of irrd
 irrd_flags="${irrd_flags:--u}"			# Flags to imapd program
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="irrd"
 rcvar=`set_rcvar`

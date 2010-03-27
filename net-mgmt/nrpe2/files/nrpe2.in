@@ -16,7 +16,7 @@
 # nrpe2_pidfile (str):    Set to "%%NAGIOSDIR%%/nrpe2.pid" by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="nrpe2"
 rcvar=`set_rcvar`

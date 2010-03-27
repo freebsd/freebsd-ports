@@ -10,7 +10,7 @@
 # dcd_enable (bool):   Set to NO by default.
 #               Set it to YES to enable dcd.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dcd"
 rcvar=${name}_enable

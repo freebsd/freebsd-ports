@@ -14,7 +14,7 @@
 # mixminiond_user (str):	Mixminiond user. Default _mixminion
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mixminiond"
 rcvar=${name}_enable

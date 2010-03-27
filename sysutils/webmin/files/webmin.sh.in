@@ -12,7 +12,7 @@
 
 webmin_enable=${webmin_enable:-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=webmin
 rcvar=`set_rcvar`

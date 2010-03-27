@@ -21,7 +21,7 @@
 : ${vpnc_conf_dir="%%PREFIX%%/etc"}
 : ${vpnc_record="$vpnc_pid_dir/vpnc.record"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="vpnc"
 rcvar=`set_rcvar`

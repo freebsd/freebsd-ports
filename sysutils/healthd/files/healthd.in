@@ -19,7 +19,7 @@
 # Other options are listed in healthd(8)
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=healthd
 rcvar=`set_rcvar`

@@ -14,7 +14,7 @@
 # imapproxyd_conf (file):	Set location of conf file.
 #				Default is "%%PREFIX%%/etc/imapproxyd.conf"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=imapproxyd
 rcvar=${name}_enable

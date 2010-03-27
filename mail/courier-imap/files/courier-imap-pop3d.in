@@ -15,7 +15,7 @@
 
 courier_imap_pop3d_enable=${courier_imap_pop3d_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="courier_imap_pop3d"
 rcvar=`set_rcvar`

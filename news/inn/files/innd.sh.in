@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=innd
 

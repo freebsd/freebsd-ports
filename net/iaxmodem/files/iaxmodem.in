@@ -10,7 +10,7 @@
 # iaxmodem_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=iaxmodem
 rcvar=`set_rcvar`

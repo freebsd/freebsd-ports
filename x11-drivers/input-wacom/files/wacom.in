@@ -20,7 +20,7 @@
 # In USB mode the file /boot/loader.conf is also adjusted.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="wacom"
 rcvar=${name}_enable

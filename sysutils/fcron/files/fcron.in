@@ -8,7 +8,7 @@
 # BEFORE: securelevel
 # KEYWORD: shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="fcron"
 rcvar="`set_rcvar`"

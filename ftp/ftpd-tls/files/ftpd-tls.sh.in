@@ -19,7 +19,7 @@
 # ftpd_tls_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ftpd_tls"
 rcvar=${name}_enable

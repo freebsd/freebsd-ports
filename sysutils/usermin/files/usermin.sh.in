@@ -12,7 +12,7 @@
 
 usermin_enable=${usermin_enable:-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=usermin
 rcvar=`set_rcvar`

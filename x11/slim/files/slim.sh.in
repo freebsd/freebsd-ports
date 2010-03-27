@@ -13,7 +13,7 @@
 # to this:
 #   ttyv8   "/usr/local/bin/slim"   xterm   on secure
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="slim"
 rcvar=`set_rcvar`

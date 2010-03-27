@@ -14,7 +14,7 @@
 #				Default is "%%PREFIX%%/etc/clamsmtpd.conf"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="clamsmtpd"
 rcvar=${name}_enable

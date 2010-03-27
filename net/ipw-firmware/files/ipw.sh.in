@@ -13,7 +13,7 @@
 # %%DRIVERNAME%%_enable="YES"
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="%%DRIVERNAME%%"
 rcvar=`set_rcvar`

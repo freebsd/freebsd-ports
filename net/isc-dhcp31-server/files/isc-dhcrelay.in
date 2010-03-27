@@ -44,7 +44,7 @@ dhcrelay_precmd ()
 	rc_flags="${rc_flags} ${ifaces} ${dhcrelay_servers}"
 }
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=dhcrelay
 rcvar=${name}_enable

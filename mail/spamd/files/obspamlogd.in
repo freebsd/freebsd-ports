@@ -20,7 +20,7 @@
 #
 obspamlogd_enable=${obspamlogd_enable:-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="obspamlogd"
 rcvar=`set_rcvar`

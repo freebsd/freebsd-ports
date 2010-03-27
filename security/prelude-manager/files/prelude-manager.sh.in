@@ -11,7 +11,7 @@
 # prelude_manager_flags  (flags):  Set arguments to use with Prelude Manager
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="prelude_manager"
 rcvar=${name}_enable

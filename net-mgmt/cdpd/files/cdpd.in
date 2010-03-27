@@ -20,7 +20,7 @@
 # Default flags: -a
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=cdpd
 rcvar=`set_rcvar`

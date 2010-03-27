@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/samba33/files/Attic/samba.in,v 1.1 2009-03-07 05:57:21 timur Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/samba33/files/Attic/samba.in,v 1.2 2010-03-27 00:13:58 dougb Exp $
 #
 
 # PROVIDE: nmbd smbd
@@ -24,7 +24,7 @@
 #samba_config="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="samba"
 rcvar=$(set_rcvar)

@@ -12,7 +12,7 @@
 # noip_flags:         Set to -c %%PREFIX%%/etc/no-ip2.conf by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="noip"
 rcvar=`set_rcvar`

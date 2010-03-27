@@ -17,7 +17,7 @@
 # swatch_2_flags="blah, blah"
 # swatch_3_flags="blah, blah"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=swatch
 rcvar=`set_rcvar`

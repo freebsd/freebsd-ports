@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pgcluster.in,v 1.2 2007-07-26 16:05:04 rafan Exp $
+# $FreeBSD: /tmp/pcvs/ports/databases/pgcluster/files/Attic/pgcluster.in,v 1.3 2010-03-27 00:12:48 dougb Exp $
 #
 # PROVIDE: pgcluster
 # REQUIRE: DAEMON
@@ -14,7 +14,7 @@
 # pgcluster_flags="-w -s"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="pgcluster"
 rcvar=`set_rcvar`

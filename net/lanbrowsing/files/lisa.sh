@@ -9,7 +9,7 @@
 lisa_enable="NO"
 lisa_conffile="%%PREFIX%%/etc/lisarc"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="lisa"
 rcvar=`set_rcvar`

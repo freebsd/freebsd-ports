@@ -16,7 +16,7 @@
 
 perdition_imap4s_enable=${perdition_imap4s_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="perdition_imap4s"
 rcvar=`set_rcvar`

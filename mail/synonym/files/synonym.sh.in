@@ -18,7 +18,7 @@ synonym_enable=${synonym_enable-"NO"}
 synonym_pidfile=${synonym_pidfile-"%%RUNDIR%%/synonym.pid"}
 synonym_conffile=${synonym_conffile-"%%PREFIX%%/etc/synonym.conf"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=synonym
 rcvar=`set_rcvar`

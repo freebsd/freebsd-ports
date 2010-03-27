@@ -13,7 +13,7 @@
 # config: %%PREFIX%%/etc/mysqlard.cnf
 # pidfile: /var/run/mysqlard.pid
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 # Source the config script
 if [ -z "$datadir" ] ; then

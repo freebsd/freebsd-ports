@@ -4,7 +4,7 @@
 # REQUIRE: DAEMON NETWORKING LOGIN
 # KEYWORD: shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 gnump3d_enable=${gnump3d_enable-"NO"}
 gnump3d_program=${gnump3d_program:-%%PREFIX%%/bin/gnump3d}

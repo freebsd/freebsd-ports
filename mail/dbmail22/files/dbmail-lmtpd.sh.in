@@ -16,7 +16,7 @@
 # See dbmail-lmtpd(8) for flags
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=dbmail_lmtpd
 rcvar=`set_rcvar`

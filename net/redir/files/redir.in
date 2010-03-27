@@ -14,7 +14,7 @@
 #				Example: "--lport=80 --cport=3128 --syslog"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="redir"
 rcvar=${name}_enable

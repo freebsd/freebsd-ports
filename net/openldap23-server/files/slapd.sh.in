@@ -24,7 +24,7 @@
 #slapd_owner="DEFAULT"
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="slapd"
 rcvar=`set_rcvar`

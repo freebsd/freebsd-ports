@@ -11,7 +11,7 @@
 #         enable zabbix_proxy.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="zabbix_proxy"
 rcvar=${name}_enable

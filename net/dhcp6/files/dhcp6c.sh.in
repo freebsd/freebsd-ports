@@ -23,7 +23,7 @@
 # dhcp6c_flags (additional arguments):	Not defined by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dhcp6c"
 rcvar=${name}_enable

@@ -51,7 +51,7 @@
 #	  Pcap data logged using this option is affected by the --strip-80211 cmdline option
 #	  The configuration file equivalent to this is 'default debug_pcap_raw enable'
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="sancp"
 rcvar=`set_rcvar`

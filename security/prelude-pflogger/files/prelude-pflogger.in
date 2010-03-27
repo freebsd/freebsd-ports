@@ -11,7 +11,7 @@
 # prelude_pflogger_flags  (flags):  Set arguments to use with Prelude PFLogger
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="prelude_pflogger"
 rcvar=${name}_enable

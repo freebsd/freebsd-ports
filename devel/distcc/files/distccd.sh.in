@@ -16,7 +16,7 @@
 distccd_enable=${distccd_enable-"NO"}
 distccd_flags=${distccd_flags-"-a 127.0.0.0/8 --user distcc --daemon -P %%DISTCCD_PIDFILE%%"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=distccd
 rcvar=`set_rcvar`

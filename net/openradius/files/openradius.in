@@ -13,7 +13,7 @@
 #				Default is "-o %%LOGFILE%%".
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="openradius"
 rcvar=`set_rcvar`

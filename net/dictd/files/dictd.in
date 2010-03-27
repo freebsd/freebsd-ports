@@ -11,7 +11,7 @@
 
 dictd_enable=${dictd_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=dictd
 rcvar=`set_rcvar`

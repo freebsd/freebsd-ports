@@ -13,7 +13,7 @@
 
 vtunclient_enable=${vtunclient_enable:-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=vtunclient
 rcvar=`set_rcvar`

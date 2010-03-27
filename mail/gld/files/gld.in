@@ -15,7 +15,7 @@
 # gld_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=gld
 rcvar=`set_rcvar`

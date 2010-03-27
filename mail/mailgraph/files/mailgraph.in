@@ -10,7 +10,7 @@
 # mailgraph_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mailgraph"
 rcvar=`set_rcvar`

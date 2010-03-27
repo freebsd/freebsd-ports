@@ -13,7 +13,7 @@
 # See monitord(8) for flags.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="monitord"
 rcvar=`set_rcvar`

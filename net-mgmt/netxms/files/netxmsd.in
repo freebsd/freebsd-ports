@@ -14,7 +14,7 @@
 #                               Set it to "YES" to enable netxmsd.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="netxmsd"
 rcvar=${name}_enable

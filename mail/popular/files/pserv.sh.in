@@ -12,7 +12,7 @@
 # pserv_enable="YES"   # enable pserv
 # pserv_user="pop"   # user for pserv
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="pserv"
 rcvar=`set_rcvar`

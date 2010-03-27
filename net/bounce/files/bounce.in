@@ -14,7 +14,7 @@
 # bounce_connectionname_options (str):	Commandline for each bounce connection.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="bounce"
 rcvar=${name}_enable

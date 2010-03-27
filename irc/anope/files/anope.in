@@ -14,7 +14,7 @@
 # anope_chroot="%%PREFIX%%/share/anope"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="anope"
 rcvar=`set_rcvar`

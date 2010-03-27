@@ -20,7 +20,7 @@
 #
 # Samples are provided at the end of the configuration file.
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="vsftpd"
 rcvar=`set_rcvar`

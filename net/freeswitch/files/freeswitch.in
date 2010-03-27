@@ -4,7 +4,7 @@
 # REQUIRE: DAEMON
 # KEYWORD: FreeBSD
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=freeswitch
 rcvar=`set_rcvar`

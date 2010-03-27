@@ -11,7 +11,7 @@
 # couriergraph_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=couriergraph
 rcvar=`set_rcvar`

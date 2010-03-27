@@ -16,7 +16,7 @@
 #				Default is "/var/run/lighttpd.pid".
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="lighttpd"
 rcvar=`set_rcvar`

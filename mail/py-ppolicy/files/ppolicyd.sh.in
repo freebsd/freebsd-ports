@@ -13,7 +13,7 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ppolicyd"
 rcvar=`set_rcvar`

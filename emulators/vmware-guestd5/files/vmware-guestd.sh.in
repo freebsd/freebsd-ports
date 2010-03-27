@@ -8,7 +8,7 @@
 # BEFORE: LOGIN
 
 PREFIX=%%PREFIX%%
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 # Global
 checkvm_cmd="${PREFIX}/sbin/vmware-checkvm > /dev/null"

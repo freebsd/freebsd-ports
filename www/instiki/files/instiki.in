@@ -10,7 +10,7 @@
 #                             Extra flags passed to start command
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="instiki"
 rcvar=${name}_enable

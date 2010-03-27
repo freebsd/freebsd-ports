@@ -11,7 +11,7 @@
 #				Default is "NO"
 # spampd_flags
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="spampd"
 rcvar=`set_rcvar`

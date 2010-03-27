@@ -20,7 +20,7 @@
 # tclhttpd_stderr_log (str):	Set to the location for the tclhttpd
 #				process log (standard error)
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="tclhttpd"
 rcvar=`set_rcvar`

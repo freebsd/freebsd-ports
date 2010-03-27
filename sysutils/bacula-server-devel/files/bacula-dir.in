@@ -14,7 +14,7 @@
 # bacula_dir_flags (params):   Set params used to start bacula_dir.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="bacula_dir"
 rcvar=${name}_enable

@@ -12,7 +12,7 @@
 
 silcd_enable=${silcd_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=silcd
 rcvar=`set_rcvar`

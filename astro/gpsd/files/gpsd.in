@@ -21,7 +21,7 @@
 #                       Example: "/dev/cuaU0" for a USB serial GPS.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=gpsd
 rcvar=`set_rcvar`

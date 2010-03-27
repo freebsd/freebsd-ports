@@ -13,7 +13,7 @@
 # bopm_flags (str):	Custom flags passed to the bopm
 #			daemon (default empty).
 #
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="bopm"
 rcvar=`set_rcvar`

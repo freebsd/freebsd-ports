@@ -22,7 +22,7 @@
 #	 -S shareurl host to log dangerous site interactions to
 #	 -x enable proxy mode
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="spybye"
 load_rc_config ${name}

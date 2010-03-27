@@ -12,7 +12,7 @@
 #tpop3d_flags="..."
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="tpop3d"
 rcvar=`set_rcvar`

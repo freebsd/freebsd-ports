@@ -9,7 +9,7 @@
 # daedalus_flags (str):        Set to "-c %%PREFIX%%/etc/daedalus/daedalus.xml -t %%PREFIX%%/etc/daedalus/templates.xml" by default.
 #                             Extra flags passed to start command
 #
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="daedalus"
 rcvar=`set_rcvar`

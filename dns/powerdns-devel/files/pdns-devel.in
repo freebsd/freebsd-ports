@@ -16,7 +16,7 @@
 # See pdns_server(8) for flags.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=pdns
 rcvar=`set_rcvar`

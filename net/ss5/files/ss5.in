@@ -10,7 +10,7 @@
 #               Set it to YES to enable ss5.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ss5"
 rcvar=${name}_enable

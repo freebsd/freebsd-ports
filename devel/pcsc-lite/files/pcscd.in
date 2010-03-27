@@ -9,7 +9,7 @@
 #
 # pcscd_enable="YES"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="pcscd"
 rcvar="pcscd_enable"

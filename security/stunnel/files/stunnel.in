@@ -21,7 +21,7 @@
 #				the stunnel.conf file.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="stunnel"
 rcvar=`set_rcvar`

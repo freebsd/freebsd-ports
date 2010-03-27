@@ -21,7 +21,7 @@
 # See vserver(8) for a detailed description of vserver commandline qualifiers.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=vserver
 rcvar=`set_rcvar`

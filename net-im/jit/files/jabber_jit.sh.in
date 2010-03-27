@@ -17,7 +17,7 @@
 #   Enable the transport ("YES") or not ("NO", the default).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="jabber_jit"
 rcvar=`set_rcvar`

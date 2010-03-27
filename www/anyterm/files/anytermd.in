@@ -19,7 +19,7 @@
 # anytermd_name (str):		Set to "anyterm" by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=anytermd
 rcvar=`set_rcvar`

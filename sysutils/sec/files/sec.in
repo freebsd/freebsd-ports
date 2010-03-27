@@ -19,7 +19,7 @@
 #   ...etc
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="sec"
 rcvar=`set_rcvar`

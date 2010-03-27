@@ -31,7 +31,7 @@
 # -n Be nice by sleeping occasionally to not saturate the I/O bandwith of the disk
 # -i Run only when there was a modification of the disk cache
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 htcacheclean_enable="${htcacheclean_enable:-"NO"}"
 htcacheclean_cache="${htcacheclean_cache:-"%%PREFIX%%/www/proxy"}"

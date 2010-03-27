@@ -15,7 +15,7 @@
 #
 # See ospfd(8) for openospfd_flags
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="openospfd"
 rcvar=`set_rcvar`

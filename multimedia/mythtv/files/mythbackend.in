@@ -15,7 +15,7 @@
 #                             (default /var/log/mythbackend.log)
 # mythbackend_flags (str):    Additional flags for mythbackend.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mythbackend"
 rcvar=`set_rcvar`

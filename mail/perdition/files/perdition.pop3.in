@@ -16,7 +16,7 @@
 
 perdition_pop3_enable=${perdition_pop3_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="perdition_pop3"
 rcvar=`set_rcvar`

@@ -31,7 +31,7 @@
 # milterdkim_alg (str):       Algorithm to use when signing
 # milterdkim_flags (str):     Flags passed to start command.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="milterdkim"
 rcvar=`set_rcvar`

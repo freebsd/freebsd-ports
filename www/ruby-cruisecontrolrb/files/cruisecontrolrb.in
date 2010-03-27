@@ -13,7 +13,7 @@
 #   Set it to a port
 #   Default: 3333
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=cruisecontrolrb
 rcvar=${name}_enable

@@ -12,7 +12,7 @@
 #			Set it to "YES" to enable Missey POP3 Server.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="mps"
 rcvar=`set_rcvar`

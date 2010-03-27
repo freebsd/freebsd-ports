@@ -23,7 +23,7 @@
 #
 # See %%PREFIX%%/etc/ng_ipacct.conf for futher reference.
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="ng_ipacct"
 rcvar=`set_rcvar`

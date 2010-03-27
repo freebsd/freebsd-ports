@@ -13,7 +13,7 @@
 arpwatch_enable=${arpwatch_enable:-"NO"}
 arpwatch_dir=${arpwatch_dir:-"%%PREFIX%%/arpwatch/"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=arpwatch
 rcvar=`set_rcvar`

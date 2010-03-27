@@ -6,7 +6,7 @@
 # REQUIRE: DAEMON NETWORKING
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ramon"
 rcvar=`set_rcvar`

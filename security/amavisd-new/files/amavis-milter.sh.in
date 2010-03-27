@@ -14,7 +14,7 @@
 #amavis_milter_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=amavis_milter
 rcvar=`set_rcvar`

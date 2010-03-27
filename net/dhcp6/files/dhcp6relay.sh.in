@@ -20,7 +20,7 @@
 # dhcp6relay_flags (additional arguments):	Not defined by default.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="dhcp6relay"
 rcvar=${name}_enable

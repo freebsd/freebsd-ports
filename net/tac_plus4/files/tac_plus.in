@@ -18,7 +18,7 @@
 #    Allows you to specify a different config file for
 #    the tac_plus daemon
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=tac_plus
 rcvar=`set_rcvar`

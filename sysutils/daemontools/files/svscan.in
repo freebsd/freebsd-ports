@@ -58,7 +58,7 @@
 #ulimit -s ${MINSEGMENT}
 #ulimit -u ${MAXCHILD}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="svscan"
 rcvar=`set_rcvar`

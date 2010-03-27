@@ -12,7 +12,7 @@
 #ifdepd_src_ifaces="em0:em1"
 #ifdepd_dst_ifaces="carp1"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ifdepd"
 rcvar=`set_rcvar`

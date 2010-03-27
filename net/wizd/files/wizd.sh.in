@@ -13,7 +13,7 @@
 #				Default is "".
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="wizd"
 rcvar=${name}_enable

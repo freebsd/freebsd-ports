@@ -9,7 +9,7 @@
 
 hydra_enable=${hydra_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 load_rc_config hydra
 

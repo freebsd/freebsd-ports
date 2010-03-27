@@ -14,7 +14,7 @@
 #	application you want to control.
 # 	Default: %%PREFIX%%/etc/mongrel_cluster
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=mongrel_cluster
 rcvar=${name}_enable

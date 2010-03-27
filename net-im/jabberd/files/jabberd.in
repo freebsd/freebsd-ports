@@ -17,7 +17,7 @@ jabberd_chdir=${jabberd_chdir-"%%JABBER_RUNDIR%%/pid"}
 jabberd_enable=${jabberd_enable-"NO"}
 jabberd_user=${jabberd_user-"%%JABBER_USER%%"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="jabberd"
 rcvar=`set_rcvar`

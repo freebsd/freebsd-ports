@@ -10,7 +10,7 @@
 #                      Set it to YES to enable lprng.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="lprng"
 rcvar=${name}_enable

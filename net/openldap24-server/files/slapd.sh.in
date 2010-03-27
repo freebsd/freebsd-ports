@@ -34,7 +34,7 @@
 #slapd_krb5_ktname="/path/to/ldap.keytab"
 #
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="slapd"
 rcvar=`set_rcvar`

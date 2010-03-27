@@ -6,7 +6,7 @@
 # PROVIDE: miniupnpd
 # REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 # Add the following line to /etc/rc.conf to enable miniupnpd
 # miniupnpd_enable="YES"

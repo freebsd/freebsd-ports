@@ -22,7 +22,7 @@ qadsl_enable=${qadsl_enable-"NO"}
 qadsl_flags=${qadsl_flags-"-l"}
 qadsl_pidfile=${qadsl_pidfile-"/var/run/qadsl.pid"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="qadsl"
 rcvar=`set_rcvar`

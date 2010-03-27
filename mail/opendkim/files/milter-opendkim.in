@@ -31,7 +31,7 @@
 # milteropendkim_alg (str):       Algorithm to use when signing
 # milteropendkim_flags (str):     Flags passed to start command.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="milteropendkim"
 rcvar=`set_rcvar`

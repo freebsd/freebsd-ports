@@ -9,7 +9,7 @@
 #
 #mpdscribble_enable="YES"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=mpdscribble
 rcvar=`set_rcvar`

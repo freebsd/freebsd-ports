@@ -47,7 +47,7 @@
 # See varnishd(1) for a detailed overview of command-line options.
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="varnishd"
 rcvar=`set_rcvar`

@@ -30,7 +30,7 @@
 # milterbatv_key (str):       Path to the private key file to sign with.
 # milterbatv_flags (str):     Flags passed to start command.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="milterbatv"
 rcvar=`set_rcvar`

@@ -11,7 +11,7 @@ proxyper_enable=${proxyper_enable:-"NO"}
 dir="%%BINDIR%%"
 user="nobody"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="proxyper"
 rcvar=`set_rcvar`

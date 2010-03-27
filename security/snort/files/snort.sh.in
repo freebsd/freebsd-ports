@@ -23,7 +23,7 @@
 #				Default: ""
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="snort"
 rcvar=`set_rcvar`

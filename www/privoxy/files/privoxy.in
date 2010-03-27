@@ -22,7 +22,7 @@
 # Usage:
 # %%PREFIX%%/etc/rc.d/privoxy [fast|force|one](start|stop|restart|rcvar|status|poll)
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="privoxy"
 rcvar=${name}_enable

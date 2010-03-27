@@ -18,7 +18,7 @@
 # ipa_enable (boolean)		Set to "YES" to enable ipa
 #				(default is "NO")
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ipa"
 rcvar=${name}_enable

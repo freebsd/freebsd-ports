@@ -10,7 +10,7 @@
 # ucc_enable (bool):	        Set to "NO" by default.
 #                               Set it to "YES" to enable ucc.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ucc"
 rcvar=${name}_enable

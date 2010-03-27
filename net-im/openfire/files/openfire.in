@@ -21,7 +21,7 @@
 # openfire_javargs (args):  Set to -Xmx256M by default.
 #               See java -h for available arguments.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="openfire"
 rcvar=${name}_enable

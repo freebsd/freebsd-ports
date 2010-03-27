@@ -8,7 +8,7 @@
 
 openupsd_enable=${openupsd_enable:-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="openupsd"
 rcvar=`set_rcvar`

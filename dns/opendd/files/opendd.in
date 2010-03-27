@@ -10,7 +10,7 @@
 # opendd_enable (bool):		Set to "NO" by default.
 #                               Set it to "YES" to enable opendd.
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="opendd"
 rcvar=${name}_enable

@@ -10,7 +10,7 @@
 #				"%%PREFIX%%/etc/opentracker/opentracker.conf"
 #				by default
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="opentracker"
 rcvar=`set_rcvar`

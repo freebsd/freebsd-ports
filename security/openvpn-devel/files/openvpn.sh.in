@@ -60,7 +60,7 @@
 # For further documentation, please see openvpn(8).
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 case "$0" in
 /etc/rc*)

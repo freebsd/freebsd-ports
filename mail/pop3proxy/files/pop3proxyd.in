@@ -14,7 +14,7 @@
 #pop3proxyd_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=pop3proxyd
 rcvar=`set_rcvar`

@@ -22,7 +22,7 @@
 # If you want svnserve binding at ipv4 address, you have
 # to use option 'svnserve_flags' with --listen-host parameter
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 # Set some defaults
 svnserve_enable=${svnserve_enable:-"NO"}

@@ -10,7 +10,7 @@
 # ovs_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="ovs"
 rcvar=`set_rcvar`

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/ftp/moftpd/files/Attic/moftpd.in,v 1.2 2009-07-15 16:55:42 dougb Exp $
+# $FreeBSD: /tmp/pcvs/ports/ftp/moftpd/files/Attic/moftpd.in,v 1.3 2010-03-27 00:13:01 dougb Exp $
 #
 
 # PROVIDE: moftpd
@@ -19,7 +19,7 @@
 # moftpdlimits_args (str):   Default to "-e -C daemon"
 #                             Arguments of pre-start limits run.
 #
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="moftpd"
 rcvar=`set_rcvar`

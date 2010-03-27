@@ -7,7 +7,7 @@
 # REQUIRE: mountcritremote ldconfig
 # BEFORE:  DAEMON
 
-. "%%RC_SUBR%%"
+. /etc/rc.subr
 
 name="ldconfig"
 ldconfig_command="/sbin/ldconfig"

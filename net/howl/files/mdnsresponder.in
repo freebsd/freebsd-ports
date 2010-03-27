@@ -11,7 +11,7 @@
 # mdnsresponder_enable="YES"
 # mdnsresponder_flags="<set as needed>"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=mdnsresponder
 rcvar=`set_rcvar`

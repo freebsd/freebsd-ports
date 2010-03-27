@@ -11,7 +11,7 @@
 # scanlogd_enable="YES"
 # scanlogd_flags="<set as needed>"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="scanlogd"
 rcvar=`set_rcvar`

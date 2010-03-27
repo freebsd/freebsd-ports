@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/minisapserver/files/Attic/sapserver.sh,v 1.3 2006-02-20 20:47:27 dougb Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/minisapserver/files/Attic/sapserver.sh,v 1.4 2010-03-27 00:13:48 dougb Exp $
 #
 
 # PROVIDE: sapserver
@@ -14,7 +14,7 @@
 #
 sapserver_enable="${sapserver_enable-NO}"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=sapserver
 rcvar=`set_rcvar`

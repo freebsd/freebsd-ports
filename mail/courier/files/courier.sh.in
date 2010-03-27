@@ -33,7 +33,7 @@ datadir="${prefix}/share/courier"
 #
 courier_enable=${courier_enable:-"NO"}	# Run Courier-MTA (YES/NO).
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="courier"
 rcvar=`set_rcvar`

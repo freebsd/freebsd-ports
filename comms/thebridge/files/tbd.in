@@ -17,7 +17,7 @@
 
 tbd_enable=${tbd_enable-"NO"}
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="tbd"
 rcvar=`set_rcvar`

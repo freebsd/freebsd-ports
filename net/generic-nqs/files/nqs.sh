@@ -11,7 +11,7 @@
 # nqs_enable (bool):      Set to "NO" by default.
 #                             Set it to "YES" to enable NQS
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="nqs"
 rcvar=`set_rcvar`
