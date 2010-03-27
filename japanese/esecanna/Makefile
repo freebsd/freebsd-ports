@@ -7,7 +7,7 @@
 
 PORTNAME=	esecanna
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
@@ -18,18 +18,13 @@ DIST_SUBDIR=	esecanna
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pseudo cannaserver which wraps some other input engines
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	esecanna
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--with-piddir="${PIDDIR}"
+CONFIGURE_ARGS=	--with-piddir="/var/run/esecanna"
 
-PIDDIR=		/var/run/esecanna
 DOCS=		CREDITS CHANGES.jp README.First.jp README.jp
-
-post-extract:
-	${SED} -e 's,%%PREFIX%%,${PREFIX},g' -e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		${FILESDIR}/esecanna.sh > ${WRKSRC}/esecanna.sh
 
 post-patch:
 	${REINPLACE_CMD} -e " \
@@ -39,13 +34,11 @@ post-patch:
 		${WRKSRC}/esecannarc
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/esecanna.sh ${PREFIX}/etc/rc.d/
 	${MKDIR} ${PREFIX}/lib/esecanna
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/esecanna
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/esecanna/
 .endif
-	${MKDIR} ${PIDDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
