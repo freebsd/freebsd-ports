@@ -28,8 +28,6 @@ USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdenetwork-${PORTVERSION}
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX}
-
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
