@@ -60,17 +60,15 @@ VIDEO_EXCL=	via:openchrome
 INPUT_ON=	mouse \
 		keyboard
 INPUT_OFF=	acecad \
-		calcomp citron \
-		digitaledge dmc	dynapro \
-		elo2300	elographics \
+		citron \
+		elographics \
 		fpit \
 		hyperpen \
-		jamstudio joystick \
-		magellan magictouch microtouch mutouch \
-		palmax penmount \
-		spaceorb summa synaptics \
-		tek4957 \
-		vmmouse void
+		joystick \
+		magictouch microtouch mutouch \
+		penmount \
+		synaptics \
+				vmmouse void
 
 QUIRKS=		keyboard:kbd jamstudio:js_x
 
