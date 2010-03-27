@@ -29,7 +29,7 @@ OPTIONS=		AGG "Support for AGG image rendering (req: FreeType)" off \
 			PDF "Support for PDF output via pdflib" off \
 			GDAL "Support for a number of input raster formats" off \
 			GEOS "Use GEOS engine where possible" off \
-			POSTGIS "Support for PostGIS" on \
+			POSTGIS "Support for PostGIS" off \
 			PHP "Support for MapScript/PHP" off \
 			PERL "Support for MapScript/PERL" off \
 			WMS "Support for web map service server and client" off \
