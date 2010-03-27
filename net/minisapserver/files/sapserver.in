@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: sapserver
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable sapserver:
+#
+# sapserver_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=sapserver
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/${name}
+required_files=%%PREFIX%%/etc/sap.cfg
+
+load_rc_config ${name}
+
+: ${sapserver_enable="NO"}
+
+run_rc_command "$1"
