@@ -5,7 +5,7 @@ bin/VBoxNetAdpCtl
 bin/VBoxNetDHCP
 %%X11%%bin/VBoxSDL
 bin/VBoxSVC
-%%X11%%bin/VBoxTestOGL
+%%QT4%%bin/VBoxTestOGL
 bin/VBoxXPCOMIPCD
 %%QT4%%bin/VirtualBox
 %%X11%%lib/virtualbox/VBoxBFE
@@ -26,7 +26,7 @@ lib/virtualbox/VBoxNetDHCP.so
 %%X11%%lib/virtualbox/VBoxOGLrenderspu.so
 lib/virtualbox/VBoxPython.so
 lib/virtualbox/VBoxREM.so
-%%X11%%lib/virtualbox/VBoxTestOGL
+%%QT4%%lib/virtualbox/VBoxTestOGL
 %%I386%%lib/virtualbox/VBoxREM32.so
 %%I386%%lib/virtualbox/VBoxREM64.so
 lib/virtualbox/VBoxRT.so
