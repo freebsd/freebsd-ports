@@ -29,8 +29,6 @@ distrib=${base}/sup.client/distrib
 
 .include <bsd.port.pre.mk>
 
-SUB_LIST+=	CVSUPD="cvsupd${RC_SUBR_SUFFIX}"
-
 do-extract:
 	@test -d ${WRKSRC} || ${MKDIR} ${WRKSRC}
 
