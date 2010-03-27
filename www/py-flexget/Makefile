@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flexget
-PORTVERSION=	1.0.r1153
+PORTVERSION=	1.0.r1197
 CATEGORIES=	www python
 MASTER_SITES=	http://download.flexget.com/unstable/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

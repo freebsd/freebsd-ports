@@ -77,6 +77,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_csv.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_csv.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_csv.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input_generate.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input_generate.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input_generate.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_html.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_html.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_html.pyo
@@ -158,6 +161,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_manipulate.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_manipulate.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_manipulate.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/module_manual.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/module_manual.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/module_manual.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_path_by_ext.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_path_by_ext.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_path_by_ext.pyo
@@ -203,6 +209,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_exec.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_exec.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_exec.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output_history.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output_history.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output_history.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_html.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_html.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_html.pyo
