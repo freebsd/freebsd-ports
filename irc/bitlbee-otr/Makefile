@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bitlbee-otr
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	irc
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
+MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
 		${MASTER_SITE_FREEBSD}
 
 MAINTAINER=	wahjava@gmail.com
