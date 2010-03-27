@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ioncube
-DISTVERSION=	3.3.10
+DISTVERSION=	3.3.12
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads2.ioncube.com/loader_downloads/ \
 		http://downloads.ioncube.com/loader_downloads/
 DISTFILES=	${PORTNAME}_loaders_fre_${VER}_${ARCH_DIST}${EXTRACT_SUFX}
 
-MAINTAINER=	svyatoslav.lempert@.gmail.com
+MAINTAINER=	svyatoslav.lempert@gmail.com
 COMMENT=	An ionCube loader for PHP code
 
 ONLY_FOR_ARCHS=	i386 amd64
