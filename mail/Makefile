@@ -588,6 +588,7 @@
     SUBDIR += roundcube
     SUBDIR += roundcube-air
     SUBDIR += roundcube-groupvice
+    SUBDIR += roundcube-mobilecube
     SUBDIR += roundcube-mvision2
     SUBDIR += roundcube-umich
     SUBDIR += rss2email
