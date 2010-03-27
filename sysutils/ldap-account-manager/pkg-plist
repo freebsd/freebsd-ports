@@ -40,12 +40,14 @@
 %%WWWDIR%%/graphics/bigPeople.png
 %%WWWDIR%%/graphics/bigTools.png
 %%WWWDIR%%/graphics/catalog.png
+%%WWWDIR%%/graphics/computer.png
 %%WWWDIR%%/graphics/dc.png
 %%WWWDIR%%/graphics/del.png
 %%WWWDIR%%/graphics/delete.gif
 %%WWWDIR%%/graphics/delete.png
 %%WWWDIR%%/graphics/device.png
 %%WWWDIR%%/graphics/dhcp.png
+%%WWWDIR%%/graphics/dhcpBig.png
 %%WWWDIR%%/graphics/document.png
 %%WWWDIR%%/graphics/door.png
 %%WWWDIR%%/graphics/down.gif
@@ -69,6 +71,7 @@
 %%WWWDIR%%/graphics/help.png
 %%WWWDIR%%/graphics/host.png
 %%WWWDIR%%/graphics/info.png
+%%WWWDIR%%/graphics/ipRange.png
 %%WWWDIR%%/graphics/key.png
 %%WWWDIR%%/graphics/keyBig.png
 %%WWWDIR%%/graphics/kolab.png
@@ -113,7 +116,6 @@
 %%WWWDIR%%/graphics/server-settings.png
 %%WWWDIR%%/graphics/server-small.png
 %%WWWDIR%%/graphics/smbDomain.png
-%%WWWDIR%%/graphics/smile.png
 %%WWWDIR%%/graphics/sort_asc.png
 %%WWWDIR%%/graphics/sort_desc.png
 %%WWWDIR%%/graphics/star.png
@@ -139,6 +141,7 @@
 %%WWWDIR%%/lib/baseType.inc
 %%WWWDIR%%/lib/cache.inc
 %%WWWDIR%%/lib/config.inc
+%%WWWDIR%%/lib/checkEnvironment.inc
 %%WWWDIR%%/lib/createntlm.inc
 %%WWWDIR%%/lib/export.inc
 %%WWWDIR%%/lib/font/vera.ctg.z
@@ -266,8 +269,11 @@
 %%WWWDIR%%/templates/delete.php
 %%WWWDIR%%/templates/help.php
 %%WWWDIR%%/templates/initsuff.php
+%%WWWDIR%%/templates/lib/config.js
+%%WWWDIR%%/templates/lib/jquery-1.3.2.min.js
+%%WWWDIR%%/templates/lib/list.js
+%%WWWDIR%%/templates/lib/wz_tooltip.js
 %%WWWDIR%%/templates/lists/deletelink.php
-%%WWWDIR%%/templates/lists/list.js
 %%WWWDIR%%/templates/lists/list.php
 %%WWWDIR%%/templates/lists/userlink.php
 %%WWWDIR%%/templates/login.php
@@ -315,10 +321,9 @@
 %%WWWDIR%%/templates/tree/templates/templates.inc
 %%WWWDIR%%/templates/tree/tree.php
 %%WWWDIR%%/templates/tree/tree_view.php
+%%WWWDIR%%/templates/tree/treeViewContainer.php
 %%WWWDIR%%/templates/tree/update.php
 %%WWWDIR%%/templates/tree/update_confirm.php
-%%WWWDIR%%/templates/wz_tooltip.js
-%%WWWDIR%%/templates/config/config.js
 %%WWWDIR%%/tmp/.htaccess
 @dirrm %%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%/templates/tree/templates/creation
@@ -329,6 +334,7 @@
 @dirrm %%WWWDIR%%/templates/profedit
 @dirrm %%WWWDIR%%/templates/pdfedit
 @dirrm %%WWWDIR%%/templates/lists
+@dirrm %%WWWDIR%%/templates/lib
 @dirrm %%WWWDIR%%/templates/config
 @dirrm %%WWWDIR%%/templates/account
 @dirrm %%WWWDIR%%/templates
