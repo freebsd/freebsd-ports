@@ -15,6 +15,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libpurple connection manager for telepathy
 
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	purple.6:${PORTSDIR}/net-im/libpurple \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 
