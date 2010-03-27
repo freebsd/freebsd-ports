@@ -7,14 +7,16 @@
 
 PORTNAME=	trafd
 PORTVERSION=	3.0.2.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The BPF Traffic Collector
 
+USE_RC_SUBR=	trafd
+
 CONFLICTS=	bpft-4.*
-RCSUBRBASE=	/etc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trafd/trafd ${PREFIX}/bin
@@ -26,10 +28,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trafstatd/trafstatd ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/traflog/traflog ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/traflog/traflog.format ${PREFIX}/etc
-	${CP} ${FILESDIR}/trafd.sh.sample ${WRKDIR}
-	${REINPLACE_CMD} -e "s|%%RC_SUBR%%|${RCSUBRBASE}/rc.subr|g;" \
-	    ${WRKDIR}/trafd.sh.sample
-	${INSTALL_SCRIPT} ${WRKDIR}/trafd.sh.sample ${PREFIX}/etc/rc.d
 	@${MKDIR} ${PREFIX}/var/trafd
 	@${MKDIR} ${PREFIX}/var/log
 .if !defined(NOPORTDOCS)
