@@ -7,7 +7,7 @@
 
 PORTNAME=	lanbrowsing
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -20,17 +20,13 @@ COMMENT=	Lanbrowsing facility and backend for KDE
 
 RUN_DEPENDS=	nmblookup:${PORTSDIR}/net/samba3
 
-CONFLICTS=	kdenetwork-3.3.0
-
 USE_KDELIBS_VER=3
-PREFIX=		${KDE_PREFIX}
 
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	lisa
 USE_BZIP2=	yes
-USE_AUTOTOOLS=  libtool:22
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdenetwork-${PORTVERSION}
-USE_LDCONFIG=	yes
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX}
 
@@ -48,11 +44,5 @@ pre-configure:
 		${WRKSRC}/lanbrowsing/kcmlisa/setupwizard.cpp
 	${REINPLACE_CMD} -e 's|nmblookup \\|${LOCALBASE}/bin/nmblookup \\|g' \
 		${WRKSRC}/lanbrowsing/lisa/netscanner.cpp
-
-post-install:
-	@${MKDIR} ${PREFIX}/etc/rc.d
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/lisa.sh > ${PREFIX}/etc/rc.d/lisa.sh
-	@${CHMOD} +x ${PREFIX}/etc/rc.d/lisa.sh
 
 .include <bsd.port.post.mk>
