@@ -4075,6 +4075,7 @@ gconf2                          ports/devel/gconf2
 gconf2-reference                ports/devel/gconf2-reference
 gconfmm                         ports/devel/gconfmm
 gconfmm26                       ports/devel/gconfmm26
+gcpio                           ports/archivers/gcpio
 gcstar                          ports/misc/gcstar
 gctpc                           ports/misc/gctpc
 gcube                           ports/emulators/gcube
@@ -10927,6 +10928,7 @@ p5-Catalyst-Model-DBIC-Plain    ports/www/p5-Catalyst-Model-DBIC-Plain
 p5-Catalyst-Model-DBIC-Schema   ports/www/p5-Catalyst-Model-DBIC-Schema
 p5-Catalyst-Model-DynamicAdaptor  ports/www/p5-Catalyst-Model-DynamicAdaptor
 p5-Catalyst-Model-LDAP          ports/www/p5-Catalyst-Model-LDAP
+p5-Catalyst-Model-Memcached     ports/www/p5-Catalyst-Model-Memcached
 p5-Catalyst-Model-Oryx          ports/www/p5-Catalyst-Model-Oryx
 p5-Catalyst-Model-XML-Feed      ports/www/p5-Catalyst-Model-XML-Feed
 p5-Catalyst-Model-Xapian        ports/www/p5-Catalyst-Model-Xapian
@@ -14570,6 +14572,7 @@ p5-catalyst-model-dbic-plain    ports/www/p5-Catalyst-Model-DBIC-Plain
 p5-catalyst-model-dbic-schema   ports/www/p5-Catalyst-Model-DBIC-Schema
 p5-catalyst-model-dynamicadaptor  ports/www/p5-Catalyst-Model-DynamicAdaptor
 p5-catalyst-model-ldap          ports/www/p5-Catalyst-Model-LDAP
+p5-catalyst-model-memcached     ports/www/p5-Catalyst-Model-Memcached
 p5-catalyst-model-oryx          ports/www/p5-Catalyst-Model-Oryx
 p5-catalyst-model-xapian        ports/www/p5-Catalyst-Model-Xapian
 p5-catalyst-model-xml-feed      ports/www/p5-Catalyst-Model-XML-Feed
@@ -18928,6 +18931,7 @@ php-auth_openid                 ports/security/php-Auth_OpenID
 php-auth_openid2                ports/security/php-Auth_OpenID2
 php-dbg2                        ports/devel/php-dbg2
 php-dyn                         ports/www/php-dyn
+php-facedetect                  ports/graphics/php-facedetect
 php-gtk                         ports/x11-toolkits/php-gtk
 php-gtk2                        ports/x11-toolkits/php-gtk2
 php-java-bridge                 ports/devel/php-java-bridge
@@ -25869,6 +25873,7 @@ zillion                         ports/net/zillion
 zim                             ports/editors/zim
 zimg                            ports/graphics/zimg
 zinf                            ports/audio/zinf
+zint                            ports/graphics/zint
 zip                             ports/archivers/zip
 zipios++                        ports/archivers/zipios++
 zipmix                          ports/archivers/zipmix
