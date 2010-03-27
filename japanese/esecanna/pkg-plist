@@ -1,6 +1,5 @@
-@unexec if [ -x %D/etc/rc.d/esecanna.sh ]; then %D/etc/rc.d/esecanna.sh stop || true; fi
+@unexec if [ -x %D/etc/rc.d/esecanna ]; then %D/etc/rc.d/esecanna stop || true; fi
 etc/esecannarc
-etc/rc.d/esecanna.sh
 @exec mkdir -p %D/lib/esecanna
 @dirrm lib/esecanna
 sbin/esecannaserver
