@@ -45,6 +45,7 @@ bin/plackup
 %%SITE_PERL%%/Plack/Middleware/Head.pm
 %%SITE_PERL%%/Plack/Middleware/HTTPExceptions.pm
 %%SITE_PERL%%/Plack/Middleware/JSONP.pm
+%%SITE_PERL%%/Plack/Middleware/LighttpdScriptNameFix.pm
 %%SITE_PERL%%/Plack/Middleware/Lint.pm
 %%SITE_PERL%%/Plack/Middleware/Log4perl.pm
 %%SITE_PERL%%/Plack/Middleware/LogDispatch.pm
