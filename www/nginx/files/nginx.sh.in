@@ -64,7 +64,7 @@ else
 	if [ "x${nginx_profiles}" != "x" -a "x$1" != "x" ]; then
 		for profile in ${nginx_profiles}; do
 			echo "===> nginx profile: ${profile}"
-			%%PREFIX%%/etc/rc.d/nginx%%RC_SUBR_SUFFIX%% $1 ${profile}
+			%%PREFIX%%/etc/rc.d/nginx $1 ${profile}
 			retcode="$?"
 			if [ "0${retcode}" -ne 0 ]; then
 				failed="${profile} (${retcode}) ${failed:-}"

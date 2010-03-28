@@ -114,7 +114,7 @@ else
 				;;
 			esac
 			echo "===> apache profile: ${profile}"
-			%%PREFIX%%/etc/rc.d/apache%%RC_SUBR_SUFFIX%% $1 ${profile}
+			%%PREFIX%%/etc/rc.d/apache $1 ${profile}
 			retcode="$?"
 			if [ "0${retcode}" -ne 0 ]; then
 				failed="${profile} (${retcode}) ${failed:-}"
