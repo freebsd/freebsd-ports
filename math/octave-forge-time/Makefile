@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-time
 PORTVERSION=	1.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

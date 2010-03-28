@@ -7,7 +7,7 @@
 
 PORTNAME=	vlconwooztalk
 PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.wooztalk.com/download/
 DISTNAME=	${PORTNAME}-freebsd

@@ -7,7 +7,7 @@
 
 PORTNAME=	sawfish-themes
 PORTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/s/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

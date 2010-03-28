@@ -11,7 +11,7 @@
 
 PORTNAME=	dillo
 PORTVERSION=	0.8.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/
 
@@ -20,7 +20,7 @@ COMMENT=	A fast, small graphical Web browser built upon GTK+
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk12

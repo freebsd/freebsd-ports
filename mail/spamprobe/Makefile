@@ -14,7 +14,7 @@
 
 PORTNAME=	spamprobe
 PORTVERSION=	1.4d
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -58,7 +58,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .if defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=	--without-png
 .else
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

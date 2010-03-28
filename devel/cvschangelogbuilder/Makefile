@@ -7,7 +7,7 @@
 
 PORTNAME=	cvschangelogbuilder
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/cvschangelogb/CVSChangelogBuilder/${PORTVERSION}
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	jag
 PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://jag.xlabsoft.com/files/ \
 		http://mirror.amdmi3.ru/distfiles/

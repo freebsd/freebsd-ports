@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-pim
 PORTVERSION=	1.4.9
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.rittau.org/gnome-pim/
 DIST_SUBDIR=	gnome

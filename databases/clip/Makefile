@@ -7,7 +7,7 @@
 
 PORTNAME=	clip
 DISTVERSION=	1.2.0-0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases lang
 MASTER_SITES=	SF/x-${PORTNAME}/${PORTNAME}%201.2/1.2.0
 DISTNAME=	${PORTNAME}-prg-${DISTVERSION}
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash			\
 		wget:${PORTSDIR}/ftp/wget			\
 		imake:${PORTSDIR}/devel/imake
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg		\
-		png.5:${PORTSDIR}/graphics/png			\
+		png.6:${PORTSDIR}/graphics/png			\
 		freetype.9:${PORTSDIR}/print/freetype2		\
 		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra	\
 		gd.4:${PORTSDIR}/graphics/gd			\

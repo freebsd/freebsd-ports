@@ -7,7 +7,7 @@
 
 PORTNAME=	gajim
 PORTVERSION=	20100116
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
 PKGNAMESUFFIX=	-devel

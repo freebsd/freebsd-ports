@@ -7,7 +7,7 @@
 
 PORTNAME=	qlabels
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils editors
 MASTER_SITES=	http://qlabels.p34.net/files/ \
 		http://www.sourcefiles.org/Utilities/Printer/

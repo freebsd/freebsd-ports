@@ -7,7 +7,7 @@
 
 PORTNAME=	doc-mode.el
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc elisp
 MASTER_SITES=	SF/xpt/doc-mode/doc-mode-${PORTVERSION}
 DISTNAME=	doc-mode-${PORTVERSION}

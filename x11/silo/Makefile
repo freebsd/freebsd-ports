@@ -7,7 +7,7 @@
 
 PORTNAME=	silo
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	http://doublef.nm.ru/silo/sources/
 

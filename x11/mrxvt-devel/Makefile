@@ -7,7 +7,7 @@
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	SF/materm/mrxvt%20source/${PORTVERSION}
 DISTNAME=	mrxvt-${PORTVERSION}
@@ -67,7 +67,7 @@ LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 .if defined(WITHOUT_PNG) || defined(WITHOUT_BACKGROUND)
 CONFIGURE_ARGS+=	--disable-png
 .else
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 .endif
 
 .if defined(WITHOUT_TRANSPARENCY)

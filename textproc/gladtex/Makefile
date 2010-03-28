@@ -7,7 +7,7 @@
 
 PORTNAME=	gladtex
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc math www
 MASTER_SITES=	http://www.math.uio.no/~martingu/gladtex/dl/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -16,7 +16,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A program to replace LaTeX formulas in HTML files with images
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		dvips:${PORTSDIR}/print/dvipsk-tetex
 

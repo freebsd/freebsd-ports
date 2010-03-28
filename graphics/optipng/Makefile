@@ -7,6 +7,7 @@
 
 PORTNAME=	optipng
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OptiPNG/${PORTNAME}-${PORTVERSION}
 
@@ -29,7 +30,7 @@ PORTDOCS=	caveat.txt history.txt manual.html manual.pdf manual.txt \
 CONFIGURE_ARGS=	#
 .ifndef(WITH_BUNDLED_LIBPNG)
 CONFIGURE_ARGS+=	--with-system-libpng
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 .endif
 
 .ifndef(WITH_BUNDLED_ZLIB)

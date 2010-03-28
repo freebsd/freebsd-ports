@@ -7,7 +7,7 @@
 
 PORTNAME=	boinc-milkyway
 PORTVERSION=	0.18d
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://milkyway.cs.rpi.edu/milkyway/download/code_release/

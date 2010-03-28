@@ -7,7 +7,7 @@
 
 PORTNAME=	sanduhr
 PORTVERSION=	1.93
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://seehuhn.de/media/programs/
 

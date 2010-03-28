@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-financial
 PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

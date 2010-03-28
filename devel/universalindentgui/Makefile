@@ -7,6 +7,7 @@
 
 PORTNAME=	universalindentgui
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/universalindent/universalindent/UniversalIndentGUI_${PORTVERSION}
 

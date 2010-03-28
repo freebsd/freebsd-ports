@@ -7,7 +7,7 @@
 
 PORTNAME=	erlang_xmlrpc
 PORTVERSION=	1.13
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	http://www.erlang.org/contrib/
 DISTNAME=	xmlrpc-${PORTVERSION}

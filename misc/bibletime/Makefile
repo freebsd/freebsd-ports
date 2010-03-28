@@ -7,6 +7,7 @@
 
 PORTNAME=	bibletime
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 

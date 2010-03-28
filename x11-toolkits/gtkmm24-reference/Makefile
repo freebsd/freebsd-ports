@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	6
+PORTREVISION=	7
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtkmm-2.4.pc:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		${LOCALBASE}/share/glibmm-2.4/doctool/doc-install.pl:${PORTSDIR}/devel/glibmm-reference

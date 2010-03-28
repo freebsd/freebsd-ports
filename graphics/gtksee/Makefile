@@ -7,7 +7,7 @@
 
 PORTNAME=	gtksee
 PORTVERSION=	0.5.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=	Image viewer
 
 RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GNOME=	gtk12 gnometarget

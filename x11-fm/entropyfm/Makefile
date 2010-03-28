@@ -8,7 +8,7 @@
 
 PORTNAME=	entropyfm
 PORTVERSION=	20080223
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 DISTNAME=	entropy-${PORTVERSION}
@@ -42,7 +42,7 @@ PLIST_SUB+=	EXTRACT="@comment "
 .endif
 
 .if !defined(WITHOUT_PNG) || exists(${LOCALBASE}/lib/libpng.so.5)
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 .endif
 
 .include <bsd.port.post.mk>

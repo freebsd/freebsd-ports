@@ -7,7 +7,7 @@
 
 PORTNAME=		etracer
 PORTVERSION=		0.4
-PORTREVISION=		4
+PORTREVISION=	5
 CATEGORIES=		games
 MASTER_SITES=		SF/extremetuxracer/extreme-tuxracer/${PORTVERSION}
 DISTNAME=		extremetuxracer-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=		extremetuxracer-${PORTVERSION}
 MAINTAINER=		peter_dunning@dsl.pipex.com
 COMMENT=		The latest and greatest fork of the classic Tux Racer
 
-LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=		png.6:${PORTSDIR}/graphics/png \
 			freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=		mixer sdl

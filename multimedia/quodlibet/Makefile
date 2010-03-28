@@ -7,6 +7,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 

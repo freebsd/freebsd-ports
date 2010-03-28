@@ -7,14 +7,14 @@
 
 PORTNAME=	png2html
 PORTVERSION=	1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.engr.mun.ca/~holden/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Takes a PNG image and transforms it into HTML
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		gd.4:${PORTSDIR}/graphics/gd
 
 PLIST_FILES=	bin/png2html

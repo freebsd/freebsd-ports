@@ -8,14 +8,14 @@
 
 PORTNAME=	qslim
 PORTVERSION=	2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/ CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SlimKit Surface Modeling Tools
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gfx.0:${PORTSDIR}/graphics/libgfx \
 		forms.1:${PORTSDIR}/x11-toolkits/xforms

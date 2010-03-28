@@ -7,13 +7,14 @@
 
 PORTNAME=	gemrb
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION}%20Sources
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	GemRB (Game engine made with preRendered Background)
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"

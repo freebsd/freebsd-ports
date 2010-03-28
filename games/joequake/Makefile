@@ -7,7 +7,7 @@
 
 PORTNAME=	joequake
 PORTVERSION=	0.15b1329
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://runecentral.com/joequake/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
@@ -18,7 +18,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Improved NQ engine with ZQuake and FuhQuake graphical effects
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/src
 

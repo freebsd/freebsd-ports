@@ -8,7 +8,7 @@
 PORTNAME=	PSCyr
 PATCH_LEVEL=	2
 PORTVERSION=	0.4c${PATCH_LEVEL}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	russian print
 MASTER_SITES=	ftp://scon155.phys.msu.su/pub/russian/psfonts/ \
 		ftp://ftp.vsu.ru/pub/tex/font-packs/pscyr/

@@ -7,6 +7,7 @@
 
 PORTNAME=	cfdg
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.contextfreeart.org/download/ \
 		http://glyphic.s3.amazonaws.com/cfa/download/
@@ -16,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	anatoly.borodin@gmail.com
 COMMENT=	Context Free Design Grammar compiler
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_BISON=	build
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	qtoctave
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://forja.rediris.es/frs/download.php/1383/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-bluecurve-theme
 
-PORTREVISION=	3
+PORTREVISION=	4
 
 COMMENT=	The Bluecurve GNOME meta-theme
 

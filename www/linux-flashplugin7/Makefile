@@ -7,7 +7,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	7.0r73
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/installers/archive/
 PKGNAMEPREFIX=	linux-

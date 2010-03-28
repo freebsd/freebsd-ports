@@ -7,7 +7,7 @@
 
 PORTNAME=	kradview
 PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://www.orcero.org/irbis/kradview/
 EXTRACT_SUFX=	.tgz

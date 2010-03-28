@@ -7,7 +7,7 @@
 
 PORTNAME=	cog
 PORTVERSION=	0.8.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.krakoa.dk/progs/cog/
 

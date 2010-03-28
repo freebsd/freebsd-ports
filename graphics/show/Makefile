@@ -7,7 +7,7 @@
 
 PORTNAME=	show
 PORTVERSION=	2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ibiblio.org/propaganda/ \
 		http://www.freebsdbrasil.com.br/~jmelo/
@@ -16,7 +16,7 @@ MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	A fast, flexible, extensible and bloat-free image viewer for X11
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg	\
-		png.5:${PORTSDIR}/graphics/png		\
+		png.6:${PORTSDIR}/graphics/png		\
 		tiff.4:${PORTSDIR}/graphics/tiff	\
 		ungif.5:${PORTSDIR}/graphics/libungif	\
 		Imlib.5:${PORTSDIR}/graphics/imlib

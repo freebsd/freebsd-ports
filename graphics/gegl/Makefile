@@ -7,6 +7,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 
@@ -124,7 +125,7 @@ CONFIGURE_ARGS+=--without-pango
 .endif
 
 .if !defined(WITHOUT_PNG)
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
 CONFIGURE_ARGS+=--without-libpng

@@ -7,7 +7,7 @@
 #
 
 CATEGORIES=	www
-PORTREVISION=	5
+PORTREVISION=	6
 
 MASTERDIR=	${.CURDIR}/../../devel/gir-repository
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	osb-jscore
 PORTVERSION=	0.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang www java
 MASTER_SITES=	SF/gtk-webcore/gtk-webcore/${PORTVERSION}
 

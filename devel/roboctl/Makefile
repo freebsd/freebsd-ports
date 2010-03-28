@@ -7,6 +7,7 @@
 
 PORTNAME=	roboctl
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/

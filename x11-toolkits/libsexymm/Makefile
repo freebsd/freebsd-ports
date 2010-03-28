@@ -7,7 +7,7 @@
 
 PORTNAME=	libsexymm
 PORTVERSION=	0.1.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexymm/
 

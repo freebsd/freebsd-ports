@@ -8,7 +8,7 @@
 
 PORTNAME=	clearlooks-metacity
 PORTVERSION=	2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.stellingwerff.com/
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}

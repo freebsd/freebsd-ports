@@ -6,7 +6,7 @@
 
 PORTNAME=	rbscrobbler
 PORTVERSION=	0.0.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 

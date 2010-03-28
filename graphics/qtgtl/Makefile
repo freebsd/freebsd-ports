@@ -5,6 +5,7 @@
 
 PORTNAME=	qtgtl
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.opengtl.org/download/
 DISTNAME=	libQtGTL-${PORTVERSION}

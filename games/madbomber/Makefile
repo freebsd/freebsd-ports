@@ -7,7 +7,7 @@
 
 PORTNAME=	madbomber
 PORTVERSION=	0.2.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/madbomber/src/
 

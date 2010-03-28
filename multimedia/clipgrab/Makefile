@@ -7,6 +7,7 @@
 
 PORTNAME=	clipgrab
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://clipgrab.de/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

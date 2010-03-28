@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -20,7 +20,7 @@ DEPRECATED=	Unsupported, please use x11-toolkits/fox14 or x11-toolkits/fox16 ins
 EXPIRATION_DATE=2010-04-30
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 

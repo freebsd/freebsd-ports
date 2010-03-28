@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	5
+PORTREVISION=	6
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtkmm-2.0.pc:${PORTSDIR}/x11-toolkits/gtkmm20
 

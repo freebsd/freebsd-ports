@@ -8,7 +8,7 @@
 
 PORTNAME=	flyway
 PORTVERSION=	0.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc python geography
 MASTER_SITES=	http://www.bellz.org/flyway/
 

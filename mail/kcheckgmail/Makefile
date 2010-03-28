@@ -6,7 +6,7 @@
 
 PORTNAME=	kcheckgmail
 PORTVERSION=	0.5.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail kde
 MASTER_SITES=	http://www.yuanjue.net/download/
 

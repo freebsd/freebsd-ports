@@ -8,14 +8,14 @@
 
 PORTNAME=	tif22pnm
 PORTVERSION=	0.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/
 
 MAINTAINER=	ganael.laplanche@martymac.com
 COMMENT=	Converts TIFF- sampled images to PNM image
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	mjpegtools
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME:S/tools//}/${PORTNAME}/${PORTVERSION}
 
@@ -79,7 +80,7 @@ PLIST_SUB+=	SDL:=""
 CONFIGURE_ARGS+=--without-libpng
 PLIST_SUB+=	PNG:="@comment "
 .else
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--with-libpng
 PLIST_SUB+=	PNG:=""
 .endif # PNG

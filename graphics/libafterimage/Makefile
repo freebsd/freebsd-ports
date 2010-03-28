@@ -8,7 +8,7 @@
 
 PORTNAME=	libafterimage
 PORTVERSION=	1.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/afterstep/libAfterImage/${PORTVERSION}
 DISTNAME=	libAfterImage-${PORTVERSION}
@@ -20,7 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 

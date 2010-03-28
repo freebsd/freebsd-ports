@@ -7,7 +7,7 @@
 
 PORTNAME=	bling
 PORTVERSION=	20080413
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	e17-module-

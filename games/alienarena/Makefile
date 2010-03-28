@@ -7,7 +7,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2009.733
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
@@ -47,7 +47,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 .if defined(WITH_CLIENT)
 LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 USE_GL=		yes
 USE_OPENAL=	soft alut
 USE_XORG=	xxf86dga

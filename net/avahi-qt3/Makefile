@@ -6,7 +6,7 @@
 #   $MCom: ports/net/avahi-qt3/Makefile,v 1.1 2007/07/31 18:24:12 ahze Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 PKGNAMESUFFIX=	-qt3
 

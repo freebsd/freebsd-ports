@@ -7,7 +7,7 @@
 
 PORTNAME=	aterm
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	x11	# `+=' is for slave ports
 MASTER_SITES=	SF
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--enable-background-image
 
 .if !defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=	--with-png
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=	--with-png=no
 .endif

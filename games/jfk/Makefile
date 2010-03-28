@@ -7,7 +7,7 @@
 
 PORTNAME=	jfk
 PORTVERSION=	0.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://relax.ath.cx/jfk/
 

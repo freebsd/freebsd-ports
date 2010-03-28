@@ -7,7 +7,7 @@
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.5.a5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION:R}-alpha/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S,.a,-alpha,}.full
@@ -16,7 +16,7 @@ MAINTAINER=	lesi@FreeBSD.org
 COMMENT=	A drawing program for X11 (Alpha version)
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 

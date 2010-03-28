@@ -7,7 +7,7 @@
 
 PORTNAME=	fusefs-gnome-vfs
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.evolware.org/chri/
 DISTNAME=	${RPORTNAME}-${PORTVERSION}

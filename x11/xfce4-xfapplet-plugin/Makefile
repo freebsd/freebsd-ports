@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-xfapplet-plugin
 PORTVERSION=	0.1.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4

@@ -7,7 +7,7 @@
 
 PORTNAME=	clutter-gst
 PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.clutter-project.org/sources/${PORTNAME}/0.10/
 

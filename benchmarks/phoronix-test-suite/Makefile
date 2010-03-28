@@ -7,6 +7,7 @@
 
 PORTNAME=	phoronix-test-suite
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/ \
 		http://www.phoronix.com/downloads/phoronix-test-suite/releases/

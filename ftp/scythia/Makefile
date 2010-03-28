@@ -7,6 +7,7 @@
 
 PORTNAME=	scythia
 DISTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://scythia.free.fr/wp-content/ \
 		ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/

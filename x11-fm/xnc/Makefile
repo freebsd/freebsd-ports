@@ -7,7 +7,7 @@
 
 PORTNAME=	xnc
 PORTVERSION=	5.0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.xnc.dubna.su/src-5/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -23,7 +23,7 @@ COMMENT=	File manager for X Window
 #		unarj:${PORTSDIR}/archivers/unarj	\
 #		lha:${PORTSDIR}/archivers/lha
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

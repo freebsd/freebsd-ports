@@ -7,7 +7,7 @@
 
 PORTNAME=	ipe
 DISTVERSION=	6.0pre32patch1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://luaforge.net/frs/download.php/4052/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src

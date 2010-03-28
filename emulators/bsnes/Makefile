@@ -6,7 +6,7 @@
 
 PORTNAME=	bsnes
 PORTVERSION=	0.58
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://byuu.org/files/ \
 		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/

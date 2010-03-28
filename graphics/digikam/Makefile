@@ -7,7 +7,7 @@
 
 PORTNAME=	digikam
 DISTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		kexiv2.5:${PORTSDIR}/graphics/libkexiv2 \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		kdcraw.4:${PORTSDIR}/graphics/libkdcraw \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		jasper.4:${PORTSDIR}/graphics/jasper
 

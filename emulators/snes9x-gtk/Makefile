@@ -7,6 +7,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.52r79
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://snes9x-gtk.googlecode.com/files/
 PKGNAMESUFFIX=	-gtk
@@ -15,7 +16,7 @@ DISTNAME=	snes9x-1.52-src
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_PERL=	5.8.1+
 USE_BZIP2=	yes
@@ -71,7 +72,7 @@ CONFIGURE_ARGS+=	--without-opengl
 .endif
 
 .if !defined(WITHOUT_SCREENSHOT)
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-screenshot
 .else
 CONFIGURE_ARGS+=	--without-screenshot

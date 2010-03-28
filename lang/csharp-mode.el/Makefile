@@ -7,7 +7,7 @@
 
 PORTNAME=	csharp-mode.el
 PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://mfgames.com/releases/csharp-mode/ \
 		http://gentoo.kiev.ua/ftp/distfiles/ \

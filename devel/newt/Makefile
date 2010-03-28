@@ -7,6 +7,7 @@
 
 PORTNAME=	newt
 PORTVERSION=	0.52.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/n/e/newt/
 PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}

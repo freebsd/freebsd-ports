@@ -7,7 +7,7 @@
 
 PORTNAME=	scramble
 PORTVERSION=	0.9.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.shiftygames.com/scramble/ \
 		http://mirror.amdmi3.ru/distfiles/

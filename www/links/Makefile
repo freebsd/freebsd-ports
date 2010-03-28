@@ -7,7 +7,7 @@
 
 PORTNAME=	links
 DISTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -40,7 +40,7 @@ OPTIONS=	SVGALIB "non-X11 graphics support" off \
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_SVGALIB) || defined(WITH_X11) || defined(WITH_DIRECTFB)
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--enable-graphics

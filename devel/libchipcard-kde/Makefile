@@ -7,7 +7,7 @@
 
 PORTNAME=		libchipcard-kde
 PORTVERSION=		0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=		devel kde
 MASTER_SITES=		SF/libchipcard/libchipcard/${PORTVERSION}
 

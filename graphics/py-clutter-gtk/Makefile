@@ -8,7 +8,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 #MASTER_SITES=	http://www.clutter-project.org/sources/pyclutter/${PORTVERSION:R}/
 MASTER_SITES=	LOCAL/kwm

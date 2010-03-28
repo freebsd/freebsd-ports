@@ -7,6 +7,7 @@
 
 PORTNAME=	iconkit
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnustep
 MASTER_SITES=	http://download.gna.org/etoile/
 PKGNAMEPREFIX=	etoile-
@@ -15,7 +16,7 @@ DISTNAME=	etoile-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project IconKit framework
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes

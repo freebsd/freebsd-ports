@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net devel
 PKGNAMESUFFIX=	-webkit
 

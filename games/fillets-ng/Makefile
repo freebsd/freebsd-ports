@@ -7,7 +7,7 @@
 
 PORTNAME=	fillets-ng
 PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${PORTVERSION}:source \
 		SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${DATAVERSION}:data

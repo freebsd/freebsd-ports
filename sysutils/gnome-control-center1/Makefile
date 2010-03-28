@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	1.4.0.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/control-center/1.4

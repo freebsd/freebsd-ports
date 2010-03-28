@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.55
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-1.rh9.rf
 CATEGORIES=	www multimedia
 MASTER_SITES=	CENKES http://apt.sw.be/packages/mplayerplug-in/ \

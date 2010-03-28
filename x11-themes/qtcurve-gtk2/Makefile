@@ -7,7 +7,7 @@
 
 PORTNAME=	qtcurve
 PORTVERSION=	0.69.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://home.freeuk.com/cpdrummond/ \
 		http://craigd.wikispaces.com/file/view/

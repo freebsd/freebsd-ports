@@ -7,7 +7,7 @@
 
 PORTNAME=	clawsker
 PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/tools/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	jwm
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF \
 		http://joewing.net/programs/
@@ -16,7 +16,7 @@ MASTER_SITES=	SF \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Joe's Window Manager
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

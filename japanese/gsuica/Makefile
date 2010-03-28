@@ -6,7 +6,7 @@
 
 PORTNAME=	gsuica
 PORTVERSION=	0.04
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://homepage3.nifty.com/slokar/pasori/
 DISTNAME=	${PORTNAME}

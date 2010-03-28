@@ -7,6 +7,7 @@
 
 PORTNAME=	mythtv-frontend
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.oregonstate.edu/pub/mythtv/

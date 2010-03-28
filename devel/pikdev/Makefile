@@ -7,7 +7,7 @@
 
 PORTNAME=	pikdev
 PORTVERSION=	0.9.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel kde
 MASTER_SITES=	http://pikdev.free.fr/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -16,7 +16,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Simple graphic IDE for the development of PIC-based applications
 
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/gamin \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	gpasm:${PORTSDIR}/devel/gputils
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	aqbanking
 PORTVERSION=	4.2.4
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
 DISTFILES=	download.php\?package=03\&release=50\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}

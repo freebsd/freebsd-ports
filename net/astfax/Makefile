@@ -7,7 +7,7 @@
 
 PORTNAME=	astfax
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://www.inter7.com/astfax/
 

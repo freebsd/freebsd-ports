@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	1.0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v1.0/
 

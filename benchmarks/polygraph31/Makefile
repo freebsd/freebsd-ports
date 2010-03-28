@@ -7,7 +7,7 @@
 
 PORTNAME=	polygraph31
 PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
 DISTNAME=	${PORTNAME:S/31//}-${PORTVERSION}-src

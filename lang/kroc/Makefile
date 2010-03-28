@@ -7,6 +7,7 @@
 
 PORTNAME=	kroc
 PORTVERSION=	1.5.r6372
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.i-scream.org/pub/kroc/ \
 		ftp://ftp.i-scream.org/pub/kroc/
@@ -16,7 +17,7 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	The Kent Retargettable occam-pi Compiler
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 ONLY_FOR_ARCHS=	i386

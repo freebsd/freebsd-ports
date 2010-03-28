@@ -7,7 +7,7 @@
 
 PORTNAME=	contacts
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://pimlico-project.org/sources/${PORTNAME}/
 DIST_SUBDIR=	gnome2

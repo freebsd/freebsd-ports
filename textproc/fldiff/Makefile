@@ -7,7 +7,7 @@
 
 PORTNAME=	fldiff
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.easysw.com/~mike/fldiff/ \
 		CRITICAL

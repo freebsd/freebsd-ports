@@ -7,7 +7,7 @@
 
 PORTNAME=	ogmrip
 PORTVERSION=	0.13.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
@@ -17,7 +17,7 @@ COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		dvdread.4:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \

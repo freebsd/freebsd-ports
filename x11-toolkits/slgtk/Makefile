@@ -7,7 +7,7 @@
 
 PORTNAME=	slgtk
 PORTVERSION=	0.7.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://space.mit.edu/pub/cxc/modules/slgtk/
 

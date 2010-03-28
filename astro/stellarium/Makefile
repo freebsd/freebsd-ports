@@ -7,7 +7,7 @@
 
 PORTNAME=	stellarium
 PORTVERSION=	0.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	A 3D photo-realistic sky renderer
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 
 USE_QT_VER=	4

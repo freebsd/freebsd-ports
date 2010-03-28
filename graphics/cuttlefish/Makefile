@@ -7,7 +7,7 @@
 
 PORTNAME=	cuttlefish
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.caida.org/tools/visualization/cuttlefish/code/
 

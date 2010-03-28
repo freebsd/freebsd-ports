@@ -15,7 +15,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	4.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/
 DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz
@@ -49,7 +49,7 @@ BUILD_DEPENDS+=	${CMAKE}:${PORTSDIR}/devel/cmake
 
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 .if defined(WITH_TESTING) && (!defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX}=="-java")

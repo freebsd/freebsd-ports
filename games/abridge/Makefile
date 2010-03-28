@@ -6,7 +6,7 @@
 
 PORTNAME=	abridge
 DISTVERSION=	0.4.0-1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.abridgegame.org/debian/unstable/
 DISTNAME=	${PORTNAME}_${DISTVERSION}

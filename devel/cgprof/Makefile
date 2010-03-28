@@ -7,7 +7,7 @@
 
 PORTNAME=	cgprof
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://mvertes.free.fr/download/
 

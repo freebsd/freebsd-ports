@@ -6,7 +6,7 @@
 
 PORTNAME=	xbubble
 PORTVERSION=	0.5.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle Bobble clone for Unix/X11 platforms
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 MAN6=		xbubble.6
 

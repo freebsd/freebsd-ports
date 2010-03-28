@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.2.3
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.itc.it/grass62/source/ \
@@ -32,7 +32,7 @@ RUN_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 		gdal-config:${PORTSDIR}/graphics/gdal \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		fftw.2:${PORTSDIR}/math/fftw \
 		freetype.9:${PORTSDIR}/print/freetype2

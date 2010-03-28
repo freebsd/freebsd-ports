@@ -7,14 +7,14 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LGPL'ed Flash 4/5 movie output library with many languages support
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
 CONFLICTS=	ja-ming-[0-9]*

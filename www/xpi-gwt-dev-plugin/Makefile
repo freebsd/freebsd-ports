@@ -7,6 +7,7 @@
 
 PORTNAME=	xpi-gwt-dev-plugin
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sites.google.com/site/daemonwizard/
 DISTNAME=	gwt-dev-plugin-${PORTVERSION}-partial

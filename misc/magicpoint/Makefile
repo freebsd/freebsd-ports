@@ -7,14 +7,14 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11-based presentation tool
 
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
 		mng:${PORTSDIR}/graphics/libmng
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 

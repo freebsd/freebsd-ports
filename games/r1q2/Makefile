@@ -7,7 +7,7 @@
 
 PORTNAME=	r1q2
 PORTVERSION=	7904
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
@@ -67,7 +67,7 @@ PLIST_SUB+=	GAME="@comment "
 USE_GL=		yes
 USE_SDL=	sdl
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 ALL_TARGET+=	ref_gl
 PLIST_SUB+=	REF_GL=""
 .else

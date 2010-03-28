@@ -7,7 +7,7 @@
 
 PORTNAME=	ezquake
 PORTVERSION=	1.9
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/A%29%20Official%20releases/ezQuake%20${PORTVERSION}:ezquake \
@@ -24,7 +24,7 @@ EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \
 		7z:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 USE_DOS2UNIX=	*.[ch] Makefile*
 USE_GMAKE=	yes

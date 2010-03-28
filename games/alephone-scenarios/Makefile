@@ -7,7 +7,7 @@
 
 PORTNAME=	scenarios
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://trilogyrelease.bungie.org/files/:bungie \
 		http://files5.bungie.org/marathon/:rubicon \

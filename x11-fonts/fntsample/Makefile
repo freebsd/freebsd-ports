@@ -7,7 +7,7 @@
 
 PORTNAME?=	fntsample
 PORTVERSION=	3.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	x11-fonts
 MASTER_SITES=	SF/fntsample/fntsample/${PORTVERSION} http://unicode.org/Public/5.1.0/ucd/:unidata
 DISTNAME=	fntsample-${PORTVERSION}

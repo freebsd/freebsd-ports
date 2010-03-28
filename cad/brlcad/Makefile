@@ -7,7 +7,7 @@
 
 PORTNAME=	brlcad
 PORTVERSION=	7.12.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/BRL-CAD%20Source/${PORTVERSION}
 
@@ -15,7 +15,7 @@ MAINTAINER=	erik@smluc.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tnt/jama_lu.h:${PORTSDIR}/math/jama
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		rle.1:${PORTSDIR}/graphics/urt
 
 USE_AUTOTOOLS=	libtool:22

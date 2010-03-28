@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.16.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib%20%28${PORTNAME}%20core%29/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -20,7 +20,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		speex.1:${PORTSDIR}/audio/speex \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		dvdread.4:${PORTSDIR}/multimedia/libdvdread \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fame-0.9.1:${PORTSDIR}/multimedia/libfame \

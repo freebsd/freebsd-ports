@@ -7,7 +7,7 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		SF/avidemux/avidemux/${PORTVERSION}
@@ -19,7 +19,7 @@ COMMENT=	Simple GUI based video editor
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		mad.2:${PORTSDIR}/audio/libmad \
 		a52.0:${PORTSDIR}/audio/liba52 \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 CONFLICTS=	avidemux2-2.[0-35-9].*

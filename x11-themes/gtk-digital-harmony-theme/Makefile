@@ -7,7 +7,7 @@
 
 PORTNAME=	digital-harmony
 PORTVERSION=	1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://www.users.monornet.hu/linux/gtk2/oldies/
 PKGNAMEPREFIX=	${TYPE}-

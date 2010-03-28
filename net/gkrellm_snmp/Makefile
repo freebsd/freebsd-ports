@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm_snmp
 PORTVERSION=	0.14
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://triq.net/gkrellm/
 

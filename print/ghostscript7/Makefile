@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript7
 PORTVERSION=	7.07
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	print
 MASTER_SITES=	SF/ghostscript/gnu-gs/${PORTVERSION}:gs_srcs \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
@@ -23,7 +23,7 @@ MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 7.x PostScript interpreter
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 # normazile WRKSRC so things like cups-pstoraster may work

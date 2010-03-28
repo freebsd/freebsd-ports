@@ -7,14 +7,14 @@
 
 PORTNAME=	nazghul
 PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A computer role-playing game engine
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_SDL=	sdl image
 USE_GMAKE=	yes

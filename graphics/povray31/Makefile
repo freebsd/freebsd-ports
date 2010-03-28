@@ -7,7 +7,7 @@
 
 PORTNAME=	povray
 PORTVERSION=	3.1g
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.gigabell.net/pub/unix/apps/graphics/povray/%SUBDIR%/ \
@@ -22,7 +22,7 @@ MAINTAINER=	olli@fromme.com
 COMMENT=	Persistence of Vision Ray Tracer
 
 #BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 DIST_SUBDIR=	povray31
 

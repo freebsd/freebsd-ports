@@ -7,7 +7,7 @@
 
 PORTNAME=	grx
 PORTVERSION=	2.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://grx.gnu.de/download/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -73,7 +73,7 @@ CONFIGURE_ARGS+=--disable-jpeg
 .endif
 
 .if defined(WITH_PNG)
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--enable-png
 .else
 CONFIGURE_ARGS+=--disable-png

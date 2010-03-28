@@ -8,7 +8,7 @@
 PORTNAME=	fontmatrix
 DISTVERSION=	0.4.2
 DISTVERSIONSUFFIX=	-Source
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontmatrix.net/archives/
 

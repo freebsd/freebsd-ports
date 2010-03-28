@@ -7,7 +7,7 @@
 
 PORTNAME=	swami
 PORTVERSION=	0.9.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		popt.0:${PORTSDIR}/devel/popt \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk12

@@ -8,7 +8,7 @@
 
 PORTNAME=	matplotlib
 PORTVERSION=	0.99.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.99/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${LOCALBASE}/lib/libagg.a:${PORTSDIR}/graphics/agg
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .if defined(PACKAGE_BUILDING)

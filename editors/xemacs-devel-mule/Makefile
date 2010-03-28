@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -39,7 +39,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${POR
 .endif
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
 

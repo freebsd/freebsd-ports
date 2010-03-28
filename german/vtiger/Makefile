@@ -6,7 +6,7 @@
 
 PORTNAME=	vtiger
 DISTVERSION=	5.0.3-ga-release-fix-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	german www
 MASTER_SITES=	http://forge.vtiger.com/frs/download.php/322/ \
 		http://people.bsdgroup.de/~as/freebsd/distfiles/vtiger/

@@ -7,7 +7,7 @@
 
 PORTNAME=	ksqlshell
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases kde
 MASTER_SITES=	http://www.ksqlshell.de/
 

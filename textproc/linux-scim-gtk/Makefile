@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-gtk
 PORTVERSION=	# defined below
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc linux
 MASTER_SITE_SUBDIR=	# defined below
 PKGNAMESUFFIX=	-fc${LINUX_DIST_VER}

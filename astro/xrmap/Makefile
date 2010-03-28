@@ -7,7 +7,7 @@
 
 PORTNAME=	xrmap
 PORTVERSION=	2.33
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/data/:data \
 		ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/:src
@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Map portions of the earth from a given longitude/latitude
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_IMAKE=	yes

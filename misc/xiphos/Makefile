@@ -7,6 +7,7 @@
 
 PORTNAME=	xiphos
 PORTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 

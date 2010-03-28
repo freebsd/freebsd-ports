@@ -7,7 +7,7 @@
 
 PORTNAME=	mudmagic
 PORTVERSION=	1.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://www.mudmagic.com/mud-client/downloads/
 
@@ -16,7 +16,7 @@ COMMENT=	A GTK+ based MUD client
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		expat:${PORTSDIR}/textproc/expat2 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 

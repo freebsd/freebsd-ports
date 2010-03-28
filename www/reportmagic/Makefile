@@ -7,7 +7,7 @@
 
 PORTNAME=	reportmagic
 PORTVERSION=	2.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.reportmagic.org/	\
 		http://www.reportmagic.org.uk/	\

@@ -8,7 +8,7 @@
 PORTNAME=	devil
 PORTVERSION=	1.7.8
 PORTEPOCH=	1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil/DevIL/${PORTVERSION}
 DISTNAME=	DevIL-${PORTVERSION}
@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=--enable-mng
 CONFIGURE_ENV+=	libpng_app=no
 CONFIGURE_ARGS+=--disable-png
 .else
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 .endif
 
 .if defined(WITHOUT_TIFF)

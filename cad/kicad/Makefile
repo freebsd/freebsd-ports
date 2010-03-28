@@ -7,7 +7,7 @@
 
 PORTNAME=		kicad
 PORTVERSION=		20080825
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		cad
 #MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 #			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\

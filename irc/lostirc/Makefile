@@ -7,7 +7,7 @@
 
 PORTNAME=	lostirc
 PORTVERSION=	0.4.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	irc
 MASTER_SITES=	SF \
 		http://demian.dyndns.org/src/
