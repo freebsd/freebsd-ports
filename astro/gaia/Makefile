@@ -7,7 +7,7 @@
 
 PORTNAME=	gaia
 PORTVERSION=	0.1.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}-clean/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	Display geographic maps with optional GPS tracking support
 
 LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_SCONS=	yes

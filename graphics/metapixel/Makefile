@@ -6,7 +6,7 @@
 
 PORTNAME=	metapixel
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/metapixel/files/ \
 		http://mirror.roe.ch/dist/metapixel/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/schani/metapixel/files/ \
 MAINTAINER=	daniel@roe.ch
 COMMENT=	A photomosaic generator
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	vectoroids
 PORTVERSION=	1.1.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/vectoroids/src/
 

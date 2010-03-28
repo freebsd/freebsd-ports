@@ -7,14 +7,14 @@
 
 PORTNAME=	gqview
 PORTVERSION=	2.1.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/unstable/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another gtk2-based graphic file viewer
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnomehier gtk20
 GNU_CONFIGURE=	yes

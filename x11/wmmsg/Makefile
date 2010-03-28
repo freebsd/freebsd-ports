@@ -7,7 +7,7 @@
 
 PORTNAME=	wmmsg
 PORTVERSION=	1.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://mirror.israel.net/pub/FreeBSD/distfiles/
 

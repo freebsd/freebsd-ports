@@ -6,7 +6,7 @@
 
 PORTNAME=	mcstas
 PORTVERSION=	1.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://www.mcstas.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

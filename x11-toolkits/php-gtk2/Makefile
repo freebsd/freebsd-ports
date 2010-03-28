@@ -7,6 +7,7 @@
 
 PORTNAME=	php-gtk2
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/

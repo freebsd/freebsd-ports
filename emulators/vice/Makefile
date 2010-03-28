@@ -6,7 +6,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.viceteam.org/online/ \
 		http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \

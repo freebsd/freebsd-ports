@@ -7,7 +7,7 @@
 
 VERSION=	4.1
 REVISION=	16
-PORTREVISION=	6
+PORTREVISION=	7
 
 PORTNAME=	xloadimage
 PORTVERSION=	${VERSION}.${REVISION}
@@ -26,7 +26,7 @@ EXTRA_PATCHES=	${WRKSRC}/debian/patches/*.dpatch
 
 USE_XORG=	x11
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=		linux-nx-client
 PORTVERSION=		3.4.0
+PORTREVISION=	1
 CATEGORIES=		net
 MASTER_SITES=		http://web04.nomachine.com/download/${PORTVERSION}/Linux/
 DISTNAME=		nxclient-${PORTVERSION}-5.i386

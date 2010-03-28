@@ -7,7 +7,7 @@
 
 PORTNAME=	night_bling
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GET_E} \
 		ftp://ftp.springdaemons.com/pub/snapshots/e17/

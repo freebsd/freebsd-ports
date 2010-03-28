@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-pdb
 PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

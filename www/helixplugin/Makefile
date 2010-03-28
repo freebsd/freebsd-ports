@@ -7,7 +7,7 @@
 
 PORTNAME=	hxplugin
 PORTVERSION=	20070318
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://virtual-estates.net/~mi/port-stuff/
 

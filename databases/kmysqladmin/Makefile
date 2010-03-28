@@ -7,7 +7,7 @@
 
 PORTNAME=	kmysqladmin
 PORTVERSION=	0.7.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.alwins-world.de/programs/download/kmysqladmin/
 

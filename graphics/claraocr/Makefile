@@ -7,7 +7,7 @@
 
 PORTNAME=	claraocr
 PORTVERSION=	20031214
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics accessibility
 MASTER_SITES=	http://www.geocities.com/claraocr/
 DISTNAME=	clara-${PORTVERSION}

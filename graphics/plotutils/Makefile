@@ -7,6 +7,7 @@
 
 PORTNAME=	plotutils
 PORTVERSION=	2.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNU
@@ -14,7 +15,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	A plotting library and toolkit
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_GNOME=	gnometarget
 USE_MOTIF=	yes

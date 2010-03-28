@@ -8,7 +8,7 @@
 
 PORTNAME=	beastie
 PORTVERSION=	06.05.03
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~ahze/distfiles/

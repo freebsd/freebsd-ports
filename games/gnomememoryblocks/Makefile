@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomememoryblocks
 PORTVERSION=	0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/gnome-memblocks/gnome-memblocks/${PORTVERSION}
 DISTNAME=	gnome-memblocks-${PORTVERSION}

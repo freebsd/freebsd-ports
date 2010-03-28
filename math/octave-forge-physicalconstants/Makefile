@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-physicalconstants
 PORTVERSION=	0.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

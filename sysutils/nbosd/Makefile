@@ -7,7 +7,7 @@
 
 PORTNAME=	nbosd
 PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 

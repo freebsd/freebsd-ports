@@ -8,7 +8,7 @@
 
 PORTNAME=	svg2pdf
 PORTVERSION=	0.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/snapshots/
 

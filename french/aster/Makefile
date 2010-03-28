@@ -9,6 +9,7 @@ PORTNAME=		aster
 DISTVERSIONPREFIX=	full-src-
 DISTVERSION=		10.1.0-4
 DISTVERSIONSUFFIX=	.noarch
+PORTREVISION=	1
 CATEGORIES=		french cad
 MASTER_SITES=		http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics www
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		SF/djvu/DjVuLibre/${PORTVERSION}

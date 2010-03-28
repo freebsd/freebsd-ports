@@ -7,6 +7,7 @@
 
 PORTNAME=	libdrizzle
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/37807343/ \
 		LOCAL/glarkin

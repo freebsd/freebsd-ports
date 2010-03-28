@@ -7,6 +7,7 @@
 
 PORTNAME=	qfaktury
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	polish deskutils
 MASTER_SITES=	SF
 

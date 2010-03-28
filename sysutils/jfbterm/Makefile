@@ -6,7 +6,7 @@
 
 PORTNAME=	jfbterm
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ac.auone-net.jp/~baba/jfbterm/ \
 		http://chirashi-no-ura.net/files/
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-FreeBSD-${PORTVERSION}
 MAINTAINER=	bsdports@gmail.com
 COMMENT=	Multilanguage can be displayed on the console
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/unifont.pcf.gz:${PORTSDIR}/x11-fonts/gnu-unifont
 
 USE_ICONV=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	tmw
 PORTVERSION=	0.0.29.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/themanaworld/The%20Mana%20World/${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -16,7 +16,7 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A free open source 2D MMORPG in development
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		curl.5:${PORTSDIR}/ftp/curl \
 		physfs.1:${PORTSDIR}/devel/physfs
 BUILD_DEPENDS=	guichan>=0.8.1:${PORTSDIR}/devel/guichan

@@ -7,6 +7,7 @@
 
 PORTNAME=	qgmailnotifier
 PORTVERSION=	2008.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.codef00.com/projects/
 EXTRACT_SUFX=	.tgz

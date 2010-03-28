@@ -7,6 +7,7 @@
 
 PORTNAME=	cairo-dock-plugins
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	BERLIOS/cairo-dock
 

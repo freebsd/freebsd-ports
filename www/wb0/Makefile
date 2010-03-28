@@ -7,7 +7,7 @@
 
 PORTNAME=	wb0
 PORTVERSION=	000324
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www graphics
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/wb0/
 EXTRACT_SUFX=	.tgz
@@ -18,7 +18,7 @@ COMMENT=	Web browser for svgalib which can show pictures
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx-current
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		vga.1:${PORTSDIR}/graphics/svgalib \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 DOCS=		AUTHORS Changelog README etc/wb0/wb0.config.README
 PORTDOCS=	${DOCS:T}

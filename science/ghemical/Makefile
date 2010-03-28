@@ -6,7 +6,7 @@
 
 PORTNAME=	ghemical
 PORTVERSION=	2.99.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/release20090911/ \
 		http://bioinformatics.org/ghemical/download/

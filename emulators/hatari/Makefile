@@ -7,13 +7,14 @@
 
 PORTNAME=	hatari
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Atari ST emulator
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_SDL=	sdl

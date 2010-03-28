@@ -7,7 +7,7 @@
 
 PORTNAME=	FlightGear
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \

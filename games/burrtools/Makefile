@@ -8,14 +8,14 @@
 
 PORTNAME=	burrtools
 PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A puzzle solver
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		xmlwrapp.5:${PORTSDIR}/textproc/xmlwrapp \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

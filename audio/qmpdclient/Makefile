@@ -7,6 +7,7 @@
 
 PORTNAME=	qmpdclient
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://dump.bitcheese.net/files/dedycec/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

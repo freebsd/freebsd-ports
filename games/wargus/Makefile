@@ -7,6 +7,7 @@
 
 PORTNAME=	wargus
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/for%20Stratagus%20${PORTVERSION}
 EXTRACT_SUFX=	-src.zip
@@ -14,7 +15,7 @@ EXTRACT_SUFX=	-src.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 
 USE_ZIP=	yes

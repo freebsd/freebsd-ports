@@ -7,6 +7,7 @@
 
 PORTNAME=	facedetect
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xarg.org/download/
 PKGNAMEPREFIX=	php-

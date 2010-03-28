@@ -7,7 +7,7 @@
 
 PORTNAME=	wormux
 DISTVERSION=	20090228
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
@@ -16,7 +16,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Wormux game
 
 LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		curl.5:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes

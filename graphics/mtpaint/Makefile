@@ -7,7 +7,7 @@
 
 PORTNAME=	mtpaint
 PORTVERSION=	3.31
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		openjpeg.2:${PORTSDIR}/graphics/openjpeg \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 

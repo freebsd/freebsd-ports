@@ -7,13 +7,14 @@
 
 PORTNAME=	crw
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to process Canon camera RAW (.crw) files
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 MAN1=		crw.1
 MANCOMPRESSED=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	Read and manipulate raw images from digital cameras
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		gtkimageview.0:${PORTSDIR}/x11-toolkits/gtkimageview \
 		lcms.1:${PORTSDIR}/graphics/lcms
 

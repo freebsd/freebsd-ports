@@ -7,7 +7,7 @@
 
 PORTNAME=	secretmaryochronicles-music
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/smclone/Addon%20-%20Music/${PORTVERSION}
 DISTNAME=	SMC_music_${PORTVERSION}_high

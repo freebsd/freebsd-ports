@@ -6,7 +6,7 @@
 #   $MCom: ports/graphics/poppler-gtk/Makefile,v 1.16 2009/08/02 17:54:08 marcus Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-gtk
 
 MAINTAINER=	gnome@FreeBSD.org

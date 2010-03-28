@@ -7,7 +7,7 @@
 
 PORTNAME=	xtide
 PORTVERSION=	2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -19,7 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Harmonic tide clock and tide predictor
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_XORG=	xpm xaw

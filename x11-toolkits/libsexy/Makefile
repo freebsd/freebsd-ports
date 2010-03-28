@@ -7,7 +7,7 @@
 
 PORTNAME=	libsexy
 PORTVERSION=	0.1.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://releases.chipx86.com/libsexy/libsexy/

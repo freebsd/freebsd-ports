@@ -7,7 +7,7 @@
 
 PORTNAME=	drraw
 PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://web.taranis.org/drraw/dist/ \
 		http://christianserving.org/ports/mail/imapsync/

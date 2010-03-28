@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc deskutils
 PKGNAMESUFFIX=	-gtk
 

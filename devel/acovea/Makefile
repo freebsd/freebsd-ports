@@ -7,6 +7,7 @@
 
 PORTNAME=	acovea
 PORTVERSION=	5.1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.coyotegulch.com/distfiles/
 DISTNAME=	libacovea-${PORTVERSION}

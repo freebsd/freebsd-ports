@@ -7,6 +7,7 @@
 
 PORTNAME=	grsync
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		GENTOO/distfiles \

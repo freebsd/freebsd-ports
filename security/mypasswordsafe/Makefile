@@ -7,7 +7,7 @@
 
 PORTNAME=	MyPasswordSafe
 PORTVERSION=	20061216
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	http://www.semanticgap.com/myps/release/
 EXTRACT_SUFX=	.src.tgz

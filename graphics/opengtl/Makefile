@@ -5,6 +5,7 @@
 
 PORTNAME=	opengtl
 PORTVERSION=	0.9.12
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.opengtl.org/download/
 DISTNAME=	OpenGTL-${PORTVERSION}
@@ -12,7 +13,7 @@ DISTNAME=	OpenGTL-${PORTVERSION}
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Graphics Transformation Languages
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	llvm>=2.5:${PORTSDIR}/devel/llvm
 
 USE_BZIP2=	yes

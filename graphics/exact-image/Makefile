@@ -7,7 +7,7 @@
 
 PORTNAME=	exact-image
 PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	swig>=1.3.32:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	agg.2:${PORTSDIR}/graphics/agg \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \

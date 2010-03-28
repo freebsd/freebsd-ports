@@ -7,7 +7,7 @@
 
 PORTNAME=	libwraster
 PORTVERSION=	0.92.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://dougbarton.us/Downloads/
@@ -18,7 +18,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	libwraster from Window Maker
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 

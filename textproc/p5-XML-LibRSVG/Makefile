@@ -7,7 +7,7 @@
 
 PORTNAME=	XML-LibRSVG
 PORTVERSION=	0.01
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	textproc graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ COMMENT=	Interface to GNOME's librsvg
 LIB_DEPENDS=	rsvg.1:${PORTSDIR}/graphics/librsvg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		art_lgpl.5:${PORTSDIR}/graphics/libart
 
 PERL_CONFIGURE=	yes

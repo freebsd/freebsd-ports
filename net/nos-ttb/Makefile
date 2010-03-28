@@ -8,7 +8,7 @@
 
 PORTNAME=	nos-ttb
 PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.djcbsoftware.nl/code/ttb/
 DISTNAME=	ttb-${PORTVERSION}

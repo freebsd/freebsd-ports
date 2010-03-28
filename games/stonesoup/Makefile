@@ -41,7 +41,7 @@ MAKEFILE=	makefile_tiles.unix
 MAKE_JOBS_UNSAFE=	yes
 PLIST_SUB+=	SDL=""
 USE_SDL=	image
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 .else
 MAKEFILE=	makefile.unix

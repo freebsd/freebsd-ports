@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomefind
 PORTVERSION=	1.0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SF/gnome-find/gnome-find-stable/${PORTVERSION}
 DISTNAME=	gnome-find-${PORTVERSION}

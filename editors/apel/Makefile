@@ -7,7 +7,7 @@
 
 PORTNAME=	apel
 PORTVERSION=	${APEL_VER}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/apel/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,elisp/jpl/elisp/apel,}

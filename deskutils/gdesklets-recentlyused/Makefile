@@ -7,7 +7,7 @@
 
 PORTNAME=	recentlyused
 PORTVERSION=	0.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gdesklets.info/archive/
 PKGNAMEPREFIX=	gdesklets-

@@ -7,7 +7,7 @@
 
 PORTNAME=	manualsize
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://issv.org.ru/oss/ \
 		http://wickedmachine.net/~jsa/FreeBSD/distfiles/

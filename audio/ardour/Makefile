@@ -7,7 +7,7 @@
 
 PORTNAME=	ardour
 PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://freebsd.nsu.ru/distfiles/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	Prima
 PORTVERSION=	1.27
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits perl5 graphics
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ MAINTAINER=	dmitry@karasik.eu.org
 COMMENT=	An extensible Perl toolkit for multi-platform GUI development
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	trackstat
 PORTVERSION=	2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://erland.homeip.net/download/do/downloadapplication?name=slimserver-trackstat&filename=/
 PKGNAMEPREFIX=	squeezeboxserver-

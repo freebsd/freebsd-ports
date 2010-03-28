@@ -7,7 +7,7 @@
 
 PORTNAME=	warzone2100
 PORTVERSION=	2.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Warzone%202100%20${PORTVERSION}
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		mad.2:${PORTSDIR}/audio/libmad \
 		ogg.6:${PORTSDIR}/audio/libogg \
 		physfs.1:${PORTSDIR}/devel/physfs \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		GLC.0:${PORTSDIR}/graphics/quesoglc \
 		theora.0:${PORTSDIR}/multimedia/libtheora \

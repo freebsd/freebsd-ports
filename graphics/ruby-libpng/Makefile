@@ -7,7 +7,7 @@
 
 PORTNAME=	libpng
 PORTVERSION=	0.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #		http://www.isc.meiji.ac.jp/~ee77038/ruby/program/
@@ -19,7 +19,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A libpng wrapper class for Ruby
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

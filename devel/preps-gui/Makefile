@@ -7,7 +7,7 @@
 
 PORTNAME=	preps
 PORTVERSION=	2.0.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 PKGNAMESUFFIX=	-gui

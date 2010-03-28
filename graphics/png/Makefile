@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.2.43
+PORTVERSION=	1.4.1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/lib${PORTNAME}/03-lib${PORTNAME}-previous/${PORTVERSION}
+MASTER_SITES=	SF/lib${PORTNAME}/01-lib${PORTNAME}-master/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
-#PATCH_SITES=	${MASTER_SITES}
-#PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-#PATCHFILES=
-#PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
@@ -23,7 +19,7 @@ ALL_TARGET=	all libpng-config test
 MAKE_FLAGS=	ccopts="${CFLAGS}" ldopts="${LDFLAGS}" -f
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
-SHLIB_VER=	5
+SHLIB_VER=	6
 USE_BZIP2=	yes
 
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
@@ -47,7 +43,7 @@ post-install:
 	${SED} -e 's|@PREFIX@|${PREFIX}|' ${WRKSRC}/scripts/libpng.pc.in \
 		> ${WRKSRC}/scripts/libpng.pc
 	${INSTALL_DATA} ${WRKSRC}/scripts/libpng.pc \
-		${PREFIX}/libdata/pkgconfig/libpng12.pc
-	${LN} -sf libpng12.pc ${PREFIX}/libdata/pkgconfig/libpng.pc
+		${PREFIX}/libdata/pkgconfig/libpng14.pc
+	${LN} -sf libpng14.pc ${PREFIX}/libdata/pkgconfig/libpng.pc
 
 .include <bsd.port.post.mk>

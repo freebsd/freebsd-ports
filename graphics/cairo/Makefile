@@ -8,7 +8,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.8.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -20,7 +20,7 @@ COMMENT=	Vector graphics library with cross-device output support
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		pixman-1.9:${PORTSDIR}/x11/pixman
 

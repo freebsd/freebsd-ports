@@ -7,13 +7,14 @@
 
 PORTNAME=	icoutils
 PORTVERSION=	0.28.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert/extract images in Microsoft Windows(R) icon/cursor files
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 USE_PERL5_RUN=	yes

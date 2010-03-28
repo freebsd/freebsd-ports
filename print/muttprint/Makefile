@@ -7,7 +7,7 @@
 
 PORTNAME?=	muttprint
 PORTVERSION=	0.72d
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	print mail
 MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 

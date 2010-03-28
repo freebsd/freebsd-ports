@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-qnxtheme
 PORTVERSION=	0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	3414-qnxtheme-${PORTVERSION}

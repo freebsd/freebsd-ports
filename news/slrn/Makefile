@@ -7,6 +7,7 @@
 
 PORTNAME=	slrn
 PORTVERSION=	0.9.9p1
+PORTREVISION=	1
 CATEGORIES=	news ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		ftp://angel.sovam.com/pub/tools/net/news/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-wavelan-plugin
 PORTVERSION=	0.5.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -15,7 +15,7 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Displays various information about a WaveLAN device
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes

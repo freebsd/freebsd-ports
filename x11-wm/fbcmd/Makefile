@@ -7,7 +7,7 @@
 
 PORTNAME=	fbcmd
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://darkshed.net/files/c_cpp/fbcmd/
 

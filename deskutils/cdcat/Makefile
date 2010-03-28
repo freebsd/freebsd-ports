@@ -7,7 +7,7 @@
 
 PORTNAME=	cdcat
 PORTVERSION=	1.01b	# >1.01 as b doesn't stay for 'beta'
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://cdcat.sourceforge.net/

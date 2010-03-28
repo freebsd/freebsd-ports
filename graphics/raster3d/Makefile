@@ -7,7 +7,7 @@
 
 PORTNAME=	raster3d
 PORTVERSION=	2.7s
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics biology
 MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
 DISTNAME=	Raster3D_${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	Raster3D_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of tools for generating raster images of proteins and molecules
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 OPTIONS=	IMAGEMAGICK "ImageMagick graphics support" on

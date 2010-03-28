@@ -6,7 +6,7 @@
 
 PORTNAME?=	scrobbler
 PORTVERSION=	0.3.8.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 MASTER_SITES=	http://static.audioscrobbler.com/plugins/ \
 		http://www.pipian.com/stuffforchat/

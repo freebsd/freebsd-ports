@@ -7,7 +7,7 @@
 
 PORTNAME=	philesight
 PORTVERSION=	20090105
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://zevv.nl/play/code/philesight/
 EXTRACT_SUFX=	.tgz

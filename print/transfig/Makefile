@@ -7,7 +7,7 @@
 
 PORTNAME=	transfig
 PORTVERSION=	3.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION}/ \
 		ftp://www-epb.lbl.gov/xfig/
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to convert Xfig's .fig files
 
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_GHOSTSCRIPT_RUN=	yes
 USE_IMAKE=	yes

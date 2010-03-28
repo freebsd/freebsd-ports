@@ -7,7 +7,7 @@
 
 PORTNAME=	FuzzyOcr
 DISTVERSION=	2.3b
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/

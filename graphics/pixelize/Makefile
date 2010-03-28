@@ -8,7 +8,7 @@
 
 PORTNAME=	pixelize
 PORTVERSION=	0.9.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://lashwhip.com/pub/ \

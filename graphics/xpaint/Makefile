@@ -7,7 +7,7 @@
 
 PORTNAME=	xpaint
 PORTVERSION=	2.7.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		ftp://ftp.ac-grenoble.fr/Office/
@@ -16,7 +16,7 @@ MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple paint program
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_BZIP2=	yes

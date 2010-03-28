@@ -7,6 +7,7 @@
 
 PORTNAME=	portrac
 PORTVERSION=	0.1b
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://e-soul.org/distfiles/ \
 		http://home.e-soul.org/~mgp/distfiles/

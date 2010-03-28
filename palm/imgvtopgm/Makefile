@@ -7,7 +7,7 @@
 
 PORTNAME=	imgvtopgm
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	palm graphics
 MASTER_SITES=	http://linuxmafia.com/pub/palmos/other-os/
 

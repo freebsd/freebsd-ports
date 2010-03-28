@@ -7,7 +7,7 @@
 
 PORTNAME=	epsilon
 PORTVERSION=	0.3.0.012
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
@@ -30,7 +30,7 @@ OPTIONS=	PNG	"Enable PNG thumbnailer" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PNG) || exists(${LOCALBASE}/lib/libpng.so.5)
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 PLIST_SUB+=	PNG=""
 .else
 PLIST_SUB+=	PNG="@comment "

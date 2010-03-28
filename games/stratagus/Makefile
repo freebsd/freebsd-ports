@@ -7,7 +7,7 @@
 
 PORTNAME=	stratagus
 PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-src.tar.gz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 OPTIONS=	OPENGL "Enable OpenGL support" on \
 		MIKMOD "Enable Mikmod support" off \

@@ -7,7 +7,7 @@
 
 PORTNAME=	atari800
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xf25.zip
@@ -18,7 +18,7 @@ MAINTAINER=	gamato@users.sf.net
 COMMENT=	Atari 8-bit computer emulator
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 RESTRICTED=	"xf25 contains copyright ROMs and cannot be distributed."
 

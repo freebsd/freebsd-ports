@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui%20%28skinned%20front%20end%29/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	An X11 multimedia player
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 USE_XORG=	x11 xt xv xinerama xxf86vm
 USE_GETTEXT=	yes

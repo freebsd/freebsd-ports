@@ -7,7 +7,7 @@
 
 PORTNAME=	npretty
 PORTVERSION=	0.9.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.pulia.nu/code/projects/npretty/ \
 		${MASTER_SITE_LOCAL:S@%SUBDIR%@gabor@}

@@ -7,7 +7,7 @@
 
 PORTNAME=	hsetroot
 PORTVERSION=	1.0.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://thegraveyard.org/files/
 

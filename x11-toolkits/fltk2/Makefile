@@ -7,7 +7,7 @@
 
 PORTNAME=	fltk
 PORTVERSION=	2.0.${SNAPSHOT}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/snapshots
@@ -26,7 +26,7 @@ COMMENT=	Fast Light Toolkit version 2 (development snapshot)
 # If xprop cannot connect to an X server of if xprop cannot be found, X overlay
 # support will be disabled without breaking the build.
 BUILD_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 SNAPSHOT=	r6834

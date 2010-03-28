@@ -7,7 +7,7 @@
 
 PORTNAME=	gupnp-igd
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.gupnp.org/sources/${PORTNAME}/
 

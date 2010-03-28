@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 
 MAINTAINER=	leeym@FreeBSD.org

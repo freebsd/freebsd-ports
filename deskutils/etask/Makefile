@@ -7,7 +7,7 @@
 
 PORTNAME=	etask
 PORTVERSION=	0.3.91
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://members.chello.at/rene.weichselbaum/ \
 		http://dryice.name/computer/FreeBSD/distfiles/

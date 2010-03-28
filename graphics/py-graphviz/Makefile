@@ -6,7 +6,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	0.99.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP \
 		http://networkx.lanl.gov/download/pygraphviz/

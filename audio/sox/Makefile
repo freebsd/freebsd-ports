@@ -7,6 +7,7 @@
 
 PORTNAME=	sox
 PORTVERSION=	14.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -127,7 +128,7 @@ CONFIGURE_ARGS+=	--without-mad
 
 .if defined(WITH_PNG)
 CONFIGURE_ARGS+=	--with-png
-LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=	--without-png
 .endif

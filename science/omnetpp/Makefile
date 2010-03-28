@@ -7,7 +7,7 @@
 
 PORTNAME=	omnetpp
 PORTVERSION=	3.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://www.omnetpp.org/download/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

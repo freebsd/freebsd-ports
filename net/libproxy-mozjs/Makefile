@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net devel
 PKGNAMESUFFIX=	-mozjs
 

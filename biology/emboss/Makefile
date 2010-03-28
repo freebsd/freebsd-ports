@@ -7,7 +7,7 @@
 
 PORTNAME=	emboss
 PORTVERSION=	6.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 RELEASE=	${PORTNAME:U}-${PORTVERSION}
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/old/${PORTVERSION}/
@@ -20,7 +20,7 @@ COMMENT=	A collection of open source tools for genetic sequence analysis
 BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw \
 		primer3:${PORTSDIR}/biology/primer3
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 CONFLICTS=	qmail-ldap-[0-9]* digest-[0-9]*
 
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+= --with-docroot=${DOCSDIR}
 USE_XORG=	x11
 USE_MOTIF=	yes
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+= --without-x
 .endif

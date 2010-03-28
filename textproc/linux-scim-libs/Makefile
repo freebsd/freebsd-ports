@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-libs
 PORTVERSION=	# defined below
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc linux
 MASTER_SITE_SUBDIR=	# defined below
 PKGNAMESUFFIX=	-fc${LINUX_DIST_VER}

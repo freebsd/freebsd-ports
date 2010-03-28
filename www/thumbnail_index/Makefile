@@ -7,7 +7,7 @@
 
 PORTNAME=	thumbnail_index
 PORTVERSION=	1998.08.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/thumbnail_index/
 DISTNAME=	${PORTNAME}_10aug1998

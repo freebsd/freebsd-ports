@@ -8,7 +8,7 @@
 
 PORTNAME=	SciParam
 PORTVERSION=	1.0.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.intevation.de/great-er/sciparam/ \
 		http://ftp.intevation.de/great-er/sciparam/ \

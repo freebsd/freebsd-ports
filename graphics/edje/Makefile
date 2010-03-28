@@ -7,7 +7,7 @@
 
 PORTNAME=	edje
 PORTVERSION=	0.5.0.042
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \

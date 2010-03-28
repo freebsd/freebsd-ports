@@ -7,7 +7,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.92.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://dougbarton.us/Downloads/
@@ -18,7 +18,7 @@ MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	GNUstep-compliant NeXTstep window manager clone
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons

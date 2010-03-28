@@ -7,7 +7,7 @@
 
 PORTNAME=	slglade
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://laurent.perez2.free.fr/comp/slang/modules/
 EXTRACT_SUFX=	.tgz

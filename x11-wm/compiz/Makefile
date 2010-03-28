@@ -7,14 +7,14 @@
 
 PORTNAME=	compiz
 PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Compiz Composite/Window Manager
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 XORG_CAT=	app

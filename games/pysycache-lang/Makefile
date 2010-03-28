@@ -7,7 +7,7 @@
 
 PORTNAME=	lang
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games python
 MASTER_SITES=	http://download.gna.org/py4childs/pysycache/v${PORTVERSION}/
 PKGNAMEPREFIX=	pysycache-

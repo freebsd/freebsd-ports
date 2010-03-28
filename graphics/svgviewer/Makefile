@@ -7,7 +7,7 @@
 
 PORTNAME=	svgviewer
 PORTVERSION=	0.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://web.telia.com/~u42308495/alex/
 DISTNAME=	SVGViewer-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	SVG Viewer for GNUstep
 
 LIB_DEPENDS+=	svg.1:${PORTSDIR}/graphics/libsvg
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes

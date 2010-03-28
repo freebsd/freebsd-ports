@@ -7,7 +7,7 @@
 
 PORTNAME=	xmps
 PORTVERSION=	0.2.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
 

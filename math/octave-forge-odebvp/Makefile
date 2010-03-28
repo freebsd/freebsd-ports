@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-odebvp
 PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

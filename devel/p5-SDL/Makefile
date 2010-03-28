@@ -5,7 +5,7 @@
 
 PORTNAME=	SDL
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/D/DG/DGOEHRIG
@@ -15,7 +15,7 @@ DISTNAME=	SDL_Perl-${PORTVERSION}
 MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	Perl Bindings for SDL
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_PERL5=	yes

@@ -11,7 +11,7 @@
 
 PORTNAME=	vigra
 PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://hci.iwr.uni-heidelberg.de/vigra/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--without-jpeg
 .endif
 
 .if !defined(WITHOUT_VIGRA_PNG)
-LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-png
 .else
 CONFIGURE_ARGS+=	--without-png

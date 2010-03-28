@@ -7,7 +7,7 @@
 
 PORTNAME=	pwebstats
 PORTVERSION=	1.3.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.psg.com/pub/pwebstats/
 

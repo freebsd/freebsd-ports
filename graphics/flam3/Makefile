@@ -7,6 +7,7 @@
 
 PORTNAME=	flam3
 PORTVERSION=	2.7.18
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://flam3.com/ \
 		http://interwebfun.org/distfiles/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://flam3.com/ \
 MAINTAINER=	john.c.prather@gmail.com
 COMMENT=	A Flame Renderer
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 

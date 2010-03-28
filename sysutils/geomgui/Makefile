@@ -7,7 +7,7 @@
 
 PORTNAME=	geomgui
 PORTVERSION=	0.12
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://geomgui.xride.dk/files/ \
 		${MASTER_SITE_LOCAL}

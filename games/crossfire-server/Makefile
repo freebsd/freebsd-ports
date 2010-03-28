@@ -7,7 +7,7 @@
 
 PORTNAME=	crossfire
 PORTVERSION=	1.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-server/${PORTVERSION} \
 		ftp://ftp.real-time.com/pub/games/crossfire/
@@ -20,7 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server for multiplayer graphical arcade and adventure game
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 USE_GNOME=	gnometarget

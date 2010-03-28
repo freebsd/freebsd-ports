@@ -8,6 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -27,7 +28,7 @@ LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		avahi-core:${PORTSDIR}/net/avahi-app \
 		enchant.1:${PORTSDIR}/textproc/enchant \
 		ungif.5:${PORTSDIR}/graphics/libungif \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		idn:${PORTSDIR}/dns/libidn \
 		hal.1:${PORTSDIR}/sysutils/hal \

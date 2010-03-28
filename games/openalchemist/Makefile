@@ -7,7 +7,7 @@
 
 PORTNAME=	openalchemist
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -18,7 +18,7 @@ COMMENT=	Tetris-like game
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib \
 	jpeg.11:${PORTSDIR}/graphics/jpeg \
-	png.5:${PORTSDIR}/graphics/png
+	png.6:${PORTSDIR}/graphics/png
 
 USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262
 # Necessary to find pkg.m4 (PKG_CHECK_MODULES)

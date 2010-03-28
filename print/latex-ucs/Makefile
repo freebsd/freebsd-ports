@@ -6,7 +6,7 @@
 
 PORTNAME=	latex-ucs
 PORTVERSION=	20041017
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	http://www.unruh.de/DniQ/latex/unicode/
 DISTNAME=	unicode

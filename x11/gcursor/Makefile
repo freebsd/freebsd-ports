@@ -7,7 +7,7 @@
 
 PORTNAME=	gcursor
 PORTVERSION=	0.061
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://download.qballcow.nl/programs/gcursor/
 

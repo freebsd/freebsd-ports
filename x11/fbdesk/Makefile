@@ -7,7 +7,7 @@
 
 PORTNAME=	fbdesk
 PORTVERSION=	1.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
 		${MASTER_SITE_GENTOO} \
@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Fluxbox utility to create and manage icons on the desktop
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 OPTIONS=	IMLIB2 "Imlib2 (pixmap themes) support" On
 

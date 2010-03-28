@@ -7,7 +7,7 @@
 
 PORTNAME=	zim
 PORTVERSION=	0.28
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors perl5
 MASTER_SITES=	http://www.zim-wiki.org/downloads/
 DISTNAME=	Zim-${PORTVERSION}

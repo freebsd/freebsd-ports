@@ -6,7 +6,7 @@
 
 PORTNAME=	multi-backgrounds-daemon
 PORTVERSION=	0.1.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://jeanschu.free.fr/multi-backgrounds-daemon/
 

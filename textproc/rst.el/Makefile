@@ -7,7 +7,7 @@
 
 PORTNAME=	rst.el
 PORTVERSION=	5954
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://svn.berlios.de/viewcvs/*checkout*/docutils/trunk/docutils/tools/editors/emacs/
 PKGNAMESUFFIX=	-${EMACS_NAME}

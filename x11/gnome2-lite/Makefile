@@ -6,7 +6,7 @@
 #   $MCom: ports/x11/gnome2-lite/Makefile,v 1.62 2009/11/26 20:39:06 marcus Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-lite
 

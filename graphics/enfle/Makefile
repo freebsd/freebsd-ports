@@ -7,7 +7,7 @@
 
 PORTNAME=	enfle
 PORTVERSION=	20071024
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/files/stable/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	arc.1:${PORTSDIR}/archivers/libarc \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		ungif.5:${PORTSDIR}/graphics/libungif \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		theora.0:${PORTSDIR}/multimedia/libtheora
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

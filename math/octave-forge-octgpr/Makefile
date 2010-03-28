@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-octgpr
 PORTVERSION=	1.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

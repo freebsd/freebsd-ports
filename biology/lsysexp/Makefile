@@ -7,7 +7,7 @@
 
 PORTNAME=	lsysexp
 PORTVERSION=	0.67
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	biology
 MASTER_SITES=	http://coscorrosa.com/programs/${PORTNAME}/download/ \
 		http://freebsd.unixfreunde.de/sources/

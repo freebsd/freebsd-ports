@@ -7,7 +7,7 @@
 
 PORTNAME=	vultures
 PORTVERSION=	2.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.darkarts.co.za/projects/vultures/attachment/wiki/downloads/${PORTVERSION}/
 PKGNAMESUFFIX=	-claw
@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}-full${EXTRACT_SUFX}?format=raw
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An isometric interface to Slash'EM based on Falcon's Eye
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

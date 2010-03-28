@@ -7,7 +7,7 @@
 
 PORTNAME=	tnl
 PORTVERSION=	071111
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://tnlgame.net/downloads/tnl/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libiovmall.so:${PORTSDIR}/lang/io
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		CEGUIBase.3:${PORTSDIR}/graphics/cegui \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		GLEW.1:${PORTSDIR}/graphics/glew
 
 USE_BZIP2=	yes

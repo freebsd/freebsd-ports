@@ -7,7 +7,7 @@
 
 PORTNAME=	circ
 PORTVERSION=	1.0f
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	ftp://cam.ctan.org/tex-archive/macros/generic/diagrams/ \
 		http://theory.uwinnipeg.ca/scripts/CTAN/macros/generic/diagrams/

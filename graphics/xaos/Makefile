@@ -7,13 +7,14 @@
 
 PORTNAME=	xaos
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	graphics math
 MASTER_SITES=	SF/${PORTNAME}/XaoS/${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A real-time fractal browser for X11 and ASCII terminals
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes

@@ -7,14 +7,14 @@
 
 PORTNAME=	lbreakout2
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	mmendez@gmail.com
 COMMENT=	The polished successor to LBreakout
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_SDL=	mixer net sdl
 USE_GMAKE=	yes

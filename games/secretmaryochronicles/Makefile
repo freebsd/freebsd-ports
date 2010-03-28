@@ -7,7 +7,7 @@
 
 PORTNAME=	secretmaryochronicles
 PORTVERSION=	1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/smclone/Secret%20Maryo%20Chronicles/${PORTVERSION}
 DISTNAME=	smc-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	Secret Maryo Chronicles two-dimensional platform game
 
 LIB_DEPENDS=	CEGUIBase.3:${PORTSDIR}/graphics/cegui \
 		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

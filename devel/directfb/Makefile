@@ -7,7 +7,7 @@
 
 PORTNAME=	directfb
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.directfb.org/downloads/Core/ \
 		http://www.directfb.org/downloads/Old/
@@ -17,7 +17,7 @@ MAINTAINER=	anatoly.borodin@gmail.com
 COMMENT=	Graphic development lightweight API
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 USE_AUTOTOOLS=	libtool:22

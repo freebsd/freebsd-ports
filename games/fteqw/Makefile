@@ -7,7 +7,7 @@
 
 PORTNAME=	fteqw
 PORTVERSION=	3343
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Source/${PORTVERSION}
 DISTNAME=	ftesrc${PORTVERSION}-all
@@ -42,7 +42,7 @@ FTE_TARGETS+=	fteqw.sv
 
 .if !defined(WITHOUT_GL) || !defined(WITHOUT_SDL)
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
+		png.6:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 

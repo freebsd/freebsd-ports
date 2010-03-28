@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-kj
 PORTVERSION=	0.95
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.csse.monash.edu.au/~timf/
 DISTNAME=	kint_xmms-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	This is a plugin that adds K-Joefol-Skinsupport to xmms
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

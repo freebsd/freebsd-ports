@@ -7,7 +7,7 @@
 
 PORTNAME=	widelands
 DISTVERSION=	build13
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/build-13
 DISTNAME=	${PORTNAME:C/^w/W/}-${DISTVERSION:C/^b/B/}-src
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME:C/^w/W/}-${DISTVERSION:C/^b/B/}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes

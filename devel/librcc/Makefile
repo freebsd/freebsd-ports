@@ -7,7 +7,7 @@
 
 PORTNAME=	librcc
 PORTVERSION=	0.2.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/rusxmms/Charset%20Conversion%20Library/${PORTVERSION} \
 		http://dside.dyndns.org/files/rusxmms/

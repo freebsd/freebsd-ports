@@ -7,7 +7,7 @@
 
 PORTNAME=	creox
 DISTVERSION=	0.2.2rc2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio kde
 MASTER_SITES=	http://zyzstar.kosoru.com/projects/creox/downloads/
 

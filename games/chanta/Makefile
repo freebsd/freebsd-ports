@@ -7,7 +7,7 @@
 
 PORTNAME=	chanta
 PORTVERSION=	0.15
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/_media/juegos/chanta/descargas/
 

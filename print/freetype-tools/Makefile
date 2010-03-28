@@ -7,7 +7,7 @@
 
 PORTNAME=	freetype-tools
 PORTVERSION=	1.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=   SF/freetype/freetype/${PORTVERSION} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype1/ \

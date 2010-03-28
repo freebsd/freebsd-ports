@@ -7,7 +7,7 @@
 
 PORTNAME=	irrlicht
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/1.6/${PORTVERSION}
 
@@ -15,7 +15,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	High performance realtime 3D engine
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	Makefile *.cpp *.h *.txt

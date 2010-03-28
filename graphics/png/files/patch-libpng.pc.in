@@ -4,7 +4,7 @@
 -prefix=@prefix@
 -exec_prefix=@exec_prefix@
 -libdir=@libdir@
--includedir=@includedir@/libpng12
+-includedir=@includedir@/libpng14
 +prefix=@PREFIX@
 +exec_prefix=${prefix}
 +libdir=${exec_prefix}/lib
@@ -12,7 +12,7 @@
  
  Name: libpng
  Description: Loads and saves PNG files
- Version: 1.2.43
--Libs: -L${libdir} -lpng12
+ Version: 1.4.1
+-Libs: -L${libdir} -lpng14
 +Libs: -L${libdir} -lpng -lz -lm
  Cflags: -I${includedir}

@@ -7,7 +7,7 @@
 
 PORTNAME=	Image_Graph
 PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	nick@foobar.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-font-sampler
 PORTVERSION=	0.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://linuxadvocate.org/projects/gfontsampler/downloads/
 DISTNAME=	gfontsampler-${PORTVERSION}

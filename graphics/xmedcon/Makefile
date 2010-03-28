@@ -7,7 +7,7 @@
 
 PORTNAME=	xmedcon
 PORTVERSION=	0.10.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
@@ -96,7 +96,7 @@ CONFIGURE_ARGS+=	--disable-ljpg
 .if defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=	--disable-png
 .else
-LIB_DEPENDS+=		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
 .endif
 
 post-patch:

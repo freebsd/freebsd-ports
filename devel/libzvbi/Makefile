@@ -7,6 +7,7 @@
 
 PORTNAME=	libzvbi
 PORTVERSION=	0.2.33
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/zapping/zvbi/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Routines to access raw VBI capture devices
 
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
 		unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_GETTEXT=	yes

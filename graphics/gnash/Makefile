@@ -7,6 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 # getgnash.org is slow
 MASTER_SITES=	${MASTER_SITE_GNU} \

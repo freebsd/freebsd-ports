@@ -7,13 +7,14 @@
 
 PORTNAME=	gavl
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A library for handling uncompressed video and audio data
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 USE_GNOME=	pkgconfig gnometarget gnomehack

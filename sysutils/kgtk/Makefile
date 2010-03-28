@@ -7,7 +7,7 @@
 
 PORTNAME=	kgtk
 PORTVERSION=	0.9.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://source.antisupport.com/kgtk/ \
 		http://home.freeuk.com/cpdrummond/

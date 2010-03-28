@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-octcdf
 PORTVERSION=	1.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu

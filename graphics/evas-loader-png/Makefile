@@ -7,7 +7,7 @@
 
 PORTNAME=	loader-png
 PORTVERSION=	0.9.9.042
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		http://download.enlightenment.org/snapshots/2008-01-25/
@@ -17,7 +17,7 @@ DISTNAME=	evas-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A hardware accelerated canvas API (PNG engine)
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes

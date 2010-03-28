@@ -7,7 +7,7 @@
 
 PORTNAME=	scummvm-tools
 DISTVERSION=	1.0.0rc1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/scummvm/${PORTNAME}/${DISTVERSION}
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		oggdec:${PORTSDIR}/audio/vorbis-tools \
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
