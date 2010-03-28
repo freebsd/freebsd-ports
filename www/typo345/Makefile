@@ -42,7 +42,7 @@ USE_PHP+=	zlib
 .endif
 
 .if defined(WITH_IMAGICK)
-LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.3:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 pre-install:
