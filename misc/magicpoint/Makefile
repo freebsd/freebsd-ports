@@ -76,7 +76,9 @@ CONFIGURE_ARGS+=	--disable-imlib
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-lungif|-lgif|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-lungif|-lgif|' \
+		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/configure ${WRKSRC}/image/png.c
 
 post-configure:
 	cd ${WRKSRC}/contrib/xmindpath && \
