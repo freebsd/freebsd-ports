@@ -21,7 +21,7 @@ COMMENT=	The Uptimes project client
 #
 
 USE_GETTEXT=	yes
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	upclient.sh
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -92,10 +92,6 @@ install-conf:
 	@${CP} -p ${PREFIX}/etc/upclient.conf.sample \
 		${PREFIX}/etc/upclient.conf
 .endif
-
-install-startup:
-	@${INSTALL_SCRIPT} ${WRKDIR}/upclient.sh \
-		${PREFIX}/etc/rc.d/upclient.sh
 
 install-doc:
 .if !defined(NOPORTDOCS)
