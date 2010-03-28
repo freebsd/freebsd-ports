@@ -223,8 +223,10 @@ PKGNAMESUFFIX=	-base
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
 USE_RCORDER=	postfix.sh
+PLIST_SUB+=	BASE=""
 .else
 USE_RC_SUBR=	postfix.sh
+PLIST_SUB+=	BASE="@comment "
 .endif
 
 PLIST_SUB+=	PFETC=${ETCDIR}
