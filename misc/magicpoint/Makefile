@@ -7,7 +7,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
@@ -21,7 +21,7 @@ RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xmu xt sm ice xi xtst
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-vflib
+CONFIGURE_ARGS=	--disable-vflib --enable-locale
 
 OPTIONS+=	FREETYPE	"With FreeType support" on \
 		XFT		"With Xft2 support" on \
