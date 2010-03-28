@@ -169,7 +169,7 @@ SITE_SUB+=	-e 's|%%STATIC%%||g'
 SITE_SUB+=	-e 's|%%STATIC%%|dnl |g'
 .endif
 
-SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}${RC_SUBR_SUFFIX}"
+SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}"
 
 .if defined(WITH_LIBDKIM_SHARED)
 PLIST_SUB+=	LIBDKIM=""
