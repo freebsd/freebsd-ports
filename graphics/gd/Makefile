@@ -7,7 +7,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	2.0.35
-PORTREVISION?=	4
+PORTREVISION?=	5
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.libgd.org/releases/
@@ -35,7 +35,7 @@ WANT_PERL=	yes
 
 OPTIONS=	X11 "X11 support" off \
 		XPM "XPM color bitmap loading support (requires X11)" off \
-		FONTCONFIG "fontconfig library support (requires X11)" off \
+		FONTCONFIG "fontconfig library support (requires X11)" on \
 		ICONV "iconv support" off
 
 .include <bsd.port.pre.mk>
@@ -50,7 +50,7 @@ FEATURES+=	GD_XPM
 .endif
 .endif
 
-.if defined(WITH_FONTCONFIG)
+.if !defined(WITHOUT_FONTCONFIG)
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_LIBFONTCONFIG -DHAVE_PTHREAD ${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lfontconfig
