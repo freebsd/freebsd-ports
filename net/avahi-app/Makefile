@@ -111,7 +111,7 @@ avahi-post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 	    	${REINPLACE_CMD} -e 's|(LIBINTL)|(INTLLIBS)|g ; \
 		s|(LIBICONV)|(LTLIBICONV)|g'
-	@${REINPLACE_CMD} -e 's|%%RC_SUBR%%|${RC_SUBR}| ; \
+	@${REINPLACE_CMD} -e 's|%%RC_SUBR%%|/etc/rc.subr| ; \
 	    	s|%%GNOME_SUBR%%|${GNOME_SUBR}|' \
 		${WRKSRC}/initscript/freebsd/avahi-dnsconfd.sh.in \
 		${WRKSRC}/initscript/freebsd/avahi-daemon.sh.in
