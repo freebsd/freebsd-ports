@@ -1,5 +1,5 @@
---- ./sound.cpp.orig	2010-03-27 16:08:54.000000000 +0100
-+++ ./sound.cpp	2010-03-27 16:10:00.000000000 +0100
+--- ./sound.cpp.orig	2010-03-28 11:47:06.000000000 +0200
++++ ./sound.cpp	2010-03-28 11:50:10.000000000 +0200
 @@ -6,7 +6,6 @@
  	Project Page: http://atariarea.krap.pl/stymulator
  	
@@ -8,12 +8,11 @@
  
  -----------------------------------------------------------------------------
   *   STYMulator is free software; you can redistribute it and/or modify    *
-@@ -25,73 +24,39 @@
+@@ -25,73 +24,38 @@
   *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ---------------------------------------------------------------------------*/
  
 +#include <stdio.h>
-+#include <stdlib.h>
 +#include <unistd.h>
 +#include <fcntl.h>
  #include "sound.h"
@@ -92,18 +91,18 @@
 +    
 +    if (ioctl(audio_fd, SNDCTL_DSP_SETFMT, &format) < 0) {
 +        printf("Cannot set sample format\n");
-+        return EXIT_FAILURE;
++        return -1;
 +    }
 +    
 +    if (ioctl(audio_fd, SNDCTL_DSP_CHANNELS, &channels) < 0) {
 +        printf("Cannot set audio channels\n");
-+        return EXIT_FAILURE;
++        return -1;
 +    }
 +
 +    if (ioctl(audio_fd, SNDCTL_DSP_SPEED, &rate) < 0) {
 +        printf("Cannot set sample rate\n");
-+        return EXIT_FAILURE;
++        return -1;
 +    }
 +
-+    return EXIT_SUCCESS;
++    return 0;
  }
