@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	${PORTNAME}${PORTVERSION}-Feb22
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Handle external logins, send and receive faxes
 
 USE_PERL5=	yes
