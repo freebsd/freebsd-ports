@@ -63,7 +63,7 @@ PATH=$PATH:/sbin:/usr/sbin; export PATH
 name="mta"
 rcvar=`set_rcvar`
 
-_mta_rc_script="%%PREFIX%%/etc/rc.d/mta%%RC_SUBR_SUFFIX%%"
+_mta_rc_script="%%PREFIX%%/etc/rc.d/mta"
 
 load_rc_config $name
 

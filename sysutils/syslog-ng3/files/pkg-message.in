@@ -25,5 +25,5 @@ syslog-ng is now installed!  To replace FreeBSD's standard syslogd
 
 5. Start syslog-ng:
 
-     %%PREFIX%%/etc/rc.d/syslog-ng%%RC_SUBR_SUFFIX%% start
+     %%PREFIX%%/etc/rc.d/syslog-ng start
 

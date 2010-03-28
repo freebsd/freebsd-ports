@@ -34,7 +34,7 @@ PORTDOCS=	*
 SUB_FILES=	pkg-message pkg-install pkg-deinstall 400.polipo
 SUB_LIST+=	USER=${PUSER} GROUP=${PGRP} DESTDIR=${DESTDIR} PCONFIGDIR=${PCONFIGDIR} \
 		PCACHEDIR=${PCACHEDIR} PPIDDIR=${PPIDDIR} PPIDFILE=${PPIDFILE} \
-		PLOGFILE=${PLOGFILE} RC_SUBR=${RC_SUBR}
+		PLOGFILE=${PLOGFILE}
 
 # polipo installation options, propagated to install scripts
 PUSER?=		polipo
