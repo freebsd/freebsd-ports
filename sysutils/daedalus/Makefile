@@ -21,8 +21,7 @@ USE_RUBY_FEATURES=	1.8
 NO_BUILD=	yes
 
 USE_RC_SUBR=	yes
-SED_SCRIPT=	-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		-e 's,%%PREFIX%%,${PREFIX},g' \
+SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%RUBY_WITHOUT_SUFFIX%%,${RUBY_WITHOUT_SUFFIX},g'
 
 pre-install:

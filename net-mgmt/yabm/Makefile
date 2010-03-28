@@ -16,7 +16,7 @@ COMMENT=	Yet Another Bandwidth Meter, somewhat resembles the Linux bwbar
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_RC_SUBR=	yes
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=/etc/rc.subr
 
 SUB_FILES=	pkg-message
 

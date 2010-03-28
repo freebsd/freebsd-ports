@@ -30,7 +30,6 @@ MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}" \
 ALL_TARGET=	includes all
 INSTALL_TARGET=	install install.man
 SUB_FILES=	pkg-install
-SUB_LIST=	RC_SUBR=${RC_SUBR}
 PKGINSTALL=	${WRKDIR}/pkg-install
 MAKE_JOBS_UNSAFE=	yes
 

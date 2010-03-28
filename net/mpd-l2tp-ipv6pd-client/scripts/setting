@@ -114,7 +114,6 @@ for infile in ${SCRIPTDIR}/*.in; do
 	       -e "s|%%FIXED_SERVER%%|${fixed_server}|g" \
 	       -e "s|%%INTERFACE%%|${interface}|g" \
 	       -e "s|%%PD_INTERFACE%%|${pd_interface}|g" \
-	       -e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
 	       -e "s|%%PREFIX%%|${PREFIX}|g" \
 	       -e "s|%%CONF_DIR%%|${CONF_DIR}|g" \
 	       -e "s|%%MD5%%|${MD5}|g" \

@@ -19,7 +19,6 @@ MAN8=		dnsmasq.8
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 SUB_FILES=	pkg-message
 
 MAKE_JOBS_SAFE=	yes

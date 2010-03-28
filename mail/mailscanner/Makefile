@@ -115,7 +115,6 @@ USRLOCAL_FILES_LIB=	\
 		rav-wrapper sophos-autoupdate
 
 USE_RC_SUBR=	mailscanner mta
-SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
 post-extract:
 	cd ${WRKSRC} && ${TAR} xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}-${PATCHLEVEL}/* .
@@ -157,7 +156,7 @@ do-build:
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
 		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
-		s,%%RC_SUBR%%,${RC_SUBR},g;' \
+		s,%%RC_SUBR%%,/etc/rc.subr,g;' \
 		${WRKSRC}/bin/cron/update_virus_scanners.cron
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
@@ -174,17 +173,17 @@ do-build:
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
 		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
-		s,%%RC_SUBR%%,${RC_SUBR},g;' \
+		s,%%RC_SUBR%%,/etc/rc.subr,g;' \
 		${WRKSRC}/bin/cron/update_phishing_sites.cron
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
 		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
-		s,%%RC_SUBR%%,${RC_SUBR},g;' \
+		s,%%RC_SUBR%%,/etc/rc.subr,g;' \
 		${WRKSRC}/bin/cron/update_bad_phishing_sites.cron
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
 		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
-		s,%%RC_SUBR%%,${RC_SUBR},g;' \
+		s,%%RC_SUBR%%,/etc/rc.subr,g;' \
 		${WRKSRC}/bin/cron/update_spamassassin.cron
 	${PERL} -pi -e \
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \

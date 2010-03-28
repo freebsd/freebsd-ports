@@ -12,12 +12,6 @@ POLIPOPID=%%PPIDFILE%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
 
-	if [ "%%RC_SUBR%%" = "" ]; then
-		echo "=> Port requires /etc/rc.subr (native or port/sysutils/rc_subr)!"
-		echo "=> If you want to install without you should modify startup script and pkg-install."
-		exit 1
-	fi
-
 	if fgrep "polipo" "%%DESTDIR%%/etc/newsyslog.conf" 2>/dev/null 1>&2; then
 		if ! fgrep "polipo.pid" "%%DESTDIR%%/etc/newsyslog.conf" 2>/dev/null 1>&2; then
 			echo "==> ERROR: Previous installation left an invalid entry in %%DESTDIR%%/etc/newsyslog.conf."
