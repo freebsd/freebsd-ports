@@ -44,8 +44,8 @@ CONFIGURE_ARGS+=-system-libpng -system-libjpeg -system-libmng	\
 		-fast -xinerama -no-g++-exceptions -stl -no-nis \
 		${CUPS} -shared -prefix ${PREFIX} -datadir ${DATADIR} \
 		-verbose -docdir ${DOCSDIR} -tablet -ipv6 \
+		-DPNG_DEPSTRUCT= \
 		-plugindir ${PREFIX}/lib/plugins
-
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	TMPDIR=${TMPDIR} \
 		QTDIR=${WRKSRC} \
