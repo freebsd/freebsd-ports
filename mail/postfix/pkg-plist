@@ -224,10 +224,10 @@ sbin/sendmail
 %%PORTDOCS%%%%DOCSDIR%%/tlsmgr.8.html
 %%PORTDOCS%%%%DOCSDIR%%/generic.5.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cd /
-%%PFETC%%/LICENSE
-%%PFETC%%/TLS_LICENSE
-%%PFETC%%/bounce.cf.default
-%%PFETC%%/main.cf.default
-%%PFETC%%/makedefs.out
-@dirrmtry %%PFETC%%
+%%BASE%%@cwd /
+etc/postfix/LICENSE
+etc/postfix/TLS_LICENSE
+etc/postfix/bounce.cf.default
+etc/postfix/main.cf.default
+etc/postfix/makedefs.out
+@dirrmtry etc/postfix
