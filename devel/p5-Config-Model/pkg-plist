@@ -1,10 +1,12 @@
 @comment $FreeBSD$
 bin/config-edit
+bin/config-edit-popcon
 %%SITE_PERL%%/Config/Model.pm
 %%SITE_PERL%%/Config/Model/AnyId.pm
 %%SITE_PERL%%/Config/Model/AnyThing.pm
 %%SITE_PERL%%/Config/Model/AutoRead.pm
 %%SITE_PERL%%/Config/Model/Backend/Any.pm
+%%SITE_PERL%%/Config/Model/Backend/ShellVar.pm
 %%SITE_PERL%%/Config/Model/Backend/Yaml.pm
 %%SITE_PERL%%/Config/Model/CheckList.pm
 %%SITE_PERL%%/Config/Model/Describe.pm
@@ -27,6 +29,8 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/WarpedNode.pm
 %%SITE_PERL%%/Config/Model/WarpedThing.pm
 %%SITE_PERL%%/Config/Model/WizardHelper.pm
+%%SITE_PERL%%/Config/Model/models/PopCon.pl
+@dirrmtry %%SITE_PERL%%/Config/Model/models
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend
 @dirrmtry %%SITE_PERL%%/Config/Model
 @dirrmtry %%SITE_PERL%%/Config
