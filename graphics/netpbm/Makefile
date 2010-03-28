@@ -31,6 +31,7 @@ CONFLICTS=	mgetty-1.*
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
+CFLAGS+=	-DPNG_DEPSTRUCT=
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
