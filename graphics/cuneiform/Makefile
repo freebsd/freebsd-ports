@@ -36,7 +36,7 @@ CMAKE_ARGS=	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -ldlmalloc"
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.2:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.3:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 post-extract:
