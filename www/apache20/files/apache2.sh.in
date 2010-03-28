@@ -71,7 +71,7 @@ else
 	if [ "x${apache2_profiles}" != "x" -a "x$1" != "x" ]; then
 		for profile in ${apache2_profiles}; do
 			echo "===> apache2 profile: ${profile}"
-			%%PREFIX%%/etc/rc.d/apache2%%RC_SUBR_SUFFIX%% $1 ${profile}
+			%%PREFIX%%/etc/rc.d/apache2 $1 ${profile}
 			retcode="$?"
 			if [ "0${retcode}" -ne 0 ]; then
 				failed="${profile} (${retcode}) ${failed:-}"
