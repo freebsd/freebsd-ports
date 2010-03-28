@@ -14,11 +14,11 @@ you update your ports collection, before attempting any port upgrades.
 
   If you use portmaster:
 
-        portmaster -r jpeg-
+        portmaster -r png-
 
   If you use portupgrade:
 
-        portupgrade -fr graphics/jpeg
+        portupgrade -fr graphics/png
 
 20100221:
   AFFECTS: users of rblibtorrent-devel
