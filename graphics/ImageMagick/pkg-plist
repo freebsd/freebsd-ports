@@ -30,6 +30,7 @@ include/ImageMagick/Magick++/TypeMetric.h
 include/ImageMagick/magick/ImageMagick.h
 include/ImageMagick/magick/MagickCore.h
 include/ImageMagick/magick/PreRvIcccm.h
+include/ImageMagick/magick/accelerate.h
 include/ImageMagick/magick/animate.h
 include/ImageMagick/magick/annotate.h
 include/ImageMagick/magick/api.h
@@ -58,6 +59,7 @@ include/ImageMagick/magick/draw.h
 include/ImageMagick/magick/effect.h
 include/ImageMagick/magick/enhance.h
 include/ImageMagick/magick/exception.h
+include/ImageMagick/magick/feature.h
 include/ImageMagick/magick/fourier.h
 include/ImageMagick/magick/fx.h
 include/ImageMagick/magick/gem.h
@@ -142,6 +144,7 @@ lib/ImageMagick-%%PORTVERSION%%/config/francais.xml
 lib/ImageMagick-%%PORTVERSION%%/config/locale.xml
 lib/ImageMagick-%%PORTVERSION%%/config/policy.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type.xml
+lib/ImageMagick-%%PORTVERSION%%/config/type-dejavu.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type-ghostscript.xml
 lib/ImageMagick-%%PORTVERSION%%/config/type-windows.xml
 lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
@@ -261,6 +264,8 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/pdb.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/pdf.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/pdf.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/pes.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/pes.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/pict.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/pict.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/pix.la
@@ -362,20 +367,18 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/analyze.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/analyze.so
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/convolve.la
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/convolve.so
 lib/libMagick++.a
 lib/libMagick++.la
 lib/libMagick++.so
-lib/libMagick++.so.2
+lib/libMagick++.so.3
 lib/libMagickCore.a
 lib/libMagickCore.la
 lib/libMagickCore.so
-lib/libMagickCore.so.2
+lib/libMagickCore.so.3
 lib/libMagickWand.a
 lib/libMagickWand.la
 lib/libMagickWand.so
-lib/libMagickWand.so.2
+lib/libMagickWand.so.3
 libdata/pkgconfig/ImageMagick++.pc
 libdata/pkgconfig/Magick++.pc
 libdata/pkgconfig/ImageMagick.pc
@@ -432,6 +435,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/rose-sigmoidal.png
 %%PORTDOCS%%%%DOCSDIR%%/images/rose.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/rose.png
+%%PORTDOCS%%%%DOCSDIR%%/images/rose.pnm
 %%PORTDOCS%%%%DOCSDIR%%/images/script.png
 %%PORTDOCS%%%%DOCSDIR%%/images/smile.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/sponsor.jpg
@@ -1215,6 +1219,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/effect.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/enhance.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/exception.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/feature.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/fx.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/histogram.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/image.html
@@ -1229,6 +1234,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/module.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/monitor.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/montage.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/morphology.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/paint.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/pixel-iterator.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/pixel-view.html
@@ -1242,6 +1248,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/segment.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/shear.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/signature.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/statistic.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/stream.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/transform.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/version.html
@@ -1263,6 +1270,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/escape.html
 %%PORTDOCS%%%%DOCSDIR%%/www/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/www/exception.html
+%%PORTDOCS%%%%DOCSDIR%%/www/favicon.ico
 %%PORTDOCS%%%%DOCSDIR%%/www/formats.html
 %%PORTDOCS%%%%DOCSDIR%%/www/fx.html
 %%PORTDOCS%%%%DOCSDIR%%/www/high-dynamic-range.html
