@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmfs
-DISTVERSION=	201001
+DISTVERSION=	201003
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.wmfs.info/static/dl/
 
@@ -30,7 +30,13 @@ PLIST_FILES=	bin/wmfs \
 		%%DOCSDIR%%/wmfsrc
 PLIST_DIRS=	%%DOCSDIR%% etc/xdg/wmfs etc/xdg share/xsessions
 
+OPTIONS=	IMLIB2 "Enable Imlib2 support" on
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_IMLIB2)
+USE_EFL+=	imlib2
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/$${PROJECT_NAME})|${DOCSDIR})|g' \
