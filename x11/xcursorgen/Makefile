@@ -22,4 +22,8 @@ PLIST_FILES=	bin/xcursorgen
 
 MAN1=		xcursorgen.1
 
+post-patch:
+	${REINPLACE_CMD} -e 's|libpng12|libpng14|g' \
+		${WRKSRC}/configure
+
 .include <bsd.port.mk>
