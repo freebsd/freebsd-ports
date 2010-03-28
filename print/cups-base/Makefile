@@ -268,6 +268,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/cups|${LOCALBASE}/etc/cups|g' ${WRKSRC}/man/*.man*
 	@${REINPLACE_CMD} -e 's|-lpthreads.*;|${PTHREAD_LIBS};|g' \
 		-e 's|/private/etc/pam.d|${LOCALBASE}/etc/pam.d|' \
+		-e 's|-D_LARGEFILE64_SOURCE||g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(CUPS_CLIENT)
 	@${REINPLACE_CMD} \
