@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xrn
-DISTVERSION=	10.00-beta-1
+DISTVERSION=	10.00-beta-3
 CATEGORIES=	news
 MASTER_SITES=	ftp://sipb.mit.edu/pub/xrn/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
