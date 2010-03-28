@@ -37,8 +37,6 @@ DATADIR=	${PREFIX}/www
 DOCUMENT_ROOT=	${DATADIR}/data
 DEFAULT_PATH=	/bin:/usr/bin:${PREFIX}/bin
 
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-
 # Perl man pages go into section 3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
