@@ -72,6 +72,4 @@ doc-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-#RUBY_VER=1.9
-
 .include <bsd.port.post.mk>
