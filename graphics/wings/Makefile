@@ -20,7 +20,8 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 		${LOCALBASE}/lib/erlang/lib/esdl/include/sdl.hrl:${PORTSDIR}/devel/esdl
 
-MAKE_ENV=	ESDL_PATH=${LOCALBASE}/lib/erlang/lib/esdl
+MAKE_ENV=	ESDL_PATH=${LOCALBASE}/lib/erlang/lib/esdl \
+		ERLC_EMULATOR="${LOCALBASE}/bin/erl -smp disable"
 PLIST_SUB=	VERSION="${PORTVERSION}"
 MAKE_JOBS_UNSAFE=yes
 
