@@ -14,7 +14,7 @@
  		return 0;
  
 -	ret = png_check_sig(buf, 8);
-+	ret = png_sig_cmp(buf, 0, 8);
++	ret = !png_sig_cmp(buf, 0, 8);
  
  	return (ret);
  }
