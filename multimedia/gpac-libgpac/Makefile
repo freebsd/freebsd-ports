@@ -7,7 +7,7 @@
 
 PORTNAME=	gpac
 PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/GPAC/GPAC%20${PORTVERSION}
@@ -51,6 +51,7 @@ post-patch:
 	${CHMOD} +x ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#define _LARGEFILE64_SOURCE||g' \
 		${WRKSRC}/include/gpac/setup.h
+	${RM} ${WRKSRC}/include/gpac/setup.h.bak
 
 do-install:
 	${MKDIR} ${PREFIX}/include/gpac
