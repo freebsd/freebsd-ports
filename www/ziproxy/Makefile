@@ -44,6 +44,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	                  -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/etc/ziproxy/ziproxy.conf
+	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+			${WRKSRC}/src/image.c
+	@${REINPLACE_CMD} -e 's|png_check_sig|png_sig_cmp|' \
+			${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/ziproxy

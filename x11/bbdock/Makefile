@@ -25,6 +25,10 @@ PLIST_FILES=		bin/bbdock
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|png_check_sig|png_sig_cmp|' \
+		${WRKSRC}/configure
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
