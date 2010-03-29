@@ -125,6 +125,7 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/config.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/de/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/de_de/yii.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/el/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/es/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/fr/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/he/yii.php
@@ -145,6 +146,7 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/.htaccess
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/de/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/de_de/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/el/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/es/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/fr/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/he/index.php
@@ -164,6 +166,7 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ja/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/no/index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/pl/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/pt/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ro/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ru/index.php
@@ -178,12 +181,14 @@ bin/yiic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ru
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ro
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/pt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/pl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/no
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ja
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/id
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/he
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/fr
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/es
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/el
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/de_de
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/de
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views
@@ -204,6 +209,7 @@ bin/yiic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/he
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/fr
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/es
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/el
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/de_de
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/de
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/bg
@@ -311,6 +317,7 @@ bin/yiic
 %%DATADIR%%/framework/cli/commands/WebAppCommand.php
 %%DATADIR%%/framework/cli/commands/shell/ControllerCommand.php
 %%DATADIR%%/framework/cli/commands/shell/CrudCommand.php
+%%DATADIR%%/framework/cli/commands/shell/FormCommand.php
 %%DATADIR%%/framework/cli/commands/shell/HelpCommand.php
 %%DATADIR%%/framework/cli/commands/shell/ModelCommand.php
 %%DATADIR%%/framework/cli/commands/shell/ModuleCommand.php
@@ -318,6 +325,7 @@ bin/yiic
 %%DATADIR%%/framework/cli/views/shell/controller/controller.php
 %%DATADIR%%/framework/cli/views/shell/controller/view.php
 %%DATADIR%%/framework/cli/views/shell/crud/_form.php
+%%DATADIR%%/framework/cli/views/shell/crud/_search.php
 %%DATADIR%%/framework/cli/views/shell/crud/_view.php
 %%DATADIR%%/framework/cli/views/shell/crud/admin.php
 %%DATADIR%%/framework/cli/views/shell/crud/controller.php
@@ -326,6 +334,8 @@ bin/yiic
 %%DATADIR%%/framework/cli/views/shell/crud/test.php
 %%DATADIR%%/framework/cli/views/shell/crud/update.php
 %%DATADIR%%/framework/cli/views/shell/crud/view.php
+%%DATADIR%%/framework/cli/views/shell/form/action.php
+%%DATADIR%%/framework/cli/views/shell/form/form.php
 %%DATADIR%%/framework/cli/views/shell/model/fixture.php
 %%DATADIR%%/framework/cli/views/shell/model/model.php
 %%DATADIR%%/framework/cli/views/shell/model/test.php
@@ -369,6 +379,8 @@ bin/yiic
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/phpunit.xml
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/report/.yii
 %%DATADIR%%/framework/cli/views/webapp/protected/tests/unit/.yii
+%%DATADIR%%/framework/cli/views/webapp/protected/views/layouts/column1.php
+%%DATADIR%%/framework/cli/views/webapp/protected/views/layouts/column2.php
 %%DATADIR%%/framework/cli/views/webapp/protected/views/layouts/main.php
 %%DATADIR%%/framework/cli/views/webapp/protected/views/site/contact.php
 %%DATADIR%%/framework/cli/views/webapp/protected/views/site/error.php
@@ -924,9 +936,11 @@ bin/yiic
 %%DATADIR%%/framework/messages/de/yii.php
 %%DATADIR%%/framework/messages/de/zii.php
 %%DATADIR%%/framework/messages/el/yii.php
+%%DATADIR%%/framework/messages/el/zii.php
 %%DATADIR%%/framework/messages/es/yii.php
 %%DATADIR%%/framework/messages/fr/yii.php
 %%DATADIR%%/framework/messages/he/yii.php
+%%DATADIR%%/framework/messages/he/zii.php
 %%DATADIR%%/framework/messages/hu/yii.php
 %%DATADIR%%/framework/messages/id/yii.php
 %%DATADIR%%/framework/messages/it/yii.php
@@ -937,6 +951,7 @@ bin/yiic
 %%DATADIR%%/framework/messages/pt/yii.php
 %%DATADIR%%/framework/messages/ro/yii.php
 %%DATADIR%%/framework/messages/ru/yii.php
+%%DATADIR%%/framework/messages/ru/zii.php
 %%DATADIR%%/framework/messages/sr_sr/yii.php
 %%DATADIR%%/framework/messages/sr_yu/yii.php
 %%DATADIR%%/framework/messages/sv/yii.php
@@ -944,6 +959,7 @@ bin/yiic
 %%DATADIR%%/framework/messages/th/yii.php
 %%DATADIR%%/framework/messages/uk/yii.php
 %%DATADIR%%/framework/messages/vi/yii.php
+%%DATADIR%%/framework/messages/vi/zii.php
 %%DATADIR%%/framework/messages/zh_cn/yii.php
 %%DATADIR%%/framework/messages/zh_tw/yii.php
 %%DATADIR%%/framework/test/CDbFixtureManager.php
@@ -1027,6 +1043,7 @@ bin/yiic
 %%DATADIR%%/framework/vendors/TextHighlighter/Text/xml.xml
 %%DATADIR%%/framework/vendors/TextHighlighter/highlight.css
 %%DATADIR%%/framework/vendors/adodb/LICENSE.txt
+%%DATADIR%%/framework/vendors/bbq/LICENSE.txt
 %%DATADIR%%/framework/vendors/cldr/LICENSE.txt
 %%DATADIR%%/framework/vendors/gettext/LICENSE.txt
 %%DATADIR%%/framework/vendors/htmlpurifier/HTMLPurifier.standalone.php
@@ -1206,6 +1223,19 @@ bin/yiic
 %%DATADIR%%/framework/views/de/profile-callstack.php
 %%DATADIR%%/framework/views/de/profile-summary-firebug.php
 %%DATADIR%%/framework/views/de/profile-summary.php
+%%DATADIR%%/framework/views/el/error.php
+%%DATADIR%%/framework/views/el/error400.php
+%%DATADIR%%/framework/views/el/error403.php
+%%DATADIR%%/framework/views/el/error404.php
+%%DATADIR%%/framework/views/el/error500.php
+%%DATADIR%%/framework/views/el/error503.php
+%%DATADIR%%/framework/views/el/exception.php
+%%DATADIR%%/framework/views/el/log-firebug.php
+%%DATADIR%%/framework/views/el/log.php
+%%DATADIR%%/framework/views/el/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/el/profile-callstack.php
+%%DATADIR%%/framework/views/el/profile-summary-firebug.php
+%%DATADIR%%/framework/views/el/profile-summary.php
 %%DATADIR%%/framework/views/error.php
 %%DATADIR%%/framework/views/error400.php
 %%DATADIR%%/framework/views/error403.php
@@ -1319,6 +1349,19 @@ bin/yiic
 %%DATADIR%%/framework/views/no/profile-callstack.php
 %%DATADIR%%/framework/views/no/profile-summary-firebug.php
 %%DATADIR%%/framework/views/no/profile-summary.php
+%%DATADIR%%/framework/views/pl/error.php
+%%DATADIR%%/framework/views/pl/error400.php
+%%DATADIR%%/framework/views/pl/error403.php
+%%DATADIR%%/framework/views/pl/error404.php
+%%DATADIR%%/framework/views/pl/error500.php
+%%DATADIR%%/framework/views/pl/error503.php
+%%DATADIR%%/framework/views/pl/exception.php
+%%DATADIR%%/framework/views/pl/log-firebug.php
+%%DATADIR%%/framework/views/pl/log.php
+%%DATADIR%%/framework/views/pl/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/pl/profile-callstack.php
+%%DATADIR%%/framework/views/pl/profile-summary-firebug.php
+%%DATADIR%%/framework/views/pl/profile-summary.php
 %%DATADIR%%/framework/views/profile-callstack-firebug.php
 %%DATADIR%%/framework/views/profile-callstack.php
 %%DATADIR%%/framework/views/profile-summary-firebug.php
@@ -1456,6 +1499,7 @@ bin/yiic
 %%DATADIR%%/framework/web/js/source/autocomplete/jquery.autocomplete.css
 %%DATADIR%%/framework/web/js/source/jquery.ajaxqueue.js
 %%DATADIR%%/framework/web/js/source/jquery.autocomplete.js
+%%DATADIR%%/framework/web/js/source/jquery.ba-bbq.js
 %%DATADIR%%/framework/web/js/source/jquery.bgiframe.js
 %%DATADIR%%/framework/web/js/source/jquery.cookie.js
 %%DATADIR%%/framework/web/js/source/jquery.dimensions.js
@@ -1469,6 +1513,7 @@ bin/yiic
 %%DATADIR%%/framework/web/js/source/jquery.treeview.async.js
 %%DATADIR%%/framework/web/js/source/jquery.treeview.js
 %%DATADIR%%/framework/web/js/source/jquery.yii.js
+%%DATADIR%%/framework/web/js/source/jquery.yiiactiveform.js
 %%DATADIR%%/framework/web/js/source/jquery.yiitab.js
 %%DATADIR%%/framework/web/js/source/rating/delete.gif
 %%DATADIR%%/framework/web/js/source/rating/jquery.rating.css
@@ -1495,6 +1540,7 @@ bin/yiic
 %%DATADIR%%/framework/web/services/CWebService.php
 %%DATADIR%%/framework/web/services/CWebServiceAction.php
 %%DATADIR%%/framework/web/services/CWsdlGenerator.php
+%%DATADIR%%/framework/web/widgets/CActiveForm.php
 %%DATADIR%%/framework/web/widgets/CAutoComplete.php
 %%DATADIR%%/framework/web/widgets/CClipWidget.php
 %%DATADIR%%/framework/web/widgets/CContentDecorator.php
@@ -1534,20 +1580,21 @@ bin/yiic
 %%DATADIR%%/framework/zii/behaviors/CTimestampBehavior.php
 %%DATADIR%%/framework/zii/vendors/README.html
 %%DATADIR%%/framework/zii/vendors/jui/MIT-LICENSE.txt
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-icons_222222_256x240.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-icons_2e83ff_256x240.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-icons_454545_256x240.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-icons_888888_256x240.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images/ui-icons_cd0a0a_256x240.png
-%%DATADIR%%/framework/zii/vendors/jui/css/smoothness/jquery-ui.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-anim_basic_16x16.gif
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_flat_75_ffffff_40x100.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_glass_65_ffffff_1x400.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_glass_75_dadada_1x400.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_glass_95_fef1ec_1x400.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_222222_256x240.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_2e83ff_256x240.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_454545_256x240.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_888888_256x240.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_cd0a0a_256x240.png
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery-ui.css
 %%DATADIR%%/framework/zii/vendors/jui/js/jquery-ui-i18n.js
 %%DATADIR%%/framework/zii/vendors/jui/js/jquery-ui.min.js
 %%DATADIR%%/framework/zii/widgets/CBaseListView.php
@@ -1557,15 +1604,18 @@ bin/yiic
 %%DATADIR%%/framework/zii/widgets/CMenu.php
 %%DATADIR%%/framework/zii/widgets/CPortlet.php
 %%DATADIR%%/framework/zii/widgets/assets/detailview/styles.css
+%%DATADIR%%/framework/zii/widgets/assets/gridview/bg.gif
 %%DATADIR%%/framework/zii/widgets/assets/gridview/delete.png
 %%DATADIR%%/framework/zii/widgets/assets/gridview/down.gif
 %%DATADIR%%/framework/zii/widgets/assets/gridview/jquery.yiigridview.js
+%%DATADIR%%/framework/zii/widgets/assets/gridview/loading.gif
 %%DATADIR%%/framework/zii/widgets/assets/gridview/styles.css
 %%DATADIR%%/framework/zii/widgets/assets/gridview/up.gif
 %%DATADIR%%/framework/zii/widgets/assets/gridview/update.png
 %%DATADIR%%/framework/zii/widgets/assets/gridview/view.png
 %%DATADIR%%/framework/zii/widgets/assets/listview/down.gif
 %%DATADIR%%/framework/zii/widgets/assets/listview/jquery.yiilistview.js
+%%DATADIR%%/framework/zii/widgets/assets/listview/loading.gif
 %%DATADIR%%/framework/zii/widgets/assets/listview/styles.css
 %%DATADIR%%/framework/zii/widgets/assets/listview/up.gif
 %%DATADIR%%/framework/zii/widgets/grid/CButtonColumn.php
@@ -1596,8 +1646,8 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/zii/widgets/assets
 @dirrm %%DATADIR%%/framework/zii/widgets
 @dirrm %%DATADIR%%/framework/zii/vendors/jui/js
-@dirrm %%DATADIR%%/framework/zii/vendors/jui/css/smoothness/images
-@dirrm %%DATADIR%%/framework/zii/vendors/jui/css/smoothness
+@dirrm %%DATADIR%%/framework/zii/vendors/jui/css/base/images
+@dirrm %%DATADIR%%/framework/zii/vendors/jui/css/base
 @dirrm %%DATADIR%%/framework/zii/vendors/jui/css
 @dirrm %%DATADIR%%/framework/zii/vendors/jui
 @dirrm %%DATADIR%%/framework/zii/vendors
@@ -1631,6 +1681,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/views/ru
 @dirrm %%DATADIR%%/framework/views/ro
 @dirrm %%DATADIR%%/framework/views/pt
+@dirrm %%DATADIR%%/framework/views/pl
 @dirrm %%DATADIR%%/framework/views/no
 @dirrm %%DATADIR%%/framework/views/nl
 @dirrm %%DATADIR%%/framework/views/ja
@@ -1639,6 +1690,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/views/he
 @dirrm %%DATADIR%%/framework/views/fr
 @dirrm %%DATADIR%%/framework/views/es
+@dirrm %%DATADIR%%/framework/views/el
 @dirrm %%DATADIR%%/framework/views/de
 @dirrm %%DATADIR%%/framework/views/bg
 @dirrm %%DATADIR%%/framework/views
@@ -1668,6 +1720,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/vendors/htmlpurifier
 @dirrm %%DATADIR%%/framework/vendors/gettext
 @dirrm %%DATADIR%%/framework/vendors/cldr
+@dirrm %%DATADIR%%/framework/vendors/bbq
 @dirrm %%DATADIR%%/framework/vendors/adodb
 @dirrm %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter/Renderer
 @dirrm %%DATADIR%%/framework/vendors/TextHighlighter/Text/Highlighter
@@ -1757,6 +1810,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/cli/views/shell/module/components
 @dirrm %%DATADIR%%/framework/cli/views/shell/module
 @dirrm %%DATADIR%%/framework/cli/views/shell/model
+@dirrm %%DATADIR%%/framework/cli/views/shell/form
 @dirrm %%DATADIR%%/framework/cli/views/shell/crud
 @dirrm %%DATADIR%%/framework/cli/views/shell/controller
 @dirrm %%DATADIR%%/framework/cli/views/shell
