@@ -14,7 +14,7 @@ you update your ports collection, before attempting any port upgrades.
 
   If you use portmaster:
 
-        portmaster -r png-
+        portmaster -r 'png-*'
 
   If you use portupgrade:
 
