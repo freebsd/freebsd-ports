@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.22
-PORTREVISION=	3
+PORTVERSION=	1.23
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +15,8 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU version of the traditional tape archiver
 
-RUN_DEPENDS=	lzop:${PORTSDIR}/archivers/lzop \
-		xz:${PORTSDIR}/archivers/xz
+# only force dependencies for compressors that have a single-letter option
+RUN_DEPENDS=	xz:${PORTSDIR}/archivers/xz
 
 INFO=		tar
 
@@ -26,7 +25,8 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-CONFIGURE_ARGS=	--program-prefix=g
+CONFIGURE_ARGS=	--program-prefix=g \
+		--disable-silent-rules
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib ${LDSTATIC}' \
 		DEFAULT_ARCHIVE=/dev/sa0 \
@@ -34,6 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 
 .if defined(WANT_STATIC)
 LDSTATIC=	-static
+MAKE_ARGS+=	LIBINTL='$$(LTLIBINTL)' LIBICONV='$$(LTLIBICONV)'
 .else
 LDSTATIC=
 .endif
