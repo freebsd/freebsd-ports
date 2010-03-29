@@ -64,7 +64,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_document.cpp
 post-patch:
 	@${REINPLACE_CMD} -e 's|ieefp.h|ieeefp.h|' \
 		${WRKSRC}/src/2geom/bezier-utils.cpp
-	@${REINPLACE_CMD} -e 's|libpng >= 1.2|libpng12 >= 1.2|g' \
+	@${REINPLACE_CMD} -e 's|libpng >= 1.2|libpng14 >= 1.2|g' \
 	    	${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "*.h" -o -name "*.cpp" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|glib/gmessages.h|glib/gtestutils.h|g'
