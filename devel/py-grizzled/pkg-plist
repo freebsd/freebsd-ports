@@ -1,0 +1,154 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ez_setup.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ez_setup.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ez_setup.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/cmdline.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/cmdline.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/cmdline.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/collections/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/collections/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/collections/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/collections/dict.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/collections/dict.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/collections/dict.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/collections/tuple.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/collections/tuple.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/collections/tuple.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/dbgadfly.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/dbgadfly.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/dbgadfly.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/dummydb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/dummydb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/dummydb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/mysql.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/mysql.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/mysql.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/oracle.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/oracle.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/oracle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/postgresql.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/postgresql.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/postgresql.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/sqlite.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/sqlite.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/sqlite.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/sqlserver.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/sqlserver.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db/sqlserver.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/decorators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/decorators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/decorators.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/exception.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/exception.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/exception.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/file/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/file/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/file/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/file/includer.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/file/includer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/file/includer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/history.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/history.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/history.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/io/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/io/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/io/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/io/filelock.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/io/filelock.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/io/filelock.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/log.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/log.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/log.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/misc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/misc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/misc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net/ftp/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net/ftp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net/ftp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net/ftp/parse.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net/ftp/parse.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net/ftp/parse.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/os.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/os.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/os.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/system.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/system.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/system.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/text/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/text/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/text/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/collections/TestLRUDict.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/collections/TestLRUDict.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/collections/TestLRUDict.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/collections/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/collections/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/collections/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/config/TestConfiguration.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/config/TestConfiguration.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/config/TestConfiguration.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/config/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/config/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/config/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/file/Test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/file/Test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/file/Test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/file/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/file/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/file/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/io/TestPushback.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/io/TestPushback.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/io/TestPushback.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/io/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/io/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/io/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/system/Test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/system/Test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/system/Test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/system/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/system/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/system/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/text/TestStr2Bool.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/text/TestStr2Bool.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/text/TestStr2Bool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/text/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/text/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/text/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/collections
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/db
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/file
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/io
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net/ftp
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/net
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled/text
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/grizzled
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/collections
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/config
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/file
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/io
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/system
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test/text
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/test
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
