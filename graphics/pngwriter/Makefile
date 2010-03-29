@@ -21,7 +21,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
 USE_GNOME=	pkgconfig
-CXXFLAGS+=	`pkg-config --cflags freetype2 libpng12` -I${LOCALBASE}/include
+CXXFLAGS+=	`pkg-config --cflags freetype2 libpng14` -I${LOCALBASE}/include
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
