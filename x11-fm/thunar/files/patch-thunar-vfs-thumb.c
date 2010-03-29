@@ -1,5 +1,5 @@
---- work.bk/Thunar-1.0.1/thunar-vfs/thunar-vfs-thumb.c	2009-01-12 12:38:49.000000000 -0800
-+++ work/Thunar-1.0.1/thunar-vfs/thunar-vfs-thumb.c	2010-03-28 19:57:36.000000000 -0700
+--- thunar-vfs/thunar-vfs-thumb.c.orig	2009-01-12 21:38:49.000000000 +0100
++++ thunar-vfs/thunar-vfs-thumb.c	2010-03-29 08:32:55.000000000 +0200
 @@ -1169,7 +1169,7 @@
      goto done0;
  
