@@ -62,5 +62,7 @@ CONFIGURE_ARGS+=	--without-fftw
 
 post-patch:
 	${REINPLACE_CMD} -e 's/--mode=/-m /g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's/png_set_gray_1_2_4_to_8/png_set_expand_gray_1_2_4_to_8/g' \
+		${WRKSRC}/src/impex/png.cxx
 
 .include <bsd.port.mk>
