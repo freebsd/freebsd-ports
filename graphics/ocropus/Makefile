@@ -7,7 +7,7 @@
 
 PORTNAME=	ocropus
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		iulib.0:${PORTSDIR}/graphics/iulib \
-		gsl.14:${PORTSDIR}/math/gsl
+		gsl.15:${PORTSDIR}/math/gsl
 
 WRKSRC=		${WRKDIR}/ocropus-0.4/ocropus
 

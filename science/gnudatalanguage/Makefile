@@ -7,7 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9rc3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -31,7 +31,7 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 #---------------------------------------------------------------------------
 
 LIB_DEPENDS+=	plplotd.9:${PORTSDIR}/math/plplot	\
-		gsl.14:${PORTSDIR}/math/gsl		\
+		gsl.15:${PORTSDIR}/math/gsl		\
 		dps.0:${PORTSDIR}/x11/dgs		\
 		readline.6:${PORTSDIR}/devel/readline
 
