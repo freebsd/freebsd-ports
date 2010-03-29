@@ -14,7 +14,8 @@ you update your ports collection, before attempting any port upgrades.
 
   If you use portmaster:
 
-        portmaster -r graphics/png
+        Make sure you update to portmaster version 2.20 or newer, then:
+        portmaster -r png-
 
   If you use portupgrade:
 
