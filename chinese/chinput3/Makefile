@@ -35,6 +35,8 @@ post-patch:
 		${WRKSRC}/src/Chinput-*/src/*.c
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} ${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g'
+	@${REINPLACE_CMD} -e 's|XLIB)|XLIB) -L${LOCALBASE}/lib -lintl|' \
+		${WRKSRC}/src/ZWinControl/Makefile
 
 pre-build:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
