@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IPC-Run
-PORTVERSION=	0.85
+PORTVERSION=	0.87
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IPC::Run - Run subprocesses with piping and redirection
 
-RUN_DEPENDS=	p5-IO-Tty>=1.00:${PORTSDIR}/devel/p5-IO-Tty
+RUN_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
