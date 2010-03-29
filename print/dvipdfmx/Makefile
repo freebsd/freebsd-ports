@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20090522
-PORTREVISION=	4
+PORTVERSION=	20100328
+#PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/latest/ \
 		http://project.ktug.or.kr/dvipdfmx/snapshot/archive/
@@ -30,6 +30,7 @@ PLIST_SUB=	DVIPDFMXDIR=${DVIPDFMXDIR} \
 		FONTCMAPDIR=${FONTCMAPDIR} \
 		MKTEXLSR=${MKTEXLSR} \
 		ADOBECMAPDIR=${ADOBECMAPDIR}
+MAN1=		extractbb.1
 
 TEXMFDIR=	share/texmf
 DVIPDFMXDIR=	${TEXMFDIR}/dvipdfmx
