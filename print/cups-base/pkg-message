@@ -28,4 +28,11 @@ To enable printing under Gimp and MS-Windows clients do the following:
 If you are using libusb, it is important that no device driver, e.g.
 ulpt(4) is attached to the device you wish to use. In this case please
 ensure the cups user and group has read/write access to /dev/ugen*
+
+If you are using a USB printer wtih FreeBSD 8.0 or later, you will
+need to find the proper /dev/usb/* device pointed at by the /dev/ugen*
+entry. Follow the instructions for devfs.rules as above, but append a 
+rule similar to the following for a printer attached as /dev/ugen0.2:
+
+add path 'usb/0.2.*' mode 0660 group cups
 ======================================================================
