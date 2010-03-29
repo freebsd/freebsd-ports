@@ -7,7 +7,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/qgis/src/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	Geographical Information System (GIS) data viewer
 
 LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		proj:${PORTSDIR}/graphics/proj \
-		gsl.14:${PORTSDIR}/math/gsl \
+		gsl.15:${PORTSDIR}/math/gsl \
 		gdal:${PORTSDIR}/graphics/gdal
 
 USE_PYTHON=	yes
