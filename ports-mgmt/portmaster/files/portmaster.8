@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd February 7, 2010
+.Dd March 28, 2010
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -38,6 +38,7 @@ Common Flags:
 .Op Fl -delete-build-only
 .Op Fl -always-fetch
 .Op Fl -local-packagedir=<path>
+.Op Fl -delete-packages
 .Op Fl -no-confirm
 .Op Fl -no-term-title
 .Op Fl m Ar arguments for make
@@ -82,16 +83,19 @@ and/or multiple globs from /var/db/pkg
 .Op Fl -packages-if-newer
 .Op Fl -always-fetch
 .Op Fl -local-packagedir=<path>
+.Op Fl -delete-packages
 .Fl P|--packages
 .Nm
 .Op Fl -packages-if-newer
 .Op Fl -always-fetch
 .Op Fl -local-packagedir=<path>
+.Op Fl -delete-packages
 .Fl PP|--packages-only
 .Nm
 .Op Fl -packages-if-newer
 .Op Fl -always-fetch
 .Op Fl -local-packagedir=<path>
+.Op Fl -delete-packages
 .Fl -packages-build
 .Nm
 .Fl [l|L]
@@ -411,6 +415,8 @@ in the category subdirectories, such as
 .Pa <path>/devel ,
 .Pa <path>/ports-mgmt ,
 etc.
+.It Fl -delete-packages
+after installing from a package, delete it
 .It Fl -no-confirm
 do not ask the user to confirm the list of ports to
 be installed and/or updated before proceeding
@@ -605,6 +611,9 @@ along with their related options.
 #
 # Specify a local package repository (--local-packagedir)
 # LOCAL_PACKAGEDIR=<path>
+#
+# Delete packages after they are installed (--delete-packages)
+# PM_DELETE_PACKAGES=pm_delete_packages
 #
 # Suppress the build confirmation message (--no-confirm)
 # PM_NO_CONFIRM=pm_no_confirm
