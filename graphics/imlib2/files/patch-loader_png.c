@@ -5,7 +5,7 @@
          /* if we haven't read the header before, set the header data */
          fread(buf, 1, PNG_BYTES_TO_CHECK, f);
 -        if (!png_check_sig(buf, PNG_BYTES_TO_CHECK))
-+        if (png_check_sig(buf, 0, PNG_BYTES_TO_CHECK))
++        if (png_check_sig(buf, 0, PNG_BYTES_TO_CHECK) != 0 )
            {
               fclose(f);
               return 0;
