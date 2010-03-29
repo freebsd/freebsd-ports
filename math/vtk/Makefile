@@ -133,6 +133,8 @@ do-configure:
 patch-common:
 	@${FIND} ${VTKSRCDIR} -name "*.cxx" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc.h|stdlib.h|g'
+	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${VTKSRCDIR}/IO/vtkPNGReader.cxx
 	@${REINPLACE_CMD} -E 's|lib/vtk\)|lib\)|g' \
 		${VTKSRCDIR}/vtkGenerateVTKConfig.cmake
 .if defined(WRAP)
