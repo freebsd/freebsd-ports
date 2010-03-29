@@ -1265,6 +1265,7 @@
     SUBDIR += p5-Config-Simple
     SUBDIR += p5-Config-Std
     SUBDIR += p5-Config-Tiny
+    SUBDIR += p5-Config-YAML
     SUBDIR += p5-ConfigReader
     SUBDIR += p5-ConfigReader-Simple
     SUBDIR += p5-Context-Preserve
