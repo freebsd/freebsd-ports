@@ -84,7 +84,7 @@ DESKTOP_ENTRIES=	"Compiz Manager" \
 			false
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng12|' -e 's|gnome-desktop-2.0|gnome-desktop-2.0 gconf-2.0|g' \
+	@${REINPLACE_CMD} -e 's|libpng|libpng14|' -e 's|gnome-desktop-2.0|gnome-desktop-2.0 gconf-2.0|g' \
 		${WRKSRC}/configure
 
 post-install:
