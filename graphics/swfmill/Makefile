@@ -26,6 +26,6 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" PKG_CONFIG=${LOCALBASE}/bin/pkg-config
 USE_LDCONFIG=	YES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libpng|libpng14|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
