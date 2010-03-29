@@ -53,4 +53,8 @@ LIB_DEPENDS+=	dns_sd.1:${PORTSDIR}/net/avahi-libdns
 LIB_DEPENDS+=	dns_sd.1:${PORTSDIR}/net/mDNSResponder
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/nucleo/image/encoding/PNGenc.cxx
+
 .include <bsd.port.post.mk>
