@@ -1,0 +1,15 @@
+$FreeBSD$
+
+Don't install lib/charset.alias.
+
+--- gnu/Makefile.in.orig	2010-03-17 21:55:42.000000000 +0100
++++ gnu/Makefile.in	2010-03-17 21:56:32.000000000 +0100
+@@ -1860,7 +1860,7 @@ langinfo.h: langinfo.in.h $(CXXDEFS_H) $
+ # avoid installing it.
+ 
+ all-local: charset.alias ref-add.sed ref-del.sed
+-install-exec-local: install-exec-localcharset
++install-exec-local:
+ install-exec-localcharset: all-local
+ 	if test $(GLIBC21) = no; then \
+ 	  case '$(host_os)' in \
