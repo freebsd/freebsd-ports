@@ -33,4 +33,7 @@ PLIST_FILES=	bin/qrencode \
 		lib/libqrencode.so.3 \
 		libdata/pkgconfig/libqrencode.pc
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,libpng12,libpng,' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
