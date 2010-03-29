@@ -32,8 +32,8 @@ do-build:
 	cd ${WRKSRC} \
 		&& ${CC} ${CFLAGS} -DNDEBUG -I${LOCALBASE}/include \
 		${TIF22PNM_SRCS} -o tif22pnm -L${LOCALBASE}/lib -ltiff \
-		&& ${CC} ${CFLAGS} -DNDEBUG `pkg-config libpng12 --cflags` \
-		${PNG2PNM_SRCS} -o png22pnm `pkg-config libpng12 --libs`
+		&& ${CC} ${CFLAGS} -DNDEBUG `pkg-config libpng14 --cflags` \
+		${PNG2PNM_SRCS} -o png22pnm `pkg-config libpng14 --libs`
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/png22pnm ${PREFIX}/bin
