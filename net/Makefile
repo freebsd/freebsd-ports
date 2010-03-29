@@ -540,6 +540,7 @@
     SUBDIR += p5-Net-Google
     SUBDIR += p5-Net-Google-AuthSub
     SUBDIR += p5-Net-Google-Calendar
+    SUBDIR += p5-Net-Google-DataAPI
     SUBDIR += p5-Net-Gopher
     SUBDIR += p5-Net-Growl
     SUBDIR += p5-Net-GrowlClient
