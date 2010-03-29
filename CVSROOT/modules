@@ -20231,6 +20231,7 @@ py-openssl-proxy                ports/www/py-openssl-proxy
 py-optik                        ports/devel/py-optik
 py-orbit                        ports/devel/py-orbit
 py-osd                          ports/misc/py-osd
+py-otr                          ports/security/py-otr
 py-paida                        ports/science/py-paida
 py-paint                        ports/graphics/py-paint
 py-papi                         ports/accessibility/py-papi
@@ -21254,6 +21255,7 @@ rottdc                          ports/games/rottdc
 roundcube                       ports/mail/roundcube
 roundcube-air                   ports/mail/roundcube-air
 roundcube-groupvice             ports/mail/roundcube-groupvice
+roundcube-mobilecube            ports/mail/roundcube-mobilecube
 roundcube-mvision2              ports/mail/roundcube-mvision2
 roundcube-umich                 ports/mail/roundcube-umich
 roundup                         ports/www/roundup
