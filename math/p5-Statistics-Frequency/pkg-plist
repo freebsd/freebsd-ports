@@ -1,0 +1,5 @@
+%%SITE_PERL%%/mach/auto/Statistics/Frequency/.packlist
+%%SITE_PERL%%/Statistics/Frequency.pm
+@dirrmtry %%SITE_PERL%%/Statistics
+@dirrmtry %%SITE_PERL%%/mach/auto/Statistics/Frequency
+@dirrmtry %%SITE_PERL%%/mach/auto/Statistics
