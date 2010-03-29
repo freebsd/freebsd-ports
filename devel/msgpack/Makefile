@@ -17,17 +17,19 @@ COMMENT=	Binary-based efficient data interchange format focused on performance
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	4.2+
-
-.if ${MACHINE_ARCH} == "i386"
-# Mayby not working on i386/i486/i586...
-CONFIGURE_ARGS=	CFLAGS="${CFLAGS} -march=i686" CXXFLAGS="${CXXFLAGS} -march=i686"
-.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not configure on sparc64: sync_* atomic operations are not supported
+# required for __sync _* atomic operations on sparc
+USE_GCC=	4.3+
+.else
+USE_GCC=	4.2+
+.endif
+
+.if ${ARCH} == "i386"
+# Mayby not working on i386/i486/i586...
+CONFIGURE_ARGS=	CFLAGS="${CFLAGS} -march=i686" CXXFLAGS="${CXXFLAGS} -march=i686"
 .endif
 
 .include <bsd.port.post.mk>
