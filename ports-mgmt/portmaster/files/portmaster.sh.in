@@ -23,7 +23,13 @@ if [ -z "$PM_PARENT_PID" ]; then
 
 	set -o allexport
 	# Read a global rc file first
-	[ -r /etc/portmaster.rc ] && . /etc/portmaster.rc
+	if [ -r /etc/portmaster.rc ]; then
+		echo '' ; echo "===>>> WARNING"
+		echo '       Your portmaster.rc is in /etc, however support for the file in this'
+		echo '       location is deprecated, and will be removed in a future version.'
+		echo '' ; echo '       The proper location for this file is %%LOCALBASE%%/etc'
+		echo '' ; sleep 5 ; . /etc/portmaster.rc
+	fi
 	[ -r %%LOCALBASE%%/etc/portmaster.rc ] && . %%LOCALBASE%%/etc/portmaster.rc
 
 	# Read a local one next, and allow the command line to override
@@ -245,7 +251,8 @@ usage () {
 	echo "Common flags: [--force-config] [-CGHKgntvw B|b f|i D|d]"
 	echo "    [[--packages|--packages-only] [-P|-PP] | [--packages-build]]"
 	echo "    [--packages-if-newer] [--delete-build-only] [--always-fetch]"
-	echo "    [--local-packagedir=<path>] [--no-confirm] [--no-term-title]"
+	echo "    [--local-packagedir=<path>] [--delete-packages]"
+	echo "    [--no-confirm] [--no-term-title]"
 	echo "    [-m <arguments for make>] [-x <glob pattern to exclude from building>]"
 	echo "${0##*/} [Common flags] <full name of port directory in $pdb>"
 	echo "${0##*/} [Common flags] <full path to $pd/foo/bar>"
@@ -323,6 +330,7 @@ usage () {
 	echo '--always-fetch fetch package even if it already exists locally'
 	echo '--local-packagedir=<path> where local packages can be found,'
 	echo '   will fall back to fetching if no local version exists'
+	echo '--delete-packages after installing from a package, delete it'
 	echo ''
 	echo '-l list installed ports by category'
 	echo '-L list installed ports by category, and search for updates'
@@ -350,7 +358,7 @@ usage () {
 
 pm_cd     () { builtin cd $1 2>/dev/null || return 1; }
 pm_cd_pd  () { builtin cd $pd/$1 2>/dev/null ||
-		fail "Cannot cd to port directory: $pd/$origin"; }
+		fail "Cannot cd to port directory: $pd/$1"; }
 pm_kill   () { /bin/kill $* >/dev/null 2>/dev/null; }
 pm_make   () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH;
 		 unset -v MASTER_RB_LIST CONFIG_SEEN_LIST;
@@ -439,6 +447,8 @@ for var in "$@" ; do
 				export PM_ALWAYS_FETCH ;;
 	--local-packagedir=*)	LOCAL_PACKAGEDIR=${var#--local-packagedir=}
 				export LOCAL_PACKAGEDIR ;;
+	--delete-packages)	PM_DELETE_PACKAGES=pm_delete_packages
+				export PM_DELETE_PACKAGES ;;
 	-[A-Za-z0-9]*)		newopts="$newopts $var" ;;
 	--delete-build-only)	PM_DEL_BUILD_ONLY=pm_dbo
 				export PM_DEL_BUILD_ONLY ;;
@@ -489,7 +499,7 @@ iport_from_origin () {
 
 origin_from_pdb () {
 	local o
-	o=`grep '@comment ORIGIN:' $pdb/$1/+CONTENTS 2>/dev/null`
+	o=`grep -m1 '@comment ORIGIN:' $pdb/$1/+CONTENTS 2>/dev/null`
 	echo ${o#@comment ORIGIN:}
 }
 
@@ -776,6 +786,8 @@ delete_empty_dist_subdirs () {
 #=============== Begin code relevant only to --features ===============
 
 if [ -n "$CLEAN_DISTFILES" ]; then
+	[ "$distdir" != '/' ] || fail 'There is no DISTDIR to clean'
+
 	# Set the file name here since we are usually called in a subshell
 	DI_FILES=`pm_mktemp DI-FILES`
 	read_distinfos
@@ -856,6 +868,9 @@ IFS='
 fi
 
 if [ -n "$CHECK_PORT_DBDIR" ]; then
+	[ -d "$port_dbdir" ] ||
+		fail 'PORT_DBIR is empty, or the directory $port_dbdir does not exist'
+
 	if [ "$1" = "-v" ]; then PM_VERBOSE=vopt; fi
 
 	unique_list=':'
@@ -949,7 +964,21 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stuvwx:' COMMAND_LINE_ARGUMENT ; do
 	n)	NO_ACTION=nopt; ARGS="-n $ARGS" ;;
 	o)	REPLACE_ORIGIN=oopt ;;
 	p)	portdir="${OPTARG#$pd/}" ; portdir=${portdir%/} ;;
-	r)	UPDATE_REQ_BYS=ropt ; portdir=`origin_from_pdb $OPTARG` ;;
+	r)	UPDATE_REQ_BYS=ropt
+		if [ -d "$pdb/$OPTARG" ]; then
+			glob_dirs=$OPTARG
+		else
+			port=`globstrip $OPTARG`
+			glob_dirs=`find $pdb -maxdepth 1 -type d -name ${port}\*`
+			case "$glob_dirs" in
+			*\*|'') fail "$pdb/$port does not exist" ;;
+			# Match a newline in multiple responses from find
+			*'
+'*)				fail 'The argument to -r must match only one port' ;;
+			esac
+			unset port
+		fi
+		portdir=`origin_from_pdb ${glob_dirs##*/}` ; unset glob_dirs ;;
 	s)	CLEAN_STALE=sopt ;;
 	t)	RECURSE_THOROUGH=topt; ARGS="-t $ARGS" ;;
 	u)	echo "===>>> The -u option has been deprecated" ; echo '' ;;
@@ -1039,12 +1068,12 @@ check_for_updates () {
 		if [ "$iport" = "$port_ver" ]; then
 			if [ -n "$PM_FORCE" ]; then
 				check_restart_and_udf $udf $iport ||
-					do_update=do_update
+					do_update=do_update_force
 			elif [ -n "$URB_YES" ]; then
 		# Outdent
 		case "$MASTER_RB_LIST" in *" $iport "*)
 			if ! check_restart_and_udf $udf $iport; then
-				do_update=do_update2
+				do_update=do_update_urb
 			else
 				URB_DONE_LIST="${URB_DONE_LIST}${upg_port}:"
 			fi ;;
@@ -1052,8 +1081,8 @@ check_for_updates () {
 		# Outdent
 			elif [ -n "$PM_MULTI_PORTS" ]; then
 				case "$PM_MULTI_PORTS" in
-				*:${iport}:*)	do_update=do_update7 ;;
-				*:${origin}:*)	do_update=do_update8 ;;
+				*:${iport}:*)	do_update=do_update_mi ;;
+				*:${origin}:*)	do_update=do_update_mo ;;
 				esac
 			elif [ -n "$LIST_PLUS" ]; then
 				check_state
@@ -1115,40 +1144,54 @@ check_for_updates () {
 	return 0
 }
 
-init_packages () {
-	# Global: packages pbu
-	local pkgrep
+init_packages_var () {
+	# Global: PACKAGES
 
-	packages=`pm_make -f/usr/share/mk/bsd.port.mk -V PACKAGES`
-	[ -n "$packages" ] || fail 'The value of PACKAGES cannot be empty'
+	[ -n "$PACKAGES" ] && return
 
-	# Compatibility shim for users who had previously defined this
-	pkgrep=`pm_make -f/usr/share/mk/bsd.port.mk -V PKGREPOSITORY`
-	if [ ! "$packages" = "${pkgrep%/All}" ]; then
-		echo ''
-		echo "===>>> The PACKAGES and PKGREPOSITORY variables conflict"
-		fail "Set PACKAGES only - 'man portmaster' for more information"
+	PACKAGES=`pm_make -f/usr/share/mk/bsd.port.mk -V PACKAGES 2>/dev/null`
+	if [ -z "$PACKAGES" ]; then
+		if [ -d /usr/ports/packages -a -w /usr/ports/packages ]; then
+			PACKAGES='/usr/ports/packages'
+		else
+			if [ -d /usr/ports/ -a -w /usr/ports/ ]; then
+				PACKAGES='/usr/ports/packages'
+			else
+fail 'The value of PACKAGES cannot be empty and the directory must be writable'
+			fi
+		fi
 	fi
+	export PACKAGES
+}
 
-	pbu=$packages/portmaster-backup
+init_packages () {
+	# Global: pbu
+
+	[ -n "$FETCH_ONLY" ] && return
+
+	init_packages_var
+
+	[ -n "$NO_BACKUP" ] && return
+
+	pbu=$PACKAGES/portmaster-backup
 
 	if [ ! -d "$pbu" ]; then
 		[ -n "$PM_SU_VERBOSE" ] &&
 			echo "===>>> Creating $pbu"
 		pm_mkdir_s $pbu
 	fi
-	export packages pbu
+	export pbu
 }
 
 pm_pkg_create () {
 	local pkgdir
 
-	if [ "$1" = "${packages}" ]; then
+	if [ "$1" = "$PACKAGES" ]; then
 		for pkgdir in All Latest ${portdir%/*}; do
-			pm_mkdir_s ${packages}/${pkgdir} ||
-				fail "Cannot mkdir -p ${packages}/${pkgdir}"
+			pm_mkdir_s ${PACKAGES}/${pkgdir} ||
+				fail "Cannot mkdir -p ${PACKAGES}/${pkgdir}"
 		done
-		pkgdir=${packages}/All
+		pkgdir=${PACKAGES}/All
 		echo "===>>> Creating a package for new version $2"
 	else
 		pkgdir=$1
@@ -1164,16 +1207,16 @@ pm_pkg_create () {
 				local pkg ; pkg=`echo $2.*`
 				NB_DELETE="${NB_DELETE}${pkg} "
 			fi
-		elif [ "$1" = "${packages}" ]; then
+		elif [ "$1" = "$PACKAGES" ]; then
 			local pkg latest_link
 
 			pkg=`echo $2.*`
 			pm_cd_pd $portdir
 			latest_link=`pm_make -V LATEST_LINK`
 			cd ${1}/Latest
-			ln -sf ../All/$pkg ${latest_link}.tbz
+			$PM_SU_CMD ln -sf ../All/$pkg ${latest_link}.tbz
 			cd ${1}/${portdir%/*}
-			ln -sf ../All/$pkg $pkg
+			$PM_SU_CMD ln -sf ../All/$pkg $pkg
 			echo "  ===>>> Package saved to ${1}/All" ; echo ''
 		fi
 	else
@@ -1294,7 +1337,7 @@ set_distfiles_and_subdir () {
 	[ -z "$dist_list_files" ] && find_dl_distfiles $1
 
 	if [ -d "$pd/$1" ]; then
-		pm_cd $pd/$1 || fail "cd to $pd/$1 failed"
+		pm_cd_pd $1
 	else
 		return 1
 	fi
@@ -1549,7 +1592,7 @@ if [ -n "$CLEAN_STALE" ]; then
 		read answer
 		case "$answer" in
 		[yY])	if [ -n "$BACKUP" ]; then
-				[ -z "$packages" ] && init_packages
+				[ -z "$PACKAGES" ] && init_packages
 				pm_pkg_create $pbu $iport
 			fi
 
@@ -1575,6 +1618,9 @@ if [ -n "$CLEAN_STALE" ]; then
 fi
 
 #=============== End code relevant only to getopts features ===============
+
+[ "$distdir" = '/' -a "$PM_PACKAGES" != only ] && fail 'The value of DISTDIR cannot be empty'
+
 #=============== Begin functions for main ===============
 
 already_done () {
@@ -2657,12 +2703,8 @@ fetch_package () {
 	local do_fetch
 
 	if [ -z "$ppd" ]; then
-		# Duplicated from pkg_init()
-		[ -z "$packages" ] &&
-		packages=`pm_make -f/usr/share/mk/bsd.port.mk -V PACKAGES`
-		[ -n "$packages" ] ||
-			fail 'The value of PACKAGES cannot be empty'
-		ppd=$packages/portmaster-download
+		init_packages_var
+		ppd=$PACKAGES/portmaster-download
 		export ppd
 	fi
 
@@ -2671,9 +2713,11 @@ fetch_package () {
 		pm_mkdir_s $ppd
 	fi
 
-	[ -z "$fetch_args" ] && {
-		fetch_args=`pm_make -f/usr/share/mk/bsd.port.mk -V FETCH_ARGS`;
-		export fetch_args; }
+	if [ -z "$FETCH_ARGS" ]; then
+		FETCH_ARGS=`pm_make -f/usr/share/mk/bsd.port.mk -V FETCH_ARGS 2>/dev/null`
+		[ -n "$FETCH_ARGS" ] || FETCH_ARGS='-ApRr'
+		export FETCH_ARGS
+	fi
 
 	if [ -z "$PM_ALWAYS_FETCH" ]; then
 		if [ -r "${ppd}/${1}.tbz" ]; then
@@ -2696,9 +2740,10 @@ fetch_package () {
 			fi
 		fi
 
-		fetch $fetch_args -o $ppd ${sitepath}${1}.tbz 2>/dev/null || {
+		[ -n "$PM_SU_VERBOSE" ] && echo "===>>> Fetching ${1}.tbz"
+		$PM_SU_CMD fetch $FETCH_ARGS -o $ppd ${sitepath}${1}.tbz 2>/dev/null || {
 			pm_unlink_s ${ppd}/${1}.tbz;
-			fetch $fetch_args -o $ppd ${sitepath}${1}.tbz 2>/dev/null; }
+			$PM_SU_CMD fetch $FETCH_ARGS -o $ppd ${sitepath}${1}.tbz 2>/dev/null; }
 	fi
 }
 	if [ -z "$PACKAGESITE" ]; then
@@ -2751,7 +2796,7 @@ fetch_package () {
 		fi
 
 		for s in ${new_port%\.*} ${new_port%%\.*} ${new_port%-*}; do
-			latest_pv=`grep "href=\"${s}" $dirlist`
+			latest_pv=`grep -m1 "href=\"${s}" $dirlist`
 			[ -n "$latest_pv" ] && break
 		done
 	fi
@@ -2789,7 +2834,7 @@ notnewer () {
 	if [ "$latest_pv" = "$new_port" ]; then
 		use_package=up_equal
 		[ -n "$PM_VERBOSE" ] &&
-	echo "===>>> Available package ($latest_pv) matches the ports tree"
+	echo "===>>> Available package ($latest_pv) matches the current version"
 	elif [ -n "$latest_pv" -a -n "$PM_PACKAGES_NEWER" ]; then
 		if [ -n "$upg_port" ]; then
 			case `pkg_version -t $upg_port $latest_pv` in
@@ -2975,11 +3020,16 @@ if [ -z "$use_package" ]; then
 	eval pm_make_s -DNO_DEPENDS install $port_log_args ||
 		install_failed $new_port
 else
-	[ -n "$local_package" ] && ppd=${local_package%/Latest*}/All
+	[ -n "$local_package" ] && ppd=${LOCAL_PACKAGEDIR}/All
 
 	echo "===>>> Installing package"
-	pkg_add --no-deps --force ${ppd}/${latest_pv}.tbz ||
+	if $PM_SU_CMD pkg_add --no-deps --force ${ppd}/${latest_pv}.tbz; then
+		[ -n "$PM_DELETE_PACKAGES" ] && {
+			[ -n "$PM_VERBOSE" ] && echo "===>>> Deleting ${latest_pv}.tbz";
+			pm_unlink_s ${ppd}/${latest_pv}.tbz; }
+	else
 		install_failed ${latest_pv}.tbz
+	fi
 fi
 echo ''
 
@@ -3070,9 +3120,9 @@ if [ -n "$MAKE_PACKAGE" ]; then
 		echo "===>>> Creating a package for new version $new_port"
 		pm_make_s package >/dev/null ||
 			fail "Package creation of $new_port failed"
-		echo "	===>>> Package saved to $packages/All" ; echo ''
+		echo "	===>>> Package saved to $PACKAGES/All" ; echo ''
 	else
-		pm_pkg_create $packages $new_port
+		pm_pkg_create $PACKAGES $new_port
 	fi
 fi
 
