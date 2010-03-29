@@ -44,6 +44,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|== yes|= yes|g' ${WRKDIR}/libtcd-2.2.3/configure
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
+		-e 's|png_check_sig|png_sig_cmp|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
 .for file in Global.cc HarmonicsPath.cc wvsrtv.cc
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${file}
