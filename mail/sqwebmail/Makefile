@@ -62,7 +62,7 @@ HAS_CONFIGURE=	YES
 USE_BZIP2=	YES
 USE_GETTEXT=	YES
 USE_GMAKE=	YES
-USE_RC_SUBR=	YES
+USE_RC_SUBR=	sqwebmail-sqwebmaild
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
@@ -80,8 +80,6 @@ PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} \
 		WEBDATADIR=${WEBDATADIR} \
 		WEBDATASUBDIR=${WEBDATASUBDIR}
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX}
-
 MAN1=		maildirmake.1
 MAN8=		deliverquota.8
 
@@ -98,12 +96,6 @@ INSTALL_TARGET=	install-strip install-configure
 
 .if defined(WITH_FAM)
 USE_FAM=	yes
-.endif
-
-.if defined(WITH_RCORDER)
-USE_RCORDER=	sqwebmail-sqwebmaild
-.else
-USE_RC_SUBR=	sqwebmail-sqwebmaild
 .endif
 
 .if defined(WITHOUT_CACHEDIR)
