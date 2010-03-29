@@ -84,6 +84,7 @@ include/gsl/gsl_multifit.h
 include/gsl/gsl_multifit_nlin.h
 include/gsl/gsl_multimin.h
 include/gsl/gsl_multiroots.h
+include/gsl/gsl_multiset.h
 include/gsl/gsl_nan.h
 include/gsl/gsl_ntuple.h
 include/gsl/gsl_odeiv.h
@@ -221,7 +222,7 @@ include/gsl/gsl_wavelet2d.h
 lib/libgsl.a
 lib/libgsl.la
 lib/libgsl.so
-lib/libgsl.so.14
+lib/libgsl.so.15
 lib/libgslcblas.a
 lib/libgslcblas.la
 lib/libgslcblas.so
