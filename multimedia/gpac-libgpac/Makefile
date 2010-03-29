@@ -49,6 +49,8 @@ USE_GL=		gl glu
 
 post-patch:
 	${CHMOD} +x ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|#define _LARGEFILE64_SOURCE||g' \
+		${WRKSRC}/include/gpac/setup.h
 
 do-install:
 	${MKDIR} ${PREFIX}/include/gpac
