@@ -63,6 +63,8 @@ MAKE_ENV+=	NDEBUG=1
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/source/Irrlicht/CImageLoaderPNG.cpp
 .if !defined(HAVE_JOYSTICK)
 	@${REINPLACE_CMD} -e '/define.*_IRR_COMPILE_WITH_JOYSTICK_EVENTS_/ d' \
 		${WRKSRC}/include/IrrCompileConfig.h
