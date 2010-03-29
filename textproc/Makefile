@@ -963,6 +963,7 @@
     SUBDIR += py-mako
     SUBDIR += py-markdown
     SUBDIR += py-markdown2
+    SUBDIR += py-paragrep
     SUBDIR += py-pygments
     SUBDIR += py-pyx12
     SUBDIR += py-qt4-xml

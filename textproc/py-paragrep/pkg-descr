@@ -1,0 +1,5 @@
+paragrep is a paragraph grep utility. It searches for a series of
+regular expressions in a text file (or several text files) and prints
+out the paragraphs containing those expressions.
+
+WWW: http://bmc.github.com/paragrep/
