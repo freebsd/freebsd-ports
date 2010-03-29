@@ -27,4 +27,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GCC=	4.2+
 
+post-patch:
+	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/src/3rdparty/png++/io_base.hpp
+
 .include <bsd.port.mk>
