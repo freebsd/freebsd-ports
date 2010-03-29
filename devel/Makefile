@@ -2177,6 +2177,7 @@
     SUBDIR += p5-Tie-ShareLite
     SUBDIR += p5-Tie-Simple
     SUBDIR += p5-Tie-ToObject
+    SUBDIR += p5-Tie-Util
     SUBDIR += p5-Tie-iCal
     SUBDIR += p5-Time-Clock
     SUBDIR += p5-Time-Duration
