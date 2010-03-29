@@ -1,0 +1,7 @@
+bin/smfsh
+include/smf.h
+lib/libsmf.so.0
+lib/libsmf.so
+lib/libsmf.la
+lib/libsmf.a
+libdata/pkgconfig/smf.pc
