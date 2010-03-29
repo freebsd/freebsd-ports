@@ -7,7 +7,7 @@
 
 PORTNAME=	mhgui
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/makehuman/MakeHuman%20Source/MakeHuman_091
 

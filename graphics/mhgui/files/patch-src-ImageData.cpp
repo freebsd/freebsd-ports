@@ -5,7 +5,7 @@
    fread(sig, 1, 8, infile);
  
 -  if (!png_check_sig((unsigned char *) sig, 8))
-+  if (!png_sig_cmp((unsigned char *) sig, 0, 8))
++  if (png_sig_cmp((unsigned char *) sig, 0, 8))
    {
      fclose(infile);
      return false; // seems not to be a valid png file
