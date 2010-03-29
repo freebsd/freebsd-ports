@@ -24,13 +24,20 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_PERL5_BUILD=yes
+USE_ICONV=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 MAKEFILE=	${WRKSRC}/GNUmakefile
+LDLIBS=		-liconv
+MAKE_ENV+=	LDLIBS="${LDLIBS}"
 
 MAN1=		exiftran.1 ida.1
 PORTDOCS=	README TODO INSTALL
 
 PLIST_FILES=	bin/exiftran bin/ida lib/X11/app-defaults/Ida
+
+post-patch:
+	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/rd/read-png.c
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/exiftran ${PREFIX}/bin
