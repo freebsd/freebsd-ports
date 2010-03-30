@@ -38,6 +38,10 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's,^ADD_DEFINITIONS(-O3 -msse2 -mfpmath=sse -ftree-vectorize -funroll-loops -Wall ,ADD_DEFINITIONS(, ; /LIB_SUFFIX 64/d ; \
 		/luxrender.desktop/d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		-e 's|int_p_NULL|NULL|g' \
+		${WRKSRC}/core/cimg.h
 
 post-configure:
 # Fix CXX_FLAGS in generated files
