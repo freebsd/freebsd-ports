@@ -27,7 +27,8 @@ USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
+		-e 's,libpng12,libpng14,g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,RacingMode::,,' ${WRKSRC}/src/racingmode.h
 
 .include <bsd.port.mk>
