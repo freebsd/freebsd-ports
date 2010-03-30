@@ -33,6 +33,6 @@ DATADIR=	${PREFIX}/share/gamediameter
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|; /^CFLAGS=.*march/ d; \
-		/PKG_CONFIG/ s|libpng|libpng12|' ${WRKSRC}/configure
+		/PKG_CONFIG/ s|libpng|libpng14|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

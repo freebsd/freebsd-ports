@@ -71,9 +71,10 @@ post-patch:
 		${WRKSRC}/gl/gl_alias.c ${WRKSRC}/common/com_mesh.c
 	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' \
 		${WRKSRC}/common/plugin.c ${WRKSRC}/server/svq3_game.c
-# Resolve name collision with jpeg-8
+# Resolve name collision with jpeg-8 and API png14
 	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
 		-e 's|jpeg_mem_dest|local_jpeg_mem_dest|' \
+		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/client/image.c
 
 do-install:
