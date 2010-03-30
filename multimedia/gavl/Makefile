@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gavl
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -37,9 +36,6 @@ USE_GCC=	4.2+
 .endif
 
 post-patch:
-	# This is possibly wrong, but benchmark does not affect library functionality, so
-	@${REINPLACE_CMD} -e 's|CLOCK_PROCESS_CPUTIME_ID|CLOCK_PROF|g' \
-		${WRKSRC}/src/benchmark.c
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e \
 	's|-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math||g' \
