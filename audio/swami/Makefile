@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--disable-gnome-canvas
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-g $${CFLAGS}|$${CFLAGS}|g ; \
-		 s|libpng|libpng12|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+		 s|libpng|libpng14|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .if !defined(NOPORTDOCS)
 post-install:
