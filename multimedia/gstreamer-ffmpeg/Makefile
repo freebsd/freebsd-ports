@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.8
+PORTVERSION=	0.10.10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -16,7 +16,7 @@ DISTNAME=	gst-ffmpeg-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
 
-CFLAGS:=	${CFLAGS} -O2
+CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -40,5 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|make|${GMAKE}|' \
 		${WRKSRC}/gst-libs/ext/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g'\
+		${WRKSRC}/gst-libs/ext/ffmpeg/doc/texi2pod.pl
 
 .include <bsd.port.post.mk>
