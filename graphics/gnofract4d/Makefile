@@ -46,10 +46,16 @@ post-patch:
 	@${REINPLACE_CMD} -e '236,238d' ${WRKSRC}/setup.py
 
 	# fixup library detection
-	@${REINPLACE_CMD} -e "s/libpng/libpng12/" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e "s/libpng/libpng14/" ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} \
 	     -e "s,/usr/include/jpeglib.h,${LOCALBASE}/include/jpeglib.h," \
 	     ${WRKSRC}/setup.py
+
+	# png14
+	@${REINPLACE_CMD} -e "s/png_infopp_NULL/NULL/g" \
+		-e "s/png_bytepp_NULL/NULL/g" \
+		-e "s/int_p_NULL/NULL/g" \
+		${WRKSRC}/fract4d/c/imageIO.cpp
 
 post-install:
 .if !defined(NOPORTDOCS)

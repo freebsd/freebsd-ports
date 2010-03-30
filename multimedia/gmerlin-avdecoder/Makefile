@@ -204,6 +204,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^LIBS = / s|$$| @LIBINTL@ -lz|' \
 		${WRKSRC}/tests/Makefile.in
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/lib/in_smb.c
+	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/lib/pngreader.c
 
 .if !defined(NOPORTDOCS)
 post-install:

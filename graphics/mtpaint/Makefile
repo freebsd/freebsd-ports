@@ -46,6 +46,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|="/usr"|="${LOCALBASE}"|g ; \
 		 s|/usr/X11R6|${LOCALBASE}|g ; \
 		 s|GTK_LIB -s|GTK_LIB|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/src/png.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
