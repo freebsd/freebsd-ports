@@ -8,7 +8,7 @@
 
 PORTNAME=	libgdiplus
 PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -36,6 +36,8 @@ CPPFLAGS+=	-DPNG_DEPSTRUCT=
 post-patch:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/cairo/src/cairo-png.c
+	${REINPLACE_CMD} -e 's|libpng12|libpng14|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 
