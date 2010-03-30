@@ -32,7 +32,7 @@
        /* Check PNG signature.  */
        if (fread (sig, 1, sizeof sig, fp) != sizeof sig
 -	  || !fn_png_check_sig (sig, sizeof sig))
-+	  || !fn_png_sig_cmp (sig, 0, sizeof sig))
++	  || fn_png_sig_cmp (sig, 0, sizeof sig))
  	{
  	  image_error ("Not a PNG file: `%s'", file, Qnil);
  	  UNGCPRO;
@@ -41,7 +41,7 @@
        /* Check PNG signature.  */
        if (tbr.len < sizeof sig
 -	  || !fn_png_check_sig (tbr.bytes, sizeof sig))
-+	  || !fn_png_sig_cmp (tbr.bytes, 0, sizeof sig))
++	  || fn_png_sig_cmp (tbr.bytes, 0, sizeof sig))
  	{
  	  image_error ("Not a PNG image: `%s'", img->spec, Qnil);
  	  UNGCPRO;
