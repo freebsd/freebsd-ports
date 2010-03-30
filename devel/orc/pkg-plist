@@ -1,6 +1,5 @@
 bin/orcc
 include/orc-0.4/orc-float/orcfloat.h
-include/orc-0.4/orc-pixel/orcpixel.h
 include/orc-0.4/orc-test/orcarray.h
 include/orc-0.4/orc-test/orcprofile.h
 include/orc-0.4/orc-test/orcrandom.h
@@ -27,10 +26,6 @@ lib/liborc-float-0.4.a
 lib/liborc-float-0.4.la
 lib/liborc-float-0.4.so
 lib/liborc-float-0.4.so.0
-lib/liborc-pixel-0.4.a
-lib/liborc-pixel-0.4.la
-lib/liborc-pixel-0.4.so
-lib/liborc-pixel-0.4.so.0
 lib/liborc-test-0.4.a
 lib/liborc-test-0.4.la
 lib/liborc-test-0.4.so
@@ -73,7 +68,6 @@ lib/pkgconfig/orc-0.4.pc
 @dirrmtry lib/pkgconfig
 @dirrm include/orc-0.4/orc
 @dirrm include/orc-0.4/orc-float
-@dirrm include/orc-0.4/orc-pixel
 @dirrm include/orc-0.4/orc-test
 @dirrm include/orc-0.4
 %%PORTEXAMPLES%%@dirrm lib/orc
