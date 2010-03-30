@@ -27,6 +27,6 @@ GCONF_SCHEMAS=	thumbnailer.schemas
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libpng|libpng14|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
