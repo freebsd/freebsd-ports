@@ -36,6 +36,7 @@ DATADIR=	${PREFIX}/share/sgml/openjade
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|<iostream.h>|<iostream>|' ${WRKSRC}/style/MultiLineInlineNote.cxx
 
 post-install:
 	@${CAT} ${PLIST} | \
