@@ -34,6 +34,73 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9ccfee39-3c3b-11df-9edc-000f20797ede">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>seamonkey</name>
+	<range><gt>2.0</gt><lt>2.0.4</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><ge>3.0</ge><lt>3.0.4</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.5.*,1</gt><lt>3.5.9,1</lt></range>
+	<range><gt>3.*,1</gt><lt>3.0.19,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.0.19,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.5.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2010-24 XMLDocument::load() doesn't check nsIContentPolicy</p>
+	  <p>MFSA 2010-23 Image src redirect to mailto: URL opens email editor</p>
+	  <p>MFSA 2010-22 Update NSS to support TLS renegotiation indication</p>
+	  <p>MFSA 2010-21 Arbitrary code execution with Firebug XMLHttpRequestSpy</p>
+	  <p>MFSA 2010-20 Chrome privilege escalation via forced URL drag and drop</p>
+	  <p>MFSA 2010-19 Dangling pointer vulnerability in nsPluginArray</p>
+	  <p>MFSA 2010-18 Dangling pointer vulnerability in nsTreeContentView</p>
+	  <p>MFSA 2010-17 Remote code execution with use-after-free in nsTreeSelection</p>
+	  <p>MFSA 2010-16 Crashes with evidence of memory corruption (rv:1.9.2.2/ 1.9.1.9/ 1.9.0.19)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-0181</cvename>
+      <cvename>CVE-2009-3555</cvename>
+      <cvename>CVE-2010-0179</cvename>
+      <cvename>CVE-2010-0178</cvename>
+      <cvename>CVE-2010-0177</cvename>
+      <cvename>CVE-2010-0176</cvename>
+      <cvename>CVE-2010-0175</cvename>
+      <cvename>CVE-2010-0174</cvename>
+      <cvename>CVE-2010-0173</cvename>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-24.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-23.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-22.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-21.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-20.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-19.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-18.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-17.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-16.html</url>
+    </references>
+    <dates>
+      <discovery>2010-03-30</discovery>
+      <entry>2010-03-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e050119b-3856-11df-b2b2-002170daae37">
     <topic>postgresql -- bitsubstr overflow</topic>
     <affects>
