@@ -15,6 +15,8 @@ MASTER_SITES=	http://qosient.com/argus/src/ \
 MAINTAINER=	ports@freebsd.org
 COMMENT=	A generic IP network transaction auditing tool
 
+CONFLICTS=	argus-3* argus-sasl-3*
+
 .if defined(WITH_SASL)
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
