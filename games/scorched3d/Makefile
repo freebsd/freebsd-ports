@@ -53,6 +53,8 @@ MAKE_ARGS=		ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" \
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's,png_infopp_NULL,NULL,g' \
+		${WRKSRC}/src/common/image/ImagePng.cpp
 
 pre-configure:
 	@cd ${WRKSRC}/scripts && ${PERL} createAMMakefile.pl
