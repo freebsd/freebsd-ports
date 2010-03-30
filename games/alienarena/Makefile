@@ -45,9 +45,11 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CLIENT)
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png \
+		vorbis.4:${PORTSDIR}/audio/libvorbis
 USE_GL=		yes
 USE_OPENAL=	soft alut
 USE_XORG=	xxf86dga
@@ -82,6 +84,9 @@ MAKE_ENV+=	OPTIMIZED_CFLAGS=no
 post-patch:
 	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/client/snd_openal.c
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/Makefile
+# Resolve name collision with jpeg-8
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		${WRKSRC}/ref_gl/r_image.c
 
 do-install:
 	${MKDIR} ${LIBDIR}/arena ${LIBDIR}/data1
