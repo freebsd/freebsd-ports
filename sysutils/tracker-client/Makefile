@@ -92,7 +92,7 @@ CONFIGURE_ARGS+=	--disable-libtrackergtk --disable-gui \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libpng|libpng14|' ${WRKSRC}/configure
 
 post-build:
 .if defined(TRACKER_SLAVE) && ${TRACKER_SLAVE}=="libtrackergtk"

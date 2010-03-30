@@ -38,6 +38,10 @@ USE_GCC=	4.2+
 BROKEN=		Fails to install
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|' \
+		 ${WRKSRC}/src/widgets/picture.cxx
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|^CPPFLAGS|#CPPFLAGS|' \
