@@ -1,0 +1,10 @@
+xsw is a tool for generating presentations.
+It uses a simple language to describe the slides.
+
+An example xsw file is:
+
+    slide:
+      - "Hello" x:50 y:30 align:center
+      + "World!"
+
+WWW:	http://code.google.com/xsw/
