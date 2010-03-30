@@ -116,6 +116,12 @@ PLIST_SUB+=		TOOLS=""
 BROKEN=		you need NLS support for `campaignd' or `wesnothd' or tools to link against gettext
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|libpng12|libpng14|g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|png_voidp_NULL|NULL|g' \
+		-e 's|png_error_ptr_NULL|NULL|g' \
+		${WRKSRC}/src/tools/exploder_utils.cpp
+
 post-install:	.SILENT
 	-update-desktop-database
 
