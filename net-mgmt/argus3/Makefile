@@ -6,41 +6,42 @@
 #
 
 PORTNAME=	argus
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	support@spectrum.ru
 COMMENT=	A generic IP network transaction auditing tool
 
-#RUN_DEPENDS=	${LOCALBASE}/bin/ragrep:${PORTSDIR}/net-mgmt/argus3-clients
+CONFLICTS=	argus-2* argus-sasl-2*
 
 OPTIONS+=	SASL "SASL authentication support" on
 
-.include <bsd.port.pre.mk>
+USE_RC_SUBR=	argus
+
+.include <bsd.port.options.mk>
+
+USE_BISON=	build
+GNU_CONFIGURE=	true
 
 .if defined(WITH_SASL)
 PKGNAMESUFFIX=	-sasl
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
-.endif
-
-USE_BISON=	build
-GNU_CONFIGURE=	true
-.if defined(WITH_SASL)
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 
 MAN5=		argus.conf.5
 MAN8=		argus.8
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/lib/sasl2#${LOCALBASE}/lib/sasl2#' ${WRKSRC}/argus/ArgusOutput.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/argus ${PREFIX}/sbin/argus
-#	${INSTALL_SCRIPT} ${WRKSRC}/bin/argusbug ${PREFIX}/bin/argusbug
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/argusbug ${PREFIX}/bin/argusbug
 	${MKDIR} ${EXAMPLESDIR}/Archive ${EXAMPLESDIR}/Config \
 		 ${EXAMPLESDIR}/Deployment ${EXAMPLESDIR}/Startup \
 		 ${EXAMPLESDIR}/System
@@ -54,14 +55,11 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
-.for i in FAQ HOW-TO
+.for i in README
 	${INSTALL_DATA} ${WRKSRC}/doc/$i ${DOCSDIR}/
 .endfor
 .endif
 .if !defined(NOMAN)
-#.for i in ${MAN1}
-#	${INSTALL_DATA} ${WRKSRC}/man/man1/$i ${MANPREFIX}/man/man1
-#.endfor
 .for i in ${MAN5}
 	${INSTALL_DATA} ${WRKSRC}/man/man5/$i ${MANPREFIX}/man/man5
 .endfor

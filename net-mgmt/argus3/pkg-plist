@@ -1,6 +1,6 @@
+bin/argusbug
 sbin/argus
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/HOW-TO
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%EXAMPLESDIR%%/Archive/argusarchive
 %%EXAMPLESDIR%%/Config/argus.conf
 %%EXAMPLESDIR%%/Deployment/sample
