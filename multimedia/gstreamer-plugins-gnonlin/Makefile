@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gstreamer-plugins-gnonlin
-PORTVERSION=	0.10.13
+PORTVERSION=	0.10.15
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gnonlin/
 DISTNAME=	gnonlin-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	gnonlin-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gstreamer lib for writing non-linear audio and video
 
-CFLAGS:=	${CFLAGS} -O2
+CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
