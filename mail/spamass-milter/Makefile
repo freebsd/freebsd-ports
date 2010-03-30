@@ -116,8 +116,6 @@ pre-patch:
 .endif
 
 post-patch:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/spamass-milter.in > ${WRKDIR}/spamass-milter
 	@${SED} -e's,%%PREFIX%%,${PREFIX},g' \
 		${FILESDIR}/activation.txt > ${WRKDIR}/activation.txt
 .if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
