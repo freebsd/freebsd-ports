@@ -63,6 +63,14 @@ CONFIGURE_ARGS+=	--disable-ufo2map
 PLIST_SUB+=	UFO2MAP="@comment "
 .endif
 
+# Resolve name collision with jpeg-8 amd API png
+post-patch:
+	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		-e 's|png_check_sig(PngFileBuffer.buffer, 8)|!png_sig_cmp(PngFileBuffer.buffer, 0, 8)|' \
+		${WRKSRC}/src/renderer/r_image.c \
+		${WRKSRC}/src/tools/ufo2map/common/imagelib.c
+
 pre-install:
 .	for FILE in ${UFO_FILES}
 		@${ECHO} "#!/bin/sh" > ${WRKDIR}/${FILE}
