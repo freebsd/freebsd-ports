@@ -8,7 +8,9 @@ PORTNAME=	cyberbit-ttfonts
 PORTVERSION=	2.0.20050220
 PORTREVISION=	2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/
+MASTER_SITES=	http://ftp.netscape.com/pub/communicator/extras/fonts/windows/ \
+		http://aol-4.vo.llnwd.net/pub/communicator/extras/fonts/windows/ \
+		ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/
 DISTFILES=	Cyberbit.ZIP
 .if !defined(NOPORTDOCS)
 DISTFILES+=	97CyberBase.Doc 97CyberBit.Doc 97CyberCJK.Doc \
