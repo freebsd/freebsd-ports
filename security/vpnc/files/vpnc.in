@@ -44,8 +44,9 @@ vpnc_start() {
 		current="$vpnc_conf_dir/$config"
 
 		# Start vpnc.
-		if ! $command --local-port 0 $current $vpnc_flags; then
-			status=$?
+		$command --local-port 0 $current $vpnc_flags
+		status=$?
+		if [ $status -ne 0 ]; then
 			# VPNC does not print a newline after an error.
 			echo
 			echo "Running 'vpnc $current --local-port 0 $vpnc_flags' failed."
