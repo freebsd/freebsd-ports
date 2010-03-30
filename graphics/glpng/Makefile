@@ -7,7 +7,7 @@
 
 PORTNAME=	glpng
 PORTVERSION=	1.45
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.wyatt100.freeserve.co.uk/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -27,7 +27,9 @@ AR?=		/usr/bin/ar
 WRKSRC=		${WRKDIR}/src
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|png/|libpng/|' ${WRKSRC}/glpng.c
+	@${REINPLACE_CMD} -e 's|png/|libpng/|' \
+		-e 's|!png_check_sig(header, 8)|png_sig_cmp(header, 0, 8)|' \
+		${WRKSRC}/glpng.c
 
 do-build:
 	${CC} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${WRKDIR}/include -c -o ${WRKSRC}/libglpng.o ${WRKSRC}/glpng.c
