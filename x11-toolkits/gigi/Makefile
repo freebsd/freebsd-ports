@@ -54,6 +54,12 @@ PLIST_SUB+=	OGRE="@comment "
 BROKEN=		Does not compile
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|g' -e 's|int_p_NULL|NULL|g' \
+		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/src/GIL/extension/io/png_dynamic_io.hpp \
+		${WRKSRC}/src/GIL/extension/io/png_io_private.hpp
+
 post-build:
 	@${REINPLACE_CMD} -Ee 's,^(prefix|(lib|include)dir)=,&${PREFIX},' \
 		${WRKSRC}/*.pc
