@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# PROVIDE: argus
+# REQUIRE: NETWORKING
+
+. /etc/rc.subr
+
+name="argus"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+# Set defaults
+: ${argus_enable="NO"}
+: ${argus_procname="%%PREFIX%%/sbin/argus"}
+: ${argus_flags="-F %%PREFIX%%/etc/argus.conf"}
+
+required_files="${argus_config}"
+command=$argus_procname
+command_args="${argus_flags}"
+
+run_rc_command "$1"
