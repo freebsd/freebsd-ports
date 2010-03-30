@@ -99,6 +99,9 @@ elif bzgrep -qE "(conflicts with installed package|is already installed - perhap
   reason="depend_object"; tag="dependobj"
 elif bzgrep -q "core dumped" $1; then
   reason="coredump"; tag="coredump"
+# linimon would _really_ like to understand how to fix this problem
+elif bzgrep -q "pkg_add: tar extract.*failed!" $1; then
+  reason="truncated_distfile"; tag="truncated_distfile"
 
 # below here are the less common items
 
