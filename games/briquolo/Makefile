@@ -37,6 +37,11 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 #.endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|g' \
+		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/src/MOGL/MOGL_Image.cpp
+
 pre-install:
 	${MKDIR} ${PREFIX}/share/applications
 

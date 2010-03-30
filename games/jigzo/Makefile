@@ -34,6 +34,8 @@ DESKTOP_ENTRIES="Jigzo" \
 		false
 
 post-patch:
+	@${REINPLACE_CMD} -e "s|int_p_NULL|NULL|g" \
+		${WRKSRC}/src/Loader.cxx
 .for i in font image puzzles sound
 	@${REINPLACE_CMD} -e "s|${i}/|${DATADIR}/${i}/|g" \
 	    ${WRKSRC}/src/main.cxx
