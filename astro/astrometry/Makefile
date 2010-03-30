@@ -33,6 +33,10 @@ SUB_FILES=	pkg-message
 post-extract:
 	${CP} ${FILESDIR}/gnu-specific-config.h ${WRKSRC}/util/
 
+post-patch:
+	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/util/cairoutils.c
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
