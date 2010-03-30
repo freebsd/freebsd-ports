@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.0.18
-PORTREVISION=	1
+DISTVERSION=	3.0.19
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -20,6 +19,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.7:${PORTSDIR}/devel/nspr
 
+DEPRECATED=	Upstream support dropped. Please consider using www/firefox or www/firefox35 instead
 LATEST_LINK=	firefox3
 USE_GECKO=	gecko
 CONFLICTS=	firefox-3.[1-6]*
