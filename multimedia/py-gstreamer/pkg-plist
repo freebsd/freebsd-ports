@@ -62,6 +62,7 @@ share/gst-python/%%VERSION%%/examples/filesrc.py
 share/gst-python/%%VERSION%%/examples/fvumeter.py
 share/gst-python/%%VERSION%%/examples/gst-discover
 share/gst-python/%%VERSION%%/examples/gstfile.py
+share/gst-python/%%VERSION%%/examples/maemogst.py
 share/gst-python/%%VERSION%%/examples/mixer.py
 share/gst-python/%%VERSION%%/examples/pipeline-tester
 share/gst-python/%%VERSION%%/examples/play.py
