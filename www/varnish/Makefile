@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	varnish
-PORTVERSION=	2.0.6
+PORTVERSION=	2.1
 CATEGORIES=	www
 MASTER_SITES=	SF
 
@@ -18,8 +18,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}
 USE_LDCONFIG=	yes
 
-# not yet
-#LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 MAN1=		varnishadm.1 varnishd.1 varnishhist.1 varnishlog.1 \
 		varnishncsa.1 varnishreplay.1 varnishstat.1 varnishtest.1 \
