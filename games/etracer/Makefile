@@ -31,4 +31,11 @@ CONFIGURE_ARGS=		--with-tcl="${TCL_LIBDIR}" \
 			--with-gl-libs="${LOCALBASE}/lib" \
 			--with-gl-inc="${LOCALBASE}/include"
 
+post-patch:
+	${REINPLACE_CMD} -e 's|libpng12|libpng14|g' \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|int_p_NULL|NULL|g' \
+		-e 's|png_infopp_NULL|NULL|g' \
+		${WRKSRC}/src/ppgltk/images/png_reader.cpp
+
 .include <bsd.port.post.mk>

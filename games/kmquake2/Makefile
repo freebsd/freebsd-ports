@@ -139,8 +139,9 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 post-patch:
-# Resolve name collision with jpeg-8
+# Resolve name collision with jpeg-8 and API png
 	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/renderer/r_image.c
 .if defined(MOD_REQUESTED)
 	@${FIND} ${WRKDIR}/${KMQ2_ADDONS:S/-1${EXTRACT_SUFX}//} \
