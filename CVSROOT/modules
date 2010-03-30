@@ -11194,6 +11194,7 @@ p5-Config-Setting               ports/devel/p5-Config-Setting
 p5-Config-Simple                ports/devel/p5-Config-Simple
 p5-Config-Std                   ports/devel/p5-Config-Std
 p5-Config-Tiny                  ports/devel/p5-Config-Tiny
+p5-Config-YAML                  ports/devel/p5-Config-YAML
 p5-ConfigReader                 ports/devel/p5-ConfigReader
 p5-ConfigReader-Simple          ports/devel/p5-ConfigReader-Simple
 p5-Context-Preserve             ports/devel/p5-Context-Preserve
@@ -12773,6 +12774,8 @@ p5-Net-Gnats                    ports/net/p5-Net-Gnats
 p5-Net-Google                   ports/net/p5-Net-Google
 p5-Net-Google-AuthSub           ports/net/p5-Net-Google-AuthSub
 p5-Net-Google-Calendar          ports/net/p5-Net-Google-Calendar
+p5-Net-Google-DataAPI           ports/net/p5-Net-Google-DataAPI
+p5-Net-Google-Spreadsheets      ports/net/p5-Net-Google-Spreadsheets
 p5-Net-Gopher                   ports/net/p5-Net-Gopher
 p5-Net-Growl                    ports/net/p5-Net-Growl
 p5-Net-GrowlClient              ports/net/p5-Net-GrowlClient
@@ -13419,6 +13422,7 @@ p5-Spreadsheet-WriteExcelXML    ports/textproc/p5-Spreadsheet-WriteExcelXML
 p5-SpringGraph                  ports/graphics/p5-SpringGraph
 p5-Squatting                    ports/www/p5-Squatting
 p5-Stanford-DNSserver           ports/dns/p5-Stanford-DNSserver
+p5-Starman                      ports/www/p5-Starman
 p5-Stat-lsMode                  ports/sysutils/p5-Stat-lsMode
 p5-Statistics-Basic             ports/math/p5-Statistics-Basic
 p5-Statistics-Benford           ports/math/p5-Statistics-Benford
@@ -13428,6 +13432,7 @@ p5-Statistics-Descriptive       ports/math/p5-Statistics-Descriptive
 p5-Statistics-Descriptive-Discrete  ports/math/p5-Statistics-Descriptive-Discrete
 p5-Statistics-Distributions     ports/math/p5-Statistics-Distributions
 p5-Statistics-Forecast          ports/math/p5-Statistics-Forecast
+p5-Statistics-Frequency         ports/math/p5-Statistics-Frequency
 p5-Statistics-LTU               ports/math/p5-Statistics-LTU
 p5-Statistics-LineFit           ports/math/p5-Statistics-LineFit
 p5-Statistics-Lite              ports/math/p5-Statistics-Lite
@@ -13800,6 +13805,7 @@ p5-Tie-Simple                   ports/devel/p5-Tie-Simple
 p5-Tie-Syslog                   ports/sysutils/p5-Tie-Syslog
 p5-Tie-TinyURL                  ports/www/p5-Tie-TinyURL
 p5-Tie-ToObject                 ports/devel/p5-Tie-ToObject
+p5-Tie-Util                     ports/devel/p5-Tie-Util
 p5-Tie-iCal                     ports/devel/p5-Tie-iCal
 p5-Time-Clock                   ports/devel/p5-Time-Clock
 p5-Time-Duration                ports/devel/p5-Time-Duration
@@ -14910,6 +14916,7 @@ p5-config-setting               ports/devel/p5-Config-Setting
 p5-config-simple                ports/devel/p5-Config-Simple
 p5-config-std                   ports/devel/p5-Config-Std
 p5-config-tiny                  ports/devel/p5-Config-Tiny
+p5-config-yaml                  ports/devel/p5-Config-YAML
 p5-configreader                 ports/devel/p5-ConfigReader
 p5-configreader-simple          ports/devel/p5-ConfigReader-Simple
 p5-constant-boolean             ports/devel/p5-constant-boolean
@@ -16537,6 +16544,8 @@ p5-net-gnats                    ports/net/p5-Net-Gnats
 p5-net-google                   ports/net/p5-Net-Google
 p5-net-google-authsub           ports/net/p5-Net-Google-AuthSub
 p5-net-google-calendar          ports/net/p5-Net-Google-Calendar
+p5-net-google-dataapi           ports/net/p5-Net-Google-DataAPI
+p5-net-google-spreadsheets      ports/net/p5-Net-Google-Spreadsheets
 p5-net-gopher                   ports/net/p5-Net-Gopher
 p5-net-growl                    ports/net/p5-Net-Growl
 p5-net-growlclient              ports/net/p5-Net-GrowlClient
@@ -17183,6 +17192,7 @@ p5-squatting                    ports/www/p5-Squatting
 p5-sru                          ports/www/p5-SRU
 p5-ssn-validate                 ports/devel/p5-SSN-Validate
 p5-stanford-dnsserver           ports/dns/p5-Stanford-DNSserver
+p5-starman                      ports/www/p5-Starman
 p5-stat-lsmode                  ports/sysutils/p5-Stat-lsMode
 p5-statistics-basic             ports/math/p5-Statistics-Basic
 p5-statistics-benford           ports/math/p5-Statistics-Benford
@@ -17192,6 +17202,7 @@ p5-statistics-descriptive       ports/math/p5-Statistics-Descriptive
 p5-statistics-descriptive-discrete  ports/math/p5-Statistics-Descriptive-Discrete
 p5-statistics-distributions     ports/math/p5-Statistics-Distributions
 p5-statistics-forecast          ports/math/p5-Statistics-Forecast
+p5-statistics-frequency         ports/math/p5-Statistics-Frequency
 p5-statistics-linefit           ports/math/p5-Statistics-LineFit
 p5-statistics-lite              ports/math/p5-Statistics-Lite
 p5-statistics-ltu               ports/math/p5-Statistics-LTU
@@ -17600,6 +17611,7 @@ p5-tie-simple                   ports/devel/p5-Tie-Simple
 p5-tie-syslog                   ports/sysutils/p5-Tie-Syslog
 p5-tie-tinyurl                  ports/www/p5-Tie-TinyURL
 p5-tie-toobject                 ports/devel/p5-Tie-ToObject
+p5-tie-util                     ports/devel/p5-Tie-Util
 p5-time-clock                   ports/devel/p5-Time-Clock
 p5-time-duration                ports/devel/p5-Time-Duration
 p5-time-duration-parse          ports/devel/p5-Time-Duration-Parse
@@ -20069,6 +20081,7 @@ py-gozerbot                     ports/irc/py-gozerbot
 py-graph                        ports/graphics/py-graph
 py-graphviz                     ports/graphics/py-graphviz
 py-greenlet                     ports/devel/py-greenlet
+py-grizzled                     ports/devel/py-grizzled
 py-grouch                       ports/devel/py-grouch
 py-gsl                          ports/math/py-gsl
 py-gstreamer                    ports/multimedia/py-gstreamer
@@ -20235,6 +20248,7 @@ py-otr                          ports/security/py-otr
 py-paida                        ports/science/py-paida
 py-paint                        ports/graphics/py-paint
 py-papi                         ports/accessibility/py-papi
+py-paragrep                     ports/textproc/py-paragrep
 py-paramiko                     ports/security/py-paramiko
 py-parsedatetime                ports/devel/py-parsedatetime
 py-parsing                      ports/devel/py-parsing
