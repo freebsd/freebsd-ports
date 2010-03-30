@@ -81,8 +81,9 @@ do-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|libtcl\.so|libtcl${TCL_VER:S/.//}|' \
 		${WRKSRC}/embed_tcl.h
-# Resolve name collision with jpeg-8
+# Resolve name collision with jpeg-8 and API png
 	${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
+		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/image.c
 
 do-install:
