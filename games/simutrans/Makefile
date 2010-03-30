@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	simutrans
-PORTVERSION=	102.2.1
-PORTREVISION=	1
+PORTVERSION=	102.2.2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${SIMUTRANS_VERSION} \
+		SF/${PORTNAME}/pak64/102-2-1:food \
 		SF/${PORTNAME}/pak64/${SIMUTRANS_VERSION}:pak64
 DISTFILES=	simutrans-src-${SIMUTRANS_VERSION}.zip \
 		simulinux-${SIMUTRANS_VERSION}.zip \
 		simupak64-${SIMUTRANS_VERSION}.zip:pak64 \
-		simupak64-addon-food-${SIMUTRANS_VERSION}.zip:pak64
+		simupak64-addon-food-102-2-1.zip:food
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Transportation simulation game

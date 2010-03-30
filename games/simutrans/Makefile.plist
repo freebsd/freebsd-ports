@@ -10,6 +10,7 @@ text/pl \
 text/no \
 text/nl \
 text/lt \
+text/ko \
 text/ja \
 text/it \
 text/id \
@@ -202,6 +203,7 @@ pak/building.FreightShipStop.pak \
 pak/building.FreightTrainStop.pak \
 pak/building.GCG1TrainStop.pak \
 pak/building.GCG2TrainStop.pak \
+pak/building.GCGTrainStop.pak \
 pak/building.Gas_StationBlg.pak \
 pak/building.Goods_StationBlg.pak \
 pak/building.Gymnasium.pak \
@@ -230,6 +232,7 @@ pak/building.IND_01_11.pak \
 pak/building.IND_01_12.pak \
 pak/building.IND_01_13.pak \
 pak/building.IND_01_15.pak \
+pak/building.IND_01_16.pak \
 pak/building.IND_02_01.pak \
 pak/building.IND_02_02.pak \
 pak/building.IND_02_06.pak \
@@ -275,6 +278,7 @@ pak/building.RES_01_02.pak \
 pak/building.RES_01_05.pak \
 pak/building.RES_01_07.pak \
 pak/building.RES_01_08.pak \
+pak/building.RES_01_09.pak \
 pak/building.RES_01_10.pak \
 pak/building.RES_01_12.pak \
 pak/building.RES_01_15.pak \
@@ -589,6 +593,7 @@ pak/text/hu.tab \
 pak/text/id.tab \
 pak/text/it.tab \
 pak/text/ja.tab \
+pak/text/ko.tab \
 pak/text/lt.tab \
 pak/text/nl.tab \
 pak/text/no.tab \
@@ -919,6 +924,7 @@ text/cz/depot.txt \
 text/cz/display.txt \
 text/cz/finances.txt \
 text/cz/general.txt \
+text/cz/goods_filter.txt \
 text/cz/haltlist.txt \
 text/cz/haltlist_filter.txt \
 text/cz/keys.txt \
@@ -1123,6 +1129,7 @@ text/es/tramtools.txt \
 text/es/window.txt \
 text/et.tab \
 text/fi.tab \
+text/fi/new_world.txt \
 text/fr.tab \
 text/fr/climates.txt \
 text/fr/color.txt \
@@ -1189,6 +1196,7 @@ text/hu/station_details.txt \
 text/hu/tramtools.txt \
 text/id.tab \
 text/it.tab \
+text/it/airtools.txt \
 text/it/color.txt \
 text/it/convoi.txt \
 text/it/convoi_filter.txt \
@@ -1238,6 +1246,31 @@ text/ja/slopetools.txt \
 text/ja/sound.txt \
 text/ja/station.txt \
 text/ja/station_details.txt \
+text/ko.tab \
+text/ko/citylist_filter.txt \
+text/ko/citywindow.txt \
+text/ko/color.txt \
+text/ko/depot.txt \
+text/ko/display.txt \
+text/ko/finances.txt \
+text/ko/general.txt \
+text/ko/language.txt \
+text/ko/load.txt \
+text/ko/mailbox.txt \
+text/ko/map.txt \
+text/ko/new_world.txt \
+text/ko/options.txt \
+text/ko/players.txt \
+text/ko/railtools.txt \
+text/ko/roadtools.txt \
+text/ko/save.txt \
+text/ko/schedule.txt \
+text/ko/settings.txt \
+text/ko/shiptools.txt \
+text/ko/slopetools.txt \
+text/ko/sound.txt \
+text/ko/station.txt \
+text/ko/station_details.txt \
 text/lt.tab \
 text/nl.tab \
 text/nl/airtools.txt \
@@ -1260,6 +1293,7 @@ text/nl/monorailtools.txt \
 text/nl/mouse.txt \
 text/nl/signals.txt \
 text/no.tab \
+text/no/about.txt \
 text/pl.tab \
 text/pl/color.txt \
 text/pl/depot.txt \
@@ -1333,6 +1367,7 @@ text/pt/tramtools.txt \
 text/pt/window.txt \
 text/readme_citylist.txt \
 text/ro.tab \
+text/ro/about.txt \
 text/ro/color.txt \
 text/ro/depot.txt \
 text/ro/display.txt \
@@ -1386,7 +1421,10 @@ text/sv.tab \
 text/sv/airtools.txt \
 text/sv/baum_build.txt \
 text/sv/citybuilding_build.txt \
+text/sv/citywindow.txt \
 text/sv/depot.txt \
+text/sv/players.txt \
+text/sv/simutrans.txt \
 text/sv/underground.txt \
 text/tr.tab \
 text/tr/airtools.txt \
