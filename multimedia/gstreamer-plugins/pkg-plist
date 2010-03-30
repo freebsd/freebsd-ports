@@ -100,8 +100,6 @@ lib/gstreamer-%%VERSION%%/libgstgdp.la
 lib/gstreamer-%%VERSION%%/libgstgdp.so
 lib/gstreamer-%%VERSION%%/libgstplaybin.la
 lib/gstreamer-%%VERSION%%/libgstplaybin.so
-lib/gstreamer-%%VERSION%%/libgstqueue2.la
-lib/gstreamer-%%VERSION%%/libgstqueue2.so
 lib/gstreamer-%%VERSION%%/libgstsubparse.la
 lib/gstreamer-%%VERSION%%/libgstsubparse.so
 lib/gstreamer-%%VERSION%%/libgsttcp.la
