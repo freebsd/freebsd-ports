@@ -350,6 +350,7 @@
     SUBDIR += p5-Math-Round-Var
     SUBDIR += p5-Math-Sequence
     SUBDIR += p5-Math-Series
+    SUBDIR += p5-Math-SigFigs
     SUBDIR += p5-Math-SimpleVariable
     SUBDIR += p5-Math-Spline
     SUBDIR += p5-Math-Symbolic
