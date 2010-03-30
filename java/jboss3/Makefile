@@ -11,7 +11,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/JBoss/JBoss-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	jonc@chen.org.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JBoss 3.x, an open-source J2EE application server
 
 LATEST_LINK=	jboss3
