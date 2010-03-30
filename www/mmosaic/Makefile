@@ -23,6 +23,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 RESTRICTED=	"academic, research and internal business purposes only, without a fee"
 PLIST=		${WRKDIR}/pkg-plist
 USE_MOTIF=	yes
+USE_XORG=	xmu xt xext x11
 WRKSRC=		${WRKDIR}/mMosaic-src-${PORTVERSION}
 
 post-patch:
