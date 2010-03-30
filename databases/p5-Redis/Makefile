@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Redis
-PORTVERSION=	0.0801
+PORTVERSION=	1.2001
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DP/DPAVLIN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl binding for Redis database
 
 PERL_CONFIGURE=	yes
