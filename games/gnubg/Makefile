@@ -72,6 +72,9 @@ LDFLAGS=	-L${LOCALBASE}/lib
 post-extract:
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_ts0.bd.gz > ${WRKSRC}/gnubg_ts0.bd
 
+post-patch:
+	${REINPLACE_CMD} -e 's|libpng12|libpng14|g' ${WRKSRC}/configure.in
+
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
 
