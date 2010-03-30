@@ -119,6 +119,11 @@ post-extract:
 		${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${VTKSRCDIR}/Hybrid/vtkVRMLImporter.cxx
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${VTKSRCDIR}/IO/vtkPNGReader.cxx
+
+
 # FSL links directly to libQVTKWidgetPlugin.so, so put it in a standard
 # library directory.
 pre-install:

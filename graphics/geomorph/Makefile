@@ -39,7 +39,7 @@ CFLAGS+=	-O0
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libpng|libpng14|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local/share/geomorph/GeoMorph.xpm|geomorph.xpm|' \
 		${WRKSRC}/geomorph.desktop
 	@${FIND} ${WRKSRC} -exec ${GREP} -q /usr/local/share/geomorph {} \; -print | \
