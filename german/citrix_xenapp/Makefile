@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	citrix_xenapp
-PORTVERSION=	11.0.140395
-PORTREVISION=	1
+PORTVERSION=	11.100.158406
 CATEGORIES=	german net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
@@ -51,7 +50,7 @@ do-fetch:
 	@${ECHO} ""
 	@${ECHO} "http://www.citrix.com/English/SS/downloads/details.asp?downloadID=3323"
 	@${ECHO} ""
-	@${ECHO} "Once en.linuxx86.tar.gz has been downloaded move it to"
+	@${ECHO} "Once the tarball has been downloaded move it to"
 	@${ECHO} "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} and restart the build."
 	@${ECHO} ""
 	@${FALSE}
@@ -93,5 +92,9 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${f} ${CERTDIR}
 .endfor
 .endif
+
+post-install:
+	${RM} ${CDIR}/nls/C
+	${LN} -s ${CDIR}/nls/de ${CDIR}/nls/C
 
 .include <bsd.port.post.mk>
