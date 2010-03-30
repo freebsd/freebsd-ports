@@ -38,6 +38,10 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ENV+=	USE_ASM=1
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+	${WRKSRC}/gl_warp.c
+
 pre-build:
 	@cd ${BUILD_WRKSRC} && ${LN} -sf Makefile.i386linux Makefile
 
