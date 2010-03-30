@@ -62,6 +62,12 @@ CONFIGURE_ARGS+=	--disable-png
 .include "${.CURDIR}/manpages.mk"
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|png_voidp_NULL|NULL|g' \
+		-e 's|png_error_ptr_NULL|NULL|g' \
+		${WRKSRC}/src/pilot-read-notepad.c \
+		${WRKSRC}/src/pilot-read-palmpix.c \
+		${WRKSRC}/src/pilot-read-screenshot.c \
+		${WRKSRC}/src/pilot-read-veo.c
 .if !defined(WITHOUT_THREADS)
 	@${REINPLACE_CMD} -e 's|Libs: |Libs: ${PTHREAD_LIBS} |' ${WRKSRC}/pilot-link.pc.in ${WRKSRC}/pilot-link-pp.pc.in
 .endif
