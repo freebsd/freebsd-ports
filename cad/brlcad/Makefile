@@ -122,6 +122,9 @@ CONFIGURE_ARGS+=	--disable-debug --enable-optimized
 
 post-patch:
 	${REINPLACE_CMD} "s+-exact Tcl 8\.5\.1+Tcl 8.5+" ${WRKSRC}/src/other/tcl/library/init.tcl
+	${REINPLACE_CMD} -e 's|!png_check_sig( *(png_bytep)header, 8 *)|png_sig_cmp( (png_bytep)header, 0, 8 )|' \
+		${WRKSRC}/src/canon/png-ipu.c ${WRKSRC}/src/fb/png-fb.c ${WRKSRC}/src/util/png-bw.c \
+		${WRKSRC}/src/util/png-pix.c ${WRKSRC}/src/util/png_info.c
 
 pre-install:
 	${CP} ${FILESDIR}/mged.sh ${WRKSRC}
