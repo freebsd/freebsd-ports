@@ -6,54 +6,54 @@
 #
 
 PORTNAME=	argus-clients
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	support@spectrum.ru
 COMMENT=	Client programs for the argus IP network transaction auditing tool
 
-OPTIONS+=	SASL "SASL authentication support 1" on \
-		DEBUG "Enable debug" off
+CONFLICTS=	argus-clients-2* argus-clients-sasl-2*
 
-.include <bsd.port.pre.mk>
+OPTIONS+=	SASL "SASL authentication support" on \
+		MYSQL "MySQL database support" on
 
-.if defined(WITH_SASL)
-PKGNAMESUFFIX=	-sasl
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
-.endif
+.include <bsd.port.options.mk>
 
 USE_BISON=	build
 GNU_CONFIGURE=	true
 
 .if defined(WITH_SASL)
+PKGNAMESUFFIX=	-sasl
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 
-MAN1=	ra.1 rabins.1 racluster.1 racount.1 ragraph.1 ragrep.1 rahisto.1 \
-	rasort.1 rasplit.1 rastrip.1
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+.endif
+
+MAN1=	ra.1 rabins.1 racluster.1 racount.1 ragraph.1 rahisto.1 \
+	ranonymize.1 rasort.1 rasplit.1 rastream.1 rastrip.1
 MAN5=	racluster.5 radium.conf.5 rarc.5
 MAN8=	radium.8
 
-pre-configure:
-.if defined(WITH_DEBUG)
-	${TOUCH} ${WRKSRC}/.debug
-.endif
+.include <bsd.port.pre.mk>
 
 do-install:
 .for i in ra rabins racluster racount radump rafilteraddr \
-		ragrep rahisto ralabel ranonymize rapath rapolicy \
-		rasort rasplit rastream rastrip ratemplate \
-		ratimerange ratop ratree
+		rahisto ralabel ranonymize rapath rapolicy \
+		raservices rasort rasplit rasql rasqlinsert rastream \
+		rastrip ratemplate ratimerange ratop ratree rauserdata
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin/$i
 .endfor
-.for i in argusbug radark ragraph rahosts raports
+.for i in radark ragraph rahosts raports
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$i ${PREFIX}/bin/$i
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/
-.for i in README COPYING CREDITS doc/CHANGES doc/FAQ doc/HOW-TO
+.for i in README COPYING doc/CHANGES doc/FAQ doc/HOW-TO
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
@@ -68,11 +68,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/man/man8/$i ${MANPREFIX}/man/man8
 .endfor
 .endif
-.for i in argus_client.a argus_common.a argus_parse.a
-	${INSTALL_DATA} ${WRKSRC}/lib/$i ${PREFIX}/lib/$i
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/include/cons_def.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/cons_out.h ${PREFIX}/include
 	${MKDIR} ${EXAMPLESDIR}
 .for i in Config Startup System
 	${MKDIR} ${EXAMPLESDIR}/$i
