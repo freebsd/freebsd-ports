@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	orc
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	devel
 MASTER_SITES=	http://code.entropywave.com/download/orc/
 
@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--disable-gtk-doc
 
-SUBDIRS=	orc orc-float orc-pixel orc-test tools
+SUBDIRS=	orc orc-float orc-test tools
 
 OPTIONS=	DOCS "Include gtk-doc documentation" off \
 		EXAMPLES "Install example files" off
