@@ -31,6 +31,11 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 MAKE_ENV+=	DATADIR="${DATADIR}" MAKE="${GMAKE}"
 MAKE_JOBS_UNSAFE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|png_infopp_NULL|NULL|g' \
+		${WRKSRC}/win/vultures/util/tiletrans.c
+
 pre-configure:
 	@${CHMOD} 755 ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 

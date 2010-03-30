@@ -39,5 +39,8 @@ post-configure:
 	@${REINPLACE_CMD} -e \
 		's|#include <SDL_image.h>||g' \
 		${WRKSRC}/win/vultures/vultures_gfl.c
+	@${REINPLACE_CMD} -e \
+		's|png_infopp_NULL|NULL|g' \
+		${WRKSRC}/win/vultures/util/tiletrans.c
 
 .include <bsd.port.mk>
