@@ -48,6 +48,10 @@ CONFIGURE_ENV+=	WX_CONFIG="${WX_CONFIG}"
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
+post-patch:
+	${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|' \
+		${WRKSRC}/src/_png.cpp
+
 .if !defined(NOPORTEXAMPLES)
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
