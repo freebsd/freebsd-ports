@@ -1,0 +1,30 @@
+bin/xsw
+bin/xsw2jpeg
+bin/xsw2pdf
+bin/xsw2png
+bin/xswconv
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/REFERENCE
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/xsw.vim
+%%DATADIR%%/VeraBd.ttf
+%%DATADIR%%/VeraMono.ttf
+%%DATADIR%%/VeraSeBd.ttf
+%%DATADIR%%/camera.png
+%%DATADIR%%/invalid.png
+%%DATADIR%%/tutorial/back.jpg
+%%DATADIR%%/tutorial/bg.jpg
+%%DATADIR%%/tutorial/bgblack.png
+%%DATADIR%%/tutorial/bggrad.png
+%%DATADIR%%/tutorial/bgolive.png
+%%DATADIR%%/tutorial/lake.jpg
+%%DATADIR%%/tutorial/tutorial.xsw
+%%DATADIR%%/tutorial/tutorial.xsw.in
+%%DATADIR%%/tutorial/tux.png
+@dirrm %%DATADIR%%/tutorial
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
