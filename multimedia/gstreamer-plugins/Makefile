@@ -3,12 +3,12 @@
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/multimedia/gstreamer-plugins/Makefile,v 1.118 2009/11/17 19:08:45 kwm Exp $
+#   $MCom: ports/multimedia/gstreamer-plugins/Makefile,v 1.125 2010/03/16 19:33:10 mezz Exp $
 #
 
 PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
-PORTREVISION?=	2
+PORTREVISION?=	0
 PORTEPOCH=	3
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
@@ -24,14 +24,14 @@ PKGNAMESUFFIX=	-plugins${GST_PLUGIN_SUFFIX}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
 
-BUILD_DEPENDS+=	v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt \
 		oil-0.3.0:${PORTSDIR}/devel/liboil
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 
-BASE_PORTVERSION=	0.10.25
+BASE_PORTVERSION=	0.10.28
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
 BAD_PORTVERSION=	0.10.17
@@ -55,6 +55,7 @@ USE_GNOME+=	gnomehack gnometarget pkgconfig ltverhack ltasneededhack
 USE_AUTOTOOLS=	libtool:22
 GST_PLUGIN?=	base
 
+CONFIGURE_ARGS=	--disable-option-checking
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${EXTRA_LIBS} ${PTHREAD_LIBS}"
@@ -132,6 +133,8 @@ post-patch:
 	's|$$(top_builddir)/gst-libs/gst/tag/libgsttag-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgsttag-@GST_MAJORMINOR@.la|; \
 	s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstaudio-@GST_MAJORMINOR@.la|; \
 	s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstriff-@GST_MAJORMINOR@.la|; \
+	s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstsignalprocessor-@GST_MAJORMINOR@.la|; \
+	s|$$(top_builddir)/gst-libs/gst/video/libgstvideo-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstvideo-@GST_MAJORMINOR@.la|; \
 	s|$$(top_builddir)/gst-libs/gst/cdda/libgstcdda-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstcdda-@GST_MAJORMINOR@.la|'
 	@${FIND} ${WRKSRC} -type f | \
 	${XARGS} -n 10 ${REINPLACE_CMD} -e \
@@ -143,6 +146,8 @@ post-patch:
 	 's|$$(top_builddir)/gst-libs/gst/tag/libgsttag-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgsttag-@GST_MAJORMINOR@.la|; \
 	  s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstaudio-@GST_MAJORMINOR@.la|; \
 	  s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstriff-@GST_MAJORMINOR@.la|; \
+	  s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstsignalprocessor-@GST_MAJORMINOR@.la|; \
+	  s|$$(top_builddir)/gst-libs/gst/video/libgstvideo-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstvideo-@GST_MAJORMINOR@.la|; \
 	  s|$$(top_builddir)/gst-libs/gst/cdda/libgstcdda-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstcdda-@GST_MAJORMINOR@.la|'
 	@${REINPLACE_CMD} -e 's|DEFAULT_AUDIOSINK="alsasink"|DEFAULT_AUDIOSINK="${DEFAULT_AUDIOSINK}"|; \
 		s|DEFAULT_AUDIOSRC="alsasrc"|DEFAULT_AUDIOSRC="${DEFAULT_AUDIOSRC}"|' \
