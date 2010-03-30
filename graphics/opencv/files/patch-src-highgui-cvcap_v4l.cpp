@@ -8,3 +8,13 @@
  #include <assert.h>
  #include <sys/stat.h>
  #include <sys/ioctl.h>
+@@ -646,8 +646,7 @@
+
+ static void v4l2_scan_controls(CvCaptureCAM_V4L* capture)
+ {
+-
+-  __u32 ctrl_id;
++   uint32_t ctrl_id;
+
+   for (ctrl_id = V4L2_CID_BASE;
+        ctrl_id < V4L2_CID_LASTP1;
