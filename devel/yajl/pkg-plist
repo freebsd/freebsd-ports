@@ -1,0 +1,10 @@
+bin/json_reformat
+bin/json_verify
+include/yajl/yajl_common.h
+include/yajl/yajl_gen.h
+include/yajl/yajl_parse.h
+lib/libyajl.so
+lib/libyajl.so.1
+lib/libyajl.so.1.0.9
+lib/libyajl_s.a
+@dirrm include/yajl
