@@ -19,6 +19,7 @@ share/locale/ca/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+share/locale/el/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/eu/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
@@ -30,8 +31,8 @@ share/locale/it/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
-share/locale/ms/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/mt/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+share/locale/ms/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/or/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
@@ -39,6 +40,7 @@ share/locale/pl/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/pt_BR/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
+share/locale/sl/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
