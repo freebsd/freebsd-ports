@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}
 USE_LDCONFIG=	yes
+USE_GNOME=	pkgconfig
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
