@@ -53,7 +53,8 @@ pre-patch:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|pkg_config_args --cflags|pkg_config_args pangox --cflags|g ; \
-		s|pkg_config_args --libs|pkg_config_args pangox --libs|g' \
+		s|pkg_config_args --libs|pkg_config_args pangox --libs|g ; \
+		s|png_check_sig|png_sig_cmp|g' \
 			${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
