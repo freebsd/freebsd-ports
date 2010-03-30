@@ -29,9 +29,6 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|LIBPNG_CONFIG --cflags|PKG_CONFIG --cflags libpng12|g ; \
-		 s|LIBPNG_CONFIG --ldflags|PKG_CONFIG --libs libpng12|g'
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|desktop||g' ${WRKSRC}/Makefile.in
 
 post-install:
