@@ -66,6 +66,10 @@ BROKEN=		does not build on 6.x
 post-extract:
 	${MKDIR} ${WRKSRC}
 
+post-patch:
+	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${PATCH_WRKSRC}/VTK/IO/vtkPNGReader.cxx
+
 post-install:
 .for c2f in ${CMAKE2INST}
 	${SED} -e 's|${WRKSRC}|${LIB_INSTDIR}|g' \
