@@ -11,7 +11,7 @@
 #					compiling/linking
 #					Default: not set
 # CMAKE_BUILD_TYPE	- Type of build (cmake predefined build types),
-#					affects on CFALGS and thus should not be set.
+#					affects on CFLAGS and thus should not be set.
 #					Default: none (which respects CFLAGS)
 # CMAKE_VERBOSE		- Verbose build
 #					Default: not set
