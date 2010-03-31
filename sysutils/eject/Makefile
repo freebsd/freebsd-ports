@@ -7,7 +7,7 @@
 
 PORTNAME=	eject
 PORTVERSION=	1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 		ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
@@ -21,6 +21,9 @@ PORTDOCS=	README README-J
 
 MAN1=		eject.1
 MANCOMPRESSED=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's,4555,555,' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
