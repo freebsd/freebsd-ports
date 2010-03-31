@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	swi-pl
-PORTVERSION=	5.6.64
-PORTREVISION=	2
+PORTVERSION=	5.8.3
 CATEGORIES=	lang
-MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/ \
-		ftp://ftp.swi.psy.uva.nl/SWI-Prolog/
+MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	pl-${PORTVERSION}
 
 MAINTAINER=	g.gonter@ieee.org
@@ -30,7 +28,7 @@ CONFLICTS=	slffea-[0-9]* TenDRA-[0-9]*
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-XPCE_VER=	6.6.64
+XPCE_VER=	6.6.66
 
 MAN1=		pl.1 plrc.1 plld.1 xpce-client.1 xpce.1
 MANCOMPRESSED=	no
