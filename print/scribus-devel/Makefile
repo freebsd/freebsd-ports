@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.3.3.13
-PORTREVISION=	4
+PORTVERSION=	1.3.3.14
 CATEGORIES=	print editors
 MASTER_SITES=	SF \
 		http://www.scribus.net/downloads/${PORTVERSION}/
