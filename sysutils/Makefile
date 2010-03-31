@@ -587,6 +587,7 @@
     SUBDIR += p5-reslog
     SUBDIR += paicc
     SUBDIR += pax-utils
+    SUBDIR += pbreg
     SUBDIR += pcfclock
     SUBDIR += pciutils
     SUBDIR += pdixtract
