@@ -44,21 +44,22 @@ TARGET=		FreeBSD4
 TARGET=		FBSD_SPARC64
 .endif
 
-.if defined(WITHOUT_X11) || ${ARCH} == "amd64"
+.if defined(WITHOUT_X11)
 M3FLAGS+=	-DNOGUI
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/tcp/${TARGET}/libm3tcp.a:${PORTSDIR}/lang/ezm3
 PKGNAMESUFFIX=	-without-gui
 COMMENT+=	(non-GUI version)
 DESCR=		${PKGDIR}/pkg-descr.nogui
 CONFLICTS=	cvsup-[0-9]*
-.if !defined(WITHOUT_X11) && ${ARCH} == "amd64"
-NO_LATEST_LINK=	yes
-.endif
+.else
+.if ${ARCH} == "amd64"
+IGNORE=		does not support GUI on amd64, please disable X11 option or use net/cvsup-without-gui instead
 .else
 USE_XORG+=	oldx dmx pixman xaw 
 COMMENT+=	(GUI version)
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/formsvbt/${TARGET}/libm3formsvbt.a:${PORTSDIR}/lang/ezm3
 CONFLICTS=	cvsup-without-gui-[0-9]*
+.endif
 .endif
 
 MAKE_ARGS+=	PREFIX=${PREFIX} M3FLAGS="${M3FLAGS}"
