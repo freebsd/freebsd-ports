@@ -1,0 +1,24 @@
+#! /bin/sh
+#
+
+# PROVIDE: nfsen
+# REQUIRE: sshd
+# KEYWORD: shutdown
+#
+nfsen_enable=${nfsen_enable-"NO"}
+#nfsen_flags=${nfsen_flags-""}
+
+. /etc/rc.subr
+
+name="nfsen"
+rcvar=`set_rcvar`
+load_rc_config $name
+command="/usr/local/bin/nfsen"
+start_cmd="/usr/local/bin/nfsen start"
+stop_cmd="/usr/local/bin/nfsen stop"
+reload_cmd="/usr/local/bin/nfsen reconfig"
+status_cmd="/usr/local/bin/nfsen status"
+
+extra_commands="reload"
+
+run_rc_command "$1"

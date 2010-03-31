@@ -7,6 +7,7 @@
 
 PORTNAME=	nfsen
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 		http://nfsen.sourceforge.net/
@@ -24,7 +25,7 @@ USE_PERL5=	yes
 USE_PHP=	session pcre sockets
 NO_BUILD=	yes
 PLIST_SUB+=	PORTNAME=${PORTNAME}
-USE_RC_SUBR=	nfsen.sh
+USE_RC_SUBR=	nfsen
 
 .if defined(PACKAGE_BUILDING)
 IGNORE=		needs running syslogd
@@ -35,6 +36,7 @@ post-patch:
 		${WRKSRC}/etc/nfsen-dist.conf
 	@${RM} ${WRKSRC}/etc/nfsen-dist.conf.*
 	@${REINPLACE_CMD} -e 's,%%PERL%%,${PERL},' -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/install.pl
+	@${RM} ${WRKSRC}/libexec/NfSenRRD.pm.orig
 
 do-install:
 	@${MKDIR} ${PREFIX}/var/${PORTNAME}/profiles/live
