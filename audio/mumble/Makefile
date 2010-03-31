@@ -30,13 +30,12 @@ USE_XORG=	ice
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-MAKE_JOBS_SAFE=	yes
-
 CONFIG=		no-server no-alsa no-speechd no-bundled-speex no-bundled-celt no-update \
-		no-g15 no-portaudio no-pulseaudio no-xevie no-11x
+		no-g15 no-portaudio no-pulseaudio no-xevie
 
 OPTIONS=	DBUS "Enable D-Bus support" on \
 		BONJOUR "Enable Bonjour support" off \
+		MUMBLE11X "Enable mumble 1.1 support" off \
 
 MAN1=		mumble.1
 
@@ -58,6 +57,13 @@ CONFIG+=	no-bonjour
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 .endif
 
+.if defined(WITHOUT_MUMBLE11X)
+CONFIG+=	no-11x
+PLIST_SUB+=	MUMBLE11X="@comment "
+.else
+PLIST_SUB+=	MUMBLE11X=""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
 
@@ -66,6 +72,9 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/mumble ${PREFIX}/bin
+.if !defined(WITHOUT_MUMBLE11X)
+	${INSTALL_PROGRAM} ${WRKSRC}/release/mumble11x ${PREFIX}/bin
+.endif
 	${MKDIR} ${PREFIX}/share/services
 	${INSTALL_DATA} ${WRKSRC}/scripts/mumble.protocol ${PREFIX}/share/services
 	${MKDIR} ${PREFIX}/share/applications
