@@ -4349,3 +4349,4 @@ x11-drivers/xf86-input-summa||2010-03-27|Unmaintained upstream. Notify x11 Maint
 x11-drivers/xf86-input-tek4957||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
 audio/ym2wav|audio/stymulator|2010-03-27|ym2wav is now part of stymulator
 www/trac-webadmin||2010-03-30|Incorporated to www/trac
+audio/gstreamer-plugins-ivorbis|audio/gstreamer-plugins-vorbis|2010-03-30|ivorbis plugin got merged into the vorbis plugin.

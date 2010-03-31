@@ -30,7 +30,6 @@ BAD_GST_ALL_PLUGINS+= \
 		faad \
 		gme \
 		gsm \
-		ivorbis \
 		jack \
 		jp2k \
 		kate \
@@ -73,7 +72,6 @@ GOOD_GST_ALL_PLUGINS+= \
 		gdk_pixbuf \
 		hal \
 		jpeg \
-		ladspa \
 		libcaca \
 		libpng \
 		pulse \
@@ -279,12 +277,6 @@ gst_gsm_PLIST_FILES=	${GST_LIB_DIR}/libgstgsm.la \
 		${GST_LIB_DIR}/libgstgsm.so
 gst_gsm_DIST=	bad
 
-# ivorbis
-gst_ivorbis_LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
-gst_ivorbis_PLIST_FILES=	${GST_LIB_DIR}/libgstivorbis.la \
-		${GST_LIB_DIR}/libgstivorbis.so
-gst_ivorbis_DIST=	bad
-
 # hal
 gst_hal_LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 gst_hal_PLIST_FILES=	${GST_LIB_DIR}/libgsthalelements.la \
@@ -305,6 +297,7 @@ gst_jpeg_PLIST_FILES=	${GST_LIB_DIR}/libgstjpeg.la \
 gst_ladspa_BUILD_DEPENDS+=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 gst_ladspa_PLIST_FILES=		${GST_LIB_DIR}/libgstladspa.la \
 				${GST_LIB_DIR}/libgstladspa.so
+gst_ladspa_DIST=	bad
 
 # lame
 gst_lame_LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
@@ -373,7 +366,11 @@ gst_nas_PLIST_FILES=	${GST_LIB_DIR}/libgstnassink.la \
 		${GST_LIB_DIR}/libgstnassink.so
 
 # neon
+.if exists(${LOCALBASE}/lib/libneon.so.29)
+gst_neon_LIB_DEPENDS+=	neon.29:${PORTSDIR}/www/neon29
+.else
 gst_neon_LIB_DEPENDS+=	neon.28:${PORTSDIR}/www/neon28
+.endif
 gst_neon_CONFIGURE_ENV+=	NEON_CFLAGS="-I${LOCALBASE}/include/neon"
 gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.la \
 			${GST_LIB_DIR}/libgstneonhttpsrc.so

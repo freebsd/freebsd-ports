@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100330:
+  AFFECTS: users of gstreamer-plugins-bad and gstreamer-plugins-good
+  AUTHOR: kwm@FreeBSD.org
+
+  Plugin moved from the -bad port to the -good port. Please use the instruction
+  below before running the normal update steps.
+
+  If you use portmaster:
+
+        portmaster gstreamer-plugins-bad
+
+  If you use portupgrade:
+
+        portupgrade -R multimedia/gstreamer-plugins-bad
+
+
 20100328:
   AFFECTS: users of graphics/png
   AUTHOR: dinoex@FreeBSD.org
