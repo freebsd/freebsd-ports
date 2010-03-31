@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	irssi-fish
-DISTVERSION=	0.99
-PORTREVISION=	2
+DISTVERSION=	1.00-RC5
 CATEGORIES=	irc security
-MASTER_SITES=	http://fish.sekure.la/irssi/
+MASTER_SITES=	http://fish.secure.la/irssi/
 DISTNAME=	FiSH-irssi.v${DISTVERSION}-source
 
 MAINTAINER=	wahjava@gmail.com
@@ -34,6 +33,8 @@ ALL_TARGET=	amd64
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -E -e 's|||' {} \;
+	@${GREP} -Rl 'fish[.]sekure[.]us' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -E \
+		-e 's|fish[.]sekure[.]us|fish.secure.la|g'
 	@${REINPLACE_CMD} -E \
 		-e 's|gcc|${CC}|' \
 		-e 's|-O2|${CFLAGS}|' \
