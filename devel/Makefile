@@ -40,6 +40,7 @@
     SUBDIR += antlrworks
     SUBDIR += apache-ant
     SUBDIR += apr
+    SUBDIR += arduino
     SUBDIR += argouml
     SUBDIR += argp-standalone
     SUBDIR += argtable

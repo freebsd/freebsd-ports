@@ -1,0 +1,20 @@
+
+Notes on using the Arduino IDE:
+
+To allow serial port locking, add your user to the dialer group:
+    pw usermod myuser -G dialer
+
+User settings are in ~/.arduino/preferences.txt.  Edit the file
+when the IDE is not running.
+
+Setting the launcher for help files:
+    launcher=firefox
+
+Showing what the IDE is doing for build and upload commands (only
+visible if you started the IDE from a console):
+    build.verbose=true
+    upload.verbose=true
+
+To start the IDE:
+    %%PREFIX%%/bin/arduino
+
