@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	i3
-DISTVERSION=	3.d
+DISTVERSION=	3.e
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3.zekjur.net/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -17,7 +17,8 @@ COMMENT=	An improved dynamic tiling window manager
 
 LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb \
 		xcb-event.1:${PORTSDIR}/x11/xcb-util \
-		ev.3:${PORTSDIR}/devel/libev
+		ev.3:${PORTSDIR}/devel/libev \
+		yajl.1:${PORTSDIR}/devel/yajl
 
 USE_XORG=	x11
 USE_BISON=	yes
@@ -34,7 +35,9 @@ PLIST_FILES=	bin/i3 \
 		etc/i3/welcome
 PLIST_DIRS=	etc/i3
 
-MAN1=	i3.1
+MAN1=	i3.1 \
+	i3-msg.1 \
+	i3-input.1
 
 .include <bsd.port.pre.mk>
 
@@ -65,7 +68,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/etc/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/config.sample ${PREFIX}/etc/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/welcome ${PREFIX}/etc/${PORTNAME}/welcome
-	${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}-msg.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}-input.1 ${MANPREFIX}/man/man1
 
 	@${ECHO_MSG} "======================================================================================"
 	@${ECHO_MSG} ""
