@@ -19,7 +19,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A traditional chinese input utility in X
 
 CONFLICTS=	zh-gcin-devel-[0-9]*
-LATEST_LINK=	yes
 
 USE_BZIP2=	YES
 HAS_CONFIGURE=	YES
