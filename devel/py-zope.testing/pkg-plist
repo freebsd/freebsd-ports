@@ -40,9 +40,9 @@ bin/zope-testrunner
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/module.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/module.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/module.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/renormalizing.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/renormalizing.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/renormalizing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/renormalizing/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/renormalizing/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/renormalizing/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/server.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/server.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/server.pyo
@@ -412,6 +412,7 @@ bin/zope-testrunner
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/tests.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/doctest
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/renormalizing
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-ex/sample1/sample11
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-ex/sample1/sample12
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/testing/testrunner/testrunner-ex/sample1/sample13
