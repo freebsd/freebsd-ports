@@ -59,7 +59,7 @@ _USE_GSTREAMER10_ALL=	a52dec aalib annodex bz2 cairo cdaudio cdparanoia dts \
 			libcaca libmms libpng libvisual mm mp3 mpeg2enc mpeg2dec \
 			musepack nas neon ogg pango pulse python sdl shout2 sidplay \
 			sndfile spc soundtouch soup speex taglib \
-			theora vorbis wavpack x264 xvid
+			theora v4l2 vorbis wavpack x264 xvid
 
 # other plugins
 OTHER_GSTREAMER_PLUGINS+=bad good ugly core yes ${_USE_GSTREAMER10_ALL} fluendo-mp3 mad
@@ -211,6 +211,8 @@ mpeg2dec_DEPENDS=	multimedia/gstreamer-plugins-mpeg2dec
 mpeg2enc_DEPENDS=	multimedia/gstreamer-plugins-mpeg2enc
 
 mplex_DEPENDS=	multimedia/gstreamer-plugins-mplex
+
+v4l2_DEPENDS=	multimedia/gstreamer-plugins-v4l2
 
 # XXX: This is a quick solution for ports with USE_GSTREAMER=python
 #      but without USE_PYTHON.
