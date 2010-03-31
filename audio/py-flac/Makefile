@@ -18,6 +18,8 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 IGNORE=		has been abandoned, needs rewrite for FLAC 1.1.3+
+DEPRECATED=	has been marked IGNORE for past 24 months
+EXPIRATION_DATE=2010-04-30
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
