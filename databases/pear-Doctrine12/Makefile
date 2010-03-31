@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Doctrine
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pear.phpdoctrine.org/get/ \
 		LOCAL/glarkin
@@ -23,7 +23,7 @@ OPTIONS=	DBLIB "Install PHP DBO driver for DBLIB" Off \
 		SQLITE "Install PHP DBO driver for SQLite" Off
 
 CATEGORY=	${PORTNAME}
-CHANNEL=	pear.phpdoctrine.org
+CHANNEL=	pear.doctrine-project.org
 MANUAL_PACKAGE_BUILD=	attempts to contact ${CHANNEL} during installation
 
 SUB_FILES=	pear-deinstall pear-install
@@ -70,6 +70,7 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/Doctrine/Adapter/Oracle.php \
 		lib/Doctrine/Adapter/Statement.php \
 		lib/Doctrine/AuditLog/Listener.php \
+		lib/Doctrine/AuditLog/Listener/Microtime.php \
 		lib/Doctrine/Cache/Apc.php \
 		lib/Doctrine/Cache/Array.php \
 		lib/Doctrine/Cache/Db.php \
@@ -394,10 +395,14 @@ FILES=		lib/Doctrine/Adapter/Statement/Interface.php \
 		lib/vendor/sfYaml/sfYamlParser.php \
 		lib/Doctrine.php
 TESTS=		Cache/Query/SqliteTestCase.php \
+		Cache/AbstractTestCase.php \
 		Cache/ApcTestCase.php \
+		Cache/ArrayTestCase.php \
+		Cache/DbTestCase.php \
 		Cache/MemcacheTestCase.php \
 		Cache/QuerySqliteTestCase.php \
 		Cache/SqliteTestCase.php \
+		Cache/XcacheTestCase.php \
 		CliTestCase/testLoadtasksLoadsDoctrineStyleTasksFromTheSpecifiedDirectory/DoctrineStyleTask.php \
 		CliTestCase/testLoadtasksLoadsDoctrineStyleTasksFromTheSpecifiedDirectory/EmptyFile.php \
 		CliTestCase/testLoadtasksLoadsDoctrineStyleTasksFromTheSpecifiedDirectory/InvalidClassNameForATask.php \
@@ -998,6 +1003,7 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Ticket/DC24TestCase.php \
 		Ticket/DC25TestCase.php \
 		Ticket/DC28TestCase.php \
+		Ticket/DC36TestCase.php \
 		Ticket/DC39TestCase.php \
 		Ticket/DC56TestCase.php \
 		Ticket/DC57TestCase.php \
@@ -1028,8 +1034,11 @@ TESTS=		Cache/Query/SqliteTestCase.php \
 		Ticket/DC267TestCase.php \
 		Ticket/DC276TestCase.php \
 		Ticket/DC292TestCase.php \
+		Ticket/DC300TestCase.php \
 		Ticket/DC302TestCase.php \
 		Ticket/DC317TestCase.php \
+		Ticket/DC437TestCase.php \
+		Ticket/DC521TestCase.php \
 		Ticket/NewTicketTestCase.php \
 		Ticket/NjeroTestCase.php \
 		Transaction/MssqlTestCase.php \
