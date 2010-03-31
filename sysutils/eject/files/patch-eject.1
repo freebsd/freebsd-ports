@@ -1,5 +1,5 @@
---- eject.1.orig	Tue Jul 19 13:43:50 2005
-+++ eject.1	Tue Jul 19 13:26:55 2005
+--- eject.1.orig	2000-09-24 10:12:50.000000000 -0300
++++ eject.1	2010-03-19 23:02:03.000000000 -0300
 @@ -39,7 +39,12 @@
  is a program to eject removable media from drive.
  The
@@ -14,3 +14,12 @@
  .Nm eject
  unmounts the
  .Ar device
+@@ -53,6 +58,8 @@
+ Not execute operation but print it.
+ .It Fl v
+ Verbose mode.
++.It Fl t
++Give drive tray close command.
+ .Sh ENVIRONMENT
+ If the following environment variable exists, it is used by
+ .Nm eject :
