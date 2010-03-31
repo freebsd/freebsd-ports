@@ -1,0 +1,3 @@
+#!/bin/sh
+# wrapper to execute the Arduino start script
+%%PREFIX%%/%%PORTNAME%%/arduino %%PREFIX%%/%%PORTNAME%%
