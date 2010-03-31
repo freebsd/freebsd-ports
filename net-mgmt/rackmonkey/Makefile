@@ -7,7 +7,7 @@
 
 PORTNAME=	rackmonkey
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -54,10 +54,10 @@ do-install:
 	cd ${WRKSRC}/www && ${COPYTREE_SHARE} \* ${WWWDIR}/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} tmpl ${WWWDIR}/
 	cd ${WRKSRC}/perl && ${COPYTREE_SHARE} RackMonkey ${WWWDIR}/
+	${MKDIR} ${WRKDIR}/build_conf; \
+	${CP} ${WRKSRC}/conf/rackmonkey.conf-default ${WRKDIR}/build_conf/rackmonkey.conf; \
 	if [ "${WITH_SQLITE}" ]; then \
 		${ECHO} "Building with SQLite............."; \
-		${MKDIR} ${WRKDIR}/build_conf; \
-		${CP} ${WRKSRC}/conf/rackmonkey.conf-default ${WRKDIR}/build_conf/rackmonkey.conf; \
 		${SED} -i '' -e 's%dbconnect =%dbconnect = dbi:SQLite:dbname=${WWWDIR}/rackmonkey.db%' ${WRKDIR}/build_conf/rackmonkey.conf; \
 		if [ "${WITH_INIT_DB}" ]; then \
 			if [ -e "${WWWDIR}/rackmonkey.db" ]; then \
