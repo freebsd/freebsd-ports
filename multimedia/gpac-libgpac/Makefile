@@ -7,7 +7,7 @@
 
 PORTNAME=	gpac
 PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/GPAC/GPAC%20${PORTVERSION}
@@ -27,12 +27,22 @@ BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${WRKSRC}/bin/gcc
 LIBVER=	1
 
-OPTIONS=	IPV6	"IPv6 support"		on \
-		OPENGL	"OpenGL support"	on
+OPTIONS=	IPV6 "IPv6 support"		on \
+		JPEG "JPEG support"		on \
+		OPENGL "OpenGL support"		on \
+		OPENSSL "OpenSSL support"	on \
+		PNG "PNG support"		on
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=	--cc="${CC}" --X11-path="${X11BASE}" \
 		--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}" \
-		--enable-pic
+		--enable-pic \
+		--use-js=no --use-a52=no --use-faad=no --use-ffmpeg=no \
+		--use-ft=no --use-mad=no --use-ogg=no \
+		--use-openjpeg=no --use-theora=no --usr-vorbis=no
+
 CONFIGURE_ENV+=	LIBVER="${LIBVER}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
@@ -41,17 +51,34 @@ CONFIGURE_ENV+=	LIBVER="${LIBVER}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
+.if !defined(WITHOUT_JPEG)
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+CONFIGURE_ARGS+=	--use-jpeg=local
+.else
+CONFIGURE_ARGS+=	--use-jpeg=no
+.endif
+
 .if defined(WITHOUT_OPENGL)
 CONFIGURE_ARGS+=	--disable-opengl
 .else
 USE_GL=		gl glu
 .endif
 
+.if !defined(WITHOUT_OPENSSL)
+USE_OPENSSL=	yes
+.else
+CONFIGURE_ARGS+=	--disable-ssl
+.endif
+
+.if !defined(WITHOUT_PNG)
+LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
+CONFIGURE_ARGS+=	--use-png=local
+.else
+CONFIGURE_ARGS+=	--use-png=no
+.endif
+
 post-patch:
 	${CHMOD} +x ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|#define _LARGEFILE64_SOURCE||g' \
-		${WRKSRC}/include/gpac/setup.h
-	${RM} ${WRKSRC}/include/gpac/setup.h.bak
 
 do-install:
 	${MKDIR} ${PREFIX}/include/gpac
