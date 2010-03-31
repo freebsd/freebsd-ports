@@ -1081,6 +1081,7 @@
     SUBDIR += p5-AnyEvent
     SUBDIR += p5-AnyEvent-AIO
     SUBDIR += p5-AnyEvent-DBI
+    SUBDIR += p5-AnyEvent-DBI-Abstract
     SUBDIR += p5-App-CLI
     SUBDIR += p5-App-CLI-Extension
     SUBDIR += p5-App-Cache
