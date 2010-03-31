@@ -7957,6 +7957,7 @@ libsigc++20                     ports/devel/libsigc++20
 libsigcx                        ports/devel/libsigcx
 libsigsegv                      ports/devel/libsigsegv
 libslang2                       ports/devel/libslang2
+libsmf                          ports/audio/libsmf
 libsmi                          ports/net-mgmt/libsmi
 libsndfile                      ports/audio/libsndfile
 libsocket++                     ports/net/libsocket++
@@ -12547,6 +12548,7 @@ p5-Math-Round                   ports/math/p5-Math-Round
 p5-Math-Round-Var               ports/math/p5-Math-Round-Var
 p5-Math-Sequence                ports/math/p5-Math-Sequence
 p5-Math-Series                  ports/math/p5-Math-Series
+p5-Math-SigFigs                 ports/math/p5-Math-SigFigs
 p5-Math-SimpleVariable          ports/math/p5-Math-SimpleVariable
 p5-Math-Spline                  ports/math/p5-Math-Spline
 p5-Math-Symbolic                ports/math/p5-Math-Symbolic
@@ -16286,6 +16288,7 @@ p5-math-round                   ports/math/p5-Math-Round
 p5-math-round-var               ports/math/p5-Math-Round-Var
 p5-math-sequence                ports/math/p5-Math-Sequence
 p5-math-series                  ports/math/p5-Math-Series
+p5-math-sigfigs                 ports/math/p5-Math-SigFigs
 p5-math-simplevariable          ports/math/p5-Math-SimpleVariable
 p5-math-spline                  ports/math/p5-Math-Spline
 p5-math-symbolic                ports/math/p5-Math-Symbolic
@@ -23570,7 +23573,6 @@ trac-tocmacro                   ports/www/trac-tocmacro
 trac-tweakui                    ports/www/trac-tweakui
 trac-vote                       ports/www/trac-vote
 trac-wantedpages                ports/www/trac-wantedpages
-trac-webadmin                   ports/www/trac-webadmin
 trac-wikigoodies                ports/www/trac-wikigoodies
 trac-wikinegotiator             ports/www/trac-wikinegotiator
 trac-wikinotification           ports/www/trac-wikinotification
@@ -25599,6 +25601,7 @@ yagf                            ports/graphics/yagf
 yagiuda                         ports/comms/yagiuda
 yahoo-ui                        ports/www/yahoo-ui
 yahtzee                         ports/games/yahtzee
+yajl                            ports/devel/yajl
 yakuake                         ports/x11/yakuake
 yakuake-kde4                    ports/x11/yakuake-kde4
 yale-tftpd                      ports/ftp/yale-tftpd
