@@ -145,6 +145,9 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/e164.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/e164.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/e164.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/edns.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/edns.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/edns.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/entropy.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/entropy.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/entropy.pyo
@@ -211,6 +214,12 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/DNSKEY.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/DNSKEY.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/DNSKEY.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/HIP.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/HIP.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/HIP.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/DLV.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/DLV.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/DLV.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/DS.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/DS.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/DS.pyo
@@ -238,6 +247,12 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NSEC.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NSEC.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NSEC.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NSEC3.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NSEC3.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NSEC3.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NSEC3PARAM.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NSEC3PARAM.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NSEC3PARAM.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NXT.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NXT.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY/NXT.pyo
@@ -316,6 +331,9 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/__init__.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/dsbase.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/dsbase.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/dsbase.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/keybase.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/keybase.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/keybase.pyo
@@ -421,9 +439,6 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/linkparse.py
 %%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/linkparse.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/linkparse.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/titleparse.py
-%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/titleparse.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/htmlutil/titleparse.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/httplib2.py
 %%PYTHON_SITELIBDIR%%/linkcheck/httplib2.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/httplib2.pyo
@@ -484,9 +499,6 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.py
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/msgfmt.py
-%%PYTHON_SITELIBDIR%%/linkcheck/msgfmt.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/msgfmt.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/network/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/network/__init__.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/network/__init__.pyo
@@ -512,6 +524,9 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/url.py
 %%PYTHON_SITELIBDIR%%/linkcheck/url.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/url.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/winutil.py
+%%PYTHON_SITELIBDIR%%/linkcheck/winutil.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/winutil.pyo
 @dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/network
