@@ -19,7 +19,7 @@ MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
 		${MASTER_SITE_LOCAL:S|$|ahze/:good|} \
 		${MASTER_SITE_LOCAL:S|$|ahze/:bad|} \
 		${MASTER_SITE_LOCAL:S|$|ahze/:ugly|}
-PKGNAMESUFFIX=	-plugins${GST_PLUGIN_SUFFIX}
+PKGNAMESUFFIX?=	-plugins${GST_PLUGIN_SUFFIX}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
@@ -37,7 +37,7 @@ BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
 BAD_PORTVERSION=	0.10.18
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	0.10.17
+GOOD_PORTVERSION=	0.10.21
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
 UGLY_PORTVERSION=	0.10.14
@@ -151,6 +151,7 @@ post-patch:
 	  s|$$(top_builddir)/gst-libs/gst/cdda/libgstcdda-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstcdda-@GST_MAJORMINOR@.la|'
 	@${REINPLACE_CMD} -e 's|DEFAULT_AUDIOSINK="alsasink"|DEFAULT_AUDIOSINK="${DEFAULT_AUDIOSINK}"|; \
 		s|DEFAULT_AUDIOSRC="alsasrc"|DEFAULT_AUDIOSRC="${DEFAULT_AUDIOSRC}"|' \
+		-e 's|libpng12.pc|libpng14.pc|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

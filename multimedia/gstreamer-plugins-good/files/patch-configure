@@ -1,6 +1,6 @@
---- configure.orig	2008-08-10 13:30:19.813061935 -0500
-+++ configure	2008-08-10 13:29:56.315341694 -0500
-@@ -32905,7 +32905,7 @@
+--- configure.orig	2010-02-11 17:29:54.000000000 +0100
++++ configure	2010-02-11 17:34:38.000000000 +0100
+@@ -24271,7 +24271,7 @@ if test "${with_default_audiosink+set}" 
  
  else
  
@@ -8,3 +8,22 @@
 +	DEFAULT_VISUALIZER="$DEFAULT_VISUALIZER"
  
  fi
+ 
+@@ -26653,6 +26653,8 @@ $as_echo_n "checking Checking for up to 
+ #ifdef __sun /* Solaris */
+ #include <sys/types.h>
+ #include <sys/videodev2.h>
++#elif __FreeBSD__
++#include <linux/videodev2.h>
+ #else /* Linux */
+ #include <linux/types.h>
+ #define _LINUX_TIME_H
+@@ -26726,6 +26728,8 @@ $as_echo_n "checking struct v4l2_buffer 
+ #ifdef __sun /* Solaris */
+ #include <sys/types.h>
+ #include <sys/videodev2.h>
++#elif __FreeBSD__
++#include <linux/videodev2.h>
+ #else /* Linux */
+ #include <linux/types.h>
+ #define _LINUX_TIME_H

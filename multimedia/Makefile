@@ -103,6 +103,7 @@
     SUBDIR += gstreamer-plugins-mpeg2enc
     SUBDIR += gstreamer-plugins-theora
     SUBDIR += gstreamer-plugins-ugly
+    SUBDIR += gstreamer-plugins-v4l2
     SUBDIR += gstreamer-plugins-x264
     SUBDIR += gstreamer-plugins-xvid
     SUBDIR += gstreamermm

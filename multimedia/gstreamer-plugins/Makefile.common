@@ -80,6 +80,7 @@ GOOD_GST_ALL_PLUGINS+= \
 		soup \
 		speex \
 		taglib \
+		gst_v4l2 \
 		wavpack
 
 # ugly
@@ -131,7 +132,6 @@ CONFIGURE_ARGS+=--disable-tests \
 		--disable-osx_video \
 		--disable-directdrawsink \
 		--disable-directsoundsink \
-		--disable-v4l2src \
 		--disable-tarkin \
 		--enable-static \
 		--disable-sunaudio \
@@ -455,6 +455,15 @@ gst_theora_LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 gst_theora_PLIST_FILES=		${GST_LIB_DIR}/libgsttheora.la \
 		${GST_LIB_DIR}/libgsttheora.so
 gst_theora_DIST=	base
+
+# gst_v4l2
+gst_gst_v4l2_LIB_DEPENDS+=	v4l2.0:${PORTSDIR}/multimedia/libv4l
+gst_gst_v4l2_RUN_DEPENDS+=	webcamd:${PORTSDIR}/multimedia/webcamd
+gst_gst_v4l2_PLIST_FILES=	${GST_LIB_DIR}/libgstvideo4linux2.la \
+		${GST_LIB_DIR}/libgstvideo4linux2.so
+gst_gst_v4l2_CONFIGURE_ARGS+=	--enable-gst_v4l2
+gst_gst_v4l2_GST_PLUGIN_DIR=sys/v4l2
+gst_gst_v4l2_DIST=	good
 
 # vorbis
 gst_vorbis_USE_GSTREAMER+=	ogg
