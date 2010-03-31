@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	App-Nopaste
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.19
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +22,6 @@ RUN_DEPENDS+=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
 
 OPTIONS=	CLIPBOARD "Support Clipboard" On \
 		PASTEBIN "Support pastebin.com" On \
-		RAFB "Support rafb.net" On \
 		GITHUB "Support github" Off
 
 PERL_CONFIGURE=	yes
@@ -41,19 +39,14 @@ MAN3=		App::Nopaste.3 \
 		App::Nopaste::Service::Mathbin.3 \
 		App::Nopaste::Service::PastebinCom.3 \
 		App::Nopaste::Service::Pastie.3 \
-		App::Nopaste::Service::Rafb.3 \
 		App::Nopaste::Service::Shadowcat.3 \
 		App::Nopaste::Service::Snitch.3 \
-		App::Nopaste::Service::ssh.3
+		App::Nopaste::Service::SSH.3
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_PASTEBIN)
 BUILD_DEPENDS+=	${SITE_PERL}/WWW/Pastebin/PastebinCom/Create.pm:${PORTSDIR}/www/p5-WWW-Pastebin-PastebinCom-Create
 RUN_DEPENDS+=	${SITE_PERL}/WWW/Pastebin/PastebinCom/Create.pm:${PORTSDIR}/www/p5-WWW-Pastebin-PastebinCom-Create
-.endif
-.if defined(WITH_RAFB)
-BUILD_DEPENDS+=	${SITE_PERL}/WWW/Pastebin/RafbNet/Create.pm:${PORTSDIR}/www/p5-WWW-Pastebin-RafbNet-Create
-RUN_DEPENDS+=	${SITE_PERL}/WWW/Pastebin/RafbNet/Create.pm:${PORTSDIR}/www/p5-WWW-Pastebin-RafbNet-Create
 .endif
 .if defined(WITH_CLIPBOARD)
 BUILD_DEPENDS+=	${SITE_PERL}/Clipboard.pm:${PORTSDIR}/x11/p5-Clipboard
