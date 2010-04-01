@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tint2
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTVERSION=	0.9
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -26,11 +25,13 @@ USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--disable-battery
+CONFIGURE_ARGS=	--disable-battery --disable-tint2conf
 
 PLIST_FILES=	bin/tint2 \
-		etc/xdg/tint2/tint2rc
-PLIST_DIRS=	etc/xdg/tint2
+		etc/xdg/tint2/tint2rc \
+		share/tint2/default_icon.png
+PLIST_DIRS=	etc/xdg/tint2 \
+		share/tint2
 
 MAN1=		tint2.1
 
@@ -45,7 +46,7 @@ post-patch:
 	    ${WRKSRC}/src/tint.c
 
 pre-install:
-	${ECHO} "rmdir ${X11BASE}/etc/xdg 2>/dev/null || true" > \
+	@${ECHO} "rmdir ${X11BASE}/etc/xdg 2>/dev/null || true" > \
 		${WRKDIR}/pkg-deinstall
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
@@ -59,9 +60,12 @@ post-install:
 
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/tintrc* ${EXAMPLESDIR}
-.for N in 1 2 3 4 5 6
-PLIST_FILES+=	${EXAMPLESDIR_REL}/tintrc0${N}
+	@for file in ${RCS}; do \
+	${INSTALL_DATA} ${WRKSRC}/sample/$${file} ${EXAMPLESDIR}; \
+	done
+RCS=	black_single_desktop.tint2rc default.tint2rc horizontal_icon_only.tint2rc rounded_multi_desktop.tint2rc tint2rc vertical_icon_only.tint2rc white_single_desktop.tint2rc
+.for file in ${RCS}
+PLIST_FILES+=	${EXAMPLESDIR_REL}/${file}
 .endfor
 PLIST_DIRS+=	${EXAMPLESDIR_REL}
 .endif
