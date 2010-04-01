@@ -36,4 +36,10 @@ do-install:
 		${PREFIX}/share/ispell
 	${INSTALL_SCRIPT} ${FILESDIR}/ispell-ru.sh ${PREFIX}/bin/ispell-ru
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
+.include <bsd.port.post.mk>
