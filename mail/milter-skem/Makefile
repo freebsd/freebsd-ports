@@ -30,6 +30,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
 .if ${OSVERSION} >= 700011
 EXTRA_PATCHES=  files/timet.patch
 .endif
