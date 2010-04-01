@@ -67,8 +67,8 @@ PLIST_SUB+=	RADIUS="@comment "
 MAKE_ENV+=	RADIUS="auth_radius group_radius uri_radius avp_radius"
 .endif
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=		Does not compile completely on sparc64 or ia64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile completely on ia64, powerpc, or sparc64
 .endif
 
 post-install:
