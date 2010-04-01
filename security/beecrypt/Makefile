@@ -30,4 +30,10 @@ CONFIGURE_ARGS+=	--enable-openmp
 CONFIGURE_ARGS+=	--disable-openmp
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
+.include <bsd.port.post.mk>
