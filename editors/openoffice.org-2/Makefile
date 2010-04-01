@@ -25,6 +25,8 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
+CONFLICTS=	cppunit*
+
 OOOVERSION=	2.4.3
 NO_LATEST_LINK=	yes
 USE_GNOME=	desktopfileutils gtk20
