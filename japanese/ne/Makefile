@@ -22,8 +22,8 @@ MAKE_ENV=	LANG=${MANLANG}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile on amd64
+.if ${ARCH} == "amd64" || ${ARCH} == "powerpc"
+BROKEN=		Does not compile on amd64 or powerpc
 .endif
 
 post-install:
