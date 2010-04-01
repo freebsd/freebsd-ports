@@ -22,6 +22,8 @@ DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
 
+CONFLICTS=	cppunit*
+
 EXTRATC_ONLY?=	${OOOSRC}
 
 .if defined(CWS)

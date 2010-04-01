@@ -22,6 +22,8 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
+CONFLICTS=	cppunit*
+
 NO_LATEST_LINK=	yes
 
 .if !defined(WITHOUT_MOZILLA)
