@@ -21,7 +21,7 @@ MAN8=		pam_af.8 pam_af_tool.8
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/pam_af.so ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/pam_af_tool/pam_af_tool ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/pam_af.8 ${MANPREFIX}/man/man8                                                                                                
+	${INSTALL_MAN} ${WRKSRC}/pam_af.8 ${MANPREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/pam_af_tool/pam_af_tool.8 ${MANPREFIX}/man/man8
 
 post-install:
@@ -30,4 +30,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
+.include <bsd.port.post.mk>
