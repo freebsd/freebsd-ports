@@ -37,9 +37,11 @@ VER=	${PORTVERSION:S/.//}
 PLIST_SUB=	VER=${VER}
 MAN1=	gdb${VER}.1
 
-#ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
-
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not configure on ia64, powerpc, or sparc64
+.endif
 
 .if defined(WITH_INSIGHT)
 LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
