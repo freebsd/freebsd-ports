@@ -31,6 +31,10 @@ REINPLACE_SUB=	DATADIR="${DATADIR}"
 EXTRA_PATCHES=	${FILESDIR}/extra-utmpx
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
 _MANPREFIX=	${DATADIR}/usr/share/man/5man
 _MSECS=		1 1b 1m 2 3 4 5 6 7 8
 
