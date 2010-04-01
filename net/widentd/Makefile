@@ -23,4 +23,10 @@ USE_RC_SUBR=	widentd.sh
 
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
+.include <bsd.port.post.mk>
