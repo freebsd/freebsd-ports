@@ -58,6 +58,10 @@ MAKE_ENV+=	BUILD_DEMONQUAKE_SDL=YES
 PLIST_FILES+=	bin/${PORTNAME}-sdl
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/gl_image.c
+
 do-install:
 .if !defined(WITHOUT_GLX)
 	${INSTALL_PROGRAM} ${WRKSRC}/quake/${PORTNAME}-glx ${PREFIX}/bin
