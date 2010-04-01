@@ -17,8 +17,8 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: includes i386 assembler
+.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on powerpc or sparc64: includes i386 assembler
 .endif
 
 .include <bsd.port.post.mk>
