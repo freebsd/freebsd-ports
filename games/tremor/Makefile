@@ -91,6 +91,10 @@ post-extract:
 		-d ${WRKDIR}
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/image.c
+
 do-install:
 .if !defined(WITHOUT_GLX)
 	${INSTALL_PROGRAM} ${WRKSRC}/quake/${PORTNAME}-glx ${PREFIX}/bin
