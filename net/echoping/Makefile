@@ -31,6 +31,10 @@ OPTIONS=	LDAP "Enable LDAP plug-in" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
+BROKEN=		Does not link on ia64 or powerpc
+.endif
+
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 MAN1+=		echoping_ldap.1
