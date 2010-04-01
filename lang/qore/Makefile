@@ -25,4 +25,10 @@ CONFIGURE_ARGS=	--disable-debug --disable-static
 
 MAN1=		qore.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
+.include <bsd.port.post.mk>
