@@ -26,6 +26,10 @@ OPTIONS=	DEBUG "Build debug version" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc
+.endif
+
 .if defined(WITH_DEBUG)
 DEBUG_FLAGS=	"-DDEBUG -g"
 .endif
