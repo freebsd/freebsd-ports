@@ -13,7 +13,7 @@ MASTER_SITES=	http://cloud.github.com/downloads/ook/isbg/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}_${DISTDATE}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	decke@bluelife.at
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Scan an IMAP inbox for spam using SpamAssassin
 
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin

@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 PKGNAMESUFFIX=	-themes
 DISTNAME=	myththemes-${PORTVERSION}
 
-MAINTAINER=	decke@bluelife.at
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	The official MythTV Themes for your PVR
 
 BUILD_DEPENDS=	mythfrontend:${PORTSDIR}/multimedia/mythtv-frontend

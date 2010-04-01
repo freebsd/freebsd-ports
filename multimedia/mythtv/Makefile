@@ -13,7 +13,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/mythtv/ \
 		LOCAL/glarkin
 
-MAINTAINER=	decke@bluelife.at
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
