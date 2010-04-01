@@ -211,6 +211,7 @@
     SUBDIR += cons-test
     SUBDIR += cook
     SUBDIR += cpan-upload
+    SUBDIR += cpan-upload-http
     SUBDIR += cppcheck
     SUBDIR += cppi
     SUBDIR += cppunit

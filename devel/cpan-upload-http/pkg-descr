@@ -1,0 +1,4 @@
+cpan-upload-http is a script which automates the process of uploading
+a file to CPAN using PAUSE, the Perl Authors Upload Server.
+
+WWW: http://search.cpan.org/dist/cpan-upload-http/
