@@ -4969,6 +4969,7 @@ gstreamer-plugins-speex         ports/audio/gstreamer-plugins-speex
 gstreamer-plugins-taglib        ports/audio/gstreamer-plugins-taglib
 gstreamer-plugins-theora        ports/multimedia/gstreamer-plugins-theora
 gstreamer-plugins-ugly          ports/multimedia/gstreamer-plugins-ugly
+gstreamer-plugins-v4l2          ports/multimedia/gstreamer-plugins-v4l2
 gstreamer-plugins-vorbis        ports/audio/gstreamer-plugins-vorbis
 gstreamer-plugins-wavpack       ports/audio/gstreamer-plugins-wavpack
 gstreamer-plugins-x264          ports/multimedia/gstreamer-plugins-x264
@@ -10527,10 +10528,13 @@ p5-Any-Moose                    ports/devel/p5-Any-Moose
 p5-AnyData                      ports/devel/p5-AnyData
 p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-AIO                 ports/devel/p5-AnyEvent-AIO
+p5-AnyEvent-DBI                 ports/devel/p5-AnyEvent-DBI
+p5-AnyEvent-DBI-Abstract        ports/devel/p5-AnyEvent-DBI-Abstract
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
 p5-AnyEvent-IRC                 ports/irc/p5-AnyEvent-IRC
 p5-AnyEvent-ReverseHTTP         ports/www/p5-AnyEvent-ReverseHTTP
+p5-AnyEvent-Run                 ports/devel/p5-AnyEvent-Run
 p5-AnyEvent-Twitter             ports/net/p5-AnyEvent-Twitter
 p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
@@ -12933,6 +12937,7 @@ p5-Norge                        ports/misc/p5-Norge
 p5-Number-Bytes-Human           ports/devel/p5-Number-Bytes-Human
 p5-Number-Compare               ports/math/p5-Number-Compare
 p5-Number-Format                ports/textproc/p5-Number-Format
+p5-Number-Fraction              ports/math/p5-Number-Fraction
 p5-Number-Nary                  ports/converters/p5-Number-Nary
 p5-Number-RecordLocator         ports/converters/p5-Number-RecordLocator
 p5-Number-Spell                 ports/textproc/p5-Number-Spell
@@ -14252,10 +14257,13 @@ p5-any-moose                    ports/devel/p5-Any-Moose
 p5-anydata                      ports/devel/p5-AnyData
 p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-aio                 ports/devel/p5-AnyEvent-AIO
+p5-anyevent-dbi                 ports/devel/p5-AnyEvent-DBI
+p5-anyevent-dbi-abstract        ports/devel/p5-AnyEvent-DBI-Abstract
 p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
 p5-anyevent-irc                 ports/irc/p5-AnyEvent-IRC
 p5-anyevent-reversehttp         ports/www/p5-AnyEvent-ReverseHTTP
+p5-anyevent-run                 ports/devel/p5-AnyEvent-Run
 p5-anyevent-twitter             ports/net/p5-AnyEvent-Twitter
 p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
@@ -16706,6 +16714,7 @@ p5-nsnmp                        ports/net-mgmt/p5-NSNMP
 p5-number-bytes-human           ports/devel/p5-Number-Bytes-Human
 p5-number-compare               ports/math/p5-Number-Compare
 p5-number-format                ports/textproc/p5-Number-Format
+p5-number-fraction              ports/math/p5-Number-Fraction
 p5-number-nary                  ports/converters/p5-Number-Nary
 p5-number-recordlocator         ports/converters/p5-Number-RecordLocator
 p5-number-spell                 ports/textproc/p5-Number-Spell
@@ -18121,6 +18130,7 @@ pbc                             ports/security/pbc
 pbi-thumbnailer                 ports/x11-fm/pbi-thumbnailer
 pbnc                            ports/net/pbnc
 pbnj                            ports/security/pbnj
+pbreg                           ports/sysutils/pbreg
 pbzip2                          ports/archivers/pbzip2
 pcal                            ports/print/pcal
 pcb                             ports/cad/pcb
@@ -25494,6 +25504,7 @@ xstream                         ports/textproc/xstream
 xstroke                         ports/x11/xstroke
 xsu                             ports/sysutils/xsu
 xsvg                            ports/graphics/xsvg
+xsw                             ports/misc/xsw
 xsynth-dssi                     ports/audio/xsynth-dssi
 xsysstats                       ports/sysutils/xsysstats
 xsystem35                       ports/emulators/xsystem35
