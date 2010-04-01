@@ -26,6 +26,10 @@ LPSOLVE_ARCH=	ux32
 LPSOLVE_ARCH=	ux64
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not install on powerpc
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "ccc" | ${XARGS} ${REINPLACE_CMD} -e \
 		"s|^c=.*$$|c='${CC}'|g ; \

@@ -35,4 +35,10 @@ post-install:
 	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: invokes i386 asm
+.endif
+
+.include <bsd.port.post.mk>

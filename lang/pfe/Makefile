@@ -29,6 +29,8 @@ MAN1=		pfe.1
 
 .if ${ARCH} == "i386" && ${OSVERSION} < 700000
 BROKEN=		does not compile
+.elif ${ARCH} == "powerpc"
+BROKEN=		does not compile
 .endif
 
 post-patch:

@@ -26,6 +26,10 @@ MAN8=		smtp-gated.8
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc: cannot determine endianness
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,install-man: install-man5 install-man8 install-manh,install-man: install-man5 install-man8,' ${WRKSRC}/doc/Makefile.in
 

@@ -30,6 +30,8 @@ PLIST_FILES=	include/tfm.h lib/libtfm.a
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64 or sparc64
+.elif ${ARCH} == "powerpc"
+BROKEN=		Causes gcc coredump on powerpc
 .endif
 
 .include <bsd.port.post.mk>
