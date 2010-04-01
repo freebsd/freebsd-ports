@@ -25,7 +25,7 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lexecinfo"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} =="ia64" || ${ARCH} =="sparc64"
+.if ${ARCH} == "amd64" || ${ARCH} =="ia64" || ${ARCH} =="powerpc" || ${ARCH} =="sparc64"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-logging.cc \
 		${FILESDIR}/extra-patch-src-utilities.cc
 .endif
