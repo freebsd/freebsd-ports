@@ -51,8 +51,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerprc, or sparc64
 .elif ${OSVERSION} >= 900000
 BROKEN=		does not build
 .endif
