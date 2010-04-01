@@ -164,8 +164,27 @@ share/silk/etc/rwsender.conf
 share/silk/generic-silk.conf
 share/silk/twoway-silk.conf
 share/silk/update-sensor-conf
+%%PYTHON_SITELIBDIR%%/silk/__init__.py
+%%PYTHON_SITELIBDIR%%/silk/fglob.py
+%%PYTHON_SITELIBDIR%%/silk/plugin.py
+%%PYTHON_SITELIBDIR%%/silk/site.py
+%%PYTHON_SITELIBDIR%%/silk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/silk/fglob.pyc
+%%PYTHON_SITELIBDIR%%/silk/plugin.pyc
+%%PYTHON_SITELIBDIR%%/silk/site.pyc
+%%PYTHON_SITELIBDIR%%/silk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/silk/fglob.pyo
+%%PYTHON_SITELIBDIR%%/silk/plugin.pyo
+%%PYTHON_SITELIBDIR%%/silk/site.pyo
+%%PYTHON_SITELIBDIR%%/silk/pysilk.so
+%%PYTHON_SITELIBDIR%%/silk/pysilk.la
+%%PYTHON_SITELIBDIR%%/silk/pysilk_nl.so
+%%PYTHON_SITELIBDIR%%/silk/pysilk_nl.la
+%%PYTHON_SITELIBDIR%%/silk/pysilk.a
+%%PYTHON_SITELIBDIR%%/silk/pysilk_nl.a
 @dirrmtry share/silk/etc/init.d
 @dirrmtry share/silk/etc
 @dirrmtry share/silk
 @dirrmtry lib/silk
 @dirrmtry include/silk
+@dirrmtry %%PYTHON_SITELIBDIR%%/silk
