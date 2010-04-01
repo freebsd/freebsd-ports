@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openal-soft
-PORTVERSION=	1.11.753
+PORTVERSION=	1.12.854
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
