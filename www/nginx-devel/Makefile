@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.34
+PORTVERSION=	0.8.35
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -461,6 +461,10 @@ post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!' \
 		${WRKSRC}/conf/nginx.conf
+.if defined(WITH_ECHO_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_echo_timer.c
+.endif
 .if defined(WITH_HTTP_ACCESSKEY_MODULE)
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
