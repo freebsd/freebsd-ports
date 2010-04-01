@@ -19,10 +19,10 @@ bin/rwgeoip2ccmap
 bin/rwgroup
 bin/rwidsquery
 bin/rwip2cc
-%%IPFIX%%bin/rwipfix2silk
+bin/rwipfix2silk
 bin/rwmatch
 bin/rwnetmask
-%%IPFIX%%bin/rwp2yaf2silk
+bin/rwp2yaf2silk
 bin/rwpcut
 bin/rwpdedupe
 bin/rwpmapbuild
@@ -41,7 +41,7 @@ bin/rwsetintersect
 bin/rwsetmember
 bin/rwsettool
 bin/rwsetunion
-%%IPFIX%%bin/rwsilk2ipfix
+bin/rwsilk2ipfix
 bin/rwsort
 bin/rwsplit
 bin/rwstats
@@ -102,10 +102,10 @@ lib/libsilk.a
 lib/libsilk.la
 lib/libsilk.so
 lib/libsilk.so.4
-%%IPFIX%%lib/libskipfix.a
-%%IPFIX%%lib/libskipfix.la
-%%IPFIX%%lib/libskipfix.so
-%%IPFIX%%lib/libskipfix.so.2
+lib/libskipfix.a
+lib/libskipfix.la
+lib/libskipfix.so
+lib/libskipfix.so.2
 lib/libskmsg.a
 lib/libskmsg.la
 lib/libskmsg.so
@@ -137,6 +137,9 @@ lib/silk/packlogic-twoway.so
 lib/silk/pmapfilter.a
 lib/silk/pmapfilter.la
 lib/silk/pmapfilter.so
+lib/silk/silkpython.so
+lib/silk/silkpython.la
+lib/silk/silkpython.a
 lib/silk/uniq-distproto.a
 lib/silk/uniq-distproto.la
 lib/silk/uniq-distproto.so
