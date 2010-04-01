@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	decke@bluelife.at
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A network monitoring daemon
 
 USE_RC_SUBR=	nefu

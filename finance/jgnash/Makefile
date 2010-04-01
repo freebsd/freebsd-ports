@@ -10,7 +10,7 @@ PORTVERSION=	2.3.4
 CATEGORIES=	finance java
 MASTER_SITES=	SF/jgnash/Active%20Stable%202.x/2.3.x%20Releases
 
-MAINTAINER=	decke@bluelife.at
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A free personal finance manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

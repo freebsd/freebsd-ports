@@ -14,7 +14,7 @@ MASTER_SITES=	http://vagalume.igalia.com/files/source/ \
 MASTER_SITE_SUBDIR=	pool/main/v/vagalume/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	decke@bluelife.at
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A GTK+-based client for the Last.fm online radio
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \

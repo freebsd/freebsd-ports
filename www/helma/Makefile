@@ -12,7 +12,7 @@ MASTER_SITES=	http://adele.helma.org/download/helma/${PORTVERSION}/ \
 		http://home.bluelife.at/ports/distfiles/helma/${PORTVERSION}/
 DISTFILES=	helma-${PORTVERSION}.tar.gz helma-${PORTVERSION}-src.tar.gz
 
-MAINTAINER=	decke@bluelife.at
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A Web application framework for fast and efficient scripting
 
 WRKBASE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

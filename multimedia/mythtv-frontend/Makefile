@@ -13,7 +13,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.oregonstate.edu/pub/mythtv/
 DISTNAME=	mythtv-${PORTVERSION}
 
-MAINTAINER=	decke@bluelife.at
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \

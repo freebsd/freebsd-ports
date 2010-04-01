@@ -11,7 +11,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/1.4/${PORTVERSION}/ \
 		SF/${PORTNAME}/MaraDNS/${PORTVERSION}/
 
-MAINTAINER=	decke@bluelife.at
+MAINTAINER=	decke@FreeBSD.org
 COMMENT=	DNS server with focus on security and simplicity
 
 REINPLACE_ARGS=	-i ""
