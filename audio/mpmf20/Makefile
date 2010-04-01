@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File transfer tool for the MPMan MP-F20 portable MP3-player
 
-NOT_FOR_ARCHS=	ia64 sparc64
+NOT_FOR_ARCHS=	ia64 powerpc sparc64
 
 MAKEFILE=	makefile
 PLIST_FILES=	bin/mpmf20

@@ -27,6 +27,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 CFLAGS+=	-mmmx
+.elif ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
 .endif
 
 post-patch:

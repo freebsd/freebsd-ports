@@ -27,9 +27,9 @@ MAN3=		libjit.3
 
 .if ${ARCH} == "ia64"
 BROKEN=		Segfault during build
-.endif
-
-.if ${ARCH} == "sparc64"
+.elif ${ARCH} == "powerpc"
+BROKEN=		Fails to compile: invokes i386 asm
+.elif ${ARCH} == "sparc64"
 BROKEN=		Fails to compile: internal gcc error
 .endif
 

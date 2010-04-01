@@ -19,7 +19,7 @@ MAN8=		mk9660.8
 MAN5=		proto.5
 MLINKS=		mk9660.8 dump9660.8
 
-ONLY_FOR_ARCHS=	alpha i386 powerpc
+ONLY_FOR_ARCHS=	i386 powerpc
 OBJTYPE=	${MACHINE_ARCH:S/i386/386/:S/powerpc/power/}
 MAKE_ENV=	systype=${OPSYS} objtype=${OBJTYPE}
 
@@ -32,4 +32,10 @@ post-patch:
 	cd ${WRKSRC}/libunix; \
 		for f in *.s; do ${MV} $$f $${f%.s}.S; done
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
+.include <bsd.port.post.mk>

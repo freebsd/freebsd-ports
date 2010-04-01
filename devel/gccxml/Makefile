@@ -37,8 +37,8 @@ do-configure:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		Build fails on alpha
+.if ${ARCH} == "powerpc"
+BROKEN=		Build fails on powerpc
 .elif ${OSVERSION} >= 700042
 # GCC-XML has some constructs that GCC 4.2 does not like. Namely,
 # the use of casted-pointer-dereferences as an lvalue to post-increment

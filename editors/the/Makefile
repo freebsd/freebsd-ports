@@ -32,6 +32,10 @@ OPTIONS=	XAW3D "Enable Xaw3D" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not configure on powerpc
+.endif
+
 .if defined(WITH_XAW3D)
 CONFIGURE_ARGS+=--with-xaw3d
 LIB_DEPENDS+=	Xaw3d.8:${PORTSDIR}/x11-toolkits/Xaw3d

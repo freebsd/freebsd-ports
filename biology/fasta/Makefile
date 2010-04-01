@@ -45,4 +45,10 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc"
+IGNORE=		does not build: runs out of space on powerpc
+.endif
+
+.include <bsd.port.post.mk>
