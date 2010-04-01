@@ -6,37 +6,21 @@
 #
 
 PORTNAME=	irrtoolset
-PORTVERSION=	4.8.5
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_ISC} \
-		ftp://ftp.ripe.net/tools/
-MASTER_SITE_SUBDIR=IRRToolSet/${DISTNAME}
-DISTNAME=	IRRToolSet-${PORTVERSION}
+MASTER_SITES=	ISC/IRRToolSet/IRRToolSet-${PORTVERSION}
 
 MAINTAINER=	oberman@es.net
 COMMENT=	A suite of routing policy tools to interact with the IRR
 
-PLIST_FILES=	bin/rpslcheck bin/peval bin/RtConfig
+PLIST_FILES=	bin/rpslcheck bin/peval bin/rtconfig
 
 USE_BISON=	build
 USE_GMAKE=	yes
-USE_GCC=	3.4
 GNU_CONFIGURE=	Yes
+USE_AUTOTOOLS=	libtool:22
+MAKE_JOBS_SAFE=	yes
 
-MAN1=		RtConfig.1 peval.1 rpslcheck.1 IRR-Errors.1
-MAN3=		librpsl.3
-
-ALL_TARGET=	depend all
-
-post-extract:
-	@${RM} ${WRKSRC}/man/man1/CIDRAdvisor.1 ${WRKSRC}/man/man1/prpath.1
-	@${RM} ${WRKSRC}/man/man1/prtraceroute.1 ${WRKSRC}/man/man1/?oe.1
-	@${MV} ${WRKSRC}/man/man1/Errors.1 ${WRKSRC}/man/man1/IRR-Errors.1
-
-post-patch:
-	@${SED} -i.orig -e 's|#include <malloc.h>|/* #include <malloc.h> */|' \
-	${WRKSRC}/src/irr/birdwhoisc.cc
-	@${RM} ${WRKSRC}/man/man1/*.orig
+MAN1=		rtconfig.1 peval.1 rpslcheck.1 irrtoolset-errors.1
 
 .include <bsd.port.mk>
