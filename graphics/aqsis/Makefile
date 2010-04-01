@@ -8,7 +8,7 @@
 
 PORTNAME=	aqsis
 PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
@@ -17,11 +17,11 @@ COMMENT=	A photorealistic rendering system
 
 LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
     		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
-		fltk-threads>=0:${PORTSDIR}/x11-toolkits/fltk-threads
+		xsltproc:${PORTSDIR}/textproc/libxslt
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
