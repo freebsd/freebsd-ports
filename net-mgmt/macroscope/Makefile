@@ -47,8 +47,8 @@ USE_FIREBIRD=		yes
 
 .include "${PORTSDIR}/Mk/bsd.database.mk"
 
-.if ${ARCH} == "sparc64"
-BROKEN=	Does not compile
+.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=	Does not compile on this architecture
 .endif
 
 .include <bsd.port.post.mk>

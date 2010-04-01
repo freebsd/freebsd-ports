@@ -45,8 +45,8 @@ check: build
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=--enable-frame-pointers
 .endif
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=	Does not build, ia64 assembly not supported, see PR-94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=	Does not build, assembly not supported, see PR-94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
 .endif
 
 .include <bsd.port.post.mk>
