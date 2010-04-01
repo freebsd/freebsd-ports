@@ -23,7 +23,7 @@ MAKEFILE=	BSDmakefile
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "ia64" || ${ARCH} == "alpha"
+.if ${ARCH} == "sparc64" || ${ARCH} == "ia64" || ${ARCH} == "powerpc"
 BROKEN=		Does not install (unsupported architecture)
 .endif
 
