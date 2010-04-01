@@ -179,6 +179,8 @@ PLIST_SUB+=	LIBIBERTY_SUB=${LIBIBERTY_SUB}
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=x86_64-portbld-freebsd${OSREL}
+.elif ${ARCH} == "ia64" || ${ARCH} == "powerpc"
+BROKEN=		Does not compile on ia64 or powerpc
 .endif
 
 pre-configure:
