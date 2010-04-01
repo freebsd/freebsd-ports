@@ -124,7 +124,7 @@ CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
 		PATH=${WRKSRC}/solenv/bin:$$PATH
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
-		unzip:${PORTSDIR}/archivers/unzip \
+		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
@@ -208,6 +208,7 @@ post-extract:
 pre-configure:
 #Workaround for gperf. #i85469#
 	@${LN} -sf ${LOCALBASE}/bin/gperf ${WRKSRC}/solenv/bin/gperf
+	@${LN} -sf ${LOCALBASE}/bin/unzip ${WRKSRC}/solenv/bin/unzip
 .if defined(WITH_KDE4)
 	@${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/solenv/bin/moc
 .endif
