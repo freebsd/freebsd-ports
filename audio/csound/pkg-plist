@@ -4,7 +4,7 @@ bin/csmixer
 bin/csb64enc
 bin/cseditor
 bin/csound
-bin/csound5gui
+%%FLTKGUI%%bin/csound5gui
 bin/cvanal
 bin/dnoise
 bin/envext
@@ -83,8 +83,8 @@ lib/csound/plugins64/libudpsend.so
 lib/csound/plugins64/libugakbari.so
 lib/csound/plugins64/libvaops.so
 lib/csound/plugins64/libvbap.so
-lib/csound/plugins64/libvirtual.so
-lib/csound/plugins64/libwidgets.so
+%%FLTKGUI%%lib/csound/plugins64/libvirtual.so
+%%FLTKGUI%%lib/csound/plugins64/libwidgets.so
 lib/csound/plugins64/libsignalflowgraph.so
 lib/csound/plugins64/libambicode1.so
 lib/csound/plugins64/libcs_pan2.so
