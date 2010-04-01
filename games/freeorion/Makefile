@@ -47,6 +47,10 @@ post-patch:
 		${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/util/Directories.cpp
+	@${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|g' -e 's|int_p_NULL|NULL|g' \
+		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/GG/src/GIL/extension/io/png_io_private.hpp \
+		${WRKSRC}/GG/src/GIL/extension/io/png_dynamic_io.hpp
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ogre_plugins.cfg ${DATADIR}
