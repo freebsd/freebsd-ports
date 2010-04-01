@@ -19,7 +19,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
 PROJECTHOST=	tint2
 USE_GNOME=	pango glib20
-USE_XORG=	xinerama xrandr
+USE_XORG=	xinerama xrandr xdamage xcomposite
 USE_EFL=	imlib2
 USE_GMAKE=	yes
 
