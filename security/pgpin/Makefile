@@ -48,10 +48,4 @@ do-install:
 			config.txt ${PGPLIB}
 	-${PREFIX}/bin/pgpin > /dev/null  2>&1  # update .idx file
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-IGNORE=		does not build: not yet ported to powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
