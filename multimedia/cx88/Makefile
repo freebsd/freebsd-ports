@@ -30,6 +30,10 @@ IGNORE=		requires FreeBSD 7.0-RELEASE or later
 BROKEN=		does not build
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=		requires kernel source files
 .endif
