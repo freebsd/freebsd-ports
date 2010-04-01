@@ -8,9 +8,10 @@
 PORTNAME=	cgiirc
 PORTVERSION=	0.5.9
 CATEGORIES=	irc www perl5
-MASTER_SITES=	SF/${PORTNAME}/cgi-irc/${PORTVERSION}
+MASTER_SITES=	http://cgiirc.org/releases/ \
+		SF/${PORTNAME}/cgi-irc/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	IRC web gateway written in Perl
 
 USE_PERL5=	yes
