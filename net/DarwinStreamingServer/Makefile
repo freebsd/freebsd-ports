@@ -26,7 +26,7 @@ COMMENT=	Darwin Streaming Server, a MP3, MPEG4 and QuickTime streaming server
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 
-NOT_FOR_ARCHS=	ia64 sparc64
+NOT_FOR_ARCHS=	ia64 powerpc sparc64
 
 USE_PERL5_RUN=	yes
 USE_PERL5_BUILD=yes
