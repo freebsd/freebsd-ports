@@ -41,6 +41,10 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
+.if ${ARCH} == "powerpc"
+IGNORE=		Fails to install: not yet ported to powerpc
+.endif
+
 post-extract:
 	cd ${WRKSRC} && ${TAR} xzf ${LIBF95}.tar.gz
 
