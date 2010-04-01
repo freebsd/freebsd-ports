@@ -1,5 +1,5 @@
---- os_dep.c.orig	2008-02-29 22:01:28.000000000 +0300
-+++ os_dep.c	2009-10-20 00:48:39.000000000 +0400
+--- os_dep.c.orig	2008-02-29 11:01:28.000000000 -0800
++++ os_dep.c	2010-04-01 00:50:34.000000000 -0700
 @@ -816,7 +816,7 @@
      || defined(HURD) || defined(NETBSD)
  	static struct sigaction old_segv_act;
@@ -27,3 +27,18 @@
  		    /* Under Irix 5.x or HP/UX, we may get SIGBUS.	*/
  		    /* Pthreads doesn't exist under Irix 5.x, so we	*/
  		    /* don't have to worry in the threads case.		*/
+@@ -2713,7 +2713,13 @@
+ #   include <errno.h>
+ #   if defined(FREEBSD)
+ #     define SIG_OK TRUE
+-#     define CODE_OK (code == BUS_PAGE_FAULT)
++#     if defined(POWERPC)
++#	define AIM	/* Pretend that we're AIM. */
++#	include <machine/trap.h>
++#       define CODE_OK (code == EXC_DSI)
++#     else
++#       define CODE_OK (code == BUS_PAGE_FAULT)
++#     endif
+ #   elif defined(OSF1)
+ #     define SIG_OK (sig == SIGSEGV)
+ #     define CODE_OK (code == 2 /* experimentally determined */)
