@@ -115,7 +115,7 @@ PLIST_SUB+=	DC1394="@comment "
 CFLAGS+=	-fPIC
 .endif
 
-.if (${ARCH} == "i386") || (${ARCH} == "ia64") || (${ARCH} == "amd64") || (${ARCH} == "sparc64")
+.if (${ARCH} == "i386") || (${ARCH} == "ia64") || (${ARCH} == "amd64") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
 CONFIGURE_ARGS+=--enable-bsdvideo
 PLIST_SUB+=	BSDVIDEO=""
 .else
