@@ -385,7 +385,7 @@ pre-configure:
 		s|use warnings;||' ${WRKSRC}/tools/mpiexec/mpiexec
 
 post-install:
-.if ${ARCH} != "i386"
+.if ${ARCH} != "i386" && ${ARCH} != "powerpc"
 	${RMDIR} ${PREFIX}/lib/lam
 .endif
 
