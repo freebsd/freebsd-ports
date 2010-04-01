@@ -37,7 +37,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
+.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not install
 .endif
 
