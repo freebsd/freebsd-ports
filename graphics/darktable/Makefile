@@ -41,5 +41,10 @@ post-patch:
 # FreeBSD 6.X does not have posix_memalign(3)
 	@${REINPLACE_CMD} -e 's,__APPLE__),& || __FreeBSD_version < 700013,' \
 		${WRKSRC}/src/common/darktable.c
+# libpng 1.4
+	@${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|g' \
+		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+		${WRKSRC}/src/common/imageio_png.c
+	@${REINPLACE_CMD} -e 's|libpng12|libpng14|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
