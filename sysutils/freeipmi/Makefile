@@ -37,7 +37,10 @@ CONFIGURE_ARGS+=	--disable-init-scripts --disable-logrotate-config \
 	--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache \
 	--sysconfdir=${CONF_DIR}
 USE_LDCONFIG=	yes
-NOT_FOR_ARCHS=	ia64 sparc64 alpha
+
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	"invokes i386 asm"
+
 PLIST_SUB+=	FREEIPMI_SHLIBVER=${FREEIPMI_SHLIBVER} \
 	IPMICONSOLE_SHLIBVER=${IPMICONSOLE_SHLIBVER} \
 	IPMIDETECT_SHLIBVER=${IPMIDETECT_SHLIBVER} \
