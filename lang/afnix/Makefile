@@ -41,6 +41,10 @@ MAN7=	eul::afnix.7 vol-0::afnix.7 vol-1::afnix.7 vol-2::afnix.7
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not configure on powerpc
+.endif
+
 post-extract:
 	@cd ${WRKSRC}/cnf/mak && ${CP} -f afnix-gcc-3.mak afnix-freebsd.mak
 
