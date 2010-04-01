@@ -48,6 +48,8 @@ PLIST_FILES=	include/Block.h \
 
 .if ${ARCH} == "i386"
 CFLAGS+=	-march=i486
+.elif ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
 .endif
 
 .if defined(BOOTSTRAP)
