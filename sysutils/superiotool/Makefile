@@ -41,8 +41,8 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: attempts to use i386 asm
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64: attempts to use i386 asm
 .endif
 
 .include <bsd.port.post.mk>
