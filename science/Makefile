@@ -108,6 +108,7 @@
     SUBDIR += p5-Chemistry-File-PDB
     SUBDIR += p5-Chemistry-File-VRML
     SUBDIR += p5-Chemistry-File-XYZ
+    SUBDIR += p5-Chemistry-FormulaPattern
     SUBDIR += p5-Chemistry-Isotope
     SUBDIR += p5-Chemistry-MacroMol
     SUBDIR += p5-Chemistry-MidasPattern
