@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Cartographic Projections library
 
+CONFLICTS=	proj4-[0-9]*
+
 DATUM_GRID_FILES=	proj-datumgrid-1.5.zip
 
 GNU_CONFIGURE=	yes
