@@ -7,9 +7,9 @@
 
 PORTNAME=	chartdirector
 PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES?=	graphics
-MASTER_SITES=	http://download.advsofteng.com/ \
-		http://download2.advsofteng.com/
+MASTER_SITES=	http://www.advsofteng.com/
 PKGNAMEPREFIX?=	php5-
 
 MAINTAINER=	swhetzel@gmail.com
@@ -30,9 +30,9 @@ WRKSRC=	${WRKDIR}/ChartDirector
 DISTVERSION=	${PORTVERSION:C/\.//g}
 
 .if ${ARCH} == "amd64"
-DISTNAME=	chartdir_php_freebsd_64_${DISTVERSION}
+DISTNAME=	chartdir_php_freebsd_${DISTVERSION}_64
 .else
-DISTNAME=	chartdir_php_freebsd_${DISTVERSION}
+DISTNAME=	chartdir_php_freebsd_${DISTVERSION}a
 .endif
 
 .if ${PHP_VER} == 5
