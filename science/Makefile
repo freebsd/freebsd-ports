@@ -102,6 +102,7 @@
     SUBDIR += openbabel
     SUBDIR += ovt
     SUBDIR += p5-Algorithm-SVMLight
+    SUBDIR += p5-Chemistry-3DBuilder
     SUBDIR += p5-Chemistry-Bond-Find
     SUBDIR += p5-Chemistry-Canonicalize
     SUBDIR += p5-Chemistry-Elements
