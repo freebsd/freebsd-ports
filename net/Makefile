@@ -971,6 +971,7 @@
     SUBDIR += spserver
     SUBDIR += ss5
     SUBDIR += ssldump
+    SUBDIR += sslh
     SUBDIR += ssltunnel-client
     SUBDIR += ssltunnel-server
     SUBDIR += ssmping
