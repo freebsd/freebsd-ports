@@ -105,6 +105,7 @@
     SUBDIR += p5-Chemistry-Bond-Find
     SUBDIR += p5-Chemistry-Canonicalize
     SUBDIR += p5-Chemistry-Elements
+    SUBDIR += p5-Chemistry-File-MDLMol
     SUBDIR += p5-Chemistry-File-Mopac
     SUBDIR += p5-Chemistry-File-PDB
     SUBDIR += p5-Chemistry-File-VRML
