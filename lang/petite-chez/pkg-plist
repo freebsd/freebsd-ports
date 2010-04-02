@@ -1,5 +1,6 @@
 bin/petite
 lib/csv%%CHEZ_VERSION%%/%%CHEZ_MACHTYPE%%/petite.boot
+lib/csv%%CHEZ_VERSION%%/%%CHEZ_MACHTYPE%%/scheme-script.boot
 lib/csv%%CHEZ_VERSION%%/%%CHEZ_MACHTYPE%%/scheme.h
 lib/csv%%CHEZ_VERSION%%/lib/Makefile
 lib/csv%%CHEZ_VERSION%%/lib/compat.ss
