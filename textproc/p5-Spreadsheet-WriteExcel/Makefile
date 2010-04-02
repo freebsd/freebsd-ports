@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-WriteExcel
-PORTVERSION=	2.25
-PORTREVISION=	1
+PORTVERSION=	2.37
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,13 +27,21 @@ MAN3=		Spreadsheet::WriteExcel.3 \
 		Spreadsheet::WriteExcel::BIFFwriter.3 \
 		Spreadsheet::WriteExcel::Big.3 \
 		Spreadsheet::WriteExcel::Chart.3 \
+		Spreadsheet::WriteExcel::Chart::Area.3 \
+		Spreadsheet::WriteExcel::Chart::Bar.3 \
+		Spreadsheet::WriteExcel::Chart::Column.3 \
+		Spreadsheet::WriteExcel::Chart::External.3 \
+		Spreadsheet::WriteExcel::Chart::Line.3 \
+		Spreadsheet::WriteExcel::Chart::Pie.3 \
+		Spreadsheet::WriteExcel::Chart::Scatter.3 \
+		Spreadsheet::WriteExcel::Chart::Stock.3 \
+		Spreadsheet::WriteExcel::Examples.3 \
 		Spreadsheet::WriteExcel::Format.3 \
 		Spreadsheet::WriteExcel::Formula.3 \
 		Spreadsheet::WriteExcel::OLEwriter.3 \
 		Spreadsheet::WriteExcel::Properties.3 \
 		Spreadsheet::WriteExcel::Utility.3 \
 		Spreadsheet::WriteExcel::Workbook.3 \
-		Spreadsheet::WriteExcel::WorkbookBig.3 \
 		Spreadsheet::WriteExcel::Worksheet.3
 
 post-patch:
@@ -44,16 +51,17 @@ post-patch:
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/images
+	@${MKDIR} ${DOCSDIR}/tpj_images
+	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${DOCSDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/docs/tpj_images/* ${DOCSDIR}/tpj_images
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/README \
 		${WRKSRC}/examples/republic.png ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.txt ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/charts
-	${INSTALL_DATA} ${WRKSRC}/charts/* ${EXAMPLESDIR}/charts
 .endif
 
 .include <bsd.port.mk>
