@@ -1,0 +1,3 @@
+%%SITE_PERL%%/mach/auto/PerlMol/.packlist
+%%SITE_PERL%%/PerlMol.pm
+@dirrmtry %%SITE_PERL%%/mach/auto/PerlMol
