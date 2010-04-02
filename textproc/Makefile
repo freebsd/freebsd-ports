@@ -600,6 +600,7 @@
     SUBDIR += p5-Sphinx-Search
     SUBDIR += p5-Spork
     SUBDIR += p5-Spreadsheet-ParseExcel
+    SUBDIR += p5-Spreadsheet-Read
     SUBDIR += p5-Spreadsheet-WriteExcel
     SUBDIR += p5-Spreadsheet-WriteExcel-FromXML
     SUBDIR += p5-Spreadsheet-WriteExcelXML
