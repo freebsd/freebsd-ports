@@ -697,6 +697,7 @@
     SUBDIR += p5-CGI-Application-Plugin-Authentication
     SUBDIR += p5-CGI-Application-Plugin-Authorization
     SUBDIR += p5-CGI-Application-Plugin-AutoRunmode
+    SUBDIR += p5-CGI-Application-Plugin-Config-YAML
     SUBDIR += p5-CGI-Application-Plugin-ConfigAuto
     SUBDIR += p5-CGI-Application-Plugin-DBH
     SUBDIR += p5-CGI-Application-Plugin-DebugScreen
