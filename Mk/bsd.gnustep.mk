@@ -29,12 +29,6 @@
 # GNUSTEP_WITH_GCC42=yes
 #	use gcc 4.2.x with objective C shared libraries (default).
 #
-# GNUSTEP_WITH_GCC43=yes
-#	use gcc 4.2.x with objective C shared libraries.
-#
-# GNUSTEP_WITH_GCC44=yes
-#	use gcc 4.2.x with objective C shared libraries.
-#
 #
 # Options for a port before include this file:
 # ============================================
@@ -218,10 +212,15 @@ PLIST_SUB+=	MAJORLIBVERSION=${DEFAULT_LIBVERSION:C/([0-9]).*/\1/1}
 
 .if !defined(GNUSTEP_WITH_BASE_GCC)
 .if !defined(GNUSTEP_WITH_GCC34)
-.if !defined(GNUSTEP_WITH_GCC42) && !defined(GNUSTEP_WITH_GCC43) && !defined(GNUSTEP_WITH_GCC44)
+.if !defined(GNUSTEP_WITH_GCC42)
+.if ${ARCH} == i386 || ${ARCH} == amd64
 GNUSTEP_WITH_GCC42=	yes
-.endif
-.endif
+.else
+# alpha ia64 powerpc arm sparc64 sun4v
+GNUSTEP_WITH_GCC34=	yes
+.endif # ARCH
+.endif # GNUSTEP_WITH_GCC42
+.endif # GNUSTEP_WITH_GCC34
 
 .if defined(GNUSTEP_WITH_GCC34)
 GCCSUFFIX=34
@@ -229,17 +228,11 @@ GCCSUFFIX=34
 .if defined(GNUSTEP_WITH_GCC42)
 GCCSUFFIX=42
 .endif
-.if defined(GNUSTEP_WITH_GCC43)
-GCCSUFFIX=43
-.endif
-.if defined(GNUSTEP_WITH_GCC44)
-GCCSUFFIX=44
-.endif
 CC=		gcc${GCCSUFFIX}
 CXX=		g++${GCCSUFFIX}
 GNUSTEP_GCC_PORT?=	lang/gcc${GCCSUFFIX}
 
-.endif
+.endif # GNUSTEP_WITH_BASE_GCC
 
 # ---------------------------------------------------------------------------
 # using base
