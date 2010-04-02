@@ -1,0 +1,5 @@
+%%SITE_PERL%%/mach/auto/Spreadsheet/Read/.packlist
+%%SITE_PERL%%/Spreadsheet/Read.pm
+@dirrmtry %%SITE_PERL%%/Spreadsheet
+@dirrmtry %%SITE_PERL%%/mach/auto/Spreadsheet/Read
+@dirrmtry %%SITE_PERL%%/mach/auto/Spreadsheet
