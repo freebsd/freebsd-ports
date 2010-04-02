@@ -99,7 +99,6 @@ OPTIONS=	\
 	SPANISH "Install package: spanish" On \
 	PT_BR "Install package: pt_br" On \
 	\
-	ARPACK "Install package: arpack" Off \
 	SPLINE_GCVSPL "Install package: spline-gcvspl" Off
 
 .include <bsd.port.pre.mk>
@@ -318,10 +317,6 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/spanish.tar.gz:${PORTSDIR}/math/octave-forge-spani
 .endif
 .if defined(WITH_PT_BR)
 RUN_DEPENDS+=	${TARBALLS_DIR}/pt_br.tar.gz:${PORTSDIR}/math/octave-forge-pt_br
-.endif
-
-.if defined(WITH_ARPACK)
-RUN_DEPENDS+=	${TARBALLS_DIR}/arpack.tar.gz:${PORTSDIR}/math/octave-forge-arpack
 .endif
 .if defined(WITH_SPLINE_GCVSPL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/spline-gcvspl.tar.gz:${PORTSDIR}/math/octave-forge-spline-gcvspl
