@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	petite-chez
-PORTVERSION=	7.4d
+PORTVERSION=	8.0
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.scheme.com/download/ \
 		http://tx97.net/pub/distfiles/
@@ -30,6 +30,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--installprefix=${PREFIX} \
 		--installman=${MANPREFIX}/man \
 		--force-relink \
+		--nogzip-man-pages \
 		-m=${CHEZ_MACHTYPE}
 
 ALL_TARGET=	build
