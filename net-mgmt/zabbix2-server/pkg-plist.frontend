@@ -12,6 +12,7 @@
 %%WWWDIR%%/api/classes/class.cgraphitem.php
 %%WWWDIR%%/api/classes/class.chost.php
 %%WWWDIR%%/api/classes/class.chostgroup.php
+%%WWWDIR%%/api/classes/class.cimage.php
 %%WWWDIR%%/api/classes/class.citem.php
 %%WWWDIR%%/api/classes/class.cmaintenance.php
 %%WWWDIR%%/api/classes/class.cmap.php
@@ -54,6 +55,7 @@
 %%WWWDIR%%/config.php
 %%WWWDIR%%/css.css
 %%WWWDIR%%/dashboard.php
+%%WWWDIR%%/dashconf.php
 %%WWWDIR%%/discovery.php
 %%WWWDIR%%/discoveryconf.php
 %%WWWDIR%%/events.php
@@ -90,6 +92,10 @@
 %%WWWDIR%%/images/general/bttn/arrowright_bb.png
 %%WWWDIR%%/images/general/bttn/arrowup.png
 %%WWWDIR%%/images/general/bttn/arrowup_bb.png
+%%WWWDIR%%/images/general/bttn/config.png
+%%WWWDIR%%/images/general/bttn/config_bb.png
+%%WWWDIR%%/images/general/bttn/config_hl.png
+%%WWWDIR%%/images/general/bttn/config_hl_bb.png
 %%WWWDIR%%/images/general/bttn/down.png
 %%WWWDIR%%/images/general/bttn/down_bb.png
 %%WWWDIR%%/images/general/bttn/fullscreen.png
@@ -128,6 +134,7 @@
 %%WWWDIR%%/images/general/ipmi_available_bb.png
 %%WWWDIR%%/images/general/ipmi_unavailable.png
 %%WWWDIR%%/images/general/ipmi_unknown.png
+%%WWWDIR%%/images/general/no_icon.png
 %%WWWDIR%%/images/general/ok.png
 %%WWWDIR%%/images/general/ok_bb.png
 %%WWWDIR%%/images/general/ok_icon.png
@@ -286,6 +293,7 @@
 %%WWWDIR%%/include/config.inc.php
 %%WWWDIR%%/include/copt.lib.php
 %%WWWDIR%%/include/db.inc.php
+%%WWWDIR%%/include/debug.inc.php
 %%WWWDIR%%/include/defines.inc.php
 %%WWWDIR%%/include/discovery.inc.php
 %%WWWDIR%%/include/events.inc.php
@@ -296,6 +304,7 @@
 %%WWWDIR%%/include/hosts.inc.php
 %%WWWDIR%%/include/html.inc.php
 %%WWWDIR%%/include/httptest.inc.php
+%%WWWDIR%%/include/ident.inc.php
 %%WWWDIR%%/include/images.inc.php
 %%WWWDIR%%/include/items.inc.php
 %%WWWDIR%%/include/js.inc.php
@@ -315,6 +324,7 @@
 %%WWWDIR%%/include/locales/ru_ru.inc.php
 %%WWWDIR%%/include/locales/sp_sp.inc.php
 %%WWWDIR%%/include/locales/sv_se.inc.php
+%%WWWDIR%%/include/locales/ua_ua.inc.php
 %%WWWDIR%%/include/maintenances.inc.php
 %%WWWDIR%%/include/maps.inc.php
 %%WWWDIR%%/include/media.inc.php
@@ -338,6 +348,7 @@
 %%WWWDIR%%/instal.php
 %%WWWDIR%%/items.php
 %%WWWDIR%%/js/class.calendar.js
+%%WWWDIR%%/js/class.cdate.js
 %%WWWDIR%%/js/class.cmap.js
 %%WWWDIR%%/js/class.cookie.js
 %%WWWDIR%%/js/class.cscreen.js
