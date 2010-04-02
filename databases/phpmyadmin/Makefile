@@ -20,7 +20,7 @@ IGNORE_WITH_MYSQL=	323 40 41
 USE_BZIP2=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype mysql session spl filter mbstring mcrypt
+USE_PHP=	ctype mysql session spl filter mbstring
 .endif
 
 OPTIONS=	SUPHP	 "suPHP support" off \
@@ -30,6 +30,7 @@ OPTIONS=	SUPHP	 "suPHP support" off \
 		OPENSSL	 "OpenSSL support" on \
 		PDF	 "PDFlib support (implies GD)" on \
 		ZLIB	 "ZLIB support" on \
+		MCRYPT	 "MCrypt library support" on \
 		ZIP	 "Zip compression support" on
 
 .include <bsd.port.options.mk>
