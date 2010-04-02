@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Chemistry/Pattern/Atom.pm
+%%SITE_PERL%%/Chemistry/Pattern/Bond.pm
+%%SITE_PERL%%/Chemistry/Pattern.pm
+%%SITE_PERL%%/mach/auto/Chemistry/Pattern/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/Pattern
+@dirrmtry %%SITE_PERL%%/Chemistry/Pattern
+@dirrmtry %%SITE_PERL%%/Chemistry
