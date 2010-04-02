@@ -1,0 +1,3 @@
+Reload pages in browsers when files are modified.
+
+WWW: http://search.cpan.org/dist/Plack-Middleware-AutoRefresh/

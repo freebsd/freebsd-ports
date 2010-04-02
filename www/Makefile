@@ -1084,6 +1084,7 @@
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-Path-Class-URI
     SUBDIR += p5-Plack
+    SUBDIR += p5-Plack-Middleware-AutoRefresh
     SUBDIR += p5-Plack-Middleware-Deflater
     SUBDIR += p5-Plack-Middleware-Session
     SUBDIR += p5-Plack-Request

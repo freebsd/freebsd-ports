@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Plack/Middleware/AutoRefresh.pm
+%%SITE_PERL%%/auto/share/dist/Plack-Middleware-AutoRefresh/js/plackAutoRefresh.js
+%%SITE_PERL%%/auto/share/dist/Plack-Middleware-AutoRefresh/js/plackAutoRefresh.min.js
+@dirrm %%SITE_PERL%%/auto/share/dist/Plack-Middleware-AutoRefresh/js
+@dirrm %%SITE_PERL%%/auto/share/dist/Plack-Middleware-AutoRefresh
+@comment @dirrmtry %%SITE_PERL%%/auto/share/dist
+@comment @dirrmtry %%SITE_PERL%%/auto/share
+@comment @dirrmtry %%SITE_PERL%%/Plack/Middleware
+@comment @dirrmtry %%SITE_PERL%%/Plack
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/AutoRefresh
+@comment @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
+@comment @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
