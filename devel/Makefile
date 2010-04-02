@@ -1483,6 +1483,7 @@
     SUBDIR += p5-Eval-Context
     SUBDIR += p5-Event
     SUBDIR += p5-Event-ExecFlow
+    SUBDIR += p5-Event-Join
     SUBDIR += p5-Event-Lib
     SUBDIR += p5-Event-Notify
     SUBDIR += p5-Event-RPC
