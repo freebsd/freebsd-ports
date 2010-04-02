@@ -1,0 +1,20 @@
+--- Makefile	2010-02-01 19:18:23.000000000 +0800
++++ Makefile.new	2010-03-29 00:43:42.198577686 +0800
+@@ -4,7 +4,7 @@
+ USELIBWRAP=1	# Use libwrap?
+ PREFIX=/usr/local
+ 
+-MAN=sslh.8.gz	# man page name
++MAN=sslh.8	# man page name
+ 
+ # End of configuration -- the rest should take care of
+ # itself
+@@ -27,7 +27,7 @@
+ 	strip sslh
+ 
+ $(MAN): sslh.pod Makefile
+-	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod | gzip -9 - > $(MAN)
++	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod > $(MAN)
+ 
+ # generic install: install binary and man page
+ install: sslh $(MAN)
