@@ -1,0 +1,5 @@
+%%SITE_PERL%%/mach/auto/Chemistry/File/Mopac/.packlist
+%%SITE_PERL%%/Chemistry/File/Mopac.pm
+@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/File/Mopac
+@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/File
+@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry
