@@ -1,6 +1,7 @@
 BBBike/Ampelschaltung.pm
 BBBike/BBBikeAdvanced.pm
 BBBike/BBBikeAlarm.pm
+BBBike/BBBikeCGIAPI.pm
 BBBike/BBBikeCGIUtil.pm
 BBBike/BBBikeCalc.pm
 BBBike/BBBikeCrosshairs.pm
@@ -9,6 +10,7 @@ BBBike/BBBikeDraw.pm
 BBBike/BBBikeDraw/BBBikeGoogleMaps.pm
 BBBike/BBBikeDraw/GD.pm
 BBBike/BBBikeDraw/GDHeavy.pm
+BBBike/BBBikeDraw/GoogleMapsStatic.pm
 BBBike/BBBikeDraw/ImageMagick.pm
 BBBike/BBBikeDraw/Imager.pm
 BBBike/BBBikeDraw/MapServer.pm
@@ -60,7 +62,6 @@ BBBike/ESRI/TODO
 BBBike/ESRI/esri2bbd.pl
 BBBike/ESRI/t/shapefile.t
 BBBike/FURadar.pm
-BBBike/Fahrinfo.pm
 BBBike/GIS/Globe.pm
 BBBike/GIS/NSD.pm
 BBBike/GIS/globe_to_bbd.pl
@@ -73,6 +74,13 @@ BBBike/GPS/Gardown.pm
 BBBike/GPS/Gpsbabel.pm
 BBBike/GPS/GpsmanConn.pm
 BBBike/GPS/GpsmanData.pm
+BBBike/GPS/GpsmanData/Analyzer.pm
+BBBike/GPS/GpsmanData/Any.pm
+BBBike/GPS/GpsmanData/DirectEdit.pm
+BBBike/GPS/GpsmanData/SportsTracker.pm
+BBBike/GPS/GpsmanData/Stats.pm
+BBBike/GPS/GpsmanData/Strassen.pm
+BBBike/GPS/GpsmanData/Tk.pm
 BBBike/GPS/KML.pm
 BBBike/GPS/MPS.pm
 BBBike/GPS/MyNMEA.pm
@@ -83,8 +91,10 @@ BBBike/GPS/Util.pm
 BBBike/GPS/WaypointPlus.pm
 BBBike/GPS/t/gpsmandata.t
 BBBike/Geography.pm
+BBBike/Geography/Base.pm
 BBBike/Geography/Berlin_DE.pm
 BBBike/Geography/Brandenburg_DE.pm
+BBBike/Geography/FromMeta.pm
 BBBike/Geography/Muenchen_DE.pm
 BBBike/Geography/Oranienburg_DE.pm
 BBBike/Geography/Zuerich_CH.pm
@@ -126,6 +136,7 @@ BBBike/Karte/T99.pm
 BBBike/Karte/Tk50.pm
 BBBike/Karte/UTM.pm
 BBBike/MANIFEST
+BBBike/MANIFEST.SKIP
 BBBike/Makefile.PL
 BBBike/MasterPunkte.pm
 BBBike/MasterStrassen.pm
@@ -140,6 +151,7 @@ BBBike/Route.pm
 BBBike/Route/Descr.pm
 BBBike/Route/Heavy.pm
 BBBike/Route/PDF.pm
+BBBike/Route/Simplify.pm
 BBBike/Salesman.pm
 BBBike/Strassen.pm
 BBBike/Strassen/Build.pm
@@ -171,6 +183,7 @@ BBBike/Strassen/MultiBezStr.pm
 BBBike/Strassen/MultiStrassen.pm
 BBBike/Strassen/Obsolete.pm
 BBBike/Strassen/Pg.pm
+BBBike/Strassen/SimpleSearch.pm
 BBBike/Strassen/Stat.pm
 BBBike/Strassen/Storable.pm
 BBBike/Strassen/Strasse.pm
@@ -191,6 +204,7 @@ BBBike/Wizards.pm
 BBBike/bbbike
 @exec ln -fs %D/%F %D/bin/bbbike
 @unexec rm -f %D/bin/bbbike
+BBBike/bbbike-activeperl.bat
 BBBike/bbbike-fast.bat
 BBBike/bbbike.bat
 BBBike/bbbike.pod
@@ -204,7 +218,9 @@ BBBike/cbbbike
 BBBike/cbbbike.bat
 BBBike/cgi/README
 BBBike/cgi/bbbike-data.cgi
+BBBike/cgi/bbbike-snapshot.cgi
 BBBike/cgi/bbbike-teaser.pl
+BBBike/cgi/bbbike-test.cgi.config
 BBBike/cgi/bbbike.cgi
 BBBike/cgi/bbbikegooglemap.cgi
 BBBike/cgi/berlinmap.cgi
@@ -262,7 +278,6 @@ BBBike/data/inaccessible_landstrassen
 BBBike/data/inaccessible_strassen
 BBBike/data/innerberliner_grenze
 BBBike/data/kneipen
-BBBike/data/label
 BBBike/data/landstrassen
 BBBike/data/landstrassen2
 BBBike/data/mount
@@ -272,6 +287,7 @@ BBBike/data/obst
 BBBike/data/orte
 BBBike/data/orte2
 BBBike/data/orte_city
+BBBike/data/ortsschilder
 BBBike/data/plaetze
 BBBike/data/plz
 BBBike/data/potsdam
@@ -290,8 +306,14 @@ BBBike/data/sehenswuerdigkeit_img/bodemuseum.png
 BBBike/data/sehenswuerdigkeit_img/bodemuseum_klein.gif
 BBBike/data/sehenswuerdigkeit_img/bodemuseum_klein.png
 BBBike/data/sehenswuerdigkeit_img/brandenburger_tor.gif
+BBBike/data/sehenswuerdigkeit_img/chinesisches_haus.gif
+BBBike/data/sehenswuerdigkeit_img/chinesisches_haus.png
 BBBike/data/sehenswuerdigkeit_img/einsteinturm.gif
 BBBike/data/sehenswuerdigkeit_img/fernsehturm.gif
+BBBike/data/sehenswuerdigkeit_img/fernsehturm.png
+BBBike/data/sehenswuerdigkeit_img/fernsehturm_klein.gif
+BBBike/data/sehenswuerdigkeit_img/franzoesischer_dom.gif
+BBBike/data/sehenswuerdigkeit_img/franzoesischer_dom.png
 BBBike/data/sehenswuerdigkeit_img/friedrichswerdersche_kirche.png
 BBBike/data/sehenswuerdigkeit_img/friedrichswerdersche_kirche_klein.gif
 BBBike/data/sehenswuerdigkeit_img/friedrichswerdersche_kirche_klein.png
@@ -299,10 +321,16 @@ BBBike/data/sehenswuerdigkeit_img/funkturm.gif
 BBBike/data/sehenswuerdigkeit_img/gedaechtniskirche.gif
 BBBike/data/sehenswuerdigkeit_img/heilandskirche_sacrow.gif
 BBBike/data/sehenswuerdigkeit_img/heilandskirche_sacrow.png
+BBBike/data/sehenswuerdigkeit_img/hubbruecke_karnin.gif
+BBBike/data/sehenswuerdigkeit_img/hubbruecke_karnin.png
 BBBike/data/sehenswuerdigkeit_img/luftbrueckendenkmal.gif
 BBBike/data/sehenswuerdigkeit_img/oberbaumbruecke.gif
 BBBike/data/sehenswuerdigkeit_img/oberbaumcity.gif
 BBBike/data/sehenswuerdigkeit_img/reichstag.gif
+BBBike/data/sehenswuerdigkeit_img/sanssouci.gif
+BBBike/data/sehenswuerdigkeit_img/sanssouci.png
+BBBike/data/sehenswuerdigkeit_img/schloss_pfaueninsel.gif
+BBBike/data/sehenswuerdigkeit_img/schloss_pfaueninsel.png
 BBBike/data/sehenswuerdigkeit_img/schultheiss.gif
 BBBike/data/sehenswuerdigkeit_img/siegessaeule.gif
 BBBike/data/sehenswuerdigkeit_img/viktoriaparkdenkmal.gif
@@ -346,9 +374,11 @@ BBBike/ext/BBBikeXS/sqrt.h
 BBBike/ext/BBBikeXS/t/base.t
 BBBike/ext/BBBikeXS/t/leak.t
 BBBike/ext/BBBikeXS/t/makenet.t
+BBBike/ext/BBBikeXS/t/miscdata.t
 BBBike/ext/BBBikeXS/t/prefer_cache.t
 BBBike/ext/BBBikeXS/t/strecke.t
 BBBike/ext/BBBikeXS/t/to_koord1.t
+BBBike/ext/BBBikeXS/t/utf8.t
 BBBike/ext/BBBikeXS/typemap
 BBBike/ext/Makefile
 BBBike/ext/Strassen-Inline/Inline.pm
@@ -385,7 +415,7 @@ BBBike/ext/VirtArray/Makefile.PL
 BBBike/ext/VirtArray/README
 BBBike/ext/VirtArray/VirtArray.pm
 BBBike/ext/VirtArray/VirtArray.xs
-BBBike/ext/VirtArray/test.pl
+BBBike/ext/VirtArray/t/basic.t
 BBBike/ext/VirtArray/typemap
 BBBike/ext/inline2dist.pl
 BBBike/gnome/BBBikeDoc.tmpl
@@ -400,6 +430,7 @@ BBBike/html/bbbike_sidebar.html
 BBBike/html/bbbike_small.en.html
 BBBike/html/bbbike_small.html
 BBBike/html/bbbike_start.js
+BBBike/html/bbbike_tracks_iphone.html
 BBBike/html/bbbike_util.js
 BBBike/html/bbbikepod.css
 BBBike/html/bbbikeprint.css
@@ -436,6 +467,9 @@ BBBike/images/abc.gif
 BBBike/images/abc.xpm
 BBBike/images/abc_hi.gif
 BBBike/images/abc_hi.xpm
+BBBike/images/achtung.gif
+BBBike/images/achtung.png
+BBBike/images/achtung.xpm
 BBBike/images/addnet_ptr.xbm
 BBBike/images/addnet_ptr_mask.xbm
 BBBike/images/airport.gif
@@ -533,6 +567,8 @@ BBBike/images/cal.xpm
 BBBike/images/car.gif
 BBBike/images/car.png
 BBBike/images/car.xpm
+BBBike/images/cemetery_bg.gif
+BBBike/images/cemetery_bg.png
 BBBike/images/cgi_legende.gif
 BBBike/images/cgi_legende.xpm
 BBBike/images/church.gif
@@ -555,6 +591,25 @@ BBBike/images/droga_krajowa_table_16.gif
 BBBike/images/droga_krajowa_table_16.png
 BBBike/images/droga_krajowa_table_32.gif
 BBBike/images/droga_krajowa_table_32.png
+BBBike/images/eisenbahn.gif
+BBBike/images/eisenbahn.png
+BBBike/images/eisenbahn.xpm
+BBBike/images/eisenbahn15.png
+BBBike/images/eisenbahn_klein.gif
+BBBike/images/eisenbahn_klein.png
+BBBike/images/eisenbahn_klein.xpm
+BBBike/images/eisenbahn_mini.gif
+BBBike/images/eisenbahn_mini.png
+BBBike/images/eisenbahn_mini.xpm
+BBBike/images/eisenbahn_stillg.gif
+BBBike/images/eisenbahn_stillg.png
+BBBike/images/eisenbahn_stillg.xpm
+BBBike/images/eisenbahn_stillg_klein.gif
+BBBike/images/eisenbahn_stillg_klein.png
+BBBike/images/eisenbahn_stillg_klein.xpm
+BBBike/images/eisenbahn_stillg_mini.gif
+BBBike/images/eisenbahn_stillg_mini.png
+BBBike/images/eisenbahn_stillg_mini.xpm
 BBBike/images/essen.gif
 BBBike/images/essen.xpm
 BBBike/images/essen_klein.gif
@@ -592,6 +647,7 @@ BBBike/images/flag_ziel_centered.png
 BBBike/images/flag_ziel_centered.xpm
 BBBike/images/gb_flag.png
 BBBike/images/gefaelle.gif
+BBBike/images/gefaelle.png
 BBBike/images/gefaelle.xpm
 BBBike/images/glas.gif
 BBBike/images/glas.xpm
@@ -629,6 +685,15 @@ BBBike/images/kopfstein_klein.gif
 BBBike/images/kopfstein_klein.xpm
 BBBike/images/kopfstein_klein_grey.gif
 BBBike/images/kopfstein_klein_grey.xpm
+BBBike/images/kreisverkehr.gif
+BBBike/images/kreisverkehr.png
+BBBike/images/kreisverkehr.xpm
+BBBike/images/kreuzung.gif
+BBBike/images/kreuzung.png
+BBBike/images/kreuzung.xpm
+BBBike/images/kreuzung_klein.gif
+BBBike/images/kreuzung_klein.png
+BBBike/images/kreuzung_klein.xpm
 BBBike/images/landstrasse.gif
 BBBike/images/landstrasse.xpm
 BBBike/images/legend_blocked.gif
@@ -645,10 +710,14 @@ BBBike/images/lightning.gif
 BBBike/images/lightning_cursor.xbm
 BBBike/images/map.gif
 BBBike/images/map.xpm
+BBBike/images/mapserver_logo.gif
+BBBike/images/mapserver_logo.png
+BBBike/images/mapserver_logo.xpm
 BBBike/images/menupfeil.gif
 BBBike/images/menupfeil.xpm
 BBBike/images/minicross.png
 BBBike/images/monument.gif
+BBBike/images/monument.png
 BBBike/images/monument.xpm
 BBBike/images/moon.xpm
 BBBike/images/mosque.gif
@@ -665,6 +734,9 @@ BBBike/images/museum.xpm
 BBBike/images/newlayer.gif
 BBBike/images/newlayer.png
 BBBike/images/newlayer.xpm
+BBBike/images/notrailer.gif
+BBBike/images/notrailer.png
+BBBike/images/notrailer.xpm
 BBBike/images/open.gif
 BBBike/images/open.xpm
 BBBike/images/open_ovl.gif
@@ -676,7 +748,11 @@ BBBike/images/pflaume.gif
 BBBike/images/pflaume.png
 BBBike/images/pflaume.xpm
 BBBike/images/printer.gif
+BBBike/images/printer.png
 BBBike/images/printer.xpm
+BBBike/images/printer_narrow.gif
+BBBike/images/printer_narrow.png
+BBBike/images/printer_narrow.xpm
 BBBike/images/ptr.xbm
 BBBike/images/px_1t.gif
 BBBike/images/radrouten.gif
@@ -720,12 +796,14 @@ BBBike/images/srtbike.jpg
 BBBike/images/srtbike.png
 BBBike/images/srtbike.xbm
 BBBike/images/srtbike.xpm
+BBBike/images/srtbike1.ico
 BBBike/images/srtbike16.gif
 BBBike/images/srtbike16.xpm
 BBBike/images/srtbike16_mask.xbm
 BBBike/images/srtbike32.gif
 BBBike/images/srtbike32.xpm
 BBBike/images/srtbike32_mask.xbm
+BBBike/images/srtbike57.png
 BBBike/images/srtbike_mini.xpm
 BBBike/images/srtbike_solid.gif
 BBBike/images/srtbike_solid.xpm
@@ -748,6 +826,12 @@ BBBike/images/stip.xbm
 BBBike/images/stiplite.xbm
 BBBike/images/strasse.gif
 BBBike/images/strasse.xpm
+BBBike/images/strassenbahn.gif
+BBBike/images/strassenbahn.png
+BBBike/images/strassenbahn.xpm
+BBBike/images/strassenbahn_klein.gif
+BBBike/images/strassenbahn_klein.png
+BBBike/images/strassenbahn_klein.xpm
 BBBike/images/strlist.gif
 BBBike/images/strlist.xpm
 BBBike/images/synagogue.gif
@@ -795,6 +879,7 @@ BBBike/images/viewmag+.xpm
 BBBike/images/viewmag-.gif
 BBBike/images/viewmag-.xpm
 BBBike/images/vorfahrt.gif
+BBBike/images/vorfahrt.png
 BBBike/images/vorfahrt.xpm
 BBBike/images/vorfahrt_klein.gif
 BBBike/images/vorfahrt_klein.png
@@ -837,6 +922,7 @@ BBBike/kde/bbbike.menu
 BBBike/kde/x-bbbike-data.desktop.tmpl
 BBBike/kde/x-bbbike-route.desktop.tmpl
 BBBike/kde/x-gpstrack.desktop.tmpl
+BBBike/lib/Algorithm/GooglePolylineEncoding.pm
 BBBike/lib/AutoInstall/Tk.pm
 BBBike/lib/BikePower.pm
 BBBike/lib/BikePower/HTML.pm
@@ -895,6 +981,7 @@ BBBike/lib/Tk/RotX11Font.pm
 BBBike/lib/Tk/Ruler.pm
 BBBike/lib/Tk/SRTProgress.pm
 BBBike/lib/Tk/SRTScrollbar.pm
+BBBike/lib/Tk/SmoothShow.pm
 BBBike/lib/Tk/Splash.pm
 BBBike/lib/Tk/StippleLine.pm
 BBBike/lib/Tk/TextProgress.pm
@@ -928,6 +1015,7 @@ BBBike/lib/parse_wetterkarte
 BBBike/lib/savevars.pm
 BBBike/lib/wettermeldung2
 BBBike/lib/your.pm
+BBBike/miscsrc/bbbike_chooser.pl
 BBBike/msg/bbbike/en
 BBBike/msg/install/en
 BBBike/smsbbbike
@@ -987,10 +1075,13 @@ BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VirtArray/VirtArray.so
 @dirrm BBBike/lib/BrowserInfo
 @dirrm BBBike/lib/AutoInstall
 @dirrm BBBike/html/opensearch
+@dirrm BBBike/ext/VirtArray/t
 @dirrm BBBike/lib/PDF/Create
 @dirrm BBBike/ext/BBBikeXS/t
+@dirrm BBBike/GPS/GpsmanData
 @dirrm BBBike/ESRI/Shapefile
 @dirrm BBBike/lib/BikePower
+@dirrm BBBike/lib/Algorithm
 @dirrm BBBike/ext/VirtArray
 @dirrm BBBike/ext/BBBikeXS
 @dirrm BBBike/msg/install
@@ -1000,6 +1091,7 @@ BBBike/lib/%%LOCAL_PERL_ARCH%%/auto/VirtArray/VirtArray.so
 @dirrm BBBike/Geography
 @dirrm BBBike/lib/Text
 @dirrm BBBike/Strassen
+@dirrm BBBike/miscsrc
 @dirrm BBBike/lib/PDF
 @dirrm BBBike/lib/Met
 @dirrm BBBike/cgi/msg
