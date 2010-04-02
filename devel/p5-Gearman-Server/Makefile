@@ -7,6 +7,7 @@
 
 PORTNAME=	Gearman-Server
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/D/DO/DORMANDO
@@ -23,7 +24,7 @@ PERL_CONFIGURE=	yes
 MAN1=	gearmand.1
 MAN3=	Gearman::Server.3 Gearman::Server::Client.3
 
-USE_RC_SUBR=	gearmand
+USE_RC_SUBR=	gearmand-perl
 SUB_LIST+=	NAME=gearmand
 
 .include <bsd.port.mk>
