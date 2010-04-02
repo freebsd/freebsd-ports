@@ -1,0 +1,4 @@
+%%SITE_PERL%%/HOP/Lexer/Article.pod
+%%SITE_PERL%%/HOP/Lexer.pm
+@dirrmtry %%SITE_PERL%%/HOP/Lexer
+@dirrmtry %%SITE_PERL%%/HOP

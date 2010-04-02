@@ -1604,6 +1604,7 @@
     SUBDIR += p5-Gravatar-URL
     SUBDIR += p5-Gtk2-Spell
     SUBDIR += p5-Guard
+    SUBDIR += p5-HOP-Lexer
     SUBDIR += p5-Hash-AsObject
     SUBDIR += p5-Hash-Case
     SUBDIR += p5-Hash-Flatten
