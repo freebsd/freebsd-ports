@@ -880,6 +880,7 @@
     SUBDIR += p5-Data-Validate-URI
     SUBDIR += p5-FAQ-OMatic
     SUBDIR += p5-FCGI-Async
+    SUBDIR += p5-FCGI-Client
     SUBDIR += p5-FCGI-ProcManager
     SUBDIR += p5-FCGI-Spawn
     SUBDIR += p5-FEAR-API

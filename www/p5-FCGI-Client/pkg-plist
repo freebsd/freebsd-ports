@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Client/.packlist
+%%SITE_PERL%%/FCGI/Client.pm
+%%SITE_PERL%%/FCGI/Client/Connection.pm
+%%SITE_PERL%%/FCGI/Client/Constant.pm
+%%SITE_PERL%%/FCGI/Client/Record.pm
+%%SITE_PERL%%/FCGI/Client/RecordFactory.pm
+%%SITE_PERL%%/FCGI/Client/RecordHeader.pm
+@dirrmtry %%SITE_PERL%%/FCGI/Client
+@dirrmtry %%SITE_PERL%%/FCGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI
