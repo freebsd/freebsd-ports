@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MicroTemplate/.packlist
+%%SITE_PERL%%/Text/MicroTemplate.pm
+%%SITE_PERL%%/Text/MicroTemplate/EncodedString.pm
+%%SITE_PERL%%/Text/MicroTemplate/File.pm
+@dirrm %%SITE_PERL%%/Text/MicroTemplate
+@dirrmtry %%SITE_PERL%%/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MicroTemplate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
