@@ -21,7 +21,7 @@ MAKEFILE=	/usr/share/mk/bsd.prog.mk
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/untar
 
-MAKE_ENV+=	PROG=untar NOMAN=yes
+MAKE_ENV+=	PROG=untar NO_MAN=yes
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -D_POSIX_SOURCE" \
 		LDFLAGS="${LDFLAGS} -static"
 
