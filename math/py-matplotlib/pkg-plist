@@ -538,10 +538,12 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_qt4.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_tk.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animation_blit_wx.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/animate_decay_tk_blit.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/dynamic_collection.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/dynamic_image_gtkagg.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/dynamic_image_wxagg2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/gtk_timeout.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/histogram_tkagg.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/movie_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/simple_anim_gtk.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animation/simple_anim_tkagg.py
@@ -566,6 +568,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/font_family_rc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/font_file.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/histogram_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/histogram_path_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/image_zcoord.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/joinstyle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/legend_demo.py
@@ -630,6 +633,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/idle_and_timeout.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/keypress_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/lasso_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/looking_glass.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/path_editor.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/pick_event_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/event_handling/pick_event_demo2.py

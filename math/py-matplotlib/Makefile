@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	matplotlib
-PORTVERSION=	0.99.0
-PORTREVISION=	2
+PORTVERSION=	0.99.1.1
 CATEGORIES=	math python
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.99/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.99.1/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES=	${PORTNAME}-0.99.1.2.tar.gz
 
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	A plotting library uses a syntax familiar to matlab users
@@ -35,7 +35,7 @@ USE_GNOME=	gtk20 pygtk2
 USE_TCL_RUN=	yes
 USE_TK_RUN=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.99.1.1
 WANT_WX=	2.6
 
 .include <bsd.port.pre.mk>
@@ -51,6 +51,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 post-patch:
 	${REINPLACE_CMD} -e 's|png_infopp_NULL|NULL|' \
 		${WRKSRC}/src/_png.cpp
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/setupext.py
 
 .if !defined(NOPORTEXAMPLES)
 post-install:
