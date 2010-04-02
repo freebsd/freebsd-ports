@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	glew
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
-EXTRACT_SUFX=	-src.tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	The OpenGL Extension Wrangler Library
@@ -18,8 +18,6 @@ USE_XORG=	x11 xext xi xmu
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	config/config.guess config/Makefile.freebsd Makefile
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/glewinfo ${PREFIX}/bin
