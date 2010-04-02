@@ -1,0 +1,7 @@
+The user space command line tools from the latest version of BIND:
+	dig, host, and nslookup
+
+WWW: https://www.isc.org/software/bind
+
+- Doug Barton
+DougB@FreeBSD.org
