@@ -43,7 +43,7 @@ do-install:
 		cd ${PREFIX}/bin && ${LN} -s ${DATADIR}/$$p;\
 		done
 	cd ${WRKSRC} && \
-		${CP} -a build-aux config doc lib m4 modules tests ${DATADIR}/
+		${CP} -Rp build-aux config doc lib m4 modules tests ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/gnulib.info ${PREFIX}/${INFO_PATH}
 .ifndef		NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
