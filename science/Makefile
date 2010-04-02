@@ -110,6 +110,7 @@
     SUBDIR += p5-Chemistry-File-XYZ
     SUBDIR += p5-Chemistry-Isotope
     SUBDIR += p5-Chemistry-MacroMol
+    SUBDIR += p5-Chemistry-MidasPattern
     SUBDIR += p5-Chemistry-Mok
     SUBDIR += p5-Chemistry-Mol
     SUBDIR += p5-Chemistry-Pattern
