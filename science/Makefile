@@ -103,6 +103,7 @@
     SUBDIR += ovt
     SUBDIR += p5-Algorithm-SVMLight
     SUBDIR += p5-Chemistry-Bond-Find
+    SUBDIR += p5-Chemistry-Canonicalize
     SUBDIR += p5-Chemistry-Elements
     SUBDIR += p5-Chemistry-File-PDB
     SUBDIR += p5-Chemistry-MacroMol
