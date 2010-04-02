@@ -7,15 +7,14 @@
 
 PORTNAME=	position
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/position/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GPS and Moving-Map Applikation
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libproj.a:${PORTSDIR}/${PROJ4_PORT}
-RUN_DEPENDS=	${LOCALBASE}/lib/libproj.a:${PORTSDIR}/${PROJ4_PORT}
+LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
@@ -26,6 +25,8 @@ USE_GNUSTEP_INSTALL=	yes
 WRKSRC=		${WRKDIR}/Position/Position
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
-PROJ4_PORT?=	misc/proj4
+post-patch:
+	${REINPLACE_CMD} -e 's|UV |projUV |' \
+		${WRKSRC}/Functions.m
 
 .include <bsd.port.mk>
