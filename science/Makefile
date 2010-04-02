@@ -110,6 +110,7 @@
     SUBDIR += p5-Chemistry-File-Mopac
     SUBDIR += p5-Chemistry-File-PDB
     SUBDIR += p5-Chemistry-File-SLN
+    SUBDIR += p5-Chemistry-File-SMARTS
     SUBDIR += p5-Chemistry-File-VRML
     SUBDIR += p5-Chemistry-File-XYZ
     SUBDIR += p5-Chemistry-FormulaPattern
