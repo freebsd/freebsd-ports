@@ -206,7 +206,6 @@
     SUBDIR += octave-devel
     SUBDIR += octave-forge
     SUBDIR += octave-forge-ad
-    SUBDIR += octave-forge-arpack
     SUBDIR += octave-forge-audio
     SUBDIR += octave-forge-base
     SUBDIR += octave-forge-bim
