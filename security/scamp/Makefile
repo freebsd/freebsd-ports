@@ -5,22 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	scamp
-PORTVERSION=	5.2e
+PORTVERSION=	5.2g
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gerard@seibercom.net
 COMMENT=	Download & Install additional definition files for Clamav
 
-RUN_DEPENDS+=	bash>=4.0.33:${PORTSDIR}/shells/bash \
-		clamav>=0.95.2:${PORTSDIR}/security/clamav \
-		gnupg>=2.0.13:${PORTSDIR}/security/gnupg \
-		rsync>=3.0.6:${PORTSDIR}/net/rsync
+RUN_DEPENDS+=	bash>=4.0.35:${PORTSDIR}/shells/bash \
+		clamav>=0.95.3:${PORTSDIR}/security/clamav \
+		gnupg>=2.0.14:${PORTSDIR}/security/gnupg \
+		rsync>=3.0.7:${PORTSDIR}/net/rsync
 
 .if exists (${LOCALBASE}/bin/wget) && ! exists (${LOCALBASE}/bin/curl)
-RUN_DEPENDS+=	wget>=1.11.4_1:${PORTSDIR}/ftp/wget
+RUN_DEPENDS+=	wget>=1.12:${PORTSDIR}/ftp/wget
 .else
-RUN_DEPENDS+=	curl>=7.19.6_1:${PORTSDIR}/ftp/curl
+RUN_DEPENDS+=	curl>=7.19.7_1:${PORTSDIR}/ftp/curl
 .endif
 
 NO_BUILD=	yes
@@ -31,7 +31,7 @@ MAN1=		scamp.1
 MANCOMPRESSED=	no
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|SIG_DB=$${SIG_DB:-""}|SIG_DB=$${SIG_DB:-/var/db/clamav}|g' ${WRKSRC}/${PORTNAME}.sh
+	@${REINPLACE_CMD} -e 's|CLAMAV_DB=$${CLAMAV_DB:-""}|CLAMAV_DB=$${CLAMAV_DB:-/var/db/clamav}|g' ${WRKSRC}/${PORTNAME}.sh
 	@${REINPLACE_CMD} -e 's|CONFIG_DIR=$${CONFIG_DIR:-"/etc/scamp"}|CONFIG_DIR=$${CONFIG_DIR:-${PREFIX}/etc/scamp}|g' ${WRKSRC}/${PORTNAME}.sh
 
 post-install:
