@@ -2016,6 +2016,7 @@
     SUBDIR += p5-Sort-Versions
     SUBDIR += p5-Spiffy
     SUBDIR += p5-Spoon
+    SUBDIR += p5-Spreadsheet-ReadSXC
     SUBDIR += p5-Storable
     SUBDIR += p5-Stream
     SUBDIR += p5-Stream-Reader
