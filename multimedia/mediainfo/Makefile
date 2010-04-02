@@ -6,23 +6,35 @@
 #
 
 PORTNAME=		mediainfo
-PORTVERSION=		0.7.7.8
-DISTVERSIONSUFFIX=	_CLI_GNU_FromSource
+PORTVERSION=		0.7.29
+DISTVERSIONSUFFIX=	_AllInclusive
 CATEGORIES=		multimedia
-MASTER_SITES=		SF/${PORTNAME}/MediaInfo%20-%20Command%20line/${PORTVERSION}
-DISTNAME=		MediaInfo_${PORTVERSION}${DISTVERSIONSUFFIX}
+MASTER_SITES=		SF/${PORTNAME}/source/${PORTNAME}/${PORTVERSION}
+DISTNAME=		mediainfo_${PORTVERSION}${DISTVERSIONSUFFIX}
+EXTRACT_SUFX=		.7z
 
 MAINTAINER=	freebsd-ports@evilcode.net
 COMMENT=	Supplies technical and tag information about a video or audio file
 
+EXTRACT_DEPENDS=	p7zip>=0:${PORTSDIR}/archivers/p7zip
+
 PLIST_FILES=	bin/mediainfo
 
-USE_BZIP2=	yes
-USE_DOS2UNIX=	int128s.cpp int128u.cpp
+EXTRACT_CMD=	7z
+USE_AUTOTOOLS=	autotools:build
 
 WRKSRC=		${WRKDIR}/MediaInfo${DISTVERSIONSUFFIX}
 
+do-extract:
+	@(${MKDIR} ${WRKSRC} && ${EXTRACT_CMD} x -o${WRKSRC} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})
+
+pre-build:
+	@(cd ${WRKSRC} && ${CP} ./MediaInfo/Project/GNU/CLI/AddThisToRoot_CLI_compile.sh ./CLI_Compile.sh)
+
 do-build:
+	@(cd ${WRKSRC}/ZenLib/Project/GNU/Library/ && ${SH} ./autogen)
+	@(cd ${WRKSRC}/MediaInfoLib/Project/GNU/Library/ && ${SH} ./autogen)
+	@(cd ${WRKSRC}/MediaInfo/Project/GNU/CLI/ && ${SH} ./autogen)
 	@(cd ${WRKSRC}/ && ${SH} ./CLI_Compile.sh --prefix=${PREFIX})
 
 do-install:
