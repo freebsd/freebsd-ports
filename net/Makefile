@@ -669,6 +669,7 @@
     SUBDIR += p5-SOAP-Lite-060
     SUBDIR += p5-SOAP-MySOAP
     SUBDIR += p5-Samba-LDAP
+    SUBDIR += p5-Server-Starter
     SUBDIR += p5-Socket-Class
     SUBDIR += p5-Socket-GetAddrInfo
     SUBDIR += p5-Socket-Multicast6

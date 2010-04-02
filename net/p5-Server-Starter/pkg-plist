@@ -1,0 +1,6 @@
+bin/start_server
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Server/Starter/.packlist
+%%SITE_PERL%%/Server/Starter.pm
+@dirrmtry %%SITE_PERL%%/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Server/Starter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Server
