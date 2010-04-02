@@ -115,6 +115,7 @@
     SUBDIR += p5-Chemistry-Mok
     SUBDIR += p5-Chemistry-Mol
     SUBDIR += p5-Chemistry-Pattern
+    SUBDIR += p5-Chemistry-Reaction
     SUBDIR += p5-Chemistry-Ring
     SUBDIR += p5-Geo-ReadGRIB
     SUBDIR += p5-Geo-WebService-Elevation-USGS
