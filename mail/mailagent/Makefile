@@ -6,16 +6,16 @@
 #
 
 PORTNAME=		mailagent
-PORTVERSION=		3.0.73
-PORTREVISION=		1
+PORTVERSION=		3.1.65
 CATEGORIES=		mail
-MASTER_SITES=		CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/RAM
+MASTER_SITES=		http://eron.info/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated automatic mail-processing tool
 
 USE_PERL5=	yes
+USE_BZIP2=	yes
+
 NO_PACKAGE=	Correct FQDN needs to be hardcoded
 IS_INTERACTIVE=		yes
 HAS_CONFIGURE=		yes
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=		-dres \
 			-Dd_flockonly='define' \
 			-Dutmp='/var/run/utmp' \
 			-Dprefix='${PREFIX}' -Dmansrc='${PREFIX}/man/man1'
+MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	PATH=`dirname ${PERL5}`:${PATH}
 INSTALL_TARGET=	install install.man
 
