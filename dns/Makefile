@@ -6,6 +6,7 @@
     SUBDIR += adns
     SUBDIR += ares
     SUBDIR += autotrust
+    SUBDIR += bind-tools
     SUBDIR += bind9
     SUBDIR += bind9-sdb-ldap
     SUBDIR += bind9-sdb-postgresql
