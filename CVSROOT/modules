@@ -578,6 +578,7 @@ archivesmtp                     ports/mail/archivesmtp
 archmage                        ports/textproc/archmage
 archmbox                        ports/mail/archmbox
 ardour                          ports/audio/ardour
+arduino                         ports/devel/arduino
 areca-cli                       ports/sysutils/areca-cli
 arena                           ports/lang/arena
 ares                            ports/dns/ares
@@ -1846,6 +1847,7 @@ cowpatty                        ports/net-mgmt/cowpatty
 cowsay                          ports/games/cowsay
 cp2fwb                          ports/security/cp2fwb
 cpan-upload                     ports/devel/cpan-upload
+cpan-upload-http                ports/devel/cpan-upload-http
 cparser                         ports/lang/cparser
 cpbk                            ports/sysutils/cpbk
 cpdup                           ports/sysutils/cpdup
