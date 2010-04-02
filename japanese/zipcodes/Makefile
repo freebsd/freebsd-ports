@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20090731
+PORTVERSION=	20100331
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -44,6 +44,6 @@ fetch2:
 	${MV} jigyosyo.lzh `date -r $${m} +jigyosyo-%Y%m%d.lzh`
 
 scp:
-	scp *.lzh localdist:public_distfiles
+	scp -4 *.lzh localdist:public_distfiles
 
 .include <bsd.port.mk>
