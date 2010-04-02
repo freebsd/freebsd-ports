@@ -258,7 +258,6 @@
     SUBDIR += gstreamer-plugins-flac
     SUBDIR += gstreamer-plugins-fluendo-mp3
     SUBDIR += gstreamer-plugins-gsm
-    SUBDIR += gstreamer-plugins-ivorbis
     SUBDIR += gstreamer-plugins-jack
     SUBDIR += gstreamer-plugins-ladspa
     SUBDIR += gstreamer-plugins-lame
