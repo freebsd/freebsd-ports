@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	shishi
-PORTVERSION=	0.0.42
+PORTVERSION=	0.0.43
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,8 +26,7 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS=	--disable-starttls \
-		--with-db-dir=/var/shishi
+CONFIGURE_ARGS=	--with-db-dir=/var/shishi
 USE_LDCONFIG=	yes
 
 INFO=		shishi
