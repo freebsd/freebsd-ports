@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 PORTREVISION?=	0
 PORTEPOCH=	2
 CATEGORIES=	net-mgmt
@@ -61,7 +61,8 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		IPV6 "Support for IPv6" on \
 		LDAP "Support for checking LDAP servers" on \
 		JABBER "Use jabber media type" on \
-		FPING "Use fping for pinging hosts" on
+		FPING "Use fping for pinging hosts" on \
+		SSH "Use libssh2 for SSH-based checks" off
 
 .include <bsd.port.options.mk>
 
@@ -75,7 +76,7 @@ USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-pgsql
 .elifdef WITH_SQLITE
 ZABBIX_REQUIRE=
-USE_SQLITE=	yes
+USE_SQLITE=	3
 CONFIGURE_ARGS+=	--with-sqlite3
 .else
 IGNORE=		zabbix requires a database backend
@@ -93,6 +94,11 @@ CONFIGURE_ARGS+=	--with-jabber
 
 .ifndef WITHOUT_FPING
 RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
+.endif
+
+.ifdef WITH_SSH
+LIB_DEPENDS+=	ssh2:${PORTSDIR}/security/libssh2
+CONFIGURE_ARGS+=	--with-ssh2
 .endif
 .endif # if ${ZABBIX_BUILD} != "agent"
 
