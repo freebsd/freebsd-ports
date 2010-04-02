@@ -1,17 +1,17 @@
---- Makefile.orig	2009-01-27 04:15:14.000000000 +0300
-+++ Makefile	2009-02-28 03:36:17.000000000 +0300
-@@ -119,11 +119,11 @@
+--- Makefile.orig	2010-03-30 17:06:21.000000000 +0200
++++ Makefile	2010-03-30 17:06:57.000000000 +0200
+@@ -81,11 +81,11 @@
  	
  freebsd:
  	$(MAKE) target=FreeBSD \
 -		CC=gcc CXX='$(CC)' \
--		CFLAGS='$(CFLAGS) -fomit-frame-pointer -m486 -O3 -Wall' \
--		CXFLAGS=$(CFLAGS) \
--		LDFLAGS='$(LDFLAGS) -lpthread' \
+-		CFLAGS='-fomit-frame-pointer -m486 -O3 -Wall' \
+-		CXFLAGS='-fomit-frame-pointer -m486 -O3 -Wall' \
+-		LDFLAGS=$(LDFLAGS) \
 -		opt='$(opt) -DINLINE32' \
 +		CC='$(CC)' CXX='$(CC)' \
-+		CFLAGS='$(CFLAGS) -fomit-frame-pointer -Wall' \
-+		CXFLAGS='$(CXXFLAGS)' \
++		CFLAGS='$(CFLAGS) -fomit-frame-pointer -O3 -Wall' \
++		CXFLAGS='$(CXXFLAGS) -fomit-frame-pointer -O3 -Wall' \
 +		LDFLAGS='$(LDFLAGS) -pthread -lstdc++' \
 +		opt='$(opt)' \
  		crafty-make
