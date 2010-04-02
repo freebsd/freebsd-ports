@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sbox-dtc
-PORTVERSION=	1.07.3
+PORTNAME=	sbox
+PORTVERSION=	1.10
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.gplhost.com/pub/sbox-dtc/bsd/
+MASTER_SITES=	http://files.bsdroot.lv/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	aldis@BSDroot.lv
 COMMENT=	A CGI wrapper for Web site hosting services to safely grant CGI
 
 SBOX_UIDMIN?=	1000
 SBOX_GIDMIN?=	1000
 SBOX_SAFEPATH?=	/bin:/usr/bin:${PREFIX}/bin:${LOCALBASE}/bin
-SBOX_LOGFILE?=	/var/log/httpd-suexec.log
+SBOX_LOGFILE?=	/var/log/sbox.log
 
 CFLAGS+=	-DWEB_USER='\"${WWWOWN}\"' \
 		-DWEB_GROUP='\"${WWWGRP}\"' \
@@ -30,5 +30,10 @@ MAKE_ARGS=	CC="${CC}" COPTS="${CFLAGS}" \
 
 PLIST_FILES=	www/cgi-bin/sbox
 PLIST_DIRS=	www/cgi-bin
+
+PATCH_STRIP=	-p1
+
+pre-su-install:
+	${MKDIR} ${PREFIX}/www/cgi-bin
 
 .include <bsd.port.mk>
