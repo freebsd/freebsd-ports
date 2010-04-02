@@ -7,7 +7,7 @@
 
 PORTNAME=	ario
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 
@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-avahi		# without this ario don't build
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GCC=	4.4+
 USE_GNOME=	gtk20 gnomehack gnometarget
 INSTALLS_ICONS=	yes
 
