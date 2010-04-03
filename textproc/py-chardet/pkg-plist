@@ -97,6 +97,9 @@
 %%PYTHON_SITELIBDIR%%/chardet/sjisprober.py
 %%PYTHON_SITELIBDIR%%/chardet/sjisprober.pyc
 %%PYTHON_SITELIBDIR%%/chardet/sjisprober.pyo
+%%PYTHON_SITELIBDIR%%/chardet/test.py
+%%PYTHON_SITELIBDIR%%/chardet/test.pyc
+%%PYTHON_SITELIBDIR%%/chardet/test.pyo
 %%PYTHON_SITELIBDIR%%/chardet/universaldetector.py
 %%PYTHON_SITELIBDIR%%/chardet/universaldetector.pyc
 %%PYTHON_SITELIBDIR%%/chardet/universaldetector.pyo

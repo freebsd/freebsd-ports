@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	chardet
-PORTVERSION=	1.0.1
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://chardet.feedparser.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	python2-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
