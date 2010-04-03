@@ -1,89 +1,14 @@
-bin/eiskaltdc
-include/eiskaltdc/about.h
-include/eiskaltdc/cdialogmessage.h
-include/eiskaltdc/cdialogpicturemap.h
-include/eiskaltdc/dcantispam.h
-include/eiskaltdc/dcantispamcontrol.h
-include/eiskaltdc/dcapplicationevents.h
-include/eiskaltdc/dcchat.h
-include/eiskaltdc/dcclient.h
-include/eiskaltdc/dcconfig.h
-include/eiskaltdc/dcconnectionmanager.h
-include/eiskaltdc/dcdebug.h
-include/eiskaltdc/dcdownloadalias.h
-include/eiskaltdc/dceditserver.h
-include/eiskaltdc/dcedittransfer.h
-include/eiskaltdc/dcevent.h
-include/eiskaltdc/dcfilebrowser.h
-include/eiskaltdc/dcfilebrowserhistory.h
-include/eiskaltdc/dcfilebrowsersearchengine.h
-include/eiskaltdc/dcfilehasher.h
-include/eiskaltdc/dcfilelistdecompressor.h
-include/eiskaltdc/dcfiletool.h
-include/eiskaltdc/dcfiletransferinfo.h
-include/eiskaltdc/dcfriendobject.h
-include/eiskaltdc/dcgui.h
-include/eiskaltdc/dcguiutils.h
-include/eiskaltdc/dchubfilter.h
-include/eiskaltdc/dchublinklistener.h
-include/eiskaltdc/dchublistitems.h
-include/eiskaltdc/dchublistmanager.h
-include/eiskaltdc/dchubprofile.h
-include/eiskaltdc/dchubsearch.h
-include/eiskaltdc/dciconloader.h
-include/eiskaltdc/dcinotify.h
-include/eiskaltdc/dcinotifycontrol.h
-include/eiskaltdc/dcipfilter.h
-include/eiskaltdc/dcipfiltercontrol.h
-include/eiskaltdc/dcmenuhandler.h
-include/eiskaltdc/dcoptions.h
-include/eiskaltdc/dcpluginmanager.h
-include/eiskaltdc/dcqtextedit.h
-include/eiskaltdc/dcquickconnect.h
-include/eiskaltdc/dcshellcommandrunner.h
-include/eiskaltdc/dcsigterm.h
-include/eiskaltdc/dcsplash.h
-include/eiskaltdc/dcspy.h
-include/eiskaltdc/dctransferview.h
-include/eiskaltdc/dctransferviewitems.h
-include/eiskaltdc/dctranslator.h
-include/eiskaltdc/dcusercommandeditor.h
-include/eiskaltdc/dcuserslist.h
-include/eiskaltdc/dcwidget.h
-include/eiskaltdc/filebrowsermodel.h
-include/eiskaltdc/filteronlyproxy.h
-include/eiskaltdc/hublistmodel.h
-include/eiskaltdc/ipfiltermodel.h
-include/eiskaltdc/publichubsmodel.h
-include/eiskaltdc/publichubsproxy.h
-include/eiskaltdc/searchresultmodel.h
-include/eiskaltdc/searchspymodel.h
-include/eiskaltdc/userlistmodel.h
-lib/libeiskaltdc.so
-lib/libeiskaltdc.so.1.1.0
-libdata/pkgconfig/eiskaltdc-1.1.0.pc
-share/applications/eiskaltdc.desktop
-%%DATADIR%%/COPYING
-%%DATADIR%%/icons/appl/default/back.png
+bin/eiskaltdcpp
+share/applications/eiskaltdcpp.desktop
 %%DATADIR%%/icons/appl/default/ball_green.png
-%%DATADIR%%/icons/appl/default/ball_red.png
-%%DATADIR%%/icons/appl/default/ball_yellow.png
 %%DATADIR%%/icons/appl/default/bookmark_add.png
-%%DATADIR%%/icons/appl/default/bookmark_folder.png
 %%DATADIR%%/icons/appl/default/chat.png
-%%DATADIR%%/icons/appl/default/choose-language.png
 %%DATADIR%%/icons/appl/default/clear.png
-%%DATADIR%%/icons/appl/default/client.png
-%%DATADIR%%/icons/appl/default/colors.png
 %%DATADIR%%/icons/appl/default/configure.png
-%%DATADIR%%/icons/appl/default/configure_22x22.png
-%%DATADIR%%/icons/appl/default/configure_32x32.png
 %%DATADIR%%/icons/appl/default/connect.png
-%%DATADIR%%/icons/appl/default/connect_creating.png
 %%DATADIR%%/icons/appl/default/connect_no.png
-%%DATADIR%%/icons/appl/default/connected.png
-%%DATADIR%%/icons/appl/default/debug.png
 %%DATADIR%%/icons/appl/default/down.png
+%%DATADIR%%/icons/appl/default/downlist.png
 %%DATADIR%%/icons/appl/default/download.png
 %%DATADIR%%/icons/appl/default/download_as.png
 %%DATADIR%%/icons/appl/default/edit.png
@@ -92,6 +17,11 @@ share/applications/eiskaltdc.desktop
 %%DATADIR%%/icons/appl/default/editdelete.png
 %%DATADIR%%/icons/appl/default/emoticon.png
 %%DATADIR%%/icons/appl/default/exit.png
+%%DATADIR%%/icons/appl/default/fav.png
+%%DATADIR%%/icons/appl/default/favadd.png
+%%DATADIR%%/icons/appl/default/favrem.png
+%%DATADIR%%/icons/appl/default/favserver.png
+%%DATADIR%%/icons/appl/default/favusers.png
 %%DATADIR%%/icons/appl/default/fileclose.png
 %%DATADIR%%/icons/appl/default/filefind.png
 %%DATADIR%%/icons/appl/default/filetype-application.png
@@ -103,145 +33,50 @@ share/applications/eiskaltdc.desktop
 %%DATADIR%%/icons/appl/default/filetype-video.png
 %%DATADIR%%/icons/appl/default/filter.png
 %%DATADIR%%/icons/appl/default/find.png
-%%DATADIR%%/icons/appl/default/find_22x22.png
-%%DATADIR%%/icons/appl/default/find_32x32.png
-%%DATADIR%%/icons/appl/default/flag_belarus.png
-%%DATADIR%%/icons/appl/default/flag_bosnia.png
-%%DATADIR%%/icons/appl/default/flag_brazil.png
-%%DATADIR%%/icons/appl/default/flag_britain.png
-%%DATADIR%%/icons/appl/default/flag_czech.png
-%%DATADIR%%/icons/appl/default/flag_denmark.png
-%%DATADIR%%/icons/appl/default/flag_finland.png
-%%DATADIR%%/icons/appl/default/flag_france.png
-%%DATADIR%%/icons/appl/default/flag_germany.png
-%%DATADIR%%/icons/appl/default/flag_greece.png
-%%DATADIR%%/icons/appl/default/flag_hungary.png
-%%DATADIR%%/icons/appl/default/flag_iceland.png
-%%DATADIR%%/icons/appl/default/flag_italy.png
-%%DATADIR%%/icons/appl/default/flag_latvia.png
-%%DATADIR%%/icons/appl/default/flag_netherlands.png
-%%DATADIR%%/icons/appl/default/flag_norway.png
-%%DATADIR%%/icons/appl/default/flag_poland.png
-%%DATADIR%%/icons/appl/default/flag_romania.png
-%%DATADIR%%/icons/appl/default/flag_russia.png
-%%DATADIR%%/icons/appl/default/flag_serbia.png
-%%DATADIR%%/icons/appl/default/flag_slovakia.png
-%%DATADIR%%/icons/appl/default/flag_spain.png
-%%DATADIR%%/icons/appl/default/flag_sweden.png
 %%DATADIR%%/icons/appl/default/folder_blue.png
-%%DATADIR%%/icons/appl/default/folder_blue_open.png
-%%DATADIR%%/icons/appl/default/folder_red.png
-%%DATADIR%%/icons/appl/default/globe.png
-%%DATADIR%%/icons/appl/default/go-next.png
-%%DATADIR%%/icons/appl/default/go-previous.png
-%%DATADIR%%/icons/appl/default/go-up.png
+%%DATADIR%%/icons/appl/default/freespace.png
 %%DATADIR%%/icons/appl/default/gui.png
-%%DATADIR%%/icons/appl/default/help.png
+%%DATADIR%%/icons/appl/default/hashing.png
+%%DATADIR%%/icons/appl/default/hidewindow.png
 %%DATADIR%%/icons/appl/default/icon_appl.png
 %%DATADIR%%/icons/appl/default/icon_msg.png
-%%DATADIR%%/icons/appl/default/icons.png
-%%DATADIR%%/icons/appl/default/info.png
-%%DATADIR%%/icons/appl/default/inotify.png
-%%DATADIR%%/icons/appl/default/isaway.png
-%%DATADIR%%/icons/appl/default/log.png
-%%DATADIR%%/icons/appl/default/menu.png
+%%DATADIR%%/icons/appl/default/log_file.png
 %%DATADIR%%/icons/appl/default/message.png
-%%DATADIR%%/icons/appl/default/next.png
-%%DATADIR%%/icons/appl/default/notconnected.png
-%%DATADIR%%/icons/appl/default/onlinemanual.png
-%%DATADIR%%/icons/appl/default/open.png
-%%DATADIR%%/icons/appl/default/other.png
-%%DATADIR%%/icons/appl/default/player_pause.png
-%%DATADIR%%/icons/appl/default/player_play.png
-%%DATADIR%%/icons/appl/default/quickoptions.png
+%%DATADIR%%/icons/appl/default/own_filelist.png
+%%DATADIR%%/icons/appl/default/qt-logo.png
 %%DATADIR%%/icons/appl/default/reconnect.png
 %%DATADIR%%/icons/appl/default/reload.png
-%%DATADIR%%/icons/appl/default/reload_22x22.png
-%%DATADIR%%/icons/appl/default/reload_32x32.png
-%%DATADIR%%/icons/appl/default/reload_plugins.png
-%%DATADIR%%/icons/appl/default/save.png
 %%DATADIR%%/icons/appl/default/server.png
-%%DATADIR%%/icons/appl/default/slots_up.png
-%%DATADIR%%/icons/appl/default/sort-down-arrow.png
 %%DATADIR%%/icons/appl/default/spam.png
 %%DATADIR%%/icons/appl/default/splash.png
 %%DATADIR%%/icons/appl/default/spy.png
-%%DATADIR%%/icons/appl/default/ssl_no.png
-%%DATADIR%%/icons/appl/default/ssl_yes.png
-%%DATADIR%%/icons/appl/default/support.png
-%%DATADIR%%/icons/appl/default/text-select-all.png
 %%DATADIR%%/icons/appl/default/transfer.png
-%%DATADIR%%/icons/appl/default/translate.png
 %%DATADIR%%/icons/appl/default/up.png
-%%DATADIR%%/icons/appl/default/update.png
+%%DATADIR%%/icons/appl/default/uplist.png
 %%DATADIR%%/icons/appl/default/users.png
-%%DATADIR%%/icons/appl/default/users_22x22.png
-%%DATADIR%%/icons/appl/default/users_32x32.png
-%%DATADIR%%/icons/appl/default/view-list-details.png
-%%DATADIR%%/icons/appl/default/view-list-icons.png
-%%DATADIR%%/icons/appl/default/view_sidetree.png
-%%DATADIR%%/icons/appl/default/vru.png
-%%DATADIR%%/icons/appl/default/windows_cl_all.png
-%%DATADIR%%/icons/appl/default/windows_cl_find.png
-%%DATADIR%%/icons/appl/default/windows_cl_hubs.png
-%%DATADIR%%/icons/appl/default/windows_cl_lists.png
-%%DATADIR%%/icons/appl/default/windows_cl_offline.png
-%%DATADIR%%/icons/appl/default/windows_horiz.png
-%%DATADIR%%/icons/appl/default/windows_icon.png
-%%DATADIR%%/icons/appl/default/windows_lists.png
-%%DATADIR%%/icons/appl/default/windows_tiled.png
-%%DATADIR%%/icons/appl/default/windows_undock.png
-%%DATADIR%%/icons/appl/default/windows_vert.png
 %%DATADIR%%/icons/appl/default/zoom-in.png
 %%DATADIR%%/icons/appl/default/zoom-out.png
 %%DATADIR%%/icons/emot/default/default.png
-%%DATADIR%%/icons/emot/default/emoticons-v2.xml
-%%DATADIR%%/icons/emot/flylink/emoticons-v2.xml
+%%DATADIR%%/icons/emot/default/default.xml
 %%DATADIR%%/icons/emot/flylink/flylink.png
-%%DATADIR%%/icons/emot/kolobok/emoticons-v2.xml
-%%DATADIR%%/icons/emot/kolobok/kolobok.png
-%%DATADIR%%/icons/emot/simple-gnome/emoticons-v2.xml
-%%DATADIR%%/icons/emot/simple-gnome/simple-gnome.png
+%%DATADIR%%/icons/emot/flylink/flylink.xml
 %%DATADIR%%/icons/user/default/usericons.png
 %%DATADIR%%/icons/user/valknut/usericons.png
-%%DATADIR%%/translation/eiskaltdc.be.qm
-%%DATADIR%%/translation/eiskaltdc.de.qm
-%%DATADIR%%/translation/eiskaltdc.en.qm
-%%DATADIR%%/translation/eiskaltdc.fr.qm
-%%DATADIR%%/translation/eiskaltdc.ru.qm
-share/icons/hicolor/128x128/apps/eiskaltdc.png
-share/icons/hicolor/16x16/apps/eiskaltdc.png
-share/icons/hicolor/22x22/apps/eiskaltdc.png
-share/icons/hicolor/24x24/apps/eiskaltdc.png
-share/icons/hicolor/32x32/apps/eiskaltdc.png
-share/icons/hicolor/48x48/apps/eiskaltdc.png
-share/icons/hicolor/64x64/apps/eiskaltdc.png
-share/pixmaps/eiskaltdc.png
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/applications
-@dirrm %%DATADIR%%/translation
-@dirrm %%DATADIR%%/sounds/default
-@dirrm %%DATADIR%%/sounds
+%%DATADIR%%/ts/eiskaltdcpp.be.qm
+%%DATADIR%%/ts/eiskaltdcpp.en.qm
+%%DATADIR%%/ts/eiskaltdcpp.ru.qm
+share/icons/hicolor/128x128/apps/eiskaltdcpp.png
+share/icons/hicolor/16x16/apps/eiskaltdcpp.png
+share/icons/hicolor/22x22/apps/eiskaltdcpp.png
+share/icons/hicolor/24x24/apps/eiskaltdcpp.png
+share/icons/hicolor/32x32/apps/eiskaltdcpp.png
+share/icons/hicolor/48x48/apps/eiskaltdcpp.png
+share/icons/hicolor/64x64/apps/eiskaltdcpp.png
+share/pixmaps/eiskaltdcpp.png
+@dirrm %%DATADIR%%/ts
 @dirrm %%DATADIR%%/icons/user/valknut
 @dirrm %%DATADIR%%/icons/user/default
 @dirrm %%DATADIR%%/icons/user
-@dirrm %%DATADIR%%/icons/emot/simple-gnome
-@dirrm %%DATADIR%%/icons/emot/kolobok
 @dirrm %%DATADIR%%/icons/emot/flylink
 @dirrm %%DATADIR%%/icons/emot/default
 @dirrm %%DATADIR%%/icons/emot
@@ -249,4 +84,4 @@ share/pixmaps/eiskaltdc.png
 @dirrm %%DATADIR%%/icons/appl
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrm include/eiskaltdc
+@dirrmtry share/applications
