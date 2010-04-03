@@ -72,7 +72,7 @@ OPTIONS+=	SENDMAIL "Play nice with sendmail server" off
 OPTIONS+=	POSTFIX_MBC "Dspam as mailbox_command in Postfix" off
 OPTIONS+=	QMAIL "Play nice with Qmail mail server" off
 
-OPTIONS+=	WebUI "Install WebUI - pulls in Apache or see below" off
+OPTIONS+=	WebUI "Install WebUI, pulls in Apache or see below" off
 OPTIONS+=	LIGHTTPD "RUN_DEPEND on LightHTTPD, not Apache" off
 
 USE_PERL5=	yes
