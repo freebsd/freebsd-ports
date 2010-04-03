@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=    ../by-authors/id/D/DR/DROLSKY
+MASTER_SITE_SUBDIR=	../by-authors/id/F/FL/FLORA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sahil@tandon.net
@@ -76,6 +76,7 @@ MAN3=	Moose.3 \
 	Moose::Manual::MethodModifiers.3 \
 	Moose::Manual::MooseX.3 \
 	Moose::Manual::Roles.3 \
+	Moose::Manual::Support.3 \
 	Moose::Manual::Types.3 \
 	Moose::Manual::Unsweetened.3 \
 	Moose::Meta::Attribute.3 \

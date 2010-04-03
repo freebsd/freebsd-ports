@@ -1,14 +1,21 @@
 Note that this release of p5-Moose is incompatible with
-older versions of these modules:
+older versions of the following modules:
 
-        - Fey::ORM                      <= 0.23
-        - MooseX::AttributeHelpers      <= 0.21
-        - MooseX::ClassAttribute        <= 0.09
-        - MooseX::MethodAttributes      <= 0.15
-        - MooseX::Params::Validate      <= 0.05
-        - MooseX::Singleton             <= 0.19
-        - MooseX::StrictConstructor     <= 0.07
-        - MooseX::Types                 <= 0.19
-        - namespace::autoclean          <= 0.08
+        Devel::REPL                   <= 1.003008
+        Fey::ORM                      <= 0.23
+        Catalyst                      <= 5.80017
+        MooseX::Aliases               <= 0.07
+        MooseX::AttributeHelpers      <= 0.22
+        MooseX::Attribute::Prototype  <= 0.10
+        MooseX::ClassAttribute        <= 0.09
+        MooseX::MethodAttributes      <= 0.18
+        MooseX::NonMoose              <= 0.05
+        MooseX::Params::Validate      <= 0.05
+        MooseX::Role::Cmd             <= 0.06
+        MooseX::Role::WithOverloading <= 0.04
+        MooseX::Singleton             <= 0.19
+        MooseX::StrictConstructor     <= 0.07
+        MooseX::Types                 <= 0.19
+        namespace::autoclean          <= 0.08
 
 They will need to be updated.
