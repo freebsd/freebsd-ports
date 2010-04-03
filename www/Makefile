@@ -1087,6 +1087,7 @@
     SUBDIR += p5-Plack
     SUBDIR += p5-Plack-Handler-AnyEvent-ReverseHTTP
     SUBDIR += p5-Plack-Middleware-AutoRefresh
+    SUBDIR += p5-Plack-Middleware-Debug
     SUBDIR += p5-Plack-Middleware-Deflater
     SUBDIR += p5-Plack-Middleware-Header
     SUBDIR += p5-Plack-Middleware-ReverseProxy
