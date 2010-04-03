@@ -17,7 +17,7 @@ XPI_NUM=	1250
 XPI_ID=		{477c4c36-24eb-11da-94d4-00e08161165f}
 XPI_FILES=	chrome.manifest chrome/grabanddrag.jar \
 		defaults/preferences/gadDefaults.js \
-		install.rdf license.txt
+		icon.png install.rdf license.txt
 XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
