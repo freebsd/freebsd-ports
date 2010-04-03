@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: postpals-taillog 
+# REQUIRE: LOGIN cleanvar 
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# postpals_taillog_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=postpals_taillog
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/postpals-taillog
+pidfile=/var/run/${name}.pid
+procname="/usr/bin/perl"
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+postpals_taillog_enable=${postpals_taillog_enable="NO"}
+postpals_taillog_flags=${postpals_taillog_flags="-p ${pidfile} 10040 /var/log/maillog"}
+
+load_rc_config $name
+run_rc_command "$1"

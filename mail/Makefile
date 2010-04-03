@@ -512,6 +512,7 @@
     SUBDIR += postfix26
     SUBDIR += postfixadmin
     SUBDIR += postgrey
+    SUBDIR += postpals
     SUBDIR += prayer
     SUBDIR += premail
     SUBDIR += prepflog
