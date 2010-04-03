@@ -2241,3 +2241,5 @@ lib/vtk-%%VER1%%/vtkWidgetsKit.cmake
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/qt
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/gtk
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk
+%%QT%%dirrm plugins/designer
+%%QT%%dirrm plugins
