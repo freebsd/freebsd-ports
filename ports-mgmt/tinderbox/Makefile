@@ -94,7 +94,7 @@ RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 
 pre-everything::
 .if (!defined(WITHOUT_APACHE) || defined(WITH_LIGHTTPD) || defined(WITH_HIAWATHA)) && !defined(WITH_WEBUI)
-	@${ECHO_CMD} "It doesn't make sense to depend on Apache, LightHTTPD or Hiawatha if not using any web interface."
+	@${ECHO_CMD} "It doesn't make sense to depend on Apache, LightHTTPD or Hiawatha if not using the WebUI."
 	@${FALSE}
 .endif
 

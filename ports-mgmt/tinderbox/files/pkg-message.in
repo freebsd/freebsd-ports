@@ -31,7 +31,7 @@ alias.url = (	"/tb/logs/" => "%%PREFIX%%/tinderbox/logs/",
 dir-listing.activate = "enable"
 
 
-- In you Hiawatha configuration:
+- In your Hiawatha configuration:
 
 Alias is a built in command, no need to load any special mod
 
