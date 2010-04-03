@@ -1,11 +1,11 @@
 Description: Build and install the documentation as usual, no special handling.
 Forwarded: https://sourceforge.net/tracker/?func=detail&aid=2897155&group_id=976&atid=100976
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2009-11-13
+Last-Update: 2010-03-30
 
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -297,9 +297,9 @@
+@@ -302,9 +302,9 @@
   libcurl.pc.in vc6curl.dsw MacOSX-Framework Android.mk $(CMAKE_DIST)
  
  bin_SCRIPTS = curl-config
@@ -18,7 +18,7 @@ Last-Update: 2009-11-13
  pkgconfig_DATA = libcurl.pc
  all: all-recursive
  
-@@ -859,12 +859,10 @@
+@@ -864,12 +864,10 @@
  # We extend the standard install with a custom hook:
  install-data-hook:
  	cd include && $(MAKE) install

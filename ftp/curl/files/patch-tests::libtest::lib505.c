@@ -1,11 +1,11 @@
 Description: Use fstat() instead of stat() to avoid a race condition.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2009-11-13
+Last-Update: 2010-03-30
 
 --- a/tests/libtest/lib505.c
 +++ b/tests/libtest/lib505.c
-@@ -56,12 +56,24 @@
+@@ -55,12 +55,24 @@
      return -1;
    }
  
@@ -32,7 +32,7 @@ Last-Update: 2009-11-13
              error, strerror(error));
      fprintf(stderr, "WARNING: cannot open file %s\n", libtest_arg2);
      return -1;
-@@ -72,18 +84,6 @@
+@@ -71,18 +83,6 @@
      return -4;
    }
  

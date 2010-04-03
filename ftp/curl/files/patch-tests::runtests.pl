@@ -1,11 +1,11 @@
 Description: Do not use valgrind.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2009-11-13
+Last-Update: 2010-03-30
 
 --- a/tests/runtests.pl
 +++ b/tests/runtests.pl
-@@ -88,7 +88,7 @@
+@@ -105,7 +105,7 @@
      );
  
  require "getpart.pm"; # array functions
