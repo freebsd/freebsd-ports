@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ghostscript8
-PORTVERSION=	8.70
-PORTREVISION=	2
+PORTVERSION=	8.71
 CATEGORIES=	print
-MASTER_SITES=	SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
+MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
+		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${PORTVERSION:S/.//}/:gs_srcs \
 		http://www.humblesoft.com/pub/:epag
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs
@@ -22,12 +22,12 @@ MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 8.x PostScript interpreter
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png
+		png.6:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,8,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS=	gambc-[0-9]* ghostscript7-[0-9]* ghostscript7-*-[0-9]*
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
@@ -200,6 +200,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include/freetype2
 PLIST_SUB+=	FAPI=""
 .else
 PLIST_SUB+=	FAPI="@comment "
+.endif
+
+.if defined(WITH_GS_cairo)
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+CONFIGURE_ARGS+=	--enable-cairo
+.else
+CONFIGURE_ARGS+=	--disable-cairo
 .endif
 
 ALL_TARGET=	so

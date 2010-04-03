@@ -1,6 +1,6 @@
---- base/Makefile.in.orig	2008-06-22 15:43:28.000000000 +0900
-+++ base/Makefile.in	2008-11-03 00:09:12.000000000 +0900
-@@ -46,9 +46,8 @@
+--- base/Makefile.in.orig	2009-12-18 16:04:10.000000000 +0900
++++ base/Makefile.in	2010-03-02 06:21:50.000000000 +0900
+@@ -47,9 +47,8 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
  
@@ -12,7 +12,7 @@
  INSTALL_SHARED = @INSTALL_SHARED@
  
  prefix = @prefix@
-@@ -164,7 +163,7 @@
+@@ -156,7 +155,7 @@
  # some older JPEG streams that violate the standard. If the JPEG
  # library built from local sources, the patch will be applied.
  
@@ -21,7 +21,7 @@
  JPEG_NAME=jpeg
  
  # Define the directory where the PNG library sources are stored,
-@@ -172,14 +171,14 @@
+@@ -164,12 +163,12 @@
  # You may need to change this if the libpng version changes.
  # See libpng.mak for more information.
  
@@ -30,6 +30,13 @@
  PNGSRCDIR=@LIBPNGDIR@
  LIBPNG_NAME=png
  
+ # libtiff
+-SHARE_LIBTIFF=@SHARE_LIBTIFF@
++SHARE_LIBTIFF=1
+ TIFFSRCDIR=@LIBTIFFDIR@
+ TIFFPLATFORM=unix
+ TIFFCONFIG_SUFFIX=
+@@ -178,7 +177,7 @@
  # Define the directory where the zlib sources are stored.
  # See zlib.mak for more information.
  
@@ -38,7 +45,7 @@
  ZSRCDIR=@ZLIBDIR@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
-@@ -250,7 +249,7 @@
+@@ -254,7 +253,7 @@
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
  
@@ -47,7 +54,7 @@
  CFLAGS_DEBUG=-g -O0
  CFLAGS_PROFILE=-pg @OPT_CFLAGS@
  CFLAGS_SO=@DYNAMIC_CFLAGS@
-@@ -295,7 +294,7 @@
+@@ -299,7 +298,7 @@
  # Solaris may need -lnsl -lsocket -lposix4.
  # (Libraries required by individual drivers are handled automatically.)
  
@@ -56,7 +63,7 @@
  
  # Define the standard libraries to search at the end of linking.
  # Most platforms require -lpthread for the POSIX threads library;
-@@ -339,7 +338,7 @@
+@@ -343,7 +342,7 @@
  # the pthread library. Otherwise use SYNC=nosync
  #SYNC=posync
  #SYNC=nosync
@@ -65,7 +72,7 @@
  
  # programs we use
  RM=rm -f
-@@ -498,6 +497,7 @@
+@@ -490,6 +489,7 @@
  # ---------------- End of platform-specific section ---------------- #
  
  INSTALL_CONTRIB=@INSTALL_CONTRIB@

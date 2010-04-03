@@ -70,6 +70,7 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-3
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-4
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-5
+%%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-6
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-B5pc
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-ETenms-B5
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/Adobe-CNS1-H-CID
@@ -287,6 +288,8 @@ lib/libgs.so.%%GS_VERSION%%
 %%DATADIR%%/%%GS_VERSION%%/Resource/ColorSpace/DefaultGray
 %%DATADIR%%/%%GS_VERSION%%/Resource/ColorSpace/DefaultRGB
 %%DATADIR%%/%%GS_VERSION%%/Resource/ColorSpace/TrivialCMYK
+%%DATADIR%%/%%GS_VERSION%%/Resource/ColorSpace/sGray
+%%DATADIR%%/%%GS_VERSION%%/Resource/ColorSpace/sRGB
 %%DATADIR%%/%%GS_VERSION%%/Resource/Decoding/FCO_Dingbats
 %%DATADIR%%/%%GS_VERSION%%/Resource/Decoding/FCO_Symbol
 %%DATADIR%%/%%GS_VERSION%%/Resource/Decoding/FCO_Unicode
