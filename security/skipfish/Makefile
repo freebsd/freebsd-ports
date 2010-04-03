@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	skipfish
-PORTVERSION=	1.11b
-CATEGORIES=	security
+PORTVERSION=	1.29b
+CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
 
@@ -14,9 +14,7 @@ MAINTAINER=	rpsfa@rit.edu
 COMMENT=	A fully automated, active web application security reconnaissance tool
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
-
 SUB_FILES=	pkg-message
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(NOPORTDOCS)
@@ -30,9 +28,8 @@ BROKEN=		does not build on 6.x yet
 .endif
 
 post-patch:
-	@${SED} -ie 's:assets:${DATADIR}/assets:g' ${WRKSRC}/report.c
-	@${SED} -ie 's:assets/:${DATADIR}/assets/:g' ${WRKSRC}/skipfish.c
-	@${SED} -ie 's:skipfish.wl:${DATADIR}/dictionaries/default.wl:g' ${WRKSRC}/config.h
+	 @${REINPLACE_CMD} -e 's:"skipfish.wl":"${DATADIR}/dictionaries/default.wl":' \
+		-e 's:"assets":"${DATADIR}/assets":' ${WRKSRC}/config.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/skipfish ${PREFIX}/bin/skipfish
