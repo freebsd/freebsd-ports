@@ -1,7 +1,7 @@
 **********************************************************************
 Read the manual
 
-  %%DOCSDIR%%/manual.pdf
+  %%DOCSDIR%%/apcupsd.pdf
 
 to do site specific configuration assigenments! Especially have a
 detailed look into the chapter describing the shutdown procedure.
