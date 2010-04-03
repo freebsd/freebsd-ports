@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Net-OAuth
-PORTVERSION=	0.20
+PORTVERSION=	0.22
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -43,6 +43,7 @@ MAN3=	Net::OAuth.3 \
 	Net::OAuth::V1_0A::AccessTokenRequest.3 \
 	Net::OAuth::V1_0A::RequestTokenRequest.3 \
 	Net::OAuth::V1_0A::RequestTokenResponse.3 \
-	Net::OAuth::V1_0A::UserAuthResponse.3
+	Net::OAuth::V1_0A::UserAuthResponse.3 \
+	Net::OAuth::XauthAccessTokenRequest.3
 
 .include <bsd.port.mk>
