@@ -1,0 +1,7 @@
+Module::Versions handles versions of loaded modules with a flexible
+result interface.  The main goal is to get as much version
+informations as possible about a module or module list with a simple
+call interface and an absolutely flexible result interface.
+Module::Versions handles *loaded* and *loadable* modules.
+
+WWW: http://search.cpan.org/dist/Module-Versions/
