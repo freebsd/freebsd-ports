@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: supervisord 
+# REQUIRE: DAEMON
+# KEYWORD: shutdown 
+# 
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable supervisord: 
+#
+# supervisord_enable="YES" 
+# 
+
+. /etc/rc.subr
+
+name="supervisord"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/${name}"
+command_interpreter="%%PYTHON_CMD%%"
+pidfile="%%PIDDIR%%/${name}.pid"
+
+load_rc_config $name 
+
+: ${supervisord_enable="NO"} 
+
+run_rc_command "$1"

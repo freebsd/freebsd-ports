@@ -2,14 +2,8 @@ bin/echo_supervisord_conf
 bin/pidproxy
 bin/supervisorctl
 bin/supervisord
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/._PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/._SOURCES.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/._dependency_links.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/._entry_points.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/._namespace_packages.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/._not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/._requires.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/._top_level.txt
+@unexec if cmp -s %D/etc/supervisord.conf.sample %D/etc/supervisord.conf; then rm -f %D/etc/supervisord.conf; fi
+etc/supervisord.conf.sample
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -278,6 +272,9 @@ bin/supervisord
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_childutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_childutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_childutils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_confecho.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_confecho.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_confecho.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_datatypes.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_datatypes.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_datatypes.pyo
@@ -293,9 +290,6 @@ bin/supervisord
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_loggers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_loggers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_loggers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_memmon.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_memmon.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_memmon.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_options.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_options.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_options.pyo
@@ -308,6 +302,9 @@ bin/supervisord
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_socket_manager.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_socket_manager.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_socket_manager.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_states.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_states.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_states.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_supervisorctl.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_supervisorctl.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/supervisor/tests/test_supervisorctl.pyo
@@ -359,4 +356,9 @@ bin/supervisord
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/doc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
+@stopdaemon supervisord
+@exec mkdir -p %%PIDDIR%%
+@unexec echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+@unexec echo "If you are permanently removing py-supervisor, you should also:" | /usr/bin/fmt
+@unexec echo "'rm -rf %%PIDDIR%%'" | /usr/bin/fmt
+@unexec echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
