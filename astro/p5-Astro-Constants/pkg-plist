@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Astro/Constants.pm
+%%SITE_PERL%%/Astro/Constants/CGS.pm
+%%SITE_PERL%%/Astro/Constants/MKS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Constants/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/Constants
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro
+@dirrmtry %%SITE_PERL%%/Astro/Constants
+@dirrmtry %%SITE_PERL%%/Astro
