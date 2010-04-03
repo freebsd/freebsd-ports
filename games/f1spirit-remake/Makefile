@@ -7,7 +7,7 @@
 
 PORTNAME=	f1spirit-remake
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 # Original braingames site is really slow
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
@@ -17,7 +17,7 @@ DISTNAME=	f1spirit-linux
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Remake of classic F1 Spirit racing game
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 USE_ZIP=	yes
 USE_GMAKE=	yes

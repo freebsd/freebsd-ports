@@ -7,14 +7,14 @@
 
 PORTNAME=	libofx
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		xml\\+\\+-1.0.1:${PORTSDIR}/textproc/libxml++ \
 		osp.5:${PORTSDIR}/textproc/opensp
 

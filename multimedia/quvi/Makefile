@@ -7,13 +7,14 @@
 
 PORTNAME=	quvi
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	legatvs@gmail.com
 COMMENT=	Query video library for Youtube like websites
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_LDCONFIG=	yes

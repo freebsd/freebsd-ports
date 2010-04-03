@@ -8,6 +8,7 @@
 
 PORTNAME=	afflib
 PORTVERSION=	3.3.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.afflib.org/downloads/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	20100218
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -18,7 +18,7 @@ COMMENT=	GNU Flash movie player
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		curl.5:${PORTSDIR}/ftp/curl \
+		curl.6:${PORTSDIR}/ftp/curl \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
 CONFLICTS=	gnash-[0-9]*

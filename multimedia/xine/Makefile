@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui%20%28skinned%20front%20end%29/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-xft
 .endif
 
 .if !defined(WITHOUT_CURL)
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif

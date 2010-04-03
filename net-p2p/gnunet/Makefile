@@ -8,7 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.8.1b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	GNU \
 		http://gnunet.org/download/
@@ -19,7 +19,7 @@ COMMENT=	An anonymous, distributed, reputation-based network
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		cares.2:${PORTSDIR}/dns/c-ares \
-		curl.5:${PORTSDIR}/ftp/curl \
+		curl.6:${PORTSDIR}/ftp/curl \
 		guile.20:${PORTSDIR}/lang/guile \
 		esmtp.6:${PORTSDIR}/mail/libesmtp \
 		gmp.8:${PORTSDIR}/math/libgmp4 \

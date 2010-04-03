@@ -7,14 +7,14 @@
 
 PORTNAME=	drivel
 PORTVERSION=	2.0.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/${PORTNAME}/Drivel%20%28stable%29/${PORTVERSION}
 
 MAINTAINER=	jbq@caraldi.com
 COMMENT=	Blog editor for GNOME
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes

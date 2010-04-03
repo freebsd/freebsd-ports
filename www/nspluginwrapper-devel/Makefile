@@ -7,7 +7,7 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www linux emulators
 MASTER_SITES=	LOCAL/jkim
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}${EXTRACT_SUFX}
@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}${EXTRACT_SUFX}
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	A compatibility plugin for Mozilla NPAPI (development version)
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 LATEST_LINK=	${PORTNAME}-devel
 

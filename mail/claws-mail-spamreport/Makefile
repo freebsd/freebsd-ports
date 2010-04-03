@@ -7,7 +7,7 @@
 
 PORTNAME=	spamreport
 PORTVERSION=	0.3.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,7 +16,7 @@ DISTNAME=	spam_report-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	SpamReport plugin for claws-mail
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	claws-mail>=3.7.5:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.7.5:${PORTSDIR}/mail/claws-mail
 

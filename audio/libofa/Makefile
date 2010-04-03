@@ -7,7 +7,7 @@
 
 PORTNAME=	libofa
 PORTVERSION=	0.9.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicdns.org/files/
 
@@ -16,7 +16,7 @@ COMMENT=	The Open Fingerprint Architecture Library
 
 LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3 \
 		expat.6:${PORTSDIR}/textproc/expat2 \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig

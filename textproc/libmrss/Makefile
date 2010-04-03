@@ -7,7 +7,7 @@
 
 PORTNAME=	libmrss
 PORTVERSION=	0.19.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
 
@@ -15,7 +15,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A C library for parsing, writing, and creating RSS
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		nxml.18:${PORTSDIR}/textproc/libnxml
 
 OPTIONS=	PHPMRSS "support to PHP" on

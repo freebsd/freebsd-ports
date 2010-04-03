@@ -7,14 +7,14 @@
 
 PORTNAME=	urlgfe
 PORTVERSION=	0.7.1
-PORTREVISION?=	12
+PORTREVISION?=	13
 CATEGORIES=	ftp www
 MASTER_SITES=	SF/urlget/Urlgfe%20%28legacy%29/${PORTVERSION}
 
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	A download manager
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 USE_GNOME=	gtk20 lthack
 WANT_GNOME=	yes

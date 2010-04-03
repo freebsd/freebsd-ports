@@ -8,7 +8,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	SF/rexx${PORTNAME}/rexx${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	rexx-
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	External function package providing an interface to the cURL package
 
 BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 
 USE_GMAKE=	yes

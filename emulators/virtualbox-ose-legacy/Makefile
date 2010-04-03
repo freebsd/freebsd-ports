@@ -7,7 +7,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	3.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		kmk:${PORTSDIR}/devel/kBuild
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE

@@ -7,14 +7,14 @@
 
 PORTNAME=	klavaro
 PORTVERSION=	1.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Touchtyping trainer
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtkdatabox-0.9.0.1:${PORTSDIR}/x11-toolkits/gtkdatabox \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy
 

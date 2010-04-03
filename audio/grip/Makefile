@@ -7,7 +7,7 @@
 
 PORTNAME=	grip
 PORTVERSION=	3.2.0
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GTK front-end to external cd rippers and audio encoders
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 
 USE_XORG=	x11
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui vte

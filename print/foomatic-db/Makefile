@@ -7,6 +7,7 @@
 
 PORTNAME=	db
 PORTVERSION=	20090530
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,$,acm/foomatic/,} \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -18,7 +19,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Foomatic database
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 
 PROJECTHOST=	bsdistfiles
 USE_GMAKE=	yes

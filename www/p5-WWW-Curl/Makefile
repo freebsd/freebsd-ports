@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-Curl
 PORTVERSION=	4.11
+PORTREVISION=	1
 CATEGORIES=	www ftp perl5
 MASTER_SITES=	CPAN \
 		http://curl.haxx.se/libcurl/perl/
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Perl binding interface for curl
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl:install
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl:install
 
 PERL_CONFIGURE=	yes
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	kartofel
 PORTVERSION=	1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://kartofel.jfedor.org/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://kartofel.jfedor.org/downloads/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Connect the dots in order without crossing over yourself
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
 USE_SDL=	sdl gfx mixer image ttf

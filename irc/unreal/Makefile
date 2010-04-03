@@ -7,7 +7,7 @@
 
 PORTNAME=	Unreal
 PORTVERSION=	3.2.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://unrealircd.pimpmylinux.org/ \
 		http://unrealircd.icedslash.com/
@@ -86,7 +86,7 @@ CONFIGURE_ARGS+=	--enable-ssl
 .endif
 
 .if defined(WITH_REMOTE)
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-libcurl=${LOCALBASE}
 .endif
 

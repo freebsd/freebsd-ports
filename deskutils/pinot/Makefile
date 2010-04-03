@@ -7,7 +7,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	0.95
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/
@@ -27,7 +27,7 @@ LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core	\
 		exif.12:${PORTSDIR}/graphics/libexif		\
 		gmime-2.4:${PORTSDIR}/mail/gmime24		\
 		tag.1:${PORTSDIR}/audio/taglib			\
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 		antiword:${PORTSDIR}/textproc/antiword			\
 		xdg-open:${PORTSDIR}/devel/xdg-utils			\

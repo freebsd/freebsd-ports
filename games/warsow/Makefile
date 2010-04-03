@@ -7,7 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://woe.crying-wolves.net/ \
 		http://www.derchris.eu/warsow/ \
@@ -21,7 +21,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast paced first person shooter game
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${DATADIR}/basewsw/data0_05.pk3:${PORTSDIR}/games/warsow-data
 
 ONLY_FOR_ARCHS=	i386 amd64

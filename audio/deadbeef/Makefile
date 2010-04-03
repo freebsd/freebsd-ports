@@ -7,7 +7,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -15,7 +15,7 @@ MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player for GNU/Linux systems with X11
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		curl.5:${PORTSDIR}/ftp/curl \
+		curl.6:${PORTSDIR}/ftp/curl \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		mad.2:${PORTSDIR}/audio/libmad \
 		FLAC.10:${PORTSDIR}/audio/flac \

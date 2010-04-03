@@ -7,14 +7,14 @@
 
 PORTNAME=	nepenthes
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Nepenthes%20development/${PORTVERSION}
 
 MAINTAINER=	systemoperator@gmail.com
 COMMENT=	Determine the malware activity on a network
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		magic.1:${PORTSDIR}/sysutils/file \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		adns.1:${PORTSDIR}/dns/adns

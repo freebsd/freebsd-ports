@@ -7,7 +7,7 @@
 
 PORTNAME=	conky
 PORTVERSION=	1.7.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -127,19 +127,19 @@ CONFIGURE_ARGS+=	--disable-mpd
 .endif
 
 .if defined(WITH_RSS)
-LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl \
 			xml2.5:${PORTSDIR}/textproc/libxml2
 CONFIGURE_ARGS+=	--enable-rss
 USE_GNOME+=		glib20
 .endif
 
 .if defined(WITH_METAR)
-LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--enable-weather-metar
 .endif
 
 .if defined(WITH_XOAP)
-LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl \
 			xml2.5:${PORTSDIR}/textproc/libxml2
 CONFIGURE_ARGS+=	--enable-weather-xoap
 .endif

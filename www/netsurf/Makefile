@@ -8,7 +8,7 @@
 PORTNAME=	netsurf
 PORTVERSION=	1.1
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://www.netsurf-browser.org/download/ CENKES
 
@@ -18,7 +18,7 @@ COMMENT=	A lightweight web browser
 BUILD_DEPENDS=	lemon:${PORTSDIR}/devel/lemon \
 		re2c:${PORTSDIR}/devel/re2c
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
 USE_GNOME=	libglade2 libxml2

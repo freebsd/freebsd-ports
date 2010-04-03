@@ -7,7 +7,7 @@
 
 PORTNAME=	osb-nrcit
 PORTVERSION=	0.5.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	SF/gtk-webcore/gtk-webcore/${PORTVERSION}
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ WebCore embeddable web browser component
 
 BUILD_DEPENDS=	osb-nrcore>=0.5.2:${PORTSDIR}/www/osb-nrcore
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	osb-nrcore>=0.5.2:${PORTSDIR}/www/osb-nrcore
 
 USE_GNOME=	gnomehack gnometarget gtk20 librsvg2

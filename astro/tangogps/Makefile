@@ -7,14 +7,14 @@
 
 PORTNAME=	tangogps
 PORTVERSION=	0.99.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.tangogps.org/downloads/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A comprehencive GPS mapping application
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		exif.12:${PORTSDIR}/graphics/libexif
 
 GNU_CONFIGURE=	yes

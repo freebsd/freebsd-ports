@@ -7,7 +7,7 @@
 
 PORTNAME?=	xmms2
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=DrMattDestruction
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20DrMattDestruction
@@ -130,7 +130,7 @@ PLIST_SUB+=	CDDA="@comment "
 .endif
 
 .if !defined(WITHOUT_CURL)
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
 EXCLUDE+=	--without-plugins="curl" --without-plugins="icymetaint"

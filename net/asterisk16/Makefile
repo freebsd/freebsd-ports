@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.6.0.21
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	16
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
@@ -192,7 +192,7 @@ CONFIGURE_ARGS+= --with-curl=no \
 PLIST_SUB+=	WITH_CURL=""
 CONFIGURE_ARGS+= --with-curl \
 		--with-libcurl
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .endif
 
 .if !defined(WITH_SPANDSP)
