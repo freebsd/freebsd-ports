@@ -1786,6 +1786,7 @@
     SUBDIR += p5-Module-Starter-Plugin-TT2
     SUBDIR += p5-Module-Used
     SUBDIR += p5-Module-Util
+    SUBDIR += p5-Module-Versions
     SUBDIR += p5-Module-Versions-Report
     SUBDIR += p5-Moose
     SUBDIR += p5-Moose-Autobox
