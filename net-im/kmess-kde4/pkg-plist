@@ -198,8 +198,11 @@ share/locale/hu/LC_MESSAGES/kmess.mo
 share/locale/it/LC_MESSAGES/kmess.mo
 share/locale/ja/LC_MESSAGES/kmess.mo
 share/locale/nl/LC_MESSAGES/kmess.mo
+share/locale/pt/LC_MESSAGES/kmess.mo
 share/locale/pt_BR/LC_MESSAGES/kmess.mo
+share/locale/ru/LC_MESSAGES/kmess.mo
 share/locale/sk/LC_MESSAGES/kmess.mo
+share/locale/tr/LC_MESSAGES/kmess.mo
 share/locale/zh_CN/LC_MESSAGES/kmess.mo
 share/locale/zh_TW/LC_MESSAGES/kmess.mo
 share/sounds/kmess_chat.ogg
