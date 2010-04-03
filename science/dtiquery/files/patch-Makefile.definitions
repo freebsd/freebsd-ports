@@ -15,8 +15,8 @@
  
 -WX_CONFIG_BIN		?= /usr/X11R6/bin/wxgtk2-2.8-config
 +WX_CONFIG_BIN		?= ${LOCALBASE}/bin/wxgtk2-2.8-config
- VTK_INCLUDE_PATHS	?= -I/usr/local/include/vtk-5.0/
- VTK_LIB_PATHS		?= -L/usr/local/lib/vtk-5.0/
+ VTK_INCLUDE_PATHS	?= -I/usr/local/include/vtk-5.4/
+ VTK_LIB_PATHS		?= -L/usr/local/lib/vtk-5.4/
  WX_INCLUDE_PATHS	?= `$(WX_CONFIG_BIN) --cxxflags`
  WX_LIB_PATHS		?= `$(WX_CONFIG_BIN) --libs` `$(WX_CONFIG_BIN) \
  				--gl-libs`
