@@ -7,8 +7,8 @@ bin/lmdbg-leaks
 bin/lmdbg-sysleaks
 bin/lmdbg-sym
 bin/lmdbg
-bin/lmdbg-multi2single
-bin/lmdbg-single2multi
+bin/lmdbg-m2s
+bin/lmdbg-s2m
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
