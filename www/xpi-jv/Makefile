@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	jv
-PORTVERSION=	0.50
-PORTREVISION=	1
+PORTVERSION=	0.51
+PORTREVISION=	0
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -18,49 +18,14 @@ XPI_NUM=	8529
 XPI_ID=		jv@eric.uhrhane
 XPI_FILES=	chrome.manifest chrome/jv.jar \
 		defaults/preferences/prefs.js \
-		install.rdf \
-		jv@eric.uhrhane/chrome.manifest \
-		jv@eric.uhrhane/content/about.js \
-		jv@eric.uhrhane/content/about.xul \
-		jv@eric.uhrhane/content/jv.js \
-		jv@eric.uhrhane/content/overlay.js \
-		jv@eric.uhrhane/content/overlay.xul \
-		jv@eric.uhrhane/content/queue.js \
-		jv@eric.uhrhane/content/settings.js \
-		jv@eric.uhrhane/content/settings.xul \
-		jv@eric.uhrhane/content/sharedsettings.js \
-		jv@eric.uhrhane/content/util.js \
-		jv@eric.uhrhane/defaults/preferences/prefs.js \
-		jv@eric.uhrhane/install.rdf \
-		jv@eric.uhrhane/locale/en-US/about.dtd \
-		jv@eric.uhrhane/locale/en-US/overlay.dtd \
-		jv@eric.uhrhane/locale/en-US/settings.dtd \
-		jv@eric.uhrhane/skin/about.css \
-		jv@eric.uhrhane/skin/about.png \
-		jv@eric.uhrhane/skin/overlay.css \
-		jv@eric.uhrhane/skin/settings.css \
-		jv@eric.uhrhane/skin/statusbar-active.png \
-		jv@eric.uhrhane/skin/statusbar-inactive.png \
-		jv@eric.uhrhane/skin/statusbar-locally-inactive.png \
-		jv@eric.uhrhane/skin/statusbar-other.png
+		install.rdf
 XPI_DIRS=	chrome \
-		defaults/preferences defaults \
-		jv@eric.uhrhane/content \
-		jv@eric.uhrhane/defaults/preferences \
-		jv@eric.uhrhane/defaults \
-		jv@eric.uhrhane/locale/en-US \
-		jv@eric.uhrhane/locale \
-		jv@eric.uhrhane/skin \
-		jv@eric.uhrhane
+		defaults/preferences defaults
 
-post-extract:
-	@${RM} ${WRKSRC}/jv@eric.uhrhane/.install.rdf.swp
+REINPLACE_ARGS=	-i ""
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e "/em:maxVersion/s/3\.5b4pre/3.5/" \
-			${WRKSRC}/install.rdf
-	@${RM} ${WRKSRC}/install.rdf.bak
+	@${REINPLACE_CMD} "/em:maxVersion/s/3\.5\.\*/3.6.*/" ${WRKSRC}/install.rdf
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
