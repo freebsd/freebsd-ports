@@ -8,7 +8,7 @@ VTK - Visualization ToolKit
 .PP
 .nf 
 .na 
--I%%PREFIX%%/include/vtk-5.0 -L%%PREFIX%%/lib/vtk-5.0 -lvtk*
+-I%%PREFIX%%/include/vtk-5.4 -L%%PREFIX%%/lib/vtk-5.4 -lvtk*
 .ad
 .fi
 
