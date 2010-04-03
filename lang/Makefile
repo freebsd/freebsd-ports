@@ -296,6 +296,7 @@
     SUBDIR += ruby-usersguide
     SUBDIR += ruby18
     SUBDIR += ruby19
+    SUBDIR += runawk
     SUBDIR += s9fes
     SUBDIR += sather-specification
     SUBDIR += sather-tutorial
