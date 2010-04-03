@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.14.5
-PORTREVISION=	1
+PORTVERSION=	3.14.8
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20Stable/${PORTVERSION}:src_sf \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
@@ -37,7 +37,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"   \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN8=		apcupsd.8
+MAN5=		apcupsd.conf.5
+MAN8=		apcaccess.8 apccontrol.8 apctest.8 apcupsd.8
 
 OPTIONS=	APCSMART_DRV "Compile APC SmartUPS serial driver" on \
 		APCDUMB_DRV "Compile dumb UPS driver" on \
@@ -46,10 +47,10 @@ OPTIONS=	APCSMART_DRV "Compile APC SmartUPS serial driver" on \
 		PCNET_DRV "Compile PowerChute Network Shutdown driver" on \
 		USB "Compile with USB Support driver" on \
 		SNMP_DRV "Compile with SNMP driver" on \
+		SNMP_DRV_OLD "Compile with old SNMP driver" off \
 		TCP_WRAPPERS "Compile with TCP_WRAPPERS support" on\
 		TEST_DRV "Compile TEST driver" off \
 		GAPCMON "Build GTK GUI front-end" off
-#               POWERFLUTE "Compile powerflute program" off
 
 PORTDOCS=	${PORTNAME}.pdf
 
@@ -96,24 +97,21 @@ CONFIGURE_ARGS+=	--enable-pcnet
 CONFIGURE_ARGS+=	--disable-pcnet
 .endif
 
-# disabled upstream
-.ifdef(WITH_POWERFLUTE)
-CONFIGURE_ARGS+=	--enable-powerflute
-CONFIGURE_ENV+=		LIBS+="-lcurses -lmenu"
-PLIST_SUB+=		POWERFL=""
-.else
-PLIST_SUB+=		POWERFL="@comment "
-.endif
-
 .ifdef(WITH_USB)
 CONFIGURE_ARGS+=	--enable-usb
 .endif
 
 .ifdef(WITH_SNMP_DRV)
-LIB_DEPENDS+=		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-snmp
 .else
 CONFIGURE_ARGS+=	--disable-snmp
+.endif
+
+.ifdef(WITH_SNMP_DRV_OLD)
+LIB_DEPENDS+=		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+CONFIGURE_ARGS+=	--enable-net-snmp
+.else
+CONFIGURE_ARGS+=	--disable-net-snmp
 .endif
 
 .ifdef(WITH_TCP_WRAPPERS)
@@ -145,12 +143,9 @@ pre-configure:
 	@${FALSE}
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -e "s|%PREFIX%|${PREFIX}|g" ${WRKSRC}/doc/apcupsd.man
-
 post-install:
-#	If the files presaved are identical with the new one, include then in
-#	the package list. So the port could be removed without problems
+#	If the files presaved are identical with the new one, include them in
+#	the package list, so the port can be removed without problems
 	for na in apccontrol commfailure mainsback mastertimeout \
 		  changeme commok masterconnect onbattery; do \
 		if [ -f ${ETCDIR}/$$na.orig ]; then \

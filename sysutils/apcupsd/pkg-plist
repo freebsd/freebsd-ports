@@ -2,7 +2,6 @@ sbin/apcupsd
 sbin/apcaccess
 sbin/apctest
 sbin/smtp
-%%POWERFL%%sbin/powerflute
 @unexec if cmp -s %D/%%ETCDIR%%/apcupsd.conf.sample %D/%%ETCDIR%%/apcupsd.conf; then rm -f %D/%%ETCDIR%%/apcupsd.conf; fi
 %%ETCDIR%%/apcupsd.conf.sample
 %%ETCDIR%%/apccontrol
