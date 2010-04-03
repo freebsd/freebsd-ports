@@ -15,6 +15,7 @@ MAINTAINER=	rnoland@FreeBSD.org
 COMMENT=	Compiz Composite/Window Manager
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+		gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 XORG_CAT=	app
