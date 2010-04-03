@@ -7,7 +7,7 @@
 
 PORTNAME?=	ioquake3
 DISTVERSION?=	1.36
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 
@@ -60,7 +60,7 @@ IGNORE=		needs at least one of CLIENT, DEDICATED and SMP options
 .if defined(WITH_CLIENT) || defined(WITH_SMP)
 # cURL
 .if defined(WITH_CURL)
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 #MAKE_ARGS+=	USE_CURL_DLOPEN=0
 .else
 MAKE_ARGS+=	USE_CURL=0

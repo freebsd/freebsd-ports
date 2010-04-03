@@ -110,7 +110,7 @@ BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base \
 
 .if ${PKGNAMESUFFIX} == "-gb-net-curl"
 BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-opengl"

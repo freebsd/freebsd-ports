@@ -7,6 +7,7 @@
 
 PORTNAME=	libdap
 PORTVERSION=	3.9.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/
 

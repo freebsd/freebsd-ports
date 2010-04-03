@@ -7,6 +7,7 @@
 
 PORTNAME=	kuklomenos
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://mbays.freeshell.org/kuklomenos/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but challenging abstract shoot-em-up game
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 OPTIONS=	VORBIS "Enable Ogg/Vorbis support" on
 

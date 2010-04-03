@@ -6,13 +6,14 @@
 
 PORTNAME=	powerman
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerMan is a tool for doing remote power control
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes

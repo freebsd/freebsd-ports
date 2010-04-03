@@ -7,7 +7,7 @@
 
 PORTNAME=	nexuiz
 PORTVERSION=	2.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -47,7 +47,7 @@ PLIST_SUB+=	MAPPACK=""
 PLIST_SUB+=	MAPPACK="@comment "
 .endif
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 .if defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT)
 LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \

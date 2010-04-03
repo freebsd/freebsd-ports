@@ -7,7 +7,7 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www linux emulators
 MASTER_SITES=	LOCAL/ehaupt
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RPMFILE}
@@ -17,7 +17,7 @@ MAINTAINER=	malus.x@gmail.com
 COMMENT=	A compatibility plugin for Netscape 4 (NPAPI) plugins
 
 EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	nspluginwrapper-1.3.*
 

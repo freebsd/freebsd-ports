@@ -7,7 +7,7 @@
 
 PORTNAME=	gmpc-lyrics
 PORTVERSION=	0.19.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -16,7 +16,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A Lyrics Provider plugin for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 

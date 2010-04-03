@@ -7,13 +7,14 @@
 
 PORTNAME=		mod_flickr
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=		www
 MASTER_SITES=	http://www.vshank.com/modcode/
 
 MAINTAINER=		venkyshankar@yahoo.com
 COMMENT=		Apache module for Flickr API access
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 XTRA_FLAGS=		-lcurl
 

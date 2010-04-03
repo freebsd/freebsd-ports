@@ -7,7 +7,7 @@
 
 PORTNAME=	paintlib
 PORTVERSION=	2.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.paintlib.de/paintlib/
 

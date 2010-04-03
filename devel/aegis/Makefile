@@ -7,14 +7,14 @@
 
 PORTNAME=	aegis
 PORTVERSION=	4.24
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Transaction-based software configuration management system
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	tkdiff:${PORTSDIR}/textproc/tkdiff
 
 USE_GETTEXT=	yes

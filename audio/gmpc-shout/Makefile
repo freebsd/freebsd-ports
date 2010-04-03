@@ -7,7 +7,7 @@
 
 PORTNAME=	gmpc-shout
 PORTVERSION=	0.19.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -17,7 +17,7 @@ COMMENT=	Shoutcast stream for gmpc
 
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 LIB_DEPENDS+=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 
 GNU_CONFIGURE=	yes

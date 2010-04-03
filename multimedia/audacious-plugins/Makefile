@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -316,7 +316,7 @@ CONFIGURE_ARGS+=--enable-gnome-vfs --enable-gconf
 .endif
 
 .if !defined(WITHOUT_CURL) || exists(${LOCALBASE}/lib/libcurl.so)
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 PLIST_SUB+=     CURLPLUGIN=""
 .else
 PLIST_SUB+=     CURLPLUGIN="@comment "

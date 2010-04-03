@@ -7,7 +7,7 @@
 
 PORTNAME=	deng
 PORTVERSION=	1.9.0b6.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Doomsday%20Engine/1.9.0-beta6.8
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-beta/}
@@ -16,7 +16,7 @@ MAINTAINER=	yuri.pankov@gmail.com
 COMMENT=	An enhanced Doom, Heretic and Hexen source port
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 

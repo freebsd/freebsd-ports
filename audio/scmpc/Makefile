@@ -7,7 +7,7 @@
 
 PORTNAME=	scmpc
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	BERLIOS
 
@@ -17,7 +17,7 @@ COMMENT=	An Audioscrobbler client for MPD
 LIB_DEPENDS=	argtable2.1:${PORTSDIR}/devel/argtable \
 		confuse.0:${PORTSDIR}/devel/libconfuse \
 		daemon.0:${PORTSDIR}/devel/libdaemon \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

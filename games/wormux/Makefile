@@ -7,7 +7,7 @@
 
 PORTNAME=	wormux
 DISTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/wormux/ \
 		http://download.gna.org/wormux/archive/

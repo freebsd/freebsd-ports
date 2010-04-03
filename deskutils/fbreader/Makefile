@@ -7,7 +7,7 @@
 
 PORTNAME=	fbreader
 PORTVERSION=	0.12.7
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	sources-
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.fbreader.org/
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Powerful e-book reader
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		fribidi.3:${PORTSDIR}/converters/fribidi \
 		linebreak.2:${PORTSDIR}/textproc/liblinebreak

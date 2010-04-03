@@ -7,7 +7,7 @@
 
 PORTNAME=	libnxml
 PORTVERSION=	0.18.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.autistici.org/bakunin/libnxml/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.autistici.org/bakunin/libnxml/ \
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A C library for writing XML 1.0/1.1 files or streams
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I/${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

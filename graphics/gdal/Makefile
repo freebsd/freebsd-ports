@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.6.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=	--with-cfitsio=no
 .endif
 
 .if defined(WITH_CURL)
-LIB_DEPENDS+=		curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}/bin/curl-config
 .else
 CONFIGURE_ARGS+=	--with-curl=no
@@ -189,7 +189,7 @@ RUN_DEPENDS+=	${PYEASYINSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 PYEASYINSTALL_CMD=	${LOCALBASE}/bin/easy_install-${PYTHON_VER}
 PYDISTUTILS_PKGNAME=	${PORTNAME:U}
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 _OSRELEASE!=		${UNAME} -r
 PYEASYINSTALL_OSARCH=	-${OPSYS:L}-${_OSRELEASE}-${ARCH}
 PYEASYINSTALL_EGG=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg

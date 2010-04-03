@@ -7,7 +7,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	2.9.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -69,7 +69,7 @@ FORCE_PC_REQUIRE=
 # options that affect FIND_PACKAGE
 .if defined(WITH_CURL)
 FORCE_REQUIRE+=	CURL
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
 FORCE_IGNORE+=	CURL

@@ -7,7 +7,7 @@
 
 PORTNAME=	wooztalk
 PORTVERSION=	0.9.9a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.wooztalk.com/download/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}-freebsd
@@ -19,7 +19,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
     		boost_serialization.4:${PORTSDIR}/devel/boost-libs \
     		boost_regex.4:${PORTSDIR}/devel/boost-libs \
     		boost_filesystem.4:${PORTSDIR}/devel/boost-libs \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

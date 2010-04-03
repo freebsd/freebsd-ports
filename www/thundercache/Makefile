@@ -7,7 +7,7 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.bmsoftware.org/freebsd/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
@@ -47,7 +47,7 @@ USE_PGSQL=	yes
 WANT_PGSQL_VER=	84
 USE_APACHE=	2.0+
 
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl:install
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl:install
 RUN_DEPENDS+=	sudo:${PORTSDIR}/security/sudo \
 		postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server \
 		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql

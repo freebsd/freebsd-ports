@@ -7,6 +7,7 @@
 
 PORTNAME=	opensaml2
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/${PORTVERSION}/
 DISTNAME=	opensaml-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	opensaml-${PORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Open source implentation of SAML2
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		log4shib.1:${PORTSDIR}/devel/log4shib \
 		xerces-c.28:${PORTSDIR}/textproc/xerces-c2-devel \
 		xmltooling.4:${PORTSDIR}/devel/xmltooling

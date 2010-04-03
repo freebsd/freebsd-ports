@@ -7,7 +7,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.17.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www graphics
 MASTER_SITES=	SF
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
 		js.1:${PORTSDIR}/lang/spidermonkey			\
 		jpeg.11:${PORTSDIR}/graphics/jpeg			\
 		png.6:${PORTSDIR}/graphics/png				\
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 
 USE_GL=		yes
 USE_GNOME=	gnomehack libglade2 libgnomeui

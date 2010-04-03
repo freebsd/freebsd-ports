@@ -7,14 +7,14 @@
 
 PORTNAME=	cclive
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	legatvs@gmail.com
 COMMENT=	Lightweight command line video extraction tool
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		quvi.1:${PORTSDIR}/multimedia/quvi
 

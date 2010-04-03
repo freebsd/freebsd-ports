@@ -7,7 +7,7 @@
 
 PORTNAME=	gmpc-libnotify
 PORTVERSION=	0.19.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -16,7 +16,7 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A libnotify for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
-		curl.5:${PORTSDIR}/ftp/curl \
+		curl.6:${PORTSDIR}/ftp/curl \
 		notify.1:${PORTSDIR}/devel/libnotify
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc

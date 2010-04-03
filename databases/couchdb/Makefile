@@ -7,6 +7,7 @@
 
 PORTNAME=	couchdb
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
@@ -18,7 +19,7 @@ COMMENT=	A document database server, accessible via a RESTful JSON API
 
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		js:${PORTSDIR}/lang/spidermonkey \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang-lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

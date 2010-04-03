@@ -8,7 +8,7 @@
 
 PORTNAME=	bidwatcher
 PORTVERSION=	1.3.17
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ MASTER_SITES=	SF
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Bid monitor for eBay
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 PLIST_FILES=	bin/bidwatcher
 USE_GNOME=	gtk12

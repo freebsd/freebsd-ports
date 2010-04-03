@@ -7,7 +7,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -104,6 +104,7 @@ PLIST_SUB+=	APCSNMP="@comment "
 
 .if defined(WITH_DRAC3) || exists (${PREFIX}/lib/libcurl.so)
 USE_CURL=	yes
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	DRAC3=""
 .else
 PLIST_SUB+=	DRAC3="@comment "

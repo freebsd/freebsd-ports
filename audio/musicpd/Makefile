@@ -7,7 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.15.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	jo.lindqvist@gmail.com
 COMMENT=	A remote-controllable music daemon
 
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
-		curl.5:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes

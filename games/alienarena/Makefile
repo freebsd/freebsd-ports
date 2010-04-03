@@ -7,7 +7,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2009.733
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
@@ -46,7 +46,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .if defined(WITH_CLIENT)
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS+=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis

@@ -7,7 +7,7 @@
 
 PORTNAME=	mediatomb
 PORTVERSION=	0.11.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net multimedia
 MASTER_SITES=	SF/${PORTNAME}/MediaTomb/${PORTVERSION}
 
@@ -24,8 +24,7 @@ CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		CFLAGS="${CFLAGS}"
-LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2 \
-		curl.5:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
 USE_RC_SUBR=	mediatomb.sh
 
 # --- configurable variables ---
@@ -113,6 +112,7 @@ CONFIGURE_ARGS+=	--disable-external-transcoding
 .if defined(WITH_CURL) && defined(WITH_EXTERNAL_TRANSCODING)
 CONFIGURE_ARGS+=	--enable-curl \
 			--with-curl-cfg="${LOCALBASE}/bin/curl-config"
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--disable-curl
 .endif

@@ -7,14 +7,14 @@
 
 PORTNAME=	viking
 PORTVERSION=	0.9.92
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
 MAINTAINER=	david@trucs.org
 COMMENT=	Program to manage GPS data (tracks, waypoints, etc)
 
-LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
