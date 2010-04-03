@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	URI
-PORTVERSION=	1.52
+PORTVERSION=	1.53
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sahil@tandon.net
 COMMENT=	Perl5 interface to Uniform Resource Identifier (URI) references
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.6.1+
 
 MAN3=		URI.3 \
 		URI::Escape.3 \
