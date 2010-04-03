@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.1.41
+DISTVERSION=	1.1.42
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
@@ -102,7 +102,7 @@ post-patch:
 .endif
 
 pre-build:
-	cd ${WRKSRC} && make depend
+	cd ${WRKSRC} && gmake depend
 
 post-install:
 	@${RM} -f ${MAN1PREFIX}/man/de.UTF-8/man1/wine.1 \
