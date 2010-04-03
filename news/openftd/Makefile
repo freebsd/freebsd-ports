@@ -23,6 +23,8 @@ LIB_DEPENDS=	curl.5:${PORTSDIR}/ftp/curl \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy
 
+BROKEN=		does not configure
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -34,10 +36,4 @@ USE_GNOME=	glib20 libxml2 gtk20 libgnome gtkhtml3 libxslt
 CONFIGURE_ARGS=	--with-libcurl-libraries=${LOCALBASE}/lib \
 		--with-pcre_libraries=${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${OSVERSION} >= 700000
-BROKEN=		Does not install
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
