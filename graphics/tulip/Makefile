@@ -7,15 +7,10 @@
 #
 
 PORTNAME=	tulip
-PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTVERSION=	3.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}:src \
-    		http://tulip.labri.fr/userHandbook/:doc
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
-    		userManual.pdf:doc
-DIST_SUBDIR=	tulip/${PDFUPDATE}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
@@ -31,37 +26,41 @@ USE_GL=	glut
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_AUTOTOOLS=	libtool:22
+
 USE_LDCONFIG=	yes
 
-PORTDOCS=	userManual.pdf
-PDFUPDATE=	2
-
-PLIST_SUB+=	TULIP_VERSION=${PORTVERSION}
+PLIST_SUB+=	TULIP_VERSION=${PORTVERSION} \
+		TULIP_VERS=${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800501
-BROKEN=		"broken by dirent.h update"
-.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
 
-post-extract:
-	@${FIND} ${WRKSRC} -name "moc_*" -delete
+#post-extract:
+#	@${FIND} ${WRKSRC} -name "moc_*" -delete
 
 post-patch:
+	@${GREP} -lr '/usr/X11R6/include' ${WRKSRC} | ${XARGS} \
+	    ${REINPLACE_CMD} -e 's|/usr/X11R6/include||g'
 	@${REINPLACE_CMD} -e 's|<qdir.h>|<QtCore/qdir.h>|' \
 	    ${WRKSRC}/software/tulip/src/Application.cpp
-	@${REINPLACE_CMD} -e 's|<qtimer.h>|<QtCore/qtimer.h>|' \
+	@${REINPLACE_CMD} -e 's|<qtimer.h>|<QtCore/qtimer.h>|;s|<qlocale.h>|<QtCore/qlocale.h>|' \
 	    ${WRKSRC}/software/tulip/src/main.cpp
-	@${REINPLACE_CMD} -e 's|docs||g' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|doxygen||g' \
+	    ${WRKSRC}/docs/Makefile.am ${WRKSRC}/docs/Makefile.in
+	@${REINPLACE_CMD} -e '534,535d' ${WRKSRC}/docs/doxygen/Makefile.in
+	@${REINPLACE_CMD} -e '132,133d' ${WRKSRC}/docs/doxygen/Makefile.am
+
+#	@${REINPLACE_CMD} -e 's|docs||g' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 
 .if !defined(NOPORTDOCS)
+DISTFILES+=	${PORTNAME}-${PORTVERSION}-html.tar.bz2
+PORTDOCS=	*
 post-install:
 	${INSTALL} -d ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/userManual.pdf ${DOCSDIR}
+	(cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}-html && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>

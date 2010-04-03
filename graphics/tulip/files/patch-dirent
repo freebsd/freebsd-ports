@@ -1,0 +1,11 @@
+--- library/tulip/src/PluginLibraryLoader.cpp.orig	2010-03-22 09:54:25.000000000 +0100
++++ library/tulip/src/PluginLibraryLoader.cpp	2010-03-22 10:00:13.000000000 +0100
+@@ -183,7 +183,7 @@
+   struct dirent **namelist;
+   n = scandir((const char *) _pluginPath.c_str(),
+         &namelist,
+-#if !(defined(__APPLE__) || defined(__FreeBSD__))
++#if !(defined(__APPLE__) || (defined(__FreeBSD__) && (__FreeBSD_version >= 900006 || (__FreeBSD_version >= 800501 && __FreeBSD_version < 900000) || (__FreeBSD_version >= 730000 && __FreeBSD_version < 800000))))
+         (int (*) (const dirent *))
+ #endif
+         __tulip_select_libs,
