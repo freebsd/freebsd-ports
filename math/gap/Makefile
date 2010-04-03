@@ -26,15 +26,15 @@ OPTIONS=	COMPRESSED_TOMLIB	"Compress tomlib files"		On \
 		EXAMPLE			"Build binaries for example"	Off \
 		KBMAG			"Build binaries for kbmag"	Off \
 		PARGAP			"Build binaries for pargap"	Off \
-		XGAP			"Build binaries for xgap"	Off
-#		GRAPE			"Build binaries for grape"	Off
+		XGAP			"Build binaries for xgap"	Off \
+		GRAPE			"Build binaries for grape"	Off
 
 #todo anupq fplsa/guava/nq (malloc.h build error) qaos
 
 .include <bsd.port.pre.mk>
 
 GAP_VERSION=	gap4r4
-GAP_PKGTIME=	2009_12_07-15_17_UTC
+GAP_PKGTIME=	2010_04_02-15_19_UTC
 GAP_PKGDATE=	${GAP_PKGTIME:C/-.*//:S/_//g}
 GAP_WRKSRC=	${WRKSRC}/${GAP_VERSION}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
