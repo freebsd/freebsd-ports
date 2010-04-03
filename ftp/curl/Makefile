@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.19.7
-PORTREVISION=	1
+PORTVERSION=	7.20.0
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
@@ -46,7 +45,7 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 \
 		libcurl-multi.3 libcurl-share.3 libcurl-tutorial.3
 
 USE_LDCONFIG=	yes
-SHLIB_VER=	5
+SHLIB_VER=	6
 
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
@@ -54,6 +53,7 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-pop3 --enable-smtp --enable-imap --enable-rtsp
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
