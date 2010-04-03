@@ -7,7 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.26.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -73,7 +73,7 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 		SMYRNA "SMYRNA large graph viewer" off \
 		NLS "Build with gettext support" on \
 		TK "Build with TK support" off \
-		PANGOCAIRO "build with pangocairo support" off \
+		PANGOCAIRO "build with pangocairo support" on \
 		RSVG "build with rsvg library" off \
 		GTK "build with gtk plugin" off \
 		GDK_PIXBUF  "build with gdk pixbuf support" off \
@@ -148,7 +148,7 @@ CONFIGURE_ARGS+=	--disable-nls
 USE_GETTEXT=		yes
 .endif
 
-.if defined(WITH_PANGOCAIRO)
+.if !defined(WITHOUT_PANGOCAIRO)
 CONFIGURE_ARGS+=	--with-pangocairo
 PLIST_SUB+=		WITH_PANGOCAIRO=""
 USE_GNOME=		pango
@@ -163,7 +163,7 @@ CONFIGURE_ARGS+=	--with-rsvg=yes
 PLIST_SUB+=		WITH_RSVG=""
 USE_GNOME+=		librsvg2
 USE_GL+=		gl glu
-.if !defined(WITH_PANGOCAIRO)
+.if defined(WITHOUT_PANGOCAIRO)
 IGNORE=			option WITH_PANGOCAIRO is required for option WITH_RSVG
 .endif
 .else
@@ -176,7 +176,7 @@ CONFIGURE_ARGS+=	--with-gtk
 PLIST_SUB+=		WITH_GTK=""
 USE_GNOME+=		gtk20
 USE_XORG+=		sm ice xext xinerama xi xrandr xcursor xfixes
-.if !defined(WITH_PANGOCAIRO)
+.if defined(WITHOUT_PANGOCAIRO)
 IGNORE=			option WITH_PANGOCAIRO is required for option WITH_GTK
 .endif
 .else
