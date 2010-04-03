@@ -1,11 +1,9 @@
---- makedefs.orig	2009-09-27 22:18:56.000000000 -0400
-+++ makedefs	2009-09-27 22:20:51.000000000 -0400
-@@ -132,6 +132,10 @@
+--- makedefs.orig	2010-03-27 23:06:06.000000000 -0400
++++ makedefs	2010-03-27 23:06:34.000000000 -0400
+@@ -134,6 +134,8 @@
  		;;
-   FreeBSD.7*)	SYSTYPE=FREEBSD7
+   FreeBSD.8*)	SYSTYPE=FREEBSD8
  		;;
-+  FreeBSD.8*)	SYSTYPE=FREEBSD8
-+		;;
 +  FreeBSD.9*)	SYSTYPE=FREEBSD9
 +		;;
    OpenBSD.2*)	SYSTYPE=OPENBSD2
