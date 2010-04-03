@@ -1089,6 +1089,7 @@
     SUBDIR += p5-Plack-Middleware-AutoRefresh
     SUBDIR += p5-Plack-Middleware-Deflater
     SUBDIR += p5-Plack-Middleware-Header
+    SUBDIR += p5-Plack-Middleware-ReverseProxy
     SUBDIR += p5-Plack-Middleware-Session
     SUBDIR += p5-Plack-Server-AnyEvent
     SUBDIR += p5-Plack-Server-Coro
