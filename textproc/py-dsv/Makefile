@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dsv
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	SF/python-${PORTNAME}/python-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,9 +30,8 @@ post-install:
 	  >${WRKDIR}/DSV.sh
 	@ ${INSTALL_SCRIPT} ${WRKDIR}/DSV.sh ${PREFIX}/bin/DSV
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+	@ ${MKDIR} ${DOCSDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/DSV/*.csv ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
