@@ -47,9 +47,6 @@ bin/waf
 %%PYTHON_SITELIBDIR%%/wafadmin/py3kfixes.py
 %%PYTHON_SITELIBDIR%%/wafadmin/py3kfixes.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/py3kfixes.pyo
-%%PYTHON_SITELIBDIR%%/wafadmin/Tools/UnitTest.py
-%%PYTHON_SITELIBDIR%%/wafadmin/Tools/UnitTest.pyc
-%%PYTHON_SITELIBDIR%%/wafadmin/Tools/UnitTest.pyo
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/__init__.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/__init__.pyo
@@ -167,6 +164,9 @@ bin/waf
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/qt4.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/qt4.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/qt4.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/ruby.py
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/ruby.pyc
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/ruby.pyo
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/suncc.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/suncc.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/suncc.pyo
@@ -176,6 +176,9 @@ bin/waf
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/tex.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/tex.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/tex.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/unittestw.py
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/unittestw.pyc
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/unittestw.pyo
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/vala.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/vala.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/vala.pyo
