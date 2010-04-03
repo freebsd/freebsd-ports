@@ -1,6 +1,7 @@
 #! /bin/sh
-#
 
+# $FreeBSD$
+#
 # PROVIDE: nfsen
 # REQUIRE: sshd
 # KEYWORD: shutdown
@@ -13,11 +14,11 @@ nfsen_enable=${nfsen_enable-"NO"}
 name="nfsen"
 rcvar=`set_rcvar`
 load_rc_config $name
-command="/usr/local/bin/nfsen"
-start_cmd="/usr/local/bin/nfsen start"
-stop_cmd="/usr/local/bin/nfsen stop"
-reload_cmd="/usr/local/bin/nfsen reconfig"
-status_cmd="/usr/local/bin/nfsen status"
+command="%%PREFIX%%/bin/nfsen"
+start_cmd="%%PREFIX%%/bin/nfsen start"
+stop_cmd="%%PREFIX%%/bin/nfsen stop"
+reload_cmd="%%PREFIX%%/bin/nfsen reconfig"
+status_cmd="%%PREFIX%%/bin/nfsen status"
 
 extra_commands="reload"
 
