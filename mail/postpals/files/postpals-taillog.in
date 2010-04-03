@@ -14,7 +14,7 @@
 # postpals_taillog_enable="YES"
 #
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name=postpals_taillog
 rcvar=`set_rcvar`
