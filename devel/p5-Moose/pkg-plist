@@ -47,6 +47,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Manual/MethodModifiers.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Manual/MooseX.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Manual/Roles.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Manual/Support.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Manual/Types.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Manual/Unsweetened.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute.pm
