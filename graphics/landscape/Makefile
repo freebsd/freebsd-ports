@@ -7,9 +7,9 @@
 
 PORTNAME=		landscape
 PORTVERSION=		0.7
-PORTREVISION=	11
+PORTREVISION=		11
 CATEGORIES=		graphics kde
-MASTER_SITES=		http://www.witchspace.com/files/
+MASTER_SITES=		http://homepage.ntlworld.com/jon.belson/files/
 
 MAINTAINER=		jon@witchspace.com
 COMMENT=		A program for generating and rendering fractal landscapes
