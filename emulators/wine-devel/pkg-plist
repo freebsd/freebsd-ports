@@ -485,6 +485,8 @@ include/wine/windows/servprov.idl
 include/wine/windows/sesprp.idl
 include/wine/windows/setupapi.h
 include/wine/windows/sfc.h
+include/wine/windows/shdeprecated.h
+include/wine/windows/shdeprecated.idl
 include/wine/windows/shdispid.h
 include/wine/windows/shellapi.h
 include/wine/windows/shldisp.h
@@ -1265,8 +1267,6 @@ lib/wine/libmsi.def
 lib/wine/libmsimg32.def
 lib/wine/libmsvcr70.def
 lib/wine/libmsvcr71.def
-lib/wine/libmsvcr80.def
-lib/wine/libmsvcr90.def
 lib/wine/libmsvcrt.def
 lib/wine/libmsvcrt20.def
 lib/wine/libmsvcrt40.def
