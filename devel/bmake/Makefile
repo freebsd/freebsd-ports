@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	bmake
-PORTVERSION=	20090909
-PORTREVISION=	1
+PORTVERSION=	20100222
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/ \
-	http://www.gtlib.cc.gatech.edu/pub/NetBSD/misc/sjg/ \
-	ftp://ftp.uk.netbsd.org/pub/NetBSD/misc/sjg/ \
-	ftp://ftp.de.netbsd.org/pub/NetBSD/misc/sjg/
-DISTFILES=	bmake-${PORTVERSION}.tar.gz mk-20081111.tar.gz
+		http://www.gtlib.cc.gatech.edu/pub/NetBSD/misc/sjg/ \
+		ftp://ftp.uk.netbsd.org/pub/NetBSD/misc/sjg/ \
+		ftp://ftp.de.netbsd.org/pub/NetBSD/misc/sjg/
+DISTFILES=	bmake-${PORTVERSION}.tar.gz mk-20100102.tar.gz
 
 MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	Portable version of NetBSD 'make' utility
@@ -21,7 +20,7 @@ COMMENT=	Portable version of NetBSD 'make' utility
 MAN1=		bmake.1
 
 do-build:
-	${WRKDIR}/bmake/boot-strap -m ${WRKDIR}/mk FORCE_SYS_MK=Generic FORCE_BSD_MK=1 objdir=${WRKDIR}/obj
+	${WRKDIR}/bmake/boot-strap -m ${WRKDIR}/mk objdir=${WRKDIR}/obj
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/obj/bmake ${PREFIX}/bin/
