@@ -14,12 +14,19 @@ MAINTAINER=	rpsfa@rit.edu
 COMMENT=	A fully automated, active web application security reconnaissance tool
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
+
 SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README COPYING ChangeLog
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not build on 6.x yet
 .endif
 
 post-patch:
@@ -41,4 +48,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
