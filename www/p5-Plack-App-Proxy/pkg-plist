@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/App/Proxy/.packlist
+%%SITE_PERL%%/Plack/App/Proxy.pm
+%%SITE_PERL%%/Plack/App/Proxy/Test.pm
+%%SITE_PERL%%/Plack/Middleware/Proxy/AddVia.pm
+%%SITE_PERL%%/Plack/Middleware/Proxy/Connect.pm
+%%SITE_PERL%%/Plack/Middleware/Proxy/LoadBalancer.pm
+%%SITE_PERL%%/Plack/Middleware/Proxy/RewriteLocation.pm
+@dirrmtry %%SITE_PERL%%/Plack/Middleware/Proxy
+@dirrm %%SITE_PERL%%/Plack/App/Proxy
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/App/Proxy
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/App
