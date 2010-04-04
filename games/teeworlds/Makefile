@@ -27,6 +27,10 @@ OPTIONS=	TEEWORLDS_SERVER_ONLY	"Build dedicated server only"	off
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		Does not install on ia64: gets bus error
+.endif
+
 .if defined(WITH_TEEWORLDS_SERVER_ONLY)
 BAM_TARGET=	server_release
 PLIST_SUB+=	CLIENT="@comment "
