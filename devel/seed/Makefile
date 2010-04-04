@@ -39,6 +39,10 @@ MAN1=		seed.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not link on sparc64: TLS not available on this platform
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' \
 		${WRKSRC}/configure
