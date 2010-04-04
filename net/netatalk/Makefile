@@ -16,10 +16,6 @@ COMMENT=	File and print server for AppleTalk networks
 
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
 
-.if defined(WITH_SRVLOC)
-LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
-.endif
-
 USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_ICONV=	yes
@@ -29,6 +25,13 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
 			--with-libiconv=${LOCALBASE} \
 			--with-libgcrypt-prefix=${LOCALBASE}
+
+OPTIONS=	SRVLOC		"Enable Service Location Protocol support" off \
+		PAM		"Enable PAM support" off \
+		TIMELORD	"Enable Timelord network time service" off \
+		KRB5		"Enable Kerberos V UAM" off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_KRB5)
 CONFIGURE_ARGS+=	--enable-krbV-uam
@@ -47,6 +50,7 @@ PLIST_SUB+=		NETATALKPAM="@comment "
 .if defined(WITH_SRVLOC)
 # Enable Service Location Protocol support.  This allows MacOS X < 10.1 to
 # pickup afpd servers in the network.
+LIB_DEPENDS+=		slp.1:${PORTSDIR}/net/openslp
 CONFIGURE_ARGS+=	--enable-srvloc=${LOCALBASE}
 .endif
 CONFIGURE_ARGS+=	--with-bdb=${LOCALBASE}
@@ -84,17 +88,6 @@ SUB_LIST+=	SRVLOC="slpd"
 SUB_LIST+=	SRVLOC=""
 .endif
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Netatalk has the following tunable options:"
-	@${ECHO_MSG} "		WITH_SRVLOC=yes		Enable Service Location Protocol support"
-	@${ECHO_MSG} "		WITH_PAM=yes		Enable PAM support"
-	@${ECHO_MSG} "		WITH_TIMELORD=yes	Enable Timelord network time service"
-	@${ECHO_MSG} "		WITH_KRB5=yes		Enable Kerberos V UAM"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "See Netatalk's Makefile for more details on some of these options."
-	@${ECHO_MSG} ""
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
 	    	s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g' \
@@ -115,4 +108,4 @@ post-install:
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
