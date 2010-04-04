@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nose
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://somethingaboutorange.com/mrl/projects/nose/ \
 		${MASTER_SITE_LOCAL} \
