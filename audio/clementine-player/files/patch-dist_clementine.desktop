@@ -1,0 +1,13 @@
+--- dist/clementine.desktop.orig
++++ dist/clementine.desktop
+@@ -4,8 +4,8 @@
+ Name=Clementine
+ GenericName=Clementine Music Player
+ Comment=Plays music and last.fm streams
+-Exec=clementine
+-TryExec=clementine
++Exec=clementine-player
++TryExec=clementine-player
+ Icon=application-x-clementine
+ Terminal=false
+ Categories=AudioVideo;Player;Qt;
