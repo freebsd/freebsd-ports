@@ -1,0 +1,61 @@
+etc/dgd-kernel/kernel.dgd
+etc/rc.d/dgd-kernel.sh.sample
+%%DATADIR%%/kernel/include/config.h
+%%DATADIR%%/kernel/include/kernel/access.h
+%%DATADIR%%/kernel/include/kernel/kernel.h
+%%DATADIR%%/kernel/include/kernel/net.h
+%%DATADIR%%/kernel/include/kernel/objreg.h
+%%DATADIR%%/kernel/include/kernel/rsrc.h
+%%DATADIR%%/kernel/include/kernel/tls.h
+%%DATADIR%%/kernel/include/kernel/user.h
+%%DATADIR%%/kernel/include/kernel/version.h
+%%DATADIR%%/kernel/include/std.h
+%%DATADIR%%/kernel/kernel/lib/api/access.c
+%%DATADIR%%/kernel/kernel/lib/api/objreg.c
+%%DATADIR%%/kernel/kernel/lib/api/rsrc.c
+%%DATADIR%%/kernel/kernel/lib/api/tls.c
+%%DATADIR%%/kernel/kernel/lib/api/user.c
+%%DATADIR%%/kernel/kernel/lib/auto.c
+%%DATADIR%%/kernel/kernel/lib/connection.c
+%%DATADIR%%/kernel/kernel/lib/network/port.c
+%%DATADIR%%/kernel/kernel/lib/user.c
+%%DATADIR%%/kernel/kernel/lib/wiztool.c
+%%DATADIR%%/kernel/kernel/obj/binary.c
+%%DATADIR%%/kernel/kernel/obj/port.c
+%%DATADIR%%/kernel/kernel/obj/rsrc.c
+%%DATADIR%%/kernel/kernel/obj/telnet.c
+%%DATADIR%%/kernel/kernel/obj/user.c
+%%DATADIR%%/kernel/kernel/obj/wiztool.c
+%%DATADIR%%/kernel/kernel/sys/accessd.c
+%%DATADIR%%/kernel/kernel/sys/binary_port.c
+%%DATADIR%%/kernel/kernel/sys/driver.c
+%%DATADIR%%/kernel/kernel/sys/emergency_port.c
+%%DATADIR%%/kernel/kernel/sys/objregd.c
+%%DATADIR%%/kernel/kernel/sys/rsrcd.c
+%%DATADIR%%/kernel/kernel/sys/telnet_port.c
+%%DATADIR%%/kernel/kernel/sys/userd.c
+%%DATADIR%%/kernel/usr/System/initd.c
+@unexec rm -f %D/%%DATADIR%%/kernel/kernel/data/* || true
+@unexec rm -f %D/%%DATADIR%%/kernel/include/float.h || true
+@unexec rm -f %D/%%DATADIR%%/kernel/include/limits.h || true
+@unexec rm -f %D/%%DATADIR%%/kernel/include/status.h || true
+@unexec rm -f %D/%%DATADIR%%/kernel/include/trace.h || true
+@unexec rm -f %D/%%DATADIR%%/kernel/include/type.h || true
+@unexec rm -f %D/%%DATADIR%%/kernel.log || true
+@unexec rm -f %D/%%DATADIR%%/tmp/dgd-kernel.swap || true
+@dirrm %%DATADIR%%/tmp
+@dirrm %%DATADIR%%/kernel/usr/admin
+@dirrm %%DATADIR%%/kernel/usr/System
+@dirrm %%DATADIR%%/kernel/usr
+@dirrm %%DATADIR%%/kernel/kernel/sys
+@dirrm %%DATADIR%%/kernel/kernel/obj
+@dirrm %%DATADIR%%/kernel/kernel/lib/network
+@dirrm %%DATADIR%%/kernel/kernel/lib/api
+@dirrm %%DATADIR%%/kernel/kernel/lib
+@dirrm %%DATADIR%%/kernel/kernel/data
+@dirrm %%DATADIR%%/kernel/kernel
+@dirrm %%DATADIR%%/kernel/include/kernel
+@dirrm %%DATADIR%%/kernel/include
+@dirrm %%DATADIR%%/kernel
+@dirrm %%DATADIR%%
+@dirrm etc/dgd-kernel
