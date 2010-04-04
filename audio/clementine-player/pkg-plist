@@ -1,0 +1,4 @@
+bin/clementine-player
+share/applications/clementine.desktop
+share/icons/hicolor/64x64/apps/application-x-clementine.png
+@dirrmtry share/applications
