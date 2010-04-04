@@ -61,9 +61,6 @@ post-install:
 	${MKDIR} ${DATADIR}/tmp
 	# Link in the dgd docs
 	${LN} -sf ${PREFIX}/share/doc/dgd/kfun ${DATADIR}/lpmud/doc
-	# Run package install script
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} \
-		POST-INSTALL
 	# Set mudlib ownership
 	-@${CHOWN} -h -R mud:mud ${DATADIR}
 
