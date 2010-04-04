@@ -114,6 +114,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e "s:/var/lib/bitlbee:/var/db/bitlbee:" \
 		${WRKSRC}/doc/bitlbee.8
+.if ${OSVERSION} < 700042
+	@${REINPLACE_CMD} \
+		-e "s:-iquote:-I:g" \
+		${WRKSRC}/configure
+.endif
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
