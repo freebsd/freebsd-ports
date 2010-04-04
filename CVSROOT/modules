@@ -12662,6 +12662,7 @@ p5-Module-Starter-Plugin-SimpleStore  ports/devel/p5-Module-Starter-Plugin-Simpl
 p5-Module-Starter-Plugin-TT2    ports/devel/p5-Module-Starter-Plugin-TT2
 p5-Module-Used                  ports/devel/p5-Module-Used
 p5-Module-Util                  ports/devel/p5-Module-Util
+p5-Module-Versions              ports/devel/p5-Module-Versions
 p5-Module-Versions-Report       ports/devel/p5-Module-Versions-Report
 p5-MogileFS-Client              ports/sysutils/p5-MogileFS-Client
 p5-MogileFS-Utils               ports/sysutils/p5-MogileFS-Utils
@@ -13183,10 +13184,11 @@ p5-PlRPC                        ports/net/p5-PlRPC
 p5-Plack                        ports/www/p5-Plack
 p5-Plack-Handler-AnyEvent-ReverseHTTP  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
 p5-Plack-Middleware-AutoRefresh  ports/www/p5-Plack-Middleware-AutoRefresh
+p5-Plack-Middleware-Debug       ports/www/p5-Plack-Middleware-Debug
 p5-Plack-Middleware-Deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-Plack-Middleware-Header      ports/www/p5-Plack-Middleware-Header
+p5-Plack-Middleware-ReverseProxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-Plack-Middleware-Session     ports/www/p5-Plack-Middleware-Session
-p5-Plack-Request                ports/www/p5-Plack-Request
 p5-Plack-Server-AnyEvent        ports/www/p5-Plack-Server-AnyEvent
 p5-Plack-Server-Coro            ports/www/p5-Plack-Server-Coro
 p5-Plack-Server-POE             ports/www/p5-Plack-Server-POE
@@ -13702,6 +13704,7 @@ p5-Test-WWW-Mechanize           ports/devel/p5-Test-WWW-Mechanize
 p5-Test-WWW-Mechanize-CGI       ports/devel/p5-Test-WWW-Mechanize-CGI
 p5-Test-WWW-Mechanize-CGIApp    ports/devel/p5-Test-WWW-Mechanize-CGIApp
 p5-Test-WWW-Mechanize-Catalyst  ports/devel/p5-Test-WWW-Mechanize-Catalyst
+p5-Test-WWW-Mechanize-PSGI      ports/devel/p5-Test-WWW-Mechanize-PSGI
 p5-Test-WWW-Selenium            ports/devel/p5-Test-WWW-Selenium
 p5-Test-Warn                    ports/devel/p5-Test-Warn
 p5-Test-XML                     ports/devel/p5-Test-XML
@@ -16466,6 +16469,7 @@ p5-module-starter-plugin-simplestore  ports/devel/p5-Module-Starter-Plugin-Simpl
 p5-module-starter-plugin-tt2    ports/devel/p5-Module-Starter-Plugin-TT2
 p5-module-used                  ports/devel/p5-Module-Used
 p5-module-util                  ports/devel/p5-Module-Util
+p5-module-versions              ports/devel/p5-Module-Versions
 p5-module-versions-report       ports/devel/p5-Module-Versions-Report
 p5-mogilefs-client              ports/sysutils/p5-MogileFS-Client
 p5-mogilefs-server              ports/sysutils/p5-mogilefs-server
@@ -16926,10 +16930,11 @@ p5-pipeline                     ports/devel/p5-Pipeline
 p5-plack                        ports/www/p5-Plack
 p5-plack-handler-anyevent-reversehttp  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
 p5-plack-middleware-autorefresh  ports/www/p5-Plack-Middleware-AutoRefresh
+p5-plack-middleware-debug       ports/www/p5-Plack-Middleware-Debug
 p5-plack-middleware-deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-plack-middleware-header      ports/www/p5-Plack-Middleware-Header
+p5-plack-middleware-reverseproxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-plack-middleware-session     ports/www/p5-Plack-Middleware-Session
-p5-plack-request                ports/www/p5-Plack-Request
 p5-plack-server-anyevent        ports/www/p5-Plack-Server-AnyEvent
 p5-plack-server-coro            ports/www/p5-Plack-Server-Coro
 p5-plack-server-poe             ports/www/p5-Plack-Server-POE
@@ -17549,6 +17554,7 @@ p5-test-www-mechanize           ports/devel/p5-Test-WWW-Mechanize
 p5-test-www-mechanize-catalyst  ports/devel/p5-Test-WWW-Mechanize-Catalyst
 p5-test-www-mechanize-cgi       ports/devel/p5-Test-WWW-Mechanize-CGI
 p5-test-www-mechanize-cgiapp    ports/devel/p5-Test-WWW-Mechanize-CGIApp
+p5-test-www-mechanize-psgi      ports/devel/p5-Test-WWW-Mechanize-PSGI
 p5-test-www-selenium            ports/devel/p5-Test-WWW-Selenium
 p5-test-xml                     ports/devel/p5-Test-XML
 p5-test-xml-valid               ports/devel/p5-Test-XML-Valid
@@ -19692,6 +19698,7 @@ postgresql84-server             ports/databases/postgresql84-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
 postgrey                        ports/mail/postgrey
 postmark                        ports/benchmarks/postmark
+postpals                        ports/mail/postpals
 potrace                         ports/graphics/potrace
 potracegui                      ports/graphics/potracegui
 pouetchess                      ports/games/pouetchess
@@ -22013,6 +22020,7 @@ rubyphoto                       ports/graphics/rubyphoto
 rude                            ports/net/rude
 rudeconfig                      ports/devel/rudeconfig
 rudiments                       ports/devel/rudiments
+runawk                          ports/lang/runawk
 runit                           ports/sysutils/runit
 runsomebrowser                  ports/www/runsomebrowser
 runwhen                         ports/sysutils/runwhen
