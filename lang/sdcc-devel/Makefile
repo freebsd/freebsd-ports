@@ -45,7 +45,6 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-USE_GCC=	4.3+
 BROKEN=		Does not compile on sparc64
 .endif
 
