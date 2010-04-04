@@ -8,7 +8,7 @@
 
 PORTNAME=	images
 PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/caml-light/bazar-ocaml/ \
@@ -39,7 +39,7 @@ OPTIONS=	PNG "Enable PNG support" on \
 		XPM "Enable XPM support" on \
 		GIF "Enable GIF support" on \
 		FREETYPE "Enable text rendering via freetype" on \
-		GS "Enable PostScript support via Ghostscript" off \
+		GS "Enable PostScript support via Ghostscript" on \
 		GTK1 "Enable LablGTK1 support" off \
 		GTK2 "Enable LablGTK2 support (conflicts with LablGTK1)" off
 
