@@ -1,5 +1,6 @@
-pywebdav is a collection of classes which should make
-it easy to write your own DAV server in Python.
+Python WebDAV implementation (level 1 and 2) that features 
+a library that enables you to integrate WebDAV server 
+capabilities to your application.
 
 WebDAV is an extension to the normal HTTP/1.1 protocol
 allowing the user to upload data, create collections of
