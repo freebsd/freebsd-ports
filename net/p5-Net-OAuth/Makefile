@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Net-OAuth
-PORTVERSION=	0.22
+PORTVERSION=	0.25
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sahil@tandon.net
 COMMENT=	An implementation of the OAuth protocol
 
-BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.10:${PORTSDIR}/devel/p5-UNIVERSAL-require \
-		p5-Encode>=2.35:${PORTSDIR}/converters/p5-Encode \
+BUILD_DEPENDS=	p5-Encode>=2.35:${PORTSDIR}/converters/p5-Encode \
 		p5-Digest-HMAC>=1.01:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
 		p5-Class-Accessor>=0.31:${PORTSDIR}/devel/p5-Class-Accessor \
