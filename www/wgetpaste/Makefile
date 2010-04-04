@@ -12,7 +12,7 @@ MASTER_SITES=	http://wgetpaste.zlin.dk/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}.example zlin.conf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Paste to several pastebin services via bash script
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \

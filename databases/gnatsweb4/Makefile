@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=		databases devel www
 MASTER_SITES=		GNU
 
-MAINTAINER=		pgollucci@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Gnatsweb, a GNATS web interface
 
 RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64

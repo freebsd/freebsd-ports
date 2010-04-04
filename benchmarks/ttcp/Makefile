@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.sgi.com/sgi/src/ttcp/
 DISTFILES=	ttcp.c ttcp.1 README
 EXTRACT_ONLY=	#none
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for analysing TCP and UDP performance
 
 MAKE_JOBS_SAFE=	yes

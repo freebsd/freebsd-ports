@@ -14,7 +14,7 @@ DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby module for reading and writing zip files
 
 MAKE_JOBS_SAFE=  yes
