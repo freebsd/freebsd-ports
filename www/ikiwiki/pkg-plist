@@ -153,6 +153,71 @@
 %%DATADIR%%/locale/da/directives/ikiwiki/directive/toggleable.mdwn
 %%DATADIR%%/locale/da/directives/ikiwiki/directive/version.mdwn
 %%DATADIR%%/locale/da/smiley/smileys.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/directive.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/formatting.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/markdown.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/openid.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/pagespec.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/pagespec/attachment.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/pagespec/po.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/pagespec/sorting.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/searching.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/subpage.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/subpage/linkingrules.mdwn
+%%DATADIR%%/locale/de/basewiki/ikiwiki/wikilink.mdwn
+%%DATADIR%%/locale/de/basewiki/index.mdwn
+%%DATADIR%%/locale/de/basewiki/recentchanges.mdwn
+%%DATADIR%%/locale/de/basewiki/sandbox.mdwn
+%%DATADIR%%/locale/de/basewiki/shortcuts.mdwn
+%%DATADIR%%/locale/de/basewiki/templates.mdwn
+%%DATADIR%%/locale/de/basewiki/templates/note.mdwn
+%%DATADIR%%/locale/de/basewiki/templates/popup.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/aggregate.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/brokenlinks.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/calendar.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/color.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/comment.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/copy.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/cut.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/cutpaste.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/date.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/edittemplate.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/format.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/fortune.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/graph.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/haiku.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/if.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/img.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/inline.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/linkmap.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/listdirectives.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/map.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/meta.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/more.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/orphans.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/pagecount.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/pagestats.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/pagetemplate.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/paste.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/ping.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/poll.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/polygen.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/postsparkline.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/progress.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/shortcut.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/sparkline.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/table.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/tag.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/taglink.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/template.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/testpagespec.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/teximg.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/toc.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/toggle.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/toggleable.mdwn
+%%DATADIR%%/locale/de/directives/ikiwiki/directive/version.mdwn
+%%DATADIR%%/locale/de/smiley/smileys.mdwn
 %%DATADIR%%/locale/es/basewiki/ikiwiki.mdwn
 %%DATADIR%%/locale/es/basewiki/ikiwiki/directive.mdwn
 %%DATADIR%%/locale/es/basewiki/ikiwiki/formatting.mdwn
@@ -317,6 +382,71 @@
 %%DATADIR%%/po/da/directives/ikiwiki/directive/toggleable.da.po
 %%DATADIR%%/po/da/directives/ikiwiki/directive/version.da.po
 %%DATADIR%%/po/da/smiley/smileys.da.po
+%%DATADIR%%/po/de/basewiki/ikiwiki.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/directive.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/formatting.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/markdown.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/openid.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/pagespec.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/pagespec/attachment.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/pagespec/po.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/pagespec/sorting.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/searching.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/subpage.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/subpage/linkingrules.de.po
+%%DATADIR%%/po/de/basewiki/ikiwiki/wikilink.de.po
+%%DATADIR%%/po/de/basewiki/index.de.po
+%%DATADIR%%/po/de/basewiki/recentchanges.de.po
+%%DATADIR%%/po/de/basewiki/sandbox.de.po
+%%DATADIR%%/po/de/basewiki/shortcuts.de.po
+%%DATADIR%%/po/de/basewiki/templates.de.po
+%%DATADIR%%/po/de/basewiki/templates/note.de.po
+%%DATADIR%%/po/de/basewiki/templates/popup.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/aggregate.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/brokenlinks.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/calendar.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/color.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/comment.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/copy.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/cut.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/cutpaste.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/date.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/edittemplate.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/format.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/fortune.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/graph.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/haiku.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/if.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/img.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/inline.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/linkmap.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/listdirectives.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/map.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/meta.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/more.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/orphans.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/pagecount.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/pagestats.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/pagetemplate.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/paste.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/ping.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/poll.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/polygen.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/postsparkline.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/progress.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/shortcut.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/sparkline.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/table.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/tag.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/taglink.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/template.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/testpagespec.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/teximg.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/toc.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/toggle.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/toggleable.de.po
+%%DATADIR%%/po/de/directives/ikiwiki/directive/version.de.po
+%%DATADIR%%/po/de/smiley/smileys.de.po
 %%DATADIR%%/po/es/basewiki/ikiwiki.es.po
 %%DATADIR%%/po/es/basewiki/ikiwiki/directive.es.po
 %%DATADIR%%/po/es/basewiki/ikiwiki/formatting.es.po
@@ -575,6 +705,7 @@
 %%SITE_PERL%%/IkiWiki/Setup.pm
 %%SITE_PERL%%/IkiWiki/Setup/Automator.pm
 %%SITE_PERL%%/IkiWiki/Setup/Standard.pm
+%%SITE_PERL%%/IkiWiki/Setup/Yaml.pm
 %%SITE_PERL%%/IkiWiki/UserInfo.pm
 %%SITE_PERL%%/IkiWiki/Wrapper.pm
 bin/ikiwiki
@@ -630,6 +761,16 @@ share/locale/vi/LC_MESSAGES/ikiwiki.mo
 @dirrm %%DATADIR%%/locale/da/directives
 @dirrm %%DATADIR%%/locale/da/smiley
 @dirrm %%DATADIR%%/locale/da
+@dirrm %%DATADIR%%/locale/de/basewiki/ikiwiki/pagespec
+@dirrm %%DATADIR%%/locale/de/basewiki/ikiwiki/subpage
+@dirrm %%DATADIR%%/locale/de/basewiki/ikiwiki
+@dirrm %%DATADIR%%/locale/de/basewiki/templates
+@dirrm %%DATADIR%%/locale/de/basewiki
+@dirrm %%DATADIR%%/locale/de/directives/ikiwiki/directive
+@dirrm %%DATADIR%%/locale/de/directives/ikiwiki
+@dirrm %%DATADIR%%/locale/de/directives
+@dirrm %%DATADIR%%/locale/de/smiley
+@dirrm %%DATADIR%%/locale/de
 @dirrm %%DATADIR%%/locale/es/basewiki/ikiwiki/pagespec
 @dirrm %%DATADIR%%/locale/es/basewiki/ikiwiki/subpage
 @dirrm %%DATADIR%%/locale/es/basewiki/ikiwiki
@@ -663,6 +804,16 @@ share/locale/vi/LC_MESSAGES/ikiwiki.mo
 @dirrm %%DATADIR%%/po/da/directives
 @dirrm %%DATADIR%%/po/da/smiley
 @dirrm %%DATADIR%%/po/da
+@dirrm %%DATADIR%%/po/de/basewiki/ikiwiki/pagespec
+@dirrm %%DATADIR%%/po/de/basewiki/ikiwiki/subpage
+@dirrm %%DATADIR%%/po/de/basewiki/ikiwiki
+@dirrm %%DATADIR%%/po/de/basewiki/templates
+@dirrm %%DATADIR%%/po/de/basewiki
+@dirrm %%DATADIR%%/po/de/directives/ikiwiki/directive
+@dirrm %%DATADIR%%/po/de/directives/ikiwiki
+@dirrm %%DATADIR%%/po/de/directives
+@dirrm %%DATADIR%%/po/de/smiley
+@dirrm %%DATADIR%%/po/de
 @dirrm %%DATADIR%%/po/es/basewiki/ikiwiki/pagespec
 @dirrm %%DATADIR%%/po/es/basewiki/ikiwiki/subpage
 @dirrm %%DATADIR%%/po/es/basewiki/ikiwiki
