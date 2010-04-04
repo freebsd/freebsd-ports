@@ -1,6 +1,6 @@
 # New ports collection makefile for:   vde2
 # Date created:        20 January 2007
-# Whom:                Philip M. Gollucci <pgollucci@FreeBSD.org>
+# Whom:                Philip M. Gollucci <ports@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	2.1.6
 CATEGORIES=	net
 MASTER_SITES=	SF/vde/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
 
 MAKE_JOBS_SAFE=  yes

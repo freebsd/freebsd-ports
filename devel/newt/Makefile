@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://fedorahosted.org/releases/n/e/newt/
 PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Not Erik's Windowing Toolkit:  console I/O handling library#'
 
 LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang2 \

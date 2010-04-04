@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://openscep.othello.ch/download/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source scep server
 
 MAKE_JOBS_SAFE=  yes

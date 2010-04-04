@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.ece.rice.edu/~brentmh/spades/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very popular card game for 1-4 players over a network
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2

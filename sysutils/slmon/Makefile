@@ -12,7 +12,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/SLmon/${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	S-Lang System Monitor
 
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
