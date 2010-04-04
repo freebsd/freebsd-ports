@@ -1,0 +1,8 @@
+bin/corona
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Corona/.packlist
+%%SITE_PERL%%/Corona.pm
+%%SITE_PERL%%/Corona/Server.pm
+%%SITE_PERL%%/Plack/Handler/Corona.pm
+%%SITE_PERL%%/Plack/Server/Coro.pm
+@dirrm %%SITE_PERL%%/Corona
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Corona
