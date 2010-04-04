@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100403:
+  AFFECTS: users of net/dgd
+  AUTHOR: glewis@FreeBSD.org
+
+  The kernel library has been separated from the main net/dgd port into its
+  own net/dgd-kernel port so that all libraries are on an equal footing.
+  This also reflects the split of the kernel library out from the main DGD
+  distribution.
+
+  If you wish to continue to use the kernel library you'll need to install
+  net/dgd-kernel after updating to dgd-1.4.1_2.
+
+
 20100330:
   AFFECTS: users of gstreamer-plugins-bad and gstreamer-plugins-good
   AUTHOR: kwm@FreeBSD.org
