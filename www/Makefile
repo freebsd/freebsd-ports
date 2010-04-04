@@ -1086,6 +1086,7 @@
     SUBDIR += p5-Path-Class-URI
     SUBDIR += p5-Plack
     SUBDIR += p5-Plack-Handler-AnyEvent-ReverseHTTP
+    SUBDIR += p5-Plack-Middleware-Auth-Digest
     SUBDIR += p5-Plack-Middleware-AutoRefresh
     SUBDIR += p5-Plack-Middleware-Debug
     SUBDIR += p5-Plack-Middleware-Deflater
