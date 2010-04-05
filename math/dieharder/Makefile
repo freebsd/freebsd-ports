@@ -28,8 +28,8 @@ MAN1=		dieharder.1
 MAN3=		libdieharder.3
 
 .include <bsd.port.pre.mk>
-.if ${ARCH} == "i386" || ${ARCH} == "sparc64"
-BROKEN=	does not compile on i386 or sparc64
+.if ${ARCH} == "i386" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=	does not compile on i386, ia64, or sparc64
 .endif
 
 post-patch:
