@@ -85,7 +85,7 @@ install-locale:
 # Post-install
 #
 
-post-install: install-conf install-startup install-doc display-message
+post-install: install-conf install-doc display-message
 
 install-conf:
 .if !exists(${PREFIX}/etc/upclient.conf)
