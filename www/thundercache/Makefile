@@ -17,6 +17,8 @@ DISTNAME=	thunder32bits_17032010
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	High-performance and high-eficiency caching proxy system
 
+BROKEN=		calls false in default configuration
+
 OPTIONS=	DEPENDACK "I have read and understood the depends needs" off
 
 USE_OPENSSL=	yes
