@@ -5,21 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	phplogcon
-PORTVERSION=	2.8.1
+PORTNAME=	loganalyzer
+PORTVERSION=	3.0.0
 CATEGORIES=	sysutils www
-MASTER_SITES=	http://download.adiscon.com/phplogcon/
+MASTER_SITES=	http://download.adiscon.com/loganalyzer/
 
 MAINTAINER=	cristianorolim@hotmail.com
-COMMENT=	Web Based Syslog Review
+COMMENT=	Web based Syslog browsing and analysis
 
 NO_BUILD=	YES
-LOGCONDIR?=	www/phplogcon
-PLIST_SUB+=	LOGCONDIR=${LOGCONDIR}
+ANALYZERDIR?=	www/loganalyzer
+PLIST_SUB+=	ANALYZERDIR=${ANALYZERDIR}
 
 pre-everything::
 	@${ECHO_CMD} "# you can customize the installation directory"
-	@${ECHO_CMD} "# by setting LOGCON in /etc/make.conf"
+	@${ECHO_CMD} "# by setting ANALYZER in /etc/make.conf"
 
 OPTIONS=	PHP_MYSQL "MySQL database support (PHP extension)" Off \
 		PDO_DBLIB "Microsoft SQL Server and Sybase PDO driver" Off \
@@ -72,8 +72,8 @@ USE_PHP+=	pdo_sqlite
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/${LOGCONDIR}
-	${CP} -Rp ${WRKSRC}/src/ ${PREFIX}/${LOGCONDIR}/
+	${MKDIR} ${PREFIX}/${ANALYZERDIR}
+	${CP} -Rp ${WRKSRC}/src/ ${PREFIX}/${ANALYZERDIR}/
 
 post-install:
 .if !defined(NOPORTDOCS)
