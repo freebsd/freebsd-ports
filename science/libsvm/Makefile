@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	2.90
+PORTVERSION=	2.91
 PORTEPOCH=	1
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
@@ -20,6 +20,9 @@ OPTIONS=	OCFLAGS "Use optimized CFLAGS" On
 
 USE_ZIP=	yes
 
+USE_LDCONFIG=	yes
+ALL_TARGET=	all lib
+
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-python"
 CATEGORIES+=	python
 
@@ -27,13 +30,9 @@ USE_PYTHON=	yes
 
 MAKE_ARGS=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR}
 
-PYEXAMPLES=	python/cross_validation.py \
-		python/svm_test.py \
-		python/test_cross_validation.py
-
 TXT_DOCS=	README.python
 
-BUILD_WRKSRC=	${WRKSRC}/python
+NO_BUILD=	yes
 
 .else
 TXT_DOCS=	COPYRIGHT README FAQ.html README.tools
@@ -57,8 +56,6 @@ CFLAGS=		-Wall -Wconversion -O3
 .endif
 
 post-patch:
-
-post-extract:
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-python"
 	@${CP} ${WRKSRC}/python/README ${WRKSRC}/README.python
 .else
@@ -67,19 +64,15 @@ post-extract:
 
 .if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-python"
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/python/svm.py ${PYTHON_SITELIBDIR}/
-	${INSTALL_PROGRAM} ${WRKSRC}/python/svmc.so ${PYTHON_SITELIBDIR}/
-	${MKDIR} ${EXAMPLESDIR}
-	for f in ${PYEXAMPLES}; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$$f ${EXAMPLESDIR}; \
-	done
-
+	${INSTALL_DATA} ${WRKSRC}/python/svm.py ${PYTHON_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/python/svmutil.py ${PYTHON_SITELIBDIR}/
 .else
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/svm-train ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/svm-predict ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/libsvm.so.1 ${PREFIX}/lib/
 	${MKDIR} ${DATADIR}
 	for f in ${TOOLS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DATADIR}; \

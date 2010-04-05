@@ -1,6 +1,7 @@
 bin/svm-predict
 bin/svm-scale
 bin/svm-train
+lib/libsvm.so.1
 %%DATADIR%%/checkdata.py
 %%DATADIR%%/easy.py
 %%DATADIR%%/grid.py
