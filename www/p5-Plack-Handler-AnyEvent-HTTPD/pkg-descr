@@ -1,0 +1,3 @@
+Plack handler to run PSGI apps on AnyEvent::HTTPD.
+
+WWW: http://search.cpan.org/dist/Plack-Handler-AnyEvent-HTTPD/
