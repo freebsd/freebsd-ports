@@ -618,7 +618,6 @@
     SUBDIR += philesight
     SUBDIR += php4-posix
     SUBDIR += php5-posix
-    SUBDIR += phplogcon
     SUBDIR += pidof
     SUBDIR += pipemeter
     SUBDIR += plconfig
