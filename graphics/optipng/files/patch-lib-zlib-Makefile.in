@@ -1,5 +1,5 @@
---- lib/zlib/Makefile.in.orig	2005-07-18 03:25:21.000000000 +0100
-+++ lib/zlib/Makefile.in	2008-11-14 18:07:42.000000000 +0000
+--- lib/zlib/Makefile.in.orig	2010-03-14 04:10:27.000000000 +0100
++++ lib/zlib/Makefile.in	2010-04-05 21:25:15.000000000 +0200
 @@ -16,9 +16,9 @@
  # To install in $HOME instead of /usr/local, use:
  #    make install prefix=$HOME
@@ -12,9 +12,9 @@
  #CFLAGS=-O -DMAX_WBITS=14 -DMAX_MEM_LEVEL=7
  #CFLAGS=-g -DDEBUG
  #CFLAGS=-O3 -Wall -Wwrite-strings -Wpointer-arith -Wconversion \
-@@ -33,9 +33,10 @@
- SHAREDLIBV=libz.so.1.2.3
+@@ -36,9 +36,10 @@
  SHAREDLIBM=libz.so.1
+ LIBS=$(STATICLIB) $(SHAREDLIB) $(SHAREDLIBV)
  
 -AR=ar rc
 -RANLIB=ranlib
@@ -26,12 +26,12 @@
  SHELL=/bin/sh
  EXE=
  
-@@ -68,7 +69,7 @@
- 	fi
+@@ -105,7 +106,7 @@
+ 	-@rm -f foo.gz
  
- libz.a: $(OBJS) $(OBJA)
--	$(AR) $@ $(OBJS) $(OBJA)
-+	$(AR) $(ARFLAGS) $@ $(OBJS) $(OBJA)
+ libz.a: $(OBJS)
+-	$(AR) $@ $(OBJS)
++	$(AR) $(ARFLAGS) $@ $(OBJS)
  	-@ ($(RANLIB) $@ || true) >/dev/null 2>&1
  
  match.o: match.S

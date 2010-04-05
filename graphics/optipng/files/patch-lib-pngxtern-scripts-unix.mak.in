@@ -1,0 +1,24 @@
+--- lib/pngxtern/scripts/unix.mak.in.orig	2008-06-18 01:29:00.000000000 +0200
++++ lib/pngxtern/scripts/unix.mak.in	2010-04-05 21:52:14.000000000 +0200
+@@ -8,8 +8,8 @@
+ PNGDIR = ../libpng
+ 
+ # Compiler, linker, librarian and other tools
+-CC = cc
+-LD = $(CC)
++CC ?= cc
++LD ?= $(CC)
+ AR_RC = ar rcs
+ RANLIB = ranlib
+ RM_F = rm -f
+@@ -18,8 +18,8 @@
+ LDDEBUG =
+ CRELEASE = -O
+ LDRELEASE = -s
+-CFLAGS = $(CRELEASE)
+-LDFLAGS = $(LDRELEASE)
++CFLAGS ?= $(CRELEASE)
++LDFLAGS ?= $(LDRELEASE)
+ INCS = -I$(ZDIR) -I$(PNGDIR)
+ LIBS = -lpng -lz -lm
+ 

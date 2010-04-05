@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	optipng
-PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTVERSION=	0.6.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OptiPNG/${PORTNAME}-${PORTVERSION}
 
@@ -39,6 +38,8 @@ CONFIGURE_ARGS+=	--with-system-zlib
 
 do-configure:
 	(cd ${WRKSRC} && ./configure ${CONFIGURE_ARGS})
+	${REINPLACE_CMD} -e 's|^INCS =.*|INCS = -I${LOCALBASE}/include|' \
+		${WRKSRC}/lib/pngxtern/scripts/unix.mak
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng ${PREFIX}/bin/
