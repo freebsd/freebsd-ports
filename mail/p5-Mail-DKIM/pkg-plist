@@ -30,6 +30,7 @@
 %%SITE_PERL%%/Mail/DKIM/SignerPolicy.pm
 %%SITE_PERL%%/Mail/DKIM/TextWrap.pm
 %%SITE_PERL%%/Mail/DKIM/Verifier.pm
+%%SITE_PERL%%/Mail/sample_mime_lite.pl
 bin/dkimsign.pl
 bin/dkimverify.pl
 @dirrm %%SITE_PERL%%/Mail/DKIM/Canonicalization
