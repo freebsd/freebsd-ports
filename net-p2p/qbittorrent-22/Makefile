@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -28,7 +28,8 @@ QT_COMPONENTS=	corelib gui network xml \
 		moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libboost-inc="${LOCALBASE}/include"
+CONFIGURE_ARGS=	--with-libboost-inc="${LOCALBASE}/include" \
+		--with-libboost-lib="${LOCALBASE}/lib"
 INSTALLS_ICONS=	yes
 
 MAN1=		qbittorrent.1
@@ -47,12 +48,17 @@ LIB_DEPENDS+=	torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
 LIB_DEPENDS+=	torrent-rasterbar.5:${PORTSDIR}/net-p2p/libtorrent-rasterbar-14
 .endif
 
+BOOSTLIB_PATTERN=	-e 's|boost_system-mt|boost_system|' \
+			-e 's|boost_filesystem-mt|boost_filesystem|' \
+			-e 's|boost_thread-mt|boost_thread|'
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$$$PREFIX/share/man|${MANPREFIX}/man|' \
 		${WRKSRC}/src/src.pro
 	@${ECHO_CMD} "LIBS+= -lexecinfo" >> ${WRKSRC}/src/src.pro
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${BOOSTLIB_PATTERN} \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} ${BOOSTLIB_PATTERN} ${WRKSRC}/qcm/libboost.qcm
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent
