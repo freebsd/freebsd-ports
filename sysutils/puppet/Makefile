@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	0.25.3
-PORTREVISION=	1
+PORTVERSION=	0.25.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.reductivelabs.com/downloads/puppet/
+MASTER_SITES=	http://www.puppetlabs.com/downloads/${PORTNAME}/
 
 MAINTAINER=	raj@csub.edu
 COMMENT=	A configuration management framework written in Ruby
