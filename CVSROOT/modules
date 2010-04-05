@@ -1653,6 +1653,7 @@ clearlooks-themes-extras        ports/x11-themes/clearlooks-themes-extras
 clearsilver                     ports/www/clearsilver
 clearsilver-python              ports/www/clearsilver-python
 clementine                      ports/x11-wm/clementine
+clementine-player               ports/audio/clementine-player
 clewn                           ports/devel/clewn
 clex                            ports/misc/clex
 clhep                           ports/science/clhep
@@ -2287,6 +2288,7 @@ dfu-programmer                  ports/comms/dfu-programmer
 dfu-util                        ports/comms/dfu-util
 dfuife-curses                   ports/devel/dfuife-curses
 dgd                             ports/net/dgd
+dgd-kernel                      ports/net/dgd-kernel
 dgd-lpmud                       ports/net/dgd-lpmud
 dgd-net                         ports/net/dgd-net
 dgen-sdl                        ports/emulators/dgen-sdl
@@ -10628,6 +10630,7 @@ p5-Asterisk                     ports/misc/p5-Asterisk
 p5-Astro                        ports/astro/p5-Astro
 p5-Astro-ADS                    ports/astro/p5-Astro-ADS
 p5-Astro-Catalog                ports/astro/p5-Astro-Catalog
+p5-Astro-Constants              ports/astro/p5-Astro-Constants
 p5-Astro-DSS                    ports/astro/p5-Astro-DSS
 p5-Astro-FITS-Header            ports/astro/p5-Astro-FITS-Header
 p5-Astro-Hipparcos              ports/astro/p5-Astro-Hipparcos
@@ -11244,6 +11247,7 @@ p5-Convert-TNEF                 ports/converters/p5-Convert-TNEF
 p5-Convert-UU                   ports/converters/p5-Convert-UU
 p5-Convert-UUlib                ports/converters/p5-Convert-UUlib
 p5-Coro                         ports/devel/p5-Coro
+p5-Corona                       ports/www/p5-Corona
 p5-Crypt-Anubis                 ports/security/p5-Crypt-Anubis
 p5-Crypt-AppleTwoFish           ports/security/p5-Crypt-AppleTwoFish
 p5-Crypt-Blowfish               ports/security/p5-Crypt-Blowfish
@@ -13182,7 +13186,9 @@ p5-Pid-File-Flock               ports/devel/p5-Pid-File-Flock
 p5-Pipeline                     ports/devel/p5-Pipeline
 p5-PlRPC                        ports/net/p5-PlRPC
 p5-Plack                        ports/www/p5-Plack
+p5-Plack-App-Proxy              ports/www/p5-Plack-App-Proxy
 p5-Plack-Handler-AnyEvent-ReverseHTTP  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
+p5-Plack-Middleware-Auth-Digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-Plack-Middleware-AutoRefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-Plack-Middleware-Debug       ports/www/p5-Plack-Middleware-Debug
 p5-Plack-Middleware-Deflater    ports/www/p5-Plack-Middleware-Deflater
@@ -14399,6 +14405,7 @@ p5-asterisk                     ports/misc/p5-Asterisk
 p5-astro                        ports/astro/p5-Astro
 p5-astro-ads                    ports/astro/p5-Astro-ADS
 p5-astro-catalog                ports/astro/p5-Astro-Catalog
+p5-astro-constants              ports/astro/p5-Astro-Constants
 p5-astro-dss                    ports/astro/p5-Astro-DSS
 p5-astro-fits-header            ports/astro/p5-Astro-FITS-Header
 p5-astro-hipparcos              ports/astro/p5-Astro-Hipparcos
@@ -15015,6 +15022,7 @@ p5-convert-tnef                 ports/converters/p5-Convert-TNEF
 p5-convert-uu                   ports/converters/p5-Convert-UU
 p5-convert-uulib                ports/converters/p5-Convert-UUlib
 p5-coro                         ports/devel/p5-Coro
+p5-corona                       ports/www/p5-Corona
 p5-cpan-checksums               ports/devel/p5-CPAN-Checksums
 p5-cpan-distnameinfo            ports/devel/p5-CPAN-DistnameInfo
 p5-cpan-inject                  ports/devel/p5-CPAN-Inject
@@ -16928,7 +16936,9 @@ p5-pid-file-flock               ports/devel/p5-Pid-File-Flock
 p5-pip                          ports/devel/p5-pip
 p5-pipeline                     ports/devel/p5-Pipeline
 p5-plack                        ports/www/p5-Plack
+p5-plack-app-proxy              ports/www/p5-Plack-App-Proxy
 p5-plack-handler-anyevent-reversehttp  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
+p5-plack-middleware-auth-digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-plack-middleware-autorefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-plack-middleware-debug       ports/www/p5-Plack-Middleware-Debug
 p5-plack-middleware-deflater    ports/www/p5-Plack-Middleware-Deflater
