@@ -14,7 +14,8 @@ MAINTAINER=	qingfeng@me.com
 COMMENT=	Yet anonther distributed key-value storage system from Douban Inc
 
 BUILD_DEPENDS=	tokyocabinet>=1.4.30:${PORTSDIR}/databases/tokyocabinet
-LIB_DEPENDS=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet \
+		event-1.4:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
