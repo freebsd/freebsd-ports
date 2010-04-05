@@ -5,16 +5,24 @@ MANCOMPRESSED=	yes
 MLINKS=
 
 MAN1=	\
+	adacursesw-config.1 \
 	captoinfo.1m \
 	clear.1 \
 	infocmp.1m \
 	infotocap.1m \
+	ncurses5-config.1 \
 	tic.1m \
 	toe.1m \
 	tabs.1 \
 	tput.1 \
 	tset.1
-MLINKS+=tset.1 reset.1
+MLINKS+=\
+	adacursesw-config.1 adacurses-config.1 \
+	tset.1 reset.1
+
+.if !defined(WITHOUT_WIDEC)
+MAN1+=	ncursesw5-config.1
+.endif
 
 MAN5=	term.5 terminfo.5
 MAN7=	term.7
