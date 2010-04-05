@@ -4352,3 +4352,4 @@ www/trac-webadmin||2010-03-30|Incorporated to www/trac
 audio/gstreamer-plugins-ivorbis|audio/gstreamer-plugins-vorbis|2010-03-30|ivorbis plugin got merged into the vorbis plugin.
 math/octave-forge-arpack||2010-04-02|Incorporated to math/octave-forge
 www/p5-Plack-Request||2010-04-03|Incorporated to www/p5-Plack
+net-im/pidgin-birthday_reminder|net-im/pidgin-birthday-reminder|2010-04-05|Project was renamed

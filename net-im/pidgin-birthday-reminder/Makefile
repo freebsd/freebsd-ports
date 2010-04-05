@@ -5,12 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	birthday_reminder
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTNAME=	pidgin-birthday-reminder
+PORTVERSION=	1.5
 CATEGORIES=	net-im
 MASTER_SITES=	SF/pidgin-birthday/pidgin-birthday/${PORTVERSION}
-PKGNAMEPREFIX=	pidgin-
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	The birthday reminder for Pidgin
