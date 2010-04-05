@@ -448,6 +448,7 @@
     SUBDIR += lmmon
     SUBDIR += lmon
     SUBDIR += log_analysis
+    SUBDIR += loganalyzer
     SUBDIR += logmon
     SUBDIR += logrotate
     SUBDIR += logserial
