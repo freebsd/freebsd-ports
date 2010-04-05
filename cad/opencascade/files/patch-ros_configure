@@ -1,5 +1,14 @@
---- ./ros/configure.orig	2008-09-09 18:18:13.000000000 +0200
-+++ ./ros/configure	2008-09-30 22:47:12.000000000 +0200
+--- ros/configure.orig	2008-09-09 18:18:13.000000000 +0200
++++ ros/configure	2010-04-05 15:58:11.000000000 +0200
+@@ -6556,7 +6556,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=elf
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
 @@ -12826,6 +12826,8 @@
  	Linux*) CXXFLAGS="$CXXFLAGS -DLIN -DLININTEL -D_GNU_SOURCE=1"
  		CFLAGS="$CFLAGS -DLIN -DLININTEL -fexceptions"

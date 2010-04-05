@@ -25,8 +25,6 @@ LIB_DEPENDS=	itcl.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk		\
 		dps.0:${PORTSDIR}/x11/dgs
 
-BROKEN=		does not build
-
 USE_BZIP2=	yes
 USE_BISON=	build
 USE_TK=		84
@@ -52,8 +50,7 @@ LIB_TCLX=	${LOCALBASE}/lib/tclx${TCL_VER}/libtclx${TCL_VER}.so
 PATCH_WRKSRC=	${WRKDIR}/OpenCASCADE${PORTVERSION}.0
 WRKSRC=		${PATCH_WRKSRC}/ros
 REINPLACE_ARGS=	-i ""
-USE_AUTOTOOLS=	libtool:22
-LIBTOOLFILES=	ros/configure
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}				\
 		--with-tk=${TK_LIBDIR}					\
 		--with-java-include=${JAVA_HOME}/include		\
@@ -68,10 +65,10 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}				\
 		--with-stlport-library=${LOCALBASE}/lib			\
 		--enable-production=yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} ${GCC4WA} -I${LOCALBASE}/include	\
-		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" ARCH=${ARCH}
+		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" ARCH=${ARCH} LD=${CXX}
 # We strip the libs
 MAKE_ENV=	INSTALL_STRIP_FLAG=-s OCC_BUILDDIR="${PATCH_WRKSRC}"	\
-		OCC_INSTALLDIR="${OCCROOT}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+		OCC_INSTALLDIR="${OCCROOT}" PTHREAD_LIBS="${PTHREAD_LIBS}" LD=${CXX}
 USE_LDCONFIG=	yes
 USE_FORTRAN=	yes
 
