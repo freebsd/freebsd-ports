@@ -1,0 +1,4 @@
+Update access and modification timestamps,
+creating nonexistent files where necessary.
+
+WWW: http://search.cpan.org/dist/File-Touch/Touch.pm
