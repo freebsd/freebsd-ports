@@ -182,6 +182,11 @@ BUILD_DEPENDS+=		${AUTOCONF_DEPENDS}
 LIB_DEPENDS+=	ltdl.7:${PORTSDIR}/devel/libltdl22
 .endif
 
+.if defined(AUTOTOOL_libtoolize)
+AUTOTOOL_libtoolize_env=	${AUTOTOOL_libtoolize}
+GNU_CONFIGURE?=			yes
+.endif
+
 .if defined(AUTOTOOL_libtool)
 GNU_CONFIGURE?=			YES
 AUTOTOOL_libtool_env=	${AUTOTOOL_libtool}
@@ -231,7 +236,7 @@ AUTOTOOLS_ENV+=	${AUTOTOOLS_VARS}
 CONFIGURE_ENV+=	${AUTOTOOLS_VARS}
 MAKE_ENV+=		${AUTOTOOLS_VARS}
 SCRIPTS_ENV+=	${AUTOTOOLS_VARS}
-. for item in automake aclocal autoconf autoheader libtool
+. for item in automake aclocal autoconf autoheader libtool libtoolize
 .  if defined(AUTOTOOL_${item}_env)
 ${item:U}_ENV+=	${AUTOTOOLS_VARS}
 .  endif
@@ -250,10 +255,10 @@ ${item:U}_ENV+=	${AUTOTOOLS_VARS}
 # the order of autotools running.
 
 .if !target(run-autotools)
-.ORDER: run-autotools run-autotools-aclocal patch-autotools run-autotools-autoheader run-autotools-autoconf run-autotools-automake
+.ORDER: run-autotools run-autotools-aclocal patch-autotools run-autotools-autoheader run-autotools-libtoolize run-autotools-autoconf run-autotools-automake
 
 run-autotools:: run-autotools-aclocal patch-autotools run-autotools-autoheader \
-		run-autotools-autoconf run-autotools-automake
+		run-autotools-libtoolize run-autotools-autoconf run-autotools-automake
 .endif
 
 .if !target(run-autotools-aclocal)
@@ -261,6 +266,16 @@ run-autotools-aclocal:
 . if defined(AUTOTOOL_aclocal)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
 		${ACLOCAL_ARGS})
+. else
+	@${DO_NADA}
+. endif
+.endif
+
+.if !target(run-autotools-libtoolize)
+run-autotools-libtoolize:
+. if defined(AUTOTOOL_libtoolize)
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} \
+		${LIBTOOLIZE_ARGS})
 . else
 	@${DO_NADA}
 . endif
