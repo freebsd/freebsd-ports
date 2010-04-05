@@ -1,3 +1,3 @@
-MD5 (llvm-2.7.r98833.tar.bz2) = cec0e71b6db67d98733545002145e2ad
-SHA256 (llvm-2.7.r98833.tar.bz2) = 0fa84872788adf01644652099bc3cf9faf529719d17b1a630c624cb9e611dc76
-SIZE (llvm-2.7.r98833.tar.bz2) = 10669804
+MD5 (llvm-2.7.r100430.tar.bz2) = ab73db3fc7fbbdffda032131e31b91bf
+SHA256 (llvm-2.7.r100430.tar.bz2) = f5933ed2e873fd65eae7ffd8a5f9077f1e42d33db573f2395f2bf56427f00e91
+SIZE (llvm-2.7.r100430.tar.bz2) = 10785591
