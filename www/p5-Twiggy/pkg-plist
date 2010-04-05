@@ -1,0 +1,11 @@
+bin/twiggy
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Twiggy/.packlist
+%%SITE_PERL%%/AnyEvent/Server/PSGI.pm
+%%SITE_PERL%%/Plack/Handler/Twiggy.pm
+%%SITE_PERL%%/Twiggy.pm
+%%SITE_PERL%%/Twiggy/Server.pm
+%%SITE_PERL%%/Twiggy/Server/SS.pm
+@dirrm %%SITE_PERL%%/Twiggy/Server
+@dirrm %%SITE_PERL%%/Twiggy
+@dirrmtry %%SITE_PERL%%/AnyEvent/Server
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Twiggy

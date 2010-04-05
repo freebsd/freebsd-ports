@@ -1162,6 +1162,7 @@
     SUBDIR += p5-TestGen4Web-Runner
     SUBDIR += p5-Text-Markdown-ApacheHandler
     SUBDIR += p5-Tie-TinyURL
+    SUBDIR += p5-Twiggy
     SUBDIR += p5-URI-Escape-XS
     SUBDIR += p5-URI-Fetch
     SUBDIR += p5-URI-ParseSearchString
