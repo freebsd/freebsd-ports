@@ -107,7 +107,6 @@
     SUBDIR += qbittorrent-22
     SUBDIR += qtella
     SUBDIR += qtorrent
-    SUBDIR += rblibtorrent
     SUBDIR += rtgui
     SUBDIR += rtorrent
     SUBDIR += rtorrent-devel
