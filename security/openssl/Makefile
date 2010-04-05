@@ -29,7 +29,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 OPTIONS=	I386	"Use optimized assembler for 80386" off \
 		SSE2	"Use runtime SSE2 detection" on \
 		ZLIB	"Build with zlib compression" on \
-	DTLS_RENEGOTIATION	"Build with DTLS Abbreviated renegotiations" off \
+	DTLS_RENEGOTIATION	"Build with DTLS Abbr. renegotiations" off \
 	DTLS_HEARTBEAT		"Build with DTLS Heartbeat Extension" off \
 	TLS_EXTRACTOR		"Build with TLS key material extractor" off \
 	SCTP			"Build with SCTP support" off \
