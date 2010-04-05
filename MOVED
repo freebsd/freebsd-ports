@@ -4353,3 +4353,4 @@ audio/gstreamer-plugins-ivorbis|audio/gstreamer-plugins-vorbis|2010-03-30|ivorbi
 math/octave-forge-arpack||2010-04-02|Incorporated to math/octave-forge
 www/p5-Plack-Request||2010-04-03|Incorporated to www/p5-Plack
 net-im/pidgin-birthday_reminder|net-im/pidgin-birthday-reminder|2010-04-05|Project was renamed
+misc/proj4|graphics/proj|2010-04-05|Replaced
