@@ -94,7 +94,7 @@ sympa:*:200:200::0:0:Sympa Owner:/nonexistent:/usr/sbin/nologin
 privoxy:*:201:201::0:0:Privoxy proxy user:/nonexistent:/usr/sbin/nologin
 dspam:*:202:202::0:0:Dspam:/nonexistent:/usr/sbin/nologin
 shoutcast:*:210:210::0:0:Shoutcast sandbox:/nonexistent:/bin/sh
-git:*:211:211:gitosis user:/usr/local/git:/bin/sh
+git:*:211:211::0:0:gitosis user:/usr/local/git:/bin/sh
 bs:*:220:220::0:0:Big Sister:/usr/local/bigsister:/bin/sh
 postgrey:*:225:225::0:0:Postgrey Owner:/nonexistent:/usr/sbin/nologin
 aprsd:*:240:240::0:0:aprsd:/nonexistent:/bin/sh
@@ -157,11 +157,11 @@ _sj3:*:912:912::0:0:SJ3 Daemon:/nonexistent:/usr/sbin/nologin
 _relayd:*:913:913::0:0:Relay Daemon:/var/empty:/usr/sbin/nologin
 bitlbee:*:914:914::0:0:Bitlbee pseudo-user:/nonexistent:/usr/sbin/nologin
 logcheck:*:915:915::0:0:Logcheck system account:/var/lib/logcheck:/usr/local/bin/bash
-_prayer:*:917:917:daemon:0:0:Prayer Account:/nonexistent:/usr/sbin/nologin
+_prayer:*:917:917::0:0:Prayer Account:/nonexistent:/usr/sbin/nologin
 nefu:*:918:918::0:0:Nefu daemon:/var/db/nefu:/usr/sbin/nologin
-couchdb:*:919:919:daemon:0:0:CouchDB Account:/var/empty:/usr/sbin/nologin
+couchdb:*:919:919::0:0:CouchDB Account:/var/empty:/usr/sbin/nologin
 vboxusers:*:920:920::0:0:Virtualbox user:/nonexistent:/usr/sbin/nologin
 transmission:*:921:921::0:0:Transmission Daemon User:/usr/local/etc/transmission/home:/usr/sbin/nologin
-mongodb:*:922:922:daemon:0:0:MongoDB Account:/var/empty:/usr/sbin/nologin
+mongodb:*:922:922::0:0:MongoDB Account:/var/empty:/usr/sbin/nologin
 liquidsoap:*:923:923::0:0:Liquidsoap User:/nonexistent:/usr/sbin/nologin
 postpals:*:924:924::0:0:postpals user:/nonexistent:/usr/sbin/nologin
