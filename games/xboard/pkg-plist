@@ -1,0 +1,14 @@
+bin/xboard
+bin/cmail
+share/icons/hicolor/48x48/apps/xboard.png
+share/icons/hicolor/scalable/apps/xboard.svg
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share
