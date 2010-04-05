@@ -18,6 +18,7 @@ share/pixmaps/Sci48M.png
 %%PORTDOCS%%%%DOCSDIR%%/SciTELua.html
 %%PORTDOCS%%%%DOCSDIR%%/SciTERegEx.html
 %%PORTDOCS%%%%DOCSDIR%%/SciTEWord.jpg
+%%PORTDOCS%%%%DOCSDIR%%/ScriptLexer.html
 %%PORTDOCS%%%%DOCSDIR%%/demo.png
 %%DATADIR%%/Embedded.properties
 %%DATADIR%%/SciTE.properties
