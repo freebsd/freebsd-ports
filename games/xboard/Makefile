@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xboard
-PORTVERSION=	4.4.2
+PORTVERSION=	4.4.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
@@ -22,7 +22,7 @@ CONFIGURE_ARGS+=CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 MAN6=		xboard.6
 INFO=		xboard
 USE_PERL5_BUILD=yes
-PLIST_FILES=	bin/xboard bin/cmail
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.options.mk>
 
