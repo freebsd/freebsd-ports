@@ -27,7 +27,8 @@ USE_LDCONFIG=   yes
 LIBTOOLFILES=	configure cairo/configure
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+		png_REQUIRES="libpng"
 # Included cairo does not work for us.  Enable below when Mono catches
 # up with our port.  For now, use included but patch out glitz manually.
 #CONFIGURE_ARGS+= --with-cairo=installed
