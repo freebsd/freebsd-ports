@@ -34,6 +34,7 @@ include/openssl/idea.h
 include/openssl/krb5_asn.h
 include/openssl/kssl.h
 include/openssl/lhash.h
+%%WITH_MD2%%include/openssl/md2.h
 include/openssl/md4.h
 include/openssl/md5.h
 include/openssl/mdc2.h
@@ -52,6 +53,7 @@ include/openssl/pqueue.h
 include/openssl/rand.h
 include/openssl/rc2.h
 include/openssl/rc4.h
+%%WITH_RC5%%include/openssl/rc5.h
 include/openssl/ripemd.h
 include/openssl/rsa.h
 include/openssl/safestack.h

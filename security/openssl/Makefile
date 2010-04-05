@@ -29,6 +29,9 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 OPTIONS=	I386	"Use optimized assembler for 80386" off \
 		SSE2	"Use runtime SSE2 detection" on \
 		ZLIB	"Build with zlib compression" on \
+		MD2	"Build with MD2 hash (obsolete)" off \
+		RC5	"Build with RC5 chipher (patented)" off \
+		RFC3779	"Build with RFC3779 support" off \
 	DTLS_RENEGOTIATION	"Build with DTLS Abbr. renegotiations" off \
 	DTLS_HEARTBEAT		"Build with DTLS Heartbeat Extension" off \
 	TLS_EXTRACTOR		"Build with TLS key material extractor" off \
@@ -1061,9 +1064,38 @@ USE_LDCONFIG=	yes
 .endif
 
 .if !defined(WITHOUT_ZLIB)
-EXTRACONFIGURE+=	zlib
+EXTRACONFIGURE+=	zlib zlib-dynamic
 .else
-EXTRACONFIGURE+=	no-zlib
+EXTRACONFIGURE+=	no-zlib no-zlib-dynamic
+.endif
+
+.if defined(WITH_MD2)
+EXTRACONFIGURE+=	enable-md2
+PLIST_SUB+=	WITH_MD2=""
+.else
+EXTRACONFIGURE+=	no-md2
+PLIST_SUB+=	WITH_MD2="@comment "
+.endif
+
+.if defined(WITH_RC5)
+EXTRACONFIGURE+=	enable-rc5
+PLIST_SUB+=	WITH_RC5=""
+.else
+EXTRACONFIGURE+=	no-rc5
+PLIST_SUB+=	WITH_RC5="@comment "
+.endif
+
+.if defined(WITH_GMP)
+EXTRACONFIGURE+=	enable-gmp
+IGNORE=		GMP is LGPLv3 an can not be linked.
+.else
+EXTRACONFIGURE+=	no-gmp
+.endif
+
+.if defined(WITH_RFC3779)
+EXTRACONFIGURE+=	enable-rfc3779
+.else
+EXTRACONFIGURE+=	no-rfc3779
 .endif
 
 .if defined(WITH_SCTP)
