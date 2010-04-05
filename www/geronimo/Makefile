@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geronimo
-PORTVERSION=	2.1.4
+PORTVERSION=	2.2
 CATEGORIES=	www devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	geronimo/${PORTVERSION}
@@ -29,7 +29,7 @@ OPTIONS=	TOMCAT6 "Use Tomcat instead of default Jetty" off
 .if defined(WITH_TOMCAT6)
 WEBSERVER=	tomcat6
 .else
-WEBSERVER=	jetty6
+WEBSERVER=	jetty7
 .endif
 
 MAJOR_VER=	${PORTVERSION:C/\..*//}
