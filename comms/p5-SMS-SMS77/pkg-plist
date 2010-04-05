@@ -1,0 +1,8 @@
+%%SITE_PERL%%/SMS/SMS77.pm
+%%SITE_PERL%%/SMS/SMS77/Message.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/SMS77/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/SMS77
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS
+@dirrmtry %%SITE_PERL%%/SMS/SMS77
+@dirrmtry %%SITE_PERL%%/SMS
+bin/sms77send
