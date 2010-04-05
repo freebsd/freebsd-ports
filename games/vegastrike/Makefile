@@ -56,6 +56,11 @@ BUILD_DEPENDS+=		${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d
 RUN_DEPENDS+=		${LOCALBASE}/lib/libOgreMain.so:${PORTSDIR}/graphics/ogre3d
 .endif
 
+.if (${OSVERSION} >= 800501 && ${OSVERSION} < 900000) || ${OSVERSION} >= 900006
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-cmd-basecomputer.cpp \
+		${FILESDIR}/extra-patch-src-vsfilesystem.cpp
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
