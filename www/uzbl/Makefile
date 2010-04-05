@@ -7,7 +7,6 @@
 
 PORTNAME=	uzbl
 DISTVERSION=	0.0.0.${GITDATE}
-PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.linta.de/distfiles/
 
@@ -20,8 +19,8 @@ USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
-GITDATE=	2010.03.14
-GITVERSION=	38ef86e
+GITDATE=	2010.04.03
+GITVERSION=	ae15d25
 
 WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
 
@@ -43,6 +42,8 @@ post-patch:
 		${WRKSRC}/examples/config/config \
 		${WRKSRC}/src/uzbl-browser \
 		${WRKSRC}/examples/data/scripts/uzbl-event-manager
+	@${REINPLACE_CMD} -e "s|/usr/share/uzbl|${DATADIR}|" \
+		${WRKSRC}/examples/data/scripts/uzbl-tabbed
 
 post-build:
 	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -exec ${RM} -f {} \;
@@ -65,10 +66,10 @@ do-install:
 .endfor
 .endif
 .if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}/examples/data/forms ${DATADIR}/examples/config
+	${MKDIR} ${DATADIR}/examples/data/dforms ${DATADIR}/examples/config
 .for f in config/cookies \
 	data/bookmarks \
-	data/forms/bbs.archlinux.org \
+	data/dforms/bbs.archlinux.org \
 	data/style.css data/uzbl.png
 		${INSTALL_DATA} ${WRKSRC}/examples/${f} ${DATADIR}/examples/${f}
 .endfor
