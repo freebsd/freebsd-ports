@@ -6,8 +6,7 @@
 #    $MCom: ports/x11-toolkits/scintilla/Makefile,v 1.3 2006/09/17 21:58:56 marcus Exp $
 
 PORTNAME=	scintilla
-PORTVERSION=	2.03
-PORTREVISION=	1
+PORTVERSION=	2.10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
@@ -23,6 +22,7 @@ USE_ICONV=	yes
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
+USE_GCC=	4.2+
 
 .include <bsd.port.pre.mk>
 
