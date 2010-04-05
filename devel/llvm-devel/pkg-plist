@@ -42,6 +42,7 @@ include/clang/AST/DeclObjC.h
 include/clang/AST/DeclTemplate.h
 include/clang/AST/DeclVisitor.h
 include/clang/AST/DeclarationName.h
+include/clang/AST/DependentDiagnostic.h
 include/clang/AST/Expr.h
 include/clang/AST/ExprCXX.h
 include/clang/AST/ExprObjC.h
@@ -255,6 +256,7 @@ include/clang/Lex/PPCallbacks.h
 include/clang/Lex/PTHLexer.h
 include/clang/Lex/PTHManager.h
 include/clang/Lex/Pragma.h
+include/clang/Lex/PreprocessingRecord.h
 include/clang/Lex/Preprocessor.h
 include/clang/Lex/PreprocessorLexer.h
 include/clang/Lex/ScratchBuffer.h
@@ -403,7 +405,6 @@ include/llvm/CodeGen/AsmPrinter.h
 include/llvm/CodeGen/BinaryObject.h
 include/llvm/CodeGen/CalcSpillWeights.h
 include/llvm/CodeGen/CallingConvLower.h
-include/llvm/CodeGen/DwarfWriter.h
 include/llvm/CodeGen/ELFRelocation.h
 include/llvm/CodeGen/FastISel.h
 include/llvm/CodeGen/GCMetadata.h
@@ -522,6 +523,7 @@ include/llvm/MC/MCExpr.h
 include/llvm/MC/MCFixup.h
 include/llvm/MC/MCInst.h
 include/llvm/MC/MCInstPrinter.h
+include/llvm/MC/MCObjectWriter.h
 include/llvm/MC/MCParser/AsmCond.h
 include/llvm/MC/MCParser/AsmLexer.h
 include/llvm/MC/MCParser/AsmParser.h
@@ -534,6 +536,7 @@ include/llvm/MC/MCSectionMachO.h
 include/llvm/MC/MCStreamer.h
 include/llvm/MC/MCSymbol.h
 include/llvm/MC/MCValue.h
+include/llvm/MC/MachObjectWriter.h
 include/llvm/MC/SectionKind.h
 include/llvm/Metadata.h
 include/llvm/Module.h
@@ -682,9 +685,11 @@ include/llvm/ValueSymbolTable.h
 lib/clang/1.5/include/emmintrin.h
 lib/clang/1.5/include/mm_malloc.h
 lib/clang/1.5/include/mmintrin.h
+lib/clang/1.5/include/nmmintrin.h
 lib/clang/1.5/include/pmmintrin.h
 lib/clang/1.5/include/smmintrin.h
 lib/clang/1.5/include/tmmintrin.h
+lib/clang/1.5/include/wmmintrin.h
 lib/clang/1.5/include/xmmintrin.h
 lib/libCIndex.a
 lib/libCIndex.so
