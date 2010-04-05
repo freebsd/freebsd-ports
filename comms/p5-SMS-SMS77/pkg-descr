@@ -1,0 +1,4 @@
+SMS::SMS77 consists of a perl interface and a script to send SMS
+via the german provider SMS77.de
+
+WWW: http://www.w3r3wolf.de/blog/2007/09/19/smssms77-version-001.html

@@ -102,6 +102,7 @@
     SUBDIR += p5-SMS-Send-TW-Socket2Air
     SUBDIR += p5-SMS-Send-TW-chtsns
     SUBDIR += p5-SMS-Send-TW-emome
+    SUBDIR += p5-SMS-SMS77
     SUBDIR += picocom
     SUBDIR += pr
     SUBDIR += predict
