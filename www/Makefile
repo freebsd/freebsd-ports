@@ -693,6 +693,7 @@
     SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-Application-Dispatch
     SUBDIR += p5-CGI-Application-Dispatch-Server
+    SUBDIR += p5-CGI-Application-PSGI
     SUBDIR += p5-CGI-Application-Plugin-AnyTemplate
     SUBDIR += p5-CGI-Application-Plugin-Authentication
     SUBDIR += p5-CGI-Application-Plugin-Authorization
