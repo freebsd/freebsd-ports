@@ -438,7 +438,6 @@
     SUBDIR += pinfo
     SUBDIR += pipe
     SUBDIR += posixtestsuite
-    SUBDIR += proj4
     SUBDIR += projectionlib
     SUBDIR += proxyper
     SUBDIR += pspresent
