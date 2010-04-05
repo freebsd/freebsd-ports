@@ -1028,13 +1028,13 @@ you update your ports collection, before attempting any port upgrades.
 	pkgdb -Ff
 
     1) Reinstall perl with new 5.10:
-	portupgrade -o lang/perl5.10 -f perl-5.8.\*
+	env DISABLE_CONFLICTS=1 portupgrade -o lang/perl5.10 -f perl-5.8.\*
 
     2) Reinstall everything that depends on Perl:
 	portupgrade -fr perl
 
   Portmaster users:
-	portmaster -o lang/perl5.10 lang/perl5.8
+	env DISABLE_CONFLICTS=1 portmaster -o lang/perl5.10 lang/perl5.8
 	portmaster -r perl-
 
   Note: If the "perl-" glob matches  more than one port you will need to
