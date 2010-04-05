@@ -53,10 +53,8 @@ OPT=		-DCPUS=4 -DHASHSTATS -DTRACE -DBOOKDIR=\\\"${WITH_BOOKDIR}\\\" \
 
 .if ${ARCH} == "i386"
 OPT+=		-DINLINE32
-.endif
-
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64 or sparc64
+.elif ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
 .if defined(WITH_BOOK)
