@@ -1,0 +1,6 @@
+BeansDB is a major amount of data for large, high-availability storage systems
+distributed KeyValue using HashTree and simplified version number to
+quickly synchronize to ensure consistency in the final (weak),
+a simplified version of the Dynamo.
+
+WWW:	http://code.google.com/p/beansdb/

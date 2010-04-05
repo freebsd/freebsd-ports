@@ -16,6 +16,7 @@
     SUBDIR += aolserver-nspostgres
     SUBDIR += autobackupmysql
     SUBDIR += bbdb
+    SUBDIR += beansdb
     SUBDIR += buzhug
     SUBDIR += cassandra
     SUBDIR += cdb
