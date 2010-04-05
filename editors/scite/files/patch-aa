@@ -1,5 +1,5 @@
---- makefile.orig	2009-08-12 21:39:59.000000000 -0400
-+++ makefile	2009-08-21 02:04:44.000000000 -0400
+--- makefile.orig	2010-03-13 20:41:15.000000000 -0500
++++ makefile	2010-04-05 07:57:38.000000000 -0400
 @@ -5,7 +5,7 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -37,8 +37,8 @@
  ifeq ($(shell uname), Darwin)
 @@ -102,8 +102,9 @@
  
- $(PROG): SciTEGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o \
- PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o \
+ $(PROG): SciTEGTK.o GUIGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o \
+ PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleWriter.o Utf8_16.o \
 -	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
 -	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB)
 +	JobQueue.o GTKMutex.o IFaceTable.o $(LUA_OBJS)
