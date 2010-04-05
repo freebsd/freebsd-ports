@@ -11,4 +11,6 @@ MASTERDIR=      ${.CURDIR}/../salome
 PKGNAMESUFFIX=  -kernel
 SAL_MODULE_UPPER=	KERNEL
 
+BROKEN=		does not build
+
 .include "${MASTERDIR}/Makefile"
