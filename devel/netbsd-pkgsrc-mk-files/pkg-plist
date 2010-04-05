@@ -19,3 +19,4 @@
 %%DATADIR%%/bsd.subdir.mk
 %%DATADIR%%/bsd.sys.mk
 %%DATADIR%%/sys.mk
+@dirrm %%DATADIR%%
