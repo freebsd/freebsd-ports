@@ -110,7 +110,7 @@
     SUBDIR += pebrot
     SUBDIR += pecl-stomp
     SUBDIR += pidgin
-    SUBDIR += pidgin-birthday_reminder
+    SUBDIR += pidgin-birthday-reminder
     SUBDIR += pidgin-bs
     SUBDIR += pidgin-facebookchat
     SUBDIR += pidgin-fetion
