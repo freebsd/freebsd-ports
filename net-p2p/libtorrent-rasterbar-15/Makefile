@@ -18,6 +18,8 @@ MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	libtorrent-rasterbar-0.14.*
 
+NO_LATEST_LINK=	yes
+
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
 
