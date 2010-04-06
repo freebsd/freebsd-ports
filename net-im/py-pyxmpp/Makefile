@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pyxmpp
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 CATEGORIES=	net-im python
 MASTER_SITES=	http://pyxmpp.jajcus.net/downloads/ \
 		CENKES http://jabberstudio.2nw.net/pyxmpp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python XMPP library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
