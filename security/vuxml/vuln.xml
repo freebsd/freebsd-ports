@@ -34,6 +34,78 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="805603a1-3e7a-11df-a5a1-0050568452ac">
+    <topic>dojo -- cross-site scripting and other vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dojo</name>
+	<range><lt>1.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Dojo Toolkit team reports:</p>
+	<blockquote cite="http://dojotoolkit.org/blog/post/dylan/2010/03/dojo-security-advisory/">
+          <p>Some PHP files did not properly escape input.</p>
+          <p>Some files could operate like "open redirects". A bad actor
+            could form an URL that looks like it came from a trusted
+            site, but the user would be redirected or load content from
+            the bad actor's site.</p>
+          <p>A file exposed a more serious cross-site scripting
+            vulnerability with the possibility of executing code on the
+            domain where the file exists.</p>
+          <p>The Dojo build process defaulted to copying over tests and
+            demos, which are normally not needed and just increased the
+            number of files that could be targets of attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://dojotoolkit.org/blog/post/dylan/2010/03/dojo-security-advisory/</url>
+      <url>http://osdir.com/ml/bugtraq.security/2010-03/msg00133.html</url>
+      <url>http://packetstormsecurity.org/1003-exploits/dojo-xss.txt</url>
+      <url>http://secunia.com/advisories/38964</url>
+      <url>http://www.gdssecurity.com/l/b/2010/03/12/multiple-dom-based-xss-in-dojo-toolkit-sdk/</url>
+    </references>
+    <dates>
+      <discovery>2010-03-11</discovery>
+      <entry>2010-04-06</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8ad1c404-3e78-11df-a5a1-0050568452ac">
+    <topic>Zend Framework -- security issues in bundled Dojo library</topic>
+    <affects>
+      <package>
+	<name>ZendFramework</name>
+	<range><lt>1.10.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Zend Framework team reports:</p>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2010-07">
+	  <p>Several files in the bundled Dojo library were identified
+            as having potential exploits, and the Dojo team also advised
+            disabling or removing any PHP scripts in the Dojo library tree
+            when deploying to production.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://dojotoolkit.org/blog/post/dylan/2010/03/dojo-security-advisory/</url>
+      <url>http://framework.zend.com/security/advisory/ZF2010-07</url>
+      <url>http://osdir.com/ml/bugtraq.security/2010-03/msg00133.html</url>
+      <url>http://packetstormsecurity.org/1003-exploits/dojo-xss.txt</url>
+      <url>http://secunia.com/advisories/38964</url>
+      <url>http://www.gdssecurity.com/l/b/2010/03/12/multiple-dom-based-xss-in-dojo-toolkit-sdk/</url>
+    </references>
+    <dates>
+      <discovery>2010-04-01</discovery>
+      <entry>2010-04-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec8f449f-40ed-11df-9edc-000f20797ede">
     <topic>firefox -- Re-use of freed object due to scope confusion</topic>
     <affects>
