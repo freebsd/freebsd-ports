@@ -944,6 +944,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	http://www.cpan.dk/modules/by-module/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/perl/CPAN/modules/by-module/&,} \
 	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	http://ftp.jaist.ac.jp/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/lang/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://mirror.hiwaay.net/CPAN/modules/by-module/%SUBDIR%/ \
@@ -987,6 +988,7 @@ MASTER_SITE_PGSQL+= \
 	ftp://ftp.ie.postgresql.org/mirrors/ftp.postgresql.org/pub/%SUBDIR%/ \
 	ftp://ftp2.it.postgresql.org/mirrors/postgres/%SUBDIR%/ \
 	ftp://ftp.kr.postgresql.org/postgresql/%SUBDIR%/ \
+	http://ftp2.jp.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp.lv.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp2.nl.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 	ftp://ftp4.nl.postgresql.org/postgresql.zeelandnet.nl/%SUBDIR%/ \
@@ -1117,7 +1119,6 @@ MASTER_SITE_REDHAT_LINUX+= \
 .if !defined(IGNORE_MASTER_SITE_RINGSERVER)
 MASTER_SITE_RINGSERVER+=	\
 	http://ring.nict.go.jp/archives/%SUBDIR%/ \
-	http://ring.k-opti.com/archives/%SUBDIR%/ \
 	http://ring.riken.jp/archives/%SUBDIR%/
 .endif
 
