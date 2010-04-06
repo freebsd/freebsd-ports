@@ -1,4 +1,5 @@
 bin/petite
+bin/scheme-script
 lib/csv%%CHEZ_VERSION%%/%%CHEZ_MACHTYPE%%/petite.boot
 lib/csv%%CHEZ_VERSION%%/%%CHEZ_MACHTYPE%%/scheme-script.boot
 lib/csv%%CHEZ_VERSION%%/%%CHEZ_MACHTYPE%%/scheme.h
