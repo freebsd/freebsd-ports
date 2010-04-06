@@ -1140,6 +1140,10 @@ pre-everything::
 
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \
+		${WRKSRC}/crypto/des/Makefile
+
 do-configure:
 	@${REINPLACE_CMD} -e "s|options 386|options|" \
 		${WRKSRC}/config
