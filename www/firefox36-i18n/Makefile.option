@@ -71,7 +71,7 @@ OPTIONS=        LANG_AF "Africaans"             off \
                 LANG_SV "Swedish"               off \
                 LANG_TW "Taiwanese"             off \
                 LANG_TA "Tamil"                 off \
-                LANG_TL "Tamil (Sri Lanka)"     off \
+                LANG_LK "Tamil (Sri Lanka)"     off \
                 LANG_TE "Telugu"                on \
                 LANG_TH "Thai"                  off \
                 LANG_TR "Turkish"               off \

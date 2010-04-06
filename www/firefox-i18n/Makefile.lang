@@ -209,11 +209,11 @@ FIREFOX_I18N+=  sr
 .ifndef WITHOUT_LANG_SV
 FIREFOX_I18N+=  sv-SE
 .endif
-.ifndef WITHOUT_LANG_TL
-FIREFOX_I18N+=  tl
-.endif
 .ifndef WITHOUT_LANG_TA
 FIREFOX_I18N+=  ta
+.endif
+.ifndef WITHOUT_LANG_LK
+FIREFOX_I18N+=  ta-LK
 .endif
 .ifndef WITHOUT_LANG_TE
 FIREFOX_I18N+=  te
