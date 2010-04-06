@@ -5,28 +5,38 @@
 # $FreeBSD$
 
 PORTNAME=	soapui
-PORTVERSION=	2.0.2
-PORTREVISION=	1
-CATEGORIES=	devel java
-MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
+PORTVERSION=	3.5
+CATEGORIES=	devel java www
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-linux-bin
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Desktop application for dealing with web services over HTTP
+MAINTAINER=	niels@FreeBSD.org
+COMMENT=	A web service, SOA and SOAP testing tool
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_ZIP=	YES
 USE_JAVA=	1.5+
-USE_ZIP=	yes
-PLIST_SUB+=	VER=${PORTVERSION}
+PORTDOCS=	LICENSE.txt readme.txt
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+REINPLACE_ARGS=	-i ''
+SOAPUI_HOME=	${JAVASHAREDIR}/${PORTNAME}
 
 do-build:
-	${REINPLACE_CMD} 's,export SOAPUI_HOME,export SOAPUI_HOME=${DATADIR},' ${WRKSRC}/bin/soapui.sh
-
+	${REINPLACE_CMD} -e 's:%%SOAPUI_HOME%%:${SOAPUI_HOME}:' \
+			-e 's:%%JAVA%%:${JAVA}:' ${WRKSRC}/bin/${PORTNAME}.sh
 do-install:
-	${MKDIR} ${DATADIR}/bin
-	${MKDIR} ${DATADIR}/lib
-	${INSTALL_DATA} ${WRKSRC}/bin/soapui-${PORTVERSION}.jar ${DATADIR}/bin
-	${INSTALL_DATA} ${WRKSRC}/lib/*.jar ${DATADIR}/lib
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/soapui.sh ${PREFIX}/bin
+.for dir in bin lib
+	( cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${SOAPUI_HOME}/${dir} )
+.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME}.sh ${PREFIX}/bin
+.if	!defined(NOPORTEXAMPLES)
+	( cd ${WRKSRC}/Tutorials && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/Tutorials )
+.endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.	for i in ${PORTDOCS}
+		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.	endfor
+	( cd ${WRKSRC}/licenses && ${COPYTREE_SHARE} . ${DOCSDIR}/licenses )
+.endif
 
 .include <bsd.port.mk>
