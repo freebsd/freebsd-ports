@@ -1,0 +1,39 @@
+bin/warden
+etc/rc.d/wardenrc
+warden/bin/warden
+warden/bin/warden-gui
+warden/conf/warden.conf
+warden/ports
+warden/scripts/warden.sh
+warden/scripts/init-warden.sh
+warden/scripts/managejails.sh
+warden/scripts/newjailmenu.sh
+warden/scripts/rc.d/shutdown.sh
+warden/scripts/rc.d/wardenrc
+warden/scripts/rc.d/startup.sh
+warden/scripts/importjailmenu.sh
+warden/scripts/backend/setupusers.sh
+warden/scripts/backend/createjail.sh
+warden/scripts/backend/chrootjail.sh
+warden/scripts/backend/checkstatus.sh
+warden/scripts/backend/installinmate.sh
+warden/scripts/backend/deleteinmate.sh
+warden/scripts/backend/exportjail.sh
+warden/scripts/backend/mkinmate.sh
+warden/scripts/backend/deletejail.sh
+warden/scripts/backend/listjails.sh
+warden/scripts/backend/startjail.sh
+warden/scripts/backend/listpkgs.sh
+warden/scripts/backend/stopjail.sh
+warden/scripts/backend/importjail.sh
+@dirrm warden/bin
+@dirrm warden/conf
+@dirrmtry warden/export
+@dirrmtry warden/inmates
+@dirrmtry warden/jails
+@dirrm warden/scripts/backend
+@dirrm warden/scripts/rc.d
+@dirrm warden/scripts
+@dirrmtry warden/tmp
+@dirrmtry warden/worlds
+@dirrmtry warden
