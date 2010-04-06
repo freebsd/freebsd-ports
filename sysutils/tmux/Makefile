@@ -7,6 +7,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -24,9 +25,21 @@ PLIST_FILES=	bin/tmux
 PORTDOCS=	CHANGES FAQ NOTES
 PORTEXAMPLES=	*
 
+CFLAGS+=	-I${LOCALBASE}/include
+#LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 703100
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^#define HAVE_TREE_H/d' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/tmux ${PREFIX}/bin
@@ -45,4 +58,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
