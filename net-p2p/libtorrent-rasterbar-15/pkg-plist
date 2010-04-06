@@ -122,8 +122,6 @@ libdata/pkgconfig/libtorrent-rasterbar.pc
 %%PORTDOCS%%%%DOCSDIR%%/deluge.png
 %%PORTDOCS%%%%DOCSDIR%%/dht_extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/disk_access.png
-%%PORTDOCS%%%%DOCSDIR%%/disk_access_elevator.png
-%%PORTDOCS%%%%DOCSDIR%%/disk_access_no_elevator.png
 %%PORTDOCS%%%%DOCSDIR%%/disk_buffer.png
 %%PORTDOCS%%%%DOCSDIR%%/disk_buffer_before_optimization.png
 %%PORTDOCS%%%%DOCSDIR%%/disk_buffer_sample.png
@@ -158,7 +156,6 @@ libdata/pkgconfig/libtorrent-rasterbar.pc
 %%PORTDOCS%%%%DOCSDIR%%/session_stats_peers.png
 %%PORTDOCS%%%%DOCSDIR%%/storage.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css
-%%PORTDOCS%%%%DOCSDIR%%/tonidoplug.png
 %%PORTDOCS%%%%DOCSDIR%%/tuning.html
 %%PORTDOCS%%%%DOCSDIR%%/tvblob.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tvitty.jpg

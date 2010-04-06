@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.15.r4252
+PORTVERSION=	0.15.0
 CATEGORIES=	net-p2p ipv6
-MASTER_SITES=	http://heanet.dl.sourceforge.net/project/qbittorrent/qbittorrent-unstable/
-PKGNAMESUFFIX=	-devel
-DISTVERSION=	0.15.svn.r4252
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+PROJECTHOST=	libtorrent
 
 MAINTAINER=	dougb@FreeBSD.org
-COMMENT=	A C++ library implementing a BitTorrent client (devel version)
+COMMENT=	A C++ library implementing a BitTorrent client
 
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=	rblibtorrent-[0-9]* libtorrent-rasterbar-0.14.*
+CONFLICTS=	libtorrent-rasterbar-0.14.*
 
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
@@ -31,7 +30,7 @@ CONFIGURE_ARGS=	--disable-debug \
 		--enable-dht \
 		--enable-encryption \
 		--enable-pool-allocators \
-		--disable-deprecated-functions \
+		--enable-deprecated-functions \
 		--with-boost-system=boost_system \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-thread=boost_thread \
