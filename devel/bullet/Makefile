@@ -43,8 +43,8 @@ OPTIONS=	DOUBLE "Use double precision"	off
 CFLAGS+=	-DUSE_ADDR64
 .endif
 
-.if ${ARCH} == "sparc64"
-IGNORE=		Does not configure on sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+IGNORE=		does not configure on ia64 or sparc64
 .endif
 
 .if defined(WITH_DOUBLE)
