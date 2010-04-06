@@ -32,6 +32,7 @@ OPTIONS=	I386	"Use optimized assembler for 80386" off \
 		MD2	"Build with MD2 hash (obsolete)" off \
 		RC5	"Build with RC5 chipher (patented)" off \
 		RFC3779	"Build with RFC3779 support" off \
+	DTLS_BUGS	"Build with DTLS bugfixes" off \
 	DTLS_RENEGOTIATION	"Build with DTLS Abbr. renegotiations" off \
 	DTLS_HEARTBEAT		"Build with DTLS Heartbeat Extension" off \
 	TLS_EXTRACTOR		"Build with TLS key material extractor" off \
@@ -1099,14 +1100,22 @@ EXTRACONFIGURE+=	no-rfc3779
 .endif
 
 .if defined(WITH_SCTP)
-WITH_DTLS_RENEGOTIATION?=	yes
+WITH_DTLS_BUGS=yes
 WITH_TLS_EXTRACTOR?=		yes
 EXTRACONFIGURE+=	sctp
 .if defined(WITH_DTLS_HEARTBEAT)
 BROKEN=		Patches do not merge, please change options
 .endif
+.if defined(WITH_DTLS_RENEGOTIATION)
+BROKEN=		Patches do not merge, please change options
+.endif
 .endif
 # order of PATCHFILES is important
+.if defined(WITH_DTLS_BUGS) || make(makesum)
+PATCHFILES+=	dtls-replay-bug-1.0.0.patch
+PATCHFILES+=	dtls-buffer-bug-1.0.0.patch
+PATCHFILES+=	dtls-timeout-bug-1.0.0.patch
+.endif
 .if defined(WITH_DTLS_RENEGOTIATION) || make(makesum)
 PATCHFILES+=    abbreviated-renegotiation.patch
 .endif
@@ -1114,7 +1123,7 @@ PATCHFILES+=    abbreviated-renegotiation.patch
 PATCHFILES+=	tls-extractor.patch
 .endif
 .if defined(WITH_SCTP) || make(makesum)
-PATCHFILES+=	dtls-sctp-16.patch
+PATCHFILES+=	dtls-sctp-17.patch
 .endif
 .if defined(WITH_DTLS_HEARTBEAT) || make(makesum)
 PATCHFILES+=    dtls-heartbeats.patch
