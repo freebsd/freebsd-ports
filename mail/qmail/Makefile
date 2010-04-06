@@ -311,7 +311,11 @@ NO_MTREE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx	
+. if defined(SLAVE_LDAP)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx-ldap
+. else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx
+. endif
 .endif
 
 .if defined(SLAVE_TLS)
