@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	ddd
-PORTVERSION=	3.3.11
-PORTREVISION=	1
+PORTVERSION=	3.3.12
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,7 +33,6 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 MAN1=		ddd.1
 DOCS=		AUTHORS INSTALL PROBLEMS README TIPS TODO \
 		doc/html/ddd.html doc/ddd-paper.ps \
-		doc/ddd-themes.ps doc/ddd.ps \
 		doc/ddd-themes.pdf doc/ddd.pdf
 INFO=		ddd ddd-themes
 

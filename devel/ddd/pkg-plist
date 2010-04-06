@@ -37,10 +37,8 @@ share/ddd-%%VERSION%%/vsllib/vsllib.vsl
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/ddd-paper.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/ddd-themes.pdf
-%%PORTDOCS%%%%DOCSDIR%%/ddd-themes.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/ddd.html
 %%PORTDOCS%%%%DOCSDIR%%/ddd.pdf
-%%PORTDOCS%%%%DOCSDIR%%/ddd.ps.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/ddd-%%VERSION%%/vsllib
 @dirrm share/ddd-%%VERSION%%/themes
