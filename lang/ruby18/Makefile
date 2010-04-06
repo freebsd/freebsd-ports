@@ -20,8 +20,11 @@ COMMENT?=	An object-oriented interpreted scripting language
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
-CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
-		--enable-shared --with-openssl-include=${OPENSSLINC}
+CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} --enable-shared
+CONFIGURE_ENV=	CFLAGS="-I${OPENSSLINC} ${CFLAGS}" \
+		LDFLAGS="-L${OPENSSLLIB} ${LDFLAGS}" \
+		LIBS="-L${OPENSSLLIB} ${LDFLAGS}" \
+		CPPFLAGS="-I${OPENSSLINC} ${CPPFLAGS}"
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal:110 autoconf:262
@@ -38,7 +41,6 @@ RUBY_NO_RUN_DEPENDS=	yes
 _RUBY_SYSLIBDIR=	${PREFIX}/lib
 
 OPTIONS=	ONIGURUMA "Build with oniguruma regular expressions lib" off \
-		IPV6 "Enable IPv6 support" on \
 		RDOC "Build and install Rdoc indexes" on \
 		DEBUG "Compile-in debug info" off
 
@@ -94,13 +96,6 @@ CONFIGURE_ARGS+=	--enable-install-doc
 .else
 CONFIGURE_ARGS+=	--disable-install-doc
 .endif
-
-.if !defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
-
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
-		LIBS="${LDFLAGS}"
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 MLINKS=		${RUBY_NAME}.1 ruby.1
