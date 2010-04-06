@@ -28,6 +28,7 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 OPTIONS=	I386	"Use optimized assembler for 80386" off \
 		SSE2	"Use runtime SSE2 detection" on \
+		ASM	"Build with optimized Assembler" on \
 		ZLIB	"Build with zlib compression" on \
 		MD2	"Build with MD2 hash (obsolete)" off \
 		RC5	"Build with RC5 chipher (patented)" off \
@@ -1052,6 +1053,12 @@ EXTRACONFIGURE+=	386
 .if defined(WITHOUT_SSE2)
 # disable runtime SSE2 detection
 EXTRACONFIGURE+=	no-sse2
+.endif
+
+.if !defined(WITHOUT_ASM)
+EXTRACONFIGURE+=	enable-asm
+.else
+EXTRACONFIGURE+=	no-asm
 .endif
 
 .if defined(NOSHARED)
