@@ -12,6 +12,7 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.9.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/

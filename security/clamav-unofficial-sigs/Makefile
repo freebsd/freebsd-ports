@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav-unofficial-sigs
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.inetmsg.com/pub/ \
 		http://www.inetmsg.com/pub/archive/

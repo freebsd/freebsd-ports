@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_clamav
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://software.othello.ch/mod_clamav/ \
 		http://www.kommunity.net/download/mod_clamav/
@@ -21,10 +22,10 @@ USE_APACHE=	2.2
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_CLAMAVDEVEL)
-LIB_DEPENDS+=	clamav.6:${PORTSDIR}/security/clamav-devel
+LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav-devel
 .else
 CLAMAV_PORT=	security/clamav
-LIB_DEPENDS+=	clamav.6:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
 .endif
 
 CONFIGURE_ARGS=	--with-apxs=${APXS} \

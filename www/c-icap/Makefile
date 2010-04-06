@@ -7,7 +7,7 @@
 
 PORTNAME=	c-icap
 PORTVERSION=	060708
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=	--without-perl
 .endif
 
 .if !defined(WITHOUT_CLAMAV)
-LIB_DEPENDS+=	clamav.6:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
 PLIST_SUB+=	CLAMAV=""
 CONFIGURE_ARGS+=	--with-clamav
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
