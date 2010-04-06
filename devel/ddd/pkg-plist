@@ -1,4 +1,5 @@
 bin/ddd
+share/applications/ddd.desktop
 share/ddd-%%VERSION%%/COPYING
 share/ddd-%%VERSION%%/NEWS
 share/ddd-%%VERSION%%/ddd/Ddd
@@ -9,6 +10,7 @@ share/ddd-%%VERSION%%/themes/smalltitles.vsl
 share/ddd-%%VERSION%%/themes/smallvalues.vsl
 share/ddd-%%VERSION%%/themes/suppress.vsl
 share/ddd-%%VERSION%%/themes/tinyvalues.vsl
+share/ddd-%%VERSION%%/themes/x86.vsl
 share/ddd-%%VERSION%%/vsllib/arcs.vsl
 share/ddd-%%VERSION%%/vsllib/builtin.vsl
 share/ddd-%%VERSION%%/vsllib/colors.vsl
