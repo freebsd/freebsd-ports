@@ -15,7 +15,7 @@ DISTNAME=	pcsv${PORTVERSION}-${CHEZ_MACHTYPE}
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Free interpreter for Chez Scheme system
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 NO_PACKAGE=	user must accept license terms before installation
 
@@ -27,11 +27,14 @@ OPTIONS=	THREADS "Install threaded version" off
 
 WRKSRC=		${WRKDIR}/csv${PORTVERSION}/custom
 HAS_CONFIGURE=	yes
+USE_ICONV=	yes
 CONFIGURE_ARGS=	--installprefix=${PREFIX} \
 		--installman=${MANPREFIX}/man \
 		--force-relink \
 		--nogzip-man-pages \
 		-m=${CHEZ_MACHTYPE}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -liconv"
 
 ALL_TARGET=	build
 
@@ -42,10 +45,14 @@ PLIST_SUB=	CHEZ_VERSION="${PORTVERSION}" \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_THREADS)
-CHEZ_MACHTYPE=	ti3fb
-.else
+.if ${ARCH} == "i386"
 CHEZ_MACHTYPE=	i3fb
+.elif ${ARCH} == "amd64"
+CHEZ_MACHTYPE=	a6fb
+.endif
+
+.if defined(WITH_THREADS)
+CHEZ_MACHTYPE:=	t${CHEZ_MACHTYPE}
 .endif
 
 post-extract:
