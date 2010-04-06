@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yodl
-PORTVERSION=	2.15.1
-PORTREVISION=	2
+PORTVERSION=	2.15.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -82,6 +81,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC} && ./build programs
+	@cd ${WRKSRC} && ./build macros
 .if !defined(NO_INSTALL_MANPAGES)
 	@cd ${WRKSRC} && ./build man
 .endif
