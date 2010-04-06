@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/JSConcat/.packlist
+%%SITE_PERL%%/Plack/Middleware/JSConcat.pm
+@dirrmtry %%SITE_PERL%%/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/Plack
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/JSConcat
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
