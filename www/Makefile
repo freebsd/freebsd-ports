@@ -1095,6 +1095,7 @@
     SUBDIR += p5-Plack-Middleware-Debug
     SUBDIR += p5-Plack-Middleware-Deflater
     SUBDIR += p5-Plack-Middleware-Header
+    SUBDIR += p5-Plack-Middleware-JSConcat
     SUBDIR += p5-Plack-Middleware-ReverseProxy
     SUBDIR += p5-Plack-Middleware-Session
     SUBDIR += p5-Plack-Server-AnyEvent
