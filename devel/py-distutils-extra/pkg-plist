@@ -1,0 +1,40 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/auto.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/auto.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/auto.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_i18n.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/check.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_help.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_extra.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_kdeui.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/clean_i18n.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_icons.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_i18n.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/check.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_help.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_extra.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_kdeui.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/clean_i18n.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_icons.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_i18n.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/check.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_help.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_extra.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_kdeui.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/clean_i18n.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command/build_icons.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra/command
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/DistUtilsExtra
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
