@@ -7,7 +7,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	0.99.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v${PORTVERSION:R}/ \
@@ -22,7 +22,9 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
 CONFLICTS=	jed-devel-[0-9]*
 
-OPTIONS=	X11 "Build xjed (depends of X11)" on
+OPTIONS=	X11 "Build xjed (depends of X11)" on \
+		PERMS "Respect permissions by Root" off \
+		HOSTLOOKUP "Look-up for hostname" on
 
 USE_BZIP2=	yes
 DIST_SUBDIR=	jed
@@ -54,6 +56,11 @@ ALL_TARGET+=	xjed
 PLIST_SUB+=	XJED=""
 .endif
 
+.if defined(WITHOUT_HOSTLOOKUP)
+HOSTNAME_CMD=	/bin/hostname
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__userinfo.c
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,(DEST_JED_ROOT)/doc,(DEST_DOC_DIR),g' \
 			  -e 's,\.\./info/\*,,' \
@@ -62,6 +69,13 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/MKINSDIR.*DEST_DOC_DIR/d' \
 		${WRKSRC}/src/Makefile.in
+.endif
+.if defined(WITHOUT_PERMS)
+	@${REINPLACE_CMD} 's|jed_file_is_readonly (file, 1)|jed_file_is_readonly (file, 0)|' ${WRKSRC}/src/file.c
+.endif
+.if defined(WITHOUT_HOSTLOOKUP)
+	@${REINPLACE_CMD} -e "s/%%JED_HOSTNAME%%/$$(${HOSTNAME_CMD})/" \
+		${WRKSRC}/src/userinfo.c
 .endif
 
 post-configure:
