@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.95.3
+DISTVERSION=	0.96
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -26,11 +26,14 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		STDERR "Print logs to stderr instead of stdout" Off \
 		EXPERIMENTAL "Build experimental code" Off
 
-GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
-USE_LDCONFIG=	yes
-USE_RC_SUBR=	clamav-clamd clamav-freshclam
-CONF_FILES=	clamd freshclam
+USE_GCC=		4.2+
+USE_PYTHON_BUILD=	yes
+USE_GMAKE=		yes
+GNU_CONFIGURE=		yes
+MAKE_JOBS_SAFE=		yes
+USE_LDCONFIG=		yes
+USE_RC_SUBR=		clamav-clamd clamav-freshclam
+CONF_FILES=		clamd freshclam
 
 PORTDOCS=	*
 
@@ -49,8 +52,9 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--enable-bigstack \
 		--enable-readdir_r \
 		--enable-gethostbyname_r \
-		--enable-check \
-		--disable-dependency-tracking
+		--disable-dependency-tracking \
+		--enable-clamdtop \
+		--enable-llvm
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib \
@@ -108,6 +112,17 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS+=	-march=i486
+.endif
+
+.if ${OSVERSION} >= 700000
+BUILD_DEPENDS+=		${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
+CONFIGURE_ARGS+=	--enable-check
+.else
+CONFIGURE_ARGS+=	--disable-check
+.endif
 
 .if defined(WITH_ARC)
 RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
@@ -175,8 +190,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
 
+.if ${OSVERSION} >= 700000
 post-build:
 	@${MAKE} -C ${WRKSRC} check
+.endif
 
 pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
