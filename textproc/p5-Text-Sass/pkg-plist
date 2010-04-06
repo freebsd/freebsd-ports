@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Text/Sass.pm
+%%SITE_PERL%%/Text/Sass/Expr.pm
+@dirrm %%SITE_PERL%%/Text/Sass
+@dirrmtry %%SITE_PERL%%/Text
