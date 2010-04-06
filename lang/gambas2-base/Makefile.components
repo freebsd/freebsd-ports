@@ -159,6 +159,10 @@ BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-xml"
+.if ${ARCH} == "ia64"
+BROKEN=		Does not compile on ia64
+.endif
+
 BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base \
 		${GAMBAS_COMPDIRE}/gb.net.component:${PORTSDIR}/net/gambas2-gb-net \
 		${GAMBAS_COMPDIRE}/gb.net.curl.component:${PORTSDIR}/ftp/gambas2-gb-net-curl
@@ -168,6 +172,10 @@ USE_GNOME=	libxml2 libxslt
 .endif
 
 .if ${PKGNAMESUFFIX} == "-gb-gtk"
+.if ${ARCH} == "ia64"
+BROKEN=		Does not compile on ia64
+.endif
+
 EXTRACT_AFTER_ARGS+=	"${DISTNAME}/gb.qt"
 
 BUILD_DEPENDS+=	gbi2:${PORTSDIR}/lang/gambas2-base
