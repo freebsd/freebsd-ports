@@ -7,6 +7,7 @@
 
 PORTNAME=	petite-chez
 PORTVERSION=	8.0
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.scheme.com/download/ \
 		http://tx97.net/pub/distfiles/
@@ -33,8 +34,6 @@ CONFIGURE_ARGS=	--installprefix=${PREFIX} \
 		--force-relink \
 		--nogzip-man-pages \
 		-m=${CHEZ_MACHTYPE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -liconv"
 
 ALL_TARGET=	build
 
