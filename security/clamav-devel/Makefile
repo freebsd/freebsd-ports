@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20100312
+PORTVERSION=	20100406
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -21,17 +21,20 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		LHA "Enable lha archives support" On \
 		UNZOO "Enable zoo archives support" On \
 		UNRAR "Enable rar archives support" On \
+		LLVM "Enable JIT Bytecode compiler" On \
 		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
 		ICONV "Enable ICONV support" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
-USE_GCC=	4.2+
-GNU_CONFIGURE=	yes
-MAKE_JOBS_SAFE=	yes
-USE_LDCONFIG=	yes
-USE_RC_SUBR=	clamav-clamd clamav-freshclam
-CONF_FILES=	clamd freshclam
+USE_GCC=		4.2+
+USE_PYTHON_BUILD=	yes
+USE_GMAKE=		yes
+GNU_CONFIGURE=		yes
+MAKE_JOBS_SAFE=		yes
+USE_LDCONFIG=		yes
+USE_RC_SUBR=		clamav-clamd clamav-freshclam
+CONF_FILES=		clamd freshclam
 
 PORTDOCS=	*
 
@@ -50,8 +53,9 @@ CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--enable-bigstack \
 		--enable-readdir_r \
 		--enable-gethostbyname_r \
-		--enable-experimental \
-		--disable-dependency-tracking
+		--disable-dependency-tracking \
+		--enable-clamdtop \
+		--enable-experimental
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib \
@@ -117,8 +121,10 @@ CFLAGS+=	-march=i486
 .endif
 
 .if ${OSVERSION} >= 700000
-BUILD_DEPENDS+=		${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
-CONFIGURE_ARGS+=	--enable-check
+BUILD_DEPENDS+=	${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
+CONFIGURE_ARGS+=--enable-check
+.else
+CONFIGURE_ARGS+=--disable-check
 .endif
 
 .if defined(WITH_ARC)
@@ -137,13 +143,19 @@ RUN_DEPENDS+=	unzoo:${PORTSDIR}/archivers/unzoo
 PLIST_SUB+=	UNRAR=""
 .else
 PLIST_SUB+=	UNRAR="@comment "
-CONFIGURE_ARGS+=	--disable-unrar
+CONFIGURE_ARGS+=--disable-unrar
 .endif
 .if defined(WITH_ICONV)
 CONFIGURE_ARGS+=--with-iconv
 USE_ICONV=	yes
 .else
 CONFIGURE_ARGS+=--without-iconv
+.endif
+
+.if defined(WITH_LLVM)
+CONFIGURE_ARGS+=--enable-llvm
+.else
+CONFIGURE_ARGS+=--disable-llvm
 .endif
 
 .if defined(WITH_MILTER)
@@ -156,12 +168,12 @@ LDFLAGS+=	-lldap
 
 . if !exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
-CONFIGURE_ARGS+=	--with-sendmail=${LOCALBASE}/sbin/sendmail
+CONFIGURE_ARGS+=--with-sendmail=${LOCALBASE}/sbin/sendmail
 . else
-CONFIGURE_ARGS+=	--with-sendmail=/usr/sbin/sendmail
+CONFIGURE_ARGS+=--with-sendmail=/usr/sbin/sendmail
 . endif
 
-CONFIGURE_ARGS+=	--enable-milter
+CONFIGURE_ARGS+=--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER=""
 .else
 PLIST_SUB+=	CLAMAV-MILTER="@comment "
