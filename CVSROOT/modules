@@ -10806,6 +10806,7 @@ p5-CGI-Ajax                     ports/www/p5-CGI-Ajax
 p5-CGI-Application              ports/www/p5-CGI-Application
 p5-CGI-Application-Dispatch     ports/www/p5-CGI-Application-Dispatch
 p5-CGI-Application-Dispatch-Server  ports/www/p5-CGI-Application-Dispatch-Server
+p5-CGI-Application-PSGI         ports/www/p5-CGI-Application-PSGI
 p5-CGI-Application-Plugin-AnyTemplate  ports/www/p5-CGI-Application-Plugin-AnyTemplate
 p5-CGI-Application-Plugin-Authentication  ports/www/p5-CGI-Application-Plugin-Authentication
 p5-CGI-Application-Plugin-Authorization  ports/www/p5-CGI-Application-Plugin-Authorization
@@ -13187,6 +13188,7 @@ p5-Pipeline                     ports/devel/p5-Pipeline
 p5-PlRPC                        ports/net/p5-PlRPC
 p5-Plack                        ports/www/p5-Plack
 p5-Plack-App-Proxy              ports/www/p5-Plack-App-Proxy
+p5-Plack-Handler-AnyEvent-HTTPD  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-Plack-Handler-AnyEvent-ReverseHTTP  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
 p5-Plack-Middleware-Auth-Digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-Plack-Middleware-AutoRefresh  ports/www/p5-Plack-Middleware-AutoRefresh
@@ -13913,6 +13915,7 @@ p5-Tree-Simple-View             ports/devel/p5-Tree-Simple-View
 p5-Tree-Simple-VisitorFactory   ports/devel/p5-Tree-Simple-VisitorFactory
 p5-Tree-Suffix                  ports/textproc/p5-Tree-Suffix
 p5-Try-Tiny                     ports/lang/p5-Try-Tiny
+p5-Twiggy                       ports/www/p5-Twiggy
 p5-UDCode                       ports/devel/p5-UDCode
 p5-UI-Dialog                    ports/devel/p5-UI-Dialog
 p5-UML-Class-Simple             ports/textproc/p5-UML-Class-Simple
@@ -14758,6 +14761,7 @@ p5-cgi-application-plugin-stream  ports/www/p5-CGI-Application-Plugin-Stream
 p5-cgi-application-plugin-tt    ports/www/p5-CGI-Application-Plugin-TT
 p5-cgi-application-plugin-validaterm  ports/www/p5-CGI-Application-Plugin-ValidateRM
 p5-cgi-application-plugin-viewcode  ports/www/p5-CGI-Application-Plugin-ViewCode
+p5-cgi-application-psgi         ports/www/p5-CGI-Application-PSGI
 p5-cgi-application-server       ports/www/p5-CGI-Application-Server
 p5-cgi-argchecker               ports/www/p5-CGI-ArgChecker
 p5-cgi-builder                  ports/www/p5-CGI-Builder
@@ -16937,6 +16941,7 @@ p5-pip                          ports/devel/p5-pip
 p5-pipeline                     ports/devel/p5-Pipeline
 p5-plack                        ports/www/p5-Plack
 p5-plack-app-proxy              ports/www/p5-Plack-App-Proxy
+p5-plack-handler-anyevent-httpd  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-plack-handler-anyevent-reversehttp  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
 p5-plack-middleware-auth-digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-plack-middleware-autorefresh  ports/www/p5-Plack-Middleware-AutoRefresh
@@ -17770,6 +17775,7 @@ p5-tree-simple-view             ports/devel/p5-Tree-Simple-View
 p5-tree-simple-visitorfactory   ports/devel/p5-Tree-Simple-VisitorFactory
 p5-tree-suffix                  ports/textproc/p5-Tree-Suffix
 p5-try-tiny                     ports/lang/p5-Try-Tiny
+p5-twiggy                       ports/www/p5-Twiggy
 p5-type1inst                    ports/x11-fonts/p5-type1inst
 p5-udcode                       ports/devel/p5-UDCode
 p5-ui-dialog                    ports/devel/p5-UI-Dialog
@@ -19273,7 +19279,7 @@ picviz                          ports/graphics/picviz
 piddle                          ports/graphics/piddle
 pidentd                         ports/security/pidentd
 pidgin                          ports/net-im/pidgin
-pidgin-birthday_reminder        ports/net-im/pidgin-birthday_reminder
+pidgin-birthday-reminder        ports/net-im/pidgin-birthday-reminder
 pidgin-bs                       ports/net-im/pidgin-bs
 pidgin-encryption               ports/security/pidgin-encryption
 pidgin-facebookchat             ports/net-im/pidgin-facebookchat
@@ -19792,7 +19798,6 @@ proggy_fonts                    ports/x11-fonts/proggy_fonts
 progsreiserfs                   ports/sysutils/progsreiserfs
 proguard                        ports/java/proguard
 proj                            ports/graphics/proj
-proj4                           ports/misc/proj4
 projectcenter.app               ports/devel/projectcenter.app
 projectionlib                   ports/misc/projectionlib
 projectmanager                  ports/devel/projectmanager
