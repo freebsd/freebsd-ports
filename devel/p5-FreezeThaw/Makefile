@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	FreezeThaw
-PORTVERSION=	0.50
+PORTVERSION=	0.50.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A module for converting Perl structures to strings and back
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 PERL_CONFIGURE=	YES
 
