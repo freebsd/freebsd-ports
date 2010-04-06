@@ -5,4 +5,4 @@ interfaces to use, command-line, dialog-based, and a QT4 GUI. Warden has
 support for backing up an entire jail, installing pre-built packages 
 (inmates) and more. 
 
-WWW: http://www.pcbsd.org/
+WWW: http://wiki.pcbsd.org/index.php/Using_the_Warden
