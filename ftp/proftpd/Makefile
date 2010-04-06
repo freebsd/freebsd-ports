@@ -303,7 +303,7 @@ EXTRACT_ONLY+=	mod_clamav-0.11rc.tar.gz
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_mod_xfer.c
 USE_CLAMAV=	yes
 MODULES:=${MODULES}:mod_clamav
-LIB_DEPENDS+=	clamav.6:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 PLIST_SUB+=	CLAMAV=""

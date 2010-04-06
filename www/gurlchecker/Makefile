@@ -7,7 +7,7 @@
 
 PORTNAME=	gurlchecker
 PORTVERSION=	0.10.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
 MASTER_SITE_SUBDIR=	547
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--disable-tidy
 .endif
 
 .if defined(WITH_CLAMAV)
-LIB_DEPENDS+=	clamav.6:${PORTSDIR}/security/clamav
+LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav
 .else
 CONFIGURE_ARGS+=	--disable-clamav
 .endif
