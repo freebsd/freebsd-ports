@@ -1,0 +1,11 @@
+===============================================================================
+sysutils/warden is now installed, but it requires some additional setup.
+
+****************************************************
+Please run: %%PREFIX%%/warden/scripts/init-warden.sh
+****************************************************
+
+This script will set some required variables and prompt you for the network
+interface to run jails on. 
+
+=============================================================================

@@ -861,6 +861,7 @@
     SUBDIR += vstrip
     SUBDIR += vttest
     SUBDIR += wait_on
+    SUBDIR += warden
     SUBDIR += watchdog
     SUBDIR += watchfolder
     SUBDIR += watchmen
