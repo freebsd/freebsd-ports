@@ -1,11 +1,11 @@
 bin/wmtunlo
-share/examples/wmtunlo/wmtunlorc.example1
-share/examples/wmtunlo/wmtunlorc.example2
-share/examples/wmtunlo/wmtunlorc.example3
-share/examples/wmtunlo/wmtunlorc.example4
-share/examples/wmtunlo/wmtunlorc.example5
-share/examples/wmtunlo/wmtunlorc.example6
-share/examples/wmtunlo/wmtunlorc.example7
-share/examples/wmtunlo/wmtunlorc.example8
-share/examples/wmtunlo/wmtunlorc.original
-@dirrm share/examples/wmtunlo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example4
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example5
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example6
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.example8
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmtunlorc.original
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
