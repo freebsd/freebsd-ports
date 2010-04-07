@@ -22,11 +22,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A UCSD (Apple) Pascal p-code interpreter environment
 
+BROKEN=		size mismatch
+
 BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep
 
 USE_XORG=	x11 xt
 
-RESTRICTED=	"Redistribution rights for Apple Pascal disk images are unclear"
+RESTRICTED=	Redistribution rights for Apple Pascal disk images are unclear
 
 MAN1=	ucsd.1 svolio.1 svolcvt.1
 
