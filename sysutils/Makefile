@@ -496,6 +496,7 @@
     SUBDIR += monkeytail
     SUBDIR += mono-kmod
     SUBDIR += moosefs-chunkserver
+    SUBDIR += moosefs-client
     SUBDIR += moosefs-master
     SUBDIR += moreutils
     SUBDIR += most
