@@ -1,0 +1,7 @@
+MooseFS is a fault tolerant, network distributed file system.
+
+mfschunkserver is any number of commodity servers storing files
+data and synchronizing it among themselves (if a certain file
+is supposed to exist in more than one copy).
+
+WWW:	http://www.moosefs.org/
