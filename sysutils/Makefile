@@ -495,6 +495,7 @@
     SUBDIR += monitord
     SUBDIR += monkeytail
     SUBDIR += mono-kmod
+    SUBDIR += moosefs-chunkserver
     SUBDIR += moosefs-master
     SUBDIR += moreutils
     SUBDIR += most
