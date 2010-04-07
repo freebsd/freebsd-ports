@@ -23,6 +23,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_accept_all.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_accept_all.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_accept_all.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_content_size.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_content_size.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_content_size.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_delay.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_delay.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_delay.pyo
@@ -50,9 +53,6 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_limit_new.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_limit_new.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_limit_new.pyo
-%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_nzb_size.py
-%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_nzb_size.pyc
-%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_nzb_size.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_regexp.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_regexp.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_regexp.pyo
@@ -68,9 +68,6 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb.pyo
-%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_torrent_size.py
-%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_torrent_size.pyc
-%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_torrent_size.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_backlog.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_backlog.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_backlog.pyo
@@ -125,6 +122,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/modify_headers.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/modify_headers.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/modify_headers.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/modify_plugin_priority.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/modify_plugin_priority.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/modify_plugin_priority.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/modify_set.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/modify_set.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/modify_set.pyo
@@ -173,9 +173,6 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_preset.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_preset.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_preset.pyo
-%%PYTHON_SITELIBDIR%%/flexget/plugins/module_priority.py
-%%PYTHON_SITELIBDIR%%/flexget/plugins/module_priority.pyc
-%%PYTHON_SITELIBDIR%%/flexget/plugins/module_priority.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_search.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_search.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_search.pyo
@@ -215,6 +212,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_html.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_html.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_html.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output_prowl.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output_prowl.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output_prowl.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_rss.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_rss.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_rss.pyo
@@ -233,6 +233,12 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_adv_exec.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_adv_exec.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_adv_exec.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_torrent_size.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_torrent_size.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_torrent_size.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlrewriting.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlrewriting.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlrewriting.pyo

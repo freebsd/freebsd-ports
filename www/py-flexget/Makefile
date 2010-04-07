@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flexget
-PORTVERSION=	1.0.r1197
+PORTVERSION=	1.0.r1226
 CATEGORIES=	www python
 MASTER_SITES=	http://download.flexget.com/unstable/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,8 @@ COMMENT=	Program to automate downloading from different sources
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0.5:${PORTSDIR}/databases/py-sqlalchemy \
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pygooglechart>=0:${PORTSDIR}/graphics/py-pygooglechart \
+		${PYTHON_PKGNAMEPREFIX}progressbar>=0:${PORTSDIR}/misc/py-progressbar \
+		${PYTHON_PKGNAMEPREFIX}pynzb>=0:${PORTSDIR}/news/py-pynzb \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}rss2gen>=0:${PORTSDIR}/textproc/py-rss2gen \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:${PORTSDIR}/www/py-beautifulsoup \
