@@ -31,7 +31,7 @@ USE_GSTREAMER=		good
 NO_BUILD=		yes
 
 do-install:
-	@${CD} ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install
+	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install
 
 post-install:
 	@${MV} ${PREFIX}/bin/openlp.pyw ${PREFIX}/bin/openlp
