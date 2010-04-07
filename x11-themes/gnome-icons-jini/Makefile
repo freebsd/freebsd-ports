@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jini
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://kldp.net/frs/download.php/3799/
 PKGNAMEPREFIX=	gnome-icons-
