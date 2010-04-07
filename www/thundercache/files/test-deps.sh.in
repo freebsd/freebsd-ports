@@ -1,0 +1,16 @@
+#!/bin/sh
+ if ! ldd %%PREFIX%%/bin/curl | %%GREP%% "libssh" >/dev/null 2>&1 ; then
+   BARRIER=1
+ fi
+ if ! ldd %%PREFIX%%/bin/curl | %%GREP%% "libssl" >/dev/null 2>&1 ; then
+   BARRIER=1
+ fi
+ if ! %%PREFIX%%/bin/curl -h | %%GREP%% "proxy <host" >/dev/null 2>&1 ; then
+   BARRIER=1
+ fi
+
+ if [ "${BARRIER}" = 1 ] ; then
+	false
+ else
+	true
+ fi
