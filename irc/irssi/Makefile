@@ -15,7 +15,7 @@ COMMENT?=	A modular IRC client with many features
 
 LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
 
-CONFLICTS=	irssi-devel-[0-9]*
+CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
