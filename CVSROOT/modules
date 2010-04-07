@@ -940,6 +940,7 @@ be-aspell                       ports/textproc/be-aspell
 be_agent                        ports/sysutils/be_agent
 beacon                          ports/net/beacon
 beanie                          ports/finance/beanie
+beansdb                         ports/databases/beansdb
 beanstalkd                      ports/net/beanstalkd
 beast                           ports/audio/beast
 beastie                         ports/x11-themes/beastie
@@ -8568,6 +8569,7 @@ log4net                         ports/devel/log4net
 log4sh                          ports/devel/log4sh
 log4shib                        ports/devel/log4shib
 log_analysis                    ports/sysutils/log_analysis
+loganalyzer                     ports/sysutils/loganalyzer
 logcheck                        ports/security/logcheck
 logjam                          ports/deskutils/logjam
 logmon                          ports/sysutils/logmon
@@ -10608,6 +10610,7 @@ p5-App-Options                  ports/devel/p5-App-Options
 p5-App-Pm2Port                  ports/ports-mgmt/p5-App-Pm2Port
 p5-App-SVN-Bisect               ports/devel/p5-App-SVN-Bisect
 p5-App-Trace                    ports/devel/p5-App-Trace
+p5-App-cpanminus                ports/devel/p5-App-cpanminus
 p5-AppConfig                    ports/devel/p5-AppConfig
 p5-AppConfig-Std                ports/devel/p5-AppConfig-Std
 p5-Archive-Any                  ports/archivers/p5-Archive-Any
@@ -11838,6 +11841,7 @@ p5-File-Sync                    ports/devel/p5-File-Sync
 p5-File-Tail                    ports/devel/p5-File-Tail
 p5-File-Temp                    ports/devel/p5-File-Temp
 p5-File-Tempdir                 ports/devel/p5-File-Tempdir
+p5-File-Touch                   ports/devel/p5-File-Touch
 p5-File-Type                    ports/devel/p5-File-Type
 p5-File-Util                    ports/devel/p5-File-Util
 p5-File-Which                   ports/sysutils/p5-File-Which
@@ -12623,6 +12627,7 @@ p5-Metadata                     ports/databases/p5-Metadata
 p5-Method-Alias                 ports/devel/p5-Method-Alias
 p5-Mixin-Linewise               ports/devel/p5-Mixin-Linewise
 p5-Mknod                        ports/devel/p5-Mknod
+p5-Modern-Perl                  ports/lang/p5-Modern-Perl
 p5-Module-Build                 ports/devel/p5-Module-Build
 p5-Module-Build-Convert         ports/devel/p5-Module-Build-Convert
 p5-Module-Build-Kwalitee        ports/devel/p5-Module-Build-Kwalitee
@@ -13195,6 +13200,7 @@ p5-Plack-Middleware-AutoRefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-Plack-Middleware-Debug       ports/www/p5-Plack-Middleware-Debug
 p5-Plack-Middleware-Deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-Plack-Middleware-Header      ports/www/p5-Plack-Middleware-Header
+p5-Plack-Middleware-JSConcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-Plack-Middleware-ReverseProxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-Plack-Middleware-Session     ports/www/p5-Plack-Middleware-Session
 p5-Plack-Server-AnyEvent        ports/www/p5-Plack-Server-AnyEvent
@@ -13320,6 +13326,7 @@ p5-SGML-DTDParse                ports/textproc/p5-SGML-DTDParse
 p5-SGML-Parser-OpenSP           ports/textproc/p5-SGML-Parser-OpenSP
 p5-SGMLSpm                      ports/textproc/p5-SGMLSpm
 p5-SHA                          ports/security/p5-SHA
+p5-SMS-SMS77                    ports/comms/p5-SMS-SMS77
 p5-SMS-Send                     ports/comms/p5-SMS-Send
 p5-SMS-Send-DeviceGsm           ports/comms/p5-SMS-Send-DeviceGsm
 p5-SMS-Send-TW-HiAir            ports/comms/p5-SMS-Send-TW-HiAir
@@ -13800,6 +13807,7 @@ p5-Text-Reflow                  ports/textproc/p5-Text-Reflow
 p5-Text-Reform                  ports/textproc/p5-Text-Reform
 p5-Text-Report                  ports/textproc/p5-Text-Report
 p5-Text-Repository              ports/textproc/p5-Text-Repository
+p5-Text-Sass                    ports/textproc/p5-Text-Sass
 p5-Text-Shellwords              ports/textproc/p5-Text-Shellwords
 p5-Text-Similarity              ports/textproc/p5-Text-Similarity
 p5-Text-SimpleTable             ports/textproc/p5-Text-SimpleTable
@@ -14379,6 +14387,7 @@ p5-app-cli                      ports/devel/p5-App-CLI
 p5-app-cli-extension            ports/devel/p5-App-CLI-Extension
 p5-app-cmd                      ports/devel/p5-App-Cmd
 p5-app-control                  ports/devel/p5-App-Control
+p5-app-cpanminus                ports/devel/p5-App-cpanminus
 p5-app-info                     ports/devel/p5-App-Info
 p5-app-nopaste                  ports/www/p5-App-Nopaste
 p5-app-options                  ports/devel/p5-App-Options
@@ -15642,6 +15651,7 @@ p5-file-sync                    ports/devel/p5-File-Sync
 p5-file-tail                    ports/devel/p5-File-Tail
 p5-file-temp                    ports/devel/p5-File-Temp
 p5-file-tempdir                 ports/devel/p5-File-Tempdir
+p5-file-touch                   ports/devel/p5-File-Touch
 p5-file-type                    ports/devel/p5-File-Type
 p5-file-util                    ports/devel/p5-File-Util
 p5-file-which                   ports/sysutils/p5-File-Which
@@ -16437,6 +16447,7 @@ p5-mknod                        ports/devel/p5-Mknod
 p5-mldbm                        ports/databases/p5-MLDBM
 p5-mldbm-sync                   ports/databases/p5-MLDBM-Sync
 p5-mocked                       ports/devel/p5-mocked
+p5-modern-perl                  ports/lang/p5-Modern-Perl
 p5-module-build                 ports/devel/p5-Module-Build
 p5-module-build-convert         ports/devel/p5-Module-Build-Convert
 p5-module-build-kwalitee        ports/devel/p5-Module-Build-Kwalitee
@@ -16948,6 +16959,7 @@ p5-plack-middleware-autorefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-plack-middleware-debug       ports/www/p5-Plack-Middleware-Debug
 p5-plack-middleware-deflater    ports/www/p5-Plack-Middleware-Deflater
 p5-plack-middleware-header      ports/www/p5-Plack-Middleware-Header
+p5-plack-middleware-jsconcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-plack-middleware-reverseproxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-plack-middleware-session     ports/www/p5-Plack-Middleware-Session
 p5-plack-server-anyevent        ports/www/p5-Plack-Server-AnyEvent
@@ -17241,6 +17253,7 @@ p5-sms-send-tw-hiair            ports/comms/p5-SMS-Send-TW-HiAir
 p5-sms-send-tw-pchome           ports/comms/p5-SMS-Send-TW-PChome
 p5-sms-send-tw-sharesms         ports/comms/p5-SMS-Send-TW-ShareSMS
 p5-sms-send-tw-socket2air       ports/comms/p5-SMS-Send-TW-Socket2Air
+p5-sms-sms77                    ports/comms/p5-SMS-SMS77
 p5-snmp-info                    ports/net-mgmt/p5-SNMP-Info
 p5-snmp-mib-compiler            ports/net-mgmt/p5-SNMP-MIB-Compiler
 p5-snmp-persist                 ports/devel/p5-SNMP-Persist
@@ -17657,6 +17670,7 @@ p5-text-reflow                  ports/textproc/p5-Text-Reflow
 p5-text-reform                  ports/textproc/p5-Text-Reform
 p5-text-report                  ports/textproc/p5-Text-Report
 p5-text-repository              ports/textproc/p5-Text-Repository
+p5-text-sass                    ports/textproc/p5-Text-Sass
 p5-text-shellwords              ports/textproc/p5-Text-Shellwords
 p5-text-similarity              ports/textproc/p5-Text-Similarity
 p5-text-simpletable             ports/textproc/p5-Text-SimpleTable
@@ -19224,7 +19238,6 @@ phpip                           ports/net-mgmt/phpip
 phpldapadmin                    ports/net/phpldapadmin
 phpldapadmin098                 ports/net/phpldapadmin098
 phplist                         ports/mail/phplist
-phplogcon                       ports/sysutils/phplogcon
 phplot                          ports/graphics/phplot
 phpmailer                       ports/mail/phpmailer
 phpmailer2                      ports/mail/phpmailer2
@@ -20092,6 +20105,7 @@ py-dexml                        ports/devel/py-dexml
 py-dialog                       ports/devel/py-dialog
 py-distorm                      ports/devel/py-distorm
 py-distutils                    ports/misc/py-distutils
+py-distutils-extra              ports/devel/py-distutils-extra
 py-django                       ports/www/py-django
 py-django-app-plugins           ports/www/py-django-app-plugins
 py-django-devel                 ports/www/py-django-devel
@@ -24376,6 +24390,7 @@ wanpipe                         ports/misc/wanpipe
 waon                            ports/audio/waon
 wapiti                          ports/security/wapiti
 wapsh                           ports/shells/wapsh
+warden                          ports/sysutils/warden
 wargus                          ports/games/wargus
 warppipe                        ports/net/warppipe
 warsow                          ports/games/warsow
