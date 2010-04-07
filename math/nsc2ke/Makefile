@@ -9,7 +9,7 @@ PORTNAME=	nsc2ke
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	math science
-MASTER_SITES=	http://www-c.inria.fr/gamma/cdrom/ftp/nsc2ke/
+MASTER_SITES=	http://pauillac.inria.fr/cdrom_a_graver/ftp/nsc2ke/
 DISTNAME=	${PORTNAME}
 .if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} nsc2ke.ps.gz
