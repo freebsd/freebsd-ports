@@ -7,6 +7,7 @@
 
 PORTNAME=	limesurvey
 PORTVERSION=	1.80
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	${PORTNAME}${PORTVERSION:S^.^^}_build6506_20090310
@@ -15,18 +16,17 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A PHP-based survey building and runing system
 
 USE_PHP=	mysql session mbstring pcre iconv gd ldap
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
+WWWDOCROOT?=		www
 PHPSURVEYORURL?=	${PORTNAME}
-PHPSURVEYORDIR=		${WWWDOCROOT}/${PHPSURVEYORURL}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+SUB_FILES=	pkg-message
+SUB_LIST=	PHPSURVEYORURL="${PHPSURVEYORURL}" \
+		PHPSURVEYORDIR="${PHPSURVEYORDIR}"
 
-post-configure:
-	@ ${SED} \
-	-e 's#%%PREFIX%%#${PREFIX}#g' \
-	-e 's#%%PHPSURVEYORURL%%#${PHPSURVEYORURL}#g' \
-	-e 's#%%PHPSURVEYORDIR%%#${PHPSURVEYORDIR}#g' \
+PHPSURVEYORDIR=	${WWWDOCROOT}/${PHPSURVEYORURL}
 
 do-install:
 	${MKDIR} ${WWWDIR}
@@ -38,6 +38,7 @@ do-install:
 	${CHMOD} 755 ${WWWDIR}/upload
 
 post-install:
+	@${CAT} ${PKGMESSAGE}
 	@${FIND} -s -d ${WWWDIR} -type f -print | \
 		${SED} -e "s#${PREFIX}/##g" >> ${TMPPLIST}
 	@${FIND} -s -d ${WWWDIR} -type d  -print | \
