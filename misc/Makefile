@@ -445,6 +445,7 @@
     SUBDIR += py-distutils
     SUBDIR += py-osd
     SUBDIR += py-pexpect
+    SUBDIR += py-progressbar
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-yolk
