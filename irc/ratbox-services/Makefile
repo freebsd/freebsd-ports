@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ratbox-services
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/${PORTNAME}/	\
 		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/${PORTNAME}/ \
