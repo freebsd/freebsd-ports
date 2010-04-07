@@ -165,3 +165,4 @@ transmission:*:921:921::0:0:Transmission Daemon User:/usr/local/etc/transmission
 mongodb:*:922:922::0:0:MongoDB Account:/var/empty:/usr/sbin/nologin
 liquidsoap:*:923:923::0:0:Liquidsoap User:/nonexistent:/usr/sbin/nologin
 postpals:*:924:924::0:0:postpals user:/nonexistent:/usr/sbin/nologin
+mfs:*:925:925::0:0:MooseFS User:/nonexistent:/usr/sbin/nologin
