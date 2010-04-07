@@ -7,7 +7,7 @@
 
 PORTNAME=	peekabot
 PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7.x/ \
 		http://distfiles.officialunix.com/
@@ -25,10 +25,15 @@ CONFIGURE_ENV=	LDFLAGS="`fltk-config --ldflags`" \
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700042
 USE_GCC=	4.2+
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/src/3rdparty/png++/io_base.hpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
