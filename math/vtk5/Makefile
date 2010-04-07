@@ -8,6 +8,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.4.2
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -24,14 +25,14 @@ LATEST_LINK=	vtk5
 
 WRKSRC=		${WRKDIR}/VTK
 
-CONFLICTS=	vtk-4* vtk-5.0.[012356789]*
+CONFLICTS=	vtk-4* vtk-5.0.[012356789]* paraview-3*
 
 SUB_FILES=	vtk.3
 
 USE_CMAKE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/vtk-${PORTVERSION:R}
 MAKE_JOBS_SAFE=	no
 
 OPTIONS=	VTKMPEG2	"Install patented MPEG2 encoder module" Off \
@@ -40,8 +41,9 @@ OPTIONS=	VTKMPEG2	"Install patented MPEG2 encoder module" Off \
 		WRAP_PYTHON	"Enable Python wrapping" On \
 		WRAP_TCLTK	"Enable Tcl/Tk wrapping" On
 
-PLIST_SUB=	VER1="${PORTVERSION:R}" \
-		VER2="${PORTVERSION}"
+PLIST_SUB=	VER1="${PORTVERSION}" \
+		VER2="${PORTVERSION:R}" \
+		VER3="${PORTVERSION:R:R}"
 
 MAN3=		vtk.3
 PORTDOCS=	README.html
@@ -49,8 +51,9 @@ PORTDOCS=	README.html
 CMAKE_USE_PTHREAD=	yes
 CMAKE_OUTSOURCE=	yes
 
-CMAKE_ARGS+=	-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
-   		-DBUILD_SHARED_LIBS:BOOL=ON \
+# Set this when testing port changes
+#-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
+CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DBUILD_DOCUMENTATION:BOOL=ON \
 		-DBUILD_TESTING:BOOL=OFF \
 		-DVTK_USE_SYSTEM_EXPAT:BOOL=ON \
@@ -88,11 +91,14 @@ PLIST_SUB+=	GL2PS="@comment "
 
 .if defined(WITH_QT)
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake corelib assistant assistantclient designer uic
+QT_COMPONENTS=	corelib assistant assistantclient designer \
+		gui opengl qtestlib sql dbus \
+		qmake_build uic_build moc_build rcc_build
 CMAKE_ARGS+=	-DVTK_USE_GUISUPPORT:BOOL=ON \
    		-DVTK_USE_QVTK:BOOL=ON \
    		-DDESIRED_QT_VERSION:STRING=4 \
-		-DQT_QMAKE_EXECUTABLE:FILEPATH=${QMAKE}
+		-DQT_QMAKE_EXECUTABLE:FILEPATH=${QMAKE} \
+		-DVTK_INSTALL_QT_DIR:FILEPATH=/lib/qt4/plugins/designer
 PLIST_SUB+=	QT=""
 .else
 CMAKE_ARGS+=	-DVTK_USE_GUISUPPORT:BOOL=OFF
@@ -133,8 +139,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 	    ${WRKSRC}/IO/vtkPNGReader.cxx
 
-# FSL links directly to libQVTKWidgetPlugin.so, so put it in a standard
-# library directory.
 pre-install:
 	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
 	${MKDIR} ${MANPREFIX}/man/man3
@@ -144,9 +148,14 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
 .endif
 
-# Ports system wants us to conform to lib.so.x format, but VTK5
-# only installs lib.so.x.y and lib.so.5.x.y.z.
 post-install:
+# Ports system wants us to conform to lib.so.x format, but VTK5
+# only installs lib.so.x.y and lib.so.x.y.z.
+	@for lib in ${PREFIX}/lib/vtk-${PORTVERSION:R}/libvtk*.so ${PREFIX}/lib/vtk-${PORTVERSION:R}/libQVTK*.so; do \
+	    ${RM} -f $$lib; \
+	    ${LN} -sf $$lib.${PORTVERSION} $$lib; \
+	    ${LN} -sf $$lib.${PORTVERSION} $$lib.${PORTVERSION:R:R}; \
+	done
 .if defined(WITH_VTKMPEG2)
 	@${ECHO_CMD}
 	@${ECHO_CMD} "This port uses the patented MPEG2 encoder."
