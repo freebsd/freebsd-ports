@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	tcpdump
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool
 
-LIB_DEPENDS=	pcap.3:${PORTSDIR}/net/libpcap \
+LIB_DEPENDS=	pcap.1:${PORTSDIR}/net/libpcap \
 		smi.2:${PORTSDIR}/net-mgmt/libsmi
 
 GNU_CONFIGURE=		yes
@@ -63,11 +62,9 @@ PLIST_FILES=	sbin/tcpdump
 CFLAGS+=		"-I${LOCALBASE}/include"
 LDFLAGS+=		"-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-LIBPCAP_FORCE_VER=	libpcap-1.0.0
+LIBPCAP_FORCE_VER=	libpcap-1.1
 LOCALPCAPFILES=	include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
-		include/pcap lib/libpcap.a
+		include/pcap lib/libpcap.a lib/libpcap.so
 WRKPCAPDIR=	${WRKDIR}/${LIBPCAP_FORCE_VER}
 
 pre-configure:
@@ -77,10 +74,10 @@ pre-configure:
 .endfor
 
 post-configure:
-	@${REINPLACE_CMD} -e "s,\./\.\./${LIBPCAP_FORCE_VER}/libpcap\.a,${LOCALBASE}/lib/libpcap.so.3," ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,\./\.\./${LIBPCAP_FORCE_VER}/libpcap\.a,${LOCALBASE}/lib/libpcap.so.1," ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpdump ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
