@@ -9,8 +9,7 @@ PORTNAME=	emc2
 PORTVERSION=	2.15
 PORTREVISION=	5
 CATEGORIES=	math science
-MASTER_SITES=	http://www-c.inria.fr/gamma/cdrom/ftp/emc2/ \
-		http://www-rocq1.inria.fr/gamma/cdrom/ftp/emc2/
+MASTER_SITES=	http://pauillac.inria.fr/cdrom_a_graver/ftp/emc2/
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-doc-en.ps.gz ${PORTNAME}-doc-fr.ps.gz
@@ -21,6 +20,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphic editor of two dimensional geometry and mesh
 
 RESTRICTED=	No resale, contact author for commercial usage
+
+BROKEN=		size mismatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
