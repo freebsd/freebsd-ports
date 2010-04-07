@@ -1,0 +1,14 @@
+#!/bin/sh
+# $FreeBSD$
+
+PATH="/bin:/sbin:/usr/bin:/usr/sbin"
+
+WORKFILE=%%MFS_WORKDIR%%/mfs/metadata.mfs.empty
+WORKDIR=%%MFS_WORKDIR%%/mfs
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	echo "=> Deleting ${WORKFILE} if empty..."
+	rm -f ${WORKFILE} 2>/dev/null || true
+	echo "=> Deleting ${WORKDIR} if empty..."
+	rm -d ${WORKDIR} 2>/dev/null || true
+fi
