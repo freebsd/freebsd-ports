@@ -57,4 +57,10 @@ Common database update tools and scripts referenced in ratbox-services
 documentation can be found in:
 	%%DATADIR%%/
 
+Database Support Note:
+----------------------
+In recent versions, support for MySQL and PgSQL lib detection has been slightly
+broken and currently does not work as expected. This problem should be resolved
+in the next release.
+
 ------------------------------------------------------------------------
