@@ -72,7 +72,6 @@ GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 REINPLACE_ARGS=	-i
 MAKE_JOBS_UNSAFE=	yes
-MAKE_ENV+=	ERLC_EMULATOR="${LOCALBASE}/bin/erl -smp disable"
 
 .if !defined(WITHOUT_ODBC)
 DRIVER_MANAGER?=	iodbc
