@@ -188,14 +188,18 @@
 %%PLIST_HMMER%%bin/ehmmsearch
 %%PLIST_MEMENEW%%share/EMBOSS/acd/emast.acd
 %%PLIST_MEMENEW%%share/EMBOSS/acd/ememe.acd
+%%PLIST_MEMENEW%%share/EMBOSS/acd/ememetext.acd
 %%PLIST_MEMENEW%%share/EMBOSS/doc/programs/text/emast.txt
 %%PLIST_MEMENEW%%share/EMBOSS/doc/programs/text/ememe.txt
+%%PLIST_MEMENEW%%share/EMBOSS/doc/programs/text/ememetext.txt
 %%PLIST_MEMENEW%%share/EMBOSS/doc/html/embassy/memenew/index.html
 %%PLIST_MEMENEW%%share/EMBOSS/doc/html/embassy/memenew/emast.html
 %%PLIST_MEMENEW%%share/EMBOSS/doc/html/embassy/memenew/ememe.html
+%%PLIST_MEMENEW%%share/EMBOSS/doc/html/embassy/memenew/ememetext.html
 %%PLIST_MEMENEW%%@dirrm share/EMBOSS/doc/html/embassy/memenew
 %%PLIST_MEMENEW%%bin/emast
 %%PLIST_MEMENEW%%bin/ememe
+%%PLIST_MEMENEW%%bin/ememetext
 %%PLIST_MSE%%share/EMBOSS/acd/mse.acd
 %%PLIST_MSE%%share/EMBOSS/doc/programs/text/mse.txt
 %%PLIST_MSE%%share/EMBOSS/doc/html/embassy/mse/index.html
@@ -251,11 +255,14 @@
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fcontml.txt
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fcontrast.txt
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdiscboot.txt
+%%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdolmove.txt
+%%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/frestdist.txt
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdnacomp.txt
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdnadist.txt
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdnainvar.txt
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdnaml.txt
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdnamlk.txt
+%%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdnamove.txt
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdnapars.txt
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdnapenny.txt
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/programs/text/fdollop.txt
@@ -289,6 +296,9 @@
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/html/embassy/phylipnew/fcontml.html
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/html/embassy/phylipnew/fcontrast.html
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/html/embassy/phylipnew/fdiscboot.html
+%%PLIST_PHYLIPNEW%%share/EMBOSS/doc/html/embassy/phylipnew/fdnamove.html
+%%PLIST_PHYLIPNEW%%share/EMBOSS/doc/html/embassy/phylipnew/fdolmove.html
+%%PLIST_PHYLIPNEW%%share/EMBOSS/doc/html/embassy/phylipnew/frestdist.html
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/html/embassy/phylipnew/fdnacomp.html
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/html/embassy/phylipnew/fdnadist.html
 %%PLIST_PHYLIPNEW%%share/EMBOSS/doc/html/embassy/phylipnew/fdnainvar.html
@@ -374,6 +384,7 @@
 %%PLIST_TOPO%%share/EMBOSS/doc/programs/text/topo.txt
 %%PLIST_TOPO%%share/EMBOSS/doc/html/embassy/topo/index.html
 %%PLIST_TOPO%%share/EMBOSS/doc/html/embassy/topo/topo.html
+%%PLIST_TOPO%%share/EMBOSS/doc/html/embassy/topo/topo.1.topo.gif
 %%PLIST_TOPO%%@dirrm share/EMBOSS/doc/html/embassy/topo
 %%PLIST_TOPO%%bin/topo
 %%PLIST_VIENNA%%share/EMBOSS/acd/vrnaalifold.acd
@@ -451,8 +462,34 @@
 %%PLIST_MIRA%%share/EMBOSS/acd/emiraest.acd
 %%PLIST_MIRA%%bin/emira
 %%PLIST_MIRA%%bin/emiraest
+%%PLIST_MYEMBOSS%%share/EMBOSS/doc/html/embassy/myemboss/index.html
+%%PLIST_MYEMBOSS%%@dirrm share/EMBOSS/doc/html/embassy/myemboss
 %%PLIST_IPRSCAN%%share/EMBOSS/acd/eiprscan.acd
+%%PLIST_IPRSCAN%%share/EMBOSS/doc/html/embassy/iprscan/eiprscan.html
+%%PLIST_IPRSCAN%%share/EMBOSS/doc/html/embassy/iprscan/index.html
 %%PLIST_IPRSCAN%%bin/eiprscan
+%%PLIST_IPRSCAN%%@dirrm share/EMBOSS/doc/html/embassy/iprscan
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/programs/text/elipop.txt
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/programs/text/eiprscan.txt
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/programs/text/echlorop.txt
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/programs/text/enetnglyc.txt
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/programs/text/enetoglyc.txt
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/programs/text/enetphos.txt
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/programs/text/eprop.txt
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/programs/text/esignalp.txt
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/programs/text/etmhmm.txt
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/programs/text/eyinoyang.txt
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/html/embassy/cbstools/index.html
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/html/embassy/cbstools/echlorop.html
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/html/embassy/cbstools/elipop.html
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/html/embassy/cbstools/enetnglyc.html
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/html/embassy/cbstools/enetoglyc.html
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/html/embassy/cbstools/enetphos.html
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/html/embassy/cbstools/eprop.html
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/html/embassy/cbstools/esignalp.html
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/html/embassy/cbstools/etmhmm.html
+%%PLIST_CBSTOOLS%%share/EMBOSS/doc/html/embassy/cbstools/eyinoyang.html
+%%PLIST_CBSTOOLS%%@dirrm share/EMBOSS/doc/html/embassy/cbstools
 %%PLIST_CBSTOOLS%%share/EMBOSS/acd/echlorop.acd
 %%PLIST_CBSTOOLS%%share/EMBOSS/acd/elipop.acd
 %%PLIST_CBSTOOLS%%share/EMBOSS/acd/enetnglyc.acd
