@@ -56,6 +56,10 @@ CONFIGURE_ARGS+=--enable-gtk-doc
 CONFIGURE_ARGS+=--disable-gtk-doc
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|--module-dir|--module=xfconf &|' \
+		${WRKSRC}/docs/reference/Makefile.in
+
 post-build:
 .if defined(WITH_PERL)
 	@${REINPLACE_CMD} -E -e 's! doc_(perl|site|\$$\(INSTALLDIRS\))_install$$!!' \
