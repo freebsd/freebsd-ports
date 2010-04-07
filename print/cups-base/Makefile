@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	5
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
@@ -180,8 +180,10 @@ CONFIGURE_ARGS+=	--disable-ldap
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_DBUS)
 LIB_DEPENDS+=		dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=	--enable-dbus
+PLIST_SUB+=		WITH_DBUS=""
 .else
 CONFIGURE_ARGS+=	--disable-dbus
+PLIST_SUB+=		WITH_DBUS="@comment "
 .endif
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && defined(WITH_XDG_OPEN)
