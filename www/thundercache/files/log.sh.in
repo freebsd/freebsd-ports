@@ -23,5 +23,5 @@ cp -f ${LOG}/access.log ${LOGTEMP}/access.log
 
 :> ${LOG}/access.log
 
-$PHP $THUNDERLOG $HOST $DB $USER $PASS $LOGTEMP/access.log >>$ {SCRIPTLOG} 2>&1 && rm -f $LOGTEMP/access.log
+$PHP $THUNDERLOG $HOST $DB $USER $PASS $LOGTEMP/access.log >>${SCRIPTLOG} 2>&1 && rm -f $LOGTEMP/access.log
 
