@@ -1,0 +1,73 @@
+.\" $Id$
+.TH PKG_JAIL 1 "April 2010" "FreeBSD" "User Manuals"
+.SH NAME
+pkg_jail \- Easy handling of a jail for package-builds.
+.SH SYNOPSIS
+.TP
+.B pkg_jail [command]
+.SH DESCRIPTION
+.B pkg_jail
+is a script to handle an clean jail for package-builds.
+.SH ARGUMENTS
+.TP
+.B init
+Creates or updates a clean jail with "installworld" and populate /etc inside the jail.
+.TP
+.B start
+Start the jail as a guest server.
+You should have setup sshd to login and maintain it with this option.
+.TP
+.B shell
+Start the jail and give a shell back.
+.TP
+.B list
+Show processes running in the jail.
+You need to have /proc mounted (readonly) in the host.
+.TP
+.B stop
+Kill processes running in the jail.
+You need to have /proc mounted (readonly) in the host.
+.TP
+.B restart
+Same as "stop" and "start"
+.SH "IMPLEMENTATION NOTES"
+.TP
+.B /proc
+/proc will be mounted readonly via procfs inside the jail.
+.TP
+.B /usr/src
+if /usr/src/Makefile does not exists inside the jail,
+/usr/src will be mounted readonly via nullfs from the the host into the jail.
+.TP
+.B jail_name
+The hostname of the jail.
+.TP
+.B jail_short
+A short id fopr the jail.
+.TP
+.B jail_ip
+The ip-address for the jail.
+.TP
+.B jail_dir
+The new root for the jail.
+.TP
+.B jail_short
+A short id fopr the jail.
+.TP
+.B jail_rule
+The rulset number the script uses for the devfs isnide the jail.
+.SH RETURN VALUES
+undefined.
+.SH "FILES"
+Configuration is inside the script.
+.SH "EXAMPLES"
+.B pkg_jail
+shell
+.SH "SEE ALSO"
+.TP
+.B pkg_update(1)
+The tool to create packages inside the jail.
+.SH "HISTORY"
+http://www.dinoex.net/training/package.html
+.SH "AUTHOR"
+Dirk Meyer, dinoex@FreeBSD.org

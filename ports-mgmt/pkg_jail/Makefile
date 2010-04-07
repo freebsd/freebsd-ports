@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pkg_jail
-PORTVERSION=	1.0
+PORTVERSION=	1.68
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -18,10 +18,11 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/pkg_jail bin/pkg_update
 PORTDOCS=	README
+MAN1=		pkg_jail.1 pkg_update.1
 
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/pkg_jail ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${FILESDIR}/pkg_update ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${FILESDIR}/pkg_jail ${FILESDIR}/pkg_update ${PREFIX}/bin/
+	${INSTALL_MAN} ${FILESDIR}/pkg_jail.1 ${FILESDIR}/pkg_update.1 ${PREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/README ${DOCSDIR}/

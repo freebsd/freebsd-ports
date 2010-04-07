@@ -1,5 +1,5 @@
 #!/bin/sh
-#       $Id: pkg_update,v 1.67 2010/03/25 08:06:37 cvs Exp $
+#       $Id: pkg_update,v 1.68 2010/04/05 04:39:43 cvs Exp $
 #
 # Copyright (c) 2001-2006
 #       by Dirk Meyer, All rights reserved.
@@ -1085,25 +1085,30 @@ merge_distfiles() {
 			continue
 		fi
 		case "${dir}" in
-		*Old*)
-			if test -f "${mergedistdir}/${dir#Old}${xfile}"
+		/Old/*)
+			echo "${mergedistdir}${dir#/Old}${xfile}"
+			if test -f "${mergedistdir}${dir#/Old}${xfile}"
 			then
 				continue
 			fi
 			;;
 		*)
-			if test -f "${mergedistdir}/Old/${dir}${xfile}"
+			echo "${mergedistdir}/Old${dir}${xfile}"
+			if test -f "${mergedistdir}/Old${dir}${xfile}"
 			then
 				continue
 			fi
+			;;
 		esac
 		if test ! -d "${mergedistdir}${dir}"
 		then
 			echo \
 			mkdir -p "${mergedistdir}${dir}"
+			mkdir -p "${mergedistdir}${dir}"
 		fi
 		echo \
-		cp -pi "${name}" "${mergedistdir}${dir}"
+		cp -pi "${name}" "${mergedistdir}${dir}/"
+		cp -pi "${name}" "${mergedistdir}${dir}/"
 	done
 }
 #
