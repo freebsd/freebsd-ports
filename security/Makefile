@@ -313,7 +313,6 @@
     SUBDIR += newpki-server
     SUBDIR += nikto
     SUBDIR += nmap
-    SUBDIR += nmap-i18n-man
     SUBDIR += nmapsi4
     SUBDIR += nofgpg
     SUBDIR += nsm-console
