@@ -9,7 +9,8 @@
 PORTNAME=	sloth
 PORTVERSION=	1.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://communityprojects.org/apps/sloth/
+MASTER_SITES=	http://www.sourcefiles.org/Utilities/Miscellaneous/ \
+		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}${PKGNAMESUFFIX}/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slow down a process
