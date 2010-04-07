@@ -1,9 +1,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/BSON.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Code.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Connection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Database.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/DataTypes.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Cursor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Collection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Examples.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Indexing.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/GridFS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/OID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/MongoDB/Tutorial.pod
