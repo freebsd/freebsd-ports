@@ -11,8 +11,8 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign
+		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
+# We manually extract the htmldocs.
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
 
@@ -221,9 +221,7 @@ PLIST_SUB+=	CURL="@comment "
 .endif
 
 .ifdef (WITH_HTMLDOCS)
-RUN_DEPENDS+=	${LOCALBASE}/bin/asciidoc:${PORTSDIR}/textproc/asciidoc \
-		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+DISTFILES+=	${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX}
 PLIST_SUB+=	HTMLDOCS=""
 .else
 PLIST_SUB+=	HTMLDOCS="@comment "
@@ -277,9 +275,26 @@ RUN_DEPENDS+=	cvsps:${PORTSDIR}/devel/cvsps
 PLIST_SUB+=	CVS="@comment "
 .endif
 
-verify: checksum
-	@gpg --verify ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign \
-		${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+.if defined(MAINTAINER_MODE)
+DISTFILES+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign \
+		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}.sign
+.if defined(WITH_HTMLDOCS)
+DISTFILES+=	${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX}.sign
+.endif
+verify: fetch
+.for FILE in ${DISTFILES:N*.sign}
+	@${ECHO_MSG} "Checking ${FILE}${EXTRACT_SUFX}"
+	@gpg --verify ${DISTDIR}/${FILE}${EXTRACT_SUFX}.sign ${DISTDIR}/${FILE}${EXTRACT_SUFX} 2>/dev/null || ${ECHO_MSG} "Bad signature!"
+.endfor
+.endif
+
+post-extract:
+.if defined(WITH_HTMLDOCS)
+	@${MKDIR} ${WRKDIR}/htmldocs
+	@cd ${WRKDIR}/htmldocs && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX} \
+		${EXTRACT_AFTER_ARGS}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
@@ -315,8 +330,9 @@ post-install:
 	${INSTALL_MAN} ${WRKDIR}/man7/${i} ${MANPREFIX}/man/man7/
 .endfor
 
-.ifdef (WITH_HTMLDOCS)
-	${GMAKE} -C ${WRKSRC} install-html ${MAKE_ENV} ${MAKE_ARGS}
+.if defined(WITH_HTMLDOCS)
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKDIR}/htmldocs/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
 	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
