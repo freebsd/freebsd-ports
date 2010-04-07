@@ -28,7 +28,7 @@ REINPLACE_ARGS=	-i ""
 USE_IMAKE=	yes
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-IMAKEINCLUDE=	"-I${LOCALBASE}/lib/X11/config -I${WRKSRC}/config"
+IMAKEINCLUDE=	"-I${WRKSRC}/config -I${LOCALBASE}/lib/X11/config"
 MAKE_ENV+=	IMAKEINCLUDE=${IMAKEINCLUDE}
 ALL_TARGET=	World
 SUB_FILES=	pkg-message
@@ -53,6 +53,10 @@ pre-configure:
 	  ${WRKSRC}/config/XView.cf
 	@${REINPLACE_CMD} -e "s,CcCmd cc,CcCmd ${CC}," \
 	  ${WRKSRC}/config/XView.tmpl
+.if ${OSVERSION} < 800090
+	@${REINPLACE_CMD} -e "s/-DCOMPAT_43TTY//" \
+	  ${WRKSRC}/config/XView.tmpl
+.endif
 	@${REINPLACE_CMD} -e 's+/usr/X11/+${LOCALBASE}/+g;' \
 	  ${WRKSRC}/clients/olwm/screen.c
 	${REINPLACE_CMD} -e 's+/usr/lib+${PREFIX}/lib+'	\
