@@ -6,16 +6,23 @@
 #
 
 PORTNAME=	drood
-PORTVERSION=	1.53
+PORTVERSION=	1.54
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
 MAINTAINER=	jimmy@mammothcheese.ca
 COMMENT=	Lightweight kqueue-based http/1.1 server
+
 LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
 
-MAN8=           drood.8 scgid.8
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+MAN8=		drood.8 plunger.8
 
 MANCOMPRESSED=	yes
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
