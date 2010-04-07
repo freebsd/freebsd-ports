@@ -17,6 +17,8 @@ DISTFILES=	${PORTNAME}-0.9.3.2.tar.gz:src \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete and powerful blogging tool
 
+BROKEN=		bad checksum
+
 DATADIR=	${PREFIX}/www/simplog
 NO_BUILD=	yes
 
