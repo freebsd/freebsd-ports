@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	libpcap
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Ubiquitous network traffic capture library
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
@@ -96,16 +92,20 @@ MLINKS=		pcap_datalink_val_to_name.3 \
 		pcap_setnonblock.3 pcap_getnonblock.3
 
 PLIST_FILES+=	bin/pcap-config \
+		include/pcap/bluetooth.h \
 		include/pcap/bpf.h \
+		include/pcap/ipnet.h \
 		include/pcap/namedb.h \
 		include/pcap/pcap.h \
 		include/pcap/sll.h \
 		include/pcap/usb.h \
+		include/pcap/vlan.h \
 		include/pcap.h \
 		include/pcap-namedb.h \
 		include/pcap-bpf.h \
 		lib/libpcap.a \
-		lib/libpcap.so.3 \
+		lib/libpcap.so.1 \
+		lib/libpcap.so.${PORTVERSION} \
 		lib/libpcap.so
 PLIST_DIRS+=	include/pcap
 
