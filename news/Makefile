@@ -81,6 +81,7 @@
     SUBDIR += papercut
     SUBDIR += pgpmoose
     SUBDIR += plor
+    SUBDIR += py-pynzb
     SUBDIR += py-twistedNews
     SUBDIR += py-yenc
     SUBDIR += pyne
