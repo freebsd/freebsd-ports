@@ -1090,6 +1090,7 @@
     SUBDIR += p5-Plack-App-Proxy
     SUBDIR += p5-Plack-Handler-AnyEvent-HTTPD
     SUBDIR += p5-Plack-Handler-AnyEvent-ReverseHTTP
+    SUBDIR += p5-Plack-Handler-SCGI
     SUBDIR += p5-Plack-Middleware-Auth-Digest
     SUBDIR += p5-Plack-Middleware-AutoRefresh
     SUBDIR += p5-Plack-Middleware-Debug

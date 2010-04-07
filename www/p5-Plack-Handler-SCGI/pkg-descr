@@ -1,0 +1,3 @@
+PSGI handler on SCGI daemon.
+
+WWW: http://search.cpan.org/dist/Plack-Handler-SCGI/
