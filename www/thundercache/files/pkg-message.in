@@ -35,5 +35,10 @@ Add %%PREFIX%%/thunder/sbin/log.sh to /etc/crontab according to your needs:
 
 	@hourly			root	%%PREFIX%%/thunder/sbin/log.sh 
 
-Configure %%PREFIX%%/thunder/etc/thunder.conf accordingly.
+Configure %%PREFIX%%/thunder/etc/thunder.conf accordingly and finally, add
+the following line to rc.conf:
+
+	thundercache_enable="YES" 
+
+And start it from %%PREFIX%%/etc/rc.d/thundercache 
 
