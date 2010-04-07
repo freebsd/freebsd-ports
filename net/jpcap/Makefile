@@ -7,13 +7,14 @@
 
 PORTNAME=	jpcap
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	net devel java
 MASTER_SITES=	http://netresearch.ics.uci.edu/kfujii/jpcap/
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	JNI wrapper around libpcap
 
-LIB_DEPENDS=	pcap.3:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	pcap.1:${PORTSDIR}/net/libpcap
 
 USE_GMAKE=	yes
 USE_JAVA=	yes

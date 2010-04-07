@@ -7,6 +7,7 @@
 
 PORTNAME=	xorp-devel
 PORTVERSION=	2009120801
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bms
@@ -18,7 +19,7 @@ COMMENT=	Open source network routing platform, development branch
 # Uses libcurses, libcrypto, librt from base system.
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
-		pcap.3:${PORTSDIR}/net/libpcap
+		pcap.1:${PORTSDIR}/net/libpcap
 
 CONFLICTS=	xorp-1*
 
