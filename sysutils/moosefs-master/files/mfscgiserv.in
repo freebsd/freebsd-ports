@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mfscgiserv
+# REQUIRE: LOGIN 
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf or /etc/rc.conf.local to enable mfscgiserv:
+#
+# mfscgiserv_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=mfscgiserv
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/mfscgiserv
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# set defaults
+mfscgiserv_enable=${mfscgiserv_enable:-"NO"}
+procname="python"
+
+load_rc_config $name
+run_rc_command "$1"

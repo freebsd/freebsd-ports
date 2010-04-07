@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mfsmaster
+# REQUIRE: LOGIN 
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable mfsmaster:
+#
+# mfsmaster_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=mfsmaster
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/${name}
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# set defaults
+mfsmaster_enable=${mfsmaster_enable:-"NO"}
+mfsmaster_flags=${mfsmaster_flags:-"-c %%PREFIX%%/etc/mfsmaster.cfg"}
+
+load_rc_config $name
+run_rc_command "$1"
