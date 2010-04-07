@@ -130,6 +130,7 @@
     SUBDIR += prosody
     SUBDIR += psi
     SUBDIR += py-jabber
+    SUBDIR += py-jabberbot
     SUBDIR += py-msnp
     SUBDIR += py-punjab
     SUBDIR += py-pyxmpp

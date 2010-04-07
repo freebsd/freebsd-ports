@@ -1,0 +1,7 @@
+python-jabberbot is a Jabber bot framework for Python that enables you
+to easily write simple Jabber bots. You can use your Jabber bots to
+provide information about your running systems, to make your website
+interact with your visitors or notify you about updates or changes
+you monitor with your Python scripts.
+
+WWW:	http://thpinfo.com/2007/python-jabberbot/
