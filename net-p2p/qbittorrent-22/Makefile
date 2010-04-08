@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -24,7 +24,7 @@ OPTIONS=	NOTIFY "Enable libnotify support" on \
 		LT_15 "Use 0.15 (devel) version of libtorrent-rasterbar" on
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui network xml imageformats \
+QT_COMPONENTS=	corelib gui network xml \
 		moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
@@ -48,9 +48,7 @@ LIB_DEPENDS+=	torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
 LIB_DEPENDS+=	torrent-rasterbar.5:${PORTSDIR}/net-p2p/libtorrent-rasterbar-14
 .endif
 
-BOOSTLIB_PATTERN=	-e 's|boost_system-mt|boost_system|' \
-			-e 's|boost_filesystem-mt|boost_filesystem|' \
-			-e 's|boost_thread-mt|boost_thread|'
+BOOSTLIB_PATTERN=	-e 's|\*\-mt\*||'
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$$$PREFIX/share/man|${MANPREFIX}/man|' \
