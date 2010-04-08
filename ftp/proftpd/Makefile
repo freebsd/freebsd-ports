@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -42,7 +43,9 @@ CONFLICTS=	proftpd-devel-1.[0-9].*
 
 USE_RC_SUBR=	proftpd
 
-CONFIGURE_ARGS=	--localstatedir=/var/run \
+LOCALSTATEDIR?=	/var/run
+
+CONFIGURE_ARGS=	--localstatedir=${LOCALSTATEDIR} \
 		--with-pkgconfig=libdata/pkgconfig \
 		--sysconfdir=${PREFIX}/etc \
 		--disable-sendfile
@@ -92,6 +95,8 @@ OPTIONS+=	NLS "Use nls (builds mod_lang)" on \
 MODULES?=
 LIBDIRS?=
 INCLUDEDIRS?=
+
+PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 
 .include <bsd.port.pre.mk>
 
@@ -397,6 +402,7 @@ post-configure:
 
 post-install:
 	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf
+	@${MKDIR} ${LOCALSTATEDIR}/proftpd
 .if defined(WITH_SFTP)
 	@cd  ${PREFIX}/etc/proftpd && ${CP} -n dhparams.pem.sample dhparams.pem
 	@cd  ${PREFIX}/etc/proftpd && ${CP} -n blacklist.dat.sample blacklist.dat

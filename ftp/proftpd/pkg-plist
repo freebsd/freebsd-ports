@@ -3,7 +3,6 @@ bin/ftpdctl
 bin/ftptop
 bin/ftpwho
 bin/prxs
-
 @unexec if cmp -s %D/etc/proftpd.conf %D/etc/proftpd.conf.sample; then rm -f %D/etc/proftpd.conf; fi
 etc/proftpd.conf.sample
 @exec cp -n %D/%F %B/proftpd.conf
@@ -13,6 +12,7 @@ etc/proftpd.conf.sample
 %%SFTP%%@unexec if cmp -s %D/etc/proftpd/blacklist.dat %D/etc/proftpd/blacklist.dat.sample; then rm -f %D/etc/proftpd/blacklist.dat; fi
 %%SFTP%%etc/proftpd/blacklist.dat.sample
 %%SFTP%%@exec cp -n %D/%F %B/blacklist.dat
+@exec mkdir %%LOCALSTATEDIR%%/proftpd
 include/proftpd/auth.h
 include/proftpd/bindings.h
 include/proftpd/buildstamp.h
@@ -104,3 +104,4 @@ sbin/proftpd
 %%SFTP%%@dirrmtry etc/proftpd
 @dirrm include/proftpd
 @dirrmtry lib/proftpd
+@unexec rmdir %%LOCALSTATEDIR%%/proftpd 2>/dev/null || true
