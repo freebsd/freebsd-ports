@@ -1,0 +1,41 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Subprocess/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Subprocess
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
+%%SITE_PERL%%/AnyEvent/Subprocess.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/DefaultDelegates.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Delegate.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Done.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Easy.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Handle.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Job.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Running.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Types.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Done/Delegate.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Done/Delegate/CaptureHandle.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Done/Delegate/State.pm
+@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Done/Delegate
+@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Done
+%%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/Callback.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/CaptureHandle.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/CompletionCondvar.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/Handle.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/MonitorHandle.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/PrintError.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate/Pty.pm
+@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Job/Delegate
+@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Job
+%%SITE_PERL%%/AnyEvent/Subprocess/Role/WithDelegates.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Role/WithDelegates/Manager.pm
+@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Role/WithDelegates
+@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Role
+%%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate/Callback.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate/CaptureHandle.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate/CompletionCondvar.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate/Handle.pm
+%%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate/MonitorHandle.pm
+@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Running/Delegate
+@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess/Running
+@dirrmtry %%SITE_PERL%%/AnyEvent/Subprocess
+@dirrmtry %%SITE_PERL%%/AnyEvent
