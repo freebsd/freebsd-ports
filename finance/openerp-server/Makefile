@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openerp-server
-PORTVERSION=	5.0.7
-PORTREVISION=	1
+PORTVERSION=	5.0.9
 CATEGORIES=	finance python
 MASTER_SITES=	http://openerp.com/download/stable/source/
 
@@ -40,6 +39,9 @@ MAN5=		openerp_serverrc.5
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|g' ${WRKSRC}/bin/openerp-server.py
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -51,8 +53,15 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/openerp-server.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/openerp_serverrc.5 ${PREFIX}/man/man5
 
-	${INSTALL_DATA} ${WRKDIR}/openerp-server.conf ${PREFIX}/etc/openerp-server.conf
-	@${ECHO} etc/openerp-server.conf >> ${TMPPLIST}
+	${INSTALL_DATA} ${WRKDIR}/openerp-server.conf ${PREFIX}/etc/openerp-server.conf.sample
+	@if  [ ! -f ${PREFIX}/etc/openerp-server.conf ]; then \
+		${CP} -p ${PREFIX}/etc/openerp-server.conf.sample ${PREFIX}/etc/openerp-server.conf ; \
+	fi
+	@${ECHO} '@unexec if cmp -s %D/etc/openerp-server.conf.sample %D/etc/openerp-server.conf; then rm -f %D/etc/openerp-server.conf; fi' >> ${TMPPLIST}
+	@${ECHO} etc/openerp-server.conf.sample >> ${TMPPLIST}
+	@${ECHO} '@exec if [ ! -f %D/etc/openerp-server.conf ]; then cp -p %D/%F %B/openerp-server.conf; fi' >> ${TMPPLIST}
+
+	@${CHMOD} a+x ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/openerp-server.py
 
 	@${ECHO} bin/openerp-server >> ${TMPPLIST}
 	@${FIND} -s -d ${PYTHON_SITELIBDIR}/${PORTNAME} \
