@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Text/Extract/Word.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Extract/Word/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Extract/Word
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Extract
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/Text/Extract
+@dirrmtry %%SITE_PERL%%/Text
