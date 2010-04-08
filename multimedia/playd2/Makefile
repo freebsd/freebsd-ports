@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	playd2
-PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTVERSION=	2.1.3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://pub.ocpsys.com/bsd/killasmurf86/playd/
+MASTER_SITES=	http://files.bsdroot.lv/FreeBSD/playd/
 
-MAINTAINER=	killasmurf86@gmail.com
+MAINTAINER=	aldis@BSDroot.lv
 COMMENT=	Very easy to use mplayer Perl wrapper script, with useful features
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
@@ -21,13 +20,14 @@ CONFLICTS=	playd-1.[0-9]*
 PROJECTHOST=	playd
 PLIST_FILES=	bin/playd
 MAN1=		playd.1
-WRKSRC=		${WRKDIR}/playd2
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	5.8.9+
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/playd.pl ${PREFIX}/bin/playd
-	${INSTALL_MAN} ${WRKSRC}/playd.1 ${PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/playd.pl ${PREFIX}/bin/playd
+	${INSTALL_MAN} ${WRKSRC}/man/man1/playd.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
