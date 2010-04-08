@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gavin.atkinson@ury.york.ac.uk
 COMMENT=	A command line Gnutella client
 
+DEPRECATED=		No longer under active development
+EXPIRATION_DATE=	2010-10-01
+
 MAN1=		mutella.1
 
 GNU_CONFIGURE=	yes
