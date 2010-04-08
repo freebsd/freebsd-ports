@@ -1,0 +1,3 @@
+bin/umph
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/umph/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/umph
