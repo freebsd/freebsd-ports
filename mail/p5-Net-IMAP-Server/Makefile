@@ -10,7 +10,7 @@ PORTVERSION=	1.26
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	chifeng@gmail.com
 COMMENT=	A single-threaded multiplexing IMAP server implementation
 
 BUILD_DEPENDS=	p5-Net-Server-Coro>=0.6:${PORTSDIR}/net/p5-Net-Server-Coro \
