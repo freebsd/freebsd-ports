@@ -7,9 +7,10 @@
 
 PORTNAME=	ioncube
 DISTVERSION=	3.3.12
+PORTREVISION=	1	# 20100405
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads2.ioncube.com/loader_downloads/ \
-		http://downloads.ioncube.com/loader_downloads/
+		http://dl.dropbox.com/u/4211495/ioncube/
 DISTFILES=	${PORTNAME}_loaders_fre_${VER}_${ARCH_DIST}${EXTRACT_SUFX}
 
 MAINTAINER=	svyatoslav.lempert@gmail.com
@@ -20,22 +21,28 @@ NO_BUILD=	yes
 USE_PHP=	yes
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700055
-VER=		6
-.else
+# Detect Version: for FreeBSD 8.x i386 install 8.x build, else using build for FreeBSD 7.x
+.if ${OSVERSION} >= 800000 && ${ARCH} == i386
+VER=		8
+.endif
+.if (${OSVERSION} >= 700000 && ${OSVERSION} < 800000) || (${OSVERSION} >= 700000 && ${ARCH} == amd64)
 VER=		7
 .endif
-
-.if ${ARCH} == i386
-ARCH_DIST=	x86
-.else
-ARCH_DIST=	x86-64
+.if ${OSVERSION} < 700000
+VER=		6
 .endif
 
+# Detect OS Architecture
+.if ${ARCH} == amd64
+ARCH_DIST=	x86-64
+.else
+ARCH_DIST=	x86
+.endif
+
+# Detect PHP version
 .if ${PHP_VER} >= 5
 PHP_INSTVER=	5.2
 .else
