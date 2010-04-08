@@ -9312,6 +9312,9 @@ moonlander                      ports/games/moonlander
 moonlight                       ports/multimedia/moonlight
 moonshine                       ports/www/moonshine
 mooseekd                        ports/net-p2p/mooseekd
+moosefs-chunkserver             ports/sysutils/moosefs-chunkserver
+moosefs-client                  ports/sysutils/moosefs-client
+moosefs-master                  ports/sysutils/moosefs-master
 mopac                           ports/biology/mopac
 mopd                            ports/net/mopd
 morebalance                     ports/net/morebalance
@@ -9898,7 +9901,6 @@ nl-ispell                       ports/textproc/nl-ispell
 nload                           ports/net/nload
 nltk                            ports/textproc/nltk
 nmap                            ports/security/nmap
-nmap-i18n-man                   ports/security/nmap-i18n-man
 nmapsi4                         ports/security/nmapsi4
 nmh                             ports/mail/nmh
 nml                             ports/lang/nml
@@ -13195,6 +13197,7 @@ p5-Plack                        ports/www/p5-Plack
 p5-Plack-App-Proxy              ports/www/p5-Plack-App-Proxy
 p5-Plack-Handler-AnyEvent-HTTPD  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-Plack-Handler-AnyEvent-ReverseHTTP  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
+p5-Plack-Handler-SCGI           ports/www/p5-Plack-Handler-SCGI
 p5-Plack-Middleware-Auth-Digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-Plack-Middleware-AutoRefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-Plack-Middleware-Debug       ports/www/p5-Plack-Middleware-Debug
@@ -16954,6 +16957,7 @@ p5-plack                        ports/www/p5-Plack
 p5-plack-app-proxy              ports/www/p5-Plack-App-Proxy
 p5-plack-handler-anyevent-httpd  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-plack-handler-anyevent-reversehttp  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
+p5-plack-handler-scgi           ports/www/p5-Plack-Handler-SCGI
 p5-plack-middleware-auth-digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-plack-middleware-autorefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-plack-middleware-debug       ports/www/p5-Plack-Middleware-Debug
@@ -20251,6 +20255,7 @@ py-irclib                       ports/irc/py-irclib
 py-istring                      ports/devel/py-istring
 py-itools                       ports/devel/py-itools
 py-jabber                       ports/net-im/py-jabber
+py-jabberbot                    ports/net-im/py-jabberbot
 py-jaxml                        ports/textproc/py-jaxml
 py-jcc                          ports/devel/py-jcc
 py-jinja                        ports/devel/py-Jinja
@@ -20366,6 +20371,7 @@ py-openal                       ports/audio/py-openal
 py-openbabel                    ports/science/py-openbabel
 py-opengl                       ports/graphics/py-opengl
 py-openid                       ports/security/py-openid
+py-openlp                       ports/multimedia/py-openlp
 py-openssl                      ports/security/py-openssl
 py-openssl-proxy                ports/www/py-openssl-proxy
 py-optik                        ports/devel/py-optik
@@ -20414,6 +20420,7 @@ py-pqueue                       ports/devel/py-pqueue
 py-prewikka                     ports/www/py-prewikka
 py-prioritized_methods          ports/devel/py-prioritized_methods
 py-probstat                     ports/math/py-probstat
+py-progressbar                  ports/misc/py-progressbar
 py-prolog                       ports/lang/py-prolog
 py-protobuf                     ports/devel/py-protobuf
 py-protocols                    ports/devel/py-protocols
@@ -20456,6 +20463,7 @@ py-pylons                       ports/www/py-pylons
 py-pymarc                       ports/devel/py-pymarc
 py-pymc                         ports/math/py-pymc
 py-pyme                         ports/security/py-pyme
+py-pynzb                        ports/news/py-pynzb
 py-pypcap                       ports/net/py-pypcap
 py-pypgsql                      ports/databases/py-pyPgSQL
 py-pyproj                       ports/graphics/py-pyproj
