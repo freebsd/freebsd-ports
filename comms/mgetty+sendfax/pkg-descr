@@ -1,4 +1,4 @@
-Mgetty is a ``smart'' getty replacement, designed to be used with Hayes
+Mgetty is a "smart" getty replacement, designed to be used with Hayes
 compatible data and data/fax modems.
 
 Mgetty knows about modem initialization, manual modem answering (so your
@@ -11,4 +11,4 @@ Sendfax sends the named g3 fax files to the fax machine at "phone number".
 The g3 files can be created with pbmtog3(1) or GNU's GhostScript with the
 "digifax" driver.
 
-WWW: http://www.webforum.de/mgetty-faq.html
+WWW: http://mgetty.greenie.net/
