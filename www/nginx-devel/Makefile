@@ -185,7 +185,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_MODUL
 .endif
 
 .if defined(WITH_ECHO_MODULE)
-NGINX_ECHO_MODULE_VERSION=	0.26
+NGINX_ECHO_MODULE_VERSION=	0.27
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:echo/}
 MASTER_SITE_SUBDIR+=	osa/:echo
 DISTFILES+=	ngx_echo_module-${NGINX_ECHO_MODULE_VERSION}.tar.gz:echo
@@ -461,10 +461,6 @@ post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!' \
 		${WRKSRC}/conf/nginx.conf
-.if defined(WITH_ECHO_MODULE)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_echo_timer.c
-.endif
 .if defined(WITH_HTTP_ACCESSKEY_MODULE)
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
