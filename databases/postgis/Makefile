@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgis
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://postgis.refractions.net/download/ \
   		http://www.postgis.org/download/
@@ -66,8 +66,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/postgis_restore.pl ${DATADIR}/utils/
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/test_joinestimation.pl ${DATADIR}/utils/
 	@${MKDIR} ${PREFIX}/lib/postgresql
-	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.4.so ${PREFIX}/lib/postgresql/postgis.so
-	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.4.so ${PREFIX}/lib/postgresql/liblwgeom.so.1
-	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.4.so ${PREFIX}/lib/postgresql/liblwgeom.so
+	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.5.so ${PREFIX}/lib/postgresql/postgis.so
+	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.5.so ${PREFIX}/lib/postgresql/liblwgeom.so.1
+	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.5.so ${PREFIX}/lib/postgresql/liblwgeom.so
 
 .include <bsd.port.post.mk>
