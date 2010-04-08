@@ -7,6 +7,7 @@
 
 PORTNAME=	huludesktop
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.hulu.com/
 PKGNAMEPREFIX=	linux-
@@ -20,6 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 LINUX_RPM_ARCH=	i386
 
 USE_LINUX=	f10
+USE_LINUX_APPS=	gtk2
 NO_BUILD=	yes
 
 RPM2CPIO?=	${LOCALBASE}/bin/rpm2cpio
