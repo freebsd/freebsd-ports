@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pidgin-sipe
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.10.0
 CATEGORIES=	net-im
 MASTER_SITES=	SF/sipe/sipe/${DISTNAME}
 
@@ -22,10 +21,14 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	${PREFIX}/lib/pidgin
-USE_GETTEXT=	yes
+PORTDOCS=	AUTHORS ChangeLog COPYING HACKING INSTALL NEWS README TODO VERSION
 
 CFLAGS+=	"-I/${LOCALBASE}/include"
 LIBS+=		"-L/${LOCALBASE}/lib"
+
+CONFIGURE_ARGS+=	--enable-purple \
+			--disable-telepathy \
+			--without-krb5
 
 CONFIGURE_ENV+=	LIBS="${LIBS}" \
 		COM_ERR_CFLAGS="-I/usr/include" \
@@ -34,9 +37,17 @@ CONFIGURE_ENV+=	LIBS="${LIBS}" \
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-.for f in AUTHORS ChangeLog COPYING HACKING INSTALL NEWS README TODO
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.for docs in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}/
 .endfor
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
 .endif
 
 .include <bsd.port.mk>
