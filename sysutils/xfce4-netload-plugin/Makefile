@@ -22,10 +22,4 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800045
-BROKEN=		does not compile: error: net/if_ppp.h: No such file or directory
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
