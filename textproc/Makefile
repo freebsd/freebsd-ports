@@ -661,6 +661,7 @@
     SUBDIR += p5-Text-Emoticon-GoogleTalk
     SUBDIR += p5-Text-Emoticon-MSN
     SUBDIR += p5-Text-EtText
+    SUBDIR += p5-Text-Extract-Word
     SUBDIR += p5-Text-ExtractWords
     SUBDIR += p5-Text-FillIn
     SUBDIR += p5-Text-Filter
