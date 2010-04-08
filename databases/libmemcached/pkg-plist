@@ -40,7 +40,9 @@ include/libmemcached/protocol/cache.h
 include/libmemcached/protocol/callback.h
 include/libmemcached/quit.h
 include/libmemcached/result.h
+include/libmemcached/sasl.h
 include/libmemcached/server.h
+include/libmemcached/server_list.h
 include/libmemcached/stats.h
 include/libmemcached/storage.h
 include/libmemcached/strerror.h
