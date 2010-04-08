@@ -1,0 +1,8 @@
+Net::Traceroute::PurePerl implements traceroute(1) functionality for
+perl5. It allows you to trace the path IP packets take to a destination.
+It is implemented by using raw sockets to act just like the regular
+traceroute.
+
+You must also be root to use the raw sockets.
+
+WWW: http://search.cpan.org/dist/Net-Traceroute-PurePerl
