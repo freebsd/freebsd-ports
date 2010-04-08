@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pino
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.5
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 
@@ -16,6 +15,7 @@ COMMENT=	A simple and fast Twitter and Identi.ca client
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee \
+		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		notify.1:${PORTSDIR}/devel/libnotify \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
@@ -27,6 +27,10 @@ USE_GETTEXT=	yes
 USE_PYTHON_BUILD=	yes
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
+		${WRKSRC}/indicator/pino
 
 do-configure:
 	@cd ${WRKSRC} && ./waf configure --prefix="${PREFIX}"
