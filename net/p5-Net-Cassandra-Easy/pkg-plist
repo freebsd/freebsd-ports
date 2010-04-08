@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Net/Cassandra/Easy.pm
+%%SITE_PERL%%/Net/Cassandra/cassidy.pl
+%%SITE_PERL%%/Net/GenCassandra/Cassandra.pm
+%%SITE_PERL%%/Net/GenCassandra/Constants.pm
+%%SITE_PERL%%/Net/GenCassandra/Types.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/BinaryProtocol.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/BufferedTransport.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/FramedTransport.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/HttpClient.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/MemoryBuffer.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/Protocol.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/Socket.pm
+%%SITE_PERL%%/Net/GenThrift/Thrift/Transport.pm
+%%SITE_PERL%%/mach/auto/Net/Cassandra/Easy/.packlist
+@dirrmtry %%SITE_PERL%%/mach/auto/Net/Cassandra/Easy
+@dirrmtry %%SITE_PERL%%/mach/auto/Net/Cassandra
+@dirrmtry %%SITE_PERL%%/mach/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/GenThrift/Thrift
+@dirrmtry %%SITE_PERL%%/Net/GenThrift
+@dirrmtry %%SITE_PERL%%/Net/GenCassandra
+@dirrmtry %%SITE_PERL%%/Net/Cassandra
+@dirrmtry %%SITE_PERL%%/Net
