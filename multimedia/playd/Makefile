@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	playd
-PORTVERSION=	1.3.7
-PORTREVISION=	2
+PORTVERSION=	1.3.8
 CATEGORIES=	multimedia
-MASTER_SITES=	http://pub.ocpsys.com/bsd/killasmurf86/playd/
+MASTER_SITES=	http://files.bsdroot.lv/FreeBSD/playd/
 
-MAINTAINER=	killasmurf86@gmail.com
+MAINTAINER=	aldis@BSDroot.lv
 COMMENT=	Very easy to use mplayer sh wrapper script, with useful features
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
@@ -24,7 +23,7 @@ WRKSRC=		${WRKDIR}/playd
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/playd.sh ${PREFIX}/bin/playd
-	${INSTALL_MAN} ${WRKSRC}/playd.1 ${PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/playd.sh ${PREFIX}/bin/playd
+	${INSTALL_MAN} ${WRKSRC}/man/man1/playd.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
