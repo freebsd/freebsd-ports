@@ -299,6 +299,7 @@
     SUBDIR += tstools
     SUBDIR += tunapie
     SUBDIR += tv_grab_au
+    SUBDIR += umph
     SUBDIR += umr
     SUBDIR += v4l_compat
     SUBDIR += vamps
