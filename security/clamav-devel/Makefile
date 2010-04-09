@@ -28,8 +28,6 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		STDERR "Print logs to stderr instead of stdout" Off
 
 USE_GCC=		4.2+
-USE_PYTHON_BUILD=	yes
-USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 MAKE_JOBS_SAFE=		yes
 USE_LDCONFIG=		yes
@@ -114,18 +112,7 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 
 PORTSCOUT=	ignore:1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-CFLAGS+=	-march=i486
-.endif
-
-.if ${OSVERSION} >= 700000
-BUILD_DEPENDS+=	${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
-CONFIGURE_ARGS+=--enable-check
-.else
-CONFIGURE_ARGS+=--disable-check
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(WITH_ARC)
 RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
@@ -154,6 +141,8 @@ CONFIGURE_ARGS+=--without-iconv
 
 .if defined(WITH_LLVM)
 CONFIGURE_ARGS+=--enable-llvm
+USE_PYTHON_BUILD=	yes
+USE_GMAKE=		yes
 .else
 CONFIGURE_ARGS+=--disable-llvm
 .endif
@@ -181,6 +170,19 @@ PLIST_SUB+=	CLAMAV-MILTER="@comment "
 
 .if defined(WITH_STDERR)
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-shared_output.c
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS+=	-march=i486
+.endif
+
+.if ${OSVERSION} >= 700000
+BUILD_DEPENDS+=	${LOCALBASE}/include/check.h:${PORTSDIR}/devel/libcheck
+CONFIGURE_ARGS+=--enable-check
+.else
+CONFIGURE_ARGS+=--disable-check
 .endif
 
 post-patch:
