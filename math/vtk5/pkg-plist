@@ -2387,8 +2387,6 @@ lib/vtk-%%VER2%%/vtkRenderingKit.cmake
 lib/vtk-%%VER2%%/vtkViewsKit.cmake
 lib/vtk-%%VER2%%/vtkVolumeRenderingKit.cmake
 lib/vtk-%%VER2%%/vtkWidgetsKit.cmake
-@comment The following directory is shared with multimedia/vtkmpeg2encode
-@dirrmtry include/vtk-%%VER2%%
 %%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkwidgets
 %%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkvolumerendering
 %%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkviews
@@ -2444,3 +2442,5 @@ lib/vtk-%%VER2%%/vtkWidgetsKit.cmake
 @dirrm include/vtk-%%VER2%%/vtkfreetype
 @dirrm include/vtk-%%VER2%%/internal
 @dirrm include/vtk-%%VER2%%/alglib
+@comment The following directory is shared with multimedia/vtkmpeg2encode
+@dirrmtry include/vtk-%%VER2%%
