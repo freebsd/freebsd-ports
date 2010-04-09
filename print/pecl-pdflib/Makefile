@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	2.1.6
-PORTREVISION=	1
+PORTVERSION=	2.1.7
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -25,9 +24,5 @@ USE_PHPEXT=	yes
 PHP_MODNAME=	pdf
 
 CONFIGURE_ARGS=	--with-pdflib=${LOCALBASE}
-
-post-extract:
-	@${ECHO_CMD} "#define PHP_PDFLIB_VERSION \"${PORTVERSION}\"" > \
-		${WRKSRC}/php_pdflib.h
 
 .include <bsd.port.mk>
