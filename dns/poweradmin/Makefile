@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	poweradmin
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	dns www
 MASTER_SITES=	https://www.poweradmin.org/download/
 EXTRACT_SUFX=	.tgz
@@ -15,12 +14,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	A set of PHP-scripts to manage PowerDNS over the web
 
-USE_PHP=	gettext
+USE_PHP=	gettext session
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PEARDIR=	${PREFIX}/share/pear
 
-OPTIONS=	POSTGRESQL "Use PostgreSQL database instead of MySQL" off
+OPTIONS=    	MYSQL	"Use Mysql database support" on \
+		PGSQL	"Use Pgsql database support" off
 
 SUB_FILES=	pkg-message
 
@@ -31,10 +31,12 @@ PLIST=		${WRKDIR}/plist
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_POSTGRESQL)
-RUN_DEPENDS+=	${PEARDIR}/MDB2/Driver/pgsql.php:${PORTSDIR}/databases/pear-MDB2_Driver_pgsql
-.else
+.if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${PEARDIR}/MDB2/Driver/mysql.php:${PORTSDIR}/databases/pear-MDB2_Driver_mysql
+.endif
+
+.if defined(WITH_PGSQL)
+RUN_DEPENDS+=	${PEARDIR}/MDB2/Driver/pgsql.php:${PORTSDIR}/databases/pear-MDB2_Driver_pgsql
 .endif
 
 post-extract:
@@ -65,7 +67,7 @@ install-app:
 
 install-conf: install-app
 	cd ${WWWDIR}/${CFGDIR} ; \
-	${CHMOD} 0640 config-me.inc.php ; \
+	${CHMOD} 0644 config-me.inc.php ; \
 	if ${TEST} ! -f ${CFGFILE} ; then \
 		${CP} -p config-me.inc.php ${CFGFILE} ; \
 	fi
