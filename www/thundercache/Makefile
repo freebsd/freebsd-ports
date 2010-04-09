@@ -22,6 +22,8 @@ OPTIONS=	DEPENDACK "I have read and understood the depends needs" on \
 		PHP "Install PHP for reporting generating" on \
 		PGSQL "Install PostgreSQL (report data storing)" on
 
+BROKEN=		conflicting dependencies
+
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
 
