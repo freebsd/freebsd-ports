@@ -18,6 +18,7 @@ include/ctpp2/CTPP2JSONParser.hpp
 include/ctpp2/CTPP2Parser.hpp
 include/ctpp2/CTPP2ParserException.hpp
 include/ctpp2/CTPP2SourceLoader.hpp
+include/ctpp2/CTPP2StringBuffer.hpp
 include/ctpp2/CTPP2SymbolTable.hpp
 include/ctpp2/CTPP2Syntax.h
 include/ctpp2/CTPP2SysHeaders.h
