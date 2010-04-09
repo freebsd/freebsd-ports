@@ -20,6 +20,8 @@ COMMENT=	PHP extension for pslib to generate postscript
 
 LIB_DEPENDS=	ps.4:${PORTSDIR}/print/pslib
 
+BROKEN=		does not configure
+
 USE_PHP=	yes
 USE_PHPEXT=	yes
 DEFAULT_PHP_VER=	5
