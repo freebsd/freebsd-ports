@@ -21,7 +21,7 @@ RUN_DEPENDS=	newsp:${PORTSDIR}/print/mp-letter
 
 USE_IMAKE=	yes
 USE_XORG=	xmu xpm xt sm ice xext x11
-MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
+MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 CC="${CC}" \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
 .if defined(MAKE_JOBS)
 MAKE_ARGS+=	-j${MAKE_JOBS}
