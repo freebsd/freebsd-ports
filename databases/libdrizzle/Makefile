@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libdrizzle
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	databases
-MASTER_SITES=	http://launchpadlibrarian.net/37807343/ \
+MASTER_SITES=	http://launchpadlibrarian.net/41155299/ \
 		LOCAL/glarkin
 
 MAINTAINER=	glarkin@FreeBSD.org
