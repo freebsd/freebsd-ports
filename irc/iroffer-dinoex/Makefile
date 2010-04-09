@@ -16,11 +16,12 @@ DISTNAME=	iroffer-dinoex-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.ORG
 COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 
+CONFLICTS=	iroffer-1* iroffer-lamm-1.*
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 MAN1=		iroffer.1
-
-CONFLICTS=	iroffer-1* iroffer-lamm-1.*
+CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
 
 OPTIONS=	CURL	"build ftp/http support"	on \
 		RUBY	"build RUBY script support"	on \
