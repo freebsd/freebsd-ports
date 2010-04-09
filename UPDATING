@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100409:
+  AFFECTS: users of lang/php5
+  AUTHOR: ale@FreeBSD.org
+
+  As of php 5.3, a few extensions were removed from or included into the core
+  php5 package.  Follow the steps below to update your installation.
+
+  1) Delete the following packages (if installed):
+     - php5-dbase
+     - php5-ncurses
+     - php5-pcre
+     - php5-spl
+     - php5-ming
+     - php5-mhash
+
+  2) Rebuild php5 and all ports depending on it.
+
 20100403:
   AFFECTS: users of net/dgd
   AUTHOR: glewis@FreeBSD.org

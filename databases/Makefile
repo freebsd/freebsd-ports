@@ -498,7 +498,6 @@
     SUBDIR += php4-sybase_ct
     SUBDIR += php5-creole
     SUBDIR += php5-dba
-    SUBDIR += php5-dbase
     SUBDIR += php5-interbase
     SUBDIR += php5-mssql
     SUBDIR += php5-mysql

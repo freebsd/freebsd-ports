@@ -688,7 +688,6 @@
     SUBDIR += php5-exif
     SUBDIR += php5-ffmpeg
     SUBDIR += php5-gd
-    SUBDIR += php5-ming
     SUBDIR += phplot
     SUBDIR += phpsview
     SUBDIR += picpuz

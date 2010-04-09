@@ -48,7 +48,8 @@ PHP_VER?=	${DEFAULT_PHP_VER}
 .if ${PHP_VER} == 4
 PHP_EXT_DIR=	20020429
 .else
-PHP_EXT_DIR=	20060613
+PHP_EXT_DIR=	20090626
+PHP_EXT_INC=	pcre spl
 .endif
 
 HTTPD?=		${LOCALBASE}/sbin/httpd
@@ -136,18 +137,18 @@ check-makevars::
 
 .endif
 
-PHP_PORT=	${PORTSDIR}/lang/php${PHP_VER}
+PHP_PORT?=	lang/php${PHP_VER}
 
 .if defined(USE_PHP_BUILD)
-BUILD_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PHP_PORT}
+BUILD_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
 .endif
-RUN_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PHP_PORT}
+RUN_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
 
 PLIST_SUB+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 SUB_LIST+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 
 .if defined(USE_PHPIZE) || defined(USE_PHPEXT)
-BUILD_DEPENDS+=	${PHPBASE}/bin/phpize:${PHP_PORT}
+BUILD_DEPENDS+=	${PHPBASE}/bin/phpize:${PORTSDIR}/${PHP_PORT}
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS+=	autoconf:262:env
 CONFIGURE_ARGS+=--with-php-config=${PHPBASE}/bin/php-config
@@ -234,19 +235,19 @@ php-ini:
 # Extensions
 .if defined(_POSTMKINCLUDED) && ${USE_PHP:L} != "yes"
 # non-version specific components
-_USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba dbase \
+_USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba \
 		exif fileinfo fribidi ftp gd gettext gmp \
 		hash iconv imap interbase json ldap mbstring mcrypt \
-		memcache mhash mssql mysql ncurses odbc \
+		memcache mssql mysql odbc \
 		openssl pcntl pcre pdf pgsql posix \
 		pspell radius readline recode session shmop snmp \
 		sockets sybase_ct sysvmsg sysvsem sysvshm \
 		tokenizer wddx xml xmlrpc yaz zip zlib
 # version specific components
-_USE_PHP_VER4=	${_USE_PHP_ALL} crack dbx dio domxml filepro mcal mcve \
-		oracle overload pfpro xslt yp
-_USE_PHP_VER5=	${_USE_PHP_ALL} dom filter ming mysqli oci8 pdo \
-		pdo_mysql pdo_sqlite \
+_USE_PHP_VER4=	${_USE_PHP_ALL} crack dbase dbx dio domxml filepro mcal mcve \
+		mhash ncurses oracle overload pfpro xslt yp
+_USE_PHP_VER5=	${_USE_PHP_ALL} dom filter mysqli oci8 pdo \
+		pdo_mysql pdo_pgsql pdo_sqlite \
 		simplexml soap spl sqlite tidy xmlreader xmlwriter xsl
 
 apc_DEPENDS=	www/pecl-APC
@@ -282,7 +283,6 @@ mcrypt_DEPENDS=	security/php${PHP_VER}-mcrypt
 mcve_DEPENDS=	devel/php${PHP_VER}-mcve
 memcache_DEPENDS=	databases/pecl-memcache
 mhash_DEPENDS=	security/php${PHP_VER}-mhash
-ming_DEPENDS=	graphics/php${PHP_VER}-ming
 mssql_DEPENDS=	databases/php${PHP_VER}-mssql
 mysql_DEPENDS=	databases/php${PHP_VER}-mysql
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
@@ -297,6 +297,7 @@ pcre_DEPENDS=	devel/php${PHP_VER}-pcre
 pdf_DEPENDS=	print/pecl-pdflib
 pdo_DEPENDS=	databases/php${PHP_VER}-pdo
 pdo_mysql_DEPENDS=	databases/php${PHP_VER}-pdo_mysql
+pdo_pgsql_DEPENDS=	databases/php${PHP_VER}-pdo_pgsql
 pdo_sqlite_DEPENDS=	databases/php${PHP_VER}-pdo_sqlite
 pfpro_DEPENDS=	finance/php${PHP_VER}-pfpro
 pgsql_DEPENDS=	databases/php${PHP_VER}-pgsql
@@ -348,11 +349,16 @@ BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/${
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/${${extension}_DEPENDS}
 .			endif
 .		else
-isyes=		${extension}
-.			if ${isyes:L} != "yes"
+ext=		${extension}
+.			if ${ext} == "mhash" && ${PHP_VER} == 5
+.				if defined(USE_PHP_BUILD)
+BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/hash.so:${PORTSDIR}/${hash_DEPENDS}
+.				endif
+RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/hash.so:${PORTSDIR}/${hash_DEPENDS}
+.			elif ${ext:L} != "yes"
 check-makevars::
-				@${ECHO_CMD} "Unknown extension ${extension} for PHP ${PHP_VER}."
-				@${FALSE}
+			@${ECHO_CMD} "Unknown extension ${extension} for PHP ${PHP_VER}."
+			@${FALSE}
 .			endif
 .		endif
 .	endfor
