@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	portrac
-PORTVERSION=	0.1b
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://e-soul.org/distfiles/ \
 		http://home.e-soul.org/~mgp/distfiles/
 
 MAINTAINER=	mgp@e-soul.org
-COMMENT=	A simple GUI tool for tracking port updates.
+COMMENT=	A simple GUI tool for tracking port updates
 
 PLIST_FILES=	bin/portrac \
 		share/portrac/portrac.png \
