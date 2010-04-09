@@ -4355,3 +4355,9 @@ www/p5-Plack-Request||2010-04-03|Incorporated to www/p5-Plack
 net-im/pidgin-birthday_reminder|net-im/pidgin-birthday-reminder|2010-04-05|Project was renamed
 misc/proj4|graphics/proj|2010-04-05|Replaced
 sysutils/phplogcon|sysutils/loganalyzer|2010-04-05|Project was renamed
+databases/php5-dbase||2010-04-09|Removed from core php
+devel/php5-ncurses||2010-04-09|Removed from core php
+devel/php5-pcre|lang/php5|2010-04-09|Bundled in core php
+devel/php5-spl|lang/php5|2010-04-09|Bundled in core php
+graphics/php5-ming||2010-04-09|Removed from core php
+security/php5-mhash|security/php5-hash|2010-04-09|Wrapper in hash extension

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.2.12
-PORTREVISION?=	2
+PORTVERSION=	5.3.2
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	\
 		--disable-all \
 		--enable-libxml \
 		--with-libxml-dir=${LOCALBASE} \
-		--enable-reflection \
 		--program-prefix=""
 
 USE_GNOME=	libxml2
@@ -38,14 +37,10 @@ OPTIONS=	CLI "Build CLI version" on \
 		CGI "Build CGI version" on \
 		APACHE "Build Apache module" off \
 		DEBUG "Enable debug" off \
-		SUHOSIN "Enable Suhosin protection system (not for jails)" on \
+		SUHOSIN "Enable Suhosin protection system" on \
 		MULTIBYTE "Enable zend multibyte support" off \
 		IPV6 "Enable ipv6 support" on \
-		MAILHEAD "Enable mail header patch" off \
-		REDIRECT "Enable force-cgi-redirect support (CGI only)" off \
-		DISCARD "Enable discard-path support (CGI only)" off \
-		FASTCGI "Enable fastcgi support (CGI only)" on \
-		PATHINFO "Enable path-info-check support (CGI only)" on
+		MAILHEAD "Enable mail header patch" off
 
 CONFLICTS=	php4-4*
 
@@ -56,8 +51,7 @@ MAN1=		php-config.1 phpize.1
 PATCH_DIST_STRIP=	-p1
 
 .if !defined(WITHOUT_SUHOSIN)
-#PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.7.patch.gz:suhosin
-PATCHFILES+=	suhosin-patch-5.2.11-0.9.7.patch.gz:suhosin
+PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.9.1.patch.gz:suhosin
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
@@ -65,8 +59,7 @@ PLIST_SUB+=	SUHOSIN="@comment "
 .endif
 
 .if defined(WITH_MAILHEAD)
-#PATCHFILES+=	php-${PORTVERSION}-mail-header.patch:mail
-PATCHFILES+=	php-5.2.10-mail-header.patch:mail
+PATCHFILES+=	php-${PORTVERSION}-mail-header.patch:mail
 PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
@@ -82,18 +75,6 @@ CONFIGURE_ARGS+=--disable-cli
 .if !defined(WITHOUT_CGI)
 PHP_SAPI+=	cgi
 PLIST_SUB+=	CGI=""
-.if defined(WITH_REDIRECT)
-CONFIGURE_ARGS+=--enable-force-cgi-redirect
-.endif
-.if defined(WITH_DISCARD)
-CONFIGURE_ARGS+=--enable-discard-path
-.endif
-.if !defined(WITHOUT_FASTCGI)
-CONFIGURE_ARGS+=--enable-fastcgi
-.endif
-.if defined(WITHOUT_PATHINFO)
-CONFIGURE_ARGS+=--disable-path-info-check
-.endif
 .else
 PLIST_SUB+=	CGI="@comment "
 CONFIGURE_ARGS+=--disable-cgi
@@ -105,6 +86,9 @@ USE_APACHE=	1.3+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${APACHE_VERSION} > 13
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
+.if ${APACHE_VERSION} == 20
+WITH_BUNDLED_PCRE=	yes
+.endif
 .else
 CONFIGURE_ARGS+=--with-apxs=${APXS}
 .endif
@@ -116,12 +100,19 @@ PLIST_SUB+=	APACHE=""
 PLIST_SUB+=	APACHE="@comment "
 .endif
 
+.if defined(WITH_BUNDLED_PCRE)
+CONFIGURE_ARGS+=--with-pcre-regex=yes
+PLIST_SUB+=	PCRE=""
+.else
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+CONFIGURE_ARGS+=--with-pcre-regex=${LOCALBASE}
+PLIST_SUB+=	PCRE="@comment "
+.endif
+
 .if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
 CONFIGURE_ARGS+=--with-regex=php
 .elif defined(WITH_REGEX_TYPE) && ${WITH_REGEX_TYPE} == "system"
 CONFIGURE_ARGS+=--with-regex=system
-.elif defined(WITH_REGEX_TYPE) && ${WITH_REGEX_TYPE} == "apache"
-CONFIGURE_ARGS+=--with-regex=apache
 .endif
 
 .if !defined(WITH_ZEND_VM) || ${WITH_ZEND_VM} == "CALL"
@@ -162,10 +153,14 @@ post-build:
 	@${ECHO_CMD} "PHP_VER=5" > ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
+	@${ECHO_CMD} "PHP_EXT_INC=pcre spl" >> ${WRKDIR}/php.conf
+
+test: build
+	@(cd ${WRKSRC} && ${MAKE} test)
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
-	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKSRC}/php.ini-development ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKSRC}/php.ini-production ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
 .if defined(WITH_APACHE)

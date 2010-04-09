@@ -20,13 +20,7 @@ PHP_HEADER_DIRS=libbcmath libbcmath/src
 .endif
 
 .if ${PHP_MODNAME} == "bz2"
-.if exists(/usr/bin/bzip2)
-BZ2BASE=	/usr
-.else
-BZ2BASE=	${LOCALBASE}
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
-CONFIGURE_ARGS+=--with-bz2=${BZ2BASE}
+CONFIGURE_ARGS+=--with-bz2=/usr
 .endif
 
 .if ${PHP_MODNAME} == "calendar"
@@ -56,18 +50,11 @@ OPTIONS=	CDB "cdb database support" on \
 PHP_HEADER_DIRS=	libcdb libflatfile libinifile
 .endif
 
-.if ${PHP_MODNAME} == "dbase"
-CONFIGURE_ARGS+=--enable-dbase
-.endif
-
 .if ${PHP_MODNAME} == "dom"
 CONFIGURE_ARGS+=--enable-dom \
 		--with-libxml-dir=${LOCALBASE}
 
 USE_GNOME=	libxml2
-
-USE_PHP=	spl
-USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "exif"
@@ -77,9 +64,6 @@ CONFIGURE_ARGS+=--enable-exif
 .if ${PHP_MODNAME} == "filter"
 CONFIGURE_ARGS+=--enable-filter \
 		--with-pcre-dir=${LOCALBASE}
-
-USE_PHP=	pcre
-USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "ftp"
@@ -127,12 +111,12 @@ CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "hash"
-CONFIGURE_ARGS+=--enable-hash
+CONFIGURE_ARGS+=--enable-hash \
+		--with-mhash
 .endif
 
 .if ${PHP_MODNAME} == "iconv"
-CONFIGURE_ARGS+=--with-iconv=${LOCALBASE} \
-		--with-iconv-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
 
 USE_ICONV=	yes
 .endif
@@ -140,7 +124,8 @@ USE_ICONV=	yes
 .if ${PHP_MODNAME} == "imap"
 LIB_DEPENDS+=	c-client4.9:${PORTSDIR}/mail/cclient
 
-CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
+CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \
+		--with-pcre-dir=${LOCALBASE}
 .if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=--with-imap-ssl=${OPENSSLBASE}
 
@@ -170,11 +155,14 @@ CONFIGURE_ARGS+=--with-ldap-sasl
 .endif
 
 .if ${PHP_MODNAME} == "mbstring"
-CONFIGURE_ARGS+=--enable-mbstring
+LIB_DEPENDS+=	onig.1:${PORTSDIR}/devel/oniguruma4
+
+CONFIGURE_ARGS+=--enable-mbstring \
+		--with-onig=${LOCALBASE}
 
 OPTIONS=	REGEX "Enable multibyte regex support" on
 
-PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls oniguruma
+PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
 .endif
 
 .if ${PHP_MODNAME} == "mcrypt"
@@ -183,18 +171,6 @@ LIB_DEPENDS+=	mcrypt.8:${PORTSDIR}/security/libmcrypt
 CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
 
 USE_AUTOTOOLS=	libltdl:22
-.endif
-
-.if ${PHP_MODNAME} == "mhash"
-LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
-
-CONFIGURE_ARGS+=--with-mhash=${LOCALBASE}
-.endif
-
-.if ${PHP_MODNAME} == "ming"
-LIB_DEPENDS+=	ming.4:${PORTSDIR}/graphics/ming
-
-CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "mssql"
@@ -215,13 +191,6 @@ CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
 
 USE_MYSQL=	yes
 BROKEN_WITH_MYSQL=	323 40
-
-USE_PHP=	spl
-USE_PHP_BUILD=	yes
-.endif
-
-.if ${PHP_MODNAME} == "ncurses"
-CONFIGURE_ARGS+=--with-ncurses=/usr
 .endif
 
 .if ${PHP_MODNAME} == "oci8"
@@ -247,10 +216,6 @@ USE_OPENSSL=	yes
 
 .if ${PHP_MODNAME} == "pcntl"
 CONFIGURE_ARGS+=--enable-pcntl
-.endif
-
-.if ${PHP_MODNAME} == "pcre"  	 
-OPTIONS=	BUNDLED_PCRE "Select if you use apache 2.0.x" off
 .endif
 
 .if ${PHP_MODNAME} == "pdo"
@@ -315,18 +280,12 @@ USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_sqlite"
-.      if defined(WITH_SQLITE_PORT)
-USE_SQLITE=    yes
+USE_SQLITE=	yes
 CONFIGURE_ARGS+=--with-pdo-sqlite=${LOCALBASE}
-.      else
-CONFIGURE_ARGS+=--with-pdo-sqlite
-.      endif
 
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
-PHP_HEADER_DIRS=sqlite/src
 .endif
-
 
 .if ${PHP_MODNAME} == "pgsql"
 USE_PGSQL=	yes
@@ -393,16 +352,6 @@ USE_PHP=	session
 USE_PHP_BUILD=	yes
 .endif
 
-.if ${PHP_MODNAME} == "spl"
-CONFIGURE_ARGS+=--enable-spl \
-		--with-libxml-dir=${LOCALBASE}
-
-USE_GNOME=	libxml2
-
-USE_PHP=	pcre simplexml
-USE_PHP_BUILD=	yes
-.endif
-
 .if ${PHP_MODNAME} == "sockets"
 CONFIGURE_ARGS+=--enable-sockets
 .endif
@@ -413,9 +362,6 @@ CONFIGURE_ARGS+=--with-sqlite
 USE_PHP=	session
 USE_PHP_BUILD=	yes
 PHP_HEADER_DIRS=libsqlite/src
-
-USE_PHP=	spl
-USE_PHP_BUILD=	yes
 
 OPTIONS=	UTF8 "Enable UTF-8 support" off
 .endif
@@ -506,7 +452,8 @@ USE_PHP_BUILD=	yes
 
 .if ${PHP_MODNAME} == "zip"
 CONFIGURE_ARGS+=--enable-zip \
-		--with-zlib-dir=/usr
+		--with-zlib-dir=/usr \
+		--with-pcre-dir=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "zlib"
@@ -575,21 +522,6 @@ pre-configure:
 		/usr/bin/ar x $${lib}.a; \
 	done; \
 	/usr/bin/ar rcs liboci8.a *.o
-.endif
-
-.if ${PHP_MODNAME} == "pcre"  	 
-.	if defined(WITH_BUNDLED_PCRE)
-CONFIGURE_ARGS+=--with-pcre-regex=yes
-
-PHP_HEADER_DIRS=pcrelib
-.	else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
-
-CONFIGURE_ARGS+=--with-pcre-regex=${LOCALBASE}
-.	endif
-
-post-extract:  	 
-	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
 .endif
 
 .if ${PHP_MODNAME} == "pdo_dblib"

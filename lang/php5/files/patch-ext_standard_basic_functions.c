@@ -1,13 +1,5 @@
 --- ext/standard/basic_functions.c.orig	2008-06-09 14:06:40.000000000 +0200
 +++ ext/standard/basic_functions.c	2008-06-09 14:08:28.000000000 +0200
-@@ -87,6 +87,7 @@
- # include <sys/loadavg.h>
- #endif
- 
-+#define HARTMUT_0
- #ifdef HARTMUT_0
- #include <getopt.h>
- #endif
 @@ -3859,7 +3860,7 @@
  		SetEnvironmentVariable(pe->key, "bugbug");
  #endif

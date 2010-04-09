@@ -2449,14 +2449,11 @@
     SUBDIR += php5-gettext
     SUBDIR += php5-ice
     SUBDIR += php5-json
-    SUBDIR += php5-ncurses
     SUBDIR += php5-pcntl
-    SUBDIR += php5-pcre
     SUBDIR += php5-phing
     SUBDIR += php5-pinba
     SUBDIR += php5-readline
     SUBDIR += php5-shmop
-    SUBDIR += php5-spl
     SUBDIR += php5-sysvmsg
     SUBDIR += php5-sysvsem
     SUBDIR += php5-sysvshm

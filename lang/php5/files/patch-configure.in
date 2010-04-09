@@ -25,14 +25,14 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1344,22 +1342,19 @@
- INLINE_CFLAGS="$INLINE_CFLAGS $standard_libtool_flag"
- CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
- 
--all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET)"
--install_targets="$install_modules install-build install-headers install-programs $install_pear"
-+all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET)"
-+install_targets="$PHP_INSTALL_CLI_TARGET $PHP_INSTALL_CGI_TARGET $install_modules install-build install-headers install-programs $install_pear"
+@@ -1388,22 +1386,19 @@
+   pharcmd_install=
+ fi;
+
+-all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) $pharcmd"
+-install_targets="$install_modules install-build install-headers install-programs $install_pear $pharcmd_install"
++all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET) $pharcmd"
++install_targets="$PHP_INSTALL_CLI_TARGET $PHP_INSTALL_CGI_TARGET $install_modules install-build install-headers install-programs $install_pear $pharcmd_install"
  
  case $PHP_SAPI in
 -  cli)
@@ -48,8 +48,8 @@
  PHP_SUBST(all_targets)
  PHP_SUBST(install_targets)
  
--PHP_INSTALL_HEADERS([Zend/ TSRM/ include/ main/ main/streams/ regex/])
-+PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/ regex/])
+-PHP_INSTALL_HEADERS([Zend/ TSRM/ include/ main/ main/streams/])
++PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/])
  
  PHP_ADD_SOURCES(TSRM, TSRM.c tsrm_strtok_r.c tsrm_virtual_cwd.c)
  

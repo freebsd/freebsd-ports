@@ -1,6 +1,6 @@
---- pgsql.c.orig	2007-10-04 01:31:58.000000000 +0200
-+++ pgsql.c	2008-01-29 11:10:15.000000000 +0100
-@@ -62,6 +62,7 @@
+--- pgsql.c.orig	2010-01-03 10:23:27.000000000 +0100
++++ pgsql.c	2010-03-08 11:00:26.000000000 +0100
+@@ -63,6 +63,7 @@
  #define PGSQL_MAX_LENGTH_OF_LONG   30
  #define PGSQL_MAX_LENGTH_OF_DOUBLE 60
  
@@ -8,7 +8,7 @@
  #define PGSQL_RETURN_OID(oid) do { \
  	if (oid > LONG_MAX) { \
  		smart_str s = {0}; \
-@@ -71,7 +72,9 @@
+@@ -72,7 +73,9 @@
  	} \
  	RETURN_LONG((long)oid); \
  } while(0)
@@ -19,7 +19,7 @@
  
  #if HAVE_PQSETNONBLOCKING
  #define PQ_SETNONBLOCKING(pg_link, flag) PQsetnonblocking(pg_link, flag)
-@@ -272,7 +275,7 @@
+@@ -728,7 +731,7 @@
  static int le_link, le_plink, le_result, le_lofp, le_string;
  
  /* {{{ _php_pgsql_trim_message */
