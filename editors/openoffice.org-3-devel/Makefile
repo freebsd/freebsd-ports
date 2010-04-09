@@ -7,7 +7,6 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	3.3.${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
@@ -83,11 +82,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		75
+MILESTONE?=		76
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20100320
+SNAPDATE=		20100409
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -161,11 +160,11 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-use-shell=bash				\
 			--with-vendor="FreeBSD ports system"
 
-OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
+OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
 OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
 OOOEXTENSIONS+=		swext/wiki-publisher.oxt
-OOOEXTENSIONS+=		sun-report-builder.oxt
+OOOEXTENSIONS+=		oracle-report-builder.oxt
 
 .if (${OSVERSION} <= 602102)
 EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
