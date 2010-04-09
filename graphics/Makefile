@@ -447,6 +447,7 @@
     SUBDIR += libmng
     SUBDIR += libmorph
     SUBDIR += libopenraw
+    SUBDIR += libosmesa
     SUBDIR += libpano12
     SUBDIR += libpano13
     SUBDIR += libpcd
