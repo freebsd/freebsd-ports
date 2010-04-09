@@ -171,6 +171,12 @@ post-patch:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 	    ${WRKSRC}/IO/vtkPNGReader.cxx
 
+post-configure:
+.if defined(WITH_WRAP_JAVA)
+	${REINPLACE_CMD} -e 's|$$|-L/usr/local/${JAVA_HOME}/jre/lib/${ARCH} -ljawt|' \
+	    ${CONFIGURE_WRKSRC}/Wrapping/Java/CMakeFiles/VTKJavaExecutable.dir/link.txt
+.endif
+
 pre-install:
 .if defined(WITH_PYTHON)
 	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}

@@ -264,6 +264,10 @@
 %%JAVA%%lib/vtk-%%VER2%%/libvtkInfovisJava.so.%%VER1%%
 %%JAVA%%lib/vtk-%%VER2%%/libvtkInfovisJava.so.%%VER2%%
 %%JAVA%%lib/vtk-%%VER2%%/libvtkInfovisJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkParallelJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkParallelJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkParallelJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkParallelJava.so.%%VER3%%
 %%JAVA%%lib/vtk-%%VER2%%/libvtkRenderingJava.so
 %%JAVA%%lib/vtk-%%VER2%%/libvtkRenderingJava.so.%%VER1%%
 %%JAVA%%lib/vtk-%%VER2%%/libvtkRenderingJava.so.%%VER2%%
