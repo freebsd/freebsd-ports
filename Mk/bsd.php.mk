@@ -137,7 +137,7 @@ check-makevars::
 
 .endif
 
-PHP_PORT?=	lang/php${PHP_VER}
+PHP_PORT?=	${PORTSDIR}/lang/php${PHP_VER}
 
 .if defined(USE_PHP_BUILD)
 BUILD_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PORTSDIR}/${PHP_PORT}
