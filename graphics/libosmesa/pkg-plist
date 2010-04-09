@@ -1,0 +1,8 @@
+include/Mesa/GL/gl.h
+include/Mesa/GL/glext.h
+include/Mesa/GL/osmesa.h
+lib/libOSMesa32.so.7
+lib/libOSMesa32.so
+libdata/pkgconfig/osmesa.pc
+@dirrm include/Mesa/GL
+@dirrm include/Mesa
