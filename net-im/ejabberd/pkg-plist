@@ -114,6 +114,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_roster.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_roster_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_service_log.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_shared_roster.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_sic.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_stats.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_time.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard.beam
@@ -171,6 +172,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/mod_pubsub/pubsub.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/mod_roster.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/web/ejabberd_http.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/web/ejabberd_web_admin.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/web/http_bind.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/captcha.sh
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/%%PORTNAME%%_zlib_drv.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/expat_erl.so
@@ -223,6 +225,7 @@ sbin/%%PORTNAME%%ctl
 %%DOCSDIR%%/release_notes_2.1.0.txt
 %%DOCSDIR%%/release_notes_2.1.1.txt
 %%DOCSDIR%%/release_notes_2.1.2.txt
+%%DOCSDIR%%/release_notes_2.1.3.txt
 %%DOCSDIR%%/webadmmain.png
 %%DOCSDIR%%/webadmmainru.png
 %%DOCSDIR%%/yozhikheader.png

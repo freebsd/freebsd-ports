@@ -1,56 +1,31 @@
---- Makefile.in.orig	2010-01-18 14:03:20.000000000 +0100
-+++ Makefile.in	2010-01-30 12:35:21.933075399 +0100
-@@ -73,21 +73,21 @@
- ERLBEHAVBEAMS = $(ERLBEHAVS:.erl=.beam)
- BEAMS = $(SOURCES:.erl=.beam)
- 
--DESTDIR =
-+DESTDIR = @prefix@
- 
- # /etc/ejabberd/
--ETCDIR = $(DESTDIR)@sysconfdir@/ejabberd
-+ETCDIR = $(DESTDIR)/etc/ejabberd
- 
- # /sbin/
--SBINDIR = $(DESTDIR)@sbindir@
-+SBINDIR = @sbindir@
+--- Makefile.in.orig	2010-03-12 11:40:41.000000000 +0100
++++ Makefile.in	2010-04-08 17:23:18.000000000 +0200
+@@ -82,7 +82,7 @@
+ SBINDIR = $(DESTDIR)@sbindir@
  
  # /lib/ejabberd/
 -EJABBERDDIR = $(DESTDIR)@libdir@/ejabberd
-+EJABBERDDIR = $(DESTDIR)/lib/erlang/lib/ejabberd-$(PORTVERSION)
++EJABBERDDIR = @libdir@/erlang/lib/ejabberd-$(PORTVERSION)
  
  # /share/doc/ejabberd
  PACKAGE_TARNAME = @PACKAGE_TARNAME@
- datarootdir = @datarootdir@
--DOCDIR = $(DESTDIR)@docdir@
-+DOCDIR = @docdir@
- 
- # /usr/lib/ejabberd/ebin/
- BEAMDIR = $(EJABBERDDIR)/ebin
-@@ -108,13 +108,13 @@
+@@ -108,7 +108,7 @@
  MSGSDIR = $(PRIVDIR)/msgs
  
  # /var/lib/ejabberd/
 -SPOOLDIR = $(DESTDIR)@localstatedir@/lib/ejabberd
-+SPOOLDIR = /var/spool/ejabberd
++SPOOLDIR = $(DESTDIR)@localstatedir@/spool/ejabberd
  
- # /var/lib/ejabberd/.erlang.cookie
- COOKIEFILE = $(SPOOLDIR)/.erlang.cookie
- 
- # /var/log/ejabberd/
--LOGDIR = $(DESTDIR)@localstatedir@/log/ejabberd
-+LOGDIR = /var/log/ejabberd
- 
- # Assume Linux-style dynamic library flags
- DYNAMIC_LIB_CFLAGS = -fpic -shared
-@@ -168,25 +168,22 @@
+ # /var/lock/ejabberdctl
+ CTLLOCKDIR = $(DESTDIR)@localstatedir@/lock/ejabberdctl
+@@ -171,25 +171,22 @@
  	#
  	# Configuration files
  	install -d -m 750 $(G_USER) $(ETCDIR)
 -	[ -f $(ETCDIR)/ejabberd.cfg ] \
 -		&& install -b -m 640 $(G_USER) ejabberd.cfg.example $(ETCDIR)/ejabberd.cfg-new \
 -		|| install -b -m 640 $(G_USER) ejabberd.cfg.example $(ETCDIR)/ejabberd.cfg
-+	install -m 640 ejabberd.cfg.example $(ETCDIR)
++	install -m 640 $(G_USER) ejabberd.cfg.example $(ETCDIR)
  	sed -e "s*@rootdir@*@prefix@*" \
  		-e "s*@installuser@*@INSTALLUSER@*" \
  		-e "s*@LIBDIR@*@libdir@*" \
@@ -64,10 +39,10 @@
 -		|| install -b -m 640 $(G_USER) ejabberdctl.cfg.example $(ETCDIR)/ejabberdctl.cfg
 -	install -b -m 644 $(G_USER) inetrc $(ETCDIR)/inetrc
 +		-e "s*@erl@*@ERL@*" \
-+	       	-e "s*lib/erlang/lib/ejabberd*lib/erlang/lib/ejabberd-$(PORTVERSION)*" \
-+	       	ejabberdctl.template > ejabberdctl.example
-+	install -m 640 ejabberdctl.cfg.example $(ETCDIR)
-+	install -m 640 inetrc $(ETCDIR)/inetrc.example
++		-e "s*lib/erlang/lib/ejabberd*lib/erlang/lib/ejabberd-$(PORTVERSION)*" \
++		ejabberdctl.template > ejabberdctl.example
++	install -m 640 $(G_USER) ejabberdctl.cfg.example $(ETCDIR)
++	install -m 640 $(G_USER) inetrc $(ETCDIR)/inetrc.example
  	#
  	# Administration script
  	[ -d $(SBINDIR) ] || install -d -m 755 $(SBINDIR)
