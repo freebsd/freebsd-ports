@@ -37,6 +37,7 @@
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/libvtkIOPython.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/libvtkImagingPython.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/libvtkInfovisPython.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/libvtkParallelPython.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/libvtkRenderingPython.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/libvtkViewsPython.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/libvtkVolumeRenderingPython.so
@@ -103,6 +104,72 @@
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/wx/wxVTKRenderWindow.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/wx/wxVTKRenderWindowInteractor.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/wx/wxVTKRenderWindowInteractor.pyc
+%%PYTHON%%bin/vtk
+%%PYTHON%%bin/vtkWrapPython
+%%PYTHON%%bin/vtkWrapPythonInit
+%%PYTHON%%bin/vtkpython
+%%PYTHON%%include/vtk-%%VER2%%/vtkPython.h
+%%PYTHON%%include/vtk-%%VER2%%/vtkPythonUtil.h
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkCommonPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkCommonPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkCommonPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkCommonPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkFilteringPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkFilteringPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkFilteringPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkFilteringPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGenericFilteringPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGenericFilteringPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGenericFilteringPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGenericFilteringPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGeovisPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGeovisPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGeovisPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGeovisPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGraphicsPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGraphicsPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGraphicsPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkGraphicsPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkHybridPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkHybridPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkHybridPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkHybridPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkIOPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkIOPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkIOPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkIOPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkImagingPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkImagingPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkImagingPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkImagingPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkInfovisPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkInfovisPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkInfovisPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkInfovisPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkParallelPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkParallelPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkParallelPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkParallelPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingPythonTkWidgets.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingPythonTkWidgets.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingPythonTkWidgets.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkRenderingPythonTkWidgets.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkViewsPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkViewsPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkViewsPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkViewsPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkVolumeRenderingPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkVolumeRenderingPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkVolumeRenderingPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkVolumeRenderingPythonD.so.%%VER3%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so.%%VER1%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so.%%VER2%%
+%%PYTHON%%lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so.%%VER3%%
 %%QT%%include/vtk-%%VER2%%/QVTKWidget.h
 %%QT%%include/vtk-%%VER2%%/QVTKWin32Header.h
 %%QT%%include/vtk-%%VER2%%/vtkEventQtSlotConnect.h
@@ -147,6 +214,7 @@
 %%QT%%include/vtk-%%VER2%%/vtkQtStatisticalBoxChart.h
 %%QT%%include/vtk-%%VER2%%/vtkQtStatisticalBoxChartOptions.h
 %%QT%%include/vtk-%%VER2%%/vtkQtStatisticalBoxChartSeriesOptions.h
+%%QT%%lib/qt4/plugins/designer/libQVTKWidgetPlugin.so
 %%QT%%lib/vtk-%%VER2%%/VTKConfigQt.cmake
 %%QT%%lib/vtk-%%VER2%%/libQVTK.so
 %%QT%%lib/vtk-%%VER2%%/libQVTK.so.%%VER1%%
@@ -156,7 +224,64 @@
 %%QT%%lib/vtk-%%VER2%%/libvtkQtChart.so.%%VER1%%
 %%QT%%lib/vtk-%%VER2%%/libvtkQtChart.so.%%VER2%%
 %%QT%%lib/vtk-%%VER2%%/libvtkQtChart.so.%%VER3%%
-%%QT%%lib/qt4/plugins/designer/libQVTKWidgetPlugin.so
+%%JAVA%%bin/vtkParseJava
+%%JAVA%%bin/vtkWrapJava
+%%JAVA%%include/vtk-%%VER2%%/vtkJavaUtil.h
+%%JAVA%%lib/vtk-%%VER2%%/java/vtk/vtk.jar
+%%JAVA%%lib/vtk-%%VER2%%/libvtkCommonJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkCommonJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkCommonJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkCommonJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkFilteringJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkFilteringJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkFilteringJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkFilteringJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGenericFilteringJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGenericFilteringJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGenericFilteringJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGenericFilteringJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGeovisJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGeovisJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGeovisJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGeovisJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGraphicsJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGraphicsJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGraphicsJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkGraphicsJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkHybridJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkHybridJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkHybridJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkHybridJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkIOJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkIOJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkIOJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkIOJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkImagingJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkImagingJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkImagingJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkImagingJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkInfovisJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkInfovisJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkInfovisJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkInfovisJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkRenderingJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkRenderingJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkRenderingJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkRenderingJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkViewsJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkViewsJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkViewsJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkViewsJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkVolumeRenderingJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkVolumeRenderingJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkVolumeRenderingJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkVolumeRenderingJava.so.%%VER3%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkWidgetsJava.so
+%%JAVA%%lib/vtk-%%VER2%%/libvtkWidgetsJava.so.%%VER1%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkWidgetsJava.so.%%VER2%%
+%%JAVA%%lib/vtk-%%VER2%%/libvtkWidgetsJava.so.%%VER3%%
+%%TCLTK%%bin/vtkWrapTcl
+%%TCLTK%%bin/vtkWrapTclInit
 %%TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/default.h
 %%TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclInt.h
 %%TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tclIntDecls.h
@@ -178,14 +303,98 @@
 %%TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkWinDefault.h
 %%TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkWinInt.h
 %%TCLTK%%include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%/tkWinPort.h
+%%TCLTK%%include/vtk-%%VER2%%/vtkTcl.h
+%%TCLTK%%include/vtk-%%VER2%%/vtkTclUtil.h
+%%TCLTK%%include/vtk-%%VER2%%/vtkTk.h
+%%TCLTK%%include/vtk-%%VER2%%/vtkTkInternals.h
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkCommonTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkCommonTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkCommonTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkCommonTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkFilteringTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkFilteringTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkFilteringTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkFilteringTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGenericFilteringTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGenericFilteringTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGenericFilteringTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGenericFilteringTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGeovisTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGeovisTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGeovisTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGeovisTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGraphicsTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGraphicsTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGraphicsTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkGraphicsTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkHybridTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkHybridTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkHybridTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkHybridTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkIOTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkIOTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkIOTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkIOTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkImagingTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkImagingTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkImagingTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkImagingTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkInfovisTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkInfovisTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkInfovisTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkInfovisTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkParallelTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkParallelTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkParallelTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkParallelTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkRenderingTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkRenderingTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkRenderingTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkRenderingTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkViewsTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkViewsTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkViewsTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkViewsTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkVolumeRenderingTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkVolumeRenderingTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkVolumeRenderingTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkVolumeRenderingTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkWidgetsTCL.so
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkWidgetsTCL.so.%%VER1%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkWidgetsTCL.so.%%VER2%%
+%%TCLTK%%lib/vtk-%%VER2%%/libvtkWidgetsTCL.so.%%VER3%%
+%%TCLTK%%lib/vtk-%%VER2%%/pkgIndex.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/README
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtk/vtk.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkbase/vtkbase.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkcommon/vtkcommon.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkfiltering/vtkfiltering.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkgeovis/vtkgeovis.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkgraphics/vtkgraphics.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkhybrid/vtkhybrid.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkimaging/vtkimaging.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkinfovis/vtkinfovis.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkinteraction/Interactor.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkinteraction/bindings-iw.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkinteraction/bindings-rw.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkinteraction/bindings.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkinteraction/setget.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkinteraction/vtkinteraction.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkio/vtkio.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkparallel/vtkparallel.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkrendering/vtkrendering.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtktcl.c
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtktesting/backdrop.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtktesting/colors.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtktesting/grab.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtktesting/mccases.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtktesting/vtktesting.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkviews/vtkviews.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkvolumerendering/vtkvolumerendering.tcl
+%%TCLTK%%lib/vtk-%%VER2%%/tcl/vtkwidgets/vtkwidgets.tcl
+%%WRAPPING%%lib/vtk-%%VER2%%/hints
 bin/lproj
-bin/vtk
 bin/vtkEncodeString
-bin/vtkWrapPython
-bin/vtkWrapPythonInit
-bin/vtkWrapTcl
-bin/vtkWrapTclInit
-bin/vtkpython
 include/vtk-%%VER2%%/DICOMAppHelper.h
 include/vtk-%%VER2%%/DICOMCMakeConfig.h
 include/vtk-%%VER2%%/DICOMCallback.h
@@ -308,12 +517,14 @@ include/vtk-%%VER2%%/vtkBoxLayoutStrategy.h
 include/vtk-%%VER2%%/vtkBoxRepresentation.h
 include/vtk-%%VER2%%/vtkBoxWidget.h
 include/vtk-%%VER2%%/vtkBoxWidget2.h
+include/vtk-%%VER2%%/vtkBranchExtentTranslator.h
 include/vtk-%%VER2%%/vtkBrownianPoints.h
 include/vtk-%%VER2%%/vtkButterflySubdivisionFilter.h
 include/vtk-%%VER2%%/vtkButtonSource.h
 include/vtk-%%VER2%%/vtkByteSwap.h
 include/vtk-%%VER2%%/vtkCGMWriter.h
 include/vtk-%%VER2%%/vtkCachedStreamingDemandDrivenPipeline.h
+include/vtk-%%VER2%%/vtkCachingInterpolatedVelocityField.h
 include/vtk-%%VER2%%/vtkCallbackCommand.h
 include/vtk-%%VER2%%/vtkCamera.h
 include/vtk-%%VER2%%/vtkCameraActor.h
@@ -360,12 +571,16 @@ include/vtk-%%VER2%%/vtkClustering2DLayoutStrategy.h
 include/vtk-%%VER2%%/vtkCoincidentPoints.h
 include/vtk-%%VER2%%/vtkCoincidentTopologyResolutionPainter.h
 include/vtk-%%VER2%%/vtkCollapseGraph.h
+include/vtk-%%VER2%%/vtkCollectGraph.h
+include/vtk-%%VER2%%/vtkCollectPolyData.h
+include/vtk-%%VER2%%/vtkCollectTable.h
 include/vtk-%%VER2%%/vtkCollection.h
 include/vtk-%%VER2%%/vtkCollectionIterator.h
 include/vtk-%%VER2%%/vtkColorTransferFunction.h
 include/vtk-%%VER2%%/vtkCommand.h
 include/vtk-%%VER2%%/vtkCommonInformationKeyManager.h
 include/vtk-%%VER2%%/vtkCommonInstantiator.h
+include/vtk-%%VER2%%/vtkCommunicator.h
 include/vtk-%%VER2%%/vtkCommunity2DLayoutStrategy.h
 include/vtk-%%VER2%%/vtkCompassRepresentation.h
 include/vtk-%%VER2%%/vtkCompassWidget.h
@@ -378,6 +593,9 @@ include/vtk-%%VER2%%/vtkCompositeDataSetAlgorithm.h
 include/vtk-%%VER2%%/vtkCompositePainter.h
 include/vtk-%%VER2%%/vtkCompositePolyDataMapper.h
 include/vtk-%%VER2%%/vtkCompositePolyDataMapper2.h
+include/vtk-%%VER2%%/vtkCompositeRenderManager.h
+include/vtk-%%VER2%%/vtkCompositer.h
+include/vtk-%%VER2%%/vtkCompressCompositer.h
 include/vtk-%%VER2%%/vtkConditionVariable.h
 include/vtk-%%VER2%%/vtkCone.h
 include/vtk-%%VER2%%/vtkConeSource.h
@@ -411,6 +629,7 @@ include/vtk-%%VER2%%/vtkCullerCollection.h
 include/vtk-%%VER2%%/vtkCursor2D.h
 include/vtk-%%VER2%%/vtkCursor3D.h
 include/vtk-%%VER2%%/vtkCurvatures.h
+include/vtk-%%VER2%%/vtkCutMaterial.h
 include/vtk-%%VER2%%/vtkCutter.h
 include/vtk-%%VER2%%/vtkCylinder.h
 include/vtk-%%VER2%%/vtkCylinderSource.h
@@ -487,8 +706,13 @@ include/vtk-%%VER2%%/vtkDisplayListPainter.h
 include/vtk-%%VER2%%/vtkDistanceRepresentation.h
 include/vtk-%%VER2%%/vtkDistanceRepresentation2D.h
 include/vtk-%%VER2%%/vtkDistanceWidget.h
+include/vtk-%%VER2%%/vtkDistributedDataFilter.h
 include/vtk-%%VER2%%/vtkDistributedGraphHelper.h
+include/vtk-%%VER2%%/vtkDistributedStreamTracer.h
 include/vtk-%%VER2%%/vtkDoubleArray.h
+include/vtk-%%VER2%%/vtkDummyCommunicator.h
+include/vtk-%%VER2%%/vtkDummyController.h
+include/vtk-%%VER2%%/vtkDuplicatePolyData.h
 include/vtk-%%VER2%%/vtkDynamic2DLabelMapper.h
 include/vtk-%%VER2%%/vtkDynamicLoader.h
 include/vtk-%%VER2%%/vtkEarthSource.h
@@ -509,6 +733,7 @@ include/vtk-%%VER2%%/vtkEnSightGoldBinaryReader.h
 include/vtk-%%VER2%%/vtkEnSightGoldReader.h
 include/vtk-%%VER2%%/vtkEnSightMasterServerReader.h
 include/vtk-%%VER2%%/vtkEnSightReader.h
+include/vtk-%%VER2%%/vtkEnSightWriter.h
 include/vtk-%%VER2%%/vtkEncodedGradientEstimator.h
 include/vtk-%%VER2%%/vtkEncodedGradientShader.h
 include/vtk-%%VER2%%/vtkErrorCode.h
@@ -518,6 +743,7 @@ include/vtk-%%VER2%%/vtkExecutive.h
 include/vtk-%%VER2%%/vtkExodusIICache.h
 include/vtk-%%VER2%%/vtkExodusIIReader.h
 include/vtk-%%VER2%%/vtkExodusIIReaderParser.h
+include/vtk-%%VER2%%/vtkExodusIIWriter.h
 include/vtk-%%VER2%%/vtkExodusModel.h
 include/vtk-%%VER2%%/vtkExodusReader.h
 include/vtk-%%VER2%%/vtkExplicitCell.h
@@ -526,6 +752,7 @@ include/vtk-%%VER2%%/vtkExtentSplitter.h
 include/vtk-%%VER2%%/vtkExtentTranslator.h
 include/vtk-%%VER2%%/vtkExtractArraysOverTime.h
 include/vtk-%%VER2%%/vtkExtractBlock.h
+include/vtk-%%VER2%%/vtkExtractCTHPart.h
 include/vtk-%%VER2%%/vtkExtractCells.h
 include/vtk-%%VER2%%/vtkExtractDataOverTime.h
 include/vtk-%%VER2%%/vtkExtractDataSets.h
@@ -533,7 +760,9 @@ include/vtk-%%VER2%%/vtkExtractEdges.h
 include/vtk-%%VER2%%/vtkExtractGeometry.h
 include/vtk-%%VER2%%/vtkExtractGrid.h
 include/vtk-%%VER2%%/vtkExtractLevel.h
+include/vtk-%%VER2%%/vtkExtractPiece.h
 include/vtk-%%VER2%%/vtkExtractPolyDataGeometry.h
+include/vtk-%%VER2%%/vtkExtractPolyDataPiece.h
 include/vtk-%%VER2%%/vtkExtractRectilinearGrid.h
 include/vtk-%%VER2%%/vtkExtractSelectedBlock.h
 include/vtk-%%VER2%%/vtkExtractSelectedFrustum.h
@@ -547,6 +776,8 @@ include/vtk-%%VER2%%/vtkExtractSelectionBase.h
 include/vtk-%%VER2%%/vtkExtractTemporalFieldData.h
 include/vtk-%%VER2%%/vtkExtractTensorComponents.h
 include/vtk-%%VER2%%/vtkExtractUnstructuredGrid.h
+include/vtk-%%VER2%%/vtkExtractUnstructuredGridPiece.h
+include/vtk-%%VER2%%/vtkExtractUserDefinedPiece.h
 include/vtk-%%VER2%%/vtkExtractVOI.h
 include/vtk-%%VER2%%/vtkExtractVectorComponents.h
 include/vtk-%%VER2%%/vtkFLUENTReader.h
@@ -1014,6 +1245,7 @@ include/vtk-%%VER2%%/vtkMatrixToHomogeneousTransform.h
 include/vtk-%%VER2%%/vtkMatrixToLinearTransform.h
 include/vtk-%%VER2%%/vtkMedicalImageProperties.h
 include/vtk-%%VER2%%/vtkMedicalImageReader2.h
+include/vtk-%%VER2%%/vtkMemoryLimitImageDataStreamer.h
 include/vtk-%%VER2%%/vtkMergeCells.h
 include/vtk-%%VER2%%/vtkMergeColumns.h
 include/vtk-%%VER2%%/vtkMergeDataObjectFilter.h
@@ -1033,6 +1265,8 @@ include/vtk-%%VER2%%/vtkMultiBlockMergeFilter.h
 include/vtk-%%VER2%%/vtkMultiBlockPLOT3DReader.h
 include/vtk-%%VER2%%/vtkMultiCorrelativeStatistics.h
 include/vtk-%%VER2%%/vtkMultiPieceDataSet.h
+include/vtk-%%VER2%%/vtkMultiProcessController.h
+include/vtk-%%VER2%%/vtkMultiProcessStream.h
 include/vtk-%%VER2%%/vtkMultiThreader.h
 include/vtk-%%VER2%%/vtkMultiThreshold.h
 include/vtk-%%VER2%%/vtkMutableDirectedGraph.h
@@ -1101,20 +1335,46 @@ include/vtk-%%VER2%%/vtkOverrideInformation.h
 include/vtk-%%VER2%%/vtkOverrideInformationCollection.h
 include/vtk-%%VER2%%/vtkPCAAnalysisFilter.h
 include/vtk-%%VER2%%/vtkPCAStatistics.h
+include/vtk-%%VER2%%/vtkPCellDataToPointData.h
+include/vtk-%%VER2%%/vtkPChacoReader.h
+include/vtk-%%VER2%%/vtkPCorrelativeStatistics.h
 include/vtk-%%VER2%%/vtkPDBReader.h
+include/vtk-%%VER2%%/vtkPDataSetReader.h
+include/vtk-%%VER2%%/vtkPDataSetWriter.h
+include/vtk-%%VER2%%/vtkPDescriptiveStatistics.h
+include/vtk-%%VER2%%/vtkPExodusIIReader.h
+include/vtk-%%VER2%%/vtkPExodusReader.h
+include/vtk-%%VER2%%/vtkPExtractArraysOverTime.h
+include/vtk-%%VER2%%/vtkPImageWriter.h
+include/vtk-%%VER2%%/vtkPKdTree.h
 include/vtk-%%VER2%%/vtkPLOT3DReader.h
 include/vtk-%%VER2%%/vtkPLY.h
 include/vtk-%%VER2%%/vtkPLYReader.h
 include/vtk-%%VER2%%/vtkPLYWriter.h
+include/vtk-%%VER2%%/vtkPLinearExtrusionFilter.h
+include/vtk-%%VER2%%/vtkPMultiCorrelativeStatistics.h
 include/vtk-%%VER2%%/vtkPNGReader.h
 include/vtk-%%VER2%%/vtkPNGWriter.h
 include/vtk-%%VER2%%/vtkPNMReader.h
 include/vtk-%%VER2%%/vtkPNMWriter.h
+include/vtk-%%VER2%%/vtkPOPReader.h
 include/vtk-%%VER2%%/vtkPOVExporter.h
+include/vtk-%%VER2%%/vtkPOutlineCornerFilter.h
+include/vtk-%%VER2%%/vtkPOutlineFilter.h
+include/vtk-%%VER2%%/vtkPPCAStatistics.h
+include/vtk-%%VER2%%/vtkPPolyDataNormals.h
+include/vtk-%%VER2%%/vtkPProbeFilter.h
+include/vtk-%%VER2%%/vtkPReflectionFilter.h
+include/vtk-%%VER2%%/vtkPSphereSource.h
+include/vtk-%%VER2%%/vtkPStreamTracer.h
+include/vtk-%%VER2%%/vtkPTableToStructuredGrid.h
 include/vtk-%%VER2%%/vtkPainter.h
 include/vtk-%%VER2%%/vtkPainterDeviceAdapter.h
 include/vtk-%%VER2%%/vtkPainterPolyDataMapper.h
 include/vtk-%%VER2%%/vtkParallelCoordinatesActor.h
+include/vtk-%%VER2%%/vtkParallelFactory.h
+include/vtk-%%VER2%%/vtkParallelInstantiator.h
+include/vtk-%%VER2%%/vtkParallelRenderManager.h
 include/vtk-%%VER2%%/vtkParallelopipedRepresentation.h
 include/vtk-%%VER2%%/vtkParallelopipedWidget.h
 include/vtk-%%VER2%%/vtkParametricBoy.h
@@ -1138,6 +1398,7 @@ include/vtk-%%VER2%%/vtkParticleReader.h
 include/vtk-%%VER2%%/vtkPassInputTypeAlgorithm.h
 include/vtk-%%VER2%%/vtkPassThrough.h
 include/vtk-%%VER2%%/vtkPassThroughEdgeStrategy.h
+include/vtk-%%VER2%%/vtkPassThroughFilter.h
 include/vtk-%%VER2%%/vtkPassThroughLayoutStrategy.h
 include/vtk-%%VER2%%/vtkPentagonalPrism.h
 include/vtk-%%VER2%%/vtkPerlinNoise.h
@@ -1145,9 +1406,12 @@ include/vtk-%%VER2%%/vtkPerspectiveTransform.h
 include/vtk-%%VER2%%/vtkPerturbCoincidentVertices.h
 include/vtk-%%VER2%%/vtkPicker.h
 include/vtk-%%VER2%%/vtkPieChartActor.h
+include/vtk-%%VER2%%/vtkPieceRequestFilter.h
+include/vtk-%%VER2%%/vtkPieceScalars.h
 include/vtk-%%VER2%%/vtkPiecewiseFunction.h
 include/vtk-%%VER2%%/vtkPiecewiseFunctionAlgorithm.h
 include/vtk-%%VER2%%/vtkPiecewiseFunctionShiftScale.h
+include/vtk-%%VER2%%/vtkPipelineSize.h
 include/vtk-%%VER2%%/vtkPixel.h
 include/vtk-%%VER2%%/vtkPixelBufferObject.h
 include/vtk-%%VER2%%/vtkPlane.h
@@ -1208,6 +1472,8 @@ include/vtk-%%VER2%%/vtkPrimitivePainter.h
 include/vtk-%%VER2%%/vtkPriorityQueue.h
 include/vtk-%%VER2%%/vtkProbeFilter.h
 include/vtk-%%VER2%%/vtkProbeSelectedLocations.h
+include/vtk-%%VER2%%/vtkProcessGroup.h
+include/vtk-%%VER2%%/vtkProcessIdScalars.h
 include/vtk-%%VER2%%/vtkProcessObject.h
 include/vtk-%%VER2%%/vtkProcrustesAlignmentFilter.h
 include/vtk-%%VER2%%/vtkProgrammableAttributeDataFilter.h
@@ -1228,8 +1494,6 @@ include/vtk-%%VER2%%/vtkProperty.h
 include/vtk-%%VER2%%/vtkProperty2D.h
 include/vtk-%%VER2%%/vtkPruneTreeFilter.h
 include/vtk-%%VER2%%/vtkPyramid.h
-include/vtk-%%VER2%%/vtkPython.h
-include/vtk-%%VER2%%/vtkPythonUtil.h
 include/vtk-%%VER2%%/vtkQuad.h
 include/vtk-%%VER2%%/vtkQuadraticEdge.h
 include/vtk-%%VER2%%/vtkQuadraticHexahedron.h
@@ -1267,6 +1531,7 @@ include/vtk-%%VER2%%/vtkRectilinearGrid.h
 include/vtk-%%VER2%%/vtkRectilinearGridAlgorithm.h
 include/vtk-%%VER2%%/vtkRectilinearGridClip.h
 include/vtk-%%VER2%%/vtkRectilinearGridGeometryFilter.h
+include/vtk-%%VER2%%/vtkRectilinearGridOutlineFilter.h
 include/vtk-%%VER2%%/vtkRectilinearGridReader.h
 include/vtk-%%VER2%%/vtkRectilinearGridSource.h
 include/vtk-%%VER2%%/vtkRectilinearGridToPolyDataFilter.h
@@ -1375,6 +1640,8 @@ include/vtk-%%VER2%%/vtkSmoothPolyDataFilter.h
 include/vtk-%%VER2%%/vtkSobelGradientMagnitudePass.h
 include/vtk-%%VER2%%/vtkSocket.h
 include/vtk-%%VER2%%/vtkSocketCollection.h
+include/vtk-%%VER2%%/vtkSocketCommunicator.h
+include/vtk-%%VER2%%/vtkSocketController.h
 include/vtk-%%VER2%%/vtkSortDataArray.h
 include/vtk-%%VER2%%/vtkSortFileNames.h
 include/vtk-%%VER2%%/vtkSource.h
@@ -1431,6 +1698,8 @@ include/vtk-%%VER2%%/vtkStructuredPointsToStructuredPointsFilter.h
 include/vtk-%%VER2%%/vtkStructuredPointsToUnstructuredGridFilter.h
 include/vtk-%%VER2%%/vtkStructuredPointsWriter.h
 include/vtk-%%VER2%%/vtkStructuredVisibilityConstraint.h
+include/vtk-%%VER2%%/vtkSubCommunicator.h
+include/vtk-%%VER2%%/vtkSubGroup.h
 include/vtk-%%VER2%%/vtkSubPixelPositionEdgels.h
 include/vtk-%%VER2%%/vtkSubdivideTetra.h
 include/vtk-%%VER2%%/vtkSuperquadric.h
@@ -1453,16 +1722,17 @@ include/vtk-%%VER2%%/vtkTableToPolyData.h
 include/vtk-%%VER2%%/vtkTableToStructuredGrid.h
 include/vtk-%%VER2%%/vtkTableToTreeFilter.h
 include/vtk-%%VER2%%/vtkTableWriter.h
-include/vtk-%%VER2%%/vtkTcl.h
-include/vtk-%%VER2%%/vtkTclUtil.h
 include/vtk-%%VER2%%/vtkTemporalDataSet.h
 include/vtk-%%VER2%%/vtkTemporalDataSetAlgorithm.h
 include/vtk-%%VER2%%/vtkTemporalDataSetCache.h
+include/vtk-%%VER2%%/vtkTemporalFractal.h
+include/vtk-%%VER2%%/vtkTemporalInterpolatedVelocityField.h
 include/vtk-%%VER2%%/vtkTemporalInterpolator.h
 include/vtk-%%VER2%%/vtkTemporalPathLineFilter.h
 include/vtk-%%VER2%%/vtkTemporalShiftScale.h
 include/vtk-%%VER2%%/vtkTemporalSnapToTimeStep.h
 include/vtk-%%VER2%%/vtkTemporalStatistics.h
+include/vtk-%%VER2%%/vtkTemporalStreamTracer.h
 include/vtk-%%VER2%%/vtkTensor.h
 include/vtk-%%VER2%%/vtkTensorGlyph.h
 include/vtk-%%VER2%%/vtkTensorProbeRepresentation.h
@@ -1501,8 +1771,6 @@ include/vtk-%%VER2%%/vtkTimePointUtility.h
 include/vtk-%%VER2%%/vtkTimeSourceExample.h
 include/vtk-%%VER2%%/vtkTimeStamp.h
 include/vtk-%%VER2%%/vtkTimerLog.h
-include/vtk-%%VER2%%/vtkTk.h
-include/vtk-%%VER2%%/vtkTkInternals.h
 include/vtk-%%VER2%%/vtkToolkits.h
 include/vtk-%%VER2%%/vtkTransferAttributes.h
 include/vtk-%%VER2%%/vtkTransform.h
@@ -1514,9 +1782,15 @@ include/vtk-%%VER2%%/vtkTransformPolyDataFilter.h
 include/vtk-%%VER2%%/vtkTransformTextureCoords.h
 include/vtk-%%VER2%%/vtkTransformToGrid.h
 include/vtk-%%VER2%%/vtkTranslucentPass.h
+include/vtk-%%VER2%%/vtkTransmitImageDataPiece.h
+include/vtk-%%VER2%%/vtkTransmitPolyDataPiece.h
+include/vtk-%%VER2%%/vtkTransmitRectilinearGridPiece.h
+include/vtk-%%VER2%%/vtkTransmitStructuredGridPiece.h
+include/vtk-%%VER2%%/vtkTransmitUnstructuredGridPiece.h
 include/vtk-%%VER2%%/vtkTree.h
 include/vtk-%%VER2%%/vtkTreeAlgorithm.h
 include/vtk-%%VER2%%/vtkTreeAreaView.h
+include/vtk-%%VER2%%/vtkTreeCompositer.h
 include/vtk-%%VER2%%/vtkTreeDFSIterator.h
 include/vtk-%%VER2%%/vtkTreeFieldAggregator.h
 include/vtk-%%VER2%%/vtkTreeLayoutStrategy.h
@@ -1688,8 +1962,10 @@ include/vtk-%%VER2%%/vtkXMLMultiGroupDataReader.h
 include/vtk-%%VER2%%/vtkXMLPDataReader.h
 include/vtk-%%VER2%%/vtkXMLPDataSetWriter.h
 include/vtk-%%VER2%%/vtkXMLPDataWriter.h
+include/vtk-%%VER2%%/vtkXMLPHierarchicalBoxDataWriter.h
 include/vtk-%%VER2%%/vtkXMLPImageDataReader.h
 include/vtk-%%VER2%%/vtkXMLPImageDataWriter.h
+include/vtk-%%VER2%%/vtkXMLPMultiBlockDataWriter.h
 include/vtk-%%VER2%%/vtkXMLPPolyDataReader.h
 include/vtk-%%VER2%%/vtkXMLPPolyDataWriter.h
 include/vtk-%%VER2%%/vtkXMLPRectilinearGridReader.h
@@ -1986,19 +2262,10 @@ lib/vtk-%%VER2%%/doxygen/doc_version.pl
 lib/vtk-%%VER2%%/doxygen/paper-clip.gif
 lib/vtk-%%VER2%%/doxygen/pic.gif
 lib/vtk-%%VER2%%/doxygen/vtk-logo.gif
-lib/vtk-%%VER2%%/hints
 lib/vtk-%%VER2%%/libvtkCommon.so
 lib/vtk-%%VER2%%/libvtkCommon.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkCommon.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkCommon.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkCommonPythonD.so
-lib/vtk-%%VER2%%/libvtkCommonPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkCommonPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkCommonPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkCommonTCL.so
-lib/vtk-%%VER2%%/libvtkCommonTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkCommonTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkCommonTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkDICOMParser.so
 lib/vtk-%%VER2%%/libvtkDICOMParser.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkDICOMParser.so.%%VER2%%
@@ -2007,154 +2274,58 @@ lib/vtk-%%VER2%%/libvtkFiltering.so
 lib/vtk-%%VER2%%/libvtkFiltering.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkFiltering.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkFiltering.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkFilteringPythonD.so
-lib/vtk-%%VER2%%/libvtkFilteringPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkFilteringPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkFilteringPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkFilteringTCL.so
-lib/vtk-%%VER2%%/libvtkFilteringTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkFilteringTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkFilteringTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkGenericFiltering.so
 lib/vtk-%%VER2%%/libvtkGenericFiltering.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkGenericFiltering.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkGenericFiltering.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkGenericFilteringPythonD.so
-lib/vtk-%%VER2%%/libvtkGenericFilteringPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkGenericFilteringPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkGenericFilteringPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkGenericFilteringTCL.so
-lib/vtk-%%VER2%%/libvtkGenericFilteringTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkGenericFilteringTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkGenericFilteringTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkGeovis.so
 lib/vtk-%%VER2%%/libvtkGeovis.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkGeovis.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkGeovis.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkGeovisPythonD.so
-lib/vtk-%%VER2%%/libvtkGeovisPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkGeovisPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkGeovisPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkGeovisTCL.so
-lib/vtk-%%VER2%%/libvtkGeovisTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkGeovisTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkGeovisTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkGraphics.so
 lib/vtk-%%VER2%%/libvtkGraphics.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkGraphics.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkGraphics.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkGraphicsPythonD.so
-lib/vtk-%%VER2%%/libvtkGraphicsPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkGraphicsPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkGraphicsPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkGraphicsTCL.so
-lib/vtk-%%VER2%%/libvtkGraphicsTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkGraphicsTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkGraphicsTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkHybrid.so
 lib/vtk-%%VER2%%/libvtkHybrid.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkHybrid.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkHybrid.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkHybridPythonD.so
-lib/vtk-%%VER2%%/libvtkHybridPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkHybridPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkHybridPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkHybridTCL.so
-lib/vtk-%%VER2%%/libvtkHybridTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkHybridTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkHybridTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkIO.so
 lib/vtk-%%VER2%%/libvtkIO.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkIO.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkIO.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkIOPythonD.so
-lib/vtk-%%VER2%%/libvtkIOPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkIOPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkIOPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkIOTCL.so
-lib/vtk-%%VER2%%/libvtkIOTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkIOTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkIOTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkImaging.so
 lib/vtk-%%VER2%%/libvtkImaging.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkImaging.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkImaging.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkImagingPythonD.so
-lib/vtk-%%VER2%%/libvtkImagingPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkImagingPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkImagingPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkImagingTCL.so
-lib/vtk-%%VER2%%/libvtkImagingTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkImagingTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkImagingTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkInfovis.so
 lib/vtk-%%VER2%%/libvtkInfovis.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkInfovis.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkInfovis.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkInfovisPythonD.so
-lib/vtk-%%VER2%%/libvtkInfovisPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkInfovisPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkInfovisPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkInfovisTCL.so
-lib/vtk-%%VER2%%/libvtkInfovisTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkInfovisTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkInfovisTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkNetCDF.so
 lib/vtk-%%VER2%%/libvtkNetCDF.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkNetCDF.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkNetCDF.so.%%VER3%%
+lib/vtk-%%VER2%%/libvtkParallel.so
+lib/vtk-%%VER2%%/libvtkParallel.so.%%VER1%%
+lib/vtk-%%VER2%%/libvtkParallel.so.%%VER2%%
+lib/vtk-%%VER2%%/libvtkParallel.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkRendering.so
 lib/vtk-%%VER2%%/libvtkRendering.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkRendering.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkRendering.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkRenderingPythonD.so
-lib/vtk-%%VER2%%/libvtkRenderingPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkRenderingPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkRenderingPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkRenderingPythonTkWidgets.so
-lib/vtk-%%VER2%%/libvtkRenderingPythonTkWidgets.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkRenderingPythonTkWidgets.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkRenderingPythonTkWidgets.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkRenderingTCL.so
-lib/vtk-%%VER2%%/libvtkRenderingTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkRenderingTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkRenderingTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkViews.so
 lib/vtk-%%VER2%%/libvtkViews.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkViews.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkViews.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkViewsPythonD.so
-lib/vtk-%%VER2%%/libvtkViewsPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkViewsPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkViewsPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkViewsTCL.so
-lib/vtk-%%VER2%%/libvtkViewsTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkViewsTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkViewsTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkVolumeRendering.so
 lib/vtk-%%VER2%%/libvtkVolumeRendering.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkVolumeRendering.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkVolumeRendering.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkVolumeRenderingPythonD.so
-lib/vtk-%%VER2%%/libvtkVolumeRenderingPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkVolumeRenderingPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkVolumeRenderingPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkVolumeRenderingTCL.so
-lib/vtk-%%VER2%%/libvtkVolumeRenderingTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkVolumeRenderingTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkVolumeRenderingTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkWidgets.so
 lib/vtk-%%VER2%%/libvtkWidgets.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkWidgets.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkWidgets.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so
-lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkWidgetsPythonD.so.%%VER3%%
-lib/vtk-%%VER2%%/libvtkWidgetsTCL.so
-lib/vtk-%%VER2%%/libvtkWidgetsTCL.so.%%VER1%%
-lib/vtk-%%VER2%%/libvtkWidgetsTCL.so.%%VER2%%
-lib/vtk-%%VER2%%/libvtkWidgetsTCL.so.%%VER3%%
 lib/vtk-%%VER2%%/libvtkalglib.so
 lib/vtk-%%VER2%%/libvtkalglib.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkalglib.so.%%VER2%%
@@ -2195,39 +2366,12 @@ lib/vtk-%%VER2%%/libvtkverdict.so
 lib/vtk-%%VER2%%/libvtkverdict.so.%%VER1%%
 lib/vtk-%%VER2%%/libvtkverdict.so.%%VER2%%
 lib/vtk-%%VER2%%/libvtkverdict.so.%%VER3%%
-lib/vtk-%%VER2%%/pkgIndex.tcl
-lib/vtk-%%VER2%%/tcl/README
-lib/vtk-%%VER2%%/tcl/vtk/vtk.tcl
-lib/vtk-%%VER2%%/tcl/vtkbase/vtkbase.tcl
-lib/vtk-%%VER2%%/tcl/vtkcommon/vtkcommon.tcl
-lib/vtk-%%VER2%%/tcl/vtkfiltering/vtkfiltering.tcl
-lib/vtk-%%VER2%%/tcl/vtkgeovis/vtkgeovis.tcl
-lib/vtk-%%VER2%%/tcl/vtkgraphics/vtkgraphics.tcl
-lib/vtk-%%VER2%%/tcl/vtkhybrid/vtkhybrid.tcl
-lib/vtk-%%VER2%%/tcl/vtkimaging/vtkimaging.tcl
-lib/vtk-%%VER2%%/tcl/vtkinfovis/vtkinfovis.tcl
-lib/vtk-%%VER2%%/tcl/vtkinteraction/Interactor.tcl
-lib/vtk-%%VER2%%/tcl/vtkinteraction/bindings-iw.tcl
-lib/vtk-%%VER2%%/tcl/vtkinteraction/bindings-rw.tcl
-lib/vtk-%%VER2%%/tcl/vtkinteraction/bindings.tcl
-lib/vtk-%%VER2%%/tcl/vtkinteraction/setget.tcl
-lib/vtk-%%VER2%%/tcl/vtkinteraction/vtkinteraction.tcl
-lib/vtk-%%VER2%%/tcl/vtkio/vtkio.tcl
-lib/vtk-%%VER2%%/tcl/vtkrendering/vtkrendering.tcl
-lib/vtk-%%VER2%%/tcl/vtktcl.c
-lib/vtk-%%VER2%%/tcl/vtktesting/backdrop.tcl
-lib/vtk-%%VER2%%/tcl/vtktesting/colors.tcl
-lib/vtk-%%VER2%%/tcl/vtktesting/grab.tcl
-lib/vtk-%%VER2%%/tcl/vtktesting/mccases.tcl
-lib/vtk-%%VER2%%/tcl/vtktesting/vtktesting.tcl
-lib/vtk-%%VER2%%/tcl/vtkviews/vtkviews.tcl
-lib/vtk-%%VER2%%/tcl/vtkvolumerendering/vtkvolumerendering.tcl
-lib/vtk-%%VER2%%/tcl/vtkwidgets/vtkwidgets.tcl
 lib/vtk-%%VER2%%/testing/FindString.tcl
 lib/vtk-%%VER2%%/testing/HeaderTesting.py
 lib/vtk-%%VER2%%/testing/PrintSelfCheck.tcl
 lib/vtk-%%VER2%%/testing/TestSetGet.tcl
 lib/vtk-%%VER2%%/testing/WindowsMangleList.py
+lib/vtk-%%VER2%%/testing/prtImageTest.tcl
 lib/vtk-%%VER2%%/testing/rtImageTest.tcl
 lib/vtk-%%VER2%%/vtkCommonKit.cmake
 lib/vtk-%%VER2%%/vtkFilteringKit.cmake
@@ -2238,28 +2382,45 @@ lib/vtk-%%VER2%%/vtkHybridKit.cmake
 lib/vtk-%%VER2%%/vtkIOKit.cmake
 lib/vtk-%%VER2%%/vtkImagingKit.cmake
 lib/vtk-%%VER2%%/vtkInfovisKit.cmake
+lib/vtk-%%VER2%%/vtkParallelKit.cmake
 lib/vtk-%%VER2%%/vtkRenderingKit.cmake
 lib/vtk-%%VER2%%/vtkViewsKit.cmake
 lib/vtk-%%VER2%%/vtkVolumeRenderingKit.cmake
 lib/vtk-%%VER2%%/vtkWidgetsKit.cmake
+@comment The following directory is shared with multimedia/vtkmpeg2encode
+@dirrmtry include/vtk-%%VER2%%
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkwidgets
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkvolumerendering
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkviews
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtktesting
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkrendering
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkparallel
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkio
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkinteraction
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkinfovis
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkimaging
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkhybrid
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkgraphics
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkgeovis
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkfiltering
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkcommon
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtkbase
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl/vtk
+%%TCLTK%%@dirrm lib/vtk-%%VER2%%/tcl
+%%TCLTK%%@dirrm include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%
+%%TCLTK%%@dirrm include/vtk-%%VER2%%/TclTk/internals
+%%TCLTK%%@dirrm include/vtk-%%VER2%%/TclTk
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/wx
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/util
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/tk
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/test
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/qt4
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/qt
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/gtk
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk
+%%JAVA%%@dirrm lib/vtk-%%VER2%%/java/vtk
+%%JAVA%%@dirrm lib/vtk-%%VER2%%/java
 @dirrm lib/vtk-%%VER2%%/testing
-@dirrm lib/vtk-%%VER2%%/tcl/vtkwidgets
-@dirrm lib/vtk-%%VER2%%/tcl/vtkvolumerendering
-@dirrm lib/vtk-%%VER2%%/tcl/vtkviews
-@dirrm lib/vtk-%%VER2%%/tcl/vtktesting
-@dirrm lib/vtk-%%VER2%%/tcl/vtkrendering
-@dirrm lib/vtk-%%VER2%%/tcl/vtkio
-@dirrm lib/vtk-%%VER2%%/tcl/vtkinteraction
-@dirrm lib/vtk-%%VER2%%/tcl/vtkinfovis
-@dirrm lib/vtk-%%VER2%%/tcl/vtkimaging
-@dirrm lib/vtk-%%VER2%%/tcl/vtkhybrid
-@dirrm lib/vtk-%%VER2%%/tcl/vtkgraphics
-@dirrm lib/vtk-%%VER2%%/tcl/vtkgeovis
-@dirrm lib/vtk-%%VER2%%/tcl/vtkfiltering
-@dirrm lib/vtk-%%VER2%%/tcl/vtkcommon
-@dirrm lib/vtk-%%VER2%%/tcl/vtkbase
-@dirrm lib/vtk-%%VER2%%/tcl/vtk
-@dirrm lib/vtk-%%VER2%%/tcl
 @dirrm lib/vtk-%%VER2%%/doxygen
 @dirrm lib/vtk-%%VER2%%/doc/verdict/1.2.0
 @dirrm lib/vtk-%%VER2%%/doc/verdict
@@ -2283,15 +2444,3 @@ lib/vtk-%%VER2%%/vtkWidgetsKit.cmake
 @dirrm include/vtk-%%VER2%%/vtkfreetype
 @dirrm include/vtk-%%VER2%%/internal
 @dirrm include/vtk-%%VER2%%/alglib
-%%TCLTK%%@dirrm include/vtk-%%VER2%%/TclTk/internals/tk%%TCLTK_VER%%
-@dirrm include/vtk-%%VER2%%/TclTk/internals
-@dirrm include/vtk-%%VER2%%/TclTk
-@dirrmtry include/vtk-%%VER2%%
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/wx
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/util
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/tk
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/test
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/qt4
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/qt
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk/gtk
-%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/vtk
