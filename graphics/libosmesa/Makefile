@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	xxf86vm xext xfixes xdamage xt
 USE_GMAKE=	yes
+USE_PYTHON_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-driver=osmesa --with-osmesa-bits=32 \
 		--includedir=${PREFIX}/include/Mesa
