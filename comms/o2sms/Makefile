@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	o2sms
-PORTVERSION=	3.35
+PORTVERSION=	3.36
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN \
 		http://www.mackers.com/projects/o2sms/releases/
