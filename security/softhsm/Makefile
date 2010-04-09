@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	softhsm
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.opendnssec.org/files/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	A software implementation of a Hardware Security Module (HSM)
@@ -29,7 +28,6 @@ PLIST_FILES=	bin/softhsm \
 		lib/libsofthsm.a \
 		lib/libsofthsm.la \
 		lib/libsofthsm.so \
-		lib/libsofthsm.so.1 \
 		etc/softhsm.conf \
 		etc/softhsm.conf.sample
 
