@@ -17,6 +17,8 @@ COMMENT=	An optimizer for PHP code
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 USE_PHP=	yes
+DEFAULT_PHP_VER=4
+IGNORE_WITH_PHP=5
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -29,11 +31,7 @@ VER=		6.0
 LIB_DEPENDS+=	m.4:${PORTSDIR}/misc/compat6x
 .endif
 
-.if ${PHP_VER} == 4
 ZEND_PATH=	4.4.x
-.else
-ZEND_PATH=	5.2.x
-.endif
 
 PLIST_SUB+=	ZEND_PATH=${ZEND_PATH}
 
