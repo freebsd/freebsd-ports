@@ -10543,6 +10543,7 @@ p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
 p5-AnyEvent-IRC                 ports/irc/p5-AnyEvent-IRC
 p5-AnyEvent-ReverseHTTP         ports/www/p5-AnyEvent-ReverseHTTP
 p5-AnyEvent-Run                 ports/devel/p5-AnyEvent-Run
+p5-AnyEvent-Subprocess          ports/devel/p5-AnyEvent-Subprocess
 p5-AnyEvent-Twitter             ports/net/p5-AnyEvent-Twitter
 p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
@@ -12770,6 +12771,7 @@ p5-Net-CIDR                     ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite                ports/net/p5-Net-CIDR-Lite
 p5-Net-CSTA                     ports/net/p5-Net-CSTA
 p5-Net-Cassandra                ports/net/p5-Net-Cassandra
+p5-Net-Cassandra-Easy           ports/net/p5-Net-Cassandra-Easy
 p5-Net-DAAP-Client              ports/audio/p5-Net-DAAP-Client
 p5-Net-DAAP-DMAP                ports/audio/p5-Net-DAAP-DMAP
 p5-Net-DAV-Server               ports/net/p5-Net-DAV-Server
@@ -12938,6 +12940,7 @@ p5-Net-Telnet-Netscreen         ports/net/p5-Net-Telnet-Netscreen
 p5-Net-TiVo                     ports/net/p5-Net-TiVo
 p5-Net-Trac                     ports/www/p5-Net-Trac
 p5-Net-Traceroute               ports/net/p5-Net-Traceroute
+p5-Net-Traceroute-PurePerl      ports/net/p5-Net-Traceroute-PurePerl
 p5-Net-Traceroute6              ports/net/p5-Net-Traceroute6
 p5-Net-Trackback                ports/net/p5-Net-Trackback
 p5-Net-Twitter                  ports/net/p5-Net-Twitter
@@ -13761,6 +13764,7 @@ p5-Text-Emoticon                ports/textproc/p5-Text-Emoticon
 p5-Text-Emoticon-GoogleTalk     ports/textproc/p5-Text-Emoticon-GoogleTalk
 p5-Text-Emoticon-MSN            ports/textproc/p5-Text-Emoticon-MSN
 p5-Text-EtText                  ports/textproc/p5-Text-EtText
+p5-Text-Extract-Word            ports/textproc/p5-Text-Extract-Word
 p5-Text-ExtractWords            ports/textproc/p5-Text-ExtractWords
 p5-Text-FIGlet                  ports/misc/p5-Text-FIGlet
 p5-Text-FillIn                  ports/textproc/p5-Text-FillIn
@@ -14327,6 +14331,7 @@ p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
 p5-anyevent-irc                 ports/irc/p5-AnyEvent-IRC
 p5-anyevent-reversehttp         ports/www/p5-AnyEvent-ReverseHTTP
 p5-anyevent-run                 ports/devel/p5-AnyEvent-Run
+p5-anyevent-subprocess          ports/devel/p5-AnyEvent-Subprocess
 p5-anyevent-twitter             ports/net/p5-AnyEvent-Twitter
 p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
@@ -16596,6 +16601,7 @@ p5-net-bittorrent-file          ports/net-p2p/p5-Net-BitTorrent-File
 p5-net-bittorrent-peerpacket    ports/net-p2p/p5-Net-BitTorrent-PeerPacket
 p5-net-blogger                  ports/net/p5-Net-Blogger
 p5-net-cassandra                ports/net/p5-Net-Cassandra
+p5-net-cassandra-easy           ports/net/p5-Net-Cassandra-Easy
 p5-net-cidr                     ports/net-mgmt/p5-Net-CIDR
 p5-net-cidr-lite                ports/net/p5-Net-CIDR-Lite
 p5-net-csta                     ports/net/p5-Net-CSTA
@@ -16769,6 +16775,7 @@ p5-net-telnet-netscreen         ports/net/p5-Net-Telnet-Netscreen
 p5-net-tivo                     ports/net/p5-Net-TiVo
 p5-net-trac                     ports/www/p5-Net-Trac
 p5-net-traceroute               ports/net/p5-Net-Traceroute
+p5-net-traceroute-pureperl      ports/net/p5-Net-Traceroute-PurePerl
 p5-net-traceroute6              ports/net/p5-Net-Traceroute6
 p5-net-trackback                ports/net/p5-Net-Trackback
 p5-net-twitter                  ports/net/p5-Net-Twitter
@@ -17625,6 +17632,7 @@ p5-text-emoticon                ports/textproc/p5-Text-Emoticon
 p5-text-emoticon-googletalk     ports/textproc/p5-Text-Emoticon-GoogleTalk
 p5-text-emoticon-msn            ports/textproc/p5-Text-Emoticon-MSN
 p5-text-ettext                  ports/textproc/p5-Text-EtText
+p5-text-extract-word            ports/textproc/p5-Text-Extract-Word
 p5-text-extractwords            ports/textproc/p5-Text-ExtractWords
 p5-text-figlet                  ports/misc/p5-Text-FIGlet
 p5-text-fillin                  ports/textproc/p5-Text-FillIn
@@ -24023,6 +24031,7 @@ umix                            ports/audio/umix
 uml2svg                         ports/textproc/uml2svg
 umodplayer                      ports/audio/umodplayer
 umodunpack                      ports/misc/umodunpack
+umph                            ports/multimedia/umph
 umr                             ports/multimedia/umr
 unace                           ports/archivers/unace
 unadf                           ports/archivers/unadf
