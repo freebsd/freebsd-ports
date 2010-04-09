@@ -1808,6 +1808,7 @@
     SUBDIR += p5-MooseX-IOC
     SUBDIR += p5-MooseX-InsideOut
     SUBDIR += p5-MooseX-LazyRequire
+    SUBDIR += p5-MooseX-Lists
     SUBDIR += p5-MooseX-Log-Log4perl
     SUBDIR += p5-MooseX-Meta-TypeConstraint-ForceCoercion
     SUBDIR += p5-MooseX-Method-Signatures
