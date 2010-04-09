@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PECL classes for Mongo Database Driver
 
-BUILD_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/spl.so:${PORTSDIR}/devel/php5-spl
-
 USE_PHP=	yes
 USE_PHP_BUILD=	spl
 USE_PHPIZE=	yes
