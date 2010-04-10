@@ -1,17 +1,22 @@
 bin/gnome-gmail-notifier
 share/applications/gnome-gmail-notifier.desktop
-share/gnome-gmail-notifier/ggn-about.glade
-share/gnome-gmail-notifier/ggn-edit.glade
-share/gnome-gmail-notifier/ggn-error.svg
-share/gnome-gmail-notifier/ggn-menu.glade
-share/gnome-gmail-notifier/ggn-new.svg
-share/gnome-gmail-notifier/ggn-normal.svg
-share/gnome-gmail-notifier/ggn-prefs.glade
-share/gnome-gmail-notifier/ggn-wait.svg
-share/gnome-gmail-notifier/ggn-warn.svg
-share/gnome-gmail-notifier/welcome-logo.png
-share/gnome-gmail-notifier/welcome-shot.png
-share/gnome-gmail-notifier/welcome.css
-share/gnome-gmail-notifier/welcome.html
+share/gnome-control-center/default-apps/gnome-gmail-notifier.xml
+%%DATADIR%%/ggn-about.xml
+%%DATADIR%%/ggn-edit.xml
+%%DATADIR%%/ggn-error-lg.svg
+%%DATADIR%%/ggn-error-sm.svg
+%%DATADIR%%/ggn-menu.xml
+%%DATADIR%%/ggn-new-lg.svg
+%%DATADIR%%/ggn-new-sm.svg
+%%DATADIR%%/ggn-normal-lg.svg
+%%DATADIR%%/ggn-normal-sm.svg
+%%DATADIR%%/ggn-prefs.xml
+%%DATADIR%%/ggn-wait.svg
+%%DATADIR%%/ggn-warn.svg
+%%DATADIR%%/ggn-write.svg
+share/locale/es/LC_MESSAGES/gnome-gmail-notifier.mo
 share/pixmaps/gnome-gmail-notifier.svg
-@dirrm share/gnome-gmail-notifier
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/gnome-control-center/default-apps
+@dirrmtry share/gnome-control-center

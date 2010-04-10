@@ -6,7 +6,7 @@ The Notifier presents itself as a system tray icon in the GNOME2
 desktop, displaying a small balloon popup when the user recieves new
 mail.
 
-WWW: http://code.google.com/p/gnome-gmail-notifier/
+WWW: http://notifier.geekysuavo.org/
 
 - Florent Thoumie
 flz@FreeBSD.org
