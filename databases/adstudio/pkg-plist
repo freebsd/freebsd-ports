@@ -35,6 +35,7 @@ bin/runscript.sh
 %%DATADIR%%/lib/apache/commons-math.jar
 %%DATADIR%%/lib/apache/commons-net-ftp.jar
 %%DATADIR%%/lib/apache/commons-net.jar
+%%DATADIR%%/lib/apache/commons-pool.jar
 %%DATADIR%%/lib/apache/commons-primitives.jar
 %%DATADIR%%/lib/apache/commons-transaction.jar
 %%DATADIR%%/lib/apache/commons-xmlgraphics.jar
@@ -55,6 +56,7 @@ bin/runscript.sh
 %%DATADIR%%/lib/drivers/jtds.jar
 %%DATADIR%%/lib/drivers/mysql-src.jar
 %%DATADIR%%/lib/drivers/mysql.jar
+%%DATADIR%%/lib/drivers/ncluster.jar
 %%DATADIR%%/lib/drivers/nlscharset12.jar
 %%DATADIR%%/lib/drivers/oracle.jar
 %%DATADIR%%/lib/drivers/postgresql.jar
