@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bisoncpp
-PORTVERSION=	2.4.8
+PORTVERSION=	2.5.1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/bisonc%2B%2B/${PORTVERSION}
 DISTNAME=	bisonc++_${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	LALR(1) parser generator that generates C++ classes
 
 BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		yodl>=2.0:${PORTSDIR}/textproc/yodl \
-		libbobcat>=2.05.00:${PORTSDIR}/devel/libbobcat \
+		libbobcat>=2.07.04:${PORTSDIR}/devel/libbobcat \
 		g++45:${PORTSDIR}/lang/gcc45
 
 .if !defined(NO_INSTALL_MANPAGES)
