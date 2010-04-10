@@ -1,5 +1,5 @@
 --- base/Makefile.in.orig	2009-12-18 16:04:10.000000000 +0900
-+++ base/Makefile.in	2010-03-02 06:21:50.000000000 +0900
++++ base/Makefile.in	2010-04-11 00:55:04.000000000 +0900
 @@ -47,9 +47,8 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
@@ -68,7 +68,7 @@
  #SYNC=posync
  #SYNC=nosync
 -SYNC=@SYNC@
-+SYNC=posync
++SYNC=nosync
  
  # programs we use
  RM=rm -f
