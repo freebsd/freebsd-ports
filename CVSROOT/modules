@@ -7875,6 +7875,7 @@ liborange                       ports/archivers/liborange
 liborigin                       ports/math/liborigin
 libosip                         ports/net/libosip
 libosip2                        ports/net/libosip2
+libosmesa                       ports/graphics/libosmesa
 libotf                          ports/print/libotf
 libotr                          ports/security/libotr
 libowfat                        ports/devel/libowfat
@@ -26013,7 +26014,9 @@ zh-vflib                        ports/chinese/vflib
 zh-wangttf                      ports/chinese/wangttf
 zh-wenju                        ports/chinese/wenju
 zh-wordpress-zh_CN              ports/chinese/wordpress-zh_CN
+zh-wordpress-zh_TW              ports/chinese/wordpress-zh_TW
 zh-wordpress-zh_cn              ports/chinese/wordpress-zh_CN
+zh-wordpress-zh_tw              ports/chinese/wordpress-zh_TW
 zh-xemacs21                     ports/chinese/xemacs21
 zh-xmms                         ports/chinese/xmms
 zh-xpdf                         ports/chinese/xpdf
