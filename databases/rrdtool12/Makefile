@@ -90,9 +90,13 @@ post-extract:
 		-e 's/^	cd .* rrdtool.html index.html/	#/' \
 		${WRKSRC}/doc/Makefile.in
 .endif
+.if defined(NOPORTEXAMPLES)
+	${REINPLACE_CMD} -e '/^SUBDIRS = /s| examples | |' \
+		${WRKSRC}/Makefile.in
+.endif
 
 post-install:
-.if !defined(BATCH)
+.if !defined(BATCH) && !defined(NOPORTEXAMPLES)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "############################################################################"
 	@${ECHO_MSG} "# See ${PREFIX}/share/examples/rrdtool for some demonstration code        #"

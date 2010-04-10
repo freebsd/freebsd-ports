@@ -10,14 +10,14 @@ lib/librrd_th.la
 lib/librrd_th.so
 lib/librrd_th.so.2
 include/rrd.h
-%%EXAMPLESDIR%%/4charts.pl
-%%EXAMPLESDIR%%/bigtops.pl
-%%EXAMPLESDIR%%/cgi-demo.cgi
-%%EXAMPLESDIR%%/minmax.pl
-%%EXAMPLESDIR%%/piped-demo.pl
-%%EXAMPLESDIR%%/perftest.pl
-%%EXAMPLESDIR%%/shared-demo.pl
-%%EXAMPLESDIR%%/stripes.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/4charts.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bigtops.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi-demo.cgi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/minmax.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/piped-demo.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/perftest.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shared-demo.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stripes.pl
 %%PORTDOCS%%%%DOCSDIR%%/html/RRDp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/RRDs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bin_dec_hex.html
@@ -109,7 +109,7 @@ include/rrd.h
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/.packlist
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtoolmodule.so
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
