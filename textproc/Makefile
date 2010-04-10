@@ -854,6 +854,7 @@
     SUBDIR += p5-XML-Stream
     SUBDIR += p5-XML-Tiny
     SUBDIR += p5-XML-TinyXML
+    SUBDIR += p5-XML-TokeParser
     SUBDIR += p5-XML-TreeBuilder
     SUBDIR += p5-XML-TreePP
     SUBDIR += p5-XML-Twig
