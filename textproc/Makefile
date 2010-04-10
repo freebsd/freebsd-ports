@@ -769,6 +769,7 @@
     SUBDIR += p5-XML-DOMHandler
     SUBDIR += p5-XML-DT
     SUBDIR += p5-XML-DTDParser
+    SUBDIR += p5-XML-Descent
     SUBDIR += p5-XML-DifferenceMarkup
     SUBDIR += p5-XML-Directory
     SUBDIR += p5-XML-DoubleEncodedEntities
