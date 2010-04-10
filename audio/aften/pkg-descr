@@ -1,0 +1,6 @@
+Aften is an audio encoder which generates compressed audio streams based
+on ATSC A/52 specification. This type of audio is also known as AC-3 or
+Dolby(R) Digital and is one of the audio codecs used in DVD-Video
+content.
+
+WWW: http://aften.sourceforge.net/
