@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wavpack
-PORTVERSION=	4.50.1
+PORTVERSION=	4.60.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.wavpack.com/
 
@@ -18,10 +18,14 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 OPTIONS=	MMX "Enable MMX optimizations (x86 only)" Off
+
+MAN1=	wavpack.1 wvgain.1 wvunpack.1
 
 .include <bsd.port.pre.mk>
 
