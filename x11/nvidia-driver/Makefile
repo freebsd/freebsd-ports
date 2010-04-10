@@ -6,18 +6,12 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	195.22
+DISTVERSION?=	195.36.15
 PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
-.if ${DISTVERSION} == 195.22
 MASTER_SITE_SUBDIR=	XFree86/FreeBSD-x86${ARCH_SUFX}/${DISTVERSION}
-ONLY_FOR_ARCHS=	i386 amd64
-.else
-MASTER_SITE_SUBDIR=	freebsd/${DISTVERSION}
-ONLY_FOR_ARCHS=	i386
-.endif
 DISTNAME=	NVIDIA-FreeBSD-x86${ARCH_SUFX}-${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -30,13 +24,6 @@ SUB_FILES+=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
 PORTDOCS=	*
-
-OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
-		ACPI_PM		"Enable support for ACPI Power Management" off \
-		LINUX		"Build with support for Linux compatibility" on
-.if ${DISTVERSION} == 195.22	# XXX should check against NVVERSION XXX
-OPTIONS+=	WBINVD		"Enable heavy-weight cache-flush logic" off
-.endif
 
 # Starting with version 1.0-7667, NVidia has dropped support for numerous
 # "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
@@ -51,6 +38,19 @@ OPTIONS+=	WBINVD		"Enable heavy-weight cache-flush logic" off
 NVVERSION=	${DISTVERSION:S/.//g}
 .else							# major.minor
 NVVERSION=	${DISTVERSION:S/.//g}00
+.endif
+
+.if ${NVVERSION} >= 1952200
+ONLY_FOR_ARCHS=	i386 amd64
+.else
+ONLY_FOR_ARCHS=	i386
+.endif
+
+OPTIONS=	FREEBSD_AGP	"Use FreeBSD AGP GART driver" off \
+		ACPI_PM		"Enable support for ACPI Power Management" off \
+		LINUX		"Build with support for Linux compatibility" on
+.if ${NVVERSION} >= 1952200
+OPTIONS+=	WBINVD		"Enable heavy-weight cache-flush logic" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -79,7 +79,7 @@ PLIST_SUB+=	LINUX="@comment "
 MAKE_ENV+=	WITHOUT_LINUX=yes
 .endif
 
-.if ${OSVERSION} < 702106 && ${NVVERSION} == 1952200
+.if ${OSVERSION} < 702106 && ${NVVERSION} >= 1952200
 IGNORE=		requires fairly recent FreeBSD-STABLE, or FreeBSD-CURRENT
 .endif
 
@@ -114,7 +114,7 @@ post-patch: .SILENT
 		${WRKSRC}/src/nv-freebsd.h
 .endif
 # Don't build any binaries (nvidia-settings and nvidia-xconfig) and manuals
-.if ${NVVERSION} < 974600 || ${NVVERSION} == 1952200
+.if ${NVVERSION} < 974600 || ${NVVERSION} >= 1952200
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
 .else
 	${REINPLACE_CMD} -E 's/(lib).*/\1/' ${WRKSRC}/x11/Makefile
@@ -136,11 +136,14 @@ post-install:
 .if ${NVVERSION} < 817400
 	@${REINPLACE_CMD} '/libnvidia-cfg/d' ${TMPPLIST}
 .endif
-.if ${NVVERSION} < 974600 || ${NVVERSION} == 1952200
+.if ${NVVERSION} < 974600 || ${NVVERSION} >= 1952200
 	@${REINPLACE_CMD} '/wfb/d' ${TMPPLIST}
 .endif
 .if ${NVVERSION} < 1802900
 	@${REINPLACE_CMD} '/vdpau/d' ${TMPPLIST}
+.else
+	@${MKDIR} ${PREFIX}/include/vdpau
+	@${LN} -sf ${DOCSDIR}/vdpau*.h ${PREFIX}/include/vdpau
 .endif
 .if ${NVVERSION} < 1851829
 	@${REINPLACE_CMD} '/libcuda/d' ${TMPPLIST}
