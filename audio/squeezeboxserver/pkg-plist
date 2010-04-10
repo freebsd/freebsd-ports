@@ -5,12 +5,13 @@ bin/softsqueeze
 %%PORTDOCS%%%%DOCSDIR%%/Installation.txt
 %%PORTDOCS%%%%DOCSDIR%%/License.txt
 %%SLIMDIR%%/CPAN/Algorithm/C3.pm
-%%SLIMDIR%%/CPAN/AnyEvent.pm
 %%SLIMDIR%%/CPAN/AnyEvent/AIO.pm
+%%SLIMDIR%%/CPAN/AnyEvent/Debug.pm
 %%SLIMDIR%%/CPAN/AnyEvent/Handle.pm
 %%SLIMDIR%%/CPAN/AnyEvent/Impl/EV.pm
 %%SLIMDIR%%/CPAN/AnyEvent/Socket.pm
 %%SLIMDIR%%/CPAN/AnyEvent/Strict.pm
+%%SLIMDIR%%/CPAN/AnyEvent/TLS.pm
 %%SLIMDIR%%/CPAN/AnyEvent/Util.pm
 %%SLIMDIR%%/CPAN/Archive/Zip.pm
 %%SLIMDIR%%/CPAN/Archive/Zip/Archive.pm
@@ -171,16 +172,11 @@ bin/softsqueeze
 %%SLIMDIR%%/CPAN/Log/Log4perl/Resurrector.pm
 %%SLIMDIR%%/CPAN/Log/Log4perl/Util.pm
 %%SLIMDIR%%/CPAN/Log/Log4perl/Util/Semaphore.pm
-%%SLIMDIR%%/CPAN/Math/BigFloat.pm
-%%SLIMDIR%%/CPAN/Math/BigInt.pm
-%%SLIMDIR%%/CPAN/Math/BigInt/Calc.pm
-%%SLIMDIR%%/CPAN/Math/BigInt/CalcEmu.pm
 %%SLIMDIR%%/CPAN/Math/VecStat.pm
 %%SLIMDIR%%/CPAN/Net/HTTP.pm
 %%SLIMDIR%%/CPAN/Net/HTTP/Methods.pm
 %%SLIMDIR%%/CPAN/Net/HTTP/NB.pm
 %%SLIMDIR%%/CPAN/Net/HTTPS.pm
-%%SLIMDIR%%/CPAN/Net/IP.pm
 %%SLIMDIR%%/CPAN/Net/UPnP.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/AV/Container.pm
 %%SLIMDIR%%/CPAN/Net/UPnP/AV/Content.pm
@@ -675,7 +671,6 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/docs/remote.html.de
 %%SLIMDIR%%/HTML/EN/html/docs/remote.html.es
 %%SLIMDIR%%/HTML/EN/html/docs/remote.html.fr
-%%SLIMDIR%%/HTML/EN/html/docs/remote.html.he
 %%SLIMDIR%%/HTML/EN/html/docs/remote.html.it
 %%SLIMDIR%%/HTML/EN/html/docs/remote.html.nl
 %%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html
@@ -683,7 +678,6 @@ bin/softsqueeze
 %%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.de
 %%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.es
 %%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.fr
-%%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.he
 %%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.it
 %%SLIMDIR%%/HTML/EN/html/docs/remotestreaming.html.nl
 %%SLIMDIR%%/HTML/EN/html/docs/skins.html
@@ -1523,6 +1517,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Buttons/BrowseTree.pm
 %%SLIMDIR%%/Slim/Buttons/BrowseUPnPMediaServer.pm
 %%SLIMDIR%%/Slim/Buttons/Common.pm
+%%SLIMDIR%%/Slim/Buttons/GlobalSearch.pm
 %%SLIMDIR%%/Slim/Buttons/Home.pm
 %%SLIMDIR%%/Slim/Buttons/Information.pm
 %%SLIMDIR%%/Slim/Buttons/Input/Bar.pm
@@ -1563,7 +1558,6 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Formats/AIFF.pm
 %%SLIMDIR%%/Slim/Formats/APE.pm
 %%SLIMDIR%%/Slim/Formats/FLAC.pm
-%%SLIMDIR%%/Slim/Formats/HTTP.pm
 %%SLIMDIR%%/Slim/Formats/MP3.pm
 %%SLIMDIR%%/Slim/Formats/Movie.pm
 %%SLIMDIR%%/Slim/Formats/Musepack.pm
@@ -1600,7 +1594,9 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Menu/AlbumInfo.pm
 %%SLIMDIR%%/Slim/Menu/ArtistInfo.pm
 %%SLIMDIR%%/Slim/Menu/Base.pm
+%%SLIMDIR%%/Slim/Menu/FolderInfo.pm
 %%SLIMDIR%%/Slim/Menu/GenreInfo.pm
+%%SLIMDIR%%/Slim/Menu/GlobalSearch.pm
 %%SLIMDIR%%/Slim/Menu/PlaylistInfo.pm
 %%SLIMDIR%%/Slim/Menu/SystemInfo.pm
 %%SLIMDIR%%/Slim/Menu/TrackInfo.pm
@@ -1645,6 +1641,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Player/Protocols/File.pm
 %%SLIMDIR%%/Slim/Player/Protocols/HTTP.pm
 %%SLIMDIR%%/Slim/Player/Protocols/MMS.pm
+%%SLIMDIR%%/Slim/Player/Protocols/SqueezePlayDirect.pm
 %%SLIMDIR%%/Slim/Player/Receiver.pm
 %%SLIMDIR%%/Slim/Player/ReplayGain.pm
 %%SLIMDIR%%/Slim/Player/SB1SliMP3Sync.pm
@@ -1862,6 +1859,10 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/install.xml
 %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/strings.txt
+%%SLIMDIR%%/Slim/Plugin/SN/install.xml
+%%SLIMDIR%%/Slim/Plugin/SN/Plugin.pm
+%%SLIMDIR%%/Slim/Plugin/SN/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/SN/strings.txt
 %%SLIMDIR%%/Slim/Plugin/SavePlaylist/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/SavePlaylist/install.xml
 %%SLIMDIR%%/Slim/Plugin/SavePlaylist/strings.txt
@@ -2052,6 +2053,7 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/bootstrap.pm
 %%SLIMDIR%%/cleanup.pl
 %%SLIMDIR%%/convert.conf.sample
+%%SLIMDIR%%/lib/AnyEvent.pm
 %%SLIMDIR%%/lib/AnyEvent/DNS.pm
 %%SLIMDIR%%/lib/AnyEvent/Impl/PerfMonEV.pm
 %%SLIMDIR%%/lib/Audio/APETags.pm
@@ -2069,6 +2071,7 @@ bin/softsqueeze
 %%SLIMDIR%%/lib/Net/UPnP/Service.pm
 %%SLIMDIR%%/lib/README
 %%SLIMDIR%%/lib/Template/Provider.pm
+%%SLIMDIR%%/custom-convert.conf
 %%SLIMDIR%%/modules.conf
 %%SLIMDIR%%/revision.txt
 %%SLIMDIR%%/scanner.pl
@@ -2159,6 +2162,7 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/Slim/Plugin/Sirius/HTML
 @dirrm %%SLIMDIR%%/Slim/Plugin/Sirius
 @dirrm %%SLIMDIR%%/Slim/Plugin/SavePlaylist
+@dirrm %%SLIMDIR%%/Slim/Plugin/SN
 @dirrm %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/HTML/EN/plugins/RhapsodyDirect/html/images
 @dirrm %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/HTML/EN/plugins/RhapsodyDirect/html
 @dirrm %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/HTML/EN/plugins/RhapsodyDirect
@@ -2521,7 +2525,6 @@ bin/softsqueeze
 @dirrm %%SLIMDIR%%/CPAN/Net/UPnP
 @dirrm %%SLIMDIR%%/CPAN/Net/HTTP
 @dirrm %%SLIMDIR%%/CPAN/Net
-@dirrm %%SLIMDIR%%/CPAN/Math/BigInt
 @dirrm %%SLIMDIR%%/CPAN/Math
 @dirrm %%SLIMDIR%%/CPAN/Log/Log4perl/Util
 @dirrm %%SLIMDIR%%/CPAN/Log/Log4perl/Layout/PatternLayout
