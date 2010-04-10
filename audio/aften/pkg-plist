@@ -1,0 +1,15 @@
+@comment $FreeBSD$
+bin/aften
+bin/wavfilter
+bin/wavinfo
+bin/wavrms
+include/aften/aften.h
+%%CXX%%include/aften/aftenxx.h
+include/aften/aften-types.h
+%%LIBS%%lib/libaften.so.%%PORTVERSION%%
+%%LIBS%%lib/libaften.so.0
+%%LIBS%%lib/libaften.so
+%%LIBS%%%%CXX%%lib/libaftenxx.so.%%PORTVERSION%%
+%%LIBS%%%%CXX%%lib/libaftenxx.so.0
+%%LIBS%%%%CXX%%lib/libaftenxx.so
+@dirrm include/aften
