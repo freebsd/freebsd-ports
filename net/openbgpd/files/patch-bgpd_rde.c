@@ -2,13 +2,13 @@ Index: bgpd/rde.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde.c,v
 retrieving revision 1.1.1.8
-retrieving revision 1.8
-diff -u -p -r1.1.1.8 -r1.8
+retrieving revision 1.9
+diff -u -p -r1.1.1.8 -r1.9
 --- bgpd/rde.c	14 Feb 2010 20:19:57 -0000	1.1.1.8
-+++ bgpd/rde.c	14 Feb 2010 19:53:36 -0000	1.8
++++ bgpd/rde.c	10 Apr 2010 12:16:23 -0000	1.9
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde.c,v 1.264 2009/06/29 12:22:16 claudio Exp $ */
-+/*	$OpenBSD: rde.c,v 1.284 2010/01/13 06:02:37 claudio Exp $ */
++/*	$OpenBSD: rde.c,v 1.290 2010/03/30 15:43:30 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -307,6 +307,27 @@ diff -u -p -r1.1.1.8 -r1.8
  		default:
  			break;
  		}
+@@ -587,7 +568,7 @@ rde_dispatch_imsg_parent(struct imsgbuf 
+ 				fatal(NULL);
+ 			memcpy(nconf, imsg.data, sizeof(struct bgpd_config));
+ 			for (rid = 0; rid < rib_size; rid++)
+-				ribs[rid].state = RIB_DELETE;
++				ribs[rid].state = RECONF_DELETE;
+ 			break;
+ 		case IMSG_NETWORK_ADD:
+ 			memcpy(&netconf_p, imsg.data, sizeof(netconf_p));
+@@ -615,9 +596,9 @@ rde_dispatch_imsg_parent(struct imsgbuf 
+ 			memcpy(&rn, imsg.data, sizeof(rn));
+ 			rid = rib_find(rn.name);
+ 			if (rid == RIB_FAILED)
+-				rib_new(-1, rn.name, rn.flags);
++				rib_new(rn.name, rn.flags);
+ 			else
+-				ribs[rid].state = RIB_ACTIVE;
++				ribs[rid].state = RECONF_KEEP;
+ 			break;
+ 		case IMSG_RECONF_FILTER:
+ 			if (imsg.hdr.len - IMSG_HEADER_SIZE !=
 @@ -644,9 +625,17 @@ rde_dispatch_imsg_parent(struct imsgbuf 
  					nconf->flags &= ~BGPD_FLAG_NO_EVALUATE;
  			}
@@ -332,9 +353,9 @@ diff -u -p -r1.1.1.8 -r1.8
 -			/* XXX this needs rework anyway */
 +			/* bring ribs in sync before softreconfig dance */
 +			for (rid = 0; rid < rib_size; rid++) {
-+				if (ribs[rid].state == RIB_DELETE)
++				if (ribs[rid].state == RECONF_DELETE)
 +					rib_free(&ribs[rid]);
-+				else if (ribs[rid].state == RIB_NEW)
++				else if (ribs[rid].state == RECONF_REINIT)
 +					rib_dump(&ribs[0],
 +					    rde_softreconfig_load, &ribs[rid],
 +					    AID_UNSPEC);
@@ -349,7 +370,7 @@ diff -u -p -r1.1.1.8 -r1.8
  				int i;
 -				for (i = 1; i < rib_size; i++)
 +				for (i = 1; i < rib_size; i++) {
-+					if (ribs[i].state == RIB_NEW)
++					if (ribs[i].state == RECONF_REINIT)
 +						/* already synced by _load */
 +						continue;
  					rib_dump(&ribs[i], rde_softreconfig_out,
@@ -1159,7 +1180,7 @@ diff -u -p -r1.1.1.8 -r1.8
  
  		for (i = 1; i < rib_size; i++) {
 +			/* only active ribs need a softreconfig rerun */
-+			if (ribs[i].state != RIB_ACTIVE)
++			if (ribs[i].state != RECONF_KEEP)
 +				continue;
 +
  			/* check if prefix changed */
@@ -1495,7 +1516,7 @@ diff -u -p -r1.1.1.8 -r1.8
  		asp->flags |= F_ANN_DYNAMIC;
  
 -	rde_apply_set(asp, &nc->attrset, nc->prefix.af, peerself, peerself);
-+	rde_apply_set(asp, &nc->attrset, aid2af(nc->prefix.aid), peerself, peerself);
++	rde_apply_set(asp, &nc->attrset, nc->prefix.aid, peerself, peerself);
  	for (i = 1; i < rib_size; i++)
  		path_update(&ribs[i], peerself, asp, &nc->prefix,
  		    nc->prefixlen);

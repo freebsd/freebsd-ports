@@ -2,13 +2,13 @@ Index: bgpd/rde_rib.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_rib.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.5
-diff -u -p -r1.1.1.7 -r1.5
+retrieving revision 1.6
+diff -u -p -r1.1.1.7 -r1.6
 --- bgpd/rde_rib.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/rde_rib.c	4 Feb 2010 16:22:23 -0000	1.5
++++ bgpd/rde_rib.c	10 Apr 2010 12:16:23 -0000	1.6
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde_rib.c,v 1.116 2009/06/29 14:13:48 claudio Exp $ */
-+/*	$OpenBSD: rde_rib.c,v 1.120 2010/01/13 06:02:37 claudio Exp $ */
++/*	$OpenBSD: rde_rib.c,v 1.125 2010/04/07 09:44:11 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Claudio Jeker <claudio@openbsd.org>
@@ -24,16 +24,38 @@ diff -u -p -r1.1.1.7 -r1.5
  
  #include <stdlib.h>
  #include <string.h>
-@@ -78,7 +82,7 @@ rib_new(int id, char *name, u_int16_t fl
+@@ -50,16 +54,15 @@ RB_GENERATE(rib_tree, rib_entry, rib_e, 
+ 
+ /* RIB specific functions */
+ u_int16_t
+-rib_new(int id, char *name, u_int16_t flags)
++rib_new(char *name, u_int16_t flags)
+ {
+ 	struct rib	*xribs;
+ 	size_t		newsize;
++	u_int16_t	id;
+ 
+-	if (id < 0) {
+-		for (id = 0; id < rib_size; id++) {
+-			if (*ribs[id].name == '\0')
+-				break;
+-		}
++	for (id = 0; id < rib_size; id++) {
++		if (*ribs[id].name == '\0')
++			break;
+ 	}
+ 
+ 	if (id == RIB_FAILED)
+@@ -78,7 +81,7 @@ rib_new(int id, char *name, u_int16_t fl
  	bzero(&ribs[id], sizeof(struct rib));
  	strlcpy(ribs[id].name, name, sizeof(ribs[id].name));
  	RB_INIT(&ribs[id].rib);
 -	ribs[id].state = RIB_ACTIVE;
-+	ribs[id].state = RIB_NEW;
++	ribs[id].state = RECONF_REINIT;
  	ribs[id].id = id;
  	ribs[id].flags = flags;
  
-@@ -173,15 +177,16 @@ rib_lookup(struct rib *rib, struct bgpd_
+@@ -173,15 +176,16 @@ rib_lookup(struct rib *rib, struct bgpd_
  	struct rib_entry *re;
  	int		 i;
  
@@ -53,7 +75,7 @@ diff -u -p -r1.1.1.7 -r1.5
  		for (i = 128; i >= 0; i--) {
  			re = rib_get(rib, addr, i);
  			if (re != NULL)
-@@ -254,7 +259,7 @@ rib_empty(struct rib_entry *re)
+@@ -254,7 +258,7 @@ rib_empty(struct rib_entry *re)
  
  void
  rib_dump(struct rib *rib, void (*upcall)(struct rib_entry *, void *),
@@ -62,7 +84,7 @@ diff -u -p -r1.1.1.7 -r1.5
  {
  	struct rib_context	*ctx;
  
-@@ -263,7 +268,7 @@ rib_dump(struct rib *rib, void (*upcall)
+@@ -263,7 +267,7 @@ rib_dump(struct rib *rib, void (*upcall)
  	ctx->ctx_rib = rib;
  	ctx->ctx_upcall = upcall;
  	ctx->ctx_arg = arg;
@@ -71,7 +93,7 @@ diff -u -p -r1.1.1.7 -r1.5
  	rib_dump_r(ctx);
  }
  
-@@ -280,7 +285,8 @@ rib_dump_r(struct rib_context *ctx)
+@@ -280,7 +284,8 @@ rib_dump_r(struct rib_context *ctx)
  		re = rib_restart(ctx);
  
  	for (i = 0; re != NULL; re = RB_NEXT(rib_tree, unused, re)) {
@@ -81,7 +103,16 @@ diff -u -p -r1.1.1.7 -r1.5
  			continue;
  		if (ctx->ctx_count && i++ >= ctx->ctx_count &&
  		    (re->flags & F_RIB_ENTRYLOCK) == 0) {
-@@ -632,11 +638,11 @@ prefix_compare(const struct bgpd_addr *a
+@@ -308,7 +313,7 @@ rib_restart(struct rib_context *ctx)
+ 	re->flags &= ~F_RIB_ENTRYLOCK;
+ 
+ 	/* find first non empty element */
+-	while (rib_empty(re))
++	while (re && rib_empty(re))
+ 		re = RB_NEXT(rib_tree, unused, re);
+ 
+ 	/* free the previously locked rib element if empty */
+@@ -632,11 +637,11 @@ prefix_compare(const struct bgpd_addr *a
  	int		i;
  	u_int8_t	m;
  
@@ -97,7 +128,7 @@ diff -u -p -r1.1.1.7 -r1.5
  		if (prefixlen > 32)
  			fatalx("prefix_cmp: bad IPv4 prefixlen");
  		mask = htonl(prefixlen2mask(prefixlen));
-@@ -645,7 +651,7 @@ prefix_compare(const struct bgpd_addr *a
+@@ -645,7 +650,7 @@ prefix_compare(const struct bgpd_addr *a
  		if (aa != ba)
  			return (aa - ba);
  		return (0);
@@ -106,7 +137,7 @@ diff -u -p -r1.1.1.7 -r1.5
  		if (prefixlen > 128)
  			fatalx("prefix_cmp: bad IPv6 prefixlen");
  		for (i = 0; i < prefixlen / 8; i++)
-@@ -660,6 +666,24 @@ prefix_compare(const struct bgpd_addr *a
+@@ -660,6 +665,24 @@ prefix_compare(const struct bgpd_addr *a
  				    (b->v6.s6_addr[prefixlen / 8] & m));
  		}
  		return (0);
@@ -131,7 +162,7 @@ diff -u -p -r1.1.1.7 -r1.5
  	default:
  		fatalx("prefix_cmp: unknown af");
  	}
-@@ -806,16 +830,33 @@ prefix_write(u_char *buf, int len, struc
+@@ -806,16 +829,33 @@ prefix_write(u_char *buf, int len, struc
  {
  	int	totlen;
  
@@ -172,28 +203,47 @@ diff -u -p -r1.1.1.7 -r1.5
  }
  
  /*
-@@ -1088,15 +1129,15 @@ nexthop_update(struct kroute_nexthop *ms
+@@ -1070,10 +1110,6 @@ nexthop_update(struct kroute_nexthop *ms
+ 		return;
+ 	}
+ 
+-	if (nexthop_delete(nh))
+-		/* nexthop no longer used */
+-		return;
+-
+ 	oldstate = nh->state;
+ 	if (msg->valid)
+ 		nh->state = NEXTHOP_REACH;
+@@ -1088,21 +1124,13 @@ nexthop_update(struct kroute_nexthop *ms
  		memcpy(&nh->true_nexthop, &msg->gateway,
  		    sizeof(nh->true_nexthop));
  
 -	switch (msg->nexthop.af) {
 -	case AF_INET:
-+	switch (msg->nexthop.aid) {
-+	case AID_INET:
- 		nh->nexthop_netlen = msg->kr.kr4.prefixlen;
+-		nh->nexthop_netlen = msg->kr.kr4.prefixlen;
 -		nh->nexthop_net.af = AF_INET;
-+		nh->nexthop_net.aid = AID_INET;
- 		nh->nexthop_net.v4.s_addr = msg->kr.kr4.prefix.s_addr;
- 		break;
+-		nh->nexthop_net.v4.s_addr = msg->kr.kr4.prefix.s_addr;
+-		break;
 -	case AF_INET6:
-+	case AID_INET6:
- 		nh->nexthop_netlen = msg->kr.kr6.prefixlen;
+-		nh->nexthop_netlen = msg->kr.kr6.prefixlen;
 -		nh->nexthop_net.af = AF_INET6;
-+		nh->nexthop_net.aid = AID_INET6;
- 		memcpy(&nh->nexthop_net.v6, &msg->kr.kr6.prefix,
- 		    sizeof(struct in6_addr));
- 		break;
-@@ -1118,7 +1159,7 @@ nexthop_update(struct kroute_nexthop *ms
+-		memcpy(&nh->nexthop_net.v6, &msg->kr.kr6.prefix,
+-		    sizeof(struct in6_addr));
+-		break;
+-	default:
+-		fatalx("nexthop_update: unknown af");
+-	}
++	memcpy(&nh->nexthop_net, &msg->net,
++	    sizeof(nh->nexthop_net));
++	nh->nexthop_netlen = msg->netlen;
++
++	if (nexthop_delete(nh))
++		/* nexthop no longer used */
++		return;
+ 
+ 	if (rde_noevaluate())
+ 		/*
+@@ -1118,7 +1146,7 @@ nexthop_update(struct kroute_nexthop *ms
  
  void
  nexthop_modify(struct rde_aspath *asp, struct bgpd_addr *nexthop,
@@ -202,7 +252,7 @@ diff -u -p -r1.1.1.7 -r1.5
  {
  	struct nexthop	*nh;
  
-@@ -1138,7 +1179,7 @@ nexthop_modify(struct rde_aspath *asp, s
+@@ -1138,7 +1166,7 @@ nexthop_modify(struct rde_aspath *asp, s
  		asp->flags |= F_NEXTHOP_SELF;
  		return;
  	}
@@ -211,7 +261,7 @@ diff -u -p -r1.1.1.7 -r1.5
  		return;
  
  	nh = nexthop_get(nexthop);
-@@ -1233,17 +1274,17 @@ nexthop_compare(struct nexthop *na, stru
+@@ -1233,17 +1261,17 @@ nexthop_compare(struct nexthop *na, stru
  	a = &na->exit_nexthop;
  	b = &nb->exit_nexthop;
  
@@ -234,7 +284,7 @@ diff -u -p -r1.1.1.7 -r1.5
  		return (memcmp(&a->v6, &b->v6, sizeof(struct in6_addr)));
  	default:
  		fatalx("nexthop_cmp: unknown af");
-@@ -1269,14 +1310,14 @@ nexthop_hash(struct bgpd_addr *nexthop)
+@@ -1269,14 +1297,14 @@ nexthop_hash(struct bgpd_addr *nexthop)
  {
  	u_int32_t	 h = 0;
  

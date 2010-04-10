@@ -2,13 +2,13 @@ Index: bgpd/parse.y
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/parse.y,v
 retrieving revision 1.1.1.8
-retrieving revision 1.7
-diff -u -p -r1.1.1.8 -r1.7
+retrieving revision 1.8
+diff -u -p -r1.1.1.8 -r1.8
 --- bgpd/parse.y	14 Feb 2010 20:19:57 -0000	1.1.1.8
-+++ bgpd/parse.y	4 Feb 2010 16:22:23 -0000	1.7
++++ bgpd/parse.y	10 Apr 2010 12:16:23 -0000	1.8
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: parse.y,v 1.231 2009/06/06 01:10:29 claudio Exp $ */
-+/*	$OpenBSD: parse.y,v 1.248 2010/01/13 06:02:37 claudio Exp $ */
++/*	$OpenBSD: parse.y,v 1.250 2010/03/31 18:53:23 claudio Exp $ */
  
  /*
   * Copyright (c) 2002, 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -149,7 +149,26 @@ diff -u -p -r1.1.1.8 -r1.7
  				free($3);
  				YYERROR;
  			}
-@@ -575,11 +565,16 @@ conf_main	: AS as4number		{
+@@ -459,18 +449,6 @@ conf_main	: AS as4number		{
+ 			}
+ 			free($4);
+ 		}
+-		| NETWORK STATIC filter_set	{
+-			/* keep for compatibility till after next release */
+-			conf->flags |= BGPD_FLAG_REDIST_STATIC;
+-			move_filterset($3, &conf->staticset);
+-			free($3);
+-		}
+-		| NETWORK CONNECTED filter_set	{
+-			/* keep for compatibility till after next release */
+-			conf->flags |= BGPD_FLAG_REDIST_CONNECTED;
+-			move_filterset($3, &conf->connectset);
+-			free($3);
+-		}
+ 		| DUMP STRING STRING optnumber		{
+ 			int action;
+ 
+@@ -575,11 +553,16 @@ conf_main	: AS as4number		{
  			free($4);
  		}
  		| RTABLE NUMBER {
@@ -166,7 +185,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		}
  		| CONNECTRETRY NUMBER {
  			if ($2 > USHRT_MAX || $2 < 1) {
-@@ -635,11 +630,11 @@ address		: STRING		{
+@@ -635,11 +618,11 @@ address		: STRING		{
  			}
  			free($1);
  
@@ -181,7 +200,7 @@ diff -u -p -r1.1.1.8 -r1.7
  				YYERROR;
  			}
  		}
-@@ -686,7 +681,7 @@ prefix		: STRING '/' NUMBER	{
+@@ -686,7 +669,7 @@ prefix		: STRING '/' NUMBER	{
  
  addrspec	: address	{
  			memcpy(&$$.prefix, &$1, sizeof(struct bgpd_addr));
@@ -190,7 +209,7 @@ diff -u -p -r1.1.1.8 -r1.7
  				$$.len = 32;
  			else
  				$$.len = 128;
-@@ -710,9 +705,13 @@ neighbor	: {	curpeer = new_peer(); }
+@@ -710,9 +693,13 @@ neighbor	: {	curpeer = new_peer(); }
  			memcpy(&curpeer->conf.remote_addr, &$3.prefix,
  			    sizeof(curpeer->conf.remote_addr));
  			curpeer->conf.remote_masklen = $3.len;
@@ -206,7 +225,7 @@ diff -u -p -r1.1.1.8 -r1.7
  			if (get_id(curpeer)) {
  				yyerror("get_id failed");
  				YYERROR;
-@@ -802,6 +801,17 @@ peeropts	: REMOTEAS as4number	{
+@@ -802,6 +789,17 @@ peeropts	: REMOTEAS as4number	{
  			}
  			free($2);
  		}
@@ -224,7 +243,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		| LOCALADDR address	{
  			memcpy(&curpeer->conf.local_addr, &$2,
  			    sizeof(curpeer->conf.local_addr));
-@@ -852,13 +862,17 @@ peeropts	: REMOTEAS as4number	{
+@@ -852,13 +850,17 @@ peeropts	: REMOTEAS as4number	{
  			curpeer->conf.min_holdtime = $3;
  		}
  		| ANNOUNCE family STRING {
@@ -247,7 +266,7 @@ diff -u -p -r1.1.1.8 -r1.7
  				yyerror("unknown/unsupported SAFI \"%s\"",
  				    $3);
  				free($3);
-@@ -866,25 +880,31 @@ peeropts	: REMOTEAS as4number	{
+@@ -866,25 +868,31 @@ peeropts	: REMOTEAS as4number	{
  			}
  			free($3);
  
@@ -289,7 +308,7 @@ diff -u -p -r1.1.1.8 -r1.7
  				curpeer->conf.announce_type = ANNOUNCE_NONE;
  			else if (!strcmp($2, "all"))
  				curpeer->conf.announce_type = ANNOUNCE_ALL;
-@@ -1083,7 +1103,7 @@ peeropts	: REMOTEAS as4number	{
+@@ -1083,7 +1091,7 @@ peeropts	: REMOTEAS as4number	{
  			curpeer->conf.reflector_client = 1;
  		}
  		| REFLECTOR address	{
@@ -298,7 +317,7 @@ diff -u -p -r1.1.1.8 -r1.7
  				yyerror("route reflector cluster-id must be "
  				    "an IPv4 address");
  				YYERROR;
-@@ -1336,12 +1356,12 @@ filter_prefix_l	: filter_prefix				{ $$ 
+@@ -1336,12 +1344,12 @@ filter_prefix_l	: filter_prefix				{ $$ 
  		;
  
  filter_prefix	: prefix				{
@@ -313,7 +332,7 @@ diff -u -p -r1.1.1.8 -r1.7
  			if (($$ = calloc(1, sizeof(struct filter_prefix_l))) ==
  			    NULL)
  				fatal(NULL);
-@@ -1437,18 +1457,18 @@ filter_elm	: filter_prefix_h	{
+@@ -1437,18 +1445,18 @@ filter_elm	: filter_prefix_h	{
  			fmopts.prefix_l = $1;
  		}
  		| PREFIXLEN prefixlenop		{
@@ -335,7 +354,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		}
  		| filter_as_h		{
  			if (fmopts.as_l != NULL) {
-@@ -1463,26 +1483,25 @@ filter_elm	: filter_prefix_h	{
+@@ -1463,26 +1471,43 @@ filter_elm	: filter_prefix_h	{
  				free($2);
  				YYERROR;
  			}
@@ -347,6 +366,24 @@ diff -u -p -r1.1.1.8 -r1.7
  			}
  			free($2);
  		}
++		| EXTCOMMUNITY STRING STRING {
++			if (fmopts.m.ext_community.flags &
++			    EXT_COMMUNITY_FLAG_VALID) {
++				yyerror("\"ext-community\" already specified");
++				free($2);
++				free($3);
++				YYERROR;
++			}
++
++			if (parseextcommunity(&fmopts.m.ext_community,
++			    $2, $3) == -1) {
++				free($2);
++				free($3);
++				YYERROR;
++			}
++			free($2);
++			free($3);
++		}
  		| IPV4			{
 -			if (fmopts.af) {
 +			if (fmopts.aid) {
@@ -367,7 +404,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		}
  		;
  
-@@ -1782,8 +1801,7 @@ filter_set_opt	: LOCALPREF NUMBER		{
+@@ -1782,8 +1807,7 @@ filter_set_opt	: LOCALPREF NUMBER		{
  			else
  				$$->type = ACTION_SET_COMMUNITY;
  
@@ -377,7 +414,7 @@ diff -u -p -r1.1.1.8 -r1.7
  				free($3);
  				free($$);
  				YYERROR;
-@@ -1796,40 +1814,62 @@ filter_set_opt	: LOCALPREF NUMBER		{
+@@ -1796,40 +1820,62 @@ filter_set_opt	: LOCALPREF NUMBER		{
  				free($$);
  				YYERROR;
  			}
@@ -460,7 +497,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		;
  
  %%
-@@ -1873,6 +1913,7 @@ lookup(char *s)
+@@ -1873,6 +1919,7 @@ lookup(char *s)
  		{ "allow",		ALLOW},
  		{ "announce",		ANNOUNCE},
  		{ "any",		ANY},
@@ -468,7 +505,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		{ "blackhole",		BLACKHOLE},
  		{ "capabilities",	CAPABILITIES},
  		{ "community",		COMMUNITY},
-@@ -1889,6 +1930,7 @@ lookup(char *s)
+@@ -1889,6 +1936,7 @@ lookup(char *s)
  		{ "enforce",		ENFORCE},
  		{ "esp",		ESP},
  		{ "evaluate",		EVALUATE},
@@ -476,7 +513,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		{ "fib-update",		FIBUPDATE},
  		{ "from",		FROM},
  		{ "group",		GROUP},
-@@ -1899,6 +1941,9 @@ lookup(char *s)
+@@ -1899,6 +1947,9 @@ lookup(char *s)
  		{ "include",		INCLUDE},
  		{ "inet",		IPV4},
  		{ "inet6",		IPV6},
@@ -486,7 +523,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		{ "ipsec",		IPSEC},
  		{ "key",		KEY},
  		{ "listen",		LISTEN},
-@@ -1918,6 +1963,7 @@ lookup(char *s)
+@@ -1918,6 +1969,7 @@ lookup(char *s)
  		{ "nexthop",		NEXTHOP},
  		{ "no-modify",		NOMODIFY},
  		{ "on",			ON},
@@ -494,7 +531,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		{ "out",		OUT},
  		{ "passive",		PASSIVE},
  		{ "password",		PASSWORD},
-@@ -1930,6 +1976,7 @@ lookup(char *s)
+@@ -1930,6 +1982,7 @@ lookup(char *s)
  		{ "qualify",		QUALIFY},
  		{ "quick",		QUICK},
  		{ "rde",		RDE},
@@ -502,7 +539,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		{ "reject",		REJECT},
  		{ "remote-as",		REMOTEAS},
  		{ "restart",		RESTART},
-@@ -2135,6 +2182,26 @@ top:
+@@ -2135,6 +2188,26 @@ top:
  		if (yylval.v.string == NULL)
  			fatal("yylex: strdup");
  		return (STRING);
@@ -529,7 +566,7 @@ diff -u -p -r1.1.1.8 -r1.7
  	}
  
  #define allowed_to_end_number(x) \
-@@ -2505,27 +2572,27 @@ getcommunity(char *s)
+@@ -2505,27 +2578,27 @@ getcommunity(char *s)
  }
  
  int
@@ -567,7 +604,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		return (0);
  	}
  
-@@ -2537,23 +2604,175 @@ parsecommunity(char *s, int *as, int *ty
+@@ -2537,23 +2610,176 @@ parsecommunity(char *s, int *as, int *ty
  
  	if ((i = getcommunity(s)) == COMMUNITY_ERROR)
  		return (-1);
@@ -730,6 +767,7 @@ diff -u -p -r1.1.1.8 -r1.7
 +		if (iana[i].type == type && iana[i].subtype == subtype) {
 +			if (iana[i].transitive)
 +				c->type |= EXT_COMMUNITY_TRANSITIVE;
++			c->flags |= EXT_COMMUNITY_FLAG_VALID;
 +			return (0);
 +		}
 +	}
@@ -746,7 +784,7 @@ diff -u -p -r1.1.1.8 -r1.7
  
  	if ((p = calloc(1, sizeof(struct peer))) == NULL)
  		fatal("new_peer");
-@@ -2564,11 +2783,11 @@ alloc_peer(void)
+@@ -2564,11 +2790,11 @@ alloc_peer(void)
  	p->conf.distance = 1;
  	p->conf.announce_type = ANNOUNCE_UNDEF;
  	p->conf.announce_capa = 1;
@@ -761,7 +799,7 @@ diff -u -p -r1.1.1.8 -r1.7
  	p->conf.local_as = conf->as;
  	p->conf.local_short_as = conf->short_as;
  	p->conf.softreconfig_in = 1;
-@@ -2592,6 +2811,9 @@ new_peer(void)
+@@ -2592,6 +2818,9 @@ new_peer(void)
  		if (strlcpy(p->conf.descr, curgroup->conf.descr,
  		    sizeof(p->conf.descr)) >= sizeof(p->conf.descr))
  			fatalx("new_peer descr strlcpy");
@@ -771,7 +809,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		p->conf.groupid = curgroup->conf.id;
  		p->conf.local_as = curgroup->conf.local_as;
  		p->conf.local_short_as = curgroup->conf.local_short_as;
-@@ -2715,7 +2937,7 @@ get_id(struct peer *newpeer)
+@@ -2715,7 +2944,7 @@ get_id(struct peer *newpeer)
  	struct peer	*p;
  
  	for (p = peer_l_old; p != NULL; p = p->next)
@@ -780,7 +818,7 @@ diff -u -p -r1.1.1.8 -r1.7
  			if (!memcmp(&p->conf.remote_addr,
  			    &newpeer->conf.remote_addr,
  			    sizeof(p->conf.remote_addr))) {
-@@ -2856,9 +3078,11 @@ str2key(char *s, char *dest, size_t max_
+@@ -2856,9 +3085,11 @@ str2key(char *s, char *dest, size_t max_
  int
  neighbor_consistent(struct peer *p)
  {
@@ -794,7 +832,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		yyerror("local-address and neighbor address "
  		    "must be of the same address family");
  		return (-1);
-@@ -2869,7 +3093,7 @@ neighbor_consistent(struct peer *p)
+@@ -2869,7 +3100,7 @@ neighbor_consistent(struct peer *p)
  	    p->conf.auth.method == AUTH_IPSEC_IKE_AH ||
  	    p->conf.auth.method == AUTH_IPSEC_MANUAL_ESP ||
  	    p->conf.auth.method == AUTH_IPSEC_MANUAL_AH) &&
@@ -803,7 +841,7 @@ diff -u -p -r1.1.1.8 -r1.7
  		yyerror("neighbors with any form of IPsec configured "
  		    "need local-address to be specified");
  		return (-1);
-@@ -2889,10 +3113,6 @@ neighbor_consistent(struct peer *p)
+@@ -2889,10 +3120,6 @@ neighbor_consistent(struct peer *p)
  		return (-1);
  	}
  
@@ -814,7 +852,7 @@ diff -u -p -r1.1.1.8 -r1.7
  	/* set default values if they where undefined */
  	p->conf.ebgp = (p->conf.remote_as != conf->as);
  	if (p->conf.announce_type == ANNOUNCE_UNDEF)
-@@ -2909,6 +3129,11 @@ neighbor_consistent(struct peer *p)
+@@ -2909,6 +3136,11 @@ neighbor_consistent(struct peer *p)
  		return (-1);
  	}
  
@@ -826,7 +864,7 @@ diff -u -p -r1.1.1.8 -r1.7
  	return (0);
  }
  
-@@ -2927,6 +3152,11 @@ merge_filterset(struct filter_set_head *
+@@ -2927,6 +3159,11 @@ merge_filterset(struct filter_set_head *
  				yyerror("community is already set");
  			else if (s->type == ACTION_DEL_COMMUNITY)
  				yyerror("community will already be deleted");
@@ -838,7 +876,7 @@ diff -u -p -r1.1.1.8 -r1.7
  			else
  				yyerror("redefining set parameter %s",
  				    filterset_name(s->type));
-@@ -2953,9 +3183,18 @@ merge_filterset(struct filter_set_head *
+@@ -2953,9 +3190,18 @@ merge_filterset(struct filter_set_head *
  					return (0);
  				}
  				break;

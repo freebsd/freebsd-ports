@@ -2,13 +2,13 @@ Index: bgpctl/parser.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpctl/parser.c,v
 retrieving revision 1.1.1.6
-retrieving revision 1.4
-diff -u -p -r1.1.1.6 -r1.4
+retrieving revision 1.5
+diff -u -p -r1.1.1.6 -r1.5
 --- bgpctl/parser.c	14 Feb 2010 20:20:14 -0000	1.1.1.6
-+++ bgpctl/parser.c	4 Feb 2010 16:22:26 -0000	1.4
++++ bgpctl/parser.c	10 Apr 2010 12:17:18 -0000	1.5
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: parser.c,v 1.54 2009/06/12 16:44:02 claudio Exp $ */
-+/*	$OpenBSD: parser.c,v 1.60 2010/01/13 06:04:00 claudio Exp $ */
++/*	$OpenBSD: parser.c,v 1.61 2010/03/08 17:02:19 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -52,15 +52,7 @@ diff -u -p -r1.1.1.6 -r1.4
  static struct parse_result	res;
  
  const struct token	*match_token(int *argc, char **argv[],
-@@ -336,6 +348,7 @@ parse(int argc, char *argv[])
- 	bzero(&res, sizeof(res));
- 	res.community.as = COMMUNITY_UNSET;
- 	res.community.type = COMMUNITY_UNSET;
-+	res.flags = (F_IPV4 | F_IPV6);
- 	TAILQ_INIT(&res.set);
- 	if ((res.irr_outdir = getcwd(NULL, 0)) == NULL) {
- 		fprintf(stderr, "getcwd failed: %s", strerror(errno));
-@@ -404,15 +417,22 @@ match_token(int *argc, char **argv[], co
+@@ -404,15 +416,22 @@ match_token(int *argc, char **argv[], co
  		case FAMILY:
  			if (word == NULL)
  				break;
@@ -87,7 +79,7 @@ diff -u -p -r1.1.1.6 -r1.4
  			}
  			break;
  		case ADDRESS:
-@@ -584,7 +604,7 @@ show_valid_args(const struct token table
+@@ -584,7 +603,7 @@ show_valid_args(const struct token table
  			fprintf(stderr, "  <pftable>\n");
  			break;
  		case FAMILY:
@@ -96,7 +88,7 @@ diff -u -p -r1.1.1.6 -r1.4
  			break;
  		case GETOPT:
  			fprintf(stderr, "  <options>\n");
-@@ -608,7 +628,7 @@ parse_addr(const char *word, struct bgpd
+@@ -608,7 +627,7 @@ parse_addr(const char *word, struct bgpd
  	bzero(&ina, sizeof(ina));
  
  	if (inet_net_pton(AF_INET, word, &ina, sizeof(ina)) != -1) {
@@ -105,7 +97,7 @@ diff -u -p -r1.1.1.6 -r1.4
  		addr->v4 = ina;
  		return (1);
  	}
-@@ -618,13 +638,7 @@ parse_addr(const char *word, struct bgpd
+@@ -618,13 +637,7 @@ parse_addr(const char *word, struct bgpd
  	hints.ai_socktype = SOCK_DGRAM; /*dummy*/
  	hints.ai_flags = AI_NUMERICHOST;
  	if (getaddrinfo(word, "0", &hints, &r) == 0) {
@@ -120,7 +112,7 @@ diff -u -p -r1.1.1.6 -r1.4
  		freeaddrinfo(r);
  		return (1);
  	}
-@@ -663,15 +677,15 @@ parse_prefix(const char *word, struct bg
+@@ -663,15 +676,15 @@ parse_prefix(const char *word, struct bg
  		if (parse_addr(word, addr) == 0)
  			return (0);
  
@@ -139,7 +131,7 @@ diff -u -p -r1.1.1.6 -r1.4
  		if (mask == -1)
  			mask = 128;
  		inet6applymask(&addr->v6, &addr->v6, mask);
-@@ -706,7 +720,7 @@ parse_asnum(const char *word, u_int32_t 
+@@ -706,7 +719,7 @@ parse_asnum(const char *word, u_int32_t 
  		if (errstr)
  			errx(1, "AS number is %s: %s", errstr, word);
  	} else {
@@ -148,7 +140,7 @@ diff -u -p -r1.1.1.6 -r1.4
  		if (errstr)
  			errx(1, "AS number is %s: %s", errstr, word);
  	}
-@@ -882,8 +896,14 @@ bgpctl_getopt(int *argc, char **argv[], 
+@@ -882,8 +895,14 @@ bgpctl_getopt(int *argc, char **argv[], 
  	int	  ch;
  
  	optind = optreset = 1;
