@@ -1,7 +1,9 @@
 bin/sndfile-cmp
+bin/sndfile-concat
 bin/sndfile-convert
+bin/sndfile-deinterleave
 bin/sndfile-info
-bin/sndfile-jackplay
+bin/sndfile-interleave
 bin/sndfile-metadata-get
 bin/sndfile-metadata-set
 bin/sndfile-play
