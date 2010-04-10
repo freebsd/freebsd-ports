@@ -41,6 +41,10 @@ PHPBASE?=	${LOCALBASE}
 .if exists(${PHPBASE}/etc/php.conf)
 .include "${PHPBASE}/etc/php.conf"
 PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBASE}/lib/php/\(.*\),\1,p'
+.if ${PHP_VER} == 5
+PHP_EXT_INC=	pcre spl
+.endif
+
 .else
 DEFAULT_PHP_VER?=	5
 
@@ -73,7 +77,7 @@ PHP_EXT_DIR:=	${PHP_EXT_DIR}-zts
 PHP_EXT_DIR:=	${PHP_EXT_DIR}-debug
 .endif
 PHP_SAPI?=	""
-.endif
+.endif	# .if exists(${PHPBASE}/etc/php.conf)
 PHP_EXT_INC?=	""
 
 # compatability shim
