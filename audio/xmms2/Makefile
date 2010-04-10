@@ -7,7 +7,7 @@
 
 PORTNAME?=	xmms2
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONSUFFIX=DrMattDestruction
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20DrMattDestruction
@@ -324,7 +324,7 @@ PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 .if !defined(WITHOUT_WAVPACK)
-LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
 PLIST_SUB+=	WAVPACK=""
 .else
 EXCLUDE+=	--without-plugins="wavpack"

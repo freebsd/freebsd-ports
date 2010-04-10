@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -172,7 +172,7 @@ PLIST_SUB+=	FLACPLUGIN="@comment "
 .endif
 
 .if defined(WITH_WAVPACK)
-LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
 CONFIGURE_ARGS+=--enable-wavpack
 PLIST_SUB+=	WAVPACKPLUGIN=""
 .else

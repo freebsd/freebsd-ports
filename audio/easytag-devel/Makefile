@@ -7,7 +7,7 @@
 
 PORTNAME=	easytag
 PORTVERSION=	2.1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20unstable%20%28gtk%202%29/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -31,7 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_GTK" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_WAVPACK)
-LIB_DEPENDS+=		wavpack.1:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=		wavpack.2:${PORTSDIR}/audio/wavpack
 CONFIGURE_ARGS+=	--enable-wavpack
 .else
 CONFIGURE_ARGS+=	--disable-wavpack

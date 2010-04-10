@@ -7,7 +7,7 @@
 
 PORTNAME=	sox
 PORTVERSION=	14.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -152,7 +152,7 @@ CONFIGURE_ARGS+=	--without-id3tag
 
 .if defined(WITH_WAVPACK)
 CONFIGURE_ARGS+=	--with-wavpack
-LIB_DEPENDS+=		wavpack.1:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=		wavpack.2:${PORTSDIR}/audio/wavpack
 .else
 CONFIGURE_ARGS+=	--without-wavpack
 .endif
