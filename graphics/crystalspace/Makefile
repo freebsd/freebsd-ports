@@ -24,6 +24,8 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		CEGUIBase.3:${PORTSDIR}/graphics/cegui
 
+BROKEN=		does not compile
+
 CONFLICTS=	crystalspace-devel-[0-9]*
 
 USE_BZIP2=	yes
