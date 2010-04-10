@@ -1,8 +1,11 @@
 bin/darktable
 share/applications/darktable.desktop
+share/locale/fr/LC_MESSAGES/darktable.mo
 share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
 share/pixmaps/darktable.png
+%%DATADIR%%/color/in/linear_rgb.icc
+%%DATADIR%%/color/out/linear_rgb.icc
 %%DATADIR%%/darktable.glade
 %%DATADIR%%/darktable.gtkrc
 %%DATADIR%%/pixmaps/darktable-16.png
@@ -10,13 +13,16 @@ share/pixmaps/darktable.png
 %%DATADIR%%/pixmaps/darktable-48.png
 %%DATADIR%%/pixmaps/darktable.png
 %%DATADIR%%/pixmaps/off.png
+%%DATADIR%%/pixmaps/plugins/darkroom/basecurve.png
 %%DATADIR%%/pixmaps/plugins/darkroom/clipping.png
 %%DATADIR%%/pixmaps/plugins/darkroom/colorcorrection.png
 %%DATADIR%%/pixmaps/plugins/darkroom/colorin.png
 %%DATADIR%%/pixmaps/plugins/darkroom/colorout.png
+%%DATADIR%%/pixmaps/plugins/darkroom/colorzones.png
 %%DATADIR%%/pixmaps/plugins/darkroom/equalizer.png
 %%DATADIR%%/pixmaps/plugins/darkroom/exposure.png
 %%DATADIR%%/pixmaps/plugins/darkroom/gamma.png
+%%DATADIR%%/pixmaps/plugins/darkroom/highlights.png
 %%DATADIR%%/pixmaps/plugins/darkroom/lens.png
 %%DATADIR%%/pixmaps/plugins/darkroom/monochrome.png
 %%DATADIR%%/pixmaps/plugins/darkroom/rawimport.png
@@ -24,62 +30,90 @@ share/pixmaps/darktable.png
 %%DATADIR%%/pixmaps/plugins/darkroom/temperature.png
 %%DATADIR%%/pixmaps/plugins/darkroom/template.png
 %%DATADIR%%/pixmaps/plugins/darkroom/tonecurve.png
-%%DATADIR%%/plugins/libclipping.a
-%%DATADIR%%/plugins/libclipping.la
-%%DATADIR%%/plugins/libclipping.so
-%%DATADIR%%/plugins/libcolorcorrection.a
-%%DATADIR%%/plugins/libcolorcorrection.la
-%%DATADIR%%/plugins/libcolorcorrection.so
-%%DATADIR%%/plugins/libcolorin.a
-%%DATADIR%%/plugins/libcolorin.la
-%%DATADIR%%/plugins/libcolorin.so
-%%DATADIR%%/plugins/libcolorout.a
-%%DATADIR%%/plugins/libcolorout.la
-%%DATADIR%%/plugins/libcolorout.so
-%%DATADIR%%/plugins/libequalizer.a
-%%DATADIR%%/plugins/libequalizer.la
-%%DATADIR%%/plugins/libequalizer.so
-%%DATADIR%%/plugins/libexposure.a
-%%DATADIR%%/plugins/libexposure.la
-%%DATADIR%%/plugins/libexposure.so
-%%DATADIR%%/plugins/libgamma.a
-%%DATADIR%%/plugins/libgamma.la
-%%DATADIR%%/plugins/libgamma.so
-%%DATADIR%%/plugins/liblens.a
-%%DATADIR%%/plugins/liblens.la
-%%DATADIR%%/plugins/liblens.so
-%%DATADIR%%/plugins/libmonochrome.a
-%%DATADIR%%/plugins/libmonochrome.la
-%%DATADIR%%/plugins/libmonochrome.so
-%%DATADIR%%/plugins/librawimport.a
-%%DATADIR%%/plugins/librawimport.la
-%%DATADIR%%/plugins/librawimport.so
-%%DATADIR%%/plugins/libsharpen.a
-%%DATADIR%%/plugins/libsharpen.la
-%%DATADIR%%/plugins/libsharpen.so
-%%DATADIR%%/plugins/libtemperature.a
-%%DATADIR%%/plugins/libtemperature.la
-%%DATADIR%%/plugins/libtemperature.so
-%%DATADIR%%/plugins/libtonecurve.a
-%%DATADIR%%/plugins/libtonecurve.la
-%%DATADIR%%/plugins/libtonecurve.so
-%%DATADIR%%/plugins/lighttable/libcopy_history.a
-%%DATADIR%%/plugins/lighttable/libcopy_history.la
-%%DATADIR%%/plugins/lighttable/libcopy_history.so
-%%DATADIR%%/plugins/lighttable/libexport.a
-%%DATADIR%%/plugins/lighttable/libexport.la
-%%DATADIR%%/plugins/lighttable/libexport.so
-%%DATADIR%%/views/libdarkroom.a
-%%DATADIR%%/views/libdarkroom.la
-%%DATADIR%%/views/libdarkroom.so
-%%DATADIR%%/views/liblighttable.a
-%%DATADIR%%/views/liblighttable.la
-%%DATADIR%%/views/liblighttable.so
-@dirrm %%DATADIR%%/views
-@dirrm %%DATADIR%%/plugins/lighttable
-@dirrm %%DATADIR%%/plugins
+lib/darktable/plugins/libbasecurve.a
+lib/darktable/plugins/libbasecurve.la
+lib/darktable/plugins/libbasecurve.so
+lib/darktable/plugins/libclipping.a
+lib/darktable/plugins/libclipping.la
+lib/darktable/plugins/libclipping.so
+lib/darktable/plugins/libcolorcorrection.a
+lib/darktable/plugins/libcolorcorrection.la
+lib/darktable/plugins/libcolorcorrection.so
+lib/darktable/plugins/libcolorin.a
+lib/darktable/plugins/libcolorin.la
+lib/darktable/plugins/libcolorin.so
+lib/darktable/plugins/libcolorout.a
+lib/darktable/plugins/libcolorout.la
+lib/darktable/plugins/libcolorout.so
+lib/darktable/plugins/libcolorzones.a
+lib/darktable/plugins/libcolorzones.la
+lib/darktable/plugins/libcolorzones.so
+lib/darktable/plugins/libequalizer.a
+lib/darktable/plugins/libequalizer.la
+lib/darktable/plugins/libequalizer.so
+lib/darktable/plugins/libexposure.a
+lib/darktable/plugins/libexposure.la
+lib/darktable/plugins/libexposure.so
+lib/darktable/plugins/libgamma.a
+lib/darktable/plugins/libgamma.la
+lib/darktable/plugins/libgamma.so
+lib/darktable/plugins/libhighlights.a
+lib/darktable/plugins/libhighlights.la
+lib/darktable/plugins/libhighlights.so
+lib/darktable/plugins/liblens.a
+lib/darktable/plugins/liblens.la
+lib/darktable/plugins/liblens.so
+lib/darktable/plugins/libmonochrome.a
+lib/darktable/plugins/libmonochrome.la
+lib/darktable/plugins/libmonochrome.so
+lib/darktable/plugins/librawimport.a
+lib/darktable/plugins/librawimport.la
+lib/darktable/plugins/librawimport.so
+lib/darktable/plugins/libsharpen.a
+lib/darktable/plugins/libsharpen.la
+lib/darktable/plugins/libsharpen.so
+lib/darktable/plugins/libtemperature.a
+lib/darktable/plugins/libtemperature.la
+lib/darktable/plugins/libtemperature.so
+lib/darktable/plugins/libtonecurve.a
+lib/darktable/plugins/libtonecurve.la
+lib/darktable/plugins/libtonecurve.so
+lib/darktable/plugins/lighttable/libcollect.a
+lib/darktable/plugins/lighttable/libcollect.la
+lib/darktable/plugins/lighttable/libcollect.so
+lib/darktable/plugins/lighttable/libcopy_history.a
+lib/darktable/plugins/lighttable/libcopy_history.la
+lib/darktable/plugins/lighttable/libcopy_history.so
+lib/darktable/plugins/lighttable/libexport.a
+lib/darktable/plugins/lighttable/libexport.la
+lib/darktable/plugins/lighttable/libexport.so
+lib/darktable/plugins/lighttable/libimage.a
+lib/darktable/plugins/lighttable/libimage.la
+lib/darktable/plugins/lighttable/libimage.so
+lib/darktable/plugins/lighttable/libselect.a
+lib/darktable/plugins/lighttable/libselect.la
+lib/darktable/plugins/lighttable/libselect.so
+lib/darktable/plugins/lighttable/libtagging.a
+lib/darktable/plugins/lighttable/libtagging.la
+lib/darktable/plugins/lighttable/libtagging.so
+lib/darktable/views/libdarkroom.a
+lib/darktable/views/libdarkroom.la
+lib/darktable/views/libdarkroom.so
+lib/darktable/views/liblighttable.a
+lib/darktable/views/liblighttable.la
+lib/darktable/views/liblighttable.so
+lib/libdarktable.a
+lib/libdarktable.la
+lib/libdarktable.so
+@dirrm lib/darktable/views
+@dirrm lib/darktable/plugins/lighttable
+@dirrm lib/darktable/plugins
+@dirrm lib/darktable
 @dirrm %%DATADIR%%/pixmaps/plugins/darkroom
 @dirrm %%DATADIR%%/pixmaps/plugins
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/color/out
+@dirrm %%DATADIR%%/color/in
+@dirrm %%DATADIR%%/color
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
