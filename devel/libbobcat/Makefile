@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbobcat
-PORTVERSION=	2.05.00
+PORTVERSION=	2.07.04
 CATEGORIES=	devel
 MASTER_SITES=	SF/bobcat/bobcat/${PORTVERSION}
 DISTNAME=	bobcat_${PORTVERSION}
@@ -27,10 +27,10 @@ MAN3=		a2x.3bobcat align.3bobcat arg.3bobcat argconfig.3bobcat \
 		cgi.3bobcat clientsocket.3bobcat cmdfinder.3bobcat \
 		cmdfinderbase.3bobcat configfile.3bobcat datetime.3bobcat \
 		decryptbuf.3bobcat digestbuf.3bobcat encryptbuf.3bobcat \
-		errno.3bobcat fnwrap1.3bobcat fnwrap1c.3bobcat \
+		errno.3bobcat fnwrap.3bobcat fnwrap1.3bobcat fnwrap1c.3bobcat \
 		fnwrap2.3bobcat fnwrap2c.3bobcat foreach.3bobcat \
-		fork.3bobcat gethostent.3bobcat glob.3bobcat hash.3bobcat \
-		hmacbuf.3bobcat hostent.3bobcat hostname.3bobcat \
+		fork.3bobcat fswap.3bobcat gethostent.3bobcat glob.3bobcat \
+		hash.3bobcat hmacbuf.3bobcat hostent.3bobcat hostname.3bobcat \
 		ifdstream.3bobcat ifdstreambuf.3bobcat indent.3bobcat \
 		inetaddress.3bobcat iostream.3bobcat iostreambuf.3bobcat \
 		irandstream.3bobcat lc.3bobcat level.3bobcat lm.3bobcat \
