@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd March 28, 2010
+.Dd April 9, 2010
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -33,7 +33,7 @@
 .Sh SYNOPSIS
 Common Flags:
 .Op Fl -force-config CGHgntvw [B|b] [f|i] [D|d]
-.Op [--packages|--packages-only] [-P|-PP] | [--packages-build]
+.Op [[--packages|-P]|[--packages-only|-PP]] | [--packages-build]
 .Op Fl -packages-if-newer
 .Op Fl -delete-build-only
 .Op Fl -always-fetch
@@ -41,6 +41,7 @@ Common Flags:
 .Op Fl -delete-packages
 .Op Fl -no-confirm
 .Op Fl -no-term-title
+.Op --index|--index-only
 .Op Fl m Ar arguments for make
 .Op Fl x Ar glob pattern to exclude from building
 .Nm
@@ -101,8 +102,7 @@ and/or multiple globs from /var/db/pkg
 .Fl [l|L]
 .Nm
 .Op Fl b [D|d]
-.Fl e Ar full name of port directory in
-.Pa /var/db/pkg
+.Fl e Ar name/glob of port directory in /var/db/pkg
 .Nm
 .Op Fl b [D|d]
 .Fl s
@@ -121,6 +121,16 @@ and/or multiple globs from /var/db/pkg
 .Fl h|--help
 .Nm
 .Fl -version
+.Pp
+The
+.Qq glob
+patterns mentioned above are not regular expressions.
+For example:
+.Qq portmaster perl
+would match every port dirctory name in
+.Pa /var/db/pkg
+that fits the pattern
+.Qq /var/db/pkg/perl* .
 .Sh QUICK START GUIDE
 This manual contains a lot of valuable information about
 .Nm ,
@@ -367,7 +377,7 @@ show what dependent ports are, and are not installed (implies
 .Fl t ) .
 .It Fl o Ar <new port dir in /usr/ports> <installed port>
 replace the installed port with a port from a different origin
-.It [-R] Fl r Ar name/glob of port in /var/db/pkg
+.It [-R] Fl r Ar name/glob of port directory in /var/db/pkg
 rebuild the specified port, and all ports that depend on it
 .It Fl R
 used with the
@@ -422,11 +432,21 @@ do not ask the user to confirm the list of ports to
 be installed and/or updated before proceeding
 .It Fl -no-term-title
 do not update the xterm title bar
+.It Fl -index
+use INDEX-[6-9] to check if a port is out of date
+.It Fl -index-only
+do not try to use
+.Pa /usr/ports .
+For updating ports when no
+.Pa /usr/ports
+directory is present the
+.Fl PP|--packages-only
+option is required.
 .It Fl l
 list all installed ports by category
 .It Fl L
 list all installed ports by category, and search for updates
-.It Fl e Ar name of port directory in /var/db/pkg
+.It Fl e Ar name/glob of port directory in /var/db/pkg
 expunge port using
 .Xr pkg_delete 1 ,
 and optionally remove all distfiles.
@@ -620,6 +640,13 @@ along with their related options.
 #
 # Do not update the xterm title bar (--no-term-title)
 # PM_NO_TERM_TITLE=pm_no_term_title
+#
+# Use the INDEX file to check if a port is out of date (--index)
+# PM_INDEX=pm_index
+#
+# Use the INDEX file instead of /usr/ports (--index-only)
+# PM_INDEX=pm_index
+# PM_INDEX_ONLY=pm_index_only
 .Ed
 .Pp
 .It Pa /var/db/pkg/*/+IGNOREME
