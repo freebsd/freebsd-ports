@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.05003
+PORTVERSION=	0.06001
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,8 +36,10 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::DBI.3 \
 	DBIx::Class::Schema::Loader::DBI::Component::QuotedDefault.3 \
 	DBIx::Class::Schema::Loader::DBI::DB2.3 \
+	DBIx::Class::Schema::Loader::DBI::InterBase.3 \
 	DBIx::Class::Schema::Loader::DBI::MSSQL.3 \
 	DBIx::Class::Schema::Loader::DBI::ODBC.3 \
+	DBIx::Class::Schema::Loader::DBI::ODBC::Firebird.3 \
 	DBIx::Class::Schema::Loader::DBI::ODBC::Microsoft_SQL_Server.3 \
 	DBIx::Class::Schema::Loader::DBI::ODBC::SQL_Anywhere.3 \
 	DBIx::Class::Schema::Loader::DBI::Oracle.3 \
@@ -51,7 +53,8 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::DBI::mysql.3 \
 	DBIx::Class::Schema::Loader::Manual::UpgradingFromV4.3 \
 	DBIx::Class::Schema::Loader::RelBuilder.3 \
-	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_040.3
+	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_040.3 \
+	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_05.3
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^\s*(test_requires|auto_install|recommends|configure_requires)/ or /^my/ .. /^}\s*$$/' ${WRKSRC}/Makefile.PL
