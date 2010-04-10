@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	squeezeboxserver
-PORTVERSION=	7.4.2
-PORTREVISION=	1
+PORTVERSION=	7.5.0
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -30,7 +29,7 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-30215-noCPAN
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-30464-noCPAN
 
 RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
@@ -144,7 +143,8 @@ PLIST_SUB=	SLIMDIR=${SLIMDIR}
 
 SUB_FILES=	Custom.pm \
 		pkg-install \
-		softsqueeze.sh
+		softsqueeze.sh \
+		custom-convert.conf
 SUB_LIST=	PERL=${PERL} \
 		PORTNAME=${PORTNAME} \
 		SITE_PERL=${SITE_PERL} \
@@ -204,6 +204,8 @@ do-install:
 	@cd ${TMP_SLIMDIR} && ${COPYTREE_SHARE} . ${PREFIX}/${SLIMDIR}
 	@${INSTALL_DATA} ${WRKDIR}/Custom.pm \
 	    ${PREFIX}/${SLIMDIR}/Slim/Utils/OS/Custom.pm
+	@${INSTALL_DATA} ${WRKDIR}/custom-convert.conf \
+	    ${PREFIX}/${SLIMDIR}/custom-convert.conf
 	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/slimserver.pl
 	@${CHMOD} 755 ${PREFIX}/${SLIMDIR}/scanner.pl
 	@${LN} -sf ${LOCALBASE}/share/mysql/errmsg.txt \
