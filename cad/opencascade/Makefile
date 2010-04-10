@@ -70,10 +70,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} ${GCC4WA} -I${LOCALBASE}/include	\
 MAKE_ENV=	INSTALL_STRIP_FLAG=-s OCC_BUILDDIR="${PATCH_WRKSRC}"	\
 		OCC_INSTALLDIR="${OCCROOT}" PTHREAD_LIBS="${PTHREAD_LIBS}" LD=${CXX}
 USE_LDCONFIG=	yes
-USE_FORTRAN=	yes
 
 STL_COMPILER?=	gcc
-FFLAGS?=	-O2
 
 LOCCROOT=	OpenCAS
 OCCROOT=	${PREFIX}/${LOCCROOT}
@@ -136,7 +134,6 @@ pre-configure:
 		-e 's|/usr/bin/ld|${LD}|'		\
 		-e 's|%%CXXFLAGS%%|${CXXFLAGS}|'	\
 		-e 's|%%CFLAGS%%|${CFLAGS}|'		\
-		-e 's|%%FFLAGS%%|${FFLAGS}|'		\
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|'	\
 		-e 's|%%/usr/X11R6%%|${X11LBASE}|'	\
 		-e 's|%%STL_COMPILER%%|${STL_COMPILER}|'\
