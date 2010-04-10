@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20100311
+PORTVERSION=	20100410
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	weechat-devel-86b1ab20b56568ecf7e4599daa0afe6db5f2ac98
+DISTNAME=	weechat-devel-9c0eb33213be5617b00df3297d4814d29e040715
 
 MAINTAINER=	freebsd@beardz.net
 COMMENT=	A lightweight and user friendly ncurse based IRC client
