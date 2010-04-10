@@ -2,13 +2,13 @@ Index: bgpd/bgpd.conf.5
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.conf.5,v
 retrieving revision 1.1.1.7
-retrieving revision 1.6
-diff -u -p -r1.1.1.7 -r1.6
+retrieving revision 1.7
+diff -u -p -r1.1.1.7 -r1.7
 --- bgpd/bgpd.conf.5	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/bgpd.conf.5	4 Feb 2010 16:22:23 -0000	1.6
++++ bgpd/bgpd.conf.5	10 Apr 2010 12:16:23 -0000	1.7
 @@ -1,4 +1,4 @@
 -.\" $OpenBSD: bgpd.conf.5,v 1.94 2009/06/07 00:31:22 claudio Exp $
-+.\" $OpenBSD: bgpd.conf.5,v 1.103 2009/12/16 15:40:55 claudio Exp $
++.\" $OpenBSD: bgpd.conf.5,v 1.104 2010/03/05 15:25:00 claudio Exp $
  .\"
  .\" Copyright (c) 2004 Claudio Jeker <claudio@openbsd.org>
  .\" Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -17,7 +17,7 @@ diff -u -p -r1.1.1.7 -r1.6
  .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  .\"
 -.Dd $Mdocdate: June 7 2009 $
-+.Dd $Mdocdate: November 26 2009 $
++.Dd $Mdocdate: December 16 2009 $
  .Dt BGPD.CONF 5
  .Os
  .Sh NAME
@@ -141,7 +141,39 @@ diff -u -p -r1.1.1.7 -r1.6
  Bind the neighbor to the specified RIB.
  .Pp
  .It Ic route-reflector Op Ar address
-@@ -1028,6 +1068,12 @@ matches a rule which has the
+@@ -917,6 +957,31 @@ may be set to
+ which is expanded to the current neighbor remote AS number.
+ .Pp
+ .It Xo
++.Ic ext-community
++.Ar subtype Ar as-number Ns Li : Ns Ar local
++.Xc
++.It Xo
++.Ic ext-community
++.Ar subtype Ar IP Ns Li : Ns Ar local
++.Xc
++.It Xo
++.Ic ext-community
++.Ar subtype Ar numvalue
++.Xc
++This rule applies only to
++.Em UPDATES
++where the
++.Em extended community
++path attribute is present and matches.
++Extended Communities are specified by a
++.Ar subtype
++and normally two values, a globally unique part (e.g. the AS number) and a
++local part.
++See also the
++.Sx ATTRIBUTE SET
++section for further information about the encoding.
++.Pp
++.It Xo
+ .Pq Ic from Ns \&| Ns Ic to
+ .Ar peer
+ .Xc
+@@ -1028,6 +1093,12 @@ matches a rule which has the
  option set, this rule is considered the last matching rule, and evaluation
  of subsequent rules is skipped.
  .Pp
@@ -154,7 +186,7 @@ diff -u -p -r1.1.1.7 -r1.6
  .It Ic set Ar attribute ...
  All matching rules can set the
  .Em AS path attributes
-@@ -1079,6 +1125,48 @@ Alternately, well-known communities may 
+@@ -1079,6 +1150,48 @@ Alternately, well-known communities may 
  or
  .Ic NO_PEER .
  .Pp
@@ -203,7 +235,7 @@ diff -u -p -r1.1.1.7 -r1.6
  .It Ic localpref Ar number
  Set the
  .Em LOCAL_PREF
-@@ -1108,6 +1196,20 @@ otherwise it will be set to
+@@ -1108,6 +1221,20 @@ otherwise it will be set to
  .Ar number .
  .Pp
  .It Xo
@@ -224,7 +256,7 @@ diff -u -p -r1.1.1.7 -r1.6
  .Ic nexthop
  .Sm off
  .Po Ar address \*(Ba
-@@ -1181,8 +1283,8 @@ For prefixes with equally long paths, th
+@@ -1181,8 +1308,8 @@ For prefixes with equally long paths, th
  is selected.
  .El
  .Sh FILES

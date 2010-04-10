@@ -2,13 +2,13 @@ Index: bgpd/bgpd.h
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.h,v
 retrieving revision 1.1.1.8
-retrieving revision 1.10
-diff -u -p -r1.1.1.8 -r1.10
+retrieving revision 1.11
+diff -u -p -r1.1.1.8 -r1.11
 --- bgpd/bgpd.h	14 Feb 2010 20:19:57 -0000	1.1.1.8
-+++ bgpd/bgpd.h	14 Feb 2010 19:53:36 -0000	1.10
++++ bgpd/bgpd.h	10 Apr 2010 12:16:23 -0000	1.11
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: bgpd.h,v 1.241 2009/06/12 16:42:53 claudio Exp $ */
-+/*	$OpenBSD: bgpd.h,v 1.252 2010/01/13 06:02:37 claudio Exp $ */
++/*	$OpenBSD: bgpd.h,v 1.255 2010/04/06 13:25:08 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -150,7 +150,24 @@ diff -u -p -r1.1.1.8 -r1.10
  	IMSG_NETWORK_ADD,
  	IMSG_NETWORK_REMOVE,
  	IMSG_NETWORK_FLUSH,
-@@ -423,8 +483,7 @@ struct kif {
+@@ -400,14 +460,12 @@ struct kroute6 {
+ };
+ 
+ struct kroute_nexthop {
+-	union {
+-		struct kroute		kr4;
+-		struct kroute6		kr6;
+-	} kr;
+ 	struct bgpd_addr	nexthop;
+ 	struct bgpd_addr	gateway;
++	struct bgpd_addr	net;
+ 	u_int8_t		valid;
+ 	u_int8_t		connected;
++	u_int8_t		netlen;
+ };
+ 
+ struct kif {
+@@ -423,8 +481,7 @@ struct kif {
  struct session_up {
  	struct bgpd_addr	local_addr;
  	struct bgpd_addr	remote_addr;
@@ -160,7 +177,7 @@ diff -u -p -r1.1.1.8 -r1.10
  	u_int32_t		remote_bgpid;
  	u_int16_t		short_as;
  };
-@@ -437,8 +496,13 @@ struct pftable_msg {
+@@ -437,8 +494,13 @@ struct pftable_msg {
  
  struct ctl_show_nexthop {
  	struct bgpd_addr	addr;
@@ -175,11 +192,12 @@ diff -u -p -r1.1.1.8 -r1.10
  };
  
  struct ctl_neighbor {
-@@ -508,6 +572,27 @@ struct filter_community {
+@@ -508,6 +570,28 @@ struct filter_community {
  	int			type;
  };
  
 +struct filter_extcommunity {
++	u_int16_t	flags;
 +	u_int8_t	type;
 +	u_int8_t	subtype;	/* if extended type */
 +	union {
@@ -203,7 +221,7 @@ diff -u -p -r1.1.1.8 -r1.10
  struct ctl_show_rib_request {
  	char			rib[PEER_DESCR_LEN];
  	struct ctl_neighbor	neighbor;
-@@ -518,8 +603,8 @@ struct ctl_show_rib_request {
+@@ -518,8 +602,8 @@ struct ctl_show_rib_request {
  	pid_t			pid;
  	u_int16_t		flags;
  	enum imsg_type		type;
@@ -213,12 +231,13 @@ diff -u -p -r1.1.1.8 -r1.10
  };
  
  enum filter_actions {
-@@ -585,6 +670,27 @@ struct filter_peers {
+@@ -585,6 +669,28 @@ struct filter_peers {
  #define EXT_COMMUNITY_OSPF_RTR_TYPE	6	/* RFC 4577 */
  #define EXT_COMMUNITY_OSPF_RTR_ID	7	/* RFC 4577 */
  #define EXT_COMMUNITY_BGP_COLLECT	8	/* RFC 4384 */
 +/* other handy defines */
 +#define EXT_COMMUNITY_OPAQUE_MAX	0xffffffffffffULL
++#define EXT_COMMUNITY_FLAG_VALID	0x01
 +
 +struct ext_comm_pairs {
 +	u_int8_t	type;
@@ -241,7 +260,7 @@ diff -u -p -r1.1.1.8 -r1.10
  
  
  struct filter_prefix {
-@@ -594,7 +700,7 @@ struct filter_prefix {
+@@ -594,16 +700,17 @@ struct filter_prefix {
  
  struct filter_prefixlen {
  	enum comp_ops		op;
@@ -250,7 +269,21 @@ diff -u -p -r1.1.1.8 -r1.10
  	u_int8_t		len_min;
  	u_int8_t		len_max;
  };
-@@ -635,10 +741,13 @@ enum action_types {
+ 
+ struct filter_match {
+-	struct filter_prefix	prefix;
+-	struct filter_prefixlen	prefixlen;
+-	struct filter_as	as;
+-	struct filter_community	community;
++	struct filter_prefix		prefix;
++	struct filter_prefixlen		prefixlen;
++	struct filter_as		as;
++	struct filter_community		community;
++	struct filter_extcommunity	ext_community;
+ };
+ 
+ TAILQ_HEAD(filter_head, filter_rule);
+@@ -635,10 +742,13 @@ enum action_types {
  	ACTION_SET_NEXTHOP_SELF,
  	ACTION_SET_COMMUNITY,
  	ACTION_DEL_COMMUNITY,
@@ -265,7 +298,7 @@ diff -u -p -r1.1.1.8 -r1.10
  };
  
  struct filter_set {
-@@ -650,23 +759,31 @@ struct filter_set {
+@@ -650,23 +760,31 @@ struct filter_set {
  		int32_t			relative;
  		struct bgpd_addr	nexthop;
  		struct filter_community	community;
@@ -302,7 +335,7 @@ diff -u -p -r1.1.1.8 -r1.10
  	int64_t		nexthop_cnt;
  	int64_t		aspath_cnt;
  	int64_t		aspath_size;
-@@ -677,28 +794,17 @@ struct rde_memstats {
+@@ -677,28 +795,17 @@ struct rde_memstats {
  	int64_t		attr_dcnt;
  };
  
@@ -342,7 +375,7 @@ diff -u -p -r1.1.1.8 -r1.10
  
  /* prototypes */
  /* bgpd.c */
-@@ -709,6 +815,7 @@ int		 bgpd_filternexthop(struct kroute *
+@@ -709,6 +816,7 @@ int		 bgpd_filternexthop(struct kroute *
  
  /* log.c */
  void		 log_init(int);
@@ -350,10 +383,11 @@ diff -u -p -r1.1.1.8 -r1.10
  void		 vlog(int, const char *, va_list);
  void		 log_peer_warn(const struct peer_config *, const char *, ...);
  void		 log_peer_warnx(const struct peer_config *, const char *, ...);
-@@ -779,11 +886,19 @@ const char	*log_addr(const struct bgpd_a
+@@ -779,11 +887,20 @@ const char	*log_addr(const struct bgpd_a
  const char	*log_in6addr(const struct in6_addr *);
  const char	*log_sockaddr(struct sockaddr *);
  const char	*log_as(u_int32_t);
++const char	*log_rd(u_int64_t);
 +const char	*log_ext_subtype(u_int8_t);
  int		 aspath_snprint(char *, size_t, void *, u_int16_t);
  int		 aspath_asprint(char **, void *, u_int16_t);

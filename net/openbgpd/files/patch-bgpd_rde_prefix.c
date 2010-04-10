@@ -2,13 +2,13 @@ Index: bgpd/rde_prefix.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_prefix.c,v
 retrieving revision 1.1.1.6
-retrieving revision 1.4
-diff -u -p -r1.1.1.6 -r1.4
+retrieving revision 1.5
+diff -u -p -r1.1.1.6 -r1.5
 --- bgpd/rde_prefix.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
-+++ bgpd/rde_prefix.c	4 Feb 2010 16:22:23 -0000	1.4
++++ bgpd/rde_prefix.c	10 Apr 2010 12:16:23 -0000	1.5
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde_prefix.c,v 1.29 2009/05/30 18:27:17 claudio Exp $ */
-+/*	$OpenBSD: rde_prefix.c,v 1.31 2010/01/13 06:02:37 claudio Exp $ */
++/*	$OpenBSD: rde_prefix.c,v 1.32 2010/03/26 15:41:04 claudio Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Claudio Jeker <claudio@openbsd.org>
@@ -123,7 +123,7 @@ diff -u -p -r1.1.1.6 -r1.4
  }
  
  struct pt_entry *
-@@ -131,34 +155,9 @@ struct pt_entry *
+@@ -131,39 +155,12 @@ struct pt_entry *
  pt_add(struct bgpd_addr *prefix, int prefixlen)
  {
  	struct pt_entry		*p = NULL;
@@ -155,13 +155,20 @@ diff -u -p -r1.1.1.6 -r1.4
 -	default:
 -		fatalx("pt_add: unknown af");
 -	}
-+
+ 
+-	if (RB_INSERT(pt_tree, &pttable, p) != NULL) {
+-		log_warnx("pt_add: insert failed");
+-		return (NULL);
+-	}
 +	p = pt_fill(prefix, prefixlen);
 +	p = pt_alloc(p);
++
++	if (RB_INSERT(pt_tree, &pttable, p) != NULL)
++		fatalx("pt_add: insert failed");
  
- 	if (RB_INSERT(pt_tree, &pttable, p) != NULL) {
- 		log_warnx("pt_add: insert failed");
-@@ -183,13 +182,14 @@ struct pt_entry *
+ 	return (p);
+ }
+@@ -183,13 +180,14 @@ struct pt_entry *
  pt_lookup(struct bgpd_addr *addr)
  {
  	struct pt_entry	*p;
@@ -180,7 +187,7 @@ diff -u -p -r1.1.1.6 -r1.4
  		i = 128;
  		break;
  	default:
-@@ -206,17 +206,18 @@ pt_lookup(struct bgpd_addr *addr)
+@@ -206,17 +204,18 @@ pt_lookup(struct bgpd_addr *addr)
  int
  pt_prefix_cmp(const struct pt_entry *a, const struct pt_entry *b)
  {
@@ -206,7 +213,7 @@ diff -u -p -r1.1.1.6 -r1.4
  		a4 = (const struct pt_entry4 *)a;
  		b4 = (const struct pt_entry4 *)b;
  		if (ntohl(a4->prefix4.s_addr) > ntohl(b4->prefix4.s_addr))
-@@ -228,7 +229,7 @@ pt_prefix_cmp(const struct pt_entry *a, 
+@@ -228,7 +227,7 @@ pt_prefix_cmp(const struct pt_entry *a, 
  		if (a4->prefixlen < b4->prefixlen)
  			return (-1);
  		return (0);
@@ -215,7 +222,7 @@ diff -u -p -r1.1.1.6 -r1.4
  		a6 = (const struct pt_entry6 *)a;
  		b6 = (const struct pt_entry6 *)b;
  
-@@ -242,49 +243,49 @@ pt_prefix_cmp(const struct pt_entry *a, 
+@@ -242,49 +241,49 @@ pt_prefix_cmp(const struct pt_entry *a, 
  		if (a6->prefixlen > b6->prefixlen)
  			return (1);
  		return (0);

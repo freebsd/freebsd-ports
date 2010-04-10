@@ -2,13 +2,13 @@ Index: bgpd/printconf.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/printconf.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.6
-diff -u -p -r1.1.1.7 -r1.6
+retrieving revision 1.7
+diff -u -p -r1.1.1.7 -r1.7
 --- bgpd/printconf.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/printconf.c	4 Feb 2010 16:22:23 -0000	1.6
++++ bgpd/printconf.c	10 Apr 2010 12:16:23 -0000	1.7
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: printconf.c,v 1.70 2009/06/06 01:10:29 claudio Exp $	*/
-+/*	$OpenBSD: printconf.c,v 1.77 2009/12/17 09:32:59 claudio Exp $	*/
++/*	$OpenBSD: printconf.c,v 1.79 2010/03/05 15:25:00 claudio Exp $	*/
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -48,23 +48,23 @@ diff -u -p -r1.1.1.7 -r1.6
 +{
 +	switch (c->type & EXT_COMMUNITY_VALUE) {
 +	case EXT_COMMUNITY_TWO_AS:
-+		printf("%s %i:%i", log_ext_subtype(c->subtype),
++		printf("%s %i:%i ", log_ext_subtype(c->subtype),
 +		    c->data.ext_as.as, c->data.ext_as.val);
 +		break;
 +	case EXT_COMMUNITY_IPV4:
-+		printf("%s %s:%i", log_ext_subtype(c->subtype),
++		printf("%s %s:%i ", log_ext_subtype(c->subtype),
 +		    inet_ntoa(c->data.ext_ip.addr), c->data.ext_ip.val);
 +		break;
 +	case EXT_COMMUNITY_FOUR_AS:
-+		printf("%s %s:%i", log_ext_subtype(c->subtype),
++		printf("%s %s:%i ", log_ext_subtype(c->subtype),
 +		    log_as(c->data.ext_as4.as4), c->data.ext_as.val);
 +		break;
 +	case EXT_COMMUNITY_OPAQUE:
-+		printf("%s 0x%llx", log_ext_subtype(c->subtype),
++		printf("%s 0x%llx ", log_ext_subtype(c->subtype),
 +		    c->data.ext_opaq);
 +		break;
 +	default:
-+		printf("0x%x 0x%llx", c->type, c->data.ext_opaq);
++		printf("0x%x 0x%llx ", c->type, c->data.ext_opaq);
 +		break;
 +	}
 +}
@@ -86,7 +86,7 @@ diff -u -p -r1.1.1.7 -r1.6
  print_set(struct filter_set_head *set)
  {
  	struct filter_set	*s;
-@@ -161,11 +205,25 @@ print_set(struct filter_set_head *set)
+@@ -161,11 +205,23 @@ print_set(struct filter_set_head *set)
  		case ACTION_RTLABEL:
  			printf("rtlabel %s ", s->action.rtlabel);
  			break;
@@ -102,17 +102,24 @@ diff -u -p -r1.1.1.7 -r1.6
 +		case ACTION_SET_EXT_COMMUNITY:
 +			printf("ext-community ");
 +			print_extcommunity(&s->action.ext_community);
-+			printf(" ");
 +			break;
 +		case ACTION_DEL_EXT_COMMUNITY:
 +			printf("ext-community delete ");
 +			print_extcommunity(&s->action.ext_community);
-+			printf(" ");
 +			break;
  		}
  	}
  	printf("}");
-@@ -263,8 +321,8 @@ print_peer(struct peer_config *p, struct
+@@ -236,7 +292,7 @@ print_mainconf(struct bgpd_config *conf)
+ 		print_set(&conf->connectset6);
+ 		printf("\n");
+ 	}
+-	if (conf->flags & BGPD_FLAG_REDIST_STATIC) {
++	if (conf->flags & BGPD_FLAG_REDIST6_STATIC) {
+ 		printf("network inet6 static");
+ 		if (!TAILQ_EMPTY(&conf->staticset6))
+ 			printf(" ");
+@@ -263,8 +319,8 @@ print_peer(struct peer_config *p, struct
  	char		*method;
  	struct in_addr	 ina;
  
@@ -123,7 +130,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		printf("%sneighbor %s/%u {\n", c, log_addr(&p->remote_addr),
  		    p->remote_masklen);
  	else
-@@ -281,7 +339,7 @@ print_peer(struct peer_config *p, struct
+@@ -281,7 +337,7 @@ print_peer(struct peer_config *p, struct
  		printf("%s\tmultihop %u\n", c, p->distance);
  	if (p->passive)
  		printf("%s\tpassive\n", c);
@@ -132,7 +139,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		printf("%s\tlocal-address %s\n", c, log_addr(&p->local_addr));
  	if (p->max_prefix) {
  		printf("%s\tmax-prefix %u", c, p->max_prefix);
-@@ -295,6 +353,12 @@ print_peer(struct peer_config *p, struct
+@@ -295,6 +351,12 @@ print_peer(struct peer_config *p, struct
  		printf("%s\tholdtime min %u\n", c, p->min_holdtime);
  	if (p->announce_capa == 0)
  		printf("%s\tannounce capabilities no\n", c);
@@ -145,7 +152,7 @@ diff -u -p -r1.1.1.7 -r1.6
  	if (p->announce_type == ANNOUNCE_SELF)
  		printf("%s\tannounce self\n", c);
  	else if (p->announce_type == ANNOUNCE_NONE)
-@@ -324,6 +388,10 @@ print_peer(struct peer_config *p, struct
+@@ -324,6 +386,10 @@ print_peer(struct peer_config *p, struct
  		printf("%s\tdepend on \"%s\"\n", c, p->if_depend);
  	if (p->flags & PEERFLAG_TRANS_AS)
  		printf("%s\ttransparent-as yes\n", c);
@@ -156,7 +163,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  	if (p->auth.method == AUTH_MD5SIG)
  		printf("%s\ttcp md5sig\n", c);
-@@ -354,8 +422,7 @@ print_peer(struct peer_config *p, struct
+@@ -354,8 +420,7 @@ print_peer(struct peer_config *p, struct
  	if (p->ttlsec)
  		printf("%s\tttl-security yes\n", c);
  
@@ -166,7 +173,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  	if (p->softreconfig_in == 1)
  		printf("%s\tsoftreconfig in yes\n", c);
-@@ -399,17 +466,14 @@ print_enc_alg(u_int8_t alg)
+@@ -399,17 +464,14 @@ print_enc_alg(u_int8_t alg)
  	}
  }
  
@@ -191,7 +198,7 @@ diff -u -p -r1.1.1.7 -r1.6
  }
  
  void
-@@ -455,14 +519,14 @@ print_rule(struct peer *peer_l, struct f
+@@ -455,14 +517,14 @@ print_rule(struct peer *peer_l, struct f
  	} else
  		printf("any ");
  
@@ -209,4 +216,15 @@ diff -u -p -r1.1.1.7 -r1.6
 +		if (r->match.prefixlen.aid == AID_INET6)
  			printf("inet6 ");
  	}
+ 
+@@ -497,6 +559,10 @@ print_rule(struct peer *peer_l, struct f
+ 		print_community(r->match.community.as,
+ 		    r->match.community.type);
+ 	}
++	if (r->match.ext_community.flags & EXT_COMMUNITY_FLAG_VALID) {
++		printf("ext-community ");
++		print_extcommunity(&r->match.ext_community);
++	}
+ 
+ 	print_set(&r->set);
  

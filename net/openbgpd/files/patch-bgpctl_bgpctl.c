@@ -2,13 +2,13 @@ Index: bgpctl/bgpctl.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpctl/bgpctl.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.6
-diff -u -p -r1.1.1.7 -r1.6
+retrieving revision 1.7
+diff -u -p -r1.1.1.7 -r1.7
 --- bgpctl/bgpctl.c	14 Feb 2010 20:20:14 -0000	1.1.1.7
-+++ bgpctl/bgpctl.c	14 Feb 2010 19:55:02 -0000	1.6
++++ bgpctl/bgpctl.c	10 Apr 2010 12:17:18 -0000	1.7
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: bgpctl.c,v 1.142 2009/06/06 06:33:15 eric Exp $ */
-+/*	$OpenBSD: bgpctl.c,v 1.155 2010/01/10 00:16:23 claudio Exp $ */
++/*	$OpenBSD: bgpctl.c,v 1.157 2010/03/08 17:02:19 claudio Exp $ */
  
  /*
   * Copyright (c) 2003 Henning Brauer <henning@openbsd.org>
@@ -90,7 +90,20 @@ diff -u -p -r1.1.1.7 -r1.6
  	struct imsg		 imsg;
  	struct network_config	 net;
  	struct parse_result	*res;
-@@ -164,15 +179,17 @@ main(int argc, char *argv[])
+@@ -128,8 +143,11 @@ main(int argc, char *argv[])
+ 	if ((res = parse(argc, argv)) == NULL)
+ 		exit(1);
+ 
+-	if (res->action == IRRFILTER)
++	if (res->action == IRRFILTER) {
++		if (!(res->flags & (F_IPV4|F_IPV6)))
++			res->flags |= (F_IPV4|F_IPV6);
+ 		irr_main(res->as.as, res->flags, res->irr_outdir);
++	}
+ 
+ 	memcpy(&neighbor.addr, &res->peeraddr, sizeof(neighbor.addr));
+ 	strlcpy(neighbor.descr, res->peerdesc, sizeof(neighbor.descr));
+@@ -164,15 +182,17 @@ main(int argc, char *argv[])
  		imsg_compose(ibuf, IMSG_CTL_SHOW_TERSE, 0, 0, -1, NULL, 0);
  		break;
  	case SHOW_FIB:
@@ -111,7 +124,7 @@ diff -u -p -r1.1.1.7 -r1.6
  				errx(1, "imsg_add failure");
  			imsg_close(ibuf, msg);
  		} else
-@@ -192,7 +209,7 @@ main(int argc, char *argv[])
+@@ -192,7 +212,7 @@ main(int argc, char *argv[])
  	case SHOW_NEIGHBOR_TIMERS:
  	case SHOW_NEIGHBOR_TERSE:
  		neighbor.show_timers = (res->action == SHOW_NEIGHBOR_TIMERS);
@@ -120,7 +133,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			imsg_compose(ibuf, IMSG_CTL_SHOW_NEIGHBOR, 0, 0, -1,
  			    &neighbor, sizeof(neighbor));
  		else
-@@ -206,7 +223,7 @@ main(int argc, char *argv[])
+@@ -206,7 +226,7 @@ main(int argc, char *argv[])
  			memcpy(&ribreq.as, &res->as, sizeof(res->as));
  			type = IMSG_CTL_SHOW_RIB_AS;
  		}
@@ -129,7 +142,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			memcpy(&ribreq.prefix, &res->addr, sizeof(res->addr));
  			ribreq.prefixlen = res->prefixlen;
  			type = IMSG_CTL_SHOW_RIB_PREFIX;
-@@ -220,7 +237,7 @@ main(int argc, char *argv[])
+@@ -220,7 +240,7 @@ main(int argc, char *argv[])
  		memcpy(&ribreq.neighbor, &neighbor,
  		    sizeof(ribreq.neighbor));
  		strlcpy(ribreq.rib, res->rib, sizeof(ribreq.rib));
@@ -138,7 +151,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		ribreq.flags = res->flags;
  		imsg_compose(ibuf, type, 0, 0, -1, &ribreq, sizeof(ribreq));
  		if (!(res->flags & F_CTL_DETAIL))
-@@ -290,12 +307,21 @@ main(int argc, char *argv[])
+@@ -290,12 +310,21 @@ main(int argc, char *argv[])
  		break;
  	case NETWORK_SHOW:
  		bzero(&ribreq, sizeof(ribreq));
@@ -161,7 +174,7 @@ diff -u -p -r1.1.1.7 -r1.6
  	}
  
  	while (ibuf->w.queued)
-@@ -304,13 +330,13 @@ main(int argc, char *argv[])
+@@ -304,13 +333,13 @@ main(int argc, char *argv[])
  
  	while (!done) {
  		if ((n = imsg_read(ibuf)) == -1)
@@ -177,7 +190,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			if (n == 0)
  				break;
  
-@@ -373,6 +399,8 @@ main(int argc, char *argv[])
+@@ -373,6 +402,8 @@ main(int argc, char *argv[])
  			case NETWORK_REMOVE:
  			case NETWORK_FLUSH:
  			case IRRFILTER:
@@ -186,7 +199,7 @@ diff -u -p -r1.1.1.7 -r1.6
  				break;
  			}
  			imsg_free(&imsg);
-@@ -398,8 +426,8 @@ fmt_peer(const char *descr, const struct
+@@ -398,8 +429,8 @@ fmt_peer(const char *descr, const struct
  	}
  
  	ip = log_addr(remote_addr);
@@ -197,7 +210,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		if (asprintf(&p, "%s/%u", ip, masklen) == -1)
  			err(1, NULL);
  	} else {
-@@ -521,13 +549,15 @@ show_neighbor_msg(struct imsg *imsg, enu
+@@ -521,13 +552,15 @@ show_neighbor_msg(struct imsg *imsg, enu
  	struct ctl_timer	*t;
  	struct in_addr		 ina;
  	char			 buf[NI_MAXHOST], pbuf[NI_MAXSERV], *s;
@@ -215,7 +228,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		    p->conf.remote_masklen != 128)) {
  			if (asprintf(&s, "%s/%u",
  			    log_addr(&p->conf.remote_addr),
-@@ -549,6 +579,10 @@ show_neighbor_msg(struct imsg *imsg, enu
+@@ -549,6 +582,10 @@ show_neighbor_msg(struct imsg *imsg, enu
  			printf(", Template");
  		if (p->conf.cloned)
  			printf(", Cloned");
@@ -226,7 +239,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		printf("\n");
  		if (p->conf.descr[0])
  			printf(" Description: %s\n", p->conf.descr);
-@@ -563,17 +597,16 @@ show_neighbor_msg(struct imsg *imsg, enu
+@@ -563,17 +600,16 @@ show_neighbor_msg(struct imsg *imsg, enu
  		printf("  Last read %s, holdtime %us, keepalive interval %us\n",
  		    fmt_timeframe(p->stats.last_read),
  		    p->holdtime, p->holdtime/3);
@@ -253,7 +266,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			}
  			if (p->capa.peer.refresh)
  				printf("    Route Refresh\n");
-@@ -633,20 +666,16 @@ show_neighbor_msg(struct imsg *imsg, enu
+@@ -633,20 +669,16 @@ show_neighbor_msg(struct imsg *imsg, enu
  }
  
  void
@@ -283,7 +296,7 @@ diff -u -p -r1.1.1.7 -r1.6
  }
  
  void
-@@ -680,7 +709,7 @@ print_neighbor_msgstats(struct peer *p)
+@@ -680,7 +712,7 @@ print_neighbor_msgstats(struct peer *p)
  }
  
  void
@@ -292,7 +305,7 @@ diff -u -p -r1.1.1.7 -r1.6
  {
  	printf("  %-20s ", name);
  
-@@ -848,35 +877,70 @@ show_fib_msg(struct imsg *imsg)
+@@ -848,35 +880,70 @@ show_fib_msg(struct imsg *imsg)
  void
  show_nexthop_head(void)
  {
@@ -381,7 +394,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		}
  		printf("\n");
  		break;
-@@ -898,9 +962,8 @@ show_interface_head(void)
+@@ -898,9 +965,8 @@ show_interface_head(void)
  	    "Link state");
  }
  
@@ -393,18 +406,18 @@ diff -u -p -r1.1.1.7 -r1.6
  const struct ifmedia_description
  		ifm_type_descriptions[] = IFM_TYPE_DESCRIPTIONS;
  
-@@ -936,36 +999,36 @@ get_media_descr(int media_type)
+@@ -936,36 +1002,36 @@ get_media_descr(int media_type)
  const char *
  get_linkstate(int media_type, int link_state)
  {
 -	const struct ifmedia_status_description	*p;
 -	int					 i;
+-
+-	if (link_state == LINK_STATE_UNKNOWN)
+-		return ("unknown");
 +	const struct if_status_description *p;
 +	static char buf[8];
  
--	if (link_state == LINK_STATE_UNKNOWN)
--		return ("unknown");
--
 -	for (i = 0; ifm_status_valid_list[i] != 0; i++)
 -		for (p = ifm_status_descriptions; p->ifms_valid != 0; p++) {
 -			if (p->ifms_type != media_type ||
@@ -452,7 +465,7 @@ diff -u -p -r1.1.1.7 -r1.6
  }
  
  int
-@@ -982,17 +1045,12 @@ show_interface_msg(struct imsg *imsg)
+@@ -982,17 +1048,12 @@ show_interface_msg(struct imsg *imsg)
  		printf("%-15s", k->flags & IFF_UP ? "UP" : "");
  
  		if ((ifms_type = ift2ifm(k->media_type)) != 0)
@@ -475,7 +488,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		printf("\n");
  		break;
  	case IMSG_CTL_END:
-@@ -1011,7 +1069,7 @@ show_rib_summary_head(void)
+@@ -1011,7 +1072,7 @@ show_rib_summary_head(void)
  	printf(
  	    "flags: * = Valid, > = Selected, I = via IBGP, A = Announced\n");
  	printf("origin: i = IGP, e = EGP, ? = Incomplete\n\n");
@@ -484,7 +497,7 @@ diff -u -p -r1.1.1.7 -r1.6
  	    "gateway", "lpref", "med", "aspath origin");
  }
  
-@@ -1085,7 +1143,7 @@ show_rib_summary_msg(struct imsg *imsg)
+@@ -1085,7 +1146,7 @@ show_rib_summary_msg(struct imsg *imsg)
  		memcpy(&rib, imsg->data, sizeof(rib));
  
  		print_prefix(&rib.prefix, rib.prefixlen, rib.flags);
@@ -493,7 +506,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  		printf(" %5u %5u ", rib.local_pref, rib.med);
  
-@@ -1190,7 +1248,7 @@ show_rib_detail_msg(struct imsg *imsg, i
+@@ -1190,7 +1251,7 @@ show_rib_detail_msg(struct imsg *imsg, i
  			memcpy(&as, data, sizeof(as));
  			memcpy(&id, data + sizeof(as), sizeof(id));
  			printf("    Aggregator: %s [%s]\n", 
@@ -502,7 +515,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			break;
  		case ATTR_ORIGINATOR_ID:
  			memcpy(&id, data, sizeof(id));
-@@ -1236,22 +1294,27 @@ fmt_mem(int64_t num)
+@@ -1236,22 +1297,27 @@ fmt_mem(int64_t num)
  	return (buf);
  }
  
@@ -537,7 +550,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		printf("%10lld rib entries using %s of memory\n",
  		    (long long)stats.rib_cnt, fmt_mem(stats.rib_cnt *
  		    sizeof(struct rib_entry)));
-@@ -1272,9 +1335,7 @@ show_rib_memory_msg(struct imsg *imsg)
+@@ -1272,9 +1338,7 @@ show_rib_memory_msg(struct imsg *imsg)
  		    (long long)stats.attr_refs);
  		printf("%10lld BGP attributes using %s of memory\n",
  		    (long long)stats.attr_dcnt, fmt_mem(stats.attr_data));
@@ -548,7 +561,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		    stats.prefix_cnt * sizeof(struct prefix) +
  		    stats.rib_cnt * sizeof(struct rib_entry) +
  		    stats.path_cnt * sizeof(struct rde_aspath) +
-@@ -1328,30 +1389,6 @@ show_community(u_char *data, u_int16_t l
+@@ -1328,30 +1392,6 @@ show_community(u_char *data, u_int16_t l
  	}
  }
  
@@ -579,7 +592,7 @@ diff -u -p -r1.1.1.7 -r1.6
  void
  show_ext_community(u_char *data, u_int16_t len)
  {
-@@ -1372,24 +1409,25 @@ show_ext_community(u_char *data, u_int16
+@@ -1372,24 +1412,25 @@ show_ext_community(u_char *data, u_int16
  		case EXT_COMMUNITY_TWO_AS:
  			memcpy(&as2, data + i + 2, sizeof(as2));
  			memcpy(&u32, data + i + 4, sizeof(u32));
