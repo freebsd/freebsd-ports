@@ -442,6 +442,8 @@ For updating ports when no
 directory is present the
 .Fl PP|--packages-only
 option is required.
+See the ENVIRONMENT section below for additional
+requirements.
 .It Fl l
 list all installed ports by category
 .It Fl L
@@ -540,6 +542,21 @@ and
 variables
 are set to the full package name string and version
 of the existing package being replaced, if any.
+.Pp
+When using the
+.Fl -index-only
+option the
+.Ev PACKAGES
+and
+.Ev INDEXDIR
+variables must each be set to a dirctory where the
+superuser has write permissions.
+Other useful variables include:
+.Bd -literal
+MASTER_SITE_INDEX	(default http://www.FreeBSD.org/ports/)
+FETCHINDEX		(default fetch -am -o)
+INDEXFILE		(default auto per FreeBSD version)
+.Ed
 .Sh FILES
 .Bl -tag -width "1234" -compact
 .It Pa /usr/local/etc/portmaster.rc
