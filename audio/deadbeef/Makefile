@@ -7,7 +7,7 @@
 
 PORTNAME=	deadbeef
 PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		mad.2:${PORTSDIR}/audio/libmad \
 		FLAC.10:${PORTSDIR}/audio/flac \
-		wavpack.1:${PORTSDIR}/audio/wavpack \
+		wavpack.2:${PORTSDIR}/audio/wavpack \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		cdio.12:${PORTSDIR}/sysutils/libcdio \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \

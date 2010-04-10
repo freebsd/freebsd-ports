@@ -7,7 +7,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -77,7 +77,7 @@ USE_GSTREAMER+=	musepack
 .endif
 
 .if !defined(WITHOUT_WAVPACK)
-LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
 USE_GSTREAMER+=	wavpack
 .endif
 

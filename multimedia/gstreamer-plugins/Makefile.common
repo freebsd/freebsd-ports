@@ -489,7 +489,7 @@ gst_xvid_PLIST_FILES=	${GST_LIB_DIR}/libgstxvid.la \
 gst_xvid_DIST=	bad
 
 # wavpack
-gst_wavpack_LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
+gst_wavpack_LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
 gst_wavpack_PLIST_FILES=	${GST_LIB_DIR}/libgstwavpack.la \
 				${GST_LIB_DIR}/libgstwavpack.so
 

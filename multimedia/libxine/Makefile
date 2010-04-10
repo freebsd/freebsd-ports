@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.16.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib%20%28${PORTNAME}%20core%29/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -189,7 +189,7 @@ CONFIGURE_ARGS+=	--disable-gdkpixbuf
 .endif
 
 .if defined(WITH_WAVPACK)
-LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
 PLIST_SUB+=	WITH_WAVPACK=""
 CONFIGURE_ARGS+=	--with-wavpack
 .else
