@@ -1,6 +1,6 @@
---- ../../security/coreconf/FreeBSD.mk.orig	2008-07-12 07:28:59.000000000 -0700
-+++ ../../security/coreconf/FreeBSD.mk	2009-11-19 19:29:23.000000000 -0800
-@@ -37,16 +37,33 @@
+--- ../../security/coreconf/FreeBSD.mk.orig	2009-08-22 07:33:09.000000000 +0200
++++ ../../security/coreconf/FreeBSD.mk	2010-03-28 23:01:33.000000000 +0200
+@@ -37,9 +37,9 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
  
@@ -12,32 +12,32 @@
 +CCC			= $(CXX)
  RANLIB			= ranlib
  
- ifeq ($(OS_TEST),alpha)
- CPU_ARCH		= alpha
- else
+ CPU_ARCH		= $(OS_TEST)
+@@ -50,7 +50,22 @@
+ CPU_ARCH		= x86
+ endif
+ ifeq ($(CPU_ARCH),amd64)
+-CPU_ARCH		= x86_64
++CPU_ARCH		= amd64
++USE_64			= 1
++endif
++ifeq ($(OS_TEST),alpha)
++CPU_ARCH		= alpha
++endif
 +ifeq ($(OS_TEST),powerpc)
 +CPU_ARCH		= powerpc
-+else
++endif
 +ifeq ($(OS_TEST),sparc64)
 +CPU_ARCH		= sparc64
 +USE_64			= 1
-+else
++endif
 +ifeq ($(OS_TEST),ia64)
 +CPU_ARCH		= ia64
 +USE_64			= 1
-+else
-+ifeq ($(OS_TEST),amd64)
-+USE_64			= 1
-+endif
- CPU_ARCH		= x86
  endif
-+endif
-+endif
-+endif
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -Wno-switch -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
- 
-@@ -60,20 +77,18 @@
+@@ -65,20 +80,18 @@
  USE_PTHREADS		= 1
  DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
  OS_LIBS			+= -pthread
@@ -63,7 +63,7 @@
  ifdef MAPFILE
  	MKSHLIB += -Wl,--version-script,$(MAPFILE)
  endif
-@@ -82,4 +97,5 @@
+@@ -87,4 +100,5 @@
  
  G++INCLUDES		= -I/usr/include/g++
  
