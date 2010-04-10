@@ -16,12 +16,14 @@ include/bobcat/decryptbuf
 include/bobcat/digestbuf
 include/bobcat/encryptbuf
 include/bobcat/errno
+include/bobcat/fnwrap
 include/bobcat/fnwrap1
 include/bobcat/fnwrap1c
 include/bobcat/fnwrap2
 include/bobcat/fnwrap2c
 include/bobcat/foreach
 include/bobcat/fork
+include/bobcat/fswap
 include/bobcat/gethostent
 include/bobcat/glob
 include/bobcat/hash
