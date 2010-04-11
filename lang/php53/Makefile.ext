@@ -193,14 +193,6 @@ USE_MYSQL=	yes
 BROKEN_WITH_MYSQL=	323 40
 .endif
 
-.if ${PHP_MODNAME} == "oci8"
-BUILD_DEPENDS+=	${LOCALBASE}/oracle8-client/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
-
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-
-CONFIGURE_ARGS+=--with-oci8=${LOCALBASE}/oracle8-client
-.endif
-
 .if ${PHP_MODNAME} == "odbc"
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 
@@ -245,17 +237,6 @@ CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
 		--with-zlib-dir=/usr
 
 USE_MYSQL=	yes
-
-USE_PHP=	pdo
-USE_PHP_BUILD=	yes
-.endif
-
-.if ${PHP_MODNAME} == "pdo_oci"
-BUILD_DEPENDS+=	${LOCALBASE}/oracle8-client/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
-
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-
-CONFIGURE_ARGS+=--with-pdo-oci=${LOCALBASE}/oracle8-client
 
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
@@ -513,15 +494,6 @@ CONFIGURE_ARGS+=--disable-mbregex
 .if ${PHP_MODNAME} == "openssl"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
-.endif
-
-.if ${PHP_MODNAME} == "oci8" || ${PHP_MODNAME} == "pdo_oci"
-pre-configure:
-	@cd ${WRKSRC}; \
-	for lib in ${LOCALBASE}/oracle8-client/lib/libclntsh /usr/lib/libpthread; do \
-		/usr/bin/ar x $${lib}.a; \
-	done; \
-	/usr/bin/ar rcs liboci8.a *.o
 .endif
 
 .if ${PHP_MODNAME} == "pdo_dblib"

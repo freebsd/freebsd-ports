@@ -18,7 +18,6 @@ COMMENT=	Doctrine is a PHP object relational mapper
 OPTIONS=	DBLIB "Install PHP DBO driver for DBLIB" Off \
 		MYSQL "Install PHP DBO driver for MySQL" On \
 		ODBC "Install PHP DBO driver for ODBC" Off \
-		OCI "Install PHP DBO driver for OCI" Off \
 		PGSQL "Install PHP DBO driver for PostgreSQL" Off \
 		SQLITE "Install PHP DBO driver for SQLite" Off
 
@@ -48,9 +47,6 @@ USE_PHP+=	pdo_mysql
 .endif
 .if defined(WITH_ODBC)
 RUN_DEPENDS+=	databases/php${PHP_VER}-pdo_odbc
-.endif
-.if defined(WITH_OCI)
-RUN_DEPENDS+=	databases/php${PHP_VER}-pdo_oci
 .endif
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	databases/php${PHP_VER}-pdo_pgsql
