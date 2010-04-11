@@ -8,7 +8,7 @@
 
 PORTNAME=	images
 PORTVERSION=	3.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/caml-light/bazar-ocaml/ \
@@ -27,6 +27,7 @@ ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
+USE_OCAMLFIND_PLIST=	yes
 USE_OCAML_WASH=	yes
 OCAML_PKGDIRS=	camlimages
 USE_OCAML_LDCONFIG=	yes
