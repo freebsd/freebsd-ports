@@ -353,6 +353,7 @@ afni                            ports/science/afni
 afnix                           ports/lang/afnix
 afsp                            ports/audio/afsp
 aft                             ports/textproc/aft
+aften                           ports/audio/aften
 afterglow                       ports/security/afterglow
 afternoonstalker                ports/games/afternoonstalker
 afterstep                       ports/x11-wm/afterstep
@@ -12701,6 +12702,7 @@ p5-MooseX-Has-Sugar             ports/devel/p5-MooseX-Has-Sugar
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
 p5-MooseX-InsideOut             ports/devel/p5-MooseX-InsideOut
 p5-MooseX-LazyRequire           ports/devel/p5-MooseX-LazyRequire
+p5-MooseX-Lists                 ports/devel/p5-MooseX-Lists
 p5-MooseX-Log-Log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-MooseX-Meta-TypeConstraint-ForceCoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
 p5-MooseX-Method-Signatures     ports/devel/p5-MooseX-Method-Signatures
@@ -16527,6 +16529,7 @@ p5-moosex-has-sugar             ports/devel/p5-MooseX-Has-Sugar
 p5-moosex-insideout             ports/devel/p5-MooseX-InsideOut
 p5-moosex-ioc                   ports/devel/p5-MooseX-IOC
 p5-moosex-lazyrequire           ports/devel/p5-MooseX-LazyRequire
+p5-moosex-lists                 ports/devel/p5-MooseX-Lists
 p5-moosex-log-log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-moosex-meta-typeconstraint-forcecoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
 p5-moosex-method-signatures     ports/devel/p5-MooseX-Method-Signatures
@@ -19167,7 +19170,6 @@ php5-creole                     ports/databases/php5-creole
 php5-ctype                      ports/textproc/php5-ctype
 php5-curl                       ports/ftp/php5-curl
 php5-dba                        ports/databases/php5-dba
-php5-dbase                      ports/databases/php5-dbase
 php5-dom                        ports/textproc/php5-dom
 php5-exif                       ports/graphics/php5-exif
 php5-extensions                 ports/lang/php5-extensions
@@ -19187,17 +19189,13 @@ php5-json                       ports/devel/php5-json
 php5-ldap                       ports/net/php5-ldap
 php5-mbstring                   ports/converters/php5-mbstring
 php5-mcrypt                     ports/security/php5-mcrypt
-php5-mhash                      ports/security/php5-mhash
-php5-ming                       ports/graphics/php5-ming
 php5-mssql                      ports/databases/php5-mssql
 php5-mysql                      ports/databases/php5-mysql
 php5-mysqli                     ports/databases/php5-mysqli
-php5-ncurses                    ports/devel/php5-ncurses
 php5-oci8                       ports/databases/php5-oci8
 php5-odbc                       ports/databases/php5-odbc
 php5-openssl                    ports/security/php5-openssl
 php5-pcntl                      ports/devel/php5-pcntl
-php5-pcre                       ports/devel/php5-pcre
 php5-pdo                        ports/databases/php5-pdo
 php5-pdo_dblib                  ports/databases/php5-pdo_dblib
 php5-pdo_firebird               ports/databases/php5-pdo_firebird
@@ -19221,7 +19219,6 @@ php5-simplexml                  ports/textproc/php5-simplexml
 php5-snmp                       ports/net-mgmt/php5-snmp
 php5-soap                       ports/net/php5-soap
 php5-sockets                    ports/net/php5-sockets
-php5-spl                        ports/devel/php5-spl
 php5-sqlite                     ports/databases/php5-sqlite
 php5-sybase_ct                  ports/databases/php5-sybase_ct
 php5-sysvmsg                    ports/devel/php5-sysvmsg
