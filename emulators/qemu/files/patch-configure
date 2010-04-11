@@ -1,4 +1,15 @@
 Index: qemu/configure
+@@ -1154,8 +1154,9 @@
+ #include <curl/curl.h>
+ int main(void) { return curl_easy_init(); }
+ EOF
++  curl_cflags=`curl-config --cflags 2>/dev/null`
+   curl_libs=`curl-config --libs 2>/dev/null`
+- if $cc $ARCH_CFLAGS $curl_libs -o $TMPE $TMPC > /dev/null 2> /dev/null ; then
++ if $cc $ARCH_CFLAGS $curl_cflags $curl_libs -o $TMPE $TMPC > /dev/null 2> /dev/null ; then
+     curl=yes
+   fi
+ fi # test "$curl"
 @@ -1395,9 +1395,9 @@
  fi
  
@@ -12,3 +23,11 @@ Index: qemu/configure
  
  ##########################################
  # Do we need librt
+@@ -1760,6 +1761,7 @@
+   echo "CONFIG_CURL=y" >> $config_host_mak
+   echo "CURL_LIBS=$curl_libs" >> $config_host_mak
+   echo "#define CONFIG_CURL 1" >> $config_host_h
++  echo "CURL_CFLAGS=$curl_cflags" >> $config_host_mak
+ fi
+ if test "$brlapi" = "yes" ; then
+   echo "CONFIG_BRLAPI=y" >> $config_host_mak

@@ -7,6 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.12.3
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}:release \
 		${MASTER_SITE_LOCAL}:snapshot \
@@ -33,6 +34,7 @@ OPTIONS=	RTL8139_TIMER "allow use of re(4) nic with FreeBSD guests" Off \
 		SAMBA "samba dependency (for -smb)" Off \
 		SDL "SDL/X dependency (graphical output)" On \
 		GNUTLS "gnutls dependency (vnc encryption)" On \
+		CURL "libcurl dependency (remote images)" On \
 		PCAP "pcap dependency (networking with bpf)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
 		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
@@ -61,6 +63,12 @@ USE_SDL=	sdl
 CONFIGURE_ARGS+=	--disable-vnc-tls
 .else
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+.endif
+
+.if defined(WITHOUT_CURL)
+CONFIGURE_ARGS+=	--disable-curl
+.else
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 .endif
 
 .if defined(WITH_PCAP)
