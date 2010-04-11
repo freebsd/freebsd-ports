@@ -1998,6 +1998,8 @@ gen_dep_list () {
 		for l in $temp_list ; do
 			list="$list `grep -m1 ^${l}\| $PM_INDEX | cut -f 2 -d \|`"
 		done
+
+		list=" $list "
 	fi
 
 	echo "$list"
@@ -2031,11 +2033,11 @@ dependency_check () {
 	if [ "$PM_BUILD_ONLY_LIST" = pmp_doing_build_deps ]; then
 		local rundeps dep varname run_dl build_only_dl
 
-		rundeps=" `gen_dep_list run-depends-list` "
+		rundeps=`gen_dep_list run-depends-list`
 
 		for dep in $d_port_list; do
 			case "$rundeps" in
-			*" ${dep} "*)
+			*" ${dep} "*|*${dep}*)
 				varname=`echo ${dep#$pd/} | sed 's#[-+/\.]#_#g'`
 				rundep_list="$rundep_list $varname"
 				eval $varname=\"$portdir \$$varname\"
