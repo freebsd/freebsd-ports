@@ -1,17 +1,10 @@
-eAccelerator is a opcode cache for PHP. It increases
-performance of PHP scripts by caching them in compiled state,
-so that the overhead of compiling is almost completely eliminated.
-Also it uses some optimizations for speed up of PHP scripts execution.
-eAccelerator typically reduces server load and increases
-the speed of your PHP code by 1-10 times.
+eAccelerator is a free open-source PHP accelerator & optimizer. It increases
+the performance of PHP scripts by caching them in their compiled state, so
+that the overhead of compiling is almost completely eliminated. It also
+optimizes scripts to speed up their execution. eAccelerator typically reduces
+server load and increases the speed of your PHP code by 1-10 times.
 
-eAccelerator contains PHP encoder and loader. You can encode any PHP
-scripts with encoder to distribute them without sources. Encoded files
-can be run on any site which runs PHP with eAccelerator. The sources
-of encoded script can't be restored because they are stored in a compiled
-form and the encoded version doesn't contain the source. 
-
-WWW: http://eaccelerator.net/
+WWW:	http://eaccelerator.net/
 
 - Alex Dupre
 ale@FreeBSD.org
