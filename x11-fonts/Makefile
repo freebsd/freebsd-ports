@@ -20,6 +20,7 @@
     SUBDIR += cyberbit-ttfonts
     SUBDIR += cyr-rfx
     SUBDIR += dejavu
+    SUBDIR += ecofont
     SUBDIR += encodings
     SUBDIR += etlfonts
     SUBDIR += farsifonts
