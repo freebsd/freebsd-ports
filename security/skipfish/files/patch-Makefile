@@ -1,0 +1,30 @@
+--- ./Makefile.orig	2010-03-30 17:53:01.000000000 +0200
++++ ./Makefile	2010-04-11 19:05:39.000000000 +0200
+@@ -30,7 +30,7 @@
+ CFLAGS_DBG = -DLOG_STDERR=1 -DDEBUG_ALLOCATOR=1 $(CFLAGS_GEN) 
+ CFLAGS_OPT = -O3 -Wno-format $(CFLAGS_GEN)
+ 
+-LDFLAGS   += -L/usr/local/lib/ -L/opt/local/lib
++LDFLAGS   += -L$(LOCALBASE)/lib/ 
+ LIBS      += -lcrypto -lssl -lidn -lz
+ 
+ all: $(PROGNAME)
+@@ -38,12 +38,12 @@
+ $(PROGNAME): $(PROGNAME).c $(OBJFILES) $(INCFILES)
+ 	$(CC) $(LDFLAGS) $(PROGNAME).c -o $(PROGNAME) $(CFLAGS_OPT) \
+ 	      $(OBJFILES) $(LIBS)
+-	@echo
+-	@echo "See dictionaries/README-FIRST to pick a dictionary for the tool."
+-	@echo
+-	@echo "Having problems with your scans? Be sure to visit:"
+-	@echo "http://code.google.com/p/skipfish/wiki/KnownIssues"
+-	@echo
++#	@echo
++#	@echo "See dictionaries/README-FIRST to pick a dictionary for the tool."
++#	@echo
++#	@echo "Having problems with your scans? Be sure to visit:"
++#	@echo "http://code.google.com/p/skipfish/wiki/KnownIssues"
++#	@echo
+ 
+ debug: $(PROGNAME).c $(OBJFILES) $(INCFILES)
+ 	$(CC) $(LDFLAGS) $(PROGNAME).c -o $(PROGNAME) $(CFLAGS_DBG) \
