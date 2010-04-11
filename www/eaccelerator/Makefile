@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	eaccelerator
-PORTVERSION=	0.9.5.3
+PORTVERSION=	0.9.6
 CATEGORIES=	www
-MASTER_SITES=	http://bart.eaccelerator.net/source/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/eAccelerator%20${PORTVERSION}/ \
+		http://bart.eaccelerator.net/source/${PORTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
-COMMENT=	An opcode cache for PHP with encoder and loader
+COMMENT=	A free open-source PHP accelerator & optimizer
 
-USE_PHP=	session
+USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHP_BUILD=	yes
+IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-eaccelerator=shared \
-		--with-eaccelerator-shared-memory \
-		--with-eaccelerator-sessions \
-		--with-eaccelerator-content-caching \
 		--with-eaccelerator-userid=80
 
 USE_BZIP2=	yes
@@ -31,24 +30,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${PHP_VER} == 5
-CONFIGURE_ARGS+=	--without-eaccelerator-encoder
-PLIST_SUB+=		ENCODER="@comment "
-.else
-PLIST_SUB+=		ENCODER=""
-
-post-build:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g; s|0777|0755|g" \
-		${WRKSRC}/encoder.php > ${WRKSRC}/encoder
-.endif
-
 do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
 	${INSTALL_DATA} ${WRKSRC}/modules/${PORTNAME}.so \
 	       ${PREFIX}/lib/php/${PHP_EXT_DIR}
-.if ${PHP_VER} == 4
-	${INSTALL_SCRIPT} ${WRKSRC}/encoder ${PREFIX}/bin
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
