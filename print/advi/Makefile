@@ -32,6 +32,7 @@ USE_XORG=	xpm
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	--disable-bytecode-program
 
 OPTIONS=	GS "Enable Ghostscript support" on
 
