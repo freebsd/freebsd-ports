@@ -35,10 +35,6 @@ OPTIONS=	X11	"Build with X11 support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800501
-BROKEN=		does not build
-.endif
-
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=--without-x --with-rubik

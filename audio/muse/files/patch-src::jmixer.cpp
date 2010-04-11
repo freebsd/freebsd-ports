@@ -25,12 +25,3 @@
  #include <sys/types.h>
  #include <sys/wait.h>
  #include <termios.h>
-@@ -640,7 +640,7 @@
- /* this is the function selecting files for the scandir
-    on freebsd systems you should change the following line to:
-    int selector(struct dirent *dir) {    */
--int selector(const struct dirent *dir) {
-+int selector(struct dirent *dir) {
-   if( strncasecmp(dir->d_name+strlen(dir->d_name)-4,".mp3",4)==0
- #ifdef HAVE_VORBIS
-       || strncasecmp(dir->d_name+strlen(dir->d_name)-4,".ogg",4)==0
