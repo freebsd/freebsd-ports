@@ -25,7 +25,6 @@ OPTIONS=	PHP_MYSQL "MySQL database support (PHP extension)" Off \
 		PDO_DBLIB "Microsoft SQL Server and Sybase PDO driver" Off \
 		PDO_FIREBIRD "Firebird/Interbase PDO driver" Off \
 		PDO_MYSQL "MySQL Server PDO driver" Off \
-		PDO_OCI "Oracle PDO driver (i386 onnly)" Off \
 		PDO_ODBC "ODBC and DB2 PDO driver" Off \
 		PDO_PGSQL "PostgreSQL PDO driver" Off \
 		PDO_SQLITE "SQLite PDO driver" Off
@@ -52,10 +51,6 @@ RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_firebird.so:${PORTSDIR}/data
 
 .if defined(WITH_PDO_MYSQL)
 USE_PHP+=	pdo_mysql
-.endif
-
-.if defined(WITH_PDO_OCI) && ${ARCH} == "i386"
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_oci.so:${PORTSDIR}/databases/php5-pdo_oci
 .endif
 
 .if defined(WITH_PDO_ODBC)

@@ -41,6 +41,7 @@ PHPBASE?=	${LOCALBASE}
 .if exists(${PHPBASE}/etc/php.conf)
 .include "${PHPBASE}/etc/php.conf"
 PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBASE}/lib/php/\(.*\),\1,p'
+# The following block should be eventually removed from here or php5 port
 .if ${PHP_VER} == 5
 PHP_EXT_INC=	pcre spl
 .endif
@@ -250,7 +251,7 @@ _USE_PHP_ALL=	apc bcmath bitset bz2 calendar ctype curl dba \
 # version specific components
 _USE_PHP_VER4=	${_USE_PHP_ALL} crack dbase dbx dio domxml filepro mcal mcve \
 		mhash ncurses oracle overload pfpro xslt yp
-_USE_PHP_VER5=	${_USE_PHP_ALL} dom filter mysqli oci8 pdo \
+_USE_PHP_VER5=	${_USE_PHP_ALL} dom filter mysqli pdo \
 		pdo_mysql pdo_pgsql pdo_sqlite \
 		simplexml soap spl sqlite tidy xmlreader xmlwriter xsl
 
@@ -291,7 +292,6 @@ mssql_DEPENDS=	databases/php${PHP_VER}-mssql
 mysql_DEPENDS=	databases/php${PHP_VER}-mysql
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
 ncurses_DEPENDS=devel/php${PHP_VER}-ncurses
-oci8_DEPENDS=	databases/php${PHP_VER}-oci8
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
 openssl_DEPENDS=security/php${PHP_VER}-openssl
 oracle_DEPENDS=	databases/php${PHP_VER}-oracle

@@ -60,7 +60,6 @@ OPTIONS=	APACHE "Configure for Apache-2.x" off \
 		MSSQL "Install MSSQL support for PHP" Off \
 		MYSQL "Install MySQL support for PHP" Off \
 		MYSQLI "Install MySQLi support for PHP" Off \
-		OCI8 "Install OCI8 support for PHP" Off \
 		ODBC "Install ODBC support for PHP" Off \
 		PGSQL "Install PostgreSQL support for PHP" Off \
 		SQLITE "Install SQLite support for PHP" Off
@@ -111,10 +110,6 @@ USE_PHP+=	mysql
 
 .if defined(WITH_MYSQLI)
 USE_PHP+=	mysqli
-.endif
-
-.if defined(WITH_OCI8)
-USE_PHP+=	oci8
 .endif
 
 .if defined(WITH_ODBC)

@@ -33,7 +33,6 @@ OPTIONS=	\
 		MYSQLI "Install MySQLi support" Off \
 		DBLIB "Install DBLIB PDO support" Off \
 		PGSQL "Install PostgreSQL PDO support" Off \
-		OCI "Install Oracle OCI 8 PDO support" Off \
 		ODBC "Install ODBC PDO support" Off \
 		SQLITE "Install SQLite v3 PDO support" Off \
 		REQPHP "Install required PHP dependencies" On \
@@ -91,10 +90,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_dblib.so:${PORTSDIR}/datab
 
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
-.endif
-
-.if defined(WITH_OCI)
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_oci.so:${PORTSDIR}/databases/php5-pdo_oci
 .endif
 
 .if defined(WITH_ODBC)

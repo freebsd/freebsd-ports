@@ -502,13 +502,11 @@
     SUBDIR += php5-mssql
     SUBDIR += php5-mysql
     SUBDIR += php5-mysqli
-    SUBDIR += php5-oci8
     SUBDIR += php5-odbc
     SUBDIR += php5-pdo
     SUBDIR += php5-pdo_dblib
     SUBDIR += php5-pdo_firebird
     SUBDIR += php5-pdo_mysql
-    SUBDIR += php5-pdo_oci
     SUBDIR += php5-pdo_odbc
     SUBDIR += php5-pdo_pgsql
     SUBDIR += php5-pdo_sqlite
