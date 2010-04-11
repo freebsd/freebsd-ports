@@ -1,0 +1,11 @@
+alc mp3 * *
+	# FB:{BITRATE=-B %B}D:{RESAMPLE=--resample %D}
+	[alac] $FILE$ | [lame] --silent -q $QUALITY$ $RESAMPLE$ -v $BITRATE$ - -
+
+alc pcm * *
+	# F
+	[alac] -r $FILE$
+
+alc flc * *
+	# F
+	[alac] $FILE$ | [flac] -cs --totally-silent --compression-level-0 -
