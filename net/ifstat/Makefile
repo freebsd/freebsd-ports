@@ -26,7 +26,7 @@ PLIST_FILES=	bin/ifstat
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 .else
 CONFIGURE_ARGS+=	--without-snmp
 .endif
