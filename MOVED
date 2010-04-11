@@ -4361,3 +4361,5 @@ devel/php5-pcre|lang/php5|2010-04-09|Bundled in core php
 devel/php5-spl|lang/php5|2010-04-09|Bundled in core php
 graphics/php5-ming||2010-04-09|Removed from core php
 security/php5-mhash|security/php5-hash|2010-04-09|Wrapper in hash extension
+databases/php5-oci8||2010-04-11|Doesn't support Oracle8 client library
+databases/php5-pdo_oci||2010-04-11|Doesn't support Oracle8 client library
