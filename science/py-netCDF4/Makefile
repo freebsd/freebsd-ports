@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netCDF4
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	science python
 MASTER_SITES=	http://netcdf4-python.googlecode.com/files/ \
 		CHEESESHOP
