@@ -1,11 +1,27 @@
---- library/tulip/src/PluginLibraryLoader.cpp.orig	2010-03-22 09:54:25.000000000 +0100
-+++ library/tulip/src/PluginLibraryLoader.cpp	2010-03-22 10:00:13.000000000 +0100
-@@ -183,7 +183,7 @@
+--- library/tulip/src/PluginLibraryLoader.cpp.orig	2010-01-19 19:14:04.000000000 +0000
++++ library/tulip/src/PluginLibraryLoader.cpp	2010-04-09 12:21:13.000000000 +0000
+@@ -161,7 +161,14 @@
+ }
+ 
+ // accepts only file whose name matches *.so or *.dylib
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#if (__FreeBSD_version < 900000 && __FreeBSD_version >= 800501) || (__FreeBSD_version >= 900006)
++int __tulip_select_libs(const struct dirent *ent) {
++#else
+ int __tulip_select_libs(struct dirent *ent) {
++#endif /* __FreeBSD_version */
++#endif /* __FreeBSD__ */
+ #if !defined(__APPLE__)
+   const char *suffix = ".so";
+   const unsigned long suffix_len = 3;
+@@ -183,9 +190,6 @@
    struct dirent **namelist;
    n = scandir((const char *) _pluginPath.c_str(),
          &namelist,
 -#if !(defined(__APPLE__) || defined(__FreeBSD__))
-+#if !(defined(__APPLE__) || (defined(__FreeBSD__) && (__FreeBSD_version >= 900006 || (__FreeBSD_version >= 800501 && __FreeBSD_version < 900000) || (__FreeBSD_version >= 730000 && __FreeBSD_version < 800000))))
-         (int (*) (const dirent *))
- #endif
+-        (int (*) (const dirent *))
+-#endif
          __tulip_select_libs,
+         alphasort);
+   pluginPath = _pluginPath;
