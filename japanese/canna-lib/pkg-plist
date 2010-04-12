@@ -62,6 +62,8 @@ lib/libcanna16.so.1
 %%DATADIR%%/sample/verbose.canna
 %%DATADIR%%/sample/vje.canna
 %%DATADIR%%/sample/wx2+.canna
+%%METAFILE%%
+@exec %%MTREE_CMD%% -qU -f %D/%%METAFILE%% -p %D/%%DATADIR%%/dic > /dev/null 2>&1
 @dirrm include/canna
 @dirrm %%DATADIR%%/sample/src
 @dirrm %%DATADIR%%/sample
