@@ -1,0 +1,38 @@
+--- deps/libev/wscript.orig	2010-04-12 11:55:55.000000000 +0800
++++ deps/libev/wscript	2010-04-12 12:00:43.000000000 +0800
+@@ -27,12 +27,30 @@
+   if conf.check_cc(header_name="poll.h"):
+     conf.check_cc(header_name="poll.h", function_name="poll")
+ 
+-  conf.check_cc(header_name="sys/event.h")
+   conf.check_cc(header_name="sys/queue.h")
+-  if PLATFORM_IS_DARWIN:
+-    conf.check_cc(header_name="sys/event.h", function_name="kqueue")
+-  else:
+-    conf.check_cc(header_name="sys/queue.h", function_name="kqueue")
++
++  code = """
++      #include <sys/types.h>
++      #include <sys/event.h>
++
++      int main() {
++	  return 0;
++      }
++  """
++  conf.check_cc(fragment=code, define_name="HAVE_SYS_EVENT_H", execute=False,
++                msg="Checking for header sys/event.h")
++
++  code = """
++      #include <sys/types.h>
++      #include <sys/event.h>
++
++      int main() {
++	  int fd = kqueue();
++	  return 0;
++      }
++  """
++  conf.check_cc(fragment=code, define_name="HAVE_KQUEUE", execute=False,
++                msg="Checking for function kqueue")
+ 
+   if conf.check_cc(header_name="sys/select.h"):
+     conf.check_cc(header_name="sys/select.h", function_name="select")
