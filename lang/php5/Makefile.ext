@@ -155,10 +155,9 @@ CONFIGURE_ARGS+=--with-ldap-sasl
 .endif
 
 .if ${PHP_MODNAME} == "mbstring"
-LIB_DEPENDS+=	onig.1:${PORTSDIR}/devel/oniguruma4
 
 CONFIGURE_ARGS+=--enable-mbstring \
-		--with-onig=${LOCALBASE}
+		--with-pcre-dir=${LOCALBASE}
 
 OPTIONS=	REGEX "Enable multibyte regex support" on
 
@@ -488,6 +487,9 @@ CONFIGURE_ARGS+=--enable-gd-jis-conv
 .if ${PHP_MODNAME} == "mbstring"
 .	if defined(WITHOUT_REGEX)
 CONFIGURE_ARGS+=--disable-mbregex
+.	else
+LIB_DEPENDS+=	onig.1:${PORTSDIR}/devel/oniguruma4
+CONFIGURE_ARGS+=--with-onig=${LOCALBASE}
 .	endif
 .endif
 
