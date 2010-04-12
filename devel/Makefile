@@ -2862,6 +2862,7 @@
     SUBDIR += ruby-multi
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-poll
+    SUBDIR += ruby-progressbar
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
     SUBDIR += ruby-rbbr
