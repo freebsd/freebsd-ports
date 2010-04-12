@@ -1498,6 +1498,7 @@
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-amazon-ecs
+    SUBDIR += rubygem-anemone
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-erubis
     SUBDIR += rubygem-feed-normalizer
