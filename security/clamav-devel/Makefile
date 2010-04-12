@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20100406
+PORTVERSION=	20100412
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -207,7 +207,7 @@ pre-configure:
 		${ECHO_MSG} "= It will not be called during this build                                 ="; \
 		${ECHO_MSG} "==========================================================================="; \
 		${ECHO_MSG} ""; \
-		touch ${PY_NO_THREAD}; \
+		${TOUCH} ${PY_NO_THREAD}; \
 	fi
 .endif
 
