@@ -13,10 +13,8 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Embedded Perl
-
-BROKEN=		does not compile with php 5.3
 
 USE_PHP=	yes
 USE_PHPIZE=	yes
