@@ -592,6 +592,7 @@
     SUBDIR += newsfeed
     SUBDIR += nginx
     SUBDIR += nginx-devel
+    SUBDIR += node
     SUBDIR += notftp
     SUBDIR += npapi-xine
     SUBDIR += npc
