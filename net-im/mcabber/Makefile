@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	mcabber
-PORTVERSION=	0.9.10
+PORTVERSION=	0.10.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
+#DISTNAME=	${PORTNAME}-${PORTVERSION}-rc3
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Small Jabber console client
 
+LIB_DEPENDS=	loudmouth:${PORTSDIR}/net-im/loudmouth
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl --enable-sigwinch
+CONFIGURE_ARGS=	--enable-sigwinch
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-USE_OPENSSL=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -60,7 +63,9 @@ CONFIGURE_ARGS+=--disable-otr
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$"$${datadir}"|"$${datadir}"|;s|-O2||'\
-		${WRKSRC}/configure ${WRKSRC}/*/configure
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.*
 
 post-install:
 	@${INSTALL} -d ${PREFIX}/share/applications/ ${EXAMPLESDIR}/
