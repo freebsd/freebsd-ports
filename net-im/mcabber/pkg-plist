@@ -1,13 +1,48 @@
 bin/mcabber
 share/applications/mcabber.desktop
+include/mcabber/main.h
+include/mcabber/roster.h
+include/mcabber/events.h
+include/mcabber/commands.h
+include/mcabber/compl.h
+include/mcabber/hbuf.h
+include/mcabber/screen.h
+include/mcabber/logprint.h
+include/mcabber/settings.h
+include/mcabber/hooks.h
+include/mcabber/utf8.c
+include/mcabber/utf8.h
+include/mcabber/histolog.h
+include/mcabber/utils.h
+include/mcabber/pgp.h
+include/mcabber/xmpp.h
+include/mcabber/xmpp_helper.h
+include/mcabber/xmpp_defines.h
+include/mcabber/xmpp_iq.h
+include/mcabber/xmpp_iqrequest.h
+include/mcabber/xmpp_muc.h
+include/mcabber/xmpp_s10n.h
+include/mcabber/caps.h
+include/mcabber/fifo.h
+include/mcabber/help.h
+include/mcabber/modules.h
+include/mcabber/api.h
+include/mcabber/config.h
+include/mcabber/hgcset.h
+lib/mcabber/libbeep.so
+lib/mcabber/libbeep.la
+lib/mcabber/libxttitle.so
+lib/mcabber/libxttitle.la
+libdata/pkgconfig/mcabber.pc
 %%EXAMPLESDIR%%/mcabberrc
+%%DATADIR%%/contrib/vim/mcabber_log-ftdetect.vim
+%%DATADIR%%/contrib/vim/mcabber_log-syntax.vim
 %%DATADIR%%/contrib/cicq2mcabber.pl
 %%DATADIR%%/contrib/events/eventcmd
 %%DATADIR%%/contrib/events/eventcmd.osd
 %%DATADIR%%/contrib/events/eventcmd.pastebin
 %%DATADIR%%/contrib/events/mcnotify.py
 %%DATADIR%%/contrib/filter_statusmsg.py
-%%DATADIR%%/contrib/mcwizz.rb
 %%DATADIR%%/contrib/merge_history.py
 %%DATADIR%%/contrib/themes/light.txt
 %%DATADIR%%/contrib/themes/light2.txt
@@ -30,6 +65,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/cs/hlp_help.txt
 %%DATADIR%%/help/cs/hlp_iline.txt
 %%DATADIR%%/help/cs/hlp_info.txt
+%%DATADIR%%/help/cs/hlp_module.txt
 %%DATADIR%%/help/cs/hlp_move.txt
 %%DATADIR%%/help/cs/hlp_msay.txt
 %%DATADIR%%/help/cs/hlp_otr.txt
@@ -67,6 +103,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/de/hlp_help.txt
 %%DATADIR%%/help/de/hlp_iline.txt
 %%DATADIR%%/help/de/hlp_info.txt
+%%DATADIR%%/help/de/hlp_module.txt
 %%DATADIR%%/help/de/hlp_move.txt
 %%DATADIR%%/help/de/hlp_msay.txt
 %%DATADIR%%/help/de/hlp_otr.txt
@@ -104,6 +141,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/en/hlp_help.txt
 %%DATADIR%%/help/en/hlp_iline.txt
 %%DATADIR%%/help/en/hlp_info.txt
+%%DATADIR%%/help/en/hlp_module.txt
 %%DATADIR%%/help/en/hlp_move.txt
 %%DATADIR%%/help/en/hlp_msay.txt
 %%DATADIR%%/help/en/hlp_otr.txt
@@ -141,6 +179,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/fr/hlp_help.txt
 %%DATADIR%%/help/fr/hlp_iline.txt
 %%DATADIR%%/help/fr/hlp_info.txt
+%%DATADIR%%/help/fr/hlp_module.txt
 %%DATADIR%%/help/fr/hlp_move.txt
 %%DATADIR%%/help/fr/hlp_msay.txt
 %%DATADIR%%/help/fr/hlp_otr.txt
@@ -178,6 +217,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/it/hlp_help.txt
 %%DATADIR%%/help/it/hlp_iline.txt
 %%DATADIR%%/help/it/hlp_info.txt
+%%DATADIR%%/help/it/hlp_module.txt
 %%DATADIR%%/help/it/hlp_move.txt
 %%DATADIR%%/help/it/hlp_msay.txt
 %%DATADIR%%/help/it/hlp_otr.txt
@@ -215,6 +255,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/nl/hlp_help.txt
 %%DATADIR%%/help/nl/hlp_iline.txt
 %%DATADIR%%/help/nl/hlp_info.txt
+%%DATADIR%%/help/nl/hlp_module.txt
 %%DATADIR%%/help/nl/hlp_move.txt
 %%DATADIR%%/help/nl/hlp_msay.txt
 %%DATADIR%%/help/nl/hlp_otr.txt
@@ -252,6 +293,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/pl/hlp_help.txt
 %%DATADIR%%/help/pl/hlp_iline.txt
 %%DATADIR%%/help/pl/hlp_info.txt
+%%DATADIR%%/help/pl/hlp_module.txt
 %%DATADIR%%/help/pl/hlp_move.txt
 %%DATADIR%%/help/pl/hlp_msay.txt
 %%DATADIR%%/help/pl/hlp_otr.txt
@@ -289,6 +331,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/ru/hlp_help.txt
 %%DATADIR%%/help/ru/hlp_iline.txt
 %%DATADIR%%/help/ru/hlp_info.txt
+%%DATADIR%%/help/ru/hlp_module.txt
 %%DATADIR%%/help/ru/hlp_move.txt
 %%DATADIR%%/help/ru/hlp_msay.txt
 %%DATADIR%%/help/ru/hlp_otr.txt
@@ -326,6 +369,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/uk/hlp_help.txt
 %%DATADIR%%/help/uk/hlp_iline.txt
 %%DATADIR%%/help/uk/hlp_info.txt
+%%DATADIR%%/help/uk/hlp_module.txt
 %%DATADIR%%/help/uk/hlp_move.txt
 %%DATADIR%%/help/uk/hlp_msay.txt
 %%DATADIR%%/help/uk/hlp_otr.txt
@@ -346,6 +390,9 @@ share/applications/mcabber.desktop
 %%DATADIR%%/help/uk/hlp_status_to.txt
 %%DATADIR%%/help/uk/hlp_version.txt
 @dirrm %%EXAMPLESDIR%%
+@dirrm include/mcabber
+@dirrm lib/mcabber
+@dirrm %%DATADIR%%/contrib/vim
 @dirrm %%DATADIR%%/contrib/events
 @dirrm %%DATADIR%%/contrib/themes
 @dirrm %%DATADIR%%/contrib
