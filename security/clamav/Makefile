@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 DISTVERSION=	0.96
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -206,7 +207,7 @@ pre-configure:
 		${ECHO_MSG} "= It will not be called during this build                                 ="; \
 		${ECHO_MSG} "==========================================================================="; \
 		${ECHO_MSG} ""; \
-		touch ${PY_NO_THREAD}; \
+		${TOUCH} ${PY_NO_THREAD}; \
 	fi
 .endif
 
