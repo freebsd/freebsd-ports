@@ -365,6 +365,7 @@
     SUBDIR += lifetype
     SUBDIR += lightsquid
     SUBDIR += lighttpd
+    SUBDIR += lighttpd-mysqlauth
     SUBDIR += lilurl
     SUBDIR += limesurvey
     SUBDIR += linkcheck
