@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pine-pgp-filters
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	mail security
-MASTER_SITES=	http://dougbarton.us/PGP/scripts/ppf/ \
+MASTER_SITES=	http://dougbarton.us/PGP/ppf/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dougb
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
@@ -17,6 +16,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Simple /bin/sh-based filters to use GnuPG with Alpine
+
+PLIST_FILES=	bin/ppf_mime bin/ppf_mime_decrypt \
+		libexec/ppf_decrypt libexec/ppf_encrypt libexec/ppf_mime \
+		libexec/ppf_mime_decrypt libexec/ppf_sign libexec/ppf_verify
 
 .include <bsd.port.pre.mk>
 
@@ -38,10 +41,12 @@ verify:	checksum
 do-configure:
 	@(cd ${WRKSRC} && ./configure --prefix=${PREFIX})
 
+PORTDOCS=	BUGS CHANGES INSTALL LICENSE README
+
 post-install:
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${DOCSDIR}
-.for file in BUGS CHANGES INSTALL LICENSE README
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
