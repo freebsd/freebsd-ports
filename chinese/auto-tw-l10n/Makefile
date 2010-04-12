@@ -6,7 +6,7 @@
 
 PORTNAME=	auto-tw-l10n
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/chinsan
 DISTNAME=	zh-${PORTNAME}-${PORTVERSION}
@@ -38,6 +38,7 @@ post-patch:
 		${WRKSRC}/dot.bashrc
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 .endif
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 pre-install:
 	@${SH} ${PKGINSTALL}
