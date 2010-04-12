@@ -40,6 +40,7 @@ DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
 RUNDIR=		/var/run/clamav
 PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
+PY_NO_THREAD=	${WRKDIR}/.python-has-no-threads
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
@@ -197,9 +198,24 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
 
+.if defined(WITH_LLVM)
+pre-configure:
+	@if ! ${PYTHON_CMD} -c "import thread" >/dev/null 2>&1; then \
+		${ECHO_MSG} ""; \
+		${ECHO_MSG} "==========================================================================="; \
+		${ECHO_MSG} "= Unit tests REQUIRES python built with thread support, and yours is not. ="; \
+		${ECHO_MSG} "= It will not be called during this build                                 ="; \
+		${ECHO_MSG} "==========================================================================="; \
+		${ECHO_MSG} ""; \
+		touch ${PY_NO_THREAD}; \
+	fi
+.endif
+
 .if ${OSVERSION} >= 700000
 post-build:
-	@${MAKE} -C ${WRKSRC} check
+	@if [ -f "${PY_NO_THREAD}" ]; then \
+		${MAKE} -C ${WRKSRC} check; \
+	fi
 .endif
 
 pre-su-install:
