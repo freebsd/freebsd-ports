@@ -1903,6 +1903,7 @@
     SUBDIR += p5-Params-Validate
     SUBDIR += p5-Parse-CPAN-Meta
     SUBDIR += p5-Parse-CPAN-Packages
+    SUBDIR += p5-Parse-CPAN-Packages-Fast
     SUBDIR += p5-Parse-ErrorString-Perl
     SUBDIR += p5-Parse-ExuberantCTags
     SUBDIR += p5-Parse-Method-Signatures
