@@ -47,6 +47,8 @@ bin/wtoc
 %%DATADIR%%/dic/canna/suffix.ctd
 sbin/cannaserver
 sbin/cannakill
+%%METAFILE%%
+@exec %%MTREE_CMD%% -qU -f %D/%%METAFILE%% -p %D/%%DATADIR%%/dic > /dev/null 2>&1
 @dirrmtry %%DATADIR%%/dic/canna
 @dirrmtry %%DATADIR%%/dic/user/user
 @dirrmtry %%DATADIR%%/dic/user

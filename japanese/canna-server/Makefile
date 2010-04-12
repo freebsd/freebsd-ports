@@ -7,7 +7,7 @@
 
 PORTNAME=	canna
 PORTVERSION=	3.7p3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	canna/9565/
@@ -25,6 +25,8 @@ USE_RC_SUBR=	canna.sh
 USE_BZIP2=	yes
 ALL_TARGET=	canna
 INSTALL_TARGET=	instserver instclient
+PLIST_SUB=	METAFILE="${METAFILE}" \
+		MTREE_CMD="${MTREE_CMD}"
 
 PORTDOCS=	canna.bib canna.sty Imakefile README.jp Makefile \
 		intern lisp man
@@ -46,11 +48,15 @@ MAN3=	RkCloseRoma.3 RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3	\
 MLINKS= uilib.3 XKanjiControl.3 uilib.3 XLookupKanjiString.3 uilib.3	\
 	jrKanjiControl.3 uilib.3 jrKanjiString.3
 
+METAFILE=	${DATADIR_REL}/canna-server-dic.meta
+
 post-configure:
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}
 
 post-install:
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man
+	${MTREE_CMD} -cdink uname,gname,mode,nochange \
+		-p ${DATADIR}/dic > ${PREFIX}/${METAFILE}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${CP} -R ${PORTDOCS} ${DOCSDIR}
