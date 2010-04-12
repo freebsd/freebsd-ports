@@ -860,6 +860,7 @@
     SUBDIR += wapiti
     SUBDIR += webfwlog
     SUBDIR += webscarab
+    SUBDIR += whatweb
     SUBDIR += wipe
     SUBDIR += xca
     SUBDIR += xinetd
