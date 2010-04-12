@@ -6,19 +6,16 @@
 #
 
 PORTNAME=		sqlite3
-PORTVERSION=		0.4
+PORTVERSION=		0.5
 CATEGORIES=		databases
 MASTER_SITES=		SF/php-${PORTNAME}/source%20code/release%20${PORTVERSION}
 PKGNAMEPREFIX=		php-
 EXTRACT_SUFX=		.tgz
-#DISTFILES=		sqlite3-0.4.tgz
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		glarkin@FreeBSD.org
 COMMENT=		A port for the PHP sqlite3 extension
 
 BUILD_DEPENDS=		sqlite3>=3.0:${PORTSDIR}/databases/sqlite3
-
-BROKEN=			does not build with php 5.3
 
 CONFIGURE_ARGS=		--with-sqlite3=${LOCALBASE}
 USE_PHP=		yes
