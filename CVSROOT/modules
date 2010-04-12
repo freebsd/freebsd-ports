@@ -2815,6 +2815,7 @@ eclipse-viplugin                ports/java/eclipse-viplugin
 eclipse-webtools                ports/java/eclipse-webtools
 eclipseme                       ports/java/eclipseme
 ecm                             ports/archivers/ecm
+ecofont                         ports/x11-fonts/ecofont
 ecore                           ports/devel/ecore
 ecore-con                       ports/net/ecore-con
 ecore-config                    ports/sysutils/ecore-config
@@ -14134,6 +14135,7 @@ p5-XML-DOM2                     ports/textproc/p5-XML-DOM2
 p5-XML-DOMHandler               ports/textproc/p5-XML-DOMHandler
 p5-XML-DT                       ports/textproc/p5-XML-DT
 p5-XML-DTDParser                ports/textproc/p5-XML-DTDParser
+p5-XML-Descent                  ports/textproc/p5-XML-Descent
 p5-XML-DifferenceMarkup         ports/textproc/p5-XML-DifferenceMarkup
 p5-XML-Directory                ports/textproc/p5-XML-Directory
 p5-XML-DoubleEncodedEntities    ports/textproc/p5-XML-DoubleEncodedEntities
@@ -14222,6 +14224,7 @@ p5-XML-Smart                    ports/textproc/p5-XML-Smart
 p5-XML-Stream                   ports/textproc/p5-XML-Stream
 p5-XML-Tiny                     ports/textproc/p5-XML-Tiny
 p5-XML-TinyXML                  ports/textproc/p5-XML-TinyXML
+p5-XML-TokeParser               ports/textproc/p5-XML-TokeParser
 p5-XML-TreeBuilder              ports/textproc/p5-XML-TreeBuilder
 p5-XML-TreePP                   ports/textproc/p5-XML-TreePP
 p5-XML-Twig                     ports/textproc/p5-XML-Twig
@@ -18008,6 +18011,7 @@ p5-xml-compile-soap             ports/net/p5-XML-Compile-SOAP
 p5-xml-compile-soap-daemon      ports/net/p5-XML-Compile-SOAP-Daemon
 p5-xml-compile-tester           ports/devel/p5-XML-Compile-Tester
 p5-xml-dbms                     ports/textproc/p5-XML-DBMS
+p5-xml-descent                  ports/textproc/p5-XML-Descent
 p5-xml-differencemarkup         ports/textproc/p5-XML-DifferenceMarkup
 p5-xml-directory                ports/textproc/p5-XML-Directory
 p5-xml-dom                      ports/textproc/p5-XML-DOM
@@ -18103,6 +18107,7 @@ p5-xml-stream                   ports/textproc/p5-XML-Stream
 p5-xml-stx                      ports/textproc/p5-XML-STX
 p5-xml-tiny                     ports/textproc/p5-XML-Tiny
 p5-xml-tinyxml                  ports/textproc/p5-XML-TinyXML
+p5-xml-tokeparser               ports/textproc/p5-XML-TokeParser
 p5-xml-treebuilder              ports/textproc/p5-XML-TreeBuilder
 p5-xml-treepp                   ports/textproc/p5-XML-TreePP
 p5-xml-twig                     ports/textproc/p5-XML-Twig
@@ -19192,7 +19197,6 @@ php5-mcrypt                     ports/security/php5-mcrypt
 php5-mssql                      ports/databases/php5-mssql
 php5-mysql                      ports/databases/php5-mysql
 php5-mysqli                     ports/databases/php5-mysqli
-php5-oci8                       ports/databases/php5-oci8
 php5-odbc                       ports/databases/php5-odbc
 php5-openssl                    ports/security/php5-openssl
 php5-pcntl                      ports/devel/php5-pcntl
@@ -19200,7 +19204,6 @@ php5-pdo                        ports/databases/php5-pdo
 php5-pdo_dblib                  ports/databases/php5-pdo_dblib
 php5-pdo_firebird               ports/databases/php5-pdo_firebird
 php5-pdo_mysql                  ports/databases/php5-pdo_mysql
-php5-pdo_oci                    ports/databases/php5-pdo_oci
 php5-pdo_odbc                   ports/databases/php5-pdo_odbc
 php5-pdo_pgsql                  ports/databases/php5-pdo_pgsql
 php5-pdo_sqlite                 ports/databases/php5-pdo_sqlite
