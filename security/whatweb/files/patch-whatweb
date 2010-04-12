@@ -1,0 +1,24 @@
+--- ./whatweb.orig	2010-03-08 13:34:46.000000000 +0100
++++ ./whatweb	2010-04-11 22:16:16.000000000 +0200
+@@ -10,17 +10,17 @@
+ require 'open-uri'
+ require 'cgi'
+ require 'thread'
+-require 'lib/output.rb'
+-require 'lib/colour.rb'
++require 'whatweb/lib/output.rb'
++require 'whatweb/lib/colour.rb'
+ require 'rubygems'
+ require 'anemone'
+ require 'md5'
+-require 'lib/modified-anemone-page.rb'
++require 'whatweb/lib/modified-anemone-page.rb'
+ #require 'digest/sha2'
+ #require 'profile'
+ 
+ $VERSION=0.4
+-PLUGIN_DIR="plugins"
++PLUGIN_DIR="/usr/local/lib/ruby/site_ruby/1.8/whatweb/plugins"
+ $verbose=0
+ $USE_EXAMPLE_URLS=false
+ $use_colour="auto"
