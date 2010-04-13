@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	alecn2002@yandex.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for parsing and manipulating HTML text in Ruby
 
 USE_RUBY=	yes
