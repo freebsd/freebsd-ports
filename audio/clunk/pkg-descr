@@ -1,0 +1,11 @@
+The CLUNK C++ library provides support for real-time 3D sound
+generation. It puts virtually no limitations on the developer;
+people who is experienced on working with other solutions (such as
+SDL_Mixer or Creative OpenAL) will respect this advantage.
+
+The library supports mixing of any number of sound channels and any
+number of objects that have sounds connected to them. The SDL library
+is used for sound output. The project is currently at beta testing
+stage, preparing to the first release.
+
+WWW: http://media.netive.ru/clunk/

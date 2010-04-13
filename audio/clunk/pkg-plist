@@ -1,0 +1,21 @@
+include/clunk/buffer.h
+include/clunk/clunk.h
+include/clunk/clunk_assert.h
+include/clunk/clunk_ex.h
+include/clunk/context.h
+include/clunk/distance_model.h
+include/clunk/export_clunk.h
+include/clunk/fft_context.h
+include/clunk/kemar.h
+include/clunk/locker.h
+include/clunk/logger.h
+include/clunk/mdct_context.h
+include/clunk/object.h
+include/clunk/sample.h
+include/clunk/sdl_ex.h
+include/clunk/source.h
+include/clunk/sse_fft_context.h
+include/clunk/stream.h
+include/clunk/v3.h
+lib/libclunk.so
+@dirrm include/clunk

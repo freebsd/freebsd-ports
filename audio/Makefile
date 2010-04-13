@@ -99,6 +99,7 @@
     SUBDIR += cheesetracker
     SUBDIR += chordpack
     SUBDIR += clementine-player
+    SUBDIR += clunk
     SUBDIR += cmp3
     SUBDIR += cmt
     SUBDIR += cmus
