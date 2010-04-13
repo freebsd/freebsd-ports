@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/KMyMoney/${PORTVERSION}
 
-MAINTAINER=	alecn2002@yandex.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE-based personal finance assistant
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \

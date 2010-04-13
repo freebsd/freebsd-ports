@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.kmc.gr.jp/proj/rrb/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	alecn2002@yandex.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby Refactoring Browser for FreeRIDE and EMACS
 
 USE_RUBY=	yes

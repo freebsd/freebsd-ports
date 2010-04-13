@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	alecn2002@yandex.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Ruby Integrated Developement Environment written in Ruby
 
 MASTERPORTNAME=	freeride
