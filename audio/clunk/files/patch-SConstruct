@@ -1,0 +1,36 @@
+--- SConstruct.orig	2009-07-16 16:14:29.000000000 +0400
++++ SConstruct	2009-08-06 04:24:21.000000000 +0400
+@@ -1,6 +1,6 @@
+ import os, sys
+ 
+-env = Environment()
++env = Environment(ENV=os.environ, **dict((k, v.split()) for k, v in ARGUMENTS.iteritems()))
+ debug = False
+ 
+ sdl_cflags = env.ParseFlags('!pkg-config --cflags sdl')
+@@ -29,13 +29,6 @@
+ if have_sse:
+ 	env.Append(CPPDEFINES=['USE_SIMD'])
+ 
+-if debug:
+-	buildmode = 'debug'
+-	env.Append(CXXFLAGS=['-ggdb'])
+-else:
+-	buildmode = 'release'
+-	env.Append(CXXFLAGS=['-O3', '-mtune=native', '-march=native'])
+-
+ clunk_src = [
+ 	'context.cpp', 'sample.cpp', 'object.cpp', 'source.cpp', 'sdl_ex.cpp', 'stream.cpp', 
+ 	'kemar.c', 'buffer.cpp', 'distance_model.cpp', 'logger.cpp', 'clunk_ex.cpp',
+@@ -49,9 +42,7 @@
+ 
+ 
+ if sys.platform != 'win32':
+-	env.Append(CFLAGS=['-Wall', '-pedantic'])
+-	env.Append(CXXFLAGS=['-Wall', '-pedantic'])
+-	env.Append(LINKFLAGS=['-Wl,-rpath,'+ lib_dir])
+-	env.Append(LINKFLAGS=['-Wl,-rpath-link,.'])
++	env.Append(CFLAGS=['-Wall'])
++	env.Append(CXXFLAGS=['-Wall'])
+ 
+ env.Program('clunk_test', ['test.cpp'], LIBS=['clunk'])
