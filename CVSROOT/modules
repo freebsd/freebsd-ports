@@ -8153,6 +8153,7 @@ lifetype                        ports/www/lifetype
 lightning-xpi                   ports/deskutils/lightning-xpi
 lightsquid                      ports/www/lightsquid
 lighttpd                        ports/www/lighttpd
+lighttpd-mysqlauth              ports/www/lighttpd-mysqlauth
 lila-xfwm4                      ports/x11-themes/lila-xfwm4
 lilurl                          ports/www/lilurl
 lilypond                        ports/print/lilypond
@@ -9925,6 +9926,7 @@ nocatauth-server                ports/net/nocatauth-server
 nocatsplash                     ports/net/nocatsplash
 nocc                            ports/mail/nocc
 nocol                           ports/net-mgmt/nocol
+node                            ports/www/node
 noegnud-addons                  ports/games/noegnud-addons
 noegnud-data                    ports/games/noegnud-data
 noegnud-littlehack              ports/games/noegnud-littlehack
@@ -21848,6 +21850,7 @@ rubygem-activesupport           ports/devel/rubygem-activesupport
 rubygem-addressable             ports/www/rubygem-addressable
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-analogger               ports/devel/rubygem-analogger
+rubygem-anemone                 ports/www/rubygem-anemone
 rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
 rubygem-arrayfields             ports/devel/rubygem-arrayfields
 rubygem-authlogic               ports/devel/rubygem-authlogic
@@ -22003,6 +22006,7 @@ rubygem-rightflexiscale         ports/net/rubygem-rightflexiscale
 rubygem-rightgogrid             ports/net/rubygem-rightgogrid
 rubygem-righthttpconnection     ports/net/rubygem-righthttpconnection
 rubygem-rightslicehost          ports/net/rubygem-rightslicehost
+rubygem-robots                  ports/www/rubygem-robots
 rubygem-rparsec                 ports/devel/rubygem-rparsec
 rubygem-rscm                    ports/devel/rubygem-rscm
 rubygem-rspec                   ports/devel/rubygem-rspec
@@ -24497,6 +24501,7 @@ wgetpaste                       ports/www/wgetpaste
 wgetpro                         ports/ftp/wgetpro
 whatmask                        ports/net-mgmt/whatmask
 whatpix                         ports/sysutils/whatpix
+whatweb                         ports/security/whatweb
 when                            ports/deskutils/when
 whichman                        ports/misc/whichman
 whichwayisup                    ports/games/whichwayisup
