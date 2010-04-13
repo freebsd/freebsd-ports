@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--enable-dbg=shared --with-dbg-profiler \
 		--prefix=${PREFIX}/lib/php/${PHP_EXT_DIR}
 PKGMESSAGE=	pkg-message
 
+BROKEN=		does not compile with PHP 5.3.2
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
