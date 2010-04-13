@@ -20,6 +20,8 @@ USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 
+BROKEN=		Does not compile with PHP 5.3
+
 CONFIGURE_ARGS=	--enable-params
 
 .include <bsd.port.mk>
