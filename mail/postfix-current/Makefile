@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.8-20100213
+DISTVERSION=	2.8-20100323
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -21,7 +21,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-current-2.[0-68-9]* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-current-2.[0-79]* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
 MAKE_JOBS_SAFE=	yes
@@ -113,7 +113,10 @@ POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
 .if defined(WITH_SASLKRB) || defined(WITH_SASLKMIT)
 BROKEN=			Select only one SASL Kerberos option
 .endif
-POSTFIX_AUXLIBS+=	-lkrb5 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
+.if ${OSVERSION} >= 800037
+KRB5_EXTR=		-lhx509
+.endif
+POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if defined(WITH_SASLKMIT)
