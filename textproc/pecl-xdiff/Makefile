@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdiff
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.1
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -20,6 +20,9 @@ LIB_DEPENDS=	xdiff.0:${PORTSDIR}/textproc/libxdiff
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 post-configure:
 	echo "#define HAVE_XDL_ALLOCATOR_PRIV 1" >>${WRKSRC}/config.h
