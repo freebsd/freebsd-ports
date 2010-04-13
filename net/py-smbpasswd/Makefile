@@ -12,7 +12,7 @@ MASTER_SITES=	http://barryp.org/software/py-${PORTNAME}/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	alecn2002@yandex.ru
+MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	SMB/CIFS password generation utility for Python
 
 USE_PYTHON=		yes
