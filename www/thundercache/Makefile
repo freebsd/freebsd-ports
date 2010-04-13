@@ -7,12 +7,12 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.bmsoftware.org/freebsd/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
 		${MASTER_SITE_LOCAL}/jmelo
-DISTNAME=	thunder32bits_29032010
+DISTNAME=	thunder32bits_08042010
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	High-performance and high-eficiency caching proxy system
@@ -21,8 +21,6 @@ OPTIONS=	DEPENDACK "I have read and understood the depends needs" on \
 		APACHE "Install apache for reporting viewing" on \
 		PHP "Install PHP for reporting generating" on \
 		PGSQL "Install PostgreSQL (report data storing)" on
-
-BROKEN=		conflicting dependencies
 
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
@@ -42,7 +40,7 @@ BROKEN=		Won't run on systems version < FreeBSD 8.0-RELEASE
 .endif
 
 .if ${ARCH} == "amd64"
-DISTNAME=	thunder64bits_29032010
+DISTNAME=	thunder64bits_08042010
 .endif
 
 WRKSRC=		${WRKDIR}/thunder
@@ -70,7 +68,7 @@ LIB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/datab
 SUB_FILES=	pkg-message log.sh test-deps.sh
 SUB_LIST=	"GREP=${GREP}"
 
-pre-everything::
+show-info:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "ATTENTION:"
 	@${ECHO_MSG} ""
@@ -90,18 +88,7 @@ pre-everything::
 	@${FALSE}
 .endif
 
-pre-install:
-	@(${CHMOD} +x ${WRKDIR}/test-deps.sh ; \
-	if ! ${WRKDIR}/test-deps.sh > /dev/null 2>&1 ; then \
-		${ECHO_MSG} "FATAL: " ; \
-		${ECHO_MSG} "Some depends are not built with required features." ; \
-		${ECHO_MSG} "You must always honor at least the following options" ; \
-		${ECHO_MSG} "depends as listed:" ; \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "ftp/curl		LIBSSH2=yes OPENSSL=yes PROXY=yes" ; \
-		${ECHO_MSG} "" ; \
-		${FALSE} ; \
-	fi)
+pre-everything::show-info
 
 do-install:
 	@${CP} -r ${WRKSRC} ${PREFIX}/
@@ -110,5 +97,18 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
+	@(${CHMOD} +x ${WRKDIR}/test-deps.sh ; \
+	if ! ${WRKDIR}/test-deps.sh > /dev/null 2>&1 ; then \
+		${ECHO_MSG} "**** FATAL **** " ; \
+		${ECHO_MSG} "**** THIS PORT MAY NOT WORK PROPERLY **** " ; \
+		${ECHO_MSG} "Some depends are not built with required features." ; \
+		${ECHO_MSG} "You must always honor at least the following options" ; \
+		${ECHO_MSG} "depends as listed:" ; \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "ftp/curl	   LIBSSH2=yes OPENSSL=yes PROXY=yes" ; \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "Type ''make show-info'' to read further information." ; \
+		${ECHO_MSG} "" ; \
+	fi)
 
 .include <bsd.port.post.mk>
