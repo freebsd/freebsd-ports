@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xslcache
-PORTVERSION=	0.6
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc pear
-MASTER_SITES=	http://people.freebsd.org/~chinsan/PECL/ \
-		LOCAL/chinsan/PECL/ \
-		http://code.nytimes.com/downloads/
+MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 DIST_SUBDIR=	PECL
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Caches the parsed XSL stylesheet between sessions
