@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 
 PROJECTHOST=	eiskaltdc
 
+USE_GCC=	4.2+
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml dbus network sql qmake_build uic_build \
