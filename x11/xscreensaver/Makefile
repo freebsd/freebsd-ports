@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.10
-PORTREVISION=	2
+PORTVERSION=	5.11
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -34,8 +33,7 @@ CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-dpms-ext --with-xinerama-ext --with-xf86vmode-ext \
 		--with-xf86gamma-ext --with-randr-ext --enable-locking
 
-OPTIONS=	ALL_FORTUNES "Run fortune with -sa argument" off \
-		KERBEROS "Add support for kerberos" off \
+OPTIONS=	KERBEROS "Add support for kerberos" off \
 		PAM "Add support for pam authentication" off \
 		SETUID_HACKS "Install sonar hack suid so it can ping" off \
 		FIREF "Add extra port x11/fireflies" off \
@@ -48,9 +46,6 @@ OPTIONS=	ALL_FORTUNES "Run fortune with -sa argument" off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_ALL_FORTUNES)
-CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
-.endif
 .if defined(WITH_KERBEROS)
 CONFIGURE_ARGS+=	--with-kerberos
 .else
@@ -143,6 +138,7 @@ post-patch:
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
 		-e 's#malloc.h#stdlib.h#g' \
 		-e 's#/usr/X11R6#${LOCALBASE}#g' \
+		-e 's#Makefile po/Makefile.in driver#Makefile driver#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
 .if defined(WITH_PAM)
 .for f in driver/passwd-pam.c driver/xscreensaver.man
