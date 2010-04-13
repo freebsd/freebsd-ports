@@ -1,6 +1,6 @@
---- man/Makefile.in.orig	Thu Oct 26 14:03:04 2006
-+++ man/Makefile.in	Tue Nov  7 08:19:50 2006
-@@ -363,8 +363,8 @@
+--- man/Makefile.in.orig	2010-04-13 16:40:58.000000000 +0200
++++ man/Makefile.in	2010-04-13 16:41:19.000000000 +0200
+@@ -388,8 +388,8 @@
  yassl_libs = @yassl_libs@
  yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_cxxflags@
  zlib_dir = @zlib_dir@
@@ -8,6 +8,6 @@
 -man8_MANS = @man8_files@
 +man1_MANS =
 +man8_MANS =
- EXTRA_DIST = $(man1_MANS) $(man8_MANS)
+ EXTRA_DIST = $(man1_MANS) $(man8_MANS) CMakeLists.txt
  all: all-am
  

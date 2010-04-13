@@ -6,13 +6,13 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.5.2
+PORTVERSION=	5.5.3
 PORTREVISION?=	0
-CATEGORIES=	databases
+CATEGORIES=	databases ipv6
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.5
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME}-${PORTVERSION}-m2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-m3
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
@@ -28,12 +28,16 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--with-libwrap \
 		--with-low-memory \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
-		--enable-thread-safe-client
+		--enable-thread-safe-client \
+		--disable-dtrace
 
 .ifdef USE_MYSQL
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=--disable-ipv6
+.endif
 .if defined(WITH_CHARSET) && ${WITH_CHARSET} != ""
 CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 .endif
@@ -101,7 +105,11 @@ CONFLICTS=	mysql-server-[34].* mysql-server-5.[0-46-9].*
 
 USE_RC_SUBR=	mysql-server.sh
 
+USERS=		mysql
+GROUPS=		mysql
+
 .if defined(WITH_NDB)
+USE_LDCONFIG=	${PREFIX}/lib/mysql
 PLIST_SUB+=	NDB=""
 .else
 PLIST_SUB+=	NDB="@comment "
@@ -161,7 +169,6 @@ post-patch:
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
-	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 .endif
 
