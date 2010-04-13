@@ -1,8 +1,8 @@
---- Makefile.in.orig	2009-12-07 20:09:53.000000000 +0100
-+++ Makefile.in	2009-12-29 11:32:35.000000000 +0100
-@@ -408,14 +408,7 @@
- EXTRA_DIST = INSTALL-SOURCE INSTALL-WIN-SOURCE \
- 			README COPYING EXCEPTIONS-CLIENT CMakeLists.txt
+--- Makefile.in.orig	2010-03-24 21:30:45.000000000 +0100
++++ Makefile.in	2010-04-13 16:21:29.000000000 +0200
+@@ -416,15 +416,7 @@
+ 			README COPYING EXCEPTIONS-CLIENT \
+                         CMakeLists.txt configure.cmake config.h.cmake BUILD-CMAKE
  
 -SUBDIRS = . include @docs_dirs@ @zlib_dir@ \
 -			@readline_topdir@ sql-common scripts \
@@ -11,7 +11,8 @@
 -			@sql_server@ @man_dirs@ tests \
 -			netware @libmysqld_dirs@ \
 -			mysql-test support-files sql-bench \
--			win
+-			win \
+-			cmake
 +SUBDIRS =
  
  DIST_SUBDIRS = . include Docs zlib \
