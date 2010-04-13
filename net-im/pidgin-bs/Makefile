@@ -25,4 +25,10 @@ USE_LDCONFIG=	${PREFIX}/lib/pidgin
 
 PLIST_FILES=	lib/purple-2/bot-sentry.so lib/purple-2/bot-sentry.la
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		configure fails on 6.x
+.endif
+
+.include <bsd.port.post.mk>
