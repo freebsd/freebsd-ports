@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.4.13
+PORTVERSION=	2.4.14
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -126,7 +126,10 @@ POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
 .if defined(WITH_SASLKRB) || defined(WITH_SASLKMIT)
 BROKEN=			Select only one SASL Kerberos option
 .endif
-POSTFIX_AUXLIBS+=	-lkrb5 -lcrypto -lcrypt -lcom_err -lasn1 -lroken
+.if ${OSVERSION} >= 800037
+KRB5_EXTR=		-lhx509
+.endif
+POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if defined(WITH_SASLKMIT)
