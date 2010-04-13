@@ -19,6 +19,9 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
+DEPRECATED=     it's no longer maintened by upstream developer
+EXPIRATION_DATE=2010-04-27
+
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
