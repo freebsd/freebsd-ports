@@ -14,7 +14,7 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/2332/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://atreides.freenix.no/~anders/
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An MS-DOS Telix serial communication program "workalike"
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
