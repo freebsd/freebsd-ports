@@ -12,7 +12,7 @@ CATEGORIES=	sysutils net-mgmt
 MASTER_SITES=	SF
 # MASTER_SITES=	http://home.tu-clausthal.de/~ifwd/luma/
 
-MAINTAINER=	alecn2002@yandex.ru
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A graphical tool for accessing and managing LDAP servers
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>=2.3.1:${PORTSDIR}/net/py-ldap2 \
