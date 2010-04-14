@@ -1,3 +1,15 @@
+include/spatialindex/capi/BoundsQuery.h
+include/spatialindex/capi/CountVisitor.h
+include/spatialindex/capi/DataStream.h
+include/spatialindex/capi/Error.h
+include/spatialindex/capi/IdVisitor.h
+include/spatialindex/capi/Index.h
+include/spatialindex/capi/LeafQuery.h
+include/spatialindex/capi/ObjVisitor.h
+include/spatialindex/capi/sidx_api.h
+include/spatialindex/capi/sidx_config.h
+include/spatialindex/capi/sidx_impl.h
+include/spatialindex/capi/Utility.h
 include/spatialindex/LineSegment.h
 include/spatialindex/MVRTree.h
 include/spatialindex/MovingPoint.h
@@ -19,5 +31,10 @@ lib/libspatialindex.a
 lib/libspatialindex.la
 lib/libspatialindex.so
 lib/libspatialindex.so.1
+lib/libspatialindex_c.a
+lib/libspatialindex_c.la
+lib/libspatialindex_c.so
+lib/libspatialindex_c.so.1
+@dirrm include/spatialindex/capi
 @dirrm include/spatialindex/tools
 @dirrm include/spatialindex
