@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	fatback
-DISTVERSION=	1.3
+PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,6 +19,9 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		fatback.1
 INFO=		fatback-manual
+EXTRACT_AFTER_ARGS+=	|${TAR} -xpf -	\
+	--exclude 'getopt*'	\
+	--exclude 'set[yl].c'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

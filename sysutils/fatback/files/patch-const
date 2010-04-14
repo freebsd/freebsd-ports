@@ -1,0 +1,71 @@
+--- sety.y	2001-01-10 08:44:52.000000000 -0500
++++ sety.y	2010-04-14 13:36:15.000000000 -0400
+@@ -3,8 +3,9 @@
+ #include "vars.h"
+ #include "interface_data.h"
++static void yyerror(const char *);
+ %}
+ 
+ %union {
+-     char *string;
++     const char *string;
+ }
+ 
+@@ -20,6 +21,7 @@
+ %%
+ #include <stdio.h>
+-void yyerror(char *s)
++void
++yyerror(const char *s)
+ {
+-	printf("%s\n", s);
++	fprintf(stderr, "%s\n", s);
+ }
+--- vars.h	2001-01-25 03:22:24.000000000 -0500
++++ vars.h	2010-04-14 13:32:33.000000000 -0400
+@@ -25,6 +25,6 @@
+ } fbvar_t;
+ 
+-extern int set_fbvar(char *, ...);
+-extern fbvar_t *get_fbvar(char *);
++extern int set_fbvar(const char *, ...);
++extern fbvar_t *get_fbvar(const char *);
+ 
+ #endif  /*VARS_H*/
+--- vars.c	2001-05-30 11:45:19.000000000 -0400
++++ vars.c	2010-04-14 13:33:19.000000000 -0400
+@@ -25,5 +25,6 @@
+  * Change a value of a variable in the vars[] array.
+  */
+-int set_fbvar(char *varname, ...)
++int
++set_fbvar(const char *varname, ...)
+ {
+      int i, found = 0;
+@@ -34,9 +35,9 @@
+           if (strcmp(vars[i].name, varname) == 0) {
+                unsigned int iarg;
+-               char *sarg;
++               const char *sarg;
+                found++;
+                switch (vars[i].type) {
+                case FB_BOOL: 
+-                    sarg = va_arg(arg_list, char *);
++                    sarg = va_arg(arg_list, const char *);
+                     if (strcmp(sarg, "on") == 0)
+                          vars[i].val.bval = 1;
+@@ -49,5 +50,5 @@
+                     break;
+                case FB_STRING:
+-                    sarg = va_arg(arg_list, char *);
++                    sarg = va_arg(arg_list, const char *);
+                     vars[i].val.sval = strdup(sarg);
+                     break;
+@@ -63,5 +64,6 @@
+  * This currently returns a copy of the structure, this should be changed.
+  */
+-fbvar_t *get_fbvar(char *varname)
++fbvar_t *
++get_fbvar(const char *varname)
+ {
+      int i;
