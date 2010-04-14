@@ -1,0 +1,11 @@
+--- Makefile	2007-05-05 00:09:26.000000000 +0200
++++ Makefile	2010-03-04 20:02:21.000000000 +0100
+@@ -15,6 +15,7 @@
+ DPADD=          ${LIBBLUETOOTH} ${LIBSDP}
+ LDADD=		-lbluetooth -lusbhid
+ 
+-DESTDIR=	/usr/local/sbin
++PREFIX?=	/usr/local
++BINDIR=		${PREFIX}/sbin
+ 
+ .include <bsd.prog.mk>

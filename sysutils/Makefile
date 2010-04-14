@@ -74,6 +74,7 @@
     SUBDIR += bsdadminscripts
     SUBDIR += bsdcrashtar
     SUBDIR += bsdhwmon
+    SUBDIR += bsdmoted
     SUBDIR += bsdsar
     SUBDIR += bsdstats
     SUBDIR += bubblemon-dockapp
