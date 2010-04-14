@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3987c5d1-47a9-11df-a0d5-0016d32f24fb">
+    <topic>KDM local privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+	<name>kdebase</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>kdebase-workspace</name>
+	<range><le>4.3.5_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>KDE Security Advisory reports:</p>
+	<blockquote cite="http://www.kde.org/info/security/advisory-20100413-1.txt">
+	  <p>KDM contains a race condition that allows local attackers
+	    to make arbitrary files on the system world-writeable.
+	    This can happen while KDM tries to create its control
+	    socket during user login. A local attacker with a valid
+	    local account can under certain circumstances make use of
+	    this vulnerability to execute arbitrary code as root.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-0436</cvename>
+      <url>http://www.kde.org/info/security/advisory-20100413-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2010-04-13</discovery>
+      <entry>2010-04-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="805603a1-3e7a-11df-a5a1-0050568452ac">
     <topic>dojo -- cross-site scripting and other vulnerabilities</topic>
     <affects>
