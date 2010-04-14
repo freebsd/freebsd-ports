@@ -7,6 +7,7 @@
 
 PORTNAME=	xscreensaver
 PORTVERSION=	5.11
+PORTREVISION=	1
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -25,6 +26,7 @@ MAKE_JOBS_SAFE=	yes
 USE_XORG=	xpm
 USE_GL=		yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk --with-gl --with-gle --with-pixbuf --with-xpm \
 		--with-jpeg=${LOCALBASE} --with-xshm-ext --with-xdbe-ext \
@@ -138,7 +140,6 @@ post-patch:
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
 		-e 's#malloc.h#stdlib.h#g' \
 		-e 's#/usr/X11R6#${LOCALBASE}#g' \
-		-e 's#Makefile po/Makefile.in driver#Makefile driver#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
 .if defined(WITH_PAM)
 .for f in driver/passwd-pam.c driver/xscreensaver.man
