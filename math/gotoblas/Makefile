@@ -8,7 +8,10 @@
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.netlib.org/lapack/:lapack ftp://ftp.netlib.org/lapack/timing/:lapack_tmg
+MASTER_SITES=	ftp://ftp.netlib.org/lapack/:lapack \
+		ftp://ftp.netlib.org/lapack/timing/:lapack_tmg \
+		ftp://ftp.netlib.no/netlib/lapack/:lapack \
+		ftp://ftp.netlib.no/netlib/lapack/timing/:lapack_tmg
 DISTFILES=	GotoBLAS2-${GOTOBLAS2VER}.tar.gz lapack-3.1.1.tgz:lapack large.tgz:lapack_tmg timing.tgz:lapack_tmg
 EXTRACT_ONLY=   ${GOTOBLAS2_SRCFILE}
 
@@ -68,7 +71,7 @@ MAKE_FLAGS+=	F_COMPILER=IBM
 do-fetch:
 	@${ECHO_CMD} "You need to fetch ${GOTOBLAS2_SRCFILE} from:"
 	@${ECHO_CMD} "http://www.tacc.utexas.edu/tacc-projects/"
-	@${ECHO_CMD} "and put it in ${DISTDIR}."
+	@${ECHO_CMD} "and put it in ${DISTDIR}/gotoblas."
 .endif
 
 pre-build::
