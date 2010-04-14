@@ -1,5 +1,5 @@
---- GNUmakefile.in.orig	2010-03-02 11:04:44.000000000 -0800
-+++ GNUmakefile.in	2010-03-02 11:06:56.000000000 -0800
+--- ./GNUmakefile.in.orig	2010-04-04 13:23:22.000000000 -0700
++++ ./GNUmakefile.in	2010-04-08 20:21:36.000000000 -0700
 @@ -19,7 +19,7 @@
  sbindir=@sbindir@
  mandir=@mandir@

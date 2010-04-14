@@ -5,8 +5,6 @@ files that have changed since the last backup. It also handles files that are
 removed, allowing for correct incremental backups.
 
 An example script named rdup-simple is included to show how to 
-implement a simple snapshot-style backup strategy.  This bash script requires 
-GNU date and cp, which are not installed by this FreeBSD port. If you want to 
-use the script, you should also install the sysutils/coreutils port.
+implement a simple snapshot-style backup strategy.
 
 WWW: http://miek.nl/projects/rdup

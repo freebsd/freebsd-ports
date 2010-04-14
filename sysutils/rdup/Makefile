@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rdup
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://miek.nl/projects/rdup/
 
@@ -39,7 +39,5 @@ MAN1=		rdup.1 \
 
 MAN7=		rdup-backups.7
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/sh/rdup-simple.in
 
 .include <bsd.port.mk>
