@@ -23,6 +23,8 @@ BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 CONFLICTS=		krb4-[0-9]* heimdal-[0-9]* srp-[0-9]*
 
+BROKEN=			does not compile
+
 LATEST_LINK=		${PORTNAME}
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_OPENSSL=		yes
