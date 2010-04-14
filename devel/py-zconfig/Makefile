@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	zconfig
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://www.zope.org/Members/fdrake/zconfig/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ZConfig-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	ZConfig is a general use python configuration library
 
 WRKSRC=		${WRKDIR}/ZConfig-${PORTVERSION}
