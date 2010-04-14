@@ -1687,6 +1687,7 @@ closure-compiler                ports/www/closure-compiler
 clp                             ports/math/clp
 clpbar                          ports/misc/clpbar
 clucene                         ports/textproc/clucene
+clunk                           ports/audio/clunk
 clustalw                        ports/biology/clustalw
 clusterit                       ports/net/clusterit
 clusterssh                      ports/security/clusterssh
@@ -10607,6 +10608,7 @@ p5-Apache2-Scoreboard           ports/www/p5-Apache2-Scoreboard
 p5-ApacheBench                  ports/www/p5-ApacheBench
 p5-ApacheDBILogConfig           ports/databases/p5-ApacheDBILogConfig
 p5-ApacheDBILogger              ports/databases/p5-ApacheDBILogger
+p5-App-Build                    ports/devel/p5-App-Build
 p5-App-CLI                      ports/devel/p5-App-CLI
 p5-App-CLI-Extension            ports/devel/p5-App-CLI-Extension
 p5-App-Cache                    ports/devel/p5-App-Cache
@@ -13148,6 +13150,7 @@ p5-Params-Validate              ports/devel/p5-Params-Validate
 p5-Parse-BooleanLogic           ports/textproc/p5-Parse-BooleanLogic
 p5-Parse-CPAN-Meta              ports/devel/p5-Parse-CPAN-Meta
 p5-Parse-CPAN-Packages          ports/devel/p5-Parse-CPAN-Packages
+p5-Parse-CPAN-Packages-Fast     ports/devel/p5-Parse-CPAN-Packages-Fast
 p5-Parse-CSV                    ports/textproc/p5-Parse-CSV
 p5-Parse-ErrorString-Perl       ports/devel/p5-Parse-ErrorString-Perl
 p5-Parse-ExuberantCTags         ports/devel/p5-Parse-ExuberantCTags
@@ -14398,6 +14401,7 @@ p5-apache2-soap                 ports/net/p5-Apache2-SOAP
 p5-apachebench                  ports/www/p5-ApacheBench
 p5-apachedbilogconfig           ports/databases/p5-ApacheDBILogConfig
 p5-apachedbilogger              ports/databases/p5-ApacheDBILogger
+p5-app-build                    ports/devel/p5-App-Build
 p5-app-cache                    ports/devel/p5-App-Cache
 p5-app-cli                      ports/devel/p5-App-CLI
 p5-app-cli-extension            ports/devel/p5-App-CLI-Extension
@@ -16898,6 +16902,7 @@ p5-parent                       ports/devel/p5-parent
 p5-parse-booleanlogic           ports/textproc/p5-Parse-BooleanLogic
 p5-parse-cpan-meta              ports/devel/p5-Parse-CPAN-Meta
 p5-parse-cpan-packages          ports/devel/p5-Parse-CPAN-Packages
+p5-parse-cpan-packages-fast     ports/devel/p5-Parse-CPAN-Packages-Fast
 p5-parse-csv                    ports/textproc/p5-Parse-CSV
 p5-parse-errorstring-perl       ports/devel/p5-Parse-ErrorString-Perl
 p5-parse-exuberantctags         ports/devel/p5-Parse-ExuberantCTags
