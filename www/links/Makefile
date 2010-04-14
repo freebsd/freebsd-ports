@@ -31,6 +31,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
 
+DESKTOP_ENTRIES="links" \
+		"Lynx-like text WWW browser" \
+		"${DATADIR}/links.xpm" \
+		"links -g" \
+		"Application;Network;WebBrowser;" \
+		${FALSE}
+
 OPTIONS=	SVGALIB "non-X11 graphics support" off \
 		DIRECTFB "directfb driver support" off \
 		X11 "X11 graphics support" on \
