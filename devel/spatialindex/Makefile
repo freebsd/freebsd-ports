@@ -4,11 +4,12 @@
 # $FreeBSD$
 
 PORTNAME=	spatialindex
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://download.osgeo.org/libspatialindex/
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A General Framework for Developing Spatial Indices
 
 USE_AUTOTOOLS=	libtool:22:env
