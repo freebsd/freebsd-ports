@@ -22,6 +22,12 @@ MAN8=		rtmpgw.8
 PLIST_FILES=	bin/rtmpdump bin/rtmpgw bin/rtmpsrv bin/rtmpsuck
 PORTDOCS=	ChangeLog README
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES:S,^bin/,,} \
 		${PREFIX}/bin \
@@ -34,4 +40,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
