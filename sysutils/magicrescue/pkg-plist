@@ -18,6 +18,9 @@ bin/magicsort
 %%DATADIR%%/recipes/zip
 %%DATADIR%%/recipes/canon-cr2
 %%DATADIR%%/recipes/flac
+%%DATADIR%%/recipes/mbox-mozilla-sent
+%%DATADIR%%/recipes/mbox-mozilla-inbox
+%%DATADIR%%/recipes/mbox
 %%DATADIR%%/tools/checkrecipe
 %%DATADIR%%/tools/elfextract.pl
 %%DATADIR%%/tools/gimp-resave.pl
