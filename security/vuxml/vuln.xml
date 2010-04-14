@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>kdebase</name>
-	<range><ge>0</ge></range>
+	<range><lt>4.*</lt></range>
       </package>
       <package>
 	<name>kdebase-workspace</name>
@@ -66,6 +66,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2010-04-13</discovery>
       <entry>2010-04-14</entry>
+      <modified>2010-04-14</modified>
     </dates>
   </vuln>
 
