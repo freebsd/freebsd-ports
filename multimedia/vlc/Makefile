@@ -113,6 +113,10 @@ IGNORE=	does not build on FreeBSD 6.x with Qt4.x, set this OPTION to off or defi
 CFLAGS+=	-DHAVE_SYS_MOUNT_H
 .endif
 
+.if (${OSVERSION} < 700000)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_access_v4l2.c
+.endif
+
 WITH_VLC_DEFAULT_FONT?=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
 .if ${PERL_LEVEL} < 500800
