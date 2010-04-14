@@ -1,6 +1,6 @@
---- ./whatweb.orig	2010-03-08 13:34:46.000000000 +0100
-+++ ./whatweb	2010-04-11 22:16:16.000000000 +0200
-@@ -10,17 +10,17 @@
+--- whatweb.orig	2010-03-08 13:34:46.000000000 +0100
++++ whatweb	2010-04-14 11:36:35.000000000 +0200
+@@ -10,12 +10,12 @@
  require 'open-uri'
  require 'cgi'
  require 'thread'
@@ -16,9 +16,3 @@
  #require 'digest/sha2'
  #require 'profile'
  
- $VERSION=0.4
--PLUGIN_DIR="plugins"
-+PLUGIN_DIR="/usr/local/lib/ruby/site_ruby/1.8/whatweb/plugins"
- $verbose=0
- $USE_EXAMPLE_URLS=false
- $use_colour="auto"
