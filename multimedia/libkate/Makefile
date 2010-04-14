@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libkate
-PORTVERSION=	0.1.12
-PORTREVISION=	3
+PORTVERSION=	0.3.7
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -23,35 +22,39 @@ USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include"
+CFLAGS+=	"-I${LOCALBASE}/include"
 
 MAN1=	kateenc.1 katedec.1
 
-OPTIONS=	DOXYGEN "Build docs with doxygen (requires TeX, QT, etc.)" off
+OPTIONS=	DOXYGEN "Build docs with doxygen (requires TeX, QT, etc.)" off \
+		HTMLDOCS "Install bundled html documentation" off
+
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.ifdef(WITH_DOXYGEN || exists(${LOCALBASE}/bin/doxygen))
+.ifdef(WITH_DOXYGEN)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
-PLIST_SUB+=	DOXYGEN=""
 .else
-PLIST_SUB+=	DOXYGEN="@comment "
+CONFIGURE_ARGS+=	--disable-doc
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -E -e "s|^(katepcdir =).*|\1 ${LOCALBASE}/libdata/pkgconfig|" \
 	${WRKSRC}/Makefile.in
-.ifdef(NOPORTDOCS)
-	@${REINPLACE_CMD} -E \
-		-e 's|^([[:space:]]*SUBDIRS[[:space:]]*=.*)doc|\1|' \
-		${BUILD_WRKSRC}/Makefile.in
-.endif
 
 post-install:
-.ifdef(NOPORTDOCS)
 .for f in ${MAN1}
 	${INSTALL_MAN}  ${WRKSRC}/doc/man/${f}  ${PREFIX}/man/man1
 .endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+. for FILE in README AUTHORS COPYING THANKS ChangeLog
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+. endfor
+. if defined(WITH_HTMLDOCS)
+	${CP} -RPpn ${WRKSRC}/doc/html ${DOCSDIR}/html
+. endif
 .endif
 
 .include <bsd.port.post.mk>
