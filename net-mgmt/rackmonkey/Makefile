@@ -1,6 +1,6 @@
 # Ports collection makefile for:	RackMonkey
-# Date created:						February 10, 2010
-# Whom:								Eric F Crist <ecrist@secure-computing.net>
+# Date created:				2010-02-10
+# Whom:					Eric F Crist <ecrist@secure-computing.net>
 #
 # $FreeBSD$
 #
@@ -9,7 +9,9 @@ PORTNAME=	rackmonkey
 PORTVERSION=	1.2.5
 PORTREVISION=	2
 CATEGORIES=	net-mgmt www
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		ftp://ftp.secure-computing.net/pub/FreeBSD/ports/${PORTNAME}/ \
+		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	ecrist@secure-computing.net
@@ -63,10 +65,10 @@ do-install:
 			if [ -e "${WWWDIR}/rackmonkey.db" ]; then \
 				${ECHO} "Database exists, skipping initalization..."; \
 			else \
-				/usr/local/bin/sqlite3 ${WWWDIR}/rackmonkey.db < ${WRKSRC}/sql/schema/schema.sqlite.sql; \
-				/usr/local/bin/sqlite3 ${WWWDIR}/rackmonkey.db < ${WRKSRC}/sql/data/default_data.sql; \
+				${LOCALBASE}/bin/sqlite3 ${WWWDIR}/rackmonkey.db < ${WRKSRC}/sql/schema/schema.sqlite.sql; \
+				${LOCALBASE}/bin/sqlite3 ${WWWDIR}/rackmonkey.db < ${WRKSRC}/sql/data/default_data.sql; \
 				if [ "${WITH_SAMPLE}" ]; then \
-					/usr/local/bin/sqlite3 ${WWWDIR}/rackmonkey.db < ${WRKSRC}/sql/data/sample_data.sql; \
+					${LOCALBASE}/bin/sqlite3 ${WWWDIR}/rackmonkey.db < ${WRKSRC}/sql/data/sample_data.sql; \
 				fi \
 			fi \
 		fi \
