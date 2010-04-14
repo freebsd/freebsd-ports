@@ -1,4 +1,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%SITE_PERL%%/App/Build.pm
 @dirrmtry %%SITE_PERL%%/App
