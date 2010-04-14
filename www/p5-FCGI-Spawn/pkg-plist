@@ -1,5 +1,12 @@
 %%SITE_PERL%%/FCGI/Spawn.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Spawn/.packlist
+bin/fcgi_spawn
+etc/fcgi_spawn/fcgi_spawn.conf.sample
+share/doc/p5-FCGI-Spawn/CGI.pm.fcgi.spawn.patch
+share/doc/p5-FCGI-Spawn/README
+share/doc/p5-FCGI-Spawn/Bugzilla.CGI.pm.fcgi.spawn.patch
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Spawn
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI
 @dirrmtry %%SITE_PERL%%/FCGI
+@dirrmtry share/doc/p5-FCGI-Spawn
+@dirrmtry etc/fcgi_spawn
