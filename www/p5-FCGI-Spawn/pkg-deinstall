@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+USER=fcgi
+
+if pw usershow "${USER}" 2>/dev/null 1>&2; then
+	echo "To delete user permanently, use 'pw userdel ${USER}'. Also, unused groups of that user should be deleted, too"
+fi
+
+exit 0
