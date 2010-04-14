@@ -7,15 +7,16 @@
 
 PORTNAME=	postfwd
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/old/
 PKGNAMEPREFIX=	postfix-
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A postfix firewall policy daemon
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex
+		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server
 
 PORTDOCS=	CHANGELOG ${PORTNAME}.html ${PORTNAME}.txt
 PORTEXAMPLES=	request.sample
