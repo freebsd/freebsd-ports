@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	rtree
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	devel science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Rtree-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	R-Tree Spatial Index For Python GIS
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:${PORTSDIR}/devel/spatialindex
@@ -22,7 +22,6 @@ USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Rtree
 PYDISTUTILS_NOEGGINFO=	yes
-PYEASYINSTALL_ARCHDEP=	yes
 WRKSRC=			${WRKDIR}/${DISTNAME}
 
 post-extract:
