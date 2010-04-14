@@ -7,6 +7,7 @@
 
 PORTNAME=	whatweb
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.morningstarsecurity.com/downloads/
 
