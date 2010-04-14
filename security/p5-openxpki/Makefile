@@ -7,6 +7,7 @@
 
 PORTNAME=	openxpki
 PORTVERSION=	0.9.1389
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9.1300
 PKGNAMEPREFIX=	p5-
@@ -297,9 +298,16 @@ OPTIONS=	DEVELOPER	"Install development tools for OpenXPKI?" off \
 
 .include <bsd.port.options.mk>
 
-# needs openssl 0.9.8
-.if ${OSVERSION} < 700019
-WITH_OPENSSL_PORT=	yes
+# this port needs openssl-0.9.8+, but does not yet compile with openssl-1.0.0+
+# freebsd-6 or less has base openssl-0.9.7 which is bad
+# freebsd-7 or more has base openssl-0.9.8 which is good
+# openssl from port now has version 1.0.0 only
+.if ${OSVERSION} < 700000
+IGNORE=	needs openssl-0.9.8+, but does not yet compile with openssl-1.0.0+
+.endif
+.if ${OSVERSION} >= 700000
+WITH_OPENSSL_BASE=	yes
+
 .endif
 
 .include <bsd.port.pre.mk>
