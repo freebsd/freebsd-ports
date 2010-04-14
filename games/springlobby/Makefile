@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	springlobby
-PORTVERSION=	0.63
-PORTREVISION=	3
+PORTVERSION=	0.68
 CATEGORIES=	games net
 MASTER_SITES=	http://www.springlobby.info/tarballs/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -20,7 +19,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
+CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
+		-DENABLE_DEBUG_REPORT=FALSE
 USE_WX=		2.8+
 MAKE_JOBS_SAFE=	yes
 
