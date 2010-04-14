@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	check_bacula
-PORTVERSION=	3.0.2
+PORTVERSION=	5.0.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX=	nagios-
@@ -25,15 +25,12 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-post-extract:
-	${TAR} xzCf ${WRKSRC}/src ${WRKSRC}/examples/nagios/nagios_plugin_check_bacula.tgz
-
 post-build:
-	${MAKE} -C ${WRKSRC}/src/check_bacula
+	${MAKE} -C ${WRKSRC}/examples/nagios/check_bacula
 
 do-install:
 	@${MKDIR} ${PREFIX}/libexec/nagios
-	${INSTALL_PROGRAM} ${WRKSRC}/src/check_bacula/.libs/check_bacula \
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/nagios/check_bacula/.libs/check_bacula \
 		${PREFIX}/libexec/nagios/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/lib/.libs/libbac.so.1 \
 		${PREFIX}/lib
