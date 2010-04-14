@@ -32,6 +32,12 @@ WRKSRC=		${WRKDIR}/lux-${HG_NODEID}
 DESKTOP_ENTRIES="LuxRender" "${COMMENT}" "luxrender" "luxrender" \
 		"Application;Graphics;3DGraphics;" false
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.X
+.endif
+
 post-patch:
 # Respect our CFLAGS, do not append `64' suffix to `lib' on amd64, do not
 # install vendor .desktop file
@@ -55,4 +61,4 @@ post-configure:
 			${WRKSRC}/CMakeFiles/luxrender.dir/flags.make \
 			${WRKSRC}/CMakeFiles/luxrender.dir/link.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
