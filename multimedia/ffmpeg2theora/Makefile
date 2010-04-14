@@ -6,7 +6,7 @@
 
 PORTNAME=	ffmpeg2theora
 PORTVERSION=	0.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://v2v.cc/~j/ffmpeg2theora/
 
@@ -15,7 +15,7 @@ COMMENT=	Reencode many media file formats to Ogg Theora
 
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
-		kate.1:${PORTSDIR}/multimedia/libkate
+		kate.3:${PORTSDIR}/multimedia/libkate
 
 USE_BZIP2=	yes
 USE_SCONS=	yes
