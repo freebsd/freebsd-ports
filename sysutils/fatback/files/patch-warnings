@@ -1,0 +1,36 @@
+--- recovery.c	2001-05-30 11:47:04.000000000 -0400
++++ recovery.c	2010-04-09 20:50:48.000000000 -0400
+@@ -69,6 +69,7 @@
+           display(VERBOSE, log_nametaken, filename, cluster, fname);
+ 
+-     if ((file = open(fname, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR|S_IRGRP|S_IROTH|S_IWUSR)) == NULL) {
+-          perror("Error");
++     if ((file = open(fname, O_WRONLY|O_CREAT|O_EXCL,
++         S_IRUSR|S_IRGRP|S_IROTH|S_IWUSR)) < 0) {
++          perror(fname);
+           free(fname);
+           return -1;
+@@ -265,7 +266,5 @@
+      const size_t MAX_NUMBER_LEN = 100;
+      char *new_fname = fname;
+-     struct stat stat_buf;
+      unsigned i;
+-     int test;
+ 
+      assert(fname);
+--- cmd_cp.c	2001-05-30 11:40:00.000000000 -0400
++++ cmd_cp.c	2010-04-09 21:40:15.000000000 -0400
+@@ -6,4 +6,5 @@
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <limits.h>
+--- cmd_ls.c	2001-05-30 11:42:01.000000000 -0400
++++ cmd_ls.c	2010-04-09 21:42:15.000000000 -0400
+@@ -6,4 +6,5 @@
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <assert.h>
+ #include <time.h>
