@@ -17,6 +17,11 @@ DISTFILES?=	${PORTNAME}Src-${PORTVERSION}.tar.bz2
 MAINTAINER=	vd@FreeBSD.org
 COMMENT?=	Top-tier vector/general purpose graphics program (recommended version)
 
+IGNORE=		does not compile with png-1.4
+DEPRECATED=	Does not compile with png-1.4 and latest version is from Aug 2006
+# be sure not to forget to remove the slave port graphics/xaralx-devel
+EXPIRATION_DATE=2010-06-14
+
 USE_BZIP2=	yes
 
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config \
