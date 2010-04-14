@@ -67,21 +67,26 @@ bin/deco
 %%DATADIR%%/tar\.lz/extract
 %%DATADIR%%/tar\.lzma/extract
 %%DATADIR%%/tar\.rz/extract
+%%DATADIR%%/tar\.xz/extract
 %%DATADIR%%/tar\.z
 %%DATADIR%%/taz
 %%DATADIR%%/tbz
 %%DATADIR%%/tbz2
 %%DATADIR%%/tgz
 %%DATADIR%%/tlz/extract
+%%DATADIR%%/txz
 %%DATADIR%%/udeb
 %%DATADIR%%/wsz
 %%DATADIR%%/xpi
+%%DATADIR%%/xz/extract
 %%DATADIR%%/z
 %%DATADIR%%/zip/extract
 %%DATADIR%%/zoo/extract
 @dirrm %%DATADIR%%/zoo
 @dirrm %%DATADIR%%/zip
+@dirrm %%DATADIR%%/xz
 @dirrm %%DATADIR%%/tlz
+@dirrm %%DATADIR%%/tar\.xz
 @dirrm %%DATADIR%%/tar\.rz
 @dirrm %%DATADIR%%/tar\.lzma
 @dirrm %%DATADIR%%/tar\.lz
