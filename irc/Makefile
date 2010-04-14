@@ -74,6 +74,7 @@
     SUBDIR += libircclient
     SUBDIR += lostirc
     SUBDIR += miau
+    SUBDIR += minbif
     SUBDIR += muh
     SUBDIR += nefarious
     SUBDIR += nethirc
