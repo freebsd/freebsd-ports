@@ -19,7 +19,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Unreal Tournament for Linux
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs sdl12
 NO_BUILD=	yes
