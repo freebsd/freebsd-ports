@@ -37,6 +37,12 @@ MAN1=		tint2.1
 
 PORTDOCS=	AUTHORS ChangeLog README NEWS
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not link
+.endif
+
 post-patch:
 	@${CP} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.presed
 	@${SED} -e "s# install-dist_docDATA##" \
@@ -70,4 +76,4 @@ PLIST_FILES+=	${EXAMPLESDIR_REL}/${file}
 PLIST_DIRS+=	${EXAMPLESDIR_REL}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
