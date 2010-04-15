@@ -216,6 +216,7 @@
     SUBDIR += cppi
     SUBDIR += cppunit
     SUBDIR += cproto
+    SUBDIR += cpuflags
     SUBDIR += cross-binutils
     SUBDIR += cross-gcc
     SUBDIR += cross-gdb
