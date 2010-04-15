@@ -1,0 +1,35 @@
+
+**********************************************
+Plurk API provides a standard way of accessing 
+and implementing applications on top of the Plurk 
+platform. The API is a simple HTTP API that can be 
+accessed from any language that supports creation 
+of HTTP requests.
+
+The API returns JSON encoded data. You should use 
+a JSON library to decode the data returned. Some 
+good JSON libraries are simplejson (Python), 
+JSON.simple (Java) or json (Ruby) or json (PHP).
+
+The current limit is 50.000 calls pr. day. If you 
+need more than this contact us with a description 
+of what you are making. 
+
+
+%%PKGNAME%% has been installed into :
+
+    %%WWWDIR%%
+
+php-plurk-api is a Plurk API Client implementation with PHP.  
+
+	the API Official Website:
+	http://www.plurk.com/API
+ 
+	Code Repository:
+	https://code.google.com/p/php-plurk-api/
+
+	php-plurk-api online documents:
+	http://plurk.lab3.tw/docs/
+
+**********************************************
+

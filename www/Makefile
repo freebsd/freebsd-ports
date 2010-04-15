@@ -1326,6 +1326,7 @@
     SUBDIR += pglogd
     SUBDIR += photo_gallery
     SUBDIR += php-dyn
+    SUBDIR += php-plurk-api
     SUBDIR += php-screw
     SUBDIR += php-templates
     SUBDIR += php4-session
