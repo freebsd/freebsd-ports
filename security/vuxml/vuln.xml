@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1a9f678d-48ca-11df-85f8-000c29a67389">
+    <topic>sudo -- Privilege escalation with sudoedit</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.7.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Todd Miller reports:</p>
+	<blockquote cite="">
+	  <p>Sudo's command matching routine expects actual commands to include
+	    one or more slash ('/') characters.  The flaw is that sudo's path
+	    resolution code did not add a "./" prefix to commands found in the
+	    current working directory.  This creates an ambiguity between a
+	    "sudoedit" command found in the cwd and the "sudoedit"
+	    pseudo-command in the sudoers file.  As a result, a user may be
+	    able to run an arbitrary command named "sudoedit" in the current
+	    working directory.  For the attack to be successful, the PATH
+	    environment variable must include "." and may not include any other
+	    directory that contains a "sudoedit" command.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.sudo.ws/pipermail/sudo-announce/2010-April/000093.html</url>
+      <url>http://www.sudo.ws/sudo/alerts/sudoedit_escalate2.html</url>
+      <cvename>CVE-2010-0426</cvename>
+    </references>
+    <dates>
+      <discovery>2010-04-09</discovery>
+      <entry>2010-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3987c5d1-47a9-11df-a0d5-0016d32f24fb">
     <topic>KDM local privilege escalation vulnerability</topic>
     <affects>
