@@ -19,6 +19,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 CONFLICTS=	mesagl-mangled-*
 
 USE_BZIP2=	yes
+USE_GCC=	4.2+
 USE_LDCONFIG=	yes
 USE_XORG=	xxf86vm xext xfixes xdamage xt
 USE_GMAKE=	yes
