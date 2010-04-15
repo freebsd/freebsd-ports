@@ -11,7 +11,6 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org:9090/neverball/ \
 		http://offload2.icculus.org:9090/neverball/ \
-		http://caffeinatedcontent.com/neverball/files/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
