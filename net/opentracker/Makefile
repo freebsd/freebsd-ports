@@ -8,15 +8,15 @@
 PORTNAME=	opentracker
 PORTVERSION=	0.2009.06.27
 CATEGORIES=	net
-MASTER_SITES=	http://www.bayofrum.net/dist/opentracker/ \
-		http://freebsd.dev-urandom.com/opentracker/
+MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
+		http://www.glenbarber.us/ports/net/${PORTNAME}/
 
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	A free lightweight bittorrent tracker using libowfat
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 
-USE_RC_SUBR=	opentracker
+USE_RC_SUBR=	${PORTNAME}
 
 OPTIONS=	WANT_ACCESSLIST_BLACK "Enable client blacklisting" Off \
 		WANT_ACCESSLIST_WHITE "Enable client whitelisting" Off \
