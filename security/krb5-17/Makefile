@@ -22,6 +22,7 @@ BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 CONFLICTS=		krb[45]-[0-9]* heimdal-[0-9]* srp-[0-9]*
 
 BROKEN=			does not compile
+FORBIDDEN=		MITKRB5-SA-2010-001, MITKRB5-SA-2010-002, and MITKRB5-SA-2010-003.
 
 LATEST_LINK=		${PORTNAME}-17
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
