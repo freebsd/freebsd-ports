@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	1.3.11
-PORTREVISION=	2
+PORTVERSION=	1.3.12
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-minsrc-${PORTVERSION}
+DISTNAME=	${PORTNAME}-minsrc-${PORTVERSION}-beta
 
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	Audacity is a GUI editor for digital audio waveforms
