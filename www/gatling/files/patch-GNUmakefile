@@ -1,5 +1,5 @@
---- GNUmakefile.orig	2009-04-09 19:00:23.000000000 +0200
-+++ GNUmakefile	2009-04-10 17:46:56.000000000 +0200
+--- GNUmakefile.orig	2010-04-11 07:49:08.000000000 +0200
++++ GNUmakefile	2010-04-14 18:29:35.000000000 +0200
 @@ -1,24 +1,23 @@
 -#DEBUG=1
 -ZLIB=1
@@ -46,7 +46,7 @@
  CFLAGS+=-g
  LDFLAGS+=-g
 -else
--CFLAGS+=-O2 -fomit-frame-pointer
+-CFLAGS+=-O2 -fomit-frame-pointer -I/usr/local/include
 -LDFLAGS+=-s
 -ifneq ($(DIET),)
 -DIET+=-Os
@@ -63,26 +63,15 @@
  
  forksbench: forkbench.o
  	$(CC) -static -o $@ forkbench.o $(LDFLAGS) $(LDLIBS)
-@@ -86,9 +81,11 @@
- gatling: gatling.o $(OBJS) md5lib
- 	$(CC) $(LDFLAGS) $@.o $(OBJS) -o $@ $(LDLIBS) `cat md5lib`
- 
-+dl: dl.c havestrndup havestrndup.h
-+	$(CC) $(CFLAGS) dl.c `cat havestrndup` $(LDFLAGS) -lowfat -o $@
-+
- httpbench: httpbench.o
- bindbench: bindbench.o
--dl: dl.o
- ioerr: ioerr.o
- bench: bench.o
- getlinks: getlinks.o
-@@ -121,9 +118,13 @@
+@@ -121,11 +116,13 @@
  	rm -f trysocket
  
  libiconv: tryiconv.c
 -	if $(CC) $(CFLAGS) -o tryiconv tryiconv.c >/dev/null 2>&1; then echo ""; else \
--	if $(CC) $(CFLAGS) -o tryiconv tryiconv.c -liconv >/dev/null 2>&1; then echo "-liconv"; \
--	fi; fi > libiconv
+-	if $(CC) $(CFLAGS) -o tryiconv tryiconv.c -liconv >/dev/null 2>&1; then echo "-liconv"; else \
+-	if $(CC) $(CFLAGS) -o tryiconv tryiconv.c -L/usr/local/lib -liconv >/dev/null 2>&1; then \
+-	  echo "-L/usr/local/lib -liconv"; \
+-	fi; fi; fi > libiconv
 +ifdef ICONV
 +	if $(CC) $(CFLAGS) $(LDFLAGS) -o tryiconv tryiconv.c -liconv >/dev/null 2>&1; then echo "-L$(LDFLAGS) -liconv"; else \
 +	echo ""; \
@@ -93,14 +82,3 @@
  	rm -f tryiconv
  
  libcrypt: trycrypt.c
-@@ -144,6 +145,10 @@
- 	if $(CC) $(CFLAGS) -o tryresuid $^ >/dev/null 2>&1; then echo "#define LIBC_HAS_SETRESUID"; fi > $@
- 	-rm -f tryresuid
- 
-+havestrndup havestrndup.h: trystrndup.c
-+	if $(CC) $(CFLAGS) -o trystrndup $^ >/dev/null 2>&1; then echo "">havestrndup; echo "#define LIBC_HAS_STRNDUP">havestrndup.h; else echo "strndup.c">havestrndup; echo "">havestrndup.h; fi
-+	rm -f trystrndup
-+
- dummy.c:
- 	touch $@
- 
