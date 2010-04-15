@@ -1,6 +1,8 @@
 %%DATADIR%%/C.paragraphs
 %%DATADIR%%/C.words
 %%DATADIR%%/alphagrip5_us.kbd
+%%DATADIR%%/ar.paragraphs
+%%DATADIR%%/ar.words
 %%DATADIR%%/azerty_be.kbd
 %%DATADIR%%/azerty_fr.kbd
 %%DATADIR%%/azerty_fr_ibook.kbd
@@ -56,6 +58,8 @@
 %%DATADIR%%/key.png
 %%DATADIR%%/klavaro.ui
 %%DATADIR%%/klavaro_96x96.png
+%%DATADIR%%/nb.paragraphs
+%%DATADIR%%/nb.words
 %%DATADIR%%/nl.paragraphs
 %%DATADIR%%/nl.words
 %%DATADIR%%/other.png
@@ -64,6 +68,7 @@
 %%DATADIR%%/progress.png
 %%DATADIR%%/pt_BR.paragraphs
 %%DATADIR%%/pt_BR.words
+%%DATADIR%%/qwerty_ar.kbd
 %%DATADIR%%/qwerty_br.kbd
 %%DATADIR%%/qwerty_br_abnt2.kbd
 %%DATADIR%%/qwerty_cz.kbd
@@ -71,9 +76,10 @@
 %%DATADIR%%/qwerty_es.kbd
 %%DATADIR%%/qwerty_gr.kbd
 %%DATADIR%%/qwerty_il.kbd
+%%DATADIR%%/qwerty_il_old.kbd
 %%DATADIR%%/qwerty_it.kbd
 %%DATADIR%%/qwerty_jp.kbd
-%%DATADIR%%/qwerty_no.kbd
+%%DATADIR%%/qwerty_nb.kbd
 %%DATADIR%%/qwerty_pk_crulp.kbd
 %%DATADIR%%/qwerty_pk_nla.kbd
 %%DATADIR%%/qwerty_pt.kbd
@@ -101,6 +107,7 @@ share/icons/hicolor/22x22/apps/klavaro.png
 share/icons/hicolor/24x24/apps/klavaro.png
 share/icons/hicolor/32x32/apps/klavaro.png
 share/icons/hicolor/48x48/apps/klavaro.png
+share/locale/ar/LC_MESSAGES/klavaro.mo
 share/locale/bn/LC_MESSAGES/klavaro.mo
 share/locale/cs/LC_MESSAGES/klavaro.mo
 share/locale/da/LC_MESSAGES/klavaro.mo
@@ -111,6 +118,7 @@ share/locale/es/LC_MESSAGES/klavaro.mo
 share/locale/fr/LC_MESSAGES/klavaro.mo
 share/locale/gl/LC_MESSAGES/klavaro.mo
 share/locale/hu/LC_MESSAGES/klavaro.mo
+share/locale/nb/LC_MESSAGES/klavaro.mo
 share/locale/nl/LC_MESSAGES/klavaro.mo
 share/locale/pl/LC_MESSAGES/klavaro.mo
 share/locale/pt_BR/LC_MESSAGES/klavaro.mo
