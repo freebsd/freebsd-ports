@@ -1,0 +1,4 @@
+lib/xorg/modules/drivers/rdc_drv.so
+@dirrmtry lib/xorg/modules/drivers
+@dirrmtry lib/xorg/modules
+@dirrmtry lib/xorg
