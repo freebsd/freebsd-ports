@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thpinfo.com/2010/mygpoclient/:mygpoclient
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${MGC_DISTNAME}${EXTRACT_SUFX}:mygpoclient
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	steinex@nognu.de
 COMMENT=	A GTK2 podcast aggregrator written in Python
 
 RUN_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
@@ -24,7 +23,8 @@ RUN_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		wget:${PORTSDIR}/ftp/wget \
 		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
-		py*-feedparser>=0:${PORTSDIR}/textproc/py-feedparser
+		py*-feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
+		py*-simplejson>=0:${PORTSDIR}/devel/py-simplejson
 
 OPTIONS=	COVERART "Cover Art syncing support" off \
 		IPOD "iPod synchronization support" off \
