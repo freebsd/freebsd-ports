@@ -7,6 +7,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -39,11 +40,10 @@ CFLAGS+=       -fstack-protector
 
 .if defined(WITH_REPCACHED)
 # WWW: http://repcached.lab.klab.org/
-BROKEN=			Waiting a new release for this patch.
-PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:C/%SUBDIR%/repcached\/repcached\/2.2-${PORTVERSION}/}
+PATCH_SITES+=		http://mdounin.ru/files/
 PATCH_DIST_STRIP+=	-p1
 PATCHFILES+=		repcached-2.2-${PORTVERSION}.patch.gz
-CONFIGURE_ARGS+=	--enable-replication --disable-threads
+CONFIGURE_ARGS+=	--enable-replication
 .endif
 
 .if defined(WITH_SASL) && !defined(WITHOUT_SASL)
