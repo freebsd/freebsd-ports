@@ -1,0 +1,2 @@
+cpuflags returns the appropriate gcc flags to optimise compilation for the
+current CPU.
