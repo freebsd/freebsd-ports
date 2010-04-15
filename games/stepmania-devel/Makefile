@@ -54,8 +54,8 @@ LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=--without-theora
 .endif
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not link
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile
 .endif
 
 post-patch:
