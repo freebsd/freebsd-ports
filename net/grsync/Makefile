@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grsync
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		GENTOO/distfiles \
@@ -18,9 +17,11 @@ COMMENT=	GTK frontend for rsync
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 desktopfileutils
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -40,5 +41,8 @@ post-patch:
 	@${REINPLACE_CMD} 's/^ALL_LINGUAS=.*/ALL_LINGUAS=""/' \
 		${WRKSRC}/configure
 .endif
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.mk>

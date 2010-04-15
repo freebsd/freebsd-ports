@@ -1,9 +1,11 @@
 bin/grsync
 bin/grsync-batch
+%%DATADIR%%/grsync.glade
 share/applications/grsync.desktop
+share/icons/hicolor/48x48/mimetypes/application-x-grsync-session.png
+share/mime/packages/grsync.xml
+share/pixmaps/grsync-busy.png
 share/pixmaps/grsync.png
-share/grsync/grsync.glade
-@dirrm share/grsync
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/cs_CZ/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/grsync.mo
@@ -17,24 +19,35 @@ share/grsync/grsync.glade
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/grsync.mo
-%%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca_ES
-%%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs_CZ
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
-%%NLS%%@dirrmtry share/locale/gl_ES/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gl_ES
-%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it_IT
-%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nb_NO
-%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/nl_NL
-%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ru_RU
-%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sv_SE
 %%NLS%%@dirrmtry share/locale/tr_TR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tr_TR
+%%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv_SE
+%%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru_RU
+%%NLS%%@dirrmtry share/locale/nl_NL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl_NL
+%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb_NO
+%%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it_IT
+%%NLS%%@dirrmtry share/locale/gl_ES/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl_ES
+%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de_DE
+%%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs_CZ
+%%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca_ES
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/icons/hicolor/48x48/mimetypes
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrmtry share/applications
+@dirrm %%DATADIR%%
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
