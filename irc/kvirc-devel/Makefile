@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kvirc
-DISTVERSION=	4.0rc1
-PORTREVISION=	1
+DISTVERSION=	4.0rc2
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/snapshots/source/ \
 		http://distfiles.officialunix.com/
@@ -18,25 +17,27 @@ COMMENT=	IRC client for QT4 and KDE4
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_PERL5=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build \
 		dbus webkit gui network sql xml
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DWITHOUT_ESD=yes -DWITHOUT_DOXYGEN=yes \
-		-DMANUAL_REVISION=${SVN_REV}
+		-DMANUAL_REVISION=${SVN_REV} -DMANDIR=${MANPREFIX}
 INSTALLS_ICONS=	yes
 CONFLICTS=	kvirc-3.4.*
-SVN_REV=	3459
+# Fixes certain issues when installing/configuring
+SVN_REV=	3713
 
 MAN1=	kvirc.1
-MANLANG=	"" de.ISO8859-1 de.UTF-8 it it.ISO8859-1 it.UTF-8
+MANLANG=	"" de it
 
 OPTIONS=	AUDIOFILE "Compile with libaudiofile dependency" on \
 			DEBUG "Compile with debug support" off \
 			GSM "Compile with gsm support" off \
 			KDE4 "Compile with KDE4 support" off \
-			PHONON "Compile with phonon support" on
+			PHONON "Compile with phonon support" on \
+			PYTHON "Compile support for python" off \
+			PERL "Compile support for perl" on
 
 .include <bsd.port.options.mk>
 
@@ -45,6 +46,24 @@ USE_KDE4=	kdelibs kdeprefix
 CMAKE_ARGS+=	-DWITH_KDE4=yes
 .else
 CMAKE_ARGS+=	-DWITHOUT_KDE4=yes
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+CMAKE_ARGS+=	-DWITH_PYTHON=yes
+PLIST_SUB+=	PYTHONMOD=""
+.else
+CMAKE_ARGS+=	-DWITHOUT_PYTHON=yes
+PLIST_SUB+=	PYTHONMOD="@comment "
+.endif
+
+.if defined(WITH_PERL)
+USE_PERL5=	yes
+CMAKE_ARGS+=	-DWITH_PERL=yes
+PLIST_SUB+=	PERLMOD=""
+.else
+CMAKE_ARGS+=	-DWITHOUT_PERL=yes
+PLIST_SUB+=	PERLMOD="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -80,11 +99,5 @@ CMAKE_ARGS+=	-DWITHOUT_PHONON=yes
 post-configure:
 	@${MV} ${WRKSRC}/data/protocols/irc.protocol ${WRKSRC}/data/protocols/kvirc.protocol
 	@${MV} ${WRKSRC}/data/protocols/irc6.protocol ${WRKSRC}/data/protocols/kvirc6.protocol
-
-# Todo
-# Add NOPORTDOCS part (include support for doxygen)
-# If user requires docs
-# Add in special %%VER%% to pkg-plist
-# Add in DATADIR instead of share/..
 
 .include <bsd.port.post.mk>

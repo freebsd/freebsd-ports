@@ -35,8 +35,8 @@ lib/kvirc/4.0/modules/libkvimy.so
 lib/kvirc/4.0/modules/libkvinotifier.so
 lib/kvirc/4.0/modules/libkviobjects.so
 lib/kvirc/4.0/modules/libkvioptions.so
-lib/kvirc/4.0/modules/libkviperl.so
-lib/kvirc/4.0/modules/libkviperlcore.so
+%%PERLMOD%%lib/kvirc/4.0/modules/libkviperl.so
+%%PERLMOD%%lib/kvirc/4.0/modules/libkviperlcore.so
 lib/kvirc/4.0/modules/libkvipopupeditor.so
 lib/kvirc/4.0/modules/libkviproxydb.so
 lib/kvirc/4.0/modules/libkvipythoncore.so
@@ -66,6 +66,7 @@ lib/kvirc/4.0/modules/libkvitrayicon.so
 lib/kvirc/4.0/modules/libkviupnp.so
 lib/kvirc/4.0/modules/libkviurl.so
 lib/kvirc/4.0/modules/libkviwindow.so
+%%PYTHONMOD%%lib/kvirc/4.0/modules/libkvipython.so
 lib/libkvilib.so
 lib/libkvilib.so.4
 lib/libkvilib.so.4.0.0
@@ -377,8 +378,6 @@ share/kvirc/4.0/help/en/cmd_notice.html
 share/kvirc/4.0/help/en/cmd_notifier.hide.html
 share/kvirc/4.0/help/en/cmd_notifier.message.html
 share/kvirc/4.0/help/en/cmd_notifier.show.html
-share/kvirc/4.0/help/en/cmd_objects.bitblt.html
-share/kvirc/4.0/help/en/cmd_objects.blend.html
 share/kvirc/4.0/help/en/cmd_objects.classes.html
 share/kvirc/4.0/help/en/cmd_objects.clear.html
 share/kvirc/4.0/help/en/cmd_objects.connect.html
@@ -1019,6 +1018,7 @@ share/kvirc/4.0/help/en/fnc_chan.bancount.html
 share/kvirc/4.0/help/en/fnc_chan.banexceptioncount.html
 share/kvirc/4.0/help/en/fnc_chan.banexceptionlist.html
 share/kvirc/4.0/help/en/fnc_chan.banlist.html
+share/kvirc/4.0/help/en/fnc_chan.common.html
 share/kvirc/4.0/help/en/fnc_chan.getflag.html
 share/kvirc/4.0/help/en/fnc_chan.geturl.html
 share/kvirc/4.0/help/en/fnc_chan.halfopcount.html
@@ -1041,6 +1041,7 @@ share/kvirc/4.0/help/en/fnc_chan.isvoice.html
 share/kvirc/4.0/help/en/fnc_chan.key.html
 share/kvirc/4.0/help/en/fnc_chan.limit.html
 share/kvirc/4.0/help/en/fnc_chan.matchban.html
+share/kvirc/4.0/help/en/fnc_chan.matchqban.html
 share/kvirc/4.0/help/en/fnc_chan.matchbanexception.html
 share/kvirc/4.0/help/en/fnc_chan.matchinvite.html
 share/kvirc/4.0/help/en/fnc_chan.mode.html
@@ -1240,6 +1241,7 @@ share/kvirc/4.0/help/en/fnc_query.html
 share/kvirc/4.0/help/en/fnc_r.html
 share/kvirc/4.0/help/en/fnc_rand.html
 share/kvirc/4.0/help/en/fnc_real.html
+share/kvirc/4.0/help/en/fnc_realname.html
 share/kvirc/4.0/help/en/fnc_receivedbytes.html
 share/kvirc/4.0/help/en/fnc_regchan.find.html
 share/kvirc/4.0/help/en/fnc_regchan.list.html
