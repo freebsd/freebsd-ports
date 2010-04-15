@@ -31,12 +31,6 @@ DESKTOP_ENTRIES="LinWarrior 3D" \
 		"Game;ActionGame;Simulation;" \
 		false
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800007
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-source-cMech.cpp
-.endif
-
 post-extract:
 	@${FIND} ${WRKSRC} -type d -exec chmod a+rx {} \;
 	@${FIND} ${WRKSRC} -type f -exec chmod a+r {} \;
@@ -51,4 +45,4 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${DATADIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
