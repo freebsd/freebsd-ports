@@ -7,6 +7,7 @@
 
 PORTNAME=	nullmailer
 PORTVERSION=	1.05
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
@@ -18,18 +19,25 @@ COMMENT=	MTA for hosts which relay to a fixed set of smart relays
 
 LOCALSTATEDIR=	/var/spool
 
+.if defined(MAINTAINER_MODE)
+UID_FILES+=	../../UIDs
+GID_FILES+=	../../GIDs
+.endif
+USERS=		nullmail
+GROUPS=		nullmail
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR}
 
 USE_SUBMAKE=	yes
 
 USE_RC_SUBR=	${PORTNAME}
-SUB_FILES+=	pkg-install pkg-message
+SUB_FILES+=	pkg-install pkg-deinstall pkg-message
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	LOCALSTATEDIR=${LOCALSTATEDIR}
-SUB_LIST+=	LOCALSTATEDIR=${LOCALSTATEDIR}
+SUB_LIST+=	LOCALSTATEDIR=${LOCALSTATEDIR} NULLMAIL_USER=${USERS}
 
 MAN1=	nullmailer-inject.1 sendmail.1
 MAN7=	nullmailer.7

@@ -13,9 +13,9 @@
 
 name=nullmailer
 rcvar=`set_rcvar`
-nullmailer_user=nullmail
-command=%%PREFIX%%/sbin/nullmailer-send
-command_args=" 2>&1 | /usr/bin/logger -i -p local5.info -t nullmail &"
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/sbin/nullmailer-send
+command_args=" -cf -u %%NULLMAIL_USER%% /bin/sh -c '$procname | /usr/bin/logger -i -p mail.info -t $name'"
 load_rc_config $name
 run_rc_command "$1"
 
