@@ -1226,6 +1226,7 @@ bsdftpd-ssl                     ports/ftp/bsdftpd-ssl
 bsdgames                        ports/games/bsdgames
 bsdgrep                         ports/textproc/bsdgrep
 bsdhwmon                        ports/sysutils/bsdhwmon
+bsdmoted                        ports/sysutils/bsdmoted
 bsdproxy                        ports/net/bsdproxy
 bsdrain                         ports/games/bsdrain
 bsdsar                          ports/sysutils/bsdsar
