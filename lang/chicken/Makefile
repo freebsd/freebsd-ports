@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	4.1.0
+PORTVERSION=	4.4.0
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/ \
 		http://chicken.wiki.br/releases/${PORTVERSION}/
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	vmagerya@gmail.com
 COMMENT=	A Scheme-to-C compiler
 
 USE_GMAKE=	yes
@@ -27,17 +27,15 @@ MAN1=		chicken.1 chicken-bug.1 chicken-install.1 chicken-profile.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386"
-.if ${ARCH} != ${NEW_ARCH}
+.if ${ARCH} != "amd64" && ${ARCH} != "i386" && ${ARCH} != "sparc64"
+MAKE_ARGS+=	HACKED_APPLY=
+.elif ${ARCH} != ${NEW_ARCH}
 post-patch:
-	${MV} ${WRKSRC}/apply-hack.${NEW_ARCH}.s ${WRKSRC}/apply-hack.${ARCH}.s
-.endif
+	${MV} ${WRKSRC}/apply-hack.${NEW_ARCH}.S ${WRKSRC}/apply-hack.${ARCH}.S
 .endif
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}/benchmarks
-	${CP} -R ${WRKSRC}/benchmarks/* ${EXAMPLESDIR}/benchmarks/
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
 .include <bsd.port.post.mk>

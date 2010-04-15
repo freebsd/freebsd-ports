@@ -2,135 +2,97 @@ bin/chicken
 bin/chicken-bug
 bin/chicken-install
 bin/chicken-profile
-bin/chicken-setup
 bin/chicken-status
 bin/chicken-uninstall
 bin/csc
 bin/csi
 include/chicken-config.h
 include/chicken.h
-lib/chicken/4/chicken.import.so
-lib/chicken/4/csi.import.so
-lib/chicken/4/data-structures.import.so
-lib/chicken/4/extras.import.so
-lib/chicken/4/files.import.so
-lib/chicken/4/foreign.import.so
-lib/chicken/4/irregex.import.so
-lib/chicken/4/lolevel.import.so
-lib/chicken/4/modules.db
-lib/chicken/4/ports.import.so
-lib/chicken/4/posix.import.so
-lib/chicken/4/regex.import.so
-lib/chicken/4/scheme.import.so
-lib/chicken/4/setup-api.import.so
-lib/chicken/4/setup-api.so
-lib/chicken/4/setup-download.import.so
-lib/chicken/4/setup-download.so
-lib/chicken/4/srfi-1.import.so
-lib/chicken/4/srfi-13.import.so
-lib/chicken/4/srfi-14.import.so
-lib/chicken/4/srfi-18.import.so
-lib/chicken/4/srfi-4.import.so
-lib/chicken/4/srfi-69.import.so
-lib/chicken/4/tcp.import.so
-lib/chicken/4/types.db
-lib/chicken/4/utils.import.so
+lib/chicken/5/chicken.import.so
+lib/chicken/5/csi.import.so
+lib/chicken/5/data-structures.import.so
+lib/chicken/5/extras.import.so
+lib/chicken/5/files.import.so
+lib/chicken/5/foreign.import.so
+lib/chicken/5/irregex.import.so
+lib/chicken/5/lolevel.import.so
+lib/chicken/5/modules.db
+lib/chicken/5/ports.import.so
+lib/chicken/5/posix.import.so
+lib/chicken/5/regex.import.so
+lib/chicken/5/scheme.import.so
+lib/chicken/5/setup-api.import.so
+lib/chicken/5/setup-api.so
+lib/chicken/5/setup-download.import.so
+lib/chicken/5/setup-download.so
+lib/chicken/5/srfi-1.import.so
+lib/chicken/5/srfi-13.import.so
+lib/chicken/5/srfi-14.import.so
+lib/chicken/5/srfi-18.import.so
+lib/chicken/5/srfi-4.import.so
+lib/chicken/5/srfi-69.import.so
+lib/chicken/5/tcp.import.so
+lib/chicken/5/types.db
+lib/chicken/5/utils.import.so
 lib/libchicken.a
 lib/libchicken.so
+lib/libchicken.so.5
 lib/libuchicken.a
 lib/libuchicken.so
+lib/libuchicken.so.5
 %%DATADIR%%/setup.defaults
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
-%%DOCSDIR%%/html/Accessing external objects.html
-%%DOCSDIR%%/html/Acknowledgements.html
-%%DOCSDIR%%/html/Basic mode of operation.html
-%%DOCSDIR%%/html/Bibliography.html
-%%DOCSDIR%%/html/Bugs and limitations.html
-%%DOCSDIR%%/html/C interface.html
-%%DOCSDIR%%/html/Callbacks.html
-%%DOCSDIR%%/html/Data representation.html
-%%DOCSDIR%%/html/Declarations.html
-%%DOCSDIR%%/html/Deviations from the standard.html
-%%DOCSDIR%%/html/Embedding.html
-%%DOCSDIR%%/html/Extensions to the standard.html
-%%DOCSDIR%%/html/Extensions.html
-%%DOCSDIR%%/html/Foreign type specifiers.html
-%%DOCSDIR%%/html/Interface to external functions and variables.html
-%%DOCSDIR%%/html/Locations.html
-%%DOCSDIR%%/html/Modules and macros.html
-%%DOCSDIR%%/html/Non-standard macros and special forms.html
-%%DOCSDIR%%/html/Non-standard read syntax.html
-%%DOCSDIR%%/html/Other support procedures.html
-%%DOCSDIR%%/html/Parameters.html
-%%DOCSDIR%%/html/Supported language.html
-%%DOCSDIR%%/html/The User's Manual.html
-%%DOCSDIR%%/html/Unit data-structures.html
-%%DOCSDIR%%/html/Unit eval.html
-%%DOCSDIR%%/html/Unit expand.html
-%%DOCSDIR%%/html/Unit extras.html
-%%DOCSDIR%%/html/Unit files.html
-%%DOCSDIR%%/html/Unit library.html
-%%DOCSDIR%%/html/Unit lolevel.html
-%%DOCSDIR%%/html/Unit ports.html
-%%DOCSDIR%%/html/Unit posix.html
-%%DOCSDIR%%/html/Unit regex.html
-%%DOCSDIR%%/html/Unit srfi-1.html
-%%DOCSDIR%%/html/Unit srfi-13.html
-%%DOCSDIR%%/html/Unit srfi-14.html
-%%DOCSDIR%%/html/Unit srfi-18.html
-%%DOCSDIR%%/html/Unit srfi-4.html
-%%DOCSDIR%%/html/Unit tcp.html
-%%DOCSDIR%%/html/Unit utils.html
-%%DOCSDIR%%/html/Using the compiler.html
-%%DOCSDIR%%/html/Using the interpreter.html
-%%DOCSDIR%%/html/faq.html
-%%DOCSDIR%%/html/manual.css
-%%EXAMPLESDIR%%/benchmarks/0.scm
-%%EXAMPLESDIR%%/benchmarks/binarytrees.scm
-%%EXAMPLESDIR%%/benchmarks/boyer.scm
-%%EXAMPLESDIR%%/benchmarks/browse.scm
-%%EXAMPLESDIR%%/benchmarks/conform.scm
-%%EXAMPLESDIR%%/benchmarks/cpstak.scm
-%%EXAMPLESDIR%%/benchmarks/cscbench.scm
-%%EXAMPLESDIR%%/benchmarks/ctak.scm
-%%EXAMPLESDIR%%/benchmarks/dderiv.scm
-%%EXAMPLESDIR%%/benchmarks/deriv.scm
-%%EXAMPLESDIR%%/benchmarks/destructive.scm
-%%EXAMPLESDIR%%/benchmarks/div-iter.scm
-%%EXAMPLESDIR%%/benchmarks/div-rec.scm
-%%EXAMPLESDIR%%/benchmarks/dynamic.scm
-%%EXAMPLESDIR%%/benchmarks/earley.scm
-%%EXAMPLESDIR%%/benchmarks/fft.scm
-%%EXAMPLESDIR%%/benchmarks/fib.scm
-%%EXAMPLESDIR%%/benchmarks/fibc.scm
-%%EXAMPLESDIR%%/benchmarks/fprint.scm
-%%EXAMPLESDIR%%/benchmarks/fread.scm
-%%EXAMPLESDIR%%/benchmarks/hanoi.scm
-%%EXAMPLESDIR%%/benchmarks/lattice.scm
-%%EXAMPLESDIR%%/benchmarks/maze.scm
-%%EXAMPLESDIR%%/benchmarks/nbody.scm
-%%EXAMPLESDIR%%/benchmarks/nqueens.scm
-%%EXAMPLESDIR%%/benchmarks/others/Makefile
-%%EXAMPLESDIR%%/benchmarks/others/except.scm
-%%EXAMPLESDIR%%/benchmarks/others/except2.scm
-%%EXAMPLESDIR%%/benchmarks/others/exception.cpp
-%%EXAMPLESDIR%%/benchmarks/others/results.txt
-%%EXAMPLESDIR%%/benchmarks/others/setlongjmp.c
-%%EXAMPLESDIR%%/benchmarks/puzzle.scm
-%%EXAMPLESDIR%%/benchmarks/scheme.scm
-%%EXAMPLESDIR%%/benchmarks/tak.scm
-%%EXAMPLESDIR%%/benchmarks/takl.scm
-%%EXAMPLESDIR%%/benchmarks/takr.scm
-%%EXAMPLESDIR%%/benchmarks/traverse.scm
-%%EXAMPLESDIR%%/benchmarks/travinit.scm
-%%EXAMPLESDIR%%/benchmarks/triangl.scm
-@dirrm %%EXAMPLESDIR%%/benchmarks/others
-@dirrm %%EXAMPLESDIR%%/benchmarks
-@dirrm %%EXAMPLESDIR%%
+%%DOCSDIR%%/manual/Accessing external objects
+%%DOCSDIR%%/manual/Acknowledgements
+%%DOCSDIR%%/manual/Basic mode of operation
+%%DOCSDIR%%/manual/Bibliography
+%%DOCSDIR%%/manual/Bugs and limitations
+%%DOCSDIR%%/manual/C interface
+%%DOCSDIR%%/manual/Callbacks
+%%DOCSDIR%%/manual/Data representation
+%%DOCSDIR%%/manual/Declarations
+%%DOCSDIR%%/manual/Deployment
+%%DOCSDIR%%/manual/Deviations from the standard
+%%DOCSDIR%%/manual/Embedding
+%%DOCSDIR%%/manual/Extensions
+%%DOCSDIR%%/manual/Extensions to the standard
+%%DOCSDIR%%/manual/Foreign type specifiers
+%%DOCSDIR%%/manual/Getting started
+%%DOCSDIR%%/manual/Interface to external functions and variables
+%%DOCSDIR%%/manual/Locations
+%%DOCSDIR%%/manual/Modules and macros
+%%DOCSDIR%%/manual/Non-standard macros and special forms
+%%DOCSDIR%%/manual/Non-standard read syntax
+%%DOCSDIR%%/manual/Other support procedures
+%%DOCSDIR%%/manual/Parameters
+%%DOCSDIR%%/manual/Supported language
+%%DOCSDIR%%/manual/The R5RS standard
+%%DOCSDIR%%/manual/The User's Manual
+%%DOCSDIR%%/manual/Unit data-structures
+%%DOCSDIR%%/manual/Unit eval
+%%DOCSDIR%%/manual/Unit expand
+%%DOCSDIR%%/manual/Unit extras
+%%DOCSDIR%%/manual/Unit files
+%%DOCSDIR%%/manual/Unit library
+%%DOCSDIR%%/manual/Unit lolevel
+%%DOCSDIR%%/manual/Unit ports
+%%DOCSDIR%%/manual/Unit posix
+%%DOCSDIR%%/manual/Unit regex
+%%DOCSDIR%%/manual/Unit srfi-1
+%%DOCSDIR%%/manual/Unit srfi-13
+%%DOCSDIR%%/manual/Unit srfi-14
+%%DOCSDIR%%/manual/Unit srfi-18
+%%DOCSDIR%%/manual/Unit srfi-4
+%%DOCSDIR%%/manual/Unit srfi-69
+%%DOCSDIR%%/manual/Unit tcp
+%%DOCSDIR%%/manual/Unit utils
+%%DOCSDIR%%/manual/Using the compiler
+%%DOCSDIR%%/manual/Using the interpreter
+%%DOCSDIR%%/manual/faq
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%/manual
 @dirrm %%DOCSDIR%%
-@dirrm lib/chicken/4
+@dirrm lib/chicken/5
 @dirrm lib/chicken
