@@ -7,7 +7,7 @@
 
 PORTNAME=	fish
 PORTVERSION=	1.23.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
@@ -55,6 +55,12 @@ RUN_DEPENDS=	xsel:${PORTSDIR}/x11/xsel-conrad
 NOPORTDOCS=	yes
 .else
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+.endif
+
+.if ${OSVERSION} > 900008
+PLIST_SUB+=	SEQ="@comment "
+.else
+PLIST_SUB+=	SEQ=""
 .endif
 
 post-patch:
