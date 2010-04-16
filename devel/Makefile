@@ -2257,6 +2257,7 @@
     SUBDIR += p5-ZML
     SUBDIR += p5-accessors
     SUBDIR += p5-aliased
+    SUBDIR += p5-asa
     SUBDIR += p5-autobox
     SUBDIR += p5-autobox-Core
     SUBDIR += p5-autodie
