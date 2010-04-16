@@ -23,8 +23,10 @@ bin/plackup
 %%SITE_PERL%%/Plack/Handler/FCGI.pm
 %%SITE_PERL%%/Plack/Handler/HTTP/Server/PSGI.pm
 %%SITE_PERL%%/Plack/Handler/HTTP/Server/Simple.pm
+%%SITE_PERL%%/Plack/Handler/Net/FastCGI.pm
 %%SITE_PERL%%/Plack/Handler/Standalone.pm
 %%SITE_PERL%%/Plack/Loader.pm
+%%SITE_PERL%%/Plack/Loader/Delayed.pm
 %%SITE_PERL%%/Plack/Loader/Restarter.pm
 %%SITE_PERL%%/Plack/Loader/Shotgun.pm
 %%SITE_PERL%%/Plack/MIME.pm
@@ -95,6 +97,7 @@ bin/plackup
 @dirrm %%SITE_PERL%%/Plack/Middleware/AccessLog
 @dirrm %%SITE_PERL%%/Plack/Middleware
 @dirrm %%SITE_PERL%%/Plack/Loader
+@dirrm %%SITE_PERL%%/Plack/Handler/Net
 @dirrm %%SITE_PERL%%/Plack/Handler/HTTP/Server
 @dirrm %%SITE_PERL%%/Plack/Handler/HTTP
 @dirrm %%SITE_PERL%%/Plack/Handler/Apache2
