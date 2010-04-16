@@ -1,11 +1,11 @@
 Description: Build on FreeBSD versions of OpenSSL < 0.9.8b.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2010-02-01
+Last-Update: 2010-04-07
 
 --- src/common.h.orig
 +++ src/common.h
-@@ -344,9 +344,6 @@
+@@ -350,9 +350,6 @@
  
  #define OPENSSL_THREAD_DEFINES
  #include <openssl/opensslconf.h>
