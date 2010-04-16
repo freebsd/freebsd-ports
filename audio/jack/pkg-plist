@@ -1,4 +1,5 @@
 bin/jack_alias
+bin/jack_bufsize
 bin/jack_connect
 bin/jack_disconnect
 bin/jack_evmon
@@ -10,12 +11,14 @@ bin/jack_metro
 bin/jack_midiseq
 bin/jack_midisine
 bin/jack_monitor_client
+bin/jack_netsource
+bin/jack_samplerate
 bin/jack_showtime
 bin/jack_simple_client
 bin/jack_transport
-bin/jack_unload
 bin/jack_transport_client
-bin/jack_netsource
+bin/jack_unload
+bin/jack_wait
 bin/jackd
 bin/jackrec
 include/jack/intclient.h
@@ -33,12 +36,12 @@ lib/jack/intime.la
 lib/jack/intime.so
 lib/jack/jack_dummy.la
 lib/jack/jack_dummy.so
+lib/jack/jack_net.la
+lib/jack/jack_net.so
 lib/jack/jack_oss.la
 lib/jack/jack_oss.so
 lib/jack/jack_portaudio.la
 lib/jack/jack_portaudio.so
-lib/jack/jack_net.la
-lib/jack/jack_net.so
 lib/libjack.la
 lib/libjack.so
 lib/libjack.so.0
@@ -99,8 +102,8 @@ libdata/pkgconfig/jack.pc
 %%PORTDOCS%%share/jack-audio-connection-kit/reference/html/simple__client_8c.html
 %%PORTDOCS%%share/jack-audio-connection-kit/reference/html/statistics_8h.html
 %%PORTDOCS%%share/jack-audio-connection-kit/reference/html/statistics_8h_source.html
-%%PORTDOCS%%share/jack-audio-connection-kit/reference/html/structPOST__PACKED__STRUCTURE.html
 %%PORTDOCS%%share/jack-audio-connection-kit/reference/html/struct__jack__midi__event.html
+%%PORTDOCS%%share/jack-audio-connection-kit/reference/html/structjack__position__t.html
 %%PORTDOCS%%share/jack-audio-connection-kit/reference/html/structjack__ringbuffer__data__t.html
 %%PORTDOCS%%share/jack-audio-connection-kit/reference/html/structjack__ringbuffer__t.html
 %%PORTDOCS%%share/jack-audio-connection-kit/reference/html/structjack__transport__info__t.html
