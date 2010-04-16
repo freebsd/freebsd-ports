@@ -1,7 +1,6 @@
 bin/palomino
 %%DOCSDIR%%/coding.html
 %%DOCSDIR%%/compression.html
-%%DOCSDIR%%/contents.html
 %%DOCSDIR%%/crash.html
 %%DOCSDIR%%/docs.css
 %%DOCSDIR%%/images/arrowBlue.gif
@@ -14,6 +13,7 @@ bin/palomino
 %%DOCSDIR%%/images/sprite1.png
 %%DOCSDIR%%/images/sprite2.png
 %%DOCSDIR%%/images/sprite3.png
+%%DOCSDIR%%/index.html
 %%DOCSDIR%%/issues.html
 %%DOCSDIR%%/lua_scripts.html
 %%DOCSDIR%%/manual.css
@@ -45,7 +45,9 @@ bin/palomino
 %%DOCSDIR%%/rules.html
 %%DOCSDIR%%/scene.html
 %%DOCSDIR%%/terrain.html
+%%DATADIR%%/data/fonts/README.txt
 %%DATADIR%%/data/fonts/arial.ttf
+%%DATADIR%%/data/fonts/masque.ttf
 %%DATADIR%%/data/joystick.conf
 %%DATADIR%%/data/models/README.txt
 %%DATADIR%%/data/models/a4/README.txt
@@ -417,11 +419,14 @@ bin/palomino
 %%DATADIR%%/data/shaders/inc_brightness_frag.glsl
 %%DATADIR%%/data/shaders/inc_color_vert.glsl
 %%DATADIR%%/data/shaders/inc_fog_frag.glsl
+%%DATADIR%%/data/shaders/inc_fog_vert.glsl
 %%DATADIR%%/data/shaders/inc_frag.glsl
 %%DATADIR%%/data/shaders/inc_shadow_frag.glsl
 %%DATADIR%%/data/shaders/inc_shadow_vert.glsl
 %%DATADIR%%/data/shaders/inc_vert.glsl
 %%DATADIR%%/data/shaders/module.txt
+%%DATADIR%%/data/shaders/nop_frag.glsl
+%%DATADIR%%/data/shaders/nop_vert.glsl
 %%DATADIR%%/data/shaders/reference/inc_DirectionalLight_vert.glsl
 %%DATADIR%%/data/shaders/reference/inc_PointLight_vert.glsl
 %%DATADIR%%/data/shaders/reference/inc_SpotLight_vert.glsl
@@ -461,7 +466,9 @@ bin/palomino
 %%DATADIR%%/scripts/hud.lua
 %%DATADIR%%/scripts/joystick.lua
 %%DATADIR%%/scripts/keyboard.lua
+%%DATADIR%%/scripts/keyboard_defs.lua
 %%DATADIR%%/scripts/lib.lua
+%%DATADIR%%/scripts/manipulator_mode.lua
 %%DATADIR%%/scripts/mission.lua
 %%DATADIR%%/scripts/mission_carrier.lua
 %%DATADIR%%/scripts/mission_ossim.lua
@@ -469,24 +476,14 @@ bin/palomino
 %%DATADIR%%/scripts/replay.lua
 %%DATADIR%%/scripts/scene.lua
 %%DATADIR%%/scripts/scene_GoldenGate.lua
-%%DATADIR%%/scripts/sim.lua
+%%DATADIR%%/scripts/sim_generic.lua
+%%DATADIR%%/scripts/sim_specific.lua
 %%DATADIR%%/scripts/sound.lua
 %%DATADIR%%/scripts/startup.lua
-%%DATADIR%%/scripts/tests/DerivedClass.lua
-%%DATADIR%%/scripts/tests/bools.lua
-%%DATADIR%%/scripts/tests/class_Test.lua
-%%DATADIR%%/scripts/tests/iterator.lua
-%%DATADIR%%/scripts/tests/lib.lua
-%%DATADIR%%/scripts/tests/numbers.lua
-%%DATADIR%%/scripts/tests/simple.lua
-%%DATADIR%%/scripts/tests/strings.lua
-%%DATADIR%%/scripts/tests/tables.lua
-%%DATADIR%%/scripts/tests/vec.lua
 %%DATADIR%%/scripts/tick.lua
 %%DATADIR%%/scripts/timer.lua
 %%DATADIR%%/scripts/views.lua
 %%DATADIR%%/scripts/weapons.lua
-@dirrm %%DATADIR%%/scripts/tests
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/data/textures
 @dirrm %%DATADIR%%/data/terrain

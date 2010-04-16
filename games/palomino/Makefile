@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	palomino
-PORTVERSION=	20090615
-PORTREVISION=	4
+PORTVERSION=	20100309
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}-sim/release_src/${PORTVERSION} \
-		ftp://ftp.palomino3d.org/sim/
-
+MASTER_SITES=	ftp://ftp.palomino3d.org/sim/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_data_misc_${MISC_VER}${EXTRACT_SUFX} \
 		${PORTNAME}_data_models_${MODELS_VER}${EXTRACT_SUFX} \
@@ -30,25 +27,30 @@ USE_LUA=	5.1
 LUA_COMPS=	lua:build
 MAKE_JOBS_SAFE=	yes
 
-MISC_VER=	20081206
+MISC_VER=	20091027
 MODELS_VER=	20090615
 SOUNDS_VER=	20080704
 TERRAIN_VER=	20080206
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	JOYSTICK "Enable joystick support through linux-js" on \
-		SOUND	"Enable sound support through plib" on \
+OPTIONS=	JOYSTICK "Enable joystick support through linux-js" off \
+		SDL	"SDL support for input sound and sound" on \
+		PLIB	"Enable sound support through plib" off \
 		GUI	"Enable FLTK GUI" on
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_JOYSTICK)
+.if defined(WITH_JOYSTICK)
 BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 RUN_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
 .endif
 
-.if !defined(WITHOUT_SOUND)
+.if !defined(WITHOUT_SDL)
+USE_SDL+=	sdl mixer
+.endif
+
+.if defined(WITHOUT_PLIB)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 .endif
 
@@ -59,21 +61,24 @@ LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
+	@${REINPLACE_CMD} -e '/ rt / d' ${WRKSRC}/CMakeModules/libraries.cmake
 	@${REINPLACE_CMD} -e '/COMMAND/ s|lua|${LUA_CMD}|' \
 		${WRKSRC}/build/lua_bind/CMakeLists.txt
-.if defined(WITHOUT_JOYSTICK)
-	@${REINPLACE_CMD} -e 's|OS_FREEBSD|0|' ${WRKSRC}/src/input/joystick.* \
-		${WRKSRC}/src/input/joystick_linux.* ${WRKSRC}/src/control/conf.cc
-.endif
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE(/ s|)| REQUIRED)|' \
-		${WRKSRC}/CMakeLists.txt
-.if defined(WITHOUT_SOUND)
-	@${REINPLACE_CMD} -e '/FIND_PACKAGE(PLIB/ d' ${WRKSRC}/CMakeLists.txt
+		${WRKSRC}/CMakeModules/libraries.cmake
+	@${REINPLACE_CMD} -e '/COMPILE_WITH_OSSIM/ d' ${WRKSRC}/CMakeLists.txt
+.if !defined(WITH_JOYSTICK)
+	@${REINPLACE_CMD} -e '/COMPILE_WITH_LINUX_JOYSTICK/ d' ${WRKSRC}/CMakeLists.txt
+.endif
+.if defined(WITHOUT_SDL)
+	@${REINPLACE_CMD} -e '/COMPILE_WITH_SDL/ d' ${WRKSRC}/CMakeLists.txt
+.endif
+.if !defined(WITH_PLIB)
+	@${REINPLACE_CMD} -e '/COMPILE_WITH_PLIB/ d' ${WRKSRC}/CMakeLists.txt
 .endif
 .if defined(WITHOUT_GUI)
-	@${REINPLACE_CMD} -e '/FIND_PACKAGE(FLTK/ d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/COMPILE_WITH_FLTK/ d' ${WRKSRC}/CMakeLists.txt
 .endif
-	@${REINPLACE_CMD} -e '/FIND_PACKAGE(OSSIM/ d' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|string sDataDir|&="${DATADIR}/data/"|'\
 	       	${WRKSRC}/src/base/conf.cc
 	@${REINPLACE_CMD} -e '/LUABIND_SCRIPTS_DIR/ s|"scripts"|"${DATADIR}/scripts"|' \
