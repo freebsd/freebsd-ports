@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mercury
-DISTVERSION=	2.0RC3-4
+DISTVERSION=	2.0${RCVER:U}
 PORTEPOCH=	8
 CATEGORIES=	net-im java
-MASTER_SITES=	${MASTER_SITE_LOCAL}		\
-		http://files.mercury.im/${PORTVERSION:R:R}/release/
-MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
-DISTNAME=	${DISTVERSION}
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_LOCAL}	\
+		http://files.mercury.im/${PORTVERSION:R}/release/${RCVER}/
+MASTER_SITE_SUBDIR=	thierry/${PORTNAME}/${RCVER}
+DISTNAME=	core
+DIST_SUBDIR=	${PORTNAME}/${RCVER}
 
 # Maintainership available: drop me a line if interested
 MAINTAINER=	thierry@FreeBSD.org
@@ -21,6 +21,8 @@ COMMENT=	Java Based MSN client
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 		jmfinit:${PORTSDIR}/java/jmf
+
+RCVER=		rc6
 
 USE_ZIP=	yes
 USE_JAVA=	yes
