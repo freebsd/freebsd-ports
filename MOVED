@@ -4363,3 +4363,4 @@ graphics/php5-ming||2010-04-09|Removed from core php
 security/php5-mhash|security/php5-hash|2010-04-09|Wrapper in hash extension
 databases/php5-oci8||2010-04-11|Doesn't support Oracle8 client library
 databases/php5-pdo_oci||2010-04-11|Doesn't support Oracle8 client library
+sysutils/rc_subr||2010-04-16|No longer needed

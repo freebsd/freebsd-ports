@@ -661,7 +661,6 @@
     SUBDIR += radeontool
     SUBDIR += radmind
     SUBDIR += raincoat
-    SUBDIR += rc_subr
     SUBDIR += rclean
     SUBDIR += rcsedit
     SUBDIR += rdate
