@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	exaile
-PORTVERSION=	0.3.1.0
-PORTREVISION=	1
+PORTVERSION=	${PORTVERSION_MAJOR}.${PORTVERSION_MINOR}
 CATEGORIES=	audio
-MASTER_SITES=	http://launchpadlibrarian.net/40974604/ \
+MASTER_SITES=	http://launchpad.net/${LP_DIR}/ \
 		http://wickedmachine.net/mirror/
 
 MAINTAINER=	jsa@wickedmachine.net
@@ -17,6 +16,7 @@ COMMENT=	A full featured python-based music player for GTK+
 
 RUN_DEPENDS=	py*-mutagen>=1.11:${PORTSDIR}/audio/py-mutagen
 
+FETCH_ARGS=	-pRr
 USE_GNOME=	pygtk2 librsvg2
 USE_GSTREAMER=	python good
 USE_PYTHON=	2.5+
@@ -33,6 +33,10 @@ OPTIONS=	BAD "Install bad GStreamer plugins" On \
 		NOTIFY "Enable desktop event notification" On \
 		NLS "Native Language Support" On \
 		SEXY "UI enhancements"  On
+
+PORTVERSION_MAJOR=	0.3.1
+PORTVERSION_MINOR=	1
+LP_DIR=		${PORTNAME}/${PORTVERSION_MAJOR}/${PORTVERSION}/+download
 
 .include <bsd.port.pre.mk>
 
