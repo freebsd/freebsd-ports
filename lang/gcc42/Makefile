@@ -53,14 +53,16 @@ WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-nls \
-		--with-system-zlib \
-		--with-libiconv-prefix=${LOCALBASE} \
-		--with-gmp=${LOCALBASE} \
-		--program-suffix=${SUFFIX} \
+CONFIGURE_ARGS+=--disable-nls \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
-		--with-gxx-include-dir=${TARGLIB}/include/c++/
+		--program-suffix=${SUFFIX} \
+		--with-as=/usr/bin/as \
+		--with-gmp=${LOCALBASE} \
+		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
+		--with-ld=/usr/bin/ld \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
