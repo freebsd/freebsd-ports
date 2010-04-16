@@ -2,7 +2,7 @@ bin/fish
 bin/fish_indent
 bin/fish_pager
 bin/fishd
-bin/seq
+%%SEQ%%bin/seq
 bin/mimedb
 bin/set_color
 %%ETCDIR%%/config.fish
