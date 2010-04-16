@@ -42,7 +42,7 @@ OPTIONS=	CLI "Build CLI version" on \
 		IPV6 "Enable ipv6 support" on \
 		MAILHEAD "Enable mail header patch" off
 
-CONFLICTS=	php4-4*
+CONFLICTS=	php4-4* php5-pcre-* php5-spl-*
 
 MAN1=		php-config.1 phpize.1
 
