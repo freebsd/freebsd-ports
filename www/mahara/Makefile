@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	mahara
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	www
-MASTER_SITES=	http://eduforge.org/frs/download.php/1055/
+MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.1/${PORTVERSION}/+download/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An open source ePortfolio system
 
+USE_BZIP2=	yes
 USE_PHP=	session json curl xml xmlrpc openssl simplexml
+FETCH_ARGS=	-pRr
 
 OPTIONS=	MYSQL   "Add support for a MySQL database server" On \
 		PGSQL   "Add support for a PostgreSQL database server" Off
