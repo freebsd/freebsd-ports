@@ -1,0 +1,11 @@
+--- src/dumb/SConscript.orig	2010-04-14 20:48:09.000000000 +0200
++++ src/dumb/SConscript	2010-04-14 20:48:09.000000000 +0200
+@@ -61,7 +61,7 @@
+ # helpers/resamp2.inc
+ # helpers/resamp3.inc
+ 
+-env.Append( CPPPATH = ['include','include/internal'] )
++env.Append( CPPPATH = ['/usr/local/include','include','include/internal'] )
+ env.Append( CCFLAGS = ['-Wall','-W','-Wwrite-strings','-Wstrict-prototypes','-Wmissing-declarations', '-O2', '-ffast-math', '-fomit-frame-pointer', '-Wno-missing-declarations'] )
+ 
+ env.Append( CPPDEFINES = 'DUMB_DECLARE_DEPRECATED' )
