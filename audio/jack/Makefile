@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jackit
-PORTVERSION=	0.116.2
-PORTREVISION=	4
+PORTVERSION=	0.118.0
 CATEGORIES=	audio
 MASTER_SITES=	http://jackaudio.org/downloads/
 DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
