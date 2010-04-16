@@ -18,7 +18,9 @@ COMMENT=	A fast tree with ordered data and expanded iterator support
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
 
-BROKEN=		does not build
+BROKEN=		does not build with new pyrex and it's not active maintained
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2010-04-29
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
