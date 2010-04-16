@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2010-01-26 22:06:42.000000000 +0300
-+++ CMakeLists.txt	2010-01-31 05:34:06.000000000 +0300
-@@ -89,7 +89,6 @@
+--- CMakeLists.txt.orig	2010-04-10 03:37:25.000000000 +0400
++++ CMakeLists.txt	2010-04-15 19:08:24.000000000 +0400
+@@ -92,7 +92,6 @@
  # Did we find wxWidgets ? This condition will fail for as long as the internal Vars do not point to the proper wxWidgets Configuration.
  IF(wxWidgets_FOUND)
  	# Include wxWidgets macros
@@ -8,7 +8,7 @@
  	IF(MSVC)
  		INCLUDE_DIRECTORIES( ${wxWidgets_ROOT_DIR}/include/msvc )
  	ENDIF(MSVC)
-@@ -97,6 +96,9 @@
+@@ -100,6 +99,9 @@
  		SET(wxWidgets_RC_DIR ${wxWidgets_ROOT_DIR}/include)
  	ENDIF(MINGW)
  	INCLUDE_DIRECTORIES( ${wxWidgets_INCLUDE_DIRS} )
@@ -18,7 +18,7 @@
  ELSE(wxWidgets_FOUND)
  	# For Convenience. If we cannot continue, inform the User.
  	MESSAGE( FATAL_ERROR "wxWidgets library not found! Please install the package to continue")
-@@ -117,7 +119,7 @@
+@@ -120,7 +122,7 @@
  
  	Add_Subdirectory( ${springlobby_SOURCE_DIR}/src/sound/alure )
  	INCLUDE_DIRECTORIES( ${springlobby_SOURCE_DIR}/src/sound/alure/include )
@@ -27,3 +27,11 @@
  ELSE ( OPTION_SOUND )
      # Disable sound.
      ADD_DEFINITIONS( -DDISABLE_SOUND )
+@@ -174,6 +176,7 @@
+ 	LIST( APPEND SLSharedWithSettings ${curlSRC} )
+ ELSE( OPTION_TORRENT_SYSTEM )
+ 	ADD_DEFINITIONS( -DNO_TORRENT_SYSTEM )
++	LIST( APPEND SLSharedWithSettings ${curlSRC} )
+ ENDIF( OPTION_TORRENT_SYSTEM )
+ 
+ 
