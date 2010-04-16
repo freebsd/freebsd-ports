@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	2.9.6
-PORTREVISION=	3
+PORTVERSION=	2.9.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -32,9 +31,9 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=62 \
-		OPENTHREADS_VERSION=2.4.0 \
-		OPENTHREADS_SHLIBVER=11
+		OSG_SHLIBVER=63 \
+		OPENTHREADS_VERSION=2.5.0 \
+		OPENTHREADS_SHLIBVER=12
 
 PORTSCOUT=	limitw:1,odd
 
@@ -229,6 +228,8 @@ USE_XORG+=	xrandr
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
+	@${REINPLACE_CMD} -e '/FIND_LIBRARY.*DL_LIBRARY/ d' \
+		${WRKSRC}/CMakeLists.txt
 .for p in ${FORCE_REQUIRE}
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*${p}/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/CMakeLists.txt
