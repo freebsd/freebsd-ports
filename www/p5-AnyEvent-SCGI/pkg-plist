@@ -1,0 +1,3 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/SCGI/.packlist
+%%SITE_PERL%%/AnyEvent/SCGI.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/SCGI
