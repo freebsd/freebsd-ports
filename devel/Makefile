@@ -2150,6 +2150,7 @@
     SUBDIR += p5-Test-TAP-HTMLMatrix
     SUBDIR += p5-Test-TAP-Model
     SUBDIR += p5-Test-TCP
+    SUBDIR += p5-Test-Taint
     SUBDIR += p5-Test-TempDir
     SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Unit
