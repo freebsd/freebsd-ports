@@ -618,6 +618,7 @@
     SUBDIR += p5-Games-GuessWord
     SUBDIR += p5-Games-Tournament-RoundRobin
     SUBDIR += pachi
+    SUBDIR += paintown
     SUBDIR += palomino
     SUBDIR += passage
     SUBDIR += pathological
