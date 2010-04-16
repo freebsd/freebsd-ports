@@ -519,8 +519,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Implies inclusion of bsd.xorg.mk.
 ##
 # USE_RC_SUBR	- If set, the ports startup/shutdown script uses the common
-#				  routines found in etc/rc.subr and may need to
-#				  depend on the sysutils/rc_subr port.
+#				  routines found in /etc/rc.subr.
 #				  If this is set to a list of files, these files will be
 #				  automatically added to ${SUB_FILES}, some %%VAR%%'s will
 #				  automatically be expanded, they will be installed in
@@ -528,10 +527,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_RCORDER	- List of rc.d startup scripts to be called early in the boot
 #				  process. This acts exactly like USE_RC_SUBR except that
 #				  scripts are installed in /etc/rc.d.
-# RC_SUBR		- Set to path of rc.subr.
-#				  Default: ${LOCALBASE}/etc/rc.subr.
-# RC_SUBR_SUFFIX
-#				- Contains the suffix of installed rc.subr scripts.
+#				  Because local rc.d scripts are included in the base rcorder
+#				  this option is not needed unless the port installs in the base.
 ##
 # USE_APACHE	- If set, this port relies on an apache webserver.
 #
@@ -1637,7 +1634,7 @@ SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 PLIST_REINPLACE+=	dirrmtry stopdaemon rmtry
 PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir %D/\1 2>/dev/null || true!
 PLIST_REINPLACE_RMTRY=s!^@rmtry \(.*\)!@unexec rm -f %D/\1 2>/dev/null || true!
-PLIST_REINPLACE_STOPDAEMON=s!^@stopdaemon \(.*\)!@unexec %D/etc/rc.d/\1${RC_SUBR_SUFFIX} forcestop 2>/dev/null || true!
+PLIST_REINPLACE_STOPDAEMON=s!^@stopdaemon \(.*\)!@unexec %D/etc/rc.d/\1 forcestop 2>/dev/null || true!
 
 # kludge to strip trailing whitespace from CFLAGS;
 # sub-configure will not # survive double space
@@ -1867,20 +1864,12 @@ IGNORE=		cannot be built with unknown FAM system: ${FAM_SYSTEM}
 .endif
 .endif # USE_FAM
 
-.if defined(USE_RC_SUBR) || defined(USE_RCORDER)
-RC_SUBR=	/etc/rc.subr
-SUB_LIST+=	RC_SUBR=${RC_SUBR}
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 SUB_FILES+=	${USE_RC_SUBR}
 .endif
+
 .if defined(USE_RCORDER)
 SUB_FILES+=	${USE_RCORDER}
-.endif
-.if (${OSVERSION} >= 700007 || ${OSVERSION} < 700000)
-RC_SUBR_SUFFIX?=
-.else
-RC_SUBR_SUFFIX?=	.sh
-.endif
 .endif
 
 .if defined(USE_LDCONFIG) && ${USE_LDCONFIG:L} == "yes"
@@ -5944,8 +5933,8 @@ install-rc-script:
 	@${ECHO_MSG} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 	@for i in ${USE_RC_SUBR}; do \
-		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${PREFIX}/etc/rc.d/$${i%.sh}${RC_SUBR_SUFFIX}; \
-		${ECHO_CMD} "etc/rc.d/$${i%.sh}${RC_SUBR_SUFFIX}" >> ${TMPPLIST}; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${PREFIX}/etc/rc.d/$${i%.sh}; \
+		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
 	done
 .endif
 .else
