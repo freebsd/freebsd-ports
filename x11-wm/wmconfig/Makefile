@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.arrishq.net/downloads/
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	net@arrishq.net
 COMMENT=	Menu generation tool for X window managers
 
 USE_BZIP2=	yes
