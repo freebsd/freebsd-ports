@@ -62,7 +62,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <url>http://www.sudo.ws/pipermail/sudo-announce/2010-April/000093.html</url>
       <url>http://www.sudo.ws/sudo/alerts/sudoedit_escalate2.html</url>
-      <cvename>CVE-2010-0426</cvename>
+      <cvename>CVE-2010-1163</cvename>
     </references>
     <dates>
       <discovery>2010-04-09</discovery>
