@@ -4,6 +4,7 @@
 #
 # PROVIDE: vtund
 # REQUIRE: DAEMON
+# KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable vtund:
 #
