@@ -2,10 +2,9 @@
 
 # PROVIDE: fcgi_spawn
 # REQUIRE: LOGIN %%MYSQL%% %%PGSQL%%
-# BEFORE: 
 # KEYWORD: shutdown
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="fcgi_spawn"
 rcvar=${name}_enable
