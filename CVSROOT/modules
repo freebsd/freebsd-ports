@@ -1872,6 +1872,7 @@ cppunit                         ports/devel/cppunit
 cproto                          ports/devel/cproto
 cpu                             ports/sysutils/cpu
 cpuburn                         ports/sysutils/cpuburn
+cpuflags                        ports/devel/cpuflags
 cpuid                           ports/misc/cpuid
 cpupowerd                       ports/sysutils/cpupowerd
 cqcam                           ports/graphics/cqcam
@@ -9018,6 +9019,7 @@ mimetex                         ports/www/mimetex
 mimir                           ports/devel/mimir
 mimms                           ports/multimedia/mimms
 min12xxw                        ports/print/min12xxw
+minbif                          ports/irc/minbif
 minc                            ports/science/minc
 minc2                           ports/science/minc2
 minder                          ports/net-p2p/minder
@@ -24999,6 +25001,7 @@ xf86-video-openchrome           ports/x11-drivers/xf86-video-openchrome
 xf86-video-r128                 ports/x11-drivers/xf86-video-r128
 xf86-video-radeonhd             ports/x11-drivers/xf86-video-radeonhd
 xf86-video-radeonhd-devel       ports/x11-drivers/xf86-video-radeonhd-devel
+xf86-video-rdc                  ports/x11-drivers/xf86-video-rdc
 xf86-video-rendition            ports/x11-drivers/xf86-video-rendition
 xf86-video-s3                   ports/x11-drivers/xf86-video-s3
 xf86-video-s3virge              ports/x11-drivers/xf86-video-s3virge
