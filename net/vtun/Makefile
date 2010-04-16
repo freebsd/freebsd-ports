@@ -7,11 +7,11 @@
 
 PORTNAME=	vtun
 PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
 LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
