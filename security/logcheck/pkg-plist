@@ -212,6 +212,7 @@ sbin/logtail2
 @dirrm %%ETCDIR%%
 @dirrm %%DATADIR%%/detectrotate
 @dirrm %%DATADIR%%
+@cwd /
 @exec mkdir -p /var/db/logcheck
 @dirrmtry /var/db/logcheck
 @exec mkdir -p /var/run/logcheck
