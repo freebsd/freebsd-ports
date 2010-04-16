@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Handle/Util/.packlist
+%%SITE_PERL%%/IO/Handle/Iterator.pm
+%%SITE_PERL%%/IO/Handle/Prototype.pm
+%%SITE_PERL%%/IO/Handle/Prototype/Fallback.pm
+%%SITE_PERL%%/IO/Handle/Util.pm
+%%SITE_PERL%%/IO/Handle/Util/Overloading.pm
+%%SITE_PERL%%/IO/Handle/Util/Tie.pm
+@dirrm %%SITE_PERL%%/IO/Handle/Util
+@dirrmtry %%SITE_PERL%%/IO/Handle/Prototype
+@dirrmtry %%SITE_PERL%%/IO/Handle
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Handle/Util
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Handle
