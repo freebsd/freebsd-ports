@@ -3,6 +3,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/en/rel_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/html/Bugzilla-Guide.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/about.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/administration.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Attachment.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Auth.html
@@ -10,6 +12,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Auth/Verify.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/CGI.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Classification.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Comment.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Component.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Config.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Config/Common.html
@@ -19,6 +22,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Pg.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/DB/Schema.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Error.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Extension.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Field.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Field/Choice.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Flag.html
@@ -35,6 +39,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/JobQueue.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/JobQueue/Runner.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Keyword.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Migrate.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Milestone.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Object.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Product.html
@@ -57,21 +62,27 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Bug.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Bugzilla.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Product.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Server/JSONRPC.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Server/XMLRPC.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/User.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/WebService/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Whine/Query.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/Bugzilla/Whine/Schedule.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/checksetup.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/bz_webservice_demo.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/bzdbcopy.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/console.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/extension-convert.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/merge-users.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/contrib/recode.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/email_in.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/extensions/create.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/importxml.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/index.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/install-module.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/jobqueue.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/api/migrate.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/api/sanitycheck.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/about.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/administration.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/attachments.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/bug_page.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/bug_status_workflow.html
@@ -85,13 +96,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/html/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/credits.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/cust-change-permissions.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/cust-hooks.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/cust-skins.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/cust-templates.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/customization.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/custom-fields.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/customization.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/disclaimer.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/edit-values.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/extraconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/flags-overview.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/flags.html
@@ -146,7 +157,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-passwd-encryption.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-perlmodule.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-relogin-everyone.html
-%%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-relogin-some.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/trbl-testserver.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/troubleshooting.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/upgrade.html
@@ -178,7 +188,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/glossary.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/index.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/installation.xml
-%%PORTDOCS%%%%DOCSDIR%%/en/xml/introduction.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/modules.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/patches.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/security.xml
@@ -206,9 +215,11 @@
 %%BUGZILLADIR%%/Bugzilla/CGI.pm
 %%BUGZILLADIR%%/Bugzilla/Chart.pm
 %%BUGZILLADIR%%/Bugzilla/Classification.pm
+%%BUGZILLADIR%%/Bugzilla/Comment.pm
 %%BUGZILLADIR%%/Bugzilla/Component.pm
 %%BUGZILLADIR%%/Bugzilla/Config.pm
 %%BUGZILLADIR%%/Bugzilla/Config/Admin.pm
+%%BUGZILLADIR%%/Bugzilla/Config/Advanced.pm
 %%BUGZILLADIR%%/Bugzilla/Config/Attachment.pm
 %%BUGZILLADIR%%/Bugzilla/Config/Auth.pm
 %%BUGZILLADIR%%/Bugzilla/Config/BugChange.pm
@@ -217,6 +228,7 @@
 %%BUGZILLADIR%%/Bugzilla/Config/Common.pm
 %%BUGZILLADIR%%/Bugzilla/Config/Core.pm
 %%BUGZILLADIR%%/Bugzilla/Config/DependencyGraph.pm
+%%BUGZILLADIR%%/Bugzilla/Config/General.pm
 %%BUGZILLADIR%%/Bugzilla/Config/GroupSecurity.pm
 %%BUGZILLADIR%%/Bugzilla/Config/LDAP.pm
 %%BUGZILLADIR%%/Bugzilla/Config/MTA.pm
@@ -235,6 +247,7 @@
 %%BUGZILLADIR%%/Bugzilla/DB/Schema/Oracle.pm
 %%BUGZILLADIR%%/Bugzilla/DB/Schema/Pg.pm
 %%BUGZILLADIR%%/Bugzilla/Error.pm
+%%BUGZILLADIR%%/Bugzilla/Extension.pm
 %%BUGZILLADIR%%/Bugzilla/Field.pm
 %%BUGZILLADIR%%/Bugzilla/Field/Choice.pm
 %%BUGZILLADIR%%/Bugzilla/Flag.pm
@@ -253,6 +266,8 @@
 %%BUGZILLADIR%%/Bugzilla/JobQueue/Runner.pm
 %%BUGZILLADIR%%/Bugzilla/Keyword.pm
 %%BUGZILLADIR%%/Bugzilla/Mailer.pm
+%%BUGZILLADIR%%/Bugzilla/Migrate.pm
+%%BUGZILLADIR%%/Bugzilla/Migrate/Gnats.pm
 %%BUGZILLADIR%%/Bugzilla/Milestone.pm
 %%BUGZILLADIR%%/Bugzilla/Object.pm
 %%BUGZILLADIR%%/Bugzilla/Product.pm
@@ -262,6 +277,7 @@
 %%BUGZILLADIR%%/Bugzilla/Series.pm
 %%BUGZILLADIR%%/Bugzilla/Status.pm
 %%BUGZILLADIR%%/Bugzilla/Template.pm
+%%BUGZILLADIR%%/Bugzilla/Template/Context.pm
 %%BUGZILLADIR%%/Bugzilla/Template/Plugin/Bugzilla.pm
 %%BUGZILLADIR%%/Bugzilla/Template/Plugin/Hook.pm
 %%BUGZILLADIR%%/Bugzilla/Template/Plugin/User.pm
@@ -279,10 +295,14 @@
 %%BUGZILLADIR%%/Bugzilla/WebService/Bugzilla.pm
 %%BUGZILLADIR%%/Bugzilla/WebService/Constants.pm
 %%BUGZILLADIR%%/Bugzilla/WebService/Product.pm
+%%BUGZILLADIR%%/Bugzilla/WebService/README
 %%BUGZILLADIR%%/Bugzilla/WebService/Server.pm
+%%BUGZILLADIR%%/Bugzilla/WebService/Server/JSONRPC.pm
 %%BUGZILLADIR%%/Bugzilla/WebService/Server/XMLRPC.pm
 %%BUGZILLADIR%%/Bugzilla/WebService/User.pm
 %%BUGZILLADIR%%/Bugzilla/WebService/Util.pm
+%%BUGZILLADIR%%/Bugzilla/Whine/Query.pm
+%%BUGZILLADIR%%/Bugzilla/Whine/Schedule.pm
 %%BUGZILLADIR%%/README
 %%BUGZILLADIR%%/admin.cgi
 %%BUGZILLADIR%%/attachment.cgi
@@ -295,11 +315,14 @@
 %%BUGZILLADIR%%/config.cgi
 %%BUGZILLADIR%%/sanitycheck.pl
 %%BUGZILLADIR%%/jobqueue.pl
+%%BUGZILLADIR%%/jsonrpc.cgi
+%%BUGZILLADIR%%/migrate.pl
 %%BUGZILLADIR%%/js/TUI.js
 %%BUGZILLADIR%%/js/attachment.js
 %%BUGZILLADIR%%/js/change-columns.js
 %%BUGZILLADIR%%/js/expanding-tree.js
 %%BUGZILLADIR%%/js/field.js
+%%BUGZILLADIR%%/js/flag.js
 %%BUGZILLADIR%%/js/global.js
 %%BUGZILLADIR%%/js/help.js
 %%BUGZILLADIR%%/js/params.js
@@ -338,9 +361,10 @@
 %%BUGZILLADIR%%/skins/standard/index/account.gif
 %%BUGZILLADIR%%/skins/standard/index/bug.gif
 %%BUGZILLADIR%%/skins/standard/index/search.gif
+%%BUGZILLADIR%%/skins/standard/page.css
 %%BUGZILLADIR%%/skins/standard/panel.css
 %%BUGZILLADIR%%/skins/standard/params.css
-%%BUGZILLADIR%%/skins/standard/release-notes.css
+%%BUGZILLADIR%%/skins/standard/reports.css
 %%BUGZILLADIR%%/skins/standard/show_bug.css
 %%BUGZILLADIR%%/skins/standard/show_multiple.css
 %%BUGZILLADIR%%/skins/standard/summarize-time.css
@@ -354,8 +378,8 @@
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla-submit/bugzilla-submit
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla-submit/bugzilla-submit.xml
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bugzilla_ldapsync.rb
-%%CONTRIB%%%%BUGZILLADIR%%/contrib/bzdbcopy.pl
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/bz_webservice_demo.pl
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/bzdbcopy.pl
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/bugcount
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/bugids
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/buglist
@@ -363,12 +387,10 @@
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/bugslink
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/makequery
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cmdline/query.conf
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/console.pl
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/cvs-update.pl
-%%CONTRIB%%%%BUGZILLADIR%%/contrib/gnats2bz.pl
-%%CONTRIB%%%%BUGZILLADIR%%/contrib/gnatsparse/README
-%%CONTRIB%%%%BUGZILLADIR%%/contrib/gnatsparse/gnatsparse.py
-%%CONTRIB%%%%BUGZILLADIR%%/contrib/gnatsparse/magic.py
-%%CONTRIB%%%%BUGZILLADIR%%/contrib/gnatsparse/specialuu.py
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/extension-convert.pl
+%%CONTRIB%%%%BUGZILLADIR%%/contrib/fixperms.pl
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/jb2bz.py
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/merge-users.pl
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/mysqld-watcher.pl
@@ -448,6 +470,7 @@
 %%BUGZILLADIR%%/template/en/default/admin/classifications/add.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/classifications/del.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/classifications/edit.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/classifications/footer.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/classifications/reclassify.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/classifications/select.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/components/confirm-delete.html.tmpl
@@ -487,6 +510,7 @@
 %%BUGZILLADIR%%/template/en/default/admin/milestones/list.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/milestones/select-product.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/admin.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/params/advanced.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/attachment.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/auth.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/bugchange.html.tmpl
@@ -496,6 +520,7 @@
 %%BUGZILLADIR%%/template/en/default/admin/params/core.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/dependencygraph.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/editparams.html.tmpl
+%%BUGZILLADIR%%/template/en/default/admin/params/general.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/groupsecurity.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/index.html.tmpl
 %%BUGZILLADIR%%/template/en/default/admin/params/ldap.html.tmpl
@@ -579,6 +604,7 @@
 %%BUGZILLADIR%%/template/en/default/bug/process/midair.html.tmpl
 %%BUGZILLADIR%%/template/en/default/bug/process/results.html.tmpl
 %%BUGZILLADIR%%/template/en/default/bug/process/verify-new-product.html.tmpl
+%%BUGZILLADIR%%/template/en/default/bug/show-header.html.tmpl
 %%BUGZILLADIR%%/template/en/default/bug/show-multiple.html.tmpl
 %%BUGZILLADIR%%/template/en/default/bug/show.html.tmpl
 %%BUGZILLADIR%%/template/en/default/bug/show.xml.tmpl
@@ -589,11 +615,18 @@
 %%BUGZILLADIR%%/template/en/default/bug/votes/list-for-user.html.tmpl
 %%BUGZILLADIR%%/template/en/default/config.js.tmpl
 %%BUGZILLADIR%%/template/en/default/config.rdf.tmpl
+%%BUGZILLADIR%%/template/en/default/email/lockout.txt.tmpl
 %%BUGZILLADIR%%/template/en/default/email/newchangedmail.txt.tmpl
 %%BUGZILLADIR%%/template/en/default/email/sanitycheck.txt.tmpl
 %%BUGZILLADIR%%/template/en/default/email/sudo.txt.tmpl
 %%BUGZILLADIR%%/template/en/default/email/votes-removed.txt.tmpl
 %%BUGZILLADIR%%/template/en/default/email/whine.txt.tmpl
+%%BUGZILLADIR%%/template/en/default/extensions/config.pm.tmpl
+%%BUGZILLADIR%%/template/en/default/extensions/extension.pm.tmpl
+%%BUGZILLADIR%%/template/en/default/extensions/hook-readme.txt.tmpl
+%%BUGZILLADIR%%/template/en/default/extensions/license.txt.tmpl
+%%BUGZILLADIR%%/template/en/default/extensions/name-readme.txt.tmpl
+%%BUGZILLADIR%%/template/en/default/extensions/util.pm.tmpl
 %%BUGZILLADIR%%/template/en/default/filterexceptions.pl
 %%BUGZILLADIR%%/template/en/default/flag/list.html.tmpl
 %%BUGZILLADIR%%/template/en/default/global/banner.html.tmpl
@@ -643,7 +676,6 @@
 %%BUGZILLADIR%%/template/en/default/pages/linked.html.tmpl
 %%BUGZILLADIR%%/template/en/default/pages/linkify.html.tmpl
 %%BUGZILLADIR%%/template/en/default/pages/quicksearch.html.tmpl
-%%BUGZILLADIR%%/template/en/default/pages/quicksearchhack.html.tmpl
 %%BUGZILLADIR%%/template/en/default/pages/release-notes.html.tmpl
 %%BUGZILLADIR%%/template/en/default/pages/sudo.html.tmpl
 %%BUGZILLADIR%%/template/en/default/pages/voting.html.tmpl
@@ -652,6 +684,7 @@
 %%BUGZILLADIR%%/template/en/default/reports/chart.png.tmpl
 %%BUGZILLADIR%%/template/en/default/reports/components.html.tmpl
 %%BUGZILLADIR%%/template/en/default/reports/create-chart.html.tmpl
+%%BUGZILLADIR%%/template/en/default/reports/delete-series.html.tmpl
 %%BUGZILLADIR%%/template/en/default/reports/duplicates-simple.html.tmpl
 %%BUGZILLADIR%%/template/en/default/reports/duplicates-table.html.tmpl
 %%BUGZILLADIR%%/template/en/default/reports/duplicates.html.tmpl
@@ -691,7 +724,6 @@
 %%BUGZILLADIR%%/template/en/default/whine/mail.txt.tmpl
 %%BUGZILLADIR%%/template/en/default/whine/multipart-mime.txt.tmpl
 %%BUGZILLADIR%%/template/en/default/whine/schedule.html.tmpl
-%%BUGZILLADIR%%/template/en/extension/filterexceptions.pl
 %%BUGZILLADIR%%/testagent.cgi
 %%BUGZILLADIR%%/testserver.pl
 %%BUGZILLADIR%%/token.cgi
@@ -701,7 +733,6 @@
 %%BUGZILLADIR%%/whineatnews.pl
 %%BUGZILLADIR%%/xml.cgi
 %%BUGZILLADIR%%/xmlrpc.cgi
-@dirrm %%BUGZILLADIR%%/template/en/extension
 @dirrm %%BUGZILLADIR%%/template/en/default/whine
 @dirrm %%BUGZILLADIR%%/template/en/default/setup
 @dirrm %%BUGZILLADIR%%/template/en/default/search
@@ -711,6 +742,7 @@
 @dirrm %%BUGZILLADIR%%/template/en/default/list
 @dirrm %%BUGZILLADIR%%/template/en/default/global
 @dirrm %%BUGZILLADIR%%/template/en/default/flag
+@dirrm %%BUGZILLADIR%%/template/en/default/extensions
 @dirrm %%BUGZILLADIR%%/template/en/default/email
 @dirrm %%BUGZILLADIR%%/template/en/default/bug/votes
 @dirrm %%BUGZILLADIR%%/template/en/default/bug/process
@@ -743,10 +775,10 @@
 @dirrm %%BUGZILLADIR%%/template/en/default
 @dirrm %%BUGZILLADIR%%/template/en
 @dirrmtry %%BUGZILLADIR%%/template
-%%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/gnatsparse
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/cmdline
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/bugzilla-submit
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib
+@dirrm %%BUGZILLADIR%%/Bugzilla/Whine
 @dirrm %%BUGZILLADIR%%/Bugzilla/WebService/Server
 @dirrm %%BUGZILLADIR%%/Bugzilla/WebService
 @dirrm %%BUGZILLADIR%%/Bugzilla/User/Setting
@@ -754,6 +786,7 @@
 @dirrm %%BUGZILLADIR%%/Bugzilla/Template/Plugin
 @dirrm %%BUGZILLADIR%%/Bugzilla/Template
 @dirrm %%BUGZILLADIR%%/Bugzilla/Search
+@dirrm %%BUGZILLADIR%%/Bugzilla/Migrate
 @dirrm %%BUGZILLADIR%%/Bugzilla/JobQueue
 @dirrm %%BUGZILLADIR%%/Bugzilla/Job
 @dirrm %%BUGZILLADIR%%/Bugzilla/Install
@@ -792,7 +825,10 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/images/callouts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en/html/api/extensions
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/contrib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/Whine
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/WebService/Server
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/WebService
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/User/Setting
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html/api/Bugzilla/User

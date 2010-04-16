@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.4.6
-PORTREVISION=	1
+PORTVERSION=	3.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -26,6 +25,7 @@ OPTIONS=	MYSQL "MySQL database support" off \
 		MOVE_BUGZ "Move Bugs Between Installations" off \
 		BMP2PNG "BMP Attachments to PNGs" off \
 		XMLRPC "XML-RPC Interface" off \
+		JSONRPC "JSON-RPC Interface" off \
 		MODPERL2 "With mod_perl2 support" off \
 		GRAPHVIZ "Use GraphViz" off \
 		EXPORT_IMPORT "Import/export bugs (via XML)" off \
@@ -90,7 +90,7 @@ RUN_DEPENDS+=	p5-GD>=1.20:${PORTSDIR}/graphics/p5-GD \
 .endif
 
 .ifdef WITH_CHARTING_MODULES
-RUN_DEPENDS+=	p5-Chart>=1.0:${PORTSDIR}/graphics/p5-chart
+RUN_DEPENDS+=	p5-Chart>=2.1:${PORTSDIR}/graphics/p5-chart
 .endif
 
 .ifdef WITH_PATCH_VIEWER
@@ -122,8 +122,16 @@ RUN_DEPENDS+=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
 .endif
 
+.if defined(WITH_XMLRPC) || defined(WITH_JSONRPC)
+RUN_DEPENDS+=	p5-Test-Taint>=0:${PORTSDIR}/devel/p5-Test-Taint
+.endif
+
 .ifdef WITH_XMLRPC
 RUN_DEPENDS+=	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
+.endif
+
+.ifdef WITH_JSONRPC
+RUN_DEPENDS+=	p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC
 .endif
 
 .ifdef WITH_MODPERL2
