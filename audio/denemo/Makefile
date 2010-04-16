@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	denemo
-PORTVERSION=	0.8.12
-PORTREVISION=	2
+PORTVERSION=	0.8.14
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
@@ -20,7 +19,7 @@ LIB_DEPENDS=	aubio.3:${PORTSDIR}/audio/aubio \
 		jack.0:${PORTSDIR}/audio/jack \
 		guile.20:${PORTSDIR}/lang/guile \
 		fftw3.5:${PORTSDIR}/math/fftw3
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	gtk20 gtksourceview2 librsvg2 libxml2
 USE_BISON=	build
@@ -36,6 +35,15 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.else
+USE_GETTEXT=		yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=		NLS=""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|m4 doc actions|m4 actions| ; \
