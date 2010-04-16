@@ -1,0 +1,56 @@
+bin/dancer
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/.packlist
+%%SITE_PERL%%/Dancer.pm
+%%SITE_PERL%%/Dancer/Config.pm
+%%SITE_PERL%%/Dancer/Cookbook.pod
+%%SITE_PERL%%/Dancer/Cookie.pm
+%%SITE_PERL%%/Dancer/Cookies.pm
+%%SITE_PERL%%/Dancer/Deployment.pod
+%%SITE_PERL%%/Dancer/Engine.pm
+%%SITE_PERL%%/Dancer/Error.pm
+%%SITE_PERL%%/Dancer/FileUtils.pm
+%%SITE_PERL%%/Dancer/GetOpt.pm
+%%SITE_PERL%%/Dancer/HTTP.pm
+%%SITE_PERL%%/Dancer/Handler.pm
+%%SITE_PERL%%/Dancer/Handler/PSGI.pm
+%%SITE_PERL%%/Dancer/Handler/Standalone.pm
+%%SITE_PERL%%/Dancer/Helpers.pm
+%%SITE_PERL%%/Dancer/Logger.pm
+%%SITE_PERL%%/Dancer/Logger/Abstract.pm
+%%SITE_PERL%%/Dancer/Logger/File.pm
+%%SITE_PERL%%/Dancer/ModuleLoader.pm
+%%SITE_PERL%%/Dancer/Object.pm
+%%SITE_PERL%%/Dancer/Plugin.pm
+%%SITE_PERL%%/Dancer/Renderer.pm
+%%SITE_PERL%%/Dancer/Request.pm
+%%SITE_PERL%%/Dancer/Request/Upload.pm
+%%SITE_PERL%%/Dancer/Response.pm
+%%SITE_PERL%%/Dancer/Route.pm
+%%SITE_PERL%%/Dancer/Route/Builder.pm
+%%SITE_PERL%%/Dancer/Route/Cache.pm
+%%SITE_PERL%%/Dancer/Route/Registry.pm
+%%SITE_PERL%%/Dancer/Serializer.pm
+%%SITE_PERL%%/Dancer/Serializer/Abstract.pm
+%%SITE_PERL%%/Dancer/Serializer/Dumper.pm
+%%SITE_PERL%%/Dancer/Serializer/JSON.pm
+%%SITE_PERL%%/Dancer/Serializer/Mutable.pm
+%%SITE_PERL%%/Dancer/Serializer/XML.pm
+%%SITE_PERL%%/Dancer/Serializer/YAML.pm
+%%SITE_PERL%%/Dancer/Session.pm
+%%SITE_PERL%%/Dancer/Session/Abstract.pm
+%%SITE_PERL%%/Dancer/Session/Simple.pm
+%%SITE_PERL%%/Dancer/Session/YAML.pm
+%%SITE_PERL%%/Dancer/SharedData.pm
+%%SITE_PERL%%/Dancer/Template.pm
+%%SITE_PERL%%/Dancer/Template/Abstract.pm
+%%SITE_PERL%%/Dancer/Template/Simple.pm
+%%SITE_PERL%%/Dancer/Template/TemplateToolkit.pm
+@dirrm %%SITE_PERL%%/Dancer/Template
+@dirrm %%SITE_PERL%%/Dancer/Session
+@dirrm %%SITE_PERL%%/Dancer/Serializer
+@dirrm %%SITE_PERL%%/Dancer/Route
+@dirrm %%SITE_PERL%%/Dancer/Request
+@dirrm %%SITE_PERL%%/Dancer/Logger
+@dirrm %%SITE_PERL%%/Dancer/Handler
+@dirrm %%SITE_PERL%%/Dancer
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer
