@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-FastCGI
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
-COMMENT=	Perl extension for FastCGI
+COMMENT=	Perl extension for FastCGI Toolkit
 
 PERL_CONFIGURE=	yes
 
