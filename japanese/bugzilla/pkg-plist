@@ -216,7 +216,6 @@
 %%BUGZILLADIR%%/template/ja/default/pages/linked.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/pages/linkify.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/pages/quicksearch.html.tmpl
-%%BUGZILLADIR%%/template/ja/default/pages/quicksearchhack.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/pages/release-notes.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/pages/sudo.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/pages/voting.html.tmpl
@@ -264,7 +263,6 @@
 %%BUGZILLADIR%%/template/ja/default/whine/mail.txt.tmpl
 %%BUGZILLADIR%%/template/ja/default/whine/multipart-mime.txt.tmpl
 %%BUGZILLADIR%%/template/ja/default/whine/schedule.html.tmpl
-%%BUGZILLADIR%%/template/ja/extension/filterexceptions.pl
 @dirrmtry %%BUGZILLADIR%%/template/ja/extension
 @dirrmtry %%BUGZILLADIR%%/template/ja/default/whine
 @dirrmtry %%BUGZILLADIR%%/template/ja/default/setup
