@@ -7,7 +7,7 @@ include/cdialog/dlg_keys.h
 lib/libcdialog.a
 lib/libcdialog.la
 lib/libcdialog.so
-lib/libcdialog.so.6
+lib/libcdialog.so.7
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/calendar
 %%EXAMPLESDIR%%/calendar-stdout
@@ -20,6 +20,7 @@ lib/libcdialog.so.6
 %%EXAMPLESDIR%%/checklist-utf8
 %%EXAMPLESDIR%%/checklist1
 %%EXAMPLESDIR%%/checklist10
+%%EXAMPLESDIR%%/checklist11
 %%EXAMPLESDIR%%/checklist2
 %%EXAMPLESDIR%%/checklist3
 %%EXAMPLESDIR%%/checklist4
@@ -55,6 +56,7 @@ lib/libcdialog.so.6
 %%EXAMPLESDIR%%/editbox-utf8
 %%EXAMPLESDIR%%/editbox2
 %%EXAMPLESDIR%%/editbox3
+%%EXAMPLESDIR%%/editbox4
 %%EXAMPLESDIR%%/form1
 %%EXAMPLESDIR%%/form1-both
 %%EXAMPLESDIR%%/form1-extra
@@ -75,7 +77,6 @@ lib/libcdialog.so.6
 %%EXAMPLESDIR%%/gauge0
 %%EXAMPLESDIR%%/gauge0-input-fd
 %%EXAMPLESDIR%%/gauge2
-%%EXAMPLESDIR%%/gauge3
 %%EXAMPLESDIR%%/infobox
 %%EXAMPLESDIR%%/infobox1
 %%EXAMPLESDIR%%/infobox2
@@ -146,10 +147,20 @@ lib/libcdialog.so.6
 %%EXAMPLESDIR%%/progress2
 %%EXAMPLESDIR%%/radiolist
 %%EXAMPLESDIR%%/radiolist10
+%%EXAMPLESDIR%%/radiolist1
 %%EXAMPLESDIR%%/radiolist2
 %%EXAMPLESDIR%%/radiolist3
 %%EXAMPLESDIR%%/radiolist4
+%%EXAMPLESDIR%%/report-button
+%%EXAMPLESDIR%%/report-edit
+%%EXAMPLESDIR%%/report-tempfile
+%%EXAMPLESDIR%%/report-string
+%%EXAMPLESDIR%%/report-yesno
 %%EXAMPLESDIR%%/rotated-data
+%%EXAMPLESDIR%%/setup-edit
+%%EXAMPLESDIR%%/setup-tempfile
+%%EXAMPLESDIR%%/setup-utf8
+%%EXAMPLESDIR%%/setup-vars
 %%EXAMPLESDIR%%/slackware.rc
 %%EXAMPLESDIR%%/suse.rc
 %%EXAMPLESDIR%%/sourcemage.rc
@@ -172,8 +183,10 @@ lib/libcdialog.so.6
 %%EXAMPLESDIR%%/yesno-both
 %%EXAMPLESDIR%%/yesno-extra
 %%EXAMPLESDIR%%/yesno-help
+%%EXAMPLESDIR%%/yesno-utf8
 %%EXAMPLESDIR%%/yesno2
 %%EXAMPLESDIR%%/yesno3
+%%EXAMPLESDIR%%/yesno4
 @dirrm %%EXAMPLESDIR%%/install
 @dirrm %%EXAMPLESDIR%%/copifuncs
 @dirrm %%EXAMPLESDIR%%
