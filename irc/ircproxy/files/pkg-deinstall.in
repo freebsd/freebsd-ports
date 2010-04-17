@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+case $2 in
+    POST-DEINSTALL)
+    cat <<EOMSG
+
+Note:
+The ircproxy related user accounts and groups were not removed.
+
+To remove the %%IRC_USR%% user and the %%IRC_GRP%% group which were
+created by a default installation of this package, run:
+
+    # pw groupdel %%IRC_GRP%%
+    # pw userdel %%IRC_USR%%
+
+EOMSG
+
+PIDFILE="/var/run/ircproxyd.pid"
+
+  if [ -f $PIDFILE ] && [ -r $PIDFILE ] ; then
+    PID=`cat "$PIDFILE"`
+    ps -p "$PID" >/dev/null 2>&1
+    if [ $? -eq 0 ]; then
+      for count in 1 2 3 4 5 6 7 8 9 10; do
+        if [ $count -ge 5 ]; then
+          kill -KILL "$PID" || break
+          break
+        fi
+        kill -TERM "$PID" || break
+        sleep 2
+        ps -p "$PID" >/dev/null 2>&1
+        if [ ! $? -eq 0 ]; then
+          break;
+        fi
+      done
+    fi
+  fi
+    echo
+    ;;
+esac
