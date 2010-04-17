@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTVERSION=	2.2.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -109,6 +108,7 @@ MAN3=		SVK.3 \
 		SVK::Editor::Diff.3 \
 		SVK::Editor::Merge.3 \
 		SVK::Editor::Patch.3 \
+		SVK::Editor::PropEol.3 \
 		SVK::Editor::Rename.3 \
 		SVK::Editor::SubTree.3 \
 		SVK::Editor::Translate.3 \
