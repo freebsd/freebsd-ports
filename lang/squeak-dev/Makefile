@@ -7,6 +7,7 @@
 
 PORTNAME=		squeak
 PORTVERSION=		3.9
+PORTREVISION=		1
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		http://www.squeakvm.org/unix/release/ \
@@ -48,10 +49,6 @@ OPTIONS+=		X		"X Windows support" on
 OPTIONS+=		XIM		"XIM support (Implies X)" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
 
 ##################################################
 XIM_PATCH=		SqueakImmX11Plugin3a${EXTRACT_SUFX}
@@ -168,6 +165,11 @@ post-patch:
 .endif
 # Fix external plugins
 	@${ECHO_MSG} "EXTERNAL_PLUGINS = B3DAcceleratorPlugin PseudoTTYPlugin UnixOSProcessPlugin XDisplayControlPlugin Squeak3D AioPlugin ${EXT_PLUGINS}" > ${WRKSRC}/platforms/unix/src/plugins.ext
+# Fix utmp.h
+.if ${OSVERSION} > 900007
+	@${REINPLACE_CMD} -e 's,<utmp.h>,<utmpx.h>,g' \
+		${WRKSRC}/platforms/unix/plugins/PseudoTTYPlugin/openpty.h
+.endif
 
 ##################################################
 pre-configure:
