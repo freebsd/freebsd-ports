@@ -3,10 +3,36 @@ bin/xspp
 %%SITE_PERL%%/ExtUtils/XSpp.pod
 %%SITE_PERL%%/ExtUtils/XSpp/Cmd.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Driver.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Exception.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Exception/code.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Exception/object.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Exception/perlcode.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Exception/simple.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Exception/stdmessage.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Exception/unknown.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Grammar.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Lexer.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Node.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Access.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Argument.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Class.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Comment.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Constructor.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Destructor.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/File.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Function.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Method.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Module.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Package.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Raw.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Node/Type.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Parser.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Typemap.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Typemap/parsed.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Typemap/reference.pm
+%%SITE_PERL%%/ExtUtils/XSpp/Typemap/simple.pm
+@dirrmtry %%SITE_PERL%%/ExtUtils/XSpp/Exception
+@dirrmtry %%SITE_PERL%%/ExtUtils/XSpp/Node
+@dirrmtry %%SITE_PERL%%/ExtUtils/XSpp/Typemap
 @dirrmtry %%SITE_PERL%%/ExtUtils/XSpp
 @dirrmtry %%SITE_PERL%%/ExtUtils
