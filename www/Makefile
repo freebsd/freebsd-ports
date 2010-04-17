@@ -1138,6 +1138,7 @@
     SUBDIR += p5-Sledge-SessionManager-CookieStore
     SUBDIR += p5-Sledge-Template-Expr
     SUBDIR += p5-Squatting
+    SUBDIR += p5-Squatting-On-PSGI
     SUBDIR += p5-Starlet
     SUBDIR += p5-Starman
     SUBDIR += p5-Syntax-Highlight-HTML

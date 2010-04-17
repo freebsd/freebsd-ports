@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Squatting/On/PSGI/.packlist
+%%SITE_PERL%%/Squatting/On/PSGI.pm
+@dirrmtry %%SITE_PERL%%/Squatting/On
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Squatting/On/PSGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Squatting/On
