@@ -1144,6 +1144,7 @@
     SUBDIR += p5-Syntax-Highlight-HTML
     SUBDIR += p5-Syntax-Highlight-Shell
     SUBDIR += p5-Task-Catalyst
+    SUBDIR += p5-Task-Plack
     SUBDIR += p5-Template-Alloy
     SUBDIR += p5-Template-GD
     SUBDIR += p5-Template-Iterator-AlzaboWrapperCursor
