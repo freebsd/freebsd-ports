@@ -4310,6 +4310,7 @@ giram                           ports/graphics/giram
 gish-demo                       ports/games/gish-demo
 gist                            ports/www/gist
 git                             ports/devel/git
+gitg                            ports/devel/gitg
 gittrac                         ports/devel/gittrac
 gj                              ports/java/gj
 gjs                             ports/lang/gjs
@@ -10552,6 +10553,7 @@ p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
 p5-AnyEvent-IRC                 ports/irc/p5-AnyEvent-IRC
 p5-AnyEvent-ReverseHTTP         ports/www/p5-AnyEvent-ReverseHTTP
 p5-AnyEvent-Run                 ports/devel/p5-AnyEvent-Run
+p5-AnyEvent-SCGI                ports/www/p5-AnyEvent-SCGI
 p5-AnyEvent-Subprocess          ports/devel/p5-AnyEvent-Subprocess
 p5-AnyEvent-Twitter             ports/net/p5-AnyEvent-Twitter
 p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
@@ -11445,6 +11447,7 @@ p5-DNS-Zone                     ports/dns/p5-DNS-Zone
 p5-DNS-ZoneParse                ports/dns/p5-DNS-ZoneParse
 p5-DWH_File                     ports/databases/p5-DWH_File
 p5-Daemon-Generic               ports/net/p5-Daemon-Generic
+p5-Dancer                       ports/www/p5-Dancer
 p5-Danga-Socket                 ports/devel/p5-Danga-Socket
 p5-Danga-Socket-Callback        ports/devel/p5-Danga-Socket-Callback
 p5-Data-ACL                     ports/devel/p5-Data-ACL
@@ -11824,6 +11827,7 @@ p5-File-HomeDir                 ports/devel/p5-File-HomeDir
 p5-File-Lock                    ports/devel/p5-File-Lock
 p5-File-MMagic                  ports/devel/p5-File-MMagic
 p5-File-MMagic-XS               ports/devel/p5-File-MMagic-XS
+p5-File-Map                     ports/devel/p5-File-Map
 p5-File-MimeInfo                ports/devel/p5-File-MimeInfo
 p5-File-Modified                ports/devel/p5-File-Modified
 p5-File-Monitor                 ports/devel/p5-File-Monitor
@@ -12229,6 +12233,7 @@ p5-IO-Compress-Base             ports/archivers/p5-IO-Compress-Base
 p5-IO-Compress-Bzip2            ports/archivers/p5-IO-Compress-Bzip2
 p5-IO-Compress-Zlib             ports/archivers/p5-IO-Compress-Zlib
 p5-IO-Digest                    ports/devel/p5-IO-Digest
+p5-IO-Handle-Util               ports/devel/p5-IO-Handle-Util
 p5-IO-INET6                     ports/net/p5-IO-INET6
 p5-IO-Interactive               ports/devel/p5-IO-Interactive
 p5-IO-Interface                 ports/net/p5-IO-Interface
@@ -13217,6 +13222,7 @@ p5-Plack-Middleware-Auth-Digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-Plack-Middleware-AutoRefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-Plack-Middleware-Debug       ports/www/p5-Plack-Middleware-Debug
 p5-Plack-Middleware-Deflater    ports/www/p5-Plack-Middleware-Deflater
+p5-Plack-Middleware-File-Sass   ports/www/p5-Plack-Middleware-File-Sass
 p5-Plack-Middleware-Header      ports/www/p5-Plack-Middleware-Header
 p5-Plack-Middleware-JSConcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-Plack-Middleware-ReverseProxy  ports/www/p5-Plack-Middleware-ReverseProxy
@@ -13727,6 +13733,7 @@ p5-Test-Synopsis                ports/devel/p5-Test-Synopsis
 p5-Test-TAP-HTMLMatrix          ports/devel/p5-Test-TAP-HTMLMatrix
 p5-Test-TAP-Model               ports/devel/p5-Test-TAP-Model
 p5-Test-TCP                     ports/devel/p5-Test-TCP
+p5-Test-Taint                   ports/devel/p5-Test-Taint
 p5-Test-TempDir                 ports/devel/p5-Test-TempDir
 p5-Test-Tester                  ports/devel/p5-Test-Tester
 p5-Test-URI                     ports/net/p5-Test-URI
@@ -14345,6 +14352,7 @@ p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
 p5-anyevent-irc                 ports/irc/p5-AnyEvent-IRC
 p5-anyevent-reversehttp         ports/www/p5-AnyEvent-ReverseHTTP
 p5-anyevent-run                 ports/devel/p5-AnyEvent-Run
+p5-anyevent-scgi                ports/www/p5-AnyEvent-SCGI
 p5-anyevent-subprocess          ports/devel/p5-AnyEvent-Subprocess
 p5-anyevent-twitter             ports/net/p5-AnyEvent-Twitter
 p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
@@ -14435,6 +14443,7 @@ p5-array-iterator               ports/devel/p5-Array-Iterator
 p5-array-printcols              ports/misc/p5-Array-PrintCols
 p5-array-refelem                ports/misc/p5-Array-RefElem
 p5-array-window                 ports/devel/p5-Array-Window
+p5-asa                          ports/devel/p5-asa
 p5-asciidb-tagfile              ports/databases/p5-AsciiDB-TagFile
 p5-asterisk                     ports/misc/p5-Asterisk
 p5-astro                        ports/astro/p5-Astro
@@ -15167,6 +15176,7 @@ p5-curses-widgets               ports/devel/p5-Curses-Widgets
 p5-cvs                          ports/devel/p5-Cvs
 p5-dTemplate                    ports/textproc/p5-dTemplate
 p5-daemon-generic               ports/net/p5-Daemon-Generic
+p5-dancer                       ports/www/p5-Dancer
 p5-danga-socket                 ports/devel/p5-Danga-Socket
 p5-danga-socket-callback        ports/devel/p5-Danga-Socket-Callback
 p5-data-acl                     ports/devel/p5-Data-ACL
@@ -15641,6 +15651,7 @@ p5-file-grep                    ports/devel/p5-File-Grep
 p5-file-homedir                 ports/devel/p5-File-HomeDir
 p5-file-hstore                  ports/devel/p5-File-HStore
 p5-file-lock                    ports/devel/p5-File-Lock
+p5-file-map                     ports/devel/p5-File-Map
 p5-file-mimeinfo                ports/devel/p5-File-MimeInfo
 p5-file-mmagic                  ports/devel/p5-File-MMagic
 p5-file-mmagic-xs               ports/devel/p5-File-MMagic-XS
@@ -16089,6 +16100,7 @@ p5-io-compress-bzip2            ports/archivers/p5-IO-Compress-Bzip2
 p5-io-compress-zlib             ports/archivers/p5-IO-Compress-Zlib
 p5-io-csvheaderfile             ports/textproc/p5-IO-CSVHeaderFile
 p5-io-digest                    ports/devel/p5-IO-Digest
+p5-io-handle-util               ports/devel/p5-IO-Handle-Util
 p5-io-inet6                     ports/net/p5-IO-INET6
 p5-io-interactive               ports/devel/p5-IO-Interactive
 p5-io-interface                 ports/net/p5-IO-Interface
@@ -16986,6 +16998,7 @@ p5-plack-middleware-auth-digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-plack-middleware-autorefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-plack-middleware-debug       ports/www/p5-Plack-Middleware-Debug
 p5-plack-middleware-deflater    ports/www/p5-Plack-Middleware-Deflater
+p5-plack-middleware-file-sass   ports/www/p5-Plack-Middleware-File-Sass
 p5-plack-middleware-header      ports/www/p5-Plack-Middleware-Header
 p5-plack-middleware-jsconcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-plack-middleware-reverseproxy  ports/www/p5-Plack-Middleware-ReverseProxy
@@ -17595,6 +17608,7 @@ p5-test-spelling                ports/devel/p5-Test-Spelling
 p5-test-strict                  ports/devel/p5-Test-Strict
 p5-test-subcalls                ports/devel/p5-Test-SubCalls
 p5-test-synopsis                ports/devel/p5-Test-Synopsis
+p5-test-taint                   ports/devel/p5-Test-Taint
 p5-test-tap-htmlmatrix          ports/devel/p5-Test-TAP-HTMLMatrix
 p5-test-tap-model               ports/devel/p5-Test-TAP-Model
 p5-test-tcp                     ports/devel/p5-Test-TCP
@@ -18177,6 +18191,7 @@ paexec                          ports/devel/paexec
 pager                           ports/x11-wm/pager
 paicc                           ports/sysutils/paicc
 paintlib                        ports/graphics/paintlib
+paintown                        ports/games/paintown
 paje                            ports/science/paje
 pal                             ports/deskutils/pal
 palm-db-tools                   ports/palm/palm-db-tools
@@ -19108,6 +19123,7 @@ php-java-bridge                 ports/devel/php-java-bridge
 php-libawl                      ports/devel/php-libawl
 php-magickwand                  ports/graphics/php-magickwand
 php-mode.el                     ports/lang/php-mode.el
+php-plurk-api                   ports/www/php-plurk-api
 php-screw                       ports/www/php-screw
 php-sqlite3                     ports/databases/php-sqlite3
 php-sqlrelay                    ports/databases/php-sqlrelay
