@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mongodb
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/ \
 		http://derzinn.de/files/
-DISTNAME=	mongodb-src-r${PORTVERSION}
+DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
 
 MAINTAINER=	mail@derzinn.de
 COMMENT=	A NOSQL distributed document-oriented database
@@ -31,7 +31,7 @@ SCONS_TARGET=	all
 
 USE_RC_SUBR=	mongod
 MONGO_FILES=	mongo mongod mongodump mongoexport mongofiles \
-		mongoimport mongorestore mongos mongosniff
+		mongoimport mongorestore mongos mongosniff mongostat
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 700042

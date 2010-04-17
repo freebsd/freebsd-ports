@@ -8,5 +8,6 @@ bin/mongoimport
 bin/mongorestore
 bin/mongos
 bin/mongosniff
+bin/mongostat
 lib/libmongoclient.a
 @exec  if [ ! -f %D/etc/mongodb.conf ]; then /usr/bin/touch %D/etc/mongodb.conf; fi
