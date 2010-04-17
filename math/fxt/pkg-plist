@@ -49,6 +49,7 @@ include/fxt/aux2/transpose2.h
 include/fxt/bits-all.h
 include/fxt/bits/bin2naf.h
 include/fxt/bits/bit-dragon3.h
+include/fxt/bits/bit-dragon-r5.h
 include/fxt/bits/bit-isolate.h
 include/fxt/bits/bit-necklace.h
 include/fxt/bits/bit-paper-fold.h
@@ -560,8 +561,12 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-curve-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-curve-moves-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-curve-moves-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon3-curve-texpic-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon3-curve-texpic-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon3-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon3-texpic-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r5-texpic-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-hex-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r5-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-hex-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep2-demo.cc
