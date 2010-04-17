@@ -6,7 +6,7 @@
 
 PORTNAME=	ngmp
 PORTVERSION=	0.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.prevantage.com/releases/ \
 		ftp://ftp2.prevantage.com/releases/
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache22 \
 		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/fileinfo.so:${PORTSDIR}/sysutils/pecl-fileinfo\
 		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/ZendExtensionManager.so:${PORTSDIR}/devel/ZendOptimizer \
 		${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav \
-		${LOCALBASE}/bin/dspam:${PORTSDIR}/mail/dspam-devel \
+		${LOCALBASE}/bin/dspam:${PORTSDIR}/mail/dspam \
 		${LOCALBASE}/share/pear/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
 		${LOCALBASE}/share/pear/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP \
 		${LOCALBASE}/share/pear/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
