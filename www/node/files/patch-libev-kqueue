@@ -1,6 +1,14 @@
---- deps/libev/wscript.orig	2010-04-12 11:55:55.000000000 +0800
-+++ deps/libev/wscript	2010-04-12 12:00:43.000000000 +0800
-@@ -27,12 +27,30 @@
+--- deps/libev/wscript.orig	2010-04-10 08:05:03.000000000 +0800
++++ deps/libev/wscript	2010-04-13 09:28:42.000000000 +0800
+@@ -2,6 +2,7 @@ import Options
+ import platform
+ 
+ PLATFORM_IS_DARWIN = platform.platform().find('Darwin') == 0
++PLATFORM_IS_FREEBSD = platform.platform().find('FreeBSD') == 0
+ 
+ def set_options(opt):
+   pass
+@@ -27,12 +28,30 @@ def configure(conf):
    if conf.check_cc(header_name="poll.h"):
      conf.check_cc(header_name="poll.h", function_name="poll")
  
@@ -36,3 +44,12 @@
  
    if conf.check_cc(header_name="sys/select.h"):
      conf.check_cc(header_name="sys/select.h", function_name="select")
+@@ -58,7 +77,7 @@ def configure(conf):
+   have_librt = conf.check(lib='rt', uselib_store='RT')
+   if have_librt:
+     conf.check_cc(lib="rt", header_name="time.h", function_name="clock_gettime")
+-  if PLATFORM_IS_DARWIN:
++  if PLATFORM_IS_DARWIN or PLATFORM_IS_FREEBSD:
+     conf.check_cc(header_name="time.h", function_name="nanosleep")
+   elif have_librt:
+     conf.check_cc(lib="rt", header_name="time.h", function_name="nanosleep")
