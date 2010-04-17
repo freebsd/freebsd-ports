@@ -51,6 +51,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/giosrc.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/giostreamsink.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/giostreamsrc.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/gst_wrap_init.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/handle_error.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/identity.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/index.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/indexfactory.h
@@ -160,6 +161,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/queue_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/registry_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/ringbuffer_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/segment_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/streamvolume_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/structure_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/systemclock_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/taglist_p.h
@@ -207,6 +209,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/queue.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/registry.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/ringbuffer.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/segment.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/streamvolume.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/structure.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/systemclock.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/taglist.h
@@ -252,15 +255,15 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/xoverlay.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/xvimagesink.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm_get_plugin_defs/get_plugin_defs.h
 lib/gstreamermm-%%GST_VERSION%%/gen/generate_plugin_gmmproc_file
+lib/gstreamermm-%%GST_VERSION%%/gen/m4/convert.m4
+lib/gstreamermm-%%GST_VERSION%%/gen/m4/convert_gst.m4
+lib/gstreamermm-%%GST_VERSION%%/gen/m4/class_boxedtype_extra.m4
+lib/gstreamermm-%%GST_VERSION%%/gen/m4/class_gstminiobject.m4
+lib/gstreamermm-%%GST_VERSION%%/gen/m4/plugingen_base.m4
+lib/gstreamermm-%%GST_VERSION%%/gen/m4/plugingen.m4
+lib/gstreamermm-%%GST_VERSION%%/gen/m4/plugingen_gstreamermm.m4
+lib/gstreamermm-%%GST_VERSION%%/gen/m4/shared.m4
 lib/gstreamermm-%%GST_VERSION%%/include/gstreamermmconfig.h
-lib/gstreamermm-%%GST_VERSION%%/proc/m4/class_boxedtype_extra.m4
-lib/gstreamermm-%%GST_VERSION%%/proc/m4/class_gstminiobject.m4
-lib/gstreamermm-%%GST_VERSION%%/proc/m4/convert.m4
-lib/gstreamermm-%%GST_VERSION%%/proc/m4/convert_gst.m4
-lib/gstreamermm-%%GST_VERSION%%/proc/m4/plugingen.m4
-lib/gstreamermm-%%GST_VERSION%%/proc/m4/plugingen_base.m4
-lib/gstreamermm-%%GST_VERSION%%/proc/m4/plugingen_gstreamermm.m4
-lib/gstreamermm-%%GST_VERSION%%/proc/m4/shared.m4
 lib/libgstreamermm-%%GST_VERSION%%.la
 lib/libgstreamermm-%%GST_VERSION%%.so
 lib/libgstreamermm-%%GST_VERSION%%.so.2
@@ -268,9 +271,8 @@ lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.la
 lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.so
 lib/libgstreamermm_get_plugin_defs-%%GST_VERSION%%.so.2
 libdata/pkgconfig/gstreamermm-%%GST_VERSION%%.pc
-@dirrm lib/gstreamermm-%%GST_VERSION%%/proc/m4
-@dirrm lib/gstreamermm-%%GST_VERSION%%/proc
 @dirrm lib/gstreamermm-%%GST_VERSION%%/include
+@dirrm lib/gstreamermm-%%GST_VERSION%%/gen/m4
 @dirrm lib/gstreamermm-%%GST_VERSION%%/gen
 @dirrm lib/gstreamermm-%%GST_VERSION%%
 @dirrm include/gstreamermm-%%GST_VERSION%%/gstreamermm_get_plugin_defs
