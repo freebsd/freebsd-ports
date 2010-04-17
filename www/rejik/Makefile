@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rejik
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.rejik.ru/download/ \
 		http://bio3k.softboard.ru/uploads/arch/
@@ -23,6 +23,8 @@ RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
 PLIST_SUB=	INSTALL_DIR=${INSTALL_DIR}
 SUB_LIST=	INSTALL_PATH=${INSTALL_PATH} SQUID_USER=${SQUID_USER} SQUID_GROUP=${SQUID_GROUP}
 SUB_FILES=	pkg-message
+
+WRKSRC=		${WRKDIR}/redirector
 
 OPTIONS=	BAN	"With banlists"	on \
 		DBL	"With DBL scripts"	off \
