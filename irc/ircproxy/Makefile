@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ircproxy
-PORTVERSION=	1.3.4c
+PORTVERSION=	1.3.6
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,9 +15,16 @@ COMMENT=	An IRC proxy/bouncer daemon
 
 LIB_DEPENDS=	cares.2:${PORTSDIR}/dns/c-ares
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
+
+USERS=		ircproxyd
+GROUPS=		ircproxyd
+
+SUB_LIST=	IRC_USR=${USERS} IRC_GRP=${GROUPS}
+SUB_FILES=	pkg-deinstall
 
 OPTIONS=	SSL "Enable SSL support" on \
 		IPV6 "Enable IPv6 support" on \
@@ -47,5 +54,9 @@ CONFIGURE_ARGS+=	--enable-fddebug
 .else
 CONFIGURE_ARGS+=	--disable-fddebug
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|EUSER="ircproxy"|EUSER="ircproxyd"|g; \
+		s|EGROUP="users"|EGROUP="ircproxyd"|g' ${WRKSRC}/data/${PORTNAME}d.conf
 
 .include <bsd.port.post.mk>
