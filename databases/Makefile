@@ -512,6 +512,7 @@
     SUBDIR += php5-pdo_sqlite
     SUBDIR += php5-pgsql
     SUBDIR += php5-propel
+    SUBDIR += php5-redis
     SUBDIR += php5-rrdtool
     SUBDIR += php5-sqlite
     SUBDIR += php5-sybase_ct
