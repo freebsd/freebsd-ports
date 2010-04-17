@@ -49,22 +49,28 @@ share/gnome/help/grip/C/stop.png
 share/gnome/help/grip/C/trkedit.png
 share/gnome/help/grip/C/volume.png
 share/pixmaps/gripicon.png
-share/locale/be/LC_MESSAGES/grip-2.2.mo
-share/locale/bg/LC_MESSAGES/grip-2.2.mo
-share/locale/ca/LC_MESSAGES/grip-2.2.mo
-share/locale/de/LC_MESSAGES/grip-2.2.mo
-share/locale/es/LC_MESSAGES/grip-2.2.mo
-share/locale/fi/LC_MESSAGES/grip-2.2.mo
-share/locale/fr/LC_MESSAGES/grip-2.2.mo
-share/locale/it/LC_MESSAGES/grip-2.2.mo
-share/locale/ja/LC_MESSAGES/grip-2.2.mo
-share/locale/pt_BR/LC_MESSAGES/grip-2.2.mo
-share/locale/ru/LC_MESSAGES/grip-2.2.mo
-share/locale/zh_CN/LC_MESSAGES/grip-2.2.mo
-share/locale/zh_HK/LC_MESSAGES/grip-2.2.mo
-share/locale/zh_TW/LC_MESSAGES/grip-2.2.mo
+share/pixmaps/griptray.png
+%%NLS%%share/locale/be/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/de/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/es/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/it/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/pl_PL/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/grip-2.2.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/grip-2.2.mo
 @dirrm share/gnome/help/grip/C
 @dirrm share/gnome/help/grip
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/applications
