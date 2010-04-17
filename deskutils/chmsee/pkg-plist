@@ -1,13 +1,15 @@
 bin/chmsee
 share/applications/chmsee.desktop
+%%DATADIR%%/about-dialog.ui
 %%DATADIR%%/book-closed.png
 %%DATADIR%%/book-open.png
 %%DATADIR%%/chmsee-icon.png
 %%DATADIR%%/chmsee-splash.png
-%%DATADIR%%/chmsee.glade
 %%DATADIR%%/default-prefs.js
 %%DATADIR%%/helpdoc.png
 %%DATADIR%%/hide-pane.png
+%%DATADIR%%/openfile-dialog.ui
+%%DATADIR%%/setup-window.ui
 %%DATADIR%%/show-pane.png
 share/locale/bn/LC_MESSAGES/chmsee.mo
 share/locale/ca/LC_MESSAGES/chmsee.mo
