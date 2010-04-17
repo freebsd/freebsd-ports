@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnofract4d
-PORTVERSION=	3.11
-PORTREVISION=	2
+PORTVERSION=	3.13
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
@@ -43,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/gnofract4d
 
 	# fix NOPORTDOCS
-	@${REINPLACE_CMD} -e '236,238d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '249,251d' ${WRKSRC}/setup.py
 
 	# fixup library detection
 	@${REINPLACE_CMD} -e "s/libpng/libpng14/" ${WRKSRC}/setup.py
