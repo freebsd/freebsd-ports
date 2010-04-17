@@ -6,8 +6,7 @@
 #    $MCom: ports/multimedia/gstreamermm/Makefile,v 1.6 2009/09/26 13:42:00 marcus Exp $
 
 PORTNAME=	gstreamermm
-PORTVERSION=	0.10.5
-PORTREVISION=	2
+PORTVERSION=	0.10.6
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 
@@ -21,7 +20,7 @@ USE_GMAKE=	yes
 USE_GSTREAMER=	theora vorbis cdparanoia gio pango
 USE_GNOME=	pkgconfig gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-docs --disable-examples
+CONFIGURE_ARGS=	--disable-documentation
 USE_LDCONFIG=	yes
 PLIST_SUB=	GST_VERSION="${GST_VERSION}"
 
