@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	diffuse
-PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTVERSION=	0.4.3
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
@@ -54,7 +53,7 @@ PLIST_SUB+=	OMF="@comment "
 .ifndef (WITHOUT_NLS)
 PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
-TRANSLATIONS=	de ja zh_CN
+TRANSLATIONS=	de es ja zh_CN
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
@@ -71,7 +70,6 @@ post-patch:
 
 	${REINPLACE_CMD} -e 's|../../etc|${PREFIX}/etc|g' \
 		${WRKSRC}/src/usr/bin/${PORTNAME}
-
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/src/usr/share/omf/${PORTNAME}/${PORTNAME}-C.omf
 
@@ -79,11 +77,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/usr/bin/${PORTNAME} \
 		${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/src/etc/${PORTNAME}rc ${PREFIX}/etc/
-
-post-install:
 	${INSTALL_MAN} ${WRKSRC}/src/usr/share/man/man1/*.1 \
 		${MANPREFIX}/man/man1/
 
+post-install:
 .ifndef (NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for n in ${PORTDOCS}; do \
