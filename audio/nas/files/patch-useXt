@@ -1,10 +1,10 @@
---- lib/audio/Imakefile.orig	2008-05-14 22:57:01.000000000 +0400
-+++ lib/audio/Imakefile	2008-05-14 22:57:08.000000000 +0400
+--- lib/audio/Imakefile.orig	2010-04-11 12:03:58.000000000 -0300
++++ lib/audio/Imakefile	2010-04-11 12:05:59.000000000 -0300
 @@ -150,9 +150,7 @@
  XAULIB = -lXau
  #endif
  
--#if defined(LinuxArchitecture) || defined(GNUArchitecture) || defined(__FreeBSD_kernel__)
+-#if defined(LinuxArchitecture) || defined(GNUArchitecture) || defined(SunArchitecture) || defined(__FreeBSD_kernel__)
  REQUIREDLIBS = -L$(USRLIBDIR) -lXt $(XAULIB) -lm 
 -#endif
  
