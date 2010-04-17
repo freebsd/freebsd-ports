@@ -6,10 +6,8 @@
 #
 
 PORTNAME=	views
-DISTVERSION=	5.x-1.6
-PORTREVISION=	1
+DISTVERSION=	5.x-1.7
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
 MAINTAINER=	g_glasson@jimali.dyndns.org
 COMMENT=	Controls how content lists are generated
@@ -23,7 +21,7 @@ MODULE_FILES=	go-bottom.png go-down.png go-top.png go-up.png user-trash.png \
 		modules/views_forum.inc modules/views_node.inc modules/views_profile.inc \
 		modules/views_search.inc modules/views_statistics.inc modules/views_taxonomy.inc \
 		modules/views_upload.inc modules/views_user.inc po/da.po po/de.po po/el.po po/es.po \
-		po/fr.po po/hu.po po/pl.po po/views.pot
+		po/fr.po po/hu.po po/nl.po po/pl.po po/sv.po po/views.pot
 DOC_FILES=	LICENSE.txt README.txt CHANGELOG.txt
 
 .include <bsd.port.pre.mk>
