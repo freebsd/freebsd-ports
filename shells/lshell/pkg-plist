@@ -3,9 +3,10 @@ bin/lshell
 @unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 @unexec if cmp -s %D/etc/lshell.conf %D/etc/lshell.conf.sample; then rm -f %D/etc/lshell.conf; fi
 etc/lshell.conf.sample
+etc/logrotate.d/lshell
 @exec if [ ! -f %D/etc/lshell.conf ]; then cp %B/%f %D/etc/lshell.conf; fi
 %%PYTHON_SITELIBDIR%%/lshell.py
 %%PYTHON_SITELIBDIR%%/lshell.pyc
 %%PYTHON_SITELIBDIR%%/lshell.pyo
 @dirrmtry %%DATADIR%%
-@dirrmtry %%LOGDIR%%
+@dirrmtry etc/logrotate.d

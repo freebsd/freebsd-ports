@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lshell
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.10
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
@@ -24,7 +24,7 @@ PORTDOCS=	CHANGES COPYING README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g; \
-		s|share/man|${LOCALBASE}/man|g; 44d' ${WRKSRC}/setup.py
+		s|share/man|${LOCALBASE}/man|g; 45d' ${WRKSRC}/setup.py
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
