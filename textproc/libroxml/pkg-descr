@@ -1,0 +1,5 @@
+This library is minimum, easy-to-use, C implementation for xml file parsing.
+Because XML parsing is always hard to reinvent.
+Because very often, xml libraries are too big to fit with little application.
+
+WWW: http://code.google.com/p/libroxml/

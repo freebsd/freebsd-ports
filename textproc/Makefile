@@ -307,6 +307,7 @@
     SUBDIR += libnxml
     SUBDIR += libparsifal
     SUBDIR += libpathan
+    SUBDIR += libroxml
     SUBDIR += libstree
     SUBDIR += libtext-charwidth-perl
     SUBDIR += libtext-wrapi18n-perl
