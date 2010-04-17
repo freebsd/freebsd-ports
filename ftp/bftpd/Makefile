@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	bftpd
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Very configurable FTP server that can do chroot easily
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-pam
+
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample
 MAN8=		bftpd.8
