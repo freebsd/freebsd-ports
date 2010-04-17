@@ -1,5 +1,6 @@
 bin/tv_cat
 bin/tv_check
+bin/tv_extractinfo_ar
 bin/tv_extractinfo_en
 bin/tv_find_grabbers
 bin/tv_grab_ar
@@ -7,7 +8,7 @@ bin/tv_grab_be
 bin/tv_grab_br_net
 bin/tv_grab_ch_search
 bin/tv_grab_combiner
-bin/tv_grab_dk
+bin/tv_grab_dk_dr
 bin/tv_grab_dtv_la
 bin/tv_grab_ee
 bin/tv_grab_es
@@ -18,6 +19,7 @@ bin/tv_grab_fi
 bin/tv_grab_fr
 bin/tv_grab_hr
 bin/tv_grab_huro
+bin/tv_grab_is
 bin/tv_grab_it
 bin/tv_grab_jp
 bin/tv_grab_na_dd
@@ -77,6 +79,7 @@ bin/tv_validate_grabber
 %%DATADIR%%/tv_grab_be/channel_ids_fr
 %%DATADIR%%/tv_grab_be/channel_ids_nl
 %%DATADIR%%/tv_grab_ch_search/channel_ids
+%%DATADIR%%/tv_grab_eu_epgdata/channel_ids
 %%DATADIR%%/tv_grab_huro/catmap.hu
 %%DATADIR%%/tv_grab_huro/catmap.ro
 %%DATADIR%%/tv_grab_huro/jobmap
@@ -92,6 +95,7 @@ www/cgi-bin/tv_pick.cgi
 @dirrm %%DATADIR%%/tv_grab_uk_bleb
 @dirrm %%DATADIR%%/tv_grab_it
 @dirrm %%DATADIR%%/tv_grab_huro
+@dirrm %%DATADIR%%/tv_grab_eu_epgdata
 @dirrm %%DATADIR%%/tv_grab_ch_search
 @dirrm %%DATADIR%%/tv_grab_be
 @dirrm %%DATADIR%%
