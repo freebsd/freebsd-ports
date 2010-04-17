@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	qalculate
-PORTVERSION=	0.9.6
-PORTREVISION=	5
+PORTVERSION=	0.9.7
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-gtk/${PORTNAME}-gtk-${PORTVERSION}
 DISTNAME=	${PORTNAME}-gtk-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A multi-purpose desktop calculator (Gnome frontend)
 
-LIB_DEPENDS=	qalculate.4:${PORTSDIR}/math/libqalculate
+LIB_DEPENDS=	qalculate.5:${PORTSDIR}/math/libqalculate
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		wget:${PORTSDIR}/ftp/wget
 
