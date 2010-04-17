@@ -153,6 +153,7 @@ dislin/chf/dot.chf
 dislin/chf/dotl.chf
 dislin/chf/duplx.chf
 dislin/chf/dwgbut.chf
+dislin/chf/dwgerr.chf
 dislin/chf/dwgfil.chf
 dislin/chf/dwglis.chf
 dislin/chf/dwgmsg.chf
@@ -166,6 +167,7 @@ dislin/chf/errfil.chf
 dislin/chf/errmod.chf
 dislin/chf/eushft.chf
 dislin/chf/expzlb.chf
+dislin/chf/fbars.chf
 dislin/chf/fcha.chf
 dislin/chf/field3d.chf
 dislin/chf/field.chf
@@ -654,7 +656,6 @@ dislin/chf/utfint.chf
 dislin/chf/vang3d.chf
 dislin/chf/vclp3d.chf
 dislin/chf/vecclr.chf
-dislin/chf/vecf3d.chf
 dislin/chf/vecf3d.chf
 dislin/chf/vecmat.chf
 dislin/chf/vecmat3d.chf
