@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	msgpack
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	devel
-MASTER_SITES=	SOURCEFORGE_JP
-MASTER_SITE_SUBDIR=	msgpack/45536
+MASTER_SITES=	SOURCEFORGE
+MASTER_SITE_SUBDIR=	msgpack/msgpack/cpp
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Binary-based efficient data interchange format focused on performance
@@ -22,7 +21,7 @@ USE_LDCONFIG=	yes
 
 .if ${ARCH} == "sparc64"
 # required for __sync _* atomic operations on sparc
-USE_GCC=	4.3+
+USE_GCC=	4.4+
 .else
 USE_GCC=	4.2+
 .endif
