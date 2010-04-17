@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mantis
-PORTVERSION=	1.1.8
+PORTVERSION=	1.2.0
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}bt/${PORTNAME}-stable/${PORTVERSION}
 DISTNAME=	mantisbt-${PORTVERSION}
@@ -19,13 +19,6 @@ USE_MYSQL=	yes
 USE_PHP=	pcre
 
 SUB_FILES=	pkg-message
-
-PLIST_SUB+=	WWWDIR_REL=${WWWDIR_REL}
-
-.ifdef(MANTISDIR)
-WWWDIR=	${MANTISDIR}
-DMSG=	"Usage of MANTISDIR is depreciated and will be dropped in future versions, please use WWWDIR instead."
-.endif
 
 pre-everything::
 	@${ECHO_CMD} ${DMSG}
