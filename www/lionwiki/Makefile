@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	lionwiki
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://lionwiki.0o.cz/download/${PORTVERSION}/
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Minimalis wiki, extensible, templatable and file based
 
-USE_BZIP2=	yes
 USE_PHP=	session ctype
 
 NO_WRKSUBDIR=	yes

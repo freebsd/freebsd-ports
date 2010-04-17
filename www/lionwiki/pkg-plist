@@ -18,6 +18,7 @@
 %%WWWDIR%%/lang/nl.php
 %%WWWDIR%%/lang/pt-br.php
 %%WWWDIR%%/lang/pt.php
+%%WWWDIR%%/lang/ru.php
 %%WWWDIR%%/lang/sk.php
 %%WWWDIR%%/lang/zh-tw.php
 %%WWWDIR%%/plugins/AjaxEditing/ajax.js
@@ -32,6 +33,10 @@
 %%WWWDIR%%/plugins/InlineDiff/inline.php
 %%WWWDIR%%/plugins/InlineDiff/native.php
 %%WWWDIR%%/plugins/InlineDiff/renderer.php
+%%WWWDIR%%/plugins/LatexImg/class.latexrender.php
+%%WWWDIR%%/plugins/LatexImg/config.php
+%%WWWDIR%%/plugins/LatexImg/LatexImg.css
+%%WWWDIR%%/plugins/LatexImg/README
 %%WWWDIR%%/plugins/Menu/default.html
 %%WWWDIR%%/plugins/wkp_Admin.php
 %%WWWDIR%%/plugins/wkp_AjaxEditing.php
@@ -39,12 +44,15 @@
 %%WWWDIR%%/plugins/wkp_Captcha.php
 %%WWWDIR%%/plugins/wkp_Comments.php
 %%WWWDIR%%/plugins/wkp_Footnotes.php
+%%WWWDIR%%/plugins/wkp_ImageExt.php
 %%WWWDIR%%/plugins/wkp_Index.php
 %%WWWDIR%%/plugins/wkp_InlineDiff.php
+%%WWWDIR%%/plugins/wkp_LatexImg.php
 %%WWWDIR%%/plugins/wkp_ListPlugins.php
 %%WWWDIR%%/plugins/wkp_Menu.php
 %%WWWDIR%%/plugins/wkp_Meta.php
 %%WWWDIR%%/plugins/wkp_PageVersions.php
+%%WWWDIR%%/plugins/wkp_RenameFix.php
 %%WWWDIR%%/plugins/wkp_RSS.php
 %%WWWDIR%%/plugins/wkp_SelectLanguage.php
 %%WWWDIR%%/plugins/wkp_SelectTemplate.php
@@ -60,6 +68,7 @@
 @dirrm %%WWWDIR%%/var
 @dirrm %%WWWDIR%%/templates
 @dirrm %%WWWDIR%%/plugins/Menu
+@dirrm %%WWWDIR%%/plugins/LatexImg
 @dirrm %%WWWDIR%%/plugins/InlineDiff
 @dirrm %%WWWDIR%%/plugins/Comments
 @dirrm %%WWWDIR%%/plugins/Captcha
