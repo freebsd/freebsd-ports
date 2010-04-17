@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Task/Plack/.packlist
+%%SITE_PERL%%/Task/Plack.pm
+%%SITE_PERL%%/Task/versions.pl
+@dirrmtry %%SITE_PERL%%/Task
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Task/Plack
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Task
