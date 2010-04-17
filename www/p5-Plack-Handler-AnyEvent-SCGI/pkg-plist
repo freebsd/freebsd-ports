@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler/AnyEvent/SCGI/.packlist
+%%SITE_PERL%%/Plack/Handler/AnyEvent/SCGI.pm
+@dirrmtry %%SITE_PERL%%/Plack/Handler/AnyEvent
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler/AnyEvent/SCGI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler/AnyEvent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler
