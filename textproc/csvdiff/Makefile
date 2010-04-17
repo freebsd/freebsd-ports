@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	csvdiff
-PORTVERSION=	1.3
+PORTVERSION=	1.7
 CATEGORIES=	textproc perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
-DISTNAME=	${PORTNAME}_${PORTVERSION:S,.,-,g}
+#DISTNAME=	${PORTNAME}_${PORTVERSION:S,.,-,g}
+DISTNAME=	${PORTNAME}17
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Compare/diff two (comma) seperated files with each other
