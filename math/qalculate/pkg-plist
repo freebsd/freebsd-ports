@@ -11,7 +11,6 @@ share/gnome/help/qalculate-gtk/C/figures/completion.png
 share/gnome/help/qalculate-gtk/C/figures/convert-number-bases.png
 share/gnome/help/qalculate-gtk/C/figures/convert-unit.png
 share/gnome/help/qalculate-gtk/C/figures/edit-function.png
-share/gnome/help/qalculate-gtk/C/figures/edit-functiongeneral.png
 share/gnome/help/qalculate-gtk/C/figures/edit-matrix.png
 share/gnome/help/qalculate-gtk/C/figures/edit-unit.png
 share/gnome/help/qalculate-gtk/C/figures/edit-variable.png
@@ -20,7 +19,6 @@ share/gnome/help/qalculate-gtk/C/figures/gnuplot.png
 share/gnome/help/qalculate-gtk/C/figures/import-csv.png
 share/gnome/help/qalculate-gtk/C/figures/insert-function-screen.png
 share/gnome/help/qalculate-gtk/C/figures/insert-function.png
-share/gnome/help/qalculate-gtk/C/figures/mainwindow-screen.png
 share/gnome/help/qalculate-gtk/C/figures/mainwindow.png
 share/gnome/help/qalculate-gtk/C/figures/plot-data.png
 share/gnome/help/qalculate-gtk/C/figures/plot-settings.png
