@@ -6,8 +6,7 @@
 #    $MCom: ports/audio/grip/Makefile,v 1.4 2007/05/19 21:35:57 marcus Exp $
 
 PORTNAME=	grip
-PORTVERSION=	3.2.0
-PORTREVISION=	25
+PORTVERSION=	3.3.1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -20,7 +19,6 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 USE_XORG=	x11
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui vte
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -84,6 +82,14 @@ RUN_DEPENDS+=	bladeenc:${PORTSDIR}/audio/bladeenc
 
 .if defined(WITH_VORBIS)
 RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
 .endif
 
 pre-everything::
