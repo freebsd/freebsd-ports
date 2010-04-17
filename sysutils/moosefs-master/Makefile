@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moosefs
-PORTVERSION=	1.6.14
+PORTVERSION=	1.6.15
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/moosefs/moosefs/${PORTVERSION}/
 PKGNAMESUFFIX=	-master
@@ -24,14 +24,14 @@ MFS_CGIDIR=	${PREFIX}/share/mfscgi
 SUB_FILES+=	pkg-install pkg-message pkg-deinstall
 SUB_LIST+=	MFS_WORKDIR="${MFS_WORKDIR}"
 
-CONFIGURE_ARGS+= --localstatedir=${MFS_WORKDIR} \
-		--enable-mfsmaster \
-		--with-mfscgiserv-dir=${PREFIX}/sbin \
-		--enable-mfscgiserv \
-		--enable-mfscgi \
-		--with-mfscgi-dir=${MFS_CGIDIR} \
-		--disable-mfschunkserver \
-		--disable-mfsmount
+CONFIGURE_ARGS+=	--localstatedir=${MFS_WORKDIR} \
+			--enable-mfsmaster \
+			--with-mfscgiserv-dir=${PREFIX}/sbin \
+			--enable-mfscgiserv \
+			--enable-mfscgi \
+			--with-mfscgi-dir=${MFS_CGIDIR} \
+			--disable-mfschunkserver \
+			--disable-mfsmount
 
 MAN5=		mfsmaster.cfg.5 mfsexports.cfg.5 mfsmetalogger.cfg.5
 MAN7=		moosefs.7 mfs.7
