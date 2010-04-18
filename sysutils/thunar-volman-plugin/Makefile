@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	thunar-volman
-PORTVERSION=	0.2.0
-PORTREVISION=	8
+PORTVERSION=	0.3.80
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A Device manager plugin.
 
-LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
+	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
