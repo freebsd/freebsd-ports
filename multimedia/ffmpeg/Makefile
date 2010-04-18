@@ -8,7 +8,7 @@
 PORTNAME=	ffmpeg
 PORTVERSION=	0.5.1
 PORTEPOCH=	1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 
@@ -45,6 +45,7 @@ OPTIONS=	AMR_NB	"AMR Narrow Band encoder" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		X11GRAB "enable X11 grabbing" off \
 		X264	"H.264 encoder" on \
+		X264_DEV "Require x264 from multimedia/x264-devel" off \
 		XVID	"Xvid encoder via xvidcore" on
 
 COMPAT_HEADERS=libavcodec/avcodec.h \
@@ -111,19 +112,19 @@ USE_RC_SUBR=	ffserver
 .endif
 
 # sse hardware vector support
-.if (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse} == "sse")
+.if defined(MACHINE_CPU) && (${MACHINE_CPU:Msse} == "sse" || ${MACHINE_CPU:Mamd64} == "amd64")
 WITH_BUILTIN_VECTOR=	yes
 .else
 CONFIGURE_ARGS+=	--disable-sse
 .endif
 
 # mmx support
-.if ${MACHINE_CPU:Mmmx} == ""
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx} == "" && ${MACHINE_CPU:Mamd64} == ""
 CONFIGURE_ARGS+=	--disable-mmx
 WITHOUT_BUILTIN_VECTOR=	yes
 .endif
 
-# builtin vector, requires mmx
+# builtin vector, requires mmx and sse
 .if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
 FFMPEG_CFLAGS+=		-msse
 .endif
@@ -289,7 +290,23 @@ CONFIGURE_ARGS+=	--disable-x11grab
 
 # x264
 .ifndef(WITHOUT_X264)
+# Automatically choose the multimedia/x264-devel port if installed
+. if !defined(WITH_X264_DEV)
+.  if exists(${LOCALBASE}/include/x264.h)
+X264_BUILD!=	${GREP} "define X264_BUILD .." ${LOCALBASE}/include/x264.h | ${AWK} '{ print $$3 }'
+.   if ${X264_BUILD} == "85"
+_WANT_X264_DEVEL=	yes
+.   endif
+.  endif
+. else
+_WANT_X264_DEVEL=yes
+. endif
+
+. if defined(_WANT_X264_DEVEL)
+LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264-devel
+. else
 LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
+. endif
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264
