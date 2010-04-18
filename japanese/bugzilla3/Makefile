@@ -7,6 +7,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://bug-ja.org/releases/3.6/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/bugzilla-ja|}

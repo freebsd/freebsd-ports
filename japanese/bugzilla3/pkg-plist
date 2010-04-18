@@ -21,6 +21,7 @@
 %%BUGZILLADIR%%/template/ja/default/admin/classifications/add.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/classifications/del.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/classifications/edit.html.tmpl
+%%BUGZILLADIR%%/template/ja/default/admin/classifications/footer.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/classifications/reclassify.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/classifications/select.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/components/confirm-delete.html.tmpl
@@ -62,6 +63,7 @@
 %%BUGZILLADIR%%/template/ja/default/admin/params/admin.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/params/attachment.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/params/auth.html.tmpl
+%%BUGZILLADIR%%/template/ja/default/admin/params/advanced.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/params/bugchange.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/params/bugfields.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/params/bugmove.html.tmpl
@@ -69,6 +71,7 @@
 %%BUGZILLADIR%%/template/ja/default/admin/params/core.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/params/dependencygraph.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/params/editparams.html.tmpl
+%%BUGZILLADIR%%/template/ja/default/admin/params/general.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/params/groupsecurity.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/params/index.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/admin/params/ldap.html.tmpl
@@ -152,6 +155,7 @@
 %%BUGZILLADIR%%/template/ja/default/bug/process/midair.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/bug/process/results.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/bug/process/verify-new-product.html.tmpl
+%%BUGZILLADIR%%/template/ja/default/bug/show-header.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/bug/show-multiple.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/bug/show.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/bug/show.xml.tmpl
@@ -162,11 +166,18 @@
 %%BUGZILLADIR%%/template/ja/default/bug/votes/list-for-user.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/config.js.tmpl
 %%BUGZILLADIR%%/template/ja/default/config.rdf.tmpl
+%%BUGZILLADIR%%/template/ja/default/email/lockout.txt.tmpl
 %%BUGZILLADIR%%/template/ja/default/email/newchangedmail.txt.tmpl
 %%BUGZILLADIR%%/template/ja/default/email/sanitycheck.txt.tmpl
 %%BUGZILLADIR%%/template/ja/default/email/sudo.txt.tmpl
 %%BUGZILLADIR%%/template/ja/default/email/votes-removed.txt.tmpl
 %%BUGZILLADIR%%/template/ja/default/email/whine.txt.tmpl
+%%BUGZILLADIR%%/template/ja/default/extensions/config.pm.tmpl
+%%BUGZILLADIR%%/template/ja/default/extensions/extension.pm.tmpl
+%%BUGZILLADIR%%/template/ja/default/extensions/hook-readme.txt.tmpl
+%%BUGZILLADIR%%/template/ja/default/extensions/license.txt.tmpl
+%%BUGZILLADIR%%/template/ja/default/extensions/name-readme.txt.tmpl
+%%BUGZILLADIR%%/template/ja/default/extensions/util.pm.tmpl
 %%BUGZILLADIR%%/template/ja/default/filterexceptions.pl
 %%BUGZILLADIR%%/template/ja/default/flag/list.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/global/banner.html.tmpl
@@ -224,6 +235,7 @@
 %%BUGZILLADIR%%/template/ja/default/reports/chart.png.tmpl
 %%BUGZILLADIR%%/template/ja/default/reports/components.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/reports/create-chart.html.tmpl
+%%BUGZILLADIR%%/template/ja/default/reports/delete-series.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/reports/duplicates-simple.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/reports/duplicates-table.html.tmpl
 %%BUGZILLADIR%%/template/ja/default/reports/duplicates.html.tmpl
@@ -273,6 +285,7 @@
 @dirrmtry %%BUGZILLADIR%%/template/ja/default/list
 @dirrmtry %%BUGZILLADIR%%/template/ja/default/global
 @dirrmtry %%BUGZILLADIR%%/template/ja/default/flag
+@dirrmtry %%BUGZILLADIR%%/template/ja/default/extensions
 @dirrmtry %%BUGZILLADIR%%/template/ja/default/email
 @dirrmtry %%BUGZILLADIR%%/template/ja/default/bug/votes
 @dirrmtry %%BUGZILLADIR%%/template/ja/default/bug/process
