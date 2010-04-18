@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5053420c-4935-11df-83fb-0015587e2cc1">
+    <topic>mahara -- sql injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>mahara</name>
+	<range><lt>1.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Debian security team reports:</p>
+	<blockquote cite="http://www.debian.org/security/2010/dsa-2030">
+	<p>It was discovered that mahara, an electronic portfolio,
+	weblog, and resume builder is not properly escaping input
+	when generating a unique username based on a remote user
+	name from a single sign-on application. An attacker can use
+	this to compromise the mahara database via crafted user
+	names.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>39253</bid>
+      <cvename>CVE-2010-0400</cvename>
+      <url>http://www.debian.org/security/2010/dsa-2030</url>
+    </references>
+    <dates>
+      <discovery>2010-04-06</discovery>
+      <entry>2010-04-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a9f678d-48ca-11df-85f8-000c29a67389">
     <topic>sudo -- Privilege escalation with sudoedit</topic>
     <affects>
