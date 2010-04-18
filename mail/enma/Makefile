@@ -42,6 +42,10 @@ SUB_FILES=	milter-enma
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
+.if ${OSVERSION} >= 900007
+BROKEN=		does not build
+.endif
+
 USE_OPENSSL=	yes
 .if ${OSVERSION} < 700000
 WITH_OPENSSL_PORT=	yes
