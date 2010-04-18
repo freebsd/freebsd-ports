@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	svn_load_dirs
-PORTVERSION=	1.5.6
+PORTVERSION=	1.6.9
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/
 DISTNAME=	subversion-${DISTVERSION}
