@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	MooseX-Storage
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	An serialization framework for Moose classes
 
 BUILD_DEPENDS=	p5-Moose>=0.99:${PORTSDIR}/devel/p5-Moose \
