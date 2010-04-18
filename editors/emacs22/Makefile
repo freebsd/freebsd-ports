@@ -72,6 +72,8 @@ LATEST_LINK=	emacs22
 
 .if ${ARCH} == "ia64"
 BROKEN=	Emacs 22.X does not currently build on ia64
+.elif ${OSVERSION} >= 900007
+BROKEN=	does not build
 .endif
 
 pre-everything::
