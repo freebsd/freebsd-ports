@@ -1,6 +1,15 @@
---- configure.in	2008-07-09 14:38:42.000000000 +0800
-+++ configure.in	2008-07-09 14:41:01.000000000 +0800
-@@ -692,12 +692,13 @@
+--- configure.in.orig	2008-12-08 17:42:52.000000000 +0000
++++ configure.in	2010-03-17 21:41:00.869992126 +0000
+@@ -622,7 +622,7 @@
+ #
+ AC_CHECK_HEADERS([complex.h fenv.h io.h libc.h limits.h malloc.h memory.h process.h string.h \
+ regex.h rxposix.h rx/rxposix.h sys/dir.h sys/ioctl.h sys/select.h \
+-sys/time.h sys/timeb.h sys/times.h sys/stdtypes.h sys/types.h \
++sys/time.h sys/times.h sys/stdtypes.h sys/types.h \
+ sys/utime.h time.h unistd.h utime.h pwd.h grp.h sys/utsname.h \
+ direct.h strings.h])
+ 
+@@ -725,12 +725,13 @@
  #   sys/param.h - not in mingw
  #   pthread.h - only available with pthreads.  ACX_PTHREAD doesn't
  #       check this specifically, we need it for the timespec test below.
@@ -15,7 +24,7 @@
  AC_CHECK_FUNCS(chroot flock getlogin cuserid getpriority setpriority getpass sethostname gethostname)
  AC_CHECK_DECLS([sethostname, strncasecmp])
  
-@@ -1190,9 +1191,11 @@
+@@ -1260,9 +1261,11 @@
      #         all; not present on MacOS X or Solaris 10
      #     pthread_get_stackaddr_np - "np" meaning "non portable" says it
      #         all; specific to MacOS X
