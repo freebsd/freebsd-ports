@@ -36,4 +36,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vmsbackup ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
