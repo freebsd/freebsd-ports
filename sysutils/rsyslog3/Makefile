@@ -43,4 +43,10 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include "${.CURDIR}/bsd.rsyslog.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900007
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
