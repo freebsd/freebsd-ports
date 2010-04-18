@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pathauto
-DISTVERSION=	6.x-1.2
-PORTREVISION=	1
+DISTVERSION=	6.x-1.3
 CATEGORIES=	www
 
 MAINTAINER=	nick@foobar.org
@@ -19,7 +18,7 @@ DRUPAL6_MODULE=	yes
 MODULE_FILES=	tests/pathauto.test pathauto.admin.inc pathauto.inc \
 		pathauto.info pathauto.install pathauto.js pathauto.module \
 		pathauto_node.inc pathauto_taxonomy.inc pathauto_user.inc \
-		translations/pathauto.pot translations/cs.po \
+		translations/pathauto.pot translations/ar.po translations/cs.po \
 		translations/da.po translations/de.po translations/el.po \
 		translations/es.po translations/fr.po translations/ja.po \
 		translations/nl.po translations/ru.po translations/tr.po
