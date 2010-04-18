@@ -7943,6 +7943,7 @@ libretto-config                 ports/sysutils/libretto-config
 librfc822                       ports/mail/librfc822
 librmath                        ports/math/libRmath
 libroadnav                      ports/astro/libroadnav
+libroxml                        ports/textproc/libroxml
 librsvg                         ports/graphics/librsvg
 librsvg2                        ports/graphics/librsvg2
 librsync                        ports/net/librsync
@@ -13217,6 +13218,7 @@ p5-Plack                        ports/www/p5-Plack
 p5-Plack-App-Proxy              ports/www/p5-Plack-App-Proxy
 p5-Plack-Handler-AnyEvent-HTTPD  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-Plack-Handler-AnyEvent-ReverseHTTP  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
+p5-Plack-Handler-AnyEvent-SCGI  ports/www/p5-Plack-Handler-AnyEvent-SCGI
 p5-Plack-Handler-SCGI           ports/www/p5-Plack-Handler-SCGI
 p5-Plack-Middleware-Auth-Digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-Plack-Middleware-AutoRefresh  ports/www/p5-Plack-Middleware-AutoRefresh
@@ -13506,6 +13508,7 @@ p5-Spreadsheet-WriteExcel-FromXML  ports/textproc/p5-Spreadsheet-WriteExcel-From
 p5-Spreadsheet-WriteExcelXML    ports/textproc/p5-Spreadsheet-WriteExcelXML
 p5-SpringGraph                  ports/graphics/p5-SpringGraph
 p5-Squatting                    ports/www/p5-Squatting
+p5-Squatting-On-PSGI            ports/www/p5-Squatting-On-PSGI
 p5-Stanford-DNSserver           ports/dns/p5-Stanford-DNSserver
 p5-Starlet                      ports/www/p5-Starlet
 p5-Starman                      ports/www/p5-Starman
@@ -13602,6 +13605,7 @@ p5-Taint-Runtime                ports/devel/p5-Taint-Runtime
 p5-Tangram                      ports/databases/p5-Tangram
 p5-Task-Catalyst                ports/www/p5-Task-Catalyst
 p5-Task-Math-Symbolic           ports/math/p5-Task-Math-Symbolic
+p5-Task-Plack                   ports/www/p5-Task-Plack
 p5-Task-Weaken                  ports/devel/p5-Task-Weaken
 p5-Tcl                          ports/lang/p5-Tcl
 p5-Tcl-Tk                       ports/x11-toolkits/p5-Tcl-Tk
@@ -16993,6 +16997,7 @@ p5-plack                        ports/www/p5-Plack
 p5-plack-app-proxy              ports/www/p5-Plack-App-Proxy
 p5-plack-handler-anyevent-httpd  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-plack-handler-anyevent-reversehttp  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
+p5-plack-handler-anyevent-scgi  ports/www/p5-Plack-Handler-AnyEvent-SCGI
 p5-plack-handler-scgi           ports/www/p5-Plack-Handler-SCGI
 p5-plack-middleware-auth-digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-plack-middleware-autorefresh  ports/www/p5-Plack-Middleware-AutoRefresh
@@ -17351,6 +17356,7 @@ p5-sql-translator               ports/databases/p5-SQL-Translator
 p5-sqlite-work                  ports/databases/p5-SQLite-Work
 p5-sqlrelay                     ports/databases/p5-sqlrelay
 p5-squatting                    ports/www/p5-Squatting
+p5-squatting-on-psgi            ports/www/p5-Squatting-On-PSGI
 p5-sru                          ports/www/p5-SRU
 p5-ssn-validate                 ports/devel/p5-SSN-Validate
 p5-stanford-dnsserver           ports/dns/p5-Stanford-DNSserver
@@ -17482,6 +17488,7 @@ p5-tap-formatter-junit          ports/devel/p5-TAP-Formatter-JUnit
 p5-tap-harness-junit            ports/devel/p5-TAP-Harness-JUnit
 p5-task-catalyst                ports/www/p5-Task-Catalyst
 p5-task-math-symbolic           ports/math/p5-Task-Math-Symbolic
+p5-task-plack                   ports/www/p5-Task-Plack
 p5-task-weaken                  ports/devel/p5-Task-Weaken
 p5-tcl                          ports/lang/p5-Tcl
 p5-tcl-tk                       ports/x11-toolkits/p5-Tcl-Tk
@@ -19241,6 +19248,7 @@ php5-propel                     ports/databases/php5-propel
 php5-pspell                     ports/textproc/php5-pspell
 php5-readline                   ports/devel/php5-readline
 php5-recode                     ports/converters/php5-recode
+php5-redis                      ports/databases/php5-redis
 php5-rrdtool                    ports/databases/php5-rrdtool
 php5-session                    ports/www/php5-session
 php5-shmop                      ports/devel/php5-shmop
@@ -21260,7 +21268,6 @@ rbscrobbler                     ports/audio/rbscrobbler
 rbtools                         ports/devel/rbtools
 rc                              ports/shells/rc
 rc5pipe                         ports/security/rc5pipe
-rc_subr                         ports/sysutils/rc_subr
 rcctools                        ports/converters/rcctools
 rclean                          ports/sysutils/rclean
 rclock                          ports/x11-clocks/rclock
