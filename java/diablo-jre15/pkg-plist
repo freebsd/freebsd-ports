@@ -290,6 +290,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/America/Maceio
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Managua
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Manaus
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Martinique
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Matamoros
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Mazatlan
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Menominee
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Merida
@@ -307,6 +308,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/America/Nome
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Noronha
 diablo-jre%%JRE_VERSION%%/lib/zi/America/North_Dakota/Center
 %%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/North_Dakota/New_Salem
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Ojinaga
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Panama
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Pangnirtung
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Paramaribo
@@ -321,6 +323,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/America/Recife
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Regina
 %%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Resolute
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Rio_Branco
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Santa_Isabel
 %%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Santarem
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Santiago
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Santo_Domingo
@@ -346,6 +349,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/America/Yellowknife
 diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Casey
 diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Davis
 diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/DumontDUrville
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Macquarie
 diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Mawson
 diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/McMurdo
 diablo-jre%%JRE_VERSION%%/lib/zi/Antarctica/Palmer
