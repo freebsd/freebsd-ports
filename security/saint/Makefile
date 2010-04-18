@@ -28,6 +28,10 @@ INSTALL_TARGET=	all
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		leaves files after deinstallation
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/saint
 	${TAR} -C ${WRKSRC} -cf - -X ${FILESDIR}/excludefiles . | ${TAR} -C ${PREFIX}/saint -xf -
