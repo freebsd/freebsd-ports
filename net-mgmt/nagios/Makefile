@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTVERSION=	3.2.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jarrod@netleader.com.au
+MAINTAINER=	jarrod@downtools.com.au
 COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
