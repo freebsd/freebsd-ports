@@ -460,6 +460,7 @@
     SUBDIR += gir-repository-libnotify
     SUBDIR += gir-repository-libsoup
     SUBDIR += git
+    SUBDIR += git-merge-changelog
     SUBDIR += gitg
     SUBDIR += gittrac
     SUBDIR += glade2

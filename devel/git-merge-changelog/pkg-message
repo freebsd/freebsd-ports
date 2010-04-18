@@ -1,0 +1,16 @@
+************************************************************************
+Usage of git-merge-changelog:
+
+- Add to .git/config of the checkout (or to your $HOME/.gitconfig) the
+  lines:
+
+	[merge "merge-changelog"]
+		name = GNU-style ChangeLog merge driver
+		driver = git-merge-changelog %O %A %B
+
+- In every directory that contains a ChangeLog file, add a file
+  '.gitattributes' with this line:
+
+	ChangeLog	merge=merge-changelog
+
+************************************************************************
