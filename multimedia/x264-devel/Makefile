@@ -6,8 +6,7 @@
 #      $Id: Makefile 30 2006-10-30 22:15:26Z buhnux $
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20090119
-PORTREVISION=	1
+PORTVERSION=	0.0.20100222
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -17,20 +16,23 @@ DIST_SUBDIR=	x264
 EXTRACT_ONLY=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245${EXTRACT_SUFX}
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT?=	Multimedia library and tool for encoding H.264/AVC video streams
+COMMENT?=	Library and tool for encoding H.264/AVC video streams
 
-BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
+CONFLICTS=	x264-0.0.2009*
+
+BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
+		as:${PORTSDIR}/devel/binutils
 
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
 WRKSRC=		${WRKDIR}/${DISTNAME}
+USE_GCC?=	4.4+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	DEBUG "Enable Debugging" Off \
-		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off \
 		PGO "Enable Profile-Guided Optimization" Off \
 		GPAC "Enable MPEG-4 Output" On \
 		X11_OUTPUT "Enable X11 Output" Off
@@ -73,14 +75,12 @@ RESTRICTED=	${Y4M_VIDEO_DISTFILE} file may not be mirrored
 RESTRICTED_FILES=	${Y4M_VIDEO_DISTFILE}
 .endif
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O2 -funroll-loops -ffast-math
-.endif
-
 .if !defined(WITHOUT_GPAC)
-BUILD_DEPENDS+=		gpac-libgpac>=0.4.2.r2,1:${PORTSDIR}/multimedia/gpac-libgpac
+BUILD_DEPENDS+=		gpac-libgpac>=0.4.5,1:${PORTSDIR}/multimedia/gpac-libgpac
 LIB_DEPENDS+=		gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
 CONFIGURE_ARGS+=	--enable-mp4-output
+.else
+CONFIGURE_ARGS+=	--disable-mp4-output
 .endif
 
 .if defined(WITH_X11_OUTPUT)
