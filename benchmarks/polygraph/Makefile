@@ -29,6 +29,10 @@ OPTIONS=	GNUPLOT "gnuplot if you want full report functionality" ON \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900009
+BROKEN=		does not build
+.endif
+
 .if !defined(WITHOUT_GNUPLOT)
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 .endif
