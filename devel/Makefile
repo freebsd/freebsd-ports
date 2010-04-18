@@ -2555,6 +2555,7 @@
     SUBDIR += py-cjson
     SUBDIR += py-cmdln
     SUBDIR += py-cog
+    SUBDIR += py-coil
     SUBDIR += py-configobj
     SUBDIR += py-construct
     SUBDIR += py-coverage
