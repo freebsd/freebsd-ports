@@ -21,6 +21,7 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_CDROM=	Non-commercial use only
 RESTRICTED=	Non-commercial use only
+BROKEN=		does not fetch
 
 WRKSRC=		${WRKDIR}/usr
 MAN1=		ftree.1
