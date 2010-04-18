@@ -1,0 +1,14 @@
+--- configure.orig	2010-04-18 11:13:22.000000000 +0200
++++ configure	2010-04-18 11:17:01.000000000 +0200
+@@ -3,8 +3,9 @@
+ # of perl script that calls cmake.
+ 
+ # Ensure cmake and perl are there
+-cmake -P cmake/check_minimal_version.cmake >/dev/null 2>&1 || HAVE_CMAKE=no
+-perl --version >/dev/null 2>&1 || HAVE_CMAKE=no
++#cmake -P cmake/check_minimal_version.cmake >/dev/null 2>&1 || HAVE_CMAKE=no
++#perl --version >/dev/null 2>&1 || HAVE_CMAKE=no
++HAVE_CMAKE=no
+ if test "$HAVE_CMAKE" = "no"
+ then
+   sh ./configure.am "$@"
