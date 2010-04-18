@@ -28,4 +28,10 @@ post-install:
 	${MKDIR} ${PREFIX}/include/ProjectionLib
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/ProjectionLib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not patch
+.endif
+
+.include <bsd.port.post.mk>
