@@ -1940,6 +1940,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Maceio
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Managua
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Manaus
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Martinique
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Matamoros
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Mazatlan
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Menominee
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Merida
@@ -1957,6 +1958,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Nome
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Noronha
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/North_Dakota/Center
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/North_Dakota/New_Salem
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Ojinaga
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Panama
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Pangnirtung
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Paramaribo
@@ -1971,6 +1973,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Recife
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Regina
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Resolute
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Rio_Branco
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Santa_Isabel
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Santarem
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Santiago
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Santo_Domingo
@@ -1996,6 +1999,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Yellowknife
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/Casey
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/Davis
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/DumontDUrville
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/Macquarie
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/Mawson
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/McMurdo
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/Palmer
