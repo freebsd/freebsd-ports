@@ -1,0 +1,3 @@
+This is a Git "merge" driver for GNU style ChangeLog files.
+
+Author:	Bruno Haible <bruno@clisp.org>
