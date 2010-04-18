@@ -70,6 +70,10 @@ OPTIONS=	PAM		"Enable pam(3) support"				on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_X509) && ( defined(WITH_HPN) || defined(WITH_LPK))
 BROKEN=		X509 patch incompatible with HPN and LPK patches
 .endif

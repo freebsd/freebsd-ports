@@ -34,6 +34,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra::patch-msdosfs.c
 .if ${OSVERSION} >= 800101
 EXTRA_PATCHES+=	${FILESDIR}/extra::patch-nfs.c
 .endif
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

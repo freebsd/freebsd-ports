@@ -23,4 +23,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/k8temp ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/k8temp.8 ${PREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
