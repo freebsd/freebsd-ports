@@ -40,6 +40,7 @@ OPTIONS=	AMR_NB	"AMR Narrow Band encoder" off \
 		SCHROEDINGER	"Dirac codec via libschroedinger" on \
 		SDL	"SDL support (build ffplay)" off \
 		SPEEX	"Speex audio decoder" off \
+		SSSE3	"Enable ssse3 support (gcc 4.4+)" off \
 		THEORA	"Theora encoder (implies OGG)" on \
 		VHOOK	"Video hook support" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
@@ -109,6 +110,11 @@ PORTDOCS=	*
 
 .ifndef(WITHOUT_FFSERVER)
 USE_RC_SUBR=	ffserver
+.endif
+
+.if defined(WITH_SSSE3)
+USE_GCC=	4.4+
+BUILD_DEPENDS+=	as:${PORTSDIR}/devel/binutils
 .endif
 
 # sse hardware vector support
