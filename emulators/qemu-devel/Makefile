@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.12.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}:release \
 		${MASTER_SITE_LOCAL}:snapshot \
@@ -22,7 +22,7 @@ COMMENT=	QEMU CPU Emulator - development snapshot
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USE_PERL5_BUILD=	yes
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
@@ -43,10 +43,10 @@ OPTIONS=	RTL8139_TIMER "allow use of re(4) nic with FreeBSD guests" Off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_ALL_TARGETS)
-CONFIGURE_ARGS+=       --target-list=i386-softmmu,x86_64-softmmu
-PLIST_SUB+=    ALLTARGETS="@comment "
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
+PLIST_SUB+=	ALLTARGETS="@comment "
 .else
-PLIST_SUB+=    ALLTARGETS=""
+PLIST_SUB+=	ALLTARGETS=""
 .endif
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
@@ -95,7 +95,7 @@ MAKE_ARGS+=	ARCH=x86_64
 .endif
 
 .if ${ARCH} == "powerpc"
-MAKE_ARGS+=     ARCH=ppc
+MAKE_ARGS+=	ARCH=ppc
 .endif
 
 pre-patch:
