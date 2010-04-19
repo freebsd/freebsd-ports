@@ -129,6 +129,7 @@ CONFIGURE_ENV+=	ac_cv_pthreads_lib=${PTHREAD_LIBS} \
  MAKE_ENV+=      LDFLAGS="${LDFLAGS}"
 
 .if defined(WITH_OPENSSL)
+WITH_OPENSSL_BASE=	yes
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE} \
 		--with-openssl-dir=${OPENSSLBASE}
