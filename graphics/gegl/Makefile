@@ -16,7 +16,6 @@ COMMENT=	A graph based image processing framework
 
 LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl \
     		execinfo.1:${PORTSDIR}/devel/libexecinfo
-BUILD_DEPENDS=	enscript:${PORTSDIR}/print/enscript-a4
 
 OPTIONS=	CAIRO		"Enable Cairo" on \
 		ENSCRIPT	"Enable Enscript" on \
@@ -65,8 +64,6 @@ PLIST_SUB+=	CAIRO="@comment "
 
 .if !defined(WITHOUT_ENSCRIPT)
 BUILD_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
-.else
-CONFIGURE_ARGS+=--without-enscript
 .endif
 
 .if !defined(WITHOUT_FFMPEG)
