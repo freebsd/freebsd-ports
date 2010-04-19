@@ -64,10 +64,14 @@ IGNORE=	cannot install: OpenLDAP versions mismatch: openldap${_OPENLDAP_VER}-cli
 
 CFLAGS+=	-DLDAP_DEPRECATED
 
+_OPENLDAP_CLIENT_PKG!=	${PKG_INFO} -Ex openldap.\*-client || ${TRUE}
+_OPENLDAP_FLAVOUR=	${_OPENLDAP_CLIENT_PKG:C/openldap//:C/-client-.*//}
+
 .if defined(WANT_OPENLDAP_SASL)
+.if !empty(_OPENLDAP_CLIENT_PKG) && empty(_OPENLDAP_FLAVOUR)
+IGNORE= cannot install: SASL support requested and ${_OPENLDAP_CLIENT_PKG} is installed
+.endif
 _OPENLDAP_FLAVOUR=	-sasl
-.else
-_OPENLDAP_FLAVOUR=
 .endif
 
 # And now we are checking if we can use it
