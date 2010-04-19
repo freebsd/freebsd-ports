@@ -16,6 +16,8 @@ DISTNAME=	php-gtk-${PORTVERSION}
 MAINTAINER=	kmoore@freebsd.org
 COMMENT=	An extension to use gtk2 in PHP-applications
 
+BROKEN=		does not compile
+
 USE_AUTOTOOLS=	automake:19:env autoconf:262 libtool:22:env
 USE_PHP=	pcre
 USE_PHP_BUILD=	yes
