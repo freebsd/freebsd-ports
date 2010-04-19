@@ -7,7 +7,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -17,6 +17,8 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+
+CONFLICTS=	memcached-1.2*
 
 USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES
