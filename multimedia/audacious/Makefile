@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	2.2
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
