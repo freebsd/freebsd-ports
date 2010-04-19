@@ -4310,6 +4310,7 @@ giram                           ports/graphics/giram
 gish-demo                       ports/games/gish-demo
 gist                            ports/www/gist
 git                             ports/devel/git
+git-merge-changelog             ports/devel/git-merge-changelog
 gitg                            ports/devel/gitg
 gittrac                         ports/devel/gittrac
 gj                              ports/java/gj
@@ -20123,6 +20124,7 @@ py-clutter-gtk                  ports/graphics/py-clutter-gtk
 py-cmdln                        ports/devel/py-cmdln
 py-cmemcache                    ports/databases/py-cmemcache
 py-cog                          ports/devel/py-cog
+py-coil                         ports/devel/py-coil
 py-configobj                    ports/devel/py-configobj
 py-construct                    ports/devel/py-construct
 py-coverage                     ports/devel/py-coverage
