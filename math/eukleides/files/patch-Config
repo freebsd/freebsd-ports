@@ -1,0 +1,35 @@
+
+$FreeBSD$
+
+--- Config.orig
++++ Config
+@@ -2,13 +2,13 @@
+ # Copyright (c) Christian Obrecht 2004-2010
+ 
+ # Installation prefix
+-PREFIX=/usr/local
++PREFIX=%%PREFIX%%
+ 
+ BINARIES = eukleides euktopst
+ 
+ # Localized keywords
+ # Uncomment to enable this feature.
+-# LOCALES = de fr
++LOCALES = de fr
+ 
+ # Documentation
+ # Alternative targets are 'pdf' and 'html'.
+@@ -27,9 +27,9 @@
+ BIN_DIR = $(PREFIX)/bin
+ SHARE_DIR = $(PREFIX)/share
+ MO_DIR = $(SHARE_DIR)/locale
+-DOC_DIR = $(SHARE_DIR)/doc/eukleides
+-EXM_DIR = $(DOC_DIR)/examples
+-MAN_DIR = $(SHARE_DIR)/man/man1
+-INFO_DIR = $(SHARE_DIR)/info
++DOC_DIR = %%DOCSDIR%%
++EXM_DIR = %%EXAMPLESDIR%%
++MAN_DIR = $(PREFIX)/man/man1
++INFO_DIR = $(PREFIX)/info
+ TEX_DIR = $(SHARE_DIR)/texmf/tex/latex/eukleides
+ 

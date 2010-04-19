@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- build/Makefile.orig
++++ build/Makefile
+@@ -12,12 +12,12 @@
+ YACC = bison
+ YFLAGS = -d
+ CC = gcc
+-IFLAGS = -I$(COMMON_DIR) -I$(MAIN_DIR) -I$(BUILD_DIR) 
++IFLAGS = -I$(COMMON_DIR) -I$(MAIN_DIR) -I$(BUILD_DIR) "-I%%LOCALBASE%%/include"
+ ifneq ($(strip $(LOCALES)),)
+ MOFLAGS = -DMO_DIR=\"$(MO_DIR)\" 
+ endif
+ CFLAGS = -Wall -D__$(BINARY)__ $(IFLAGS) $(MOFLAGS)
+-LDFLAGS = -lncurses -lreadline -lm
++LDFLAGS = -lncurses -lreadline -lm "-L%%LOCALBASE%%/lib" -lintl
+ VPATH = $(COMMON_DIR):$(MAIN_DIR):$(BUILD_DIR)
+ 
+ $(BINARY):
