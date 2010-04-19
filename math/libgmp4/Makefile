@@ -16,7 +16,10 @@ DISTNAME=	gmp-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic
 
-CONFLICTS=      gmp-5.*
+CONFLICTS=	gmp-5.*
+
+DEPRECATED=	Use math/gmp instead.
+EXPIRATION_DATE=	2010-04-30
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22

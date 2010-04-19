@@ -7,14 +7,14 @@
 
 PORTNAME=	ssss
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://point-at-infinity.org/ssss/
 
 MAINTAINER=	luke@novum.am.lublin.pl
 COMMENT=	Shamir's Secret Sharing Scheme
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 PLIST_FILES=	bin/ssss-combine bin/ssss-split
 

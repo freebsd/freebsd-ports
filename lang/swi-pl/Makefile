@@ -7,6 +7,7 @@
 
 PORTNAME=	swi-pl
 PORTVERSION=	5.8.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	pl-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	pl-${PORTVERSION}
 MAINTAINER=	g.gonter@ieee.org
 COMMENT=	Edinburgh-style Prolog compiler
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		readline:${PORTSDIR}/devel/readline
 
 LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC

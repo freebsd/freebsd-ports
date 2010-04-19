@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
@@ -20,7 +21,7 @@ COMMENT=	FSF gcc-4 for Windows cross-development
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		mingwm10.dll:${PORTSDIR}/devel/${PKGNAMEPREFIX}bin-msvcrt
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.3:${PORTSDIR}/math/mpfr
 
 GCCVERSION=	4.4.0

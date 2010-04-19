@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	3
 CATEGORIES=	math
 
 MASTERDIR=	${.CURDIR}/../../lang/php4

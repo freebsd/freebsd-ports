@@ -6,7 +6,7 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,7 +15,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Utilities for the KDE4 integrated X11 Desktop
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		zip.1:${PORTSDIR}/archivers/libzip \
 		lzma.0:${PORTSDIR}/archivers/xz \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \

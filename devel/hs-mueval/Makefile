@@ -7,6 +7,7 @@
 
 PORTNAME=	mueval
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -22,7 +23,7 @@ RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		hs-utf8-string-ghc>=0.3:${PORTSDIR}/devel/hs-utf8-string-ghc \
 		hs-show>=0.3:${PORTSDIR}/devel/hs-show \
 		hs-hint>=0.3.1:${PORTSDIR}/devel/hs-hint
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 GHC_VERSION=	6.10.4
 MUEVAL_VERSION=	${PORTVERSION}

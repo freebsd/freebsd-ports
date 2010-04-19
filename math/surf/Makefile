@@ -8,6 +8,7 @@
 
 PORTNAME=	surf
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -16,7 +17,7 @@ COMMENT=	Visualize some real algebraic geometry
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		gmp.8:${PORTSDIR}/math/libgmp4
+		gmp.10:${PORTSDIR}/math/gmp
 
 USE_XORG=	x11 xmu
 USE_GNOME=	gtk12

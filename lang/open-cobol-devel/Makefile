@@ -6,14 +6,14 @@
 
 PORTNAME=	open-cobol
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://freebsd.dev-urandom.com/open-cobol/
 
 MAINTAINER=	glen.j.barber@gmail.com
 COMMENT=	An open-source COBOL compiler
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 CONFLICTS=	open-cobol-1.[0]*
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	hoogle
 PORTVERSION=	4.0.7
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -20,7 +21,7 @@ BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		hs-safe>=0.2:${PORTSDIR}/devel/hs-safe \
 		hs-uniplate>=1.2.0.3:${PORTSDIR}/devel/hs-uniplate
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 GHC_VERSION=	6.10.4
 HOOGLE_VERSION=	${PORTVERSION}

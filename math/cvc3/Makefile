@@ -7,7 +7,7 @@
 
 PORTNAME=	cvc3
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvc3/download/${PORTVERSION}/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvc3/download/${PORTVERSION}/ \
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	An automatic theorem prover for the SMT problem
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 CONFIGURE_ARGS=	--enable-dynamic \
 		--with-arith=gmp \

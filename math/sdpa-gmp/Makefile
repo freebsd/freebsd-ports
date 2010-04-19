@@ -7,7 +7,7 @@
 
 PORTNAME=	sdpa-gmp
 PORTVERSION=	7.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${SRCFILE} ${MANUALFILE}
@@ -26,7 +26,7 @@ SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
 MANUALFILE=	sdpa.${MANUALVER}.manual.${MANDATE}.pdf
 GNU_CONFIGURE=	yes
 LIB_DEPENDS+=	spooles:${PORTSDIR}/math/spooles \
-		gmp.8:${PORTSDIR}/math/libgmp4 \
+		gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.3:${PORTSDIR}/math/mpfr
 
 CONFIGURE_ARGS+= --with-system-spooles

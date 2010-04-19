@@ -6,6 +6,7 @@
 
 PORTNAME=	haddock
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/haddock/dist/ \
 		http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
        		hs-ghc-paths>=0.1.0.5:${PORTSDIR}/devel/hs-ghc-paths
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
        		hs-ghc-paths>=0.1.0.5:${PORTSDIR}/devel/hs-ghc-paths
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 .else
 NO_PKG_REGISTER=
 .endif

@@ -8,14 +8,14 @@
 
 PORTNAME=	libecc
 PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	C++ Elliptic Curve Library
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

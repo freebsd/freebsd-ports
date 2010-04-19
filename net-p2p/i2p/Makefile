@@ -7,6 +7,7 @@
 
 PORTNAME=	i2p
 PORTVERSION=	0.7.10
+PORTREVISION=	1
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:i2p \
 		http://mirror.i2p2.de/:i2p \
@@ -19,7 +20,7 @@ EXTRACT_ONLY=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An anonymizing network
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/libgmp4
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_BZIP2=	yes

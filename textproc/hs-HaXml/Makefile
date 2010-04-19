@@ -6,6 +6,7 @@
 
 PORTNAME=	haxml
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/HaXml/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
 		hs-polyparse-ghc>=1.1:${PORTSDIR}/textproc/hs-polyparse-ghc
 RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
 		hs-polyparse-ghc>=1.1:${PORTSDIR}/textproc/hs-polyparse-ghc
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 GHC_VERSION=	6.10.4
 HAXML_VERSION=	${PORTVERSION}

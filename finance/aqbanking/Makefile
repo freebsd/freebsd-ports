@@ -7,7 +7,7 @@
 
 PORTNAME=	aqbanking
 PORTVERSION=	4.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
 DISTFILES=	download.php\?package=03\&release=50\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
@@ -16,7 +16,7 @@ MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Online banking interface and financial data framework
 
 LIB_DEPENDS=	gwenhywfar.58:${PORTSDIR}/devel/gwenhywfar \
-		gmp.8:${PORTSDIR}/math/libgmp4
+		gmp.10:${PORTSDIR}/math/gmp
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

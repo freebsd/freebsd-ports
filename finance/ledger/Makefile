@@ -7,14 +7,14 @@
 
 PORTNAME=	ledger
 PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	SF
 
 MAINTAINER=	woodycarey@hotmail.com
 COMMENT=	John Wiegley's command line accounting program
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		pcre:${PORTSDIR}/devel/pcre \
 		xmltok:${PORTSDIR}/www/libwww \
 		xmlparse:${PORTSDIR}/www/libwww

@@ -6,6 +6,7 @@
 
 PORTNAME=	x11
 PORTVERSION=	1.5.0.0
+PORTREVISION=	1
 CATEGORIES=	x11 haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,7 +17,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	X11 bindings for Haskell programs
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 
 USE_XORG=	x11 xext sm

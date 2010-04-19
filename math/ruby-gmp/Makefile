@@ -7,7 +7,7 @@
 
 PORTNAME=	gmp
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math ruby
 MASTER_SITES=	http://raa.ruby-lang.org/cache/libgmp-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings to GNU Multiprecision Library
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

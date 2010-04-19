@@ -7,7 +7,7 @@
 
 PORTNAME=	hmake
 PORTVERSION=	3.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/hmake/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
@@ -20,7 +20,7 @@ COMMENT=	Intelligent compilation management tool for Haskell programs
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-readline>=1.0.1.0:${PORTSDIR}/devel/hs-readline
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--prefix=${PREFIX}

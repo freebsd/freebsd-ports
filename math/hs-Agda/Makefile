@@ -7,6 +7,7 @@
 
 PORTNAME=	Agda
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	math haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -29,7 +30,7 @@ RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		hs-haskeline>=0.3:${PORTSDIR}/devel/hs-haskeline \
 		hs-utf8-string-ghc>=0.1:${PORTSDIR}/devel/hs-utf8-string-ghc
 
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_ICONV=	yes
 

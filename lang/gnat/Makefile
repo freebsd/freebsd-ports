@@ -14,7 +14,7 @@
 
 PORTNAME=		gnat
 PORTVERSION=		2009
-PORTREVISION=		1
+PORTREVISION=	2
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_LOCAL}:boot
 MASTER_SITE_SUBDIR=	deischen/gcc/:boot
@@ -23,7 +23,7 @@ DISTFILES=		${gcc_srcfile}:gcc ${gnat_srcfile}:gnat
 MAINTAINER=		eischen@vigrid.com
 COMMENT=		The GNU Ada Compiler system
 
-LIB_DEPENDS=		gmp.8:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=		gmp.10:${PORTSDIR}/math/gmp \
 			mpfr.3:${PORTSDIR}/math/mpfr
 
 ONLY_FOR_ARCHS=		i386

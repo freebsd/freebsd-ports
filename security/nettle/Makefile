@@ -9,6 +9,7 @@
 
 PORTNAME=	nettle
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 		ftp://ftp.lysator.liu.se/pub/security/lsh/
@@ -16,7 +17,7 @@ MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	A low-level cryptographic library
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes

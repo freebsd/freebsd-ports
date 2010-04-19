@@ -6,7 +6,7 @@
 
 PORTNAME=	idoc
 PORTVERSION=	0.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/idoc/
 PKGNAMEPREFIX=	hs-
@@ -15,7 +15,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A No Frills Haskell Interface Documentation System
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
 PLIST_FILES=	bin/idoc
 USE_GMAKE=	yes

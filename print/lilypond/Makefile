@@ -9,7 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.13.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/:src \
     		${MASTER_SITE_LOCAL}/gahr/:fonts \
@@ -31,7 +31,7 @@ BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		zip:${PORTSDIR}/archivers/zip \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile \
-    		gmp.8:${PORTSDIR}/math/libgmp4
+    		gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
     		mftrace:${PORTSDIR}/print/mftrace
 

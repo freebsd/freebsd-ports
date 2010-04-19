@@ -7,13 +7,14 @@
 
 PORTNAME=	mpc
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.multiprecision.org/mpc/download/
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Library of complex numbers with arbitrarily high precision
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.3:${PORTSDIR}/math/mpfr
 
 GNU_CONFIGURE=	yes

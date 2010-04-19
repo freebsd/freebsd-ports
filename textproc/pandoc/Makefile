@@ -7,6 +7,7 @@
 
 PORTNAME=	pandoc
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
 RUN_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
 		hs-utf8-string-ghc>=0.3:${PORTSDIR}/devel/hs-utf8-string-ghc \
 		hs-zip-archive-ghc>=0.1:${PORTSDIR}/archivers/hs-zip-archive-ghc
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 MAN1=		pandoc.1 markdown2pdf.1 html2markdown.1 hsmarkdown.1
 
