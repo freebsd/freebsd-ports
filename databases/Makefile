@@ -172,6 +172,7 @@
     SUBDIR += mantis
     SUBDIR += mdbtools
     SUBDIR += memcached
+    SUBDIR += memcached12
     SUBDIR += memcachedb
     SUBDIR += mergeant
     SUBDIR += metakit
