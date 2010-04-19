@@ -16,9 +16,10 @@ DISTFILES=	# none
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Git "merge" driver for GNU style ChangeLog files
 
-EXTRACT_DEPENDS=	${GNULIB_DIR}/lib/${PORTNAME}.c:${GNULIB_PORTDIR}
+EXTRACT_DEPENDS=	${GNULIB_DIR}/lib/${PORTNAME}.c:${GNULIB_PORTDIR}	\
+			automake-1.10:${PORTSDIR}/devel/automake110		\
+			autoconf-2.62:${PORTSDIR}/devel/autoconf262
 
-USE_AUTOTOOLS=	automake:110 autoconf:262
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -37,12 +38,6 @@ GNULIB_WRKSRC!=	cd ${GNULIB_PORTDIR} && ${MAKE} -V WRKSRC
 do-extract:
 	${MKDIR} ${WRKDIR}
 	cd ${GNULIB_DIR}; ./gnulib-tool --create-testdir --dir="${WRKSRC}" ${PORTNAME}
-
-# Disable unwanted hooks added by USE_AUTOTOOLS.
-patch-autotools:
-	@${DO_NADA}
-run-autotools:
-	@${DO_NADA}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
