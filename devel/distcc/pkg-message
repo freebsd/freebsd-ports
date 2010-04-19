@@ -1,7 +1,6 @@
 WARNING: distcc[d] performs NO AUTHENTICATION at all and should
 ONLY be used in trusted networks!
 
-NEW in 2.18
 Distccd now requires the --allow (-a) argument when running
 in daemon mode. This option restricts distcc to a specific
 network, by default this port uses 127.0.0.0/8, you should
