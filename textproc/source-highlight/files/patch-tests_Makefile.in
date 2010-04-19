@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	2010-01-20 01:24:37.000000000 -0500
++++ tests/Makefile.in	2010-01-20 01:26:27.000000000 -0500
+@@ -1884,7 +1884,7 @@
+ @NO_CTAGS_FALSE@	sed -itesttmp -e 's/\_tmp\.h/\.h/g' test_refs_tmp.h.html test_refs_tmp.cpp.html
+ @NO_CTAGS_FALSE@	sed -itesttmp -e 's/\_tmp\.cpp/\.cpp/g' test_refs_tmp.h.html test_refs_tmp.cpp.html
+ @NO_CTAGS_FALSE@	$(CPP2LATEX_WREFS) -i $(srcdir)/test.h -o test_ref.out.tex $(CTAGS_COMMAND_TMP)
+-@NO_CTAGS_FALSE@	sed -itesttmp -r 's/([.\/[:alnum:]]+)\/(test\.h\:[[:alnum:]\._]+)/\2/g' test_ref.out.tex # eliminate leading paths
++@NO_CTAGS_FALSE@	sed -itesttmp -E 's/([.\/[:alnum:]]+)\/(test\.h\:[[:alnum:]\._]+)/\2/g' test_ref.out.tex # eliminate leading paths
+ @NO_CTAGS_FALSE@	$(CPP2LATEX_WREFSPOST) -i $(srcdir)/test.h -o test_ref_post.out.tex $(CTAGS_COMMAND_TMP)
+ @NO_CTAGS_FALSE@	sed -itesttmp -f $(srcdir)/erasedir3.sed test_ref_post.out.tex # eliminate leading paths
+ @NO_CTAGS_FALSE@	$(CPP2TEXINFO_WREFS) -i $(srcdir)/test.h -o test_ref.out.texinfo $(CTAGS_COMMAND_TMP)

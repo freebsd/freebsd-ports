@@ -1,0 +1,13 @@
+--- m4/Makefile.in.orig	2010-01-19 18:51:38.000000000 -0500
++++ m4/Makefile.in	2010-01-19 18:56:21.000000000 -0500
+@@ -841,7 +841,9 @@
+ 
+ info-am:
+ 
+-install-data-am: install-aclocalDATA
++#if the aclocalDATA files are needed, install the devel/autoconf-archive port
++#install-data-am: install-aclocalDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-recursive
+ 

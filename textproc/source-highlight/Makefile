@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	source-highlight
-PORTVERSION=	2.11.1
-PORTREVISION=	0
+PORTVERSION=	3.1.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	src-highlite
@@ -19,15 +18,15 @@ BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
-.if defined(NOPORTDOCS)
-MAKE_ENV+=	NOPORTDOCS="${NOPORTDOCS}"
-.endif
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
-MAN1=	source-highlight.1 check-regexp.1
-INFO=	source-highlight
+MAN1=	check-regexp.1 source-highlight.1 source-highlight-settings.1
+INFO=	source-highlight source-highlight-lib
 
 OPTIONS=	BASH	"Support Bash completion"	Off
 
@@ -47,5 +46,24 @@ PLIST_SUB+=	BASH=""
 CONFIGURE_ARGS+=	--without-bash-completion
 PLIST_SUB+=	BASH="@comment "
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
+.if defined(NOPORTDATA)
+	@${REINPLACE_CMD} -e '/install-data-am:/,/:/s/install-source_highlightdataDATA//g' \
+		${WRKSRC}/doc/Makefile.in ${WRKSRC}/src/Makefile.in
+.endif
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/install-data-am:/,/:/s/install-source_highlightdocDATA//g' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in ${WRKSRC}/tests/Makefile.in
+.endif
+.if defined(NOPORTEXAMPLES)
+	@${REINPLACE_CMD} -e '/install-data-am:/,/:/s/install-source_highlightlibexampleDATA//g' \
+		${WRKSRC}/lib/examples/Makefile.in
+.endif
+
+test: build
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} ${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>
