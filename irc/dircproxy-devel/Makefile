@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	dircproxy
-PORTVERSION=	1.2.0.b2
-PORTREVISION=	1
+DISTVERSION=	1.2.0-RC1
 CATEGORIES=	irc
 MASTER_SITES=	http://dircproxy.googlecode.com/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/g}
 PKGNAMESUFFIX=	-devel
-EXTRACT_SUFX=	.tar.bz
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A detachable irc proxy server with many features
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 SUB_FILES+=	pkg-message
