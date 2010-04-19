@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	2.2
-PORTREVISION=	5
+PORTVERSION=	2.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -60,11 +59,10 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		MMS		"Enable mms support"			off \
 		MTP		"Enable MTP upload support"             off \
 		PARANORMAL	"Enable paranormal vis plugin"		on  \
-		XSPF		"Enable XSPF support"			on  \
 		GNOME		"Build with gnomevfs/gconf support"	off \
 		NLS		"Native Language Support"		on  \
-		CURL		"curl for lastfm/scrobbler support"	off \
-		SSE2		"Enable SSE2 support"			on
+		SSE2		"Enable SSE2 support"			on  \
+		RESAMPLE	"Enable resample support"		off
 
 .include <bsd.port.pre.mk>
 
@@ -301,31 +299,24 @@ CONFIGURE_ARGS+=--disable-mtp_up
 PLIST_SUB+=	MTPPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_XSPF)
-USE_GNOME+=	libxml2
-CONFIGURE_ARGS+=--enable-xspf
-PLIST_SUB+=	XSPFPLUGIN=""
-.else
-CONFIGURE_ARGS+=--disable-xspf
-PLIST_SUB+=	XSPFPLUGIN="@comment "
-.endif
-
 .if defined(WITH_GNOME)
 USE_GNOME+=	gnomevfs2 gconf2
 CONFIGURE_ARGS+=--enable-gnome-vfs --enable-gconf
-.endif
-
-.if !defined(WITHOUT_CURL) || exists(${LOCALBASE}/lib/libcurl.so)
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
-PLIST_SUB+=     CURLPLUGIN=""
-.else
-PLIST_SUB+=     CURLPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_SSE2)
 CONFIGURE_ARGS+=--disable-sse2
 .else
 CONFIGURE_ARGS+=--enable-sse2
+.endif
+
+.if !defined(WITHOUT_RESAMPLE)
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+CONFIGURE_ARGS+=--enable-resample
+PLIST_SUB+=     RESAMPLEPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-resample
+PLIST_SUB+=     RESAMPLEPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -347,6 +338,9 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$EGREP|egrep|g; \
 		s| -ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|g' \
+		${WRKSRC}/src/neon/cert_verification.c \
+		${WRKSRC}/src/usf/memory.c
 
 pre-configure:
 .if defined(WITH_AUDIOCD) && !exists(${LOCALBASE}/lib/libcdio_cdda.so)

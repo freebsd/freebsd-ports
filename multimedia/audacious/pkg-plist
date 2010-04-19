@@ -6,7 +6,6 @@ bin/audacious2
 include/audacious/audconfig.h
 include/audacious/auddrct.h
 include/audacious/configdb.h
-include/audacious/custom_uri.h
 include/audacious/dbus.h
 include/audacious/dbus-service.h
 include/audacious/equalizer_preset.h
@@ -18,7 +17,6 @@ include/audacious/id3tag.h
 include/audacious/input.h
 include/audacious/interface.h
 include/audacious/main.h
-include/audacious/mime.h
 include/audacious/output.h
 include/audacious/playback.h
 include/audacious/playlist_container.h
@@ -29,9 +27,7 @@ include/audacious/ui_fileinfopopup.h
 include/audacious/ui_plugin_menu.h
 include/audacious/ui_preferences.h
 include/audacious/util.h
-include/libSAD/libSAD.h
-include/libSAD/common.h
-include/libSAD/dither.h
+include/libaudcore/audio.h
 include/libaudcore/audstrings.h
 include/libaudcore/index.h
 include/libaudcore/stringpool.h
@@ -44,6 +40,7 @@ include/libaudcore/vfs.h
 include/libaudcore/vfs_buffer.h
 include/libaudcore/vfs_buffered_file.h
 include/libaudgui/libaudgui.h
+include/libaudgui/libaudgui-gtk.h
 include/libaudtag/audtag.h
 include/libaudtag/util.h
 %%WITH_DBUS%%lib/libaudclient.so
@@ -61,9 +58,6 @@ lib/libaudid3tag.so.2.0.0
 lib/libaudtag.so
 lib/libaudtag.so.1
 lib/libaudtag.so.1.0.0
-lib/libSAD.so
-lib/libSAD.so.2
-lib/libSAD.so.2.0.0
 libdata/pkgconfig/audacious.pc
 libdata/pkgconfig/audclient.pc
 share/applications/audacious2.desktop
@@ -89,6 +83,7 @@ share/applications/audacious2-gtkui.desktop
 %%DATADIR%%/ui/mainwin.ui
 %%DATADIR%%/ui/player.ui
 %%DATADIR%%/ui/playlist.ui
+%%NLS%%share/locale/be/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/br/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious.mo
@@ -113,6 +108,7 @@ share/applications/audacious2-gtkui.desktop
 %%NLS%%share/locale/mk/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/audacious.mo
@@ -129,7 +125,6 @@ share/pixmaps/audacious2.png
 @dirrm %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%
 @dirrm include/audacious
-@dirrm include/libSAD
 @dirrm include/libaudcore
 @dirrm include/libaudgui
 @dirrm include/libaudtag

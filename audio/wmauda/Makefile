@@ -7,7 +7,7 @@
 
 PORTNAME=	wmauda
 PORTVERSION=	0.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.netswarm.net/misc/ \
 		${MASTER_SITE_GENTOO}
@@ -33,7 +33,8 @@ MAN1=	wmauda.1
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(MANPAGE_DIR.*):=,\1\?=,; \
-			      s,^(LIBS.*):=,\1\+=,' \
+			      s,^(LIBS.*):=,\1\+=,; \
+			      s,audacious,& audclient,' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/usr/share/pixmaps,${PREFIX}/share/pixmaps,g' \
 		${WRKSRC}/config.h

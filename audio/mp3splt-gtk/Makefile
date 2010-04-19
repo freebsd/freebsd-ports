@@ -6,7 +6,7 @@
 
 PORTNAME=	mp3splt-gtk
 PORTVERSION=	0.5.7a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -28,5 +28,10 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 CONFIGURE_ARGS+=	--enable-audacious --with-mp3splt=${LOCALBASE} --with-mp3splt-includes=${LOCALBASE}/include --with-mp3splt-libraries=${LOCALBASE}/lib --disable-mp3splttest
 
 MAN1=	mp3splt-gtk.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"audacious |& audclient |g' \
+		${WRKSRC}/configure
+
 
 .include <bsd.port.mk>
