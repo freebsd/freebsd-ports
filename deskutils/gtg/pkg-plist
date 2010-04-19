@@ -100,6 +100,11 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/plugins/export/export.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/export/export.pyo
 %%PYTHON_SITELIBDIR%%/GTG/plugins/export/export.ui
+%%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates/template_simple.html
+%%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates/template_textual.txt
+%%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates/thumbnail_simple.html
+%%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates/thumbnail_statusrpt.txt
+%%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates/thumbnail_textual.txt
 %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized-tasks.gtg-plugin
 %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks/__init__.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks/__init__.pyc
@@ -127,6 +132,7 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/__init__.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/__init__.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/__init__.pyo
+%%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/hello_world.ui
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/helloworld.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/helloworld.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/helloworld/helloworld.pyo
@@ -165,6 +171,9 @@ bin/gtg_new_task
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/icons/hicolor/16x16/rtm_image.png
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/icons/hicolor/24x24/rtm_image.png
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/icons/hicolor/svg/rtm_image.svg
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/pyrtm/__init__.py
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/pyrtm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/pyrtm/__init__.pyo
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/pyrtm/rtm.py
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/pyrtm/rtm.pyc
 %%PYTHON_SITELIBDIR%%/GTG/plugins/rtm_sync/pyrtm/rtm.pyo
@@ -313,6 +322,7 @@ share/locale/de/LC_MESSAGES/gtg.mo
 share/locale/en_CA/LC_MESSAGES/gtg.mo
 share/locale/en_GB/LC_MESSAGES/gtg.mo
 share/locale/es/LC_MESSAGES/gtg.mo
+share/locale/eu/LC_MESSAGES/gtg.mo
 share/locale/fi/LC_MESSAGES/gtg.mo
 share/locale/fr/LC_MESSAGES/gtg.mo
 share/locale/gl/LC_MESSAGES/gtg.mo
@@ -337,6 +347,7 @@ share/locale/ru/LC_MESSAGES/gtg.mo
 share/locale/si/LC_MESSAGES/gtg.mo
 share/locale/sl/LC_MESSAGES/gtg.mo
 share/locale/sq/LC_MESSAGES/gtg.mo
+share/locale/sr/LC_MESSAGES/gtg.mo
 share/locale/sv/LC_MESSAGES/gtg.mo
 share/locale/te/LC_MESSAGES/gtg.mo
 share/locale/tr/LC_MESSAGES/gtg.mo
@@ -399,6 +410,7 @@ share/locale/zh_CN/LC_MESSAGES/gtg.mo
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks/icons/hicolor
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks/icons
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/geolocalized_tasks
+@dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/export/export_templates
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/export
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/evolution_sync
 @dirrm %%PYTHON_SITELIBDIR%%/GTG/plugins/bugzilla
