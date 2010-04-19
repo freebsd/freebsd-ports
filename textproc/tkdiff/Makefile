@@ -7,6 +7,7 @@
 
 PORTNAME=	tkdiff
 PORTVERSION=	4.1.4
+PORTREVISION=	1
 CATEGORIES=	textproc tk
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
@@ -14,14 +15,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A Tk frontend for diff(1)
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-
+USE_TK=		yes
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/tkdiff
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|wish|wish8.4|' ${WRKSRC}/tkdiff
+	@${REINPLACE_CMD} -e 's|wish|${WISH}|' ${WRKSRC}/tkdiff
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tkdiff ${PREFIX}/bin
