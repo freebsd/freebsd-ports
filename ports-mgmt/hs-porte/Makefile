@@ -6,7 +6,7 @@
 
 PORTNAME=	porte
 PORTVERSION=	0.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ports-mgmt haskell
 MASTER_SITES=	http://carte.repnop.org/releases/
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-stringsearch>=0.2.1.1:${PORTSDIR}/textproc/hs-stringsearch
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-stringsearch>=0.2.1.1:${PORTSDIR}/textproc/hs-stringsearch
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 GHC_VERSION=	6.10.4
 PORTE_VERSION=	${PORTVERSION}

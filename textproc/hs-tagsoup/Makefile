@@ -7,6 +7,7 @@
 
 PORTNAME=	tagsoup
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,7 +17,7 @@ COMMENT=	A Haskell library for extracting information from HTML documents
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
 GHC_VERSION=	6.10.4
 TAGSOUP_VERSION=	${PORTVERSION}

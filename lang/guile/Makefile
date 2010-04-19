@@ -7,7 +7,7 @@
 
 PORTNAME=	guile
 PORTVERSION=	1.8.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	guile
 MAINTAINER=	amatus@gnu.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_AUTOTOOLS=	autoconf:262 libltdl:22
 USE_GMAKE=	yes

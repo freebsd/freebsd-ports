@@ -7,6 +7,7 @@
 
 PORTNAME=	unlambda
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-
@@ -16,7 +17,7 @@ COMMENT=	Unlambda interpreter written in Haskell
 
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 GHC_VERSION=		6.10.4
 UNLAMBDA_VERSION=	${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	ofc
 PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://ofc.dvoudheusden.net/download/
 
@@ -35,7 +35,7 @@ LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 .endif
 
 .if defined (WITH_GMP)
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 .endif
 
 .include <bsd.port.mk>

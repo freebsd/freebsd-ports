@@ -7,7 +7,7 @@
 
 PORTNAME=	ircd-ru
 PORTVERSION=	1.0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc russian
 MASTER_SITES=	http://link.wenet.su/
 DISTNAME=	ircd-RU-${PORTVERSION}-03-rc-20090810
@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=--enable-hub
 # enable RC4 crypt (server to server connection)
 .if defined(WITH_ENCRYPTION)
 CONFIGURE_ARGS+=--enable-encryption
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 .endif
 
 # log to file instead of syslog

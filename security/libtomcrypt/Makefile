@@ -7,6 +7,7 @@
 
 PORTNAME=	libtomcrypt
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://libtom.org/files/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -48,7 +49,7 @@ CFLAGS+=	-DTFM_DESC
 .endif
 
 .if defined(WITH_GMP)
-BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
+BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/gmp
 CFLAGS+=	-DGMP_DESC
 .endif
 

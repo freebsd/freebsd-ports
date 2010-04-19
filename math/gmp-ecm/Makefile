@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	gmp-ecm
-PORTVERSION=	6.2.0
-PORTREVISION=	1
+PORTVERSION=	6.2.3
 CATEGORIES=	math
-MASTER_SITES=	http://gforge.inria.fr/frs/download.php/4663/
+MASTER_SITES=	https://gforge.inria.fr/frs/download.php/22124/
 DISTNAME=	ecm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Elliptic Curve Method for Integer Factorization
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
-
-WRKSRC=		${WRKDIR}/ecm-${PORTVERSION:R}
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
@@ -26,5 +23,13 @@ CONFIGURE_ARGS=	ac_cv_prog_XSLTPROC=no \
 
 MAN1=		ecm.1
 PLIST_FILES=	bin/ecm include/ecm.h lib/libecm.a lib/libecm.la
+
+post-patch:
+	@${REINPLACE_CMD} s/__GMP_BITS_PER_MP_LIMB/GMP_NUMB_BITS/g \
+		${WRKSRC}/*.c ${WRKSRC}/*.h
+	@${REINPLACE_CMD} s/GMP_BITS_PER_LIMB/GMP_NUMB_BITS/g \
+		${WRKSRC}/*.c ${WRKSRC}/*.h
+	@${REINPLACE_CMD} s/mp_bits_per_limb/GMP_NUMB_BITS/g \
+		${WRKSRC}/*.c ${WRKSRC}/*.h
 
 .include <bsd.port.mk>

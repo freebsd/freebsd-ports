@@ -7,6 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.20.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -18,7 +19,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:${PORTSDIR}/math/libgmp4 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:${PORTSDIR}/math/gmp \
 		${LOCALBASE}/lib/libmpfr.so:${PORTSDIR}/math/mpfr
 
 CONFLICTS=	libbfd-[0-9]*

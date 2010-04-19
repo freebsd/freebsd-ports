@@ -6,7 +6,7 @@
 
 PORTNAME=	hdoc
 PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://staff.fmi.uni-passau.de/~groessli/hdoc/
 PKGNAMEPREFIX=	hs-
@@ -15,7 +15,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	HTML documentation tool for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 

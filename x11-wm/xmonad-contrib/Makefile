@@ -7,6 +7,7 @@
 
 PORTNAME=	xmonad-contrib
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad-contrib/${PORTVERSION}/
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		xmonad:${PORTSDIR}/x11-wm/xmonad \
 		hs-utf8-string-ghc>=0.1:${PORTSDIR}/devel/hs-utf8-string-ghc
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_XORG=	x11
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	ppl
 PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/%SUBDIR%/ \
 		http://www.cs.unipr.it/ppl/Download/ftp/releases/%SUBDIR%/
@@ -17,7 +18,7 @@ MAINTAINER=	grosser@fim.uni-passau.de
 COMMENT=	The Parma Polyhedra Library
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget

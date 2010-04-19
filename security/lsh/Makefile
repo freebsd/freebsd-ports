@@ -6,7 +6,7 @@
 
 PORTNAME=	lsh
 PORTVERSION=	2.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.lysator.liu.se/pub/security/%SUBDIR%/
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
 
 LIB_DEPENDS=	oop:${PORTSDIR}/devel/liboop \
-		gmp.8:${PORTSDIR}/math/libgmp4
+		gmp.10:${PORTSDIR}/math/gmp
 
 GNU_CONFIGURE=	yes
 USE_XORG=	xau

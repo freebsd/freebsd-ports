@@ -7,7 +7,7 @@
 
 PORTNAME=	qscheme
 PORTVERSION=	0.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
@@ -16,7 +16,7 @@ COMMENT=	A small and fast Scheme interpreter
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall\
 		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre \
-		${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/libgmp4
+		${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
 LIB_DEPENDS=	getline:${PORTSDIR}/devel/libgetline
 
 GNU_CONFIGURE=	yes

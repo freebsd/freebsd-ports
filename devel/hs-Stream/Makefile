@@ -6,6 +6,7 @@
 
 PORTNAME=	Stream
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/ \
 		http://carte.kerneled.org/mirror/
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc \
 		hs-QuickCheck>=2.0:${PORTSDIR}/devel/hs-QuickCheck \
 		hs-lazysmallcheck-ghc>=0.3:${PORTSDIR}/devel/hs-lazysmallcheck-ghc
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 GHC_VERSION=	6.10.4
 STREAM_VERSION=	${PORTVERSION}

@@ -8,6 +8,7 @@
 
 PORTNAME=	botan
 PORTVERSION=	1.8.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/v1.8/
 DISTNAME=	Botan-${PORTVERSION}
@@ -40,7 +41,7 @@ CONFIGURE_ARGS+=--with-openssl
 .endif
 
 .if !defined(WITHOUT_GMP)
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 CONFIGURE_ARGS+=--with-gnump
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif

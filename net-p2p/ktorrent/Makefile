@@ -7,14 +7,14 @@
 
 PORTNAME=	ktorrent
 PORTVERSION=	3.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		qca.2:${PORTSDIR}/devel/qca \
 		streamanalyzer.0:${PORTSDIR}/deskutils/strigi \
 		tag.1:${PORTSDIR}/audio/taglib

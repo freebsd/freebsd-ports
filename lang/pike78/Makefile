@@ -7,7 +7,7 @@
 
 PORTNAME=	pike78
 PORTVERSION=	7.8.352
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		nettle.3:${PORTSDIR}/security/nettle \
 		mird.1:${PORTSDIR}/databases/mird \
-		gmp.8:${PORTSDIR}/math/libgmp4
+		gmp.10:${PORTSDIR}/math/gmp
 
 CONFLICTS=	pike7[26]-[0-9]*
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	abakus
 PORTVERSION=	0.91
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math kde
 MASTER_SITES=	http://purinchu.net/abakus/ \
 		http://www.athame.co.uk/mirror/
@@ -16,7 +16,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Michael Pyne's Abakus Calculator
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3

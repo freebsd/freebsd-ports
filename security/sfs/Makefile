@@ -8,7 +8,7 @@
 
 PORTNAME=	sfs
 PORTVERSION=	0.7.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security net
 MASTER_SITES=	http://www.fs.net/sfswww/dist/
 
@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=--with-sfsuser=sfs \
 		--disable-uvfs \
 		--with-gmp=${LOCALBASE}
 
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
 .include <bsd.port.pre.mk>
 

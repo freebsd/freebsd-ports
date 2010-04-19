@@ -6,7 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	6.10.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/} \
@@ -31,7 +31,7 @@ GHCPATH_VERSION=	0.1.0.5
 
 USE_AUTOTOOLS=	autoconf:262:env
 USE_BZIP2=	yes
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_PERL5=	yes
 USE_GMAKE=	yes

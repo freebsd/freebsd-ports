@@ -7,7 +7,7 @@
 
 PORTNAME=	ktorrent
 PORTVERSION=	20071023
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://www.brueffer.de/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 CONFLICTS=	ktorrent-[0.9]*
 

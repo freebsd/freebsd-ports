@@ -7,7 +7,7 @@
 
 PORTNAME=	darcs
 PORTVERSION=	2.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://darcs.net/
 
@@ -16,7 +16,7 @@ COMMENT=	Yet another replacement for CVS, written in Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		gmp.8:${PORTSDIR}/math/libgmp4
+		gmp.10:${PORTSDIR}/math/gmp
 
 OPTIONS=	SERVER "install server" on
 GNU_CONFIGURE=	yes

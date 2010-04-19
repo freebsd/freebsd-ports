@@ -7,6 +7,7 @@
 
 PORTNAME=	pycrypto
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ COMMENT=	The Python Cryptography Toolkit
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 
 pre-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/setup.py

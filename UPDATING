@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100419:
+  AFFECTS: users of math/libgmp4
+  AUTHOR: ale@FreeBSD.org
+
+  The default gmp version in FreeBSD is now 5.0.x. The port directory changed
+  from math/libgmp4 to math/gmp. An entry has been added in MOVED and all
+  depending ports have been bumped, so the update should be handled
+  correctly by common ports management tools, like portmaster and portupgrade.
+
 20100409:
   AFFECTS: users of lang/php5
   AUTHOR: ale@FreeBSD.org

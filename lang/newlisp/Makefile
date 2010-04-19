@@ -8,7 +8,7 @@
 
 PORTNAME=	newlisp
 PORTVERSION=	10.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 #MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
@@ -45,7 +45,7 @@ CFLAGS+=	-DNEWLISP64
 .endif
 
 .if defined(WITH_GMP)
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 MODULES+=	gmp
 PLIST_SUB+=	GMP=""
 .else

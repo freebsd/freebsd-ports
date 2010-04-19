@@ -7,6 +7,7 @@
 
 PORTNAME=	TestU01
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.iro.umontreal.ca/~simardr/testu01/:0 \
 		http://www.iro.umontreal.ca/~lecuyer/myftp/papers/:1
@@ -16,7 +17,7 @@ EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bf1783@gmail.com
 COMMENT=	Utilities for statistical testing of uniform random number generators
 
-LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
 
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes

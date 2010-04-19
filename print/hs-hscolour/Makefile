@@ -7,6 +7,7 @@
 
 PORTNAME=	hscolour
 PORTVERSION=	1.15
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/ \
@@ -19,7 +20,7 @@ COMMENT=	Colourise Haskell code
 .if !defined(SLAVE)
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS+=	gmp.8:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 .else
 NO_PKG_REGISTER=
 .endif

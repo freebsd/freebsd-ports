@@ -7,6 +7,7 @@
 
 PORTNAME=	parrot
 PORTVERSION=	${PARROT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/devel/${PORTVERSION}/
 
@@ -16,7 +17,7 @@ COMMENT=	Parrot - virtual machine for dynamic languages
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/pcre-config:${PORTSDIR}/devel/pcre
-LIB_DEPENDS=	gmp.8:${PORTSDIR}/math/libgmp4 \
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		icudata.38:${PORTSDIR}/devel/icu
 
 MAKE_JOBS_UNSAFE=	yes

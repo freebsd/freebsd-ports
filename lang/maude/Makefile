@@ -7,7 +7,7 @@
 
 PORTNAME=	maude
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://maude.cs.uiuc.edu/versions/${PORTVERSION}/
 DISTNAME=	Maude-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	A high-performance reflective language
 
 LIB_DEPENDS=	bdd:${PORTSDIR}/science/buddy \
 		tecla:${PORTSDIR}/devel/libtecla \
-		gmp:${PORTSDIR}/math/libgmp4
+		gmp:${PORTSDIR}/math/gmp
 
 USE_BISON=	build
 USE_AUTOTOOLS= aclocal:19 automake:19
