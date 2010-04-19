@@ -1,6 +1,15 @@
---- configure.orig	2008-08-19 14:41:57.000000000 +0800
-+++ configure	2008-08-19 14:42:09.000000000 +0800
-@@ -23377,7 +23377,7 @@
+--- configure.orig	2010-01-20 02:17:27.000000000 -0500
++++ configure	2010-01-20 02:26:25.000000000 -0500
+@@ -3853,7 +3853,7 @@
+ source_highlightdatadir=$datadir/source-highlight
+ source_highlightdocdir=$docdir
+ source_highlightlibdocdir=$docdir/api
+-source_highlightlibexampledir=$docdir/examples
++source_highlightlibexampledir=$datarootdir/examples/source-highlight
+ bash_completiondir=$sysconfdir/bash_completion.d
+ 
+ LIBRARY_NAMESPACE=srchilite
+@@ -20347,7 +20347,7 @@
  fi
  
  
