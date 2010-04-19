@@ -27,6 +27,7 @@ OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
 		ASVN		"Build and install Archive SVN (asvn)" off \
 		MAINTAINER_DEBUG	"Build debug version" off \
 		SVNSERVE_WRAPPER	"Enable svnserve wrapper" off \
+		SVNAUTHZ_VALIDATE	"install svnauthz-validate" off \
 		STATIC		"Build static version (no shared libs)" off \
 		BOOK		"Install the Subversion Book" off
 
@@ -34,6 +35,9 @@ OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
 
 SVNREPOS?=	/home/svn/repos
 SVNFSTYPE?=	fsfs
+
+SUB_FILES=	pkg-install \
+		pkg-deinstall
 
 .if make(repository)
 WITH_REPOSITORY_CREATION=	yes
@@ -121,6 +125,16 @@ pre-everything::
 	@${ECHO_MSG} "svnserve wrapper enabled."
 	@${ECHO_MSG} ""
 .endif
+.if defined(WITH_SVNAUTHZ_VALIDATE)
+.if defined(WITH_STATIC)
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO_MSG} "!!! svnauthz-validate and static build are not compatible !!!"
+	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${FALSE}
+.endif
+	@${ECHO_MSG} "svnauthz-validate enabled."
+	@${ECHO_MSG} ""
+.endif
 .if defined(WITH_REPOSITORY_CREATION)
 	@${ECHO_MSG} "I will create (or use, if it exists) '${SVNUSER}' user and '${SVNGROUP}' group."
 	@${ECHO_MSG} "Make sure that all committers are its members."
@@ -173,16 +187,23 @@ pre-configure:
 	fi
 .endif
 
-
-.if defined(WITH_MOD_DAV_SVN) && defined(WITH_MOD_DONTDOTHAT)
 post-build:
+.if defined(WITH_MOD_DAV_SVN) && defined(WITH_MOD_DONTDOTHAT)
 	cd ${WRKSRC}/contrib/server-side/mod_dontdothat && \
 		${APXS} -c -I${WRKSRC}/subversion/include -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_subr-1 mod_dontdothat.c
 .endif
+.if defined(WITH_SVNAUTHZ_VALIDATE)
+	# place binary in ${WRKDIR}, else we install it twice
+	cd ${WRKSRC}/tools/server-side && \
+		${CC} svnauthz-validate.c -o ../../svnauthz-validate -I${WRKSRC}/subversion/include -I${APR_INCLUDE_DIR} \
+		-L${WRKSRC}/subversion/libsvn_repos/.libs -L${WRKSRC}/subversion/libsvn_subr/.libs -lsvn_repos-1 -lsvn_subr-1
+.endif
 
-.if defined(WITH_MOD_DAV_SVN)
 pre-install:
-	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dav ${PREFIX}/${APACHEMODDIR}/mod_dav.so
+.if defined(WITH_MOD_DAV_SVN)
+# activate dav_module now in pkg-install to prevent double activation.
+# workaround for apxs bug: https://issues.apache.org/bugzilla/show_bug.cgi?id=47397
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
 post-install:	${MKREPOS_TARGET}
@@ -193,6 +214,9 @@ post-install:	${MKREPOS_TARGET}
 		${APXS} -i -n dontdothat mod_dontdothat.la
 	${APXS} -e -S LIBEXECDIR=${PREFIX}/${APACHEMODDIR} -a -n dontdothat ${PREFIX}/${APACHEMODDIR}/mod_dontdothat.so
 .endif
+.endif
+.if defined(WITH_SVNAUTHZ_VALIDATE)
+	${INSTALL_PROGRAM} ${WRKSRC}/svnauthz-validate ${PREFIX}/bin
 .endif
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/tools ; \
