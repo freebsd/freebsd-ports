@@ -7,6 +7,7 @@ bin/odbc_mail
 bin/virt_mail
 bin/virtuoso-iodbc-t
 bin/virtuoso-t
+lib/hibernate/virt_dialect.jar
 lib/jdbc-2.0/virtjdbc2.jar
 lib/jdbc-3.0/virtjdbc3.jar
 lib/jdbc-3.0/virtjdbc3ssl.jar
@@ -17,6 +18,8 @@ lib/libvirtuoso-iodbc-t.a
 lib/libvirtuoso-iodbc-t.la
 lib/libvirtuoso-t.a
 lib/libvirtuoso-t.la
+lib/sesame/create-virtuoso.xsl
+lib/sesame/create.xsl
 lib/sesame/virt_sesame.jar
 lib/sesame/virt_sesame2.jar
 lib/sesame/virt_sesame3.jar
@@ -55,6 +58,7 @@ virtuoso/doc/README
 virtuoso/doc/README.CVS
 virtuoso/doc/README.UPGRADE
 virtuoso/doc/README.WINDOWS
+virtuoso/doc/README.hibernate
 virtuoso/doc/README.jena
 virtuoso/doc/README.jsse
 virtuoso/doc/README.php5
@@ -119,6 +123,7 @@ virtuoso/doc/html/createassembly.html
 virtuoso/doc/html/createexthostproc.html
 virtuoso/doc/html/creatingtxtidxs.html
 virtuoso/doc/html/databaseadmsrv.html
+virtuoso/doc/html/dataccessclientsconfailandbalance.html
 virtuoso/doc/html/ddlstmt.html
 virtuoso/doc/html/droptxtindex.html
 virtuoso/doc/html/droptxttrig.html
@@ -142,6 +147,7 @@ virtuoso/doc/html/fn_USER_CREATE.html
 virtuoso/doc/html/fn_USER_DROP.html
 virtuoso/doc/html/fn_USER_GET_OPTION.html
 virtuoso/doc/html/fn_USER_GRANT_ROLE.html
+virtuoso/doc/html/fn_USER_KEY_LOAD.html
 virtuoso/doc/html/fn_USER_REVOKE_ROLE.html
 virtuoso/doc/html/fn_USER_ROLE_CREATE.html
 virtuoso/doc/html/fn_USER_ROLE_DROP.html
@@ -375,6 +381,7 @@ virtuoso/doc/html/fn_isfloat.html
 virtuoso/doc/html/fn_isinteger.html
 virtuoso/doc/html/fn_isnull.html
 virtuoso/doc/html/fn_isnumeric.html
+virtuoso/doc/html/fn_isref.html
 virtuoso/doc/html/fn_isstring.html
 virtuoso/doc/html/fn_iszero.html
 virtuoso/doc/html/fn_java_call_method.html
@@ -1343,6 +1350,7 @@ virtuoso/doc/images/ui/VirtSesame2Provider.png
 virtuoso/doc/images/ui/acl001.png
 virtuoso/doc/images/ui/acl002.png
 virtuoso/doc/images/ui/acl003.png
+virtuoso/doc/images/ui/adf1.png
 virtuoso/doc/images/ui/admacl.png
 virtuoso/doc/images/ui/admevt_01.png
 virtuoso/doc/images/ui/admevt_01a.png
@@ -1562,6 +1570,18 @@ virtuoso/doc/images/ui/spong5.png
 virtuoso/doc/images/ui/spong6.png
 virtuoso/doc/images/ui/spong7.png
 virtuoso/doc/images/ui/sql_xml_mng_01.png
+virtuoso/doc/images/ui/ss1.png
+virtuoso/doc/images/ui/ss10.png
+virtuoso/doc/images/ui/ss11.png
+virtuoso/doc/images/ui/ss12.png
+virtuoso/doc/images/ui/ss13.png
+virtuoso/doc/images/ui/ss2.png
+virtuoso/doc/images/ui/ss3.png
+virtuoso/doc/images/ui/ss4.png
+virtuoso/doc/images/ui/ss5.png
+virtuoso/doc/images/ui/ss7.png
+virtuoso/doc/images/ui/ss8.png
+virtuoso/doc/images/ui/ss9.png
 virtuoso/doc/images/ui/sts_audit_01.jpg
 virtuoso/doc/images/ui/sts_dsk_01.png
 virtuoso/doc/images/ui/sts_gen_01.png
@@ -1827,3 +1847,4 @@ virtuoso/vsp/vsmx/vsmx_res.xsl
 @dirrm lib/jdbc-4.0
 @dirrm lib/jdbc-3.0
 @dirrm lib/jdbc-2.0
+@dirrm lib/hibernate

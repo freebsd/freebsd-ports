@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtuoso
-PORTVERSION=	6.1.0
-PORTREVISION=	3
+PORTVERSION=	6.1.1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -35,7 +34,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USERS=		virtuoso
 GROUPS=		virtuoso
 
-CHECK_PORT=	/usr/bin/nc -z localhost $$\1
+CHECK_PORT=	/usr/bin/nc -z localhost $$\1 2>\&1
 
 OPTIONS=	IMAGEMAGICK "ImageMagick support" off\
 		KERBEROS "Kerberos extension" off\
