@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- man/Makefile.orig
++++ man/Makefile
+@@ -3,13 +3,10 @@
+ 
+ include ../Config
+ 
+-MAN_PAGES := $(addsuffix .gz, $(wildcard *.1))
++MAN_PAGES := $(wildcard *.1)
+ 
+ man: $(MAN_PAGES)
+ 
+-%.1.gz: %.1
+-	@gzip -c $< > $@
+-
+ install: $(MAN_PAGES)
+ 	@install -d $(MAN_DIR)
+ 	@install -m 0644 $^ $(MAN_DIR)

@@ -7,41 +7,53 @@
 #
 
 PORTNAME=	eukleides
-PORTVERSION=	1.0.3
-PORTREVISION=	5
+PORTVERSION=	1.5.3
 CATEGORIES=	math
-MASTER_SITES=	http://www.eukleides.org/download/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
+MASTER_SITES=	http://www.eukleides.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wahjava@gmail.com
 COMMENT=	A Euclidean geometry drawing language
 
+LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline
 RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit \
 		epstopdf:${PORTSDIR}/print/teTeX-base
 
+USE_BZIP2=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -c"
-ALL_TARGET=	eukleides info
+USE_GETTEXT=	yes
+USE_ICONV=	yes
 
-MAN1=		eukleides.1
-MLINKS=		eukleides.1 euk2eps.1 \
-		eukleides.1 euk2edit.1
+MAN1=		eukleides.1 euktoeps.1 euktopdf.1 euktopst.1 euktotex.1
+PORTEXAMPLES=	greenwich.euk sundial.euk vonkoch.euk
+
+.ifndef NOPORTDOCS
+BUILD_DEPENDS=	pdflatex:${PORTSDIR}/print/teTeX-base
+PORTDOCS=	de.pdf fr.pdf
 INFO=		eukleides
+.endif
 
 post-patch:
 	${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|#!/bin/bash|#!/bin/sh|g'
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/eukleides ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/euk2edit ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/euk2eps ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/eukleides.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/eukleides.info ${PREFIX}/${INFO_PATH}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/*.euk ${EXAMPLESDIR}
+	${GREP} -lR "ginstall-info" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|ginstall-info|install-info|g'
+	${GREP} -lR "%%[[:alpha:]]\+%%" ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
+		 -e "s|%%PREFIX%%|${PREFIX}|g" \
+		 -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		 -e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
+		 -e "s|%%DOCSDIR%%|${DOCSDIR}|g"
+.ifdef NOPORTDOCS
+	${REINPLACE_CMD} -e '/^install:/ s/install_doc//g' \
+		 -e '/^all:/ s/doc//g' ${WRKSRC}/Makefile
 .endif
+
+pre-install:
+	${MKDIR} ${EXAMPLESDIR}
+
+post-install:
+	for i in euktoeps euktopdf euktotex; do \
+		${RM} ${PREFIX}/bin/$${i}.bak; \
+	done
 
 .include <bsd.port.mk>
