@@ -37,10 +37,4 @@ MAN1=		gcpio.1
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: invalid use of stat macro
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
