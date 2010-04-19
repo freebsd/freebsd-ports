@@ -7,13 +7,9 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	2.18.3
-PORTREVISION=	11
+PORTVERSION=	3.1
 CATEGORIES=	devel
-MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
-#PATCH_SITES=	http://0pointer.de/public/
-PATCH_SITES=	${MASTER_SITES_LOCAL}
-PATCH_SITE_SUBDIR=	ahze
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
@@ -23,7 +19,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	 --enable-rfc2553
+CONFIGURE_ARGS=	--enable-gprof
 WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -31,20 +27,22 @@ DISTCCD_PIDFILE=/var/run/distccd.pid
 USE_RC_SUBR=	distccd.sh
 SUB_LIST=	DISTCCD_PIDFILE=${DISTCCD_PIDFILE}
 
-OPTIONS=	AVAHI   "Enable Avahi Zeroconf/mDNS/Bonjour support" Off \
-		GNOME	"Build GUI monitor based on GNOME"	Off \
+OPTIONS=	GNOME	"Build GUI monitor based on GNOME"	Off \
 		GTK	"Build GUI monitor based on GTK"	Off \
+		RFC2553 "Enable IPv6 support"	Off \
+		AVAHI "Enable Avahi Zeroconf/mDNS/Bonjour support"	Off \
 		COMPILER_LINKS	"Create symlinks to distcc"	On
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_AVAHI)
-PATCHFILES+=	distcc-avahi-080101.patch
+.if defined(WITHOUT_AVAHI)
+CONFIGURE_ARGS+=	--without-avahi
+.else
 LIB_DEPENDS+=	avahi-glib.1:${PORTSDIR}/net/avahi-app
-PATCH_DIST_STRIP=	-p1
-USE_AUTOTOOLS+=	autoconf:262
-AUTOCONF_ARGS+=	-I${LOCALBASE}/share/libtool/libltdl/
-CFLAGS+=	-DHAVE_AVAHI
+.endif
+
+.if defined(WITHOUT_RFC2553)
+CONFIGURE_ARGS+=	--without-avahi
 .endif
 
 .if defined(WITH_COMPILER_LINKS)
