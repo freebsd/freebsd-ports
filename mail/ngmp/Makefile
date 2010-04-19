@@ -33,6 +33,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache22 \
 		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty \
 		${LOCALBASE}/www/tinymce:${PORTSDIR}/www/tinymce
 
+BROKEN=		does not compile
+
 NO_BUILD=	yes
 
 WANT_PHP_WEB=	yes
