@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.6.9
+PORTVERSION=	1.6.11
 #PORTREVISION?=	1
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--without-sasl
 PLIST_SUB+=		SASL="@comment "
 .endif
 
-# Default us "on"
+# Default is "on"
 .if !defined(WITHOUT_BDB)
 USE_BDB=		42+
 PLIST_SUB+=		BDB=""
@@ -70,6 +70,7 @@ PLIST_SUB+=		BDB="@comment "
 WITH_APACHE2_APR=	yes
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 PLIST_SUB+=	MOD_DAV_SVN=""
+SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
 SVNGROUP?=	www
 SVNUSER?=	www
 .if defined(WITH_MOD_DONTDOTHAT)
@@ -80,7 +81,7 @@ PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
 .else
 PLIST_SUB+=	MOD_DAV_SVN="@comment "
 PLIST_SUB+=	MOD_DONTDOTHAT="@comment "
-PKGDEINSTALL=	NONEXISTENT
+SUB_LIST+=	MOD_DAV_SVN_INSTALL="NO"
 SVNGROUP?=	svn
 SVNUSER?=	svn
 .endif
@@ -108,6 +109,15 @@ APU_CONFIG=	apu-1-config
 
 CONFIGURE_ARGS+=--with-apr=${APR_APU_DIR}/${APR_CONFIG} \
 		--with-apr-util=${APR_APU_DIR}/${APU_CONFIG}
+
+.if defined(WITH_SVNAUTHZ_VALIDATE)
+.if exists(${APR_APU_DIR}/${APR_CONFIG})
+APR_INCLUDE_DIR!=	${APR_APU_DIR}/${APR_CONFIG} --includedir
+.endif
+PLIST_SUB+=     SVNAUTHZ_VALIDATE=""
+.else
+PLIST_SUB+=     SVNAUTHZ_VALIDATE="@comment "
+.endif
 
 .if defined(WITH_SERF)
 LIB_DEPENDS+=	serf-0.0:${PORTSDIR}/www/serf

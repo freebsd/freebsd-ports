@@ -6,6 +6,7 @@ bin/svnlook
 bin/svnserve
 bin/svnsync
 %%ASVN%%bin/asvn
+%%SVNAUTHZ_VALIDATE%%bin/svnauthz-validate
 %%SVNSERVE_WRAPPER%%bin/svnserve.bin
 bin/svnversion
 include/subversion-1/mod_authz_svn.h
@@ -289,7 +290,6 @@ lib/libsvn_wc-1.la
 %%DATADIR%%/xslt/svnindex.xsl
 %%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_dav_svn.so
 %%MOD_DAV_SVN%%%%APACHEMODDIR%%/mod_authz_svn.so
-%%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav libexec/%%APACHEDIR%%/mod_dav.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n dav_svn libexec/%%APACHEDIR%%/mod_dav_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/%%APACHEMODDIR%% -a -n authz_svn libexec/%%APACHEDIR%%/mod_authz_svn.so
 %%MOD_DONTDOTHAT%%%%APACHEMODDIR%%/mod_dontdothat.so
