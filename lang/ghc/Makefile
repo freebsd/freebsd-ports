@@ -19,6 +19,8 @@ DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source \
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Compiler for the functional language Haskell
 
+BROKEN=		by the recent gmp update
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 GHC_VERSION=		${PORTVERSION}
