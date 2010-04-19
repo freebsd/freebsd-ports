@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2009-08-12
-PORTREVISION=	1
+DISTVERSION=	2010-04-18
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://people.freebsd.org/~mm/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -27,23 +26,23 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 
-OPTIONS=	AMR_NB	"AMR Narrow Band encoder" on \
-		AMR_WB	"AMR Wide Band decoder" on \
+OPTIONS=	AMR_NB	"AMR Narrow Band encoder (opencore)" on \
+		AMR_WB	"AMR Wide Band decoder (opencore)" on \
 		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
 		FAAD	"FAAD mp4/aac audio decoder" on \
 		FFSERVER "Build and install ffserver" on \
 		GSM	"GSM audio codec" off \
-		IPV6	"IPV6 network support" on \
 		LAME	"LAME MP3 encoder" off \
 		OPENJPEG	"JPEG 2000 decoder" off \
 		OPTIMIZED_CFLAGS "Additional optimizations" off \
 		SCHROEDINGER	"Dirac codec via libschroedinger" on \
 		SDL	"SDL support (build ffplay)" off \
 		SPEEX	"Speex audio decoder" off \
+		SSSE3	"Enable ssse3 support (gcc 4.4+)" off \
 		THEORA	"Theora encoder (implies OGG)" on \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
-		X264	"H.264 encoder" on \
+		X264	"H.264 encoder" off \
 		XVID	"Xvid encoder via xvidcore" on
 
 COMPAT_HEADERS=libavcodec/avcodec.h \
@@ -108,20 +107,25 @@ PORTDOCS=	*
 USE_RC_SUBR=	ffserver
 .endif
 
+.if defined(WITH_SSSE3)
+USE_GCC=	4.4+
+BUILD_DEPENDS+=	as:${PORTSDIR}/devel/binutils 
+.endif
+
 # sse hardware vector support
-.if (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse} == "sse")
+.if defined(MACHINE_CPU) && (${MACHINE_CPU:Msse} == "sse" || ${MACHINE_CPU:Mamd64} == "amd64")
 WITH_BUILTIN_VECTOR=	yes
 .else
 CONFIGURE_ARGS+=	--disable-sse
 .endif
 
 # mmx support
-.if ${MACHINE_CPU:Mmmx} == ""
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx} == "" && ${MACHINE_CPU:Mamd64} == ""
 CONFIGURE_ARGS+=	--disable-mmx
 WITHOUT_BUILTIN_VECTOR=	yes
 .endif
 
-# builtin vector, requires mmx
+# builtin vector, requires mmx and sse
 .if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
 FFMPEG_CFLAGS+=		-msse
 .endif
@@ -129,7 +133,7 @@ FFMPEG_CFLAGS+=		-msse
 # PORTDOCS
 .ifndef(NOPORTDOCS)
 BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
-MAN1+=		ffmpeg.1
+MAN1+=		ffmpeg.1 ffprobe.1
 . ifndef(WITHOUT_FFSERVER)
 MAN1+=		ffserver.1
 . endif
@@ -143,7 +147,6 @@ CFLAGS:=	${CFLAGS:N-O0} -O2
 DEBUG_FLAGS+=	-O2
 .endif
 
-# amr
 # amr
 .if defined(WITH_AMR_NB) || defined (WITH_AMR_WB)
 LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
@@ -200,13 +203,6 @@ LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
 CONFIGURE_ARGS+=	--enable-libgsm
 .else
 CONFIGURE_ARGS+=	--disable-libgsm
-.endif
-
-# ipv6
-.ifndef(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 # mp3
@@ -270,8 +266,8 @@ CONFIGURE_ARGS+=	--disable-libvorbis
 .endif
 
 # x264
-.ifndef(WITHOUT_X264)
-LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
+.ifdef(WITH_X264)
+LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264-devel
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264
@@ -301,10 +297,12 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s|(EXTRALIBS[[:space:]]*=)|\1-L${LOCALBASE}/lib |g; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g; \
-		s|-pthread|${PTHREAD_LIBS}|g" \
+		s|-pthread|${PTHREAD_LIBS}|g; \
+		s|gsm/gsm.h|gsm.h|g" \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|-ldl||; s|$$(LIBMAJOR)|${SHLIB_VER}|g;' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@cd ${WRKSRC}/libavcodec && ${LN} -s x86 amd64
 .ifdef(WITH_SDL)
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \
