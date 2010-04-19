@@ -19,4 +19,10 @@ USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_OPENSSL=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		does not compile on amd64
+.endif
+
+.include <bsd.port.post.mk>
