@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.11.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://bellard.org/qemu/
@@ -19,7 +19,7 @@ COMMENT=	QEMU CPU Emulator
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USE_PERL5_BUILD=	yes
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
@@ -41,10 +41,10 @@ OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_ALL_TARGETS)
-CONFIGURE_ARGS+=       --target-list=i386-softmmu,x86_64-softmmu
-PLIST_SUB+=    ALLTARGETS="@comment "
+CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
+PLIST_SUB+=	ALLTARGETS="@comment "
 .else
-PLIST_SUB+=    ALLTARGETS=""
+PLIST_SUB+=	ALLTARGETS=""
 .endif
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
