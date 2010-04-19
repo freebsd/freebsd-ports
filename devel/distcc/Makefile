@@ -11,7 +11,7 @@ PORTVERSION=	3.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
