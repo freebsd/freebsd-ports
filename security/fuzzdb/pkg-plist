@@ -1,0 +1,113 @@
+%%DATADIR%%/c
+%%DATADIR%%/common-unix-httpd-log-locations.txt
+%%DATADIR%%/discovery/backdoors-php.txt
+%%DATADIR%%/discovery/cgi-HTTP-POST-reqd.txt
+%%DATADIR%%/discovery/cgi-microsoft.txt
+%%DATADIR%%/discovery/cgi-x-platform.txt
+%%DATADIR%%/discovery/copy_of.txt
+%%DATADIR%%/discovery/file-extensions-backup-files.txt
+%%DATADIR%%/discovery/file-extensions-common-datafile-types.txt
+%%DATADIR%%/discovery/file-extensions-compressed-filetypes.txt
+%%DATADIR%%/discovery/file-extensions-mostcommon.txt
+%%DATADIR%%/discovery/file-extensions-skipfish.txt
+%%DATADIR%%/discovery/interesting-dirs-kitchensink.txt
+%%DATADIR%%/discovery/interesting-files-apache-tomcat.txt
+%%DATADIR%%/discovery/interesting-files-apache.txt
+%%DATADIR%%/discovery/interesting-files-coldfusion.txt
+%%DATADIR%%/discovery/interesting-files-dotfiles.txt
+%%DATADIR%%/discovery/interesting-files-hyperion.txt
+%%DATADIR%%/discovery/interesting-files-iplanet.txt
+%%DATADIR%%/discovery/interesting-files-lotus-notes.txt
+%%DATADIR%%/discovery/interesting-files-microsoft-iis-http-post.txt
+%%DATADIR%%/discovery/interesting-files-microsoft-iis.txt
+%%DATADIR%%/discovery/interesting-files-microsoft-sharepoint.txt
+%%DATADIR%%/discovery/interesting-files-netware.txt
+%%DATADIR%%/discovery/interesting-files-oracle-application-server.txt
+%%DATADIR%%/discovery/interesting-files-random.txt
+%%DATADIR%%/discovery/interesting-files-sun-app-server.txt
+%%DATADIR%%/discovery/interesting-files-websphere.txt
+%%DATADIR%%/discovery/interesting-metacharacters.txt
+%%DATADIR%%/discovery/tftp.txt
+%%DATADIR%%/discovery/wordlist-skipfish.txt
+%%DATADIR%%/file upload/alt-extensions-asp.txt
+%%DATADIR%%/file upload/alt-extensions-coldfusion.txt
+%%DATADIR%%/file upload/alt-extensions-jsp.txt
+%%DATADIR%%/file upload/alt-extensions-perl.txt
+%%DATADIR%%/file upload/alt-extensions-php.txt
+%%DATADIR%%/file upload/alt-extensions.credits.txt
+%%DATADIR%%/file upload/file-ul-filter-bypass-commonly-writable-directories.txt
+%%DATADIR%%/file upload/file-ul-filter-bypass-microsoft-asp.txt
+%%DATADIR%%/file upload/file-ul-filter-bypass-ms-php.txt
+%%DATADIR%%/file upload/file-ul-filter-bypass-x-platform-generic.txt
+%%DATADIR%%/file upload/file-ul-filter-bypass-x-platform-php.txt
+%%DATADIR%%/file upload/file-ul-filter-bypass.readme
+%%DATADIR%%/format strings/format-strings.txt
+%%DATADIR%%/http protocol/http-header-cache-poison.txt
+%%DATADIR%%/http protocol/http-protocol-methods.txt
+%%DATADIR%%/http protocol/user-agents.txt
+%%DATADIR%%/integer overflow/integer-overflows.txt
+%%DATADIR%%/ldap/ldap-injection.txt
+%%DATADIR%%/misc - payloads/all-attacks-wfuzz.txt
+%%DATADIR%%/misc - wordlists/wordlist-alphanumeric-case.txt
+%%DATADIR%%/misc - wordlists/wordlist-common-snmp-community-strings.txt
+%%DATADIR%%/misc - wordlists/wordlist-dna.txt
+%%DATADIR%%/os command execution/command-execution-unix.txt
+%%DATADIR%%/os directory indexing/directory-indexing.txt
+%%DATADIR%%/path traversal/path-traversal-windows.txt
+%%DATADIR%%/path traversal/traversals-8-deep-exotic-encoding.txt
+%%DATADIR%%/readme.txt
+%%DATADIR%%/rfi/rfi.txt
+%%DATADIR%%/server side includes/server-side-includes-generic.txt
+%%DATADIR%%/source disclosure/source-disclosure-microsoft.txt
+%%DATADIR%%/sql injection/sql-injection-active.txt
+%%DATADIR%%/sql injection/sql-injection-ms-sql-blind-ninja.txt
+%%DATADIR%%/sql injection/sql-injection-ms-sql.txt
+%%DATADIR%%/sql injection/sql-injection-mysql-ms-sql.txt
+%%DATADIR%%/sql injection/sql-injection-mysql.txt
+%%DATADIR%%/sql injection/sql-injection-oracle.txt
+%%DATADIR%%/sql injection/sql-injection-passive.txt
+%%DATADIR%%/sql injection/sql-injection.txt
+%%DATADIR%%/usernames and passwords/_hci_oracle_passwords.txt
+%%DATADIR%%/usernames and passwords/_oracle_default_passwords.txt
+%%DATADIR%%/usernames and passwords/db2_default_pass.txt
+%%DATADIR%%/usernames and passwords/db2_default_user.txt
+%%DATADIR%%/usernames and passwords/db2_default_userpass.txt
+%%DATADIR%%/usernames and passwords/http_default_pass.txt
+%%DATADIR%%/usernames and passwords/http_default_userpass.txt
+%%DATADIR%%/usernames and passwords/http_default_users.txt
+%%DATADIR%%/usernames and passwords/namelist.txt
+%%DATADIR%%/usernames and passwords/postgres_default_pass.txt
+%%DATADIR%%/usernames and passwords/postgres_default_user.txt
+%%DATADIR%%/usernames and passwords/postgres_default_userpass.txt
+%%DATADIR%%/usernames and passwords/tomcat_mgr_default_pass.txt
+%%DATADIR%%/usernames and passwords/tomcat_mgr_default_userpass.txt
+%%DATADIR%%/usernames and passwords/tomcat_mgr_default_users.txt
+%%DATADIR%%/usernames and passwords/unix_passwords.txt
+%%DATADIR%%/usernames and passwords/unix_users.txt
+%%DATADIR%%/usernames and passwords/wordlist-passwords-weaksauce.txt
+%%DATADIR%%/xml/xml-attacks.txt
+%%DATADIR%%/xpath/xpath-injection.txt
+%%DATADIR%%/xss/xss-rsnake.txt
+%%DATADIR%%/xss/xss-uri.txt
+@dirrm %%DATADIR%%/xss
+@dirrm %%DATADIR%%/xpath
+@dirrm %%DATADIR%%/xml
+@dirrm %%DATADIR%%/usernames and passwords
+@dirrm %%DATADIR%%/sql injection
+@dirrm %%DATADIR%%/source disclosure
+@dirrm %%DATADIR%%/server side includes
+@dirrm %%DATADIR%%/rfi
+@dirrm %%DATADIR%%/path traversal
+@dirrm %%DATADIR%%/os directory indexing
+@dirrm %%DATADIR%%/os command execution
+@dirrm %%DATADIR%%/misc - wordlists
+@dirrm %%DATADIR%%/misc - payloads
+@dirrm %%DATADIR%%/lfi
+@dirrm %%DATADIR%%/ldap
+@dirrm %%DATADIR%%/integer overflow
+@dirrm %%DATADIR%%/http protocol
+@dirrm %%DATADIR%%/format strings
+@dirrm %%DATADIR%%/file upload
+@dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/discovery
+@dirrm %%DATADIR%%

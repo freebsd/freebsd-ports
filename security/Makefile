@@ -147,6 +147,7 @@
     SUBDIR += ftimes
     SUBDIR += ftpmap
     SUBDIR += fuzz
+    SUBDIR += fuzzdb
     SUBDIR += fwanalog
     SUBDIR += fwbuilder
     SUBDIR += fwipe
