@@ -20,6 +20,8 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 CONFLICTS=	memcached-1.4*
 
+LATEST_LINK=	memcached12
+
 USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--with-libevent=${LOCALBASE} --program-prefix=
