@@ -84,8 +84,8 @@ bin/plackup
 %%SITE_PERL%%/Plack/Test/Suite.pm
 %%SITE_PERL%%/Plack/Util.pm
 %%SITE_PERL%%/Plack/Util/Accessor.pm
+%%SITE_PERL%%/auto/share/dist/Plack/baybridge.jpg
 %%SITE_PERL%%/auto/share/dist/Plack/face.jpg
-%%SITE_PERL%%/auto/share/dist/Plack/kyoto.jpg
 @dirrm %%SITE_PERL%%/auto/share/dist/Plack
 @dirrm %%SITE_PERL%%/Plack/Util
 @dirrm %%SITE_PERL%%/Plack/Test
