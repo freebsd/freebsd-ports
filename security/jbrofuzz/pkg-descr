@@ -1,0 +1,5 @@
+JBroFuzz is a web application fuzzer for requests being made over
+HTTP or HTTPS. Its purpose is to provide a single, portable application
+that offers stable web protocol fuzzing capabilities.
+
+WWW: http://www.owasp.org/index.php/Category:OWASP_JBroFuzz
