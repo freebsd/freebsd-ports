@@ -1,16 +1,24 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Localize/.packlist
 %%SITE_PERL%%/Data/Localize.pm
 %%SITE_PERL%%/Data/Localize/Auto.pm
+%%SITE_PERL%%/Data/Localize/Format.pm
+%%SITE_PERL%%/Data/Localize/Format/Gettext.pm
+%%SITE_PERL%%/Data/Localize/Format/Maketext.pm
+%%SITE_PERL%%/Data/Localize/Format/NamedArgs.pm
 %%SITE_PERL%%/Data/Localize/Gettext.pm
 %%SITE_PERL%%/Data/Localize/Gettext/Parser.pm
 %%SITE_PERL%%/Data/Localize/Localizer.pm
+%%SITE_PERL%%/Data/Localize/MultiLevel.pm
 %%SITE_PERL%%/Data/Localize/Storage.pm
 %%SITE_PERL%%/Data/Localize/Storage/BerkeleyDB.pm
 %%SITE_PERL%%/Data/Localize/Storage/Hash.pm
+%%SITE_PERL%%/Data/Localize/Trait/WithStorage.pm
 %%SITE_PERL%%/Data/Localize/Namespace.pm
 %%SITE_PERL%%/Data/Localize/Util.pm
+@dirrm %%SITE_PERL%%/Data/Localize/Trait
 @dirrm %%SITE_PERL%%/Data/Localize/Storage
 @dirrm %%SITE_PERL%%/Data/Localize/Gettext
+@dirrm %%SITE_PERL%%/Data/Localize/Format
 @dirrm %%SITE_PERL%%/Data/Localize
 @dirrmtry %%SITE_PERL%%/Data
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Localize
