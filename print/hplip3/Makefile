@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	3.9.8
-PORTREVISION=	4
+PORTVERSION=	3.10.2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -37,7 +36,8 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-cupsbackenddir=${LOCALBASE}/libexec/cups/backend \
 		--with-cupsfilterdir=${LOCALBASE}/libexec/cups/filter \
 		--with-drvdir=${LOCALBASE}/libexec/cups/driver \
-		--with-hppddir=${LOCALBASE}/share/ppd/HP
+		--with-hpppddir=${LOCALBASE}/share/ppd/HP \
+		--with-mimedir=${LOCALBASE}/etc/cups
 
 USE_LDCONFIG=	yes
 USE_GHOSTSCRIPT_RUN=	yes
@@ -45,17 +45,16 @@ USE_PYTHON=	25+
 USE_RC_SUBR=	hpssd
 MAKE_JOBS_SAFE=	yes
 SUB_FILES=	pkg-message
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lcompat
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 OPTIONS=	GUI "build with Python QT" on \
 		DBUS "dbus support" on \
 		XSANE "build xsane scanner app" on
-
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} IJSVER=2.7.4
 
 .include <bsd.port.options.mk>
 
@@ -87,7 +86,7 @@ CONFIGURE_ARGS+=	--enable-doc-build=no
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/hp|${LOCALBASE}/etc/hp|g ; \
 			s|/etc/sane.d|${LOCALBASE}/etc/sane.d|g' \
-		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in \
+		${WRKSRC}/Makefile.in \
 		${WRKSRC}/check.py ${WRKSRC}/hpssd.py \
 		${WRKSRC}/base/g.py ${WRKSRC}/fax/backend/hpfax.py \
 		${WRKSRC}/installer/distros.dat \
@@ -98,16 +97,15 @@ post-patch:
 		${WRKSRC}/ui4/devmgr5.py
 	@${REINPLACE_CMD} -e 's|/etc/dbus-1/system.d|${LOCALBASE}/etc/dbus-1/system.d|g ; \
 			s|/usr/share/dbus-1/system-services|${LOCALBASE}/share/dbus-1/system-services|g' \
-		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} 's|/etc/xdg|${PREFIX}&|g; s|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure ${WRKSRC}/configure.in
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|install-dist_prntSCRIPTS install-dist_rulesDATA|install-dist_prntSCRIPTS|g ; \
 			s|install-hpPROGRAMS install-hplip_confDATA|install-hpPROGRAMS|g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ldld||g; s|-ldl||g; s|-dld||g' \
-		${WRKSRC}/configure ${WRKSRC}/configure.in \
-		${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.am \
-		${WRKSRC}/aclocal.m4
+		${WRKSRC}/configure \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${LOCALBASE}/bin/python|g' \
 		${WRKSRC}/hpssd.py
 .if defined(NOPORTDOCS)

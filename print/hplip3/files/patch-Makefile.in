@@ -1,33 +1,29 @@
---- Makefile.in.old	2009-06-22 23:34:25.000000000 -0500
-+++ Makefile.in	2009-06-22 23:41:26.000000000 -0500
-@@ -2006,22 +2006,11 @@
- 	data/rules/40-hplip.rules data/rules/55-hpmud.rules
- dist_rulesDATA_INSTALL = $(INSTALL_DATA)
- dist_unrelDATA_INSTALL = $(INSTALL_DATA)
--am__dist_www0_DATA_DIST = $(wwwsrc)/index.html \
--	$(wwwsrc)/commandline.html $(wwwsrc)/copying.html \
--	$(wwwsrc)/devicemanager.html $(wwwsrc)/faxtrouble.html \
--	$(wwwsrc)/gettinghelp.html $(wwwsrc)/hpscan.html \
--	$(wwwsrc)/mainttask.html $(wwwsrc)/plugins.html \
--	$(wwwsrc)/print.html $(wwwsrc)/printing.html \
--	$(wwwsrc)/printoptions.html \
--	$(wwwsrc)/printtroubleshooting.html $(wwwsrc)/scanning.html \
--	$(wwwsrc)/scantrouble.html $(wwwsrc)/sendfax.html \
--	$(wwwsrc)/setup.html $(wwwsrc)/systray.html \
--	$(wwwsrc)/troubleshooting.html $(wwwsrc)/uninstalling.html \
--	$(wwwsrc)/upgrading.html
-+am__dist_www0_DATA_DIST = $(wwwsrc)/*.html
- dist_www0DATA_INSTALL = $(INSTALL_DATA)
--am__dist_www3_DATA_DIST = $(wwwsrc)/styles/*
-+am__dist_www3_DATA_DIST = $(wwwsrc)/styles/*.css
- dist_www3DATA_INSTALL = $(INSTALL_DATA)
--am__dist_www4_DATA_DIST = $(wwwsrc)/images/*
-+am__dist_www4_DATA_DIST = $(wwwsrc)/images/*.png $(wwwsrc)/images/*.ico
- dist_www4DATA_INSTALL = $(INSTALL_DATA)
- docDATA_INSTALL = $(INSTALL_DATA)
- hplip_confDATA_INSTALL = $(INSTALL_DATA)
-@@ -3679,11 +3668,12 @@
- @HPLIP_BUILD_TRUE@hp_mkuri_LDADD = -ldl libhpmud.la
+--- Makefile.in.old	2010-03-28 15:07:10.000000000 -0600
++++ Makefile.in	2010-03-28 15:08:01.000000000 -0600
+@@ -89,8 +89,8 @@
+ # ip library
+ @HPLIP_BUILD_TRUE@am__append_1 = libhpmud.la libhpip.la
+ @HPLIP_BUILD_TRUE@hp_mkuri_PROGRAMS = hp-mkuri$(EXEEXT)
+-@HPLIP_BUILD_TRUE@@UDEV_ACL_RULES_TRUE@am__append_2 = data/rules/40-hplip.rules
+-@HPLIP_BUILD_TRUE@@UDEV_ACL_RULES_FALSE@am__append_3 = data/rules/55-hpmud.rules
++#@HPLIP_BUILD_TRUE@@UDEV_ACL_RULES_TRUE@am__append_2 = data/rules/40-hplip.rules
++#@HPLIP_BUILD_TRUE@@UDEV_ACL_RULES_FALSE@am__append_3 = data/rules/55-hpmud.rules
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_4 =  \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	scan/sane/hpaio.desc \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/drv/hpijs.drv.in.template \
+@@ -2041,8 +2041,8 @@
+ 	ppd/hpcups/hp-psc_950vr.ppd.gz ppd/hpcups/hp-psc_950xi.ppd.gz
+ am__dist_prnt_DATA_DIST = prnt/cups.py prnt/__init__.py prnt/ldl.py \
+ 	prnt/pcl.py prnt/colorcal.py
+-am__dist_rules_DATA_DIST = data/rules/56-hpmud_support.rules \
+-	data/rules/40-hplip.rules data/rules/55-hpmud.rules
++#am__dist_rules_DATA_DIST = data/rules/56-hpmud_support.rules \
++#	data/rules/40-hplip.rules data/rules/55-hpmud.rules
+ am__dist_scan_DATA_DIST = scan/__init__.py scan/sane.py
+ am__dist_ui_DATA_DIST = ui/alignform.py ui/colorcalform_base.py \
+ 	ui/colorcalform.py ui/coloradjform_base.py ui/coloradjform.py \
+@@ -3777,11 +3777,11 @@
+ @HPLIP_BUILD_TRUE@hp_mkuri_CFLAGS = -DCONFDIR=\"$(hplip_confdir)\"
  
  # hpmud.rules
 -@HPLIP_BUILD_TRUE@rulesdir = /etc/udev/rules.d
@@ -35,7 +31,6 @@
 -@HPLIP_BUILD_TRUE@	$(am__append_2) $(am__append_3)
 -@HPLIP_BUILD_TRUE@halpredir = /usr/share/hal/fdi/preprobe/10osvendor
 -@HPLIP_BUILD_TRUE@dist_halpre_DATA = data/rules/20-hplip-devices.fdi
-+# same applys here.
 +#@HPLIP_BUILD_TRUE@rulesdir = /etc/udev/rules.d
 +#@HPLIP_BUILD_TRUE@dist_rules_DATA = data/rules/56-hpmud_support.rules \
 +#@HPLIP_BUILD_TRUE@	$(am__append_2) $(am__append_3)
