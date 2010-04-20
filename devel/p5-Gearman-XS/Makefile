@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	otavio.fernandes@locaweb.com.br
+MAINTAINER=	otaviof@gmail.com
 COMMENT=	Perl front end for the Gearman C library
 
 LIB_DEPENDS=	gearman.3:${PORTSDIR}/devel/gearmand
