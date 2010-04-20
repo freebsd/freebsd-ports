@@ -2360,7 +2360,6 @@ diradmin                        ports/net/diradmin
 dirbuster                       ports/security/dirbuster
 dircomp                         ports/sysutils/dircomp
 dircproxy                       ports/irc/dircproxy
-dircproxy-devel                 ports/irc/dircproxy-devel
 dirdiff                         ports/sysutils/dirdiff
 directfb                        ports/devel/directfb
 dirmngr                         ports/security/dirmngr
@@ -3923,6 +3922,7 @@ fusefs-wikipediafs              ports/sysutils/fusefs-wikipediafs
 fusenshi                        ports/deskutils/fusenshi
 fuser                           ports/sysutils/fuser
 fuzz                            ports/security/fuzz
+fuzzdb                          ports/security/fuzzdb
 fv                              ports/graphics/fv
 fvcool                          ports/sysutils/fvcool
 fvm                             ports/science/fvm
@@ -8905,6 +8905,7 @@ megarc                          ports/sysutils/megarc
 mehdiaplayer                    ports/audio/mehdiaplayer
 meld                            ports/textproc/meld
 memcached                       ports/databases/memcached
+memcached12                     ports/databases/memcached12
 memcachedb                      ports/databases/memcachedb
 memcheck                        ports/devel/memcheck
 memdump                         ports/sysutils/memdump
