@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: memcached
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to run memcached:
 #
@@ -27,7 +28,5 @@ load_rc_config ${name}
 
 command=%%PREFIX%%/bin/memcached
 command_args="-d -u ${memcached_user}"
-
-unset memcached_user
 
 run_rc_command "$1"
