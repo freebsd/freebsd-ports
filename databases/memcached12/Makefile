@@ -30,6 +30,7 @@ OPTIONS=	REPCACHED	"Enable data replication feature"	off \
 MAN1=		memcached.1
 
 PLIST_FILES=	bin/memcached \
+		bin/memcached-debug \
 		bin/memcached-tool
 
 PORTDOCS=	protocol.txt threads.txt
