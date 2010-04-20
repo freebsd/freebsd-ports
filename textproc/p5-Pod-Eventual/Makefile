@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read a POD document as a series of trivial events
 
 BUILD_DEPENDS=	p5-Mixin-Linewise>=0.001:${PORTSDIR}/devel/p5-Mixin-Linewise \

@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple class builder
 
 BUILD_DEPENDS=	p5-Scalar-List-Utils>=1.14:${PORTSDIR}/lang/p5-Scalar-List-Utils

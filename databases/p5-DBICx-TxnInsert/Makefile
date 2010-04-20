@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VO/VOVKASM
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrap all inserts into transaction
 
 RUN_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
