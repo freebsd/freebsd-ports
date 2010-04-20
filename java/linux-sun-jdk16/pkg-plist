@@ -3393,6 +3393,7 @@
 %%T%%/jre/lib/security/java.security
 %%T%%/jre/lib/security/javaws.policy
 %%T%%/jre/lib/security/local_policy.jar
+%%T%%/jre/lib/security/trusted.libraries
 %%T%%/jre/lib/servicetag/jdk_header.png
 %%T%%/jre/lib/sound.properties
 %%T%%/jre/lib/zi/Africa/Abidjan
@@ -3528,6 +3529,7 @@
 %%T%%/jre/lib/zi/America/Managua
 %%T%%/jre/lib/zi/America/Manaus
 %%T%%/jre/lib/zi/America/Martinique
+%%T%%/jre/lib/zi/America/Matamoros
 %%T%%/jre/lib/zi/America/Mazatlan
 %%T%%/jre/lib/zi/America/Menominee
 %%T%%/jre/lib/zi/America/Merida
@@ -3545,6 +3547,7 @@
 %%T%%/jre/lib/zi/America/Noronha
 %%T%%/jre/lib/zi/America/North_Dakota/Center
 %%T%%/jre/lib/zi/America/North_Dakota/New_Salem
+%%T%%/jre/lib/zi/America/Ojinaga
 %%T%%/jre/lib/zi/America/Panama
 %%T%%/jre/lib/zi/America/Pangnirtung
 %%T%%/jre/lib/zi/America/Paramaribo
@@ -3559,6 +3562,7 @@
 %%T%%/jre/lib/zi/America/Regina
 %%T%%/jre/lib/zi/America/Resolute
 %%T%%/jre/lib/zi/America/Rio_Branco
+%%T%%/jre/lib/zi/America/Santa_Isabel
 %%T%%/jre/lib/zi/America/Santarem
 %%T%%/jre/lib/zi/America/Santiago
 %%T%%/jre/lib/zi/America/Santo_Domingo
