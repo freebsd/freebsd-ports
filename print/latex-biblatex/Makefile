@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	biblatex
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.9a
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/exptl
@@ -39,7 +38,7 @@ CSFDIR=		${TEXMFLOCAL}/bibtex/csf/biblatex
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
-CLASS_FILES=	biblatex.cfg biblatex.def bibnatex.def biblatex.sty
+CLASS_FILES=	biblatex.cfg biblatex.def biblatex.sty blx-compat.def blx-natbib.def
 DOC_FILES=	README RELEASE doc/biblatex.pdf VERSION
 BST_FILES=	biblatex.bst
 
