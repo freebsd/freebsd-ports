@@ -1,11 +1,12 @@
---- Makefile.in.orig	2009-09-17 13:41:21.000000000 +0200
-+++ Makefile.in	2009-09-17 13:45:38.000000000 +0200
-@@ -687,7 +687,7 @@
+--- ./Makefile.in.orig	2010-03-30 17:56:53.366241027 +0200
++++ ./Makefile.in	2010-03-30 18:05:42.477723394 +0200
+@@ -689,7 +689,8 @@
  	$(LTCOMPILE) $(TEMP_STORE) -c $(TOP)/src/status.c
  
  sqlite3.h:	$(TOP)/src/sqlite.h.in $(TOP)/manifest.uuid $(TOP)/VERSION
 -	tclsh $(TOP)/tool/mksqlite3h.tcl $(TOP) >sqlite3.h
-+	$(TCLSH_CMD) $(TOP)/tool/mksqlite3h.tcl $(TOP) >sqlite3.h
++	sed -e s/--VERS--/$(RELEASE)/ $(TOP)/src/sqlite.h.in | \
++	sed -e s/--VERSION-NUMBER--/$(VERSION_NUMBER)/ >sqlite3.h
  
  table.lo:	$(TOP)/src/table.c $(HDR)
  	$(LTCOMPILE) $(TEMP_STORE) -c $(TOP)/src/table.c
