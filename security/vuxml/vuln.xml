@@ -34,6 +34,167 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a4746a86-4c89-11df-83fb-0015587e2cc1">
+    <topic>e107 -- code execution and XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>e107</name>
+	<range><lt>0.7.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia Research reported two vulnerabilities in e107:</p>
+	<p>The first problem affects installations that have the
+	  Content Manager plugin enabled. This plugin does not
+	  sanitize the "content_heading" parameter correctly and
+	  is therefore vulnerable to a cross site scripting attack.</p>
+	<p>The second vulnerability is related to the avatar upload
+	  functionality. Images containing PHP code can be uploaded
+	  and executed.</p>
+      </body>
+    </description>
+    <references>
+      <bid>39540</bid>
+      <cvename>CVE-2010-0996</cvename>
+      <cvename>CVE-2010-0997</cvename>
+      <freebsdpr>ports/145885</freebsdpr>
+      <url>http://e107.org/comment.php?comment.news.864</url>
+      <url>http://secunia.com/secunia_research/2010-43/</url>
+      <url>http://secunia.com/secunia_research/2010-44/</url>
+      <url>http://xforce.iss.net/xforce/xfdb/57932</url>
+    </references>
+    <dates>
+      <discovery>2010-04-15</discovery>
+      <entry>2010-04-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="09910d76-4c82-11df-83fb-0015587e2cc1">
+    <topic>fetchmail -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range>
+	  <ge>4.6.3</ge>
+	  <le>6.3.16</le>
+	</range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fetchmail developer Matthias Andree reported a vulnerability
+	  that allows remote attackers to crash the application
+	  when it is runs in verbose mode.</p>
+	<blockquote cite="http://gitorious.org/fetchmail/fetchmail/commit/ec06293">
+	  <p>Fetchmail before release 6.3.17 did not properly
+	    sanitize external input (mail headers and UID). When a
+	    multi-character locale (such as UTF-8) was in use, this
+	    could cause memory exhaustion and thus a denial of
+	    service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1167</cvename>
+      <freebsdpr>ports/145857</freebsdpr>
+      <url>http://gitorious.org/fetchmail/fetchmail/commit/ec06293</url>
+      <url>http://seclists.org/oss-sec/2010/q2/76</url>
+    </references>
+    <dates>
+      <discovery>2010-04-18</discovery>
+      <entry>2010-04-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a2c4d3d5-4c7b-11df-83fb-0015587e2cc1">
+    <topic>pidgin -- multiple remote denial of service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pidgin</name>
+	<range><lt>2.6.6</lt></range>
+      </package>
+      <package>
+	<name>libpurple</name>
+	<range><lt>2.6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Three denial of service vulnerabilities where found in
+	  pidgin and allow remote attackers to crash the application.
+	  The developers summarized these problems as follows:</p>
+	<blockquote cite="http://pidgin.im/news/security/?id=45">
+	  <p>Pidgin can become unresponsive when displaying large
+	    numbers of smileys</p>
+	</blockquote>
+	<blockquote cite="http://pidgin.im/news/security/?id=44">
+	  <p>Certain nicknames in group chat rooms can trigger a
+	    crash in Finch</p>
+	</blockquote>
+	<blockquote cite="http://pidgin.im/news/security/?id=43">
+	  <p>Failure to validate all fields of an incoming message
+	    can trigger a crash</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>38294</bid>
+      <cvename>CVE-2010-0277</cvename>
+      <cvename>CVE-2010-0420</cvename>
+      <cvename>CVE-2010-0423</cvename>
+      <url>http://pidgin.im/news/security/?id=43</url>
+      <url>http://pidgin.im/news/security/?id=44</url>
+      <url>http://pidgin.im/news/security/?id=45</url>
+    </references>
+    <dates>
+      <discovery>2010-02-18</discovery>
+      <entry>2010-04-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4fb5d2cd-4c77-11df-83fb-0015587e2cc1">
+    <topic>png -- libpng decompression denial of service</topic>
+    <affects>
+      <package>
+	<name>png</name>
+	<range>
+	  <gt>1.2.43</gt>
+	  <lt>1.4.1</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A vulnerability in libpng can result in denial of service
+	  conditions when a remote attacker tricks a victim to open
+	  a specially-crafted PNG file.</p>
+	<p>The PNG project describes the problem in an advisory:</p>
+	<blockquote cite="http://libpng.sourceforge.net/ADVISORY-1.4.1.html">
+	  <p>Because of the efficient compression method used in
+	    Portable Network Graphics (PNG) files, a small PNG file
+	    can expand tremendously, acting as a "decompression
+	    bomb".</p>
+	  <p>Malformed PNG chunks can consume a large amount of CPU
+	    and wall-clock time and large amounts of memory, up to
+	    all memory available on a system</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>38478</bid>
+      <certvu>576029</certvu>
+      <cvename>CVE-2010-0205</cvename> 
+      <url>http://libpng.sourceforge.net/ADVISORY-1.4.1.html</url>
+      <url>http://secunia.com/advisories/38774</url>
+      <url>http://xforce.iss.net/xforce/xfdb/56661</url>
+    </references>
+    <dates>
+      <discovery>2010-02-27</discovery>
+      <entry>2010-04-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c8c31c41-49ed-11df-83fb-0015587e2cc1">
     <topic>curl -- libcurl buffer overflow vulnerability</topic>
     <affects>
