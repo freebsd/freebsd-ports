@@ -37,7 +37,7 @@ FILES=	etc/log.xsl etc/phpunit2-noframes.xsl etc/phpunit2-frames.xsl \
 	BuildLogger.php TaskContainer.php BuildEvent.php Task.php \
 	TaskAdapter.php Phing.php RuntimeConfigurable.php BuildListener.php \
 	Project.php UnknownElement.php BuildException.php Target.php \
-	phing.php \
+	ConfigurationException.php phing.php \
 	util/regexp/RegexpEngine.php util/regexp/Regexp.php \
 	util/regexp/PregEngine.php \
 	util/SourceFileScanner.php util/ExtendedFileStream.php \
@@ -231,7 +231,7 @@ post-patch:
 	${MKDIR} ${WRKSRC}/pear-bin
 	${SED} -e "s|/opt/phing|${PREFIX}/lib/php/phing|" \
 		-e "s|@PHP-BIN@|${PREFIX}/bin/php|" \
-		-e "s|@PEAR-DIR@|${PREFIX}/share/pear|" \
+		-e "s|@PEAR-DIR@|${PREFIX}/share/pear/phing|" \
 	${WRKSRC}/bin/pear-phing > ${WRKSRC}/pear-phing
 	${CP} ${WRKSRC}/bin/phing.php ${WRKSRC}/phing.php
 
