@@ -7,6 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.8.5.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/ \
 		http://dl.snort.org/snort-current/
@@ -80,8 +81,8 @@ CONFIGURE_ARGS+=	--enable-flexresp \
 .endif
 
 .if defined(WITH_FLEXRESP2)
-BUILD_DEPENDS+=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
-			libdnet*>=1.10_1:${PORTSDIR}/net/libdnet
+LIB_DEPENDS+=		dnet.1:${PORTSDIR}/net/libdnet
+BUILD_DEPENDS+=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 CONFIGURE_ARGS+=	--enable-flexresp2 \
 			--with-libnet-includes=${LIBNET_INCDIR} \
 			--with-libnet-libraries=${LIBNET_LIBDIR}
