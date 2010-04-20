@@ -35,14 +35,14 @@ OPTIONS=	MIKMOD		"Enable MOD music via libMikMod"	On \
 .if defined(WITHOUT_MIKMOD)
 CONFIGURE_ARGS+=--disable-music-libmikmod
 .else
-LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--enable-music-libmikmod
 .endif
 
 .if defined(WITHOUT_FLAC)
 CONFIGURE_ARGS+=--disable-music-flac
 .else
-LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 CONFIGURE_ARGS+=--enable-music-flac
 .endif
 
