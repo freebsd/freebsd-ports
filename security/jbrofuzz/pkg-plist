@@ -1,0 +1,15 @@
+bin/jbrofuzz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-01-http-version.jbrofuzz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-02-http-methods.jbrofuzz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-03-charset-buffer-overflow.jbrofuzz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-04-mobile-symbian.jbrofuzz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-05-chrome-version-fuzz.jbrofuzz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-06-user-agents-google.jbrofuzz
+share/java/jbrofuzz/jbrofuzz.jar
+%%DATADIR%%/fuzzers/fuzzers-file-extensions.jbrf
+%%DATADIR%%/fuzzers/fuzzers.jbrf
+%%DATADIR%%/fuzzers/headers.jbrf
+@dirrm %%DATADIR%%/fuzzers
+@dirrm %%DATADIR%%
+@dirrm share/java/jbrofuzz
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
