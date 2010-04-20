@@ -24,6 +24,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS=	--enable-apc
+CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include"
 
 OPTIONS=	MMAP		"Enable mmap memory support (default: IPC shm)"	off \
 		SEMAPHORES	"Enable sysv IPC semaphores (default: fcntl())"	off \
