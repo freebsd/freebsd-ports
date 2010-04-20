@@ -605,6 +605,7 @@
     SUBDIR += p5-Spreadsheet-ReadSXC
     SUBDIR += p5-Spreadsheet-WriteExcel
     SUBDIR += p5-Spreadsheet-WriteExcel-FromXML
+    SUBDIR += p5-Spreadsheet-WriteExcel-Styler
     SUBDIR += p5-Spreadsheet-WriteExcelXML
     SUBDIR += p5-String-BufferStack
     SUBDIR += p5-String-CamelCase
