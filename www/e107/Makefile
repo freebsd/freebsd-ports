@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	e107
-PORTVERSION=	0.7.15
+PORTVERSION=	0.7.20
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20v${PORTVERSION}
-DISTNAME=	${PORTNAME}_v${PORTVERSION}_full
+DISTNAME=	${PORTNAME}_${PORTVERSION}_full
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A content management system written in PHP
@@ -31,7 +31,7 @@ post-extract:
 	@cd ${WRKDIR} && ${MV} e107_* ${WRKSRC}
 	@cd ${WRKDIR} && ${MV} e107.htaccess ${WRKSRC}
 	@cd ${WRKDIR} && ${MV} favicon.ico ${WRKSRC}
-	@cd ${WRKDIR} && ${MV} robots.txt ${WRKSRC}
+	@cd ${WRKDIR} && ${MV} e107.robots.txt ${WRKSRC}
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s#${WRKSRC}#${E107DIR}#g" >${PLIST}
