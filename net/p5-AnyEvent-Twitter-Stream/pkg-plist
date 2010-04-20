@@ -1,0 +1,7 @@
+%%SITE_PERL%%/AnyEvent/Twitter/Stream.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Twitter/Stream/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Twitter/Stream
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/Twitter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
+@dirrmtry %%SITE_PERL%%/AnyEvent/Twitter
+@dirrmtry %%SITE_PERL%%/AnyEvent
