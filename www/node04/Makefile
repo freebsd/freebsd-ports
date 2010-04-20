@@ -7,7 +7,7 @@
 
 PORTNAME=	node
 PORTVERSION=	0.1.91
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -28,13 +28,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST}
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
 MAN1=		${PORTNAME}.1
-MANCOMPRESSED=	yes
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} tools/waf-light --jobs=${MAKE_JOBS_NUMBER} build)
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${PREFIX}/man/man1
-	${GZIP_CMD} ${PREFIX}/man/man1/${PORTNAME}.1
 
 .include <bsd.port.mk>
