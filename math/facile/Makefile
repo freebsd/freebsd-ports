@@ -6,6 +6,7 @@
 
 PORTNAME=	facile
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.recherche.enac.fr/log/facile/distrib/
 
