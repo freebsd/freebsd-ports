@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.6.19
+PORTVERSION=	3.6.23.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
@@ -21,7 +21,6 @@ USE_GNOME=	pkgconfig
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 USE_GNOME=	gnomehack
-USE_TCL_BUILD=	84+
 CONFIGURE_ENV+=	TCLSH_CMD="${TCLSH}" \
 		TCLLIBDIR="${PREFIX}/lib/${PORTNAME}" \
 		ac_cv_search_pthread_create=""
@@ -60,6 +59,7 @@ CONFIGURE_ARGS+=	--enable-tempstore=yes
 .if defined(WITH_TCLWRAPPER)
 CATEGORIES+=		lang tcl
 COMMENT+=		with TCL Wrapper
+USE_TCL_BUILD=		84+
 USE_TCL_RUN=		84+
 CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
 PLIST_SUB+=		WITH_TCLWRAPPER=""
