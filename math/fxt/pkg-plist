@@ -50,6 +50,9 @@ include/fxt/bits-all.h
 include/fxt/bits/bin2naf.h
 include/fxt/bits/bit-dragon3.h
 include/fxt/bits/bit-dragon-r5.h
+include/fxt/bits/bit-dragon-r7.h
+include/fxt/bits/bit-dragon-r9.h
+include/fxt/bits/bit-dragon-r13.h
 include/fxt/bits/bit-isolate.h
 include/fxt/bits/bit-necklace.h
 include/fxt/bits/bit-paper-fold.h
@@ -566,6 +569,14 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r5-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-hex-texpic-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r5-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r7-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r7-texpic-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r7-2-texpic-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r7-2-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r9-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r9-texpic-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r13-texpic-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-r13-texpic-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/dragon-hex-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/fibrep-out.txt
