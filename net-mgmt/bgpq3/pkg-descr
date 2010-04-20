@@ -1,5 +1,17 @@
-This program is a lightweight access- and prefix-list generator
-for Cisco routers and GateD/Zebra. Access lists are generated
-based on RADB/RIPE data.
+bgpq3 is a lightweight access-list/prefix-list/as-path access-list generator
+for Cisco and Juniper routers.
+
+This program is a mostly complete re-implementation of bgpq (net-mgmt/bgpq),
+with next major advantages:
+- much faster, especially for large as-sets.
+- supports ipv6 both at transport level and in prefix/access-lists generation.
+- supports asn32 in both asdot and asplain notation, also supports
+"transition" as23456 generation instead of asn32.
+
+However, bgpq3 can not be used as a full replacement of bgpq, because:
+- "more specific" prefix filtering is not implemented (and not planned).
+- GateD prefix-filters generation is not implemented (and not planned).
+- Cisco standard access-lists generation is not implemented (and not planned).
+- formatted output is not supported (yet?).
 
 WWW: http://snar.spb.ru/prog/bgpq3/
