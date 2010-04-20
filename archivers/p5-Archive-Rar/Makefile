@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface with the 'rar' command
 
 BUILD_DEPENDS=	rar>=0:${PORTSDIR}/archivers/rar

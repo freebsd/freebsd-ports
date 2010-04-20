@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run code after the response has been sent
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.8004:${PORTSDIR}/www/p5-Catalyst-Runtime	\

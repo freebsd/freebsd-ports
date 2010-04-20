@@ -10,7 +10,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OpenID credential for Catalyst::Plugin::Authentication framework
 
 BUILD_DEPENDS=	p5-Cache-FastMmap>=1.28:${PORTSDIR}/devel/p5-Cache-FastMmap \

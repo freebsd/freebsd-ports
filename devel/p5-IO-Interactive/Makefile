@@ -12,7 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Utilities for interactive I/O
 
 BUILD_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version

@@ -11,7 +11,7 @@ CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple module for extract archives
 
 BUILD_DEPENDS=	p5-Archive-Rar>=2:${PORTSDIR}/archivers/p5-Archive-Rar \

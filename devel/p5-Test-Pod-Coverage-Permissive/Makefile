@@ -10,7 +10,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Checks for pod coverage regression
 
 RUN_DEPENDS=	p5-PathTools>=0:${PORTSDIR}/devel/p5-PathTools \

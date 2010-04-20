@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Crypt::DH Using GMP Directly
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp

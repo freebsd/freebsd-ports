@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MS/MSCHWERN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make URLs for Gravatars from an email address
 
 BUILD_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI \

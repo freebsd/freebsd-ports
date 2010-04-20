@@ -12,7 +12,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use Math::Pari for Math::BigInt routines
 
 RUN_DEPENDS=	p5-Math-Pari>=2.010709:${PORTSDIR}/math/p5-Math-Pari
