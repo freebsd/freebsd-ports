@@ -83,4 +83,4 @@ lib/node/wafadmin/Tools/xlcxx.py
 @dirrmtry lib/node/wafadmin
 @dirrmtry lib/node/libraries
 @dirrmtry lib/node
-@dirrmtry include/node
+@dirrm include/node
