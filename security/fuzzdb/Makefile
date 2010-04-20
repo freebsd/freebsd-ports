@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fuzzdb
-PORTVERSION=	1.01
+PORTVERSION=	1.05
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -17,15 +17,24 @@ COMMENT=	A comprehensive set of fuzzing patterns
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude .svn
-PORTDOCS=	copyright.txt
+PORTDOCS=	_copyright.txt _readme.txt
+PORTDIRS=	attack-payloads wordlists-misc discovery \
+		web-backdoors wordlists-user-passwd
 
 .include <bsd.port.pre.mk>
 
+post-extract:
+	@${RM} ${WRKSRC}/wordlists-user-passwd/~
+
 do-install:
-	( cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR} "! -name ${PORTDOCS}" )
+.for dir in ${PORTDIRS}
+	( cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${DATADIR}/${dir} )
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+.	for doc in ${PORTDOCS}
+		${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.	endfor
 .endif
 
 .include <bsd.port.post.mk>
