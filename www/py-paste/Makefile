@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	Paste
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	www python
-MASTER_SITES=	http://pypi.python.org/packages/source/P/Paste/ \
-		${MASTER_SITE_LOCAL} \
-		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	dryice
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Tools for using a Web Server Gateway Interface stack
 
 USE_PYTHON=	2.4+
