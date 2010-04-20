@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bgpq3
-PORTVERSION=	0.1.10
+PORTVERSION=	0.1.11
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://snar.spb.ru/prog/bgpq3/
 EXTRACT_SUFX=	.tgz
