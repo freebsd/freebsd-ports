@@ -130,8 +130,9 @@
 %%DATADIR%%/America/Maceio
 %%DATADIR%%/America/Managua
 %%DATADIR%%/America/Manaus
-%%DATADIR%%/America/Martinique
 %%DATADIR%%/America/Marigot
+%%DATADIR%%/America/Martinique
+%%DATADIR%%/America/Matamoros
 %%DATADIR%%/America/Mazatlan
 %%DATADIR%%/America/Menominee
 %%DATADIR%%/America/Merida
@@ -149,6 +150,7 @@
 %%DATADIR%%/America/Noronha
 %%DATADIR%%/America/North_Dakota/Center
 %%DATADIR%%/America/North_Dakota/New_Salem
+%%DATADIR%%/America/Ojinaga
 %%DATADIR%%/America/Panama
 %%DATADIR%%/America/Pangnirtung
 %%DATADIR%%/America/Paramaribo
@@ -163,6 +165,7 @@
 %%DATADIR%%/America/Regina
 %%DATADIR%%/America/Resolute
 %%DATADIR%%/America/Rio_Branco
+%%DATADIR%%/America/Santa_Isabel
 %%DATADIR%%/America/Santarem
 %%DATADIR%%/America/Santiago
 %%DATADIR%%/America/Santo_Domingo
@@ -190,6 +193,7 @@
 %%DATADIR%%/Antarctica/Casey
 %%DATADIR%%/Antarctica/Davis
 %%DATADIR%%/Antarctica/DumontDUrville
+%%DATADIR%%/Antarctica/Macquarie
 %%DATADIR%%/Antarctica/Mawson
 %%DATADIR%%/Antarctica/McMurdo
 %%DATADIR%%/Antarctica/Palmer
@@ -234,11 +238,11 @@
 %%DATADIR%%/Asia/Kamchatka
 %%DATADIR%%/Asia/Karachi
 %%DATADIR%%/Asia/Kashgar
+%%DATADIR%%/Asia/Kathmandu
 %%DATADIR%%/Asia/Kolkata
 %%DATADIR%%/Asia/Krasnoyarsk
 %%DATADIR%%/Asia/Kuala_Lumpur
 %%DATADIR%%/Asia/Kuching
-%%DATADIR%%/Asia/Kathmandu
 %%DATADIR%%/Asia/Kuwait
 %%DATADIR%%/Asia/Macau
 %%DATADIR%%/Asia/Magadan
