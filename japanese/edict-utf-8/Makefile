@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	edict-utf-8
-PORTVERSION=	20070314
+PORTVERSION=	20100420
 CATEGORIES=	japanese
 MASTER_SITES=	http://redundancy.redundancy.org/mirror/${PORTNAME}/
 DISTFILES=	${DICTFILES}
@@ -57,7 +57,7 @@ do-extract:
 			;; \
 		*.zip) \
 			instfile=`${BASENAME} $$file .zip` ; \
-			${UNZIP_CMD} -c ${_DISTDIR}/$$file -x ${NODOCFILES} 2>/dev/null \
+			${UNZIP_CMD} -qq -c ${_DISTDIR}/$$file -x ${NODOCFILES} 2>/dev/null \
 			> ${WRKSRC}/$$instfile.euc-jp \
 			;; \
 		*) \
