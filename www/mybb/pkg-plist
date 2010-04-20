@@ -628,7 +628,6 @@
 %%WWWDIR%%/inc/tasks/threadviews.php
 %%WWWDIR%%/inc/tasks/usercleanup.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/install/lock
 %%WWWDIR%%/install/images/bullet.gif
 %%WWWDIR%%/install/images/content_bg.gif
 %%WWWDIR%%/install/images/error_bg.gif
