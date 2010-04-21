@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cassandra
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.1
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
@@ -21,11 +21,11 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 
 post-patch:
-	${MV} ${WRKSRC}/conf/log4j.properties ${WRKSRC}/conf/log4j.properties.sample
-	${MV} ${WRKSRC}/conf/storage-conf.xml ${WRKSRC}/conf/storage-conf.xml.sample
+	@${MV} ${WRKSRC}/conf/log4j.properties ${WRKSRC}/conf/log4j.properties.sample
+	@${MV} ${WRKSRC}/conf/storage-conf.xml ${WRKSRC}/conf/storage-conf.xml.sample
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/* ${DATADIR}
+	@${MKDIR} ${DATADIR}
+	@${CP} -R ${WRKSRC}/* ${DATADIR}
 
 .include <bsd.port.mk>

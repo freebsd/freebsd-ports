@@ -1,3 +1,3 @@
-MD5 (apache-cassandra-0.5.1-bin.tar.gz) = 57ad909a90db7597ca91e2ec0ad5e507
-SHA256 (apache-cassandra-0.5.1-bin.tar.gz) = 0fe25a4699ab65e41ca32335bf860496232c3840449a3ac44829e74e26b9c1aa
-SIZE (apache-cassandra-0.5.1-bin.tar.gz) = 5716040
+MD5 (apache-cassandra-0.6.1-bin.tar.gz) = 6aa1764f76e26fbc9d62b59e2f6a9ab4
+SHA256 (apache-cassandra-0.6.1-bin.tar.gz) = 53df4ba64cbe8a707f29fd9b4a10a329d88de06d8636f36c33cb68c4b2200ec4
+SIZE (apache-cassandra-0.6.1-bin.tar.gz) = 9803814
