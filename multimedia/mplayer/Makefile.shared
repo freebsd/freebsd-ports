@@ -2,42 +2,31 @@
 # mplayer and mencoder....the variables that we need to set
 # before we include bsd.port.pre.mk
 
-MPLAYER_PORT_VERSION=	0.99.11
+MPLAYER_SNAPSHOT_DATE=	2010-01-17
+MPLAYER_PORT_VERSION=	1.0.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES?=	multimedia audio
-MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
-		http://www2.mplayerhq.hu/MPlayer/releases/ \
-		http://ftp.lug.udel.edu/MPlayer/releases/ \
-		http://www4.mplayerhq.hu/MPlayer/releases/ \
-		http://mirrors.xmission.com/MPlayer/releases/ \
-		ftp://ftp1.mplayerhq.hu/MPlayer/releases/ \
-		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
-		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
-		ftp://mirrors.xmission.com/MPlayer/releases/ \
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-1.0rc2
+DISTNAME=	mplayer-${MPLAYER_PORT_VERSION:S/.r/rc/g}
+WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
 
 MAINTAINER?=	riggs@rrr.de
 
-PATCH_SITES=	http://www.mplayerhq.hu/MPlayer/patches/
-
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS=${PTHREAD_LIBS} \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		TMPDIR="${WRKSRC}"
-CONFIGURE_ARGS= --enable-png \
-		--enable-menu \
-		--disable-faad-external \
-		--disable-vidix-external \
-		--disable-tv-v4l1 \
-		--disable-tv-v4l2 \
-		--disable-dvdnav
+CONFIGURE_ARGS= --disable-bitmap-font
+
+CONFIGURE_LOG=	configure.log
 
 WANT_GNOME=	yes
 WANT_SDL=	yes
 
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes

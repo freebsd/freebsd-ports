@@ -1,0 +1,11 @@
+--- libavutil/x86_cpu.h~	2009-03-19 09:49:47.000000000 -0500
++++ libavutil/x86_cpu.h	2009-07-24 14:20:58.308327513 -0500
+@@ -69,7 +69,7 @@
+ #define HAVE_7REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE && HAVE_EBP_AVAILABLE))
+ #define HAVE_6REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE || HAVE_EBP_AVAILABLE))
+ 
+-#if ARCH_X86_64 && defined(PIC)
++#if ARCH_X86_64
+ #    define BROKEN_RELOCATIONS 1
+ #endif
+ 

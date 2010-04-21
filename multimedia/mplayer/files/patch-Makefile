@@ -1,0 +1,27 @@
+--- Makefile.orig	2010-01-03 17:39:16.000000000 +0100
++++ Makefile	2010-01-06 21:15:58.372494408 +0100
+@@ -914,20 +914,16 @@
+ install: $(INSTALL_TARGETS-yes)
+ 
+ install-dirs:
+-	$(INSTALL) -d $(BINDIR) $(CONFDIR) $(LIBDIR)
+ 
+-install-%: %$(EXESUF) install-dirs
+-	$(INSTALL) -m 755 $(INSTALLSTRIP) $< $(BINDIR)
++install-mplayer: mplayer$(EXESUF) install-dirs
++	@${BSD_INSTALL_PROGRAM} mplayer$(EXESUF) $(BINDIR)
+ 
+ install-gui: install-mplayer
+-	-ln -sf mplayer$(EXESUF) $(BINDIR)/gmplayer$(EXESUF)
+-	$(INSTALL) -d $(DATADIR)/skins $(prefix)/share/pixmaps $(prefix)/share/applications
+-	$(INSTALL) -m 644 etc/mplayer.xpm $(prefix)/share/pixmaps/
+-	$(INSTALL) -m 644 etc/mplayer.desktop $(prefix)/share/applications/
+ 
+ install-gui-man:      $(foreach lang,$(MAN_LANGS),install-gui-man-$(lang))
+ install-mencoder-man: $(foreach lang,$(MAN_LANGS),install-mencoder-man-$(lang))
+-install-mplayer-man:  $(foreach lang,$(MAN_LANGS),install-mplayer-man-$(lang))
++install-mplayer-man:
++	@${BSD_INSTALL_MAN} DOCS/man/en/mplayer.1 $(MANDIR)/man1/mplayer.1
+ 
+ install-gui-man-en: install-mplayer-man-en
+ 	cd $(MANDIR)/man1/ && ln -sf mplayer.1 gmplayer.1

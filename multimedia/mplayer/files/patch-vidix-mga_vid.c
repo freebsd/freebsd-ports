@@ -1,5 +1,5 @@
---- vidix/mga_vid.c.orig	2007-10-08 03:49:27.000000000 +0800
-+++ vidix/mga_vid.c	2007-10-20 16:24:47.000000000 +0800
+--- vidix/mga_vid.c.orig	2009-05-12 21:58:57.000000000 -0500
++++ vidix/mga_vid.c	2009-07-23 20:41:50.683011307 -0500
 @@ -1110,13 +1110,10 @@
  		    i, lst[i].vendor, lst[i].device);
  	    if (lst[i].vendor == VENDOR_MATROX)
@@ -9,7 +9,7 @@
  		{
 -			printf("[mga] Device is disabled, ignoring\n");
 -			continue;
-+			printf("[mga] Device is disabled, trying anyways.\n");
++                        printf("[mga] Device is disabled, trying anyways.\n");
  		}
 -#endif
  		switch(lst[i].device)

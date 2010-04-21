@@ -6,40 +6,36 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	6
 COMMENT=	Convenient video file and movie encoder
 NO_PACKAGE=	Port has restricted dependencies
 
 .include "${.CURDIR}/../mplayer/Makefile.shared"
 
-OPTIONS=	DEBUG "Include debug symbols in mencoder's binary files" off
-OPTIONS+=	RTCPU "Let mplayer dynamically check for CPU features" on
+OPTIONS=	DEBUG "Include debug symbols in mencoder's binary" off
+OPTIONS+=	RTCPU "Allow runtime CPU detection" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
-OPTIONS+=	SIMD "Allow mplayer to use vector engines (MMX...)" on
 OPTIONS+=	IPV6 "Include inet6 network support" on
 OPTIONS+=	JACK "Enable JackIt audio server support" off
-#OPTIONS+=	POLYP "Enable polyp sound server support" off
 OPTIONS+=	NAS "Enable NAS sound server support" off
 OPTIONS+=	OPENAL "Enable OpenAL sound support" off
+OPTIONS+=	PULSE "Enable PulseAudio" off
 OPTIONS+=	LIBUNGIF "Enable gif support" on
+OPTIONS+=	OPENJPEG "Enable JPEG2000 support" off
 OPTIONS+=	LIBDV "Enable libdv support" off
 OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
+OPTIONS+=	AMR "Enable opencore AMR audio codec support" off
 OPTIONS+=	TWOLAME "Enable twolame MPEG audio codec support" off
 OPTIONS+=	DTS "Enable DTS audio codec support" on
 OPTIONS+=	LIBMPCDEC "Enable libmpcdec support" off
 OPTIONS+=	FAAC "Enable FAAC audio codec support" off
 OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
 OPTIONS+=	SPEEX "Enable speex audio codec support" off
-OPTIONS+=	TREMOR "Use built-in tremor instead of libvorbis" off
-OPTIONS+=	XMMS "Enable XMMS plugin support" off
 OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
 OPTIONS+=	THEORA "Enable ogg theora video support" off
-.if !defined(PACKAGE_BUILDING)
-OPTIONS+=	AMR "Enable AMR audio codec support" off
-.endif
-OPTIONS+=	X264 "Enable x264 (H.264) video codec support" off
-OPTIONS+=	XANIM "Enable xanim DLL support" off
 OPTIONS+=	XVID "Enable XVID video codec support" on
+OPTIONS+=	X264 "Enable x264 (H.264) video codec support" on
+OPTIONS+=	DIRAC "Enable dirac video codec support" off
+OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
 OPTIONS+=	REALPLAYER "Enable real player plugin" off
 OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
 OPTIONS+=	SMB "Enable Samba input support" off
@@ -47,17 +43,20 @@ OPTIONS+=	FRIBIDI "Enable FriBiDi support" off
 OPTIONS+=	LIBCDIO "Enable libcdio support" off
 OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
 OPTIONS+=	LIBLZO "Enable external liblzo library" off
+OPTIONS+=	V4L "Enable Video4Linux TV support" off
 
 MLINKS=		mplayer.1 mencoder.1
 
 PATCHDIR=	${.CURDIR}/../mplayer/files
 DATADIR=	${PREFIX}/share/mplayer
 
-TOOLFILES=	calcbpp.pl checktree.sh countquant.pl \
-		dvd2divxscript.pl mencvcd \
-		mplmult.sh plotpsnr.pl psnr-video.sh \
-		qepdvcd.sh subedit.pl subsearch.sh \
-		w32codec_dl.pl wma2ogg.pl
+TOOLFILES=	aconvert.sh binary_codecs.sh calcbpp.pl \
+		checktree.sh countquant.pl divx2svcd.sh \
+		dvd2divxscript.pl edgedetect.fp edgeenh.fp \
+		emboss.fp mencvcd.sh midentify.sh \
+		mpconsole.sh mplmult.sh plotpsnr.pl \
+		psnr-video.sh qepdvcd.sh subedit.pl \
+		subsearch.sh w32codec_dl.pl wma2ogg.pl \
 
 .include <bsd.port.pre.mk>
 
@@ -65,9 +64,9 @@ LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 BUILD_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-CONFIGURE_ARGS+=	--disable-vidix-internal \
-			--disable-freetype \
+CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-x11 \
+			--disable-vdpau \
 			--disable-fontconfig \
 			--disable-rtc \
 			--disable-arts \
@@ -80,6 +79,8 @@ CONFIGURE_ARGS+=	--disable-vidix-internal \
 			--disable-joystick \
 			--disable-directfb \
 			--disable-ssse3
+
+ALL_TARGET=	mencoder
 
 .include "${.CURDIR}/../mplayer/Makefile.options"
 
@@ -95,6 +96,25 @@ LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 CONFIGURE_ARGS+=	--disable-faac
 .endif
 
+.if !defined(WITHOUT_X264)
+LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264
+.else
+CONFIGURE_ARGS+=	--disable-x264
+.endif
+
+.if !defined(WITHOUT_XVID)
+LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
+.else
+CONFIGURE_ARGS+=	--disable-xvid
+.endif
+
+.ifdef(WITH_DIRAC)
+LIB_DEPENDS+=		dirac_encoder.1:${PORTSDIR}/multimedia/dirac
+.else
+CONFIGURE_ARGS+=	--disable-libdirac
+.endif
+
+
 pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
 	@${ECHO_MSG} ""
@@ -104,14 +124,16 @@ pre-everything::
 	@${ECHO_MSG} "order to learn more about them."
 
 post-patch:
+.if ${OSVERSION} >= 900010
 	@${REINPLACE_CMD} -e \
-		's|libxmms.so.1|libxmms.so|' \
+		'/CFLAGS.*-D_LARGEFILE64_SOURCE/ s/-D_LARGEFILE64_SOURCE/-D_FILE_OFFSET_BITS=64/' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*(configure|.sh|Makefile)" -print0 | \
 		${XARGS} -x -0 -n 10 \

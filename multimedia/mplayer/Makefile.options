@@ -4,34 +4,6 @@
 # Some of the knobs are not tunable by the OPTIONS framework. These are
 # explained here in detail.
 #
-# CPU features:
-#
-# The following is only of interest if you haven't enabled
-# RTCPU in your OPTIONS selection.
-# The correct instruction set of your processor is normally
-# auto-detected, so there is probably no necessity to change them.
-# Note that disabling SIMD via the OPTIONS framework completely
-# disables utilization of vector engines, i.e. it implies
-# WITHOUT_MMX, WITHOUT_3DNOW and WITHOUT_SSE
-#
-# WITHOUT_MMX
-# default: autodetected
-# disables using of mmx code
-#
-# WITHOUT_3DNOW
-# default: autodetected
-# disables using of 3dNow! instructions on AMD CPUs
-#
-# WITHOUT_SSE
-# default: autodetected
-# disables all mmx2 and sse/sse2 code
-# CAUTION: There are some Athlon CPUs which claim to be sse-able but
-# aren't. If you encounter strange problems on such a CPU, try
-# to build mplayer with this knob and report the problem
-# NOTE: SSE is available only if "options CPU_ENABLE_SSE" in your
-# kernel config. This is standard for 5.x and newer systems on I686_CPU
-# and later. 4.x users will have to define this explicitly.
-#
 # Feature options:
 # These options influence some general behaviour of mplayer. Most of the featues,
 # for example all the codecs, are selected via the OPTIONS framework.
@@ -64,10 +36,16 @@ DEBUG_FLAGS=	-g -O -fomit-frame-pointer
 .endif
 .else
 .if !defined(WITHOUT_OCFLAGS)
-CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
+#CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
+#Let mplayer determine its own cflags
+CFLAGS=
 .else
 CFLAGS+=	-O -fomit-frame-pointer
 .endif
+.endif
+
+.if !defined(WITHOUT_RTCPU)
+CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .endif
 
 .if defined(WITHOUT_IPV6)
@@ -78,50 +56,38 @@ CATEGORIES+=	ipv6
 
 .if !defined(WITHOUT_LIBUNGIF)
 LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
-#CONFIGURE_ARGS+=	--enable-gif
 .else
 CONFIGURE_ARGS+=	--disable-gif
 .endif
 
+.ifdef(WITH_OPENJPEG)
+LIB_DEPENDS+=		openjpeg.2:${PORTSDIR}/graphics/openjpeg
+.else
+CONFIGURE_ARGS+=	--disable-libopenjpeg
+.endif
+
 .if defined(WITH_MAD)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
-
-CONFIGURE_ARGS+=	--enable-mad \
-			--with-madlibdir=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--disable-mad
 .endif
 
 .if defined(WITH_LIBDV)
 LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
-CONFIGURE_ARGS+=	--enable-libdv
 .else
 CONFIGURE_ARGS+=	--disable-libdv
-.endif
-
-.if defined(WITH_X264)
-LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
-.else
-CONFIGURE_ARGS+=	--disable-x264
-.endif
-
-.if !defined(WITH_TREMOR)
-CONFIGURE_ARGS+=	--disable-tremor-internal --disable-tremor-external
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
-.endif
-
-.if !defined(WITHOUT_XVID)
-#Adding --enable-xvid to CONFIG args breaks LDFLAGS in this release
-#CONFIGURE_ARGS+=	--enable-xvid
-LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
-.else
-CONFIGURE_ARGS+=	--disable-xvid
 .endif
 
 .if defined(WITH_THEORA)
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 .else
 CONFIGURE_ARGS+=	--disable-theora
+.endif
+
+.if defined(WITH_SCHROEDINGER)
+LIB_DEPENDS+=		schroedinger-1.0.3:${PORTSDIR}/multimedia/schroedinger
+.else
+CONFIGURE_ARGS+=	--disable-libschroedinger
 .endif
 
 .if defined(WITH_LIBMPCDEC)
@@ -131,41 +97,22 @@ CONFIGURE_ARGS+=	--disable-musepack
 .endif
 
 .if !defined(WITHOUT_DTS)
-#CFLAGS+=		-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--enable-libdca
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libdca.a:${PORTSDIR}/multimedia/libdca
+LIB_DEPENDS+=		dca.0:${PORTSDIR}/multimedia/libdca
 .else
 CONFIGURE_ARGS+=	--disable-libdca
 .endif
 
 .if !defined(WITHOUT_SPEEX)
-CONFIGURE_ARGS+=	--enable-speex
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 .else
 CONFIGURE_ARGS+=	--disable-speex
 .endif
 
-.if defined(WITH_XANIM)
-BUILD_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
-CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${LOCALBASE}/lib/X11/xanim
-.else
-CONFIGURE_ARGS+=--disable-xanim
-.endif
-
 .if defined(WITH_LIVEMEDIA)
-#CONFIGURE_ARGS+=	--enable-live \
-#			--with-livelibdir=${LOCALBASE}/live
 RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 .else
 CONFIGURE_ARGS+=	--disable-live
-.endif
-
-.if defined(WITH_XMMS)
-CONFIGURE_ARGS+=	--enable-xmms
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
-.else
-CONFIGURE_ARGS+=	--disable-xmms
 .endif
 
 .if defined(WITH_JACK)
@@ -174,28 +121,27 @@ LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--disable-jack
 .endif
 
-#.if defined(WITH_POLYP)
-#CONFIGURE_ARGS+=	--enable-polyp
-#LIB_DEPENDS+=		polyp-0.7.0:${PORTSDIR}/audio/polypaudio
-#.else
-#CONFIGURE_ARGS+=	--disable-polyp
-#.endif
-
 .if defined(WITH_NAS)
-CONFIGURE_ARGS+=	--enable-nas
 LIB_DEPENDS+=		audio.2:${PORTSDIR}/audio/nas
 .else
 CONFIGURE_ARGS+=	--disable-nas
 .endif
 
 .if defined(WITH_OPENAL)
-LIB_DEPENDS+=	openal.1:${PORTSDIR}/audio/openal-soft
+#TODO: test this
+#LIB_DEPENDS+=	openal.1:${PORTSDIR}/audio/openal-soft
+USE_OPENAL=	soft
 .else
 CONFIGURE_ARGS+=	--disable-openal
 .endif
 
+.if defined(WITH_PULSE)
+LIB_DEPENDS+=		pulse.0:${PORTSDIR}/audio/pulseaudio
+.else
+CONFIGURE_ARGS+=	--disable-pulse
+.endif
+
 .if defined(WITH_SMB)
-CONFIGURE_ARGS+=	--enable-smb
 LIB_DEPENDS+=		smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 .else
 CONFIGURE_ARGS+=	--disable-smb
@@ -203,7 +149,6 @@ CONFIGURE_ARGS+=	--disable-smb
 
 .if defined(WITH_FRIBIDI)
 LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
-CONFIGURE_ARGS+=	--enable-fribidi
 .else
 CONFIGURE_ARGS+=	--disable-fribidi
 .endif
@@ -244,21 +189,7 @@ DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 
-# "enable" build for other archs
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
-.if !defined(WITHOUT_RTCPU)
-CONFIGURE_ARGS+=--enable-runtime-cpudetection
-.else #WITH_RTCPU
-.if defined(WITHOUT_MMX) || defined(WITHOUT_SIMD)
-CONFIGURE_ARGS+=--disable-mmx
-.endif
-.if defined(WITHOUT_3DNOW) || defined(WITHOUT_SIMD)
-CONFIGURE_ARGS+=--disable-3dnow --disable-3dnowext
-.endif
-.if defined(WITHOUT_SSE) || defined(WITHOUT_SIMD)
-CONFIGURE_ARGS+=--disable-mmxext --disable-sse --disable-sse2
-.endif
-.endif #WITH_RTCPU
 .if !defined(WITHOUT_WIN32) && !defined(PACKAGE_BUILDING) && ${ARCH} == "i386"
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 CONFIGURE_ARGS+=	--win32codecsdir=${LOCALBASE}/lib/win32
@@ -271,20 +202,36 @@ CONFIGURE_ARGS+=	--disable-win32dll \
 .endif # ARCH == i386/amd64
 
 .if defined(WITH_REALPLAYER)
-CONFIGURE_ARGS+=	--enable-real \
-			--realcodecsdir=${LOCALBASE}/lib/RealPlayer/codecs
+CONFIGURE_ARGS+=	--realcodecsdir=${LOCALBASE}/lib/RealPlayer/codecs
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 .else
 .if !defined(WITHOUT_WIN32) && !defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--enable-real \
-			--realcodecsdir=${LOCALBASE}/lib/win32
+CONFIGURE_ARGS+=	--realcodecsdir=${LOCALBASE}/lib/win32
 .else
 CONFIGURE_ARGS+=	--disable-real
 .endif
 .endif
 
 .if defined(WITH_AMR)
-LIB_DEPENDS+=		amrnb:${PORTSDIR}/audio/libamrnb \
-			amrwb:${PORTSDIR}/audio/libamrwb
+LIB_DEPENDS+=		opencore-amrwb.0:${PORTSDIR}/audio/opencore-amr
+.else
+CONFIGURE_ARGS+=	--disable-libopencore_amrnb \
+			--disable-libopencore_amrwb
 .endif
+
+.if defined(WITH_V4L)
+BUILD_DEPENDS+=		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS+=		v4l2.0:${PORTSDIR}/multimedia/libv4l
+CONFIGURE_ARGS+=	--enable-tv-v4l1 \
+			--enable-tv-v4l2
+EXTRA_LIBS+=		-lv4l1 -lv4l2
+.else
+CONFIGURE_ARGS+=	--disable-tv-v4l1 \
+			--disable-tv-v4l2
+.endif
+
+.if defined(EXTRA_LIBS)
+CONFIGURE_ARGS+=	--extra-libs="${EXTRA_LIBS}"
+.endif
+
