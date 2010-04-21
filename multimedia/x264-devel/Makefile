@@ -6,7 +6,7 @@
 #      $Id: Makefile 30 2006-10-30 22:15:26Z buhnux $
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20100222
+PORTVERSION=	0.0.20100420
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245${EXTRACT_SUFX}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Library and tool for encoding H.264/AVC video streams
 
-CONFLICTS=	x264-0.0.2009*
+CONFLICTS=	x264-0.0.2009* x264-0.0.20100[1-2]*
 
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
 		as:${PORTSDIR}/devel/binutils
@@ -26,7 +26,6 @@ BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_GCC?=	4.4+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
@@ -34,6 +33,7 @@ MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	DEBUG "Enable Debugging" Off \
 		PGO "Enable Profile-Guided Optimization" Off \
+		GCC44 "Use gcc 4.4+" Off \
 		GPAC "Enable MPEG-4 Output" On \
 		X11_OUTPUT "Enable X11 Output" Off
 
@@ -41,7 +41,14 @@ CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/incl
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib" \
 			--enable-shared
 
+CONFIGURE_ENV+=		COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=		COMPILER_PATH=${LOCALBASE}/bin
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_GCC44)
+USE_GCC?=	4.4+
+.endif
 
 # Around the time GCC stack protection (aka Propolice) for userland
 # was enabled on src/share/mk/bsd.sys.mk
@@ -103,6 +110,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
 		s|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile
+.if !defined(WITH_GCC44)
+	@${REINPLACE_CMD} -e 's|$$(CC) -shared -o|COMPILER_PATH= $$(CC) -shared -o|g' \
+		-e 's|$$(CC) -o|COMPILER_PATH= $$(CC) -o|g' \
+		${WRKSRC}/Makefile
+.endif
 
 .if ${SLAVE_PORT:L}=="no"
 .if 0 # BROKEN
