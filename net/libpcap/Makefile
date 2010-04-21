@@ -132,7 +132,7 @@ CONFIGURE_ARGS+=	--with-pcap=bpf
 CFLAGS+=	-DHAVE_DEVICE_CLONING=1
 .endif
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 CFLAGS+=	-fPIC
 .endif
 
