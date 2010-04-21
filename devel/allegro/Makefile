@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/alleg/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	EitanAdlerList@gmail.com
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A cross-platform library for games and multimedia programming
 
 USE_AUTOTOOLS=	autoconf:262
