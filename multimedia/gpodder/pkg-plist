@@ -19,6 +19,8 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/download.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/feedcore.py
 %%PYTHON_SITELIBDIR%%/gpodder/feedcore.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/gpodderosx.py
+%%PYTHON_SITELIBDIR%%/gpodder/gpodderosx.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gstreamer.py
 %%PYTHON_SITELIBDIR%%/gpodder/gstreamer.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/__init__.py
