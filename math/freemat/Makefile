@@ -7,8 +7,8 @@
 
 PORTNAME=		FreeMat
 PORTVERSION=		4.0
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-Source
+PORTREVISION=		1
 CATEGORIES=		math science
 MASTER_SITES=		SF
 MASTER_SITE_SUBDIR=	freemat/FreeMat4
@@ -94,11 +94,17 @@ pre-everything::
 	@${ECHO_MSG} '**********************************************************'
 .endif
 
+# Get rid of the generated .moc.cpp files included in the
+# upstream distro.  They should be regenerated with the
+# currently-installed version of moc-qt4.
+post-extract:
+	@cd ${WRKSRC} && ${FIND} . -name \*.moc.cpp -delete
+
 pre-configure:
 	${RM} ${WRKSRC}/CMakeCache.txt
 
+# Avoid conflict with QT3
 post-configure:
-	# Avoid conflict with QT3
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS}	\
 		${REINPLACE_CMD} -e '/^QT_CFLAGS/s|-I${LOCALBASE}/include ||'
 
