@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.0.4
+PORTVERSION=	1.7.0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -49,6 +49,7 @@ MAN1=		git.1 \
 		git-describe.1 \
 		git-diff-files.1 \
 		git-diff-index.1 \
+		git-difftool.1 \
 		git-diff-tree.1 \
 		git-diff.1 \
 		git-fast-export.1 \
@@ -66,6 +67,7 @@ MAN1=		git.1 \
 		git-grep.1 \
 		git-hash-object.1 \
 		git-help.1 \
+		git-http-backend.1 \
 		git-http-fetch.1 \
 		git-http-push.1 \
 		git-imap-send.1 \
@@ -84,13 +86,15 @@ MAN1=		git.1 \
 		git-merge-file.1 \
 		git-merge-index.1 \
 		git-merge-one-file.1 \
+		git-mergetool.1 \
 		git-merge-tree.1 \
 		git-merge.1 \
-		git-mergetool.1 \
+		git-mergetool--lib.1 \
 		git-mktag.1 \
 		git-mktree.1 \
 		git-mv.1 \
 		git-name-rev.1 \
+		git-notes.1 \
 		git-pack-objects.1 \
 		git-pack-redundant.1 \
 		git-pack-refs.1 \
@@ -107,8 +111,10 @@ MAN1=		git.1 \
 		git-receive-pack.1 \
 		git-reflog.1 \
 		git-relink.1 \
+		git-remote-helpers.1 \
 		git-remote.1 \
 		git-repack.1 \
+		git-replace.1 \
 		git-repo-config.1 \
 		git-request-pull.1 \
 		git-rerere.1 \
@@ -126,6 +132,7 @@ MAN1=		git.1 \
 		git-show-index.1 \
 		git-show-ref.1 \
 		git-show.1 \
+		git-stage.1 \
 		git-stash.1 \
 		git-status.1 \
 		git-stripspace.1 \
@@ -156,19 +163,21 @@ MAN7=		gitcli.7 \
 		gittutorial.7 \
 		gitcore-tutorial.7 \
 		gitdiffcore.7 \
-		gittutorial-2.7
+		gittutorial-2.7 \
+		gitworkflows.7
 
 SUB_FILES=	pkg-message
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-python=${LOCALBASE}/bin/python
 MAKE_ENV+=	LIBMD_SHA1=yes \
-		V=1 \
-		PYTHON_PATH=${LOCALBASE}/bin/python
+		V=1
 MAKE_ARGS+=	prefix="${PREFIX}"
 USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
@@ -236,6 +245,9 @@ MAN1+=		git-citool.1 \
 PLIST_SUB+=	GUI=""
 MAKE_ENV+=	TCL_PATH=${TCLSH} TCLTK_PATH=${WISH}
 .else
+RMMAN1+=	git-citool.1 \
+		git-gui.1 \
+		gitk.1
 PLIST_SUB+=	GUI="@comment "
 MAKE_ENV+=	NO_TCLTK=yes
 .endif
@@ -248,6 +260,7 @@ PLIST_SUB+=	SVN=""
 MAN1+=		git-svn.1
 .else
 PLIST_SUB+=	SVN="@comment "
+RMMAN1+=	git-svn.1
 .endif
 
 .ifdef (WITH_GITWEB)
@@ -273,6 +286,8 @@ PLIST_SUB+=	CVS=""
 RUN_DEPENDS+=	cvsps:${PORTSDIR}/devel/cvsps
 .else
 PLIST_SUB+=	CVS="@comment "
+RMMAN1+=	git-cvsimport.1 git-cvsexportcommit.1 git-cvsserver.1
+RMMAN7+=	gitcvs-migration.7
 .endif
 
 .if defined(MAINTAINER_MODE)
@@ -297,6 +312,12 @@ post-extract:
 .endif
 
 post-patch:
+.for FILE in ${RMMAN1}
+	@${RM} ${WRKDIR}/man1/${FILE}
+.endfor
+.for FILE in ${RMMAN7}
+	@${RM} ${WRKDIR}/man7/${FILE}
+.endfor
 	@${REINPLACE_CMD} -e 's|share/man/man3|man/man3|' ${WRKSRC}/perl/Makefile.PL
 .ifndef (WITH_CVS)
 	@${REINPLACE_CMD} -e '/git-cvsexportcommit.perl/d; \
@@ -306,7 +327,6 @@ post-patch:
 		s/git-cvsserver//' \
 		${WRKSRC}/Makefile
 .endif
-
 .ifndef (WITH_SVN)
 	@${REINPLACE_CMD} -e '/git-svn.perl/d' ${WRKSRC}/Makefile
 .endif
@@ -320,21 +340,13 @@ post-build:
 .endif
 
 post-install:
-.for i in ${MAN1}
-	${INSTALL_MAN} ${WRKDIR}/man1/${i} ${MANPREFIX}/man/man1/
-.endfor
-.for i in ${MAN5}
-	${INSTALL_MAN} ${WRKDIR}/man5/${i} ${MANPREFIX}/man/man5/
-.endfor
-.for i in ${MAN7}
-	${INSTALL_MAN} ${WRKDIR}/man7/${i} ${MANPREFIX}/man/man7/
-.endfor
-
+	(cd ${WRKDIR}/man1/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man1)
+	(cd ${WRKDIR}/man5/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man5)
+	(cd ${WRKDIR}/man7/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man7)
 .if defined(WITH_HTMLDOCS)
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKDIR}/htmldocs/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
-
 	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
 	${MKDIR} ${PREFIX}/share/emacs/site-lisp/git
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp/git
@@ -346,14 +358,17 @@ post-install:
 		${PREFIX}/lib/xemacs/site-lisp/git/git.el
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/git-blame.el \
 		${PREFIX}/lib/xemacs/site-lisp/git/git-blame.el
-
 .ifdef (WITH_P4)
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import \
 		${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/fast-import/git-p4 \
 		${PREFIX}/bin/
 .endif
-
+	@${ECHO_MSG} "===> Updating ${SHELLS}"
+	@${CP} ${SHELLS} ${SHELLS}.bak
+	@(${GREP} -v ${PREFIX}/libexec/git-core/git-shell ${SHELLS}.bak; \
+	  ${ECHO_CMD} ${PREFIX}/libexec/git-core/git-shell) > ${SHELLS}
+	@${RM} ${SHELLS}.bak
 .ifdef (WITH_GITWEB)
 	@${ECHO_MSG} "===> Installing gitweb files"
 	${MKDIR} ${EXAMPLESDIR}/gitweb
@@ -364,15 +379,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/gitweb/gitweb.css ${EXAMPLESDIR}/gitweb/
 	${INSTALL_SCRIPT} ${WRKSRC}/gitweb/gitweb.cgi ${EXAMPLESDIR}/gitweb/
 	${INSTALL_SCRIPT} ${WRKSRC}/gitweb/gitweb.js ${EXAMPLESDIR}/gitweb/
-.endif
-
-	@${ECHO_MSG} "===> Updating ${SHELLS}"
-	@${CP} ${SHELLS} ${SHELLS}.bak
-	@(${GREP} -v ${PREFIX}/libexec/git-core/git-shell ${SHELLS}.bak; \
-	  ${ECHO_CMD} ${PREFIX}/libexec/git-core/git-shell) > ${SHELLS}
-	@${RM} ${SHELLS}.bak
-
-.ifdef (WITH_GITWEB)
 	@${CAT} ${PKGMESSAGE}
 .endif
 

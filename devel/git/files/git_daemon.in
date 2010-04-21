@@ -21,9 +21,9 @@ load_rc_config $name
 
 : ${git_daemon_enable:=NO}
 : ${git_daemon_directory:=%%PREFIX%%/git}
-: ${git_daemon_flags:="--syslog --reuseaddr"}
+: ${git_daemon_flags:="--syslog --reuseaddr --detach"}
 
 command="%%PREFIX%%/libexec/git-core/git-daemon"
-command_args="${git_daemon_directory} &"
+command_args="${git_daemon_directory}"
 
 run_rc_command "$1"
