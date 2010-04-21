@@ -7,7 +7,7 @@
 
 PORTNAME=	pspp
 PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -35,8 +35,8 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900010
-BROKEN=		does not configure
+.if ${OSVERSION} >= 900010 && ${ARCH} == "i386"
+BROKEN=		does not build
 .endif
 
 .if defined(WITHOUT_NLS)
@@ -67,7 +67,6 @@ CONFIGURE_ARGS+=	--without-libpq
 post-patch:
 	@${REINPLACE_CMD} -e '/^install-exec-am:/s|install-exec-local||' \
 		${WRKSRC}/gl/Makefile.in
-
 post-install:
 	@${TOUCH} ${PREFIX}/lib/pspp/.keep_me
 
