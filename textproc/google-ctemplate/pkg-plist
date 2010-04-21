@@ -4,6 +4,7 @@ bin/template-converter
 include/ctemplate/per_expand_data.h
 include/ctemplate/template.h
 include/ctemplate/template_annotator.h
+include/ctemplate/template_cache.h
 include/ctemplate/template_dictionary.h
 include/ctemplate/template_dictionary_interface.h
 include/ctemplate/template_enums.h
@@ -20,4 +21,4 @@ lib/libctemplate_nothreads.a
 lib/libctemplate_nothreads.la
 lib/libctemplate_nothreads.so
 lib/libctemplate_nothreads.so.0
-@dirrmtry include/ctemplate
+@dirrm include/ctemplate
