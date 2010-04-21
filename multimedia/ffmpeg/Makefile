@@ -8,7 +8,7 @@
 PORTNAME=	ffmpeg
 PORTVERSION=	0.5.1
 PORTEPOCH=	1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
 
@@ -46,7 +46,6 @@ OPTIONS=	AMR_NB	"AMR Narrow Band encoder" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		X11GRAB "enable X11 grabbing" off \
 		X264	"H.264 encoder" on \
-		X264_DEV "Require x264 from multimedia/x264-devel" off \
 		XVID	"Xvid encoder via xvidcore" on
 
 COMPAT_HEADERS=libavcodec/avcodec.h \
@@ -296,23 +295,7 @@ CONFIGURE_ARGS+=	--disable-x11grab
 
 # x264
 .ifndef(WITHOUT_X264)
-# Automatically choose the multimedia/x264-devel port if installed
-. if !defined(WITH_X264_DEV)
-.  if exists(${LOCALBASE}/include/x264.h)
-X264_BUILD!=	${GREP} "define X264_BUILD .." ${LOCALBASE}/include/x264.h | ${AWK} '{ print $$3 }'
-.   if ${X264_BUILD} == "85"
-_WANT_X264_DEVEL=	yes
-.   endif
-.  endif
-. else
-_WANT_X264_DEVEL=yes
-. endif
-
-. if defined(_WANT_X264_DEVEL)
-LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264-devel
-. else
-LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
-. endif
+LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264
