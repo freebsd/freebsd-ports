@@ -19,8 +19,6 @@ DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source \
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Compiler for the functional language Haskell
 
-BROKEN=		by the recent gmp update
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 GHC_VERSION=		${PORTVERSION}
@@ -90,21 +88,31 @@ NOPORTDOCS=
 .endif
 
 .if ${ARCH} == "i386"
-.if ${OSVERSION} >= 800000
-DISTFILES+=	ghc-${GHC_VERSION}-i386-jm0-freebsd8-boot${EXTRACT_SUFX}:boot
+
+.if ${OSVERSION} >= 900000
+DISTFILES+=	ghc-${GHC_VERSION}-i386-freebsd9-boot${EXTRACT_SUFX}:boot
+.elif ${OSVERSION} >= 800000
+DISTFILES+=	ghc-${GHC_VERSION}-i386-freebsd8-boot${EXTRACT_SUFX}:boot
 .elif ${OSVERSION} >= 700000
-DISTFILES+=	ghc-${GHC_VERSION}-i386-jm0-freebsd7-boot${EXTRACT_SUFX}:boot
+DISTFILES+=	ghc-${GHC_VERSION}-i386-freebsd7-boot${EXTRACT_SUFX}:boot
 .elif ${OSVERSION} >= 600000
-DISTFILES+=	ghc-${GHC_VERSION}-i386-jm0-freebsd6-boot${EXTRACT_SUFX}:boot
-.endif
-.elif ${ARCH} == "amd64"
-.if ${OSVERSION} >= 800000
-DISTFILES+=	ghc-${GHC_VERSION}-amd64-ash0-freebsd8-boot${EXTRACT_SUFX}:boot
-.elif ${OSVERSION} >= 700000
-DISTFILES+=	ghc-${GHC_VERSION}-amd64-ash0-freebsd7-boot${EXTRACT_SUFX}:boot
+DISTFILES+=	ghc-${GHC_VERSION}-i386-freebsd6-boot${EXTRACT_SUFX}:boot
 .else
-IGNORE=		unsupported at the moment
+IGNORE=		unsupported
 .endif
+
+.elif ${ARCH} == "amd64"
+
+.if ${OSVERSION} >= 900000
+DISTFILES+=	ghc-${GHC_VERSION}-amd64-freebsd9-boot${EXTRACT_SUFX}:boot
+.elif ${OSVERSION} >= 800000
+DISTFILES+=	ghc-${GHC_VERSION}-amd64-freebsd8-boot${EXTRACT_SUFX}:boot
+.elif ${OSVERSION} >= 700000
+DISTFILES+=	ghc-${GHC_VERSION}-amd64-freebsd7-boot${EXTRACT_SUFX}:boot
+.else
+IGNORE=		unsupported
+.endif
+
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
