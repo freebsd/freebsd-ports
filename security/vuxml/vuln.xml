@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="86b8b655-4d1a-11df-83fb-0015587e2cc1">
+    <topic>krb5 -- KDC double free vulnerability</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><ge>1.7</ge></range>
+	<range><lt>1.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MIT Kerberos team reports:</p>
+	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-004.txt">
+	  <p>An authenticated remote attacker can crash the KDC by
+	    inducing the KDC to perform a double free.  Under some
+	    circumstances on some platforms, this could also allow
+	    malicious code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1320</cvename>
+      <url>http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2010-004.txt</url>
+    </references>
+    <dates>
+      <discovery>2010-04-20</discovery>
+      <entry>2010-04-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4746a86-4c89-11df-83fb-0015587e2cc1">
     <topic>e107 -- code execution and XSS vulnerabilities</topic>
     <affects>
