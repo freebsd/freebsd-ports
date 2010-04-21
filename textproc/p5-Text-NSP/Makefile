@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-NSP
-PORTVERSION=	1.11
+PORTVERSION=	1.15
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,9 +17,11 @@ COMMENT=	Perl5 modules for Ngram Statistics Package
 PERL_CONFIGURE=	5.8.0+
 
 MAN1=	combig.pl.1 count.pl.1 \
-	huge-combine.pl.1 huge-count.pl.1 \
+	huge-count.pl.1 \
+	huge-delete.pl.1 huge-split.pl.1 \
+	huge-merge.pl.1 huge-sort.pl.1 \
 	kocos.pl.1 rank.pl.1 \
-	sort-bigrams.pl.1 split-data.pl.1 statistic.pl.1
+	statistic.pl.1
 MAN3=	Text::NSP.3 \
 	Text::NSP::Measures.3 \
 	Text::NSP::Measures::2D.3 \
@@ -49,7 +51,10 @@ MAN3=	Text::NSP.3 \
 	Text::NSP::Measures::3D::MI::ll.3 \
 	Text::NSP::Measures::3D::MI::pmi.3 \
 	Text::NSP::Measures::3D::MI::ps.3 \
-	Text::NSP::Measures::3D::MI::tmi.3
+	Text::NSP::Measures::3D::MI::tmi.3 \
+	Text::NSP::Measures::4D.3 \
+	Text::NSP::Measures::4D::MI.3 \
+	Text::NSP::Measures::4D::MI::ll.3
 
 DOCS=	CHANGES README doc/FAQ.pod doc/NSP-Class-diagram.pdf \
 	doc/NSP-Class-diagram.png doc/README.pod doc/TODO.pod \
