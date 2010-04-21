@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	minbif
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	irc net-im
-MASTER_SITES=	http://symlink.me/attachments/download/39/
+MASTER_SITES=	http://symlink.me/attachments/download/45/
 
 MAINTAINER=	steinex@nognu.de
 COMMENT=	An IRC to instant messaging gateway
@@ -25,13 +25,16 @@ PLIST_FILES=	bin/minbif %%ETCDIR%%/minbif.conf-dist \
 		%%ETCDIR%%/minbif.motd-dist
 PLIST_DIRS=	%%ETCDIR%%
 
+USE_EFL=	imlib2
 USE_CMAKE=	yes
+CMAKE_ARGS=	-DENABLE_IMLIB:BOOL=ON
 USE_RC_SUBR=	minbif
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	*
 
 # right now WITH_PLUGINS installs prpl-coincoin and prpl-gayattitude
 OPTIONS=	CACA "Buddy icon display using libcaca" On \
+		GNUTLS "Compile with GnuTLS support" Off \
 		VIDEO "Webcam display using libcaca (depends on CACA)" Off \
 		PLUGINS "Compile additional libpurple-plugins" Off
 
@@ -42,22 +45,6 @@ SUB_LIST+=	USERS=${USERS}
 .if ${OSVERSION} < 700000
 BROKEN=		does not link on 6.X
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|-Wall||g' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e \
-		's|message.c_str(), NULL);|message.c_str(), (char*)NULL);|g' \
-		${WRKSRC}/src/im/account.cpp
-	@${REINPLACE_CMD} -e \
-		's|#include <libpurple/purple.h>|#include <purple.h>|g' \
-		${WRKSRC}/src/core/callback.h ${WRKSRC}/src/core/minbif.cpp \
-		${WRKSRC}/src/core/util.h ${WRKSRC}/src/im/account.h \
-		${WRKSRC}/src/im/buddy.h ${WRKSRC}/src/im/conversation.h \
-		${WRKSRC}/src/im/ft.h ${WRKSRC}/src/im/media.h \
-		${WRKSRC}/src/im/protocol.h ${WRKSRC}/src/im/purple.cpp \
-		${WRKSRC}/src/im/request.h ${WRKSRC}/src/im/roomlist.h \
-		${WRKSRC}/src/irc/nick.h
 
 .include <bsd.port.options.mk>
 
@@ -87,6 +74,11 @@ PLIST_FILES+=	lib/purple-2/libcoincoin.so \
 		lib/purple-2/libgayattitude.so
 .else
 CMAKE_ARGS+=	-DENABLE_PLUGIN:BOOL=OFF
+.endif
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+CMAKE_ARGS+=	-DENABLE_GNUTLS:BOOL=ON
 .endif
 
 do-install:
