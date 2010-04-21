@@ -1695,6 +1695,7 @@
     SUBDIR += p5-JQuery
     SUBDIR += p5-JSON-RPC
     SUBDIR += p5-JSON-RPC-Common
+    SUBDIR += p5-JSON-RPC-Dispatcher
     SUBDIR += p5-Java
     SUBDIR += p5-Lexical-Alias
     SUBDIR += p5-Lexical-Persistence
