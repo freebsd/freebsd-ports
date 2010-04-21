@@ -6,6 +6,7 @@
 
 PORTNAME=	xmms-jack
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -33,6 +34,8 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|-ldl||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|jack_free|jack_free_local|g' \
+		${WRKSRC}/jack.c
 
 do-install:
 	cd ${WRKSRC}/.libs \
