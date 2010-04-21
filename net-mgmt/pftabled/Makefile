@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pftabled
-PORTVERSION=	1.07
-PORTREVISION=	1
+PORTVERSION=	1.08
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.wolfermann.org/
 
@@ -15,7 +14,7 @@ MAINTAINER=	chifeng@gmail.com
 COMMENT=	The pftabled is a tool to manage your pf tables remotely
 
 USE_RC_SUBR=	pftabled
-MAN1=	pftabled.0
+MAN1=		pftabled.0
 
 PLIST_FILES=	bin/pftabled-client sbin/pftabled
 
@@ -28,10 +27,11 @@ OPTIONS=	PERLC "A Sample Perl Client" On
 
 .if !defined(WITHOUT_PERLC)
 RUN_DEPEND=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
-PLIST_FILES+=	bin/pftabled-client.pl
+PLIST_FILES+=	bin/pftabled-client.pl bin/pftabled-client.py
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pftabled-client.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/pftabled-client.py ${PREFIX}/bin
 
 .endif
 
