@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Map
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,8 @@ COMMENT=	Memory mapping made simple and safe
 
 BUILD_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Warn>0:${PORTSDIR}/devel/p5-Test-Warn \
-		p5-Readonly>0:${PORTSDIR}/devel/p5-Readonly
+		p5-Readonly>0:${PORTSDIR}/devel/p5-Readonly \
+		p5-ExtUtils-CBuilder>0:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 
 PERL_CONFIGURE=	YES
 
