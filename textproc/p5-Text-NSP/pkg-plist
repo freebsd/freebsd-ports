@@ -1,14 +1,15 @@
 bin/combig-script.sh
 bin/combig.pl
 bin/count.pl
-bin/huge-combine.pl
 bin/huge-count.pl
+bin/huge-delete.pl
+bin/huge-merge.pl
+bin/huge-sort.pl
+bin/huge-split.pl
 bin/kocos-script.sh
 bin/kocos.pl
 bin/rank-script.sh
 bin/rank.pl
-bin/sort-bigrams.pl
-bin/split-data.pl
 bin/statistic.pl
 %%SITE_PERL%%/Text/NSP.pm
 %%SITE_PERL%%/Text/NSP/Measures.pm
@@ -40,6 +41,9 @@ bin/statistic.pl
 %%SITE_PERL%%/Text/NSP/Measures/3D/MI/pmi.pm
 %%SITE_PERL%%/Text/NSP/Measures/3D/MI/ps.pm
 %%SITE_PERL%%/Text/NSP/Measures/3D/MI/tmi.pm
+%%SITE_PERL%%/Text/NSP/Measures/4D.pm
+%%SITE_PERL%%/Text/NSP/Measures/4D/MI.pm
+%%SITE_PERL%%/Text/NSP/Measures/4D/MI/ll.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.pod
@@ -54,6 +58,8 @@ bin/statistic.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/NSP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrm %%SITE_PERL%%/Text/NSP/Measures/4D/MI
+@dirrm %%SITE_PERL%%/Text/NSP/Measures/4D
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/3D/MI
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/3D
 @dirrm %%SITE_PERL%%/Text/NSP/Measures/2D/MI
