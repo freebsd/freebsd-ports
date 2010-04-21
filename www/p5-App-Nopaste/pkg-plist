@@ -2,6 +2,7 @@
 %%SITE_PERL%%/App/Nopaste.pm
 %%SITE_PERL%%/App/Nopaste/Command.pm
 %%SITE_PERL%%/App/Nopaste/Service.pm
+%%SITE_PERL%%/App/Nopaste/Service/Codepeek.pm
 %%SITE_PERL%%/App/Nopaste/Service/Debian.pm
 %%SITE_PERL%%/App/Nopaste/Service/Gist.pm
 %%SITE_PERL%%/App/Nopaste/Service/Husk.pm
