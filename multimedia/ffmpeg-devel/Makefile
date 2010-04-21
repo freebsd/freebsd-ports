@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2010-04-18
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://people.freebsd.org/~mm/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -267,7 +268,7 @@ CONFIGURE_ARGS+=	--disable-libvorbis
 
 # x264
 .ifdef(WITH_X264)
-LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264-devel
+LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264

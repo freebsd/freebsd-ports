@@ -7,7 +7,7 @@
 
 PORTNAME=	opal3
 PORTVERSION=	3.6.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	SF/opalvoip/v3.6%20Lalande/Stable%205
 DISTNAME=	opal-${PORTVERSION}
@@ -121,7 +121,7 @@ PLIST_SUB+=	THEORA="@comment "
 .endif
 
 .if defined(WITH_X264)
-LIB_DEPENDS+=	x264.6[0-9]:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-h264
 PLIST_SUB+=	X264=""
 WITH_VIDEO=	yes
