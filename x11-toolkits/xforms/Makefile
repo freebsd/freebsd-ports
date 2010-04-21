@@ -16,13 +16,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}/:savannah \
 			mikeh/:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:savannah,local
 
-REINPLACE_ARGS=	-i ""
-
 MAINTAINER?=	ports@FreeBSD.ORG
 COMMENT?=	A graphical user interface toolkit for X Window System
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
+
+USE_XORG=	xpm
+USE_GL=		gl
+USE_IMAKE=	yes
+USE_LDCONFIG=	yes
+
+MAN1=		fdesign.1 fd2ps.1
 
 .if defined(WITH_I18N)
 PKGNAMESUFFIX=	-i18n
@@ -32,12 +37,7 @@ PATCHFILES=	xforms-1.0-i18n_7.patch
 PATCH_DIST_STRIP=	-p1
 .endif
 
-USE_XORG=	xpm
-USE_GL=		gl
-USE_IMAKE=	yes
-USE_LDCONFIG=	yes
-
-MAN1=		fdesign.1 fd2ps.1
+REINPLACE_ARGS=	-i ""
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-O4||' ${WRKSRC}/Imakefile
@@ -52,6 +52,10 @@ post-patch:
 
 .if ${OSVERSION} >= 900000
 BROKEN=	does not build
+.endif
+
+.if ${ARCH} == "ia64"
+BROKEN=		Does not compile on ia64
 .endif
 
 .include <bsd.port.post.mk>
