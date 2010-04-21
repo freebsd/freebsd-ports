@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	devede
-DISTVERSION=	3.15.2
-PORTREVISION=	2
+DISTVERSION=	3.16.8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
-		http://www.bsd-geek.de/FreeBSD/distfiles/
+		http://www.bsd-geek.de/FreeBSD/distfiles/ \
+		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Create video DVDs, VCDs, sVCDs or CVDs from any number of video files
@@ -21,6 +21,7 @@ RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
 
 USE_BZIP2=	yes
 USE_GNOME=	pygtk2
+USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_CDRTOOLS=	yes
 NO_BUILD=	yes
@@ -48,7 +49,7 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-PORTDOCS=	docs/*
+PORTDOCS=	*
 
 DEVEDE_INTERFACE=	aboutdialog1.ui add_subtitle.ui add_subtitle2.ui \
 			codepages.lst languages.lst waborted_dialog.ui \

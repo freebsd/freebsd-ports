@@ -70,43 +70,6 @@ share/applications/devede.desktop
 %%DATADIR%%/backgrounds/biglens.png
 %%DATADIR%%/backgrounds/default_bg.png
 %%DATADIR%%/backgrounds/dvdfilm.png
-%%PORTDOCS%%%%DOCSDIR%%/html/basic.html
-%%PORTDOCS%%%%DOCSDIR%%/html/choose.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/contact.html
-%%PORTDOCS%%%%DOCSDIR%%/html/create.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/disk.html
-%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/html/file.html
-%%PORTDOCS%%%%DOCSDIR%%/html/gpl.html
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/install.html
-%%PORTDOCS%%%%DOCSDIR%%/html/main.html
-%%PORTDOCS%%%%DOCSDIR%%/html/main.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/main2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/main3.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/menu.html
-%%PORTDOCS%%%%DOCSDIR%%/html/menu.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/menu2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/menu_bad.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/menu_example.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/menu_opts.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/menu_opts2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/menu_trans.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/movie1.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/movie2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/movie3.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/movie3b.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/movie4.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/movie5.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/movie6.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/movie7.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/psf.html
-%%PORTDOCS%%%%DOCSDIR%%/html/select.html
-%%PORTDOCS%%%%DOCSDIR%%/html/subs.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/title.html
-%%PORTDOCS%%%%DOCSDIR%%/html/title_prop.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/ubuntu_9_10.png
-%%PORTDOCS%%%%DOCSDIR%%/html/versions.html
 %%NLS%%share/locale/ca/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/da/LC_MESSAGES/devede.mo
@@ -126,7 +89,6 @@ share/applications/devede.desktop
 %%NLS%%share/locale/sv/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/devede.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/devede.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 @dirrm %%DATADIR%%/backgrounds
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
