@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thpinfo.com/2010/mygpoclient/:mygpoclient
@@ -30,8 +30,7 @@ OPTIONS=	COVERART "Cover Art syncing support" off \
 		IPOD "iPod synchronization support" off \
 		MP3TAG "MP3 ID3 tag update support" off \
 		OGG2MP3 "Ogg Vorbis conversion to MP3 support" off \
-		SHOWNOTES "HTML episode shownotes support" off \
-		VIDEO "Video media support using mplayer" off
+		SHOWNOTES "HTML episode shownotes support" off
 
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
@@ -71,10 +70,6 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame \
 
 .if defined(WITH_SHOWNOTES)
 USE_GNOME+=	pygnomeextras
-.endif
-
-.if defined(WITH_VIDEO)
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 post-patch:
