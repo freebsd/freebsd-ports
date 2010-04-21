@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/alleg/${PORTNAME}-unstable/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	EitanAdlerList@gmail.com
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A cross-platform library for games and multimedia programming
 
 USE_AUTOTOOLS=	autoconf:262
