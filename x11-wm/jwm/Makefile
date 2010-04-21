@@ -13,7 +13,7 @@ MASTER_SITES=	SF \
 		http://joewing.net/programs/
 
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	admin@mjbrune.org
 COMMENT=	Joe's Window Manager
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
