@@ -13507,6 +13507,7 @@ p5-Spreadsheet-Read             ports/textproc/p5-Spreadsheet-Read
 p5-Spreadsheet-ReadSXC          ports/textproc/p5-Spreadsheet-ReadSXC
 p5-Spreadsheet-WriteExcel       ports/textproc/p5-Spreadsheet-WriteExcel
 p5-Spreadsheet-WriteExcel-FromXML  ports/textproc/p5-Spreadsheet-WriteExcel-FromXML
+p5-Spreadsheet-WriteExcel-Styler  ports/textproc/p5-Spreadsheet-WriteExcel-Styler
 p5-Spreadsheet-WriteExcelXML    ports/textproc/p5-Spreadsheet-WriteExcelXML
 p5-SpringGraph                  ports/graphics/p5-SpringGraph
 p5-Squatting                    ports/www/p5-Squatting
@@ -17347,6 +17348,7 @@ p5-spreadsheet-read             ports/textproc/p5-Spreadsheet-Read
 p5-spreadsheet-readsxc          ports/textproc/p5-Spreadsheet-ReadSXC
 p5-spreadsheet-writeexcel       ports/textproc/p5-Spreadsheet-WriteExcel
 p5-spreadsheet-writeexcel-fromxml  ports/textproc/p5-Spreadsheet-WriteExcel-FromXML
+p5-spreadsheet-writeexcel-styler  ports/textproc/p5-Spreadsheet-WriteExcel-Styler
 p5-spreadsheet-writeexcelxml    ports/textproc/p5-Spreadsheet-WriteExcelXML
 p5-springgraph                  ports/graphics/p5-SpringGraph
 p5-sql-abstract                 ports/databases/p5-SQL-Abstract
@@ -21985,6 +21987,7 @@ rubygem-memcache-client         ports/databases/rubygem-memcache-client
 rubygem-metaid                  ports/devel/rubygem-metaid
 rubygem-mime-types              ports/misc/rubygem-mime-types
 rubygem-mocha                   ports/devel/rubygem-mocha
+rubygem-moneta                  ports/devel/rubygem-moneta
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
 rubygem-msgpack                 ports/devel/rubygem-msgpack
