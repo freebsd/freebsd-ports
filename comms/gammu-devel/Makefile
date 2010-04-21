@@ -7,6 +7,7 @@
 
 PORTNAME=	gammu
 PORTVERSION=	1.27.93
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
@@ -45,9 +46,12 @@ MAN7=		gammu-smsd-dbi.7 gammu-smsd-files.7 gammu-smsd-mysql.7 \
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
+	@${REINPLACE_CMD} -e 's,bash,sh,g ; s,dialog,cdialog,g' ${WRKSRC}/utils/gammu-config
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
+.endif
+.if ${OSVERSION} > 900000
+	@${REINPLACE_CMD} -e '16d' ${WRKSRC}/libgammu/misc/misc.c
 .endif
 
 .include <bsd.port.post.mk>
