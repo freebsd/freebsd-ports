@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Net-Cassandra-Easy
-PORTVERSION=	0.08b
+PORTVERSION=	0.12
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perlish interface to the Cassandra database
 
 RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
@@ -23,7 +23,6 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 
 PERL_CONFIGURE=	yes
 USE_PERL5=	5.10.0+
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.08
 
 MAN3=		Net::Cassandra::Easy.3
 
