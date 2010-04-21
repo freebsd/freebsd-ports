@@ -7,16 +7,14 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	17
 
 COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
 
-OPTIONS=	DEBUG "Include debug symbols in mplayer's binary files" off
-OPTIONS+=	RTCPU "Let mplayer dynamically check for CPU features" on
+OPTIONS=	DEBUG "Include debug symbols in mplayer's binaries" off
+OPTIONS+=	RTCPU "Allow runtime CPU detection" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
-OPTIONS+=	SIMD "Allow mplayer to use vector engines (MMX...)" on
 OPTIONS+=	IPV6 "Include inet6 network support" on
 OPTIONS+=	X11 "Enable X11 support for mplayer's video output" on
 OPTIONS+=	X11XV "X11 video drivers: XV" on
@@ -25,38 +23,34 @@ OPTIONS+=	X11GL "X11 video drivers: OpenGL" on
 OPTIONS+=	X11XIN "X11 video drivers: Xinerama" on
 OPTIONS+=	X11VM "X11 VidMode support" on
 OPTIONS+=	X11XVMC "Enable XvMC acceleration" off
+OPTIONS+=	VDPAU "Enable Nvidia VDPAU acceleration" off
 OPTIONS+=	GUI "Enable GTK2 graphical user interface with X11" on
 OPTIONS+=	SDL "Enable SDL video output" off
-OPTIONS+=	VIDIX "Enable VIDIX video output on supported archs" on
 OPTIONS+=	SKINS "Force dependency on mplayer-skins" on
-OPTIONS+=	FREETYPE "Use freetype for OSD fonts (TrueType!)" on
 OPTIONS+=	RTC "Add support for kernel real time clock timing" off
 OPTIONS+=	ARTS "Enable KDE sound system support" off
 OPTIONS+=	ESOUND "Enable GNOME esound support" off
 OPTIONS+=	JACK "Enable JackIt audio server support" off
-#OPTIONS+=	POLYP "Enable polyp sound server support" off
 OPTIONS+=	NAS "Enable NAS sound server support" off
 OPTIONS+=	OPENAL "Enable OpenAL sound support" off
+OPTIONS+=	PULSE "Enable PulseAudio" off
 OPTIONS+=	LIBUNGIF "Enable gif support" on
+OPTIONS+=	OPENJPEG "Enable JPEG2000 support" off
 OPTIONS+=	AALIB "Enable aalib support" off
 OPTIONS+=	LIBCACA "Enable libcaca support" off
 OPTIONS+=	SVGALIB "Enable svgalib support" off
 OPTIONS+=	LIBDV "Enable libdv support" off
 OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
+OPTIONS+=	AMR "Enable opencore AMR audio codec support" off
 OPTIONS+=	DTS "Enable DTS audio codec support" on
 OPTIONS+=	LIBMPCDEC "Enable libmpcdec support" off
 OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
 OPTIONS+=	SPEEX "Enable speex audio codec support" on
-OPTIONS+=	TREMOR "Use built-in tremor instead of libvorbis" off
-OPTIONS+=	XMMS "Enable XMMS plugin support" off
 OPTIONS+=	THEORA "Enable ogg theora video support" off
+OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
 .if !defined(PACKAGE_BUILDING)
 OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
-OPTIONS+=	AMR "Enable AMR audio codec support" off
 .endif
-OPTIONS+=	X264 "Enable x264 (H.264) video codec support" off
-OPTIONS+=	XANIM "Enable xanim DLL support" off
-OPTIONS+=	XVID "Enable XVID video codec support" on
 OPTIONS+=	REALPLAYER "Enable real player plugin" off
 OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
 OPTIONS+=	SMB "Enable Samba input support" off
@@ -66,6 +60,7 @@ OPTIONS+=	LIBCDIO "Enable libcdio support" off
 OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
 OPTIONS+=	LIBLZO "Enable external liblzo library" off
 OPTIONS+=	JOYSTICK "Enable joystick support" off
+OPTIONS+=	V4L "Enable Video4Linux TV support" off
 
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
@@ -80,23 +75,16 @@ CONFIGURE_ARGS+=	--disable-ssse3 \
 			--disable-directfb \
 			--disable-faac \
 			--disable-twolame \
+			--disable-x264 \
+			--disable-xvid \
 			--disable-mencoder
 
 .include "${.CURDIR}/Makefile.options"
 
-#Building of vidix dependent shared libs is only possible
-#on i386 and amd64 at the moment.
-.if !defined(WITHOUT_VIDIX)
-.if !(${ARCH} == "i386" || ${ARCH} == "amd64")
-CONFIGURE_ARGS+=--disable-vidix-internal
-.endif
-.else
-CONFIGURE_ARGS+=--disable-vidix-internal
-.endif
-
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
+MLINKS+=	mplayer.1 gmplayer.1
 PLIST_SUB+=	GMPLAYER=""
-DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "${DATADIR}/skins/Blue/icons/icon32x32.png" "gmplayer" "" false
+DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "mplayer" "gmplayer" "" false
 .if !defined(WITHOUT_SKINS)
 RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/skins:${PORTSDIR}/multimedia/mplayer-skins
 .endif
@@ -111,17 +99,6 @@ WITH_LANG=	""
 .else
 PLIST_SUB+=	GMPLAYER="@comment "
 .endif #WITHOUT_GUI
-
-.if !defined(WITHOUT_FREETYPE)
-CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
-			--enable-freetype
-LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
-.else
-.if !defined(WITHOUT_X11)
-RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
-.endif
-CONFIGURE_ARGS+=	--disable-freetype
-.endif
 
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11
@@ -160,6 +137,12 @@ CONFIGURE_ARGS+=--disable-x11 \
 		--disable-fontconfig
 .endif
 
+.if defined(WITH_VDPAU)
+LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/x11/nvidia-driver
+.else
+CONFIGURE_ARGS+=	--disable-vdpau
+.endif
+
 .if defined(WITH_RTC)
 BUILD_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
 RUN_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
@@ -171,7 +154,6 @@ CONFIGURE_ARGS+=	--disable-rtc
 
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-CONFIGURE_ARGS+=	--enable-arts
 .else
 CONFIGURE_ARGS+=	--disable-arts
 .endif
@@ -184,7 +166,6 @@ CONFIGURE_ARGS+=	--disable-caca
 
 .if defined(WITH_LIRC)
 LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
-CONFIGURE_ARGS+=	--enable-lirc
 .else
 CONFIGURE_ARGS+=	--disable-lirc
 .endif
@@ -243,14 +224,16 @@ pre-everything::
 .endif
 
 post-patch:
+.if ${OSVERSION} >= 900010
 	@${REINPLACE_CMD} -e \
-		's|libxmms.so.1|libxmms.so|' \
+		'/CFLAGS.*-D_LARGEFILE64_SOURCE/ s/-D_LARGEFILE64_SOURCE/-D_FILE_OFFSET_BITS=64/' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} -E ${WRKSRC} -type f \
 		-iregex ".*(configure|.sh|Makefile)" -print0 | \
 		${XARGS} -x -0 -n 10 \
@@ -268,6 +251,14 @@ post-patch:
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
 .endif
+#.if defined(WITH_VDPAU)
+#	@if [ ! -e ${LOCALBASE}/share/doc/NVIDIA_GLX-1.0/vdpau.h ]; then \
+#		${ECHO_CMD} "For VDPAU support you need a recent version of x11/nvidia-driver installed"; \
+#		${FALSE}; \
+#	fi
+#	@${MKDIR} ${WRKSRC}/vdpau
+#	@${CP} ${LOCALBASE}/share/doc/NVIDIA_GLX-1.0/vdpau*.h ${WRKSRC}/vdpau
+#.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \
@@ -281,17 +272,10 @@ post-install:
 .for conf in ${CONFFILES}
 	${INSTALL_DATA} ${WRKSRC}/etc/${conf} ${DATADIR}/examples/etc
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${CHMOD} 755 ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/DOCS/HTML/en/* ${DOCSDIR}
-.endif
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
+	${INSTALL_DATA} ${WRKSRC}/etc/mplayer.xpm ${LOCALBASE}/share/pixmaps
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-install-user:
-	@${PERL} ${FILESDIR}/install-user
 
 .include <bsd.port.post.mk>
