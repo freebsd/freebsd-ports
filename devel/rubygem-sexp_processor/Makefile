@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sexp_processor
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	parsetree
