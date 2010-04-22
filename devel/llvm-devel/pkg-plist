@@ -27,11 +27,13 @@ include/clang/AST/ASTConsumer.h
 include/clang/AST/ASTContext.h
 include/clang/AST/ASTDiagnostic.h
 include/clang/AST/ASTImporter.h
+include/clang/AST/ASTVector.h
 include/clang/AST/Attr.h
 include/clang/AST/CXXInheritance.h
 include/clang/AST/CanonicalType.h
 include/clang/AST/CharUnits.h
 include/clang/AST/Decl.h
+include/clang/AST/DeclAccessPair.h
 include/clang/AST/DeclBase.h
 include/clang/AST/DeclCXX.h
 include/clang/AST/DeclContextInternals.h
@@ -83,7 +85,6 @@ include/clang/Analysis/FlowSensitive/DataflowValues.h
 include/clang/Analysis/ProgramPoint.h
 include/clang/Analysis/Support/BlkExprDeclBitVector.h
 include/clang/Analysis/Support/BumpVector.h
-include/clang/Analysis/Support/Optional.h
 include/clang/Analysis/Support/SaveAndRestore.h
 include/clang/Analysis/Visitors/CFGRecStmtDeclVisitor.h
 include/clang/Analysis/Visitors/CFGRecStmtVisitor.h
@@ -311,6 +312,7 @@ include/llvm/ADT/ImmutableMap.h
 include/llvm/ADT/ImmutableSet.h
 include/llvm/ADT/IndexedMap.h
 include/llvm/ADT/IntrusiveRefCntPtr.h
+include/llvm/ADT/Optional.h
 include/llvm/ADT/OwningPtr.h
 include/llvm/ADT/PointerIntPair.h
 include/llvm/ADT/PointerUnion.h
@@ -364,6 +366,7 @@ include/llvm/Analysis/IntervalPartition.h
 include/llvm/Analysis/LazyValueInfo.h
 include/llvm/Analysis/LibCallAliasAnalysis.h
 include/llvm/Analysis/LibCallSemantics.h
+include/llvm/Analysis/Lint.h
 include/llvm/Analysis/LiveValues.h
 include/llvm/Analysis/LoopDependenceAnalysis.h
 include/llvm/Analysis/LoopInfo.h
@@ -380,6 +383,7 @@ include/llvm/Analysis/ProfileInfoTypes.h
 include/llvm/Analysis/ScalarEvolution.h
 include/llvm/Analysis/ScalarEvolutionExpander.h
 include/llvm/Analysis/ScalarEvolutionExpressions.h
+include/llvm/Analysis/ScalarEvolutionNormalization.h
 include/llvm/Analysis/SparsePropagation.h
 include/llvm/Analysis/Trace.h
 include/llvm/Analysis/ValueTracking.h
@@ -401,6 +405,7 @@ include/llvm/Bitcode/ReaderWriter.h
 include/llvm/CMakeLists.txt
 include/llvm/CallGraphSCCPass.h
 include/llvm/CallingConv.h
+include/llvm/CodeGen/Analysis.h
 include/llvm/CodeGen/AsmPrinter.h
 include/llvm/CodeGen/BinaryObject.h
 include/llvm/CodeGen/CalcSpillWeights.h
@@ -411,6 +416,7 @@ include/llvm/CodeGen/GCMetadata.h
 include/llvm/CodeGen/GCMetadataPrinter.h
 include/llvm/CodeGen/GCStrategy.h
 include/llvm/CodeGen/GCs.h
+include/llvm/CodeGen/ISDOpcodes.h
 include/llvm/CodeGen/IntrinsicLowering.h
 include/llvm/CodeGen/JITCodeEmitter.h
 include/llvm/CodeGen/LatencyPriorityQueue.h
@@ -510,6 +516,7 @@ include/llvm/LLVMContext.h
 include/llvm/LinkAllPasses.h
 include/llvm/LinkAllVMCore.h
 include/llvm/Linker.h
+include/llvm/MC/EDInstInfo.h
 include/llvm/MC/MCAsmInfo.h
 include/llvm/MC/MCAsmInfoCOFF.h
 include/llvm/MC/MCAsmInfoDarwin.h
@@ -657,6 +664,7 @@ include/llvm/Target/TargetRegistry.h
 include/llvm/Target/TargetSchedule.td
 include/llvm/Target/TargetSelect.h
 include/llvm/Target/TargetSelectionDAG.td
+include/llvm/Target/TargetSelectionDAGInfo.h
 include/llvm/Target/TargetSubtarget.h
 include/llvm/Transforms/IPO.h
 include/llvm/Transforms/IPO/InlinerPass.h
@@ -675,7 +683,6 @@ include/llvm/Transforms/Utils/SSAUpdater.h
 include/llvm/Transforms/Utils/SSI.h
 include/llvm/Transforms/Utils/UnifyFunctionExitNodes.h
 include/llvm/Transforms/Utils/UnrollLoop.h
-include/llvm/Transforms/Utils/ValueMapper.h
 include/llvm/Type.h
 include/llvm/TypeSymbolTable.h
 include/llvm/Use.h
@@ -699,6 +706,7 @@ lib/libEnhancedDisassembly.so
 lib/libLLVMARMAsmParser.a
 lib/libLLVMARMAsmPrinter.a
 lib/libLLVMARMCodeGen.a
+lib/libLLVMARMDisassembler.a
 lib/libLLVMARMInfo.a
 lib/libLLVMAlphaAsmPrinter.a
 lib/libLLVMAlphaCodeGen.a
