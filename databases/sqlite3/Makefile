@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.6.23.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
@@ -21,9 +22,12 @@ USE_GNOME=	pkgconfig
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
 USE_GNOME=	gnomehack
+USE_TCL_BUILD=	84+
 CONFIGURE_ENV+=	TCLSH_CMD="${TCLSH}" \
 		TCLLIBDIR="${PREFIX}/lib/${PORTNAME}" \
 		ac_cv_search_pthread_create=""
+
+MAN1=		sqlite3.1
 
 OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		FTS3		"Enable FTS3 (Full Text Search) module"	off \
@@ -87,11 +91,14 @@ CONFIGURE_ARGS+=	--enable-load-extension
 CONFIGURE_ARGS+=	--disable-load-extension
 .endif
 
-.if defined(WITH_TCLWRAPPER)
 post-install:
+.if defined(WITH_TCLWRAPPER)
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/tclsqlite3 ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
+.endif
+.if !defined(NO_INSTALL_MANPAGES)
+	@${INSTALL_MAN} ${WRKSRC}/sqlite3.1 ${MANPREFIX}/man/man1
 .endif
 
 .include <bsd.port.post.mk>
