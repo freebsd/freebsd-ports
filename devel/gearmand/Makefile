@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gearmand
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/trunk/${PORTVERSION}/+download/
 
