@@ -47,6 +47,7 @@
     SUBDIR += avahi-qt4
     SUBDIR += avahi-sharp
     SUBDIR += b2bua
+    SUBDIR += babeld
     SUBDIR += balance
     SUBDIR += bbsnet
     SUBDIR += bcusdk-eibd
