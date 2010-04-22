@@ -74,6 +74,10 @@ BROKEN=		Does not compile on sparc64
 CONFIGURE_ARGS+=	--enable-pic --with-pic
 .endif
 
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--with-optimize-option=-O2
+.endif
+
 .ifdef(WITH_NO_ASSERTS)
 CONFIGURE_ARGS+=	--disable-assertions
 .else
