@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grails
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/grails/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -31,7 +31,7 @@ PORTDOCS=	api guide index.html css img ref
 PLIST_FILES=	${SCRIPTFILES:S,^,bin/,} \
 		${SCRIPTFILES:S,^,${DATADIR:S,${PREFIX}/,,}/bin/,}
 PLIST_DIRS=	${DATADIR:S,${PREFIX}/,,}/bin
-SUB_FILES=	set-grails_home.sed pkg-message
+SUB_FILES=	edit-startGrails.sed pkg-message
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing data files in ${DATADIR}..."
@@ -41,7 +41,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing and symlinking executables..."
 	@${MKDIR} ${DATADIR}/bin
-	@${REINPLACE_CMD} -f ${WRKDIR}/set-grails_home.sed ${WRKSRC}/bin/startGrails
+	@${REINPLACE_CMD} -f ${WRKDIR}/edit-startGrails.sed ${WRKSRC}/bin/startGrails
 .for file in ${SCRIPTFILES}
 	@${ECHO_MSG} -n " ${file}"
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${file} ${DATADIR}/bin/${file}
