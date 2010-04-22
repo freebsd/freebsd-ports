@@ -1,0 +1,5 @@
+-------------------------------------------------------------------------------
+It is no longer required to manually create devd.conf entries. Please remove
+your automounter related devd.conf entries and restart /etc/rc.d/devd after
+an update.
+-------------------------------------------------------------------------------

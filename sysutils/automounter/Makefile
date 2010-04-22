@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	automounter
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/bsdadminscripts/${PORTNAME}
 
@@ -17,17 +17,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 NO_BUILD=	yes
 MANCOMPRESSED=	yes
 
-.if defined(NOPORTDOCS)
-NOPORTDOCS=	-nodoc
-.else
-MAN5=		automounter.conf.5
-MAN8=		automounter.8
-.endif
+MAN5=		${PORTNAME}.conf.5
+MAN8=		${PORTNAME}.8
 
 plist: patch
 		@cd ${WRKSRC}; ./plist.sh -nodoc > ${PLIST}
+		@${ECHO} "@dirrmtry etc/devd" >> ${PLIST}
 
 do-install:
-		@cd ${WRKSRC}; ./install.sh -prefix=${PREFIX} ${NOPORTDOCS}
+		@cd ${WRKSRC}; ./install.sh -prefix=${PREFIX}
+
+post-install:
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
