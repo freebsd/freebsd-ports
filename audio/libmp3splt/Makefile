@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmp3splt
-PORTVERSION=	0.5.8a
+PORTVERSION=	0.5.9
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -16,6 +16,7 @@ COMMENT=	Library for mp3splt and mp3splt-gtk
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	MP3	"mp3 support"	on \
 		ID3	"id3tag support for the mp3"	on \
