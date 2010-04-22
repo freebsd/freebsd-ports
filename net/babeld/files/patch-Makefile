@@ -1,0 +1,42 @@
+--- Makefile.orig	2010-02-09 01:42:25.000000000 +0800
++++ Makefile	2010-04-21 17:35:52.000000000 +0800
+@@ -1,12 +1,8 @@
+-PREFIX = /usr/local
+-
+-CDEBUGFLAGS = -Os -g -Wall
++CDEBUGFLAGS = -O2 -Wall
+ 
+ DEFINES = $(PLATFORM_DEFINES)
+ 
+-CFLAGS = $(CDEBUGFLAGS) $(DEFINES) $(EXTRA_DEFINES)
+-
+-LDLIBS = -lrt
++CFLAGS = $(CDEBUGFLAGS) $(DEFINES) $(EXTRA_DEFINES) -D__APPLE__
+ 
+ SRCS = babeld.c net.c kernel.c util.c network.c source.c neighbour.c \
+        route.c xroute.c message.c resend.c config.c local.c
+@@ -15,7 +11,7 @@
+        route.o xroute.o message.o resend.o config.o local.o
+ 
+ babeld: $(OBJS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o babeld $(OBJS) $(LDLIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o babeld $(OBJS)
+ 
+ .SUFFIXES: .man .html
+ 
+@@ -33,13 +29,10 @@
+ all: babeld babeld.man
+ 
+ install.minimal: babeld
+-	-rm -f $(TARGET)$(PREFIX)/bin/babeld
+-	mkdir -p $(TARGET)$(PREFIX)/bin
+-	cp -f babeld $(TARGET)$(PREFIX)/bin
++	cp -f babeld $(PREFIX)/bin
+ 
+ install: install.minimal all
+-	mkdir -p $(TARGET)$(PREFIX)/man/man8
+-	cp -f babeld.man $(TARGET)$(PREFIX)/man/man8/babeld.8
++	cp -f babeld.man $(PREFIX)/man/man8/babeld.8
+ 
+ uninstall:
+ 	-rm -f $(TARGET)$(PREFIX)/bin/babeld
