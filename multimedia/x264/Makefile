@@ -18,7 +18,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Library and tool for encoding H.264/AVC video streams
 
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
-		as:${PORTSDIR}/devel/binutils
+		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
