@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3splt
-PORTVERSION=	2.2.7a
+PORTVERSION=	2.2.8
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -26,7 +26,8 @@ OPTIONS=	NLS "Native language support" on
 MAN1=		oggsplt.1 mp3splt.1
 PLIST_FILES=	bin/mp3splt bin/oggsplt
 
-post-install:
+.include <bsd.port.pre.mk>
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 .else
@@ -37,4 +38,4 @@ PLIST_FILES+=	share/locale/${language}/LC_MESSAGES/mp3splt.mo
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
