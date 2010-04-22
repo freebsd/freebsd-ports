@@ -80,6 +80,10 @@ OPTIONS=	LDAP		"With LDAP support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		Does not install on ia64: missing file nss_winbind.so
+.endif
+
 .if defined(SAMBA_SUBPORT)
 # Switch off all extra functionality
 CONFIGURE_ARGS+=	--disable-cups --disable-fam --without-winbind \
