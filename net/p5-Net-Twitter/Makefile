@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Twitter
-PORTVERSION=	3.10003
+PORTVERSION=	3.12000
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,15 +29,18 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Twitter.3 Net::Twitter::Search.3 Net::Identica.3 \
+		Net::Twitter::API.3 Net::Twitter::Role::API::Search.3 \
 		Net::Twitter::Error.3 Net::Twitter::Role::OAuth.3 \
+		Net::Twitter::OAuth.3 Net::Twitter::Core.3 \
+		Net::Twitter::OAuth::XAuthRequest.3 \
 		Net::Twitter::Role::API::Lists.3 \
 		Net::Twitter::Role::API::REST.3 \
 		Net::Twitter::Role::API::TwitterVision.3 \
-		Net::Twitter::OAuth.3 Net::Twitter::Core.3 \
-		Net::Twitter::API.3 Net::Twitter::Role::API::Search.3 \
 		Net::Twitter::Role::InflateObjects.3 \
+		Net::Twitter::Role::Legacy.3 \
 		Net::Twitter::Role::RateLimit.3 \
-		Net::Twitter::Role::WrapError.3 \
-		Net::Twitter::Role::Legacy.3
+		Net::Twitter::Role::RetryOnError.3 \
+		Net::Twitter::Role::SimulateCursors.3 \
+		Net::Twitter::Role::WrapError.3
 
 .include <bsd.port.mk>
