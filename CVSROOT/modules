@@ -6488,6 +6488,7 @@ jboss2                          ports/java/jboss2
 jboss3                          ports/java/jboss3
 jboss4                          ports/java/jboss4
 jboss5                          ports/java/jboss5
+jbrofuzz                        ports/security/jbrofuzz
 jc                              ports/java/jc
 jcalendar                       ports/java/jcalendar
 jcckit                          ports/java/jcckit
@@ -10559,6 +10560,7 @@ p5-AnyEvent-Run                 ports/devel/p5-AnyEvent-Run
 p5-AnyEvent-SCGI                ports/www/p5-AnyEvent-SCGI
 p5-AnyEvent-Subprocess          ports/devel/p5-AnyEvent-Subprocess
 p5-AnyEvent-Twitter             ports/net/p5-AnyEvent-Twitter
+p5-AnyEvent-Twitter-Stream      ports/net/p5-AnyEvent-Twitter-Stream
 p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
 p5-Apache-AddHostPath           ports/www/p5-Apache-AddHostPath
@@ -11030,6 +11032,7 @@ p5-Catalyst-Plugin-Static-Simple  ports/www/p5-Catalyst-Plugin-Static-Simple
 p5-Catalyst-Plugin-SubRequest   ports/www/p5-Catalyst-Plugin-SubRequest
 p5-Catalyst-Plugin-Textile      ports/www/p5-Catalyst-Plugin-Textile
 p5-Catalyst-Plugin-Unicode      ports/www/p5-Catalyst-Plugin-Unicode
+p5-Catalyst-Plugin-Unicode-Encoding  ports/www/p5-Catalyst-Plugin-Unicode-Encoding
 p5-Catalyst-Plugin-XMLRPC       ports/www/p5-Catalyst-Plugin-XMLRPC
 p5-Catalyst-Runtime             ports/www/p5-Catalyst-Runtime
 p5-Catalyst-TraitFor-Request-BrowserDetect  ports/www/p5-Catalyst-TraitFor-Request-BrowserDetect
@@ -12334,6 +12337,7 @@ p5-JSON-Any                     ports/converters/p5-JSON-Any
 p5-JSON-DWIW                    ports/converters/p5-JSON-DWIW
 p5-JSON-RPC                     ports/devel/p5-JSON-RPC
 p5-JSON-RPC-Common              ports/devel/p5-JSON-RPC-Common
+p5-JSON-RPC-Dispatcher          ports/devel/p5-JSON-RPC-Dispatcher
 p5-JSON-XS                      ports/converters/p5-JSON-XS
 p5-JSON-XS-VersionOneAndTwo     ports/converters/p5-JSON-XS-VersionOneAndTwo
 p5-JSON1                        ports/converters/p5-JSON1
@@ -14362,6 +14366,7 @@ p5-anyevent-run                 ports/devel/p5-AnyEvent-Run
 p5-anyevent-scgi                ports/www/p5-AnyEvent-SCGI
 p5-anyevent-subprocess          ports/devel/p5-AnyEvent-Subprocess
 p5-anyevent-twitter             ports/net/p5-AnyEvent-Twitter
+p5-anyevent-twitter-stream      ports/net/p5-AnyEvent-Twitter-Stream
 p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
 p5-apache-admin-config          ports/www/p5-Apache-Admin-Config
@@ -14755,6 +14760,7 @@ p5-catalyst-plugin-static-simple  ports/www/p5-Catalyst-Plugin-Static-Simple
 p5-catalyst-plugin-subrequest   ports/www/p5-Catalyst-Plugin-SubRequest
 p5-catalyst-plugin-textile      ports/www/p5-Catalyst-Plugin-Textile
 p5-catalyst-plugin-unicode      ports/www/p5-Catalyst-Plugin-Unicode
+p5-catalyst-plugin-unicode-encoding  ports/www/p5-Catalyst-Plugin-Unicode-Encoding
 p5-catalyst-plugin-xmlrpc       ports/www/p5-Catalyst-Plugin-XMLRPC
 p5-catalyst-runtime             ports/www/p5-Catalyst-Runtime
 p5-catalyst-traitfor-request-browserdetect  ports/www/p5-Catalyst-TraitFor-Request-BrowserDetect
@@ -16183,6 +16189,7 @@ p5-json-any                     ports/converters/p5-JSON-Any
 p5-json-dwiw                    ports/converters/p5-JSON-DWIW
 p5-json-rpc                     ports/devel/p5-JSON-RPC
 p5-json-rpc-common              ports/devel/p5-JSON-RPC-Common
+p5-json-rpc-dispatcher          ports/devel/p5-JSON-RPC-Dispatcher
 p5-json-xs                      ports/converters/p5-JSON-XS
 p5-json-xs-versiononeandtwo     ports/converters/p5-JSON-XS-VersionOneAndTwo
 p5-json1                        ports/converters/p5-JSON1
