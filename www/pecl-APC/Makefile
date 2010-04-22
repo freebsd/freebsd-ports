@@ -17,6 +17,7 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Alternative PHP Cache
 
 USE_PHP=	yes
+IGNORE_WITH_PHP=4
 USE_PHPEXT=	yes
 PHP_MODNAME=	apc
 
@@ -24,13 +25,12 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS=	--enable-apc
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include"
+CFLAGS=		-I${LOCALBASE}/include
 
 OPTIONS=	MMAP		"Enable mmap memory support (default: IPC shm)"	off \
 		SEMAPHORES	"Enable sysv IPC semaphores (default: fcntl())"	off \
 		SPINLOCKS	"Enable spinlocks (experimental)"		off \
-		FILEHITS	"Enable per request cache info"			off \
-		PHP4_OPT	"Little optimization to PHP4"			off
+		FILEHITS	"Enable per request cache info"			off
 
 PORTDOCS=	*
 
@@ -50,27 +50,6 @@ CONFIGURE_ARGS+=	--enable-apc-spinlocks
 
 .if defined(WITH_FILEHITS)
 CONFIGURE_ARGS+=	--enable-apc-filehits
-.endif
-
-.if defined(WITH_PHP4_OPT)
-.if ${PHP_VER} == 4
-.if exists(${LOCALBASE}/include/apache/httpd.h)
-CFLAGS+=	-I${LOCALBASE}/include/apache -DAPC_PHP4_STAT
-.elif exists(${LOCALBASE}/include/apache2/httpd.h)
-CFLAGS+=	-I${LOCALBASE}/include/apache2 -DAPC_PHP4_STAT
-.elif exists(${LOCALBASE}/include/apache21/httpd.h)
-CFLAGS+=	-I${LOCALBASE}/include/apache21 -DAPC_PHP4_STAT
-.elif exists(${LOCALBASE}/include/apache22/httpd.h)
-CFLAGS+=	-I${LOCALBASE}/include/apache22 -DAPC_PHP4_STAT
-.endif
-.else
-pre-configure:
-	@${ECHO_CMD}
-	@${ECHO_CMD} "*** WARNING ***"
-	@${ECHO_CMD} "This optimization is only for PHP4. PHP5 or newer does not need it"
-	@${ECHO_CMD} "I will continue instalation..."
-	@${ECHO_CMD}
-.endif
 .endif
 
 post-install:
