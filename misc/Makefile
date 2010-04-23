@@ -434,6 +434,7 @@
     SUBDIR += php4-calendar
     SUBDIR += php4-mcal
     SUBDIR += php5-calendar
+    SUBDIR += php52-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe

@@ -414,6 +414,7 @@
     SUBDIR += php4-gmp
     SUBDIR += php5-bcmath
     SUBDIR += php5-gmp
+    SUBDIR += php52-bcmath
     SUBDIR += physcalc
     SUBDIR += plman
     SUBDIR += ploticus
