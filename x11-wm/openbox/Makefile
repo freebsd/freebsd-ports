@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	3.4.11
-PORTREVISION=	1
+PORTVERSION=	3.4.11.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/ \
 		http://dougbarton.us/Downloads/
@@ -27,6 +26,8 @@ CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
 		LDFLAGS+="-L${LOCALBASE}/lib"
 MAN1=		openbox.1 openbox-session.1 obxprop.1 \
 		openbox-gnome-session.1 openbox-kde-session.1
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
