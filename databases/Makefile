@@ -522,6 +522,7 @@
     SUBDIR += php52-dbase
     SUBDIR += php52-mssql
     SUBDIR += php52-mysql
+    SUBDIR += php52-mysqli
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phpmyadmin211
