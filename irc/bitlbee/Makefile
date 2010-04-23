@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6a
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
@@ -33,27 +33,13 @@ OPTIONS=	DEBUG "Enable debug support" Off \
 		MSN "Enable MSN protocol support" On \
 		JABBER "Enable Jabber (XMPP) protocol support" On \
 		OSCAR "Enable OSCAR (ICQ, AIM) protocol support" On \
-		YAHOO "Enable Yahoo! protocol support" On
+		YAHOO "Enable Yahoo! protocol support" On \
+		TWITTER "Enable Twitter protocol support" On
 
 CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 
-BITLBEEUSER?=	bitlbee
-BITLBEEGROUP?=	bitlbee
-BITLBEEDIR?=	/nonexistent
-
-BITLBEEUID=	914
-BITLBEEGID=	${BITLBEEUID}
-
-PLIST_SUB=	BITLBEEUSER=${BITLBEEUSER} \
-		BITLBEEGROUP=${BITLBEEGROUP}
-
-SUB_LIST+=	BITLBEEUSER=${BITLBEEUSER} \
-		BITLBEEGROUP=${BITLBEEGROUP} \
-		BITLBEEDIR=${BITLBEEDIR} \
-		BITLBEEUID=${BITLBEEUID} \
-		BITLBEEGID=${BITLBEEGID}
-
-SUB_FILES+=	pkg-install pkg-deinstall
+USERS=		bitlbee
+GROUPS=		bitlbee
 
 CONFLICTS=	bitlbee-otr-[0-9]*
 
@@ -102,6 +88,12 @@ CONFIGURE_ARGS+=--yahoo=1
 CONFIGURE_ARGS+=--yahoo=0
 .endif
 
+.if defined(WITH_TWITTER)
+CONFIGURE_ARGS+=--twitter=1
+.else
+CONFIGURE_ARGS+=--twitter=0
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|^EFLAGS=|EFLAGS=${LDFLAGS}|" \
@@ -120,13 +112,8 @@ post-patch:
 		${WRKSRC}/configure
 .endif
 
-pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 	${MKDIR} ${PREFIX}/etc/bitlbee
-	${MKDIR} -m 0700 /var/db/bitlbee
-	${CHOWN} -R ${BITLBEEUSER}:${BITLBEEGROUP} /var/db/bitlbee
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/doc/@} ${DOCSDIR}
