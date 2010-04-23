@@ -2474,6 +2474,7 @@
     SUBDIR += php52-ncurses
     SUBDIR += php52-pcntl
     SUBDIR += php52-pcre
+    SUBDIR += php52-readline
     SUBDIR += phpbt
     SUBDIR += phptags
     SUBDIR += physfs
