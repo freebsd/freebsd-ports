@@ -23,6 +23,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 MAN1=		mc-account-convert.1 mc-tool.1 mc-wait-for-name.1
 MAN8=		mission-control-5.8
 
