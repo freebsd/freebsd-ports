@@ -2478,6 +2478,7 @@
     SUBDIR += php52-shmop
     SUBDIR += php52-spl
     SUBDIR += php52-sysvmsg
+    SUBDIR += php52-sysvsem
     SUBDIR += php52-tokenizer
     SUBDIR += phpbt
     SUBDIR += phptags
