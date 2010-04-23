@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dbd_mysql
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	databases ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-dbi
