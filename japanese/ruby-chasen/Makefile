@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	chasen
-PORTVERSION=	1.6
-PORTREVISION=	2
+PORTVERSION=	1.7
 CATEGORIES=	japanese textproc ruby
-MASTER_SITES=	http://www.itlb.te.noda.tus.ac.jp/~ikarashi/ruby/
+MASTER_SITES=	http://sites.google.com/a/ixenon.net/ruby-chasen/home/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 DIST_SUBDIR=	ruby
 
@@ -21,8 +20,9 @@ LIB_DEPENDS=	chasen.2:${PORTSDIR}/japanese/chasen-base
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-CONFIGURE_ARGS=	--with-chasen-include="${PREFIX}/include/chasen" \
-		--with-chasen-lib="${PREFIX}/lib"
+FETCH_ARGS=	-pRr
+
+CONFIGURE_ARGS=	--with-chasen-dir="${PREFIX}"
 INSTALL_TARGET=	site-install
 
 .include <bsd.port.pre.mk>
