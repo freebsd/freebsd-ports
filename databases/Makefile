@@ -526,6 +526,7 @@
     SUBDIR += php52-oci8
     SUBDIR += php52-odbc
     SUBDIR += php52-pdo
+    SUBDIR += php52-pdo_dblib
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phpmyadmin211
