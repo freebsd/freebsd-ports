@@ -846,6 +846,7 @@ b2bua                           ports/net/b2bua
 b2evolution                     ports/www/b2evolution
 b43-fwcutter                    ports/sysutils/b43-fwcutter
 babel                           ports/biology/babel
+babeld                          ports/net/babeld
 babl                            ports/x11/babl
 babytrans                       ports/deskutils/babytrans
 backfract                       ports/graphics/backfract
