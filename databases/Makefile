@@ -520,6 +520,7 @@
     SUBDIR += php5-sybase_ct
     SUBDIR += php52-dba
     SUBDIR += php52-dbase
+    SUBDIR += php52-mssql
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phpmyadmin211
