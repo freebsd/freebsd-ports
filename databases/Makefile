@@ -533,6 +533,7 @@
     SUBDIR += php52-pdo_pgsql
     SUBDIR += php52-pdo_sqlite
     SUBDIR += php52-pgsql
+    SUBDIR += php52-sqlite
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phpmyadmin211
