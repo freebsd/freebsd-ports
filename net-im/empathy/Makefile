@@ -25,6 +25,8 @@ LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
