@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rakudo
-PORTVERSION=	2010.03
+PORTVERSION=	2010.04
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/rakudo/
