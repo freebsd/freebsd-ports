@@ -251,6 +251,7 @@
     SUBDIR += php5
     SUBDIR += php5-extensions
     SUBDIR += php52
+    SUBDIR += php52-extensions
     SUBDIR += php_doc
     SUBDIR += pike72
     SUBDIR += pike76
