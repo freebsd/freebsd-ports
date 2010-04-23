@@ -770,6 +770,7 @@
     SUBDIR += php5-soap
     SUBDIR += php5-sockets
     SUBDIR += php5-xmlrpc
+    SUBDIR += php52-ldap
     SUBDIR += phpldapadmin
     SUBDIR += phpldapadmin098
     SUBDIR += pimdd
