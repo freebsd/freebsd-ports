@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opengl
-PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTVERSION=	3.0.1
 CATEGORIES=	graphics python
 MASTER_SITES=	SF/py${PORTNAME}/PyOpenGL/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +15,9 @@ DISTNAME=	PyOpenGL-${PORTVERSION}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	An OpenGL (and related library) interface for Python
 
-BUILD_DEPENDS=	${PYNUMERIC} \
+BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
-RUN_DEPENDS=	${PYNUMERIC} \
+RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
 OPTIONS=	TKINTER "Build with tkinter for X support" On
