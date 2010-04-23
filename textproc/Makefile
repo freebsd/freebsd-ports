@@ -938,6 +938,7 @@
     SUBDIR += php52-dom
     SUBDIR += php52-pspell
     SUBDIR += php52-simplexml
+    SUBDIR += php52-xml
     SUBDIR += po4a
     SUBDIR += pocketreader
     SUBDIR += pootle
