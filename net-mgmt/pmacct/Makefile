@@ -22,7 +22,8 @@ OPTIONS=	MYSQL "Enable MySQL support." Off \
 		PGSQL "Enable PostgreSQL support." Off \
 		SQLITE "Enable SQLite support." Off \
 		MMAP  "Enable mmap(2) support." On \
-		LAYER2 "Enable Layer-2 support: MAC Adresses and VLANs" On
+		LAYER2 "Enable Layer-2 support: MAC Adresses and VLANs" On \
+		IPV6  "Enable IPv6 support." On
 
 .include <bsd.port.pre.mk>
 
@@ -66,6 +67,12 @@ CONFIGURE_ARGS+=--enable-mmap
 CONFIGURE_ARGS+=--disable-l2
 .else
 CONFIGURE_ARGS+=--enable-l2
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=--disable-ipv6
+.else
+CONFIGURE_ARGS+=--enable-ipv6
 .endif
 
 post-patch:
