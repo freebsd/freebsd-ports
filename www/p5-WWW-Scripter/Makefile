@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Scripter
-PORTVERSION=	0.010
+PORTVERSION=	0.011
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=		WWW::Scripter::Location.3 WWW::Scripter.3 \
-		WWW::Scripter::History.3
+		WWW::Scripter::History.3 WWW::Scripter::WindowGroup.3
 
 .include <bsd.port.mk>
