@@ -2470,6 +2470,7 @@
     SUBDIR += php5-sysvshm
     SUBDIR += php5-tokenizer
     SUBDIR += php52-gettext
+    SUBDIR += php52-json
     SUBDIR += php52-pcre
     SUBDIR += phpbt
     SUBDIR += phptags

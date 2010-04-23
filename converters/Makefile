@@ -111,6 +111,7 @@
     SUBDIR += php5-mbstring
     SUBDIR += php5-recode
     SUBDIR += php52-iconv
+    SUBDIR += php52-mbstring
     SUBDIR += psiconv
     SUBDIR += py-bsdconv
     SUBDIR += py-cjkcodecs
