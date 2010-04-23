@@ -125,6 +125,7 @@
     SUBDIR += ksqlanalyzer
     SUBDIR += ksqlshell
     SUBDIR += kumofs
+    SUBDIR += kyotocabinet
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
     SUBDIR += libdrizzle
