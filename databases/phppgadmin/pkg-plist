@@ -1,4 +1,5 @@
 %%PGADMDIR%%/CREDITS
+%%PGADMDIR%%/BUGS
 %%PGADMDIR%%/DEVELOPERS
 %%PGADMDIR%%/FAQ
 %%PGADMDIR%%/HISTORY
@@ -31,7 +32,6 @@
 %%PGADMDIR%%/classes/plugins/Plugin.php
 %%PGADMDIR%%/classes/plugins/Slony.php
 %%PGADMDIR%%/colproperties.php
-%%PGADMDIR%%/conf/.gitignore
 @unexec if cmp -s %D/%%PGADMDIR%%/conf/config.inc.php %D/%%PGADMDIR%%/conf/config.inc.php-dist; then rm -f %D/%%PGADMDIR%%/conf/config.inc.php; fi
 %%PGADMDIR%%/conf/config.inc.php-dist
 @exec cp -np %D/%%PGADMOLDDIR%%/conf/config.inc.php %B/config.inc.php
