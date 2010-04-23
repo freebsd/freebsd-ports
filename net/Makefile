@@ -773,6 +773,7 @@
     SUBDIR += php52-ldap
     SUBDIR += php52-soap
     SUBDIR += php52-sockets
+    SUBDIR += php52-xmlrpc
     SUBDIR += phpldapadmin
     SUBDIR += phpldapadmin098
     SUBDIR += pimdd
