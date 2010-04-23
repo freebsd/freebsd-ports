@@ -935,6 +935,7 @@
     SUBDIR += php5-xmlwriter
     SUBDIR += php5-xsl
     SUBDIR += php52-ctype
+    SUBDIR += php52-dom
     SUBDIR += po4a
     SUBDIR += pocketreader
     SUBDIR += pootle
