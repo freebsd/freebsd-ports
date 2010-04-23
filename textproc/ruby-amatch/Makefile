@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amatch
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.5
 CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,9 +23,12 @@ RUBY_SETUP=	install.rb
 
 INSTALL_TARGET=	site-install
 
-PLIST_FILES=	bin/agrep.rb %%RUBY_SITEARCHLIBDIR%%/amatch.so
+PLIST_FILES=	bin/agrep.rb %%RUBY_SITELIBDIR%%/amatch/version.rb \
+		%%RUBY_SITEARCHLIBDIR%%/amatch.so
+PLIST_DIRS=	%%RUBY_SITELIBDIR%%/amatch
+
 DOCSDIR=	${RUBY_MODDOCDIR}
-PORTDOCS=	CHANGES README.en
+PORTDOCS=	CHANGES README
 
 .include <bsd.port.pre.mk>
 
