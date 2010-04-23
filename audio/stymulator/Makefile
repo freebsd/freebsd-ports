@@ -7,7 +7,7 @@
 
 PORTNAME=	stymulator
 DISTVERSION=	0.21a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://atariarea.krap.pl/stymulator/files/ \
 		CRITICAL
