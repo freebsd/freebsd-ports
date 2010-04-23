@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.001
+PORTVERSION=	1.202
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn
 
@@ -30,6 +31,7 @@ PERL_MODBUILD=	yes
 
 MAN1=		config-edit.1 config-edit-popcon.1
 MAN3=		Config::Model.3 Config::Model::AnyId.3 \
+		Config::Model::Annotation.3 \
 		Config::Model::AnyThing.3 Config::Model::AutoRead.3 \
 		Config::Model::Backend::Any.3 \
 		Config::Model::Backend::ShellVar.3 \

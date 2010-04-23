@@ -2,6 +2,7 @@
 bin/config-edit
 bin/config-edit-popcon
 %%SITE_PERL%%/Config/Model.pm
+%%SITE_PERL%%/Config/Model/Annotation.pm
 %%SITE_PERL%%/Config/Model/AnyId.pm
 %%SITE_PERL%%/Config/Model/AnyThing.pm
 %%SITE_PERL%%/Config/Model/AutoRead.pm
