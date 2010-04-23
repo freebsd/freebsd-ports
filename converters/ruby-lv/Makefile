@@ -33,14 +33,11 @@ DOCS_JA=	README.ja doc/api-ja/*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (Needs to link against shared library)"
-.endif
-
 post-extract:
 	${CP} -Rp `${LV_WRKSRC_CMD}` ${WRKSRC}/lv
 	${LN} -sf . ${WRKSRC}/lv/src
 	${LN} -sf . ${WRKSRC}/lv/build
+	${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS=-fPIC |' ${WRKSRC}/lv/Makefile
 
 post-patch:
 	cd ${WRKSRC}/lv; ${PATCH} Makefile < ${WRKSRC}/lv4491.patch
