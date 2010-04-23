@@ -2469,6 +2469,7 @@
     SUBDIR += php5-sysvsem
     SUBDIR += php5-sysvshm
     SUBDIR += php5-tokenizer
+    SUBDIR += php52-pcre
     SUBDIR += phpbt
     SUBDIR += phptags
     SUBDIR += physfs
