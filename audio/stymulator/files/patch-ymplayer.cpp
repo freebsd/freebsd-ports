@@ -1,5 +1,5 @@
---- ./ymplayer.cpp.orig	2010-03-27 16:08:54.000000000 +0100
-+++ ./ymplayer.cpp	2010-03-27 16:10:00.000000000 +0100
+--- ./ymplayer.cpp.orig	2010-04-23 13:49:47.000000000 +0200
++++ ./ymplayer.cpp	2010-04-23 13:49:47.000000000 +0200
 @@ -6,7 +6,6 @@
  	Project Page: http://atariarea.krap.pl/stymulator
  	
@@ -93,7 +93,43 @@
  			switch(getch()) {
  				case 27: case 'q':	quit = true; break;
  				case 'z':	pmode = true;	break; //play
-@@ -179,7 +169,7 @@
+@@ -132,6 +122,7 @@
+ 				case 'n':	rew = true; break;
+ 			}
+ 			if (rmode)
++			{
+ 				if (repeat) {
+ 					ymMusicSetLoopMode(pMusic,YMTRUE);
+ 					mvaddstr(pos_y+7,pos_x+67,"Yes");
+@@ -143,7 +134,7 @@
+ 					rmode = false;
+ 					repeat = true;
+ 				}
+-
++			}
+ 			if (!stop && playing) {
+ 				if (pmode && !paused)
+ 					mvaddstr(pos_y+6,pos_x+67,"Play");	//play
+@@ -168,18 +159,20 @@
+ 				pmode = false;
+ 			}
+ 
+-			if (ymMusicIsSeekable(pMusic) && digi) 
++			if (ymMusicIsSeekable(pMusic) && digi)
++			{
+ 				if (ff) {
+-				ymMusicSeek(pMusic, ymMusicGetPos(pMusic) + 1000);
+-				ff = false;
+-			} else if (rew) {
+-				ymMusicSeek(pMusic, ymMusicGetPos(pMusic) - 1000);
+-				rew = false;
++					ymMusicSeek(pMusic, ymMusicGetPos(pMusic) + 1000);
++					ff = false;
++				} else if (rew) {
++					ymMusicSeek(pMusic, ymMusicGetPos(pMusic) - 1000);
++					rew = false;
++				}
+ 			}
  		}	
  	
  		ymMusicStop(pMusic);
