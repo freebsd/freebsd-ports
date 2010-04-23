@@ -34,6 +34,69 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f6b6beaa-4e0e-11df-83fb-0015587e2cc1">
+    <topic>emacs -- movemail symlink race condition</topic>
+    <affects>
+      <package>
+	<name>movemail</name>
+	<range><le>1.0</le></range>
+      </package>
+      <package>
+	<name>emacs</name>
+	<range><le>21.3_14</le></range>
+	<range><ge>22.3_1,1</ge><le>22.3_4,1</le></range>
+	<range><ge>23.1</ge><le>23.1_5,1</le></range>
+      </package>
+      <package>
+	<name>xemacs</name>
+	<range><le>21.4.22_4</le></range>
+      </package>
+      <package>
+	<name>xemacs-devel</name>
+	<range><le>21.5.b28_8,1</le></range>
+      </package>
+      <package>
+	<name>xemacs-mule</name>
+	<name>zh-xemacs-mule</name>
+	<name>ja-xemacs-mule-canna</name>
+	<range><le>21.4.21_6</le></range>
+      </package>
+      <package>
+	<name>xemacs-devel-mule</name>
+	<name>xemacs-devel-mule-xft</name>
+	<range><le>21.5.b28_10</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ubuntu Security Notice USN-919-1 reports:</p>
+	<blockquote cite="http://www.ubuntu.com/usn/USN-919-1">
+	  <p>Dan Rosenberg discovered that the email helper in Emacs
+	    did not correctly check file permissions. A local
+	    attacker could perform a symlink race to read or append
+	    to another user's mailbox if it was stored under a
+	    group-writable group-"mail" directory. </p>
+	</blockquote>
+	<p>The movemail program, which provides this functionality
+	  to Emacs, can also be installed on FreeBSD via the movemail
+	  port. This port is therefore, in addition to Emacs, also
+	  vulnerable to this attack.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-0825</cvename>
+      <url>http://secunia.com/advisories/39155</url>
+      <url>http://www.ubuntu.com/usn/USN-919-1</url>
+      <url>http://www.vupen.com/english/advisories/2010/0734</url>
+      <url>http://xforce.iss.net/xforce/xfdb/57457</url>
+      <url>https://bugs.launchpad.net/ubuntu/+bug/531569</url>
+    </references>
+    <dates>
+      <discovery>2010-03-03</discovery>
+      <entry>2010-04-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="86b8b655-4d1a-11df-83fb-0015587e2cc1">
     <topic>krb5 -- KDC double free vulnerability</topic>
     <affects>
@@ -40093,6 +40156,10 @@ Note:  Please add new entries to the beginning of this file.
   <vuln vid="3e3c860d-7dae-11d9-a9e7-0001020eed82">
     <topic>emacs -- movemail format string vulnerability</topic>
     <affects>
+      <package>
+	<name>movemail</name>
+	<range><le>1.0</le></range>
+      </package>
       <package>
 	<name>zh-emacs</name>
 	<name>emacs</name>
