@@ -6,6 +6,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.0.20100222
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -99,11 +100,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
-		s|-lpthread|${PTHREAD_LIBS}|g; \
-		s|bash|sh|; \
-		s|gpac_static|gpac|g' \
+		s|-lpthread |${PTHREAD_LIBS} |g;' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|bash|sh|' ${WRKSRC}/version.sh
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
 		s|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile
