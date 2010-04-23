@@ -52,6 +52,8 @@ DEFAULT_PHP_VER?=	5
 PHP_VER?=	${DEFAULT_PHP_VER}
 .if ${PHP_VER} == 4
 PHP_EXT_DIR=	20020429
+.elif ${PHP_VER}  == 52
+PHP_EXT_DIR=	20060613
 .else
 PHP_EXT_DIR=	20090626
 PHP_EXT_INC=	pcre spl
@@ -254,6 +256,9 @@ _USE_PHP_VER4=	${_USE_PHP_ALL} crack dbase dbx dio domxml filepro mcal mcve \
 _USE_PHP_VER5=	${_USE_PHP_ALL} dom filter mysqli pdo \
 		pdo_mysql pdo_pgsql pdo_sqlite \
 		simplexml soap spl sqlite tidy xmlreader xmlwriter xsl
+_USE_PHP_VER52=	${_USE_PHP_ALL} dbase ncurses dom filter ming mysqli oci8 \
+		pdo pdo_mysql pdo_sqlite simplexml soap spl sqlite tidy \
+		xmlreader xmlwriter xsl mhash
 
 apc_DEPENDS=	www/pecl-APC
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
@@ -293,6 +298,7 @@ mysql_DEPENDS=	databases/php${PHP_VER}-mysql
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
 ncurses_DEPENDS=devel/php${PHP_VER}-ncurses
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
+oci8_DEPENDS=	databases/php${PHP_VER}-oci8
 openssl_DEPENDS=security/php${PHP_VER}-openssl
 oracle_DEPENDS=	databases/php${PHP_VER}-oracle
 overload_DEPENDS=lang/php${PHP_VER}-overload
