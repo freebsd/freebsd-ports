@@ -9,9 +9,7 @@
 PORTNAME=	gsasl
 PORTVERSION=	1.4.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/ \
-		${MASTER_SITE_GNU_ALPHA} \
-		http://josefsson.org/${PORTNAME}/releases/
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	krion@FreeBSD.org
