@@ -34,6 +34,100 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5198ef84-4fdc-11df-83fb-0015587e2cc1">
+    <topic>cacti -- SQL injection and command execution vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><le>0.8.7e4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bonsai information security reports:</p>
+	<blockquote cite="http://www.bonsai-sec.com/en/research/vulnerability.php">
+	  <p>A Vulnerability has been discovered in Cacti, which
+	    can be exploited by any user to conduct SQL Injection
+	    attacks. Input passed via the "export_item_id" parameter
+	    to "templates_export.php" script is not properly sanitized
+	    before being used in a SQL query.</p>
+	</blockquote>
+	  <p>The same source also reported a command execution
+	    vulnerability. This second issue can be exploited by
+	    Cacti users who have the rights to modify device or
+	    graph configurations.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/146021</freebsdpr>
+      <url>http://www.bonsai-sec.com/en/research/vulnerabilities/cacti-os-command-injection-0105.php</url>
+      <url>http://www.bonsai-sec.com/en/research/vulnerabilities/cacti-sql-injection-0104.php</url>
+    </references>
+    <dates>
+      <discovery>2010-04-21</discovery>
+      <entry>2010-04-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f6429c24-4fc9-11df-83fb-0015587e2cc1">
+    <topic>moodle -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moodle</name>
+	<range><lt>1.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Moodle release notes report multiple vulnerabilities
+	  which could allow remote attackers to perform, amongst
+	  others, cross site scripting, user enumeration and SQL
+	  injection attacks.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://docs.moodle.org/en/Moodle_1.9.8_release_notes</url>
+    </references>
+    <dates>
+      <discovery>2010-03-25</discovery>
+      <entry>2010-04-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3383e706-4fc3-11df-83fb-0015587e2cc1">
+    <topic>tomcat -- information disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>tomcat</name>
+	<range><gt>5.5.0</gt><le>5.5.28</le></range>
+	<range><gt>6.0.0</gt><le>6.0.24</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache software foundation reports:</p>
+	<blockquote cite="http://seclists.org/bugtraq/2010/Apr/200">
+	  <p>The "WWW-Authenticate" header for BASIC and DIGEST
+	    authentication includes a realm name. If a &lt;realm-name&gt;
+	    element is specified for the application in web.xml it
+	    will be used. However, a &lt;realm-name&gt; is not
+	    specified then Tomcat will generate one.</p>
+	    <p>In some circumstances this can expose the local
+	    hostname or IP address of the machine running Tomcat.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1157</cvename>
+      <freebsdpr>ports/146022</freebsdpr>
+      <url>http://seclists.org/bugtraq/2010/Apr/200</url>
+    </references>
+    <dates>
+      <discovery>2010-04-22</discovery>
+      <entry>2010-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f6b6beaa-4e0e-11df-83fb-0015587e2cc1">
     <topic>emacs -- movemail symlink race condition</topic>
     <affects>
