@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	prune
-PORTVERSION=	7
-PORTREVISION=	2
+PORTVERSION=	9
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/prune/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -27,11 +26,11 @@ JAVA_VERSION=	1.5+
 SUB_FILES=	prune.sh
 SUB_LIST=	JARNAME=${DISTNAME}
 
-PLIST_FILES=	bin/prune${PORTVERSION} ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
+PLIST_FILES=	bin/prune-gps-tool ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${JAVAJARDIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/prune.sh ${PREFIX}/bin/prune${PORTVERSION}
+	${INSTALL_SCRIPT} ${WRKDIR}/prune.sh ${PREFIX}/bin/prune-gps-tool
 
 .include <bsd.port.mk>
