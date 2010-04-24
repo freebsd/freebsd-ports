@@ -7,7 +7,7 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	databases
 MASTER_SITES=	SF/firebird/OldFiles
 PKGNAMESUFFIX?=	-server
@@ -90,6 +90,11 @@ FB_DOCS_DIRS=	sql.extensions license upgrade
 .endif
 
 MAKE_ENV+=	FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}"
+
+IPCCHECK!=	ipcrm -q 0 2>&1 || true
+.if ${IPCCHECK:Mimplemented}
+IGNORE=		your system does not support sysvipc
+.endif
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/extern/icu

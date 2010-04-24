@@ -1,5 +1,5 @@
 --- configure.in.orig	2007-09-04 15:51:12.000000000 +0800
-+++ configure.in	2007-10-05 06:59:32.243635556 +0800
++++ configure.in	2009-11-07 17:47:35.000000000 +0100
 @@ -447,8 +447,9 @@
  			AC_CHECK_LIB(termcap, tgetent, , \
  				AC_CHECK_LIB(tinfo, tgetent, , \
@@ -11,6 +11,15 @@
  
  
  dnl Check for functions
+@@ -696,7 +696,7 @@
+ rm -f conftest*])
+ 
+ if test "$firebird_cv_gcc___thread" = yes; then
+-  AC_DEFINE(HAVE___THREAD, 1, [Define it if compiler supports ISO syntax for thread-local storage])
++dnl  AC_DEFINE(HAVE___THREAD, 1, [Define it if compiler supports ISO syntax for thread-local storage])
+ fi
+ 				  
+ dnl ##################### DO NOT ADD ANY TESTS BELOW ###########################
 @@ -720,6 +721,10 @@
  AC_SUBST(NEW_FIREBIRD_DIR)
  
