@@ -2959,6 +2959,7 @@
     SUBDIR += rubygem-mash
     SUBDIR += rubygem-metaid
     SUBDIR += rubygem-mixlib-authentication
+    SUBDIR += rubygem-mixlib-config
     SUBDIR += rubygem-mixlib-log
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-moneta
