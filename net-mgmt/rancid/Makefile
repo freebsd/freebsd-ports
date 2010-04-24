@@ -46,6 +46,15 @@ NEWERCONFIG_FILES1=	etc/rancid.conf
 NEWERCONFIG_FILES2=	etc/lg.conf
 NEWCONFIG_FILES=	rancid.conf lg.conf
 
+OPTIONS=		SVN "Use Subversion instead of CVS" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SVN)
+CONFIGURE_ARGS+=	--with-svn
+BUILD_DEPENDS+=		svn:${PORTSDIR}/devel/subversion
+.endif
+
 pre-everything::
 	@ ${ECHO} "Make sure your rancid repository is quiet before upgrading; disable rancid cron jobs"
 
