@@ -221,9 +221,6 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_sabnzbd.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_sabnzbd.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_sabnzbd.pyo
-%%PYTHON_SITELIBDIR%%/flexget/plugins/output_statistics.py
-%%PYTHON_SITELIBDIR%%/flexget/plugins/output_statistics.pyc
-%%PYTHON_SITELIBDIR%%/flexget/plugins/output_statistics.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_subtitles.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_subtitles.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_subtitles.pyo
@@ -233,6 +230,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_adv_exec.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_adv_exec.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_adv_exec.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.pyo
@@ -287,6 +287,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/utils/log.py
 %%PYTHON_SITELIBDIR%%/flexget/utils/log.pyc
 %%PYTHON_SITELIBDIR%%/flexget/utils/log.pyo
+%%PYTHON_SITELIBDIR%%/flexget/utils/qualities.py
+%%PYTHON_SITELIBDIR%%/flexget/utils/qualities.pyc
+%%PYTHON_SITELIBDIR%%/flexget/utils/qualities.pyo
 %%PYTHON_SITELIBDIR%%/flexget/utils/simple_persistence.py
 %%PYTHON_SITELIBDIR%%/flexget/utils/simple_persistence.pyc
 %%PYTHON_SITELIBDIR%%/flexget/utils/simple_persistence.pyo
