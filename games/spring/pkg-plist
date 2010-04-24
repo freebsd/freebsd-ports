@@ -15,88 +15,6 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/general.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/help/example_general.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/help/example_mod.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/2Lakes.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/AATA-RumblingForest.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/AavikkoV2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Altored_Divide.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Aquatic_Divide_TNM05-V2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Archers_Valley_v5.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Ashap_Plateau.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Battle_Holms_v4.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/BlackLake_Swamp_v_1.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Blue Planet.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Canyon_Wasteland-v02.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/CenterrockV11.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/CenterrockV12.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Cliff Run-v01.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Coast To Coast Remake.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Comet Catcher Redux.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Comet Catcher Remake-v02.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Comet Catcher Remake.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Cooper_Hill_TNM02-V1.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Core_Prime_Industrial_Area.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Craggy Hills v1.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Crimson_Paradise.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Crossing_4_final.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/DarkSide Remake.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Dead Reef v3.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/DeltaSiegeDry.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Deserted_Gully-v02.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Dueling_Bases-v01.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Evergreen_Haven-Redux-v02.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Evergreen_Haven-v03.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Expandation v01.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/ExpandedTropics.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/FF-AsteroidBattle.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/FF-Surrounded.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Flooded_Canyon-v2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Flooded_Canyon-v3.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Foothill_Basin_Redux-v02.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Foothills-v08.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Four_Lakes_V2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/FunTA-Battle_for_Aqua_Prime-v03.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Gods Of War 2 Remake V2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Green Comet Basic.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Hells Pass.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Ice_Bergs_V2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Iron_Craters_V1.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/IslandAlpha.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/IslandDivide.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Islands_In_War_1.0.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Long_Division-v01.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Moon Quartet Remake.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/MoonQ20.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/MoonQ20x.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Mountain Siege.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Mountain_Range-v07.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/No_Mans_Land-V03.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Painted Desert Remake V2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Painted Desert Remake.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Plains_and_passes.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Raised_Divide_v1.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/River Dale-v01.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Road_To_Rome.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Rush_Hour-By_Wired.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/SailAway.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Shore2Shore_Remake-v01.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Small Supreme Battlefield.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Small Supreme Islands V2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/SmallDivide.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Supreme Battlefield.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Surrounded_Grounds-v2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Tabula-v2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Tactical_Divide_v2.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Tangerine.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Tempest.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/The Oasis.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Tropical.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Twilight_Canyon-v01.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Vegan_Canyons-v01.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Verdant v3.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Whakamutunga_Riri-v01.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/Winter_Wonderland.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/aftershock.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map/cathralda.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/AA5.0project.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/AAIA10.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA695.cfg
@@ -104,6 +22,7 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA701.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA704.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BOTA_14.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/Balanced_Annihilation_V7.12.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/CA-BETA1.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/Expand_and_Exterminate_v_0.171.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/FF 1.21 S.cfg
@@ -119,14 +38,18 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/libSkirmishAI.so
-%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/AIInfo.lua
-%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/AIOptions.lua
-%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/BA704-categorization.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/BA704-config.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/XTAPEV959-categorization.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/XTAPEV959-config.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs/template-config.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.14.5/libSkirmishAI.so
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/AIOptions.lua
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BA704-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BA704-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BA711-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BA711-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BOTA16b4-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BOTA16b4-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/XTAPEV96-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/XTAPEV96-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/template-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/libSkirmishAI.so
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/libSkirmishAI.so
@@ -246,13 +169,12 @@ share/pixmaps/spring.png
 @dirrm %%DATADIR%%/AI/Skirmish/NullAI
 @dirrm %%DATADIR%%/AI/Skirmish/KAIK/0.13
 @dirrm %%DATADIR%%/AI/Skirmish/KAIK
-@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.14.5/configs
-@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.14.5
+@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs
+@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.18.1
 @dirrm %%DATADIR%%/AI/Skirmish/E323AI
 @dirrm %%DATADIR%%/AI/Skirmish/CppTestAI/0.1
 @dirrm %%DATADIR%%/AI/Skirmish/CppTestAI
 @dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod
-@dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/map
 @dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/help
 @dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg
 @dirrm %%DATADIR%%/AI/Skirmish/AAI/0.9
