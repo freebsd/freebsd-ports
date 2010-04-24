@@ -8,7 +8,7 @@
 
 PORTNAME=	empower
 PORTVERSION=	20080223
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
