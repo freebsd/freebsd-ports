@@ -32,7 +32,6 @@ ALL_TARGET=	amd64
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -E -e 's|||' {} \;
 	@${GREP} -Rl 'fish[.]sekure[.]us' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -E \
 		-e 's|fish[.]sekure[.]us|fish.secure.la|g'
 	@${REINPLACE_CMD} -E \
@@ -42,8 +41,10 @@ post-patch:
 		-e 's|[$$][(]HOME[)]/glib-1.2.10|${LOCALBASE}/include/glib-2.0|' \
 		-e 's|[$$][(]HOME[)]/irssi-0.8.9|${LOCALBASE}/include/irssi|' \
 		-e 's|miracl.a|${LOCALBASE}/lib/libmiracl.a|' \
+		-e 's|[$$]\(pwd\)|`pwd`|g' \
 		-e 's|\@echo \"Press ENTER to continue or CTRL\+C to abort...\"\; read junk||' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/mirdef.lnx/d' ${WRKSRC}/Makefile
 
 do-install:
 .ifndef(NOPORTDOCS)
