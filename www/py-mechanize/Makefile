@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mechanize
-PORTVERSION=	0.1.11
+PORTVERSION=	0.2.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://wwwsearch.sourceforge.net/mechanize/src/
@@ -15,9 +15,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Stateful programmatic web browsing in Python
-
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}clientform>0:${PORTSDIR}/www/py-clientform
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}clientform>0:${PORTSDIR}/www/py-clientform
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
