@@ -1,0 +1,15 @@
+Template Toolkit is the best Perl template framework. The only problem
+with it is that using it for simple stuff is a little bit cumbersome.
+Also there is no good utility for using it from the command line.
+
+This module is a simple wrapper around Template Toolkit. It exports a
+function called tt which returns a new Template::Toolkit::Simple object.
+The object supports method calls for setting all the Template Toolkit
+options.
+
+This module also installs a program called tt-render which you can use
+from the command line to render templates with all the power of the Perl
+object. All of the object methods become command line arguments in the
+command line version.
+
+WWW:	http://search.cpan.org/dist/Template-Toolkit-Simple/
