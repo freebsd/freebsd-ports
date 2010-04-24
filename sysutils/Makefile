@@ -717,6 +717,7 @@
     SUBDIR += rubygem-bundler
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-god
+    SUBDIR += rubygem-ohai
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm
