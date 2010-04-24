@@ -17,6 +17,7 @@ lib/R/library/sp/data/meuse.grid_ll.rda
 lib/R/library/sp/data/meuse.grid.R
 lib/R/library/sp/data/meuse.R
 lib/R/library/sp/data/Rlogo.R
+lib/R/library/sp/demo/fib.R
 lib/R/library/sp/demo/gallery.R
 lib/R/library/sp/external/test.ag
 lib/R/library/sp/external/simple.ag
@@ -32,6 +33,8 @@ lib/R/library/sp/help/sp.rdx
 lib/R/library/sp/help/sp.rdb
 lib/R/library/sp/help/paths.rds
 lib/R/library/sp/html/00Index.html
+lib/R/library/sp/include/sp_xports.c
+lib/R/library/sp/include/sp.h
 lib/R/library/sp/INDEX
 @dirrm lib/R/library/sp/Meta
 @dirrm lib/R/library/sp/libs
@@ -42,4 +45,5 @@ lib/R/library/sp/INDEX
 @dirrm lib/R/library/sp/external
 @dirrm lib/R/library/sp/help
 @dirrm lib/R/library/sp/html
+@dirrm lib/R/library/sp/include
 @dirrm lib/R/library/sp
