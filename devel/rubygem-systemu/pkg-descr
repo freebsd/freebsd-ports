@@ -1,0 +1,7 @@
+systemu is a portable replacement for popen4 in ruby.
+
+systemu can be used on any platform to return status, stdout, and stderr of
+any command.  unlike other methods like open3/popen4 there is zero danger of
+full pipes or threading issues hanging your process or subprocess.
+
+WWW: http://codeforpeople.com/lib/ruby/systemu/
