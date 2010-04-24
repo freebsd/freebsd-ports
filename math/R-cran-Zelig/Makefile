@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Zelig
-PORTVERSION=	3.4.3
-PORTREVISION=	4
+PORTVERSION=	3.4.8
 CATEGORIES=	math
 PKGNAMEPREFIX=	R-cran-
-DISTNAME=	${PORTNAME}_3.4-3
+DISTNAME=	${PORTNAME}_3.4-8
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Everyone's Statistical Software
 
 R_MOD=	yes
