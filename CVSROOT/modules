@@ -7286,6 +7286,7 @@ kwirc                           ports/irc/kwirc
 kxl                             ports/devel/kxl
 kxmleditor                      ports/editors/kxmleditor
 ky-aspell                       ports/textproc/ky-aspell
+kyotocabinet                    ports/databases/kyotocabinet
 kyra                            ports/devel/kyra
 l-breeder                       ports/biology/L-Breeder
 l0pht-watch                     ports/security/l0pht-watch
@@ -19283,6 +19284,19 @@ php5-xmlwriter                  ports/textproc/php5-xmlwriter
 php5-xsl                        ports/textproc/php5-xsl
 php5-zip                        ports/archivers/php5-zip
 php5-zlib                       ports/archivers/php5-zlib
+php52                           ports/lang/php52
+php52-bcmath                    ports/math/php52-bcmath
+php52-bz2                       ports/archivers/php52-bz2
+php52-calendar                  ports/misc/php52-calendar
+php52-ctype                     ports/textproc/php52-ctype
+php52-curl                      ports/ftp/php52-curl
+php52-dba                       ports/databases/php52-dba
+php52-dbase                     ports/databases/php52-dbase
+php52-dom                       ports/textproc/php52-dom
+php52-exif                      ports/graphics/php52-exif
+php52-filter                    ports/security/php52-filter
+php52-ftp                       ports/ftp/php52-ftp
+php52-pcre                      ports/devel/php52-pcre
 php_doc                         ports/lang/php_doc
 phpbb                           ports/www/phpbb
 phpbb-devel                     ports/www/phpbb-devel
