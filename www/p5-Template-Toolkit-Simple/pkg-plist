@@ -1,0 +1,8 @@
+bin/tt-render
+%%SITE_PERL%%/Template/Toolkit/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Toolkit/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Toolkit/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Toolkit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Toolkit
+@dirrmtry %%SITE_PERL%%/Template
