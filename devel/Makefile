@@ -713,6 +713,7 @@
     SUBDIR += libdlmalloc
     SUBDIR += libdlna
     SUBDIR += libdnsres
+    SUBDIR += libdombey
     SUBDIR += libds
     SUBDIR += libdsp
     SUBDIR += libdwarf
