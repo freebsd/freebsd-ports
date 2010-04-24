@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	squidclamav
-PORTVERSION=	4.1
+PORTVERSION=	5.3
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	SF \
-		http://www.samse.fr/GPL/squidclamav/ \
-		http://www.darold.net/projects/squidclamav/
+MASTER_SITES=	SF
 
 MAINTAINER=	llevier@argosnet.com
 COMMENT=	Squid interface to ClamAV
@@ -24,15 +22,15 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 NO_LATEST_LINK=	yes
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/squidclamav etc/squidclamav.conf.dist
+PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.dist
 
 post-configure:
 	@${REINPLACE_CMD} -E 's|^(LDFLAGS = ).*|\1-L${LOCALBASE}/lib|' \
 		${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/squidclamav ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/squidclamav.conf.dist ${PREFIX}/etc
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.dist
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
