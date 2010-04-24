@@ -18,21 +18,23 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby library for approximate string matching and searching
 
 USE_RUBY=	yes
-USE_RUBY_SETUP=	yes
-RUBY_SETUP=	install.rb
-
-INSTALL_TARGET=	site-install
+USE_GMAKE=	yes
+NO_BUILD=	yes # build while install
 
 PLIST_FILES=	bin/agrep.rb %%RUBY_SITELIBDIR%%/amatch/version.rb \
 		%%RUBY_SITEARCHLIBDIR%%/amatch.so
 PLIST_DIRS=	%%RUBY_SITELIBDIR%%/amatch
 
+AMATCH_RUBY=	install.rb
 DOCSDIR=	${RUBY_MODDOCDIR}
 PORTDOCS=	CHANGES README
 
 .include <bsd.port.pre.mk>
 
-post-install:
+do-install:
+	@${ECHO_MSG} "===>  Running ${AMATCH_RUBY} to install"
+	@cd ${INSTALL_WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${AMATCH_RUBY} install
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
