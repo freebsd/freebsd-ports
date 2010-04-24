@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gpclib
-PORTVERSION=	1.4.3
-PORTREVISION=	4
+PORTVERSION=	1.5.1
 CATEGORIES=	math
 PKGNAMEPREFIX=	R-cran-
-DISTNAME=	${PORTNAME}_1.4-3
+DISTNAME=	${PORTNAME}_1.5-1
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	General Polygon Clipping Library for R
 
 R_MOD=	yes
