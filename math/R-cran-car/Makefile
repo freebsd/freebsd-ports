@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	car
-PORTVERSION=	1.2.13
-PORTREVISION=	4
+PORTVERSION=	1.2.16
 CATEGORIES=	math
 PKGNAMEPREFIX=	R-cran-
-DISTNAME=	${PORTNAME}_1.2-13
+DISTNAME=	${PORTNAME}_1.2-16
 
 MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	Companion to Applied Regression for R
