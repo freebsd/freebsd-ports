@@ -47,6 +47,7 @@ include/fxt/aux2/shift2d.h
 include/fxt/aux2/transpose.h
 include/fxt/aux2/transpose2.h
 include/fxt/bits-all.h
+include/fxt/bits/average.h
 include/fxt/bits/bin2naf.h
 include/fxt/bits/bit-dragon3.h
 include/fxt/bits/bit-dragon-r5.h
@@ -185,6 +186,9 @@ include/fxt/comb/composition-ex-colex.h
 include/fxt/comb/composition-rank.h
 include/fxt/comb/cyclic-perm.h
 include/fxt/comb/debruijn.h
+include/fxt/comb/dyck-gray.h
+include/fxt/comb/dyck-gray2.h
+include/fxt/comb/dyck-rgs.h
 include/fxt/comb/endo-enup.h
 include/fxt/comb/fact2num.h
 include/fxt/comb/fact2num2perm.h
@@ -249,7 +253,6 @@ include/fxt/comb/perm-star-swaps.h
 include/fxt/comb/perm-star.h
 include/fxt/comb/perm-trotter-lg.h
 include/fxt/comb/perm-trotter.h
-include/fxt/comb/rgs-binomial.h
 include/fxt/comb/rgs-fincr.h
 include/fxt/comb/rgs-kincr.h
 include/fxt/comb/rgs-maxincr.h
@@ -265,7 +268,6 @@ include/fxt/comb/subset-gray-delta.h
 include/fxt/comb/subset-gray.h
 include/fxt/comb/subset-lex.h
 include/fxt/comb/subset-monotone.h
-include/fxt/comb/tree-gray.h
 include/fxt/complextype.h
 include/fxt/convolution-all.h
 include/fxt/convolution/complexconvolution.h
@@ -690,6 +692,12 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/cyclic-perm-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/debruijn-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/debruijn-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/dyck-rgs-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/dyck-rgs-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/dyck-gray-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/dyck-gray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/dyck-gray2-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/dyck-gray2-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/fact2cyclic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/fact2cyclic-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/fact2perm-demo.cc
@@ -870,8 +878,6 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-trotter-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm2fact-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm2fact-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-binomial-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-binomial-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-fincr-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-fincr-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-kincr-demo.cc
@@ -910,8 +916,6 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/subset-lex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/subset-monotone-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/subset-monotone-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/tree-gray-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/tree-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/coroutine-paren-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/coroutine-paren-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/deque-demo.cc
