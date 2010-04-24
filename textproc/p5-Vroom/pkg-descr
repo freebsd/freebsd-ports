@@ -1,0 +1,15 @@
+Vroom lets you create your slides in a single file using a Wiki-like
+style, much like Spork and Sporx do. The difference is that your slides
+don't compile to HTML or JavaScript or XUL. They get turned into a set
+of files that begin with '0', like '03' or '07c' or '05b.pl'.
+
+The slides are named in alphabetic order. That means you can bring them
+all into a Vim session with the command: vim 0*. vroom --vroom does
+exactly that.
+
+Vroom takes advantage of Vim's syntax highlighting. It also lets you run
+slides that contain code.
+
+Since Vim is an editor, you can change your slides during the show.
+
+WWW:	http://search.cpan.org/dist/Vroom/
