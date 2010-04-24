@@ -17,6 +17,4 @@ PLIST=		${PKGDIR}/pkg-plist.client
 CLIENT_ONLY=	yes
 CONFLICTS=	unixODBC-* virtuoso-*
 
-MANUAL_PACKAGE_BUILD=	yes
-
 .include "${MASTERDIR}/Makefile"
