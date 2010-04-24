@@ -14,6 +14,7 @@ MASTERDIR?=	${.CURDIR}/../lighttpd
 WITH_MYSQL=	yes
 
 EXTRA_PATCHES+=	${.CURDIR}/files/patch-src_http_auth.c
+EXTRA_PATCHES+=	${.CURDIR}/files/patch-src_network.c
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
