@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	josm
-PORTVERSION=	3094
-PORTREVISION=	1
+PORTVERSION=	3196
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/:josm \
 		http://svn.openstreetmap.org/applications/editors/josm/plugins/wmsplugin/:wmsplugin
