@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	indic-ttf
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.8
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/ttf-indic-fonts
 PKGNAMESUFFIX=	-fonts
 DISTNAME=	${PORTNAME:C|(.*)-(.*)|\2-\1|}${PKGNAMESUFFIX}_${PORTVERSION}
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	jacula@FreeBSD.org
 COMMENT=	A collection of truetype Indic fonts
 
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
