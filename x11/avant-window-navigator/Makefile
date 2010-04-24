@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://launchpadlibrarian.net/26374006/ \
 		http://mirror.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dock-like navigation bar
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
