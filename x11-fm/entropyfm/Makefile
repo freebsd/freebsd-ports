@@ -8,7 +8,7 @@
 
 PORTNAME=	entropyfm
 PORTVERSION=	20080223
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 DISTNAME=	entropy-${PORTVERSION}

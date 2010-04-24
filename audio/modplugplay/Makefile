@@ -7,7 +7,7 @@
 
 PORTNAME=	modplugplay
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/modplugplay/ \
 		http://critical.ch/distfiles/ \
