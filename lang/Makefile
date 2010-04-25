@@ -92,6 +92,7 @@
     SUBDIR += gcc43
     SUBDIR += gcc44
     SUBDIR += gcc45
+    SUBDIR += gcc46
     SUBDIR += gcl
     SUBDIR += gdc
     SUBDIR += gforth
