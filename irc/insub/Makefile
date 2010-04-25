@@ -23,12 +23,6 @@ SCRIPT=	${PORTNAME}.pl
 RUN_DEPENDS=	cowsay:${PORTSDIR}/games/cowsay \
 		figlet:${PORTSDIR}/misc/figlet
 
-post-install:
-	@${ECHO}
-	@${ECHO} "    To use insub in irssi, type '/script load insub'"
-	@${ECHO} "    from within the irssi client."
-	@${ECHO}
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPT} ${PREFIX}/bin/${SCRIPT:R}
 	${MKDIR} ${PREFIX}/share/irssi/scripts/
