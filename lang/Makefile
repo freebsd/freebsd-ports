@@ -22,6 +22,7 @@
     SUBDIR += bwbasic
     SUBDIR += caml-light
     SUBDIR += ccl
+    SUBDIR += cdent
     SUBDIR += cduce
     SUBDIR += cfortran
     SUBDIR += chicken
