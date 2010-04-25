@@ -102,7 +102,7 @@ post-patch:
 .endif
 
 pre-build:
-	cd ${WRKSRC} && gmake depend
+	cd ${WRKSRC} && ${GMAKE} depend
 
 post-install:
 	@${RM} -f ${MAN1PREFIX}/man/de.UTF-8/man1/wine.1 \
