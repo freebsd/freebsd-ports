@@ -9,7 +9,7 @@ PORTNAME=	Var_Dump
 PORTVERSION=	1.0.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides methods for dumping structured information about a variable
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

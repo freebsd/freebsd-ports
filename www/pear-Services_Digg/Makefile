@@ -9,7 +9,7 @@ PORTNAME=	Services_Digg
 PORTVERSION=	0.4.7
 CATEGORIES=	www pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP interface to Digg's API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

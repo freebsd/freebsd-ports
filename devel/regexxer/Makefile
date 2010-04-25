@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=		devel textproc gnome
 MASTER_SITES=		SF
 
-MAINTAINER=		bg1tpt@gmail.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An interactive tool for performing search and replace operations
 
 LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \

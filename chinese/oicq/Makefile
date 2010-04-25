@@ -11,7 +11,7 @@ CATEGORIES=	chinese net
 MASTER_SITES=	SF/perl-${PORTNAME}/perl-${PORTNAME}/Net-OICQ-${PORTVERSION}
 DISTNAME=	Net-OICQ-${PORTVERSION}
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implements OICQ messaging protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \

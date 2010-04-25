@@ -9,7 +9,7 @@ PORTNAME=	VFS
 PORTVERSION=	0.3.0
 CATEGORIES=	devel pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Virtual File System API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

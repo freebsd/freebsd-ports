@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module that provides the Musepack decoding interface
 
 LIB_DEPENDS=	mpcdec:${PORTSDIR}/audio/libmpcdec

@@ -10,7 +10,7 @@ PORTVERSION=	0.12.0
 PORTREVISION=	1
 CATEGORIES=	net www pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR SOAP Client/Server for PHP
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \

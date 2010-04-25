@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Round Robin Database Tools
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
