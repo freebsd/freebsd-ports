@@ -41,7 +41,7 @@ share/gcc-%%GCC_VER%%/python/libstdcxx/v6/printers.py
 %%JAVA%%bin/jcf-dump%%SUFFIX%%
 %%JAVA%%bin/jv-convert%%SUFFIX%%
 %%JAVA%%bin/rebuild-gcj-db%%SUFFIX%%
-%%JAVA%%libdata/pkgconfig/libgcj-4.5.pc
+%%JAVA%%libdata/pkgconfig/libgcj-4.6.pc
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
 %%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
 %%JAVA%%share/python/aotcompile.py
