@@ -96,12 +96,6 @@ LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
 CONFIGURE_ARGS+=	--disable-musepack
 .endif
 
-.if !defined(WITHOUT_DTS)
-LIB_DEPENDS+=		dca.0:${PORTSDIR}/multimedia/libdca
-.else
-CONFIGURE_ARGS+=	--disable-libdca
-.endif
-
 .if !defined(WITHOUT_SPEEX)
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 .else
@@ -160,7 +154,7 @@ CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 
 .if defined(WITH_LIBCDIO) && !defined(WITH_CDPARANOIA)
-BUILD_DEPENDS+=	${LOCALBASE}/include/cdio/cdio.h:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio
 .else
 CONFIGURE_ARGS+=	--disable-libcdio
 .endif

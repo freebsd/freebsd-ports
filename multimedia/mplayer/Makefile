@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
+PORTREVISION=	1
 
 COMMENT=	High performance media player supporting many formats
 
@@ -42,7 +43,6 @@ OPTIONS+=	SVGALIB "Enable svgalib support" off
 OPTIONS+=	LIBDV "Enable libdv support" off
 OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
 OPTIONS+=	AMR "Enable opencore AMR audio codec support" off
-OPTIONS+=	DTS "Enable DTS audio codec support" on
 OPTIONS+=	LIBMPCDEC "Enable libmpcdec support" off
 OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
 OPTIONS+=	SPEEX "Enable speex audio codec support" on
@@ -74,6 +74,7 @@ CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 CONFIGURE_ARGS+=	--disable-ssse3 \
 			--disable-directfb \
 			--disable-faac \
+			--disable-libdca \
 			--disable-twolame \
 			--disable-x264 \
 			--disable-xvid \
