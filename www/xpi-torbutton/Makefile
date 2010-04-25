@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	torbutton
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.torproject.org/torbutton/releases/
 
