@@ -1,0 +1,6 @@
+This library's module, Test::XPath, provides an interface for testing the
+content and structure of XML and HTML documents using XPath query expressions.
+This will be most useful for those who need to write TAP-emitting unit tests
+for HTML or XML output.
+
+WWW: http://search.cpan.org/dist/Test-XPath/
