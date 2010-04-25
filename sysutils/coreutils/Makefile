@@ -24,14 +24,6 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 #USE_BISON=	yes
 
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.else
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.endif
-
 INFO=		coreutils
 
 MAN1=	gbasename.1 gcat.1 gchcon.1 gchgrp.1 gchmod.1 gchown.1 gchroot.1 \
@@ -48,6 +40,24 @@ MAN1=	gbasename.1 gcat.1 gchcon.1 gchgrp.1 gchmod.1 gchown.1 gchroot.1 \
 	gtsort.1 gtty.1 guname.1 gunexpand.1 guniq.1 gunlink.1 guptime.1 \
 	gusers.1 gvdir.1 gwc.1 gwho.1 gwhoami.1 gyes.1 gbase64.1 gsha224sum.1 \
 	gsha256sum.1 gsha384sum.1 gsha512sum.1 gshuf.1
+
+OPTIONS=	GMP "Build with GNU Multiple Precision Arithmetic Library" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITH_GMP)
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+.else
+CONFIGURE_ARGS+=--without-gmp
+.endif
 
 .include <bsd.port.pre.mk>
 
