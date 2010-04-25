@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cx88
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	multimedia kld
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
@@ -15,7 +15,7 @@ COMMENT=	Drivers for Conexant CX23880/1/2/3/5/7/8-based TV/radio capture cards
 
 LIB_DEPENDS=	tuner.1:${PORTSDIR}/multimedia/libtuner
 BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:${PORTSDIR}/textproc/ezxml \
-		libtuner>=1.0.4:${PORTSDIR}/multimedia/libtuner
+		libtuner>=1.0.5:${PORTSDIR}/multimedia/libtuner
 
 KMODDIR=	/boot/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
@@ -26,12 +26,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 .if ${OSVERSION} < 700055
 IGNORE=		requires FreeBSD 7.0-RELEASE or later
-.elif ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
 .endif
 
 .if !exists(/usr/src/sys/Makefile)
