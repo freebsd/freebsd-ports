@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 PORTEPOCH=	1
 CATEGORIES=	math pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A package that produces combinations and permutations
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

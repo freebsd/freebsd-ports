@@ -9,7 +9,7 @@ PORTNAME=	File_Bittorrent2
 DISTVERSION=	1.3.1
 CATEGORIES=	net pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decode and Encode data in Bittorrent format
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

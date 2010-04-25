@@ -9,7 +9,7 @@ PORTNAME=	File_Fortune
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interface for reading from and writing to fortune files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

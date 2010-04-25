@@ -9,7 +9,7 @@ PORTNAME=	Net_URL2
 PORTVERSION=	0.2.0
 CATEGORIES=	net www pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy parsing of Urls
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

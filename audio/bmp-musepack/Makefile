@@ -12,7 +12,7 @@ MASTER_SITES=	http://files.musepack.net/linux/plugins/
 PKGNAMEPREFIX=	bmp-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Musepack decoder for beep-media-player
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \

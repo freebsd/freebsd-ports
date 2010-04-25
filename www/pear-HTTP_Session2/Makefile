@@ -9,7 +9,7 @@ PORTNAME=	HTTP_Session2
 PORTVERSION=	0.7.2
 CATEGORIES=	www devel pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP5 Session Handler
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

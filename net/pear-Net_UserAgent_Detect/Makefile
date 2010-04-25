@@ -9,7 +9,7 @@ PORTNAME=	Net_UserAgent_Detect
 PORTVERSION=	2.5.1
 CATEGORIES=	net www pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class that detects web browser, version and platform
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

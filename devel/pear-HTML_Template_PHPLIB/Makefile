@@ -9,7 +9,7 @@ PORTNAME=	HTML_Template_PHPLIB
 PORTVERSION=	1.5.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR template API ported from PHPLIB
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

@@ -9,7 +9,7 @@ PORTNAME=	Net_MAC
 PORTVERSION=	0.1.5
 CATEGORIES=	net pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class that validates and formats MAC addresses
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

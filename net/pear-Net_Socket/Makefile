@@ -9,7 +9,7 @@ PORTNAME=	Net_Socket
 PORTVERSION=	1.0.9
 CATEGORIES=	net www pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Network Socket Interface
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

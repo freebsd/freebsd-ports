@@ -10,7 +10,7 @@ PORTVERSION=	1.3.0
 PORTEPOCH=	2
 CATEGORIES=	sysutils www pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR common file and directory routines
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear

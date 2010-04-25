@@ -9,7 +9,7 @@ PORTNAME=	Net_Ping
 PORTVERSION=	2.4.5
 CATEGORIES=	net pear
 
-MAINTAINER=	bg1tpt@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to execute ping
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
