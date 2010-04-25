@@ -166,6 +166,7 @@ include/wine/windows/d3dx9math.h
 include/wine/windows/d3dx9math.inl
 include/wine/windows/d3dx9mesh.h
 include/wine/windows/d3dx9shader.h
+include/wine/windows/d3dx9shape.h
 include/wine/windows/d3dx9tex.h
 include/wine/windows/dbccmd.idl
 include/wine/windows/dbcses.idl
@@ -963,6 +964,7 @@ lib/wine/fakedlls/nddeapi.dll
 lib/wine/fakedlls/net.exe
 lib/wine/fakedlls/netapi32.dll
 lib/wine/fakedlls/newdev.dll
+lib/wine/fakedlls/ngen.exe
 lib/wine/fakedlls/notepad.exe
 lib/wine/fakedlls/ntdll.dll
 lib/wine/fakedlls/ntdsapi.dll
@@ -1414,6 +1416,7 @@ lib/wine/nddeapi.dll.so
 lib/wine/net.exe.so
 lib/wine/netapi32.dll.so
 lib/wine/newdev.dll.so
+lib/wine/ngen.exe.so
 lib/wine/notepad.exe.so
 lib/wine/ntdll.dll.so
 lib/wine/ntdsapi.dll.so
