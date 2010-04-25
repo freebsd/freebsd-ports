@@ -47,6 +47,14 @@
 %%XPI_XPIDIR%%/locale/ca-AD/gm-manage.properties
 %%XPI_XPIDIR%%/locale/ca-AD/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/ca-AD/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/ca-ES/gm-browser.properties
+%%XPI_XPIDIR%%/locale/ca-ES/gm-manage.properties
+%%XPI_XPIDIR%%/locale/ca-ES/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/ca-ES/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/cs/gm-browser.properties
+%%XPI_XPIDIR%%/locale/cs/gm-manage.properties
+%%XPI_XPIDIR%%/locale/cs/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/cs/greasemonkey.properties
 %%XPI_XPIDIR%%/locale/cs-CZ/gm-browser.properties
 %%XPI_XPIDIR%%/locale/cs-CZ/gm-manage.properties
 %%XPI_XPIDIR%%/locale/cs-CZ/greasemonkey.dtd
@@ -79,6 +87,10 @@
 %%XPI_XPIDIR%%/locale/fi-FI/gm-manage.properties
 %%XPI_XPIDIR%%/locale/fi-FI/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/fi-FI/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/fr/gm-browser.properties
+%%XPI_XPIDIR%%/locale/fr/gm-manage.properties
+%%XPI_XPIDIR%%/locale/fr/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/fr/greasemonkey.properties
 %%XPI_XPIDIR%%/locale/fr-FR/gm-browser.properties
 %%XPI_XPIDIR%%/locale/fr-FR/gm-manage.properties
 %%XPI_XPIDIR%%/locale/fr-FR/greasemonkey.dtd
@@ -171,6 +183,10 @@
 %%XPI_XPIDIR%%/locale/uk-UA/gm-manage.properties
 %%XPI_XPIDIR%%/locale/uk-UA/greasemonkey.dtd
 %%XPI_XPIDIR%%/locale/uk-UA/greasemonkey.properties
+%%XPI_XPIDIR%%/locale/vi/gm-browser.properties
+%%XPI_XPIDIR%%/locale/vi/gm-manage.properties
+%%XPI_XPIDIR%%/locale/vi/greasemonkey.dtd
+%%XPI_XPIDIR%%/locale/vi/greasemonkey.properties
 %%XPI_XPIDIR%%/locale/vi-VN/gm-browser.properties
 %%XPI_XPIDIR%%/locale/vi-VN/gm-manage.properties
 %%XPI_XPIDIR%%/locale/vi-VN/greasemonkey.dtd
@@ -191,6 +207,8 @@
 @dirrm %%XPI_XPIDIR%%/locale/ar-SA
 @dirrm %%XPI_XPIDIR%%/locale/bn-IN
 @dirrm %%XPI_XPIDIR%%/locale/ca-AD
+@dirrm %%XPI_XPIDIR%%/locale/ca-ES
+@dirrm %%XPI_XPIDIR%%/locale/cs
 @dirrm %%XPI_XPIDIR%%/locale/cs-CZ
 @dirrm %%XPI_XPIDIR%%/locale/da-DK
 @dirrm %%XPI_XPIDIR%%/locale/de-DE
@@ -199,6 +217,7 @@
 @dirrm %%XPI_XPIDIR%%/locale/eu-ES
 @dirrm %%XPI_XPIDIR%%/locale/fa-IR
 @dirrm %%XPI_XPIDIR%%/locale/fi-FI
+@dirrm %%XPI_XPIDIR%%/locale/fr
 @dirrm %%XPI_XPIDIR%%/locale/fr-FR
 @dirrm %%XPI_XPIDIR%%/locale/gl-ES
 @dirrm %%XPI_XPIDIR%%/locale/he
@@ -222,6 +241,7 @@
 @dirrm %%XPI_XPIDIR%%/locale/sv-SE
 @dirrm %%XPI_XPIDIR%%/locale/tr-TR
 @dirrm %%XPI_XPIDIR%%/locale/uk-UA
+@dirrm %%XPI_XPIDIR%%/locale/vi
 @dirrm %%XPI_XPIDIR%%/locale/vi-VN
 @dirrm %%XPI_XPIDIR%%/locale/zh-CN
 @dirrm %%XPI_XPIDIR%%/locale/zh-TW
