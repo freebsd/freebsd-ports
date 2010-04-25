@@ -1,0 +1,20 @@
+--- ./check_smartmon.orig	2010-03-18 18:56:53.000000000 +0100
++++ ./check_smartmon	2010-04-23 22:53:13.000000000 +0200
+@@ -229,11 +229,14 @@
+         # fi
+ 
+         if temperature > criticalThreshold:
+-                return (2, "CRITICAL: device temperature (%d) exceeds critical temperature threshold (%s)" % (temperature, criticalThreshold))
++                return (2, "CRITICAL: device temperature (%d) exceeds critical temperature threshold (%s)|TEMP=%d;%d;%d;" 
++			% (temperature, criticalThreshold, temperature, warningThreshold, criticalThreshold))
+         elif temperature > warningThreshold:
+-                return (1, "WARNING: device temperature (%d) exceeds warning temperature threshold (%s)" % (temperature, warningThreshold))
++                return (1, "WARNING: device temperature (%d) exceeds warning temperature threshold (%s)|TEMP=%d;%d;%d;" 
++			% (temperature, warningThreshold, temperature, warningThreshold, criticalThreshold))
+         else:
+-                return (0, "OK: device is functional and stable (temperature: %d)" % temperature)
++                return (0, "OK: device is functional and stable (temperature: %d)|TEMP=%d;%d;%d;" 
++			% (temperature,  temperature, warningThreshold, criticalThreshold))
+         # fi
+ # end
+ 
