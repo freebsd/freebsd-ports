@@ -1,10 +1,10 @@
---- net/monitor.cpp.orig	2007-12-21 16:55:30.000000000 +0600
-+++ net/monitor.cpp	2008-03-27 06:20:09.000000000 +0600
-@@ -33,6 +33,7 @@
+--- ./engine/net/scanner.cpp.orig	2009-12-25 16:40:23.000000000 +0300
++++ ./engine/net/scanner.cpp	2010-04-25 13:10:51.760938402 +0400
+@@ -15,6 +15,7 @@
  #else
  #	include <sys/socket.h>
  #	include <netinet/in.h>
 +#	include <netinet/in_systm.h>
  #	include <netinet/ip.h> /* superset of previous */
  #	include <arpa/inet.h>
- #	include <netdb.h>
+ #endif

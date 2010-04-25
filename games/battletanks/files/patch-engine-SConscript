@@ -1,8 +1,8 @@
---- SConscript.orig	2007-12-21 15:36:00.000000000 +0600
-+++ SConscript	2008-03-27 06:26:45.000000000 +0600
-@@ -68,17 +68,17 @@
+--- engine/SConscript.orig	2009-12-30 14:50:33.000000000 +0100
++++ engine/SConscript	2010-01-13 23:58:23.000000000 +0100
+@@ -79,17 +79,17 @@
  
- if sys.platform != 'win32' and env['enable_lua']:
+ if sys.platform != 'win32':
  	got_lua = False
 -	for lua in ['lua5.1', 'lua5.0', 'lua']: 
 +	for lua in ['lua-5.1', 'lua-5.0', 'lua']: 
@@ -19,5 +19,5 @@
 -		raise Exception("Cannot find lua5.1/lua5.0 or lua pkg-config information")
 +		raise Exception("Cannot find lua-5.1/lua-5.0 or lua pkg-config information")
  
- if env['enable_lua']: 
- 	env.Append(CPPDEFINES=['ENABLE_LUA'])
+ env.Append(CPPDEFINES=['ENABLE_LUA'])
+ bt_sources.append('luaxx/state.cpp')
