@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=--enable-imfexamples
 
 # must be explicitely linked with -l{thr|pthread}
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
-PTHREAD_LIBS+=	`${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}`
+PTHREAD_LIBS+= `${CC} -dumpspecs | ${SED} -ne '/%{\!pg: %{pthread:/s/^.*%{\!pg: %{pthread:\([^}]*\)}.*$$/\1/p' || ${TRUE}`
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -47,8 +47,5 @@ test check:	build
 #.endif
 #.endif
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not configure on powerpc
-.endif
 
 .include <bsd.port.post.mk>
