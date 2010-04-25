@@ -1,6 +1,7 @@
 bin/d2asc
 bin/kst
 bin/kstcmd
+bin/planckDateRange
 include/kst_export.h
 include/kstdatasource.h
 include/kstdateparser.h
@@ -136,9 +137,15 @@ lib/kde3/kstobject_periodogram.so
 lib/kde3/kstobject_phase.a
 lib/kde3/kstobject_phase.la
 lib/kde3/kstobject_phase.so
+lib/kde3/kstobject_planckLatestDate.a
+lib/kde3/kstobject_planckLatestDate.la
+lib/kde3/kstobject_planckLatestDate.so
 lib/kde3/kstobject_polynomial.a
 lib/kde3/kstobject_polynomial.la
 lib/kde3/kstobject_polynomial.so
+lib/kde3/kstobject_reverse.a
+lib/kde3/kstobject_reverse.la
+lib/kde3/kstobject_reverse.so
 lib/kde3/kstobject_shift.a
 lib/kde3/kstobject_shift.la
 lib/kde3/kstobject_shift.so
@@ -360,6 +367,7 @@ share/doc/HTML/da/kst/tutorial.docbook
 share/doc/HTML/de/kst/dcop-chapter.docbook
 share/doc/HTML/de/kst/intro-chapter.docbook
 share/doc/HTML/de/kst/license-chapter.docbook
+share/doc/HTML/en/kst/CMakeLists.txt
 share/doc/HTML/en/kst/Diagram-kst-data-datatypes.png
 share/doc/HTML/en/kst/Diagram-kst-data-framesconcept.png
 share/doc/HTML/en/kst/Diagram-kst-data-matrix.png
@@ -385,6 +393,7 @@ share/doc/HTML/en/kst/Formula-kst-linefitequation.png
 share/doc/HTML/en/kst/Formula-kst-linefitsumofsquaredresiduals.png
 share/doc/HTML/en/kst/Formula-kst-lorentzianfitequation.png
 share/doc/HTML/en/kst/Formula-kst-lowpass.png
+share/doc/HTML/en/kst/Formula-kst-normalization.png
 share/doc/HTML/en/kst/Formula-kst-polynomialfitequation.png
 share/doc/HTML/en/kst/Formula-kst-sinusoidfitequation.png
 share/doc/HTML/en/kst/Formulat-kst-DFT-freq.png
@@ -521,8 +530,10 @@ share/doc/HTML/en/kst/Screenshot-kst-plugins-highpassfilter.png
 share/doc/HTML/en/kst/Screenshot-kst-plugins-interpolation-eg.png
 share/doc/HTML/en/kst/Screenshot-kst-plugins-interpolationakimaspline.png
 share/doc/HTML/en/kst/Screenshot-kst-plugins-noiseaddition.png
+share/doc/HTML/en/kst/Screenshot-kst-plugins-normalization.png
 share/doc/HTML/en/kst/Screenshot-kst-plugins-periodogram.png
 share/doc/HTML/en/kst/Screenshot-kst-plugins-phase.png
+share/doc/HTML/en/kst/Screenshot-kst-plugins-reverse.png
 share/doc/HTML/en/kst/Screenshot-kst-plugins-shift.png
 share/doc/HTML/en/kst/Screenshot-kst-plugins-statistics.png
 share/doc/HTML/en/kst/Screenshot-kst-plugins-syncbin.png
@@ -1033,7 +1044,9 @@ share/services/kst/kstobject_noise_addition.desktop
 share/services/kst/kstobject_normalization.desktop
 share/services/kst/kstobject_periodogram.desktop
 share/services/kst/kstobject_phase.desktop
+share/services/kst/kstobject_planckLatestDate.desktop
 share/services/kst/kstobject_polynomial.desktop
+share/services/kst/kstobject_reverse.desktop
 share/services/kst/kstobject_shift.desktop
 share/services/kst/kstobject_spectral_normalization.desktop
 share/services/kst/kstobject_statistics.desktop
