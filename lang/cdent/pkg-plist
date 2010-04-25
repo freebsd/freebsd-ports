@@ -1,0 +1,2 @@
+bin/cdent
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
