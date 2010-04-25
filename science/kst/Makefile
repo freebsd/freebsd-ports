@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	1.8.0
-PORTREVISION=	4
+PORTVERSION=	1.9.1
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/scientific
@@ -30,7 +29,7 @@ OPTIONS=	NETCDF "Enable netcdf file support" off \
 
 MAN1=		kst.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_NETCDF)
 LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
@@ -53,6 +52,7 @@ pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${SH} admin/cvs.sh dist)
 	@${REINPLACE_CMD} -e 's|@kde_widgetdir@|@prefix@/lib/kde3/plugins/designer|' \
 		${WRKSRC}/kst/src/widgets/Makefile.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|et||;/^SUBDIRS/s|pt||' ${WRKSRC}/doc/Makefile.in
 .if !defined(WITH_NETCDF)
 	@${REINPLACE_CMD} -e 's| netcdf||g' ${WRKSRC}/kst/src/datasources/Makefile.in
 .endif
@@ -60,4 +60,4 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's| cdf||g' ${WRKSRC}/kst/src/datasources/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
