@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
+
 CATEGORIES=	math
 
 MASTERDIR=	${.CURDIR}/../../lang/php52
