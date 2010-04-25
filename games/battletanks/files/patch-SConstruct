@@ -1,30 +1,21 @@
---- SConstruct.orig	2007-12-21 19:45:15.000000000 +0600
-+++ SConstruct	2008-03-27 04:41:37.000000000 +0600
-@@ -1,7 +1,7 @@
- import os, sys
- 
- #builder for static libraries
--env = Environment()
-+env = Environment(ENV = os.environ)
- 
- picLibBuilder = Builder(
- 		action = Action('$ARCOM'),
-@@ -53,6 +53,8 @@
+--- SConstruct.orig	2009-12-10 15:58:55.000000000 +0100
++++ SConstruct	2010-01-16 17:07:22.000000000 +0100
+@@ -57,6 +57,8 @@
  	env['CXXFLAGS'] += SCons.Util.CLVar(os.environ['CXXFLAGS'])
  if os.environ.has_key('LDFLAGS'):
  	env['LINKFLAGS'] += SCons.Util.CLVar(os.environ['LDFLAGS'])
 +if os.environ.has_key('CPPPATH'):
 +	env['CPPPATH'] = os.environ['CPPPATH'].split()
  
- if (env['gcc_visibility']): 
- 	env.Append(CCFLAGS=' -fvisibility-inlines-hidden -fvisibility=hidden -DGCC_HASCLASSVISIBILITY ')
-@@ -97,9 +99,6 @@
+ if (sys.platform != "win32" and env['gcc_visibility']): 
+ 	env.Append(CCFLAGS=['-fvisibility=hidden', '-DGCC_HASCLASSVISIBILITY'])
+@@ -98,9 +100,6 @@
  	if debug:
- 		env.Append(CCFLAGS='-ggdb ')
- 		env.Append(CPPFLAGS='-ggdb ')
+ 		env.Append(CCFLAGS=['-ggdb', '-D_FORTIFY_SOURCE=2'])
+ 		env.Append(CPPFLAGS=['-ggdb', '-D_FORTIFY_SOURCE=2'])
 -	else: 
--		env.Append(CCFLAGS='-O3 ')
--		env.Append(CPPFLAGS='-O3 ')
+-		env.Append(CCFLAGS=['-O3'])
+-		env.Append(CPPFLAGS=['-O3'])
  		
- 	al_lib = 'openal'
- 	env.Append(CPPFLAGS=' -Wall -pedantic -Wno-long-long -pipe -pthread ')
+ 	env.Append(CPPFLAGS=['-Wall', '-Wno-deprecated', '-pedantic', '-Wno-long-long', '-pipe', '-pthread'])
+ 	env.Append(CCFLAGS=['-Wall', '-Wno-deprecated', '-pedantic', '-Wno-long-long', '-pipe', '-pthread'])
