@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pd
-DISTVERSION=	0.42-5
+DISTVERSION=	0.42-6
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
