@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	go
-PORTVERSION=	20100113
+PORTVERSION=	20100413
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -22,10 +22,6 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKEFILE=	${WRKSRC}/src/Makefile
-.if !defined(MAINTAINER_MODE)
-ALL_TARGET=	build
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -48,6 +44,23 @@ PLIST_SUB+=	ARCH=${GOARCH}		\
 pre-build:
 	@${MKDIR} ${GOBIN}
 
+.if !defined(MAINTAINER_MODE)
+do-build:
+	(cd ${WRKSRC}/src &&		\
+		GOROOT=${WRKSRC}	\
+		GOARCH=${GOARCH}	\
+		GOBIN=${GOBIN}		\
+		GOOS=freebsd		\
+		bash make.bash)
+.else
+	(cd ${WRKSRC}/src &&		\
+		GOROOT=${WRKSRC}	\
+		GOARCH=${GOARCH}	\
+		GOBIN=${GOBIN}		\
+		GOOS=freebsd		\
+		bash all.bash)
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE} | ${SED}		\
 		-e "s|%%PREFIX%%|${PREFIX}|g"	\
@@ -60,11 +73,11 @@ do-install:
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
 	${INSTALL} -d -m 0755 ${DATADIR}
-	${INSTALL} -d -m 0755 ${PREFIX}/lib/go
+	${INSTALL} -d -m 0755 ${PREFIX}/lib/go/pkg
 	${INSTALL} -m 0644 ${WRKSRC}/src/Make.${GOARCH} ${DATADIR}
 	${INSTALL} -m 0644 ${WRKSRC}/src/Make.pkg ${DATADIR}
 	${INSTALL} -m 0644 ${WRKSRC}/src/Make.cmd ${DATADIR}
-	${CP} -R ${WRKSRC}/pkg/ ${PREFIX}/lib/go
-	${CP} -R ${WRKDIR}/bin/ ${PREFIX}/bin
+	${CP} -R ${WRKSRC}/pkg/* ${PREFIX}/lib/go/pkg/
+	${CP} -R ${WRKDIR}/bin/* ${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
