@@ -6,6 +6,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
+PORTREVISION=	1
 COMMENT=	Convenient video file and movie encoder
 NO_PACKAGE=	Port has restricted dependencies
 
@@ -25,7 +26,6 @@ OPTIONS+=	LIBDV "Enable libdv support" off
 OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
 OPTIONS+=	AMR "Enable opencore AMR audio codec support" off
 OPTIONS+=	TWOLAME "Enable twolame MPEG audio codec support" off
-OPTIONS+=	DTS "Enable DTS audio codec support" on
 OPTIONS+=	LIBMPCDEC "Enable libmpcdec support" off
 OPTIONS+=	FAAC "Enable FAAC audio codec support" off
 OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
@@ -65,6 +65,7 @@ BUILD_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 CONFIGURE_ARGS+=	--disable-mplayer \
+			--disable-libdca \
 			--disable-x11 \
 			--disable-vdpau \
 			--disable-fontconfig \
