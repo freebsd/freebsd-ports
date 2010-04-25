@@ -231,6 +231,7 @@
     SUBDIR += p5-Switch
     SUBDIR += p5-Tcl
     SUBDIR += p5-Try-Tiny
+    SUBDIR += p5-TryCatch
     SUBDIR += p5-ePerl
     SUBDIR += p5-signatures
     SUBDIR += p5-v6
