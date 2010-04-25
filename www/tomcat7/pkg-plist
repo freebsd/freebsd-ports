@@ -474,6 +474,8 @@
 %%T%%/webapps/host-manager/manager.xml
 %%T%%/webapps/manager/401.jsp
 %%T%%/webapps/manager/META-INF/context.xml
+%%T%%/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
+%%T%%/webapps/manager/WEB-INF/jsp/sessionsList.jsp
 %%T%%/webapps/manager/WEB-INF/web.xml
 %%T%%/webapps/manager/images/add.gif
 %%T%%/webapps/manager/images/asf-logo.gif
@@ -484,8 +486,6 @@
 %%T%%/webapps/manager/images/tomcat.gif
 %%T%%/webapps/manager/images/update.gif
 %%T%%/webapps/manager/images/void.gif
-%%T%%/webapps/manager/sessionDetail.jsp
-%%T%%/webapps/manager/sessionsList.jsp
 %%T%%/webapps/manager/status.xsd
 %%T%%/webapps/manager/xform.xsl
 @exec mkdir %D/%%T%%/endorsed 2>/dev/null || true
@@ -494,6 +494,7 @@
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/conf %D/%%T%%/logs %D/%%T%%/temp %D/%%T%%/webapps %D/%%T%%/work
 @dirrmtry %%T%%/work
 @dirrm %%T%%/webapps/manager/images
+@dirrm %%T%%/webapps/manager/WEB-INF/jsp
 @dirrm %%T%%/webapps/manager/WEB-INF
 @dirrm %%T%%/webapps/manager/META-INF
 @dirrm %%T%%/webapps/manager
