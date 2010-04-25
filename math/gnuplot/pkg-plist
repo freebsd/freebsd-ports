@@ -1,7 +1,6 @@
 bin/gnuplot
 bin/lasergnu
-lib/X11/app-defaults/Gnuplot
-%%X11%%libexec/gnuplot/4.2/gnuplot_x11
+%%X11%%libexec/gnuplot/4.4/gnuplot_x11
 %%PORTDOCS%%%%DOCSDIR%%/gnuplot.dvi
 %%PORTDOCS%%%%DOCSDIR%%/gnuplot.ps
 %%PORTDOCS%%%%DOCSDIR%%/gnuplot.txt
@@ -23,6 +22,7 @@ lib/X11/app-defaults/Gnuplot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/all.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animate.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/animate2.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/approximate.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arrowstyle.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arrowstyle.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/asciimat.dat
@@ -33,22 +33,32 @@ lib/X11/app-defaults/Gnuplot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/binary3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bivariat.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bldg.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blutux.rgb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/borders.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/candlesticks.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/candlesticks.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/charset.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/circles.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cities.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cities.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/clip14in.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/colorscheme.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/colorwheel.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contours.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/controls.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ctg-y2.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dashcolor.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datastrings.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/delaunay-edges.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.edf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/density.fnc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dgrid3d.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/discrete.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/electron.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ellipse.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/empty-circles.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/enhanced_utf8.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/enhancedtext.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/epslatex.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fillbetween.dem
@@ -57,29 +67,47 @@ lib/X11/app-defaults/Gnuplot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/finance.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/finance.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fit.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fit3.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fontfile.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fontfile_latex.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/glass.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnu-valley
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnuplot.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gnuplot.rot
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gpdemos.tcl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/heatmaps.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hemisphr.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hexa.fnc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hidden.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hidden2.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/histerror.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/histograms.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/histograms2.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/histopt.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/Makefile.canvas
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/Makefile.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/canvas_utf8.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/gnuplot_demo.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/index.canvas
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/index.save
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/index.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/mousebox.template
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/webify.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/webify_canvas.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html/webify_svg.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/image.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/image2.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/imageNaN.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/immigration.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/iterate.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/key.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/klein.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/labelplot.pdb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layout.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lcdemo.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lena-keypoints.bin
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lena.rgb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/line.fnc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macros.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/margins.dem
@@ -90,9 +118,12 @@ lib/X11/app-defaults/Gnuplot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mouselab_2.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mouselabels.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mousevariables.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multiaxis.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multimsh.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multipalette.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multiplt.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nearmap.csv
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/optimize.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/param.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pm3d.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pm3dcolors.dem
@@ -103,11 +134,14 @@ lib/X11/app-defaults/Gnuplot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prob.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prob2.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rainbow.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/random-points
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/random.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rectangle.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/reflect.fnc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rgb_variable.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rgb_variable.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rgbalpha.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/running_avg.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scatter.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scatter2.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scatter2.dat
@@ -115,6 +149,7 @@ lib/X11/app-defaults/Gnuplot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sine.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/singulr.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smooth.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sound.par
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sound2.par
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/soundvel.dat
@@ -134,6 +169,8 @@ lib/X11/app-defaults/Gnuplot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tics.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timedat.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timedat.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transparent.dem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/transparent_solids.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/triangle.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/using.bin
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/using.dat
@@ -145,28 +182,48 @@ lib/X11/app-defaults/Gnuplot
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/world.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/world.dem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/world2.dem
-%%DATADIR%%/4.2/PostScript/8859-1.ps
-%%DATADIR%%/4.2/PostScript/8859-15.ps
-%%DATADIR%%/4.2/PostScript/8859-2.ps
-%%DATADIR%%/4.2/PostScript/cp1250.ps
-%%DATADIR%%/4.2/PostScript/cp437.ps
-%%DATADIR%%/4.2/PostScript/cp850.ps
-%%DATADIR%%/4.2/PostScript/cp852.ps
-%%DATADIR%%/4.2/PostScript/koi8r.ps
-%%DATADIR%%/4.2/PostScript/koi8u.ps
-%%DATADIR%%/4.2/PostScript/prologue.ps
-%%DATADIR%%/4.2/gnuplot.gih
+%%DATADIR%%/4.4/PostScript/8859-1.ps
+%%DATADIR%%/4.4/PostScript/8859-15.ps
+%%DATADIR%%/4.4/PostScript/8859-2.ps
+%%DATADIR%%/4.4/PostScript/8859-9.ps
+%%DATADIR%%/4.4/PostScript/aglfn.txt
+%%DATADIR%%/4.4/PostScript/cp1250.ps
+%%DATADIR%%/4.4/PostScript/cp437.ps
+%%DATADIR%%/4.4/PostScript/cp850.ps
+%%DATADIR%%/4.4/PostScript/cp852.ps
+%%DATADIR%%/4.4/PostScript/koi8r.ps
+%%DATADIR%%/4.4/PostScript/koi8u.ps
+%%DATADIR%%/4.4/PostScript/prologue.ps
+%%DATADIR%%/4.4/PostScript/utf-8.ps
+%%DATADIR%%/4.4/app-defaults/Gnuplot
+%%DATADIR%%/4.4/gnuplot.gih
+%%DATADIR%%/4.4/js/README
+%%DATADIR%%/4.4/js/canvasmath.js
+%%DATADIR%%/4.4/js/canvastext.js
+%%DATADIR%%/4.4/js/gnuplot_common.js
+%%DATADIR%%/4.4/js/gnuplot_mouse.css
+%%DATADIR%%/4.4/js/gnuplot_mouse.js
+%%DATADIR%%/4.4/js/grid.png
+%%DATADIR%%/4.4/js/help.png
+%%DATADIR%%/4.4/js/nextzoom.png
+%%DATADIR%%/4.4/js/previouszoom.png
+%%DATADIR%%/4.4/js/textzoom.png
+%%DATADIR%%/4.4/lua/gnuplot-tikz.lua
+%%TETEX%%share/texmf-local/tex/latex/gnuplot/gnuplot-lua-tikz.sty
 %%TETEX%%share/texmf-local/tex/latex/gnuplot/gnuplot.cfg
-%%TETEX%%@dirrm share/texmf-local/tex/latex/gnuplot
+@dirrm share/texmf-local/tex/latex/gnuplot
 @dirrmtry share/texmf-local/tex/latex
 @dirrmtry share/texmf-local/tex
 @dirrmtry share/texmf-local
-@dirrm %%DATADIR%%/4.2/PostScript
-@dirrm %%DATADIR%%/4.2
+@dirrm %%DATADIR%%/4.4/lua
+@dirrm %%DATADIR%%/4.4/js
+@dirrm %%DATADIR%%/4.4/app-defaults
+@dirrm %%DATADIR%%/4.4/PostScript
+@dirrm %%DATADIR%%/4.4
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/html
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/psdoc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/gnuplot/4.2
+@dirrm libexec/gnuplot/4.4
 @dirrm libexec/gnuplot

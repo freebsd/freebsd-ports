@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	gnuplot
-PORTVERSION=	4.2.6
-PORTREVISION=	2
+PORTVERSION=	4.4.0
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A command-driven interactive function plotting program
 
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+
 GNU_CONFIGURE=	yes
-WANT_WX=	yes
 CONFIGURE_ARGS+=--with-lasergnu \
 		--with-readline=gnu \
 		--without-linux-vga \
 		--without-lisp-files \
 		--without-tutorial
+USE_GNOME=	pango
 
 OPTIONS=	GD		"Enable GD support"		on \
 		GRIDBOX		"Use the gridbox optimization for hidden3d" off \
@@ -28,12 +29,12 @@ OPTIONS=	GD		"Enable GD support"		on \
 		PLOT		"Enable plot support"		on \
 		TETEX		"Search kpsexpand at run-time"	on \
 		THINSPLINES	"Enable thin plate splines for grids in dgrid3d" off \
-		WX		"Enable WX support"		off
+		WX		"Enable WX support"		on
 
 MAN1=		gnuplot.1 lasergnu.1
 INFO=		gnuplot
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_X11)
 USE_XORG=		x11
@@ -72,7 +73,8 @@ CONFIGURE_ARGS+=	--with-plot=${LOCALBASE}
 .if defined(WITHOUT_TETEX)
 PLIST_SUB+=		TETEX="@comment "
 .else
-BUILD_DEPENDS+=		latex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS+=		kpsexpand:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS+=		kpsexpand:${PORTSDIR}/print/teTeX-base
 CONFIGURE_ARGS+=	--with-kpsexpand
 PLIST_SUB+=		TETEX=""
 .endif
@@ -121,4 +123,4 @@ post-install:
 test: build
 	@( cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check ; )
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
