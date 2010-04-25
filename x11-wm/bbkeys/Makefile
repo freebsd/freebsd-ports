@@ -15,7 +15,7 @@ COMMENT=	A keygrabber for the Blackbox window manager
 
 BUILD_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
-USE_PERL5=	yes
+USE_PERL5_BUILD=	yes
 USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags xft`" \
