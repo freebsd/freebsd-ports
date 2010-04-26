@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: kumofs-gateway
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. %%RC_SUBR%%
+
+name=kumofs_gateway
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+# Set defaults
+: ${kumofs_gateway_enable:="NO"}
+: ${kumofs_gateway_addr:=""}
+: ${kumofs_gateway_manager_local_addr:=""}
+: ${kumofs_gateway_manager_partner_addr:=""}
+: ${kumofs_gateway_extra_flags:=""}
+: ${kumofs_gateway_pid:="/var/run/kumofs/gateway.pid"}
+: ${kumofs_gateway_flags:="-m ${kumofs_gateway_manager_local_addr} -p ${kumofs_gateway_manager_partner_addr} -d ${kumofs_gateway_pid} -o /var/log/kumofs/gateway.log ${kumofs_gateway_extra_flags}"}
+: ${kumofs_gateway_user:="kumofs"}
+
+command=%%PREFIX%%/bin/kumo-gateway
+
+run_rc_command "$1"
