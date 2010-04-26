@@ -1,0 +1,5 @@
+python-jswebkit is an cython wrapper for JSContextRef
+in pywebkitgtk, which makes it able to call JavaScript
+functions with WebKit/JavaScriptCore. 
+
+WWW: http://code.google.com/p/gwrite
