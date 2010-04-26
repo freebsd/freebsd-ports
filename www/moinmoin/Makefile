@@ -12,7 +12,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	khsing.cn@gmail.com
 COMMENT=	A Python clone of WikiWiki
 
 USE_PYTHON=	yes
