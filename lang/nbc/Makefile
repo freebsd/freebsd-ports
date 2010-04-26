@@ -6,42 +6,67 @@
 #
 
 PORTNAME=		nbc
-PORTVERSION=		1.0.1.b34
-PORTREVISION=	1
+PORTVERSION=		1.0.1.b36
 CATEGORIES=		lang
-MASTER_SITES=		SF/bricxcc/NBC_NXC/NBC%20beta%2034
-DISTNAME=		${PORTNAME}-${PORTVERSION}.src
+MASTER_SITES=		http://bricxcc.sourceforge.net/nbc/beta/
+DISTNAME=		${PORTNAME}-${PORTVERSION}.unix-src
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		rambiusparkisanius@gmail.com
 COMMENT=		NBC is a programming language for the LEGO MINDSTORMS NXT product
 
+OPTIONS=	ROBOCTL	"Include roboctl to communicate with the NXT"	off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_ROBOCTL)
 RUN_DEPENDS=		legoctl:${PORTSDIR}/devel/roboctl
+.endif
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS=		usb:${PORTSDIR}/devel/libusb
+.endif
 
 USE_GMAKE=		yes
 USE_DOS2UNIX=		yes
-USE_FPC=		fcl-base
+USE_FPC=		fcl-base fcl-image
 
-MAKEFILE=		nbcfreebsd.mak
 SUB_FILES=		pkg-message
-WRKSRC=			${WRKDIR}/nxt
+WRKSRC=			${WRKDIR}/NXT
 
 PLIST_FILES=		bin/nbc \
-			share/nbc/history.txt \
-			share/nbc/readme.txt \
 			include/nbc/NXCDefs.h \
 			include/nbc/NBCCommon.h \
 			include/nbc/NXTDefs.h
-PLIST_DIRS=		share/nbc \
-			include/nbc
+PLIST_DIRS=		include/nbc
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=		Changelog \
+			Readme
+.endif
+
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=			nbc.1
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/Makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/include/nbc ${PREFIX}/share/nbc
+	${MKDIR} ${PREFIX}/include/nbc
 	${INSTALL_PROGRAM} ${WRKSRC}/nbc ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/nbc
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${PREFIX}/share/nbc
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/doc/Changelog ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/doc/Readme ${DOCSDIR}
+.endif
+.if !defined(NO_INSTALL_MANPAGES)
+	${INSTALL_MAN} ${WRKDIR}/doc/nbc.1 ${MANPREFIX}/man/man1
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
