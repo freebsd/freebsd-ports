@@ -5,15 +5,20 @@ bin/lmserver
 %%CLIENT%%%%DATADIR%%/fonts/license-gpl-3.0.txt
 %%CLIENT%%%%DATADIR%%/fonts/license-ofl.txt
 %%DATADIR%%/maps/COPYING
+%%DATADIR%%/maps/alpha1-ai.map
 %%DATADIR%%/maps/alpha1-death.map
+%%DATADIR%%/maps/alpha1-test.map
 %%DATADIR%%/maps/alpha1.map
 %%DATADIR%%/maps/beta2.map
 %%DATADIR%%/maps/big.map
+%%DATADIR%%/maps/force-test.map
+%%DATADIR%%/maps/gamma3-ai.map
 %%DATADIR%%/maps/gamma3.map
 %%DATADIR%%/maps/maze.map
 %%DATADIR%%/maps/oneobject.map
 %%DATADIR%%/maps/soundbarrier.map
 %%DATADIR%%/maps/test.map
+%%DATADIR%%/maps/vastmelee.map
 %%CLIENT%%%%DATADIR%%/sounds/LMGateSiren-old.ogg
 %%CLIENT%%%%DATADIR%%/sounds/LMGateSiren.ogg
 %%CLIENT%%%%DATADIR%%/sounds/LMGunshot-alternate.ogg
@@ -37,18 +42,37 @@ bin/lmserver
 %%CLIENT%%%%DATADIR%%/sprites/blue_full.png
 %%CLIENT%%%%DATADIR%%/sprites/blue_gate.png
 %%CLIENT%%%%DATADIR%%/sprites/blue_head.png
+%%CLIENT%%%%DATADIR%%/sprites/blue_head256.png
 %%CLIENT%%%%DATADIR%%/sprites/blue_head32.png
 %%CLIENT%%%%DATADIR%%/sprites/blue_head512.png
 %%CLIENT%%%%DATADIR%%/sprites/blue_torso.png
+%%CLIENT%%%%DATADIR%%/sprites/cannon_back.png
+%%CLIENT%%%%DATADIR%%/sprites/cannon_front.png
+%%CLIENT%%%%DATADIR%%/sprites/cannon_front_shot.png
+%%CLIENT%%%%DATADIR%%/sprites/circle256.png
 %%CLIENT%%%%DATADIR%%/sprites/crosshairs.png
+%%CLIENT%%%%DATADIR%%/sprites/friction64.png
 %%CLIENT%%%%DATADIR%%/sprites/gun_noshot.png
 %%CLIENT%%%%DATADIR%%/sprites/gun_shot.png
+%%CLIENT%%%%DATADIR%%/sprites/large_cannon.png
+%%CLIENT%%%%DATADIR%%/sprites/large_gun.png
+%%CLIENT%%%%DATADIR%%/sprites/large_mgun.png
+%%CLIENT%%%%DATADIR%%/sprites/large_rifle.png
+%%CLIENT%%%%DATADIR%%/sprites/large_sgun.png
 %%CLIENT%%%%DATADIR%%/sprites/legesmotuslogo.png
 %%CLIENT%%%%DATADIR%%/sprites/metal_bg.png
 %%CLIENT%%%%DATADIR%%/sprites/metal_bgtile.png
 %%CLIENT%%%%DATADIR%%/sprites/metal_bgtile64.png
+%%CLIENT%%%%DATADIR%%/sprites/metal_bgtile_blue.png
+%%CLIENT%%%%DATADIR%%/sprites/metal_bgtile_friction.png
+%%CLIENT%%%%DATADIR%%/sprites/metal_bgtile_noscrews.png
+%%CLIENT%%%%DATADIR%%/sprites/metal_bgtile_red.png
+%%CLIENT%%%%DATADIR%%/sprites/metal_bgtile_yellow.png
 %%CLIENT%%%%DATADIR%%/sprites/metal_gate_e.png
 %%CLIENT%%%%DATADIR%%/sprites/metal_gate_w.png
+%%CLIENT%%%%DATADIR%%/sprites/metal_hazard64.png
+%%CLIENT%%%%DATADIR%%/sprites/metal_hazard64_blue.png
+%%CLIENT%%%%DATADIR%%/sprites/metal_hazard64_red.png
 %%CLIENT%%%%DATADIR%%/sprites/metal_obstacle128.png
 %%CLIENT%%%%DATADIR%%/sprites/metal_obstacle64.png
 %%CLIENT%%%%DATADIR%%/sprites/metal_wall_e32.png
@@ -63,6 +87,8 @@ bin/lmserver
 %%CLIENT%%%%DATADIR%%/sprites/metal_wall_w32.png
 %%CLIENT%%%%DATADIR%%/sprites/metal_wall_wn32.png
 %%CLIENT%%%%DATADIR%%/sprites/metal_wall_ws32.png
+%%CLIENT%%%%DATADIR%%/sprites/mgun_noshot.png
+%%CLIENT%%%%DATADIR%%/sprites/mgun_shot.png
 %%CLIENT%%%%DATADIR%%/sprites/mini_bg.png
 %%CLIENT%%%%DATADIR%%/sprites/mini_blip_blue.png
 %%CLIENT%%%%DATADIR%%/sprites/mini_blip_red.png
@@ -76,7 +102,15 @@ bin/lmserver
 %%CLIENT%%%%DATADIR%%/sprites/red_gate.png
 %%CLIENT%%%%DATADIR%%/sprites/red_head.png
 %%CLIENT%%%%DATADIR%%/sprites/red_torso.png
+%%CLIENT%%%%DATADIR%%/sprites/rifle_noshot.png
+%%CLIENT%%%%DATADIR%%/sprites/rifle_shot.png
+%%CLIENT%%%%DATADIR%%/sprites/sgun_noshot.png
+%%CLIENT%%%%DATADIR%%/sprites/sgun_shot.png
 %%CLIENT%%%%DATADIR%%/sprites/shot.png
+%%CLIENT%%%%DATADIR%%/sprites/sshot.png
+%%CLIENT%%%%DATADIR%%/weapons/classic
+%%CLIENT%%%%DATADIR%%/weapons/standard
+%%CLIENT%%@dirrm %%DATADIR%%/weapons
 %%CLIENT%%@dirrm %%DATADIR%%/sprites
 %%CLIENT%%@dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/maps
