@@ -1416,6 +1416,7 @@
     SUBDIR += py-httplib2
     SUBDIR += py-imdbpy
     SUBDIR += py-jonpy
+    SUBDIR += py-jswebkit
     SUBDIR += py-mechanize
     SUBDIR += py-meld
     SUBDIR += py-meld3
