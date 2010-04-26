@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	legesmotus
-PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTVERSION=	0.3.0
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -15,7 +14,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A team-based, networked, 2D shooter set in zero-gravity
 
 USE_GMAKE=	yes
-MAKE_ENV=	DATADIR=${DATADIR}
+MAKE_ENV=	DATADIR=${DATADIR} XDIR=${LOCALBASE}
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
