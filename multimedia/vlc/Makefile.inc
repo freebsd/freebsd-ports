@@ -228,18 +228,9 @@ pre-install: build
 	${RM} -rf ${PLIST} ${FAKEDIR}
 	${MKDIR} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
+	${ECHO_CMD} "share/pixmaps/vlc.png" >> ${PLIST}
 	${ECHO_CMD} "share/applications/vlc.desktop" >> ${PLIST}
-.if !defined(WITHOUT_QT4)
-	${ECHO_CMD} "share/pixmaps/qvlc.png" >> ${PLIST}
-	${ECHO_CMD} "share/applications/qvlc.desktop" >> ${PLIST}
-.endif
-.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
-	${ECHO_CMD} "share/pixmaps/gvlc.png" >> ${PLIST}
-	${ECHO_CMD} "share/applications/svlc.desktop" >> ${PLIST}
-.endif
-.if defined(WITH_SKINS) || !defined(WITHOUT_QT)
-	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
-.endif
+	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLIST}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} prefix=${FAKEDIR}
 	${RM} -f ${FAKEDIR}/share/locale/locale.alias
@@ -248,11 +239,11 @@ pre-install: build
 	cd ${FAKEDIR}/include && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|include/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm include/|' >> ${PLIST}
+		${SED} -e 's|^|@dirrmtry include/|' >> ${PLIST}
 	cd ${FAKEDIR}/lib && ${FIND} -s * -type f -o -type l| \
 		${SED} -e 's|^|lib/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm lib/|' >> ${PLIST}
+		${SED} -e 's|^|@dirrmtry lib/|' >> ${PLIST}
 .if !defined(WITHOUT_X11)
 	cd ${FAKEDIR}/libdata && ${FIND} -s * -type f -o -type l| \
 		${SED} -e 's|^|libdata/|' >> ${PLIST} \
@@ -263,17 +254,17 @@ pre-install: build
 	cd ${FAKEDIR}/share/${dir} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/${dir}/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm share/${dir}/|' >> ${PLIST}
+		${SED} -e 's|^|@dirrmtry share/${dir}/|' >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
 	cd ${FAKEDIR}/share/doc && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/doc/|' >> ${PLIST} \
 		 && ${FIND} -d * -type d | \
-		 ${SED} -e 's|^|@dirrm share/doc/|' >> ${PLIST}
+		 ${SED} -e 's|^|@dirrmtry share/doc/|' >> ${PLIST}
 .else
 	${RM} -rf ${FAKEDIR}/share/doc
 .endif
-		${ECHO_MSG} "@dirrm share/vlc" >> ${PLIST}
+		${ECHO_MSG} "@dirrmtry share/vlc" >> ${PLIST}
 .if !defined(WITHOUT_NLS)
 	cd ${FAKEDIR}/share/locale &&  ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
@@ -284,8 +275,8 @@ pre-install: build
 	${ECHO_CMD} "@dirrmtry %%WEBPLUGINS_DIR%%" >> ${PLIST}
 .endif
 .for locale in ckb co fur kk km my oc ps tet tl
-	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale}/LC_MESSAGES 2>/dev/null || ${TRUE}" >> ${PLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale} 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} "@dirrmtry share/locale/${locale}/LC_MESSAGES" >> ${PLIST}
+	${ECHO_CMD} "@dirrmtry share/locale/${locale}" >> ${PLIST}
 .endfor
 
 do-install:
@@ -295,6 +286,7 @@ do-install:
 		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include
 	cd ${FAKEDIR}/lib && ${FIND} . | \
 		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
+	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/vlc.png
 .if !defined(WITHOUT_X11)
 	cd ${FAKEDIR}/libdata && ${FIND} . | \
 		${CPIO} -vpdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/libdata
@@ -314,12 +306,4 @@ do-install:
 	if [ ! -d ${PREFIX}/share/pixmaps ]; then \
 		${MKDIR} ${PREFIX}/share/pixmaps ; \
 	fi
-.if !defined(WITHOUT_QT4)
-	${INSTALL_DATA} ${FILESDIR}/qvlc.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/qvlc.png
-.endif
-.if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
-	${INSTALL_DATA} ${FILESDIR}/svlc.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/gvlc.png
-.endif
 .endif
