@@ -1,5 +1,0 @@
-Blogd is an SCGI application server dedicated to serving-up a single blog,
-implemented in 1000 lines of Munger(1).  Blogd creates the simplest blog
-that is still useful, in its author's estimation.
-
-WWW: http://www.mammothcheese.ca/
