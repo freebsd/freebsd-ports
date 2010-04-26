@@ -123,7 +123,6 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/data/astype_copy.pkl
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/data/recarray_from_file.fits
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_blasdot.py
-%%PYTHON_SITELIBDIR%%/numpy/core/tests/test_datetime.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_defchararray.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_dtype.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_errstate.py
