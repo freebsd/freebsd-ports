@@ -4,8 +4,6 @@ bin/jhelp
 bin/stc
 bin/tracecc
 bin/trana
-%%ETCDIR%%/appdefaults
-%%ETCDIR%%/appdefaults.sample
 include/dk.h
 include/dkapp.h
 include/dkbf.h
@@ -48,31 +46,31 @@ include/tracecc.h
 include/traceco.h
 lib/libdkappr.so
 lib/libdkappr.so.1
-lib/libdkappr.so.1.26
+lib/libdkappr.so.1.27
 lib/libdkbif.so
 lib/libdkbif.so.1
-lib/libdkbif.so.1.26
+lib/libdkbif.so.1.27
 lib/libdkc.so
 lib/libdkc.so.1
-lib/libdkc.so.1.26
+lib/libdkc.so.1.27
 lib/libdkfigw.so
 lib/libdkfigw.so.1
-lib/libdkfigw.so.1.26
+lib/libdkfigw.so.1.27
 lib/libdklatsup.so
 lib/libdklatsup.so.1
-lib/libdklatsup.so.1.26
+lib/libdklatsup.so.1.27
 lib/libdknet.so
 lib/libdknet.so.1
-lib/libdknet.so.1.26
+lib/libdknet.so.1.27
 lib/libdkport.so
 lib/libdkport.so.1
-lib/libdkport.so.1.26
+lib/libdkport.so.1.27
 lib/libdksdbi.so
 lib/libdksdbi.so.1
-lib/libdksdbi.so.1.26
+lib/libdksdbi.so.1.27
 lib/libdktrace.so
 lib/libdktrace.so.1
-lib/libdktrace.so.1.26
+lib/libdktrace.so.1.27
 %%DATADIR%%/cp.850
 %%DATADIR%%/de/dkapp.stt
 %%DATADIR%%/de/dkappd.stt
@@ -140,6 +138,7 @@ lib/libdktrace.so.1.26
 %%PORTDOCS%%%%DOCSDIR%%/Run.png
 %%PORTDOCS%%%%DOCSDIR%%/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/dklibs.pdf
+%%PORTDOCS%%%%DOCSDIR%%/dklibsj.html
 %%PORTDOCS%%%%DOCSDIR%%/download.html
 %%PORTDOCS%%%%DOCSDIR%%/enc.pdf
 %%PORTDOCS%%%%DOCSDIR%%/examples.html
@@ -172,6 +171,8 @@ lib/libdktrace.so.1.26
 %%PORTDOCS%%%%DOCSDIR%%/sc17.png
 %%PORTDOCS%%%%DOCSDIR%%/sc18.png
 %%PORTDOCS%%%%DOCSDIR%%/sc19.png
+%%PORTDOCS%%%%DOCSDIR%%/sc20.png
+%%PORTDOCS%%%%DOCSDIR%%/sc21.png
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/security.html
 %%PORTDOCS%%%%DOCSDIR%%/sflogo.png
@@ -196,7 +197,11 @@ lib/libdktrace.so.1.26
 %%PORTDOCS%%%%DOCSDIR%%/w32sc10.png
 %%PORTDOCS%%%%DOCSDIR%%/w32sc11.png
 %%PORTDOCS%%%%DOCSDIR%%/w32sc12.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%
+@unexec if cmp -s %D/etc/dklibs/appdefaults.sample %D/etc/dklibs/appdefaults; then rm -f %D/etc/dklibs/appdefaults; fi
+%%ETCDIR%%/appdefaults.sample
+@exec if [ ! -f %D/etc/dklibs/appdefaults ] ; then cp -p %D/%F %B/appdefaults; fi
+@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/utf-8
 @dirrm %%DATADIR%%/uc2lat-t/00/00
 @dirrm %%DATADIR%%/uc2lat-t/00

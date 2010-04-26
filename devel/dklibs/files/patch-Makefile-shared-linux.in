@@ -1,22 +1,22 @@
---- Makefile-shared-linux.in.orig	2010-01-04 06:49:13.000000000 -0800
-+++ Makefile-shared-linux.in	2010-02-04 02:00:24.685902608 -0800
+--- Makefile-shared-linux.in.orig	2010-02-25 04:44:58.000000000 -0800
++++ Makefile-shared-linux.in	2010-04-20 22:18:32.000000000 -0700
 @@ -1,5 +1,6 @@
  
- SOVERS=1.26
+ SOVERS=1.27
 +MAJORVERS=1
  
  # The build prefix
  pp=
-@@ -13,7 +14,7 @@
- sysconfdir = @sysconfdir@
+@@ -14,7 +15,7 @@
+ sysconfdir=@sysconfdir@
  scd=$(sysconfdir)
- libdir = @libdir@
--sharedlibdir = $(libdir)/shared
-+sharedlibdir = $(libdir)
- mandir = @mandir@
- includedir = @includedir@
- srcdir = @srcdir@
-@@ -74,18 +75,14 @@
+ libdir=@libdir@
+-sharedlibdir=$(libdir)/shared
++sharedlibdir=$(libdir)
+ mandir=@mandir@
+ includedir=@includedir@
+ srcdir=@srcdir@
+@@ -75,18 +76,14 @@
  all:	$(progs) $(libs) stc-static
  	-[ -d lib ] || mkdir lib
  	-[ -d share ] || mkdir share
@@ -35,20 +35,24 @@
  	chmod 755 share/stc
  	chmod 755 share/tracecc
  	chmod 755 share/trana
-@@ -119,12 +116,6 @@
- 	find share -type f -exec chmod 644 {} \;
- 	cp appdefaults.sample appdefaults
+@@ -113,7 +110,6 @@
+ 	-cp share/tracecc/en/utf-8/tracecca.* share/tracecc/utf-8
+ 	-cp share/trana/en/utf-8/trana.* share/trana/utf-8
+ 	-cp share/dkpref/en/utf-8/dkpref.* share/dkpref/utf-8
+-	-(cd DOCU; tar cf - .) | (cd share/doc/dklibs; tar xf -)
+ 	find lib -type d -exec chmod 755 {} \;
+ 	find lib -type f -exec chmod 644 {} \;
+ 	find share -type d -exec chmod 755 {} \;
+@@ -122,8 +118,6 @@
  	chmod 755 showdd
--	chmod 755 tracecc-gui
--	chmod 755 tracegui.jar
--	find Java/dklibsj/doc -type d -exec chmod ugo+rx {} \;
--	find Java/dklibsj/doc -type f -exec chmod ugo+r {} \;
--	find Java/TraceGUI/doc -type d -exec chmod ugo+rx {} \;
--	find Java/TraceGUI/doc -type f -exec chmod ugo+r {} \;
+ 	chmod 755 tracecc-gui
+ 	chmod 755 tracegui.jar
+-	find Java/doc -type d -exec chmod ugo+rx {} \;
+-	find Java/doc -type f -exec chmod ugo+r {} \;
  	./showdd $(datadir) >> appdefaults
  	touch all
  	chmod 755 rwperlmk.sh
-@@ -148,32 +139,14 @@
+@@ -147,16 +141,6 @@
  install:	all
  	-[ -d $(pp)$(libdir) ] || mkdir -p $(pp)$(libdir)
  	-chmod 755 $(pp)$(libdir)
@@ -56,24 +60,27 @@
 -	-chmod 755 $(pp)$(libdir)/java
 -	-[ -d $(pp)$(libdir)/java/src ] || mkdir -p $(pp)$(libdir)/java/src
 -	-chmod 755 $(pp)$(libdir)/java/src
+-	-[ ! -d $(pp)$(libdir)/java/src/dklibsj ] || rm -fr $(pp)$(libdir)/java/src/dklibsj
 -	-[ -d $(pp)$(libdir)/java/src/dklibsj ] || mkdir -p $(pp)$(libdir)/java/src/dklibsj
+-	-[ -d $(pp)$(libdir)/java/src/dklibsj/loc ] || mkdir -p $(pp)$(libdir)/java/src/dklibsj/loc
 -	-chmod 755 $(pp)$(libdir)/java/src/dklibsj
 -	-[ -d $(pp)$(libdir)/java/doc ] || mkdir -p $(pp)$(libdir)/java/doc
 -	-chmod 755 $(pp)$(libdir)/java/doc
  	-[ -d $(pp)$(bindir) ] || mkdir -p $(pp)$(bindir)
  	-chmod 755 $(pp)$(bindir)
  	-[ -d $(pp)$(datadir) ] || mkdir -p $(pp)$(datadir)
- 	-chmod 755 $(pp)$(datadir)
+@@ -164,18 +148,7 @@
  	-[ -d $(pp)$(includedir) ] || mkdir -p $(pp)$(includedir)
  	-chmod 755 $(pp)$(includedir)
--	-[ -d $(pp)$(mandir) ] || mkdir -p $(pp)$(mandir)
+ 	-[ -d $(pp)$(mandir) ] || mkdir -p $(pp)$(mandir)
 -	-chmod 755 $(pp)$(mandir)
- 	-[ -d $(pp)$(sysconfdir) ] || mkdir -p $(pp)$(sysconfdir)
+-	-[ -d $(pp)$(sysconfdir) ] || mkdir -p $(pp)$(sysconfdir)
  	-chmod 755 $(pp)$(sysconfdir)
 -	-[ -d $(pp)$(datadir)/doc ] || mkdir -p $(pp)$(datadir)/doc
 -	-chmod 755 $(pp)$(datadir)/doc
 -	-[ -d $(pp)$(datadir)/doc/javadoc ] || mkdir -p $(pp)$(datadir)/doc/javadoc
 -	-chmod 755 $(pp)$(datadir)/doc/javadoc
+-	-[ ! -d $(pp)$(datadir)/doc/javadoc/dklibsj ] || rm -fr $(pp)$(datadir)/doc/javadoc/dklibsj
 -	-[ -d $(pp)$(datadir)/doc/javadoc/dklibsj ] || mkdir -p $(pp)$(datadir)/doc/javadoc/dklibsj
 -	-chmod 755 $(pp)$(datadir)/doc/javadoc/dklibsj
 -	-[ -d $(pp)$(datadir)/doc/javadoc/TraceGUI ] || mkdir -p $(pp)$(datadir)/doc/javadoc/TraceGUI
@@ -81,7 +88,7 @@
  	chmod 644 *.so
  	tar cf - *.so | (cd $(pp)$(libdir) ; tar xf -)
  	-[ ! -f $(pp)$(libdir)/libdklatsup.so.$(SOVERS) ] || rm -f $(pp)$(libdir)/libdklatsup.so.$(SOVERS)
-@@ -196,39 +169,57 @@
+@@ -198,39 +171,57 @@
  	-[ ! -f $(pp)$(libdir)/libdkfigw.so ] || rm -f $(pp)$(libdir)/libdkfigw.so
  	cp libdklatsup.so.$(SOVERS) $(pp)$(libdir)/libdklatsup.so.$(SOVERS)
  	( cd $(pp)$(libdir); ln -sf libdklatsup.so.$(SOVERS) libdklatsup.so )
@@ -139,7 +146,7 @@
  	chmod 644 $(pp)$(libdir)/libdkfigw.so
  	chmod 644 *.h
  	mv config.h config.h.do-not-install
-@@ -247,24 +238,12 @@
+@@ -249,27 +240,10 @@
  	chmod 755 $(pp)$(bindir)/bifconf
  	cp jhelp $(pp)$(bindir)/jhelp
  	chmod 755 $(pp)$(bindir)/jhelp
@@ -149,15 +156,18 @@
 -	chmod 755 $(pp)$(bindir)/tracegui.jar
 -	cp dklibsj.jar $(pp)$(bindir)/dklibsj.jar
 -	chmod 755  $(pp)$(bindir)/dklibsj.jar
+-	cp wdklibsj.jar $(pp)$(bindir)/wdklibsj.jar
+-	chmod 755 $(pp)$(bindir)/wdklibsj.jar
  	cp dkpref $(pp)$(bindir)/dkpref
  	chmod 755 $(pp)$(bindir)/dkpref
- 	-cp appdefaults $(pp)$(scd)/appdefaults.sample
- 	-[ -f $(pp)$(scd)/appdefaults ] || cp appdefaults $(pp)$(scd)/appdefaults
+-	-cp appdefaults $(pp)$(scd)/appdefaults.sample
+-	-[ -f $(pp)$(scd)/appdefaults ] || cp appdefaults $(pp)$(scd)/appdefaults
 -	-(cd man; tar cf - ./*) | (cd $(pp)$(mandir) ; tar xf -)
  	-(cd share; tar cf - ./*) | (cd $(pp)$(datadir) ; tar xf -)
--	-(cd Java/dklibsj/src; tar cf - ./dirk_krause) | (cd $(pp)$(libdir)/java/src/dklibsj; tar xf -)
--	-(cd Java/dklibsj/doc; tar cf - .) | (cd $(pp)$(datadir)/doc/javadoc/dklibsj && tar xf -)
--	-(cd Java/TraceGUI/doc; tar cf - .) | (cd $(pp)$(datadir)/doc/javadoc/TraceGUI && tar xf -)
+-	-(cd Java/src; tar cf - ./dirk_krause) | (cd $(pp)$(libdir)/java/src/dklibsj; tar xf -)
+-	-(cd Java/loc; tar cf - .) | (cd $(pp)$(libdir)/java/src/dklibsj/loc; tar xf -)
+-	-(cd Java/doc; tar cf - .) | (cd $(pp)$(datadir)/doc/javadoc && tar xf -)
+-	-(cd Java/doc/traceccgui; tar cf - .) | (cd $(pp)$(datadir)/doc/javadoc/TraceGUI && tar xf -)
 -	-[ -d $(pp)$(libdir)/java/doc/dklibsj ] || ln -s $(pp)$(datadir)/doc/javadoc/dklibsj $(pp)$(libdir)/java/doc/dklibsj
  	ldconfig
 -	echo Documentation was installed in $(pp)$(datadir)/doc/dklibs
