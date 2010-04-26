@@ -1,4 +1,5 @@
 #!/bin/sh
+#
 # PROVIDE: cruisecontrolrb
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
@@ -6,41 +7,35 @@
 # This script is modified by placing the following variables inside
 # /etc/rc.conf.local, /etc/rc.conf, or /etc/rc.conf.d/cruisecontrolrb:
 #
-# cruisecontrolrb_enable (bool):
-#   Set it to YES to enable this service.
-#   Default: NO
-# cruisecontrolrb_port (port):
-#   Set it to a port
-#   Default: 3333
+# cruisecontrolrb_enable (bool):            Set it to YES to enable this service.
+#                                           Default: NO
+# cruisecontrolrb_port (port):              Set it to a port
+#                                           Default: 3333
 
 . /etc/rc.subr
 
 name=cruisecontrolrb
 rcvar=${name}_enable
 
-command="%%WWWDIR%%/cruise"
+pidfile="%%PREFIX%%/www/${name}/tmp/pids/mongrel.pid"
+command="%%PREFIX%%/www/${name}/cruise"
+
+start_cmd="cruisecontrolrb_start"
+stop_cmd="cruisecontrolrb_stop"
+
+cruisecontrolrb_start() {
+  set -x
+    ${command} start ${command_args}
+}
+cruisecontrolrb_stop() {
+    kill $(cat $pidfile)
+}
 
 load_rc_config $name
 
 : ${cruisecontrolrb_enable="NO"}
 : ${cruisecontrolrb_port="3333"}
 
-command_args="-p ${curisecontrolrb_port}"
-start_cmd="cruisecontrolrb_cmd start"
-stop_cmd="cruisecontrolrb_cmd stop"
-restart_cmd="cruisecontrolrb_restart"
+command_args="-p ${cruisecontrolrb_port} -d"
 
-cruisecontrolrb_cmd() {
-    if [ ${command} = "start" ]; then
-        command_args="${command_args} -d"
-    fi
-
-    ${command} $1 ${command_args}
-
-}
-
-cruisecontrolrb_restart() {
-    ${command} stop
-    ${command} start ${command_args}
-}
-
+run_rc_command "$1"
