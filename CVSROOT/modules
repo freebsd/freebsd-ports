@@ -1196,6 +1196,7 @@ br-aspell                       ports/textproc/br-aspell
 braa                            ports/net-mgmt/braa
 brag                            ports/news/brag
 braincurses                     ports/games/braincurses
+brainparty                      ports/games/brainparty
 brainworkshop                   ports/games/brainworkshop
 brasero                         ports/sysutils/brasero
 brian                           ports/science/brian
@@ -1420,6 +1421,7 @@ cdcl                            ports/science/cdcl
 cdcollect                       ports/misc/cdcollect
 cddb-bundle                     ports/audio/cddb-bundle
 cdecl                           ports/devel/cdecl
+cdent                           ports/lang/cdent
 cdialog                         ports/devel/cdialog
 cdif                            ports/textproc/cdif
 cdiff                           ports/textproc/cdiff
@@ -13764,6 +13766,7 @@ p5-Test-WWW-Selenium            ports/devel/p5-Test-WWW-Selenium
 p5-Test-Warn                    ports/devel/p5-Test-Warn
 p5-Test-XML                     ports/devel/p5-Test-XML
 p5-Test-XML-Valid               ports/devel/p5-Test-XML-Valid
+p5-Test-XPath                   ports/lang/p5-Test-XPath
 p5-Test-YAML-Meta               ports/devel/p5-Test-YAML-Meta
 p5-Test-YAML-Valid              ports/devel/p5-Test-YAML-Valid
 p5-Test-use-ok                  ports/devel/p5-Test-use-ok
@@ -13964,6 +13967,7 @@ p5-Tree-Simple-View             ports/devel/p5-Tree-Simple-View
 p5-Tree-Simple-VisitorFactory   ports/devel/p5-Tree-Simple-VisitorFactory
 p5-Tree-Suffix                  ports/textproc/p5-Tree-Suffix
 p5-Try-Tiny                     ports/lang/p5-Try-Tiny
+p5-TryCatch                     ports/lang/p5-TryCatch
 p5-Twiggy                       ports/www/p5-Twiggy
 p5-UDCode                       ports/devel/p5-UDCode
 p5-UI-Dialog                    ports/devel/p5-UI-Dialog
@@ -17652,6 +17656,7 @@ p5-test-www-mechanize-psgi      ports/devel/p5-Test-WWW-Mechanize-PSGI
 p5-test-www-selenium            ports/devel/p5-Test-WWW-Selenium
 p5-test-xml                     ports/devel/p5-Test-XML
 p5-test-xml-valid               ports/devel/p5-Test-XML-Valid
+p5-test-xpath                   ports/lang/p5-Test-XPath
 p5-test-yaml-meta               ports/devel/p5-Test-YAML-Meta
 p5-test-yaml-valid              ports/devel/p5-Test-YAML-Valid
 p5-testgen4web-runner           ports/www/p5-TestGen4Web-Runner
@@ -17856,6 +17861,7 @@ p5-tree-simple-view             ports/devel/p5-Tree-Simple-View
 p5-tree-simple-visitorfactory   ports/devel/p5-Tree-Simple-VisitorFactory
 p5-tree-suffix                  ports/textproc/p5-Tree-Suffix
 p5-try-tiny                     ports/lang/p5-Try-Tiny
+p5-trycatch                     ports/lang/p5-TryCatch
 p5-twiggy                       ports/www/p5-Twiggy
 p5-type1inst                    ports/x11-fonts/p5-type1inst
 p5-udcode                       ports/devel/p5-UDCode
