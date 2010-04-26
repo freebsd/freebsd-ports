@@ -1,6 +1,6 @@
---- configure.orig	2010-03-16 18:01:57.094452930 +0900
-+++ configure	2010-03-16 18:01:03.005537719 +0900
-@@ -17898,9 +17898,9 @@
+--- configure.org	2010-04-24 10:42:38.837524472 +0900
++++ configure	2010-04-24 11:04:12.291498371 +0900
+@@ -17904,9 +17904,9 @@
  #define HAVE_DECL_NTH_UNCONVERTED_CANDIDATE 0
  _ACEOF
  
@@ -13,7 +13,7 @@
  fi
  { $as_echo "$as_me:$LINENO: checking whether NTH_KATAKANA_CANDIDATE is declared" >&5
  $as_echo_n "checking whether NTH_KATAKANA_CANDIDATE is declared... " >&6; }
-@@ -17968,9 +17968,9 @@
+@@ -17974,9 +17974,9 @@
  #define HAVE_DECL_NTH_KATAKANA_CANDIDATE 0
  _ACEOF
  
@@ -26,7 +26,7 @@
  fi
  { $as_echo "$as_me:$LINENO: checking whether NTH_HIRAGANA_CANDIDATE is declared" >&5
  $as_echo_n "checking whether NTH_HIRAGANA_CANDIDATE is declared... " >&6; }
-@@ -18038,9 +18038,9 @@
+@@ -18044,9 +18044,9 @@
  #define HAVE_DECL_NTH_HIRAGANA_CANDIDATE 0
  _ACEOF
  
@@ -39,7 +39,7 @@
  fi
  { $as_echo "$as_me:$LINENO: checking whether NTH_HALFKANA_CANDIDATE is declared" >&5
  $as_echo_n "checking whether NTH_HALFKANA_CANDIDATE is declared... " >&6; }
-@@ -18108,9 +18108,9 @@
+@@ -18114,9 +18114,9 @@
  #define HAVE_DECL_NTH_HALFKANA_CANDIDATE 0
  _ACEOF
  
@@ -52,21 +52,3 @@
  fi
  
  
-@@ -18156,7 +18156,7 @@
- fi
- 
- 
--if test x"$SWIG" == x""; then
-+if test x"$SWIG" = x""; then
-      { { $as_echo "$as_me:$LINENO: error: can not find swig" >&5
- $as_echo "$as_me: error: can not find swig" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -18464,7 +18464,7 @@
- fi
- 
- 
--if test x"$PYTHON_CONFIG" == x""; then
-+if test x"$PYTHON_CONFIG" = x""; then
-     # Extract the first word of "python-config", so it can be a program name with args.
- set dummy python-config; ac_word=$2
- { $as_echo "$as_me:$LINENO: checking for $ac_word" >&5

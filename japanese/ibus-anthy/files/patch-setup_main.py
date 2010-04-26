@@ -1,5 +1,5 @@
---- setup/main.py.orig	2010-03-16 17:32:17.110533466 +0900
-+++ setup/main.py	2010-03-16 17:33:17.660764012 +0900
+--- setup/main.py.org	2010-04-24 10:42:38.831762846 +0900
++++ setup/main.py	2010-04-24 11:10:28.306490779 +0900
 @@ -59,7 +59,7 @@
          # This can add the pixbuf without scaling.
          anthydir = path.dirname(path.dirname(__file__))
