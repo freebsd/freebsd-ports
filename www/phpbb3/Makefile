@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.phpbb.com/files/release/ \
 		http://d10xg45o6p6dbl.cloudfront.net/projects/p/phpbb/
 DISTNAME=	phpBB-${PORTVERSION}-PL1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
 CONFLICTS=	phpbb-tw-[0-9]* phpbb-devel-[0-9]* \
