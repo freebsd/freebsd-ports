@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20for%20php5_6/PHPMailer%20v${PORTVERSION}
 DISTNAME=	PHPMailer_v${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joehorn@gmail.com
 COMMENT=	Full Featured Email Transfer Class for PHP
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
