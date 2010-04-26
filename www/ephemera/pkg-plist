@@ -1,9 +1,10 @@
-bin/blogd
-bin/blogd-add
-bin/blogd-delete
-bin/blogd-extract
-bin/blogd-replace
-etc/blogd.css.sample
-etc/rc.d/blogd
-@unexec if cmp -s %D/etc/blogd.config %D/etc/blogd.config.dist; then rm -f %D/etc/blogd.config; fi
-etc/blogd.config.dist
+bin/ephemera
+bin/ephemera-add
+bin/ephemera-delete
+bin/ephemera-extract
+bin/ephemera-replace
+bin/ephemera-generate
+etc/ephemera.css.sample
+etc/rc.d/ephemera
+@unexec if cmp -s %D/etc/ephemera.config %D/etc/ephemera.config.dist; then rm -f %D/etc/ephemera.config; fi
+etc/ephemera.config.dist
