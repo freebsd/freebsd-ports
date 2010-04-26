@@ -7,3 +7,7 @@ bin/kumolog
 bin/kumomergedb
 bin/kumostat
 bin/kumotop
+@exec mkdir %%PIDDIR%%
+@exec mkdir %%LOGDIR%%
+@dirrmtry %%PIDDIR%%
+@dirrmtry %%LOGDIR%%
