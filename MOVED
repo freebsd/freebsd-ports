@@ -4366,3 +4366,4 @@ databases/php5-pdo_oci||2010-04-11|Doesn't support Oracle8 client library
 sysutils/rc_subr||2010-04-16|No longer needed
 math/libgmp4|math/gmp|2010-04-19|Switch to newer performance release
 irc/dircproxy-devel||2010-04-19|Removed
+security/krb5-17||2010-04-25|deleted: no longer builds with new OpenSSL 1.0. secuirity/krb5 now contains 1.8.1.
