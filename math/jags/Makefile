@@ -8,6 +8,7 @@
 
 PORTNAME=	jags
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www-fis.iarc.fr/~martyn/software/jags/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
