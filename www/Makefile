@@ -204,6 +204,7 @@
     SUBDIR += emacs-w3m-emacs22
     SUBDIR += emacs-w3m-xemacs21-mule
     SUBDIR += entrans
+    SUBDIR += ephemera
     SUBDIR += epiphany
     SUBDIR += epiphany-extensions
     SUBDIR += erwn
