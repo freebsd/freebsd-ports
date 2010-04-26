@@ -7,6 +7,7 @@
 
 PORTNAME=	kumofs
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://cloud.github.com/downloads/etolabo/kumofs/

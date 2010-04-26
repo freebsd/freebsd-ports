@@ -7,6 +7,7 @@
 
 PORTNAME=	tokyotyrant
 PORTVERSION=	1.1.40
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://1978th.net/${PORTNAME}/
 
