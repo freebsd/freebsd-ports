@@ -1,0 +1,8 @@
+Pod::Site searches a list of directories and generates a jQuery-powered
+documentation site from all of the POD files it finds. It was originally
+designed for the Bricolage project but is has evolved for general use.
+Have a look at the Bricolage API Browser to see a sample documentation
+site in action. The generated documentation site supports Safari, Firefox,
+and IE7 and up.
+
+WWW: http://search.cpan.org/dist/Pod-Site/

@@ -1,0 +1,6 @@
+bin/podsite
+%%SITE_PERL%%/Pod/Site.pm
+%%SITE_PERL%%/Pod/Site/podsite.css
+%%SITE_PERL%%/Pod/Site/podsite.js
+@dirrmtry %%SITE_PERL%%/Pod/Site
+@dirrmtry %%SITE_PERL%%/Pod
