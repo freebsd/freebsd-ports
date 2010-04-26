@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		keitairc
-PORTVERSION=		2.0.r1
+PORTVERSION=		2.0.rc.1
 #PORTREVISION=		0
 CATEGORIES=		irc
 MASTER_SITES=		SFJP
@@ -38,7 +38,7 @@ post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM} -rf
 	${REINPLACE_CMD} -I '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/keitairc
 	${REINPLACE_CMD} -I '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/keitairc
-	${REINPLACE_CMD} -I '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/lib/Keitairc/Config.pm
+	${REINPLACE_CMD} -I '' -e "s,__KEITAIRC_DATA_DIR__,${DATADIR}/lib,"  ${WRKSRC}/lib/Keitairc/Config.pm
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keitairc ${PREFIX}/bin
