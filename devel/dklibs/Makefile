@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dklibs
-PORTVERSION=	1.26.0
-PORTREVISION=	1
+PORTVERSION=	1.27.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -33,6 +32,7 @@ CFLAGS+=	-I${LOCALBASE}/include \
 		-I${BDB_INCLUDE_DIR}
 
 CONFIGURE_ARGS+=	--datadir=${DATADIR} \
+			--datarootdir=${DATADIR} \
 			--sysconfdir=${ETCDIR}
 
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
@@ -72,7 +72,18 @@ MAN3=		dk.3 \
 MANCOMPRESSED=	no
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900002
+EXTRA_PATCHES+=	${PATCHDIR}/900003-no-sys_termios.h
+.endif
+
 post-install:
+	@${MKDIR} ${PREFIX}/etc/dklibs
+	${INSTALL_DATA} ${WRKSRC}/appdefaults ${PREFIX}/etc/dklibs/appdefaults.sample
+	@if [ ! -f ${PREFIX}/etc/dklibs/appdefaults ]; then \
+		${CP} -p ${PREFIX}/etc/dklibs/appdefaults.sample ${PREFIX}/etc/dklibs/appdefaults ; \
+	fi
 .if !defined(NO_INSTALL_MANPAGES)
 	@${MKDIR} ${MAN3PREFIX}/man/man3
 .for manpage in ${MAN3}
@@ -87,4 +98,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/DOCU/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
