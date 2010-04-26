@@ -438,6 +438,7 @@
     SUBDIR += libgphoto2
     SUBDIR += libimg
     SUBDIR += libiptcdata
+    SUBDIR += libjpeg-turbo
     SUBDIR += libkdcraw
     SUBDIR += libkexif
     SUBDIR += libkexiv2
