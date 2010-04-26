@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -32,14 +31,14 @@ USE_GNOME=	gnomehack intltool
 CONFIGURE_ARGS=	--disable-tcl
 
 PORTDOCS=	*
-PORTEXAMPLES=	4charts.pl bigtops.pl cgi-demo.cgi minmax.pl piped-demo.pl \
-		perftest.pl shared-demo.pl stripes.pl
+PORTEXAMPLES=	4charts.pl bigtops.pl cgi-demo.cgi minmax.pl perftest.pl \
+		piped-demo.pl shared-demo.pl stripes.pl
 
-OPTIONS=	PYTHON_MODULE	"Build PYTHON bindings" off \
-		RUBY_MODULE	"Build RUBY bindings" off \
+OPTIONS=	DEJAVU		"Use DejaVu fonts (requires X11)" off \
+		MMAP		"Use mmap in rrd_update" on \
 		PERL_MODULE	"Build PERL module" on \
-		DEJAVU		"Use DejaVu fonts (requires X11)" off \
-		MMAP		"Use mmap in rrd_update" on
+		PYTHON_MODULE	"Build PYTHON bindings" off \
+		RUBY_MODULE	"Build RUBY bindings" off
 
 .include <bsd.port.options.mk>
 
@@ -88,11 +87,12 @@ CFLAGS:=	${CFLAGS:N-ffast-math}
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		bin_dec_hex.1 cdeftutorial.1 rpntutorial.1 rrd-beginners.1 \
-		rrdbuild.1 rrdcached.1 rrdcgi.1 rrdcreate.1 rrddump.1 rrdfetch.1 rrdfirst.1 rrdflushcached.1 \
-		rrdgraph.1 rrdgraph_data.1 rrdgraph_examples.1 rrdgraph_graph.1 \
-		rrdgraph_rpn.1 rrdinfo.1 rrdlast.1 rrdresize.1 rrdrestore.1 \
-		rrdthreads.1 rrdtool.1 rrdtune.1 rrdtutorial.1 rrdupdate.1 \
-		rrdxport.1 rrdlastupdate.1
+		rrdbuild.1 rrdcached.1 rrdcgi.1 rrdcreate.1 rrddump.1 \
+		rrdfetch.1 rrdfirst.1 rrdflushcached.1 rrdgraph.1 \
+		rrdgraph_data.1 rrdgraph_examples.1 rrdgraph_graph.1 \
+		rrdgraph_rpn.1 rrdinfo.1 rrdlast.1 rrdlastupdate.1 \
+		rrdresize.1 rrdrestore.1 rrdthreads.1 rrdtool.1 rrdtune.1 \
+		rrdtutorial.1 rrdupdate.1 rrdxport.1
 
 .if !defined(WITHOUT_PERL_MODULE)
 MAN3=		RRDp.3 RRDs.3
@@ -113,10 +113,10 @@ post-extract:
 .endif
 
 post-install:
-.if !defined(BATCH)
+.if !defined(BATCH) && !defined(NOPORTEXAMPLES)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "############################################################################"
-	@${ECHO_MSG} "# See ${PREFIX}/share/examples/rrdtool for some demonstration code        #"
+	@${ECHO_MSG} "# See ${EXAMPLESDIR} for some demonstration code        #"
 	@${ECHO_MSG} "############################################################################"
 .endif
 

@@ -1,6 +1,6 @@
---- ./bindings/Makefile.in.orig	2009-12-01 23:10:30.000000000 +0000
-+++ ./bindings/Makefile.in	2009-12-01 23:14:10.000000000 +0000
-@@ -679,9 +679,9 @@
+--- bindings/Makefile.in.orig	2010-03-23 01:30:03.000000000 +0800
++++ bindings/Makefile.in	2010-04-26 03:43:31.000000000 +0800
+@@ -696,9 +696,9 @@
  all-local:  @COMP_PERL@ @COMP_RUBY@ @COMP_PYTHON@
  
  install-data-local:
@@ -13,13 +13,12 @@
  	$(AM_V_GEN)test -d python/build && cd python && env BUILDLIBDIR=../../src/.libs $(PYTHON) setup.py install --skip-build --prefix=$(DESTDIR)$(prefix) --exec-prefix=$(DESTDIR)$(exec_prefix) || true
  
  # rules for building the ruby module
-@@ -692,7 +692,8 @@
+@@ -709,7 +709,7 @@
  
  # rules for building the pyton module
- python:
+ python: Makefile
 -	cd python && env BUILDLIBDIR=../../src/.libs $(PYTHON) setup.py build_ext --rpath=$(libdir) && env LIBDIR=../../src/.libs $(PYTHON) setup.py build
 +	cd python && env INCDIR=../../src BUILDLIBDIR=../../src/.libs $(PYTHON) setup.py build_ext --rpath=$(libdir) && env LIBDIR=../../src/.libs $(PYTHON) setup.py build
-+
  
  # rules for building the perl module
  perl_piped: perl-piped/Makefile

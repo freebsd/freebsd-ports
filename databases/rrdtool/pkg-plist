@@ -14,18 +14,19 @@ lib/librrd_th.la
 lib/librrd_th.so
 lib/librrd_th.so.5
 libdata/pkgconfig/librrd.pc
-%%WITH_PERL%%%%SITE_PERL%%/RRDp.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp/.packlist
-%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
+%%WITH_PERL%%%%SITE_PERL%%/RRDp.pm
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/py_rrdtool-0.2.1-py2.6.egg-info
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtoolmodule.so
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs
 %%PORTEXAMPLES%%share/rrdtool/examples/rrdcached/RRDCached.pm
 %%PORTEXAMPLES%%share/rrdtool/examples/rrdcached/rrdcached-size.pl
-@dirrm share/rrdtool/examples/rrdcached
-@dirrm share/rrdtool/examples
-@dirrm share/rrdtool
+%%PORTEXAMPLES%%@dirrm share/rrdtool/examples/rrdcached
+%%PORTEXAMPLES%%@dirrm share/rrdtool/examples
+%%PORTEXAMPLES%%@dirrm share/rrdtool
