@@ -23,6 +23,10 @@ PLIST_FILES=	bin/check-module bin/gnulib-tool
 INFO=		${PORTNAME}
 PORTDATA=	*
 
+.ifdef		NOPORTDATA
+IGNORE=		gnulib requires port data, unset NOPORTDATA to install
+.endif
+
 .ifndef		NOPORTDOCS
 PLIST_DIRS+=	%%DOCSDIR%%
 PLIST_FILES+=	%%DOCSDIR%%/${PORTNAME}.html
