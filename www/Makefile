@@ -56,7 +56,6 @@
     SUBDIR += bk2site
     SUBDIR += bk_edit
     SUBDIR += bkmrkconv
-    SUBDIR += blogd
     SUBDIR += blogsum
     SUBDIR += bluefish
     SUBDIR += bluefish-devel
