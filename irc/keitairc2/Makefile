@@ -6,16 +6,14 @@
 #
 
 PORTNAME=		keitairc
-PORTVERSION=		2.0.b.12
+PORTVERSION=		2.0.r1
 #PORTREVISION=		0
 CATEGORIES=		irc
 MASTER_SITES=		SFJP
-MASTER_SITE_SUBDIR=	${PORTNAME}/43728
-DISTNAME=		keitairc-2.0b12
+MASTER_SITE_SUBDIR=	${PORTNAME}/47170
+DISTNAME=		keitairc-2.0rc1
 
-PATCH_SITES=		http://home.jp.FreeBSD.org/~matusita/keitairc2/
-PATCHFILES=		keitairc-2.0b12-ticket18875.patch \
-			keitairc-2.0b12-ticket19079.patch
+#PATCH_SITES=		http://home.jp.FreeBSD.org/~matusita/keitairc2/
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=IRC proxy for mobilephone that have a web interface
@@ -38,9 +36,9 @@ post-extract:
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM} -rf
-	${REINPLACE_CMD} -i '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/keitairc
-	${REINPLACE_CMD} -i '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/keitairc
-	${REINPLACE_CMD} -i '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/lib/Keitairc/Config.pm
+	${REINPLACE_CMD} -I '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/keitairc
+	${REINPLACE_CMD} -I '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/keitairc
+	${REINPLACE_CMD} -I '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/lib/Keitairc/Config.pm
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keitairc ${PREFIX}/bin
