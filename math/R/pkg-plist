@@ -1030,6 +1030,13 @@ lib/R/library/survival/help/survival.rdb
 lib/R/library/survival/help/survival.rdx
 lib/R/library/survival/html/00Index.html
 lib/R/library/survival/libs/survival.so
+lib/R/library/survival/noweb/Makefile
+lib/R/library/survival/noweb/Readme
+lib/R/library/survival/noweb/main.Rnw
+lib/R/library/survival/noweb/noweb.sty
+lib/R/library/survival/noweb/nwmac.tex
+lib/R/library/survival/noweb/predict.coxph.Rnw
+lib/R/library/survival/noweb/residuals.survreg.Rnw
 lib/R/library/tcltk/DESCRIPTION
 lib/R/library/tcltk/INDEX
 lib/R/library/tcltk/Meta/Rd.rds
@@ -1349,6 +1356,7 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/tcltk/R
 @dirrm lib/R/library/tcltk/Meta
 @dirrm lib/R/library/tcltk
+@dirrm lib/R/library/survival/noweb
 @dirrm lib/R/library/survival/libs
 @dirrm lib/R/library/survival/html
 @dirrm lib/R/library/survival/help
