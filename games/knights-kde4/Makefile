@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	knights
-PORTVERSION=	0.6
-PORTREVISION=	9
+PORTVERSION=	2.0
 CATEGORIES=	games kde
-MASTER_SITES=	SF
+MASTER_SITES=   http://www.kde-look.org/CONTENT/content-files/
+DISTNAME=       122046-${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A KDE chess interface (gnuchess/crafty)
+MAINTAINER=	syncer@gmail.com
+COMMENT=	A KDE4 chess interface
 
-RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
+LIB_DEPENDS=	kdegames.5:${PORTSDIR}/games/kdegames4
+RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
 
-USE_GETTEXT=	yes
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
-CONFIGURE_ENV=	XML2POT=${TRUE} PO2XML=${TRUE}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+WRKSRC=         ${WRKDIR}/Knights
+LATEST_LINK=	${PORTNAME}-kde4
+USE_CMAKE=	yes
+USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 
 .include <bsd.port.mk>
