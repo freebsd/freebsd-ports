@@ -1,25 +1,24 @@
---- appl/libpty/getpty.c.orig	Wed Jan  9 14:28:37 2002
-+++ appl/libpty/getpty.c	Thu Jan 10 21:30:40 2002
-@@ -24,14 +24,27 @@
- #include "libpty.h"
+--- libpty/getpty.c.orig	2009-11-05 12:15:06.000000000 -0800
++++ libpty/getpty.c	2010-04-21 21:36:45.637180364 -0700
+@@ -23,13 +23,26 @@
  #include "pty-int.h"
- #include "k5-platform.h"
+ #include <k5-platform.h>
  
 +#ifdef __FreeBSD__
-+#define PTYCHARS1	"pqrsPQRS"
-+#define PTYCHARS2	"0123456789abcdefghijklmnopqrstuv"
++#define PTYCHARS1      "pqrsPQRS"
++#define PTYCHARS2      "0123456789abcdefghijklmnopqrstuv"
 +#endif
 +
 +#ifndef PTYCHARS1
-+#define PTYCHARS1	"pqrstuvwxyzPQRST"
++#define PTYCHARS1      "pqrstuvwxyzPQRST"
 +#endif
 +
 +#ifndef PTYCHARS2
-+#define PTYCHARS2	"0123456789abcdef"
++#define PTYCHARS2      "0123456789abcdef"
 +#endif
 +
  long
- ptyint_getpty_ext(int *fd, char *slave, int slavelength, int do_grantpt)
+ ptyint_getpty_ext(int *fd, char *slave, size_t slavelength, int do_grantpt)
  {
 +    int ptynum;
 +    char *cp1, *cp2;
@@ -30,7 +29,7 @@
      struct stat stb;
      char slavebuf[1024];
  #endif
-@@ -115,14 +128,14 @@
+@@ -112,14 +125,14 @@
  	strncpy(slave, slavebuf, slavelength);
  	return 0;
      } else {

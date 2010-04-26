@@ -1,5 +1,5 @@
---- appl/bsd/login.c.orig	Tue May 27 21:06:25 2003
-+++ appl/bsd/login.c	Tue Jul 29 20:52:25 2003
+--- bsd/login.c.orig	Tue May 27 21:06:25 2003
++++ bsd/login.c	Tue Jul 29 20:52:25 2003
 @@ -1342,19 +1342,6 @@
  		setpriority(PRIO_PROCESS, 0, 0 + PRIO_OFFSET);
  	    }

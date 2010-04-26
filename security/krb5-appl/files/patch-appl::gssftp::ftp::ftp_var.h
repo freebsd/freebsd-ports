@@ -1,5 +1,5 @@
---- appl/gssftp/ftp/ftp_var.h.orig	Tue Jun 17 02:37:40 2003
-+++ appl/gssftp/ftp/ftp_var.h	Sat Aug 30 05:30:44 2003
+--- gssftp/ftp/ftp_var.h.orig	Tue Jun 17 02:37:40 2003
++++ gssftp/ftp/ftp_var.h	Sat Aug 30 05:30:44 2003
 @@ -33,6 +33,10 @@
   *	@(#)ftp_var.h	5.9 (Berkeley) 6/1/90
   */
