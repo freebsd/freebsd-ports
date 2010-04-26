@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.3.1
+DISTVERSION=	0.4-beta
 PORTEPOCH=	1
 CATEGORIES?=	mail www
-MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail-beta/${DISTVERSION}
 DISTNAME=	${PORTNAME}mail-${DISTVERSION}
 
 MAINTAINER?=	ale@FreeBSD.org
@@ -26,7 +26,7 @@ SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
 		WWWDIR=${WWWDIR}
 
 WANT_PHP_WEB=	yes
-USE_PHP=	pcre mbstring session iconv dom xml
+USE_PHP=	pcre mbstring session iconv dom xml json
 IGNORE_WITH_PHP=4
 
 SUB_FILES=	pkg-install
@@ -105,17 +105,19 @@ post-patch:
 		${WRKSRC}/program/include/rcmail.php \
 		${WRKSRC}/program/js/editor.js \
 		${WRKSRC}/program/localization/*/labels.inc \
-		${WRKSRC}/program/steps/addressbook/mailto.inc
+		${WRKSRC}/program/steps/addressbook/mailto.inc \
+		${WRKSRC}/skins/default/functions.js
 	@${REINPLACE_CMD} "s/_task=mail/_task=${MAIL}/g" \
-		${WRKSRC}/program/steps/mail/rss.inc
+		${WRKSRC}/program/js/app.js
 	@${REINPLACE_CMD} "s/\"mail\"/\"${MAIL}\"/g" \
 		${WRKSRC}/program/js/app.js \
-		${WRKSRC}/skins/default/includes/header.html \
 		${WRKSRC}/skins/default/includes/taskbar.html
 	@${REINPLACE_CMD} "s/mail_footer/${MAIL}_footer/g" \
-		${WRKSRC}/skins/default/*.css
+		${WRKSRC}/skins/default/*.css \
+		${WRKSRC}/skins/default/templates/login.html
 	@${REINPLACE_CMD} "s/mail_toolbar/${MAIL}_toolbar/g" \
-		${WRKSRC}/skins/default/*.css
+		${WRKSRC}/skins/default/*.css \
+		${WRKSRC}/skins/default/templates/login.html
 	@${MV} ${WRKSRC}/program/steps/mail \
 		${WRKSRC}/program/steps/${MAIL}
 	@${MV} ${WRKSRC}/skins/default/images/mail_footer.png \
