@@ -1,6 +1,6 @@
---- ./examples/Makefile.in.orig	2009-12-01 23:18:52.000000000 +0000
-+++ ./examples/Makefile.in	2009-12-01 23:19:10.000000000 +0000
-@@ -352,7 +352,7 @@
+--- examples/Makefile.in.orig	2010-03-23 01:30:04.000000000 +0800
++++ examples/Makefile.in	2010-04-26 03:45:47.000000000 +0800
+@@ -369,7 +369,7 @@
  top_srcdir = @top_srcdir@
  SUBDIRS = rrdcached
  EXTRA_DIST = cgi-demo.cgi.in

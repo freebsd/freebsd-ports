@@ -1,6 +1,6 @@
---- ./doc/Makefile.in.orig	2009-12-01 23:14:57.000000000 +0000
-+++ ./doc/Makefile.in	2009-12-01 23:18:22.000000000 +0000
-@@ -327,9 +327,9 @@
+--- doc/Makefile.in.orig	2010-04-26 03:40:16.000000000 +0800
++++ doc/Makefile.in	2010-04-26 03:44:14.000000000 +0800
+@@ -344,9 +344,9 @@
  
  # what should go into the distribution
  EXTRA_DIST = $(POD) $(POD3) $(HTML) $(MAN) $(MAN3) $(TXT) rrdtool-dump.dtd rrdtool-xport.dtd rrdgraph_libdbi.pod rrdlua.pod
