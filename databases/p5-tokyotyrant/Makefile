@@ -7,6 +7,7 @@
 
 PORTNAME=	tokyotyrant
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://1978th.net/tokyotyrant/perlpkg/
 DISTNAME=	${PORTNAME}-perl-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	tokyopromenade
 PORTVERSION=	0.9.19
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://1978th.net/tokyopromenade/ \
 		LOCAL/glarkin
