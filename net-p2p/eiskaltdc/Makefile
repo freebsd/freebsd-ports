@@ -22,6 +22,7 @@ PROJECTHOST=	eiskaltdc
 USE_GCC=	4.2+
 USE_CMAKE=	yes
 USE_QT_VER=	4
+USE_OPENSSL=	yes
 QT_COMPONENTS=	gui xml dbus network sql qmake_build uic_build \
 		moc_build rcc_build linguist_build
 MAKE_JOBS_SAFE=	yes
@@ -38,6 +39,10 @@ LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=on
 .else
 CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=off
+.endif
+
+.if ${OSVERSION} < 700024
+USE_OPENSSL_PORT=yes
 .endif
 
 pre-configure:
