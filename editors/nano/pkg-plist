@@ -38,9 +38,10 @@ bin/rnano
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/nano.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/nano.mo
 %%EXAMPLESDIR%%/nanorc.sample
-share/nano/awk.nanorc
 share/nano/asm.nanorc
+share/nano/awk.nanorc
 share/nano/c.nanorc
+share/nano/cmake.nanorc
 share/nano/css.nanorc
 share/nano/debian.nanorc
 share/nano/fortran.nanorc
