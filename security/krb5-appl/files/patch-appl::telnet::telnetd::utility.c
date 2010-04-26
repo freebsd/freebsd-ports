@@ -1,5 +1,5 @@
---- appl/telnet/telnetd/utility.c.orig	Wed Jan  9 14:26:59 2002
-+++ appl/telnet/telnetd/utility.c	Fri Jan 11 13:10:33 2002
+--- telnet/telnetd/utility.c.orig	Wed Jan  9 14:26:59 2002
++++ telnet/telnetd/utility.c	Fri Jan 11 13:10:33 2002
 @@ -408,18 +408,25 @@
  int
  netwrite(const char *buf, size_t len)
