@@ -1,6 +1,6 @@
---- engine/Makefile.in.orig	2010-03-16 10:44:01.101570984 +0900
-+++ engine/Makefile.in	2010-03-16 10:38:32.610537905 +0900
-@@ -787,7 +787,7 @@
+--- engine/Makefile.in.org	2010-04-24 10:42:38.834643939 +0900
++++ engine/Makefile.in	2010-04-24 11:05:23.963922380 +0900
+@@ -790,7 +790,7 @@
  
  
  anthy.py anthy_wrap.c: anthy.i
