@@ -1,12 +1,12 @@
-# New ports collection makefile for:  blogd
-# Date created:                       Fri, 12 Jun 2000 10:53:06 EDT
+# New ports collection makefile for:  ephemera
+# Date created:                       Sat, 17 Apr 2010 18:17:00 EDT
 # Whom:                               James Bailie <jimmy@mammothcheese.ca>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	blogd
-PORTVERSION=	2.4
+PORTNAME=	ephemera
+PORTVERSION=	2.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -15,7 +15,7 @@ COMMENT=	Blog server
 
 RUN_DEPENDS=	munger:${PORTSDIR}/lang/munger
 
-MAN8=		blogd.8
+MAN8=		ephemera.8
 MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
