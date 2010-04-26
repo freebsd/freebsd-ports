@@ -10,7 +10,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	admin@mjbrune.org
 COMMENT=	Beeps a certain duration and pitch out of the PC Speaker
 
 MAN1=		beep.1
