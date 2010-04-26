@@ -106,6 +106,10 @@ NET_SNMP_MIB_MODULE_LIST=host disman/event-mib smux mibII/mta_sendmail mibII/tcp
 NET_SNMP_MIB_MODULE_LIST+=	sctp-mib
 .endif
 
+.if ${OSVERSION} >= 800000
+CONFIGURE_ARGS+=	--with-libs="-lssp_nonshared"
+.endif
+
 .if defined(WITH_MFD_REWRITES)
 CONFIGURE_ARGS+=--enable-mfd-rewrites
 NET_SNMP_MIB_MODULE_LIST+=	if-mib
