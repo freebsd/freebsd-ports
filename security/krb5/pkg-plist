@@ -1,13 +1,15 @@
 bin/compile_et
 bin/%%FTP_PROG%%
 bin/gss-client
+bin/k5srvutil
+bin/kadmin
 bin/kdestroy
 bin/kinit
 bin/klist
 bin/kpasswd
 bin/krb5-config
-%%KRB4%%bin/krb524init
 bin/ksu
+bin/ktutil
 bin/kvno
 bin/%%RCP_PROG%%
 bin/%%RLOGIN_PROG%%
@@ -16,10 +18,10 @@ bin/sclient
 bin/sim_client
 bin/%%TELNET_PROG%%
 bin/uuclient
-%%KRB4%%bin/v4rcp
 include/com_err.h
 include/gssapi.h
 include/gssapi/gssapi.h
+include/gssapi/gssapi_ext.h
 include/gssapi/gssapi_generic.h
 include/gssapi/gssapi_krb5.h
 include/gssapi/mechglue.h
@@ -39,19 +41,16 @@ include/gssrpc/svc.h
 include/gssrpc/svc_auth.h
 include/gssrpc/types.h
 include/gssrpc/xdr.h
-%%KRB4%%include/kerberosIV/des.h
-%%KRB4%%include/kerberosIV/kadm_err.h
-%%KRB4%%include/kerberosIV/krb.h
-%%KRB4%%include/kerberosIV/krb_err.h
-%%KRB4%%include/kerberosIV/mit-copyright.h
 include/krb5.h
 include/krb5/krb5.h
 include/krb5/locate_plugin.h
+include/kadm5/admin.h
+include/kadm5/chpass_util_strings.h
+include/kadm5/kadm_err.h
+include/kdb.h
 include/profile.h
 lib/libcom_err.so
 lib/libcom_err.so.3
-lib/libdes425.so
-lib/libdes425.so.3
 lib/libgssapi_krb5.so
 lib/libgssapi_krb5.so.2
 lib/libgssrpc.so
@@ -59,34 +58,30 @@ lib/libgssrpc.so.4
 lib/libk5crypto.so
 lib/libk5crypto.so.3
 lib/libkadm5clnt.so
-lib/libkadm5clnt.so.5
+lib/libkadm5clnt.so.6
 lib/libkadm5srv.so
-lib/libkadm5srv.so.5
+lib/libkadm5srv.so.6
 lib/libkdb5.so
 lib/libkdb5.so.4
-%%KRB4%%lib/libkrb4.so
-%%KRB4%%lib/libkrb4.so.2
 lib/libkrb5.so
 lib/libkrb5.so.3
 lib/libkrb5support.so
 lib/libkrb5support.so.0
 lib/krb5/plugins/kdb/db2.so
+lib/krb5/plugins/preauth/encrypted_challenge.so
 lib/krb5/plugins/preauth/pkinit.so
 sbin/%%FTP_PROG%%d
 sbin/gss-server
-sbin/k5srvutil
-sbin/kadmin
 sbin/kadmin.local
 sbin/kadmind
 sbin/kdb5_util
 sbin/klogind
 sbin/kprop
 sbin/kpropd
+sbin/kproplog
 sbin/krb5-send-pr
-%%KRB4%%sbin/krb524d
 sbin/krb5kdc
 sbin/kshd
-sbin/ktutil
 sbin/login.krb5
 sbin/sim_server
 sbin/sserver
@@ -102,12 +97,13 @@ share/gnats/mit
 @dirrm lib/krb5/plugins/preauth
 @dirrm lib/krb5/plugins/libkrb5
 @dirrm lib/krb5/plugins/kdb
+@dirrm lib/krb5/plugins/authdata
 @dirrm lib/krb5/plugins
 @dirrm lib/krb5
 @dirrm include/gssapi
 @dirrm include/gssrpc
-@dirrm include/kerberosIV
 @dirrm include/krb5
+@dirrm include/kadm5
 @dirrm share/et
 @dirrmtry share/gnats
 @dirrm share/examples/krb5

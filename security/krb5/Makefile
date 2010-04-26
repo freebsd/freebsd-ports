@@ -6,33 +6,32 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.6.3
-PORTREVISION=	9
+PORTVERSION=		1.7
+PORTREVISION=	2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
-PATCHFILES=		2008-001-patch.txt
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
-CONFLICTS=		krb4-[0-9]* heimdal-[0-9]* srp-[0-9]*
+CONFLICTS=		krb[45]-[0-9]* heimdal-[0-9]* srp-[0-9]*
 
 BROKEN=			does not compile
+FORBIDDEN=		MITKRB5-SA-2010-001, MITKRB5-SA-2010-002, and MITKRB5-SA-2010-003.
 
-LATEST_LINK=		${PORTNAME}
+LATEST_LINK=		${PORTNAME}-17
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_OPENSSL=		yes
 WITH_OPENSSL_PORT=	yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=		libtool:22
 CONFIGURE_ARGS?=	--enable-shared
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
 			CFLAGS="${CFLAGS}"
@@ -56,7 +55,7 @@ BROKEN=		fails to build with new utmpx
 .if defined(WITH_KRB5_DOC)
 BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/texinfo \
 			dvips:${PORTSDIR}/print/dvipsk-tetex
-INFO=			krb425 krb5-admin krb5-install krb5-user
+INFO=			krb5-admin krb5-install krb5-user
 .endif
 
 .if !defined(WITH_KRB5_KRB4_COMPAT)
@@ -70,17 +69,14 @@ PLIST_SUB+=		KRB4=""
 PREFIX=			${KRB5_HOME}
 .endif
 
-MAN1=			krb5-send-pr.1 krb5-config.1 kpasswd.1 klist.1 \
-			kinit.1 kdestroy.1 ksu.1 sclient.1 rsh.1 rcp.1 \
-			rlogin.1 ftp.1 telnet.1 kerberos.1 kvno.1 compile_et.1
+MAN1=			k5srvutil.1 kadmin.1 krb5-send-pr.1 krb5-config.1 \
+			kpasswd.1 klist.1 kinit.1 kdestroy.1 ksu.1 ktutil.1 \
+			sclient.1 rsh.1 rcp.1 rlogin.1 ftp.1 telnet.1 \
+			kerberos.1 kvno.1 compile_et.1
 MAN5=			kdc.conf.5 krb5.conf.5 .k5login.5
-MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
-			ktutil.8 kadmind.8 kprop.8 kpropd.8 sserver.8 \
-			kshd.8 klogind.8 login.krb5.8 ftpd.8 telnetd.8 \
-			k5srvutil.8
-.if defined(WITH_KRB5_KRB4_COMPAT)
-MAN8+=			krb524d.8
-.endif
+MAN8=			krb5kdc.8 kadmin.local.8 kdb5_util.8 kadmind.8 \
+			kprop.8 kpropd.8 kproplog.8 sserver.8 kshd.8 \
+			klogind.8 login.krb5.8 ftpd.8 telnetd.8
 
 .if defined(WITH_KRB5_RENAME_FTP)
 MAN1:=			${MAN1:C/ftp/kftp/}
@@ -124,10 +120,6 @@ PLIST_SUB+=		RCP_PROG="krcp"
 PLIST_SUB+=		RCP_PROG="rcp"
 .endif
 
-.if defined(WITH_KRB5_KRB4_COMPAT)
-MAN1+=			krb524init.1 v4rcp.1
-.endif
-
 .if defined(PROGRAM_TRANSFORM_NAME) && ${PROGRAM_TRANSFORM_NAME} != ""
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
@@ -136,7 +128,7 @@ WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc
 HTML_DOCS=		ftp.html kdestroy.html kinit.html klist.html \
-			kpasswd.html krb425.html krb5-admin.html \
+			kpasswd.html krb5-admin.html \
 			krb5-install.html krb5-user.html ksu.html \
 			rcp.html rlogin.html rsh.html telnet.html
 

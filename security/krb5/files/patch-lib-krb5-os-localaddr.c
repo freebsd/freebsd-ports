@@ -1,75 +1,75 @@
---- lib/krb5/os/localaddr.c.orig	Wed Apr 13 09:55:43 2005
-+++ lib/krb5/os/localaddr.c	Sun Jul 16 09:29:05 2006
-@@ -436,12 +436,14 @@
+--- lib/krb5/os/localaddr.c.orig	2009-02-18 10:14:48.000000000 -0800
++++ lib/krb5/os/localaddr.c	2009-08-28 13:37:41.000000000 -0700
+@@ -173,6 +173,7 @@
+ }
  #endif
- 	if ((ifp->ifa_flags & IFF_UP) == 0)
- 	    continue;
+ 
 +#if 0
- 	if (ifp->ifa_flags & IFF_LOOPBACK) {
+ static int
+ is_loopback_address(struct sockaddr *sa)
+ {
+@@ -189,6 +190,7 @@
+ 	return 0;
+     }
+ }
++#endif
+ 
+ #ifdef HAVE_IFADDRS_H
+ #include <ifaddrs.h>
+@@ -464,12 +466,14 @@
+ 	    ifp->ifa_flags &= ~IFF_UP;
+ 	    continue;
+ 	}
++#if 0
+ 	if (is_loopback_address(ifp->ifa_addr)) {
  	    /* Pretend it's not up, so the second pass will skip
  	       it.  */
  	    ifp->ifa_flags &= ~IFF_UP;
  	    continue;
  	}
 +#endif
- 	if (ifp->ifa_addr == NULL) {
- 	    /* Can't use an interface without an address.  Linux
- 	       apparently does this sometimes.  [RT ticket 1770 from
-@@ -459,8 +461,10 @@
+ 	/* If this address is a duplicate, punt.  */
+ 	match = 0;
  	for (ifp2 = ifp_head; ifp2 && ifp2 != ifp; ifp2 = ifp2->ifa_next) {
- 	    if ((ifp2->ifa_flags & IFF_UP) == 0)
- 		continue;
-+#if 0
- 	    if (ifp2->ifa_flags & IFF_LOOPBACK)
- 		continue;
-+#endif
- 	    if (addr_eq (ifp->ifa_addr, ifp2->ifa_addr)) {
- 		match = 1;
- 		ifp->ifa_flags &= ~IFF_UP;
-@@ -583,6 +587,7 @@
+@@ -598,11 +602,13 @@
  	    }
  	    /*@=moduncon@*/
  
 +#if 0
- #ifdef IFF_LOOPBACK
  	    /* None of the current callers want loopback addresses.  */
- 	    if (lifreq.lifr_flags & IFF_LOOPBACK) {
-@@ -590,6 +595,7 @@
+ 	    if (is_loopback_address((struct sockaddr *)&lifr->lifr_addr)) {
+ 		Tprintf (("  loopback\n"));
  		goto skip;
  	    }
- #endif
 +#endif
  	    /* Ignore interfaces that are down.  */
  	    if ((lifreq.lifr_flags & IFF_UP) == 0) {
  		Tprintf (("  down\n"));
-@@ -755,6 +761,7 @@
+@@ -769,11 +775,13 @@
  	    }
  	    /*@=moduncon@*/
  
 +#if 0
- #ifdef IFF_LOOPBACK
  	    /* None of the current callers want loopback addresses.  */
- 	    if (lifreq.iflr_flags & IFF_LOOPBACK) {
-@@ -762,6 +769,7 @@
+ 	    if (is_loopback_address(&lifr->iflr_addr)) {
+ 		Tprintf (("  loopback\n"));
  		goto skip;
  	    }
- #endif
 +#endif
  	    /* Ignore interfaces that are down.  */
  	    if ((lifreq.iflr_flags & IFF_UP) == 0) {
  		Tprintf (("  down\n"));
-@@ -971,12 +979,14 @@
+@@ -984,11 +992,13 @@
  	}
  	/*@=moduncon@*/
  
 +#if 0
- #ifdef IFF_LOOPBACK
  	/* None of the current callers want loopback addresses.  */
- 	if (ifreq.ifr_flags & IFF_LOOPBACK) {
+ 	if (is_loopback_address(&ifreq.ifr_addr)) {
  	    Tprintf (("  loopback\n"));
  	    goto skip;
  	}
 +#endif
- #endif
  	/* Ignore interfaces that are down.  */
  	if ((ifreq.ifr_flags & IFF_UP) == 0) {
+ 	    Tprintf (("  down\n"));
