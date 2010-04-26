@@ -1,7 +1,10 @@
-Knights is a graphical chess interface designed
-to be both friendly to new chess players and
-functional for Grand Masters. Knights is similar
-to XBoard, but provides a more modern interface
-and is more friendly to chess newbies.
+Knights is a simple chess board for KDE 4. 
 
-WWW: http://knights.sourceforge.net
+It is a rewrite of the KDE3 Knights, but it 
+net yet feature-complete compared to the old 
+one. Supports playing againts computer engines 
+that support the XBoard protocol or against 
+player at the same computer. It has automatic 
+rule checking and some nice animations.
+
+WWW: http://kde-apps.org/content/show.php/Knights?content=122046

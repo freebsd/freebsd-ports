@@ -1,47 +1,15 @@
 bin/knights
-share/applnk/Games/Board/knights.desktop
-share/apps/knights/default-engine-portrait.jpg
-share/apps/knights/default-portrait.jpg
-share/apps/knights/icon-display.png
-share/apps/knights/icon-general.png
-share/apps/knights/pgn_template.kml
-share/apps/knights/splash.png
-share/apps/knights/themes/KBDefault.tar.gz
-share/apps/knights/themes/KCDefault.tar.gz
-share/apps/knights/themes/KSDefault.tar.gz
-share/apps/knights/wizard.png
-share/doc/HTML/de/knights/common
-share/doc/HTML/en/knights/common
-share/doc/HTML/en/knights/index.docbook
-share/doc/HTML/es/knights/common
-share/doc/HTML/et/knights/common
-share/doc/HTML/fi/knights/common
-share/doc/HTML/fr/knights/common
-share/doc/HTML/fr/knights/index.docbook
-share/doc/HTML/it/knights/common
-share/doc/HTML/ru/knights/common
+share/applications/kde4/knights.desktop
+share/apps/knights/knightsui.rc
+share/apps/knights/themes/default.desktop
+share/apps/knights/themes/knights.png
+share/apps/knights/themes/knights.svg
+share/apps/knights/themes/tux.desktop
+share/apps/knights/themes/tux.png
+share/apps/knights/themes/tux.svg
+share/config.kcfg/knights.kcfg
 share/icons/hicolor/16x16/apps/knights.png
-share/icons/hicolor/16x16/mimetypes/pgn.png
 share/icons/hicolor/32x32/apps/knights.png
-share/icons/hicolor/32x32/mimetypes/pgn.png
 share/icons/hicolor/48x48/apps/knights.png
-share/icons/hicolor/48x48/mimetypes/pgn.png
-share/icons/hicolor/64x64/apps/knights.png
-share/icons/hicolor/64x64/mimetypes/pgn.png
-share/locale/de/LC_MESSAGES/knights.mo
-share/locale/es/LC_MESSAGES/knights.mo
-share/locale/et/LC_MESSAGES/knights.mo
-share/locale/fi/LC_MESSAGES/knights.mo
-share/locale/fr/LC_MESSAGES/knights.mo
-share/locale/it/LC_MESSAGES/knights.mo
-share/mimelnk/application/pgn.desktop
-@dirrm share/doc/HTML/ru/knights
-@dirrm share/doc/HTML/it/knights
-@dirrm share/doc/HTML/fr/knights
-@dirrm share/doc/HTML/fi/knights
-@dirrm share/doc/HTML/et/knights
-@dirrm share/doc/HTML/es/knights
-@dirrm share/doc/HTML/en/knights
-@dirrm share/doc/HTML/de/knights
-@dirrm share/apps/knights/themes
-@dirrm share/apps/knights
+@dirrm share/apps/knights/themes/
+@dirrm share/apps/knights/
