@@ -25,8 +25,10 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/commands/list_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/lock_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/mirror_command.rb
+%%RUBY_SITELIBDIR%%/rubygems/commands/owner_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/outdated_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/pristine_command.rb
+%%RUBY_SITELIBDIR%%/rubygems/commands/push_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/query_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/rdoc_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/search_command.rb
@@ -45,10 +47,6 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/dependency.rb
 %%RUBY_SITELIBDIR%%/rubygems/dependency_installer.rb
 %%RUBY_SITELIBDIR%%/rubygems/dependency_list.rb
-%%RUBY_SITELIBDIR%%/rubygems/digest/digest_adapter.rb
-%%RUBY_SITELIBDIR%%/rubygems/digest/md5.rb
-%%RUBY_SITELIBDIR%%/rubygems/digest/sha1.rb
-%%RUBY_SITELIBDIR%%/rubygems/digest/sha2.rb
 %%RUBY_SITELIBDIR%%/rubygems/doc_manager.rb
 %%RUBY_SITELIBDIR%%/rubygems/exceptions.rb
 %%RUBY_SITELIBDIR%%/rubygems/ext.rb
@@ -57,6 +55,7 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/ext/ext_conf_builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/ext/rake_builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/format.rb
+%%RUBY_SITELIBDIR%%/rubygems/gemcutter_utilities.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_openssl.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_path_searcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_runner.rb
@@ -87,7 +86,6 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/test_utilities.rb
 %%RUBY_SITELIBDIR%%/rubygems/text.rb
-%%RUBY_SITELIBDIR%%/rubygems/timer.rb
 %%RUBY_SITELIBDIR%%/rubygems/uninstaller.rb
 %%RUBY_SITELIBDIR%%/rubygems/user_interaction.rb
 %%RUBY_SITELIBDIR%%/rubygems/validator.rb
