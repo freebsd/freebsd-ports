@@ -1,6 +1,6 @@
 # New ports collection makefile for:	rubygem-net-scp
 # Date created:				June 27, 2008
-# Whom:					Philip M. Gollucci <pgollucci@FreeBSD.org>
+# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	security rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	net-ssh
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Non-interactive SCP processing
 
 RUN_DEPENDS=	rubygem-net-ssh>=1.99.1:${PORTSDIR}/security/rubygem-net-ssh

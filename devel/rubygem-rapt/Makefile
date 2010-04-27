@@ -11,7 +11,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rails Plugin Tool
 
 USE_RUBY=	yes

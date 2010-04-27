@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Streaming Text Orientated Messaging Protocol gem
 
 USE_RUBY=		yes

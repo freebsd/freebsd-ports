@@ -11,7 +11,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	soap4r
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Yet another HTTP client implementation by NaHi
 
 USE_RUBY=	yes

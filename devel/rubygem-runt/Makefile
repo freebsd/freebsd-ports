@@ -10,7 +10,7 @@ PORTVERSION=	0.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby implementation of select Martin Fowler patterns
 
 USE_RUBY=	yes

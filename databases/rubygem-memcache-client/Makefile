@@ -10,7 +10,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	seattlerb
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for MemCached
 
 BUILD_DEPENDS=	rubygem-zentest>=3.4.2:${PORTSDIR}/devel/rubygem-zentest \

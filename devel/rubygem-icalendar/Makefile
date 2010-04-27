@@ -10,7 +10,7 @@ PORTVERSION=	1.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	
 
 USE_RUBY=	yes

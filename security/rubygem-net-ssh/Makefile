@@ -10,7 +10,7 @@ PORTVERSION=	2.0.15
 CATEGORIES=	security rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Non-interactive SSH processing
 
 OPTIONS=	PROMPT_PASSPHRASES "Prompt for passphrases on keys" On

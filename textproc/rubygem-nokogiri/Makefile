@@ -9,7 +9,7 @@ PORTVERSION=	1.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An HTML, XML, SAX, and Reader parser
 
 BUILD_DEPENDS=	${RUBY_PKGNAMEPREFIX}iconv>=0:${PORTSDIR}/converters/ruby-iconv \

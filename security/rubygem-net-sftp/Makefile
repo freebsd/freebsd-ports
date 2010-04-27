@@ -11,7 +11,7 @@ CATEGORIES=	security rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	net-ssh
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implementation of the SFTP client protocol
 
 RUN_DEPENDS=	rubygem-net-ssh>=2.0.2:${PORTSDIR}/security/rubygem-net-ssh

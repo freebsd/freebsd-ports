@@ -9,7 +9,7 @@ PORTVERSION=	1.0.12
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A ruby take off of p5-XML-Simple
 
 USE_RUBY=	yes

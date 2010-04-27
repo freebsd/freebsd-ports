@@ -10,7 +10,7 @@ PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework for graph datastructures and algorithms implemented in Ruby
 
 RUN_DEPENDS=	rubygem-stream>=0.5:${PORTSDIR}/devel/rubygem-stream
