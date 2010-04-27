@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-project/source/${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Clipper-compatible compiler
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
