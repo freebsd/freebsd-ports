@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	tokyodystopia
-PORTVERSION=	0.9.13
-PORTREVISION=	4
+PORTVERSION=	0.9.14
 CATEGORIES=	textproc
-MASTER_SITES=	SF/tokyocabinet/${PORTNAME}/${PORTVERSION} \
-		http://tokyocabinet.sourceforge.net/dystopiapkg/
-MASTER_SITE_SUBDIR=	tokyocabinet
+MASTER_SITES=	http://1978th.net/tokyodystopia/
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A full-text search system based on Tokyo Cabinet
@@ -38,7 +35,7 @@ MAN3=	dystopia.3 \
 	tcqdb.3 \
 	tcwdb.3
 
-SHLIB_VER=	1.14.0
+SHLIB_VER=	1.15.0
 SHLIB_VER_MAJ=	1
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
