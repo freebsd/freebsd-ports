@@ -3,6 +3,7 @@ bin/varnishhist
 bin/varnishlog
 bin/varnishncsa
 bin/varnishreplay
+bin/varnishsizes
 bin/varnishstat
 bin/varnishtest
 bin/varnishtop
