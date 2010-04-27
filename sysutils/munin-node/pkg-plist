@@ -148,6 +148,7 @@ sbin/munin-run
 %%DATADIR%%/plugins/postgres_users
 %%DATADIR%%/plugins/postgres_xlog
 %%DATADIR%%/plugins/processes
+%%DATADIR%%/plugins/proxy_plugin
 %%DATADIR%%/plugins/ps_
 %%DATADIR%%/plugins/psu_
 %%DATADIR%%/plugins/qmailqstat

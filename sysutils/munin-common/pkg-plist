@@ -6,3 +6,5 @@
 %%SITE_PERL%%/Munin/Common/Timeout.pm
 @dirrm %%SITE_PERL%%/Munin/Common
 @dirrm %%SITE_PERL%%/Munin
+@exec mkdir -p %%LOGDIR%%
+@unexec /bin/rmdir %%LOGDIR%% 2>/dev/null || /usr/bin/true
