@@ -2,7 +2,7 @@ bin/mpg123
 include/mpg123.h
 lib/libmpg123.la
 lib/libmpg123.so
-lib/libmpg123.so.22
+lib/libmpg123.so.25
 lib/mpg123/output_dummy.la
 lib/mpg123/output_dummy.so
 lib/mpg123/output_oss.la

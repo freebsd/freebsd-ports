@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpg123
-PORTVERSION=	1.10.1
+PORTVERSION=	1.12.1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
@@ -22,7 +22,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-audio=oss \
 		--with-default-audio=oss
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CONFIG_SHELL=${SH} CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CONFIG_SHELL=${SH} CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+	       	LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		mpg123.1
 
@@ -45,6 +46,7 @@ CONFIGURE_ARGS+=--with-cpu=${WITH_CPU}
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
