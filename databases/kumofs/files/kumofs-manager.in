@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: kumofs-manager
+# REQUIRE: LOGIN
+# BEFORE: kumofs-server
+# KEYWORD: shutdown
+#
+# kumofs_manager_enable="YES"
+# kumofs_manager_local_addr="manager1"
+# kumofs_manager_partner_addr="manager2"
+# kumofs_manager_extra_flags="-v"
+#
+. /etc/rc.subr
+
+name="kumofs_manager"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+# Set defaults
+: ${kumofs_manager_enable="NO"}
+: ${kumofs_manager_pid="/var/run/kumofs/manager.pid"}
+: ${kumofs_manager_flags="-l ${kumofs_manager_local_addr} -p ${kumofs_manager_partner_addr} -d ${kumofs_manager_pid} -o /var/log/kumofs/manager.log ${kumofs_manager_extra_flags}"}
+: ${kumofs_manager_user="kumofs"}
+
+command=%%PREFIX%%/bin/kumo-manager
+
+run_rc_command "$1"
