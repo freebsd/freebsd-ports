@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icalendar
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
