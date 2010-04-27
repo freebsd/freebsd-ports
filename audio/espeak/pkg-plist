@@ -4,7 +4,7 @@ include/espeak/speak_lib.h
 lib/libespeak.a
 lib/libespeak.so
 lib/libespeak.so.1
-lib/libespeak.so.1.1.42
+lib/libespeak.so.1.1.43
 %%PORTDOCS%%%%DOCSDIR%%/add_language.html
 %%PORTDOCS%%%%DOCSDIR%%/analyse.html
 %%PORTDOCS%%%%DOCSDIR%%/commands.html
@@ -12,19 +12,6 @@ lib/libespeak.so.1.1.42
 %%PORTDOCS%%%%DOCSDIR%%/docindex.html
 %%PORTDOCS%%%%DOCSDIR%%/editor.html
 %%PORTDOCS%%%%DOCSDIR%%/editor_if.html
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/dir-wcprops
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/empty-file
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/entries
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/format
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/prop-base/lips.png.svn-base
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/prop-base/sand-light.jpg.svn-base
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/props/lips.png.svn-work
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/props/sand-light.jpg.svn-work
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/text-base/lips.png.svn-base
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/text-base/sand-light.jpg.svn-base
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/wcprops/lips.png.svn-work
-%%PORTDOCS%%%%DOCSDIR%%/images/.svn/wcprops/sand-light.jpg.svn-work
 %%PORTDOCS%%%%DOCSDIR%%/images/lips.png
 %%PORTDOCS%%%%DOCSDIR%%/images/sand-light.jpg
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -89,6 +76,7 @@ lib/libespeak.so.1.1.42
 %%DATADIR%%/espeak-data/mbrola_ph/us3_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/us_phtrans
 %%DATADIR%%/espeak-data/mk_dict
+%%DATADIR%%/espeak-data/nci_dict
 %%DATADIR%%/espeak-data/nl_dict
 %%DATADIR%%/espeak-data/no_dict
 %%DATADIR%%/espeak-data/pap_dict
@@ -112,6 +100,9 @@ lib/libespeak.so.1.1.42
 %%DATADIR%%/espeak-data/voices/!v/f3
 %%DATADIR%%/espeak-data/voices/!v/f4
 %%DATADIR%%/espeak-data/voices/!v/fast
+%%DATADIR%%/espeak-data/voices/!v/klatt
+%%DATADIR%%/espeak-data/voices/!v/klatt2
+%%DATADIR%%/espeak-data/voices/!v/klatt3
 %%DATADIR%%/espeak-data/voices/!v/m1
 %%DATADIR%%/espeak-data/voices/!v/m2
 %%DATADIR%%/espeak-data/voices/!v/m3
@@ -214,6 +205,7 @@ lib/libespeak.so.1.1.42
 %%DATADIR%%/espeak-data/voices/test/grc
 %%DATADIR%%/espeak-data/voices/test/jbo
 %%DATADIR%%/espeak-data/voices/test/pap
+%%DATADIR%%/espeak-data/voices/test/nci
 %%DATADIR%%/espeak-data/voices/tr
 %%DATADIR%%/espeak-data/voices/vi
 %%DATADIR%%/espeak-data/voices/zh
@@ -230,16 +222,6 @@ lib/libespeak.so.1.1.42
 @dirrm %%DATADIR%%/espeak-data/mbrola
 @dirrm %%DATADIR%%/espeak-data
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/wcprops
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/wcprops
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/text-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/props
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp/prop-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/tmp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/text-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/props
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn/prop-base
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/.svn
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/espeak
