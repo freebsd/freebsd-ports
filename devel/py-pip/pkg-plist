@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/pip
 %%PYTHON_SITELIBDIR%%/pip/__init__.py
 %%PYTHON_SITELIBDIR%%/pip/__init__.pyc
@@ -29,6 +30,9 @@ bin/pip
 %%PYTHON_SITELIBDIR%%/pip/commands/install.py
 %%PYTHON_SITELIBDIR%%/pip/commands/install.pyc
 %%PYTHON_SITELIBDIR%%/pip/commands/install.pyo
+%%PYTHON_SITELIBDIR%%/pip/commands/search.py
+%%PYTHON_SITELIBDIR%%/pip/commands/search.pyc
+%%PYTHON_SITELIBDIR%%/pip/commands/search.pyo
 %%PYTHON_SITELIBDIR%%/pip/commands/uninstall.py
 %%PYTHON_SITELIBDIR%%/pip/commands/uninstall.pyc
 %%PYTHON_SITELIBDIR%%/pip/commands/uninstall.pyo
@@ -77,13 +81,14 @@ bin/pip
 %%PYTHON_SITELIBDIR%%/pip/venv.py
 %%PYTHON_SITELIBDIR%%/pip/venv.pyc
 %%PYTHON_SITELIBDIR%%/pip/venv.pyo
+%%PORTDOCS%%%%DOCSDIR%%/_build/branches.html
 %%PORTDOCS%%%%DOCSDIR%%/_build/configuration.html
-%%PORTDOCS%%%%DOCSDIR%%/_build/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/_build/index.html
 %%PORTDOCS%%%%DOCSDIR%%/_build/license.html
 %%PORTDOCS%%%%DOCSDIR%%/_build/news.html
 %%PORTDOCS%%%%DOCSDIR%%/_build/requirement-format.html
 %%PORTDOCS%%%%DOCSDIR%%/_build/search.html
+%%PORTDOCS%%%%DOCSDIR%%/branches.txt
 %%PORTDOCS%%%%DOCSDIR%%/configuration.txt
 %%PORTDOCS%%%%DOCSDIR%%/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
