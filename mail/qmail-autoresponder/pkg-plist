@@ -1,9 +1,8 @@
-@comment $FreeBSD$
 bin/qmail-autoresponder
-%%MYSQL%%bin/qmail-autoresponder-mysql
+bin/qmail-autoresponder-mysql
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/procedure.txt
-%%MYSQL%%%%PORTDOCS%%%%DOCSDIR%%/schema.mysql
+%%PORTDOCS%%%%DOCSDIR%%/schema.mysql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

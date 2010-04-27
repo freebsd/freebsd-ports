@@ -4,13 +4,9 @@
 #
 # $FreeBSD$
 #
-# Compile-time options:
-# WITH_MYSQL=yes	enable support for MySQL
-#
 
 PORTNAME=	qmail-autoresponder
-PORTVERSION=	0.96.2
-PORTREVISION=	2
+PORTVERSION=	0.97
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -19,24 +15,14 @@ COMMENT=	Rate-limited autoresponder for qmail
 
 LIB_DEPENDS=	bg-sysdeps.2:${PORTSDIR}/devel/bglibs
 
-LDFLAGS?=	-s
-BGLIBS_INC=	${LOCALBASE}/include/bglibs
-BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
-
-PROGS=		qmail-autoresponder
-MAN1=		qmail-autoresponder.1
-DOCS=		NEWS README TODO procedure.txt
-
-.if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib/mysql
-PROGS+=		qmail-autoresponder-mysql
-DOCS+=		schema.mysql
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
-.endif
+
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/bglibs
+LDFLAGS+=	-L${LOCALBASE}/lib/mysql -L${LOCALBASE}/lib/bglibs -s
+
+PROGS=		qmail-autoresponder qmail-autoresponder-mysql
+MAN1=		qmail-autoresponder.1
+DOCS=		NEWS README TODO procedure.txt schema.mysql
 
 ALL_TARGET=	${PROGS}
 
@@ -45,8 +31,6 @@ do-configure:
 	${ECHO_CMD} "${MANPREFIX}/man"		> ${WRKSRC}/conf-man
 	${ECHO_CMD} "${CC} ${CFLAGS}"		> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${LDFLAGS}"		> ${WRKSRC}/conf-ld
-	${ECHO_CMD} "${BGLIBS_INC}"		> ${WRKSRC}/conf-bgincs
-	${ECHO_CMD} "${BGLIBS_LIB}"		> ${WRKSRC}/conf-bglibs
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PROGS} ${PREFIX}/bin
