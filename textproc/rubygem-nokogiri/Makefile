@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	nokogiri
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF
 
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	An HTML, XML, SAX, and Reader parser
 
-BUILD_DEPENDS=	${RUBY_PKGNAMEPREFIX}iconv>=0:${PORTSDIR}/converters/ruby-iconv
+BUILD_DEPENDS=	${RUBY_PKGNAMEPREFIX}iconv>=0:${PORTSDIR}/converters/ruby-iconv \
+				rubygem-hoe>=2.3.3:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	libxml2 libxslt
