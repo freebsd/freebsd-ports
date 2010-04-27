@@ -67,6 +67,8 @@ lib/MailScanner/MailScanner/ZMailer.pm
 libexec/MailScanner/analyse_SpamAssassin_cache
 libexec/MailScanner/clean.SA.cache
 libexec/MailScanner/clean.quarantine
+libexec/MailScanner/mcafee6-wrapper.sample
+libexec/MailScanner/mcafee6-autoupdate.sample
 libexec/MailScanner/mailscanner_create_locks
 libexec/MailScanner/processing_messages_alert
 libexec/MailScanner/Quick.Peek

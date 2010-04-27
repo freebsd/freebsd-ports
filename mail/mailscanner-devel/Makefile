@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.79.10
+PORTVERSION=	4.80.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
 
 MAINTAINER=	pgollucci@FreeBSD.org
@@ -44,7 +45,7 @@ OPTIONS=	SPAMASSASSIN "Install SpamAssassin" on \
 		CLAMAVMODULE "Install ClamAV Module" off \
 		BDC "Install BitDefender" off
 
-CONFLICTS=	MailScanner-devel-[0-9]*
+CONFLICTS=	MailScanner-[0-9]*
 
 PATCHLEVEL=	1
 
