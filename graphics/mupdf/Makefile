@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	r938
+PORTVERSION=	r940
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://ccxvii.net/mupdf/download/
+MASTER_SITES=	http://www.mupdf.com/download/
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Lightweight PDF viewer and toolkit
