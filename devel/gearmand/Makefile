@@ -8,9 +8,10 @@
 PORTNAME=	gearmand
 PORTVERSION=	0.13
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpad.net/gearmand/trunk/${PORTVERSION}/+download/
+MASTER_SITES=	http://launchpad.net/gearmand/trunk/${PORTVERSION}/+download/ \
+		LOCAL/glarkin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent \
