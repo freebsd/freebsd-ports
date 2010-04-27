@@ -1,22 +1,31 @@
 @comment $FreeBSD$
+etc/MailScanner/archives.filename.rules.conf.sample
+etc/MailScanner/archives.filetype.rules.conf.sample
 etc/MailScanner/country.domains.conf.sample
 etc/MailScanner/MailScanner.conf.sample
 etc/MailScanner/filename.rules.conf.sample
 etc/MailScanner/filetype.rules.conf.sample
+etc/MailScanner/conf.d/README
 etc/MailScanner/mcp/10_example.cf.sample
 etc/MailScanner/mcp/mcp.spam.assassin.prefs.conf.sample
+etc/MailScanner/mcp/v320.pre.sample
 etc/MailScanner/rules/EXAMPLES
 etc/MailScanner/rules/README
+etc/MailScanner/rules/bounce.rules.sample
+etc/MailScanner/rules/max.message.size.rules.sample
 etc/MailScanner/rules/spam.whitelist.rules.sample
+etc/MailScanner/phishing.bad.sites.conf.sample
 etc/MailScanner/phishing.safe.sites.conf.sample
 etc/MailScanner/spam.assassin.prefs.conf.sample
 etc/MailScanner/spam.lists.conf.sample
 etc/MailScanner/virus.scanners.conf.sample
 lib/MailScanner/MailScanner.pm
+lib/MailScanner/MailScanner/Antiword.pm
 lib/MailScanner/MailScanner/BinHex.pm
 lib/MailScanner/MailScanner/Config.pm
 lib/MailScanner/MailScanner/ConfigDefs.pl
 lib/MailScanner/MailScanner/CustomConfig.pm
+lib/MailScanner/MailScanner/CustomFunctions/CustomAction.pm
 lib/MailScanner/MailScanner/CustomFunctions/GenericSpamScanner.pm
 lib/MailScanner/MailScanner/CustomFunctions/MyExample.pm
 lib/MailScanner/MailScanner/CustomFunctions/DavidHooton.pm
@@ -26,7 +35,9 @@ lib/MailScanner/MailScanner/CustomFunctions/LastSpam.pm
 lib/MailScanner/MailScanner/CustomFunctions/Ruleset-from-Function.pm
 lib/MailScanner/MailScanner/Exim.pm
 lib/MailScanner/MailScanner/EximDiskStore.pm
+lib/MailScanner/MailScanner/FileInto.pm
 lib/MailScanner/MailScanner/GenericSpam.pm
+lib/MailScanner/MailScanner/LinksDump.pm
 lib/MailScanner/MailScanner/Lock.pm
 lib/MailScanner/MailScanner/Log.pm
 lib/MailScanner/MailScanner/MCP.pm
@@ -49,18 +60,25 @@ lib/MailScanner/MailScanner/SweepOther.pm
 lib/MailScanner/MailScanner/SweepViruses.pm
 lib/MailScanner/MailScanner/SystemDefs.pm
 lib/MailScanner/MailScanner/TNEF.pm
+lib/MailScanner/MailScanner/Unzip.pm
 lib/MailScanner/MailScanner/WorkArea.pm
 lib/MailScanner/MailScanner/ZMDiskStore.pm
 lib/MailScanner/MailScanner/ZMailer.pm
-lib/MailScanner/MailScanner/notes.txt
 libexec/MailScanner/analyse_SpamAssassin_cache
 libexec/MailScanner/clean.SA.cache
 libexec/MailScanner/clean.quarantine
+libexec/MailScanner/mailscanner_create_locks
+libexec/MailScanner/processing_messages_alert
+libexec/MailScanner/Quick.Peek
+libexec/MailScanner/update_bad_phishing_emails
 libexec/MailScanner/update_phishing_sites
+libexec/MailScanner/update_bad_phishing_sites
+libexec/MailScanner/update_bad_phishing_sites.cron
 libexec/MailScanner/update_phishing_sites.cron
 libexec/MailScanner/update_virus_scanners
 libexec/MailScanner/update_virus_scanners.cron
-libexec/MailScanner/sa-update.cron
+libexec/MailScanner/update_spamassassin
+libexec/MailScanner/update_spamassassin.cron
 libexec/MailScanner/antivir-autoupdate.sample
 libexec/MailScanner/antivir-wrapper.sample
 libexec/MailScanner/avast-wrapper.sample
@@ -72,15 +90,18 @@ libexec/MailScanner/bitdefender-autoupdate.sample
 libexec/MailScanner/bitdefender-wrapper.sample
 libexec/MailScanner/clamav-autoupdate.sample
 libexec/MailScanner/clamav-wrapper.sample
-libexec/MailScanner/clamd-wrapper.sample
 libexec/MailScanner/command-wrapper.sample
 libexec/MailScanner/css-autoupdate.sample
 libexec/MailScanner/css-wrapper.sample
 libexec/MailScanner/drweb-wrapper.sample
+libexec/MailScanner/esets-wrapper.sample
+libexec/MailScanner/esets-autoupdate.sample
 libexec/MailScanner/etrust-autoupdate.sample
 libexec/MailScanner/etrust-wrapper.sample
 libexec/MailScanner/f-prot-autoupdate.sample
 libexec/MailScanner/f-prot-wrapper.sample
+libexec/MailScanner/f-prot-6-wrapper.sample
+libexec/MailScanner/f-prot-6-autoupdate.sample
 libexec/MailScanner/f-secure-autoupdate.sample
 libexec/MailScanner/f-secure-wrapper.sample
 libexec/MailScanner/generic-autoupdate.sample
@@ -107,6 +128,8 @@ libexec/MailScanner/symscanengine-autoupdate.sample
 libexec/MailScanner/symscanengine-wrapper.sample
 libexec/MailScanner/trend-autoupdate.sample
 libexec/MailScanner/trend-wrapper.sample
+libexec/MailScanner/vba32-autoupdate.sample
+libexec/MailScanner/vba32-wrapper.sample
 libexec/MailScanner/vexira-autoupdate.sample
 libexec/MailScanner/vexira-wrapper.sample
 sbin/mailscanner
@@ -547,6 +570,7 @@ sbin/MailScanner
 @dirrm lib/MailScanner/MailScanner/CustomFunctions
 @dirrm lib/MailScanner/MailScanner
 @dirrm lib/MailScanner
+@dirrm etc/MailScanner/conf.d
 @dirrm etc/MailScanner/mcp
 @dirrm etc/MailScanner/rules
 @dirrm etc/MailScanner
