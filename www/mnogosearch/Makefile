@@ -10,7 +10,7 @@ PORTVERSION=	3.3.10
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
 
 MAN1=		indexer.1

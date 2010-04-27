@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable process tracer
 
 USE_BZIP2=	yes

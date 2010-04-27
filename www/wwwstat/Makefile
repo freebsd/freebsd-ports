@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-2.0
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-2.01.txt
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webserver logfile analysis package
 
 MAKE_JOBS_SAFE=	yes

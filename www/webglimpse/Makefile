@@ -12,7 +12,7 @@ CATEGORIES=	www textproc
 MASTER_SITES=	ftp://ftp.deva.net/pub/sources/ir/glimpse/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW interface to Glimpse search engine
 
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse
