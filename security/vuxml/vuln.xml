@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8d10038e-515c-11df-83fb-0015587e2cc1">
+    <topic>joomla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>joomla15</name>
+	<range><ge>1.5.1</ge><le>1.5.15</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Joomla! reported the following vulnerabilities:</p>
+	<blockquote cite="http://developer.joomla.org/security/news/311-20100423-core-negative-values-for-limit-and-offset.html">
+	  <p>If a user entered a URL with a negative query limit
+	    or offset, a PHP notice would display revealing information
+	    about the system..</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/news/310-20100423-core-installer-migration-script.html">
+	  <p>The migration script in the Joomla! installer does not
+	    check the file type being uploaded. If the installation
+	    application is present, an attacker could use it to
+	    upload malicious files to a server.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/news/309-20100423-core-sessation-fixation.html">
+	  <p>Session id doesn't get modified when user logs in. A
+	    remote site may be able to forward a visitor to the
+	    Joomla! site and set a specific cookie.  If the user
+	    then logs in, the remote site can use that cookie to
+	    authenticate as that user.</p>
+	</blockquote>
+	<blockquote cite="http://developer.joomla.org/security/news/308-20100423-core-password-reset-tokens.html">
+	  <p>When a user requests a password reset, the reset tokens
+	    were stored in plain text in the database. While this
+	    is not a vulnerability in itself, it allows user accounts
+	    to be compromised if there is an extension on the site
+	    with an SQL injection vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://developer.joomla.org/security/news/308-20100423-core-password-reset-tokens.html</url>
+      <url>http://developer.joomla.org/security/news/309-20100423-core-sessation-fixation.html</url>
+      <url>http://developer.joomla.org/security/news/310-20100423-core-installer-migration-script.html</url>
+      <url>http://developer.joomla.org/security/news/311-20100423-core-negative-values-for-limit-and-offset.html</url>
+    </references>
+    <dates>
+      <discovery>2010-04-23</discovery>
+      <entry>2010-04-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5198ef84-4fdc-11df-83fb-0015587e2cc1">
     <topic>cacti -- SQL injection and command execution vulnerabilities</topic>
     <affects>
@@ -62,10 +112,12 @@ Note:  Please add new entries to the beginning of this file.
       <freebsdpr>ports/146021</freebsdpr>
       <url>http://www.bonsai-sec.com/en/research/vulnerabilities/cacti-os-command-injection-0105.php</url>
       <url>http://www.bonsai-sec.com/en/research/vulnerabilities/cacti-sql-injection-0104.php</url>
+      <url>http://www.debian.org/security/2010/dsa-2039</url>
     </references>
     <dates>
       <discovery>2010-04-21</discovery>
       <entry>2010-04-24</entry>
+      <modified>2010-04-26</modified>
     </dates>
   </vuln>
 
