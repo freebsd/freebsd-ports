@@ -1,0 +1,23 @@
+include/spmfilter/smf/smf_core.h
+include/spmfilter/smf/smf_lookup.h
+include/spmfilter/smf/smf_message.h
+include/spmfilter/smf/smf_mime.h
+include/spmfilter/smf/smf_session.h
+include/spmfilter/smf/smf_settings.h
+include/spmfilter/smf/smf_trace.h
+include/spmfilter/spmfilter.h
+include/spmfilter/spmfilter_config.h
+libdata/pkgconfig/spmfilter.pc
+lib/spmfilter/libpipe.so
+lib/spmfilter/libpipe.so.0.4.0
+lib/spmfilter/libsmf.so
+lib/spmfilter/libsmf.so.0.4.0
+lib/spmfilter/libsmtpd.so
+lib/spmfilter/libsmtpd.so.0.4.0
+sbin/spmfilter
+@unexec if cmp -s %D/etc/spmfilter.conf.sample %D/etc/spmfilter.conf; then rm -f %D/etc/spmfilter.conf; fi
+etc/spmfilter.conf.sample
+@dirrmtry libdata/pkgconfig
+@dirrm include/spmfilter/smf
+@dirrm include/spmfilter
+@dirrm lib/spmfilter

@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: spmfilter
+# REQUIRE: %%REQUIRE%%
+# BEFORE:  mail
+# KEYWORD: shutdown
+#
+#
+# Add the following lines to /etc/rc.conf to enable spmfilter:
+#
+# spmfilter_enable="YES"
+#
+# See spmfilter(1) for flags or the config file.
+#
+
+. /etc/rc.subr
+
+name=spmfilter
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/spmfilter
+
+load_rc_config $name
+
+: ${spmfilter_enable="NO"}
+: ${spmfilter_config="%%PREFIX%%/etc/spmfilter.conf"}
+: ${spmfilter_flags="-f ${spmfilter_config}"}
+
+run_rc_command "$1"
