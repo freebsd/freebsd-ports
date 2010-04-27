@@ -1,13 +1,57 @@
 @comment $FreeBSD$
-sbin/mysql-proxy
+bin/mysql-proxy
 bin/mysql-binlog-dump
 bin/mysql-myisam-dump
+include/network-mysqld.h
+include/network-mysqld-lua.h
+include/network-mysqld-proto.h
+include/network-mysqld-binlog.h
+include/network-mysqld-packet.h
+include/network-mysqld-masterinfo.h
+include/network-conn-pool.h
+include/network-conn-pool-lua.h
+include/network-queue.h
+include/network-socket.h
+include/network-socket-lua.h
+include/network-address.h
+include/network-address-lua.h
+include/sys-pedantic.h
+include/chassis-plugin.h
+include/chassis-log.h
+include/chassis-keyfile.h
+include/chassis-mainloop.h
+include/chassis-path.h
+include/chassis-filemode.h
+include/chassis-limits.h
+include/chassis-event-thread.h
+include/glib-ext.h
+include/glib-ext-ref.h
+include/string-len.h
+include/lua-load-factory.h
+include/lua-scope.h
+include/lua-env.h
+include/network-injection.h
+include/network-injection-lua.h
+include/chassis-exports.h
+include/network-exports.h
+include/network-backend.h
+include/network-backend-lua.h
+include/disable-dtrace.h
+include/lua-registry-keys.h
+include/chassis-stats.h
+include/chassis-timings.h
+include/my_rdtsc.h
 libexec/mysql-proxy
 libexec/mysql-binlog-dump
 libexec/mysql-myisam-dump
+libexec/pkgconfig/mysql-proxy.pc
+libexec/pkgconfig/mysql-chassis.pc
 lib/libmysql-chassis.so.0
 lib/libmysql-chassis.so
 lib/libmysql-chassis.la
+lib/libmysql-chassis-timing.so.0
+lib/libmysql-chassis-timing.so
+lib/libmysql-chassis-timing.la
 lib/libmysql-proxy.so.0
 lib/libmysql-proxy.so
 lib/libmysql-proxy.la
@@ -62,6 +106,7 @@ lib/mysql-proxy/plugins/libdebug.la
 %%EXAMPLESDIR%%/tutorial-resultset.lua
 %%EXAMPLESDIR%%/tutorial-rewrite.lua
 %%EXAMPLESDIR%%/tutorial-routing.lua
+%%EXAMPLESDIR%%/tutorial-scramble.lua
 %%EXAMPLESDIR%%/tutorial-states.lua
 %%EXAMPLESDIR%%/tutorial-tokenize.lua
 %%EXAMPLESDIR%%/tutorial-union.lua
@@ -70,6 +115,7 @@ lib/mysql-proxy/plugins/libdebug.la
 @dirrmtry lib/mysql-proxy/lua/proxy
 @dirrmtry lib/mysql-proxy/lua
 @dirrmtry lib/mysql-proxy
+@dirrmtry libexec/pkgconfig
 @dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%DATADIR%%/lua/proxy
 @dirrmtry %%DATADIR%%/lua
