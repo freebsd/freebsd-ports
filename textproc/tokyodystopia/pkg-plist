@@ -20,6 +20,8 @@ libexec/lapusearch.cgi
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/doc/common.css
 %%PORTDOCS%%%%DOCSDIR%%/doc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/spex.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
