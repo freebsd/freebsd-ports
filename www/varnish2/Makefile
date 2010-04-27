@@ -22,8 +22,8 @@ USE_GNOME=	pkgconfig
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 MAN1=		varnishadm.1 varnishd.1 varnishhist.1 varnishlog.1 \
-		varnishncsa.1 varnishreplay.1 varnishstat.1 varnishtest.1 \
-		varnishtop.1
+		varnishncsa.1 varnishreplay.1 varnishsizes.1 \
+		varnishstat.1 varnishtest.1 varnishtop.1
 MAN7=		vcl.7
 USE_RC_SUBR=	varnishd varnishlog varnishncsa
 SUB_FILES=	pkg-message
