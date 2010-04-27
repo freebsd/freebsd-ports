@@ -18,12 +18,11 @@ COMMENT=	Open source driving simulation
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 		${LOCALBASE}/lib/libbulletcollision.a:${PORTSDIR}/devel/bullet
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		GLEW:${PORTSDIR}/graphics/glew
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
 
 USE_BZIP2=	yes
-USE_GL=		yes
+USE_GL=		glew
 USE_SDL=	sdl image net gfx
 
 SCONS_ARGS=	prefix=${PREFIX} \

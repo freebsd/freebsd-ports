@@ -16,7 +16,6 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Balazar Brother is a free software 3D puzzle game
 
 LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
-		GLEW.1:${PORTSDIR}/graphics/glew \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cerealizer/__init__.py:${PORTSDIR}/security/py-cerealizer \
 		${PYTHON_SITELIBDIR}/soya/__init__.py:${PORTSDIR}/graphics/py-soya3d \
@@ -28,7 +27,7 @@ USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_TWISTED=	yes
-USE_GL=		yes
+USE_GL=		glew
 USE_GMAKE=	yes
 
 PYDISTUTILS_PKGNAME=	BalazarBrothers

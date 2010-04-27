@@ -20,8 +20,8 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Advanced OpenGL extensions to Python
 
 BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew
 
+USE_GL=		glew
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 

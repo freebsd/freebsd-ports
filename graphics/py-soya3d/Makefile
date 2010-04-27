@@ -21,7 +21,6 @@ COMMENT=	Very high level 3D engine for Python
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
-		GLEW.1:${PORTSDIR}/graphics/glew \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:${PORTSDIR}/graphics/py-editobj \
 		${PYTHON_SITELIBDIR}/tofu/client.py:${PORTSDIR}/net/py-tofu \
@@ -31,7 +30,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_OPENAL=	al alut
-USE_GL=		gl
+USE_GL=		glew
 USE_GMAKE=	yes
 USE_SDL=	sdl
 

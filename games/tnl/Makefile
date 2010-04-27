@@ -22,15 +22,14 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libiovmall.so:${PORTSDIR}/lang/io
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		CEGUIBase.3:${PORTSDIR}/graphics/cegui \
-		png.6:${PORTSDIR}/graphics/png \
-		GLEW.1:${PORTSDIR}/graphics/glew
+		png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GCC=	4.2+
-USE_GL=		yes
+USE_GL=		glew
 USE_OPENAL=	al alut
 
 CONFIGURE_ARGS=	--with-io-cflags="-I${LOCALBASE}/include/io" \

@@ -17,8 +17,7 @@ COMMENT=	A tool for image blending with multiresolution splines
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/pool/pool.hpp:${PORTSDIR}/devel/boost-libs \
 		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
-LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		lcms:${PORTSDIR}/graphics/lcms \
 		xmi.1:${PORTSDIR}/graphics/plotutils \
 		tiff.4:${PORTSDIR}/graphics/tiff
@@ -32,7 +31,7 @@ USE_AUTOTOOLS=	automake:110:env autoconf:262:env
 # http://groups.google.com/group/hugin-ptx/browse_thread/thread/725b1581c9889e37/50abe3387d61541a#50abe3387d61541a
 # Gerald Pfeifer <gerald@pfeifer.com> asked to use 4.4+ instead of 4.3+
 USE_GCC=	4.4+
-USE_GL=		glut
+USE_GL=		glew glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -16,7 +16,6 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	3D adventure and roleplaying game
 
 LIB_DEPENDS=	cal3d.12:${PORTSDIR}/graphics/cal3d \
-		GLEW.1:${PORTSDIR}/graphics/glew \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	soya_editor:${PORTSDIR}/graphics/py-soya3d \
 		${PYTHON_SITELIBDIR}/_openal.so:${PORTSDIR}/audio/py-openal \
@@ -28,7 +27,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_TWISTED=	yes
-USE_GL=		yes
+USE_GL=		glew
 USE_SDL=	sdl mixer
 USE_GETTEXT=	yes
 

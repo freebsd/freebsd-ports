@@ -17,10 +17,10 @@ DIST_SUBDIR=	python
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Python wrapper for the amanith 2D vector graphics library
 
-LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
-		amanith.1:${PORTSDIR}/graphics/amanith
+LIB_DEPENDS=	amanith.1:${PORTSDIR}/graphics/amanith
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
+USE_GL=		glew
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	PyAmanith
