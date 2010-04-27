@@ -1,6 +1,7 @@
 bin/combig-script.sh
 bin/combig.pl
 bin/count.pl
+bin/count2huge.pl
 bin/huge-count.pl
 bin/huge-delete.pl
 bin/huge-merge.pl
