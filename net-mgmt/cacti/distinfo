@@ -13,3 +13,6 @@ SIZE (template_duplication.patch) = 9190
 MD5 (cross_site_fix.patch) = 4323da80d4dc0238fc4902dcd27f47f0
 SHA256 (cross_site_fix.patch) = 75b7d4687722d96e0d32afb3832f93a54e8518c0c949e1dcd9ae634623564b28
 SIZE (cross_site_fix.patch) = 8705
+MD5 (sql_injection_template_export.patch) = 7e82d147a279f5726dc1ad6bf838f6b0
+SHA256 (sql_injection_template_export.patch) = cdcec3946e81edde690b34627c52620bb702de0a3a823bcb571f421b093effed
+SIZE (sql_injection_template_export.patch) = 636
