@@ -1084,7 +1084,6 @@ blockout                        ports/games/blockout
 blocksolve95                    ports/math/blocksolve95
 blocksshd                       ports/security/blocksshd
 blogbench                       ports/benchmarks/blogbench
-blogd                           ports/www/blogd
 blogsum                         ports/www/blogsum
 blogtk                          ports/deskutils/blogtk
 blokish                         ports/games/blokish
@@ -2135,6 +2134,7 @@ db46                            ports/databases/db46
 db47                            ports/databases/db47
 db48                            ports/databases/db48
 db4o-mono                       ports/databases/db4o-mono
+db50                            ports/databases/db50
 dbXML                           ports/databases/dbXML
 dbacl                           ports/textproc/dbacl
 dbconnect                       ports/databases/dbconnect
@@ -3011,6 +3011,7 @@ epdfview                        ports/graphics/epdfview
 epeg                            ports/graphics/epeg
 eperl                           ports/lang/eperl
 ephem                           ports/astro/ephem
+ephemera                        ports/www/ephemera
 epic4                           ports/irc/epic4
 epic5                           ports/irc/epic5
 epiphany                        ports/www/epiphany
@@ -4071,6 +4072,7 @@ gcc42                           ports/lang/gcc42
 gcc43                           ports/lang/gcc43
 gcc44                           ports/lang/gcc44
 gcc45                           ports/lang/gcc45
+gcc46                           ports/lang/gcc46
 gccmakedep                      ports/devel/gccmakedep
 gccxml                          ports/devel/gccxml
 gcdmaster                       ports/sysutils/gcdmaster
@@ -7236,7 +7238,7 @@ kqemu-kmod-devel                ports/emulators/kqemu-kmod-devel
 kradview                        ports/graphics/kradview
 krb4                            ports/security/krb4
 krb5                            ports/security/krb5
-krb5-17                         ports/security/krb5-17
+krb5-appl                       ports/security/krb5-appl
 krdesktop                       ports/net/krdesktop
 krecipes                        ports/misc/krecipes
 krefty                          ports/deskutils/krefty
@@ -13265,6 +13267,7 @@ p5-Pod-POM-View-HTML-Filter     ports/textproc/p5-Pod-POM-View-HTML-Filter
 p5-Pod-Parser                   ports/textproc/p5-Pod-Parser
 p5-Pod-ProjectDocs              ports/textproc/p5-Pod-ProjectDocs
 p5-Pod-Simple                   ports/textproc/p5-Pod-Simple
+p5-Pod-Site                     ports/www/p5-Pod-Site
 p5-Pod-Spell                    ports/textproc/p5-Pod-Spell
 p5-Pod-Strip                    ports/textproc/p5-Pod-Strip
 p5-Pod-Stripper                 ports/textproc/p5-Pod-Stripper
@@ -17054,6 +17057,7 @@ p5-pod-pom                      ports/textproc/p5-Pod-POM
 p5-pod-pom-view-html-filter     ports/textproc/p5-Pod-POM-View-HTML-Filter
 p5-pod-projectdocs              ports/textproc/p5-Pod-ProjectDocs
 p5-pod-simple                   ports/textproc/p5-Pod-Simple
+p5-pod-site                     ports/www/p5-Pod-Site
 p5-pod-spell                    ports/textproc/p5-Pod-Spell
 p5-pod-strip                    ports/textproc/p5-Pod-Strip
 p5-pod-stripper                 ports/textproc/p5-Pod-Stripper
@@ -20402,6 +20406,7 @@ py-jonpy                        ports/www/py-jonpy
 py-json-py                      ports/devel/py-json-py
 py-jsonlib                      ports/devel/py-jsonlib
 py-jsonlib2                     ports/devel/py-jsonlib2
+py-jswebkit                     ports/www/py-jswebkit
 py-kaa-base                     ports/multimedia/py-kaa-base
 py-kaa-imlib2                   ports/multimedia/py-kaa-imlib2
 py-kaa-metadata                 ports/multimedia/py-kaa-metadata
@@ -20847,6 +20852,7 @@ py-wax                          ports/x11-toolkits/py-wax
 py-weberror                     ports/www/py-WebError
 py-webflash                     ports/www/py-WebFlash
 py-webhelpers                   ports/www/py-webhelpers
+py-webkitgtk                    ports/www/py-webkitgtk
 py-webob                        ports/www/py-webob
 py-webtest                      ports/www/py-WebTest
 py-webunit                      ports/www/py-webunit
