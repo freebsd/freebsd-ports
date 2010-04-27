@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Apache-Test
-PORTVERSION=	1.30
-PORTREVISION=	1
+PORTVERSION=	1.32
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,9 +16,9 @@ COMMENT=	Test.pm wrapper with helpers for testing Apache
 
 MAKE_JOBS_SAFE=  yes
 
-## XXX: Need to fix this, www/mod_perl2 currently @2.0.3 contains A-T 1.29,
+## XXX: Need to fix this, www/mod_perl2 currently @2.0.4 contains A-T 1.29,
 ## XXX: but
-## XXX: A-T has released 1.30
+## XXX: A-T has released 1.32
 .if defined(WITH_MODPERL2)
 IGNORE=		is already included in mod_perl2
 .endif
