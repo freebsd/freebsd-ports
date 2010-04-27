@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: kumofs-server
+# REQUIRE: LOGIN
+# BEFORE: kumofs-gateway
+# KEYWORD: shutdown
+#
+# kumofs_server_enable="YES"
+# kumofs_server_addr="server1"
+# kumofs_server_db="/var/db/kumofs/db.tch"
+# kumofs_server_manager_local_addr="manager1"
+# kumofs_server_manager_partner_addr="manager2"
+# kumofs_server_extra_flags=""
+#
+
+. /etc/rc.subr
+
+name="kumofs_server"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+# Set defaults
+: ${kumofs_server_enable="NO"}
+: ${kumofs_server_db="/var/db/kumofs.tch"}
+: ${kumofs_server_pid="/var/run/kumofs/server.pid"}
+: ${kumofs_server_flags="-m ${kumofs_server_manager_local_addr} -p ${kumofs_server_manager_partner_addr} -l ${kumofs_server_addr} -d ${kumofs_server_pid} -o /var/log/kumofs/server.log -s ${kumofs_server_db} ${kumofs_server_extra_flags}"}
+: ${kumofs_server_user="kumofs"}
+
+command=%%PREFIX%%/bin/kumo-server
+
+run_rc_command "$1"

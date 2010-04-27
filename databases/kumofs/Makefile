@@ -7,7 +7,7 @@
 
 PORTNAME=	kumofs
 PORTVERSION=	0.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://cloud.github.com/downloads/etolabo/kumofs/
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--with-msgpack=${LOCALBASE} --with-tokyocabinet=${LOCALBASE}
 USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_RUBY=	yes
-USE_RC_SUBR=	kumofs-manager.sh kumofs-server.sh kumofs-gateway.sh
+USE_RC_SUBR=	kumofs-manager kumofs-server kumofs-gateway
 PIDDIR?=	/var/run/kumofs
 LOGDIR?=	/var/log/kumofs
 PLIST_SUB=	PIDDIR=${PIDDIR} LOGDIR=${LOGDIR}
