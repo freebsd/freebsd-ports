@@ -18,7 +18,6 @@ LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \
 		ogg.6:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		png.6:${PORTSDIR}/graphics/png \
-		GLEW.1:${PORTSDIR}/graphics/glew \
 		squirrel.0:${PORTSDIR}/lang/squirrel \
 		freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
@@ -26,7 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost
 USE_BZIP2=	yes
 USE_SCONS=	yes
 USE_OPENAL=	al
-USE_GL=		gl
+USE_GL=		glew
 USE_SDL=	sdl image
 USE_BISON=	build
 MAKE_JOBS_SAFE=	yes

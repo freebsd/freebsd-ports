@@ -33,7 +33,6 @@ LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		qca.2:${PORTSDIR}/devel/qca \
-		GLEW.1:${PORTSDIR}/graphics/glew \
 		gsl:${PORTSDIR}/math/gsl \
 		wv2.4:${PORTSDIR}/textproc/wv2 \
 		kipi.6:${PORTSDIR}/graphics/kdegraphics4
@@ -46,7 +45,7 @@ USE_KDE4=	kdelibs pimlibs kdehier kdeprefix sharedmime automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib phonon qmake_build moc_build porting_build rcc_build uic_build \
 		uic3_build
-USE_GL=		glut
+USE_GL=		glut glew
 USE_LDCONFIG=	yes
 
 CMAKE_VERBOSE=	yes

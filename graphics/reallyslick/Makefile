@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--disable-sound
 .endif
 
 .if defined(WITH_GLEW)
-LIB_DEPENDS+=	GLEW.1:${PORTSDIR}/graphics/glew
+USE_GL+=	glew
 .else
 CONFIGURE_ENV+=	ac_cv_header_GL_glew_h=no
 .endif

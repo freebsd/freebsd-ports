@@ -19,13 +19,12 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		GLEW.1:${PORTSDIR}/graphics/glew \
 		IlmThread.6:${PORTSDIR}/graphics/ilmbase
 
 USE_XORG=	x11 xext xmu xi
 USE_PYTHON=	2.5+
 USE_SDL=	sdl
-USE_GL=		gl glu
+USE_GL=		glew
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

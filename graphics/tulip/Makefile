@@ -15,14 +15,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A system dedicated to the visualization of huge graphs
 
-LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib moc_build uic_build rcc_build gui opengl xml network \
 		designer assistant assistantclient
-USE_GL=	glut
+USE_GL=		glew glut
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_AUTOTOOLS=	libtool:22

@@ -383,7 +383,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_GL		- A list of Mesa or GL related dependencies needed by the port.
 #				  Supported components are: glut, glu, glw, gl and linux.
 #				  If set to "yes", this is equivalent to "glu". Note that
-#				  glut depends on glu, glw and glu depend on gl.
+#				  glew and glut depend on glu, glw and glu depend on gl.
 # USE_MOTIF		- If set, this port uses a Motif toolkit. Implies USE_XORG+= xpm
 # NO_OPENMOTIF	- If set, this port uses a custom Motif toolkit
 #				  instead of Openmotif.
@@ -1993,6 +1993,7 @@ PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 PLIST_SUB+=			XAWVER=${XAWVER}
 
 _GL_gl_LIB_DEPENDS=		GL.1:${PORTSDIR}/graphics/libGL
+_GL_glew_LIB_DEPENDS=		GLEW.1:${PORTSDIR}/graphics/glew
 _GL_glu_LIB_DEPENDS=		GLU.1:${PORTSDIR}/graphics/libGLU
 _GL_glw_LIB_DEPENDS=		GLw.1:${PORTSDIR}/graphics/libGLw
 _GL_glut_LIB_DEPENDS=		glut.3:${PORTSDIR}/graphics/libglut

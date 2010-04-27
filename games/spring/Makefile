@@ -15,7 +15,6 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A project aiming to create a new and versatile RTS Engine
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		GLEW.1:${PORTSDIR}/graphics/glew \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		IL.2:${PORTSDIR}/graphics/devil \
 		ogg.6:${PORTSDIR}/audio/libogg \
@@ -28,7 +27,7 @@ ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math
 
 USE_SDL=	sdl
 USE_OPENAL=	al
-USE_GL=		gl glu
+USE_GL=		glew
 USE_XORG=	x11 xcursor
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

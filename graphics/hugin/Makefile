@@ -21,8 +21,6 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		exiv2:${PORTSDIR}/graphics/exiv2 \
 		pano13:${PORTSDIR}/graphics/libpano13 \
 		boost_python:${PORTSDIR}/devel/boost-python-libs \
-		GLEW:${PORTSDIR}/graphics/glew \
-		glut:${PORTSDIR}/graphics/libglut \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		Imath:${PORTSDIR}/graphics/ilmbase
 # gmake is really needed at _runtime_, do not remove it from below
@@ -43,6 +41,8 @@ CMAKE_USE_PTHREAD=	yes
 USE_WX=		2.8+
 
 USE_GETTEXT=	yes
+
+USE_GL=		glew glut
 
 MAN1=		\
 		PTBatcherGUI.1 \

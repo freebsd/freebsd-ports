@@ -16,7 +16,6 @@ COMMENT=	Open source MSX emulator
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		jack:${PORTSDIR}/audio/jack \
-		GLEW:${PORTSDIR}/graphics/glew \
 		png:${PORTSDIR}/graphics/png
 
 MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
@@ -25,6 +24,7 @@ MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
 		OPENMSX_CXX=${CXX}
 
 MAKEFILE=	GNUmakefile
+USE_GL=		glew
 USE_GMAKE=	yes
 USE_TCL=	84+
 USE_SDL=	sdl image ttf
