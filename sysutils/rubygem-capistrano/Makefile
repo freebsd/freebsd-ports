@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A utility for executing commands in parallel on multiple machines
 
 RUN_DEPENDS=	rubygem-net-ssh-gateway>=1.0.0:${PORTSDIR}/security/rubygem-net-ssh-gateway \

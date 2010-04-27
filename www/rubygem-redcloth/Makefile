@@ -10,7 +10,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 DISTNAME=	RedCloth-${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A module for using Textile in Ruby
 
 USE_RUBY=	yes

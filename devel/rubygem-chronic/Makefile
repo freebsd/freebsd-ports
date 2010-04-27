@@ -10,7 +10,7 @@ PORTVERSION=	0.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Chronic is a natural language date/time parser written in pure Ruby
 
 RUN_DEPENDS=	rubygem-hoe>=1.2.1:${PORTSDIR}/devel/rubygem-hoe

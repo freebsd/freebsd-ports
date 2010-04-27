@@ -9,7 +9,7 @@ PORTVERSION=	2.3.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MVC web application framework
 
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport \

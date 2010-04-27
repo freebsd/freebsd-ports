@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rack, a Ruby Webserver Interface
 
 USE_RUBY=	yes

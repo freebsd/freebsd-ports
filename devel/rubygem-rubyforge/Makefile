@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	codeforpeople
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simplistic script which automates rubyforge operations
 
 BUILD_DEPENDS=	rubygem-json_pure>=1.1.7:${PORTSDIR}/devel/rubygem-json_pure

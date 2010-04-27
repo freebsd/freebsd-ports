@@ -9,7 +9,7 @@ PORTVERSION=	0.8.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Make
 
 USE_RUBY=	yes

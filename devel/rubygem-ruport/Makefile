@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	 Ruby Reports (Ruport) is an extensible reporting system.
 
 RUN_DEPENDS=	rubygem-transactionsimple>=1.4.0:${PORTSDIR}/devel/rubygem-transactionsimple \

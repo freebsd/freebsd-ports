@@ -10,7 +10,7 @@ PORTVERSION=	1.5.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby implementation of SOAP 1.1
 
 RUN_DEPENDS=	rubygem-httpclient>=2.1.1:${PORTSDIR}/www/rubygem-httpclient
