@@ -69,6 +69,7 @@
     SUBDIR += gnuserv
     SUBDIR += gobby
     SUBDIR += gphpedit
+    SUBDIR += gwrite
     SUBDIR += hexcurse
     SUBDIR += hexedit
     SUBDIR += hexpert

@@ -1,0 +1,34 @@
+bin/gwrite
+%%PYTHON_SITELIBDIR%%/gwrite/gtkdialogs.py
+%%PYTHON_SITELIBDIR%%/gwrite/__init__.py
+%%PYTHON_SITELIBDIR%%/gwrite/config.py
+%%PYTHON_SITELIBDIR%%/gwrite/gtklatex.py
+%%PYTHON_SITELIBDIR%%/gwrite/gwrite.py
+%%PYTHON_SITELIBDIR%%/gwrite/i18n.py
+%%PYTHON_SITELIBDIR%%/gwrite/webkitlinkview.py
+%%PYTHON_SITELIBDIR%%/gwrite/docfilter.py
+%%PYTHON_SITELIBDIR%%/gwrite/webkitedit.py
+%%PYTHON_SITELIBDIR%%/gwrite/gtkdialogs.pyc
+%%PYTHON_SITELIBDIR%%/gwrite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gwrite/config.pyc
+%%PYTHON_SITELIBDIR%%/gwrite/gtklatex.pyc
+%%PYTHON_SITELIBDIR%%/gwrite/gwrite.pyc
+%%PYTHON_SITELIBDIR%%/gwrite/i18n.pyc
+%%PYTHON_SITELIBDIR%%/gwrite/webkitlinkview.pyc
+%%PYTHON_SITELIBDIR%%/gwrite/docfilter.pyc
+%%PYTHON_SITELIBDIR%%/gwrite/webkitedit.pyc
+%%PYTHON_SITELIBDIR%%/gwrite/gtkdialogs.pyo
+%%PYTHON_SITELIBDIR%%/gwrite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gwrite/config.pyo
+%%PYTHON_SITELIBDIR%%/gwrite/gtklatex.pyo
+%%PYTHON_SITELIBDIR%%/gwrite/gwrite.pyo
+%%PYTHON_SITELIBDIR%%/gwrite/i18n.pyo
+%%PYTHON_SITELIBDIR%%/gwrite/webkitlinkview.pyo
+%%PYTHON_SITELIBDIR%%/gwrite/docfilter.pyo
+%%PYTHON_SITELIBDIR%%/gwrite/webkitedit.pyo
+%%PYTHON_SITELIBDIR%%/gwrite-0.0.2-py2.6.egg-info
+share/locale/zh_CN/LC_MESSAGES/gwrite.mo
+share/pixmaps/gwrite.png
+share/applications/gwrite.desktop
+@dirrm share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/gwrite
