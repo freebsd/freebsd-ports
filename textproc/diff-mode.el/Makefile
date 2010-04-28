@@ -14,7 +14,7 @@ DISTNAME=	diff-mode-${PORTVERSION}.el
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mode for viewing/editing context diffs in Emacsen
 
 NO_BUILD=	yes

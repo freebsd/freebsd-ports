@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mpi-sb.mpg.de/~hitoshi/otherprojects/manued/arcs/ \
 		http://www.archi.is.tohoku.ac.jp/~yamauchi/otherprojects/manued/arcs/
 DISTNAME=	manued-${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs minor mode for manued proofreading method
 
 NO_BUILD=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.menteith.com/tdtd/data/
 DISTNAME=	tdtd071
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An emacs major mode for editing SGML and XML DTDs
 
 NO_WRKSUBDIR=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 MASTER_SITE_SUBDIR=	jkoshy
 DISTNAME=	ocaml-mode-3.01
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An EMACS mode for editing OCaml programs
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs

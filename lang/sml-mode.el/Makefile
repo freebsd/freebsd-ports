@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/contrib/emacs/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkoshy
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An EMACS mode for editing Standard ML programs
 
 ALL_TARGET=	default

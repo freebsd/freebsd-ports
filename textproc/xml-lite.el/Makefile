@@ -14,7 +14,7 @@ MASTER_SITES=	http://dogbiscuit.org/mdub/software/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple XML-editing for GNU Emacs
 
 USE_EMACS=	yes
