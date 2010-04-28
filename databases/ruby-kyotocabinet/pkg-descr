@@ -1,0 +1,8 @@
+This is a Ruby (1.9.1+) binding to Kyoto Cabinet, a straightforward
+implementation of DBM.
+
+Since the library is licensed under GPLv3 which is incompatible with
+the ruby runtime, binary distribution is inhibited.
+
+Author:	Mikio Hirabayashi <hirarin@gmail.com>
+WWW:	http://1978th.net/kyotocabinet/
