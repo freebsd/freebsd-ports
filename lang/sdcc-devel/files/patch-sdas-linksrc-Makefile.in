@@ -1,0 +1,20 @@
+--- sdas/linksrc/Makefile.in.orig	2010-04-20 19:07:51.000000000 +0200
++++ sdas/linksrc/Makefile.in	2010-04-20 19:08:24.000000000 +0200
+@@ -63,7 +63,7 @@
+ 
+ # Compiling entire program or any subproject
+ # ------------------------------------------
+-all: sdcc-ld8051 sdcc-ldz80 sdcc-ldgb sdcc-ld6808
++all: sdcc-ld8051
+ 
+ sdcc-ld8051: checkconf $(ASLINK)
+ 
+@@ -82,7 +82,7 @@
+ # Compiling and installing everything and running test
+ # ----------------------------------------------------
+ install: all installdirs
+-	for ld in $(ASLINK) $(top_builddir)/bin/sdldz80$(EXEEXT) $(top_builddir)/bin/sdldgb$(EXEEXT) $(top_builddir)/bin/sdld6808$(EXEEXT); \
++	for ld in $(ASLINK); \
+ 	do \
+ 	  $(INSTALL) $$ld `echo $(DESTDIR)$(bindir)/\`basename $$ld\` | sed '$(transform)'`; \
+ 	  $(STRIP) `echo $(DESTDIR)$(bindir)/\`basename $$ld\` | sed '$(transform)'`; \

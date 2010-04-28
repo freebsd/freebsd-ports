@@ -1,25 +1,26 @@
---- configure.in.orig	Tue Nov 21 16:27:08 2006
-+++ configure.in	Wed Dec 13 16:32:58 2006
-@@ -629,6 +629,11 @@
+--- configure.in.orig	2010-03-25 00:36:28.000000000 +0100
++++ configure.in	2010-04-20 17:38:29.000000000 +0200
+@@ -93,13 +93,12 @@
+ # -----------------------
+ # Shell function body for _AC_EXECUTE_IFELSE.
+ m4_define([_bor_EXECUTE_IFELSE_BODY],
+-[  AS_LINENO_PUSH([$[]1])
++[
+   AS_IF([_AC_DO_STDERR([$1 $2]) > conftest.out && {
+ 	 test ! -s conftest.err
+        }],
+       [ac_retval=0],
+       [ac_retval=1])
+-  AS_LINENO_POP
+ ])# _bor_EXECUTE_IFELSE_BODY
  
- test $OPT_DISABLE_AVR = 0 && AC_CONFIG_FILES([src/avr/Makefile])
- 
-+if test $OPT_DISABLE_DS390 = 0 -o $OPT_DISABLE_MCS51 = 0; then
-+  AC_CONFIG_FILES([as/mcs51/Makefile
-+                   as/link/mcs51/Makefile])
-+fi
-+
- if test $OPT_DISABLE_DS390 = 0; then
-   AC_CONFIG_FILES([src/ds390/Makefile])
-   test $OPT_DISABLE_DEVICE_LIB = 0 && AC_CONFIG_FILES([device/lib/ds390/Makefile])
-@@ -647,9 +652,7 @@
+ # bor_EXECUTE_IFELSE(COMMAND[ACTION-IF-TRUE], [ACTION-IF-FALSE])
+@@ -836,7 +835,7 @@
+   test $OPT_DISABLE_DEVICE_LIB = 0 && AC_CONFIG_FILES([device/lib/hc08/Makefile])
  fi
  
- if test $OPT_DISABLE_MCS51 = 0; then
--  AC_CONFIG_FILES([src/mcs51/Makefile
--                   as/mcs51/Makefile
--                   as/link/mcs51/Makefile])
-+  AC_CONFIG_FILES([src/mcs51/Makefile])
+-if test $OPT_DISABLE_MCS51 = 0; then
++if test $OPT_DISABLE_DS390 = 0 -o $OPT_DISABLE_MCS51 = 0; then
+   AC_CONFIG_FILES([src/mcs51/Makefile
+                    sdas/as8051/Makefile])
    test $OPT_DISABLE_DEVICE_LIB = 0 && AC_CONFIG_FILES([device/lib/mcs51/Makefile
-                                                        device/lib/small/Makefile
-                                                        device/lib/medium/Makefile

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.9.4.2009.12.15
+PORTVERSION=	2.9.7.2010.04.20
 CATEGORIES=	lang
 MASTER_SITES=	http://sdcc.sourceforge.net/snapshots/sdcc-src/ \
 		http://tijl.fastmail.fm/mirror/
-DISTNAME=	${PORTNAME}-src-20091215-5595
+DISTNAME=	${PORTNAME}-src-20100420-5813
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
@@ -71,9 +71,10 @@ PLIST_SUB+=		Z80=""
 .endif
 
 .if defined(WITHOUT_AVR)
-CONFIGURE_ARGS+=	--disable-avr-port --disable-avr
+CONFIGURE_ARGS+=	--disable-avr
 PLIST_SUB+=		AVR="@comment "
 .else
+CONFIGURE_ARGS+=	--enable-avr-port
 PLIST_SUB+=		AVR=""
 .endif
 
@@ -101,9 +102,9 @@ PLIST_SUB+=		PIC16=""
 .endif
 
 .if defined(WITHOUT_XA51)
-CONFIGURE_ARGS+=	--disable-xa51-port
 PLIST_SUB+=		XA51="@comment "
 .else
+CONFIGURE_ARGS+=	--enable-xa51-port --enable-xa
 PLIST_SUB+=		XA51=""
 .endif
 
