@@ -7,7 +7,7 @@
 
 PORTNAME=	moinmoin
 PORTVERSION=	1.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
@@ -39,13 +39,15 @@ MOINSCRIPT=	${MOINDIR}/server/moin.fcgi
 .elif ${MOINTYPE} == "MOD_PYTHON"
 .elif ${MOINTYPE} == "CGI"
 MOINSCRIPT=	${MOINDIR}/server/moin.cgi
+.elif ${MOINTYPE} == "WSGI"
+MOINSCRIPT=	${MOINDIR}/server/moin.wsgi
 .else
-BROKEN=		MOINTYPE must be a STANDALONE, FCGI, MOD_PYTHON or CGI.
+BROKEN=		MOINTYPE must be a STANDALONE, FCGI, WSGI, MOD_PYTHON or CGI.
 .endif
 
 pre-everything::
 	@${ECHO}
-	@${ECHO} "Set MOINTYPE=(CGI|FCGI|STANDALONE) to define"
+	@${ECHO} "Set MOINTYPE=(CGI|FCGI|WSGI|STANDALONE) to define"
 	@${ECHO} "type of installation. Default is CGI."
 	@${ECHO} "Use MOINDEST=/path to modify installation destination."
 	@${ECHO} "Default value for MOINDEST is ${PREFIX}/www/wiki."
