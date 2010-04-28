@@ -12,7 +12,7 @@ MASTER_SITES=		http://www.squirrelmail.org/plugins/
 DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.3
 DIST_SUBDIR=		squirrelmail
 
-MAINTAINER=		pgollucci@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Using the QmailAdmin cgi interface from SquirrelMail
 
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail

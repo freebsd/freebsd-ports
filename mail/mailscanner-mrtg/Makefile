@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF/mailscannermrtg/${PORTNAME}-UNSTABLE/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows mrtg to monitor many aspects of your MailScanner machine
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg \

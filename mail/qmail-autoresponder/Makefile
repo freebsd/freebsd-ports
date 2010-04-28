@@ -10,7 +10,7 @@ PORTVERSION=	0.97
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rate-limited autoresponder for qmail
 
 LIB_DEPENDS=	bg-sysdeps.2:${PORTSDIR}/devel/bglibs
