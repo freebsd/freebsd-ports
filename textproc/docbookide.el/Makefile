@@ -11,7 +11,7 @@ CATEGORIES=	textproc elisp
 MASTER_SITES=	http://nwalsh.com/emacs/docbookide/
 DISTNAME=	docbookide01
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp modules for editing DocBook documents
 
 USE_ZIP=	yes

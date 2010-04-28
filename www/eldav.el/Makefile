@@ -12,7 +12,7 @@ CATEGORIES=	www elisp
 MASTER_SITES=	http://www.gohome.org/eldav/
 DISTNAME=	eldav-${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interface to WebDAV servers for Emacs
 
 RUN_DEPENDS=	nd:${PORTSDIR}/www/nd

@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end to mpg123/ogg123 audio player for Emacsen
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123

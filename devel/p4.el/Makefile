@@ -11,7 +11,7 @@ CATEGORIES=	devel elisp
 MASTER_SITES=	SF/p4el/p4el/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce-Emacs Integration
 
 RUN_DEPENDS=	p4:${PORTSDIR}/devel/perforce
