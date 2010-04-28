@@ -7,7 +7,7 @@
 
 PORTNAME=	bricolage
 PORTVERSION=	1.10.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITE_SUBDIR=	SF
 
@@ -216,7 +216,7 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::Util::Trans::SFTP.3 Bric::Util::Trans::WebDAV.3 \
 		Bric::Util::UserPref.3
 
-SQLDIR=		${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
+SQLDIR=		${PREFIX}/share/${PORTNAME}
 UPGRADEDIR=		${PREFIX}/bricolage/upgrade
 
 # Setup for $PREFIX and $SQLDIR
