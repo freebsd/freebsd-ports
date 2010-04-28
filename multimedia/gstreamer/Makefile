@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.28
+PORTVERSION=	0.10.29
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		GNOME
@@ -60,5 +60,9 @@ PLIST_SUB+=	CHECK=""
 CONFIGURE_ARGS+=--disable-check
 PLIST_SUB+=	CHECK="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
