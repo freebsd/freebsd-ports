@@ -95,6 +95,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/shellutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/shellutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/shellutils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/sphinx_ext.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/sphinx_ext.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/sphinx_ext.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/sphinxutils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/sphinxutils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/logilab/common/sphinxutils.pyo
