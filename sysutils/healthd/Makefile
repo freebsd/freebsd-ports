@@ -12,7 +12,7 @@ CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/ \
 		http://healthd1.thehousleys.net/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A daemon to monitor vital motherboard parameters
 
 OPTIONS=	IPV6		"IPv6 support"			off \

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	modpython
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	python
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 1.3 module for integrating Python
 
 .if defined(PACKAGE_BUILDING)
