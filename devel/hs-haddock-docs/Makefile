@@ -32,8 +32,8 @@ IGNORE+=	\t by the lang/ghc port, setting the option WITH_HADDOCK.\n
 IGNORE+=	\t You have to reinstall this last one with the right option\n
 IGNORE+=	\t WITHOUT_HADDOCK.\n\c
 .else
-BUILD_DEPENDS+=	hs-haddock=${PORTVERSION}:${PORTSDIR}/devel/hs-haddock
-RUN_DEPENDS=	hs-haddock=${PORTVERSION}:${PORTSDIR}/devel/hs-haddock
+BUILD_DEPENDS+=	hs-haddock=${PKGVERSION}:${PORTSDIR}/devel/hs-haddock
+RUN_DEPENDS=	hs-haddock=${PKGVERSION}:${PORTSDIR}/devel/hs-haddock
 .endif
 
 BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \

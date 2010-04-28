@@ -7,6 +7,7 @@
 
 PORTNAME=	hscolour
 PORTVERSION=	1.15
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print haskell
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/contrib/ \
