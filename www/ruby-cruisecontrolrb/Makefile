@@ -1,6 +1,6 @@
 # Ports collection makefile for:	ruby-cruisecontrolrb
 # Date created:				25 Sep 2007
-# Whom:					Philip M. Gollucci <pgollucci@FreeBSD.org>
+# Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
 #
 # $FreeBSD$
 
@@ -12,7 +12,7 @@ MASTER_SITES=	RF
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Continuous Integration Server For Rails Applications
 
 RUN_DEPENDS=	rubygem-mongrel>=1.0.1:${PORTSDIR}/www/rubygem-mongrel \
