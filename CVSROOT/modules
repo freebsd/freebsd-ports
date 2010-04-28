@@ -5179,6 +5179,7 @@ gwhois                          ports/net/gwhois
 gworkspace                      ports/deskutils/gworkspace
 gworkspace-clipbook             ports/deskutils/gworkspace-clipbook
 gworkspace-gwmetadata           ports/deskutils/gworkspace-gwmetadata
+gwrite                          ports/editors/gwrite
 gwyddion                        ports/science/gwyddion
 gx                              ports/graphics/gx
 gx2osd                          ports/audio/gx2osd
@@ -7050,6 +7051,7 @@ knews                           ports/news/knews
 knewsticker-scripts             ports/misc/knewsticker-scripts
 knightcap                       ports/games/KnightCap
 knights                         ports/games/knights
+knights-kde4                    ports/games/knights-kde4
 knock                           ports/security/knock
 knocker                         ports/security/knocker
 knoda                           ports/databases/knoda
@@ -7767,6 +7769,7 @@ libjackasyn                     ports/audio/libjackasyn
 libjbigi                        ports/math/libjbigi
 libjingle                       ports/net-im/libjingle
 libjit                          ports/lang/libjit
+libjpeg-turbo                   ports/graphics/libjpeg-turbo
 libkate                         ports/multimedia/libkate
 libkdcraw                       ports/graphics/libkdcraw
 libkexif                        ports/graphics/libkexif
@@ -22944,6 +22947,7 @@ splaytk                         ports/audio/splaytk
 splint                          ports/devel/splint
 splitvt                         ports/misc/splitvt
 splix                           ports/print/splix
+spmfilter                       ports/mail/spmfilter
 spnetkit                        ports/net/spnetkit
 spoofer                         ports/net/spoofer
 spook                           ports/multimedia/spook
