@@ -20,6 +20,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IJG's jpeg compression utilities
 
+CONFLICTS=	libjpeg-turbo-[0-9]*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}a
 
 USE_AUTOTOOLS=	libtool:22

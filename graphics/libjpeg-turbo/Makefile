@@ -16,6 +16,7 @@ MASTER_SITES=	http://openmoko.spb.ru/repository/ \
 MAINTAINER=	bytestore@yandex.ru
 COMMENT=	Uses MMX, SSE, and SSE2 to accelerate baseline JPEG (de)compression
 
+CONFLICTS=	jpeg-[0-9]*
 ONLY_FOR_ARCH=	amd64 i386
 USE_AUTOTOOLS=	autoconf:262 automake:19 libtool:22
 GNU_CONFIGURE=	yes
