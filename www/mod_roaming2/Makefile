@@ -14,7 +14,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.klomp.org/mod_roaming/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that works as a Netscape Roaming Access server
 
 MAKE_JOBS_SAFE=  yes

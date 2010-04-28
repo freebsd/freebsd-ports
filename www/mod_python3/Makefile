@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=	modpython
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that embeds the Python interpreter within the server
 
 MAKE_JOBS_SAFE=  yes

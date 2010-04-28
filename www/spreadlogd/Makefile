@@ -10,7 +10,7 @@ PORTVERSION=	1.4.2
 CATEGORIES=	www net
 MASTER_SITES=	http://www.lethargy.org/mod_log_spread/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The backend of mod_log_spread
 
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
