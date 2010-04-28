@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	gcc4
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	llvm-
 DISTNAME=	${PKGNAMEPREFIX}gcc-4.2-${PORTVERSION}.source
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A gcc4 frontend for LLVM
@@ -29,7 +30,7 @@ USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 
 GCC_VER=	4.2.1
-WRKSRC=		${WRKDIR}/${DISTNAME:S/gcc-/gcc/}/obj
+WRKSRC=		${WRKDIR}/${DISTNAME}/obj
 TARGLIB=	${PREFIX}/lib/llvm-gcc-${PORTVERSION}
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ARGS=	--enable-llvm=${LOCALBASE} \

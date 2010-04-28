@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	2.6
-PORTREVISION=	3
+PORTVERSION=	2.7
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${LLVM_SOURCE}
 EXTRACT_ONLY=	${LLVM_SOURCE}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	C, Objective-C, and (soon) C++ compiler
+COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
 
 CONFLICTS=      clang-devel-2.[0-9]* llvm-devel-2.[0-9]*
 
@@ -75,17 +75,17 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%DOCSRCDIR%%|${DOCSRCDIR}|' \
 	    ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|/usr/bin/env perl|${PERL}|' \
-	    ${WRKSRC}/tools/clang/utils/ccc-analyzer \
-	    ${WRKSRC}/tools/clang/utils/scan-build
+	    ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
+	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/ccc-analyzer \
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
 	    ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/utils/scan-build \
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/scan-build \
 	    ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/utils/scanview.css ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/utils/sorttable.js ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
 regression-test: ${BUILD_COOKIE}
@@ -98,9 +98,14 @@ regression-test: ${BUILD_COOKIE}
 
 PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/clang \
+			bin/clang++ \
 			bin/scan-build \
-			libexec/clang-cc
-PLIST_DIR_LIST=		lib/clang
+			lib/libCIndex.* \
+			lib/libclang*
+PLIST_DIR_LIST=		include/clang \
+			include/clang-c \
+			lib/clang
+			
 build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
