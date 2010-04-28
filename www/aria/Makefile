@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}-rpm/Aria%20Sources/${PORTVERSION}-official
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another download tool
 
 MAKE_JOBS_SAFE=  yes
