@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	font-mplus
-PORTVERSION=	2.2.4.029
+PORTVERSION=	2.2.4.030
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	mplus-fonts/5030 mplus-fonts/6650
 DISTFILES=	mplus_bitmap_fonts-2.2.4${EXTRACT_SUFX} \
-		mplus-TESTFLIGHT-029${EXTRACT_SUFX}
+		mplus-TESTFLIGHT-030${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	M+ Bitmap and Outline Fonts
@@ -60,7 +60,7 @@ do-install-bitmap:
 	${LN} -s -f ${DATADIR}/bitmap/*.pcf.gz ${LOCALBASE}/${X_FONTSDIR}/misc/
 
 do-install-outline:
-	${INSTALL_DATA} ${WRKDIR}/mplus-TESTFLIGHT-029/*.ttf ${DATADIR}/TTF
+	${INSTALL_DATA} ${WRKDIR}/mplus-TESTFLIGHT-030/*.ttf ${DATADIR}/TTF
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
 	${LN} -s -f ${DATADIR}/TTF/*.ttf ${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
 	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TTF
@@ -81,7 +81,7 @@ post-install:
 		${INSTALL_DATA} ${WRKDIR}/mplus_bitmap_fonts-2.2.4/$${F} ${DOCSDIR}/$${F}.bitmap; \
 	done
 	for F in ${PORTDOCS:M*.outline:S,.outline$,,}; do \
-		${INSTALL_DATA} ${WRKDIR}/mplus-TESTFLIGHT-029/$${F} ${DOCSDIR}/$${F}.outline; \
+		${INSTALL_DATA} ${WRKDIR}/mplus-TESTFLIGHT-030/$${F} ${DOCSDIR}/$${F}.outline; \
 	done
 .endif
 
