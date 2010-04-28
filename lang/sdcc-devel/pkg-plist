@@ -1,3 +1,4 @@
+bin/as2gbmap
 bin/asranlib
 bin/makebin
 %%PACKIHX%%bin/packihx
@@ -13,11 +14,9 @@ bin/sdcclib
 %%UCSIM%%%%MCS51%%bin/sdcdb.el
 %%UCSIM%%%%MCS51%%bin/sdcdbsrc.el
 bin/sdcpp
-%%MCS51DS390%%bin/sdld
-%%HC08%%bin/sdld6808
-%%Z80%%bin/sdldgb
-%%Z80%%bin/sdldz80
+bin/sdld
 %%UCSIM%%%%HC08%%bin/shc08
+%%UCSIM%%%%XA51%%bin/sxa
 %%UCSIM%%%%Z80%%bin/sz80
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
@@ -168,6 +167,7 @@ bin/sdcpp
 %%MCS51%%%%DATADIR%%/include/mcs51/serial_IO.h
 %%MCS51%%%%DATADIR%%/include/mcs51/uPSD32xx.h
 %%MCS51%%%%DATADIR%%/include/mcs51/uPSD33xx.h
+%%MCS51%%%%DATADIR%%/include/mcs51/w7100.h
 %%PIC%%%%DATADIR%%/include/pic/errno.h
 %%PIC%%%%DATADIR%%/include/pic/float.h
 %%PIC%%%%DATADIR%%/include/pic/limits.h
@@ -211,6 +211,7 @@ bin/sdcpp
 %%PIC%%%%DATADIR%%/include/pic/pic16c782.h
 %%PIC%%%%DATADIR%%/include/pic/pic16c925.h
 %%PIC%%%%DATADIR%%/include/pic/pic16c926.h
+%%PIC%%%%DATADIR%%/include/pic/pic16f616.h
 %%PIC%%%%DATADIR%%/include/pic/pic16f627.h
 %%PIC%%%%DATADIR%%/include/pic/pic16f627a.h
 %%PIC%%%%DATADIR%%/include/pic/pic16f628.h
@@ -259,6 +260,7 @@ bin/sdcpp
 %%PIC%%%%DATADIR%%/include/pic/pic16f914.h
 %%PIC%%%%DATADIR%%/include/pic/pic16f916.h
 %%PIC%%%%DATADIR%%/include/pic/pic16f917.h
+%%PIC%%%%DATADIR%%/include/pic/pic16hv616.h
 %%PIC%%%%DATADIR%%/include/pic/sdcc-lib.h
 %%PIC16%%%%DATADIR%%/include/pic16/adc.h
 %%PIC16%%%%DATADIR%%/include/pic16/ctype.h
@@ -421,7 +423,7 @@ bin/sdcpp
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/libint.lib
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/liblong.lib
 %%DEVLIB%%%%DS390%%%%DATADIR%%/lib/ds400/libsdcc.lib
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/crt0.o
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/crt0.rel
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/gbz80/gbz80.lib
 %%DEVLIB%%%%HC08%%%%DATADIR%%/lib/hc08/hc08.lib
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/large/libfloat.lib
@@ -472,6 +474,7 @@ bin/sdcpp
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16c782.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16c925.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16c926.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f616.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f627.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f627a.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f628.lib
@@ -520,6 +523,7 @@ bin/sdcpp
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f914.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f916.lib
 %%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16f917.lib
+%%DEVLIB%%%%PIC%%%%DATADIR%%/lib/pic/pic16hv616.lib
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/crt0.o
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/crt0i.o
 %%DEVLIB%%%%PIC16%%%%DATADIR%%/lib/pic16/crt0iz.o
@@ -770,7 +774,7 @@ bin/sdcpp
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/liblong.lib
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/libsdcc.lib
 %%DEVLIB%%%%MCS51%%%%DATADIR%%/lib/small-stack-auto/mcs51.lib
-%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/crt0.o
+%%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/crt0.rel
 %%DEVLIB%%%%Z80%%%%DATADIR%%/lib/z80/z80.lib
 %%DEVLIB%%%%Z80%%@dirrm %%DATADIR%%/lib/z80
 %%DEVLIB%%%%MCS51%%@dirrm %%DATADIR%%/lib/small-stack-auto
