@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gphys
-PORTVERSION=	0.6.1
-PORTREVISION=	4
+PORTVERSION=	1.0.0
 CATEGORIES=	science ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/gphys/ \
 		http://dennou-h.gfd-dennou.org/library/ruby/products/gphys/ \
@@ -25,18 +24,17 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
 		${RUBY_SITEARCHLIBDIR}/numru/fftw3.so:${PORTSDIR}/math/ruby-fftw3 \
 		${RUBY_SITELIBDIR}/numru/misc.rb:${PORTSDIR}/math/ruby-numru_misc \
 		${RUBY_SITELIBDIR}/numru/units.rb:${PORTSDIR}/math/ruby-numru_units
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 
 USE_RUBY=	yes
-NO_BUILD=	yes
+USE_RUBY_EXTCONF=       yes
 
 DOCS=		ChangeLog README TODO_ep_flux doc/*.html
 DOCS_DR=	doc/derivative/*.html doc/derivative/math-doc/document.pdf
 DOCS_EP=	doc/ep_flux/*.html doc/ep_flux/math-doc/document.pdf
 
-do-install:
-	@cd ${WRKSRC}/ && ${RUBY} ./install.rb
-
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${PREFIX}/bin
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/test

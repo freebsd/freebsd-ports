@@ -11,15 +11,21 @@ bin/gpprint
 bin/gpvect
 bin/gpview
 bin/grads2nc_with_gphys
+%%RUBY_SITEARCHLIBDIR%%/numru/gphys_ext.so
 %%RUBY_SITELIBDIR%%/numru/dclext_datetime_ax.rb
+%%RUBY_SITELIBDIR%%/numru/dcl_mouse.rb
 %%RUBY_SITELIBDIR%%/numru/derivative.rb
-%%RUBY_SITELIBDIR%%/numru/vizshot.rb
+%%RUBY_SITELIBDIR%%/numru/ganalysis.rb
 %%RUBY_SITELIBDIR%%/numru/gdir.rb
 %%RUBY_SITELIBDIR%%/numru/gdir_connect_ftp-like.rb
 %%RUBY_SITELIBDIR%%/numru/ggraph.rb
 %%RUBY_SITELIBDIR%%/numru/ggraph_on_merdional_section.rb
 %%RUBY_SITELIBDIR%%/numru/gphys.rb
 %%RUBY_SITELIBDIR%%/numru/htdir.rb
+%%RUBY_SITELIBDIR%%/numru/ganalysis/covariance.rb
+%%RUBY_SITELIBDIR%%/numru/ganalysis/eof.rb
+%%RUBY_SITELIBDIR%%/numru/ganalysis/histogram.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/assoccoords.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/attribute.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/attributenetcdf.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/axis.rb
@@ -32,6 +38,8 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_fft.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_grads_io.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_grib_io.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gphys_gtool3_io.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gphys_hdfeos5_io.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_io.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_io_common.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/gphys_netcdf_io.rb
@@ -40,6 +48,9 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/gphys/grib.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/grib_params.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/grid.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/gtool3.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/interpolate.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/narray_ext.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/netcdf_convention.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/subsetmapping.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/unumeric.rb
@@ -47,8 +58,12 @@ bin/grads2nc_with_gphys
 %%RUBY_SITELIBDIR%%/numru/gphys/varraycomposite.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/varraygrads.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/varraygrib.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/varraygtool3.rb
+%%RUBY_SITELIBDIR%%/numru/gphys/varrayhdfeos5.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/varraynetcdf.rb
 %%RUBY_SITELIBDIR%%/numru/gphys/varraynusdas.rb
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%/numru
+@dirrm %%RUBY_SITELIBDIR%%/numru/ganalysis
 @dirrm %%RUBY_SITELIBDIR%%/numru/gphys
 @dirrmtry %%RUBY_SITELIBDIR%%/numru
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/cira86_to_nc.rb
@@ -59,16 +74,19 @@ bin/grads2nc_with_gphys
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ggraph_mapfit-axes_dr002687.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ggraph_latlon_labelling_dr002690.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/map_projection.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ncep_theta_coord.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_1.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_2.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/sample/ep_flux/demo_NCEP_3.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/test/test_ep_flux.rb
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/test/eof_slp.rb
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.ctl
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.dat
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.grib
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.nc
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/T.jan.packed.withmiss.nc
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/UV.jan.nc
+%%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/assoc_crds.nc
 %%PORTEXAMPLES%%%%RUBY_MODEXAMPLESDIR%%/testdata/cira86.dat
 %%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample/ep_flux
 %%PORTEXAMPLES%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample
