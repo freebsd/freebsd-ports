@@ -7,6 +7,7 @@
 
 PORTNAME=	qpsmtpd
 PORTVERSION=	0.84
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://smtpd.develooper.com/files/
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,7 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT=	A flexible SMTP daemon written in Perl and featuring a plugin API
 
 RUN_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
-  mod_perl2>=0:${PORTSDIR}/www/mod_perl2
+	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 
 MAKE_JOBS_SAFE=	yes
 
