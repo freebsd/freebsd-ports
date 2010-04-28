@@ -10,7 +10,6 @@
 # Lat,		Long,		"name"	opt			# location
 
 -41.2124,	174.8870,	"thompsa"			# Wellington, New Zealand
--32.90,		151.70,		"lawrance"			# Newcastle, Australia
 -34.045657,	151.117163,	"edwin"				# Caringbag NSW, Australia
 -33.55,		151.1,		"bde"				# Sydney, Australia
 -37.7,		144.9,		"     jb,benno"			# Melbourne, Vic, Australia
@@ -47,6 +46,7 @@
  36.6,		120.19,		"dryice"			# Qingdao, Shandong, China
  30.2727,	120.1662,	"davidxu"			# HangZhou, ZheJiang, China
  39.550,	116.214,	"nemoliu"			# Beijing, Beijing, China
+-31.928982,	115.912435,	"lawrance"			# Perth, Australia
 -31.97908,	115.81611,	"adrian"			# Crawley, Perth, Western Australia
  22.80346,	113.80578,	"wen"				# DongGuan, GuangDong, China
  22.1957,	113.549,	"vs"				# Macau, Macau SAR
