@@ -17,8 +17,7 @@ COMMENT=	Policyd v2 is a multi-platform policy server for popular MTAs
 RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
 		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
-		${SITE_PERL}/mach/Cache/FastMmap.pm:${PORTSDIR}/devel/p5-Cache-FastMmap \
-		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_mysql.so:${PORTSDIR}/databases/php5-pdo_mysql
+		${SITE_PERL}/mach/Cache/FastMmap.pm:${PORTSDIR}/devel/p5-Cache-FastMmap
 
 USE_PERL5=	yes
 USE_PHP=	yes
@@ -34,6 +33,7 @@ OPTIONS=	MYSQL "Use MySQL support" On \
 		SQLite "Use SQLite support" Off
 
 .include <bsd.port.pre.mk>
+USE_PHP=	pdo_mysql
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
