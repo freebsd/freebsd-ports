@@ -10,7 +10,7 @@ PORTVERSION=	0.95
 CATEGORIES=	mail
 MASTER_SITES=	http://www.linuxmagic.com/opensource/qmail/qmail-remove/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Removes messages from your qmail queue based on a particular string
 
 PLIST_FILES=	sbin/qmail-remove bin/populate.pl
