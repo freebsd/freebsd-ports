@@ -692,7 +692,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>kdebase</name>
-	<range><lt>4.*</lt></range>
+	<range><le>3.5.10_6</le></range>
       </package>
       <package>
 	<name>kdebase-workspace</name>
