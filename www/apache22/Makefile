@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -207,7 +207,7 @@ pre-configure:
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
-	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$$FTPUSERS," \
+	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,${FTPUSERS}," \
 			${WRKSRC}/docs/conf/extra/httpd-userdir.conf
 	@${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}, ; \
 			s,%%WWWGRP%%,${WWWGRP}," \
