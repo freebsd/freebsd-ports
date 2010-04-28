@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	rub-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby extension to make Lua script language as a class
 
 USE_LUA=	5.0
