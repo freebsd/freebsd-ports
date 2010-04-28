@@ -41,12 +41,112 @@
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.path.Path-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.path.PathSyntaxError-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.AST-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Add-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.And-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Assert-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Assign-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Attribute-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.AugAssign-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.AugLoad-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.AugStore-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.BinOp-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.BitAnd-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.BitOr-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.BitXor-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.BoolOp-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Break-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Call-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.ClassDef-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Compare-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Continue-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Del-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Delete-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Dict-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Div-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Ellipsis-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Eq-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Exec-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Expr-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Expression-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.ExtSlice-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.FloorDiv-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.For-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.FunctionDef-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.GeneratorExp-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Global-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Gt-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.GtE-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.If-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.IfExp-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Import-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.ImportFrom-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.In-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Index-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Interactive-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Invert-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Is-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.IsNot-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.LShift-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Lambda-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.List-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.ListComp-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Load-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Lt-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.LtE-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Mod-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Module-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Mult-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Name-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Not-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.NotEq-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.NotIn-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Num-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Or-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Param-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Pass-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Pow-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Print-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.RShift-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Raise-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Repr-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Return-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Slice-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Store-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Str-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Sub-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Subscript-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Suite-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.TryExcept-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.TryFinally-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Tuple-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.UAdd-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.USub-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.UnaryOp-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.While-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.With-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.Yield-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.alias-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.arguments-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.cmpop-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.comprehension-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.excepthandler-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.expr_context-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.keyword-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.operator-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template._ast24.stmt-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.ast24-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.astutil-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.astutil.ASTCodeGenerator-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.astutil.ASTTransformer-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.BadDirectiveError-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.Context-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.DirectiveFactory-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.DirectiveFactoryMeta-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.Template-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.TemplateError-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.TemplateMeta-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.TemplateRuntimeError-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.base.TemplateSyntaxError-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/genshi.template.directives-module.html
@@ -115,6 +215,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/loader.html
+%%PORTDOCS%%%%DOCSDIR%%/loader.txt
 %%PORTDOCS%%%%DOCSDIR%%/logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/plugin.html
@@ -163,30 +265,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/myghty/template.myt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/simpletal/base.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/simpletal/template.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/dev.cfg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/config/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/config/app.cfg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/config/log.cfg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/controllers.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/json.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/model.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/release.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/static/images/favicon.ico
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/static/images/tg_under_the_hood.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/login.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/master.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/plain.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/sitetemplate.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/templates/welcome.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/tests/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/tests/test_controllers.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/genshitest/tests/test_model.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/sample-prod.cfg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/setup.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/turbogears/start-genshitest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bench/xpath.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/controller.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/form.py
@@ -206,22 +285,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/info.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/layout.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorial/geddit/templates/submit.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/hello.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webpy/hello.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/webpy
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/templates
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/static
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit/lib
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial/geddit
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorial
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/tests
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/templates
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/static/images
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/static
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest/config
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears/genshitest
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/turbogears
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/simpletal
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/myghty
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/bench/mako
