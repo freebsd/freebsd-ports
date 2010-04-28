@@ -26,7 +26,7 @@ include/kcutil.h
 lib/libkyotocabinet.a
 lib/libkyotocabinet.so
 lib/libkyotocabinet.so.2
-lib/libkyotocabinet.so.2.17.0
+lib/libkyotocabinet.so.2.18.0
 libdata/pkgconfig/kyotocabinet.pc
 %%DATADIR%%/kyotocabinet.idl
 @dirrm %%DATADIR%%
