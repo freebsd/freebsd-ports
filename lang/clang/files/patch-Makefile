@@ -3,12 +3,12 @@ $FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
-@@ -24,7 +24,7 @@
+@@ -31,7 +31,7 @@
    OPTIONAL_DIRS :=
  else
-   DIRS := lib/System lib/Support utils lib/VMCore lib tools/llvm-config \
--          tools runtime docs
-+          tools runtime %%DOCSRCDIR%%
-   OPTIONAL_DIRS := examples projects bindings
+   DIRS := lib/System lib/Support utils lib/VMCore lib tools/llvm-shlib \
+-          tools/llvm-config tools runtime docs unittests
++          tools/llvm-config tools runtime %%DOCSRCDIR%% unittests
+   OPTIONAL_DIRS := projects bindings
  endif
  

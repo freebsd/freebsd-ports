@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	2.6
-PORTREVISION=	2
+PORTVERSION=	2.7
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
@@ -47,8 +47,8 @@ DOCSRCDIR=	docs
 .endif
 
 .if !defined(NOPORTDOCS)
-MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
-		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-db.1 \
+MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 \
+		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmc.1 llvmgcc.1 \
 		llvmgxx.1 opt.1 tblgen.1
@@ -56,12 +56,18 @@ MAN1=		bugpoint.1 llc.1 lli.1 llvm-ar.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} =="ia64"
-BROKEN=		Does not compile on ${ARCH}
+.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
+BROKEN=		does not compile
+.elif ${ARCH} == "sparc64"
+BROKEN=		does not compile on sparc64
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CONFIGURE_ARGS+=	--enable-pic --with-pic
+.endif
+
+.if ${ARCH} == "i386"
+CONFIGURE_ARGS+=	--with-optimize-option=-O2
 .endif
 
 .ifdef(WITH_NO_ASSERTS)
@@ -88,16 +94,17 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 PLIST_FILE_LIST=	bin/bugpoint \
-			bin/gccas \
-			bin/gccld \
 			bin/llc \
 			bin/lli \
 			bin/llvm* \
 			bin/opt \
 			bin/tblgen \
 			lib/libCompilerDriver.a \
+			lib/libEnhancedDisassembly.so \
+			lib/libEnhancedDisassembly.a \
 			lib/libLTO.* \
 			lib/libLLVM* \
+			lib/libUnitTestMain.a \
 			lib/libplugin_llvmc* \
 			lib/libprofile_rt.so
 PLIST_DIR_LIST=		include/llvm-c \
