@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Genshi
-PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTVERSION=	0.6
+PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	textproc www python
 MASTER_SITES=	http://ftp.edgewall.com/pub/${PORTNAME:L}/ \
@@ -19,9 +19,6 @@ COMMENT=	Python toolkit for stream-based generation of output for the web
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-
-PYEASYINSTALL_ARCHDEP=	yes
-PYDISTUTILS_INSTALLARGS=	-O 1 -N -S ${PYTHONPREFIX_SITELIBDIR}/site-packages  -d ${PYTHONPREFIX_SITELIBDIR} ${WRKSRC}/dist/${PYEASYINSTALL_EGG}
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
