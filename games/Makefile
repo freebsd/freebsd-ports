@@ -282,6 +282,7 @@
     SUBDIR += galaxymage
     SUBDIR += garith
     SUBDIR += gbottler
+    SUBDIR += gbrainy
     SUBDIR += gcompris
     SUBDIR += gdado
     SUBDIR += geki2

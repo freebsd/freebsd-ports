@@ -1,0 +1,137 @@
+bin/gbrainy
+lib/gbrainy/gbrainy.Core.dll
+lib/gbrainy/gbrainy.Core.dll.config
+lib/gbrainy/gbrainy.Games.dll
+lib/gbrainy/gbrainy.exe
+lib/gbrainy/gbrainy.exe.config
+libdata/pkgconfig/gbrainy.pc
+share/applications/gbrainy.desktop
+share/games/gbrainy/verbal_analogies.xml
+share/gnome/help/gbrainy/C/figures/bottom.png
+share/gnome/help/gbrainy/C/figures/history.png
+share/gnome/help/gbrainy/C/figures/preferences.png
+share/gnome/help/gbrainy/C/figures/results.png
+share/gnome/help/gbrainy/C/figures/toolbar.png
+share/gnome/help/gbrainy/C/gametypes.page
+share/gnome/help/gbrainy/C/history.page
+share/gnome/help/gbrainy/C/index.page
+share/gnome/help/gbrainy/C/introduction.page
+share/gnome/help/gbrainy/C/legal.xml
+share/gnome/help/gbrainy/C/playing.page
+share/gnome/help/gbrainy/C/preferences.page
+share/gnome/help/gbrainy/C/results.page
+share/gnome/help/gbrainy/C/scoring.page
+share/gnome/help/gbrainy/ca/figures/bottom.png
+share/gnome/help/gbrainy/ca/figures/history.png
+share/gnome/help/gbrainy/ca/figures/preferences.png
+share/gnome/help/gbrainy/ca/figures/results.png
+share/gnome/help/gbrainy/ca/figures/toolbar.png
+share/gnome/help/gbrainy/ca/gametypes.page
+share/gnome/help/gbrainy/ca/history.page
+share/gnome/help/gbrainy/ca/index.page
+share/gnome/help/gbrainy/ca/introduction.page
+share/gnome/help/gbrainy/ca/legal.xml
+share/gnome/help/gbrainy/ca/playing.page
+share/gnome/help/gbrainy/ca/preferences.page
+share/gnome/help/gbrainy/ca/results.page
+share/gnome/help/gbrainy/ca/scoring.page
+share/gnome/help/gbrainy/cs/figures/bottom.png
+share/gnome/help/gbrainy/cs/figures/history.png
+share/gnome/help/gbrainy/cs/figures/preferences.png
+share/gnome/help/gbrainy/cs/figures/results.png
+share/gnome/help/gbrainy/cs/figures/toolbar.png
+share/gnome/help/gbrainy/cs/gametypes.page
+share/gnome/help/gbrainy/cs/history.page
+share/gnome/help/gbrainy/cs/index.page
+share/gnome/help/gbrainy/cs/introduction.page
+share/gnome/help/gbrainy/cs/legal.xml
+share/gnome/help/gbrainy/cs/playing.page
+share/gnome/help/gbrainy/cs/preferences.page
+share/gnome/help/gbrainy/cs/results.page
+share/gnome/help/gbrainy/cs/scoring.page
+share/gnome/help/gbrainy/da/figures/bottom.png
+share/gnome/help/gbrainy/da/figures/history.png
+share/gnome/help/gbrainy/da/figures/preferences.png
+share/gnome/help/gbrainy/da/figures/results.png
+share/gnome/help/gbrainy/da/figures/toolbar.png
+share/gnome/help/gbrainy/da/gametypes.page
+share/gnome/help/gbrainy/da/history.page
+share/gnome/help/gbrainy/da/index.page
+share/gnome/help/gbrainy/da/introduction.page
+share/gnome/help/gbrainy/da/legal.xml
+share/gnome/help/gbrainy/da/playing.page
+share/gnome/help/gbrainy/da/preferences.page
+share/gnome/help/gbrainy/da/results.page
+share/gnome/help/gbrainy/da/scoring.page
+share/gnome/help/gbrainy/de/figures/bottom.png
+share/gnome/help/gbrainy/de/figures/history.png
+share/gnome/help/gbrainy/de/figures/preferences.png
+share/gnome/help/gbrainy/de/figures/results.png
+share/gnome/help/gbrainy/de/figures/toolbar.png
+share/gnome/help/gbrainy/de/gametypes.page
+share/gnome/help/gbrainy/de/history.page
+share/gnome/help/gbrainy/de/index.page
+share/gnome/help/gbrainy/de/introduction.page
+share/gnome/help/gbrainy/de/legal.xml
+share/gnome/help/gbrainy/de/playing.page
+share/gnome/help/gbrainy/de/preferences.page
+share/gnome/help/gbrainy/de/results.page
+share/gnome/help/gbrainy/de/scoring.page
+share/gnome/help/gbrainy/es/figures/bottom.png
+share/gnome/help/gbrainy/es/figures/history.png
+share/gnome/help/gbrainy/es/figures/preferences.png
+share/gnome/help/gbrainy/es/figures/results.png
+share/gnome/help/gbrainy/es/figures/toolbar.png
+share/gnome/help/gbrainy/es/gametypes.page
+share/gnome/help/gbrainy/es/history.page
+share/gnome/help/gbrainy/es/index.page
+share/gnome/help/gbrainy/es/introduction.page
+share/gnome/help/gbrainy/es/legal.xml
+share/gnome/help/gbrainy/es/playing.page
+share/gnome/help/gbrainy/es/preferences.page
+share/gnome/help/gbrainy/es/results.page
+share/gnome/help/gbrainy/es/scoring.page
+share/icons/hicolor/16x16/apps/gbrainy.png
+share/icons/hicolor/32x32/apps/gbrainy.png
+share/icons/hicolor/48x48/apps/gbrainy.png
+share/icons/hicolor/scalable/apps/gbrainy.svg
+share/locale/af/LC_MESSAGES/gbrainy.mo
+share/locale/ar/LC_MESSAGES/gbrainy.mo
+share/locale/ast/LC_MESSAGES/gbrainy.mo
+share/locale/ca/LC_MESSAGES/gbrainy.mo
+share/locale/ca@valencia/LC_MESSAGES/gbrainy.mo
+share/locale/cs/LC_MESSAGES/gbrainy.mo
+share/locale/da/LC_MESSAGES/gbrainy.mo
+share/locale/de/LC_MESSAGES/gbrainy.mo
+share/locale/el/LC_MESSAGES/gbrainy.mo
+share/locale/en_GB/LC_MESSAGES/gbrainy.mo
+share/locale/es/LC_MESSAGES/gbrainy.mo
+share/locale/eu/LC_MESSAGES/gbrainy.mo
+share/locale/fi/LC_MESSAGES/gbrainy.mo
+share/locale/fr/LC_MESSAGES/gbrainy.mo
+share/locale/gl/LC_MESSAGES/gbrainy.mo
+share/locale/hu/LC_MESSAGES/gbrainy.mo
+share/locale/it/LC_MESSAGES/gbrainy.mo
+share/locale/nb/LC_MESSAGES/gbrainy.mo
+share/locale/nl/LC_MESSAGES/gbrainy.mo
+share/locale/pl/LC_MESSAGES/gbrainy.mo
+share/locale/pt_BR/LC_MESSAGES/gbrainy.mo
+share/locale/sk/LC_MESSAGES/gbrainy.mo
+share/locale/sl/LC_MESSAGES/gbrainy.mo
+share/locale/sv/LC_MESSAGES/gbrainy.mo
+share/locale/zh_CN/LC_MESSAGES/gbrainy.mo
+@dirrm share/gnome/help/gbrainy/es/figures
+@dirrm share/gnome/help/gbrainy/es
+@dirrm share/gnome/help/gbrainy/de/figures
+@dirrm share/gnome/help/gbrainy/de
+@dirrm share/gnome/help/gbrainy/da/figures
+@dirrm share/gnome/help/gbrainy/da
+@dirrm share/gnome/help/gbrainy/cs/figures
+@dirrm share/gnome/help/gbrainy/cs
+@dirrm share/gnome/help/gbrainy/ca/figures
+@dirrm share/gnome/help/gbrainy/ca
+@dirrm share/gnome/help/gbrainy/C/figures
+@dirrm share/gnome/help/gbrainy/C
+@dirrm share/gnome/help/gbrainy
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
