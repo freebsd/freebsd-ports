@@ -1,0 +1,21 @@
+%%SITE_PERL%%/Paranoid/Log/Email.pm
+%%SITE_PERL%%/Paranoid/Log/File.pm
+%%SITE_PERL%%/Paranoid/Log/Syslog.pm
+%%SITE_PERL%%/Paranoid/Log/Buffer.pm
+%%SITE_PERL%%/Paranoid/Data.pm
+%%SITE_PERL%%/Paranoid/Args.pm
+%%SITE_PERL%%/Paranoid/Lockfile.pm
+%%SITE_PERL%%/Paranoid/Log.pm
+%%SITE_PERL%%/Paranoid/Glob.pm
+%%SITE_PERL%%/Paranoid/Input.pm
+%%SITE_PERL%%/Paranoid/Filesystem.pm
+%%SITE_PERL%%/Paranoid/Process.pm
+%%SITE_PERL%%/Paranoid/BerkeleyDB.pm
+%%SITE_PERL%%/Paranoid/Module.pm
+%%SITE_PERL%%/Paranoid/Network.pm
+%%SITE_PERL%%/Paranoid/Debug.pm
+%%SITE_PERL%%/Paranoid.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Paranoid/.packlist
+@dirrm %%SITE_PERL%%/Paranoid/Log
+@dirrm %%SITE_PERL%%/Paranoid
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Paranoid

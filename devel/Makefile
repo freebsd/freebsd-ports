@@ -1909,6 +1909,7 @@
     SUBDIR += p5-Params-Coerce
     SUBDIR += p5-Params-Util
     SUBDIR += p5-Params-Validate
+    SUBDIR += p5-Paranoid
     SUBDIR += p5-Parse-CPAN-Meta
     SUBDIR += p5-Parse-CPAN-Packages
     SUBDIR += p5-Parse-CPAN-Packages-Fast
