@@ -24,6 +24,8 @@ USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 CMAKE_USE_PTHREAD=	yes
 
+BROKEN=	does not build with LLVM 2.7
+
 post-patch:
 # disable latex doc, it's not ready yet
 	${REINPLACE_CMD} -e '/add_subdirectory.*doc/d' \
