@@ -1128,6 +1128,8 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/Urchin.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/_base.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/logger/JSON.php
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/logger/dojoxAnalytics.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/plugins/consoleMessages.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/plugins/dojo.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/analytics/plugins/idle.js
@@ -1906,6 +1908,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/PasswordValidator.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/RangeSlider.css
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/Rating.css
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/RecieveFile.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/VerticalRangeSlider.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/_CheckedMultiSelectItem.html
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/form/resources/images/loading_wheel.gif
@@ -2237,6 +2240,7 @@ bin/zf.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/math/stats.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/README.template
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/_modules.js
+%%DOJO%%%%DATADIR%%/externals/dojo/dojox/resources/explore.php
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/robot/README
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/robot/recorder.js
 %%DOJO%%%%DATADIR%%/externals/dojo/dojox/rpc/Client.js
@@ -5197,7 +5201,6 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Translate/Adapter/XmlTm.php
 %%DATADIR%%/library/Zend/Translate/Exception.php
 %%DATADIR%%/library/Zend/Translate/Plural.php
-%%DATADIR%%/library/Zend/Translate/Translate.php
 %%DATADIR%%/library/Zend/Uri.php
 %%DATADIR%%/library/Zend/Uri/Exception.php
 %%DATADIR%%/library/Zend/Uri/Http.php
@@ -7929,6 +7932,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF2098-multibytepostdata.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF4238-zerolineresponse.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF7038-multipartarrayrequest.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF9404-doubleContentLength.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/staticFile.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testCookies.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/testExceptionOnReadTimeout.php
@@ -8446,6 +8450,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/OfflineTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/Sqs/OnlineTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files/amazon-response-invalid.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files/amazon-response-valid.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files/mozart_result.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Amazon/_files/offers_with_names.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Audioscrobbler/AlbumDataTest.php
