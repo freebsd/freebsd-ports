@@ -16,7 +16,7 @@ DISTNAME=	gtk+-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 
-USE_PERL5=	yes
+USE_PERL5_BUILD=	yes
 USE_XORG=	x11 ice xext sm inputproto xi
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
