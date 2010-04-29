@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vitunes
-PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTVERSION=	1.0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.vitunes.org/files/ \
 		http://mirror.4bit.ws/ \
