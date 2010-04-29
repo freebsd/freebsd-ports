@@ -21834,6 +21834,7 @@ ruby-io-reactor                 ports/devel/ruby-io-reactor
 ruby-irc                        ports/irc/ruby-irc
 ruby-js                         ports/lang/ruby-js
 ruby-jttui                      ports/devel/ruby-jttui
+ruby-kyotocabinet               ports/databases/ruby-kyotocabinet
 ruby-ldap                       ports/net/ruby-ldap
 ruby-lha                        ports/archivers/ruby-lha
 ruby-libarchive                 ports/archivers/ruby-libarchive
