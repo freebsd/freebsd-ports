@@ -7,6 +7,7 @@
 
 PORTNAME=	GnuPG-Interface
 PORTVERSION=	0.42
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +16,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module for interfacing with GnuPG
 
 RUN_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg \
+		p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Class-MethodMaker>=1.00:${PORTSDIR}/devel/p5-Class-MethodMaker
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
