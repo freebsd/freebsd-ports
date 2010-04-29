@@ -12,7 +12,7 @@ CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=libapreq
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
 
 USE_APACHE=	2.0+
