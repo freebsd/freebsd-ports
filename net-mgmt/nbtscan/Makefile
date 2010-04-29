@@ -7,12 +7,13 @@
 
 PORTNAME=	nbtscan
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.inetcat.net/software/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	tabthorpe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBIOS name network scanner
 
 MAKE_JOBS_SAFE=	yes
