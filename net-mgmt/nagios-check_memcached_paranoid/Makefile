@@ -28,7 +28,7 @@ NDIR_CMD=	cd ${PLUGINS} && ${MAKE} -VWRKSRC
 EXTRA_DEPENDS=	automake>0:${PORTSDIR}/devel/automake19 \
 		autoconf>0:${PORTSDIR}/devel/autoconf262 \
 		libtool>0:${PORTSDIR}/devel/libtool22 \
-		gmake:${PORTSIDR}/devel/gmake
+		gmake:${PORTSDIR}/devel/gmake
 
 do-extract:
 	${MKDIR} ${WRKSRC}
