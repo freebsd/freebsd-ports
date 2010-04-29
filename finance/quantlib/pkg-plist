@@ -468,6 +468,7 @@ include/ql/math/statistics/sequencestatistics.hpp
 include/ql/math/statistics/statistics.hpp
 include/ql/math/surface.hpp
 include/ql/math/transformedgrid.hpp
+include/ql/mathconstants.hpp
 include/ql/methods/all.hpp
 include/ql/methods/finitedifferences/all.hpp
 include/ql/methods/finitedifferences/americancondition.hpp
