@@ -120,6 +120,9 @@ share/locale/sk/LC_MESSAGES/gbrainy.mo
 share/locale/sl/LC_MESSAGES/gbrainy.mo
 share/locale/sv/LC_MESSAGES/gbrainy.mo
 share/locale/zh_CN/LC_MESSAGES/gbrainy.mo
+share/pixmaps/gbrainy.png
+share/pixmaps/gbrainy.svg
+share/pixmaps/gbrainy16.png
 @dirrm share/gnome/help/gbrainy/es/figures
 @dirrm share/gnome/help/gbrainy/es
 @dirrm share/gnome/help/gbrainy/de/figures
@@ -133,5 +136,7 @@ share/locale/zh_CN/LC_MESSAGES/gbrainy.mo
 @dirrm share/gnome/help/gbrainy/C/figures
 @dirrm share/gnome/help/gbrainy/C
 @dirrm share/gnome/help/gbrainy
+@dirrm share/games/gbrainy
+@dirrm lib/gbrainy
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
