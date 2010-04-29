@@ -1,13 +1,13 @@
 ************************************************************************
 
-Three startup scripts has been installed as: 
+Three startup scripts have been installed as: 
 
 %%PREFIX%%/etc/rc.d/mfsmaster
 %%PREFIX%%/etc/rc.d/mfsmetalogger
 %%PREFIX%%/etc/rc.d/mfscgiserv
 
-Use it to start/stop the mfsmaster, mfsmetalogge and mfschunkserver
-services after you have added the following line to your rc.conf
+Use them to start/stop the mfsmaster, mfsmetalogger and mfscgiserv
+services after you have added the following lines to your rc.conf
 file respectively:
 
 mfsmaster_enable="YES"
