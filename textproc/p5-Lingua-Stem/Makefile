@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		Lingua-Stem
-PORTVERSION=		0.83
+PORTVERSION=		0.84
 CATEGORIES=		textproc perl5
-MASTER_SITES=		CPAN
+MASTER_SITES=		CPAN/../../authors/id/S/SN/SNOWHARE
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Provides word stemming algorithms localized by language
 
 BUILD_DEPENDS=		${SITE_PERL}/Lingua/PT/Stemmer.pm:${PORTSDIR}/textproc/p5-Lingua-PT-Stemmer \
