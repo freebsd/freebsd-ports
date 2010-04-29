@@ -85,7 +85,7 @@ cups:*:193:
 sympa:*:200:
 dspam:*:202:
 git:*:211:
-drizzle:*:213
+drizzle:*:213:
 bs:*:220:
 postgrey:*:225:
 aprsd:*:240:
@@ -141,7 +141,7 @@ openacs:*:820:
 dotlrn:*:821:
 netdisco:*:840:
 munin:*:842:
-fossy:*:901:www
+fossy:*:901:www:
 bacula:*:910:
 iserv:*:911:
 _relayd:*:913:
