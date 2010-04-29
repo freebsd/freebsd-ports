@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	A multimedia framework and video playout server for TV broadcasting
@@ -32,7 +31,7 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README docs demo
 
 OPTIONS=	AVFORMAT	"Avformat module" on \
 		DV	"Quasar DV Codec module" on \
-		FREI0R	"Frei0r module" on \
+		FREI0R	"Frei0r module (broken on FreeBSD 6.X)" on \
 		GTK2	"GTK2 module" on \
 		JACKRACK	"JACK Rack module" on \
 		KINO	"Kino module" on \
@@ -41,7 +40,7 @@ OPTIONS=	AVFORMAT	"Avformat module" on \
 		RESAMPLE	"Secret Rabbit Code module" on \
 		SOX	"Sound eXchange module" on \
 		SSE	"SSE support (requires MMX)" off \
-		SSE2	"SSE2 support" off \
+		SSE2	"SSE2 support (requires SSE)" off \
 		VORBIS	"Vorbis module" on
 
 .include <bsd.port.pre.mk>
@@ -65,7 +64,7 @@ CONFIGURE_ARGS+=	--disable-dv
 PLIST_SUB+=	DV="@comment "
 .endif
 
-.ifdef(WITH_FREI0R)
+.if defined(WITH_FREI0R) && ${OSVERSION} >= 700042
 BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 CONFIGURE_ARGS+=	--enable-frei0r
 PLIST_SUB+=	FREI0R=""
