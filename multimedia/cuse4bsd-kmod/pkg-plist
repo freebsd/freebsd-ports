@@ -2,7 +2,6 @@ include/cuse4bsd.h
 lib/libcuse4bsd.a
 lib/libcuse4bsd.so
 lib/libcuse4bsd.so.1
-lib/libcuse4bsd_p.a
 man/man3/cuse4bsd.3.gz
 @cwd %%KMODDIR%%
 %%KMODNAME%%.ko
