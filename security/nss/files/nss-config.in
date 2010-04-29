@@ -127,7 +127,7 @@ if test "$echo_cflags" = "yes"; then
 fi
 
 if test "$echo_libs" = "yes"; then
-      libdirs="-Wl,-R$libdir -L$libdir"
+      libdirs="-L$libdir"
       if test -n "$lib_ssl"; then
 	libdirs="$libdirs -lssl${major_version}"
       fi
