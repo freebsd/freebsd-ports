@@ -1,8 +1,18 @@
---- documentation/Makefile.orig	2010-03-09 15:46:16.000000000 +0100
-+++ documentation/Makefile	2010-03-09 15:46:58.000000000 +0100
-@@ -237,11 +237,6 @@
+--- documentation/Makefile.orig	2007-02-06 19:35:28.000000000 +0000
++++ documentation/Makefile	2010-04-29 08:51:10.000000000 +0000
+@@ -230,18 +230,15 @@
+ 
+ depend:
+ 
+-install: $(MANPAGES)
++docinstall:
+ 	echo "Installing documentation files in $(DESTDIR)$(docdir)..."
+ 	-$(INSTALL_DIR) $(DESTDIR)$(docdir)
+ 	for file in $(HTMLFILES) $(IMAGEFILES) index.html; do \
  		$(INSTALL_DATA) $$file $(DESTDIR)$(docdir); \
  	done
++
++install: $(MANPAGES)
  	echo "Installing man pages in $(DESTDIR)$(mandir)..."
 -	-$(INSTALL_DIR) $(DESTDIR)$(mandir)/cat1
 -	$(INSTALL_MAN) fluid.$(CAT1EXT) $(DESTDIR)$(mandir)/cat1

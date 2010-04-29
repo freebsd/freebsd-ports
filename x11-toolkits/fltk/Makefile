@@ -36,10 +36,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=	fltk-config.1 fluid.1
 MAN3=	fltk.3
 
+post-patch:
+	${REINPLACE_CMD} -e '30s/test //' ${WRKSRC}/Makefile
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 post-install:
-	cd ${WRKSRC}/documentation && ${MAKE} install
+	cd ${WRKSRC}/documentation && ${MAKE} docinstall
+	cd ${WRKSRC}/test && ${MAKE} install
 .endif
 
 .include <bsd.port.mk>
