@@ -7,7 +7,7 @@
 
 PORTNAME=	pushmi
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3 \
 		p5-RunApp>=0.13:${PORTSDIR}/devel/p5-RunApp \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
-		mod_perl2>=0:${PORTSDIR}/www/mod_perl2
+		${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 
 PERL_CONFIGURE=	yes
 
