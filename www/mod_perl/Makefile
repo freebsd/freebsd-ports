@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	ModPerl/GOZER
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache server
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
