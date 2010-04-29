@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/47458/ \
   LOCAL/pgollucci
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
 
 OPTIONS=\
