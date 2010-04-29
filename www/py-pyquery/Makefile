@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pyquery
-PORTVERSION=	0.4
-PORTREVISION=	0
+PORTVERSION=	0.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
