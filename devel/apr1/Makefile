@@ -177,14 +177,14 @@ PLIST_SUB+=	PGSQL="@comment "
 APU_EXTRAS=	yes
 PLIST_SUB+=	SQLITE3=""
 USE_SQLITE=	YES
-CONFIGURE_ARGS+= --with-sqlite3=${LOCALBASE}
+APU_CONF_ARGS+=	--with-sqlite3=${LOCALBASE}
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-sqlite3
 .else
 PKGNAMESUFFIX=	-sqlite3
 .endif
 .else
-CONFIGURE_ARGS+= --without-sqlite3
+APU_CONF_ARGS+=	--without-sqlite3
 PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
