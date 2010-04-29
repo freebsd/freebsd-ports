@@ -1,12 +1,11 @@
 ************************************************************************
 
-Three startup scripts has been installed as: 
+A startup script has been installed as: 
 
 %%PREFIX%%/etc/rc.d/mfschunkserver
 
-Use it to start/stop the mfsmaster, mfsmetalogge and mfschunkserver
-services after you have added the following line to your rc.conf
-file respectively:
+Use it to start/stop the mfschunkserver service after you have added
+the following line to your rc.conf file:
 
 mfschunkserver_enable="YES"
 
