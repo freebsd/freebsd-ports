@@ -53,6 +53,7 @@
     SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
+    SUBDIR += drizzle
     SUBDIR += edb
     SUBDIR += embedded_innodb
     SUBDIR += emma

@@ -1,0 +1,66 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: drizzle
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable drizzle:
+# drizzle_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable Drizzle.
+# drizzle_limits (bool):	Set to "NO" by default.
+#				Set it to yes to run `limits -e -U drizzle`
+#				just before drizzle starts.
+# drizzle_dbdir (str):		Default to "/var/db/drizzle"
+#				Base database directory.
+# drizzle_log (str):		Default to "/var/db/drizzle/<hostname>.log"
+#				Log file for startup messages (disable by
+#				setting to /dev/null)
+# drizzle_args (str):		Custom additional arguments to be passed
+#				to drizzle (default empty).
+#
+
+. /etc/rc.subr
+
+name="drizzle"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${drizzle_enable="NO"}
+: ${drizzle_limits="NO"}
+: ${drizzle_dbdir="/var/db/drizzle"}
+: ${drizzle_log="${drizzle_dbdir}/`/bin/hostname`.log"}
+: ${drizzle_args=""}
+
+drizzle_user="%%USERS%%"
+drizzle_limits_args="-e -U ${drizzle_user}"
+pidfile="${drizzle_dbdir}/`/bin/hostname`.pid"
+command="%%PREFIX%%/sbin/drizzled"
+command_args="--user=${drizzle_user} --datadir=${drizzle_dbdir} --pid-file=${pidfile} ${drizzle_args} > ${drizzle_log} 2>&1 &"
+start_precmd="${name}_prestart"
+start_postcmd="${name}_poststart"
+
+drizzle_prestart()
+{
+	if checkyesno drizzle_limits; then
+		eval `/usr/bin/limits ${drizzle_limits_args}` 2>/dev/null
+	else
+		return 0
+	fi
+}
+
+drizzle_poststart()
+{
+	local timeout=15
+	while [ ! -f "${pidfile}" -a ${timeout} -gt 0 ]; do
+		timeout=$(( timeout - 1 ))
+		sleep 1
+	done
+	return 0
+}
+
+run_rc_command "$1"
