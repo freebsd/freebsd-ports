@@ -10,7 +10,7 @@ PORTVERSION=	1.4.44
 CATEGORIES=	databases
 MASTER_SITES=	http://1978th.net/tokyocabinet/
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern implementation of DBM
 
 MAKE_JOBS_SAFE=	yes
