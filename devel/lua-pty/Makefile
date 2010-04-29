@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= philip
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	pty.lua?rev=1.2 pty.c?rev=1.25
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pty (pseudo-terminal) bindings for Lua 5
 
 USE_LUA?=	5.1

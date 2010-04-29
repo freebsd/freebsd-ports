@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= philip
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 DISTFILES=	lua_gettext.c?rev=${CVER} gettext.lua?rev=${LVER}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gettext binding for Lua 5
 
 USE_LUA?=	5.1
