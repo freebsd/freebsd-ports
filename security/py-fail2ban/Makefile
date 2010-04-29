@@ -11,7 +11,7 @@ CATEGORIES=	security python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	tony@pc-tony.com
 COMMENT=	scans log files and bans IP that makes too many password failures. 
 
 MAKE_JOBS_SAFE= yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	paul@querna.org
 COMMENT=	A build tool alternative to make
 
 MAKE_JOBS_SAFE=	yes
