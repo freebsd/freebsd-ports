@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webcamd
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/video4bsd/releases/
 
@@ -31,7 +31,7 @@ IGNORE=		requires FreeBSD 8.0-RELEASE or later
 .endif
 
 post-patch:
-	cd ${WRKSRC}/patches; ${SH} ./do_patch.sh
+	@cd ${WRKSRC}/patches; ${SH} ./do_patch.sh
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
 
 post-install:
