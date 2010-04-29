@@ -1,0 +1,4 @@
+This "check_kumofs" is Nagios plugin for monitoring kumofs server node
+and manager node.
+
+WWW: http://github.com/etolabo/nagios-check_kumofs
