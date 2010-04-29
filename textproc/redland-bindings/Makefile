@@ -10,7 +10,7 @@ PORTVERSION=	1.0.7.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
-MAINTAINER=	chuck@pkix.net
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Language bindings for the Redland package
 
 #OPTIONS=	JAVA "Add Java bindings" off \

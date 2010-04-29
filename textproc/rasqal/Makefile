@@ -8,13 +8,13 @@
 
 PORTNAME=	redland
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
 		http://librdf.org/dist/source/
 
 
-MAINTAINER=	chuck@pkix.net
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A high-level interface for RDF
 
 LIB_DEPENDS=	raptor.2:${PORTSDIR}/textproc/raptor
@@ -43,6 +43,8 @@ MAN1=		rasqal-config.1 rdfproc.1 redland-config.1 \
 MAN3=		librasqal.3 redland.3
 
 OPTIONS+=	MYSQL "Use MySQL instead of BDB" off
+OPTIONS+=	MPFR  "Use MPFR library for decimals (implies GMP)" off
+OPTIONS+=	GMP   "Use Gnu MP library for decimals" off
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +55,19 @@ PLIST_SUB+=	MYSQL=""
 .else
 CONFIGURE_ARGS+=--with-mysql=no
 PLIST_SUB+=	MYSQL="@comment "
+.endif
+
+# Set to mpfr if MPFR is on, gmp if only GMP is on and none if neither.
+# This guards against $user setting both GMP and MPFR, since we can't be
+# very verbose in explaining our options.
+.if defined(WITH_MPFR)
+CONFIGURE_ARGS+=	--with-decimal=mpfr
+LIB_DEPENDS+=	mpfr.3:${PORTSDIR}/math/mpfr
+.elif defined(WITH_GMP)
+CONFIGURE_ARGS+=	--with-decimal=gmp
+LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+.else
+CONFIGURE_ARGS+=	--with-decimal=none
 .endif
 
 pre-everything::

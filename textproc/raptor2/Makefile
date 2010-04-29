@@ -14,7 +14,7 @@ MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
 		http://download.librdf.org/source/
 
 
-MAINTAINER=	chuck@pkix.net
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	RDF Parser Toolkit for Redland
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
