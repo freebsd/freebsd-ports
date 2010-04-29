@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
 DISTNAME=	xemacs-${XEMACS_VER}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	pgollucci@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This port tracks the stable version of the XEmacs text editor
 
 CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
