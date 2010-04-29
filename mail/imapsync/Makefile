@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.286
+PORTVERSION=	1.310
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/ \
-		http://christianserving.org/ports/mail/imapsync/
+MASTER_SITES=	http://www.linux-france.org/prj/${PORTNAME}/dist/ \
+		http://christianserving.org/ports/mail/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@christianserving.org
