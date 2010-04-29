@@ -386,7 +386,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MOD
 .endif
 
 .if defined(WITH_SUPERVISORD_MODULE)
-NGINX_SUPERVISORD_MODULE_VERSION=	1.3
+NGINX_SUPERVISORD_MODULE_VERSION=	1.4
 MASTER_SITES+=	http://labs.frickle.com/files/:supervisord
 DISTFILES+=	ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}.tar.gz:supervisord
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}
