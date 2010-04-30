@@ -16,6 +16,7 @@ COMMENT=	A 2D pool game using the GTK+ toolkit
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
+USE_PERL5=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:

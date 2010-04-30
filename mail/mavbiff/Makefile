@@ -15,6 +15,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Small screen with active mailboxes and bring-to-front-facility
 
 USE_GNOME=      gtk12
+USE_PERL5=	yes
 
 MAN1=		mavbiff.1
 

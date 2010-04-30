@@ -22,6 +22,7 @@ USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static=yes \
