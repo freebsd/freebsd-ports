@@ -26,6 +26,8 @@ RUN_DEPENDS=	\
 	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl \
 	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 
+BROKEN=		does not package
+
 USE_GL=		glut
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
