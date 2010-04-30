@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	2.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/
@@ -51,11 +51,12 @@ USE_LDCONFIG=	yes
 CMAKE_VERBOSE=	yes
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include"
 
-OPTIONS=	GTL	"Color transformations in Krita (requires devel/llvm)" on
+OPTIONS=	GTL	"Color transformations in Krita (currently broken)" off
 
 .include <bsd.port.pre.mk>
 
-.ifndef(WITHOUT_GTL)
+WITHOUT_GTL=	yes
+.if !defined(WITHOUT_GTL) || exists (${LOCALBASE}/lib/libQtShiva.so)
 LIB_DEPENDS+=	OpenCTL.0:${PORTSDIR}/graphics/opengtl \
 		QtShiva.0:${PORTSDIR}/graphics/qtgtl
 PLIST_SUB+=	GTL=""

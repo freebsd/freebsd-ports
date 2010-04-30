@@ -1581,11 +1581,11 @@ share/apps/krita/shaders/linear_gradient.frag
 share/apps/krita/shaders/radial_gradient.frag
 share/apps/krita/shaders/square_gradient.frag
 %%GTL%%share/apps/krita/shiva/kernels/AntiBullify.shiva
-%%GTL%%share/apps/krita/shiva/kernels/Bullify.shiva    
+%%GTL%%share/apps/krita/shiva/kernels/Bullify.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Caleidoscope.shiva
 %%GTL%%share/apps/krita/shiva/kernels/CheckerBoard.shiva
-%%GTL%%share/apps/krita/shiva/kernels/Disco.shiva       
-%%GTL%%share/apps/krita/shiva/kernels/Droste.shiva      
+%%GTL%%share/apps/krita/shiva/kernels/Disco.shiva
+%%GTL%%share/apps/krita/shiva/kernels/Droste.shiva
 %%GTL%%share/apps/krita/shiva/kernels/MandelbrotSet.shiva
 %%GTL%%share/apps/krita/shiva/kernels/MirrorImpose.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Moire.shiva
