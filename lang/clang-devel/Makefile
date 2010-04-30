@@ -52,9 +52,8 @@ CONFIGURE_ARGS+=	--enable-optimized
 DOCSRCDIR=
 .else
 DOCSRCDIR=	docs
-.endif
-
 MAN1=		clang.1
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -73,7 +72,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|\(PROJ_mandir.*:=\).*$$|\1${MANPREFIX}/man|g' \
 	    ${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's|%%DOCSRCDIR%%|${DOCSRCDIR}|' \
-	    ${WRKSRC}/Makefile
+	    ${WRKSRC}/Makefile ${WRKSRC}/tools/clang/Makefile
 	${REINPLACE_CMD} -e 's|/usr/bin/env perl|${PERL}|' \
 	    ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
 	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build
