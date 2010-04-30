@@ -20,6 +20,7 @@ tiarra/doc/module/Channel.html
 tiarra/doc/module/Client.html
 tiarra/doc/module/Debug.html
 tiarra/doc/module/Log.html
+tiarra/doc/module/Network.html
 tiarra/doc/module/System.html
 tiarra/doc/module/UNCLASSIFIED.html
 tiarra/doc/module/User.html
@@ -191,6 +192,8 @@ tiarra/module/Log/Writer/File.pm
 @dirrm tiarra/module/Log/Writer
 tiarra/module/Log/Writer.pm
 @dirrm tiarra/module/Log
+tiarra/module/Network/Freenode.pm
+@dirrm tiarra/module/Network
 tiarra/module/Skeleton.pm
 tiarra/module/System/Error.pm
 tiarra/module/System/Inflate/Gzip.pm

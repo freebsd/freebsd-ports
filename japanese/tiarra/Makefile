@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tiarra
-PORTVERSION=	20091019
+PORTVERSION=	20100212
 #PORTREVISION=	0
 CATEGORIES=	japanese irc ipv6
-MASTER_SITES=	http://www.clovery.jp/tiarra/archive/2009/10/
+MASTER_SITES=	http://www.clovery.jp/tiarra/archive/2010/02/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	IRC Proxy software
