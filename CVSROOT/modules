@@ -2543,6 +2543,7 @@ driftnet                        ports/net-mgmt/driftnet
 driglide                        ports/x11-servers/driglide
 drill                           ports/dns/drill
 drivel                          ports/deskutils/drivel
+drizzle                         ports/databases/drizzle
 drjava                          ports/editors/drjava
 drm                             ports/games/drm
 drood                           ports/www/drood
@@ -4061,6 +4062,7 @@ gbemol                          ports/audio/gbemol
 gbib                            ports/databases/gbib
 gbirthday                       ports/deskutils/gbirthday
 gbottler                        ports/games/gbottler
+gbrainy                         ports/games/gbrainy
 gbsplay                         ports/audio/gbsplay
 gbuffy                          ports/mail/gbuffy
 gcal                            ports/deskutils/gcal
@@ -9655,6 +9657,8 @@ nagios-certexp-plugin           ports/net-mgmt/nagios-certexp-plugin
 nagios-check_bacula             ports/net-mgmt/nagios-check_bacula
 nagios-check_clamav             ports/net-mgmt/nagios-check_clamav
 nagios-check_ice                ports/net-mgmt/nagios-check_ice
+nagios-check_kumofs             ports/net-mgmt/nagios-check_kumofs
+nagios-check_memcached_paranoid  ports/net-mgmt/nagios-check_memcached_paranoid
 nagios-check_nick               ports/net-mgmt/nagios-check_nick
 nagios-check_ports              ports/net-mgmt/nagios-check_ports
 nagios-check_puppet             ports/net-mgmt/nagios-check_puppet
@@ -13172,6 +13176,7 @@ p5-Params-Classify              ports/devel/p5-Params-Classify
 p5-Params-Coerce                ports/devel/p5-Params-Coerce
 p5-Params-Util                  ports/devel/p5-Params-Util
 p5-Params-Validate              ports/devel/p5-Params-Validate
+p5-Paranoid                     ports/devel/p5-Paranoid
 p5-Parse-BooleanLogic           ports/textproc/p5-Parse-BooleanLogic
 p5-Parse-CPAN-Meta              ports/devel/p5-Parse-CPAN-Meta
 p5-Parse-CPAN-Packages          ports/devel/p5-Parse-CPAN-Packages
@@ -14035,6 +14040,7 @@ p5-VCS-Lite                     ports/devel/p5-VCS-Lite
 p5-Validate-Net                 ports/net/p5-Validate-Net
 p5-Variable-Magic               ports/devel/p5-Variable-Magic
 p5-Verilog-Perl                 ports/cad/p5-Verilog-Perl
+p5-Version-Requirements         ports/devel/p5-Version-Requirements
 p5-Video-Info                   ports/multimedia/p5-Video-Info
 p5-Video-OpenQuicktime          ports/multimedia/p5-Video-OpenQuicktime
 p5-Vimana                       ports/editors/p5-Vimana
@@ -16942,6 +16948,7 @@ p5-params-classify              ports/devel/p5-Params-Classify
 p5-params-coerce                ports/devel/p5-Params-Coerce
 p5-params-util                  ports/devel/p5-Params-Util
 p5-params-validate              ports/devel/p5-Params-Validate
+p5-paranoid                     ports/devel/p5-Paranoid
 p5-parent                       ports/devel/p5-parent
 p5-parse-booleanlogic           ports/textproc/p5-Parse-BooleanLogic
 p5-parse-cpan-meta              ports/devel/p5-Parse-CPAN-Meta
@@ -17935,6 +17942,7 @@ p5-vcs-cvs                      ports/devel/p5-VCS-CVS
 p5-vcs-lite                     ports/devel/p5-VCS-Lite
 p5-verilog-perl                 ports/cad/p5-Verilog-Perl
 p5-version                      ports/devel/p5-version
+p5-version-requirements         ports/devel/p5-Version-Requirements
 p5-video-info                   ports/multimedia/p5-Video-Info
 p5-video-openquicktime          ports/multimedia/p5-Video-OpenQuicktime
 p5-vimana                       ports/editors/p5-Vimana
