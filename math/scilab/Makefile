@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scilab
-PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTVERSION=	5.2.2
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -29,8 +28,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--without-ocaml
-
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
@@ -38,8 +35,10 @@ OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 		GUI "Build GUI (requires Java and required for docs)" ON \
 		NLS "Build localization" OFF \
 		MATIO "Matlab compatibility" OFF \
+		OCAML "Build ocaml modelica compiler (requires GUI)" OFF \
 		PVM "Parallel Virtual Machine support" OFF \
-		TK "TCL/TK support" OFF
+		TK "TCL/TK support" OFF \
+		UMFPACK "Build with umfpack" ON
 
 .include <bsd.port.options.mk>
 
@@ -137,7 +136,8 @@ USE_XORG=	x11
 CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME} \
 			--with-docbook=${LOCALBASE}/share/xsl/docbook
 
-DESKTOP_ENTRIES=	"SciLab" "A free Matlab clone by INRIA & ENPC" \
+DESKTOP_ENTRIES=	"SciLab" \
+			"Scientific software package for numerical computations" \
 			"${DATADIR}/icons/scilab.xpm" "scilab" \
 			"Application;Education;Math;" false
 
@@ -187,24 +187,31 @@ LIB_DEPENDS+=	matio.1:${PORTSDIR}/math/matio
 PLIST_SUB+=	MATIO=""
 .endif
 
+.if defined(WITHOUT_OCAML)
+CONFIGURE_ARGS+=	--without-ocaml
+PLIST_SUB+=	OCAML="@comment "
+.else
+BUILD_DEPENDS+=	ocaml:${PORTSDIR}/lang/ocaml
+RUN_DEPENDS+=	ocaml:${PORTSDIR}/lang/ocaml
+PLIST_SUB+=	OCAML=""
+.endif
+
 post-patch:
 	# Configure fixes
-	${REINPLACE_CMD} -e 's|/usr/share/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|/usr/lib/jni|${LOCALBASE}/lib/|g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|/usr/lib/java|${JAVALIBDIR}|g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|/usr/lib64/jni|${LOCALBASE}/lib/|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|-ldl | |' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|-lmatio|-lmatio -lgfortran|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|-L$$with_umfpack_library|-L$$with_umfpack_library -lgfortran|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|-lumfpack|-lumfpack -lamd -L$$with_umfpack_library -lgfortran|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|TCLTK_LIBS=" -ldl"|TCLTK_LIBS=" "|' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|batik-all|batik|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$jardir/batik.jar|${LOCALBASE}/share/java/batik/batik.jar|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$jardir/fop.jar|${LOCALBASE}/share/java/fop/build/fop.jar|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$jardir/jeuclid-core*.jar|${LOCALBASE}/share/java/jeuclid/repo/jeuclid-core*.jar|' ${WRKSRC}/configure
 	# Build fixes
-	${REINPLACE_CMD} -e 's|$$FFLAGS -DNDEBUG|$$FFLAGS -DNDEBUG -fPIC|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$(CFLAGS:-O%=)|-I${LOCALBASE}/include -L${LOCALBASE}/lib|' ${WRKSRC}/modules/elementary_functions/Makefile.in
 	${REINPLACE_CMD} -e 's|freebsd|__FreeBSD__|g' ${WRKSRC}/modules/sparse/includes/spConfig.h
-	${REINPLACE_CMD} -e 1730d ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|exp10(|pow(10., |g' ${WRKSRC}/modules/graphics/src/c/Format.c \
+		${WRKSRC}/modules/graphics/src/c/getHandleProperty/set_log_flags_property.c
 	@# malloc.h -> stdlib.h conversions
 	@${GREP} -lr "<malloc.h>" ${WRKSRC} \
 		| ${XARGS} ${REINPLACE_CMD} -e \
@@ -213,7 +220,6 @@ post-patch:
 	${MV} ${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/My\ Project/ \
 		${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/My_Project/
 	${REINPLACE_CMD} -e 's|My Project|My_Project|g' ${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/VB.NET.vbproj
-	${REINPLACE_CMD} -e 319d ${WRKSRC}/contrib/Makefile.in
 	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/%%PORTDOCS%%/d' ${WRKSRC}/Makefile.in
