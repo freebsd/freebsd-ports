@@ -1,0 +1,6 @@
+Regexp::Subst::Parallel is a module that allows you to make multiple
+simultaneous substitutions safely. Using the sole exported "subst"
+function has a rather different effect from doing each substitution
+sequentially.
+
+WWW:	http://search.cpan.org/dist/Regexp-Subst-Parallel

@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Regexp/Subst/Parallel.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Subst/Parallel/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Subst/Parallel
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Subst
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
+@dirrm %%SITE_PERL%%/Regexp/Subst
+@dirrmtry %%SITE_PERL%%/Regexp
