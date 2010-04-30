@@ -24,6 +24,7 @@ USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_LDCONFIG=	${PREFIX}/lib/entity/clib
+USE_PERL5=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		entity.1

@@ -24,6 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk12 orbit libxml
 USE_GETTEXT=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS= --enable-static --enable-shared \

@@ -21,6 +21,7 @@ USE_XORG=	xpm
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk
 
