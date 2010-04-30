@@ -17,7 +17,8 @@ INFO=		gawk gawkinet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
-		--with-libintl-prefix=${LOCALBASE}
+		--with-libintl-prefix=${LOCALBASE} \
+		AWK=${AWK}
 
 MAN1=		gawk.1 igawk.1 pgawk.1
 
