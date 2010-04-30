@@ -224,6 +224,7 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/roundinterp.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/rr2.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/s.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/s65536.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/samplesviacolormap.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/saveas.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/scanned.png
@@ -452,6 +453,7 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/toolbar.scm
 %%SCHEME%%%%DATADIR%%/tools/check-help.scm
 %%SCHEME%%%%DATADIR%%/tools/gldata.scm
+%%SCHEME%%%%DATADIR%%/tools/indexer.scm
 %%SCHEME%%%%DATADIR%%/tools/makegl.scm
 %%SCHEME%%%%DATADIR%%/tools/makexg.scm
 %%SCHEME%%%%DATADIR%%/tools/nor.scm
