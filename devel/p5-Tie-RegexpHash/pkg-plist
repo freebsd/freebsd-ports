@@ -1,2 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/RegexpHash/.packlist
 %%SITE_PERL%%/Tie/RegexpHash.pm
 @dirrmtry %%SITE_PERL%%/Tie
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/RegexpHash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
