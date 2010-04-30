@@ -1533,7 +1533,7 @@ Note:  Please add new entries to the beginning of this file.
 	<name>apache+mod_ssl+mod_snmp+mod_deflate</name>
 	<name>apache+mod_ssl+mod_snmp+mod_deflate+ipv6</name>
 	<name>apache+mod_ssl+mod_snmp+mod_accel+mod_deflate+ipv6</name>
-	<range><lt>1.3.42+2.8.27_1</lt></range>
+	<range><lt>1.3.41+2.8.27_1</lt></range>
       </package>
     </affects>
     <description>
