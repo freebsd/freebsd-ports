@@ -1,0 +1,13 @@
+%%SITE_PERL%%/CPAN/Meta.pm
+%%SITE_PERL%%/CPAN/Meta/Converter.pm
+%%SITE_PERL%%/CPAN/Meta/Feature.pm
+%%SITE_PERL%%/CPAN/Meta/History.pm
+%%SITE_PERL%%/CPAN/Meta/Prereqs.pm
+%%SITE_PERL%%/CPAN/Meta/Spec.pm
+%%SITE_PERL%%/CPAN/Meta/Validator.pm
+%%SITE_PERL%%/mach/auto/CPAN/Meta/.packlist
+
+@dirrm %%SITE_PERL%%/CPAN/Meta
+@dirrmtry %%SITE_PERL%%/CPAN
+@dirrm %%SITE_PERL%%/mach/auto/CPAN/Meta
+@dirrmtry %%SITE_PERL%%/mach/auto/CPAN
