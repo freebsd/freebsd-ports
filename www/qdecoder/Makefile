@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qdecoder
-PORTVERSION=	10.1.2
+PORTVERSION=	10.1.4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.qdecoder.org/pub/qDecoder/
 DISTNAME=	qDecoder-${PORTVERSION}
@@ -16,6 +16,7 @@ COMMENT=	C/C++ language library including CGI supports
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_ARGS=	exec_prefix="${PREFIX}"
 
 OPTIONS=	Q_DEBUG "enable debuging output" off \
 		Q_CGI "enable CGI APIs" on \
