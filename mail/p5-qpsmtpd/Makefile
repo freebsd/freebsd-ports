@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A flexible SMTP daemon written in Perl and featuring a plugin API
 
-RUN_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
+RUN_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 OPTIONS	=	MODPERL "Enable Apache Support via mod_perl"	On
 
