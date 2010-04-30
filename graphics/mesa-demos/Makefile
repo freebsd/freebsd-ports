@@ -18,23 +18,25 @@ USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
+OPTIONS=	NVIDIA_GL	"Use NVIDIA's libraries"	off
+
 do-install:
 	@for i in demos xdemos; do \
 		cd ${WRKSRC}/progs/$$i; \
 		for j in `${MAKE} -V PROGS`; do \
-			echo ${INSTALL_PROGRAM} $$j ${PREFIX}/bin; \
+			${ECHO_CMD} ${INSTALL_PROGRAM} $$j ${PREFIX}/bin; \
 			${INSTALL_PROGRAM} $$j ${PREFIX}/bin; \
 		done; \
 	done
 	${MKDIR} ${DATADIR}/images ${DATADIR}/data
 	@cd ${WRKSRC}/progs/images; \
 		for i in `ls *.rgb*`; do \
-			echo ${INSTALL_DATA} $$i ${DATADIR}/images; \
+			${ECHO_CMD} ${INSTALL_DATA} $$i ${DATADIR}/images; \
 			${INSTALL_DATA} $$i ${DATADIR}/images; \
 		done
 	@cd ${WRKSRC}/progs/demos; \
 		for i in `ls *.dat`; do \
-			echo ${INSTALL_DATA} $$i ${DATADIR}/data; \
+			${ECHO_CMD} ${INSTALL_DATA} $$i ${DATADIR}/data; \
 			${INSTALL_DATA} $$i ${DATADIR}/data; \
 		done
 
