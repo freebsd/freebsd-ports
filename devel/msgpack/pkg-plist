@@ -32,12 +32,14 @@ include/msgpack/unpack_define.h
 include/msgpack/unpack_template.h
 include/msgpack/vrefbuffer.h
 include/msgpack/vrefbuffer.hpp
+include/msgpack/zbuffer.h
+include/msgpack/zbuffer.hpp
 include/msgpack/zone.h
 include/msgpack/zone.hpp
 lib/libmsgpack.a
 lib/libmsgpack.la
 lib/libmsgpack.so
-lib/libmsgpack.so.2
+lib/libmsgpack.so.3
 lib/libmsgpackc.a
 lib/libmsgpackc.la
 lib/libmsgpackc.so
