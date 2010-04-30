@@ -2201,6 +2201,7 @@
     SUBDIR += p5-Tie-IxHash
     SUBDIR += p5-Tie-RefHash
     SUBDIR += p5-Tie-RefHash-Weak
+    SUBDIR += p5-Tie-RegexpHash
     SUBDIR += p5-Tie-Restore
     SUBDIR += p5-Tie-ShareLite
     SUBDIR += p5-Tie-Simple
