@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	cdialog
-PORTVERSION=	1.1.20100224
+PORTVERSION=	1.1.20100428
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://invisible-island.net/datafiles/release/ \
-		ftp://invisible-island.net/dialog/
-DISTNAME=	${PORTNAME:S|^c||}
+MASTER_SITES=	ftp://invisible-island.net/${PORTNAME:S|^c||}/
+DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	An enhanced version of 'dialog' to work with ncurses
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME} --with-libtool
 MAKEFILE=	makefile
 
-WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION:S|^1.1.|1.1-|}
+#WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION:S|^1.1.|1.1-|}
 
 MAN1=		cdialog.1
 MAN3=		cdialog.3
