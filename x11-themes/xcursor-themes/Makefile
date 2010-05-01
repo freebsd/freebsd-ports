@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	xcursor-themes
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-themes
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.org cursors themes
 
 BUILD_DEPENDS=	xcursorgen:${PORTSDIR}/x11/xcursorgen
+
+USE_XORG=	xextproto
 
 XORG_CAT=	data
 

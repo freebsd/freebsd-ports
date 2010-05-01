@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-vfbserver
-PORTVERSION=	1.6.5
+PORTVERSION=	1.7.5
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 

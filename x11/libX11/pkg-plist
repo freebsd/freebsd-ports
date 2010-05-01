@@ -1,3 +1,18 @@
+%%DOCSDIR%%/libX11.txt
+%%DOCSDIR%%/libX11.ps
+%%DOCSDIR%%/libX11.html
+%%DOCSDIR%%/Framework.txt
+%%DOCSDIR%%/LocaleDB.txt
+%%DOCSDIR%%/Trans.txt
+%%DOCSDIR%%/Framework.ps
+%%DOCSDIR%%/LocaleDB.ps
+%%DOCSDIR%%/Trans.ps
+%%DOCSDIR%%/Framework.html
+%%DOCSDIR%%/LocaleDB.html
+%%DOCSDIR%%/Trans.html
+%%DOCSDIR%%/xim.txt
+%%DOCSDIR%%/xim.ps
+%%DOCSDIR%%/xim.html
 include/X11/ImUtil.h
 include/X11/XKBlib.h
 include/X11/Xcms.h
@@ -206,6 +221,7 @@ lib/X11/locale/zh_TW.UTF-8/Compose
 lib/X11/locale/locale.alias
 lib/X11/locale/locale.dir
 lib/X11/locale/compose.dir
+@dirrmtry %%DOCSDIR%%
 @dirrm lib/X11/locale/zh_TW.UTF-8
 @dirrm lib/X11/locale/zh_TW.big5
 @dirrm lib/X11/locale/zh_HK.UTF-8

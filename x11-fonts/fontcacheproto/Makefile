@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontcacheproto
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	font-bh-ttf
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org

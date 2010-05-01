@@ -1,6 +1,9 @@
 include/X11/extensions/xf86dga.h
-include/X11/extensions/xf86dga1.h
+include/X11/extensions/xf86dga1const.h
+include/X11/extensions/xf86dga1proto.h
 include/X11/extensions/xf86dga1str.h
+include/X11/extensions/xf86dgaconst.h
+include/X11/extensions/xf86dgaproto.h
 include/X11/extensions/xf86dgastr.h
 libdata/pkgconfig/xf86dgaproto.pc
 @dirrmtry include/X11/extensions

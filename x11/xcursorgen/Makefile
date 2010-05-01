@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xcursorgen
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,7 +15,7 @@ COMMENT=	Create an X cursor file from a collection of PNG images
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 XORG_CAT=	app
-USE_XORG=	x11 xcursor
+USE_XORG=	x11 xcursor xextproto
 
 PLIST_FILES=	bin/xcursorgen
 

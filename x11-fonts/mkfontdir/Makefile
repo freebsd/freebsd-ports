@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkfontdir
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org

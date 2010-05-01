@@ -1,6 +1,6 @@
---- configure.ac
-+++ configure.ac
-@@ -39,13 +39,14 @@ AC_PROG_INSTALL
+--- configure.ac.orig	2009-10-12 13:10:57.000000000 -0500
++++ configure.ac	2010-03-27 08:12:08.000000000 -0500
+@@ -39,13 +39,14 @@
  
  XORG_DEFAULT_OPTIONS
  
@@ -16,9 +16,9 @@
  
  AC_SYS_LARGEFILE
  
---- sessreg.c
-+++ sessreg.c
-@@ -80,7 +80,6 @@
+--- sessreg.c.orig	2009-10-12 12:52:12.000000000 -0500
++++ sessreg.c	2010-03-27 08:13:46.000000000 -0500
+@@ -81,7 +81,6 @@
  # include	<X11/Xfuncs.h>
  # include	<stdio.h>
  # include	<stdlib.h>
@@ -26,7 +26,7 @@
  
  #if defined(__SVR4) || defined(SVR4) || defined(linux) || defined(__GLIBC__)
  # define SYSV
-@@ -89,7 +88,10 @@
+@@ -90,7 +89,10 @@
  #include <time.h>
  #define Time_t time_t
  
@@ -38,9 +38,9 @@
  
  #ifdef USE_UTMPX
  static void set_utmpx (struct utmpx *u, const char *line, const char *user,
-@@ -99,7 +101,12 @@
- int	wflag, uflag, lflag;
- char	*wtmp_file, *utmp_file, *line;
+@@ -100,7 +102,12 @@
+ static int wflag, uflag, lflag;
+ static char *wtmp_file, *utmp_file, *line;
  #ifdef USE_UTMPX
 -static char *wtmpx_file = NULL, *utmpx_file = NULL;
 +#ifdef HAVE_UPDWTMPX
@@ -50,19 +50,19 @@
 +static char *utmpx_file = NULL;
 +#endif
  #endif
- int	utmp_none, wtmp_none;
+ static int utmp_none, wtmp_none;
  /*
-@@ -108,7 +115,9 @@
+@@ -109,7 +116,9 @@
   */
- int	hflag, sflag, xflag, tflag;
- char	*host_name = NULL;
+ static int hflag, sflag, xflag, tflag;
+ static char *host_name = NULL;
 +#ifdef USE_UTMP
- int	slot_number;
+ static int slot_number;
 +#endif
- char	*xservers_file, *ttys_file;
- char	*user_name;
- int	aflag, dflag;
-@@ -180,7 +189,7 @@
+ static char *xservers_file, *ttys_file;
+ static char *user_name;
+ static int aflag, dflag;
+@@ -181,7 +190,7 @@
  int
  main (int argc, char **argv)
  {
@@ -71,7 +71,7 @@
  	int		utmp;
  #endif
  	char		*line_tmp;
-@@ -188,7 +197,9 @@
+@@ -189,7 +198,9 @@
  	int		wtmp;
  #endif	
  	Time_t		current_time;
@@ -81,7 +81,7 @@
  #ifdef USE_UTMPX
  	struct utmpx	utmpx_entry;
  #endif
-@@ -223,7 +234,9 @@
+@@ -224,7 +235,9 @@
  			host_name = getstring (&argv, &hflag);
  			break;
  		case 's':
@@ -91,7 +91,7 @@
  			break;
  		case 'x':
  			xservers_file = getstring (&argv, &xflag);
-@@ -249,14 +262,14 @@
+@@ -250,14 +263,14 @@
  	/* set up default file names */
  	if (!wflag) {
  		wtmp_file = WTMP_FILE;
@@ -108,7 +108,7 @@
  		utmpx_file = UTMPX_FILE;
  #endif
  	}
-@@ -267,7 +280,7 @@
+@@ -268,7 +281,7 @@
  	if (!Lflag)
  		llog_file = LLOG_FILE;
  #endif
@@ -117,7 +117,7 @@
  	if (!tflag)
  		ttys_file = TTYS_FILE;
  	if (!sflag && !utmp_none) {
-@@ -286,34 +299,42 @@
+@@ -287,34 +300,42 @@
  			line = line_tmp;
  	}
  	time (&current_time);
@@ -163,7 +163,7 @@
  		utmp = open (utmp_file, O_RDWR);
  		if (utmp != -1) {
  			syserr ((int) lseek (utmp, (long) slot_number * sizeof (struct utmp), 0), "lseek");
-@@ -321,13 +342,16 @@
+@@ -322,13 +343,16 @@
  				        == sizeof (utmp_entry), "write utmp entry");
  			close (utmp);
  		}
@@ -181,7 +181,7 @@
  #else
  		wtmp = open (wtmp_file, O_WRONLY|O_APPEND);
  		if (wtmp != -1) {
-@@ -370,6 +394,7 @@
+@@ -371,6 +395,7 @@
   * fill in the appropriate records of the utmp entry
   */
  
@@ -189,7 +189,7 @@
  static void
  set_utmp (struct utmp *u, char *line, char *user, char *host, Time_t date, int addp)
  {
-@@ -416,6 +441,7 @@
+@@ -417,6 +442,7 @@
  #endif
  	u->ut_time = date;
  }
@@ -197,7 +197,7 @@
  
  #ifdef USE_UTMPX
  static int
-@@ -423,6 +449,8 @@
+@@ -424,6 +450,8 @@
  {
  	struct utmpx *u;	/* pointer to entry in utmp file           */
  	int    status = 1;	/* return code                             */
@@ -206,7 +206,7 @@
   
  	while ( (u = getutxent()) != NULL ) {
  		
-@@ -434,7 +462,7 @@
+@@ -435,7 +463,7 @@
  		}
  	}
   
@@ -215,7 +215,7 @@
  	return (status);
  }
  
-@@ -453,14 +481,16 @@
+@@ -454,14 +482,16 @@
                          (void) strncpy (u->ut_line, line, sizeof (u->ut_line));
  
  		strncpy(u->ut_host, line, sizeof(u->ut_host));
@@ -234,7 +234,7 @@
  
          if (line) {
                  int     i;
-@@ -519,7 +549,7 @@
+@@ -520,7 +550,7 @@
  }
  #endif /* USE_UTMPX */
  
@@ -243,9 +243,9 @@
  /*
   * compute the slot-number for an X display.  This is computed
   * by counting the lines in /etc/ttys and adding the line-number
---- sessreg.h
-+++ sessreg.h
-@@ -51,13 +51,15 @@
+--- sessreg.h.orig	2008-06-11 16:30:54.000000000 -0500
++++ sessreg.h	2010-03-27 08:12:08.000000000 -0500
+@@ -57,13 +57,15 @@
  
  #include <sys/types.h>
  #include <time.h>

@@ -1,3 +1,3 @@
-MD5 (xorg/lib/libpciaccess-0.10.6.tar.bz2) = ba25eb7582f69428648e8c67564d68e5
-SHA256 (xorg/lib/libpciaccess-0.10.6.tar.bz2) = b9532db51a093221f82e6659ab2979d357eac770d6eb9e9361efead0aca709ce
-SIZE (xorg/lib/libpciaccess-0.10.6.tar.bz2) = 267671
+MD5 (xorg/lib/libpciaccess-0.11.0.tar.bz2) = 686320dcec98daad0bdfb8894d4f2a2b
+SHA256 (xorg/lib/libpciaccess-0.11.0.tar.bz2) = 6e38be12b656c83c66a6fd8ba56c041d8188218278219c88ee635242ec1c7dab
+SIZE (xorg/lib/libpciaccess-0.11.0.tar.bz2) = 295639

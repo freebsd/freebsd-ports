@@ -1,9 +1,8 @@
 bin/xrx
-lib/libxrx.so.0
-lib/libxrx.so
-lib/libxrx.la
 lib/libxrx.a
-lib/libxrxnest.so.0
-lib/libxrxnest.so
-lib/libxrxnest.la
+lib/libxrx.la
+lib/libxrx.so
 lib/libxrxnest.a
+lib/libxrxnest.la
+lib/libxrxnest.so
+@dirrmtry include/X11/extensions

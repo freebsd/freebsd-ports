@@ -8,6 +8,7 @@
 PORTNAME=	xf86-video-rdc
 MASTER_SITES=	http://www.SpringDaemons.com/stas/
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	stas@FreeBSD.org

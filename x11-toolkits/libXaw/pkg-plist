@@ -82,4 +82,9 @@ lib/libXaw7.so
 lib/libXaw7.so.7
 libdata/pkgconfig/xaw6.pc
 libdata/pkgconfig/xaw7.pc
-@dirrm include/X11/Xaw
+%%DOCSDIR%%/widgets.html
+%%DOCSDIR%%/widgets.index.ps
+%%DOCSDIR%%/widgets.ps
+%%DOCSDIR%%/widgets.txt
+@dirrmtry %%DOCSDIR%%
+@dirrmtry include/X11/Xaw

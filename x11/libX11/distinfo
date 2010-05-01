@@ -1,3 +1,3 @@
-MD5 (xorg/lib/libX11-1.2.1.tar.bz2) = 2f2beb98e71f397e1209beaca4e97cb1
-SHA256 (xorg/lib/libX11-1.2.1.tar.bz2) = d172e5a401a2607f4ff145db4e8e09c193a1980bbb2c5c7f824e61ee3fdfdff3
-SIZE (xorg/lib/libX11-1.2.1.tar.bz2) = 1798407
+MD5 (xorg/lib/libX11-1.3.3.tar.bz2) = 5d74971360f194ce33d2bd2e4d9b066c
+SHA256 (xorg/lib/libX11-1.3.3.tar.bz2) = 8c7f867918a3739dc7cabe955179539d4a7ecc52cb42becfd261e5dfbff511ac
+SIZE (xorg/lib/libX11-1.3.3.tar.bz2) = 2166076

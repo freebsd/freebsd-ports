@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontsproto
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org

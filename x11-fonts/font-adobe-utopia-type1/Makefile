@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	font-adobe-utopia-type1
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org

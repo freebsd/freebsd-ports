@@ -1,3 +1,4 @@
 include/X11/extensions/Xeviestr.h
+include/X11/extensions/evieproto.h
 libdata/pkgconfig/evieproto.pc
 @dirrmtry include/X11/extensions

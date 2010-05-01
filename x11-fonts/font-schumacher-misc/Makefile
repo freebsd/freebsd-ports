@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	font-schumacher-misc
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
