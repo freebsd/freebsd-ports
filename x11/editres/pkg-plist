@@ -1,5 +1,5 @@
 bin/editres
-share/X11/app-defaults/Editres-color
 share/X11/app-defaults/Editres
+share/X11/app-defaults/Editres-color
 @dirrmtry share/X11/app-defaults
 @dirrmtry share/X11

@@ -207,6 +207,7 @@ XFree.3 \
 XFreeColormap.3 \
 XFreeColors.3 \
 XFreeCursor.3 \
+XFreeEventData.3 \
 XFreeExtensionList.3 \
 XFreeFont.3 \
 XFreeFontInfo.3 \
@@ -219,10 +220,12 @@ XFreePixmap.3 \
 XFreeStringList.3 \
 XGCValues.3 \
 XGContextFromGC.3 \
+XGenericEventCookie.3 \
 XGetAtomName.3 \
 XGetAtomNames.3 \
 XGetClassHint.3 \
 XGetCommand.3 \
+XGetEventData.3 \
 XGetErrorDatabaseText.3 \
 XGetErrorText.3 \
 XGetFontPath.3 \
@@ -812,3 +815,5 @@ XwcTextExtents.3 \
 XwcTextListToTextProperty.3 \
 XwcTextPerCharExtents.3 \
 XwcTextPropertyToTextList.3
+MAN5= \
+Compose.5 \

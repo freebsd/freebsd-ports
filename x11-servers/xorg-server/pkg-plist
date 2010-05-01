@@ -15,6 +15,7 @@ include/xorg/closure.h
 include/xorg/colormap.h
 include/xorg/colormapst.h
 include/xorg/compiler.h
+include/xorg/compositeext.h
 include/xorg/cursor.h
 include/xorg/cursorstr.h
 include/xorg/damage.h
@@ -33,6 +34,7 @@ include/xorg/dri2.h
 include/xorg/dristruct.h
 include/xorg/edid.h
 include/xorg/exa.h
+include/xorg/events.h
 include/xorg/exevents.h
 include/xorg/extension.h
 include/xorg/extinit.h
@@ -42,6 +44,7 @@ include/xorg/fbdevhw.h
 include/xorg/fboverlay.h
 include/xorg/fbrop.h
 include/xorg/fi1236.h
+include/xorg/fbpict.h
 include/xorg/fourcc.h
 include/xorg/gc.h
 include/xorg/gcstruct.h
@@ -71,9 +74,12 @@ include/xorg/mispans.h
 include/xorg/mistruct.h
 include/xorg/miwideline.h
 include/xorg/mizerarc.h
+include/xorg/mioverlay.h
 include/xorg/msp3430.h
 include/xorg/opaque.h
 include/xorg/os.h
+include/xorg/panoramiXsrv.h
+include/xorg/panoramiX.h
 include/xorg/picture.h
 include/xorg/picturestr.h
 include/xorg/pixmap.h
@@ -109,6 +115,7 @@ include/xorg/validate.h
 include/xorg/vbe.h
 include/xorg/vbeModes.h
 include/xorg/vgaHW.h
+include/xorg/vidmodeproc.h
 include/xorg/wfbrename.h
 include/xorg/window.h
 include/xorg/windowstr.h
@@ -116,6 +123,8 @@ include/xorg/xaa.h
 include/xorg/xaaWrapper.h
 include/xorg/xaalocal.h
 include/xorg/xaarop.h
+include/xorg/xace.h
+include/xorg/xacestr.h
 include/xorg/xf86.h
 include/xorg/xf86Crtc.h
 include/xorg/xf86Cursor.h
@@ -129,15 +138,14 @@ include/xorg/xf86Pci.h
 include/xorg/xf86PciInfo.h
 include/xorg/xf86Priv.h
 include/xorg/xf86Privstr.h
-include/xorg/xf86RAC.h
 include/xorg/xf86RandR12.h
 include/xorg/xf86RamDac.h
 include/xorg/xf86Rename.h
-include/xorg/xf86Resources.h
 %%SPARC64%%include/xorg/xf86Sbus.h
 include/xorg/xf86Xinput.h
 include/xorg/xf86_OSlib.h
 include/xorg/xf86_OSproc.h
+include/xorg/xf86VGAarbiter.h
 include/xorg/xf86cmap.h
 include/xorg/xf86fbman.h
 include/xorg/xf86i2c.h
@@ -147,6 +155,7 @@ include/xorg/xf86str.h
 include/xorg/xf86xv.h
 include/xorg/xf86xvmc.h
 include/xorg/xf86xvpriv.h
+include/xorg/xfixes.h
 include/xorg/xisb.h
 include/xorg/xkbfile.h
 include/xorg/xkbrules.h
@@ -157,7 +166,6 @@ include/xorg/xorgVersion.h
 include/xorg/xserver-properties.h
 include/xorg/xvdix.h
 include/xorg/xvmcext.h
-lib/X11/Options
 lib/xorg/modules/extensions/libdbe.la
 lib/xorg/modules/extensions/libdbe.so
 lib/xorg/modules/extensions/libdri.la

@@ -7,7 +7,7 @@
 
 PORTNAME=	input-wacom
 PORTVERSION=	${KLD_VERSION}.${WACOM_VERSION:C/-/./g}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-drivers kld
 MASTER_SITES=	http://www.chillt.de/bsdwacom/:bsdwacom \
 		SF/linuxwacom/linuxwacom/${WACOM_VERSION}:linuxwacom

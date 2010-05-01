@@ -8,4 +8,5 @@ include/X11/Xtrans/Xtransutil.c
 include/X11/Xtrans/transport.c
 libdata/pkgconfig/xtrans.pc
 share/aclocal/xtrans.m4
+@dirrmtry %%DOCSDIR%%
 @dirrm include/X11/Xtrans

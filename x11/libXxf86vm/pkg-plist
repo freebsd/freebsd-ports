@@ -1,3 +1,4 @@
+include/X11/extensions/xf86vmode.h
 lib/libXxf86vm.a
 lib/libXxf86vm.la
 lib/libXxf86vm.so

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xorg-libraries
-PORTVERSION=	7.4
+PORTVERSION=	7.5
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none

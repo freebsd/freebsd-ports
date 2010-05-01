@@ -5,4 +5,3 @@ libdata/pkgconfig/xorg-joystick.pc
 @dirrmtry lib/xorg/modules/input
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg
-@dirrmtry include/xorg

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xf86-video-rendition
-PORTVERSION=	4.2.1
-PORTREVISION=	2
+PORTVERSION=	4.2.3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

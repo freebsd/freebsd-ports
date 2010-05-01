@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libX11
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -26,6 +25,7 @@ ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/lib \
 			--with-xcb=yes
+CONFIGURE_ENV+=	ac_cv_path_PS2PDF=""
 
 .include "${.CURDIR}/manpages"
 .include <bsd.port.mk>

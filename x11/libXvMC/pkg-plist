@@ -8,3 +8,6 @@ lib/libXvMCW.la
 lib/libXvMCW.so
 lib/libXvMCW.so.1
 libdata/pkgconfig/xvmc.pc
+%%DOCSDIR%%/XvMC_API.txt
+@dirrm %%DOCSDIR%%
+@dirrmtry include/X11/extensions

@@ -1,4 +1,5 @@
 bin/xgc
 share/X11/app-defaults/Xgc
+share/X11/app-defaults/Xgc-color
 @dirrmtry share/X11/app-defaults
 @dirrmtry share/X11

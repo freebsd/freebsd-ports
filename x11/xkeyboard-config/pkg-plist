@@ -1,4 +1,5 @@
 share/X11/xkb/compat.dir
+share/X11/xkb/compat/README
 share/X11/xkb/compat/accessx
 share/X11/xkb/compat/basic
 share/X11/xkb/compat/complete
@@ -18,18 +19,16 @@ share/X11/xkb/compat/pc
 share/X11/xkb/compat/pc98
 share/X11/xkb/compat/xfree86
 share/X11/xkb/compat/xtest
-share/X11/xkb/compat/README
 share/X11/xkb/compiled
-share/X11/xkb/geometry/digital_vndr/lk
-share/X11/xkb/geometry/digital_vndr/pc
-share/X11/xkb/geometry/digital_vndr/unix
-share/X11/xkb/geometry/sgi_vndr/indigo
-share/X11/xkb/geometry/sgi_vndr/indy
-share/X11/xkb/geometry/sgi_vndr/O2
+share/X11/xkb/geometry.dir
+share/X11/xkb/geometry/README
 share/X11/xkb/geometry/amiga
 share/X11/xkb/geometry/ataritt
 share/X11/xkb/geometry/chicony
 share/X11/xkb/geometry/dell
+share/X11/xkb/geometry/digital_vndr/lk
+share/X11/xkb/geometry/digital_vndr/pc
+share/X11/xkb/geometry/digital_vndr/unix
 share/X11/xkb/geometry/everex
 share/X11/xkb/geometry/fujitsu
 share/X11/xkb/geometry/hhk
@@ -39,34 +38,42 @@ share/X11/xkb/geometry/kinesis
 share/X11/xkb/geometry/macintosh
 share/X11/xkb/geometry/microsoft
 share/X11/xkb/geometry/nec
+share/X11/xkb/geometry/nokia
 share/X11/xkb/geometry/northgate
 share/X11/xkb/geometry/pc
+share/X11/xkb/geometry/sgi_vndr/O2
+share/X11/xkb/geometry/sgi_vndr/indigo
+share/X11/xkb/geometry/sgi_vndr/indy
 share/X11/xkb/geometry/sony
 share/X11/xkb/geometry/sun
 share/X11/xkb/geometry/thinkpad
+share/X11/xkb/geometry/typematrix
 share/X11/xkb/geometry/winbook
-share/X11/xkb/geometry/README
-share/X11/xkb/geometry.dir
-share/X11/xkb/keycodes/digital_vndr/lk
-share/X11/xkb/keycodes/digital_vndr/pc
-share/X11/xkb/keycodes/sgi_vndr/indigo
-share/X11/xkb/keycodes/sgi_vndr/indy
-share/X11/xkb/keycodes/sgi_vndr/iris
+share/X11/xkb/keycodes.dir
+share/X11/xkb/keycodes/README
 share/X11/xkb/keycodes/aliases
 share/X11/xkb/keycodes/amiga
 share/X11/xkb/keycodes/ataritt
+share/X11/xkb/keycodes/digital_vndr/lk
+share/X11/xkb/keycodes/digital_vndr/pc
 share/X11/xkb/keycodes/evdev
 share/X11/xkb/keycodes/fujitsu
 share/X11/xkb/keycodes/hp
 share/X11/xkb/keycodes/ibm
 share/X11/xkb/keycodes/macintosh
+share/X11/xkb/keycodes/sgi_vndr/indigo
+share/X11/xkb/keycodes/sgi_vndr/indy
+share/X11/xkb/keycodes/sgi_vndr/iris
 share/X11/xkb/keycodes/sony
 share/X11/xkb/keycodes/sun
 share/X11/xkb/keycodes/xfree86
 share/X11/xkb/keycodes/xfree98
-share/X11/xkb/keycodes/README
-share/X11/xkb/keycodes.dir
+share/X11/xkb/keymap.dir
+share/X11/xkb/keymap/README
+share/X11/xkb/keymap/amiga
+share/X11/xkb/keymap/ataritt
 share/X11/xkb/keymap/digital_vndr/us
+share/X11/xkb/keymap/macintosh
 share/X11/xkb/keymap/sgi_vndr/be
 share/X11/xkb/keymap/sgi_vndr/bg
 share/X11/xkb/keymap/sgi_vndr/ca
@@ -90,6 +97,7 @@ share/X11/xkb/keymap/sgi_vndr/se
 share/X11/xkb/keymap/sgi_vndr/sk
 share/X11/xkb/keymap/sgi_vndr/th
 share/X11/xkb/keymap/sgi_vndr/us
+share/X11/xkb/keymap/sony
 share/X11/xkb/keymap/sun_vndr/all
 share/X11/xkb/keymap/sun_vndr/de
 share/X11/xkb/keymap/sun_vndr/es
@@ -101,18 +109,15 @@ share/X11/xkb/keymap/sun_vndr/ru
 share/X11/xkb/keymap/sun_vndr/se
 share/X11/xkb/keymap/sun_vndr/uk
 share/X11/xkb/keymap/sun_vndr/us
-share/X11/xkb/keymap/amiga
-share/X11/xkb/keymap/ataritt
-share/X11/xkb/keymap/macintosh
-share/X11/xkb/keymap/sony
 share/X11/xkb/keymap/xfree86
 share/X11/xkb/keymap/xfree98
-share/X11/xkb/keymap/README
-share/X11/xkb/keymap.dir
+share/X11/xkb/rules/README
 share/X11/xkb/rules/base
+share/X11/xkb/rules/base.extras.xml
 share/X11/xkb/rules/base.lst
 share/X11/xkb/rules/base.xml
 share/X11/xkb/rules/evdev
+share/X11/xkb/rules/evdev.extras.xml
 share/X11/xkb/rules/evdev.lst
 share/X11/xkb/rules/evdev.xml
 share/X11/xkb/rules/xfree98
@@ -120,25 +125,91 @@ share/X11/xkb/rules/xkb.dtd
 share/X11/xkb/rules/xorg
 share/X11/xkb/rules/xorg.lst
 share/X11/xkb/rules/xorg.xml
-share/X11/xkb/rules/README
 share/X11/xkb/semantics.dir
 share/X11/xkb/semantics/basic
 share/X11/xkb/semantics/complete
 share/X11/xkb/semantics/default
 share/X11/xkb/semantics/xtest
+share/X11/xkb/symbols.dir
+share/X11/xkb/symbols/ad
+share/X11/xkb/symbols/af
+share/X11/xkb/symbols/al
+share/X11/xkb/symbols/altwin
+share/X11/xkb/symbols/am
+share/X11/xkb/symbols/ara
+share/X11/xkb/symbols/az
+share/X11/xkb/symbols/ba
+share/X11/xkb/symbols/bd
+share/X11/xkb/symbols/be
+share/X11/xkb/symbols/bg
+share/X11/xkb/symbols/br
+share/X11/xkb/symbols/brai
+share/X11/xkb/symbols/bt
+share/X11/xkb/symbols/by
+share/X11/xkb/symbols/ca
+share/X11/xkb/symbols/capslock
+share/X11/xkb/symbols/cd
+share/X11/xkb/symbols/ch
+share/X11/xkb/symbols/cn
+share/X11/xkb/symbols/compose
+share/X11/xkb/symbols/ctrl
+share/X11/xkb/symbols/cz
+share/X11/xkb/symbols/de
 share/X11/xkb/symbols/digital_vndr/lk
 share/X11/xkb/symbols/digital_vndr/pc
 share/X11/xkb/symbols/digital_vndr/us
 share/X11/xkb/symbols/digital_vndr/vt
+share/X11/xkb/symbols/dk
+share/X11/xkb/symbols/ee
+share/X11/xkb/symbols/epo
+share/X11/xkb/symbols/es
+share/X11/xkb/symbols/et
+share/X11/xkb/symbols/eurosign
+share/X11/xkb/symbols/extras/apl
+share/X11/xkb/symbols/extras/rs
+share/X11/xkb/symbols/extras/us
+share/X11/xkb/symbols/fi
+share/X11/xkb/symbols/fo
+share/X11/xkb/symbols/fr
 share/X11/xkb/symbols/fujitsu_vndr/jp
 share/X11/xkb/symbols/fujitsu_vndr/us
+share/X11/xkb/symbols/gb
+share/X11/xkb/symbols/ge
+share/X11/xkb/symbols/gh
+share/X11/xkb/symbols/gn
+share/X11/xkb/symbols/gr
+share/X11/xkb/symbols/group
 share/X11/xkb/symbols/hp_vndr/us
+share/X11/xkb/symbols/hr
+share/X11/xkb/symbols/hu
+share/X11/xkb/symbols/ie
+share/X11/xkb/symbols/il
+share/X11/xkb/symbols/in
+share/X11/xkb/symbols/inet
+share/X11/xkb/symbols/iq
+share/X11/xkb/symbols/ir
+share/X11/xkb/symbols/is
+share/X11/xkb/symbols/it
+share/X11/xkb/symbols/jp
+share/X11/xkb/symbols/keypad
+share/X11/xkb/symbols/kg
+share/X11/xkb/symbols/kh
 share/X11/xkb/symbols/kpdl
+share/X11/xkb/symbols/kr
+share/X11/xkb/symbols/kz
+share/X11/xkb/symbols/la
+share/X11/xkb/symbols/latam
+share/X11/xkb/symbols/latin
+share/X11/xkb/symbols/level3
+share/X11/xkb/symbols/level5
+share/X11/xkb/symbols/lk
+share/X11/xkb/symbols/lt
+share/X11/xkb/symbols/lv
+share/X11/xkb/symbols/ma
 share/X11/xkb/symbols/macintosh_vndr/apple
 share/X11/xkb/symbols/macintosh_vndr/ch
 share/X11/xkb/symbols/macintosh_vndr/de
 share/X11/xkb/symbols/macintosh_vndr/dk
-share/X11/xkb/symbols/macintosh_vndr/es
 share/X11/xkb/symbols/macintosh_vndr/fi
 share/X11/xkb/symbols/macintosh_vndr/fr
 share/X11/xkb/symbols/macintosh_vndr/gb
@@ -150,11 +221,38 @@ share/X11/xkb/symbols/macintosh_vndr/no
 share/X11/xkb/symbols/macintosh_vndr/pt
 share/X11/xkb/symbols/macintosh_vndr/se
 share/X11/xkb/symbols/macintosh_vndr/us
+share/X11/xkb/symbols/mao
+share/X11/xkb/symbols/me
+share/X11/xkb/symbols/mk
+share/X11/xkb/symbols/mm
+share/X11/xkb/symbols/mn
+share/X11/xkb/symbols/mt
+share/X11/xkb/symbols/mv
+share/X11/xkb/symbols/nbsp
 share/X11/xkb/symbols/nec_vndr/jp
+share/X11/xkb/symbols/ng
+share/X11/xkb/symbols/nl
+share/X11/xkb/symbols/no
+share/X11/xkb/symbols/nokia_vndr/rx-44
+share/X11/xkb/symbols/nokia_vndr/rx-51
+share/X11/xkb/symbols/nokia_vndr/su-8w
+share/X11/xkb/symbols/np
 share/X11/xkb/symbols/olpc
+share/X11/xkb/symbols/pc
+share/X11/xkb/symbols/pk
+share/X11/xkb/symbols/pl
+share/X11/xkb/symbols/pt
+share/X11/xkb/symbols/ro
+share/X11/xkb/symbols/rs
+share/X11/xkb/symbols/ru
+share/X11/xkb/symbols/se
 share/X11/xkb/symbols/sgi_vndr/jp
 share/X11/xkb/symbols/shift
+share/X11/xkb/symbols/si
+share/X11/xkb/symbols/sk
+share/X11/xkb/symbols/sn
 share/X11/xkb/symbols/sony_vndr/us
+share/X11/xkb/symbols/srvr_ctrl
 share/X11/xkb/symbols/sun_vndr/cs
 share/X11/xkb/symbols/sun_vndr/cz
 share/X11/xkb/symbols/sun_vndr/de
@@ -183,110 +281,22 @@ share/X11/xkb/symbols/sun_vndr/tuv
 share/X11/xkb/symbols/sun_vndr/tw
 share/X11/xkb/symbols/sun_vndr/us
 share/X11/xkb/symbols/sun_vndr/usb
-share/X11/xkb/symbols/xfree68_vndr/amiga
-share/X11/xkb/symbols/xfree68_vndr/ataritt
-share/X11/xkb/symbols/ad
-share/X11/xkb/symbols/af
-share/X11/xkb/symbols/al
-share/X11/xkb/symbols/am
-share/X11/xkb/symbols/ara
-share/X11/xkb/symbols/az
-share/X11/xkb/symbols/be
-share/X11/xkb/symbols/bd
-share/X11/xkb/symbols/bg
-share/X11/xkb/symbols/br
-share/X11/xkb/symbols/ba
-share/X11/xkb/symbols/bt
-share/X11/xkb/symbols/by
-share/X11/xkb/symbols/ca
-share/X11/xkb/symbols/cd
-share/X11/xkb/symbols/ch
-share/X11/xkb/symbols/cn
-share/X11/xkb/symbols/cz
-share/X11/xkb/symbols/de
-share/X11/xkb/symbols/dk
-share/X11/xkb/symbols/ee
-share/X11/xkb/symbols/epo
-share/X11/xkb/symbols/es
-share/X11/xkb/symbols/et
-share/X11/xkb/symbols/fi
-share/X11/xkb/symbols/fo
-share/X11/xkb/symbols/fr
-share/X11/xkb/symbols/gb
-share/X11/xkb/symbols/ge
-share/X11/xkb/symbols/gh
-share/X11/xkb/symbols/gn
-share/X11/xkb/symbols/gr
-share/X11/xkb/symbols/hr
-share/X11/xkb/symbols/hu
-share/X11/xkb/symbols/ie
-share/X11/xkb/symbols/il
-share/X11/xkb/symbols/in
-share/X11/xkb/symbols/iq
-share/X11/xkb/symbols/ir
-share/X11/xkb/symbols/is
-share/X11/xkb/symbols/it
-share/X11/xkb/symbols/jp
-share/X11/xkb/symbols/kg
-share/X11/xkb/symbols/kh
-share/X11/xkb/symbols/kr
-share/X11/xkb/symbols/kz
-share/X11/xkb/symbols/la
-share/X11/xkb/symbols/latam
-share/X11/xkb/symbols/latin
-share/X11/xkb/symbols/lk
-share/X11/xkb/symbols/lt
-share/X11/xkb/symbols/lv
-share/X11/xkb/symbols/ma
-share/X11/xkb/symbols/mao
-share/X11/xkb/symbols/me
-share/X11/xkb/symbols/mk
-share/X11/xkb/symbols/mm
-share/X11/xkb/symbols/mn
-share/X11/xkb/symbols/mt
-share/X11/xkb/symbols/mv
-share/X11/xkb/symbols/nbsp
-share/X11/xkb/symbols/ng
-share/X11/xkb/symbols/nl
-share/X11/xkb/symbols/no
-share/X11/xkb/symbols/np
-share/X11/xkb/symbols/pc
-share/X11/xkb/symbols/pk
-share/X11/xkb/symbols/pl
-share/X11/xkb/symbols/pt
-share/X11/xkb/symbols/ro
-share/X11/xkb/symbols/rs
-share/X11/xkb/symbols/ru
-share/X11/xkb/symbols/se
-share/X11/xkb/symbols/si
-share/X11/xkb/symbols/sk
-share/X11/xkb/symbols/sn
 share/X11/xkb/symbols/sy
+share/X11/xkb/symbols/terminate
 share/X11/xkb/symbols/th
 share/X11/xkb/symbols/tj
 share/X11/xkb/symbols/tm
 share/X11/xkb/symbols/tr
+share/X11/xkb/symbols/typo
 share/X11/xkb/symbols/ua
 share/X11/xkb/symbols/us
 share/X11/xkb/symbols/uz
 share/X11/xkb/symbols/vn
+share/X11/xkb/symbols/xfree68_vndr/amiga
+share/X11/xkb/symbols/xfree68_vndr/ataritt
 share/X11/xkb/symbols/za
-share/X11/xkb/symbols/altwin
-share/X11/xkb/symbols/brai
-share/X11/xkb/symbols/capslock
-share/X11/xkb/symbols/compose
-share/X11/xkb/symbols/ctrl
-share/X11/xkb/symbols/group
-share/X11/xkb/symbols/inet
-share/X11/xkb/symbols/keypad
-share/X11/xkb/symbols/level3
-share/X11/xkb/symbols/level5
-share/X11/xkb/symbols/srvr_ctrl
-share/X11/xkb/symbols/terminate
-share/X11/xkb/symbols/typo
-share/X11/xkb/symbols/eurosign
-share/X11/xkb/symbols.dir
 share/X11/xkb/types.dir
+share/X11/xkb/types/README
 share/X11/xkb/types/basic
 share/X11/xkb/types/cancel
 share/X11/xkb/types/caps
@@ -296,9 +306,9 @@ share/X11/xkb/types/extra
 share/X11/xkb/types/iso9995
 share/X11/xkb/types/level5
 share/X11/xkb/types/mousekeys
+share/X11/xkb/types/nokia
 share/X11/xkb/types/numpad
 share/X11/xkb/types/pc
-share/X11/xkb/types/README
 share/X11/xkb/xkbcomp
 %%NLS%%share/locale/af/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/az/LC_MESSAGES/xkeyboard-config.mo
@@ -335,37 +345,39 @@ share/X11/xkb/xkbcomp
 %%NLS%%share/locale/vi/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xkeyboard-config.mo
-@exec mkdir -p /var/lib/xkb
-@dirrm share/X11/xkb/compat
-@dirrm share/X11/xkb/geometry/digital_vndr
-@dirrm share/X11/xkb/geometry/sgi_vndr
-@dirrm share/X11/xkb/geometry
-@dirrm share/X11/xkb/keycodes/digital_vndr
-@dirrm share/X11/xkb/keycodes/sgi_vndr
-@dirrm share/X11/xkb/keycodes
-@dirrm share/X11/xkb/keymap/digital_vndr
-@dirrm share/X11/xkb/keymap/sgi_vndr
-@dirrm share/X11/xkb/keymap/sun_vndr
-@dirrm share/X11/xkb/keymap
-@dirrm share/X11/xkb/rules
-@dirrm share/X11/xkb/semantics
-@dirrm share/X11/xkb/symbols/digital_vndr
-@dirrm share/X11/xkb/symbols/fujitsu_vndr
-@dirrm share/X11/xkb/symbols/hp_vndr
-@dirrm share/X11/xkb/symbols/macintosh_vndr
-@dirrm share/X11/xkb/symbols/nec_vndr
-@dirrm share/X11/xkb/symbols/sgi_vndr
-@dirrm share/X11/xkb/symbols/sony_vndr
-@dirrm share/X11/xkb/symbols/sun_vndr
-@dirrm share/X11/xkb/symbols/xfree68_vndr
-@dirrm share/X11/xkb/symbols
-@dirrm share/X11/xkb/types
-@dirrm share/X11/xkb
-@dirrmtry share/X11
-@dirrmtry /var/lib/xkb
-%%NLS%%@dirrmtry share/locale/crh/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/crh
-%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ky
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw
+%%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ky
+%%NLS%%@dirrmtry share/locale/crh/LC_MESSAGES
+@exec mkdir -p /var/lib/xkb
+@dirrmtry share/locale/crh
+@dirrm share/X11/xkb/types
+@dirrm share/X11/xkb/symbols/xfree68_vndr
+@dirrm share/X11/xkb/symbols/sun_vndr
+@dirrm share/X11/xkb/symbols/sony_vndr
+@dirrm share/X11/xkb/symbols/sgi_vndr
+@dirrm share/X11/xkb/symbols/nokia_vndr
+@dirrm share/X11/xkb/symbols/nec_vndr
+@dirrm share/X11/xkb/symbols/macintosh_vndr
+@dirrm share/X11/xkb/symbols/hp_vndr
+@dirrm share/X11/xkb/symbols/fujitsu_vndr
+@dirrm share/X11/xkb/symbols/extras
+@dirrm share/X11/xkb/symbols/digital_vndr
+@dirrm share/X11/xkb/symbols
+@dirrm share/X11/xkb/semantics
+@dirrm share/X11/xkb/rules
+@dirrm share/X11/xkb/keymap/sun_vndr
+@dirrm share/X11/xkb/keymap/sgi_vndr
+@dirrm share/X11/xkb/keymap/digital_vndr
+@dirrm share/X11/xkb/keymap
+@dirrm share/X11/xkb/keycodes/sgi_vndr
+@dirrm share/X11/xkb/keycodes/digital_vndr
+@dirrm share/X11/xkb/keycodes
+@dirrm share/X11/xkb/geometry/sgi_vndr
+@dirrm share/X11/xkb/geometry/digital_vndr
+@dirrm share/X11/xkb/geometry
+@dirrm share/X11/xkb/compat
+@dirrm share/X11/xkb
+@dirrm share/X11
+@dirrmtry var/lib/xkb

@@ -1,3 +1,4 @@
+include/X11/extensions/dmxext.h
 lib/libdmx.a
 lib/libdmx.la
 lib/libdmx.so

@@ -1,5 +1,8 @@
+include/X11/extensions/scrnsaver.h
 lib/libXss.so.1
 lib/libXss.so
 lib/libXss.la
 lib/libXss.a
 libdata/pkgconfig/xscrnsaver.pc
+@dirrmtry include/X11/extensions
+

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xorg-server
-PORTVERSION=	1.6.5
-PORTREVISION=	1
+PORTVERSION=	1.7.5
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://xorg.freedesktop.org/releases/individual/xserver/
@@ -24,6 +23,7 @@ CONFLICTS=	XFree86-Server-*
 
 XORG_CAT=	xserver
 
+USE_GMAKE=	yes
 USE_GL=		gl
 USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		xmu xt xpm xext randrproto renderproto fixesproto damageproto \
@@ -33,6 +33,7 @@ USE_XORG=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
 		videoproto compositeproto trapproto recordproto xineramaproto \
 		xinerama evieproto xfont fontenc xkbui pixman pciaccess
 
+MAKE_JOBS_UNSAFE=	yes
 USE_OPENSSL=	yes
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--disable-dmx --disable-xvfb --disable-xnest \
@@ -133,6 +134,10 @@ pre-everything::
 	@${ECHO_MSG} "of this, but still want to run an X Server (for example using xdm/kdm/gdm,"
 	@${ECHO_MSG} "which will still run the server as root), you can cancel the build and set"
 	@${ECHO_MSG} "NO_SUID_XSERVER=YES in /etc/make.conf."
+.endif
+
+.if ${OSVERSION} < 700000
+USE_GCC=	4.2+
 .endif
 
 .include <bsd.port.post.mk>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkfontscale
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,6 +17,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 XORG_CAT=	app
 USE_XORG=	xproto fontenc
 
+PLIST_FILES=	bin/mkfontscale
 MAN1=		mkfontscale.1
 
 .include <bsd.port.mk>

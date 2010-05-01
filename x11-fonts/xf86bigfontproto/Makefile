@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86bigfontproto
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org

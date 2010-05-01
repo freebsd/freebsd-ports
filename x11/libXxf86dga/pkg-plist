@@ -1,3 +1,5 @@
+include/X11/extensions/Xxf86dga.h
+include/X11/extensions/xf86dga1.h
 lib/libXxf86dga.a
 lib/libXxf86dga.la
 lib/libXxf86dga.so

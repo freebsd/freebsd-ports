@@ -1,4 +1,5 @@
 include/X11/extensions/xf86bigfont.h
+include/X11/extensions/xf86bigfproto.h
 include/X11/extensions/xf86bigfstr.h
 libdata/pkgconfig/xf86bigfontproto.pc
 @dirrmtry include/X11/extensions

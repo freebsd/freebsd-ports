@@ -1,5 +1,8 @@
+include/X11/extensions/XInput.h
+include/X11/extensions/XInput2.h
 lib/libXi.a
 lib/libXi.la
 lib/libXi.so
 lib/libXi.so.6
 libdata/pkgconfig/xi.pc
+@dirrmtry include/X11/extensions

@@ -2,4 +2,24 @@ lib/libXext.a
 lib/libXext.la
 lib/libXext.so
 lib/libXext.so.6
+include/X11/extensions/MITMisc.h
+include/X11/extensions/XEVI.h
+include/X11/extensions/XLbx.h
+include/X11/extensions/XShm.h
+include/X11/extensions/Xag.h
+include/X11/extensions/Xcup.h
+include/X11/extensions/Xdbe.h
+include/X11/extensions/Xext.h
+include/X11/extensions/Xge.h
+include/X11/extensions/dpms.h
+include/X11/extensions/extutil.h
+include/X11/extensions/lbxbuf.h
+include/X11/extensions/lbxbufstr.h
+include/X11/extensions/lbximage.h
+include/X11/extensions/multibuf.h
+include/X11/extensions/security.h
+include/X11/extensions/shape.h
+include/X11/extensions/sync.h
+include/X11/extensions/xtestext1.h
 libdata/pkgconfig/xext.pc
+@dirrmtry include/X11/extensions

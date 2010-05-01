@@ -1,16 +1,20 @@
 bin/rstart
 bin/rstartd
-lib/X11/rstart/config
-lib/X11/rstart/rstartd.real
-lib/X11/rstart/commands/x11r6/@List
-lib/X11/rstart/commands/x11r6/Terminal
-lib/X11/rstart/commands/x11r6/LoadMonitor
-lib/X11/rstart/commands/ListGenericCommands
 lib/X11/rstart/commands/@List
 lib/X11/rstart/commands/ListContexts
-lib/X11/rstart/contexts/default
-lib/X11/rstart/contexts/x11r6
+lib/X11/rstart/commands/ListGenericCommands
+lib/X11/rstart/commands/x
+lib/X11/rstart/commands/x11
+lib/X11/rstart/commands/x11r6/@List
+lib/X11/rstart/commands/x11r6/LoadMonitor
+lib/X11/rstart/commands/x11r6/Terminal
+lib/X11/rstart/config
 lib/X11/rstart/contexts/@List
+lib/X11/rstart/contexts/default
+lib/X11/rstart/contexts/x
+lib/X11/rstart/contexts/x11
+lib/X11/rstart/contexts/x11r6
+lib/X11/rstart/rstartd.real
 @dirrm lib/X11/rstart/contexts
 @dirrm lib/X11/rstart/commands/x11r6
 @dirrm lib/X11/rstart/commands
