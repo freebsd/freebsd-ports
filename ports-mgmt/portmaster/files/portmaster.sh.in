@@ -128,87 +128,85 @@ kill_bad_children () {
 	done
 }
 
-safe_exit () {
+parent_exit () {
 	local files p f show_list
 
-	if [ "$$" -eq "$PM_PARENT_PID" ]; then
-		if [ -s "$DI_FILES" ]; then
-			grep -q '%%%%%%%%%%%%' $DI_FILES || kill_bad_children
-		fi
-		[ -n "$FETCH_ONLY" -a -z "$FETCH_ONLY_DONE" ] &&
-			kill_bad_children
-
-		if [ -z "$TRAP" ]; then
-			if [ -n "$UPDATE_REQ_BYS" -o -n "$PM_FORCE" ]; then
-	# Outdent
-	[ -n "$UPDATE_REQ_BYS" -o -n "$PM_FORCE" ] &&
-		files=`find $pdb -type f -name PM_UPGRADE_DONE_FLAG`
-	if [ -n "$files" ]; then
-		pm_sv Deleting \'install complete\' flags
-		pm_find_s $pdb -type f -name PM_UPGRADE_DONE_FLAG -delete
+	if [ -s "$DI_FILES" ]; then
+		grep -q '%%%%%%%%%%%%' $DI_FILES || kill_bad_children
 	fi
-	# Outdent
-			fi
-			if [ -z "$BACKUP" -a -z "$NO_BACKUP" -a \
-			    -n "$NB_DELETE" ]; then
-				pm_sv Deleting safety packages for successful installs
-				pm_cd $pbu || fail "Cannot cd to $pbu"
-				pm_rm_s $NB_DELETE
+	[ -n "$FETCH_ONLY" -a -z "$FETCH_ONLY_DONE" ] && kill_bad_children
+
+	if [ -z "$TRAP" ]; then
+		if [ -n "$UPDATE_REQ_BYS" -o -n "$PM_FORCE" ]; then
+			[ -n "$UPDATE_REQ_BYS" -o -n "$PM_FORCE" ] &&
+				files=`find $pdb -type f -name PM_UPGRADE_DONE_FLAG`
+			if [ -n "$files" ]; then
+				pm_sv Deleting \'install complete\' flags
+				pm_find_s $pdb -type f -name PM_UPGRADE_DONE_FLAG -delete
 			fi
 		fi
-
-		[ -n "$pbu" ] && pbu=`find $pbu -type d -empty 2>/dev/null`
-		if [ -d "$pbu" ]; then
-			pm_sv Removing empty backup package directory
-			pm_rmdir_s $pbu
+		if [ -z "$BACKUP" -a -z "$NO_BACKUP" -a -n "$NB_DELETE" ]; then
+			pm_sv Deleting safety packages for successful installs
+			pm_cd $pbu || fail "Cannot cd to $pbu"
+			pm_rm_s $NB_DELETE
 		fi
+	fi
 
-		for f in ${TMPDIR}/f-${PM_PARENT_PID}-*; do pm_unlink $f ; done
+	[ -n "$pbu" ] && pbu=`find $pbu -type d -empty 2>/dev/null`
+	if [ -d "$pbu" ]; then
+		pm_sv Removing empty backup package directory
+		pm_rmdir_s $pbu
+	fi
 
-		case "$DISPLAY_LIST" in
-		*' '*)	if [ -n "$TRAP" ]; then
-	echo "===>>> There are messages from installed ports to display,"
-	echo "       but first take a moment to review the error messages"
-	echo -n "       above.  Then press Enter when ready to proceed. "
-				read DISCARD
-				echo ''
-			fi
+	for f in ${TMPDIR}/f-${PM_PARENT_PID}-*; do pm_unlink $f ; done
 
-			[ -n "$PAGER" ] && p=$PAGER || p='less -e'
-			( for f in $DISPLAY_LIST; do
-				echo "===>>> pkg-message for $f"
-					cat $pdb/$f/+DISPLAY
-					echo ''
-				done
-			echo "===>>> Done displaying pkg-message files" ) | $p
-			;;
-		esac
-
-		if [ -n "$INSTALLED_LIST" ]; then
-			if [ -n "$UPDATE_ALL" -o -n "$PM_MULTI_PORTS" ]; then
-				show_list=all
-			else
-				case "$INSTALLED_LIST" in
-				*\\n\\t*)	show_list=all ;;
-				*\\n)		show_list=one ;;
-				esac
-			fi
-			case "$show_list" in
-			all) echo "===>>> The following actions were performed:"
-				echo -e $INSTALLED_LIST ;;
-			one)	echo "===>>> $ilist complete" ; echo '' ;;
-			esac
-		fi
-
-		if [ -n "$build_deps_il" ]; then
-		echo "===>>> Deleting installed build-only dependencies"
-			cd
-			for f in $build_deps_il; do
-				[ -n "$PM_VERBOSE" ] && echo "       $f"
-				pm_pkg_delete_s -f $f
-			done
+	case "$DISPLAY_LIST" in
+	*' '*)	if [ -n "$TRAP" ]; then
+			echo "===>>> There are messages from installed ports to display,"
+			echo "       but first take a moment to review the error messages"
+			echo -n "       above.  Then press Enter when ready to proceed. "
+			read DISCARD
 			echo ''
 		fi
+
+		[ -n "$PAGER" ] && p=$PAGER || p='less -e'
+		( for f in $DISPLAY_LIST; do
+			echo "===>>> pkg-message for $f" ; cat $pdb/$f/+DISPLAY ; echo ''
+		done
+		echo "===>>> Done displaying pkg-message files" ) | $p
+		;;
+	esac
+
+	if [ -n "$INSTALLED_LIST" ]; then
+		if [ -n "$UPDATE_ALL" -o -n "$PM_MULTI_PORTS" ]; then
+			show_list=all
+		else
+			case "$INSTALLED_LIST" in
+			*\\n\\t*)	show_list=all ;;
+			*\\n)		show_list=one ;;
+			esac
+		fi
+		case "$show_list" in
+		all)	echo "===>>> The following actions were performed:"
+			echo -e $INSTALLED_LIST ;;
+		one)	echo "===>>> $ilist complete" ; echo '' ;;
+		esac
+	fi
+
+	if [ -n "$build_deps_il" ]; then
+		echo "===>>> Deleting installed build-only dependencies"
+		cd
+		for f in $build_deps_il; do
+			[ -n "$PM_VERBOSE" ] && echo "       $f"
+			pm_pkg_delete_s -f $f
+		done
+		echo ''
+	fi
+}
+
+safe_exit () {
+	if [ "$$" -eq "$PM_PARENT_PID" ]; then
+		parent_exit
 	else
 		[ -n "$grep_deps" ] && pm_unlink $grep_deps
 
@@ -252,7 +250,7 @@ usage () {
 	echo "    [[[--packages|-P]|[--packages-only|-PP]] | [--packages-build]]"
 	echo "    [--packages-if-newer] [--delete-build-only] [--always-fetch]"
 	echo "    [--local-packagedir=<path>] [--delete-packages]"
-	echo "    [--no-confirm] [--no-term-title] [--index|--index-only]"
+	echo "    [--no-confirm] [--no-term-title] [--index|--index-first|--index-only]"
 	echo "    [-m <arguments for make>] [-x <glob pattern to exclude from building>]"
 	echo "${0##*/} [Common flags] <full name of port directory in $pdb>"
 	echo "${0##*/} [Common flags] <full path to $pd/foo/bar>"
@@ -313,7 +311,8 @@ usage () {
 	echo '   installed and/or updated before proceeding'
 	echo '--no-term-title do not update the xterm title bar'
 	echo ''
-	echo '--index use INDEX-[6-9] to check if a port is out of date'
+	echo '--index use INDEX-[6-9] exclusively to check if a port is up to date'
+	echo '--index-first use the INDEX for status, but double-check with the port'
 	echo '--index-only do not try to use /usr/ports'
 	echo ''
 	echo '--show-work list what ports are and would be installed'
@@ -369,7 +368,8 @@ pm_make   () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH;
 		 unset -v MASTER_RB_LIST CONFIG_SEEN_LIST;
 		 /usr/bin/make $PM_MAKE_ARGS $*; ); }
 pm_make_b () { /usr/bin/make $PM_MAKE_ARGS BEFOREPORTMK=bpm $*; }
-pm_mktemp () { /usr/bin/mktemp -t f-${PM_PARENT_PID}-$1; }
+pm_mktemp () { /usr/bin/mktemp -t f-${PM_PARENT_PID}-$1 ||
+		fail "mktemp for $1 failed"; }
 pm_unlink () { /bin/test -e $1 && /bin/unlink $1; }
 
 # Superuser versions for commands that need root privileges
@@ -410,6 +410,18 @@ e2="The --packages-build option and the -P[P] options are mutually exclusive"
 	esac
 }
 
+cross_idx () {
+	local e1
+
+e1='The --index, --index-first, and --index-only options are mutually exclusive'
+
+	case "$1" in
+	index)		[ -n "$PM_INDEX_FIRST" -o -n "$PM_INDEX_ONLY" ] && fail $e1 ;;
+	first)		[ -n "$PM_INDEX" -o -n "$PM_INDEX_ONLY" ] && fail $e1 ;;
+	only)		[ -n "$PM_INDEX" -o -n "$PM_INDEX_FIRST" ] && fail $e1 ;;
+	esac
+}
+
 for var in "$@" ; do
 	case "$var" in
 	-PP[A-Za-z0-9]*|-*[A-Za-z0-9]PP*)
@@ -438,9 +450,11 @@ for var in "$@" ; do
 				export PM_NO_CONFIRM ;;
 	--no-term-title)	PM_NO_TERM_TITLE=pm_no_term_title
 				export PM_NO_TERM_TITLE ;;
-	--index)		PM_INDEX=pm_index ; export PM_INDEX ;;
+	--index)		cross_idx index ; PM_INDEX=pm_index ; export PM_INDEX ;;
+	--index-first)		PM_INDEX=pm_index ; PM_INDEX_FIRST=pm_index_first
+				cross_idx first ; export PM_INDEX PM_INDEX_FIRST ;;
 	--index-only)		PM_INDEX=pm_index ; PM_INDEX_ONLY=pm_index_only
-				export PM_INDEX PM_INDEX_ONLY ;;
+				cross_idx only ; export PM_INDEX PM_INDEX_ONLY ;;
 	--help)			usage 0 ;;
 	--version)		version ; exit 0 ;;
 	--clean-distfiles)	CLEAN_DISTFILES=clean_distfiles ;;
@@ -455,6 +469,11 @@ for var in "$@" ; do
 	*)			newopts="$newopts $var" ;;
 	esac
 done
+
+unset var
+
+[ -n "$PM_INDEX" -a -n "$CHECK_PORT_DBDIR" ] &&
+	fail 'The --index* and --check-port-dbdir options are mutually exclusive'
 
 # Do this here so it can use the fancy functions above, and default values
 # can be overridden in the rc files
@@ -485,10 +504,10 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
 		fi
 
 		PM_INDEX="${INDEXDIR}/${INDEXFILE}"
-		index_time=`stat -f '%Ua' $PM_INDEX 2>/dev/null`
+		index_time=`stat -f '%Ua' ${PM_INDEX}.bz2 2>/dev/null`
 		pm_sv Updating INDEX file
 		$PM_SU_CMD $FETCHINDEX ${PM_INDEX}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
-		if [ $index_time -ne `stat -f '%Ua' $PM_INDEX 2>/dev/null` ]; then
+		if [ $index_time -ne `stat -f '%Ua' ${PM_INDEX}.bz2 2>/dev/null` ]; then
 			temp_index=`pm_mktemp index`
 			bunzip2 < ${PM_INDEX}.bz2 > $temp_index
 			pm_install_s $temp_index $PM_INDEX
@@ -496,6 +515,9 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
 			unset temp_index
 		fi
 		unset index_time
+
+		PM_INDEX_PORTS=`pkg_version -Ivl\< $PM_INDEX | cut -f1 -d\<`
+		export PM_INDEX_PORTS
 	fi
 
 	if [ -z "$pd" ]; then
@@ -567,8 +589,23 @@ iport_from_origin () {
 
 origin_from_pdb () {
 	local o
-	o=`grep -m1 '@comment ORIGIN:' $pdb/$1/+CONTENTS 2>/dev/null`
-	echo ${o#@comment ORIGIN:}
+	o=`grep -m1 '@comment ORIGIN:' $pdb/$1/+CONTENTS 2>/dev/null` && {
+		echo ${o#@comment ORIGIN:}; return 0; }
+
+	case "$1" in bsdpan-*) return 3 ;; esac
+
+	if [ -e "$pdb/$1/+IGNOREME" ]; then
+		if [ -n "$PM_VERBOSE" -o -n "$LIST_ORIGINS" ]; then
+			echo "	===>>> No ORIGIN in $pdb/$1/+CONTENTS" >&2
+			echo "	===>>> $pdb/$1/+IGNOREME exists" >&2
+			echo '' >&2
+		fi
+		return 2
+	else
+		echo "	===>>> No ORIGIN in $pdb/$1/+CONTENTS" >&2
+		echo '' >&2
+	fi
+	return 1
 }
 
 check_regular_file () {
@@ -780,9 +817,7 @@ read_distinfos () {
 		[ -d $pkg ] || continue
 		iport=${pkg#$pdb/}
 
-		case "$iport" in bsdpan-*) continue ;; esac
-
-		origin=`origin_from_pdb $iport`
+		origin=`origin_from_pdb $iport` || continue
 
 		if [ ! -d "$pd/$origin" ]; then
 			find_moved_port $origin $iport nonfatal >/dev/null
@@ -915,20 +950,13 @@ IFS='
 
 		iport=${pkg#$pdb/}
 
-		case "$iport" in bsdpan-*)
-		echo "===>>> BSDPAN ports do not record dependencies ($iport)"
-		continue ;; esac
-
 		echo "===>>> Checking $iport"
 
 		[ -r "$pkg/+CONTENTS" ] || {
 			echo "	===>>> Warning: No +CONTENTS file!";
 			continue; }
 
-		origin=`origin_from_pdb ${pkg#$pdb/}`
-		[ -n "$origin" ] || {
-			echo "	===>>> Warning: No ORIGIN in +CONTENTS file";
-			continue; }
+		origin=`origin_from_pdb $iport` || continue
 
 		if [ ! -d "$pd/$origin" ]; then
 			echo "	===>>> $pd/$origin does not exist"
@@ -972,7 +1000,7 @@ if [ -n "$CHECK_PORT_DBDIR" ]; then
 		unset unique_name
 
 		iport=${pkg#$pdb/}
-		origin=`origin_from_pdb $iport`
+		origin=`origin_from_pdb $iport` || continue
 
 		if [ ! -d "$pd/$origin" ]; then
 			find_moved_port $origin $iport nonfatal >/dev/null
@@ -1018,7 +1046,7 @@ if [ -n "$LIST_ORIGINS" ]; then
 	ports_by_category
 
 	for iport in $roots $leaves; do
-		origin=`origin_from_pdb $iport`
+		origin=`origin_from_pdb $iport` || continue
 		echo $origin
 	done
 
@@ -1034,7 +1062,7 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stuvwx:' COMMAND_LINE_ARGUMENT ; do
 	C)	DONT_PRE_CLEAN=Copt; ARGS="-C $ARGS" ;;
 	D)	DONT_SCRUB_DISTFILES=Dopt; ARGS="-D $ARGS" ;;
 	F)	FETCH_ONLY=Fopt; ARGS="-F $ARGS" ;;
-	G)	NO_RECURSIVE_CONFIG=Gopt; unset FORCE_CONFIG; ARGS="-G $ARGS" ;;
+	G)	NO_RECURSIVE_CONFIG=Gopt; ARGS="-G $ARGS" ;;
 	H)	HIDE_BUILD=Hopt; ARGS="-H $ARGS" ;;
 	K)	DONT_POST_CLEAN=Kopt; ARGS="-K $ARGS" ;;
 	L)	LIST_PLUS=Lopt ;;
@@ -1080,7 +1108,7 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stuvwx:' COMMAND_LINE_ARGUMENT ; do
 	esac
 done
 shift $(( $OPTIND - 1 ))
-unset -f packages_init
+unset -f packages_init cross_idx
 
 [ -n "$PM_EXCL" ] && export PM_EXCL
 
@@ -1113,13 +1141,15 @@ if [ -n "$ALWAYS_SCRUB_DISTFILES" -a -n "$DONT_SCRUB_DISTFILES" ]; then
 	test_command_line ALWAYS_SCRUB_DISTFILES DONT_SCRUB_DISTFILES ||
 		fail "The -d and -D options are mutually exclusive"
 fi
-[ -n "$FETCH_ONLY" -a -n "$NO_RECURSIVE_CONFIG" ] &&
-	unset NO_RECURSIVE_CONFIG
-[ -n "$NO_RECURSIVE_CONFIG" -a -n "$PM_PACKAGES_BUILD" ] &&
-	fail 'The --packages-build and -G options are mutually exclusive'
-[ -n "$NO_RECURSIVE_CONFIG" -a -n "$PM_DEL_BUILD_ONLY" ] &&
-	fail 'The --delete-build-only and -G options are mutually exclusive'
-
+if [ -n "$NO_RECURSIVE_CONFIG" ]; then
+	[ -n "$FETCH_ONLY" ] && unset NO_RECURSIVE_CONFIG
+	[ -n "$PM_PACKAGES_BUILD" ] &&
+		fail 'The --packages-build and -G options are mutually exclusive'
+	[ -n "$PM_DEL_BUILD_ONLY" ] &&
+		fail 'The --delete-build-only and -G options are mutually exclusive'
+	[ -n "$FORCE_CONFIG" ] &&
+		fail 'The --force-config and -G options are mutually exclusive'
+fi
 unset my_environment
 
 #=============== Begin functions for getopts features and main ===============
@@ -1147,7 +1177,7 @@ parse_index () {
 
 	[ -z "$pd" -a -n "$PM_INDEX_ONLY" ] && pd=/usr/ports
 
-	line=`grep -m1 .*\|${pd}/${1}\|.* $PM_INDEX`
+	line=`grep -m1 .*\|${pd}/${1}\|.* $PM_INDEX` || return 1
 
 	case "$2" in
 	name)		echo ${line%%|*} ;;
@@ -1190,31 +1220,23 @@ check_pkg_version () {
 
 check_for_updates () {
 	# Global: num_updates
-	local list_only nf iport origin port_ver udf do_update
+	local list_only nf iport origin port_ver skip udf do_update
 
 	[ "$1" = 'list' ] && { list_only=list_only; nf=nonfatal; shift; }
 
 	iport=$1
 
-	case "$iport" in bsdpan-*)	[ -n "$PM_VERBOSE" ] &&
-	echo "	===>>> BSDPAN ports cannot be upgraded with portmaster"
-	return 0 ;; esac
-
-	origin=${2:-`origin_from_pdb $iport`}
-	if [ -z "$origin" ]; then
-		if [ -n "$PM_VERBOSE" ]; then
-			echo "===>>> No ORIGIN in $pdb/$iport/+CONTENTS"
-			echo ''
-		fi
-		return 0
-	fi
+	origin=${2:-`origin_from_pdb $iport`} || return 0
 
 	if [ -n "$PM_INDEX" ]; then
-		port_ver=`parse_index $origin name`
-		check_pkg_version $iport $port_ver || { do_update=update_index ; }
+		case "$PM_INDEX_PORTS" in
+		*${iport}*) port_ver=`parse_index $origin name` ; do_update=upd_idx ;;
+		esac
+
+		[ -n "$PM_INDEX_FIRST" ] || skip=index_skip
 	fi
 
-	if [ -d "$pd/$origin" -a -z "$do_update" -a -z "$PM_INDEX_ONLY" ]; then
+	if [ -d "$pd/$origin" -a -z "$do_update" -a -z "$skip" ]; then
 		if ! pm_cd $pd/$origin; then
 			if [ -e "$pdb/$iport/+IGNOREME" ]; then
 			echo "	===>>> Warning: Unable to cd to $pd/$origin"
@@ -1226,7 +1248,14 @@ check_for_updates () {
 		fi
 		port_ver=`pm_make -V PKGNAME`
 		[ -z "$port_ver" ] && fail "Is $pd/$origin/Makefile missing?"
+	elif [ -z "$do_update" -a -z "$skip" ]; then
+		find_moved_port $origin $iport $nf
 
+		# If the port has moved, we have to update it, otherwise ignore
+		[ -n "$moved_npd" ] && do_update=do_update6
+	fi
+
+	if [ -z "$do_update" -a -n "$port_ver" ]; then
 		udf="$pdb/$iport/PM_UPGRADE_DONE_FLAG"
 		if [ "$iport" = "$port_ver" ]; then
 			if [ -n "$PM_FORCE" ]; then
@@ -1256,11 +1285,6 @@ check_for_updates () {
 		else
 			check_pkg_version $iport $port_ver $udf || do_update=do_update_check
 		fi
-	elif [ -z "$do_update" -a -z "$PM_INDEX_ONLY" ]; then
-		find_moved_port $origin $iport $nf
-
-		# If the port has moved, we have to update it, otherwise ignore
-		[ -n "$moved_npd" ] && do_update=do_update6
 	fi
 
 	[ -z "$do_update" ] && {
@@ -1271,7 +1295,7 @@ check_for_updates () {
 			echo "	===>>> New version available: $port_ver"
 			[ -e "$pdb/$iport/+IGNOREME" ] &&
 				echo "	===>>> +IGNOREME file is present for $1"
-			[ -z "$PM_INDEX_ONLY" ] && check_state
+			[ -z "$PM_INDEX_ONLY" ] && { pm_cd_pd $origin ;  check_state; }
 			num_updates=$(( $num_updates + 1 ))
 		else
 			unset moved_npd
@@ -1885,7 +1909,8 @@ update_build_l () {
 	if [ -z "$PM_INDEX_ONLY" ]; then
 		pm_cd $pd/$origin && new_port=`pm_make -V PKGNAME`
 	else
-		new_port=`parse_index $origin name`
+		new_port=`parse_index $origin name` ||
+			fail "No INDEX entry for $origin"
 	fi
 
 	case `pkg_version -t $iport $new_port 2>/dev/null` in
@@ -2067,7 +2092,7 @@ dependency_check () {
 		clean_build_only_list
 	fi
 
-	local d_port origin iport conflicts glob confl_p udf
+	local d_port origin iport udf
 
 	# Do not export, for THIS parent process only
 	[ -n "$CONFIG_ONLY" ] && doing_dep_check=doing_dep_check
@@ -2094,6 +2119,8 @@ dependency_check () {
 			case "$CUR_DEPS" in *:${origin}:*) continue ;; esac
 
 		if [ -z "$PM_INDEX_ONLY" ]; then
+			local conflicts glob confl_p
+
 			conflicts=''
 			if pm_cd $d_port; then
 				grep -ql ^CONFLICTS Makefile &&
@@ -2474,11 +2501,20 @@ all_config () {
 
 		case "$CUR_DEPS" in *:${iport}:*) continue ;; esac
 
-		case "$iport" in bsdpan-*)	[ -n "$PM_VERBOSE" ] &&
-		echo "	===>>> BSDPAN ports cannot be upgraded with portmaster"
-		continue ;; esac
+		origin=`origin_from_pdb $iport` || {
+			case "$?" in
+			3) ;;
+			2) [ -z "$PM_VERBOSE" ] &&
+				echo "	===>>> No ORIGIN for $iport, and +IGNOREME is present"
+				echo "	===>>> Skipping"
+				echo '' ;;
+			*)	fail 'Cannot continue' ;;
+			esac;
 
-		origin=`origin_from_pdb $iport`
+			# Prevent the user from getting reprompted during build
+			CUR_DEPS="${CUR_DEPS}${iport}:";
+			continue; }
+
 		case "$CONFIG_SEEN_LIST" in *:${origin}:*) continue ;; esac
 
 		[ -n "$PM_BUILD_ONLY_LIST" ] &&
@@ -2602,25 +2638,24 @@ else
 		echo "===>>> The first argument to -o must be a directory in $pd"
 		echo '' ; no_valid_port; }
 
+	upg_port=`iport_from_origin $portdir`
+
 	arg2=${2#$pd/} ; arg2=${arg2#$pdb/} ; arg2=${arg2%/}
 
 	case "$arg2" in
-	*/*)	ro_opd=$arg2 ; upg_port=`iport_from_origin $ro_opd` ;;
+	*/*)	ro_opd=$arg2 ; ro_upg_port=`iport_from_origin $ro_opd` ;;
 	*)	if [ -d "$pdb/$arg2" ]; then
-			upg_port=$arg2
+			ro_upg_port=$arg2
 		else
-			find_glob_dirs $arg2 && upg_port=${glob_dirs#$pdb/}
+			find_glob_dirs $arg2 && ro_upg_port=${glob_dirs#$pdb/}
 			unset glob_dirs
 		fi
-		[ -n "$upg_port" ] && ro_opd=`origin_from_pdb $upg_port`
+		[ -n "$ro_upg_port" ] && ro_opd=`origin_from_pdb $ro_upg_port`
 	esac
 	unset arg2
 
-	if [ -z "$upg_port" ]; then
-		if grep -ql "DEPORIGIN:$ro_opd$" $pdb/*/+CONTENTS; then
-			unset upg_port
-			PM_MAKE_ARGS="-DFORCE_PKG_REGISTER $PM_MAKE_ARGS"
-		else
+	if [ -z "$ro_upg_port" ]; then
+		if ! grep -ql "DEPORIGIN:$ro_opd$" $pdb/*/+CONTENTS; then
 			echo ''
 			echo "===>>> The second argument to -o can be a port in $pdb,"
 			echo "       or a port directory from $pd"
@@ -2631,16 +2666,17 @@ else
 	PM_MAKE_ARGS="-DDISABLE_CONFLICTS $PM_MAKE_ARGS"
 fi
 
-if [ -n "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
-	portdir=`origin_from_pdb $upg_port`
-	if [ ! -n "$portdir" ]; then
-		case "$upg_port" in
-		bsdpan-*)	echo ''
+if [ -n "$upg_port" -a -z "$portdir" ]; then
+	portdir=`origin_from_pdb $upg_port` || {
+	case "$?" in
+	3)	echo ''
 		echo "===>>> BSDPAN ports cannot be upgraded with portmaster"
-			echo "       (${upg_port})"; echo ''; safe_exit ;;
-		*)	fail "No ORIGIN in $pdb/$upg_port/+CONTENTS" ;;
-		esac
-	fi
+		echo "       (${upg_port})"; echo ''; safe_exit ;;
+	2)	[ -z "$PM_VERBOSE" ] && {
+		echo "	===>>> No ORIGIN for $upg_port, and +IGNOREME is present";
+		echo ''; }; safe_exit ;;
+	*)	fail 'Cannot continue' ;;
+	esac ; }
 elif [ -z "$portdir" ]; then
 	no_valid_port
 fi
@@ -2650,12 +2686,8 @@ if [ ! -d "$pd/$portdir" -a -z "$PM_INDEX_ONLY" ]; then
 	[ -n "$moved_npd" ] || no_valid_port
 	[ -d "$pd/$moved_npd" ] || no_valid_port
 
-	if [ "$$" -eq "$PM_PARENT_PID" ]; then
-		$0 $ARGS -o $moved_npd $upg_port
-		safe_exit
-	else
-		exec $0 $ARGS -o $moved_npd $upg_port
-	fi
+	[ "$$" -eq "$PM_PARENT_PID" ] && parent_exit
+	exec $0 $ARGS -o $moved_npd $upg_port
 fi
 [ -z "$upg_port" -a -z "$REPLACE_ORIGIN" ] &&
 	upg_port=`iport_from_origin ${portdir}`
@@ -2909,7 +2941,8 @@ if [ -z "$new_port" ]; then
 	if [ -z "$PM_INDEX_ONLY" ]; then
 		new_port=`pm_make -V PKGNAME`
 	else
-		new_port=`parse_index $portdir name`
+		new_port=`parse_index $portdir name` ||
+			fail "No INDEX entry for $origin"
 	fi
 fi
 
@@ -3148,7 +3181,8 @@ if [ -z "$use_package" ]; then
 	unset sleep
 
 	if [ -n "$HIDE_BUILD" ]; then
-		port_log=`mktemp -t port_log-${PM_PARENT_PID}-${portdir#*/}`
+		port_log=`mktemp -t port_log-${PM_PARENT_PID}-${portdir#*/}` ||
+			fail "mktemp for $1 failed"
 		port_log_args=">> $port_log 2>&1"
 		echo "===>>> Logging build to $port_log"
 	fi
@@ -3161,12 +3195,14 @@ else
 fi
 
 # Ignore if no old port exists
-if [ -n "$upg_port" ]; then
+if [ -n "$upg_port" -o -n "$ro_upg_port" ]; then
 	UPGRADE_PORT=$upg_port
+	[ -n "$ro_upg_port" ] && UPGRADE_PORT="$ro_upg_port"
+
 	UPGRADE_PORT_VER=`echo $UPGRADE_PORT | sed 's#.*-\(.*\)#\1#'`
 	export UPGRADE_PORT UPGRADE_PORT_VER
 
-	[ -z "$NO_BACKUP" ] && pm_pkg_create $pbu $upg_port
+	[ -z "$NO_BACKUP" ] && pm_pkg_create $pbu $UPGRADE_PORT
 
 	if [ -n "$SAVE_SHARED" ]; then
 		ldconfig_out=`pm_mktemp ldconfig`
@@ -3174,7 +3210,7 @@ if [ -n "$upg_port" ]; then
 		    grep -v ^$LOCALBASE_COMPAT > $ldconfig_out
 
 		unset temp
-		for file in `pkg_info -q -L $upg_port | sort - $ldconfig_out | \
+		for file in `pkg_info -q -L $UPGRADE_PORT | sort - $ldconfig_out | \
 		    uniq -d`; do
 			temp="${temp}$file "
 		done
@@ -3193,18 +3229,18 @@ if [ -n "$upg_port" ]; then
 
 	find_dl_distfiles $portdir
 
-	if [ -n "$REPLACE_ORIGIN" ]; then
-		# upg_port will be the port we are replacing
-		# Delete any existing versions of the new port
-		iport=`iport_from_origin $portdir`
-		if [ -n "$iport" ]; then
-			pm_sv Running pkg_delete for $iport
-			pm_pkg_delete_s -f $iport
-		fi
+	if [ -n "$REPLACE_ORIGIN" -a -n "$ro_upg_port" ]; then
+		# Delete any existing versions of the old port
+		pm_sv Running pkg_delete for $ro_upg_port
+		pm_pkg_delete_s -f $ro_upg_port
 	fi
 
-	pm_sv Running pkg_delete for $upg_port
-	pm_pkg_delete_s -f $upg_port
+	# Could be empty if -o
+	if [ -n "$upg_port" ]; then
+		pm_sv Running pkg_delete for $upg_port
+		pm_pkg_delete_s -f $upg_port
+	fi
+
 	[ -z "$PM_INDEX_ONLY" ] && pm_cd_pd $portdir
 fi
 
@@ -3215,6 +3251,10 @@ if [ -z "$RECURSE_THOROUGH" -a -z "$NO_DEP_UPDATES" ]; then
 fi
 
 install_failed () {
+	local upg_port
+
+	[ -n "$ro_upg_port" ] && upg_port="$ro_upg_port"
+
 	if [ -z "$NO_BACKUP" -a -n "$upg_port" ]; then
 		echo ''
 		echo "===>>> A backup package for $upg_port should"
