@@ -552,6 +552,7 @@
     SUBDIR += p5-Net-DAAP-Client
     SUBDIR += p5-Net-DAAP-DMAP
     SUBDIR += p5-Net-FreeDB
+    SUBDIR += p5-Net-LibLO
     SUBDIR += p5-Ogg-Vorbis-Header
     SUBDIR += p5-Ogg-Vorbis-Header-PurePerl
     SUBDIR += p5-Shout
