@@ -10910,6 +10910,7 @@ p5-CLASS                        ports/devel/p5-CLASS
 p5-CPAN-Checksums               ports/devel/p5-CPAN-Checksums
 p5-CPAN-DistnameInfo            ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Inject                  ports/devel/p5-CPAN-Inject
+p5-CPAN-Meta                    ports/devel/p5-CPAN-Meta
 p5-CPAN-Mini                    ports/devel/p5-CPAN-Mini
 p5-CPAN-SQLite                  ports/devel/p5-CPAN-SQLite
 p5-CPAN-YACSmoke                ports/devel/p5-CPAN-YACSmoke
@@ -13349,6 +13350,7 @@ p5-Regexp-DefaultFlags          ports/textproc/p5-Regexp-DefaultFlags
 p5-Regexp-Log                   ports/textproc/p5-Regexp-Log
 p5-Regexp-Log-Common            ports/textproc/p5-Regexp-Log-Common
 p5-Regexp-Shellish              ports/devel/p5-Regexp-Shellish
+p5-Regexp-Subst-Parallel        ports/devel/p5-Regexp-Subst-Parallel
 p5-Relations                    ports/databases/p5-Relations
 p5-Relations-Query              ports/databases/p5-Relations-Query
 p5-Religion                     ports/devel/p5-Religion
@@ -13839,6 +13841,7 @@ p5-Text-Language-Guess          ports/textproc/p5-Text-Language-Guess
 p5-Text-LevenshteinXS           ports/devel/p5-Text-LevenshteinXS
 p5-Text-Markdown                ports/textproc/p5-Text-Markdown
 p5-Text-Markdown-ApacheHandler  ports/www/p5-Text-Markdown-ApacheHandler
+p5-Text-Match-FastAlternatives  ports/textproc/p5-Text-Match-FastAlternatives
 p5-Text-Metaphone               ports/textproc/p5-Text-Metaphone
 p5-Text-MicroTemplate           ports/textproc/p5-Text-MicroTemplate
 p5-Text-MultiMarkdown           ports/textproc/p5-Text-MultiMarkdown
@@ -13919,6 +13922,7 @@ p5-Tie-IxHash                   ports/devel/p5-Tie-IxHash
 p5-Tie-NetAddr-IP               ports/net-mgmt/p5-Tie-NetAddr-IP
 p5-Tie-RefHash                  ports/devel/p5-Tie-RefHash
 p5-Tie-RefHash-Weak             ports/devel/p5-Tie-RefHash-Weak
+p5-Tie-RegexpHash               ports/devel/p5-Tie-RegexpHash
 p5-Tie-Restore                  ports/devel/p5-Tie-Restore
 p5-Tie-ShareLite                ports/devel/p5-Tie-ShareLite
 p5-Tie-Simple                   ports/devel/p5-Tie-Simple
@@ -15105,6 +15109,7 @@ p5-corona                       ports/www/p5-Corona
 p5-cpan-checksums               ports/devel/p5-CPAN-Checksums
 p5-cpan-distnameinfo            ports/devel/p5-CPAN-DistnameInfo
 p5-cpan-inject                  ports/devel/p5-CPAN-Inject
+p5-cpan-meta                    ports/devel/p5-CPAN-Meta
 p5-cpan-mini                    ports/devel/p5-CPAN-Mini
 p5-cpan-sqlite                  ports/devel/p5-CPAN-SQLite
 p5-cpan-yacsmoke                ports/devel/p5-CPAN-YACSmoke
@@ -17214,6 +17219,7 @@ p5-regexp-defaultflags          ports/textproc/p5-Regexp-DefaultFlags
 p5-regexp-log                   ports/textproc/p5-Regexp-Log
 p5-regexp-log-common            ports/textproc/p5-Regexp-Log-Common
 p5-regexp-shellish              ports/devel/p5-Regexp-Shellish
+p5-regexp-subst-parallel        ports/devel/p5-Regexp-Subst-Parallel
 p5-relations                    ports/databases/p5-Relations
 p5-relations-query              ports/databases/p5-Relations-Query
 p5-relative                     ports/devel/p5-relative
@@ -17733,6 +17739,7 @@ p5-text-language-guess          ports/textproc/p5-Text-Language-Guess
 p5-text-levenshteinxs           ports/devel/p5-Text-LevenshteinXS
 p5-text-markdown                ports/textproc/p5-Text-Markdown
 p5-text-markdown-apachehandler  ports/www/p5-Text-Markdown-ApacheHandler
+p5-text-match-fastalternatives  ports/textproc/p5-Text-Match-FastAlternatives
 p5-text-metaphone               ports/textproc/p5-Text-Metaphone
 p5-text-microtemplate           ports/textproc/p5-Text-MicroTemplate
 p5-text-multimarkdown           ports/textproc/p5-Text-MultiMarkdown
@@ -17816,6 +17823,7 @@ p5-tie-ixhash                   ports/devel/p5-Tie-IxHash
 p5-tie-netaddr-ip               ports/net-mgmt/p5-Tie-NetAddr-IP
 p5-tie-refhash                  ports/devel/p5-Tie-RefHash
 p5-tie-refhash-weak             ports/devel/p5-Tie-RefHash-Weak
+p5-tie-regexphash               ports/devel/p5-Tie-RegexpHash
 p5-tie-restore                  ports/devel/p5-Tie-Restore
 p5-tie-sharelite                ports/devel/p5-Tie-ShareLite
 p5-tie-simple                   ports/devel/p5-Tie-Simple
