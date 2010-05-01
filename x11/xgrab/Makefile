@@ -28,6 +28,8 @@ MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 # "make depend" blows up
 XMKMF=		xmkmf
 
+BROKEN=		fails to build with xorg 7.5
+
 .if (!defined(DISPLAY) || ${DISPLAY} == "") && !defined(PACKAGE_BUILDING)
 IGNORE=		Requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X.
 .endif
