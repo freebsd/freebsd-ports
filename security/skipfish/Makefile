@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	skipfish
-PORTVERSION=	1.32b
+PORTVERSION=	1.33b
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -14,6 +14,7 @@ MAINTAINER=	rpsfa@rit.edu
 COMMENT=	A fully automated, active web application security reconnaissance tool
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn
+
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
