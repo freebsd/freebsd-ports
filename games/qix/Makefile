@@ -38,6 +38,8 @@ MAN1=		qix.1
 FONTSDIR=	lib/X11/fonts/local
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+BROKEN=		fails to build with new xorg 7.5
+
 do-configure:
 	@${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile~
 	${SED} -e s:/usr/local:${PREFIX}: -e s:/usr/X11R6:${PREFIX}: \
