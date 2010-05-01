@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	App-cpanminus
-PORTVERSION=	0.9935
+PORTVERSION=	1.0001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ COMMENT=	Perl extension to get, unpack, build and install modules from CPAN
 
 PERL_CONFIGURE=	yes
 
+MAN1=	cpanm.1
 MAN3=	App::cpanminus.3
 
 .include <bsd.port.mk>
