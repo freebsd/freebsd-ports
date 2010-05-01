@@ -1,0 +1,322 @@
+### Eclipse Workspace Patch 1.0
+#P eclipse-build
+Index: generatebuild.xml
+===================================================================
+--- generatebuild.xml	(revision 23733)
++++ generatebuild.xml	(working copy)
+@@ -5,7 +5,7 @@
+ 	<target name="genBuild">
+ 		<echo message="About to generate source bundles and build.xml files" />
+ 		<eclipse.buildScript elements="feature@${featureToBuild}"
+-		                     configInfo="linux,gtk,${buildArch}"
++		                     configInfo="${buildOs},gtk,${buildArch}"
+ 		                     buildingosgi="true"
+ 		                     recursivegeneration="true"
+ 							 builddirectory="${buildDirectory}"
+Index: build.xml
+===================================================================
+--- build.xml	(revision 23733)
++++ build.xml	(working copy)
+@@ -88,6 +88,7 @@
+ 		<ant inheritall="false" antfile="pdebuild.xml">
+ 			<property name="buildId" value="${buildId}" />
+ 			<property name="buildArch" value="${buildArch}" />
++			<property name="buildOs" value="${buildOs}" />
+ 		</ant>
+ 	</target>
+ 
+@@ -264,7 +265,10 @@
+ 		<!-- end back-ported patches -->
+ 		<!-- Only build for one target (bug #293952) -->
+ 		<copy file="${buildConfigs}/eclipse-build-config/build.properties.in" tofile="${buildConfigs}/eclipse-build-config/build.properties" />
+-		<replace file="${buildConfigs}/eclipse-build-config/build.properties" token="@build_arch@" value="${buildArch}" />
++		<replace file="${buildConfigs}/eclipse-build-config/build.properties">
++			<replacefilter token="@build_arch@" value="${buildArch}" />
++			<replacefilter token="@build_os@" value="${buildOs}" />
++		</replace>
+ 		<echo file="patch-stamp" />
+ 	</target>
+ 
+@@ -350,6 +354,7 @@
+ 		<!--
+ 		<ant antfile="build.xml" dir="${eclipse.pdebuild.scripts}">
+ 			<property name="arch" value="${buildArch}"/>
++			<property os="os" value="${buildOs}"/>
+ 			<property name="builder" value="${buildConfig}" />
+ 		</ant>
+ -->
+@@ -404,9 +409,9 @@
+ 
+ 	<target name="compile.libgnomeproxy" if="build.libgnomeproxy">
+ 		<!-- build libgnomeproxy -->
+-		<exec dir="${buildDirectory}/plugins/org.eclipse.core.net/natives/unix/linux" executable="make" failonerror="true" />
+-		<copy file="${buildDirectory}/plugins/org.eclipse.core.net/natives/unix/linux/libgnomeproxy-1.0.0.so" todir="${buildDirectory}/plugins/org.eclipse.core.net.linux.${buildArch}/" />
+-		<move file="${buildDirectory}/plugins/org.eclipse.core.net/natives/unix/linux/libgnomeproxy-1.0.0.so" todir="${buildDirectory}/plugins/org.eclipse.core.net/fragments/org.eclipse.core.net.linux.${buildArch}/" />
++		<exec dir="${buildDirectory}/plugins/org.eclipse.core.net/natives/unix/${buildOs}" executable="make" failonerror="true" />
++		<copy file="${buildDirectory}/plugins/org.eclipse.core.net/natives/unix/${buildOs}/libgnomeproxy-1.0.0.so" todir="${buildDirectory}/plugins/org.eclipse.core.net.${buildOs}.${buildArch}/" />
++		<move file="${buildDirectory}/plugins/org.eclipse.core.net/natives/unix/${buildOs}/libgnomeproxy-1.0.0.so" todir="${buildDirectory}/plugins/org.eclipse.core.net/fragments/org.eclipse.core.net.${buildOs}.${buildArch}/" />
+ 	</target>
+ 
+ 	<target name="compilelibs" unless="compilelibs.complete">
+@@ -418,16 +423,16 @@
+ 				<include name="**/*.so" />
+ 			</fileset>
+ 		</delete>
+-		<ant antfile="build.xml" target="build.nativeLibraries" dir="${buildDirectory}/plugins/org.eclipse.swt.gtk.linux.${buildArch}" />
++		<ant antfile="build.xml" target="build.nativeLibraries" dir="${buildDirectory}/plugins/org.eclipse.swt.gtk.${buildOs}.${buildArch}" />
+ 
+ 		<property name="launcherlibs" value="${buildDirectory}/features/org.eclipse.equinox.executable" />
+ 		<exec dir="${launcherlibs}/library/gtk/" executable="sh" failonerror="true">
+ 			<arg line="build.sh" />
+ 		</exec>
+ 
+-		<property name="launcherfragment" value="org.eclipse.equinox.launcher.gtk.linux.${buildArch}" />
++		<property name="launcherfragment" value="org.eclipse.equinox.launcher.gtk.${buildOs}.${buildArch}" />
+ 
+-		<copy file="${launcherlibs}/library/gtk/eclipse" todir="${buildDirectory}/features/org.eclipse.equinox.executable/bin/gtk/linux/${buildArch}/" />
++		<copy file="${launcherlibs}/library/gtk/eclipse" todir="${buildDirectory}/features/org.eclipse.equinox.executable/bin/gtk/${buildOs}/${buildArch}/" />
+ 		<copy todir="${buildDirectory}/plugins/${launcherfragment}">
+ 			<fileset dir="${launcherlibs}/library/gtk">
+ 				<include name="**/*.so" />
+@@ -435,13 +440,13 @@
+ 		</copy>
+ 
+ 		<!-- build liblocalfile -->
+-		<exec dir="${buildDirectory}/plugins/org.eclipse.core.filesystem/natives/unix/linux" executable="make" failonerror="true" />
+-		<move file="${buildDirectory}/plugins/org.eclipse.core.filesystem/natives/unix/linux/liblocalfile_1_0_0.so" todir="${buildDirectory}/plugins/org.eclipse.core.filesystem.linux.${buildArch}/os/linux/${buildArch}">
++		<exec dir="${buildDirectory}/plugins/org.eclipse.core.filesystem/natives/unix/${buildOs}" executable="make" failonerror="true" />
++		<move file="${buildDirectory}/plugins/org.eclipse.core.filesystem/natives/unix/${buildOs}/liblocalfile_1_0_0.so" todir="${buildDirectory}/plugins/org.eclipse.core.filesystem.${buildOs}.${buildArch}/os/${buildOs}/${buildArch}">
+ 		</move>
+ 		<!-- build libgnomeproxy -->
+ 		<antcall target="compile.libgnomeproxy" />
+ 		<!-- build libupdate -->
+-		<ant dir="${buildDirectory}/plugins/org.eclipse.update.core.linux/src" antfile="build.xml" />
++		<ant dir="${buildDirectory}/plugins/org.eclipse.update.core.${buildOs}/src" antfile="build.xml" />
+ 
+ 		<echo file="compilelibs-stamp" />
+ 	</target>
+@@ -544,7 +549,7 @@
+ 			<arg line="-application org.eclipse.ant.core.antRunner " />
+ 			<arg line="-buildfile buildConfiguration.xml" />
+ 			<arg line="-propertyfile ${basedir}/build.properties " />
+-			<arg line="-Dconfigs=linux,gtk,${buildArch} " />
++			<arg line="-Dconfigs=${buildOs},gtk,${buildArch} " />
+ 			<arg line="-Dreposource=${reposource} " />
+ 			<arg line="-Dbasedir=${productFiles}/rcpConfig" />
+ 			<arg line="-DbuildId=${buildId} " />
+@@ -570,6 +575,7 @@
+ 			<arg line="-buildfile publishProduct.xml" />
+ 			<arg line="-propertyfile ${basedir}/build.properties " />
+ 			<arg line="-DbuildArch=${buildArch} " />
++			<arg line="-DbuildOs=${buildOs} " />
+ 			<arg line="-Dreposource=${reposource} " />
+ 			<arg line="-DbuildConfig=${buildConfig} " />
+ 			<arg line="-DproductFiles=${productFiles} " />
+@@ -587,7 +593,7 @@
+ 			<param name="p2.director.profile" value="SDKProfile" />
+ 			<param name="p2.director.install.path" value="${buildDirectory}/installation" />
+ 			<param name="p2.director.extraArgs" value="-profileProperties org.eclipse.update.install.features=true" />
+-			<param name="p2.os" value="linux" />
++			<param name="p2.os" value="${buildOs}" />
+ 			<param name="p2.ws" value="gtk" />
+ 			<param name="p2.arch" value="${buildArch}" />
+ 			<param name="p2.repo" value="${reposource}" />
+@@ -647,6 +653,8 @@
+ 		<chmod perm="ugo+rx" file="${basedir}/runtests.sh" />
+ 		<exec executable="${basedir}/runtests.sh" dir="${basedir}">
+ 			<arg value="-t${timestamp}" />
++			<arg value="-a${buildArch}" />
++			<arg value="-o${buildOs}" />
+ 		</exec>
+ 		<property name="testResultDir" value="${basedir}/tests_${timestamp}/results" />
+ 		<!-- Copy over the XML to generate a top-level report for all of the tests -->
+@@ -772,7 +780,7 @@
+ 		<property name="startupjarpath" refid="startupjar" />
+ 		<symlink link="${destDir}/${prefix}/${libDir}/eclipse/startup.jar" resource="plugins/${startupjarpath}" />
+ 		<!-- Create the "swt.jar" and friends symlinks  -->
+-		<fileset dir="${destDir}/${prefix}/${libDir}/eclipse/plugins" includes="org.eclipse.swt.gtk.linux.${buildArch}_*" id="swtjar" />
++		<fileset dir="${destDir}/${prefix}/${libDir}/eclipse/plugins" includes="org.eclipse.swt.gtk.${buildOs}.${buildArch}_*" id="swtjar" />
+ 		<property name="swtjarpath" refid="swtjar" />
+ 		<symlink link="${destDir}/${prefix}/${libDir}/eclipse/swt-gtk-3.5.2.jar" resource="plugins/${swtjarpath}" />
+ 		<symlink link="${destDir}/${prefix}/${libDir}/eclipse/swt-gtk.jar" resource="plugins/${swtjarpath}" />
+Index: pdebuild.xml
+===================================================================
+--- pdebuild.xml	(revision 23733)
++++ pdebuild.xml	(working copy)
+@@ -78,7 +78,7 @@
+ 		<file name="org.eclipse.help.base" />
+ 	</filelist>
+ 	<filelist id="depsDirs2" dir="${sdkSource}/plugins">
+-		<file name="org.eclipse.swt.gtk.linux.${buildArch}" />
++		<file name="org.eclipse.swt.gtk.${buildOs}.${buildArch}" />
+ 		<file name="org.eclipse.core.filesystem" />
+ 		<file name="org.eclipse.core.resources" />
+ 		<file name="org.eclipse.core.commands" />
+@@ -164,12 +164,14 @@
+ 		<subant>
+ 			<property name="buildId" value="${buildId}" />
+ 			<property name="buildArch" value="${buildArch}" />
++			<property name="buildOs" value="${buildOs}" />
+ 			<property file="pdebuild.properties" />
+ 			<filelist refid="depsDirs" />
+ 		</subant>
+ 		<subant>
+ 			<property name="buildId" value="${buildId}" />
+ 			<property name="buildArch" value="${buildArch}" />
++			<property name="buildOs" value="${buildOs}" />
+ 			<property file="pdebuild.properties" />
+ 			<filelist refid="helpDirs" />
+ 		</subant>
+@@ -195,6 +197,7 @@
+ 			<arg line="-application org.eclipse.ant.core.antRunner " />
+ 			<arg line="-buildfile ../pdebuild.xml generateScripts2" />
+ 			<arg line="-DbuildArch=${buildArch} " />
++			<arg line="-DbuildOs=${buildOs} " />
+ 			<arg line="-DbuildId=${buildId} " />
+ 			<arg line="-debug -consolelog " />
+ 		</java>
+Index: publishProduct.xml
+===================================================================
+--- publishProduct.xml	(revision 23733)
++++ publishProduct.xml	(working copy)
+@@ -2,7 +2,7 @@
+ 	<target name="publish">
+ 	        <echo message="Calling p2.publish.product with repository=${reposource} and productFile=${productFiles}/sdk/sdk.product"/>
+ 		<p2.publish.product flavor="tooling" repository="file:${reposource}" productFile="${productFiles}/sdk/sdk.product" compress="true">
+-			<config os="linux" ws="gtk" arch="${buildArch}" />
++			<config os="${buildOs}" ws="gtk" arch="${buildArch}" />
+ 			<advice kind="featureVersions" file="${buildDirectory}/finalFeaturesVersions.properties" />
+ 			<advice kind="pluginVersions" file="${buildDirectory}/finalPluginsVersions.properties" />
+ 		</p2.publish.product>
+Index: runtests.sh
+===================================================================
+--- runtests.sh	(revision 23733)
++++ runtests.sh	(working copy)
+@@ -14,6 +14,8 @@
+    -g      Don't run the tests headless
+    -d      Allow remote connection to test runs' JVM
+    -t      Timestamp string with which to tag the results
++   -a      Architecture to run the tests on
++   -o      OS to run the tests on
+ _EOF_
+ }
+ 
+@@ -72,6 +74,7 @@
+ 	# Defaults
+ 	debugTests=0
+ 	headless=1
++	buildOs=linux
+ 	testFramework=org.eclipse.test_3.2.0
+ 	if [ -z ${timestamp} ]; then
+ 		timestamp=$(date "+%Y%m%d%H%M%S")
+@@ -116,21 +119,16 @@
+ 	if [ ${headless} == 1 ]; then
+ 		# Try to find Xvnc
+ 		xvnc=
+-		if [ -a /usr/bin/Xvnc ]
+-		then
+-			xvnc=/usr/bin/Xvnc
+-			setupXvnc
+-		else
+-			if [ -a /usr/X11/bin/Xvnc ]
+-			then
+-				xvnc=/usr/X11/bin/Xvnc
++		for _xvnc in /usr/bin/Xvnc /usr/X11/bin/Xvnc /usr/local/bin/Xvnc; do
++			if [ -a $_xvnc ]; then
++				xvnc=$_xvnc
+ 				setupXvnc
+-			else
+-				echo "Couldn't find Xvnc (/usr/bin/Xvnc or /usr/X11/bin/Xvnc).  Using DISPLAY=0:0"
+-				DISPLAY=`$HOST`:0.0
++				break
+ 			fi
++		done
++		if [ "x$xvnc" = "x" ]; then
++			echo "Couldn't find Xvnc. Using default DISPLAY from environment"
+ 		fi
+-		export DISPLAY
+ 	fi
+ }
+ 
+@@ -139,9 +137,11 @@
+ 	port=`expr '(' $RANDOM '*' 9 / 32767 ')' + 58`
+ 	echo localhost > Xvnc.cfg
+ 	echo "Setting up Xvnc on port ${port} with password VNCpassword1"
+-	$xvnc :$port -screen 1 1024x768x32 -auth Xvnc.cfg -localhost -PasswordFile eclipse-tests-vncpwd &> Xvnc.log &
++	$xvnc :$port -geometry 1024x768 -depth 24 -auth Xvnc.cfg -localhost -rfbauth eclipse-tests-vncpwd &> Xvnc.log &
+ 	Xvncpid=$!
+-	DISPLAY=`$HOST`:$port
++	DISPLAY=$HOST:$port
++	export DISPLAY
++	
+ }
+ 
+ function setArch() {
+@@ -160,13 +160,15 @@
+ 	    		arch=ia64 ;;
+ 	    	ppc)
+ 	    		arch=ppc ;;
+-	    	x86_64)
++	    	x86_64|amd64)
+ 	    		arch=x86_64 ;;
+ 	    	*)
+ 	    		echo "Unrecognized architecture:  $arch" 1>&2
+ 	    		exit 1 ;;
+ 	    esac
+ 		echo >&2 "Architecture not specified.  Assuming host architecture: $arch"
++	else
++		arch=$buildArch
+ 	fi
+ }
+ 
+@@ -177,7 +179,7 @@
+ 	-application org.eclipse.ant.core.antRunner \
+ 	-file $testDriver \
+ 	-Declipse-home=${eclipseHome} \
+-	-Dos=linux \
++	-Dos=${buildOs} \
+ 	-Dws=gtk \
+ 	-Darch=${arch} \
+ 	-Dlibrary-file=$libraryXml \
+@@ -185,7 +187,7 @@
+ 	-logger org.apache.tools.ant.DefaultLogger \
+ 	-vmargs \
+ 	-Duser.home=${homedir} \
+-	-Dosgi.os=linux \
++	-Dosgi.os=${buildOs} \
+ 	-Dosgi.ws=gtk \
+ 	-Dosgi.arch=${arch}
+ }
+@@ -288,7 +290,7 @@
+ }
+ 
+ # Command-line arguments
+-while getopts "de:gt:h" OPTION
++while getopts "de:gt:a:o:h" OPTION
+ do
+      case $OPTION in
+          d)
+@@ -300,6 +302,12 @@
+          t)
+              timestamp=$OPTARG
+              ;;
++         a)
++             buildArch=$OPTARG
++             ;;
++         o)
++             buildOs=$OPTARG
++             ;;
+          h)
+              usage
+              exit 1
+Index: build.sh
+===================================================================
+--- build.sh	(revision 23733)
++++ build.sh	(working copy)
+@@ -38,5 +38,5 @@
+ esac
+ DATE=`date +%Y%m%d%H%M%S`
+ 
+-ant -DbuildArch=${arch} 2>&1 | tee build_${DATE}.log
++ant -DbuildArch=${arch} -DbuildOs=linux 2>&1 | tee build_${DATE}.log
+ echo "Build log is available in build_${DATE}.log"
