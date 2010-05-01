@@ -4368,3 +4368,4 @@ math/libgmp4|math/gmp|2010-04-19|Switch to newer performance release
 irc/dircproxy-devel||2010-04-19|Removed
 security/krb5-17||2010-04-25|deleted: no longer builds with new OpenSSL 1.0. secuirity/krb5 now contains 1.8.1.
 www/blogd|www/ephemera|2010-04-26|Port renamed
+net-p2p/qbittorrent|net-p2p/qbittorrent-22|2010-05-01|Old version no longer updated
