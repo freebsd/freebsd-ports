@@ -103,7 +103,6 @@
     SUBDIR += py-py2play
     SUBDIR += py-vertex
     SUBDIR += pyslsk
-    SUBDIR += qbittorrent
     SUBDIR += qbittorrent-22
     SUBDIR += qtella
     SUBDIR += qtorrent
