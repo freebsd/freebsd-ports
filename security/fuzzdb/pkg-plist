@@ -95,16 +95,48 @@
 %%DATADIR%%/discovery/win/interesting-files-microsoft-iis.txt
 %%DATADIR%%/discovery/win/interesting-files-microsoft-sharepoint.txt
 %%DATADIR%%/discovery/win/interesting-files-netware.txt
-%%DATADIR%%/web-backdoors/wbc-v1b/cfexec.cfm
-%%DATADIR%%/web-backdoors/wbc-v1b/cmd-asp-5.1.asp
-%%DATADIR%%/web-backdoors/wbc-v1b/cmdasp.asp
-%%DATADIR%%/web-backdoors/wbc-v1b/cmdasp.aspx
-%%DATADIR%%/web-backdoors/wbc-v1b/cmdjsp.jsp
-%%DATADIR%%/web-backdoors/wbc-v1b/jsp-reverse.jsp
-%%DATADIR%%/web-backdoors/wbc-v1b/perlcmd.cgi
-%%DATADIR%%/web-backdoors/wbc-v1b/php-backdoor.php
-%%DATADIR%%/web-backdoors/wbc-v1b/readme.txt
-%%DATADIR%%/web-backdoors/wbc-v1b/simple-backdoor.php
+%%DATADIR%%/web-backdoors/asp/cmd-asp-5.1.asp
+%%DATADIR%%/web-backdoors/asp/cmd.asp
+%%DATADIR%%/web-backdoors/asp/cmd.aspx
+%%DATADIR%%/web-backdoors/asp/cmdasp.asp
+%%DATADIR%%/web-backdoors/asp/cmdasp.aspx
+%%DATADIR%%/web-backdoors/asp/list.asp
+%%DATADIR%%/web-backdoors/asp/list.txt
+%%DATADIR%%/web-backdoors/asp/ntdaddy.asp
+%%DATADIR%%/web-backdoors/asp/up.asp
+%%DATADIR%%/web-backdoors/c/cmd.c
+%%DATADIR%%/web-backdoors/cfm/cfexec.cfm
+%%DATADIR%%/web-backdoors/cfm/cmd.cfm
+%%DATADIR%%/web-backdoors/exe/nc.exe
+%%DATADIR%%/web-backdoors/jsp/CmdServlet.class
+%%DATADIR%%/web-backdoors/jsp/CmdServlet.java
+%%DATADIR%%/web-backdoors/jsp/ListServlet.class
+%%DATADIR%%/web-backdoors/jsp/ListServlet.java
+%%DATADIR%%/web-backdoors/jsp/UpServlet.class
+%%DATADIR%%/web-backdoors/jsp/UpServlet.java
+%%DATADIR%%/web-backdoors/jsp/browser.jsp
+%%DATADIR%%/web-backdoors/jsp/cmd.jsp
+%%DATADIR%%/web-backdoors/jsp/cmdjsp.jsp
+%%DATADIR%%/web-backdoors/jsp/jsp-reverse.jsp
+%%DATADIR%%/web-backdoors/jsp/list.jsp
+%%DATADIR%%/web-backdoors/jsp/up.jsp
+%%DATADIR%%/web-backdoors/jsp/win32/cmd_win32.jsp
+%%DATADIR%%/web-backdoors/jsp/win32/up_win32.jsp
+%%DATADIR%%/web-backdoors/php/cmd.php
+%%DATADIR%%/web-backdoors/php/list.php
+%%DATADIR%%/web-backdoors/php/php-backdoor.php
+%%DATADIR%%/web-backdoors/php/simple-backdoor.php
+%%DATADIR%%/web-backdoors/php/up.php
+%%DATADIR%%/web-backdoors/pl-cgi/cmd.pl
+%%DATADIR%%/web-backdoors/pl-cgi/list.pl
+%%DATADIR%%/web-backdoors/pl-cgi/perlcmd.cgi
+%%DATADIR%%/web-backdoors/pl-cgi/up.pl
+%%DATADIR%%/web-backdoors/servlet/CmdServlet.java
+%%DATADIR%%/web-backdoors/servlet/ListServlet.java
+%%DATADIR%%/web-backdoors/servlet/UpServlet.java
+%%DATADIR%%/web-backdoors/sh/cmd.sh
+%%DATADIR%%/web-backdoors/sh/list.sh
+%%DATADIR%%/web-backdoors/sh/up.sh
 %%DATADIR%%/wordlists-misc/common-http-ports.txt
 %%DATADIR%%/wordlists-misc/us_cities.txt
 %%DATADIR%%/wordlists-misc/wordlist-alphanumeric-case.txt
@@ -143,7 +175,17 @@
 @dirrm %%DATADIR%%/wordlists-user-passwd/db2
 @dirrm %%DATADIR%%/wordlists-user-passwd
 @dirrm %%DATADIR%%/wordlists-misc
-@dirrm %%DATADIR%%/web-backdoors/wbc-v1b
+@dirrm %%DATADIR%%/web-backdoors/sh
+@dirrm %%DATADIR%%/web-backdoors/servlet
+@dirrm %%DATADIR%%/web-backdoors/pl-cgi
+@dirrm %%DATADIR%%/web-backdoors/php
+@dirrm %%DATADIR%%/web-backdoors/jsp/win32
+@dirrm %%DATADIR%%/web-backdoors/jsp
+@dirrm %%DATADIR%%/web-backdoors/exe
+@dirrm %%DATADIR%%/web-backdoors/dll
+@dirrm %%DATADIR%%/web-backdoors/cfm
+@dirrm %%DATADIR%%/web-backdoors/c
+@dirrm %%DATADIR%%/web-backdoors/asp
 @dirrm %%DATADIR%%/web-backdoors
 @dirrm %%DATADIR%%/discovery/win
 @dirrm %%DATADIR%%/discovery/unix

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fuzzdb
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -22,9 +22,6 @@ PORTDIRS=	attack-payloads wordlists-misc discovery \
 		web-backdoors wordlists-user-passwd
 
 .include <bsd.port.pre.mk>
-
-post-extract:
-	@${RM} ${WRKSRC}/wordlists-user-passwd/~
 
 do-install:
 .for dir in ${PORTDIRS}
