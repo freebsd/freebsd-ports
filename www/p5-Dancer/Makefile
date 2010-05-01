@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.175
+PORTVERSION=	1.176
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/S/SU/SUKRIA
+MASTER_SITE_SUBDIR=	../../authors/id/X/XS/XSAWYERX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -28,9 +28,11 @@ MAN1=	dancer.1
 MAN3=	Dancer.3 \
 	Dancer::Config.3 \
 	Dancer::Cookbook.3 \
+	Dancer::Cookie.3 \
 	Dancer::Deployment.3 \
 	Dancer::Engine.3 \
 	Dancer::Error.3 \
+	Dancer::FileUtils.3 \
 	Dancer::HTTP.3 \
 	Dancer::Logger.3 \
 	Dancer::ModuleLoader.3 \
