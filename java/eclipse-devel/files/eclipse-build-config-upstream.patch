@@ -1,0 +1,70 @@
+### Eclipse Workspace Patch 1.0
+#P eclipse-build-config
+Index: build.properties.in
+===================================================================
+--- build.properties.in	(revision 23752)
++++ build.properties.in	(working copy)
+@@ -34,7 +34,7 @@
+ collPlace=eclipse
+ collBase=.
+ configs=\
+-	linux, gtk, @build_arch@
++	@build_os@, gtk, @build_arch@
+ 
+ archivesFormat =group,group,group-zip
+ javacFailOnError=false
+Index: productFiles/rcpConfig/build.properties
+===================================================================
+--- productFiles/rcpConfig/build.properties	(revision 23752)
++++ productFiles/rcpConfig/build.properties	(working copy)
+@@ -65,8 +65,8 @@
+ root.macosx.cocoa.x86_64.folder.Eclipse.app/Contents=absolute:file:${buildDirectory}/features/org.eclipse.equinox.executable/bin/cocoa/macosx/x86_64/Eclipse.app/Contents/Info.plist
+ root.macosx.cocoa.x86_64.permissions.755=Eclipse.app/Contents/MacOS/eclipse,Eclipse.app/Contents/MacOS/java_swt
+ 
+-
+-
+-
+-
++root.freebsd.gtk.x86=absolute:${buildDirectory}/features/org.eclipse.platform/about_files/freebsd.gtk.x86,absolute:${buildDirectory}/features/org.eclipse.equinox.executable/bin/gtk/freebsd/x86
++root.freebsd.gtk.x86.permissions.755=*.so*
++root.freebsd.gtk.x86_64=absolute:${buildDirectory}/features/org.eclipse.platform/about_files/freebsd.gtk.x86_64,absolute:${buildDirectory}/features/org.eclipse.equinox.executable/bin/gtk/freebsd/x86_64
++root.freebsd.gtk.x86_64.permissions.755=*.so*
+ 
+Index: customTargets.xml
+===================================================================
+--- customTargets.xml	(revision 23752)
++++ customTargets.xml	(working copy)
+@@ -129,6 +129,24 @@
+ 		<copy todir="${linux.gtk.ppc64.rootfiles}">
+ 			<fileset dir="${buildDirectory}/plugins/org.eclipse.swt.gtk.linux.ppc64" includes="about_files/**" />
+ 		</copy>
++
++		<!--copy freebsd gtk x86 about_files to in temp location where it will be copied into root of eclipse at assembly time-->
++		<property name="freebsd.gtk.x86.rootfiles" value="${buildDirectory}/features/org.eclipse.platform/about_files/freebsd.gtk.x86" />
++		<mkdir dir="${freebsd.gtk.x86.rootfiles}" />
++		<copy tofile="${freebsd.gtk.x86.rootfiles}/about.html" file="${buildDirectory}/plugins/org.eclipse.swt.gtk.freebsd.x86/about.html" />
++
++		<copy todir="${freebsd.gtk.x86.rootfiles}">
++			<fileset dir="${buildDirectory}/plugins/org.eclipse.swt.gtk.freebsd.x86" includes="about_files/**" />
++		</copy>
++
++		<!--copy freebsd gtk x86_64 about_files to in temp location where it will be copied into root of eclipse at assembly time-->
++		<property name="freebsd.gtk.x86_64.rootfiles" value="${buildDirectory}/features/org.eclipse.platform/about_files/freebsd.gtk.x86_64" />
++		<mkdir dir="${freebsd.gtk.x86_64.rootfiles}" />
++		<copy tofile="${freebsd.gtk.x86_64.rootfiles}/about.html" file="${buildDirectory}/plugins/org.eclipse.swt.gtk.freebsd.x86_64/about.html" />
++
++		<copy todir="${freebsd.gtk.x86_64.rootfiles}">
++			<fileset dir="${buildDirectory}/plugins/org.eclipse.swt.gtk.freebsd.x86_64" includes="about_files/**" />
++		</copy>
+ 	</target>
+ 
+ 	<!-- ===================================================================== -->
+@@ -201,7 +219,7 @@
+ 	<!-- ===================================================================== -->
+ 	<target name="postPackage">
+ 		<exec executable="zip" dir="${buildDirectory}/${buildLabel}">
+-			<arg line="-d ${archiveName} win32** wce** linux** solaris** aix** hpux** macosx** qnx**" />
++			<arg line="-d ${archiveName} win32** wce** linux** solaris** aix** hpux** macosx** qnx** freebsd**" />
+ 		</exec>
+ 		<exec dir="${buildDirectory}/buildRepo" executable="zip">
+ 			<arg line="-r ${archiveFullPath} ." />
