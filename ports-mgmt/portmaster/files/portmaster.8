@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd April 9, 2010
+.Dd May 1, 2010
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -41,7 +41,7 @@ Common Flags:
 .Op Fl -delete-packages
 .Op Fl -no-confirm
 .Op Fl -no-term-title
-.Op --index|--index-only
+.Op --index|--index-first|--index-only
 .Op Fl m Ar arguments for make
 .Op Fl x Ar glob pattern to exclude from building
 .Nm
@@ -433,7 +433,9 @@ be installed and/or updated before proceeding
 .It Fl -no-term-title
 do not update the xterm title bar
 .It Fl -index
-use INDEX-[6-9] to check if a port is out of date
+use INDEX-[6-9] exclusively to check if a port is up to date
+.It Fl -index-first
+use the INDEX for status, but double-check with the port
 .It Fl -index-only
 do not try to use
 .Pa /usr/ports .
@@ -658,8 +660,12 @@ along with their related options.
 # Do not update the xterm title bar (--no-term-title)
 # PM_NO_TERM_TITLE=pm_no_term_title
 #
-# Use the INDEX file to check if a port is out of date (--index)
+# Use only the INDEX file to check if a port is out of date (--index)
 # PM_INDEX=pm_index
+#
+# Use the INDEX file first, then check /usr/ports (--index-first)
+# PM_INDEX=pm_index
+# PM_INDEX_FIRST=pm_index_first
 #
 # Use the INDEX file instead of /usr/ports (--index-only)
 # PM_INDEX=pm_index

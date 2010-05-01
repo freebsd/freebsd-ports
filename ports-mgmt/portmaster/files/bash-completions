@@ -11,7 +11,7 @@ _portmaster () {
 		--check-port-dbdir --list-origins --packages --packages-only \
 		--packages-build --packages-if-newer --delete-build-only \
 		--always-fetch --local-packagedir= --packages-delete \
-		--no-confirm --no-term-title --index --index-only \
+		--no-confirm --no-term-title --index --index-first --index-only \
 		--help --version' -- $cur ) )
 		;;
 	*)	COMPREPLY=( $( compgen -d /var/db/pkg/$cur ) )
