@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fuzzdb
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ MAINTAINER=	niels@FreeBSD.org
 COMMENT=	A comprehensive set of fuzzing patterns
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-read-only
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude .svn
 PORTDOCS=	_copyright.txt _readme.txt
 PORTDIRS=	attack-payloads wordlists-misc discovery \

@@ -39,17 +39,21 @@
 %%DATADIR%%/attack-payloads/rfi/rfi-cheatsheet.html
 %%DATADIR%%/attack-payloads/rfi/rfi.txt
 %%DATADIR%%/attack-payloads/server-side-include/server-side-includes-generic.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect-generic/sql-injection-active.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect-generic/sql-injection-passive.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect-generic/sql-injection.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect-ms-sql/sql-injection-ms-sql-blind-ninja.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect-ms-sql/sql-injection-ms-sql.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect-mysql/sql-injection-mysql-ms-sql.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect-mysql/sql-injection-mysql.txt
-%%DATADIR%%/attack-payloads/sql-injection/detect-oracle/sql-injection-oracle.txt
-%%DATADIR%%/attack-payloads/sql-injection/docs.oracle_cheat.pdf
-%%DATADIR%%/attack-payloads/sql-injection/docs.sql_injection_cheatsheet.html
-%%DATADIR%%/attack-payloads/sql-injection/exploit/sql-injection-login-bypass-generic.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/generic/sql-injection-active.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/generic/sql-injection-passive.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/generic/sql-injection.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/ms-sql/sql-injection-ms-sql-blind-ninja.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/ms-sql/sql-injection-ms-sql.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/mysql/sql-injection-mysql-ms-sql.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/mysql/sql-injection-mysql.txt
+%%DATADIR%%/attack-payloads/sql-injection/detect/oracle/docs/docs.oracle_cheat.pdf
+%%DATADIR%%/attack-payloads/sql-injection/detect/oracle/docs/docs.sql_injection_cheatsheet.html
+%%DATADIR%%/attack-payloads/sql-injection/detect/oracle/sql-injection-oracle.txt
+%%DATADIR%%/attack-payloads/sql-injection/exploit/db2-enumeration.txt
+%%DATADIR%%/attack-payloads/sql-injection/exploit/ms-sql-enumeration.txt
+%%DATADIR%%/attack-payloads/sql-injection/exploit/mysql-injection-login-bypass.txt
+%%DATADIR%%/attack-payloads/sql-injection/exploit/mysql-read-local-files.txt
+%%DATADIR%%/attack-payloads/sql-injection/exploit/postgres-enumeration.txt
 %%DATADIR%%/attack-payloads/xml/xml-attacks.txt
 %%DATADIR%%/attack-payloads/xpath/xpath-injection.txt
 %%DATADIR%%/attack-payloads/xss/docs.wasc-scriptmapping/ScriptMapping_Release_26Nov2007.html
@@ -80,8 +84,10 @@
 %%DATADIR%%/discovery/generic/interesting-files-apache.txt
 %%DATADIR%%/discovery/generic/interesting-files-coldfusion.txt
 %%DATADIR%%/discovery/generic/interesting-files-hyperion.txt
+%%DATADIR%%/discovery/generic/interesting-files-logins.txt
 %%DATADIR%%/discovery/generic/interesting-files-lotus-notes.txt
 %%DATADIR%%/discovery/generic/interesting-files-oracle-application-server.txt
+%%DATADIR%%/discovery/generic/interesting-files-passwords.txt
 %%DATADIR%%/discovery/generic/interesting-files-random.txt
 %%DATADIR%%/discovery/generic/interesting-files-websphere.txt
 %%DATADIR%%/discovery/generic/php-common-backdoors.txt
@@ -201,10 +207,15 @@
 @dirrm %%DATADIR%%/attack-payloads/xpath
 @dirrm %%DATADIR%%/attack-payloads/xml
 @dirrm %%DATADIR%%/attack-payloads/sql-injection/exploit
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect-oracle
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect-mysql
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect-ms-sql
-@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect-generic
+@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/oracle/docs
+@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/oracle
+@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/mysql/docs
+@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/mysql
+@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/ms-sql/docs
+@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/ms-sql
+@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/generic/docs
+@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect/generic
+@dirrm %%DATADIR%%/attack-payloads/sql-injection/detect
 @dirrm %%DATADIR%%/attack-payloads/sql-injection
 @dirrm %%DATADIR%%/attack-payloads/server-side-include
 @dirrm %%DATADIR%%/attack-payloads/rfi
