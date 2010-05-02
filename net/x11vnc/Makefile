@@ -6,20 +6,24 @@
 #
 
 PORTNAME=	x11vnc
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.9
 CATEGORIES=	net
 MASTER_SITES=	SF/libvncserver/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	VNC server for use with real X displays
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		dbus:${PORTSDIR}/devel/dbus \
-		avahi-common.3:${PORTSDIR}/net/avahi-app
+		xcb:${PORTSDIR}/x11/libxcb \
+		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
+		avahi-common:${PORTSDIR}/net/avahi-app
 
 USE_GNOME=	gnometarget
 USE_XORG=	x11 xdamage xfixes xrandr xinerama xext xtst xau xrender xdmcp recordproto
+
+        libpthread-stubs.so.0 => /usr/local/lib/libpthread-stubs.so.0 (0x28670000)
+
 # Sets LDFLAGS and adds to CONFIGURE_ENV, therefore we set LDFLAGS
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_OPENSSL=	yes
