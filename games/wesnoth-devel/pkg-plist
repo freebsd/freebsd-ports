@@ -1025,6 +1025,52 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-anl.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-aoi.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-low.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-test.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-anl.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-aoi.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-low.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-test.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-did.mo
@@ -1271,6 +1317,10 @@ share/pixmaps/wesnoth-icon.png
 @dirrmtry man/sl
 @dirrmtry man/sr/man6
 @dirrmtry man/sr
+@dirrmtry man/sr@ijekavian/man6
+@dirrmtry man/sr@ijekavian
+@dirrmtry man/sr@ijekavianlatin/man6
+@dirrmtry man/sr@ijekavianlatin
 @dirrmtry man/sr@latin/man6
 @dirrmtry man/sr@latin
 @dirrmtry man/sv/man6
@@ -1300,6 +1350,10 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%@dirrmtry share/locale/nb_NO
 %%NLS%%@dirrmtry share/locale/racv/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/racv
+%%NLS%%@dirrmtry share/locale/sr@ijekavian/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@ijekavian
+%%NLS%%@dirrmtry share/locale/sr@ijekavianlatin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@ijekavianlatin
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
 %%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
