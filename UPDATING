@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100502:
+  AFFECTS: users of www/squid*
+  AUTHOR: miwi@FreeBSD.org
+
+  Starting with squid* the directory containing the default cache and log
+  directory was changed from $PREFIX/squid/ to /var/squid/.
+
+  The default value for the following Squid configuration parameters
+  have changed as follows:
+
+  cache_log from $PREFIX/squid/logs/cache.log to /var/squid/logs/cache.log
+
+  cache_store_log from $PREFIX/squid/logs/store.log to /var/squid/logs/store.log
+
+  pid_filename from $PREFIX/squid/logs/squid.pid to /var/squid/logs/squid.pid
+
+  coredump_dir from $PREFIX/squid/cache to /var/squid/cache
+
+  Please check whether you need to define any of these variables in
+  your squid.conf to the old defaults explicitly before updating,
+  especially if you have set up automated log processing or automated
+  log rotation. If you define pid_filename in your squid.conf you
+  should also set squid_pidfile to the same value in /etc/rc.conf,
+  cf. $PREFIX/etc/rc.d/squid.
+
 20100419:
   AFFECTS: users of math/libgmp4
   AUTHOR: ale@FreeBSD.org
