@@ -1,6 +1,0 @@
-MD5 (postfix/postfix-2.3.19.tar.gz) = 723b6ef1c68053f47c9658062c27602b
-SHA256 (postfix/postfix-2.3.19.tar.gz) = 1e761c9ef191e05194fbda0d45920b51bdd8debfcb9348a788d4c69eea29d6c4
-SIZE (postfix/postfix-2.3.19.tar.gz) = 2793398
-MD5 (postfix/postfix-2.3.7-vda.patch.gz) = 93ad21258bcde55f39792b5b753aed4b
-SHA256 (postfix/postfix-2.3.7-vda.patch.gz) = b353c82ecb2b35a5edba38180b683a4ad08895c94e3def0d1a4eeac58ac91061
-SIZE (postfix/postfix-2.3.7-vda.patch.gz) = 8003

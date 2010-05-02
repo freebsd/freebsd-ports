@@ -1,6 +1,0 @@
-This is a Python module that allows Python programs to use the
-Free Lossless Audio Codec library. This module lets you encode
-or decode FLAC audio files, and edit the metadata (cue sheets
-or Vorbis comments) in them.
-
-WWW: http://sacredchao.net/~piman/software/python.shtml

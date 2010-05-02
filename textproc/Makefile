@@ -265,7 +265,6 @@
     SUBDIR += intltool
     SUBDIR += ipdf
     SUBDIR += is-aspell
-    SUBDIR += isearch
     SUBDIR += iso12083
     SUBDIR += iso8879
     SUBDIR += ispell

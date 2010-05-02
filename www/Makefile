@@ -74,7 +74,6 @@
     SUBDIR += calamaris
     SUBDIR += campsite
     SUBDIR += castget
-    SUBDIR += caudium12
     SUBDIR += caudium14
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
@@ -812,7 +811,6 @@
     SUBDIR += p5-Catalyst-Plugin-C3
     SUBDIR += p5-Catalyst-Plugin-Cache
     SUBDIR += p5-Catalyst-Plugin-Cache-FastMmap
-    SUBDIR += p5-Catalyst-Plugin-Cache-FileCache
     SUBDIR += p5-Catalyst-Plugin-Cache-Memcached
     SUBDIR += p5-Catalyst-Plugin-Cache-Memcached-Fast
     SUBDIR += p5-Catalyst-Plugin-Cache-Store-FastMmap

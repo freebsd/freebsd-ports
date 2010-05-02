@@ -1,9 +1,0 @@
-bin/ezdownload
-bin/ezupload
-bin/aw
-share/usb/firmware/06cd.010b.8001.hex
-share/usb/firmware/0854.0100.0000.hex
-share/usb/firmware/0854.0100.0001.hex
-share/usb/firmware/README
-@dirrm share/usb/firmware
-@dirrm share/usb

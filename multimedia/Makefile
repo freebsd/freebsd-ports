@@ -124,7 +124,6 @@
     SUBDIR += kaffeine-devel
     SUBDIR += kaffeine-mozilla
     SUBDIR += katchtv
-    SUBDIR += kbtv
     SUBDIR += kdemultimedia3
     SUBDIR += kdemultimedia4
     SUBDIR += kdenlive
