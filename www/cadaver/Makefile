@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cadaver
-PORTVERSION=	0.23.2
+PORTVERSION=	0.23.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/ \
 		http://www.tcbug.org/
@@ -14,12 +14,13 @@ MASTER_SITES=	http://www.webdav.org/cadaver/ \
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Commandline client for DAV
 
-LIB_DEPENDS=	neon.28:${PORTSDIR}/www/neon28
+LIB_DEPENDS=	neon:${PORTSDIR}/www/neon29
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-netrc
 ALL_TARGET=	cadaver
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		cadaver.1
 PLIST_FILES=	bin/cadaver
@@ -31,7 +32,9 @@ PLIST_FILES=	bin/cadaver
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - \
 		--exclude '${PORTNAME}-${PORTVERSION}/lib/expat/*.[ch]' \
 		--exclude '${PORTNAME}-${PORTVERSION}/lib/intl/*.[ch]' \
-		--exclude '${PORTNAME}-${PORTVERSION}/lib/neon/*.[ch]'
+		--exclude '${PORTNAME}-${PORTVERSION}/lib/neon/*.[ch]' \
+		--exclude 'glob.[ch]' --exclude 'mkstemp.[ch]'	\
+		--exclude 'tempname.[ch]' --exclude 'basename.[ch]'
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -39,6 +42,12 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .if !defined(WITHOUT_OPENSSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl --with-force-ssl
+post-install:
+	#
+	#
+	@${CAT} ${PKGMESSAGE}
+	#
+	#
 .endif
 
 .if !defined(WITHOUT_NLS)
