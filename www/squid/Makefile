@@ -73,24 +73,25 @@
 #     Enable experimental forward_log directive.
 #    --enable-multicast-miss
 #     Enable experimental multicast notification of cachemisses.
+#
 
 PORTNAME=	squid
 PORTVERSION=	2.7.${SQUID_STABLE_VER}
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
-		ftp://ftp.belnet.be/packages/squid/pub/%SUBDIR%/ \
-		ftp://ftp.nl.uu.net/pub/unix/www/squid/%SUBDIR%/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://ftp.ntua.gr/pub/www/Squid/%SUBDIR%/ \
-		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,} \
+		http://mirrors.ccs.neu.edu/Squid/ \
+		ftp://ftp.fu-berlin.de/unix/www/squid/squid/ \
+		ftp://ftp.nl.uu.net/pub/unix/www/squid/ \
+		ftp://ftp.solnet.ch/mirror/squid/ \
+		ftp://ftp.ntua.gr/pub/www/Squid/squid/ \
+		http://mirror.aarnet.edu.au/pub/squid/squid/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid,} \
 		http://www.squid-cache.org/Versions/v2/2.7/ \
-		http://www3.us.squid-cache.org/Versions/v2/2.7/ \
+		http://www2.us.squid-cache.org/Versions/v2/2.7/ \
 		http://www1.at.squid-cache.org/Versions/v2/2.7/ \
-		http://www2.nl.squid-cache.org/Versions/v2/2.7/ \
-		http://www1.ru.squid-cache.org/Versions/v2/2.7/ \
-		http://www1.uk.squid-cache.org/Versions/v2/2.7/ \
+		http://www2.de.squid-cache.org/Versions/v2/2.7/ \
+		http://www.eu.squid-cache.org/Versions/v2/2.7/ \
+		http://www1.ie.squid-cache.org/Versions/v2/2.7/ \
 		http://www1.jp.squid-cache.org/Versions/v2/2.7/ \
 		http://www2.tw.squid-cache.org/Versions/v2/2.7/
 MASTER_SITE_SUBDIR=	squid
@@ -98,11 +99,11 @@ DISTNAME=	squid-2.7.STABLE${SQUID_STABLE_VER}
 DIST_SUBDIR=	squid2.7
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
-		http://www3.us.squid-cache.org/%SUBDIR%/ \
+		http://www2.us.squid-cache.org/%SUBDIR%/ \
 		http://www1.at.squid-cache.org/%SUBDIR%/ \
-		http://www2.nl.squid-cache.org/%SUBDIR%/ \
-		http://www1.ru.squid-cache.org/%SUBDIR%/ \
-		http://www1.uk.squid-cache.org/%SUBDIR%/ \
+		http://www2.de.squid-cache.org/%SUBDIR%/ \
+		http://www.eu.squid-cache.org/%SUBDIR%/ \
+		http://www1.ie.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.7/changesets
@@ -112,7 +113,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
 
-SQUID_STABLE_VER=	8
+SQUID_STABLE_VER=	9
 
 CONFLICTS=	squid-2.[^7]* squid-3.* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -200,7 +201,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
 		--datadir=${PREFIX}/etc/squid \
 		--libexecdir=${PREFIX}/libexec/squid \
-		--localstatedir=${PREFIX}/squid \
+		--localstatedir=/var/squid \
 		--sysconfdir=${PREFIX}/etc/squid \
 		--enable-removal-policies="lru heap" \
 		--disable-linux-netfilter \
@@ -395,7 +396,7 @@ PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,etc/squid/icons/,} \
 PLIST_DIRS+=	etc/squid/errors/${d}
 PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 .endfor
-PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
+PLIST_DIRS+=	etc/squid/errors etc/squid
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \

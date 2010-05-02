@@ -5,7 +5,7 @@
 
 PATH=/bin:/usr/bin:/usr/sbin
 pkgname=$1
-squid_base="${PKG_PREFIX:-%%PREFIX%%}/squid"
+squid_base="/var/squid"
 squid_confdir="${PKG_PREFIX:-%%PREFIX%%}/etc/squid"
 if [ -x /usr/sbin/nologin ]; then
 	nologin=/usr/sbin/nologin
