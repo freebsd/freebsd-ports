@@ -1,0 +1,59 @@
+bin/drush
+%%DATADIR%%/LICENSE.txt
+%%DATADIR%%/README.txt
+%%DATADIR%%/commands/core/drupal/batch_6.inc
+%%DATADIR%%/commands/core/drupal/batch_7.inc
+%%DATADIR%%/commands/core/drupal/environment_5.inc
+%%DATADIR%%/commands/core/drupal/environment_6.inc
+%%DATADIR%%/commands/core/drupal/environment_7.inc
+%%DATADIR%%/commands/core/drupal/update_5.inc
+%%DATADIR%%/commands/core/drupal/update_6.inc
+%%DATADIR%%/commands/core/drupal/update_7.inc
+%%DATADIR%%/commands/core/clear.cache.inc
+%%DATADIR%%/commands/core/core.drush.inc
+%%DATADIR%%/commands/core/rsync.core.inc
+%%DATADIR%%/commands/core/scratch.php
+%%DATADIR%%/commands/core/search.drush.inc
+%%DATADIR%%/commands/core/site_install.drush.inc
+%%DATADIR%%/commands/core/sitealias.drush.inc
+%%DATADIR%%/commands/core/upgrade.drush.inc
+%%DATADIR%%/commands/core/variable.drush.inc
+%%DATADIR%%/commands/core/watchdog.drush.inc
+%%DATADIR%%/commands/pm/package_handler/wget.inc
+%%DATADIR%%/commands/pm/package_handler/cvs.inc
+%%DATADIR%%/commands/pm/pm.drush.inc
+%%DATADIR%%/commands/pm/updatecode.pm.inc
+%%DATADIR%%/commands/pm/update_info/drupal_5.inc
+%%DATADIR%%/commands/pm/update_info/drupal_6.inc
+%%DATADIR%%/commands/pm/update_info/drupal_7.inc
+%%DATADIR%%/commands/pm/version_control/backup.inc
+%%DATADIR%%/commands/pm/version_control/bzr.inc
+%%DATADIR%%/commands/pm/version_control/svn.inc
+%%DATADIR%%/commands/sql/sql.drush.inc
+%%DATADIR%%/commands/sql/sync.sql.inc
+%%DATADIR%%/drush.api.php
+%%DATADIR%%/drush.info
+%%DATADIR%%/drush.php
+%%DATADIR%%/drush_logo-black.png
+%%DATADIR%%/examples/example.aliases.drushrc.php
+%%DATADIR%%/examples/example.drushrc.php
+%%DATADIR%%/examples/sandwich.drush.inc
+%%DATADIR%%/examples/sandwich.txt
+%%DATADIR%%/includes/backend.inc
+%%DATADIR%%/includes/batch.inc
+%%DATADIR%%/includes/command.inc
+%%DATADIR%%/includes/context.inc
+%%DATADIR%%/includes/drush.inc
+%%DATADIR%%/includes/environment.inc
+%%DATADIR%%/includes/sitealias.inc
+@dirrmtry %%DATADIR%%/includes
+@dirrmtry %%DATADIR%%/examples
+@dirrmtry %%DATADIR%%/commands/sql
+@dirrmtry %%DATADIR%%/commands/pm/version_control
+@dirrmtry %%DATADIR%%/commands/pm/update_info
+@dirrmtry %%DATADIR%%/commands/pm/package_handler
+@dirrmtry %%DATADIR%%/commands/pm
+@dirrmtry %%DATADIR%%/commands/core/drupal
+@dirrmtry %%DATADIR%%/commands/core
+@dirrmtry %%DATADIR%%/commands
+@dirrmtry %%DATADIR%%
