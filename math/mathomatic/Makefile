@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	15.0.7
+PORTVERSION=	15.0.8
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		CRITICAL
@@ -24,8 +24,22 @@ PORTDOCS=	*
 
 MAN1=		mathomatic.1
 
+OPTIONS=	PDF	"Install PDF manual (requires htmldoc)" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PDF)
+BUILD_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc
+.endif
+
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+
+.if defined(WITH_PDF)
+post-build:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} pdf
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mathomatic ${PREFIX}/bin
@@ -46,4 +60,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
