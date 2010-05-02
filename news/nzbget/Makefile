@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nzbget
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
@@ -14,7 +14,7 @@ MAINTAINER=	toxic@doobie.com
 COMMENT=	A binary newsreader supporting NZB files
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		uu.3:${PORTSDIR}/converters/uulib
+		sigc-2:${PORTSDIR}/devel/libsigc++20
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
@@ -23,6 +23,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 USE_GMAKE=	yes
 
 OPTIONS=	PARCHECK "Enable autopar/parcheck (Requires libpar2)" On
+OPTIONS+=	TLSCHECK "Use GNUTLS for SSL" On
+OPTIONS+=	OSSLCHECK "Use OpenSSL for SSL" Off
 
 PLIST_FILES=	bin/nzbget
 PORTDOCS=	README
@@ -35,6 +37,15 @@ CONFIGURE_ARGS+=	--disable-parcheck
 .else
 CONFIGURE_ARGS+=	--enable-parcheck
 LIB_DEPENDS+=	par2:${PORTSDIR}/archivers/libpar2
+.endif
+
+.if defined (WITH_OSSLCHECK)
+CONFIGURE_ARGS+=	--with-tlslib=OpenSSL
+.endif
+
+.if defined (WITH_TLSCHECK)
+CONFIGURE_ARGS+=	--with-tlslib=GnuTLS
+LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif
 
 post-install:
