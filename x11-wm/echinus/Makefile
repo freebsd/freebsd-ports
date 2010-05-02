@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	echinus
-PORTVERSION=	0.3.9
+PORTVERSION=	0.4.3.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.rootshell.be/~polachok/code/
+MASTER_SITES=	http://plhk.ru/static/echinus/
 
 MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	A dynamic window manager for X11 based on dwm
