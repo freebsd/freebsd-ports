@@ -1,0 +1,8 @@
+
+MAWStats has been installed into %%WWWDIR%%
+
+Please make sure AWStats is already installed and working on your server.
+MAWStats will not function without it.
+
+To get started head over to the MAWStats website (http://mawstats.lingnu.com/)
+for details on configuration.
