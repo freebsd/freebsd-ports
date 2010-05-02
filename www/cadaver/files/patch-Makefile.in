@@ -1,0 +1,23 @@
+--- Makefile.in	2008-02-11 05:29:53.000000000 -0500
++++ Makefile.in	2010-04-16 14:31:42.000000000 -0400
+@@ -42,6 +42,6 @@
+ 	 src/cmdline.o src/options.o src/utils.o src/edit.o \
+ 	src/version.o src/search.o 
+-LIBOBJS = lib/basename.o lib/dirname.o lib/rpmatch.o lib/yesno.o	\
+-	lib/glob.o lib/getpass.o lib/tempname.o lib/mkstemp.o \
++LIBOBJS = lib/rpmatch.o lib/yesno.o	\
++	lib/getpass.o \
+ 	@LIBOBJS@
+ ALLOBJS = $(OBJECTS) $(LIBOBJS)
+@@ -92,8 +92,8 @@
+ 	src/options.h src/cmdline.h src/commands.h src/cadaver.h
+ src/options.o: src/options.c config.h src/options.h src/cadaver.h src/common.h 
+-src/cmdline.o: src/cmdline.c src/cmdline.h src/cadaver.h lib/basename.h \
+-	lib/glob.h src/commands.h src/common.h
++src/cmdline.o: src/cmdline.c src/cmdline.h src/cadaver.h \
++	src/commands.h src/common.h
+ src/commands.o: src/commands.c src/commands.h src/cadaver.h \
+-	lib/basename.h src/options.h src/common.h
++	src/options.h src/common.h
+ src/edit.o: src/edit.c src/cadaver.h src/options.h src/common.h
+ src/common.o: src/common.c src/common.h config.h
