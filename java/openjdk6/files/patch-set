@@ -15860,6 +15860,20 @@ diff -uNr ../orig/jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c ./jdk/src/sol
      if (pLibRandR == NULL) {
          J2dRlsTraceLn(J2D_TRACE_ERROR,
                        "X11GD_InitXrandrFuncs: Could not open libXrandr.so.2");
+diff -uNr ../orig/jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.h ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.h
+--- ../orig/jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.h.orig	2009-10-15 04:17:58.000000000 +1100
++++ ./jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.h	2010-04-16 22:34:10.692700677 +1100
+@@ -42,6 +42,10 @@
+ #include <sys/ipc.h>
+ #include <sys/shm.h>
+ #include <X11/extensions/XShm.h>
++#ifndef X_ShmAttach
++#include <X11/Xmd.h>
++#include <X11/extensions/shmproto.h>
++#endif
+ 
+ extern int XShmQueryExtension();
+ 
 diff -uNr ../orig/jdk/src/solaris/native/sun/awt/awt_InputMethod.c ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c
 --- ../orig/jdk/src/solaris/native/sun/awt/awt_InputMethod.c	2009-10-14 10:17:58.000000000 -0700
 +++ ./jdk/src/solaris/native/sun/awt/awt_InputMethod.c	2009-10-28 20:01:48.000000000 -0700
