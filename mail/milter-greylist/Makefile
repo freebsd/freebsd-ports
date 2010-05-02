@@ -95,7 +95,7 @@ do-install:
 
 post-install:
 	@${MKDIR} /var/milter-greylist
-	@${CHOWN} -R mailnull /var/milter-greylist
+	@${CHOWN} -R mailnull:mailnull /var/milter-greylist
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
