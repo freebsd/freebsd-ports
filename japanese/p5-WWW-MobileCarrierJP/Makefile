@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-MobileCarrierJP
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	CPAN
 
@@ -16,6 +16,7 @@ COMMENT=	Scrape Japanese mobile carrier information
 BUILD_DEPENDS=	p5-Moose>=0.60:${PORTSDIR}/devel/p5-Moose \
 		p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
 		p5-HTML-Selector-XPath>=0.03:${PORTSDIR}/www/p5-HTML-Selector-XPath \
+		p5-HTML-TableExtract>=0:${PORTSDIR}/www/p5-HTML-TableExtract \
 		p5-Web-Scraper>=0.24:${PORTSDIR}/www/p5-Web-Scraper \
 		p5-libwww>=5.834:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
