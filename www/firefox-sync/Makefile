@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	weave
-PORTVERSION=	1.1
+PORTVERSION=	1.2.3
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://files.roorback.net/ \
@@ -25,14 +25,15 @@ USE_GMAKE=	yes
 
 .include <bsd.port.options.mk>
 
+REVID=		ad1ede89cbb2
 .if ${ARCH} == i386
 PLATFORM=	FreeBSD_x86-gcc3
 .elif ${ARCH} == amd64
 PLATFORM=	FreeBSD_amd64-gcc3
 .endif
 
-GMAKE_FLAGS=	sdkdir=${PREFIX}/lib/firefox3/sdk rebuild_crypto=1 release_build=1 platform_target=${PLATFORM}
-ALL_TARGET=	${GMAKE_FLAGS} build
+GMAKE_FLAGS=	sdkdir=${PREFIX}/lib/firefox3/sdk release_build=1 platform_target=${PLATFORM} TOPSRCDIR=${WRKSRC}
+ALL_TARGET=	${GMAKE_FLAGS} crypto crypto-obsolete-build build
 INSTALL_TARGET=	${GMAKE_FLAGS} xpi
 
 XPI_ID=		{340c2bbc-ce74-4362-90b5-7c26312808ef}
@@ -41,6 +42,9 @@ XPI_DIR=	${PREFIX}/lib/xpi/${XPI_ID}
 PLIST_SUB+=	XPI_XPIDIR="${XPI_DIR:S,^${PREFIX}/,,}" \
 		XPI_XPIID=${XPI_ID} \
 		PLATFORM=${PLATFORM}
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|\$$(shell hg tip --template '{node\|short}')|${REVID}|g" ${WRKSRC}/Makefile
 
 post-install:
 	${MKDIR} ${XPI_DIR}
