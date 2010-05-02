@@ -1,54 +1,72 @@
---- etc/nagiosgraph.conf.orig	2010-03-05 10:24:25.000000000 +0000
-+++ etc/nagiosgraph.conf	2010-03-05 10:44:53.000000000 +0000
-@@ -8,41 +8,41 @@
+--- etc/nagiosgraph.conf.orig	2010-04-27 08:14:25.000000000 +0000
++++ etc/nagiosgraph.conf	2010-04-27 08:18:16.000000000 +0000
+@@ -8,19 +8,19 @@
  # Author:  (c) 2010 Matthew Wall
  
  # Location of nagiosgraph log file.  Debug output ends up here.
 -logfile = /var/log/nagiosgraph.log
 +logfile = /var/spool/nagios/nagiosgraph.log
  
+ # Optionally keep logging from CGI scripts in a separate file.
+ #cgilogfile = /var/log/nagiosgraph-cgi.log
+ 
  # Location of nagios performance data log file. Comment out if not used.
 -perflog = /var/nagios/perfdata.log
 +perflog = /var/spool/nagios/perfdata.log
  
  # Directory to store rrd database files
--rrddir = /var/nagiosgraph/rrd
-+rrddir = /var/spool/nagios/rrd
+ rrddir = /var/nagiosgraph/rrd
  
  # File containing regular expressions to identify service and perf data
 -mapfile = /etc/nagiosgraph/map
 +mapfile = %%PREFIX%%/etc/nagios/nagiosgraph/map
  
- # Location of showhost control file
--hostdb = /etc/nagiosgraph/hostdb.conf
-+hostdb = %%PREFIX%%/etc/nagios/nagiosgraph/hostdb.conf
- 
- # Location of showservice control file
--servdb = /etc/nagiosgraph/servdb.conf
-+servdb = %%PREFIX%%/etc/nagios/nagiosgraph/servdb.conf
- 
- # Location of showgroup control file
--groupdb = /etc/nagiosgraph/groupdb.conf
-+groupdb = %%PREFIX%%/etc/nagios/nagiosgraph/groupdb.conf
- 
- # File containing data sets that should be selected in service queries.
- #datasetdb = /opt/nagiosgraph/etc/datasetdb.conf
- 
  # Nagiosgraph CGI URL.
--nagiosgraphcgiurl = /nagiosgraph/cgi-bin
-+nagiosgraphcgiurl = /nagios/cgi-bin/nagiosgraph
- 
- # Nagios CGI URL.  If the Nagiosgraph CGI scripts are in a directory other
- # than the Nagios CGI directory, then specify the Nagios CGI URL here.
+ nagiosgraphcgiurl = /nagiosgraph/cgi-bin
+@@ -30,36 +30,36 @@
  #nagioscgiurl = /nagios/cgi-bin
  
  # JavaScript: URL to the nagiosgraph javascript file.
 -javascript = /nagiosgraph/nagiosgraph.js
 +javascript = /nagios/stylesheets/nagiosgraph.js
  
- # Stylesheet: URL to the nagiosgraph stylesheet.  Comment out if not used.
+ # Stylesheet: URL to the nagiosgraph stylesheet.
 -stylesheet = /nagiosgraph/nagiosgraph.css
 +stylesheet = /nagios/stylesheets/nagiosgraph.css
  
+ # File containing labels for services and data (optional)
+-#labelfile = /etc/nagiosgraph/labels.conf
++#labelfile = %%PREFIX%%/etc/nagios/nagiosgraph/labels.conf
  
- # Debug can be enabled for a specific CGI script and/or specific hosts or
+ # Location of showhost control file (optional)
+-#hostdb = /etc/nagiosgraph/hostdb.conf
++#hostdb = %%PREFIX%%/etc/nagios/nagiosgraph/hostdb.conf
+ 
+ # Location of showservice control file (optional)
+-#servdb = /etc/nagiosgraph/servdb.conf
++#servdb = %%PREFIX%%/etc/nagios/nagiosgraph/servdb.conf
+ 
+ # Location of showgroup control file (required for showgroup.cgi)
+-groupdb = /etc/nagiosgraph/groupdb.conf
++groupdb = %%PREFIX%%/etc/nagios/nagiosgraph/groupdb.conf
+ 
+ # File containing data sets that should be selected in queries (optional)
+-#datasetdb = /etc/nagiosgraph/datasetdb.conf
++#datasetdb = %%PREFIX%%/etc/nagios/nagiosgraph/datasetdb.conf
+ 
+ # Access control configuration (optional)
+ # The authorization method can be one of nagios3 or nagiosgraph.  If no
+ # method is defined, access will be granted to all hosts and services.
+ # For access control via nagios, specify the nagios configuration files.
+ #authzmethod = nagios3
+-#authznagios_cfg = /etc/nagios/nagios.cfg
+-#authzcgi_cfg = /etc/nagios/cgi.cfg
++#authznagios_cfg = %%PREFIX%%/etc/nagios/nagios.cfg
++#authzcgi_cfg = %%PREFIX%%/etc/nagios/cgi.cfg
+ # For access control via nagiosgraph, specify a single access control file.
+ #authzmethod = nagiosgraph
+-#authzfile = /etc/nagiosgraph/access.conf
++#authzfile = %%PREFIX%%/etc/nagios/nagiosgraph/access.conf
+ 
+ 
+ # Logging can be enabled for a specific CGI script and/or specific hosts or

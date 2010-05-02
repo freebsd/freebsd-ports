@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nagiosgraph
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -20,11 +19,13 @@ RUN_DEPENDS=	${LOCALBASE}/bin/nagios:${PORTSDIR}/net-mgmt/nagios \
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
-PORTDOCS=	AUTHORS CHANGELOG INSTALL README README.map TODO
+PORTDOCS=	AUTHORS CHANGELOG INSTALL README TODO
 NAGIOSWWWDIR?=	www/nagios
 CGIFILES=	show.cgi showgraph.cgi showhost.cgi showservice.cgi testcolor.cgi showgroup.cgi
 LIBFILES=	insert.pl
-CFGFILES=	nagiosgraph.conf servdb.conf groupdb.conf hostdb.conf map
+CFGFILES=	nagiosgraph.conf nagiosgraph_de.conf nagiosgraph_es.conf nagiosgraph_fr.conf \
+                servdb.conf groupdb.conf hostdb.conf datasetdb.conf map access.conf labels.conf \
+		rrdopts.conf
 
 PLIST_SUB=	NAGIOSWWWDIR=${NAGIOSWWWDIR} PORTNAME=${PORTNAME}
 
@@ -59,7 +60,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cgi/$i ${PREFIX}/${NAGIOSWWWDIR}/cgi-bin/${PORTNAME}/
 .endfor
 
-.for i in share/nagiosgraph.css share/nagiosgraph.js
+.for i in share/nagiosgraph.css share/nagiosgraph.js share/nagiosgraph.ssi
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${NAGIOSWWWDIR}/stylesheets
 .endfor
 
@@ -68,7 +69,7 @@ do-install:
 
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-.for i in utils/authz.pl utils/testentry.pl utils/upgrade.pl
+.for i in utils/testentry.pl utils/upgrade.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/$i ${EXAMPLESDIR}/
 .endfor
 .endif
