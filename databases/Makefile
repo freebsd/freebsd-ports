@@ -193,7 +193,6 @@
     SUBDIR += mysql++1
     SUBDIR += mysql++3
     SUBDIR += mysql-connector-java
-    SUBDIR += mysql-connector-java50
     SUBDIR += mysql-connector-odbc
     SUBDIR += mysql-editor
     SUBDIR += mysql-gui-tools
@@ -331,7 +330,6 @@
     SUBDIR += p5-DBIx-Class-EncodedColumn
     SUBDIR += p5-DBIx-Class-Fixtures
     SUBDIR += p5-DBIx-Class-FrozenColumns
-    SUBDIR += p5-DBIx-Class-HTML-FormFu
     SUBDIR += p5-DBIx-Class-InflateColumn-IP
     SUBDIR += p5-DBIx-Class-IntrospectableM2M
     SUBDIR += p5-DBIx-Class-Loader

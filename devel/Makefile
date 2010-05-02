@@ -2711,7 +2711,6 @@
     SUBDIR += py-qt4-script
     SUBDIR += py-qt4-scripttools
     SUBDIR += py-qt4-test
-    SUBDIR += py-rbtree
     SUBDIR += py-repl
     SUBDIR += py-repoze.tm2
     SUBDIR += py-repoze.what
@@ -3105,7 +3104,6 @@
     SUBDIR += ta-lib
     SUBDIR += tailor
     SUBDIR += talloc
-    SUBDIR += tavrasm
     SUBDIR += tbb
     SUBDIR += tcl-memchan
     SUBDIR += tcl-neo

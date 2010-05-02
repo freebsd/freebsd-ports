@@ -1,4 +1,0 @@
-%%SITE_PERL%%/Catalyst/Plugin/Cache/FileCache.pm
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Cache
-@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/Catalyst

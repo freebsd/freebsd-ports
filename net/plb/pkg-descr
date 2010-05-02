@@ -1,8 +1,0 @@
-Pure Load Balancer is a high-performance software load balancer for the
-HTTP protocol.
-
-It uses an asynchronous non-forking/non-blocking model, and provides
-fail-over abilities. When a backend server goes down, it automatically
-removes it from the server pool, and tries to bring it back to life later.
-
-WWW: http://plb.sunsite.dk/

@@ -1,5 +1,0 @@
-Fill a HTML::FormFu form from the database and vice-versa.
-
-Deprecated in favour of HTML::FormFu::Model::DBIC, but still in use...
-
-WWW: http://search.cpan.org/dist/DBIx-Class-HTML-FormFu/

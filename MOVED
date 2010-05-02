@@ -4369,3 +4369,18 @@ irc/dircproxy-devel||2010-04-19|Removed
 security/krb5-17||2010-04-25|deleted: no longer builds with new OpenSSL 1.0. secuirity/krb5 now contains 1.8.1.
 www/blogd|www/ephemera|2010-04-26|Port renamed
 net-p2p/qbittorrent|net-p2p/qbittorrent-22|2010-05-01|Old version no longer updated
+audio/py-flac||2010-05-02|Has expired: has been marked IGNORE for past 24 months
+databases/mysql-connector-java50||2010-05-02|Has expired: Old version: please use databases/mysql-connector-java instead
+databases/p5-DBIx-Class-HTML-FormFu||2010-05-02|Has expired: This module is obsoleted by www/p5-HTML-FormFu-Model-DBIC
+devel/py-rbtree||2010-05-02|Has expired: "does not build with new pyrex and it's not active maintained"
+devel/tavrasm||2010-05-02|Has expired: No longer maintained, use devel/avra instead
+mail/postfix23||2010-05-02|Has expired: it's no longer maintened by upstream developer
+math/libgmp4||2010-05-02|Has expired: Use math/gmp instead.
+misc/ezload||2010-05-02|Has expired: does not build with new USB stack in 8-STABLE
+misc/gkrellmbgchg||2010-05-02|Has expired: use misc/gkrellmbgchg2
+multimedia/kbtv||2010-05-02|Has expired: no longer under development by author
+net/plb||2010-05-02|Has expired: broken; abandoned by author; use net/relayd or www/nginx instead
+security/vpnd||2010-05-02|Has expired: This software is no longer developed
+textproc/isearch||2010-05-02|Has expired: abandoned upstream, uses an obsolete version of GCC, not used by any other port
+www/caudium12||2010-05-02|Has expired: No longer maintained upstream, please switch to www/caudium14
+www/p5-Catalyst-Plugin-Cache-FileCache||2010-05-02|Has expired: Deprecated by module author in favor of www/p5-Catalyst-Plugin-Cache

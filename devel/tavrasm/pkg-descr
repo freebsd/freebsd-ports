@@ -1,8 +1,0 @@
-tavarsm is Toms (Linux) AVR Assembler.  It compiles source code
-developed for the Atmel-provided DOS assembler.  It is a compatible
-superset of the Atmel assembler.
-
-WWW:	http://www.tavrasm.org/
-
-This port also fetches the DOS AVR assembler from Atmel and installs
-the include files and assembler documentation (in HTML) for reference.

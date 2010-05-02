@@ -1,6 +1,0 @@
-KDE TV viewer for FreeBSD
-
-Supports BrookTree/Conexant BT8x8 (bktr) and Philips SAA713x (saa) based
-TV cards, and Philips/compatible (pwc) based USB cameras.
-
-WWW: http://freebsd.ricin.com/kbtv

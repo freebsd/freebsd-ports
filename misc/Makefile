@@ -84,7 +84,6 @@
     SUBDIR += estic
     SUBDIR += ewipe
     SUBDIR += explosions
-    SUBDIR += ezload
     SUBDIR += fcalc
     SUBDIR += felis
     SUBDIR += fep
@@ -134,7 +133,6 @@
     SUBDIR += gkrellm-gamma
     SUBDIR += gkrellm-helium
     SUBDIR += gkrellm-xkb
-    SUBDIR += gkrellmbgchg
     SUBDIR += gkrellmbgchg2
     SUBDIR += gkrellmfmonitor
     SUBDIR += gkrellmfmonitor2

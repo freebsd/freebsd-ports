@@ -779,7 +779,6 @@
     SUBDIR += pimdd
     SUBDIR += pipsecd
     SUBDIR += pktanon
-    SUBDIR += plb
     SUBDIR += pload
     SUBDIR += plugdaemon
     SUBDIR += pmf
