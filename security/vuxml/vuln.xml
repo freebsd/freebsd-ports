@@ -1336,11 +1336,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2010-0639</cvename>
       <url>http://www.squid-cache.org/Advisories/SQUID-2010_2.txt</url>
     </references>
     <dates>
       <discovery>2010-02-12</discovery>
       <entry>2010-02-14</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -1506,11 +1508,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2010-0438</cvename>
       <url>http://otrs.org/advisory/OSA-2010-01-en/</url>
     </references>
     <dates>
       <discovery>2010-02-08</discovery>
       <entry>2010-02-08</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -1611,12 +1615,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2010-0308</cvename>
       <url>http://www.squid-cache.org/Advisories/SQUID-2010_1.txt</url>
     </references>
     <dates>
       <discovery>2010-01-14</discovery>
       <entry>2010-02-01</entry>
-      <modified>2010-02-02</modified>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -1714,12 +1719,16 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2010-0288</cvename>
+      <cvename>CVE-2010-0287</cvename>
+      <cvename>CVE-2010-0289</cvename>
       <url>http://bugs.splitbrain.org/index.php?do=details&amp;task_id=1847</url>
       <url>http://bugs.splitbrain.org/index.php?do=details&amp;task_id=1853</url>
     </references>
     <dates>
       <discovery>2010-01-17</discovery>
       <entry>2010-01-18</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -1878,11 +1887,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-4370</cvename>
       <url>http://drupal.org/node/661586</url>
     </references>
     <dates>
       <discovery>2009-12-16</discovery>
       <entry>2009-12-25</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -2206,12 +2217,16 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-4786</cvename>
+      <cvename>CVE-2009-4787</cvename>
+      <cvename>CVE-2009-4788</cvename>
       <url>http://secunia.com/advisories/37349/</url>
       <url>http://www.pligg.com/blog/775/pligg-cms-1-0-3-release/</url>
     </references>
     <dates>
       <discovery>2009-12-02</discovery>
       <entry>2009-12-12</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -2237,6 +2252,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-4137</cvename>
       <url>http://secunia.com/advisories/37649/</url>
       <url>http://www.sektioneins.de/de/advisories/advisory-032009-piwik-cookie-unserialize-vulnerability/index.html</url>
       <url>http://piwik.org/blog/2009/12/piwik-response-to-shocking-news-in-php-exploitation/</url>
@@ -2244,6 +2260,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-12-10</discovery>
       <entry>2009-12-11</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -2467,12 +2484,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://www.opera.com/support/kb/view/942/</url>
+      <cvename>CVE-2009-0689</cvename>
+      <cvename>CVE-2009-4071</cvename>
       <url>http://www.opera.com/support/kb/view/941/</url>
+      <url>http://www.opera.com/support/kb/view/942/</url>
     </references>
     <dates>
       <discovery>2009-11-23</discovery>
       <entry>2009-12-01</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -2495,12 +2515,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-3736</cvename>
       <url>http://secunia.com/advisories/37414/</url>
       <url>http://lists.gnu.org/archive/html/libtool/2009-11/msg00059.html</url>
     </references>
     <dates>
       <discovery>2009-11-25</discovery>
       <entry>2009-11-28</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -2587,11 +2609,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-4032</cvename>
       <url>http://docs.cacti.net/#cross-site_scripting_fixes</url>
     </references>
     <dates>
       <discovery>2009-11-21</discovery>
       <entry>2009-11-23</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -2627,12 +2651,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-3890</cvename>
+      <cvename>CVE-2009-3891</cvename>
       <url>http://wordpress.org/development/2009/11/wordpress-2-8-6-security-release/</url>
       <url>http://secunia.com/advisories/37332/</url>
     </references>
     <dates>
       <discovery>2009-11-12</discovery>
       <entry>2009-11-14</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -2850,12 +2877,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-3831</cvename>
       <url>http://www.opera.com/support/kb/view/938/</url>
       <url>http://www.opera.com/support/kb/view/939/</url>
     </references>
     <dates>
       <discovery>2009-10-28</discovery>
       <entry>2009-10-31</entry>
+      <modified>2010-05-02</modified>
     </dates>
    </vuln>
 
@@ -3127,11 +3156,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-	<url>http://www.djangoproject.com/weblog/2009/oct/09/security/</url>
+      <cvename>CVE-2009-3695</cvename>
+      <url>http://www.djangoproject.com/weblog/2009/oct/09/security/</url>
     </references>
     <dates>
       <discovery>2009-10-09</discovery>
       <entry>2009-10-16</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -3222,12 +3253,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-3692</cvename>
       <url>http://sunsolve.sun.com/search/document.do?assetkey=1-66-268188-1</url>
       <url>http://secunia.com/advisories/36929</url>
     </references>
     <dates>
       <discovery>2009-10-07</discovery>
       <entry>2009-10-07</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -3417,11 +3450,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-4664</cvename>
       <url>http://www.fwbuilder.org/docs/firewall_builder_release_notes.html#3.0.7</url>
     </references>
     <dates>
       <discovery>2009-09-18</discovery>
       <entry>2009-09-18</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -3984,13 +4019,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-2762</cvename>
       <url>http://wordpress.org/development/2009/08/2-8-4-security-release/</url>
       <url>http://www.milw0rm.com/exploits/9410</url>
     </references>
     <dates>
       <discovery>2009-08-10</discovery>
       <entry>2009-08-12</entry>
-      <modified>2009-08-13</modified>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -4213,11 +4249,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-3051</cvename>
       <url>http://silcnet.org/docs/changelog/SILC%20Client%201.1.8</url>
     </references>
     <dates>
       <discovery>2009-07-31</discovery>
       <entry>2009-08-04</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -4393,13 +4431,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-2477</cvename>
       <url>http://www.mozilla.org/security/announce/2009/mfsa2009-41.html</url>
       <url>http://www.kb.cert.org/vuls/id/443060</url>
     </references>
     <dates>
       <discovery>2009-07-16</discovery>
       <entry>2009-07-17</entry>
-      <modified>2009-08-07</modified>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -4486,13 +4525,16 @@ Note:  Please add new entries to the beginning of this file.
      </body>
    </description>
    <references>
+      <cvename>CVE-2009-2372</cvename>
+      <cvename>CVE-2009-2374</cvename>
+      <cvename>CVE-2009-2373</cvename>
       <url>http://drupal.org/node/507572</url>
       <url>http://secunia.com/advisories/35681</url>
     </references>
     <dates>
       <discovery>2009-07-01</discovery>
       <entry>2009-07-13</entry>
-      <modified>2009-07-13</modified>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -4543,11 +4585,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-2284</cvename>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2009-5.php</url>
     </references>
     <dates>
       <discovery>2009-06-30</discovery>
       <entry>2009-06-30</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -4713,12 +4757,16 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-1938</cvename>
+      <cvename>CVE-2009-1939</cvename>
+      <cvename>CVE-2009-1940</cvename>
       <url>http://secunia.com/advisories/35278/</url>
       <url>http://www.joomla.org/announcements/release-news/5235-joomla-1511-security-release-now-available.html</url>
     </references>
     <dates>
       <discovery>2009-06-03</discovery>
       <entry>2009-06-16</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -4793,12 +4841,14 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>35338</bid>
+      <cvename>CVE-2009-2108</cvename>
       <url>https://www.redhat.com/archives/fedora-security-list/2009-June/msg00000.html</url>
       <url>http://article.gmane.org/gmane.comp.version-control.git/120724</url>
     </references>
     <dates>
       <discovery>2009-06-04</discovery>
       <entry>2009-06-15</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -4829,12 +4879,13 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>35278</bid>
+      <cvename>CVE-2009-1904</cvename>
       <url>http://www.ruby-lang.org/en/news/2009/06/09/dos-vulnerability-in-bigdecimal/</url>
     </references>
     <dates>
       <discovery>2009-06-09</discovery>
       <entry>2009-06-13</entry>
-      <modified>2009-06-13</modified>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -4990,11 +5041,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-1960</cvename>
       <url>http://bugs.splitbrain.org/index.php?do=details&amp;task_id=1700</url>
     </references>
     <dates>
       <discovery>2009-05-26</discovery>
       <entry>2009-06-04</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
