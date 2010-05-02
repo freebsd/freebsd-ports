@@ -16,9 +16,6 @@ DISTNAME=	cdrdao-${PORTVERSION}
 MAINTAINER=	marius@FreeBSD.org
 COMMENT?=	Record CD-R[W]s in disk-at-once mode
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/antlr:${PORTSDIR}/devel/pccts \
-		${LOCALBASE}/bin/dlg:${PORTSDIR}/devel/pccts
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -62,8 +59,7 @@ CONFIGURE_ARGS+=	--with-mp3-support=no --with-ogg-support=no
 .endif
 .endif
 
-CONFIGURE_ARGS+=	--with-pcctsbin=${LOCALBASE}/bin \
-			--with-pcctsinc=${LOCALBASE}/include/pccts \
+CONFIGURE_ARGS+=	--without-pcctsbin --without-pcctsinc \
 			--with-posix-threads=no --with-scglib
 MAKE_ENV=		CCOM=cc LANG=C
 SCSILIBTARGET=		${ARCH}-freebsd-cc
