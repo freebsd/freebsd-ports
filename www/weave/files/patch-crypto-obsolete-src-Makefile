@@ -1,19 +1,6 @@
---- crypto/src/Makefile.orig    2009-08-27 22:08:18.000000000 +0200
-+++ crypto/src/Makefile 2009-09-18 21:52:06.000000000 +0200
-@@ -45,6 +45,12 @@
- sys := $(shell uname -s)
- wince = $(WINCE)
- 
-+ifeq ($(sys), FreeBSD)
-+  xpidl = $(PREFIX)/lib/libxul/xpidl \
-+    -I$(PREFIX)/share/idl/firefox3 \
-+    -I$(PREFIX)/share/idl/firefox3/stable
-+endif
-+
- ifeq ($(wince), 1)
-   os = WINNT
-   cxx = $(sdkdir)/sdk/bin/arm-wince-gcc
-@@ -66,6 +72,14 @@
+--- crypto-obsolete/src/Makefile.orig	2010-04-29 01:34:41.000000000 +0200
++++ crypto-obsolete/src/Makefile	2010-05-01 12:44:11.424608405 +0200
+@@ -63,6 +63,17 @@
    so = so
    cppflags += -shared
  else
@@ -24,11 +11,14 @@
 +  so = so
 +  cppflags += -shared
 +  ldflags += -L$(PREFIX)/lib/firefox3 -L$(PREFIX)/lib -lc
++  xpidl = $(PREFIX)/lib/libxul/xpidl \
++    -I$(PREFIX)/share/idl/firefox3 \
++    -I$(PREFIX)/share/idl/firefox3/stable
 +else
  ifeq ($(sys), MINGW32_NT-6.1)
    os = WINNT
    compiler = msvc
-@@ -92,6 +106,7 @@
+@@ -89,6 +100,7 @@
  endif
  endif
  endif
@@ -36,7 +26,7 @@
  
  # Arch detection
  
-@@ -121,6 +136,9 @@
+@@ -118,6 +130,9 @@
  ifeq ($(machine), x86_64)
    arch = x86_64
  else
@@ -46,7 +36,7 @@
    $(error: Sorry, your architecture is unknown/unsupported: $(machine))
  endif
  endif
-@@ -130,6 +148,7 @@
+@@ -127,6 +142,7 @@
  endif
  endif
  endif
@@ -54,7 +44,7 @@
  
  # Universal binary so no need for $(arch) for Darwin
  
-@@ -188,6 +207,14 @@
+@@ -183,6 +199,14 @@
            -I$(sdkdir)/include/nspr \
            -I$(sdkdir)/sdk/include
  
@@ -69,7 +59,7 @@
  # libraries
  libdirs := $(sdkdir)/lib $(sdkdir)/bin
  ifeq ($(wince),1)
-@@ -202,6 +229,10 @@
+@@ -197,6 +221,10 @@
  
  ifeq ($(os), Linux)
    libs := xpcom_core $(libs)
@@ -80,7 +70,7 @@
  endif
  
  # compiler and Linker Flags
-@@ -264,6 +295,25 @@
+@@ -259,6 +287,25 @@
               $(sdkdir)/lib/libxpcomglue_s.a \
               $(libdirs) $(libs)
  else
@@ -106,7 +96,7 @@
  ifeq ($(os), SunOS)
    libdirs := $(patsubst %,-L%,$(libdirs))
    libs := $(patsubst %,-l%,$(libs))
-@@ -303,6 +353,7 @@
+@@ -298,6 +345,7 @@
  endif
  endif
  endif
@@ -114,19 +104,19 @@
  
  ######################################################################
  
-@@ -361,6 +412,11 @@
+@@ -345,6 +393,11 @@
  	$(cxx) $(cppflags) -o $@ $(cpp_sources) $(ldflags)
  	chmod +x $@
  else
 +ifeq ($(os), FreeBSD)
-+  $(so_target): $(idl_headers)
++  $(so_target): $(idl_header)
 +	$(cxx) $(cppflags) -o $@ $(cpp_sources) $(ldflags)
 +	chmod +x $@
 +else
  ifeq ($(os), SunOS)
-   $(so_target): $(idl_headers)
+   $(so_target): $(idl_header)
  	$(cxx) $(cppflags) -o $@ $(cpp_sources) $(ldflags)
-@@ -380,3 +436,4 @@
+@@ -364,3 +417,4 @@
  endif
  endif
  endif
