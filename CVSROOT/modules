@@ -12896,6 +12896,7 @@ p5-Net-LDAP-Server              ports/net/p5-Net-LDAP-Server
 p5-Net-LDAP-posixAccount        ports/net/p5-Net-LDAP-posixAccount
 p5-Net-LDAP-posixGroup          ports/net/p5-Net-LDAP-posixGroup
 p5-Net-LibIDN                   ports/dns/p5-Net-LibIDN
+p5-Net-LibLO                    ports/audio/p5-Net-LibLO
 p5-Net-Libdnet                  ports/net/p5-Net-Libdnet
 p5-Net-LimeLight-Purge          ports/net/p5-Net-LimeLight-Purge
 p5-Net-MAC                      ports/net/p5-Net-MAC
@@ -16762,6 +16763,7 @@ p5-net-ldap-posixgroup          ports/net/p5-Net-LDAP-posixGroup
 p5-net-ldap-server              ports/net/p5-Net-LDAP-Server
 p5-net-libdnet                  ports/net/p5-Net-Libdnet
 p5-net-libidn                   ports/dns/p5-Net-LibIDN
+p5-net-liblo                    ports/audio/p5-Net-LibLO
 p5-net-limelight-purge          ports/net/p5-Net-LimeLight-Purge
 p5-net-mac                      ports/net/p5-Net-MAC
 p5-net-mac-vendor               ports/net/p5-Net-MAC-Vendor
@@ -18989,6 +18991,7 @@ pecl-crack                      ports/security/pecl-crack
 pecl-ctemplate                  ports/textproc/pecl-ctemplate
 pecl-cvsclient                  ports/net/pecl-cvsclient
 pecl-doublemetaphone            ports/textproc/pecl-doublemetaphone
+pecl-drizzle                    ports/databases/pecl-drizzle
 pecl-enchant                    ports/textproc/pecl-enchant
 pecl-esmtp                      ports/mail/pecl-esmtp
 pecl-expect                     ports/devel/pecl-expect
