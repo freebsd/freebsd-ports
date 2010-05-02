@@ -9,11 +9,11 @@ include/spmfilter/spmfilter.h
 include/spmfilter/spmfilter_config.h
 libdata/pkgconfig/spmfilter.pc
 lib/spmfilter/libpipe.so
-lib/spmfilter/libpipe.so.0.4.0
+lib/spmfilter/libpipe.so.0.4.1
 lib/spmfilter/libsmf.so
-lib/spmfilter/libsmf.so.0.4.0
+lib/spmfilter/libsmf.so.0.4.1
 lib/spmfilter/libsmtpd.so
-lib/spmfilter/libsmtpd.so.0.4.0
+lib/spmfilter/libsmtpd.so.0.4.1
 sbin/spmfilter
 @unexec if cmp -s %D/etc/spmfilter.conf.sample %D/etc/spmfilter.conf; then rm -f %D/etc/spmfilter.conf; fi
 etc/spmfilter.conf.sample
