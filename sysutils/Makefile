@@ -718,6 +718,7 @@
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-god
     SUBDIR += rubygem-ohai
+    SUBDIR += rubygem-sys-cpu
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm
