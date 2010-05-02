@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter-greylist
-PORTVERSION=	4.2.3
+PORTVERSION=	4.2.5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${PORTVERSION}
@@ -23,6 +23,7 @@ OPTIONS=	MANPAGES "Install manpages" on\
 		GEOIP "Include GeoIP support" off\
 		CURL "Include curl support" off\
 		OPENLDAP "Include OpenLDAP support" off\
+		P0F "Include P0F support" off\
 		POSTFIX "Use Postfix instead of Sendmail" off
 
 .include <bsd.port.pre.mk>
@@ -61,6 +62,10 @@ CONFIGURE_ARGS+=	--with-libcurl=${LOCALBASE}
 .if defined(WITH_OPENLDAP)
 USE_OPENLDAP=yes
 CONFIGURE_ARGS+=	--with-openldap
+.endif
+.if defined(WITH_P0F)
+RUN_DEPENDS+=	p0f:${PORTSDIR}/net-mgmt/p0f
+CONFIGURE_ARGS+=	--enable-p0f
 .endif
 .if defined(WITH_POSTFIX)
 CONFIGURE_ARGS+=	--enable-postfix
