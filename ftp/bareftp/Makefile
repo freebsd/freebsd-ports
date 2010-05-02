@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bareftp
-PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTVERSION=	0.3.2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/ \
 		http://www.predatorlabs.net/dl/
@@ -17,7 +16,8 @@ COMMENT=	Ftp client made in C sharp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" --libdir="${PREFIX}/lib" \
-		--localedir="${PREFIX}/share/locale" --includedir="${LOCALBASE}/include"
+		--localedir="${PREFIX}/share/locale" --includedir="${LOCALBASE}/include" \
+		--without-gnomekeyring
 
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
@@ -29,11 +29,6 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		bareftp.1
-
-# should use configure --without-gnome-keyring but it is broken
-post-patch:
-	@${REINPLACE_CMD} -e 's|with_keyring=yes|with_keyring=no|' \
-		${WRKSRC}/configure
 
 # TODO
 # Ugly way but configure ignore "--localedir=" fu* ;/
