@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.0801
+PORTVERSION=	0.1401
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,8 @@ MAN3=	DBIx::Custom.3 \
 	DBIx::Custom::MySQL.3 \
 	DBIx::Custom::Query.3 \
 	DBIx::Custom::Result.3 \
-	DBIx::Custom::SQL::Template.3 \
-	DBIx::Custom::SQLite.3
+	DBIx::Custom::SQLite.3 \
+	DBIx::Custom::SQLTemplate::TagProcessor.3 \
+	DBIx::Custom::SQLTemplate.3
 
 .include <bsd.port.mk>

@@ -3,12 +3,14 @@
 %%SITE_PERL%%/DBIx/Custom/MySQL.pm
 %%SITE_PERL%%/DBIx/Custom/Query.pm
 %%SITE_PERL%%/DBIx/Custom/Result.pm
-%%SITE_PERL%%/DBIx/Custom/SQL/Template.pm
 %%SITE_PERL%%/DBIx/Custom/SQLite.pm
+%%SITE_PERL%%/DBIx/Custom/SQLTemplate/TagProcessor.pm
+%%SITE_PERL%%/DBIx/Custom/SQLTemplate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Custom/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Custom
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrm %%SITE_PERL%%/DBIx/Custom/SQLTemplate
 @dirrmtry %%SITE_PERL%%/DBIx/Custom/SQL
 @dirrmtry %%SITE_PERL%%/DBIx/Custom
 @dirrmtry %%SITE_PERL%%/DBIx
