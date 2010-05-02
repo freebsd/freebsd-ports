@@ -28,6 +28,13 @@ share/locale/sv/LC_MESSAGES/pino.mo
 share/locale/th/LC_MESSAGES/pino.mo
 share/locale/uk/LC_MESSAGES/pino.mo
 share/locale/zh_CN/LC_MESSAGES/pino.mo
+share/locale/bn_IN/LC_MESSAGES/pino.mo
+share/locale/en_GB/LC_MESSAGES/pino.mo
+share/locale/mk/LC_MESSAGES/pino.mo
+share/locale/ml/LC_MESSAGES/pino.mo
+share/locale/pa/LC_MESSAGES/pino.mo
+share/locale/te/LC_MESSAGES/pino.mo
+share/locale/tr/LC_MESSAGES/pino.mo
 %%DATADIR%%/icons/delete_status.png
 %%DATADIR%%/icons/direct.svg
 %%DATADIR%%/icons/direct_fresh.svg
