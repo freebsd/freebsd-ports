@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.7.15
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
-		http://www.wesnoth.org/files/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}.0 \
+		http://files.wesnoth.org/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	philip@FreeBSD.org
@@ -37,9 +36,9 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
 
-MANLANG_GAME=	gl sk zh_TW
-MANLANG=	"" cs de en_GB es et fi fr hu it ja lt pl pt_BR sr \
-		sr@latin tr zh_CN
+MANLANG_GAME=	gl zh_TW
+MANLANG=	"" cs de en_GB es et fi fr hu it ja lt pl pt_BR sk \
+		sr sr@ijekavian sr@ijekavianlatin sr@latin tr zh_CN
 
 MAN6=		wesnoth.6
 
