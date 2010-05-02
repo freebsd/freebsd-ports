@@ -14,7 +14,7 @@
 #
 # For example:
 #   USE_GCC=	4.2+		# port requires GCC 4.2 or later.
-#   USE_GCC=	4.3			# port requires GCC 4.3.
+#   USE_GCC=	4.5			# port requires GCC 4.5.
 #
 # If your port needs a Fortran compiler, please specify that with the
 # USE_FORTRAN= knob.  Here is the list of options for that knob:
