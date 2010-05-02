@@ -24,7 +24,7 @@ command="%%PREFIX%%/libexec/milter-greylist"
 load_rc_config $name
 
 miltergreylist_enable=${miltergreylist_enable-"NO"}
-miltergreylist_runas=${miltergreylist_runas-"mailnull"}
+miltergreylist_runas=${miltergreylist_runas-"mailnull:mailnull"}
 miltergreylist_pidfile=${miltergreylist_pidfile-"/var/run/milter-greylist.pid"}
 miltergreylist_sockfile=${miltergreylist_sockfile-"/var/milter-greylist/milter-greylist.sock"}
 miltergreylist_cfgfile=${miltergreylist_cfgfile-"%%PREFIX%%/etc/mail/greylist.conf"}
