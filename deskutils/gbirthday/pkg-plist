@@ -13,6 +13,9 @@ share/pixmaps/gbirthday.png
 %%PYTHON_SITELIBDIR%%/gbirthday/pics/gbirthday.png
 %%PYTHON_SITELIBDIR%%/gbirthday/pics/nobirthday.png
 %%PYTHON_SITELIBDIR%%/gbirthday/status_icon.py
+%%PYTHON_SITELIBDIR%%/gbirthday/test_addressbook.py
+%%PYTHON_SITELIBDIR%%/gbirthday/test_conf.py
+%%PYTHON_SITELIBDIR%%/gbirthday/test_databases.py
 %%NLS%%share/locale/de/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/en/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gbirthday.mo
