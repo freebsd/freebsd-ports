@@ -1,0 +1,12 @@
+The sys-cpu library provides an interface for gathering
+information about your system's CPU. This includes not
+only technical data such as processor type, but also
+CPU statistics, such as load average information.
+
+It is part of a library of a set libraries for various
+system  administration tasks, such as gathering
+information about users, processes, your CPU, the
+filesystem, and so on.
+
+WWW: http://rubyforge.org/projects/sysutils
+WWW: http://sysutils.rubyforge.org/
