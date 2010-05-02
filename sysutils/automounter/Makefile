@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	automounter
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/bsdadminscripts/${PORTNAME}
 
