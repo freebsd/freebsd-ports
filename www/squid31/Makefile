@@ -52,46 +52,45 @@
 #     Do not support loadable modules.
 
 PORTNAME=	squid
-PORTVERSION=	3.1.0.${SQUID_BETA_VER}
+PORTVERSION=	3.1.${SQUID_STABLE_VER}
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
-		ftp://ftp.belnet.be/packages/squid/pub/%SUBDIR%/ \
-		ftp://ftp.nl.uu.net/pub/unix/www/squid/%SUBDIR%/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://ftp.ntua.gr/pub/www/Squid/%SUBDIR%/ \
-		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,} \
+		http://mirrors.ccs.neu.edu/Squid/ \
+		ftp://ftp.fu-berlin.de/unix/www/squid/squid/ \
+		ftp://ftp.nl.uu.net/pub/unix/www/squid/ \
+		ftp://ftp.solnet.ch/mirror/squid/ \
+		ftp://ftp.ntua.gr/pub/www/Squid/squid/ \
+		http://mirror.aarnet.edu.au/pub/squid/squid/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid,} \
 		http://www.squid-cache.org/Versions/v3/3.1/ \
-		http://www3.us.squid-cache.org/Versions/v3/3.1/ \
+		http://www2.us.squid-cache.org/Versions/v3/3.1/ \
 		http://www1.at.squid-cache.org/Versions/v3/3.1/ \
-		http://www2.nl.squid-cache.org/Versions/v3/3.1/ \
-		http://www1.ru.squid-cache.org/Versions/v3/3.1/ \
-		http://www1.uk.squid-cache.org/Versions/v3/3.1/ \
+		http://www2.de.squid-cache.org/Versions/v3/3.1/ \
+		http://www.eu.squid-cache.org/Versions/v3/3.1/ \
+		http://www1.ie.squid-cache.org/Versions/v3/3.1/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.1/ \
 		http://www2.tw.squid-cache.org/Versions/v3/3.1/
 MASTER_SITE_SUBDIR=	squid
-DISTNAME=	squid-3.1.0.${SQUID_BETA_VER}
+DISTNAME=	squid-3.1.${SQUID_STABLE_VER}
 DIST_SUBDIR=	squid3.1
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
-		http://www3.us.squid-cache.org/%SUBDIR%/ \
 		http://www1.at.squid-cache.org/%SUBDIR%/ \
-		http://www2.nl.squid-cache.org/%SUBDIR%/ \
-		http://www1.ru.squid-cache.org/%SUBDIR%/ \
-		http://www1.uk.squid-cache.org/%SUBDIR%/ \
+		http://www2.de.squid-cache.org/%SUBDIR%/ \
+		http://www.eu.squid-cache.org/%SUBDIR%/ \
+		http://www1.ie.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
-		http://www1.tw.squid-cache.org/%SUBDIR%/
+		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.1/changesets
 PATCHFILES=
 
 MAINTAINER=	tmseck@web.de
-COMMENT=	HTTP Caching Proxy (BETA Version)
+COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid31
 
-SQUID_BETA_VER=	17
+SQUID_STABLE_VER=	1
 
 CONFLICTS=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -177,7 +176,7 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
 
 error_dirs=	af ar az bg ca cs da de el en es et fa fi fr he hu hy id it \
-		ja ko lt lv ms nl pl pt pt-br ro ru sk sr sv th tr uk uz \
+		ja ko lt lv ms nl pl pt pt-br ro ru sk sv th tr uk uz \
 		zh-cn zh-tw \
 		templates
 
@@ -196,7 +195,7 @@ error_dir_links=	ar-ae ar-bh ar-dz ar-eg ar-iq ar-jo ar-kw ar-lb \
 			fr-be fr-ca fr-ch fr-fr fr-lu fr-mc \
 			he-il hu-hu hy-am id-id it-ch it-it \
 			ja-jp ko-kp ko-kr lt-lt lv-lv ms-my nl-nl \
-			pl-pl pt-pt ro-md ro-ro ru-ru sk-sk sr-sp sv-fi sv-se \
+			pl-pl pt-pt ro-md ro-ro ru-ru sk-sk sv-fi sv-se \
 			th-th tr-tr uk-ua zh-hk zh-mo zh-sg
 
 libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
@@ -209,27 +208,15 @@ libexec+=	unlinkd
 
 sbin=		squidclient squid
 
-# XXX:
-# Squid 3.1 changed the default for the pid file location from
-# ${localstatedir}/logs/squid.pid to ${localstatedir}/squid.pid.
-#
-# There are two ways to tackle this:
-# 1) enforce the old default using --with-pidfile=${PREFIX}/squid/logs/squid.pid
-# 2) accept the new default (and hardwire it here as well) and make sure
-#    that ${localstatedir} is writable by the Squid master process. (It
-#    used not to be, unless the Squid master process had root privileges
-#    or ${localstatedir}'s ACL is modified (chgrp squid; chmod g+w).)
-#    This is what we do now, see also files/pkg-install.in.
-
 CONFIGURE_ARGS=	--with-default-user=${SQUID_UID} \
 		--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
 		--datadir=${PREFIX}/etc/squid \
 		--libexecdir=${PREFIX}/libexec/squid \
-		--localstatedir=${PREFIX}/squid \
+		--localstatedir=/var/squid \
 		--sysconfdir=${PREFIX}/etc/squid \
-		--with-logdir=${PREFIX}/squid/logs \
-		--with-pidfile=${PREFIX}/squid/squid.pid \
+		--with-logdir=/var/log/squid \
+		--with-pidfile=/var/run/squid/squid.pid \
 		--enable-removal-policies="lru heap" \
 		--disable-linux-netfilter \
 		--disable-linux-tproxy \
@@ -435,7 +422,7 @@ PLIST_DIRS+=	etc/squid/errors/${d}
 PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 .endfor
 PLIST_FILES+=	${error_dir_links:S,^,etc/squid/errors/,}
-PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
+PLIST_DIRS+=	etc/squid/errors etc/squid
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

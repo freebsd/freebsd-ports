@@ -61,21 +61,22 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.0.${SQUID_STABLE_VER}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
-		ftp://ftp.belnet.be/packages/squid/pub/%SUBDIR%/ \
-		ftp://ftp.nl.uu.net/pub/unix/www/squid/%SUBDIR%/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
-		ftp://ftp.ntua.gr/pub/www/Squid/%SUBDIR%/ \
-		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,} \
+		http://mirrors.ccs.neu.edu/Squid/ \
+		ftp://ftp.fu-berlin.de/unix/www/squid/squid/ \
+		ftp://ftp.nl.uu.net/pub/unix/www/squid/ \
+		ftp://ftp.solnet.ch/mirror/squid/ \
+		ftp://ftp.ntua.gr/pub/www/Squid/squid/ \
+		http://mirror.aarnet.edu.au/pub/squid/squid/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid,} \
 		http://www.squid-cache.org/Versions/v3/3.0/ \
-		http://www3.us.squid-cache.org/Versions/v3/3.0/ \
+		http://www2.us.squid-cache.org/Versions/v3/3.0/ \
 		http://www1.at.squid-cache.org/Versions/v3/3.0/ \
-		http://www2.nl.squid-cache.org/Versions/v3/3.0/ \
-		http://www1.ru.squid-cache.org/Versions/v3/3.0/ \
-		http://www1.uk.squid-cache.org/Versions/v3/3.0/ \
+		http://www2.de.squid-cache.org/Versions/v3/3.0/ \
+		http://www.eu.squid-cache.org/Versions/v3/3.0/ \
+		http://www1.ie.squid-cache.org/Versions/v3/3.0/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.0/ \
 		http://www2.tw.squid-cache.org/Versions/v3/3.0/
 MASTER_SITE_SUBDIR=	squid
@@ -84,13 +85,12 @@ DIST_SUBDIR=	squid3.0
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
-		http://www3.us.squid-cache.org/%SUBDIR%/ \
 		http://www1.at.squid-cache.org/%SUBDIR%/ \
-		http://www2.nl.squid-cache.org/%SUBDIR%/ \
-		http://www1.ru.squid-cache.org/%SUBDIR%/ \
-		http://www1.uk.squid-cache.org/%SUBDIR%/ \
+		http://www2.de.squid-cache.org/%SUBDIR%/ \
+		http://www.eu.squid-cache.org/%SUBDIR%/ \
+		http://www1.ie.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
-		http://www1.tw.squid-cache.org/%SUBDIR%/
+		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.0/changesets
 PATCHFILES=
 
@@ -190,7 +190,7 @@ CONFIGURE_ARGS=	--with-default-user=${SQUID_UID} \
 		--sbindir=${PREFIX}/sbin  \
 		--datadir=${PREFIX}/etc/squid \
 		--libexecdir=${PREFIX}/libexec/squid \
-		--localstatedir=${PREFIX}/squid \
+		--localstatedir=/var/squid \
 		--sysconfdir=${PREFIX}/etc/squid \
 		--enable-removal-policies="lru heap" \
 		--disable-linux-netfilter \
@@ -393,7 +393,7 @@ PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,etc/squid/icons/,} \
 PLIST_DIRS+=	etc/squid/errors/${d}
 PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 .endfor
-PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
+PLIST_DIRS+=	etc/squid/errors etc/squid
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

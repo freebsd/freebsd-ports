@@ -5,8 +5,11 @@
 
 PATH=/bin:/usr/bin:/usr/sbin
 pkgname=$1
-squid_base="${PKG_PREFIX:-%%PREFIX%%}/squid"
+squid_base="/var/squid"
+squid_cachedir="${squid_base}/cache"
 squid_confdir="${PKG_PREFIX:-%%PREFIX%%}/etc/squid"
+squid_logdir="/var/log/squid"
+squid_rundir="/var/run/squid"
 if [ -x /usr/sbin/nologin ]; then
 	nologin=/usr/sbin/nologin
 else
@@ -50,10 +53,8 @@ PRE-INSTALL)
 		echo "I will use the existing user '${squid_user}':"
 	fi
 	pw usershow ${squid_user}
-	# Starting with 3.1, Squid's PID file moved from
-	# ${squid_base}/logs/squid.pid to ${squid_base}/squid.pid.
-	# Since we usually start the Squid master process as ${squid_user},
-	# make sure that ${squid_base} is writable for it.
+	# Since we usually start the Squid master process as ${squid_user}
+	# instead of root make sure that ${squid_base} is writable for it.
 	if [ ! -d ${squid_base} ]; then
 		echo "Creating ${squid_base}..."
 		install -d -o root -g ${squid_group} \
@@ -62,17 +63,25 @@ PRE-INSTALL)
 		chgrp ${squid_group} ${squid_base}
 		chmod g+w ${squid_base}
 	fi
-	for dir in cache logs; do
-	if [ ! -d ${squid_base}/${dir} ]; then
-		echo "Creating ${squid_base}/${dir}..."
+	if [ ! -d ${squid_cachedir} ]; then
+		echo "Creating ${squid_cachedir} ..."
 		install -d -o ${squid_user} -g ${squid_group} \
-		    -m 0750 ${squid_base}/${dir}
+		    -m 0750 ${squid_cachedir}
 	fi
-	done
 	if [ ! -d ${squid_confdir} ]; then
 		echo "Creating ${squid_confdir}..."
 		install -d -o root -g ${squid_group} \
 		    -m 0755 ${squid_confdir}
+	fi
+	if [ ! -d ${squid_logdir} ]; then
+		echo "Creating ${squid_logdir}..."
+		install -d -o ${squid_user} -g ${squid_group} \
+		    -m 0750 ${squid_logdir}
+	fi
+	if [ ! -d ${squid_rundir} ]; then
+		echo "Creating ${squid_rundir}..."
+		install -d -o ${squid_user} -g ${squid_group} \
+		    -m 0755 ${squid_rundir}
 	fi
 	;;
 POST-INSTALL)
