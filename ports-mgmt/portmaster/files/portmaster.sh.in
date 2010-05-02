@@ -129,7 +129,7 @@ kill_bad_children () {
 }
 
 parent_exit () {
-	local files p f show_list
+	local files f show_list
 
 	if [ -s "$DI_FILES" ]; then
 		grep -q '%%%%%%%%%%%%' $DI_FILES || kill_bad_children
@@ -169,11 +169,11 @@ parent_exit () {
 			echo ''
 		fi
 
-		[ -n "$PAGER" ] && p=$PAGER || p='less -e'
+		: ${PAGER:='less -e'}
 		( for f in $DISPLAY_LIST; do
 			echo "===>>> pkg-message for $f" ; cat $pdb/$f/+DISPLAY ; echo ''
 		done
-		echo "===>>> Done displaying pkg-message files" ) | $p
+		echo "===>>> Done displaying pkg-message files" ; echo '' ) | $PAGER
 		;;
 	esac
 
@@ -504,10 +504,10 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
 		fi
 
 		PM_INDEX="${INDEXDIR}/${INDEXFILE}"
-		index_time=`stat -f '%Ua' ${PM_INDEX}.bz2 2>/dev/null`
+		index_time=`stat -f '%Um' ${PM_INDEX}.bz2 2>/dev/null`
 		pm_sv Updating INDEX file
 		$PM_SU_CMD $FETCHINDEX ${PM_INDEX}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
-		if [ $index_time -ne `stat -f '%Ua' ${PM_INDEX}.bz2 2>/dev/null` ]; then
+		if [ $index_time -ne `stat -f '%Um' ${PM_INDEX}.bz2 2>/dev/null` ]; then
 			temp_index=`pm_mktemp index`
 			bunzip2 < ${PM_INDEX}.bz2 > $temp_index
 			pm_install_s $temp_index $PM_INDEX
@@ -997,6 +997,8 @@ if [ -n "$CHECK_PORT_DBDIR" ]; then
 
 	echo "===>>> Building list of installed port names"; echo ''
 	for pkg in $pdb/*; do
+		[ -d $pkg ] || continue
+
 		unset unique_name
 
 		iport=${pkg#$pdb/}
@@ -1361,7 +1363,7 @@ pm_pkg_create () {
 		pkgdir=${PACKAGES}/All
 		echo "===>>> Creating a package for new version $2"
 	else
-		pkgdir=$1
+		pkgdir=$1 ; echo ''
 		echo "===>>> Creating a backup package for old version $2"
 	fi
 
@@ -2600,7 +2602,7 @@ all_config () {
 		fi
 	done
 
-	echo "===>>> Update check of installed ports complete"
+	echo "===>>> Update check of installed ports complete" ; echo ''
 	safe_exit
 fi
 
@@ -3196,9 +3198,7 @@ fi
 
 # Ignore if no old port exists
 if [ -n "$upg_port" -o -n "$ro_upg_port" ]; then
-	UPGRADE_PORT=$upg_port
-	[ -n "$ro_upg_port" ] && UPGRADE_PORT="$ro_upg_port"
-
+	UPGRADE_PORT="${ro_upg_port:-$upg_port}"
 	UPGRADE_PORT_VER=`echo $UPGRADE_PORT | sed 's#.*-\(.*\)#\1#'`
 	export UPGRADE_PORT UPGRADE_PORT_VER
 
@@ -3253,7 +3253,7 @@ fi
 install_failed () {
 	local upg_port
 
-	[ -n "$ro_upg_port" ] && upg_port="$ro_upg_port"
+	upg_port="${ro_upg_port:-$upg_port}"
 
 	if [ -z "$NO_BACKUP" -a -n "$upg_port" ]; then
 		echo ''
