@@ -190,6 +190,7 @@
     SUBDIR += drupal6-webform
     SUBDIR += drupal6-wysiwyg
     SUBDIR += drupal6-zeropoint
+    SUBDIR += drush
     SUBDIR += dtse
     SUBDIR += dummyflash
     SUBDIR += e107
