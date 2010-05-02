@@ -403,6 +403,7 @@
     SUBDIR += mambo
     SUBDIR += man2web
     SUBDIR += mathopd
+    SUBDIR += mawstats
     SUBDIR += mediawiki
     SUBDIR += mediawiki112
     SUBDIR += mediawiki113
