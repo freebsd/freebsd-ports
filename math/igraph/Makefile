@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	igraph
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.5.3
 CATEGORIES=	math
-MASTER_SITES=	http://cneurocvs.rmki.kfki.hu/igraph/download/
+MASTER_SITES=	SF \
+		http://cneurocvs.rmki.kfki.hu/igraph/download/
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
