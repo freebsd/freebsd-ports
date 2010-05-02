@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rkward
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.3
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Current_Stable_Releases
 PKGNAMESUFFIX=	-kde4
@@ -29,9 +28,6 @@ WANT_PHP_CLI=	yes
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 INSTALLS_ICONS=	yes
-
-#USE_FORTRAN=	yes
-#FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
 
