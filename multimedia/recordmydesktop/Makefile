@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=	--enable-oss=yes \
 
 MAN1=	recordmydesktop.1
 
-USE_XORG=	ice sm x11 xext xfixes xdamage
+USE_XORG=	ice sm x11 xext xextproto xfixes xdamage
 PLIST_FILES=	bin/recordmydesktop
 
 post-patch:
