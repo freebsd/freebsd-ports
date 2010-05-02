@@ -1,0 +1,11 @@
+--- configure.orig	2010-04-26 01:53:28.000000000 -0700
++++ configure	2010-04-26 01:53:48.000000000 -0700
+@@ -12981,7 +12981,7 @@
+ 	#IT_PROG_INTLTOOL([0.35.0])
+ 	#AC_PROG_INTLTOOL([0.21])
+ 
+-	ALL_LINGUAS=`grep -v '^#' $srcdir/po/LINGUAS | sed -r ':a;N;$!ba;s/\n/ /g; s/[ ]+/ /g'`
++	ALL_LINGUAS=`cat $srcdir/po/LINGUAS`
+ 	GETTEXT_PACKAGE=$PACKAGE
+ 
+ 
