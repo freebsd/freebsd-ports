@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		2.7.2
-PORTREVISION=	2
+PORTVERSION=		3.0.0
 CATEGORIES=		www
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,17 +20,15 @@ USE_BZIP2=		yes
 
 CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-ERRORFILES=		400.html 403.html 404.html 407.html 408.html 409.html 500.html 503.html
 
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-cfgfile="${PREFIX}/etc/ziproxy/ziproxy.conf"
 
-PORTDOCS=		README README.ru README.tools README.tools.ru JPEG2000.txt JPEG2000.ru.txt
+PORTDOCS=		README README.tools JPEG2000.txt
 
 MAN1=			ziproxy.1 ziproxylogtool.1
-MANLANG=		"" ru
 MANCOMPRESSED=		no
 
 USE_RC_SUBR=		ziproxy
@@ -40,24 +37,22 @@ SUB_FILES+=		pkg-message
 
 OPTIONS+=		JPEG2000 "Build with JPEG2000 support" on
 
+ERROR_FILES=		400.html 403.html 404.html 407.html 408.html 409.html \
+			500.html 503.html
+SAMPLE_CONFIG_FILES=	bo_exception.list change_tos.list deny.list http.passwd \
+			noprocess.list replace.list replace_ct.list \
+			ziproxy.conf
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	                  -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/etc/ziproxy/ziproxy.conf
-	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-			${WRKSRC}/src/image.c
-	@${REINPLACE_CMD} -e 's|png_check_sig|png_sig_cmp|' \
-			${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/ziproxy
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/bo_exception.list ${PREFIX}/etc/ziproxy/bo_exception.list.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/deny.list ${PREFIX}/etc/ziproxy/deny.list.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/http.passwd ${PREFIX}/etc/ziproxy/http.passwd.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/noprocess.list ${PREFIX}/etc/ziproxy/noprocess.list.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/replace.list ${PREFIX}/etc/ziproxy/replace.list.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/replace_ct.list ${PREFIX}/etc/ziproxy/replace_ct.list.sample
-	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/ziproxy.conf ${PREFIX}/etc/ziproxy/ziproxy.conf.sample
+.for FILE in ${SAMPLE_CONFIG_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/etc/ziproxy/${FILE} ${PREFIX}/etc/ziproxy/${FILE}.sample
+.endfor
 	@if [ ! -f ${PREFIX}/etc/ziproxy/ziproxy.conf ]; then \
 		${CP} -p ${WRKSRC}/etc/ziproxy/ziproxy.conf ${PREFIX}/etc/ziproxy/ziproxy.conf ; \
 	fi
