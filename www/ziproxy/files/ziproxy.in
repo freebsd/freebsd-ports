@@ -25,6 +25,6 @@ load_rc_config $name
 : ${ziproxy_enable="NO"}
 : ${ziproxy_config="%%PREFIX%%/etc/ziproxy/ziproxy.conf"}
 
-command_args="-d -c ${ziproxy_config} > ${pidfile}"
+command_args="-d -c ${ziproxy_config} --pid-file ${pidfile}"
 
 run_rc_command "$1"
