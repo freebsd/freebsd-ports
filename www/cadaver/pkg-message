@@ -1,0 +1,6 @@
+
+	For SSL-verification of remote servers, the /etc/ssl/cert.pem
+	should exist and point to a reasonable CA-certificate bundle.
+
+	Installing security/ca_root_nss is one way to get it.
+
