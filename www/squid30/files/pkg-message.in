@@ -1,8 +1,8 @@
      o You can find the configuration files for this package in the
        directory %%PREFIX%%/etc/squid.
 
-     o A cache directory has been created in %%PREFIX%%/squid/cache.
-       Log files will be written to %%PREFIX%%/squid/logs.
+     o The default cache directory is /var/squid/cache.
+       The default log directory is /var/squid/logs.
 
        Note:
        You must initialize new cache directories before you can start
@@ -10,13 +10,10 @@
        If your cache directories are already initialized (e.g. after an
        upgrade of squid) you do not need to initialize them again.
 
-     o The default configuration will deny everyone access to the
-       proxy service. Edit the "http_access" directives in
+     o The default configuration will deny everyone but local networks
+       as defined in RFC 1918 access to the proxy service.
+       Edit the "http_access allow/deny" directives in
        %%PREFIX%%/etc/squid/squid.conf to suit your needs.
-
-     Please note that the Squid start script is an rc.d style script.
-     This means that Squid will not start automatically at boot
-     time unless it is explicitly enabled.
 
      To enable Squid, set squid_enable=yes in either
      /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid
@@ -29,4 +26,3 @@
 
      Additionally, you should check your configuration by calling
      'squid -f /path/to/squid.conf -k parse' before starting Squid.
-

@@ -13,7 +13,7 @@
 # Additional variables you can define in one of these files:
 #
 # squid_chdir:	the directory into which the rc system moves into before
-# 		starting Squid. Default: %%PREFIX%%/squid
+# 		starting Squid. Default: /var/squid
 #
 # squid_conf:	The configuration file that Squid should use.
 #		Default: %%PREFIX%%/etc/squid/squid.conf
@@ -32,7 +32,7 @@
 # squid_pidfile:
 #		The name (including the full path) of the Squid
 #		master process' PID file.
-#		Default: %%PREFIX%%/squid/squid.pid.
+#		Default: /var/run/squid/squid.pid.
 #		You only need to change this if you changed the
 #		corresponding entry in your Squid configuration.
 #
@@ -73,11 +73,11 @@ stop_cmd="squid_stop"
 
 load_rc_config ${name}
 
-squid_chdir=${squid_chdir:-"%%PREFIX%%/squid"}
+squid_chdir=${squid_chdir:-"/var/squid"}
 squid_conf=${squid_conf:-"%%PREFIX%%/etc/squid/squid.conf"}
 squid_enable=${squid_enable:-"NO"}
 squid_fib=${squid_fib:-"NONE"}
-squid_pidfile=${squid_pidfile:-"%%PREFIX%%/squid/squid.pid"}
+squid_pidfile=${squid_pidfile:-"/var/run/squid/squid.pid"}
 squid_user=${squid_user:-%%SQUID_UID%%}
 
 pidfile=${squid_pidfile}
