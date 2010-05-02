@@ -1,0 +1,16 @@
+bin/textroom
+share/applications/textroom.desktop
+share/mime/packages/textroom-txr-mime.xml
+share/myspell/dicts/tr.aff
+share/myspell/dicts/tr.dic
+share/pixmaps/textroom.png
+share/sounds/keyany.wav
+share/sounds/keyenter.wav
+@dirrmtry share/sounds
+@dirrmtry share/myspell/dicts
+@dirrmtry share/myspell
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
