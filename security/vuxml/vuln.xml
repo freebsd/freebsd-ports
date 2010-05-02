@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="752ce039-5242-11df-9139-00242b513d7c">
+    <topic>Unintended code execution with specially crafted data in VLC</topic>
+    <affects>
+      <package>
+	<name>vlc</name>
+	<range><lt>1.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VideoLAN project reports:</p>
+	<blockquote cite="http://www.videolan.org/security/sa1003.html">
+	  <p>VLC media player suffers from various vulnerabilities when
+	    attempting to parse malformatted or overly long byte streams.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>39629</bid>
+      <url>http://www.videolan.org/security/sa1003.html</url>
+    </references>
+    <dates>
+      <discovery>2010-04-19</discovery>
+      <entry>2010-05-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8d10038e-515c-11df-83fb-0015587e2cc1">
     <topic>joomla -- multiple vulnerabilities</topic>
     <affects>
