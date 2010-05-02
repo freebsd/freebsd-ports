@@ -14,7 +14,6 @@ MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/contrib/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/rrdtool/contrib/
 PKGNAMEPREFIX=	php5-
 DISTNAME=	php_rrdtool
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rick@wzoeterwoude.net
 COMMENT=	A php 5 rrdtool glue
