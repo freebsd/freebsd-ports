@@ -7,6 +7,7 @@
 
 PORTNAME=	slim-themes
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	slim
@@ -84,13 +85,17 @@ PLIST_SUB:=	${NEW_PLIST_SUB}
 .endfor # n in ${THEMELIST}
 
 .if !defined(SEEN_THEMES)
-IGNORE=		at least one theme must be chosen
+IGNORE=		at least one theme must be selected
 .endif
+
+.if defined(WITH_PARALLEL_DIMS)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-parallel-dimensions-slim.theme
 
 post-patch:
 	@${RM} ${WRKSRC}/parallel-dimensions/slim.theme.orig
+.endif # defined(WITH_PARALLEL_DIMS)
 
-# Install chose themes.  Another regexp voodoo, yay! \o/
+# Install selected themes.  Another regexp voodoo, yay! \o/
 do-install:
 	${MKDIR} ${THEMEDIR}
 .for n in ${ALLTHEMES}
