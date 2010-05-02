@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	waf
-DISTVERSION=	1.5.14a
+PORTVERSION=	1.5.15
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,6 @@ COMMENT=	Python-based build system
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION:S/a//}
 
 pre-configure:
 	@cd ${WRKSRC} && ${PYTHON_CMD} waf-light --make-waf && ${TRUE}
