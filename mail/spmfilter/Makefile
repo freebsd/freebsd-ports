@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	spmfilter
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.${PORTNAME}.org/attachments/download/51/
+MASTER_SITES=	http://www.${PORTNAME}.org/attachments/download/54/
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Spmfilter is a high-performance mail filtering framework, written in C
 
-BUILD_DEPENDS=	gmime>=2.2:${PORTSDIR}/mail/gmime2 \
+BUILD_DEPENDS=	gmime-24>=2.4:${PORTSDIR}/mail/gmime24 \
 		libesmtp>=1.0:${PORTSDIR}/mail/libesmtp \
-		glib>=2.04:${PORTSDIR}/devel/glib20 \
-		pcre>=6.0:${PORTSDIR}/devel/pcre
+		glib>=2.14:${PORTSDIR}/devel/glib20
 
-RUN_DEPENDS=	gmime>=2.2:${PORTSDIR}/mail/gmime2 \
+RUN_DEPENDS=	gmime-24>=2.4:${PORTSDIR}/mail/gmime24 \
 		libesmtp>=1.0:${PORTSDIR}/mail/libesmtp \
-		glib>=2.04:${PORTSDIR}/devel/glib20 \
-		pcre>=6.0:${PORTSDIR}/devel/pcre
+		glib>=2.14:${PORTSDIR}/devel/glib20
 
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
