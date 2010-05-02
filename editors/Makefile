@@ -231,6 +231,7 @@
     SUBDIR += texmakerx
     SUBDIR += textedit
     SUBDIR += textedit.app
+    SUBDIR += textroom
     SUBDIR += texworks
     SUBDIR += the
     SUBDIR += thoteditor
