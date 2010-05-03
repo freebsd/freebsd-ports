@@ -7,7 +7,7 @@
 
 PORTNAME=	pdftk
 PORTVERSION=	1.41
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdfhacks.com/pdftk/ \
 		http://www.accesspdf.com/pdftk/
@@ -24,18 +24,20 @@ BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
 # Get gcc version suffix without the dot in USE_GCC
 CSUFF=		${_USE_GCC:S/.//}
 
-USE_GCC=	4.2
+USE_GCC=	4.5
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_LDCONFIG=	${PREFIX}/lib/gcc${CSUFF}
 
 # gcj/libgcj don't exist on some platforms
 ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	GNU gcj does not exist on this platform
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 
 MAKEFILE=	Makefile.Generic
-MAKE_ENV=	GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF}
+MAKE_ENV=	GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF} OBJCOPY=${OBJCOPY}
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/pdftk
@@ -52,8 +54,8 @@ post-extract:
 #Based on info found via Google USENET Search: Adam McDougall, Gerald Pfeifer
 #
 
-	@${REINPLACE_CMD} -e "s|GCJFLAGS=|GCJFLAGS= -L${LOCALBASE}/lib|g" ${WRKSRC}/Makefile.Generic
-	@${REINPLACE_CMD} -e "s|CXXFLAGS= -lgcj|CXXFLAGS= -lgcj ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -liconv -lz -L${LOCALBASE}/lib|g" \
+	@${REINPLACE_CMD} -e "s|GCJFLAGS=|GCJFLAGS= -L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib/gcc${CSUFF} -w|g" ${WRKSRC}/Makefile.Generic
+	@${REINPLACE_CMD} -e "s|CXXFLAGS= -lgcj|CXXFLAGS= -lgcj ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -liconv -lz -L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib/gcc${CSUFF} -w|g" \
 			${WRKSRC}/Makefile.Generic
 	@${REINPLACE_CMD} -e "s|//SID import com.lowagie.text.ImgRaw;|import com.lowagie.text.ImgRaw;|g" \
 			${WRKSRC}/../java_libs/com/lowagie/text/pdf/codec/PngImage.java
