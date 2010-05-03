@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	exact-image
-PORTVERSION=	0.7.5
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/
 
