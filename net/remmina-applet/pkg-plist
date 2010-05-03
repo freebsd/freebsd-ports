@@ -4,6 +4,8 @@ libdata/bonobo/servers/Remmina_Applet.server
 %%NLS%%share/locale/de/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/el/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/es/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/id/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/it/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/remmina-gnome.mo
@@ -11,6 +13,7 @@ libdata/bonobo/servers/Remmina_Applet.server
 %%NLS%%share/locale/pl/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/remmina-gnome.mo
 @dirrmtry libdata/bonobo/servers
