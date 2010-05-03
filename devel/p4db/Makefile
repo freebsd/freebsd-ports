@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME:U}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web/Perforce Browser
 
-RUN_DEPENDS=	p4:${PORTSDIR}/devel/perforce
+RUN_DEPENDS=	p4:${PORTSDIR}/devel/p4
 
 USE_PERL5=	yes
 NO_BUILD=	yes
