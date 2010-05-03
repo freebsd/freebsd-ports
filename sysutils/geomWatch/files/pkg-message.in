@@ -1,8 +1,8 @@
 
 A sample geomWatch configuration file has been installed as
 %%PREFIX%%/etc/geomWatch.conf.sample. You should copy it to
-%%PREFIX%%/etc/geomWatch.conf, edit it to your liking, and add the following line
-to /etc/rc.conf:
+%%PREFIX%%/etc/geomWatch.conf, edit it to your liking, and add the following
+line to /etc/rc.conf:
 
 geomwatch_enable="YES"
 

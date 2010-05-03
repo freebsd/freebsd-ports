@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	geomWatch
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://isis.poly.edu/~bk/geomWatch/ \
-		http://bk.macroblock.net/geomWatch/
+MASTER_SITES=	http://isis.poly.edu/~bk/${PORTNAME}/ \
+		http://bk.macroblock.net/${PORTNAME}/
 EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	spawk@acm.poly.edu
-COMMENT=	Watches for and e-mails admins about GEOM state changes
+COMMENT=	Watches for and e-mails admins about GEOM/ZFS state changes
 
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
 
-PLIST_FILES=	sbin/geomWatch \
-				etc/rc.d/geomWatch \
-		etc/geomWatch.conf.sample
+PLIST_FILES=	sbin/${PORTNAME} \
+		etc/${PORTNAME}.conf.sample
 
-SUB_FILES=	pkg-message geomWatch
+SUB_FILES=	pkg-message
+
+USE_RC_SUBR=	${PORTNAME}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/geomWatch ${PREFIX}/etc/rc.d/geomWatch
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
