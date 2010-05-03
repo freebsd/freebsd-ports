@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	dixit
-PORTVERSION=	1.0.1
-PORTREVISION=	6
-CATEGORIES=	textproc # this should/will be romanian ;)
-MASTER_SITES=	SF
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz ${_DB_D}
+PORTVERSION=	10.4.4
+CATEGORIES=	textproc
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/10.4/:dixit \
+		SF/${PORTNAME}/${PORTNAME}_qdb/:db
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:${PORTNAME} \
+		${_DB_D}:db
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Romanian dictionaries databases and query application
-
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		qmake:${PORTSDIR}/devel/qmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -30,14 +28,17 @@ DB_MODE?=	0664
 # DB_DATE is the time of the file in the zip archive, not the time of the last
 # update of the database (which is a little earlier, but TZ makes it appear to
 # be later), but it's all we can do in a makefile.
-DB_DATE=200412121653
-_DB_D=	${PORTNAME}_qdb.zip
+DB_DATE=201004010000
+_DB_D=	${PORTNAME}.qdb.tar.bz2
 _DB_F=	${PORTNAME}.qdb
 _DB=	${DB_DIR}/${_DB_F}
 
-USE_QT_VER=	3
-USE_GMAKE=	yes
-MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} QTDIR="${QT_PREFIX}"
+HAS_CONFIGURE=	yes
+
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui network moc_build qmake_build rcc_build
+#USE_GMAKE=	yes
+#MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} QTDIR="${QT_PREFIX}"
 
 pre-everything::
 	@${ECHO_CMD}
@@ -58,9 +59,11 @@ pre-everything::
 	@${ECHO_CMD}
 
 do-configure:
-	@${REINPLACE_CMD} -e "s^dixit.qdb^${_DB}^" ${WRKSRC}/src/dixit_strings.h
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ ${PORTNAME}.pro
+	@${REINPLACE_CMD} -e "s^dixit.qdb^${_DB}^" ${WRKSRC}/src/dixit.h
+#	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+#		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ ${PORTNAME}.pro
+	cd ${WRKSRC} && \
+	${SETENV} ${CONFIGURE_ENV} ${QMAKE} -unix PREFIX=${PREFIX} ${PORTNAME}.pro
 
 do-install:
 	@${MKDIR} ${DB_DIR}
@@ -68,23 +71,17 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}  ${PREFIX}/bin/${PORTNAME}
 	@${ECHO_CMD} "	===> Installing database ... .. ."
 .ifndef(DB_OVERWRITE)
-	@if [ ! -e "${_DB}" -o "${_DB}" -ot "${WRKSRC}/${_DB_F}" ];\
-		then	${UNZIP_CMD} -qou ${DISTDIR}/${_DB_D} -d ${DB_DIR} && \
+	@if [ ! -e "${_DB}" -o "${_DB}" -ot "${WRKSRC}/${_DB_F}" ]; \
+		then	${TAR} -C ${DB_DIR:S/${PORTNAME}//} -xf ${DISTDIR}/${_DB_D} && \
 			${ECHO_CMD} "	===> ... Done."; \
 		else	${ECHO_CMD} "	===> Exisitng database is newer, skiping";\
 	fi
 .else
 	@${ECHO_CMD} "	===> DB_OVERWRITE is set, installing database ... .. ."
-	@${UNZIP_CMD} -qou ${DISTDIR}/${_DB_D} -d ${DB_DIR}
+	${TAR} -C ${DB_DIR:S/${PORTNAME}//} -xf ${DISTDIR}/${_DB_D}
 	@${ECHO_CMD} "	===> ... Done."
 .endif
 	@${CHOWN} ${DB_OWNER}:${DB_GROUP} ${_DB}
 	@${CHMOD} ${DB_MODE} ${_DB}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
