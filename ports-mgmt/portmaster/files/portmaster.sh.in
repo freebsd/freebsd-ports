@@ -49,7 +49,7 @@ umask 022
 #=============== Begin functions we always want to have ===============
 
 version () {
-	local rcs cvs
+	local cvs
 
 	cvs='$FreeBSD$'
 
@@ -250,7 +250,8 @@ usage () {
 	echo "    [[[--packages|-P]|[--packages-only|-PP]] | [--packages-build]]"
 	echo "    [--packages-if-newer] [--delete-build-only] [--always-fetch]"
 	echo "    [--local-packagedir=<path>] [--delete-packages]"
-	echo "    [--no-confirm] [--no-term-title] [--index|--index-first|--index-only]"
+	echo "    [--no-confirm] [--no-term-title] [--no-index-fetch]"
+	echo "    [--index|--index-first|--index-only]"
 	echo "    [-m <arguments for make>] [-x <glob pattern to exclude from building>]"
 	echo "${0##*/} [Common flags] <full name of port directory in $pdb>"
 	echo "${0##*/} [Common flags] <full path to $pd/foo/bar>"
@@ -311,6 +312,7 @@ usage () {
 	echo '   installed and/or updated before proceeding'
 	echo '--no-term-title do not update the xterm title bar'
 	echo ''
+	echo '--no-index-fetch skip fetching the INDEX file'
 	echo '--index use INDEX-[6-9] exclusively to check if a port is up to date'
 	echo '--index-first use the INDEX for status, but double-check with the port'
 	echo '--index-only do not try to use /usr/ports'
@@ -450,6 +452,7 @@ for var in "$@" ; do
 				export PM_NO_CONFIRM ;;
 	--no-term-title)	PM_NO_TERM_TITLE=pm_no_term_title
 				export PM_NO_TERM_TITLE ;;
+	--no-index-fetch)	PM_NO_INDEX_FETCH=pm_no_index_fetch ;;
 	--index)		cross_idx index ; PM_INDEX=pm_index ; export PM_INDEX ;;
 	--index-first)		PM_INDEX=pm_index ; PM_INDEX_FIRST=pm_index_first
 				cross_idx first ; export PM_INDEX PM_INDEX_FIRST ;;
@@ -478,66 +481,61 @@ unset var
 # Do this here so it can use the fancy functions above, and default values
 # can be overridden in the rc files
 if [ "$$" -eq "$PM_PARENT_PID" ]; then
-	if [ -n "$PM_INDEX" ]; then
-		[ -d "$pd" ] && pm_cd_pd
-		if [ -z "$FETCHINDEX" ]; then
-			[ -d "$pd" ] && FETCHINDEX=`pm_make_b -V FETCHINDEX`
-			[ -n "$FETCHINDEX" ] || FETCHINDEX='fetch -am -o'
+	if [ -z "$pd" ]; then
+		if [ -z "$PORTSDIR" ]; then
+			[ -d /usr/ports ] && pd=/usr/ports
+			[ -z "$pd" ] &&
+				pd=`pm_make_b -f/usr/share/mk/bsd.port.mk -V PORTSDIR 2>/dev/null`
+		else
+			pd=$PORTSDIR
 		fi
-		if [ -z "$MASTER_SITE_INDEX" ]; then
-			[ -d "$pd" ] &&
-			MASTER_SITE_INDEX=`pm_make_b -V MASTER_SITE_INDEX`
-			[ -n "$MASTER_SITE_INDEX" ] ||
-			MASTER_SITE_INDEX='http://www.FreeBSD.org/ports/'
-		fi
-		if [ -z "$INDEXDIR" ]; then
-			[ -d "$pd" ] && INDEXDIR=`pm_make_b -V INDEXDIR`
-			[ -n "$INDEXDIR" ] || INDEXDIR="$TMPDIR"
-		fi
-		if [ -z "$INDEXFILE" ]; then
-			[ -d "$pd" ] && INDEXFILE=`pm_make_b -V INDEXFILE`
-			if [ -z "$INDEXFILE" ]; then
-				ver=`uname -r`
-				INDEXFILE=INDEX-${ver%%\.*}
-				unset ver
-			fi
-		fi
+	fi
 
-		PM_INDEX="${INDEXDIR}/${INDEXFILE}"
-		index_time=`stat -f '%Um' ${PM_INDEX}.bz2 2>/dev/null`
-		pm_sv Updating INDEX file
-		$PM_SU_CMD $FETCHINDEX ${PM_INDEX}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
-		if [ $index_time -ne `stat -f '%Um' ${PM_INDEX}.bz2 2>/dev/null` ]; then
-			temp_index=`pm_mktemp index`
-			bunzip2 < ${PM_INDEX}.bz2 > $temp_index
-			pm_install_s $temp_index $PM_INDEX
-			unlink $temp_index
-			unset temp_index
+	if [ -n "$PM_INDEX" ]; then
+		if [ -z "$INDEXFILE" ]; then
+			ver=`uname -r`
+			INDEXFILE=INDEX-${ver%%\.*}
+			unset ver
 		fi
-		unset index_time
+		PM_INDEX="${INDEXDIR:-$pd}/${INDEXFILE}"
+
+		if [ -z "$PM_NO_INDEX_FETCH" ]; then
+			: ${FETCHINDEX:='fetch -am -o'}
+			: ${MASTER_SITE_INDEX:='http://www.FreeBSD.org/ports/'}
+
+			index_time=`stat -f '%Um' ${PM_INDEX}.bz2 2>/dev/null`
+			pm_sv Updating INDEX file
+			$PM_SU_CMD $FETCHINDEX ${PM_INDEX}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
+			if [ ${index_time:-0} -ne `stat -f '%Um' ${PM_INDEX}.bz2 2>/dev/null` ]; then
+				temp_index=`pm_mktemp index`
+				bunzip2 < ${PM_INDEX}.bz2 > $temp_index
+				pm_install_s $temp_index $PM_INDEX
+				unlink $temp_index
+				unset temp_index
+			fi
+			unset index_time
+		else
+			[ -r "$PM_INDEX" ] ||
+				fail "The --no-index-fetch option was used, but $PM_INDEX does not exist"
+		fi
 
 		PM_INDEX_PORTS=`pkg_version -Ivl\< $PM_INDEX | cut -f1 -d\<`
 		export PM_INDEX_PORTS
 	fi
 
 	if [ -z "$pd" ]; then
-		if [ -z "$PORTSDIR" ]; then
-			pd=`pm_make_b -f/usr/share/mk/bsd.port.mk -V PORTSDIR 2>/dev/null`
-		else
-			pd=$PORTSDIR
-		fi
-		if [ -z "$pd" ]; then
-			if [ -n "$PM_INDEX_ONLY" ]; then
-				pd=`head -1 $PM_INDEX | cut -f 2 -d\|`
-				pd=${pd%/*}
-				pd=${pd%/*}
-			fi
+		if [ -n "$PM_INDEX_ONLY" ]; then
+			pd=`head -1 $PM_INDEX | cut -f 2 -d\|`
+			pd=${pd%/*}
+			pd=${pd%/*}
 		fi
 		[ -z "$pd" ] && fail 'The value of PORTSDIR cannot be empty'
 	fi
 	if [ -z "$pdb" ]; then
 		if [ -z "$PKG_DBDIR" ]; then
-			pdb=`pm_make -f/usr/share/mk/bsd.port.mk -V PKG_DBDIR 2>/dev/null`
+			[ -d /var/db/pkg ] && pdb=/var/db/pkg
+			[ -z "$pdb" ] &&
+				pdb=`pm_make -f/usr/share/mk/bsd.port.mk -V PKG_DBDIR 2>/dev/null`
 		else
 			pdb=$PKG_DBDIR
 		fi
@@ -554,13 +552,12 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
 		# In case it is a symlink
 		distdir="${distdir%/}/"
 	fi
-	if [ -z "$port_dbdir" ]; then
-		port_dbdir=`pm_make_b -f/usr/share/mk/bsd.port.mk -V PORT_DBDIR 2>/dev/null`
-		[ -z "$port_dbdir" -a -d /var/db/ports ] && port_dbdir='/var/db/ports'
-		[ -n "$port_dbdir" ] && export port_dbdir
-	fi
-
 	export pd pdb distdir
+
+	[ -z "$port_dbdir" -a -d /var/db/ports ] && port_dbdir=/var/db/ports
+	[ -z "$port_dbdir" ] &&
+		port_dbdir=`pm_make_b -f/usr/share/mk/bsd.port.mk -V PORT_DBDIR 2>/dev/null`
+	[ -n "$port_dbdir" ] && export port_dbdir
 
 	if [ -n "$PM_PACKAGES_BUILD" -o -n "$PM_DEL_BUILD_ONLY" ]; then
 		PM_BUILD_ONLY_LIST=pm_bol
@@ -1151,6 +1148,14 @@ if [ -n "$NO_RECURSIVE_CONFIG" ]; then
 		fail 'The --delete-build-only and -G options are mutually exclusive'
 	[ -n "$FORCE_CONFIG" ] &&
 		fail 'The --force-config and -G options are mutually exclusive'
+fi
+if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
+	if [ -n "$FETCH_ONLY" -o -n "$RESTART" -o -n "$UPDATE_ALL" -o \
+	    -n "$EXPUNGE" -o -n "$PM_FORCE" -o -n "$NO_ACTION" -o \
+	    -n "$REPLACE_ORIGIN" -o -n "$UPDATE_REQ_BYS" -o -n "$CLEAN_STALE" ]; then
+		fail 'The -[lL] options are not compatible with -FRaefnors'
+	fi
+	[ $# -gt 0 ] && fail 'The -[lL] options are not compatible with updates or installs'
 fi
 unset my_environment
 
