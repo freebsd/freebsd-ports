@@ -7,7 +7,7 @@
 
 PORTNAME=	mmv
 PORTVERSION=	1.01b.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_1.01b.orig
@@ -20,8 +20,8 @@ MAINTAINER=	simon@olofsson.de
 COMMENT=	Move/Copy/Append/Link multiple files
 
 CFLAGS+=	-DHAS_DIRENT
-MAN1=		mmv.1
-PLIST_FILES=	bin/mmv
+MAN1=		mmv.1 mad.1 mcp.1 mln.1
+PLIST_FILES=	bin/mmv bin/mad bin/mcp bin/mln
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.01b.orig
 
 do-build:
@@ -30,6 +30,10 @@ do-build:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_MAN} ${WRKSRC}/mmv.1 ${PREFIX}/man/man1/mmv.1
+	@${INSTALL_MAN} ${WRKSRC}/mmv.1 ${PREFIX}/man/man1/${PORTNAME}.1
+.for i in mcp mad mln
+	@${LN} ${PREFIX}/bin/${PORTNAME} ${PREFIX}/bin/${i}
+	@${LN} ${PREFIX}/man/man1/${PORTNAME}.1 ${PREFIX}/man/man1/${i}.1
+.endfor
 
 .include <bsd.port.mk>
