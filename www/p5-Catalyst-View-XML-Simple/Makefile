@@ -28,6 +28,8 @@ BUILD_DEPENDS=	\
 
 PERL_CONFIGURE=	yes
 
+BROKEN=		does not configure
+
 MAN3=	Catalyst::View::XML::Simple.3
 
 .include <bsd.port.mk>
