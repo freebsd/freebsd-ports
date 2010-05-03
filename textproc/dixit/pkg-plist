@@ -1,5 +1,6 @@
 bin/dixit
 @cwd %%DB_DIR%%
 %%_DB_F%%
+LICENSE.GPL3
 @cwd /
 @dirrm %%DB_DIR%%
