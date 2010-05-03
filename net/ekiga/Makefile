@@ -7,7 +7,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	2.0.11
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -18,6 +18,8 @@ OPTIONS=	AVAHI	"Support Avahi for service discovery on LAN" on \
 		DBUS	"Use D-BUS for interprocess communication" on
 
 LIB_DEPENDS=	opal_r:${PORTSDIR}/net/opal
+
+CONFLICTS=	ekiga-3.*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
