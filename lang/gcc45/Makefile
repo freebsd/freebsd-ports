@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.5.1.20100429
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -102,12 +102,16 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/libgomp
 
 .if ! defined(WITHOUT_JAVA)
-DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
+ECJ_JAR=	ecj-4.5.jar
+MASTER_SITES+=	${MASTER_SITE_SOURCEWARE:S|$|:ecj|}
+MASTER_SITE_SUBDIR+=	java/:ecj
+DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
+		${ECJ_JAR}:ecj
+EXTRACT_ONLY=	${DISTFILES:S|${ECJ_JAR}:ecj||}
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 # FIXME: we are currently getting weird build failures with libjava on
 # some 4.x and 5.x systems, which the following works around. PR 81788.
-CONFIGURE_ARGS+=--disable-rpath
+CONFIGURE_ARGS+=--disable-rpath --enable-libgcj
 MAN1+=		aot-compile${SUFFIX}.1 \
 		gappletviewer${SUFFIX}.1 \
 		gc-analyze${SUFFIX}.1 \
@@ -136,6 +140,10 @@ MAN3=		ffi${SUFFIX}.3 \
 INFO+=		gcc${SUFFIX}/cp-tools \
 		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
+
+# Preps the source tree for the gcj build
+post-patch::
+	@${CP} ${DISTDIR}/${ECJ_JAR} ${SRCDIR}/ecj.jar
 .else
 CONFIGURE_ARGS+=--disable-libgcj
 PLIST_SUB+=	JAVA="@comment "
@@ -144,7 +152,7 @@ PLIST_SUB+=	JAVA="@comment "
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
 
-post-patch:
+post-patch::
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
 	    ${SRCDIR}/gcc/version.c
 

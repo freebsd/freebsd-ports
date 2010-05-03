@@ -13,3 +13,6 @@ SIZE (gcc-testsuite-4.5-20100429.tar.bz2) = 5531436
 MD5 (gcc-java-4.5-20100429.tar.bz2) = e084c863891b1df58178493dc46e6255
 SHA256 (gcc-java-4.5-20100429.tar.bz2) = a470a893ff556cf603e1185866d662a14cfa466cf9375a284ec71d115c53c086
 SIZE (gcc-java-4.5-20100429.tar.bz2) = 18542433
+MD5 (ecj-4.5.jar) = d7cd6a27c8801e66cbaa964a039ecfdb
+SHA256 (ecj-4.5.jar) = 98fd128f1d374d9e42fd9d4836bdd249c6d511ebc6c0df17fbc1b9df96c3d781
+SIZE (ecj-4.5.jar) = 1470676
