@@ -1,9 +1,9 @@
-geomWatch is a program for monitoring the well-being of GEOM providers. It
-checks the state of each configured provider at a configured interval, and, if
-it notices that a provider has lost a component, or encounters a problem while
-checking a provider's state, it will send an e-mail with details of the
-matter--such as what components were lost and which remain, or, in the event of
-a problem, what the problem was--to an arbitrary number of recipients, so that
+geomWatch is a program for monitoring the well-being of GEOM providers and ZFS
+pools. It checks the state of each configured provider and pool at a configured
+interval, and, if it notices that a component has been lost, or encounters a
+problem during the check, it will send an e-mail with details of the matter--
+such as what components were lost and which remain, or, in the event of a
+problem, what the problem was--to an arbitrary number of recipients, so that
 corrective action can be taken (for example, replacing a failed disk).
 
 WWW: http://acm.poly.edu/wiki/GEOM_Watch
