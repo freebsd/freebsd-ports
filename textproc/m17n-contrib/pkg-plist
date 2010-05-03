@@ -1,9 +1,13 @@
 %%NLS%%share/locale/eo/LC_MESSAGES/m17n-contrib.mo
+%%NLS%%share/locale/de/LC_MESSAGES/m17n-contrib.mo
 bin/tbl2mim.awk
 share/m17n/as-inscript.mim
 share/m17n/as-phonetic.mim
+share/m17n/ath-phonetic.mim
+share/m17n/bla-phonetic.mim
 share/m17n/bn-inscript.mim
 share/m17n/bn-probhat.mim
+share/m17n/cr-western.mim
 share/m17n/cs-kbd.mim
 share/m17n/eo-h-f.mim
 share/m17n/eo-h.mim
@@ -31,10 +35,12 @@ share/m17n/icons/gu-phonetic.png
 share/m17n/icons/hi-inscript.png
 share/m17n/icons/hi-phonetic.png
 share/m17n/icons/hi-remington.png
+share/m17n/icons/ii-phonetic.png
 share/m17n/icons/kn-inscript.png
 share/m17n/icons/kn-kgp.png
 share/m17n/icons/ml-inscript.png
 share/m17n/icons/ml-mozhi.png
+share/m17n/icons/ml-swanalekha.png
 share/m17n/icons/mr-inscript.png
 share/m17n/icons/ne-rom.png
 share/m17n/icons/ne-trad.png
@@ -44,6 +50,9 @@ share/m17n/icons/pa-jhelum.png
 share/m17n/icons/pa-phonetic.png
 share/m17n/icons/ps-phonetic.png
 share/m17n/icons/sd-inscript.png
+share/m17n/icons/si-phonetic-dynamic.png
+share/m17n/icons/si-sumihiri.png
+share/m17n/icons/si-trans.png
 share/m17n/icons/ta-inscript.png
 share/m17n/icons/ta-phonetic.png
 share/m17n/icons/ta-tamil99.png
@@ -54,7 +63,10 @@ share/m17n/icons/te-pothana.png
 share/m17n/icons/ur-phonetic.png
 share/m17n/icons/vi-nom-vni.png
 share/m17n/icons/vi-nom.png
+share/m17n/icons/yi-yivo.png
 share/m17n/icons/zh-zhuyin.png
+share/m17n/ii-phonetic.mim
+share/m17n/iu-phonetic.mim
 share/m17n/kn-inscript.mim
 share/m17n/kn-kgp.mim
 share/m17n/ks-kbd.mim
@@ -66,6 +78,8 @@ share/m17n/mr-itrans.mim
 share/m17n/mr-phonetic.mim
 share/m17n/ne-rom.mim
 share/m17n/ne-trad.mim
+share/m17n/nsk-phonetic.mim
+share/m17n/oj-phonetic.mim
 share/m17n/or-inscript.mim
 share/m17n/or-phonetic.mim
 share/m17n/pa-inscript.mim
@@ -75,7 +89,7 @@ share/m17n/ps-phonetic.mim
 share/m17n/ru-translit.mim
 share/m17n/sd-inscript.mim
 share/m17n/si-phonetic-dynamic.mim
-share/m17n/si-phonetic-static.mim
+share/m17n/si-sumihiri.mim
 share/m17n/si-trans.mim
 share/m17n/ta-inscript.mim
 share/m17n/ta-phonetic.mim
@@ -91,6 +105,7 @@ share/m17n/ur-phonetic.mim
 share/m17n/vi-han.mim
 share/m17n/vi-nom-vni.mim
 share/m17n/vi-nom.mim
+share/m17n/yi-yivo.mim
 share/m17n/zh-pinyin-vi.mim
 share/m17n/zh-zhuyin.mim
 @dirrmtry share/m17n/icons

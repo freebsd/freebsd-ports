@@ -1,8 +1,10 @@
 This port installs the user-contributed input methods for the m17n library
 (the official ones are installed through devel/m17n-lib). It currently
-supports Punjabi, Sinhala, Telugu, Nepali, Russian, Assamese, Bengali,
-Gujarati, Hindi, Kannada, Malayalam, Marathi, Oriya and Vietnamese layouts
-with various sub-variants.
+supports Assamese, Eastern and Western Cree syllabics, Bengali, Czech,
+Esperanto, Gujarati, Hindi, Yi, Inuktitut, Kannada, Kashmiri, Malayalam,
+Marathi, Nepali, Ojibwe syllabics, Oriya, Punjabi, Pashto, Russian, Sindhi,
+Sinhala, Tamil, Tai Viet, Telugu, Urdu, Han Viet, Yiddish and Chinese Pinyin
+layouts with various sub-variants.
 
 The port also provides the tbl2mim.awk script for conversion of keyboard
 files used by textproc/scim-table-imengine into SCIM-independent .mim format
