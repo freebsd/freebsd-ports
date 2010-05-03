@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_webapp
 PORTVERSION=	4.1.24
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://jakarta.apache.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	builds/jakarta-tomcat-4.0/release/v${TOMCAT_RELEASE}/src
@@ -18,6 +18,8 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module mounts Tomcat web applications
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/apr:configure
+
+MAKE_JOBS_UNSAFE=	yes
 
 USE_APACHE=	1.3
 USE_PYTHON_BUILD=yes
@@ -49,7 +51,6 @@ AUTOCONF?=	${LOCALBASE}/bin/autoconf
 PLIST_SUB=	APACHE_MODULES=${APACHE_MODULES}
 
 # Build options.
-APACHE_VERSION=	1.3.6
 WRKSRC=		${WRKDIR}/${DISTNAME}/webapp
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs=${APXS} \
