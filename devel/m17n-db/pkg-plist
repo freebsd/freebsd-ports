@@ -24,6 +24,7 @@ share/m17n/BIDI.tab
 share/m17n/BIG5-HKSCS.map
 share/m17n/BIG5.map
 share/m17n/BLOCK.tab
+share/m17n/BNG2-OTF.flt
 share/m17n/CASE-C.tab
 share/m17n/CASE-MAPPING.tab
 share/m17n/CASE-S.tab
@@ -55,6 +56,7 @@ share/m17n/CP1258.map
 share/m17n/CP737.map
 share/m17n/CP775.map
 share/m17n/CP949-2BYTE.map
+share/m17n/DEV2-OTF.flt
 share/m17n/DEVA-CDAC.flt
 share/m17n/DEVA-OTF.flt
 share/m17n/FONTENC.tbl
@@ -64,7 +66,9 @@ share/m17n/GB180304.map
 share/m17n/GB2312.map
 share/m17n/GBK.map
 share/m17n/GB_1988-80.map
+share/m17n/GJR2-OTF.flt
 share/m17n/GUJR-OTF.flt
+share/m17n/GUR2-OTF.flt
 share/m17n/GURU-OTF.flt
 share/m17n/HEBR-FF.flt
 share/m17n/HEBR.flt
@@ -124,8 +128,8 @@ share/m17n/JOHAB.map
 share/m17n/KA-ACADEMY.map
 share/m17n/KA-PS.map
 share/m17n/KHMR-ANLONG.flt
-share/m17n/KHMR-MULE.flt
 share/m17n/KHMR-OTF.flt
+share/m17n/KND2-OTF.flt
 share/m17n/KNDA-OTF.flt
 share/m17n/KOI-8.map
 share/m17n/KOI8-R.map
@@ -141,12 +145,15 @@ share/m17n/LAOO-OTF.flt
 share/m17n/LINEBREAK.tab
 share/m17n/LOCALE.ali
 share/m17n/LOCALE.cs
+share/m17n/MLM2-OTF.flt
 share/m17n/MLYM-CDAC.flt
 share/m17n/MLYM-OTF.flt
 share/m17n/MLYM-RACHANA.flt
 share/m17n/MYMR-MYAZEDI.flt
+share/m17n/MYMR-SIL.flt
 share/m17n/NAME.tab
 share/m17n/NO-CTL.flt
+share/m17n/ORY2-OTF.flt
 share/m17n/ORYA-OTF.flt
 share/m17n/SCRIPT-LANGUAGE.tbl
 share/m17n/SCRIPT-OTF.tbl
@@ -157,6 +164,7 @@ share/m17n/SOFT-DOTTED.tab
 share/m17n/SYRC-OTF.flt
 share/m17n/TAML-CDAC.flt
 share/m17n/TAML-OTF.flt
+share/m17n/TEL2-OTF.flt
 share/m17n/TELU-OTF.flt
 share/m17n/THAA-OTF.flt
 share/m17n/THAI-GENERIC.flt
@@ -167,6 +175,7 @@ share/m17n/TIBT-MTIB.flt
 share/m17n/TIBT-MULE.flt
 share/m17n/TIBT-OTF.flt
 share/m17n/TIS-620.map
+share/m17n/TML2-OTF.flt
 share/m17n/VISCII.map
 share/m17n/VSCII.map
 share/m17n/aa.lnm
@@ -273,6 +282,7 @@ share/m17n/icons/or-itrans.png
 share/m17n/icons/pa-itrans.png
 share/m17n/icons/rfc1345.png
 share/m17n/icons/ru-kbd.png
+share/m17n/icons/ru-phonetic.png
 share/m17n/icons/ru-yawerty.png
 share/m17n/icons/si-samanala.png
 share/m17n/icons/si-wijesekera.png
@@ -293,6 +303,7 @@ share/m17n/icons/vi-tcvn.png
 share/m17n/icons/vi-telex.png
 share/m17n/icons/vi-viqr.png
 share/m17n/icons/vi-vni.png
+share/m17n/icons/zh-bopomofo.png
 share/m17n/icons/zh-cangjie.png
 share/m17n/icons/zh-pinyin.png
 share/m17n/icons/zh-py-b5.png
@@ -366,7 +377,6 @@ share/m17n/sa-harvard-kyoto.mim
 share/m17n/sa.lnm
 share/m17n/se.lnm
 share/m17n/si-samanala.mim
-share/m17n/si-wijesekera-preedit.mim
 share/m17n/si-wijesekera.mim
 share/m17n/sid.lnm
 share/m17n/sk-kbd.mim
