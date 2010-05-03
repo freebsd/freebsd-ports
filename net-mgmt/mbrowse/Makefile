@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	mbrowse
-PORTVERSION=	0.3.1
-PORTREVISION=	8
+PORTVERSION=	0.4.0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.sourcefiles.org/Monitoring/Network/ \
-		ftp://ftp.dei.uc.pt/pub/linux/gentoo/distfiles/ \
-		ftp://ftp.gentoo.org.ua/distfiles/
+MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eg@fbsd.lt
 COMMENT=	An SNMP MIB Browser for X
 
 LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mbrowse
-USE_GNOME=	gtk12 gnometarget
+USE_GNOME=	gtk20
 CONFIGURE_ARGS=	--with-snmp-prefix=${PREFIX} --with-snmp-type=net
 CONFIGURE_ENV=	LDFLAGS="`net-snmp-config --libs`" \
 		CPPFLAGS="`net-snmp-config --cflags`"
