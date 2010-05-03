@@ -335,6 +335,9 @@ fetch_auditfile()
 	return $rc
 }
 
+# Search base system utilities first
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:${PATH}
+
 portaudit_confs
 
 opt_audit=false
