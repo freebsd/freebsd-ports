@@ -75,5 +75,6 @@ libdata/pkgconfig/gnutls.pc
 %%NLS%%share/locale/pl/LC_MESSAGES/libgnutls.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libgnutls.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libgnutls.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/libgnutls.mo
 @dirrm %%EXAMPLESDIR%%
 @dirrm include/gnutls
