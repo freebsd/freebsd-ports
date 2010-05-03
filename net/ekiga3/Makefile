@@ -7,7 +7,7 @@
 
 PORTNAME=	ekiga3
 PORTVERSION=	3.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/ekiga_${PORTVERSION}/
 DISTNAME=	ekiga-${PORTVERSION}
@@ -20,6 +20,8 @@ LIB_DEPENDS=	sigc-2:${PORTSDIR}/devel/libsigc++20 \
 BUILD_DEPENDS=	intltoolize:${PORTSDIR}/textproc/intltool \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${LOCALBASE}/bin/scrollkeeper-config:${PORTSDIR}/textproc/rarian
+
+CONFLICTS=	ekiga-2.*
 
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:22
