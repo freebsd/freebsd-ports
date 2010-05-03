@@ -5,59 +5,69 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kmymoney2
-PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTNAME=	kmymoney
+PORTVERSION=	3.97.2
 CATEGORIES=	finance
-MASTER_SITES=	SF/${PORTNAME}/KMyMoney/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	KDE-based personal finance assistant
+MAINTAINER=	bsdkaffee@gmail.com
+COMMENT=	KDE 4.x-based personal finance manager
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+LIB_DEPENDS=	boost_graph.4:${PORTSDIR}/devel/boost-libs
 
-LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp
-
-LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
-
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool:22
-USE_PERL5=	yes
 USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	gui dbus network phonon qt3support sql svg xml \
+		moc_build rcc_build uic_build
+USE_KDE4=	kdehier kdeprefix automoc4 kdelibs pimlibs sharedmime
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
-USE_XORG=	xext
+MAKE_JOBS_SAFE=	yes
 
-INSTALLS_ICONS=	yes
+MAN1=		kmymoney.1
 
-MAN1=		kmymoney2.1
-MANCOMPRESSED=	yes
+OPTIONS=	CALENDAR "Enable Calendar plugin" on \
+		KBANKING "Enable KBanking plugin" off \
+		OFX "Enable OFX plugin" off \
+		QUOTES "Enable online price quotes" off
 
-DATADIR=	${PREFIX}/share/apps/${PORTNAME}
-DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-.if !defined(NOPORTDOCS)
-CONFIGURE_ARGS=	--enable-ofxplugin --enable-ofxbanking --enable-pdf-docs
-
-# Add more build-time dependencies to generate the PDF docs
-BUILD_DEPENDS+=	jade:${PORTSDIR}/textproc/jade \
-		pdfjadetex:${PORTSDIR}/print/jadetex \
-		html2ps:${PORTSDIR}/print/html2ps-letter \
-		dsssl-docbook-modular>=0:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		cppunit-config:${PORTSDIR}/devel/cppunit \
-		recode:${PORTSDIR}/converters/recode
+.if defined(WITH_CALENDAR)
+LIB_DEPENDS+=	ical.43:${PORTSDIR}/devel/libical
+CMAKE_ARGS+=	-DENABLE_LIBICAL:BOOL=ON
+PLIST_SUB+=	WITH_CALENDAR=""
 .else
-CONFIGURE_ARGS=	--enable-ofxplugin --enable-ofxbanking
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.in \
-		${FILESDIR}/extra-patch-doc__en__Makefile.in
+CMAKE_ARGS+=	-DENABLE_LIBICAL:BOOL=OFF
+PLIST_SUB+=	WITH_CALENDAR="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LIBTOOL%%|${LIBTOOL}|g ; \
-		s|%%LTMAIN%%|${LTMAIN}|g' ${WRKSRC}/configure
+.if defined(WITH_KBANKING)
+LIB_DEPENDS+=	aqbanking.31:${PORTSDIR}/finance/aqbanking
+CMAKE_ARGS+=	-DENABLE_KBANKING:BOOL=ON
+PLIST_SUB+=	WITH_KBANKING=""
+.else
+CMAKE_ARGS+=	-DENABLE_KBANKING:BOOL=OFF
+PLIST_SUB+=	WITH_KBANKING="@comment "
+.endif
 
-.include <bsd.port.post.mk>
+.if defined(WITH_OFX)
+LIB_DEPENDS+=	ofx.4:${PORTSDIR}/finance/libofx
+CMAKE_ARGS+=	-DENABLE_LIBOFX:BOOL=ON
+PLIST_SUB+=	WITH_OFX=""
+.else
+CMAKE_ARGS+=	-DENABLE_LIBOFX:BOOL=OFF
+PLIST_SUB+=	WITH_OFX="@comment "
+.endif
+
+.if defined(WITH_QUOTES)
+USE_PERL5=	yes
+RUN_DEPENDS+=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
+		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
+.endif
+
+.include <bsd.port.mk>
