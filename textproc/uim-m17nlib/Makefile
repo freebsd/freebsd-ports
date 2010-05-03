@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-m17nlib
 COMMENT=	Uim plugin using m17n library input method
 
 BUILD_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
-LIB_DEPENDS=	m17n.3:${PORTSDIR}/devel/m17n-lib \
+LIB_DEPENDS=	m17n.4:${PORTSDIR}/devel/m17n-lib \
 		uim.6:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
 

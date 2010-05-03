@@ -7,7 +7,7 @@
 
 PORTNAME=	m17n-im-config
 PORTVERSION=	0.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.m17n.org/common/im-config/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.m17n.org/common/im-config/ \
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	A GUI for per-user configuration of m17n-lib input methods
 
-LIB_DEPENDS=	m17n.3:${PORTSDIR}/devel/m17n-lib
+LIB_DEPENDS=	m17n.4:${PORTSDIR}/devel/m17n-lib
 
 MAKE_JOBS_UNSAFE=	yes
 
