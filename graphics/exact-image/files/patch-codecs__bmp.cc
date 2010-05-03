@@ -24,17 +24,3 @@
 +	free(data);
  	goto bad1;
        }
-       
-@@ -628,9 +632,9 @@
-       
-       colorspace_de_palette (image, clr_tbl_size, rmap, gmap, bmap);
-       
--      delete (rmap);
--      delete (gmap);
--      delete (bmap);
-+      delete[] rmap;
-+      delete[] gmap;
-+      delete[] bmap;
-       
-       free(clr_tbl);
-       clr_tbl = NULL;
