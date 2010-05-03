@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dillo
-PORTVERSION=	2.1.1
-PORTREVISION=	3
+PORTVERSION=	2.2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.dillo.org/download/
 
@@ -22,8 +21,12 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+.ifndef(NO_INSTALL_MANPAGES)
 MAN1=		dillo.1
+.endif
+.ifndef(NOPORTDOCS)
 PORTDOCS=	*
+.endif
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
 CONFLICTS=	dillo-i18n-[0-9]* \
 		dillo-0*
@@ -77,6 +80,12 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|dillorc|dillorc.dist|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|dpidrc|dpidrc.dist|g" ${WRKSRC}/dpid/Makefile.in
 	@${REINPLACE_CMD} -e "s|keysrc|keysrc.dist|g" ${WRKSRC}/src/Makefile.in
+.ifdef(NO_INSTALL_MANPAGES)
+	@${REINPLACE_CMD} -e "\|install-data-am:|s|install-man||" ${WRKSRC}/doc/Makefile.in
+.endif
+.ifdef(NOPORTDOCS)
+	@${REINPLACE_CMD} -e "\|install-data-am:|s|install-dist_docDATA||" ${WRKSRC}/doc/Makefile.in
+.endif
 
 post-install:
 .for _F in dillorc dpidrc keysrc
@@ -85,7 +94,6 @@ post-install:
 . endif
 .endfor
 .ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
