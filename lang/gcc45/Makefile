@@ -8,6 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.5.1.20100429
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -43,7 +44,17 @@ MAKE_JOBS_SAFE=	yes
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
+OPTIONS=	LTO	"Enable link-time optimizations (LTO)"	off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_LTO)
+LIB_DEPENDS+=	elf.0:${PORTSDIR}/devel/libelf
+CONFIGURE_ARGS+=	--enable-lto=yes \
+			--with-libelf=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--enable-lto=no
+.endif
 
 .if ${ARCH} != i386 && ${ARCH} != amd64
 WITHOUT_JAVA=	yes
