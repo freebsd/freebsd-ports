@@ -25,6 +25,7 @@ _arguments -A "-*" : \
   "-x[avoid building or updating ports that match this pattern]:glob pattern to exclude from building:->pkgs" \
   "--no-confirm[do not ask user to confirm list of ports to be installed and/or updated before proceeding]" \
   "--no-term-title[do not update the xterm title bar]" \
+  "--no-index-fetch[skip fetching the INDEX file]" \
   "--index[use INDEX exclusively to check if a port is up to date]" \
   "--index-first[use the INDEX for status, but double-check with the port]" \
   "--index-only[do not try to use /usr/ports]" \
