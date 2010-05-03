@@ -1,5 +1,11 @@
-KMyMoney is striving to be a full-featured replacement for your
-Windows-based finance software. We are a KDE-based full double-entry
-accounting software package, for personal or small-business use.
+WARNING!!! This is a beta release.  More conservative users may want to use the
+KDE3 version (finance/kmymoney2).
 
-WWW: http://kmymoney2.sourceforge.net/
+KMyMoney is a personal finance manager for KDE 4.x. 
+
+It operates similar to MS-Money, supports different account types,
+categorization of expenses and incomes, reconciliation of bank accounts and QIF
+import/export. Online banking support (statement download) is also provided for
+the OFX and HBCI protocols.
+
+WWW: http://kmymoney2.sourceforge.net/index-home.html
