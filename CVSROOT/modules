@@ -1380,7 +1380,6 @@ catapult                        ports/emulators/catapult
 catdoc                          ports/textproc/catdoc
 catdvi                          ports/print/catdvi
 catseye-fm                      ports/x11-fm/catseye-fm
-caudium12                       ports/www/caudium12
 caudium14                       ports/www/caudium14
 cave                            ports/misc/cave
 cave9                           ports/games/cave9
@@ -2602,6 +2601,7 @@ drupal6-views                   ports/www/drupal6-views
 drupal6-webform                 ports/www/drupal6-webform
 drupal6-wysiwyg                 ports/www/drupal6-wysiwyg
 drupal6-zeropoint               ports/www/drupal6-zeropoint
+drush                           ports/www/drush
 drweb                           ports/security/drweb
 drweb-postfix                   ports/security/drweb-postfix
 drweb-qmail                     ports/security/drweb-qmail
@@ -3245,7 +3245,6 @@ ezbounce                        ports/irc/ezbounce
 ezbounce-devel                  ports/irc/ezbounce-devel
 ezfm                            ports/x11-fm/ezfm
 ezjail                          ports/sysutils/ezjail
-ezload                          ports/misc/ezload
 ezm3                            ports/lang/ezm3
 ezmlm                           ports/mail/ezmlm
 ezmlm-idx                       ports/mail/ezmlm-idx
@@ -4340,7 +4339,6 @@ gkrellm-trayicons               ports/sysutils/gkrellm-trayicons
 gkrellm-xkb                     ports/misc/gkrellm-xkb
 gkrellm2                        ports/sysutils/gkrellm2
 gkrellm_snmp                    ports/net/gkrellm_snmp
-gkrellmbgchg                    ports/misc/gkrellmbgchg
 gkrellmbgchg2                   ports/misc/gkrellmbgchg2
 gkrellmfmonitor                 ports/misc/gkrellmfmonitor
 gkrellmfmonitor2                ports/misc/gkrellmfmonitor2
@@ -5906,7 +5904,6 @@ isc-dhcp31-client               ports/net/isc-dhcp31-client
 isc-dhcp31-relay                ports/net/isc-dhcp31-relay
 isc-dhcp31-server               ports/net/isc-dhcp31-server
 iscsi-target                    ports/net/iscsi-target
-isearch                         ports/textproc/isearch
 ised                            ports/math/ised
 iselect                         ports/misc/iselect
 iserverd                        ports/net-im/iserverd
@@ -6717,7 +6714,6 @@ kbilliards                      ports/games/kbilliards
 kbirthday                       ports/deskutils/kbirthday
 kblticker                       ports/deskutils/kblticker
 kbproto                         ports/x11/kbproto
-kbtv                            ports/multimedia/kbtv
 kbuild                          ports/devel/kBuild
 kcachegrind                     ports/devel/kcachegrind
 kcd                             ports/misc/kcd
@@ -7701,7 +7697,6 @@ libgltext                       ports/graphics/libgltext
 libglu                          ports/graphics/libGLU
 libglut                         ports/graphics/libglut
 libglw                          ports/graphics/libGLw
-libgmp4                         ports/math/libgmp4
 libgnetwork                     ports/net/libgnetwork
 libgnome                        ports/x11/libgnome
 libgnome-java                   ports/x11/libgnome-java
@@ -8852,6 +8847,7 @@ maven                           ports/devel/maven
 maven2                          ports/devel/maven2
 maverik                         ports/graphics/maverik
 mawk                            ports/lang/mawk
+mawstats                        ports/www/mawstats
 maxima                          ports/math/maxima
 maxr                            ports/games/maxr
 mayavi                          ports/science/mayavi
@@ -9596,7 +9592,6 @@ mysql++                         ports/databases/mysql++
 mysql++1                        ports/databases/mysql++1
 mysql++3                        ports/databases/mysql++3
 mysql-connector-java            ports/databases/mysql-connector-java
-mysql-connector-java50          ports/databases/mysql-connector-java50
 mysql-connector-odbc            ports/databases/mysql-connector-odbc
 mysql-editor                    ports/databases/mysql-editor
 mysql-gui-tools                 ports/databases/mysql-gui-tools
@@ -10999,7 +10994,6 @@ p5-Catalyst-Plugin-Browser      ports/www/p5-Catalyst-Plugin-Browser
 p5-Catalyst-Plugin-C3           ports/www/p5-Catalyst-Plugin-C3
 p5-Catalyst-Plugin-Cache        ports/www/p5-Catalyst-Plugin-Cache
 p5-Catalyst-Plugin-Cache-FastMmap  ports/www/p5-Catalyst-Plugin-Cache-FastMmap
-p5-Catalyst-Plugin-Cache-FileCache  ports/www/p5-Catalyst-Plugin-Cache-FileCache
 p5-Catalyst-Plugin-Cache-Memcached  ports/www/p5-Catalyst-Plugin-Cache-Memcached
 p5-Catalyst-Plugin-Cache-Memcached-Fast  ports/www/p5-Catalyst-Plugin-Cache-Memcached-Fast
 p5-Catalyst-Plugin-Cache-Store-FastMmap  ports/www/p5-Catalyst-Plugin-Cache-Store-FastMmap
@@ -11420,7 +11414,6 @@ p5-DBIx-Class-EncodeColumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-DBIx-Class-EncodedColumn     ports/databases/p5-DBIx-Class-EncodedColumn
 p5-DBIx-Class-Fixtures          ports/databases/p5-DBIx-Class-Fixtures
 p5-DBIx-Class-FrozenColumns     ports/databases/p5-DBIx-Class-FrozenColumns
-p5-DBIx-Class-HTML-FormFu       ports/databases/p5-DBIx-Class-HTML-FormFu
 p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-DBIx-Class-InflateColumn-IP  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-DBIx-Class-IntrospectableM2M  ports/databases/p5-DBIx-Class-IntrospectableM2M
@@ -14738,7 +14731,6 @@ p5-catalyst-plugin-browser      ports/www/p5-Catalyst-Plugin-Browser
 p5-catalyst-plugin-c3           ports/www/p5-Catalyst-Plugin-C3
 p5-catalyst-plugin-cache        ports/www/p5-Catalyst-Plugin-Cache
 p5-catalyst-plugin-cache-fastmmap  ports/www/p5-Catalyst-Plugin-Cache-FastMmap
-p5-catalyst-plugin-cache-filecache  ports/www/p5-Catalyst-Plugin-Cache-FileCache
 p5-catalyst-plugin-cache-memcached  ports/www/p5-Catalyst-Plugin-Cache-Memcached
 p5-catalyst-plugin-cache-memcached-fast  ports/www/p5-Catalyst-Plugin-Cache-Memcached-Fast
 p5-catalyst-plugin-cache-store-fastmmap  ports/www/p5-Catalyst-Plugin-Cache-Store-FastMmap
@@ -15411,7 +15403,6 @@ p5-dbix-class-encodecolumns     ports/databases/p5-DBIx-Class-EncodeColumns
 p5-dbix-class-encodedcolumn     ports/databases/p5-DBIx-Class-EncodedColumn
 p5-dbix-class-fixtures          ports/databases/p5-DBIx-Class-Fixtures
 p5-dbix-class-frozencolumns     ports/databases/p5-DBIx-Class-FrozenColumns
-p5-dbix-class-html-formfu       ports/databases/p5-DBIx-Class-HTML-FormFu
 p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-dbix-class-inflatecolumn-ip  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-dbix-class-introspectablem2m  ports/databases/p5-DBIx-Class-IntrospectableM2M
@@ -19019,6 +19010,7 @@ pecl-mdbtools                   ports/databases/pecl-mdbtools
 pecl-memcache                   ports/databases/pecl-memcache
 pecl-memcached                  ports/databases/pecl-memcached
 pecl-mongo                      ports/databases/pecl-mongo
+pecl-ncurses                    ports/devel/pecl-ncurses
 pecl-newt                       ports/devel/pecl-newt
 pecl-oauth                      ports/net/pecl-oauth
 pecl-operator                   ports/devel/pecl-operator
@@ -19637,7 +19629,6 @@ playd                           ports/multimedia/playd
 playd2                          ports/multimedia/playd2
 playgsf                         ports/audio/playgsf
 playmidi                        ports/audio/playmidi
-plb                             ports/net/plb
 plconfig                        ports/sysutils/plconfig
 plee-the-bear                   ports/games/plee-the-bear
 plib                            ports/x11-toolkits/plib
@@ -19855,7 +19846,6 @@ postfix-policyd-spf-perl        ports/mail/postfix-policyd-spf-perl
 postfix-policyd-spf-python      ports/mail/postfix-policyd-spf-python
 postfix-policyd-weight          ports/mail/postfix-policyd-weight
 postfix-postfwd                 ports/mail/postfix-postfwd
-postfix23                       ports/mail/postfix23
 postfix24                       ports/mail/postfix24
 postfix25                       ports/mail/postfix25
 postfix26                       ports/mail/postfix26
@@ -20320,7 +20310,6 @@ py-feedfinder                   ports/www/py-feedfinder
 py-feedparser                   ports/textproc/py-feedparser
 py-filelike                     ports/sysutils/py-filelike
 py-fileutils                    ports/devel/py-fileutils
-py-flac                         ports/audio/py-flac
 py-flakes                       ports/devel/py-flakes
 py-flexget                      ports/www/py-flexget
 py-flowtools                    ports/net-mgmt/py-flowtools
@@ -20680,7 +20669,6 @@ py-qt4-xml                      ports/textproc/py-qt4-xml
 py-qt4-xmlpatterns              ports/textproc/py-qt4-xmlpatterns
 py-rabbyt                       ports/graphics/py-rabbyt
 py-radix                        ports/net/py-radix
-py-rbtree                       ports/devel/py-rbtree
 py-rdflib                       ports/textproc/py-rdflib
 py-recaptcha                    ports/www/py-recaptcha
 py-relatorio                    ports/print/py-relatorio
@@ -21034,7 +21022,6 @@ q4wine                          ports/deskutils/q4wine
 qadsl                           ports/net/qadsl
 qalculate                       ports/math/qalculate
 qar-bufo                        ports/mail/qar-bufo
-qbittorrent                     ports/net-p2p/qbittorrent
 qbittorrent-22                  ports/net-p2p/qbittorrent-22
 qbrew                           ports/misc/qbrew
 qca                             ports/devel/qca
@@ -22204,6 +22191,7 @@ rubygem-stomp                   ports/devel/rubygem-stomp
 rubygem-stream                  ports/devel/rubygem-stream
 rubygem-streetaddress           ports/devel/rubygem-streetaddress
 rubygem-syntax                  ports/textproc/rubygem-syntax
+rubygem-sys-cpu                 ports/sysutils/rubygem-sys-cpu
 rubygem-systemu                 ports/devel/rubygem-systemu
 rubygem-taggable                ports/www/rubygem-taggable
 rubygem-templater               ports/devel/rubygem-templater
@@ -23399,7 +23387,6 @@ taskjuggler                     ports/deskutils/taskjuggler
 taskstep                        ports/deskutils/taskstep
 taskwarrior                     ports/deskutils/taskwarrior
 taucs                           ports/math/taucs
-tavrasm                         ports/devel/tavrasm
 taxipilot                       ports/games/taxipilot
 tbb                             ports/devel/tbb
 tbclock                         ports/games/tbclock
@@ -23582,6 +23569,7 @@ textpattern                     ports/www/textpattern
 textproc_crimson                ports/textproc/crimson
 textproc_flip                   ports/textproc/flip
 textproc_muse                   ports/textproc/muse
+textroom                        ports/editors/textroom
 texvc                           ports/print/texvc
 texworks                        ports/editors/texworks
 tftp-hpa                        ports/ftp/tftp-hpa
@@ -24498,7 +24486,6 @@ vordog                          ports/sysutils/vordog
 vp                              ports/graphics/vp
 vpce                            ports/emulators/vpce
 vpnc                            ports/security/vpnc
-vpnd                            ports/security/vpnd
 vpopmail                        ports/mail/vpopmail
 vpopmail-devel                  ports/mail/vpopmail-devel
 vqadmin                         ports/mail/vqadmin
