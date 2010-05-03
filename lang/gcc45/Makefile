@@ -108,6 +108,7 @@ MASTER_SITE_SUBDIR+=	java/:ecj
 DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
 		${ECJ_JAR}:ecj
 EXTRACT_ONLY=	${DISTFILES:S|${ECJ_JAR}:ecj||}
+BUILD_DEPENDS=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 # FIXME: we are currently getting weird build failures with libjava on
 # some 4.x and 5.x systems, which the following works around. PR 81788.
