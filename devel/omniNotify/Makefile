@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	omniNotify
-PORTVERSION=	2.1
+PORTVERSION=	2.1.01
+#It' snapshot of development version actually
 CATEGORIES=	devel python
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}%20${PORTVERSION}
+MASTER_SITES=	http://www.stasyan.com/devel/distfiles/
+DISTNAME=	omniNotify-2-latest
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	CORBA Notification Service (CosNotification) for omniORB
@@ -30,21 +32,12 @@ GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 
-# Don't compiled on != i386
-ONLY_FOR_ARCHS=	i386
-
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV+=	CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
 		CPP=${CPP} PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--with-omniorb=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.elif ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
 
 pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
