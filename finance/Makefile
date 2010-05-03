@@ -19,6 +19,7 @@
     SUBDIR += jgnash
     SUBDIR += kexchange
     SUBDIR += khacc
+    SUBDIR += kmymoney-kde4
     SUBDIR += kmymoney2
     SUBDIR += ktoblzcheck
     SUBDIR += ledger
