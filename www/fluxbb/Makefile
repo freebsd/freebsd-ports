@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fluxbb
-PORTVERSION=	1.2.20
+PORTVERSION=	1.2.22
 CATEGORIES=	www
 MASTER_SITES=	http://fluxbb.org/download/releases/${PORTVERSION}/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A fast and lightweight PHP-powered discussion board
 
 SUB_FILES=	pkg-message
@@ -20,6 +20,7 @@ USE_PHP=	yes
 OPTIONS=	MYSQL   "Add support for a MySQL database server" On \
 		PGSQL   "Add support for a PostgreSQL database server" Off \
 		SQLITE  "Add support for a SQLite database server" Off
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
