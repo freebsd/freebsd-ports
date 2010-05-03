@@ -24,6 +24,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+BROKEN=		incomplete dependencies
+
 MAN3=		POE::Component::Client::Twitter.3
 
 .include <bsd.port.mk>
