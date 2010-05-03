@@ -1,9 +1,12 @@
-The library "libotf" provides the following facilites.
+The library "libotf" provides the following facilites:
 
     o Read Open Type Layout Tables from OTF file.  Currently these
       tables are supported; head, name, cmap, GDEF, GSUB, and GPOS.
 
     o Convert a Unicode character sequence to a glyph code sequence by
       using the above tables.
+
+The combination of libotf and the FreeType library (Ver. 2) realizes
+CTL (complex text layout) by OpenType fonts.
 
 WWW: http://www.m17n.org/libotf/
