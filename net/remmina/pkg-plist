@@ -30,6 +30,7 @@ share/applications/remmina.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/el/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/es/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/id/LC_MESSAGES/remmina.mo
