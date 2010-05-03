@@ -1,14 +1,32 @@
 bin/gnome-mplayer
 share/applications/gnome-mplayer.desktop
+share/gnome-control-center/default-apps/gnome-mplayer.xml
+share/icons/hicolor/16x16/apps/gnome-mplayer.png
+share/icons/hicolor/22x22/apps/gnome-mplayer.png
+share/icons/hicolor/24x24/apps/gnome-mplayer.png
+share/icons/hicolor/32x32/apps/gnome-mplayer.png
+share/icons/hicolor/48x48/apps/gnome-mplayer.png
+share/icons/hicolor/scalable/apps/gnome-mplayer.svg
+share/locale/ar/LC_MESSAGES/gnome-mplayer.mo
 share/locale/bg/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ca/LC_MESSAGES/gnome-mplayer.mo
+share/locale/cs/LC_MESSAGES/gnome-mplayer.mo
 share/locale/de/LC_MESSAGES/gnome-mplayer.mo
+share/locale/el/LC_MESSAGES/gnome-mplayer.mo
 share/locale/en/LC_MESSAGES/gnome-mplayer.mo
+share/locale/en_GB/LC_MESSAGES/gnome-mplayer.mo
 share/locale/es/LC_MESSAGES/gnome-mplayer.mo
 share/locale/fr/LC_MESSAGES/gnome-mplayer.mo
-share/locale/ja/LC_MESSAGES/gnome-mplayer.mo
+share/locale/gl/LC_MESSAGES/gnome-mplayer.mo
+share/locale/he/LC_MESSAGES/gnome-mplayer.mo
+share/locale/hu/LC_MESSAGES/gnome-mplayer.mo
 share/locale/it/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ja/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ko/LC_MESSAGES/gnome-mplayer.mo
+share/locale/lt/LC_MESSAGES/gnome-mplayer.mo
+share/locale/nl/LC_MESSAGES/gnome-mplayer.mo
 share/locale/pl/LC_MESSAGES/gnome-mplayer.mo
+share/locale/pt/LC_MESSAGES/gnome-mplayer.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ro/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ru/LC_MESSAGES/gnome-mplayer.mo
@@ -19,9 +37,7 @@ share/locale/tr/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mplayer.mo
-share/pixmaps/gnome-mplayer.png
-%%PLUGIN%%lib/nautilus/extensions-2.0/libgnome-mplayer-properties-page.so.0
 %%PLUGIN%%lib/nautilus/extensions-2.0/libgnome-mplayer-properties-page.so
-%%PLUGIN%%lib/nautilus/extensions-2.0/libgnome-mplayer-properties-page.la
-%%PLUGIN%%lib/nautilus/extensions-2.0/libgnome-mplayer-properties-page.a
+@dirrmtry share/gnome-control-center/default-apps
+@dirrmtry share/gnome-control-center
 @dirrmtry share/applications
