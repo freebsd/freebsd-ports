@@ -17,6 +17,8 @@ COMMENT=	V8 javascript for client and server
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
+BROKEN=		incomplete plist
+
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
