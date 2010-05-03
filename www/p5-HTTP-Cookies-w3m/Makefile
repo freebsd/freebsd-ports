@@ -16,6 +16,8 @@ COMMENT=	Cookie storage and management for w3m
 
 BUILD_DEPENDS=	${SITE_PERL}/Module/Install.pm:${PORTSDIR}/devel/p5-Module-Install
 
+BROKEN=		incomplete dependencies
+
 MAN3=		HTTP::Cookies::w3m.3
 
 PERL_CONFIGURE=	yes
