@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/p
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		does not build
+
 WRKSRC=		${WRKDIR}/PenguinTV-${PORTVERSION}
 
 OPTIONS=	PYLUCENE "Use Lucene search engine" ON \
