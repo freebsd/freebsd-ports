@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	emacs/pretest
@@ -52,7 +52,7 @@ CONFIGURE_ARGS=		--with-x-toolkit=athena
 .endif
 CONFIGURE_ARGS+=	--enable-font-backend
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2 \
-			m17n.3:${PORTSDIR}/devel/m17n-lib
+			m17n.4:${PORTSDIR}/devel/m17n-lib
 # also libotf, which is pulled in by m17n
 
 # m17n depends on libintl.so too

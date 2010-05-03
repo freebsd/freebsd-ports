@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus-m17n
 PORTVERSION=	1.2.0.20091217
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -16,7 +16,7 @@ MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	The m17n IMEngine for IBus framework
 
 LIB_DEPENDS=	ibus.1:${PORTSDIR}/textproc/ibus \
-		m17n.3:${PORTSDIR}/devel/m17n-lib
+		m17n.4:${PORTSDIR}/devel/m17n-lib
 RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
 
 PROJECTHOST=	ibus
