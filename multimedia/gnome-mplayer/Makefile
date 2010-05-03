@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome-mplayer
-PORTVERSION=	0.9.5
-PORTREVISION=	4
+PORTVERSION=	0.9.9.2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -22,17 +21,20 @@ OPTIONS=	GIO	"Use GIO for file I/O"			off \
 		NOTIFY	"Send notifications of new media"	off \
 		GPOD	"Add support for libgpod"		off \
 		BRAINZ3	"Add support for libmusicbrainz3"	off \
-		NAUPLUG	"Enable Nautilus plugin"		off
+		NAUPLUG	"Enable Nautilus plugin"		off \
+		PANSCAN	"Enable panscan functionality"		off
 
 MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib20 gtk20
+INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--without-alsa
 
+MAN1=		${PORTNAME}.1
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
 		dbus.txt keyboard_shortcuts.txt plugin-interaction.txt
 
@@ -68,7 +70,8 @@ CONFIGURE_ARGS+=	--without-libgpod
 .endif
 
 .if defined(WITH_BRAINZ3)
-LIB_DEPENDS+=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3
+LIB_DEPENDS+=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
+		curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-libmusicbrainz3
 .else
 CONFIGURE_ARGS+=	--without-libmusicbrainz3
@@ -81,6 +84,12 @@ CONFIGURE_ARGS+=	--enable-nautilus
 .else
 PLIST_SUB+=	PLUGIN="@comment "
 CONFIGURE_ARGS+=	--enable-nautilus=no
+.endif
+
+.if defined(WITH_PANSCAN)
+CONFIGURE_ARGS+=	--enable-panscan
+.else
+CONFIGURE_ARGS+=	--enable-panscan=no
 .endif
 
 post-patch:
