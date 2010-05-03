@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.10
 CATEGORIES=	security net
 MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/
 PKGNAMESUFFIX=	-devel
