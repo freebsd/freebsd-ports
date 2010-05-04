@@ -18,7 +18,7 @@
 # MAILDROP_LOG_COLUMNS	lenght of 'File:' line in log - 8; default: 72
 
 PORTNAME=	maildrop
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
