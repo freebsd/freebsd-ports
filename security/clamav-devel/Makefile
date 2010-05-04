@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20100412
+PORTVERSION=	20100504
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -140,7 +140,7 @@ USE_ICONV=	yes
 CONFIGURE_ARGS+=--without-iconv
 .endif
 
-.if defined(WITH_LLVM)
+.if defined(WITH_LLVM) && ${ARCH} != "sparc64"
 CONFIGURE_ARGS+=--enable-llvm
 USE_PYTHON_BUILD=	yes
 USE_GMAKE=		yes
