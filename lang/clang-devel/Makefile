@@ -7,6 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -52,8 +53,9 @@ CONFIGURE_ARGS+=	--enable-optimized
 DOCSRCDIR=
 .else
 DOCSRCDIR=	docs
-MAN1=		clang.1
 .endif
+
+MAN1=		clang.1
 
 .include <bsd.port.pre.mk>
 
@@ -77,6 +79,11 @@ post-patch:
 	    ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
 	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build
 
+.if defined(NOPORTDOCS)
+post-build:
+	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} clang.1
+.endif
+
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
 	    ${PREFIX}/bin
@@ -85,6 +92,10 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
+.if defined(NOPORTDOCS)
+	@${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
+	    ${MANPREFIX}/man/man1/
+.endif
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
 regression-test: ${BUILD_COOKIE}
