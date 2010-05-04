@@ -7,13 +7,14 @@
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20090825191606/bundles/:2 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/S20100308015149/bundles/:3 \
-		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/,}:4 \
-		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,junit/junit/${JUNIT3_VERSION}/,}:5 \
-		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,junit/junit/${JUNIT4_VERSION}/,}:6
+		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:4,} \
+		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,junit/junit/${JUNIT3_VERSION}/:5,} \
+		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,junit/junit/${JUNIT4_VERSION}/:6,}
 DISTFILES=	${ECLIPSE_BUILD_SRCFILE}:1 \
 		${ECLIPSE_SRCFILE}:1 \
 		${ANT_SRCFILE}:4 \
@@ -207,6 +208,8 @@ do-install:
 	  ${BUILD_WRKSRC}/eclipse.tmp
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/eclipse.tmp ${PREFIX}/bin/${PORTNAME}
+	@cd ${BUILD_WRKSRC}/bundles && \
+		${COPYTREE_SHARE} . ${PORTDESTDIR}/plugins/
 	@${PREFIX}/bin/${PORTNAME} -initialize -consolelog
 	-@update-desktop-database
 	@(cd ${PREFIX}; ${FIND} -s lib/${PORTNAME} -not -type d) >> ${TMPPLIST}
