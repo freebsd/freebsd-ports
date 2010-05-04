@@ -13,14 +13,12 @@ MASTER_SITES=	ftp://kaolin.unice.fr/pub/Cle/
 MAINTAINER=	timbob@bigpond.com
 COMMENT=	Command Line Editor (based on readline)
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110
 USE_GMAKE=	yes
+AUTOMAKE_ARGS=	--gnu --add-missing
 
 PLIST_FILES=	bin/cle
 
 MAN1=		cle.1
-
-post-extract:
-	${CHMOD} ug+x ${WRKSRC}/missing
 
 .include <bsd.port.mk>
