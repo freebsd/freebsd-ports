@@ -1,0 +1,8 @@
+bin/apvlv
+etc/apvlvrc
+%%DOCSDIR%%/apvlvrc.example
+%%DOCSDIR%%/reg.png
+%%DOCSDIR%%/dir.png
+%%DOCSDIR%%/pdf.png
+%%DOCSDIR%%/Startup.pdf
+@dirrm %%DOCSDIR%%
