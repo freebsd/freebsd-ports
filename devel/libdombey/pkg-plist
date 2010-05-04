@@ -1,3 +1,3 @@
 include/dombey.h
 lib/libdombey.so
-lib/libdombey.so.1.0
+lib/libdombey.so.1.1
