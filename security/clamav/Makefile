@@ -136,7 +136,7 @@ USE_ICONV=	yes
 CONFIGURE_ARGS+=--without-iconv
 .endif
 
-.if defined(WITH_LLVM)
+.if defined(WITH_LLVM) && ${ARCH} != "sparc64"
 CONFIGURE_ARGS+=--enable-llvm
 USE_PYTHON_BUILD=	yes
 USE_GMAKE=		yes
