@@ -15,6 +15,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the OpenSSL pseudo-random number generator
 
 PERL_CONFIGURE=	yes
+USE_OPENSSL=	yes
+MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 
 MAN3=		Crypt::OpenSSL::Random.3
 
