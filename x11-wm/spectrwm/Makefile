@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	scrotwm
-PORTVERSION=	0.9.19
+PORTVERSION=	0.9.22
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.peereboom.us/scrotwm/snapshot/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dhn
+MASTER_SITES=	http://scrotwm.org/snapshot/ \
+		http://www.peereboom.us/scrotwm/snapshot/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aragon@phat.za.net
@@ -26,10 +25,10 @@ USE_XORG=	x11 xproto xrandr
 USE_XLIB=	yes
 
 MAN1=		scrotwm.1
-PLIST_FILES=	bin/scrotwm lib/libswmhack.so etc/scrotwm.conf
+PLIST_FILES=	bin/scrotwm bin/startscrotwm lib/libswmhack.so etc/scrotwm.conf
 
 .if defined(WITH_DMENU)
-RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
+RUN_DEPENDS+=	dmenu:${PORTSDIR}/x11/dmenu
 .endif
 .if defined(WITH_DMENU_BOTTOM)
 EXTRA_PATCHES+=	${FILESDIR}/spawn_menu_atbottom.patch
@@ -39,7 +38,7 @@ EXTRA_PATCHES+=	${FILESDIR}/clock_format.patch
 .endif
 
 do-build:
-	${CC} ${CFLAGS} -I${X11BASE}/include -DSWM_DEBUG \
+	${CC} ${CFLAGS} -I${X11BASE}/include \
 		-I${WRKSRC}/linux -lutil -L${X11BASE}/lib -lX11 -lXrandr \
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 	${CC} ${CFLAGS} -I${X11BASE}/include -shared -fPIC \
@@ -47,6 +46,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/startscrotwm ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libswmhack.so ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/scrotwm.conf ${PREFIX}/etc
 	${INSTALL_MAN} ${WRKSRC}/scrotwm.1 ${PREFIX}/man/man1
