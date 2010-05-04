@@ -1,84 +1,67 @@
 bin/angband
-share/angband/apex/delete.me
-share/angband/apex/scores.raw
-share/angband/bone/delete.me
-share/angband/data/artifact.raw
-share/angband/data/ego_item.raw
-share/angband/data/flavor.raw
-share/angband/data/limits.raw
-share/angband/data/monster.raw
-share/angband/data/object.raw
-share/angband/data/p_class.raw
-share/angband/data/p_hist.raw
-share/angband/data/p_race.raw
-share/angband/data/prices.raw
-share/angband/data/shop_own.raw
-share/angband/data/spells.raw
-share/angband/data/terrain.raw
-share/angband/data/vault.raw
-share/angband/edit/artifact.txt
-share/angband/edit/ego_item.txt
-share/angband/edit/flavor.txt
-share/angband/edit/limits.txt
-share/angband/edit/monster.txt
-share/angband/edit/object.txt
-share/angband/edit/p_class.txt
-share/angband/edit/p_hist.txt
-share/angband/edit/p_race.txt
-share/angband/edit/shop_own.txt
-share/angband/edit/spell.txt
-share/angband/edit/store.txt
-share/angband/edit/terrain.txt
-share/angband/edit/vault.txt
+etc/angband/edit/artifact.txt
+etc/angband/edit/ego_item.txt
+etc/angband/edit/flavor.txt
+etc/angband/edit/limits.txt
+etc/angband/edit/monster.txt
+etc/angband/edit/names.txt
+etc/angband/edit/object.txt
+etc/angband/edit/p_class.txt
+etc/angband/edit/p_hist.txt
+etc/angband/edit/p_race.txt
+etc/angband/edit/shop_own.txt
+etc/angband/edit/spell.txt
+etc/angband/edit/store.txt
+etc/angband/edit/terrain.txt
+etc/angband/edit/vault.txt
+etc/angband/pref/flvr-dvg.prf
+etc/angband/pref/flvr-new.prf
+etc/angband/pref/flvr-xxx.prf
+etc/angband/pref/font.prf
+etc/angband/pref/font-gcu.prf
+etc/angband/pref/font-gtk.prf
+etc/angband/pref/font-mac.prf
+etc/angband/pref/font-sdl.prf
+etc/angband/pref/font-win.prf
+etc/angband/pref/font-xxx.prf
+etc/angband/pref/font-x11.prf
+etc/angband/pref/graf.prf
+etc/angband/pref/graf-dvg.prf
+etc/angband/pref/graf-gtk.prf
+etc/angband/pref/graf-mac.prf
+etc/angband/pref/graf-new.prf
+etc/angband/pref/graf-sdl.prf
+etc/angband/pref/graf-win.prf
+etc/angband/pref/graf-xxx.prf
+etc/angband/pref/graf-x11.prf
+etc/angband/pref/message.prf
+etc/angband/pref/pref.prf
+etc/angband/pref/pref-acn.prf
+etc/angband/pref/pref-gcu.prf
+etc/angband/pref/pref-mac.prf
+etc/angband/pref/pref-sdl.prf
+etc/angband/pref/pref-win.prf
+etc/angband/pref/pref-x11.prf
+etc/angband/pref/user.prf
+etc/angband/pref/user-mac.prf
+etc/angband/pref/xtra-dvg.prf
+etc/angband/pref/xtra-new.prf
+etc/angband/pref/xtra-xxx.prf
 share/angband/file/crown.txt
 share/angband/file/dead.txt
 share/angband/file/news.txt
-share/angband/help/308.txt
 share/angband/help/attack.txt
 share/angband/help/birth.txt
 share/angband/help/command.txt
+share/angband/help/debug.txt
 share/angband/help/dungeon.txt
 share/angband/help/general.txt
 share/angband/help/help.hlp
 share/angband/help/option.txt
 share/angband/help/playing.txt
 share/angband/help/version.txt
-share/angband/info/delete.me
-share/angband/pref/flvr-dvg.prf
-share/angband/pref/flvr-new.prf
-share/angband/pref/flvr-xxx.prf
-share/angband/pref/font-gcu.prf
-share/angband/pref/font-gtk.prf
-share/angband/pref/font-mac.prf
-share/angband/pref/font-sdl.prf
-share/angband/pref/font-win.prf
-share/angband/pref/font-x11.prf
-share/angband/pref/font-xxx.prf
-share/angband/pref/font.prf
-share/angband/pref/graf-dvg.prf
-share/angband/pref/graf-gtk.prf
-share/angband/pref/graf-mac.prf
-share/angband/pref/graf-new.prf
-share/angband/pref/graf-sdl.prf
-share/angband/pref/graf-win.prf
-share/angband/pref/graf-x11.prf
-share/angband/pref/graf-xxx.prf
-share/angband/pref/graf.prf
-share/angband/pref/message.prf
-share/angband/pref/pref-acn.prf
-share/angband/pref/pref-gcu.prf
-share/angband/pref/pref-mac.prf
-share/angband/pref/pref-sdl.prf
-share/angband/pref/pref-win.prf
-share/angband/pref/pref-x11.prf
-share/angband/pref/pref.prf
-share/angband/pref/user-mac.prf
-share/angband/pref/user.prf
-share/angband/pref/xtra-dvg.prf
-share/angband/pref/xtra-new.prf
-share/angband/pref/xtra-xxx.prf
-share/angband/save/delete.me
-share/angband/user/delete.me
+share/angband/help/308.txt
+share/angband/info/readme.txt
 share/angband/xtra/angband.glade
 share/angband/xtra/font/copying.txt
 share/angband/xtra/font/10x17b.fon
@@ -139,19 +122,15 @@ share/angband/xtra/sound/thump.wav
 share/angband/xtra/sound/vomit.wav
 @exec chmod g+w %D/share/angband/apex %D/share/angband/bone %D/share/angband/data %D/share/angband/save
 @exec chgrp games %D/share/angband/apex %D/share/angband/bone %D/share/angband/data %D/share/angband/save
-@dirrm share/angband/apex
-@dirrm share/angband/bone
-@dirrm share/angband/data
-@dirrm share/angband/edit
 @dirrm share/angband/file
 @dirrm share/angband/help
 @dirrm share/angband/info
-@dirrm share/angband/pref
-@dirrm share/angband/save
-@dirrm share/angband/user
 @dirrm share/angband/xtra/sound
 @dirrm share/angband/xtra/icon
 @dirrm share/angband/xtra/graf
 @dirrm share/angband/xtra/font
 @dirrm share/angband/xtra
 @dirrm share/angband
+@dirrm etc/angband/pref
+@dirrm etc/angband/edit
+@dirrm etc/angband
