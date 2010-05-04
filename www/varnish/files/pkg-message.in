@@ -7,7 +7,7 @@ front of your web server:
 1) Install Varnish
 2) Reconfigure your web server to listen on localhost:8080
 3) echo 'varnishd_enable="YES"' >>/etc/rc.conf
-4) %%PREFIX%%/etc/rc.d/varnishd
+4) %%PREFIX%%/etc/rc.d/varnishd start
 
 Refer to the documentation for more advanced configuration.
 
