@@ -83,6 +83,7 @@ include/H5Tpublic.h
 include/H5VarLenType.h
 include/H5Zpublic.h
 include/H5api_adpt.h
+include/H5overflow.h
 include/H5pubconf.h
 include/H5public.h
 include/H5version.h
