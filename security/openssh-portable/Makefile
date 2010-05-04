@@ -78,6 +78,10 @@ BROKEN=		does not build
 BROKEN=		X509 patch incompatible with HPN and LPK patches
 .endif
 
+.if defined(WITH_X509) && defined(WITH_KERB_GSSAPI)
+BROKEN=		X509 patch incompatible with KERB_GSSAPI patch
+.endif
+
 .if defined(OPENSSH_OVERWRITE_BASE)
 WITH_OVERWRITE_BASE=	yes
 .endif
