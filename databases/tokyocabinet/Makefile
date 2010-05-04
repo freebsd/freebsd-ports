@@ -8,9 +8,11 @@
 PORTNAME=	tokyocabinet
 PORTVERSION=	1.4.44
 CATEGORIES=	databases
-MASTER_SITES=	http://1978th.net/tokyocabinet/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://1978th.net/tokyocabinet/
+MASTER_SITE_SUBDIR=	kuriyama
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A modern implementation of DBM
 
 MAKE_JOBS_SAFE=	yes
