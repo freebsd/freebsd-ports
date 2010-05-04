@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	upx
-PORTVERSION=	3.04
+PORTVERSION=	3.05
 CATEGORIES=	archivers
 MASTER_SITES=	http://upx.sourceforge.net/download/\
-		SF/sevenzip/7-Zip/4.57:lzma
+		SF/sevenzip/7-Zip/${LZMA_VER}:lzma
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}\
 		7z${LZMA_VER:S/.//g}${EXTRACT_SUFX}:lzma
 
@@ -18,7 +18,7 @@ COMMENT=	The Ultimate Packer for eXecutables
 
 LIB_DEPENDS=	ucl.1:${PORTSDIR}/archivers/ucl
 
-LZMA_VER=	4.57
+LZMA_VER=	4.65
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 USE_BZIP2=	yes
 USE_GMAKE=	yes
