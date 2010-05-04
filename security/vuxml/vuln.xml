@@ -5143,12 +5143,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-1829</cvename>
       <url>http://secunia.com/advisories/35201/</url>
       <url>http://www.wireshark.org/security/wnpa-sec-2009-03.html</url>
     </references>
     <dates>
       <discovery>2009-05-21</discovery>
       <entry>2009-05-30</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -5418,12 +5420,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-7068</cvename>
       <url>http://www.securityfocus.com/archive/1/498746/30/0/threaded</url>
       <url>http://securityreason.com/achievement_securityalert/58</url>
     </references>
     <dates>
       <discovery>2009-11-28</discovery>
       <entry>2009-05-16</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -5941,6 +5945,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-1596</cvename>
       <url>http://secunia.com/advisories/34984/</url>
       <url>http://www.igniterealtime.org/issues/browse/JM-1532</url>
       <url>http://www.igniterealtime.org/community/message/190288#190288</url>
@@ -5948,7 +5953,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-05-04</discovery>
       <entry>2009-05-04</entry>
-      <modified>2009-05-13</modified>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -5992,11 +5997,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-1575</cvename>
+      <cvename>CVE-2009-1576</cvename>
       <url>http://drupal.org/node/449078</url>
     </references>
     <dates>
       <discovery>2009-04-30</discovery>
       <entry>2009-04-30</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -6284,11 +6292,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-1285</cvename>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2009-4.php</url>
     </references>
     <dates>
       <discovery>2009-04-14</discovery>
       <entry>2009-04-15</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -6318,11 +6328,13 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>34172</bid>
+      <cvename>CVE-2009-1069</cvename>
       <url>http://drupal.org/node/406520</url>
     </references>
     <dates>
       <discovery>2009-03-23</discovery>
       <entry>2009-04-11</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -6385,11 +6397,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-1151</cvename>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2009-3.php</url>
     </references>
     <dates>
       <discovery>2009-03-24</discovery>
       <entry>2009-03-25</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -6458,12 +6472,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-0599</cvename>
+      <cvename>CVE-2009-0600</cvename>
+      <cvename>CVE-2009-0601</cvename>
       <url>http://www.wireshark.org/security/wnpa-sec-2009-01.html</url>
     </references>
     <dates>
       <discovery>2009-02-06</discovery>
       <entry>2009-03-22</entry>
-      <modified>2009-03-23</modified>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -6835,12 +6852,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-0914</cvename>
+      <cvename>CVE-2009-0915</cvename>
       <url>http://www.opera.com/docs/changelogs/freebsd/964/</url>
       <url>http://secunia.com/advisories/34135/</url>
     </references>
     <dates>
       <discovery>2009-03-15</discovery>
       <entry>2009-03-15</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -7286,12 +7306,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-0815</cvename>
+      <cvename>CVE-2009-0816</cvename>
       <url>http://secunia.com/advisories/33829/</url>
       <url>http://typo3.org/teams/security/security-bulletins/typo3-sa-2009-002/</url>
     </references>
     <dates>
       <discovery>2009-02-10</discovery>
       <entry>2009-02-11</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -7706,13 +7729,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2009-0414</cvename>
       <url>http://secunia.com/advisories/33635/</url>
       <url>http://archives.seul.org/or/announce/Jan-2009/msg00000.html</url>
     </references>
     <dates>
       <discovery>2009-01-22</discovery>
       <entry>2009-01-29</entry>
-      <modified>2009-06-23</modified>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -7774,11 +7798,14 @@ Note:  Please add new entries to the beginning of this file.
       <bid>32943</bid>
       <bid>32944</bid>
       <bid>32945</bid>
+      <cvename>CVE-2009-0496</cvename>
+      <cvename>CVE-2009-0497</cvename>
       <url>http://www.coresecurity.com/content/openfire-multiple-vulnerabilities</url>
     </references>
     <dates>
       <discovery>2009-01-08</discovery>
       <entry>2009-01-25</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -8270,11 +8297,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-5514</cvename>
       <url>http://www.washington.edu/imap/documentation/RELNOTES.html</url>
     </references>
     <dates>
       <discovery>2008-12-16</discovery>
       <entry>2009-01-11</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -8298,12 +8327,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-5514</cvename>
       <url>http://www.washington.edu/imap/documentation/RELNOTES.html</url>
       <url>http://www.sans.org/newsletters/risk/display.php?v=7&amp;i=45#08.45.22</url>
     </references>
     <dates>
       <discovery>2008-10-29</discovery>
       <entry>2009-01-11</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -8749,12 +8780,14 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>32682</bid>
+      <cvename>CVE-2008-5660</cvename>
       <url>http://www.coresecurity.com/content/vinagre-format-string</url>
       <url>http://ftp.gnome.org/pub/GNOME/sources/vinagre/0.5/vinagre-0.5.2.news</url>
     </references>
     <dates>
       <discovery>2008-12-09</discovery>
       <entry>2008-12-31</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -9060,12 +9093,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-6533</cvename>
       <url>http://drupal.org/node/345441</url>
       <url>http://secunia.com/advisories/33112/</url>
     </references>
     <dates>
       <discovery>2008-12-11</discovery>
       <entry>2008-12-19</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -9165,6 +9200,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-5621</cvename>
       <url>http://www.phpmyadmin.net/home_page/security/PMASA-2008-10.php</url>
       <url>http://www.milw0rm.com/exploits/7382</url>
       <url>http://secunia.com/advisories/33076/</url>
@@ -9172,6 +9208,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-12-09</discovery>
       <entry>2008-12-11</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -9195,11 +9232,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-5844</cvename>
       <url>http://www.php.net/archive/2008.php#id2008-12-07-1</url>
     </references>
     <dates>
       <discovery>2008-12-07</discovery>
       <entry>2008-12-08</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -9593,12 +9632,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-5278</cvename>
       <url>http://secunia.com/advisories/32882/</url>
       <url>http://wordpress.org/development/2008/11/wordpress-265/</url>
     </references>
     <dates>
       <discovery>2008-11-26</discovery>
       <entry>2008-11-29</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -9926,6 +9967,12 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-6510</cvename>
+      <cvename>CVE-2008-6511</cvename>
+      <cvename>CVE-2008-6508</cvename>
+      <cvename>CVE-2009-1595</cvename>
+      <cvename>CVE-2008-1728</cvename>
+      <cvename>CVE-2008-6509</cvename>
       <url>http://www.andreas-kurtz.de/advisories/AKADV2008-001-v1.0.txt</url>
       <url>http://www.igniterealtime.org/builds/openfire/docs/latest/changelog.html</url>
       <url>http://secunia.com/Advisories/32478/</url>
@@ -9933,6 +9980,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-11-07</discovery>
       <entry>2008-11-19</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -10241,11 +10289,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-3949</cvename>
       <url>http://lists.gnu.org/archive/html/emacs-devel/2008-09/msg00215.html</url>
     </references>
     <dates>
       <discovery>2008-09-05</discovery>
       <entry>2008-11-07</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -10348,13 +10398,15 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-5032</cvename>
+      <cvename>CVE-2008-5036</cvename>
       <url>http://www.videolan.org/security/sa0810.html</url>
       <url>http://www.trapkit.de/advisories/TKADV2008-012.txt</url>
     </references>
     <dates>
       <discovery>2008-11-05</discovery>
       <entry>2008-11-08</entry>
-      <modified>2008-11-11</modified>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -10389,12 +10441,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-4794</cvename>
       <url>http://www.opera.com/support/search/view/906/</url>
       <url>http://www.opera.com/support/search/view/907/</url>
     </references>
     <dates>
       <discovery>2008-11-03</discovery>
       <entry>2008-11-03</entry>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
@@ -10506,6 +10560,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2008-4697</cvename>
+      <cvename>CVE-2008-4698</cvename>
+      <cvename>CVE-2008-4725</cvename>
       <url>http://www.opera.com/support/search/view/903/</url>
       <url>http://www.opera.com/support/search/view/904/</url>
       <url>http://www.opera.com/support/search/view/905/</url>
@@ -10513,7 +10570,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2008-10-17</discovery>
       <entry>2008-10-28</entry>
-      <modified>2008-10-29</modified>
+      <modified>2010-05-02</modified>
     </dates>
   </vuln>
 
