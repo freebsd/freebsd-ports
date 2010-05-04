@@ -422,6 +422,7 @@
     SUBDIR += p5-Text-Query-SQL
     SUBDIR += p5-Tie-DBI
     SUBDIR += p5-Time-Piece-MySQL
+    SUBDIR += p5-TokyoCabinet
     SUBDIR += p5-hp200lx-db
     SUBDIR += p5-mysql-genocide
     SUBDIR += p5-postgresql-plperl
