@@ -31,6 +31,7 @@
     SUBDIR += animorph
     SUBDIR += aoi
     SUBDIR += aolserver-nsgd
+    SUBDIR += apvlv
     SUBDIR += aqsis
     SUBDIR += asciio
     SUBDIR += autopano-sift
