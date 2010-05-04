@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	evilvte
-PORTVERSION=	0.4.5
-PORTREVISION=	2
+PORTVERSION=	0.4.6
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.calno.com/${PORTNAME}/ \
 		LOCAL/glarkin
@@ -16,6 +15,8 @@ MAINTAINER=	aragon@phat.za.net
 COMMENT=	A VTE based, super lightweight terminal emulator
 
 USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+ALL_TARGET=	evilvte
 USE_GNOME=	vte
 
 MAN1=		evilvte.1 showvte.1
@@ -31,8 +32,8 @@ pre-everything::
 .endif
 
 post-patch:
-	# disable man page installation
-	@${REINPLACE_CMD} -e '53,54 d' ${WRKSRC}/Makefile
+#	 disable man page installation
+	@${REINPLACE_CMD} -e '29,30 d' ${WRKSRC}/Makefile
 .if defined(EVILVTE_CONF)
 	@${ECHO_MSG} "creating config.h from ${EVILVTE_CONF}"
 	@${CP} ${EVILVTE_CONF} ${WRKSRC}/src/config.h
