@@ -33,6 +33,8 @@ MAN5=		isakmpd.conf.5 isakmpd.policy.5
 MAN8=		certpatch.8 isakmpd.8
 MANCOMPRESSED=	yes
 
+USE_OPENSSL=	yes
+
 .include <bsd.port.pre.mk>
 
 OPENSSLINC?=	/usr/include
