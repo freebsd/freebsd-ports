@@ -15,6 +15,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OpenSSL's multiprecision integer arithmetic
 
 PERL_CONFIGURE=	yes
+USE_OPENSSL=	yes
+MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 
 MAN3=		Crypt::OpenSSL::Bignum::CTX.3 Crypt::OpenSSL::Bignum.3
 
