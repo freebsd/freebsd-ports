@@ -1,10 +1,10 @@
-Drood is a lightweight, partially-compliant HTTP/1.1 server, intended as an
-alternative to more complex web servers for websites where the server
-requirements are simple.  Drood supports name-based virtual hosting, CGI
-and SCGI, gzipped content-encoding for static resources, and will service
-both IPv4 and IPv6 connections.
+Drood is a lightweight, partially-compliant HTTP/1.1 server, intended
+as an alternative to more complex web servers for websites where
+the server requirements are simple.  Drood supports name-based
+virtual hosting, CGI and SCGI, gzipped content-encoding for static
+resources, and will service both IPv4 and IPv6 connections.
 
-WWW: http://www.mammothcheese.ca/munger.html
+WWW: http://www.mammothcheese.ca/drood.html
 
 --
 James Bailie <jimmy@mammothcheese.ca>
