@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	3.1
-PORTREVISION=	3
+PORTVERSION=	3.2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU Smalltalk
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		cairo.2:${PORTSDIR}/graphics/cairo
@@ -39,9 +39,10 @@ CONFIGURE_ARGS=	--enable-generational-gc=no \
 		--with-gmp=no
 USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
+PORTDATA=	*
 
 MAN1=		gst.1 gst-load.1 gst-package.1 gst-sunit.1 gst-config.1 \
-		gst-convert.1 gst-doc.1
+		gst-convert.1 gst-doc.1 gst-profile.1
 MLINKS=		gst-load.1 gst-reload.1
 INFO=		gst gst-base gst-libs
 
@@ -96,8 +97,6 @@ post-patch:
 post-build:
 	@${SED} -e 's|@bindir@|${PREFIX}/bin|g' \
 		${WRKSRC}/gst-mode.el.in > ${WRKSRC}/gst-mode.el
-	@${SED} -e 's|@lispdir@|${PREFIX}/share/emacs/site-lisp|g' \
-		${WRKSRC}/smalltalk-mode.el.in > ${WRKSRC}/smalltalk-mode.el
 
 post-install:
 	@${MKDIR} ${DATADIR}/gtk
