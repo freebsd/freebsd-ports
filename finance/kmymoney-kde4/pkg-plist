@@ -1063,6 +1063,8 @@ share/mime/application/x-kmymoney.xml
 share/mime/packages/x-kmymoney.xml
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
+@dirrmtry share/icons/oxygen/68x68/apps
+@dirrmtry share/icons/oxygen/68x68
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/locolor/32x32
 @dirrmtry share/icons/locolor/16x16/apps
