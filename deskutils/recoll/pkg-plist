@@ -2,6 +2,7 @@ bin/recoll
 bin/recollindex
 share/applications/recoll-searchgui.desktop
 share/icons/hicolor/48x48/apps/recoll.png
+share/pixmaps/recoll.png
 %%DATADIR%%/doc/docbook.css
 %%DATADIR%%/doc/usermanual.html
 %%DATADIR%%/examples/fields
