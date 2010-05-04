@@ -32,6 +32,10 @@ USE_GMAKE=	yes
 USE_GCC=	4.2+
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		does not compile with boost on sparc64
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/src/3rdparty/png++/io_base.hpp
