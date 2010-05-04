@@ -41,6 +41,10 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
 PORTDATA=	*
 
+.ifdef	NOPORTDATA
+IGNORE=		smalltalk requires port data, unset NOPORTDATA to install
+.endif
+
 MAN1=		gst.1 gst-load.1 gst-package.1 gst-sunit.1 gst-config.1 \
 		gst-convert.1 gst-doc.1 gst-profile.1
 MLINKS=		gst-load.1 gst-reload.1
