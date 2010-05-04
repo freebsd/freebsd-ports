@@ -1,3 +1,3 @@
-MD5 (hdf5-1.8.3.tar.gz) = 5ce228d860bf9e797ca40ab1a823c380
-SHA256 (hdf5-1.8.3.tar.gz) = 2e124dfd59ca00dee693c06cf2517d14b361769e65edbc1c3940063437d0a5e3
-SIZE (hdf5-1.8.3.tar.gz) = 7175884
+MD5 (hdf5-1.8.4-patch1.tar.bz2) = b19f4dfbf654a2af3653c492fc1c7513
+SHA256 (hdf5-1.8.4-patch1.tar.bz2) = 818b9f7ff767e9760d0c8aa0abc16ad20e616cfaab760dd3b18ead67326a3f18
+SIZE (hdf5-1.8.4-patch1.tar.bz2) = 5251124
