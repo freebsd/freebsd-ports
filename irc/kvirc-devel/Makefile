@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kvirc
-DISTVERSION=	4.0rc2
+DISTVERSION=	4.0rc3
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/snapshots/source/ \
 		http://distfiles.officialunix.com/
@@ -26,7 +26,7 @@ CMAKE_ARGS=	-DWITHOUT_ESD=yes -DWITHOUT_DOXYGEN=yes \
 INSTALLS_ICONS=	yes
 CONFLICTS=	kvirc-3.4.*
 # Fixes certain issues when installing/configuring
-SVN_REV=	3713
+SVN_REV=	4255
 
 MAN1=	kvirc.1
 MANLANG=	"" de it
