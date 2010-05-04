@@ -1,15 +1,7 @@
 
  =======================================================================
- Make sure you're a member of group "games".
 
- To reduce the number of term windows opened, use -n:
-   angband -- -n2
+ Make sure you're a member of group "games", otherwise you will not be
+ able to load your saved games !!!
 
- To use graphical tiles, use -g:
-   angband -g
-   Note: you have to download graphical tiles from angband.oook.cz
-   manually and place them in %%PREFIX%%/share/angband/lib/xtra/graf
-
- Tip: If you're experiencing display issues while playing angband in
-      syscons, try setting your TERM environment variable to 'mvterm'
  =======================================================================

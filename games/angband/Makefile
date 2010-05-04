@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.1.1.1626
+DISTVERSION=	3.1.2v2
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/3.1/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
@@ -17,14 +17,14 @@ COMMENT=	Rogue-like game with color, X11 support
 USE_GMAKE=	yes
 ALL_TARGET=	#
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-setgid=games --disable-sdl --disable-sdl-mixer
+CONFIGURE_ARGS=	--with-setgid=games --disable-sdl --disable-sdl-mixer --with-varpath=/var/games/angband
 .if !defined(WITHOUT_X11)
 USE_XORG=	sm x11
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--with-x=no
 .endif
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CONFIGURE_ENV=	ac_cv_path_mkdir=mkdir
 
 SUB_FILES=	pkg-message
