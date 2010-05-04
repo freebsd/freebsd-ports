@@ -19,7 +19,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus network phonon qt3support sql svg xml \
-		moc_build rcc_build uic_build
+		qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdehier kdeprefix automoc4 kdelibs pimlibs sharedmime
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
