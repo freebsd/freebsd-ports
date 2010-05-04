@@ -1,15 +1,16 @@
---- choparp.8.orig	Fri Feb 13 20:28:33 2004
-+++ choparp.8	Fri Feb 13 20:30:23 2004
-@@ -34,7 +34,7 @@
+--- choparp.8.orig	2002-11-08 07:36:03.000000000 +0900
++++ choparp.8	2010-05-04 20:39:28.291199414 +0900
+@@ -34,7 +34,8 @@
  .Nm choparp
  .Nd cheap and omitted proxy ARP
  .Sh SYNOPSIS
 -.Nm chpoarp
 +.Nm choparp
++.Op Fl v
  .Ar if_name mac_addr
  .Oo Fl Oc Ns Ar net_addr Ns
  .Op / Ns Ar net_mask
-@@ -42,7 +42,7 @@
+@@ -42,7 +43,7 @@
  .Sh DESCRIPTION
  .Pp
  .Nm choparp 
@@ -18,7 +19,7 @@
  It watches ARP request packets visible on the interface specified by argument
  .Ar if_name ,
  and sends proxy ARP reply to the sender if the ARP request queries the
-@@ -52,7 +52,7 @@
+@@ -52,7 +53,7 @@
  .Ar net_addr Ns / Ar net_mask .
  .Pp
  .Ar mac_addr
@@ -27,7 +28,7 @@
  It is normally the address of
  .Ar if_name .
  The format of
-@@ -72,7 +72,7 @@
+@@ -72,7 +73,7 @@
  .Dq 0x
  .Pq for example Ad 0x858a0186 .
  .Ar net_mask
@@ -36,10 +37,13 @@
  or alternatively as a mask length. The following address specifications
  are therefore equivalent:
  .Bl -item -offset indent
-@@ -89,6 +89,13 @@
+@@ -89,6 +90,16 @@
  .Em excluded
  by preceding them with
  .Fl
++.Pp
++.Fl v
++option enables verbose mode, showing warning for invalid ARP packets.
 +.Pp
 +.Nm choparp
 +uses the Berkeley Packet Filter
