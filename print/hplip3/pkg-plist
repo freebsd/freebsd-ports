@@ -1418,8 +1418,8 @@ share/applications/hplip.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrmtry lib/sane
-@dirrmtry lib/python2.5/site-packages
-@dirrmtry lib/python2.5
+@dirrmtry lib/%%PYTHON_VERSION%%/site-packages
+@dirrmtry lib/%%PYTHON_VERSION%%
 @dirrmtry libexec/cups/filter
 @dirrmtry libexec/cups/backends
 @dirrmtry libexec/cups
