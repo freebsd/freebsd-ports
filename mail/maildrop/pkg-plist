@@ -4,6 +4,8 @@ bin/lockmail
 bin/mailbot
 bin/maildirmake
 bin/maildrop
+bin/makedat
+bin/makedatprog
 bin/makemime
 bin/reformail
 bin/reformime
