@@ -6,30 +6,21 @@
 #
 
 PORTNAME=		pam_krb5
-PORTVERSION=		1.3.r7
-PORTREVISION=		3
+PORTVERSION=		4.2
 CATEGORIES=		security
-MASTER_SITES=		SF/pam-krb5/${PORTNAME}/${PORTNAME}-1.3-rc7
-DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/-rc/}
+MASTER_SITES=		http://archives.eyrie.org/software/kerberos/
+DISTNAME=		pam-krb5-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		A Pluggable Authentication Module for Kerberos 5
 
-MAN5=			pam_krb5.5 pam_krb5afs.5
-MAN8=			pam_krb5.8 pam_krb5afs.8
+MAN5=			pam_krb5.5
 
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 
-IGNORE=			FreeBSD 5.x and above already ships with its own version of pam_krb5
-
-.if defined(PACKAGE_BUILDING)
-KRB5_IMPL=		mit
-.endif
-
 .if defined(KRB5_IMPL) && ${KRB5_IMPL} == heimdal
-LIB_DEPENDS=		krb5.21:${PORTSDIR}/security/heimdal
 .if defined(HEIMDAL_HOME)
 KRB5_DIR?=		${HEIMDAL_HOME}
 .endif
@@ -43,15 +34,10 @@ IGNORE=			You must define KRB5_IMPL to be \"mit\" or \"heimdal\"
 .endif
 
 MANDIR=			${MANPREFIX}/man
-PREFIX=			/usr
-MANPREFIX=		/usr/share
 MANDIR=			${PREFIX}/share/man
 KRB5_DIR?=		${LOCALBASE}
 CONFIGURE_ENV=		CFLAGS="${CFLAGS}"
-CONFIGURE_ARGS=		--with-krb5="${KRB5_DIR}"	\
-			--with-pamdir="${PREFIX}/lib"	\
-			--with-man-sect=8		\
-			--without-krbafs
+CONFIGURE_ARGS=		--with-krb5="${KRB5_DIR}"
 
 post-install:
 	cd ${WRKSRC} && ${GMAKE} install-man

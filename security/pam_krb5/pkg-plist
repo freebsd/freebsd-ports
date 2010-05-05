@@ -1,2 +1,2 @@
-lib/pam_krb5.so
-lib/pam_krb5.la
+lib/security/pam_krb5.so
+lib/security/pam_krb5.la
