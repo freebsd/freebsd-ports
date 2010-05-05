@@ -18,7 +18,7 @@ COMMENT=	An intrusion detection and prevention engine
 MAKE_JOBS_SAFE=	yes
 
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
-		apr-1.3:${PORTSDIR}/devel/apr
+		apr-1:${PORTSDIR}/devel/apr
 
 USE_APACHE=	2.0+
 GNU_CONFIGURE=	yes
