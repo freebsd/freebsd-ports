@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	editors
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/Cle/
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command Line Editor (based on readline)
 
 USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110
