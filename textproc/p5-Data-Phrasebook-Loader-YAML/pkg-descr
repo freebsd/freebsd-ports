@@ -1,0 +1,9 @@
+This class loader implements phrasebook patterns using YAML. 
+
+Phrases can be contained within one or more dictionaries, with each phrase
+accessible via a unique key. Phrases may contain placeholders, please see
+Data::Phrasebook for an explanation of how to use these. Groups of phrases are
+kept in a dictionary. In this implementation a single file is one complete
+dictionary.
+
+WWW: http://search.cpan.org/dist/Data-Phrasebook-Loader-YAML/

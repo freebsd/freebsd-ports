@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Data/Phrasebook/Loader/YAML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Phrasebook/Loader/YAML/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Phrasebook/Loader/YAML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Phrasebook/Loader
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Phrasebook
+@dirrmtry %%SITE_PERL%%/Data/Phrasebook/Loader
+@dirrmtry %%SITE_PERL%%/Data/Phrasebook
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data

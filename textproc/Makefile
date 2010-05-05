@@ -426,6 +426,7 @@
     SUBDIR += p5-Data-FormValidator
     SUBDIR += p5-Data-FormValidator-Constraints-DateTime
     SUBDIR += p5-Data-Phrasebook
+    SUBDIR += p5-Data-Phrasebook-Loader-YAML
     SUBDIR += p5-Data-Report
     SUBDIR += p5-Data-SpreadPagination
     SUBDIR += p5-DelimMatch
