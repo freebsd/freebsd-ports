@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dateutil
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://labix.org/download/python-dateutil/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
