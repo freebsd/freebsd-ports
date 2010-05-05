@@ -32,7 +32,8 @@ MASTER_SITE_IMAGEMAGICK=	\
 	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/&,}
 
-OPTIONS=	OPENGL	"OpenGL support" off
+OPTIONS=	OPENGL	"OpenGL support" off \
+		UUID	"UUID support (required by GDAL)" off
 
 .include <bsd.port.pre.mk>
 
@@ -43,6 +44,10 @@ PLIST_SUB+=	OPENGL=""
 .else
 CONFIGURE_ARGS+=--disable-opengl
 PLIST_SUB+=	OPENGL="@comment "
+.endif
+
+.if defined(WITH_UUID)
+EXTRA_PATCHES+=	${FILESDIR}/uuid.patch
 .endif
 
 .if !defined(NO_INSTALL_MANPAGES)
