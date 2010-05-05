@@ -170,7 +170,7 @@ include/apache22/util_xml.h
 %%APR_PORTS%%lib/libapr-1.a
 %%APR_PORTS%%lib/libapr-1.la
 %%APR_PORTS%%lib/libapr-1.so
-%%APR_PORTS%%lib/libapr-1.so.3
+%%APR_PORTS%%lib/libapr-1.so.4
 %%APR_PORTS%%lib/libaprutil-1.a
 %%APR_PORTS%%lib/libaprutil-1.la
 %%APR_PORTS%%lib/libaprutil-1.so
