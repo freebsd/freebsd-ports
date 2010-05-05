@@ -549,6 +549,7 @@ apricots                        ports/games/apricots
 aprsd                           ports/comms/aprsd
 apsfilter                       ports/print/apsfilter
 apt                             ports/sysutils/apt
+apvlv                           ports/graphics/apvlv
 apwal                           ports/x11/apwal
 aqbanking                       ports/finance/aqbanking
 aqbubble                        ports/games/aqbubble
@@ -7042,6 +7043,7 @@ kmplayer-kde4                   ports/multimedia/kmplayer-kde4
 kmquake2                        ports/games/kmquake2
 kmuddy                          ports/net/kmuddy
 kmyirc                          ports/irc/kmyirc
+kmymoney-kde4                   ports/finance/kmymoney-kde4
 kmymoney2                       ports/finance/kmymoney2
 kmysqladmin                     ports/databases/kmysqladmin
 knemo                           ports/net/knemo
@@ -10494,6 +10496,7 @@ p-interp                        ports/emulators/p-interp
 p0f                             ports/net-mgmt/p0f
 p2c                             ports/lang/p2c
 p3scan                          ports/mail/p3scan
+p4                              ports/devel/p4
 p4.el                           ports/devel/p4.el
 p4api                           ports/devel/p4api
 p4db                            ports/devel/p4db
@@ -13962,6 +13965,7 @@ p5-Tk-ResizeButton              ports/x11-toolkits/p5-Tk-ResizeButton
 p5-Tk-Splashscreen              ports/x11-toolkits/p5-Tk-Splashscreen
 p5-Tk-TableMatrix               ports/x11-toolkits/p5-Tk-TableMatrix
 p5-Tk-XMLViewer                 ports/textproc/p5-Tk-XMLViewer
+p5-TokyoCabinet                 ports/databases/p5-TokyoCabinet
 p5-ToolSet                      ports/devel/p5-ToolSet
 p5-TraceFuncs                   ports/devel/p5-TraceFuncs
 p5-Tree-Authz                   ports/security/p5-Tree-Authz
@@ -17861,6 +17865,7 @@ p5-tk-resizebutton              ports/x11-toolkits/p5-Tk-ResizeButton
 p5-tk-splashscreen              ports/x11-toolkits/p5-Tk-Splashscreen
 p5-tk-tablematrix               ports/x11-toolkits/p5-Tk-TableMatrix
 p5-tk-xmlviewer                 ports/textproc/p5-Tk-XMLViewer
+p5-tokyocabinet                 ports/databases/p5-TokyoCabinet
 p5-tokyotyrant                  ports/databases/p5-tokyotyrant
 p5-toolset                      ports/devel/p5-ToolSet
 p5-tracefuncs                   ports/devel/p5-TraceFuncs
