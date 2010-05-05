@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.2.14
-PORTREVISION=	6
+PORTVERSION=	2.2.15
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -58,7 +57,7 @@ APACHEDIR=	${MASTERDIR}
 
 .if !defined(WITHOUT_APACHE_OPTIONS)
 OPTIONS=	\
-	APR_FROM_PORTS "Use devel/apr as APR (preferred)" Off \
+	APR_FROM_PORTS "Use devel/apr (recommended)" On \
 	THREADS "Enable threads support in APR" Off \
 	MYSQL "Enable MySQL support for apr-dbd" Off \
 	PGSQL "Enable PostgreSQL support for apr-dbd" Off \

@@ -1,6 +1,24 @@
---- ./srclib/apr/buildconf.orig	2009-12-12 00:36:35.693177242 +0000
-+++ ./srclib/apr/buildconf	2009-12-12 00:37:00.222653819 +0000
-@@ -71,6 +71,7 @@
+--- srclib/apr/buildconf.orig	2009-11-12 17:19:49.000000000 -0500
++++ srclib/apr/buildconf	2010-04-30 19:22:40.116834529 -0400
+@@ -28,7 +28,7 @@
+ #
+ build/buildcheck.sh $verbose || exit 1
+ 
+-libtoolize=`build/PrintPath glibtoolize1 glibtoolize libtoolize15 libtoolize14 libtoolize`
++libtoolize="${LIBTOOLIZE}"
+ if [ "x$libtoolize" = "x" ]; then
+     echo "libtoolize not found in path"
+     exit 1
+@@ -65,7 +65,7 @@
+    # Expecting the code above to be very portable, but just in case...
+    if [ -z "$ltfile" -o ! -f "$ltfile" ]; then
+      ltpath=`dirname $libtoolize`
+-     ltfile=`cd $ltpath/../share/aclocal ; pwd`/libtool.m4
++     ltfile=${LIBTOOL_M4}
+    fi
+ fi
+   
+@@ -76,6 +76,7 @@
  
  echo "buildconf: Using libtool.m4 at ${ltfile}."
  
@@ -8,3 +26,16 @@
  cat $ltfile | sed -e 's/LIBTOOL=\(.*\)top_build/LIBTOOL=\1apr_build/' > build/libtool.m4
  
  # libtool.m4 from 1.6 requires ltsugar.m4
+@@ -100,8 +101,10 @@
+ # Remove autoconf 2.5x's cache directory
+ rm -rf autom4te*.cache
+ 
+-echo "Generating 'make' outputs ..."
+-build/gen-build.py $verbose make
++if [ "x${FULLBUILD}" = "xon" ] ; then
++    echo "Generating 'make' outputs ..."
++    build/gen-build.py $verbose make
++fi
+ 
+ # Create RPM Spec file
+ if [ -f `which cut` ]; then
