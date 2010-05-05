@@ -553,6 +553,7 @@
     SUBDIR += p5-Net-Hiveminder
     SUBDIR += p5-Net-INET6Glue
     SUBDIR += p5-Net-IPTrie
+    SUBDIR += p5-Net-IRR
     SUBDIR += p5-Net-Ident
     SUBDIR += p5-Net-Interface
     SUBDIR += p5-Net-Jaiku
