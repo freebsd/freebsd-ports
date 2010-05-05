@@ -7,6 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.2.2
+PORTREVISION=	1
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -29,6 +30,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_LIBS}
+FFLAGS+=	-fPIC
 
 OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 		FFTW "Use FFTW" ON \
