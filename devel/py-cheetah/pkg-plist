@@ -157,9 +157,6 @@ bin/cheetah-compile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/htmlEncode.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/htmlEncode.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/htmlEncode.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/memcache.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/memcache.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/memcache.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/statprof.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/statprof.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/Cheetah/Utils/statprof.pyo
