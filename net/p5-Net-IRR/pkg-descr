@@ -1,0 +1,7 @@
+This module provides an object oriented perl interface to the Internet
+Route Registry.  The interface uses the RIPE/RPSL Tool Query Language as
+defined in Appendix B of the IRRd User Guide.  The guide can be found at
+http://www.irrd.net/, however an understanding of the query language is
+not required to use this module.  
+
+WWW: http://search.cpan.org/dist/Net-IRR/
