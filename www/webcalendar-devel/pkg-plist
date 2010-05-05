@@ -430,8 +430,8 @@
 @dirrm %%WWWDIR%%/includes/classes/hKit
 @dirrm %%WWWDIR%%/includes/classes/captcha
 @dirrm %%WWWDIR%%/includes/classes
-@dirrm %%WWWDIR%%/includes
+@dirrmtry %%WWWDIR%%/includes
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/icons
 @dirrm %%WWWDIR%%/docs
-@dirrm %%WWWDIR%%
+@dirrmtry %%WWWDIR%%
