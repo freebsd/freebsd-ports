@@ -57,13 +57,13 @@ APACHEDIR=	${MASTERDIR}
 
 .if !defined(WITHOUT_APACHE_OPTIONS)
 OPTIONS=	\
-	APR_FROM_PORTS "Use devel/apr (recommended)" On \
-	THREADS "Enable threads support in APR" Off \
-	MYSQL "Enable MySQL support for apr-dbd" Off \
-	PGSQL "Enable PostgreSQL support for apr-dbd" Off \
-	SQLITE "Enable SQLite support for apr-dbd" Off \
-	IPV6 "Enable IPv6 support" On \
-	BDB "Enable BerkeleyDB dbm" Off
+	APR_FROM_PORTS  "Use devel/apr (recommended)" 			On  \
+	THREADS 		"Enable threads support in APR" 		Off \
+	MYSQL 			"Enable MySQL support for apr-dbd" 		Off \
+	PGSQL 			"Enable PostgreSQL support for apr-dbd" Off \
+	SQLITE 			"Enable SQLite support for apr-dbd" 	Off \
+	IPV6 			"Enable IPv6 support" 					On  \
+	BDB 			"Enable BerkeleyDB dbm" 				Off
 .include "${APACHEDIR}/Makefile.options"
 .endif
 
@@ -76,8 +76,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-http \
 		--with-pcre=${LOCALBASE}
 
-CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
+CONFIGURE_ENV= \
+		CC="${CC}" \
+		CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
+		CONFIG_SHELL="${SH}" \
 		LOCALBASE="${LOCALBASE}"
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
@@ -194,10 +197,8 @@ EXTRA_PATCHES+=	${FILESDIR}/opt-patch-modules:proxy:mod_proxy_connect.c
 
 post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
-	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
-			${WRKSRC}/server/core.c
-	@${REINPLACE_CMD} -e "s,%%OSVERSION%%,${OSVERSION}," \
-			${WRKSRC}/srclib/apr/build/apr_hints.m4
+	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' ${WRKSRC}/server/core.c
+	@${REINPLACE_CMD} -e "s,%%OSVERSION%%,${OSVERSION}," ${WRKSRC}/srclib/apr/build/apr_hints.m4
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
 pre-configure:
@@ -205,13 +206,9 @@ pre-configure:
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
-	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$${FTPUSERS}," \
-			${WRKSRC}/docs/conf/extra/httpd-userdir.conf
-	@${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}, ; \
-			s,%%WWWGRP%%,${WWWGRP}," \
-			${WRKSRC}/docs/conf/httpd.conf
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
-			${WRKSRC}/support/envvars-std
+	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$${FTPUSERS}," ${WRKSRC}/docs/conf/extra/httpd-userdir.conf
+	@${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}," -e  "s,%%WWWGRP%%,${WWWGRP}," ${WRKSRC}/docs/conf/httpd.conf
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/support/envvars-std
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
