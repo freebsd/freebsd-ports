@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/01-lib${PORTNAME}-master/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
@@ -30,11 +31,25 @@ MAN3=		libpng.3 libpngpf.3
 MAN5=		png.5
 MANCOMPRESSED=	maybe
 
+OPTIONS=	APNG "Animated PNG support" Off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_APNG) || make(makesum) || defined(FETCH_ALL)
+MASTER_SITES+=	http://littlesvr.ca/apng/diff/:apng
+DISTFILES+=	${DISTNAME}-apng.patch:apng
+.endif
+.if defined(WITH_APNG)
+USE_DOS2UNIX=	${DISTNAME}-apng.patch
+EXTRA_PATCHES=	${WRKSRC}/${DISTNAME}-apng.patch
+.endif
 
 post-extract:
 # Please don't delete the following line - this link used by ghostscript* ports
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/libpng
+.if defined(WITH_APNG)
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}-apng.patch ${WRKSRC}
+.endif
 
 pre-su-install:
 	@${MKDIR} ${PREFIX}/include/libpng

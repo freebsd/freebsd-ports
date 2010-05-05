@@ -1,3 +1,6 @@
 MD5 (libpng-1.4.1.tar.bz2) = e1767bf290ded9fda9ee05bd23ae4cff
 SHA256 (libpng-1.4.1.tar.bz2) = bc03009c62c07fc08d1d91ba130c39dc99bef68b533cad4e846835d0bfc4ee5e
 SIZE (libpng-1.4.1.tar.bz2) = 643261
+MD5 (libpng-1.4.1-apng.patch) = f7cfe836d963564bb658eeec610d6086
+SHA256 (libpng-1.4.1-apng.patch) = 59d7feed7fd87a77cbd395f63b37759007e8c7cc21a21e8c14e0811a6aa9ed91
+SIZE (libpng-1.4.1-apng.patch) = 54364
