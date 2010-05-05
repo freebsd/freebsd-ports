@@ -41,7 +41,7 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin
-CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}include ${CFLAGS}" \
+CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include ${CFLAGS}" \
 		LDFLAGS="`${LIBNET_CONFIG} --libs` ${LDFLAGS}"
 
 .if defined(WITH_SSL)
