@@ -8,6 +8,7 @@
 
 PORTNAME=	mod_mono
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	subcommander
 PORTVERSION=	2.0.0.b5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://subcommander.tigris.org/files/documents/1759/46766/
 DISTNAME=	Subcommander-${PORTVERSION:S/.b/b/g}p1

@@ -8,7 +8,7 @@
 
 PORTNAME=	svndelta
 PORTVERSION=	1.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.incava.org/pub/svndelta/
 

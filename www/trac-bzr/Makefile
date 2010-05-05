@@ -7,7 +7,7 @@
 
 PORTNAME=	bzr
 PORTVERSION=	20090604
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://home.tiscali.cz/~cz210552/bsdports/tarballs/
 PKGNAMEPREFIX=	trac-

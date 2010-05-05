@@ -7,6 +7,7 @@
 
 PORTNAME=	scrumburndown
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin

@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_security
 PORTVERSION=	2.5.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	SF/mod-security/modsecurity-apache/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}

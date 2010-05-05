@@ -7,7 +7,7 @@
 
 PORTNAME=	wikitemplates
 PORTVERSION=	0.3.0p3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin

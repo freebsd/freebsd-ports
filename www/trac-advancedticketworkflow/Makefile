@@ -7,6 +7,7 @@
 
 PORTNAME=	advancedticketworkflow
 PORTVERSION=	0.10.3940
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-

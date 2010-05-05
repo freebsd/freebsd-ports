@@ -7,6 +7,7 @@
 
 PORTNAME=	iniadmin
 PORTVERSION=	0.2.3915
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-

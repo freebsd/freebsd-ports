@@ -7,6 +7,7 @@
 
 PORTNAME=	tocmacro
 PORTVERSION=	11.0.0.3
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	svntrac
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 COMMENT=	Web-Based Bug And Patch-Set Tracking System For Subversion

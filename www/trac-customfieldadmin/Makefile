@@ -7,6 +7,7 @@
 
 PORTNAME=	customfieldadmin
 PORTVERSION=	0.2.2.6485
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \

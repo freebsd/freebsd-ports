@@ -7,7 +7,7 @@
 
 PORTNAME=	TracSpamFilter
 PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	http://zhoushuqun.com/files/ \
 		http://freebsd.unixfreunde.de/sources/

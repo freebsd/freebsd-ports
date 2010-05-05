@@ -6,6 +6,7 @@
 
 PORTNAME=	cvs2svn
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/46528/
 

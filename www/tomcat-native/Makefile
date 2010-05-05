@@ -7,6 +7,7 @@
 
 PORTNAME=	tomcat-native
 PORTVERSION=	1.1.20
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-connectors/native/${PORTVERSION}/source
