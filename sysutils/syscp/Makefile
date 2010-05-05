@@ -7,6 +7,7 @@
 
 PORTNAME=	syscp
 PORTVERSION=	1.4.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.syscp.org/releases/tgz/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

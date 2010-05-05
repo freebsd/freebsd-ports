@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_h264_streaming
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 DIST_SUBDIR=	apache22

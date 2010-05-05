@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_authn_sasl
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-authn-sasl/mod-authn-sasl/${PORTVERSION}
 

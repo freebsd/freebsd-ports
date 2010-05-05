@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_log_sql
 PORTVERSION=	1.101
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 PKGNAMESUFFIX=	-dtc
