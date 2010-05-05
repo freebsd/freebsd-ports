@@ -1,7 +1,9 @@
 @unexec %D/etc/rc.d/syslog-ng.sh stop > /dev/null 2>&1 || true
 etc/syslog-ng.conf.sample
 bin/loggen
+bin/pdbtool
 sbin/syslog-ng
+sbin/syslog-ng-ctl
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
