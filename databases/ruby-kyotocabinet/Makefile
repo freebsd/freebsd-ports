@@ -29,6 +29,10 @@ CONFIGURE_ARGS=	--with-kyotocabinet-dir="${LOCALBASE}" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700042
+BROKEN=		requires gcc 4.2+ and ruby built with the same compiler
+.endif
+
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/kyotocabinet.so
 
 .if !defined(NOPORTDOCS)
