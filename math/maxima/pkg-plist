@@ -25,6 +25,9 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/doc/EMaximaIntro.ps
 %%DATADIR%%/%%PORTVERSION%%/doc/contributors
 %%DATADIR%%/%%PORTVERSION%%/doc/html/contents.hhc
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/contour1.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/contour2.gif
+%%DATADIR%%/%%PORTVERSION%%/doc/html/figures/contour3.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/dynamics1.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/dynamics10.gif
 %%DATADIR%%/%%PORTVERSION%%/doc/html/figures/dynamics2.gif
@@ -1648,6 +1651,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_scalarp.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_sign.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_signum.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_sqrt.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_taylor.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_translator.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_trig.mac
