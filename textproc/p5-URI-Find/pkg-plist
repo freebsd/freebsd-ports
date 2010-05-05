@@ -1,3 +1,4 @@
+bin/urifind
 %%SITE_PERL%%/URI/Find.pm
 %%SITE_PERL%%/URI/Find/Schemeless.pm
 @dirrm %%SITE_PERL%%/URI/Find
