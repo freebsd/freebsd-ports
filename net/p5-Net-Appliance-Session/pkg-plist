@@ -1,0 +1,26 @@
+%%SITE_PERL%%/Net/Appliance/Session.pm
+%%SITE_PERL%%/Net/Appliance/Session/Cookbook.pod
+%%SITE_PERL%%/Net/Appliance/Session/Cookbook/Intro.pod
+%%SITE_PERL%%/Net/Appliance/Session/Cookbook/Recipe01.pod
+%%SITE_PERL%%/Net/Appliance/Session/Cookbook/Recipe02.pod
+%%SITE_PERL%%/Net/Appliance/Session/Cookbook/Recipe03.pod
+%%SITE_PERL%%/Net/Appliance/Session/Cookbook/Recipe04.pod
+%%SITE_PERL%%/Net/Appliance/Session/Cookbook/Recipe05.pod
+%%SITE_PERL%%/Net/Appliance/Session/Cookbook/Recipe06.pod
+%%SITE_PERL%%/Net/Appliance/Session/Cookbook/Recipe07.pod
+%%SITE_PERL%%/Net/Appliance/Session/Engine.pm
+%%SITE_PERL%%/Net/Appliance/Session/Exceptions.pm
+%%SITE_PERL%%/Net/Appliance/Session/Transport.pm
+%%SITE_PERL%%/Net/Appliance/Session/Transport/SSH.pm
+%%SITE_PERL%%/Net/Appliance/Session/Transport/Serial.pm
+%%SITE_PERL%%/Net/Appliance/Session/Transport/Telnet.pm
+%%SITE_PERL%%/Net/Appliance/Session/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Appliance/Session/.packlist
+@dirrmtry %%SITE_PERL%%/Net/Appliance/Session/Transport
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Appliance/Session
+@dirrmtry %%SITE_PERL%%/Net/Appliance/Session/Cookbook
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Appliance
+@dirrmtry %%SITE_PERL%%/Net/Appliance/Session
+@dirrmtry %%SITE_PERL%%/Net/Appliance
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net
