@@ -1,0 +1,9 @@
+lib/bsd-sysctl-1.0.6/ghc-6.10.4/System/BSD/Sysctl.hi
+lib/bsd-sysctl-1.0.6/ghc-6.10.4/libHSbsd-sysctl-1.0.6.a
+lib/bsd-sysctl-1.0.6/ghc-6.10.4/HSbsd-sysctl-1.0.6.o
+share/doc/bsd-sysctl-1.0.6/LICENSE
+@dirrm lib/bsd-sysctl-1.0.6/ghc-6.10.4/System/BSD
+@dirrm lib/bsd-sysctl-1.0.6/ghc-6.10.4/System
+@dirrm lib/bsd-sysctl-1.0.6/ghc-6.10.4
+@dirrm lib/bsd-sysctl-1.0.6
+@dirrm share/doc/bsd-sysctl-1.0.6
