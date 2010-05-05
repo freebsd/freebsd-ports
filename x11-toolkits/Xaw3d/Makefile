@@ -24,11 +24,26 @@ USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	XAWVER="${XAWVER}"
 
+OPTIONS=	NLS "Provide limited Natural Language Support via gettext" on
+
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-extract:
 	${MKDIR} ${WRKSRC}/X11/Xaw3d
 	cd ${WRKSRC}/X11/Xaw3d; ${LN} -sf ../../*.h .
+.if defined(WITHOUT_NLS)
+	${REINPLACE_CMD} -e '/LINTLIBS =/s/=.*/=/' \
+		-e '/#ifdef XawI18nDefines/s//#if 0/' \
+		${WRKSRC}/Imakefile
+		
+.endif
 
 # Workaround a bug in egcs on FreeBSD/Alpha.
 .if ${ARCH} == "alpha"
