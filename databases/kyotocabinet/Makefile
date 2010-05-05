@@ -15,6 +15,7 @@ COMMENT=	A straightforward implementation of DBM
 
 MAKE_JOBS_SAFE=	yes
 
+USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
