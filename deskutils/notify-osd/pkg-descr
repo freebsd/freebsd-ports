@@ -1,0 +1,8 @@
+Notify OSD presents on-screen-display notifications as ephemeral overlays, which
+can be clicked through so they don't block your work. It queues notifications,
+to prevent them from flooding your screen. And as well as handling standard
+notification updates, Notify OSD introduces the idea of appending - allowing
+notifications to grow over time, for example in the case of instant messages
+from a particular person.
+
+WWW: https://launchpad.net/notify-osd

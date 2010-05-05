@@ -1,0 +1,27 @@
+libexec/notify-osd
+share/dbus-1/services/org.freedesktop.Notifications.service
+%%DATADIR%%/icons/hicolor/scalable/status/README
+%%DATADIR%%/icons/hicolor/scalable/status/notification-audio-next.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-audio-play.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-audio-previous.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-audio-volume-high.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-audio-volume-low.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-audio-volume-medium.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-audio-volume-muted.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-audio-volume-off.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-battery-low.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-device-eject.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-device.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-display-brightness.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-keyboard-brightness.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-message-email.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-message-im.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-network-ethernet-connected.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-network-ethernet-diconnected.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-network-wireless.svg
+%%DATADIR%%/icons/hicolor/scalable/status/notification-power.svg
+@dirrm %%DATADIR%%/icons/hicolor/scalable/status
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%

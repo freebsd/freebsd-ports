@@ -190,6 +190,7 @@
     SUBDIR += nautilus-sendto
     SUBDIR += notecase
     SUBDIR += notification-daemon
+    SUBDIR += notify-osd
     SUBDIR += ontv
     SUBDIR += opengoo
     SUBDIR += openproj
