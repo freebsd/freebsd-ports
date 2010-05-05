@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unuran
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.1
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/
 

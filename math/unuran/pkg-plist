@@ -6,4 +6,4 @@ include/unuran_urng_rngstreams.h
 lib/libunuran.a
 lib/libunuran.la
 lib/libunuran.so
-lib/libunuran.so.13
+lib/libunuran.so.14
