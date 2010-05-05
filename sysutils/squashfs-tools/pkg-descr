@@ -1,0 +1,10 @@
+Squashfs is a compressed read-only filesystem for Linux. Squashfs is
+intended for general read-only filesystem use, for archival use (i.e.
+in cases where a .tar.gz file may be used), and in constrained block
+device/memory systems (e.g. embedded systems) where low overhead is
+needed. The filesystem is currently stable, and has been tested on
+PowerPC, i586, Sparc and ARM architectures.
+
+squashfs-tools are the set of tools to manipulate squashfs images.
+
+WWW:	http://squashfs.sourceforge.net/
