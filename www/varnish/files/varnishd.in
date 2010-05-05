@@ -31,6 +31,9 @@
 # varnishd_config - name of the varnishd config file.
 #	default: unset.
 #
+# varnishd_hash - hash algorithm
+#       default: "classic,16383"
+#
 # varnishd_storage - storage method and parameters.
 #	default: "file,/tmp,50%"
 #
@@ -41,8 +44,8 @@
 #	default: "www"
 #
 # varnishd_flags - complete command line arguments.
-#	default if varnishd_config is unset: "-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -b ${varnishd_backend} -s ${varnishd_storage} -u ${varnishd_user} -g ${varnishd_group}"
-#	default if varnishd_config is set: "-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -f ${varnishd_config} -s ${varnishd_storage} -u ${varnishd_user} -g ${varnishd_group}"
+#	default if varnishd_config is unset: "-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -b ${varnishd_backend} -s ${varnishd_storage} -h ${varnishd_hash} -u ${varnishd_user} -g ${varnishd_group}"
+#	default if varnishd_config is set: "-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -f ${varnishd_config} -s ${varnishd_storage} -h ${varnishd_hash} -u ${varnishd_user} -g ${varnishd_group}"
 #
 # See varnishd(1) for a detailed overview of command-line options.
 #
@@ -63,12 +66,13 @@ load_rc_config ${name}
 : ${varnishd_backend:="localhost:8080"}
 : ${varnishd_config:=""}
 : ${varnishd_storage:="file,/tmp,50%"}
+: ${varnishd_hash:="classic,16383"}
 : ${varnishd_user:="www"}
 : ${varnishd_group:="www"}
 if [ -n "${varnishd_config}" ] ; then
-	: ${varnishd_flags:="-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -f ${varnishd_config} -s ${varnishd_storage} -u ${varnishd_user} -g ${varnishd_group}"}
+	: ${varnishd_flags:="-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -f ${varnishd_config} -s ${varnishd_storage} -h ${varnishd_hash} -u ${varnishd_user} -g ${varnishd_group}"}
 else
-	: ${varnishd_flags:="-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -b ${varnishd_backend} -s ${varnishd_storage} -u ${varnishd_user} -g ${varnishd_group}"}
+	: ${varnishd_flags:="-P ${varnishd_pidfile} -a ${varnishd_listen} -T ${varnishd_admin} -b ${varnishd_backend} -s ${varnishd_storage} -h ${varnishd_hash} -u ${varnishd_user} -g ${varnishd_group}"}
 fi
 
 # If we leave these set, rc.subr will su to them before starting
