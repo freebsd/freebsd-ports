@@ -59,7 +59,7 @@ IGNORE=		${_ERROR_MSG} Illegal use of USE_APACHE
 .if defined(AP_PORT_IS_SERVER)
 # For slave ports:
 .if defined(SLAVE_DESIGNED_FOR) && ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
-IGNORE=	Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync
+IGNORE=	Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
 .endif
 
 .if defined(SLAVE_PORT_MODULES)
