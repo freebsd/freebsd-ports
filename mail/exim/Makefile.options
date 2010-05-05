@@ -49,6 +49,7 @@ PGSQL		= "Link against libpq"
 READLINE	= "Enable readline(3) library"
 SASLAUTHD	= "Enable use of Cyrus SASL auth daemon"
 SA_EXIM		= "SA-Exim support"
+SO_1024		= "Build with Spamooborona-1024 local scan"
 SPF		= "Enable Sender Policy Framework checking"
 SQLITE		= "Enable SQLite lookups"
 SRS		= "Enable Sender Rewriting Scheme"
@@ -96,6 +97,7 @@ DISABLED_OPTIONS+=	\
 		READLINE \
 		SASLAUTHD \
 		SA_EXIM \
+		SO_1024 \
 		SPF \
 		SQLITE \
 		SRS \

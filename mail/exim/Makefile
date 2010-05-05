@@ -27,6 +27,21 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_SA_EXIM) 
+.if defined(WITH_KAS)
+IGNORE=		You cannot select both SA_EXIM and KAS options
+.endif
+.if defined(WITH_SO_1024)
+IGNORE=		You cannot select both SA_EXIM and SO_1024 options
+.endif
+.endif
+
+.if defined(WITH_KAS)
+.if defined(WITH_SO_1024)
+IGNORE=		You cannot select both SA_KAS and SO_1024 options
+.endif
+.endif
+
 .if defined(WITH_SA_EXIM)
 MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 		SF/sa-exim/sa-exim/${SA_EXIM_VERSION}:sa_exim
@@ -34,8 +49,18 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
+.if defined(WITH_SO_1024)
+MASTER_SITES+=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/:so_1024
+DISTFILES+=	spamooborona1024-src-${SO_1024_VERSION}.tar.gz:so_1024
+LDFLAGS+=	-lz
+PLIST_SUB+=	SO_1024=""
+.else
+PLIST_SUB+=	SO_1024="@comment "
+.endif
+
 EXIM_VERSION=	4.71
 SA_EXIM_VERSION=4.2
+SO_1024_VERSION=3.2
 
 .if !defined(EXIMON_ONLY)
 .if defined(PKGNAMESUFFIX)
@@ -101,7 +126,7 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%EXIM_GROUP%%,${EXIM_GROUP},g' \
 		-e 's,%%LOGDIR%%,${LOGDIR},g'
 
-PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
+PLIST_SUB+=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 		EXIM_USER=${EXIM_USER} \
 		EXIM_GROUP=${EXIM_GROUP} \
 		LOGDIR="${LOGDIR}"
@@ -439,6 +464,9 @@ post-extract:
 .if defined(WITH_SA_EXIM)
 	@cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/sa-exim-${SA_EXIM_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
 .endif
+.if defined(WITH_SO_1024)
+	@cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/spamooborona1024-src-${SO_1024_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
+.endif
 
 do-configure:
 	@${MKDIR} ${WRKSRC}/Local
@@ -466,6 +494,11 @@ do-configure:
 	} > ${WRKSRC}/Local/sa-exim.h
 	@${REINPLACE_CMD} -e 's,/usr/bin/spamc,${LOCALBASE}/bin/spamc,' \
 	    ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf
+.endif
+.if defined(WITH_SO_1024)
+	@${REINPLACE_CMD} -E -e 's/^(LOCAL_SCAN_SOURCE=).*/\1Local\/local_scan_1024.c/' \
+		${WRKSRC}/OS/Makefile-Default
+	@${CP} ${WRKDIR}/local_scan_1024.c ${WRKSRC}/Local
 .endif
 	@${REINPLACE_CMD} -E -e 's/XX_STRIPCMD_XX/${STRIP_CMD:S,/,\/,g}/' \
 		${WRKSRC}/OS/Makefile-FreeBSD
@@ -523,6 +556,12 @@ post-install:
 	@[ -f ${PREFIX}/etc/exim/sa-exim.conf ] || \
 	    ${CP} ${PREFIX}/etc/exim/sa-exim.conf.default \
 	    ${PREFIX}/etc/exim/sa-exim.conf
+.endif
+.if defined(WITH_SO_1024)
+.if !exists(/var/spool/spamooborona)
+		@${MKDIR} -m 750 /var/spool/spamooborona
+		@${CHOWN} ${EXIM_USER}:${EXIM_GROUP} /var/spool/spamooborona
+.endif
 .endif
 	@${CAT} ${PKGMESSAGE}
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

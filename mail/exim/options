@@ -33,6 +33,7 @@ OPTIONS+= \
 	 READLINE "Enable readline(3) library" off \
 	 SASLAUTHD "Enable use of Cyrus SASL auth daemon" off \
 	 SA_EXIM "SA-Exim support" off \
+	 SO_1024 "Build with Spamoborona-1024 local scan" off \
 	 SPF "Enable Sender Policy Framework checking" off \
 	 SQLITE "Enable SQLite lookups" off \
 	 SRS "Enable Sender Rewriting Scheme" off \

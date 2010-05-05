@@ -52,3 +52,5 @@ etc/exim/configure.default
 %%SA_EXIM%%@exec [ -f %B/sa-exim.conf ] || cp %B/%f %B/sa-exim.conf
 @unexec rmdir %B 2> /dev/null || true
 @unexec rmdir %%LOGDIR%% 2> /dev/null || true
+%%SO_1024%%@exec [ ! -d /var/spool/spamooborona ] && mkdir -m 750 /var/spool/spamooborona && chown %%EXIM_USER%%:%%EXIM_GROUP%% /var/spool/spamooborona || true
+%%SO_1024%%@unexec rmdir /var/spool/spamooborona 2> /dev/null || true
