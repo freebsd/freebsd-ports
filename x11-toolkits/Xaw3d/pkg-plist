@@ -28,10 +28,10 @@ include/X11/Xaw3d/List.h
 include/X11/Xaw3d/ListP.h
 include/X11/Xaw3d/MenuButtoP.h
 include/X11/Xaw3d/MenuButton.h
-include/X11/Xaw3d/MultiSink.h
-include/X11/Xaw3d/MultiSinkP.h
-include/X11/Xaw3d/MultiSrc.h
-include/X11/Xaw3d/MultiSrcP.h
+%%NLS%%include/X11/Xaw3d/MultiSink.h
+%%NLS%%include/X11/Xaw3d/MultiSinkP.h
+%%NLS%%include/X11/Xaw3d/MultiSrc.h
+%%NLS%%include/X11/Xaw3d/MultiSrcP.h
 include/X11/Xaw3d/Paned.h
 include/X11/Xaw3d/PanedP.h
 include/X11/Xaw3d/Panner.h
@@ -74,11 +74,11 @@ include/X11/Xaw3d/Toggle.h
 include/X11/Xaw3d/ToggleP.h
 include/X11/Xaw3d/Tree.h
 include/X11/Xaw3d/TreeP.h
-include/X11/Xaw3d/VendorEP.h
+%%NLS%%include/X11/Xaw3d/VendorEP.h
 include/X11/Xaw3d/Viewport.h
 include/X11/Xaw3d/ViewportP.h
 include/X11/Xaw3d/Xaw3dP.h
-include/X11/Xaw3d/XawImP.h
+%%NLS%%include/X11/Xaw3d/XawImP.h
 include/X11/Xaw3d/XawInit.h
 %%PORTDOCS%%share/doc/Xaw3d/README.XAW3D
 @dirrm include/X11/Xaw3d
