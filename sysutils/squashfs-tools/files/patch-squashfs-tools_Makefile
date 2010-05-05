@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- squashfs-tools/Makefile.orig	2010-04-29 17:40:26.000000000 +0200
++++ squashfs-tools/Makefile	2010-04-29 17:43:19.000000000 +0200
+@@ -1,8 +1,8 @@
+-INSTALL_DIR = /usr/local/bin
++INSTALL_DIR = %%PREFIX%%/bin
+ 
+ INCLUDEDIR = .
+ 
+-CFLAGS := -I$(INCLUDEDIR) -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE -O2
++CFLAGS := -I$(INCLUDEDIR) -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_GNU_SOURCE -O2 -DFNM_EXTMATCH=0
+ 
+ all: mksquashfs unsquashfs
+ 
