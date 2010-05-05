@@ -2976,6 +2976,7 @@
     SUBDIR += rubygem-msgpack
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-newgem
+    SUBDIR += rubygem-notify
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-parsetree
     SUBDIR += rubygem-piston
