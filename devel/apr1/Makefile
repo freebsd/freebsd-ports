@@ -133,7 +133,7 @@ USE_OPENLDAP=	yes
 APU_CONF_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 	--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap
 .if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap${OPENLDAP_VER}
 .else
 PKGNAMESUFFIX=	-ldap
 .endif
@@ -150,7 +150,7 @@ CONFIGURE_ENV+=	LIBS="${LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql
 .if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-mysql
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-mysql${MYSQL_VER}
 .else
 PKGNAMESUFFIX=	-mysql
 .endif
@@ -165,7 +165,7 @@ USE_PGSQL=	YES
 APU_CONF_ARGS+=	--with-pgsql=${LOCALBASE}
 CONFIGURE_ENV+=	ac_cv_path_PGSQL_CONFIG=""
 .if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-pgsql
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-pgsql${PGSQL_VER}
 .else
 PKGNAMESUFFIX=	-pgsql
 .endif
