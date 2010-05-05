@@ -1,0 +1,24 @@
+%%PYTHON_SITELIBDIR%%/psutil/_psosx.py
+%%PYTHON_SITELIBDIR%%/psutil/__init__.py
+%%PYTHON_SITELIBDIR%%/psutil/_psbsd.py
+%%PYTHON_SITELIBDIR%%/psutil/error.py
+%%PYTHON_SITELIBDIR%%/psutil/wmi.py
+%%PYTHON_SITELIBDIR%%/psutil/_pslinux.py
+%%PYTHON_SITELIBDIR%%/psutil/_psmswindows.py
+%%PYTHON_SITELIBDIR%%/psutil/_psosx.pyc
+%%PYTHON_SITELIBDIR%%/psutil/__init__.pyc
+%%PYTHON_SITELIBDIR%%/psutil/_psbsd.pyc
+%%PYTHON_SITELIBDIR%%/psutil/error.pyc
+%%PYTHON_SITELIBDIR%%/psutil/wmi.pyc
+%%PYTHON_SITELIBDIR%%/psutil/_pslinux.pyc
+%%PYTHON_SITELIBDIR%%/psutil/_psmswindows.pyc
+%%PYTHON_SITELIBDIR%%/psutil/_psosx.pyo
+%%PYTHON_SITELIBDIR%%/psutil/__init__.pyo
+%%PYTHON_SITELIBDIR%%/psutil/_psbsd.pyo
+%%PYTHON_SITELIBDIR%%/psutil/error.pyo
+%%PYTHON_SITELIBDIR%%/psutil/wmi.pyo
+%%PYTHON_SITELIBDIR%%/psutil/_pslinux.pyo
+%%PYTHON_SITELIBDIR%%/psutil/_psmswindows.pyo
+%%PYTHON_SITELIBDIR%%/_psutil_bsd.so
+%%PYTHON_SITELIBDIR%%/psutil-0.1.3-py2.6.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/psutil

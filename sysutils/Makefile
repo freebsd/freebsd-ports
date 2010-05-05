@@ -652,6 +652,7 @@
     SUBDIR += pwsafe
     SUBDIR += py-bcfg2
     SUBDIR += py-filelike
+    SUBDIR += py-psutil
     SUBDIR += py-supervisor
     SUBDIR += py-zdaemon
     SUBDIR += pydf
