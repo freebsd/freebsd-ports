@@ -9,10 +9,10 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.15
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tar.bz2
 DIST_SUBDIR=	apache22
 
 MAINTAINER?=	apache@FreeBSD.org
@@ -29,9 +29,9 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
 		apache+mod_ssl+mod_snmp+mod_accel-1.* \
 		apache+ipv6-1.* apache+ssl-1.* apache-1.* apache_fp-1.* \
-		caudium-devel-1.* caudium10-1.* caudium12-* \
+		caudium-devel-1.* caudium10-1.* caudium12-1.* caudium14-1.* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* \
-		apache-2.0.* apache-*-2.0.* apache-2.1.* apache-*-2.1.*
+		apache-2.0.* apache-*-2.0.*
 
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
@@ -77,7 +77,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--with-pcre=${LOCALBASE}
 
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
-		CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
 		LOCALBASE="${LOCALBASE}"
 
@@ -206,7 +205,7 @@ pre-configure:
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
-	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,${FTPUSERS}," \
+	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$${FTPUSERS}," \
 			${WRKSRC}/docs/conf/extra/httpd-userdir.conf
 	@${REINPLACE_CMD} -e "s,%%WWWOWN%%,${WWWOWN}, ; \
 			s,%%WWWGRP%%,${WWWGRP}," \
