@@ -6,7 +6,6 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -29,7 +28,7 @@ OPTIONS=	THREADS "Enable Threads in apr"						on  \
 			PGSQL	"Enable Postgresql suport in apr-util"		off \
 			SQLITE  "Enable SQLite3 support in apr-util"			off
 
-APR_VERSION=	1.3.9
+APR_VERSION=	1.4.2
 APU_VERSION=	1.3.9
 
 USE_ICONV=		yes
@@ -45,8 +44,9 @@ NO_WRKSUBDIR=	yes
 APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
 APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
 
-PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
-SHLIB_MAJOR=	3
+PLIST_SUB=	SHLIB_APR_MAJOR="${SHLIB_APR_MAJOR}" SHLIB_APU_MAJOR="${SHLIB_APU_MAJOR}"
+SHLIB_APR_MAJOR=	4
+SHLIB_APU_MAJOR=	3
 
 APR_CONF_ARGS=	--with-installbuilddir=${DATADIR}/build-1
 APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
@@ -201,7 +201,7 @@ post-patch:
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' \
 		${APR_WRKDIR}/build/apr_threads.m4 ${APR_WRKDIR}/build/apr_hints.m4 \
-		${APU_WRKDIR}/build/apu-conf.m4 
+		${APU_WRKDIR}/build/apu-conf.m4
 
 run-autotools::
 	cd ${APR_WRKDIR} ; \

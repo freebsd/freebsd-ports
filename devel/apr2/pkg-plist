@@ -79,11 +79,11 @@ lib/aprutil.exp
 lib/libapr-1.a
 lib/libapr-1.la
 lib/libapr-1.so
-lib/libapr-1.so.%%SHLIB_MAJOR%%
+lib/libapr-1.so.%%SHLIB_APR_MAJOR%%
 lib/libaprutil-1.a
 lib/libaprutil-1.la
 lib/libaprutil-1.so
-lib/libaprutil-1.so.%%SHLIB_MAJOR%%
+lib/libaprutil-1.so.%%SHLIB_APU_MAJOR%%
 %%BDB%%lib/apr-util-1/apr_dbm_db-1.so
 %%BDB%%lib/apr-util-1/apr_dbm_db.so
 %%BDB%%lib/apr-util-1/apr_dbm_db.la
