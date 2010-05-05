@@ -1,0 +1,10 @@
+This module does two things differently to the venerable
+Class::Accessor::Fast:
+
+- Fields are stored at arms-length within a single hash value of $self, rather
+  than directly in the $self blessed referent.
+
+- new() allows mixin into an existing object, rather than creating and
+  returning a new blessed hashref.
+
+WWW: http://search.cpan.org/dist/Class-Accessor-Fast-Contained/
