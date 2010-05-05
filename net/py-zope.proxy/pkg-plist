@@ -3,8 +3,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/proxy/decorator.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/proxy/interfaces.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/proxy/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/proxy/DEPENDENCIES.cfg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/proxy/SETUP.cfg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/proxy/_zope_proxy_proxy.c
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/proxy/proxy.h
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/proxy/_zope_proxy_proxy.so

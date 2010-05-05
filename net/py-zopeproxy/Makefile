@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	zopeproxy
-PORTVERSION=	3.4.2
+PORTVERSION=	3.6.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	zope.proxy-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Transparent Proxies
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0:${PORTSDIR}/devel/py-zopeInterface
