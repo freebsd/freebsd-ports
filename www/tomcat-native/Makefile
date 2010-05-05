@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Tomcat native library
 
-LIB_DEPENDS=	apr-1.3:${PORTSDIR}/devel/apr
+LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/jni/native
 
