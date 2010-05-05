@@ -11,6 +11,7 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/fr/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/fy/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/it/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/la/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/warzone2100.mo
@@ -22,12 +23,13 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/ro/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/uk_UA/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/warzone2100.mo
 %%DATADIR%%/base.wz
-%%DATADIR%%/mods/multiplay/aivolution.wz
+%%DATADIR%%/mods/multiplay/dydo-ai.wz
 %%DATADIR%%/mods/multiplay/ntw.wz
-%%DATADIR%%/mods/multiplay/original.wz
+%%DATADIR%%/mods/multiplay/old-1.10-balance.wz
 %%DATADIR%%/mp.wz
 %%DATADIR%%/music/menu.ogg
 %%DATADIR%%/music/music.wpl
@@ -37,11 +39,13 @@ share/icons/warzone2100.png
 @dirrm %%DATADIR%%/mods/multiplay
 @dirrm %%DATADIR%%/mods
 @dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/uk_UA/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk_UA
 %%NLS%%@dirrmtry share/locale/la/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/la
 %%NLS%%@dirrmtry share/locale/fy/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fy
 %%NLS%%@dirrmtry share/locale/et_EE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/et_EE
-@dirrmtry share/applications
 @dirrmtry share/icons
+@dirrmtry share/applications
