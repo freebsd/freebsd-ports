@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rezerwar
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://tamentis.com/projects/rezerwar/files/ \
 		http://mirror.amdmi3.ru/distfiles/
