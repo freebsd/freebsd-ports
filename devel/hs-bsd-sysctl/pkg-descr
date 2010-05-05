@@ -1,0 +1,4 @@
+This module provides efficient access to the BSD sysctl(3) interface
+via the Haskell FFI.
+
+WWW: http://hackage.haskell.org/package/bsd-sysctl

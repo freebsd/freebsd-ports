@@ -552,6 +552,7 @@
     SUBDIR += hs-alex
     SUBDIR += hs-arrows
     SUBDIR += hs-binary-ghc
+    SUBDIR += hs-bsd-sysctl
     SUBDIR += hs-c2hs
     SUBDIR += hs-checkers
     SUBDIR += hs-convertible
