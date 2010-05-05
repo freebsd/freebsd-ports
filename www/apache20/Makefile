@@ -24,7 +24,7 @@ COMMENT?=	Version 2.0.x of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	apache20
 
@@ -39,7 +39,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 EXTRA_PATCHES+=		${FILESDIR}/build-fix-openssl_beta
 
 .if defined(WITH_EXPERIMENTAL_PATCHES)
-IGNORE=		: Please define WITH_KQUEUE_SUPPORT instead
+IGNORE=		please define WITH_KQUEUE_SUPPORT instead
 .endif
 
 .if defined(WITH_KQUEUE_SUPPORT)
