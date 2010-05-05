@@ -1,0 +1,12 @@
+If you use Perl to manage interactive sessions with with the
+command-line interfaces of networked appliances, then you might find
+this module useful.
+
+Net::Appliance::Phrasebook is a simple module that contains a number of
+dictionaries for the command-line interfaces of some popular network
+appliances.
+
+It also supports the use of custom phrasebooks, and of hiearchies of
+dictionaries within phrasebooks.
+
+WWW: http://search.cpan.org/dist/Net-Appliance-Phrasebook/
