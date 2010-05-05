@@ -5,23 +5,31 @@
 # $FreeBSD$
 
 PORTNAME=	libfwbuilder
-PORTVERSION=	3.0.7
-PORTREVISION=	1
+DISTVERSION=	4.0.0
+PORTVERSION=	${DISTVERSION}
 CATEGORIES=	security
 .if defined(BUILD)
-MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-3.0/build-${BUILD}/
+MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-4.0/build-${BUILD}/ \
+		http://www.komquats.com/distfiles/
+PKGNAMESUFFIX=	-devel
+PORTVERSION=	${DISTVERSION}.b${BUILD}
 .else
-MASTER_SITES=	SF/fwbuilder/Current_Packages/${PORTVERSION}
+MASTER_SITES=	SF/fwbuilder/Current_Packages/${PORTVERSION} \
+		http://www.komquats.com/distfiles/
 .endif
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder API
 
-CONFLICTS=	libfwbuilder-2.*
+.if defined(BUILD)
+CONFLICTS=	libfwbuilder-[23].* libfwbuilder-devel-[23].*
+.else
+CONFLICTS=	libfwbuilder-[23].* libfwbuilder-devel-*
+.endif
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
 		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
-PLIST_SUB=	BUILD_VERSION=${PORTVERSION}
+PLIST_SUB=	BUILD_VERSION=${DISTVERSION}
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib \
 		gui \
@@ -38,6 +46,7 @@ QTDIR?=		${QT_PREFIX}
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
+CONFIGURE_SCRIPT=	autogen.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -49,8 +58,8 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 post-install:
-	${RM} ${PREFIX}/lib/libfwbuilder.so.8.2
-	${RM} ${PREFIX}/lib/libfwcompiler.so.8.2
+	${RM} ${PREFIX}/lib/libfwbuilder.so.9.1
+	${RM} ${PREFIX}/lib/libfwcompiler.so.9.1
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
