@@ -192,6 +192,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Casey.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Davis.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/DumontDUrville.pm
+%%SITE_PERL%%/DateTime/TimeZone/Antarctica/Macquarie.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Mawson.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/McMurdo.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Palmer.pm
