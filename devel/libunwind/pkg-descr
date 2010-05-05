@@ -1,0 +1,24 @@
+The primary goal of this project is to define a portable and efficient
+C programming interface (API) to determine the call-chain of a program.
+The API additionally provides the means to manipulate the preserved
+(callee-saved) state of each call-frame and to resume execution at any
+point in the call-chain (non-local goto). The API supports both local
+(same-process) and remote (across-process) operation. As such, the API
+is useful in a number of applications. Some examples include:
+
+o exception handling
+	The libunwind API makes it trivial to implement the stack-manipulation
+	aspects of exception handling. 
+o debuggers
+	The libunwind API makes it trivial for debuggers to generate
+	the call-chain (backtrace) of the threads in a running program. 
+o introspection
+	It is often useful for a running thread to determine its call-chain.
+	For example, this is useful to display error messages (to show how
+	the error came about) and for performance monitoring/analysis. 
+o efficient setjmp()
+	With libunwind, it is possible to implement an extremely efficient
+	version of setjmp(). Effectively, the only context that needs to be
+	saved consists of the stack-pointer(s). 
+
+WWW:	http://www.nongnu.org/libunwind/

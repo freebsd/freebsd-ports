@@ -834,6 +834,7 @@
     SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libuninum
+    SUBDIR += libunwind
     SUBDIR += libusb
     SUBDIR += libvanessa_adt
     SUBDIR += libvanessa_logger
