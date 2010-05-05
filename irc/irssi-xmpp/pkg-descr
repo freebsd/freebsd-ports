@@ -1,15 +1,16 @@
 irssi-xmpp's aim is to provide a good integration in this text-based
 irc client and a good support of XMPP (the Jabber protocol).
 
-Current main features are:
-
+Its main features are:
     * Sending and receiving messages in irssi's query windows
-    * A roster with contact's ressources tracking (contact list)
-    * Contact management (add, remove, manage subscriptions...)
-    * Contact's JIDs, ressources and commands completion (TAB key)
-    * Multiple accounts support (in different connection)
+    * A roster with contact & resource tracking (contact list)
+    * Contact management (add, remove, manage subscriptions)
+    * MUC (Multi-User Chat)
+    * Tab completion of commands, JIDs and resources
+    * Message Events ("composing")
+    * Support for multiple accounts
     * Unicode support (UTF-8)
-    * SSL support
+    * SSL and HTTP proxy support
     * ...
 
 WWW: http://cybione.org/src/irssi-xmpp/
