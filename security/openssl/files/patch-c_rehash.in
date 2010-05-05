@@ -1,0 +1,19 @@
+--- tools/c_rehash.in.orig	2009-04-22 18:50:42.000000000 +0200
++++ tools/c_rehash.in	2010-05-05 10:43:12.000000000 +0200
+@@ -7,6 +7,7 @@
+ my $openssl;
+ 
+ my $dir;
++my $prefix;
+ 
+ if(defined $ENV{OPENSSL}) {
+ 	$openssl = $ENV{OPENSSL};
+@@ -24,7 +25,7 @@
+ }
+ my $path_delim = ($pwd =~ /^[a-z]\:/i) ? ';' : ':'; # DOS/Win32 or Unix delimiter?
+ 
+-$ENV{PATH} .= "$path_delim$dir/bin";
++$ENV{PATH} = "$prefix/bin" . ($ENV{PATH} ? $path_delim . $ENV{PATH} : ""); # prefix our path
+ 
+ if(! -x $openssl) {
+ 	my $found = 0;
