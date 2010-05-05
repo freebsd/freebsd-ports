@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dtflickr
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://apt.douglasthrift.net/files/${PORTNAME}/ \
