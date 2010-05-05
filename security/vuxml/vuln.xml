@@ -34,8 +34,74 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="694da5b4-5877-11df-8d80-0015587e2cc1">
+    <topic>mediawiki -- authenticated CSRF vulnerability</topic>
+    <affects>
+      <package>
+	<name>mediawiki</name>
+	<range><lt>1.15.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A MediaWiki security announcement reports:</p>
+	<blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2010-April/000090.html">
+	  <p>MediaWiki was found to be vulnerable to login CSRF.
+	    An attacker who controls a user account on the target
+	    wiki can force the victim to log in as the attacker,
+	    via a script on an external website.</p>
+	  <p>If the wiki is configured to allow user scripts, say
+	    with "$wgAllowUserJs = true" in LocalSettings.php, then
+	    the attacker can proceed to mount a phishing-style
+	    attack against the victim to obtain their password. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1150</cvename>
+      <url>http://lists.wikimedia.org/pipermail/mediawiki-announce/2010-April/000090.html</url>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=23076</url>
+    </references>
+    <dates>
+      <discovery>2010-04-07</discovery>
+      <entry>2010-05-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0491d15a-5875-11df-8d80-0015587e2cc1">
+    <topic>lxr -- multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>lxr</name>
+	<range><le>0.9.6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dan Rosenberg reports:</p>
+	<blockquote cite="http://sourceforge.net/mailarchive/message.php?msg_name=E1NS2s4-0001PE-F2%403bkjzd1.ch3.sourceforge.com">
+	  <p>There are several cross-site scripting vulnerabilities
+	    in LXR. These vulnerabilities could allow an attacker
+	    to execute scripts in a user's browser, steal cookies
+	    associated with vulnerable domains, redirect the user
+	    to malicious websites, etc.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2009-4497</cvename>
+      <freebsdpr>ports/146337</freebsdpr>
+      <url>http://secunia.com/advisories/38117</url>
+      <url>http://sourceforge.net/mailarchive/message.php?msg_name=E1NS2s4-0001PE-F2%403bkjzd1.ch3.sourceforge.com</url>
+    </references>
+    <dates>
+      <discovery>2010-01-05</discovery>
+      <entry>2010-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="752ce039-5242-11df-9139-00242b513d7c">
-    <topic>Unintended code execution with specially crafted data in VLC</topic>
+    <topic>vlc -- unintended code execution with specially crafted data</topic>
     <affects>
       <package>
 	<name>vlc</name>
@@ -58,6 +124,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2010-04-19</discovery>
       <entry>2010-05-01</entry>
+      <modified>2010-05-05</modified>
     </dates>
   </vuln>
 
