@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -216,6 +216,9 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/apache22/envvars.d
 	@${MKDIR} ${PREFIX}/etc/apache22/Includes
 	@${INSTALL_DATA} ${FILESDIR}/no-accf.conf ${PREFIX}/etc/apache22/Includes
+.if defined(WITH_LOG_FORENSIC)
+	@${INSTALL_SCRIPT} ${WRKSRC}/support/check_forensic ${PREFIX}/sbin
+.endif
 .if !defined(NOPORTDOCS)
 .for dir in style/lang style/xsl/util style/xsl
 	@[ -d ${DOCSDIR}/${dir}/ ] && ${TOUCH} ${DOCSDIR}/${dir}/.keepme

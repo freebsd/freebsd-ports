@@ -273,6 +273,7 @@ sbin/ab
 sbin/apachectl
 sbin/apxs
 sbin/checkgid
+%%MOD_LOG_FORENSIC%%sbin/check_forensic
 sbin/dbmmanage
 sbin/envvars
 sbin/htcacheclean
