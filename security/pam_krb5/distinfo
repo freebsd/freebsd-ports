@@ -1,3 +1,3 @@
-MD5 (pam_krb5-1.3-rc7.tar.gz) = 2c7c8974604e5c325bb2e62d0066cdce
-SHA256 (pam_krb5-1.3-rc7.tar.gz) = 18da8d59a0cc50a5ff2887457cd3d87906fe1807b3cf94b5952c05998c0086f1
-SIZE (pam_krb5-1.3-rc7.tar.gz) = 318609
+MD5 (pam-krb5-4.2.tar.gz) = fa8d83531ee084c97fc7beb873a9fa5d
+SHA256 (pam-krb5-4.2.tar.gz) = fb05896f72c2766b3a45df4def80b4dde71b2276abe32390f3c8d2d648f31f28
+SIZE (pam-krb5-4.2.tar.gz) = 390614
