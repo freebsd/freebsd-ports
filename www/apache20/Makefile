@@ -143,7 +143,7 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 .endif
 
 .if exists(${LOCALBASE}/lib/libapr-0.so) || defined(WITH_APR_FROM_PORTS)
-IGNORE=	: apr from ports (WITH_APR_FROM_PORTS) is no longer supported
+IGNORE=	apr from ports (WITH_APR_FROM_PORTS) is no longer supported
 .endif
 
 .if defined(WITH_THREADS)
