@@ -28,10 +28,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 FQDN!=		hostname
 P4DB_HOME=	${PREFIX}/perforce/${PORTNAME}
 
-# These variables are all configurable.
-PERFORCE_USER?=		p4admin
-PERFORCE_GROUP?=	p4admin
-PERFORCE_HOME?=		${LOCALBASE}/perforce
+USERS=	p4admin
+GROUPS=	p4admin
+
+# This variable is configurable.
 PERFORCE_PORT?=		1666
 
 post-extract:
@@ -47,8 +47,8 @@ post-extract:
 post-patch:
 	${PERL} -pi \
 		-e 's,!!PREFIX!!,${PREFIX},g;' \
-		-e 's,!!PERFORCE_USER!!,${PERFORCE_USER},g;' \
-		-e 's,!!PERFORCE_GROUP!!,${PERFORCE_GROUP},g;' \
+		-e 's,!!PERFORCE_USER!!,p4admin,g;' \
+		-e 's,!!PERFORCE_GROUP!!,p4admin,g;' \
 		-e 's,!!PERFORCE_PORT!!,${PERFORCE_PORT},g;' \
 		-e 's,!!FQDN!!,${FQDN},g;' \
 		${WRKSRC}/${PORTNAME}/P4DB.conf.sample
@@ -57,7 +57,7 @@ post-patch:
 do-install:
 	${MKDIR} ${P4DB_HOME}/www
 	${CP} -Rp ${WRKSRC}/${PORTNAME}/* ${P4DB_HOME}/
-	${CHOWN} -R ${PERFORCE_USER}:${PERFORCE_GROUP} ${P4DB_HOME}
+	${CHOWN} -R p4admin:p4admin ${P4DB_HOME}
 .for f in P4DB.conf P4DB.shortcuts.txt P4DB.shortcuts2.txt
 	if [ ! -f ${P4DB_HOME}/${f} ]; then \
 		${CP} -p ${P4DB_HOME}/${f}.sample ${P4DB_HOME}/${f}; \
