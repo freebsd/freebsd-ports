@@ -514,6 +514,7 @@
     SUBDIR += p5-Net-Amazon-Signature
     SUBDIR += p5-Net-Amazon-Thumbnail
     SUBDIR += p5-Net-Analysis
+    SUBDIR += p5-Net-Appliance-Phrasebook
     SUBDIR += p5-Net-BGP
     SUBDIR += p5-Net-Blogger
     SUBDIR += p5-Net-CIDR-Lite
