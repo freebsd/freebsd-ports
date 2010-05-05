@@ -1,9 +1,9 @@
---- src/Makefile.in.orig	2008-04-04 15:08:17.000000000 +0800
-+++ src/Makefile.in	2008-04-12 00:44:30.000000000 +0800
-@@ -33,8 +33,8 @@
+--- src/Makefile.in.orig	2010-02-19 18:34:19.000000000 +0800
++++ src/Makefile.in	2010-03-08 16:21:37.000000000 +0800
+@@ -32,8 +32,8 @@
+ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
- target_triplet = @target@
 -bin_PROGRAMS = cdo$(EXEEXT)
 -noinst_PROGRAMS = cdotest$(EXEEXT)
 +bin_PROGRAMS = cdo$(EXEEXT) cdotest$(EXEEXT)

@@ -7,9 +7,9 @@
 #
 
 PORTNAME=		cdo
-PORTVERSION=		1.4.1
+PORTVERSION=		1.4.3
 CATEGORIES=		science
-MASTER_SITES=		http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
+MASTER_SITES=		https://code.zmaw.de/attachments/download/76/ \
 			http://sunpoet.net/distfiles/
 
 MAINTAINER=		sunpoet@sunpoet.net
@@ -28,9 +28,10 @@ NETCDF_VER?=		4
 HDF5_VER?=		18
 
 OPTIONS=		HDF5	"HDF5 support"		on \
-			JASPER	"Japser support"	on \
+			JASPER	"Japser support"	off \
 			NETCDF	"NetCDF support"	on \
-			PROJ	"PROJ support"		on
+			PROJ	"PROJ support"		on \
+			SZIP	"SZIP support"		on
 
 .include <bsd.port.pre.mk>
 
@@ -38,17 +39,18 @@ OPTIONS=		HDF5	"HDF5 support"		on \
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -DPTHREAD_MUTEXATTR_CONDATTR"
 .endif
 
-.if (defined(WITH_NETCDF) && defined(WITH_HDF5) && (${NETCDF_VER} == 4) && (${HDF5_VER} == 16))
+.if (!defined(WITHOUT_NETCDF) && !defined(WITHOUT_HDF5) && (${NETCDF_VER} == 4) && (${HDF5_VER} == 16))
 IGNORE=netCDF 4 requires HDF5 1.8.
 .endif
 
-.if defined(WITH_NETCDF) && (${NETCDF_VER} == 4)
+.if !defined(WITHOUT_NETCDF) && (${NETCDF_VER} == 4)
 HDF5_VER=		18
 WITH_HDF5=		yes
 .endif
 
-.if defined(WITH_HDF5)
+.if !defined(WITHOUT_HDF5)
 CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE} --with-zlib=/usr
+WITH_SZIP=		yes
 .if (${HDF5_VER} == 18)
 LIB_DEPENDS+=		hdf5.6:${PORTSDIR}/science/hdf5-18
 .else
@@ -63,7 +65,7 @@ PLIST_SUB+=		JPEG2000=""
 .else
 .endif
 
-.if defined(WITH_NETCDF)
+.if !defined(WITHOUT_NETCDF)
 CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-src-Makefile.in
 .if (${NETCDF_VER} == 4)
@@ -74,13 +76,18 @@ LIB_DEPENDS+=		netcdf.4:${PORTSDIR}/science/netcdf
 PLIST_FILES+=		bin/cdotest
 .endif
 
-.if defined(WITH_PROJ)
+.if !defined(WITHOUT_PROJ)
 CONFIGURE_ARGS+=	--with-proj=${LOCALBASE}
 LIB_DEPENDS+=		proj.6:${PORTSDIR}/graphics/proj
 .endif
 
+.if !defined(WITHOUT_SZIP)
+CONFIGURE_ARGS+=	--with-szlib=${LOCALBASE}
+LIB_DEPENDS+=		sz.2:${PORTSDIR}/science/szip
+.endif
+
 post-build:
-.if defined(WITH_NETCDF)
+.if !defined(WITHOUT_NETCDF)
 	@cd "${WRKSRC}/src" && ${SETENV} CDO_PATH="${WRKSRC}/src/cdo" "${WRKSRC}/src/cdotest"
 .endif
 
