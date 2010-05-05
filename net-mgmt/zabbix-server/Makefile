@@ -110,6 +110,7 @@ post-patch:
 	@${GREP} -rl "/etc/zabbix" ${WRKSRC} \
 	  | ${XARGS} ${REINPLACE_CMD} -e 's#/etc/zabbix#${ETCDIR}#g' \
 	  && ${FIND} ${WRKSRC} -type f -name '*.bak' -exec ${RM} -f {} +
+	@${REINPLACE_CMD} -e 's#/usr/sbin/fping#${LOCALBASE}/sbin/fping#g' ${WRKSRC}/misc/conf/${PORTNAME}_*.conf
 
 .if ${ZABBIX_BUILD} != "agent"
 .ifdef WITHOUT_FPING
