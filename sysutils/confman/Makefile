@@ -7,6 +7,7 @@
 
 PORTNAME=	confman
 PORTVERSION=	1.9.3b
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.timesinks.net/distfiles/
 

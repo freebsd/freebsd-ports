@@ -6,6 +6,7 @@
 
 PORTNAME=	svn_load_dirs
 PORTVERSION=	1.6.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/
 DISTNAME=	subversion-${DISTVERSION}

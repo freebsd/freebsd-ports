@@ -6,6 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-java
+PORTREVISION=	1
 CATEGORIES=	java
 
 MAINTAINER=	lev@FreeBSD.org

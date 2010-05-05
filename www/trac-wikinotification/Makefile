@@ -7,6 +7,7 @@
 
 PORTNAME=	wikinotificationplugin
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks

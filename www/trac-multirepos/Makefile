@@ -7,6 +7,7 @@
 
 PORTNAME=	multirepos
 PORTVERSION=	0.12.8514
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	trac-

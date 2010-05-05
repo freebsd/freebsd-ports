@@ -7,6 +7,7 @@
 
 PORTNAME=	gitplugin
 PORTVERSION=	0.11.0.2.7034
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/

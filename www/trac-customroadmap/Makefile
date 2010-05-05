@@ -7,6 +7,7 @@
 
 PORTNAME=	customroadmap
 PORTVERSION=	0.4.2348
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://people.freebsd.org/~mm/trac/
 PKGNAMEPREFIX=	trac-

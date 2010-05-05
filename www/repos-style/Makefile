@@ -7,6 +7,7 @@
 
 PORTNAME=	repos-style
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/ \
 		http://mirror.amdmi3.ru/distfiles/
