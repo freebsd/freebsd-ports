@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	varnish
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	The Varnish high-performance HTTP accelerator
 
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
-
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 MAN1=		varnishadm.1 varnishd.1 varnishhist.1 varnishlog.1 \
 		varnishncsa.1 varnishreplay.1 varnishsizes.1 \
