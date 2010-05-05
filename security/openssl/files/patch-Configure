@@ -1,6 +1,6 @@
---- Configure.orig	2009-07-08 10:50:52.000000000 +0200
-+++ Configure	2009-09-11 14:02:22.000000000 +0200
-@@ -144,7 +144,7 @@
+--- Configure.orig	2010-05-05 10:43:11.000000000 +0200
++++ Configure	2010-05-05 10:43:12.000000000 +0200
+@@ -147,7 +147,7 @@
  # which has to be accompanied by explicit -D_THREAD_SAFE and
  # sometimes -D_REENTRANT. FreeBSD 5.x expands it as -lc_r, which
  # seems to be sufficient?
@@ -9,7 +9,7 @@
  
  #config-string	$cc : $cflags : $unistd : $thread_cflag : $sys_id : $lflags : $bn_ops : $cpuid_obj : $bn_obj : $des_obj : $aes_obj : $bf_obj : $md5_obj : $sha1_obj : $cast_obj : $rc4_obj : $rmd160_obj : $rc5_obj : $wp_obj : $cmll_obj : $dso_scheme : $shared_target : $shared_cflag : $shared_ldflag : $shared_extension : $ranlib : $arflags : $multilib
  
-@@ -376,19 +376,20 @@
+@@ -382,19 +382,20 @@
  "linux-alpha+bwx-ccc","ccc:-fast -readonly_strings -DL_ENDIAN -DTERMIO::-D_REENTRANT:::SIXTY_FOUR_BIT_LONG RC4_CHAR RC4_CHUNK DES_INT DES_PTR DES_RISC1 DES_UNROLL:${alpha_asm}",
  
  #### *BSD [do see comment about ${BSDthreads} above!]
@@ -39,3 +39,17 @@
  
  "bsdi-elf-gcc",     "gcc:-DPERL5 -DL_ENDIAN -fomit-frame-pointer -O3 -march=i486 -Wall::(unknown)::-ldl:BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
  
+@@ -1816,11 +1817,11 @@
+ 	(system $make_command.$make_targets) == 0 or exit $?
+ 		if $make_targets ne "";
+ 	if ( $perl =~ m@^/@) {
+-	    &dofile("tools/c_rehash",$perl,'^#!/', '#!%s','^my \$dir;$', 'my $dir = "' . $openssldir . '";');
++	    &dofile("tools/c_rehash",$perl,'^#!/', '#!%s','^my \$dir;$', 'my $dir = "' . $openssldir . '";', '^my \$prefix;$', 'my $prefix = "' . $prefix . '";');
+ 	    &dofile("apps/CA.pl",$perl,'^#!/', '#!%s');
+ 	} else {
+ 	    # No path for Perl known ...
+-	    &dofile("tools/c_rehash",'/usr/local/bin/perl','^#!/', '#!%s','^my \$dir;$', 'my $dir = "' . $openssldir . '";');
++	    &dofile("tools/c_rehash",'/usr/local/bin/perl','^#!/', '#!%s','^my \$dir;$', 'my $dir = "' . $openssldir . '";',  '^my \$prefix;$', 'my $prefix = "' . $prefix . '";');
+ 	    &dofile("apps/CA.pl",'/usr/local/bin/perl','^#!/', '#!%s');
+ 	}
+ 	if ($depflags ne $default_depflags && !$make_depend) {
