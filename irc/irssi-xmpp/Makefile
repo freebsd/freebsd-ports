@@ -4,10 +4,9 @@
 # $FreeBSD$
 
 PORTNAME=	irssi-xmpp
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.50
 CATEGORIES=	irc
-MASTER_SITES=	http://cybione.org/src/irssi-xmpp/
+MASTER_SITES=	http://cybione.org/~irssi-xmpp/files/
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Irssi-xmpp is an irssi plugin to connect to the Jabber network
@@ -21,13 +20,18 @@ USE_LDCONFIG=	yes
 MAKE_ENV=	IRSSI_INCLUDE="${LOCALBASE}/include/irssi/"
 
 PLIST_FILES=	lib/irssi/modules/libfe_xmpp.so \
+		lib/irssi/modules/libtext_xmpp.so \
 		lib/irssi/modules/libxmpp_core.so
-PORTDOCS=	README
-
-IGNORE=		Does not work with irc/irssi-0.8.12
+PORTDOCS=	README \
+		FAQ \
+		GENERAL \
+		INTERNAL \
+		MUC \
+		STARTUP \
+		XEP
 
 do-install:
-.for data in core fe-common
+.for data in core fe-common fe-text
 	${MKDIR} ${PREFIX}/lib/irssi/modules
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${data}/*.so \
 		${PREFIX}/lib/irssi/modules
@@ -35,6 +39,12 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/FAQ ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/GENERAL ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/INTERNAL ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/MUC ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/STARTUP ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/XEP ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
