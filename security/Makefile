@@ -397,6 +397,7 @@
     SUBDIR += p5-Crypt-AppleTwoFish
     SUBDIR += p5-Crypt-Blowfish
     SUBDIR += p5-Crypt-Blowfish_PP
+    SUBDIR += p5-Crypt-CAST5
     SUBDIR += p5-Crypt-CAST5_PP
     SUBDIR += p5-Crypt-CBC
     SUBDIR += p5-Crypt-CBCeasy

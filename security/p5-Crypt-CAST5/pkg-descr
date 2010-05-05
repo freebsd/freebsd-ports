@@ -1,0 +1,6 @@
+This module provides an implementation of the CAST5 block cipher using
+compiled C code for increased speed. CAST5 is also known as CAST-128. It
+is a product of the CAST design procedure developed by C. Adams and
+S. Tavares.
+
+WWW: http://search.cpan.org/dist/Crypt-CAST5/
