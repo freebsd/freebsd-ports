@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	fwbuilder
-PORTVERSION=	3.0.7
-PORTREVISION=	1
+DISTVERSION=	4.0.0
+PORTVERSION=	${DISTVERSION}
+BUILD=		2877
 CATEGORIES=	security
 .if defined(BUILD)
-MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-3.0/build-${BUILD}/
+MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-4.0/build-${BUILD}/
+PKGNAMESUFFIX=	-devel
+PORTVERSION=	${DISTVERSION}.b${BUILD}
 .else
 MASTER_SITES=	SF/${PORTNAME}/Current_Packages/${PORTVERSION}
 .endif
@@ -18,10 +21,15 @@ MASTER_SITES=	SF/${PORTNAME}/Current_Packages/${PORTVERSION}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
-CONFLICTS=	fwbuilder-2.*
-LIB_DEPENDS=	fwbuilder.8:${PORTSDIR}/security/libfwbuilder
+.if defined(BUILD)
+CONFLICTS=	fwbuilder-[23].* fwbuilder-devel-[23].*
+LIB_DEPENDS=	fwbuilder.9:${PORTSDIR}/security/libfwbuilder-devel
+.else
+CONFLICTS=	fwbuilder-[23].* fwbuilder-devel-*
+LIB_DEPENDS=	fwbuilder.9:${PORTSDIR}/security/libfwbuilder
+.endif
 
-PLIST_SUB=	BUILD_VERSION=${PORTVERSION}
+PLIST_SUB=	BUILD_VERSION=${DISTVERSION}
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib \
 		gui \
@@ -39,6 +47,7 @@ QTDIR?=		${QT_PREFIX}
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
+CONFIGURE_SCRIPT=	autogen.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

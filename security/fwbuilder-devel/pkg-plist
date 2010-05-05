@@ -6,58 +6,213 @@ bin/fwb_pf
 bin/fwb_pix
 bin/fwbedit
 bin/fwbuilder
+bin/transfer_secuwall
 share/applications/fwbuilder.desktop
-share/fwbuilder-%%BUILD_VERSION%%/objects_init.xml
-share/fwbuilder-%%BUILD_VERSION%%/templates.xml
-share/fwbuilder-%%BUILD_VERSION%%/resources.xml
-share/fwbuilder-%%BUILD_VERSION%%/help/ipfw_Classify_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/iptAdvancedDialog_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/iptables_Branch_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/iptables_Classify_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/iptables_Route_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/iptables_Tag_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/iptables_rule_options_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/linux24AdvancedDialog_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/main_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/pfAdvancedDialog_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/pf_Branch_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/pf_Classify_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/pf_Route_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/pf_Tag_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/pf_rule_options_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/tip01_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/tip02_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/tip03_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/tip04_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/tip05_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/tip06_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/tip07_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/tip08_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/tip09_en_US.html
-share/fwbuilder-%%BUILD_VERSION%%/help/tip10_en_US.html
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/carp_interface
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/kernel_vars
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/pfsync_interface
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/shell_functions
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/tools
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_addresses
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_carp
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_pfsync
+share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_vlans
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/kernel_vars
+share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/tools
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/installer_commands_post_config
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/installer_commands_pre_config
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/automatic_rules
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/kernel_vars
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/shell_functions
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/update_addresses
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/update_bonding
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/update_bridge
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/update_vlans
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipf/activation
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipf/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipf/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipfw/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ipfw/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/automatic_rules
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/check_utilities
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/conntrack
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/constants
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/ip_forwarding
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/kernel_vars
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/load_modules
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/prolog_epilog_functions
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/reset_iptables
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/routing_functions
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/run_time_wrappers
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/script_body_iptables_restore
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/script_body_single_rule
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/shell_functions
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/status_action
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/stop_action
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/update_addresses
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/update_bonding
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/update_bridge
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/update_vlans
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/verify_interfaces
+share/fwbuilder-%%BUILD_VERSION%%/configlets/macosx/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/macosx/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/macosx/kernel_vars
+share/fwbuilder-%%BUILD_VERSION%%/configlets/macosx/tools
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd/kernel_vars
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd/tools
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/check_utilities
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/load_modules
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pf/activation
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pf/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pf/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/failover_commands_6
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/failover_commands_7
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/failover_interface_6
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/failover_interface_7
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/installer_commands_post_config
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/installer_commands_pre_config
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/ntp
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/regular_interface_6
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/regular_interface_7
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/snmp
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/ssh
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/vlan_parent_interface_6
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/vlan_parent_interface_7
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/vlan_subinterface_6
+share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/vlan_subinterface_7
+share/fwbuilder-%%BUILD_VERSION%%/configlets/secuwall/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/secuwall/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/secuwall/management_rules
+share/fwbuilder-%%BUILD_VERSION%%/configlets/secuwall/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/solaris/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/solaris/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/solaris/kernel_vars
+share/fwbuilder-%%BUILD_VERSION%%/configlets/solaris/tools
+share/fwbuilder-%%BUILD_VERSION%%/configlets/sveasoft/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/sveasoft/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/sveasoft/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/sveasoft/shell_functions
+share/fwbuilder-%%BUILD_VERSION%%/configlets/sveasoft/top_comment
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/cluster_interfaces.png
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/create_and_add_to_group.png
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/ipcopAdvancedDialog.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/ipcoposAdvancedDialog.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/ipfw_Classify.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/iptAdvancedDialog.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/iptables_Branch.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/iptables_Classify.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/iptables_Route.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/iptables_Tag.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/iptables_rule_options.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/linux24AdvancedDialog.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/main.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/new_bridge_interfaces.png
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pfAdvancedDialog.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pf_Branch.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pf_Classify.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pf_Route.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pf_Tag.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pf_rule_options.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pix-failover-group-1.png
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pix-failover-groups-mapping.png
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pix-statesync-group-1.png
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pix-statesync-group-mapping.png
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.0.0.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/state_sync_configuration.png
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/summary.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip01.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip02.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip03.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip04.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip05.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip06.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip07.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip08.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip09.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip10.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/vlan_interfaces.png
 share/fwbuilder-%%BUILD_VERSION%%/locale/fwbuilder_ja.qm
 share/fwbuilder-%%BUILD_VERSION%%/locale/fwbuilder_ru.qm
-share/fwbuilder-%%BUILD_VERSION%%/platform/iosacl.xml
-share/fwbuilder-%%BUILD_VERSION%%/platform/iptables.xml
-share/fwbuilder-%%BUILD_VERSION%%/platform/ipf.xml
-share/fwbuilder-%%BUILD_VERSION%%/platform/pf.xml
-share/fwbuilder-%%BUILD_VERSION%%/platform/ipfw.xml
+share/fwbuilder-%%BUILD_VERSION%%/objects_init.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/dd-wrt-jffs.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/dd-wrt-nvram.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/endian.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/freebsd.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/fwsm_os.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/ios.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/ipcop.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/linux24.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/macosx.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/oneshield.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/openbsd.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/openwrt.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/pix_os.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/secuwall.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/solaris.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/sveasoft.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/unknown_os.xml
 share/fwbuilder-%%BUILD_VERSION%%/platform/fwsm.xml
+share/fwbuilder-%%BUILD_VERSION%%/platform/iosacl.xml
+share/fwbuilder-%%BUILD_VERSION%%/platform/ipf.xml
+share/fwbuilder-%%BUILD_VERSION%%/platform/ipfw.xml
+share/fwbuilder-%%BUILD_VERSION%%/platform/iptables.xml
+share/fwbuilder-%%BUILD_VERSION%%/platform/pf.xml
 share/fwbuilder-%%BUILD_VERSION%%/platform/pix.xml
 share/fwbuilder-%%BUILD_VERSION%%/platform/unknown.xml
-share/fwbuilder-%%BUILD_VERSION%%/os/ios.xml
-share/fwbuilder-%%BUILD_VERSION%%/os/linux24.xml
-share/fwbuilder-%%BUILD_VERSION%%/os/linksys.xml
-share/fwbuilder-%%BUILD_VERSION%%/os/macosx.xml
-share/fwbuilder-%%BUILD_VERSION%%/os/freebsd.xml
-share/fwbuilder-%%BUILD_VERSION%%/os/openbsd.xml
-share/fwbuilder-%%BUILD_VERSION%%/os/solaris.xml
-share/fwbuilder-%%BUILD_VERSION%%/os/pix_os.xml
-share/fwbuilder-%%BUILD_VERSION%%/os/fwsm_os.xml
-share/fwbuilder-%%BUILD_VERSION%%/os/unknown_os.xml
+share/fwbuilder-%%BUILD_VERSION%%/resources.xml
+share/fwbuilder-%%BUILD_VERSION%%/templates.xml
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/platform
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/os
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/locale
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/help/en_US
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/help
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/sveasoft
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/solaris
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/secuwall
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/pf
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/openbsd
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/macosx
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ipfw
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ipf
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/ios
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/cisco
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets
 @dirrm share/fwbuilder-%%BUILD_VERSION%%
 @dirrmtry share/applications
