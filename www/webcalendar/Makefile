@@ -7,7 +7,7 @@
 
 PORTNAME=	WebCalendar
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}%201.0/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -30,13 +30,15 @@ PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
 SUB_LIST=	WCURL=${WCURL} WCDIR=${WCDIR}
 
-DOCSDIR=	${PREFIX}/share/doc/${MASTER_SITE_SUBDIR}
+.if !defined(NOPORTDOCS)
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:L}
 PORTDOCS=	README \
 		WebCalendar-Database.html \
 		WebCalendar-DeveloperGuide.html \
 		WebCalendar-Styling.html \
 		WebCalendar-SysAdmin.html \
 		newwin.gif
+.endif
 
 OPTIONS=	MYSQL "Use MySQL database backend (default)" On \
 		PGSQL "Use PostgreSQL database backend" Off \
@@ -89,7 +91,7 @@ USE_PHP+=	ldap
 .endif
 
 pre-install:
-	cd ${WRKSRC} && ${FIND} -s * -type f | \
+	@cd ${WRKSRC} && ${FIND} -s * -type f | \
 		${SED} -e 's|^|${WCDIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${WCDIR}/|' >> ${PLIST} \
