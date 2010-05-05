@@ -22,4 +22,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/pg_top
 
+IGNORE=	broken on all supported FreeBSD versions
+EXPIRATION_DATE=	2010-03-06
+
 .include <bsd.port.mk>
