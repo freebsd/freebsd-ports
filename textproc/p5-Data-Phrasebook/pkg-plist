@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Data/Phrasebook.pm
+%%SITE_PERL%%/Data/Phrasebook/Debug.pm
+%%SITE_PERL%%/Data/Phrasebook/Generic.pm
+%%SITE_PERL%%/Data/Phrasebook/Loader.pm
+%%SITE_PERL%%/Data/Phrasebook/Loader/Base.pm
+%%SITE_PERL%%/Data/Phrasebook/Loader/Text.pm
+%%SITE_PERL%%/Data/Phrasebook/Plain.pm
+%%SITE_PERL%%/Data/Phrasebook/SQL.pm
+%%SITE_PERL%%/Data/Phrasebook/SQL/Query.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Phrasebook/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Phrasebook
+@dirrmtry %%SITE_PERL%%/Data/Phrasebook/Loader
+@dirrmtry %%SITE_PERL%%/Data/Phrasebook/SQL
+@dirrmtry %%SITE_PERL%%/Data/Phrasebook
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data

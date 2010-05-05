@@ -1,0 +1,9 @@
+Data::Phrasebook is a collection of modules for accessing phrasebooks
+from various data sources.
+
+Common uses of phrasebooks are in handling error codes, accessing
+databases via SQL queries and written language phrases. Examples are the
+mime.types file and the hosts file, both of which use a simple
+phrasebook design.
+
+WWW: http://search.cpan.org/dist/Data-Phrasebook/
