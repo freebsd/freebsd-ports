@@ -109,7 +109,7 @@ log_args=">> ${tomcat%%TOMCAT_VERSION%%_stdout_log} \
 if [ -f $pidfile ]; then
   read rc_pid junk < $pidfile
   if [ ! -z "$rc_pid" ]; then
-    procname=`ps -o ucomm= -p $rc_pid`
+    procname=`ps -o command= -p $rc_pid | cut -f 1 -d ' '`
   fi
 fi
 if [ -z "$procname" ]; then
