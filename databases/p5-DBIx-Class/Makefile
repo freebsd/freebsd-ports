@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08120
+PORTVERSION=	0.08121
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	p5-Carp-Clan>=6:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
-		p5-SQL-Abstract>=1.61:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-SQL-Abstract>=1.64:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.13:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -101,12 +101,14 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::Cursor.3 \
 	DBIx::Class::Storage::DBI::DB2.3 \
 	DBIx::Class::Storage::DBI::Informix.3 \
+	DBIx::Class::Storage::DBI::InterBase.3 \
 	DBIx::Class::Storage::DBI::MSSQL.3 \
 	DBIx::Class::Storage::DBI::MultiColumnIn.3 \
 	DBIx::Class::Storage::DBI::NoBindVars.3 \
 	DBIx::Class::Storage::DBI::ODBC.3 \
 	DBIx::Class::Storage::DBI::ODBC::ACCESS.3 \
 	DBIx::Class::Storage::DBI::ODBC::DB2_400_SQL.3 \
+	DBIx::Class::Storage::DBI::ODBC::Firebird.3 \
 	DBIx::Class::Storage::DBI::ODBC::Microsoft_SQL_Server.3 \
 	DBIx::Class::Storage::DBI::ODBC::SQL_Anywhere.3 \
 	DBIx::Class::Storage::DBI::Oracle.3 \
@@ -130,6 +132,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::Sybase::MSSQL.3 \
 	DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server.3 \
 	DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server::NoBindVars.3 \
+	DBIx::Class::Storage::DBI::UniqueIdentifier.3 \
 	DBIx::Class::Storage::DBI::mysql.3 \
 	DBIx::Class::Storage::Statistics.3 \
 	DBIx::Class::Storage::TxnScopeGuard.3 \
