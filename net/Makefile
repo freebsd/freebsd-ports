@@ -260,6 +260,9 @@
     SUBDIR += isc-dhcp31-client
     SUBDIR += isc-dhcp31-relay
     SUBDIR += isc-dhcp31-server
+    SUBDIR += isc-dhcp41-server
+    SUBDIR += isc-dhcp41-client
+    SUBDIR += isc-dhcp41-relay
     SUBDIR += iscsi-target
     SUBDIR += istgt
     SUBDIR += iwi-firmware
