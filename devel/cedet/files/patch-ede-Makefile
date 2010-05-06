@@ -1,0 +1,11 @@
+--- ede/Makefile.orig	2010-05-04 22:49:33.000000000 +0200
++++ ede/Makefile	2010-05-04 22:49:53.000000000 +0200
+@@ -23,7 +23,7 @@
+ projects_LISP=project-am.el ede-simple.el ede-cpp-root.el ede-emacs.el ede-linux.el
+ aux-lisp_LISP=autoconf-edit.el autoconf-compat.el makefile-edit.el
+ ede_info_TEXINFOS=ede.texi ede-projects.texi ede-targets.texi ede-sourcecode.texi ede-compilers.texi
+-MAKEINFO=makeinfo
++MAKEINFO=makeinfo --force --no-split
+ VERSION=1.0pre7
+ DISTDIR=$(top)EDE-$(VERSION)
+ 

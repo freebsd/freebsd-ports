@@ -1,0 +1,11 @@
+--- semantic/doc/Makefile.orig	2010-05-04 22:56:54.000000000 +0200
++++ semantic/doc/Makefile	2010-05-04 22:57:06.000000000 +0200
+@@ -11,7 +11,7 @@
+ 
+ images_MISC=grammar-fw-ov.png grammar-fw-ov.txt
+ semantic-grammar_TEXINFOS=grammar-fw.texi
+-MAKEINFO=makeinfo
++MAKEINFO=makeinfo --force --no-split
+ Documentation_TEXINFOS=semantic.texi glossary.texi overview.texi installation.texi fdl.texi internals.texi semanticheader.texi
+ semantic-user_info_TEXINFOS=user-guide.texi minor-modes.texi
+ semantic-appdev_info_TEXINFOS=app-dev-guide.texi tags.texi

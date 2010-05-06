@@ -1,0 +1,33 @@
+--- speedbar/speedbar.texi.orig	2010-05-04 22:53:29.000000000 +0200
++++ speedbar/speedbar.texi	2010-05-04 22:55:53.000000000 +0200
+@@ -20,12 +20,12 @@
+ @c Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ @c Boston, MA 02110-1301, USA.
+ 
+-@setfilename speedbar.info
+-@settitle Speedbar: File/Tag summarizing utility
++@setfilename speedbar-cedet.info
++@settitle Speedbar: File/Tag summarizing utility (cedet version)
+ 
+ @dircategory Emacs
+ @direntry
+-* Speedbar: (speedbar).        File/Tag summarizing utility.
++* Speedbar-cedet: (speedbar).        File/Tag summarizing utility.
+ @end direntry
+ @ifnottex
+ Copyright @copyright{} 1999, 2000, 2001, 2002, 2003, 2005 Free Software Foundation, Inc.
+@@ -53,12 +53,12 @@
+ 
+ @dircategory Emacs
+ @direntry
+-* Speedbar: (speedbar). File/Tag summarizing utility.
++* Speedbar-cedet: (speedbar). File/Tag summarizing utility (cedet version).
+ @end direntry
+ 
+ @titlepage
+ @sp 10
+-@center @titlefont{Speedbar}
++@center @titlefont{Speedbar-cedet}
+ @sp 2
+ @center Eric Ludlam
+ @vskip 0pt plus 1 fill
