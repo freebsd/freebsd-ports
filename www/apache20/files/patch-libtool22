@@ -20,7 +20,7 @@
  if [ "x$libtoolize" = "x" ]; then
      echo "libtoolize not found in path"
      exit 1
-@@ -35,29 +35,47 @@
+@@ -35,29 +35,48 @@
  # Note: APR supplies its own config.guess and config.sub -- we do not
  #       rely on libtool's versions
  #
@@ -68,6 +68,7 @@
 +  # Wouldn't it just be better to define top_builddir??
 +  mv build/libtool.m4 build/libtool.m4.$$
 +  cat build/libtool.m4.$$ | sed -e 's/LIBTOOL=\(.*\)top_build/LIBTOOL=\1apr_build/' > build/libtool.m4
++  chmod 664 build/libtool.m4.$$
 +  rm build/libtool.m4.$$
  fi
  
