@@ -33,6 +33,7 @@ PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment "
 PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL=""
 .      elif  ${WITH_MPM:L} == "itk"
 PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment "
+EXTRA_PATCHES+=	${PATCHDIR}/mpm-itk-${MPM_ITK_VERSION}
 .      else
 IGNORE=		"Unknown MPM: ${WITH_MPM}"
 .      endif
