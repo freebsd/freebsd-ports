@@ -78,7 +78,6 @@ include/clang/AST/UnresolvedSet.h
 include/clang/AST/UsuallyTinyPtrVector.h
 include/clang/Analysis/Analyses/LiveVariables.h
 include/clang/Analysis/Analyses/PrintfFormatString.h
-include/clang/Analysis/Analyses/PrintfFormatString.h.orig
 include/clang/Analysis/Analyses/ReachableCode.h
 include/clang/Analysis/Analyses/UninitializedValues.h
 include/clang/Analysis/AnalysisContext.h
