@@ -135,6 +135,10 @@ CONFIGURE_ARGS+=	--with-ldap \
 .include "${APACHEDIR}/Makefile.modules"
 .include <bsd.port.pre.mk>
 
+.if defined(OPENSSL_INSTALLED)
+EXTRA_PATCHES+=	${FILESDIR}/extra-openssl-9.8up.patch
+.endif
+
 .if ${OSVERSION} < 700014 && ${ARCH} == i386
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 .endif
