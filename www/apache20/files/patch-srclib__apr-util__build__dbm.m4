@@ -1,5 +1,5 @@
---- srclib/apr-util/build/dbm.m4.orig	Sun Jan 16 18:27:07 2005
-+++ srclib/apr-util/build/dbm.m4	Sat Feb  5 12:14:28 2005
+--- ./srclib/apr-util/build/dbm.m4.orig	2006-11-09 10:50:42.000000000 -0500
++++ ./srclib/apr-util/build/dbm.m4	2010-05-06 16:06:03.775832049 -0400
 @@ -298,8 +298,8 @@
    fi
    APU_CHECK_BERKELEY_DB(1, -1, -1,
@@ -70,7 +70,7 @@
    )
    if test "$apu_have_db" = "1"; then
      apu_db_version=4
-@@ -524,6 +525,7 @@
+@@ -579,6 +580,7 @@
        fi
      fi
    fi

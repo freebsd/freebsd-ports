@@ -1,5 +1,5 @@
---- srclib/apr/config.layout.orig	Tue Jan  7 13:06:50 2003
-+++ srclib/apr/config.layout	Tue Apr  1 18:36:51 2003
+--- ./srclib/apr/config.layout.orig	2004-11-24 18:02:04.000000000 -0500
++++ ./srclib/apr/config.layout	2010-05-06 16:06:03.785831951 -0400
 @@ -229,3 +229,7 @@
      infodir:       ${exec_prefix}/share/info
      libsuffix:    -${APR_MAJOR_VERSION}

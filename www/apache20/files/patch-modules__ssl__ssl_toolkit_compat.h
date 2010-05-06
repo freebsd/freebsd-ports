@@ -1,7 +1,7 @@
---- modules/ssl/ssl_toolkit_compat.h.orig	Fri Feb  4 21:21:18 2005
-+++ modules/ssl/ssl_toolkit_compat.h	Tue Aug 30 01:42:51 2005
-@@ -99,6 +99,13 @@
- #define HAVE_SSL_X509V3_EXT_d2i
+--- ./modules/ssl/ssl_toolkit_compat.h.orig	2006-07-12 03:40:55.000000000 -0400
++++ ./modules/ssl/ssl_toolkit_compat.h	2010-05-06 16:43:34.888290876 -0400
+@@ -121,6 +121,13 @@
+ #endif
  #endif
  
 +#ifndef PEM_F_DEF_CALLBACK

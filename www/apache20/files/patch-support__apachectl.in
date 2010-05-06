@@ -1,6 +1,6 @@
---- support/apachectl.in.orig	Thu Sep 16 09:28:54 2004
-+++ support/apachectl.in	Thu Sep 16 09:29:14 2004
-@@ -63,7 +63,7 @@
+--- ./support/apachectl.in.orig	2006-07-12 03:40:55.000000000 -0400
++++ ./support/apachectl.in	2010-05-06 16:06:03.793831873 -0400
+@@ -64,7 +64,7 @@
  ULIMIT_MAX_FILES="@APACHECTL_ULIMIT@"
  # --------------------                              --------------------
  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||

@@ -1,8 +1,5 @@
-Fix underflow in apr_strmatch_precompile,
-  http://svn.apache.org/viewvc/apr/apr/trunk/strmatch/apr_strmatch.c?r1=757729&r2=779878&view=patch
-
---- srclib/apr-util/strmatch/apr_strmatch.c	2009/03/24 11:12:27	757729
-+++ srclib/apr-util/strmatch/apr_strmatch.c	2009/05/29 07:47:52	779878
+--- ./srclib/apr-util/strmatch/apr_strmatch.c.orig	2005-02-04 15:39:09.000000000 -0500
++++ ./srclib/apr-util/strmatch/apr_strmatch.c	2010-05-06 16:06:03.717832055 -0400
 @@ -103,13 +103,13 @@
      if (case_sensitive) {
          pattern->compare = match_boyer_moore_horspool;

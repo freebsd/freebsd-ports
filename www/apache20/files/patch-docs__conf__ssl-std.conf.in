@@ -1,8 +1,6 @@
-$FreeBSD$
-
---- docs/conf/ssl-std.conf.in.orig	Mon Oct 13 16:14:10 2003
-+++ docs/conf/ssl-std.conf.in	Mon Oct 13 16:15:17 2003
-@@ -88,8 +88,8 @@
+--- ./docs/conf/ssl-std.conf.in.orig	2005-11-13 12:13:06.000000000 -0500
++++ ./docs/conf/ssl-std.conf.in	2010-05-06 16:06:03.726831828 -0400
+@@ -86,8 +86,8 @@
  DocumentRoot "@exp_htdocsdir@"
  ServerName www.example.com:443
  ServerAdmin you@example.com
@@ -13,7 +11,7 @@ $FreeBSD$
  
  #   SSL Engine Switch:
  #   Enable/Disable SSL for this virtual host.
-@@ -240,7 +240,7 @@
+@@ -238,7 +238,7 @@
  #   Per-Server Logging:
  #   The home of a custom SSL log file. Use this when you want a
  #   compact non-error SSL logfile on a virtual host basis.

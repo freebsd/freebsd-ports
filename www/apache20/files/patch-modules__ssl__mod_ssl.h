@@ -1,6 +1,6 @@
---- modules/ssl/mod_ssl.h.orig	Tue Sep 16 01:00:06 2003
-+++ modules/ssl/mod_ssl.h	Sat Jan 10 22:08:18 2004
-@@ -123,7 +123,7 @@
+--- ./modules/ssl/mod_ssl.h.orig	2007-05-08 19:08:47.000000000 -0400
++++ ./modules/ssl/mod_ssl.h	2010-05-06 16:06:03.737831861 -0400
+@@ -90,7 +90,7 @@
  #else /* !HAVE_SSLC (implicit HAVE_OPENSSL) */
  
  #include <ssl.h>

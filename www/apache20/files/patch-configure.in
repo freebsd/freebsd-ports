@@ -1,5 +1,5 @@
---- configure.in.orig	Thu Mar 18 08:36:52 2004
-+++ configure.in	Fri Jul  2 11:44:25 2004
+--- ./configure.in.orig	2005-09-12 16:41:34.000000000 -0400
++++ ./configure.in	2010-05-06 17:30:34.855458994 -0400
 @@ -69,7 +69,7 @@
  
  if test "$apr_found" = "reconfig"; then
@@ -9,7 +9,7 @@
                      [--enable-layout=*|\'--enable-layout=*])
    dnl We must be the first to build and the last to be cleaned
    AP_BUILD_SRCLIB_DIRS="apr $AP_BUILD_SRCLIB_DIRS"
-@@ -96,7 +96,7 @@
+@@ -106,7 +106,7 @@
  
  if test "$apu_found" = "reconfig"; then
    APR_SUBDIR_CONFIG(srclib/apr-util,
@@ -18,18 +18,12 @@
                      [--enable-layout=*|\'--enable-layout=*])
    dnl We must be the last to build and the first to be cleaned
    AP_BUILD_SRCLIB_DIRS="$AP_BUILD_SRCLIB_DIRS apr-util"
-@@ -545,8 +545,14 @@
- 	[Root directory of the Apache install area])
- AC_DEFINE_UNQUOTED(SERVER_CONFIG_FILE, "${rel_sysconfdir}/${progname}.conf",
- 	[Location of the config file, relative to the Apache root directory])
-+AC_DEFINE_UNQUOTED(DEFAULT_ERRORLOG, "${rel_logfiledir}/httpd-error.log",
-+	[Location of error log file])
-+AC_DEFINE_UNQUOTED(DEFAULT_SCOREBOARD, "${rel_runtimedir}/apache_runtime_status",
-+	[Location of ScoreBoard file])
- AC_DEFINE_UNQUOTED(AP_TYPES_CONFIG_FILE, "${rel_sysconfdir}/mime.types",
- 	[Location of the MIME types config file, relative to the Apache root directory])
-+AC_DEFINE_UNQUOTED(DOCUMENT_LOCATION, "${rel_htdocsdir}",
-+	[Location of document root])
- AC_DEFINE_UNQUOTED(APACHE_MPM_DIR, "$MPM_DIR",
- 	[Location of the source for the current MPM])
- 
+@@ -172,7 +172,7 @@
+       LIBTOOL="$my_libtool \$(LTFLAGS)"
+       libtoolversion=`$my_libtool --version`
+       case $libtoolversion in
+-          *1.[[45]]*)
++          *1.[[45]]* | *[[2-9]].[[0-9]]*)
+               SH_LIBTOOL='$(LIBTOOL)'
+               SHLTCFLAGS="-prefer-pic"
+               LTCFLAGS="-prefer-non-pic -static"

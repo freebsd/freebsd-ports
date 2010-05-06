@@ -1,6 +1,6 @@
---- server/main.c.orig	Thu Jun 13 04:34:56 2002
-+++ server/main.c	Sun Jul 21 08:54:09 2002
-@@ -78,6 +78,11 @@
+--- ./server/main.c.orig	2007-08-28 01:23:46.000000000 -0400
++++ ./server/main.c	2010-05-06 16:06:03.772831938 -0400
+@@ -40,6 +40,11 @@
  #include "ap_mpm.h"
  #include "mpm_common.h"
  
@@ -12,7 +12,7 @@
  /* WARNING: Win32 binds http_main.c dynamically to the server. Please place
   *          extern functions and global data in another appropriate module.
   *
-@@ -558,6 +563,21 @@
+@@ -554,6 +559,21 @@
          destroy_and_exit_process(process, 1);
      }
  

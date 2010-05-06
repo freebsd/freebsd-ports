@@ -1,9 +1,6 @@
-Taken from
-  http://svn.apache.org/viewvc/apr/apr/trunk/xml/apr_xml.c?r1=757729&r2=781403&view=patch
-
---- srclib/apr-util/xml/apr_xml.c	2009/03/24 11:12:27	757729
-+++ srclib/apr-util/xml/apr_xml.c	2009/06/03 14:26:19	781403
-@@ -347,6 +347,25 @@
+--- ./srclib/apr-util/xml/apr_xml.c.orig	2007-04-02 12:19:29.000000000 -0400
++++ ./srclib/apr-util/xml/apr_xml.c	2010-05-06 16:06:03.712831964 -0400
+@@ -339,6 +339,25 @@
      return APR_SUCCESS;
  }
  
@@ -29,7 +26,7 @@ Taken from
  APU_DECLARE(apr_xml_parser *) apr_xml_parser_create(apr_pool_t *pool)
  {
      apr_xml_parser *parser = apr_pcalloc(pool, sizeof(*parser));
-@@ -372,6 +391,19 @@
+@@ -364,6 +383,19 @@
      XML_SetElementHandler(parser->xp, start_handler, end_handler);
      XML_SetCharacterDataHandler(parser->xp, cdata_handler);
  
