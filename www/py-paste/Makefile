@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Tools for using a Web Server Gateway Interface stack
 
 USE_PYTHON=	2.4+
