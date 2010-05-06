@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	help2man
-PORTVERSION=	1.37.1
-PORTREVISION=	2
+PORTVERSION=	1.38.2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Lo
 
 CFLAGS+=	-lintl
 INSTALL_TARGET=	install install_l10n
-MANLANG=	"" de fi fr pl pt_BR sv
+MANLANG=	"" de fi fr pl pt_BR ru sv vi
 PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
 .else

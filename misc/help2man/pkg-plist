@@ -5,7 +5,9 @@ bin/help2man
 %%NLS%%share/locale/fr/LC_MESSAGES/help2man.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/help2man.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/help2man.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/help2man.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/help2man.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/help2man.mo
 %%NLS%%@dirrmtry man/de/man1
 %%NLS%%@dirrmtry man/de
 %%NLS%%@dirrmtry man/fi/man1
@@ -16,5 +18,9 @@ bin/help2man
 %%NLS%%@dirrmtry man/pl
 %%NLS%%@dirrmtry man/pt_BR/man1
 %%NLS%%@dirrmtry man/pt_BR
+%%NLS%%@dirrmtry man/ru/man1
+%%NLS%%@dirrmtry man/ru
 %%NLS%%@dirrmtry man/sv/man1
 %%NLS%%@dirrmtry man/sv
+%%NLS%%@dirrmtry man/vi/man1
+%%NLS%%@dirrmtry man/vi
