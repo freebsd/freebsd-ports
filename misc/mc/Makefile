@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mc
-PORTVERSION=	4.7.0.2
-PORTREVISION=	2
+PORTVERSION=	4.7.2
+PORTREVISION=	0
 CATEGORIES=	misc shells
 MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
 		${MASTER_SITE_SUNSITE}
