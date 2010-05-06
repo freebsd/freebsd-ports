@@ -5,6 +5,36 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100506:
+  AFFECTS: users of mail/nullmailer on FreeBSD 6.x
+  AUTHOR: glarkin@FreeBSD.org
+
+  The nullmailer port was recently updated with an rc.d script to
+  correctly daemonize nullmailer-send with daemon(8). On FreeBSD 6.x,
+  daemon(8) does not suppport the "[-u user]" command-line switch,
+  causing the nullmailer rc.d script to fail to start nullmailer-send.
+
+  Support for the "[-u user]" command-line switch was recently MFC'd
+  to 6-STABLE (http://www.freebsd.org/cgi/query-pr.cgi?pr=bin/146266).
+  FreeBSD 6.x users should patch and install daemon(8) with one of the
+  following methods:
+
+    # If /usr/src is not yet populated, csup the 6-STABLE sources
+    # and run these commands:
+    cd /usr/src/usr.sbin/daemon
+    make install
+    /usr/local/etc/rc.d/nullmailer start
+
+    # If /usr/src is already populated with sources from a previous 6.x
+    # release, use these commands:
+    cd /usr/src/usr.sbin/daemon
+    fetch 'http://people.freebsd.org/~glarkin/pr-links/daemon/patch-daemon.c'
+    fetch 'http://people.freebsd.org/~glarkin/pr-links/daemon/patch-daemon.8'
+    patch -p0 daemon.c < patch-daemon.c
+    patch -p0 daemon.8 < patch-daemon.8
+    make install
+    /usr/local/etc/rc.d/nullmailer start
+
 20100502:
   AFFECTS: users of www/squid*
   AUTHOR: miwi@FreeBSD.org
