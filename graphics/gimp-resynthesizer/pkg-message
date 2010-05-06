@@ -1,0 +1,7 @@
+After restarting the Gimp you should find the following items in
+the pop-up image menu:
+
+ * Filters/Map/Resynthesize
+ * Filters/Enhance/Smart enlarge
+ * Filters/Enhance/Smart sharpen
+ * Filters/Enhance/Smart remove selection
