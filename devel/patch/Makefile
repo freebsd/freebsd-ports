@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	patch
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	GNU patch utility
 
-USE_AUTOTOOLS=	autoconf262 aclocal:110
+USE_AUTOTOOLS=	autoconf:262 aclocal:110
 CONFIGURE_ARGS=	--program-prefix=g
 USE_GMAKE=	yes
 
