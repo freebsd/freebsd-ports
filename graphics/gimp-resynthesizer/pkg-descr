@@ -1,0 +1,9 @@
+Resynthesizer is a Gimp plug-in for texture synthesis. Given a
+sample of a texture, it can create more of that texture. This has
+a surprising number of uses:
+
+ * Creating more of a texture
+ * Removing objects from images
+ * Creating themed images
+
+WWW:	http://www.logarithmic.net/pfh/resynthesizer
