@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	zopetesting
-PORTVERSION=	3.9.3
+PORTVERSION=	3.9.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	zope.testing-${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zope Testing Framework(including the testrunner script)
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0:${PORTSDIR}/devel/py-zopeInterface \
