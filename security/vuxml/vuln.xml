@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7132c842-58e2-11df-8d80-0015587e2cc1">
+    <topic>spamass-milter -- remote command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>spamass-milter</name>
+	<range><le>0.3.1_8</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The spamassassin milter plugin contains a vulnerability
+	  that can allow remote attackers to execute commands on
+	  affected systems.</p>
+	<p>The vulnerability can be exploited trough a special-crafted
+	  email header when the plugin was started with the '-x'
+	  (expand) flag.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1132</cvename>
+      <url>http://archives.neohapsis.com/archives/fulldisclosure/2010-03/0139.html</url>
+      <url>http://xforce.iss.net/xforce/xfdb/56732</url>
+    </references>
+    <dates>
+      <discovery>2010-03-07</discovery>
+      <entry>2010-05-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="694da5b4-5877-11df-8d80-0015587e2cc1">
     <topic>mediawiki -- authenticated CSRF vulnerability</topic>
     <affects>
@@ -3135,13 +3164,14 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2009-3700</cvename>
+      <cvename>CVE-2009-3826</cvename>
       <url>http://www.squidguard.org/Downloads/Patches/1.4/Readme.Patch-20091015</url>
       <url>http://www.squidguard.org/Downloads/Patches/1.4/Readme.Patch-20091019</url>
     </references>
     <dates>
       <discovery>2009-10-15</discovery>
       <entry>2009-10-22</entry>
-      <modified>2009-10-22</modified>
+      <modified>2010-05-06</modified>
     </dates>
   </vuln>
 
