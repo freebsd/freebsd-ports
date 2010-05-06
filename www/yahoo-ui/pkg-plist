@@ -45,7 +45,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/Element.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Env.js.html
 %%PORTDOCS%%%%DOCSDIR%%/Event.js.html
-%%PORTDOCS%%%%DOCSDIR%%/EventProvider.html
 %%PORTDOCS%%%%DOCSDIR%%/EventProvider.js.html
 %%PORTDOCS%%%%DOCSDIR%%/FirstPageLink.js.html
 %%PORTDOCS%%%%DOCSDIR%%/FlashAdapter.js.html
@@ -170,6 +169,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Easing.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Element.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Event.html
+%%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.EventProvider.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.FunctionDataSource.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.Get.html
 %%PORTDOCS%%%%DOCSDIR%%/YAHOO.util.History.html
@@ -464,7 +464,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autocomplete/assets/img/combobox.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autocomplete/assets/js/data.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autocomplete/assets/js/states_jsfunction.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autocomplete/assets/php/flickr_proxy.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autocomplete/assets/php/yql_proxy.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autocomplete/assets/php/ysearch_flat.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autocomplete/assets/php/ysearch_proxy.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autocomplete/index.html
@@ -799,6 +799,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/assets/img/tl.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/assets/img/tr.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/assets/js/data.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/assets/js/rowexpansion.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/assets/php/JSON.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/assets/php/dynamicfilter/data.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/datatable/assets/php/dynamicfilter/state_cols.php
@@ -964,7 +965,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/exampleslib.inc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/flickr_active.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/flickr_default.gif
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/flickr_proxy.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/html_editor.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/post.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/suit1.gif
@@ -977,6 +977,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/suit8.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/suits_active.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/suits_default.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/assets/yql_proxy.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/autoheight_editor.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/autoheight_editor_clean.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/editor/autoheight_editor_log.html
@@ -1587,6 +1588,7 @@
 %%WWWDIR%%/assets/dpSyntaxHighlighter.css
 %%WWWDIR%%/assets/dpSyntaxHighlighter.js
 %%WWWDIR%%/assets/example-hd-bg.gif
+%%WWWDIR%%/assets/syntax.js
 %%WWWDIR%%/assets/yui-candy.jpg
 %%WWWDIR%%/assets/yui.css
 %%WWWDIR%%/assets/yui.gif
@@ -2001,6 +2003,7 @@
 %%WWWDIR%%/tests/carousel/tests/scriptTests.js
 %%WWWDIR%%/tests/colorpicker/tests/colorpicker.html
 %%WWWDIR%%/tests/common/tests/YUI.html
+%%WWWDIR%%/tests/common/tests/smoketests.xml
 %%WWWDIR%%/tests/connection/tests/setForm.html
 %%WWWDIR%%/tests/connection/tests/submitReporter.php
 %%WWWDIR%%/tests/container/tests/config.html

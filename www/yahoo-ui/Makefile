@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yahoo
-PORTVERSION=	2.8.0r4
+PORTVERSION=	2.8.1
 CATEGORIES=	www
 MASTER_SITES=	http://yuilibrary.com/downloads/yui2/
 PKGNAMESUFFIX=	-ui
@@ -69,6 +69,7 @@ do-install:
 
 post-install:
 .if defined(WITH_APACHE)
+.if !defined(MAINTAINER_MODE)
 	@if [ -d "${CONFDIR}" ]; then \
 	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}; \
 	else \
@@ -79,6 +80,7 @@ post-install:
 	  ${ECHO_MSG} "" ; \
 	  ${FALSE} ; \
 	fi
+.endif
 	@${CAT} ${PKGMESSAGE}
 .endif
 .if !defined(NOPORTDOCS)
