@@ -18,6 +18,8 @@ DISTNAME=		keitairc-2.0rc1
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=IRC proxy for mobilephone that have a web interface
 
+BROKEN=		incomplete plist
+
 RUN_DEPENDS=	${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/HTTP/Response.pm:${PORTSDIR}/www/p5-libwww \
