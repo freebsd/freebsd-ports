@@ -7,11 +7,13 @@ share/icons/hicolor/32x32/apps/minitube.png
 share/icons/hicolor/48x48/apps/minitube.png
 share/icons/hicolor/64x64/apps/minitube.png
 share/icons/hicolor/scalable/apps/minitube.svg
+%%NLS%%%%DATADIR%%/locale/ar.qm
+%%NLS%%%%DATADIR%%/locale/bg_BG.qm
 %%NLS%%%%DATADIR%%/locale/cs_CZ.qm
 %%NLS%%%%DATADIR%%/locale/de_DE.qm
+%%NLS%%%%DATADIR%%/locale/el_GR.qm
 %%NLS%%%%DATADIR%%/locale/es.qm
-%%NLS%%%%DATADIR%%/locale/es_AR.qm
-%%NLS%%%%DATADIR%%/locale/es_ES.qm
+%%NLS%%%%DATADIR%%/locale/fi_FI.qm
 %%NLS%%%%DATADIR%%/locale/fr_FR.qm
 %%NLS%%%%DATADIR%%/locale/gl.qm
 %%NLS%%%%DATADIR%%/locale/he_IL.qm
@@ -21,8 +23,11 @@ share/icons/hicolor/scalable/apps/minitube.svg
 %%NLS%%%%DATADIR%%/locale/ja_JP.qm
 %%NLS%%%%DATADIR%%/locale/lat.qm
 %%NLS%%%%DATADIR%%/locale/nb_NO.qm
+%%NLS%%%%DATADIR%%/locale/nl_NL.qm
 %%NLS%%%%DATADIR%%/locale/pl_PL.qm
 %%NLS%%%%DATADIR%%/locale/pt_BR.qm
+%%NLS%%%%DATADIR%%/locale/pt_PT.qm
+%%NLS%%%%DATADIR%%/locale/ro_RO.qm
 %%NLS%%%%DATADIR%%/locale/ru_RU.qm
 %%NLS%%%%DATADIR%%/locale/tr_TR.qm
 %%NLS%%%%DATADIR%%/locale/uk.qm
