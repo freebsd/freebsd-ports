@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	ecb
-PORTVERSION=	2.32
-PORTREVISION=	8
+PORTVERSION=	2.40
 CATEGORIES=	devel elisp
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
-		http://dryice.name/computer/FreeBSD/distfiles/
-
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTNAME:U}%20${PORTVERSION}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Emacs Code Browser
 
 USE_EMACS=	yes
+USE_GMAKE=	yes
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 ICONSRC=	${WRKSRC}/ecb-images
@@ -25,18 +24,24 @@ ICONDIR=	${LISPDIR}/ecb-images
 ICONSUBDIRS=	height-10 height-14 height-15 height-16 height-17 height-18 \
 		height-19 height-20 height-21
 
-USE_GMAKE=	yes
 ALL_TARGET=	ecb
 
+INFO=		ecb
+
+OPTIONS=	CEDET	"Use the Cedet library" On \
+		ICONS	"Install ecb's icons" On
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITHOUT_CEDET)
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/semantic/semantic.el:${PORTSDIR}/devel/semantic${PORTNAMESUFFIX}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/semantic/semantic.el:${PORTSDIR}/devel/semantic
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 MAKE_ARGS=	CEDET=""
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet/common/cedet.el:${PORTSDIR}/devel/cedet${PORTNAMESUFFIX}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet/common/cedet.el:${PORTSDIR}/devel/cedet
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 MAKE_ARGS=	CEDET=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet
 .endif
-
-RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 .if defined(WITHOUT_ICONS)
 PLIST_SUB+=	ICONS="@comment "
@@ -44,23 +49,8 @@ PLIST_SUB+=	ICONS="@comment "
 PLIST_SUB+=	ICONS=""
 .endif
 
-INFO=		ecb
-
 .if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS README RELEASE_NOTES
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_ICONS)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITHOUT_ICONS=yes   Don't install ecb's icons"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITHOUT_CEDET=yes   Don't use the CEDET library,"
-	@${ECHO_MSG} "                      use the old version of "
-	@${ECHO_MSG} "                      eieio/semantic/speedbar instead."
-	@${ECHO_MSG} ""
 .endif
 
 post-patch:
@@ -95,12 +85,6 @@ do-install:
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${EMACS_PORT_NAME} != "emacs23"
-PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 
 .include <bsd.port.post.mk>

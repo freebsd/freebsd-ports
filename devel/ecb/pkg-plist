@@ -1,8 +1,12 @@
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-advice-test.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-advice-test.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-analyse.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-analyse.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autogen.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autogen.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-autoloads.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-cedet-wrapper.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-cedet-wrapper.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-common-browser.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-common-browser.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compatibility.el
@@ -35,8 +39,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-mode-line.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-navigate.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-navigate.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-semantic-wrapper.el
-%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-semantic-wrapper.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-speedbar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-speedbar.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-symboldef.el
