@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/textproc/py-enchant/pkg-plist,v 1.4 2009-02-11 16:47:17 nivit Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/textproc/py-enchant/pkg-plist,v 1.5 2010-05-06 19:38:08 nivit Exp $
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -20,22 +20,44 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/checker/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/checker/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/checker/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/checker/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/checker/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/checker/tests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/checker/wxSpellCheckerDialog.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/checker/wxSpellCheckerDialog.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/checker/wxSpellCheckerDialog.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/errors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/errors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/errors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/lib/enchant/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/pypwl.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/pypwl.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/pypwl.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/share/enchant/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/share/enchant/ispell/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/share/enchant/myspell/README.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tokenize/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tokenize/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tokenize/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tokenize/en.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tokenize/en.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tokenize/en.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tokenize/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tokenize/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tokenize/tests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/utils.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/utils.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/utils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/tokenize
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/share/enchant/myspell
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/share/enchant/ispell
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/share/enchant
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/share
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/lib/enchant
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/lib
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant/checker
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enchant
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
