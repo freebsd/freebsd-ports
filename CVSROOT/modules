@@ -3941,6 +3941,7 @@ fvwm95                          ports/x11-wm/fvwm95
 fvwm95-i18n                     ports/x11-wm/fvwm95-i18n
 fwanalog                        ports/security/fwanalog
 fwbuilder                       ports/security/fwbuilder
+fwbuilder-devel                 ports/security/fwbuilder-devel
 fwipe                           ports/security/fwipe
 fwknop                          ports/security/fwknop
 fwlogwatch                      ports/security/fwlogwatch
@@ -5402,6 +5403,7 @@ hs-arrows                       ports/devel/hs-arrows
 hs-binary-ghc                   ports/devel/hs-binary-ghc
 hs-bio                          ports/science/hs-bio
 hs-brainfuck                    ports/lang/hs-brainfuck
+hs-bsd-sysctl                   ports/devel/hs-bsd-sysctl
 hs-bytestring-csv               ports/textproc/hs-bytestring-csv
 hs-c2hs                         ports/devel/hs-c2hs
 hs-category-extras              ports/math/hs-category-extras
@@ -7640,6 +7642,7 @@ libfs                           ports/x11-fonts/libFS
 libfs++                         ports/devel/libfs++
 libftdi                         ports/devel/libftdi
 libfwbuilder                    ports/security/libfwbuilder
+libfwbuilder-devel              ports/security/libfwbuilder-devel
 libgail-gnome                   ports/x11-toolkits/libgail-gnome
 libgal                          ports/astro/libgal
 libgalago                       ports/devel/libgalago
@@ -9971,6 +9974,7 @@ notecase                        ports/deskutils/notecase
 notftp                          ports/www/notftp
 notif2                          ports/x11-themes/notif2
 notification-daemon             ports/deskutils/notification-daemon
+notify-osd                      ports/deskutils/notify-osd
 nova                            ports/astro/nova
 noweb                           ports/devel/noweb
 npadmin                         ports/sysutils/npadmin
@@ -10757,6 +10761,7 @@ p5-BBS-UserInfo-SOB             ports/net/p5-BBS-UserInfo-SOB
 p5-BBS-UserInfo-Wretch          ports/net/p5-BBS-UserInfo-Wretch
 p5-BFD                          ports/devel/p5-BFD
 p5-BIND-Conf_Parser             ports/dns/p5-BIND-Conf_Parser
+p5-BIND-Config-Parser           ports/dns/p5-BIND-Config-Parser
 p5-BS-Event                     ports/devel/p5-BS-Event
 p5-BSD-Jail-Object              ports/sysutils/p5-BSD-Jail-Object
 p5-BSD-Resource                 ports/devel/p5-BSD-Resource
@@ -11104,6 +11109,7 @@ p5-Clamd                        ports/mail/p5-Clamd
 p5-Class-Accessor               ports/devel/p5-Class-Accessor
 p5-Class-Accessor-Chained       ports/devel/p5-Class-Accessor-Chained
 p5-Class-Accessor-Children      ports/devel/p5-Class-Accessor-Children
+p5-Class-Accessor-Fast-Contained  ports/devel/p5-Class-Accessor-Fast-Contained
 p5-Class-Accessor-Fast-XS       ports/devel/p5-Class-Accessor-Fast-XS
 p5-Class-Accessor-Grouped       ports/devel/p5-Class-Accessor-Grouped
 p5-Class-Accessor-Lvalue        ports/devel/p5-Class-Accessor-Lvalue
@@ -11289,6 +11295,7 @@ p5-Crypt-Anubis                 ports/security/p5-Crypt-Anubis
 p5-Crypt-AppleTwoFish           ports/security/p5-Crypt-AppleTwoFish
 p5-Crypt-Blowfish               ports/security/p5-Crypt-Blowfish
 p5-Crypt-Blowfish_PP            ports/security/p5-Crypt-Blowfish_PP
+p5-Crypt-CAST5                  ports/security/p5-Crypt-CAST5
 p5-Crypt-CAST5_PP               ports/security/p5-Crypt-CAST5_PP
 p5-Crypt-CBC                    ports/security/p5-Crypt-CBC
 p5-Crypt-CBCeasy                ports/security/p5-Crypt-CBCeasy
@@ -11506,6 +11513,8 @@ p5-Data-Pageset                 ports/databases/p5-Data-Pageset
 p5-Data-ParseBinary             ports/devel/p5-Data-ParseBinary
 p5-Data-Password                ports/security/p5-Data-Password
 p5-Data-Path                    ports/devel/p5-Data-Path
+p5-Data-Phrasebook              ports/textproc/p5-Data-Phrasebook
+p5-Data-Phrasebook-Loader-YAML  ports/textproc/p5-Data-Phrasebook-Loader-YAML
 p5-Data-Properties              ports/devel/p5-Data-Properties
 p5-Data-Random                  ports/devel/p5-Data-Random
 p5-Data-Recursive-Encode        ports/devel/p5-Data-Recursive-Encode
@@ -12796,6 +12805,8 @@ p5-Net-Amazon-S3                ports/net/p5-Net-Amazon-S3
 p5-Net-Amazon-Signature         ports/net/p5-Net-Amazon-Signature
 p5-Net-Amazon-Thumbnail         ports/net/p5-Net-Amazon-Thumbnail
 p5-Net-Analysis                 ports/net/p5-Net-Analysis
+p5-Net-Appliance-Phrasebook     ports/net/p5-Net-Appliance-Phrasebook
+p5-Net-Appliance-Session        ports/net/p5-Net-Appliance-Session
 p5-Net-BGP                      ports/net/p5-Net-BGP
 p5-Net-BitTorrent               ports/net-p2p/p5-Net-BitTorrent
 p5-Net-BitTorrent-File          ports/net-p2p/p5-Net-BitTorrent-File
@@ -12878,6 +12889,7 @@ p5-Net-IP-Resolver              ports/net-mgmt/p5-Net-IP-Resolver
 p5-Net-IPTrie                   ports/net/p5-Net-IPTrie
 p5-Net-IPv4Addr                 ports/net-mgmt/p5-Net-IPv4Addr
 p5-Net-IPv6Addr                 ports/net-mgmt/p5-Net-IPv6Addr
+p5-Net-IRR                      ports/net/p5-Net-IRR
 p5-Net-Ident                    ports/net/p5-Net-Ident
 p5-Net-Interface                ports/net/p5-Net-Interface
 p5-Net-Jabber                   ports/net-im/p5-Net-Jabber
@@ -14590,6 +14602,7 @@ p5-bfd                          ports/devel/p5-BFD
 p5-bignum                       ports/math/p5-bignum
 p5-bigtop                       ports/www/p5-Bigtop
 p5-bind-conf_parser             ports/dns/p5-BIND-Conf_Parser
+p5-bind-config-parser           ports/dns/p5-BIND-Config-Parser
 p5-bio-asn1-entrezgene          ports/biology/p5-Bio-ASN1-EntrezGene
 p5-bio-das                      ports/biology/p5-Bio-Das
 p5-bio-das-lite                 ports/biology/p5-Bio-Das-Lite
@@ -14917,6 +14930,7 @@ p5-class                        ports/devel/p5-CLASS
 p5-class-accessor               ports/devel/p5-Class-Accessor
 p5-class-accessor-chained       ports/devel/p5-Class-Accessor-Chained
 p5-class-accessor-children      ports/devel/p5-Class-Accessor-Children
+p5-class-accessor-fast-contained  ports/devel/p5-Class-Accessor-Fast-Contained
 p5-class-accessor-fast-xs       ports/devel/p5-Class-Accessor-Fast-XS
 p5-class-accessor-grouped       ports/devel/p5-Class-Accessor-Grouped
 p5-class-accessor-lvalue        ports/devel/p5-Class-Accessor-Lvalue
@@ -15119,6 +15133,7 @@ p5-crypt-blowfish               ports/security/p5-Crypt-Blowfish
 p5-crypt-blowfish_pp            ports/security/p5-Crypt-Blowfish_PP
 p5-crypt-caesar                 ports/security/p5-Crypt-Caesar
 p5-crypt-camellia_pp            ports/security/p5-Crypt-Camellia_PP
+p5-crypt-cast5                  ports/security/p5-Crypt-CAST5
 p5-crypt-cast5_pp               ports/security/p5-Crypt-CAST5_PP
 p5-crypt-cbc                    ports/security/p5-Crypt-CBC
 p5-crypt-cbceasy                ports/security/p5-Crypt-CBCeasy
@@ -15254,6 +15269,8 @@ p5-data-pageset                 ports/databases/p5-Data-Pageset
 p5-data-parsebinary             ports/devel/p5-Data-ParseBinary
 p5-data-password                ports/security/p5-Data-Password
 p5-data-path                    ports/devel/p5-Data-Path
+p5-data-phrasebook              ports/textproc/p5-Data-Phrasebook
+p5-data-phrasebook-loader-yaml  ports/textproc/p5-Data-Phrasebook-Loader-YAML
 p5-data-properties              ports/devel/p5-Data-Properties
 p5-data-random                  ports/devel/p5-Data-Random
 p5-data-recursive-encode        ports/devel/p5-Data-Recursive-Encode
@@ -16658,6 +16675,8 @@ p5-net-amazon-signature         ports/net/p5-Net-Amazon-Signature
 p5-net-amazon-thumbnail         ports/net/p5-Net-Amazon-Thumbnail
 p5-net-analysis                 ports/net/p5-Net-Analysis
 p5-net-aolim                    ports/net-im/p5-Net-AOLIM
+p5-net-appliance-phrasebook     ports/net/p5-Net-Appliance-Phrasebook
+p5-net-appliance-session        ports/net/p5-Net-Appliance-Session
 p5-net-arp                      ports/net/p5-Net-ARP
 p5-net-bgp                      ports/net/p5-Net-BGP
 p5-net-bittorrent               ports/net-p2p/p5-Net-BitTorrent
@@ -16745,6 +16764,7 @@ p5-net-ip-resolver              ports/net-mgmt/p5-Net-IP-Resolver
 p5-net-iptrie                   ports/net/p5-Net-IPTrie
 p5-net-ipv4addr                 ports/net-mgmt/p5-Net-IPv4Addr
 p5-net-ipv6addr                 ports/net-mgmt/p5-Net-IPv6Addr
+p5-net-irr                      ports/net/p5-Net-IRR
 p5-net-jabber                   ports/net-im/p5-Net-Jabber
 p5-net-jaiku                    ports/net/p5-Net-Jaiku
 p5-net-jifty                    ports/net/p5-Net-Jifty
@@ -20584,6 +20604,7 @@ py-prolog                       ports/lang/py-prolog
 py-protobuf                     ports/devel/py-protobuf
 py-protocols                    ports/devel/py-protocols
 py-protocols-devel              ports/devel/py-protocols-devel
+py-psutil                       ports/sysutils/py-psutil
 py-psyco                        ports/devel/py-psyco
 py-psycopg                      ports/databases/py-psycopg
 py-psycopg2                     ports/databases/py-psycopg2
@@ -22117,6 +22138,7 @@ rubygem-newgem                  ports/devel/rubygem-newgem
 rubygem-nicovideo               ports/www/rubygem-nicovideo
 rubygem-nmap-parser             ports/security/rubygem-nmap-parser
 rubygem-nokogiri                ports/textproc/rubygem-nokogiri
+rubygem-notify                  ports/devel/rubygem-notify
 rubygem-oauth                   ports/net/rubygem-oauth
 rubygem-objectdetect            ports/graphics/rubygem-objectdetect
 rubygem-ohai                    ports/sysutils/rubygem-ohai
