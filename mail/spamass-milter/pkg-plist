@@ -1,3 +1,2 @@
 sbin/spamass-milter
 %%PORTDOCS%%%%DOCSDIR%%/activation.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
