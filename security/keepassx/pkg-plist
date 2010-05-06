@@ -7,16 +7,23 @@ share/applications/keepassx.desktop
 %%DATADIR%%/i18n/keepassx-gl_ES.qm
 %%DATADIR%%/i18n/keepassx-hu_HU.qm
 %%DATADIR%%/i18n/keepassx-it_IT.qm
+%%DATADIR%%/i18n/keepassx-ja_JP.qm
 %%DATADIR%%/i18n/keepassx-nb_NO.qm
 %%DATADIR%%/i18n/keepassx-nl_NL.qm
 %%DATADIR%%/i18n/keepassx-pl_PL.qm
+%%DATADIR%%/i18n/keepassx-pt_PT.qm
 %%DATADIR%%/i18n/keepassx-ru_RU.qm
+%%DATADIR%%/i18n/keepassx-sk_SK.qm
+%%DATADIR%%/i18n/keepassx-sr_RS.qm
 %%DATADIR%%/i18n/keepassx-tr_TR.qm
+%%DATADIR%%/i18n/keepassx-uk_UA.qm
 %%DATADIR%%/i18n/keepassx-zh_CN.qm
 %%DATADIR%%/i18n/qt_fi.qm
+%%DATADIR%%/i18n/qt_gl_ES.qm
 %%DATADIR%%/i18n/qt_hu.qm
 %%DATADIR%%/i18n/qt_it.qm
 %%DATADIR%%/i18n/qt_nl.qm
+%%DATADIR%%/i18n/qt_sr.qm
 %%DATADIR%%/i18n/qt_tr.qm
 %%DATADIR%%/icons/alarmclock.png
 %%DATADIR%%/icons/appsettings.png
@@ -86,7 +93,6 @@ share/applications/keepassx.desktop
 %%DATADIR%%/icons/trashcan.png
 %%DATADIR%%/icons/up.png
 %%DATADIR%%/license.html
-share/mime/application/x-keepass.xml
 share/mime/packages/keepassx.xml
 share/mimelnk/application/x-keepass.desktop
 share/pixmaps/keepassx.xpm
@@ -97,6 +103,7 @@ share/pixmaps/keepassx.xpm
 @dirrmtry share/mimelnk
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/applications
+@dirrmtry share/pixmaps
+@dirrmtry share/application
 @comment @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @comment @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
