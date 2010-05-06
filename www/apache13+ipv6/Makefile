@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	+ipv6
 DISTNAME=	apache_${PORTVERSION}
 
 PATCH_SITES=	http://cloud.github.com/downloads/sumikawa/apache13-ipv6/
-PATCHFILES=	apache-1.3.44-v6-20100202.diff.gz
+PATCHFILES=	apache-1.3.44-v6-20100506.diff.gz
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	apache@FreeBSD.org
