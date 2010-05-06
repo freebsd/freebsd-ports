@@ -1,0 +1,96 @@
+@comment $FreeBSD$
+bin/virtualenvwrapper.sh
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/virtualenvwrapper.sh
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/hook_loader.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/hook_loader.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/hook_loader.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/user_scripts.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/user_scripts.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/user_scripts.pyo
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/command_ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/developers.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/extensions.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/hooks.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/plugins.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/scripts.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_sources/tips.txt
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/contents.png
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/navigation.png
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/en/_static/sphinxdoc.css
+%%PORTDOCS%%%%DOCSDIR%%/en/command_ref.html
+%%PORTDOCS%%%%DOCSDIR%%/en/developers.html
+%%PORTDOCS%%%%DOCSDIR%%/en/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/en/history.html
+%%PORTDOCS%%%%DOCSDIR%%/en/hooks.html
+%%PORTDOCS%%%%DOCSDIR%%/en/index.html
+%%PORTDOCS%%%%DOCSDIR%%/en/install.html
+%%PORTDOCS%%%%DOCSDIR%%/en/plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripts.html
+%%PORTDOCS%%%%DOCSDIR%%/en/search.html
+%%PORTDOCS%%%%DOCSDIR%%/en/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/en/tips.html
+%%PORTDOCS%%%%DOCSDIR%%/es/_sources/command_ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_sources/developers.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_sources/extensions.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_sources/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_sources/hooks.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_sources/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_sources/plugins.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_sources/scripts.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_sources/tips.txt
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/basic.css
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/contents.png
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/doctools.js
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/file.png
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/navigation.png
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/pygments.css
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/es/_static/sphinxdoc.css
+%%PORTDOCS%%%%DOCSDIR%%/es/command_ref.html
+%%PORTDOCS%%%%DOCSDIR%%/es/developers.html
+%%PORTDOCS%%%%DOCSDIR%%/es/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/es/history.html
+%%PORTDOCS%%%%DOCSDIR%%/es/hooks.html
+%%PORTDOCS%%%%DOCSDIR%%/es/index.html
+%%PORTDOCS%%%%DOCSDIR%%/es/install.html
+%%PORTDOCS%%%%DOCSDIR%%/es/plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/es/scripts.html
+%%PORTDOCS%%%%DOCSDIR%%/es/search.html
+%%PORTDOCS%%%%DOCSDIR%%/es/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/es/tips.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/es/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/es/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/_static
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/_sources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
