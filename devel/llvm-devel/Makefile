@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-DISTVERSION=	2.7.r${SVN_REV}
+DISTVERSION=	2.8.r${SVN_REV}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -131,6 +131,7 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 PLIST_FILE_LIST=	bin/bugpoint \
+			bin/c-index-test \
 			bin/ccc-analyzer \
 			bin/clang* \
 			bin/llc \
@@ -139,7 +140,6 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/opt \
 			bin/scan-build \
 			bin/tblgen \
-			lib/libCIndex.* \
 			lib/libCompilerDriver.a \
 			lib/libEnhancedDisassembly.so \
 			lib/libEnhancedDisassembly.a \

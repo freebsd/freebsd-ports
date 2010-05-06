@@ -1,4 +1,5 @@
 bin/bugpoint
+bin/c-index-test
 bin/ccc-analyzer
 bin/clang
 bin/clang++
@@ -55,11 +56,12 @@ include/clang/AST/ParentMap.h
 include/clang/AST/PrettyPrinter.h
 include/clang/AST/RecordLayout.h
 include/clang/AST/Redeclarable.h
+include/clang/AST/Release/StmtNodes.inc.tmp
 include/clang/AST/Stmt.h
 include/clang/AST/StmtCXX.h
 include/clang/AST/StmtGraphTraits.h
 include/clang/AST/StmtIterator.h
-include/clang/AST/StmtNodes.def
+include/clang/AST/StmtNodes.inc
 include/clang/AST/StmtObjC.h
 include/clang/AST/StmtVisitor.h
 include/clang/AST/TemplateBase.h
@@ -73,8 +75,10 @@ include/clang/AST/TypeNodes.def
 include/clang/AST/TypeOrdering.h
 include/clang/AST/TypeVisitor.h
 include/clang/AST/UnresolvedSet.h
+include/clang/AST/UsuallyTinyPtrVector.h
 include/clang/Analysis/Analyses/LiveVariables.h
 include/clang/Analysis/Analyses/PrintfFormatString.h
+include/clang/Analysis/Analyses/PrintfFormatString.h.orig
 include/clang/Analysis/Analyses/ReachableCode.h
 include/clang/Analysis/Analyses/UninitializedValues.h
 include/clang/Analysis/AnalysisContext.h
@@ -680,6 +684,7 @@ include/llvm/Transforms/Utils/FunctionUtils.h
 include/llvm/Transforms/Utils/Local.h
 include/llvm/Transforms/Utils/PromoteMemToReg.h
 include/llvm/Transforms/Utils/SSAUpdater.h
+include/llvm/Transforms/Utils/SSAUpdaterImpl.h
 include/llvm/Transforms/Utils/SSI.h
 include/llvm/Transforms/Utils/UnifyFunctionExitNodes.h
 include/llvm/Transforms/Utils/UnrollLoop.h
@@ -689,17 +694,15 @@ include/llvm/Use.h
 include/llvm/User.h
 include/llvm/Value.h
 include/llvm/ValueSymbolTable.h
-lib/clang/1.5/include/emmintrin.h
-lib/clang/1.5/include/mm_malloc.h
-lib/clang/1.5/include/mmintrin.h
-lib/clang/1.5/include/nmmintrin.h
-lib/clang/1.5/include/pmmintrin.h
-lib/clang/1.5/include/smmintrin.h
-lib/clang/1.5/include/tmmintrin.h
-lib/clang/1.5/include/wmmintrin.h
-lib/clang/1.5/include/xmmintrin.h
-lib/libCIndex.a
-lib/libCIndex.so
+lib/clang/2.0/include/emmintrin.h
+lib/clang/2.0/include/mm_malloc.h
+lib/clang/2.0/include/mmintrin.h
+lib/clang/2.0/include/nmmintrin.h
+lib/clang/2.0/include/pmmintrin.h
+lib/clang/2.0/include/smmintrin.h
+lib/clang/2.0/include/tmmintrin.h
+lib/clang/2.0/include/wmmintrin.h
+lib/clang/2.0/include/xmmintrin.h
 lib/libCompilerDriver.a
 lib/libEnhancedDisassembly.a
 lib/libEnhancedDisassembly.so
@@ -781,6 +784,8 @@ lib/libLLVMpic16passes.a
 lib/libLTO.a
 lib/libLTO.so
 lib/libUnitTestMain.a
+lib/libclang.a
+lib/libclang.so
 lib/libclangAST.a
 lib/libclangAnalysis.a
 lib/libclangBasic.a
@@ -918,8 +923,8 @@ lib/libprofile_rt.so
 %%DOCSDIR%%/ps/llvmgxx.ps
 %%DOCSDIR%%/ps/opt.ps
 %%DOCSDIR%%/ps/tblgen.ps
-@dirrm lib/clang/1.5/include
-@dirrm lib/clang/1.5
+@dirrm lib/clang/2.0/include
+@dirrm lib/clang/2.0
 @dirrm lib/clang
 @dirrm include/llvm/Transforms/Utils
 @dirrm include/llvm/Transforms/IPO
@@ -961,6 +966,7 @@ lib/libprofile_rt.so
 @dirrm include/clang/Analysis/FlowSensitive
 @dirrm include/clang/Analysis/Analyses
 @dirrm include/clang/Analysis
+@dirrm include/clang/AST/Release
 @dirrm include/clang/AST
 @dirrm include/clang-c
 @dirrm include/clang
