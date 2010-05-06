@@ -3,9 +3,11 @@ bin/wxmaxima
 share/locale/cs/LC_MESSAGES/wxMaxima.mo
 share/locale/da/LC_MESSAGES/wxMaxima.mo
 share/locale/de/LC_MESSAGES/wxMaxima.mo
+share/locale/el/LC_MESSAGES/wxMaxima.mo
 share/locale/es/LC_MESSAGES/wxMaxima.mo
 share/locale/fr/LC_MESSAGES/wxMaxima.mo
 share/locale/hu/LC_MESSAGES/wxMaxima.mo
+share/locale/ja/LC_MESSAGES/wxMaxima.mo
 share/locale/it/LC_MESSAGES/wxMaxima.mo
 share/locale/pl/LC_MESSAGES/wxMaxima.mo
 share/locale/pt_BR/LC_MESSAGES/wxMaxima.mo
