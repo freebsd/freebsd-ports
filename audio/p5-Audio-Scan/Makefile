@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Audio-Scan
-PORTVERSION=	0.75
+PORTVERSION=	0.79
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scanner for audio file metadata and tag information
 
 PERL_CONFIGURE=	yes
