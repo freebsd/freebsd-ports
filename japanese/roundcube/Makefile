@@ -17,4 +17,6 @@ CONFLICTS=	roundcube-[0-9]*
 MASTERDIR=	${.CURDIR}/../../mail/roundcube
 MD5_FILE=	${.CURDIR}/distinfo
 
+BROKEN=		bad distinfo
+
 .include "${MASTERDIR}/Makefile"
