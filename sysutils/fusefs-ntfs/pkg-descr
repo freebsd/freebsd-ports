@@ -4,4 +4,4 @@ Server 2003 and Windows 2000 filesystems. Almost the full POSIX filesystem
 functionality is supported, the major exceptions are changing the file
 ownerships and the access rights.
 
-WWW: http://www.ntfs-3g.org/
+WWW: http://www.tuxera.com/community/

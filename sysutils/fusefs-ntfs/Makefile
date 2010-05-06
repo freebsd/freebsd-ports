@@ -5,9 +5,9 @@
 #
 
 PORTNAME=	ntfs
-PORTVERSION=	2009.4.4
+PORTVERSION=	2010.3.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.ntfs-3g.org/
+MASTER_SITES=	http://tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	${PORTNAME}-3g-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -31,8 +31,7 @@ OPTIONS=	LOCK "Lock the device when mounting (avoids access)" on \
 SUB_FILES=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/ntfs-3g
 
-MAN8=		ntfs-3g.8 ntfs-3g.probe.8
-MLINKS=		ntfs-3g.8 mount_ntfs-3g.8
+MAN8=		ntfs-3g.8 ntfs-3g.probe.8 ntfs-3g.secaudit.8 ntfs-3g.usermap.8
 
 .include <bsd.port.pre.mk>
 
@@ -46,8 +45,12 @@ LIB_DEPENDS+=	ublio.1:${PORTSDIR}/devel/libublio
 CFLAGS+=	-DUSE_UBLIO
 .endif
 
-.if defined(NOPORTDOCS)
 post-patch:
+	@${REINPLACE_CMD} -e 's|ENODATA|ENOATTR|' \
+		${WRKSRC}/libntfs-3g/object_id.c \
+		${WRKSRC}/libntfs-3g/reparse.c \
+		${WRKSRC}/libntfs-3g/security.c
+.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -Ee 's|^(install-data-am:) .*|\1|' \
 		${WRKSRC}/Makefile.in
 .endif

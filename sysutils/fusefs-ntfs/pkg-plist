@@ -1,11 +1,15 @@
 bin/ntfs-3g
 bin/ntfs-3g.probe
+bin/ntfs-3g.secaudit
+bin/ntfs-3g.usermap
 @exec ln -fs %D/%F /usr/sbin/mount_ntfs-3g
 @unexec rm -f /usr/sbin/mount_ntfs-3g
+include/ntfs-3g/acls.h
 include/ntfs-3g/attrib.h
 include/ntfs-3g/attrlist.h
 include/ntfs-3g/bitmap.h
 include/ntfs-3g/bootsect.h
+include/ntfs-3g/cache.h
 include/ntfs-3g/collate.h
 include/ntfs-3g/compat.h
 include/ntfs-3g/compress.h
@@ -13,6 +17,7 @@ include/ntfs-3g/debug.h
 include/ntfs-3g/device.h
 include/ntfs-3g/device_io.h
 include/ntfs-3g/dir.h
+include/ntfs-3g/efs.h
 include/ntfs-3g/endians.h
 include/ntfs-3g/index.h
 include/ntfs-3g/inode.h
@@ -24,6 +29,9 @@ include/ntfs-3g/mft.h
 include/ntfs-3g/misc.h
 include/ntfs-3g/mst.h
 include/ntfs-3g/ntfstime.h
+include/ntfs-3g/object_id.h
+include/ntfs-3g/param.h
+include/ntfs-3g/reparse.h
 include/ntfs-3g/runlist.h
 include/ntfs-3g/security.h
 include/ntfs-3g/support.h
@@ -33,7 +41,7 @@ include/ntfs-3g/volume.h
 lib/libntfs-3g.a
 lib/libntfs-3g.la
 lib/libntfs-3g.so
-lib/libntfs-3g.so.54
+lib/libntfs-3g.so.75
 libdata/pkgconfig/libntfs-3g.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
