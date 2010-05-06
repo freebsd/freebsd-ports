@@ -1,5 +1,5 @@
---- srclib/apr/build/buildcheck.sh	Sun Jan 25 16:41:56 2004
-+++ srclib/apr/build/buildcheck.sh	Tue Mar  9 07:49:42 2004
+--- ./srclib/apr/build/buildcheck.sh.orig	2004-11-24 18:10:04.000000000 -0500
++++ ./srclib/apr/build/buildcheck.sh	2010-05-06 16:06:03.782832400 -0400
 @@ -26,7 +26,7 @@
  # output is multiline from 1.5 onwards
  

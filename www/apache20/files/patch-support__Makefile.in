@@ -1,5 +1,5 @@
---- support/Makefile.in.orig	Fri Dec 17 17:03:38 2004
-+++ support/Makefile.in	Fri Dec 17 17:01:44 2004
+--- ./support/Makefile.in.orig	2007-12-28 10:11:51.000000000 -0500
++++ ./support/Makefile.in	2010-05-06 16:06:03.790832322 -0400
 @@ -23,10 +23,7 @@
  	    fi ; \
  	done

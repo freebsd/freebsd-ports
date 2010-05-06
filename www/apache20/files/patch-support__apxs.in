@@ -1,6 +1,6 @@
---- support/apxs.in.orig	Mon Nov 29 10:24:23 2004
-+++ support/apxs.in	Mon Nov 29 10:25:05 2004
-@@ -629,8 +629,7 @@
+--- ./support/apxs.in.orig	2006-07-12 03:40:55.000000000 -0400
++++ ./support/apxs.in	2010-05-06 16:06:03.795832133 -0400
+@@ -628,8 +628,7 @@
              if (open(FP, ">$CFG_SYSCONFDIR/$CFG_TARGET.conf.new")) {
                  print FP $content;
                  close(FP);

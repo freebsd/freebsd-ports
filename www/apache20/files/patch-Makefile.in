@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Nov 24 20:31:09 2004
-+++ Makefile.in	Sun Apr 17 10:22:37 2005
+--- ./Makefile.in.orig	2004-11-24 14:31:09.000000000 -0500
++++ ./Makefile.in	2010-05-06 16:06:03.709834927 -0400
 @@ -31,15 +31,21 @@
  	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
  	    $(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) ; \

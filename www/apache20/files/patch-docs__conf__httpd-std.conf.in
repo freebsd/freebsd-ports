@@ -1,5 +1,5 @@
---- docs/conf/httpd-std.conf.in.orig	Mon Aug 16 01:43:56 2004
-+++ docs/conf/httpd-std.conf.in	Sun Dec 12 12:34:08 2004
+--- ./docs/conf/httpd-std.conf.in.orig	2005-11-13 12:13:06.000000000 -0500
++++ ./docs/conf/httpd-std.conf.in	2010-05-06 16:06:03.723831718 -0400
 @@ -68,7 +68,7 @@
  #
  <IfModule !mpm_netware.c>
@@ -119,7 +119,7 @@
  
  #
  # ServerTokens
-@@ -1043,3 +1049,5 @@
+@@ -1034,3 +1040,5 @@
  #    ErrorLog @rel_logfiledir@/dummy-host.example.com-error_log
  #    CustomLog @rel_logfiledir@/dummy-host.example.com-access_log common
  #</VirtualHost>

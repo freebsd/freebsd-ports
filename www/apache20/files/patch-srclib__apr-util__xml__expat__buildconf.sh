@@ -1,5 +1,5 @@
---- srclib/apr-util/xml/expat/buildconf.sh.orig	Sat Mar 25 21:41:35 2006
-+++ srclib/apr-util/xml/expat/buildconf.sh	Mon May  1 12:11:04 2006
+--- ./srclib/apr-util/xml/expat/buildconf.sh.orig	2006-03-25 16:41:35.000000000 -0500
++++ ./srclib/apr-util/xml/expat/buildconf.sh	2010-05-06 16:06:03.780832140 -0400
 @@ -3,7 +3,7 @@
  #
  # Build aclocal.m4 from libtool's libtool.m4

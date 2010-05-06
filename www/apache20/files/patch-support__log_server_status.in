@@ -1,6 +1,6 @@
---- support/log_server_status.in.orig	Tue Jun 18 23:21:53 2002
-+++ support/log_server_status.in	Tue Jun 18 23:23:08 2002
-@@ -63,7 +63,7 @@
+--- ./support/log_server_status.in.orig	2006-07-12 03:40:55.000000000 -0400
++++ ./support/log_server_status.in	2010-05-06 16:06:03.800835018 -0400
+@@ -27,7 +27,7 @@
  #
  require 'sys/socket.ph';
  
@@ -9,7 +9,7 @@
  $server = "localhost";          # Name of server, could be "www.foo.com"
  $port = "80";                   # Port on server
  $request = "/status/?auto";     # Request to send
-@@ -96,7 +96,7 @@
+@@ -60,7 +60,7 @@
  	chomp($date);
  	($day,$time)=split(/:/,$date);
  	$res=&tcp_connect($server,$port);
