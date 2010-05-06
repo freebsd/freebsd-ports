@@ -6,35 +6,31 @@
 #
 
 PORTNAME=	cedet
-PORTVERSION=	1.0.p4
-PORTREVISION=	5
+PORTVERSION=	1.0.p7
 CATEGORIES=	devel elisp
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.0pre4 \
-				http://dryice.name/computer/FreeBSD/distfiles/
-
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.0pre7
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}-1.0pre4
+DISTNAME=	${PORTNAME}-1.0pre7
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Collection of Emacs Development Environment Tools
 
-PORTCLASS=	master
-USE_EMACS=	yes
+USE_EMACS=		yes
 MAKE_JOBS_UNSAFE=	yes
+USE_GMAKE=		yes
 
 CEDET_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 INFO=		bovine cogre ede eieio grammar-fw semantic \
 		semantic-appdev semantic-langdev semantic-user \
-		wisent speedbar-cedet
+		wisent speedbar-cedet srecode
 
 SEMANTIC_ELISP_SUBDIRS=	bovine wisent
 SEMANTIC_INFOS=	bovine.info grammar-fw.info semantic-appdev.info \
 		semantic-langdev.info semantic-user.info semantic.info \
 		wisent.info
 
-USE_GMAKE=	yes
-CONFLICTS=	eieio* semantic* speedbar*
+CONFLICTS=	eieio-[0-9]* semantic-[0-9]* speedbar-[0-9]*
 
 pre-build:
 #cleanup info
@@ -106,6 +102,17 @@ do-install:
 .endfor
 
 	${INSTALL_DATA} ${WRKSRC}/speedbar/speedbar-cedet.info ${PREFIX}/info
+
+# srecode
+	${MKDIR} ${CEDET_LISPDIR}/srecode
+.for i in *.el *.elc
+	${INSTALL_DATA} ${WRKSRC}/srecode/${i} ${CEDET_LISPDIR}/srecode
+.endfor
+	${MKDIR} ${CEDET_LISPDIR}/srecode/templates
+.for i in *.srt
+	${INSTALL_DATA} ${WRKSRC}/srecode/templates/${i} ${CEDET_LISPDIR}/srecode/templates
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/srecode/srecode.info ${PREFIX}/info
 
 #contrib
 	${MKDIR} ${CEDET_LISPDIR}/contrib
