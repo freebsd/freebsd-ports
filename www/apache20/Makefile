@@ -35,9 +35,6 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		caudium-devel-1.* caudium10-1.* caudium12-1.* caudium14-1.* \
 		ru-apache+mod_ssl-1.* ru-apache-1.*
 
-# patch files
-EXTRA_PATCHES+=		${FILESDIR}/build-fix-openssl_beta
-
 .if defined(WITH_EXPERIMENTAL_PATCHES)
 IGNORE=		please define WITH_KQUEUE_SUPPORT instead
 .endif
