@@ -1,0 +1,13 @@
+--- ./client/Makefile.in.orig	2010-01-07 19:47:06.000000000 -0500
++++ ./client/Makefile.in	2010-05-02 20:38:26.000000000 -0400
+@@ -351,8 +351,8 @@
+ 	@list='$(dist_sysconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f=$(am__strip_dir) \
+-	  echo " $(dist_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  $(dist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
++	  echo " $(dist_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f.sample'"; \
++	  $(dist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f.sample"; \
+ 	done
+ 
+ uninstall-dist_sysconfDATA:

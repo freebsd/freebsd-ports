@@ -1,0 +1,10 @@
+****  To setup dhclient, you may need to edit /etc/rc.conf to replace the
+      base system dhclient, such as:
+
+	    dhcp_program="%%PREFIX%%/sbin/dhclient"
+	    dhcp_flags="-q"
+
+      See dhclient(8), using the following command, for details about other
+      possible options:
+
+	    MANPATH=%%MAN1PREFIX%%/man man 8 dhclient

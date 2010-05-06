@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+@unexec %D/etc/rc.d/isc-dhcpd forcestop 2>/dev/null || true
+@unexec if cmp -s %D/etc/dhcpd.conf.sample %D/etc/dhcpd.conf; then rm -f %D/etc/dhcpd.conf; fi
+etc/dhcpd.conf.sample
+@exec if [ ! -f %D/etc/dhcpd.conf ] ; then cp -p %D/%F %B/dhcpd.conf; fi
+sbin/dhcpd

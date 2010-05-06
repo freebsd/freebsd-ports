@@ -1,0 +1,611 @@
+#! /bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dhcpd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable dhcpd:
+#
+# dhcpd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=dhcpd
+paranoia=%%PARANOIA%%				# compiled in paranoia?
+
+load_rc_config ${name}
+
+# override these variables in /etc/rc.conf
+dhcpd_enable=${dhcpd_enable:-"NO"}
+# dhcpd_flags=""		# -q -early_chroot	# command option(s)
+# dhcpd_ifaces=""					# ethernet interface(s)
+dhcpd_conf=${dhcpd_conf:-%%PREFIX%%/etc/${name}.conf}	# configuration file
+dhcpd_withumask=${dhcpd_withumask:-022}			# file creation mask
+
+dhcpd_chuser_enable=${dhcpd_chuser_enable:-"%%PARANOIA%%"}	# runs w/o privileges?
+dhcpd_withuser=${dhcpd_withuser:-${name}}		# user name to run as
+dhcpd_withgroup=${dhcpd_withgroup:-${name}}		# group name to run as
+
+dhcpd_chroot_enable=${dhcpd_chroot_enable:-"NO"}	# runs chrooted?
+dhcpd_devfs_enable=${dhcpd_devfs_enable:-"YES"}		# devfs if available?
+dhcpd_rootdir=${dhcpd_rootdir:-/var/db/${name}}		# directory to run in
+# dhcpd_includedir=""			# directory for included config files
+
+safe_run ()	# rc command [args...]
+{
+	local _rc
+
+	_rc=$1
+	shift
+
+	if [ "${_rc}" -eq 0 ]; then
+		debug safe_run: "$@"
+		"$@" || _rc=1
+	else
+		warn safe_run: "$@"
+	fi
+	return ${_rc}
+}
+
+precious ()	# entry...
+{
+	local _entry _rc
+
+	_rc=0
+	for _entry; do
+		# do nothing if /dev, /var/run or /var/db
+		echo ${_entry} | egrep -q '^//*(dev|var//*(run|db))?/*$' || _rc=1
+	done
+	debug precious: "$@" rc=${_rc}
+	return ${_rc}
+}
+
+lsmod ()	# user group file...
+{
+	local _entry _user _group _rc
+
+	_user=$1 _group=$2
+	shift 2
+
+	_rc=0
+	for _entry; do
+		ls -ld ${_entry} 2> /dev/null |
+		awk -v u=${_user} -v g=${_group} '{
+		    exit ((u && $3 != u) || (g && $4 != g))
+		}' || _rc=1
+	done
+	debug lsmod: "$@" rc=${_rc}
+	return ${_rc}
+}
+
+safe_chmog ()	# entry...
+{
+	local _entry _user _group _usergroup _rc
+
+	_user=${dhcpd_withuser}
+	_group=${dhcpd_withgroup}
+
+	_rc=0
+	if [ -n "${_user}" -o -n "${_group}" ]; then
+		_usergroup=${_user}${_group:+:${_group}}
+		for _entry; do
+			if [ -d ${_entry} ] && mounted ${_entry}; then
+				continue
+			fi
+			if [ -e ${_entry} ] &&
+			   ! precious ${_entry} &&
+			   ! lsmod ${_user} ${_group} ${_entry} &&
+			   ! safe_run ${_rc} chown ${_usergroup} ${_entry}; then
+				warn "unable to change permissions of ${_entry}"
+				_rc=1
+			fi
+		done
+	fi
+	return ${_rc}
+}
+
+safe_mkdir ()	# dir...
+{
+	local _dir _rc
+
+	_rc=0
+	for _dir; do
+		if [ ! -d ${_dir} ] &&
+		   ! precious ${_dir} &&
+		   ! safe_run ${_rc} mkdir -p ${_dir}; then
+			err 1 "unable to create directory ${_dir}"
+			_rc=1
+		fi
+	done
+	safe_run ${_rc} safe_chmog "$@" || _rc=1
+	return ${_rc}
+}
+
+safe_rmdir ()	# dir...
+{
+	local _dir _rc
+
+	_rc=0
+	for _dir; do
+		if [ -d ${_dir} ] &&
+		   ! precious ${_dir} &&
+		   ! mounted ${_dir}; then
+			if safe_run ${_rc} rmdir ${_dir}; then
+				safe_run ${_rc} safe_rmdir ${_dir%/*} || _rc=1
+			else
+				warn "unable to remove directory ${_dir}"
+				_rc=1
+			fi
+		fi
+	done
+	return ${_rc}
+}
+
+safe_touch ()	# file...
+{
+	local _file _rc
+
+	_rc=0
+	for _file; do
+		if [ ! -e ${_file} ] &&
+		   ! safe_run ${_rc} touch ${_file}; then
+			err 1 "unable to create file ${_file}"
+			_rc=1
+		fi
+	done
+	safe_run ${_rc} safe_chmog "$@" || _rc=1
+	return ${_rc}
+}
+
+safe_remove ()	# entry...
+{
+	local _entry _rc
+
+	_rc=0
+	for _entry; do
+		if [ -f ${_entry} ]; then
+			if ! safe_run ${_rc} rm -f ${_entry}; then
+				warn "unable to remove file ${_entry}"
+				_rc=1
+			fi
+		elif [ -d ${_entry} ] &&
+		     ! precious ${_entry} &&
+		     ! mounted ${_entry}; then
+			if ! safe_run ${_rc} rm -rf ${_entry}; then
+				warn "unable to remove directory ${_entry}"
+				_rc=1
+			fi
+		fi
+	done
+	return ${_rc}
+}
+
+safe_copy ()	# src dst
+{
+	local _src _dst _rc
+
+	_src=$1 _dst=$2
+
+	_rc=0
+	if [ -f ${_src} ]; then
+		if ! safe_run ${_rc} safe_remove ${_dst} ||
+		   ! safe_run ${_rc} cp -p ${_src} ${_dst}; then
+			err 1 "unable to copy file ${_src} to ${_dst}"
+			_rc=1
+		fi
+		safe_run ${_rc} safe_chmog ${_dst} || _rc=1
+	elif [ -d ${_src} ] &&
+	     ! precious ${_dst} &&
+	     ! mounted ${_dst}; then
+		if ! safe_run ${_rc} pax -rw -pe -ts "|^${_src}||" \
+		   ${_src} ${_dst}; then
+			err 1 "unable to copy directory ${_src} to ${_dst}"
+			_rc=1
+		fi
+	else
+		err 1 "unable to copy ${_src} to ${_dst}" \
+		      "-- not a file or a directory"
+		_rc=1
+	fi
+	return ${_rc}
+}
+
+mounted ()	# dir...
+{
+	local _rc
+
+	_rc=1
+	if checkyesno dhcpd_devfs_enable; then
+		mount -t devfs | awk '
+		    BEGIN { n = ARGC; ARGC = 2 }
+		    { for (i = 2; i != n; i++) if ($3 == ARGV[i]) exit 1 }
+		' - "$@" || _rc=0
+	fi
+	debug mounted: "$@" rc=${_rc}
+	return ${_rc}
+}
+
+safe_mount ()	# dir
+{
+	local _dir _rc
+
+	_dir=$1
+
+	_rc=0
+	if checkyesno dhcpd_devfs_enable &&
+	   ! mounted ${_dir} &&
+	   ! safe_run ${_rc} mount -t devfs devfs ${_dir}; then
+		err 1 "unable to mount ${_dir}"
+		_rc=1
+	fi
+	return ${_rc}
+}
+
+safe_umount ()	# dir
+{
+	local _dir _rc
+
+	_dir=$1
+
+	_rc=0
+	if checkyesno dhcpd_devfs_enable &&
+	   mounted ${_dir} &&
+	   ! safe_run ${_rc} umount ${_dir}; then
+		warn "unable to unmount ${_dir}"
+		_rc=1
+	fi
+	return ${_rc}
+}
+
+check_chuser ()
+{
+	if checkyesno paranoia; then
+		if checkyesno dhcpd_chuser_enable &&
+		   [ -z "${dhcpd_withuser}" -a -z "${dhcpd_withgroup}" ]; then
+			err 1 "one of dhcpd_withuser and dhcpd_withgroup" \
+			      "must be set if dhcpd_chuser_enable is enabled"
+		fi
+	else
+		if checkyesno dhcpd_chuser_enable; then
+			warn "dhcpd_chuser_enable disabled -- not compiled in"
+			dhcpd_chuser_enable=NO
+		fi
+	fi
+}
+
+check_chroot ()
+{
+	if checkyesno paranoia; then
+		if checkyesno dhcpd_chroot_enable; then
+			if [ -z "${dhcpd_rootdir}" ]; then
+				err 1 "dhcpd_rootdir must be set" \
+				      "if dhcpd_chroot_enable is enabled"
+			fi
+			if test `uname -r | cut -c 1` -le 6; then
+				if checkyesno dhcpd_devfs_enable &&
+				   ! ( type mount_devfs ) > /dev/null 2>&1;
+				then
+					warn "dhcpd_devfs_enable disabled" \
+					     "-- not available"
+					dhcpd_devfs_enable=NO
+				fi
+			fi
+		else
+			dhcpd_devfs_enable=NO
+		fi
+	else
+		if checkyesno dhcpd_chroot_enable; then
+			warn "dhcpd_chroot_enable disabled -- not compiled in"
+			dhcpd_chroot_enable=NO
+		fi
+		dhcpd_devfs_enable=NO
+	fi
+}
+
+rcvar_chuser ()
+{
+	if checkyesno paranoia && checkyesno dhcpd_chuser_enable; then
+		dhcpd_piddir=${__dhcpd_piddir}/${name}
+		dhcpd_leasesdir=${__dhcpd_leasesdir}/${name}
+	else
+		dhcpd_withuser= dhcpd_withgroup=
+	fi
+}
+
+rcvar_chroot ()
+{
+	if ! checkyesno paranoia || ! checkyesno dhcpd_chroot_enable; then
+		dhcpd_rootdir=
+	elif checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
+		dhcpd_devdir=${__dhcpd_devdir}
+		dhcpd_etcdir=${__dhcpd_etcdir}
+	fi
+}
+
+rcvar_pidnleases ()
+{
+	if ! checkyesno dhcpd_chuser_enable; then
+		dhcpd_piddir=${__dhcpd_piddir}
+		dhcpd_leasesdir=${__dhcpd_leasesdir}
+	fi
+	dhcpd_pidfile=${dhcpd_piddir}/${name}.pid
+	dhcpd_leasesfile=${dhcpd_leasesdir}/${name}.leases
+	dhcpd_conffile=${dhcpd_conf}	# for convenience only
+	dhcpd_confdir=$(dirname ${dhcpd_conffile})
+}
+
+rcvar_rooted ()
+{
+	_dhcpd_rootdir=${dhcpd_rootdir}
+	_dhcpd_devdir=${dhcpd_rootdir}${dhcpd_devdir}
+	_dhcpd_etcdir=${dhcpd_rootdir}${dhcpd_etcdir}
+	_dhcpd_confdir=${dhcpd_rootdir}${dhcpd_confdir}
+	_dhcpd_includedir=${dhcpd_rootdir}${dhcpd_includedir}
+	_dhcpd_piddir=${dhcpd_rootdir}${dhcpd_piddir}
+	_dhcpd_leasesdir=${dhcpd_rootdir}${dhcpd_leasesdir}
+	_dhcpd_conffile=${dhcpd_rootdir}${dhcpd_conffile}
+	_dhcpd_pidfile=${dhcpd_rootdir}${dhcpd_pidfile}
+	_dhcpd_leasesfile=${dhcpd_rootdir}${dhcpd_leasesfile}
+}
+
+setup_umask ()
+{
+	if [ -n "${dhcpd_withumask}" ]; then
+		umask ${dhcpd_withumask}
+	fi
+}
+
+setup_chroot ()
+{
+	local _hconf _hosts _ltime _rconf
+
+	_hconf=host.conf
+	_hosts=hosts
+	_ltime=localtime
+	_rconf=resolv.conf
+
+	if checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
+		if ! mounted ${_dhcpd_devdir}; then
+			safe_mkdir ${_dhcpd_devdir}/_
+			# XXX /_ hack! so, .../dev is root owned.
+		fi
+		safe_mkdir ${_dhcpd_rootdir} ${_dhcpd_etcdir}/_ ${_dhcpd_confdir}
+		# XXX /_ hack! so, .../etc is root owned.
+		if checkyesno dhcpd_devfs_enable; then
+			safe_mount ${_dhcpd_devdir}
+		else
+			safe_copy ${dhcpd_devdir} ${_dhcpd_devdir}
+		fi
+		safe_copy ${dhcpd_conffile} ${_dhcpd_conffile}
+		safe_copy ${dhcpd_etcdir}/$_hconf ${_dhcpd_etcdir}/$_hconf
+		safe_copy ${dhcpd_etcdir}/$_hosts ${_dhcpd_etcdir}/$_hosts
+		safe_copy ${dhcpd_etcdir}/$_ltime ${_dhcpd_etcdir}/$_ltime
+		safe_copy ${dhcpd_etcdir}/$_rconf ${_dhcpd_etcdir}/$_rconf
+		# copy dhcpd_includedir if defined and available
+		if [ -d "${dhcpd_includedir}" ]; then
+			safe_mkdir ${_dhcpd_includedir}
+			safe_copy ${dhcpd_includedir} ${_dhcpd_includedir}
+		fi
+	fi
+}
+
+setup_chuser ()
+{
+	if checkyesno paranoia && {
+	   checkyesno dhcpd_chuser_enable || checkyesno dhcpd_chroot_enable
+	}; then
+		safe_mkdir ${_dhcpd_piddir} ${_dhcpd_leasesdir}
+	fi
+}
+
+setup_leases ()
+{
+	safe_touch ${_dhcpd_leasesfile}
+}
+
+setup_flags ()
+{
+	if [ -n "${dhcpd_conf}" ]; then
+		rc_flags="${rc_flags} -cf ${dhcpd_conf}"
+	fi
+	if [ -n "${dhcpd_leasesfile}" ]; then
+		rc_flags="${rc_flags} -lf ${dhcpd_leasesfile}"
+	fi
+	if [ -n "${dhcpd_pidfile}" ]; then
+		rc_flags="${rc_flags} -pf ${dhcpd_pidfile}"
+	fi
+	if [ -n "${dhcpd_withuser}" ]; then
+		rc_flags="${rc_flags} -user ${dhcpd_withuser}"
+	fi
+	if [ -n "${dhcpd_withgroup}" ]; then
+		rc_flags="${rc_flags} -group ${dhcpd_withgroup}"
+	fi
+	if [ -n "${dhcpd_rootdir}" ]; then
+		rc_flags="${rc_flags} -chroot ${dhcpd_rootdir}"
+	fi
+	rc_flags="${rc_flags} ${dhcpd_ifaces}"
+}
+
+cleanup_chroot ()
+{
+	if checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
+		safe_umount ${_dhcpd_devdir}
+	fi
+}
+
+dhcpd_stop ()
+{
+	if sh $0 forcestatus; then
+		sh $0 forcestop
+	fi
+}
+
+remove_pid ()
+{
+	if [ -e ${_dhcpd_pidfile} ]; then
+		warn "${_dhcpd_pidfile} still exists! -- removing anyway"
+	fi
+	safe_remove ${_dhcpd_pidfile}
+}
+
+remove_leases ()
+{
+	if [ -s ${_dhcpd_leasesfile} ]; then
+		warn "${_dhcpd_leasesfile} not empty -- not removed --" \
+		     "futher warning messages expected, don't care."
+	else
+		safe_remove ${_dhcpd_leasesfile} ${_dhcpd_leasesfile}~
+	fi
+}
+
+remove_chuser ()
+{
+	if checkyesno paranoia && {
+	   checkyesno dhcpd_chuser_enable || checkyesno dhcpd_chroot_enable
+	}; then
+		safe_rmdir ${_dhcpd_piddir} ${_dhcpd_leasesdir}
+	fi
+}
+
+remove_chroot ()
+{
+	if checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
+		safe_remove ${_dhcpd_conffile} ${_dhcpd_includedir} \
+			${_dhcpd_etcdir}
+		if checkyesno dhcpd_devfs_enable; then
+			safe_umount ${_dhcpd_devdir}
+			safe_rmdir ${_dhcpd_devdir}/_ # XXX /_ hack!
+		else
+			safe_remove ${_dhcpd_devdir}
+		fi
+		safe_rmdir ${_dhcpd_confdir} ${_dhcpd_rootdir} # XXX /_ hack!
+	fi
+}
+
+dhcpd_check ()
+{
+	check_chuser
+	check_chroot
+}
+
+dhcpd_rcvar ()
+{
+	rcvar_chuser
+	rcvar_chroot
+	rcvar_pidnleases
+	rcvar_rooted
+}
+
+dhcpd_precmd ()
+{
+	setup_umask
+	setup_chroot
+	setup_chuser
+	setup_leases
+	setup_flags
+}
+
+dhcpd_postcmd ()
+{
+	cleanup_chroot
+}
+
+_dhcpd_uninstall ()	# user group root
+{
+	local _user _group _root
+
+	_user=$1 _group=$2 _root=$3
+
+	if [ -n "${_user}" -o -n "${_group}" ]; then
+		dhcpd_chuser_enable=YES
+		dhcpd_withuser=${_user}
+		dhcpd_withgroup=${_group}
+	else
+		dhcpd_chuser_enable=NO
+	fi
+	if [ -n "${_root}" ]; then
+		dhcpd_chroot_enable=YES
+		dhcpd_rootdir=${_root}
+	else
+		dhcpd_chroot_enable=NO
+	fi
+	dhcpd_check
+	dhcpd_rcvar
+	dhcpd_uninstall
+}
+
+dhcpd_uninstall ()
+{
+	if checkyesno __dhcpd_uninstall; then
+		dhcpd_stop
+		remove_pid
+		remove_leases
+		remove_chuser
+		remove_chroot
+	else
+		local _user _group _root
+
+		__dhcpd_uninstall=YES
+
+		_user=${dhcpd_withuser}
+		_group=${dhcpd_withgroup}
+		_root=${dhcpd_rootdir}
+
+		_dhcpd_uninstall "" "" ""
+
+		if checkyesno paranoia; then
+			if [ -n "${_user}" -o -n "${_group}" ]; then
+				_dhcpd_uninstall "${_user}" "${_group}" ""
+			fi
+			if [ -n "${_root}" ]; then
+				_dhcpd_uninstall "" "" "${_root}"
+			fi
+			if [ -n "${_user}" -o -n "${_group}" ] &&
+			   [ -n "${_root}" ]; then
+				_dhcpd_uninstall "${_user}" "${_group}" "${_root}"
+			fi
+		fi
+	fi
+}
+
+dhcpd_checkconfig ()
+{
+        local rc_flags_mod
+        setup_flags
+	rc_flags_mod="$rc_flags"
+        # Eliminate '-q' flag if it is present
+	case "$rc_flags" in
+	*-q*)	rc_flags_mod=`echo "${rc_flags}" | sed -Ee 's/(^-q | -q | -q$)//'` ;;
+	esac
+        if ! ${command} -t -q ${rc_flags_mod}; then
+                err 1 "`${command} -t ${rc_flags_mod}` Configuration file sanity check failed"
+        fi
+}
+
+rcvar=${name}_enable
+load_rc_config ${name}
+
+__dhcpd_uninstall="NO"			# internal use only
+__dhcpd_devdir=/dev			# devices directory
+__dhcpd_etcdir=/etc			# etc directory
+__dhcpd_piddir=/var/run			# pid file directory
+__dhcpd_leasesdir=/var/db		# leases file directory
+#__dhcpd_rootdir=/var/db/${name}	# root directory
+
+dhcpd_check
+dhcpd_rcvar
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=${_dhcpd_pidfile}
+required_files=${dhcpd_conf}
+start_precmd=${name}_precmd
+stop_postcmd=${name}_postcmd
+restart_precmd="dhcpd_checkconfig"
+uninstall_cmd=dhcpd_uninstall
+extra_commands="uninstall"
+
+run_rc_command "$1"
