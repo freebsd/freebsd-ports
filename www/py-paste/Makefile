@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Paste
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.3.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for using a Web Server Gateway Interface stack
 
 USE_PYTHON=	2.4+
