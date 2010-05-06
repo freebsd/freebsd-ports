@@ -1,24 +1,24 @@
---- libntfs-3g/Makefile.in.orig	2008-05-28 16:08:07.000000000 -0300
-+++ libntfs-3g/Makefile.in	2008-06-21 20:41:19.000000000 -0300
-@@ -252,6 +252,7 @@
+--- libntfs-3g/Makefile.in.orig	2010-03-06 13:12:36.000000000 -0300
++++ libntfs-3g/Makefile.in	2010-10-04 15:10:43.000000000 -0300
+@@ -241,6 +241,7 @@
  libntfs_3g_la_CFLAGS = $(AM_CFLAGS) -I$(top_srcdir)/include/ntfs-3g
  libntfs_3g_la_LDFLAGS = -version-info $(LIBNTFS_3G_VERSION) -no-undefined
  @FUSE_INTERNAL_TRUE@libntfs_3g_la_LIBADD = $(top_builddir)/libfuse-lite/libfuse-lite.la
 +libntfs_3g_la_LIBADD = -lublio
- libntfs_3g_la_SOURCES = attrib.c attrlist.c bitmap.c bootsect.c \
- 	collate.c compat.c compress.c debug.c device.c dir.c index.c \
- 	inode.c lcnalloc.c logfile.c logging.c mft.c misc.c mst.c \
---- ./src/ntfs-3g.c.orig	Sun Apr 15 20:52:01 2007
-+++ ./src/ntfs-3g.c	Mon Apr 30 14:12:57 2007
-@@ -1603,7 +1603,11 @@
- 	.mkdir		= ntfs_fuse_mkdir,
- 	.rmdir		= ntfs_fuse_rmdir,
+ libntfs_3g_la_SOURCES = acls.c attrib.c attrlist.c bitmap.c bootsect.c \
+ 	cache.c collate.c compat.c compress.c debug.c device.c dir.c \
+ 	efs.c index.c inode.c lcnalloc.c logfile.c logging.c mft.c \
+--- src/ntfs-3g.c.orig	2010-03-06 13:12:25.000000000 -0300
++++ src/ntfs-3g.c	2010-10-04 15:11:57.000000000 -0300
+@@ -3508,7 +3508,11 @@
+ #else
  	.utime		= ntfs_fuse_utime,
-+#ifdef __linux__
+ #endif
++#ifndef __FreeBSD__
  	.bmap		= ntfs_fuse_bmap,
 +#else
 +	.bmap		= NULL,
 +#endif
  	.destroy        = ntfs_fuse_destroy2,
- #ifdef HAVE_SETXATTR
- 	.getxattr	= ntfs_fuse_getxattr,
+ #if !KERNELPERMS | (POSIXACLS & !KERNELACLS)
+ 	.access		= ntfs_fuse_access,
