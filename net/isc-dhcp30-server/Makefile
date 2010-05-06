@@ -19,10 +19,13 @@ DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
-PORTREVISION_SERVER=	5
-PORTREVISION_CLIENT=	1
-PORTREVISION_RELAY=	0
-PORTREVISION_DEVEL=	0
+DEPRECATED=	End-of-life by authors. Please use one of the other DHCP ports
+EXPIRATION_DATE=	2010-06-03
+
+PORTREVISION_SERVER=	6
+PORTREVISION_CLIENT=	2
+PORTREVISION_RELAY=	1
+PORTREVISION_DEVEL=	1
 
 SUBSYS?=	server
 
@@ -43,12 +46,15 @@ OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
 
 # PORTREVISION handling
 .if ${SUBSYS} == client
+CONFLICTS=	isc-dhcp31-client* isc-dhcp41-client*
 DHCP_PORTREVISION=	${PORTREVISION_CLIENT}
 .elif ${SUBSYS} == relay
+CONFLICTS=	isc-dhcp31-relay* isc-dhcp41-relay*
 DHCP_PORTREVISION=	${PORTREVISION_RELAY}
 .elif ${SUBSYS} == devel
 DHCP_PORTREVISION=	${PORTREVISION_DEVEL}
 .else
+CONFLICTS=	isc-dhcp31-server* isc-dhcp41-server*
 DHCP_PORTREVISION=	${PORTREVISION_SERVER}
 .endif
 
