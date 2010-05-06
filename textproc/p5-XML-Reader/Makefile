@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Reader
-PORTVERSION=	0.32
+PORTVERSION=	0.35
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/K/KE/KEICHNER/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reading XML and providing path information based on a pull-parser
 
 RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
