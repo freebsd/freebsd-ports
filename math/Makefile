@@ -19,6 +19,7 @@
     SUBDIR += add
     SUBDIR += algae
     SUBDIR += algotutor
+    SUBDIR += ann
     SUBDIR += apc
     SUBDIR += aribas
     SUBDIR += arpack

@@ -1,0 +1,5 @@
+ANN is a library written in C++, which supports data structures
+and algorithms for both exact and approximate nearest neighbor
+neighbor searching in arbitrarily high dimensions.
+
+WWW:	http://www.cs.umd.edu/~mount/ANN/
