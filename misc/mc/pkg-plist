@@ -1,4 +1,5 @@
 bin/mc
+bin/mcdiff
 %%EDITOR%%bin/mcedit
 bin/mcmfmt
 bin/mcview
@@ -6,8 +7,6 @@ bin/mcview
 etc/mc/cedit.menu
 %%EDITOR%%etc/mc/edit.indent.rc
 %%EDITOR%%etc/mc/edit.spell.rc
-etc/mc/extfs/extfs.ini
-etc/mc/extfs/sfs.ini
 etc/mc/filehighlight.ini
 %%CHARSETS%%etc/mc/mc.charsets
 etc/mc/mc.ext
@@ -17,6 +16,39 @@ etc/mc/mc.keymap.emacs
 etc/mc/mc.lib
 etc/mc/mc.menu
 etc/mc/mc.menu.sr
+etc/mc/sfs.ini
+libexec/mc/extfs.d/README
+libexec/mc/extfs.d/README.extfs
+libexec/mc/extfs.d/a+
+libexec/mc/extfs.d/apt+
+libexec/mc/extfs.d/audio
+libexec/mc/extfs.d/bpp
+libexec/mc/extfs.d/deb
+libexec/mc/extfs.d/deba
+libexec/mc/extfs.d/debd
+libexec/mc/extfs.d/dpkg+
+libexec/mc/extfs.d/hp48+
+libexec/mc/extfs.d/iso9660
+libexec/mc/extfs.d/lslR
+libexec/mc/extfs.d/mailfs
+libexec/mc/extfs.d/patchfs
+libexec/mc/extfs.d/rpm
+libexec/mc/extfs.d/rpms+
+libexec/mc/extfs.d/s3+
+libexec/mc/extfs.d/trpm
+libexec/mc/extfs.d/u7z
+libexec/mc/extfs.d/uace
+libexec/mc/extfs.d/ualz
+libexec/mc/extfs.d/uar
+libexec/mc/extfs.d/uarc
+libexec/mc/extfs.d/uarj
+libexec/mc/extfs.d/uc1541
+libexec/mc/extfs.d/ucab
+libexec/mc/extfs.d/uha
+libexec/mc/extfs.d/ulha
+libexec/mc/extfs.d/urar
+libexec/mc/extfs.d/uzip
+libexec/mc/extfs.d/uzoo
 libexec/mc/mc-wrapper.csh
 libexec/mc/mc-wrapper.sh
 libexec/mc/mc.csh
@@ -59,37 +91,6 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/wa/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mc.mo
-%%DATADIR%%/extfs/README
-%%DATADIR%%/extfs/a
-%%DATADIR%%/extfs/apt
-%%DATADIR%%/extfs/audio
-%%DATADIR%%/extfs/bpp
-%%DATADIR%%/extfs/deb
-%%DATADIR%%/extfs/deba
-%%DATADIR%%/extfs/debd
-%%DATADIR%%/extfs/dpkg
-%%DATADIR%%/extfs/hp48
-%%DATADIR%%/extfs/iso9660
-%%DATADIR%%/extfs/lslR
-%%DATADIR%%/extfs/mailfs
-%%DATADIR%%/extfs/patchfs
-%%DATADIR%%/extfs/rpm
-%%DATADIR%%/extfs/rpms
-%%DATADIR%%/extfs/s3
-%%DATADIR%%/extfs/trpm
-%%DATADIR%%/extfs/u7z
-%%DATADIR%%/extfs/uace
-%%DATADIR%%/extfs/ualz
-%%DATADIR%%/extfs/uar
-%%DATADIR%%/extfs/uarc
-%%DATADIR%%/extfs/uarj
-%%DATADIR%%/extfs/uc1541
-%%DATADIR%%/extfs/ucab
-%%DATADIR%%/extfs/uha
-%%DATADIR%%/extfs/ulha
-%%DATADIR%%/extfs/urar
-%%DATADIR%%/extfs/uzip
-%%DATADIR%%/extfs/uzoo
 %%DATADIR%%/mc.hint
 %%NLS%%%%DATADIR%%/mc.hint.cs
 %%NLS%%%%DATADIR%%/mc.hint.es
@@ -113,6 +114,7 @@ libexec/mc/mc.sh
 %%DATADIR%%/skins/double-lines.ini
 %%DATADIR%%/skins/featured.ini
 %%DATADIR%%/skins/gotar.ini
+%%DATADIR%%/skins/nicedark.ini
 %%EDITOR%%%%DATADIR%%/syntax/PKGBUILD.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ada95.syntax
 %%EDITOR%%%%DATADIR%%/syntax/aspx.syntax
@@ -140,6 +142,7 @@ libexec/mc/mc.sh
 %%EDITOR%%%%DATADIR%%/syntax/haskell.syntax
 %%EDITOR%%%%DATADIR%%/syntax/html.syntax
 %%EDITOR%%%%DATADIR%%/syntax/idl.syntax
+%%EDITOR%%%%DATADIR%%/syntax/ini.syntax
 %%EDITOR%%%%DATADIR%%/syntax/j.syntax
 %%EDITOR%%%%DATADIR%%/syntax/java.syntax
 %%EDITOR%%%%DATADIR%%/syntax/js.syntax
@@ -183,10 +186,9 @@ libexec/mc/mc.sh
 %%EDITOR%%%%DATADIR%%/syntax/yxx.syntax
 %%EDITOR%%@dirrm %%DATADIR%%/syntax
 @dirrm %%DATADIR%%/skins
-@dirrm %%DATADIR%%/extfs
 @dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/be-tarask/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/be-tarask
+@dirrm libexec/mc/extfs.d
 @dirrm libexec/mc
-@dirrm etc/mc/extfs
 @dirrm etc/mc
