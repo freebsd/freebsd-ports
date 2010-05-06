@@ -56,6 +56,8 @@ LIBTOOLFILES=		configure
 USE_LDCONFIG=		${PREFIX}/lib/apache2
 USE_BZIP2=		yes
 
+MPM_ITK_VERSION?=	20061030-01
+
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
 		--with-perl=${PERL5} \
