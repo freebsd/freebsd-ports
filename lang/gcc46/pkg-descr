@@ -1,6 +1,6 @@
 GCC, the GNU Compiler Collection, supports a number of languages.  This
-port installs the C, C++, Fortran and Java front ends as gcc45, g++45,
-gfortran45, and gcj45, respectively.
+port installs the C, C++, Fortran and Java front ends as gcc46, g++46,
+gfortran46, and gcj46, respectively.
 
 WWW: http://gcc.gnu.org/
 
