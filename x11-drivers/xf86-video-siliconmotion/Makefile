@@ -16,4 +16,10 @@ XORG_CAT=	driver
 USE_XORG=	videoproto xextproto
 MAN4=		siliconmotion.4x
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+USE_GCC=	4.2+
+.endif
+
+.include <bsd.port.post.mk>

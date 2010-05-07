@@ -40,4 +40,8 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_dump ${PREFIX}/sbin
 .endif
 
+.if ${OSVERSION} < 700000
+USE_GCC=	4.2+
+.endif
+
 .include <bsd.port.post.mk>

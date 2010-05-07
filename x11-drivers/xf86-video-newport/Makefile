@@ -21,4 +21,10 @@ post-patch:
 				 -e 's|MAXSHORT|SHRT_MAX|g' \
 				 ${WRKSRC}/src/newport_accel.c
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+USE_GCC=	4.2+
+.endif
+
+.include <bsd.port.post.mk>
