@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 @exec mkdir -p %D/etc/apache2 2> /dev/null
-@unexec if cmp -s %D/etc/apache2/httpd.conf %D/%%EXAMPLESDIR%%/httpd-std.conf; then rm -f %D/etc/apache2/httpd.conf; fi
+@unexec if cmp %D/etc/apache2/httpd.conf %D/%%EXAMPLESDIR%%/httpd-std.conf; then rm -f %D/etc/apache2/httpd.conf; fi
 %%EXAMPLESDIR%%/httpd-std.conf
 @exec [ -f %D/etc/apache2/httpd.conf ] || cp %D/%%EXAMPLESDIR%%/httpd-std.conf %D/etc/apache2/httpd.conf
 @unexec if cmp -s %D/etc/apache2/magic %D/%%EXAMPLESDIR%%/magic-dist; then rm -f %D/etc/apache2/magic; fi
