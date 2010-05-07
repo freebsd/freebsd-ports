@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.17
 CATEGORIES=	databases
 MASTER_SITES=	http://1978th.net/kyotocabinet/
 
