@@ -18,7 +18,19 @@
                      [--enable-layout=*|\'--enable-layout=*])
    dnl We must be the last to build and the first to be cleaned
    AP_BUILD_SRCLIB_DIRS="$AP_BUILD_SRCLIB_DIRS apr-util"
-@@ -172,7 +172,7 @@
+@@ -124,11 +124,6 @@
+ AC_PROG_CC
+ AC_PROG_CPP
+ 
+-echo $ac_n "${nl}Configuring PCRE regular expression library ...${nl}"
+-
+-APR_SUBDIR_CONFIG(srclib/pcre,
+-                  [--prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$bindir])
+-
+ echo $ac_n "${nl}Configuring Apache httpd ...${nl}"
+ 
+ dnl Absolute source/build directory
+@@ -172,7 +167,7 @@
        LIBTOOL="$my_libtool \$(LTFLAGS)"
        libtoolversion=`$my_libtool --version`
        case $libtoolversion in

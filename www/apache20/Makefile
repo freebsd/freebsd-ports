@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.63
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
@@ -22,7 +22,8 @@ EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.0.x of Apache web server with ${WITH_MPM:L} MPM.
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+	pcre.0:${PORTSDIR}/devel/pcre
 
 MAKE_JOBS_SAFE=	yes
 
@@ -193,10 +194,12 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${RM} -f ${WRKSRC}/docs/conf/highperformance-std.conf
+	@${RM} -rf ${WRKSRC}/srclib/pcre ${WRKSRC}/include/pcreposix.h
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
 	@${REINPLACE_CMD} -e 's,freebsd\[2345\],freebsd\[23456\],' \
 			${WRKSRC}/srclib/apr/build/apr_hints.m4
+	@${REINPLACE_CMD} -e "s,\$abs_builddir/srclib/pcre/libpcre.la,${LOCALBASE}/lib/libpcre.la," ${WRKSRC}/configure.in
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
 pre-configure:
