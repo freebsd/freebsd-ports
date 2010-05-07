@@ -45,7 +45,7 @@ OPTIONS=	\
 	DEBUG                   "Enable debugging"                      Off \
 	EXCEPTION_HOOK          "Enable Exception Hook"                 On  \
 	LDAP                    "Enable LDAP Support"                   Off \
-	THREADS                 "Enable threads in apr                  Off
+	THREADS                 "Enable threads in apr"                 Off
 
 .if defined(WITH_KQUEUE_SUPPORT)
 EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch
@@ -136,9 +136,9 @@ APACHEDIR=	${MASTERDIR}
 
 .if defined (WITH_LDAP) || defined (WITH_LDAP_MODULES)
 USE_OPENLDAP=		YES
-CONFIGURE_ARGS+=	--with-ldap \
-			--with-ldap-lib="${LOCALBASE}/lib" \
-			--with-ldap-include="${LOCALBASE}/include"
+CONFIGURE_ARGS+=	--enable-ldap=shared --enable-auth-ldap --with-ldap \
+	--with-ldap-lib="${LOCALBASE}/lib" \
+	--with-ldap-include="${LOCALBASE}/include"
 .endif
 
 .include "${APACHEDIR}/Makefile.doc"
