@@ -36,16 +36,18 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		caudium-devel-1.* caudium10-1.* caudium12-1.* caudium14-1.* \
 		ru-apache+mod_ssl-1.* ru-apache-1.*
 
-OPTIONS=	\
-	IPV6                    "Enable IPv6 support"                   On  \
-	BDB                     "Enable BerkeleyDB dbm"                 Off \
-	KQUEUE_SUPPORT          "Enable kqueue in bundled apr"          Off \
-	SSL                     "Enable SSL support"                    On  \
-	SSL_EXPERIMENTAL_ENGINE "Use Experimental SSL engine"           Off \
-	DEBUG                   "Enable debugging"                      Off \
-	EXCEPTION_HOOK          "Enable Exception Hook"                 On  \
-	LDAP                    "Enable LDAP Support"                   Off \
-	THREADS                 "Enable threads in apr"                 Off
+## XXX: Every possible option for things in Makefile.modules needs to be
+## XXX: in OPTIONS too, or its not passed to make.
+#OPTIONS=	\
+#	IPV6                    "Enable IPv6 support"                   On  \
+#	BDB                     "Enable BerkeleyDB dbm"                 Off \
+#	KQUEUE_SUPPORT          "Enable kqueue in bundled apr"          Off \
+#	SSL                     "Enable SSL support"                    On  \
+#	SSL_EXPERIMENTAL_ENGINE "Use Experimental SSL engine"           Off \
+#	DEBUG                   "Enable debugging"                      Off \
+#	EXCEPTION_HOOK          "Enable Exception Hook"                 On  \
+#	LDAP                    "Enable LDAP Support"                   Off \
+#	THREADS                 "Enable threads in apr"                 Off
 
 .if defined(WITH_KQUEUE_SUPPORT)
 EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch
