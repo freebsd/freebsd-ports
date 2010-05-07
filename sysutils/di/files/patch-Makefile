@@ -1,0 +1,47 @@
+--- Makefile.orig	2010-03-31 11:30:14.000000000 -0400
++++ Makefile	2010-04-10 01:28:44.000000000 -0400
+@@ -9,7 +9,7 @@
+ SHELL = /bin/sh
+ OBJ_EXT = .o
+ EXE_EXT =
+-CC = cc
++CC ?= cc
+ MAKE = make
+ 
+ #
+@@ -31,7 +31,7 @@
+ #
+ # installation options
+ #
+-prefix = /usr/local
++prefix ?= /usr/local
+ LOCALEDIR = $(prefix)/share/locale
+ #
+ INSTALL_DIR = $(prefix)
+@@ -59,7 +59,7 @@
+ #
+ # simple man page installation
+ #
+-DI_MANINSTDIR = $(INSTALL_DIR)/share/man
++DI_MANINSTDIR = $(INSTALL_DIR)/man
+ DI_MANDIR = $(DI_MANINSTDIR)/man1
+ MAN_TARGET = $(PROG).1
+ MANPERM = 644
+@@ -167,7 +167,7 @@
+ 		CC=cc LD=cc EXE_EXT="" OBJ_EXT=".o" \
+ 		CFLAGS="$(CFLAGS) -O \
+ 		-DDEFAULT_FORMAT=\\\"sMbuvpT\\\"" \
+-		LDFLAGS="-O" di-programs
++		LDFLAGS="-O $(LDFLAGS)" di-programs
+ 
+ bsd43-gcc:
+ 	@echo ':' > di.env;chmod a+rx di.env
+@@ -177,7 +177,7 @@
+ 		CC=cc LD=cc EXE_EXT="" OBJ_EXT=".o" \
+ 		CFLAGS="$(CFLAGS) -O2 \
+ 		-DDEFAULT_FORMAT=\\\"sMbuvpT\\\"" \
+-		LDFLAGS="-O2" di-programs
++		LDFLAGS="-O2 $(LDFLAGS)" di-programs
+ 
+ ###
+ # cleaning

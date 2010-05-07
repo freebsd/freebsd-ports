@@ -1,8 +1,6 @@
 bin/di
 bin/mi
-%%NLS%%share/locale/de_DE/LC_MESSAGES/di.mo
-%%NLS%%share/locale/en_US/LC_MESSAGES/di.mo
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
+%%NLS%%share/locale/de/LC_MESSAGES/di.mo
+%%NLS%%share/locale/en/LC_MESSAGES/di.mo
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
