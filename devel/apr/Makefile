@@ -18,15 +18,15 @@ LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	THREADS "Enable Threads in apr"						on  \
-			IPV6	"Enable IPV6 Support in apr"				on	\
-			GDBM	"Enable GNU dbm support in apr-util"		on  \
-			BDB		"Enable Berkley BDB support in apr-util"	on  \
-			NDBM	"Enable NDBM support in apr-util"			off \
-			LDAP	"Enable LDAP support in apr-util"			off \
-			MYSQL	"Enable MySQL suport in apr-util"			off \
-			PGSQL	"Enable Postgresql suport in apr-util"		off \
-			SQLITE  "Enable SQLite3 support in apr-util"			off
+OPTIONS=	THREADS "Enable Threads in apr"				on  \
+		IPV6	"Enable IPV6 Support in apr"			on  \
+		BDB	"Enable Berkley BDB support in apr-util"	on  \
+		GDBM	"Enable GNU dbm support in apr-util"		on  \
+		LDAP	"Enable LDAP support in apr-util"		off \
+		MYSQL	"Enable MySQL suport in apr-util"		off \
+		NDBM	"Enable NDBM support in apr-util"		off \
+		PGSQL	"Enable Postgresql suport in apr-util"		off \
+		SQLITE  "Enable SQLite3 support in apr-util"		off
 
 APR_VERSION=	1.4.2
 APU_VERSION=	1.3.9
@@ -38,7 +38,7 @@ USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 
-CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	CC="${CC}"
 
 NO_WRKSUBDIR=	yes
 APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
@@ -50,8 +50,8 @@ SHLIB_APU_MAJOR=	3
 
 APR_CONF_ARGS=	--with-installbuilddir=${DATADIR}/build-1
 APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
-			--with-expat=${LOCALBASE} \
-			--with-iconv=${LOCALBASE}
+		--with-expat=${LOCALBASE} \
+		--with-iconv=${LOCALBASE}
 
 .include <bsd.port.options.mk>
 
@@ -82,7 +82,7 @@ PKGNAMESUFFIX=	-ipv6
 .if defined(WITHOUT_GDBM)
 PLIST_SUB+=	GDBM="@comment "
 APU_CONF_ARGS+=	--without-gdbm
-.elif defined(WITH_GDBM)
+.else
 PLIST_SUB+=	GDBM=""
 APU_EXTRAS=	yes
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
@@ -92,15 +92,12 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gdbm
 .else
 PKGNAMESUFFIX=	-gdbm
 .endif
-.else
-PLIST_SUB+=	GDBM="@comment "
-APR_UTIL_CONF_ARGS+=	--without-gdbm
 .endif
 
 .if defined(WITHOUT_BDB)
 PLIST_SUB+=	BDB="@comment "
 APU_CONF_ARGS+=	--without-berkeley-db
-.elif defined(WITH_BDB)
+.else
 APU_EXTRAS=	yes
 PLIST_SUB+=	BDB=""
 USE_BDB=	42+
@@ -113,10 +110,7 @@ PKGNAMESUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
 .endif
 .endif
 
-.if defined(WITHOUT_NDBM)
-PLIST_SUB+=	NDBM="@comment "
-APU_CONF_ARGS+=	--without-ndbm
-.elif defined(WITH_NDBM)
+.if defined(WITH_NDBM)
 APU_EXTRAS=	yes
 PLIST_SUB+=	NDBM=""
 APU_CONF_ARGS+=	--with-ndbm=/usr
@@ -125,6 +119,9 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ndbm
 .else
 PKGNAMESUFFIX=	-ndbm
 .endif
+.else
+PLIST_SUB+=	NDBM="@comment "
+APU_CONF_ARGS+=	--without-ndbm
 .endif
 
 .if defined(WITH_LDAP)
@@ -140,6 +137,7 @@ PKGNAMESUFFIX=	-ldap
 .endif
 .else
 PLIST_SUB+=	LDAP="@comment "
+APU_CONF_ARGS+=	--without-ldap
 .endif
 
 .if defined(WITH_MYSQL)
@@ -157,6 +155,7 @@ PKGNAMESUFFIX=	-mysql
 .endif
 .else
 PLIST_SUB+=	MYSQL="@comment "
+APU_CONF_ARGS+=	--without-mysql
 .endif
 
 .if defined(WITH_PGSQL)
@@ -172,6 +171,7 @@ PKGNAMESUFFIX=	-pgsql
 .endif
 .else
 PLIST_SUB+=	PGSQL="@comment "
+APU_CONF_ARGS+=	--without-pgsql
 .endif
 
 .if defined(WITH_SQLITE)
@@ -196,7 +196,7 @@ PLIST_SUB+=	APU_EXTRAS="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's/OSVERSION/'${OSVERSION}'/g' \
+	${REINPLACE_CMD} -e 's/OSVERSION/${OSVERSION}/g' \
 		${APR_WRKDIR}/build/apr_hints.m4
 	${FIND} ${APR_WRKDIR} ${APU_WRKDIR} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
