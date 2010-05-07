@@ -136,7 +136,15 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -191,8 +190,11 @@
+@@ -179,7 +178,6 @@
+ 	@cp -p $(srcdir)/modules/http/mod_core.h $(DESTDIR)$(includedir)
+ 	@cp -p $(srcdir)/modules/proxy/mod_proxy.h $(DESTDIR)$(includedir)
+ 	@cp -p $(srcdir)/modules/ssl/*.h $(DESTDIR)$(includedir)
+-	@cp -p $(srcdir)/srclib/pcre/pcre*.h $(DESTDIR)$(includedir)
+ 	@cp -p $(srcdir)/os/$(OS_DIR)/*.h $(DESTDIR)$(includedir)
+ 	@chmod 644 $(DESTDIR)$(includedir)/*.h
+ 
+@@ -191,8 +189,11 @@
  	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
  	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8

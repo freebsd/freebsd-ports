@@ -1,0 +1,9 @@
+--- srclib/Makefile.in.orig	2010-05-06 21:03:45.453360110 -0400
++++ srclib/Makefile.in	2010-05-06 21:03:50.421209682 -0400
+@@ -1,5 +1,5 @@
+ 
+-SUBDIRS = pcre
++SUBDIRS = 
+ BUILD_SUBDIRS = $(AP_BUILD_SRCLIB_DIRS)
+ CLEAN_SUBDIRS = $(AP_CLEAN_SRCLIB_DIRS)
+ 

@@ -107,8 +107,6 @@ include/apache2/mpm.h
 include/apache2/mpm_common.h
 include/apache2/mpm_default.h
 include/apache2/os.h
-include/apache2/pcre.h
-include/apache2/pcreposix.h
 %%WORKER%%include/apache2/pod.h
 include/apache2/rfc1413.h
 include/apache2/scoreboard.h
