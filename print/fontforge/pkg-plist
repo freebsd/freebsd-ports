@@ -4,6 +4,7 @@ bin/fontlint
 bin/sfddiff
 include/fontforge/PfEd.h
 include/fontforge/autowidth.h
+include/fontforge/autowidth2.h
 include/fontforge/baseviews.h
 include/fontforge/basics.h
 include/fontforge/bezctx_ff.h
@@ -181,6 +182,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/GenerateTTC.png
 %%PORTDOCS%%%%DOCSDIR%%/GlossaryFS.html
 %%PORTDOCS%%%%DOCSDIR%%/GlossaryFrame.html
+%%PORTDOCS%%%%DOCSDIR%%/GlyphSep-To.png
+%%PORTDOCS%%%%DOCSDIR%%/GlyphSep-rectangles.png
 %%PORTDOCS%%%%DOCSDIR%%/GradientDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/GridFit.png
 %%PORTDOCS%%%%DOCSDIR%%/GridFitM.png
@@ -254,22 +257,15 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/Shades4.png
 %%PORTDOCS%%%%DOCSDIR%%/ShadowWireframe.png
 %%PORTDOCS%%%%DOCSDIR%%/ShowGridFit.png
+%%PORTDOCS%%%%DOCSDIR%%/Sigma13x16.png
+%%PORTDOCS%%%%DOCSDIR%%/Sigma28x33.png
+%%PORTDOCS%%%%DOCSDIR%%/Sigma54x64.png
 %%PORTDOCS%%%%DOCSDIR%%/SmallcapsDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/Spacem_1.png
 %%PORTDOCS%%%%DOCSDIR%%/Spacem_2.png
-%%PORTDOCS%%%%DOCSDIR%%/Sti.png
-%%PORTDOCS%%%%DOCSDIR%%/Sti2.png
-%%PORTDOCS%%%%DOCSDIR%%/Sti3.png
-%%PORTDOCS%%%%DOCSDIR%%/Sti4.png
-%%PORTDOCS%%%%DOCSDIR%%/Sti5.png
-%%PORTDOCS%%%%DOCSDIR%%/Sti6.png
 %%PORTDOCS%%%%DOCSDIR%%/Styles.html
 %%PORTDOCS%%%%DOCSDIR%%/SubSuperDlg.png
 %%PORTDOCS%%%%DOCSDIR%%/SuggestDeltas.html
-%%PORTDOCS%%%%DOCSDIR%%/Sxi.png
-%%PORTDOCS%%%%DOCSDIR%%/Sxiti.png
-%%PORTDOCS%%%%DOCSDIR%%/Sxiti2.png
-%%PORTDOCS%%%%DOCSDIR%%/Sxiti3.png
 %%PORTDOCS%%%%DOCSDIR%%/TTCvt.png
 %%PORTDOCS%%%%DOCSDIR%%/TTPoints.png
 %%PORTDOCS%%%%DOCSDIR%%/TTRaster.png
@@ -317,11 +313,9 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/asm2.png
 %%PORTDOCS%%%%DOCSDIR%%/asm3.png
 %%PORTDOCS%%%%DOCSDIR%%/asm4.png
-%%PORTDOCS%%%%DOCSDIR%%/autokern.png
 %%PORTDOCS%%%%DOCSDIR%%/autotrace.html
 %%PORTDOCS%%%%DOCSDIR%%/autowidth.html
 %%PORTDOCS%%%%DOCSDIR%%/autowidth.png
-%%PORTDOCS%%%%DOCSDIR%%/autowidthmenu.png
 %%PORTDOCS%%%%DOCSDIR%%/baseline.html
 %%PORTDOCS%%%%DOCSDIR%%/bdfinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/bdfinfo.png
@@ -363,12 +357,10 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/contextchain-class.png
 %%PORTDOCS%%%%DOCSDIR%%/contextchain-classlist.png
 %%PORTDOCS%%%%DOCSDIR%%/contextchain-coverage.png
-%%PORTDOCS%%%%DOCSDIR%%/contextchain-cselect.png
 %%PORTDOCS%%%%DOCSDIR%%/contextchain-format.png
 %%PORTDOCS%%%%DOCSDIR%%/contextchain-glyphlists.png
 %%PORTDOCS%%%%DOCSDIR%%/contextchain-pickglyph.png
 %%PORTDOCS%%%%DOCSDIR%%/contextchain-rcover.png
-%%PORTDOCS%%%%DOCSDIR%%/contextchain-seqlookup.png
 %%PORTDOCS%%%%DOCSDIR%%/contextchain.html
 %%PORTDOCS%%%%DOCSDIR%%/copyfeatures.png
 %%PORTDOCS%%%%DOCSDIR%%/corpchar.html
@@ -406,6 +398,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/cvt-to-mac.png
 %%PORTDOCS%%%%DOCSDIR%%/cvtangenticon.png
 %%PORTDOCS%%%%DOCSDIR%%/definegroups.png
+%%PORTDOCS%%%%DOCSDIR%%/delta0.png
+%%PORTDOCS%%%%DOCSDIR%%/delta1.png
 %%PORTDOCS%%%%DOCSDIR%%/devaBaseline.png
 %%PORTDOCS%%%%DOCSDIR%%/devaHangBaseline.png
 %%PORTDOCS%%%%DOCSDIR%%/devaLatinBaseline.png
@@ -505,6 +499,7 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfname.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-ttfvals.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo-unicode.png
+%%PORTDOCS%%%%DOCSDIR%%/fontinfo-woff.png
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo.html
 %%PORTDOCS%%%%DOCSDIR%%/fontinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/fontlint.html
@@ -586,8 +581,8 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/kern-We-12.png
 %%PORTDOCS%%%%DOCSDIR%%/kern-We-150.png
 %%PORTDOCS%%%%DOCSDIR%%/kernbyclasses.png
-%%PORTDOCS%%%%DOCSDIR%%/kerningclass-kern.png
 %%PORTDOCS%%%%DOCSDIR%%/kerningclass.png
+%%PORTDOCS%%%%DOCSDIR%%/kerningformat.png
 %%PORTDOCS%%%%DOCSDIR%%/kernpairclose.png
 %%PORTDOCS%%%%DOCSDIR%%/kernpairs.html
 %%PORTDOCS%%%%DOCSDIR%%/l1.png
@@ -613,7 +608,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/lookup-metadata.png
 %%PORTDOCS%%%%DOCSDIR%%/lookups.html
 %%PORTDOCS%%%%DOCSDIR%%/lparen-108.png
-%%PORTDOCS%%%%DOCSDIR%%/lparen-174.png
 %%PORTDOCS%%%%DOCSDIR%%/mac-install.html
 %%PORTDOCS%%%%DOCSDIR%%/mItalic.png
 %%PORTDOCS%%%%DOCSDIR%%/macFeatureSetting.png
@@ -622,7 +616,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/mad.html
 %%PORTDOCS%%%%DOCSDIR%%/manual-ja-hover.png
 %%PORTDOCS%%%%DOCSDIR%%/manual-ja.png
-%%PORTDOCS%%%%DOCSDIR%%/markclass.png
 %%PORTDOCS%%%%DOCSDIR%%/math.html
 %%PORTDOCS%%%%DOCSDIR%%/menu_down.png
 %%PORTDOCS%%%%DOCSDIR%%/mergepost.png
@@ -665,7 +658,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/ott2.png
 %%PORTDOCS%%%%DOCSDIR%%/ott2_5.png
 %%PORTDOCS%%%%DOCSDIR%%/ott3.png
-%%PORTDOCS%%%%DOCSDIR%%/ott4.png
 %%PORTDOCS%%%%DOCSDIR%%/ott5.png
 %%PORTDOCS%%%%DOCSDIR%%/outlinechar.png
 %%PORTDOCS%%%%DOCSDIR%%/overlappedlines.png
@@ -719,7 +711,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/retagfeature.png
 %%PORTDOCS%%%%DOCSDIR%%/rgetinfo.png
 %%PORTDOCS%%%%DOCSDIR%%/rparen-108.png
-%%PORTDOCS%%%%DOCSDIR%%/rparen-174.png
 %%PORTDOCS%%%%DOCSDIR%%/rplprocess.png
 %%PORTDOCS%%%%DOCSDIR%%/rplref.png
 %%PORTDOCS%%%%DOCSDIR%%/rplsansserifs.png
@@ -758,7 +749,6 @@ libdata/pkgconfig/fontforge.pc
 %%PORTDOCS%%%%DOCSDIR%%/splinefont.html
 %%PORTDOCS%%%%DOCSDIR%%/splines.gif
 %%PORTDOCS%%%%DOCSDIR%%/src.html
-%%PORTDOCS%%%%DOCSDIR%%/statemachine-class.png
 %%PORTDOCS%%%%DOCSDIR%%/statemachine-context.png
 %%PORTDOCS%%%%DOCSDIR%%/statemachine-indic.png
 %%PORTDOCS%%%%DOCSDIR%%/statemachine-insert.png
