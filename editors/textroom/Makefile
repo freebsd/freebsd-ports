@@ -7,6 +7,7 @@
 
 PORTNAME=	textroom
 PORTVERSION=	0.6.3.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
@@ -26,7 +27,10 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lhunspell|-lhunspell-1.2|' ${WRKSRC}/textroom.pro
+	@${REINPLACE_CMD} -e 's|-lhunspell|-lhunspell-1.2|' \
+		${WRKSRC}/textroom.pro
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
+		${WRKSRC}/src/textroom.cpp
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
