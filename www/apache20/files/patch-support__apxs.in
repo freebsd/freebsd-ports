@@ -12,16 +12,22 @@
                  # check for open <containers>, so that the new LoadModule
                  # directive always appears *outside* of an <container>.
  
-@@ -611,7 +614,7 @@
+@@ -611,7 +614,13 @@
                  }
              } else {
                  # replace already existing LoadModule line
 -                $content =~ s|^(.*\n)#?\s*$lmd[^\n]*\n|$1$c$lmd\n|s;
-+                $content =~ s|^(.*\n)#?\s*$lmd_re[^\n]*\n|$1|s;
++                # Custom FreeBSD mod
++                if ($opt_A) {
++                    $content =~ s|^(.*\n)#?\s*$lmd_re[^\n]*\n|$1|s;
++                }
++                else {
++                    $content =~ s|^(.*\n)#?\s*$lmd_re[^\n]*\n|$1$c$lmd\n|s;
++                }
              }
              $lmd =~ m|LoadModule\s+(.+?)_module.*|;
              notice("[$what module `$1' in $CFG_SYSCONFDIR/$CFG_TARGET.conf]");
-@@ -628,8 +631,7 @@
+@@ -628,8 +637,7 @@
              if (open(FP, ">$CFG_SYSCONFDIR/$CFG_TARGET.conf.new")) {
                  print FP $content;
                  close(FP);
