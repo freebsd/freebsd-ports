@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.63
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
@@ -214,7 +214,7 @@ pre-configure:
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
-	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,${FTPUSERS}, ; \
+	${REINPLACE_CMD} -e "s,%%FTPUSERS%%,$${FTPUSERS}, ; \
 			s,%%WWWOWN%%,${WWWOWN}, ; \
 			s,%%WWWGRP%%,${WWWGRP}, ; \
 			s,%%WWWBASEDIR%%,${PREFIX}/www," \
