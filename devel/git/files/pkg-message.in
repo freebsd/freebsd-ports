@@ -1,5 +1,8 @@
 
 ------------------------------------------------------------------------
+*************************** GITWEB *************************************
+If you installed the GITWEB option please follow these instructions:
+
 In the directory %%EXAMPLESDIR%%/gitweb you can find all files to
 make gitweb work as a public repository on the web.
 
@@ -10,5 +13,13 @@ All you have to do to make gitweb work is:
 2) In gitweb.cgi, adjust the variable $projectroot to point to
    your git repository (that is where you have your *.git project
    directories).
+*************************** GITWEB *************************************
+
+*************************** CONTRIB ************************************
+If you installed the CONTRIB option please note that the scripts are
+installed in %%PREFIX%%/share/git-core/contrib. Some of them require
+other ports to be installed (perl, python, etc), which you may need to
+install manually. 
+*************************** CONTRIB ************************************
 ------------------------------------------------------------------------
 
