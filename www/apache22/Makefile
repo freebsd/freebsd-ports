@@ -132,7 +132,6 @@ APR_PORT?=	devel/apr
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/${APR_PORT}
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \
 			--with-apr-util=${LOCALBASE}/bin/apu-1-config
-CONFIGURE_ENV+=		LTFLAGS="--tag=CXX"
 .else
 USE_LDCONFIG=	yes
 PLIST_SUB+=	APR_PORTS=""
