@@ -7,13 +7,14 @@
 
 PORTNAME=	mod_fastcgi
 PORTVERSION=	2.4.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A fast-cgi module for Apache
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	apache-contrib-1.*
 USE_APACHE=	1.3+
