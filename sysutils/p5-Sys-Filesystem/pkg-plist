@@ -4,8 +4,10 @@
 %%SITE_PERL%%/Sys/Filesystem/Darwin.pm
 %%SITE_PERL%%/Sys/Filesystem/Dummy.pm
 %%SITE_PERL%%/Sys/Filesystem/Freebsd.pm
+%%SITE_PERL%%/Sys/Filesystem/Hpux.pm
 %%SITE_PERL%%/Sys/Filesystem/Linux.pm
 %%SITE_PERL%%/Sys/Filesystem/Mswin32.pm
+%%SITE_PERL%%/Sys/Filesystem/Netbsd.pm
 %%SITE_PERL%%/Sys/Filesystem/Solaris.pm
 %%SITE_PERL%%/Sys/Filesystem/Unix.pm
 @dirrm %%SITE_PERL%%/Sys/Filesystem
