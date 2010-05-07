@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	libdap
-PORTVERSION=	3.9.3
-PORTREVISION=	1
+PORTVERSION=	3.10.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDK which contains an implementation of DAP 2.0 and 3.1
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 CFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
