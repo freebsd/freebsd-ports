@@ -478,6 +478,7 @@ animorph                        ports/graphics/animorph
 anjuta                          ports/devel/anjuta
 anjuta-extras                   ports/devel/anjuta-extras
 anki                            ports/games/anki
+ann                             ports/math/ann
 annelid                         ports/games/annelid
 annextools                      ports/net-mgmt/annextools
 annoyance-filter                ports/mail/annoyance-filter
@@ -4288,6 +4289,7 @@ gimp-help                       ports/graphics/gimp-help
 gimp-lqr-plugin                 ports/graphics/gimp-lqr-plugin
 gimp-manual-html                ports/graphics/gimp-manual-html
 gimp-manual-pdf                 ports/graphics/gimp-manual-pdf
+gimp-resynthesizer              ports/graphics/gimp-resynthesizer
 gimp-save-for-web               ports/graphics/gimp-save-for-web
 gimpfx-foundry                  ports/graphics/gimpfx-foundry
 gimpshop                        ports/graphics/gimpshop
@@ -5906,6 +5908,9 @@ isc-dhcp30-server               ports/net/isc-dhcp30-server
 isc-dhcp31-client               ports/net/isc-dhcp31-client
 isc-dhcp31-relay                ports/net/isc-dhcp31-relay
 isc-dhcp31-server               ports/net/isc-dhcp31-server
+isc-dhcp41-client               ports/net/isc-dhcp41-client
+isc-dhcp41-relay                ports/net/isc-dhcp41-relay
+isc-dhcp41-server               ports/net/isc-dhcp41-server
 iscsi-target                    ports/net/iscsi-target
 ised                            ports/math/ised
 iselect                         ports/misc/iselect
@@ -8064,6 +8069,7 @@ libuninameslist                 ports/textproc/libuninameslist
 libuninum                       ports/devel/libuninum
 libunp                          ports/net/libunp
 libunrar                        ports/archivers/libunrar
+libunwind                       ports/devel/libunwind
 libupskirt                      ports/textproc/libupskirt
 libusb                          ports/devel/libusb
 libutempter                     ports/sysutils/libutempter
@@ -20878,6 +20884,7 @@ py-utils                        ports/devel/py-utils
 py-uuid                         ports/devel/py-uuid
 py-vertex                       ports/net-p2p/py-vertex
 py-virtualenv                   ports/devel/py-virtualenv
+py-virtualenvwrapper            ports/devel/py-virtualenvwrapper
 py-visual                       ports/graphics/py-visual
 py-vmaps                        ports/devel/py-vmaps
 py-vobject                      ports/deskutils/py-vobject
@@ -23022,6 +23029,7 @@ sqsh                            ports/databases/sqsh
 sqstat                          ports/www/sqstat
 squall                          ports/net-p2p/squall
 squash                          ports/audio/squash
+squashfs-tools                  ports/sysutils/squashfs-tools
 squeak                          ports/lang/squeak
 squeezeboxserver                ports/audio/squeezeboxserver
 squeezeboxserver-dynamicplaylist  ports/audio/squeezeboxserver-dynamicplaylist
