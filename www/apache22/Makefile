@@ -171,11 +171,7 @@ CONFIGURE_ARGS+=	--enable-nonportable-atomics
 .endif
 
 .if defined(WITH_AUTH_DIGEST)
-WITH_EGD=	yes
 WITH_DEVRANDOM=	yes
-.endif
-.if defined(WITH_EGD)
-CONFIGURE_ARGS+=	--with-egd
 .endif
 .if defined(WITH_DEVRANDOM)
 CONFIGURE_ARGS+=	--with-devrandom
