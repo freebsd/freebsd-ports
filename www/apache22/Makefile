@@ -85,7 +85,8 @@ CONFIGURE_ENV= \
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
-MAKE_ENV+=	EXPR_COMPAT=yes
+MAKE_ENV+=	EXPR_COMPAT=yes \
+		INSTALL_MAN="${INSTALL_MAN}"
 
 WITH_MPM?=	prefork # or worker, event, itk
 
