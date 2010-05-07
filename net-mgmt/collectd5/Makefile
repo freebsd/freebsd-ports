@@ -6,37 +6,42 @@
 #
 
 PORTNAME=	collectd
-PORTVERSION=	4.5.1
-PORTREVISION=	3
+PORTVERSION=	4.9.2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://collectd.org/files/ \
-		http://mirror.roe.ch/dist/${PORTNAME}/
+MASTER_SITES=	http://collectd.org/files/
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Systems & network statistics collection daemon
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
 
-OPTIONS=	CGI	"Install collection.cgi (requires RRDTOOL)" Off \
-		DEBUG	"Enable debugging" Off \
-		APACHE	"Input: Apache mod_status (libcurl)" Off \
-		APCUPS	"Input: APC UPS (apcupsd)" Off \
-		NUTUPS	"Input: NUT UPS daemon" Off \
-		INTERFACE "Input: Network interfaces (libstatgrab)" On \
-		MBMON	"Input: MBMon" Off \
-		MYSQL	"Input: MySQL" Off \
-		PING	"Input: Network latency (liboping)" On \
-		SNMP	"Input: SNMP" On \
-		XMMS	"Input: XMMS" Off \
-		RRDTOOL	"Output: RRDTool" On
+OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
+		DEBUG		"Enable debugging" 				Off \
+		APACHE		"Input: Apache mod_status (libcurl)" 		Off \
+		APCUPS		"Input: APC UPS (apcupsd)" 			Off \
+		CURL		"Input: CURL generic web statistics" 		Off \
+		NUTUPS		"Input: NUT UPS daemon" 			Off \
+		INTERFACE 	"Input: Network interfaces (libstatgrab)" 	On  \
+		MBMON		"Input: MBMon" 					Off \
+		MYSQL		"Input: MySQL" 					Off \
+		NGINX		"Input: Nginx" 					Off \
+		PDNS		"Input: PowerDNS" 				Off \
+		PGSQL		"Input: PostgreSQL" 				Off \
+		PING		"Input: Network latency (liboping)" 		On  \
+		SNMP		"Input: SNMP" 					On  \
+		XMMS		"Input: XMMS" 					Off \
+		RRDTOOL		"Output: RRDTool" 				On
 
 MAN1=		collectd.1 collectd-nagios.1 collectdmon.1
 MAN5=		collectd.conf.5 collectd-email.5 collectd-exec.5 \
 		collectd-snmp.5 collectd-unixsock.5 collectd-perl.5 \
-		types.db.5
+		collectd-java.5 collectd-python.5 types.db.5
 USE_RC_SUBR=	collectd collectdmon
+
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME} \
+		${PREFIX}/lib
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -53,35 +58,66 @@ BROKEN=		Need bind9 import post 6.1
 #       these are Linux specific, but others will probably run on
 #       FreeBSD as well, given a bit of careful attention.
 CONFIGURE_ARGS=	--localstatedir=/var \
+		--disable-getifaddrs \
 		--disable-apple_sensors \
 		--disable-ascent \
 		--disable-battery \
+		--disable-bind \
+		--disable-conntrack \
+		--disable-contextswitch \
 		--disable-cpufreq \
+		--disable-curl_json \
+		--disable-dbi \
 		--disable-disk \
 		--disable-entropy \
+		--disable-fscache \
+		--disable-gmond \
 		--disable-hddtemp \
 		--disable-iptables \
 		--disable-ipmi \
 		--disable-ipvs \
 		--disable-irq \
+		--disable-java \
 		--disable-libvirt \
+		--disable-madwifi \
+		--disable-match_empty_counter \
+		--disable-match_hashed \
+		--disable-match_regex \
+		--disable-match_timediff \
+		--disable-match_value \
+		--disable-memcachec \
 		--disable-multimeter \
+		--disable-netapp \
 		--disable-netlink \
 		--disable-nfs \
-		--disable-nginx \
 		--disable-notify_desktop \
 		--disable-notify_email \
+		--disable-olsrd \
 		--disable-onewire \
+		--disable-openvpn \
+		--disable-oracle \
 		--disable-perl \
-		--disable-postgresql \
+		--disable-python \
+		--disable-protocols \
+		--disable-routeros \
+		--disable-rrdcached \
 		--disable-sensors \
 		--disable-serial \
+		--disable-table \
 		--disable-tape \
+		--disable-target_notification \
+		--disable-target_replace \
+		--disable-target_scale \
+		--disable-target_set \
+		--disable-ted \
 		--disable-thermal \
+		--disable-tokyotyrant \
 		--disable-users \
 		--disable-vmem \
 		--disable-vserver \
 		--disable-wireless \
+		--disable-write_http \
+		--disable-zfs_arc \
 		--without-perl-bindings
 
 .if defined(WITH_DEBUG)
@@ -113,6 +149,15 @@ PLIST_SUB+=	APCUPS=""
 .else
 CONFIGURE_ARGS+=--disable-apcups
 PLIST_SUB+=	APCUPS="@comment "
+.endif
+
+.if defined(WITH_CURL)
+CONFIGURE_ARGS+=--enable-curl --with-libcurl=${LOCALBASE}
+LIB_DEPENDS+=   curl.6:${PORTSDIR}/ftp/curl
+PLIST_SUB+=	CURL=""
+.else
+CONFIGURE_ARGS+=--disable-curl
+PLIST_SUB+=	CURL="@comment "
 .endif
 
 .if defined(WITH_NUTUPS)
@@ -151,6 +196,34 @@ PLIST_SUB+=	MYSQL=""
 .else
 CONFIGURE_ARGS+=--disable-mysql
 PLIST_SUB+=	MYSQL="@comment "
+.endif
+
+.if defined(WITH_NGINX)
+USE_NGINX=	yes
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=--enable-nginx
+PLIST_SUB+=	NGINX=""
+.else
+CONFIGURE_ARGS+=--disable-nginx
+PLIST_SUB+=	NGINX="@comment "
+.endif
+
+.if defined(WITH_PDNS)
+USE_PDNS=	yes
+CONFIGURE_ARGS+=--enable-powerdns
+PLIST_SUB+=	PDNS=""
+.else
+CONFIGURE_ARGS+=--disable-powerdns
+PLIST_SUB+=	PDNS="@comment "
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=--enable-postgresql
+PLIST_SUB+=	PGSQL=""
+.else
+CONFIGURE_ARGS+=--disable-postgresql
+PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if defined(WITH_PING)
@@ -206,6 +279,9 @@ post-patch:
 		-e 's;/opt/collectd/var/lib;/var/db;' \
 		-e 's;/opt/collectd/lib;${PREFIX}/lib;' \
 		${WRKSRC}/contrib/collection.conf
+	@${REINPLACE_CMD} \
+		-e 's;{libdir}/pkgconfig;{prefix}/libdata/pkgconfig;' \
+		${WRKSRC}/configure
 
 post-install:
 	${MKDIR} /var/db/collectd
