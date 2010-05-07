@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	jsMath
-DISTVERSION=	3.6b
+DISTVERSION=	3.6e
 CATEGORIES=	math www
-MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/3.6b
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Javascript tool for including mathematics in web pages
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS=	IMAGE_FONTS "Enable image fonts" On \
 		SPRITE_FONTS "Enable sprite fonts" Off
