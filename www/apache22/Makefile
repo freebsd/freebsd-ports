@@ -147,8 +147,8 @@ SCRIPTS_ENV+=	FULLBUILD=on
 .endif
 
 .if defined (WITH_LDAP) || defined (WITH_LDAP_MODULES)
-USE_OPENLDAP=		YES
-CONFIGURE_ARGS+=	--with-ldap \
+USE_OPENLDAP=		yes
+CONFIGURE_ARGS+=	--enable-ldap=shared --with-ldap --enable-authnz-ldap \
 			--with-ldap-lib="${LOCALBASE}/lib" \
 			--with-ldap-include="${LOCALBASE}/include"
 .endif
