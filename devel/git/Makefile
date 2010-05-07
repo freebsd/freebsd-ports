@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.0.6
+PORTVERSION=	1.7.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -188,7 +188,8 @@ SHELLS=		/etc/shells
 OPTIONS=	GUI "Enable building of GUI tools" off \
 		SVN "Enable required dependencies for SVN tools" off \
 		GITWEB "Install gitweb" off \
-		P4  "Enable Perforce support" on \
+		CONTRIB "Install contributed scripts" on \
+		P4 "Enable Perforce support" on \
 		CVS "Enable CVS support" on \
 		HTMLDOCS "Install additional documentation" off \
 		PERL "Build perl based git tools" on \
@@ -273,6 +274,12 @@ PLIST_SUB+=	GITWEB="@comment "
 IGNORE=	using GITWEB support requires PERL support
 .endif
 
+.ifdef (WITH_CONTRIB)
+PLIST_SUB+=	CONTRIB=""
+.else
+PLIST_SUB+=	CONTRIB="@comment "
+.endif
+
 .ifdef (WITH_P4)
 PLIST_SUB+=	P4=""
 .else
@@ -332,12 +339,15 @@ post-patch:
 .endif
 
 post-build:
-.ifdef (WITH_P4)
+.ifdef (WITH_P4) || defined (WITH_CONTRIB)
 	@${REINPLACE_CMD} -e '1s|#!/usr/bin/python|#!${PYTHON_CMD}|' \
 		${WRKSRC}/contrib/p4import/git-p4import.py
 	@${CP} ${WRKSRC}/contrib/p4import/git-p4import.py \
 		${WRKSRC}/contrib/p4import/git-p4import
 .endif
+	@${REINPLACE_CMD} -e 's|#\. /usr/share/doc/git-core/contrib/hooks/post-receive-email|#. ${PREFIX}/share/git-core/contrib/hooks/post-receive-email|' \
+		${WRKSRC}/templates/blt/hooks/post-receive.sample
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 post-install:
 	(cd ${WRKDIR}/man1/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man1)
@@ -358,27 +368,30 @@ post-install:
 		${PREFIX}/lib/xemacs/site-lisp/git/git.el
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/git-blame.el \
 		${PREFIX}/lib/xemacs/site-lisp/git/git-blame.el
+.ifdef (WITH_GITWEB)
+	${RM} ${WRKSRC}/gitweb/Makefile \
+		${WRKSRC}/gitweb/GITWEB-BUILD-OPTIONS \
+		${WRKSRC}/gitweb/gitweb.perl
+	@${ECHO_MSG} "===> Installing gitweb files"
+	${MKDIR} ${EXAMPLESDIR}/gitweb
+	(cd ${WRKSRC}/gitweb/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/gitweb)
+.endif
+.ifdef (WITH_CONTRIB)
+	@${ECHO_MSG} "===> Installing contributed scripts"
+	${MKDIR} ${PREFIX}/share/git-core/contrib
+	(cd ${WRKSRC}/contrib/ && \
+		${COPYTREE_SHARE} \* ${PREFIX}/share/git-core/contrib)
+.endif
 .ifdef (WITH_P4)
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import \
-		${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/fast-import/git-p4 \
-		${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/fast-import/git-p4 ${PREFIX}/bin/
 .endif
 	@${ECHO_MSG} "===> Updating ${SHELLS}"
 	@${CP} ${SHELLS} ${SHELLS}.bak
 	@(${GREP} -v ${PREFIX}/libexec/git-core/git-shell ${SHELLS}.bak; \
 	  ${ECHO_CMD} ${PREFIX}/libexec/git-core/git-shell) > ${SHELLS}
 	@${RM} ${SHELLS}.bak
-.ifdef (WITH_GITWEB)
-	@${ECHO_MSG} "===> Installing gitweb files"
-	${MKDIR} ${EXAMPLESDIR}/gitweb
-	${INSTALL_DATA} ${WRKSRC}/gitweb/INSTALL ${EXAMPLESDIR}/gitweb/
-	${INSTALL_DATA} ${WRKSRC}/gitweb/README ${EXAMPLESDIR}/gitweb/
-	${INSTALL_DATA} ${WRKSRC}/gitweb/git-favicon.png ${EXAMPLESDIR}/gitweb/
-	${INSTALL_DATA} ${WRKSRC}/gitweb/git-logo.png ${EXAMPLESDIR}/gitweb/
-	${INSTALL_DATA} ${WRKSRC}/gitweb/gitweb.css ${EXAMPLESDIR}/gitweb/
-	${INSTALL_SCRIPT} ${WRKSRC}/gitweb/gitweb.cgi ${EXAMPLESDIR}/gitweb/
-	${INSTALL_SCRIPT} ${WRKSRC}/gitweb/gitweb.js ${EXAMPLESDIR}/gitweb/
+.ifdef (WITH_GITWEB) || defined (WITH_CONTRIB)
 	@${CAT} ${PKGMESSAGE}
 .endif
 

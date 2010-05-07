@@ -758,6 +758,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.0.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.0.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.0.6.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
@@ -767,6 +768,80 @@ share/git-core/templates/info/exclude
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.css
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%/gitweb
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%
+%%CONTRIB%%share/git-core/contrib/README
+%%CONTRIB%%share/git-core/contrib/blameview/README
+%%CONTRIB%%share/git-core/contrib/blameview/blameview.perl
+%%CONTRIB%%share/git-core/contrib/buildsystems/Generators.pm
+%%CONTRIB%%share/git-core/contrib/buildsystems/Generators/QMake.pm
+%%CONTRIB%%share/git-core/contrib/buildsystems/Generators/Vcproj.pm
+%%CONTRIB%%share/git-core/contrib/buildsystems/engine.pl
+%%CONTRIB%%share/git-core/contrib/buildsystems/generate
+%%CONTRIB%%share/git-core/contrib/buildsystems/parse.pl
+%%CONTRIB%%share/git-core/contrib/ciabot/README
+%%CONTRIB%%share/git-core/contrib/ciabot/ciabot.py
+%%CONTRIB%%share/git-core/contrib/ciabot/ciabot.sh
+%%CONTRIB%%share/git-core/contrib/completion/git-completion.bash
+%%CONTRIB%%share/git-core/contrib/continuous/cidaemon
+%%CONTRIB%%share/git-core/contrib/continuous/post-receive-cinotify
+%%CONTRIB%%share/git-core/contrib/convert-objects/convert-objects.c
+%%CONTRIB%%share/git-core/contrib/convert-objects/git-convert-objects.txt
+%%CONTRIB%%share/git-core/contrib/emacs/.gitignore
+%%CONTRIB%%share/git-core/contrib/emacs/Makefile
+%%CONTRIB%%share/git-core/contrib/emacs/README
+%%CONTRIB%%share/git-core/contrib/emacs/git-blame.el
+%%CONTRIB%%share/git-core/contrib/emacs/git.el
+%%CONTRIB%%share/git-core/contrib/examples/README
+%%CONTRIB%%share/git-core/contrib/examples/builtin-fetch--tool.c
+%%CONTRIB%%share/git-core/contrib/examples/git-checkout.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-clean.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-clone.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-commit.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-fetch.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-gc.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-ls-remote.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-merge-ours.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-merge.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-notes.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-remote.perl
+%%CONTRIB%%share/git-core/contrib/examples/git-rerere.perl
+%%CONTRIB%%share/git-core/contrib/examples/git-reset.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-resolve.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-revert.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-svnimport.perl
+%%CONTRIB%%share/git-core/contrib/examples/git-svnimport.txt
+%%CONTRIB%%share/git-core/contrib/examples/git-tag.sh
+%%CONTRIB%%share/git-core/contrib/examples/git-verify-tag.sh
+%%CONTRIB%%share/git-core/contrib/fast-import/git-import.perl
+%%CONTRIB%%share/git-core/contrib/fast-import/git-import.sh
+%%CONTRIB%%share/git-core/contrib/fast-import/git-p4
+%%CONTRIB%%share/git-core/contrib/fast-import/git-p4.bat
+%%CONTRIB%%share/git-core/contrib/fast-import/git-p4.txt
+%%CONTRIB%%share/git-core/contrib/fast-import/import-directories.perl
+%%CONTRIB%%share/git-core/contrib/fast-import/import-tars.perl
+%%CONTRIB%%share/git-core/contrib/fast-import/import-zips.py
+%%CONTRIB%%share/git-core/contrib/git-resurrect.sh
+%%CONTRIB%%share/git-core/contrib/gitview/gitview
+%%CONTRIB%%share/git-core/contrib/gitview/gitview.txt
+%%CONTRIB%%share/git-core/contrib/hg-to-git/hg-to-git.py
+%%CONTRIB%%share/git-core/contrib/hg-to-git/hg-to-git.txt
+%%CONTRIB%%share/git-core/contrib/hooks/post-receive-email
+%%CONTRIB%%share/git-core/contrib/hooks/pre-auto-gc-battery
+%%CONTRIB%%share/git-core/contrib/hooks/setgitperms.perl
+%%CONTRIB%%share/git-core/contrib/hooks/update-paranoid
+%%CONTRIB%%share/git-core/contrib/p4import/README
+%%CONTRIB%%share/git-core/contrib/p4import/git-p4import.py
+%%CONTRIB%%share/git-core/contrib/p4import/git-p4import.txt
+%%CONTRIB%%share/git-core/contrib/p4import/git-p4import
+%%CONTRIB%%share/git-core/contrib/patches/docbook-xsl-manpages-charmap.patch
+%%CONTRIB%%share/git-core/contrib/remotes2config.sh
+%%CONTRIB%%share/git-core/contrib/rerere-train.sh
+%%CONTRIB%%share/git-core/contrib/stats/git-common-hash
+%%CONTRIB%%share/git-core/contrib/stats/mailmap.pl
+%%CONTRIB%%share/git-core/contrib/stats/packinfo.pl
+%%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/README
+%%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/appp.sh
+%%CONTRIB%%share/git-core/contrib/vim/README
+%%CONTRIB%%share/git-core/contrib/workdir/git-new-workdir
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm lib/xemacs/site-lisp/git
 @dirrmtry lib/xemacs/site-lisp
@@ -786,6 +861,26 @@ share/git-core/templates/info/exclude
 @dirrmtry share/git-core/templates/hooks
 @dirrm share/git-core/templates/info
 @dirrmtry share/git-core/templates
+%%CONTRIB%%@dirrm share/git-core/contrib/blameview
+%%CONTRIB%%@dirrm share/git-core/contrib/buildsystems/Generators
+%%CONTRIB%%@dirrm share/git-core/contrib/buildsystems
+%%CONTRIB%%@dirrm share/git-core/contrib/ciabot
+%%CONTRIB%%@dirrm share/git-core/contrib/completion
+%%CONTRIB%%@dirrm share/git-core/contrib/continuous
+%%CONTRIB%%@dirrm share/git-core/contrib/convert-objects
+%%CONTRIB%%@dirrm share/git-core/contrib/emacs
+%%CONTRIB%%@dirrm share/git-core/contrib/examples
+%%CONTRIB%%@dirrm share/git-core/contrib/fast-import
+%%CONTRIB%%@dirrm share/git-core/contrib/gitview
+%%CONTRIB%%@dirrm share/git-core/contrib/hg-to-git
+%%CONTRIB%%@dirrm share/git-core/contrib/hooks
+%%CONTRIB%%@dirrm share/git-core/contrib/p4import
+%%CONTRIB%%@dirrm share/git-core/contrib/patches
+%%CONTRIB%%@dirrm share/git-core/contrib/stats
+%%CONTRIB%%@dirrm share/git-core/contrib/thunderbird-patch-inline
+%%CONTRIB%%@dirrm share/git-core/contrib/vim
+%%CONTRIB%%@dirrm share/git-core/contrib/workdir
+%%CONTRIB%%@dirrm share/git-core/contrib
 @dirrm share/git-core
 @dirrm %%PYTHON_SITELIBDIR%%/git_remote_helpers/git
 @dirrm %%PYTHON_SITELIBDIR%%/git_remote_helpers
