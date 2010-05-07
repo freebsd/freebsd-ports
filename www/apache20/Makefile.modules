@@ -63,6 +63,8 @@ WITH_DBM=bdb
 .if defined(WITH_DBM)
 .   if ${WITH_DBM:L} == "sdbm"
 CONFIGURE_ARGS+=	--with-dbm=sdbm
+.   elif ${WITH_DBM:L} == "ndbm"
+CONFIGURE_ARGS+=       --with-ndbm
 .   elif ${WITH_DBM:L} == "gdbm"
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE}
