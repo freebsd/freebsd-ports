@@ -7,33 +7,32 @@
 
 PORTNAME=	shapelib
 PORTVERSION=	1.3.0
-PORTREVISION=	2
-CATEGORIES=	devel
+PORTREVISION=	3
+CATEGORIES=	devel geography
 MASTER_SITES=	http://download.osgeo.org/shapelib/ \
+		ftp://ftp.remotesensing.org/shapelib/ \
 		http://sunpoet.net/distfiles/
 DISTNAME=	${PORTNAME}-${SHAPELIB_VER}
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
+MAKE_JOBS_UNSAFE=	yes
 USE_AUTOTOOLS=	libtool:22:env
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${SHAPELIB_VER}
-MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	PROJ4 "Cartographic Projections library" off
+OPTIONS=	DEBUG "Debugging" off \
+		PROJ4 "Cartographic Projections library" off
 
-SHAPELIB_VER=	${PORTVERSION}b1
+SHAPELIB_VER=	${PORTVERSION}b2
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PROJ4)
-LIB_DEPENDS+=	proj.6:${PORTSDIR}/graphics/proj
-PLIST_SUB+=	PROJ4=""
-PROJ4=		-DPROJ4
+.if defined(WITH_DEBUG)
+DEBUG=		-DDEBUG -DDEBUG2 -g
 .else
-PLIST_SUB+=	PROJ4="@comment "
-PROJ4=		-DNO_PROJ4
+DEBUG=
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ia64"
@@ -42,9 +41,20 @@ ENDIAN=		-D_LITTLE_ENDIAN
 ENDIAN=		-D_BIG_ENDIAN
 .endif
 
+.if defined(WITH_PROJ4)
+LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
+PLIST_SUB+=	PROJ4=""
+PROJ4=		-DPROJ4
+.else
+PLIST_SUB+=	PROJ4="@comment "
+PROJ4=		-DNO_PROJ4
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
+		-e 's#%%DEBUG%%#${DEBUG}#g' \
 		-e 's#%%INSTALL%%#${INSTALL}#g' \
+		-e 's#%%INSTALL_PROGRAM%%#${INSTALL_PROGRAM}#g' \
 		-e 's#%%LIBTOOL%%#${LIBTOOL}#g' \
 		-e 's#%%PREFIX%%#${PREFIX}#g' \
 		-e 's#%%ENDIAN%%#${ENDIAN}#g' \

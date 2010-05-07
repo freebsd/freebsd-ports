@@ -1,52 +1,43 @@
---- contrib/Makefile.orig	2004-06-24 08:55:52.000000000 +0800
-+++ contrib/Makefile	2009-09-06 05:35:24.000000000 +0800
-@@ -3,19 +3,44 @@
+--- contrib/Makefile.orig	2010-01-04 12:08:02.000000000 +0800
++++ contrib/Makefile	2010-05-01 05:26:53.000000000 +0800
+@@ -3,19 +3,36 @@
  #CFLAGS	=	-g
  
  # Endian: define either _LITTLE_ENDIAN or _BIG_ENDIAN
 -ENDIAN	=	-D_LITTLE_ENDIAN
 +#ENDIAN	=	-D_LITTLE_ENDIAN
  
--CFLAGS	=	-g -I.. -DPROJ4 $(ENDIAN) -DDEBUG -DDEBUG2 
-+CFLAGS	+=	-g -I.. -DDEBUG -DDEBUG2 %%ENDIAN%% %%PROJ4%% -I%%PREFIX%%/include -L%%PREFIX%%/lib
+-CFLAGS	=	-g -I.. -I$(HOME)/bld/include -DPROJ4 $(ENDIAN) -DDEBUG -DDEBUG2 
++CFLAGS	+=	%%DEBUG%% %%ENDIAN%% %%PROJ4%% -I.. -I%%PREFIX%%/include -L%%PREFIX%%/lib
  
--SHPOBJ	=	../shpopen.o ../dbfopen.o 
-+SHPOBJ	=	../shpopen.o ../dbfopen.o ../safileio.o
+ SHPOBJ	=	../shpopen.o ../dbfopen.o ../safileio.o
  
--SHPGOBJ =	../shpopen.o ../dbfopen.o shpgeo.o
-+SHPGOBJ =	../shpopen.o ../dbfopen.o ../safileio.o shpgeo.o
+ SHPGOBJ =	../shpopen.o ../dbfopen.o ../safileio.o shpgeo.o
  
- GEOOBJ	=	./shpgeo.o -lm -lproj
+-GEOOBJ	=	./shpgeo.o -lm -L$(HOME)/bld/lib -lproj
++GEOOBJ	=	./shpgeo.o -lm -lproj
  
  default:	all
  
 -all:	shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfinfo dbfcat shpinfo shpfix shpcat Shape_PointInPoly shpsort
 +#all:	shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfinfo dbfcat shpinfo shpfix shpcat Shape_PointInPoly shpsort
 +
-+.if defined(PROJ4)
-+all:		allprog allproj
-+install:	allprog_install allproj_install
-+.else
-+all:		allprog
-+install:	allprog_install
-+.endif
-+
 +ALLPROG=	dbfcat dbfinfo shpcat shpdxf shpfix Shape_PointInPoly
 +ALLPROJ=	shpcentrd shpdata shpinfo shpproj shpwkb shpsort
 +
-+allprog:	$(ALLPROG)
++.if defined(PROJ4)
++all:		$(ALLPROG) $(ALLPROJ)
++install:	allprog_install allproj_install
++.else
++all:		$(ALLPROG)
++install:	allprog_install
++.endif
 +
 +allprog_install:	$(ALLPROG)
-+.for _ALLPROG in $(ALLPROG)
-+	%%INSTALL%% -c -m 755 ${_ALLPROG} %%PREFIX%%/bin/${_ALLPROG}
-+.endfor
-+
-+allproj:	$(ALLPROJ)
++	%%INSTALL_PROGRAM%% $(ALLPROG) %%PREFIX%%/bin/
 +
 +allproj_install:	$(ALLPROJ)
-+.for _ALLPROJ in $(ALLPROJ)
-+	%%INSTALL%% -c -m 755 ${_ALLPROJ} %%PREFIX%%/bin/${_ALLPROJ}
-+.endfor
++	%%INSTALL_PROGRAM%% $(ALLPROJ) %%PREFIX%%/bin/
  
  clean:  
  	rm -f shpdxf shpproj dbfinfo shpcentrd shpdata shpwkb dbfcat dbfinfo shpinfo shpfix shpcat *.o
