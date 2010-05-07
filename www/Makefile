@@ -1078,6 +1078,7 @@
     SUBDIR += p5-Net-YAP
     SUBDIR += p5-Net-eBay
     SUBDIR += p5-Newsletter
+    SUBDIR += p5-Nginx-ReadBody
     SUBDIR += p5-PHP-Session
     SUBDIR += p5-PLP
     SUBDIR += p5-POE-Component-Client-HTTP

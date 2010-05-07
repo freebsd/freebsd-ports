@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Nginx/ReadBody.pm
+%%SITE_PERL%%/Nginx/ReadBody/Russian.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Nginx/ReadBody/.packlist
+@dirrm %%SITE_PERL%%/Nginx/ReadBody
+@dirrmtry %%SITE_PERL%%/Nginx
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nginx/ReadBody
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nginx
