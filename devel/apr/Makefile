@@ -26,7 +26,9 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 		MYSQL	"Enable MySQL suport in apr-util"		off \
 		NDBM	"Enable NDBM support in apr-util"		off \
 		PGSQL	"Enable Postgresql suport in apr-util"		off \
-		SQLITE  "Enable SQLite3 support in apr-util"		off
+		SQLITE  "Enable SQLite3 support in apr-util"		off \
+		EGD	"Use EGD compatible sockets in apr"		off \
+		DEVRANDOM "Use /dev/random or compatible in apr"	off
 
 APR_VERSION=	1.4.2
 APU_VERSION=	1.3.9
@@ -75,6 +77,28 @@ APR_CONF_ARGS+=	--enable-ipv6
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ipv6
 .else
 PKGNAMESUFFIX=	-ipv6
+.endif
+.endif
+
+.if defined(WITHOUT_EGD)
+APR_CONF_ARGS+=	--without-egd
+.else
+APR_CONF_ARGS+=	--with-egd
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-egd
+.else
+PKGNAMESUFFIX=	-egd
+.endif
+.endif
+
+.if defined(WITHOUT_DEVRANDOM)
+APR_CONF_ARGS+=	--without-devrandom
+.else
+APR_CONF_ARGS+=	--with-devrandom
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-devrandom
+.else
+PKGNAMESUFFIX=	-devrandom
 .endif
 .endif
 
