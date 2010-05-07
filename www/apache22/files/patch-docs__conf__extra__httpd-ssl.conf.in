@@ -1,8 +1,8 @@
---- docs/conf/extra/httpd-ssl.conf.in.orig	Wed Mar  7 08:33:58 2007
-+++ docs/conf/extra/httpd-ssl.conf.in	Sun Sep  9 11:59:51 2007
+--- ./docs/conf/extra/httpd-ssl.conf.in.orig	2008-02-04 18:00:07.000000000 -0500
++++ ./docs/conf/extra/httpd-ssl.conf.in	2010-05-06 19:37:54.219730055 -0400
 @@ -77,8 +77,8 @@
  DocumentRoot "@exp_htdocsdir@"
- ServerName www.example.com:443
+ ServerName www.example.com:@@SSLPort@@
  ServerAdmin you@example.com
 -ErrorLog "@exp_logfiledir@/error_log"
 -TransferLog "@exp_logfiledir@/access_log"

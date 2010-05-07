@@ -1,6 +1,6 @@
---- configure.in.orig	Sun Nov 13 06:33:15 2005
-+++ configure.in	Sat Dec 10 13:14:10 2005
-@@ -67,9 +67,14 @@
+--- ./configure.in.orig	2008-12-01 15:32:43.000000000 -0500
++++ ./configure.in	2010-05-06 19:37:54.216730223 -0400
+@@ -87,9 +87,14 @@
    AC_MSG_ERROR([APR not found.  Please read the documentation.])
  fi
  
@@ -16,7 +16,7 @@
                      [--enable-layout=*|\'--enable-layout=*])
    dnl We must be the first to build and the last to be cleaned
    AP_BUILD_SRCLIB_DIRS="apr $AP_BUILD_SRCLIB_DIRS"
-@@ -95,6 +100,11 @@
+@@ -123,6 +128,11 @@
    AC_MSG_ERROR([APR-util not found.  Please read the documentation.])
  fi
  
@@ -28,7 +28,7 @@
  # Catch some misconfigurations:
  case ${apr_found}.${apu_found} in
  reconfig.yes)
-@@ -107,7 +117,7 @@
+@@ -135,7 +145,7 @@
  
  if test "$apu_found" = "reconfig"; then
    APR_SUBDIR_CONFIG(srclib/apr-util,
@@ -37,7 +37,7 @@
                      [--enable-layout=*|\'--enable-layout=*])
    dnl We must be the last to build and the first to be cleaned
    AP_BUILD_SRCLIB_DIRS="$AP_BUILD_SRCLIB_DIRS apr-util"
-@@ -617,8 +627,14 @@
+@@ -653,8 +663,14 @@
  	[Root directory of the Apache install area])
  AC_DEFINE_UNQUOTED(SERVER_CONFIG_FILE, "${rel_sysconfdir}/${progname}.conf",
  	[Location of the config file, relative to the Apache root directory])

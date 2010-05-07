@@ -1,5 +1,5 @@
---- config.layout.orig	Sun Nov 21 18:50:36 2004
-+++ config.layout	Sat Dec  3 22:07:46 2005
+--- ./config.layout.orig	2004-11-21 13:50:36.000000000 -0500
++++ ./config.layout	2010-05-06 19:37:54.214731918 -0400
 @@ -281,17 +281,17 @@
    bindir:        ${exec_prefix}/bin
    sbindir:       ${exec_prefix}/sbin

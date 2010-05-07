@@ -1,5 +1,5 @@
---- support/Makefile.in.orig	2005-07-06 23:15:34.000000000 +0000
-+++ support/Makefile.in	2007-07-22 09:41:16.000000000 +0000
+--- ./support/Makefile.in.orig	2005-07-06 19:15:34.000000000 -0400
++++ ./support/Makefile.in	2010-05-06 19:37:54.258730387 -0400
 @@ -16,17 +16,14 @@
  	@test -d $(DESTDIR)$(sbindir) || $(MKINSTALLDIRS) $(DESTDIR)$(sbindir)
  	@test -d $(DESTDIR)$(libexecdir) || $(MKINSTALLDIRS) $(DESTDIR)$(libexecdir)

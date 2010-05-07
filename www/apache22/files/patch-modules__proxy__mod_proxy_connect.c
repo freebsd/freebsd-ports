@@ -1,6 +1,5 @@
-diff -Naurw modules/proxy/mod_proxy_connect.c modules/proxy/mod_proxy_connect.c
---- modules/proxy/mod_proxy_connect.c	2007-09-02 18:42:59.000000000 +0100
-+++ modules/proxy/mod_proxy_connect.c	2007-10-08 17:03:32.523635700 +0100
+--- ./modules/proxy/mod_proxy_connect.c.orig	2009-11-19 09:07:46.000000000 -0500
++++ ./modules/proxy/mod_proxy_connect.c	2010-05-06 19:37:54.227730259 -0400
 @@ -21,6 +21,8 @@
  #include "mod_proxy.h"
  #include "apr_poll.h"

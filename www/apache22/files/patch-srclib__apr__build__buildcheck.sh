@@ -1,5 +1,5 @@
---- srclib/apr/build/buildcheck.sh.orig	Fri Jun 17 00:53:05 2005
-+++ srclib/apr/build/buildcheck.sh	Sun Sep 24 15:18:38 2006
+--- ./srclib/apr/build/buildcheck.sh.orig	2009-11-12 19:27:16.000000000 -0500
++++ ./srclib/apr/build/buildcheck.sh	2010-05-06 19:37:54.248730202 -0400
 @@ -2,6 +2,7 @@
  
  echo "buildconf: checking installation..."
@@ -14,7 +14,7 @@
  fi
 +fi
  
- # autoconf 2.50 or newer
+ # autoconf 2.59 or newer
  ac_version=`${AUTOCONF:-autoconf} --version 2>/dev/null|sed -e 's/^[^0-9]*//;s/[a-z]* *$//;q'`
 @@ -38,7 +40,7 @@
  # output is multiline from 1.5 onwards
