@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	scamper
-PORTVERSION=	20070523o
+PORTVERSION=	20100503
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wand.net.nz/scamper/
 DISTNAME=	${PORTNAME}-cvs-${PORTVERSION}
 
 MAINTAINER=	mjl@luckie.org.nz
-COMMENT=	Tool for IPv4 and IPv6 traceroute with path MTU discovery
+COMMENT=	Tool for parallelised IPv4 and IPv6 measurement
 
 MAN1=		scamper.1
 
