@@ -21,6 +21,16 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	PCDIR="${PREFIX}/libdata/pkgconfig"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" && !defined(CPUTYPE)
+CONFIGURE_TARGET=	i586-portbld-freebsd${OSREL}
+CPUTYPE=	i586
+PKGMESSAGE=	${FILESDIR}/pkg-message.${ARCH}
+# _CPUCFLAGS will somehow show up twice in CFLAGS but who cares..
+.include <bsd.cpu.mk>
+.endif
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
@@ -47,5 +57,8 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "COPYING ChangeLog THANKS doc" ${DOCSDIR}/
 .endif
+.if exists(${PKGMESSAGE})
+	@${CAT} ${PKGMESSAGE}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
