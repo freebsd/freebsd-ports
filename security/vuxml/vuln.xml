@@ -34,6 +34,63 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="28022228-5a0e-11df-942d-0015587e2cc1">
+    <topic>wireshark -- DOCSIS dissector denial of service</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<range><le>1.2.6_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A vulnerability found in the DOCSIS dissector can cause
+	  Wireshark to crash when a malformed packet trace file is
+	  opened. This means that an attacker will have to trick a
+	  victim into opening such a trace file before being able
+	  to crash the application</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1455</cvename>
+      <url>http://www.wireshark.org/security/wnpa-sec-2010-03.html</url>
+      <url>http://www.wireshark.org/security/wnpa-sec-2010-04.html</url>
+    </references>
+    <dates>
+      <discovery>2010-05-05</discovery>
+      <entry>2010-05-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c0869649-5a0c-11df-942d-0015587e2cc1">
+    <topic>piwik -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>piwik</name>
+	<range><le>0.5.5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Piwik security advisory reports:</p>
+	<blockquote cite="http://piwik.org/blog/2010/04/piwik-0-6-security-advisory/">
+	  <p>A non-persistent, cross-site scripting vulnerability
+	    (XSS) was found in Piwik's Login form that reflected
+	    the form_url parameter without being properly escaped
+	    or filtered.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1453</cvename>
+      <url>http://piwik.org/blog/2010/04/piwik-0-6-security-advisory/</url>
+    </references>
+    <dates>
+      <discovery>2010-04-15</discovery>
+      <entry>2010-05-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7132c842-58e2-11df-8d80-0015587e2cc1">
     <topic>spamass-milter -- remote command execution vulnerability</topic>
     <affects>
