@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://1978th.net/kyotocabinet/rubypkg/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
