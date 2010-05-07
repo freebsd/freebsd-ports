@@ -1,6 +1,6 @@
---- ./server/core.c.orig	2008-06-02 23:18:18.000000000 +0200
-+++ ./server/core.c	2009-03-09 15:05:57.000000000 +0100
-@@ -494,6 +494,7 @@
+--- ./server/core.c.orig	2009-07-02 17:30:36.000000000 -0400
++++ ./server/core.c	2010-05-06 19:37:54.278731038 -0400
+@@ -500,6 +500,7 @@
      core_server_config *base = (core_server_config *)basev;
      core_server_config *virt = (core_server_config *)virtv;
      core_server_config *conf;
@@ -8,7 +8,7 @@
  
      conf = (core_server_config *)apr_pmemdup(p, virt, sizeof(core_server_config));
  
-@@ -509,6 +510,25 @@
+@@ -515,6 +516,25 @@
          conf->protocol = base->protocol;
      }
  
@@ -34,3 +34,30 @@
      conf->sec_dir = apr_array_append(p, base->sec_dir, virt->sec_dir);
      conf->sec_url = apr_array_append(p, base->sec_url, virt->sec_url);
  
+@@ -2750,7 +2770,7 @@
+ AP_DECLARE(const char *) ap_get_server_description(void)
+ {
+     return server_description ? server_description :
+-        AP_SERVER_BASEVERSION " (" PLATFORM ")";
++        AP_SERVER_BASEVERSION " (FreeBSD)";
+ }
+ 
+ AP_DECLARE(const char *) ap_get_server_banner(void)
+@@ -2811,7 +2831,7 @@
+         ap_add_version_component(pconf, AP_SERVER_BASEPRODUCT "/" AP_SERVER_MAJORVERSION);
+     }
+     else {
+-        ap_add_version_component(pconf, AP_SERVER_BASEVERSION " (" PLATFORM ")");
++        ap_add_version_component(pconf, AP_SERVER_BASEVERSION " (FreeBSD)");
+     }
+ 
+     /*
+@@ -2821,7 +2841,7 @@
+     if (ap_server_tokens != SrvTk_FULL) {
+         banner_locked++;
+     }
+-    server_description = AP_SERVER_BASEVERSION " (" PLATFORM ")";
++    server_description = AP_SERVER_BASEVERSION " (FreeBSD)";
+ }
+ 
+ static const char *set_serv_tokens(cmd_parms *cmd, void *dummy,

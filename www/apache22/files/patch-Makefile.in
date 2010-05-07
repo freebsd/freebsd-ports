@@ -1,5 +1,5 @@
---- Makefile.in.orig	2007-04-24 11:08:01.000000000 +0000
-+++ Makefile.in	2007-12-03 21:15:51.000000000 +0000
+--- ./Makefile.in.orig	2008-11-25 15:24:49.000000000 -0500
++++ ./Makefile.in	2010-05-06 19:37:54.211730130 -0400
 @@ -31,9 +31,11 @@
  install-conf:
  	@echo Installing configuration files
@@ -13,8 +13,8 @@
  	    if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
  	        $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
  	    fi; \
-@@ -66,14 +68,14 @@
- 	    				-e 's#@@Port@@#$(PORT)#g' \
+@@ -69,14 +71,14 @@
+ 	    				-e 's#@@SSLPort@@#$(SSLPORT)#g' \
  	    				< $$i; \
  	    		fi \
 -	    	) > $(DESTDIR)$(sysconfdir)/original/$$i; \
@@ -31,7 +31,7 @@
  	    	fi; \
  	    	fi; \
  	    done ; \
-@@ -117,48 +119,29 @@
+@@ -120,48 +122,29 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -90,7 +90,7 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -206,12 +189,14 @@
+@@ -210,12 +193,14 @@
  	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
  	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8

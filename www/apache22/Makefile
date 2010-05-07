@@ -172,10 +172,6 @@ CONFIGURE_ARGS+=	--enable-nonportable-atomics
 
 CONFIGURE_ARGS+=	--with-mpm=${WITH_MPM:L}
 
-.if defined(WITH_PATCH_PROXY_CONNECT)
-EXTRA_PATCHES+=	${FILESDIR}/opt-patch-modules:proxy:mod_proxy_connect.c
-.endif
-
 pre-everything::
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	" To enable a module category: WITH_<CATEGORY>_MODULES"

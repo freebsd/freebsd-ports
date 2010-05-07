@@ -1,8 +1,8 @@
---- srclib/apr-util/buildconf.orig	Sat Mar 25 20:30:07 2006
-+++ srclib/apr-util/buildconf	Sun Sep 24 15:13:18 2006
+--- ./srclib/apr-util/buildconf.orig	2007-01-15 14:00:58.000000000 -0500
++++ ./srclib/apr-util/buildconf	2010-05-06 19:37:54.235730463 -0400
 @@ -81,8 +81,10 @@
  #
- # Generate build-outputs.mk for the build systme
+ # Generate build-outputs.mk for the build system
  #
 +if [ "x${FULLBUILD}" = "xon" ] ; then
  echo "Generating 'make' outputs ..."

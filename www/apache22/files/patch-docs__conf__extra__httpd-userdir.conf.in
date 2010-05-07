@@ -1,5 +1,5 @@
---- docs/conf/extra/httpd-userdir.conf.in.orig	Sun Oct 30 19:37:37 2005
-+++ docs/conf/extra/httpd-userdir.conf.in	Sun Oct 30 19:38:27 2005
+--- ./docs/conf/extra/httpd-userdir.conf.in.orig	2007-03-07 02:33:58.000000000 -0500
++++ ./docs/conf/extra/httpd-userdir.conf.in	2010-05-06 19:37:54.222730166 -0400
 @@ -8,7 +8,7 @@
  # the default access control for these directories, as in the example below.
  #

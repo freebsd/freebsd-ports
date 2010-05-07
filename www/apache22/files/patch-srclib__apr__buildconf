@@ -1,5 +1,5 @@
---- srclib/apr/buildconf.orig	2009-11-12 17:19:49.000000000 -0500
-+++ srclib/apr/buildconf	2010-04-30 19:22:40.116834529 -0400
+--- ./srclib/apr/buildconf.orig	2009-11-12 17:19:49.000000000 -0500
++++ ./srclib/apr/buildconf	2010-05-06 19:37:54.253730294 -0400
 @@ -28,7 +28,7 @@
  #
  build/buildcheck.sh $verbose || exit 1

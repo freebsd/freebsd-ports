@@ -1,7 +1,5 @@
-Index: srclib/apr-util/build/dbm.m4
-diff -u srclib/apr-util/build/dbm.m4.orig srclib/apr-util/build/dbm.m4
---- srclib/apr-util/build/dbm.m4.orig	2008-11-21 15:32:58.000000000 +0900
-+++ srclib/apr-util/build/dbm.m4	2009-12-01 15:02:29.374250645 +0900
+--- ./srclib/apr-util/build/dbm.m4.orig	2008-11-21 01:32:58.000000000 -0500
++++ ./srclib/apr-util/build/dbm.m4	2010-05-06 19:37:54.238730296 -0400
 @@ -315,8 +315,8 @@
    fi
    APU_CHECK_BERKELEY_DB(1, -1, -1,

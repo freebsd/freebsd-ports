@@ -1,6 +1,6 @@
---- srclib/apr-util/Makefile.in.orig	2008-05-23 00:37:47.000000000 +0200
-+++ srclib/apr-util/Makefile.in	2008-06-12 16:33:33.000000000 +0200
-@@ -69,12 +69,11 @@
+--- ./srclib/apr-util/Makefile.in.orig	2008-11-21 01:32:58.000000000 -0500
++++ ./srclib/apr-util/Makefile.in	2010-05-06 19:37:54.256730127 -0400
+@@ -74,12 +74,11 @@
  	sed 's,^\(location=\).*$$,\1installed,' < $(APU_CONFIG) > $@
  
  install: $(TARGETS) install-modules

@@ -1,6 +1,6 @@
---- support/ab.c.orig	2008-12-01 00:47:31.000000000 +0900
-+++ support/ab.c	2009-04-01 16:08:09.000000000 +0900
-@@ -208,13 +208,18 @@
+--- ./support/ab.c.orig	2010-01-07 10:11:53.000000000 -0500
++++ ./support/ab.c	2010-05-06 19:37:54.262732305 -0400
+@@ -221,13 +221,18 @@
  /* maximum number of requests on a time limited test */
  #define MAX_REQUESTS (INT_MAX > 50000 ? 50000 : INT_MAX)
  
@@ -24,7 +24,7 @@
  
  #define CBUFFSIZE (2048)
  
-@@ -239,6 +244,7 @@
+@@ -252,6 +257,7 @@
                 done;            /* Connection closed */
  
      int socknum;
@@ -32,7 +32,7 @@
  #ifdef USE_SSL
      SSL *ssl;
  #endif
-@@ -383,6 +389,56 @@
+@@ -396,6 +402,56 @@
      exit(rv);
  }
  
@@ -89,7 +89,7 @@
  /* --------------------------------------------------------- */
  /* write out request to a connection - assumes we can write
   * (small) request out in one go into our new socket buffer
-@@ -556,7 +612,6 @@
+@@ -569,7 +625,6 @@
  
      while (do_next) {
          int ret, ecode;
@@ -97,7 +97,7 @@
  
          ret = SSL_do_handshake(c->ssl);
          ecode = SSL_get_error(c->ssl, ret);
-@@ -588,11 +643,7 @@
+@@ -601,11 +656,7 @@
              do_next = 0;
              break;
          case SSL_ERROR_WANT_READ:
@@ -110,7 +110,7 @@
              do_next = 0;
              break;
          case SSL_ERROR_WANT_WRITE:
-@@ -668,16 +719,8 @@
+@@ -681,16 +732,8 @@
          c->rwrite -= l;
      } while (c->rwrite);
  
@@ -128,7 +128,7 @@
  }
  
  /* --------------------------------------------------------- */
-@@ -1191,21 +1234,12 @@
+@@ -1210,21 +1253,12 @@
  #endif
      if ((rv = apr_socket_connect(c->aprsock, destsa)) != APR_SUCCESS) {
          if (APR_STATUS_IS_EINPROGRESS(rv)) {
@@ -152,7 +152,7 @@
              apr_socket_close(c->aprsock);
              err_conn++;
              if (bad++ > 10) {
-@@ -1213,14 +1247,14 @@
+@@ -1232,14 +1266,14 @@
                     "\nTest aborted after 10 failures\n\n");
                  apr_err("apr_socket_connect()", rv);
              }
@@ -169,7 +169,7 @@
      started++;
  #ifdef USE_SSL
      if (c->ssl) {
-@@ -1269,21 +1303,15 @@
+@@ -1288,21 +1322,15 @@
          }
      }
  
@@ -198,7 +198,7 @@
  
      /* connect again */
      start_connect(c);
-@@ -1401,10 +1429,7 @@
+@@ -1420,10 +1448,7 @@
              }
              else {
              /* header is in invalid or too big - close connection */
@@ -210,7 +210,7 @@
                  apr_socket_close(c->aprsock);
                  err_response++;
                  if (bad++ > 10) {
-@@ -1727,11 +1752,7 @@
+@@ -1748,11 +1773,7 @@
              }
              if (rv & APR_POLLOUT) {
                  if (c->state == STATE_CONNECTING) {
@@ -222,7 +222,7 @@
                      if (rv != APR_SUCCESS) {
                          apr_socket_close(c->aprsock);
                          err_conn++;
-@@ -1740,12 +1761,12 @@
+@@ -1761,12 +1782,12 @@
                                      "\nTest aborted after 10 failures\n\n");
                              apr_err("apr_socket_connect()", rv);
                          }
@@ -237,7 +237,7 @@
                          started++;
  #ifdef USE_SSL
                          if (c->ssl)
-@@ -1759,22 +1780,6 @@
+@@ -1780,22 +1801,6 @@
                      write_request(c);
                  }
              }
