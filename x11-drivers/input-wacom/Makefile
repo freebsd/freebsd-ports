@@ -65,6 +65,8 @@ PLIST_SUB+=	UWACOMKLD="@noinst UWACOMKLD uwacom.ko"
 PORTTYPE=	serial
 .endif
 
+BROKEN=		build failed
+
 do-configure:
 	@cd ${WRKDIR}/linuxwacom \
 		&& ${LN} -s ${DISTDIR}/${DIST_SUBDIR}/${LINUXWACOM}.tar.bz2 \
