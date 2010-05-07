@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Astro-satpass
-PORTVERSION=	0.030
+PORTVERSION=	0.031
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Classes and app to compute satellite visibility
 
 BUILD_DEPENDS=	p5-Date-Manip>=1.14:${PORTSDIR}/devel/p5-Date-Manip \
