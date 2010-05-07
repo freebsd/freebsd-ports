@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Rose-DBx-Object-Renderer
-PORTVERSION=	0.68
+PORTVERSION=	0.69
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web UI Rendering for Rose::DB::Object
 
 RUN_DEPENDS=	p5-Rose-DBx-Object-MoreHelpers>=0:${PORTSDIR}/databases/p5-Rose-DBx-Object-MoreHelpers \
