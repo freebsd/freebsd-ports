@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xapian-bindings
-PORTVERSION=	1.0.16
+PORTVERSION=	1.0.18
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Bindings allowing Xapian to be used from various programming languages
 
-RUN_DEPENDS=	xapian-core>=1.0.16:${PORTSDIR}/databases/xapian-core
+RUN_DEPENDS=	xapian-core>=1.0.18:${PORTSDIR}/databases/xapian-core
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 CONFIGURE_ARGS+=	--datarootdir="${DATADIR}" --docdir="${DOCSDIR}" \
