@@ -3,7 +3,7 @@
 @exec mkdir -p %D/etc/apache22/extra 2> /dev/null
 @exec mkdir -p %D/etc/apache22/Includes 2> /dev/null || true
 @exec mkdir -p %D/etc/apache22/envvars.d 2> /dev/null || true
-@unexec if cmp -s %D/etc/apache22/httpd.conf %D/%%EXAMPLESDIR%%/httpd.conf; then rm -f %D/etc/apache22/httpd.conf; fi
+@unexec if cmp %D/etc/apache22/httpd.conf %D/%%EXAMPLESDIR%%/httpd.conf; then rm -f %D/etc/apache22/httpd.conf; fi
 %%EXAMPLESDIR%%/httpd.conf
 @exec [ -f %D/etc/apache22/httpd.conf ] || cp %D/%%EXAMPLESDIR%%/httpd.conf %D/etc/apache22/httpd.conf
 @unexec if cmp -s %D/etc/apache22/magic %D/%%EXAMPLESDIR%%/magic; then rm -f %D/etc/apache22/magic; fi
