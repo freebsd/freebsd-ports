@@ -90,10 +90,18 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -210,12 +193,14 @@
+@@ -208,14 +191,20 @@
+ 	@test -d $(DESTDIR)$(mandir)/man1 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
+ 	@test -d $(DESTDIR)$(mandir)/man8 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man8
  	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
- 	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
- 	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
+-	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
+-	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
++	for i in dbmmanage htdbm htdigest htpasswd; do \
++	  ${INSTALL_MAN} $(top_srcdir)/docs/man/$$i.1 $(DESTDIR)$(mandir)/man1; \
++	done
++	for i in ab apachectl apxs htcacheclean httpd logresolve rotatelogs suexec; do \
++	  ${INSTALL_MAN} $(top_srcdir)/docs/man/$$i.8 $(DESTDIR)$(mandir)/man8; \
++	done
 +.if !defined(NOPORTDOCS)
  	@if test "x$(RSYNC)" != "x" && test -x $(RSYNC) ; then \
  	  $(RSYNC) --exclude .svn -rlpt --numeric-ids $(top_srcdir)/docs/manual/ $(DESTDIR)$(manualdir)/; \
