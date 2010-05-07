@@ -1,6 +1,6 @@
 # ex:ts=8
-# Ports collection makefile for:	gcc45
-# Date created:				2009-04-05
+# Ports collection makefile for:	gcc46
+# Date created:				2010-04-25
 # Whom:					Gerald Pfeifer <gerald@FreeBSD.org>
 #
 # $FreeBSD$
@@ -16,7 +16,7 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	GNU Compiler Collection 4.5
+COMMENT=	GNU Compiler Collection 4.6
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.3:${PORTSDIR}/math/mpfr \
