@@ -40,8 +40,7 @@ MAN5=		collectd.conf.5 collectd-email.5 collectd-exec.5 \
 		collectd-java.5 collectd-python.5 types.db.5
 USE_RC_SUBR=	collectd collectdmon
 
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME} \
-		${PREFIX}/lib
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
