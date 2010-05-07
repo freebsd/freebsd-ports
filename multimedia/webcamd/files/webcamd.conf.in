@@ -1,5 +1,7 @@
-attach 100 {
-	device-name "ugen[0-9]+";
-	match "intclass" "(0x0e|0xff)";
-	action "%%PREFIX%%/etc/rc.d/webcamd start $device-name";
+notify 100 {
+	match "system"		"USB";
+	match "subsystem"	"INTERFACE";
+	match "type"		"ATTACH";
+	match "intclass"	"(0x0e|0xff)";
+	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev";
 };
