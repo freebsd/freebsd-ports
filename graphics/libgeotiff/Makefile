@@ -9,10 +9,10 @@ PORTNAME=	libgeotiff
 PORTVERSION=	1.2.5
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.remotesensing.org/pub/geotiff/libgeotiff/ \
-		http://dl1.maptools.org/dl/geotiff/libgeotiff/
+MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
+		ftp://ftp.remotesensing.org/geotiff/libgeotiff/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Library for reading and writing GeoTIFF information tags
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
