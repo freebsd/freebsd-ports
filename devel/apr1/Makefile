@@ -6,6 +6,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -27,7 +28,7 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 		NDBM	"Enable NDBM support in apr-util"		off \
 		PGSQL	"Enable Postgresql suport in apr-util"		off \
 		SQLITE  "Enable SQLite3 support in apr-util"		off \
-		DEVRANDOM "Use /dev/random or compatible in apr"	off
+		DEVRANDOM "Use /dev/random or compatible in apr"	on
 
 APR_VERSION=	1.4.2
 APU_VERSION=	1.3.9
