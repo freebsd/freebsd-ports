@@ -15,4 +15,10 @@ COMMENT=	X.Org acecad input driver
 XORG_CAT=	driver
 MAN4=		acecad.4x
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+USE_GCC=	4.2+
+.endif
+
+.include <bsd.port.post.mk>
