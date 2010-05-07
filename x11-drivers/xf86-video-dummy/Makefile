@@ -15,4 +15,10 @@ COMMENT=	X.Org dummy display driver
 XORG_CAT=	driver
 USE_XORG=	videoproto xf86dgaproto
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+USE_GCC=	4.2+
+.endif
+
+.include <bsd.port.post.mk>
