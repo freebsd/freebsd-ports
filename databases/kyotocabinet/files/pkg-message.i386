@@ -1,0 +1,5 @@
+========================================================================
+This binary package is built for i586 and higher, because Kyoto Cabinet
+relies on some kinds of CPU instructions that i386 and i486 do not have.
+Do not use this package on those CPUs.
+========================================================================
