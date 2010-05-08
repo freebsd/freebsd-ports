@@ -1,0 +1,3 @@
+lib/perl5/site_perl/%%PERL_VERSION%%/Apache/Htgroup.pm
+@dirrm %%SITE_PERL%%/Apache/Htgroup.pm
+@dirrmtry %%SITE_PERL%%/Apache/Htgroup

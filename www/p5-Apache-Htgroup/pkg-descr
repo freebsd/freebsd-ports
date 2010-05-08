@@ -1,0 +1,4 @@
+Manage Apache htgroup files. Please note that this is not a mod_perl
+module. Please also note that there is another module that does similar
+things (HTTPD::UserManage) and that this is a more simplistic module, not
+doing all the things that one does.
