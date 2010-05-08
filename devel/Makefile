@@ -1317,6 +1317,7 @@
     SUBDIR += p5-Data-Hexdumper
     SUBDIR += p5-Data-Hierarchy
     SUBDIR += p5-Data-Integer
+    SUBDIR += p5-Data-JavaScript-Anon
     SUBDIR += p5-Data-Lazy
     SUBDIR += p5-Data-Localize
     SUBDIR += p5-Data-MessagePack
