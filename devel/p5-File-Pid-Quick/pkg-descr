@@ -1,0 +1,12 @@
+This module associates a PID file with your script for the purpose
+of keeping more than one copy from running (concurrency prevention).
+It creates the PID file, checks for its existence when the script
+is run, terminates the script if there is already an instance running,
+and removes the PID file when the script finishes.
+
+This module's objective is to provide a completely simplified
+interface that makes adding PID-file-based concurrency prevention
+to your script as quick and simple as possible; hence File::Pid::Quick.
+For a more nuanced implementation of PID files, please see File::Pid.
+
+WWW: http://search.cpan.org/dist/File-Pid-Quick/Quick.pm
