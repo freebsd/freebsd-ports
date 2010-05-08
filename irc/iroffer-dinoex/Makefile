@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	3.20
-PORTREVISION=	1
+PORTVERSION=	3.21
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -22,6 +21,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 MAN1=		iroffer.1
 CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
+USE_RC_SUBR=	iroffer-dinoex
 
 OPTIONS=	CURL	"build ftp/http support"	on \
 		RUBY	"build RUBY script support"	on \
