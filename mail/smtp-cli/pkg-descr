@@ -1,0 +1,10 @@
+smtp-cli is a powerful SMTP command line client with a support for
+advanced features, such as STARTTLS, SMTP-AUTH, or IPv6 and with a
+scriptable message composition capabilities supporting anything
+from simple plain-text messages right up to building complex HTML
+emails with alternative plain-text part, attachments and inline
+images. The MIME-Type of the attachments can either be guessed
+automatically or alternatively set on the command line, separately
+for each attachment if required.
+
+WWW:	http://www.logix.cz/michal/devel/smtp-cli/
