@@ -1,0 +1,11 @@
+--- postprocess/checkdeliver/checkdeliver.pl~	2010-04-29 13:18:38.000000000 +0900
++++ postprocess/checkdeliver/checkdeliver.pl	2010-05-07 09:19:07.000000000 +0900
+@@ -48,7 +48,7 @@
+ my $platform         = '';
+ my $milestoneext     = '';
+ my $local_env        = 0;
+-my $source_config    = SourceConfig -> new();
++my $source_config    = SourceConfig -> new($ENV{SOLARSRC});
+ my @exceptionmodlist = (
+                         "postprocess",
+                         "instset.*native",
