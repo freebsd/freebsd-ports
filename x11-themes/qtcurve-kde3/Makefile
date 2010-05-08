@@ -14,7 +14,7 @@ MASTER_SITES=	http://home.freeuk.com/cpdrummond/ \
 PKGNAMEPREFIX=	kde-style-
 DISTNAME=	QtCurve-KDE3-${PORTVERSION}
 
-MAINTAINER=	lazyklimm@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QtCurve KDE3 widget style
 
 USE_BZIP2=	yes
