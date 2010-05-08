@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	mod_h264_streaming
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.2.7
 CATEGORIES=	www
-MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
+MASTER_SITES=	http://h264.code-shop.com/download/
+DISTNAME=	apache_${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	apache22
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Apache H264 streaming module
 
-USE_BZIP2=	yes
 USE_APACHE=	22+
-AP_FAST_BUILD=	yes
-AP_GENPLIST=	yes
-SRC_FILE=	mod_h264_streaming.c moov.c
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-apxs="${APXS}"
 
 RESTRICTED=	no-commercial-use
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+PLIST_SUB=	SED=${SED}
 
 .include <bsd.port.mk>

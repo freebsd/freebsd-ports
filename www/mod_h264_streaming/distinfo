@@ -1,3 +1,3 @@
-MD5 (apache22/mod_h264_streaming-2.0.tar.bz2) = 0e5ae63fc5697c56b4c78671d3338a78
-SHA256 (apache22/mod_h264_streaming-2.0.tar.bz2) = 1774e20be353b5fa774cd259efd200f8d38136af032670ec7fe6989224b6cd3e
-SIZE (apache22/mod_h264_streaming-2.0.tar.bz2) = 13483
+MD5 (apache22/apache_mod_h264_streaming-2.2.7.tar.gz) = 123cacef68e9ff56fe908200bd0feea5
+SHA256 (apache22/apache_mod_h264_streaming-2.2.7.tar.gz) = 9ab80d038d83af453919bd9d5bed0e9e34f1469a8901146698ff6fd4e164fdc0
+SIZE (apache22/apache_mod_h264_streaming-2.2.7.tar.gz) = 320605
