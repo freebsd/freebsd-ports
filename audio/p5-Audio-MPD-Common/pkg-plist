@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/MPD/Common/.packlist
 %%SITE_PERL%%/Audio/MPD/Common.pm
 %%SITE_PERL%%/Audio/MPD/Common/Item.pm
 %%SITE_PERL%%/Audio/MPD/Common/Item/Directory.pm
@@ -8,7 +7,6 @@
 %%SITE_PERL%%/Audio/MPD/Common/Stats.pm
 %%SITE_PERL%%/Audio/MPD/Common/Time.pm
 %%SITE_PERL%%/Audio/MPD/Common/Types.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/MPD/Common
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/MPD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
 @dirrmtry %%SITE_PERL%%/Audio/MPD/Common/Item
