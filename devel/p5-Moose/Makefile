@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/F/FL/FLORA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	\
