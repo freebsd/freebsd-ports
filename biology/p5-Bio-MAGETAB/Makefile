@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Bio-MAGETAB
-PORTVERSION=	0.99
+PORTVERSION=	1.00
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A data model and utility API for the MAGE-TAB format
 
 BUILD_DEPENDS=	p5-Test-Exception>=0.26:${PORTSDIR}/devel/p5-Test-Exception \
@@ -29,6 +29,7 @@ BUILD_DEPENDS=	p5-Test-Exception>=0.26:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Moose>=0.43:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-1
 PERL_CONFIGURE=	YES
 
 MAN3=	Bio::MAGETAB::Material.3 \
