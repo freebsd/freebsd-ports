@@ -619,6 +619,7 @@
     SUBDIR += sma
     SUBDIR += smail
     SUBDIR += smfsav
+    SUBDIR += smtp-cli
     SUBDIR += smtp-gated
     SUBDIR += smtpclient
     SUBDIR += smtpd
