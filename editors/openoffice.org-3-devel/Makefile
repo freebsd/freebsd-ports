@@ -9,12 +9,13 @@ PORTNAME?=	openoffice.org
 PORTVERSION?=	3.3.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/:extsrc \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/misc/moz/:mozsrc \
 		${MASTER_SITE_MOZILLA_EXTENDED:S/$/:mozsrc/} \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 MASTER_SITE_SUBDIR+=	seamonkey/releases/${SEAMONKEY_VERSION}/:mozsrc
-DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
+DISTFILES+=	${OOOSRC} ${OOOEXTSRC} unowinreg.dll:unowinreg
 
 #de facto maintainer is maho@FreeBSD.org
 #patch submitters must sign SCA; see http://porting.openoffice.org/freebsd/#policy
@@ -23,7 +24,9 @@ COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(devel
 
 CONFLICTS=	cppunit*
 
-EXTRATC_ONLY?=	${OOOSRC}
+EXTRATC_ONLY?=	${OOOSRC} ${OOOEXTSRC}
+
+OOOEXTSRC=	ext_sources.20100505.tar.bz2:extsrc
 
 .if defined(CWS)
 PORTNAME:=	openoffice.org-${CWS}
@@ -82,11 +85,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		76
+MILESTONE?=		77
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20100409
+SNAPDATE=		20100424
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -131,7 +134,8 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		imake:${PORTSDIR}/devel/imake \
 		gtar:${PORTSDIR}/archivers/gtar \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		ant:${PORTSDIR}/devel/apache-ant
+		ant:${PORTSDIR}/devel/apache-ant \
+		${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit
 #see #i85469# for gperf
 
 USE_BISON=	build
@@ -148,6 +152,7 @@ MAKE_JOBS_NUMBER=	1
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--enable-crashdump=yes				\
+			--with-junit=${LOCALBASE}/share/java/classes/junit.jar	\
 			--with-system-zlib				\
 			--with-system-stdlibs				\
 			--with-epm=internal				\
