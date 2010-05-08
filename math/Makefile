@@ -11,6 +11,7 @@
     SUBDIR += R-cran-car
     SUBDIR += R-cran-gpclib
     SUBDIR += R-cran-igraph
+    SUBDIR += R-cran-inline
     SUBDIR += R-cran-sm
     SUBDIR += R-cran-sp
     SUBDIR += aamath
