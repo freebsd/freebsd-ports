@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Data/JavaScript/Anon.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/JavaScript/Anon/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/JavaScript/Anon
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/JavaScript
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/Data/JavaScript
+@dirrmtry %%SITE_PERL%%/Data
