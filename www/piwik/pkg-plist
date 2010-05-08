@@ -1,11 +1,8 @@
 %%WWWDIR%%/LICENSE
-%%WWWDIR%%/Manifest.xml
 %%WWWDIR%%/README
-%%WWWDIR%%/config/.htaccess
 %%WWWDIR%%/config/config.ini.sample.php
 %%WWWDIR%%/config/global.ini.php
 %%WWWDIR%%/config/manifest.inc.php
-%%WWWDIR%%/core/.htaccess
 %%WWWDIR%%/core/API/DataTableGenericFilter.php
 %%WWWDIR%%/core/API/DocumentationGenerator.php
 %%WWWDIR%%/core/API/Proxy.php
@@ -77,6 +74,7 @@
 %%WWWDIR%%/core/ExceptionHandler.php
 %%WWWDIR%%/core/Form.php
 %%WWWDIR%%/core/FrontController.php
+%%WWWDIR%%/core/Http.php
 %%WWWDIR%%/core/Loader.php
 %%WWWDIR%%/core/Log/APICall.php
 %%WWWDIR%%/core/Log/Error.php
@@ -84,6 +82,7 @@
 %%WWWDIR%%/core/Log/Message.php
 %%WWWDIR%%/core/Log.php
 %%WWWDIR%%/core/Mail.php
+%%WWWDIR%%/core/Nonce.php
 %%WWWDIR%%/core/Option.php
 %%WWWDIR%%/core/Period/Day.php
 %%WWWDIR%%/core/Period/Month.php
@@ -98,8 +97,12 @@
 %%WWWDIR%%/core/PluginsFunctions/Sql.php
 %%WWWDIR%%/core/PluginsFunctions/WidgetsList.php
 %%WWWDIR%%/core/PluginsManager.php
+%%WWWDIR%%/core/Session.php
 %%WWWDIR%%/core/Site.php
 %%WWWDIR%%/core/Smarty.php
+%%WWWDIR%%/core/SmartyPlugins/function.ajaxErrorDiv.php
+%%WWWDIR%%/core/SmartyPlugins/function.ajaxLoadingDiv.php
+%%WWWDIR%%/core/SmartyPlugins/function.ajaxRequestErrorDiv.php
 %%WWWDIR%%/core/SmartyPlugins/function.assignTopBar.php
 %%WWWDIR%%/core/SmartyPlugins/function.hiddenurl.php
 %%WWWDIR%%/core/SmartyPlugins/function.loadJavascriptTranslations.php
@@ -108,6 +111,8 @@
 %%WWWDIR%%/core/SmartyPlugins/function.sparkline.php
 %%WWWDIR%%/core/SmartyPlugins/function.url.php
 %%WWWDIR%%/core/SmartyPlugins/modifier.escape.php
+%%WWWDIR%%/core/SmartyPlugins/modifier.inlineHelp.php
+%%WWWDIR%%/core/SmartyPlugins/modifier.money.php
 %%WWWDIR%%/core/SmartyPlugins/modifier.stripeol.php
 %%WWWDIR%%/core/SmartyPlugins/modifier.sumtime.php
 %%WWWDIR%%/core/SmartyPlugins/modifier.translate.php
@@ -151,6 +156,7 @@
 %%WWWDIR%%/core/Updates/0.5.4.php
 %%WWWDIR%%/core/Updates/0.5.5.php
 %%WWWDIR%%/core/Updates/0.5.php
+%%WWWDIR%%/core/Updates/0.6-rc1.php
 %%WWWDIR%%/core/Updates.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
@@ -178,11 +184,9 @@
 %%WWWDIR%%/core/iView.php
 %%WWWDIR%%/core/testMinimumPhpVersion.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/js/.htaccess
 %%WWWDIR%%/js/README
 %%WWWDIR%%/js/index.php
 %%WWWDIR%%/js/piwik.js
-%%WWWDIR%%/lang/.htaccess
 %%WWWDIR%%/lang/am.php
 %%WWWDIR%%/lang/be.php
 %%WWWDIR%%/lang/bg.php
@@ -219,7 +223,6 @@
 %%WWWDIR%%/lang/uk.php
 %%WWWDIR%%/lang/zh-cn.php
 %%WWWDIR%%/lang/zh-tw.php
-%%WWWDIR%%/libs/.htaccess
 %%WWWDIR%%/libs/Event/Dispatcher.php
 %%WWWDIR%%/libs/Event/Notification.php
 %%WWWDIR%%/libs/HTML/Common.php
@@ -850,10 +853,8 @@
 %%WWWDIR%%/misc/redirectToUrl.php
 %%WWWDIR%%/misc/stress.sh
 %%WWWDIR%%/misc/widget_example_lastvisits.html
-%%WWWDIR%%/parameters.xml
 %%WWWDIR%%/piwik.js
 %%WWWDIR%%/piwik.php
-%%WWWDIR%%/plugins/.htaccess
 %%WWWDIR%%/plugins/API/API.php
 %%WWWDIR%%/plugins/API/Controller.php
 %%WWWDIR%%/plugins/API/templates/listAllAPI.tpl
@@ -865,8 +866,9 @@
 %%WWWDIR%%/plugins/CoreAdminHome/Controller.php
 %%WWWDIR%%/plugins/CoreAdminHome/CoreAdminHome.php
 %%WWWDIR%%/plugins/CoreAdminHome/templates/footer.tpl
+%%WWWDIR%%/plugins/CoreAdminHome/templates/generalSettings.js
+%%WWWDIR%%/plugins/CoreAdminHome/templates/generalSettings.tpl
 %%WWWDIR%%/plugins/CoreAdminHome/templates/header.tpl
-%%WWWDIR%%/plugins/CoreAdminHome/templates/index.tpl
 %%WWWDIR%%/plugins/CoreAdminHome/templates/menu.css
 %%WWWDIR%%/plugins/CoreAdminHome/templates/menu.tpl
 %%WWWDIR%%/plugins/CoreAdminHome/templates/styles.css
@@ -902,7 +904,6 @@
 %%WWWDIR%%/plugins/CoreHome/templates/js_css_includes.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/js_disabled_notice.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/js_global_variables.tpl
-%%WWWDIR%%/plugins/CoreHome/templates/loading.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/logo.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/menu.css
 %%WWWDIR%%/plugins/CoreHome/templates/menu.js
@@ -942,10 +943,7 @@
 %%WWWDIR%%/plugins/ExampleAPI/API.php
 %%WWWDIR%%/plugins/ExampleAPI/ExampleAPI.php
 %%WWWDIR%%/plugins/ExampleFeedburner/ExampleFeedburner.php
-%%WWWDIR%%/plugins/ExampleFeedburner/templates/arrow-down-red.gif
-%%WWWDIR%%/plugins/ExampleFeedburner/templates/arrow-up-green.gif
 %%WWWDIR%%/plugins/ExampleFeedburner/templates/feedburner.tpl
-%%WWWDIR%%/plugins/ExampleFeedburner/templates/nochange.gif
 %%WWWDIR%%/plugins/ExamplePlugin/ExamplePlugin.php
 %%WWWDIR%%/plugins/ExamplePlugin/lang/en.php
 %%WWWDIR%%/plugins/ExampleRssWidget/ExampleRssWidget.php
@@ -1066,7 +1064,6 @@
 %%WWWDIR%%/plugins/Referers/Referers.php
 %%WWWDIR%%/plugins/Referers/functions.php
 %%WWWDIR%%/plugins/Referers/images/searchEngines/abcsok.no.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/acont.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/affiliate.espotting.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ariadna.elmundo.es.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/arianna.libero.it.png
@@ -1076,18 +1073,21 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogsearch.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/cgi.search.biglobe.ne.jp.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/class.hit-parade.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/clusty.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/de.dir.yahoo.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/de.forestle.org.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/dir.gigablast.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/dir.web.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/directory.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/dmoz.org.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/ecosia.org.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/eo.st.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/find.copernic.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/fr.dir.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/fr.wedoo.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/friendfeed.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/froogle.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/fulltext.centrum.cz.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/g.msn.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/go.mail.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/guide.opendns.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/hledani.tiscali.cz.png
@@ -1099,6 +1099,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/jyxo.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/kartoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/kvasir.no.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/lo.st.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/mamma.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/meta.ua.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/morfeo.centrum.cz.png
@@ -1126,6 +1127,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.bbc.co.uk.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.bluewin.ch.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.centrum.cz.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/search.conduit.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.earthlink.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.free.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.goo.ne.jp.png
@@ -1135,6 +1137,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.lycos.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.metacrawler.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.msn.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/search.naver.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.netscape.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.rambler.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.seznam.cz.png
@@ -1146,6 +1149,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.yaca.yandex.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search.yahoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/search1.seznam.cz.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/searchservice.myspace.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/sesam.no.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/sm.aport.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/start.qip.ru.png
@@ -1162,6 +1166,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/volny.zlatestranky.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/web.toile.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/websearch.cs.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.123people.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.1881.no.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.a9.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.alexa.com.png
@@ -1180,9 +1185,9 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.cegetel.net.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.chello.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.comcast.net.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.cuil.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.daemon-search.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.enrio.se.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.eo.st.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.eu.ixquick.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.euroseek.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.exalead.fr.png
@@ -1201,10 +1206,11 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.looksmart.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.meinestadt.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.metager2.de.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.mister-wong.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.mozbot.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.mozbot.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.multimania.lycos.fr.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.mywebsearch.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.mysearch.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.najdi.si.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.nigma.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.northernlight.com.png
@@ -1221,12 +1227,15 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.searchy.co.uk.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.seekport.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.sharelook.fr.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.sogou.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.soso.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.sphere.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.start.no.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.suchmaschine.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.suchnase.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.technorati.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.teoma.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/www.tixuma.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.trouvez.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.twingly.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.webalta.ru.png
@@ -1599,6 +1608,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/LI.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/LX.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/MC.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/MI.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/MO.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/NS.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/OP.gif
@@ -1616,6 +1626,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/BLB.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/BSD.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/DFB.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/DSI.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/HPX.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/IPA.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/IPD.gif
@@ -1624,6 +1635,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/LIN.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/MAC.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/NBS.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/NDS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/OBS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/OS2.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/POS.gif
@@ -1670,6 +1682,8 @@
 %%WWWDIR%%/plugins/UsersManager/images/valid.png
 %%WWWDIR%%/plugins/UsersManager/templates/UsersManager.js
 %%WWWDIR%%/plugins/UsersManager/templates/UsersManager.tpl
+%%WWWDIR%%/plugins/UsersManager/templates/userSettings.js
+%%WWWDIR%%/plugins/UsersManager/templates/userSettings.tpl
 %%WWWDIR%%/plugins/VisitFrequency/API.php
 %%WWWDIR%%/plugins/VisitFrequency/Controller.php
 %%WWWDIR%%/plugins/VisitFrequency/VisitFrequency.php
@@ -1698,7 +1712,6 @@
 %%WWWDIR%%/plugins/Widgetize/templates/widgetize.js
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/tests/README.txt
-%%WWWDIR%%/themes/.htaccess
 %%WWWDIR%%/themes/default/common.css
 %%WWWDIR%%/themes/default/common.js
 %%WWWDIR%%/themes/default/genericForm.tpl
