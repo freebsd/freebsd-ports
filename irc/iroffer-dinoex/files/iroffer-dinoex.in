@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: iroffer
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# iroffer_enable="YES"
+# iroffer_flags="<set as needed>"
+#
+# See iroffer(1) for iroffer_flags
+#
+
+. "/etc/rc.subr"
+
+name="iroffer"
+rcvar=`set_rcvar`
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${iroffer_enable="NO"}
+: ${iroffer_user="bot"}
+: ${iroffer_bin="iroffer"}
+: ${iroffer_flags=""}
+: ${iroffer_dir="/home/bot/iroffer/"}
+: ${iroffer_config="${iroffer_dir}mybot.config"}
+
+start_precmd="iroffer_checkdisk"
+restart_precmd="iroffer_checkdisk"
+
+iroffer_checkdisk()
+{
+	cd "${iroffer_dir}"
+	if [ "${iroffer_dir}" != "" ]; then
+		freespace=`df -k . | tail -1 | awk {'print $4'}`
+		if [ "${freespace}" -lt 10 ]; then
+			echo "Filesystem Full!" >&2
+			exit
+		fi
+	fi
+}
+
+required_files="${iroffer_config}"
+command="${iroffer_dir}/${iroffer_bin}"
+command_args=""
+if [ "${iroffer_dir}" != "" ]; then
+	command_args="${command_args} -w ${iroffer_dir}"
+fi
+command_args="${command_args} -u ${iroffer_user}"
+command_args="${command_args} -b ${iroffer_config}"
+pidfile="${iroffer_dir}/mybot.pid"
+run_rc_command "$1"
+
+# eof
