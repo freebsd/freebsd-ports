@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	2.1.0.63.73
+PORTVERSION=	2.1.1.64.45
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
@@ -83,11 +83,6 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing icon ..."
 	@${INSTALL_DATA} ${WRKSRC}/icon.png ${DATADIR}/icon.png
 	@${ECHO_MSG} " [ DONE ]"
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_MAN} readme.html ${DOCSDIR}
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

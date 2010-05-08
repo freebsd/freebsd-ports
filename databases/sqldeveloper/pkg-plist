@@ -128,6 +128,7 @@ bin/sqldeveloper
 %%DATADIR%%/modules/oracle.xmlef_11.1.1/xmlef.jar
 %%DATADIR%%/rdbms/jlib/ojdi.jar
 %%DATADIR%%/sleepycat/je-3.3.62/lib/je-3.3.62.jar
+%%DATADIR%%/sqldeveloper/bin/Migration.sh
 %%DATADIR%%/sqldeveloper/bin/Ututil.sh
 %%DATADIR%%/sqldeveloper/bin/headless
 %%DATADIR%%/sqldeveloper/bin/headless-Darwin.conf
@@ -259,7 +260,6 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/searchengines/searchoraclecom.src
 %%DATADIR%%/timingframework/README
 %%DATADIR%%/timingframework/TimingFramework.jar
-%%PORTDOCS%%%%DOCSDIR%%/readme.html
 @dirrm %%DATADIR%%/timingframework
 @dirrm %%DATADIR%%/sqldeveloper/searchengines
 @dirrm %%DATADIR%%/sqldeveloper/lib
@@ -318,4 +318,3 @@ bin/sqldeveloper
 @dirrm %%DATADIR%%/ide/bin
 @dirrm %%DATADIR%%/ide
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
