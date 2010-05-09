@@ -75,6 +75,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/diameter/gqpolicy.xml
 %%DATADIR%%/diameter/imscxdx.xml
 %%DATADIR%%/diameter/mobileipv4.xml
+%%DATADIR%%/diameter/mobileipv6.xml
 %%DATADIR%%/diameter/nasreq.xml
 %%DATADIR%%/diameter/sip.xml
 %%DATADIR%%/diameter/sunping.xml
