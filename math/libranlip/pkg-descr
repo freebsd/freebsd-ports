@@ -1,0 +1,7 @@
+libranlip is a C++ library created by G. Beliakin, which generates random
+variates with arbitrary Lipschitz-continuous densities via the acceptance /
+rejection method. The density should have a dimension of no more than about
+five. The user needs to supply the density function using a simple syntax, and
+then call the methods of construction and generation provided in libranlip.
+
+WWW: http://www.deakin.edu.au/~gleb/ranlip.html

@@ -161,6 +161,7 @@
     SUBDIR += liborigin
     SUBDIR += libqalculate
     SUBDIR += libranlib
+    SUBDIR += libranlip
     SUBDIR += libtommath
     SUBDIR += linalg
     SUBDIR += linpack
