@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.11.6
+PORTVERSION=	1.12.0
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
+IGNORE_WITH_PHP=	4
 
 FILES=		Log/composite.php Log/console.php Log/daemon.php \
 		Log/display.php Log/error_log.php Log/file.php \
@@ -29,7 +30,7 @@ EXAMPLES=	composite.php console.php display.php error_log.php \
 		sqlite.php syslog.php win.php
 TESTS=		backtrace.phpt composite.phpt console.phpt \
 		display.phpt error_log.phpt format.phpt \
-		extract-zend1.phpt extract-zend2.0.phpt extract-zend2.2.phpt \
+		extract-zend2.0.phpt extract-zend2.2.phpt \
 		factory.phpt file.phpt firebug.phpt levels.phpt null.phpt \
 		priority.phpt singleton.phpt sqlite.phpt sql_ident.phpt
 SQLS=		log.sql
