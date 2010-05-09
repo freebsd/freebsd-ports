@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	2.40.0
+PORTVERSION=	2.42.0
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		BERLIOS/fc-solve
@@ -59,10 +59,6 @@ CMAKE_ARGS+=	-DFCS_USE_TCMALLOC:BOOL=ON
 .endif
 
 post-install:
-.for file in freecell-solver-fc-pro-range-solve \
-	freecell-solver-multi-thread-solve
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS.txt HACKING.txt INSTALL.txt NEWS.txt README.txt \

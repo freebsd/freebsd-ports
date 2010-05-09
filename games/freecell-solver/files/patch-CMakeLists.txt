@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2009-11-27 23:03:34.000000000 +0900
-+++ CMakeLists.txt	2009-11-29 03:31:22.000000000 +0900
-@@ -146,6 +146,8 @@
+--- CMakeLists.txt.orig	2010-03-28 00:13:11.000000000 +0900
++++ CMakeLists.txt	2010-03-31 04:13:01.000000000 +0900
+@@ -154,6 +154,8 @@
  SET (FCS_STACK_STORAGE_LIBAVL2_TREE_TYPE "avl" CACHE STRING "The libavl2 tree type used for the stack storage. Ignored if not set to libavl2")
  SET (LIBAVL2_SOURCE_DIR "/usr/src/avl-2.0.3" CACHE STRING "The location of the libavl2 source tree (from which files are copied)")
  
@@ -9,7 +9,7 @@
  IF (NOT (STATES_TYPE MATCHES "^(INDIRECT_STACK_STATES|COMPACT_STATES|DEBUG_STATES)$"))
      MESSAGE(FATAL_ERROR "STATES_TYPE should be ('INDIRECT_STACK_STATES', 'COMPACT_STATES' or 'DEBUG_STATES')")
  ENDIF(NOT (STATES_TYPE MATCHES "^(INDIRECT_STACK_STATES|COMPACT_STATES|DEBUG_STATES)$"))
-@@ -299,7 +301,7 @@
+@@ -308,7 +310,7 @@
  CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
  
  SET(COMPILER_FLAGS_TO_CHECK 
@@ -18,28 +18,28 @@
  )
  
  IF (CPU_ARCH)
-@@ -361,7 +363,11 @@
- # Optionally link against Google's TCMalloc if it's available:
- # http://goog-perftools.sourceforge.net/
- # This gives better performance for the threaded programs.
--FIND_LIBRARY(LIBTCMALLOC_LIB tcmalloc)
-+IF (FCS_USE_TCMALLOC)
+@@ -383,7 +385,11 @@
+     # Optionally link against Google's TCMalloc if it's available:
+     # http://goog-perftools.sourceforge.net/
+     # This gives better performance for the threaded programs.
+-    FIND_LIBRARY(LIBTCMALLOC_LIB tcmalloc)
++    IF (FCS_USE_TCMALLOC)
 +
-+    FIND_LIBRARY(LIBTCMALLOC_LIB tcmalloc)
++        FIND_LIBRARY(LIBTCMALLOC_LIB tcmalloc)
 +
-+ENDIF (FCS_USE_TCMALLOC)
++    ENDIF (FCS_USE_TCMALLOC)
  
- SET(LIBTCMALLOC_LIB_LIST)
- IF(LIBTCMALLOC_LIB STREQUAL "LIBTCMALLOC_LIB-NOTFOUND")
-@@ -389,7 +395,6 @@
+     IF(LIBTCMALLOC_LIB STREQUAL "LIBTCMALLOC_LIB-NOTFOUND")
+         # Do nothing.
+@@ -426,7 +432,6 @@
  
  IF (CMAKE_USE_PTHREADS_INIT)
      FCS_ADD_EXEC(freecell-solver-multi-thread-solve threaded_range_solver.c)
 -    TARGET_LINK_LIBRARIES(freecell-solver-multi-thread-solve "pthread")
  ENDIF (CMAKE_USE_PTHREADS_INIT)
  
- IF (MY_LINK_FLAGS)
-@@ -499,14 +504,6 @@
+ IF (UNIX)
+@@ -537,14 +542,6 @@
  
  INSTALL(
      FILES
@@ -54,7 +54,7 @@
          "fcs_cl.h"
          "fcs_enums.h"
          "fcs_move.h"
-@@ -520,7 +517,7 @@
+@@ -558,7 +555,7 @@
      FILES
          "${CMAKE_CURRENT_BINARY_DIR}/lib${CPACK_PACKAGE_NAME}.pc"
      DESTINATION 
