@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.3.22
+PORTVERSION=	1.3.23
 CATEGORIES=	net
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.3/src/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	hugo@barafranca.com
+MAINTAINER=	freebsd@linepoint.com
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 
 CONFLICTS=	haproxy-1.2*
