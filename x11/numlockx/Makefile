@@ -7,20 +7,22 @@
 #
 
 PORTNAME=	numlockx
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	x11
-MASTER_SITES=	http://ktown.kde.org/~seli/numlockx/ \
-		http://caraldi.com/jbq/numlockx/
+MASTER_SITES=	http://ktown.kde.org/~seli/numlockx/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	This little thingy allows you to start X with NumLock turned on
+COMMENT=	Turns on numlock in X
 
+USE_XORG=	x11 xext xtst
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xext
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
+
 PLIST_FILES=	bin/numlockx
 
-# Needed for the "configure" program to find XTest and XKB header files
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
