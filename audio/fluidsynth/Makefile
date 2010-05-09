@@ -72,5 +72,6 @@ CONFIGURE_ARGS+=	--disable-libsndfile-support
 post-patch:
 	@${REINPLACE_CMD} -e 's| -O2 | |g ; \
 		 s|== "yes"|= "yes"|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '197 s/,/ /' ${WRKSRC}/include/fluidsynth/synth.h
 
 .include <bsd.port.post.mk>
