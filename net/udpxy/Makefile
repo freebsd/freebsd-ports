@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	udpxy
-PORTVERSION=	1.0.15
+PORTVERSION=	1.0.16
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${RELEASE_MASCOT}-${PORTVERSION:R}
 DISTNAME=	${PORTNAME}.${PORTVERSION:R}-${RELEASE_MASCOT}-${PORTVERSION:E}
@@ -20,8 +20,9 @@ USE_RC_SUBR=	udpxy
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 RELEASE_MASCOT=	Chipmunk
-CFLAGS+=	-DNDEBUG
-OPTIONS=	TRACING	"Enable tracing (verbose)"	off
+OPTIONS=	RELEASE "No asserts, no debug symbols, verbose mode on"	on \
+		LEAN "No asserts, no debug symbols, verbose mode off" off \
+		DEBUG "Asserts, debug symbols, verbose mode on" off
 
 PLIST_FILES=	sbin/udpxy \
 		sbin/udpxrec
@@ -32,8 +33,15 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
-.ifdef WITH_TRACING
-CFLAGS+=	-DTRACE_MODULE
+.if defined(WITH_RELEASE) && defined(WITHOUT_LEAN) && defined(WITHOUT_DEBUG)
+ALL_TARGET=release
+.elif defined(WITH_LEAN) && defined(WITHOUT_RELEASE) && defined(WITHOUT_DEBUG)
+ALL_TARGET=lean
+.elif defined(WITH_DEBUG) && defined(WITHOUT_RELEASE) && defined(WITHOUT_LEAN)
+ALL_TARGET=debug
+WITH_DEBUG=yes
+.else
+IGNORE=please run 'make config' again and select one build option
 .endif
 
 .include <bsd.port.post.mk>
