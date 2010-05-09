@@ -23,6 +23,8 @@ COMMENT=		The GNU Ada Compiler system
 LIB_DEPENDS=		gmp.10:${PORTSDIR}/math/gmp \
 			mpfr.3:${PORTSDIR}/math/mpfr
 
+BROKEN=			fails to configure
+
 ONLY_FOR_ARCHS=		i386 amd64
 
 USE_BZIP2=		yes
