@@ -39,7 +39,7 @@ OPTIONS=	256_COLOR	"Build with 256-color support" off \
 		XIM		"Build with XIM support" off \
 		XTERM		"Build with Xterm scrollbar" off
 
-CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
+CONFIGURE_ARGS=	--enable-utmp --enable-lastlog \
 		--with-xpm --enable-xpm-background --enable-shared \
 		--enable-mousewheel --disable-languages
 USE_LDCONFIG=	yes
@@ -48,8 +48,12 @@ MAN1=		rxvt.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
+.if ${OSVERSION} >= 900007
+CONFIGURE_ARGS+=	--disable-wtmp
+EXTRA_PATCHES+=	${FILESDIR}/utmpx_patch-src::logging.c
+.else
+CONFIGURE_ARGS+=	--enable-wtmp
+EXTRA_PATCHES+=	${FILESDIR}/utmp_patch-src::logging.c
 .endif
 
 # enable 256 color
