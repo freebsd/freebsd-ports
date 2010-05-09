@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	views
-DISTVERSION=	6.x-2.8
+DISTVERSION=	6.x-2.9
 CATEGORIES=	www
 
 MAINTAINER=	rea-fbsd@codelabs.ru
@@ -44,6 +44,7 @@ MODULE_DIRS=	css \
 MODULE_FILES=	css/views-admin.css \
 		css/views-list-rtl.css \
 		css/views-list.css \
+		css/views-rtl.css \
 		css/views-tabs.css \
 		css/views.css \
 		docs/docs.php \
@@ -181,6 +182,7 @@ MODULE_FILES=	css/views-admin.css \
 		modules/aggregator/views_handler_argument_aggregator_category_cid.inc \
 		modules/aggregator/views_handler_argument_aggregator_fid.inc \
 		modules/aggregator/views_handler_field_aggregator_category.inc \
+		modules/aggregator/views_handler_field_aggregator_item_description.inc \
 		modules/aggregator/views_handler_field_aggregator_title_link.inc \
 		modules/aggregator/views_handler_filter_aggregator_category_cid.inc \
 		modules/aggregator/views_plugin_row_aggregator_rss.inc \
@@ -234,6 +236,8 @@ MODULE_FILES=	css/views-admin.css \
 		modules/node/views_handler_field_node_link.inc \
 		modules/node/views_handler_field_node_link_delete.inc \
 		modules/node/views_handler_field_node_link_edit.inc \
+		modules/node/views_handler_field_node_path.inc \
+		modules/node/views_handler_field_node_revision.inc \
 		modules/node/views_handler_field_node_revision_link_delete.inc \
 		modules/node/views_handler_field_node_revision_link_revert.inc \
 		modules/node/views_handler_field_node_type.inc \
@@ -270,6 +274,7 @@ MODULE_FILES=	css/views-admin.css \
 		modules/system/views_handler_field_file_status.inc \
 		modules/system/views_handler_filter_file_status.inc \
 		modules/system.views.inc \
+		modules/taxonomy/views_plugin_argument_default_taxonomy_tid.inc \
 		modules/taxonomy/views_handler_argument_taxonomy.inc \
 		modules/taxonomy/views_handler_argument_term_node_tid.inc \
 		modules/taxonomy/views_handler_argument_term_node_tid_depth.inc \
@@ -288,6 +293,7 @@ MODULE_FILES=	css/views-admin.css \
 		modules/translation/views_handler_argument_node_language.inc \
 		modules/translation/views_handler_argument_node_tnid.inc \
 		modules/translation/views_handler_field_node_language.inc \
+		modules/translation/views_handler_field_node_link_translate.inc \
 		modules/translation/views_handler_field_node_translation_link.inc \
 		modules/translation/views_handler_filter_node_language.inc \
 		modules/translation/views_handler_filter_node_tnid.inc \
@@ -373,7 +379,9 @@ MODULE_FILES=	css/views-admin.css \
 		translations/eo.po \
 		translations/fr.po \
 		translations/it.po \
+		translations/hu.po \
 		translations/pl.po \
+		translations/pt-br.po \
 		translations/sv.po \
 		translations/uk-ua.po \
 		translations/uk.po \
