@@ -18,6 +18,7 @@ XORG_CAT=	app
 USE_XORG=	libfs xfont xtrans
 USE_RC_SUBR=	xfs
 ALL_TARGET=	all config
+CONFIGURE_ENV+=	ac_cv_path_XMLTO=""
 
 MAN1=		xfs.1
 
