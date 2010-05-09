@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bitlbee-otr
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6a
 CATEGORIES=	irc
-MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
+MASTER_SITES=	http://wahjava.users.sourceforge.net/ \
 		${MASTER_SITE_FREEBSD}
 
 MAINTAINER=	wahjava@gmail.com
@@ -34,7 +34,8 @@ OPTIONS=	MSN "Enable MSN protocol support" On \
 		IPV6 "Compile IPV6 support" On \
 		XMPP "Enable XMPP protocol support" On \
 		OSCAR "Enable OSCAR (ICQ,AIM) protocol support" On \
-		YAHOO "Enable Yahoo protocol support" On
+		YAHOO "Enable Yahoo protocol support" On \
+		TWITTER "Enable Yahoo protocol support" On
 
 CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 
@@ -95,6 +96,12 @@ CONFIGURE_ARGS+=--debug=1
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--ipv6=0
+.endif
+
+.if !defined(WITHOUT_TWITTER)
+CONFIGURE_ARGS+=--twitter=1
+.else
+CONFIGURE_ARGS+=--twitter=0
 .endif
 
 LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr
