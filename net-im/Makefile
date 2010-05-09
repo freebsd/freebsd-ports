@@ -171,6 +171,7 @@
     SUBDIR += ttytter
     SUBDIR += twirssi
     SUBDIR += twitmail
+    SUBDIR += vacuum-im
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
     SUBDIR += wooztalk
