@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.4
-PORTREVISION=	1
+PORTVERSION=	3.2.5
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
 
-MAINTAINER=	jaap@bartok.nlnetlabs.nl
+MAINTAINER=	jaap@nlnetlabs.nl
 COMMENT=	An authoritative only non-recursive name server
 
 CONFLICTS=	nsd-[0-2]*
@@ -58,7 +57,8 @@ OPTIONS=	ROOT_SERVER	"Configure NSD as a root server" Off \
 		CHECKING	"Enable internal runtime checks" Off \
 		TSIG		"Enable TSIG support" On \
 		NSEC3		"Enable NSEC3 support" On \
-		NSID		"Enable NSID support" Off \
+		NSID		"Enable NSID support" On \
+		MMAP		"Use mmap instead of malloc(experimental)" Off \
 		MAXINT		"Raise max_interfaces from 8 to ${NSDMAX_INT}" Off
 
 .include <bsd.port.pre.mk>
@@ -95,8 +95,12 @@ CONFIGURE_ARGS+=	--disable-tsig
 CONFIGURE_ARGS+=	--disable-nsec3
 .endif
 
-.if defined(WITH_NSID)
-CONFIGURE_ARGS+=	--enable-nsid
+.if defined(WITHOUT_NSID)
+CONFIGURE_ARGS+=	--disable-nsid
+.endif
+
+.if defined(WITH_MMAP)
+CONFIGURE_ARGS+=	--enable-mmap
 .endif
 
 .if defined(WITH_MAXINT)
