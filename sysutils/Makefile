@@ -822,6 +822,7 @@
     SUBDIR += tracker-gnome
     SUBDIR += tracker-libtrackergtk
     SUBDIR += tree
+    SUBDIR += tren
     SUBDIR += ts
     SUBDIR += tss
     SUBDIR += ttyload
