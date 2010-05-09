@@ -23,12 +23,14 @@
 name="udpxy"
 rcvar=$(set_rcvar)
 
+load_rc_config ${name}
+
 udpxy_enable=${udpxy_enable-"NO"}
 udpxy_port=${udpxy_port-"4022"}
 udpxy_flags=${udpxy_flags-"-S"}
+
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}${udpxy_port}.pid"
-command_args="-p ${udpxy_port} ${udpxy_flags}"
+udpxy_flags="-p ${udpxy_port} ${udpxy_flags}"
 
-load_rc_config $name
 run_rc_command "$1"
