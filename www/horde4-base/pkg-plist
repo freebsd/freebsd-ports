@@ -329,6 +329,8 @@
 %%HORDIR%%/lib/Horde/Kolab/IMAP/pear.php
 %%HORDIR%%/lib/Horde/Kolab/IMAP/test.php
 %%HORDIR%%/lib/Horde/Kolab/IMAP.php
+%%HORDIR%%/lib/Horde/Kolab/Resource/Epoch.php
+%%HORDIR%%/lib/Horde/Kolab/Resource/Itip.php
 %%HORDIR%%/lib/Horde/Kolab/Resource.php
 %%HORDIR%%/lib/Horde/Kolab/Server/Object/address.php
 %%HORDIR%%/lib/Horde/Kolab/Server/Object/administrator.php
@@ -3815,6 +3817,7 @@
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Format
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy
 @dirrm %%HORDIR%%/lib/Horde/Kolab/IMAP
+@dirrm %%HORDIR%%/lib/Horde/Kolab/Resource
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Server/Object
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Server
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Storage
