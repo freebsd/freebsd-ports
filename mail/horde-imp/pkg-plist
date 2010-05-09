@@ -291,6 +291,7 @@
 %%HORDIR%%/scripts/Imp.reg
 %%HORDIR%%/scripts/bounce_spam.php
 %%HORDIR%%/scripts/custom_login.php
+%%HORDIR%%/scripts/fetch.php
 %%HORDIR%%/scripts/sql/imp.oci8.sql
 %%HORDIR%%/scripts/sql/imp.sql
 %%HORDIR%%/scripts/sql/imp.xml
