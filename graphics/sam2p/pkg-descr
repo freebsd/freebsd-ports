@@ -6,4 +6,4 @@ cases sam2p can compress an image 100 times smaller than the PostScript output
 of many other common image converters. sam2p provides ZIP, RLE and LZW
 (de)compression filters even on Level1 devices.
 
-WWW: http://www.inf.bme.hu/~pts/sam2p/
+WWW: http://code.google.com/p/sam2p/
