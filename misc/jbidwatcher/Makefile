@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jbidwatcher
-DISTVERSION=	2.0.1
+DISTVERSION=	2.1pre6
 CATEGORIES=	misc java
-MASTER_SITES=	http://www.jbidwatcher.com/rdl/
+MASTER_SITES=	http://www.jbidwatcher.com/download/
 DISTNAME=	JBidwatcher-${DISTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
