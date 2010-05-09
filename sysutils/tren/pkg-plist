@@ -1,0 +1,8 @@
+bin/tren.py
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW.txt
+%%PORTDOCS%%%%DOCSDIR%%/tren-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/tren.html
+%%PORTDOCS%%%%DOCSDIR%%/tren.pdf
+%%PORTDOCS%%%%DOCSDIR%%/tren.ps
+%%PORTDOCS%%%%DOCSDIR%%/tren.rst
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

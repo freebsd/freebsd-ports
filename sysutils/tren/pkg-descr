@@ -1,0 +1,7 @@
+tren is a general purpose file and directory renaming tool. Unlike
+commands like mv, tren is particularly well suited for renaming
+batches of files and/or directories with a single command line
+invocation. tren eliminates the tedium of having to script simpler
+tools to provide higher-level renaming capabilities.
+
+WWW:	http://www.tundraware.com/Software/tren/
