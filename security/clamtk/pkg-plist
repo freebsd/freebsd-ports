@@ -32,6 +32,7 @@ share/locale/nl/LC_MESSAGES/clamtk.mo
 share/locale/nl_BE/LC_MESSAGES/clamtk.mo
 share/locale/nn/LC_MESSAGES/clamtk.mo
 share/locale/pl/LC_MESSAGES/clamtk.mo
+share/locale/pt/LC_MESSAGES/clamtk.mo
 share/locale/pt_BR/LC_MESSAGES/clamtk.mo
 share/locale/ro/LC_MESSAGES/clamtk.mo
 share/locale/ru/LC_MESSAGES/clamtk.mo
@@ -40,6 +41,7 @@ share/locale/sl/LC_MESSAGES/clamtk.mo
 share/locale/sv/LC_MESSAGES/clamtk.mo
 share/locale/th/LC_MESSAGES/clamtk.mo
 share/locale/tr/LC_MESSAGES/clamtk.mo
+share/locale/uk/LC_MESSAGES/clamtk.mo
 share/locale/zh_CN/LC_MESSAGES/clamtk.mo
 share/pixmaps/clamtk.png
 share/pixmaps/clamtk.xpm
