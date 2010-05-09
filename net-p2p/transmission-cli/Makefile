@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	1.92
-PORTREVISION?=	1
+PORTVERSION=	1.93
+PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 PKGNAMESUFFIX?=	-cli
@@ -29,6 +29,8 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-ssl=${OPENSSLBASE} \
 		--with-zlib=/usr \
+		--disable-libappindicator \
+		--disable-gconf2 \
 		${EXTRA_CONF_ARGS}
 EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-daemon \
@@ -48,8 +50,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 general-patch:
 	@${REINPLACE_CMD} -e 's|SUBDIRS = . sample.*|SUBDIRS = .|g' \
-		${WRKSRC}/third-party/libevent/Makefile.*
-	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
+		${WRKSRC}/third-party/libevent/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
 .if ${SLAVEPORT}!="gtk2"
 	@${REINPLACE_CMD} -e '/#define DISABLE_GETTEXT/s,/\* \(.*\) \*/,\1,' \

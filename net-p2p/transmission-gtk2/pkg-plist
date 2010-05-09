@@ -61,6 +61,7 @@ share/locale/mt/LC_MESSAGES/transmission.mo
 share/locale/nb/LC_MESSAGES/transmission.mo
 share/locale/nl/LC_MESSAGES/transmission.mo
 share/locale/nn/LC_MESSAGES/transmission.mo
+share/locale/oc/LC_MESSAGES/transmission.mo
 share/locale/pl/LC_MESSAGES/transmission.mo
 share/locale/pt/LC_MESSAGES/transmission.mo
 share/locale/pt_BR/LC_MESSAGES/transmission.mo
@@ -74,13 +75,18 @@ share/locale/sv/LC_MESSAGES/transmission.mo
 share/locale/te/LC_MESSAGES/transmission.mo
 share/locale/th/LC_MESSAGES/transmission.mo
 share/locale/tr/LC_MESSAGES/transmission.mo
+share/locale/ug/LC_MESSAGES/transmission.mo
 share/locale/uk/LC_MESSAGES/transmission.mo
 share/locale/vi/LC_MESSAGES/transmission.mo
 share/locale/zh_CN/LC_MESSAGES/transmission.mo
 share/locale/zh_TW/LC_MESSAGES/transmission.mo
 share/pixmaps/transmission.png
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/kk/LC_MESSAGES
