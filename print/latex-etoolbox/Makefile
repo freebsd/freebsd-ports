@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	etoolbox
-PORTVERSION=	1.8
-PORTREVISION=	2
+PORTVERSION=	1.9
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib
 PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	vj562001@yahoo.de
+MAINTAINER=	idolum@users.sourceforge.net
 COMMENT=	A toolbox providing programming facilities for LaTeX
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
@@ -35,8 +34,8 @@ CLASSNAME=	${PORTNAME}
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${CLASSNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-CLASS_FILES=	etoolbox.sty
-DOC_FILES=	README etoolbox.pdf
+CLASS_FILES=	etoolbox.sty etoolbox.def
+DOC_FILES=	README etoolbox.pdf etoolbox.tex
 
 WRKSRC=		${WRKDIR}/${CLASSNAME}
 
