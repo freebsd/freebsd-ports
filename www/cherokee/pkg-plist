@@ -186,6 +186,7 @@ share/aclocal/cherokee.m4
 %%NLS%%share/locale/fr/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/cherokee.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/cherokee.mo
 %%ADMIN%%%%DATADIR%%/admin/Auth.py
@@ -496,6 +497,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/advanced.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/bg-bar.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/cherokee-logo-bar.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/favicon.ico
 %%ADMIN%%%%DATADIR%%/admin/static/images/flags/ad.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/flags/ae.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/flags/af.png
