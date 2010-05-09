@@ -6,38 +6,48 @@
 #
 
 PORTNAME=	tinymce
-DISTVERSION=	5.x-1.x-dev
-PORTREVISION=	20070333
+DISTVERSION=	5.x-1.11
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav/drupal
 
 MAINTAINER=	nick@foobar.org
-COMMENT=	A Drupal module which implements the TinyMCE WYSIWYG editor for content editing
+COMMENT=	A Drupal module which implements the TinyMCE WYSIWYG content editor
 
 TINYMCEDIR=	www/tinymce
 TINYMCE_MODDIR=	${PORTNAME:C|^|${DRUPAL_MODDIR}/|}
 
-RUN_DEPENDS+=	${PREFIX}/${TINYMCEDIR}/jscripts/tiny_mce/tiny_mce.js:${PORTSDIR}/www/tinymce
+RUN_DEPENDS+=	${LOCALBASE}/${TINYMCEDIR}/jscripts/tiny_mce/tiny_mce.js:${PORTSDIR}/www/tinymce
 
 PLIST_FILES+=	${DRUPAL_MODDIR}/tinymce
 
 DRUPAL5_MODULE=	yes
 
 MODULE_DIRS=	plugins/drupalbreak/images plugins/drupalbreak/langs \
-		plugins/drupalbreak plugins themes
+		plugins/drupalbreak plugins po themes
 
-MODULE_FILES=	plugins/drupalbreak/images/drupalbreak.gif \
-		plugins/drupalbreak/images/drupalbreaktext.gif \
-		plugins/drupalbreak/images/drupalpagebreak.gif \
-		plugins/drupalbreak/images/drupalpagebreaktext.gif \
+MODULE_FILES=	plugin_reg.php \
 		plugins/drupalbreak/README.txt \
 		plugins/drupalbreak/drupalbreak.css \
 		plugins/drupalbreak/editor_plugin.js \
 		plugins/drupalbreak/editor_plugin_src.js \
-		plugins/drupalbreak/langs/en.js themes/tinymce_compact.js \
-		themes/tinymce_full.js themes/tinymce_simple.js \
-		plugin_reg.php tinymce.info tinymce.install tinymce.module
+		plugins/drupalbreak/images/drupalbreak.gif \
+		plugins/drupalbreak/images/drupalbreaktext.gif \
+		plugins/drupalbreak/images/drupalpagebreak.gif \
+		plugins/drupalbreak/images/drupalpagebreaktext.gif \
+		plugins/drupalbreak/langs/en.js \
+		po/da.po \
+		po/de.po \
+		po/el.po \
+		po/fr.po \
+		po/hu.po \
+		po/tinymce.pot \
+		po/tr.po \
+		themes/tinymce_compact.js \
+		themes/tinymce_full.js \
+		themes/tinymce_simple.js \
+		tinymce.info \
+		tinymce.install \
+		tinymce.module
+
 DOC_FILES=	CHANGELOG.TXT INSTALL.txt LICENSE.txt README.TXT
 
 post-install:
