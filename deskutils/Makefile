@@ -31,6 +31,7 @@
     SUBDIR += checkrdf
     SUBDIR += chmsee
     SUBDIR += conduit
+    SUBDIR += conkyemail
     SUBDIR += contacts
     SUBDIR += cycle
     SUBDIR += dailystrips

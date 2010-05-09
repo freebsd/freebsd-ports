@@ -1,0 +1,7 @@
+--- conkyEmail.orig	2008-09-09 06:12:46.000000000 +0800
++++ conkyEmail	2010-05-08 02:28:45.000000000 +0800
+@@ -1,3 +1,3 @@
+ #! /bin/sh
+ cd /usr/share/conkyemail/
+-$PYTHONPATH /usr/bin/python /usr/share/conkyemail/conkyEmail.py "$@"
++$PYTHONPATH /usr/bin/env python /usr/share/conkyemail/conkyEmail.py "$@"
