@@ -1,0 +1,7 @@
+A port of File::ReadBackwards, the Perl module by Uri Guttman,
+for reading a file line by line in reverse order. This can
+often be helpful for things like log files, where the
+interesting information is usually at the end.
+
+WWW: http://elif.rubyforge.org/
+WWW: http://rubyforge.org/projects/elif/
