@@ -21,6 +21,8 @@ bin/convertall
 %%PYTHON_SITELIBDIR%%/convertall/optiondefaults.pyc
 %%PYTHON_SITELIBDIR%%/convertall/optiondlg.py
 %%PYTHON_SITELIBDIR%%/convertall/optiondlg.pyc
+%%PYTHON_SITELIBDIR%%/convertall/recentunits.py
+%%PYTHON_SITELIBDIR%%/convertall/recentunits.pyc
 %%PYTHON_SITELIBDIR%%/convertall/setup.py
 %%PYTHON_SITELIBDIR%%/convertall/setup.pyc
 %%PYTHON_SITELIBDIR%%/convertall/unitatom.py
