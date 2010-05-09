@@ -119,7 +119,7 @@ CONFIGURE_ARGS+=	--enable-termcap
 CONFIGURE_ARGS+=	--disable-termcap
 .endif
 # win32 binary dll codecs
-.if !defined(WITHOUT_WIN32_CODECS)
+.if !defined(WITHOUT_WIN32)
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
