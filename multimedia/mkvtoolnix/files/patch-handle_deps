@@ -1,0 +1,11 @@
+--- handle_deps.orig	2010-03-24 22:48:35.000000000 +0900
++++ handle_deps	2010-03-27 02:43:11.000000000 +0900
+@@ -3,7 +3,7 @@
+ obj="$1"
+ exitcode="$2"
+ 
+-dep="`echo "$obj" | sed -e 's:\.\(o\|gch\)$:.d:'`"
++dep="`echo "$obj" | sed -E -e 's:\.(o|gch)$:.d:'`"
+ test -f "$dep" || exit $exitcode
+ 
+ test -f .deps && rm -f .deps
