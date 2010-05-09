@@ -19,6 +19,7 @@
     SUBDIR += cursor-crystal-theme
     SUBDIR += cursor-dmz-aa-theme
     SUBDIR += cursor-dmz-theme
+    SUBDIR += cursor-ecliz
     SUBDIR += cursor-grounation-theme
     SUBDIR += cursor-jimmac-theme
     SUBDIR += cursor-neutral-theme
