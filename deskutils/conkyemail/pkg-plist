@@ -1,0 +1,6 @@
+bin/conkyEmail
+%%DATADIR%%/conkyEmail.py
+%%DATADIR%%/example/conkyrc
+%%DATADIR%%/example/conkyEmail.template
+@dirrm %%DATADIR%%/example
+@dirrm %%DATADIR%%
