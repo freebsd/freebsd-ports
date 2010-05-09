@@ -1,3 +1,6 @@
-lib/perl5/site_perl/%%PERL_VERSION%%/Apache/Htgroup.pm
-@dirrm %%SITE_PERL%%/Apache/Htgroup.pm
-@dirrmtry %%SITE_PERL%%/Apache/Htgroup
+%%SITE_PERL%%/Apache/Htgroup.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Htgroup/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Htgroup
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%SITE_PERL%%/Apache
