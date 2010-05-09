@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xyzcmd
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	misc python
 MASTER_SITES=	GOOGLE_CODE
 
@@ -20,5 +20,13 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 INSTALLS_EGGINFO=yes
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} api ${DOCSDIR} && \
+		${COPYTREE_SHARE} user-manual ${DOCSDIR} && \
+		${INSTALL_DATA} ../ChangeLog overview.pdf ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
