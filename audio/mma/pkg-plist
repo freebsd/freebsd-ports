@@ -39,10 +39,14 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock_50srock.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock_50srock1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock_50srock1plus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock_50srock1sus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock_50srock1susplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock_50srockend.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock_50srockintro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock_50srockplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock_50srocksus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/50srock_50srocksusplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/60srock.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/60srock_60srock.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/60srock_60srock1.html
@@ -50,6 +54,16 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/60srock_60srockend.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/60srock_60srockintro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/60srock_60srocksus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/68march.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/68march_68march.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/68march_68marchend.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/68march_68marchfill.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/68march_68marchfill2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/68march_68marchintro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/68march_68marchmetronome.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/68march_68marchplus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/68march_68marchsus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/68march_68marchsusplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/8beat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/8beat_8beat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/8beat_8beat1.html
@@ -125,7 +139,9 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bluegrass_bluegrassbottleclap.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bluegrass_bluegrassclap.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bluegrass_bluegrassend.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bluegrass_bluegrassintro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bluegrass_bluegrasssus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bluegrass_bluegrasssusclap.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/blues.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/blues_blues.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/blues_blues1.html
@@ -162,14 +178,19 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanova.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanova1end.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanova1sus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanova1susplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanova2end.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanova2sus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanova2susplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanova3sus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanova3susplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanovaend.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanovafill.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanovaintro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanovaintro8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanovaplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanovasus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/bossanova_bossanovasusplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/broadway.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/broadway_broadway.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/broadway_broadway1.html
@@ -257,6 +278,7 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/countrywaltz_countrywaltz2walk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/countrywaltz_countrywaltzend.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/countrywaltz_countrywaltzintro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/countrywaltz_countrywaltzintro8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/countrywaltz_countrywaltzsus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/countrywaltz_countrywaltzwalk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/countrywaltz_countrywaltzwalksus.html
@@ -278,10 +300,20 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixie.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixie1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixie1sus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixie2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixie2sus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixie3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixie3sus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixie4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixie4strum.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixie4sus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixieend.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixieintro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixieintro8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixiestrum.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixiestrumsus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixie_dixiesus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixiemarch.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixiemarch_dixiemarch.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/dixiemarch_dixiemarchend.html
@@ -344,6 +376,13 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/folkballad_folkballadend.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/folkballad_folkballadintro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/folkballad_folkballadsus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/folkyjazz.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/folkyjazz_folkyjazzguitar.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/folkyjazz_folkyjazzguitarend.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/folkyjazz_folkyjazzguitarintro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/folkyjazz_folkyjazzguitarplus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/folkyjazz_folkyjazzguitarsus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/folkyjazz_folkyjazzguitarsusplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/foxtrot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/foxtrot_foxtrot.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/foxtrot_foxtrot1.html
@@ -430,14 +469,21 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrock.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrockfill.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrockintro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrockintro8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrockplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrocksus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrocksusplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrockwalk.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrockwalkplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrockwalksus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzrock_jazzrockwalksusplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzwaltz.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzwaltz_jazzwaltz.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzwaltz_jazzwaltz1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzwaltz_jazzwaltz1end.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzwaltz_jazzwaltz1sus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzwaltz_jazzwaltz2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzwaltz_jazzwaltz2sus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzwaltz_jazzwaltzend.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzwaltz_jazzwaltzfill.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/jazzwaltz_jazzwaltzintro.html
@@ -479,11 +525,17 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullaby.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullaby1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullaby1plus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullaby1sus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullaby1susplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullabyend.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullabyplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullabysus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullabysusplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullabywalk.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullabywalkplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullabywalksus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/lullaby_lullabywalksusplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/mambo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/mambo_mambo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/mambo_mambo1.html
@@ -564,12 +616,18 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstep.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstepduh.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstepduhsus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstepduhsuswalk.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstepduhwalk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstepend.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstephit.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstephitsus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstephitsuswalk.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstephitwalk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstepintro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstepintro8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstepsus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstepsuswalk.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/quickstep_quickstepwalk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/rb-ballad.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/rb-ballad_r&b-ballad.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/rb-ballad_r&b-balladend.html
@@ -755,6 +813,15 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/son_sonplus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/son_sonsus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/son_sonsusplus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/stringballad.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/stringballad_stringballad.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/stringballad_stringballadend.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/stringballad_stringballadintro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/stringballad_stringballadplus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/stringballad_stringballadstrum.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/stringballad_stringballadstrumplus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/stringballad_stringballadvoiceplus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/stringballad_stringballadvoicestrum.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/swing.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/swing_swing.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/swing_swing1.html
@@ -801,7 +868,10 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/vienesewaltz_vienesewaltz.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/vienesewaltz_vienesewaltz1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/vienesewaltz_vienesewaltz1sus.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/vienesewaltz_vienesewaltz2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/vienesewaltz_vienesewaltz2sus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/vienesewaltz_vienesewaltzend.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/vienesewaltz_vienesewaltzintro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/vienesewaltz_vienesewaltzsus.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/waltz.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lib/stdlib/waltz_waltz.html
@@ -917,8 +987,6 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img23.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img24.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img25.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/img26.png
-%%PORTDOCS%%%%DOCSDIR%%/html/ref/img27.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img3.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img4.png
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/img5.png
@@ -972,6 +1040,7 @@ bin/mma
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node30.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node31.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node32.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ref/node33.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ref/node6.html
@@ -1015,6 +1084,8 @@ bin/mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/harmony/harmony.mid
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/harmony/harmony.mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lyrics/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lyrics/twinkle-kar.kar
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lyrics/twinkle-kar.mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lyrics/twinkle.mid
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lyrics/twinkle.mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lyrics/twinkle1.mid
@@ -1045,6 +1116,7 @@ bin/mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/volumes.mid
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/misc/volumes.mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mkall
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/plectrum/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/riffs/riffs.mid
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/riffs/riffs.mma
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rndset/rndchords.mid
@@ -1104,6 +1176,8 @@ bin/mma
 %%DATADIR%%/MMA/midiIn.pyc
 %%DATADIR%%/MMA/midiM.py
 %%DATADIR%%/MMA/midiM.pyc
+%%DATADIR%%/MMA/midifuncs.py
+%%DATADIR%%/MMA/midifuncs.pyc
 %%DATADIR%%/MMA/midinote.py
 %%DATADIR%%/MMA/midinote.pyc
 %%DATADIR%%/MMA/miditables.py
@@ -1126,6 +1200,8 @@ bin/mma
 %%DATADIR%%/MMA/patChord.pyc
 %%DATADIR%%/MMA/patDrum.py
 %%DATADIR%%/MMA/patDrum.pyc
+%%DATADIR%%/MMA/patPlectrum.py
+%%DATADIR%%/MMA/patPlectrum.pyc
 %%DATADIR%%/MMA/patScale.py
 %%DATADIR%%/MMA/patScale.pyc
 %%DATADIR%%/MMA/patSolo.py
@@ -1160,10 +1236,15 @@ bin/mma
 %%DATADIR%%/lib/kara/K50s_rock.mma
 %%DATADIR%%/lib/kara/README
 %%DATADIR%%/lib/kara/twi.mma
-%%DATADIR%%/lib/stdlib/#frenchwaltz.mma#
+%%DATADIR%%/lib/stdlib/#bluegrass.mma#
+%%DATADIR%%/lib/stdlib/#charleston.mma#
+%%DATADIR%%/lib/stdlib/#modernjazz.mma#
+%%DATADIR%%/lib/stdlib/#quickstep.mma#
+%%DATADIR%%/lib/stdlib/#slowdixie.mma#
 %%DATADIR%%/lib/stdlib/.mmaDB
 %%DATADIR%%/lib/stdlib/50srock.mma
 %%DATADIR%%/lib/stdlib/60srock.mma
+%%DATADIR%%/lib/stdlib/68march.mma
 %%DATADIR%%/lib/stdlib/8beat.mma
 %%DATADIR%%/lib/stdlib/README
 %%DATADIR%%/lib/stdlib/ballad.mma
@@ -1193,6 +1274,9 @@ bin/mma
 %%DATADIR%%/lib/stdlib/fastswing.mma
 %%DATADIR%%/lib/stdlib/folk.mma
 %%DATADIR%%/lib/stdlib/folkballad.mma
+%%DATADIR%%/lib/stdlib/folkyjazz.mma
+%%DATADIR%%/lib/stdlib/foo
+%%DATADIR%%/lib/stdlib/foo.html
 %%DATADIR%%/lib/stdlib/foxtrot.mma
 %%DATADIR%%/lib/stdlib/frenchwaltz.mma
 %%DATADIR%%/lib/stdlib/guitarballad.mma
@@ -1235,6 +1319,7 @@ bin/mma
 %%DATADIR%%/lib/stdlib/softrock.mma
 %%DATADIR%%/lib/stdlib/softshoe.mma
 %%DATADIR%%/lib/stdlib/son.mma
+%%DATADIR%%/lib/stdlib/stringballad.mma
 %%DATADIR%%/lib/stdlib/swing.mma
 %%DATADIR%%/lib/stdlib/tango.mma
 %%DATADIR%%/lib/stdlib/trance.mma
@@ -1262,6 +1347,7 @@ bin/mma
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scales
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rndset
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/riffs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/plectrum
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/misc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/midi-inc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/lyrics
