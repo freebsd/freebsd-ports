@@ -20,7 +20,7 @@ include/wbxml_tree_clb_wbxml.h
 include/wbxml_tree_clb_xml.h
 lib/libwbxml2.so
 lib/libwbxml2.so.0
-lib/libwbxml2.so.0.0.16
+lib/libwbxml2.so.0.0.17
 libdata/pkgconfig/libwbxml2.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
