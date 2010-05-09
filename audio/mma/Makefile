@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mma
-DISTVERSION=	1.5
+DISTVERSION=	1.6
 PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/ \
