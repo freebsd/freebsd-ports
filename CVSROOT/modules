@@ -207,6 +207,7 @@ R-cran-Zelig                    ports/math/R-cran-Zelig
 R-cran-car                      ports/math/R-cran-car
 R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-igraph                   ports/math/R-cran-igraph
+R-cran-inline                   ports/math/R-cran-inline
 R-cran-sm                       ports/math/R-cran-sm
 R-cran-sp                       ports/math/R-cran-sp
 STk                             ports/lang/STk
@@ -10610,6 +10611,7 @@ p5-Apache-DumpHeaders           ports/www/p5-Apache-DumpHeaders
 p5-Apache-Filter                ports/www/p5-Apache-Filter
 p5-Apache-Gallery               ports/www/p5-Apache-Gallery
 p5-Apache-GopherHandler         ports/www/p5-Apache-GopherHandler
+p5-Apache-Htgroup               ports/www/p5-Apache-Htgroup
 p5-Apache-Htpasswd              ports/security/p5-Apache-Htpasswd
 p5-Apache-Icon                  ports/www/p5-Apache-Icon
 p5-Apache-Language              ports/www/p5-Apache-Language
@@ -11508,6 +11510,7 @@ p5-Data-Hierarchy               ports/devel/p5-Data-Hierarchy
 p5-Data-ICal                    ports/deskutils/p5-Data-ICal
 p5-Data-Integer                 ports/devel/p5-Data-Integer
 p5-Data-JavaScript              ports/lang/p5-Data-JavaScript
+p5-Data-JavaScript-Anon         ports/devel/p5-Data-JavaScript-Anon
 p5-Data-Lazy                    ports/devel/p5-Data-Lazy
 p5-Data-Localize                ports/devel/p5-Data-Localize
 p5-Data-MessagePack             ports/devel/p5-Data-MessagePack
@@ -11871,6 +11874,7 @@ p5-File-Path                    ports/devel/p5-File-Path
 p5-File-Path-Expand             ports/devel/p5-File-Path-Expand
 p5-File-PathConvert             ports/devel/p5-File-PathConvert
 p5-File-Pid                     ports/devel/p5-File-Pid
+p5-File-Pid-Quick               ports/devel/p5-File-Pid-Quick
 p5-File-Policy                  ports/devel/p5-File-Policy
 p5-File-Random                  ports/devel/p5-File-Random
 p5-File-ReadBackwards           ports/devel/p5-File-ReadBackwards
@@ -14147,6 +14151,7 @@ p5-WWW-VenusEnvy                ports/www/p5-WWW-VenusEnvy
 p5-WWW-WebArchive               ports/www/p5-WWW-WebArchive
 p5-WWW-Wikipedia                ports/www/p5-WWW-Wikipedia
 p5-WWW-Yandex-TIC               ports/www/p5-WWW-Yandex-TIC
+p5-WWW-iTunesConnect            ports/www/p5-WWW-iTunesConnect
 p5-Want                         ports/devel/p5-Want
 p5-WeakRef                      ports/devel/p5-WeakRef
 p5-Weather-Underground          ports/astro/p5-Weather-Underground
@@ -14436,6 +14441,7 @@ p5-apache-dumpheaders           ports/www/p5-Apache-DumpHeaders
 p5-apache-filter                ports/www/p5-Apache-Filter
 p5-apache-gallery               ports/www/p5-Apache-Gallery
 p5-apache-gopherhandler         ports/www/p5-Apache-GopherHandler
+p5-apache-htgroup               ports/www/p5-Apache-Htgroup
 p5-apache-htpasswd              ports/security/p5-Apache-Htpasswd
 p5-apache-icon                  ports/www/p5-Apache-Icon
 p5-apache-language              ports/www/p5-Apache-Language
@@ -15265,6 +15271,7 @@ p5-data-hierarchy               ports/devel/p5-Data-Hierarchy
 p5-data-ical                    ports/deskutils/p5-Data-ICal
 p5-data-integer                 ports/devel/p5-Data-Integer
 p5-data-javascript              ports/lang/p5-Data-JavaScript
+p5-data-javascript-anon         ports/devel/p5-Data-JavaScript-Anon
 p5-data-lazy                    ports/devel/p5-Data-Lazy
 p5-data-localize                ports/devel/p5-Data-Localize
 p5-data-messagepack             ports/devel/p5-Data-MessagePack
@@ -15724,6 +15731,7 @@ p5-file-path                    ports/devel/p5-File-Path
 p5-file-path-expand             ports/devel/p5-File-Path-Expand
 p5-file-pathconvert             ports/devel/p5-File-PathConvert
 p5-file-pid                     ports/devel/p5-File-Pid
+p5-file-pid-quick               ports/devel/p5-File-Pid-Quick
 p5-file-policy                  ports/devel/p5-File-Policy
 p5-file-pushd                   ports/devel/p5-File-pushd
 p5-file-random                  ports/devel/p5-File-Random
@@ -18035,6 +18043,7 @@ p5-www-hatenalogin              ports/www/p5-WWW-HatenaLogin
 p5-www-hatenastar               ports/www/p5-WWW-HatenaStar
 p5-www-hotmail                  ports/mail/p5-WWW-Hotmail
 p5-www-imdb                     ports/www/p5-WWW-IMDb
+p5-www-itunesconnect            ports/www/p5-WWW-iTunesConnect
 p5-www-link                     ports/www/p5-WWW-Link
 p5-www-mechanize                ports/www/p5-WWW-Mechanize
 p5-www-mechanize-cached         ports/www/p5-WWW-Mechanize-Cached
@@ -21334,6 +21343,7 @@ r                               ports/math/R
 r-cran-car                      ports/math/R-cran-car
 r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-igraph                   ports/math/R-cran-igraph
+r-cran-inline                   ports/math/R-cran-inline
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-sp                       ports/math/R-cran-sp
@@ -22828,6 +22838,7 @@ sms_client                      ports/comms/sms_client
 smssend                         ports/misc/smssend
 smstools                        ports/comms/smstools
 smstools3                       ports/comms/smstools3
+smtp-cli                        ports/mail/smtp-cli
 smtp-gated                      ports/mail/smtp-gated
 smtpclient                      ports/mail/smtpclient
 smtpd                           ports/mail/smtpd
