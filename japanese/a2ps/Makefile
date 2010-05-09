@@ -7,9 +7,11 @@
 
 PORTNAME=	a2ps
 PORTVERSION=	1.45
+PORTREVISION=	1
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/ \
-		ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nork
 DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
 EXTRACT_SUFX=
 

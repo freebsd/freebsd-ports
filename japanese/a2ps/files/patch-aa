@@ -1,8 +1,18 @@
---- a2ps-j.orig	Thu Apr  8 02:52:44 1999
-+++ a2ps-j	Thu Apr  8 02:54:06 1999
+--- a2ps-j.orig	2010-05-10 01:15:32.227559000 +0900
++++ a2ps-j	2010-05-10 01:18:27.223595925 +0900
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
 +#!/usr/bin/perl
  ;#
  ;# a2ps: ascii to ps
  ;#
+@@ -192,7 +192,8 @@
+ 
+ if ($debug == 2) {
+     require('dumpvar.pl');
+-    local($#) = '%.6g';
++##  Perl 5.10.1 says $# is no longer supported
++##  local($#) = '%.6g';
+     &dumpvar('main',
+ 	     'width', 'height', 'lmargin', 'smargin', 'font_size',
+ 	     'sheet_height', 'sheet_width', 'char_width', 'skip_column',
