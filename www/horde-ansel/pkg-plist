@@ -212,6 +212,7 @@
 %%HORDIR%%/scripts/sql/ansel.sql
 %%HORDIR%%/scripts/upgrades/1.0_to_1.1.pgsql.sql
 %%HORDIR%%/scripts/upgrades/1.0_to_1.1.php
+%%HORDIR%%/scripts/upgrades/1.1_to_1.1.1.sql
 %%HORDIR%%/templates/captions/captions.inc
 %%HORDIR%%/templates/common-header.inc
 %%HORDIR%%/templates/faces/custom.inc
@@ -264,6 +265,7 @@
 %%HORDIR%%/themes/feed-rss.xsl
 %%HORDIR%%/themes/graphics/add.png
 %%HORDIR%%/themes/graphics/ansel.png
+%%HORDIR%%/themes/graphics/arrow_switch.png
 %%HORDIR%%/themes/graphics/browse.png
 %%HORDIR%%/themes/graphics/carousel/left.png
 %%HORDIR%%/themes/graphics/carousel/left_disabled.png
@@ -281,6 +283,7 @@
 %%HORDIR%%/themes/graphics/lightbox/loading.gif
 %%HORDIR%%/themes/graphics/lightbox/nextlabel.gif
 %%HORDIR%%/themes/graphics/lightbox/prevlabel.gif
+%%HORDIR%%/themes/graphics/loading.gif
 %%HORDIR%%/themes/graphics/mini-error.png
 %%HORDIR%%/themes/graphics/minus.png
 %%HORDIR%%/themes/graphics/mygalleries.png
