@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	base
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	security
 MASTER_SITES=	SF/secureideas/BASE/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Basic Analysis and Security Engine - analyzing Snort alerts
 
-RUN_DEPENDS=	${ADODB_DIR}/adodb.inc.php:${PORTSDIR}/databases/adodb \
+RUN_DEPENDS=	${ADODB_DIR}/adodb.inc.php:${PORTSDIR}/databases/adodb5 \
 		${LOCALBASE}/share/pear/Image/Graph.php:${PORTSDIR}/graphics/pear-Image_Graph \
 		${LOCALBASE}/share/pear/Mail.php:${PORTSDIR}/mail/pear-Mail \
 		${LOCALBASE}/share/pear/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
