@@ -1,16 +1,16 @@
---- Makefile.in.orig	2008-12-06 03:19:25.000000000 +0900
-+++ Makefile.in	2008-12-09 15:17:10.000000000 +0900
-@@ -79,7 +79,7 @@
+--- Makefile.in.orig	2010-05-01 16:14:26.000000000 -0400
++++ Makefile.in	2010-05-08 16:08:49.000000000 -0400
+@@ -80,7 +80,7 @@
  # -DNEXUSTREE print nexus tree instead of plain newick trees
  # -UEP calculates unique event polymorphism
- NEWSTUFF          = -DNEWVERSION -DBFDEBUG
+ NEWSTUFF          =  
 -COMMONFLAGS       = $(ARCH) $(MACOSVERSION) $(NEWSTUFF) -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
 +COMMONFLAGS       = $(MACOSVERSION) $(NEWSTUFF) -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP $(CFLAGS_MT) $(HARDWARECFLAGS)
  #
  # combine the common flags with the version number and subversion number
  COMMONVFLAGS      =  $(COMMONFLAGS)  -DMIGRATESUBVERSION=\"\\\"$(MIGRATESUBVERSION)\\\"\" 
-@@ -195,22 +195,21 @@
- 	@echo '  make install (installs the executables and man page)'
+@@ -202,22 +202,21 @@
+ 	@echo '  make install (installs the executables and man page [out of date])'
  	@echo '  [there are other targets for debugging purposes, check the Makefile]'
  
 -all::   haru
@@ -36,7 +36,7 @@
  
  mpis-thread:: haru   
  	$(MAKE) $(NAME) "CC=$(MPICC)" "CFLAGS = $(CFLAGS) $(PRETTYCFLAGS) $(THREADCFLAGS) -DMPI -DSLOWNET -DNEWREPLICANT -DMPIREPLICANT" "LIBS = $(OTHERLIBS) $(PDFLIB) $(LIBS)"
-@@ -398,22 +397,22 @@
+@@ -405,22 +404,22 @@
  	else echo Must define $@; exit 1; fi
  
  $(NAME): $(PRODUCT_DEPENDS)
@@ -64,3 +64,10 @@
  
  
  #----------------------------------------------------------------
+@@ -473,4 +472,4 @@
+ #----------------------------------------------------------------
+ # BEAGLE
+ beagle:
+-	$(MAKE) $(NAME) "CFLAGS = $(DEBUGCFLAGS)  $(BEAGLEFLAGS) $(PRETTYCFLAGS)" "LIBS = $(PDFLIB) $(LIBS)"  "LDFLAGS =$(LDFLAGS) $(EXCEPTIONS) `pkg-config /Users/beerli/src/beagle-lib/hmsbeagle-1.0.pc --cflags --libs` -framework OpenCL"
+\ No newline at end of file
++	$(MAKE) $(NAME) "CFLAGS = $(DEBUGCFLAGS)  $(BEAGLEFLAGS) $(PRETTYCFLAGS)" "LIBS = $(PDFLIB) $(LIBS)"  "LDFLAGS =$(LDFLAGS) $(EXCEPTIONS) `pkg-config /Users/beerli/src/beagle-lib/hmsbeagle-1.0.pc --cflags --libs` -framework OpenCL"
