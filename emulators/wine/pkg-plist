@@ -18,7 +18,6 @@ bin/winegcc
 bin/winemaker
 bin/winemine
 bin/winepath
-bin/wineprefixcreate
 bin/wineserver
 bin/wmc
 bin/wrc
@@ -87,6 +86,8 @@ include/wine/windows/amstream.idl
 include/wine/windows/amvideo.h
 include/wine/windows/amvideo.idl
 include/wine/windows/appmgmt.h
+include/wine/windows/asptlb.h
+include/wine/windows/asptlb.idl
 include/wine/windows/asynot.idl
 include/wine/windows/asysta.idl
 include/wine/windows/audevcod.h
@@ -451,6 +452,7 @@ include/wine/windows/pstore.idl
 include/wine/windows/qedit.h
 include/wine/windows/qedit.idl
 include/wine/windows/ras.h
+include/wine/windows/rasdlg.h
 include/wine/windows/raserror.h
 include/wine/windows/reason.h
 include/wine/windows/regstr.h
@@ -946,6 +948,7 @@ lib/wine/fakedlls/mssign32.dll
 lib/wine/fakedlls/mssip32.dll
 lib/wine/fakedlls/mstask.dll
 lib/wine/fakedlls/msvcirt.dll
+lib/wine/fakedlls/msvcr100.dll
 lib/wine/fakedlls/msvcr70.dll
 lib/wine/fakedlls/msvcr71.dll
 lib/wine/fakedlls/msvcr80.dll
@@ -1023,6 +1026,7 @@ lib/wine/fakedlls/rsaenh.dll
 lib/wine/fakedlls/rtutils.dll
 lib/wine/fakedlls/rundll32.exe
 lib/wine/fakedlls/sane.ds
+lib/wine/fakedlls/sc.exe
 lib/wine/fakedlls/sccbase.dll
 lib/wine/fakedlls/schannel.dll
 lib/wine/fakedlls/secedit.exe
@@ -1398,6 +1402,7 @@ lib/wine/mssign32.dll.so
 lib/wine/mssip32.dll.so
 lib/wine/mstask.dll.so
 lib/wine/msvcirt.dll.so
+lib/wine/msvcr100.dll.so
 lib/wine/msvcr70.dll.so
 lib/wine/msvcr71.dll.so
 lib/wine/msvcr80.dll.so
@@ -1475,6 +1480,7 @@ lib/wine/rsaenh.dll.so
 lib/wine/rtutils.dll.so
 lib/wine/rundll32.exe.so
 lib/wine/sane.ds.so
+lib/wine/sc.exe.so
 lib/wine/sccbase.dll.so
 lib/wine/schannel.dll.so
 lib/wine/secedit.exe.so
@@ -1610,6 +1616,7 @@ lib/wine/xinput9_1_0.dll.so
 lib/wine/xmllite.dll.so
 share/applications/wine.desktop
 %%DATADIR%%/wine/generic.ppd
+%%DATADIR%%/wine/l_intl.nls
 %%DATADIR%%/wine/wine.inf
 %%DATADIR%%/wine/fonts/coue1255.fon
 %%DATADIR%%/wine/fonts/coue1256.fon

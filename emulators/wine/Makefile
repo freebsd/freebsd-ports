@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.1.43
+DISTVERSION=	1.1.44
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
@@ -36,7 +36,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/wine
 MAKE_JOBS_SAFE=	yes
 MAN1=		widl.1 wine.1 winebuild.1 winedbg.1 winedump.1 winegcc.1 \
-		winemaker.1 wineprefixcreate.1 wineserver.1 wmc.1 wrc.1
+		winemaker.1 wineserver.1 wmc.1 wrc.1
 MLINKS=		winegcc.1 wineg++.1
 ONLY_FOR_ARCHS=	i386
 USE_BISON=	build
