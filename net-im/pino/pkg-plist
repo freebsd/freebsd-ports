@@ -35,6 +35,8 @@ share/locale/ml/LC_MESSAGES/pino.mo
 share/locale/pa/LC_MESSAGES/pino.mo
 share/locale/te/LC_MESSAGES/pino.mo
 share/locale/tr/LC_MESSAGES/pino.mo
+share/locale/ja/LC_MESSAGES/pino.mo
+share/locale/ro/LC_MESSAGES/pino.mo
 %%DATADIR%%/icons/delete_status.png
 %%DATADIR%%/icons/direct.svg
 %%DATADIR%%/icons/direct_fresh.svg
