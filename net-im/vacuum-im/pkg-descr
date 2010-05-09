@@ -1,0 +1,6 @@
+Vacuum IM - modular, crossplatform Jabber client
+The core program is just a plugin loader - all functionality is made available
+via plugins. This enforces modularity and ensures well defined component
+interaction via interfaces.
+
+WWW:	http://code.google.com/p/vacuum-im/
