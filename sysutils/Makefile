@@ -86,6 +86,7 @@
     SUBDIR += ccze
     SUBDIR += cdargs
     SUBDIR += cdbkup
+    SUBDIR += cdeploy
     SUBDIR += cdf
     SUBDIR += cdircmp
     SUBDIR += cdrdao

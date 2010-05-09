@@ -1,0 +1,5 @@
+This is a port of the cdeploy utility, a tool which can be used to deploy a
+directory sub-tree into another directory tree. cdeploy is currently
+maintained by the RootForum.org community.
+
+WWW: http://sourceforge.net/projects/root-tools/
