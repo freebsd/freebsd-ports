@@ -1,6 +1,6 @@
---- Makefile.in.orig	2009-04-15 05:55:36.000000000 -0400
-+++ Makefile.in	2009-08-01 17:36:39.000000000 -0400
-@@ -28,18 +28,12 @@
+--- Makefile.in.orig	2010-02-04 01:23:13.951139949 -0800
++++ Makefile.in	2010-02-04 01:25:05.758312928 -0800
+@@ -48,16 +48,12 @@
  
  all:	bmeps
  	-[ -d lib ] || mkdir -p lib
@@ -12,14 +12,12 @@
  	find lib -type f -exec chmod 644 {} \;
  	find share -type d -exec chmod 755 {} \;
  	find share -type f -exec chmod 644 {} \;
--	find Java/doc -type d -exec chmod ugo+rx {} \;
--	find Java/doc -type f -exec chmod ugo+r {} \;
 -	chmod 755 bmepsgui.jar
 -	chmod 755 bmeps-gui
  	touch all
  	./transform-mkpdfsls ${PERL} ${datadir}
  
-@@ -52,31 +46,14 @@
+@@ -70,30 +66,14 @@
  	-chmod 755 $(pp)$(incdir)
  	-[ -d $(pp)$(datadir) ] || mkdir -p $(pp)$(datadir)
  	-chmod 755 $(pp)$(datadir)
@@ -42,7 +40,6 @@
  	cp bmeps.h $(pp)$(incdir)/bmeps.h
  	chmod 644 $(pp)$(incdir)/bmeps.h
 -	-(cd share; tar cf - ./*) | (cd $(pp)$(datadir) ; tar xf -)
--	-(cd Java/doc; tar cf - .) | (cd $(pp)$(datadir)/doc/javadoc/BmepsGUI; tar xf -)
 -	-[ -d $(pp)$(mandir)/man1 ] || mkdir -p $(pp)$(mandir)/man1
 -	-chmod 755 $(pp)$(mandir)/man1
 -	cp man/man1/bmeps.1 $(pp)$(mandir)/man1/bmeps.1
