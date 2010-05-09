@@ -2941,6 +2941,7 @@
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-echoe
+    SUBDIR += rubygem-elif
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-facets
