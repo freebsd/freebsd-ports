@@ -1,0 +1,7 @@
+--- conkyForecast.orig	2010-01-07 05:02:45.000000000 +0700
++++ conkyForecast	2010-05-07 02:07:30.000000000 +0800
+@@ -1,3 +1,3 @@
+ #! /bin/sh
+ cd /usr/share/conkyforecast/
+-$PYTHONPATH /usr/bin/python /usr/share/conkyforecast/conkyForecast.py "$@"
++$PYTHONPATH /usr/bin/env python /usr/share/conkyforecast/conkyForecast.py "$@"

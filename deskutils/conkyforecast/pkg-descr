@@ -1,0 +1,6 @@
+conkyForecast is a python script created to provide weather forecast
+information to be displayed in Conky. It uses the Weather.com XOAP
+service to retrieve data for all over the world.
+
+WWW:	https://launchpad.net/~conkyhardcore
+WWW:	https://code.launchpad.net/~m-buck/+junk/conkyforecast

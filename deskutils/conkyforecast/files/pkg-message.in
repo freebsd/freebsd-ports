@@ -1,0 +1,18 @@
+Make sure that the freetype module is loaded.  If it is not, add the following
+line to the "Modules" section of your X Windows configuration file:
+
+        Load "freetype"
+
+Add the following line to the "Files" section of X Windows configuration file:
+
+        FontPath "%%PREFIX%%/%%FONTSDIR%%/"
+
+For a working script you must define, in a user specific config file, a partner
+id and registration code for the weather.com xoap service. For this purpose
+the config file should be copied to ~/.conkyForecast.config and setup as
+required.
+
+To copy and edit the config, using the command line, run:
+
+	cp %%DATADIR%%/conkyForecast.config ~/.conkyForecast.config
+

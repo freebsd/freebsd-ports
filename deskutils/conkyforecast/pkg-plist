@@ -1,0 +1,209 @@
+bin/conkyForecast
+%%DATADIR%%/conkyForecast.config
+%%DATADIR%%/conkyForecast.pot
+%%DATADIR%%/conkyForecast.py
+%%DATADIR%%/example/conkyForecast.template
+%%DATADIR%%/example/conkyrc
+%%FONTSDIR%%/Arrows.sfd.tar.gz
+%%FONTSDIR%%/Arrows.ttf
+%%FONTSDIR%%/ConkyWeather.otf
+%%FONTSDIR%%/ConkyWind.otf
+%%FONTSDIR%%/ConkyWind.sfd.tar.gz
+%%FONTSDIR%%/ConkyWindN.otf
+%%FONTSDIR%%/ConkyWindNESW.otf
+%%FONTSDIR%%/Moon Phases.ttf
+%%FONTSDIR%%/StyleBats.ttf
+%%DATADIR%%/images/bearingicons/00.png
+%%DATADIR%%/images/bearingicons/01.png
+%%DATADIR%%/images/bearingicons/02.png
+%%DATADIR%%/images/bearingicons/03.png
+%%DATADIR%%/images/bearingicons/04.png
+%%DATADIR%%/images/bearingicons/05.png
+%%DATADIR%%/images/bearingicons/06.png
+%%DATADIR%%/images/bearingicons/07.png
+%%DATADIR%%/images/bearingicons/08.png
+%%DATADIR%%/images/bearingicons/09.png
+%%DATADIR%%/images/bearingicons/10.png
+%%DATADIR%%/images/bearingicons/11.png
+%%DATADIR%%/images/bearingicons/12.png
+%%DATADIR%%/images/bearingicons/13.png
+%%DATADIR%%/images/bearingicons/14.png
+%%DATADIR%%/images/bearingicons/15.png
+%%DATADIR%%/images/bearingicons/16.png
+%%DATADIR%%/images/bearingicons/17.png
+%%DATADIR%%/images/bearingicons/18.png
+%%DATADIR%%/images/bearingicons/19.png
+%%DATADIR%%/images/bearingicons/20.png
+%%DATADIR%%/images/bearingicons/21.png
+%%DATADIR%%/images/bearingicons/22.png
+%%DATADIR%%/images/bearingicons/23.png
+%%DATADIR%%/images/bearingicons/24.png
+%%DATADIR%%/images/bearingicons/25.png
+%%DATADIR%%/images/bearingicons/26.png
+%%DATADIR%%/images/bearingicons/27.png
+%%DATADIR%%/images/bearingicons/28.png
+%%DATADIR%%/images/bearingicons/29.png
+%%DATADIR%%/images/bearingicons/30.png
+%%DATADIR%%/images/bearingicons/31.png
+%%DATADIR%%/images/bearingicons/32.png
+%%DATADIR%%/images/bearingicons/33.png
+%%DATADIR%%/images/bearingicons/34.png
+%%DATADIR%%/images/bearingicons/35.png
+%%DATADIR%%/images/bearingicons/36.png
+%%DATADIR%%/images/bearingicons/37.png
+%%DATADIR%%/images/bearingicons/38.png
+%%DATADIR%%/images/bearingicons/39.png
+%%DATADIR%%/images/bearingicons/40.png
+%%DATADIR%%/images/bearingicons/41.png
+%%DATADIR%%/images/bearingicons/42.png
+%%DATADIR%%/images/bearingicons/43.png
+%%DATADIR%%/images/bearingicons/44.png
+%%DATADIR%%/images/bearingicons/45.png
+%%DATADIR%%/images/bearingicons/46.png
+%%DATADIR%%/images/bearingicons/47.png
+%%DATADIR%%/images/bearingicons/48.png
+%%DATADIR%%/images/bearingicons/49.png
+%%DATADIR%%/images/bearingicons/50.png
+%%DATADIR%%/images/bearingicons/51.png
+%%DATADIR%%/images/bearingicons/52.png
+%%DATADIR%%/images/bearingicons/53.png
+%%DATADIR%%/images/bearingicons/54.png
+%%DATADIR%%/images/bearingicons/55.png
+%%DATADIR%%/images/bearingicons/56.png
+%%DATADIR%%/images/bearingicons/57.png
+%%DATADIR%%/images/bearingicons/58.png
+%%DATADIR%%/images/bearingicons/59.png
+%%DATADIR%%/images/bearingicons/60.png
+%%DATADIR%%/images/bearingicons/61.png
+%%DATADIR%%/images/bearingicons/62.png
+%%DATADIR%%/images/bearingicons/63.png
+%%DATADIR%%/images/bearingicons/64.png
+%%DATADIR%%/images/bearingicons/65.png
+%%DATADIR%%/images/bearingicons/66.png
+%%DATADIR%%/images/bearingicons/67.png
+%%DATADIR%%/images/bearingicons/68.png
+%%DATADIR%%/images/moonicons/01.png
+%%DATADIR%%/images/moonicons/02.png
+%%DATADIR%%/images/moonicons/03.png
+%%DATADIR%%/images/moonicons/04.png
+%%DATADIR%%/images/moonicons/05.png
+%%DATADIR%%/images/moonicons/06.png
+%%DATADIR%%/images/moonicons/07.png
+%%DATADIR%%/images/moonicons/08.png
+%%DATADIR%%/images/moonicons/09.png
+%%DATADIR%%/images/moonicons/10.png
+%%DATADIR%%/images/moonicons/11.png
+%%DATADIR%%/images/moonicons/12.png
+%%DATADIR%%/images/moonicons/13.png
+%%DATADIR%%/images/moonicons/14.png
+%%DATADIR%%/images/moonicons/15.png
+%%DATADIR%%/images/moonicons/16.png
+%%DATADIR%%/images/moonicons/17.png
+%%DATADIR%%/images/moonicons/18.png
+%%DATADIR%%/images/moonicons/19.png
+%%DATADIR%%/images/moonicons/20.png
+%%DATADIR%%/images/moonicons/21.png
+%%DATADIR%%/images/moonicons/22.png
+%%DATADIR%%/images/moonicons/23.png
+%%DATADIR%%/images/moonicons/24.png
+%%DATADIR%%/images/weathericons/00.png
+%%DATADIR%%/images/weathericons/01.png
+%%DATADIR%%/images/weathericons/02.png
+%%DATADIR%%/images/weathericons/03.png
+%%DATADIR%%/images/weathericons/04.png
+%%DATADIR%%/images/weathericons/05.png
+%%DATADIR%%/images/weathericons/06.png
+%%DATADIR%%/images/weathericons/07.png
+%%DATADIR%%/images/weathericons/08.png
+%%DATADIR%%/images/weathericons/09.png
+%%DATADIR%%/images/weathericons/10.png
+%%DATADIR%%/images/weathericons/11.png
+%%DATADIR%%/images/weathericons/12.png
+%%DATADIR%%/images/weathericons/13.png
+%%DATADIR%%/images/weathericons/14.png
+%%DATADIR%%/images/weathericons/15.png
+%%DATADIR%%/images/weathericons/16.png
+%%DATADIR%%/images/weathericons/17.png
+%%DATADIR%%/images/weathericons/18.png
+%%DATADIR%%/images/weathericons/19.png
+%%DATADIR%%/images/weathericons/20.png
+%%DATADIR%%/images/weathericons/21.png
+%%DATADIR%%/images/weathericons/22.png
+%%DATADIR%%/images/weathericons/23.png
+%%DATADIR%%/images/weathericons/24.png
+%%DATADIR%%/images/weathericons/25.png
+%%DATADIR%%/images/weathericons/26.png
+%%DATADIR%%/images/weathericons/27.png
+%%DATADIR%%/images/weathericons/28.png
+%%DATADIR%%/images/weathericons/29.png
+%%DATADIR%%/images/weathericons/30.png
+%%DATADIR%%/images/weathericons/31.png
+%%DATADIR%%/images/weathericons/32.png
+%%DATADIR%%/images/weathericons/33.png
+%%DATADIR%%/images/weathericons/34.png
+%%DATADIR%%/images/weathericons/35.png
+%%DATADIR%%/images/weathericons/36.png
+%%DATADIR%%/images/weathericons/37.png
+%%DATADIR%%/images/weathericons/38.png
+%%DATADIR%%/images/weathericons/39.png
+%%DATADIR%%/images/weathericons/40.png
+%%DATADIR%%/images/weathericons/41.png
+%%DATADIR%%/images/weathericons/42.png
+%%DATADIR%%/images/weathericons/43.png
+%%DATADIR%%/images/weathericons/44.png
+%%DATADIR%%/images/weathericons/45.png
+%%DATADIR%%/images/weathericons/46.png
+%%DATADIR%%/images/weathericons/47.png
+%%DATADIR%%/locale/bg/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/bg/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/cs/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/cs/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/de/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/de/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/es/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/es/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/fj/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/fj/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/fr/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/fr/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/it/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/it/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/nl/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/nl/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/pl/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/pl/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/ro/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/ro/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/test/conkyForecast.template
+%%DATADIR%%/test/conkyrc
+@dirrm %%DATADIR%%/test
+@dirrm %%DATADIR%%/locale/ro/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/ro
+@dirrm %%DATADIR%%/locale/pl/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/pl
+@dirrm %%DATADIR%%/locale/nl/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/nl
+@dirrm %%DATADIR%%/locale/it/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/it
+@dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/fr
+@dirrm %%DATADIR%%/locale/fj/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/fj
+@dirrm %%DATADIR%%/locale/es/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/es
+@dirrm %%DATADIR%%/locale/de/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/de
+@dirrm %%DATADIR%%/locale/cs/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/cs
+@dirrm %%DATADIR%%/locale/bg/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/bg
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/images/weathericons
+@dirrm %%DATADIR%%/images/moonicons
+@dirrm %%DATADIR%%/images/bearingicons
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/example
+@dirrm %%DATADIR%%
+@unexec rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec %%LOCALBASE%%/bin/fc-cache -f -v %D/%%FONTSDIR%% || /usr/bin/true
