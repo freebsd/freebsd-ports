@@ -7,7 +7,7 @@
 
 PORTNAME=	less+iso
 PORTVERSION=	382.262
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
@@ -28,11 +28,12 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Less + zcat + ISO-2022 - a pager similar to more and pg
 
+MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cs-regex
 MAN1=		jless.1 jlesskey.1
 
-DOCDIR=		${PREFIX}/share/doc/less
+DOCSDIR=	${PREFIX}/share/doc/less
 READMES=	README.iso README.regex README.iso.jp README.regex.jp
 
 post-patch:
@@ -44,8 +45,8 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-	(cd ${WRKSRC}; ${INSTALL_DATA} ${READMES} ${DOCDIR})
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}; ${INSTALL_DATA} ${READMES} ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
