@@ -1,6 +1,10 @@
---- ChangeLog.orig	2006-02-03 08:07:23.000000000 -0800
-+++ ChangeLog	2008-08-16 13:10:41.000000000 -0700
-@@ -1,3 +1,6 @@
+--- ChangeLog.orig	2010-04-28 12:17:05.000000000 -0700
++++ ChangeLog	2010-04-28 12:16:35.000000000 -0700
+@@ -1,3 +1,10 @@
++28 Apr 2010 FreeBSD Port
++	* Fix memory leak/segfault under certain circumstances.
++           http://sf.net/tracker/?func=detail&aid=2209433&group_id=30568&atid=399700
++
 +16 Aug 2008 FreeBSD Port
 +	* Fix 2G overflow for data_size (backported from vendor CVS)
 +

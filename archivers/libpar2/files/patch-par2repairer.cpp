@@ -1,0 +1,36 @@
+#####
+# This patch is maintained by Andrei Prygounkov, author of news/nzbget
+# It fixes a memory leak and a segfault triggered by a corrupted par2 file.
+#
+# For more details, see:
+#       http://sf.net/tracker/?func=detail&aid=2209433&group_id=30568&atid=399700
+#####
+diff -aud ../libpar2-0.2-original/par2repairer.cpp ../libpar2-0.2/par2repairer.cpp
+--- ../libpar2-0.2-original/par2repairer.cpp	2006-01-20 18:25:20.000000000 +0100
++++ ../libpar2-0.2/par2repairer.cpp	2008-02-06 12:02:53.226050300 +0100
+@@ -78,6 +78,7 @@
+ 
+   delete mainpacket;
+   delete creatorpacket;
++  delete headers;
+ }
+ 
+ 
+@@ -1261,7 +1262,7 @@
+         DiskFile::SplitFilename(filename, path, name);
+ 
+         cout << "Target: \"" << name << "\" - missing." << endl;
+-	sig_done.emit(name, 0, sourcefile->GetVerificationPacket()->BlockCount());
++	sig_done.emit(name, 0, sourcefile->GetVerificationPacket() ? sourcefile->GetVerificationPacket()->BlockCount() : 0);
+       }
+     }
+ 
+@@ -1804,7 +1805,7 @@
+       }
+     }
+   }
+-  sig_done.emit(name,count,sourcefile->GetVerificationPacket()->BlockCount()); 
++  sig_done.emit(name,count, sourcefile->GetVerificationPacket() ? sourcefile->GetVerificationPacket()->BlockCount() : 0); 
+   sig_progress.emit(1000.0);
+   return true;
+ }
