@@ -196,6 +196,7 @@ share/icons/hicolor/48x48/apps/gnome-netstatus-txrx.png
 share/locale/af/LC_MESSAGES/gnome-netstatus.mo
 share/locale/ar/LC_MESSAGES/gnome-netstatus.mo
 share/locale/as/LC_MESSAGES/gnome-netstatus.mo
+share/locale/ast/LC_MESSAGES/gnome-netstatus.mo
 share/locale/az/LC_MESSAGES/gnome-netstatus.mo
 share/locale/be@latin/LC_MESSAGES/gnome-netstatus.mo
 share/locale/bg/LC_MESSAGES/gnome-netstatus.mo
@@ -211,6 +212,7 @@ share/locale/da/LC_MESSAGES/gnome-netstatus.mo
 share/locale/de/LC_MESSAGES/gnome-netstatus.mo
 share/locale/dz/LC_MESSAGES/gnome-netstatus.mo
 share/locale/el/LC_MESSAGES/gnome-netstatus.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-netstatus.mo
 share/locale/en_CA/LC_MESSAGES/gnome-netstatus.mo
 share/locale/en_GB/LC_MESSAGES/gnome-netstatus.mo
 share/locale/es/LC_MESSAGES/gnome-netstatus.mo
@@ -349,13 +351,17 @@ share/locale/zh_TW/LC_MESSAGES/gnome-netstatus.mo
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

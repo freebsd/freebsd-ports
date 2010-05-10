@@ -35,6 +35,7 @@ share/icons/hicolor/48x48/apps/devhelp.png
 share/icons/hicolor/scalable/apps/devhelp.svg
 share/locale/am/LC_MESSAGES/devhelp.mo
 share/locale/ar/LC_MESSAGES/devhelp.mo
+share/locale/ast/LC_MESSAGES/devhelp.mo
 share/locale/az/LC_MESSAGES/devhelp.mo
 share/locale/be/LC_MESSAGES/devhelp.mo
 share/locale/be@latin/LC_MESSAGES/devhelp.mo
@@ -50,6 +51,7 @@ share/locale/dz/LC_MESSAGES/devhelp.mo
 share/locale/el/LC_MESSAGES/devhelp.mo
 share/locale/en_CA/LC_MESSAGES/devhelp.mo
 share/locale/en_GB/LC_MESSAGES/devhelp.mo
+share/locale/en@shaw/LC_MESSAGES/devhelp.mo
 share/locale/es/LC_MESSAGES/devhelp.mo
 share/locale/et/LC_MESSAGES/devhelp.mo
 share/locale/fi/LC_MESSAGES/devhelp.mo
@@ -104,9 +106,9 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrm share/devhelp/dtd
 @dirrm share/devhelp/assistant
 @dirrm share/devhelp
-%%GEDIT%%@dirrm lib/gedit-2/plugins/devhelp
 @dirrm include/devhelp-1.0/devhelp
 @dirrm include/devhelp-1.0
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -115,16 +117,14 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
 @dirrmtry share/locale/ps/LC_MESSAGES
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
@@ -133,4 +133,5 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/applications
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast

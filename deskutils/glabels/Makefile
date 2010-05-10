@@ -3,14 +3,13 @@
 # Whom:			Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/glabels/Makefile,v 1.7 2007/05/19 21:36:02 marcus Exp $
+#   $MCom: ports/deskutils/glabels/Makefile,v 1.10 2010/04/03 19:25:49 kwm Exp $
 #
 
 PORTNAME=	glabels
-PORTVERSION=	2.2.5
-PORTREVISION=	3
+PORTVERSION=	2.2.7
 CATEGORIES=	deskutils
-MASTER_SITES=	SF
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program to create labels and business cards

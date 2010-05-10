@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-02-14 13:38:48.000000000 -0500
-+++ Makefile.in	2010-02-14 13:39:18.000000000 -0500
-@@ -482,17 +482,17 @@ uninstall-anjuta_dataDATA:
+--- Makefile.in.orig	2009-12-23 12:28:03.000000000 +0100
++++ Makefile.in	2009-12-23 12:31:34.000000000 +0100
+@@ -490,17 +490,17 @@ uninstall-anjuta_dataDATA:
  	echo " ( cd '$(DESTDIR)$(anjuta_datadir)' && rm -f" $$files ")"; \
  	cd "$(DESTDIR)$(anjuta_datadir)" && rm -f $$files
  install-anjutadocDATA: $(anjutadoc_DATA)

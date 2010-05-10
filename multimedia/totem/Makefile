@@ -3,12 +3,12 @@
 # Whom:                 Hendrik Scholz <hendrik@scholz.net>
 #
 # $FreeBSD$
-#   $MCom: ports/multimedia/totem/Makefile,v 1.138 2009/11/19 15:28:58 kwm Exp $
+#   $MCom: ports/multimedia/totem/Makefile,v 1.146 2010/05/06 08:41:15 kwm Exp $
 #
 
 PORTNAME=	totem
-PORTVERSION=	2.28.5
-PORTREVISION?=	2
+PORTVERSION=	2.30.1
+PORTREVISION?=	0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,8 +18,8 @@ COMMENT?=	A gstreamer-based video player for the GNOME 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
-		gdata.6:${PORTSDIR}/devel/libgdata \
-		totem-plparser.12:${PORTSDIR}/multimedia/totem-pl-parser
+		gdata.7:${PORTSDIR}/devel/libgdata \
+		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
 		${PYTHON_SITELIBDIR}/atom/__init__.py:${PORTSDIR}/devel/py-gdata
@@ -52,13 +52,15 @@ OPTIONS=	LIRC "Enable lirc support" off \
 		GALAGO "Enable Galago support" off \
 		BROWSER_PLUGINS "Enable install plugins for gecko browser" on \
 		PUBLISH "Enable Publish (network playlist) plugin" off \
-		TRACKER "Enable tracker local search plugin" off
+#		TRACKER "Enable tracker local search plugin" off
 
 # check configure script for allowed_plugins="..." for new plugins
 TOTEM_PLUGINS=	thumbnail screensaver ontop gromit media-player-keys \
-		properties skipto youtube
+		properties skipto youtube opensubtitles screenshot \
+		brasero-disc-recorder coherence_upnp dbus-service iplayer
+
 # Not using:
-# TOTEM_PLUGINS= mythtv bemused
+# TOTEM_PLUGINS= mythtv bemused jamendo
 
 .include <bsd.port.pre.mk>
 
@@ -70,13 +72,13 @@ TOTEM_PLUGINS:=	${TOTEM_PLUGINS} publish
 PLIST_SUB+=	PUBLISH="@comment "
 .endif
 
-.if defined(WITH_TRACKER)
-LIB_DEPENDS+=	tracker-gtk.0:${PORTSDIR}/sysutils/tracker-libtrackergtk
-TOTEM_PLUGINS:=	${TOTEM_PLUGINS} tracker
-PLIST_SUB+=	TRACKER=""
-.else
+#.if defined(WITH_TRACKER)
+#LIB_DEPENDS+=	tracker-gtk.0:${PORTSDIR}/sysutils/tracker-libtrackergtk
+#TOTEM_PLUGINS:=	${TOTEM_PLUGINS} tracker
+#PLIST_SUB+=	TRACKER=""
+#.else
 PLIST_SUB+=	TRACKER="@comment "
-.endif
+#.endif
 
 .if defined(WITH_LIRC)
 LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
@@ -97,13 +99,11 @@ PLIST_SUB+=	GALAGO="@comment "
 .if !defined(WITHOUT_BROWSER_PLUGINS)
 CONFIGURE_ARGS+=--enable-browser-plugins \
 		--enable-gmp-plugin \
-		--enable-complex-plugin \
 		--enable-narrowspace-plugin
 PLIST_SUB+=	BROWSER_PLUGINS=""
 
 USE_WEBPLUGINS=		gecko19 webkit-gtk2
-WEBPLUGINS_FILES=	libtotem-complex-plugin.so \
-			libtotem-cone-plugin.so libtotem-gmp-plugin.so \
+WEBPLUGINS_FILES=	libtotem-cone-plugin.so libtotem-gmp-plugin.so \
 			libtotem-mully-plugin.so \
 			libtotem-narrowspace-plugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
@@ -111,7 +111,6 @@ WEBPLUGINS_FILES=	libtotem-complex-plugin.so \
 CONFIGURE_ARGS+=--disable-browser-plugins \
 		--disable-basic-plugin \
 		--disable-gmp-plugin \
-		--disable-complex-plugin \
 		--disable-narrowspace-plugin
 PLIST_SUB+=	BROWSER_PLUGINS="@comment "
 .endif

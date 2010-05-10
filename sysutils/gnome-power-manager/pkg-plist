@@ -1,8 +1,8 @@
 bin/gnome-power-bugreport.sh
-bin/gnome-power-cmd.sh
 bin/gnome-power-manager
 bin/gnome-power-preferences
 bin/gnome-power-statistics
+etc/xdg/autostart/gnome-power-manager.desktop
 libdata/bonobo/servers/GNOME_BrightnessApplet.server
 libdata/bonobo/servers/GNOME_InhibitApplet.server
 libexec/gnome-brightness-applet
@@ -12,16 +12,28 @@ share/applications/gnome-power-statistics.desktop
 share/dbus-1/services/gnome-power-manager.service
 share/gnome-2.0/ui/GNOME_BrightnessApplet.xml
 share/gnome-2.0/ui/GNOME_InhibitApplet.xml
-%%DATADIR%%/gpm-critical-power.wav
-%%DATADIR%%/gpm-feedback-widget.glade
-%%DATADIR%%/gpm-graph.glade
-%%DATADIR%%/gpm-inhibit-test.glade
-%%DATADIR%%/gpm-prefs.glade
-%%DATADIR%%/gpm-suspend-failure.wav
-%%DATADIR%%/gpm-unplugged.wav
+%%DATADIR%%/acme.ui
+%%DATADIR%%/gpm-feedback-widget.ui
+%%DATADIR%%/gpm-prefs.ui
+%%DATADIR%%/gpm-statistics.ui
 %%DATADIR%%/icons/hicolor/16x16/actions/gpm-hibernate.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gpm-suspend.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-ac-adapter.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-000-charging.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-000.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-020-charging.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-020.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-040-charging.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-040.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-060-charging.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-060.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-080-charging.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-080.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-100-charging.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-100.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-charged.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-empty.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-battery-missing.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-brightness-kbd-disabled.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-brightness-kbd-invalid.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-brightness-kbd.png
@@ -31,31 +43,23 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-inhibit-invalid.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-inhibit.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-keyboard-000.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-keyboard-030.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-keyboard-020.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-keyboard-040.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-keyboard-060.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-keyboard-080.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-keyboard-100.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-mouse-000.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-mouse-030.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-mouse-020.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-mouse-040.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-mouse-060.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-mouse-080.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-mouse-100.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-phone-000.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-phone-030.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-phone-020.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-phone-040.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-phone-060.png
+%%DATADIR%%/icons/hicolor/16x16/status/gpm-phone-080.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-phone-100.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-000-charging.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-000.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-020-charging.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-020.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-040-charging.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-040.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-060-charging.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-060.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-080-charging.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-080.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-100-charging.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-100.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-charged.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-primary-missing.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-ups-000-charging.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-ups-000.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-ups-020-charging.png
@@ -68,11 +72,25 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-ups-080.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-ups-100-charging.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-ups-100.png
-%%DATADIR%%/icons/hicolor/16x16/status/gpm-ups-charged.png
 %%DATADIR%%/icons/hicolor/16x16/status/gpm-ups-missing.png
 %%DATADIR%%/icons/hicolor/22x22/actions/gpm-hibernate.png
 %%DATADIR%%/icons/hicolor/22x22/actions/gpm-suspend.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-ac-adapter.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-000-charging.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-000.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-020-charging.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-020.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-040-charging.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-040.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-060-charging.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-060.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-080-charging.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-080.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-100-charging.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-100.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-charged.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-empty.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-battery-missing.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-brightness-kbd-disabled.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-brightness-kbd-invalid.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-brightness-kbd.png
@@ -82,31 +100,23 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-inhibit-invalid.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-inhibit.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-keyboard-000.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-keyboard-030.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-keyboard-020.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-keyboard-040.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-keyboard-060.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-keyboard-080.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-keyboard-100.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-mouse-000.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-mouse-030.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-mouse-020.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-mouse-040.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-mouse-060.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-mouse-080.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-mouse-100.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-phone-000.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-phone-030.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-phone-020.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-phone-040.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-phone-060.png
+%%DATADIR%%/icons/hicolor/22x22/status/gpm-phone-080.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-phone-100.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-000-charging.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-000.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-020-charging.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-020.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-040-charging.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-040.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-060-charging.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-060.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-080-charging.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-080.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-100-charging.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-100.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-charged.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-primary-missing.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-ups-000-charging.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-ups-000.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-ups-020-charging.png
@@ -119,11 +129,25 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-ups-080.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-ups-100-charging.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-ups-100.png
-%%DATADIR%%/icons/hicolor/22x22/status/gpm-ups-charged.png
 %%DATADIR%%/icons/hicolor/22x22/status/gpm-ups-missing.png
 %%DATADIR%%/icons/hicolor/24x24/actions/gpm-hibernate.png
 %%DATADIR%%/icons/hicolor/24x24/actions/gpm-suspend.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-ac-adapter.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-000-charging.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-000.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-020-charging.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-020.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-040-charging.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-040.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-060-charging.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-060.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-080-charging.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-080.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-100-charging.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-100.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-charged.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-empty.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-battery-missing.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-brightness-kbd-disabled.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-brightness-kbd-invalid.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-brightness-kbd.png
@@ -133,31 +157,23 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-inhibit-invalid.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-inhibit.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-keyboard-000.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-keyboard-030.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-keyboard-020.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-keyboard-040.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-keyboard-060.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-keyboard-080.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-keyboard-100.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-mouse-000.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-mouse-030.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-mouse-020.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-mouse-040.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-mouse-060.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-mouse-080.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-mouse-100.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-phone-000.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-phone-030.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-phone-020.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-phone-040.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-phone-060.png
+%%DATADIR%%/icons/hicolor/24x24/status/gpm-phone-080.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-phone-100.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-000-charging.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-000.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-020-charging.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-020.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-040-charging.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-040.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-060-charging.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-060.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-080-charging.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-080.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-100-charging.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-100.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-charged.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-primary-missing.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-ups-000-charging.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-ups-000.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-ups-020-charging.png
@@ -170,11 +186,82 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-ups-080.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-ups-100-charging.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-ups-100.png
-%%DATADIR%%/icons/hicolor/24x24/status/gpm-ups-charged.png
 %%DATADIR%%/icons/hicolor/24x24/status/gpm-ups-missing.png
+%%DATADIR%%/icons/hicolor/32x32/actions/gpm-hibernate.png
+%%DATADIR%%/icons/hicolor/32x32/actions/gpm-suspend.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ac-adapter.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-000-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-000.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-020-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-020.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-040-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-040.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-060-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-060.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-080-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-080.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-100-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-100.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-charged.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-empty.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-battery-missing.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-brightness-kbd-disabled.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-brightness-kbd-invalid.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-brightness-kbd.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-brightness-lcd-disabled.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-brightness-lcd-invalid.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-brightness-lcd.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-inhibit-invalid.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-inhibit.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-keyboard-000.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-keyboard-020.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-keyboard-040.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-keyboard-060.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-keyboard-080.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-keyboard-100.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-mouse-000.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-mouse-020.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-mouse-040.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-mouse-060.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-mouse-080.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-mouse-100.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-phone-000.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-phone-020.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-phone-040.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-phone-060.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-phone-080.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-phone-100.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-000-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-000.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-020-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-020.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-040-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-040.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-060-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-060.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-080-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-080.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-100-charging.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-100.png
+%%DATADIR%%/icons/hicolor/32x32/status/gpm-ups-missing.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gpm-hibernate.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gpm-suspend.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ac-adapter.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-000-charging.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-000.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-020-charging.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-020.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-040-charging.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-040.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-060-charging.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-060.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-080-charging.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-080.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-100-charging.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-100.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-charged.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-empty.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-battery-missing.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-brightness-kbd-disabled.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-brightness-kbd-invalid.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-brightness-kbd.png
@@ -184,31 +271,24 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-inhibit-invalid.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-inhibit.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-keyboard-000.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-keyboard-030.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-keyboard-020.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-keyboard-040.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-keyboard-060.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-keyboard-080.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-keyboard-100.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-monitor.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-mouse-000.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-mouse-030.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-mouse-020.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-mouse-040.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-mouse-060.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-mouse-080.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-mouse-100.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-phone-000.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-phone-030.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-phone-020.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-phone-040.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-phone-060.png
+%%DATADIR%%/icons/hicolor/48x48/status/gpm-phone-080.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-phone-100.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-000-charging.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-000.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-020-charging.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-020.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-040-charging.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-040.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-060-charging.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-060.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-080-charging.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-080.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-100-charging.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-100.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-charged.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-primary-missing.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-000-charging.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-000.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-020-charging.png
@@ -221,11 +301,26 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-080.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-100-charging.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-100.png
-%%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-charged.png
 %%DATADIR%%/icons/hicolor/48x48/status/gpm-ups-missing.png
+%%DATADIR%%/icons/hicolor/icon-theme.cache
 %%DATADIR%%/icons/hicolor/scalable/actions/gpm-hibernate.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/gpm-suspend.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ac-adapter.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-000-charging.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-000.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-020-charging.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-020.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-040-charging.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-040.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-060-charging.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-060.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-080-charging.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-080.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-100-charging.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-100.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-charged.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-empty.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-battery-missing.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-brightness-kbd-disabled.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-brightness-kbd-invalid.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-brightness-kbd.svg
@@ -235,31 +330,15 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-inhibit-invalid.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-inhibit.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-keyboard-000.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-keyboard-030.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-keyboard-060.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-keyboard-100.svg
+%%DATADIR%%/icons/hicolor/scalable/status/gpm-monitor.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-mouse-000.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-mouse-030.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-mouse-060.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-mouse-100.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-phone-000.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-phone-030.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-phone-060.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-phone-100.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-000-charging.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-000.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-020-charging.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-020.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-040-charging.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-040.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-060-charging.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-060.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-080-charging.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-080.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-100-charging.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-100.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-charged.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-primary-missing.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-000-charging.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-000.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-020-charging.svg
@@ -272,9 +351,7 @@ share/gnome-2.0/ui/GNOME_InhibitApplet.xml
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-080.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-100-charging.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-100.svg
-%%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-charged.svg
 %%DATADIR%%/icons/hicolor/scalable/status/gpm-ups-missing.svg
-share/gnome/autostart/gnome-power-manager.desktop
 share/gnome/help/gnome-power-manager/C/figures/applet-brightness.png
 share/gnome/help/gnome-power-manager/C/figures/applet-inhibit.png
 share/gnome/help/gnome-power-manager/C/figures/gpm-cell-capacity.png
@@ -304,6 +381,48 @@ share/gnome/help/gnome-power-manager/ca/figures/gpm-suspend-problem.png
 share/gnome/help/gnome-power-manager/ca/figures/gpm-unplugged.png
 share/gnome/help/gnome-power-manager/ca/figures/gs-prefs.png
 share/gnome/help/gnome-power-manager/ca/gnome-power-manager.xml
+share/gnome/help/gnome-power-manager/de/figures/applet-brightness.png
+share/gnome/help/gnome-power-manager/de/figures/applet-inhibit.png
+share/gnome/help/gnome-power-manager/de/figures/gpm-cell-capacity.png
+share/gnome/help/gnome-power-manager/de/figures/gpm-charged.png
+share/gnome/help/gnome-power-manager/de/figures/gpm-critical.png
+share/gnome/help/gnome-power-manager/de/figures/gpm-low.png
+share/gnome/help/gnome-power-manager/de/figures/gpm-prefs-ac.png
+share/gnome/help/gnome-power-manager/de/figures/gpm-prefs-battery.png
+share/gnome/help/gnome-power-manager/de/figures/gpm-prefs-general.png
+share/gnome/help/gnome-power-manager/de/figures/gpm-stats-graph.png
+share/gnome/help/gnome-power-manager/de/figures/gpm-suspend-problem.png
+share/gnome/help/gnome-power-manager/de/figures/gpm-unplugged.png
+share/gnome/help/gnome-power-manager/de/figures/gs-prefs.png
+share/gnome/help/gnome-power-manager/de/gnome-power-manager.xml
+share/gnome/help/gnome-power-manager/el/figures/applet-brightness.png
+share/gnome/help/gnome-power-manager/el/figures/applet-inhibit.png
+share/gnome/help/gnome-power-manager/el/figures/gpm-cell-capacity.png
+share/gnome/help/gnome-power-manager/el/figures/gpm-charged.png
+share/gnome/help/gnome-power-manager/el/figures/gpm-critical.png
+share/gnome/help/gnome-power-manager/el/figures/gpm-low.png
+share/gnome/help/gnome-power-manager/el/figures/gpm-prefs-ac.png
+share/gnome/help/gnome-power-manager/el/figures/gpm-prefs-battery.png
+share/gnome/help/gnome-power-manager/el/figures/gpm-prefs-general.png
+share/gnome/help/gnome-power-manager/el/figures/gpm-stats-graph.png
+share/gnome/help/gnome-power-manager/el/figures/gpm-suspend-problem.png
+share/gnome/help/gnome-power-manager/el/figures/gpm-unplugged.png
+share/gnome/help/gnome-power-manager/el/figures/gs-prefs.png
+share/gnome/help/gnome-power-manager/el/gnome-power-manager.xml
+share/gnome/help/gnome-power-manager/en_GB/figures/applet-brightness.png
+share/gnome/help/gnome-power-manager/en_GB/figures/applet-inhibit.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gpm-cell-capacity.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gpm-charged.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gpm-critical.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gpm-low.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gpm-prefs-ac.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gpm-prefs-battery.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gpm-prefs-general.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gpm-stats-graph.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gpm-suspend-problem.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gpm-unplugged.png
+share/gnome/help/gnome-power-manager/en_GB/figures/gs-prefs.png
+share/gnome/help/gnome-power-manager/en_GB/gnome-power-manager.xml
 share/gnome/help/gnome-power-manager/es/figures/applet-brightness.png
 share/gnome/help/gnome-power-manager/es/figures/applet-inhibit.png
 share/gnome/help/gnome-power-manager/es/figures/gpm-cell-capacity.png
@@ -318,6 +437,34 @@ share/gnome/help/gnome-power-manager/es/figures/gpm-suspend-problem.png
 share/gnome/help/gnome-power-manager/es/figures/gpm-unplugged.png
 share/gnome/help/gnome-power-manager/es/figures/gs-prefs.png
 share/gnome/help/gnome-power-manager/es/gnome-power-manager.xml
+share/gnome/help/gnome-power-manager/eu/figures/applet-brightness.png
+share/gnome/help/gnome-power-manager/eu/figures/applet-inhibit.png
+share/gnome/help/gnome-power-manager/eu/figures/gpm-cell-capacity.png
+share/gnome/help/gnome-power-manager/eu/figures/gpm-charged.png
+share/gnome/help/gnome-power-manager/eu/figures/gpm-critical.png
+share/gnome/help/gnome-power-manager/eu/figures/gpm-low.png
+share/gnome/help/gnome-power-manager/eu/figures/gpm-prefs-ac.png
+share/gnome/help/gnome-power-manager/eu/figures/gpm-prefs-battery.png
+share/gnome/help/gnome-power-manager/eu/figures/gpm-prefs-general.png
+share/gnome/help/gnome-power-manager/eu/figures/gpm-stats-graph.png
+share/gnome/help/gnome-power-manager/eu/figures/gpm-suspend-problem.png
+share/gnome/help/gnome-power-manager/eu/figures/gpm-unplugged.png
+share/gnome/help/gnome-power-manager/eu/figures/gs-prefs.png
+share/gnome/help/gnome-power-manager/eu/gnome-power-manager.xml
+share/gnome/help/gnome-power-manager/fi/figures/applet-brightness.png
+share/gnome/help/gnome-power-manager/fi/figures/applet-inhibit.png
+share/gnome/help/gnome-power-manager/fi/figures/gpm-cell-capacity.png
+share/gnome/help/gnome-power-manager/fi/figures/gpm-charged.png
+share/gnome/help/gnome-power-manager/fi/figures/gpm-critical.png
+share/gnome/help/gnome-power-manager/fi/figures/gpm-low.png
+share/gnome/help/gnome-power-manager/fi/figures/gpm-prefs-ac.png
+share/gnome/help/gnome-power-manager/fi/figures/gpm-prefs-battery.png
+share/gnome/help/gnome-power-manager/fi/figures/gpm-prefs-general.png
+share/gnome/help/gnome-power-manager/fi/figures/gpm-stats-graph.png
+share/gnome/help/gnome-power-manager/fi/figures/gpm-suspend-problem.png
+share/gnome/help/gnome-power-manager/fi/figures/gpm-unplugged.png
+share/gnome/help/gnome-power-manager/fi/figures/gs-prefs.png
+share/gnome/help/gnome-power-manager/fi/gnome-power-manager.xml
 share/gnome/help/gnome-power-manager/fr/figures/applet-brightness.png
 share/gnome/help/gnome-power-manager/fr/figures/applet-inhibit.png
 share/gnome/help/gnome-power-manager/fr/figures/gpm-cell-capacity.png
@@ -416,6 +563,20 @@ share/gnome/help/gnome-power-manager/sv/figures/gpm-suspend-problem.png
 share/gnome/help/gnome-power-manager/sv/figures/gpm-unplugged.png
 share/gnome/help/gnome-power-manager/sv/figures/gs-prefs.png
 share/gnome/help/gnome-power-manager/sv/gnome-power-manager.xml
+share/gnome/help/gnome-power-manager/zh_CN/figures/applet-brightness.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/applet-inhibit.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gpm-cell-capacity.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gpm-charged.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gpm-critical.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gpm-low.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gpm-prefs-ac.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gpm-prefs-battery.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gpm-prefs-general.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gpm-stats-graph.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gpm-suspend-problem.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gpm-unplugged.png
+share/gnome/help/gnome-power-manager/zh_CN/figures/gs-prefs.png
+share/gnome/help/gnome-power-manager/zh_CN/gnome-power-manager.xml
 share/icons/hicolor/16x16/apps/gnome-brightness-applet.png
 share/icons/hicolor/16x16/apps/gnome-inhibit-applet.png
 share/icons/hicolor/16x16/apps/gnome-power-manager.png
@@ -428,6 +589,10 @@ share/icons/hicolor/24x24/apps/gnome-brightness-applet.png
 share/icons/hicolor/24x24/apps/gnome-inhibit-applet.png
 share/icons/hicolor/24x24/apps/gnome-power-manager.png
 share/icons/hicolor/24x24/apps/gnome-power-statistics.png
+share/icons/hicolor/32x32/apps/gnome-brightness-applet.png
+share/icons/hicolor/32x32/apps/gnome-inhibit-applet.png
+share/icons/hicolor/32x32/apps/gnome-power-manager.png
+share/icons/hicolor/32x32/apps/gnome-power-statistics.png
 share/icons/hicolor/48x48/apps/gnome-brightness-applet.png
 share/icons/hicolor/48x48/apps/gnome-inhibit-applet.png
 share/icons/hicolor/48x48/apps/gnome-power-manager.png
@@ -439,17 +604,20 @@ share/icons/hicolor/scalable/apps/gnome-power-statistics.svg
 share/locale/ar/LC_MESSAGES/gnome-power-manager.mo
 share/locale/as/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ast/LC_MESSAGES/gnome-power-manager.mo
+share/locale/be/LC_MESSAGES/gnome-power-manager.mo
 share/locale/be@latin/LC_MESSAGES/gnome-power-manager.mo
 share/locale/bg/LC_MESSAGES/gnome-power-manager.mo
 share/locale/bn/LC_MESSAGES/gnome-power-manager.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ca/LC_MESSAGES/gnome-power-manager.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-power-manager.mo
 share/locale/cs/LC_MESSAGES/gnome-power-manager.mo
 share/locale/cy/LC_MESSAGES/gnome-power-manager.mo
 share/locale/da/LC_MESSAGES/gnome-power-manager.mo
 share/locale/de/LC_MESSAGES/gnome-power-manager.mo
 share/locale/dz/LC_MESSAGES/gnome-power-manager.mo
 share/locale/el/LC_MESSAGES/gnome-power-manager.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-power-manager.mo
 share/locale/en_CA/LC_MESSAGES/gnome-power-manager.mo
 share/locale/en_GB/LC_MESSAGES/gnome-power-manager.mo
 share/locale/es/LC_MESSAGES/gnome-power-manager.mo
@@ -463,6 +631,7 @@ share/locale/gl/LC_MESSAGES/gnome-power-manager.mo
 share/locale/gu/LC_MESSAGES/gnome-power-manager.mo
 share/locale/he/LC_MESSAGES/gnome-power-manager.mo
 share/locale/hi/LC_MESSAGES/gnome-power-manager.mo
+share/locale/hr/LC_MESSAGES/gnome-power-manager.mo
 share/locale/hu/LC_MESSAGES/gnome-power-manager.mo
 share/locale/id/LC_MESSAGES/gnome-power-manager.mo
 share/locale/is/LC_MESSAGES/gnome-power-manager.mo
@@ -474,6 +643,7 @@ share/locale/ko/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ku/LC_MESSAGES/gnome-power-manager.mo
 share/locale/lt/LC_MESSAGES/gnome-power-manager.mo
 share/locale/lv/LC_MESSAGES/gnome-power-manager.mo
+share/locale/mai/LC_MESSAGES/gnome-power-manager.mo
 share/locale/mg/LC_MESSAGES/gnome-power-manager.mo
 share/locale/mk/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ml/LC_MESSAGES/gnome-power-manager.mo
@@ -506,7 +676,12 @@ share/locale/zh_HK/LC_MESSAGES/gnome-power-manager.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-power-manager.mo
 share/omf/gnome-power-manager/gnome-power-manager-C.omf
 share/omf/gnome-power-manager/gnome-power-manager-ca.omf
+share/omf/gnome-power-manager/gnome-power-manager-de.omf
+share/omf/gnome-power-manager/gnome-power-manager-el.omf
+share/omf/gnome-power-manager/gnome-power-manager-en_GB.omf
 share/omf/gnome-power-manager/gnome-power-manager-es.omf
+share/omf/gnome-power-manager/gnome-power-manager-eu.omf
+share/omf/gnome-power-manager/gnome-power-manager-fi.omf
 share/omf/gnome-power-manager/gnome-power-manager-fr.omf
 share/omf/gnome-power-manager/gnome-power-manager-hu.omf
 share/omf/gnome-power-manager/gnome-power-manager-it.omf
@@ -514,7 +689,10 @@ share/omf/gnome-power-manager/gnome-power-manager-oc.omf
 share/omf/gnome-power-manager/gnome-power-manager-pa.omf
 share/omf/gnome-power-manager/gnome-power-manager-ru.omf
 share/omf/gnome-power-manager/gnome-power-manager-sv.omf
+share/omf/gnome-power-manager/gnome-power-manager-zh_CN.omf
 @dirrm share/omf/gnome-power-manager
+@dirrm share/gnome/help/gnome-power-manager/zh_CN/figures
+@dirrm share/gnome/help/gnome-power-manager/zh_CN
 @dirrm share/gnome/help/gnome-power-manager/sv/figures
 @dirrm share/gnome/help/gnome-power-manager/sv
 @dirrm share/gnome/help/gnome-power-manager/ru/figures
@@ -529,8 +707,18 @@ share/omf/gnome-power-manager/gnome-power-manager-sv.omf
 @dirrm share/gnome/help/gnome-power-manager/hu
 @dirrm share/gnome/help/gnome-power-manager/fr/figures
 @dirrm share/gnome/help/gnome-power-manager/fr
+@dirrm share/gnome/help/gnome-power-manager/fi/figures
+@dirrm share/gnome/help/gnome-power-manager/fi
+@dirrm share/gnome/help/gnome-power-manager/eu/figures
+@dirrm share/gnome/help/gnome-power-manager/eu
 @dirrm share/gnome/help/gnome-power-manager/es/figures
 @dirrm share/gnome/help/gnome-power-manager/es
+@dirrm share/gnome/help/gnome-power-manager/en_GB/figures
+@dirrm share/gnome/help/gnome-power-manager/en_GB
+@dirrm share/gnome/help/gnome-power-manager/el/figures
+@dirrm share/gnome/help/gnome-power-manager/el
+@dirrm share/gnome/help/gnome-power-manager/de/figures
+@dirrm share/gnome/help/gnome-power-manager/de
 @dirrm share/gnome/help/gnome-power-manager/ca/figures
 @dirrm share/gnome/help/gnome-power-manager/ca
 @dirrm share/gnome/help/gnome-power-manager/C/figures
@@ -542,6 +730,9 @@ share/omf/gnome-power-manager/gnome-power-manager-sv.omf
 @dirrm %%DATADIR%%/icons/hicolor/48x48/status
 @dirrm %%DATADIR%%/icons/hicolor/48x48/actions
 @dirrm %%DATADIR%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/icons/hicolor/32x32/status
+@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
+@dirrm %%DATADIR%%/icons/hicolor/32x32
 @dirrm %%DATADIR%%/icons/hicolor/24x24/status
 @dirrm %%DATADIR%%/icons/hicolor/24x24/actions
 @dirrm %%DATADIR%%/icons/hicolor/24x24
@@ -554,7 +745,6 @@ share/omf/gnome-power-manager/gnome-power-manager-sv.omf
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -569,10 +759,16 @@ share/omf/gnome-power-manager/gnome-power-manager-sv.omf
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

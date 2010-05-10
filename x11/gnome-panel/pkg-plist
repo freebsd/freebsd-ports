@@ -75,6 +75,9 @@ share/gnome/help/clock/ca/legal.xml
 share/gnome/help/clock/cs/clock.xml
 share/gnome/help/clock/cs/figures/clock_applet.png
 share/gnome/help/clock/cs/legal.xml
+share/gnome/help/clock/da/clock.xml
+share/gnome/help/clock/da/figures/clock_applet.png
+share/gnome/help/clock/da/legal.xml
 share/gnome/help/clock/de/clock.xml
 share/gnome/help/clock/de/figures/clock_applet.png
 share/gnome/help/clock/de/legal.xml
@@ -114,6 +117,9 @@ share/gnome/help/clock/oc/legal.xml
 share/gnome/help/clock/pa/clock.xml
 share/gnome/help/clock/pa/figures/clock_applet.png
 share/gnome/help/clock/pa/legal.xml
+share/gnome/help/clock/pt/clock.xml
+share/gnome/help/clock/pt/figures/clock_applet.png
+share/gnome/help/clock/pt/legal.xml
 share/gnome/help/clock/pt_BR/clock.xml
 share/gnome/help/clock/pt_BR/figures/clock_applet.png
 share/gnome/help/clock/pt_BR/legal.xml
@@ -135,6 +141,9 @@ share/gnome/help/clock/uk/legal.xml
 share/gnome/help/clock/zh_CN/clock.xml
 share/gnome/help/clock/zh_CN/figures/clock_applet.png
 share/gnome/help/clock/zh_CN/legal.xml
+share/gnome/help/clock/zh_HK/clock.xml
+share/gnome/help/clock/zh_HK/figures/clock_applet.png
+share/gnome/help/clock/zh_HK/legal.xml
 share/gnome/help/clock/zh_TW/clock.xml
 share/gnome/help/clock/zh_TW/figures/clock_applet.png
 share/gnome/help/clock/zh_TW/legal.xml
@@ -271,6 +280,7 @@ share/locale/da/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/dz/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/eo/LC_MESSAGES/gnome-panel-2.0.mo
@@ -313,6 +323,7 @@ share/locale/mn/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nb/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/nds/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-panel-2.0.mo
@@ -355,6 +366,7 @@ share/omf/clock/clock-C.omf
 share/omf/clock/clock-ar.omf
 share/omf/clock/clock-ca.omf
 share/omf/clock/clock-cs.omf
+share/omf/clock/clock-da.omf
 share/omf/clock/clock-de.omf
 share/omf/clock/clock-el.omf
 share/omf/clock/clock-en_GB.omf
@@ -368,6 +380,7 @@ share/omf/clock/clock-ko.omf
 share/omf/clock/clock-nl.omf
 share/omf/clock/clock-oc.omf
 share/omf/clock/clock-pa.omf
+share/omf/clock/clock-pt.omf
 share/omf/clock/clock-pt_BR.omf
 share/omf/clock/clock-ru.omf
 share/omf/clock/clock-sr.omf
@@ -375,6 +388,7 @@ share/omf/clock/clock-sv.omf
 share/omf/clock/clock-th.omf
 share/omf/clock/clock-uk.omf
 share/omf/clock/clock-zh_CN.omf
+share/omf/clock/clock-zh_HK.omf
 share/omf/clock/clock-zh_TW.omf
 share/omf/fish/fish-C.omf
 share/omf/fish/fish-ca.omf
@@ -437,6 +451,8 @@ share/polkit-1/actions/org.gnome.clockapplet.mechanism.policy
 @dirrm share/gnome/help/fish
 @dirrm share/gnome/help/clock/zh_TW/figures
 @dirrm share/gnome/help/clock/zh_TW
+@dirrm share/gnome/help/clock/zh_HK/figures
+@dirrm share/gnome/help/clock/zh_HK
 @dirrm share/gnome/help/clock/zh_CN/figures
 @dirrm share/gnome/help/clock/zh_CN
 @dirrm share/gnome/help/clock/uk/figures
@@ -451,6 +467,8 @@ share/polkit-1/actions/org.gnome.clockapplet.mechanism.policy
 @dirrm share/gnome/help/clock/ru
 @dirrm share/gnome/help/clock/pt_BR/figures
 @dirrm share/gnome/help/clock/pt_BR
+@dirrm share/gnome/help/clock/pt/figures
+@dirrm share/gnome/help/clock/pt
 @dirrm share/gnome/help/clock/pa/figures
 @dirrm share/gnome/help/clock/pa
 @dirrm share/gnome/help/clock/oc/figures
@@ -477,6 +495,8 @@ share/polkit-1/actions/org.gnome.clockapplet.mechanism.policy
 @dirrm share/gnome/help/clock/el
 @dirrm share/gnome/help/clock/de/figures
 @dirrm share/gnome/help/clock/de
+@dirrm share/gnome/help/clock/da/figures
+@dirrm share/gnome/help/clock/da
 @dirrm share/gnome/help/clock/cs/figures
 @dirrm share/gnome/help/clock/cs
 @dirrm share/gnome/help/clock/ca/figures
@@ -519,6 +539,8 @@ share/polkit-1/actions/org.gnome.clockapplet.mechanism.policy
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
@@ -541,6 +563,8 @@ share/polkit-1/actions/org.gnome.clockapplet.mechanism.policy
 @dirrmtry share/locale/ha
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES

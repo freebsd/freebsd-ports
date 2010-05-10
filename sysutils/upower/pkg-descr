@@ -1,0 +1,6 @@
+UPower is an abstraction for enumerating power devices,
+listening to device events and querying history and statistics.
+Any application or service on the system can access the
+org.freedesktop.DeviceKit.Power service via the system message bus.
+
+WWW: http://upower.freedesktop.org/

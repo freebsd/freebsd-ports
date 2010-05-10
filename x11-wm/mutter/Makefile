@@ -3,12 +3,11 @@
 # Whom:                Pawel Worach <pawel.worach@gmail.com>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-wm/mutter/Makefile,v 1.6 2009/10/07 22:59:24 kwm Exp $
+#   $MCom: ports/x11-wm/mutter/Makefile,v 1.11 2010/03/28 15:56:20 kwm Exp $
 #
 
 PORTNAME=	mutter
-PORTVERSION=	2.28.0
-PORTREVISION=	2
+PORTVERSION=	2.29.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,12 +15,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Window and compositing manager based on Clutter
 
-BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
-		${LOCALBASE}/share/gir-1.0/Gtk-2.0.gir:${PORTSDIR}/x11-toolkits/gir-repository-gtk20
+BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		clutter-glx-1.0:${PORTSDIR}/graphics/clutter
-RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
-		${LOCALBASE}/share/gir-1.0/Gtk-2.0.gir:${PORTSDIR}/x11-toolkits/gir-repository-gtk20
+		clutter-glx-1.0:${PORTSDIR}/graphics/clutter \
+		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
+RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm

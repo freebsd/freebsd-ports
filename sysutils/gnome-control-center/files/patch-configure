@@ -1,10 +1,10 @@
 --- configure.orig	Tue Feb 13 07:51:47 2007
 +++ configure	Tue Feb 13 07:51:47 2007
-@@ -22302,6 +22302,7 @@
- if test "${gt_cv_func_ngettext_libc+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -12525,6 +12525,7 @@
+ if test "${gt_cv_func_ngettext_libc+set}" = set; then :
+   $as_echo_n "(cached) " >&6
  else
 +  LIBS="-lintl $LIBS"
-   cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
+   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 

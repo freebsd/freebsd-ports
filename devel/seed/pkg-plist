@@ -58,84 +58,13 @@ libdata/pkgconfig/seed.pc
 %%DATADIR%%/extensions/Seed.js
 %%DATADIR%%/extensions/xml.js
 %%DATADIR%%/lang.js
-%%PORTEXAMPLES%%%%DATADIR%%/repl.js
+%%DATADIR%%/repl.js
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE
 %%PORTDOCS%%%%DOCSDIR%%/conventions.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Gnio-server.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Gnio.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HACKING
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/accelgroup.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/actions.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/async-quine.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/BrowserSettings.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/BrowserStatusbar.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/BrowserTab.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/BrowserToolbar.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/BrowserView.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/COPYING
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/TabbedBrowser.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/browser/main.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cairo.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calculator-mpfr.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/calculator.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-1.0.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-cairo-1.0.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-cogl-1.0.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/clutter-pad.ui
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/examples/animated-rectangle.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/examples/box2d.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/examples/cairo.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/examples/pink-stage.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/examples/spring.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/main.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-pad/redhand.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-shader/ShaderEditor.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-shader/ShaderView.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-shader/bob.jpg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-shader/default.glsl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/clutter-shader/main.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbus/dbus-banshee.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbus/dbus-consolekit.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbus/dbus-networkmanager.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dbus/networkManagerIfaces.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gconf.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gdkpixbufloader.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/env.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/pretty.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/thread.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/timeout.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/timer.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glib/twitter.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtkplug.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtktextview.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtktreeview.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json-packing.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/json-reddit.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ls.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/n-oscillator.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify-test.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/glut-teapot.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/seed-gears.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/opengl/triangle-actor.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pango-fontset.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pango.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/poppler.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quine.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/repl.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/soup.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/threaded-repl.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vte-test.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/sample.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/weather.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/xml-dom.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/xml-tree.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/xml-xpath.js
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mapping/enum-mapping.png
 %%PORTDOCS%%%%DOCSDIR%%/mapping/mapping.html
@@ -160,15 +89,6 @@ libdata/pkgconfig/seed.pc
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/packing.png
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/packing.svg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/tutorial.html
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/browser
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clutter-pad/examples
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clutter-pad
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/clutter-shader
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dbus
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/glib
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/opengl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xml
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mapping
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/gtkbuilder/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/modules/gtkbuilder

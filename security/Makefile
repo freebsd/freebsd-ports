@@ -249,6 +249,7 @@
     SUBDIR += libfwbuilder
     SUBDIR += libfwbuilder-devel
     SUBDIR += libgcrypt
+    SUBDIR += libgnome-keyring
     SUBDIR += libgnomesu
     SUBDIR += libgpg-error
     SUBDIR += libgringotts

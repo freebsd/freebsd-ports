@@ -1,57 +1,27 @@
---- hald/freebsd/probing/Makefile.am.orig	2008-08-10 09:50:10.000000000 -0400
-+++ hald/freebsd/probing/Makefile.am	2009-07-17 02:31:02.000000000 -0400
-@@ -9,11 +9,18 @@ AM_CPPFLAGS = \
- 
- if HALD_COMPILE_FREEBSD
- libexec_PROGRAMS = \
--	hald-probe-hiddev	\
--	hald-probe-scsi		\
--	hald-probe-smbios	\
--	hald-probe-storage	\
-+	hald-probe-hiddev		\
-+	hald-probe-mouse		\
-+	hald-probe-scsi			\
-+	hald-probe-smbios		\
-+	hald-probe-storage		\
- 	hald-probe-volume
-+
-+if HAVE_LIBUSB20
-+libexec_PROGRAMS += \
-+	hald-probe-usb2-device		\
-+	hald-probe-usb2-interface
-+endif
+--- hald/freebsd/probing/Makefile.am.orig	2009-08-24 08:42:29.000000000 -0400
++++ hald/freebsd/probing/Makefile.am	2010-02-19 23:08:42.000000000 -0500
+@@ -19,7 +19,8 @@ libexec_PROGRAMS = \
+ if HAVE_LIBUSB20
+ libexec_PROGRAMS += \
+ 	hald-probe-usb2-device		\
+-	hald-probe-usb2-interface
++	hald-probe-usb2-interface	\
++	hald-probe-video4linux
+ endif
  endif
  
- hald_probe_hiddev_SOURCES = probe-hiddev.c
-@@ -21,6 +28,25 @@ hald_probe_hiddev_LDADD = \
- 	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la	\
- 	-lusbhid
+@@ -38,6 +39,14 @@ hald_probe_usb2_interface_SOURCES = prob
+ hald_probe_usb2_interface_LDADD = \
+ 	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la  \
+ 	@LIBUSB20_LIBS@
++
++hald_probe_video4linux_SOURCES = probe-video4linux.c
++hald_probe_video4linux_CPPFLAGS = \
++	$(AM_CPPFLAGS) @GLIB_CFLAGS@
++hald_probe_video4linux_LDADD = \
++	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la  \
++	@GLIB_LIBS@							\
++	@LIBUSB20_LIBS@
+ endif
  
-+if HAVE_LIBUSB20
-+hald_probe_usb2_device_SOURCES = probe-usb2-device.c
-+hald_probe_usb2_device_LDADD = \
-+	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la  \
-+	@LIBUSB20_LIBS@
-+
-+hald_probe_usb2_interface_SOURCES = probe-usb2-interface.c
-+hald_probe_usb2_interface_LDADD = \
-+	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la  \
-+	@LIBUSB20_LIBS@
-+endif
-+
-+hald_probe_mouse_SOURCES = probe-mouse.c
-+hald_probe_mouse_CPPFLAGS = $(AM_CPPFLAGS) @GLIB_CFLAGS@
-+hald_probe_mouse_LDADD = \
-+	@GLIB_LIBS@	\
-+	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la \
-+	-lutil
-+
- hald_probe_smbios_SOURCES = probe-smbios.c
- hald_probe_smbios_LDADD = \
- 	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
-@@ -41,4 +67,5 @@ hald_probe_volume_CPPFLAGS = $(AM_CPPFLA
- hald_probe_volume_LDADD = \
- 	@GLIB_LIBS@							\
- 	@VOLUME_ID_LIBS@						\
-+	-lufs								\
- 	$(top_builddir)/hald/freebsd/libprobe/libhald_freebsd_probe.la
+ hald_probe_mouse_SOURCES = probe-mouse.c

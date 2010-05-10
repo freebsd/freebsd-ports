@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	clutter
-PORTVERSION=	1.0.10
-PORTREVISION=	2
+PORTVERSION=	1.2.6
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME \
-		http://www.clutter-project.org/sources/${PORTNAME}/1.0/
+		http://www.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL based interactive canvas library
-
-BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/Pango-1.0.gir:${PORTSDIR}/x11-toolkits/gir-repository-pango
-RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/Pango-1.0.gir:${PORTSDIR}/x11-toolkits/gir-repository-pango
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes

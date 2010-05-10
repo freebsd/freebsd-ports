@@ -1,5 +1,4 @@
 bin/pygobject-codegen-2.0
-include/pygobject/bank.h
 include/pygtk-2.0/pyglib.h
 include/pygtk-2.0/pygobject.h
 lib/libpyglib-2.0-python%%PYTHON_VER%%.la
@@ -15,32 +14,6 @@ lib/libpyglib-2.0-python%%PYTHON_VER%%.so.0
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/_gio.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/unix.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/unix.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/__init__.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/btypes.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/btypes.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/btypes.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/importer.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/importer.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/importer.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/module.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/module.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/module.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/overrides/Gdk.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/overrides/Gdk.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/overrides/Gdk.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/overrides/Gtk.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/overrides/Gtk.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/overrides/Gtk.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/overrides/__init__.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/overrides/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/overrides/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/repo.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/repo.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/repository.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/repository.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/repository.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/glib/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/glib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/glib/__init__.pyo
@@ -179,16 +152,20 @@ share/pygobject/2.0/defs/gfileattribute.override
 share/pygobject/2.0/defs/gfileenumerator.override
 share/pygobject/2.0/defs/gfileinfo.override
 share/pygobject/2.0/defs/gfileinputstream.override
+share/pygobject/2.0/defs/gfileiostream.override
 share/pygobject/2.0/defs/gfileoutputstream.override
 share/pygobject/2.0/defs/gicon.override
 share/pygobject/2.0/defs/ginputstream.override
 share/pygobject/2.0/defs/gio-types.defs
 share/pygobject/2.0/defs/gio.defs
 share/pygobject/2.0/defs/gio.override
+share/pygobject/2.0/defs/giostream.override
 share/pygobject/2.0/defs/gmemoryinputstream.override
 share/pygobject/2.0/defs/gmemoryoutputstream.override
 share/pygobject/2.0/defs/gmount.override
 share/pygobject/2.0/defs/goutputstream.override
+share/pygobject/2.0/defs/gresolver.override
+share/pygobject/2.0/defs/gsocket.override
 share/pygobject/2.0/defs/gvolume.override
 share/pygobject/2.0/defs/gvolumemonitor.override
 share/pygobject/2.0/defs/unix-types.defs
@@ -209,9 +186,6 @@ share/pygobject/xsl/ref-html-style.xsl
 @dirrm share/doc/pygobject
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/glib
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/girepository/overrides
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/girepository
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gio
 @dirrmtry %%PYTHON_SITELIBDIR%%/gtk-2.0
 @dirrmtry include/pygtk-2.0
-@dirrm include/pygobject

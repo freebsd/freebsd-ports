@@ -34,6 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g ; \
 		 s|-nostdinc++||g ; \
 		 s|-Werror||g ; \
+		 s|-DGTK_DISABLE_DEPRECATED||g ; \
 		 s|-nodefaultlibs -lgcc -lc||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

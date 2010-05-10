@@ -1,81 +1,84 @@
 bin/exchange-connector-setup-%%VERSION%%
+lib/evolution/2.30/plugins/liborg-gnome-exchange-operations.a
+lib/evolution/2.30/plugins/liborg-gnome-exchange-operations.la
+lib/evolution/2.30/plugins/liborg-gnome-exchange-operations.so
+lib/evolution/2.30/plugins/org-gnome-exchange-operations.eplug
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.a
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.la
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.so
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.urls
-libdata/bonobo/servers/GNOME_Evolution_Exchange_Storage_%%VERSION%%.server
-libexec/evolution/%%EVO_VERSION%%/evolution-exchange-storage
-@comment %%DOCSDIR%%/E2kContext.html
-@comment %%DOCSDIR%%/E2kGlobalCatalog.html
-@comment %%DOCSDIR%%/E2kSecurityDescriptor.html
-@comment %%DOCSDIR%%/ch01.html
-@comment %%DOCSDIR%%/ch02.html
-@comment %%DOCSDIR%%/ch03.html
-@comment %%DOCSDIR%%/ch04.html
-@comment %%DOCSDIR%%/ch05.html
-@comment %%DOCSDIR%%/ch06.html
-@comment %%DOCSDIR%%/evolution-exchange-E2kAutoconfig.html
-@comment %%DOCSDIR%%/evolution-exchange-E2kContext-(private).html
-@comment %%DOCSDIR%%/evolution-exchange-E2kOperation-(private).html
-@comment %%DOCSDIR%%/evolution-exchange-E2kOperation.html
-@comment %%DOCSDIR%%/evolution-exchange-E2kProperties.html
-@comment %%DOCSDIR%%/evolution-exchange-E2kRestriction-(vaporware).html
-@comment %%DOCSDIR%%/evolution-exchange-E2kResult-(private).html
-@comment %%DOCSDIR%%/evolution-exchange-E2kSid.html
-@comment %%DOCSDIR%%/evolution-exchange-E2kUserDialog.html
-@comment %%DOCSDIR%%/evolution-exchange-MAPI.html
-@comment %%DOCSDIR%%/evolution-exchange-e2k-action.html
-@comment %%DOCSDIR%%/evolution-exchange-e2k-freebusy.html
-@comment %%DOCSDIR%%/evolution-exchange-e2k-http-utils.html
-@comment %%DOCSDIR%%/evolution-exchange-e2k-kerberos.html
-@comment %%DOCSDIR%%/evolution-exchange-e2k-restriction.html
-@comment %%DOCSDIR%%/evolution-exchange-e2k-result.html
-@comment %%DOCSDIR%%/evolution-exchange-e2k-rule.html
-@comment %%DOCSDIR%%/evolution-exchange-e2k-uri.html
-@comment %%DOCSDIR%%/evolution-exchange-e2k-utils.html
-@comment %%DOCSDIR%%/evolution-exchange-e2k-xml-utils.html
-@comment %%DOCSDIR%%/evolution-exchange-test-utils.html
-@comment %%DOCSDIR%%/evolution-exchange-xntlm-des.html
-@comment %%DOCSDIR%%/evolution-exchange-xntlm-md4.html
-@comment %%DOCSDIR%%/evolution-exchange-xntlm.html
-@comment %%DOCSDIR%%/evolution-exchange.devhelp
-@comment %%DOCSDIR%%/evolution-exchange.devhelp2
-@comment %%DOCSDIR%%/home.png
-@comment %%DOCSDIR%%/index.html
-@comment %%DOCSDIR%%/index.sgml
-@comment %%DOCSDIR%%/left.png
-@comment %%DOCSDIR%%/right.png
-@comment %%DOCSDIR%%/style.css
-@comment %%DOCSDIR%%/up.png
-@comment %%DOCSDIR%%/ximian-connector-autoconfig.html
-@comment %%DOCSDIR%%/ximian-connector-bug-private.html
-@comment %%DOCSDIR%%/ximian-connector-bug-xml.html
-@comment %%DOCSDIR%%/ximian-connector-calendar.html
-@comment %%DOCSDIR%%/ximian-connector-delegation.html
-@comment %%DOCSDIR%%/ximian-connector-favorites.html
-@comment %%DOCSDIR%%/ximian-connector-fba.html
-@comment %%DOCSDIR%%/ximian-connector-freebusy.html
-@comment %%DOCSDIR%%/ximian-connector-mail-threading.html
-@comment %%DOCSDIR%%/ximian-connector-mail.html
-@comment %%DOCSDIR%%/ximian-connector-ntlm.html
-@comment %%DOCSDIR%%/ximian-connector-oof.html
-@comment %%DOCSDIR%%/ximian-connector-other-users.html
-@comment %%DOCSDIR%%/ximian-connector-permissions.html
-@comment %%DOCSDIR%%/ximian-connnector-booking.html
-%%DATADIR%%/%%VERSION%%/glade/exchange-autoconfig-wizard.glade
-%%DATADIR%%/%%VERSION%%/glade/exchange-change-password.glade
-%%DATADIR%%/%%VERSION%%/glade/exchange-delegates.glade
-%%DATADIR%%/%%VERSION%%/glade/exchange-folder-tree.glade
-%%DATADIR%%/%%VERSION%%/glade/exchange-oof.glade
-%%DATADIR%%/%%VERSION%%/glade/exchange-passwd-expiry.glade
-%%DATADIR%%/%%VERSION%%/glade/exchange-permissions-dialog.glade
+lib/evolution-data-server-%%EDS_VERSION%%/extensions/libebookbackendexchange.a
+lib/evolution-data-server-%%EDS_VERSION%%/extensions/libebookbackendexchange.la
+lib/evolution-data-server-%%EDS_VERSION%%/extensions/libebookbackendexchange.so
+lib/evolution-data-server-%%EDS_VERSION%%/extensions/libecalbackendexchange.a
+lib/evolution-data-server-%%EDS_VERSION%%/extensions/libecalbackendexchange.la
+lib/evolution-data-server-%%EDS_VERSION%%/extensions/libecalbackendexchange.so
+%%DOCSDIR%%/E2kContext.html
+%%DOCSDIR%%/E2kGlobalCatalog.html
+%%DOCSDIR%%/E2kSecurityDescriptor.html
+%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/ch02.html
+%%DOCSDIR%%/ch03.html
+%%DOCSDIR%%/ch04.html
+%%DOCSDIR%%/ch05.html
+%%DOCSDIR%%/ch06.html
+%%DOCSDIR%%/evolution-exchange-E2kAutoconfig.html
+%%DOCSDIR%%/evolution-exchange-E2kContext-(private).html
+%%DOCSDIR%%/evolution-exchange-E2kOperation-(private).html
+%%DOCSDIR%%/evolution-exchange-E2kOperation.html
+%%DOCSDIR%%/evolution-exchange-E2kProperties.html
+%%DOCSDIR%%/evolution-exchange-E2kRestriction-(vaporware).html
+%%DOCSDIR%%/evolution-exchange-E2kResult-(private).html
+%%DOCSDIR%%/evolution-exchange-E2kSid.html
+%%DOCSDIR%%/evolution-exchange-E2kUserDialog.html
+%%DOCSDIR%%/evolution-exchange-MAPI.html
+%%DOCSDIR%%/evolution-exchange-e2k-action.html
+%%DOCSDIR%%/evolution-exchange-e2k-freebusy.html
+%%DOCSDIR%%/evolution-exchange-e2k-http-utils.html
+%%DOCSDIR%%/evolution-exchange-e2k-kerberos.html
+%%DOCSDIR%%/evolution-exchange-e2k-restriction.html
+%%DOCSDIR%%/evolution-exchange-e2k-result.html
+%%DOCSDIR%%/evolution-exchange-e2k-rule.html
+%%DOCSDIR%%/evolution-exchange-e2k-uri.html
+%%DOCSDIR%%/evolution-exchange-e2k-utils.html
+%%DOCSDIR%%/evolution-exchange-e2k-xml-utils.html
+%%DOCSDIR%%/evolution-exchange-test-utils.html
+%%DOCSDIR%%/evolution-exchange-xntlm-des.html
+%%DOCSDIR%%/evolution-exchange-xntlm-md4.html
+%%DOCSDIR%%/evolution-exchange-xntlm.html
+%%DOCSDIR%%/evolution-exchange.devhelp
+%%DOCSDIR%%/evolution-exchange.devhelp2
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+%%DOCSDIR%%/ximian-connector-autoconfig.html
+%%DOCSDIR%%/ximian-connector-bug-private.html
+%%DOCSDIR%%/ximian-connector-bug-xml.html
+%%DOCSDIR%%/ximian-connector-calendar.html
+%%DOCSDIR%%/ximian-connector-delegation.html
+%%DOCSDIR%%/ximian-connector-favorites.html
+%%DOCSDIR%%/ximian-connector-fba.html
+%%DOCSDIR%%/ximian-connector-freebusy.html
+%%DOCSDIR%%/ximian-connector-mail-threading.html
+%%DOCSDIR%%/ximian-connector-mail.html
+%%DOCSDIR%%/ximian-connector-ntlm.html
+%%DOCSDIR%%/ximian-connector-oof.html
+%%DOCSDIR%%/ximian-connector-other-users.html
+%%DOCSDIR%%/ximian-connector-permissions.html
+%%DOCSDIR%%/ximian-connnector-booking.html
 %%DATADIR%%/%%VERSION%%/images/connector-mini.png
 %%DATADIR%%/%%VERSION%%/images/connector.png
 %%DATADIR%%/%%VERSION%%/images/exchange-delegates-48.png
 %%DATADIR%%/%%VERSION%%/images/exchange-oof-48.png
 %%DATADIR%%/%%VERSION%%/ui/ximian-connector.xml
+share/evolution/%%VERSION%%/errors/org-gnome-exchange-operations.error
 share/locale/ar/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/as/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/ast/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/bn/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
@@ -90,6 +93,7 @@ share/locale/dz/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/el/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/en_CA/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
+share/locale/en@shaw/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/et/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/eu/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
@@ -148,10 +152,9 @@ share/locale/zh_HK/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 @dirrm %%DATADIR%%/%%VERSION%%/ui
 @dirrm %%DATADIR%%/%%VERSION%%/images
-@dirrm %%DATADIR%%/%%VERSION%%/glade
 @dirrm %%DATADIR%%/%%VERSION%%
 @dirrm %%DATADIR%%
-@comment @dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -172,6 +175,8 @@ share/locale/zh_TW/LC_MESSAGES/evolution-exchange-%%VERSION%%.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

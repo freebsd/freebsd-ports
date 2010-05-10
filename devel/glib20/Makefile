@@ -3,12 +3,12 @@
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/glib20/Makefile,v 1.155 2009/10/07 22:03:54 kwm Exp $
+#   $MCom: ports/devel/glib20/Makefile,v 1.166 2010/05/04 09:44:51 kwm Exp $
 #
 # !! DON'T FORGET ABOUT devel/gio-fam-backend !!
 
 PORTNAME=	glib
-PORTVERSION=	2.22.4
+PORTVERSION=	2.24.1
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
@@ -72,6 +72,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/glib/gutils.c
+
+post-install:
+	-${PREFIX}/bin/gio-querymodules ${PREFIX}/lib/gio/modules
 
 .include <bsd.port.post.mk>
 

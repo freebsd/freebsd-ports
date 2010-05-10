@@ -1,0 +1,10 @@
+This is the Gnome Accessibility Project's Assistive Technology
+Service Provider Interface.  It allows accessibility applications
+and assistive technologies to announce their respective existence
+to each other.
+
+This version of at-spi is a major break from previous versions.
+It has been completely rewritten to use D-Bus rather than
+ORBIT / CORBA for its transport protocol.
+
+WWW: http://www.linuxfoundation.org/en/AT-SPI_on_D-Bus

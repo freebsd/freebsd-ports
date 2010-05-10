@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkglext
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 DIST_SUBDIR=	gnome2
@@ -22,5 +22,10 @@ USE_XORG=	xt
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
+		-e 's|-DGDK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/examples/Makefile.in ${WRKSRC}/gtk/Makefile.in 
 
 .include <bsd.port.mk>

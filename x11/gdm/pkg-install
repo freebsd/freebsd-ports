@@ -3,15 +3,15 @@
 case $2 in
 POST-INSTALL)
 	USER=gdm
-	GROUP=${USER}
+	GROUP=gdm
 	CHMOD=/bin/chmod
 	CHOWN=/usr/sbin/chown
 	MKDIR=/bin/mkdir
 
 	${MKDIR} -p /var/gdm
 	${MKDIR} -p /var/log/gdm
-	${CHMOD} 0755 /var/log/gdm
-	${CHOWN} root:wheel /var/log/gdm
+	${CHMOD} 1770 /var/log/gdm
+	${CHOWN} ${USER}:${GROUP} /var/log/gdm
 	${CHOWN} -R root:${GROUP} /var/gdm
 	${CHMOD} 1770 /var/gdm
 	${MKDIR} -p /var/run/gdm

@@ -4384,3 +4384,10 @@ security/vpnd||2010-05-02|Has expired: This software is no longer developed
 textproc/isearch||2010-05-02|Has expired: abandoned upstream, uses an obsolete version of GCC, not used by any other port
 www/caudium12||2010-05-02|Has expired: No longer maintained upstream, please switch to www/caudium14
 www/p5-Catalyst-Plugin-Cache-FileCache||2010-05-02|Has expired: Deprecated by module author in favor of www/p5-Catalyst-Plugin-Cache
+accessibility/gir-repository-atk|accessibility/atk|2010-05-10|Now installed by accessibility/atk
+multimedia/totem-xine|multimedia/totem|2010-05-10|Totem xine backend is dead for quite some time
+www/gir-repository-webkit|www/webkit-gtk2|2010-05-10|Now installed by www/webkit-gtk2
+x11-toolkits/gir-repository-gtk20|x11-toolkits/gtk20|2010-05-10|Now installed by x11-toolkits/gtk20
+x11-toolkits/gir-repository-libwnck|x11-toolkits/libwnck|2010-05-10|Now installed by x11-toolkits/libwnck
+x11-toolkits/gir-repository-pango|x11-toolkits/pango|2010-05-10|Now installed by x11-toolkits/pango
+x11/gir-repository-gnome-menus|x11/gnome-menus|2010-05-10|Now installed by x11/gnome-menus

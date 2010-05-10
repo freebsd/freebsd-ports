@@ -3,17 +3,19 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-menus/Makefile,v 1.100 2009/10/18 23:13:39 marcus Exp $
+#   $MCom: ports/x11/gnome-menus/Makefile,v 1.105 2010/04/02 01:36:17 avl Exp $
 #
 
 PORTNAME=	gnome-menus
-PORTVERSION=	2.28.0.1
+PORTVERSION=	2.30.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Implementation of the FreeDesktop Desktop Menu Spec
+
+BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes

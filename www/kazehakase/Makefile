@@ -81,6 +81,8 @@ post-patch:
 .endif
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED=1||g'
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
 
 pre-install:
 	@${REINPLACE_CMD} -e 's|localen|locale|' \

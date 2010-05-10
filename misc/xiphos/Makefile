@@ -16,6 +16,7 @@ COMMENT=	A bible interface utilizing the sword framework
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.1.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS} \
+		gnome-doc-tool:${PORTSDIR}/textproc/gnome-doc-utils \
 		nspr>=4.8:${PORTSDIR}/devel/nspr
 
 USE_GETTEXT=	yes

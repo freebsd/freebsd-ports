@@ -1,11 +1,11 @@
---- JavaScriptCore/assembler/MacroAssemblerCodeRef.h.orig	2009-10-19 08:34:08.000000000 -0400
-+++ JavaScriptCore/assembler/MacroAssemblerCodeRef.h	2009-10-19 08:34:53.000000000 -0400
-@@ -69,7 +69,7 @@ public:
- 
-     template<typename FunctionType>
-     explicit FunctionPtr(FunctionType* value)
+--- JavaScriptCore/assembler/MacroAssemblerCodeRef.h.orig	2010-01-14 15:19:17.000000000 +0000
++++ JavaScriptCore/assembler/MacroAssemblerCodeRef.h	2010-01-14 15:21:00.000000000 +0000
+@@ -74,7 +74,7 @@ public:
+      // Error:  #694: reinterpret_cast cannot cast away const or other type qualifiers
+         : m_value((void*)(value))
+ #else
 -        : m_value(reinterpret_cast<void*>(value))
 +        : m_value((void*)(value))
+ #endif
      {
          ASSERT_VALID_CODE_POINTER(m_value);
-     }

@@ -3,11 +3,11 @@
 # Whom:			jseger@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/print/freetype2/Makefile,v 1.19 2009/11/28 05:59:02 mezz Exp $
+#   $MCom: ports/print/freetype2/Makefile,v 1.22 2010/03/16 19:33:10 mezz Exp $
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.3.11
+PORTVERSION=	2.3.12
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/${PORTNAME}/${PORTVERSION} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \
@@ -27,7 +27,7 @@ MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	TOP=""
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	gnometarget pkgconfig ltverhack:9
 LIBTOOLFILES=	builds/unix/configure
 CONFIGURE_ARGS=	--disable-nls
 CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
@@ -75,6 +75,10 @@ pre-patch:
 	@${REINPLACE_CMD} -e '/#define TT_CONFIG_OPTION_BYTECODE_INTERPRETER/s,/\* \(.*\) \*/,\1,; /#define TT_CONFIG_OPTION_UNPATENTED_HINTING/s,^\(.*\),/* \1 \*/,' \
 		${WRKSRC}/include/freetype/config/ftoption.h
 .endif
+
+pre-configure:
+	@${REINPLACE_CMD} -e '/^LIBTOOL/s|LIBTOOL ?= $$(BUILD_DIR)/libtool|LIBTOOL := ${WRKDIR}/gnome-libtool|' \
+	    	${WRKSRC}/builds/unix/unix-cc.in
 
 post-configure:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} setup)

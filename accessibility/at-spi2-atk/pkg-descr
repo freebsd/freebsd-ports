@@ -1,0 +1,9 @@
+This is the Gnome Accessibility Project's Assistive Technology
+Service Provider Interface.  It allows accessibility applications
+and assistive technologies to announce their respective existence
+to each other.
+
+This port contains the GTK+ module needed to interface with the SPI
+framework.
+
+WWW: http://www.linuxfoundation.org/en/AT-SPI_on_D-Bus

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomeicu
 PORTVERSION=	0.99.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im gnome
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 gnomepanel libxml2 \
-		intlhack
+		intlhack libgnomeui
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

@@ -1,0 +1,6 @@
+lib/gtk-2.0/modules/at-spi-dbus/modules/libatk-bridge.a
+lib/gtk-2.0/modules/at-spi-dbus/modules/libatk-bridge.la
+lib/gtk-2.0/modules/at-spi-dbus/modules/libatk-bridge.so
+share/gnome/autostart/atk-bridge.desktop
+@dirrm lib/gtk-2.0/modules/at-spi-dbus/modules
+@dirrm lib/gtk-2.0/modules/at-spi-dbus

@@ -112,6 +112,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/aspectframe.h
 include/gtkmm-%%API_VERSION%%/gtkmm/assistant.h
 include/gtkmm-%%API_VERSION%%/gtkmm/base.h
 include/gtkmm-%%API_VERSION%%/gtkmm/bin.h
+include/gtkmm-%%API_VERSION%%/gtkmm/border.h
 include/gtkmm-%%API_VERSION%%/gtkmm/box.h
 include/gtkmm-%%API_VERSION%%/gtkmm/builder.h
 include/gtkmm-%%API_VERSION%%/gtkmm/button.h
@@ -126,6 +127,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/cellrenderercombo.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellrendererpixbuf.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellrendererprogress.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellrendererspin.h
+include/gtkmm-%%API_VERSION%%/gtkmm/cellrendererspinner.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellrenderertext.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellrenderertoggle.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellview.h
@@ -145,6 +147,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/dialog.h
 include/gtkmm-%%API_VERSION%%/gtkmm/drawingarea.h
 include/gtkmm-%%API_VERSION%%/gtkmm/editable.h
 include/gtkmm-%%API_VERSION%%/gtkmm/entry.h
+include/gtkmm-%%API_VERSION%%/gtkmm/entrybuffer.h
 include/gtkmm-%%API_VERSION%%/gtkmm/entrycompletion.h
 include/gtkmm-%%API_VERSION%%/gtkmm/enums.h
 include/gtkmm-%%API_VERSION%%/gtkmm/eventbox.h
@@ -187,6 +190,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/messagedialog.h
 include/gtkmm-%%API_VERSION%%/gtkmm/misc.h
 include/gtkmm-%%API_VERSION%%/gtkmm/notebook.h
 include/gtkmm-%%API_VERSION%%/gtkmm/object.h
+include/gtkmm-%%API_VERSION%%/gtkmm/offscreenwindow.h
 include/gtkmm-%%API_VERSION%%/gtkmm/optionmenu.h
 include/gtkmm-%%API_VERSION%%/gtkmm/orientable.h
 include/gtkmm-%%API_VERSION%%/gtkmm/pagesetup.h
@@ -225,6 +229,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrendereraccel_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrenderercombo_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrendererpixbuf_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrendererprogress_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrendererspinner_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrendererspin_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrenderertext_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrenderertoggle_p.h
@@ -243,6 +248,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/dialog_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/drawingarea_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/editable_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/entry_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/entrybuffer_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/entrycompletion_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/enums_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/eventbox_p.h
@@ -283,6 +289,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/messagedialog_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/misc_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/notebook_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/object_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/offscreenwindow_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/optionmenu_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/orientable_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/pagesetup_p.h
@@ -325,6 +332,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/settings_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/sizegroup_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/socket_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/spinbutton_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/spinner_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/statusbar_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/statusicon_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/stockitem_p.h
@@ -345,7 +353,9 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/togglebutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/toggletoolbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/toolbar_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/toolbutton_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/toolitemgroup_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/toolitem_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/toolpalette_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/toolshell_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/tooltip_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/tooltips_p.h
@@ -397,6 +407,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/settings.h
 include/gtkmm-%%API_VERSION%%/gtkmm/sizegroup.h
 include/gtkmm-%%API_VERSION%%/gtkmm/socket.h
 include/gtkmm-%%API_VERSION%%/gtkmm/spinbutton.h
+include/gtkmm-%%API_VERSION%%/gtkmm/spinner.h
 include/gtkmm-%%API_VERSION%%/gtkmm/statusbar.h
 include/gtkmm-%%API_VERSION%%/gtkmm/statusicon.h
 include/gtkmm-%%API_VERSION%%/gtkmm/stock.h
@@ -421,6 +432,8 @@ include/gtkmm-%%API_VERSION%%/gtkmm/toggletoolbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/toolbar.h
 include/gtkmm-%%API_VERSION%%/gtkmm/toolbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/toolitem.h
+include/gtkmm-%%API_VERSION%%/gtkmm/toolitemgroup.h
+include/gtkmm-%%API_VERSION%%/gtkmm/toolpalette.h
 include/gtkmm-%%API_VERSION%%/gtkmm/toolshell.h
 include/gtkmm-%%API_VERSION%%/gtkmm/tooltip.h
 include/gtkmm-%%API_VERSION%%/gtkmm/tooltips.h

@@ -7,7 +7,7 @@
 
 PORTNAME=	sensors-applet
 PORTVERSION=	1.6.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/GNOME%20Sensors%20Applet%20Version%20${PORTVERSION}
 
@@ -17,7 +17,7 @@ COMMENT=	A GNOME applet displaying hardware sensor values
 RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/mbmon \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
-USE_GNOME=	gnomehack gnomeprefix intlhack gnomepanel
+USE_GNOME=	gnomehack gnomeprefix intlhack gnomepanel libgnomeui
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 DEFINES=	-DMBMON_EXECUTABLE=\\\"${LOCALBASE}/bin/mbmon\\\" \

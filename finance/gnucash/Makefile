@@ -8,7 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.2.9
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -41,7 +41,7 @@ MAKE_JOBS_SAFE=	yes
 USE_PERL5=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix libgsf_gnome libglade2 \
-		libgnomeprint libgnomeprintui gtkhtml3
+		libgnomeprint libgnomeprintui gtkhtml3 libgnomeui
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"

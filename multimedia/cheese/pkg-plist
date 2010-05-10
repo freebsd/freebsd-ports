@@ -1,4 +1,12 @@
 bin/cheese
+include/cheese/cheese-avatar-chooser.h
+include/cheese/cheese-camera-device-monitor.h
+include/cheese/cheese-widget.h
+lib/libcheese-gtk.a
+lib/libcheese-gtk.la
+lib/libcheese-gtk.so
+lib/libcheese-gtk.so.18
+libdata/pkgconfig/cheese-gtk.pc
 libexec/cheese/cheese-bugreport.sh
 share/applications/cheese.desktop
 %%DATADIR%%/cheese-prefs.ui
@@ -32,25 +40,35 @@ share/applications/cheese.desktop
 %%DATADIR%%/icons/hicolor/48x48/actions/browse-webcam-effects.png
 %%DATADIR%%/icons/hicolor/48x48/actions/cheese-take-burst.png
 %%DATADIR%%/icons/hicolor/48x48/actions/cheese-take-photo.png
+%%DATADIR%%/icons/hicolor/scalable/actions/browse-webcam-effects.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/cheese-take-burst.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/cheese-take-photo.svg
-%%DATADIR%%/icons/hicolor/scalable/actions/browse-webcam-effects.svg
 %%DATADIR%%/pixmaps/camera-icon.svg
 %%DATADIR%%/pixmaps/cheese-1.svg
 %%DATADIR%%/pixmaps/cheese-2.svg
 %%DATADIR%%/pixmaps/cheese-3.svg
 %%DATADIR%%/pixmaps/thumbnail-frame.png
-%%DATADIR%%/sounds/shutter0.ogg
-%%DATADIR%%/sounds/shutter1.ogg
-%%DATADIR%%/sounds/shutter2.ogg
-%%DATADIR%%/sounds/shutter3.ogg
-%%DATADIR%%/sounds/shutter4.ogg
 share/dbus-1/services/org.gnome.Cheese.service
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/CheeseAvatarChooser.html
+%%DOCSDIR%%/CheeseCameraDeviceMonitor.html
+%%DOCSDIR%%/CheeseWidget.html
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/api-index-full.html
+%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/cheese.devhelp
+%%DOCSDIR%%/cheese.devhelp2
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/object-tree.html
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
 share/gnome/help/cheese/C/cheese.xml
 share/gnome/help/cheese/C/figures/cheese-effects.jpg
 share/gnome/help/cheese/C/figures/cheese-fullscreen.jpg
@@ -66,6 +84,13 @@ share/gnome/help/cheese/ca/figures/cheese-main.jpg
 share/gnome/help/cheese/ca/figures/cheese-preferences.jpg
 share/gnome/help/cheese/ca/figures/cheese-share.jpg
 share/gnome/help/cheese/ca/figures/cheese-wide.jpg
+share/gnome/help/cheese/cs/cheese.xml
+share/gnome/help/cheese/cs/figures/cheese-effects.jpg
+share/gnome/help/cheese/cs/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/cs/figures/cheese-main.jpg
+share/gnome/help/cheese/cs/figures/cheese-preferences.jpg
+share/gnome/help/cheese/cs/figures/cheese-share.jpg
+share/gnome/help/cheese/cs/figures/cheese-wide.jpg
 share/gnome/help/cheese/de/cheese.xml
 share/gnome/help/cheese/de/figures/cheese-effects.jpg
 share/gnome/help/cheese/de/figures/cheese-fullscreen.jpg
@@ -180,6 +205,7 @@ share/locale/da/LC_MESSAGES/cheese.mo
 share/locale/de/LC_MESSAGES/cheese.mo
 share/locale/dz/LC_MESSAGES/cheese.mo
 share/locale/el/LC_MESSAGES/cheese.mo
+share/locale/en@shaw/LC_MESSAGES/cheese.mo
 share/locale/en_GB/LC_MESSAGES/cheese.mo
 share/locale/es/LC_MESSAGES/cheese.mo
 share/locale/et/LC_MESSAGES/cheese.mo
@@ -205,6 +231,7 @@ share/locale/mk/LC_MESSAGES/cheese.mo
 share/locale/ml/LC_MESSAGES/cheese.mo
 share/locale/mr/LC_MESSAGES/cheese.mo
 share/locale/nb/LC_MESSAGES/cheese.mo
+share/locale/nds/LC_MESSAGES/cheese.mo
 share/locale/nl/LC_MESSAGES/cheese.mo
 share/locale/nn/LC_MESSAGES/cheese.mo
 share/locale/oc/LC_MESSAGES/cheese.mo
@@ -232,6 +259,7 @@ share/locale/zh_HK/LC_MESSAGES/cheese.mo
 share/locale/zh_TW/LC_MESSAGES/cheese.mo
 share/omf/cheese/cheese-C.omf
 share/omf/cheese/cheese-ca.omf
+share/omf/cheese/cheese-cs.omf
 share/omf/cheese/cheese-de.omf
 share/omf/cheese/cheese-el.omf
 share/omf/cheese/cheese-en_GB.omf
@@ -274,13 +302,14 @@ share/omf/cheese/cheese-zh_CN.omf
 @dirrm share/gnome/help/cheese/el
 @dirrm share/gnome/help/cheese/de/figures
 @dirrm share/gnome/help/cheese/de
+@dirrm share/gnome/help/cheese/cs/figures
+@dirrm share/gnome/help/cheese/cs
 @dirrm share/gnome/help/cheese/ca/figures
 @dirrm share/gnome/help/cheese/ca
 @dirrm share/gnome/help/cheese/C/figures
 @dirrm share/gnome/help/cheese/C
 @dirrm share/gnome/help/cheese
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/icons/hicolor/scalable
@@ -300,6 +329,7 @@ share/omf/cheese/cheese-zh_CN.omf
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm libexec/cheese
+@dirrm include/cheese
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -310,12 +340,16 @@ share/omf/cheese/cheese-zh_CN.omf
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
@@ -324,8 +358,6 @@ share/omf/cheese/cheese-zh_CN.omf
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
-@dirrmtry share/locale/be/LC_MESSAGES
-@dirrmtry share/locale/be
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES

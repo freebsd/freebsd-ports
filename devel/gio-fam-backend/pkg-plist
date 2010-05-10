@@ -1,3 +1,5 @@
 lib/gio/modules/libgiofam.a
 lib/gio/modules/libgiofam.la
 lib/gio/modules/libgiofam.so
+@exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
+@unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true

@@ -5,9 +5,6 @@ include/librsvg-2/librsvg/librsvg-enum-types.h
 include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg-cairo.h
 include/librsvg-2/librsvg/rsvg.h
-%%PLUGIN%%%%WEBPLUGINS_DIR%%/libmozsvgdec.a
-%%PLUGIN%%%%WEBPLUGINS_DIR%%/libmozsvgdec.la
-%%PLUGIN%%%%WEBPLUGINS_DIR%%/libmozsvgdec.so
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsvg.a
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsvg.la
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/libsvg.so
@@ -38,7 +35,6 @@ share/doc/rsvg/style.css
 share/doc/rsvg/up.png
 share/pixmaps/svg-viewer.svg
 @dirrm share/doc/rsvg
-%%PLUGIN%%@dirrmtry %%WEBPLUGINS_DIR%%
 @dirrm include/librsvg-2/librsvg
 @dirrm include/librsvg-2
 @exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true

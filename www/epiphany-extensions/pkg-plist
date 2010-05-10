@@ -5,6 +5,8 @@ lib/epiphany/%%VERSION%%/extensions/auto-scroller.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/certificates.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/extensions-manager-ui.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/gestures.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/greasemonkey.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/html5tube.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/libactionsextension.la
 lib/epiphany/%%VERSION%%/extensions/libactionsextension.so
 lib/epiphany/%%VERSION%%/extensions/libadblockextension.la
@@ -19,32 +21,41 @@ lib/epiphany/%%VERSION%%/extensions/libextensionsmanageruiextension.la
 lib/epiphany/%%VERSION%%/extensions/libextensionsmanageruiextension.so
 lib/epiphany/%%VERSION%%/extensions/libgesturesextension.la
 lib/epiphany/%%VERSION%%/extensions/libgesturesextension.so
+lib/epiphany/%%VERSION%%/extensions/libgreasemonkeyextension.la
+lib/epiphany/%%VERSION%%/extensions/libgreasemonkeyextension.so
+lib/epiphany/%%VERSION%%/extensions/libhtml5tubeextension.la
+lib/epiphany/%%VERSION%%/extensions/libhtml5tubeextension.so
+lib/epiphany/%%VERSION%%/extensions/libpermissionsextension.la
+lib/epiphany/%%VERSION%%/extensions/libpermissionsextension.so
 lib/epiphany/%%VERSION%%/extensions/libpushscrollerextension.la
 lib/epiphany/%%VERSION%%/extensions/libpushscrollerextension.so
 lib/epiphany/%%VERSION%%/extensions/librssextension.la
 lib/epiphany/%%VERSION%%/extensions/librssextension.so
-lib/epiphany/%%VERSION%%/extensions/libsidebarextension.la
-lib/epiphany/%%VERSION%%/extensions/libsidebarextension.so
-lib/epiphany/%%VERSION%%/extensions/libsoupflyextension.so
+lib/epiphany/%%VERSION%%/extensions/libsampleextension.la
+lib/epiphany/%%VERSION%%/extensions/libsampleextension.so
 lib/epiphany/%%VERSION%%/extensions/libsoupflyextension.la
+lib/epiphany/%%VERSION%%/extensions/libsoupflyextension.so
 lib/epiphany/%%VERSION%%/extensions/libtabgroupsextension.la
 lib/epiphany/%%VERSION%%/extensions/libtabgroupsextension.so
+lib/epiphany/%%VERSION%%/extensions/libtabkeytabnavigateextension.la
+lib/epiphany/%%VERSION%%/extensions/libtabkeytabnavigateextension.so
 lib/epiphany/%%VERSION%%/extensions/libtabstatesextension.la
 lib/epiphany/%%VERSION%%/extensions/libtabstatesextension.so
+lib/epiphany/%%VERSION%%/extensions/permissions.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/push-scroller.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/rss.ephy-extension
-lib/epiphany/%%VERSION%%/extensions/sidebar.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/sample.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/soup-fly.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/tab-groups.ephy-extension
+lib/epiphany/%%VERSION%%/extensions/tab-key-tab-navigate.ephy-extension
 lib/epiphany/%%VERSION%%/extensions/tab-states.ephy-extension
 %%DATADIR%%/adblock-patterns
 %%DATADIR%%/ephy-gestures.xml
-%%DATADIR%%/glade/action-properties.glade
-%%DATADIR%%/glade/actions-editor.glade
-%%DATADIR%%/glade/adblock.ui
-%%DATADIR%%/glade/extensions-manager-ui.ui
-%%DATADIR%%/glade/rss-ui.glade
-%%DATADIR%%/xml/epiphany-sidebar-ui.xml
+%%DATADIR%%/ui/action-properties.ui
+%%DATADIR%%/ui/actions-editor.ui
+%%DATADIR%%/ui/adblock.ui
+%%DATADIR%%/ui/extensions-manager-ui.ui
+%%DATADIR%%/ui/rss-ui.ui
 share/epiphany/icons/hicolor/16x16/status/ad-blocked.png
 share/epiphany/icons/hicolor/16x16/status/feed-presence.png
 share/epiphany/icons/hicolor/22x22/status/ad-blocked.png
@@ -55,6 +66,7 @@ share/epiphany/icons/hicolor/32x32/status/feed-presence.png
 share/epiphany/icons/hicolor/scalable/status/feed-presence.svg
 share/gnome/help/epiphany-extensions/C/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-action-create.png
+share/gnome/help/epiphany-extensions/C/figures/epi-ext-actions-use.png
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-close-2.png
@@ -76,6 +88,7 @@ share/gnome/help/epiphany-extensions/C/figures/epi-ext-tabgroups.png
 share/gnome/help/epiphany-extensions/C/legal.xml
 share/gnome/help/epiphany-extensions/de/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/de/figures/epi-ext-action-create.png
+share/gnome/help/epiphany-extensions/de/figures/epi-ext-actions-use.png
 share/gnome/help/epiphany-extensions/de/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/de/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/de/figures/epi-ext-gestures-close-2.png
@@ -96,6 +109,7 @@ share/gnome/help/epiphany-extensions/de/figures/epi-ext-sidebar.png
 share/gnome/help/epiphany-extensions/de/figures/epi-ext-tabgroups.png
 share/gnome/help/epiphany-extensions/es/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/es/figures/epi-ext-action-create.png
+share/gnome/help/epiphany-extensions/es/figures/epi-ext-actions-use.png
 share/gnome/help/epiphany-extensions/es/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/es/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/es/figures/epi-ext-gestures-close-2.png
@@ -116,6 +130,7 @@ share/gnome/help/epiphany-extensions/es/figures/epi-ext-sidebar.png
 share/gnome/help/epiphany-extensions/es/figures/epi-ext-tabgroups.png
 share/gnome/help/epiphany-extensions/fr/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/fr/figures/epi-ext-action-create.png
+share/gnome/help/epiphany-extensions/fr/figures/epi-ext-actions-use.png
 share/gnome/help/epiphany-extensions/fr/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/fr/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/fr/figures/epi-ext-gestures-close-2.png
@@ -136,6 +151,7 @@ share/gnome/help/epiphany-extensions/fr/figures/epi-ext-sidebar.png
 share/gnome/help/epiphany-extensions/fr/figures/epi-ext-tabgroups.png
 share/gnome/help/epiphany-extensions/oc/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/oc/figures/epi-ext-action-create.png
+share/gnome/help/epiphany-extensions/oc/figures/epi-ext-actions-use.png
 share/gnome/help/epiphany-extensions/oc/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/oc/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/oc/figures/epi-ext-gestures-close-2.png
@@ -156,6 +172,7 @@ share/gnome/help/epiphany-extensions/oc/figures/epi-ext-sidebar.png
 share/gnome/help/epiphany-extensions/oc/figures/epi-ext-tabgroups.png
 share/gnome/help/epiphany-extensions/sv/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/sv/figures/epi-ext-action-create.png
+share/gnome/help/epiphany-extensions/sv/figures/epi-ext-actions-use.png
 share/gnome/help/epiphany-extensions/sv/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/sv/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/sv/figures/epi-ext-gestures-close-2.png
@@ -211,9 +228,11 @@ share/locale/pa/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/pl/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/pt/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/pt_BR/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
+share/locale/ro/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/ru/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/rw/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/sk/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
+share/locale/sl/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/sq/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/sr/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
 share/locale/sr@Latn/LC_MESSAGES/epiphany-extensions-%%EPHY_VERSION%%.mo
@@ -260,9 +279,7 @@ share/omf/epiphany-extensions/epiphany-extensions-sv.omf
 @dirrmtry share/epiphany/icons/hicolor/16x16
 @dirrmtry share/epiphany/icons/hicolor
 @dirrmtry share/epiphany/icons
-@dirrmtry share/epiphany
-@dirrm %%DATADIR%%/xml
-@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 @dirrmtry lib/epiphany/%%VERSION%%/extensions
 @dirrmtry lib/epiphany/%%VERSION%%/plugins

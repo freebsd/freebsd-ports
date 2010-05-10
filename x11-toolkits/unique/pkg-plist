@@ -1,6 +1,7 @@
 include/unique-1.0/unique/unique.h
 include/unique-1.0/unique/uniqueapp.h
 include/unique-1.0/unique/uniquebackend.h
+include/unique-1.0/unique/uniqueenumtypes.h
 include/unique-1.0/unique/uniquemessage.h
 include/unique-1.0/unique/uniqueversion.h
 lib/girepository-1.0/Unique-1.0.typelib

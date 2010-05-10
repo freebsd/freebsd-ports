@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany/Makefile,v 1.214 2009/10/25 20:22:54 marcus Exp $
+#   $MCom: ports/www/epiphany/Makefile,v 1.228 2010/05/09 00:11:47 marcus Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.28.2
-PORTREVISION?=	3
+PORTVERSION=	2.30.2
+PORTREVISION?=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,13 +17,13 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	An extremely lightweight and simple web browser for GNOME 2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/share/gir-1.0/WebKit-1.0.gir:${PORTSDIR}/www/gir-repository-webkit
+		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
 		notify.1:${PORTSDIR}/devel/libnotify \
 		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
-		${LOCALBASE}/share/gir-1.0/WebKit-1.0.gir:${PORTSDIR}/www/gir-repository-webkit \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		${LOCALBASE}/share/icons/HighContrastLargePrint/index.theme:${PORTSDIR}/x11-themes/gnome-themes
 
 USE_LDCONFIG=	yes
@@ -37,7 +37,8 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-CONFIGURE_ARGS+=--enable-introspection
+CONFIGURE_ARGS+=--enable-introspection \
+		--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} ${EXTRA_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} ${EXTRA_LIBS}"
 
@@ -48,7 +49,7 @@ PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}"
 MAN1=		epiphany.1
 
 OPTIONS=	NSS "Import passwords from 2.26 and older on first run" on \
-		SEED "Enable seed support" off \
+		SEED "Enable seed (JavaScript) support" on \
 		SPELLCHECK "Enable spell checking by default" on
 
 .if defined(PACKAGE_BUILDING)
@@ -85,6 +86,7 @@ post-patch:
 		 's|-lpthread|${PTHREAD_LIBS}|g'
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; \
 	    	s|-ldl"$$|"|g' \
+		-e 's|EPIPHANY_API_VERSION=2.29|EPIPHANY_API_VERSION=2.30|g' \
 		${WRKSRC}/configure
 
 post-install:

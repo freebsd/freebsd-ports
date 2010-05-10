@@ -3,12 +3,11 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/rhythmbox/Makefile,v 1.103 2009/11/22 22:09:39 marcus Exp $
+#   $MCom: ports/audio/rhythmbox/Makefile,v 1.107 2010/04/08 23:16:25 kwm Exp $
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.12.7
-PORTREVISION=	2
+PORTVERSION=	0.12.8
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
     		musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3 \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
-		totem-plparser.12:${PORTSDIR}/multimedia/totem-pl-parser \
+		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup \

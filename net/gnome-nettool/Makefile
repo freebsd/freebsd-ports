@@ -3,12 +3,11 @@
 # Whom:				Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/gnome-nettool/Makefile,v 1.53 2009/09/22 20:29:52 kwm Exp $
+#   $MCom: ports/net/gnome-nettool/Makefile,v 1.55 2010/04/01 16:28:19 kwm Exp $
 #
 
 PORTNAME=	gnome-nettool
-PORTVERSION=	2.28.0
-PORTREVISION=	2
+PORTVERSION=	2.30.0
 PORTEPOCH=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME

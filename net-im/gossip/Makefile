@@ -8,7 +8,7 @@
 
 PORTNAME=	gossip
 PORTVERSION=	0.31
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -27,7 +27,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel gnomedocutils
+USE_GNOME=	gnomeprefix intlhack gnomehack gnomepanel gnomedocutils \
+		libgnomeui
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-dbus=yes

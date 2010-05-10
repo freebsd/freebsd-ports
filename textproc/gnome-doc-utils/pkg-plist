@@ -29,18 +29,18 @@ libdata/pkgconfig/xml2po.pc
 %%PYTHON_SITELIBDIR%%/xml2po/modes/xhtml.pyo
 share/aclocal/gnome-doc-utils.m4
 %%DATADIR%%/gnome-doc-utils.make
-%%DATADIR%%/icons/hicolor/48x48/admon-bug.png
-%%DATADIR%%/icons/hicolor/48x48/admon-caution.png
-%%DATADIR%%/icons/hicolor/48x48/admon-important.png
-%%DATADIR%%/icons/hicolor/48x48/admon-note.png
-%%DATADIR%%/icons/hicolor/48x48/admon-tip.png
-%%DATADIR%%/icons/hicolor/48x48/admon-warning.png
-%%DATADIR%%/icons/hicolor/scalable/admon-bug.svg
-%%DATADIR%%/icons/hicolor/scalable/admon-caution.svg
-%%DATADIR%%/icons/hicolor/scalable/admon-important.svg
-%%DATADIR%%/icons/hicolor/scalable/admon-note.svg
-%%DATADIR%%/icons/hicolor/scalable/admon-tip.svg
-%%DATADIR%%/icons/hicolor/scalable/admon-warning.svg
+%%DATADIR%%/icons/hicolor/48x48/status/admon-bug.png
+%%DATADIR%%/icons/hicolor/48x48/status/admon-caution.png
+%%DATADIR%%/icons/hicolor/48x48/status/admon-important.png
+%%DATADIR%%/icons/hicolor/48x48/status/admon-note.png
+%%DATADIR%%/icons/hicolor/48x48/status/admon-tip.png
+%%DATADIR%%/icons/hicolor/48x48/status/admon-warning.png
+%%DATADIR%%/icons/hicolor/scalable/status/admon-bug.svg
+%%DATADIR%%/icons/hicolor/scalable/status/admon-caution.svg
+%%DATADIR%%/icons/hicolor/scalable/status/admon-important.svg
+%%DATADIR%%/icons/hicolor/scalable/status/admon-note.svg
+%%DATADIR%%/icons/hicolor/scalable/status/admon-tip.svg
+%%DATADIR%%/icons/hicolor/scalable/status/admon-warning.svg
 %%DATADIR%%/template-document.xml
 %%DATADIR%%/template.make
 %%DATADIR%%/template.omf.in
@@ -60,150 +60,6 @@ share/gnome/help/gnome-doc-make/C/make-ref.xml
 share/gnome/help/gnome-doc-make/de/gnome-doc-make.xml
 share/gnome/help/gnome-doc-make/de/legal.xml
 share/gnome/help/gnome-doc-make/de/make-ref.xml
-share/gnome/help/gnome-doc-mallard-spec/C/details.page
-share/gnome/help/gnome-doc-mallard-spec/C/docbook.page
-share/gnome/help/gnome-doc-mallard-spec/C/explore.page
-share/gnome/help/gnome-doc-mallard-spec/C/figures/mallard.png
-share/gnome/help/gnome-doc-mallard-spec/C/i18n.page
-share/gnome/help/gnome-doc-mallard-spec/C/index.page
-share/gnome/help/gnome-doc-mallard-spec/C/its.page
-share/gnome/help/gnome-doc-mallard-spec/C/l10n.page
-share/gnome/help/gnome-doc-mallard-spec/C/legal.xml
-share/gnome/help/gnome-doc-mallard-spec/C/links.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_TODO.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_attr_link.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_cite.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_code.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_comment.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_desc.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_example.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_figure.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_list.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_listing.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_media.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_note.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_p.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_quote.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_screen.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_steps.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_subtitle.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_synopsis.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_terms.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_title.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_block_tree.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_external.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_info.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_info_credit.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_info_desc.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_info_email.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_info_license.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_info_link.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_info_name.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_info_revision.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_info_title.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_info_years.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_app.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_cmd.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_code.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_em.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_file.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_gui.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_guiseq.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_input.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_key.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_keyseq.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_link.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_media.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_output.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_span.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_sys.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_inline_var.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_page.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_section.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_table.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_table_col.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_table_td.page
-share/gnome/help/gnome-doc-mallard-spec/C/mal_table_tr.page
-share/gnome/help/gnome-doc-mallard-spec/C/principle-guide.page
-share/gnome/help/gnome-doc-mallard-spec/C/principle-justenough.page
-share/gnome/help/gnome-doc-mallard-spec/C/principle-redundancy.page
-share/gnome/help/gnome-doc-mallard-spec/C/principles.page
-share/gnome/help/gnome-doc-mallard-spec/C/spec.page
-share/gnome/help/gnome-doc-mallard-spec/C/tenminutes.page
-share/gnome/help/gnome-doc-mallard-spec/de/details.page
-share/gnome/help/gnome-doc-mallard-spec/de/docbook.page
-share/gnome/help/gnome-doc-mallard-spec/de/explore.page
-share/gnome/help/gnome-doc-mallard-spec/de/figures/mallard.png
-share/gnome/help/gnome-doc-mallard-spec/de/i18n.page
-share/gnome/help/gnome-doc-mallard-spec/de/index.page
-share/gnome/help/gnome-doc-mallard-spec/de/its.page
-share/gnome/help/gnome-doc-mallard-spec/de/l10n.page
-share/gnome/help/gnome-doc-mallard-spec/de/legal.xml
-share/gnome/help/gnome-doc-mallard-spec/de/links.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_TODO.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_attr_link.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_cite.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_code.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_comment.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_desc.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_example.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_figure.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_list.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_listing.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_media.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_note.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_p.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_quote.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_screen.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_steps.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_subtitle.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_synopsis.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_terms.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_title.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_block_tree.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_external.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_info.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_info_credit.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_info_desc.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_info_email.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_info_license.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_info_link.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_info_name.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_info_revision.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_info_title.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_info_years.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_app.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_cmd.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_code.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_em.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_file.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_gui.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_guiseq.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_input.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_key.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_keyseq.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_link.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_media.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_output.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_span.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_sys.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_inline_var.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_page.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_section.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_table.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_table_col.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_table_td.page
-share/gnome/help/gnome-doc-mallard-spec/de/mal_table_tr.page
-share/gnome/help/gnome-doc-mallard-spec/de/principle-guide.page
-share/gnome/help/gnome-doc-mallard-spec/de/principle-justenough.page
-share/gnome/help/gnome-doc-mallard-spec/de/principle-redundancy.page
-share/gnome/help/gnome-doc-mallard-spec/de/principles.page
-share/gnome/help/gnome-doc-mallard-spec/de/spec.page
-share/gnome/help/gnome-doc-mallard-spec/de/tenminutes.page
 share/gnome/help/gnome-doc-xslt/C/db-chunk.xml
 share/gnome/help/gnome-doc-xslt/C/db-common.xml
 share/gnome/help/gnome-doc-xslt/C/db-label.xml
@@ -280,6 +136,7 @@ share/gnome/help/gnome-doc-xslt/de/translating.xml
 share/gnome/help/gnome-doc-xslt/de/utils.xml
 share/locale/ar/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/as/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/ast/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/be@latin/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/bg/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/bn/LC_MESSAGES/gnome-doc-utils.mo
@@ -294,6 +151,7 @@ share/locale/dz/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/el/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/en_CA/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/en_GB/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/es/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/et/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/eu/LC_MESSAGES/gnome-doc-utils.mo
@@ -395,6 +253,7 @@ share/xml/gnome/xslt/docbook/utils/ids.xsl
 share/xml/gnome/xslt/gettext/gettext.xsl
 share/xml/gnome/xslt/gettext/l10n-numbers.xsl
 share/xml/gnome/xslt/gettext/l10n.xml
+share/xml/gnome/xslt/mallard/cache/mal-cache.xsl
 share/xml/gnome/xslt/mallard/common/mal-chunk.xsl
 share/xml/gnome/xslt/mallard/common/mal-link.xsl
 share/xml/gnome/xslt/mallard/html/mal2html-block.xsl
@@ -406,14 +265,13 @@ share/xml/gnome/xslt/mallard/html/mal2html-page.xsl
 share/xml/gnome/xslt/mallard/html/mal2html-table.xsl
 share/xml/gnome/xslt/mallard/html/mal2html.xsl
 share/xml/gnome/xslt/mallard/html/mal2xhtml.xsl
-share/xml/gnome/xslt/mallard/utils/mal2cache.xsl
 share/xml/mallard/1.0/mallard.rnc
 share/xml/mallard/1.0/mallard.rng
 @dirrm share/xml/mallard/1.0
 @dirrm share/xml/mallard
-@dirrm share/xml/gnome/xslt/mallard/utils
 @dirrm share/xml/gnome/xslt/mallard/html
 @dirrm share/xml/gnome/xslt/mallard/common
+@dirrm share/xml/gnome/xslt/mallard/cache
 @dirrm share/xml/gnome/xslt/mallard
 @dirrm share/xml/gnome/xslt/gettext
 @dirrm share/xml/gnome/xslt/docbook/utils
@@ -429,21 +287,20 @@ share/xml/mallard/1.0/mallard.rng
 @dirrm share/gnome/help/gnome-doc-xslt/de
 @dirrm share/gnome/help/gnome-doc-xslt/C
 @dirrm share/gnome/help/gnome-doc-xslt
-@dirrm share/gnome/help/gnome-doc-mallard-spec/de/figures
-@dirrm share/gnome/help/gnome-doc-mallard-spec/de
-@dirrm share/gnome/help/gnome-doc-mallard-spec/C/figures
-@dirrm share/gnome/help/gnome-doc-mallard-spec/C
-@dirrm share/gnome/help/gnome-doc-mallard-spec
 @dirrm share/gnome/help/gnome-doc-make/de
 @dirrm share/gnome/help/gnome-doc-make/C
 @dirrm share/gnome/help/gnome-doc-make
 @dirrm %%DATADIR%%/watermarks
 @dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/icons/hicolor/scalable/status
 @dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/48x48/status
 @dirrm %%DATADIR%%/icons/hicolor/48x48
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/xml2po/modes
+@dirrm %%PYTHON_SITELIBDIR%%/xml2po
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ug/LC_MESSAGES
@@ -462,6 +319,8 @@ share/xml/mallard/1.0/mallard.rng
 @dirrmtry share/locale/mg
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
@@ -470,7 +329,7 @@ share/xml/mallard/1.0/mallard.rng
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrm %%PYTHON_SITELIBDIR%%/xml2po/modes
-@dirrm %%PYTHON_SITELIBDIR%%/xml2po

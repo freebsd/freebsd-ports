@@ -12,7 +12,6 @@ include/eog-2.20/eog/eog-image.h
 include/eog-2.20/eog/eog-job-queue.h
 include/eog-2.20/eog/eog-jobs.h
 include/eog-2.20/eog/eog-list-store.h
-include/eog-2.20/eog/eog-message-area.h
 include/eog-2.20/eog/eog-plugin.h
 include/eog-2.20/eog/eog-properties-dialog.h
 include/eog-2.20/eog/eog-scroll-view.h
@@ -34,31 +33,19 @@ lib/eog/plugins/reload.eog-plugin
 lib/eog/plugins/statusbar-date.eog-plugin
 libdata/pkgconfig/eog.pc
 share/applications/eog.desktop
-%%DOCSDIR%%/EogApplication.html
 %%DOCSDIR%%/EogDialog.html
 %%DOCSDIR%%/EogExifDetails.html
 %%DOCSDIR%%/EogFileChooser.html
-%%DOCSDIR%%/EogImage.html
 %%DOCSDIR%%/EogImageSaveInfo.html
-%%DOCSDIR%%/EogJobCopy.html
-%%DOCSDIR%%/EogListStore.html
-%%DOCSDIR%%/EogMessageArea.html
 %%DOCSDIR%%/EogMetadataReaderJpg.html
 %%DOCSDIR%%/EogMetadataReaderPng.html
-%%DOCSDIR%%/EogPlugin.html
 %%DOCSDIR%%/EogPluginManager.html
 %%DOCSDIR%%/EogPreferencesDialog.html
 %%DOCSDIR%%/EogPrintImageSetup.html
 %%DOCSDIR%%/EogPrintPreview.html
-%%DOCSDIR%%/EogPropertiesDialog.html
 %%DOCSDIR%%/EogScrollView.html
 %%DOCSDIR%%/EogSidebar.html
 %%DOCSDIR%%/EogStatusbar.html
-%%DOCSDIR%%/EogThumbNav.html
-%%DOCSDIR%%/EogThumbView.html
-%%DOCSDIR%%/EogTransform.html
-%%DOCSDIR%%/EogURIConverter.html
-%%DOCSDIR%%/EogWindow.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/ch03.html
@@ -66,20 +53,31 @@ share/applications/eog.desktop
 %%DOCSDIR%%/ch05.html
 %%DOCSDIR%%/ch06.html
 %%DOCSDIR%%/ch07.html
+%%DOCSDIR%%/eog-eog-application.html
 %%DOCSDIR%%/eog-eog-config-keys.html
 %%DOCSDIR%%/eog-eog-debug.html
 %%DOCSDIR%%/eog-eog-error-message-area.html
 %%DOCSDIR%%/eog-eog-exif-util.html
+%%DOCSDIR%%/eog-eog-image.html
+%%DOCSDIR%%/eog-eog-jobs.html
 %%DOCSDIR%%/eog-eog-job-queue.html
+%%DOCSDIR%%/eog-eog-list-store.html
 %%DOCSDIR%%/eog-eog-metadata-reader.html
 %%DOCSDIR%%/eog-eog-pixbuf-util.html
+%%DOCSDIR%%/eog-eog-plugin.html
 %%DOCSDIR%%/eog-eog-plugin-engine.html
 %%DOCSDIR%%/eog-eog-print.html
+%%DOCSDIR%%/eog-eog-properties-dialog.html
 %%DOCSDIR%%/eog-eog-save-as-dialog-helper.html
 %%DOCSDIR%%/eog-eog-session.html
+%%DOCSDIR%%/eog-eog-thumb-nav.html
+%%DOCSDIR%%/eog-eog-thumb-view.html
 %%DOCSDIR%%/eog-eog-thumbnail.html
+%%DOCSDIR%%/eog-eog-transform.html
+%%DOCSDIR%%/eog-eog-uri-converter.html
 %%DOCSDIR%%/eog-eog-util.html
 %%DOCSDIR%%/eog-uta.html
+%%DOCSDIR%%/eog-eog-window.html
 %%DOCSDIR%%/eog-zoom.html
 %%DOCSDIR%%/eog.devhelp
 %%DOCSDIR%%/eog.devhelp2
@@ -235,6 +233,7 @@ share/locale/da/LC_MESSAGES/eog.mo
 share/locale/de/LC_MESSAGES/eog.mo
 share/locale/dz/LC_MESSAGES/eog.mo
 share/locale/el/LC_MESSAGES/eog.mo
+share/locale/en@shaw/LC_MESSAGES/eog.mo
 share/locale/en_CA/LC_MESSAGES/eog.mo
 share/locale/en_GB/LC_MESSAGES/eog.mo
 share/locale/es/LC_MESSAGES/eog.mo
@@ -444,6 +443,8 @@ share/omf/eog/eog-zh_TW.omf
 @dirrmtry share/locale/ks
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

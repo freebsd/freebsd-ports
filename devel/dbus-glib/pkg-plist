@@ -15,6 +15,7 @@ libexec/dbus-bash-completion-helper
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/ch03.html
 %%DOCSDIR%%/dbus-binding-tool.html
+%%DOCSDIR%%/dbus-glib-DBus-GLib-low-level.html
 %%DOCSDIR%%/dbus-glib-DBus-GObject-related-functions.html
 %%DOCSDIR%%/dbus-glib-DBusGConnection.html
 %%DOCSDIR%%/dbus-glib-DBusGError.html

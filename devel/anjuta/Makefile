@@ -3,12 +3,11 @@
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/anjuta/Makefile,v 1.49 2009/10/19 19:29:48 kwm Exp $
+#   $MCom: ports/devel/anjuta/Makefile,v 1.58 2010/04/28 08:11:36 kwm Exp $
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	2.28.2.0
-PORTREVISION=	2
+PORTVERSION=	2.30.1.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -44,6 +43,7 @@ USE_GNOME=	gnomeprefix gnomehack vte gtksourceview2 libgda4
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp
 USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
 		anjuta-cvs-plugin.schemas \
@@ -101,6 +101,9 @@ CONFIGURE_ARGS+=--disable-plugin-devhelp
 #PLIST_SUB+=	DEVHELP="@comment "
 PLIST_SUB+=	DEVHELP=""
 .endif
+
+post-patch:
+	@${RM} ${WRKSRC}/plugins/debug-manager/anjuta-debug-manager.schemas
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|PKG_PATH|PKG_CONFIG_PATH|g' \

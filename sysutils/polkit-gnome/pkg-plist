@@ -41,27 +41,7 @@ share/locale/sv/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/zh_CN/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/zh_HK/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/zh_TW/LC_MESSAGES/polkit-gnome-1.mo
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/be/LC_MESSAGES
-@dirrmtry share/locale/be
 @dirrm include/polkit-gtk-1/polkitgtk
 @dirrm include/polkit-gtk-1
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK

@@ -3,11 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/net-im/telepathy-mission-control/Makefile,v 1.8 2009/10/24 15:26:03 marcus Exp $
+#    $MCom: ports/net-im/telepathy-mission-control/Makefile,v 1.11 2010/04/23 17:01:23 marcus Exp $
 
 PORTNAME=	telepathy-mission-control
-PORTVERSION=	5.2.6
-PORTREVISION=	2
+PORTVERSION=	5.3.2
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-mission-control/
 
@@ -22,8 +21,7 @@ USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_UNSAFE=yes
 
 MAN1=		mc-account-convert.1 mc-tool.1 mc-wait-for-name.1
 MAN8=		mission-control-5.8

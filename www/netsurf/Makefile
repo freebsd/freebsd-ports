@@ -33,6 +33,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|	@|	|;s|-O |$${CFLAGS}|'\
+		-e 's|-DGTK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/makefile
 
 pre-build:

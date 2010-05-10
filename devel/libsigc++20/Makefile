@@ -3,11 +3,11 @@
 # Whom:                Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libsigc++20/Makefile,v 1.11 2008/03/10 15:08:22 ahze Exp $
+#   $MCom: ports/devel/libsigc++20/Makefile,v 1.14 2010/04/16 21:30:41 kwm Exp $
 #
 
 PORTNAME=	libsigc++
-PORTVERSION=	2.2.4.2
+PORTVERSION=	2.2.6
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 

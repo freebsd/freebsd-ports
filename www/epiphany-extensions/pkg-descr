@@ -1,9 +1,12 @@
 Epiphany-extensions is a set of plugins for the Epiphany web browser that
-extend its base functionality.  Currently, the following extensions are
-supported:
+extend its base functionality. Some of those extensions include:
 
-* Mouse gestures
-* Pop-up blocker
-* Tabs menu
+* Actions
+* Ad Blocker
+* Certificate Viewer
+* Greasemonkey
+* Mouse Gestures
+* Newsfeed extractor
+* and more...
 
 WWW: http://www.gnome.org/projects/epiphany/extensions

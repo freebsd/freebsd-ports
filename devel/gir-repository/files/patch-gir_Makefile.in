@@ -1,5 +1,5 @@
---- gir/Makefile.in.orig	2010-03-24 14:45:41.000000000 +0100
-+++ gir/Makefile.in	2010-03-24 14:45:41.000000000 +0100
+--- gir/Makefile.in.orig	2009-09-09 21:31:46.000000000 +0200
++++ gir/Makefile.in	2010-04-07 15:17:19.000000000 +0200
 @@ -86,7 +86,7 @@ host_triplet = @host@
  @BUILD_GSSDP_TRUE@am__append_33 = GSSDP-1.0.gir
  @BUILD_GUPNP_TRUE@am__append_34 = GUPnP-1.0.gir
@@ -27,6 +27,15 @@
  @BUILD_UNIQUE_TRUE@UNIQUE_INCLUDEDIR = `pkg-config --variable=includedir unique-1.0`/unique-1.0/unique
  @BUILD_NAUTILUS_TRUE@NAUTILUS_INCLUDEDIR = `pkg-config --variable=includedir libnautilus-extension`/nautilus/libnautilus-extension
  @BUILD_WNCK_TRUE@WNCK_INCLUDEDIR = `pkg-config --variable=includedir libwnck-1.0`/libwnck-1.0/libwnck
+@@ -1083,7 +1083,7 @@ uninstall-am: uninstall-dist_girDATA uni
+ @BUILD_PANGOXFT_TRUE@@BUILD_PANGO_TRUE@            --pkg freetype2 \
+ @BUILD_PANGOXFT_TRUE@@BUILD_PANGO_TRUE@            --pkg pangox \
+ @BUILD_PANGOXFT_TRUE@@BUILD_PANGO_TRUE@            $(PANGO_INCLUDEDIR)/pango/pangox.h
+-@BUILD_POPPLER_TRUE@Poppler-0.8.gir: Gdk-2.0.gir Pango-1.0.gir $(INTROSPECTION_SCANNER)
++@BUILD_POPPLER_TRUE@Poppler-0.8.gir: Gdk-2.0.gir $(INTROSPECTION_SCANNER)
+ @BUILD_POPPLER_TRUE@	$(INTROSPECTION_SCANNER) -v --namespace Poppler --nsversion=0.8 \
+ @BUILD_POPPLER_TRUE@	    --add-include-path=$(srcdir) --add-include-path=. \
+ @BUILD_POPPLER_TRUE@             --include=GObject-2.0 \
 @@ -1384,16 +1384,16 @@ uninstall-am: uninstall-dist_girDATA uni
  @BUILD_GSTREAMER_PLUGINS_BASE_TRUE@             --output $@ \
  @BUILD_GSTREAMER_PLUGINS_BASE_TRUE@	     $(GSTFFT_INCLUDEDIR)/gst/fft/*h

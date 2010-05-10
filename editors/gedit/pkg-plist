@@ -2,20 +2,17 @@ bin/gedit
 bin/gnome-text-editor
 include/gedit-%%VERSION%%/gedit/gedit-app.h
 include/gedit-%%VERSION%%/gedit/gedit-commands.h
-include/gedit-%%VERSION%%/gedit/gedit-convert.h
 include/gedit-%%VERSION%%/gedit/gedit-debug.h
 include/gedit-%%VERSION%%/gedit/gedit-document.h
-include/gedit-%%VERSION%%/gedit/gedit-encodings-option-menu.h
+include/gedit-%%VERSION%%/gedit/gedit-encodings-combo-box.h
 include/gedit-%%VERSION%%/gedit/gedit-encodings.h
 include/gedit-%%VERSION%%/gedit/gedit-file-chooser-dialog.h
 include/gedit-%%VERSION%%/gedit/gedit-help.h
 include/gedit-%%VERSION%%/gedit/gedit-message-bus.h
 include/gedit-%%VERSION%%/gedit/gedit-message-type.h
 include/gedit-%%VERSION%%/gedit/gedit-message.h
-include/gedit-%%VERSION%%/gedit/gedit-metadata-manager.h
 include/gedit-%%VERSION%%/gedit/gedit-notebook.h
 include/gedit-%%VERSION%%/gedit/gedit-panel.h
-include/gedit-%%VERSION%%/gedit/gedit-plugin-loader.h
 include/gedit-%%VERSION%%/gedit/gedit-plugin.h
 include/gedit-%%VERSION%%/gedit/gedit-prefs-manager-app.h
 include/gedit-%%VERSION%%/gedit/gedit-prefs-manager.h
@@ -35,21 +32,24 @@ lib/gedit-2/plugin-loaders/libcloader.so
 lib/gedit-2/plugins/changecase.gedit-plugin
 lib/gedit-2/plugins/docinfo.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/externaltools.gedit-plugin
-%%PYTHON%%lib/gedit-2/plugins/externaltools/ElementTree.py
-%%PYTHON%%lib/gedit-2/plugins/externaltools/ElementTree.pyc
-%%PYTHON%%lib/gedit-2/plugins/externaltools/ElementTree.pyo
 %%PYTHON%%lib/gedit-2/plugins/externaltools/__init__.py
 %%PYTHON%%lib/gedit-2/plugins/externaltools/__init__.pyc
 %%PYTHON%%lib/gedit-2/plugins/externaltools/__init__.pyo
 %%PYTHON%%lib/gedit-2/plugins/externaltools/capture.py
 %%PYTHON%%lib/gedit-2/plugins/externaltools/capture.pyc
 %%PYTHON%%lib/gedit-2/plugins/externaltools/capture.pyo
+%%PYTHON%%lib/gedit-2/plugins/externaltools/filelookup.py
+%%PYTHON%%lib/gedit-2/plugins/externaltools/filelookup.pyc
+%%PYTHON%%lib/gedit-2/plugins/externaltools/filelookup.pyo
 %%PYTHON%%lib/gedit-2/plugins/externaltools/functions.py
 %%PYTHON%%lib/gedit-2/plugins/externaltools/functions.pyc
 %%PYTHON%%lib/gedit-2/plugins/externaltools/functions.pyo
 %%PYTHON%%lib/gedit-2/plugins/externaltools/library.py
 %%PYTHON%%lib/gedit-2/plugins/externaltools/library.pyc
 %%PYTHON%%lib/gedit-2/plugins/externaltools/library.pyo
+%%PYTHON%%lib/gedit-2/plugins/externaltools/linkparsing.py
+%%PYTHON%%lib/gedit-2/plugins/externaltools/linkparsing.pyc
+%%PYTHON%%lib/gedit-2/plugins/externaltools/linkparsing.pyo
 %%PYTHON%%lib/gedit-2/plugins/externaltools/manager.py
 %%PYTHON%%lib/gedit-2/plugins/externaltools/manager.pyc
 %%PYTHON%%lib/gedit-2/plugins/externaltools/manager.pyo
@@ -57,7 +57,6 @@ lib/gedit-2/plugins/docinfo.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/externaltools/outputpanel.pyc
 %%PYTHON%%lib/gedit-2/plugins/externaltools/outputpanel.pyo
 lib/gedit-2/plugins/filebrowser.gedit-plugin
-lib/gedit-2/plugins/indent.gedit-plugin
 lib/gedit-2/plugins/libchangecase.a
 lib/gedit-2/plugins/libchangecase.la
 lib/gedit-2/plugins/libchangecase.so
@@ -67,9 +66,6 @@ lib/gedit-2/plugins/libdocinfo.so
 lib/gedit-2/plugins/libfilebrowser.a
 lib/gedit-2/plugins/libfilebrowser.la
 lib/gedit-2/plugins/libfilebrowser.so
-lib/gedit-2/plugins/libindent.a
-lib/gedit-2/plugins/libindent.la
-lib/gedit-2/plugins/libindent.so
 lib/gedit-2/plugins/libmodelines.a
 lib/gedit-2/plugins/libmodelines.la
 lib/gedit-2/plugins/libmodelines.so
@@ -110,12 +106,12 @@ lib/gedit-2/plugins/modelines.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/quickopen/windowhelper.pyc
 %%PYTHON%%lib/gedit-2/plugins/quickopen/windowhelper.pyo
 %%PYTHON%%lib/gedit-2/plugins/snippets.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/snippets/Completion.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/Completion.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/Completion.pyo
 %%PYTHON%%lib/gedit-2/plugins/snippets/Document.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/Document.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/Document.pyo
-%%PYTHON%%lib/gedit-2/plugins/snippets/ElementTree.py
-%%PYTHON%%lib/gedit-2/plugins/snippets/ElementTree.pyc
-%%PYTHON%%lib/gedit-2/plugins/snippets/ElementTree.pyo
 %%PYTHON%%lib/gedit-2/plugins/snippets/Exporter.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/Exporter.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/Exporter.pyo
@@ -125,6 +121,9 @@ lib/gedit-2/plugins/modelines.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/snippets/Importer.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/Importer.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/Importer.pyo
+%%PYTHON%%lib/gedit-2/plugins/snippets/LanguageManager.py
+%%PYTHON%%lib/gedit-2/plugins/snippets/LanguageManager.pyc
+%%PYTHON%%lib/gedit-2/plugins/snippets/LanguageManager.pyo
 %%PYTHON%%lib/gedit-2/plugins/snippets/Library.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/Library.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/Library.pyo
@@ -140,9 +139,6 @@ lib/gedit-2/plugins/modelines.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/snippets/Snippet.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/Snippet.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/Snippet.pyo
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetComplete.py
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetComplete.pyc
-%%PYTHON%%lib/gedit-2/plugins/snippets/SnippetComplete.pyo
 %%PYTHON%%lib/gedit-2/plugins/snippets/SubstitutionParser.py
 %%PYTHON%%lib/gedit-2/plugins/snippets/SubstitutionParser.pyc
 %%PYTHON%%lib/gedit-2/plugins/snippets/SubstitutionParser.pyo
@@ -159,32 +155,32 @@ lib/gedit-2/plugins/time.gedit-plugin
 libdata/pkgconfig/gedit-%%VERSION%%.pc
 libexec/gedit-2/gedit-bugreport.sh
 share/applications/gedit.desktop
-%%DOCSDIR%%/GeditApp.html
-%%DOCSDIR%%/GeditDocument.html
-%%DOCSDIR%%/GeditEncodingsOptionMenu.html
-%%DOCSDIR%%/GeditFileChooserDialog.html
 %%DOCSDIR%%/GeditMessage.html
 %%DOCSDIR%%/GeditMessageBus.html
-%%DOCSDIR%%/GeditNotebook.html
-%%DOCSDIR%%/GeditPanel.html
 %%DOCSDIR%%/GeditPlugin.html
-%%DOCSDIR%%/GeditProgressMessageArea.html
-%%DOCSDIR%%/GeditStatusbar.html
-%%DOCSDIR%%/GeditTab.html
-%%DOCSDIR%%/GeditView.html
-%%DOCSDIR%%/GeditWindow.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/gedit-GeditMessageType.html
 %%DOCSDIR%%/gedit-GeditPrintJob.html
-%%DOCSDIR%%/gedit-GeditPrintJobPreview.html
+%%DOCSDIR%%/gedit-gedit-app.html
 %%DOCSDIR%%/gedit-gedit-convert.html
 %%DOCSDIR%%/gedit-gedit-debug.html
+%%DOCSDIR%%/gedit-gedit-document.html
 %%DOCSDIR%%/gedit-gedit-encodings.html
+%%DOCSDIR%%/gedit-gedit-encodings-option-menu.html
+%%DOCSDIR%%/gedit-gedit-file-chooser-dialog.html
 %%DOCSDIR%%/gedit-gedit-help.html
 %%DOCSDIR%%/gedit-gedit-metadata-manager.html
+%%DOCSDIR%%/gedit-gedit-notebook.html
+%%DOCSDIR%%/gedit-gedit-panel.html
 %%DOCSDIR%%/gedit-gedit-prefs-manager-app.html
 %%DOCSDIR%%/gedit-gedit-prefs-manager.html
+%%DOCSDIR%%/gedit-gedit-print-job-preview.html
+%%DOCSDIR%%/gedit-gedit-progress-message-area.html
+%%DOCSDIR%%/gedit-gedit-statusbar.html
+%%DOCSDIR%%/gedit-gedit-tab.html
 %%DOCSDIR%%/gedit-gedit-utils.html
+%%DOCSDIR%%/gedit-gedit-view.html
+%%DOCSDIR%%/gedit-gedit-window.html
 %%DOCSDIR%%/gedit.devhelp
 %%DOCSDIR%%/gedit.devhelp2
 %%DOCSDIR%%/home.png
@@ -205,7 +201,6 @@ share/gedit-2/plugins/docinfo/docinfo.ui
 %%PYTHON%%share/gedit-2/plugins/externaltools/ui/tools.ui
 %%PYTHON%%share/gedit-2/plugins/externaltools/ui/outputpanel.ui
 share/gedit-2/plugins/filebrowser/gedit-file-browser-widget-ui.xml
-@exec mkdir -p %D/share/gedit-2/plugins/indent
 share/gedit-2/plugins/modelines/language-mappings
 %%PYTHON%%share/gedit-2/plugins/pythonconsole/ui/config.ui
 %%PYTHON%%share/gedit-2/plugins/snippets/c.xml
@@ -231,6 +226,7 @@ share/gedit-2/plugins/modelines/language-mappings
 %%PYTHON%%share/gedit-2/plugins/snippets/tcl.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/ui/snippets.ui
 %%PYTHON%%share/gedit-2/plugins/snippets/xml.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/xslt.xml
 share/gedit-2/plugins/sort/sort.ui
 share/gedit-2/plugins/spell/languages-dialog.ui
 share/gedit-2/plugins/spell/spell-checker.ui
@@ -459,6 +455,7 @@ share/locale/da/LC_MESSAGES/gedit.mo
 share/locale/de/LC_MESSAGES/gedit.mo
 share/locale/dz/LC_MESSAGES/gedit.mo
 share/locale/el/LC_MESSAGES/gedit.mo
+share/locale/en@shaw/LC_MESSAGES/gedit.mo
 share/locale/en_CA/LC_MESSAGES/gedit.mo
 share/locale/en_GB/LC_MESSAGES/gedit.mo
 share/locale/eo/LC_MESSAGES/gedit.mo
@@ -496,6 +493,7 @@ share/locale/mn/LC_MESSAGES/gedit.mo
 share/locale/mr/LC_MESSAGES/gedit.mo
 share/locale/ms/LC_MESSAGES/gedit.mo
 share/locale/nb/LC_MESSAGES/gedit.mo
+share/locale/nds/LC_MESSAGES/gedit.mo
 share/locale/ne/LC_MESSAGES/gedit.mo
 share/locale/nl/LC_MESSAGES/gedit.mo
 share/locale/nn/LC_MESSAGES/gedit.mo
@@ -613,7 +611,6 @@ share/omf/gedit/gedit-zh_TW.omf
 %%PYTHON%%@dirrm share/gedit-2/plugins/pythonconsole/ui
 %%PYTHON%%@dirrm share/gedit-2/plugins/pythonconsole
 @dirrm share/gedit-2/plugins/modelines
-@dirrm share/gedit-2/plugins/indent
 @dirrm share/gedit-2/plugins/filebrowser
 %%PYTHON%%@dirrm share/gedit-2/plugins/externaltools/ui
 %%PYTHON%%@dirrm share/gedit-2/plugins/externaltools/tools
@@ -654,6 +651,8 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
@@ -668,6 +667,8 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES

@@ -54,6 +54,8 @@ post-patch:
 		's|@libglade_moduledir@|@prefix@/lib/libglade/2.0|g ; \
 		 s|@glade_moduledir@|@prefix@/lib/glade3/modules|g ; \
 		 s|@glade_catalogdir@|@prefix@/share/glade3/catalogs|g'
+	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/gtk/Makefile.in ${WRKSRC}/examples/Makefile.in
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

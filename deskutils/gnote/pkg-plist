@@ -14,6 +14,9 @@ lib/gnote/addins/%%VERSION%%/fixedwidth.so
 lib/gnote/addins/%%VERSION%%/inserttimestamp.a
 lib/gnote/addins/%%VERSION%%/inserttimestamp.la
 lib/gnote/addins/%%VERSION%%/inserttimestamp.so
+lib/gnote/addins/%%VERSION%%/libnoteoftheday.a
+lib/gnote/addins/%%VERSION%%/libnoteoftheday.la
+lib/gnote/addins/%%VERSION%%/libnoteoftheday.so
 lib/gnote/addins/%%VERSION%%/printnotes.a
 lib/gnote/addins/%%VERSION%%/printnotes.la
 lib/gnote/addins/%%VERSION%%/printnotes.so
@@ -130,6 +133,25 @@ share/gnome/help/gnote/sv/figures/note-template.png
 share/gnome/help/gnote/sv/figures/notebook-icon.png
 share/gnome/help/gnote/sv/gnote.xml
 share/gnome/help/gnote/sv/legal.xml
+share/gnome/help/gnote/zh_CN/figures/add-notebook-search.png
+share/gnome/help/gnote/zh_CN/figures/add-to-notebook.png
+share/gnome/help/gnote/zh_CN/figures/delete-notebook.png
+share/gnome/help/gnote/zh_CN/figures/gnote-main-menu.png
+share/gnome/help/gnote/zh_CN/figures/gnote-new-note.png
+share/gnome/help/gnote/zh_CN/figures/gnote-panel.png
+share/gnome/help/gnote/zh_CN/figures/gnote-pindown.png
+share/gnome/help/gnote/zh_CN/figures/gnote-pinup.png
+share/gnome/help/gnote/zh_CN/figures/gnote-preferences-add-ins.png
+share/gnome/help/gnote/zh_CN/figures/gnote-preferences-editing.png
+share/gnome/help/gnote/zh_CN/figures/gnote-preferences-hotkeys.png
+share/gnome/help/gnote/zh_CN/figures/gnote-preferences-synchronization.png
+share/gnome/help/gnote/zh_CN/figures/gnote-tools.png
+share/gnome/help/gnote/zh_CN/figures/move-notes-search.png
+share/gnome/help/gnote/zh_CN/figures/new-notebook.png
+share/gnome/help/gnote/zh_CN/figures/note-template.png
+share/gnome/help/gnote/zh_CN/figures/notebook-icon.png
+share/gnome/help/gnote/zh_CN/gnote.xml
+share/gnome/help/gnote/zh_CN/legal.xml
 %%DATADIR%%/GNOME_GnoteApplet.xml
 %%DATADIR%%/UIManagerLayout.xml
 %%DATADIR%%/exporttohtml.xsl
@@ -163,9 +185,11 @@ share/icons/hicolor/48x48/apps/gnote.png
 share/icons/hicolor/scalable/apps/gnote.svg
 share/locale/ar/LC_MESSAGES/gnote.mo
 share/locale/as/LC_MESSAGES/gnote.mo
+share/locale/bg/LC_MESSAGES/gnote.mo
 share/locale/bn_IN/LC_MESSAGES/gnote.mo
 share/locale/ca/LC_MESSAGES/gnote.mo
 share/locale/cs/LC_MESSAGES/gnote.mo
+share/locale/da/LC_MESSAGES/gnote.mo
 share/locale/de/LC_MESSAGES/gnote.mo
 share/locale/el/LC_MESSAGES/gnote.mo
 share/locale/en_GB/LC_MESSAGES/gnote.mo
@@ -174,6 +198,7 @@ share/locale/fr/LC_MESSAGES/gnote.mo
 share/locale/gl/LC_MESSAGES/gnote.mo
 share/locale/gu/LC_MESSAGES/gnote.mo
 share/locale/he/LC_MESSAGES/gnote.mo
+share/locale/hi/LC_MESSAGES/gnote.mo
 share/locale/hu/LC_MESSAGES/gnote.mo
 share/locale/id/LC_MESSAGES/gnote.mo
 share/locale/it/LC_MESSAGES/gnote.mo
@@ -181,6 +206,7 @@ share/locale/ja/LC_MESSAGES/gnote.mo
 share/locale/kn/LC_MESSAGES/gnote.mo
 share/locale/ko/LC_MESSAGES/gnote.mo
 share/locale/lt/LC_MESSAGES/gnote.mo
+share/locale/ml/LC_MESSAGES/gnote.mo
 share/locale/mr/LC_MESSAGES/gnote.mo
 share/locale/or/LC_MESSAGES/gnote.mo
 share/locale/pa/LC_MESSAGES/gnote.mo
@@ -199,15 +225,8 @@ share/omf/gnote/gnote-de.omf
 share/omf/gnote/gnote-el.omf
 share/omf/gnote/gnote-es.omf
 share/omf/gnote/gnote-sv.omf
+share/omf/gnote/gnote-zh_CN.omf
 @dirrm share/omf/gnote
-@dirrmtry share/locale/te/LC_MESSAGES
-@dirrmtry share/locale/te
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/as/LC_MESSAGES
-@dirrmtry share/locale/as
 @dirrm %%DATADIR%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/icons/hicolor/scalable
 @dirrm %%DATADIR%%/icons/hicolor/48x48/actions
@@ -226,6 +245,8 @@ share/omf/gnote/gnote-sv.omf
 @dirrm %%DATADIR%%/icons/hicolor
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrm share/gnome/help/gnote/zh_CN/figures
+@dirrm share/gnome/help/gnote/zh_CN
 @dirrm share/gnome/help/gnote/sv/figures
 @dirrm share/gnome/help/gnote/sv
 @dirrm share/gnome/help/gnote/es/figures
@@ -242,3 +263,11 @@ share/omf/gnote/gnote-sv.omf
 @dirrmtry lib/gnote/addins/%%VERSION%%
 @dirrmtry lib/gnote/addins
 @dirrmtry lib/gnote
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	1.0.10
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehack gtkhtml3 vte librsvg2 libgnomecanvas \
-		libgnomeprintui libglade2
+		libgnomeprintui libglade2 libgnomeui
 
 USE_AUTOTOOLS=	libtool:22
 

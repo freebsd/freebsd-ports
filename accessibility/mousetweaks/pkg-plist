@@ -186,6 +186,7 @@ share/gnome/help/mousetweaks/zh_CN/figures/mouse-a11y-tab.png
 share/gnome/help/mousetweaks/zh_CN/mousetweaks.xml
 share/locale/ar/LC_MESSAGES/mousetweaks.mo
 share/locale/as/LC_MESSAGES/mousetweaks.mo
+share/locale/ast/LC_MESSAGES/mousetweaks.mo
 share/locale/bg/LC_MESSAGES/mousetweaks.mo
 share/locale/bn/LC_MESSAGES/mousetweaks.mo
 share/locale/bn_IN/LC_MESSAGES/mousetweaks.mo
@@ -196,6 +197,7 @@ share/locale/da/LC_MESSAGES/mousetweaks.mo
 share/locale/de/LC_MESSAGES/mousetweaks.mo
 share/locale/el/LC_MESSAGES/mousetweaks.mo
 share/locale/en_GB/LC_MESSAGES/mousetweaks.mo
+share/locale/en@shaw/LC_MESSAGES/mousetweaks.mo
 share/locale/es/LC_MESSAGES/mousetweaks.mo
 share/locale/et/LC_MESSAGES/mousetweaks.mo
 share/locale/eu/LC_MESSAGES/mousetweaks.mo
@@ -300,6 +302,8 @@ share/omf/mousetweaks/mousetweaks-zh_CN.omf
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

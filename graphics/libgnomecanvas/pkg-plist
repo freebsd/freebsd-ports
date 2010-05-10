@@ -24,13 +24,16 @@ share/locale/am/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ang/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/as/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ast/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/az/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/be/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/bn/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/bn_IN/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/br/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/bs/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ca@valencia/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/crh/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/cy/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -38,6 +41,7 @@ share/locale/da/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/de/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/dz/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/el/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/en@shaw/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/en_CA/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/en_GB/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/eo/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -133,12 +137,18 @@ share/locale/zh_TW/LC_MESSAGES/libgnomecanvas-2.0.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
 @dirrmtry share/locale/crh
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
 @dirrmtry share/locale/ang/LC_MESSAGES

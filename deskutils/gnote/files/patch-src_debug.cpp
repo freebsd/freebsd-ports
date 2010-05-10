@@ -5,7 +5,7 @@
  //    boost::recursive_mutex::scoped_lock lock(mutex);
      char buf[128];
 -    snprintf(buf, 128, "(%d) ", (int)pthread_self());
-+    snprintf(buf, 128, "(%d) ", (pthread_t)pthread_self());
++    snprintf(buf, 128, "(%ld) ", (pthread_t)pthread_self());
      fwrite(buf, 1, strlen(buf), stderr);
      fwrite(prefix, 1, strlen(prefix), stderr);
  

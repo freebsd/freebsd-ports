@@ -3,12 +3,11 @@
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/seahorse/Makefile,v 1.88 2009/10/18 02:38:21 avl Exp $
+#   $MCom: ports/security/seahorse/Makefile,v 1.96 2010/04/27 22:04:55 kwm Exp $
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	2.28.1
-PORTREVISION=	2
+PORTVERSION=	2.30.1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -34,9 +33,10 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-introspection=no
 
 GCONF_SCHEMAS=	seahorse.schemas
-MAN1=		seahorse-daemon.1
+MAN1=		seahorse.1 seahorse-daemon.1
 
 OPTIONS=	LDAP "Enable LDAP support" on \
 		NOTIFY "Enable libnotify support" on \

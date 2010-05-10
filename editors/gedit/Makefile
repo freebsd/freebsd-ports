@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/gedit/Makefile,v 1.109 2009/11/10 10:18:25 kwm Exp $
+#   $MCom: ports/editors/gedit/Makefile,v 1.120 2010/04/19 15:33:49 kwm Exp $
 #
 
 PORTNAME=	gedit
-PORTVERSION=	2.28.3
-PORTREVISION=	2
+PORTVERSION=	2.30.2
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A small but powerful text editor for GNOME 2 Desktop Environment
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant
+LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
+		soup-2.4.1:${PORTSDIR}/devel/libsoup
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 USE_XORG=	sm

@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/evince/Makefile,v 1.130 2009/10/19 19:57:01 kwm Exp $
+#    $MCom: ports/graphics/evince/Makefile,v 1.137 2010/04/27 14:14:36 kwm Exp $
 #
 
 PORTNAME=	evince
-PORTVERSION=	2.28.2
-PORTREVISION=	2
+PORTVERSION=	2.30.1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -117,6 +116,9 @@ PLIST_SUB+=		COMICS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^DOC_MODULE_VERSION/d' \
+		${WRKSRC}/help/reference/libdocument/Makefile.in \
+		${WRKSRC}/help/reference/libview/Makefile.in
 
 post-install:
 	@-update-desktop-database

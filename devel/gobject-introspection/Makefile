@@ -3,11 +3,11 @@
 # Whom:					Alexander Logvinov <avl@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gobject-introspection/Makefile,v 1.3 2009/09/06 07:37:44 avl Exp $
+#   $MCom: ports/devel/gobject-introspection/Makefile,v 1.8 2010/04/22 15:11:23 kwm Exp $
 #
 
 PORTNAME=	gobject-introspection
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.10
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generate interface introspection data for GObject libraries
 
 BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi \
+		cairo.2:${PORTSDIR}/graphics/cairo
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

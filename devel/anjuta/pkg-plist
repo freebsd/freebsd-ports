@@ -14,7 +14,6 @@ include/libanjuta-1.0/libanjuta/anjuta-enum-types.h
 include/libanjuta-1.0/libanjuta/anjuta-error.h
 include/libanjuta-1.0/libanjuta/anjuta-launcher.h
 include/libanjuta-1.0/libanjuta/anjuta-marshal.h
-include/libanjuta-1.0/libanjuta/anjuta-message-area.h
 include/libanjuta-1.0/libanjuta/anjuta-plugin-description.h
 include/libanjuta-1.0/libanjuta/anjuta-plugin-handle.h
 include/libanjuta-1.0/libanjuta/anjuta-plugin-manager.h
@@ -23,12 +22,14 @@ include/libanjuta-1.0/libanjuta/anjuta-preferences-dialog.h
 include/libanjuta-1.0/libanjuta/anjuta-preferences.h
 include/libanjuta-1.0/libanjuta/anjuta-profile-manager.h
 include/libanjuta-1.0/libanjuta/anjuta-profile.h
+include/libanjuta-1.0/libanjuta/anjuta-project.h
 include/libanjuta-1.0/libanjuta/anjuta-save-prompt.h
 include/libanjuta-1.0/libanjuta/anjuta-serializer.h
 include/libanjuta-1.0/libanjuta/anjuta-session.h
 include/libanjuta-1.0/libanjuta/anjuta-shell.h
 include/libanjuta-1.0/libanjuta/anjuta-status.h
 include/libanjuta-1.0/libanjuta/anjuta-sync-command.h
+include/libanjuta-1.0/libanjuta/anjuta-tabber.h
 include/libanjuta-1.0/libanjuta/anjuta-ui.h
 include/libanjuta-1.0/libanjuta/anjuta-utils.h
 include/libanjuta-1.0/libanjuta/anjuta-vcs-status.h
@@ -59,6 +60,7 @@ include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-language.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-line-mode.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-search.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-selection.h
+include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-tip.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-view.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor-zoom.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-editor.h
@@ -83,6 +85,8 @@ include/libanjuta-1.0/libanjuta/interfaces/ianjuta-preferences.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-print.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-project-backend.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-project-manager.h
+include/libanjuta-1.0/libanjuta/interfaces/ianjuta-project.h
+include/libanjuta-1.0/libanjuta/interfaces/ianjuta-provider.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-stream-loader.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-stream-savable.h
 include/libanjuta-1.0/libanjuta/interfaces/ianjuta-stream.h
@@ -102,6 +106,7 @@ lib/anjuta/anjuta-class-gen.plugin
 lib/anjuta/anjuta-cvs.plugin
 lib/anjuta/anjuta-debug-manager.plugin
 %%DEVHELP%%lib/anjuta/anjuta-devhelp.plugin
+lib/anjuta/dir-project.plugin
 lib/anjuta/anjuta-document-manager.plugin
 lib/anjuta/anjuta-file-wizard.plugin
 lib/anjuta/anjuta-gdb.plugin
@@ -125,6 +130,8 @@ lib/anjuta/file-manager.plugin
 lib/anjuta/gbf-am.plugin
 lib/anjuta/gbf-mkfile.plugin
 lib/anjuta/git.plugin
+lib/anjuta/js_debugger.plugin
+lib/anjuta/js_support_plugin.plugin
 lib/anjuta/language-manager.plugin
 lib/anjuta/libanjuta-build-basic-autotools.la
 lib/anjuta/libanjuta-build-basic-autotools.so
@@ -180,12 +187,18 @@ lib/anjuta/libanjuta-terminal.la
 lib/anjuta/libanjuta-terminal.so
 lib/anjuta/libanjuta-tools.la
 lib/anjuta/libanjuta-tools.so
+lib/anjuta/libdir-project.la
+lib/anjuta/libdir-project.so
 lib/anjuta/libfile-manager.la
 lib/anjuta/libfile-manager.so
 lib/anjuta/libgbf-am.la
 lib/anjuta/libgbf-am.so
 lib/anjuta/libgbf-mkfile.la
 lib/anjuta/libgbf-mkfile.so
+lib/anjuta/libjs_debugger.la
+lib/anjuta/libjs_debugger.so
+lib/anjuta/libjs-support-plugin.la
+lib/anjuta/libjs-support-plugin.so
 lib/anjuta/liblanguage-manager.la
 lib/anjuta/liblanguage-manager.so
 lib/anjuta/sourceview.plugin
@@ -217,6 +230,7 @@ share/anjuta/glade/anjuta-file-wizard.ui
 share/anjuta/glade/anjuta-git.ui
 share/anjuta/glade/anjuta-glade.glade
 share/anjuta/glade/anjuta-language-cpp-java.ui
+share/anjuta/glade/anjuta-language-javascript.ui
 share/anjuta/glade/anjuta-macro.ui
 share/anjuta/glade/anjuta-message-manager-plugin.ui
 share/anjuta/glade/anjuta-project-wizard.ui
@@ -262,6 +276,7 @@ share/anjuta/project/cpp/po/POTFILES.in
 share/anjuta/project/cpp/src/Makefile.am.tpl
 share/anjuta/project/cpp/src/cvsignore
 share/anjuta/project/cpp/src/main.cc
+share/anjuta/project/directory/project.anjuta
 share/anjuta/project/django-logo.png
 share/anjuta/project/django.wiz
 share/anjuta/project/gcj-logo.png
@@ -299,6 +314,16 @@ share/anjuta/project/java/po/POTFILES.in
 share/anjuta/project/java/project.anjuta
 share/anjuta/project/java/src/Makefile.am.tpl
 share/anjuta/project/java/src/main.java
+share/anjuta/project/js.wiz
+share/anjuta/project/js_minimal/Makefile.am.tpl
+share/anjuta/project/js_minimal/autogen.sh
+share/anjuta/project/js_minimal/configure.ac.tpl
+share/anjuta/project/js_minimal/project.anjuta
+share/anjuta/project/js_minimal/src/Makefile.am.tpl
+share/anjuta/project/js_minimal/src/debug.c
+share/anjuta/project/js_minimal/src/debug.h
+share/anjuta/project/js_minimal/src/main.c
+share/anjuta/project/js_minimal/src/main.js
 share/anjuta/project/library.wiz
 share/anjuta/project/library/configure.ac.tpl
 share/anjuta/project/library/po/POTFILES.in
@@ -375,7 +400,7 @@ share/anjuta/project/xlib/configure.ac.tpl
 share/anjuta/project/xlib/po/POTFILES.in
 share/anjuta/project/xlib/src/Makefile.am.tpl
 share/anjuta/project/xlib/src/main.c
-share/anjuta/tables-from-1-to-228.sql
+share/anjuta/sources.list
 share/anjuta/tables.sql
 share/anjuta/tools/find-fixmes.pl
 share/anjuta/tools/prepare-changelog.pl
@@ -391,6 +416,7 @@ share/anjuta/ui/anjuta-git.xml
 share/anjuta/ui/anjuta-glade.ui
 share/anjuta/ui/anjuta-gtodo.ui
 share/anjuta/ui/anjuta-language-support-cpp-java.xml
+share/anjuta/ui/anjuta-language-javascript.xml
 share/anjuta/ui/anjuta-loader-plugin.ui
 share/anjuta/ui/anjuta-macro.xml
 share/anjuta/ui/anjuta-message-manager.xml
@@ -402,7 +428,7 @@ share/anjuta/ui/anjuta-search.xml
 share/anjuta/ui/anjuta-symbol-db-plugin.xml
 share/anjuta/ui/anjuta-terminal-plugin.xml
 share/anjuta/ui/anjuta-tools.xml
-share/anjuta/ui/anjuta.ui
+share/anjuta/ui/anjuta.xml
 share/anjuta/ui/file-manager.xml
 share/anjuta/welcome.txt
 share/applications/anjuta.desktop
@@ -416,9 +442,11 @@ share/applications/anjuta.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ScintillaDoc.html
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/doc/libanjuta/AnjutaAsyncCommand.html
+share/doc/libanjuta/AnjutaCModule.html
+share/doc/libanjuta/AnjutaCPluginFactory.html
+share/doc/libanjuta/AnjutaCellRendererCaptionedImage.html
 share/doc/libanjuta/AnjutaCommand.html
 share/doc/libanjuta/AnjutaLauncher.html
-share/doc/libanjuta/AnjutaMessageArea.html
 share/doc/libanjuta/AnjutaPlugin.html
 share/doc/libanjuta/AnjutaPluginHandle.html
 share/doc/libanjuta/AnjutaPluginManager.html
@@ -429,10 +457,68 @@ share/doc/libanjuta/AnjutaProfileManager.html
 share/doc/libanjuta/AnjutaSavePrompt.html
 share/doc/libanjuta/AnjutaSerializer.html
 share/doc/libanjuta/AnjutaSession.html
+share/doc/libanjuta/AnjutaShell.html
 share/doc/libanjuta/AnjutaStatus.html
 share/doc/libanjuta/AnjutaSyncCommand.html
-share/doc/libanjuta/AnjutaVcsStatusTreeView.html
 share/doc/libanjuta/AnjutaUI.html
+share/doc/libanjuta/AnjutaVcsStatusTreeView.html
+share/doc/libanjuta/ESplash.html
+share/doc/libanjuta/IAnjutaBuildable.html
+share/doc/libanjuta/IAnjutaBuilder.html
+share/doc/libanjuta/IAnjutaDebugManager.html
+share/doc/libanjuta/IAnjutaDebugger.html
+share/doc/libanjuta/IAnjutaDebuggerBreakpoint.html
+share/doc/libanjuta/IAnjutaDebuggerInstruction.html
+share/doc/libanjuta/IAnjutaDebuggerMemory.html
+share/doc/libanjuta/IAnjutaDebuggerRegister.html
+share/doc/libanjuta/IAnjutaDebuggerVariable.html
+share/doc/libanjuta/IAnjutaDocument.html
+share/doc/libanjuta/IAnjutaDocumentManager.html
+share/doc/libanjuta/IAnjutaEditor.html
+share/doc/libanjuta/IAnjutaEditorAssist.html
+share/doc/libanjuta/IAnjutaEditorCell.html
+share/doc/libanjuta/IAnjutaEditorCellStyle.html
+share/doc/libanjuta/IAnjutaEditorComment.html
+share/doc/libanjuta/IAnjutaEditorConvert.html
+share/doc/libanjuta/IAnjutaEditorFactory.html
+share/doc/libanjuta/IAnjutaEditorFolds.html
+share/doc/libanjuta/IAnjutaEditorGoto.html
+share/doc/libanjuta/IAnjutaEditorHover.html
+share/doc/libanjuta/IAnjutaEditorLanguage.html
+share/doc/libanjuta/IAnjutaEditorLineMode.html
+share/doc/libanjuta/IAnjutaEditorSearch.html
+share/doc/libanjuta/IAnjutaEditorSelection.html
+share/doc/libanjuta/IAnjutaEditorView.html
+share/doc/libanjuta/IAnjutaEditorZoom.html
+share/doc/libanjuta/IAnjutaEnvironment.html
+share/doc/libanjuta/IAnjutaFile.html
+share/doc/libanjuta/IAnjutaFileLoader.html
+share/doc/libanjuta/IAnjutaFileManager.html
+share/doc/libanjuta/IAnjutaFileSavable.html
+share/doc/libanjuta/IAnjutaHelp.html
+share/doc/libanjuta/IAnjutaIndicable.html
+share/doc/libanjuta/IAnjutaIterable.html
+share/doc/libanjuta/IAnjutaIterableTree.html
+share/doc/libanjuta/IAnjutaLanguage.html
+share/doc/libanjuta/IAnjutaLanguageSupport.html
+share/doc/libanjuta/IAnjutaLoader.html
+share/doc/libanjuta/IAnjutaMacro.html
+share/doc/libanjuta/IAnjutaMarkable.html
+share/doc/libanjuta/IAnjutaMessageManager.html
+share/doc/libanjuta/IAnjutaMessageView.html
+share/doc/libanjuta/IAnjutaPluginFactory.html
+share/doc/libanjuta/IAnjutaPreferences.html
+share/doc/libanjuta/IAnjutaPrint.html
+share/doc/libanjuta/IAnjutaProjectManager.html
+share/doc/libanjuta/IAnjutaStream.html
+share/doc/libanjuta/IAnjutaStreamLoader.html
+share/doc/libanjuta/IAnjutaStreamSavable.html
+share/doc/libanjuta/IAnjutaSymbol.html
+share/doc/libanjuta/IAnjutaSymbolManager.html
+share/doc/libanjuta/IAnjutaTerminal.html
+share/doc/libanjuta/IAnjutaTodo.html
+share/doc/libanjuta/IAnjutaVcs.html
+share/doc/libanjuta/IAnjutaWizard.html
 share/doc/libanjuta/action-block.html
 share/doc/libanjuta/anjuta-architecture.html
 share/doc/libanjuta/anjuta-architecture.png
@@ -443,82 +529,20 @@ share/doc/libanjuta/home.png
 share/doc/libanjuta/index.html
 share/doc/libanjuta/index.sgml
 share/doc/libanjuta/left.png
-share/doc/libanjuta/libanjuta-AnjutaCellRendererCaptionedImage.html
-share/doc/libanjuta/libanjuta-ESplash.html
-share/doc/libanjuta/libanjuta-anjuta-c-module.html
-share/doc/libanjuta/libanjuta-anjuta-c-plugin-factory.html
+share/doc/libanjuta/libanjuta-AnjutaPluginDescription.html
+share/doc/libanjuta/libanjuta-Debugging.html
+share/doc/libanjuta/libanjuta-Program-resources.html
+share/doc/libanjuta/libanjuta-Utilities.html
 share/doc/libanjuta/libanjuta-anjuta-convert.html
-share/doc/libanjuta/libanjuta-anjuta-debug.html
 share/doc/libanjuta/libanjuta-anjuta-encodings.html
 share/doc/libanjuta/libanjuta-anjuta-enum-types.html
 share/doc/libanjuta/libanjuta-anjuta-error.html
 share/doc/libanjuta/libanjuta-anjuta-marshal.html
-share/doc/libanjuta/libanjuta-anjuta-plugin-description.html
-share/doc/libanjuta/libanjuta-anjuta-shell.html
 share/doc/libanjuta/libanjuta-anjuta-utils-priv.html
-share/doc/libanjuta/libanjuta-anjuta-utils.html
 share/doc/libanjuta/libanjuta-anjuta-version.html
 share/doc/libanjuta/libanjuta-api.html
-share/doc/libanjuta/libanjuta-ianjuta-bookmark.html
-share/doc/libanjuta/libanjuta-ianjuta-buildable.html
-share/doc/libanjuta/libanjuta-ianjuta-builder.html
-share/doc/libanjuta/libanjuta-ianjuta-debug-manager.html
-share/doc/libanjuta/libanjuta-ianjuta-debugger-breakpoint.html
-share/doc/libanjuta/libanjuta-ianjuta-environment.html
-share/doc/libanjuta/libanjuta-ianjuta-debugger-instruction.html
-share/doc/libanjuta/libanjuta-ianjuta-debugger-memory.html
-share/doc/libanjuta/libanjuta-ianjuta-debugger-register.html
-share/doc/libanjuta/libanjuta-ianjuta-debugger-variable.html
-share/doc/libanjuta/libanjuta-ianjuta-debugger.html
-share/doc/libanjuta/libanjuta-ianjuta-document-manager.html
-share/doc/libanjuta/libanjuta-ianjuta-document.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-assist.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-cell-style.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-cell.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-comment.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-convert.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-factory.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-folds.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-goto.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-hover.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-language.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-line-mode.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-search.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-selection.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-view.html
-share/doc/libanjuta/libanjuta-ianjuta-editor-zoom.html
-share/doc/libanjuta/libanjuta-ianjuta-editor.html
-share/doc/libanjuta/libanjuta-ianjuta-file-loader.html
-share/doc/libanjuta/libanjuta-ianjuta-file-manager.html
-share/doc/libanjuta/libanjuta-ianjuta-file-savable.html
-share/doc/libanjuta/libanjuta-ianjuta-file.html
-share/doc/libanjuta/libanjuta-ianjuta-help.html
-share/doc/libanjuta/libanjuta-ianjuta-indicable.html
-share/doc/libanjuta/libanjuta-ianjuta-iterable-tree.html
-share/doc/libanjuta/libanjuta-ianjuta-iterable.html
-share/doc/libanjuta/libanjuta-ianjuta-language-support.html
-share/doc/libanjuta/libanjuta-ianjuta-language.html
-share/doc/libanjuta/libanjuta-ianjuta-loader.html
-share/doc/libanjuta/libanjuta-ianjuta-macro.html
-share/doc/libanjuta/libanjuta-ianjuta-markable.html
-share/doc/libanjuta/libanjuta-ianjuta-message-manager.html
-share/doc/libanjuta/libanjuta-ianjuta-message-view.html
-share/doc/libanjuta/libanjuta-ianjuta-plugin-factory.html
-share/doc/libanjuta/libanjuta-ianjuta-preferences.html
-share/doc/libanjuta/libanjuta-ianjuta-print.html
-share/doc/libanjuta/libanjuta-ianjuta-project-manager.html
-share/doc/libanjuta/libanjuta-ianjuta-stream-loader.html
-share/doc/libanjuta/libanjuta-ianjuta-stream-savable.html
-share/doc/libanjuta/libanjuta-ianjuta-stream.html
-share/doc/libanjuta/libanjuta-ianjuta-symbol-manager.html
-share/doc/libanjuta/libanjuta-ianjuta-symbol.html
-share/doc/libanjuta/libanjuta-ianjuta-terminal.html
-share/doc/libanjuta/libanjuta-ianjuta-todo.html
-share/doc/libanjuta/libanjuta-ianjuta-vcs.html
-share/doc/libanjuta/libanjuta-ianjuta-wizard.html
 share/doc/libanjuta/libanjuta-internal-api.html
 share/doc/libanjuta/libanjuta-libanjuta-iface-marshallers.html
-share/doc/libanjuta/libanjuta-resources.html
 share/doc/libanjuta/libanjuta.devhelp
 share/doc/libanjuta/libanjuta.devhelp2
 share/doc/libanjuta/object-hierarchy.html
@@ -777,6 +801,49 @@ share/gnome/help/anjuta-manual/eu/figures/signals.png
 share/gnome/help/anjuta-manual/eu/figures/stack.png
 share/gnome/help/anjuta-manual/eu/figures/symbol_browser.png
 share/gnome/help/anjuta-manual/eu/figures/tool-editor.png
+share/gnome/help/anjuta-manual/fr/anjuta-manual.xml
+share/gnome/help/anjuta-manual/fr/figures/add_edit_macro.png
+share/gnome/help/anjuta-manual/fr/figures/anjuta-in-action.png
+share/gnome/help/anjuta-manual/fr/figures/attach.png
+share/gnome/help/anjuta-manual/fr/figures/brk_add.png
+share/gnome/help/anjuta-manual/fr/figures/brk_dlg.png
+share/gnome/help/anjuta-manual/fr/figures/configure_dlg.png
+share/gnome/help/anjuta-manual/fr/figures/display_macro.png
+share/gnome/help/anjuta-manual/fr/figures/editor_guides.png
+share/gnome/help/anjuta-manual/fr/figures/editor_margins.png
+share/gnome/help/anjuta-manual/fr/figures/editor_markers.png
+share/gnome/help/anjuta-manual/fr/figures/file_menu.png
+share/gnome/help/anjuta-manual/fr/figures/insert_text.png
+share/gnome/help/anjuta-manual/fr/figures/keyword_macro.png
+share/gnome/help/anjuta-manual/fr/figures/local_variables.png
+share/gnome/help/anjuta-manual/fr/figures/menubar.png
+share/gnome/help/anjuta-manual/fr/figures/message_win.png
+share/gnome/help/anjuta-manual/fr/figures/new_file_wizard.png
+share/gnome/help/anjuta-manual/fr/figures/open_file.png
+share/gnome/help/anjuta-manual/fr/figures/open_file_multiple.png
+share/gnome/help/anjuta-manual/fr/figures/prefs_print.png
+share/gnome/help/anjuta-manual/fr/figures/print_dlg.png
+share/gnome/help/anjuta-manual/fr/figures/print_preview.png
+share/gnome/help/anjuta-manual/fr/figures/project-window.png
+share/gnome/help/anjuta-manual/fr/figures/project_group.png
+share/gnome/help/anjuta-manual/fr/figures/project_info.png
+share/gnome/help/anjuta-manual/fr/figures/project_target.png
+share/gnome/help/anjuta-manual/fr/figures/project_target_details.png
+share/gnome/help/anjuta-manual/fr/figures/registers.png
+share/gnome/help/anjuta-manual/fr/figures/save_as_file.png
+share/gnome/help/anjuta-manual/fr/figures/search_expr.png
+share/gnome/help/anjuta-manual/fr/figures/search_expr_basic.png
+share/gnome/help/anjuta-manual/fr/figures/search_file_pattern.png
+share/gnome/help/anjuta-manual/fr/figures/search_replace.png
+share/gnome/help/anjuta-manual/fr/figures/search_setting.png
+share/gnome/help/anjuta-manual/fr/figures/search_target.png
+share/gnome/help/anjuta-manual/fr/figures/search_target_action.png
+share/gnome/help/anjuta-manual/fr/figures/search_target_in.png
+share/gnome/help/anjuta-manual/fr/figures/sharedlibs.png
+share/gnome/help/anjuta-manual/fr/figures/signals.png
+share/gnome/help/anjuta-manual/fr/figures/stack.png
+share/gnome/help/anjuta-manual/fr/figures/symbol_browser.png
+share/gnome/help/anjuta-manual/fr/figures/tool-editor.png
 share/gnome/help/anjuta-manual/oc/anjuta-manual.xml
 share/gnome/help/anjuta-manual/oc/figures/add_edit_macro.png
 share/gnome/help/anjuta-manual/oc/figures/anjuta-in-action.png
@@ -1010,6 +1077,7 @@ share/locale/dz/LC_MESSAGES/anjuta.mo
 share/locale/el/LC_MESSAGES/anjuta.mo
 share/locale/en_CA/LC_MESSAGES/anjuta.mo
 share/locale/en_GB/LC_MESSAGES/anjuta.mo
+share/locale/en@shaw/LC_MESSAGES/anjuta.mo
 share/locale/es/LC_MESSAGES/anjuta.mo
 share/locale/eu/LC_MESSAGES/anjuta.mo
 share/locale/fi/LC_MESSAGES/anjuta.mo
@@ -1067,6 +1135,7 @@ share/omf/anjuta-manual/anjuta-manual-de.omf
 share/omf/anjuta-manual/anjuta-manual-el.omf
 share/omf/anjuta-manual/anjuta-manual-es.omf
 share/omf/anjuta-manual/anjuta-manual-eu.omf
+share/omf/anjuta-manual/anjuta-manual-fr.omf
 share/omf/anjuta-manual/anjuta-manual-oc.omf
 share/omf/anjuta-manual/anjuta-manual-sv.omf
 share/omf/anjuta-manual/anjuta-manual-th.omf
@@ -1122,11 +1191,20 @@ share/pixmaps/anjuta/element-event-16.png
 share/pixmaps/anjuta/element-field-16.png
 share/pixmaps/anjuta/element-interface-16.png
 share/pixmaps/anjuta/element-interface-24.png
+share/pixmaps/anjuta/element-interface-private-16.png
+share/pixmaps/anjuta/element-interface-protected-16.png
+share/pixmaps/anjuta/element-interface-public-16.png
 share/pixmaps/anjuta/element-literal-16.png
 share/pixmaps/anjuta/element-method-16.png
 share/pixmaps/anjuta/element-method-24.png
+share/pixmaps/anjuta/element-method-private-16.png
+share/pixmaps/anjuta/element-method-protected-16.png
+share/pixmaps/anjuta/element-method-public-16.png
 share/pixmaps/anjuta/element-namespace-16.png
 share/pixmaps/anjuta/element-property-16.png
+share/pixmaps/anjuta/element-property-private-16.png
+share/pixmaps/anjuta/element-property-protected-16.png
+share/pixmaps/anjuta/element-property-public-16.png
 share/pixmaps/anjuta/element-structure-16.png
 share/pixmaps/anjuta/anjuta-editor-sourceview-plugin-48.png
 share/pixmaps/anjuta/anjuta-file-manager-plugin-48.png
@@ -1209,6 +1287,7 @@ share/pixmaps/anjuta/anjuta_logo.png
 share/pixmaps/anjuta/anjuta_splash.png
 share/pixmaps/anjuta/breakpoint.png
 share/pixmaps/anjuta/class_logo.xpm
+share/pixmaps/anjuta/dir-project-plugin-48.png
 share/pixmaps/anjuta/directory-accept.png
 share/pixmaps/anjuta/directory.png
 share/pixmaps/anjuta/gbf-am-plugin-48.png
@@ -1217,6 +1296,8 @@ share/pixmaps/anjuta/gbf-install.png
 share/pixmaps/anjuta/gbf-mkfile-plugin-48.png
 share/pixmaps/anjuta/gtodo-about.png
 share/pixmaps/anjuta/gtodo-edit.png
+share/pixmaps/anjuta/js_debugger.png
+share/pixmaps/anjuta/js_support_plugin.png
 share/pixmaps/anjuta/locals.png
 share/pixmaps/anjuta/madeinanjuta.xcf
 share/pixmaps/anjuta/password.png
@@ -1244,6 +1325,8 @@ share/pixmaps/anjuta/vcs-updated.png
 @dirrm share/gnome/help/anjuta-manual/sv
 @dirrm share/gnome/help/anjuta-manual/oc/figures
 @dirrm share/gnome/help/anjuta-manual/oc
+@dirrm share/gnome/help/anjuta-manual/fr/figures
+@dirrm share/gnome/help/anjuta-manual/fr
 @dirrm share/gnome/help/anjuta-manual/eu/figures
 @dirrm share/gnome/help/anjuta-manual/eu
 @dirrm share/gnome/help/anjuta-manual/es/figures
@@ -1290,6 +1373,8 @@ share/pixmaps/anjuta/vcs-updated.png
 @dirrm share/anjuta/project/library/src
 @dirrm share/anjuta/project/library/po
 @dirrm share/anjuta/project/library
+@dirrm share/anjuta/project/js_minimal/src
+@dirrm share/anjuta/project/js_minimal
 @dirrm share/anjuta/project/java/src
 @dirrm share/anjuta/project/java/po
 @dirrm share/anjuta/project/java
@@ -1305,6 +1390,7 @@ share/pixmaps/anjuta/vcs-updated.png
 @dirrm share/anjuta/project/gnome
 @dirrm share/anjuta/project/gcj/src
 @dirrm share/anjuta/project/gcj
+@dirrm share/anjuta/project/directory
 @dirrm share/anjuta/project/cpp/src
 @dirrm share/anjuta/project/cpp/po
 @dirrm share/anjuta/project/cpp
@@ -1328,6 +1414,8 @@ share/pixmaps/anjuta/vcs-updated.png
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @dirrmtry share/applications
+@dirrmtry share/icons/gnome/scalable/mimetypes
+@dirrmtry share/icons/gnome/scalable
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -1344,6 +1432,8 @@ share/pixmaps/anjuta/vcs-updated.png
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

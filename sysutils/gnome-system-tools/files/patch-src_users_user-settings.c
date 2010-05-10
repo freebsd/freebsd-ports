@@ -1,33 +1,31 @@
---- src/users/user-settings.c.orig	2009-12-15 05:17:23.000000000 -0800
-+++ src/users/user-settings.c	2010-01-20 22:25:39.000000000 -0800
-@@ -29,7 +29,7 @@
+--- src/users/user-settings.c.orig	2010-01-11 19:53:32.000000000 +0100
++++ src/users/user-settings.c	2010-01-20 15:42:10.000000000 +0100
+@@ -31,7 +31,15 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <stdlib.h>
--#include <utmp.h>
-+#include <sys/param.h>
++#ifdef __FreeBSD__
++# include <sys/param.h>
++# if __FreeBSD_version >= 900007
++# define HAVE_UTMPX_H
++#include <utmpx.h>
++# else
+ #include <utmp.h>
++# endif
++#endif
  #include <ctype.h>
  
  #include "users-table.h"
-@@ -367,7 +367,7 @@
+@@ -274,10 +282,10 @@ static void
+ set_login_length (GtkWidget *entry)
  {
  	gint max_len;
- #ifdef __FreeBSD__
--	max_len = UT_NAMESIZE;
-+	max_len = MAXLOGNAME - 1;
+-#ifdef __FreeBSD__
++#if (defined(__FreeBSD__) && !defined(HAVE_UTMPX_H))
+ 	max_len = UT_NAMESIZE;
  #else
- 	struct utmp ut;
+-	struct utmp ut;
++	struct utmpx ut;
  
-@@ -819,10 +819,10 @@
- 		password_changed = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (widget), "changed"));
- 
- 		if (password_changed)
--			oobs_user_set_password (user, gtk_entry_get_text (GTK_ENTRY (widget)));
-+			oobs_user_set_crypted_password (user, gtk_entry_get_text (GTK_ENTRY (widget)));
- 	} else {
- 		widget = gst_dialog_get_widget (tool->main_dialog, "user_settings_random_passwd");
--		oobs_user_set_password (user, gtk_entry_get_text (GTK_ENTRY (widget)));
-+		oobs_user_set_crypted_password (user, gtk_entry_get_text (GTK_ENTRY (widget)));
- 	}
- 
- 	group = get_main_group (oobs_user_get_login_name (user));
+ 	max_len = sizeof (ut.ut_user);
+ #endif

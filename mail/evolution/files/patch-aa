@@ -1,10 +1,20 @@
---- configure.orig	2009-08-24 11:10:44.000000000 +0200
-+++ configure	2009-08-24 11:13:05.000000000 +0200
-@@ -16389,6 +16389,16 @@ case "$host" in
- 	SOFTOKN3_LIB=''
- 	HAL_REQUIREMENT=''
+--- configure.orig	2009-12-26 20:42:20.000000000 +0100
++++ configure	2009-12-26 20:49:17.000000000 +0100
+@@ -4329,7 +4329,7 @@
+ 	-Wdeclaration-after-statement
+ 	-Werror-implicit-function-declaration
+ 	-Wformat-security -Winit-self
+-	-Wmissing-declarations -Wmissing-include-dirs
++	-Wmissing-declarations 
+ 	-Wmissing-noreturn -Wnested-externs -Wpointer-arith
+ 	-Wredundant-decls -Wundef -Wwrite-strings"
+   flags_supported=""
+@@ -16441,6 +16441,16 @@
+ 	CHAMPLAIN_REQUIREMENT=''
+ 	GEOCLUE_REQUIREMENT=''
  	;;
-+*freebsd*) os_win32=no
++*freebsd*)
++	os_win32=no
 +	NO_UNDEFINED=''
 +	SOCKET_LIBS=''
 +	SOEXT='.so'
@@ -12,12 +22,11 @@
 +	BF_JUNK_PLUGIN=bogo-junk-plugin
 +	DL_LIB=''
 +	SOFTOKN3_LIB='-lsoftokn3'
-+	HAL_REQUIREMENT='hal'
 +	;;
  *)
  	os_win32=no
- 	NO_UNDEFINED=''
-@@ -18403,6 +18413,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+ 	NO_UNDEFINED='-no-undefined'
+@@ -18544,6 +18554,7 @@
  		#include <sys/socket.h>
  		#include <netinet/in.h>
  		#include <netdb.h>
@@ -25,21 +34,3 @@
  
  		#define BUFSIZE (sizeof(struct hostent)+10)
  
-@@ -22101,7 +22112,7 @@ if test "x${with_krb5}" != "xno"; then
- 	LIBS_save="$LIBS"
- 
- 	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
--	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
-+	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi -lcrypt"
- 	sunlibs="-lkrb5 -lgss"
- 	{ $as_echo "$as_me:$LINENO: checking for Kerberos 5" >&5
- $as_echo_n "checking for Kerberos 5... " >&6; }
-@@ -30112,7 +30123,7 @@ componentdir="$privlibdir/components"
- idldir='${datadir}'/idl/evolution-$BASE_VERSION
- 
- 
--serverdir="$libdir/bonobo/servers"
-+serverdir="$prefix/libdata/bonobo/servers"
- 
- 
- evolutionuidir="$privdatadir/ui"

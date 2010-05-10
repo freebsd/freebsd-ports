@@ -1,8 +1,43 @@
 bin/nautilus-actions-config-tool
 bin/nautilus-actions-new
+bin/nautilus-actions-run
 bin/nautilus-actions-schemas
-lib/nautilus/extensions-2.0/libnautilus-actions.la
-lib/nautilus/extensions-2.0/libnautilus-actions.so
+include/nautilus-actions/na-core-utils.h
+include/nautilus-actions/na-data-boxed.h
+include/nautilus-actions/na-data-def.h
+include/nautilus-actions/na-data-types.h
+include/nautilus-actions/na-dbus.h
+include/nautilus-actions/na-extension.h
+include/nautilus-actions/na-gconf-monitor.h
+include/nautilus-actions/na-gconf-utils.h
+include/nautilus-actions/na-icontext.h
+include/nautilus-actions/na-iduplicable.h
+include/nautilus-actions/na-iexporter.h
+include/nautilus-actions/na-ifactory-object-data.h
+include/nautilus-actions/na-ifactory-object.h
+include/nautilus-actions/na-ifactory-provider-provider.h
+include/nautilus-actions/na-ifactory-provider.h
+include/nautilus-actions/na-iimporter.h
+include/nautilus-actions/na-iio-provider.h
+include/nautilus-actions/na-object-action.h
+include/nautilus-actions/na-object-api.h
+include/nautilus-actions/na-object-id.h
+include/nautilus-actions/na-object-item.h
+include/nautilus-actions/na-object-menu.h
+include/nautilus-actions/na-object-profile.h
+include/nautilus-actions/na-object.h
+lib/nautilus-actions/libna-core.la
+lib/nautilus-actions/libna-core.so
+lib/nautilus-actions/libna-io-desktop.la
+lib/nautilus-actions/libna-io-desktop.so
+lib/nautilus-actions/libna-io-gconf.la
+lib/nautilus-actions/libna-io-gconf.so
+lib/nautilus-actions/libna-io-xml.la
+lib/nautilus-actions/libna-io-xml.so
+lib/nautilus/extensions-2.0/libnautilus-actions-menu.la
+lib/nautilus/extensions-2.0/libnautilus-actions-menu.so
+lib/nautilus/extensions-2.0/libnautilus-actions-tracker.la
+lib/nautilus/extensions-2.0/libnautilus-actions-tracker.so
 share/applications/nact.desktop
 share/icons/hicolor/16x16/apps/nautilus-actions.png
 share/icons/hicolor/22x22/apps/nautilus-actions.png
@@ -55,11 +90,20 @@ share/locale/vi/LC_MESSAGES/nautilus-actions.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-actions.mo
 share/locale/zh_HK/LC_MESSAGES/nautilus-actions.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-actions.mo
-%%DATADIR%%/nautilus-actions.schemas
+%%DATADIR%%/locked.png
+%%DATADIR%%/na-importer-ask.ui
+%%DATADIR%%/nact-assistant-export.ui
+%%DATADIR%%/nact-preferences.ui
 %%DATADIR%%/nautilus-actions-config-tool.actions
 %%DATADIR%%/nautilus-actions-config-tool.ui
-%%DATADIR%%/nact-assistant-export.ui
+%%DATADIR%%/nautilus-actions-confs.schemas
+%%DATADIR%%/nautilus-actions-maintainer.actions
+%%DATADIR%%/nautilus-actions-prefs.schemas
+%%DATADIR%%/transparent.png
 @dirrm %%DATADIR%%
+@dirrm lib/nautilus-actions
+@dirrm include/nautilus-actions
+@dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -72,4 +116,3 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-actions.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
-@dirrmtry share/applications

@@ -1,15 +1,14 @@
-include/clutter-1.0/clutter-gst/clutter-gst-audio.h
 include/clutter-1.0/clutter-gst/clutter-gst-util.h
 include/clutter-1.0/clutter-gst/clutter-gst-version.h
 include/clutter-1.0/clutter-gst/clutter-gst-video-sink.h
 include/clutter-1.0/clutter-gst/clutter-gst-video-texture.h
 include/clutter-1.0/clutter-gst/clutter-gst.h
-lib/libclutter-gst-0.10.a
-lib/libclutter-gst-0.10.la
-lib/libclutter-gst-0.10.so
-lib/libclutter-gst-0.10.so.0
-libdata/pkgconfig/clutter-gst-0.10.pc
-%%DOCSDIR%%/ClutterGstAudio.html
+lib/libclutter-gst-1.0.a
+lib/libclutter-gst-1.0.la
+lib/libclutter-gst-1.0.so
+lib/libclutter-gst-1.0.so.0
+lib/girepository-1.0/ClutterGst-1.0.typelib
+libdata/pkgconfig/clutter-gst-1.0.pc
 %%DOCSDIR%%/ClutterGstVideoSink.html
 %%DOCSDIR%%/ClutterGstVideoTexture.html
 %%DOCSDIR%%/ch01.html
@@ -26,6 +25,7 @@ libdata/pkgconfig/clutter-gst-0.10.pc
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
 %%DOCSDIR%%/up.png
+share/gir-1.0/ClutterGst-1.0.gir
 @dirrmtry %%DOCSDIR%%
 @dirrm include/clutter-1.0/clutter-gst
 @dirrmtry include/clutter-1.0

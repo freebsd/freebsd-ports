@@ -1,15 +1,6 @@
---- configure.orig	2009-10-06 18:31:12.000000000 +0200
-+++ configure	2009-11-30 12:54:21.000000000 +0100
-@@ -12149,7 +12149,7 @@
- VERSION_SCRIPT_FLAGS=
- $(/usr/bin/ld --help 2>&1 | grep -- --version-script >/dev/null) && \
-     VERSION_SCRIPT_FLAGS=-Wl,--version-script=
--test "`uname`" == "SunOS" && \
-+test "`uname`" = "SunOS" && \
-     VERSION_SCRIPT_FLAGS="-Wl,-M -Wl,"
- 
-  if test -n "$VERSION_SCRIPT_FLAGS"; then
-@@ -19856,11 +19856,12 @@
+--- configure.orig	2010-03-20 17:52:35.000000000 -0400
++++ configure	2010-03-20 17:52:35.000000000 -0400
+@@ -19865,11 +19865,12 @@ fi
      fi
      if test "$PYTHON_VERSION" != ""
      then
@@ -23,7 +14,7 @@
  	else
  	    if test -r $prefix/include/python$PYTHON_VERSION/Python.h
  	    then
-@@ -20665,6 +20666,8 @@
+@@ -20678,6 +20679,8 @@ fi
  	       fi
  	   fi
         ;;

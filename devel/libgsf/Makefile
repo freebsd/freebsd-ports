@@ -3,12 +3,12 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libgsf/Makefile,v 1.33 2009/01/08 01:28:46 marcus Exp $
+#   $MCom: ports/devel/libgsf/Makefile,v 1.35 2010/04/10 08:51:15 kwm Exp $
 #
 
 PORTNAME=	libgsf
-PORTVERSION=	1.14.17
-PORTREVISION?=	1
+PORTVERSION=	1.14.18
+PORTREVISION?=	0
 CATEGORIES?=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

@@ -1,6 +1,6 @@
---- gtk/Makefile.in.orig	2010-01-18 01:17:13.000000000 -0500
-+++ gtk/Makefile.in	2010-01-18 01:18:40.000000000 -0500
-@@ -1324,11 +1324,12 @@ bin_SCRIPTS = gtk-builder-convert $(am__
+--- gtk/Makefile.in.orig	2009-12-25 20:27:57.000000000 +0100
++++ gtk/Makefile.in	2009-12-25 20:29:14.000000000 +0100
+@@ -1377,11 +1377,11 @@ bin_SCRIPTS = gtk-builder-convert $(am__
  # gtk-update-icon-cache.exe doesn't require any special privileges.
  @OS_WIN32_TRUE@GTK_UPDATE_ICON_CACHE_MANIFEST = gtk-update-icon-cache.exe.manifest
  gtk_query_immodules_2_0_DEPENDENCIES = $(DEPS)
@@ -10,8 +10,7 @@
  gtk_update_icon_cache_LDADD = \
  	$(top_builddir)/gdk-pixbuf/libgdk_pixbuf-$(GTK_API_VERSION).la \
 -	$(GDK_PIXBUF_DEP_LIBS)
-+	$(GDK_PIXBUF_DEP_LIBS) \
-+	$(GLIB_LIBS)
++	$(GDK_PIXBUF_DEP_LIBS) $(GLIB_LIBS)
  
  gtk_update_icon_cache_SOURCES = \
  	updateiconcache.c 

@@ -1,0 +1,11 @@
+--- gui/user-switch-applet/Makefile.in.orig	2010-03-20 15:19:16.000000000 -0500
++++ gui/user-switch-applet/Makefile.in	2010-03-20 15:20:28.000000000 -0500
+@@ -324,7 +324,7 @@
+ 	-DLIBDIR=\""$(libdir)"\" 			\
+ 	-DDATADIR=\""$(datadir)"\"		 	\
+ 	-DSYSCONFDIR=\""$(sysconfdir)"\"		\
+-	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\"	\
++	-DLIBLOCALEDIR=\""/usr/share/locale"\"	\
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
+ 	-DGLADEDIR=\""$(pkgdatadir)"\" 			\
+ 	-DLIBEXECDIR=\""$(libexecdir)"\" 		\

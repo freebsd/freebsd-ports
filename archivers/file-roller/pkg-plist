@@ -10,6 +10,7 @@ share/applications/file-roller.desktop
 %%DATADIR%%/icons/hicolor/24x24/actions/add-files-to-archive.png
 %%DATADIR%%/icons/hicolor/24x24/actions/add-folder-to-archive.png
 %%DATADIR%%/icons/hicolor/24x24/actions/extract-archive.png
+%%DATADIR%%/packages.match
 %%DATADIR%%/ui/add-options.ui
 %%DATADIR%%/ui/batch-add-files.ui
 %%DATADIR%%/ui/batch-password.ui
@@ -122,6 +123,12 @@ share/gnome/help/file-roller/vi/figures/file-roller_main_window.png
 share/gnome/help/file-roller/vi/figures/file-roller_rightarrow.png
 share/gnome/help/file-roller/vi/figures/file-roller_uparrow.png
 share/gnome/help/file-roller/vi/file-roller.xml
+share/gnome/help/file-roller/zh_CN/figures/file-roller_home.png
+share/gnome/help/file-roller/zh_CN/figures/file-roller_leftarrow.png
+share/gnome/help/file-roller/zh_CN/figures/file-roller_main_window.png
+share/gnome/help/file-roller/zh_CN/figures/file-roller_rightarrow.png
+share/gnome/help/file-roller/zh_CN/figures/file-roller_uparrow.png
+share/gnome/help/file-roller/zh_CN/file-roller.xml
 share/icons/hicolor/16x16/apps/file-roller.png
 share/icons/hicolor/22x22/apps/file-roller.png
 share/icons/hicolor/24x24/apps/file-roller.png
@@ -148,6 +155,7 @@ share/locale/da/LC_MESSAGES/file-roller.mo
 share/locale/de/LC_MESSAGES/file-roller.mo
 share/locale/dz/LC_MESSAGES/file-roller.mo
 share/locale/el/LC_MESSAGES/file-roller.mo
+share/locale/en@shaw/LC_MESSAGES/file-roller.mo
 share/locale/en_CA/LC_MESSAGES/file-roller.mo
 share/locale/en_GB/LC_MESSAGES/file-roller.mo
 share/locale/es/LC_MESSAGES/file-roller.mo
@@ -236,7 +244,10 @@ share/omf/file-roller/file-roller-ru.omf
 share/omf/file-roller/file-roller-sv.omf
 share/omf/file-roller/file-roller-uk.omf
 share/omf/file-roller/file-roller-vi.omf
+share/omf/file-roller/file-roller-zh_CN.omf
 @dirrm share/omf/file-roller
+@dirrm share/gnome/help/file-roller/zh_CN/figures
+@dirrm share/gnome/help/file-roller/zh_CN
 @dirrm share/gnome/help/file-roller/vi/figures
 @dirrm share/gnome/help/file-roller/vi
 @dirrm share/gnome/help/file-roller/uk/figures
@@ -322,6 +333,8 @@ share/omf/file-roller/file-roller-vi.omf
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

@@ -35,6 +35,10 @@ POFILES=	ca cs de el es fi fr hu it ja lt nl pl pt \
 
 MSGFMT=		${LOCALBASE}/bin/msgfmt
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/Makefile.in
+
 pre-install:
 # workaround to problem in po makefile
 .for p in ${POFILES}

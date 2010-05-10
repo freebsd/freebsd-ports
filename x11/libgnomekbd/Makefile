@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/libgnomekbd/Makefile,v 1.37 2009/09/22 23:24:04 avl Exp $
+#   $MCom: ports/x11/libgnomekbd/Makefile,v 1.42 2010/04/24 01:36:37 marcus Exp $
 #
 
 PORTNAME=	libgnomekbd
-PORTVERSION=	2.28.2
-PORTREVISION=	2
+PORTVERSION=	2.30.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,8 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME keyboard shared library
 
-LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack ltverhack gconf2

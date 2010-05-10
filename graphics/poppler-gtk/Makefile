@@ -3,10 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler-gtk/Makefile,v 1.16 2009/08/02 17:54:08 marcus Exp $
+#   $MCom: ports/graphics/poppler-gtk/Makefile,v 1.18 2010/03/14 22:08:42 kwm Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-gtk
 
 MAINTAINER=	gnome@FreeBSD.org

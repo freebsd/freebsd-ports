@@ -3,12 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2/Makefile,v 1.279 2009/10/22 15:15:40 kwm Exp $
+#   $MCom: ports/x11/gnome2/Makefile,v 1.292 2010/04/30 13:38:35 kwm Exp $
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.28.2
-PORTREVISION?=	3
+PORTVERSION=	2.30.1
+PORTREVISION?=	0
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -44,7 +44,7 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		${LOCALBASE}/libexec/evolution-webcal:${PORTSDIR}/www/evolution-webcal \
 		network-admin:${PORTSDIR}/sysutils/gnome-system-tools \
 		vino-passwd:${PORTSDIR}/net/vino \
-		exchange-connector-setup-2.28:${PORTSDIR}/mail/evolution-exchange \
+		exchange-connector-setup-2.30:${PORTSDIR}/mail/evolution-exchange \
 		${LOCALBASE}/lib/gstreamer-0.10/.gstreamer-plugins-core.keep:${PORTSDIR}/multimedia/gstreamer-plugins-core \
 		${LOCALBASE}/lib/gstreamer-0.10/libgstgconfelements.so:${PORTSDIR}/devel/gstreamer-plugins-gconf \
 		totem:${PORTSDIR}/multimedia/totem \
@@ -93,12 +93,14 @@ RUN_DEPENDS+=	empathy:${PORTSDIR}/net-im/empathy \
 		brasero:${PORTSDIR}/sysutils/brasero \
 		gnome-file-share-properties:${PORTSDIR}/www/gnome-user-share \
 		${LOCALBASE}/libexec/deskbar-applet/deskbar-applet:${PORTSDIR}/deskutils/deskbar-applet \
-		${LOCALBASE}/lib/hamster-applet/hamster-applet:${PORTSDIR}/deskutils/hamster-applet
+		${LOCALBASE}/lib/hamster-applet/hamster-applet:${PORTSDIR}/deskutils/hamster-applet \
+		${LOCALBASE}/lib/gtk-2.0/modules/at-spi-dbus/modules/libatk-bridge.so:${PORTSDIR}/accessibility/at-spi2-atk \
+		gpk-application:${PORTSDIR}/ports-mgmt/gnome-packagekit
 .if ${ARCH} == "i386"
 #RUN_DEPENDS+=	tomboy:${PORTSDIR}/deskutils/tomboy
 .endif
 .if ${OSVERSION}>=600000
-RUN_DEPENDS+=	ekiga:${PORTSDIR}/net/ekiga
+RUN_DEPENDS+=	ekiga:${PORTSDIR}/net/ekiga3
 .endif
 .if defined(WITH_MAPI)
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libexchangemapi-1.0.pc:${PORTSDIR}/mail/evolution-mapi

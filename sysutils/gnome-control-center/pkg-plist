@@ -58,22 +58,34 @@ share/desktop-directories/gnomecc.directory
 %%ABOUTME%%%%DATADIR%%/pixmaps/gnome-about-me-lock.png
 %%DATADIR%%/pixmaps/gtk-theme-thumbnailing.png
 %%DATADIR%%/pixmaps/icon-theme-thumbnailing.png
+%%ABOUTME%%%%DATADIR%%/pixmaps/left-index-finger.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/left-index-finger.svg
+%%ABOUTME%%%%DATADIR%%/pixmaps/left-little-finger.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/left-little-finger.svg
+%%ABOUTME%%%%DATADIR%%/pixmaps/left-middle-finger.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/left-middle-finger.svg
+%%ABOUTME%%%%DATADIR%%/pixmaps/left-ring-finger.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/left-ring-finger.svg
+%%ABOUTME%%%%DATADIR%%/pixmaps/left-thumb.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/left-thumb.svg
 %%DATADIR%%/pixmaps/mouse-cursor-normal-large.png
 %%DATADIR%%/pixmaps/mouse-cursor-normal.png
 %%DATADIR%%/pixmaps/mouse-cursor-white-large.png
 %%DATADIR%%/pixmaps/mouse-cursor-white.png
 %%DATADIR%%/pixmaps/ocean-stripes.png
+%%ABOUTME%%%%DATADIR%%/pixmaps/print_error.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/print_error.svg
+%%ABOUTME%%%%DATADIR%%/pixmaps/print_ok.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/print_ok.svg
+%%ABOUTME%%%%DATADIR%%/pixmaps/right-index-finger.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/right-index-finger.svg
+%%ABOUTME%%%%DATADIR%%/pixmaps/right-little-finger.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/right-little-finger.svg
+%%ABOUTME%%%%DATADIR%%/pixmaps/right-middle-finger.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/right-middle-finger.svg
+%%ABOUTME%%%%DATADIR%%/pixmaps/right-ring-finger.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/right-ring-finger.svg
+%%ABOUTME%%%%DATADIR%%/pixmaps/right-thumb.png
 %%ABOUTME%%%%DATADIR%%/pixmaps/right-thumb.svg
 %%DATADIR%%/pixmaps/subpixel-bgr.png
 %%DATADIR%%/pixmaps/subpixel-rgb.png
@@ -84,17 +96,17 @@ share/desktop-directories/gnomecc.directory
 %%DATADIR%%/ui/appearance.ui
 %%DATADIR%%/ui/at-enable-dialog.ui
 %%DATADIR%%/ui/display-capplet.ui
-%%ABOUTME%%share/gnome-control-center/ui/gnome-about-me-dialog.ui
-%%ABOUTME%%share/gnome-control-center/ui/gnome-about-me-fingerprint.ui
-%%ABOUTME%%share/gnome-control-center/ui/gnome-about-me-password.ui
+%%ABOUTME%%%%DATADIR%%/ui/gnome-about-me-dialog.ui
+%%ABOUTME%%%%DATADIR%%/ui/gnome-about-me-fingerprint.ui
+%%ABOUTME%%%%DATADIR%%/ui/gnome-about-me-password.ui
 %%DATADIR%%/ui/gnome-default-applications-properties.ui
 %%DATADIR%%/ui/gnome-keybinding-properties.ui
-share/gnome-control-center/ui/gnome-keyboard-properties-a11y-notifications.ui
-share/gnome-control-center/ui/gnome-keyboard-properties-dialog.ui
-share/gnome-control-center/ui/gnome-keyboard-properties-layout-chooser.ui
-share/gnome-control-center/ui/gnome-keyboard-properties-model-chooser.ui
-share/gnome-control-center/ui/gnome-keyboard-properties-options-dialog.ui
-share/gnome-control-center/ui/gnome-mouse-properties.ui
+%%DATADIR%%/ui/gnome-keyboard-properties-a11y-notifications.ui
+%%DATADIR%%/ui/gnome-keyboard-properties-dialog.ui
+%%DATADIR%%/ui/gnome-keyboard-properties-layout-chooser.ui
+%%DATADIR%%/ui/gnome-keyboard-properties-model-chooser.ui
+%%DATADIR%%/ui/gnome-keyboard-properties-options-dialog.ui
+%%DATADIR%%/ui/gnome-mouse-properties.ui
 %%DATADIR%%/ui/gnome-network-properties.ui
 %%DATADIR%%/ui/gnome-window-properties.ui
 share/gnome/cursor-fonts/cursor-large-white.pcf
@@ -131,6 +143,7 @@ share/gnome/help/control-center/pt/control-center.xml
 share/gnome/help/control-center/pt_BR/control-center.xml
 share/gnome/help/control-center/ru/control-center.xml
 share/gnome/help/control-center/sv/control-center.xml
+share/gnome/help/control-center/th/control-center.xml
 share/gnome/help/control-center/uk/control-center.xml
 share/gnome/help/control-center/vi/control-center.xml
 share/gnome/help/control-center/zh_CN/control-center.xml
@@ -176,6 +189,7 @@ share/locale/dz/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/eu/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -207,6 +221,7 @@ share/locale/mn/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/mr/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/nb/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/nds/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -261,6 +276,7 @@ share/omf/control-center/control-center-pt.omf
 share/omf/control-center/control-center-pt_BR.omf
 share/omf/control-center/control-center-ru.omf
 share/omf/control-center/control-center-sv.omf
+share/omf/control-center/control-center-th.omf
 share/omf/control-center/control-center-uk.omf
 share/omf/control-center/control-center-vi.omf
 share/omf/control-center/control-center-zh_CN.omf
@@ -268,6 +284,7 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrm share/gnome/help/control-center/zh_CN
 @dirrm share/gnome/help/control-center/vi
 @dirrm share/gnome/help/control-center/uk
+@dirrm share/gnome/help/control-center/th
 @dirrm share/gnome/help/control-center/sv
 @dirrm share/gnome/help/control-center/ru
 @dirrm share/gnome/help/control-center/pt_BR
@@ -319,6 +336,8 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
@@ -327,6 +346,8 @@ share/omf/control-center/control-center-zh_CN.omf
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES

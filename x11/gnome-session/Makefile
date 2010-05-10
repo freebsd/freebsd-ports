@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-session/Makefile,v 1.175 2009/09/22 09:18:35 kwm Exp $
+#   $MCom: ports/x11/gnome-session/Makefile,v 1.181 2010/04/02 17:25:12 kwm Exp $
 #
 
 PORTNAME=	gnome-session
-PORTVERSION=	2.28.0
-PORTREVISION=	2
+PORTVERSION=	2.30.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME \
 		http://www.marcuscom.com/downloads/:local
@@ -24,7 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/g
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring \
 		notify.1:${PORTSDIR}/devel/libnotify \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+		execinfo:${PORTSDIR}/devel/libexecinfo \
+		upower-glib.1:${PORTSDIR}/sysutils/upower
 RUN_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
     		${LOCALBASE}/sbin/console-kit-daemon:${PORTSDIR}/sysutils/consolekit \
 		${LOCALBASE}/bin/xdpyinfo:${PORTSDIR}/x11/xdpyinfo

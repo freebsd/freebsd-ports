@@ -50,7 +50,7 @@
          }
      }
 +#else
-+  int fgpid;
++  int fgpid = pid;
 +#if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
 +#ifndef HAVE_KINFO_GETFILE
 +  name[0] = CTL_KERN;

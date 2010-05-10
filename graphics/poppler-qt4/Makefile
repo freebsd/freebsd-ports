@@ -3,10 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler-qt4/Makefile,v 1.11 2009/08/02 17:55:19 marcus Exp $
+#   $MCom: ports/graphics/poppler-qt4/Makefile,v 1.13 2010/03/14 22:08:43 kwm Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-qt4
 
 MAINTAINER=	gnome@FreeBSD.org

@@ -6,10 +6,11 @@
 #
 
 PKGNAMESUFFIX=	-gnome
+PORTREVISION=	4
 
 COMMENT=	GNOME applets of uim input method
 
-USE_GNOME=	gtk20 gnomepanel
+USE_GNOME=	gtk20 gnomepanel libgnomeui
 LIB_DEPENDS=	uim.6:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	uim-pref-gtk:${PORTSDIR}/textproc/uim-gtk
 

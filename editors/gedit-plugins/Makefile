@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/editors/gedit-plugins/Makefile,v 1.39 2009/09/26 08:15:15 avl Exp $
+#   $MCom: ports/editors/gedit-plugins/Makefile,v 1.43 2010/04/03 09:38:28 kwm Exp $
 #
 
 PORTNAME=	gedit-plugins
-PORTVERSION=	2.28.0
-PORTREVISION=	2
+PORTVERSION=	2.30.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -31,7 +30,8 @@ WANT_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GCONF_SCHEMAS=	gedit-show-tabbar-plugin.schemas
+GCONF_SCHEMAS=	gedit-show-tabbar-plugin.schemas \
+		gedit-drawspaces.schemas
 
 OPTIONS=	PYTHON "Build plugins that depend on python" off
 
@@ -46,8 +46,10 @@ WITH_GNOME=	yes
 USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 USE_GNOME+=	pygtksourceview
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte \
+		${PYTHON_SITELIBDIR}/gtksourceview2.so:${PORTSDIR}/x11-toolkits/py-gtksourceview
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte \
+		${PYTHON_SITELIBDIR}/gtksourceview2.so:${PORTSDIR}/x11-toolkits/py-gtksourceview
 CONFIGURE_ARGS+=--enable-python
 PLIST_SUB+=	PYTHON=""
 .else

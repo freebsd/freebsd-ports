@@ -7,7 +7,7 @@
 
 PORTNAME=	gcompris
 PORTVERSION=	9.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games gnome
 MASTER_SITES=	SF
 DISTNAME=	gcompris-9.2-2
@@ -54,6 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	    	${WRKSRC}/src/gcompris/gcompris.c
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-DGTK_DISABLE_DEPRECATED||g' -e \
 		's|-DGNOME_DISABLE_DEPRECATED||g'
 
 .if !defined(DISPLAY)

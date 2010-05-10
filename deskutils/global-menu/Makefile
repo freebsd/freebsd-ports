@@ -7,12 +7,14 @@
 
 PORTNAME=		gnome-globalmenu
 PORTVERSION=		0.7.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=		deskutils
 MASTER_SITES=		http://gnome2-globalmenu.googlecode.com/files/
 
 MAINTAINER=		gustau.perez@gmail.com
 COMMENT=		Global menu for gnome
+
+LIB_DEPENDS=		notify.1:${PORTSDIR}/devel/libnotify
 
 USE_GNOME=		gnomepanel gnomedesktop
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gwget
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--disable-libnotify
 BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 CONFIGURE_ARGS+=	--enable-epiphany-extension
-PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.28"
+PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.30"
 .else
 CONFIGURE_ARGS+=	--disable-epiphany-extension
 PLIST_SUB+=	EPIPHANY="@comment "

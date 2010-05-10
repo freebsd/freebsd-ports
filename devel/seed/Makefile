@@ -3,12 +3,14 @@
 # Whom:					Alexander Logvinov <avl@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/seed/Makefile,v 1.8 2009/10/19 19:33:26 kwm Exp $
+#   $MCom: ports/devel/seed/Makefile,v 1.19 2010/05/08 17:04:45 marcus Exp $
+#
+# NOTE: It may be necessary to update ${FILESDIR}/Seed.js on each release.
+# To do that, just replace imports.searchPaths with "." and ".." elements.
 #
 
 PORTNAME=	seed
-PORTVERSION=	2.28.1
-PORTREVISION=	2
+PORTVERSION=	2.30.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -39,23 +41,28 @@ MAN1=		seed.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not link on sparc64: TLS not available on this platform
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|reference||g' ${WRKSRC}/doc/Makefile.in
-	@${FIND} ${WRKSRC}/examples -name Makefile.in -type f | ${XARGS} ${REINPLACE_CMD} -e \
-		's|$$(datadir)/doc/seed/examples|${EXAMPLESDIR}|g'
-.if defined(NOPORTEXAMPLES)
-	@${REINPLACE_CMD} -e 's|examples||g' \
-		${WRKSRC}/Makefile.in
-.endif
+#	@${FIND} ${WRKSRC}/examples -name Makefile.in -type f | ${XARGS} ${REINPLACE_CMD} -e \
+#		's|$$(datadir)/doc/seed/examples|${EXAMPLESDIR}|g'
+#.if defined(NOPORTEXAMPLES)
+#	@${REINPLACE_CMD} -e 's|examples||g' \
+#		${WRKSRC}/Makefile.in
+#.endif
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's| install-seeddocDATA||g ; s|doc$$||g' \
 		${WRKSRC}/Makefile.in
 .endif
+
+pre-build:
+	cd ${WRKSRC}/extensions && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+	    	${MAKE_FLAGS} Makefile ${MAKE_ARGS} all
+	${CP} ${WRKSRC}/extensions/Seed.js ${WRKSRC}/extensions/Seed.js.sav
+	${CP} ${FILESDIR}/Seed.js ${WRKSRC}/extensions/Seed.js
+
+post-build:
+	${CP} ${WRKSRC}/extensions/Seed.js.sav ${WRKSRC}/extensions/Seed.js
 
 .include <bsd.port.post.mk>

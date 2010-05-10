@@ -291,7 +291,6 @@
     SUBDIR += tosvcd
     SUBDIR += totem
     SUBDIR += totem-pl-parser
-    SUBDIR += totem-xine
     SUBDIR += tovid
     SUBDIR += transcode
     SUBDIR += transkode

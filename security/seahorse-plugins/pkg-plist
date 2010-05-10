@@ -46,6 +46,7 @@ share/icons/hicolor/48x48/apps/seahorse-applet.png
 share/icons/hicolor/scalable/apps/seahorse-applet.svg
 share/locale/ar/LC_MESSAGES/seahorse-plugins.mo
 share/locale/as/LC_MESSAGES/seahorse-plugins.mo
+share/locale/ast/LC_MESSAGES/seahorse-plugins.mo
 share/locale/az/LC_MESSAGES/seahorse-plugins.mo
 share/locale/be@latin/LC_MESSAGES/seahorse-plugins.mo
 share/locale/bg/LC_MESSAGES/seahorse-plugins.mo
@@ -59,6 +60,7 @@ share/locale/da/LC_MESSAGES/seahorse-plugins.mo
 share/locale/de/LC_MESSAGES/seahorse-plugins.mo
 share/locale/dz/LC_MESSAGES/seahorse-plugins.mo
 share/locale/el/LC_MESSAGES/seahorse-plugins.mo
+share/locale/en@shaw/LC_MESSAGES/seahorse-plugins.mo
 share/locale/en_CA/LC_MESSAGES/seahorse-plugins.mo
 share/locale/en_GB/LC_MESSAGES/seahorse-plugins.mo
 share/locale/es/LC_MESSAGES/seahorse-plugins.mo
@@ -95,6 +97,7 @@ share/locale/pa/LC_MESSAGES/seahorse-plugins.mo
 share/locale/pl/LC_MESSAGES/seahorse-plugins.mo
 share/locale/pt/LC_MESSAGES/seahorse-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/seahorse-plugins.mo
+share/locale/ro/LC_MESSAGES/seahorse-plugins.mo
 share/locale/ru/LC_MESSAGES/seahorse-plugins.mo
 share/locale/rw/LC_MESSAGES/seahorse-plugins.mo
 share/locale/si/LC_MESSAGES/seahorse-plugins.mo
@@ -173,14 +176,14 @@ share/pixmaps/seahorse-plugins/scalable/seahorse-sign-bad.svg
 share/pixmaps/seahorse-plugins/scalable/seahorse-sign-ok.svg
 share/pixmaps/seahorse-plugins/scalable/seahorse-sign-unknown.svg
 share/pixmaps/seahorse-plugins/scalable/seahorse-sign.svg
-%%DATADIR%%/glade/seahorse-agent-cache.glade
-%%DATADIR%%/glade/seahorse-applet-preferences.glade
-%%DATADIR%%/glade/seahorse-multi-encrypt.glade
-%%DATADIR%%/glade/seahorse-notify.glade
-%%DATADIR%%/glade/seahorse-prefs.glade
-%%DATADIR%%/glade/seahorse-progress.glade
+%%DATADIR%%/ui/seahorse-agent-cache.xml
+%%DATADIR%%/ui/seahorse-applet-preferences.xml
+%%DATADIR%%/ui/seahorse-multi-encrypt.xml
+%%DATADIR%%/ui/seahorse-notify.xml
+%%DATADIR%%/ui/seahorse-prefs.xml
+%%DATADIR%%/ui/seahorse-progress.xml
 %%EPHY%%@dirrmtry lib/epiphany/%%EPHY_VERSION%%/extensions
-@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 @dirrmtry share/pixmaps/seahorse-plugins/scalable
 @dirrmtry share/pixmaps/seahorse-plugins/48x48
@@ -234,6 +237,8 @@ share/pixmaps/seahorse-plugins/scalable/seahorse-sign.svg
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
@@ -242,5 +247,7 @@ share/pixmaps/seahorse-plugins/scalable/seahorse-sign.svg
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

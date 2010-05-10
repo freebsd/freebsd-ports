@@ -3,15 +3,13 @@
 # Whom:			Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/py-clutter-gtk/Makefile,v 1.1 2009/09/06 11:27:11 kwm Exp $
+#   $MCom: ports/graphics/py-clutter-gtk/Makefile,v 1.3 2010/02/15 10:36:26 kwm Exp $
 #
 
 PORTNAME=	clutter
-PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTVERSION=	0.10.0
 CATEGORIES=	graphics
-#MASTER_SITES=	http://www.clutter-project.org/sources/pyclutter/${PORTVERSION:R}/
-MASTER_SITES=	LOCAL/kwm
+MASTER_SITES=	http://www.clutter-project.org/sources/pyclutter-gtk/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	gtk
 DISTNAME=	py${PORTNAME}-gtk-${PORTVERSION}

@@ -1,0 +1,225 @@
+--- configure.orig	2010-04-16 22:54:43.000000000 -0400
++++ configure	2010-04-16 22:56:36.000000000 -0400
+@@ -800,8 +800,8 @@ HAVE_XTEST_FALSE
+ HAVE_XTEST_TRUE
+ XTEST_LIBS
+ OS_LINUX
+-UDEV_LIBS
+-UDEV_CFLAGS
++HAL_LIBS
++HAL_CFLAGS
+ HAVE_GNOME_DOC_UTILS_FALSE
+ HAVE_GNOME_DOC_UTILS_TRUE
+ DISTCHECK_CONFIGURE_FLAGS
+@@ -1008,8 +1008,8 @@ LIBS
+ CPPFLAGS
+ CPP
+ PKG_CONFIG
+-UDEV_CFLAGS
+-UDEV_LIBS
++HAL_CFLAGS
++HAL_LIBS
+ CHEESE_CFLAGS
+ CHEESE_LIBS'
+ 
+@@ -1688,8 +1688,8 @@ Some influential environment variables:
+               you have headers in a nonstandard directory <include dir>
+   CPP         C preprocessor
+   PKG_CONFIG  path to pkg-config utility
+-  UDEV_CFLAGS C compiler flags for UDEV, overriding pkg-config
+-  UDEV_LIBS   linker flags for UDEV, overriding pkg-config
++  HAL_CFLAGS C compiler flags for HAL, overriding pkg-config
++  HAL_LIBS   linker flags for HAL, overriding pkg-config
+   CHEESE_CFLAGS
+               C compiler flags for CHEESE, overriding pkg-config
+   CHEESE_LIBS linker flags for CHEESE, overriding pkg-config
+@@ -15729,38 +15729,38 @@ LIBRSVG_REQUIRED=2.18.0
+ # Check for udev
+ #*******************************************************************************
+ 
+-UDEV_PKG=
++HAL_PKG=
+ 
+ pkg_failed=no
+-{ $as_echo "$as_me:$LINENO: checking for UDEV" >&5
+-$as_echo_n "checking for UDEV... " >&6; }
++{ $as_echo "$as_me:$LINENO: checking for HAL" >&5
++$as_echo_n "checking for HAL... " >&6; }
+ 
+-if test -n "$UDEV_CFLAGS"; then
+-    pkg_cv_UDEV_CFLAGS="$UDEV_CFLAGS"
++if test -n "$HAL_CFLAGS"; then
++    pkg_cv_HAL_CFLAGS="$HAL_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"gudev-1.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "gudev-1.0") 2>&5
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"hal\"") >&5
++  ($PKG_CONFIG --exists --print-errors "hal") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+-  pkg_cv_UDEV_CFLAGS=`$PKG_CONFIG --cflags "gudev-1.0" 2>/dev/null`
++  pkg_cv_HAL_CFLAGS=`$PKG_CONFIG --cflags "hal" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+  else
+     pkg_failed=untried
+ fi
+-if test -n "$UDEV_LIBS"; then
+-    pkg_cv_UDEV_LIBS="$UDEV_LIBS"
++if test -n "$HAL_LIBS"; then
++    pkg_cv_HAL_LIBS="$HAL_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"gudev-1.0\"") >&5
+-  ($PKG_CONFIG --exists --print-errors "gudev-1.0") 2>&5
++    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"hal\"") >&5
++  ($PKG_CONFIG --exists --print-errors "hal") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+-  pkg_cv_UDEV_LIBS=`$PKG_CONFIG --libs "gudev-1.0" 2>/dev/null`
++  pkg_cv_HAL_LIBS=`$PKG_CONFIG --libs "hal" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -15778,29 +15778,29 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        UDEV_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "gudev-1.0" 2>&1`
++	        HAL_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "hal" 2>&1`
+         else
+-	        UDEV_PKG_ERRORS=`$PKG_CONFIG --print-errors "gudev-1.0" 2>&1`
++	        HAL_PKG_ERRORS=`$PKG_CONFIG --print-errors "hal" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+-	echo "$UDEV_PKG_ERRORS" >&5
++	echo "$HAL_PKG_ERRORS" >&5
+ 
+ 	{ $as_echo "$as_me:$LINENO: result: no" >&5
+ $as_echo "no" >&6; }
+-                UDEV_PKG=
++                HAL_PKG=
+ elif test $pkg_failed = untried; then
+-	UDEV_PKG=
++	HAL_PKG=
+ else
+-	UDEV_CFLAGS=$pkg_cv_UDEV_CFLAGS
+-	UDEV_LIBS=$pkg_cv_UDEV_LIBS
++	HAL_CFLAGS=$pkg_cv_HAL_CFLAGS
++	HAL_LIBS=$pkg_cv_HAL_LIBS
+         { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define HAVE_UDEV 1
++#define HAVE_HAL 1
+ _ACEOF
+ 
+-		  UDEV_PKG=gudev-1.0
++		  HAL_PKG=hal
+ fi
+ 
+ { $as_echo "$as_me:$LINENO: checking operating system" >&5
+@@ -15815,7 +15815,7 @@ _ACEOF
+ 
+ 		{ $as_echo "$as_me:$LINENO: result: Linux" >&5
+ $as_echo "Linux" >&6; }
+-		if test x$UDEV_PKG = "x" ; then
++		if test x$HAL_PKG = "x" ; then
+ 			{ { $as_echo "$as_me:$LINENO: error: libgudev is required under Linux and not installed" >&5
+ $as_echo "$as_me: error: libgudev is required under Linux and not installed" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -16213,7 +16213,7 @@ if test -n "$CHEESE_CFLAGS"; then
+   dbus-glib-1 >= \$DBUS_GLIB_REQUIRED \\
+   pangocairo >= \$PANGOCAIRO_REQUIRED \\
+   librsvg-2.0 >= \$LIBRSVG_REQUIRED
+-  libcanberra-gtk \$UDEV_PKG\"") >&5
++  libcanberra-gtk \$HAL_PKG\"") >&5
+   ($PKG_CONFIG --exists --print-errors "\
+   glib-2.0 >= $GLIB_REQUIRED \
+   gobject-2.0 >= $GOBJECT_REQUIRED \
+@@ -16229,7 +16229,7 @@ if test -n "$CHEESE_CFLAGS"; then
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED
+-  libcanberra-gtk $UDEV_PKG") 2>&5
++  libcanberra-gtk $HAL_PKG") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+@@ -16248,7 +16248,7 @@ if test -n "$CHEESE_CFLAGS"; then
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED
+-  libcanberra-gtk $UDEV_PKG" 2>/dev/null`
++  libcanberra-gtk $HAL_PKG" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -16274,7 +16274,7 @@ if test -n "$CHEESE_LIBS"; then
+   dbus-glib-1 >= \$DBUS_GLIB_REQUIRED \\
+   pangocairo >= \$PANGOCAIRO_REQUIRED \\
+   librsvg-2.0 >= \$LIBRSVG_REQUIRED
+-  libcanberra-gtk \$UDEV_PKG\"") >&5
++  libcanberra-gtk \$HAL_PKG\"") >&5
+   ($PKG_CONFIG --exists --print-errors "\
+   glib-2.0 >= $GLIB_REQUIRED \
+   gobject-2.0 >= $GOBJECT_REQUIRED \
+@@ -16290,7 +16290,7 @@ if test -n "$CHEESE_LIBS"; then
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED
+-  libcanberra-gtk $UDEV_PKG") 2>&5
++  libcanberra-gtk $HAL_PKG") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+@@ -16309,7 +16309,7 @@ if test -n "$CHEESE_LIBS"; then
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED
+-  libcanberra-gtk $UDEV_PKG" 2>/dev/null`
++  libcanberra-gtk $HAL_PKG" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -16342,7 +16342,7 @@ fi
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED
+-  libcanberra-gtk $UDEV_PKG" 2>&1`
++  libcanberra-gtk $HAL_PKG" 2>&1`
+         else
+ 	        CHEESE_PKG_ERRORS=`$PKG_CONFIG --print-errors "\
+   glib-2.0 >= $GLIB_REQUIRED \
+@@ -16359,7 +16359,7 @@ fi
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED
+-  libcanberra-gtk $UDEV_PKG" 2>&1`
++  libcanberra-gtk $HAL_PKG" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$CHEESE_PKG_ERRORS" >&5
+@@ -16379,7 +16379,7 @@ fi
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED
+-  libcanberra-gtk $UDEV_PKG) were not met:
++  libcanberra-gtk $HAL_PKG) were not met:
+ 
+ $CHEESE_PKG_ERRORS
+ 
+@@ -16405,7 +16405,7 @@ $as_echo "$as_me: error: Package require
+   dbus-glib-1 >= $DBUS_GLIB_REQUIRED \
+   pangocairo >= $PANGOCAIRO_REQUIRED \
+   librsvg-2.0 >= $LIBRSVG_REQUIRED
+-  libcanberra-gtk $UDEV_PKG) were not met:
++  libcanberra-gtk $HAL_PKG) were not met:
+ 
+ $CHEESE_PKG_ERRORS
+ 

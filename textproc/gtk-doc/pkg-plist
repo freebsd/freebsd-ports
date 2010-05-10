@@ -15,11 +15,16 @@ libdata/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4
 share/gnome/help/gtk-doc-manual/C/fdl-appendix.xml
 share/gnome/help/gtk-doc-manual/C/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/bn_IN/gtk-doc-manual.xml
 share/gnome/help/gtk-doc-manual/de/gtk-doc-manual.xml
 share/gnome/help/gtk-doc-manual/el/gtk-doc-manual.xml
 share/gnome/help/gtk-doc-manual/en_GB/gtk-doc-manual.xml
 share/gnome/help/gtk-doc-manual/es/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/fr/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/gu/gtk-doc-manual.xml
 share/gnome/help/gtk-doc-manual/sv/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/ta/gtk-doc-manual.xml
+share/gnome/help/gtk-doc-manual/te/gtk-doc-manual.xml
 %%DATADIR%%/data/devhelp.xsl
 %%DATADIR%%/data/devhelp2.xsl
 %%DATADIR%%/data/gtk-doc.dcl
@@ -35,11 +40,16 @@ share/gnome/help/gtk-doc-manual/sv/gtk-doc-manual.xml
 %%DATADIR%%/data/up.png
 %%DATADIR%%/data/version-greater-or-equal.xsl
 share/omf/gtk-doc-manual/gtk-doc-manual-C.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-bn_IN.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-de.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-el.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-en_GB.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-es.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-fr.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-gu.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-sv.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-ta.omf
+share/omf/gtk-doc-manual/gtk-doc-manual-te.omf
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%CATALOG_DIR%%/gtk-doc.cat
 share/sgml/gtk-doc/gtk-doc.cat
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%CATALOG_DIR%%/gtk-doc.cat
@@ -47,10 +57,15 @@ share/sgml/gtk-doc/gtk-doc.cat
 @dirrm share/omf/gtk-doc-manual
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
+@dirrm share/gnome/help/gtk-doc-manual/bn_IN
 @dirrm share/gnome/help/gtk-doc-manual/de
 @dirrm share/gnome/help/gtk-doc-manual/el
 @dirrm share/gnome/help/gtk-doc-manual/en_GB
 @dirrm share/gnome/help/gtk-doc-manual/es
+@dirrm share/gnome/help/gtk-doc-manual/fr
+@dirrm share/gnome/help/gtk-doc-manual/gu
 @dirrm share/gnome/help/gtk-doc-manual/sv
+@dirrm share/gnome/help/gtk-doc-manual/ta
+@dirrm share/gnome/help/gtk-doc-manual/te
 @dirrm share/gnome/help/gtk-doc-manual/C
 @dirrm share/gnome/help/gtk-doc-manual

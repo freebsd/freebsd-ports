@@ -8,7 +8,7 @@
 
 PORTNAME=	contact
 PORTVERSION=	0.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.burtonini.com/computing/
 PKGNAMESUFFIX=	-lookup-applet
@@ -17,7 +17,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome panel applet for easy Evolution contact book access
 
-USE_GNOME=	evolutiondataserver gnomehack gnomepanel gnomeprefix gnometarget
+USE_GNOME=	evolutiondataserver gnomehack gnomepanel gnomeprefix \
+		gnometarget libgnomeui
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

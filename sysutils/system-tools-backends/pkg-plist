@@ -1,17 +1,20 @@
 etc/dbus-1/system.d/org.freedesktop.SystemToolsBackends.conf
 sbin/system-tools-backends
 libdata/pkgconfig/system-tools-backends-2.0.pc
-share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.GroupsConfig.service
+share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.GroupConfig2.service
+share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.GroupsConfig2.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.HostsConfig.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.IfacesConfig.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.NFSConfig.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.NTPConfig.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.Platform.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.SMBConfig.service
+share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.SelfConfig2.service
+share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.ServiceConfig2.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.ServicesConfig.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.TimeConfig.service
-share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.UserConfig.service
-share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.UsersConfig.service
+share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.UserConfig2.service
+share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.UsersConfig2.service
 share/dbus-1/system-services/org.freedesktop.SystemToolsBackends.service
 share/locale/ar/LC_MESSAGES/system-tools-backends.mo
 share/locale/bg/LC_MESSAGES/system-tools-backends.mo
@@ -36,6 +39,7 @@ share/locale/it/LC_MESSAGES/system-tools-backends.mo
 share/locale/ja/LC_MESSAGES/system-tools-backends.mo
 share/locale/kn/LC_MESSAGES/system-tools-backends.mo
 share/locale/nb/LC_MESSAGES/system-tools-backends.mo
+share/locale/nds/LC_MESSAGES/system-tools-backends.mo
 share/locale/or/LC_MESSAGES/system-tools-backends.mo
 share/locale/pa/LC_MESSAGES/system-tools-backends.mo
 share/locale/pl/LC_MESSAGES/system-tools-backends.mo
@@ -58,6 +62,7 @@ share/polkit-1/actions/org.freedesktop.SystemToolsBackends.policy
 share/system-tools-backends-2.0/files/general_gprs_chatscript
 share/system-tools-backends-2.0/files/general_isdn_ppp_options
 share/system-tools-backends-2.0/files/general_pppoe_ppp_options
+share/system-tools-backends-2.0/scripts/GroupConfig.pm
 share/system-tools-backends-2.0/scripts/GroupsConfig.pm
 share/system-tools-backends-2.0/scripts/HostsConfig.pm
 share/system-tools-backends-2.0/scripts/IfacesConfig.pm
@@ -69,6 +74,8 @@ share/system-tools-backends-2.0/scripts/Network/Hosts.pm
 share/system-tools-backends-2.0/scripts/Network/Ifaces.pm
 share/system-tools-backends-2.0/scripts/Platform.pm
 share/system-tools-backends-2.0/scripts/SMBConfig.pm
+share/system-tools-backends-2.0/scripts/SelfConfig.pm
+share/system-tools-backends-2.0/scripts/ServiceConfig.pm
 share/system-tools-backends-2.0/scripts/ServicesConfig.pm
 share/system-tools-backends-2.0/scripts/Shares/NFS.pm
 share/system-tools-backends-2.0/scripts/Shares/SMB.pm
@@ -101,33 +108,13 @@ share/system-tools-backends-2.0/scripts/Utils/XML.pm
 @dirrm share/system-tools-backends-2.0/scripts
 @dirrm share/system-tools-backends-2.0/files
 @dirrm share/system-tools-backends-2.0
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN

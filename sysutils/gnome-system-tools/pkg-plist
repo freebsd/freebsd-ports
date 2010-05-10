@@ -3,6 +3,7 @@ bin/services-admin
 bin/shares-admin
 bin/time-admin
 bin/users-admin
+etc/gnome-system-tools/user-profiles.conf
 lib/nautilus/extensions-2.0/libnautilus-gst-shares.a
 lib/nautilus/extensions-2.0/libnautilus-gst-shares.la
 lib/nautilus/extensions-2.0/libnautilus-gst-shares.so
@@ -63,7 +64,6 @@ share/gnome/help/services-admin/fr/figures/services-tool.png
 share/gnome/help/services-admin/fr/services-admin.xml
 share/gnome/help/services-admin/it/figures/services-tool.png
 share/gnome/help/services-admin/it/services-admin.xml
-share/gnome/help/services-admin/nl/figures/service-properties.png
 share/gnome/help/services-admin/nl/figures/services-tool.png
 share/gnome/help/services-admin/nl/legal.xml
 share/gnome/help/services-admin/nl/services-admin.xml
@@ -231,6 +231,7 @@ share/icons/hicolor/48x48/apps/time-admin.png
 share/icons/hicolor/48x48/devices/irda.png
 share/icons/hicolor/48x48/devices/plip.png
 share/icons/hicolor/scalable/apps/time-admin.svg
+share/locale/af/LC_MESSAGES/gnome-system-tools.mo
 share/locale/am/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ar/LC_MESSAGES/gnome-system-tools.mo
 share/locale/as/LC_MESSAGES/gnome-system-tools.mo
@@ -241,6 +242,7 @@ share/locale/be@latin/LC_MESSAGES/gnome-system-tools.mo
 share/locale/bg/LC_MESSAGES/gnome-system-tools.mo
 share/locale/bn/LC_MESSAGES/gnome-system-tools.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-system-tools.mo
+share/locale/br/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ca/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-system-tools.mo
 share/locale/cs/LC_MESSAGES/gnome-system-tools.mo
@@ -249,6 +251,7 @@ share/locale/da/LC_MESSAGES/gnome-system-tools.mo
 share/locale/de/LC_MESSAGES/gnome-system-tools.mo
 share/locale/dz/LC_MESSAGES/gnome-system-tools.mo
 share/locale/el/LC_MESSAGES/gnome-system-tools.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-system-tools.mo
 share/locale/en_CA/LC_MESSAGES/gnome-system-tools.mo
 share/locale/en_GB/LC_MESSAGES/gnome-system-tools.mo
 share/locale/es/LC_MESSAGES/gnome-system-tools.mo
@@ -536,6 +539,7 @@ share/omf/users-admin/users-admin-zh_CN.omf
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrm etc/gnome-system-tools
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -562,6 +566,8 @@ share/omf/users-admin/users-admin-zh_CN.omf
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

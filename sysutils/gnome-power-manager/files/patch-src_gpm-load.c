@@ -1,5 +1,5 @@
---- src/gpm-load.c.orig	2010-01-02 21:57:09.000000000 -0500
-+++ src/gpm-load.c	2010-01-02 21:59:16.000000000 -0500
+--- src/gpm-load.c.orig	2010-01-01 23:29:11.000000000 -0500
++++ src/gpm-load.c	2010-01-01 23:46:31.000000000 -0500
 @@ -33,6 +33,10 @@
  #include <kstat.h>
  #include <sys/sysinfo.h>
@@ -11,7 +11,7 @@
  #ifdef HAVE_UNISTD_H
  #include <unistd.h>
  #endif /* HAVE_UNISTD_H */
-@@ -159,6 +163,32 @@ out:
+@@ -151,6 +155,32 @@ out:
  	return FALSE;
  }
  
@@ -44,3 +44,12 @@
  #else
  
  /**
+@@ -192,7 +222,7 @@ gpm_load_get_cpu_values (long unsigned *
+ 	*cpu_total = cpu_user + cpu_nice + cpu_system + *cpu_idle;
+ 	ret = TRUE;
+ out:
+-	if (!fd)
++	if (fd)
+ 		fclose (fd);
+ 	return ret;
+ }

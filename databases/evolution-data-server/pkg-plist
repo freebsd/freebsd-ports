@@ -79,7 +79,6 @@ include/evolution-data-server-%%VERSION%%/camel/camel-sasl-anonymous.h
 include/evolution-data-server-%%VERSION%%/camel/camel-sasl-cram-md5.h
 include/evolution-data-server-%%VERSION%%/camel/camel-sasl-digest-md5.h
 include/evolution-data-server-%%VERSION%%/camel/camel-sasl-gssapi.h
-include/evolution-data-server-%%VERSION%%/camel/camel-sasl-kerberos4.h
 include/evolution-data-server-%%VERSION%%/camel/camel-sasl-login.h
 include/evolution-data-server-%%VERSION%%/camel/camel-sasl-ntlm.h
 include/evolution-data-server-%%VERSION%%/camel/camel-sasl-plain.h
@@ -120,39 +119,6 @@ include/evolution-data-server-%%VERSION%%/camel/camel-vee-store.h
 include/evolution-data-server-%%VERSION%%/camel/camel-vee-summary.h
 include/evolution-data-server-%%VERSION%%/camel/camel-vtrash-folder.h
 include/evolution-data-server-%%VERSION%%/camel/camel.h
-include/evolution-data-server-%%VERSION%%/exchange/e-folder-exchange.h
-include/evolution-data-server-%%VERSION%%/exchange/e-folder.h
-include/evolution-data-server-%%VERSION%%/exchange/e-storage.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-autoconfig.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-context.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-freebusy.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-global-catalog-ldap.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-global-catalog.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-http-utils.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-marshal.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-operation.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-properties.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-propnames.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-restriction.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-result.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-security-descriptor.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-sid.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-types.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-uri.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-utils.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-validate.h
-include/evolution-data-server-%%VERSION%%/exchange/e2k-xml-utils.h
-include/evolution-data-server-%%VERSION%%/exchange/exchange-account.h
-include/evolution-data-server-%%VERSION%%/exchange/exchange-constants.h
-include/evolution-data-server-%%VERSION%%/exchange/exchange-esource.h
-include/evolution-data-server-%%VERSION%%/exchange/exchange-folder-size.h
-include/evolution-data-server-%%VERSION%%/exchange/exchange-hierarchy-foreign.h
-include/evolution-data-server-%%VERSION%%/exchange/exchange-hierarchy-somedav.h
-include/evolution-data-server-%%VERSION%%/exchange/exchange-hierarchy-webdav.h
-include/evolution-data-server-%%VERSION%%/exchange/exchange-hierarchy.h
-include/evolution-data-server-%%VERSION%%/exchange/exchange-oof.h
-include/evolution-data-server-%%VERSION%%/exchange/exchange-types.h
-include/evolution-data-server-%%VERSION%%/exchange/mapi.h
 include/evolution-data-server-%%VERSION%%/google/libgdata-google/gdata-google-service.h
 include/evolution-data-server-%%VERSION%%/google/libgdata/gdata-entry.h
 include/evolution-data-server-%%VERSION%%/google/libgdata/gdata-feed.h
@@ -171,6 +137,7 @@ include/evolution-data-server-%%VERSION%%/libebackend/e-data-server-module.h
 include/evolution-data-server-%%VERSION%%/libebackend/e-db3-utils.h
 include/evolution-data-server-%%VERSION%%/libebackend/e-dbhash.h
 include/evolution-data-server-%%VERSION%%/libebackend/e-file-cache.h
+include/evolution-data-server-%%VERSION%%/libebackend/e-offline-listener.h
 include/evolution-data-server-%%VERSION%%/libebook/e-address-western.h
 include/evolution-data-server-%%VERSION%%/libebook/e-book-query.h
 include/evolution-data-server-%%VERSION%%/libebook/e-book-types.h
@@ -189,7 +156,6 @@ include/evolution-data-server-%%VERSION%%/libecal/e-cal-types.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-util.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-view.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal.h
-include/evolution-data-server-%%VERSION%%/libedata-book/Evolution-DataServer-Addressbook.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-cache.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-db-cache.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-factory.h
@@ -201,11 +167,9 @@ include/evolution-data-server-%%VERSION%%/libedata-book/e-data-book-factory.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-data-book-types.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-data-book-view.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-data-book.h
-include/evolution-data-server-%%VERSION%%/libedata-cal/Evolution-DataServer-Calendar.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-cache.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-factory.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-file-store.h
-include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-loader-factory.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-sexp.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-store.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-sync.h
@@ -213,12 +177,12 @@ include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend-util.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-cal-backend.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-data-cal-common.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-data-cal-factory.h
+include/evolution-data-server-%%VERSION%%/libedata-cal/e-data-cal-types.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-data-cal-view.h
 include/evolution-data-server-%%VERSION%%/libedata-cal/e-data-cal.h
 include/evolution-data-server-%%VERSION%%/libedataserver/e-account-list.h
 include/evolution-data-server-%%VERSION%%/libedataserver/e-account.h
 include/evolution-data-server-%%VERSION%%/libedataserver/e-categories.h
-include/evolution-data-server-%%VERSION%%/libedataserver/e-component-listener.h
 include/evolution-data-server-%%VERSION%%/libedataserver/e-data-server-util.h
 include/evolution-data-server-%%VERSION%%/libedataserver/e-flag.h
 include/evolution-data-server-%%VERSION%%/libedataserver/e-iconv.h
@@ -265,6 +229,10 @@ lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap.a
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap.la
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap.so
 lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap.urls
+lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimapx.a
+lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimapx.la
+lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimapx.so
+lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimapx.urls
 %%IMAP4%%lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.a
 %%IMAP4%%lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.la
 %%IMAP4%%lib/evolution-data-server-%%EVO_VERSION%%/camel-providers/libcamelimap4.so
@@ -355,7 +323,7 @@ lib/libedata-book-%%EVO_VERSION%%.so.2
 lib/libedata-cal-%%EVO_VERSION%%.a
 lib/libedata-cal-%%EVO_VERSION%%.la
 lib/libedata-cal-%%EVO_VERSION%%.so
-lib/libedata-cal-%%EVO_VERSION%%.so.6
+lib/libedata-cal-%%EVO_VERSION%%.so.7
 lib/libedataserver-%%EVO_VERSION%%.a
 lib/libedataserver-%%EVO_VERSION%%.la
 lib/libedataserver-%%EVO_VERSION%%.so
@@ -368,10 +336,6 @@ lib/libegroupwise-%%EVO_VERSION%%.a
 lib/libegroupwise-%%EVO_VERSION%%.la
 lib/libegroupwise-%%EVO_VERSION%%.so
 lib/libegroupwise-%%EVO_VERSION%%.so.13
-lib/libexchange-storage-%%EVO_VERSION%%.a
-lib/libexchange-storage-%%EVO_VERSION%%.la
-lib/libexchange-storage-%%EVO_VERSION%%.so
-lib/libexchange-storage-%%EVO_VERSION%%.so.3
 lib/libgdata-%%EVO_VERSION%%.a
 lib/libgdata-%%EVO_VERSION%%.la
 lib/libgdata-%%EVO_VERSION%%.so
@@ -380,7 +344,6 @@ lib/libgdata-google-%%EVO_VERSION%%.a
 lib/libgdata-google-%%EVO_VERSION%%.la
 lib/libgdata-google-%%EVO_VERSION%%.so
 lib/libgdata-google-%%EVO_VERSION%%.so.1
-libdata/bonobo/servers/GNOME_Evolution_DataServer_%%EVO_VERSION%%.server
 libdata/pkgconfig/camel-%%EVO_VERSION%%.pc
 libdata/pkgconfig/camel-provider-%%EVO_VERSION%%.pc
 libdata/pkgconfig/evolution-data-server-%%EVO_VERSION%%.pc
@@ -392,12 +355,14 @@ libdata/pkgconfig/libedata-cal-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libedataserver-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libedataserverui-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libegroupwise-%%EVO_VERSION%%.pc
-libdata/pkgconfig/libexchange-storage-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libgdata-%%EVO_VERSION%%.pc
 libdata/pkgconfig/libgdata-google-%%EVO_VERSION%%.pc
 libexec/camel-index-control-%%EVO_VERSION%%
 libexec/camel-lock-helper-%%EVO_VERSION%%
-libexec/evolution-data-server-%%VERSION%%
+libexec/e-addressbook-factory
+libexec/e-calendar-factory
+share/dbus-1/services/org.gnome.evolution.dataserver.AddressBook.service
+share/dbus-1/services/org.gnome.evolution.dataserver.Calendar.service
 share/doc/camel/Addresses.html
 share/doc/camel/ClassTree.html
 share/doc/camel/Crypto.html
@@ -406,18 +371,31 @@ share/doc/camel/Filters.html
 share/doc/camel/Folders.html
 share/doc/camel/Fundamentals.html
 share/doc/camel/MIME.html
-share/doc/camel/SearchFolders.html
+share/doc/camel/Search-Folders.html
 share/doc/camel/Services.html
 share/doc/camel/Storage.html
-share/doc/camel/StreamFilters.html
+share/doc/camel/Stream-Filters.html
 share/doc/camel/Streams.html
 share/doc/camel/Utilities.html
+share/doc/camel/api-index-2.22.html
+share/doc/camel/api-index-2.24.html
+share/doc/camel/api-index-2.26.html
+share/doc/camel/api-index-2.28.html
+share/doc/camel/api-index-2.30.html
+share/doc/camel/api-index-deprecated.html
+share/doc/camel/api-index-full.html
 share/doc/camel/camel-CamelAddress.html
 share/doc/camel/camel-CamelCertDB.html
 share/doc/camel/camel-CamelCipherContext.html
 share/doc/camel/camel-CamelDB.html
 share/doc/camel/camel-CamelDataCache.html
 share/doc/camel/camel-CamelDataWrapper.html
+share/doc/camel/camel-CamelDigestFolder.html
+share/doc/camel/camel-CamelDigestStore.html
+share/doc/camel/camel-CamelDigestSummary.html
+share/doc/camel/camel-CamelDiscoDiary.html
+share/doc/camel/camel-CamelDiscoFolder.html
+share/doc/camel/camel-CamelDiscoStore.html
 share/doc/camel/camel-CamelFilterDriver.html
 share/doc/camel/camel-CamelFolder.html
 share/doc/camel/camel-CamelFolderSearch.html
@@ -466,7 +444,6 @@ share/doc/camel/camel-CamelSaslAnonymous.html
 share/doc/camel/camel-CamelSaslCramMd5.html
 share/doc/camel/camel-CamelSaslDigestMd5.html
 share/doc/camel/camel-CamelSaslGssapi.html
-share/doc/camel/camel-CamelSaslKerberos4.html
 share/doc/camel/camel-CamelSaslLogin.html
 share/doc/camel/camel-CamelSaslNTLM.html
 share/doc/camel/camel-CamelSaslPOPB4SMTP.html
@@ -501,7 +478,6 @@ share/doc/camel/camel-camel-exception.html
 share/doc/camel/camel-camel-file-utils.html
 share/doc/camel/camel-camel-filter-search.html
 share/doc/camel/camel-camel-folder-thread.html
-share/doc/camel/camel-camel-i18n.html
 share/doc/camel/camel-camel-iconv.html
 share/doc/camel/camel-camel-junk-plugin.html
 share/doc/camel/camel-camel-list-utils.html
@@ -521,44 +497,53 @@ share/doc/camel/camel-camel-uid-cache.html
 share/doc/camel/camel-camel-url-scanner.html
 share/doc/camel/camel-camel-url.html
 share/doc/camel/camel-camel-utf8.html
+share/doc/camel/camel-camel.html
 share/doc/camel/camel.devhelp
 share/doc/camel/camel.devhelp2
 share/doc/camel/classes.html
 share/doc/camel/home.png
 share/doc/camel/index.html
 share/doc/camel/index.sgml
-share/doc/camel/ix01.html
-share/doc/camel/ix02.html
 share/doc/camel/left.png
 share/doc/camel/right.png
 share/doc/camel/style.css
 share/doc/camel/up.png
-share/doc/libebackend/EFileCache.html
+share/doc/libebackend/api-index-2.24.html
+share/doc/libebackend/api-index-2.26.html
+share/doc/libebackend/api-index-2.28.html
+share/doc/libebackend/api-index-2.30.html
 share/doc/libebackend/ch01.html
 share/doc/libebackend/home.png
 share/doc/libebackend/index.html
 share/doc/libebackend/index.sgml
+share/doc/libebackend/ix01.html
 share/doc/libebackend/left.png
+share/doc/libebackend/libebackend-EOfflineListener.html
 share/doc/libebackend/libebackend-e-data-server-module.html
 share/doc/libebackend/libebackend-e-db3-utils.html
 share/doc/libebackend/libebackend-e-dbhash.html
+share/doc/libebackend/libebackend-e-file-cache.html
 share/doc/libebackend/libebackend.devhelp
 share/doc/libebackend/libebackend.devhelp2
 share/doc/libebackend/right.png
 share/doc/libebackend/style.css
 share/doc/libebackend/up.png
 share/doc/libebook/EBook.html
-share/doc/libebook/EBookListener.html
 share/doc/libebook/EBookView.html
-share/doc/libebook/EBookViewListener.html
 share/doc/libebook/EContact.html
 share/doc/libebook/EDestination.html
 share/doc/libebook/EVCard.html
+share/doc/libebook/api-index-1.12.html
+share/doc/libebook/api-index-2.22.html
+share/doc/libebook/api-index-2.24.html
+share/doc/libebook/api-index-2.26.html
+share/doc/libebook/api-index-2.28.html
+share/doc/libebook/api-index-2.30.html
+share/doc/libebook/api-index-full.html
 share/doc/libebook/ch01.html
 share/doc/libebook/home.png
 share/doc/libebook/index.html
 share/doc/libebook/index.sgml
-share/doc/libebook/ix01.html
 share/doc/libebook/left.png
 share/doc/libebook/libebook-EAddressWestern.html
 share/doc/libebook/libebook-ENameWestern.html
@@ -571,14 +556,18 @@ share/doc/libebook/style.css
 share/doc/libebook/up.png
 share/doc/libecal/ECal.html
 share/doc/libecal/ECalComponent.html
-share/doc/libecal/ECalListener.html
 share/doc/libecal/ECalView.html
-share/doc/libecal/ECalViewListener.html
+share/doc/libecal/api-index-1.12.html
+share/doc/libecal/api-index-2.22.html
+share/doc/libecal/api-index-2.24.html
+share/doc/libecal/api-index-2.26.html
+share/doc/libecal/api-index-2.28.html
+share/doc/libecal/api-index-2.30.html
+share/doc/libecal/api-index-full.html
 share/doc/libecal/ch01.html
 share/doc/libecal/home.png
 share/doc/libecal/index.html
 share/doc/libecal/index.sgml
-share/doc/libecal/ix01.html
 share/doc/libecal/left.png
 share/doc/libecal/libecal-e-cal-check-timezones.html
 share/doc/libecal/libecal-e-cal-recur.html
@@ -599,12 +588,21 @@ share/doc/libedata-book/EBookBackendSummary.html
 share/doc/libedata-book/EBookBackendSync.html
 share/doc/libedata-book/EDataBook.html
 share/doc/libedata-book/EDataBookView.html
+share/doc/libedata-book/api-index-1.12.html
+share/doc/libedata-book/api-index-2.22.html
+share/doc/libedata-book/api-index-2.24.html
+share/doc/libedata-book/api-index-2.26.html
+share/doc/libedata-book/api-index-2.28.html
+share/doc/libedata-book/api-index-2.30.html
+share/doc/libedata-book/api-index-full.html
 share/doc/libedata-book/ch01.html
 share/doc/libedata-book/home.png
 share/doc/libedata-book/index.html
 share/doc/libedata-book/index.sgml
-share/doc/libedata-book/ix01.html
 share/doc/libedata-book/left.png
+share/doc/libedata-book/libedata-book-EDataBookFactory.html
+share/doc/libedata-book/libedata-book-e-book-backend-db-cache.html
+share/doc/libedata-book/libedata-book-ximian-vcard.html
 share/doc/libedata-book/libedata-book.devhelp
 share/doc/libedata-book/libedata-book.devhelp2
 share/doc/libedata-book/right.png
@@ -616,14 +614,24 @@ share/doc/libedata-cal/ECalBackendFactory.html
 share/doc/libedata-cal/ECalBackendSExp.html
 share/doc/libedata-cal/ECalBackendSync.html
 share/doc/libedata-cal/EDataCal.html
-share/doc/libedata-cal/EDataCalFactory.html
-share/doc/libedata-cal/EDataCalView.html
+share/doc/libedata-cal/api-index-1.12.html
+share/doc/libedata-cal/api-index-2.22.html
+share/doc/libedata-cal/api-index-2.24.html
+share/doc/libedata-cal/api-index-2.26.html
+share/doc/libedata-cal/api-index-2.28.html
+share/doc/libedata-cal/api-index-2.30.html
+share/doc/libedata-cal/api-index-full.html
 share/doc/libedata-cal/ch01.html
 share/doc/libedata-cal/home.png
 share/doc/libedata-cal/index.html
 share/doc/libedata-cal/index.sgml
-share/doc/libedata-cal/ix01.html
 share/doc/libedata-cal/left.png
+share/doc/libedata-cal/libedata-cal-ECalBackendFileStore.html
+share/doc/libedata-cal/libedata-cal-ECalBackendLoaderFactory.html
+share/doc/libedata-cal/libedata-cal-ECalBackendStore.html
+share/doc/libedata-cal/libedata-cal-EDataCalFactory.html
+share/doc/libedata-cal/libedata-cal-EDataCalView.html
+share/doc/libedata-cal/libedata-cal-e-cal-backend-util.html
 share/doc/libedata-cal/libedata-cal.devhelp
 share/doc/libedata-cal/libedata-cal.devhelp2
 share/doc/libedata-cal/right.png
@@ -631,22 +639,28 @@ share/doc/libedata-cal/style.css
 share/doc/libedata-cal/up.png
 share/doc/libedataserver/EAccount.html
 share/doc/libedataserver/EAccountList.html
-share/doc/libedataserver/EComponentListener.html
 share/doc/libedataserver/EIterator.html
 share/doc/libedataserver/EList.html
 share/doc/libedataserver/EListIterator.html
 share/doc/libedataserver/ESource.html
 share/doc/libedataserver/ESourceGroup.html
 share/doc/libedataserver/ESourceList.html
+share/doc/libedataserver/api-index-1.12.html
+share/doc/libedataserver/api-index-2.22.html
+share/doc/libedataserver/api-index-2.24.html
+share/doc/libedataserver/api-index-2.26.html
+share/doc/libedataserver/api-index-2.28.html
+share/doc/libedataserver/api-index-2.30.html
+share/doc/libedataserver/api-index-full.html
 share/doc/libedataserver/ch01.html
 share/doc/libedataserver/home.png
 share/doc/libedataserver/index.html
 share/doc/libedataserver/index.sgml
-share/doc/libedataserver/ix01.html
 share/doc/libedataserver/left.png
 share/doc/libedataserver/libedataserver-EFlag.html
 share/doc/libedataserver/libedataserver-EProxy.html
 share/doc/libedataserver/libedataserver-ESExp.html
+share/doc/libedataserver/libedataserver-Version-Information.html
 share/doc/libedataserver/libedataserver-e-categories.html
 share/doc/libedataserver/libedataserver-e-iconv.html
 share/doc/libedataserver/libedataserver-e-memory.html
@@ -676,12 +690,22 @@ share/doc/libedataserverui/ESourceOptionMenu.html
 share/doc/libedataserverui/ESourceSelector.html
 share/doc/libedataserverui/ESourceSelectorDialog.html
 share/doc/libedataserverui/ETreeModelGenerator.html
+share/doc/libedataserverui/api-index-1.12.html
+share/doc/libedataserverui/api-index-2.22.html
+share/doc/libedataserverui/api-index-2.24.html
+share/doc/libedataserverui/api-index-2.26.html
+share/doc/libedataserverui/api-index-2.28.html
+share/doc/libedataserverui/api-index-2.30.html
+share/doc/libedataserverui/api-index-full.html
 share/doc/libedataserverui/ch01.html
 share/doc/libedataserverui/home.png
 share/doc/libedataserverui/index.html
 share/doc/libedataserverui/index.sgml
-share/doc/libedataserverui/ix01.html
 share/doc/libedataserverui/left.png
+share/doc/libedataserverui/libedataserverui-ECategoryCompletion.html
+share/doc/libedataserverui/libedataserverui-ECellRendererColor.html
+share/doc/libedataserverui/libedataserverui-e-book-auth-util.html
+share/doc/libedataserverui/libedataserverui-e-data-server-ui-marshal.html
 share/doc/libedataserverui/libedataserverui-e-passwords.html
 share/doc/libedataserverui/libedataserverui.devhelp
 share/doc/libedataserverui/libedataserverui.devhelp2
@@ -689,12 +713,9 @@ share/doc/libedataserverui/right.png
 share/doc/libedataserverui/style.css
 share/doc/libedataserverui/up.png
 share/evolution-data-server-%%VERSION%%/evolutionperson.schema
-share/evolution-data-server-%%VERSION%%/glade/e-categories-dialog.glade
-share/evolution-data-server-%%VERSION%%/glade/e-name-selector-dialog.glade
+share/evolution-data-server-%%VERSION%%/ui/e-categories-dialog.ui
+share/evolution-data-server-%%VERSION%%/ui/e-name-selector-dialog.ui
 %%WEATHER%%share/evolution-data-server-%%VERSION%%/weather/Locations.xml
-share/idl/evolution-data-server-%%EVO_VERSION%%/Evolution-DataServer-Addressbook.idl
-share/idl/evolution-data-server-%%EVO_VERSION%%/Evolution-DataServer-Calendar.idl
-share/idl/evolution-data-server-%%EVO_VERSION%%/Evolution-DataServer.idl
 share/locale/am/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/as/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
@@ -716,6 +737,7 @@ share/locale/el/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/en_AU/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/en_CA/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
+share/locale/en@shaw/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/et/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/eu/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
@@ -795,9 +817,8 @@ share/pixmaps/evolution-data-server/category_strategies_16.png
 share/pixmaps/evolution-data-server/category_suppliers_16.png
 share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrm share/pixmaps/evolution-data-server
-@dirrm share/idl/evolution-data-server-%%EVO_VERSION%%
 %%WEATHER%%@dirrm share/evolution-data-server-%%VERSION%%/weather
-@dirrm share/evolution-data-server-%%VERSION%%/glade
+@dirrm share/evolution-data-server-%%VERSION%%/ui
 @dirrm share/evolution-data-server-%%VERSION%%
 @dirrm share/doc/libedataserverui
 @dirrm share/doc/libedataserver
@@ -821,7 +842,6 @@ share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrm include/evolution-data-server-%%VERSION%%/google/libgdata-google
 @dirrm include/evolution-data-server-%%VERSION%%/google/libgdata
 @dirrm include/evolution-data-server-%%VERSION%%/google
-@dirrm include/evolution-data-server-%%VERSION%%/exchange
 @dirrm include/evolution-data-server-%%VERSION%%/camel
 @dirrm include/evolution-data-server-%%VERSION%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -844,10 +864,10 @@ share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/ast/LC_MESSAGES

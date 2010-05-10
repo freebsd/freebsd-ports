@@ -4,7 +4,7 @@
 %%PYTHON_SITELIBDIR%%/cluttergtk/_cluttergtk.a
 %%PYTHON_SITELIBDIR%%/cluttergtk/_cluttergtk.la
 %%PYTHON_SITELIBDIR%%/cluttergtk/_cluttergtk.so
-libdata/pkgconfig/pyclutter-gtk-0.9.pc
+libdata/pkgconfig/pyclutter-gtk-0.10.pc
 share/pyclutter/1.0/defs/cluttergtk.defs
 share/pyclutter/1.0/defs/cluttergtk-types.defs
 @dirrm %%PYTHON_SITELIBDIR%%/cluttergtk

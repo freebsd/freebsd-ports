@@ -1,6 +1,29 @@
---- system-config-printer.py.orig	2008-11-21 11:19:25.000000000 -0600
-+++ system-config-printer.py	2008-11-22 11:30:37.732537129 -0600
-@@ -3668,7 +3668,7 @@
+--- system-config-printer.py.orig	2009-12-22 09:44:19.000000000 -0500
++++ system-config-printer.py	2009-12-29 00:35:54.000000000 -0500
+@@ -4344,7 +4344,7 @@
+                 if may_be_ps:
+                     debugprint ("Printer might support PostScript")
+                     try:
+-                        os.stat ("/usr/share/cups/model/foomatic-db-ppds")
++                        os.stat ("%%LOCALBASE%%/share/cups/model/foomatic-db-ppds")
+                         debugprint ("foomatic-db-ppds already installed")
+                     except OSError:
+                         debugprint ("foomatic-db-ppds not yet installed")
+@@ -4892,11 +4892,11 @@
+                 # Problem executing command.
+                 return True # assume plugin not required
+         else:
+-            if glob.glob("/usr/share/hplip/data/plugin/*%s*plugin*" %
++            if glob.glob("%%LOCALBASE%%share/hplip/data/plugin/*%s*plugin*" %
+                          hplip_version):
+                 if hplip_version.startswith("2"):
+                     try:
+-                        f = open('/etc/hp/hplip.conf', 'r')
++                        f = open('%%LOCALBASE%%/etc/hp/hplip.conf', 'r')
+                         for line in f:
+                             if line.strip ().startswith("plugin") and \
+                                     line.strip ().endswith("1"):
+@@ -5082,7 +5082,7 @@
          # Try to get make and model via SNMP
          if host:
              os.environ["HOST"] = host
@@ -9,7 +32,7 @@
              debugprint (host + ": " + cmd)
              stdout = None
              try:
-@@ -5140,7 +5140,7 @@
+@@ -6621,7 +6621,7 @@
                  try:
                      # We want this to be in the current natural language,
                      # so we intentionally don't set LC_ALL=C here.
@@ -18,12 +41,3 @@
                                             '-rvv', filename],
                                            stdin=file("/dev/null"),
                                            stdout=subprocess.PIPE,
-@@ -5433,7 +5433,7 @@
-         (pkgs, exes) = cupshelpers.missingPackagesAndExecutables (ppd)
-         if len (pkgs) > 0 or len (exes) > 0:
-             # We didn't find a necessary executable.  Complain.
--            install = "/usr/bin/gpk-install-package-name"
-+            install = "/usr/bin/true"
-             if len (pkgs) > 0 and os.access (install, os.X_OK):
-                 pkg = pkgs[0]
-                 install_text = ('<span weight="bold" size="larger">' +

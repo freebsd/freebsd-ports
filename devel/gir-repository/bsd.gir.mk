@@ -1,26 +1,13 @@
 PORTNAME=	gir-repository
 PORTVERSION=	0.6.5
-PORTREVISION?=	3
+PORTREVISION?=	4
 
 MAINTAINER=	gnome@FreeBSD.org
 
 GIRDIR=		${LOCALBASE}/share/gir-1.0
 
-atk_CATEGORY=	accessibility
-atk_GIR=	Atk-1.0
-
-pango_CATEGORY=	x11-toolkits
-pango_GIR=	Pango-1.0
-
 poppler_CATEGORY=	graphics
 poppler_GIR=	Poppler-0.8
-
-gtk20_CATEGORY=	x11-toolkits
-gtk20_GIR=	Gtk-2.0
-gtk20_GIR_TMPL=	gtk
-
-webkit_CATEGORY=	www
-webkit_GIR=	WebKit-1.0
 
 libsoup_CATEGORY=	devel
 libsoup_GIR=	Soup-2.4
@@ -52,12 +39,6 @@ vte_GIR=	Vte-1.0
 
 avahi_CATEGORY=	net
 avahi_GIR=	Avahi-0.6
-
-gnomemenus_CATEGORY=	x11
-gnomemenus_GIR=	GMenu-2.0
-
-libwnck_CATEGORY=	x11-toolkits
-libwnck_GIR=	Wnck-1.0
 
 goocanvas_CATEGORY=	graphics
 goocanvas_GIR=	GooCanvas-0.10
@@ -92,36 +73,11 @@ _USE_GIR_ALL=	dbus atk pango pangoxft poppler gtk gconf soup babl nautilusextens
 		gstreamer gstbufferlist_h gstreamer_plugins_base gtksourceview vte \
 		goocanvas gssdp gupnp avahi unique gmenu wnck
 
-.if ${GIR_NAME} == "atk"
-USE_GNOME+=	atk
-GIR_FILES=	Atk-1.0
-.endif
-
-.if ${GIR_NAME} == "pango"
-USE_GNOME+=	pango
-GIR_FILES=	Pango-1.0 PangoFT2-1.0 PangoCairo-1.0 PangoX-1.0 PangoXft-1.0
-DEP_NAMES+=	pangoxft
-.endif
-
 .if ${GIR_NAME} == "poppler"
 LIB_DEPENDS+=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk
-USE_GIR=	gtk20 pango
+USE_GNOME+=	gtk20
 GIR_FILES=	Poppler-0.8
 CLEAR_DEPS+=	Gdk-2.0
-.endif
-
-.if ${GIR_NAME} == "gtk20"
-USE_GNOME+=	gtk20
-USE_GIR=	atk pango
-GIR_FILES=	Gdk-2.0 Gtk-2.0 GdkPixbuf-2.0
-LIB_FILES=	Gdk Gtk
-DEP_NAMES=	gtk
-.endif
-
-.if ${GIR_NAME} == "webkit"
-LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
-USE_GIR=	gtk20 libsoup
-GIR_FILES=	WebKit-1.0 JSCore-1.0
 .endif
 
 .if ${GIR_NAME} == "libsoup"
@@ -143,9 +99,9 @@ GIR_FILES=	Babl-0.1
 
 .if ${GIR_NAME} == "nautilus"
 USE_GNOME+=	nautilus2
-USE_GIR=	gtk20
 GIR_FILES=	Nautilus-1.0
 DEP_NAMES=	nautilusextension
+CLEAR_DEPS+=	Gtk-2.0
 .endif
 
 .if ${GIR_NAME} == "gnomekeyring"
@@ -155,9 +111,10 @@ GIR_FILES=	GnomeKeyring-2.0
 
 .if ${GIR_NAME} == "libnotify"
 LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
-USE_GIR=	gtk20
+USE_GNOME+=	gtk20
 GIR_FILES=	Notify-0.4
 DEP_NAMES=	notify
+CLEAR_DEPS+=	Gtk-2.0
 .endif
 
 .if ${GIR_NAME} == "dbus"
@@ -168,15 +125,15 @@ LIB_FILES=	DBus
 
 .if ${GIR_NAME} == "gtksourceview2"
 USE_GNOME+=	gtksourceview2
-USE_GIR=	gtk20
 GIR_FILES=	GtkSource-2.2
 DEP_NAMES=	gtksourceview
+CLEAR_DEPS+=	Gtk-2.0
 .endif
 
 .if ${GIR_NAME} == "vte"
 USE_GNOME+=	vte
-USE_GIR=	gtk20
 GIR_FILES=	Vte-1.0
+CLEAR_DEPS+=	Gtk-2.0
 .endif
 
 .if ${GIR_NAME} == "avahi"
@@ -184,24 +141,11 @@ LIB_DEPENDS+=	avahi-gobject.0:${PORTSDIR}/net/avahi-app
 GIR_FILES=	Avahi-0.6 AvahiCore-0.6
 .endif
 
-.if ${GIR_NAME} == "gnomemenus"
-USE_GNOME+=	gnomemenus
-USE_GIR=	gtk20
-GIR_FILES=	GMenu-2.0
-DEP_NAMES=	gmenu
-.endif
-
-.if ${GIR_NAME} == "libwnck"
-USE_GNOME+=	libwnck
-USE_GIR=	gtk20
-GIR_FILES=	Wnck-1.0
-DEP_NAMES=	wnck
-.endif
-
 .if ${GIR_NAME} == "goocanvas"
 LIB_DEPENDS+=	goocanvas.3:${PORTSDIR}/graphics/goocanvas
-USE_GIR=	gtk20
+USE_GNOME+=	gtk20
 GIR_FILES=	GooCanvas-0.10
+CLEAR_DEPS+=	Gtk-2.0
 .endif
 
 . for component in ${USE_GIR:C/^([^:]+).*/\1/}

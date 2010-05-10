@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/libbonoboui/Makefile,v 1.71 2009/09/26 13:42:02 marcus Exp $
+#   $MCom: ports/x11-toolkits/libbonoboui/Makefile,v 1.73 2010/04/02 17:56:10 kwm Exp $
 #
 
 PORTNAME=	libbonoboui
-PORTVERSION=	2.24.2
-PORTREVISION?=	2
+PORTVERSION=	2.24.3
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome

@@ -3,7 +3,6 @@ etc/xdg/midori/search
 lib/midori/libadblock.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
-lib/midori/libdnsprefetch.so
 lib/midori/libfeed-panel.so
 lib/midori/libformhistory.so
 lib/midori/libmouse-gestures.so

@@ -1,0 +1,13 @@
+--- Tools/SConscript.orig	2010-04-09 00:32:23.000000000 +0200
++++ Tools/SConscript	2010-04-09 00:32:48.000000000 +0200
+@@ -24,10 +24,7 @@
+ 				major, minor, micro = sv[0], sv[1], sv[2]
+ 			else:
+ 				major, minor, micro = sv[0], sv[1], 0
+-			if int(minor) == 96 and int(micro) >= 93:
+ 				env_libmuscan.Append(CPPDEFINES = 'HAVE_VORBIS=1')
+-			else:
+-				env_libmuscan.Append(CPPDEFINES = {'HAVE_VORBIS':1})
+ 		except Exception, error:
+ 			print "ERROR:", error
+ 		print "OGG Vorbis found, compiling into muscan."

@@ -3,10 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/print/py-cups/Makefile,v 1.1 2008/03/20 13:55:32 ahze Exp $
+#    $MCom: ports/print/py-cups/Makefile,v 1.3 2009/12/29 16:01:46 ahze Exp $
 
 PORTNAME=	cups
-PORTVERSION=	1.9.46
+PORTVERSION=	1.9.47
 CATEGORIES=	print python
 MASTER_SITES=	http://cyberelk.net/tim/data/pycups/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

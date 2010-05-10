@@ -1,5 +1,5 @@
---- sysdeps/freebsd/procwd.c.orig	2009-12-13 18:53:02.827740000 -0500
-+++ sysdeps/freebsd/procwd.c	2009-12-13 18:59:27.000000000 -0500
+--- sysdeps/freebsd/procwd.c.orig	2009-04-19 19:51:00.000000000 +0200
++++ sysdeps/freebsd/procwd.c	2010-05-07 13:17:54.000000000 +0200
 @@ -27,6 +27,9 @@
  #include <sys/sysctl.h>
  #include <sys/param.h>
@@ -19,13 +19,19 @@
  static GPtrArray *
  parse_output(const char *output, glibtop_proc_wd *buf)
  {
-@@ -101,10 +104,14 @@ glibtop_get_proc_wd_s(glibtop *server, g
+@@ -97,24 +100,39 @@ parse_output(const char *output, glibtop
+ char**
+ glibtop_get_proc_wd_s(glibtop *server, glibtop_proc_wd *buf, pid_t pid)
+ {
+-	char path[MAXPATHLEN];
++	int exe_mib[4];
++	size_t len;
  #if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
  	struct kinfo_file *freep, *kif;
  	GPtrArray *dirs;
-+#ifndef HAVE_KINFO_GETFILE
- 	size_t len;
+-	size_t len;
 -	int i;
++#ifndef HAVE_KINFO_GETFILE
  	int name[4];
  #else
 +	int cnt;
@@ -35,15 +41,31 @@
  	char *output;
  #endif
  
-@@ -115,6 +122,7 @@ glibtop_get_proc_wd_s(glibtop *server, g
- 		buf->flags |= (1 << GLIBTOP_PROC_WD_EXE);
+ 	memset (buf, 0, sizeof (glibtop_proc_wd));
++	len = 0;
+ 
+-	g_snprintf(path, sizeof(path), "/proc/%u/file", pid);
+-	if (safe_readlink(path, buf->exe, sizeof(buf->exe)))
+-		buf->flags |= (1 << GLIBTOP_PROC_WD_EXE);
++	exe_mib[0] = CTL_KERN;
++	exe_mib[1] = KERN_PROC;
++	exe_mib[2] = KERN_PROC_PATHNAME;
++	exe_mib[3] = pid;
++
++	if (sysctl(exe_mib, 4, NULL, &len, NULL, 0) == 0) {
++		if (len > sizeof(buf->exe))
++			len = sizeof(buf->exe);
++		if (sysctl(exe_mib, 4, buf->exe, &len, NULL, 0) == 0)
++			buf->flags |= (1 << GLIBTOP_PROC_WD_EXE);
++	}
  
  #if __FreeBSD_version > 800018 || (__FreeBSD_version < 800000 && __FreeBSD_version >= 700104)
 +#ifndef HAVE_KINFO_GETFILE
++	len = 0;
  	name[0] = CTL_KERN;
  	name[1] = KERN_PROC;
  	name[2] = KERN_PROC_FILEDESC;
-@@ -127,10 +135,21 @@ glibtop_get_proc_wd_s(glibtop *server, g
+@@ -127,10 +145,21 @@ glibtop_get_proc_wd_s(glibtop *server, g
  		g_free(freep);
  		return NULL;
  	}

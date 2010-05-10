@@ -3,12 +3,12 @@
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net-im/libpurple/Makefile,v 1.27 2007/10/11 16:32:55 marcus Exp $
+#   $MCom: ports/net-im/libpurple/Makefile,v 1.32 2010/05/10 04:21:19 marcus Exp $
 #
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.6.6
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -90,14 +90,14 @@ GCONF_SCHEMAS=	purple.schemas
 .endif
 .endif
 
-.if defined(WITH_GTKUI) && ${HAVE_GNOME:Mevolutiondataserver}!=""
-USE_GNOME+=		evolutiondataserver
-PLIST_SUB+=		EVO=""
-CONFIGURE_ARGS+=	--enable-gevolution
-.else
+#.if defined(WITH_GTKUI) && ${HAVE_GNOME:Mevolutiondataserver}!=""
+#USE_GNOME+=		evolutiondataserver
+#PLIST_SUB+=		EVO=""
+#CONFIGURE_ARGS+=	--enable-gevolution
+#.else
 CONFIGURE_ARGS+=	--disable-gevolution
 PLIST_SUB+=		EVO="@comment not installed: "
-.endif
+#.endif
 
 .if !defined(WITHOUT_GSTREAMER)
 USE_GSTREAMER+=	core good

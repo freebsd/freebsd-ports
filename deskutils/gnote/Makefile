@@ -3,12 +3,11 @@
 # Whom:					Mezz <mezz@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/gnote/Makefile,v 1.6 2009/11/28 17:54:22 kwm Exp $
+#   $MCom: ports/deskutils/gnote/Makefile,v 1.11 2010/03/14 05:52:37 marcus Exp $
 #
 
 PORTNAME=	gnote
-PORTVERSION=	0.6.3
-PORTREVISION=	3
+PORTVERSION=	0.7.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -21,6 +20,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gconf2 intltool ltverhack gnomepanel
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes

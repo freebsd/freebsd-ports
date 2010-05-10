@@ -22,10 +22,6 @@ lib/libhal.a
 lib/libhal.la
 lib/libhal.so
 lib/libhal.so.1
-lib/libhald_freebsd_probe.a
-lib/libhald_freebsd_probe.la
-lib/libhald_freebsd_probe.so
-lib/libhald_freebsd_probe.so.0
 libdata/pkgconfig/hal-storage.pc
 libdata/pkgconfig/hal.pc
 libexec/hal-storage-cleanup-all-mountpoints
@@ -70,6 +66,7 @@ libexec/hald-probe-smbios
 libexec/hald-probe-storage
 %%USB2%%libexec/hald-probe-usb2-device
 %%USB2%%libexec/hald-probe-usb2-interface
+%%USB2%%libexec/hald-probe-video4linux
 libexec/hald-probe-volume
 libexec/hald-runner
 sbin/hald
@@ -130,5 +127,5 @@ share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 @unexec rmdir /var/run/hald 2>/dev/null || true
 @unexec rmdir /var/cache/hald 2>/dev/null || true
 @unexec rmdir /var/cache 2>/dev/null || true
-@unexec /var/lib/hal 2>/dev/null || true
-@unexec /var/lib 2>/dev/null || true
+@unexec rmdir /var/lib/hal 2>/dev/null || true
+@unexec rmdir /var/lib 2>/dev/null || true

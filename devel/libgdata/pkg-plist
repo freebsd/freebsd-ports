@@ -2,7 +2,6 @@ include/libgdata/gdata/atom/gdata-author.h
 include/libgdata/gdata/atom/gdata-category.h
 include/libgdata/gdata/atom/gdata-generator.h
 include/libgdata/gdata/atom/gdata-link.h
-include/libgdata/gdata/exif/gdata-exif-tags.h
 include/libgdata/gdata/gd/gdata-gd-email-address.h
 include/libgdata/gdata/gd/gdata-gd-im-address.h
 include/libgdata/gdata/gd/gdata-gd-name.h
@@ -25,7 +24,6 @@ include/libgdata/gdata/gdata-service.h
 include/libgdata/gdata/gdata-types.h
 include/libgdata/gdata/gdata-upload-stream.h
 include/libgdata/gdata/gdata.h
-include/libgdata/gdata/georss/gdata-georss-where.h
 include/libgdata/gdata/media/gdata-media-category.h
 include/libgdata/gdata/media/gdata-media-content.h
 include/libgdata/gdata/media/gdata-media-credit.h
@@ -50,9 +48,11 @@ include/libgdata/gdata/services/documents/gdata-documents-spreadsheet.h
 include/libgdata/gdata/services/documents/gdata-documents-text.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-album.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-enums.h
+include/libgdata/gdata/services/picasaweb/gdata-picasaweb-feed.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-file.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-query.h
 include/libgdata/gdata/services/picasaweb/gdata-picasaweb-service.h
+include/libgdata/gdata/services/picasaweb/gdata-picasaweb-user.h
 include/libgdata/gdata/services/youtube/gdata-youtube-content.h
 include/libgdata/gdata/services/youtube/gdata-youtube-credit.h
 include/libgdata/gdata/services/youtube/gdata-youtube-enums.h
@@ -60,10 +60,11 @@ include/libgdata/gdata/services/youtube/gdata-youtube-query.h
 include/libgdata/gdata/services/youtube/gdata-youtube-service.h
 include/libgdata/gdata/services/youtube/gdata-youtube-state.h
 include/libgdata/gdata/services/youtube/gdata-youtube-video.h
+lib/girepository-1.0/GData-0.0.typelib
 lib/libgdata.a
 lib/libgdata.la
 lib/libgdata.so
-lib/libgdata.so.6
+lib/libgdata.so.7
 libdata/pkgconfig/libgdata.pc
 share/doc/gdata/GDataAccessHandler.html
 share/doc/gdata/GDataAccessRule.html
@@ -90,6 +91,7 @@ share/doc/gdata/GDataEntry.html
 share/doc/gdata/GDataFeed.html
 share/doc/gdata/GDataGDEmailAddress.html
 share/doc/gdata/GDataGDIMAddress.html
+share/doc/gdata/GDataGDName.html
 share/doc/gdata/GDataGDOrganization.html
 share/doc/gdata/GDataGDPhoneNumber.html
 share/doc/gdata/GDataGDPostalAddress.html
@@ -142,6 +144,10 @@ share/doc/gdata/ix02.html
 share/doc/gdata/ix03.html
 share/doc/gdata/ix04.html
 share/doc/gdata/ix05.html
+share/doc/gdata/ix06.html
+share/doc/gdata/ix07.html
+share/doc/gdata/ix08.html
+share/doc/gdata/ix09.html
 share/doc/gdata/left.png
 share/doc/gdata/pt01.html
 share/doc/gdata/pt02.html
@@ -152,7 +158,9 @@ share/doc/gdata/right.png
 share/doc/gdata/structure.png
 share/doc/gdata/style.css
 share/doc/gdata/up.png
+share/gir-1.0/GData-0.0.gir
 share/locale/ca/LC_MESSAGES/gdata.mo
+share/locale/cs/LC_MESSAGES/gdata.mo
 share/locale/de/LC_MESSAGES/gdata.mo
 share/locale/el/LC_MESSAGES/gdata.mo
 share/locale/en_GB/LC_MESSAGES/gdata.mo
@@ -161,13 +169,18 @@ share/locale/eu/LC_MESSAGES/gdata.mo
 share/locale/fr/LC_MESSAGES/gdata.mo
 share/locale/gl/LC_MESSAGES/gdata.mo
 share/locale/hu/LC_MESSAGES/gdata.mo
+share/locale/it/LC_MESSAGES/gdata.mo
+share/locale/ja/LC_MESSAGES/gdata.mo
 share/locale/nb/LC_MESSAGES/gdata.mo
 share/locale/pa/LC_MESSAGES/gdata.mo
 share/locale/pl/LC_MESSAGES/gdata.mo
 share/locale/pt/LC_MESSAGES/gdata.mo
 share/locale/pt_BR/LC_MESSAGES/gdata.mo
+share/locale/ru/LC_MESSAGES/gdata.mo
+share/locale/sl/LC_MESSAGES/gdata.mo
 share/locale/sv/LC_MESSAGES/gdata.mo
 share/locale/uk/LC_MESSAGES/gdata.mo
+share/locale/zh_CN/LC_MESSAGES/gdata.mo
 share/locale/zh_HK/LC_MESSAGES/gdata.mo
 share/locale/zh_TW/LC_MESSAGES/gdata.mo
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
@@ -190,9 +203,7 @@ share/locale/zh_TW/LC_MESSAGES/gdata.mo
 @dirrm include/libgdata/gdata/services/calendar
 @dirrm include/libgdata/gdata/services
 @dirrm include/libgdata/gdata/media
-@dirrm include/libgdata/gdata/georss
 @dirrm include/libgdata/gdata/gd
-@dirrm include/libgdata/gdata/exif
 @dirrm include/libgdata/gdata/atom
 @dirrm include/libgdata/gdata
 @dirrm include/libgdata

@@ -1,0 +1,2 @@
+libexec/at-spi2-registryd
+share/dbus-1/services/org.a11y.atspi.Registry.service
