@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.1.93
+PORTVERSION=	0.1.94
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/
