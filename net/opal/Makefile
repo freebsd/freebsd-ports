@@ -19,6 +19,8 @@ OPTIONS=	FFMPEG	"Support H263 audio/video codec"	on \
 
 LIB_DEPENDS=	pt_r:${PORTSDIR}/devel/pwlib
 
+CONFLICTS=	opal-3.*
+
 # In opal's Makefile the default make's target is optshared
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu` optshared
 USE_GMAKE=	yes
