@@ -64,6 +64,7 @@
     SUBDIR += everygui
     SUBDIR += evolution-jescs
     SUBDIR += fbreader
+    SUBDIR += fet
     SUBDIR += freemind
     SUBDIR += fusenshi
     SUBDIR += gaddr
