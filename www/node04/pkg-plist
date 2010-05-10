@@ -5,10 +5,8 @@ bin/node
 include/node/config.h
 include/node/eio.h
 include/node/ev.h
-include/node/evcom.h
 include/node/node.h
 include/node/node_events.h
-include/node/node_net.h
 include/node/node_object_wrap.h
 include/node/node_version.h
 include/node/v8.h
