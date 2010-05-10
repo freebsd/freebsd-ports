@@ -667,6 +667,7 @@
     SUBDIR += proxytunnel
     SUBDIR += pscan
     SUBDIR += pssh
+    SUBDIR += pulledpork
     SUBDIR += pure-sfv
     SUBDIR += putty
     SUBDIR += pvk

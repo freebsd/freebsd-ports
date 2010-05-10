@@ -1,0 +1,37 @@
+pulledpork is a Perl script which helps to update your Snort 2.8+ rules.
+
+The sample config file comes predefined with the new settings for
+snort.org downloads, which will change in June 2010.
+
+BE SURE to read through the master pulledpork.conf file thoroughly,
+as there are many changes as of snort 2.8.6.0 that WILL affect you,
+even if you are NOT yet running 2.8.6.0!
+
+Features:
+    * Flowbit tracking!
+    * capability to specify base ruleset (see README.RULESETS) in master
+      pulledpork.conf file.
+    * Handle preprocessor and sensitive-information rulesets
+    * Ability to define sid ranges in any of the sid modification .conf files
+    * Ability to specify references in any of the sid modification .conf files
+    * Ability to ignore entire rule categories (i.e. not include them)
+    * Specify locally stored rules files that need their meta data included
+      in sid-msg.map
+    * Ability to specify your arch for so_rules
+    * Rules are written to only two distinct files
+    * Support metadata based VRT recommended rulesets
+    * Maintain an optional rule changelog
+    * Support for setting rules to Drop
+    * Support for multi-line rules
+    * Rule modification, i.e. disabling of specific rules within rule sets
+    * Outputs changes in rules files if any rules have been added / modified
+    * Compares new rules files with current rule sets
+    * Automated retrieval of certain variables (Distro, Snort Version.. etc)
+    * Downloads latest rules file
+    * Verifies MD5 of local rules file
+    * If MD5 has not changed from snort.org.. doesn't fetch files again
+    * handle both rules and so_rules
+    * Capability to generate stub files
+
+
+WWW: http://code.google.com/p/pulledpork/
