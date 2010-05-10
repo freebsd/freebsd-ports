@@ -249,7 +249,7 @@ usage () {
 	echo "Common flags: [--force-config] [-CGHKgntvw B|b f|i D|d]"
 	echo "    [[[--packages|-P]|[--packages-only|-PP]] | [--packages-build]]"
 	echo "    [--packages-if-newer] [--delete-build-only] [--always-fetch]"
-	echo "    [--local-packagedir=<path>] [--delete-packages]"
+	echo "    [--local-packagedir=<path>] [--packages-local] [--delete-packages]"
 	echo "    [--no-confirm] [--no-term-title] [--no-index-fetch]"
 	echo "    [--index|--index-first|--index-only]"
 	echo "    [-m <arguments for make>] [-x <glob pattern to exclude from building>]"
@@ -336,6 +336,7 @@ usage () {
 	echo '--always-fetch fetch package even if it already exists locally'
 	echo '--local-packagedir=<path> where local packages can be found,'
 	echo '   will fall back to fetching if no local version exists'
+	echo '--packages-local use packages from --local-packagedir only'
 	echo '--delete-packages after installing from a package, delete it'
 	echo ''
 	echo '-l list installed ports by category'
@@ -396,19 +397,26 @@ pm_sv             () { [ -n "$PM_SU_VERBOSE" ] && echo "===>>> SU $*"; }
 #=============== End functions we always want to have ===============
 
 packages_init () {
-	local e1 e2
+	local e1 e2 e3
 
 e1="The -P/--packages and -PP/--packages-only options are mutually exclusive"
 e2="The --packages-build option and the -P[P] options are mutually exclusive"
+e3="The --packages-if-newer and -PP/--packages-only options are mutually exclusive"
 
 	case "$1" in
-	first)		[ "$PM_PACKAGES" = only ] && fail $e1
-			[ -n "$PM_PACKAGES_BUILD" ] && fail $e2 ;;
-	only)		[ "$PM_PACKAGES" = first ] && fail $e1
-			[ -n "$PM_PACKAGES_BUILD" ] && fail $e2 ;;
-	build)		case "$PM_PACKAGES" in first|only) fail $e2 ;; esac ;;
-	newer)		[ -z "$PM_PACKAGES" -a -z "$PM_PACKAGES_BUILD" ] && {
-				PM_PACKAGES=newer ; export PM_PACKAGES; } ;;
+	first)	[ "$PM_PACKAGES" = only ] && fail $e1
+		[ -n "$PM_PACKAGES_BUILD" ] && fail $e2
+		[ -z "$PM_PACKAGES" ] && {
+			PM_PACKAGES=first ; export PM_PACKAGES; } ;;
+	only)	[ "$PM_PACKAGES" = first ] && fail $e1
+		[ "$PM_PACKAGES" = newer ] && fail $e3
+		[ -n "$PM_PACKAGES_BUILD" ] && fail $e2 ;;
+	build)	case "$PM_PACKAGES" in first|only) fail $e2 ;; esac ;;
+	newer)	[ "$PM_PACKAGES" = only ] && fail $e3
+		[ -z "$PM_PACKAGES" -a -z "$PM_PACKAGES_BUILD" ] && {
+			PM_PACKAGES=newer ; export PM_PACKAGES; } ;;
+	local)	[ -z "$PM_PACKAGES" -a -z "$PM_PACKAGES_BUILD" ] && {
+			PM_PACKAGES=local ; export PM_PACKAGES; } ;;
 	esac
 }
 
@@ -428,8 +436,7 @@ for var in "$@" ; do
 	case "$var" in
 	-PP[A-Za-z0-9]*|-*[A-Za-z0-9]PP*)
 				fail "The -PP option must stand alone" ;;
-	--packages)		packages_init first
-				PM_PACKAGES=first ; export PM_PACKAGES ;;
+	--packages)		packages_init first ;;
 	-PP|--packages-only)	packages_init only
 				PM_PACKAGES=only ; export PM_PACKAGES ;;
 	--packages-build)	packages_init build
@@ -439,6 +446,9 @@ for var in "$@" ; do
 	--packages-if-newer)	packages_init newer
 				PM_PACKAGES_NEWER=pmp_newer
 				export PM_PACKAGES_NEWER ;;
+	--packages-local)	packages_init local
+				PM_PACKAGES_LOCAL=pmp_local
+				export PM_PACKAGES_LOCAL ;;
 	--always-fetch)		PM_ALWAYS_FETCH=pm_always_fetch
 				export PM_ALWAYS_FETCH ;;
 	--local-packagedir=*)	LOCAL_PACKAGEDIR=${var#--local-packagedir=}
@@ -454,10 +464,12 @@ for var in "$@" ; do
 				export PM_NO_TERM_TITLE ;;
 	--no-index-fetch)	PM_NO_INDEX_FETCH=pm_no_index_fetch ;;
 	--index)		cross_idx index ; PM_INDEX=pm_index ; export PM_INDEX ;;
-	--index-first)		PM_INDEX=pm_index ; PM_INDEX_FIRST=pm_index_first
-				cross_idx first ; export PM_INDEX PM_INDEX_FIRST ;;
-	--index-only)		PM_INDEX=pm_index ; PM_INDEX_ONLY=pm_index_only
-				cross_idx only ; export PM_INDEX PM_INDEX_ONLY ;;
+	--index-first)		cross_idx first ; PM_INDEX=pm_index
+				PM_INDEX_FIRST=pm_index_first
+				export PM_INDEX PM_INDEX_FIRST ;;
+	--index-only)		cross_idx only ; PM_INDEX=pm_index
+				PM_INDEX_ONLY=pm_index_only
+				export PM_INDEX PM_INDEX_ONLY ;;
 	--help)			usage 0 ;;
 	--version)		version ; exit 0 ;;
 	--clean-distfiles)	CLEAN_DISTFILES=clean_distfiles ;;
@@ -478,9 +490,17 @@ unset var
 [ -n "$PM_INDEX" -a -n "$CHECK_PORT_DBDIR" ] &&
 	fail 'The --index* and --check-port-dbdir options are mutually exclusive'
 
+[ -n "$PM_PACKAGES_LOCAL" -a -z "$LOCAL_PACKAGEDIR" ] &&
+	fail 'The --packages-local option requires --local-packagedir to be defined'
+
 # Do this here so it can use the fancy functions above, and default values
 # can be overridden in the rc files
 if [ "$$" -eq "$PM_PARENT_PID" ]; then
+	if [ -n "$PM_PACKAGES" -o -n "$PM_PACKAGES_BUILD" ]; then
+		[ `/sbin/sysctl -n kern.osreldate 2>/dev/null` -lt 600400 ] &&
+		fail Package installation support requires FreeBSD 6.4 or newer
+	fi
+
 	if [ -z "$pd" ]; then
 		if [ -z "$PORTSDIR" ]; then
 			[ -d /usr/ports ] && pd=/usr/ports
@@ -503,9 +523,17 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
 			: ${FETCHINDEX:='fetch -am -o'}
 			: ${MASTER_SITE_INDEX:='http://www.FreeBSD.org/ports/'}
 
+			index_fetch="$FETCHINDEX ${PM_INDEX}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2"
+			do_index_fetch=yes_index_fetch
+
 			index_time=`stat -f '%Um' ${PM_INDEX}.bz2 2>/dev/null`
-			pm_sv Updating INDEX file
-			$PM_SU_CMD $FETCHINDEX ${PM_INDEX}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
+
+			[ -n "$index_time" ] && {
+				$index_fetch 2>/dev/null && do_index_fetch=no_index_fetch; }
+
+			[ "$do_index_fetch" = yes_index_fetch ] && {
+				pm_sv 'Updating INDEX file'; $PM_SU_CMD $index_fetch; }
+
 			if [ ${index_time:-0} -ne `stat -f '%Um' ${PM_INDEX}.bz2 2>/dev/null` ]; then
 				temp_index=`pm_mktemp index`
 				bunzip2 < ${PM_INDEX}.bz2 > $temp_index
@@ -513,7 +541,7 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
 				unlink $temp_index
 				unset temp_index
 			fi
-			unset index_time
+			unset index_fetch do_index_fetch index_time
 		else
 			[ -r "$PM_INDEX" ] ||
 				fail "The --no-index-fetch option was used, but $PM_INDEX does not exist"
@@ -547,12 +575,13 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
 			fi
 		fi
 	fi
-	if [ -z "$distdir" -a "$PM_PACKAGES" != only ]; then
-		distdir=`pm_make_b -f/usr/share/mk/bsd.port.mk -V DISTDIR 2>/dev/null`
-		# In case it is a symlink
-		distdir="${distdir%/}/"
+	export pd pdb
+
+	if [ -z "$DISTDIR" -a "$PM_PACKAGES" != only -a -z "$CHECK_DEPENDS" -a \
+	    -z "$CHECK_PORT_DBDIR" -a -z "$LIST_ORIGINS" ]; then
+		DISTDIR=`pm_make_b -f/usr/share/mk/bsd.port.mk -V DISTDIR 2>/dev/null`
 	fi
-	export pd pdb distdir
+	[ -n "$DISTDIR" ] && { DISTDIR="${DISTDIR%/}/"; export DISTDIR; }
 
 	[ -z "$port_dbdir" -a -d /var/db/ports ] && port_dbdir=/var/db/ports
 	[ -z "$port_dbdir" ] &&
@@ -562,10 +591,6 @@ if [ "$$" -eq "$PM_PARENT_PID" ]; then
 	if [ -n "$PM_PACKAGES_BUILD" -o -n "$PM_DEL_BUILD_ONLY" ]; then
 		PM_BUILD_ONLY_LIST=pm_bol
 		export PM_BUILD_ONLY_LIST
-	fi
-	if [ -n "$PM_PACKAGES" -o -n "$PM_PACKAGES_BUILD" ]; then
-		[ `/sbin/sysctl -n kern.osreldate 2>/dev/null` -lt 600400 ] &&
-		fail Package installation support requires FreeBSD 6.4 or newer
 	fi
 fi
 
@@ -878,8 +903,8 @@ ports_by_category () {
 delete_empty_dist_subdirs () {
 	# Get back to somewhere safe so we do not
 	# delete our CWD out from under ourselves
-	pm_cd $distdir || fail "Cannot cd into $distdir"
-	find -d $distdir -type d \( -empty -and ! -path \*\.zfs/\* \) -delete
+	pm_cd $DISTDIR || fail "Cannot cd into $DISTDIR"
+	find -d $DISTDIR -type d \( -empty -and ! -path \*\.zfs/\* \) -delete
 }
 
 # Takes a pattern as input
@@ -910,15 +935,15 @@ find_glob_dirs () {
 #=============== Begin code relevant only to --features ===============
 
 if [ -n "$CLEAN_DISTFILES" ]; then
-	[ "$distdir" != '/' ] || fail 'There is no DISTDIR to clean'
+	[ -n "$DISTDIR" ] || fail 'There is no DISTDIR to clean'
 
 	# Set the file name here since we are usually called in a subshell
 	DI_FILES=`pm_mktemp DI-FILES`
 	read_distinfos
 
 	echo "===>>> Checking for stale distfiles"
-	for df in `find $distdir -type f | sort`; do
-		f=${df#$distdir}
+	for df in `find $DISTDIR -type f | sort`; do
+		f=${df#$DISTDIR}
 		if ! grep -ql $f $DI_FILES; then
 			if [ -n "$ALL" ]; then
 				echo "===>>> Deleting $f"
@@ -1065,8 +1090,7 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stuvwx:' COMMAND_LINE_ARGUMENT ; do
 	H)	HIDE_BUILD=Hopt; ARGS="-H $ARGS" ;;
 	K)	DONT_POST_CLEAN=Kopt; ARGS="-K $ARGS" ;;
 	L)	LIST_PLUS=Lopt ;;
-	P)	packages_init first
-		PM_PACKAGES=first ; export PM_PACKAGES ;;
+	P)	packages_init first ;;
 	R)	RESTART=Ropt ; ARGS="-R $ARGS" ;;
 	a)	UPDATE_ALL=aopt ;;
 	b)	BACKUP=bopt; ARGS="-b $ARGS" ;;
@@ -1082,7 +1106,8 @@ while getopts 'BCDFGHKLPRabde:fghilm:nop:r:stuvwx:' COMMAND_LINE_ARGUMENT ; do
 		;;
 	n)	NO_ACTION=nopt; ARGS="-n $ARGS" ;;
 	o)	REPLACE_ORIGIN=oopt ;;
-	p)	portdir="${OPTARG#$pd/}" ; portdir=${portdir%/} ;;
+	p)	echo "===>>> The -p option has been deprecated" ; echo ''
+		portdir="${OPTARG#$pd/}" ; portdir=${portdir%/} ;;
 	r)	UPDATE_REQ_BYS=ropt
 		if [ -d "$pdb/$OPTARG" ]; then
 			glob_dirs=$OPTARG
@@ -1158,6 +1183,7 @@ if [ -n "$LIST" -o -n "$LIST_PLUS" ]; then
 	[ $# -gt 0 ] && fail 'The -[lL] options are not compatible with updates or installs'
 fi
 unset my_environment
+unset -f test_command_line
 
 #=============== Begin functions for getopts features and main ===============
 
@@ -1461,10 +1487,10 @@ delete_dist_list () {
 }
 
 find_and_delete_distfiles () {
-	# Global: distfiles distfiles_checked delete_all
+	# Global: port_subdir DISTDIR distfiles distfiles_checked delete_all
 	local ps pattern file answer
 
-	ps=${port_subdir#$distdir}
+	ps=${port_subdir#$DISTDIR}
 
 	pattern=${1%[_-]*}
 	for file in ${pattern}*; do
@@ -1509,7 +1535,7 @@ find_and_delete_distfiles () {
 }
 
 set_distfiles_and_subdir () {
-	# Global: dist_list_files distfiles port_subdir distdir
+	# Global: dist_list_files distfiles port_subdir DISTDIR
 
 	[ -z "$dist_list_files" ] && find_dl_distfiles $1
 
@@ -1529,9 +1555,9 @@ set_distfiles_and_subdir () {
 	if [ -z "$port_subdir" ]; then
 		port_subdir=`pm_make -V DIST_SUBDIR`
 		if [ -n "$port_subdir" ]; then
-			port_subdir="${distdir}${port_subdir}/"
+			port_subdir="${DISTDIR}${port_subdir}/"
 		else
-			port_subdir=$distdir
+			port_subdir=$DISTDIR
 		fi
 	fi
 	if [ -d "$port_subdir" ]; then
@@ -1598,7 +1624,7 @@ delete_stale_distfiles () {
 }
 
 delete_all_distfiles () {
-	# Global: delete_all distdir
+	# Global: delete_all DISTDIR
 	local origin rc delete_current
 
 	# In case we are called more than once
@@ -1617,9 +1643,9 @@ delete_all_distfiles () {
 			local answer f ; read answer
 			case "$answer" in
 			[yY])	for f in $dist_list_files; do
-					if [ -f "${distdir}${f}" ]; then
-					echo "       Deleting ${distdir}${f}"
-						pm_unlink ${distdir}${f}
+					if [ -f "${DISTDIR}${f}" ]; then
+					echo "       Deleting ${DISTDIR}${f}"
+						pm_unlink ${DISTDIR}${f}
 					fi
 				done ;;
 			esac
@@ -1799,7 +1825,8 @@ fi
 
 #=============== End code relevant only to getopts features ===============
 
-[ "$distdir" = '/' -a "$PM_PACKAGES" != only ] && fail 'The value of DISTDIR cannot be empty'
+[ -z "$DISTDIR" -a "$PM_PACKAGES" != only -a -z "$DONT_SCRUB_DISTFILES" ] &&
+	fail 'The value of DISTDIR cannot be empty'
 
 #=============== Begin functions for main ===============
 
@@ -2414,15 +2441,15 @@ if [ "$$" -eq "$PM_PARENT_PID" -a -z "$SHOW_WORK" ]; then
 	export CUR_DEPS DISPLAY_LIST INSTALLED_LIST PM_DEPTH IPC_SAVE
 
 	if [ -n "$LOCALBASE" ]; then
-		LOCALBASE_COMPAT="$LOCALBASE/lib/compat"
+		LOCALBASE_COMPAT="$LOCALBASE/lib/compat/pkg"
 	else
 		PLB=`pm_make_b -f/usr/share/mk/bsd.port.mk -V LOCALBASE 2>/dev/null`
 		if [ -n "$PLB" ]; then
-			LOCALBASE_COMPAT="$PLB/lib/compat"
+			LOCALBASE_COMPAT="$PLB/lib/compat/pkg"
 		else
-			PLB=`head -1 $PM_INDEX | cut -f 3 -d\|`
+			PLB=`head -1 $PM_INDEX | cut -f 3 -d\| 2>/dev/null`
 			if [ -d "$PLB" ]; then
-				LOCALBASE_COMPAT="${PLB}/lib/compat"
+				LOCALBASE_COMPAT="${PLB}/lib/compat/pkg"
 			else
 				fail 'The value of LOCALBASE cannot be empty'
 			fi
@@ -3001,7 +3028,7 @@ fetch_package () {
 			$PM_SU_CMD fetch $FETCH_ARGS -o $ppd ${sitepath}${1}.tbz 2>/dev/null; }
 	fi
 }
-	if [ -z "$PACKAGESITE" ]; then
+	if [ -z "$PACKAGESITE" -a -z "$PM_PACKAGES_LOCAL" ]; then
 		release=`uname -r`
 
 		case "$release" in
@@ -3047,7 +3074,7 @@ fetch_package () {
 		fi
 	fi
 
-	if [ -z "$latest_pv" ]; then
+	if [ -z "$latest_pv" -a -z "$PM_PACKAGES_LOCAL" ]; then
 		dirlist=`echo ${TMPDIR}/f-${PM_PARENT_PID}-dl-${portdir%/*}*`
 		if [ ! -r "$dirlist" ]; then
 			pm_unlink $dirlist		# JIC
@@ -3064,7 +3091,7 @@ fetch_package () {
 	fi
 	unset dirlist s
 
-	if [ -z "$latest_pv" ]; then
+	if [ -z "$latest_pv" -a -z "$PM_PACKAGES_LOCAL" ]; then
 		fetch_package $new_port try
 		if [ $? -eq 0 ]; then
 			latest_pv=$new_port
@@ -3075,7 +3102,13 @@ fetch_package () {
 
 	if [ -z "$latest_pv" ]; then
 		echo "===>>> Package and/or archive not found at:"
-		echo "${sitepath}"
+		if [ -n "$LOCAL_PACKAGEDIR" ]; then
+			echo "	$LOCAL_PACKAGEDIR"
+			if [ -z "$PM_PACKAGES_LOCAL" ]; then
+				echo '	or'
+			fi
+		fi
+		[ -z "$PM_PACKAGES_LOCAL" ] && echo "	${sitepath}"
 		echo ''
 		echo "       Check the pkg_add(1) man page for information"
 		echo "       on setting the PACKAGESITE environment variable"
@@ -3168,6 +3201,7 @@ if [ -z "$use_package" ]; then
 		fi
 	fi
 
+	[ -z "$PM_INDEX_ONLY" ] && pm_cd_pd $portdir
 	[ -z "$DONT_PRE_CLEAN" ] && { pm_make clean NOCLEANDEPENDS=ncd ||
 		fail 'make clean failed'; echo ''; }
 
@@ -3220,13 +3254,13 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ]; then
 			temp="${temp}$file "
 		done
 		if [ -n "$temp" ]; then
-			if [ ! -d "$LOCALBASE_COMPAT/pkg" ]; then
-				pm_sv Creating $LOCALBASE_COMPAT/pkg for -w
-				pm_mkdir_s $LOCALBASE_COMPAT/pkg
+			if [ ! -d "$LOCALBASE_COMPAT" ]; then
+				pm_sv Creating $LOCALBASE_COMPAT for -w
+				pm_mkdir_s $LOCALBASE_COMPAT
 			fi
 
 			pm_sv Copying old shared libraries for -w
-			$PM_SU_CMD cp -p $temp $LOCALBASE_COMPAT/pkg/
+			$PM_SU_CMD cp -p $temp ${LOCALBASE_COMPAT}/
 		fi
 
 		pm_unlink $ldconfig_out ; unset ldconfig_out temp file
@@ -3301,12 +3335,12 @@ echo ''
 
 # Remove saved libs that match newly installed files
 
-temp=`find $LOCALBASE_COMPAT/pkg -type d -empty 2>/dev/null`
-if [ -z "$temp" -a -d "$LOCALBASE_COMPAT/pkg" ]; then
+temp=`find $LOCALBASE_COMPAT -type d -empty 2>/dev/null`
+if [ -z "$temp" -a -d "$LOCALBASE_COMPAT" ]; then
 	unset files
 	for file in `pkg_info -q -L $new_port`; do
-		[ -f "$LOCALBASE_COMPAT/pkg/${file##*/}" ] && {
-			files="${files}$LOCALBASE_COMPAT/pkg/${file##*/} "; }
+		[ -f "${LOCALBASE_COMPAT}/${file##*/}" ] && {
+			files="${files}${LOCALBASE_COMPAT}/${file##*/} "; }
 	done
 
 	if [ -n "$files" ]; then
@@ -3317,9 +3351,9 @@ if [ -z "$temp" -a -d "$LOCALBASE_COMPAT/pkg" ]; then
 	unset temp file files
 fi
 
-[ -z "$temp" ] && temp=`find $LOCALBASE_COMPAT/pkg -type d -empty 2>/dev/null`
+[ -z "$temp" ] && temp=`find $LOCALBASE_COMPAT -type d -empty 2>/dev/null`
 if [ -d "$temp" ]; then
-	pm_sv Deleting the empty $LOCALBASE_COMPAT/pkg
+	pm_sv Deleting the empty $LOCALBASE_COMPAT
 	pm_rmdir_s $temp
 fi
 unset temp
@@ -3341,7 +3375,7 @@ if [ -n "$distfiles" ]; then
 
 	ds=`pm_make -V DIST_SUBDIR`
 	[ -n "$ds" ] && ds="${ds}/"
-	port_subdir="${distdir}${ds}"		# Also for *delete*distfiles()
+	port_subdir="${DISTDIR}${ds}"		# Also for *delete*distfiles()
 
 	if [ -s distinfo ]; then
 		distinfo=distinfo
