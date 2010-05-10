@@ -1,0 +1,22 @@
+A module that caches a data structure against a filename, statting the
+file to determine whether it has changed and needs to be re-parsed.
+You supply a routine to generate the data structure given the filename.
+
+This module is recommended for files which change infrequently but
+are read often, especially if they are expensive to parse.
+
+This approach has the advantage over lazy caching that multiple
+processes holding a cache will all update at the same time so you
+will not get inconsistent results if you request data from different
+processes.
+
+The module itself is simply a factory for various backend modules.
+The distribution includes backends for in-memory caching or file
+caching using Storable, plus an adaptor to use any modules offering
+the Cache or Cache::Cache interfaces as the cache implementation.
+
+Data structures are automatically serialised/deserialised by the
+backend modules if they are being persisted somewhere other than
+in memory (e.g. on the filesystem).
+
+WWW: http://search.cpan.org/dist/Cache-AgainstFile/
