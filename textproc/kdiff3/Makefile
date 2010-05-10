@@ -6,22 +6,18 @@
 #
 
 PORTNAME=	kdiff3
-PORTVERSION=	0.9.92
-PORTREVISION=	5
+PORTVERSION=	0.9.95
 CATEGORIES=	textproc kde
 MASTER_SITES=	SF
 
-MAINTAINER=	h.eichmann@gmx.de
-COMMENT=	A KDE3 graphical frontend for diff
+MAINTAINER=	brucec@FreeBSD.org
+COMMENT=	A KDE4 graphical frontend for diff
 
-USE_KDEBASE_VER=3
-USE_AUTOTOOLS=	libtool:22
+USE_KDE4=	kdebase kdeprefix kdehier automoc4
+USE_CMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
 USE_GETTEXT=	yes
-INSTALLS_ICONS=	yes
-USE_LDCONFIG=	${PREFIX}/lib/kde3
-
-CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
-
-MAN1=	kdiff3.1
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>
