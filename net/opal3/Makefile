@@ -17,6 +17,8 @@ COMMENT=	VoIP abstraction library
 
 LIB_DEPENDS=	pt-2.6.[4-9]:${PORTSDIR}/devel/ptlib26
 
+CONFLICTS=	opal-2.*
+
 WRKSRC=		${WRKDIR}/opal-${PORTVERSION}
 
 USE_BZIP2=	yes
