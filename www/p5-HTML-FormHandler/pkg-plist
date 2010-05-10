@@ -19,6 +19,7 @@
 %%SITE_PERL%%/HTML/FormHandler/Field.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Boolean.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Checkbox.pm
+%%SITE_PERL%%/HTML/FormHandler/Field/Captcha.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Compound.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Date.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/NoValue.pm
@@ -61,6 +62,9 @@
 %%SITE_PERL%%/HTML/FormHandler/I18N/en_us.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/de_de.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/tr_tr.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/ua_ua.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/ru_ru.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/hu_hu.pm
 %%SITE_PERL%%/HTML/FormHandler/InitResult.pm
 %%SITE_PERL%%/HTML/FormHandler/Manual.pod
 %%SITE_PERL%%/HTML/FormHandler/Manual/Catalyst.pod
@@ -85,6 +89,7 @@
 %%SITE_PERL%%/HTML/FormHandler/Types.pm
 %%SITE_PERL%%/HTML/FormHandler/Validate.pm
 %%SITE_PERL%%/HTML/FormHandler/TraitFor/I18N.pm
+%%SITE_PERL%%/HTML/FormHandler/TraitFor/Captcha.pm
 %%SITE_PERL%%/HTML/FormHandler/Validate/Actions.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/ApplyRole.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Checkbox.pm
@@ -102,12 +107,15 @@
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Upload.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Form/Simple.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Form/Table.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Role/HTMLAttributes.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Role/SelectedOption.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Base.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/None.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Simple.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Table.pm
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Form
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Role
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Field
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Validate
@@ -125,4 +133,6 @@
 @dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates
 @dirrmtry %%SITE_PERL%%/auto/share/dist/HTML-FormHandler
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler
+@dirrmtry %%SITE_PERL%%/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
