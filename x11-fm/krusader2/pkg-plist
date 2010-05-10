@@ -388,6 +388,7 @@ share/apps/krusader/icons/hicolor/64x64/mimetypes/tgz.png
 share/apps/krusader/icons/hicolor/64x64/mimetypes/txt.png
 share/apps/krusader/krusaderlisterui.rc
 share/apps/krusader/krusaderui.rc
+share/apps/krusader/layout.xml
 share/apps/krusader/midnight_commander.color
 share/apps/krusader/splash.png
 share/apps/krusader/total_commander.color
@@ -451,45 +452,45 @@ share/doc/HTML/en/krusader/useraction-xml.docbook
 share/doc/HTML/en/krusader/useractions.docbook
 share/doc/HTML/en/krusader/vfs.docbook
 share/doc/HTML/en/krusader/viewer-editor.docbook
-share/doc/HTML/sv/krusader/advanced-functions.docbook
-share/doc/HTML/sv/krusader/archives.docbook
-share/doc/HTML/sv/krusader/basic-functions.docbook
-share/doc/HTML/sv/krusader/bookmarks.docbook
-share/doc/HTML/sv/krusader/checksum.docbook
-share/doc/HTML/sv/krusader/common
-share/doc/HTML/sv/krusader/compare.docbook
-share/doc/HTML/sv/krusader/configuration-files.docbook
-share/doc/HTML/sv/krusader/credits-and-license.docbook
-share/doc/HTML/sv/krusader/diskusage.docbook
-share/doc/HTML/sv/krusader/editors-note.docbook
-share/doc/HTML/sv/krusader/faq.docbook
-share/doc/HTML/sv/krusader/features.docbook
-share/doc/HTML/sv/krusader/glossary.docbook
-share/doc/HTML/sv/krusader/help.docbook
-share/doc/HTML/sv/krusader/index.cache.bz2
-share/doc/HTML/sv/krusader/index.docbook
-share/doc/HTML/sv/krusader/installation.docbook
-share/doc/HTML/sv/krusader/introduction.docbook
-share/doc/HTML/sv/krusader/java.docbook
-share/doc/HTML/sv/krusader/keyboard-commands.docbook
-share/doc/HTML/sv/krusader/konfigurator.docbook
-share/doc/HTML/sv/krusader/krusader-tools.docbook
-share/doc/HTML/sv/krusader/locate.docbook
-share/doc/HTML/sv/krusader/menu-commands.docbook
-share/doc/HTML/sv/krusader/mount.docbook
-share/doc/HTML/sv/krusader/mouse-commands.docbook
-share/doc/HTML/sv/krusader/occupied-space.docbook
-share/doc/HTML/sv/krusader/profiles.docbook
-share/doc/HTML/sv/krusader/release-overview.docbook
-share/doc/HTML/sv/krusader/remote-connections.docbook
-share/doc/HTML/sv/krusader/search.docbook
-share/doc/HTML/sv/krusader/splitter.docbook
-share/doc/HTML/sv/krusader/synchronizer.docbook
-share/doc/HTML/sv/krusader/user-interface.docbook
-share/doc/HTML/sv/krusader/useraction-xml.docbook
-share/doc/HTML/sv/krusader/useractions.docbook
-share/doc/HTML/sv/krusader/vfs.docbook
-share/doc/HTML/sv/krusader/viewer-editor.docbook
+share/doc/HTML/pt_BR/krusader/advanced-functions.docbook
+share/doc/HTML/pt_BR/krusader/archives.docbook
+share/doc/HTML/pt_BR/krusader/basic-functions.docbook
+share/doc/HTML/pt_BR/krusader/bookmarks.docbook
+share/doc/HTML/pt_BR/krusader/checksum.docbook
+share/doc/HTML/pt_BR/krusader/common
+share/doc/HTML/pt_BR/krusader/compare.docbook
+share/doc/HTML/pt_BR/krusader/configuration-files.docbook
+share/doc/HTML/pt_BR/krusader/credits-and-license.docbook
+share/doc/HTML/pt_BR/krusader/diskusage.docbook
+share/doc/HTML/pt_BR/krusader/editors-note.docbook
+share/doc/HTML/pt_BR/krusader/faq.docbook
+share/doc/HTML/pt_BR/krusader/features.docbook
+share/doc/HTML/pt_BR/krusader/glossary.docbook
+share/doc/HTML/pt_BR/krusader/help.docbook
+share/doc/HTML/pt_BR/krusader/index.cache.bz2
+share/doc/HTML/pt_BR/krusader/index.docbook
+share/doc/HTML/pt_BR/krusader/installation.docbook
+share/doc/HTML/pt_BR/krusader/introduction.docbook
+share/doc/HTML/pt_BR/krusader/java.docbook
+share/doc/HTML/pt_BR/krusader/keyboard-commands.docbook
+share/doc/HTML/pt_BR/krusader/konfigurator.docbook
+share/doc/HTML/pt_BR/krusader/krusader-tools.docbook
+share/doc/HTML/pt_BR/krusader/locate.docbook
+share/doc/HTML/pt_BR/krusader/menu-commands.docbook
+share/doc/HTML/pt_BR/krusader/mount.docbook
+share/doc/HTML/pt_BR/krusader/mouse-commands.docbook
+share/doc/HTML/pt_BR/krusader/occupied-space.docbook
+share/doc/HTML/pt_BR/krusader/profiles.docbook
+share/doc/HTML/pt_BR/krusader/release-overview.docbook
+share/doc/HTML/pt_BR/krusader/remote-connections.docbook
+share/doc/HTML/pt_BR/krusader/search.docbook
+share/doc/HTML/pt_BR/krusader/splitter.docbook
+share/doc/HTML/pt_BR/krusader/synchronizer.docbook
+share/doc/HTML/pt_BR/krusader/user-interface.docbook
+share/doc/HTML/pt_BR/krusader/useraction-xml.docbook
+share/doc/HTML/pt_BR/krusader/useractions.docbook
+share/doc/HTML/pt_BR/krusader/vfs.docbook
+share/doc/HTML/pt_BR/krusader/viewer-editor.docbook
 share/doc/HTML/uk/krusader/advanced-functions.docbook
 share/doc/HTML/uk/krusader/archives.docbook
 share/doc/HTML/uk/krusader/basic-functions.docbook
@@ -529,6 +530,8 @@ share/doc/HTML/uk/krusader/useraction-xml.docbook
 share/doc/HTML/uk/krusader/useractions.docbook
 share/doc/HTML/uk/krusader/vfs.docbook
 share/doc/HTML/uk/krusader/viewer-editor.docbook
+share/icons/hicolor/128x128/apps/krusader_root.png
+share/icons/hicolor/128x128/apps/krusader_user.png
 share/icons/hicolor/16x16/apps/krusader_blue.png
 share/icons/hicolor/16x16/apps/krusader_red.png
 share/icons/hicolor/16x16/apps/krusader_root.png
@@ -560,15 +563,19 @@ share/kde4/services/iso.protocol
 share/kde4/services/krarc.protocol
 share/locale/bg/LC_MESSAGES/krusader.mo
 share/locale/ca/LC_MESSAGES/krusader.mo
+share/locale/ca@valencia/LC_MESSAGES/krusader.mo
 share/locale/cs/LC_MESSAGES/krusader.mo
 share/locale/da/LC_MESSAGES/krusader.mo
 share/locale/de/LC_MESSAGES/krusader.mo
 share/locale/el/LC_MESSAGES/krusader.mo
 share/locale/en_GB/LC_MESSAGES/krusader.mo
+share/locale/eo/LC_MESSAGES/krusader.mo
 share/locale/es/LC_MESSAGES/krusader.mo
 share/locale/et/LC_MESSAGES/krusader.mo
 share/locale/fr/LC_MESSAGES/krusader.mo
+share/locale/ga/LC_MESSAGES/krusader.mo
 share/locale/gl/LC_MESSAGES/krusader.mo
+share/locale/hr/LC_MESSAGES/krusader.mo
 share/locale/hu/LC_MESSAGES/krusader.mo
 share/locale/it/LC_MESSAGES/krusader.mo
 share/locale/ja/LC_MESSAGES/krusader.mo
@@ -589,6 +596,14 @@ share/locale/tr/LC_MESSAGES/krusader.mo
 share/locale/uk/LC_MESSAGES/krusader.mo
 share/locale/zh_CN/LC_MESSAGES/krusader.mo
 share/locale/zh_TW/LC_MESSAGES/krusader.mo
+@dirrmtry share/locale/hr/LC_MESSAGES
+@dirrmtry share/locale/hr
+@dirrmtry share/locale/ga/LC_MESSAGES
+@dirrmtry share/locale/ga
+@dirrmtry share/locale/eo/LC_MESSAGES
+@dirrmtry share/locale/eo
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrm share/apps/krusader/icons/hicolor/64x64/mimetypes
 @dirrm share/apps/krusader/icons/hicolor/64x64/devices
 @dirrm share/apps/krusader/icons/hicolor/64x64/apps
@@ -622,12 +637,12 @@ share/locale/zh_TW/LC_MESSAGES/krusader.mo
 @dirrm share/apps/krusader/icons
 @dirrm share/apps/krusader
 @dirrm share/doc/HTML/uk/krusader
-@dirrm share/doc/HTML/sv/krusader
+@dirrm share/doc/HTML/pt_BR/krusader
 @dirrm share/doc/HTML/en/krusader
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor
 @dirrmtry share/applications/kde4
 @dirrmtry share/applications
