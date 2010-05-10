@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: p4p
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# These variables (and many more) can be set via environment variables. Check
+# p4p -h for what you can set.
+#
+# Add the following line to /etc/rc.conf to enable p4p:
+# p4p_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable p4p.
+# p4p_cache (str):	Default to "%%P4CACHE%%".
+#			Base cache directory.
+# p4p_port (int):	Default to "1666".
+#			Set to TCP port to bind to.
+# p4p_target (str):	Default to "perforce:1666".
+#			Target server to cache.
+# p4p_debug (str):	Default to "server=3".
+#			Debug options. Highly recommended.
+# p4p_log (str):	Default to "%%P4LOG%%".
+#			Logfile for debug output.
+# p4p_args (str):	Custom additional arguments to be passed
+#			to p4p (default empty).
+#
+
+. /etc/rc.subr
+
+name="p4p"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${p4p_enable="NO"}
+: ${p4p_cache="%%P4CACHE%%"}
+: ${p4p_port="1666"}
+: ${p4p_target="perforce:1666"}
+: ${p4p_debug="server=3"}
+: ${p4p_log="%%P4LOG%%"}
+: ${p4p_args=""}
+
+command="%%PREFIX%%/sbin/p4p"
+command_args="-r ${p4p_cache} -p ${p4p_port} -t ${p4p_target} -v ${p4p_debug} -L ${p4p_log} -d ${p4p_args} > /dev/null 2>&1 &"
+p4p_user="p4admin"
+
+run_rc_command "$1"
