@@ -1,0 +1,2 @@
+This is a adaptation of pam_chroot to BSD jails : it dropps users in jails
+after login.
