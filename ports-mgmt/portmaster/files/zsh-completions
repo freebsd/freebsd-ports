@@ -41,6 +41,7 @@ _arguments -A "-*" : \
   "--packages-if-newer[use package if newer than installed even if the package is not the latest]" \
   "--always-fetch[fetch package even if it already exists locally]" \
   "--local-packagedir=-[where local packages can be found]:path:_files -/" \
+  "--packages-local[use packages from --local-packagedir only]" \
   "--delete-packages[after installing from a package, delete it]" \
   "-l[list all installed ports by category]" \
   "-L[list all installed ports by category, and search for updates]" \
