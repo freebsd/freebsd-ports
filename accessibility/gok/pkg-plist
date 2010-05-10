@@ -7,7 +7,6 @@ share/applications/gok.desktop
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/ch03.html
 %%DOCSDIR%%/ch04.html
-%%DOCSDIR%%/gok-GokButton.html
 %%DOCSDIR%%/gok-arraylist.html
 %%DOCSDIR%%/gok-callbacks.html
 %%DOCSDIR%%/gok-command-common.html
@@ -20,6 +19,7 @@ share/applications/gok.desktop
 %%DOCSDIR%%/gok-global.html
 %%DOCSDIR%%/gok-gok-action.html
 %%DOCSDIR%%/gok-gok-branchback-stack.html
+%%DOCSDIR%%/gok-gok-button.html
 %%DOCSDIR%%/gok-gok-chunker.html
 %%DOCSDIR%%/gok-gok-control.html
 %%DOCSDIR%%/gok-gok-data.html
@@ -260,6 +260,16 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/el/text-operations.kbd
 %%DATADIR%%/el/valuator.kbd
 %%DATADIR%%/empty.png
+%%DATADIR%%/en@shaw/gok-controls.kbd
+%%DATADIR%%/en@shaw/hide.kbd
+%%DATADIR%%/en@shaw/launcher.kbd
+%%DATADIR%%/en@shaw/main.kbd
+%%DATADIR%%/en@shaw/mouse.kbd
+%%DATADIR%%/en@shaw/move-resize.kbd
+%%DATADIR%%/en@shaw/numberpad.kbd
+%%DATADIR%%/en@shaw/quit.kbd
+%%DATADIR%%/en@shaw/text-operations.kbd
+%%DATADIR%%/en@shaw/valuator.kbd
 %%DATADIR%%/en_CA/gok-controls.kbd
 %%DATADIR%%/en_CA/hide.kbd
 %%DATADIR%%/en_CA/launcher.kbd
@@ -360,7 +370,8 @@ share/gnome/help/gok/C/legal.xml
 %%DATADIR%%/gl/quit.kbd
 %%DATADIR%%/gl/text-operations.kbd
 %%DATADIR%%/gl/valuator.kbd
-%%DATADIR%%/glade/gok.glade2
+%%DATADIR%%/gok-editor.ui
+%%DATADIR%%/gok-settingsdialog.ui
 %%DATADIR%%/gok.rc
 %%DATADIR%%/goklogo.png
 %%DATADIR%%/gu/gok-controls.kbd
@@ -885,6 +896,7 @@ share/locale/da/LC_MESSAGES/gok.mo
 share/locale/de/LC_MESSAGES/gok.mo
 share/locale/dz/LC_MESSAGES/gok.mo
 share/locale/el/LC_MESSAGES/gok.mo
+share/locale/en@shaw/LC_MESSAGES/gok.mo
 share/locale/en_CA/LC_MESSAGES/gok.mo
 share/locale/en_GB/LC_MESSAGES/gok.mo
 share/locale/es/LC_MESSAGES/gok.mo
@@ -1000,7 +1012,6 @@ share/sounds/freedesktop/stereo/goksound2.wav
 @dirrm %%DATADIR%%/hi
 @dirrm %%DATADIR%%/he
 @dirrm %%DATADIR%%/gu
-@dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/gl
 @dirrm %%DATADIR%%/ga
 @dirrm %%DATADIR%%/fr
@@ -1011,6 +1022,7 @@ share/sounds/freedesktop/stereo/goksound2.wav
 @dirrm %%DATADIR%%/es
 @dirrm %%DATADIR%%/en_GB
 @dirrm %%DATADIR%%/en_CA
+@dirrm %%DATADIR%%/en@shaw
 @dirrm %%DATADIR%%/el
 @dirrm %%DATADIR%%/dz
 @dirrm %%DATADIR%%/de
@@ -1052,6 +1064,8 @@ share/sounds/freedesktop/stereo/goksound2.wav
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

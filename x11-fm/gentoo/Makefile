@@ -41,6 +41,8 @@ post-patch:
 		 s|/bin/umount|/sbin/umount|g' ${WRKSRC}/gentoorc.in
 	@${REINPLACE_CMD} -e '/^CFLAGS/s|@GENTOO_CFLAGS@|@CFLAGS@|g' \
 		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|#define GTK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/odmultibutton.c
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1

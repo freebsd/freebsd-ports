@@ -1,29 +1,37 @@
---- src/Makefile.in.orig	2008-09-29 17:30:53.000000000 -0400
-+++ src/Makefile.in	2008-09-29 17:35:03.000000000 -0400
-@@ -471,7 +471,7 @@ gnome_power_statistics_SOURCES = \
- 	$(NULL)
+--- src/Makefile.in.orig	2010-03-30 18:08:05.000000000 +0800
++++ src/Makefile.in	2010-03-30 18:09:04.000000000 +0800
+@@ -497,6 +497,7 @@
+ 	$(GNOME_LIBS)					\
+ 	$(UNIQUE_LIBS)					\
+ 	$(DBUS_LIBS)					\
++	-lexecinfo \
+ 	-lm
  
- gnome_power_statistics_LDADD = $(GLIB_LIBS) $(GNOME_LIBS) $(DBUS_LIBS) \
--	$(LOCAL_LIBDBUS_LIBS) $(LOCAL_LIBUNIQUE_LIBS) $(NULL) \
-+	$(LOCAL_LIBDBUS_LIBS) $(LOCAL_LIBUNIQUE_LIBS) -lexecinfo $(NULL) \
- 	$(am__append_1)
- gnome_power_preferences_SOURCES = \
- 	egg-debug.h					\
-@@ -499,7 +499,7 @@ gnome_power_preferences_SOURCES = \
- gnome_power_preferences_LDADD = $(GLIB_LIBS) $(GNOME_LIBS) $(HAL_LIBS) \
- 	$(DBUS_LIBS) $(POLKIT_GNOME_LIBS) $(GPM_EXTRA_LIBS) \
- 	$(LOCAL_LIBHAL_LIBS) $(LOCAL_LIBDBUS_LIBS) \
--	$(LOCAL_LIBUNIQUE_LIBS) $(NULL) $(am__append_2)
-+	$(LOCAL_LIBUNIQUE_LIBS) -lexecinfo $(NULL) $(am__append_2)
- gnome_power_manager_SOURCES = \
- 	egg-color.c					\
- 	egg-color.h					\
-@@ -588,7 +588,7 @@ gnome_power_manager_SOURCES = \
- gnome_power_manager_LDADD = $(GLIB_LIBS) $(GSTREAMER_LIBS) \
- 	$(GNOME_LIBS) $(HAL_LIBS) $(POLKIT_LIBS) $(DBUS_LIBS) \
- 	$(XRANDR_LIBS) $(GPM_EXTRA_LIBS) $(LOCAL_LIBHAL_LIBS) \
--	$(LOCAL_LIBDBUS_LIBS) $(NULL) $(am__append_3)
-+	$(LOCAL_LIBDBUS_LIBS) -lexecinfo $(NULL) $(am__append_3)
- gnome_power_self_test_SOURCES = \
- 	egg-color.c					\
- 	egg-color.h					\
+ gnome_power_statistics_CFLAGS = \
+@@ -511,7 +512,7 @@
+ 
+ gnome_power_preferences_LDADD = libgpmshared.a $(GLIB_LIBS) \
+ 	$(X11_LIBS) $(GNOME_LIBS) $(DBUS_LIBS) $(UNIQUE_LIBS) \
+-	$(GPM_EXTRA_LIBS) $(DEVKIT_LIBS) -lm $(am__append_1)
++	$(GPM_EXTRA_LIBS) $(DEVKIT_LIBS) -lexecinfo -lm $(am__append_1)
+ gnome_power_preferences_CFLAGS = \
+ 	$(WARNINGFLAGS)					\
+ 	$(NULL)
+@@ -531,7 +532,7 @@
+ gnome_power_manager_LDADD = libgpmshared.a $(GLIB_LIBS) $(X11_LIBS) \
+ 	$(GSTREAMER_LIBS) $(GNOME_LIBS) $(DBUS_LIBS) $(X11_LIBS) \
+ 	$(CANBERRA_LIBS) $(LIBNOTIFY_LIBS) $(GPM_EXTRA_LIBS) \
+-	$(DEVKIT_LIBS) -lm $(am__append_3)
++	$(DEVKIT_LIBS) -lexecinfo -lm $(am__append_3)
+ gnome_power_manager_CFLAGS = \
+ 	$(WARNINGFLAGS)					\
+ 	$(NULL)
+@@ -590,7 +591,7 @@
+ 
+ gnome_power_self_test_LDADD = $(GLIB_LIBS) $(X11_LIBS) $(GNOME_LIBS) \
+ 	$(GSTREAMER_LIBS) $(DEVKIT_LIBS) $(DBUS_LIBS) $(X11_LIBS) \
+-	$(LIBNOTIFY_LIBS) $(GPM_EXTRA_LIBS) -lm $(am__append_4)
++	$(LIBNOTIFY_LIBS) $(GPM_EXTRA_LIBS) -lexecinfo -lm $(am__append_4)
+ gnome_power_self_test_CFLAGS = -DEGG_TEST $(AM_CFLAGS) $(WARNINGFLAGS)
+ BUILT_SOURCES = \
+ 	org.gnome.PowerManager.h			\

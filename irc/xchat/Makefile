@@ -8,7 +8,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	2.8.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	SF \
 		http://xchat.org/files/source/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
@@ -118,6 +118,10 @@ CONFIGURE_ARGS+=--enable-socks
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
 		${WRKSRC}/configure
+.for file in dccgui.c fe-gtk.c maingui.c menu.c plugin-tray.c sexy-spell-entry.c xtext.c xtext.h
+	@${REINPLACE_CMD} -e 's|#define GTK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/fe-gtk/${file}
+.endfor
 
 # Create plugins directory even when no plugins are installed
 post-install:

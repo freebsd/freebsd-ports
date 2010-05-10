@@ -1,0 +1,55 @@
+bin/devkit-power
+bin/upower
+etc/UPower/UPower.conf
+etc/dbus-1/system.d/org.freedesktop.UPower.conf
+include/DeviceKit-power/devkit-power-gobject/devicekit-power.h
+include/DeviceKit-power/devkit-power-gobject/dkp-client.h
+include/DeviceKit-power/devkit-power-gobject/dkp-device.h
+include/DeviceKit-power/devkit-power-gobject/dkp-enum.h
+include/DeviceKit-power/devkit-power-gobject/dkp-history-obj.h
+include/DeviceKit-power/devkit-power-gobject/dkp-qos-obj.h
+include/DeviceKit-power/devkit-power-gobject/dkp-stats-obj.h
+include/DeviceKit-power/devkit-power-gobject/dkp-version.h
+include/DeviceKit-power/devkit-power-gobject/dkp-wakeups-obj.h
+include/DeviceKit-power/devkit-power-gobject/dkp-wakeups.h
+include/libupower-glib/up-client.h
+include/libupower-glib/up-device.h
+include/libupower-glib/up-history-item.h
+include/libupower-glib/up-qos-item.h
+include/libupower-glib/up-stats-item.h
+include/libupower-glib/up-types.h
+include/libupower-glib/up-version.h
+include/libupower-glib/up-wakeup-item.h
+include/libupower-glib/up-wakeups.h
+include/libupower-glib/upower.h
+lib/girepository-1.0/UPowerGlib-1.0.typelib
+lib/libdevkit-power-gobject.a
+lib/libdevkit-power-gobject.la
+lib/libdevkit-power-gobject.so
+lib/libdevkit-power-gobject.so.1
+lib/libupower-glib.a
+lib/libupower-glib.la
+lib/libupower-glib.so
+lib/libupower-glib.so.1
+libdata/pkgconfig/devkit-power-gobject.pc
+libdata/pkgconfig/upower-glib.pc
+libexec/devkit-power-daemon
+libexec/upowerd
+share/dbus-1/interfaces/org.freedesktop.UPower.Device.xml
+share/dbus-1/interfaces/org.freedesktop.UPower.QoS.xml
+share/dbus-1/interfaces/org.freedesktop.UPower.Wakeups.xml
+share/dbus-1/interfaces/org.freedesktop.UPower.xml
+share/dbus-1/system-services/org.freedesktop.UPower.service
+share/gir-1.0/UPowerGlib-1.0.gir
+share/locale/it/LC_MESSAGES/upower.mo
+share/locale/pl/LC_MESSAGES/upower.mo
+share/locale/sv/LC_MESSAGES/upower.mo
+share/polkit-1/actions/org.freedesktop.upower.policy
+share/polkit-1/actions/org.freedesktop.upower.qos.policy
+@exec mkdir -p /var/lib/DeviceKit-power
+@dirrm include/DeviceKit-power/devkit-power-gobject
+@dirrm include/DeviceKit-power
+@dirrm include/libupower-glib
+@dirrm etc/UPower
+@unexec rmdir /var/lib/DeviceKit-power 2>/dev/null || true
+@unexec rmdir /var/lib 2>/dev/null || true

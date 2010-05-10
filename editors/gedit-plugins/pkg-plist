@@ -12,6 +12,52 @@ lib/gedit-2/plugins/charmap.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/colorpicker.py
 %%PYTHON%%lib/gedit-2/plugins/colorpicker.pyc
 %%PYTHON%%lib/gedit-2/plugins/colorpicker.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/commander/__init__.py
+%%PYTHON%%lib/gedit-2/plugins/commander/__init__.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/__init__.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/__init__.py
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/__init__.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/__init__.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/accel_group.py
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/accel_group.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/accel_group.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/completion.py
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/completion.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/completion.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/exceptions.py
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/exceptions.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/exceptions.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/method.py
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/method.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/method.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/module.py
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/module.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/module.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/result.py
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/result.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/result.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/rollbackimporter.py
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/rollbackimporter.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/commands/rollbackimporter.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/entry.py
+%%PYTHON%%lib/gedit-2/plugins/commander/entry.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/entry.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/history.py
+%%PYTHON%%lib/gedit-2/plugins/commander/history.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/history.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/info.py
+%%PYTHON%%lib/gedit-2/plugins/commander/info.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/info.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/transparentwindow.py
+%%PYTHON%%lib/gedit-2/plugins/commander/transparentwindow.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/transparentwindow.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/utils.py
+%%PYTHON%%lib/gedit-2/plugins/commander/utils.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/utils.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/windowhelper.py
+%%PYTHON%%lib/gedit-2/plugins/commander/windowhelper.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/windowhelper.pyo
 lib/gedit-2/plugins/drawspaces.gedit-plugin
 lib/gedit-2/plugins/gpdefs.py
 lib/gedit-2/plugins/gpdefs.pyc
@@ -32,6 +78,25 @@ lib/gedit-2/plugins/libdrawspaces.so
 lib/gedit-2/plugins/libshowtabbar.a
 lib/gedit-2/plugins/libshowtabbar.la
 lib/gedit-2/plugins/libshowtabbar.so
+lib/gedit-2/plugins/libwordcompletion.a
+lib/gedit-2/plugins/libwordcompletion.la
+lib/gedit-2/plugins/libwordcompletion.so
+%%PYTHON%%lib/gedit-2/plugins/multiedit.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/multiedit/constants.py
+%%PYTHON%%lib/gedit-2/plugins/multiedit/constants.pyc
+%%PYTHON%%lib/gedit-2/plugins/multiedit/constants.pyo
+%%PYTHON%%lib/gedit-2/plugins/multiedit/documenthelper.py
+%%PYTHON%%lib/gedit-2/plugins/multiedit/documenthelper.pyc
+%%PYTHON%%lib/gedit-2/plugins/multiedit/documenthelper.pyo
+%%PYTHON%%lib/gedit-2/plugins/multiedit/__init__.py
+%%PYTHON%%lib/gedit-2/plugins/multiedit/__init__.pyc
+%%PYTHON%%lib/gedit-2/plugins/multiedit/__init__.pyo
+%%PYTHON%%lib/gedit-2/plugins/multiedit/signals.py
+%%PYTHON%%lib/gedit-2/plugins/multiedit/signals.pyc
+%%PYTHON%%lib/gedit-2/plugins/multiedit/signals.pyo
+%%PYTHON%%lib/gedit-2/plugins/multiedit/windowhelper.py
+%%PYTHON%%lib/gedit-2/plugins/multiedit/windowhelper.pyc
+%%PYTHON%%lib/gedit-2/plugins/multiedit/windowhelper.pyo
 %%PYTHON%%lib/gedit-2/plugins/sessionsaver.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/sessionsaver/__init__.py
 %%PYTHON%%lib/gedit-2/plugins/sessionsaver/__init__.pyc
@@ -51,7 +116,53 @@ lib/gedit-2/plugins/showtabbar.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/terminal.py
 %%PYTHON%%lib/gedit-2/plugins/terminal.pyc
 %%PYTHON%%lib/gedit-2/plugins/terminal.pyo
+lib/gedit-2/plugins/wordcompletion.gedit-plugin
 share/gedit-2/plugins/bookmarks/bookmark.png
+%%PYTHON%%share/gedit-2/plugins/commander/modules/align.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/align.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/align.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/bookmark.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/bookmark.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/bookmark.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/doc.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/doc.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/doc.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/edit.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/edit.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/edit.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/__init__.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/__init__.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/__init__.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/finder.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/finder.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/finder.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/regex.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/regex.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/regex.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/test.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/test.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/find/test.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/format.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/format.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/format.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/goto.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/goto.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/goto.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/help.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/help.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/help.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/move.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/move.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/move.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/reload.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/reload.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/reload.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/set.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/set.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/set.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/shell.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/shell.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/shell.pyo
 share/gedit-2/plugins/drawspaces/drawspaces.ui
 %%PYTHON%%share/gedit-2/plugins/sessionsaver/sessionsaver.ui
 share/locale/ar/LC_MESSAGES/gedit-plugins.mo
@@ -121,12 +232,18 @@ share/locale/wa/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
+%%PYTHON%%@dirrm lib/gedit-2/plugins/multiedit
 %%PYTHON%%@dirrm lib/gedit-2/plugins/sessionsaver
-@dirrm share/gedit-2/plugins/sessionsaver
+%%PYTHON%%@dirrm lib/gedit-2/plugins/commander/commands
+%%PYTHON%%@dirrm lib/gedit-2/plugins/commander
+%%PYTHON%%@dirrm share/gedit-2/plugins/sessionsaver
 @dirrm share/gedit-2/plugins/drawspaces
+%%PYTHON%%@dirrm share/gedit-2/plugins/commander/modules/find
+%%PYTHON%%@dirrm share/gedit-2/plugins/commander/modules
+%%PYTHON%%@dirrm share/gedit-2/plugins/commander
 @dirrm share/gedit-2/plugins/bookmarks
-@dirrm share/gedit-2/plugins
-@dirrm share/gedit-2
+@dirrmtry share/gedit-2/plugins
+@dirrmtry share/gedit-2
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -139,9 +256,9 @@ share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

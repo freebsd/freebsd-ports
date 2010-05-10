@@ -28,8 +28,8 @@ lib/libmutter-private.a
 lib/libmutter-private.la
 lib/libmutter-private.so
 lib/libmutter-private.so.0
-lib/mutter/Meta-2.28.gir
-lib/mutter/Meta-2.28.typelib
+lib/mutter/Meta-2.29.gir
+lib/mutter/Meta-2.29.typelib
 lib/mutter/plugins/default.so
 libdata/pkgconfig/libmutter-private.pc
 libdata/pkgconfig/mutter-plugins.pc
@@ -92,6 +92,7 @@ share/locale/mn/LC_MESSAGES/mutter.mo
 share/locale/mr/LC_MESSAGES/mutter.mo
 share/locale/ms/LC_MESSAGES/mutter.mo
 share/locale/nb/LC_MESSAGES/mutter.mo
+share/locale/nds/LC_MESSAGES/mutter.mo
 share/locale/ne/LC_MESSAGES/mutter.mo
 share/locale/nl/LC_MESSAGES/mutter.mo
 share/locale/nn/LC_MESSAGES/mutter.mo
@@ -150,6 +151,8 @@ share/locale/zh_TW/LC_MESSAGES/mutter.mo
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES

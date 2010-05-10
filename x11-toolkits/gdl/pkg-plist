@@ -38,6 +38,7 @@ share/locale/ast/LC_MESSAGES/gdl-1.mo
 share/locale/az/LC_MESSAGES/gdl-1.mo
 share/locale/be/LC_MESSAGES/gdl-1.mo
 share/locale/bg/LC_MESSAGES/gdl-1.mo
+share/locale/bn/LC_MESSAGES/gdl-1.mo
 share/locale/ca/LC_MESSAGES/gdl-1.mo
 share/locale/ca@valencia/LC_MESSAGES/gdl-1.mo
 share/locale/cs/LC_MESSAGES/gdl-1.mo
@@ -47,6 +48,7 @@ share/locale/dz/LC_MESSAGES/gdl-1.mo
 share/locale/el/LC_MESSAGES/gdl-1.mo
 share/locale/en_CA/LC_MESSAGES/gdl-1.mo
 share/locale/en_GB/LC_MESSAGES/gdl-1.mo
+share/locale/en@shaw/LC_MESSAGES/gdl-1.mo
 share/locale/es/LC_MESSAGES/gdl-1.mo
 share/locale/et/LC_MESSAGES/gdl-1.mo
 share/locale/eu/LC_MESSAGES/gdl-1.mo
@@ -119,11 +121,11 @@ share/locale/zh_TW/LC_MESSAGES/gdl-1.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/be/LC_MESSAGES
-@dirrmtry share/locale/be
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast

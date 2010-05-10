@@ -1,16 +1,6 @@
---- configure.orig	2009-04-24 00:15:09.000000000 -0400
-+++ configure	2009-04-24 00:16:04.000000000 -0400
-@@ -26973,6 +26973,9 @@ fi
-     *-linux*)
-       use_gphoto2=yes
-       ;;
-+    *-freebsd*)
-+      use_gphoto2=yes
-+      ;;
-     *)
-       use_gphoto2=no
-       ;;
-@@ -28018,7 +28021,7 @@ if test "${ac_cv_lib_archive_archive_ent
+--- configure.orig	2010-03-30 10:14:50.000000000 +0200
++++ configure	2010-03-30 10:16:26.000000000 +0200
+@@ -20312,7 +20312,7 @@
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -19,7 +9,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -28094,7 +28097,7 @@ _ACEOF
+@@ -20388,7 +20388,7 @@
                  if test x$with_archive_libs != x/usr/lib; then
                          ARCHIVE_LIBS="-L$with_archive_libs -larchive"
                  else
@@ -28,3 +18,12 @@
                  fi
  	else
  		{ $as_echo "$as_me:$LINENO: checking for archive_entry_filetype in -larchive" >&5
+@@ -20397,7 +20397,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-larchive  $LIBS"
++LIBS="-larchive -lcrypto -lmd $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF

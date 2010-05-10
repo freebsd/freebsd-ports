@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-main-menu
 PORTVERSION=	0.9.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +18,8 @@ COMMENT=	Provides easy access to sets of GNOME applications
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack eel2 gnomedesktop
+USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack eel2 gnomedesktop \
+		libgnomeui
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

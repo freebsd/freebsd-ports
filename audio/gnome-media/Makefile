@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/gnome-media/Makefile,v 1.147 2009/11/26 06:20:13 marcus Exp $
+#   $MCom: ports/audio/gnome-media/Makefile,v 1.151 2010/04/02 01:29:55 avl Exp $
 #
 
 PORTNAME=	gnome-media
-PORTVERSION=	2.28.5
-PORTREVISION=	2
+PORTVERSION=	2.30.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -29,8 +28,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 libxml2 libglade2 \
-		gconf2
+USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 libxml2 gconf2
 USE_GSTREAMER=	gconf good
 CONFIGURE_ARGS=	--disable-gstmix
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -38,5 +36,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	gnome-audio-profiles.schemas \
 		gnome-sound-recorder.schemas
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|have_gladeui=true|have_gladeui=false|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

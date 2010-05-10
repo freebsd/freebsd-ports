@@ -1,6 +1,6 @@
---- configure.orig	2009-08-24 10:39:07.000000000 +0200
-+++ configure	2009-08-24 10:44:47.000000000 +0200
-@@ -15988,6 +15988,14 @@ cat >>confdefs.h <<\_ACEOF
+--- configure.orig	2009-12-25 20:21:00.000000000 +0100
++++ configure	2009-12-25 20:21:01.000000000 +0100
+@@ -15968,6 +15968,14 @@
  _ACEOF
  
  	;;
@@ -15,12 +15,3 @@
  *)
  	os_win32=no
  	NO_UNDEFINED=''
-@@ -24777,7 +24785,7 @@ idldir='${datadir}'/idl/evolution-data-s
- imagesdir='${datadir}'/pixmaps/evolution-data-server
- 
- 
--serverdir="$libdir/bonobo/servers"
-+serverdir="$prefix/libdata/bonobo/servers"
- 
- 
- extensiondir='${libdir}'/evolution-data-server-$API_VERSION/extensions

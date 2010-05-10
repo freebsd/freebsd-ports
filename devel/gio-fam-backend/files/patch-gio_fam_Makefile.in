@@ -1,7 +1,7 @@
---- gio/fam/Makefile.in.orig	2008-01-07 19:40:38.000000000 -0500
-+++ gio/fam/Makefile.in	2008-01-07 19:41:53.000000000 -0500
-@@ -59,9 +59,8 @@ am__installdirs = "$(DESTDIR)$(giomodule
- giomoduleLTLIBRARIES_INSTALL = $(INSTALL)
+--- gio/fam/Makefile.in.orig	2010-01-28 10:40:29.000000000 -0500
++++ gio/fam/Makefile.in	2010-01-28 10:43:26.000000000 -0500
+@@ -76,9 +76,8 @@ am__base_list = \
+ am__installdirs = "$(DESTDIR)$(giomoduledir)"
  LTLIBRARIES = $(giomodule_LTLIBRARIES)
  am__DEPENDENCIES_1 =
 -libgiofam_la_DEPENDENCIES = $(top_builddir)/gio/libgio-2.0.la \
@@ -12,7 +12,7 @@
  	$(am__DEPENDENCIES_1)
  am__objects_1 =
  am_libgiofam_la_OBJECTS = libgiofam_la-fam-helper.lo \
-@@ -321,9 +320,9 @@ libgiofam_la_CFLAGS = \
+@@ -369,9 +368,9 @@ libgiofam_la_CFLAGS = \
  
  libgiofam_la_LDFLAGS = $(module_flags)
  libgiofam_la_LIBADD = \
@@ -25,3 +25,12 @@
  		$(GLIB_LIBS) \
  		$(FAM_LIBS) \
  		$(NULL)
+@@ -776,7 +775,7 @@ check-local: test
+ 
+ install-data-hook:
+ 	if $(RUN_QUERY_MODULES) && test -z "$(DESTDIR)" ; then					\
+-		$(top_builddir)/gio/gio-querymodules$(EXEEXT) $(DESTDIR)$(GIO_MODULE_DIR) ;	\
++		gio-querymodules$(EXEEXT) $(DESTDIR)$(GIO_MODULE_DIR) ;	\
+ 	fi
+ 
+ uninstall-local:

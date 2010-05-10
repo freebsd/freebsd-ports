@@ -3,6 +3,7 @@ share/gnome-background-properties/gnome-nature.xml
 share/locale/af/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/ar/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/as/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ast/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/be/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/be@latin/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/bg/LC_MESSAGES/gnome-backgrounds.mo
@@ -16,6 +17,7 @@ share/locale/da/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/de/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/dz/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/el/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/en_CA/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/en_GB/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/es/LC_MESSAGES/gnome-backgrounds.mo
@@ -138,6 +140,8 @@ share/pixmaps/backgrounds/gnome/nature/YellowFlower.jpg
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
@@ -146,5 +150,7 @@ share/pixmaps/backgrounds/gnome/nature/YellowFlower.jpg
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

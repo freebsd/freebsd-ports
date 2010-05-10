@@ -4,8 +4,8 @@ bin/gnome-session-save
 bin/gnome-wm
 etc/xdg/autostart/gnome-session-splash.desktop
 etc/xdg/autostart/gnome-settings-daemon-helper.desktop
-lib/gnome-session/helpers/gnome-session-splash
-lib/gnome-session/helpers/gnome-settings-daemon-helper
+libexec/gnome-session/helpers/gnome-session-splash
+libexec/gnome-session/helpers/gnome-settings-daemon-helper
 share/applications/session-properties.desktop
 %%DATADIR%%/gsm-inhibit-dialog.ui
 %%DATADIR%%/session-properties.ui
@@ -37,6 +37,7 @@ share/locale/da/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/dz/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/eo/LC_MESSAGES/gnome-session-2.0.mo
@@ -76,6 +77,7 @@ share/locale/mn/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/mr/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/nb/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/nds/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-session-2.0.mo
@@ -138,8 +140,8 @@ share/xsessions/gnome.desktop
 @dirrmtry share/xsessions
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrm lib/gnome-session/helpers
-@dirrm lib/gnome-session
+@dirrm libexec/gnome-session/helpers
+@dirrm libexec/gnome-session
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -164,6 +166,8 @@ share/xsessions/gnome.desktop
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
@@ -182,6 +186,8 @@ share/xsessions/gnome.desktop
 @dirrmtry share/locale/ha
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES

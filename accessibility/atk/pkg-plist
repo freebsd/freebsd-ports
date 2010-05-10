@@ -14,11 +14,13 @@ include/atk-1.0/atk/atknoopobject.h
 include/atk-1.0/atk/atknoopobjectfactory.h
 include/atk-1.0/atk/atkobject.h
 include/atk-1.0/atk/atkobjectfactory.h
+include/atk-1.0/atk/atkplug.h
 include/atk-1.0/atk/atkregistry.h
 include/atk-1.0/atk/atkrelation.h
 include/atk-1.0/atk/atkrelationset.h
 include/atk-1.0/atk/atkrelationtype.h
 include/atk-1.0/atk/atkselection.h
+include/atk-1.0/atk/atksocket.h
 include/atk-1.0/atk/atkstate.h
 include/atk-1.0/atk/atkstateset.h
 include/atk-1.0/atk/atkstreamablecontent.h
@@ -26,15 +28,18 @@ include/atk-1.0/atk/atktable.h
 include/atk-1.0/atk/atktext.h
 include/atk-1.0/atk/atkutil.h
 include/atk-1.0/atk/atkvalue.h
+lib/girepository-1.0/Atk-1.0.typelib
 lib/libatk-1.0.a
 lib/libatk-1.0.la
 lib/libatk-1.0.so
 lib/libatk-1.0.so.0
 libdata/pkgconfig/atk.pc
+share/gir-1.0/Atk-1.0.gir
 share/locale/af/LC_MESSAGES/atk10.mo
 share/locale/am/LC_MESSAGES/atk10.mo
 share/locale/ar/LC_MESSAGES/atk10.mo
 share/locale/as/LC_MESSAGES/atk10.mo
+share/locale/ast/LC_MESSAGES/atk10.mo
 share/locale/az/LC_MESSAGES/atk10.mo
 share/locale/be/LC_MESSAGES/atk10.mo
 share/locale/be@latin/LC_MESSAGES/atk10.mo
@@ -52,6 +57,7 @@ share/locale/dz/LC_MESSAGES/atk10.mo
 share/locale/el/LC_MESSAGES/atk10.mo
 share/locale/en_CA/LC_MESSAGES/atk10.mo
 share/locale/en_GB/LC_MESSAGES/atk10.mo
+share/locale/en@shaw/LC_MESSAGES/atk10.mo
 share/locale/eo/LC_MESSAGES/atk10.mo
 share/locale/es/LC_MESSAGES/atk10.mo
 share/locale/et/LC_MESSAGES/atk10.mo
@@ -122,6 +128,8 @@ share/locale/zh_HK/LC_MESSAGES/atk10.mo
 share/locale/zh_TW/LC_MESSAGES/atk10.mo
 @dirrm include/atk-1.0/atk
 @dirrm include/atk-1.0
+@dirrmtry share/gir-1.0
+@dirrmtry lib/girepository-1.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yi/LC_MESSAGES
@@ -152,6 +160,8 @@ share/locale/zh_TW/LC_MESSAGES/atk10.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
@@ -160,5 +170,7 @@ share/locale/zh_TW/LC_MESSAGES/atk10.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

@@ -8,6 +8,7 @@ include/vinagre-1.0/vinagre/vinagre-bookmarks-migration.h
 include/vinagre-1.0/vinagre/vinagre-bookmarks-tree.h
 include/vinagre-1.0/vinagre/vinagre-bookmarks-ui.h
 include/vinagre-1.0/vinagre/vinagre-bookmarks.h
+include/vinagre-1.0/vinagre/vinagre-cache-prefs.h
 include/vinagre-1.0/vinagre/vinagre-commands.h
 include/vinagre-1.0/vinagre/vinagre-connect.h
 include/vinagre-1.0/vinagre/vinagre-connection.h
@@ -19,6 +20,7 @@ include/vinagre-1.0/vinagre/vinagre-notebook.h
 include/vinagre-1.0/vinagre/vinagre-plugin-loader.h
 include/vinagre-1.0/vinagre/vinagre-plugin.h
 include/vinagre-1.0/vinagre/vinagre-prefs.h
+include/vinagre-1.0/vinagre/vinagre-ssh.h
 include/vinagre-1.0/vinagre/vinagre-tab.h
 include/vinagre-1.0/vinagre/vinagre-ui.h
 include/vinagre-1.0/vinagre/vinagre-utils.h
@@ -34,7 +36,7 @@ lib/vinagre-1/plugins/vnc.vinagre-plugin
 libdata/pkgconfig/vinagre-1.0.pc
 share/applications/vinagre-file.desktop
 share/applications/vinagre.desktop
-%%TELEPATHY%%share/dbus-1/services/org.gnome.Empathy.StreamTubeHandler.rfb.service
+%%TELEPATHY%%share/dbus-1/services/org.freedesktop.Telepathy.Client.Vinagre.service
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -196,6 +198,7 @@ share/locale/cs/LC_MESSAGES/vinagre.mo
 share/locale/da/LC_MESSAGES/vinagre.mo
 share/locale/de/LC_MESSAGES/vinagre.mo
 share/locale/el/LC_MESSAGES/vinagre.mo
+share/locale/en@shaw/LC_MESSAGES/vinagre.mo
 share/locale/en_GB/LC_MESSAGES/vinagre.mo
 share/locale/es/LC_MESSAGES/vinagre.mo
 share/locale/et/LC_MESSAGES/vinagre.mo
@@ -208,6 +211,7 @@ share/locale/gu/LC_MESSAGES/vinagre.mo
 share/locale/he/LC_MESSAGES/vinagre.mo
 share/locale/hi/LC_MESSAGES/vinagre.mo
 share/locale/hu/LC_MESSAGES/vinagre.mo
+share/locale/id/LC_MESSAGES/vinagre.mo
 share/locale/it/LC_MESSAGES/vinagre.mo
 share/locale/ja/LC_MESSAGES/vinagre.mo
 share/locale/kn/LC_MESSAGES/vinagre.mo
@@ -231,6 +235,7 @@ share/locale/pt_BR/LC_MESSAGES/vinagre.mo
 share/locale/ro/LC_MESSAGES/vinagre.mo
 share/locale/ru/LC_MESSAGES/vinagre.mo
 share/locale/si/LC_MESSAGES/vinagre.mo
+share/locale/sk/LC_MESSAGES/vinagre.mo
 share/locale/sl/LC_MESSAGES/vinagre.mo
 share/locale/sq/LC_MESSAGES/vinagre.mo
 share/locale/sr/LC_MESSAGES/vinagre.mo
@@ -265,10 +270,18 @@ share/omf/vinagre/vinagre-sq.omf
 share/omf/vinagre/vinagre-sv.omf
 share/omf/vinagre/vinagre-th.omf
 share/omf/vinagre/vinagre-zh_CN.omf
+%%TELEPATHY%%share/telepathy/clients/Vinagre.client
+share/vinagre-1/plugins/vnc/vnc.ui
+%%DATADIR%%/vinagre-fav-ui.xml
 %%DATADIR%%/GNOME_VinagreApplet.xml
 %%DATADIR%%/vinagre-ui.xml
 %%DATADIR%%/vinagre.ui
 @dirrm %%DATADIR%%
+@dirrm share/vinagre-1/plugins/vnc
+@dirrm share/vinagre-1/plugins
+@dirrm share/vinagre-1
+%%TELEPATHY%%@dirrmtry share/telepathy/clients
+%%TELEPATHY%%@dirrmtry share/telepathy
 @dirrm share/omf/vinagre
 @dirrm share/gnome/help/vinagre/zh_CN/figures
 @dirrm share/gnome/help/vinagre/zh_CN
@@ -332,8 +345,10 @@ share/omf/vinagre/vinagre-zh_CN.omf
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
-@dirrmtry share/locale/ca@valencia//LC_MESSAGES
-@dirrmtry share/locale/ca@valencia/
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES

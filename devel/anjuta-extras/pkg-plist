@@ -5,23 +5,18 @@ lib/anjuta/anjuta-scratchbox.plugin
 lib/anjuta/libanjuta-class-inheritance.a
 lib/anjuta/libanjuta-class-inheritance.la
 lib/anjuta/libanjuta-class-inheritance.so
-lib/anjuta/libanjuta-class-inheritance.so.0
 lib/anjuta/libanjuta-editor.a
 lib/anjuta/libanjuta-editor.la
 lib/anjuta/libanjuta-editor.so
-lib/anjuta/libanjuta-editor.so.0
 lib/anjuta/libanjuta-profiler.a
 lib/anjuta/libanjuta-profiler.la
 lib/anjuta/libanjuta-profiler.so
-lib/anjuta/libanjuta-profiler.so.0
 lib/anjuta/libanjuta-sample.a
 lib/anjuta/libanjuta-sample.la
 lib/anjuta/libanjuta-sample.so
-lib/anjuta/libanjuta-sample.so.0
 lib/anjuta/libanjuta-scratchbox.a
 lib/anjuta/libanjuta-scratchbox.la
 lib/anjuta/libanjuta-scratchbox.so
-lib/anjuta/libanjuta-scratchbox.so.0
 lib/anjuta/profiler.plugin
 share/anjuta/glade/anjuta-editor-scintilla.ui
 share/anjuta/glade/anjuta-scratchbox-panel.png
@@ -106,3 +101,21 @@ share/pixmaps/anjuta/anjuta-sample-plugin-48.png
 share/pixmaps/anjuta/anjuta-sample-plugin.svg
 share/pixmaps/anjuta/anjuta-scratchbox-48.png
 @dirrm share/anjuta/properties
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin

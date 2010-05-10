@@ -504,10 +504,10 @@ share/icons/HighContrast-SVG/scalable/actions/gtk-zoom-100.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-zoom-fit.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-zoom-in.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-zoom-out.svg
-share/icons/HighContrast-SVG/scalable/actions/help.svg
 share/icons/HighContrast-SVG/scalable/actions/help-about.svg
 share/icons/HighContrast-SVG/scalable/actions/help-contents.svg
 share/icons/HighContrast-SVG/scalable/actions/help-faq.svg
+share/icons/HighContrast-SVG/scalable/actions/help.svg
 share/icons/HighContrast-SVG/scalable/actions/history-view.svg
 share/icons/HighContrast-SVG/scalable/actions/insert-image.svg
 share/icons/HighContrast-SVG/scalable/actions/insert-object.svg
@@ -894,12 +894,12 @@ share/icons/HighContrast-SVG/scalable/emotes/stock_smiley-5.svg
 share/icons/HighContrast-SVG/scalable/emotes/stock_smiley-6.svg
 share/icons/HighContrast-SVG/scalable/emotes/stock_smiley-7.svg
 share/icons/HighContrast-SVG/scalable/emotes/stock_smiley-8.svg
-share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.ms-word.document.macroEnabled.12.svg
-share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
-share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.ms-powerpoint.presentation.macroEnabled.12.svg
-share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.openxmlformats-officedocument.presentationml.presentation.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.ms-excel.sheet.macroEnabled.12.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.ms-powerpoint.presentation.macroEnabled.12.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.ms-word.document.macroEnabled.12.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.openxmlformats-officedocument.presentationml.presentation.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet.svg
+share/icons/HighContrast-SVG/scalable/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/application-x-executable.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/ascii.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/audio-x-generic.svg
@@ -1559,13 +1559,32 @@ share/icons/HighContrastLargePrint/48x48/status/audio-volume-high.png
 share/icons/HighContrastLargePrint/48x48/status/audio-volume-low.png
 share/icons/HighContrastLargePrint/48x48/status/audio-volume-medium.png
 share/icons/HighContrastLargePrint/48x48/status/audio-volume-muted.png
+share/icons/HighContrastLargePrint/48x48/status/connect_creating.png
+share/icons/HighContrastLargePrint/48x48/status/connect_established.png
+share/icons/HighContrastLargePrint/48x48/status/connect_no.png
 share/icons/HighContrastLargePrint/48x48/status/edittrash.png
 share/icons/HighContrastLargePrint/48x48/status/folder-drag-accept.icon
 share/icons/HighContrastLargePrint/48x48/status/folder-drag-accept.png
 share/icons/HighContrastLargePrint/48x48/status/gnome-fs-directory-accept.icon
 share/icons/HighContrastLargePrint/48x48/status/gnome-fs-directory-accept.png
 share/icons/HighContrastLargePrint/48x48/status/gnome-fs-trash-full.png
+share/icons/HighContrastLargePrint/48x48/status/gnome-netstatus-disconn.png
+share/icons/HighContrastLargePrint/48x48/status/gnome-netstatus-error.png
+share/icons/HighContrastLargePrint/48x48/status/gnome-netstatus-idle.png
+share/icons/HighContrastLargePrint/48x48/status/gnome-netstatus-rx.png
+share/icons/HighContrastLargePrint/48x48/status/gnome-netstatus-tx.png
+share/icons/HighContrastLargePrint/48x48/status/gnome-netstatus-txrx.png
 share/icons/HighContrastLargePrint/48x48/status/gnome-stock-trash-full.png
+share/icons/HighContrastLargePrint/48x48/status/network-error.png
+share/icons/HighContrastLargePrint/48x48/status/network-idle.png
+share/icons/HighContrastLargePrint/48x48/status/network-offline.png
+share/icons/HighContrastLargePrint/48x48/status/network-receive.png
+share/icons/HighContrastLargePrint/48x48/status/network-transmit-receive.png
+share/icons/HighContrastLargePrint/48x48/status/network-transmit.png
+share/icons/HighContrastLargePrint/48x48/status/nm-adhoc.png
+share/icons/HighContrastLargePrint/48x48/status/nm-device-wired.png
+share/icons/HighContrastLargePrint/48x48/status/nm-device-wireless.png
+share/icons/HighContrastLargePrint/48x48/status/nm-no-connection.png
 share/icons/HighContrastLargePrint/48x48/status/stock_trash_full.png
 share/icons/HighContrastLargePrint/48x48/status/stock_volume-0.png
 share/icons/HighContrastLargePrint/48x48/status/stock_volume-max.png
@@ -1864,10 +1883,10 @@ share/icons/HighContrastLargePrintInverse/48x48/emblems/emblem-noread.png
 share/icons/HighContrastLargePrintInverse/48x48/emblems/emblem-personal.png
 share/icons/HighContrastLargePrintInverse/48x48/emblems/emblem-special.png
 share/icons/HighContrastLargePrintInverse/48x48/emblems/emblem-unreadable.png
-share/icons/HighContrastLargePrintInverse/48x48/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
-share/icons/HighContrastLargePrintInverse/48x48/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/HighContrastLargePrintInverse/48x48/mimetypes/application-vnd.ms-powerpoint.presentation.macroEnabled.12.png
+share/icons/HighContrastLargePrintInverse/48x48/mimetypes/application-vnd.ms-word.document.macroEnabled.12.png
 share/icons/HighContrastLargePrintInverse/48x48/mimetypes/application-vnd.openxmlformats-officedocument.presentationml.presentation.png
+share/icons/HighContrastLargePrintInverse/48x48/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/HighContrastLargePrintInverse/48x48/mimetypes/application-x-executable.png
 share/icons/HighContrastLargePrintInverse/48x48/mimetypes/ascii.png
 share/icons/HighContrastLargePrintInverse/48x48/mimetypes/audio-x-generic.png
@@ -2036,15 +2055,34 @@ share/icons/HighContrastLargePrintInverse/48x48/status/audio-volume-medium.png
 share/icons/HighContrastLargePrintInverse/48x48/status/audio-volume-muted.png
 share/icons/HighContrastLargePrintInverse/48x48/status/battery-caution.png
 share/icons/HighContrastLargePrintInverse/48x48/status/battery-low.png
+share/icons/HighContrastLargePrintInverse/48x48/status/connect_creating.png
+share/icons/HighContrastLargePrintInverse/48x48/status/connect_established.png
+share/icons/HighContrastLargePrintInverse/48x48/status/connect_no.png
 share/icons/HighContrastLargePrintInverse/48x48/status/edittrash.png
 share/icons/HighContrastLargePrintInverse/48x48/status/folder-drag-accept.icon
 share/icons/HighContrastLargePrintInverse/48x48/status/folder-drag-accept.png
 share/icons/HighContrastLargePrintInverse/48x48/status/gnome-fs-directory-accept.icon
 share/icons/HighContrastLargePrintInverse/48x48/status/gnome-fs-directory-accept.png
 share/icons/HighContrastLargePrintInverse/48x48/status/gnome-fs-trash-full.png
+share/icons/HighContrastLargePrintInverse/48x48/status/gnome-netstatus-disconn.png
+share/icons/HighContrastLargePrintInverse/48x48/status/gnome-netstatus-error.png
+share/icons/HighContrastLargePrintInverse/48x48/status/gnome-netstatus-idle.png
+share/icons/HighContrastLargePrintInverse/48x48/status/gnome-netstatus-rx.png
+share/icons/HighContrastLargePrintInverse/48x48/status/gnome-netstatus-tx.png
+share/icons/HighContrastLargePrintInverse/48x48/status/gnome-netstatus-txrx.png
 share/icons/HighContrastLargePrintInverse/48x48/status/gnome-stock-trash-full.png
 share/icons/HighContrastLargePrintInverse/48x48/status/media-playlist-repeat.png
 share/icons/HighContrastLargePrintInverse/48x48/status/media-playlist-shuffle.png
+share/icons/HighContrastLargePrintInverse/48x48/status/network-error.png
+share/icons/HighContrastLargePrintInverse/48x48/status/network-idle.png
+share/icons/HighContrastLargePrintInverse/48x48/status/network-offline.png
+share/icons/HighContrastLargePrintInverse/48x48/status/network-receive.png
+share/icons/HighContrastLargePrintInverse/48x48/status/network-transmit-receive.png
+share/icons/HighContrastLargePrintInverse/48x48/status/network-transmit.png
+share/icons/HighContrastLargePrintInverse/48x48/status/nm-adhoc.png
+share/icons/HighContrastLargePrintInverse/48x48/status/nm-device-wired.png
+share/icons/HighContrastLargePrintInverse/48x48/status/nm-device-wireless.png
+share/icons/HighContrastLargePrintInverse/48x48/status/nm-no-connection.png
 share/icons/HighContrastLargePrintInverse/48x48/status/printer-error.png
 share/icons/HighContrastLargePrintInverse/48x48/status/printer-printing.png
 share/icons/HighContrastLargePrintInverse/48x48/status/stock_repeat.png
@@ -2227,6 +2265,7 @@ share/icons/Mist/scalable/status/folder_open.svg
 share/icons/Mist/scalable/status/gnome-fs-directory-accept.svg
 share/icons/Mist/scalable/status/gnome-fs-directory-visiting.svg
 share/icons/Mist/scalable/status/stock_open.svg
+share/locale/af/LC_MESSAGES/gnome-themes.mo
 share/locale/am/LC_MESSAGES/gnome-themes.mo
 share/locale/ar/LC_MESSAGES/gnome-themes.mo
 share/locale/as/LC_MESSAGES/gnome-themes.mo
@@ -2248,6 +2287,7 @@ share/locale/da/LC_MESSAGES/gnome-themes.mo
 share/locale/de/LC_MESSAGES/gnome-themes.mo
 share/locale/dz/LC_MESSAGES/gnome-themes.mo
 share/locale/el/LC_MESSAGES/gnome-themes.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-themes.mo
 share/locale/en_CA/LC_MESSAGES/gnome-themes.mo
 share/locale/en_GB/LC_MESSAGES/gnome-themes.mo
 share/locale/es/LC_MESSAGES/gnome-themes.mo
@@ -2731,9 +2771,9 @@ share/themes/Mist/index.theme
 share/themes/Mist/metacity-1/metacity-theme-1.xml
 share/themes/Simple/gtk-2.0/gtkrc
 @dirrm share/themes/Simple/gtk-2.0
-@dirrm share/themes/Simple
+@dirrmtry share/themes/Simple
 @dirrm share/themes/Mist/metacity-1
-@dirrm share/themes/Mist
+@dirrmtry share/themes/Mist
 @dirrm share/themes/LowContrastLargePrint/pixmaps
 @dirrm share/themes/LowContrastLargePrint/gtk-2.0
 @dirrm share/themes/LowContrastLargePrint
@@ -2760,12 +2800,12 @@ share/themes/Simple/gtk-2.0/gtkrc
 @dirrm share/themes/Glider/metacity-1
 @dirrm share/themes/Glider/gtk-2.0
 @dirrm share/themes/Glider
-@dirrm share/themes/Crux
+@dirrmtry share/themes/Crux
 @dirrm share/themes/ClearlooksClassic/metacity-1
 @dirrm share/themes/ClearlooksClassic/gtk-2.0
 @dirrm share/themes/ClearlooksClassic
 @dirrm share/themes/Clearlooks/metacity-1
-@dirrm share/themes/Clearlooks
+@dirrmtry share/themes/Clearlooks
 @dirrmtry share/themes
 @dirrm share/icons/Mist/scalable/status
 @dirrm share/icons/Mist/scalable/places
@@ -2880,6 +2920,8 @@ share/themes/Simple/gtk-2.0/gtkrc
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES

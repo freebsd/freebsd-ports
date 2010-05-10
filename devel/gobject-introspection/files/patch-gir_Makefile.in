@@ -1,11 +1,12 @@
---- gir/Makefile.in.orig	2009-12-18 18:25:43.000000000 +0100
-+++ gir/Makefile.in	2009-12-18 18:25:54.000000000 +0100
-@@ -359,13 +359,12 @@ GLib_2_0_gir_SCANNERFLAGS = --noclosure 
+--- gir/Makefile.in.orig	2010-03-10 17:14:45.000000000 +0000
++++ gir/Makefile.in	2010-03-10 17:17:53.000000000 +0000
+@@ -400,14 +400,13 @@ GLib_2_0_gir_SCANNERFLAGS = --noclosure 
  GLib_2_0_gir_PACKAGES = glib-2.0
  GLib_2_0_gir_CFLAGS = $(CPPFLAGS) \
              -I$(GLIB_INCLUDEDIR) \
 -            -I$(GLIB_LIBDIR)/glib-2.0/include \
              -DGETTEXT_PACKAGE=Dummy \
+             -DGLIB_COMPILATION \
              -D__G_I18N_LIB_H__
  
  GLib_2_0_gir_ASSERTIONS = $(srcdir)/GLib-2.0.xpath

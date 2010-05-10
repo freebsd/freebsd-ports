@@ -3,12 +3,11 @@
 # Whom:				Adam Weinberger <adamw@freebsd.org>
 #
 # $FreeBSD$
-#    $MCom: ports/accessibility/gok/Makefile,v 1.106 2009/10/19 19:03:32 kwm Exp $
+#    $MCom: ports/accessibility/gok/Makefile,v 1.110 2010/04/02 16:53:04 kwm Exp $
 #
 
 PORTNAME=	gok
-PORTVERSION=	2.28.1
-PORTREVISION=	2
+PORTVERSION=	2.30.0
 PORTEPOCH=	1
 CATEGORIES=	accessibility sysutils gnome
 MASTER_SITES=	GNOME
@@ -17,13 +16,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME On-Screen Keyboard (GOK)
 
-LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
+    		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui atspi libwnck \
-		gnomespeech
+		gnomespeech libxml2
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes

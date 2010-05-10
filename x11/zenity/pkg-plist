@@ -196,6 +196,7 @@ share/gnome/help/zenity/uk/zenity.xml
 share/locale/am/LC_MESSAGES/zenity.mo
 share/locale/ar/LC_MESSAGES/zenity.mo
 share/locale/as/LC_MESSAGES/zenity.mo
+share/locale/ast/LC_MESSAGES/zenity.mo
 share/locale/az/LC_MESSAGES/zenity.mo
 share/locale/be/LC_MESSAGES/zenity.mo
 share/locale/be@latin/LC_MESSAGES/zenity.mo
@@ -211,6 +212,7 @@ share/locale/da/LC_MESSAGES/zenity.mo
 share/locale/de/LC_MESSAGES/zenity.mo
 share/locale/dz/LC_MESSAGES/zenity.mo
 share/locale/el/LC_MESSAGES/zenity.mo
+share/locale/en@shaw/LC_MESSAGES/zenity.mo
 share/locale/en_CA/LC_MESSAGES/zenity.mo
 share/locale/en_GB/LC_MESSAGES/zenity.mo
 share/locale/es/LC_MESSAGES/zenity.mo

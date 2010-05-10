@@ -88,6 +88,7 @@ include/gtk-2.0/gtk/gtkcellrenderercombo.h
 include/gtk-2.0/gtk/gtkcellrendererpixbuf.h
 include/gtk-2.0/gtk/gtkcellrendererprogress.h
 include/gtk-2.0/gtk/gtkcellrendererspin.h
+include/gtk-2.0/gtk/gtkcellrendererspinner.h
 include/gtk-2.0/gtk/gtkcellrenderertext.h
 include/gtk-2.0/gtk/gtkcellrenderertoggle.h
 include/gtk-2.0/gtk/gtkcellview.h
@@ -169,6 +170,7 @@ include/gtk-2.0/gtk/gtkmodules.h
 include/gtk-2.0/gtk/gtkmountoperation.h
 include/gtk-2.0/gtk/gtknotebook.h
 include/gtk-2.0/gtk/gtkobject.h
+include/gtk-2.0/gtk/gtkoffscreenwindow.h
 include/gtk-2.0/gtk/gtkoldeditable.h
 include/gtk-2.0/gtk/gtkoptionmenu.h
 include/gtk-2.0/gtk/gtkorientable.h
@@ -213,6 +215,7 @@ include/gtk-2.0/gtk/gtksignal.h
 include/gtk-2.0/gtk/gtksizegroup.h
 include/gtk-2.0/gtk/gtksocket.h
 include/gtk-2.0/gtk/gtkspinbutton.h
+include/gtk-2.0/gtk/gtkspinner.h
 include/gtk-2.0/gtk/gtkstatusbar.h
 include/gtk-2.0/gtk/gtkstatusicon.h
 include/gtk-2.0/gtk/gtkstock.h
@@ -238,6 +241,8 @@ include/gtk-2.0/gtk/gtktoggletoolbutton.h
 include/gtk-2.0/gtk/gtktoolbar.h
 include/gtk-2.0/gtk/gtktoolbutton.h
 include/gtk-2.0/gtk/gtktoolitem.h
+include/gtk-2.0/gtk/gtktoolitemgroup.h
+include/gtk-2.0/gtk/gtktoolpalette.h
 include/gtk-2.0/gtk/gtktoolshell.h
 include/gtk-2.0/gtk/gtktooltip.h
 include/gtk-2.0/gtk/gtktooltips.h
@@ -272,6 +277,9 @@ include/gtk-unix-print-2.0/gtk/gtkprinter.h
 include/gtk-unix-print-2.0/gtk/gtkprintjob.h
 include/gtk-unix-print-2.0/gtk/gtkprintunixdialog.h
 include/gtk-unix-print-2.0/gtk/gtkunixprint.h
+lib/girepository-1.0/Gdk-2.0.typelib
+lib/girepository-1.0/GdkPixbuf-2.0.typelib
+lib/girepository-1.0/Gtk-2.0.typelib
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libpixmap.a
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libpixmap.la
 lib/gtk-2.0/%%GTK_VERSION%%/engines/libpixmap.so
@@ -317,6 +325,9 @@ lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-bmp.so
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-gif.a
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-gif.la
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-gif.so
+lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-qtif.a
+lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-qtif.la
+lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-qtif.so
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-icns.a
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-icns.la
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-icns.so
@@ -400,6 +411,9 @@ libdata/pkgconfig/gtk+-2.0.pc
 libdata/pkgconfig/gtk+-unix-print-2.0.pc
 libdata/pkgconfig/gtk+-x11-2.0.pc
 share/aclocal/gtk-2.0.m4
+share/gir-1.0/Gdk-2.0.gir
+share/gir-1.0/GdkPixbuf-2.0.gir
+share/gir-1.0/Gtk-2.0.gir
 share/gtk-2.0/demo/alphatest.png
 share/gtk-2.0/demo/apple-red.png
 share/gtk-2.0/demo/appwindow.c
@@ -446,9 +460,11 @@ share/gtk-2.0/demo/printing.c
 share/gtk-2.0/demo/rotated_text.c
 share/gtk-2.0/demo/search_entry.c
 share/gtk-2.0/demo/sizegroup.c
+share/gtk-2.0/demo/spinner.c
 share/gtk-2.0/demo/stock_browser.c
 share/gtk-2.0/demo/textscroll.c
 share/gtk-2.0/demo/textview.c
+share/gtk-2.0/demo/toolpalette.c
 share/gtk-2.0/demo/tree_store.c
 share/gtk-2.0/demo/ui_manager.c
 share/locale/af/LC_MESSAGES/gtk20-properties.mo

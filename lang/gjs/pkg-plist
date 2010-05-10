@@ -20,6 +20,9 @@ include/gjs-1.0/gjs/importer.h
 include/gjs-1.0/gjs/jsapi-util.h
 include/gjs-1.0/gjs/mem.h
 include/gjs-1.0/gjs/native.h
+lib/gjs-1.0/cairoNative.a
+lib/gjs-1.0/cairoNative.la
+lib/gjs-1.0/cairoNative.so
 lib/gjs-1.0/console.a
 lib/gjs-1.0/console.la
 lib/gjs-1.0/console.so
@@ -35,6 +38,9 @@ lib/gjs-1.0/gettextNative.so
 lib/gjs-1.0/gi.a
 lib/gjs-1.0/gi.la
 lib/gjs-1.0/gi.so
+lib/gjs-1.0/langNative.a
+lib/gjs-1.0/langNative.la
+lib/gjs-1.0/langNative.so
 lib/gjs-1.0/mainloop.a
 lib/gjs-1.0/mainloop.la
 lib/gjs-1.0/mainloop.so
@@ -53,6 +59,7 @@ lib/libgjs.so.0
 libdata/pkgconfig/gjs-1.0.pc
 libdata/pkgconfig/gjs-dbus-1.0.pc
 libdata/pkgconfig/gjs-gi-1.0.pc
+share/gjs-1.0/cairo.js
 share/gjs-1.0/dbus.js
 share/gjs-1.0/gettext.js
 share/gjs-1.0/jsUnit.js

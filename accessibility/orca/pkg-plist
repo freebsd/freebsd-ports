@@ -62,6 +62,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.py
 %%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.pyc
 %%PYTHON_SITELIBDIR%%/orca/gnomespeechfactory.pyo
+%%PYTHON_SITELIBDIR%%/orca/gsmag.py
+%%PYTHON_SITELIBDIR%%/orca/gsmag.pyc
+%%PYTHON_SITELIBDIR%%/orca/gsmag.pyo
 %%PYTHON_SITELIBDIR%%/orca/httpserver.py
 %%PYTHON_SITELIBDIR%%/orca/httpserver.pyc
 %%PYTHON_SITELIBDIR%%/orca/httpserver.pyo
@@ -143,6 +146,18 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/__init__.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/__init__.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/__init__.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/formatting.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/formatting.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/formatting.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/script.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/script.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/script.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/speech_generator.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/speech_generator.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee/speech_generator.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Mozilla.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Mozilla.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Mozilla.pyo
@@ -260,6 +275,9 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/script.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/script.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/script.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/script_settings.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/script_settings.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/script_settings.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/speech_generator.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/speech_generator.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/packagemanager/speech_generator.pyo
@@ -326,9 +344,15 @@ bin/orca
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/structural_navigation.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/structural_navigation.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice/structural_navigation.pyo
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp.py
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp.pyc
-%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/__init__.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script.pyo
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script_settings.py
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script_settings.pyc
+%%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp/script_settings.pyo
 %%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.py
 %%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.pyc
 %%PYTHON_SITELIBDIR%%/orca/scripts/self_voicing.pyo
@@ -489,6 +513,7 @@ share/locale/zh_TW/LC_MESSAGES/orca.mo
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/J2SE-access-bridge
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits/Gecko
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/toolkits
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/yelp
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/soffice
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/rhythmbox
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/planner
@@ -499,6 +524,7 @@ share/locale/zh_TW/LC_MESSAGES/orca.mo
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/gcalctool
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/evolution
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Thunderbird
+@dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps/Banshee
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts/apps
 @dirrm %%PYTHON_SITELIBDIR%%/orca/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/orca

@@ -74,6 +74,7 @@ share/gvfs/mounts/trash.mount
 share/gvfs/remote-volume-monitors/hal.monitor
 share/locale/ar/LC_MESSAGES/gvfs.mo
 share/locale/as/LC_MESSAGES/gvfs.mo
+share/locale/ast/LC_MESSAGES/gvfs.mo
 share/locale/be@latin/LC_MESSAGES/gvfs.mo
 share/locale/bg/LC_MESSAGES/gvfs.mo
 share/locale/bn/LC_MESSAGES/gvfs.mo
@@ -84,6 +85,7 @@ share/locale/cs/LC_MESSAGES/gvfs.mo
 share/locale/da/LC_MESSAGES/gvfs.mo
 share/locale/de/LC_MESSAGES/gvfs.mo
 share/locale/el/LC_MESSAGES/gvfs.mo
+share/locale/en@shaw/LC_MESSAGES/gvfs.mo
 share/locale/en_GB/LC_MESSAGES/gvfs.mo
 share/locale/es/LC_MESSAGES/gvfs.mo
 share/locale/et/LC_MESSAGES/gvfs.mo
@@ -96,6 +98,7 @@ share/locale/gu/LC_MESSAGES/gvfs.mo
 share/locale/he/LC_MESSAGES/gvfs.mo
 share/locale/hi/LC_MESSAGES/gvfs.mo
 share/locale/hu/LC_MESSAGES/gvfs.mo
+share/locale/id/LC_MESSAGES/gvfs.mo
 share/locale/it/LC_MESSAGES/gvfs.mo
 share/locale/ja/LC_MESSAGES/gvfs.mo
 share/locale/kn/LC_MESSAGES/gvfs.mo
@@ -108,6 +111,7 @@ share/locale/mk/LC_MESSAGES/gvfs.mo
 share/locale/ml/LC_MESSAGES/gvfs.mo
 share/locale/mr/LC_MESSAGES/gvfs.mo
 share/locale/nb/LC_MESSAGES/gvfs.mo
+share/locale/nds/LC_MESSAGES/gvfs.mo
 share/locale/nl/LC_MESSAGES/gvfs.mo
 share/locale/nn/LC_MESSAGES/gvfs.mo
 share/locale/or/LC_MESSAGES/gvfs.mo
@@ -144,17 +148,23 @@ share/locale/zh_TW/LC_MESSAGES/gvfs.mo
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

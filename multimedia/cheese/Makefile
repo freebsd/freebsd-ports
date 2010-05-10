@@ -3,12 +3,12 @@
 # Whom:					FreeBSD GNOME Team <gnome@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/multimedia/cheese/Makefile,v 1.44 2009/10/19 20:24:12 kwm Exp $
+#   $MCom: ports/multimedia/cheese/Makefile,v 1.55 2010/04/17 22:01:34 marcus Exp $
 #
 
 PORTNAME=	cheese
-PORTVERSION=	2.28.1
-PORTREVISION=	2
+PORTVERSION=	2.30.0
+PORTREVISION=	3
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,15 +18,19 @@ COMMENT=	A Photobooth-inspired app for taking pictures and videos from webcam
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 
+LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
+		hal.1:${PORTSDIR}/sysutils/hal
+
 USE_XORG=	xxf86vm
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack evolutiondataserver librsvg2 \
 		gnomedocutils gnomedesktop
 USE_GETTEXT=	yes
-USE_GSTREAMER=	good
+USE_GSTREAMER=	good v4l2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

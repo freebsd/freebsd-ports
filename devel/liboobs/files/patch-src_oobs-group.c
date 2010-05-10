@@ -1,25 +1,10 @@
---- oobs/oobs-group.c.orig	Fri Sep 15 18:41:04 2006
-+++ oobs/oobs-group.c	Tue Oct 31 23:12:40 2006
-@@ -18,7 +18,12 @@
-  * Authors: Carlos Garnacho Parro  <carlosg@gnome.org>
-  */
+--- oobs/oobs-group.c.orig	2010-01-11 13:34:52.000000000 -0500
++++ oobs/oobs-group.c	2010-01-18 02:04:34.000000000 -0500
+@@ -21,6 +21,7 @@
  
-+#if defined(HAVE_CONFIG_H)
-+#include <config.h>
-+#endif
-+
+ #include <string.h>
  #include <glib-object.h>
 +#include <unistd.h>
- #include "oobs-session.h"
- #include "oobs-group.h"
- #include "oobs-user.h"
-@@ -27,7 +32,9 @@
- #include "oobs-groupsconfig-private.h"
- #include "oobs-defines.h"
- #include "utils.h"
-+#ifdef HAVE_CRYPT_H
- #include <crypt.h>
-+#endif
+ #include <dbus/dbus.h>
  
- #define OOBS_GROUP_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), OOBS_TYPE_GROUP, OobsGroupPrivate))
- 
+ #include "oobs-object-private.h"

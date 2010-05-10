@@ -1,17 +1,17 @@
---- builds/unix/freetype-config.in.orig	Sun Jan  9 21:18:15 2005
-+++ builds/unix/freetype-config.in	Sun Jan  9 21:18:57 2005
-@@ -105,12 +105,8 @@
+--- builds/unix/freetype-config.in.orig	2009-12-21 18:23:42.000000000 -0500
++++ builds/unix/freetype-config.in	2010-02-21 15:51:17.000000000 -0500
+@@ -131,12 +131,8 @@ if test "$echo_ft_version" = "yes" ; the
  fi
  
  if test "$echo_cflags" = "yes" ; then
--  cflags="-I$includedir/freetype2"
--  if test "$includedir" != "/usr/include" ; then
--    echo $cflags -I$includedir
+-  cflags="-I${SYSROOT}$includedir/freetype2"
+-  if test "${SYSROOT}$includedir" != "/usr/include" ; then
+-    echo $cflags -I${SYSROOT}$includedir
 -  else
 -    echo $cflags
 -  fi
-+  cflags="-I@includedir@/freetype2 -I@includedir@"
-+  echo $cflags
++   cflags="-I@includedir@/freetype2 -I@includedir@"
++   echo $cflags
  fi
  
  if test "$echo_libs" = "yes" ; then

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-swallow
 PORTVERSION=	1.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://interreality.org/~tetron/technology/swallow/
 
@@ -16,7 +16,7 @@ COMMENT=	Applet that swallows any X11 application into the GNOME 2 panel
 
 USE_XORG=	x11
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomepanel
+USE_GNOME=	gnomeprefix gnomehack gnomepanel libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

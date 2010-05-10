@@ -41,6 +41,7 @@ share/locale/da/LC_MESSAGES/alacarte.mo
 share/locale/de/LC_MESSAGES/alacarte.mo
 share/locale/dz/LC_MESSAGES/alacarte.mo
 share/locale/el/LC_MESSAGES/alacarte.mo
+share/locale/en@shaw/LC_MESSAGES/alacarte.mo
 share/locale/en_CA/LC_MESSAGES/alacarte.mo
 share/locale/en_GB/LC_MESSAGES/alacarte.mo
 share/locale/eo/LC_MESSAGES/alacarte.mo
@@ -75,6 +76,7 @@ share/locale/mk/LC_MESSAGES/alacarte.mo
 share/locale/ml/LC_MESSAGES/alacarte.mo
 share/locale/mn/LC_MESSAGES/alacarte.mo
 share/locale/mr/LC_MESSAGES/alacarte.mo
+share/locale/ms/LC_MESSAGES/alacarte.mo
 share/locale/nb/LC_MESSAGES/alacarte.mo
 share/locale/nds/LC_MESSAGES/alacarte.mo
 share/locale/nl/LC_MESSAGES/alacarte.mo

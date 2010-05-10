@@ -10,7 +10,7 @@ include/gnome-desktop-2.0/libgnomeui/gnome-rr.h
 lib/libgnome-desktop-2.a
 lib/libgnome-desktop-2.la
 lib/libgnome-desktop-2.so
-lib/libgnome-desktop-2.so.11
+lib/libgnome-desktop-2.so.17
 libdata/pkgconfig/gnome-desktop-2.0.pc
 share/applications/gnome-about.desktop
 share/gnome-about/contributors.list
@@ -53,6 +53,7 @@ share/gnome/help/gpl/fi/gpl.xml
 share/gnome/help/gpl/fr/gpl.xml
 share/gnome/help/gpl/hu/gpl.xml
 share/gnome/help/gpl/ko/gpl.xml
+share/gnome/help/gpl/nds/gpl.xml
 share/gnome/help/gpl/oc/gpl.xml
 share/gnome/help/gpl/pa/gpl.xml
 share/gnome/help/gpl/sv/gpl.xml
@@ -209,6 +210,7 @@ share/omf/gpl/gpl-fi.omf
 share/omf/gpl/gpl-fr.omf
 share/omf/gpl/gpl-hu.omf
 share/omf/gpl/gpl-ko.omf
+share/omf/gpl/gpl-nds.omf
 share/omf/gpl/gpl-oc.omf
 share/omf/gpl/gpl-pa.omf
 share/omf/gpl/gpl-sv.omf
@@ -327,6 +329,7 @@ share/pixmaps/vnterm.xpm
 @dirrm share/gnome/help/gpl/sv
 @dirrm share/gnome/help/gpl/pa
 @dirrm share/gnome/help/gpl/oc
+@dirrm share/gnome/help/gpl/nds
 @dirrm share/gnome/help/gpl/ko
 @dirrm share/gnome/help/gpl/hu
 @dirrm share/gnome/help/gpl/fr

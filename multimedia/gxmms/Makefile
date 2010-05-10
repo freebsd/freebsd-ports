@@ -7,7 +7,7 @@
 
 PORTNAME=	gxmms
 PORTVERSION=	0.2.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack
+USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \

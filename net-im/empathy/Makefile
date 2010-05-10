@@ -3,11 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/net-im/empathy/Makefile,v 1.49 2009/11/18 18:26:02 kwm Exp $
+#    $MCom: ports/net-im/empathy/Makefile,v 1.66 2010/04/26 23:54:08 kwm Exp $
 
 PORTNAME=	empathy
-PORTVERSION=	2.28.2
-PORTREVISION=	2
+PORTVERSION=	2.30.1
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -16,7 +15,7 @@ COMMENT=	GNOME IM client based around telepathy
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
-LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
+LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 		telepathy.2:${PORTSDIR}/net-im/libtelepathy \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
 		telepathy-farsight.0:${PORTSDIR}/net-im/telepathy-farsight \
@@ -25,23 +24,22 @@ LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
 
-MAKE_JOBS_UNSAFE=	yes
-
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	evolutiondataserver gnomehack gnomeprefix pygtk2 ltverhack \
-		gnomepanel
+USE_GNOME=	evolutiondataserver gnomehack gnomeprefix pygtk2 ltverhack
 USE_GSTREAMER=	yes
 USE_AUTOTOOLS=	libtool:22
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PYTHON=	yes
+MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-tpl=no
 
-GCONF_SCHEMAS=	GNOME_Megaphone_Applet.schemas empathy.schemas
+GCONF_SCHEMAS=	empathy.schemas
 
 MAN1=		empathy.1
 
@@ -51,6 +49,7 @@ OPTIONS=	JABBER	"Enable jabber (XMPP) client support" on \
 		SALUT	"Enable link-local (serverless) XMPP support" off \
 		HAZE	"Enable libpurple protocol integration" off \
 		WEBKIT	"Enable Adium Message Style themes" on \
+		NST	"Enable Nautilus SendTo plugin"	on \
 		MAP	"Enable graphical map support" on
 
 .include <bsd.port.pre.mk>
@@ -82,6 +81,16 @@ PLIST_SUB+=	ADIUM=""
 .else
 CONFIGURE_ARGS+=--disable-webkit
 PLIST_SUB+=	ADIUM="@comment "
+.endif
+
+.if defined(WITH_NST)
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/nautilus-sendto.pc:${PORTSDIR}/deskutils/nautilus-sendto
+RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/nautilus-sendto.pc:${PORTSDIR}/deskutils/nautilus-sendto
+CONFIGURE_ARGS+=--enable-nautilus-sendto=yes
+PLIST_SUB+=	NST=""
+.else
+CONFIGURE_ARGS+=--enable-nautilus-sendto=no
+PLIST_SUB+=	NST="@comment "
 .endif
 
 .if !defined(WITHOUT_MAP)

@@ -843,6 +843,7 @@
     SUBDIR += uniutils
     SUBDIR += unquote
     SUBDIR += unstow
+    SUBDIR += upower
     SUBDIR += upsd
     SUBDIR += upsdaemon
     SUBDIR += upsmon

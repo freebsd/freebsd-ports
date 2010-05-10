@@ -3,18 +3,19 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/hal/Makefile,v 1.72 2009/11/28 05:59:03 mezz Exp $
+#   $MCom: ports/sysutils/hal/Makefile,v 1.81 2010/04/13 02:49:07 mezz Exp $
 #
 
 PORTNAME=	hal
-DISTVERSION=	0.5.13
-PORTREVISION=	14
+DISTVERSION=	0.5.14
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Hardware Abstraction Layer for simplifying device access
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	polkit.2:${PORTSDIR}/sysutils/policykit \
 		volume_id.0:${PORTSDIR}/devel/libvolume_id \
 		ck-connector.0:${PORTSDIR}/sysutils/consolekit

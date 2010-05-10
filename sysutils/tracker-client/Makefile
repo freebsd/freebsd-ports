@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/tracker-client/Makefile,v 1.10 2009/10/11 11:11:33 kwm Exp $
+#   $MCom: ports/sysutils/tracker-client/Makefile,v 1.14 2010/05/10 04:21:19 marcus Exp $
 #
 
 PORTNAME=	tracker
 PORTVERSION=	0.6.95
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	-client
@@ -25,7 +25,7 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		qdbm.14:${PORTSDIR}/databases/qdbm \
 		exempi.3:${PORTSDIR}/textproc/exempi \
 		hal.1:${PORTSDIR}/sysutils/hal \
-		totem-plparser.12:${PORTSDIR}/multimedia/totem-pl-parser \
+		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser \
 		raptor.2:${PORTSDIR}/textproc/raptor \
 		ogg.6:${PORTSDIR}/audio/libogg \
 		iptcdata.3:${PORTSDIR}/graphics/libiptcdata

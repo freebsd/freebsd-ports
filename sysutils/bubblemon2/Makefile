@@ -7,7 +7,7 @@
 
 PORTNAME=	bubblemon2
 PORTVERSION=	2.0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SAVANNAH/bubblemon
 DISTNAME=	bubblemon-${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	A system CPU and memory load monitor for GNOME2
 
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 
-USE_GNOME=	gnomehack gnomepanel gnomeprefix gnometarget intlhack
+USE_GNOME=	gnomehack gnomepanel gnomeprefix gnometarget intlhack libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \

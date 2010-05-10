@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/webkit-gtk2/Makefile,v 1.50 2009/11/28 17:35:07 kwm Exp $
+#   $MCom: ports/www/webkit-gtk2/Makefile,v 1.60 2010/04/05 17:39:13 kwm Exp $
 #
 
 PORTNAME=	webkit
-PORTVERSION=	1.1.15.4
-PORTREVISION=	4
+PORTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/
 PKGNAMESUFFIX=	-gtk2
@@ -16,11 +15,14 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An opensource browser engine
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
+		${LOCALBASE}/share/gir-1.0/Soup-2.4.gir:${PORTSDIR}/devel/gir-repository-libsoup
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 		curl.6:${PORTSDIR}/ftp/curl \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
+RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/Soup-2.4.gir:${PORTSDIR}/devel/gir-repository-libsoup
 
 WANT_GSTREAMER=	yes
 MAKE_JOBS_SAFE=	yes
@@ -38,7 +40,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_path_DOLT_BASH=""
 CONFIGURE_ARGS=	--enable-icon-database \
 		--enable-svg \
-		--enable-svg-fonts
+		--enable-svg-fonts \
+		--enable-introspection
 MAKEFILE=	GNUmakefile
 
 BROWSER_PLUGINS_DIR?=	${LOCALBASE}/lib/browser_plugins/symlinks/webkit-gtk2
@@ -49,10 +52,6 @@ OPTIONS=	VIDEO "Enable video support" on \
 		STATIC "Enable building static library" off
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64"
-BROKEN=		Does not compile on ia64
-.endif
 
 .if exists (${LOCALBASE}/lib/libicutu.so.43)
 LIB_DEPENDS+=	icutu.43:${PORTSDIR}/devel/icu4
@@ -81,10 +80,7 @@ PLIST_SUB+=	STATIC="@comment "
 
 .if ${OSVERSION} < 700000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-JavaScriptCore_yarr_RegexJIT.h \
-		${FILESDIR}/extra-patch-JavaScriptCore_jit_JITStubCall.h \
-		${FILESDIR}/extra-patch-JavaScriptCore_jit_JITOpcodes.cpp \
-		${FILESDIR}/extra-patch-JavaScriptCore_assembler_MacroAssemblerCodeRef.h \
-		${FILESDIR}/extra-patch-JavaScriptCore_jit_JITStubs.cpp
+		${FILESDIR}/extra-patch-JavaScriptCore_assembler_MacroAssemblerCodeRef.h
 .endif
 
 post-patch:

@@ -17,6 +17,9 @@
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/defs.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/defs.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/defs.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/networkmanager.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/networkmanager.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/networkmanager.pyo
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/preferences.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/preferences.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/preferences.pyo
@@ -52,7 +55,6 @@ libexec/charpick_applet2
 libexec/drivemount_applet2
 libexec/geyes_applet2
 %%COMMANDER%%libexec/gnome-applets/mc-install-default-macros
-libexec/gnome-keyboard-applet
 libexec/gweather-applet-2
 %%PYTHON%%libexec/invest-applet
 %%COMMANDER%%libexec/mini_commander_applet
@@ -67,7 +69,6 @@ share/gnome-2.0/ui/GNOME_AccessxApplet.xml
 %%CPUFREQ%%share/gnome-2.0/ui/GNOME_CPUFreqApplet.xml
 share/gnome-2.0/ui/GNOME_CharpickerApplet.xml
 share/gnome-2.0/ui/GNOME_DriveMountApplet.xml
-share/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
 share/gnome-2.0/ui/GNOME_GWeatherApplet.xml
 share/gnome-2.0/ui/GNOME_GeyesApplet.xml
 %%COMMANDER%%share/gnome-2.0/ui/GNOME_MiniCommanderApplet.xml
@@ -79,7 +80,6 @@ share/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
 %%BATTERY%%%%DATADIR%%/builder/battstat_applet.ui
 %%CPUFREQ%%%%DATADIR%%/builder/cpufreq-preferences.ui
 %%PYTHON%%%%DATADIR%%/builder/financialchart.ui
-%%DATADIR%%/builder/gswitchit.ui
 %%COMMANDER%%%%DATADIR%%/builder/mini-commander.ui
 %%PYTHON%%%%DATADIR%%/builder/prefs-dialog.ui
 %%DATADIR%%/builder/stickynotes.ui
@@ -351,6 +351,12 @@ share/gnome/help/accessx-status/zh_CN/figures/accessx_sticky-windows-key.png
 %%BATTERY%%share/gnome/help/battstat/cs/figures/battstat-credits-hal.png
 %%BATTERY%%share/gnome/help/battstat/cs/figures/battstat-preferences.png
 %%BATTERY%%share/gnome/help/battstat/cs/figures/context-menu.png
+%%BATTERY%%share/gnome/help/battstat/da/battstat.xml
+%%BATTERY%%share/gnome/help/battstat/da/figures/battstat-applet-expanded.png
+%%BATTERY%%share/gnome/help/battstat/da/figures/battstat-applet.png
+%%BATTERY%%share/gnome/help/battstat/da/figures/battstat-credits-hal.png
+%%BATTERY%%share/gnome/help/battstat/da/figures/battstat-preferences.png
+%%BATTERY%%share/gnome/help/battstat/da/figures/context-menu.png
 %%BATTERY%%share/gnome/help/battstat/de/battstat.xml
 %%BATTERY%%share/gnome/help/battstat/de/figures/battstat-applet-expanded.png
 %%BATTERY%%share/gnome/help/battstat/de/figures/battstat-applet.png
@@ -906,6 +912,8 @@ share/gnome/help/drivemount/zh_CN/figures/drivemount-applet_status.png
 share/gnome/help/geyes/C/figures/geyes_applet.png
 share/gnome/help/geyes/C/geyes.xml
 share/gnome/help/geyes/C/legal.xml
+share/gnome/help/geyes/ast/figures/geyes_applet.png
+share/gnome/help/geyes/ast/geyes.xml
 share/gnome/help/geyes/bg/figures/geyes_applet.png
 share/gnome/help/geyes/bg/geyes.xml
 share/gnome/help/geyes/ca/figures/geyes_applet.png
@@ -942,22 +950,10 @@ share/gnome/help/geyes/uk/figures/geyes_applet.png
 share/gnome/help/geyes/uk/geyes.xml
 share/gnome/help/geyes/zh_CN/figures/geyes_applet.png
 share/gnome/help/geyes/zh_CN/geyes.xml
-share/gnome/help/gswitchit/C/gswitchit.xml
-share/gnome/help/gswitchit/C/legal.xml
-share/gnome/help/gswitchit/ca/gswitchit.xml
-share/gnome/help/gswitchit/cs/gswitchit.xml
-share/gnome/help/gswitchit/de/gswitchit.xml
-share/gnome/help/gswitchit/el/gswitchit.xml
-share/gnome/help/gswitchit/en_GB/gswitchit.xml
-share/gnome/help/gswitchit/es/gswitchit.xml
-share/gnome/help/gswitchit/eu/gswitchit.xml
-share/gnome/help/gswitchit/fi/gswitchit.xml
-share/gnome/help/gswitchit/fr/gswitchit.xml
-share/gnome/help/gswitchit/oc/gswitchit.xml
-share/gnome/help/gswitchit/ru/gswitchit.xml
-share/gnome/help/gswitchit/sv/gswitchit.xml
-share/gnome/help/gswitchit/uk/gswitchit.xml
-share/gnome/help/gswitchit/zh_CN/gswitchit.xml
+share/gnome/help/geyes/zh_HK/figures/geyes_applet.png
+share/gnome/help/geyes/zh_HK/geyes.xml
+share/gnome/help/geyes/zh_TW/figures/geyes_applet.png
+share/gnome/help/geyes/zh_TW/geyes.xml
 share/gnome/help/gweather/C/figures/gweather-details.png
 share/gnome/help/gweather/C/figures/gweather-menu-prefs.png
 share/gnome/help/gweather/C/figures/gweather-prefs-general.png
@@ -1277,6 +1273,8 @@ share/gnome/help/mixer_applet2/ca/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/ca/mixer_applet2.xml
 share/gnome/help/mixer_applet2/cs/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/cs/mixer_applet2.xml
+share/gnome/help/mixer_applet2/da/figures/volumecontrol_applet.png
+share/gnome/help/mixer_applet2/da/mixer_applet2.xml
 share/gnome/help/mixer_applet2/de/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/de/mixer_applet2.xml
 share/gnome/help/mixer_applet2/el/figures/volumecontrol_applet.png
@@ -1493,6 +1491,18 @@ share/gnome/help/stickynotes_applet/zh_CN/figures/stickynotes-note-prefs.png
 share/gnome/help/stickynotes_applet/zh_CN/figures/stickynotes-prefs.png
 share/gnome/help/stickynotes_applet/zh_CN/figures/stickynotes_applet.png
 share/gnome/help/stickynotes_applet/zh_CN/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/zh_HK/figures/stickynote-right-menu-lock.png
+share/gnome/help/stickynotes_applet/zh_HK/figures/stickynote-right-menu-new.png
+share/gnome/help/stickynotes_applet/zh_HK/figures/stickynotes-note-prefs.png
+share/gnome/help/stickynotes_applet/zh_HK/figures/stickynotes-prefs.png
+share/gnome/help/stickynotes_applet/zh_HK/figures/stickynotes_applet.png
+share/gnome/help/stickynotes_applet/zh_HK/stickynotes_applet.xml
+share/gnome/help/stickynotes_applet/zh_TW/figures/stickynote-right-menu-lock.png
+share/gnome/help/stickynotes_applet/zh_TW/figures/stickynote-right-menu-new.png
+share/gnome/help/stickynotes_applet/zh_TW/figures/stickynotes-note-prefs.png
+share/gnome/help/stickynotes_applet/zh_TW/figures/stickynotes-prefs.png
+share/gnome/help/stickynotes_applet/zh_TW/figures/stickynotes_applet.png
+share/gnome/help/stickynotes_applet/zh_TW/stickynotes_applet.xml
 share/gnome/help/trashapplet/C/figures/trash-applet.png
 share/gnome/help/trashapplet/C/legal.xml
 share/gnome/help/trashapplet/C/trashapplet.xml
@@ -1585,6 +1595,7 @@ share/locale/dz/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es_AR/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es_CL/LC_MESSAGES/gnome-applets-2.0.mo
@@ -1688,6 +1699,7 @@ share/omf/accessx-status/accessx-status-zh_CN.omf
 %%BATTERY%%share/omf/battstat/battstat-bg.omf
 %%BATTERY%%share/omf/battstat/battstat-ca.omf
 %%BATTERY%%share/omf/battstat/battstat-cs.omf
+%%BATTERY%%share/omf/battstat/battstat-da.omf
 %%BATTERY%%share/omf/battstat/battstat-de.omf
 %%BATTERY%%share/omf/battstat/battstat-el.omf
 %%BATTERY%%share/omf/battstat/battstat-en_GB.omf
@@ -1775,6 +1787,7 @@ share/omf/drivemount/drivemount-sv.omf
 share/omf/drivemount/drivemount-uk.omf
 share/omf/drivemount/drivemount-zh_CN.omf
 share/omf/geyes/geyes-C.omf
+share/omf/geyes/geyes-ast.omf
 share/omf/geyes/geyes-bg.omf
 share/omf/geyes/geyes-ca.omf
 share/omf/geyes/geyes-cs.omf
@@ -1793,21 +1806,8 @@ share/omf/geyes/geyes-ru.omf
 share/omf/geyes/geyes-sv.omf
 share/omf/geyes/geyes-uk.omf
 share/omf/geyes/geyes-zh_CN.omf
-share/omf/gswitchit/gswitchit-C.omf
-share/omf/gswitchit/gswitchit-ca.omf
-share/omf/gswitchit/gswitchit-cs.omf
-share/omf/gswitchit/gswitchit-de.omf
-share/omf/gswitchit/gswitchit-el.omf
-share/omf/gswitchit/gswitchit-en_GB.omf
-share/omf/gswitchit/gswitchit-es.omf
-share/omf/gswitchit/gswitchit-eu.omf
-share/omf/gswitchit/gswitchit-fi.omf
-share/omf/gswitchit/gswitchit-fr.omf
-share/omf/gswitchit/gswitchit-oc.omf
-share/omf/gswitchit/gswitchit-ru.omf
-share/omf/gswitchit/gswitchit-sv.omf
-share/omf/gswitchit/gswitchit-uk.omf
-share/omf/gswitchit/gswitchit-zh_CN.omf
+share/omf/geyes/geyes-zh_HK.omf
+share/omf/geyes/geyes-zh_TW.omf
 share/omf/gweather/gweather-C.omf
 share/omf/gweather/gweather-ar.omf
 share/omf/gweather/gweather-ca.omf
@@ -1841,6 +1841,7 @@ share/omf/gweather/gweather-zh_CN.omf
 share/omf/mixer_applet2/mixer_applet2-C.omf
 share/omf/mixer_applet2/mixer_applet2-ca.omf
 share/omf/mixer_applet2/mixer_applet2-cs.omf
+share/omf/mixer_applet2/mixer_applet2-da.omf
 share/omf/mixer_applet2/mixer_applet2-de.omf
 share/omf/mixer_applet2/mixer_applet2-el.omf
 share/omf/mixer_applet2/mixer_applet2-en_GB.omf
@@ -1894,6 +1895,8 @@ share/omf/stickynotes_applet/stickynotes_applet-ru.omf
 share/omf/stickynotes_applet/stickynotes_applet-sv.omf
 share/omf/stickynotes_applet/stickynotes_applet-uk.omf
 share/omf/stickynotes_applet/stickynotes_applet-zh_CN.omf
+share/omf/stickynotes_applet/stickynotes_applet-zh_HK.omf
+share/omf/stickynotes_applet/stickynotes_applet-zh_TW.omf
 share/omf/trashapplet/trashapplet-C.omf
 share/omf/trashapplet/trashapplet-ca.omf
 share/omf/trashapplet/trashapplet-cs.omf
@@ -2059,7 +2062,6 @@ share/xmodmap/xmodmap.yu
 @dirrm share/omf/mixer_applet2
 %%PYTHON%%@dirrm share/omf/invest-applet
 @dirrm share/omf/gweather
-@dirrm share/omf/gswitchit
 @dirrm share/omf/geyes
 @dirrm share/omf/drivemount
 %%CPUFREQ%%@dirrm share/omf/cpufreq-applet
@@ -2114,6 +2116,10 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/trashapplet/C/figures
 @dirrm share/gnome/help/trashapplet/C
 @dirrm share/gnome/help/trashapplet
+@dirrm share/gnome/help/stickynotes_applet/zh_TW/figures
+@dirrm share/gnome/help/stickynotes_applet/zh_TW
+@dirrm share/gnome/help/stickynotes_applet/zh_HK/figures
+@dirrm share/gnome/help/stickynotes_applet/zh_HK
 @dirrm share/gnome/help/stickynotes_applet/zh_CN/figures
 @dirrm share/gnome/help/stickynotes_applet/zh_CN
 @dirrm share/gnome/help/stickynotes_applet/uk/figures
@@ -2222,6 +2228,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/mixer_applet2/el
 @dirrm share/gnome/help/mixer_applet2/de/figures
 @dirrm share/gnome/help/mixer_applet2/de
+@dirrm share/gnome/help/mixer_applet2/da/figures
+@dirrm share/gnome/help/mixer_applet2/da
 @dirrm share/gnome/help/mixer_applet2/cs/figures
 @dirrm share/gnome/help/mixer_applet2/cs
 @dirrm share/gnome/help/mixer_applet2/ca/figures
@@ -2281,22 +2289,10 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/gweather/C/figures
 @dirrm share/gnome/help/gweather/C
 @dirrm share/gnome/help/gweather
-@dirrm share/gnome/help/gswitchit/zh_CN
-@dirrm share/gnome/help/gswitchit/uk
-@dirrm share/gnome/help/gswitchit/sv
-@dirrm share/gnome/help/gswitchit/ru
-@dirrm share/gnome/help/gswitchit/oc
-@dirrm share/gnome/help/gswitchit/fr
-@dirrm share/gnome/help/gswitchit/fi
-@dirrm share/gnome/help/gswitchit/eu
-@dirrm share/gnome/help/gswitchit/es
-@dirrm share/gnome/help/gswitchit/en_GB
-@dirrm share/gnome/help/gswitchit/el
-@dirrm share/gnome/help/gswitchit/de
-@dirrm share/gnome/help/gswitchit/cs
-@dirrm share/gnome/help/gswitchit/ca
-@dirrm share/gnome/help/gswitchit/C
-@dirrm share/gnome/help/gswitchit
+@dirrm share/gnome/help/geyes/zh_TW/figures
+@dirrm share/gnome/help/geyes/zh_TW
+@dirrm share/gnome/help/geyes/zh_HK/figures
+@dirrm share/gnome/help/geyes/zh_HK
 @dirrm share/gnome/help/geyes/zh_CN/figures
 @dirrm share/gnome/help/geyes/zh_CN
 @dirrm share/gnome/help/geyes/uk/figures
@@ -2333,6 +2329,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/geyes/ca
 @dirrm share/gnome/help/geyes/bg/figures
 @dirrm share/gnome/help/geyes/bg
+@dirrm share/gnome/help/geyes/ast/figures
+@dirrm share/gnome/help/geyes/ast
 @dirrm share/gnome/help/geyes/C/figures
 @dirrm share/gnome/help/geyes/C
 @dirrm share/gnome/help/geyes
@@ -2512,6 +2510,8 @@ share/xmodmap/xmodmap.yu
 %%BATTERY%%@dirrm share/gnome/help/battstat/el
 %%BATTERY%%@dirrm share/gnome/help/battstat/de/figures
 %%BATTERY%%@dirrm share/gnome/help/battstat/de
+%%BATTERY%%@dirrm share/gnome/help/battstat/da/figures
+%%BATTERY%%@dirrm share/gnome/help/battstat/da
 %%BATTERY%%@dirrm share/gnome/help/battstat/bg/figures
 %%BATTERY%%@dirrm share/gnome/help/battstat/bg
 %%BATTERY%%@dirrm share/gnome/help/battstat/cs/figures
@@ -2628,8 +2628,12 @@ share/xmodmap/xmodmap.yu
 @dirrmtry share/locale/es_CL
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

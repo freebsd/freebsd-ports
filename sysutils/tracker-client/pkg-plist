@@ -291,12 +291,6 @@ share/locale/zh_CN/LC_MESSAGES/tracker.mo
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%/languages
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/be@latin/LC_MESSAGES
-@dirrmtry share/locale/be@latin
 @dirrm share/doc/libtracker-module
 @dirrm share/doc/libtracker-common
 @dirrm lib/tracker/indexer-modules
@@ -308,3 +302,9 @@ share/locale/zh_CN/LC_MESSAGES/tracker.mo
 @dirrm include/tracker-1.0/libtracker-module
 @dirrm include/tracker-1.0/libtracker-common
 @dirrm include/tracker-1.0
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin

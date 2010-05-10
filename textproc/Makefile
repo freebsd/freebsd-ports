@@ -321,6 +321,7 @@
     SUBDIR += libxml
     SUBDIR += libxml++
     SUBDIR += libxml++26
+    SUBDIR += libxml++26-reference
     SUBDIR += libxml2
     SUBDIR += libxml2-reference
     SUBDIR += libxode

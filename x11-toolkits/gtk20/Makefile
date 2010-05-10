@@ -3,12 +3,12 @@
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/gtk20/Makefile,v 1.174 2009/10/17 09:40:33 kwm Exp $
+#   $MCom: ports/x11-toolkits/gtk20/Makefile,v 1.191 2010/05/04 10:29:49 kwm Exp $
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.18.7
-PORTREVISION?=	1
+PORTVERSION=	2.20.1
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/,} \
 		ftp://ftp.gtk.org/pub/gtk/%SUBDIR%/ \
@@ -29,6 +29,7 @@ LATEST_LINK=	gtk20
 
 .if !defined(REFERENCE_PORT)
 
+BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
@@ -37,7 +38,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USE_PERL5_BUILD=yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack atk pango ltverhack

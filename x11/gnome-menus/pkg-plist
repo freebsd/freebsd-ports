@@ -1,6 +1,7 @@
 etc/xdg/menus/gnome-applications.menu
 etc/xdg/menus/settings.menu
 include/gnome-menus/gmenu-tree.h
+lib/girepository-1.0/GMenu-2.0.typelib
 lib/libgnome-menu.a
 lib/libgnome-menu.la
 lib/libgnome-menu.so
@@ -30,6 +31,7 @@ share/desktop-directories/Utility.directory
 share/desktop-directories/X-GNOME-Menu-Applications.directory
 share/desktop-directories/X-GNOME-Menu-System.directory
 share/desktop-directories/X-GNOME-Other.directory
+share/gir-1.0/GMenu-2.0.gir
 share/gnome-menus/examples/gnome-menus-ls.py
 share/locale/af/LC_MESSAGES/gnome-menus.mo
 share/locale/ar/LC_MESSAGES/gnome-menus.mo
@@ -51,6 +53,7 @@ share/locale/de/LC_MESSAGES/gnome-menus.mo
 share/locale/dv/LC_MESSAGES/gnome-menus.mo
 share/locale/dz/LC_MESSAGES/gnome-menus.mo
 share/locale/el/LC_MESSAGES/gnome-menus.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-menus.mo
 share/locale/en_CA/LC_MESSAGES/gnome-menus.mo
 share/locale/en_GB/LC_MESSAGES/gnome-menus.mo
 share/locale/eo/LC_MESSAGES/gnome-menus.mo
@@ -131,6 +134,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrm share/gnome-menus
 @dirrmtry share/desktop-directories
 @dirrm include/gnome-menus
+@dirrmtry share/gir-1.0
+@dirrmtry lib/girepository-1.0
+@dirrmtry etc/xdg/menus
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yo/LC_MESSAGES
@@ -179,6 +185,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/gn
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/dv/LC_MESSAGES
@@ -195,4 +203,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry etc/xdg/menus

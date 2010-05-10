@@ -22,6 +22,48 @@ share/gnome/help/accessibility-devel-guide/C/figures/nodrop.png
 share/gnome/help/accessibility-devel-guide/C/gad.xml
 share/gnome/help/accessibility-devel-guide/C/gtest.xml
 share/gnome/help/accessibility-devel-guide/C/legal.xml
+share/gnome/help/accessibility-devel-guide/de/accessibility-devel-guide.xml
+share/gnome/help/accessibility-devel-guide/de/figures/at-arch.png
+share/gnome/help/accessibility-devel-guide/de/figures/badfocus1.png
+share/gnome/help/accessibility-devel-guide/de/figures/badfocus2.png
+share/gnome/help/accessibility-devel-guide/de/figures/badfocus3.png
+share/gnome/help/accessibility-devel-guide/de/figures/colour_and_arrows.png
+share/gnome/help/accessibility-devel-guide/de/figures/colour_only.png
+share/gnome/help/accessibility-devel-guide/de/figures/depend1a.png
+share/gnome/help/accessibility-devel-guide/de/figures/depend1.png
+share/gnome/help/accessibility-devel-guide/de/figures/depend2a.png
+share/gnome/help/accessibility-devel-guide/de/figures/depend2.png
+share/gnome/help/accessibility-devel-guide/de/figures/depend3.png
+share/gnome/help/accessibility-devel-guide/de/figures/GNOME_desktop_Accessibility.png
+share/gnome/help/accessibility-devel-guide/de/figures/goodfocus2.png
+share/gnome/help/accessibility-devel-guide/de/figures/goodfocus3.png
+share/gnome/help/accessibility-devel-guide/de/figures/goodfocus.png
+share/gnome/help/accessibility-devel-guide/de/figures/label_above.png
+share/gnome/help/accessibility-devel-guide/de/figures/label_below.png
+share/gnome/help/accessibility-devel-guide/de/figures/label_left.png
+share/gnome/help/accessibility-devel-guide/de/figures/label_right.png
+share/gnome/help/accessibility-devel-guide/de/figures/nodrop.png
+share/gnome/help/accessibility-devel-guide/el/accessibility-devel-guide.xml
+share/gnome/help/accessibility-devel-guide/el/figures/at-arch.png
+share/gnome/help/accessibility-devel-guide/el/figures/badfocus1.png
+share/gnome/help/accessibility-devel-guide/el/figures/badfocus2.png
+share/gnome/help/accessibility-devel-guide/el/figures/badfocus3.png
+share/gnome/help/accessibility-devel-guide/el/figures/colour_and_arrows.png
+share/gnome/help/accessibility-devel-guide/el/figures/colour_only.png
+share/gnome/help/accessibility-devel-guide/el/figures/depend1a.png
+share/gnome/help/accessibility-devel-guide/el/figures/depend1.png
+share/gnome/help/accessibility-devel-guide/el/figures/depend2a.png
+share/gnome/help/accessibility-devel-guide/el/figures/depend2.png
+share/gnome/help/accessibility-devel-guide/el/figures/depend3.png
+share/gnome/help/accessibility-devel-guide/el/figures/GNOME_desktop_Accessibility.png
+share/gnome/help/accessibility-devel-guide/el/figures/goodfocus2.png
+share/gnome/help/accessibility-devel-guide/el/figures/goodfocus3.png
+share/gnome/help/accessibility-devel-guide/el/figures/goodfocus.png
+share/gnome/help/accessibility-devel-guide/el/figures/label_above.png
+share/gnome/help/accessibility-devel-guide/el/figures/label_below.png
+share/gnome/help/accessibility-devel-guide/el/figures/label_left.png
+share/gnome/help/accessibility-devel-guide/el/figures/label_right.png
+share/gnome/help/accessibility-devel-guide/el/figures/nodrop.png
 share/gnome/help/accessibility-devel-guide/es/accessibility-devel-guide.xml
 share/gnome/help/accessibility-devel-guide/es/figures/at-arch.png
 share/gnome/help/accessibility-devel-guide/es/figures/badfocus1.png
@@ -868,6 +910,7 @@ share/gnome/help/integration-guide/el/integration-guide.xml
 share/gnome/help/integration-guide/en_GB/integration-guide.xml
 share/gnome/help/integration-guide/es/integration-guide.xml
 share/gnome/help/integration-guide/fr/integration-guide.xml
+share/gnome/help/integration-guide/it/integration-guide.xml
 share/gnome/help/integration-guide/pt_BR/integration-guide.xml
 share/gnome/help/integration-guide/sv/integration-guide.xml
 share/gnome/help/integration-guide/zh_CN/integration-guide.xml
@@ -877,12 +920,24 @@ share/gnome/help/optimization-guide/C/optimization-guide.xml
 share/gnome/help/optimization-guide/C/optimization-harmful.xml
 share/gnome/help/optimization-guide/C/optimization-intro.xml
 share/gnome/help/optimization-guide/C/optimization-massif.xml
+share/gnome/help/optimization-guide/cs/figures/massif-after.png
+share/gnome/help/optimization-guide/cs/figures/massif-before.png
+share/gnome/help/optimization-guide/cs/optimization-guide.xml
+share/gnome/help/optimization-guide/cs/optimization-harmful.xml
+share/gnome/help/optimization-guide/cs/optimization-intro.xml
+share/gnome/help/optimization-guide/cs/optimization-massif.xml
 share/gnome/help/optimization-guide/de/optimization-guide.xml
 share/gnome/help/optimization-guide/de/optimization-harmful.xml
 share/gnome/help/optimization-guide/de/optimization-massif.xml
 share/gnome/help/optimization-guide/de/optimization-intro.xml
 share/gnome/help/optimization-guide/de/figures/massif-after.png
 share/gnome/help/optimization-guide/de/figures/massif-before.png
+share/gnome/help/optimization-guide/el/optimization-guide.xml
+share/gnome/help/optimization-guide/el/optimization-harmful.xml
+share/gnome/help/optimization-guide/el/optimization-massif.xml
+share/gnome/help/optimization-guide/el/optimization-intro.xml
+share/gnome/help/optimization-guide/el/figures/massif-after.png
+share/gnome/help/optimization-guide/el/figures/massif-before.png
 share/gnome/help/optimization-guide/es/optimization-guide.xml
 share/gnome/help/optimization-guide/es/optimization-harmful.xml
 share/gnome/help/optimization-guide/es/optimization-massif.xml
@@ -997,7 +1052,21 @@ share/gnome/help/platform-overview/ru/ipc-network.xml
 share/gnome/help/platform-overview/ru/legal-fdl.xml
 share/gnome/help/platform-overview/ru/platform-overview.xml
 share/gnome/help/platform-overview/ru/platform.xml
+share/gnome/help/platform-overview/uk/apx-modules.xml
+share/gnome/help/platform-overview/uk/bindings.xml
+share/gnome/help/platform-overview/uk/core-tech.xml
+share/gnome/help/platform-overview/uk/desktop-tech.xml
+share/gnome/help/platform-overview/uk/figures/graphics.png
+share/gnome/help/platform-overview/uk/figures/i18n.png
+share/gnome/help/platform-overview/uk/figures/pango.png
+share/gnome/help/platform-overview/uk/intro.xml
+share/gnome/help/platform-overview/uk/ipc-network.xml
+share/gnome/help/platform-overview/uk/legal-fdl.xml
+share/gnome/help/platform-overview/uk/platform-overview.xml
+share/gnome/help/platform-overview/uk/platform.xml
 share/omf/accessibility-devel-guide/accessibility-devel-guide-C.omf
+share/omf/accessibility-devel-guide/accessibility-devel-guide-de.omf
+share/omf/accessibility-devel-guide/accessibility-devel-guide-el.omf
 share/omf/accessibility-devel-guide/accessibility-devel-guide-es.omf
 share/omf/gdp-handbook/gdp-handbook-C.omf
 share/omf/gdp-style-guide/gdp-style-guide-C.omf
@@ -1012,11 +1081,14 @@ share/omf/integration-guide/integration-guide-el.omf
 share/omf/integration-guide/integration-guide-en_GB.omf
 share/omf/integration-guide/integration-guide-es.omf
 share/omf/integration-guide/integration-guide-fr.omf
+share/omf/integration-guide/integration-guide-it.omf
 share/omf/integration-guide/integration-guide-pt_BR.omf
 share/omf/integration-guide/integration-guide-sv.omf
 share/omf/integration-guide/integration-guide-zh_CN.omf
 share/omf/optimization-guide/optimization-guide-C.omf
+share/omf/optimization-guide/optimization-guide-cs.omf
 share/omf/optimization-guide/optimization-guide-de.omf
+share/omf/optimization-guide/optimization-guide-el.omf
 share/omf/optimization-guide/optimization-guide-es.omf
 share/omf/platform-overview/platform-overview-C.omf
 share/omf/platform-overview/platform-overview-cs.omf
@@ -1027,6 +1099,7 @@ share/omf/platform-overview/platform-overview-fr.omf
 share/omf/platform-overview/platform-overview-it.omf
 share/omf/platform-overview/platform-overview-oc.omf
 share/omf/platform-overview/platform-overview-ru.omf
+share/omf/platform-overview/platform-overview-uk.omf
 @dirrm share/omf/platform-overview
 @dirrm share/omf/optimization-guide
 @dirrm share/omf/integration-guide
@@ -1034,6 +1107,8 @@ share/omf/platform-overview/platform-overview-ru.omf
 @dirrm share/omf/gdp-style-guide
 @dirrm share/omf/gdp-handbook
 @dirrm share/omf/accessibility-devel-guide
+@dirrm share/gnome/help/platform-overview/uk/figures
+@dirrm share/gnome/help/platform-overview/uk
 @dirrm share/gnome/help/platform-overview/ru/figures
 @dirrm share/gnome/help/platform-overview/ru
 @dirrm share/gnome/help/platform-overview/oc/figures
@@ -1055,14 +1130,19 @@ share/omf/platform-overview/platform-overview-ru.omf
 @dirrm share/gnome/help/platform-overview
 @dirrm share/gnome/help/optimization-guide/es/figures
 @dirrm share/gnome/help/optimization-guide/es
+@dirrm share/gnome/help/optimization-guide/el/figures
+@dirrm share/gnome/help/optimization-guide/el
 @dirrm share/gnome/help/optimization-guide/de/figures
 @dirrm share/gnome/help/optimization-guide/de
+@dirrm share/gnome/help/optimization-guide/cs/figures
+@dirrm share/gnome/help/optimization-guide/cs
 @dirrm share/gnome/help/optimization-guide/C/figures
 @dirrm share/gnome/help/optimization-guide/C
 @dirrm share/gnome/help/optimization-guide
 @dirrm share/gnome/help/integration-guide/zh_CN
 @dirrm share/gnome/help/integration-guide/sv
 @dirrm share/gnome/help/integration-guide/pt_BR
+@dirrm share/gnome/help/integration-guide/it
 @dirrm share/gnome/help/integration-guide/fr
 @dirrm share/gnome/help/integration-guide/es
 @dirrm share/gnome/help/integration-guide/en_GB
@@ -1087,6 +1167,10 @@ share/omf/platform-overview/platform-overview-ru.omf
 @dirrm share/gnome/help/gdp-handbook
 @dirrm share/gnome/help/accessibility-devel-guide/es/figures
 @dirrm share/gnome/help/accessibility-devel-guide/es
+@dirrm share/gnome/help/accessibility-devel-guide/el/figures
+@dirrm share/gnome/help/accessibility-devel-guide/el
+@dirrm share/gnome/help/accessibility-devel-guide/de/figures
+@dirrm share/gnome/help/accessibility-devel-guide/de
 @dirrm share/gnome/help/accessibility-devel-guide/C/figures
 @dirrm share/gnome/help/accessibility-devel-guide/C
 @dirrm share/gnome/help/accessibility-devel-guide

@@ -38,7 +38,8 @@ sbin/gdm-stop
 %%DATADIR%%/autostart/LoginWindow/polkit-gnome-authentication-agent-1.desktop
 %%DATADIR%%/gconf.path
 %%DATADIR%%/gdb-cmd
-%%DATADIR%%/gdm-greeter-login-window.glade
+%%DATADIR%%/gdm-greeter-login-window.ui
+%%DATADIR%%/locale.alias
 %%DATADIR%%/session-setup.entries
 share/gnome-2.0/ui/GNOME_FastUserSwitchApplet.xml
 share/gnome/help/gdm/C/gdm.xml
@@ -82,6 +83,7 @@ share/locale/dz/LC_MESSAGES/gdm.mo
 share/locale/el/LC_MESSAGES/gdm.mo
 share/locale/en_CA/LC_MESSAGES/gdm.mo
 share/locale/en_GB/LC_MESSAGES/gdm.mo
+share/locale/en@shaw/LC_MESSAGES/gdm.mo
 share/locale/eo/LC_MESSAGES/gdm.mo
 share/locale/es/LC_MESSAGES/gdm.mo
 share/locale/et/LC_MESSAGES/gdm.mo
@@ -228,7 +230,6 @@ share/pixmaps/nohost.png
 @dirrmtry etc/gdm
 @dirrmtry etc/dm/Sessions
 @dirrmtry etc/dm
-@dirrmtry sbin
 @dirrmtry share/log/gdm
 @dirrmtry share/log
 @unexec /bin/rm -rf /var/gdm 2>/dev/null || /usr/bin/true
@@ -244,8 +245,6 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
-@dirrmtry share/locale/uz/LC_MESSAGES
-@dirrmtry share/locale/uz
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -278,6 +277,8 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES

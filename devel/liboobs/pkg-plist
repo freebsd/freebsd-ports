@@ -1,3 +1,6 @@
+include/liboobs-1.0/oobs/oobs-defines.h
+include/liboobs-1.0/oobs/oobs-enum-types.h
+include/liboobs-1.0/oobs/oobs-error.h
 include/liboobs-1.0/oobs/oobs-group.h
 include/liboobs-1.0/oobs/oobs-groupsconfig.h
 include/liboobs-1.0/oobs/oobs-hostsconfig.h
@@ -32,5 +35,50 @@ lib/liboobs-1.la
 lib/liboobs-1.so
 lib/liboobs-1.so.4
 libdata/pkgconfig/liboobs-1.pc
+%%DOCSDIR%%/OobsGroup.html
+%%DOCSDIR%%/OobsGroupsConfig.html
+%%DOCSDIR%%/OobsHostsConfig.html
+%%DOCSDIR%%/OobsIface.html
+%%DOCSDIR%%/OobsIfaceEthernet.html
+%%DOCSDIR%%/OobsIfaceIRLan.html
+%%DOCSDIR%%/OobsIfacePPP.html
+%%DOCSDIR%%/OobsIfacePlip.html
+%%DOCSDIR%%/OobsIfaceWireless.html
+%%DOCSDIR%%/OobsIfacesConfig.html
+%%DOCSDIR%%/OobsList.html
+%%DOCSDIR%%/OobsNFSConfig.html
+%%DOCSDIR%%/OobsNTPConfig.html
+%%DOCSDIR%%/OobsNTPServer.html
+%%DOCSDIR%%/OobsObject.html
+%%DOCSDIR%%/OobsSMBConfig.html
+%%DOCSDIR%%/OobsSelfConfig.html
+%%DOCSDIR%%/OobsService.html
+%%DOCSDIR%%/OobsServicesConfig.html
+%%DOCSDIR%%/OobsSession.html
+%%DOCSDIR%%/OobsShare.html
+%%DOCSDIR%%/OobsShareNFS.html
+%%DOCSDIR%%/OobsShareSMB.html
+%%DOCSDIR%%/OobsStaticHost.html
+%%DOCSDIR%%/OobsTimeConfig.html
+%%DOCSDIR%%/OobsUser.html
+%%DOCSDIR%%/OobsUsersConfig.html
+%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/ch02.html
+%%DOCSDIR%%/ch03.html
+%%DOCSDIR%%/ch04.html
+%%DOCSDIR%%/ch05.html
+%%DOCSDIR%%/ch06.html
+%%DOCSDIR%%/ch07.html
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/liboobs-OobsError.html
+%%DOCSDIR%%/liboobs.devhelp
+%%DOCSDIR%%/liboobs.devhelp2
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+@dirrm %%DOCSDIR%%
 @dirrm include/liboobs-1.0/oobs
 @dirrm include/liboobs-1.0

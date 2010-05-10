@@ -4,6 +4,7 @@ bin/g-ir-scanner
 include/gobject-introspection-1.0/girepository.h
 include/gobject-introspection-1.0/girffi.h
 lib/girepository-1.0/Everything-1.0.typelib
+lib/girepository-1.0/GIMarshallingTests-1.0.typelib
 lib/girepository-1.0/GIRepository-2.0.typelib
 lib/girepository-1.0/GL-1.0.typelib
 lib/girepository-1.0/GLib-2.0.typelib
@@ -85,10 +86,15 @@ lib/libgirepository-everything-1.0.a
 lib/libgirepository-everything-1.0.la
 lib/libgirepository-everything-1.0.so
 lib/libgirepository-everything-1.0.so.1
+lib/libgirepository-gimarshallingtests-1.0.a
+lib/libgirepository-gimarshallingtests-1.0.la
+lib/libgirepository-gimarshallingtests-1.0.so
+lib/libgirepository-gimarshallingtests-1.0.so.1
 libdata/pkgconfig/gobject-introspection-1.0.pc
 libdata/pkgconfig/gobject-introspection-no-export-1.0.pc
 share/aclocal/introspection.m4
 share/gir-1.0/Everything-1.0.gir
+share/gir-1.0/GIMarshallingTests-1.0.gir
 share/gir-1.0/GIRepository-2.0.gir
 share/gir-1.0/GL-1.0.gir
 share/gir-1.0/GLib-2.0.gir

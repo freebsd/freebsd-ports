@@ -1,83 +1,110 @@
---- configure.orig	2008-05-19 02:26:02.000000000 -0400
-+++ configure	2008-05-19 02:26:27.000000000 -0400
-@@ -3485,7 +3485,7 @@ fi
+--- configure.orig	2009-12-25 12:13:27.000000000 -0500
++++ configure	2009-12-25 12:14:19.000000000 -0500
+@@ -3397,7 +3397,7 @@ else
+   enable_recall=yes
+ fi
  
- 
- 
--if test x$enable_recall == xyes; then
-+if test x$enable_recall = xyes; then
+- if test x$enable_recall == xyes; then
++ if test x$enable_recall = xyes; then
    BUILD_RECALL_TRUE=
    BUILD_RECALL_FALSE='#'
  else
-@@ -3503,7 +3503,7 @@ fi
+@@ -3413,7 +3413,7 @@ else
+   enable_video=yes
+ fi
  
- 
- 
--if test x$enable_video == xyes; then
-+if test x$enable_video = xyes; then
+- if test x$enable_video == xyes; then
++ if test x$enable_video = xyes; then
    BUILD_VIDEO_TRUE=
    BUILD_VIDEO_FALSE='#'
  else
-@@ -3521,7 +3521,7 @@ fi
+@@ -3429,7 +3429,7 @@ else
+   enable_video_nvidia_quirks=yes
+ fi
  
+- if test x$enable_video_nvidia_quirks == xyes; then
++ if test x$enable_video_nvidia_quirks = xyes; then
+   BUILD_VIDEO_NVIDIA_QUIRKS_TRUE=
+   BUILD_VIDEO_NVIDIA_QUIRKS_FALSE='#'
+ else
+@@ -3445,7 +3445,7 @@ else
+   enable_video_default_quirks=yes
+ fi
  
+- if test x$enable_video_default_quirks == xyes; then
++ if test x$enable_video_default_quirks = xyes; then
+   BUILD_VIDEO_DEFAULT_QUIRKS_TRUE=
+   BUILD_VIDEO_DEFAULT_QUIRKS_FALSE='#'
+ else
+@@ -3461,7 +3461,7 @@ else
+   enable_keymaps=yes
+ fi
  
--if test x$enable_keymaps == xyes; then
-+if test x$enable_keymaps = xyes; then
+- if test x$enable_keymaps == xyes; then
++ if test x$enable_keymaps = xyes; then
    BUILD_KEYMAPS_TRUE=
    BUILD_KEYMAPS_FALSE='#'
  else
-@@ -3539,7 +3539,7 @@ fi
+@@ -3477,7 +3477,7 @@ else
+   enable_killswitch_dell_wlan=yes
+ fi
  
- 
- 
--if test x$enable_killswitch_dell_wlan == xyes; then
-+if test x$enable_killswitch_dell_wlan = xyes; then
+- if test x$enable_killswitch_dell_wlan == xyes; then
++ if test x$enable_killswitch_dell_wlan = xyes; then
    BUILD_KILLSWITCH_DELL_WLAN_TRUE=
    BUILD_KILLSWITCH_DELL_WLAN_FALSE='#'
  else
-@@ -3557,7 +3557,7 @@ fi
+@@ -3493,7 +3493,7 @@ else
+   enable_killswitch_dell_bluetooth=yes
+ fi
  
- 
- 
--if test x$enable_killswitch_dell_bluetooth == xyes; then
-+if test x$enable_killswitch_dell_bluetooth = xyes; then
+- if test x$enable_killswitch_dell_bluetooth == xyes; then
++ if test x$enable_killswitch_dell_bluetooth = xyes; then
    BUILD_KILLSWITCH_DELL_BLUETOOTH_TRUE=
    BUILD_KILLSWITCH_DELL_BLUETOOTH_FALSE='#'
  else
-@@ -3575,7 +3575,7 @@ fi
+@@ -3509,7 +3509,7 @@ else
+   enable_killswitch_dell_wwan=yes
+ fi
  
- 
- 
--if test x$enable_killswitch_dell_wwan == xyes; then
-+if test x$enable_killswitch_dell_wwan = xyes; then
+- if test x$enable_killswitch_dell_wwan == xyes; then
++ if test x$enable_killswitch_dell_wwan = xyes; then
    BUILD_KILLSWITCH_DELL_WWAN_TRUE=
    BUILD_KILLSWITCH_DELL_WWAN_FALSE='#'
  else
-@@ -3593,7 +3593,7 @@ fi
+@@ -3525,7 +3525,7 @@ else
+   enable_killswitch_sony_bluetooth=yes
+ fi
  
- 
- 
--if test x$enable_killswitch_sony_bluetooth == xyes; then
-+if test x$enable_killswitch_sony_bluetooth = xyes; then
+- if test x$enable_killswitch_sony_bluetooth == xyes; then
++ if test x$enable_killswitch_sony_bluetooth = xyes; then
    BUILD_KILLSWITCH_SONY_BLUETOOTH_TRUE=
    BUILD_KILLSWITCH_SONY_BLUETOOTH_FALSE='#'
  else
-@@ -3611,7 +3611,7 @@ fi
+@@ -3541,7 +3541,7 @@ else
+   enable_killswitch_thinkpad_bluetooth=yes
+ fi
  
- 
- 
--if test x$enable_killswitch_thinkpad_bluetooth == xyes; then
-+if test x$enable_killswitch_thinkpad_bluetooth = xyes; then
+- if test x$enable_killswitch_thinkpad_bluetooth == xyes; then
++ if test x$enable_killswitch_thinkpad_bluetooth = xyes; then
    BUILD_KILLSWITCH_THINKPAD_BLUETOOTH_TRUE=
    BUILD_KILLSWITCH_THINKPAD_BLUETOOTH_FALSE='#'
  else
-@@ -3629,7 +3629,7 @@ fi
+@@ -3557,7 +3557,7 @@ else
+   enable_killswitch_ipw_wlan=yes
+ fi
  
- 
- 
--if test x$enable_killswitch_ipw_wlan == xyes; then
-+if test x$enable_killswitch_ipw_wlan = xyes; then
+- if test x$enable_killswitch_ipw_wlan == xyes; then
++ if test x$enable_killswitch_ipw_wlan = xyes; then
    BUILD_KILLSWITCH_IPW_WLAN_TRUE=
    BUILD_KILLSWITCH_IPW_WLAN_FALSE='#'
+ else
+@@ -3573,7 +3573,7 @@ else
+   enable_killswitch_iwl_wlan=yes
+ fi
+ 
+- if test x$enable_killswitch_iwl_wlan == xyes; then
++ if test x$enable_killswitch_iwl_wlan = xyes; then
+   BUILD_KILLSWITCH_IWL_WLAN_TRUE=
+   BUILD_KILLSWITCH_IWL_WLAN_FALSE='#'
  else

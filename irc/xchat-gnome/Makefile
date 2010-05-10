@@ -7,7 +7,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	0.26.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/xchat-gnome/${PORTVERSION:R}
@@ -112,6 +112,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
 		-e 's|tcl-8.4/lib|lib/tcl8.3|g' \
+		-e 's|-DGTK_DISABLE_DEPRECATED||g' \
 		-e 's|-fgnu89-inline||g' \
 		${WRKSRC}/configure
 

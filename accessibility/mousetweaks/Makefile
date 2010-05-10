@@ -3,12 +3,11 @@
 # Whom:				Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/mousetweaks/Makefile,v 1.37 2009/10/19 18:20:53 kwm Exp $
+#   $MCom: ports/accessibility/mousetweaks/Makefile,v 1.46 2010/04/27 14:33:35 kwm Exp $
 #
 
 PORTNAME=	mousetweaks
-PORTVERSION=	2.28.2
-PORTREVISION=	2
+PORTVERSION=	2.30.1
 CATEGORIES=	accessibility
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mouse accessibility enhancements for the GNOME desktop
 
-USE_XORG=	xfixes
+USE_XORG=	x11 xfixes xcursor xtst
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomepanel intlhack atspi
 USE_GMAKE=	yes

@@ -1,24 +1,30 @@
---- Makefile.in.orig	2008-01-03 21:28:32.000000000 -0500
-+++ Makefile.in	2008-01-03 21:29:15.000000000 -0500
-@@ -311,14 +311,14 @@ clean-libtool:
+--- Makefile.in.orig	2009-12-23 13:39:15.000000000 -0500
++++ Makefile.in	2009-12-23 13:39:58.000000000 -0500
+@@ -379,17 +379,17 @@ clean-libtool:
  distclean-libtool:
- 	-rm -f libtool
+ 	-rm -f libtool config.lt
  install-dist_dbusDATA: $(dist_dbus_DATA)
 -	@$(NORMAL_INSTALL)
 -	test -z "$(dbusdir)" || $(MKDIR_P) "$(DESTDIR)$(dbusdir)"
--	@list='$(dist_dbus_DATA)'; for p in $$list; do \
+-	@list='$(dist_dbus_DATA)'; test -n "$(dbusdir)" || list=; \
+-	for p in $$list; do \
 -	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  f=$(am__strip_dir) \
--	  echo " $(dist_dbusDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(dbusdir)/$$f'"; \
--	  $(dist_dbusDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(dbusdir)/$$f"; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(dbusdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(dbusdir)" || exit $$?; \
 -	done
 +#	@$(NORMAL_INSTALL)
 +#	test -z "$(dbusdir)" || $(MKDIR_P) "$(DESTDIR)$(dbusdir)"
-+#	@list='$(dist_dbus_DATA)'; for p in $$list; do \
++#	@list='$(dist_dbus_DATA)'; test -n "$(dbusdir)" || list=; \
++#	for p in $$list; do \
 +#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-+#	  f=$(am__strip_dir) \
-+#	  echo " $(dist_dbusDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(dbusdir)/$$f'"; \
-+#	  $(dist_dbusDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(dbusdir)/$$f"; \
++#	  echo "$$d$$p"; \
++#	done | $(am__base_list) | \
++#	while read files; do \
++#	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(dbusdir)'"; \
++#	  $(INSTALL_DATA) $$files "$(DESTDIR)$(dbusdir)" || exit $$?; \
 +#	done
  
  uninstall-dist_dbusDATA:

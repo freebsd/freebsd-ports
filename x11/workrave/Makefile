@@ -7,7 +7,7 @@
 
 PORTNAME=	workrave
 PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
@@ -72,5 +72,7 @@ post-patch:
 		s|SigC::slot|sigc::mem_fun|g' \
 			${WRKSRC}/frontend/gtkmm/src/*.* \
 			${WRKSRC}/frontend/plugin/*/gtkmm/src/*.*
+	@${REINPLACE_CMD} -e 's|Gtk::HButtonBox|Gtk::ButtonBox|g' \
+		${WRKSRC}/frontend/plugin/exercises/gtkmm/src/ExercisesPanel.*
 
 .include <bsd.port.post.mk>

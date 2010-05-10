@@ -69,6 +69,7 @@ share/icons/hicolor/scalable/apps/solang.svg
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm %%DOCSDIR%%
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

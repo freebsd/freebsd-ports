@@ -9,6 +9,7 @@ lib/orbit-2.0/GNOME_Magnifier_module.la
 lib/orbit-2.0/GNOME_Magnifier_module.so
 libdata/bonobo/servers/GNOME_Magnifier.server
 libdata/pkgconfig/gnome-mag-1.0.pc
+share/dbus-1/services/org.freedesktop.gnome.Magnifier.service
 %%DATADIR%%/1_32/appstart.xpm
 %%DATADIR%%/1_32/bottom_left_corner.xpm
 %%DATADIR%%/1_32/bottom_side.xpm
@@ -28,6 +29,8 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DATADIR%%/1_32/top_side.xpm
 %%DATADIR%%/1_32/up.xpm
 %%DATADIR%%/1_32/xterm.xpm
+%%DATADIR%%/dbus/org.freedesktop.gnome.Magnifier
+%%DATADIR%%/dbus/org.freedesktop.gnome.ZoomRegion
 %%DATADIR%%/default-cursor.xpm
 share/idl/gnome-mag-1.0/GNOME_Magnifier.idl
 share/locale/ang/LC_MESSAGES/gnome-mag.mo
@@ -50,6 +53,7 @@ share/locale/da/LC_MESSAGES/gnome-mag.mo
 share/locale/de/LC_MESSAGES/gnome-mag.mo
 share/locale/dz/LC_MESSAGES/gnome-mag.mo
 share/locale/el/LC_MESSAGES/gnome-mag.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-mag.mo
 share/locale/en_CA/LC_MESSAGES/gnome-mag.mo
 share/locale/en_GB/LC_MESSAGES/gnome-mag.mo
 share/locale/eo/LC_MESSAGES/gnome-mag.mo
@@ -119,6 +123,7 @@ share/locale/zh_CN/LC_MESSAGES/gnome-mag.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-mag.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mag.mo
 @dirrm share/idl/gnome-mag-1.0
+@dirrm %%DATADIR%%/dbus
 @dirrm %%DATADIR%%/1_32
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/reference/html
@@ -154,6 +159,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-mag.mo
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

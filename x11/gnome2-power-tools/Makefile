@@ -6,13 +6,13 @@
 #   $MCom: ports/x11/gnome2-power-tools/Makefile,v 1.84 2008/09/30 13:18:29 kwm Exp $
 #
 
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-power-tools
 
 COMMENT=	The 'Geektoys' for the GNOME 2 power user
 
-RUN_DEPENDS=	${LOCALBASE}/lib/epiphany/2.28/extensions/libgesturesextension.so:${PORTSDIR}/www/epiphany-extensions \
+RUN_DEPENDS=	${LOCALBASE}/share/epiphany-extensions/adblock-patterns:${PORTSDIR}/www/epiphany-extensions \
 		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview \
 		${LOCALBASE}/libexec/netspeed_applet2:${PORTSDIR}/net/netspeed_applet \
 		${LOCALBASE}/sbin/gkrellmd:${PORTSDIR}/sysutils/gkrellm2 \

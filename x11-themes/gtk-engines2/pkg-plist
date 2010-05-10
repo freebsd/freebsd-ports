@@ -31,8 +31,10 @@ share/gtk-engines/industrial.xml
 share/gtk-engines/mist.xml
 share/gtk-engines/redmond95.xml
 share/gtk-engines/thinice.xml
+share/locale/af/LC_MESSAGES/gtk-engines.mo
 share/locale/ar/LC_MESSAGES/gtk-engines.mo
 share/locale/as/LC_MESSAGES/gtk-engines.mo
+share/locale/ast/LC_MESSAGES/gtk-engines.mo
 share/locale/be@latin/LC_MESSAGES/gtk-engines.mo
 share/locale/bg/LC_MESSAGES/gtk-engines.mo
 share/locale/bn/LC_MESSAGES/gtk-engines.mo
@@ -44,6 +46,7 @@ share/locale/da/LC_MESSAGES/gtk-engines.mo
 share/locale/de/LC_MESSAGES/gtk-engines.mo
 share/locale/dz/LC_MESSAGES/gtk-engines.mo
 share/locale/el/LC_MESSAGES/gtk-engines.mo
+share/locale/en@shaw/LC_MESSAGES/gtk-engines.mo
 share/locale/en_GB/LC_MESSAGES/gtk-engines.mo
 share/locale/es/LC_MESSAGES/gtk-engines.mo
 share/locale/et/LC_MESSAGES/gtk-engines.mo
@@ -128,6 +131,8 @@ share/themes/ThinIce/gtk-2.0/gtkrc
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

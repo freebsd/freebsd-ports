@@ -1,24 +1,14 @@
---- JavaScriptCore/runtime/JSValue.h.orig	2010-03-24 09:42:34.000000000 +0100
-+++ JavaScriptCore/runtime/JSValue.h	2010-03-24 09:44:47.000000000 +0100
-@@ -464,13 +464,21 @@
-     inline JSValue::JSValue(JSCell* ptr)
-     {
-         u.asBits.tag = CellTag;
-+#if defined(__sparc64__)
+--- JavaScriptCore/runtime/JSValue.h.orig	2010-02-05 17:26:52.000000000 +0100
++++ JavaScriptCore/runtime/JSValue.h	2010-03-25 21:43:11.000000000 +0100
+@@ -491,7 +491,11 @@ namespace JSC {
+             u.asBits.tag = CellTag;
+         else
+             u.asBits.tag = EmptyValueTag;
++#if defined(__sparc64)
 +        u.asBits.payload = reinterpret_cast<int64_t>(ptr);
 +#else
          u.asBits.payload = reinterpret_cast<int32_t>(ptr);
 +#endif
-     }
- 
-     inline JSValue::JSValue(const JSCell* ptr)
-     {
-         u.asBits.tag = CellTag;
-+#if defined(__sparc64__)
-+        u.asBits.payload = reinterpret_cast<int64_t>(const_cast<JSCell*>(ptr));
-+#else
-         u.asBits.payload = reinterpret_cast<int32_t>(const_cast<JSCell*>(ptr));
-+#endif
-     }
- 
-     inline JSValue::operator bool() const
+ #if ENABLE(JSC_ZOMBIES)
+         ASSERT(!isZombie());
+ #endif

@@ -3,11 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libgtop/Makefile,v 1.52 2009/09/21 09:27:35 kwm Exp $
+#   $MCom: ports/devel/libgtop/Makefile,v 1.56 2010/05/02 00:04:47 marcus Exp $
 #
 
 PORTNAME=	libgtop
-PORTVERSION=	2.28.0
+PORTVERSION=	2.28.1
 PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
@@ -39,7 +39,7 @@ PKGMESSAGE=	${FILESDIR}/pkg-message
 RUN_DEPENDS+=	lsof:${PORTSDIR}/sysutils/lsof
 .endif
 
-post-patch:
+post-configure:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
 post-install:

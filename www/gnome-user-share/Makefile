@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/gnome-user-share/Makefile,v 1.17 2009/10/27 11:20:53 kwm Exp $
+#   $MCom: ports/www/gnome-user-share/Makefile,v 1.21 2010/04/01 21:10:51 kwm Exp $
 #
 
 PORTNAME=	gnome-user-share
-PORTVERSION=	2.28.2
-PORTREVISION=	5
+PORTVERSION=	2.30.0
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,14 +20,14 @@ LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app \
 		notify.1:${PORTSDIR}/devel/libnotify \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dnssd.so:${PORTSDIR}/www/mod_dnssd \
-    		console-kit-daemon:${PORTSDIR}/sysutils/consolekit
+		console-kit-daemon:${PORTSDIR}/sysutils/consolekit
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_APACHE=	2.2+
 USE_XORG=	sm
-USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 gnomedocutils
+USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 gconf2 gnomedocutils nautilus2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--with-modules-path=${LOCALBASE}/${APACHEMODDIR}

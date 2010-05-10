@@ -1,0 +1,3 @@
+Gnome-keyring is a program that keep password and other secrets for
+users. The library libgnome-keyring is used by applications to integrate
+with the gnome keyring system.

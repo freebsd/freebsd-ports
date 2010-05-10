@@ -1,0 +1,4 @@
+%%PORTDOCS%%share/devhelp/books/libxml++-%%API_VERSION%%/libxml++-%%API_VERSION%%.devhelp2
+%%PORTDOCS%%@dirrmtry share/devhelp/books/libxml++-%%API_VERSION%%
+%%PORTDOCS%%@dirrmtry share/devhelp/books
+%%PORTDOCS%%@dirrmtry share/devhelp

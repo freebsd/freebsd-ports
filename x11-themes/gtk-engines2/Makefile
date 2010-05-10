@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-themes/gtk-engines2/Makefile,v 1.78 2009/09/26 13:42:02 marcus Exp $
+#   $MCom: ports/x11-themes/gtk-engines2/Makefile,v 1.81 2010/04/02 02:52:06 avl Exp $
 #
 
 PORTNAME=	gtk-engines2
-PORTVERSION=	2.18.5
-PORTREVISION=	2
+PORTVERSION=	2.20.0
 CATEGORIES=	x11-themes
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

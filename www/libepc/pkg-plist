@@ -37,13 +37,13 @@ libdata/pkgconfig/libepc-ui-1.0.pc
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/libepc-1.0.devhelp
 %%DOCSDIR%%/libepc-1.0.devhelp2
-%%DOCSDIR%%/libepc-1.0-EpcAuthContext.html
-%%DOCSDIR%%/libepc-1.0-EpcContents.html
-%%DOCSDIR%%/libepc-1.0-EpcProtocol.html
-%%DOCSDIR%%/libepc-1.0-EpcServiceInfo.html
-%%DOCSDIR%%/libepc-1.0-EpcServiceType.html
-%%DOCSDIR%%/libepc-1.0-EpcShell.html
-%%DOCSDIR%%/libepc-1.0-EpcTls.html
+%%DOCSDIR%%/libepc-10-EpcAuthContext.html
+%%DOCSDIR%%/libepc-10-EpcContents.html
+%%DOCSDIR%%/libepc-10-EpcProtocol.html
+%%DOCSDIR%%/libepc-10-EpcServiceInfo.html
+%%DOCSDIR%%/libepc-10-EpcServiceType.html
+%%DOCSDIR%%/libepc-10-EpcShell.html
+%%DOCSDIR%%/libepc-10-EpcTls.html
 %%DOCSDIR%%/publishing.html
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
@@ -51,12 +51,15 @@ libdata/pkgconfig/libepc-ui-1.0.pc
 %%DOCSDIR%%/widgets.html
 share/locale/ar/LC_MESSAGES/libepc.mo
 share/locale/ca/LC_MESSAGES/libepc.mo
+share/locale/cs/LC_MESSAGES/libepc.mo
+share/locale/da/LC_MESSAGES/libepc.mo
 share/locale/de/LC_MESSAGES/libepc.mo
 share/locale/el/LC_MESSAGES/libepc.mo
 share/locale/en_GB/LC_MESSAGES/libepc.mo
 share/locale/es/LC_MESSAGES/libepc.mo
 share/locale/fi/LC_MESSAGES/libepc.mo
 share/locale/fr/LC_MESSAGES/libepc.mo
+share/locale/gl/LC_MESSAGES/libepc.mo
 share/locale/it/LC_MESSAGES/libepc.mo
 share/locale/ja/LC_MESSAGES/libepc.mo
 share/locale/nb/LC_MESSAGES/libepc.mo
@@ -65,16 +68,7 @@ share/locale/pt_BR/LC_MESSAGES/libepc.mo
 share/locale/sl/LC_MESSAGES/libepc.mo
 share/locale/sv/LC_MESSAGES/libepc.mo
 share/locale/th/LC_MESSAGES/libepc.mo
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
+share/locale/zh_CN/LC_MESSAGES/libepc.mo
 @dirrm %%DOCSDIR%%
 @dirrm include/libepc-ui-1.0/libepc-ui
 @dirrm include/libepc-ui-1.0

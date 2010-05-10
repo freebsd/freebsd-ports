@@ -8,7 +8,7 @@
 
 PORTNAME=	gai
 PORTVERSION=	0.5.10
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	SF/${PORTNAME}/GAI%20-%20Library/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 USE_BZIP2=	yes
 USE_GL=		gl
 USE_SDL=	sdl
-USE_GNOME=	gnomepanel
+USE_GNOME=	gnomepanel libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDLCONF=${SDL_CONFIG} \
 		CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`"

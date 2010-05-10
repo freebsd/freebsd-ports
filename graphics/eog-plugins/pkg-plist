@@ -1,4 +1,3 @@
-%%CHAMPLAIN%%lib/eog/plugins/champlain.eog-plugin
 %%PYTHON%%lib/eog/plugins/console.py
 %%PYTHON%%lib/eog/plugins/console.pyc
 %%PYTHON%%lib/eog/plugins/console.pyo
@@ -6,16 +5,25 @@
 %%EXIF%%lib/eog/plugins/exif-display/exif-display-config.ui
 %%EXIF%%lib/eog/plugins/exif-display/exif-display.ui
 lib/eog/plugins/fit-to-width.eog-plugin
-%%CHAMPLAIN%%lib/eog/plugins/libchamplain.la
-%%CHAMPLAIN%%lib/eog/plugins/libchamplain.so
 %%EXIF%%lib/eog/plugins/libexif-display.la
 %%EXIF%%lib/eog/plugins/libexif-display.so
 lib/eog/plugins/libfit-to-width.la
 lib/eog/plugins/libfit-to-width.so
+%%CHAMPLAIN%%lib/eog/plugins/libmap.la
+%%CHAMPLAIN%%lib/eog/plugins/libmap.so
+lib/eog/plugins/libpostasa.la
+lib/eog/plugins/libpostasa.so
+lib/eog/plugins/libsend-by-mail.la
+lib/eog/plugins/libsend-by-mail.so
+%%CHAMPLAIN%%lib/eog/plugins/map.eog-plugin
+lib/eog/plugins/postasa.eog-plugin
+lib/eog/plugins/postasa/postasa-config.xml
+lib/eog/plugins/postasa/postasa-uploads.xml
 %%PYTHON%%lib/eog/plugins/pythonconsole.eog-plugin
 %%PYTHON%%lib/eog/plugins/pythonconsole.py
 %%PYTHON%%lib/eog/plugins/pythonconsole.pyc
 %%PYTHON%%lib/eog/plugins/pythonconsole.pyo
+lib/eog/plugins/send-by-mail.eog-plugin
 %%PYTHON%%lib/eog/plugins/slideshowshuffle.eog-plugin
 %%PYTHON%%lib/eog/plugins/slideshowshuffle.py
 %%PYTHON%%lib/eog/plugins/slideshowshuffle.pyc
@@ -60,6 +68,8 @@ share/locale/vi/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/eog-plugins.mo
+@dirrm lib/eog/plugins/postasa
+%%EXIF%%@dirrm lib/eog/plugins/exif-display
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -72,4 +82,3 @@ share/locale/zh_TW/LC_MESSAGES/eog-plugins.mo
 @dirrmtry share/locale/be@latin
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-%%EXIF%%@dirrm lib/eog/plugins/exif-display

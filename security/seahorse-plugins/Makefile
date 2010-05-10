@@ -3,12 +3,11 @@
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/seahorse-plugins/Makefile,v 1.18 2009/10/19 10:24:17 kwm Exp $
+#   $MCom: ports/security/seahorse-plugins/Makefile,v 1.25 2010/04/27 22:22:07 kwm Exp $
 #
 
 PORTNAME=	seahorse-plugins
-PORTVERSION=	2.28.1
-PORTREVISION=	2
+PORTVERSION=	2.30.1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,8 +20,8 @@ LIB_DEPENDS=	cryptui.0:${PORTSDIR}/security/seahorse
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GECKO=	libxul
-USE_GNOME=	gnomehack intlhack gnomeprefix libglade2 gconf2 gnomedocutils
+#USE_GECKO=	libxul
+USE_GNOME=	gnomehack intlhack gnomeprefix gconf2 gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
@@ -31,7 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 OPTIONS=	NAUTILUS "Enable the Nautilus component" on \
 		GEDIT "Enable GEdit plug-in support" on \
-		APPLET "Enable clipboard encryption applet" on
+		APPLET "Enable clipboard encryption applet" on \
+		NOTIFY "Enable libnotify support" on
 #EPIPHANY "Enable Epiphany plug-in support" on
 
 GCONF_SCHEMAS=	seahorse-plugins.schemas
@@ -39,11 +39,11 @@ MAN1=		seahorse-agent.1 seahorse-tool.1
 
 .include <bsd.port.pre.mk>
 
-.if ${GECKO}=="libxul"
-CONFIGURE_ARGS+=--with-gecko=libxul-unstable
-.else
-CONFIGURE_ARGS+=--with-gecko=${GECKO}
-.endif
+#.if ${GECKO}=="libxul"
+#CONFIGURE_ARGS+=--with-gecko=libxul-unstable
+#.else
+#CONFIGURE_ARGS+=--with-gecko=${GECKO}
+#.endif
 
 .if !defined(WITHOUT_GEDIT)
 BUILD_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit
@@ -78,6 +78,12 @@ PLIST_SUB+=	APPLET=""
 .else
 CONFIGURE_ARGS+=--disable-applet
 PLIST_SUB+=	APPLET="@comment "
+.endif
+
+.if !defined(WITHOUT_NOTIFY)
+LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+.else
+CONFIGURE_ARGS+=--disable-libnotify
 .endif
 
 post-patch:

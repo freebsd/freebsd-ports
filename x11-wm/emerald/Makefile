@@ -37,5 +37,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 # XXX - might want to change that
 post-patch:
 	@${REINPLACE_CMD} 's|icons/gnome|icons/hicolor|' ${WRKSRC}/misc/Makefile.in
+	@${REINPLACE_CMD} 's|#define GTK_DISABLE_DEPRECATED||g' ${WRKSRC}/include/emerald.h
 
 .include <bsd.port.mk>

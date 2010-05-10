@@ -12,6 +12,9 @@ lib/librhythmbox-core.so.0
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyo
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/LastFMCoverArtSearch.py
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/LastFMCoverArtSearch.pyc
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/LastFMCoverArtSearch.pyo
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.py
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyo
@@ -25,6 +28,7 @@ lib/librhythmbox-core.so.0
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/__init__.pyc
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/__init__.pyo
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/artdisplay.rb-plugin
+%%PYTHON%%lib/rhythmbox/plugins/artdisplay/lastfm_red_small.png
 %%PYTHON%%lib/rhythmbox/plugins/artdisplay/rhythmbox-missing-artwork.svg
 lib/rhythmbox/plugins/audiocd/album-info.ui
 lib/rhythmbox/plugins/audiocd/audiocd-ui.xml
@@ -260,12 +264,15 @@ share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/RBPlayerGstTee.html
 %%DOCSDIR%%/RBPlaylistManager.html
 %%DOCSDIR%%/RBPlaylistSource.html
+%%DOCSDIR%%/RBPlugin.html
 %%DOCSDIR%%/RBPropertyView.html
 %%DOCSDIR%%/RBQueryCreator.html
 %%DOCSDIR%%/RBRandomPlayOrder.html
 %%DOCSDIR%%/RBRating.html
 %%DOCSDIR%%/RBRemovableMediaManager.html
+%%DOCSDIR%%/RBRemovableMediaSource.html
 %%DOCSDIR%%/RBSearchEntry.html
+%%DOCSDIR%%/RBShell.html
 %%DOCSDIR%%/RBShellClipboard.html
 %%DOCSDIR%%/RBShellPlayer.html
 %%DOCSDIR%%/RBShellPreferences.html
@@ -274,12 +281,17 @@ share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/RBSourceHeader.html
 %%DOCSDIR%%/RBSourceList.html
 %%DOCSDIR%%/RBSourceListModel.html
+%%DOCSDIR%%/RBSourceSearch.html
+%%DOCSDIR%%/RBSourceSearchBasic.html
+%%DOCSDIR%%/RBStaticPlaylistSource.html
 %%DOCSDIR%%/RBStatusbar.html
+%%DOCSDIR%%/RBStreamingSource.html
 %%DOCSDIR%%/RBStringValueMap.html
 %%DOCSDIR%%/RBURIDialog.html
 %%DOCSDIR%%/RhythmDB.html
 %%DOCSDIR%%/RhythmDBImportJob.html
 %%DOCSDIR%%/RhythmDBPropertyModel.html
+%%DOCSDIR%%/RhythmDBQueryModel.html
 %%DOCSDIR%%/RhythmDBQueryResults.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
@@ -292,9 +304,7 @@ share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
-%%DOCSDIR%%/rhythmbox-RBPodcastSource.html
 %%DOCSDIR%%/rhythmbox-RBSourceGroup.html
-%%DOCSDIR%%/rhythmbox-eel-gconf-extensions.html
 %%DOCSDIR%%/rhythmbox-rb-async-queue-watch.html
 %%DOCSDIR%%/rhythmbox-rb-builder-helpers.html
 %%DOCSDIR%%/rhythmbox-rb-debug.html
@@ -302,14 +312,9 @@ share/dbus-1/services/org.gnome.Rhythmbox.service
 %%DOCSDIR%%/rhythmbox-rb-file-helpers.html
 %%DOCSDIR%%/rhythmbox-rb-header.html
 %%DOCSDIR%%/rhythmbox-rb-rating-helper.html
-%%DOCSDIR%%/rhythmbox-rb-removable-media-source.html
-%%DOCSDIR%%/rhythmbox-rb-shell.html
-%%DOCSDIR%%/rhythmbox-rb-static-playlist-source.html
-%%DOCSDIR%%/rhythmbox-rb-streaming-source.html
+%%DOCSDIR%%/rhythmbox-rb-text-helpers.html
 %%DOCSDIR%%/rhythmbox-rb-tree-dnd.html
 %%DOCSDIR%%/rhythmbox-rb-util.html
-%%DOCSDIR%%/rhythmbox-rhythmdb-query-model.html
-%%DOCSDIR%%/rhythmbox-rhythmdb-tree.html
 %%DOCSDIR%%/rhythmbox.devhelp
 %%DOCSDIR%%/rhythmbox.devhelp2
 %%DOCSDIR%%/right.png
@@ -443,6 +448,20 @@ share/gnome/help/rhythmbox/oc/figures/rb-volume-changer.png
 share/gnome/help/rhythmbox/oc/figures/rb-window-small.png
 share/gnome/help/rhythmbox/oc/figures/rb-window.png
 share/gnome/help/rhythmbox/oc/rhythmbox.xml
+share/gnome/help/rhythmbox/pt/figures/rb-iradio-main.png
+share/gnome/help/rhythmbox/pt/figures/rb-notification-area-menu.png
+share/gnome/help/rhythmbox/pt/figures/rb-notification-window.png
+share/gnome/help/rhythmbox/pt/figures/rb-notification-zone.png
+share/gnome/help/rhythmbox/pt/figures/rb-podcast-main.png
+share/gnome/help/rhythmbox/pt/figures/rb-statusbar.png
+share/gnome/help/rhythmbox/pt/figures/rb-toolbar-prevplaynext.png
+share/gnome/help/rhythmbox/pt/figures/rb-toolbar-repeat.png
+share/gnome/help/rhythmbox/pt/figures/rb-toolbar-shuffle.png
+share/gnome/help/rhythmbox/pt/figures/rb-toolbar.png
+share/gnome/help/rhythmbox/pt/figures/rb-volume-changer.png
+share/gnome/help/rhythmbox/pt/figures/rb-window-small.png
+share/gnome/help/rhythmbox/pt/figures/rb-window.png
+share/gnome/help/rhythmbox/pt/rhythmbox.xml
 share/gnome/help/rhythmbox/ru/figures/rb-iradio-main.png
 share/gnome/help/rhythmbox/ru/figures/rb-notification-area-menu.png
 share/gnome/help/rhythmbox/ru/figures/rb-notification-window.png
@@ -502,6 +521,7 @@ share/gnome/help/rhythmbox/zh_CN/rhythmbox.xml
 share/icons/hicolor/16x16/apps/rhythmbox.png
 share/icons/hicolor/22x22/apps/rhythmbox.png
 share/icons/hicolor/24x24/apps/rhythmbox.png
+share/icons/hicolor/24x24/places/music-library.png
 share/icons/hicolor/32x32/apps/rhythmbox.png
 share/icons/hicolor/48x48/apps/rhythmbox.png
 share/icons/hicolor/scalable/apps/rhythmbox.svg
@@ -586,6 +606,7 @@ share/omf/rhythmbox/rhythmbox-es.omf
 share/omf/rhythmbox/rhythmbox-fr.omf
 share/omf/rhythmbox/rhythmbox-it.omf
 share/omf/rhythmbox/rhythmbox-oc.omf
+share/omf/rhythmbox/rhythmbox-pt.omf
 share/omf/rhythmbox/rhythmbox-ru.omf
 share/omf/rhythmbox/rhythmbox-sv.omf
 share/omf/rhythmbox/rhythmbox-uk.omf
@@ -603,6 +624,7 @@ share/rhythmbox/icons/hicolor/16x16/actions/playlist-new.png
 share/rhythmbox/icons/hicolor/16x16/actions/podcast-new.png
 share/rhythmbox/icons/hicolor/16x16/places/library-internet-radio.png
 share/rhythmbox/icons/hicolor/16x16/places/library-podcast.png
+share/rhythmbox/icons/hicolor/16x16/places/music-library.png
 share/rhythmbox/icons/hicolor/16x16/places/playlist-automatic.png
 share/rhythmbox/icons/hicolor/16x16/places/playlist.png
 share/rhythmbox/icons/hicolor/16x16/status/rhythmbox-no-star.png
@@ -688,6 +710,8 @@ share/rhythmbox/uri-new.ui
 @dirrm share/gnome/help/rhythmbox/sv
 @dirrm share/gnome/help/rhythmbox/ru/figures
 @dirrm share/gnome/help/rhythmbox/ru
+@dirrm share/gnome/help/rhythmbox/pt/figures
+@dirrm share/gnome/help/rhythmbox/pt
 @dirrm share/gnome/help/rhythmbox/oc/figures
 @dirrm share/gnome/help/rhythmbox/oc
 @dirrm share/gnome/help/rhythmbox/it/figures

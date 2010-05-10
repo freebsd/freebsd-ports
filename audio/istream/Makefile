@@ -7,7 +7,7 @@
 
 PORTNAME=	istream
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.jochen-baier.de/istream/
 
@@ -15,7 +15,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Internet radio player applet for GNOME Panel
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomepanel
+USE_GNOME=	gnomepanel libgnomeui
 USE_GSTREAMER=	yes
 USE_XORG=	xtst
 GNU_CONFIGURE=	yes

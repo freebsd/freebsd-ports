@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.181 2009/10/18 04:17:46 marcus Exp $
+#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.194 2010/04/26 13:45:12 kwm Exp $
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	2.28.2
-PORTREVISION=	2
+PORTVERSION=	2.30.1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,6 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The data backends for the Evolution integrated mail/PIM suite
 
 LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		ical.43:${PORTSDIR}/devel/libical \
 		nss3.1:${PORTSDIR}/security/nss \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
@@ -27,33 +27,34 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	build
 USE_GETTEXT=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack ltverhack ltasneededhack \
-		libglade2 libbonobo
+USE_GNOME=	gnomeprefix gnomehack intlhack ltverhack ltasneededhack gconf2 \
+		libxml2
 USE_OPENLDAP=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_BDB=	41+
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static \
-		--enable-nss=yes \
 		--enable-gnome-keyring=yes \
 		--with-openldap=yes \
 		--with-libdb=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_SUB=	VERSION="2.28" EVO_VERSION="1.2"
+PLIST_SUB=	VERSION="2.30" EVO_VERSION="1.2"
 
 #OPTIONS=	IMAP4	"Enable experimental IMAP4 backend" off
 OPTIONS=	WEATHER "Enable weather calendar backend" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL)
-HEIMDAL_HOME?=	${LOCALBASE}
+.if defined(HEIMDAL_HOME) || defined(WITH_HEIMDAL) || defined(NO_KERBEROS)
+HEIMDAL_HOME?=		${LOCALBASE}
 LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
-CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --with-krb5-includes=${HEIMDAL_HOME}/include
+CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} \
+			--with-krb5-includes=${HEIMDAL_HOME}/include
+KRB5_LIB=		`${HEIMDAL_HOME}/bin/krb5-config gssapi --libs`
 .elif !defined(NO_KERBEROS)
-CONFIGURE_ARGS+=        --with-krb5=/usr
+CONFIGURE_ARGS+=	--with-krb5=/usr
 KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
 .endif
 
@@ -83,6 +84,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g ; \
 		s|heimlibs=".*"|heimlibs="${KRB5_LIB}"|g ; \
+		s|-Wl,--no-undefined||g ; \
 		s|-Wmissing-include-dirs||g' \
 			${WRKSRC}/configure
 

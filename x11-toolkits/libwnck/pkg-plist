@@ -17,9 +17,11 @@ lib/libwnck-1.la
 lib/libwnck-1.so
 lib/libwnck-1.so.22
 libdata/pkgconfig/libwnck-1.0.pc
+lib/girepository-1.0/Wnck-1.0.typelib
 share/locale/am/LC_MESSAGES/libwnck.mo
 share/locale/ar/LC_MESSAGES/libwnck.mo
 share/locale/as/LC_MESSAGES/libwnck.mo
+share/locale/ast/LC_MESSAGES/libwnck.mo
 share/locale/az/LC_MESSAGES/libwnck.mo
 share/locale/be/LC_MESSAGES/libwnck.mo
 share/locale/be@latin/LC_MESSAGES/libwnck.mo
@@ -36,6 +38,7 @@ share/locale/da/LC_MESSAGES/libwnck.mo
 share/locale/de/LC_MESSAGES/libwnck.mo
 share/locale/dz/LC_MESSAGES/libwnck.mo
 share/locale/el/LC_MESSAGES/libwnck.mo
+share/locale/en@shaw/LC_MESSAGES/libwnck.mo
 share/locale/en_CA/LC_MESSAGES/libwnck.mo
 share/locale/en_GB/LC_MESSAGES/libwnck.mo
 share/locale/eo/LC_MESSAGES/libwnck.mo
@@ -102,6 +105,7 @@ share/locale/xh/LC_MESSAGES/libwnck.mo
 share/locale/zh_CN/LC_MESSAGES/libwnck.mo
 share/locale/zh_HK/LC_MESSAGES/libwnck.mo
 share/locale/zh_TW/LC_MESSAGES/libwnck.mo
+share/gir-1.0/Wnck-1.0.gir
 @dirrm include/libwnck-1.0/libwnck
 @dirrm include/libwnck-1.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -128,6 +132,8 @@ share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
@@ -138,5 +144,7 @@ share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

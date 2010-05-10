@@ -5,6 +5,7 @@ include/libgnomekbd/gkbd-indicator-plugin.h
 include/libgnomekbd/gkbd-indicator.h
 include/libgnomekbd/gkbd-keyboard-config.h
 include/libgnomekbd/gkbd-keyboard-drawing.h
+include/libgnomekbd/gkbd-status.h
 include/libgnomekbd/gkbd-util.h
 lib/libgnomekbd.a
 lib/libgnomekbd.la
@@ -21,6 +22,7 @@ share/applications/gkbd-indicator-plugins-capplet.desktop
 %%DATADIR%%/ui/gkbd-indicator-plugins_add.ui
 share/locale/ar/LC_MESSAGES/libgnomekbd.mo
 share/locale/as/LC_MESSAGES/libgnomekbd.mo
+share/locale/ast/LC_MESSAGES/libgnomekbd.mo
 share/locale/be@latin/LC_MESSAGES/libgnomekbd.mo
 share/locale/bg/LC_MESSAGES/libgnomekbd.mo
 share/locale/bn/LC_MESSAGES/libgnomekbd.mo
@@ -68,6 +70,7 @@ share/locale/pt_BR/LC_MESSAGES/libgnomekbd.mo
 share/locale/ro/LC_MESSAGES/libgnomekbd.mo
 share/locale/ru/LC_MESSAGES/libgnomekbd.mo
 share/locale/si/LC_MESSAGES/libgnomekbd.mo
+share/locale/sk/LC_MESSAGES/libgnomekbd.mo
 share/locale/sl/LC_MESSAGES/libgnomekbd.mo
 share/locale/sq/LC_MESSAGES/libgnomekbd.mo
 share/locale/sr/LC_MESSAGES/libgnomekbd.mo
@@ -104,7 +107,13 @@ share/locale/zh_TW/LC_MESSAGES/libgnomekbd.mo
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as

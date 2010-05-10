@@ -264,7 +264,6 @@
     SUBDIR += geronimo
     SUBDIR += getleft
     SUBDIR += gforge
-    SUBDIR += gir-repository-webkit
     SUBDIR += gist
     SUBDIR += glibwww
     SUBDIR += glpi

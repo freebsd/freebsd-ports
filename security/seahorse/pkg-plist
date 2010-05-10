@@ -1,6 +1,5 @@
 bin/seahorse
 bin/seahorse-daemon
-etc/xdg/autostart/seahorse-daemon.desktop
 include/libcryptui/cryptui-key-chooser.h
 include/libcryptui/cryptui-key-combo.h
 include/libcryptui/cryptui-key-list.h
@@ -120,6 +119,7 @@ share/icons/hicolor/48x48/apps/seahorse-preferences.png
 share/icons/hicolor/48x48/apps/seahorse.png
 share/locale/ar/LC_MESSAGES/seahorse.mo
 share/locale/as/LC_MESSAGES/seahorse.mo
+share/locale/ast/LC_MESSAGES/seahorse.mo
 share/locale/az/LC_MESSAGES/seahorse.mo
 share/locale/be@latin/LC_MESSAGES/seahorse.mo
 share/locale/bg/LC_MESSAGES/seahorse.mo
@@ -136,6 +136,7 @@ share/locale/dz/LC_MESSAGES/seahorse.mo
 share/locale/el/LC_MESSAGES/seahorse.mo
 share/locale/en_CA/LC_MESSAGES/seahorse.mo
 share/locale/en_GB/LC_MESSAGES/seahorse.mo
+share/locale/en@shaw/LC_MESSAGES/seahorse.mo
 share/locale/es/LC_MESSAGES/seahorse.mo
 share/locale/et/LC_MESSAGES/seahorse.mo
 share/locale/eu/LC_MESSAGES/seahorse.mo
@@ -148,6 +149,7 @@ share/locale/he/LC_MESSAGES/seahorse.mo
 share/locale/hi/LC_MESSAGES/seahorse.mo
 share/locale/hr/LC_MESSAGES/seahorse.mo
 share/locale/hu/LC_MESSAGES/seahorse.mo
+share/locale/id/LC_MESSAGES/seahorse.mo
 share/locale/it/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
 share/locale/kn/LC_MESSAGES/seahorse.mo
@@ -170,6 +172,7 @@ share/locale/pa/LC_MESSAGES/seahorse.mo
 share/locale/pl/LC_MESSAGES/seahorse.mo
 share/locale/pt/LC_MESSAGES/seahorse.mo
 share/locale/pt_BR/LC_MESSAGES/seahorse.mo
+share/locale/ro/LC_MESSAGES/seahorse.mo
 share/locale/ru/LC_MESSAGES/seahorse.mo
 share/locale/rw/LC_MESSAGES/seahorse.mo
 share/locale/si/LC_MESSAGES/seahorse.mo
@@ -315,6 +318,8 @@ share/pixmaps/seahorse/scalable/seahorse-sign.svg
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
@@ -323,5 +328,7 @@ share/pixmaps/seahorse/scalable/seahorse-sign.svg
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

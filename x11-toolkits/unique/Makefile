@@ -3,24 +3,22 @@
 # Whom:				Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/unique/Makefile,v 1.3 2009/10/03 02:27:43 marcus Exp $
+#   $MCom: ports/x11-toolkits/unique/Makefile,v 1.7 2010/01/09 18:22:39 marcus Exp $
 #
 
 PORTNAME=	unique
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	1.1.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/lib${PORTNAME}/${PORTVERSION:R}/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	kwm@FreeBSD.org
-COMMENT=	Library for single instance applications.
+COMMENT=	Library for single instance applications
 
-BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/Gtk-2.0.gir:${PORTSDIR}/x11-toolkits/gir-repository-gtk20
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
-RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/Gtk-2.0.gir:${PORTSDIR}/x11-toolkits/gir-repository-gtk20
 
 USE_XORG=	ice
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes

@@ -147,6 +147,7 @@
     SUBDIR += gman
     SUBDIR += gnome-devel-docs
     SUBDIR += gnome-icon-theme
+    SUBDIR += gnome-icon-theme-extras
     SUBDIR += gnome-mime-data
     SUBDIR += gnome-osd
     SUBDIR += gnome-user-docs

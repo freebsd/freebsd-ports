@@ -121,6 +121,7 @@ share/locale/da/LC_MESSAGES/at-spi.mo
 share/locale/de/LC_MESSAGES/at-spi.mo
 share/locale/dz/LC_MESSAGES/at-spi.mo
 share/locale/el/LC_MESSAGES/at-spi.mo
+share/locale/en@shaw/LC_MESSAGES/at-spi.mo
 share/locale/en_CA/LC_MESSAGES/at-spi.mo
 share/locale/en_GB/LC_MESSAGES/at-spi.mo
 share/locale/eo/LC_MESSAGES/at-spi.mo
@@ -216,8 +217,12 @@ share/locale/zh_TW/LC_MESSAGES/at-spi.mo
 @dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES

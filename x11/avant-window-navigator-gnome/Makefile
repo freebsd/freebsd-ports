@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	6
 AWN_DESKTOP=    gnome
 MASTERDIR=      ${.CURDIR}/../avant-window-navigator
 

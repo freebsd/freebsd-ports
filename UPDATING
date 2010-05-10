@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+201005010:
+  AFFECTS: users of security/gnome-keyring
+  AUTHOR: kwm@FreeBSD.org
+
+  libgnome-keyring was split out of the gnome-keyring package.
+  Do the following before doing your normal upgrade steps.
+
+  pkg_delete -f "gnome-keyring-*"
+
+  portmaster security/gnome-keyring
+
+  or 
+
+  portupgrade -R -x gnome-keyring -x libgnome-keyring gnome-keyring
+  pkg_deinstall -fO gnome-keyring
+  portinstall security/gnome-keyring
+
 20100506:
   AFFECTS: users of mail/nullmailer on FreeBSD 6.x
   AUTHOR: glarkin@FreeBSD.org

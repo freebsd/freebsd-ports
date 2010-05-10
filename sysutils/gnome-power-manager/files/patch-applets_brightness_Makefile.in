@@ -1,0 +1,10 @@
+--- applets/brightness/Makefile.in.orig	2010-01-01 20:51:42.000000000 +0800
++++ applets/brightness/Makefile.in	2010-01-01 20:51:42.000000000 +0800
+@@ -344,6 +344,7 @@
+ gnome_brightness_applet_LDADD = \
+ 	$(DBUS_LIBS)						\
+ 	$(GNOME_LIBS)						\
++	-lexecinfo \
+ 	$(PANEL_LIBS)
+ 
+ serverdir = $(prefix)/libdata/bonobo/servers

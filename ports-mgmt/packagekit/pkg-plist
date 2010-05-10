@@ -1,0 +1,455 @@
+bin/packagekit-bugreport.sh
+bin/pk-debuginfo-install
+bin/pkcon
+bin/pkgenpack
+bin/pkmon
+%%RUCK%%bin/ruck
+@unexec if cmp -s %D/etc/PackageKit/CommandNotFound.conf %D/etc/PackageKit/CommandNotFound.conf.default; then rm -f %D/etc/PackageKit/CommandNotFound.conf; fi
+etc/PackageKit/CommandNotFound.conf
+@exec [ -f %B/CommandNotFound.conf ] || cp %B/%f %B/CommandNotFound.conf
+@unexec if cmp -s %D/etc/PackageKit/PackageKit.conf %D/etc/PackageKit/PackageKit.conf.default; then rm -f %D/etc/PackageKit/PackageKit.conf; fi
+etc/PackageKit/PackageKit.conf
+@exec [ -f %B/PackageKit.conf ] || cp %B/%f %B/PackageKit.conf
+etc/PackageKit/Vendor.conf
+etc/bash_completion.d/pk-completion.bash
+etc/cron.daily/packagekit-background.cron
+etc/dbus-1/system.d/org.freedesktop.PackageKit.conf
+etc/profile.d/PackageKit.sh
+etc/sysconfig/packagekit-background
+include/PackageKit/backend/pk-backend-spawn.h
+include/PackageKit/backend/pk-backend.h
+include/PackageKit/packagekit-glib2/packagekit.h
+include/PackageKit/packagekit-glib2/pk-bitfield.h
+include/PackageKit/packagekit-glib2/pk-catalog.h
+include/PackageKit/packagekit-glib2/pk-category.h
+include/PackageKit/packagekit-glib2/pk-client-sync.h
+include/PackageKit/packagekit-glib2/pk-client.h
+include/PackageKit/packagekit-glib2/pk-common.h
+include/PackageKit/packagekit-glib2/pk-control-sync.h
+include/PackageKit/packagekit-glib2/pk-control.h
+include/PackageKit/packagekit-glib2/pk-desktop.h
+include/PackageKit/packagekit-glib2/pk-details.h
+include/PackageKit/packagekit-glib2/pk-distro-upgrade.h
+include/PackageKit/packagekit-glib2/pk-enum.h
+include/PackageKit/packagekit-glib2/pk-error.h
+include/PackageKit/packagekit-glib2/pk-eula-required.h
+include/PackageKit/packagekit-glib2/pk-files.h
+include/PackageKit/packagekit-glib2/pk-media-change-required.h
+include/PackageKit/packagekit-glib2/pk-message.h
+include/PackageKit/packagekit-glib2/pk-package-id.h
+include/PackageKit/packagekit-glib2/pk-package-ids.h
+include/PackageKit/packagekit-glib2/pk-package-sack-sync.h
+include/PackageKit/packagekit-glib2/pk-package-sack.h
+include/PackageKit/packagekit-glib2/pk-package.h
+include/PackageKit/packagekit-glib2/pk-progress.h
+include/PackageKit/packagekit-glib2/pk-repo-detail.h
+include/PackageKit/packagekit-glib2/pk-repo-signature-required.h
+include/PackageKit/packagekit-glib2/pk-require-restart.h
+include/PackageKit/packagekit-glib2/pk-results.h
+include/PackageKit/packagekit-glib2/pk-service-pack.h
+include/PackageKit/packagekit-glib2/pk-source.h
+include/PackageKit/packagekit-glib2/pk-task.h
+include/PackageKit/packagekit-glib2/pk-transaction-list.h
+include/PackageKit/packagekit-glib2/pk-transaction-past.h
+include/PackageKit/packagekit-glib2/pk-update-detail.h
+include/PackageKit/packagekit-glib2/pk-version.h
+lib/girepository-1.0/PackageKitGlib-1.0.typelib
+lib/libpackagekit-glib2.a
+lib/libpackagekit-glib2.la
+lib/libpackagekit-glib2.so
+lib/libpackagekit-glib2.so.14
+lib/packagekit-backend/libpk_backend_dummy.a
+lib/packagekit-backend/libpk_backend_dummy.la
+lib/packagekit-backend/libpk_backend_dummy.so
+%%PORTS%%lib/packagekit-backend/libpk_backend_ports.a
+%%PORTS%%lib/packagekit-backend/libpk_backend_ports.la
+%%PORTS%%lib/packagekit-backend/libpk_backend_ports.so
+lib/packagekit-backend/libpk_backend_test_fail.a
+lib/packagekit-backend/libpk_backend_test_fail.la
+lib/packagekit-backend/libpk_backend_test_fail.so
+lib/packagekit-backend/libpk_backend_test_nop.a
+lib/packagekit-backend/libpk_backend_test_nop.la
+lib/packagekit-backend/libpk_backend_test_nop.so
+lib/packagekit-backend/libpk_backend_test_spawn.a
+lib/packagekit-backend/libpk_backend_test_spawn.la
+lib/packagekit-backend/libpk_backend_test_spawn.so
+lib/packagekit-backend/libpk_backend_test_succeed.a
+lib/packagekit-backend/libpk_backend_test_succeed.la
+lib/packagekit-backend/libpk_backend_test_succeed.so
+lib/packagekit-backend/libpk_backend_test_thread.a
+lib/packagekit-backend/libpk_backend_test_thread.la
+lib/packagekit-backend/libpk_backend_test_thread.so
+lib/polkit-1/extensions/libpackagekit-action-lookup.a
+lib/polkit-1/extensions/libpackagekit-action-lookup.la
+lib/polkit-1/extensions/libpackagekit-action-lookup.so
+%%PYTHON_SITELIBDIR%%/packagekit/__init__.py
+%%PYTHON_SITELIBDIR%%/packagekit/__init__.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/__init__.pyo
+%%PYTHON_SITELIBDIR%%/packagekit/backend.py
+%%PYTHON_SITELIBDIR%%/packagekit/backend.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/backend.pyo
+%%PYTHON_SITELIBDIR%%/packagekit/client.py
+%%PYTHON_SITELIBDIR%%/packagekit/client.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/client.pyo
+%%PYTHON_SITELIBDIR%%/packagekit/enums.py
+%%PYTHON_SITELIBDIR%%/packagekit/enums.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/enums.pyo
+%%PYTHON_SITELIBDIR%%/packagekit/filter.py
+%%PYTHON_SITELIBDIR%%/packagekit/filter.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/filter.pyo
+%%PYTHON_SITELIBDIR%%/packagekit/frontend.py
+%%PYTHON_SITELIBDIR%%/packagekit/frontend.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/frontend.pyo
+%%PYTHON_SITELIBDIR%%/packagekit/misc.py
+%%PYTHON_SITELIBDIR%%/packagekit/misc.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/misc.pyo
+%%PYTHON_SITELIBDIR%%/packagekit/package.py
+%%PYTHON_SITELIBDIR%%/packagekit/package.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/package.pyo
+%%PYTHON_SITELIBDIR%%/packagekit/pkdbus.py
+%%PYTHON_SITELIBDIR%%/packagekit/pkdbus.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/pkdbus.pyo
+%%PYTHON_SITELIBDIR%%/packagekit/pkexceptions.py
+%%PYTHON_SITELIBDIR%%/packagekit/pkexceptions.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/pkexceptions.pyo
+%%PYTHON_SITELIBDIR%%/packagekit/progress.py
+%%PYTHON_SITELIBDIR%%/packagekit/progress.pyc
+%%PYTHON_SITELIBDIR%%/packagekit/progress.pyo
+libdata/pkgconfig/packagekit-glib2.pc
+libexec/pk-command-not-found
+sbin/packagekitd
+%%PORTS%%share/PackageKit/helpers/ports/portsBackend.rb
+%%PORTS%%share/PackageKit/helpers/ports/ruby_packagekit/enums.rb
+%%PORTS%%share/PackageKit/helpers/ports/ruby_packagekit/prints.rb
+share/PackageKit/helpers/test_spawn/search-name.sh
+share/PackageKit/pk-upgrade-distro.sh
+share/PackageKit/transactions.db
+@exec mkdir -p /var/lib/PackageKit
+@exec if [ ! -f /var/lib/PackageKit/%f ]; then cp -f %B/%f /var/lib/PackageKit; chmod o-r /var/lib/PackageKit/%f; fi
+share/PackageKit/website/img/assassin.png
+share/PackageKit/website/img/author-alefebvre.png
+share/PackageKit/website/img/author-btimothy.png
+share/PackageKit/website/img/author-caglar.png
+share/PackageKit/website/img/author-elliot.png
+share/PackageKit/website/img/author-glatzor.png
+share/PackageKit/website/img/author-grzegorzdabrowski.png
+share/PackageKit/website/img/author-hughsie.png
+share/PackageKit/website/img/author-jbowes.png
+share/PackageKit/website/img/author-kenvandine.png
+share/PackageKit/website/img/author-lmacken.png
+share/PackageKit/website/img/author-rnorwood.png
+share/PackageKit/website/img/author-timlau.png
+share/PackageKit/website/img/author-tomparker.png
+share/PackageKit/website/img/author-unknown.png
+share/PackageKit/website/img/author-zodman.png
+share/PackageKit/website/img/dialog-information.png
+share/PackageKit/website/img/gpk-added-deps.png
+share/PackageKit/website/img/gpk-application-groups.png
+share/PackageKit/website/img/gpk-application-search.png
+share/PackageKit/website/img/gpk-auto-update.png
+share/PackageKit/website/img/gpk-backend-status.png
+share/PackageKit/website/img/gpk-battery.png
+share/PackageKit/website/img/gpk-client-codecs.png
+share/PackageKit/website/img/gpk-client-firmware.png
+share/PackageKit/website/img/gpk-client-font.png
+share/PackageKit/website/img/gpk-client-mime-type.png
+share/PackageKit/website/img/gpk-distro-upgrade-notify.png
+share/PackageKit/website/img/gpk-eula.png
+share/PackageKit/website/img/gpk-inhibit.png
+share/PackageKit/website/img/gpk-log.png
+share/PackageKit/website/img/gpk-markdown.png
+share/PackageKit/website/img/gpk-network.png
+share/PackageKit/website/img/gpk-prefs.png
+share/PackageKit/website/img/gpk-progress.png
+share/PackageKit/website/img/gpk-remove-confirm.png
+share/PackageKit/website/img/gpk-repo-auth.png
+share/PackageKit/website/img/gpk-repo-more.png
+share/PackageKit/website/img/gpk-repo.png
+share/PackageKit/website/img/gpk-require-restart.png
+share/PackageKit/website/img/gpk-run-application.png
+share/PackageKit/website/img/gpk-service-pack.png
+share/PackageKit/website/img/gpk-signature.png
+share/PackageKit/website/img/gpk-updates-overview.png
+share/PackageKit/website/img/gpk-updates-warning.png
+share/PackageKit/website/img/gpk-updates.png
+share/PackageKit/website/img/gpk-waiting.png
+share/PackageKit/website/img/kpk-confirm.png
+share/PackageKit/website/img/kpk-information.png
+share/PackageKit/website/img/kpk-notify.png
+share/PackageKit/website/img/kpk-progress.png
+share/PackageKit/website/img/kpk-search.png
+share/PackageKit/website/img/kpk-settings.png
+share/PackageKit/website/img/kpk-update.png
+share/PackageKit/website/img/large-accessories-text-editor.png
+share/PackageKit/website/img/large-application-certificate.png
+share/PackageKit/website/img/large-applications-development.png
+share/PackageKit/website/img/large-authors.png
+share/PackageKit/website/img/large-dialog-information.png
+share/PackageKit/website/img/large-emblem-favorite.png
+share/PackageKit/website/img/large-emblem-photos.png
+share/PackageKit/website/img/large-help-browser.png
+share/PackageKit/website/img/large-preferences-system.png
+share/PackageKit/website/img/large-system-users.png
+share/PackageKit/website/img/packagekit.png
+share/PackageKit/website/img/pk-command-not-found.png
+share/PackageKit/website/img/pk-opensuse-updater.png
+share/PackageKit/website/img/pk-self-check.png
+share/PackageKit/website/img/pk-update-bugfix.png
+share/PackageKit/website/img/pk-update-enhancement.png
+share/PackageKit/website/img/pk-update-high.png
+share/PackageKit/website/img/pk-update-low.png
+share/PackageKit/website/img/pk-update-normal.png
+share/PackageKit/website/img/pk-update-security.png
+share/PackageKit/website/img/pk-web-plugin.png
+share/PackageKit/website/img/profile-bevan.png
+share/PackageKit/website/img/profile-graham.png
+share/PackageKit/website/img/profile-suzan.png
+share/PackageKit/website/img/status-bad.png
+share/PackageKit/website/img/status-good.png
+share/PackageKit/website/img/thumbnails/assassin.png
+share/PackageKit/website/img/thumbnails/gpk-added-deps.png
+share/PackageKit/website/img/thumbnails/gpk-application-groups.png
+share/PackageKit/website/img/thumbnails/gpk-application-search.png
+share/PackageKit/website/img/thumbnails/gpk-auto-update.png
+share/PackageKit/website/img/thumbnails/gpk-backend-status.png
+share/PackageKit/website/img/thumbnails/gpk-battery.png
+share/PackageKit/website/img/thumbnails/gpk-client-codecs.png
+share/PackageKit/website/img/thumbnails/gpk-client-firmware.png
+share/PackageKit/website/img/thumbnails/gpk-client-font.png
+share/PackageKit/website/img/thumbnails/gpk-client-mime-type.png
+share/PackageKit/website/img/thumbnails/gpk-distro-upgrade-notify.png
+share/PackageKit/website/img/thumbnails/gpk-eula.png
+share/PackageKit/website/img/thumbnails/gpk-inhibit.png
+share/PackageKit/website/img/thumbnails/gpk-log.png
+share/PackageKit/website/img/thumbnails/gpk-markdown.png
+share/PackageKit/website/img/thumbnails/gpk-network.png
+share/PackageKit/website/img/thumbnails/gpk-prefs.png
+share/PackageKit/website/img/thumbnails/gpk-progress.png
+share/PackageKit/website/img/thumbnails/gpk-remove-confirm.png
+share/PackageKit/website/img/thumbnails/gpk-repo-auth.png
+share/PackageKit/website/img/thumbnails/gpk-repo-more.png
+share/PackageKit/website/img/thumbnails/gpk-repo.png
+share/PackageKit/website/img/thumbnails/gpk-require-restart.png
+share/PackageKit/website/img/thumbnails/gpk-run-application.png
+share/PackageKit/website/img/thumbnails/gpk-service-pack.png
+share/PackageKit/website/img/thumbnails/gpk-signature.png
+share/PackageKit/website/img/thumbnails/gpk-updates-overview.png
+share/PackageKit/website/img/thumbnails/gpk-updates-warning.png
+share/PackageKit/website/img/thumbnails/gpk-updates.png
+share/PackageKit/website/img/thumbnails/gpk-waiting.png
+share/PackageKit/website/img/thumbnails/kpk-confirm.png
+share/PackageKit/website/img/thumbnails/kpk-information.png
+share/PackageKit/website/img/thumbnails/kpk-notify.png
+share/PackageKit/website/img/thumbnails/kpk-progress.png
+share/PackageKit/website/img/thumbnails/kpk-search.png
+share/PackageKit/website/img/thumbnails/kpk-settings.png
+share/PackageKit/website/img/thumbnails/kpk-update.png
+share/PackageKit/website/img/thumbnails/pk-command-not-found.png
+share/PackageKit/website/img/thumbnails/pk-opensuse-updater.png
+share/PackageKit/website/img/thumbnails/pk-self-check.png
+share/PackageKit/website/img/thumbnails/pk-update-bugfix.png
+share/PackageKit/website/img/thumbnails/pk-update-enhancement.png
+share/PackageKit/website/img/thumbnails/pk-update-high.png
+share/PackageKit/website/img/thumbnails/pk-update-low.png
+share/PackageKit/website/img/thumbnails/pk-update-normal.png
+share/PackageKit/website/img/thumbnails/pk-update-security.png
+share/PackageKit/website/img/thumbnails/pk-web-plugin.png
+share/PackageKit/website/img/users-fedora.png
+share/PackageKit/website/img/users-foresight.png
+share/PackageKit/website/img/users-kubuntu.png
+share/PackageKit/website/img/users-moblin.png
+share/PackageKit/website/index.html
+share/PackageKit/website/pk-authors.html
+share/PackageKit/website/pk-bugs.html
+share/PackageKit/website/pk-download.html
+share/PackageKit/website/pk-faq.html
+share/PackageKit/website/pk-help.html
+share/PackageKit/website/pk-intro.html
+share/PackageKit/website/pk-matrix.html
+share/PackageKit/website/pk-package-not-found.html
+share/PackageKit/website/pk-profiles.html
+share/PackageKit/website/pk-reference.html
+share/PackageKit/website/pk-screenshots.html
+share/PackageKit/website/pk-using.html
+share/PackageKit/website/style.css
+share/dbus-1/system-services/org.freedesktop.PackageKit.service
+share/gir-1.0/PackageKitGlib-1.0.gir
+share/gtk-doc/html/PackageKit/PackageKit-egg-debug.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-bitfield.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-client-sync.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-common.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-control-sync.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-enum.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-package-id.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-package-ids.html
+share/gtk-doc/html/PackageKit/PackageKit.devhelp
+share/gtk-doc/html/PackageKit/PackageKit.devhelp2
+share/gtk-doc/html/PackageKit/PackageKit.html
+share/gtk-doc/html/PackageKit/PkCatalog.html
+share/gtk-doc/html/PackageKit/PkCategory.html
+share/gtk-doc/html/PackageKit/PkClient.html
+share/gtk-doc/html/PackageKit/PkControl.html
+share/gtk-doc/html/PackageKit/PkDesktop.html
+share/gtk-doc/html/PackageKit/PkDetails.html
+share/gtk-doc/html/PackageKit/PkDistroUpgrade.html
+share/gtk-doc/html/PackageKit/PkError.html
+share/gtk-doc/html/PackageKit/PkEulaRequired.html
+share/gtk-doc/html/PackageKit/PkFiles.html
+share/gtk-doc/html/PackageKit/PkMediaChangeRequired.html
+share/gtk-doc/html/PackageKit/PkMessage.html
+share/gtk-doc/html/PackageKit/PkPackage.html
+share/gtk-doc/html/PackageKit/PkPackageSack.html
+share/gtk-doc/html/PackageKit/PkProgress.html
+share/gtk-doc/html/PackageKit/PkRepoDetail.html
+share/gtk-doc/html/PackageKit/PkRepoSignatureRequired.html
+share/gtk-doc/html/PackageKit/PkRequireRestart.html
+share/gtk-doc/html/PackageKit/PkResults.html
+share/gtk-doc/html/PackageKit/PkServicePack.html
+share/gtk-doc/html/PackageKit/PkTask.html
+share/gtk-doc/html/PackageKit/PkTransactionPast.html
+share/gtk-doc/html/PackageKit/PkUpdateDetail.html
+share/gtk-doc/html/PackageKit/Transaction.html
+share/gtk-doc/html/PackageKit/api-reference.html
+share/gtk-doc/html/PackageKit/backend-compiled.html
+share/gtk-doc/html/PackageKit/backend-spawn.html
+share/gtk-doc/html/PackageKit/backends-spawn-common.html
+share/gtk-doc/html/PackageKit/backends-spawn-methods.html
+share/gtk-doc/html/PackageKit/concepts.html
+share/gtk-doc/html/PackageKit/config-main.html
+share/gtk-doc/html/PackageKit/developer-faq.html
+share/gtk-doc/html/PackageKit/faq.html
+share/gtk-doc/html/PackageKit/home.png
+share/gtk-doc/html/PackageKit/index.html
+share/gtk-doc/html/PackageKit/index.sgml
+share/gtk-doc/html/PackageKit/introduction-backends.html
+share/gtk-doc/html/PackageKit/introduction-cancellation.html
+share/gtk-doc/html/PackageKit/introduction-errors.html
+share/gtk-doc/html/PackageKit/introduction-group-type.html
+share/gtk-doc/html/PackageKit/introduction-ideas-filters.html
+share/gtk-doc/html/PackageKit/introduction-ideas-simultaneous.html
+share/gtk-doc/html/PackageKit/introduction-ideas-status.html
+share/gtk-doc/html/PackageKit/introduction-ideas-transactionid.html
+share/gtk-doc/html/PackageKit/introduction-ideas-transactions.html
+share/gtk-doc/html/PackageKit/introduction.html
+share/gtk-doc/html/PackageKit/left.png
+share/gtk-doc/html/PackageKit/libpackagekit-gobject.html
+share/gtk-doc/html/PackageKit/libpackagekit-helpers.html
+share/gtk-doc/html/PackageKit/pk-faq-error-code.png
+share/gtk-doc/html/PackageKit/pk-faq-filter.png
+share/gtk-doc/html/PackageKit/pk-faq-status.png
+share/gtk-doc/html/PackageKit/pk-structure.png
+share/gtk-doc/html/PackageKit/pk-structure.svg
+share/gtk-doc/html/PackageKit/pk-transactions-download.png
+share/gtk-doc/html/PackageKit/pk-transactions-failure.png
+share/gtk-doc/html/PackageKit/pk-transactions-set-locale.png
+share/gtk-doc/html/PackageKit/pk-transactions-sig-install.png
+share/gtk-doc/html/PackageKit/pk-transactions-success.png
+share/gtk-doc/html/PackageKit/pk-transactions-trusted.png
+share/gtk-doc/html/PackageKit/pk-transactions.svg
+share/gtk-doc/html/PackageKit/right.png
+share/gtk-doc/html/PackageKit/specification.html
+share/gtk-doc/html/PackageKit/style.css
+share/gtk-doc/html/PackageKit/up.png
+share/locale/as/LC_MESSAGES/PackageKit.mo
+share/locale/bg/LC_MESSAGES/PackageKit.mo
+share/locale/bn_IN/LC_MESSAGES/PackageKit.mo
+share/locale/ca/LC_MESSAGES/PackageKit.mo
+share/locale/cs/LC_MESSAGES/PackageKit.mo
+share/locale/da/LC_MESSAGES/PackageKit.mo
+share/locale/de/LC_MESSAGES/PackageKit.mo
+share/locale/el/LC_MESSAGES/PackageKit.mo
+share/locale/en_GB/LC_MESSAGES/PackageKit.mo
+share/locale/es/LC_MESSAGES/PackageKit.mo
+share/locale/fi/LC_MESSAGES/PackageKit.mo
+share/locale/fr/LC_MESSAGES/PackageKit.mo
+share/locale/gu/LC_MESSAGES/PackageKit.mo
+share/locale/he/LC_MESSAGES/PackageKit.mo
+share/locale/hi/LC_MESSAGES/PackageKit.mo
+share/locale/hu/LC_MESSAGES/PackageKit.mo
+share/locale/it/LC_MESSAGES/PackageKit.mo
+share/locale/ja/LC_MESSAGES/PackageKit.mo
+share/locale/kn/LC_MESSAGES/PackageKit.mo
+share/locale/ko/LC_MESSAGES/PackageKit.mo
+share/locale/ml/LC_MESSAGES/PackageKit.mo
+share/locale/mr/LC_MESSAGES/PackageKit.mo
+share/locale/ms/LC_MESSAGES/PackageKit.mo
+share/locale/nb/LC_MESSAGES/PackageKit.mo
+share/locale/nl/LC_MESSAGES/PackageKit.mo
+share/locale/or/LC_MESSAGES/PackageKit.mo
+share/locale/pa/LC_MESSAGES/PackageKit.mo
+share/locale/pl/LC_MESSAGES/PackageKit.mo
+share/locale/pt/LC_MESSAGES/PackageKit.mo
+share/locale/pt_BR/LC_MESSAGES/PackageKit.mo
+share/locale/ro/LC_MESSAGES/PackageKit.mo
+share/locale/ru/LC_MESSAGES/PackageKit.mo
+share/locale/sk/LC_MESSAGES/PackageKit.mo
+share/locale/sr/LC_MESSAGES/PackageKit.mo
+share/locale/sr@latin/LC_MESSAGES/PackageKit.mo
+share/locale/sv/LC_MESSAGES/PackageKit.mo
+share/locale/ta/LC_MESSAGES/PackageKit.mo
+share/locale/te/LC_MESSAGES/PackageKit.mo
+share/locale/th/LC_MESSAGES/PackageKit.mo
+share/locale/tr/LC_MESSAGES/PackageKit.mo
+share/locale/uk/LC_MESSAGES/PackageKit.mo
+share/locale/zh_CN/LC_MESSAGES/PackageKit.mo
+share/locale/zh_TW/LC_MESSAGES/PackageKit.mo
+share/mime/packages/packagekit-catalog.xml
+share/mime/packages/packagekit-package-list.xml
+share/mime/packages/packagekit-servicepack.xml
+share/polkit-1/actions/org.freedesktop.packagekit.policy
+%%RUCK%%share/ruck/AUTHORS
+%%RUCK%%share/ruck/README
+%%RUCK%%share/ruck/commands/ruckcachecmds.py
+%%RUCK%%share/ruck/commands/ruckpackagecmds.py
+%%RUCK%%share/ruck/commands/rucktransactcmds.py
+%%RUCK%%share/ruck/i18n.py
+%%RUCK%%share/ruck/ruckcommand.py
+%%RUCK%%share/ruck/ruckformat.py
+%%RUCK%%share/ruck/ruckmain.py
+%%RUCK%%share/ruck/rucktalk.py
+%%RUCK%%share/ruck/ruckyum.py
+@exec mkdir -p /var/cache/PackageKit/downloads
+@unexec rmdir /var/cache/PackageKit/downloads 2>/dev/null
+@unexec rmdir /var/cache/PackageKit 2>/dev/null
+@unexec rmdir /var/cache 2>/dev/null
+@unexec rmdir /var/lib/PackageKit 2>/dev/null
+@unexec rmdir /var/lib 2>/dev/null
+%%RUCK%%@dirrm share/ruck/commands
+%%RUCK%%@dirrm share/ruck
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
+@dirrm share/gtk-doc/html/PackageKit
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+%%PORTS%%@dirrm share/PackageKit/website/img/thumbnails
+%%PORTS%%@dirrm share/PackageKit/website/img
+%%PORTS%%@dirrm share/PackageKit/website
+%%PORTS%%@dirrm share/PackageKit/helpers/test_spawn
+%%PORTS%%@dirrm share/PackageKit/helpers/ports/ruby_packagekit
+%%PORTS%%@dirrm share/PackageKit/helpers/ports
+%%PORTS%%@dirrm share/PackageKit/helpers
+%%PORTS%%@dirrm share/PackageKit
+@dirrm %%PYTHON_SITELIBDIR%%/packagekit
+@dirrm lib/packagekit-backend
+@dirrmtry lib/girepositry-1.0
+@dirrm include/PackageKit/packagekit-glib2
+@dirrm include/PackageKit/backend
+@dirrm include/PackageKit
+@dirrmtry etc/sysconfig
+@dirrmtry etc/profile.d
+@dirrmtry etc/cron.daily
+@dirrm etc/PackageKit
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

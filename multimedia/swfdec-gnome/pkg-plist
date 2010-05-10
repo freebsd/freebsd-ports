@@ -9,6 +9,7 @@ share/icons/hicolor/48x48/apps/swfdec-gnome.png
 share/icons/hicolor/scalable/apps/swfdec-gnome.svg
 share/locale/ar/LC_MESSAGES/swfdec-gnome.mo
 share/locale/as/LC_MESSAGES/swfdec-gnome.mo
+share/locale/ast/LC_MESSAGES/swfdec-gnome.mo
 share/locale/be/LC_MESSAGES/swfdec-gnome.mo
 share/locale/be@latin/LC_MESSAGES/swfdec-gnome.mo
 share/locale/bg/LC_MESSAGES/swfdec-gnome.mo
@@ -21,6 +22,7 @@ share/locale/cs/LC_MESSAGES/swfdec-gnome.mo
 share/locale/da/LC_MESSAGES/swfdec-gnome.mo
 share/locale/de/LC_MESSAGES/swfdec-gnome.mo
 share/locale/el/LC_MESSAGES/swfdec-gnome.mo
+share/locale/en@shaw/LC_MESSAGES/swfdec-gnome.mo
 share/locale/en_GB/LC_MESSAGES/swfdec-gnome.mo
 share/locale/es/LC_MESSAGES/swfdec-gnome.mo
 share/locale/et/LC_MESSAGES/swfdec-gnome.mo
@@ -40,6 +42,7 @@ share/locale/kn/LC_MESSAGES/swfdec-gnome.mo
 share/locale/ko/LC_MESSAGES/swfdec-gnome.mo
 share/locale/ku/LC_MESSAGES/swfdec-gnome.mo
 share/locale/lt/LC_MESSAGES/swfdec-gnome.mo
+share/locale/lv/LC_MESSAGES/swfdec-gnome.mo
 share/locale/mai/LC_MESSAGES/swfdec-gnome.mo
 share/locale/mk/LC_MESSAGES/swfdec-gnome.mo
 share/locale/ml/LC_MESSAGES/swfdec-gnome.mo
@@ -55,6 +58,7 @@ share/locale/pt/LC_MESSAGES/swfdec-gnome.mo
 share/locale/pt_BR/LC_MESSAGES/swfdec-gnome.mo
 share/locale/ro/LC_MESSAGES/swfdec-gnome.mo
 share/locale/ru/LC_MESSAGES/swfdec-gnome.mo
+share/locale/sk/LC_MESSAGES/swfdec-gnome.mo
 share/locale/sl/LC_MESSAGES/swfdec-gnome.mo
 share/locale/sq/LC_MESSAGES/swfdec-gnome.mo
 share/locale/sr/LC_MESSAGES/swfdec-gnome.mo
@@ -94,11 +98,15 @@ share/locale/zh_TW/LC_MESSAGES/swfdec-gnome.mo
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as

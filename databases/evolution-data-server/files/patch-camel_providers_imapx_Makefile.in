@@ -1,0 +1,13 @@
+Our gperf (2.7.2) doesn't understand --output-file.
+
+--- camel/providers/imapx/Makefile.in.orig	2010-04-26 14:33:56.000000000 +0200
++++ camel/providers/imapx/Makefile.in	2010-04-26 14:35:10.000000000 +0200
+@@ -914,7 +914,7 @@ uninstall-am: uninstall-camel_providerDA
+ 
+ 
+ camel-imapx-tokenise.h: camel-imapx-tokens.txt
+-	@GPERF@ -H imapx_hash -N imapx_tokenise_struct -L ANSI-C -o -t -k1,$$ $< --output-file=$@
++	@GPERF@ -H imapx_hash -N imapx_tokenise_struct -L ANSI-C -o -t -k1,$$ $< > $@
+ 
+ -include $(top_srcdir)/git.mk
+ 

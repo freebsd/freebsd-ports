@@ -197,6 +197,7 @@ CXXFLAGS+=	-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3.*-ffast-math||g; \
+		s|-DGTK_DISABLE_DEPRECATED||; \
 		/LIBS/ s|-ldl||g; s|^LDFLAGS="|&$${LDFLAGS} |' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-ldl||; s|-lpthread|${PTHREAD_LIBS}|; \

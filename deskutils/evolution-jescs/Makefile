@@ -19,6 +19,8 @@ COMMENT=	Sun Java Enterprise System Calendar Server provider for Evolution
 BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 
+IGNORE=		Doesn't build or work with Evolution 2.30
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

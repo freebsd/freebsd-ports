@@ -36,6 +36,10 @@ include/pango-1.0/pango/pangoft2.h
 %%X11%%include/pango-1.0/pango/pangox.h
 %%X11%%include/pango-1.0/pango/pangoxft-render.h
 %%X11%%include/pango-1.0/pango/pangoxft.h
+lib/girepository-1.0/Pango-1.0.typelib
+lib/girepository-1.0/PangoCairo-1.0.typelib
+lib/girepository-1.0/PangoFT2-1.0.typelib
+lib/girepository-1.0/PangoXft-1.0.typelib
 lib/libpango-1.0.a
 lib/libpango-1.0.la
 lib/libpango-1.0.so
@@ -97,6 +101,10 @@ libdata/pkgconfig/pangocairo.pc
 libdata/pkgconfig/pangoft2.pc
 %%X11%%libdata/pkgconfig/pangox.pc
 %%X11%%libdata/pkgconfig/pangoxft.pc
+share/gir-1.0/Pango-1.0.gir
+share/gir-1.0/PangoCairo-1.0.gir
+share/gir-1.0/PangoFT2-1.0.gir
+share/gir-1.0/PangoXft-1.0.gir
 @dirrm lib/pango/%%VERSION%%/modules
 @dirrm lib/pango/%%VERSION%%
 @dirrm lib/pango

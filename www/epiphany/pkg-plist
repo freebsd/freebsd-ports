@@ -33,13 +33,13 @@ include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-type-builtins.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-web-view.h
 include/epiphany/%%EPHY_VERSION%%/epiphany/ephy-window.h
 @comment libdata/pkgconfig/epiphany-%%EPHY_VERSION%%.pc
-libdata/pkgconfig/epiphany-%%EPHY_VERSION%%.pc
+libdata/pkgconfig/epiphany-2.30.pc
 share/aclocal/epiphany.m4
 share/applications/bme.desktop
 share/applications/epiphany.desktop
 share/dbus-1/services/org.gnome.Epiphany.service
-lib/girepository-1.0/Epiphany-2.28.typelib
-share/gir-1.0/Epiphany-2.28.gir
+lib/girepository-1.0/Epiphany-2.30.typelib
+share/gir-1.0/Epiphany-2.30.gir
 %%DOCSDIR%%/EphyCommandManager.html
 %%DOCSDIR%%/EphyEmbed.html
 %%DOCSDIR%%/EphyLocationEntry.html
@@ -71,7 +71,6 @@ share/gir-1.0/Epiphany-2.28.gir
 %%DOCSDIR%%/up.png
 %%DATADIR%%/about.ini
 %%DATADIR%%/default-bookmarks.rdf
-%%DATADIR%%/ephy-xml2ini.xsl
 %%DATADIR%%/epiphany-bookmark-editor-ui.xml
 %%DATADIR%%/epiphany-bookmarks-html.xsl
 %%DATADIR%%/epiphany-bookmarksbar.xml
@@ -244,6 +243,7 @@ share/locale/dz/LC_MESSAGES/epiphany.mo
 share/locale/el/LC_MESSAGES/epiphany.mo
 share/locale/en_CA/LC_MESSAGES/epiphany.mo
 share/locale/en_GB/LC_MESSAGES/epiphany.mo
+share/locale/en@shaw/LC_MESSAGES/epiphany.mo
 share/locale/es/LC_MESSAGES/epiphany.mo
 share/locale/et/LC_MESSAGES/epiphany.mo
 share/locale/eu/LC_MESSAGES/epiphany.mo
@@ -279,6 +279,7 @@ share/locale/mn/LC_MESSAGES/epiphany.mo
 share/locale/mr/LC_MESSAGES/epiphany.mo
 share/locale/ms/LC_MESSAGES/epiphany.mo
 share/locale/nb/LC_MESSAGES/epiphany.mo
+share/locale/nds/LC_MESSAGES/epiphany.mo
 share/locale/ne/LC_MESSAGES/epiphany.mo
 share/locale/nl/LC_MESSAGES/epiphany.mo
 share/locale/nn/LC_MESSAGES/epiphany.mo
@@ -411,6 +412,10 @@ share/omf/epiphany/epiphany-uk.omf
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/yo/LC_MESSAGES
+@dirrmtry share/locale/yo
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -423,6 +428,8 @@ share/omf/epiphany/epiphany-uk.omf
 @dirrmtry share/locale/ps
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
@@ -433,6 +440,12 @@ share/omf/epiphany/epiphany-uk.omf
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/ig/LC_MESSAGES
+@dirrmtry share/locale/ig
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

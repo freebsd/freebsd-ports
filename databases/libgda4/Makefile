@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/databases/libgda4/Makefile,v 1.2 2009/04/18 20:16:29 marcus Exp $
+#   $MCom: ports/databases/libgda4/Makefile,v 1.5 2010/03/14 19:24:27 marcus Exp $
 #
 
 PORTNAME=	libgda4
-PORTVERSION?=	4.0.7
-PORTREVISION?=	1
+PORTVERSION?=	4.0.8
+PORTREVISION?=	0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/4$//}/${PORTVERSION:R}
@@ -23,9 +23,11 @@ LIBGDA4_SLAVE?=	no
 
 .if !defined(REFERENCE_PORT)
 
+BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
     		soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
+RUN_DEPENDS=	${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/devel/gobject-introspection
 
 USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
@@ -33,7 +35,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-sybase
+CONFIGURE_ARGS=	--without-sybase \
+		--enable-introspection
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 

@@ -3,12 +3,11 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gdm/Makefile,v 1.164 2009/11/28 05:59:03 mezz Exp $
+#   $MCom: ports/x11/gdm/Makefile,v 1.174 2010/04/27 14:58:59 kwm Exp $
 #
 
 PORTNAME=	gdm
-PORTVERSION=	2.28.2
-PORTREVISION=	3
+PORTVERSION=	2.30.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +20,8 @@ BUILD_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
 LIB_DEPENDS=	ck-connector.0:${PORTSDIR}/sysutils/consolekit \
 		polkit-gtk-1.0:${PORTSDIR}/sysutils/polkit-gnome \
     		execinfo:${PORTSDIR}/devel/libexecinfo \
-		hal.1:${PORTSDIR}/sysutils/hal \
+		upower-glib.1:${PORTSDIR}/sysutils/upower \
+		xklavier.12:${PORTSDIR}/x11/libxklavier \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	zenity:${PORTSDIR}/x11/zenity \
 		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \
@@ -39,7 +39,7 @@ INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack gnomehier gconf2 libglade2 librsvg2 \
+USE_GNOME=	gnomehack intlhack gnomehier gconf2 librsvg2 \
 		gnomedocutils gnomeprefix gnomepanel
 GCONF_SCHEMAS=	gdm-simple-greeter.schemas
 GNU_CONFIGURE=	yes

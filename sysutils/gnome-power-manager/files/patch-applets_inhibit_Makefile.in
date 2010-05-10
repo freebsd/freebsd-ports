@@ -1,0 +1,10 @@
+--- applets/inhibit/Makefile.in.orig	2010-01-01 20:53:23.000000000 +0800
++++ applets/inhibit/Makefile.in	2010-01-01 20:53:36.000000000 +0800
+@@ -343,6 +343,7 @@
+ gnome_inhibit_applet_LDADD = \
+ 	$(DBUS_LIBS)						\
+ 	$(GNOME_LIBS)						\
++	-lexecinfo \
+ 	$(PANEL_LIBS)
+ 
+ serverdir = $(prefix)/libdata/bonobo/servers

@@ -6,46 +6,7 @@ share/aclocal/mm-module.m4
 share/aclocal/mm-pkg.m4
 share/aclocal/mm-warnings.m4
 share/doc/mm-common/README
-share/doc/mm-common/skeletonmm/.gitignore
-share/doc/mm-common/skeletonmm/AUTHORS
-share/doc/mm-common/skeletonmm/COPYING
-share/doc/mm-common/skeletonmm/ChangeLog
-share/doc/mm-common/skeletonmm/Makefile.am
-share/doc/mm-common/skeletonmm/README
-share/doc/mm-common/skeletonmm/autogen.sh
-share/doc/mm-common/skeletonmm/build/.gitignore
-share/doc/mm-common/skeletonmm/codegen/Makefile.am
-share/doc/mm-common/skeletonmm/codegen/extradefs/generate_extra_defs_skeleton.cc
-share/doc/mm-common/skeletonmm/codegen/m4/convert.m4
-share/doc/mm-common/skeletonmm/codegen/m4/convert_skeleton.m4
-share/doc/mm-common/skeletonmm/codegen/m4/filelist.am
-share/doc/mm-common/skeletonmm/configure.ac
-share/doc/mm-common/skeletonmm/doc/Makefile.am
-share/doc/mm-common/skeletonmm/doc/reference/.gitignore
-share/doc/mm-common/skeletonmm/doc/reference/Doxyfile.in
-share/doc/mm-common/skeletonmm/examples/.gitignore
-share/doc/mm-common/skeletonmm/examples/Makefile.am
-share/doc/mm-common/skeletonmm/examples/example/example.cc
-share/doc/mm-common/skeletonmm/skeleton/.gitignore
-share/doc/mm-common/skeletonmm/skeleton/skeletonmm-uninstalled.pc.in
-share/doc/mm-common/skeletonmm/skeleton/skeletonmm.h
-share/doc/mm-common/skeletonmm/skeleton/skeletonmm.pc.in
-share/doc/mm-common/skeletonmm/skeleton/skeletonmm/Makefile.am
-share/doc/mm-common/skeletonmm/skeleton/skeletonmm/filelist.am
-share/doc/mm-common/skeletonmm/skeleton/skeletonmm/private/.gitignore
-share/doc/mm-common/skeletonmm/skeleton/skeletonmm/wrap_init.h
-share/doc/mm-common/skeletonmm/skeleton/skeletonmmconfig.h.in
-share/doc/mm-common/skeletonmm/skeleton/src/Makefile.am
-share/doc/mm-common/skeletonmm/skeleton/src/filelist.am
-share/doc/mm-common/skeletonmm/skeleton/src/skeleton.ccg
-share/doc/mm-common/skeletonmm/skeleton/src/skeleton.defs
-share/doc/mm-common/skeletonmm/skeleton/src/skeleton.hg
-share/doc/mm-common/skeletonmm/skeleton/src/skeleton_docs.xml
-share/doc/mm-common/skeletonmm/skeleton/src/skeleton_docs_override.xml
-share/doc/mm-common/skeletonmm/skeleton/src/skeleton_enum.defs
-share/doc/mm-common/skeletonmm/skeleton/src/skeleton_extra.defs
-share/doc/mm-common/skeletonmm/skeleton/src/skeleton_method.defs
-share/doc/mm-common/skeletonmm/skeletonmm.doap
+share/doc/mm-common/skeletonmm.tar.gz
 share/mm-common/build/compile-binding.am
 share/mm-common/build/dist-changelog.am
 share/mm-common/build/doc-reference.am
@@ -60,18 +21,5 @@ libdata/pkgconfig/mm-common-libstdc++.pc
 @dirrm share/mm-common/doctags
 @dirrm share/mm-common/build
 @dirrm share/mm-common
-@dirrm share/doc/mm-common/skeletonmm/skeleton/src
-@dirrm share/doc/mm-common/skeletonmm/skeleton/skeletonmm/private
-@dirrm share/doc/mm-common/skeletonmm/skeleton/skeletonmm
-@dirrm share/doc/mm-common/skeletonmm/skeleton
-@dirrm share/doc/mm-common/skeletonmm/doc/reference
-@dirrm share/doc/mm-common/skeletonmm/doc
-@dirrm share/doc/mm-common/skeletonmm/examples/example
-@dirrm share/doc/mm-common/skeletonmm/examples
-@dirrm share/doc/mm-common/skeletonmm/build
-@dirrm share/doc/mm-common/skeletonmm/codegen/m4
-@dirrm share/doc/mm-common/skeletonmm/codegen/extradefs
-@dirrm share/doc/mm-common/skeletonmm/codegen
-@dirrm share/doc/mm-common/skeletonmm
 @dirrm share/doc/mm-common
 @dirrmtry share/aclocal

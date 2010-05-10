@@ -8465,4 +8465,5 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/administration
 @dirrm %%DATADIR%%/boards
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrm lib/gcompris

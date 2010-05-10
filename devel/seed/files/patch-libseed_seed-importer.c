@@ -1,6 +1,6 @@
---- libseed/seed-importer.c.orig	2009-08-10 16:23:35.000000000 -0400
-+++ libseed/seed-importer.c	2009-08-22 14:36:00.000000000 -0400
-@@ -22,6 +22,8 @@
+--- libseed/seed-importer.c.orig	2009-12-31 11:42:51.000000000 +0100
++++ libseed/seed-importer.c	2010-01-02 02:12:09.000000000 +0100
+@@ -19,6 +19,8 @@
  
  #include <gio/gio.h>
  #include <string.h>
@@ -9,7 +9,7 @@
  
  #include "seed-private.h"
  
-@@ -637,8 +639,9 @@ seed_importer_handle_file (JSContextRef 
+@@ -636,8 +638,9 @@ seed_importer_handle_file (JSContextRef 
    JSValueRef js_file_dirname;
    JSObjectRef global, c_global;
    JSStringRef file_contents, file_name;
@@ -20,11 +20,11 @@
  
    file_path = g_build_filename (dir, file, NULL);
    canonical = seed_importer_canonicalize_path (file_path);
-@@ -692,15 +695,24 @@ seed_importer_handle_file (JSContextRef 
+@@ -691,15 +694,24 @@ seed_importer_handle_file (JSContextRef 
  					g_path_get_dirname (file_path), NULL);
      }
  
--  normalized_path = canonicalize_file_name (absolute_path);
+-  normalized_path = realpath (absolute_path, NULL);
 +#ifdef PATH_MAX
 +  path_max = PATH_MAX;
 +#else

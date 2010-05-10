@@ -3,24 +3,23 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/nautilus-actions/Makefile,v 1.14 2009/11/09 09:08:28 kwm Exp $
+#   $MCom: ports/deskutils/nautilus-actions/Makefile,v 1.21 2010/04/16 23:41:09 kwm Exp $
 #
 
 PORTNAME=	nautilus-actions
-PORTVERSION=	1.12.3
-PORTREVISION=	2
+PORTVERSION=	2.30.2
 CATEGORIES=	deskutils
-MASTER_SITES=	GNOME \
-		http://www.nautilus-actions.org/downloads/ \
-		ftp://pwi.dyndns.biz/pub/tarballs/nautilus-actions/
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Extension for Nautilus to configure programs to launch on files
 
 LIB_DEPENDS=	uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 
 INSTALLS_ICONS=	yes
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	nautilus2 intlhack
 USE_GMAKE=	yes
@@ -29,8 +28,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-nautilus-extdir=${LOCALBASE}/lib/nautilus/extensions-2.0
 
-PORTDOCS=	AUTHORS COPYING ChangeLog ChangeLog-2008 INSTALL MAINTAINERS \
-		NEWS README TODO objects-hierarchy.odg
+PORTDOCS=	AUTHORS COPYING ChangeLog ChangeLog-2008 ChangeLog-2009 INSTALL \
+		MAINTAINERS NEWS README TODO export-format-id io-provider-id \
+		objects-hierarchy.odg
 
 .include <bsd.port.pre.mk>
 
@@ -47,4 +47,4 @@ post-patch:
 		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>>
+.include <bsd.port.post.mk>

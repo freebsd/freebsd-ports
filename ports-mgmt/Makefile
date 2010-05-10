@@ -8,6 +8,7 @@
    SUBDIR += bpm
    SUBDIR += fastest_sites
    SUBDIR += genplist
+   SUBDIR += gnome-packagekit
    SUBDIR += jailaudit
    SUBDIR += kports
    SUBDIR += kports-qt4
@@ -19,6 +20,8 @@
    SUBDIR += p5-FreeBSD-Portindex
    SUBDIR += p5-FreeBSD-Ports
    SUBDIR += p5-FreeBSD-Ports-INDEXhash
+   SUBDIR += packagekit
+   SUBDIR += packagekit-qt4
    SUBDIR += pib
    SUBDIR += pkg-orphan
    SUBDIR += pkg_add_it

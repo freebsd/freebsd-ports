@@ -2,8 +2,8 @@ bin/my-default-printer
 bin/system-config-printer
 bin/system-config-printer-applet
 etc/dbus-1/system.d/newprinternotification.conf
-etc/xdg/autostart/redhat-print-applet.desktop
-%%PYTHON_SITELIBDIR%%/cupshelpers-1.0-py%%PYTHON_VER%%.egg-info
+etc/xdg/autostart/print-applet.desktop
+%%PYTHON_SITELIBDIR%%/cupshelpers-1.0-py%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/cupshelpers/__init__.py
 %%PYTHON_SITELIBDIR%%/cupshelpers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cupshelpers/cupshelpers.py
@@ -12,9 +12,9 @@ etc/xdg/autostart/redhat-print-applet.desktop
 %%PYTHON_SITELIBDIR%%/cupshelpers/openprinting.pyc
 %%PYTHON_SITELIBDIR%%/cupshelpers/ppds.py
 %%PYTHON_SITELIBDIR%%/cupshelpers/ppds.pyc
-share/applications/redhat-manage-print-jobs.desktop
-share/applications/redhat-my-default-printer.desktop
-share/applications/redhat-system-config-printer.desktop
+share/applications/manage-print-jobs.desktop
+share/applications/my-default-printer.desktop
+share/applications/system-config-printer.desktop
 share/locale/ar/LC_MESSAGES/system-config-printer.mo
 share/locale/as/LC_MESSAGES/system-config-printer.mo
 share/locale/bg/LC_MESSAGES/system-config-printer.mo
@@ -48,6 +48,7 @@ share/locale/kn/LC_MESSAGES/system-config-printer.mo
 share/locale/ko/LC_MESSAGES/system-config-printer.mo
 share/locale/lo/LC_MESSAGES/system-config-printer.mo
 share/locale/lv/LC_MESSAGES/system-config-printer.mo
+share/locale/mai/LC_MESSAGES/system-config-printer.mo
 share/locale/mk/LC_MESSAGES/system-config-printer.mo
 share/locale/ml/LC_MESSAGES/system-config-printer.mo
 share/locale/mr/LC_MESSAGES/system-config-printer.mo
@@ -71,34 +72,62 @@ share/locale/sr@latin/LC_MESSAGES/system-config-printer.mo
 share/locale/sv/LC_MESSAGES/system-config-printer.mo
 share/locale/ta/LC_MESSAGES/system-config-printer.mo
 share/locale/te/LC_MESSAGES/system-config-printer.mo
+share/locale/th/LC_MESSAGES/system-config-printer.mo
 share/locale/tr/LC_MESSAGES/system-config-printer.mo
 share/locale/uk/LC_MESSAGES/system-config-printer.mo
 share/locale/vi/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_CN/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/AdvancedServerSettings.py
+%%DATADIR%%/GroupsPane.py
+%%DATADIR%%/GroupsPaneModel.py
+%%DATADIR%%/HIG.py
 %%DATADIR%%/PhysicalDevice.py
-%%DATADIR%%/applet.glade
+%%DATADIR%%/SearchCriterion.py
+%%DATADIR%%/ToolbarSearchEntry.py
+%%DATADIR%%/XmlHelper.py
 %%DATADIR%%/applet.py
+%%DATADIR%%/asyncconn.py
+%%DATADIR%%/asyncipp.py
+%%DATADIR%%/asyncpk0.py
+%%DATADIR%%/asyncpk1.py
 %%DATADIR%%/authconn.py
 %%DATADIR%%/config.py
-%%DATADIR%%/contextmenu.py
+%%DATADIR%%/cupspk.py
 %%DATADIR%%/debug.py
 %%DATADIR%%/errordialogs.py
+%%DATADIR%%/firewall.py
+%%DATADIR%%/glade.py
+%%DATADIR%%/glade/AboutDialog.glade
+%%DATADIR%%/glade/ConnectDialog.glade
+%%DATADIR%%/glade/ConnectingDialog.glade
+%%DATADIR%%/glade/InstallDialog.glade
+%%DATADIR%%/glade/JobsWindow.glade
+%%DATADIR%%/glade/NewPrinterName.glade
+%%DATADIR%%/glade/NewPrinterWindow.glade
+%%DATADIR%%/glade/PrinterPropertiesDialog.glade
+%%DATADIR%%/glade/PrintersWindow.glade
+%%DATADIR%%/glade/SMBBrowseDialog.glade
+%%DATADIR%%/glade/ServerSettingsDialog.glade
+%%DATADIR%%/glade/WaitWindow.glade
+%%DATADIR%%/glade/statusicon_popupmenu.glade
 %%DATADIR%%/gtk_label_autowrap.py
-%%DATADIR%%/gtk_treeviewtooltips.py
+%%DATADIR%%/gtkinklevel.py
+%%DATADIR%%/gtkspinner.py
 %%DATADIR%%/icons/i-network-printer.png
+%%DATADIR%%/installpackage.py
 %%DATADIR%%/jobviewer.py
 %%DATADIR%%/monitor.py
 %%DATADIR%%/my-default-printer.py
 %%DATADIR%%/options.py
 %%DATADIR%%/optionwidgets.py
+%%DATADIR%%/ppdippstr.py
 %%DATADIR%%/probe_printer.py
 %%DATADIR%%/pysmb.py
 %%DATADIR%%/smburi.py
 %%DATADIR%%/statereason.py
-%%DATADIR%%/system-config-printer.glade
 %%DATADIR%%/system-config-printer.py
+%%DATADIR%%/timedops.py
 %%DATADIR%%/troubleshoot/CheckLocalServerPublishing.py
 %%DATADIR%%/troubleshoot/CheckNetworkServerSanity.py
 %%DATADIR%%/troubleshoot/CheckPPDSanity.py
@@ -127,7 +156,12 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 %%DATADIR%%/userdefault.py
 @dirrm %%DATADIR%%/troubleshoot
 @dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/cupshelpers
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -138,6 +172,8 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 @dirrmtry share/locale/my
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/lo/LC_MESSAGES
 @dirrmtry share/locale/lo
 @dirrmtry share/locale/hy/LC_MESSAGES
@@ -146,7 +182,3 @@ share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
-@dirrmtry share/applications
-@dirrm %%PYTHON_SITELIBDIR%%/cupshelpers
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg

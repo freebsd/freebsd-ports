@@ -1,0 +1,4 @@
+etc/dbus-1/system.d/org.opensuse.CupsPkHelper.Mechanism.conf
+libexec/cups-pk-helper-mechanism
+share/PolicyKit/policy/org.opensuse.cupspkhelper.mechanism.policy
+share/dbus-1/system-services/org.opensuse.CupsPkHelper.Mechanism.service

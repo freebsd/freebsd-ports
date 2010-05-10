@@ -99,7 +99,6 @@
     SUBDIR += gdm
     SUBDIR += ggiterm
     SUBDIR += gir-repository-babl
-    SUBDIR += gir-repository-gnome-menus
     SUBDIR += glproto
     SUBDIR += gmessage
     SUBDIR += gmrun

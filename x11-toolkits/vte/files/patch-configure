@@ -1,11 +1,11 @@
---- configure.orig	Tue Feb 13 16:22:38 2007
-+++ configure	Tue Feb 13 16:23:19 2007
-@@ -24887,7 +24887,7 @@ fi
+--- configure.orig	2010-03-30 14:43:41.000000000 +0200
++++ configure	2010-03-30 14:47:26.000000000 +0200
+@@ -14102,7 +14102,7 @@
  
  
- 
+ # Check for PTY handling functions.
 -for ac_func in cfmakeraw fork setsid setpgid getpgid getpt grantpt unlockpt ptsname ptsname_r tcgetattr tcsetattr
 +for ac_func in cfmakeraw fork setsid setpgid getpgid getpt grantpt posix_openpt unlockpt ptsname ptsname_r tcgetattr tcsetattr
- do
- as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
- echo "$as_me:$LINENO: checking for $ac_func" >&5
+ do :
+   as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
+ ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"

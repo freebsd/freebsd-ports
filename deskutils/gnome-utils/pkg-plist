@@ -264,6 +264,15 @@ share/gnome/help/gnome-dictionary/cs/figures/gnome-dictionary-lookup.png
 share/gnome/help/gnome-dictionary/cs/figures/gnome-dictionary-preferences-print.png
 share/gnome/help/gnome-dictionary/cs/figures/gnome-dictionary-preferences-source.png
 share/gnome/help/gnome-dictionary/cs/gnome-dictionary.xml
+share/gnome/help/gnome-dictionary/da/figures/gnome-dictionary-add-source.png
+share/gnome/help/gnome-dictionary/da/figures/gnome-dictionary-applet-window.png
+share/gnome/help/gnome-dictionary/da/figures/gnome-dictionary-applet.png
+share/gnome/help/gnome-dictionary/da/figures/gnome-dictionary-application.png
+share/gnome/help/gnome-dictionary/da/figures/gnome-dictionary-find.png
+share/gnome/help/gnome-dictionary/da/figures/gnome-dictionary-lookup.png
+share/gnome/help/gnome-dictionary/da/figures/gnome-dictionary-preferences-print.png
+share/gnome/help/gnome-dictionary/da/figures/gnome-dictionary-preferences-source.png
+share/gnome/help/gnome-dictionary/da/gnome-dictionary.xml
 share/gnome/help/gnome-dictionary/de/figures/gnome-dictionary-add-source.png
 share/gnome/help/gnome-dictionary/de/figures/gnome-dictionary-applet-window.png
 share/gnome/help/gnome-dictionary/de/figures/gnome-dictionary-applet.png
@@ -421,6 +430,8 @@ share/gnome/help/gnome-system-log/C/gnome-system-log.xml
 share/gnome/help/gnome-system-log/C/legal.xml
 share/gnome/help/gnome-system-log/ca/figures/syslog_window.png
 share/gnome/help/gnome-system-log/ca/gnome-system-log.xml
+share/gnome/help/gnome-system-log/cs/figures/syslog_window.png
+share/gnome/help/gnome-system-log/cs/gnome-system-log.xml
 share/gnome/help/gnome-system-log/de/figures/syslog_window.png
 share/gnome/help/gnome-system-log/de/gnome-system-log.xml
 share/gnome/help/gnome-system-log/el/figures/syslog_window.png
@@ -472,6 +483,7 @@ share/omf/baobab/baobab-zh_TW.omf
 share/omf/gnome-dictionary/gnome-dictionary-C.omf
 share/omf/gnome-dictionary/gnome-dictionary-ca.omf
 share/omf/gnome-dictionary/gnome-dictionary-cs.omf
+share/omf/gnome-dictionary/gnome-dictionary-da.omf
 share/omf/gnome-dictionary/gnome-dictionary-de.omf
 share/omf/gnome-dictionary/gnome-dictionary-el.omf
 share/omf/gnome-dictionary/gnome-dictionary-en_GB.omf
@@ -504,6 +516,7 @@ share/omf/gnome-search-tool/gnome-search-tool-uk.omf
 share/omf/gnome-search-tool/gnome-search-tool-zh_CN.omf
 share/omf/gnome-system-log/gnome-system-log-C.omf
 share/omf/gnome-system-log/gnome-system-log-ca.omf
+share/omf/gnome-system-log/gnome-system-log-cs.omf
 share/omf/gnome-system-log/gnome-system-log-de.omf
 share/omf/gnome-system-log/gnome-system-log-el.omf
 share/omf/gnome-system-log/gnome-system-log-en_GB.omf
@@ -521,6 +534,7 @@ share/omf/gnome-system-log/gnome-system-log-zh_CN.omf
 share/pixmaps/gsearchtool/thumbnail_frame.png
 share/icons/hicolor/24x24/apps/baobab.png
 share/icons/hicolor/scalable/apps/baobab.svg
+share/locale/af/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/as/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ast/LC_MESSAGES/gnome-utils-2.0.mo
@@ -535,6 +549,7 @@ share/locale/br/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/crh/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/cy/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-utils-2.0.mo
@@ -543,6 +558,7 @@ share/locale/dz/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/en@shaw/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/eu/LC_MESSAGES/gnome-utils-2.0.mo
@@ -559,6 +575,7 @@ share/locale/hu/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/id/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/ka/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/kn/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-utils-2.0.mo
@@ -586,6 +603,7 @@ share/locale/pt_BR/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ro/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/rw/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/si/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-utils-2.0.mo
@@ -636,6 +654,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-system-log/el
 @dirrm share/gnome/help/gnome-system-log/de/figures
 @dirrm share/gnome/help/gnome-system-log/de
+@dirrm share/gnome/help/gnome-system-log/cs/figures
+@dirrm share/gnome/help/gnome-system-log/cs
 @dirrm share/gnome/help/gnome-system-log/ca/figures
 @dirrm share/gnome/help/gnome-system-log/ca
 @dirrm share/gnome/help/gnome-system-log/C/figures
@@ -702,6 +722,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-dictionary/el
 @dirrm share/gnome/help/gnome-dictionary/de/figures
 @dirrm share/gnome/help/gnome-dictionary/de
+@dirrm share/gnome/help/gnome-dictionary/da/figures
+@dirrm share/gnome/help/gnome-dictionary/da
 @dirrm share/gnome/help/gnome-dictionary/cs/figures
 @dirrm share/gnome/help/gnome-dictionary/cs
 @dirrm share/gnome/help/gnome-dictionary/ca/figures
@@ -769,6 +791,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/ps/LC_MESSAGES
@@ -785,6 +809,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES

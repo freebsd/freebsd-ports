@@ -36,6 +36,7 @@ share/dbus-1/services/org.gnome.GConf.service
 share/locale/am/LC_MESSAGES/GConf2.mo
 share/locale/ar/LC_MESSAGES/GConf2.mo
 share/locale/as/LC_MESSAGES/GConf2.mo
+share/locale/ast/LC_MESSAGES/GConf2.mo
 share/locale/az/LC_MESSAGES/GConf2.mo
 share/locale/be/LC_MESSAGES/GConf2.mo
 share/locale/bg/LC_MESSAGES/GConf2.mo
@@ -50,6 +51,7 @@ share/locale/da/LC_MESSAGES/GConf2.mo
 share/locale/de/LC_MESSAGES/GConf2.mo
 share/locale/dz/LC_MESSAGES/GConf2.mo
 share/locale/el/LC_MESSAGES/GConf2.mo
+share/locale/en@shaw/LC_MESSAGES/GConf2.mo
 share/locale/en_CA/LC_MESSAGES/GConf2.mo
 share/locale/en_GB/LC_MESSAGES/GConf2.mo
 share/locale/es/LC_MESSAGES/GConf2.mo
@@ -146,11 +148,15 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
