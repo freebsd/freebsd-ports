@@ -1,0 +1,8 @@
+If you plan to also receive connections (e.g. because you provide a service or
+you use software which opens sockets for incomming connections like Bitorrent)
+you MUST the onioncat_hostname in rc.conf and configure the following hidden
+service in torrc:
+
+HiddenServicePort 8060 127.0.0.1:8060
+
+Finally, please consider setting up an IPv6 firewall. 

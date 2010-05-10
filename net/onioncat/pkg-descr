@@ -1,0 +1,9 @@
+OnionCat creates a transparent IP layer on top of Tor's hidden services.
+It transmits any kind of IP-based data transparently through the Tor
+network on a location hidden basis.
+
+You can think of it as a point-to-multipoint VPN between hidden services.
+
+OnionCat is based on anonymizing transport layers like Tor. 
+
+WWW:	http://www.cypherpunk.at/onioncat/

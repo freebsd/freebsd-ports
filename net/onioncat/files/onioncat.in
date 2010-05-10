@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# PROVIDE: onioncat
+# REQUIRE: NETWORKING SERVERS USR tor
+# BEFORE: LOGIN
+#
+# Add the following lines to /etc/rc.conf to enable tor.
+# All these options will overide any settings in your local torrc as
+# they are command line options.
+
+. /etc/rc.subr
+
+name="onioncat"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${onioncat_enable="NO"}
+: ${onioncat_options="-C"}
+: ${onioncat_hostname="-R"}
+
+command="%%PREFIX%%/bin/ocat"
+command_args="${onioncat_options} ${onioncat_hostname}"
+
+run_rc_command "$1"
