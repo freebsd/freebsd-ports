@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: p4d
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# These variables (and many more) can be set via environment variables. Check
+# p4d -h for what you can set.
+#
+# Add the following line to /etc/rc.conf to enable p4d:
+# p4d_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable p4d.
+# p4d_root (str):	Default to "%%P4ROOT%%".
+#			Base database directory.
+# p4d_port (int):	Default to "1666".
+#			Set to TCP port to bind to.
+# p4d_debug (str):	Default to "server=3".
+#			Debug options. Highly recommended.
+# p4d_log (str):	Default to "%%P4LOG%%".
+#			Logfile for debug output.
+# p4d_args (str):	Custom additional arguments to be passed
+#			to p4d (default empty).
+#
+
+. /etc/rc.subr
+
+name="p4d"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${p4d_enable="NO"}
+: ${p4d_root="%%P4ROOT%%"}
+: ${p4d_port="1666"}
+: ${p4d_debug="server=3"}
+: ${p4d_log="%%P4LOG%%"}
+: ${p4d_args=""}
+
+command="%%PREFIX%%/sbin/p4d"
+command_args="-r ${p4d_root} -p ${p4d_port} -v ${p4d_debug} -L ${p4d_log} -d ${p4d_args} > /dev/null 2>&1 &"
+p4d_user="p4admin"
+
+run_rc_command "$1"
