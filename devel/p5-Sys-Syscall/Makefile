@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sys-Syscall
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Sys
@@ -17,6 +17,6 @@ COMMENT=	Access system calls that Perl doesn\'t provide access to
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Sys::Syscall.3
+MAN3=		Sys::Syscall.3 Sys::README.3
 
 .include <bsd.port.mk>

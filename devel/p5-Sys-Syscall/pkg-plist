@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Syscall/.packlist
 %%SITE_PERL%%/Sys/Syscall.pm
+%%SITE_PERL%%/Sys/README.pod
 @dirrmtry %%SITE_PERL%%/Sys
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Syscall
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
