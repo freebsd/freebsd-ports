@@ -7,7 +7,7 @@
 
 PORTNAME=	libpar2
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	SF/parchive/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -24,10 +24,18 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 
 USE_LDCONFIG=	yes
 
+OPTIONS=	ENABLECANCEL "Enable graceful cancellation of repairs" On
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ENABLECANCEL)
+EXTRA_PATCHES+=	${FILESDIR}/xpatch-addcancel-par2repairer.cpp
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
