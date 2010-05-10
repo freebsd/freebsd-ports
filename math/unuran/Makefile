@@ -8,7 +8,8 @@
 PORTNAME=	unuran
 PORTVERSION=	1.7.1
 CATEGORIES=	math
-MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/
+MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/ \
+		LOCAL/wen
 
 MAINTAINER=	bf1783@gmail.com
 COMMENT=	Universal Non-Uniform RANdom number generators
