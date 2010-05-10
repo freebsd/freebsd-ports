@@ -23,12 +23,15 @@ MAKE_JOBS_SAFE=	yes
 .if !defined(PKGNAMESUFFIX)
 USE_AUTOTOOLS=	autoconf:262
 
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
 CONFIGURE_ARGS=	\
 		--with-layout=GNU \
 		--with-config-file-scan-dir=${PREFIX}/etc/php \
 		--disable-all \
 		--enable-libxml \
 		--with-libxml-dir=${LOCALBASE} \
+		--with-pcre-regex=${LOCALBASE} \
 		--program-prefix=""
 
 USE_GNOME=	libxml2
@@ -86,9 +89,6 @@ USE_APACHE=	1.3+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${APACHE_VERSION} > 13
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
-.if ${APACHE_VERSION} == 20
-WITH_BUNDLED_PCRE=	yes
-.endif
 .else
 CONFIGURE_ARGS+=--with-apxs=${APXS}
 .endif
@@ -98,15 +98,6 @@ SHORTMODNAME=	${PORTNAME}
 PLIST_SUB+=	APACHE=""
 .else
 PLIST_SUB+=	APACHE="@comment "
-.endif
-
-.if defined(WITH_BUNDLED_PCRE)
-CONFIGURE_ARGS+=--with-pcre-regex=yes
-PLIST_SUB+=	PCRE=""
-.else
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=--with-pcre-regex=${LOCALBASE}
-PLIST_SUB+=	PCRE="@comment "
 .endif
 
 .if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"

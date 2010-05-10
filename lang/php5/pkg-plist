@@ -84,11 +84,6 @@ include/php/ext/ereg/regex/regex.h
 include/php/ext/ereg/regex/regex2.h
 include/php/ext/ereg/regex/utils.h
 include/php/ext/libxml/php_libxml.h
-%%PCRE%%include/php/ext/pcre/pcrelib/config.h
-%%PCRE%%include/php/ext/pcre/pcrelib/pcre.h
-%%PCRE%%include/php/ext/pcre/pcrelib/pcre_internal.h
-%%PCRE%%include/php/ext/pcre/pcrelib/pcreposix.h
-%%PCRE%%include/php/ext/pcre/pcrelib/ucp.h
 include/php/ext/pcre/php_pcre.h
 include/php/ext/spl/php_spl.h
 include/php/ext/spl/spl_array.h
@@ -226,7 +221,6 @@ lib/php/build/shtool
 @dirrm include/php/ext/ereg/regex
 @dirrm include/php/ext/ereg
 @dirrm include/php/ext/libxml
-%%PCRE%%@dirrm include/php/ext/pcre/pcrelib
 @dirrm include/php/ext/pcre
 @dirrm include/php/ext/spl
 @dirrm include/php/ext/standard
