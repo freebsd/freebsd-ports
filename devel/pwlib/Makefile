@@ -19,6 +19,8 @@ COMMENT=	A cross platform C++ library, used by OpenH323
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+CONFLICTS=	ptlib-2.*
+
 WRKSRC=		${WRKDIR}/ptlib_v${PORTVERSION:S/./_/g}
 
 USE_BISON=	build
