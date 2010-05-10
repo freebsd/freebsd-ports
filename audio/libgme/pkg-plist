@@ -1,0 +1,19 @@
+include/gme/Blip_Buffer.h
+include/gme/Classic_Emu.h
+include/gme/Data_Reader.h
+include/gme/Dual_Resampler.h
+include/gme/Effects_Buffer.h
+include/gme/Fir_Resampler.h
+include/gme/Gme_File.h
+include/gme/M3u_Playlist.h
+include/gme/Multi_Buffer.h
+include/gme/Music_Emu.h
+include/gme/blargg_common.h
+include/gme/blargg_config.h
+include/gme/blargg_source.h
+include/gme/gme.h
+include/gme/gme_types.h
+lib/libgme.so
+lib/libgme.so.0
+lib/libgme.so.0.5.3
+@dirrm include/gme
