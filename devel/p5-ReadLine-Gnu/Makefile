@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ReadLine-Gnu
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=Term
@@ -20,5 +20,8 @@ PERL_CONFIGURE=	5.8.0+
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a$//}
 
 MAN3=		Term::ReadLine::Gnu.3
+
+test:	build
+	@(cd ${WRKSRC}; make test)
 
 .include <bsd.port.mk>
