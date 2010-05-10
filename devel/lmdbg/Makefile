@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmdbg
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -17,7 +17,8 @@ BUILD_DEPENDS=	mk-configure>=0.14.0:${PORTSDIR}/devel/mk-configure
 
 USE_LDCONFIG=	yes
 
-MAN1=		lmdbg-run.1 lmdbg-leaks.1 lmdbg-sysleaks.1 lmdbg-sym.1 lmdbg.1
+MAN1=		lmdbg-run.1 lmdbg-leaks.1 lmdbg-sysleaks.1 lmdbg-sym.1 lmdbg.1 \
+		lmdbg-stat.1 lmdbg-grep.1 lmdbg-sort.1
 
 do-build:
 	mkcmake -C ${WRKSRC}
