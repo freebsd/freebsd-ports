@@ -26,12 +26,6 @@ export TARGET_ARCH=${arch}
 # Workaround needed for zfs - 20090321 erwin
 export NO_FSCHG=1
 
-# experimental: uncomment these 4 to test with clang
-#export WITH_CLANG=1
-#export NO_WERROR=1
-#export WERROR=1
-#export WITH_CLANG_IS_CC=1
-
 case "$branch" in
     6*)
 	export SRCBRANCH="-r RELENG_6"
