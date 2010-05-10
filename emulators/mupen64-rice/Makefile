@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GL=		gl
 USE_GNOME=	gtk12
-USE_GCC=	3.4
 ONLY_FOR_ARCHS=	i386
 
 PLUGIN_NAME=	ricedaedalus
@@ -33,6 +32,12 @@ PLIST_DIRS=	share/mupen64/plugins
 PLIST_DIRS+=	share/mupen64
 
 FIXME2=		glh_genext.h
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CDaedalusRender::IsTextureEnabled|IsTextureEnabled|' \
+		${WRKSRC}/DaedalusRender.h
+	@${REINPLACE_CMD} -e 's|^HRESULT|template<> HRESULT|' \
+		${WRKSRC}/Profiler.cpp
 
 do-configure:
 .for i in ${FIXME2}
