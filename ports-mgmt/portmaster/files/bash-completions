@@ -10,7 +10,8 @@ _portmaster () {
 		--clean-distfiles --clean-distfiles-all	--check-depends \
 		--check-port-dbdir --list-origins --packages --packages-only \
 		--packages-build --packages-if-newer --delete-build-only \
-		--always-fetch --local-packagedir= --packages-delete \
+		--always-fetch --packages-delete \
+		--local-packagedir= --packages-local \
 		--no-confirm --no-term-title --no-index-fetch \
 		--index --index-first --index-only \
 		--help --version' -- $cur ) )
