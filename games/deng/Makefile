@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	deng
-PORTVERSION=	1.9.0b6.8
-PORTREVISION=	4
+PORTVERSION=	1.9.0b6.9
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Doomsday%20Engine/1.9.0-beta6.8
+MASTER_SITES=	SF/${PORTNAME}/Doomsday%20Engine/1.9.0-beta6.9
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-beta/}
 
 MAINTAINER=	yuri.pankov@gmail.com
