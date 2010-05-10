@@ -16,6 +16,6 @@ COMMENT=		A process utilities module for Python
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_NOEGGINFO=	yes
+PYDISTUTILS_PKGNAME=	${PORTNAME}
 
 .include <bsd.port.mk>
