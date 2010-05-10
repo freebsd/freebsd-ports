@@ -26,6 +26,7 @@ bin/free-sa
 %%DATADIR%%/es.iso88591
 %%DATADIR%%/et.iso88591
 %%DATADIR%%/fr.iso88591
+%%DATADIR%%/hu.iso88592
 %%DATADIR%%/it.iso88591
 %%DATADIR%%/ru.koi8r
 %%DATADIR%%/sk.iso88592
@@ -84,4 +85,3 @@ bin/free-sa
 @dirrm %%WWWDIR%%
 @dirrm %%DATADIR%%
 @dirrmtry %%ETCDIR%%
-@dirrmtry www/data

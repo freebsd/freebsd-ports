@@ -10,4 +10,4 @@
 -	done										\
  	)
  
- src/config.h:
+ src/config.h: global.mk

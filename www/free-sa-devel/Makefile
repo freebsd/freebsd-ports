@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	free-sa
-PORTVERSION=	2.0.0b2
-PORTREVISION=	1
+PORTVERSION=	2.0.0b3
 CATEGORIES=	www
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b2%20_Big%20Change%20Edition_/
+MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b3/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	moiseev@mezonplus.ru
@@ -20,14 +19,15 @@ MAKE_JOBS_SAFE=	yes
 CONFLICTS=	free-sa-[0-9]*
 LATEST_LINK=	free-sa-devel
 
-WWWDIR?=	${PREFIX}/www/data/${PORTNAME}
+WWWDIR?=	${PREFIX}/www/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
 PORTDOCS=	COPYING ChangeLog FAQ INSTALL README README.DEV THANKS
 MAN1=		free-sa.1
 MAN5=		free-sa.conf.5
 
-MAKE_ARGS+=	ETCDIR="${ETCDIR}" \
+MAKE_ARGS+=	PREFIX="${PREFIX}" \
+		ETCDIR="${ETCDIR}" \
 		WWWDIR="${WWWDIR}" \
 		CACHEDIR="/var/cache/${PORTNAME}" \
 		LOCDIR="${DATADIR}" \
@@ -38,6 +38,7 @@ MAKE_ARGS+=	ETCDIR="${ETCDIR}" \
 		INSTALL=/usr/bin/install \
 		LARGEFILE=yes \
 		SATSEP="'" \
+		HAVE_STRL="1"\
 		ADDLDFLAGS="${LDFLAGS} --relax -mrelax"
 
 OPTIONS=	OPTIMIZED_CFLAGS "Build with distribution-recommended CFLAGS"	off \
@@ -63,10 +64,6 @@ pre-everything::
 	@${ECHO_MSG} ">>> For example, 'make SA_DEBUG_LEVEL=4'"
 	@${ECHO_MSG} ">>> Note that SA_DEBUG_LEVEL overrides WITH_SA_DEBUG"
 	@${ECHO_MSG} ">>>"
-.endif
-
-.if ${ARCH} == "sparc64"
-TRYBROKEN=	Does not configure on sparc64
 .endif
 
 .if defined(WITH_SA_DEBUG)
