@@ -1,6 +1,6 @@
---- configure.orig	2009-09-08 22:26:52.251269320 +0200
-+++ configure	2009-09-08 22:39:58.432178979 +0200
-@@ -1102,7 +1102,7 @@
+--- configure.orig	2010-04-21 15:49:32.000000000 +0200
++++ configure	2010-04-25 18:02:53.185508083 +0200
+@@ -1060,7 +1060,7 @@
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -9,37 +9,28 @@
  
  ac_prev=
  ac_dashdash=
-@@ -9685,20 +9685,6 @@
+@@ -7909,20 +7909,6 @@
  
    fi
  
 -
--{ $as_echo "$as_me:$LINENO: checking if building on FreeBSD" >&5
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if building on FreeBSD" >&5
 -$as_echo_n "checking if building on FreeBSD... " >&6; }
 -
 -if test `uname -s` = "FreeBSD" ; then
--	{ $as_echo "$as_me:$LINENO: result: yes" >&5
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 -$as_echo "yes" >&6; }
 -	CPPFLAGS="$CFLAGS -I/usr/local/include"
 -	LDFLAGS="$LDFLAGS -L/usr/local/lib"
 -else
--	{ $as_echo "$as_me:$LINENO: result: no" >&5
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 -$as_echo "no" >&6; }
 -fi
 -
- { $as_echo "$as_me:$LINENO: checking if building on NetBSD" >&5
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking if building on NetBSD" >&5
  $as_echo_n "checking if building on NetBSD... " >&6; }
  
-@@ -16994,6 +16980,8 @@
- # First of all, check if the user has set any of the PTHREAD_LIBS,
- # etcetera environment variables, and if threads linking works using
- # them:
-+PTHREAD_CFLAGS=""
-+PTHREAD_LIBS="-pthread"
- if test x"$PTHREAD_LIBS$PTHREAD_CFLAGS" != x; then
-         save_CFLAGS="$CFLAGS"
-         CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
-@@ -17380,7 +17368,7 @@
+@@ -14858,7 +14844,7 @@
  $as_echo_n "checking if more special flags are required for pthreads... " >&6; }
          flag=no
          case "${host_cpu}-${host_os}" in
@@ -47,67 +38,58 @@
 +                *-aix* | *-darwin*) flag="-D_THREAD_SAFE";;
                  *solaris* | *-osf* | *-hpux*) flag="-D_REENTRANT";;
          esac
-         { $as_echo "$as_me:$LINENO: result: ${flag}" >&5
-@@ -19174,7 +19162,7 @@
+         { $as_echo "$as_me:${as_lineno-$LINENO}: result: ${flag}" >&5
+@@ -15461,7 +15447,7 @@
  
  if test "$enable_libical" = "yes"; then
  	OLD_CFLAGS="$CFLAGS"
 -	LIBS="$LIBS $ICAL_LIBS -lpthread -lical"
 +	LIBS="$LIBS $ICAL_LIBS -pthread -lical"
  	CFLAGS="$CFLAGS $ICAL_CFLAGS"
- 	{ $as_echo "$as_me:$LINENO: checking whether libical is installed" >&5
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether libical is installed" >&5
  $as_echo_n "checking whether libical is installed... " >&6; }
-@@ -20243,7 +20231,7 @@
+@@ -15883,7 +15869,7 @@
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lbluetooth  $LIBS"
 +LIBS="-lsdp -lbluetooth  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -20303,7 +20291,7 @@
- { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_bluetooth_bt_aton" >&5
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -15914,7 +15900,7 @@
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_bluetooth_bt_aton" >&5
  $as_echo "$ac_cv_lib_bluetooth_bt_aton" >&6; }
- if test "x$ac_cv_lib_bluetooth_bt_aton" = x""yes; then
+ if test "x$ac_cv_lib_bluetooth_bt_aton" = x""yes; then :
 -  BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes
 +  BLUETOOTH_LIBS="-lsdp -lbluetooth" ac_cv_have_bt_lib=yes
  else
    ac_cv_have_bt_lib=no
  fi
-@@ -20375,7 +20363,7 @@
- { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_sdp_sdp_open" >&5
- $as_echo "$ac_cv_lib_sdp_sdp_open" >&6; }
- if test "x$ac_cv_lib_sdp_sdp_open" = x""yes; then
--  BLUETOOTH_LIBS="$BLUETOOTH_LIBS -lsdp"
-+  BLUETOOTH_LIBS="$BLUETOOTH_LIBS"
- fi
+@@ -16011,7 +15997,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lbluetooth  $LIBS"
++LIBS="-lsdp -lbluetooth  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
  
- 
-@@ -20516,7 +20504,7 @@
- { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_bluetooth_bt_aton" >&5
+@@ -16042,7 +16028,7 @@
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_bluetooth_bt_aton" >&5
  $as_echo "$ac_cv_lib_bluetooth_bt_aton" >&6; }
- if test "x$ac_cv_lib_bluetooth_bt_aton" = x""yes; then
+ if test "x$ac_cv_lib_bluetooth_bt_aton" = x""yes; then :
 -  BLUETOOTH_LIBS="-lbluetooth" ac_cv_have_bt_lib=yes
 +  BLUETOOTH_LIBS="-lsdp -lbluetooth" ac_cv_have_bt_lib=yes
  else
    ac_cv_have_bt_lib=no
  fi
-@@ -20588,7 +20576,7 @@
- { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_sdp_sdp_open" >&5
- $as_echo "$ac_cv_lib_sdp_sdp_open" >&6; }
- if test "x$ac_cv_lib_sdp_sdp_open" = x""yes; then
--  BLUETOOTH_LIBS="$BLUETOOTH_LIBS -lsdp"
-+  BLUETOOTH_LIBS="$BLUETOOTH_LIBS"
- fi
- 
- 
-@@ -21456,7 +21444,7 @@
+@@ -16612,7 +16598,7 @@
  $as_echo "$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" >&6; }
- if test "x$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" = x""yes; then
+ if test "x$ac_cv_lib_Xpm_XpmWriteFileFromXpmImage" = x""yes; then :
     XPM_CFLAGS="$XINCL"
 -                  XPM_LIBS="$XLIBS -lXpm -lX11"
 +                  XPM_LIBS="$XLIBS -lXpm -lX11 -lroken -lcrypt"
  
- cat >>confdefs.h <<\_ACEOF
- #define XPM 1
+ $as_echo "#define XPM 1" >>confdefs.h
+ 
