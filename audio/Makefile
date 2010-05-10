@@ -350,6 +350,7 @@
     SUBDIR += libdiscid
     SUBDIR += libdssialsacompat
     SUBDIR += libgig
+    SUBDIR += libgme
     SUBDIR += libgpod
     SUBDIR += libid3tag
     SUBDIR += libjackasyn
