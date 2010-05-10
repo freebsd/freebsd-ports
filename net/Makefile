@@ -444,6 +444,7 @@
     SUBDIR += omnitty
     SUBDIR += onenetd
     SUBDIR += onion-fec
+    SUBDIR += onioncat
     SUBDIR += online-desktop
     SUBDIR += opal
     SUBDIR += opal3
