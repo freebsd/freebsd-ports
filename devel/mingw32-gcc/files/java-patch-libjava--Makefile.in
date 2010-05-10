@@ -1,16 +1,16 @@
---- libjava/Makefile.in.orig	2007-07-22 03:27:27.000000000 +0400
-+++ libjava/Makefile.in	2007-07-22 03:47:24.000000000 +0400
-@@ -650,7 +650,7 @@
- build_subdir = @build_subdir@
- build_vendor = @build_vendor@
+--- libjava/Makefile.in.orig	2010-04-02 14:18:06.000000000 -0400
++++ libjava/Makefile.in	2010-05-09 12:13:32.000000000 -0400
+@@ -818,7 +818,7 @@
+ builddir = @builddir@
  datadir = @datadir@
+ datarootdir = @datarootdir@
 -dbexecdir = @dbexecdir@
 +dbexecdir = $(toolexeclibdir)/gcj-$(gcc_version)
+ docdir = @docdir@
+ dvidir = @dvidir@
  exec_prefix = @exec_prefix@
- extra_ldflags_libjava = @extra_ldflags_libjava@
- gxx_include_dir = @gxx_include_dir@
-@@ -11763,11 +11763,11 @@
- 
+@@ -12659,11 +12659,11 @@
+ @BUILD_ECJ1_TRUE@	mv $(DESTDIR)$(libexecsubdir)/`echo ecjx | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'` $(DESTDIR)$(libexecsubdir)/ecj1$(host_exeext)
  install-data-local:
  	$(PRE_INSTALL)
 -	@pc_version=`echo $(GCJVERSION) | sed -e 's/[.][^.]*$$//'`; \
@@ -25,4 +25,4 @@
 +#	$(INSTALL_DATA) libgcj.pc $(DESTDIR)$(pkgconfigdir)/$$file
  	@echo Creating list of headers to install...
  	@: $(call write_entries_to_file,$(nat_headers_install) $(extra_headers),tmp-ilist)
- 	@cat tmp-ilist | while read f; do \
+ 	@srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \

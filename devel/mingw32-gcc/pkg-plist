@@ -13,6 +13,7 @@ bin/%%GCC_TARG%%-gcov
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/crtbegin.o
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/crtend.o
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/crtfastmath.o
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/abmintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/ammintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/avxintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/bmmintrin.h
@@ -22,7 +23,9 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/emmintrin.h
 %%LIBGCJ%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/ffi.h
 %%LIBGCJ%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/ffitarget.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/float.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/fma4intrin.h
 %%LIBGCJ%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/gcj/libgcj-config.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/ia32intrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/immintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/iso646.h
 %%LIBGCJ%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/jawt.h
@@ -30,10 +33,10 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/iso646.h
 %%LIBGCJ%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/jni.h
 %%LIBGCJ%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/jni_md.h
 %%LIBGCJ%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/jvmpi.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/lwpintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/mm3dnow.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/mm_malloc.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/mmintrin.h
-lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/mmintrin-common.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/nmmintrin.h
 %%OBJC%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/objc/NXConstStr.h
 %%OBJC%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/objc/Object.h
@@ -48,6 +51,7 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/nmmintrin.h
 %%OBJC%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/objc/thr.h
 %%OBJC%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/objc/typedstream.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/pmmintrin.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/popcntintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/smmintrin.h
 %%LIBSSP%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/ssp/ssp.h
 %%LIBSSP%%lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/ssp/stdio.h
@@ -57,6 +61,8 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/stdarg.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/stdbool.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/stddef.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/stdfix.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/stdint-gcc.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/stdint.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/tgmath.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/tmmintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/unwind.h
@@ -64,6 +70,7 @@ lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/varargs.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/wmmintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/x86intrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/xmmintrin.h
+lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include/xopintrin.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include-fixed/README
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include-fixed/limits.h
 lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/include-fixed/syslimits.h
@@ -89,6 +96,7 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkheaders
 libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%JAVA%%libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/jc1
 %%JAVA%%libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/jvgenmain
+libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/lto-wrapper
 %%CXX%%%%GCC_TARG%%/bin/c++
 %%GCC_TARG%%/bin/cpp
 %%CXX%%%%GCC_TARG%%/bin/g++
@@ -99,6 +107,7 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%JAVA%%%%GCC_TARG%%/bin/jcf-dump
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/algorithm
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/array
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/atomic
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/backward/auto_ptr.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/backward/backward_warning.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/backward/binders.h
@@ -113,11 +122,13 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/atomicfwd_cxx.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/atomic_0.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/atomic_2.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/atomic_base.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/basic_ios.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/basic_ios.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/basic_string.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/basic_string.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/boost_concept_check.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/c++0x_warning.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/char_traits.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/cmath.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/codecvt.h
@@ -131,6 +142,7 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/functional_hash.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/gslice.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/gslice_array.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/hashtable_policy.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/hashtable.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/indirect_array.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/ios_base.h
@@ -148,6 +160,9 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/ostream.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/ostream_insert.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/postypes.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/random.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/random.tcc
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/shared_ptr_base.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/shared_ptr.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/slice_array.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/sstream.tcc
@@ -181,13 +196,14 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/streambuf_iterator.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/stringfwd.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/unique_ptr.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/unordered_map.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/unordered_set.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/valarray_after.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/valarray_array.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/valarray_array.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/valarray_before.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bits/vector.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/bitset
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/c++0x_warning.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/cassert
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/ccomplex
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/cctype
@@ -206,7 +222,6 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/csetjmp
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/csignal
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/cstdarg
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/cstdatomic
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/cstdbool
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/cstddef
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/cstdint
@@ -240,6 +255,8 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/debug/unordered_map
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/debug/unordered_set
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/debug/vector
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/decimal/decimal
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/decimal/decimal.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/deque
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/exception
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/exception_defines.h
@@ -552,6 +569,7 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/forward_list
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/fstream
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/functional
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/future
 %%LIBGCJ%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/gcj/array.h
 %%LIBGCJ%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/gcj/cni.h
 %%LIBGCJ%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/gcj/field.h
@@ -4288,6 +4306,7 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/%%GCC_TARG%%/bits/stdtr1c++.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/%%GCC_TARG%%/bits/time_members.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/mutex
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/nested_exception.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/new
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/numeric
 %%LIBGCJ%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/org/ietf/jgss/ChannelBinding.h
@@ -4299,10 +4318,36 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%LIBGCJ%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/org/ietf/jgss/MessageProp.h
 %%LIBGCJ%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/org/ietf/jgss/Oid.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/ostream
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/base.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/bitset
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/deque
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_container_size.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_hash_func.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_hashtable_size.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_list_to_slist.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_list_to_vector.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_map_to_unordered_map.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_node.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_state.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_trace.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_vector_size.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl/profiler_vector_to_list.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/iterator_tracker.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/list
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/map
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/map.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/multimap.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/multiset.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/set
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/set.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/unordered_map
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/unordered_set
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/vector
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/queue
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/random
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/ratio
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/regex
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/queue
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/set
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/sstream
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/stack
@@ -4353,6 +4398,7 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/functional
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/functional_hash.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/gamma.tcc
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/hashtable_policy.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/hashtable.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/hypergeometric.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/inttypes.h
@@ -4364,6 +4410,8 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/poly_hermite.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/poly_laguerre.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/random
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/random.h
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/random.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/regex
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/riemann_zeta.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/shared_ptr.h
@@ -4377,7 +4425,9 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/tuple
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/type_traits
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/unordered_map
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/unordered_map.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/unordered_set
+%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/unordered_set.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/utility
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/wchar.h
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1/wctype.h
@@ -4393,16 +4443,8 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/cstdlib
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/cwchar
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/cwctype
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/functional
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/functional_hash.h
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/hashtable
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/hashtable_policy.h
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/random
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/random.tcc
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/regex
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/type_traits
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/unordered_map
-%%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/unordered_set
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tr1_impl/utility
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/tuple
 %%CXX%%%%GCC_TARG%%/include/c++/%%GCC_REV%%/type_traits
@@ -4416,6 +4458,8 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%LIBGCJ%%%%GCC_TARG%%/lib/gcj-%%GCC_REV%%/libjvm.la
 %%LIBGCJ%%%%GCC_TARG%%/lib/libffi.a
 %%LIBGCJ%%%%GCC_TARG%%/lib/libffi.la
+%%LIBGCJ%%%%GCC_TARG%%/lib/libgcj-noncore.a
+%%LIBGCJ%%%%GCC_TARG%%/lib/libgcj-noncore.la
 %%LIBGCJ%%%%GCC_TARG%%/lib/libgcj-tools.a
 %%LIBGCJ%%%%GCC_TARG%%/lib/libgcj-tools.la
 %%LIBGCJ%%%%GCC_TARG%%/lib/libgcj.a
@@ -4433,6 +4477,7 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%LIBSSP%%%%GCC_TARG%%/lib/libssp_nonshared.a
 %%LIBSSP%%%%GCC_TARG%%/lib/libssp_nonshared.la
 %%CXX%%%%GCC_TARG%%/lib/libstdc++.a
+%%CXX%%%%GCC_TARG%%/lib/libstdc++.a-gdb.py
 %%CXX%%%%GCC_TARG%%/lib/libstdc++.la
 %%CXX%%%%GCC_TARG%%/lib/libsupc++.a
 %%CXX%%%%GCC_TARG%%/lib/libsupc++.la
@@ -4440,6 +4485,9 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%LIBGCJ%%%%GCC_TARG%%/lib/security/classpath.security
 %%LIBGCJ%%%%GCC_TARG%%/share/java/libgcj-%%GCC_REV%%.jar
 %%LIBGCJ%%%%GCC_TARG%%/share/java/libgcj-tools-%%GCC_REV%%.jar
+%%CXX%%%%GCC_TARG%%/share/gcc-%%GCC_REV%%/python/libstdcxx/__init__.py
+%%CXX%%%%GCC_TARG%%/share/gcc-%%GCC_REV%%/python/libstdcxx/v6/__init__.py
+%%CXX%%%%GCC_TARG%%/share/gcc-%%GCC_REV%%/python/libstdcxx/v6/printers.py
 %%LIBGCJ%%share/python/classfile.py
 %%LIBGCJ%%share/python/aotcompile.py
 %%FORTRAN%%@dirrm lib/gcc/%%GCC_TARG%%/%%GCC_REV%%/finclude
@@ -4460,6 +4508,7 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%CXX%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/backward
 %%CXX%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/bits
 %%CXX%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/debug
+%%CXX%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/decimal
 %%CXX%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/ext/pb_ds/detail/basic_tree_policy
 %%CXX%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/ext/pb_ds/detail/bin_search_tree_
 %%CXX%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/ext/pb_ds/detail/binary_heap_
@@ -4762,6 +4811,8 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%LIBGCJ%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/org/ietf/jgss
 %%LIBGCJ%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/org/ietf
 %%LIBGCJ%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/org
+%%CXX%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/profile/impl
+%%CXX%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/profile
 %%LIBGCJ%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/sun/awt
 %%LIBGCJ%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/sun/misc
 %%LIBGCJ%%@dirrm %%GCC_TARG%%/include/c++/%%GCC_REV%%/sun/reflect/annotation
@@ -4775,5 +4826,9 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 %%LIBGCJ%%@dirrm %%GCC_TARG%%/lib/gcj-%%GCC_REV%%
 %%LIBGCJ%%@dirrm %%GCC_TARG%%/lib/security
 %%LIBGCJ%%@dirrm %%GCC_TARG%%/share/java
+%%CXX%%@dirrm %%GCC_TARG%%/share/gcc-%%GCC_REV%%/python/libstdcxx/v6
+%%CXX%%@dirrm %%GCC_TARG%%/share/gcc-%%GCC_REV%%/python/libstdcxx
+%%CXX%%@dirrm %%GCC_TARG%%/share/gcc-%%GCC_REV%%/python
+%%CXX%%@dirrm %%GCC_TARG%%/share/gcc-%%GCC_REV%%
 %%LIBGCJ%%@dirrmtry share/python
 @dirrmtry %%GCC_TARG%%/share

@@ -1,7 +1,7 @@
---- libjava/classpath/resource/Makefile.in.orig	2007-07-22 03:32:38.000000000 +0400
-+++ libjava/classpath/resource/Makefile.in	2007-07-22 03:35:10.000000000 +0400
-@@ -294,9 +294,9 @@
- toolexeclibdir = @toolexeclibdir@
+--- libjava/classpath/resource/Makefile.in.orig	2010-04-02 14:18:06.000000000 -0400
++++ libjava/classpath/resource/Makefile.in	2010-05-09 12:16:35.000000000 -0400
+@@ -304,9 +304,9 @@
+ uudecode = @uudecode@
  vm_classes = @vm_classes@
  logging_DATA = java/util/logging/logging.properties
 -loggingdir = $(toolexeclibdir)
