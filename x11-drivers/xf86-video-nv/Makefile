@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xf86-video-nv
-PORTVERSION=	2.1.16
+PORTVERSION=	2.1.17
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
