@@ -40,14 +40,16 @@ case "${daily_status_smart_enable}" in
 			device="${device#/dev/}"
 			devflags=""
 			case ${device} in
-			cd*) continue
+			cd*) ;;
+			tw[ae]*) devflags="-d3ware,${device##tw[ae][0-9]*,}"
+				device="/dev/${device%,[0-9]*}"
 				;;
-			tw[ae]*) devflags="-d3ware,${device#tw[ae][0-9]*,}"
-		    		device="/dev/${device%,[0-9]*}"
+			ciss*)  devflags="-dcciss,${device##ciss[0-9]*,}"
+				device="/dev/${device%,[0-9]*}"
 				;;
 			/*)	;;
 			*)	device="/dev/${device}"
-		    		;;
+			        ;;
 			esac
 
 			if [ -e ${device} ]; then
