@@ -6,21 +6,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	jags
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTNAME=	mcmc-jags
+DISTVERSION=	2.0.0-20100430
 CATEGORIES=	math
-MASTER_SITES=	http://www-fis.iarc.fr/~martyn/software/jags/
-DISTNAME=	${PORTNAME:U}-${PORTVERSION}
+MASTER_SITES=	SF:1,2,3
+MASTER_SITE_SUBDIR=	${PORTNAME}/JAGS/2.0/Source/:1 \
+		${PORTNAME}/Examples/2.0/:2 \
+		${PORTNAME}/Manuals/2.0/:3
+DISTFILES=	${DISTNAME:S/mcmc-//:U}${EXTRACT_SUFX}:1
 .if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} classic-bugs.tar.gz jags_user_manual.pdf
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES+=	classic-bugs.tar.gz:2 jags_developer_manual.pdf:3 \
+		jags_installation_manual.pdf:3 jags_user_manual.pdf:3
+EXTRACT_ONLY=	${DISTNAME:S/mcmc-//:U}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	bf1783@gmail.com
 COMMENT=	Just Another Gibbs Sampler
-
-LIB_DEPENDS=	Rmath.0:${PORTSDIR}/math/libRmath
 
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
@@ -32,27 +33,47 @@ CONFIGURE_ARGS=	--with-lapack=-llapack --with-blas=-lblas
 .endif
 
 DIST_SUBDIR=	${PORTNAME}
+WRKSRC=		${WRKDIR}/${PKGNAME:S/mcmc-//:U:R}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
+USE_BISON=	build
 
 post-patch:
 	${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/etc/Makefile.in
+	${REINPLACE_CMD} \
+		-e '/@WINDOWS_FALSE@bin_SCRIPTS =/s/jags/mcmc-&/' \
+		-e '/CLEANFILES =/s/jags/mcmc-&/' \
+		-e '/@WINDOWS_FALSE@jags:/s/jags/mcmc-&/' \
+		-e '/@WINDOWS_FALSE@.*rm -f jags/s/jags/mcmc-&/' \
+		-e '/@WINDOWS_FALSE@.*mv jags.tmp jags/s/jags/mcmc-&/2' \
+		${WRKSRC}/src/terminal/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/jags_user_manual.pdf \
+.for _M in developer installation user
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/jags_${_M}_manual.pdf \
 		${DOCSDIR}
+.endfor
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	( cd ${EXAMPLESDIR}; \
 	  ${PAX} -rzf ${DISTDIR}/${DIST_SUBDIR}/classic-bugs.tar.gz \
 	    -s ':^classic-bugs/*::' )
+	${SED} -i '' \
+		-e '\|JAGS ?=|{s|/usr/local|${PREFIX}|;s|jags|mcmc-&|;}' \
+		${EXAMPLESDIR}/vol[12]/Makefile
+	@${ECHO_MSG} ""
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG} ""
+
 .endif
 
 .include <bsd.port.mk>
