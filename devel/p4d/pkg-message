@@ -1,0 +1,9 @@
+Read the release notes for this release to determine how to migrate the
+database to the new version. Generally, this is done via the 'p4d -xu'
+command.
+
+http://www.perforce.com/perforce/doc.current/user/relnotes.txt
+
+It is highly recommended that you checkpoint the server (with the old
+binary) before you attempt an upgrade; please be sure you have valid
+backups of your database before you go any further.
