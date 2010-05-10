@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -291,7 +292,7 @@ PLIST_SUB+=	MMSPLUGIN="@comment "
 .endif
 
 .if defined(WITH_MTP)
-LIB_DEPENDS+=	mtp.8:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=	mtp.11:${PORTSDIR}/audio/libmtp
 CONFIGURE_ARGS+=--enable-mtp_up
 PLIST_SUB+=	MTPPLUGIN=""
 .else

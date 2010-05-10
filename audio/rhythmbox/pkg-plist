@@ -173,6 +173,7 @@ lib/rhythmbox/plugins/mmkeys/libmmkeys.so
 lib/rhythmbox/plugins/mmkeys/mmkeys.rb-plugin
 %%MTP%%lib/rhythmbox/plugins/mtpdevice/libmtpdevice.la
 %%MTP%%lib/rhythmbox/plugins/mtpdevice/libmtpdevice.so
+%%MTP%%lib/rhythmbox/plugins/mtpdevice/mtp-info.ui
 %%MTP%%lib/rhythmbox/plugins/mtpdevice/mtp-ui.xml
 %%MTP%%lib/rhythmbox/plugins/mtpdevice/mtpdevice.rb-plugin
 lib/rhythmbox/plugins/power-manager/libpower-manager.la
