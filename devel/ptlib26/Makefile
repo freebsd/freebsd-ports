@@ -18,6 +18,8 @@ COMMENT=	A cross platform C++ library, used by OPAL
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+CONFLICTS=	pwlib-1.* ptlib-2.4.*
+
 USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
