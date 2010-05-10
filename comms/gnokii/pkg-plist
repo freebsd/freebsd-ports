@@ -21,7 +21,7 @@ include/gnokii/wappush.h
 lib/libgnokii.a
 lib/libgnokii.la
 lib/libgnokii.so
-lib/libgnokii.so.5
+lib/libgnokii.so.6
 libdata/pkgconfig/gnokii.pc
 libdata/pkgconfig/xgnokii.pc
 sbin/gnokiid

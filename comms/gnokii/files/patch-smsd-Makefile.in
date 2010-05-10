@@ -1,7 +1,7 @@
---- smsd/Makefile.in.orig	2008-10-06 08:57:19.000000000 +0200
-+++ smsd/Makefile.in	2009-02-26 17:35:49.000000000 +0100
-@@ -86,7 +86,7 @@
- binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+--- smsd/Makefile.in.orig	2010-04-21 15:49:29.000000000 +0200
++++ smsd/Makefile.in	2010-04-25 18:09:09.881650463 +0200
+@@ -105,7 +105,7 @@
+ @HAVE_POSTGRES_TRUE@am_libsmsd_pq_la_rpath = -rpath $(plugindir)
  PROGRAMS = $(bin_PROGRAMS)
  am_smsd_OBJECTS = smsd.$(OBJEXT) lowlevel.$(OBJEXT)
 -smsd_OBJECTS = $(am_smsd_OBJECTS)
@@ -9,14 +9,14 @@
  smsd_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(top_builddir)/common/libgnokii.la
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include
-@@ -421,8 +421,8 @@
- 	     || test -f $$p1 \
- 	  ; then \
- 	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
--	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(bindir)/$$f'"; \
--	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
-+	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(sbindir)/$$f'"; \
-+	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(sbindir)/$$f" || exit 1; \
- 	  else :; fi; \
- 	done
+@@ -442,8 +442,8 @@
+ 	while read type dir files; do \
+ 	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
+ 	    test -z "$$files" || { \
+-	    echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(bindir)$$dir'"; \
+-	    $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files "$(DESTDIR)$(bindir)$$dir" || exit $$?; \
++	    echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(sbindir)$$dir'"; \
++	    $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files "$(DESTDIR)$(sbindir)$$dir" || exit $$?; \
+ 	    } \
+ 	; done
  

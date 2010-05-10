@@ -1,14 +1,14 @@
---- Makefile.in.orig	2009-09-08 23:07:09.846077502 +0200
-+++ Makefile.in	2009-09-08 23:08:46.625927897 +0200
-@@ -269,9 +269,9 @@
+--- Makefile.in.orig	2010-04-21 15:49:31.000000000 +0200
++++ Makefile.in	2010-04-24 20:09:03.347837666 +0200
+@@ -301,9 +301,9 @@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -SUBDIRS = getopt include common gnokii po Docs $(am__append_1) \
 +SUBDIRS = include common gnokii po $(am__append_1) \
  	$(am__append_2) $(am__append_3)
--DIST_SUBDIRS = include Docs common gnokii gnokiid utils xgnokii po smsd win32 testsuite getopt
-+DIST_SUBDIRS = include common gnokii gnokiid utils xgnokii po smsd win32 testsuite getopt
+-DIST_SUBDIRS = include Docs common gnokii gnokiid utils xgnokii po smsd Windows testsuite getopt
++DIST_SUBDIRS = include common gnokii gnokiid utils xgnokii po smsd Windows testsuite getopt
  EXTRA_DIST = \
  		ChangeLog		\
  		COPYING			\
