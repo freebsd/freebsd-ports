@@ -1,0 +1,62 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: p4web
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# These variables (and many more) can be set via environment variables. Check
+# p4web -h for what you can set.
+#
+# Add the following line to /etc/rc.conf to enable p4web:
+# p4web_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable p4web.
+# p4web_mode (str):	Default to "viewer-auth".
+#			Specifies to mode to startup in. Possible values:
+#			viewer-auth, viewer-noauth, standard.
+# p4web_listen (int):	Default to "8080".
+#			Set to TCP port to bind to.
+# p4web_port (str):	Default to "perforce:1666".
+#			Set to P4PORT string to bind to.
+# p4web_log (str):	Default to "%%P4LOG%%".
+#			Log all requests sent to P4Web to the specified file.
+# p4web_args (str):	Custom additional arguments to be passed
+#			to p4web (default to empty).
+#
+
+. /etc/rc.subr
+
+name="p4web"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${p4web_enable="NO"}
+: ${p4web_mode="viewer-auth"}
+: ${p4web_listen="8080"}
+: ${p4web_port="perforce:1666"}
+: ${p4web_log="%%P4LOG%%"}
+: ${p4web_args=""}
+
+case ${p4web_mode} in
+viewer-auth)
+	p4web_args="${p4web_args} -B"
+	;;
+viewer-noauth)
+	p4web_args="${p4web_args} -b"
+	;;
+standard)
+	;;
+*)
+	echo "Invalid p4web_mode: ${p4web_mode}"
+	return 2
+	;;
+esac
+
+command="%%PREFIX%%/sbin/p4web"
+command_args="-w ${p4web_listen} -p ${p4web_port} -L ${p4web_log} ${p4web_args} > /dev/null 2>&1 &"
+p4web_user="p4admin"
+
+run_rc_command "$1"

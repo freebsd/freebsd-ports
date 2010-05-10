@@ -1,4 +1,2 @@
-@unexec if cmp -s %D/etc/perforce.conf %D/etc/perforce.conf.default; then rm -f %D/etc/perforce.conf; fi
-etc/perforce.conf.default
-@exec [ ! -f %B/perforce.conf ] && cp -p %B/%f %B/perforce.conf || true
-etc/rc.d/perforce.sh
+@stopdaemon p4web
+sbin/p4web
