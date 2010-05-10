@@ -32,6 +32,7 @@
     SUBDIR += chmsee
     SUBDIR += conduit
     SUBDIR += conkyemail
+    SUBDIR += conkyforecast
     SUBDIR += contacts
     SUBDIR += cycle
     SUBDIR += dailystrips
