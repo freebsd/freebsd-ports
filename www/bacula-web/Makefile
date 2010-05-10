@@ -18,7 +18,7 @@ COMMENT=	Bacula-web provides a summarized output of Bacula jobs
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
 NO_BUILD=	yes
-USE_PHP=	yes
+USE_PHP=	gd
 WANT_PHP_WEB=	yes
 
 OPTIONS=	POSTGRESQL "Use PostgreSQL database instead of MySQL" on
