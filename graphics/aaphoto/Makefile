@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aaphoto
-PORTVERSION=	0.36
-PORTREVISION=	1
+PORTVERSION=	0.37
 CATEGORIES=	graphics
 MASTER_SITES=	http://log69.com/downloads/
 DISTNAME=	${PORTNAME}_sources_v${PORTVERSION}
