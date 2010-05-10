@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd May 3, 2010
+.Dd May 9, 2010
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -38,6 +38,7 @@ Common Flags:
 .Op Fl -delete-build-only
 .Op Fl -always-fetch
 .Op Fl -local-packagedir=<path>
+.Op Fl -packages-local
 .Op Fl -delete-packages
 .Op Fl -no-confirm
 .Op Fl -no-term-title
@@ -85,18 +86,21 @@ and/or multiple globs from /var/db/pkg
 .Op Fl -packages-if-newer
 .Op Fl -always-fetch
 .Op Fl -local-packagedir=<path>
+.Op Fl -packages-local
 .Op Fl -delete-packages
 .Fl P|--packages
 .Nm
 .Op Fl -packages-if-newer
 .Op Fl -always-fetch
 .Op Fl -local-packagedir=<path>
+.Op Fl -packages-local
 .Op Fl -delete-packages
 .Fl PP|--packages-only
 .Nm
 .Op Fl -packages-if-newer
 .Op Fl -always-fetch
 .Op Fl -local-packagedir=<path>
+.Op Fl -packages-local
 .Op Fl -delete-packages
 .Fl -packages-build
 .Nm
@@ -264,10 +268,10 @@ After the port is built, if the
 .Fl w
 option is being used, all shared libraries installed
 by the old port (if any) will be saved to
-.Pa /usr/local/compat/pkg .
+.Pa /usr/local/lib/compat/pkg .
 After installation if there are any new files with
 the same names as those in
-.Pa /usr/local/compat/pkg
+.Pa /usr/local/lib/compat/pkg
 the old files will be deleted,
 and
 .Xr ldconfig 8
@@ -426,6 +430,10 @@ in the category subdirectories, such as
 .Pa <path>/devel ,
 .Pa <path>/ports-mgmt ,
 etc.
+.It Fl -packages-local
+use packages from
+.Fl -local-packagedir
+only
 .It Fl -delete-packages
 after installing from a package, delete it
 .It Fl -no-confirm
@@ -498,7 +506,7 @@ display help message
 .It Fl -version
 display the version only.
 .El
-.Sh MAKE ENVIRONMENT
+.Sh ENVIRONMENT
 The directory pointed to by the
 .Ev PACKAGES
 variable (by default
@@ -653,6 +661,9 @@ along with their related options.
 #
 # Specify a local package repository (--local-packagedir)
 # LOCAL_PACKAGEDIR=<path>
+#
+# Only use packages from --local-packagedir (--packages-local)
+# PM_PACKAGES_LOCAL=pmp_local
 #
 # Delete packages after they are installed (--delete-packages)
 # PM_DELETE_PACKAGES=pm_delete_packages
