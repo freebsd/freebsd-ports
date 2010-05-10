@@ -39,6 +39,7 @@
     SUBDIR += antlr
     SUBDIR += antlrworks
     SUBDIR += apache-ant
+    SUBDIR += api-sanity-autotest
     SUBDIR += apr
     SUBDIR += arduino
     SUBDIR += argouml
