@@ -1,0 +1,11 @@
+API Sanity Autotest is a test generator for shared C/C++ libraries. It can
+quickly generate simple ("sanity" or "shallow"-quality) tests for functions from
+the library API, using the signatures and data type definitions from the library
+header files. The tests can detect critical errors in simple use cases, and can
+be improved with highly reusable specialized types. API Sanity Autotest can
+execute generated tests and detect all kinds of emitted signals, early program
+exits, program hanging and specified requirement failures. API Sanity Autotest
+also supports tests in the Template2Code format, and has a random test
+generation mode and other useful features.
+
+WWW: http://ispras.linux-foundation.org/index.php/API_Sanity_Autotest
