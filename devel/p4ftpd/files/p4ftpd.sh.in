@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: p4ftpd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# These variables (and many more) can be set via environment variables. Check
+# p4ftpd -h for what you can set.
+#
+# Add the following line to /etc/rc.conf to enable p4ftpd:
+# p4ftpd_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable p4ftpd.
+# p4ftpd_listen (int):	Default to "21".
+#			Set to TCP port to bind to.
+# p4ftpd_port (int):	Default to "1666".
+#			Set to Perforce server to connect to.
+# p4ftpd_debug (str):	Default to "4".
+#			Debug options. Highly recommended.
+# p4ftpd_log (str):	Default to "%%P4LOG%%".
+#			Logfile for debug output.
+# p4ftpd_args (str):	Custom additional arguments to be passed
+#			to p4ftpd (default empty).
+#
+
+. /etc/rc.subr
+
+name="p4ftpd"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${p4ftpd_enable="NO"}
+: ${p4ftpd_listen="21"}
+: ${p4ftpd_port="1666"}
+: ${p4ftpd_debug="4"}
+: ${p4ftpd_log="%%P4LOG%%"}
+: ${p4ftpd_args=""}
+
+command="%%PREFIX%%/sbin/p4ftpd"
+command_args="-l ${p4ftpd_listen} -p ${p4ftpd_port} -v ${p4ftpd_debug} -L ${p4ftpd_log} -d -u p4admin ${p4ftpd_args} > /dev/null 2>&1 &"
+
+run_rc_command "$1"
