@@ -1,0 +1,24 @@
+=====================================================================
+
+In order to use pulled pork, adjust the config files located in
+%%CONFIGDIR%%/
+
+
+Important Note:
+
+Snort change the way rules are published. In June 2010 Snort will
+stop offering rules in the "snortrules-snapshot-CURRENT" format.
+
+Instead, rules will be released for specific Snort versions.
+You will be responsible for downloading the correct rules release
+for your version of Snort.
+
+The new versioning mechanism will require a four digit version in the
+file name. To get the new download naming schema visit snort.org,
+and look at 'My Account' -> 'Subscriptions and Oinkcodes'
+
+BE SURE to read through the master pulledpork.conf file thoroughly,
+as there are many changes as of snort 2.8.6.0 that WILL affect you,
+even if you are NOT yet running 2.8.6.0!
+
+=====================================================================
