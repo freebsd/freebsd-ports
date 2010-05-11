@@ -118,6 +118,11 @@ share/gnome/help/gthumb/de/figures/main-win.png
 share/gnome/help/gthumb/de/figures/nav-button.png
 share/gnome/help/gthumb/de/figures/preferences.png
 share/gnome/help/gthumb/de/gthumb.xml
+share/gnome/help/gthumb/el/figures/comment.png
+share/gnome/help/gthumb/el/figures/main-win.png
+share/gnome/help/gthumb/el/figures/nav-button.png
+share/gnome/help/gthumb/el/figures/preferences.png
+share/gnome/help/gthumb/el/gthumb.xml
 share/gnome/help/gthumb/es/figures/comment.png
 share/gnome/help/gthumb/es/figures/main-win.png
 share/gnome/help/gthumb/es/figures/nav-button.png
@@ -133,11 +138,18 @@ share/gnome/help/gthumb/sv/figures/main-win.png
 share/gnome/help/gthumb/sv/figures/nav-button.png
 share/gnome/help/gthumb/sv/figures/preferences.png
 share/gnome/help/gthumb/sv/gthumb.xml
+share/gnome/help/gthumb/zh_CN/figures/comment.png
+share/gnome/help/gthumb/zh_CN/figures/main-win.png
+share/gnome/help/gthumb/zh_CN/figures/nav-button.png
+share/gnome/help/gthumb/zh_CN/figures/preferences.png
+share/gnome/help/gthumb/zh_CN/gthumb.xml
 share/omf/gthumb/gthumb-C.omf
 share/omf/gthumb/gthumb-de.omf
+share/omf/gthumb/gthumb-el.omf
 share/omf/gthumb/gthumb-es.omf
 share/omf/gthumb/gthumb-fr.omf
 share/omf/gthumb/gthumb-sv.omf
+share/omf/gthumb/gthumb-zh_CN.omf
 share/icons/hicolor/48x48/apps/gthumb.png
 share/locale/am/LC_MESSAGES/gthumb.mo
 share/locale/ar/LC_MESSAGES/gthumb.mo
@@ -168,13 +180,16 @@ share/locale/hu/LC_MESSAGES/gthumb.mo
 share/locale/id/LC_MESSAGES/gthumb.mo
 share/locale/it/LC_MESSAGES/gthumb.mo
 share/locale/ja/LC_MESSAGES/gthumb.mo
+share/locale/kn/LC_MESSAGES/gthumb.mo
 share/locale/ko/LC_MESSAGES/gthumb.mo
 share/locale/lt/LC_MESSAGES/gthumb.mo
 share/locale/lv/LC_MESSAGES/gthumb.mo
 share/locale/mk/LC_MESSAGES/gthumb.mo
 share/locale/ml/LC_MESSAGES/gthumb.mo
+share/locale/mr/LC_MESSAGES/gthumb.mo
 share/locale/ms/LC_MESSAGES/gthumb.mo
 share/locale/nb/LC_MESSAGES/gthumb.mo
+share/locale/nds/LC_MESSAGES/gthumb.mo
 share/locale/ne/LC_MESSAGES/gthumb.mo
 share/locale/nl/LC_MESSAGES/gthumb.mo
 share/locale/nn/LC_MESSAGES/gthumb.mo
@@ -191,6 +206,8 @@ share/locale/sq/LC_MESSAGES/gthumb.mo
 share/locale/sr/LC_MESSAGES/gthumb.mo
 share/locale/sr@Latn/LC_MESSAGES/gthumb.mo
 share/locale/sv/LC_MESSAGES/gthumb.mo
+share/locale/ta/LC_MESSAGES/gthumb.mo
+share/locale/te/LC_MESSAGES/gthumb.mo
 share/locale/th/LC_MESSAGES/gthumb.mo
 share/locale/tr/LC_MESSAGES/gthumb.mo
 share/locale/vi/LC_MESSAGES/gthumb.mo
@@ -199,13 +216,31 @@ share/locale/xh/LC_MESSAGES/gthumb.mo
 share/locale/zh_CN/LC_MESSAGES/gthumb.mo
 share/locale/zh_HK/LC_MESSAGES/gthumb.mo
 share/locale/zh_TW/LC_MESSAGES/gthumb.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/omf/gthumb
+@dirrm share/gnome/help/gthumb/zh_CN/figures
+@dirrm share/gnome/help/gthumb/zh_CN
 @dirrm share/gnome/help/gthumb/sv/figures
 @dirrm share/gnome/help/gthumb/sv
 @dirrm share/gnome/help/gthumb/fr/figures
 @dirrm share/gnome/help/gthumb/fr
 @dirrm share/gnome/help/gthumb/es/figures
 @dirrm share/gnome/help/gthumb/es
+@dirrm share/gnome/help/gthumb/el/figures
+@dirrm share/gnome/help/gthumb/el
 @dirrm share/gnome/help/gthumb/de/figures
 @dirrm share/gnome/help/gthumb/de
 @dirrm share/gnome/help/gthumb/C/figures
