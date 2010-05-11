@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 DISTNAME=	cku211
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Serial and network communications package
+COMMENT=	Combined network and serial communication package
 
 USE_OPENSSL=	yes
 NO_WRKSUBDIR=	yes
