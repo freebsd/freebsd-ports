@@ -1,3 +1,3 @@
-MD5 (libmemcached-0.39.tar.gz) = fab1777a0ec8fe2ae7374084a5789d1c
-SHA256 (libmemcached-0.39.tar.gz) = e604ba18d73817c6d449ac4834c223d0aec3f640e9a7efef72e2368a09c4497c
-SIZE (libmemcached-0.39.tar.gz) = 680742
+MD5 (libmemcached-0.40.tar.gz) = 3566611b0cff70cfde3979a95f62fe85
+SHA256 (libmemcached-0.40.tar.gz) = 32e7d46c147588bf2f64a9357f75a39c37a336b539b00f75960466027e2336e9
+SIZE (libmemcached-0.40.tar.gz) = 683325

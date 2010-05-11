@@ -58,7 +58,7 @@ lib/libhashkit.so
 lib/libhashkit.so.0
 lib/libmemcached.la
 lib/libmemcached.so
-lib/libmemcached.so.4
+lib/libmemcached.so.5
 lib/libmemcachedprotocol.la
 lib/libmemcachedprotocol.so
 lib/libmemcachedprotocol.so.0
