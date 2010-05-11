@@ -6,7 +6,6 @@
 
 PORTNAME=	opengl
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11 devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -42,7 +41,7 @@ ARGS=		-b ${PREFIX}/bin\
 		--enable QtOpenGL
 
 .include "../../devel/py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		--debug
@@ -77,4 +76,4 @@ post-configure:
 		-e 's|LINK = c++|LINK = ${CXX}|'\
 		${WRKSRC}/QtOpenGL/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -6,7 +6,6 @@
 
 PORTNAME=	webkit
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
@@ -41,7 +40,7 @@ ARGS=		-b ${PREFIX}/bin\
 		--enable QtWebKit
 
 .include "../../devel/py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		--debug
@@ -76,4 +75,4 @@ post-configure:
 		-e 's|LINK = c++|LINK = ${CXX}|'\
 		${WRKSRC}/QtWebKit/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

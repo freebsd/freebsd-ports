@@ -6,7 +6,6 @@
 
 PORTNAME=	gui
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -42,7 +41,7 @@ ARGS=		-b ${PREFIX}/bin\
 		--enable QtGui
 
 .include "../../devel/py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		--debug
@@ -70,10 +69,6 @@ ARGS+=		--trace
 BROKEN=		Does not compile on sparc64
 .endif
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV}\
 		${PYTHON_CMD} configure.py ${ARGS}
@@ -85,4 +80,4 @@ post-configure:
 		-e 's|LINK = c++|LINK = ${CXX}|'\
 		${WRKSRC}/QtGui/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

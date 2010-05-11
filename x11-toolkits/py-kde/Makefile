@@ -35,7 +35,7 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 ARGS=		-i -k ${LOCALBASE} -v ${DATADIR} -d ${PYTHON_SITELIBDIR}
 
 .include "../../devel/py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		-u
@@ -98,4 +98,4 @@ post-install:
 		${INSTALL_DATA} basic/* ${EXAMPLESDIR}/templates/basic
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -6,7 +6,6 @@
 
 PORTNAME=	demo
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	misc devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -24,7 +23,7 @@ OPTIONSFILE=	${PORT_DBDIR}/py-qt4-${PORTNAME}/options
 EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
 
 .include "../../devel/py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_PYQT4)
 RUN_DEPENDS+=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core \
@@ -43,7 +42,6 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-co
 		${PKGNAMEPREFIX}xmlpatterns>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xmlpatterns \
 		${PKGNAMEPREFIX}help>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-help \
 		${PKGNAMEPREFIX}webkit>=${PYQT4_VERSION}:${PORTSDIR}/www/py-qt4-webkit \
-		${PKGNAMEPREFIX}multimedia>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-multimedia \
 		${PKGNAMEPREFIX}phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon
 .if !defined(NOPORTDOCS)
 RUN_DEPENDS+=	${PKGNAMEPREFIX}doc>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-doc
@@ -67,4 +65,4 @@ do-install:
 	@${ECHO} "NOPORTEXAMPLES is set -- installing nothing."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

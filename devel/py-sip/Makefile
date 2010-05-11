@@ -28,7 +28,7 @@ ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR}\
 PORTDOCS=	*
 
 .include "files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		-u
@@ -57,4 +57,4 @@ post-install:
 		${PYTHON_CMD} -c "import sipdistutils" &&\
 		${PYTHON_CMD} -O -c "import sipdistutils"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
