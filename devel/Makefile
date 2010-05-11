@@ -653,6 +653,8 @@
     SUBDIR += kdebindings4-python
     SUBDIR += kdebindings4-python-krosspython
     SUBDIR += kdebindings4-python-pykde4
+    SUBDIR += kdebindings4-ruby
+    SUBDIR += kdebindings4-smoke
     SUBDIR += kdesdk3
     SUBDIR += kdesdk4
     SUBDIR += kdesvn-kde4
