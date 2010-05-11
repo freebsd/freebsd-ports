@@ -1,9 +1,2 @@
-MAN1=	kalzium.1 \
-	kappfinder.1 \
-	kmplot.1 \
-	po2xml.1 \
-	split2po.1 \
-	swappo.1 \
-	xml2pot.1
-MAN6=	khangman.6 \
-	kpat.6
+MAN1=	kalzium.1 kappfinder.1 kmplot.1 po2xml.1 split2po.1 swappo.1 xml2pot.1
+MAN6=	khangman.6 kpat.6

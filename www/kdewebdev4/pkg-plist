@@ -2,8 +2,6 @@ bin/kfilereplace
 bin/kimagemapeditor
 bin/klinkstatus
 bin/kommander
-bin/kxsldbg
-bin/xsldbg
 include/kommandercore_export.h
 include/kommanderplugin.h
 include/kommanderwidget.h
@@ -13,7 +11,6 @@ lib/kde4/klinkstatuspart.so
 lib/kde4/krossmoduleklinkstatus.so
 lib/kde4/libkfilereplacepart.so
 lib/kde4/libkimagemapeditor.so
-lib/kde4/libkxsldbgpart.so
 lib/libklinkstatuscommon.so
 lib/libklinkstatuscommon.so.4
 lib/libklinkstatuscommon.so.4.0.0
@@ -26,7 +23,6 @@ lib/libkommanderwidgets.so.4.2.0
 share/applications/kde4/kfilereplace.desktop
 share/applications/kde4/kimagemapeditor.desktop
 share/applications/kde4/klinkstatus.desktop
-share/applications/kde4/kxsldbg.desktop
 share/applnk/.hidden/kommander.desktop
 share/apps/kfilereplace/kfilereplaceui.rc
 share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/backup_option.png
@@ -52,36 +48,9 @@ share/apps/klinkstatuspart/klinkstatus_part.rc
 share/apps/klinkstatuspart/kpartplugins/klinkstatus_automation.rc
 share/apps/klinkstatuspart/kpartplugins/scripting.rc
 share/apps/klinkstatuspart/pics/304.png
-share/apps/kxsldbg/empty.xml
-share/apps/kxsldbg/empty.xsl
-share/apps/kxsldbg/kxsldbg_shell.rc
-share/apps/kxsldbg/test1.xml
-share/apps/kxsldbg/test2.xml
-share/apps/kxsldbg/test3.xml
-share/apps/kxsldbg/test4.xml
-share/apps/kxsldbg/test_import.xsl
-share/apps/kxsldbg/test_include_bot.xsl
-share/apps/kxsldbg/test_include_top.xsl
-share/apps/kxsldbg/testdoc.dtd
-share/apps/kxsldbg/testdoc.xml
-share/apps/kxsldbg/testdoc.xsl
-share/apps/kxsldbgpart/kxsldbg_part.rc
-share/apps/xsldbg/empty.xml
-share/apps/xsldbg/empty.xsl
-share/apps/xsldbg/test1.xml
-share/apps/xsldbg/test2.xml
-share/apps/xsldbg/test3.xml
-share/apps/xsldbg/test4.xml
-share/apps/xsldbg/test_import.xsl
-share/apps/xsldbg/test_include_bot.xsl
-share/apps/xsldbg/test_include_top.xsl
-share/apps/xsldbg/testdoc.dtd
-share/apps/xsldbg/testdoc.xml
-share/apps/xsldbg/testdoc.xsl
 share/config/klinkstatus.knsrc
 share/dbus-1/interfaces/org.kde.kdewebdev.klinkstatus.SearchManager.xml
 share/dbus-1/interfaces/org.kde.kfilereplace.xml
-share/dbus-1/interfaces/org.kde.kxsldbg.kxsldbg.xml
 share/doc/HTML/en/kfilereplace/addstringsdialog_window.png
 share/doc/HTML/en/kfilereplace/backup_option.png
 share/doc/HTML/en/kfilereplace/casesensitive_option.png
@@ -118,108 +87,24 @@ share/doc/HTML/en/klinkstatus/common
 share/doc/HTML/en/klinkstatus/index.cache.bz2
 share/doc/HTML/en/klinkstatus/index.docbook
 share/doc/HTML/en/klinkstatus/screenshot.png
-share/doc/HTML/en/kxsldbg/1downarrow.png
-share/doc/HTML/en/kxsldbg/breakpoints_window.png
-share/doc/HTML/en/kxsldbg/callstack.docbook
-share/doc/HTML/en/kxsldbg/callstack_window.png
-share/doc/HTML/en/kxsldbg/common
-share/doc/HTML/en/kxsldbg/configure.png
-share/doc/HTML/en/kxsldbg/configure_window.png
-share/doc/HTML/en/kxsldbg/credits.docbook
-share/doc/HTML/en/kxsldbg/entities.docbook
-share/doc/HTML/en/kxsldbg/entities_window.png
-share/doc/HTML/en/kxsldbg/exit.png
-share/doc/HTML/en/kxsldbg/glossary.docbook
-share/doc/HTML/en/kxsldbg/index.cache.bz2
-share/doc/HTML/en/kxsldbg/index.docbook
-share/doc/HTML/en/kxsldbg/kxsldbg_configure.docbook
-share/doc/HTML/en/kxsldbg/kxsldbg_inspector.docbook
-share/doc/HTML/en/kxsldbg/kxsldbg_mainwindow.docbook
-share/doc/HTML/en/kxsldbg/kxsldbg_tools.docbook
-share/doc/HTML/en/kxsldbg/main_window.png
-share/doc/HTML/en/kxsldbg/next.png
-share/doc/HTML/en/kxsldbg/publicid_window.png
-share/doc/HTML/en/kxsldbg/run.png
-share/doc/HTML/en/kxsldbg/sources.docbook
-share/doc/HTML/en/kxsldbg/sources_window.png
-share/doc/HTML/en/kxsldbg/step.png
-share/doc/HTML/en/kxsldbg/systemid_window.png
-share/doc/HTML/en/kxsldbg/templates.docbook
-share/doc/HTML/en/kxsldbg/templates_window.png
-share/doc/HTML/en/kxsldbg/variables.docbook
-share/doc/HTML/en/kxsldbg/variables_window.png
-share/doc/HTML/en/kxsldbg/walk_window.png
-share/doc/HTML/en/kxsldbg/xsldbg_break.png
-share/doc/HTML/en/kxsldbg/xsldbg_data.png
-share/doc/HTML/en/kxsldbg/xsldbg_delete.png
-share/doc/HTML/en/kxsldbg/xsldbg_enable.png
-share/doc/HTML/en/kxsldbg/xsldbg_output.png
-share/doc/HTML/en/kxsldbg/xsldbg_refresh.png
-share/doc/HTML/en/kxsldbg/xsldbg_source.png
-share/doc/HTML/en/kxsldbg/xsldbg_stepdown.png
-share/doc/HTML/en/kxsldbg/xsldbg_stepup.png
-share/doc/HTML/en/xsldbg/commands.docbook
-share/doc/HTML/en/xsldbg/common
-share/doc/HTML/en/xsldbg/credits.docbook
-share/doc/HTML/en/xsldbg/index.cache.bz2
-share/doc/HTML/en/xsldbg/index.docbook
-share/doc/HTML/en/xsldbg/introduction.docbook
-share/doc/HTML/en/xsldbg/man-xsldbg.1.docbook
-share/doc/HTML/en/xsldbg/usage.docbook
-share/doc/HTML/en/xsldbg/xsldbghelp.xml
-share/doc/HTML/en/xsldbg/xsldbghelp.xsl
 share/icons/hicolor/128x128/apps/klinkstatus.png
-share/icons/hicolor/16x16/actions/1downarrow.png
-share/icons/hicolor/16x16/actions/configure.png
-share/icons/hicolor/16x16/actions/exit.png
-share/icons/hicolor/16x16/actions/hash.png
-share/icons/hicolor/16x16/actions/mark.png
-share/icons/hicolor/16x16/actions/next.png
-share/icons/hicolor/16x16/actions/run.png
-share/icons/hicolor/16x16/actions/step.png
-share/icons/hicolor/16x16/actions/xsldbg_break.png
-share/icons/hicolor/16x16/actions/xsldbg_data.png
-share/icons/hicolor/16x16/actions/xsldbg_delete.png
-share/icons/hicolor/16x16/actions/xsldbg_enable.png
-share/icons/hicolor/16x16/actions/xsldbg_output.png
-share/icons/hicolor/16x16/actions/xsldbg_refresh.png
-share/icons/hicolor/16x16/actions/xsldbg_source.png
-share/icons/hicolor/16x16/actions/xsldbg_stepdown.png
-share/icons/hicolor/16x16/actions/xsldbg_stepup.png
 share/icons/hicolor/16x16/apps/kimagemapeditor.png
 share/icons/hicolor/16x16/apps/klinkstatus.png
-share/icons/hicolor/16x16/apps/kxsldbg.png
-share/icons/hicolor/22x22/actions/1downarrow.png
 share/icons/hicolor/22x22/actions/addpoint.png
 share/icons/hicolor/22x22/actions/arrow.png
 share/icons/hicolor/22x22/actions/circle.png
 share/icons/hicolor/22x22/actions/circle2.png
-share/icons/hicolor/22x22/actions/configure.png
-share/icons/hicolor/22x22/actions/exit.png
 share/icons/hicolor/22x22/actions/freehand.png
 share/icons/hicolor/22x22/actions/lower.png
-share/icons/hicolor/22x22/actions/next.png
 share/icons/hicolor/22x22/actions/polygon.png
 share/icons/hicolor/22x22/actions/raise.png
 share/icons/hicolor/22x22/actions/rectangle.png
 share/icons/hicolor/22x22/actions/removepoint.png
-share/icons/hicolor/22x22/actions/run.png
-share/icons/hicolor/22x22/actions/step.png
-share/icons/hicolor/22x22/actions/xsldbg_break.png
-share/icons/hicolor/22x22/actions/xsldbg_data.png
-share/icons/hicolor/22x22/actions/xsldbg_delete.png
-share/icons/hicolor/22x22/actions/xsldbg_enable.png
-share/icons/hicolor/22x22/actions/xsldbg_output.png
-share/icons/hicolor/22x22/actions/xsldbg_refresh.png
-share/icons/hicolor/22x22/actions/xsldbg_source.png
-share/icons/hicolor/22x22/actions/xsldbg_stepdown.png
-share/icons/hicolor/22x22/actions/xsldbg_stepup.png
 share/icons/hicolor/22x22/apps/kfilereplace.png
 share/icons/hicolor/22x22/apps/klinkstatus.png
 share/icons/hicolor/32x32/apps/kfilereplace.png
 share/icons/hicolor/32x32/apps/kimagemapeditor.png
 share/icons/hicolor/32x32/apps/klinkstatus.png
-share/icons/hicolor/32x32/apps/kxsldbg.png
 share/icons/hicolor/48x48/apps/kfilereplace.png
 share/icons/hicolor/48x48/apps/kimagemapeditor.png
 share/icons/hicolor/48x48/apps/klinkstatus.png
@@ -229,15 +114,9 @@ share/kde4/services/kimagemapeditorpart.desktop
 share/kde4/services/klinkstatus_automation.desktop
 share/kde4/services/klinkstatus_part.desktop
 share/kde4/services/krossmoduleklinkstatus.desktop
-share/kde4/services/kxsldbg_part.desktop
-@dirrm share/doc/HTML/en/xsldbg
-@dirrm share/doc/HTML/en/kxsldbg
 @dirrm share/doc/HTML/en/klinkstatus
 @dirrm share/doc/HTML/en/kimagemapeditor
 @dirrm share/doc/HTML/en/kfilereplace
-@dirrm share/apps/xsldbg
-@dirrm share/apps/kxsldbgpart
-@dirrm share/apps/kxsldbg
 @dirrm share/apps/klinkstatuspart/pics
 @dirrm share/apps/klinkstatuspart/kpartplugins
 @dirrm share/apps/klinkstatuspart
@@ -251,7 +130,5 @@ share/kde4/services/kxsldbg_part.desktop
 @dirrm share/apps/kfilereplacepart/icons
 @dirrm share/apps/kfilereplacepart
 @dirrm share/apps/kfilereplace
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake
 @dirrm share/applnk/.hidden
 @dirrm share/applnk

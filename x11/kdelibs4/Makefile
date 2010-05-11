@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -18,7 +18,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell
+BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell \
+		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
 LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		soprano.4:${PORTSDIR}/textproc/soprano \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
@@ -32,14 +33,18 @@ LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		idn:${PORTSDIR}/dns/libidn \
 		hal.1:${PORTSDIR}/sysutils/hal \
-		lzma.0:${PORTSDIR}/archivers/xz \
+		qca.2:${PORTSDIR}/devel/qca \
+		attica.0:${PORTSDIR}/x11-toolkits/attica \
+		polkit-qt-core.0:${PORTSDIR}/sysutils/policykit-qt \
 		smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
+		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
 		showrgb:${PORTSDIR}/x11/rgb \
 		iceauth:${PORTSDIR}/x11/iceauth \
 		xauth:${PORTSDIR}/x11/xauth
 
-CONFLICTS=	kdebase-workspace-4.1.*
+CONFLICTS=	kdebase-workspace-4.1.* kdebase-workspace-4.3.[1-4] kdelibs-experimental-4.3*
 
 LATEST_LINK=	${PORTNAME}4
 
@@ -77,6 +82,10 @@ MAN8=	kbuildsycoca4.8 \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 900012
+LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
+.endif
+
 .if ${OSVERSION} < 900004
 LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ConfigureChecks.cmake
@@ -109,11 +118,15 @@ pre-configure:
 		${PATCH_WRKSRC}/cmake/modules/*.cmake \
 		${PATCH_WRKSRC}/ConfigureChecks.cmake \
 		${PATCH_WRKSRC}/doc/api/doxygen.sh
+	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|g' \
+		${PATCH_WRKSRC}/cmake/modules/FindDNSSD.cmake
+	${REINPLACE_CMD} -e 's|soprano/cmake|cmake/Modules|g' \
+		${PATCH_WRKSRC}/cmake/modules/FindSoprano.cmake
 #	FindBerkeleyDB.cmake should be rewritten to support multiple version
 #	provided by ports, instead of hardcoding one of them
-# 	${REINPLACE_CMD} -e 's|/usr/local/include/db4|${BDB_INCLUDE_DIR}|' \
-# 		-e 's|NAMES db|NAMES ${BDB_LIB_NAME} ${LOCALBASE}/lib|' \
-# 		${PATCH_WRKSRC}/cmake/modules/FindBerkeleyDB.cmake
+#	${REINPLACE_CMD} -e 's|/usr/local/include/db4|${BDB_INCLUDE_DIR}|' \
+#		-e 's|NAMES db|NAMES ${BDB_LIB_NAME} ${LOCALBASE}/lib|' \
+#		${PATCH_WRKSRC}/cmake/modules/FindBerkeleyDB.cmake
 #	prevent updating mime during build
 #	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
 #		${PATCH_WRKSRC}/mimetypes/CMakeLists.txt

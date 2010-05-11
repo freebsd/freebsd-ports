@@ -7,7 +7,6 @@
 
 PORTNAME=	kdebindings
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-python
@@ -23,7 +22,7 @@ NO_BUILD=	yes
 OPTIONS+=	KROSSPYTHON "Kross Python scripting library" on
 OPTIONS+=	PYKDE4 "Kde bindings" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_KROSSPYTHON)
 RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/krosspython.so:${PORTSDIR}/devel/kdebindings4-python-krosspython
@@ -36,4 +35,4 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/kpythonpluginfactory.so:${PORTSDIR}/devel/
 do-install:
 	${DO_NADA}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

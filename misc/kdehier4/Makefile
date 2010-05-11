@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdehier4
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -36,13 +36,11 @@ do-install:
 	@for dir in `${GREP} -v "^@comment" ${FILESDIR}/dirlist`; \
 	do \
 		${MKDIR} ${PREFIX}/$${dir}; \
-		${TOUCH} ${PREFIX}/$${dir}/.keep_me; \
 	done
 .if ${KDE4_PREFIX} != ${LOCALBASE}
 	@for dir in `${GREP} -v "^@comment" ${FILESDIR}/mtree-dirlist`; \
 	do \
 		${MKDIR} ${PREFIX}/$${dir}; \
-		${TOUCH} ${PREFIX}/$${dir}/.keep_me; \
 	done
 	${LN} -sf ${LOCALBASE}/${LDCONFIG_DIR} ${KDE4_PREFIX}/libdata/
 	${LN} -sf ${LOCALBASE}/${LDCONFIG32_DIR} ${KDE4_PREFIX}/libdata/

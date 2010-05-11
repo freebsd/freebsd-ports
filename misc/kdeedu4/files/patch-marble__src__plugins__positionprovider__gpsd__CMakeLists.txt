@@ -1,0 +1,19 @@
+--- ./marble/src/plugins/positionprovider/gpsd/CMakeLists.txt.orig	2009-05-27 23:53:49.000000000 +0400
++++ ./marble/src/plugins/positionprovider/gpsd/CMakeLists.txt	2010-03-14 00:08:03.862036116 +0300
+@@ -4,7 +4,7 @@
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/plugins/positionprovider/gpsd
+  ${CMAKE_BINARY_DIR}/src/plugins/positionprovider/gpsd
+  ${QT_INCLUDE_DIR}
+- ${libgps_INCLUDE_DIRS}
++ ${LIBGPS_INCLUDE_DIR}
+ )
+ 
+ include(${QT_USE_FILE})
+@@ -15,6 +15,6 @@
+  GpsdThread.cpp
+ )
+ 
+-set( GpsdPositionProviderPlugin_LIBS ${libgps_LIBRARIES} )
++set( GpsdPositionProviderPlugin_LIBS ${LIBGPS_LIBRARIES} )
+ 
+ marble_add_plugin( GpsdPositionProviderPlugin ${gpsd_SRCS} )

@@ -7,7 +7,6 @@
 
 PORTNAME?=	kde4
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -35,7 +34,7 @@ OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
 USE_KDE4=	kdelibs kdebase pimlibs workspace kdeprefix runtime oxygen
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_KDEACCESSIBILITY)
 RUN_DEPENDS+=	kdeaccessibility>=4:${PORTSDIR}/accessibility/kdeaccessibility4
@@ -86,4 +85,4 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_xine.so:${PO
 do-install:
 	${DO_NADA}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -21,7 +20,8 @@ LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		polkit-qt-core.0:${PORTSDIR}/sysutils/policykit-qt \
-		xklavier.12:${PORTSDIR}/x11/libxklavier
+		xklavier.12:${PORTSDIR}/x11/libxklavier \
+		gps.19:${PORTSDIR}/astro/gpsd
 RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		xprop:${PORTSDIR}/x11/xprop \
@@ -34,8 +34,7 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 
 SUB_FILES=	kdm
 USE_RC_SUBR=	kdm4
-USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4 oxygen \
-		kdeexp
+USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4 oxygen
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -60,10 +59,17 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 #PyKDE4, Xmms and Googlegadgets could be enabled,
 #QEdje has not been ported yet.
 
-.include <bsd.port.pre.mk>
+OPTIONS=	PLASMA_PYTHON "Support for plasmoids written in Python" off \
+		PLASMA_RUBY "Support for plasmoids written in Ruby" off
 
-.if ${ARCH} == "ia64"
-BROKEN=		Segfaults on ia64
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PLASMA_PYTHON)
+RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_python/plasma_importer.py:${PORTSDIR}/x11/plasma-scriptengine-python
+.endif
+
+.if defined(WITH_PLASMA_RUBY)
+RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/plasma_scriptengine_ruby/applet.rb:${PORTSDIR}/x11/plasma-scriptengine-ruby
 .endif
 
 .if ${OSVERSION} < 800069
@@ -84,19 +90,16 @@ post-patch:
 	${CP} ${FILESDIR}/uptime.* ${WRKSRC}/ksysguard/ksysguardd/FreeBSD/
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|<qhash.h>|<QHash>|'\
+	${REINPLACE_CMD} -e 's|sys/ptrace.h|signal.h|' \
+		${PATCH_WRKSRC}/libs/ksysguard/processui/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|<qhash.h>|<QHash>|' \
 		${PATCH_WRKSRC}/kwin/effects/thumbnailaside/thumbnailaside.h
-.for item in b2/b2client.cpp kwmtheme/kwmthemeclient.cpp\
-		laptop/laptopclient.cpp modernsystem/modernsys.cpp\
+.for item in b2/b2client.cpp kwmtheme/kwmthemeclient.cpp \
+		laptop/laptopclient.cpp modernsystem/modernsys.cpp \
 		redmond/redmond.cpp
-	${REINPLACE_CMD} -e 's|<qdrawutil.h>|<QtGui/qdrawutil.h>|'\
+	${REINPLACE_CMD} -e 's|<qdrawutil.h>|<QtGui/qdrawutil.h>|' \
 		${PATCH_WRKSRC}/kwin/clients/${item}
 .endfor
-.if ${OSVERSION} < 900004
-	${REINPLACE_CMD} -e 's|addToUtmp ""|addToUtmp "${LOCALBASE}/lib"|' \
-		-e 's|(utempter.h|(${LOCALBASE}/include/utempter.h|' \
-	${PATCH_WRKSRC}/kwrited/CMakeLists.txt
-.endif
 
 post-install:
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
@@ -107,4 +110,4 @@ post-install:
 	@${MV} ${PREFIX}/lib/kde4/libexec/kdm_greet ${PREFIX}/lib/kde4/libexec/kdm-bin_greet
 	@${INSTALL_SCRIPT} ${WRKDIR}/kdm ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

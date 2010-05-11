@@ -20,6 +20,10 @@ lib/kde4/kpythonpluginfactory.so
 %%PYTHON_SITELIBDIR%%/PyKDE4/pykdeconfig.pyc
 %%PYTHON_SITELIBDIR%%/PyKDE4/solid.so
 %%PYTHON_SITELIBDIR%%/PyKDE4/soprano.so
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/pykdeuic4.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/pykdeuic4.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/kde4.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/kde4.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/default.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/kdecoreExamples/__init__.py
@@ -58,6 +62,7 @@ lib/kde4/kpythonpluginfactory.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/solidExamples/solid_storagedrive.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/solidExamples/solid_storagevolume.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/solid_demo.py
+share/py-sip/PyKDE4/akonadi/addressattribute.sip
 share/py-sip/PyKDE4/akonadi/agentbase.sip
 share/py-sip/PyKDE4/akonadi/agentfilterproxymodel.sip
 share/py-sip/PyKDE4/akonadi/agentinstance.sip
@@ -75,26 +80,36 @@ share/py-sip/PyKDE4/akonadi/attributefactory.sip
 share/py-sip/PyKDE4/akonadi/cachepolicy.sip
 share/py-sip/PyKDE4/akonadi/changerecorder.sip
 share/py-sip/PyKDE4/akonadi/collection.sip
+share/py-sip/PyKDE4/akonadi/collectioncombobox.sip
 share/py-sip/PyKDE4/akonadi/collectioncopyjob.sip
 share/py-sip/PyKDE4/akonadi/collectioncreatejob.sip
 share/py-sip/PyKDE4/akonadi/collectiondeletejob.sip
 share/py-sip/PyKDE4/akonadi/collectiondialog.sip
 share/py-sip/PyKDE4/akonadi/collectionfetchjob.sip
+share/py-sip/PyKDE4/akonadi/collectionfetchscope.sip
 share/py-sip/PyKDE4/akonadi/collectionfilterproxymodel.sip
 share/py-sip/PyKDE4/akonadi/collectionmodel.sip
 share/py-sip/PyKDE4/akonadi/collectionmodifyjob.sip
+share/py-sip/PyKDE4/akonadi/collectionmovejob.sip
 share/py-sip/PyKDE4/akonadi/collectionpropertiesdialog.sip
 share/py-sip/PyKDE4/akonadi/collectionpropertiespage.sip
+share/py-sip/PyKDE4/akonadi/collectionquotaattribute.sip
 share/py-sip/PyKDE4/akonadi/collectionrequester.sip
 share/py-sip/PyKDE4/akonadi/collectionstatistics.sip
 share/py-sip/PyKDE4/akonadi/collectionstatisticsdelegate.sip
 share/py-sip/PyKDE4/akonadi/collectionstatisticsjob.sip
 share/py-sip/PyKDE4/akonadi/collectionstatisticsmodel.sip
 share/py-sip/PyKDE4/akonadi/collectionview.sip
-share/py-sip/PyKDE4/akonadi/contactparts.sip
 share/py-sip/PyKDE4/akonadi/control.sip
 share/py-sip/PyKDE4/akonadi/entity.sip
 share/py-sip/PyKDE4/akonadi/entitydisplayattribute.sip
+share/py-sip/PyKDE4/akonadi/entityhiddenattribute.sip
+share/py-sip/PyKDE4/akonadi/entitylistview.sip
+share/py-sip/PyKDE4/akonadi/entitymimetypefiltermodel.sip
+share/py-sip/PyKDE4/akonadi/entitytreemodel.sip
+share/py-sip/PyKDE4/akonadi/entitytreeview.sip
+share/py-sip/PyKDE4/akonadi/entitytreeviewstatesaver.sip
+share/py-sip/PyKDE4/akonadi/favoritecollectionsmodel.sip
 share/py-sip/PyKDE4/akonadi/item.sip
 share/py-sip/PyKDE4/akonadi/itemcopyjob.sip
 share/py-sip/PyKDE4/akonadi/itemcreatejob.sip
@@ -105,19 +120,25 @@ share/py-sip/PyKDE4/akonadi/itemmodel.sip
 share/py-sip/PyKDE4/akonadi/itemmodifyjob.sip
 share/py-sip/PyKDE4/akonadi/itemmonitor.sip
 share/py-sip/PyKDE4/akonadi/itemmovejob.sip
+share/py-sip/PyKDE4/akonadi/itemsearchjob.sip
 share/py-sip/PyKDE4/akonadi/itemserializerplugin.sip
 share/py-sip/PyKDE4/akonadi/itemsync.sip
 share/py-sip/PyKDE4/akonadi/itemview.sip
 share/py-sip/PyKDE4/akonadi/job.sip
 share/py-sip/PyKDE4/akonadi/linkjob.sip
+share/py-sip/PyKDE4/akonadi/messagefolderattribute.sip
 share/py-sip/PyKDE4/akonadi/messagemodel.sip
 share/py-sip/PyKDE4/akonadi/messageparts.sip
 share/py-sip/PyKDE4/akonadi/messagethreaderproxymodel.sip
 share/py-sip/PyKDE4/akonadi/messagethreadingattribute.sip
 share/py-sip/PyKDE4/akonadi/mimetypechecker.sip
 share/py-sip/PyKDE4/akonadi/monitor.sip
+share/py-sip/PyKDE4/akonadi/partfetcher.sip
+share/py-sip/PyKDE4/akonadi/preprocessorbase.sip
 share/py-sip/PyKDE4/akonadi/resourcebase.sip
+share/py-sip/PyKDE4/akonadi/resourcesynchronizationjob.sip
 share/py-sip/PyKDE4/akonadi/searchcreatejob.sip
+share/py-sip/PyKDE4/akonadi/selectionproxymodel.sip
 share/py-sip/PyKDE4/akonadi/servermanager.sip
 share/py-sip/PyKDE4/akonadi/session.sip
 share/py-sip/PyKDE4/akonadi/sipAPIakonadi.h
@@ -129,9 +150,15 @@ share/py-sip/PyKDE4/akonadi/sipakonadipart4.cpp
 share/py-sip/PyKDE4/akonadi/sipakonadipart5.cpp
 share/py-sip/PyKDE4/akonadi/sipakonadipart6.cpp
 share/py-sip/PyKDE4/akonadi/sipakonadipart7.cpp
+share/py-sip/PyKDE4/akonadi/specialcollections.sip
+share/py-sip/PyKDE4/akonadi/specialcollectionsrequestjob.sip
+share/py-sip/PyKDE4/akonadi/specialmailcollections.sip
+share/py-sip/PyKDE4/akonadi/specialmailcollectionsrequestjob.sip
 share/py-sip/PyKDE4/akonadi/standardactionmanager.sip
+share/py-sip/PyKDE4/akonadi/statisticsproxymodel.sip
 share/py-sip/PyKDE4/akonadi/transactionjobs.sip
 share/py-sip/PyKDE4/akonadi/transactionsequence.sip
+share/py-sip/PyKDE4/akonadi/transportresourcebase.sip
 share/py-sip/PyKDE4/akonadi/unlinkjob.sip
 share/py-sip/PyKDE4/dnssd/dnssdmod.sip
 share/py-sip/PyKDE4/dnssd/domainbrowser.sip
@@ -156,6 +183,10 @@ share/py-sip/PyKDE4/kdecore/backgroundchecker.sip
 share/py-sip/PyKDE4/kdecore/globals.sip
 share/py-sip/PyKDE4/kdecore/kaboutdata.sip
 share/py-sip/PyKDE4/kdecore/kascii.sip
+share/py-sip/PyKDE4/kdecore/kauthaction.sip
+share/py-sip/PyKDE4/kdecore/kauthactionreply.sip
+share/py-sip/PyKDE4/kdecore/kauthactionwatcher.sip
+share/py-sip/PyKDE4/kdecore/kauthhelpersupport.sip
 share/py-sip/PyKDE4/kdecore/kauthorized.sip
 share/py-sip/PyKDE4/kdecore/kautosavefile.sip
 share/py-sip/PyKDE4/kdecore/kautostart.sip
@@ -170,6 +201,7 @@ share/py-sip/PyKDE4/kdecore/kconfigdata.sip
 share/py-sip/PyKDE4/kdecore/kconfiggroup.sip
 share/py-sip/PyKDE4/kdecore/kconfigini.sip
 share/py-sip/PyKDE4/kdecore/kcoreconfigskeleton.sip
+share/py-sip/PyKDE4/kdecore/kcurrencycode.sip
 share/py-sip/PyKDE4/kdecore/kdatetime.sip
 share/py-sip/PyKDE4/kdecore/kdecoremod.sip
 share/py-sip/PyKDE4/kdecore/kdedmodule.sip
@@ -357,6 +389,9 @@ share/py-sip/PyKDE4/kdeui/kpixmapcache.sip
 share/py-sip/PyKDE4/kdeui/kpixmapprovider.sip
 share/py-sip/PyKDE4/kdeui/kpixmapregionselectordialog.sip
 share/py-sip/PyKDE4/kdeui/kpixmapregionselectorwidget.sip
+share/py-sip/PyKDE4/kdeui/kpixmapsequence.sip
+share/py-sip/PyKDE4/kdeui/kpixmapsequenceoverlaypainter.sip
+share/py-sip/PyKDE4/kdeui/kpixmapsequencewidget.sip
 share/py-sip/PyKDE4/kdeui/kplotaxis.sip
 share/py-sip/PyKDE4/kdeui/kplotobject.sip
 share/py-sip/PyKDE4/kdeui/kplotpoint.sip
@@ -371,6 +406,7 @@ share/py-sip/PyKDE4/kdeui/krichtextedit.sip
 share/py-sip/PyKDE4/kdeui/krichtextwidget.sip
 share/py-sip/PyKDE4/kdeui/kruler.sip
 share/py-sip/PyKDE4/kdeui/kselectaction.sip
+share/py-sip/PyKDE4/kdeui/kselectionproxymodel.sip
 share/py-sip/PyKDE4/kdeui/kselector.sip
 share/py-sip/PyKDE4/kdeui/kseparator.sip
 share/py-sip/PyKDE4/kdeui/ksessionmanager.sip
@@ -386,6 +422,7 @@ share/py-sip/PyKDE4/kdeui/kstandardshortcut.sip
 share/py-sip/PyKDE4/kdeui/kstartupinfo.sip
 share/py-sip/PyKDE4/kdeui/kstatusbar.sip
 share/py-sip/PyKDE4/kdeui/kstatusbarjobtracker.sip
+share/py-sip/PyKDE4/kdeui/kstatusnotifieritem.sip
 share/py-sip/PyKDE4/kdeui/kstringvalidator.sip
 share/py-sip/PyKDE4/kdeui/kstyle.sip
 share/py-sip/PyKDE4/kdeui/ksvgrenderer.sip
@@ -603,7 +640,13 @@ share/py-sip/PyKDE4/knewstuff/category.sip
 share/py-sip/PyKDE4/knewstuff/engine.sip
 share/py-sip/PyKDE4/knewstuff/entry.sip
 share/py-sip/PyKDE4/knewstuff/installation.sip
+share/py-sip/PyKDE4/knewstuff/knewstuff3_downloaddialog.sip
+share/py-sip/PyKDE4/knewstuff/knewstuff3_entry.sip
+share/py-sip/PyKDE4/knewstuff/knewstuff3_knewstuffaction.sip
+share/py-sip/PyKDE4/knewstuff/knewstuff3_knewstuffbutton.sip
+share/py-sip/PyKDE4/knewstuff/knewstuff3_uploaddialog.sip
 share/py-sip/PyKDE4/knewstuff/knewstuffaction.sip
+share/py-sip/PyKDE4/knewstuff/knewstuffbutton.sip
 share/py-sip/PyKDE4/knewstuff/knewstuffmod.sip
 share/py-sip/PyKDE4/knewstuff/ktranslatable.sip
 share/py-sip/PyKDE4/knewstuff/sipAPIknewstuff.h
@@ -617,6 +660,7 @@ share/py-sip/PyKDE4/knewstuff/sipknewstuffpart6.cpp
 share/py-sip/PyKDE4/knewstuff/sipknewstuffpart7.cpp
 share/py-sip/PyKDE4/kparts/browserextension.sip
 share/py-sip/PyKDE4/kparts/browserinterface.sip
+share/py-sip/PyKDE4/kparts/browseropenorsavequestion.sip
 share/py-sip/PyKDE4/kparts/browserrun.sip
 share/py-sip/PyKDE4/kparts/event.sip
 share/py-sip/PyKDE4/kparts/factory.sip
@@ -683,6 +727,7 @@ share/py-sip/PyKDE4/kutils/kcmultidialog.sip
 share/py-sip/PyKDE4/kutils/kemoticons.sip
 share/py-sip/PyKDE4/kutils/kemoticonsprovider.sip
 share/py-sip/PyKDE4/kutils/kemoticonstheme.sip
+share/py-sip/PyKDE4/kutils/kidletime.sip
 share/py-sip/PyKDE4/kutils/kpluginselector.sip
 share/py-sip/PyKDE4/kutils/kprintpreview.sip
 share/py-sip/PyKDE4/kutils/kutilsmod.sip
@@ -696,11 +741,13 @@ share/py-sip/PyKDE4/kutils/sipkutilspart4.cpp
 share/py-sip/PyKDE4/kutils/sipkutilspart5.cpp
 share/py-sip/PyKDE4/kutils/sipkutilspart6.cpp
 share/py-sip/PyKDE4/kutils/sipkutilspart7.cpp
+share/py-sip/PyKDE4/nepomuk/andterm.sip
 share/py-sip/PyKDE4/nepomuk/class.sip
-share/py-sip/PyKDE4/nepomuk/desktopontologyloader.sip
+share/py-sip/PyKDE4/nepomuk/comparisonterm.sip
 share/py-sip/PyKDE4/nepomuk/entity.sip
-share/py-sip/PyKDE4/nepomuk/fileontologyloader.sip
+share/py-sip/PyKDE4/nepomuk/filequery.sip
 share/py-sip/PyKDE4/nepomuk/global.sip
+share/py-sip/PyKDE4/nepomuk/groupterm.sip
 share/py-sip/PyKDE4/nepomuk/kmetadatatagcloud.sip
 share/py-sip/PyKDE4/nepomuk/kmetadatatagwidget.sip
 share/py-sip/PyKDE4/nepomuk/kratingpainter.sip
@@ -708,14 +755,23 @@ share/py-sip/PyKDE4/nepomuk/kratingwidget.sip
 share/py-sip/PyKDE4/nepomuk/ktagcloudwidget.sip
 share/py-sip/PyKDE4/nepomuk/ktagdisplaywidget.sip
 share/py-sip/PyKDE4/nepomuk/literal.sip
+share/py-sip/PyKDE4/nepomuk/literalterm.sip
+share/py-sip/PyKDE4/nepomuk/negationterm.sip
 share/py-sip/PyKDE4/nepomuk/nepomukmod.sip
 share/py-sip/PyKDE4/nepomuk/nepomukontologyloader.sip
 share/py-sip/PyKDE4/nepomuk/nepomukservice.sip
 share/py-sip/PyKDE4/nepomuk/ontology.sip
-share/py-sip/PyKDE4/nepomuk/ontologymanager.sip
+share/py-sip/PyKDE4/nepomuk/orterm.sip
 share/py-sip/PyKDE4/nepomuk/property.sip
+share/py-sip/PyKDE4/nepomuk/query.sip
+share/py-sip/PyKDE4/nepomuk/queryparser.sip
+share/py-sip/PyKDE4/nepomuk/queryserviceclient.sip
 share/py-sip/PyKDE4/nepomuk/resource.sip
 share/py-sip/PyKDE4/nepomuk/resourcemanager.sip
+share/py-sip/PyKDE4/nepomuk/resourceterm.sip
+share/py-sip/PyKDE4/nepomuk/resourcetypeterm.sip
+share/py-sip/PyKDE4/nepomuk/result.sip
+share/py-sip/PyKDE4/nepomuk/simpleterm.sip
 share/py-sip/PyKDE4/nepomuk/sipAPInepomuk.h
 share/py-sip/PyKDE4/nepomuk/sipnepomukpart0.cpp
 share/py-sip/PyKDE4/nepomuk/sipnepomukpart1.cpp
@@ -726,10 +782,12 @@ share/py-sip/PyKDE4/nepomuk/sipnepomukpart5.cpp
 share/py-sip/PyKDE4/nepomuk/sipnepomukpart6.cpp
 share/py-sip/PyKDE4/nepomuk/sipnepomukpart7.cpp
 share/py-sip/PyKDE4/nepomuk/tag.sip
+share/py-sip/PyKDE4/nepomuk/term.sip
 share/py-sip/PyKDE4/nepomuk/thing.sip
 share/py-sip/PyKDE4/nepomuk/tools.sip
 share/py-sip/PyKDE4/nepomuk/variant.sip
 share/py-sip/PyKDE4/phonon/abstractaudiodataoutput.sip
+share/py-sip/PyKDE4/phonon/abstractaudiooutput.sip
 share/py-sip/PyKDE4/phonon/abstractmediastream.sip
 share/py-sip/PyKDE4/phonon/abstractvideodataoutput.sip
 share/py-sip/PyKDE4/phonon/abstractvideooutput.sip
@@ -743,6 +801,7 @@ share/py-sip/PyKDE4/phonon/effect.sip
 share/py-sip/PyKDE4/phonon/effectparameter.sip
 share/py-sip/PyKDE4/phonon/effectwidget.sip
 share/py-sip/PyKDE4/phonon/experimental_phononnamespace.sip
+share/py-sip/PyKDE4/phonon/globalconfig.sip
 share/py-sip/PyKDE4/phonon/mediacontroller.sip
 share/py-sip/PyKDE4/phonon/medianode.sip
 share/py-sip/PyKDE4/phonon/mediaobject.sip
@@ -778,15 +837,25 @@ share/py-sip/PyKDE4/phonon/visualization.sip
 share/py-sip/PyKDE4/phonon/volumefadereffect.sip
 share/py-sip/PyKDE4/phonon/volumeslider.sip
 share/py-sip/PyKDE4/plasma/abstractrunner.sip
+share/py-sip/PyKDE4/plasma/abstracttoolbox.sip
+share/py-sip/PyKDE4/plasma/accessappletjob.sip
+share/py-sip/PyKDE4/plasma/accessmanager.sip
+share/py-sip/PyKDE4/plasma/animation.sip
 share/py-sip/PyKDE4/plasma/animationdriver.sip
 share/py-sip/PyKDE4/plasma/animator.sip
 share/py-sip/PyKDE4/plasma/applet.sip
 share/py-sip/PyKDE4/plasma/appletscript.sip
+share/py-sip/PyKDE4/plasma/authorizationinterface.sip
+share/py-sip/PyKDE4/plasma/authorizationmanager.sip
+share/py-sip/PyKDE4/plasma/authorizationrule.sip
 share/py-sip/PyKDE4/plasma/busywidget.sip
 share/py-sip/PyKDE4/plasma/checkbox.sip
+share/py-sip/PyKDE4/plasma/clientpinrequest.sip
 share/py-sip/PyKDE4/plasma/combobox.sip
 share/py-sip/PyKDE4/plasma/configloader.sip
 share/py-sip/PyKDE4/plasma/containment.sip
+share/py-sip/PyKDE4/plasma/containmentactions.sip
+share/py-sip/PyKDE4/plasma/containmentactionspluginsconfig.sip
 share/py-sip/PyKDE4/plasma/context.sip
 share/py-sip/PyKDE4/plasma/corona.sip
 share/py-sip/PyKDE4/plasma/datacontainer.sip
@@ -804,6 +873,7 @@ share/py-sip/PyKDE4/plasma/framesvg.sip
 share/py-sip/PyKDE4/plasma/glapplet.sip
 share/py-sip/PyKDE4/plasma/groupbox.sip
 share/py-sip/PyKDE4/plasma/iconwidget.sip
+share/py-sip/PyKDE4/plasma/itembackground.sip
 share/py-sip/PyKDE4/plasma/label.sip
 share/py-sip/PyKDE4/plasma/lineedit.sip
 share/py-sip/PyKDE4/plasma/meter.sip
@@ -824,7 +894,9 @@ share/py-sip/PyKDE4/plasma/runnersyntax.sip
 share/py-sip/PyKDE4/plasma/scriptengine.sip
 share/py-sip/PyKDE4/plasma/scrollbar.sip
 share/py-sip/PyKDE4/plasma/scrollwidget.sip
+share/py-sip/PyKDE4/plasma/separator.sip
 share/py-sip/PyKDE4/plasma/service.sip
+share/py-sip/PyKDE4/plasma/serviceaccessjob.sip
 share/py-sip/PyKDE4/plasma/servicejob.sip
 share/py-sip/PyKDE4/plasma/signalplotter.sip
 share/py-sip/PyKDE4/plasma/sipAPIplasma.h
@@ -852,7 +924,9 @@ share/py-sip/PyKDE4/plasma/version.sip
 share/py-sip/PyKDE4/plasma/videowidget.sip
 share/py-sip/PyKDE4/plasma/view.sip
 share/py-sip/PyKDE4/plasma/wallpaper.sip
+share/py-sip/PyKDE4/plasma/wallpaperscript.sip
 share/py-sip/PyKDE4/plasma/webview.sip
+share/py-sip/PyKDE4/plasma/windoweffects.sip
 share/py-sip/PyKDE4/polkitqt/action.sip
 share/py-sip/PyKDE4/polkitqt/actionbutton.sip
 share/py-sip/PyKDE4/polkitqt/actionbuttons.sip
@@ -905,6 +979,7 @@ share/py-sip/PyKDE4/solid/storagedrive.sip
 share/py-sip/PyKDE4/solid/storagevolume.sip
 share/py-sip/PyKDE4/solid/video.sip
 share/py-sip/PyKDE4/soprano/asyncmodel.sip
+share/py-sip/PyKDE4/soprano/asyncquery.sip
 share/py-sip/PyKDE4/soprano/asyncresult.sip
 share/py-sip/PyKDE4/soprano/backend.sip
 share/py-sip/PyKDE4/soprano/bindingset.sip
@@ -1000,13 +1075,11 @@ share/py-sip/PyKDE4/soprano/xsd.sip
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kdeuiExamples
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kdecoreExamples
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm bin/pykdeuic4
+@dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins
+@dirrm %%PYTHON_SITELIBDIR%%/PyQt4/uic
+@dirrm %%PYTHON_SITELIBDIR%%/PyQt4
 @dirrm %%PYTHON_SITELIBDIR%%/PyKDE4
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
 @cwd %%LOCALBASE%%
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/pykdeuic4.py
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/pykdeuic4.pyc
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/kde4.py
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/kde4.pyc
 %%PYTHON_SITELIBDIR%%/kdebindings4.pth

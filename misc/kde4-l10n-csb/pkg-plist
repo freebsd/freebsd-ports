@@ -25,6 +25,9 @@ share/locale/csb/LC_MESSAGES/kcmbackground.mo
 share/locale/csb/LC_MESSAGES/kcmbell.mo
 share/locale/csb/LC_MESSAGES/kcmcgi.mo
 share/locale/csb/LC_MESSAGES/kcmcolors.mo
+share/locale/csb/LC_MESSAGES/kcmcomponentchooser.mo
+share/locale/csb/LC_MESSAGES/kcmfonts.mo
+share/locale/csb/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/csb/LC_MESSAGES/kcmicons.mo
 share/locale/csb/LC_MESSAGES/kcminit.mo
 share/locale/csb/LC_MESSAGES/kcmioslaveinfo.mo
@@ -50,6 +53,7 @@ share/locale/csb/LC_MESSAGES/kcmview1394.mo
 share/locale/csb/LC_MESSAGES/kcmxinerama.mo
 share/locale/csb/LC_MESSAGES/kde-menu.mo
 share/locale/csb/LC_MESSAGES/kdebugdialog.mo
+share/locale/csb/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/csb/LC_MESSAGES/kdelibs4.mo
 share/locale/csb/LC_MESSAGES/kdepasswd.mo
 share/locale/csb/LC_MESSAGES/kdeqt.mo
@@ -70,6 +74,7 @@ share/locale/csb/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/csb/LC_MESSAGES/kfindpart.mo
 share/locale/csb/LC_MESSAGES/kfmclient.mo
 share/locale/csb/LC_MESSAGES/kfontinst.mo
+share/locale/csb/LC_MESSAGES/kglobalaccel.mo
 share/locale/csb/LC_MESSAGES/kgreet_classic.mo
 share/locale/csb/LC_MESSAGES/kgreet_generic.mo
 share/locale/csb/LC_MESSAGES/kgreet_winbind.mo
@@ -151,8 +156,8 @@ share/locale/csb/LC_MESSAGES/libkworkspace.mo
 share/locale/csb/LC_MESSAGES/libphonon.mo
 share/locale/csb/LC_MESSAGES/libplasma.mo
 share/locale/csb/LC_MESSAGES/libtaskmanager.mo
+share/locale/csb/LC_MESSAGES/lokalize.mo
 share/locale/csb/LC_MESSAGES/nepomuk.mo
-share/locale/csb/LC_MESSAGES/nepomuksearch.mo
 share/locale/csb/LC_MESSAGES/nsplugin.mo
 share/locale/csb/LC_MESSAGES/phonon-xine.mo
 share/locale/csb/LC_MESSAGES/phonon_kde.mo
@@ -160,7 +165,6 @@ share/locale/csb/LC_MESSAGES/plasma-desktop.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_comic.mo
-share/locale/csb/LC_MESSAGES/plasma_applet_desktop.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
@@ -179,7 +183,6 @@ share/locale/csb/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/csb/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
-share/locale/csb/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/csb/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
 share/locale/csb/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/csb/LC_MESSAGES/plasma_engine_metadata.mo
@@ -193,12 +196,15 @@ share/locale/csb/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_placesrunner.mo
+share/locale/csb/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_services.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_shell.mo
+share/locale/csb/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/csb/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/csb/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/csb/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/csb/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/csb/LC_MESSAGES/plasma_wallpaper_image.mo
@@ -207,7 +213,10 @@ share/locale/csb/LC_MESSAGES/plasmapkg.mo
 share/locale/csb/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/csb/LC_MESSAGES/plasmoidviewer.mo
 share/locale/csb/LC_MESSAGES/policykit-kde.mo
+share/locale/csb/LC_MESSAGES/polkit-kde-authorization.mo
 share/locale/csb/LC_MESSAGES/processcore.mo
+share/locale/csb/LC_MESSAGES/processui.mo
+share/locale/csb/LC_MESSAGES/randrmonitor.mo
 share/locale/csb/LC_MESSAGES/solid-bluetooth.mo
 share/locale/csb/LC_MESSAGES/solid-hardware.mo
 share/locale/csb/LC_MESSAGES/solid-network.mo

@@ -6,7 +6,6 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -32,7 +31,7 @@ CONFLICTS=	dolphin-plugins-mplayerthumbs-1.*
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4 kdeexp
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \

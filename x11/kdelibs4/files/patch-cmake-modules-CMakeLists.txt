@@ -1,0 +1,21 @@
+--- ./cmake/modules/CMakeLists.txt~	2009-12-01 10:27:12.000000000 +1000
++++ ./cmake/modules/CMakeLists.txt	2009-12-07 02:42:29.159330039 +1000
+@@ -7,8 +7,7 @@
+ # to have it around, so there is a place where the modules which are not installed
+ # are listed explicitely:
+ set(cmakeFilesDontInstall
+-               FindPolkitQt.cmake
+-               FindPolkitQt-1.cmake)
++               )
+ 
+ # Explicitely list all files which will be installed.
+ # We don't use a GLOB anymore so we can have also cmake files here
+@@ -89,6 +88,8 @@
+                FindPhonon.cmake
+                FindPkgConfig.cmake
+                FindPlasma.cmake
++               FindPolkitQt.cmake
++               FindPolkitQt-1.cmake
+                FindPopplerQt4.cmake
+                FindPostgreSQL.cmake
+                FindPulseAudio.cmake

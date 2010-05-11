@@ -1,8 +1,0 @@
---- ./knotificationitem/CMakeLists.txt.orig	2009-06-09 20:09:26.000000000 +0400
-+++ ./knotificationitem/CMakeLists.txt	2009-10-03 15:21:42.000000000 +0400
-@@ -41,4 +41,4 @@
- install(FILES
-     org.kde.NotificationItem.xml
-     org.kde.NotificationItemWatcher.xml
--    DESTINATION ${KDE4_DBUS_INTERFACES_DIR})
-+    DESTINATION ${DBUS_INTERFACES_INSTALL_DIR})

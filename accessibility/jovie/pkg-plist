@@ -1,0 +1,57 @@
+bin/kttsd
+bin/kttsmgr
+lib/kde4/kcm_kttsd.so
+lib/kde4/libkttsd_stringreplacerplugin.so
+lib/kde4/libkttsd_talkerchooserplugin.so
+lib/kde4/libkttsd_xmltransformerplugin.so
+lib/libkttsd.so
+lib/libkttsd.so.5
+lib/libkttsd.so.5.0.1
+share/applications/kde4/kttsmgr.desktop
+share/apps/kttsd/kcmkttsd_testmessage.desktop
+share/apps/kttsd/stringreplacer/abbreviations.xml
+share/apps/kttsd/stringreplacer/chat-de.xml
+share/apps/kttsd/stringreplacer/chat.xml
+share/apps/kttsd/stringreplacer/emoticons.xml
+share/apps/kttsd/stringreplacer/festival_unspeakable_chars.xml
+share/apps/kttsd/stringreplacer/kmail.xml
+share/apps/kttsd/stringreplacer/polish_festival_fixes.xml
+share/apps/kttsd/stringreplacer/polish_festival_unspeakables.xml
+share/apps/kttsd/stringreplacer/qt2plaintext.xml
+share/apps/kttsd/talkerchooser/female_notifications_rc
+share/apps/kttsd/xmltransformer/xhtml2ssml.xsl
+share/apps/kttsd/xmltransformer/xhtml2ssml_simple.xsl
+share/apps/kttsd/xslt/SSMLtoPlainText.xsl
+share/doc/HTML/en/kttsd/addtalker.png
+share/doc/HTML/en/kttsd/common
+share/doc/HTML/en/kttsd/filters.png
+share/doc/HTML/en/kttsd/general.png
+share/doc/HTML/en/kttsd/index.cache.bz2
+share/doc/HTML/en/kttsd/index.docbook
+share/doc/HTML/en/kttsd/jobs.png
+share/doc/HTML/en/kttsd/stringreplacer.png
+share/doc/HTML/en/kttsd/talkerchooser.png
+share/doc/HTML/en/kttsd/talkers.png
+share/doc/HTML/en/kttsd/xmltransformer.png
+share/icons/hicolor/16x16/actions/female.png
+share/icons/hicolor/16x16/actions/male.png
+share/icons/hicolor/16x16/actions/nospeak.png
+share/icons/hicolor/16x16/actions/speak.png
+share/icons/hicolor/22x22/actions/nospeak.png
+share/icons/hicolor/22x22/actions/speak.png
+share/icons/hicolor/32x32/actions/nospeak.png
+share/icons/hicolor/32x32/actions/speak.png
+share/icons/hicolor/48x48/actions/nospeak.png
+share/icons/hicolor/48x48/actions/speak.png
+share/kde4/services/kcmkttsd.desktop
+share/kde4/services/kttsd.desktop
+share/kde4/services/kttsd_stringreplacerplugin.desktop
+share/kde4/services/kttsd_talkerchooserplugin.desktop
+share/kde4/services/kttsd_xmltransformerplugin.desktop
+share/kde4/servicetypes/kttsd_filterplugin.desktop
+@dirrm share/doc/HTML/en/kttsd
+@dirrm share/apps/kttsd/xslt
+@dirrm share/apps/kttsd/xmltransformer
+@dirrm share/apps/kttsd/talkerchooser
+@dirrm share/apps/kttsd/stringreplacer
+@dirrm share/apps/kttsd

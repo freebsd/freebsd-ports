@@ -32,6 +32,7 @@ bin/hotshot2calltree
 bin/includemocs
 bin/kapptemplate
 bin/kate
+bin/katesnippetstng_editor
 bin/kbugbuster
 bin/kcachegrind
 bin/kde_generate_export_header
@@ -44,6 +45,7 @@ bin/kio_svn_helper
 bin/kompare
 bin/kpartloader
 bin/krazy-licensecheck
+bin/kstartperf
 bin/kuiviewer
 bin/lokalize
 bin/makeobj
@@ -62,6 +64,7 @@ bin/split2po
 bin/svn-clean
 bin/svnbackport
 bin/svnchangesince
+bin/svnforwardport
 bin/svngettags
 bin/svnintegrate
 bin/svnlastchange
@@ -82,6 +85,9 @@ include/kate/pluginmanager.h
 include/kate_export.h
 include/kompare/kompareinterface.h
 include/kprofilemethod.h
+include/ktexteditor_codesnippets_core/completionmodel.h
+include/ktexteditor_codesnippets_core/ktexteditor_codesnippets_core_export.h
+include/ktexteditor_codesnippets_core/repository.h
 lib/kde4/cervisiapart.so
 lib/kde4/kabcformat_kdeaccounts.so
 lib/kde4/kate_kttsd.so
@@ -97,6 +103,7 @@ lib/kde4/katemailfilesplugin.so
 lib/kde4/kateopenheaderplugin.so
 lib/kde4/katepybrowseplugin.so
 lib/kde4/katequickdocumentswitcherplugin.so
+lib/kde4/katesnippets_tngplugin.so
 lib/kde4/katesnippetsplugin.so
 lib/kde4/katesymbolviewerplugin.so
 lib/kde4/katetabbarextensionplugin.so
@@ -106,6 +113,7 @@ lib/kde4/kcal_bugzilla.so
 lib/kde4/kded_ksvnd.so
 lib/kde4/kio_perldoc.so
 lib/kde4/kio_svn.so
+lib/kde4/kstartperf.so
 lib/kde4/libkomparenavtreepart.so
 lib/kde4/libkomparepart.so
 lib/kde4/libkuiviewerpart.so
@@ -130,12 +138,16 @@ lib/libkomparediff2.so.5.0.1
 lib/libkompareinterface.so
 lib/libkompareinterface.so.5
 lib/libkompareinterface.so.5.0.1
+lib/libktexteditor_codesnippets_core.so
+lib/libktexteditor_codesnippets_core.so.0
+lib/libktexteditor_codesnippets_core.so.0.0.1
 lib/strigi/strigila_diff.so
 lib/strigi/strigila_po.so
 lib/strigi/strigita_ts.so
 share/applications/kde4/cervisia.desktop
 share/applications/kde4/kapptemplate.desktop
 share/applications/kde4/kate.desktop
+share/applications/kde4/katesnippetstng_editor.desktop
 share/applications/kde4/kbugbuster.desktop
 share/applications/kde4/kcachegrind.desktop
 share/applications/kde4/kdesvn-build.desktop
@@ -149,7 +161,6 @@ share/apps/cervisiapart/cervisiaui.rc
 share/apps/kabc/formats/kdeaccountsplugin.desktop
 share/apps/kate/default.katesession
 share/apps/kate/externaltools
-share/apps/kate/icons/oxygen/16x16/actions/curfiledir.png
 share/apps/kate/icons/oxygen/16x16/actions/modified.png
 share/apps/kate/icons/oxygen/16x16/actions/modmod.png
 share/apps/kate/icons/oxygen/16x16/actions/modonhd.png
@@ -174,6 +185,7 @@ share/apps/kate/plugins/kateopenheader/ui.rc
 share/apps/kate/plugins/katepybrowse/ui.rc
 share/apps/kate/plugins/katequickdocumentswitcher/ui.rc
 share/apps/kate/plugins/katesnippets/plugin_katesnippets.rc
+share/apps/kate/plugins/katesnippets_tng/ui.rc
 share/apps/kate/plugins/katesymbolviewer/ui.rc
 share/apps/kate/plugins/katetabbarextension/ui.rc
 share/apps/kate/plugins/katetextfilter/ui.rc
@@ -211,9 +223,12 @@ share/apps/kdevappwizard/template_previews/qmake4gui.png
 share/apps/kdevappwizard/template_previews/runner.png
 share/apps/kdevappwizard/templates/akonadiresource.tar.bz2
 share/apps/kdevappwizard/templates/akonadiserializer.tar.bz2
+share/apps/kdevappwizard/templates/flake.tar.bz2
 share/apps/kdevappwizard/templates/kapp4.tar.bz2
 share/apps/kdevappwizard/templates/kderubyapp.tar.bz2
+share/apps/kdevappwizard/templates/kofficetext.tar.bz2
 share/apps/kdevappwizard/templates/kpartapp.tar.bz2
+share/apps/kdevappwizard/templates/ktexteditor.tar.bz2
 share/apps/kdevappwizard/templates/plasmoid.tar.bz2
 share/apps/kdevappwizard/templates/pykde4app.tar.bz2
 share/apps/kdevappwizard/templates/pyqt4app.tar.bz2
@@ -223,6 +238,8 @@ share/apps/kio_perldoc/pod2html.pl
 share/apps/kompare/komparepartui.rc
 share/apps/kompare/kompareui.rc
 share/apps/kpartloader/kpartloaderui.rc
+share/apps/ktexteditor_snippets/data/testsnippets.xml
+share/apps/ktexteditor_snippets/data/testsnippetscpp.xml
 share/apps/kuiviewer/kuiviewerui.rc
 share/apps/kuiviewerpart/kuiviewer_part.rc
 share/apps/lokalize/editorui.rc
@@ -416,6 +433,7 @@ share/config.kcfg/kapptemplate.kcfg
 share/config.kcfg/lokalize.kcfg
 share/config/katefiletemplates.knsrc
 share/config/katerc
+share/config/ktexteditor_codesnippets_core.knsrc
 share/dbus-1/interfaces/org.kde.cervisia.cvsjob.xml
 share/dbus-1/interfaces/org.kde.cervisia.cvsloginjob.xml
 share/dbus-1/interfaces/org.kde.cervisia.cvsservice.xml
@@ -450,22 +468,9 @@ share/doc/HTML/en/kapptemplate/pykde4.png
 share/doc/HTML/en/kapptemplate/pyqt4app.png
 share/doc/HTML/en/kapptemplate/second-page.png
 share/doc/HTML/en/kapptemplate/third-page.png
-share/doc/HTML/en/kate-plugins/common
-share/doc/HTML/en/kate-plugins/configure_insertcommand.png
-share/doc/HTML/en/kate-plugins/filetemplates.docbook
-share/doc/HTML/en/kate-plugins/htmltools.docbook
-share/doc/HTML/en/kate-plugins/index.cache.bz2
-share/doc/HTML/en/kate-plugins/index.docbook
-share/doc/HTML/en/kate-plugins/insertcommand.docbook
-share/doc/HTML/en/kate-plugins/insertcommand.png
-share/doc/HTML/en/kate-plugins/openheader.docbook
-share/doc/HTML/en/kate-plugins/textfilter.docbook
-share/doc/HTML/en/kate-plugins/xmlcheck.docbook
-share/doc/HTML/en/kate-plugins/xmltools.docbook
 share/doc/HTML/en/kate/advanced.docbook
 share/doc/HTML/en/kate/common
 share/doc/HTML/en/kate/configdialog01.png
-share/doc/HTML/en/kate/configdialog02.png
 share/doc/HTML/en/kate/configuring.docbook
 share/doc/HTML/en/kate/fundamentals.docbook
 share/doc/HTML/en/kate/highlighted.png
@@ -476,7 +481,6 @@ share/doc/HTML/en/kate/kate.png
 share/doc/HTML/en/kate/man-kate.1.docbook
 share/doc/HTML/en/kate/mdi.docbook
 share/doc/HTML/en/kate/menus.docbook
-share/doc/HTML/en/kate/mimetypechooser.png
 share/doc/HTML/en/kate/part.docbook
 share/doc/HTML/en/kate/plugins.docbook
 share/doc/HTML/en/kate/regular-expressions.docbook
@@ -552,10 +556,14 @@ share/icons/hicolor/16x16/actions/msgid2msgstr.png
 share/icons/hicolor/16x16/actions/nexterror.png
 share/icons/hicolor/16x16/actions/nextfuzzy.png
 share/icons/hicolor/16x16/actions/nextfuzzyuntrans.png
+share/icons/hicolor/16x16/actions/nextpo.png
+share/icons/hicolor/16x16/actions/nexttemplate.png
 share/icons/hicolor/16x16/actions/nextuntranslated.png
 share/icons/hicolor/16x16/actions/preverror.png
 share/icons/hicolor/16x16/actions/prevfuzzy.png
 share/icons/hicolor/16x16/actions/prevfuzzyuntrans.png
+share/icons/hicolor/16x16/actions/prevpo.png
+share/icons/hicolor/16x16/actions/prevtemplate.png
 share/icons/hicolor/16x16/actions/prevuntranslated.png
 share/icons/hicolor/16x16/actions/search2msgstr.png
 share/icons/hicolor/16x16/actions/transsearch.png
@@ -575,10 +583,14 @@ share/icons/hicolor/22x22/actions/msgid2msgstr.png
 share/icons/hicolor/22x22/actions/nexterror.png
 share/icons/hicolor/22x22/actions/nextfuzzy.png
 share/icons/hicolor/22x22/actions/nextfuzzyuntrans.png
+share/icons/hicolor/22x22/actions/nextpo.png
+share/icons/hicolor/22x22/actions/nexttemplate.png
 share/icons/hicolor/22x22/actions/nextuntranslated.png
 share/icons/hicolor/22x22/actions/preverror.png
 share/icons/hicolor/22x22/actions/prevfuzzy.png
 share/icons/hicolor/22x22/actions/prevfuzzyuntrans.png
+share/icons/hicolor/22x22/actions/prevpo.png
+share/icons/hicolor/22x22/actions/prevtemplate.png
 share/icons/hicolor/22x22/actions/prevuntranslated.png
 share/icons/hicolor/22x22/actions/search2msgstr.png
 share/icons/hicolor/22x22/actions/transsearch.png
@@ -597,10 +609,14 @@ share/icons/hicolor/32x32/actions/msgid2msgstr.png
 share/icons/hicolor/32x32/actions/nexterror.png
 share/icons/hicolor/32x32/actions/nextfuzzy.png
 share/icons/hicolor/32x32/actions/nextfuzzyuntrans.png
+share/icons/hicolor/32x32/actions/nextpo.png
+share/icons/hicolor/32x32/actions/nexttemplate.png
 share/icons/hicolor/32x32/actions/nextuntranslated.png
 share/icons/hicolor/32x32/actions/preverror.png
 share/icons/hicolor/32x32/actions/prevfuzzy.png
 share/icons/hicolor/32x32/actions/prevfuzzyuntrans.png
+share/icons/hicolor/32x32/actions/prevpo.png
+share/icons/hicolor/32x32/actions/prevtemplate.png
 share/icons/hicolor/32x32/actions/prevuntranslated.png
 share/icons/hicolor/32x32/actions/search2msgstr.png
 share/icons/hicolor/32x32/actions/transsearch.png
@@ -641,10 +657,14 @@ share/icons/locolor/16x16/actions/msgid2msgstr.png
 share/icons/locolor/16x16/actions/nexterror.png
 share/icons/locolor/16x16/actions/nextfuzzy.png
 share/icons/locolor/16x16/actions/nextfuzzyuntrans.png
+share/icons/locolor/16x16/actions/nextpo.png
+share/icons/locolor/16x16/actions/nexttemplate.png
 share/icons/locolor/16x16/actions/nextuntranslated.png
 share/icons/locolor/16x16/actions/preverror.png
 share/icons/locolor/16x16/actions/prevfuzzy.png
 share/icons/locolor/16x16/actions/prevfuzzyuntrans.png
+share/icons/locolor/16x16/actions/prevpo.png
+share/icons/locolor/16x16/actions/prevtemplate.png
 share/icons/locolor/16x16/actions/prevuntranslated.png
 share/icons/locolor/16x16/actions/search2msgstr.png
 share/icons/locolor/16x16/actions/transsearch.png
@@ -656,10 +676,14 @@ share/icons/locolor/32x32/actions/msgid2msgstr.png
 share/icons/locolor/32x32/actions/nexterror.png
 share/icons/locolor/32x32/actions/nextfuzzy.png
 share/icons/locolor/32x32/actions/nextfuzzyuntrans.png
+share/icons/locolor/32x32/actions/nextpo.png
+share/icons/locolor/32x32/actions/nexttemplate.png
 share/icons/locolor/32x32/actions/nextuntranslated.png
 share/icons/locolor/32x32/actions/preverror.png
 share/icons/locolor/32x32/actions/prevfuzzy.png
 share/icons/locolor/32x32/actions/prevfuzzyuntrans.png
+share/icons/locolor/32x32/actions/prevpo.png
+share/icons/locolor/32x32/actions/prevtemplate.png
 share/icons/locolor/32x32/actions/prevuntranslated.png
 share/icons/locolor/32x32/actions/search2msgstr.png
 share/icons/locolor/32x32/actions/transsearch.png
@@ -771,6 +795,7 @@ share/kde4/services/kateopenheader.desktop
 share/kde4/services/katepybrowse.desktop
 share/kde4/services/katequickdocumentswitcher.desktop
 share/kde4/services/katesnippets.desktop
+share/kde4/services/katesnippets_tngplugin.desktop
 share/kde4/services/katesymbolviewer.desktop
 share/kde4/services/katetabbarextension.desktop
 share/kde4/services/katetextfilter.desktop
@@ -790,12 +815,14 @@ share/kde4/services/svn.protocol
 share/kde4/servicetypes/kateplugin.desktop
 share/kde4/servicetypes/komparenavigationpart.desktop
 share/kde4/servicetypes/kompareviewpart.desktop
+share/mime/application/x-katesnippets_tng.xml
+share/mime/packages/kateplugin_katesnippets_tng.xml
 share/strigi/fieldproperties/strigi_translation.fieldproperties
 @dirrm share/strigi/fieldproperties
 @dirrm share/strigi
 @dirrm share/icons/locolor/32x32/actions
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/actions
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/actions
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
 @dirrm share/doc/HTML/en/umbrello
@@ -804,7 +831,6 @@ share/strigi/fieldproperties/strigi_translation.fieldproperties
 @dirrm share/doc/HTML/en/kdesvn-build
 @dirrm share/doc/HTML/en/kcachegrind
 @dirrm share/doc/HTML/en/kbugbuster
-@dirrm share/doc/HTML/en/kate-plugins
 @dirrm share/doc/HTML/en/kate
 @dirrm share/doc/HTML/en/kapptemplate
 @dirrm share/doc/HTML/en/cervisia
@@ -817,6 +843,8 @@ share/strigi/fieldproperties/strigi_translation.fieldproperties
 @dirrmtry share/apps/lokalize
 @dirrm share/apps/kuiviewerpart
 @dirrm share/apps/kuiviewer
+@dirrm share/apps/ktexteditor_snippets/data
+@dirrm share/apps/ktexteditor_snippets
 @dirrm share/apps/kpartloader
 @dirrm share/apps/kompare
 @dirrm share/apps/kio_perldoc
@@ -838,6 +866,7 @@ share/strigi/fieldproperties/strigi_translation.fieldproperties
 @dirrm share/apps/kate/plugins/katetextfilter
 @dirrm share/apps/kate/plugins/katetabbarextension
 @dirrm share/apps/kate/plugins/katesymbolviewer
+@dirrm share/apps/kate/plugins/katesnippets_tng
 @dirrm share/apps/kate/plugins/katesnippets
 @dirrm share/apps/kate/plugins/katequickdocumentswitcher
 @dirrm share/apps/kate/plugins/katepybrowse
@@ -857,9 +886,8 @@ share/strigi/fieldproperties/strigi_translation.fieldproperties
 @dirrm share/apps/kate/icons/oxygen
 @dirrm share/apps/kate/icons
 @dirrm share/apps/kate
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake
 @dirrm share/apps/cervisiapart
 @dirrm share/apps/cervisia
+@dirrm include/ktexteditor_codesnippets_core
 @dirrm include/kompare
 @dirrm include/kate

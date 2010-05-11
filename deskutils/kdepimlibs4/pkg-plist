@@ -19,6 +19,7 @@ include/KDE/Akonadi/CollectionCreateJob
 include/KDE/Akonadi/CollectionDeleteJob
 include/KDE/Akonadi/CollectionDialog
 include/KDE/Akonadi/CollectionFetchJob
+include/KDE/Akonadi/CollectionFetchScope
 include/KDE/Akonadi/CollectionFilterProxyModel
 include/KDE/Akonadi/CollectionModel
 include/KDE/Akonadi/CollectionModifyJob
@@ -33,6 +34,9 @@ include/KDE/Akonadi/CollectionView
 include/KDE/Akonadi/Control
 include/KDE/Akonadi/Entity
 include/KDE/Akonadi/EntityDisplayAttribute
+include/KDE/Akonadi/EntityListView
+include/KDE/Akonadi/EntityTreeModel
+include/KDE/Akonadi/EntityTreeView
 include/KDE/Akonadi/Exception
 include/KDE/Akonadi/Item
 include/KDE/Akonadi/ItemCopyJob
@@ -50,13 +54,17 @@ include/KDE/Akonadi/ItemView
 include/KDE/Akonadi/Job
 include/KDE/Akonadi/LinkJob
 include/KDE/Akonadi/Monitor
+include/KDE/Akonadi/PreprocessorBase
 include/KDE/Akonadi/ResourceBase
 include/KDE/Akonadi/SearchCreateJob
 include/KDE/Akonadi/ServerManager
 include/KDE/Akonadi/Session
 include/KDE/Akonadi/StandardActionManager
-include/KDE/Akonadi/TransactionJobs
+include/KDE/Akonadi/TransactionBeginJob
+include/KDE/Akonadi/TransactionCommitJob
+include/KDE/Akonadi/TransactionRollbackJob
 include/KDE/Akonadi/TransactionSequence
+include/KDE/Akonadi/TransportResourceBase
 include/KDE/Akonadi/UnlinkJob
 include/KDE/KABC/Address
 include/KDE/KABC/AddressBook
@@ -106,6 +114,7 @@ include/KDE/KCal/Attachment
 include/KDE/KCal/Attendee
 include/KDE/KCal/CalFilter
 include/KDE/KCal/CalFormat
+include/KDE/KCal/CalHelper
 include/KDE/KCal/CalStorage
 include/KDE/KCal/Calendar
 include/KDE/KCal/CalendarLocal
@@ -122,8 +131,8 @@ include/KDE/KCal/FreeBusy
 include/KDE/KCal/FreeBusyCache
 include/KDE/KCal/FreeBusyPeriod
 include/KDE/KCal/FreeBusyUrlStore
+include/KDE/KCal/HTMLExportSettings
 include/KDE/KCal/HtmlExport
-include/KDE/KCal/HtmlExportSettings
 include/KDE/KCal/ICalDrag
 include/KDE/KCal/ICalFormat
 include/KDE/KCal/ICalTimeZones
@@ -132,7 +141,6 @@ include/KDE/KCal/Incidence
 include/KDE/KCal/IncidenceBase
 include/KDE/KCal/IncidenceFormatter
 include/KDE/KCal/Journal
-include/KDE/KCal/KCalVersion
 include/KDE/KCal/KResult
 include/KDE/KCal/ListBase
 include/KDE/KCal/Period
@@ -141,7 +149,8 @@ include/KDE/KCal/QtopiaFormat
 include/KDE/KCal/Recurrence
 include/KDE/KCal/RecurrenceRule
 include/KDE/KCal/ResourceCached
-include/KDE/KCal/ResourceCachedConfig
+include/KDE/KCal/ResourceCachedReloadConfig
+include/KDE/KCal/ResourceCachedSaveConfig
 include/KDE/KCal/ResourceCalendar
 include/KDE/KCal/ResourceLocal
 include/KDE/KCal/ResourceLocalConfig
@@ -156,13 +165,48 @@ include/KDE/KHolidays/AstroSeasons
 include/KDE/KHolidays/Holidays
 include/KDE/KHolidays/LunarPhase
 include/KDE/KHolidays/Zodiac
+include/KDE/KIMAP/Acl
+include/KDE/KIMAP/AclJobBase
+include/KDE/KIMAP/AppendJob
+include/KDE/KIMAP/CapabilitiesJob
+include/KDE/KIMAP/CloseJob
+include/KDE/KIMAP/CopyJob
+include/KDE/KIMAP/CreateJob
+include/KDE/KIMAP/DeleteAclJob
+include/KDE/KIMAP/DeleteJob
+include/KDE/KIMAP/ExpungeJob
+include/KDE/KIMAP/FetchJob
+include/KDE/KIMAP/GetAclJob
+include/KDE/KIMAP/GetMetaDataJob
+include/KDE/KIMAP/GetQuotaJob
+include/KDE/KIMAP/GetQuotaRootJob
+include/KDE/KIMAP/IdleJob
+include/KDE/KIMAP/ImapSet
+include/KDE/KIMAP/Job
+include/KDE/KIMAP/ListJob
+include/KDE/KIMAP/ListRightsJob
+include/KDE/KIMAP/LoginJob
+include/KDE/KIMAP/LogoutJob
+include/KDE/KIMAP/MetaDataJobBase
+include/KDE/KIMAP/MyRightsJob
+include/KDE/KIMAP/QuotaJobBase
+include/KDE/KIMAP/RenameJob
+include/KDE/KIMAP/SearchJob
+include/KDE/KIMAP/SelectJob
+include/KDE/KIMAP/Session
+include/KDE/KIMAP/SessionUiProxy
+include/KDE/KIMAP/SetAclJob
+include/KDE/KIMAP/SetMetaDataJob
+include/KDE/KIMAP/SetQuotaJob
+include/KDE/KIMAP/StoreJob
+include/KDE/KIMAP/SubscribeJob
+include/KDE/KIMAP/UnsubscribeJob
 include/KDE/KLDAP/Ber
 include/KDE/KLDAP/LdapAttributeProxyModel
 include/KDE/KLDAP/LdapConfigWidget
 include/KDE/KLDAP/LdapConnection
 include/KDE/KLDAP/LdapControl
 include/KDE/KLDAP/LdapDN
-include/KDE/KLDAP/LdapDefs
 include/KDE/KLDAP/LdapModel
 include/KDE/KLDAP/LdapObject
 include/KDE/KLDAP/LdapOperation
@@ -171,6 +215,18 @@ include/KDE/KLDAP/LdapServer
 include/KDE/KLDAP/LdapStructureProxyModel
 include/KDE/KLDAP/LdapUrl
 include/KDE/KLDAP/Ldif
+include/KDE/KMime/BoolFlags
+include/KDE/KMime/CharFreq
+include/KDE/KMime/Codecs
+include/KDE/KMime/Content
+include/KDE/KMime/ContentIndex
+include/KDE/KMime/DateFormatter
+include/KDE/KMime/HeaderParsing
+include/KDE/KMime/Headers
+include/KDE/KMime/KMimeMessage
+include/KDE/KMime/MDN
+include/KDE/KMime/Message
+include/KDE/KMime/NewsArticle
 include/KDE/KPIMIdentities/Identity
 include/KDE/KPIMIdentities/IdentityCombo
 include/KDE/KPIMIdentities/IdentityManager
@@ -182,7 +238,6 @@ include/KDE/KPIMUtils/Email
 include/KDE/KPIMUtils/KFileIO
 include/KDE/KPIMUtils/LinkLocator
 include/KDE/KPIMUtils/SpellingFilter
-include/KDE/KPIMUtils/SuperTrait
 include/KDE/KResources/ConfigDialog
 include/KDE/KResources/ConfigPage
 include/KDE/KResources/ConfigWidget
@@ -192,6 +247,29 @@ include/KDE/KResources/Manager
 include/KDE/KResources/ManagerImpl
 include/KDE/KResources/Resource
 include/KDE/KResources/SelectDialog
+include/KDE/KTNEF/Formatter
+include/KDE/KTNEF/KTNEFAttach
+include/KDE/KTNEF/KTNEFMessage
+include/KDE/KTNEF/KTNEFParser
+include/KDE/KTNEF/KTNEFProperty
+include/KDE/KTNEF/KTNEFPropertySet
+include/KDE/KTNEF/KTNEFWriter
+include/KDE/KontactInterface/Core
+include/KDE/KontactInterface/PimUniqueApplication
+include/KDE/KontactInterface/Plugin
+include/KDE/KontactInterface/Summary
+include/KDE/KontactInterface/UniqueAppHandler
+include/KDE/Mailtransport/PrecommandJob
+include/KDE/Mailtransport/SendmailJob
+include/KDE/Mailtransport/ServerTest
+include/KDE/Mailtransport/SmtpJob
+include/KDE/Mailtransport/Transport
+include/KDE/Mailtransport/TransportBase
+include/KDE/Mailtransport/TransportComboBox
+include/KDE/Mailtransport/TransportConfigDialog
+include/KDE/Mailtransport/TransportJob
+include/KDE/Mailtransport/TransportManagementWidget
+include/KDE/Mailtransport/TransportManager
 include/KDE/Syndication/AbstractParser
 include/KDE/Syndication/Category
 include/KDE/Syndication/Constants
@@ -230,26 +308,52 @@ include/akonadi/attributefactory.h
 include/akonadi/cachepolicy.h
 include/akonadi/changerecorder.h
 include/akonadi/collection.h
+include/akonadi/collectioncombobox.h
 include/akonadi/collectioncopyjob.h
 include/akonadi/collectioncreatejob.h
 include/akonadi/collectiondeletejob.h
 include/akonadi/collectiondialog.h
 include/akonadi/collectionfetchjob.h
+include/akonadi/collectionfetchscope.h
 include/akonadi/collectionfilterproxymodel.h
 include/akonadi/collectionmodel.h
 include/akonadi/collectionmodifyjob.h
+include/akonadi/collectionmovejob.h
 include/akonadi/collectionpropertiesdialog.h
 include/akonadi/collectionpropertiespage.h
+include/akonadi/collectionquotaattribute.h
 include/akonadi/collectionrequester.h
 include/akonadi/collectionstatistics.h
 include/akonadi/collectionstatisticsdelegate.h
 include/akonadi/collectionstatisticsjob.h
 include/akonadi/collectionstatisticsmodel.h
 include/akonadi/collectionview.h
+include/akonadi/contact/akonadi-contact_export.h
+include/akonadi/contact/contactdefaultactions.h
+include/akonadi/contact/contacteditor.h
+include/akonadi/contact/contacteditordialog.h
+include/akonadi/contact/contacteditorpageplugin.h
+include/akonadi/contact/contactgroupeditor.h
+include/akonadi/contact/contactgroupeditordialog.h
+include/akonadi/contact/contactgroupexpandjob.h
+include/akonadi/contact/contactgroupsearchjob.h
+include/akonadi/contact/contactgroupviewer.h
+include/akonadi/contact/contactgroupviewerdialog.h
+include/akonadi/contact/contactsearchjob.h
+include/akonadi/contact/contactviewer.h
+include/akonadi/contact/contactviewerdialog.h
+include/akonadi/contact/recentcontactscollectionrequestjob.h
 include/akonadi/control.h
 include/akonadi/entity.h
 include/akonadi/entitydisplayattribute.h
+include/akonadi/entityhiddenattribute.h
+include/akonadi/entitylistview.h
+include/akonadi/entitymimetypefiltermodel.h
+include/akonadi/entitytreemodel.h
+include/akonadi/entitytreeview.h
+include/akonadi/entitytreeviewstatesaver.h
 include/akonadi/exception.h
+include/akonadi/favoritecollectionsmodel.h
 include/akonadi/item.h
 include/akonadi/itemcopyjob.h
 include/akonadi/itemcreatejob.h
@@ -261,33 +365,50 @@ include/akonadi/itemmodifyjob.h
 include/akonadi/itemmonitor.h
 include/akonadi/itemmovejob.h
 include/akonadi/itempayloadinternals_p.h
+include/akonadi/itemsearchjob.h
 include/akonadi/itemserializerplugin.h
 include/akonadi/itemsync.h
 include/akonadi/itemview.h
 include/akonadi/job.h
 include/akonadi/kabc/akonadi-kabc_export.h
 include/akonadi/kabc/contactparts.h
+include/akonadi/kcal/akonadi-kcal_export.h
+include/akonadi/kcal/incidencemimetypevisitor.h
+include/akonadi/kmime/addressattribute.h
 include/akonadi/kmime/akonadi-kmime_export.h
+include/akonadi/kmime/messagefolderattribute.h
 include/akonadi/kmime/messagemodel.h
 include/akonadi/kmime/messageparts.h
 include/akonadi/kmime/messagethreaderproxymodel.h
 include/akonadi/kmime/messagethreadingattribute.h
+include/akonadi/kmime/specialmailcollections.h
+include/akonadi/kmime/specialmailcollectionsrequestjob.h
 include/akonadi/linkjob.h
 include/akonadi/mimetypechecker.h
 include/akonadi/monitor.h
+include/akonadi/partfetcher.h
+include/akonadi/preprocessorbase.h
 include/akonadi/private/collectionpathresolver_p.h
 include/akonadi/qtest_akonadi.h
 include/akonadi/resourcebase.h
+include/akonadi/resourcesynchronizationjob.h
 include/akonadi/searchcreatejob.h
+include/akonadi/selectionproxymodel.h
 include/akonadi/servermanager.h
 include/akonadi/session.h
+include/akonadi/specialcollections.h
+include/akonadi/specialcollectionsrequestjob.h
 include/akonadi/standardactionmanager.h
+include/akonadi/statisticsproxymodel.h
 include/akonadi/transactionjobs.h
 include/akonadi/transactionsequence.h
+include/akonadi/transportresourcebase.h
 include/akonadi/unlinkjob.h
+include/gpgme++/assuanresult.h
 include/gpgme++/context.h
 include/gpgme++/data.h
 include/gpgme++/decryptionresult.h
+include/gpgme++/defaultassuantransaction.h
 include/gpgme++/editinteractor.h
 include/gpgme++/encryptionresult.h
 include/gpgme++/engineinfo.h
@@ -296,12 +417,14 @@ include/gpgme++/eventloopinteractor.h
 include/gpgme++/exception.h
 include/gpgme++/global.h
 include/gpgme++/gpgadduserideditinteractor.h
+include/gpgme++/gpgagentgetinfoassuantransaction.h
 include/gpgme++/gpgme++_export.h
 include/gpgme++/gpgmefw.h
 include/gpgme++/gpgsetexpirytimeeditinteractor.h
 include/gpgme++/gpgsetownertrusteditinteractor.h
 include/gpgme++/gpgsignkeyeditinteractor.h
 include/gpgme++/importresult.h
+include/gpgme++/interfaces/assuantransaction.h
 include/gpgme++/interfaces/dataprovider.h
 include/gpgme++/interfaces/passphraseprovider.h
 include/gpgme++/interfaces/progressprovider.h
@@ -310,6 +433,7 @@ include/gpgme++/keygenerationresult.h
 include/gpgme++/keylistresult.h
 include/gpgme++/notation.h
 include/gpgme++/result.h
+include/gpgme++/scdgetinfoassuantransaction.h
 include/gpgme++/signingresult.h
 include/gpgme++/trustitem.h
 include/gpgme++/verificationresult.h
@@ -370,6 +494,7 @@ include/kcal/calendarnull.h
 include/kcal/calendarresources.h
 include/kcal/calfilter.h
 include/kcal/calformat.h
+include/kcal/calhelper.h
 include/kcal/calstorage.h
 include/kcal/comparisonvisitor.h
 include/kcal/confirmsavedialog.h
@@ -434,6 +559,7 @@ include/kimap/getacljob.h
 include/kimap/getmetadatajob.h
 include/kimap/getquotajob.h
 include/kimap/getquotarootjob.h
+include/kimap/idlejob.h
 include/kimap/imapset.h
 include/kimap/job.h
 include/kimap/kimap_export.h
@@ -443,6 +569,7 @@ include/kimap/loginjob.h
 include/kimap/logoutjob.h
 include/kimap/metadatajobbase.h
 include/kimap/myrightsjob.h
+include/kimap/namespacejob.h
 include/kimap/quotajobbase.h
 include/kimap/renamejob.h
 include/kimap/rfccodecs.h
@@ -485,6 +612,12 @@ include/kmime/kmime_mdn.h
 include/kmime/kmime_message.h
 include/kmime/kmime_newsarticle.h
 include/kmime/kmime_util.h
+include/kontactinterface/core.h
+include/kontactinterface/kontactinterface_export.h
+include/kontactinterface/pimuniqueapplication.h
+include/kontactinterface/plugin.h
+include/kontactinterface/summary.h
+include/kontactinterface/uniqueapphandler.h
 include/kpimidentities/identity.h
 include/kpimidentities/identitycombo.h
 include/kpimidentities/identitymanager.h
@@ -498,6 +631,7 @@ include/kpimutils/email.h
 include/kpimutils/kfileio.h
 include/kpimutils/kpimutils_export.h
 include/kpimutils/linklocator.h
+include/kpimutils/processes.h
 include/kpimutils/spellingfilter.h
 include/kpimutils/supertrait.h
 include/kresources/configdialog.h
@@ -521,17 +655,25 @@ include/ktnef/ktnefpropertyset.h
 include/ktnef/ktnefwriter.h
 include/kxmlrpcclient/client.h
 include/kxmlrpcclient/kxmlrpcclient_export.h
+include/mailtransport/dispatcherinterface.h
+include/mailtransport/dispatchmodeattribute.h
+include/mailtransport/errorattribute.h
 include/mailtransport/mailtransport_export.h
+include/mailtransport/messagequeuejob.h
+include/mailtransport/precommandjob.h
 include/mailtransport/sendmailjob.h
+include/mailtransport/sentbehaviourattribute.h
 include/mailtransport/servertest.h
 include/mailtransport/smtpjob.h
 include/mailtransport/transport.h
+include/mailtransport/transportattribute.h
 include/mailtransport/transportbase.h
 include/mailtransport/transportcombobox.h
 include/mailtransport/transportconfigdialog.h
 include/mailtransport/transportjob.h
 include/mailtransport/transportmanagementwidget.h
 include/mailtransport/transportmanager.h
+include/mailtransport/transporttype.h
 include/microblog/microblog_export.h
 include/microblog/statusitem.h
 include/qgpgme/dataprovider.h
@@ -616,6 +758,7 @@ lib/kde4/kabc_net.so
 lib/kde4/kabcformat_binary.so
 lib/kde4/kcal_local.so
 lib/kde4/kcal_localdir.so
+lib/kde4/kcm_akonadicontact_actions.so
 lib/kde4/kcm_kresources.so
 lib/kde4/kcm_mailtransport.so
 lib/kde4/kio_imap4.so
@@ -625,9 +768,15 @@ lib/kde4/kio_nntp.so
 lib/kde4/kio_pop3.so
 lib/kde4/kio_sieve.so
 lib/kde4/kio_smtp.so
+lib/libakonadi-contact.so
+lib/libakonadi-contact.so.5
+lib/libakonadi-contact.so.5.0.1
 lib/libakonadi-kabc.so
 lib/libakonadi-kabc.so.5
 lib/libakonadi-kabc.so.5.0.1
+lib/libakonadi-kcal.so
+lib/libakonadi-kcal.so.5
+lib/libakonadi-kcal.so.5.0.1
 lib/libakonadi-kde.so
 lib/libakonadi-kde.so.5
 lib/libakonadi-kde.so.5.0.1
@@ -636,13 +785,13 @@ lib/libakonadi-kmime.so.5
 lib/libakonadi-kmime.so.5.0.1
 %%WITH_PTH%%lib/libgpgme++-pth.so
 %%WITH_PTH%%lib/libgpgme++-pth.so.2
-%%WITH_PTH%%lib/libgpgme++-pth.so.2.2.1
+%%WITH_PTH%%lib/libgpgme++-pth.so.2.4.0
 lib/libgpgme++-pthread.so
 lib/libgpgme++-pthread.so.2
-lib/libgpgme++-pthread.so.2.2.1
+lib/libgpgme++-pthread.so.2.4.0
 lib/libgpgme++.so
 lib/libgpgme++.so.2
-lib/libgpgme++.so.2.2.1
+lib/libgpgme++.so.2.4.0
 lib/libkabc.so
 lib/libkabc.so.5
 lib/libkabc.so.5.0.1
@@ -667,6 +816,9 @@ lib/libkldap.so.5.0.1
 lib/libkmime.so
 lib/libkmime.so.5
 lib/libkmime.so.5.0.1
+lib/libkontactinterface.so
+lib/libkontactinterface.so.5
+lib/libkontactinterface.so.5.0.1
 lib/libkpimidentities.so
 lib/libkpimidentities.so.5
 lib/libkpimidentities.so.5.0.1
@@ -698,6 +850,8 @@ lib/libsyndication.so
 lib/libsyndication.so.5
 lib/libsyndication.so.5.0.1
 share/apps/akonadi-kde/kcfg2dbus.xsl
+share/apps/akonadi/contact/data/zone.tab
+share/apps/akonadi/contact/pics/world.jpg
 share/apps/cmake/modules/CheckTimezone.cmake
 share/apps/cmake/modules/FindAkonadi.cmake
 share/apps/cmake/modules/FindGpgme.cmake
@@ -748,6 +902,7 @@ share/apps/libkholidays/holiday_lt
 share/apps/libkholidays/holiday_luFrench
 share/apps/libkholidays/holiday_luLuxembourgish
 share/apps/libkholidays/holiday_mx
+share/apps/libkholidays/holiday_na
 share/apps/libkholidays/holiday_nl
 share/apps/libkholidays/holiday_no
 share/apps/libkholidays/holiday_nz
@@ -766,6 +921,8 @@ share/apps/libkholidays/holiday_us
 share/apps/libkholidays/holiday_uy
 share/apps/libkholidays/holiday_za
 share/config.kcfg/mailtransport.kcfg
+share/config.kcfg/recentcontactscollections.kcfg
+share/config.kcfg/specialmailcollections.kcfg
 share/dbus-1/interfaces/org.kde.KResourcesManager.xml
 share/dbus-1/interfaces/org.kde.pim.IdentityManager.xml
 share/doc/HTML/en/kcontrol/kresources/common
@@ -777,15 +934,22 @@ share/doc/HTML/en/kioslave/imap/index.docbook
 share/doc/HTML/en/kioslave/ldap/common
 share/doc/HTML/en/kioslave/ldap/index.cache.bz2
 share/doc/HTML/en/kioslave/ldap/index.docbook
+share/doc/HTML/en/kioslave/mbox/common
+share/doc/HTML/en/kioslave/mbox/index.cache.bz2
+share/doc/HTML/en/kioslave/mbox/index.docbook
 share/doc/HTML/en/kioslave/nntp/common
 share/doc/HTML/en/kioslave/nntp/index.cache.bz2
 share/doc/HTML/en/kioslave/nntp/index.docbook
 share/doc/HTML/en/kioslave/pop3/common
 share/doc/HTML/en/kioslave/pop3/index.cache.bz2
 share/doc/HTML/en/kioslave/pop3/index.docbook
+share/doc/HTML/en/kioslave/sieve/common
+share/doc/HTML/en/kioslave/sieve/index.cache.bz2
+share/doc/HTML/en/kioslave/sieve/index.docbook
 share/doc/HTML/en/kioslave/smtp/common
 share/doc/HTML/en/kioslave/smtp/index.cache.bz2
 share/doc/HTML/en/kioslave/smtp/index.docbook
+share/kde4/services/akonadicontact_actions.desktop
 share/kde4/services/imap4.protocol
 share/kde4/services/imaps.protocol
 share/kde4/services/kcm_mailtransport.desktop
@@ -808,20 +972,25 @@ share/kde4/services/pop3s.protocol
 share/kde4/services/sieve.protocol
 share/kde4/services/smtp.protocol
 share/kde4/services/smtps.protocol
+share/kde4/servicetypes/kontactplugin.desktop
 share/kde4/servicetypes/kresources_manager.desktop
 share/kde4/servicetypes/kresources_plugin.desktop
 share/mime/application/x-vnd.kde.contactgroup.xml
 share/mime/packages/kdepimlibs-mime.xml
 @dirrm share/doc/HTML/en/kioslave/smtp
+@dirrm share/doc/HTML/en/kioslave/sieve
 @dirrm share/doc/HTML/en/kioslave/pop3
 @dirrm share/doc/HTML/en/kioslave/nntp
+@dirrm share/doc/HTML/en/kioslave/mbox
 @dirrm share/doc/HTML/en/kioslave/ldap
 @dirrm share/doc/HTML/en/kioslave/imap
 @dirrm share/doc/HTML/en/kcontrol/kresources
 @dirrm share/apps/libkholidays
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake
+@dirrm share/apps/akonadi/contact/pics
+@dirrm share/apps/akonadi/contact/data
+@dirrm share/apps/akonadi/contact
 @dirrm share/apps/akonadi-kde
+@dirrm share/apps/akonadi
 @dirrm lib/gpgmepp
 @dirrm lib/KdepimLibs/cmake
 @dirrm lib/KdepimLibs
@@ -838,6 +1007,7 @@ share/mime/packages/kdepimlibs-mime.xml
 @dirrm include/kpimutils
 @dirrm include/kpimtextedit
 @dirrm include/kpimidentities
+@dirrm include/kontactinterface
 @dirrm include/kmime
 @dirrm include/kldap
 @dirrm include/kimap
@@ -849,17 +1019,23 @@ share/mime/packages/kdepimlibs-mime.xml
 @dirrm include/gpgme++
 @dirrmtry include/akonadi/private
 @dirrm include/akonadi/kmime
+@dirrm include/akonadi/kcal
 @dirrm include/akonadi/kabc
+@dirrm include/akonadi/contact
 @dirrmtry include/akonadi
 @dirrm include/KDE/Syndication
+@dirrm include/KDE/Mailtransport
+@dirrm include/KDE/KontactInterface
+@dirrm include/KDE/KTNEF
 @dirrm include/KDE/KResources
 @dirrm include/KDE/KPIMUtils
 @dirrm include/KDE/KPIMTextEdit
 @dirrm include/KDE/KPIMIdentities
+@dirrm include/KDE/KMime
 @dirrm include/KDE/KLDAP
+@dirrm include/KDE/KIMAP
 @dirrm include/KDE/KHolidays
 @dirrm include/KDE/KCal
 @dirrm include/KDE/KBlog
 @dirrm include/KDE/KABC
 @dirrm include/KDE/Akonadi
-@dirrm include/KDE

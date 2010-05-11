@@ -58,6 +58,7 @@ share/locale/mk/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/mk/LC_MESSAGES/kcm_lirc.mo
 share/locale/mk/LC_MESSAGES/kcm_memory.mo
 share/locale/mk/LC_MESSAGES/kcm_partition.mo
+share/locale/mk/LC_MESSAGES/kcm_pci.mo
 share/locale/mk/LC_MESSAGES/kcm_phonon.mo
 share/locale/mk/LC_MESSAGES/kcm_solid.mo
 share/locale/mk/LC_MESSAGES/kcm_standard_actions.mo
@@ -70,7 +71,6 @@ share/locale/mk/LC_MESSAGES/kcmcgi.mo
 share/locale/mk/LC_MESSAGES/kcmcolors.mo
 share/locale/mk/LC_MESSAGES/kcmcomponentchooser.mo
 share/locale/mk/LC_MESSAGES/kcmcrypto.mo
-share/locale/mk/LC_MESSAGES/kcmenergy.mo
 share/locale/mk/LC_MESSAGES/kcmfonts.mo
 share/locale/mk/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/mk/LC_MESSAGES/kcmicons.mo
@@ -78,7 +78,6 @@ share/locale/mk/LC_MESSAGES/kcminfo.mo
 share/locale/mk/LC_MESSAGES/kcminit.mo
 share/locale/mk/LC_MESSAGES/kcminput.mo
 share/locale/mk/LC_MESSAGES/kcmioslaveinfo.mo
-share/locale/mk/LC_MESSAGES/kcmkabconfig.mo
 share/locale/mk/LC_MESSAGES/kcmkamera.mo
 share/locale/mk/LC_MESSAGES/kcmkclock.mo
 share/locale/mk/LC_MESSAGES/kcmkded.mo
@@ -96,7 +95,6 @@ share/locale/mk/LC_MESSAGES/kcmkwindecoration.mo
 share/locale/mk/LC_MESSAGES/kcmkwinrules.mo
 share/locale/mk/LC_MESSAGES/kcmkwm.mo
 share/locale/mk/LC_MESSAGES/kcmlaunch.mo
-share/locale/mk/LC_MESSAGES/kcmlilo.mo
 share/locale/mk/LC_MESSAGES/kcmlocale.mo
 share/locale/mk/LC_MESSAGES/kcmnic.mo
 share/locale/mk/LC_MESSAGES/kcmnotify.mo
@@ -113,10 +111,10 @@ share/locale/mk/LC_MESSAGES/kcmview1394.mo
 share/locale/mk/LC_MESSAGES/kcmxinerama.mo
 share/locale/mk/LC_MESSAGES/kcolorchooser.mo
 share/locale/mk/LC_MESSAGES/kcron.mo
-share/locale/mk/LC_MESSAGES/kdat.mo
 share/locale/mk/LC_MESSAGES/kde-menu.mo
 share/locale/mk/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/mk/LC_MESSAGES/kdebugdialog.mo
+share/locale/mk/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/mk/LC_MESSAGES/kdelibs4.mo
 share/locale/mk/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/mk/LC_MESSAGES/kdelirc.mo
@@ -124,7 +122,6 @@ share/locale/mk/LC_MESSAGES/kdepasswd.mo
 share/locale/mk/LC_MESSAGES/kdepimresources.mo
 share/locale/mk/LC_MESSAGES/kdepimwizards.mo
 share/locale/mk/LC_MESSAGES/kdeqt.mo
-share/locale/mk/LC_MESSAGES/kdessh.mo
 share/locale/mk/LC_MESSAGES/kdesu.mo
 share/locale/mk/LC_MESSAGES/kdesud.mo
 share/locale/mk/LC_MESSAGES/kdf.mo
@@ -137,7 +134,6 @@ share/locale/mk/LC_MESSAGES/kfile.mo
 share/locale/mk/LC_MESSAGES/kfile_avi.mo
 share/locale/mk/LC_MESSAGES/kfile_dds.mo
 share/locale/mk/LC_MESSAGES/kfile_drgeo.mo
-share/locale/mk/LC_MESSAGES/kfile_dvi.mo
 share/locale/mk/LC_MESSAGES/kfile_exr.mo
 share/locale/mk/LC_MESSAGES/kfile_flac.mo
 share/locale/mk/LC_MESSAGES/kfile_kig.mo
@@ -241,11 +237,9 @@ share/locale/mk/LC_MESSAGES/konsolekalendar.mo
 share/locale/mk/LC_MESSAGES/kontact.mo
 share/locale/mk/LC_MESSAGES/kopete.mo
 share/locale/mk/LC_MESSAGES/korganizer.mo
-share/locale/mk/LC_MESSAGES/kpackage.mo
 share/locale/mk/LC_MESSAGES/kpartsaver.mo
 share/locale/mk/LC_MESSAGES/kpasswdserver.mo
 share/locale/mk/LC_MESSAGES/kpat.mo
-share/locale/mk/LC_MESSAGES/kpilot.mo
 share/locale/mk/LC_MESSAGES/kppp.mo
 share/locale/mk/LC_MESSAGES/kppplogview.mo
 share/locale/mk/LC_MESSAGES/kquitapp.mo
@@ -259,8 +253,6 @@ share/locale/mk/LC_MESSAGES/kres_groupware.mo
 share/locale/mk/LC_MESSAGES/kres_groupwise.mo
 share/locale/mk/LC_MESSAGES/kres_kolab.mo
 share/locale/mk/LC_MESSAGES/kres_remote.mo
-share/locale/mk/LC_MESSAGES/kres_tvanytime.mo
-share/locale/mk/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/mk/LC_MESSAGES/kreversi.mo
 share/locale/mk/LC_MESSAGES/krfb.mo
 share/locale/mk/LC_MESSAGES/kruler.mo
@@ -283,7 +275,6 @@ share/locale/mk/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/mk/LC_MESSAGES/kstyle_phase_config.mo
 share/locale/mk/LC_MESSAGES/ksysguard.mo
 share/locale/mk/LC_MESSAGES/ksystraycmd.mo
-share/locale/mk/LC_MESSAGES/ksysv.mo
 share/locale/mk/LC_MESSAGES/kteatime.mo
 share/locale/mk/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/mk/LC_MESSAGES/kthememanager.mo
@@ -327,6 +318,8 @@ share/locale/mk/LC_MESSAGES/libkpgp.mo
 share/locale/mk/LC_MESSAGES/libkscreensaver.mo
 share/locale/mk/LC_MESSAGES/libksieve.mo
 share/locale/mk/LC_MESSAGES/libkworkspace.mo
+share/locale/mk/LC_MESSAGES/libmessagelist.mo
+share/locale/mk/LC_MESSAGES/libmessageviewer.mo
 share/locale/mk/LC_MESSAGES/libphonon.mo
 share/locale/mk/LC_MESSAGES/libplasma.mo
 share/locale/mk/LC_MESSAGES/libplasmaclock.mo
@@ -350,17 +343,22 @@ share/locale/mk/LC_MESSAGES/parley.mo
 share/locale/mk/LC_MESSAGES/phonon-xine.mo
 share/locale/mk/LC_MESSAGES/phonon_kde.mo
 share/locale/mk/LC_MESSAGES/plasma-desktop.mo
+share/locale/mk/LC_MESSAGES/plasma-overlay.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_clock.mo
-share/locale/mk/LC_MESSAGES/plasma_applet_desktop.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_dig_clock.mo
+share/locale/mk/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_kget.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_launcher.mo
+share/locale/mk/LC_MESSAGES/plasma_applet_lockout.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_quicklaunch.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_system-monitor.mo
+share/locale/mk/LC_MESSAGES/plasma_applet_systemtray.mo
+share/locale/mk/LC_MESSAGES/plasma_applet_tasks.mo
+share/locale/mk/LC_MESSAGES/plasma_applet_trash.mo
 share/locale/mk/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/mk/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/mk/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
@@ -372,6 +370,7 @@ share/locale/mk/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/mk/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/mk/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/mk/LC_MESSAGES/plasmaengineexplorer.mo
+share/locale/mk/LC_MESSAGES/plasmapkg.mo
 share/locale/mk/LC_MESSAGES/processcore.mo
 share/locale/mk/LC_MESSAGES/processui.mo
 share/locale/mk/LC_MESSAGES/solid-bluetooth.mo
