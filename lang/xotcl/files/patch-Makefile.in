@@ -1,6 +1,6 @@
---- Makefile.in.orig	2007-08-06 13:35:56.000000000 +0200
-+++ Makefile.in	2007-08-13 16:13:07.000000000 +0200
-@@ -262,11 +262,11 @@
+--- Makefile.in.orig	2009-03-04 16:11:13.000000000 +0100
++++ Makefile.in	2010-05-11 10:36:59.435600858 +0200
+@@ -264,11 +264,11 @@
  #========================================================================
  # This rule installs platform-independent files, such as header files.
  #========================================================================
@@ -15,7 +15,7 @@
  	done;
  	@echo "Installing Libraries to $(DESTDIR)$(pkglibdir)/"
  	@for i in $(libdirs) ; do \
-@@ -284,7 +284,7 @@
+@@ -286,7 +286,7 @@
  	    $(INSTALL_DATA) $(src_lib_dir)/$$i $(DESTDIR)$(pkglibdir)/$$i ; \
  	done;
  	cat unix/pkgIndex.unix >> $(DESTDIR)$(pkglibdir)/pkgIndex.tcl
@@ -24,7 +24,25 @@
  	@echo "Installing Applications to $(DESTDIR)$(pkglibdir)/apps/"
  	@for i in $(appdirs) ; do \
  	    echo "    Installing $$i/" ; \
-@@ -543,7 +543,6 @@
+@@ -430,13 +430,15 @@
+ 	$(CC) -rdynamic -o $@ tclAppInit.o \
+ 		$(PKG_OBJECTS) \
+ 		$(CFLAGS)  $(TCL_LIB_SPEC) \
+-		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS)
++		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS) \
++		$(LDFLAGS_DEFAULT)
+ 
+ xowish: tkAppInit.o $(PKG_OBJECTS) $(CONDITIONAL_STUB_OBJECTS)
+ 	$(CC) -rdynamic -o $@ tkAppInit.o \
+ 		$(PKG_OBJECTS) \
+ 		$(CFLAGS)  $(TCL_LIB_SPEC) $(TK_LIB_SPEC) \
+-		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS)
++		$(DMALLOC_LIB) $(CONDITIONAL_STUB_OBJECTS) \
++		$(LDFLAGS_DEFAULT)
+ 
+ install-shells:
+ 	@if test -f xotclsh; then \
+@@ -550,7 +552,6 @@
  	    else \
  		echo " $(RANLIB) $(DESTDIR)$(pkglibdir)/$$p"; \
  		$(RANLIB) $(DESTDIR)$(pkglibdir)/$$p; \
@@ -32,7 +50,7 @@
  	    fi; \
  	    ext=`echo $$p|sed -e "s/.*\.//"`; \
  	    if test "x$$ext" = "xdll"; then \
-@@ -600,12 +599,12 @@
+@@ -607,12 +608,12 @@
  	  rm -f $(DESTDIR)$(bindir)/$$p; \
  	done
  

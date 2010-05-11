@@ -64,7 +64,7 @@
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/univ/server.key
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/actiweb/univ/server.pem
 %%ACTIWEB%%lib/xotcl%%PORTVERSION%%/apps/persistence/persistenceTest.xotcl
-%%ACTIWEB%%lib/xotclexpat0.9/libxotclexpat0.9.so
+%%ACTIWEB%%lib/xotclexpat0.9/libxotclexpat.so.1
 %%ACTIWEB%%lib/xotclexpat0.9/pkgIndex.tcl
 %%ACTIWEB%%lib/xotclsdbm1.2/libxotclsdbm1.2.so
 %%ACTIWEB%%lib/xotclsdbm1.2/pkgIndex.tcl
@@ -132,8 +132,8 @@ lib/xotcl%%PORTVERSION%%/lib/trace.xotcl
 lib/xotcl%%PORTVERSION%%/lib/upvarcompat.xotcl
 lib/xotcl%%PORTVERSION%%/lib/wafecompat.tcl
 lib/xotcl%%PORTVERSION%%/lib/xodoc.xotcl
-lib/xotcl%%PORTVERSION%%/libxotcl%%PORTVERSION%%.so
-lib/xotcl%%PORTVERSION%%/libxotclstub%%PORTVERSION%%.a
+lib/xotcl%%PORTVERSION%%/libxotcl.so.1
+lib/xotcl%%PORTVERSION%%/libxotclstub.a
 lib/xotcl%%PORTVERSION%%/pkgIndex.tcl
 lib/xotcl%%PORTVERSION%%/serialize/RecoveryPoint.xotcl
 lib/xotcl%%PORTVERSION%%/serialize/ScriptCreator.xotcl

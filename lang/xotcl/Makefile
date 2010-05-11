@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xotcl
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 CATEGORIES?=	lang tcl
 MASTER_SITES=	SF \
 		http://media.wu-wien.ac.at/download/
@@ -30,6 +30,9 @@ PORTDOCS=	*
 
 OPTIONS=	ACTIWEB		"Include actiweb"		on \
 		TUTORIAL	"Install XOTcl tutorial" 	off
+
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}/include,${LOCALBASE}/lib
 .else
 AOLSERVERBASE?=	aolserver
 .endif
@@ -72,7 +75,9 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 			--with-tclinclude=${TCL_INCLUDEDIR}/generic/ \
 			--with-xotclsh
 
-CONFIGURE_ENV+=		TCL_INCLUDEDIR=${TCL_INCLUDEDIR}
+CONFIGURE_ENV+=		TCL_INCLUDEDIR="${TCL_INCLUDEDIR}" \
+			PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+			PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|TCLSH_PROG=".*"|TCLSH_PROG="${TCLSH}"|g' \
