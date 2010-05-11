@@ -27,6 +27,7 @@ bin/xmoto
 %%DATADIR%%/Textures/Fonts/DejaVuSans.ttf
 %%DATADIR%%/Textures/Musics/MadeiraStew.ogg
 %%DATADIR%%/Textures/Musics/batcave.ogg
+%%DATADIR%%/Textures/Musics/foxrun.ogg
 %%DATADIR%%/Textures/Musics/legolodio.ogg
 %%DATADIR%%/Textures/Musics/menu.ogg
 %%DATADIR%%/Textures/Musics/ridealong.ogg
