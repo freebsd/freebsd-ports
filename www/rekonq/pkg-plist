@@ -3,7 +3,7 @@ lib/libkdeinit4_rekonq.so
 share/applications/kde4/rekonq.desktop
 share/apps/rekonq/defaultbookmarks.xbel
 share/apps/rekonq/htmls/home.html
-share/apps/rekonq/htmls/notfound.html
+share/apps/rekonq/htmls/rekonqinfo.html
 share/apps/rekonq/pics/bg.png
 share/apps/rekonq/pics/bg2.png
 share/apps/rekonq/pics/bot.gif
@@ -25,12 +25,19 @@ share/icons/hicolor/128x128/apps/rekonq.png
 share/icons/hicolor/16x16/apps/rekonq.png
 share/icons/hicolor/32x32/apps/rekonq.png
 share/icons/hicolor/64x64/apps/rekonq.png
+share/locale/ca/LC_MESSAGES/rekonq.mo
+share/locale/cs/LC_MESSAGES/rekonq.mo
 share/locale/da/LC_MESSAGES/rekonq.mo
 share/locale/de/LC_MESSAGES/rekonq.mo
 share/locale/en_GB/LC_MESSAGES/rekonq.mo
 share/locale/es/LC_MESSAGES/rekonq.mo
 share/locale/fr/LC_MESSAGES/rekonq.mo
+share/locale/gl/LC_MESSAGES/rekonq.mo
+share/locale/hu/LC_MESSAGES/rekonq.mo
 share/locale/it/LC_MESSAGES/rekonq.mo
+share/locale/nds/LC_MESSAGES/rekonq.mo
+share/locale/nl/LC_MESSAGES/rekonq.mo
+share/locale/pl/LC_MESSAGES/rekonq.mo
 share/locale/pt/LC_MESSAGES/rekonq.mo
 share/locale/pt_BR/LC_MESSAGES/rekonq.mo
 share/locale/ru/LC_MESSAGES/rekonq.mo
@@ -38,6 +45,7 @@ share/locale/sr/LC_MESSAGES/rekonq.mo
 share/locale/sv/LC_MESSAGES/rekonq.mo
 share/locale/tr/LC_MESSAGES/rekonq.mo
 share/locale/uk/LC_MESSAGES/rekonq.mo
+share/locale/zh_CN/LC_MESSAGES/rekonq.mo
 @dirrm share/doc/HTML/en/rekonq
 @dirrm share/apps/rekonq/pics
 @dirrm share/apps/rekonq/htmls
