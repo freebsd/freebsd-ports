@@ -89,7 +89,9 @@ bin/bashbug
 %%NLS%%share/locale/eo/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/es/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/et/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/id/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bash.mo
