@@ -1,4 +1,3 @@
-share/apps/koffice/autocorrect/nds.xml
 share/locale/nds/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/nds/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/nds/LC_MESSAGES/CalendarTool.mo
@@ -42,7 +41,3 @@ share/locale/nds/LC_MESSAGES/kspreadsolver.mo
 share/locale/nds/LC_MESSAGES/kthesaurus.mo
 share/locale/nds/LC_MESSAGES/kword.mo
 share/locale/nds/LC_MESSAGES/thesaurus_tool.mo
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/apps/koffice/autocorrect
-@dirrmtry share/apps/koffice

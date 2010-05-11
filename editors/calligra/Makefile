@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	koffice
-PORTVERSION=	2.1.0
-PORTREVISION=	5
+PORTVERSION=	${KOFFICE2_VERSION}
+PORTREVISION?=	0
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/
@@ -19,23 +19,23 @@ COMMENT=	Office suite for KDE
 
 BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
 		gmm++>=3.0.4:${PORTSDIR}/math/gmm++
-LIB_DEPENDS=	GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
-		exiv2.7:${PORTSDIR}/graphics/exiv2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
-		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		png.6:${PORTSDIR}/graphics/png \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		wpg-0.1:${PORTSDIR}/graphics/libwpg \
-		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		qca.2:${PORTSDIR}/devel/qca \
+		GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
+		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		exiv2.7:${PORTSDIR}/graphics/exiv2 \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		kipi.7:${PORTSDIR}/graphics/kdegraphics4 \
+		lcms.1:${PORTSDIR}/graphics/lcms \
+		wpg-0.1:${PORTSDIR}/graphics/libwpg \
+		png.6:${PORTSDIR}/graphics/png \
+		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
+		tiff.4:${PORTSDIR}/graphics/tiff \
 		gsl:${PORTSDIR}/math/gsl \
 		wv2.4:${PORTSDIR}/textproc/wv2 \
-		kipi.6:${PORTSDIR}/graphics/kdegraphics4
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
@@ -51,11 +51,13 @@ USE_LDCONFIG=	yes
 CMAKE_VERBOSE=	yes
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include"
 
-OPTIONS=	GTL	"Color transformations in Krita (currently broken)" off
+OPTIONS=	GTL	"Color transformations in Krita (broken with llvm-2.7)" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
+# GTL support is broken with llvm-2.7
 WITHOUT_GTL=	yes
+
 .if !defined(WITHOUT_GTL) || exists (${LOCALBASE}/lib/libQtShiva.so)
 LIB_DEPENDS+=	OpenCTL.0:${PORTSDIR}/graphics/opengtl \
 		QtShiva.0:${PORTSDIR}/graphics/qtgtl
@@ -76,14 +78,16 @@ post-patch:
 # prevent updating mime during build/install
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
 		${PATCH_WRKSRC}/krita/plugins/formats/ora/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
-		${PATCH_WRKSRC}/cmake/modules/FindWPD.cmake
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' \
 		${PATCH_WRKSRC}/cmake/modules/FindGLEW.cmake
 	${REINPLACE_CMD} -e 's|/opt/local|${LOCALBASE}|' \
 		${PATCH_WRKSRC}/cmake/modules/FindImageMagick.cmake
+	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
+		${PATCH_WRKSRC}/cmake/modules/FindWPD.cmake
+	${REINPLACE_CMD} -e 's|/libwpg-0.1||' \
+		${PATCH_WRKSRC}/filters/karbon/wpg/import/CMakeLists.txt
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

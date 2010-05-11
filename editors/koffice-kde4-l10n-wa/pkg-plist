@@ -4,6 +4,7 @@ share/locale/wa/LC_MESSAGES/CalendarTool.mo
 share/locale/wa/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/wa/LC_MESSAGES/ChartShape.mo
 share/locale/wa/LC_MESSAGES/DivineProportion.mo
+share/locale/wa/LC_MESSAGES/FormulaShape.mo
 share/locale/wa/LC_MESSAGES/KarbonDockersPlugin.mo
 share/locale/wa/LC_MESSAGES/KarbonTools.mo
 share/locale/wa/LC_MESSAGES/MusicShape.mo
@@ -17,6 +18,7 @@ share/locale/wa/LC_MESSAGES/VariablesPlugin.mo
 share/locale/wa/LC_MESSAGES/desktop_koffice.mo
 share/locale/wa/LC_MESSAGES/karbon.mo
 share/locale/wa/LC_MESSAGES/kchart.mo
+share/locale/wa/LC_MESSAGES/kformula.mo
 share/locale/wa/LC_MESSAGES/kocolorspaces.mo
 share/locale/wa/LC_MESSAGES/koconverter.mo
 share/locale/wa/LC_MESSAGES/koffice-defaulttools.mo

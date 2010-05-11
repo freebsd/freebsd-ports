@@ -29,33 +29,6 @@ share/doc/HTML/uk/kpresenter/menus.docbook
 share/doc/HTML/uk/kpresenter/options.docbook
 share/doc/HTML/uk/kpresenter/screen.docbook
 share/doc/HTML/uk/kpresenter/tutorial.docbook
-share/doc/HTML/uk/krita/commands-dialogs.docbook
-share/doc/HTML/uk/krita/commands-menus.docbook
-share/doc/HTML/uk/krita/commands-palettes.docbook
-share/doc/HTML/uk/krita/commands-toolbars.docbook
-share/doc/HTML/uk/krita/commands.docbook
-share/doc/HTML/uk/krita/common
-share/doc/HTML/uk/krita/credits.docbook
-share/doc/HTML/uk/krita/developers-plugins.docbook
-share/doc/HTML/uk/krita/developers-scripting.docbook
-share/doc/HTML/uk/krita/developers.docbook
-share/doc/HTML/uk/krita/faq.docbook
-share/doc/HTML/uk/krita/index.cache.bz2
-share/doc/HTML/uk/krita/index.docbook
-share/doc/HTML/uk/krita/installation.docbook
-share/doc/HTML/uk/krita/introduction.docbook
-share/doc/HTML/uk/krita/settings.docbook
-share/doc/HTML/uk/krita/tutorial-quick-starts.docbook
-share/doc/HTML/uk/krita/tutorial-select-layer.docbook
-share/doc/HTML/uk/krita/tutorial-starting.docbook
-share/doc/HTML/uk/krita/tutorial-tablet.docbook
-share/doc/HTML/uk/krita/tutorial.docbook
-share/doc/HTML/uk/krita/using-colorspaces.docbook
-share/doc/HTML/uk/krita/using-filters.docbook
-share/doc/HTML/uk/krita/using-images.docbook
-share/doc/HTML/uk/krita/using-layers.docbook
-share/doc/HTML/uk/krita/using-selections.docbook
-share/doc/HTML/uk/krita/using-views.docbook
 share/doc/HTML/uk/kspread/a11y.docbook
 share/doc/HTML/uk/kspread/advanced.docbook
 share/doc/HTML/uk/kspread/basics.docbook
@@ -116,7 +89,6 @@ share/locale/uk/LC_MESSAGES/kword.mo
 share/locale/uk/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/uk/thesaurus
 @dirrm share/doc/HTML/uk/kspread
-@dirrm share/doc/HTML/uk/krita
 @dirrm share/doc/HTML/uk/kpresenter
 @dirrm share/doc/HTML/uk/kplato
 @dirrm share/doc/HTML/uk/koffice

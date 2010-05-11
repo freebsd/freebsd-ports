@@ -1,35 +1,12 @@
-share/apps/koffice/autocorrect/it.xml
 share/doc/HTML/it/karbon/common
 share/doc/HTML/it/karbon/index.cache.bz2
 share/doc/HTML/it/karbon/index.docbook
 share/doc/HTML/it/kchart/common
 share/doc/HTML/it/kchart/index.cache.bz2
 share/doc/HTML/it/kchart/index.docbook
-share/doc/HTML/it/kexi/basics.docbook
-share/doc/HTML/it/kexi/building.docbook
-share/doc/HTML/it/kexi/common
-share/doc/HTML/it/kexi/comparing.docbook
-share/doc/HTML/it/kexi/configuration.docbook
-share/doc/HTML/it/kexi/credits.docbook
-share/doc/HTML/it/kexi/database.docbook
-share/doc/HTML/it/kexi/designingforms.docbook
-share/doc/HTML/it/kexi/enteringdataintotables.docbook
-share/doc/HTML/it/kexi/enteringdatausingforms.docbook
-share/doc/HTML/it/kexi/index.cache.bz2
-share/doc/HTML/it/kexi/index.docbook
-share/doc/HTML/it/kexi/intro.docbook
-share/doc/HTML/it/kexi/menus.docbook
-share/doc/HTML/it/kexi/querydesigning.docbook
 share/doc/HTML/it/kformula/common
 share/doc/HTML/it/kformula/index.cache.bz2
 share/doc/HTML/it/kformula/index.docbook
-share/doc/HTML/it/kivio/common
-share/doc/HTML/it/kivio/credits.docbook
-share/doc/HTML/it/kivio/index.cache.bz2
-share/doc/HTML/it/kivio/index.docbook
-share/doc/HTML/it/kivio/introduction.docbook
-share/doc/HTML/it/kivio/usage.docbook
-share/doc/HTML/it/kivio/working.docbook
 share/doc/HTML/it/koffice/common
 share/doc/HTML/it/koffice/index.cache.bz2
 share/doc/HTML/it/koffice/index.docbook
@@ -52,33 +29,6 @@ share/doc/HTML/it/kpresenter/menus.docbook
 share/doc/HTML/it/kpresenter/options.docbook
 share/doc/HTML/it/kpresenter/screen.docbook
 share/doc/HTML/it/kpresenter/tutorial.docbook
-share/doc/HTML/it/krita/commands-dialogs.docbook
-share/doc/HTML/it/krita/commands-menus.docbook
-share/doc/HTML/it/krita/commands-palettes.docbook
-share/doc/HTML/it/krita/commands-toolbars.docbook
-share/doc/HTML/it/krita/commands.docbook
-share/doc/HTML/it/krita/common
-share/doc/HTML/it/krita/credits.docbook
-share/doc/HTML/it/krita/developers-plugins.docbook
-share/doc/HTML/it/krita/developers-scripting.docbook
-share/doc/HTML/it/krita/developers.docbook
-share/doc/HTML/it/krita/faq.docbook
-share/doc/HTML/it/krita/index.cache.bz2
-share/doc/HTML/it/krita/index.docbook
-share/doc/HTML/it/krita/installation.docbook
-share/doc/HTML/it/krita/introduction.docbook
-share/doc/HTML/it/krita/settings.docbook
-share/doc/HTML/it/krita/tutorial-quick-starts.docbook
-share/doc/HTML/it/krita/tutorial-select-layer.docbook
-share/doc/HTML/it/krita/tutorial-starting.docbook
-share/doc/HTML/it/krita/tutorial-tablet.docbook
-share/doc/HTML/it/krita/tutorial.docbook
-share/doc/HTML/it/krita/using-colorspaces.docbook
-share/doc/HTML/it/krita/using-filters.docbook
-share/doc/HTML/it/krita/using-images.docbook
-share/doc/HTML/it/krita/using-layers.docbook
-share/doc/HTML/it/krita/using-selections.docbook
-share/doc/HTML/it/krita/using-views.docbook
 share/doc/HTML/it/kspread/a11y.docbook
 share/doc/HTML/it/kspread/advanced.docbook
 share/doc/HTML/it/kspread/basics.docbook
@@ -139,14 +89,9 @@ share/locale/it/LC_MESSAGES/kword.mo
 share/locale/it/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/it/thesaurus
 @dirrm share/doc/HTML/it/kspread
-@dirrm share/doc/HTML/it/krita
 @dirrm share/doc/HTML/it/kpresenter
 @dirrm share/doc/HTML/it/kplato
 @dirrm share/doc/HTML/it/koffice
-@dirrm share/doc/HTML/it/kivio
 @dirrm share/doc/HTML/it/kformula
-@dirrm share/doc/HTML/it/kexi
 @dirrm share/doc/HTML/it/kchart
 @dirrm share/doc/HTML/it/karbon
-@dirrmtry share/apps/koffice/autocorrect
-@dirrmtry share/apps/koffice

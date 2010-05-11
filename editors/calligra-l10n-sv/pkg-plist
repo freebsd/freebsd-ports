@@ -33,22 +33,6 @@ share/doc/HTML/sv/kchart/kchart-wizard3.png
 share/doc/HTML/sv/kchart/kchart-wizard4.png
 share/doc/HTML/sv/kchart/shortcut.png
 share/doc/HTML/sv/kchart/toolbars.png
-share/doc/HTML/sv/kexi/basics.docbook
-share/doc/HTML/sv/kexi/building.docbook
-share/doc/HTML/sv/kexi/common
-share/doc/HTML/sv/kexi/comparing.docbook
-share/doc/HTML/sv/kexi/configuration.docbook
-share/doc/HTML/sv/kexi/contact-example.png
-share/doc/HTML/sv/kexi/credits.docbook
-share/doc/HTML/sv/kexi/database.docbook
-share/doc/HTML/sv/kexi/designingforms.docbook
-share/doc/HTML/sv/kexi/enteringdataintotables.docbook
-share/doc/HTML/sv/kexi/enteringdatausingforms.docbook
-share/doc/HTML/sv/kexi/index.cache.bz2
-share/doc/HTML/sv/kexi/index.docbook
-share/doc/HTML/sv/kexi/intro.docbook
-share/doc/HTML/sv/kexi/menus.docbook
-share/doc/HTML/sv/kexi/querydesigning.docbook
 share/doc/HTML/sv/kformula/ambiguous-string.png
 share/doc/HTML/sv/kformula/common
 share/doc/HTML/sv/kformula/green1.png
@@ -68,13 +52,6 @@ share/doc/HTML/sv/kformula/scilab-edit.png
 share/doc/HTML/sv/kformula/shortcut0.png
 share/doc/HTML/sv/kformula/shortcut1.png
 share/doc/HTML/sv/kformula/toolbars.png
-share/doc/HTML/sv/kivio/common
-share/doc/HTML/sv/kivio/credits.docbook
-share/doc/HTML/sv/kivio/index.cache.bz2
-share/doc/HTML/sv/kivio/index.docbook
-share/doc/HTML/sv/kivio/introduction.docbook
-share/doc/HTML/sv/kivio/usage.docbook
-share/doc/HTML/sv/kivio/working.docbook
 share/doc/HTML/sv/koffice/common
 share/doc/HTML/sv/koffice/index.cache.bz2
 share/doc/HTML/sv/koffice/index.docbook
@@ -417,8 +394,6 @@ share/locale/sv/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/sv/kpresenter
 @dirrm share/doc/HTML/sv/kplato
 @dirrm share/doc/HTML/sv/koffice
-@dirrm share/doc/HTML/sv/kivio
 @dirrm share/doc/HTML/sv/kformula
-@dirrm share/doc/HTML/sv/kexi
 @dirrm share/doc/HTML/sv/kchart
 @dirrm share/doc/HTML/sv/karbon

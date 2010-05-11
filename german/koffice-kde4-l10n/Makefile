@@ -7,7 +7,6 @@
 
 PORTNAME=	koffice-l10n
 PORTVERSION=	${KOFFICE2_VERSION}
-PORTREVISION=	2
 CATEGORIES?=	german editors kde
 
 MAINTAINER=	kde@FreeBSD.org

@@ -1,4 +1,3 @@
-share/apps/koffice/autocorrect/es.xml
 share/doc/HTML/es/karbon/common
 share/doc/HTML/es/karbon/index.cache.bz2
 share/doc/HTML/es/karbon/index.docbook
@@ -74,13 +73,6 @@ share/doc/HTML/es/kformula/shortcut1.png
 share/doc/HTML/es/kformula/sin.png
 share/doc/HTML/es/kformula/toolbars.png
 share/doc/HTML/es/kformula/upper-index.png
-share/doc/HTML/es/kivio/common
-share/doc/HTML/es/kivio/credits.docbook
-share/doc/HTML/es/kivio/index.cache.bz2
-share/doc/HTML/es/kivio/index.docbook
-share/doc/HTML/es/kivio/introduction.docbook
-share/doc/HTML/es/kivio/usage.docbook
-share/doc/HTML/es/kivio/working.docbook
 share/doc/HTML/es/koffice/common
 share/doc/HTML/es/koffice/index.cache.bz2
 share/doc/HTML/es/koffice/index.docbook
@@ -199,9 +191,6 @@ share/locale/es/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/es/kpresenter
 @dirrm share/doc/HTML/es/kplato
 @dirrm share/doc/HTML/es/koffice
-@dirrm share/doc/HTML/es/kivio
 @dirrm share/doc/HTML/es/kformula
 @dirrm share/doc/HTML/es/kchart
 @dirrm share/doc/HTML/es/karbon
-@dirrmtry share/apps/koffice/autocorrect
-@dirrmtry share/apps/koffice
