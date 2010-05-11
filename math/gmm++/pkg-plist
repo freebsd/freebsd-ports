@@ -31,6 +31,7 @@ include/gmm/gmm_precond_ilu.h
 include/gmm/gmm_precond_ilut.h
 include/gmm/gmm_precond_ilutp.h
 include/gmm/gmm_precond_mr_approx_inverse.h
+include/gmm/gmm_range_basis.h
 include/gmm/gmm_real_part.h
 include/gmm/gmm_ref.h
 include/gmm/gmm_scaled.h

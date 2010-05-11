@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shared-desktop-ontologies
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/oscaf/${PORTNAME}/${PORTVERSION}
 
