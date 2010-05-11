@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTVERSION=	2.8.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 PKGNAMESUFFIX=	-gui
@@ -37,6 +36,9 @@ post-patch:
 		${FIND} ${WRKSRC}/Tests -name "CMakeLists.txt" -print0 ) | \
 		${XARGS} -0 -n 100 ${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g; \
 			s,/usr/X11R6,${LOCALBASE},g'
+
+post-configure:
+	${ECHO} "cmake:" >> ${BUILD_WRKSRC}/Makefile
 
 pre-install:
 	${LN} -sf ${CMAKE_BIN} ${WRKSRC}/bin
