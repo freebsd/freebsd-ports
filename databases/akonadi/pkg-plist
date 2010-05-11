@@ -2,6 +2,7 @@ bin/akonadi_control
 bin/akonadictl
 bin/akonadiserver
 include/akonadi/private/akonadiprotocolinternals_export.h
+include/akonadi/private/capabilities_p.h
 include/akonadi/private/imapparser_p.h
 include/akonadi/private/imapset_p.h
 include/akonadi/private/notificationmessage_p.h
@@ -11,10 +12,10 @@ lib/cmake/Akonadi/AkonadiConfig.cmake
 lib/cmake/Akonadi/AkonadiConfigVersion.cmake
 lib/libakonadiprivate.so
 lib/libakonadiprivate.so.1
-lib/libakonadiprivate.so.1.2.1
+lib/libakonadiprivate.so.1.3.1
 lib/libakonadiprotocolinternals.so
 lib/libakonadiprotocolinternals.so.1
-lib/libakonadiprotocolinternals.so.1.2.1
+lib/libakonadiprotocolinternals.so.1.3.1
 libdata/pkgconfig/akonadi.pc
 share/config/akonadi/mysql-global.conf
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
@@ -23,18 +24,14 @@ share/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.DebugInterface.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.Preprocessor.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
-share/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
-share/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
-share/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 share/dbus-1/services/org.freedesktop.Akonadi.Control.service
 share/mime/packages/akonadi-mime.xml
 @dirrm share/config/akonadi
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake
 @dirrm lib/cmake/Akonadi
 @dirrm lib/cmake
 @dirrmtry include/akonadi/private
