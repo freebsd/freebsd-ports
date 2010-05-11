@@ -1181,6 +1181,10 @@ share/examples/qt4/examples/graphicsview/portedcanvas/portedcanvas.pro
 share/examples/qt4/examples/graphicsview/portedcanvas/portedcanvas.qrc
 share/examples/qt4/examples/graphicsview/portedcanvas/qt-trans.xpm
 share/examples/qt4/examples/graphicsview/portedcanvas/qtlogo.png
+share/examples/qt4/examples/graphicsview/simpleanchorlayout/main.cpp
+share/examples/qt4/examples/graphicsview/simpleanchorlayout/simpleanchorlayout
+%%DEBUG%%share/examples/qt4/examples/graphicsview/simpleanchorlayout/simpleanchorlayout.debug
+share/examples/qt4/examples/graphicsview/simpleanchorlayout/simpleanchorlayout.pro
 share/examples/qt4/examples/graphicsview/weatheranchorlayout/images/5days.jpg
 share/examples/qt4/examples/graphicsview/weatheranchorlayout/images/details.jpg
 share/examples/qt4/examples/graphicsview/weatheranchorlayout/images/place.jpg
@@ -2504,6 +2508,11 @@ share/examples/qt4/examples/webkit/formextractor/formextractor.ui
 share/examples/qt4/examples/webkit/formextractor/main.cpp
 share/examples/qt4/examples/webkit/formextractor/mainwindow.cpp
 share/examples/qt4/examples/webkit/formextractor/mainwindow.h
+share/examples/qt4/examples/webkit/framecapture/framecapture
+%%DEBUG%%share/examples/qt4/examples/webkit/framecapture/framecapture.debug
+share/examples/qt4/examples/webkit/framecapture/framecapture.cpp
+share/examples/qt4/examples/webkit/framecapture/framecapture.h
+share/examples/qt4/examples/webkit/framecapture/main.cpp
 share/examples/qt4/examples/webkit/googlechat/form.ui
 share/examples/qt4/examples/webkit/googlechat/googlechat
 share/examples/qt4/examples/webkit/googlechat/googlechat.cpp
@@ -2951,6 +2960,7 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/webkit/simpleselector
 @dirrm share/examples/qt4/examples/webkit/previewer
 @dirrm share/examples/qt4/examples/webkit/googlechat
+@dirrm share/examples/qt4/examples/webkit/framecapture
 @dirrm share/examples/qt4/examples/webkit/formextractor
 @dirrm share/examples/qt4/examples/webkit/fancybrowser
 @dirrm share/examples/qt4/examples/webkit/domtraversal
@@ -3155,6 +3165,7 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/examples/help
 @dirrm share/examples/qt4/examples/graphicsview/weatheranchorlayout/images
 @dirrm share/examples/qt4/examples/graphicsview/weatheranchorlayout
+@dirrm share/examples/qt4/examples/graphicsview/simpleanchorlayout
 @dirrm share/examples/qt4/examples/graphicsview/portedcanvas
 @dirrm share/examples/qt4/examples/graphicsview/portedasteroids/sprites/ship
 @dirrm share/examples/qt4/examples/graphicsview/portedasteroids/sprites/shield

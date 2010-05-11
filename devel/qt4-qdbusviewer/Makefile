@@ -8,7 +8,6 @@
 
 PORTNAME=	qdbusviewer
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	devel
 PKGNAMEPREFIX=	qt4-
 
@@ -49,12 +48,10 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
-.include <bsd.port.pre.mk>
-
-pre-configure:
+post-patch:
 	${MKDIR} ${WRKSRC}/mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -32,6 +32,7 @@ include/qt4/phonon/ObjectDescriptionData
 include/qt4/phonon/ObjectDescriptionModel
 include/qt4/phonon/ObjectDescriptionModelData
 include/qt4/phonon/Path
+include/qt4/phonon/Phonon
 include/qt4/phonon/PlatformPlugin
 include/qt4/phonon/SeekSlider
 include/qt4/phonon/StreamInterface

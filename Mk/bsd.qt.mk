@@ -115,7 +115,7 @@ QTCGFLIBS?=
 # QT4 version
 # Don't forget to update ${PORTSDIR}/devel/qt4/files/patch-configure !
 #
-QT4_VERSION?=		4.6.1
+QT4_VERSION?=		4.6.2
 
 _QT_COMPONENTS_ALL=	accessible assistant assistant-adp assistantclient \
 			clucene codecs-cn codecs-jp codecs-kr codecs-tw corelib \
@@ -210,14 +210,14 @@ opengl_DEPENDS=	${QT_LIBDIR}/libQtOpenGL.so
 pixeltool_PORT=		graphics/qt4-pixeltool
 pixeltool_DEPENDS=	${QT_PREFIX}/bin/pixeltool
 
-.if defined(WITH_KDE_PHONON)
+.if !defined(WITH_QT_PHONON)
 phonon_PORT=	multimedia/phonon
 .else
 phonon_PORT=	multimedia/qt4-phonon
 .endif
 phonon_DEPENDS=	${QT_LIBDIR}/libphonon.so
 
-.if defined(WITH_KDE_PHONON)
+.if !defined(WITH_QT_PHONON)
 phonon-gst_PORT=	multimedia/phonon-gstreamer
 .else
 phonon-gst_PORT=	multimedia/qt4-phonon-gst
