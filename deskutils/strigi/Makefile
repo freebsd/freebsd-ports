@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	strigi
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.vandenoever.info/software/strigi/ \
+		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Desktop searching program
@@ -18,7 +18,7 @@ LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene \
 		exiv2:${PORTSDIR}/graphics/exiv2
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus moc_build uic_build qmake_build
+QT_COMPONENTS=	corelib gui dbus moc_build uic_build qmake_build rcc_build
 USE_BZIP2=	yes
 USE_GNOME=	libxml2 pkgconfig
 # USE_FAM=	yes
@@ -32,5 +32,8 @@ post-patch:
 		's,$${LIB_DESTINATION}/pkgconfig,libdata/pkgconfig,' \
 		${WRKSRC}/src/streamanalyzer/CMakeLists.txt \
 		${WRKSRC}/src/streams/CMakeLists.txt
+	${REINPLACE_CMD} -e \
+		's,\[56\],\[567\],' \
+		${WRKSRC}/src/xsd/CMakeLists.txt
 
 .include <bsd.port.mk>

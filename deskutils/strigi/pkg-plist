@@ -1,6 +1,7 @@
 bin/deepfind
 bin/deepgrep
 bin/luceneindexer
+bin/rdfindexer
 bin/strigiclient
 bin/strigicmd
 bin/strigidaemon
@@ -55,19 +56,19 @@ include/strigi/textutils.h
 include/strigi/variant.h
 lib/libsearchclient.so
 lib/libsearchclient.so.0
-lib/libsearchclient.so.0.6.4
+lib/libsearchclient.so.0.7.2
 lib/libstreamanalyzer.so
 lib/libstreamanalyzer.so.0
-lib/libstreamanalyzer.so.0.6.4
+lib/libstreamanalyzer.so.0.7.2
 lib/libstreams.so
 lib/libstreams.so.0
-lib/libstreams.so.0.6.4
+lib/libstreams.so.0.7.2
 lib/libstrigihtmlgui.so
 lib/libstrigihtmlgui.so.0
-lib/libstrigihtmlgui.so.0.6.4
+lib/libstrigihtmlgui.so.0.7.2
 lib/libstrigiqtdbusclient.so
 lib/libstrigiqtdbusclient.so.0
-lib/libstrigiqtdbusclient.so.0.6.4
+lib/libstrigiqtdbusclient.so.0.7.2
 lib/strigi/StrigiConfig.cmake
 lib/strigi/strigiea_jpeg.so
 lib/strigi/strigiindex_clucene.so
@@ -90,9 +91,16 @@ libdata/pkgconfig/libstreamanalyzer.pc
 libdata/pkgconfig/libstreams.pc
 share/dbus-1/services/org.freedesktop.xesam.searcher.service
 share/dbus-1/services/vandenoever.strigi.service
+%%DATADIR%%/fieldproperties/homeless.rdfs
+%%DATADIR%%/fieldproperties/nao_data.rdfs
+%%DATADIR%%/fieldproperties/ncal_data.rdfs
+%%DATADIR%%/fieldproperties/nco_data.rdfs
+%%DATADIR%%/fieldproperties/nexif_data.rdfs
+%%DATADIR%%/fieldproperties/nfo_data.rdfs
+%%DATADIR%%/fieldproperties/nid3_data.rdfs
+%%DATADIR%%/fieldproperties/nie_data.rdfs
+%%DATADIR%%/fieldproperties/nmo_data.rdfs
 %%DATADIR%%/fieldproperties/strigi.rdfs
-%%DATADIR%%/fieldproperties/xesam-convenience.rdfs
-%%DATADIR%%/fieldproperties/xesam.rdfs
 @dirrmtry %%DATADIR%%/fieldproperties
 @dirrmtry %%DATADIR%%
 @dirrmtry lib/strigi

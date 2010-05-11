@@ -13,10 +13,14 @@ share/ontology/dc/dctype.ontology
 share/ontology/dc/dctype.trig
 share/ontology/nepomuk/nao.ontology
 share/ontology/nepomuk/nao.trig
+share/ontology/nepomuk/ndo.ontology
+share/ontology/nepomuk/ndo.trig
 share/ontology/nepomuk/nrl.ontology
 share/ontology/nepomuk/nrl.trig
 share/ontology/nepomuk/nso.ontology
 share/ontology/nepomuk/nso.trig
+share/ontology/nepomuk/nuao.ontology
+share/ontology/nepomuk/nuao.trig
 share/ontology/nie/ncal.ontology
 share/ontology/nie/ncal.trig
 share/ontology/nie/nco.ontology
@@ -44,3 +48,4 @@ share/ontology/pimo/tmo.trig
 @dirrm share/ontology/core
 @dirrm share/ontology
 @dirrm share/cmake/SharedDesktopOntologies
+@dirrmtry share/cmake
