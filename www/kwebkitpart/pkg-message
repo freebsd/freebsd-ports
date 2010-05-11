@@ -1,0 +1,13 @@
+======================================================================
+
+You can now switch between the different rendering engines in
+Konqueror (a website must be open) through the menu:
+View -> View Mode -> {KHTML, WebKit}.
+If WebKit does not show up in Konqueror, run `kbuildsycoca4` and
+restart Konqueror.
+
+If you want to set KWebKitPart as default for any website, run
+`keditfiletype text/html` and move "WebKit (kwebkitpart)" in the
+"Embedding" tab to the top.
+
+======================================================================
