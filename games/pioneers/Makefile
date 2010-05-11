@@ -9,7 +9,7 @@ PORTNAME=	pioneers
 PORTVERSION=	0.12.2
 PORTREVISION=	4
 CATEGORIES=	games gnome
-MASTER_SITES=	SF/pio/Source%20code/Pioneers%200.12
+MASTER_SITES=	SF/pio/Source/
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	An Internet playable version of the Settlers of Catan for GNOME/GTK+
