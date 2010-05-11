@@ -98,6 +98,7 @@
     SUBDIR += py-curl
     SUBDIR += py-ftputil
     SUBDIR += py-pyftpdlib
+    SUBDIR += py-tftpy
     SUBDIR += quftp
     SUBDIR += rexx-curl
     SUBDIR += scythia

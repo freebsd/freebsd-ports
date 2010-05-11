@@ -1,0 +1,24 @@
+bin/tftpy_client.py
+bin/tftpy_server.py
+%%PYTHON_SITELIBDIR%%/tftpy/TftpServer.py
+%%PYTHON_SITELIBDIR%%/tftpy/TftpPacketTypes.py
+%%PYTHON_SITELIBDIR%%/tftpy/TftpStates.py
+%%PYTHON_SITELIBDIR%%/tftpy/TftpShared.py
+%%PYTHON_SITELIBDIR%%/tftpy/__init__.py
+%%PYTHON_SITELIBDIR%%/tftpy/TftpClient.py
+%%PYTHON_SITELIBDIR%%/tftpy/TftpPacketFactory.py
+%%PYTHON_SITELIBDIR%%/tftpy/TftpServer.pyc
+%%PYTHON_SITELIBDIR%%/tftpy/TftpPacketTypes.pyc
+%%PYTHON_SITELIBDIR%%/tftpy/TftpStates.pyc
+%%PYTHON_SITELIBDIR%%/tftpy/TftpShared.pyc
+%%PYTHON_SITELIBDIR%%/tftpy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/tftpy/TftpClient.pyc
+%%PYTHON_SITELIBDIR%%/tftpy/TftpPacketFactory.pyc
+%%PYTHON_SITELIBDIR%%/tftpy/TftpServer.pyo
+%%PYTHON_SITELIBDIR%%/tftpy/TftpPacketTypes.pyo
+%%PYTHON_SITELIBDIR%%/tftpy/TftpStates.pyo
+%%PYTHON_SITELIBDIR%%/tftpy/TftpShared.pyo
+%%PYTHON_SITELIBDIR%%/tftpy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/tftpy/TftpClient.pyo
+%%PYTHON_SITELIBDIR%%/tftpy/TftpPacketFactory.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/tftpy
