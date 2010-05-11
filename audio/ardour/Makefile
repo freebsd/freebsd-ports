@@ -7,7 +7,7 @@
 
 PORTNAME=	ardour
 PORTVERSION=	2.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://freebsd.nsu.ru/distfiles/ \
@@ -18,7 +18,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A multichannel digital audio workstation
 
 LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
-		raptor.2:${PORTSDIR}/textproc/raptor \
+		raptor.3:${PORTSDIR}/textproc/raptor \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		jack.0:${PORTSDIR}/audio/jack \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \

@@ -4,7 +4,7 @@ include/raptor.h
 lib/libraptor.a
 lib/libraptor.la
 lib/libraptor.so
-lib/libraptor.so.2
+lib/libraptor.so.3
 libdata/pkgconfig/raptor.pc
 @exec mkdir -p %D/share/gtk-doc/html/raptor
 share/gtk-doc/html/raptor/parser-rdfa.html
@@ -41,6 +41,7 @@ share/gtk-doc/html/raptor/raptor-section-triples.html
 share/gtk-doc/html/raptor/raptor-section-unicode.html
 share/gtk-doc/html/raptor/raptor-section-uri-factory.html
 share/gtk-doc/html/raptor/raptor-section-uri.html
+share/gtk-doc/html/raptor/raptor-section-world.html
 share/gtk-doc/html/raptor/raptor-section-www.html
 share/gtk-doc/html/raptor/raptor-section-xml-namespace.html
 share/gtk-doc/html/raptor/raptor-section-xml-qname.html

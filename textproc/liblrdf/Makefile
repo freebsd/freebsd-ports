@@ -6,7 +6,7 @@
 
 PORTNAME=	liblrdf
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/lrdf/${PORTNAME}/${PORTVERSION}
 
@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating RDF files describing LADSPA plugins
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	raptor.2:${PORTSDIR}/textproc/raptor
+LIB_DEPENDS=	raptor.3:${PORTSDIR}/textproc/raptor
 
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack gnometarget

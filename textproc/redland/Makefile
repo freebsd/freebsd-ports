@@ -7,22 +7,22 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTVERSION=	1.0.10
 CATEGORIES=	textproc
 MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
 		http://librdf.org/dist/source/
 
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A high-level interface for RDF
 
-LIB_DEPENDS=	raptor.2:${PORTSDIR}/textproc/raptor
+LIB_DEPENDS=	raptor.3:${PORTSDIR}/textproc/raptor \
+		rasqal.2:${PORTSDIR}/textproc/rasqal
 
 USE_BDB=	yes
 WITH_BDB_HIGHEST=	yes
 INVALID_BDB_VER=2
-USE_GNOME=	gnomehack gnometarget lthack pkgconfig
+USE_GNOME=	gnomehack gnometarget lthack pkgconfig libxml2
+USE_AUTOTOOLS=	libltdl:22
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -31,44 +31,67 @@ CPPFLAGS=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-raptor=system \
-		--with-rasqal=internal \
-		--with-threestore=no \
-		--with-sqlite=no
+		--with-threestore=no
 
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
 
-MAN1=		rasqal-config.1 rdfproc.1 redland-config.1 \
-		redland-db-upgrade.1 roqet.1
-MAN3=		librasqal.3 redland.3
+MAN1=		rdfproc.1 redland-config.1 \
+		redland-db-upgrade.1
+MAN3=		redland.3
 
-OPTIONS+=	MYSQL "Use MySQL instead of BDB" off
-OPTIONS+=	MPFR  "Use MPFR library for decimals (implies GMP)" off
-OPTIONS+=	GMP   "Use Gnu MP library for decimals" off
+OPTIONS+=	THREADS "Enable Threads" off
+#		MYSQL "Use MySQL instead of BDB" off \
+#		PGSQL "Use PgSQL instead of BDB" off \
+#		SQLITE "Use SQLite instead of BDB" off \
+#		VIRTUOSO "Use Virtoso instead of BDB" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_MYSQL)
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql=yes
-PLIST_SUB+=	MYSQL=""
+.if defined(WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--disable-threads
 .else
+CONFIGURE_ARGS+=	--enable-threads
+.endif
+
+#.if defined(WITH_MYSQL)
+#USE_MYSQL=	yes
+#CONFIGURE_ARGS+=--with-mysql=yes
+#CONFIGURE_ENV+=	LIBS="${LIBS}"
+#CFLAGS+=	-I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
+#LDFLAGS+=	-L${LOCALBASE}/lib/mysql
+#PLIST_SUB+=	MYSQL=""
+#.else
 CONFIGURE_ARGS+=--with-mysql=no
 PLIST_SUB+=	MYSQL="@comment "
-.endif
+#.endif
 
-# Set to mpfr if MPFR is on, gmp if only GMP is on and none if neither.
-# This guards against $user setting both GMP and MPFR, since we can't be
-# very verbose in explaining our options.
-.if defined(WITH_MPFR)
-CONFIGURE_ARGS+=	--with-decimal=mpfr
-LIB_DEPENDS+=	mpfr.3:${PORTSDIR}/math/mpfr
-.elif defined(WITH_GMP)
-CONFIGURE_ARGS+=	--with-decimal=gmp
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
-.else
-CONFIGURE_ARGS+=	--with-decimal=none
-.endif
+#.if defined(WITH_PGSQL)
+#USE_PGSQL=	yes
+#CONFIGURE_ARGS+=--with-postgresql=yes
+#PLIST_SUB+=	PGSQL=""
+#.else
+CONFIGURE_ARGS+=--with-postgresql=no
+PLIST_SUB+=	PGSQL="@comment "
+#.endif
+
+#.if defined(WITH_SQLITE)
+#USE_SQLITE=	3
+#CONFIGURE_ARGS+=--with-sqlite=3
+#PLIST_SUB+=	SQLITE=""
+#.else
+CONFIGURE_ARGS+=--with-sqlite=no
+PLIST_SUB+=	SQLITE="@comment "
+#.endif
+
+#.if defined(WITH_VIRTUOSO)
+#CONFIGURE_ARGS+=--with-virtuoso=yes
+#LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+#PLIST_SUB+=	VIRTUOSO=""
+#.else
+CONFIGURE_ARGS+=--with-virtuoso=no
+PLIST_SUB+=	VIRTUOSO="@comment "
+#.endif
 
 pre-everything::
 	@${ECHO_CMD} "You can choose BDB version by setting WITH_BDB_VER to one off:"
@@ -79,4 +102,4 @@ pre-everything::
 	@${ECHO_CMD} "and set WITH_MYSQL_VER to the desired version"
 .	endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
