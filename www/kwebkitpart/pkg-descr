@@ -1,0 +1,6 @@
+KWebKitPart is a web browser component for KDE (KPart). You can use it
+for example for browsing the web in Konqueror. KWebKitPart is still in
+early development and thus not guaranted to be in production quality
+yet. Please report any issues to: https://bugs.kde.org.
+
+WWW: http://techbase.kde.org/Projects/WebKit

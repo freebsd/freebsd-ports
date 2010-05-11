@@ -352,6 +352,7 @@
     SUBDIR += khtml2png
     SUBDIR += knowledgekit
     SUBDIR += kompozer
+    SUBDIR += kwebkitpart
     SUBDIR += larbin
     SUBDIR += libapreq2
     SUBDIR += libecap
