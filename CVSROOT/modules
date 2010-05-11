@@ -539,6 +539,7 @@ apel-emacs22                    ports/editors/apel-emacs22
 apercu                          ports/www/apercu
 apertium                        ports/textproc/apertium
 apg                             ports/security/apg
+api-sanity-autotest             ports/devel/api-sanity-autotest
 apinger                         ports/net/apinger
 apollon                         ports/net-p2p/apollon
 apoolGL                         ports/games/apoolGL
@@ -1800,6 +1801,7 @@ conglomerate                    ports/editors/conglomerate
 conky                           ports/sysutils/conky
 conky-awesome                   ports/sysutils/conky-awesome
 conkyemail                      ports/deskutils/conkyemail
+conkyforecast                   ports/deskutils/conkyforecast
 connect4                        ports/games/connect4
 connectfive                     ports/games/connectfive
 conquest                        ports/games/conquest
@@ -3360,6 +3362,7 @@ festvox-rab8                    ports/audio/festvox-rab8
 festvox-us1-mbrola              ports/audio/festvox-us1-mbrola
 festvox-us2-mbrola              ports/audio/festvox-us2-mbrola
 festvox-us3-mbrola              ports/audio/festvox-us3-mbrola
+fet                             ports/deskutils/fet
 fetchconfig                     ports/net-mgmt/fetchconfig
 fetchlog                        ports/sysutils/fetchlog
 fetchmail                       ports/mail/fetchmail
@@ -7711,6 +7714,7 @@ libgltext                       ports/graphics/libgltext
 libglu                          ports/graphics/libGLU
 libglut                         ports/graphics/libglut
 libglw                          ports/graphics/libGLw
+libgme                          ports/audio/libgme
 libgnetwork                     ports/net/libgnetwork
 libgnome                        ports/x11/libgnome
 libgnome-java                   ports/x11/libgnome-java
@@ -10277,6 +10281,7 @@ oniguruma                       ports/devel/oniguruma
 oniguruma4                      ports/devel/oniguruma4
 oniguruma5                      ports/devel/oniguruma5
 onion-fec                       ports/net/onion-fec
+onioncat                        ports/net/onioncat
 onis                            ports/irc/onis
 online-desktop                  ports/net/online-desktop
 ontv                            ports/deskutils/ontv
@@ -10515,10 +10520,14 @@ p3scan                          ports/mail/p3scan
 p4                              ports/devel/p4
 p4.el                           ports/devel/p4.el
 p4api                           ports/devel/p4api
+p4d                             ports/devel/p4d
 p4db                            ports/devel/p4db
 p4delta                         ports/devel/p4delta
+p4ftpd                          ports/devel/p4ftpd
 p4genpatch                      ports/devel/p4genpatch
+p4p                             ports/devel/p4p
 p4v                             ports/devel/p4v
+p4web                           ports/devel/p4web
 p5-AI-Categorizer               ports/textproc/p5-AI-Categorizer
 p5-AI-DecisionTree              ports/math/p5-AI-DecisionTree
 p5-AI-Genetic                   ports/math/p5-AI-Genetic
@@ -10943,6 +10952,7 @@ p5-CSS-SAC                      ports/textproc/p5-CSS-SAC
 p5-CSS-Squish                   ports/textproc/p5-CSS-Squish
 p5-CSS-Tiny                     ports/textproc/p5-CSS-Tiny
 p5-Cache                        ports/devel/p5-Cache
+p5-Cache-AgainstFile            ports/devel/p5-Cache-AgainstFile
 p5-Cache-BDB                    ports/databases/p5-Cache-BDB
 p5-Cache-Cache                  ports/devel/p5-Cache-Cache
 p5-Cache-FastMmap               ports/devel/p5-Cache-FastMmap
@@ -14690,6 +14700,7 @@ p5-business-worldpay-junior     ports/finance/p5-Business-WorldPay-Junior
 p5-bz-client                    ports/devel/p5-BZ-Client
 p5-c-scan                       ports/devel/p5-C-Scan
 p5-cache                        ports/devel/p5-Cache
+p5-cache-againstfile            ports/devel/p5-Cache-AgainstFile
 p5-cache-bdb                    ports/databases/p5-Cache-BDB
 p5-cache-cache                  ports/devel/p5-Cache-Cache
 p5-cache-fastmmap               ports/devel/p5-Cache-FastMmap
@@ -18304,6 +18315,7 @@ pam_authsrv                     ports/security/pam_authsrv
 pam_bsdbioapi                   ports/security/pam_bsdbioapi
 pam_fprint                      ports/security/pam_fprint
 pam_helper                      ports/security/pam_helper
+pam_jail                        ports/security/pam_jail
 pam_ldap                        ports/security/pam_ldap
 pam_mkhomedir                   ports/security/pam_mkhomedir
 pam_p11                         ports/security/pam_p11
@@ -20134,6 +20146,7 @@ publicfile                      ports/www/publicfile
 puf                             ports/ftp/puf
 puff                            ports/editors/puff
 pugs                            ports/lang/pugs
+pulledpork                      ports/security/pulledpork
 pulseaudio                      ports/audio/pulseaudio
 pumperweb                       ports/www/pumperweb
 punbb                           ports/www/punbb
@@ -23979,6 +23992,7 @@ treeviewx                       ports/biology/treeviewx
 treewm                          ports/x11-wm/treewm
 tremor                          ports/games/tremor
 tremulous                       ports/games/tremulous
+tren                            ports/sysutils/tren
 triangle                        ports/math/triangle
 tribler                         ports/net-p2p/tribler
 trickle                         ports/net/trickle
