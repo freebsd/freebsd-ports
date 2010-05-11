@@ -266,11 +266,13 @@
     SUBDIR += kde4-l10n-bg
     SUBDIR += kde4-l10n-bn_IN
     SUBDIR += kde4-l10n-ca
+    SUBDIR += kde4-l10n-ca_valencia
     SUBDIR += kde4-l10n-cs
     SUBDIR += kde4-l10n-csb
     SUBDIR += kde4-l10n-da
     SUBDIR += kde4-l10n-el
     SUBDIR += kde4-l10n-en_GB
+    SUBDIR += kde4-l10n-eo
     SUBDIR += kde4-l10n-es
     SUBDIR += kde4-l10n-et
     SUBDIR += kde4-l10n-eu
@@ -282,6 +284,7 @@
     SUBDIR += kde4-l10n-hi
     SUBDIR += kde4-l10n-hne
     SUBDIR += kde4-l10n-hr
+    SUBDIR += kde4-l10n-id
     SUBDIR += kde4-l10n-is
     SUBDIR += kde4-l10n-it
     SUBDIR += kde4-l10n-kk
@@ -300,6 +303,7 @@
     SUBDIR += kde4-l10n-nn
     SUBDIR += kde4-l10n-pa
     SUBDIR += kde4-l10n-ro
+    SUBDIR += kde4-l10n-si
     SUBDIR += kde4-l10n-sk
     SUBDIR += kde4-l10n-sl
     SUBDIR += kde4-l10n-sr
