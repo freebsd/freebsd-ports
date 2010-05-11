@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2010-05-10 21:44:45.000000000 +0200
++++ ./Makefile.in	2010-05-10 21:44:59.000000000 +0200
+@@ -349,7 +349,7 @@
+ LIBINTL_H = @LIBINTL_H@
+ 
+ # libiconv
+-LIBICONV = @LIBICONV@
++LIBICONV = -liconv
+ 
+ # tests
+ LIBINTL = @LIBINTL@
