@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/kipi/${PORTNAME}/${PORTVERSION}
@@ -16,7 +15,7 @@ MAINTAINER=	kris@pcbsd.org
 COMMENT=	KDE4 kipi graphics plugins
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		kipi.6:${PORTSDIR}/graphics/kdegraphics4
+		kipi.7:${PORTSDIR}/graphics/kdegraphics4
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 LATEST_LINK=	${PORTNAME}-kde4
@@ -35,7 +34,7 @@ OPTIONS=	GPOD "Enable Ipod Export plugin" ON \
 		OPENCV "Enable Red Eye Removal plugin" ON \
 		PIMLIBS "Enable Calendar plugin" ON
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GPOD)
 LIB_DEPENDS+=	gpod.5:${PORTSDIR}/audio/libgpod
@@ -64,4 +63,8 @@ CMAKE_ARGS+=	-DWITH_KdepimLibs:BOOL=OFF
 PLIST_SUB+=	PIMLIBS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|<endian.h>|<sys/endian.h>|g' \
+		${PATCH_WRKSRC}/dngconverter/dngwriter/extra/dng_sdk/dng_flags.h
+
+.include <bsd.port.mk>
