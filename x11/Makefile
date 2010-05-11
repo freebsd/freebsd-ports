@@ -244,6 +244,8 @@
     SUBDIR += padkey
     SUBDIR += peeper
     SUBDIR += pixman
+    SUBDIR += plasma-scriptengine-python
+    SUBDIR += plasma-scriptengine-ruby
     SUBDIR += portoseguro
     SUBDIR += powershell
     SUBDIR += printproto

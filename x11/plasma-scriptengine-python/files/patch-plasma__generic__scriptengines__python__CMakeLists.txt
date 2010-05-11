@@ -1,0 +1,11 @@
+--- ./plasma/generic/scriptengines/python/CMakeLists.txt.orig	2009-11-13 13:57:51.000000000 +0300
++++ ./plasma/generic/scriptengines/python/CMakeLists.txt	2010-03-14 01:48:21.780880917 +0300
+@@ -1,5 +1,8 @@
+ project(plasma-python)
+ 
++find_package(KDE4 4.4.1 REQUIRED)
++macro_optional_find_package(PythonLibrary)
++
+ INCLUDE(PythonMacros)
+ 
+ # install the library, .desktop, and plasma.py

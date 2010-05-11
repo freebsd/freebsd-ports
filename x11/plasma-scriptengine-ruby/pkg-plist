@@ -1,0 +1,5 @@
+share/apps/plasma_scriptengine_ruby/applet.rb
+share/apps/plasma_scriptengine_ruby/data_engine.rb
+share/kde4/services/plasma-scriptengine-ruby-applet.desktop
+share/kde4/services/plasma-scriptengine-ruby-dataengine.desktop
+@dirrm share/apps/plasma_scriptengine_ruby

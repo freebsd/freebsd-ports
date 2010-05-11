@@ -1,0 +1,20 @@
+%%PYTHON_SITELIBDIR%%/PyKDE4/plasmascript.py
+%%PYTHON_SITELIBDIR%%/PyKDE4/plasmascript.pyc
+share/apps/plasma_scriptengine_python/plasma_importer.py
+share/apps/plasma_scriptengine_python/plasma_importer.pyc
+share/apps/plasma_scriptengine_python/pyappletscript.py
+share/apps/plasma_scriptengine_python/pyappletscript.pyc
+share/apps/plasma_scriptengine_python/pydataengine.py
+share/apps/plasma_scriptengine_python/pydataengine.pyc
+share/apps/plasma_scriptengine_python/pyrunner.py
+share/apps/plasma_scriptengine_python/pyrunner.pyc
+share/apps/plasma_scriptengine_python/pywallpaper.py
+share/apps/plasma_scriptengine_python/pywallpaper.pyc
+share/kde4/services/plasma-scriptengine-applet-python.desktop
+share/kde4/services/plasma-scriptengine-dataengine-python.desktop
+share/kde4/services/plasma-scriptengine-runner-python.desktop
+share/kde4/services/plasma-scriptengine-wallpaper-python.desktop
+@dirrm share/apps/plasma_scriptengine_python
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyKDE4
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
