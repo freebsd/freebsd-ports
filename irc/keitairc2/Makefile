@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		keitairc
-PORTVERSION=		2.0.rc.1
-#PORTREVISION=		0
+PORTVERSION=		2.0.r1
+PORTREVISION=		1
 CATEGORIES=		irc
 MASTER_SITES=		SFJP
 MASTER_SITE_SUBDIR=	${PORTNAME}/47170
@@ -17,8 +17,6 @@ DISTNAME=		keitairc-2.0rc1
 
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=IRC proxy for mobilephone that have a web interface
-
-BROKEN=		incomplete plist
 
 RUN_DEPENDS=	${SITE_PERL}/POE/Component/IRC.pm:${PORTSDIR}/irc/p5-POE-Component-IRC \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
@@ -38,9 +36,9 @@ post-extract:
 
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM} -rf
-	${REINPLACE_CMD} -I '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/keitairc
-	${REINPLACE_CMD} -I '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/keitairc
-	${REINPLACE_CMD} -I '' -e "s,__KEITAIRC_DATA_DIR__,${DATADIR}/lib,"  ${WRKSRC}/lib/Keitairc/Config.pm
+	${REINPLACE_CMD} -i '' -e "s,^#!/usr/bin/perl$$,#!${PERL}," ${WRKSRC}/keitairc
+	${REINPLACE_CMD} -i '' -e "s,/usr/share/keitairc/lib,${DATADIR}/lib,"  ${WRKSRC}/keitairc
+	${REINPLACE_CMD} -i '' -e "s,__KEITAIRC_DATA_DIR__,${DATADIR}/lib,"  ${WRKSRC}/lib/Keitairc/Config.pm
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keitairc ${PREFIX}/bin
