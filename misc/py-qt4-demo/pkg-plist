@@ -577,6 +577,25 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/saxbookmarks/jennifer.xbel
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/saxbookmarks/saxbookmarks.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xml/saxbookmarks/saxbookmarks.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/files/contact.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/files/invalid_contact.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/files/invalid_order.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/files/invalid_recipe.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/files/order.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/files/recipe.xsd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/files/valid_contact.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/files/valid_order.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/files/valid_recipe.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/schema.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/schema.pyc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/schema.qrc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/schema.ui
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/ui_schema.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xmlpatterns/schema/ui_schema.pyc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xmlpatterns/schema/files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xmlpatterns/schema
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xmlpatterns
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xml/saxbookmarks
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xml/dombookmarks
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/xml

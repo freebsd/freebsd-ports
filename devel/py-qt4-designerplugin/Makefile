@@ -6,7 +6,6 @@
 
 PORTNAME=	designerplugin
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -38,7 +37,7 @@ ARGS=		-b ${PREFIX}/bin\
 		--enable QtDesigner
 
 .include "../py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		--debug
@@ -57,4 +56,4 @@ post-configure:
 		-e 's|LINK .*|LINK = ${CXX}|'\
 		${WRKSRC}/designer/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

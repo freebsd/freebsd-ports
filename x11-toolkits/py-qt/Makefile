@@ -38,7 +38,7 @@ ARGS=		-b ${PREFIX}/bin -d ${PYTHON_SITELIBDIR}\
 MODULES=	qt qtcanvas qtnetwork qttable qtxml qtui qtsql qtext
 
 .include "../../devel/py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		-u
@@ -98,4 +98,4 @@ post-install:
 		${INSTALL_DATA} webbrowser/* ${EXAMPLESDIR}/webbrowser
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

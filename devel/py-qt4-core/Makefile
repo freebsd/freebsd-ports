@@ -6,7 +6,6 @@
 
 PORTNAME=	core
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -41,7 +40,7 @@ ARGS=		-b ${PREFIX}/bin\
 		--enable QtCore
 
 .include "../py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		--debug
@@ -87,4 +86,4 @@ post-install:
 		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/py_compile.py\
 		`ls *.py */*.py */*/*.py`
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

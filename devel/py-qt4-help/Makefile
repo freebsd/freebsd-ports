@@ -7,7 +7,6 @@
 
 PORTNAME=	help
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
@@ -42,7 +41,7 @@ ARGS=		-b ${PREFIX}/bin\
 		--enable QtHelp
 
 .include "../../devel/py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 ARGS+=		--debug
@@ -77,4 +76,4 @@ post-configure:
 		-e 's|LINK = c++|LINK = ${CXX}|'\
 		${WRKSRC}/QtHelp/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

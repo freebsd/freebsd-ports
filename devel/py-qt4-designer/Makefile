@@ -6,7 +6,6 @@
 
 PORTNAME=	designer
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT4}
@@ -44,7 +43,7 @@ ARGS=		-b ${PREFIX}/bin\
 		--enable QtDesigner
 
 .include "../py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 700000
 BROKEN=		does not build
@@ -83,4 +82,4 @@ post-configure:
 		-e 's|LINK = c++|LINK = ${CXX}|'\
 		${WRKSRC}/QtDesigner/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

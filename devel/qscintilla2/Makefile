@@ -6,7 +6,6 @@
 
 PORTNAME=	qscintilla2
 PORTVERSION=	${QSCI2_VERSION}
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITES_QSCI2}
@@ -20,13 +19,15 @@ QT_COMPONENTS=	qmake_build moc_build gui xml designer
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
+OPTIONS=	NLS "Build with NLS support" on
+
 BUILD_WRKSRC=		${WRKSRC}/Qt4
 INSTALL_WRKSRC=		${BUILD_WRKSRC}
 
 QMAKE_ARGS=	-unix PREFIX=${PREFIX}
 
 .include "../py-sip/files/bsd.pyqt.mk"
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS=""
@@ -62,7 +63,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} &&\
 		${MKDIR} ${DOCSDIR}/html ${DOCSDIR}/Scintilla &&\
-		${INSTALL_DATA} ChangeLog NEWS README ${DOCSDIR} &&\
+		${INSTALL_DATA} NEWS README ${DOCSDIR} &&\
 		${INSTALL_DATA} doc/html-Qt4/* ${DOCSDIR}/html &&\
 		${INSTALL_DATA} doc/Scintilla/* ${DOCSDIR}/Scintilla
 .endif
@@ -72,4 +73,4 @@ post-install:
 		${INSTALL_DATA} *.* ${EXAMPLESDIR} &&\
 		${INSTALL_DATA} images/* ${EXAMPLESDIR}/images
 .endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
