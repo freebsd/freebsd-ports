@@ -521,6 +521,7 @@ share/apps/klettres/ml/syllab/zhoo.ogg
 share/apps/klettres/ml/syllab/zhu.ogg
 share/apps/klettres/ml/syllab/zhuu.ogg
 share/locale/ml/LC_MESSAGES/amor.mo
+share/locale/ml/LC_MESSAGES/attica_kde.mo
 share/locale/ml/LC_MESSAGES/audiorename_plugin.mo
 share/locale/ml/LC_MESSAGES/blinken.mo
 share/locale/ml/LC_MESSAGES/bomber.mo
@@ -553,7 +554,9 @@ share/locale/ml/LC_MESSAGES/kcm_memory.mo
 share/locale/ml/LC_MESSAGES/kcm_partition.mo
 share/locale/ml/LC_MESSAGES/kcm_pci.mo
 share/locale/ml/LC_MESSAGES/kcm_phonon.mo
+share/locale/ml/LC_MESSAGES/kcm_phononxine.mo
 share/locale/ml/LC_MESSAGES/kcm_solid.mo
+share/locale/ml/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ml/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/ml/LC_MESSAGES/kcmaccess.mo
 share/locale/ml/LC_MESSAGES/kcmbackground.mo
@@ -561,7 +564,6 @@ share/locale/ml/LC_MESSAGES/kcmbell.mo
 share/locale/ml/LC_MESSAGES/kcmcgi.mo
 share/locale/ml/LC_MESSAGES/kcmcolors.mo
 share/locale/ml/LC_MESSAGES/kcmcomponentchooser.mo
-share/locale/ml/LC_MESSAGES/kcmenergy.mo
 share/locale/ml/LC_MESSAGES/kcmfonts.mo
 share/locale/ml/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/ml/LC_MESSAGES/kcmicons.mo
@@ -580,6 +582,7 @@ share/locale/ml/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/ml/LC_MESSAGES/kcmkurifilt.mo
 share/locale/ml/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/ml/LC_MESSAGES/kcmkwindecoration.mo
+share/locale/ml/LC_MESSAGES/kcmkwinrules.mo
 share/locale/ml/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/ml/LC_MESSAGES/kcmkwm.mo
 share/locale/ml/LC_MESSAGES/kcmlaunch.mo
@@ -601,6 +604,7 @@ share/locale/ml/LC_MESSAGES/kcmxinerama.mo
 share/locale/ml/LC_MESSAGES/kde-menu.mo
 share/locale/ml/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/ml/LC_MESSAGES/kdebugdialog.mo
+share/locale/ml/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/ml/LC_MESSAGES/kdelibs4.mo
 share/locale/ml/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/ml/LC_MESSAGES/kdepasswd.mo
@@ -718,7 +722,6 @@ share/locale/ml/LC_MESSAGES/libtaskmanager.mo
 share/locale/ml/LC_MESSAGES/marble.mo
 share/locale/ml/LC_MESSAGES/marble_qt.mo
 share/locale/ml/LC_MESSAGES/nepomuk.mo
-share/locale/ml/LC_MESSAGES/nepomuksearch.mo
 share/locale/ml/LC_MESSAGES/nsplugin.mo
 share/locale/ml/LC_MESSAGES/parley.mo
 share/locale/ml/LC_MESSAGES/phonon-xine.mo
@@ -726,10 +729,8 @@ share/locale/ml/LC_MESSAGES/phonon_kde.mo
 share/locale/ml/LC_MESSAGES/phononserver.mo
 share/locale/ml/LC_MESSAGES/plasma-desktop.mo
 share/locale/ml/LC_MESSAGES/plasma-overlay.mo
-share/locale/ml/LC_MESSAGES/plasma-shells-common.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_clock.mo
-share/locale/ml/LC_MESSAGES/plasma_applet_desktop.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_folderview.mo
@@ -749,6 +750,7 @@ share/locale/ml/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/ml/LC_MESSAGES/plasma_engine_rss.mo
+share/locale/ml/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_powerdevil.mo
@@ -760,10 +762,15 @@ share/locale/ml/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/ml/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/ml/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/ml/LC_MESSAGES/plasmaengineexplorer.mo
+share/locale/ml/LC_MESSAGES/plasmagenericshell.mo
 share/locale/ml/LC_MESSAGES/plasmapkg.mo
 share/locale/ml/LC_MESSAGES/plasmoidviewer.mo
+share/locale/ml/LC_MESSAGES/policykit-kde.mo
+share/locale/ml/LC_MESSAGES/polkit-kde-authorization.mo
 share/locale/ml/LC_MESSAGES/powerdevil.mo
 share/locale/ml/LC_MESSAGES/processcore.mo
+share/locale/ml/LC_MESSAGES/processui.mo
+share/locale/ml/LC_MESSAGES/randrmonitor.mo
 share/locale/ml/LC_MESSAGES/solid-bluetooth.mo
 share/locale/ml/LC_MESSAGES/solid-hardware.mo
 share/locale/ml/LC_MESSAGES/solid-network.mo

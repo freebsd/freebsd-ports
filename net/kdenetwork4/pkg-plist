@@ -4,14 +4,15 @@ bin/kopete_latexconvert.sh
 %%KPPP%%bin/kppplogview
 %%KPPP%%bin/kppp
 bin/krdc
+bin/krdc_rfb_approver
 bin/krfb
-bin/skype-action-handler
 bin/winpopup-install
 bin/winpopup-send
 include/kopete/kabcpersistence.h
 include/kopete/kopete_export.h
 include/kopete/kopeteaccount.h
 include/kopete/kopeteaccountmanager.h
+include/kopete/kopeteaddedinfoevent.h
 include/kopete/kopeteappearancesettings.h
 include/kopete/kopeteavatarmanager.h
 include/kopete/kopetebehaviorsettings.h
@@ -78,11 +79,14 @@ include/kopete/ui/ui_kopetepasswordwidgetbase.h
 include/krdc/hostpreferences.h
 include/krdc/remoteview.h
 include/krdc/remoteviewfactory.h
+lib/browser_plugins/skypebuttons.so
 lib/kde4/fileshare_propsdlgplugin.so
 lib/kde4/kcm_fileshare.so
 lib/kde4/kcm_kcmsambaconf.so
-lib/kde4/kcm_kget_bittorrentfactory.so
+%%BTCORE%%lib/kde4/kcm_kget_bittorrentfactory.so
+lib/kde4/kcm_kget_checksumsearchfactory.so
 lib/kde4/kcm_kget_contentfetchfactory.so
+lib/kde4/kcm_kget_metalinkfactory.so
 lib/kde4/kcm_kget_mirrorsearchfactory.so
 lib/kde4/kcm_kget_multisegkiofactory.so
 lib/kde4/kcm_kopete_accountconfig.so
@@ -108,7 +112,8 @@ lib/kde4/kcm_kopete_webpresence.so
 lib/kde4/kcm_krdc_rdpplugin.so
 lib/kde4/kcm_krdc_vncplugin.so
 lib/kde4/kded_dnssdwatcher.so
-lib/kde4/kget_bittorrentfactory.so
+%%BTCORE%%lib/kde4/kget_bittorrentfactory.so
+lib/kde4/kget_checksumsearchfactory.so
 lib/kde4/kget_contentfetchfactory.so
 lib/kde4/kget_kiofactory.so
 lib/kde4/kget_metalinkfactory.so
@@ -150,10 +155,12 @@ lib/kde4/kopete_yahoo.so
 lib/kde4/krdc_rdpplugin.so
 lib/kde4/krdc_testplugin.so
 lib/kde4/krdc_vncplugin.so
+lib/kde4/krfb_framebuffer_qt.so
+lib/kde4/krfb_framebuffer_x11.so
+lib/kde4/krunner_kget.so
 lib/kde4/libchattexteditpart.so
 lib/kde4/plasma_engine_kget.so
 lib/kde4/plasma_kget_barapplet.so
-lib/kde4/plasma_kget_panelbar.so
 lib/kde4/plasma_kget_piechart.so
 lib/libkgetcore.so
 lib/libkgetcore.so.5
@@ -191,6 +198,8 @@ lib/libkopetestatusmenu.so.1.0.0
 lib/libkrdccore.so
 lib/libkrdccore.so.5
 lib/libkrdccore.so.5.0.1
+lib/libkrfbprivate.so
+lib/libkrfbprivate.so.5.0.1
 lib/libkyahoo.so
 lib/libkyahoo.so.1
 lib/libkyahoo.so.1.0.0
@@ -198,14 +207,12 @@ lib/liboscar.so
 lib/liboscar.so.1
 lib/liboscar.so.1.0.0
 lib/libqgroupwise.so
-lib/mozilla/plugins/libskypebuttons.so
 %%KPPP%%share/applications/kde4/Kppp.desktop
 share/applications/kde4/kget.desktop
 share/applications/kde4/kopete.desktop
 %%KPPP%%share/applications/kde4/kppplogview.desktop
 share/applications/kde4/krdc.desktop
 share/applications/kde4/krfb.desktop
-share/apps/desktoptheme/default/widgets/kget.svg
 share/apps/kconf_update/kopete-account-0.10.pl
 share/apps/kconf_update/kopete-account-kconf_update.sh
 share/apps/kconf_update/kopete-account-kconf_update.upd
@@ -384,6 +391,7 @@ share/apps/kopete/icons/oxygen/16x16/actions/wlm_away.png
 share/apps/kopete/icons/oxygen/16x16/actions/wlm_blocked.png
 share/apps/kopete/icons/oxygen/16x16/actions/wlm_brb.png
 share/apps/kopete/icons/oxygen/16x16/actions/wlm_busy.png
+share/apps/kopete/icons/oxygen/16x16/actions/wlm_fakefriend.png
 share/apps/kopete/icons/oxygen/16x16/actions/wlm_invisible.png
 share/apps/kopete/icons/oxygen/16x16/actions/wlm_lunch.png
 share/apps/kopete/icons/oxygen/16x16/actions/wlm_na.png
@@ -694,8 +702,6 @@ share/apps/kopete_otr/otrchatui.rc
 share/apps/kopete_otr/otrui.rc
 share/apps/kopete_privacy/privacychatui.rc
 share/apps/kopete_privacy/privacyui.rc
-share/apps/kopete_skype/call_end
-share/apps/kopete_skype/call_start
 share/apps/kopete_skype/skypechatui.rc
 share/apps/kopete_skype/skypeui.rc
 share/apps/kopete_statistics/statisticsui.rc
@@ -1196,10 +1202,13 @@ share/apps/kopeterichtexteditpart/kopeterichtexteditpartfull.rc
 share/apps/krdc/krdcui.rc
 share/apps/krdc/pics/pointcursor.png
 share/apps/krdc/pics/pointcursormask.png
+share/apps/krdc_rfb_approver/krdc_rfb_approver.notifyrc
 share/apps/krfb/krfb.notifyrc
+%%WEBKIT%%share/apps/kwebkitpart/kpartplugins/kget_plug_in.rc
 share/apps/remoteview/zeroconf.desktop
 share/config.kcfg/historyconfig.kcfg
 share/config.kcfg/kget.kcfg
+share/config.kcfg/kget_checksumsearchfactory.kcfg
 share/config.kcfg/kget_contentfetchfactory.kcfg
 share/config.kcfg/kget_mirrorsearchfactory.kcfg
 share/config.kcfg/kget_multisegkiofactory.kcfg
@@ -1218,15 +1227,29 @@ share/dbus-1/interfaces/org.kde.kdnssd.xml
 share/dbus-1/interfaces/org.kde.kopete.Client.xml
 share/dbus-1/interfaces/org.kde.kopete.Statistics.xml
 %%KPPP%%share/dbus-1/interfaces/org.kde.kppp.xml
+share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_approver.service
+share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_handler.service
+share/dbus-1/services/org.kde.kget.service
 share/doc/HTML/en/kget/common
+share/doc/HTML/en/kget/file.png
 share/doc/HTML/en/kget/fileopen.png
+share/doc/HTML/en/kget/import_link.png
 share/doc/HTML/en/kget/index.cache.bz2
 share/doc/HTML/en/kget/index.docbook
-share/doc/HTML/en/kget/kget1.png
-share/doc/HTML/en/kget/kget2.png
-share/doc/HTML/en/kget/kget3.png
-share/doc/HTML/en/kget/kget4.png
-share/doc/HTML/en/kget/kget5.png
+share/doc/HTML/en/kget/kget_Advanced.png
+share/doc/HTML/en/kget/kget_Appearance.png
+share/doc/HTML/en/kget/kget_Network.png
+share/doc/HTML/en/kget/kget_Web_Interface.png
+share/doc/HTML/en/kget/kget_drop_target.png
+share/doc/HTML/en/kget/kget_group.png
+share/doc/HTML/en/kget/kget_groups.png
+share/doc/HTML/en/kget/kget_plugins.png
+share/doc/HTML/en/kget/kget_transfer_hostory.png
+share/doc/HTML/en/kget/kget_verification.png
+share/doc/HTML/en/kget/metalink0.png
+share/doc/HTML/en/kget/metalink1.png
+share/doc/HTML/en/kget/metalink2.png
+share/doc/HTML/en/kget/metalink3.png
 share/doc/HTML/en/kopete/chatstyle.docbook
 share/doc/HTML/en/kopete/common
 share/doc/HTML/en/kopete/index.cache.bz2
@@ -1266,19 +1289,20 @@ share/doc/HTML/en/kopete/pipes.docbook
 share/doc/HTML/en/krdc/address_input.png
 share/doc/HTML/en/krdc/bookmarks_menu.png
 share/doc/HTML/en/krdc/common
-share/doc/HTML/en/krdc/fullscreen_button.png
-share/doc/HTML/en/krdc/host_preferences.png
+share/doc/HTML/en/krdc/general_preferences.png
 share/doc/HTML/en/krdc/index.cache.bz2
 share/doc/HTML/en/krdc/index.docbook
 share/doc/HTML/en/krdc/krdc_mainwindow.png
 share/doc/HTML/en/krdc/password_entry.png
 share/doc/HTML/en/krdc/rdp_preferences.png
+share/doc/HTML/en/krdc/view-fullscreen.png
+share/doc/HTML/en/krdc/view-restore.png
 share/doc/HTML/en/krdc/vnc_host_configuration.png
 share/doc/HTML/en/krdc/vnc_preferences.png
-share/doc/HTML/en/krdc/windowmode_button.png
 share/doc/HTML/en/krfb/common
 share/doc/HTML/en/krfb/configuration_access.png
 share/doc/HTML/en/krfb/configuration_network.png
+share/doc/HTML/en/krfb/configuration_security.png
 share/doc/HTML/en/krfb/configuration_session.png
 share/doc/HTML/en/krfb/connection.png
 share/doc/HTML/en/krfb/email_invitation.png
@@ -1288,25 +1312,32 @@ share/doc/HTML/en/krfb/invitation_management.png
 share/doc/HTML/en/krfb/personal_invitation.png
 share/doc/HTML/en/krfb/screenshot.png
 share/icons/hicolor/128x128/apps/kget.png
+share/icons/hicolor/128x128/apps/kopete-offline.png
 share/icons/hicolor/128x128/apps/kopete.png
 %%KPPP%%share/icons/hicolor/128x128/apps/kppp.png
 share/icons/hicolor/16x16/apps/kcmsambaconf.png
 share/icons/hicolor/16x16/apps/kget.png
+share/icons/hicolor/16x16/apps/kopete-offline.png
 share/icons/hicolor/16x16/apps/kopete.png
 %%KPPP%%share/icons/hicolor/16x16/apps/kppp.png
 share/icons/hicolor/22x22/apps/kget.png
+share/icons/hicolor/22x22/apps/kopete-offline.png
 share/icons/hicolor/22x22/apps/kopete.png
 %%KPPP%%share/icons/hicolor/22x22/apps/kppp.png
 share/icons/hicolor/32x32/apps/kget.png
+share/icons/hicolor/32x32/apps/kopete-offline.png
 share/icons/hicolor/32x32/apps/kopete.png
 %%KPPP%%share/icons/hicolor/32x32/apps/kppp.png
 share/icons/hicolor/48x48/apps/kget.png
+share/icons/hicolor/48x48/apps/kopete-offline.png
 share/icons/hicolor/48x48/apps/kopete.png
 %%KPPP%%share/icons/hicolor/48x48/apps/kppp.png
 share/icons/hicolor/64x64/apps/kget.png
+share/icons/hicolor/64x64/apps/kopete-offline.png
 share/icons/hicolor/64x64/apps/kopete.png
 %%KPPP%%share/icons/hicolor/64x64/apps/kppp.png
 share/icons/hicolor/scalable/apps/kget.svgz
+share/icons/hicolor/scalable/apps/kopete-offline.svgz
 share/icons/hicolor/scalable/apps/kopete.svgz
 share/icons/oxygen/128x128/actions/voicecall.png
 share/icons/oxygen/128x128/actions/webcamreceive.png
@@ -1327,18 +1358,12 @@ share/icons/oxygen/16x16/actions/view-user-offline-kopete.png
 share/icons/oxygen/16x16/actions/voicecall.png
 share/icons/oxygen/16x16/actions/webcamreceive.png
 share/icons/oxygen/16x16/actions/webcamsend.png
-share/icons/oxygen/16x16/mimetypes/kopete_emoticons.png
 share/icons/oxygen/22x22/actions/account_offline_overlay.png
 share/icons/oxygen/22x22/actions/im-status-message-edit.png
 share/icons/oxygen/22x22/actions/view-user-offline-kopete.png
 share/icons/oxygen/22x22/actions/voicecall.png
 share/icons/oxygen/22x22/actions/webcamreceive.png
 share/icons/oxygen/22x22/actions/webcamsend.png
-share/icons/oxygen/22x22/apps/kopete_all_away.png
-share/icons/oxygen/22x22/apps/kopete_offline.png
-share/icons/oxygen/22x22/apps/kopete_some_away.png
-share/icons/oxygen/22x22/apps/kopete_some_online.png
-share/icons/oxygen/22x22/mimetypes/kopete_emoticons.png
 share/icons/oxygen/22x22/status/object-locked-finished.png
 share/icons/oxygen/22x22/status/object-locked-unverified.png
 share/icons/oxygen/22x22/status/object-locked-verified.png
@@ -1392,18 +1417,20 @@ share/kde4/services/kconfiguredialog/kopete_translator_config.desktop
 share/kde4/services/kconfiguredialog/kopete_urlpicpreview_config.desktop
 share/kde4/services/kconfiguredialog/kopete_webpresence_config.desktop
 share/kde4/services/kded/dnssdwatcher.desktop
-share/kde4/services/kget_bittorrentfactory.desktop
-share/kde4/services/kget_bittorrentfactory_config.desktop
+%%BTCORE%%share/kde4/services/kget_bittorrentfactory.desktop
+%%BTCORE%%share/kde4/services/kget_bittorrentfactory_config.desktop
+share/kde4/services/kget_checksumsearchfactory.desktop
+share/kde4/services/kget_checksumsearchfactory_config.desktop
 share/kde4/services/kget_contentfetchfactory.desktop
 share/kde4/services/kget_contentfetchfactory_config.desktop
 share/kde4/services/kget_kiofactory.desktop
 share/kde4/services/kget_metalinkfactory.desktop
+share/kde4/services/kget_metalinkfactory_config.desktop
 share/kde4/services/kget_mirrorsearchfactory.desktop
 share/kde4/services/kget_mirrorsearchfactory_config.desktop
 share/kde4/services/kget_multisegkiofactory.desktop
 share/kde4/services/kget_multisegkiofactory_config.desktop
 share/kde4/services/kgetbarapplet-default.desktop
-share/kde4/services/kgetpanelbarapplet-default.desktop
 share/kde4/services/kgetpiechartapplet-default.desktop
 share/kde4/services/kopete_accountconfig.desktop
 share/kde4/services/kopete_addbookmarks.desktop
@@ -1446,7 +1473,10 @@ share/kde4/services/krdc_rdp_config.desktop
 share/kde4/services/krdc_test.desktop
 share/kde4/services/krdc_vnc.desktop
 share/kde4/services/krdc_vnc_config.desktop
+share/kde4/services/krfb_framebuffer_qt.desktop
+share/kde4/services/krfb_framebuffer_x11.desktop
 share/kde4/services/plasma-engine-kget.desktop
+share/kde4/services/plasma-runner-kget.desktop
 share/kde4/services/rdp.protocol
 share/kde4/services/skype.protocol
 share/kde4/services/tel.protocol
@@ -1458,17 +1488,25 @@ share/kde4/servicetypes/kopeteplugin.desktop
 share/kde4/servicetypes/kopeteprotocol.desktop
 share/kde4/servicetypes/kopeteui.desktop
 share/kde4/servicetypes/krdc_plugin.desktop
+share/kde4/servicetypes/krfb-framebuffer.desktop
 share/sounds/Kopete_Event.ogg
 share/sounds/Kopete_Received.ogg
 share/sounds/Kopete_Sent.ogg
 share/sounds/Kopete_User_is_Online.ogg
+share/telepathy/clients/krdc_rfb_approver.client
+share/telepathy/clients/krdc_rfb_handler.client
+@dirrm share/telepathy/clients
+@dirrm share/telepathy
 @dirrm share/kde4/services/kconfiguredialog
 @dirrm share/doc/HTML/en/krfb
 @dirrm share/doc/HTML/en/krdc
 %%KPPP%%@dirrm share/doc/HTML/en/kppp
 @dirrm share/doc/HTML/en/kopete
 @dirrm share/doc/HTML/en/kget
+%%WEBKIT%%@dirrmtry share/apps/kwebkitpart/kpartplugins
+%%WEBKIT%%@dirrmtry share/apps/kwebkitpart
 @dirrm share/apps/krfb
+@dirrm share/apps/krdc_rfb_approver
 @dirrm share/apps/krdc/pics
 @dirrm share/apps/krdc
 %%KPPP%%@dirrm share/apps/kppp/pics
@@ -1609,8 +1647,6 @@ share/sounds/Kopete_User_is_Online.ogg
 @dirrm share/apps/kopete/styles
 @dirrm share/apps/kopete/icons/oxygen/scalable/apps
 @dirrm share/apps/kopete/icons/oxygen/scalable
-@dirrm share/apps/kopete/icons/oxygen/128x128/apps
-@dirrm share/apps/kopete/icons/oxygen/128x128
 @dirrm share/apps/kopete/icons/oxygen/64x64/apps
 @dirrm share/apps/kopete/icons/oxygen/64x64/actions
 @dirrm share/apps/kopete/icons/oxygen/64x64
@@ -1626,6 +1662,8 @@ share/sounds/Kopete_User_is_Online.ogg
 @dirrm share/apps/kopete/icons/oxygen/16x16/apps
 @dirrm share/apps/kopete/icons/oxygen/16x16/actions
 @dirrm share/apps/kopete/icons/oxygen/16x16
+@dirrm share/apps/kopete/icons/oxygen/128x128/apps
+@dirrm share/apps/kopete/icons/oxygen/128x128
 @dirrm share/apps/kopete/icons/oxygen
 @dirrm share/apps/kopete/icons/hicolor/32x32/apps
 @dirrm share/apps/kopete/icons/hicolor/32x32
@@ -1651,10 +1689,7 @@ share/sounds/Kopete_User_is_Online.ogg
 @dirrm share/apps/kget/content_fetch_scripts/youtubedl
 @dirrm share/apps/kget/content_fetch_scripts
 @dirrm share/apps/kget
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake
-@dirrm lib/mozilla/plugins
-@dirrm lib/mozilla
+@dirrmtry lib/browser_plugins
 @dirrm include/krdc
 @dirrm include/kopete/ui
 @dirrm include/kopete

@@ -13,10 +13,14 @@ bin/konsoleprofile
 bin/kwrite
 bin/nspluginscan
 bin/nspluginviewer
+bin/servicemenudeinstallation
+bin/servicemenuinstallation
 include/knewmenu.h
 include/konq_dndpopupmenuplugin.h
 include/konq_events.h
 include/konq_fileitemcapabilities.h
+include/konq_historyentry.h
+include/konq_historyprovider.h
 include/konq_menuactions.h
 include/konq_operations.h
 include/konq_popupmenu.h
@@ -24,8 +28,10 @@ include/konq_popupmenuinformation.h
 include/konq_popupmenuplugin.h
 include/konqmimedata.h
 include/konqsidebarplugin.h
+include/kversioncontrolplugin.h
 include/libkonq_export.h
 lib/kde4/dolphinpart.so
+lib/kde4/fileviewsvnplugin.so
 lib/kde4/kcm_dolphingeneral.so
 lib/kde4/kcm_dolphinnavigation.so
 lib/kde4/kcm_dolphinservices.so
@@ -55,8 +61,8 @@ lib/kde4/konq_shellcmdplugin.so
 lib/kde4/konq_sidebar.so
 lib/kde4/konq_sidebartree_bookmarks.so
 lib/kde4/konq_sidebartree_dirtree.so
-lib/kde4/konq_sidebartree_history.so
 lib/kde4/konq_sound.so
+lib/kde4/konqsidebar_history.so
 lib/kde4/konqsidebar_tree.so
 lib/kde4/konqsidebar_web.so
 lib/kde4/libkcminit_nsplugins.so
@@ -97,6 +103,7 @@ share/applications/kde4/konqbrowser.desktop
 share/applications/kde4/konquerorsu.desktop
 share/applications/kde4/konsole.desktop
 share/applications/kde4/kwrite.desktop
+share/apps/dolphin/dolphinsearchcommands.desktop
 share/apps/dolphin/dolphinui.rc
 share/apps/dolphinpart/dolphinpart.rc
 share/apps/dolphinpart/kpartplugins/kshellcmdplugin.desktop
@@ -336,9 +343,7 @@ share/apps/kcmusb/usb.ids
 share/apps/kconf_update/favicons.upd
 share/apps/kconf_update/kfmclient_3_2.upd
 share/apps/kconf_update/kfmclient_3_2_update.sh
-share/apps/kconf_update/konqsidebartng.upd
 share/apps/kconf_update/move_favicons.sh
-share/apps/kconf_update/move_konqsidebartng_entries.sh
 share/apps/kcontrol/pics/onlyone.png
 share/apps/kcontrol/pics/overlapping.png
 share/apps/kdm/pics/users/Blackbox.png
@@ -354,20 +359,18 @@ share/apps/khtml/kpartplugins/khtmlkttsd.desktop
 share/apps/khtml/kpartplugins/khtmlkttsd.rc
 share/apps/kinfocenter/about/kinfocenter.css
 share/apps/kinfocenter/about/main.html
-share/apps/kinfocenter/about/top-right-kinfocenter.png
 share/apps/kinfocenter/kinfocenterui.rc
-share/apps/konqsidebartng/add/virtualfolderadd.desktop
-share/apps/konqsidebartng/add/webmodule_add.desktop
 share/apps/konqsidebartng/dirtree/bookmarks_module.desktop
 share/apps/konqsidebartng/dirtree/dirtree_module.desktop
-share/apps/konqsidebartng/dirtree/history_module.desktop
-share/apps/konqsidebartng/entries/.version
 share/apps/konqsidebartng/entries/bookmarks.desktop
 share/apps/konqsidebartng/entries/history.desktop
 share/apps/konqsidebartng/entries/home.desktop
 share/apps/konqsidebartng/entries/remote.desktop
 share/apps/konqsidebartng/entries/root.desktop
 share/apps/konqsidebartng/entries/services.desktop
+share/apps/konqsidebartng/plugins/konqsidebar_history.desktop
+share/apps/konqsidebartng/plugins/konqsidebar_tree.desktop
+share/apps/konqsidebartng/plugins/konqsidebar_web.desktop
 share/apps/konqsidebartng/virtual_folders/remote/.directory
 share/apps/konqsidebartng/virtual_folders/remote/ftp/.directory
 share/apps/konqsidebartng/virtual_folders/remote/ftp/kde_ftp.desktop
@@ -378,7 +381,6 @@ share/apps/konqsidebartng/virtual_folders/remote/web/kde_web.desktop
 share/apps/konqsidebartng/virtual_folders/remote/web/look_web.desktop
 share/apps/konqsidebartng/virtual_folders/services/.directory
 share/apps/konqsidebartng/virtual_folders/services/applications.desktop
-share/apps/konqsidebartng/websidebar/websidebar.html
 share/apps/konqueror/about/box-centre-konqueror.png
 share/apps/konqueror/about/intro.html
 share/apps/konqueror/about/konq.css
@@ -419,6 +421,8 @@ share/apps/konsole/linux.keytab
 share/apps/konsole/partui.rc
 share/apps/konsole/sessionui.rc
 share/apps/konsole/solaris.keytab
+%%WEBKIT%%share/apps/kwebkitpart/kpartplugins/khtmlkttsd.desktop
+%%WEBKIT%%share/apps/kwebkitpart/kpartplugins/khtmlkttsd.rc
 share/apps/kwrite/kwriteui.rc
 share/apps/plugin/nspluginpart.rc
 share/autostart/konqy_preload.desktop
@@ -427,11 +431,13 @@ share/config.kcfg/dolphin_detailsmodesettings.kcfg
 share/config.kcfg/dolphin_directoryviewpropertysettings.kcfg
 share/config.kcfg/dolphin_generalsettings.kcfg
 share/config.kcfg/dolphin_iconsmodesettings.kcfg
+share/config.kcfg/dolphin_versioncontrolsettings.kcfg
 share/config.kcfg/kcm_useraccount.kcfg
 share/config.kcfg/kcm_useraccount_pass.kcfg
 share/config.kcfg/keditbookmarks.kcfg
 share/config.kcfg/konqueror.kcfg
-share/config/konqsidebartng.rc
+share/config/konqsidebartngrc
+share/config/servicemenu.knsrc
 share/dbus-1/interfaces/org.kde.FavIcon.xml
 share/dbus-1/interfaces/org.kde.Konqueror.Main.xml
 share/dbus-1/interfaces/org.kde.Konqueror.MainWindow.xml
@@ -441,24 +447,20 @@ share/dbus-1/interfaces/org.kde.nsplugins.CallBack.xml
 share/dbus-1/interfaces/org.kde.nsplugins.class.xml
 share/dbus-1/interfaces/org.kde.nsplugins.instance.xml
 share/dbus-1/interfaces/org.kde.nsplugins.viewer.xml
-share/doc/HTML/en/dolphin/bookmarkbutton.png
-share/doc/HTML/en/dolphin/bookmarksidebar.png
-share/doc/HTML/en/dolphin/breadcrumb.png
-share/doc/HTML/en/dolphin/browsebutton.png
 share/doc/HTML/en/dolphin/common
-share/doc/HTML/en/dolphin/configurationwindow.png
-share/doc/HTML/en/dolphin/configurationwindow2.png
-share/doc/HTML/en/dolphin/configurationwindow3.png
-share/doc/HTML/en/dolphin/directorypath.png
-share/doc/HTML/en/dolphin/dolphin.png
-share/doc/HTML/en/dolphin/hiddenfolder.png
+share/doc/HTML/en/dolphin/default-ui.png
 share/doc/HTML/en/dolphin/index.cache.bz2
 share/doc/HTML/en/dolphin/index.docbook
-share/doc/HTML/en/dolphin/informationsidebar.png
-share/doc/HTML/en/dolphin/split.png
-share/doc/HTML/en/dolphin/systemmediadirectory.png
-share/doc/HTML/en/dolphin/toolbarbuttons.png
-share/doc/HTML/en/dolphin/workspacebuttons.png
+share/doc/HTML/en/dolphin/locationbar-breadcrumb.png
+share/doc/HTML/en/dolphin/locationbar-editable.png
+share/doc/HTML/en/dolphin/preferences-general-behavior.png
+share/doc/HTML/en/dolphin/preferences-navigation.png
+share/doc/HTML/en/dolphin/preferences-startup.png
+share/doc/HTML/en/dolphin/preferences-trash.png
+share/doc/HTML/en/dolphin/preferences-viewmodes-icons.png
+share/doc/HTML/en/dolphin/toolbar-navigation.png
+share/doc/HTML/en/dolphin/toolbar-view-appearance.png
+share/doc/HTML/en/dolphin/viewproperties-dialog.png
 share/doc/HTML/en/kdepasswd/common
 share/doc/HTML/en/kdepasswd/index.cache.bz2
 share/doc/HTML/en/kdepasswd/index.docbook
@@ -482,6 +484,7 @@ share/doc/HTML/en/kinfocenter/interrupts/index.docbook
 share/doc/HTML/en/kinfocenter/ioports/common
 share/doc/HTML/en/kinfocenter/ioports/index.cache.bz2
 share/doc/HTML/en/kinfocenter/ioports/index.docbook
+share/doc/HTML/en/kinfocenter/kinfocenter.png
 share/doc/HTML/en/kinfocenter/memory/common
 share/doc/HTML/en/kinfocenter/memory/index.cache.bz2
 share/doc/HTML/en/kinfocenter/memory/index.docbook
@@ -497,9 +500,6 @@ share/doc/HTML/en/kinfocenter/partitions/index.docbook
 share/doc/HTML/en/kinfocenter/pci/common
 share/doc/HTML/en/kinfocenter/pci/index.cache.bz2
 share/doc/HTML/en/kinfocenter/pci/index.docbook
-share/doc/HTML/en/kinfocenter/pcmcia/common
-share/doc/HTML/en/kinfocenter/pcmcia/index.cache.bz2
-share/doc/HTML/en/kinfocenter/pcmcia/index.docbook
 share/doc/HTML/en/kinfocenter/processor/common
 share/doc/HTML/en/kinfocenter/processor/index.cache.bz2
 share/doc/HTML/en/kinfocenter/processor/index.docbook
@@ -518,6 +518,9 @@ share/doc/HTML/en/kinfocenter/sound/index.docbook
 share/doc/HTML/en/kinfocenter/usb/common
 share/doc/HTML/en/kinfocenter/usb/index.cache.bz2
 share/doc/HTML/en/kinfocenter/usb/index.docbook
+share/doc/HTML/en/kinfocenter/view1394/common
+share/doc/HTML/en/kinfocenter/view1394/index.cache.bz2
+share/doc/HTML/en/kinfocenter/view1394/index.docbook
 share/doc/HTML/en/kinfocenter/xserver/common
 share/doc/HTML/en/kinfocenter/xserver/index.cache.bz2
 share/doc/HTML/en/kinfocenter/xserver/index.docbook
@@ -541,6 +544,7 @@ share/doc/HTML/en/konqueror/man-kbookmarkmerger.1.docbook
 share/doc/HTML/en/konqueror/parts.png
 share/doc/HTML/en/konqueror/path-complete.docbook
 share/doc/HTML/en/konqueror/plugins.docbook
+share/doc/HTML/en/konqueror/reset.png
 share/doc/HTML/en/konqueror/save-settings.docbook
 share/doc/HTML/en/konqueror/shortcut1.png
 share/doc/HTML/en/konqueror/shortcut2.png
@@ -776,6 +780,7 @@ share/kde4/services/dma.desktop
 share/kde4/services/dolphinpart.desktop
 share/kde4/services/ebrowsing.desktop
 share/kde4/services/filebehavior.desktop
+share/kde4/services/fileviewsvnplugin.desktop
 share/kde4/services/interrupts.desktop
 share/kde4/services/ioports.desktop
 share/kde4/services/ioslaveinfo.desktop
@@ -805,7 +810,6 @@ share/kde4/services/konq_aboutpage.desktop
 share/kde4/services/konq_sidebartng.desktop
 share/kde4/services/konqueror.desktop
 share/kde4/services/konsolepart.desktop
-share/kde4/services/lanbrowser.desktop
 share/kde4/services/netpref.desktop
 share/kde4/services/nic.desktop
 share/kde4/services/opengl.desktop
@@ -843,6 +847,7 @@ share/kde4/services/useragentstrings/safari32.desktop
 share/kde4/services/useragentstrings/w3moncurrent.desktop
 share/kde4/services/useragentstrings/wgetoncurrent.desktop
 share/kde4/services/xserver.desktop
+share/kde4/servicetypes/fileviewversioncontrolplugin.desktop
 share/kde4/servicetypes/findpart.desktop
 share/kde4/servicetypes/konqaboutpage.desktop
 share/kde4/servicetypes/konqdndpopupmenuplugin.desktop
@@ -873,6 +878,7 @@ share/templates/linkFloppy.desktop
 share/templates/linkHD.desktop
 share/templates/linkMO.desktop
 share/templates/linkNFS.desktop
+share/templates/linkPath.desktop
 share/templates/linkProgram.desktop
 share/templates/linkURL.desktop
 share/templates/linkZIP.desktop
@@ -881,13 +887,13 @@ share/templates/linkZIP.desktop
 @dirrm share/doc/HTML/en/konsole
 @dirrm share/doc/HTML/en/konqueror
 @dirrm share/doc/HTML/en/kinfocenter/xserver
+@dirrm share/doc/HTML/en/kinfocenter/view1394
 @dirrm share/doc/HTML/en/kinfocenter/usb
 @dirrm share/doc/HTML/en/kinfocenter/sound
 @dirrm share/doc/HTML/en/kinfocenter/scsi
 @dirrm share/doc/HTML/en/kinfocenter/samba
 @dirrm share/doc/HTML/en/kinfocenter/protocols
 @dirrm share/doc/HTML/en/kinfocenter/processor
-@dirrm share/doc/HTML/en/kinfocenter/pcmcia
 @dirrm share/doc/HTML/en/kinfocenter/pci
 @dirrm share/doc/HTML/en/kinfocenter/partitions
 @dirrm share/doc/HTML/en/kinfocenter/opengl
@@ -903,17 +909,18 @@ share/templates/linkZIP.desktop
 @dirrm share/doc/HTML/en/dolphin
 @dirrm share/apps/plugin
 @dirrm share/apps/kwrite
+%%WEBKIT%%@dirrmtry share/apps/kwebkitpart/kpartplugins
+%%WEBKIT%%@dirrmtry share/apps/kwebkitpart
 @dirrm share/apps/konsole
 @dirrm share/apps/konqueror/profiles
 @dirrm share/apps/konqueror/pics
 @dirrm share/apps/konqueror/about
-@dirrm share/apps/konqsidebartng/websidebar
 @dirrm share/apps/konqsidebartng/virtual_folders/remote/web
 @dirrm share/apps/konqsidebartng/virtual_folders/remote/ftp
 @dirrm share/apps/konqsidebartng/virtual_folders/remote
+@dirrm share/apps/konqsidebartng/plugins
 @dirrm share/apps/konqsidebartng/entries
 @dirrm share/apps/konqsidebartng/dirtree
-@dirrm share/apps/konqsidebartng/add
 @dirrm share/apps/kinfocenter/about
 @dirrm share/apps/kinfocenter
 @dirrm share/apps/keditbookmarks

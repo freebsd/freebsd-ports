@@ -36,8 +36,8 @@ python_PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 ruby_PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 python_PKGNAMESUFFIX=	-${BINDMODULE}
-ruby_PKGNAMESUFFIX=	-${BINDMODULE}
-smoke_PKGNAMESUFFIX=	-${BINDLANG}-${BINDMODULE}
+# ruby_PKGNAMESUFFIX=	-${BINDMODULE}
+smoke_PKGNAMESUFFIX=	-${BINDLANG}
 
 # Don't extract unnecessary stuff
 DO_NOT_EXTRACT?=${_BINDLANG_ALL:S/${BINDLANG}//}
@@ -49,18 +49,3 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 
 #keep syncing this with devel/py-sip
 SIPDIR_REL=	share/py-sip
-
-# additional targets
-pre-configure: kdebindings-${BINDLANG}-pre-configure
-
-kdebindings-python-pre-configure:
-	@${DO_NADA}
-
-kdebindings-ruby-pre-configure:
-	@${DO_NADA}
-
-kdebindings-smoke-pre-configure:
-	${CP} ${.CURDIR}/../../devel/kdebindings4-${BINDLANG}/files/CMakeLists.txt \
-		${WRKSRC}/${BINDLANG}
-	${REINPLACE_CMD} -e 's|moduledir|${BINDMODULE}|' \
-		${WRKSRC}/${BINDLANG}/CMakeLists.txt

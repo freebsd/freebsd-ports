@@ -48,6 +48,7 @@ share/apps/desktoptheme/Aya/widgets/calendar.svgz
 share/apps/desktoptheme/Aya/widgets/clock.svgz
 share/apps/desktoptheme/Aya/widgets/extender-background.svgz
 share/apps/desktoptheme/Aya/widgets/extender-dragger.svgz
+share/apps/desktoptheme/Aya/widgets/lineedit.svgz
 share/apps/desktoptheme/Aya/widgets/pager.svgz
 share/apps/desktoptheme/Aya/widgets/panel-background.svgz
 share/apps/desktoptheme/Aya/widgets/plot-background.svgz
@@ -212,6 +213,7 @@ share/apps/desktoptheme/slim-glow/widgets/bar_meter_horizontal.svgz
 share/apps/desktoptheme/slim-glow/widgets/bar_meter_vertical.svgz
 share/apps/desktoptheme/slim-glow/widgets/calendar.svgz
 share/apps/desktoptheme/slim-glow/widgets/clock.svgz
+share/apps/desktoptheme/slim-glow/widgets/configuration-icons.svgz
 share/apps/desktoptheme/slim-glow/widgets/dragger.svgz
 share/apps/desktoptheme/slim-glow/widgets/extender-background.svgz
 share/apps/desktoptheme/slim-glow/widgets/extender-dragger.svgz
@@ -227,6 +229,7 @@ share/apps/desktoptheme/slim-glow/widgets/tasks.svgz
 share/apps/desktoptheme/slim-glow/widgets/toolbox-button.svgz
 share/apps/desktoptheme/slim-glow/widgets/tooltip.svgz
 share/apps/desktoptheme/slim-glow/widgets/translucentbackground.svgz
+share/apps/desktoptheme/slim-glow/widgets/viewitem.svgz
 share/apps/kfiresaver/kfs_debris.ogg
 share/apps/kfiresaver/kfs_explode.ogg
 share/apps/kfiresaver/kfs_kde.png
@@ -452,6 +455,7 @@ share/icons/nuvola/128x128/apps/iconthemes.png
 share/icons/nuvola/128x128/apps/indeximg.png
 share/icons/nuvola/128x128/apps/inkscape.png
 share/icons/nuvola/128x128/apps/input_devices_settings.png
+share/icons/nuvola/128x128/apps/internet-mail.png
 share/icons/nuvola/128x128/apps/irkick.png
 share/icons/nuvola/128x128/apps/juk.png
 share/icons/nuvola/128x128/apps/kaboodle.png
@@ -520,7 +524,6 @@ share/icons/nuvola/128x128/apps/klipper.png
 share/icons/nuvola/128x128/apps/klpq.png
 share/icons/nuvola/128x128/apps/kmag.png
 share/icons/nuvola/128x128/apps/kmahjong.png
-share/icons/nuvola/128x128/apps/kmail.png
 share/icons/nuvola/128x128/apps/kmenu.png
 share/icons/nuvola/128x128/apps/kmenuedit.png
 share/icons/nuvola/128x128/apps/kmessedwords.png
@@ -1116,6 +1119,7 @@ share/icons/nuvola/16x16/apps/iconthemes.png
 share/icons/nuvola/16x16/apps/indeximg.png
 share/icons/nuvola/16x16/apps/inkscape.png
 share/icons/nuvola/16x16/apps/input_devices_settings.png
+share/icons/nuvola/16x16/apps/internet-mail.png
 share/icons/nuvola/16x16/apps/irkick.png
 share/icons/nuvola/16x16/apps/juk.png
 share/icons/nuvola/16x16/apps/kaboodle.png
@@ -1184,7 +1188,6 @@ share/icons/nuvola/16x16/apps/klipper.png
 share/icons/nuvola/16x16/apps/klpq.png
 share/icons/nuvola/16x16/apps/kmag.png
 share/icons/nuvola/16x16/apps/kmahjong.png
-share/icons/nuvola/16x16/apps/kmail.png
 share/icons/nuvola/16x16/apps/kmenu.png
 share/icons/nuvola/16x16/apps/kmenuedit.png
 share/icons/nuvola/16x16/apps/kmessedwords.png
@@ -1820,6 +1823,7 @@ share/icons/nuvola/22x22/apps/iconthemes.png
 share/icons/nuvola/22x22/apps/indeximg.png
 share/icons/nuvola/22x22/apps/inkscape.png
 share/icons/nuvola/22x22/apps/input_devices_settings.png
+share/icons/nuvola/22x22/apps/internet-mail.png
 share/icons/nuvola/22x22/apps/irkick.png
 share/icons/nuvola/22x22/apps/juk.png
 share/icons/nuvola/22x22/apps/kaboodle.png
@@ -1880,7 +1884,6 @@ share/icons/nuvola/22x22/apps/klettres.png
 share/icons/nuvola/22x22/apps/klpq.png
 share/icons/nuvola/22x22/apps/kmag.png
 share/icons/nuvola/22x22/apps/kmahjong.png
-share/icons/nuvola/22x22/apps/kmail.png
 share/icons/nuvola/22x22/apps/kmaillight.png
 share/icons/nuvola/22x22/apps/kmenu.png
 share/icons/nuvola/22x22/apps/kmenuedit.png
@@ -2472,6 +2475,7 @@ share/icons/nuvola/32x32/apps/iconthemes.png
 share/icons/nuvola/32x32/apps/indeximg.png
 share/icons/nuvola/32x32/apps/inkscape.png
 share/icons/nuvola/32x32/apps/input_devices_settings.png
+share/icons/nuvola/32x32/apps/internet-mail.png
 share/icons/nuvola/32x32/apps/irkick.png
 share/icons/nuvola/32x32/apps/juk.png
 share/icons/nuvola/32x32/apps/kaboodle.png
@@ -2540,7 +2544,6 @@ share/icons/nuvola/32x32/apps/klipper.png
 share/icons/nuvola/32x32/apps/klpq.png
 share/icons/nuvola/32x32/apps/kmag.png
 share/icons/nuvola/32x32/apps/kmahjong.png
-share/icons/nuvola/32x32/apps/kmail.png
 share/icons/nuvola/32x32/apps/kmenu.png
 share/icons/nuvola/32x32/apps/kmenuedit.png
 share/icons/nuvola/32x32/apps/kmessedwords.png
@@ -3137,6 +3140,7 @@ share/icons/nuvola/48x48/apps/iconthemes.png
 share/icons/nuvola/48x48/apps/indeximg.png
 share/icons/nuvola/48x48/apps/inkscape.png
 share/icons/nuvola/48x48/apps/input_devices_settings.png
+share/icons/nuvola/48x48/apps/internet-mail.png
 share/icons/nuvola/48x48/apps/irkick.png
 share/icons/nuvola/48x48/apps/juk.png
 share/icons/nuvola/48x48/apps/kaboodle.png
@@ -3205,7 +3209,6 @@ share/icons/nuvola/48x48/apps/klipper.png
 share/icons/nuvola/48x48/apps/klpq.png
 share/icons/nuvola/48x48/apps/kmag.png
 share/icons/nuvola/48x48/apps/kmahjong.png
-share/icons/nuvola/48x48/apps/kmail.png
 share/icons/nuvola/48x48/apps/kmenu.png
 share/icons/nuvola/48x48/apps/kmenuedit.png
 share/icons/nuvola/48x48/apps/kmessedwords.png
@@ -3632,6 +3635,7 @@ share/icons/nuvola/64x64/apps/iconthemes.png
 share/icons/nuvola/64x64/apps/indeximg.png
 share/icons/nuvola/64x64/apps/inkscape.png
 share/icons/nuvola/64x64/apps/input_devices_settings.png
+share/icons/nuvola/64x64/apps/internet-mail.png
 share/icons/nuvola/64x64/apps/irkick.png
 share/icons/nuvola/64x64/apps/juk.png
 share/icons/nuvola/64x64/apps/kaboodle.png
@@ -3699,7 +3703,6 @@ share/icons/nuvola/64x64/apps/klipper.png
 share/icons/nuvola/64x64/apps/klpq.png
 share/icons/nuvola/64x64/apps/kmag.png
 share/icons/nuvola/64x64/apps/kmahjong.png
-share/icons/nuvola/64x64/apps/kmail.png
 share/icons/nuvola/64x64/apps/kmenu.png
 share/icons/nuvola/64x64/apps/kmenuedit.png
 share/icons/nuvola/64x64/apps/kmessedwords.png
@@ -4176,10 +4179,12 @@ share/kde4/services/ScreenSavers/KSolarWinds.desktop
 share/kde4/services/ScreenSavers/KSwarm.desktop
 share/kde4/services/ScreenSavers/KVm.desktop
 share/kde4/services/ScreenSavers/KWave.desktop
+share/kde4/services/ScreenSavers/abstractile.desktop
 share/kde4/services/ScreenSavers/anemone.desktop
 share/kde4/services/ScreenSavers/anemotaxis.desktop
 share/kde4/services/ScreenSavers/ant.desktop
 share/kde4/services/ScreenSavers/antinspect.desktop
+share/kde4/services/ScreenSavers/antmaze.desktop
 share/kde4/services/ScreenSavers/antspotlight.desktop
 share/kde4/services/ScreenSavers/apollonian.desktop
 share/kde4/services/ScreenSavers/apple2.desktop
@@ -4192,24 +4197,32 @@ share/kde4/services/ScreenSavers/blaster.desktop
 share/kde4/services/ScreenSavers/blinkbox.desktop
 share/kde4/services/ScreenSavers/blitspin.desktop
 share/kde4/services/ScreenSavers/blocktube.desktop
+share/kde4/services/ScreenSavers/boing.desktop
 share/kde4/services/ScreenSavers/bouboule.desktop
 share/kde4/services/ScreenSavers/bouncingcow.desktop
 share/kde4/services/ScreenSavers/boxed.desktop
+share/kde4/services/ScreenSavers/boxfit.desktop
 share/kde4/services/ScreenSavers/braid.desktop
 share/kde4/services/ScreenSavers/bsod.desktop
 share/kde4/services/ScreenSavers/bubble3d.desktop
 share/kde4/services/ScreenSavers/bubbles.desktop
 share/kde4/services/ScreenSavers/bumps.desktop
 share/kde4/services/ScreenSavers/cage.desktop
+share/kde4/services/ScreenSavers/carousel.desktop
 share/kde4/services/ScreenSavers/ccurve.desktop
+share/kde4/services/ScreenSavers/celtic.desktop
 share/kde4/services/ScreenSavers/circuit.desktop
 share/kde4/services/ScreenSavers/cloudlife.desktop
 share/kde4/services/ScreenSavers/compass.desktop
 share/kde4/services/ScreenSavers/coral.desktop
+share/kde4/services/ScreenSavers/crackberg.desktop
 share/kde4/services/ScreenSavers/critical.desktop
 share/kde4/services/ScreenSavers/crystal.desktop
+share/kde4/services/ScreenSavers/cube21.desktop
 share/kde4/services/ScreenSavers/cubenetic.desktop
 share/kde4/services/ScreenSavers/cubestorm.desktop
+share/kde4/services/ScreenSavers/cubicgrid.desktop
+share/kde4/services/ScreenSavers/cwaves.desktop
 share/kde4/services/ScreenSavers/cynosure.desktop
 share/kde4/services/ScreenSavers/dangerball.desktop
 share/kde4/services/ScreenSavers/decayscreen.desktop
@@ -4226,11 +4239,13 @@ share/kde4/services/ScreenSavers/eruption.desktop
 share/kde4/services/ScreenSavers/euler2d.desktop
 share/kde4/services/ScreenSavers/extrusion.desktop
 share/kde4/services/ScreenSavers/fadeplot.desktop
+share/kde4/services/ScreenSavers/fiberlamp.desktop
 share/kde4/services/ScreenSavers/fireworkx.desktop
 share/kde4/services/ScreenSavers/flag.desktop
 share/kde4/services/ScreenSavers/flame.desktop
 share/kde4/services/ScreenSavers/flipflop.desktop
 share/kde4/services/ScreenSavers/flipscreen3d.desktop
+share/kde4/services/ScreenSavers/fliptext.desktop
 share/kde4/services/ScreenSavers/flow.desktop
 share/kde4/services/ScreenSavers/fluidballs.desktop
 share/kde4/services/ScreenSavers/flurry.desktop
@@ -4242,11 +4257,14 @@ share/kde4/services/ScreenSavers/galaxy.desktop
 share/kde4/services/ScreenSavers/gears.desktop
 share/kde4/services/ScreenSavers/gflux.desktop
 share/kde4/services/ScreenSavers/glblur.desktop
+share/kde4/services/ScreenSavers/glcells.desktop
 share/kde4/services/ScreenSavers/gleidescope.desktop
 share/kde4/services/ScreenSavers/glforestfire.desktop
+share/kde4/services/ScreenSavers/glhanoi.desktop
 share/kde4/services/ScreenSavers/glknots.desktop
 share/kde4/services/ScreenSavers/glmatrix.desktop
 share/kde4/services/ScreenSavers/glplanet.desktop
+share/kde4/services/ScreenSavers/glschool.desktop
 share/kde4/services/ScreenSavers/glslideshow.desktop
 share/kde4/services/ScreenSavers/glsnake.desktop
 share/kde4/services/ScreenSavers/gltext.desktop
@@ -4260,13 +4278,16 @@ share/kde4/services/ScreenSavers/hopalong.desktop
 share/kde4/services/ScreenSavers/hyperball.desktop
 share/kde4/services/ScreenSavers/hypercube.desktop
 share/kde4/services/ScreenSavers/hypertorus.desktop
+share/kde4/services/ScreenSavers/hypnowheel.desktop
 share/kde4/services/ScreenSavers/ifs.desktop
 share/kde4/services/ScreenSavers/imsmap.desktop
+share/kde4/services/ScreenSavers/interaggregate.desktop
 share/kde4/services/ScreenSavers/interference.desktop
 share/kde4/services/ScreenSavers/intermomentary.desktop
 share/kde4/services/ScreenSavers/jigglypuff.desktop
 share/kde4/services/ScreenSavers/jigsaw.desktop
 share/kde4/services/ScreenSavers/juggle.desktop
+share/kde4/services/ScreenSavers/juggler3d.desktop
 share/kde4/services/ScreenSavers/julia.desktop
 share/kde4/services/ScreenSavers/kaleidescope.desktop
 share/kde4/services/ScreenSavers/klein.desktop
@@ -4275,11 +4296,14 @@ share/kde4/services/ScreenSavers/kumppa.desktop
 share/kde4/services/ScreenSavers/lament.desktop
 share/kde4/services/ScreenSavers/laser.desktop
 share/kde4/services/ScreenSavers/lavalite.desktop
+share/kde4/services/ScreenSavers/lcdscrub.desktop
 share/kde4/services/ScreenSavers/lightning.desktop
 share/kde4/services/ScreenSavers/lisa.desktop
 share/kde4/services/ScreenSavers/lissie.desktop
 share/kde4/services/ScreenSavers/lmorph.desktop
+share/kde4/services/ScreenSavers/lockward.desktop
 share/kde4/services/ScreenSavers/loop.desktop
+share/kde4/services/ScreenSavers/m6502.desktop
 share/kde4/services/ScreenSavers/maze.desktop
 share/kde4/services/ScreenSavers/memscroller.desktop
 share/kde4/services/ScreenSavers/menger.desktop
@@ -4287,6 +4311,7 @@ share/kde4/services/ScreenSavers/metaballs.desktop
 share/kde4/services/ScreenSavers/mirrorblob.desktop
 share/kde4/services/ScreenSavers/mismunch.desktop
 share/kde4/services/ScreenSavers/moebius.desktop
+share/kde4/services/ScreenSavers/moebiusgears.desktop
 share/kde4/services/ScreenSavers/moire.desktop
 share/kde4/services/ScreenSavers/moire2.desktop
 share/kde4/services/ScreenSavers/molecule.desktop
@@ -4302,6 +4327,7 @@ share/kde4/services/ScreenSavers/penetrate.desktop
 share/kde4/services/ScreenSavers/penrose.desktop
 share/kde4/services/ScreenSavers/petri.desktop
 share/kde4/services/ScreenSavers/phosphor.desktop
+share/kde4/services/ScreenSavers/photopile.desktop
 share/kde4/services/ScreenSavers/piecewise.desktop
 share/kde4/services/ScreenSavers/pinion.desktop
 share/kde4/services/ScreenSavers/pipes.desktop
@@ -4327,6 +4353,7 @@ share/kde4/services/ScreenSavers/sballs.desktop
 share/kde4/services/ScreenSavers/shadebobs.desktop
 share/kde4/services/ScreenSavers/sierpinski.desktop
 share/kde4/services/ScreenSavers/sierpinski3d.desktop
+share/kde4/services/ScreenSavers/skytentacles.desktop
 share/kde4/services/ScreenSavers/slidescreen.desktop
 share/kde4/services/ScreenSavers/slip.desktop
 share/kde4/services/ScreenSavers/sonar.desktop
@@ -4346,13 +4373,17 @@ share/kde4/services/ScreenSavers/substrate.desktop
 share/kde4/services/ScreenSavers/superquadrics.desktop
 share/kde4/services/ScreenSavers/swirl.desktop
 share/kde4/services/ScreenSavers/t3d.desktop
+share/kde4/services/ScreenSavers/tangram.desktop
 share/kde4/services/ScreenSavers/thornbird.desktop
+share/kde4/services/ScreenSavers/timetunnel.desktop
+share/kde4/services/ScreenSavers/topblock.desktop
 share/kde4/services/ScreenSavers/triangle.desktop
 share/kde4/services/ScreenSavers/truchet.desktop
 share/kde4/services/ScreenSavers/twang.desktop
 share/kde4/services/ScreenSavers/vermiculate.desktop
 share/kde4/services/ScreenSavers/vidwhacker.desktop
 share/kde4/services/ScreenSavers/vines.desktop
+share/kde4/services/ScreenSavers/voronoi.desktop
 share/kde4/services/ScreenSavers/wander.desktop
 share/kde4/services/ScreenSavers/webcollage.desktop
 share/kde4/services/ScreenSavers/whirlwindwarp.desktop
@@ -4376,6 +4407,16 @@ share/wallpapers/At_Night/contents/images/1440x900.jpg
 share/wallpapers/At_Night/contents/images/1600x1200.jpg
 share/wallpapers/At_Night/contents/screenshot.png
 share/wallpapers/At_Night/metadata.desktop
+share/wallpapers/Atra_Dot/contents/images/1024x768.jpg
+share/wallpapers/Atra_Dot/contents/images/1280x1024.jpg
+share/wallpapers/Atra_Dot/contents/images/1280x800.jpg
+share/wallpapers/Atra_Dot/contents/images/1440x900.jpg
+share/wallpapers/Atra_Dot/contents/images/1600x1200.jpg
+share/wallpapers/Atra_Dot/contents/images/1920x1080.jpg
+share/wallpapers/Atra_Dot/contents/images/1920x1200.jpg
+share/wallpapers/Atra_Dot/contents/images/800x600.jpg
+share/wallpapers/Atra_Dot/contents/screnshot.jpg
+share/wallpapers/Atra_Dot/metadata.desktop
 share/wallpapers/Beach_Reflecting_Clouds/contents/images/1280x1024.jpg
 share/wallpapers/Beach_Reflecting_Clouds/contents/images/1440x900.jpg
 share/wallpapers/Beach_Reflecting_Clouds/contents/images/1600x1200.jpg
@@ -4397,6 +4438,14 @@ share/wallpapers/Colorado_Farm/contents/images/1600x1200.jpg
 share/wallpapers/Colorado_Farm/contents/images/1920x1200.jpg
 share/wallpapers/Colorado_Farm/contents/screenshot.png
 share/wallpapers/Colorado_Farm/metadata.desktop
+share/wallpapers/EOS/contents/images/1024x768.jpg
+share/wallpapers/EOS/contents/images/1280x1024.jpg
+share/wallpapers/EOS/contents/images/1280x800.jpg
+share/wallpapers/EOS/contents/images/1440x900.jpg
+share/wallpapers/EOS/contents/images/1600x1200.jpg
+share/wallpapers/EOS/contents/images/1920x1200.jpg
+share/wallpapers/EOS/contents/screenshot.png
+share/wallpapers/EOS/metadata.desktop
 share/wallpapers/Emotion/contents/images/1024x768.jpg
 share/wallpapers/Emotion/contents/images/1280x1024.jpg
 share/wallpapers/Emotion/contents/images/1280x800.jpg
@@ -4473,6 +4522,8 @@ share/wallpapers/Lightning/contents/images/1600x1200.jpg
 share/wallpapers/Lightning/contents/images/1920x1200.jpg
 share/wallpapers/Lightning/contents/screenshot.png
 share/wallpapers/Lightning/metadata.desktop
+share/wallpapers/Media_Life/2560x1080.jpg
+share/wallpapers/Media_Life/2560x1600.jpg
 share/wallpapers/Midnight_in_Karelia/contents/images/1024x768.jpg
 share/wallpapers/Midnight_in_Karelia/contents/images/1280x1024.jpg
 share/wallpapers/Midnight_in_Karelia/contents/images/1280x800.jpg
@@ -4491,6 +4542,14 @@ share/wallpapers/Skeeter_Hawk/contents/images/1600x1200.jpg
 share/wallpapers/Skeeter_Hawk/contents/images/1920x1200.jpg
 share/wallpapers/Skeeter_Hawk/contents/screenshot.png
 share/wallpapers/Skeeter_Hawk/metadata.desktop
+share/wallpapers/There_is_Rain_on_the_Table/contents/images/1024x768.jpg
+share/wallpapers/There_is_Rain_on_the_Table/contents/images/1280x1024.jpg
+share/wallpapers/There_is_Rain_on_the_Table/contents/images/1280x800.jpg
+share/wallpapers/There_is_Rain_on_the_Table/contents/images/1440x900.jpg
+share/wallpapers/There_is_Rain_on_the_Table/contents/images/1600x1200.jpg
+share/wallpapers/There_is_Rain_on_the_Table/contents/images/1920x1200.jpg
+share/wallpapers/There_is_Rain_on_the_Table/contents/screenshot.png
+share/wallpapers/There_is_Rain_on_the_Table/metadata.desktop
 share/wallpapers/Vector_Sunset/contents/images/1024x768.jpg
 share/wallpapers/Vector_Sunset/contents/images/1280x1024.jpg
 share/wallpapers/Vector_Sunset/contents/images/1280x800.jpg
@@ -4510,12 +4569,16 @@ share/wallpapers/Winter_Track/metadata.desktop
 @dirrm share/wallpapers/Vector_Sunset/contents/images
 @dirrm share/wallpapers/Vector_Sunset/contents
 @dirrm share/wallpapers/Vector_Sunset
+@dirrm share/wallpapers/There_is_Rain_on_the_Table/contents/images
+@dirrm share/wallpapers/There_is_Rain_on_the_Table/contents
+@dirrm share/wallpapers/There_is_Rain_on_the_Table
 @dirrm share/wallpapers/Skeeter_Hawk/contents/images
 @dirrm share/wallpapers/Skeeter_Hawk/contents
 @dirrm share/wallpapers/Skeeter_Hawk
 @dirrm share/wallpapers/Midnight_in_Karelia/contents/images
 @dirrm share/wallpapers/Midnight_in_Karelia/contents
 @dirrm share/wallpapers/Midnight_in_Karelia
+@dirrmtry share/wallpapers/Media_Life
 @dirrm share/wallpapers/Lightning/contents/images
 @dirrm share/wallpapers/Lightning/contents
 @dirrm share/wallpapers/Lightning
@@ -4549,6 +4612,9 @@ share/wallpapers/Winter_Track/metadata.desktop
 @dirrm share/wallpapers/Emotion/contents/images
 @dirrm share/wallpapers/Emotion/contents
 @dirrm share/wallpapers/Emotion
+@dirrm share/wallpapers/EOS/contents/images
+@dirrm share/wallpapers/EOS/contents
+@dirrm share/wallpapers/EOS
 @dirrm share/wallpapers/Colorado_Farm/contents/images
 @dirrm share/wallpapers/Colorado_Farm/contents
 @dirrm share/wallpapers/Colorado_Farm
@@ -4558,6 +4624,9 @@ share/wallpapers/Winter_Track/metadata.desktop
 @dirrm share/wallpapers/Beach_Reflecting_Clouds/contents/images
 @dirrm share/wallpapers/Beach_Reflecting_Clouds/contents
 @dirrm share/wallpapers/Beach_Reflecting_Clouds
+@dirrm share/wallpapers/Atra_Dot/contents/images
+@dirrm share/wallpapers/Atra_Dot/contents
+@dirrm share/wallpapers/Atra_Dot
 @dirrm share/wallpapers/At_Night/contents/images
 @dirrm share/wallpapers/At_Night/contents
 @dirrm share/wallpapers/At_Night

@@ -8,7 +8,7 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,11 +17,12 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-LIB_DEPENDS=	lzma.0:${PORTSDIR}/archivers/xz \
-		xine.1:${PORTSDIR}/multimedia/libxine \
-		slp.1:${PORTSDIR}/net/openslp
+LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
+		slp.1:${PORTSDIR}/net/openslp \
+		attica.0:${PORTSDIR}/x11-toolkits/attica \
+		ssh.4:${PORTSDIR}/security/libssh
 
-USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4 kdeexp
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4 #pimlibs
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -30,18 +31,33 @@ QT_COMPONENTS=	corelib opengl dbus phonon \
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAN1=	kdesu.1
-MAN8=	nepomukserver.8 nepomukservicestub.8
-
+MAN1=		kdesu.1
 OPTIONS=	PULSEAUDIO "Enable playback via PulseAudio soundserver" off
 
-.include <bsd.port.pre.mk>
+# Explicitly disable alsa, see for details:
+# http://mail.kde.org/pipermail/kde-freebsd/2010-March/008015.html
+CMAKE_ARGS+=	-DWITH_ALSA:BOOL=OFF
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 900012
+LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
+.endif
 
 .if defined(WITH_PULSEAUDIO)
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .else
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
+.endif
+
+.if exists(${LOCALBASE}/lib/soprano/libsoprano_virtuosobackend.so)
+CMAKE_ARGS+=	-DWITH_Nepomuk:BOOL=ON
+MAN8=		nepomukserver.8 nepomukservicestub.8
+PLIST_SUB+=	NEPOMUK=""
+.else
+CMAKE_ARGS+=	-DWITH_Nepomuk:BOOL=OFF
+PLIST_SUB+=	NEPOMUK="@comment "
 .endif
 
 post-patch:
@@ -52,4 +68,4 @@ post-patch:
 		${PATCH_WRKSRC}/kioslave/man/man2html.cpp \
 		${PATCH_WRKSRC}/cmake/modules/FindCLucene.cmake
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

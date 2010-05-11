@@ -6,7 +6,6 @@
 
 PORTNAME=	kdepim-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,9 +16,11 @@ COMMENT=	Libraries for KDE-PIM applications
 
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
 
+CONFLICTS=	kdepimlibs-4.3.[1-4]
+
 LATEST_LINK=	${PORTNAME}4
 
-USE_KDE4=	pimlibs kdeexp kdeprefix kdehier sharedmime automoc4
+USE_KDE4=	pimlibs kdeprefix kdehier sharedmime automoc4
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4

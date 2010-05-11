@@ -24,12 +24,18 @@ share/doc/HTML/et/ark/man-ark.1.docbook
 share/doc/HTML/et/blinken/common
 share/doc/HTML/et/blinken/index.cache.bz2
 share/doc/HTML/et/blinken/index.docbook
+share/doc/HTML/et/blogilo/common
+share/doc/HTML/et/blogilo/index.cache.bz2
+share/doc/HTML/et/blogilo/index.docbook
 share/doc/HTML/et/bomber/common
 share/doc/HTML/et/bomber/index.cache.bz2
 share/doc/HTML/et/bomber/index.docbook
 share/doc/HTML/et/bovo/common
 share/doc/HTML/et/bovo/index.cache.bz2
 share/doc/HTML/et/bovo/index.docbook
+share/doc/HTML/et/cantor/common
+share/doc/HTML/et/cantor/index.cache.bz2
+share/doc/HTML/et/cantor/index.docbook
 share/doc/HTML/et/cervisia/common
 share/doc/HTML/et/cervisia/index.cache.bz2
 share/doc/HTML/et/cervisia/index.docbook
@@ -43,6 +49,9 @@ share/doc/HTML/et/dolphin/index.docbook
 share/doc/HTML/et/dragonplayer/common
 share/doc/HTML/et/dragonplayer/index.cache.bz2
 share/doc/HTML/et/dragonplayer/index.docbook
+share/doc/HTML/et/granatier/common
+share/doc/HTML/et/granatier/index.cache.bz2
+share/doc/HTML/et/granatier/index.docbook
 share/doc/HTML/et/gwenview/common
 share/doc/HTML/et/gwenview/index.cache.bz2
 share/doc/HTML/et/gwenview/index.docbook
@@ -60,9 +69,6 @@ share/doc/HTML/et/kabcclient/common
 share/doc/HTML/et/kabcclient/index.cache.bz2
 share/doc/HTML/et/kabcclient/index.docbook
 share/doc/HTML/et/kabcclient/man-kabcclient.1.docbook
-share/doc/HTML/et/kaddressbook/common
-share/doc/HTML/et/kaddressbook/index.cache.bz2
-share/doc/HTML/et/kaddressbook/index.docbook
 share/doc/HTML/et/kalarm/common
 share/doc/HTML/et/kalarm/index.cache.bz2
 share/doc/HTML/et/kalarm/index.docbook
@@ -82,16 +88,6 @@ share/doc/HTML/et/kapman/index.docbook
 share/doc/HTML/et/kapptemplate/common
 share/doc/HTML/et/kapptemplate/index.cache.bz2
 share/doc/HTML/et/kapptemplate/index.docbook
-share/doc/HTML/et/kate-plugins/common
-share/doc/HTML/et/kate-plugins/filetemplates.docbook
-share/doc/HTML/et/kate-plugins/htmltools.docbook
-share/doc/HTML/et/kate-plugins/index.cache.bz2
-share/doc/HTML/et/kate-plugins/index.docbook
-share/doc/HTML/et/kate-plugins/insertcommand.docbook
-share/doc/HTML/et/kate-plugins/openheader.docbook
-share/doc/HTML/et/kate-plugins/textfilter.docbook
-share/doc/HTML/et/kate-plugins/xmlcheck.docbook
-share/doc/HTML/et/kate-plugins/xmltools.docbook
 share/doc/HTML/et/kate/advanced.docbook
 share/doc/HTML/et/kate/common
 share/doc/HTML/et/kate/configuring.docbook
@@ -143,12 +139,12 @@ share/doc/HTML/et/kcharselect/index.docbook
 share/doc/HTML/et/kcmlirc/common
 share/doc/HTML/et/kcmlirc/index.cache.bz2
 share/doc/HTML/et/kcmlirc/index.docbook
+share/doc/HTML/et/kcontrol/attica/common
+share/doc/HTML/et/kcontrol/attica/index.cache.bz2
+share/doc/HTML/et/kcontrol/attica/index.docbook
 share/doc/HTML/et/kcontrol/autostart/common
 share/doc/HTML/et/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/et/kcontrol/autostart/index.docbook
-share/doc/HTML/et/kcontrol/background/common
-share/doc/HTML/et/kcontrol/background/index.cache.bz2
-share/doc/HTML/et/kcontrol/background/index.docbook
 share/doc/HTML/et/kcontrol/bell/common
 share/doc/HTML/et/kcontrol/bell/index.cache.bz2
 share/doc/HTML/et/kcontrol/bell/index.docbook
@@ -161,39 +157,33 @@ share/doc/HTML/et/kcontrol/bookmarks/index.docbook
 share/doc/HTML/et/kcontrol/cache/common
 share/doc/HTML/et/kcontrol/cache/index.cache.bz2
 share/doc/HTML/et/kcontrol/cache/index.docbook
+share/doc/HTML/et/kcontrol/cddbretrieval/common
+share/doc/HTML/et/kcontrol/cddbretrieval/index.cache.bz2
+share/doc/HTML/et/kcontrol/cddbretrieval/index.docbook
 share/doc/HTML/et/kcontrol/clock/common
 share/doc/HTML/et/kcontrol/clock/index.cache.bz2
 share/doc/HTML/et/kcontrol/clock/index.docbook
 share/doc/HTML/et/kcontrol/colors/common
 share/doc/HTML/et/kcontrol/colors/index.cache.bz2
 share/doc/HTML/et/kcontrol/colors/index.docbook
+share/doc/HTML/et/kcontrol/componentchooser/common
+share/doc/HTML/et/kcontrol/componentchooser/index.cache.bz2
+share/doc/HTML/et/kcontrol/componentchooser/index.docbook
 share/doc/HTML/et/kcontrol/cookies/common
 share/doc/HTML/et/kcontrol/cookies/index.cache.bz2
 share/doc/HTML/et/kcontrol/cookies/index.docbook
-share/doc/HTML/et/kcontrol/crypto/common
-share/doc/HTML/et/kcontrol/crypto/index.cache.bz2
-share/doc/HTML/et/kcontrol/crypto/index.docbook
 share/doc/HTML/et/kcontrol/desktop/common
 share/doc/HTML/et/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/et/kcontrol/desktop/index.docbook
-share/doc/HTML/et/kcontrol/desktopbehavior/common
-share/doc/HTML/et/kcontrol/desktopbehavior/index.cache.bz2
-share/doc/HTML/et/kcontrol/desktopbehavior/index.docbook
 share/doc/HTML/et/kcontrol/desktopthemedetails/common
 share/doc/HTML/et/kcontrol/desktopthemedetails/index.cache.bz2
 share/doc/HTML/et/kcontrol/desktopthemedetails/index.docbook
 share/doc/HTML/et/kcontrol/ebrowsing/common
 share/doc/HTML/et/kcontrol/ebrowsing/index.cache.bz2
 share/doc/HTML/et/kcontrol/ebrowsing/index.docbook
-share/doc/HTML/et/kcontrol/email/common
-share/doc/HTML/et/kcontrol/email/index.cache.bz2
-share/doc/HTML/et/kcontrol/email/index.docbook
 share/doc/HTML/et/kcontrol/emoticons/common
 share/doc/HTML/et/kcontrol/emoticons/index.cache.bz2
 share/doc/HTML/et/kcontrol/emoticons/index.docbook
-share/doc/HTML/et/kcontrol/energy/common
-share/doc/HTML/et/kcontrol/energy/index.cache.bz2
-share/doc/HTML/et/kcontrol/energy/index.docbook
 share/doc/HTML/et/kcontrol/filemanager/common
 share/doc/HTML/et/kcontrol/filemanager/index.cache.bz2
 share/doc/HTML/et/kcontrol/filemanager/index.docbook
@@ -209,6 +199,9 @@ share/doc/HTML/et/kcontrol/fonts/index.docbook
 share/doc/HTML/et/kcontrol/helpindex/common
 share/doc/HTML/et/kcontrol/helpindex/index.cache.bz2
 share/doc/HTML/et/kcontrol/helpindex/index.docbook
+share/doc/HTML/et/kcontrol/history/common
+share/doc/HTML/et/kcontrol/history/index.cache.bz2
+share/doc/HTML/et/kcontrol/history/index.docbook
 share/doc/HTML/et/kcontrol/icons/common
 share/doc/HTML/et/kcontrol/icons/index.cache.bz2
 share/doc/HTML/et/kcontrol/icons/index.docbook
@@ -221,15 +214,15 @@ share/doc/HTML/et/kcontrol/kamera/index.docbook
 share/doc/HTML/et/kcontrol/kcmaccess/common
 share/doc/HTML/et/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/et/kcontrol/kcmaccess/index.docbook
+share/doc/HTML/et/kcontrol/kcmcgi/common
+share/doc/HTML/et/kcontrol/kcmcgi/index.cache.bz2
+share/doc/HTML/et/kcontrol/kcmcgi/index.docbook
 share/doc/HTML/et/kcontrol/kcmcss/common
 share/doc/HTML/et/kcontrol/kcmcss/index.cache.bz2
 share/doc/HTML/et/kcontrol/kcmcss/index.docbook
 share/doc/HTML/et/kcontrol/kcmdisplay/common
 share/doc/HTML/et/kcontrol/kcmdisplay/index.cache.bz2
 share/doc/HTML/et/kcontrol/kcmdisplay/index.docbook
-share/doc/HTML/et/kcontrol/kcmkonsole/common
-share/doc/HTML/et/kcontrol/kcmkonsole/index.cache.bz2
-share/doc/HTML/et/kcontrol/kcmkonsole/index.docbook
 share/doc/HTML/et/kcontrol/kcmlaunch/common
 share/doc/HTML/et/kcontrol/kcmlaunch/index.cache.bz2
 share/doc/HTML/et/kcontrol/kcmlaunch/index.docbook
@@ -242,22 +235,33 @@ share/doc/HTML/et/kcontrol/kcmsmserver/index.docbook
 share/doc/HTML/et/kcontrol/kcmstyle/common
 share/doc/HTML/et/kcontrol/kcmstyle/index.cache.bz2
 share/doc/HTML/et/kcontrol/kcmstyle/index.docbook
-share/doc/HTML/et/kcontrol/kcmtaskbar/common
-share/doc/HTML/et/kcontrol/kcmtaskbar/index.cache.bz2
-share/doc/HTML/et/kcontrol/kcmtaskbar/index.docbook
-share/doc/HTML/et/kcontrol/kdm/common
-share/doc/HTML/et/kcontrol/kdm/index.cache.bz2
-share/doc/HTML/et/kcontrol/kdm/index.docbook
+share/doc/HTML/et/kcontrol/kded/common
+share/doc/HTML/et/kcontrol/kded/index.cache.bz2
+share/doc/HTML/et/kcontrol/kded/index.docbook
 share/doc/HTML/et/kcontrol/keyboard/common
 share/doc/HTML/et/kcontrol/keyboard/index.cache.bz2
 share/doc/HTML/et/kcontrol/keyboard/index.docbook
 share/doc/HTML/et/kcontrol/keys/common
 share/doc/HTML/et/kcontrol/keys/index.cache.bz2
 share/doc/HTML/et/kcontrol/keys/index.docbook
-share/doc/HTML/et/kcontrol/khtml/common
-share/doc/HTML/et/kcontrol/khtml/index.cache.bz2
-share/doc/HTML/et/kcontrol/khtml/index.docbook
-share/doc/HTML/et/kcontrol/khtml/nsplugin.docbook
+share/doc/HTML/et/kcontrol/kgamma/common
+share/doc/HTML/et/kcontrol/kgamma/index.cache.bz2
+share/doc/HTML/et/kcontrol/kgamma/index.docbook
+share/doc/HTML/et/kcontrol/khtml-adblock/common
+share/doc/HTML/et/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/et/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/et/kcontrol/khtml-behavior/common
+share/doc/HTML/et/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/et/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/et/kcontrol/khtml-general/common
+share/doc/HTML/et/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/et/kcontrol/khtml-general/index.docbook
+share/doc/HTML/et/kcontrol/khtml-java-js/common
+share/doc/HTML/et/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/et/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/et/kcontrol/khtml-plugins/common
+share/doc/HTML/et/kcontrol/khtml-plugins/index.cache.bz2
+share/doc/HTML/et/kcontrol/khtml-plugins/index.docbook
 share/doc/HTML/et/kcontrol/knetworkconf/common
 share/doc/HTML/et/kcontrol/knetworkconf/index.cache.bz2
 share/doc/HTML/et/kcontrol/knetworkconf/index.docbook
@@ -270,6 +274,12 @@ share/doc/HTML/et/kcontrol/kwincompositing/index.docbook
 share/doc/HTML/et/kcontrol/kwindecoration/common
 share/doc/HTML/et/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/et/kcontrol/kwindecoration/index.docbook
+share/doc/HTML/et/kcontrol/kwinscreenedges/common
+share/doc/HTML/et/kcontrol/kwinscreenedges/index.cache.bz2
+share/doc/HTML/et/kcontrol/kwinscreenedges/index.docbook
+share/doc/HTML/et/kcontrol/kwintabbox/common
+share/doc/HTML/et/kcontrol/kwintabbox/index.cache.bz2
+share/doc/HTML/et/kcontrol/kwintabbox/index.docbook
 share/doc/HTML/et/kcontrol/kxkb/common
 share/doc/HTML/et/kcontrol/kxkb/index.cache.bz2
 share/doc/HTML/et/kcontrol/kxkb/index.docbook
@@ -285,28 +295,21 @@ share/doc/HTML/et/kcontrol/nepomuk/index.docbook
 share/doc/HTML/et/kcontrol/netpref/common
 share/doc/HTML/et/kcontrol/netpref/index.cache.bz2
 share/doc/HTML/et/kcontrol/netpref/index.docbook
-share/doc/HTML/et/kcontrol/panel/common
-share/doc/HTML/et/kcontrol/panel/index.cache.bz2
-share/doc/HTML/et/kcontrol/panel/index.docbook
-share/doc/HTML/et/kcontrol/panelappearance/common
-share/doc/HTML/et/kcontrol/panelappearance/index.cache.bz2
-share/doc/HTML/et/kcontrol/panelappearance/index.docbook
-share/doc/HTML/et/kcontrol/passwords/common
-share/doc/HTML/et/kcontrol/passwords/index.cache.bz2
-share/doc/HTML/et/kcontrol/passwords/index.docbook
 share/doc/HTML/et/kcontrol/paths/common
 share/doc/HTML/et/kcontrol/paths/index.cache.bz2
 share/doc/HTML/et/kcontrol/paths/index.docbook
 share/doc/HTML/et/kcontrol/performance/common
 share/doc/HTML/et/kcontrol/performance/index.cache.bz2
 share/doc/HTML/et/kcontrol/performance/index.docbook
+share/doc/HTML/et/kcontrol/phonon/common
+share/doc/HTML/et/kcontrol/phonon/index.cache.bz2
+share/doc/HTML/et/kcontrol/phonon/index.docbook
 share/doc/HTML/et/kcontrol/powerdevil/common
 share/doc/HTML/et/kcontrol/powerdevil/index.cache.bz2
 share/doc/HTML/et/kcontrol/powerdevil/index.docbook
 share/doc/HTML/et/kcontrol/proxy/common
 share/doc/HTML/et/kcontrol/proxy/index.cache.bz2
 share/doc/HTML/et/kcontrol/proxy/index.docbook
-share/doc/HTML/et/kcontrol/proxy/socks.docbook
 share/doc/HTML/et/kcontrol/screensaver/common
 share/doc/HTML/et/kcontrol/screensaver/index.cache.bz2
 share/doc/HTML/et/kcontrol/screensaver/index.docbook
@@ -316,12 +319,21 @@ share/doc/HTML/et/kcontrol/smb/index.docbook
 share/doc/HTML/et/kcontrol/solid-actions/common
 share/doc/HTML/et/kcontrol/solid-actions/index.cache.bz2
 share/doc/HTML/et/kcontrol/solid-actions/index.docbook
+share/doc/HTML/et/kcontrol/solid-device-automounter/common
+share/doc/HTML/et/kcontrol/solid-device-automounter/index.cache.bz2
+share/doc/HTML/et/kcontrol/solid-device-automounter/index.docbook
+share/doc/HTML/et/kcontrol/solid-hardware/common
+share/doc/HTML/et/kcontrol/solid-hardware/index.cache.bz2
+share/doc/HTML/et/kcontrol/solid-hardware/index.docbook
 share/doc/HTML/et/kcontrol/spellchecking/common
 share/doc/HTML/et/kcontrol/spellchecking/index.cache.bz2
 share/doc/HTML/et/kcontrol/spellchecking/index.docbook
 share/doc/HTML/et/kcontrol/splashscreen/common
 share/doc/HTML/et/kcontrol/splashscreen/index.cache.bz2
 share/doc/HTML/et/kcontrol/splashscreen/index.docbook
+share/doc/HTML/et/kcontrol/trash/common
+share/doc/HTML/et/kcontrol/trash/index.cache.bz2
+share/doc/HTML/et/kcontrol/trash/index.docbook
 share/doc/HTML/et/kcontrol/useragent/common
 share/doc/HTML/et/kcontrol/useragent/index.cache.bz2
 share/doc/HTML/et/kcontrol/useragent/index.docbook
@@ -331,12 +343,12 @@ share/doc/HTML/et/kcontrol/windowbehaviour/index.docbook
 share/doc/HTML/et/kcontrol/windowspecific/common
 share/doc/HTML/et/kcontrol/windowspecific/index.cache.bz2
 share/doc/HTML/et/kcontrol/windowspecific/index.docbook
+share/doc/HTML/et/kcontrol/workspaceoptions/common
+share/doc/HTML/et/kcontrol/workspaceoptions/index.cache.bz2
+share/doc/HTML/et/kcontrol/workspaceoptions/index.docbook
 share/doc/HTML/et/kcron/common
 share/doc/HTML/et/kcron/index.cache.bz2
 share/doc/HTML/et/kcron/index.docbook
-share/doc/HTML/et/kdat/common
-share/doc/HTML/et/kdat/index.cache.bz2
-share/doc/HTML/et/kdat/index.docbook
 share/doc/HTML/et/kdebugdialog/common
 share/doc/HTML/et/kdebugdialog/index.cache.bz2
 share/doc/HTML/et/kdebugdialog/index.docbook
@@ -374,9 +386,6 @@ share/doc/HTML/et/kfloppy/index.docbook
 share/doc/HTML/et/kfourinline/common
 share/doc/HTML/et/kfourinline/index.cache.bz2
 share/doc/HTML/et/kfourinline/index.docbook
-share/doc/HTML/et/kgamma/common
-share/doc/HTML/et/kgamma/index.cache.bz2
-share/doc/HTML/et/kgamma/index.docbook
 share/doc/HTML/et/kgeography/common
 share/doc/HTML/et/kgeography/index.cache.bz2
 share/doc/HTML/et/kgeography/index.docbook
@@ -515,18 +524,24 @@ share/doc/HTML/et/kig/common
 share/doc/HTML/et/kig/index.cache.bz2
 share/doc/HTML/et/kig/index.docbook
 share/doc/HTML/et/kig/man-kig.1.docbook
+share/doc/HTML/et/kigo/common
+share/doc/HTML/et/kigo/index.cache.bz2
+share/doc/HTML/et/kigo/index.docbook
 share/doc/HTML/et/killbots/common
 share/doc/HTML/et/killbots/index.cache.bz2
 share/doc/HTML/et/killbots/index.docbook
 share/doc/HTML/et/kimagemapeditor/common
 share/doc/HTML/et/kimagemapeditor/index.cache.bz2
 share/doc/HTML/et/kimagemapeditor/index.docbook
+share/doc/HTML/et/kinfocenter/common
 share/doc/HTML/et/kinfocenter/devices/common
 share/doc/HTML/et/kinfocenter/devices/index.cache.bz2
 share/doc/HTML/et/kinfocenter/devices/index.docbook
 share/doc/HTML/et/kinfocenter/dma/common
 share/doc/HTML/et/kinfocenter/dma/index.cache.bz2
 share/doc/HTML/et/kinfocenter/dma/index.docbook
+share/doc/HTML/et/kinfocenter/index.cache.bz2
+share/doc/HTML/et/kinfocenter/index.docbook
 share/doc/HTML/et/kinfocenter/interrupts/common
 share/doc/HTML/et/kinfocenter/interrupts/index.cache.bz2
 share/doc/HTML/et/kinfocenter/interrupts/index.docbook
@@ -548,9 +563,6 @@ share/doc/HTML/et/kinfocenter/partitions/index.docbook
 share/doc/HTML/et/kinfocenter/pci/common
 share/doc/HTML/et/kinfocenter/pci/index.cache.bz2
 share/doc/HTML/et/kinfocenter/pci/index.docbook
-share/doc/HTML/et/kinfocenter/pcmcia/common
-share/doc/HTML/et/kinfocenter/pcmcia/index.cache.bz2
-share/doc/HTML/et/kinfocenter/pcmcia/index.docbook
 share/doc/HTML/et/kinfocenter/processor/common
 share/doc/HTML/et/kinfocenter/processor/index.cache.bz2
 share/doc/HTML/et/kinfocenter/processor/index.docbook
@@ -569,6 +581,9 @@ share/doc/HTML/et/kinfocenter/sound/index.docbook
 share/doc/HTML/et/kinfocenter/usb/common
 share/doc/HTML/et/kinfocenter/usb/index.cache.bz2
 share/doc/HTML/et/kinfocenter/usb/index.docbook
+share/doc/HTML/et/kinfocenter/view1394/common
+share/doc/HTML/et/kinfocenter/view1394/index.cache.bz2
+share/doc/HTML/et/kinfocenter/view1394/index.docbook
 share/doc/HTML/et/kinfocenter/xserver/common
 share/doc/HTML/et/kinfocenter/xserver/index.cache.bz2
 share/doc/HTML/et/kinfocenter/xserver/index.docbook
@@ -626,6 +641,9 @@ share/doc/HTML/et/kioslave/mailto/index.docbook
 share/doc/HTML/et/kioslave/man/common
 share/doc/HTML/et/kioslave/man/index.cache.bz2
 share/doc/HTML/et/kioslave/man/index.docbook
+share/doc/HTML/et/kioslave/mbox/common
+share/doc/HTML/et/kioslave/mbox/index.cache.bz2
+share/doc/HTML/et/kioslave/mbox/index.docbook
 share/doc/HTML/et/kioslave/network/common
 share/doc/HTML/et/kioslave/network/index.cache.bz2
 share/doc/HTML/et/kioslave/network/index.docbook
@@ -647,6 +665,9 @@ share/doc/HTML/et/kioslave/rlogin/index.docbook
 share/doc/HTML/et/kioslave/sftp/common
 share/doc/HTML/et/kioslave/sftp/index.cache.bz2
 share/doc/HTML/et/kioslave/sftp/index.docbook
+share/doc/HTML/et/kioslave/sieve/common
+share/doc/HTML/et/kioslave/sieve/index.cache.bz2
+share/doc/HTML/et/kioslave/sieve/index.docbook
 share/doc/HTML/et/kioslave/smb/common
 share/doc/HTML/et/kioslave/smb/index.cache.bz2
 share/doc/HTML/et/kioslave/smb/index.docbook
@@ -852,6 +873,9 @@ share/doc/HTML/et/konsole/tabbar.png
 share/doc/HTML/et/konsolekalendar/common
 share/doc/HTML/et/konsolekalendar/index.cache.bz2
 share/doc/HTML/et/konsolekalendar/index.docbook
+share/doc/HTML/et/kontact-admin/common
+share/doc/HTML/et/kontact-admin/index.cache.bz2
+share/doc/HTML/et/kontact-admin/index.docbook
 share/doc/HTML/et/kontact/common
 share/doc/HTML/et/kontact/index.cache.bz2
 share/doc/HTML/et/kontact/index.docbook
@@ -866,20 +890,10 @@ share/doc/HTML/et/korganizer/index.cache.bz2
 share/doc/HTML/et/korganizer/index.docbook
 share/doc/HTML/et/korganizer/outlook-to-vcalendar.docbook
 share/doc/HTML/et/korganizer/plugins-chapter.docbook
-share/doc/HTML/et/kpackage/common
-share/doc/HTML/et/kpackage/index.cache.bz2
-share/doc/HTML/et/kpackage/index.docbook
 share/doc/HTML/et/kpat/common
 share/doc/HTML/et/kpat/index.cache.bz2
 share/doc/HTML/et/kpat/index.docbook
 share/doc/HTML/et/kpat/man-kpat.6.docbook
-share/doc/HTML/et/kpilot/common
-share/doc/HTML/et/kpilot/configuration.docbook
-share/doc/HTML/et/kpilot/faq.docbook
-share/doc/HTML/et/kpilot/index.cache.bz2
-share/doc/HTML/et/kpilot/index.docbook
-share/doc/HTML/et/kpilot/sync.docbook
-share/doc/HTML/et/kpilot/usage.docbook
 share/doc/HTML/et/kppp/accounting.docbook
 share/doc/HTML/et/kppp/callback.docbook
 share/doc/HTML/et/kppp/chap.docbook
@@ -909,12 +923,12 @@ share/doc/HTML/et/kruler/index.docbook
 share/doc/HTML/et/ksame/common
 share/doc/HTML/et/ksame/index.cache.bz2
 share/doc/HTML/et/ksame/index.docbook
-share/doc/HTML/et/kscd/common
-share/doc/HTML/et/kscd/index.cache.bz2
-share/doc/HTML/et/kscd/index.docbook
 share/doc/HTML/et/kshisen/common
 share/doc/HTML/et/kshisen/index.cache.bz2
 share/doc/HTML/et/kshisen/index.docbook
+share/doc/HTML/et/ksirk/common
+share/doc/HTML/et/ksirk/index.cache.bz2
+share/doc/HTML/et/ksirk/index.docbook
 share/doc/HTML/et/ksirkskineditor/common
 share/doc/HTML/et/ksirkskineditor/index.cache.bz2
 share/doc/HTML/et/ksirkskineditor/index.docbook
@@ -1001,9 +1015,6 @@ share/doc/HTML/et/ksysguard/index.docbook
 share/doc/HTML/et/ksystemlog/common
 share/doc/HTML/et/ksystemlog/index.cache.bz2
 share/doc/HTML/et/ksystemlog/index.docbook
-share/doc/HTML/et/ksysv/common
-share/doc/HTML/et/ksysv/index.cache.bz2
-share/doc/HTML/et/ksysv/index.docbook
 share/doc/HTML/et/kteatime/common
 share/doc/HTML/et/kteatime/index.cache.bz2
 share/doc/HTML/et/kteatime/index.docbook
@@ -1056,23 +1067,6 @@ share/doc/HTML/et/kwordquiz/index.docbook
 share/doc/HTML/et/kwrite/common
 share/doc/HTML/et/kwrite/index.cache.bz2
 share/doc/HTML/et/kwrite/index.docbook
-share/doc/HTML/et/kxsldbg/callstack.docbook
-share/doc/HTML/et/kxsldbg/common
-share/doc/HTML/et/kxsldbg/credits.docbook
-share/doc/HTML/et/kxsldbg/entities.docbook
-share/doc/HTML/et/kxsldbg/glossary.docbook
-share/doc/HTML/et/kxsldbg/index.cache.bz2
-share/doc/HTML/et/kxsldbg/index.docbook
-share/doc/HTML/et/kxsldbg/kxsldbg_configure.docbook
-share/doc/HTML/et/kxsldbg/kxsldbg_inspector.docbook
-share/doc/HTML/et/kxsldbg/kxsldbg_mainwindow.docbook
-share/doc/HTML/et/kxsldbg/kxsldbg_tools.docbook
-share/doc/HTML/et/kxsldbg/sources.docbook
-share/doc/HTML/et/kxsldbg/templates.docbook
-share/doc/HTML/et/kxsldbg/variables.docbook
-share/doc/HTML/et/lilo-config/common
-share/doc/HTML/et/lilo-config/index.cache.bz2
-share/doc/HTML/et/lilo-config/index.docbook
 share/doc/HTML/et/lokalize/common
 share/doc/HTML/et/lokalize/index.cache.bz2
 share/doc/HTML/et/lokalize/index.docbook
@@ -1093,9 +1087,21 @@ share/doc/HTML/et/okteta/tools.docbook
 share/doc/HTML/et/okular/common
 share/doc/HTML/et/okular/index.cache.bz2
 share/doc/HTML/et/okular/index.docbook
+share/doc/HTML/et/palapeli/common
+share/doc/HTML/et/palapeli/index.cache.bz2
+share/doc/HTML/et/palapeli/index.docbook
 share/doc/HTML/et/parley/common
 share/doc/HTML/et/parley/index.cache.bz2
 share/doc/HTML/et/parley/index.docbook
+share/doc/HTML/et/plasma-desktop/common
+share/doc/HTML/et/plasma-desktop/index.cache.bz2
+share/doc/HTML/et/plasma-desktop/index.docbook
+share/doc/HTML/et/printer-applet/common
+share/doc/HTML/et/printer-applet/index.cache.bz2
+share/doc/HTML/et/printer-applet/index.docbook
+share/doc/HTML/et/rocs/common
+share/doc/HTML/et/rocs/index.cache.bz2
+share/doc/HTML/et/rocs/index.docbook
 share/doc/HTML/et/sonnet/common
 share/doc/HTML/et/sonnet/index.cache.bz2
 share/doc/HTML/et/sonnet/index.docbook
@@ -1120,17 +1126,9 @@ share/doc/HTML/et/umbrello/introduction.docbook
 share/doc/HTML/et/umbrello/other_features.docbook
 share/doc/HTML/et/umbrello/uml_basics.docbook
 share/doc/HTML/et/umbrello/working_with_umbrello.docbook
-share/doc/HTML/et/xsldbg/commands.docbook
-share/doc/HTML/et/xsldbg/common
-share/doc/HTML/et/xsldbg/credits.docbook
-share/doc/HTML/et/xsldbg/index.cache.bz2
-share/doc/HTML/et/xsldbg/index.docbook
-share/doc/HTML/et/xsldbg/introduction.docbook
-share/doc/HTML/et/xsldbg/man-xsldbg.1.docbook
-share/doc/HTML/et/xsldbg/usage.docbook
 share/locale/et/LC_MESSAGES/akonadi-kcal.mo
 share/locale/et/LC_MESSAGES/akonadi_birthdays_resource.mo
-share/locale/et/LC_MESSAGES/akonadi_distlist_resource.mo
+share/locale/et/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_kabc_resource.mo
@@ -1140,31 +1138,41 @@ share/locale/et/LC_MESSAGES/akonadi_kolabproxy_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_kresourceassistant.mo
 share/locale/et/LC_MESSAGES/akonadi_localbookmarks_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_maildir_resource.mo
+share/locale/et/LC_MESSAGES/akonadi_maildispatcher_agent.mo
+share/locale/et/LC_MESSAGES/akonadi_mailtransport_resource.mo
+share/locale/et/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_next.mo
 share/locale/et/LC_MESSAGES/akonadi_nntp_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_openchange_resource.mo
+share/locale/et/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_vcarddir_resource.mo
+share/locale/et/LC_MESSAGES/akonadicontact.mo
 share/locale/et/LC_MESSAGES/akonaditray.mo
 share/locale/et/LC_MESSAGES/akregator.mo
 share/locale/et/LC_MESSAGES/amor.mo
 share/locale/et/LC_MESSAGES/ark.mo
+share/locale/et/LC_MESSAGES/attica_kde.mo
 share/locale/et/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/et/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/et/LC_MESSAGES/audiorename_plugin.mo
 share/locale/et/LC_MESSAGES/blinken.mo
+share/locale/et/LC_MESSAGES/blogilo.mo
 share/locale/et/LC_MESSAGES/bomber.mo
 share/locale/et/LC_MESSAGES/bovo.mo
+share/locale/et/LC_MESSAGES/cantor.mo
 share/locale/et/LC_MESSAGES/cervisia.mo
+share/locale/et/LC_MESSAGES/cryptopageplugin.mo
 share/locale/et/LC_MESSAGES/cvsservice.mo
 share/locale/et/LC_MESSAGES/display.mo
 share/locale/et/LC_MESSAGES/dolphin.mo
 share/locale/et/LC_MESSAGES/dragonplayer.mo
 share/locale/et/LC_MESSAGES/drkonqi.mo
 share/locale/et/LC_MESSAGES/filetypes.mo
+share/locale/et/LC_MESSAGES/granatier.mo
 share/locale/et/LC_MESSAGES/gwenview.mo
 share/locale/et/LC_MESSAGES/htmlsearch.mo
 share/locale/et/LC_MESSAGES/imagerename_plugin.mo
@@ -1178,7 +1186,6 @@ share/locale/et/LC_MESSAGES/kabc_file.mo
 share/locale/et/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/et/LC_MESSAGES/kabc_net.mo
 share/locale/et/LC_MESSAGES/kabc_slox.mo
-share/locale/et/LC_MESSAGES/kabcakonadi.mo
 share/locale/et/LC_MESSAGES/kabcclient.mo
 share/locale/et/LC_MESSAGES/kabcformat_binary.mo
 share/locale/et/LC_MESSAGES/kaccess.mo
@@ -1211,6 +1218,8 @@ share/locale/et/LC_MESSAGES/katepart4.mo
 share/locale/et/LC_MESSAGES/katepybrowse.mo
 share/locale/et/LC_MESSAGES/katequickdocumentswitcherplugin.mo
 share/locale/et/LC_MESSAGES/katesnippets.mo
+share/locale/et/LC_MESSAGES/katesnippets_tng.mo
+share/locale/et/LC_MESSAGES/katesnippetstng_editor.mo
 share/locale/et/LC_MESSAGES/katesymbolviewer.mo
 share/locale/et/LC_MESSAGES/katetabbarextension.mo
 share/locale/et/LC_MESSAGES/katetextfilter.mo
@@ -1232,11 +1241,15 @@ share/locale/et/LC_MESSAGES/kcalc.mo
 share/locale/et/LC_MESSAGES/kcertpart.mo
 share/locale/et/LC_MESSAGES/kcharselect.mo
 share/locale/et/LC_MESSAGES/kcm_akonadi.mo
+share/locale/et/LC_MESSAGES/kcm_akonadicontact_actions.mo
+share/locale/et/LC_MESSAGES/kcm_attica.mo
 share/locale/et/LC_MESSAGES/kcm_autostart.mo
 share/locale/et/LC_MESSAGES/kcm_desktopthemedetails.mo
+share/locale/et/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/et/LC_MESSAGES/kcm_emoticons.mo
 share/locale/et/LC_MESSAGES/kcm_krfb.mo
 share/locale/et/LC_MESSAGES/kcm_kwindesktop.mo
+share/locale/et/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/et/LC_MESSAGES/kcm_lirc.mo
 share/locale/et/LC_MESSAGES/kcm_memory.mo
 share/locale/et/LC_MESSAGES/kcm_partition.mo
@@ -1256,7 +1269,6 @@ share/locale/et/LC_MESSAGES/kcmcgi.mo
 share/locale/et/LC_MESSAGES/kcmcolors.mo
 share/locale/et/LC_MESSAGES/kcmcomponentchooser.mo
 share/locale/et/LC_MESSAGES/kcmcrypto.mo
-share/locale/et/LC_MESSAGES/kcmenergy.mo
 share/locale/et/LC_MESSAGES/kcmfonts.mo
 share/locale/et/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/et/LC_MESSAGES/kcmicons.mo
@@ -1264,7 +1276,6 @@ share/locale/et/LC_MESSAGES/kcminfo.mo
 share/locale/et/LC_MESSAGES/kcminit.mo
 share/locale/et/LC_MESSAGES/kcminput.mo
 share/locale/et/LC_MESSAGES/kcmioslaveinfo.mo
-share/locale/et/LC_MESSAGES/kcmkabconfig.mo
 share/locale/et/LC_MESSAGES/kcmkamera.mo
 share/locale/et/LC_MESSAGES/kcmkclock.mo
 share/locale/et/LC_MESSAGES/kcmkded.mo
@@ -1283,7 +1294,6 @@ share/locale/et/LC_MESSAGES/kcmkwinrules.mo
 share/locale/et/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/et/LC_MESSAGES/kcmkwm.mo
 share/locale/et/LC_MESSAGES/kcmlaunch.mo
-share/locale/et/LC_MESSAGES/kcmlilo.mo
 share/locale/et/LC_MESSAGES/kcmlocale.mo
 share/locale/et/LC_MESSAGES/kcmnic.mo
 share/locale/et/LC_MESSAGES/kcmnotify.mo
@@ -1298,13 +1308,14 @@ share/locale/et/LC_MESSAGES/kcmsolidproc.mo
 share/locale/et/LC_MESSAGES/kcmstyle.mo
 share/locale/et/LC_MESSAGES/kcmusb.mo
 share/locale/et/LC_MESSAGES/kcmview1394.mo
+share/locale/et/LC_MESSAGES/kcmworkspaceoptions.mo
 share/locale/et/LC_MESSAGES/kcmxinerama.mo
 share/locale/et/LC_MESSAGES/kcolorchooser.mo
 share/locale/et/LC_MESSAGES/kcron.mo
-share/locale/et/LC_MESSAGES/kdat.mo
 share/locale/et/LC_MESSAGES/kde-menu.mo
 share/locale/et/LC_MESSAGES/kdeasciiquarium.mo
 share/locale/et/LC_MESSAGES/kdebugdialog.mo
+share/locale/et/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/et/LC_MESSAGES/kdelibs4.mo
 share/locale/et/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/et/LC_MESSAGES/kdelirc.mo
@@ -1312,7 +1323,6 @@ share/locale/et/LC_MESSAGES/kdepasswd.mo
 share/locale/et/LC_MESSAGES/kdepimresources.mo
 share/locale/et/LC_MESSAGES/kdepimwizards.mo
 share/locale/et/LC_MESSAGES/kdeqt.mo
-share/locale/et/LC_MESSAGES/kdessh.mo
 share/locale/et/LC_MESSAGES/kdesu.mo
 share/locale/et/LC_MESSAGES/kdesud.mo
 share/locale/et/LC_MESSAGES/kdf.mo
@@ -1327,7 +1337,6 @@ share/locale/et/LC_MESSAGES/kfile.mo
 share/locale/et/LC_MESSAGES/kfile_avi.mo
 share/locale/et/LC_MESSAGES/kfile_dds.mo
 share/locale/et/LC_MESSAGES/kfile_drgeo.mo
-share/locale/et/LC_MESSAGES/kfile_dvi.mo
 share/locale/et/LC_MESSAGES/kfile_exr.mo
 share/locale/et/LC_MESSAGES/kfile_flac.mo
 share/locale/et/LC_MESSAGES/kfile_kig.mo
@@ -1353,6 +1362,7 @@ share/locale/et/LC_MESSAGES/kfontinst.mo
 share/locale/et/LC_MESSAGES/kfourinline.mo
 share/locale/et/LC_MESSAGES/kgeography.mo
 share/locale/et/LC_MESSAGES/kget.mo
+share/locale/et/LC_MESSAGES/kglobalaccel.mo
 share/locale/et/LC_MESSAGES/kgoldrunner.mo
 share/locale/et/LC_MESSAGES/kgpg.mo
 share/locale/et/LC_MESSAGES/kgreet_classic.mo
@@ -1365,6 +1375,7 @@ share/locale/et/LC_MESSAGES/khotnewstuff.mo
 share/locale/et/LC_MESSAGES/khtmlkttsd.mo
 share/locale/et/LC_MESSAGES/kiconfinder.mo
 share/locale/et/LC_MESSAGES/kig.mo
+share/locale/et/LC_MESSAGES/kigo.mo
 share/locale/et/LC_MESSAGES/killbots.mo
 share/locale/et/LC_MESSAGES/kimagemapeditor.mo
 share/locale/et/LC_MESSAGES/kinetd.mo
@@ -1386,6 +1397,7 @@ share/locale/et/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/et/LC_MESSAGES/kio_ldap.mo
 share/locale/et/LC_MESSAGES/kio_man.mo
 share/locale/et/LC_MESSAGES/kio_mbox.mo
+share/locale/et/LC_MESSAGES/kio_nepomuk.mo
 share/locale/et/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/et/LC_MESSAGES/kio_nfs.mo
 share/locale/et/LC_MESSAGES/kio_nntp.mo
@@ -1398,12 +1410,12 @@ share/locale/et/LC_MESSAGES/kio_smb.mo
 share/locale/et/LC_MESSAGES/kio_smtp.mo
 share/locale/et/LC_MESSAGES/kio_svn.mo
 share/locale/et/LC_MESSAGES/kio_thumbnail.mo
+share/locale/et/LC_MESSAGES/kio_timeline.mo
 share/locale/et/LC_MESSAGES/kio_trash.mo
 share/locale/et/LC_MESSAGES/kio_zeroconf.mo
 share/locale/et/LC_MESSAGES/kioclient.mo
 share/locale/et/LC_MESSAGES/kioexec.mo
 share/locale/et/LC_MESSAGES/kiriki.mo
-share/locale/et/LC_MESSAGES/kitchensync.mo
 share/locale/et/LC_MESSAGES/kiten.mo
 share/locale/et/LC_MESSAGES/kjots.mo
 share/locale/et/LC_MESSAGES/kjumpingcube.mo
@@ -1415,6 +1427,7 @@ share/locale/et/LC_MESSAGES/klipper.mo
 share/locale/et/LC_MESSAGES/klock.mo
 share/locale/et/LC_MESSAGES/kmag.mo
 share/locale/et/LC_MESSAGES/kmahjongg.mo
+share/locale/et/LC_MESSAGES/kmail-migrator.mo
 share/locale/et/LC_MESSAGES/kmail.mo
 share/locale/et/LC_MESSAGES/kmail_text_calendar_plugin.mo
 share/locale/et/LC_MESSAGES/kmail_text_vcard_plugin.mo
@@ -1432,7 +1445,6 @@ share/locale/et/LC_MESSAGES/knetwalk.mo
 share/locale/et/LC_MESSAGES/knetworkconfmodule.mo
 share/locale/et/LC_MESSAGES/knode.mo
 share/locale/et/LC_MESSAGES/knotes.mo
-share/locale/et/LC_MESSAGES/knotificationitem-1.mo
 share/locale/et/LC_MESSAGES/knotify4.mo
 share/locale/et/LC_MESSAGES/kolf.mo
 share/locale/et/LC_MESSAGES/kollision.mo
@@ -1447,12 +1459,10 @@ share/locale/et/LC_MESSAGES/kontact.mo
 share/locale/et/LC_MESSAGES/kontactinterfaces.mo
 share/locale/et/LC_MESSAGES/kopete.mo
 share/locale/et/LC_MESSAGES/korganizer.mo
-share/locale/et/LC_MESSAGES/kpackage.mo
 share/locale/et/LC_MESSAGES/kpartloader.mo
 share/locale/et/LC_MESSAGES/kpartsaver.mo
 share/locale/et/LC_MESSAGES/kpasswdserver.mo
 share/locale/et/LC_MESSAGES/kpat.mo
-share/locale/et/LC_MESSAGES/kpilot.mo
 share/locale/et/LC_MESSAGES/kppp.mo
 share/locale/et/LC_MESSAGES/kppplogview.mo
 share/locale/et/LC_MESSAGES/kquitapp.mo
@@ -1468,9 +1478,6 @@ share/locale/et/LC_MESSAGES/kres_groupware.mo
 share/locale/et/LC_MESSAGES/kres_groupwise.mo
 share/locale/et/LC_MESSAGES/kres_kolab.mo
 share/locale/et/LC_MESSAGES/kres_remote.mo
-share/locale/et/LC_MESSAGES/kres_scalix.mo
-share/locale/et/LC_MESSAGES/kres_tvanytime.mo
-share/locale/et/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/et/LC_MESSAGES/kresources_shared_akonadi.mo
 share/locale/et/LC_MESSAGES/kreversi.mo
 share/locale/et/LC_MESSAGES/krfb.mo
@@ -1502,8 +1509,8 @@ share/locale/et/LC_MESSAGES/ksysguard.mo
 share/locale/et/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/et/LC_MESSAGES/ksystemlog.mo
 share/locale/et/LC_MESSAGES/ksystraycmd.mo
-share/locale/et/LC_MESSAGES/ksysv.mo
 share/locale/et/LC_MESSAGES/kteatime.mo
+share/locale/et/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/et/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/et/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/et/LC_MESSAGES/kthememanager.mo
@@ -1536,10 +1543,9 @@ share/locale/et/LC_MESSAGES/kwrite.mo
 share/locale/et/LC_MESSAGES/kwriteconfig.mo
 share/locale/et/LC_MESSAGES/kxkb.mo
 share/locale/et/LC_MESSAGES/kxsconfig.mo
-share/locale/et/LC_MESSAGES/kxsldbg.mo
 share/locale/et/LC_MESSAGES/lancelot.mo
 share/locale/et/LC_MESSAGES/libakonadi.mo
-share/locale/et/LC_MESSAGES/libconversion.mo
+share/locale/et/LC_MESSAGES/libkasten.mo
 share/locale/et/LC_MESSAGES/libkblog.mo
 share/locale/et/LC_MESSAGES/libkcal.mo
 share/locale/et/LC_MESSAGES/libkcddb.mo
@@ -1548,6 +1554,7 @@ share/locale/et/LC_MESSAGES/libkdcraw.mo
 share/locale/et/LC_MESSAGES/libkdeedu.mo
 share/locale/et/LC_MESSAGES/libkdegames.mo
 share/locale/et/LC_MESSAGES/libkdepim.mo
+share/locale/et/LC_MESSAGES/libkexiv2.mo
 share/locale/et/LC_MESSAGES/libkholidays.mo
 share/locale/et/LC_MESSAGES/libkimap.mo
 share/locale/et/LC_MESSAGES/libkldap.mo
@@ -1564,11 +1571,15 @@ share/locale/et/LC_MESSAGES/libksane.mo
 share/locale/et/LC_MESSAGES/libkscreensaver.mo
 share/locale/et/LC_MESSAGES/libksieve.mo
 share/locale/et/LC_MESSAGES/libktnef.mo
+share/locale/et/LC_MESSAGES/libkunitconversion.mo
 share/locale/et/LC_MESSAGES/libkworkspace.mo
 share/locale/et/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/et/LC_MESSAGES/libmailtransport.mo
-share/locale/et/LC_MESSAGES/libocsclient.mo
+share/locale/et/LC_MESSAGES/libmessagecore.mo
+share/locale/et/LC_MESSAGES/libmessagelist.mo
+share/locale/et/LC_MESSAGES/libmessageviewer.mo
 share/locale/et/LC_MESSAGES/liboktetacore.mo
+share/locale/et/LC_MESSAGES/liboktetakasten.mo
 share/locale/et/LC_MESSAGES/libphonon.mo
 share/locale/et/LC_MESSAGES/libplasma.mo
 share/locale/et/LC_MESSAGES/libplasmaclock.mo
@@ -1577,12 +1588,12 @@ share/locale/et/LC_MESSAGES/librtm.mo
 share/locale/et/LC_MESSAGES/libtaskmanager.mo
 share/locale/et/LC_MESSAGES/lokalize.mo
 share/locale/et/LC_MESSAGES/lskat.mo
+share/locale/et/LC_MESSAGES/mailreader.mo
 share/locale/et/LC_MESSAGES/marble.mo
 share/locale/et/LC_MESSAGES/marble_qt.mo
 share/locale/et/LC_MESSAGES/mplayerthumbs.mo
 share/locale/et/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/et/LC_MESSAGES/nepomuk.mo
-share/locale/et/LC_MESSAGES/nepomuksearch.mo
 share/locale/et/LC_MESSAGES/nsplugin.mo
 share/locale/et/LC_MESSAGES/okteta.mo
 share/locale/et/LC_MESSAGES/oktetapart.mo
@@ -1602,14 +1613,15 @@ share/locale/et/LC_MESSAGES/okular_plucker.mo
 share/locale/et/LC_MESSAGES/okular_poppler.mo
 share/locale/et/LC_MESSAGES/okular_tiff.mo
 share/locale/et/LC_MESSAGES/okular_xps.mo
+share/locale/et/LC_MESSAGES/palapeli.mo
 share/locale/et/LC_MESSAGES/parley.mo
 share/locale/et/LC_MESSAGES/phonon-xine.mo
 share/locale/et/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/et/LC_MESSAGES/phonon_kde.mo
 share/locale/et/LC_MESSAGES/phononserver.mo
 share/locale/et/LC_MESSAGES/plasma-desktop.mo
+share/locale/et/LC_MESSAGES/plasma-netbook.mo
 share/locale/et/LC_MESSAGES/plasma-overlay.mo
-share/locale/et/LC_MESSAGES/plasma-shells-common.mo
 share/locale/et/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/et/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/et/LC_MESSAGES/plasma_applet_battery.mo
@@ -1618,7 +1630,8 @@ share/locale/et/LC_MESSAGES/plasma_applet_bubblemon.mo
 share/locale/et/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/et/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/et/LC_MESSAGES/plasma_applet_comic.mo
-share/locale/et/LC_MESSAGES/plasma_applet_desktop.mo
+share/locale/et/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
+share/locale/et/LC_MESSAGES/plasma_applet_currentappcontrol.mo
 share/locale/et/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/et/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/et/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
@@ -1626,12 +1639,17 @@ share/locale/et/LC_MESSAGES/plasma_applet_fileWatcher.mo
 share/locale/et/LC_MESSAGES/plasma_applet_folderview.mo
 share/locale/et/LC_MESSAGES/plasma_applet_frame.mo
 share/locale/et/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
+share/locale/et/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/et/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/et/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/et/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/et/LC_MESSAGES/plasma_applet_katesession.mo
+share/locale/et/LC_MESSAGES/plasma_applet_kdeobservatory.mo
 share/locale/et/LC_MESSAGES/plasma_applet_kget.mo
+share/locale/et/LC_MESSAGES/plasma_applet_kimpanel.mo
+share/locale/et/LC_MESSAGES/plasma_applet_knowledgebase.mo
 share/locale/et/LC_MESSAGES/plasma_applet_kolourpicker.mo
+share/locale/et/LC_MESSAGES/plasma_applet_kpapplet.mo
 share/locale/et/LC_MESSAGES/plasma_applet_launcher.mo
 share/locale/et/LC_MESSAGES/plasma_applet_leavenote.mo
 share/locale/et/LC_MESSAGES/plasma_applet_life.mo
@@ -1639,24 +1657,33 @@ share/locale/et/LC_MESSAGES/plasma_applet_lockout.mo
 share/locale/et/LC_MESSAGES/plasma_applet_luna.mo
 share/locale/et/LC_MESSAGES/plasma_applet_magnifique.mo
 share/locale/et/LC_MESSAGES/plasma_applet_microblog.mo
+share/locale/et/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/et/LC_MESSAGES/plasma_applet_news.mo
+share/locale/et/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/et/LC_MESSAGES/plasma_applet_notes.mo
 share/locale/et/LC_MESSAGES/plasma_applet_nowplaying.mo
+share/locale/et/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/et/LC_MESSAGES/plasma_applet_opendesktop.mo
+share/locale/et/LC_MESSAGES/plasma_applet_opendesktop_activities.mo
 share/locale/et/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/et/LC_MESSAGES/plasma_applet_panel.mo
 share/locale/et/LC_MESSAGES/plasma_applet_panelspacer_internal.mo
 share/locale/et/LC_MESSAGES/plasma_applet_paste.mo
 share/locale/et/LC_MESSAGES/plasma_applet_pastebin.mo
+share/locale/et/LC_MESSAGES/plasma_applet_plasmaboard.mo
 share/locale/et/LC_MESSAGES/plasma_applet_previewer.mo
+share/locale/et/LC_MESSAGES/plasma_applet_qalculate.mo
 share/locale/et/LC_MESSAGES/plasma_applet_qstardict.mo
 share/locale/et/LC_MESSAGES/plasma_applet_quicklaunch.mo
 share/locale/et/LC_MESSAGES/plasma_applet_rssnow.mo
 share/locale/et/LC_MESSAGES/plasma_applet_rtm.mo
+share/locale/et/LC_MESSAGES/plasma_applet_sal.mo
 share/locale/et/LC_MESSAGES/plasma_applet_saverdesktop.mo
+share/locale/et/LC_MESSAGES/plasma_applet_searchbox.mo
 share/locale/et/LC_MESSAGES/plasma_applet_showdashboard.mo
 share/locale/et/LC_MESSAGES/plasma_applet_showdesktop.mo
 share/locale/et/LC_MESSAGES/plasma_applet_skapplet.mo
+share/locale/et/LC_MESSAGES/plasma_applet_spellcheck.mo
 share/locale/et/LC_MESSAGES/plasma_applet_system-monitor.mo
 share/locale/et/LC_MESSAGES/plasma_applet_systemloadviewer.mo
 share/locale/et/LC_MESSAGES/plasma_applet_systemtray.mo
@@ -1667,9 +1694,14 @@ share/locale/et/LC_MESSAGES/plasma_applet_unitconverter.mo
 share/locale/et/LC_MESSAGES/plasma_applet_weather.mo
 share/locale/et/LC_MESSAGES/plasma_applet_weatherstation.mo
 share/locale/et/LC_MESSAGES/plasma_applet_webbrowser.mo
+share/locale/et/LC_MESSAGES/plasma_applet_webslice.mo
+share/locale/et/LC_MESSAGES/plasma_applet_windowlist.mo
 share/locale/et/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
-share/locale/et/LC_MESSAGES/plasma_appletscriptengine_googlegadget.mo
 share/locale/et/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
+share/locale/et/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
+share/locale/et/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
+share/locale/et/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
+share/locale/et/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/et/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/et/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/et/LC_MESSAGES/plasma_engine_kuiserver.mo
@@ -1677,28 +1709,37 @@ share/locale/et/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/et/LC_MESSAGES/plasma_engine_network.mo
 share/locale/et/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/et/LC_MESSAGES/plasma_engine_nowplaying.mo
-share/locale/et/LC_MESSAGES/plasma_engine_ocs.mo
+share/locale/et/LC_MESSAGES/plasma_engine_pastebin.mo
 share/locale/et/LC_MESSAGES/plasma_engine_rss.mo
+share/locale/et/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/et/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/et/LC_MESSAGES/plasma_packagestructure_comic.mo
+share/locale/et/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
 share/locale/et/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/et/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/et/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/et/LC_MESSAGES/plasma_runner_contacts.mo
 share/locale/et/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/et/LC_MESSAGES/plasma_runner_katesessions.mo
+share/locale/et/LC_MESSAGES/plasma_runner_kget.mo
+share/locale/et/LC_MESSAGES/plasma_runner_kill.mo
 share/locale/et/LC_MESSAGES/plasma_runner_konquerorsessions.mo
 share/locale/et/LC_MESSAGES/plasma_runner_konsolesessions.mo
+share/locale/et/LC_MESSAGES/plasma_runner_kopete.mo
 share/locale/et/LC_MESSAGES/plasma_runner_locations.mo
+share/locale/et/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/et/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/et/LC_MESSAGES/plasma_runner_placesrunner.mo
+share/locale/et/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/et/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/et/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/et/LC_MESSAGES/plasma_runner_services.mo
 share/locale/et/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/et/LC_MESSAGES/plasma_runner_shell.mo
+share/locale/et/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/et/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/et/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/et/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/et/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/et/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/et/LC_MESSAGES/plasma_wallpaper_image.mo
@@ -1708,6 +1749,7 @@ share/locale/et/LC_MESSAGES/plasma_wallpaper_pattern.mo
 share/locale/et/LC_MESSAGES/plasma_wallpaper_virus.mo
 share/locale/et/LC_MESSAGES/plasma_wallpaper_weather.mo
 share/locale/et/LC_MESSAGES/plasmaengineexplorer.mo
+share/locale/et/LC_MESSAGES/plasmagenericshell.mo
 share/locale/et/LC_MESSAGES/plasmapkg.mo
 share/locale/et/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/et/LC_MESSAGES/plasmoidviewer.mo
@@ -1717,10 +1759,13 @@ share/locale/et/LC_MESSAGES/powerdevil.mo
 share/locale/et/LC_MESSAGES/printer-applet.mo
 share/locale/et/LC_MESSAGES/processcore.mo
 share/locale/et/LC_MESSAGES/processui.mo
+share/locale/et/LC_MESSAGES/randrmonitor.mo
+share/locale/et/LC_MESSAGES/rocs.mo
 share/locale/et/LC_MESSAGES/solid-bluetooth.mo
 share/locale/et/LC_MESSAGES/solid-hardware.mo
 share/locale/et/LC_MESSAGES/solid-network.mo
 share/locale/et/LC_MESSAGES/solid-powermanagement.mo
+share/locale/et/LC_MESSAGES/solid_qt.mo
 share/locale/et/LC_MESSAGES/solidcontrol.mo
 share/locale/et/LC_MESSAGES/soliduiserver.mo
 share/locale/et/LC_MESSAGES/spy.mo
@@ -1737,20 +1782,21 @@ share/locale/et/LC_MESSAGES/umbrello.mo
 share/locale/et/LC_MESSAGES/useraccount.mo
 share/locale/et/LC_MESSAGES/xml_mimetypes.mo
 share/locale/et/entry.desktop
-@dirrm share/doc/HTML/et/xsldbg
 @dirrm share/doc/HTML/et/umbrello
 @dirrm share/doc/HTML/et/systemsettings
 @dirrm share/doc/HTML/et/superkaramba
 @dirrm share/doc/HTML/et/step
 @dirrm share/doc/HTML/et/sonnet
+@dirrm share/doc/HTML/et/rocs
+@dirrm share/doc/HTML/et/printer-applet
+@dirrm share/doc/HTML/et/plasma-desktop
 @dirrm share/doc/HTML/et/parley
+@dirrm share/doc/HTML/et/palapeli
 @dirrm share/doc/HTML/et/okular
 @dirrm share/doc/HTML/et/okteta
 @dirrm share/doc/HTML/et/marble
 @dirrm share/doc/HTML/et/lskat
 @dirrm share/doc/HTML/et/lokalize
-@dirrm share/doc/HTML/et/lilo-config
-@dirrm share/doc/HTML/et/kxsldbg
 @dirrm share/doc/HTML/et/kwrite
 @dirrm share/doc/HTML/et/kwordquiz
 @dirrm share/doc/HTML/et/kweather
@@ -1766,7 +1812,6 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/ktimetracker
 @dirrm share/doc/HTML/et/ktimer
 @dirrm share/doc/HTML/et/kteatime
-@dirrm share/doc/HTML/et/ksysv
 @dirrm share/doc/HTML/et/ksystemlog
 @dirrm share/doc/HTML/et/ksysguard
 @dirrm share/doc/HTML/et/ksudoku
@@ -1775,19 +1820,18 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kspaceduel
 @dirrm share/doc/HTML/et/ksnapshot
 @dirrm share/doc/HTML/et/ksirkskineditor
+@dirrm share/doc/HTML/et/ksirk
 @dirrm share/doc/HTML/et/kshisen
-@dirrm share/doc/HTML/et/kscd
 @dirrm share/doc/HTML/et/ksame
 @dirrm share/doc/HTML/et/kruler
 @dirrm share/doc/HTML/et/krfb
 @dirrm share/doc/HTML/et/kreversi
 @dirrm share/doc/HTML/et/krdc
 @dirrm share/doc/HTML/et/kppp
-@dirrm share/doc/HTML/et/kpilot
 @dirrm share/doc/HTML/et/kpat
-@dirrm share/doc/HTML/et/kpackage
 @dirrm share/doc/HTML/et/korganizer
 @dirrm share/doc/HTML/et/kopete
+@dirrm share/doc/HTML/et/kontact-admin
 @dirrm share/doc/HTML/et/kontact
 @dirrm share/doc/HTML/et/konsolekalendar
 @dirrm share/doc/HTML/et/konsole
@@ -1827,6 +1871,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kioslave/tar
 @dirrm share/doc/HTML/et/kioslave/smtp
 @dirrm share/doc/HTML/et/kioslave/smb
+@dirrm share/doc/HTML/et/kioslave/sieve
 @dirrm share/doc/HTML/et/kioslave/sftp
 @dirrm share/doc/HTML/et/kioslave/rlogin
 @dirrm share/doc/HTML/et/kioslave/pop3
@@ -1834,6 +1879,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kioslave/nfs
 @dirrm share/doc/HTML/et/kioslave/news
 @dirrm share/doc/HTML/et/kioslave/network
+@dirrm share/doc/HTML/et/kioslave/mbox
 @dirrm share/doc/HTML/et/kioslave/man
 @dirrm share/doc/HTML/et/kioslave/mailto
 @dirrm share/doc/HTML/et/kioslave/ldap
@@ -1854,13 +1900,13 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kioslave/audiocd
 @dirrm share/doc/HTML/et/kioslave
 @dirrm share/doc/HTML/et/kinfocenter/xserver
+@dirrm share/doc/HTML/et/kinfocenter/view1394
 @dirrm share/doc/HTML/et/kinfocenter/usb
 @dirrm share/doc/HTML/et/kinfocenter/sound
 @dirrm share/doc/HTML/et/kinfocenter/scsi
 @dirrm share/doc/HTML/et/kinfocenter/samba
 @dirrm share/doc/HTML/et/kinfocenter/protocols
 @dirrm share/doc/HTML/et/kinfocenter/processor
-@dirrm share/doc/HTML/et/kinfocenter/pcmcia
 @dirrm share/doc/HTML/et/kinfocenter/pci
 @dirrm share/doc/HTML/et/kinfocenter/partitions
 @dirrm share/doc/HTML/et/kinfocenter/opengl
@@ -1873,6 +1919,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kinfocenter
 @dirrm share/doc/HTML/et/kimagemapeditor
 @dirrm share/doc/HTML/et/killbots
+@dirrm share/doc/HTML/et/kigo
 @dirrm share/doc/HTML/et/kig
 @dirrm share/doc/HTML/et/khelpcenter/visualdict
 @dirrm share/doc/HTML/et/khelpcenter/userguide
@@ -1885,7 +1932,6 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kgoldrunner
 @dirrm share/doc/HTML/et/kget
 @dirrm share/doc/HTML/et/kgeography
-@dirrm share/doc/HTML/et/kgamma
 @dirrm share/doc/HTML/et/kfourinline
 @dirrm share/doc/HTML/et/kfloppy
 @dirrm share/doc/HTML/et/kfind
@@ -1897,70 +1943,76 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kdesu
 @dirrm share/doc/HTML/et/kdepasswd
 @dirrm share/doc/HTML/et/kdebugdialog
-@dirrm share/doc/HTML/et/kdat
 @dirrm share/doc/HTML/et/kcron
+@dirrm share/doc/HTML/et/kcontrol/workspaceoptions
 @dirrm share/doc/HTML/et/kcontrol/windowspecific
 @dirrm share/doc/HTML/et/kcontrol/windowbehaviour
 @dirrm share/doc/HTML/et/kcontrol/useragent
+@dirrm share/doc/HTML/et/kcontrol/trash
 @dirrm share/doc/HTML/et/kcontrol/splashscreen
 @dirrm share/doc/HTML/et/kcontrol/spellchecking
+@dirrm share/doc/HTML/et/kcontrol/solid-hardware
+@dirrm share/doc/HTML/et/kcontrol/solid-device-automounter
 @dirrm share/doc/HTML/et/kcontrol/solid-actions
 @dirrm share/doc/HTML/et/kcontrol/smb
 @dirrm share/doc/HTML/et/kcontrol/screensaver
 @dirrm share/doc/HTML/et/kcontrol/proxy
 @dirrm share/doc/HTML/et/kcontrol/powerdevil
+@dirrm share/doc/HTML/et/kcontrol/phonon
 @dirrm share/doc/HTML/et/kcontrol/performance
 @dirrm share/doc/HTML/et/kcontrol/paths
-@dirrm share/doc/HTML/et/kcontrol/passwords
-@dirrm share/doc/HTML/et/kcontrol/panelappearance
-@dirrm share/doc/HTML/et/kcontrol/panel
 @dirrm share/doc/HTML/et/kcontrol/netpref
 @dirrm share/doc/HTML/et/kcontrol/nepomuk
 @dirrm share/doc/HTML/et/kcontrol/mouse
 @dirrm share/doc/HTML/et/kcontrol/language
 @dirrm share/doc/HTML/et/kcontrol/kxkb
+@dirrm share/doc/HTML/et/kcontrol/kwintabbox
+@dirrm share/doc/HTML/et/kcontrol/kwinscreenedges
 @dirrm share/doc/HTML/et/kcontrol/kwindecoration
 @dirrm share/doc/HTML/et/kcontrol/kwincompositing
 @dirrm share/doc/HTML/et/kcontrol/kresources
 @dirrm share/doc/HTML/et/kcontrol/knetworkconf
-@dirrm share/doc/HTML/et/kcontrol/khtml
+@dirrm share/doc/HTML/et/kcontrol/khtml-plugins
+@dirrm share/doc/HTML/et/kcontrol/khtml-java-js
+@dirrm share/doc/HTML/et/kcontrol/khtml-general
+@dirrm share/doc/HTML/et/kcontrol/khtml-behavior
+@dirrm share/doc/HTML/et/kcontrol/khtml-adblock
+@dirrm share/doc/HTML/et/kcontrol/kgamma
 @dirrm share/doc/HTML/et/kcontrol/keys
 @dirrm share/doc/HTML/et/kcontrol/keyboard
-@dirrm share/doc/HTML/et/kcontrol/kdm
-@dirrm share/doc/HTML/et/kcontrol/kcmtaskbar
+@dirrm share/doc/HTML/et/kcontrol/kded
 @dirrm share/doc/HTML/et/kcontrol/kcmstyle
 @dirrm share/doc/HTML/et/kcontrol/kcmsmserver
 @dirrm share/doc/HTML/et/kcontrol/kcmnotify
 @dirrm share/doc/HTML/et/kcontrol/kcmlaunch
-@dirrm share/doc/HTML/et/kcontrol/kcmkonsole
 @dirrm share/doc/HTML/et/kcontrol/kcmdisplay
 @dirrm share/doc/HTML/et/kcontrol/kcmcss
+@dirrm share/doc/HTML/et/kcontrol/kcmcgi
 @dirrm share/doc/HTML/et/kcontrol/kcmaccess
 @dirrm share/doc/HTML/et/kcontrol/kamera
 @dirrm share/doc/HTML/et/kcontrol/joystick
 @dirrm share/doc/HTML/et/kcontrol/icons
+@dirrm share/doc/HTML/et/kcontrol/history
 @dirrm share/doc/HTML/et/kcontrol/helpindex
 @dirrm share/doc/HTML/et/kcontrol/fonts
 @dirrm share/doc/HTML/et/kcontrol/fontinst
 @dirrm share/doc/HTML/et/kcontrol/filetypes
 @dirrm share/doc/HTML/et/kcontrol/filemanager
-@dirrm share/doc/HTML/et/kcontrol/energy
 @dirrm share/doc/HTML/et/kcontrol/emoticons
-@dirrm share/doc/HTML/et/kcontrol/email
 @dirrm share/doc/HTML/et/kcontrol/ebrowsing
 @dirrm share/doc/HTML/et/kcontrol/desktopthemedetails
-@dirrm share/doc/HTML/et/kcontrol/desktopbehavior
 @dirrm share/doc/HTML/et/kcontrol/desktop
-@dirrm share/doc/HTML/et/kcontrol/crypto
 @dirrm share/doc/HTML/et/kcontrol/cookies
+@dirrm share/doc/HTML/et/kcontrol/componentchooser
 @dirrm share/doc/HTML/et/kcontrol/colors
 @dirrm share/doc/HTML/et/kcontrol/clock
+@dirrm share/doc/HTML/et/kcontrol/cddbretrieval
 @dirrm share/doc/HTML/et/kcontrol/cache
 @dirrm share/doc/HTML/et/kcontrol/bookmarks
 @dirrm share/doc/HTML/et/kcontrol/blockdevices
 @dirrm share/doc/HTML/et/kcontrol/bell
-@dirrm share/doc/HTML/et/kcontrol/background
 @dirrm share/doc/HTML/et/kcontrol/autostart
+@dirrm share/doc/HTML/et/kcontrol/attica
 @dirrm share/doc/HTML/et/kcontrol
 @dirrm share/doc/HTML/et/kcmlirc
 @dirrm share/doc/HTML/et/kcharselect
@@ -1974,7 +2026,6 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kblackbox
 @dirrm share/doc/HTML/et/kbattleship
 @dirrm share/doc/HTML/et/katomic
-@dirrm share/doc/HTML/et/kate-plugins
 @dirrm share/doc/HTML/et/kate
 @dirrm share/doc/HTML/et/kapptemplate
 @dirrm share/doc/HTML/et/kapman
@@ -1982,17 +2033,19 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kalzium
 @dirrm share/doc/HTML/et/kalgebra
 @dirrm share/doc/HTML/et/kalarm
-@dirrm share/doc/HTML/et/kaddressbook
 @dirrm share/doc/HTML/et/kabcclient
 @dirrm share/doc/HTML/et/juk
 @dirrm share/doc/HTML/et/irkick
 @dirrm share/doc/HTML/et/gwenview
+@dirrm share/doc/HTML/et/granatier
 @dirrm share/doc/HTML/et/dragonplayer
 @dirrm share/doc/HTML/et/dolphin
 @dirrm share/doc/HTML/et/common
 @dirrm share/doc/HTML/et/cervisia
+@dirrm share/doc/HTML/et/cantor
 @dirrm share/doc/HTML/et/bovo
 @dirrm share/doc/HTML/et/bomber
+@dirrm share/doc/HTML/et/blogilo
 @dirrm share/doc/HTML/et/blinken
 @dirrm share/doc/HTML/et/ark
 @dirrm share/doc/HTML/et/amor

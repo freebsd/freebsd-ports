@@ -7,11 +7,13 @@
 
 PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Marathi messages and documentation for KDE4
+
+IGNORE=		unfetchable and unmaintained upstream
+EXPIRATION_DATE=	2010-04-01
 
 KDE4_L10N=	mr
 

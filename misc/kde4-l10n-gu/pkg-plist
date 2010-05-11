@@ -1,4 +1,6 @@
 share/locale/gu/LC_MESSAGES/audiorename_plugin.mo
+share/locale/gu/LC_MESSAGES/blinken.mo
+share/locale/gu/LC_MESSAGES/bomber.mo
 share/locale/gu/LC_MESSAGES/display.mo
 share/locale/gu/LC_MESSAGES/dolphin.mo
 share/locale/gu/LC_MESSAGES/drkonqi.mo
@@ -14,6 +16,8 @@ share/locale/gu/LC_MESSAGES/kapman.mo
 share/locale/gu/LC_MESSAGES/kappfinder.mo
 share/locale/gu/LC_MESSAGES/katepart4.mo
 share/locale/gu/LC_MESSAGES/kblankscrn.mo
+share/locale/gu/LC_MESSAGES/kblocks.mo
+share/locale/gu/LC_MESSAGES/kbreakout.mo
 share/locale/gu/LC_MESSAGES/kcertpart.mo
 share/locale/gu/LC_MESSAGES/kcm_autostart.mo
 share/locale/gu/LC_MESSAGES/kcm_desktopthemedetails.mo
@@ -33,7 +37,6 @@ share/locale/gu/LC_MESSAGES/kcmcgi.mo
 share/locale/gu/LC_MESSAGES/kcmcolors.mo
 share/locale/gu/LC_MESSAGES/kcmcomponentchooser.mo
 share/locale/gu/LC_MESSAGES/kcmcrypto.mo
-share/locale/gu/LC_MESSAGES/kcmenergy.mo
 share/locale/gu/LC_MESSAGES/kcmfonts.mo
 share/locale/gu/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/gu/LC_MESSAGES/kcmicons.mo
@@ -72,16 +75,19 @@ share/locale/gu/LC_MESSAGES/kcmview1394.mo
 share/locale/gu/LC_MESSAGES/kcmxinerama.mo
 share/locale/gu/LC_MESSAGES/kde-menu.mo
 share/locale/gu/LC_MESSAGES/kdebugdialog.mo
+share/locale/gu/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/gu/LC_MESSAGES/kdelibs4.mo
 share/locale/gu/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/gu/LC_MESSAGES/kdepasswd.mo
 share/locale/gu/LC_MESSAGES/kdesu.mo
 share/locale/gu/LC_MESSAGES/kdesud.mo
 share/locale/gu/LC_MESSAGES/kdialog.mo
+share/locale/gu/LC_MESSAGES/kdiamond.mo
 share/locale/gu/LC_MESSAGES/kdmconfig.mo
 share/locale/gu/LC_MESSAGES/kdmgreet.mo
 share/locale/gu/LC_MESSAGES/keditbookmarks.mo
 share/locale/gu/LC_MESSAGES/kfile.mo
+share/locale/gu/LC_MESSAGES/kfile_drgeo.mo
 share/locale/gu/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/gu/LC_MESSAGES/kfindpart.mo
 share/locale/gu/LC_MESSAGES/kfmclient.mo
@@ -120,6 +126,7 @@ share/locale/gu/LC_MESSAGES/kmenuedit.mo
 share/locale/gu/LC_MESSAGES/kmimetypefinder.mo
 share/locale/gu/LC_MESSAGES/knetattach.mo
 share/locale/gu/LC_MESSAGES/knotify4.mo
+share/locale/gu/LC_MESSAGES/kollision.mo
 share/locale/gu/LC_MESSAGES/konqueror.mo
 share/locale/gu/LC_MESSAGES/konsole.mo
 share/locale/gu/LC_MESSAGES/kpasswdserver.mo
@@ -149,6 +156,7 @@ share/locale/gu/LC_MESSAGES/kwinstartmenu.mo
 share/locale/gu/LC_MESSAGES/kwrite.mo
 share/locale/gu/LC_MESSAGES/kwriteconfig.mo
 share/locale/gu/LC_MESSAGES/kxkb.mo
+share/locale/gu/LC_MESSAGES/libkmahjongg.mo
 share/locale/gu/LC_MESSAGES/libkonq.mo
 share/locale/gu/LC_MESSAGES/libkscreensaver.mo
 share/locale/gu/LC_MESSAGES/libkworkspace.mo
@@ -159,7 +167,6 @@ share/locale/gu/LC_MESSAGES/libtaskmanager.mo
 share/locale/gu/LC_MESSAGES/marble.mo
 share/locale/gu/LC_MESSAGES/marble_qt.mo
 share/locale/gu/LC_MESSAGES/nepomuk.mo
-share/locale/gu/LC_MESSAGES/nepomuksearch.mo
 share/locale/gu/LC_MESSAGES/nsplugin.mo
 share/locale/gu/LC_MESSAGES/phonon_kde.mo
 share/locale/gu/LC_MESSAGES/phononserver.mo
@@ -167,7 +174,6 @@ share/locale/gu/LC_MESSAGES/plasma-desktop.mo
 share/locale/gu/LC_MESSAGES/plasma-overlay.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_clock.mo
-share/locale/gu/LC_MESSAGES/plasma_applet_desktop.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_folderview.mo
@@ -185,6 +191,7 @@ share/locale/gu/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/gu/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/gu/LC_MESSAGES/plasma_engine_rss.mo
+share/locale/gu/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/gu/LC_MESSAGES/plasma_runner_sessions.mo

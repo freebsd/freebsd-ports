@@ -6,7 +6,6 @@
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -20,7 +19,9 @@ LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		boost_python:${PORTSDIR}/devel/boost-python-libs \
 		ical.43:${PORTSDIR}/devel/libical
 
-USE_KDE4=	kdelibs kdeexp akonadi kdeprefix kdehier automoc4
+CONFLICTS=	kdepim-runtime-4.3.[1-4]
+
+USE_KDE4=	kdelibs akonadi kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -41,5 +42,7 @@ PLIST_SUB+=	WITH_PTH='@comment '
 post-extract:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/cmake/modules/*.cmake
+	${REINPLACE_CMD} -e '/find_package/s,PATHS,PATHS ${KDE4_PREFIX}/lib/cmake/Akonadi,' \
+		${PATCH_WRKSRC}/cmake/modules/FindAkonadi.cmake
 
 .include <bsd.port.post.mk>

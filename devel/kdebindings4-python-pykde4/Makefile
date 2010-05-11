@@ -7,7 +7,6 @@
 
 PORTNAME=	kdebindings
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde python
 PKGNAMESUFFIX=	-kde
 
@@ -18,14 +17,17 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-q
 		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network \
 		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
 		${PYTHON_SITELIBDIR}/PyQt4/QtWebKit.so:${PORTSDIR}/www/py-qt4-webkit \
-		${PYTHON_SITELIBDIR}/PyQt4/QtXml.so:${PORTSDIR}/textproc/py-qt4-xml
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+		${PYTHON_SITELIBDIR}/PyQt4/QtXml.so:${PORTSDIR}/textproc/py-qt4-xml \
+		${PYTHON_SITELIBDIR}/PyQt4/phonon.so:${PORTSDIR}/multimedia/py-qt4-phonon
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbus
 
 BINDLANG=	python
 BINDMODULE=	pykde4
 
-USE_KDE4=	akonadi kdelibs pimlibs workspace
+USE_KDE4=	akonadi kdelibs pimlibs
 USE_PYTHON=	2.5+
+MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	kdebindings4.pth
 SUB_LIST=	PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
@@ -42,7 +44,8 @@ BROKEN=		Fails to build with RTLD_NOLOAD
 pre-configure:
 	${REINPLACE_CMD} -e 's,$${SIP_DEFAULT_SIP_DIR},${PREFIX}/${SIPDIR_REL},g' \
 		-e 's,$${PYTHON_SITE_PACKAGES_DIR},${PYTHONPREFIX_SITELIBDIR},g' \
-		${BUILD_WRKSRC}/CMakeLists.txt
+		${BUILD_WRKSRC}/CMakeLists.txt \
+		${BUILD_WRKSRC}/tools/pykdeuic4/CMakeLists.txt
 	${REINPLACE_CMD} -e '/ADD_SUBDIRECTORY(examples)/d' \
 		${BUILD_WRKSRC}/CMakeLists.txt
 	${RM} ${BUILD_WRKSRC}/examples/CMakeLists.txt

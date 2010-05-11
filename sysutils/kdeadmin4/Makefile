@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeadmin
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -32,7 +31,7 @@ CMAKE_ARGS+=	-DBUILD_kpackage:BOOL=Off \
 
 OPTIONS=	PRINTER_CONFIG "Install printer configuration utility" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_PRINTER_CONFIG)
 RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/system-config-printer-kde/system-config-printer-kde.py:${PORTSDIR}/print/system-config-printer-kde
@@ -49,4 +48,4 @@ post-patch:
 	${REINPLACE_CMD} -e '/add_subdirectory.*system-config-printer-kde/d' \
 		${PATCH_WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

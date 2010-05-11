@@ -1,4 +1,1 @@
-MAN1=	kappfinder.1 \
-	kbookmarkmerger.1 \
-	kfind.1 \
-	kdesu.1
+MAN1=	ark.1 kappfinder.1 kbookmarkmerger.1 kdesu.1 kfind.1 ark.1 kappfinder.1 kbookmarkmerger.1 kdesu.1 kfind.1

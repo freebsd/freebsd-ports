@@ -1,6 +1,6 @@
 bin/akonadi2xml
 bin/akonadi_birthdays_resource
-bin/akonadi_distlist_resource
+bin/akonadi_contacts_resource
 bin/akonadi_ical_resource
 bin/akonadi_imap_resource
 bin/akonadi_kabc_resource
@@ -9,20 +9,22 @@ bin/akonadi_knut_resource
 bin/akonadi_kolabproxy_resource
 bin/akonadi_localbookmarks_resource
 bin/akonadi_maildir_resource
+bin/akonadi_maildispatcher_agent
+bin/akonadi_mailtransport_dummy_resource
+bin/akonadi_mbox_resource
 bin/akonadi_microblog_resource
+bin/akonadi_nepomuk_calendar_feeder
+bin/akonadi_nepomuk_contact_feeder
 bin/akonadi_nepomuktag_resource
 bin/akonadi_nntp_resource
-bin/akonadi_strigi_feeder
+bin/akonadi_notes_resource
+bin/akonadi_pop3_resource
 bin/akonadi_vcard_resource
 bin/akonadi_vcarddir_resource
-bin/akonadiconsole
 bin/akonaditray
+bin/kaddressbookmigrator
+bin/kmail-migrator
 bin/kres-migrator
-include/akonadi/xml/akonadi-xml_export.h
-include/akonadi/xml/xmldocument.h
-include/akonadi/xml/xmlreader.h
-include/akonadi/xml/xmlwritejob.h
-include/akonadi/xml/xmlwriter.h
 lib/kde4/akonadi_serializer_addressee.so
 lib/kde4/akonadi_serializer_bookmark.so
 lib/kde4/akonadi_serializer_contactgroup.so
@@ -35,26 +37,20 @@ lib/kde4/kcm_akonadi.so
 lib/kde4/kcm_akonadi_resources.so
 lib/kde4/kcm_akonadi_server.so
 lib/kde4/kio_akonadi.so
-lib/libakonadi-kabccommon.so
-lib/libakonadi-kabccommon.so.5
-lib/libakonadi-kabccommon.so.5.0.1
-lib/libakonadi-kcal.so
-lib/libakonadi-kcal.so.5
-lib/libakonadi-kcal.so.5.0.1
 lib/libakonadi-xml.so
 lib/libakonadi-xml.so.5
 lib/libakonadi-xml.so.5.0.1
-lib/libakonadi_next.so
-lib/libakonadi_next.so.5
-lib/libakonadi_next.so.5.0.1
 lib/libkdepim-copy.so
 lib/libkdepim-copy.so.5
 lib/libkdepim-copy.so.5.0.1
 lib/libmaildir.so
 lib/libmaildir.so.5
 lib/libmaildir.so.5.0.1
+lib/libmbox.so
+lib/libmbox.so.5
+lib/libmbox.so.5.0.1
 share/akonadi/agents/birthdaysresource.desktop
-share/akonadi/agents/distlistresource.desktop
+share/akonadi/agents/contactsresource.desktop
 share/akonadi/agents/icalresource.desktop
 share/akonadi/agents/imapresource.desktop
 share/akonadi/agents/kabcresource.desktop
@@ -63,14 +59,18 @@ share/akonadi/agents/knutresource.desktop
 share/akonadi/agents/kolabproxyresource.desktop
 share/akonadi/agents/localbookmarksresource.desktop
 share/akonadi/agents/maildirresource.desktop
+share/akonadi/agents/maildispatcheragent.desktop
+share/akonadi/agents/mboxresource.desktop
 share/akonadi/agents/microblog.desktop
+share/akonadi/agents/mtdummyresource.desktop
+share/akonadi/agents/nepomukcalendarfeeder.desktop
+share/akonadi/agents/nepomukcontactfeeder.desktop
 share/akonadi/agents/nepomuktagresource.desktop
 share/akonadi/agents/nntpresource.desktop
 share/akonadi/agents/notesresource.desktop
-share/akonadi/agents/strigifeeder.desktop
+share/akonadi/agents/pop3resource.desktop
 share/akonadi/agents/vcarddirresource.desktop
 share/akonadi/agents/vcardresource.desktop
-share/applications/kde4/akonadiconsole.desktop
 share/applications/kde4/akonaditray.desktop
 share/apps/akonadi/akonadi-xml.xsd
 share/apps/akonadi/firstrun/defaultaddressbook
@@ -82,7 +82,8 @@ share/apps/akonadi/plugins/serializer/akonadi_serializer_kcal.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
 share/apps/akonadi_knut_resource/knut-template.xml
-share/apps/akonadiconsole/akonadiconsoleui.rc
+share/autostart/kaddressbookmigrator.desktop
+share/config/kmail-migratorrc
 share/config/kres-migratorrc
 share/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
 share/icons/hicolor/64x64/apps/kolab.png
@@ -92,17 +93,13 @@ share/kde4/services/kcm_akonadi_resources.desktop
 share/kde4/services/kcm_akonadi_server.desktop
 share/kde4/services/kresources/kabc/akonadi.desktop
 share/kde4/services/kresources/kcal/akonadi.desktop
-share/mime/application/x-vnd.kde.notes.xml
 share/mime/packages/kdepim-mime.xml
-@dirrm share/apps/akonadiconsole
 @dirrm share/apps/akonadi_knut_resource
 @dirrm share/apps/akonadi/plugins/serializer
 @dirrm share/apps/akonadi/plugins
 @dirrm share/apps/akonadi/firstrun
-@dirrm share/apps/akonadi
+@dirrmtry share/apps/akonadi
 @dirrm share/akonadi/agents
 @dirrm share/akonadi
-@dirrm include/akonadi/xml
-@dirrmtry include/akonadi
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

@@ -1,1100 +1,1113 @@
-%%MTREE%%bin/.keep_me
-%%MTREE%%etc/.keep_me
-%%MTREE%%etc/pam.d/.keep_me
-%%MTREE%%etc/rc.d/.keep_me
-%%MTREE%%include/.keep_me
-%%MTREE%%include/X11/.keep_me
-%%MTREE%%info/.keep_me
-%%MTREE%%lib/.keep_me
-%%MTREE%%lib/X11/.keep_me
-%%MTREE%%lib/X11/app-defaults/.keep_me
-%%MTREE%%lib/X11/fonts/.keep_me
-%%MTREE%%lib/X11/fonts/local/.keep_me
-%%MTREE%%libdata/.keep_me
 %%MTREE%%%%LDCONFIG_DIR%%
 %%MTREE%%%%LDCONFIG32_DIR%%
 %%MTREE%%libdata/pkgconfig
-%%MTREE%%libexec/.keep_me
-%%MTREE%%man/.keep_me
-%%MTREE%%man/cat1/.keep_me
-%%MTREE%%man/cat2/.keep_me
-%%MTREE%%man/cat3/.keep_me
-%%MTREE%%man/cat4/.keep_me
-%%MTREE%%man/cat5/.keep_me
-%%MTREE%%man/cat6/.keep_me
-%%MTREE%%man/cat7/.keep_me
-%%MTREE%%man/cat8/.keep_me
-%%MTREE%%man/cat9/.keep_me
-%%MTREE%%man/catl/.keep_me
-%%MTREE%%man/catn/.keep_me
-%%MTREE%%man/de.ISO8859-1/.keep_me
-%%MTREE%%man/de.ISO8859-1/cat1/.keep_me
-%%MTREE%%man/de.ISO8859-1/cat2/.keep_me
-%%MTREE%%man/de.ISO8859-1/cat3/.keep_me
-%%MTREE%%man/de.ISO8859-1/cat4/.keep_me
-%%MTREE%%man/de.ISO8859-1/cat5/.keep_me
-%%MTREE%%man/de.ISO8859-1/cat6/.keep_me
-%%MTREE%%man/de.ISO8859-1/cat7/.keep_me
-%%MTREE%%man/de.ISO8859-1/cat8/.keep_me
-%%MTREE%%man/de.ISO8859-1/cat9/.keep_me
-%%MTREE%%man/de.ISO8859-1/catl/.keep_me
-%%MTREE%%man/de.ISO8859-1/catn/.keep_me
-%%MTREE%%man/de.ISO8859-1/man1/.keep_me
-%%MTREE%%man/de.ISO8859-1/man2/.keep_me
-%%MTREE%%man/de.ISO8859-1/man3/.keep_me
-%%MTREE%%man/de.ISO8859-1/man4/.keep_me
-%%MTREE%%man/de.ISO8859-1/man5/.keep_me
-%%MTREE%%man/de.ISO8859-1/man6/.keep_me
-%%MTREE%%man/de.ISO8859-1/man7/.keep_me
-%%MTREE%%man/de.ISO8859-1/man8/.keep_me
-%%MTREE%%man/de.ISO8859-1/man9/.keep_me
-%%MTREE%%man/de.ISO8859-1/manl/.keep_me
-%%MTREE%%man/de.ISO8859-1/mann/.keep_me
-%%MTREE%%man/en.ISO8859-1/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat1/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat1aout/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat2/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat3/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat4/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat4/i386/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat5/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat6/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat7/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat8/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat8/i386/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat9/.keep_me
-%%MTREE%%man/en.ISO8859-1/cat9/i386/.keep_me
-%%MTREE%%man/en.ISO8859-1/catn/.keep_me
-%%MTREE%%man/ja/.keep_me
-%%MTREE%%man/ja/cat1/.keep_me
-%%MTREE%%man/ja/cat2/.keep_me
-%%MTREE%%man/ja/cat3/.keep_me
-%%MTREE%%man/ja/cat4/.keep_me
-%%MTREE%%man/ja/cat5/.keep_me
-%%MTREE%%man/ja/cat6/.keep_me
-%%MTREE%%man/ja/cat7/.keep_me
-%%MTREE%%man/ja/cat8/.keep_me
-%%MTREE%%man/ja/cat9/.keep_me
-%%MTREE%%man/ja/catl/.keep_me
-%%MTREE%%man/ja/catn/.keep_me
-%%MTREE%%man/ja/man1/.keep_me
-%%MTREE%%man/ja/man2/.keep_me
-%%MTREE%%man/ja/man3/.keep_me
-%%MTREE%%man/ja/man4/.keep_me
-%%MTREE%%man/ja/man5/.keep_me
-%%MTREE%%man/ja/man6/.keep_me
-%%MTREE%%man/ja/man7/.keep_me
-%%MTREE%%man/ja/man8/.keep_me
-%%MTREE%%man/ja/man9/.keep_me
-%%MTREE%%man/ja/manl/.keep_me
-%%MTREE%%man/ja/mann/.keep_me
-%%MTREE%%man/man1/.keep_me
-%%MTREE%%man/man2/.keep_me
-%%MTREE%%man/man3/.keep_me
-%%MTREE%%man/man4/.keep_me
-%%MTREE%%man/man5/.keep_me
-%%MTREE%%man/man6/.keep_me
-%%MTREE%%man/man7/.keep_me
-%%MTREE%%man/man8/.keep_me
-%%MTREE%%man/man9/.keep_me
-%%MTREE%%man/manl/.keep_me
-%%MTREE%%man/mann/.keep_me
-%%MTREE%%man/ru.KOI8-R/.keep_me
-%%MTREE%%man/ru.KOI8-R/cat1/.keep_me
-%%MTREE%%man/ru.KOI8-R/cat2/.keep_me
-%%MTREE%%man/ru.KOI8-R/cat3/.keep_me
-%%MTREE%%man/ru.KOI8-R/cat4/.keep_me
-%%MTREE%%man/ru.KOI8-R/cat5/.keep_me
-%%MTREE%%man/ru.KOI8-R/cat6/.keep_me
-%%MTREE%%man/ru.KOI8-R/cat7/.keep_me
-%%MTREE%%man/ru.KOI8-R/cat8/.keep_me
-%%MTREE%%man/ru.KOI8-R/cat9/.keep_me
-%%MTREE%%man/ru.KOI8-R/catl/.keep_me
-%%MTREE%%man/ru.KOI8-R/catn/.keep_me
-%%MTREE%%man/ru.KOI8-R/man1/.keep_me
-%%MTREE%%man/ru.KOI8-R/man2/.keep_me
-%%MTREE%%man/ru.KOI8-R/man3/.keep_me
-%%MTREE%%man/ru.KOI8-R/man4/.keep_me
-%%MTREE%%man/ru.KOI8-R/man5/.keep_me
-%%MTREE%%man/ru.KOI8-R/man6/.keep_me
-%%MTREE%%man/ru.KOI8-R/man7/.keep_me
-%%MTREE%%man/ru.KOI8-R/man8/.keep_me
-%%MTREE%%man/ru.KOI8-R/man9/.keep_me
-%%MTREE%%man/ru.KOI8-R/manl/.keep_me
-%%MTREE%%man/ru.KOI8-R/mann/.keep_me
-%%MTREE%%sbin/.keep_me
-%%MTREE%%share/.keep_me
-%%MTREE%%share/aclocal/.keep_me
-%%MTREE%%share/dict/.keep_me
-%%MTREE%%share/doc/.keep_me
-%%MTREE%%share/doc/ja/.keep_me
-%%MTREE%%share/emacs/.keep_me
-%%MTREE%%share/emacs/site-lisp/.keep_me
-%%MTREE%%share/examples/.keep_me
-%%MTREE%%share/java/.keep_me
-%%MTREE%%share/java/classes/.keep_me
-%%MTREE%%share/locale/.keep_me
-%%MTREE%%share/locale/af/.keep_me
-%%MTREE%%share/locale/af/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/am/.keep_me
-%%MTREE%%share/locale/am/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ar/.keep_me
-%%MTREE%%share/locale/ar/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/az/.keep_me
-%%MTREE%%share/locale/az/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/be/.keep_me
-%%MTREE%%share/locale/be/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/bg/.keep_me
-%%MTREE%%share/locale/bg/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/bn/.keep_me
-%%MTREE%%share/locale/bn/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/br/.keep_me
-%%MTREE%%share/locale/br/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/bs/.keep_me
-%%MTREE%%share/locale/bs/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ca/.keep_me
-%%MTREE%%share/locale/ca/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/cs/.keep_me
-%%MTREE%%share/locale/cs/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/cy/.keep_me
-%%MTREE%%share/locale/cy/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/da/.keep_me
-%%MTREE%%share/locale/da/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/de/.keep_me
-%%MTREE%%share/locale/de/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/de_AT/.keep_me
-%%MTREE%%share/locale/de_AT/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/dk/.keep_me
-%%MTREE%%share/locale/dk/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ee/.keep_me
-%%MTREE%%share/locale/ee/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/el/.keep_me
-%%MTREE%%share/locale/el/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/en/.keep_me
-%%MTREE%%share/locale/en/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/en_AU/.keep_me
-%%MTREE%%share/locale/en_AU/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/en_CA/.keep_me
-%%MTREE%%share/locale/en_CA/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/en_GB/.keep_me
-%%MTREE%%share/locale/en_GB/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/eo/.keep_me
-%%MTREE%%share/locale/eo/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/es/.keep_me
-%%MTREE%%share/locale/es/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/es_ES/.keep_me
-%%MTREE%%share/locale/es_ES/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/es_MX/.keep_me
-%%MTREE%%share/locale/es_MX/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/et/.keep_me
-%%MTREE%%share/locale/et/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/eu/.keep_me
-%%MTREE%%share/locale/eu/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/fa/.keep_me
-%%MTREE%%share/locale/fa/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/fa_IR/.keep_me
-%%MTREE%%share/locale/fa_IR/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/fi/.keep_me
-%%MTREE%%share/locale/fi/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/fr/.keep_me
-%%MTREE%%share/locale/fr/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/fr_FR/.keep_me
-%%MTREE%%share/locale/fr_FR/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ga/.keep_me
-%%MTREE%%share/locale/ga/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/gl/.keep_me
-%%MTREE%%share/locale/gl/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/gu/.keep_me
-%%MTREE%%share/locale/gu/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/he/.keep_me
-%%MTREE%%share/locale/he/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/hi/.keep_me
-%%MTREE%%share/locale/hi/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/hr/.keep_me
-%%MTREE%%share/locale/hr/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/hu/.keep_me
-%%MTREE%%share/locale/hu/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/id/.keep_me
-%%MTREE%%share/locale/id/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/is/.keep_me
-%%MTREE%%share/locale/is/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/it/.keep_me
-%%MTREE%%share/locale/it/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ja/.keep_me
-%%MTREE%%share/locale/ja/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ka/.keep_me
-%%MTREE%%share/locale/ka/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/kn/.keep_me
-%%MTREE%%share/locale/kn/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ko/.keep_me
-%%MTREE%%share/locale/ko/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/li/.keep_me
-%%MTREE%%share/locale/li/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/lt/.keep_me
-%%MTREE%%share/locale/lt/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/lv/.keep_me
-%%MTREE%%share/locale/lv/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/mk/.keep_me
-%%MTREE%%share/locale/mk/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ml/.keep_me
-%%MTREE%%share/locale/ml/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/mn/.keep_me
-%%MTREE%%share/locale/mn/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ms/.keep_me
-%%MTREE%%share/locale/ms/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/mt/.keep_me
-%%MTREE%%share/locale/mt/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/nb/.keep_me
-%%MTREE%%share/locale/nb/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ne/.keep_me
-%%MTREE%%share/locale/ne/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/nl/.keep_me
-%%MTREE%%share/locale/nl/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/nn/.keep_me
-%%MTREE%%share/locale/nn/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/no/.keep_me
-%%MTREE%%share/locale/no/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/or/.keep_me
-%%MTREE%%share/locale/or/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/pa/.keep_me
-%%MTREE%%share/locale/pa/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/pl/.keep_me
-%%MTREE%%share/locale/pl/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/pt/.keep_me
-%%MTREE%%share/locale/pt/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/pt_BR/.keep_me
-%%MTREE%%share/locale/pt_BR/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/pt_PT/.keep_me
-%%MTREE%%share/locale/pt_PT/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ro/.keep_me
-%%MTREE%%share/locale/ro/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ru/.keep_me
-%%MTREE%%share/locale/ru/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/sk/.keep_me
-%%MTREE%%share/locale/sk/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/sl/.keep_me
-%%MTREE%%share/locale/sl/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/sq/.keep_me
-%%MTREE%%share/locale/sq/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/sr/.keep_me
-%%MTREE%%share/locale/sr/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/sr@Latn/.keep_me
-%%MTREE%%share/locale/sr@Latn/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/sv/.keep_me
-%%MTREE%%share/locale/sv/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/ta/.keep_me
-%%MTREE%%share/locale/ta/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/tg/.keep_me
-%%MTREE%%share/locale/tg/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/th/.keep_me
-%%MTREE%%share/locale/th/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/tk/.keep_me
-%%MTREE%%share/locale/tk/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/tr/.keep_me
-%%MTREE%%share/locale/tr/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/uk/.keep_me
-%%MTREE%%share/locale/uk/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/uz/.keep_me
-%%MTREE%%share/locale/uz/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/vi/.keep_me
-%%MTREE%%share/locale/vi/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/wa/.keep_me
-%%MTREE%%share/locale/wa/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/zh/.keep_me
-%%MTREE%%share/locale/zh/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/zh_CN.GB2312/.keep_me
-%%MTREE%%share/locale/zh_CN.GB2312/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/zh_CN/.keep_me
-%%MTREE%%share/locale/zh_CN/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/zh_TW.Big5/.keep_me
-%%MTREE%%share/locale/zh_TW.Big5/LC_MESSAGES/.keep_me
-%%MTREE%%share/locale/zh_TW/.keep_me
-%%MTREE%%share/locale/zh_TW/LC_MESSAGES/.keep_me
-%%MTREE%%share/misc/.keep_me
-%%MTREE%%share/nls/.keep_me
-%%MTREE%%share/nls/C/.keep_me
-%%MTREE%%share/nls/af_ZA.ISO8859-1/.keep_me
-%%MTREE%%share/nls/af_ZA.ISO8859-15/.keep_me
-%%MTREE%%share/nls/af_ZA.UTF-8/.keep_me
-%%MTREE%%share/nls/am_ET.UTF-8/.keep_me
-%%MTREE%%share/nls/be_BY.CP1131/.keep_me
-%%MTREE%%share/nls/be_BY.CP1251/.keep_me
-%%MTREE%%share/nls/be_BY.ISO8859-5/.keep_me
-%%MTREE%%share/nls/be_BY.UTF-8/.keep_me
-%%MTREE%%share/nls/bg_BG.CP1251/.keep_me
-%%MTREE%%share/nls/bg_BG.UTF-8/.keep_me
-%%MTREE%%share/nls/ca_ES.ISO8859-1/.keep_me
-%%MTREE%%share/nls/ca_ES.ISO8859-15/.keep_me
-%%MTREE%%share/nls/ca_ES.UTF-8/.keep_me
-%%MTREE%%share/nls/cs_CZ.ISO8859-2/.keep_me
-%%MTREE%%share/nls/cs_CZ.UTF-8/.keep_me
-%%MTREE%%share/nls/da_DK.ISO8859-1/.keep_me
-%%MTREE%%share/nls/da_DK.ISO8859-15/.keep_me
-%%MTREE%%share/nls/da_DK.UTF-8/.keep_me
-%%MTREE%%share/nls/de_AT.ISO8859-1/.keep_me
-%%MTREE%%share/nls/de_AT.ISO8859-15/.keep_me
-%%MTREE%%share/nls/de_AT.UTF-8/.keep_me
-%%MTREE%%share/nls/de_CH.ISO8859-1/.keep_me
-%%MTREE%%share/nls/de_CH.ISO8859-15/.keep_me
-%%MTREE%%share/nls/de_CH.UTF-8/.keep_me
-%%MTREE%%share/nls/de_DE.ISO8859-1/.keep_me
-%%MTREE%%share/nls/de_DE.ISO8859-15/.keep_me
-%%MTREE%%share/nls/de_DE.UTF-8/.keep_me
-%%MTREE%%share/nls/el_GR.ISO8859-7/.keep_me
-%%MTREE%%share/nls/el_GR.UTF-8/.keep_me
-%%MTREE%%share/nls/en_AU.ISO8859-1/.keep_me
-%%MTREE%%share/nls/en_AU.ISO8859-15/.keep_me
-%%MTREE%%share/nls/en_AU.US-ASCII/.keep_me
-%%MTREE%%share/nls/en_AU.UTF-8/.keep_me
-%%MTREE%%share/nls/en_CA.ISO8859-1/.keep_me
-%%MTREE%%share/nls/en_CA.ISO8859-15/.keep_me
-%%MTREE%%share/nls/en_CA.US-ASCII/.keep_me
-%%MTREE%%share/nls/en_CA.UTF-8/.keep_me
-%%MTREE%%share/nls/en_GB.ISO8859-1/.keep_me
-%%MTREE%%share/nls/en_GB.ISO8859-15/.keep_me
-%%MTREE%%share/nls/en_GB.US-ASCII/.keep_me
-%%MTREE%%share/nls/en_GB.UTF-8/.keep_me
-%%MTREE%%share/nls/en_IE.UTF-8/.keep_me
-%%MTREE%%share/nls/en_NZ.ISO8859-1/.keep_me
-%%MTREE%%share/nls/en_NZ.ISO8859-15/.keep_me
-%%MTREE%%share/nls/en_NZ.US-ASCII/.keep_me
-%%MTREE%%share/nls/en_NZ.UTF-8/.keep_me
-%%MTREE%%share/nls/en_US.ISO8859-1/.keep_me
-%%MTREE%%share/nls/en_US.ISO8859-15/.keep_me
-%%MTREE%%share/nls/en_US.UTF-8/.keep_me
-%%MTREE%%share/nls/es_ES.ISO8859-1/.keep_me
-%%MTREE%%share/nls/es_ES.ISO8859-15/.keep_me
-%%MTREE%%share/nls/es_ES.UTF-8/.keep_me
-%%MTREE%%share/nls/et_EE.ISO8859-15/.keep_me
-%%MTREE%%share/nls/et_EE.UTF-8/.keep_me
-%%MTREE%%share/nls/fi_FI.ISO8859-1/.keep_me
-%%MTREE%%share/nls/fi_FI.ISO8859-15/.keep_me
-%%MTREE%%share/nls/fi_FI.UTF-8/.keep_me
-%%MTREE%%share/nls/fr_BE.ISO8859-1/.keep_me
-%%MTREE%%share/nls/fr_BE.ISO8859-15/.keep_me
-%%MTREE%%share/nls/fr_BE.UTF-8/.keep_me
-%%MTREE%%share/nls/fr_CA.ISO8859-1/.keep_me
-%%MTREE%%share/nls/fr_CA.ISO8859-15/.keep_me
-%%MTREE%%share/nls/fr_CA.UTF-8/.keep_me
-%%MTREE%%share/nls/fr_CH.ISO8859-1/.keep_me
-%%MTREE%%share/nls/fr_CH.ISO8859-15/.keep_me
-%%MTREE%%share/nls/fr_CH.UTF-8/.keep_me
-%%MTREE%%share/nls/fr_FR.ISO8859-1/.keep_me
-%%MTREE%%share/nls/fr_FR.ISO8859-15/.keep_me
-%%MTREE%%share/nls/fr_FR.UTF-8/.keep_me
-%%MTREE%%share/nls/he_IL.UTF-8/.keep_me
-%%MTREE%%share/nls/hi_IN.ISCII-DEV/.keep_me
-%%MTREE%%share/nls/hr_HR.ISO8859-2/.keep_me
-%%MTREE%%share/nls/hr_HR.UTF-8/.keep_me
-%%MTREE%%share/nls/hu_HU.ISO8859-2/.keep_me
-%%MTREE%%share/nls/hu_HU.UTF-8/.keep_me
-%%MTREE%%share/nls/hy_AM.ARMSCII-8/.keep_me
-%%MTREE%%share/nls/hy_AM.UTF-8/.keep_me
-%%MTREE%%share/nls/is_IS.ISO8859-1/.keep_me
-%%MTREE%%share/nls/is_IS.ISO8859-15/.keep_me
-%%MTREE%%share/nls/is_IS.UTF-8/.keep_me
-%%MTREE%%share/nls/it_CH.ISO8859-1/.keep_me
-%%MTREE%%share/nls/it_CH.ISO8859-15/.keep_me
-%%MTREE%%share/nls/it_CH.UTF-8/.keep_me
-%%MTREE%%share/nls/it_IT.ISO8859-1/.keep_me
-%%MTREE%%share/nls/it_IT.ISO8859-15/.keep_me
-%%MTREE%%share/nls/it_IT.UTF-8/.keep_me
-%%MTREE%%share/nls/ja_JP.SJIS/.keep_me
-%%MTREE%%share/nls/ja_JP.UTF-8/.keep_me
-%%MTREE%%share/nls/ja_JP.eucJP/.keep_me
-%%MTREE%%share/nls/kk_KZ.PT154/.keep_me
-%%MTREE%%share/nls/kk_KZ.UTF-8/.keep_me
-%%MTREE%%share/nls/ko_KR.CP949/.keep_me
-%%MTREE%%share/nls/ko_KR.UTF-8/.keep_me
-%%MTREE%%share/nls/ko_KR.eucKR/.keep_me
-%%MTREE%%share/nls/la_LN.ISO8859-1/.keep_me
-%%MTREE%%share/nls/la_LN.ISO8859-15/.keep_me
-%%MTREE%%share/nls/la_LN.ISO8859-2/.keep_me
-%%MTREE%%share/nls/la_LN.ISO8859-4/.keep_me
-%%MTREE%%share/nls/la_LN.US-ASCII/.keep_me
-%%MTREE%%share/nls/lt_LT.ISO8859-13/.keep_me
-%%MTREE%%share/nls/lt_LT.ISO8859-4/.keep_me
-%%MTREE%%share/nls/lt_LT.UTF-8/.keep_me
-%%MTREE%%share/nls/nl_BE.ISO8859-1/.keep_me
-%%MTREE%%share/nls/nl_BE.ISO8859-15/.keep_me
-%%MTREE%%share/nls/nl_BE.UTF-8/.keep_me
-%%MTREE%%share/nls/nl_NL.ISO8859-1/.keep_me
-%%MTREE%%share/nls/nl_NL.ISO8859-15/.keep_me
-%%MTREE%%share/nls/nl_NL.UTF-8/.keep_me
-%%MTREE%%share/nls/no_NO.ISO8859-1/.keep_me
-%%MTREE%%share/nls/no_NO.ISO8859-15/.keep_me
-%%MTREE%%share/nls/no_NO.UTF-8/.keep_me
-%%MTREE%%share/nls/pl_PL.ISO8859-2/.keep_me
-%%MTREE%%share/nls/pl_PL.UTF-8/.keep_me
-%%MTREE%%share/nls/pt_BR.ISO8859-1/.keep_me
-%%MTREE%%share/nls/pt_BR.UTF-8/.keep_me
-%%MTREE%%share/nls/pt_PT.ISO8859-1/.keep_me
-%%MTREE%%share/nls/pt_PT.ISO8859-15/.keep_me
-%%MTREE%%share/nls/pt_PT.UTF-8/.keep_me
-%%MTREE%%share/nls/ro_RO.ISO8859-2/.keep_me
-%%MTREE%%share/nls/ro_RO.UTF-8/.keep_me
-%%MTREE%%share/nls/ru_RU.CP1251/.keep_me
-%%MTREE%%share/nls/ru_RU.CP866/.keep_me
-%%MTREE%%share/nls/ru_RU.ISO8859-5/.keep_me
-%%MTREE%%share/nls/ru_RU.KOI8-R/.keep_me
-%%MTREE%%share/nls/ru_RU.UTF-8/.keep_me
-%%MTREE%%share/nls/sk_SK.ISO8859-2/.keep_me
-%%MTREE%%share/nls/sk_SK.UTF-8/.keep_me
-%%MTREE%%share/nls/sl_SI.ISO8859-2/.keep_me
-%%MTREE%%share/nls/sl_SI.UTF-8/.keep_me
-%%MTREE%%share/nls/sr_YU.ISO8859-2/.keep_me
-%%MTREE%%share/nls/sr_YU.ISO8859-5/.keep_me
-%%MTREE%%share/nls/sr_YU.UTF-8/.keep_me
-%%MTREE%%share/nls/sv_SE.ISO8859-1/.keep_me
-%%MTREE%%share/nls/sv_SE.ISO8859-15/.keep_me
-%%MTREE%%share/nls/sv_SE.UTF-8/.keep_me
-%%MTREE%%share/nls/tr_TR.ISO8859-9/.keep_me
-%%MTREE%%share/nls/tr_TR.UTF-8/.keep_me
-%%MTREE%%share/nls/uk_UA.ISO8859-5/.keep_me
-%%MTREE%%share/nls/uk_UA.KOI8-U/.keep_me
-%%MTREE%%share/nls/uk_UA.UTF-8/.keep_me
-%%MTREE%%share/nls/zh_CN.GB18030/.keep_me
-%%MTREE%%share/nls/zh_CN.GB2312/.keep_me
-%%MTREE%%share/nls/zh_CN.GBK/.keep_me
-%%MTREE%%share/nls/zh_CN.UTF-8/.keep_me
-%%MTREE%%share/nls/zh_CN.eucCN/.keep_me
-%%MTREE%%share/nls/zh_HK.Big5HKSCS/.keep_me
-%%MTREE%%share/nls/zh_HK.UTF-8/.keep_me
-%%MTREE%%share/nls/zh_TW.Big5/.keep_me
-%%MTREE%%share/nls/zh_TW.UTF-8/.keep_me
-%%MTREE%%share/pixmaps/.keep_me
-%%MTREE%%share/sgml/.keep_me
-%%MTREE%%share/skel/.keep_me
-%%MTREE%%share/xml/.keep_me
-%%MTREE%%www/.keep_me
-include/KDE/.keep_me
-lib/kconf_update_bin/.keep_me
-lib/kde4/.keep_me
-lib/kde4/libexec/.keep_me
-lib/kde4/plugins/.keep_me
-lib/kde4/plugins/designer/.keep_me
-lib/kde4/plugins/styles/.keep_me
-lib/strigi/.keep_me
-share/applications/.keep_me
-share/applications/kde4/.keep_me
-share/apps/.keep_me
-share/apps/cmake/.keep_me
-share/apps/cmake/modules/.keep_me
-share/apps/color-schemes/.keep_me
-share/apps/desktoptheme/.keep_me
-share/apps/desktoptheme/default/.keep_me
-share/apps/desktoptheme/default/widgets/.keep_me
-share/apps/kabc/.keep_me
-share/apps/kabc/formats/.keep_me
-share/apps/kabc/plugins/.keep_me
-share/apps/katepart/.keep_me
-share/apps/katepart/syntax/.keep_me
-share/apps/kcharselect/.keep_me
-share/apps/kcm_componentchooser/.keep_me
-share/apps/kconf_update/.keep_me
-share/apps/kcontrol/.keep_me
-share/apps/kcontrol/pics/.keep_me
-share/apps/kdm/.keep_me
-share/apps/kdm/pics/.keep_me
-share/apps/kdm/pics/users/.keep_me
-share/apps/khelpcenter/.keep_me
-share/apps/khelpcenter/plugins/.keep_me
-share/apps/khtml/.keep_me
-share/apps/khtml/kpartplugins/.keep_me
-share/apps/konqsidebartng/.keep_me
-share/apps/konqsidebartng/virtual_folders/.keep_me
-share/apps/konqsidebartng/virtual_folders/services/.keep_me
-share/apps/konqueror/.keep_me
-share/apps/kstyle/.keep_me
-share/apps/kstyle/themes/.keep_me
-share/apps/kwin/.keep_me
-share/apps/nepomuk/.keep_me
-share/apps/nepomuk/ontologies/.keep_me
-share/apps/plasma/.keep_me
-share/apps/plasma/services/.keep_me
-share/apps/profiles/.keep_me
-share/apps/remoteview/.keep_me
-share/apps/solid/.keep_me
-share/apps/solid/actions/.keep_me
-share/autostart/.keep_me
-share/config.kcfg/.keep_me
-share/config/.keep_me
-share/dbus-1/.keep_me
-share/dbus-1/interfaces/.keep_me
-share/dbus-1/services/.keep_me
-share/doc/HTML/.keep_me
-share/doc/HTML/bg/.keep_me
-share/doc/HTML/ca/.keep_me
-share/doc/HTML/cs/.keep_me
-share/doc/HTML/csb/.keep_me
-share/doc/HTML/da/.keep_me
-share/doc/HTML/de/.keep_me
-share/doc/HTML/el/.keep_me
-share/doc/HTML/en/.keep_me
-share/doc/HTML/en/kcontrol/.keep_me
-share/doc/HTML/en/kioslave/.keep_me
-share/doc/HTML/en_GB/.keep_me
-share/doc/HTML/eo/.keep_me
-share/doc/HTML/es/.keep_me
-share/doc/HTML/et/.keep_me
-share/doc/HTML/eu/.keep_me
-share/doc/HTML/fi/.keep_me
-share/doc/HTML/fr/.keep_me
-share/doc/HTML/fy/.keep_me
-share/doc/HTML/ga/.keep_me
-share/doc/HTML/gl/.keep_me
-share/doc/HTML/he/.keep_me
-share/doc/HTML/hi/.keep_me
-share/doc/HTML/hr/.keep_me
-share/doc/HTML/hu/.keep_me
-share/doc/HTML/it/.keep_me
-share/doc/HTML/ja/.keep_me
-share/doc/HTML/kk/.keep_me
-share/doc/HTML/km/.keep_me
-share/doc/HTML/ko/.keep_me
-share/doc/HTML/ku/.keep_me
-share/doc/HTML/lt/.keep_me
-share/doc/HTML/lv/.keep_me
-share/doc/HTML/mk/.keep_me
-share/doc/HTML/ml/.keep_me
-share/doc/HTML/nb/.keep_me
-share/doc/HTML/nds/.keep_me
-share/doc/HTML/nl/.keep_me
-share/doc/HTML/nn/.keep_me
-share/doc/HTML/pa/.keep_me
-share/doc/HTML/pl/.keep_me
-share/doc/HTML/pt/.keep_me
-share/doc/HTML/pt_BR/.keep_me
-share/doc/HTML/ro/.keep_me
-share/doc/HTML/ru/.keep_me
-share/doc/HTML/sk/.keep_me
-share/doc/HTML/sl/.keep_me
-share/doc/HTML/sr/.keep_me
-share/doc/HTML/sv/.keep_me
-share/doc/HTML/ta/.keep_me
-share/doc/HTML/th/.keep_me
-share/doc/HTML/tr/.keep_me
-share/doc/HTML/uk/.keep_me
-share/doc/HTML/wa/.keep_me
-share/doc/HTML/xh/.keep_me
-share/doc/HTML/zh_CN/.keep_me
-share/doc/HTML/zh_TW/.keep_me
-share/emoticons/.keep_me
-share/icons/.keep_me
-share/icons/Locolor/.keep_me
-share/icons/Locolor/128x128/.keep_me
-share/icons/Locolor/128x128/actions/.keep_me
-share/icons/Locolor/128x128/apps/.keep_me
-share/icons/Locolor/128x128/devices/.keep_me
-share/icons/Locolor/128x128/filesystem/.keep_me
-share/icons/Locolor/128x128/mimetypes/.keep_me
-share/icons/Locolor/16x16/.keep_me
-share/icons/Locolor/16x16/actions/.keep_me
-share/icons/Locolor/16x16/apps/.keep_me
-share/icons/Locolor/16x16/devices/.keep_me
-share/icons/Locolor/16x16/filesystems/.keep_me
-share/icons/Locolor/16x16/mimetypes/.keep_me
-share/icons/Locolor/22x22/.keep_me
-share/icons/Locolor/22x22/actions/.keep_me
-share/icons/Locolor/22x22/apps/.keep_me
-share/icons/Locolor/22x22/devices/.keep_me
-share/icons/Locolor/22x22/filesystems/.keep_me
-share/icons/Locolor/22x22/mimetypes/.keep_me
-share/icons/Locolor/32x32/.keep_me
-share/icons/Locolor/32x32/actions/.keep_me
-share/icons/Locolor/32x32/apps/.keep_me
-share/icons/Locolor/32x32/devices/.keep_me
-share/icons/Locolor/32x32/filesystems/.keep_me
-share/icons/Locolor/32x32/mimetypes/.keep_me
-share/icons/Locolor/48x48/.keep_me
-share/icons/Locolor/48x48/actions/.keep_me
-share/icons/Locolor/48x48/apps/.keep_me
-share/icons/Locolor/48x48/devices/.keep_me
-share/icons/Locolor/48x48/filesystems/.keep_me
-share/icons/Locolor/48x48/mimetypes/.keep_me
-share/icons/Locolor/64x64/.keep_me
-share/icons/Locolor/64x64/actions/.keep_me
-share/icons/Locolor/64x64/apps/.keep_me
-share/icons/Locolor/64x64/devices/.keep_me
-share/icons/Locolor/64x64/filesystems/.keep_me
-share/icons/Locolor/64x64/mimetypes/.keep_me
-share/icons/crystalsvg/.keep_me
-share/icons/crystalsvg/128x128/.keep_me
-share/icons/crystalsvg/128x128/actions/.keep_me
-share/icons/crystalsvg/128x128/apps/.keep_me
-share/icons/crystalsvg/128x128/devices/.keep_me
-share/icons/crystalsvg/128x128/filesystems/.keep_me
-share/icons/crystalsvg/128x128/mimetypes/.keep_me
-share/icons/crystalsvg/16x16/.keep_me
-share/icons/crystalsvg/16x16/actions/.keep_me
-share/icons/crystalsvg/16x16/apps/.keep_me
-share/icons/crystalsvg/16x16/devices/.keep_me
-share/icons/crystalsvg/16x16/filesystems/.keep_me
-share/icons/crystalsvg/16x16/mimetypes/.keep_me
-share/icons/crystalsvg/22x22/.keep_me
-share/icons/crystalsvg/22x22/actions/.keep_me
-share/icons/crystalsvg/22x22/apps/.keep_me
-share/icons/crystalsvg/22x22/devices/.keep_me
-share/icons/crystalsvg/22x22/filesystems/.keep_me
-share/icons/crystalsvg/22x22/mimetypes/.keep_me
-share/icons/crystalsvg/32x32/.keep_me
-share/icons/crystalsvg/32x32/actions/.keep_me
-share/icons/crystalsvg/32x32/apps/.keep_me
-share/icons/crystalsvg/32x32/devices/.keep_me
-share/icons/crystalsvg/32x32/filesystems/.keep_me
-share/icons/crystalsvg/32x32/mimetypes/.keep_me
-share/icons/crystalsvg/48x48/.keep_me
-share/icons/crystalsvg/48x48/actions/.keep_me
-share/icons/crystalsvg/48x48/apps/.keep_me
-share/icons/crystalsvg/48x48/devices/.keep_me
-share/icons/crystalsvg/48x48/filesystems/.keep_me
-share/icons/crystalsvg/48x48/mimetypes/.keep_me
-share/icons/crystalsvg/64x64/.keep_me
-share/icons/crystalsvg/64x64/actions/.keep_me
-share/icons/crystalsvg/64x64/apps/.keep_me
-share/icons/crystalsvg/64x64/devices/.keep_me
-share/icons/crystalsvg/64x64/filesystems/.keep_me
-share/icons/crystalsvg/64x64/mimetypes/.keep_me
-share/icons/crystalsvg/scalable/.keep_me
-share/icons/crystalsvg/scalable/actions/.keep_me
-share/icons/crystalsvg/scalable/apps/.keep_me
-share/icons/crystalsvg/scalable/devices/.keep_me
-share/icons/crystalsvg/scalable/filesystems/.keep_me
-share/icons/crystalsvg/scalable/mimetypes/.keep_me
-share/icons/hicolor/.keep_me
-share/icons/hicolor/128x128/.keep_me
-share/icons/hicolor/128x128/actions/.keep_me
-share/icons/hicolor/128x128/animations/.keep_me
-share/icons/hicolor/128x128/apps/.keep_me
-share/icons/hicolor/128x128/categories/.keep_me
-share/icons/hicolor/128x128/devices/.keep_me
-share/icons/hicolor/128x128/emblems/.keep_me
-share/icons/hicolor/128x128/emotes/.keep_me
-share/icons/hicolor/128x128/filesystems/.keep_me
-share/icons/hicolor/128x128/intl/.keep_me
-share/icons/hicolor/128x128/mimetypes/.keep_me
-share/icons/hicolor/128x128/places/.keep_me
-share/icons/hicolor/128x128/status/.keep_me
-share/icons/hicolor/128x128/stock/.keep_me
-share/icons/hicolor/128x128/stock/chart/.keep_me
-share/icons/hicolor/128x128/stock/code/.keep_me
-share/icons/hicolor/128x128/stock/data/.keep_me
-share/icons/hicolor/128x128/stock/form/.keep_me
-share/icons/hicolor/128x128/stock/image/.keep_me
-share/icons/hicolor/128x128/stock/io/.keep_me
-share/icons/hicolor/128x128/stock/media/.keep_me
-share/icons/hicolor/128x128/stock/navigation/.keep_me
-share/icons/hicolor/128x128/stock/net/.keep_me
-share/icons/hicolor/128x128/stock/object/.keep_me
-share/icons/hicolor/128x128/stock/table/.keep_me
-share/icons/hicolor/128x128/stock/text/.keep_me
-share/icons/hicolor/16x16/.keep_me
-share/icons/hicolor/16x16/actions/.keep_me
-share/icons/hicolor/16x16/animations/.keep_me
-share/icons/hicolor/16x16/apps/.keep_me
-share/icons/hicolor/16x16/categories/.keep_me
-share/icons/hicolor/16x16/devices/.keep_me
-share/icons/hicolor/16x16/emblems/.keep_me
-share/icons/hicolor/16x16/emotes/.keep_me
-share/icons/hicolor/16x16/filesystems/.keep_me
-share/icons/hicolor/16x16/intl/.keep_me
-share/icons/hicolor/16x16/mimetypes/.keep_me
-share/icons/hicolor/16x16/places/.keep_me
-share/icons/hicolor/16x16/status/.keep_me
-share/icons/hicolor/16x16/stock/.keep_me
-share/icons/hicolor/16x16/stock/chart/.keep_me
-share/icons/hicolor/16x16/stock/code/.keep_me
-share/icons/hicolor/16x16/stock/data/.keep_me
-share/icons/hicolor/16x16/stock/form/.keep_me
-share/icons/hicolor/16x16/stock/image/.keep_me
-share/icons/hicolor/16x16/stock/io/.keep_me
-share/icons/hicolor/16x16/stock/media/.keep_me
-share/icons/hicolor/16x16/stock/navigation/.keep_me
-share/icons/hicolor/16x16/stock/net/.keep_me
-share/icons/hicolor/16x16/stock/object/.keep_me
-share/icons/hicolor/16x16/stock/table/.keep_me
-share/icons/hicolor/16x16/stock/text/.keep_me
-share/icons/hicolor/192x192/.keep_me
-share/icons/hicolor/192x192/actions/.keep_me
-share/icons/hicolor/192x192/animations/.keep_me
-share/icons/hicolor/192x192/apps/.keep_me
-share/icons/hicolor/192x192/categories/.keep_me
-share/icons/hicolor/192x192/devices/.keep_me
-share/icons/hicolor/192x192/emblems/.keep_me
-share/icons/hicolor/192x192/emotes/.keep_me
-share/icons/hicolor/192x192/filesystems/.keep_me
-share/icons/hicolor/192x192/intl/.keep_me
-share/icons/hicolor/192x192/mimetypes/.keep_me
-share/icons/hicolor/192x192/places/.keep_me
-share/icons/hicolor/192x192/status/.keep_me
-share/icons/hicolor/192x192/stock/.keep_me
-share/icons/hicolor/192x192/stock/chart/.keep_me
-share/icons/hicolor/192x192/stock/code/.keep_me
-share/icons/hicolor/192x192/stock/data/.keep_me
-share/icons/hicolor/192x192/stock/form/.keep_me
-share/icons/hicolor/192x192/stock/image/.keep_me
-share/icons/hicolor/192x192/stock/io/.keep_me
-share/icons/hicolor/192x192/stock/media/.keep_me
-share/icons/hicolor/192x192/stock/navigation/.keep_me
-share/icons/hicolor/192x192/stock/net/.keep_me
-share/icons/hicolor/192x192/stock/object/.keep_me
-share/icons/hicolor/192x192/stock/table/.keep_me
-share/icons/hicolor/192x192/stock/text/.keep_me
-share/icons/hicolor/22x22/.keep_me
-share/icons/hicolor/22x22/actions/.keep_me
-share/icons/hicolor/22x22/animations/.keep_me
-share/icons/hicolor/22x22/apps/.keep_me
-share/icons/hicolor/22x22/categories/.keep_me
-share/icons/hicolor/22x22/devices/.keep_me
-share/icons/hicolor/22x22/emblems/.keep_me
-share/icons/hicolor/22x22/emotes/.keep_me
-share/icons/hicolor/22x22/filesystems/.keep_me
-share/icons/hicolor/22x22/intl/.keep_me
-share/icons/hicolor/22x22/mimetypes/.keep_me
-share/icons/hicolor/22x22/places/.keep_me
-share/icons/hicolor/22x22/status/.keep_me
-share/icons/hicolor/22x22/stock/.keep_me
-share/icons/hicolor/22x22/stock/chart/.keep_me
-share/icons/hicolor/22x22/stock/code/.keep_me
-share/icons/hicolor/22x22/stock/data/.keep_me
-share/icons/hicolor/22x22/stock/form/.keep_me
-share/icons/hicolor/22x22/stock/image/.keep_me
-share/icons/hicolor/22x22/stock/io/.keep_me
-share/icons/hicolor/22x22/stock/media/.keep_me
-share/icons/hicolor/22x22/stock/navigation/.keep_me
-share/icons/hicolor/22x22/stock/net/.keep_me
-share/icons/hicolor/22x22/stock/object/.keep_me
-share/icons/hicolor/22x22/stock/table/.keep_me
-share/icons/hicolor/22x22/stock/text/.keep_me
-share/icons/hicolor/24x24/.keep_me
-share/icons/hicolor/24x24/actions/.keep_me
-share/icons/hicolor/24x24/animations/.keep_me
-share/icons/hicolor/24x24/apps/.keep_me
-share/icons/hicolor/24x24/categories/.keep_me
-share/icons/hicolor/24x24/devices/.keep_me
-share/icons/hicolor/24x24/emblems/.keep_me
-share/icons/hicolor/24x24/emotes/.keep_me
-share/icons/hicolor/24x24/filesystems/.keep_me
-share/icons/hicolor/24x24/intl/.keep_me
-share/icons/hicolor/24x24/mimetypes/.keep_me
-share/icons/hicolor/24x24/places/.keep_me
-share/icons/hicolor/24x24/status/.keep_me
-share/icons/hicolor/24x24/stock/.keep_me
-share/icons/hicolor/24x24/stock/chart/.keep_me
-share/icons/hicolor/24x24/stock/code/.keep_me
-share/icons/hicolor/24x24/stock/data/.keep_me
-share/icons/hicolor/24x24/stock/form/.keep_me
-share/icons/hicolor/24x24/stock/image/.keep_me
-share/icons/hicolor/24x24/stock/io/.keep_me
-share/icons/hicolor/24x24/stock/media/.keep_me
-share/icons/hicolor/24x24/stock/navigation/.keep_me
-share/icons/hicolor/24x24/stock/net/.keep_me
-share/icons/hicolor/24x24/stock/object/.keep_me
-share/icons/hicolor/24x24/stock/table/.keep_me
-share/icons/hicolor/24x24/stock/text/.keep_me
-share/icons/hicolor/32x32/.keep_me
-share/icons/hicolor/32x32/actions/.keep_me
-share/icons/hicolor/32x32/animations/.keep_me
-share/icons/hicolor/32x32/apps/.keep_me
-share/icons/hicolor/32x32/categories/.keep_me
-share/icons/hicolor/32x32/devices/.keep_me
-share/icons/hicolor/32x32/emblems/.keep_me
-share/icons/hicolor/32x32/emotes/.keep_me
-share/icons/hicolor/32x32/filesystems/.keep_me
-share/icons/hicolor/32x32/intl/.keep_me
-share/icons/hicolor/32x32/mimetypes/.keep_me
-share/icons/hicolor/32x32/places/.keep_me
-share/icons/hicolor/32x32/status/.keep_me
-share/icons/hicolor/32x32/stock/.keep_me
-share/icons/hicolor/32x32/stock/chart/.keep_me
-share/icons/hicolor/32x32/stock/code/.keep_me
-share/icons/hicolor/32x32/stock/data/.keep_me
-share/icons/hicolor/32x32/stock/form/.keep_me
-share/icons/hicolor/32x32/stock/image/.keep_me
-share/icons/hicolor/32x32/stock/io/.keep_me
-share/icons/hicolor/32x32/stock/media/.keep_me
-share/icons/hicolor/32x32/stock/navigation/.keep_me
-share/icons/hicolor/32x32/stock/net/.keep_me
-share/icons/hicolor/32x32/stock/object/.keep_me
-share/icons/hicolor/32x32/stock/table/.keep_me
-share/icons/hicolor/32x32/stock/text/.keep_me
-share/icons/hicolor/36x36/.keep_me
-share/icons/hicolor/36x36/actions/.keep_me
-share/icons/hicolor/36x36/animations/.keep_me
-share/icons/hicolor/36x36/apps/.keep_me
-share/icons/hicolor/36x36/categories/.keep_me
-share/icons/hicolor/36x36/devices/.keep_me
-share/icons/hicolor/36x36/emblems/.keep_me
-share/icons/hicolor/36x36/emotes/.keep_me
-share/icons/hicolor/36x36/filesystems/.keep_me
-share/icons/hicolor/36x36/intl/.keep_me
-share/icons/hicolor/36x36/mimetypes/.keep_me
-share/icons/hicolor/36x36/places/.keep_me
-share/icons/hicolor/36x36/status/.keep_me
-share/icons/hicolor/36x36/stock/.keep_me
-share/icons/hicolor/36x36/stock/chart/.keep_me
-share/icons/hicolor/36x36/stock/code/.keep_me
-share/icons/hicolor/36x36/stock/data/.keep_me
-share/icons/hicolor/36x36/stock/form/.keep_me
-share/icons/hicolor/36x36/stock/image/.keep_me
-share/icons/hicolor/36x36/stock/io/.keep_me
-share/icons/hicolor/36x36/stock/media/.keep_me
-share/icons/hicolor/36x36/stock/navigation/.keep_me
-share/icons/hicolor/36x36/stock/net/.keep_me
-share/icons/hicolor/36x36/stock/object/.keep_me
-share/icons/hicolor/36x36/stock/table/.keep_me
-share/icons/hicolor/36x36/stock/text/.keep_me
-share/icons/hicolor/48x48/.keep_me
-share/icons/hicolor/48x48/actions/.keep_me
-share/icons/hicolor/48x48/animations/.keep_me
-share/icons/hicolor/48x48/apps/.keep_me
-share/icons/hicolor/48x48/categories/.keep_me
-share/icons/hicolor/48x48/devices/.keep_me
-share/icons/hicolor/48x48/emblems/.keep_me
-share/icons/hicolor/48x48/emotes/.keep_me
-share/icons/hicolor/48x48/filesystems/.keep_me
-share/icons/hicolor/48x48/intl/.keep_me
-share/icons/hicolor/48x48/mimetypes/.keep_me
-share/icons/hicolor/48x48/places/.keep_me
-share/icons/hicolor/48x48/status/.keep_me
-share/icons/hicolor/48x48/stock/.keep_me
-share/icons/hicolor/48x48/stock/chart/.keep_me
-share/icons/hicolor/48x48/stock/code/.keep_me
-share/icons/hicolor/48x48/stock/data/.keep_me
-share/icons/hicolor/48x48/stock/form/.keep_me
-share/icons/hicolor/48x48/stock/image/.keep_me
-share/icons/hicolor/48x48/stock/io/.keep_me
-share/icons/hicolor/48x48/stock/media/.keep_me
-share/icons/hicolor/48x48/stock/navigation/.keep_me
-share/icons/hicolor/48x48/stock/net/.keep_me
-share/icons/hicolor/48x48/stock/object/.keep_me
-share/icons/hicolor/48x48/stock/table/.keep_me
-share/icons/hicolor/48x48/stock/text/.keep_me
-share/icons/hicolor/64x64/.keep_me
-share/icons/hicolor/64x64/actions/.keep_me
-share/icons/hicolor/64x64/animations/.keep_me
-share/icons/hicolor/64x64/apps/.keep_me
-share/icons/hicolor/64x64/categories/.keep_me
-share/icons/hicolor/64x64/devices/.keep_me
-share/icons/hicolor/64x64/emblems/.keep_me
-share/icons/hicolor/64x64/emotes/.keep_me
-share/icons/hicolor/64x64/filesystems/.keep_me
-share/icons/hicolor/64x64/intl/.keep_me
-share/icons/hicolor/64x64/mimetypes/.keep_me
-share/icons/hicolor/64x64/places/.keep_me
-share/icons/hicolor/64x64/status/.keep_me
-share/icons/hicolor/64x64/stock/.keep_me
-share/icons/hicolor/64x64/stock/chart/.keep_me
-share/icons/hicolor/64x64/stock/code/.keep_me
-share/icons/hicolor/64x64/stock/data/.keep_me
-share/icons/hicolor/64x64/stock/form/.keep_me
-share/icons/hicolor/64x64/stock/image/.keep_me
-share/icons/hicolor/64x64/stock/io/.keep_me
-share/icons/hicolor/64x64/stock/media/.keep_me
-share/icons/hicolor/64x64/stock/navigation/.keep_me
-share/icons/hicolor/64x64/stock/net/.keep_me
-share/icons/hicolor/64x64/stock/object/.keep_me
-share/icons/hicolor/64x64/stock/table/.keep_me
-share/icons/hicolor/64x64/stock/text/.keep_me
-share/icons/hicolor/72x72/.keep_me
-share/icons/hicolor/72x72/actions/.keep_me
-share/icons/hicolor/72x72/animations/.keep_me
-share/icons/hicolor/72x72/apps/.keep_me
-share/icons/hicolor/72x72/categories/.keep_me
-share/icons/hicolor/72x72/devices/.keep_me
-share/icons/hicolor/72x72/emblems/.keep_me
-share/icons/hicolor/72x72/emotes/.keep_me
-share/icons/hicolor/72x72/filesystems/.keep_me
-share/icons/hicolor/72x72/intl/.keep_me
-share/icons/hicolor/72x72/mimetypes/.keep_me
-share/icons/hicolor/72x72/places/.keep_me
-share/icons/hicolor/72x72/status/.keep_me
-share/icons/hicolor/72x72/stock/.keep_me
-share/icons/hicolor/72x72/stock/chart/.keep_me
-share/icons/hicolor/72x72/stock/code/.keep_me
-share/icons/hicolor/72x72/stock/data/.keep_me
-share/icons/hicolor/72x72/stock/form/.keep_me
-share/icons/hicolor/72x72/stock/image/.keep_me
-share/icons/hicolor/72x72/stock/io/.keep_me
-share/icons/hicolor/72x72/stock/media/.keep_me
-share/icons/hicolor/72x72/stock/navigation/.keep_me
-share/icons/hicolor/72x72/stock/net/.keep_me
-share/icons/hicolor/72x72/stock/object/.keep_me
-share/icons/hicolor/72x72/stock/table/.keep_me
-share/icons/hicolor/72x72/stock/text/.keep_me
-share/icons/hicolor/96x96/.keep_me
-share/icons/hicolor/96x96/actions/.keep_me
-share/icons/hicolor/96x96/animations/.keep_me
-share/icons/hicolor/96x96/apps/.keep_me
-share/icons/hicolor/96x96/categories/.keep_me
-share/icons/hicolor/96x96/devices/.keep_me
-share/icons/hicolor/96x96/emblems/.keep_me
-share/icons/hicolor/96x96/emotes/.keep_me
-share/icons/hicolor/96x96/filesystems/.keep_me
-share/icons/hicolor/96x96/intl/.keep_me
-share/icons/hicolor/96x96/mimetypes/.keep_me
-share/icons/hicolor/96x96/places/.keep_me
-share/icons/hicolor/96x96/status/.keep_me
-share/icons/hicolor/96x96/stock/.keep_me
-share/icons/hicolor/96x96/stock/chart/.keep_me
-share/icons/hicolor/96x96/stock/code/.keep_me
-share/icons/hicolor/96x96/stock/data/.keep_me
-share/icons/hicolor/96x96/stock/form/.keep_me
-share/icons/hicolor/96x96/stock/image/.keep_me
-share/icons/hicolor/96x96/stock/io/.keep_me
-share/icons/hicolor/96x96/stock/media/.keep_me
-share/icons/hicolor/96x96/stock/navigation/.keep_me
-share/icons/hicolor/96x96/stock/net/.keep_me
-share/icons/hicolor/96x96/stock/object/.keep_me
-share/icons/hicolor/96x96/stock/table/.keep_me
-share/icons/hicolor/96x96/stock/text/.keep_me
-share/icons/hicolor/scalable/.keep_me
-share/icons/hicolor/scalable/actions/.keep_me
-share/icons/hicolor/scalable/animations/.keep_me
-share/icons/hicolor/scalable/apps/.keep_me
-share/icons/hicolor/scalable/categories/.keep_me
-share/icons/hicolor/scalable/devices/.keep_me
-share/icons/hicolor/scalable/emblems/.keep_me
-share/icons/hicolor/scalable/emotes/.keep_me
-share/icons/hicolor/scalable/filesystems/.keep_me
-share/icons/hicolor/scalable/intl/.keep_me
-share/icons/hicolor/scalable/mimetypes/.keep_me
-share/icons/hicolor/scalable/places/.keep_me
-share/icons/hicolor/scalable/status/.keep_me
-share/icons/hicolor/scalable/stock/.keep_me
-share/icons/hicolor/scalable/stock/chart/.keep_me
-share/icons/hicolor/scalable/stock/code/.keep_me
-share/icons/hicolor/scalable/stock/data/.keep_me
-share/icons/hicolor/scalable/stock/form/.keep_me
-share/icons/hicolor/scalable/stock/image/.keep_me
-share/icons/hicolor/scalable/stock/io/.keep_me
-share/icons/hicolor/scalable/stock/media/.keep_me
-share/icons/hicolor/scalable/stock/navigation/.keep_me
-share/icons/hicolor/scalable/stock/net/.keep_me
-share/icons/hicolor/scalable/stock/object/.keep_me
-share/icons/hicolor/scalable/stock/table/.keep_me
-share/icons/hicolor/scalable/stock/text/.keep_me
-share/icons/oxygen/.keep_me
-share/icons/oxygen/128x128/.keep_me
-share/icons/oxygen/128x128/actions/.keep_me
-share/icons/oxygen/128x128/apps/.keep_me
-share/icons/oxygen/128x128/categories/.keep_me
-share/icons/oxygen/128x128/devices/.keep_me
-share/icons/oxygen/128x128/emblems/.keep_me
-share/icons/oxygen/128x128/emotes/.keep_me
-share/icons/oxygen/128x128/mimetypes/.keep_me
-share/icons/oxygen/128x128/places/.keep_me
-share/icons/oxygen/128x128/status/.keep_me
-share/icons/oxygen/16x16/.keep_me
-share/icons/oxygen/16x16/actions/.keep_me
-share/icons/oxygen/16x16/apps/.keep_me
-share/icons/oxygen/16x16/categories/.keep_me
-share/icons/oxygen/16x16/devices/.keep_me
-share/icons/oxygen/16x16/emblems/.keep_me
-share/icons/oxygen/16x16/emotes/.keep_me
-share/icons/oxygen/16x16/mimetypes/.keep_me
-share/icons/oxygen/16x16/places/.keep_me
-share/icons/oxygen/16x16/status/.keep_me
-share/icons/oxygen/22x22/.keep_me
-share/icons/oxygen/22x22/actions/.keep_me
-share/icons/oxygen/22x22/apps/.keep_me
-share/icons/oxygen/22x22/categories/.keep_me
-share/icons/oxygen/22x22/devices/.keep_me
-share/icons/oxygen/22x22/emblems/.keep_me
-share/icons/oxygen/22x22/emotes/.keep_me
-share/icons/oxygen/22x22/mimetypes/.keep_me
-share/icons/oxygen/22x22/places/.keep_me
-share/icons/oxygen/22x22/status/.keep_me
-share/icons/oxygen/32x32/.keep_me
-share/icons/oxygen/32x32/actions/.keep_me
-share/icons/oxygen/32x32/apps/.keep_me
-share/icons/oxygen/32x32/categories/.keep_me
-share/icons/oxygen/32x32/devices/.keep_me
-share/icons/oxygen/32x32/emblems/.keep_me
-share/icons/oxygen/32x32/emotes/.keep_me
-share/icons/oxygen/32x32/mimetypes/.keep_me
-share/icons/oxygen/32x32/places/.keep_me
-share/icons/oxygen/32x32/status/.keep_me
-share/icons/oxygen/48x48/.keep_me
-share/icons/oxygen/48x48/actions/.keep_me
-share/icons/oxygen/48x48/apps/.keep_me
-share/icons/oxygen/48x48/categories/.keep_me
-share/icons/oxygen/48x48/devices/.keep_me
-share/icons/oxygen/48x48/emblems/.keep_me
-share/icons/oxygen/48x48/emotes/.keep_me
-share/icons/oxygen/48x48/mimetypes/.keep_me
-share/icons/oxygen/48x48/places/.keep_me
-share/icons/oxygen/48x48/status/.keep_me
-share/icons/oxygen/64x64/.keep_me
-share/icons/oxygen/64x64/actions/.keep_me
-share/icons/oxygen/64x64/apps/.keep_me
-share/icons/oxygen/64x64/categories/.keep_me
-share/icons/oxygen/64x64/devices/.keep_me
-share/icons/oxygen/64x64/emblems/.keep_me
-share/icons/oxygen/64x64/emotes/.keep_me
-share/icons/oxygen/64x64/mimetypes/.keep_me
-share/icons/oxygen/64x64/places/.keep_me
-share/icons/oxygen/64x64/status/.keep_me
-share/icons/oxygen/8x8/.keep_me
-share/icons/oxygen/8x8/actions/.keep_me
-share/icons/oxygen/8x8/apps/.keep_me
-share/icons/oxygen/8x8/categories/.keep_me
-share/icons/oxygen/8x8/devices/.keep_me
-share/icons/oxygen/8x8/emblems/.keep_me
-share/icons/oxygen/8x8/emotes/.keep_me
-share/icons/oxygen/8x8/mimetypes/.keep_me
-share/icons/oxygen/8x8/places/.keep_me
-share/icons/oxygen/8x8/status/.keep_me
-share/icons/oxygen/scalable/.keep_me
-share/icons/oxygen/scalable/actions/.keep_me
-share/icons/oxygen/scalable/actions/small/.keep_me
-share/icons/oxygen/scalable/apps/.keep_me
-share/icons/oxygen/scalable/apps/small/.keep_me
-share/icons/oxygen/scalable/categories/.keep_me
-share/icons/oxygen/scalable/categories/small/.keep_me
-share/icons/oxygen/scalable/devices/.keep_me
-share/icons/oxygen/scalable/devices/small/.keep_me
-share/icons/oxygen/scalable/emblems/.keep_me
-share/icons/oxygen/scalable/emblems/small/.keep_me
-share/icons/oxygen/scalable/emotes/.keep_me
-share/icons/oxygen/scalable/emotes/small/.keep_me
-share/icons/oxygen/scalable/mimetypes/.keep_me
-share/icons/oxygen/scalable/mimetypes/small/.keep_me
-share/icons/oxygen/scalable/places/.keep_me
-share/icons/oxygen/scalable/places/small/.keep_me
-share/icons/oxygen/scalable/status/.keep_me
-share/icons/oxygen/scalable/status/small/.keep_me
-share/kde4/.keep_me
-share/kde4/services/.keep_me
-share/kde4/services/ScreenSavers/.keep_me
-share/kde4/services/ServiceMenus/.keep_me
-share/kde4/services/kded/.keep_me
-share/kde4/services/kresources/.keep_me
-share/kde4/services/kresources/kabc/.keep_me
-share/kde4/services/kresources/kcal/.keep_me
-share/kde4/servicetypes/.keep_me
-share/locale/csb/.keep_me
-share/locale/csb/LC_MESSAGES/.keep_me
-share/locale/en_US/.keep_me
-share/locale/fy/.keep_me
-share/locale/fy/LC_MESSAGES/.keep_me
-share/locale/kk/.keep_me
-share/locale/kk/LC_MESSAGES/.keep_me
-share/locale/km/.keep_me
-share/locale/km/LC_MESSAGES/.keep_me
-share/locale/ku/.keep_me
-share/locale/ku/LC_MESSAGES/.keep_me
-share/locale/nds/.keep_me
-share/locale/nds/LC_MESSAGES/.keep_me
-share/locale/xh/.keep_me
-share/locale/xh/LC_MESSAGES/.keep_me
-share/services/.keep_me
-share/services/searchproviders/.keep_me
-share/services/useragentstrings/.keep_me
-share/sounds/.keep_me
-share/templates/.keep_me
-share/templates/.source/.keep_me
-share/wallpapers/.keep_me
+%%MTREE%%@exec mkdir -p %D/bin
+%%MTREE%%@exec mkdir -p %D/etc
+%%MTREE%%@exec mkdir -p %D/etc/pam.d
+%%MTREE%%@exec mkdir -p %D/etc/rc.d
+%%MTREE%%@exec mkdir -p %D/include
+%%MTREE%%@exec mkdir -p %D/include/X11
+%%MTREE%%@exec mkdir -p %D/info
+%%MTREE%%@exec mkdir -p %D/lib
+%%MTREE%%@exec mkdir -p %D/lib/X11
+%%MTREE%%@exec mkdir -p %D/lib/X11/app-defaults
+%%MTREE%%@exec mkdir -p %D/lib/X11/fonts
+%%MTREE%%@exec mkdir -p %D/lib/X11/fonts/local
+%%MTREE%%@exec mkdir -p %D/libdata
+%%MTREE%%@exec mkdir -p %D/libexec
+%%MTREE%%@exec mkdir -p %D/man
+%%MTREE%%@exec mkdir -p %D/man/cat1
+%%MTREE%%@exec mkdir -p %D/man/cat2
+%%MTREE%%@exec mkdir -p %D/man/cat3
+%%MTREE%%@exec mkdir -p %D/man/cat4
+%%MTREE%%@exec mkdir -p %D/man/cat5
+%%MTREE%%@exec mkdir -p %D/man/cat6
+%%MTREE%%@exec mkdir -p %D/man/cat7
+%%MTREE%%@exec mkdir -p %D/man/cat8
+%%MTREE%%@exec mkdir -p %D/man/cat9
+%%MTREE%%@exec mkdir -p %D/man/catl
+%%MTREE%%@exec mkdir -p %D/man/catn
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/cat1
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/cat2
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/cat3
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/cat4
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/cat5
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/cat6
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/cat7
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/cat8
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/cat9
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/catl
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/catn
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/man1
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/man2
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/man3
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/man4
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/man5
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/man6
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/man7
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/man8
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/man9
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/manl
+%%MTREE%%@exec mkdir -p %D/man/de.ISO8859-1/mann
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat1
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat1aout
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat2
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat3
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat4
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat4/i386
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat5
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat6
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat7
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat8
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat8/i386
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat9
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/cat9/i386
+%%MTREE%%@exec mkdir -p %D/man/en.ISO8859-1/catn
+%%MTREE%%@exec mkdir -p %D/man/ja
+%%MTREE%%@exec mkdir -p %D/man/ja/cat1
+%%MTREE%%@exec mkdir -p %D/man/ja/cat2
+%%MTREE%%@exec mkdir -p %D/man/ja/cat3
+%%MTREE%%@exec mkdir -p %D/man/ja/cat4
+%%MTREE%%@exec mkdir -p %D/man/ja/cat5
+%%MTREE%%@exec mkdir -p %D/man/ja/cat6
+%%MTREE%%@exec mkdir -p %D/man/ja/cat7
+%%MTREE%%@exec mkdir -p %D/man/ja/cat8
+%%MTREE%%@exec mkdir -p %D/man/ja/cat9
+%%MTREE%%@exec mkdir -p %D/man/ja/catl
+%%MTREE%%@exec mkdir -p %D/man/ja/catn
+%%MTREE%%@exec mkdir -p %D/man/ja/man1
+%%MTREE%%@exec mkdir -p %D/man/ja/man2
+%%MTREE%%@exec mkdir -p %D/man/ja/man3
+%%MTREE%%@exec mkdir -p %D/man/ja/man4
+%%MTREE%%@exec mkdir -p %D/man/ja/man5
+%%MTREE%%@exec mkdir -p %D/man/ja/man6
+%%MTREE%%@exec mkdir -p %D/man/ja/man7
+%%MTREE%%@exec mkdir -p %D/man/ja/man8
+%%MTREE%%@exec mkdir -p %D/man/ja/man9
+%%MTREE%%@exec mkdir -p %D/man/ja/manl
+%%MTREE%%@exec mkdir -p %D/man/ja/mann
+%%MTREE%%@exec mkdir -p %D/man/man1
+%%MTREE%%@exec mkdir -p %D/man/man2
+%%MTREE%%@exec mkdir -p %D/man/man3
+%%MTREE%%@exec mkdir -p %D/man/man4
+%%MTREE%%@exec mkdir -p %D/man/man5
+%%MTREE%%@exec mkdir -p %D/man/man6
+%%MTREE%%@exec mkdir -p %D/man/man7
+%%MTREE%%@exec mkdir -p %D/man/man8
+%%MTREE%%@exec mkdir -p %D/man/man9
+%%MTREE%%@exec mkdir -p %D/man/manl
+%%MTREE%%@exec mkdir -p %D/man/mann
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/cat1
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/cat2
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/cat3
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/cat4
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/cat5
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/cat6
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/cat7
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/cat8
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/cat9
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/catl
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/catn
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/man1
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/man2
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/man3
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/man4
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/man5
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/man6
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/man7
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/man8
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/man9
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/manl
+%%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/mann
+%%MTREE%%@exec mkdir -p %D/sbin
+%%MTREE%%@exec mkdir -p %D/share
+%%MTREE%%@exec mkdir -p %D/share/aclocal
+%%MTREE%%@exec mkdir -p %D/share/dict
+%%MTREE%%@exec mkdir -p %D/share/doc
+%%MTREE%%@exec mkdir -p %D/share/doc/ja
+%%MTREE%%@exec mkdir -p %D/share/emacs
+%%MTREE%%@exec mkdir -p %D/share/emacs/site-lisp
+%%MTREE%%@exec mkdir -p %D/share/examples
+%%MTREE%%@exec mkdir -p %D/share/java
+%%MTREE%%@exec mkdir -p %D/share/java/classes
+%%MTREE%%@exec mkdir -p %D/share/locale
+%%MTREE%%@exec mkdir -p %D/share/locale/af
+%%MTREE%%@exec mkdir -p %D/share/locale/af/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/am
+%%MTREE%%@exec mkdir -p %D/share/locale/am/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ar
+%%MTREE%%@exec mkdir -p %D/share/locale/ar/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/az
+%%MTREE%%@exec mkdir -p %D/share/locale/az/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/be
+%%MTREE%%@exec mkdir -p %D/share/locale/be/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/bg
+%%MTREE%%@exec mkdir -p %D/share/locale/bg/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/bn
+%%MTREE%%@exec mkdir -p %D/share/locale/bn/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/br
+%%MTREE%%@exec mkdir -p %D/share/locale/br/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/bs
+%%MTREE%%@exec mkdir -p %D/share/locale/bs/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ca
+%%MTREE%%@exec mkdir -p %D/share/locale/ca/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/cs
+%%MTREE%%@exec mkdir -p %D/share/locale/cs/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/cy
+%%MTREE%%@exec mkdir -p %D/share/locale/cy/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/da
+%%MTREE%%@exec mkdir -p %D/share/locale/da/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/de
+%%MTREE%%@exec mkdir -p %D/share/locale/de/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/de_AT
+%%MTREE%%@exec mkdir -p %D/share/locale/de_AT/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/dk
+%%MTREE%%@exec mkdir -p %D/share/locale/dk/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ee
+%%MTREE%%@exec mkdir -p %D/share/locale/ee/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/el
+%%MTREE%%@exec mkdir -p %D/share/locale/el/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/en
+%%MTREE%%@exec mkdir -p %D/share/locale/en/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/en_AU
+%%MTREE%%@exec mkdir -p %D/share/locale/en_AU/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/en_CA
+%%MTREE%%@exec mkdir -p %D/share/locale/en_CA/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/en_GB
+%%MTREE%%@exec mkdir -p %D/share/locale/en_GB/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/eo
+%%MTREE%%@exec mkdir -p %D/share/locale/eo/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/es
+%%MTREE%%@exec mkdir -p %D/share/locale/es/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/es_ES
+%%MTREE%%@exec mkdir -p %D/share/locale/es_ES/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/es_MX
+%%MTREE%%@exec mkdir -p %D/share/locale/es_MX/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/et
+%%MTREE%%@exec mkdir -p %D/share/locale/et/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/eu
+%%MTREE%%@exec mkdir -p %D/share/locale/eu/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/fa
+%%MTREE%%@exec mkdir -p %D/share/locale/fa/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/fa_IR
+%%MTREE%%@exec mkdir -p %D/share/locale/fa_IR/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/fi
+%%MTREE%%@exec mkdir -p %D/share/locale/fi/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/fr
+%%MTREE%%@exec mkdir -p %D/share/locale/fr/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/fr_FR
+%%MTREE%%@exec mkdir -p %D/share/locale/fr_FR/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ga
+%%MTREE%%@exec mkdir -p %D/share/locale/ga/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/gl
+%%MTREE%%@exec mkdir -p %D/share/locale/gl/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/gu
+%%MTREE%%@exec mkdir -p %D/share/locale/gu/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/he
+%%MTREE%%@exec mkdir -p %D/share/locale/he/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/hi
+%%MTREE%%@exec mkdir -p %D/share/locale/hi/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/hr
+%%MTREE%%@exec mkdir -p %D/share/locale/hr/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/hu
+%%MTREE%%@exec mkdir -p %D/share/locale/hu/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/id
+%%MTREE%%@exec mkdir -p %D/share/locale/id/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/is
+%%MTREE%%@exec mkdir -p %D/share/locale/is/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/it
+%%MTREE%%@exec mkdir -p %D/share/locale/it/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ja
+%%MTREE%%@exec mkdir -p %D/share/locale/ja/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ka
+%%MTREE%%@exec mkdir -p %D/share/locale/ka/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/kn
+%%MTREE%%@exec mkdir -p %D/share/locale/kn/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ko
+%%MTREE%%@exec mkdir -p %D/share/locale/ko/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/li
+%%MTREE%%@exec mkdir -p %D/share/locale/li/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/lt
+%%MTREE%%@exec mkdir -p %D/share/locale/lt/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/lv
+%%MTREE%%@exec mkdir -p %D/share/locale/lv/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/mk
+%%MTREE%%@exec mkdir -p %D/share/locale/mk/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ml
+%%MTREE%%@exec mkdir -p %D/share/locale/ml/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/mn
+%%MTREE%%@exec mkdir -p %D/share/locale/mn/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ms
+%%MTREE%%@exec mkdir -p %D/share/locale/ms/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/mt
+%%MTREE%%@exec mkdir -p %D/share/locale/mt/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/nb
+%%MTREE%%@exec mkdir -p %D/share/locale/nb/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ne
+%%MTREE%%@exec mkdir -p %D/share/locale/ne/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/nl
+%%MTREE%%@exec mkdir -p %D/share/locale/nl/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/nn
+%%MTREE%%@exec mkdir -p %D/share/locale/nn/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/no
+%%MTREE%%@exec mkdir -p %D/share/locale/no/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/or
+%%MTREE%%@exec mkdir -p %D/share/locale/or/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/pa
+%%MTREE%%@exec mkdir -p %D/share/locale/pa/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/pl
+%%MTREE%%@exec mkdir -p %D/share/locale/pl/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/pt
+%%MTREE%%@exec mkdir -p %D/share/locale/pt/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/pt_BR
+%%MTREE%%@exec mkdir -p %D/share/locale/pt_BR/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/pt_PT
+%%MTREE%%@exec mkdir -p %D/share/locale/pt_PT/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ro
+%%MTREE%%@exec mkdir -p %D/share/locale/ro/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ru
+%%MTREE%%@exec mkdir -p %D/share/locale/ru/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/sk
+%%MTREE%%@exec mkdir -p %D/share/locale/sk/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/sl
+%%MTREE%%@exec mkdir -p %D/share/locale/sl/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/sq
+%%MTREE%%@exec mkdir -p %D/share/locale/sq/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/sr
+%%MTREE%%@exec mkdir -p %D/share/locale/sr/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/sr@Latn
+%%MTREE%%@exec mkdir -p %D/share/locale/sr@Latn/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/sv
+%%MTREE%%@exec mkdir -p %D/share/locale/sv/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/ta
+%%MTREE%%@exec mkdir -p %D/share/locale/ta/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/tg
+%%MTREE%%@exec mkdir -p %D/share/locale/tg/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/th
+%%MTREE%%@exec mkdir -p %D/share/locale/th/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/tk
+%%MTREE%%@exec mkdir -p %D/share/locale/tk/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/tr
+%%MTREE%%@exec mkdir -p %D/share/locale/tr/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/uk
+%%MTREE%%@exec mkdir -p %D/share/locale/uk/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/uz
+%%MTREE%%@exec mkdir -p %D/share/locale/uz/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/vi
+%%MTREE%%@exec mkdir -p %D/share/locale/vi/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/wa
+%%MTREE%%@exec mkdir -p %D/share/locale/wa/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/zh
+%%MTREE%%@exec mkdir -p %D/share/locale/zh/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/zh_CN
+%%MTREE%%@exec mkdir -p %D/share/locale/zh_CN.GB2312
+%%MTREE%%@exec mkdir -p %D/share/locale/zh_CN.GB2312/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/zh_CN/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/zh_TW
+%%MTREE%%@exec mkdir -p %D/share/locale/zh_TW.Big5
+%%MTREE%%@exec mkdir -p %D/share/locale/zh_TW.Big5/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/locale/zh_TW/LC_MESSAGES
+%%MTREE%%@exec mkdir -p %D/share/misc
+%%MTREE%%@exec mkdir -p %D/share/nls
+%%MTREE%%@exec mkdir -p %D/share/nls/C
+%%MTREE%%@exec mkdir -p %D/share/nls/af_ZA.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/af_ZA.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/af_ZA.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/am_ET.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/be_BY.CP1131
+%%MTREE%%@exec mkdir -p %D/share/nls/be_BY.CP1251
+%%MTREE%%@exec mkdir -p %D/share/nls/be_BY.ISO8859-5
+%%MTREE%%@exec mkdir -p %D/share/nls/be_BY.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/bg_BG.CP1251
+%%MTREE%%@exec mkdir -p %D/share/nls/bg_BG.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/ca_ES.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/ca_ES.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/ca_ES.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/cs_CZ.ISO8859-2
+%%MTREE%%@exec mkdir -p %D/share/nls/cs_CZ.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/da_DK.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/da_DK.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/da_DK.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/de_AT.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/de_AT.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/de_AT.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/de_CH.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/de_CH.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/de_CH.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/de_DE.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/de_DE.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/de_DE.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/el_GR.ISO8859-7
+%%MTREE%%@exec mkdir -p %D/share/nls/el_GR.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/en_AU.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/en_AU.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/en_AU.US-ASCII
+%%MTREE%%@exec mkdir -p %D/share/nls/en_AU.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/en_CA.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/en_CA.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/en_CA.US-ASCII
+%%MTREE%%@exec mkdir -p %D/share/nls/en_CA.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/en_GB.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/en_GB.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/en_GB.US-ASCII
+%%MTREE%%@exec mkdir -p %D/share/nls/en_GB.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/en_IE.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/en_NZ.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/en_NZ.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/en_NZ.US-ASCII
+%%MTREE%%@exec mkdir -p %D/share/nls/en_NZ.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/en_US.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/en_US.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/en_US.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/es_ES.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/es_ES.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/es_ES.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/et_EE.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/et_EE.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/fi_FI.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/fi_FI.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/fi_FI.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_BE.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_BE.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_BE.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_CA.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_CA.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_CA.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_CH.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_CH.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_CH.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_FR.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_FR.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/fr_FR.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/he_IL.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/hi_IN.ISCII-DEV
+%%MTREE%%@exec mkdir -p %D/share/nls/hr_HR.ISO8859-2
+%%MTREE%%@exec mkdir -p %D/share/nls/hr_HR.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/hu_HU.ISO8859-2
+%%MTREE%%@exec mkdir -p %D/share/nls/hu_HU.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/hy_AM.ARMSCII-8
+%%MTREE%%@exec mkdir -p %D/share/nls/hy_AM.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/is_IS.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/is_IS.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/is_IS.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/it_CH.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/it_CH.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/it_CH.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/it_IT.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/it_IT.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/it_IT.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/ja_JP.SJIS
+%%MTREE%%@exec mkdir -p %D/share/nls/ja_JP.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/ja_JP.eucJP
+%%MTREE%%@exec mkdir -p %D/share/nls/kk_KZ.PT154
+%%MTREE%%@exec mkdir -p %D/share/nls/kk_KZ.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/ko_KR.CP949
+%%MTREE%%@exec mkdir -p %D/share/nls/ko_KR.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/ko_KR.eucKR
+%%MTREE%%@exec mkdir -p %D/share/nls/la_LN.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/la_LN.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/la_LN.ISO8859-2
+%%MTREE%%@exec mkdir -p %D/share/nls/la_LN.ISO8859-4
+%%MTREE%%@exec mkdir -p %D/share/nls/la_LN.US-ASCII
+%%MTREE%%@exec mkdir -p %D/share/nls/lt_LT.ISO8859-13
+%%MTREE%%@exec mkdir -p %D/share/nls/lt_LT.ISO8859-4
+%%MTREE%%@exec mkdir -p %D/share/nls/lt_LT.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/nl_BE.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/nl_BE.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/nl_BE.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/nl_NL.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/nl_NL.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/nl_NL.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/no_NO.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/no_NO.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/no_NO.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/pl_PL.ISO8859-2
+%%MTREE%%@exec mkdir -p %D/share/nls/pl_PL.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/pt_BR.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/pt_BR.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/pt_PT.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/pt_PT.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/pt_PT.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/ro_RO.ISO8859-2
+%%MTREE%%@exec mkdir -p %D/share/nls/ro_RO.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/ru_RU.CP1251
+%%MTREE%%@exec mkdir -p %D/share/nls/ru_RU.CP866
+%%MTREE%%@exec mkdir -p %D/share/nls/ru_RU.ISO8859-5
+%%MTREE%%@exec mkdir -p %D/share/nls/ru_RU.KOI8-R
+%%MTREE%%@exec mkdir -p %D/share/nls/ru_RU.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/sk_SK.ISO8859-2
+%%MTREE%%@exec mkdir -p %D/share/nls/sk_SK.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/sl_SI.ISO8859-2
+%%MTREE%%@exec mkdir -p %D/share/nls/sl_SI.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/sr_YU.ISO8859-2
+%%MTREE%%@exec mkdir -p %D/share/nls/sr_YU.ISO8859-5
+%%MTREE%%@exec mkdir -p %D/share/nls/sr_YU.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/sv_SE.ISO8859-1
+%%MTREE%%@exec mkdir -p %D/share/nls/sv_SE.ISO8859-15
+%%MTREE%%@exec mkdir -p %D/share/nls/sv_SE.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/tr_TR.ISO8859-9
+%%MTREE%%@exec mkdir -p %D/share/nls/tr_TR.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/uk_UA.ISO8859-5
+%%MTREE%%@exec mkdir -p %D/share/nls/uk_UA.KOI8-U
+%%MTREE%%@exec mkdir -p %D/share/nls/uk_UA.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/zh_CN.GB18030
+%%MTREE%%@exec mkdir -p %D/share/nls/zh_CN.GB2312
+%%MTREE%%@exec mkdir -p %D/share/nls/zh_CN.GBK
+%%MTREE%%@exec mkdir -p %D/share/nls/zh_CN.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/zh_CN.eucCN
+%%MTREE%%@exec mkdir -p %D/share/nls/zh_HK.Big5HKSCS
+%%MTREE%%@exec mkdir -p %D/share/nls/zh_HK.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/nls/zh_TW.Big5
+%%MTREE%%@exec mkdir -p %D/share/nls/zh_TW.UTF-8
+%%MTREE%%@exec mkdir -p %D/share/pixmaps
+%%MTREE%%@exec mkdir -p %D/share/sgml
+%%MTREE%%@exec mkdir -p %D/share/skel
+%%MTREE%%@exec mkdir -p %D/share/xml
+%%MTREE%%@exec mkdir -p %D/www
+@exec mkdir -p %D/include/KDE
+@exec mkdir -p %D/lib/kconf_update_bin
+@exec mkdir -p %D/lib/kde4
+@exec mkdir -p %D/lib/kde4/libexec
+@exec mkdir -p %D/lib/kde4/plugins
+@exec mkdir -p %D/lib/kde4/plugins/designer
+@exec mkdir -p %D/lib/kde4/plugins/styles
+@exec mkdir -p %D/lib/strigi
+@exec mkdir -p %D/share/applications
+@exec mkdir -p %D/share/applications/kde4
+@exec mkdir -p %D/share/apps
+@exec mkdir -p %D/share/apps/cmake
+@exec mkdir -p %D/share/apps/cmake/modules
+@exec mkdir -p %D/share/apps/color-schemes
+@exec mkdir -p %D/share/apps/desktoptheme
+@exec mkdir -p %D/share/apps/desktoptheme/default
+@exec mkdir -p %D/share/apps/desktoptheme/default/widgets
+@exec mkdir -p %D/share/apps/kabc
+@exec mkdir -p %D/share/apps/kabc/formats
+@exec mkdir -p %D/share/apps/kabc/plugins
+@exec mkdir -p %D/share/apps/katepart
+@exec mkdir -p %D/share/apps/katepart/syntax
+@exec mkdir -p %D/share/apps/kcharselect
+@exec mkdir -p %D/share/apps/kcm_componentchooser
+@exec mkdir -p %D/share/apps/kconf_update
+@exec mkdir -p %D/share/apps/kcontrol
+@exec mkdir -p %D/share/apps/kcontrol/pics
+@exec mkdir -p %D/share/apps/kdm
+@exec mkdir -p %D/share/apps/kdm/pics
+@exec mkdir -p %D/share/apps/kdm/pics/users
+@exec mkdir -p %D/share/apps/khelpcenter
+@exec mkdir -p %D/share/apps/khelpcenter/plugins
+@exec mkdir -p %D/share/apps/khtml
+@exec mkdir -p %D/share/apps/khtml/kpartplugins
+@exec mkdir -p %D/share/apps/konqsidebartng
+@exec mkdir -p %D/share/apps/konqsidebartng/virtual_folders
+@exec mkdir -p %D/share/apps/konqsidebartng/virtual_folders/services
+@exec mkdir -p %D/share/apps/konqueror
+@exec mkdir -p %D/share/apps/kstyle
+@exec mkdir -p %D/share/apps/kstyle/themes
+@exec mkdir -p %D/share/apps/kwin
+@exec mkdir -p %D/share/apps/nepomuk
+@exec mkdir -p %D/share/apps/nepomuk/ontologies
+@exec mkdir -p %D/share/apps/plasma
+@exec mkdir -p %D/share/apps/plasma/services
+@exec mkdir -p %D/share/apps/profiles
+@exec mkdir -p %D/share/apps/remoteview
+@exec mkdir -p %D/share/apps/solid
+@exec mkdir -p %D/share/apps/solid/actions
+@exec mkdir -p %D/share/autostart
+@exec mkdir -p %D/share/config
+@exec mkdir -p %D/share/config.kcfg
+@exec mkdir -p %D/share/dbus-1
+@exec mkdir -p %D/share/dbus-1/interfaces
+@exec mkdir -p %D/share/dbus-1/services
+@exec mkdir -p %D/share/doc/HTML
+@exec mkdir -p %D/share/doc/HTML/bg
+@exec mkdir -p %D/share/doc/HTML/ca
+@exec mkdir -p %D/share/doc/HTML/cs
+@exec mkdir -p %D/share/doc/HTML/csb
+@exec mkdir -p %D/share/doc/HTML/da
+@exec mkdir -p %D/share/doc/HTML/de
+@exec mkdir -p %D/share/doc/HTML/el
+@exec mkdir -p %D/share/doc/HTML/en
+@exec mkdir -p %D/share/doc/HTML/en/kcontrol
+@exec mkdir -p %D/share/doc/HTML/en/kioslave
+@exec mkdir -p %D/share/doc/HTML/en_GB
+@exec mkdir -p %D/share/doc/HTML/eo
+@exec mkdir -p %D/share/doc/HTML/es
+@exec mkdir -p %D/share/doc/HTML/et
+@exec mkdir -p %D/share/doc/HTML/eu
+@exec mkdir -p %D/share/doc/HTML/fi
+@exec mkdir -p %D/share/doc/HTML/fr
+@exec mkdir -p %D/share/doc/HTML/fy
+@exec mkdir -p %D/share/doc/HTML/ga
+@exec mkdir -p %D/share/doc/HTML/gl
+@exec mkdir -p %D/share/doc/HTML/he
+@exec mkdir -p %D/share/doc/HTML/hi
+@exec mkdir -p %D/share/doc/HTML/hr
+@exec mkdir -p %D/share/doc/HTML/hu
+@exec mkdir -p %D/share/doc/HTML/it
+@exec mkdir -p %D/share/doc/HTML/ja
+@exec mkdir -p %D/share/doc/HTML/kk
+@exec mkdir -p %D/share/doc/HTML/km
+@exec mkdir -p %D/share/doc/HTML/ko
+@exec mkdir -p %D/share/doc/HTML/ku
+@exec mkdir -p %D/share/doc/HTML/lt
+@exec mkdir -p %D/share/doc/HTML/lv
+@exec mkdir -p %D/share/doc/HTML/mk
+@exec mkdir -p %D/share/doc/HTML/ml
+@exec mkdir -p %D/share/doc/HTML/nb
+@exec mkdir -p %D/share/doc/HTML/nds
+@exec mkdir -p %D/share/doc/HTML/nl
+@exec mkdir -p %D/share/doc/HTML/nn
+@exec mkdir -p %D/share/doc/HTML/pa
+@exec mkdir -p %D/share/doc/HTML/pl
+@exec mkdir -p %D/share/doc/HTML/pt
+@exec mkdir -p %D/share/doc/HTML/pt_BR
+@exec mkdir -p %D/share/doc/HTML/ro
+@exec mkdir -p %D/share/doc/HTML/ru
+@exec mkdir -p %D/share/doc/HTML/sk
+@exec mkdir -p %D/share/doc/HTML/sl
+@exec mkdir -p %D/share/doc/HTML/sr
+@exec mkdir -p %D/share/doc/HTML/sv
+@exec mkdir -p %D/share/doc/HTML/ta
+@exec mkdir -p %D/share/doc/HTML/th
+@exec mkdir -p %D/share/doc/HTML/tr
+@exec mkdir -p %D/share/doc/HTML/uk
+@exec mkdir -p %D/share/doc/HTML/wa
+@exec mkdir -p %D/share/doc/HTML/xh
+@exec mkdir -p %D/share/doc/HTML/zh_CN
+@exec mkdir -p %D/share/doc/HTML/zh_TW
+@exec mkdir -p %D/share/emoticons
+@exec mkdir -p %D/share/icons
+@exec mkdir -p %D/share/icons/crystalsvg
+@exec mkdir -p %D/share/icons/crystalsvg/128x128
+@exec mkdir -p %D/share/icons/crystalsvg/128x128/actions
+@exec mkdir -p %D/share/icons/crystalsvg/128x128/apps
+@exec mkdir -p %D/share/icons/crystalsvg/128x128/devices
+@exec mkdir -p %D/share/icons/crystalsvg/128x128/filesystems
+@exec mkdir -p %D/share/icons/crystalsvg/128x128/mimetypes
+@exec mkdir -p %D/share/icons/crystalsvg/16x16
+@exec mkdir -p %D/share/icons/crystalsvg/16x16/actions
+@exec mkdir -p %D/share/icons/crystalsvg/16x16/apps
+@exec mkdir -p %D/share/icons/crystalsvg/16x16/devices
+@exec mkdir -p %D/share/icons/crystalsvg/16x16/filesystems
+@exec mkdir -p %D/share/icons/crystalsvg/16x16/mimetypes
+@exec mkdir -p %D/share/icons/crystalsvg/22x22
+@exec mkdir -p %D/share/icons/crystalsvg/22x22/actions
+@exec mkdir -p %D/share/icons/crystalsvg/22x22/apps
+@exec mkdir -p %D/share/icons/crystalsvg/22x22/devices
+@exec mkdir -p %D/share/icons/crystalsvg/22x22/filesystems
+@exec mkdir -p %D/share/icons/crystalsvg/22x22/mimetypes
+@exec mkdir -p %D/share/icons/crystalsvg/32x32
+@exec mkdir -p %D/share/icons/crystalsvg/32x32/actions
+@exec mkdir -p %D/share/icons/crystalsvg/32x32/apps
+@exec mkdir -p %D/share/icons/crystalsvg/32x32/devices
+@exec mkdir -p %D/share/icons/crystalsvg/32x32/filesystems
+@exec mkdir -p %D/share/icons/crystalsvg/32x32/mimetypes
+@exec mkdir -p %D/share/icons/crystalsvg/48x48
+@exec mkdir -p %D/share/icons/crystalsvg/48x48/actions
+@exec mkdir -p %D/share/icons/crystalsvg/48x48/apps
+@exec mkdir -p %D/share/icons/crystalsvg/48x48/devices
+@exec mkdir -p %D/share/icons/crystalsvg/48x48/filesystems
+@exec mkdir -p %D/share/icons/crystalsvg/48x48/mimetypes
+@exec mkdir -p %D/share/icons/crystalsvg/64x64
+@exec mkdir -p %D/share/icons/crystalsvg/64x64/actions
+@exec mkdir -p %D/share/icons/crystalsvg/64x64/apps
+@exec mkdir -p %D/share/icons/crystalsvg/64x64/devices
+@exec mkdir -p %D/share/icons/crystalsvg/64x64/filesystems
+@exec mkdir -p %D/share/icons/crystalsvg/64x64/mimetypes
+@exec mkdir -p %D/share/icons/crystalsvg/scalable
+@exec mkdir -p %D/share/icons/crystalsvg/scalable/actions
+@exec mkdir -p %D/share/icons/crystalsvg/scalable/apps
+@exec mkdir -p %D/share/icons/crystalsvg/scalable/devices
+@exec mkdir -p %D/share/icons/crystalsvg/scalable/filesystems
+@exec mkdir -p %D/share/icons/crystalsvg/scalable/mimetypes
+@exec mkdir -p %D/share/icons/hicolor
+@exec mkdir -p %D/share/icons/hicolor/128x128
+@exec mkdir -p %D/share/icons/hicolor/128x128/actions
+@exec mkdir -p %D/share/icons/hicolor/128x128/animations
+@exec mkdir -p %D/share/icons/hicolor/128x128/apps
+@exec mkdir -p %D/share/icons/hicolor/128x128/categories
+@exec mkdir -p %D/share/icons/hicolor/128x128/devices
+@exec mkdir -p %D/share/icons/hicolor/128x128/emblems
+@exec mkdir -p %D/share/icons/hicolor/128x128/emotes
+@exec mkdir -p %D/share/icons/hicolor/128x128/filesystems
+@exec mkdir -p %D/share/icons/hicolor/128x128/intl
+@exec mkdir -p %D/share/icons/hicolor/128x128/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/128x128/places
+@exec mkdir -p %D/share/icons/hicolor/128x128/status
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/code
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/data
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/form
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/image
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/io
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/media
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/net
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/object
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/table
+@exec mkdir -p %D/share/icons/hicolor/128x128/stock/text
+@exec mkdir -p %D/share/icons/hicolor/16x16
+@exec mkdir -p %D/share/icons/hicolor/16x16/actions
+@exec mkdir -p %D/share/icons/hicolor/16x16/animations
+@exec mkdir -p %D/share/icons/hicolor/16x16/apps
+@exec mkdir -p %D/share/icons/hicolor/16x16/categories
+@exec mkdir -p %D/share/icons/hicolor/16x16/devices
+@exec mkdir -p %D/share/icons/hicolor/16x16/emblems
+@exec mkdir -p %D/share/icons/hicolor/16x16/emotes
+@exec mkdir -p %D/share/icons/hicolor/16x16/filesystems
+@exec mkdir -p %D/share/icons/hicolor/16x16/intl
+@exec mkdir -p %D/share/icons/hicolor/16x16/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/16x16/places
+@exec mkdir -p %D/share/icons/hicolor/16x16/status
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/code
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/data
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/form
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/image
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/io
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/media
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/net
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/object
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/table
+@exec mkdir -p %D/share/icons/hicolor/16x16/stock/text
+@exec mkdir -p %D/share/icons/hicolor/192x192
+@exec mkdir -p %D/share/icons/hicolor/192x192/actions
+@exec mkdir -p %D/share/icons/hicolor/192x192/animations
+@exec mkdir -p %D/share/icons/hicolor/192x192/apps
+@exec mkdir -p %D/share/icons/hicolor/192x192/categories
+@exec mkdir -p %D/share/icons/hicolor/192x192/devices
+@exec mkdir -p %D/share/icons/hicolor/192x192/emblems
+@exec mkdir -p %D/share/icons/hicolor/192x192/emotes
+@exec mkdir -p %D/share/icons/hicolor/192x192/filesystems
+@exec mkdir -p %D/share/icons/hicolor/192x192/intl
+@exec mkdir -p %D/share/icons/hicolor/192x192/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/192x192/places
+@exec mkdir -p %D/share/icons/hicolor/192x192/status
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/code
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/data
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/form
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/image
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/io
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/media
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/net
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/object
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/table
+@exec mkdir -p %D/share/icons/hicolor/192x192/stock/text
+@exec mkdir -p %D/share/icons/hicolor/22x22
+@exec mkdir -p %D/share/icons/hicolor/22x22/actions
+@exec mkdir -p %D/share/icons/hicolor/22x22/animations
+@exec mkdir -p %D/share/icons/hicolor/22x22/apps
+@exec mkdir -p %D/share/icons/hicolor/22x22/categories
+@exec mkdir -p %D/share/icons/hicolor/22x22/devices
+@exec mkdir -p %D/share/icons/hicolor/22x22/emblems
+@exec mkdir -p %D/share/icons/hicolor/22x22/emotes
+@exec mkdir -p %D/share/icons/hicolor/22x22/filesystems
+@exec mkdir -p %D/share/icons/hicolor/22x22/intl
+@exec mkdir -p %D/share/icons/hicolor/22x22/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/22x22/places
+@exec mkdir -p %D/share/icons/hicolor/22x22/status
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/code
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/data
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/form
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/image
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/io
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/media
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/net
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/object
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/table
+@exec mkdir -p %D/share/icons/hicolor/22x22/stock/text
+@exec mkdir -p %D/share/icons/hicolor/24x24
+@exec mkdir -p %D/share/icons/hicolor/24x24/actions
+@exec mkdir -p %D/share/icons/hicolor/24x24/animations
+@exec mkdir -p %D/share/icons/hicolor/24x24/apps
+@exec mkdir -p %D/share/icons/hicolor/24x24/categories
+@exec mkdir -p %D/share/icons/hicolor/24x24/devices
+@exec mkdir -p %D/share/icons/hicolor/24x24/emblems
+@exec mkdir -p %D/share/icons/hicolor/24x24/emotes
+@exec mkdir -p %D/share/icons/hicolor/24x24/filesystems
+@exec mkdir -p %D/share/icons/hicolor/24x24/intl
+@exec mkdir -p %D/share/icons/hicolor/24x24/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/24x24/places
+@exec mkdir -p %D/share/icons/hicolor/24x24/status
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/code
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/data
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/form
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/image
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/io
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/media
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/net
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/object
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/table
+@exec mkdir -p %D/share/icons/hicolor/24x24/stock/text
+@exec mkdir -p %D/share/icons/hicolor/32x32
+@exec mkdir -p %D/share/icons/hicolor/32x32/actions
+@exec mkdir -p %D/share/icons/hicolor/32x32/animations
+@exec mkdir -p %D/share/icons/hicolor/32x32/apps
+@exec mkdir -p %D/share/icons/hicolor/32x32/categories
+@exec mkdir -p %D/share/icons/hicolor/32x32/devices
+@exec mkdir -p %D/share/icons/hicolor/32x32/emblems
+@exec mkdir -p %D/share/icons/hicolor/32x32/emotes
+@exec mkdir -p %D/share/icons/hicolor/32x32/filesystems
+@exec mkdir -p %D/share/icons/hicolor/32x32/intl
+@exec mkdir -p %D/share/icons/hicolor/32x32/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/32x32/places
+@exec mkdir -p %D/share/icons/hicolor/32x32/status
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/code
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/data
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/form
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/image
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/io
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/media
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/net
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/object
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/table
+@exec mkdir -p %D/share/icons/hicolor/32x32/stock/text
+@exec mkdir -p %D/share/icons/hicolor/36x36
+@exec mkdir -p %D/share/icons/hicolor/36x36/actions
+@exec mkdir -p %D/share/icons/hicolor/36x36/animations
+@exec mkdir -p %D/share/icons/hicolor/36x36/apps
+@exec mkdir -p %D/share/icons/hicolor/36x36/categories
+@exec mkdir -p %D/share/icons/hicolor/36x36/devices
+@exec mkdir -p %D/share/icons/hicolor/36x36/emblems
+@exec mkdir -p %D/share/icons/hicolor/36x36/emotes
+@exec mkdir -p %D/share/icons/hicolor/36x36/filesystems
+@exec mkdir -p %D/share/icons/hicolor/36x36/intl
+@exec mkdir -p %D/share/icons/hicolor/36x36/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/36x36/places
+@exec mkdir -p %D/share/icons/hicolor/36x36/status
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/code
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/data
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/form
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/image
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/io
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/media
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/net
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/object
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/table
+@exec mkdir -p %D/share/icons/hicolor/36x36/stock/text
+@exec mkdir -p %D/share/icons/hicolor/48x48
+@exec mkdir -p %D/share/icons/hicolor/48x48/actions
+@exec mkdir -p %D/share/icons/hicolor/48x48/animations
+@exec mkdir -p %D/share/icons/hicolor/48x48/apps
+@exec mkdir -p %D/share/icons/hicolor/48x48/categories
+@exec mkdir -p %D/share/icons/hicolor/48x48/devices
+@exec mkdir -p %D/share/icons/hicolor/48x48/emblems
+@exec mkdir -p %D/share/icons/hicolor/48x48/emotes
+@exec mkdir -p %D/share/icons/hicolor/48x48/filesystems
+@exec mkdir -p %D/share/icons/hicolor/48x48/intl
+@exec mkdir -p %D/share/icons/hicolor/48x48/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/48x48/places
+@exec mkdir -p %D/share/icons/hicolor/48x48/status
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/code
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/data
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/form
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/image
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/io
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/media
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/net
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/object
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/table
+@exec mkdir -p %D/share/icons/hicolor/48x48/stock/text
+@exec mkdir -p %D/share/icons/hicolor/64x64
+@exec mkdir -p %D/share/icons/hicolor/64x64/actions
+@exec mkdir -p %D/share/icons/hicolor/64x64/animations
+@exec mkdir -p %D/share/icons/hicolor/64x64/apps
+@exec mkdir -p %D/share/icons/hicolor/64x64/categories
+@exec mkdir -p %D/share/icons/hicolor/64x64/devices
+@exec mkdir -p %D/share/icons/hicolor/64x64/emblems
+@exec mkdir -p %D/share/icons/hicolor/64x64/emotes
+@exec mkdir -p %D/share/icons/hicolor/64x64/filesystems
+@exec mkdir -p %D/share/icons/hicolor/64x64/intl
+@exec mkdir -p %D/share/icons/hicolor/64x64/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/64x64/places
+@exec mkdir -p %D/share/icons/hicolor/64x64/status
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/code
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/data
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/form
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/image
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/io
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/media
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/net
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/object
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/table
+@exec mkdir -p %D/share/icons/hicolor/64x64/stock/text
+@exec mkdir -p %D/share/icons/hicolor/72x72
+@exec mkdir -p %D/share/icons/hicolor/72x72/actions
+@exec mkdir -p %D/share/icons/hicolor/72x72/animations
+@exec mkdir -p %D/share/icons/hicolor/72x72/apps
+@exec mkdir -p %D/share/icons/hicolor/72x72/categories
+@exec mkdir -p %D/share/icons/hicolor/72x72/devices
+@exec mkdir -p %D/share/icons/hicolor/72x72/emblems
+@exec mkdir -p %D/share/icons/hicolor/72x72/emotes
+@exec mkdir -p %D/share/icons/hicolor/72x72/filesystems
+@exec mkdir -p %D/share/icons/hicolor/72x72/intl
+@exec mkdir -p %D/share/icons/hicolor/72x72/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/72x72/places
+@exec mkdir -p %D/share/icons/hicolor/72x72/status
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/code
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/data
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/form
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/image
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/io
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/media
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/net
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/object
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/table
+@exec mkdir -p %D/share/icons/hicolor/72x72/stock/text
+@exec mkdir -p %D/share/icons/hicolor/96x96
+@exec mkdir -p %D/share/icons/hicolor/96x96/actions
+@exec mkdir -p %D/share/icons/hicolor/96x96/animations
+@exec mkdir -p %D/share/icons/hicolor/96x96/apps
+@exec mkdir -p %D/share/icons/hicolor/96x96/categories
+@exec mkdir -p %D/share/icons/hicolor/96x96/devices
+@exec mkdir -p %D/share/icons/hicolor/96x96/emblems
+@exec mkdir -p %D/share/icons/hicolor/96x96/emotes
+@exec mkdir -p %D/share/icons/hicolor/96x96/filesystems
+@exec mkdir -p %D/share/icons/hicolor/96x96/intl
+@exec mkdir -p %D/share/icons/hicolor/96x96/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/96x96/places
+@exec mkdir -p %D/share/icons/hicolor/96x96/status
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/code
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/data
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/form
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/image
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/io
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/media
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/net
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/object
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/table
+@exec mkdir -p %D/share/icons/hicolor/96x96/stock/text
+@exec mkdir -p %D/share/icons/hicolor/scalable
+@exec mkdir -p %D/share/icons/hicolor/scalable/actions
+@exec mkdir -p %D/share/icons/hicolor/scalable/animations
+@exec mkdir -p %D/share/icons/hicolor/scalable/apps
+@exec mkdir -p %D/share/icons/hicolor/scalable/categories
+@exec mkdir -p %D/share/icons/hicolor/scalable/devices
+@exec mkdir -p %D/share/icons/hicolor/scalable/emblems
+@exec mkdir -p %D/share/icons/hicolor/scalable/emotes
+@exec mkdir -p %D/share/icons/hicolor/scalable/filesystems
+@exec mkdir -p %D/share/icons/hicolor/scalable/intl
+@exec mkdir -p %D/share/icons/hicolor/scalable/mimetypes
+@exec mkdir -p %D/share/icons/hicolor/scalable/places
+@exec mkdir -p %D/share/icons/hicolor/scalable/status
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/chart
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/code
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/data
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/form
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/image
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/io
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/media
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/navigation
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/net
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/object
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/table
+@exec mkdir -p %D/share/icons/hicolor/scalable/stock/text
+@exec mkdir -p %D/share/icons/oxygen
+@exec mkdir -p %D/share/icons/oxygen/128x128
+@exec mkdir -p %D/share/icons/oxygen/128x128/actions
+@exec mkdir -p %D/share/icons/oxygen/128x128/animations
+@exec mkdir -p %D/share/icons/oxygen/128x128/apps
+@exec mkdir -p %D/share/icons/oxygen/128x128/categories
+@exec mkdir -p %D/share/icons/oxygen/128x128/devices
+@exec mkdir -p %D/share/icons/oxygen/128x128/emblems
+@exec mkdir -p %D/share/icons/oxygen/128x128/emotes
+@exec mkdir -p %D/share/icons/oxygen/128x128/filesystems
+@exec mkdir -p %D/share/icons/oxygen/128x128/intl
+@exec mkdir -p %D/share/icons/oxygen/128x128/mimetypes
+@exec mkdir -p %D/share/icons/oxygen/128x128/places
+@exec mkdir -p %D/share/icons/oxygen/128x128/status
+@exec mkdir -p %D/share/icons/oxygen/16x16
+@exec mkdir -p %D/share/icons/oxygen/16x16/actions
+@exec mkdir -p %D/share/icons/oxygen/16x16/animations
+@exec mkdir -p %D/share/icons/oxygen/16x16/apps
+@exec mkdir -p %D/share/icons/oxygen/16x16/categories
+@exec mkdir -p %D/share/icons/oxygen/16x16/devices
+@exec mkdir -p %D/share/icons/oxygen/16x16/emblems
+@exec mkdir -p %D/share/icons/oxygen/16x16/emotes
+@exec mkdir -p %D/share/icons/oxygen/16x16/filesystems
+@exec mkdir -p %D/share/icons/oxygen/16x16/intl
+@exec mkdir -p %D/share/icons/oxygen/16x16/mimetypes
+@exec mkdir -p %D/share/icons/oxygen/16x16/places
+@exec mkdir -p %D/share/icons/oxygen/16x16/status
+@exec mkdir -p %D/share/icons/oxygen/22x22
+@exec mkdir -p %D/share/icons/oxygen/22x22/actions
+@exec mkdir -p %D/share/icons/oxygen/22x22/animations
+@exec mkdir -p %D/share/icons/oxygen/22x22/apps
+@exec mkdir -p %D/share/icons/oxygen/22x22/categories
+@exec mkdir -p %D/share/icons/oxygen/22x22/devices
+@exec mkdir -p %D/share/icons/oxygen/22x22/emblems
+@exec mkdir -p %D/share/icons/oxygen/22x22/emotes
+@exec mkdir -p %D/share/icons/oxygen/22x22/filesystems
+@exec mkdir -p %D/share/icons/oxygen/22x22/intl
+@exec mkdir -p %D/share/icons/oxygen/22x22/mimetypes
+@exec mkdir -p %D/share/icons/oxygen/22x22/places
+@exec mkdir -p %D/share/icons/oxygen/22x22/status
+@exec mkdir -p %D/share/icons/oxygen/256x256
+@exec mkdir -p %D/share/icons/oxygen/256x256/actions
+@exec mkdir -p %D/share/icons/oxygen/256x256/apps
+@exec mkdir -p %D/share/icons/oxygen/256x256/categories
+@exec mkdir -p %D/share/icons/oxygen/256x256/devices
+@exec mkdir -p %D/share/icons/oxygen/256x256/mimetypes
+@exec mkdir -p %D/share/icons/oxygen/256x256/places
+@exec mkdir -p %D/share/icons/oxygen/256x256/status
+@exec mkdir -p %D/share/icons/oxygen/32x32
+@exec mkdir -p %D/share/icons/oxygen/32x32/actions
+@exec mkdir -p %D/share/icons/oxygen/32x32/animations
+@exec mkdir -p %D/share/icons/oxygen/32x32/apps
+@exec mkdir -p %D/share/icons/oxygen/32x32/categories
+@exec mkdir -p %D/share/icons/oxygen/32x32/devices
+@exec mkdir -p %D/share/icons/oxygen/32x32/emblems
+@exec mkdir -p %D/share/icons/oxygen/32x32/emotes
+@exec mkdir -p %D/share/icons/oxygen/32x32/filesystems
+@exec mkdir -p %D/share/icons/oxygen/32x32/intl
+@exec mkdir -p %D/share/icons/oxygen/32x32/mimetypes
+@exec mkdir -p %D/share/icons/oxygen/32x32/places
+@exec mkdir -p %D/share/icons/oxygen/32x32/status
+@exec mkdir -p %D/share/icons/oxygen/48x48
+@exec mkdir -p %D/share/icons/oxygen/48x48/actions
+@exec mkdir -p %D/share/icons/oxygen/48x48/animations
+@exec mkdir -p %D/share/icons/oxygen/48x48/apps
+@exec mkdir -p %D/share/icons/oxygen/48x48/categories
+@exec mkdir -p %D/share/icons/oxygen/48x48/devices
+@exec mkdir -p %D/share/icons/oxygen/48x48/emblems
+@exec mkdir -p %D/share/icons/oxygen/48x48/emotes
+@exec mkdir -p %D/share/icons/oxygen/48x48/filesystems
+@exec mkdir -p %D/share/icons/oxygen/48x48/intl
+@exec mkdir -p %D/share/icons/oxygen/48x48/mimetypes
+@exec mkdir -p %D/share/icons/oxygen/48x48/places
+@exec mkdir -p %D/share/icons/oxygen/48x48/status
+@exec mkdir -p %D/share/icons/oxygen/64x64
+@exec mkdir -p %D/share/icons/oxygen/64x64/actions
+@exec mkdir -p %D/share/icons/oxygen/64x64/animations
+@exec mkdir -p %D/share/icons/oxygen/64x64/apps
+@exec mkdir -p %D/share/icons/oxygen/64x64/categories
+@exec mkdir -p %D/share/icons/oxygen/64x64/devices
+@exec mkdir -p %D/share/icons/oxygen/64x64/emblems
+@exec mkdir -p %D/share/icons/oxygen/64x64/emotes
+@exec mkdir -p %D/share/icons/oxygen/64x64/filesystems
+@exec mkdir -p %D/share/icons/oxygen/64x64/intl
+@exec mkdir -p %D/share/icons/oxygen/64x64/mimetypes
+@exec mkdir -p %D/share/icons/oxygen/64x64/places
+@exec mkdir -p %D/share/icons/oxygen/64x64/status
+@exec mkdir -p %D/share/icons/oxygen/8x8
+@exec mkdir -p %D/share/icons/oxygen/8x8/actions
+@exec mkdir -p %D/share/icons/oxygen/8x8/apps
+@exec mkdir -p %D/share/icons/oxygen/8x8/categories
+@exec mkdir -p %D/share/icons/oxygen/8x8/devices
+@exec mkdir -p %D/share/icons/oxygen/8x8/emblems
+@exec mkdir -p %D/share/icons/oxygen/8x8/emotes
+@exec mkdir -p %D/share/icons/oxygen/8x8/mimetypes
+@exec mkdir -p %D/share/icons/oxygen/8x8/places
+@exec mkdir -p %D/share/icons/oxygen/8x8/status
+@exec mkdir -p %D/share/icons/oxygen/scalable
+@exec mkdir -p %D/share/icons/oxygen/scalable/actions
+@exec mkdir -p %D/share/icons/oxygen/scalable/actions/small
+@exec mkdir -p %D/share/icons/oxygen/scalable/apps
+@exec mkdir -p %D/share/icons/oxygen/scalable/apps/small
+@exec mkdir -p %D/share/icons/oxygen/scalable/categories
+@exec mkdir -p %D/share/icons/oxygen/scalable/categories/small
+@exec mkdir -p %D/share/icons/oxygen/scalable/devices
+@exec mkdir -p %D/share/icons/oxygen/scalable/devices/small
+@exec mkdir -p %D/share/icons/oxygen/scalable/emblems
+@exec mkdir -p %D/share/icons/oxygen/scalable/emblems/small
+@exec mkdir -p %D/share/icons/oxygen/scalable/emotes
+@exec mkdir -p %D/share/icons/oxygen/scalable/emotes/small
+@exec mkdir -p %D/share/icons/oxygen/scalable/mimetypes
+@exec mkdir -p %D/share/icons/oxygen/scalable/mimetypes/small
+@exec mkdir -p %D/share/icons/oxygen/scalable/places
+@exec mkdir -p %D/share/icons/oxygen/scalable/places/small
+@exec mkdir -p %D/share/icons/oxygen/scalable/status
+@exec mkdir -p %D/share/icons/oxygen/scalable/status/small
+@exec mkdir -p %D/share/kde4
+@exec mkdir -p %D/share/kde4/services
+@exec mkdir -p %D/share/kde4/services/ScreenSavers
+@exec mkdir -p %D/share/kde4/services/ServiceMenus
+@exec mkdir -p %D/share/kde4/services/kded
+@exec mkdir -p %D/share/kde4/services/kresources
+@exec mkdir -p %D/share/kde4/services/kresources/kabc
+@exec mkdir -p %D/share/kde4/services/kresources/kcal
+@exec mkdir -p %D/share/kde4/servicetypes
+@exec mkdir -p %D/share/locale/ast
+@exec mkdir -p %D/share/locale/ast/LC_MESSAGES
+@exec mkdir -p %D/share/locale/bn_IN
+@exec mkdir -p %D/share/locale/bn_IN/LC_MESSAGES
+@exec mkdir -p %D/share/locale/ca@valencia
+@exec mkdir -p %D/share/locale/ca@valencia/LC_MESSAGES
+@exec mkdir -p %D/share/locale/csb
+@exec mkdir -p %D/share/locale/csb/LC_MESSAGES
+@exec mkdir -p %D/share/locale/en_US
+@exec mkdir -p %D/share/locale/fy
+@exec mkdir -p %D/share/locale/fy/LC_MESSAGES
+@exec mkdir -p %D/share/locale/hne
+@exec mkdir -p %D/share/locale/hne/LC_MESSAGES
+@exec mkdir -p %D/share/locale/hsb
+@exec mkdir -p %D/share/locale/hsb/LC_MESSAGES
+@exec mkdir -p %D/share/locale/kk
+@exec mkdir -p %D/share/locale/kk/LC_MESSAGES
+@exec mkdir -p %D/share/locale/km
+@exec mkdir -p %D/share/locale/km/LC_MESSAGES
+@exec mkdir -p %D/share/locale/ku
+@exec mkdir -p %D/share/locale/ku/LC_MESSAGES
+@exec mkdir -p %D/share/locale/mai
+@exec mkdir -p %D/share/locale/mai/LC_MESSAGES
+@exec mkdir -p %D/share/locale/mr
+@exec mkdir -p %D/share/locale/mr/LC_MESSAGES
+@exec mkdir -p %D/share/locale/nds
+@exec mkdir -p %D/share/locale/nds/LC_MESSAGES
+@exec mkdir -p %D/share/locale/oc
+@exec mkdir -p %D/share/locale/oc/LC_MESSAGES
+@exec mkdir -p %D/share/locale/se
+@exec mkdir -p %D/share/locale/se/LC_MESSAGES
+@exec mkdir -p %D/share/locale/sr@ijekavian
+@exec mkdir -p %D/share/locale/sr@ijekavian/LC_MESSAGES
+@exec mkdir -p %D/share/locale/uz@cyrillic
+@exec mkdir -p %D/share/locale/uz@cyrillic/LC_MESSAGES
+@exec mkdir -p %D/share/locale/xh
+@exec mkdir -p %D/share/locale/xh/LC_MESSAGES
+@exec mkdir -p %D/share/locale/zh_HK
+@exec mkdir -p %D/share/locale/zh_HK/LC_MESSAGES
+@exec mkdir -p %D/share/services
+@exec mkdir -p %D/share/services/searchproviders
+@exec mkdir -p %D/share/services/useragentstrings
+@exec mkdir -p %D/share/sounds
+@exec mkdir -p %D/share/templates
+@exec mkdir -p %D/share/templates/.source
+@exec mkdir -p %D/share/wallpapers
 @dirrmtry share/wallpapers
 @dirrmtry share/templates/.source
 @dirrmtry share/templates
@@ -1102,21 +1115,45 @@ share/wallpapers/.keep_me
 @dirrmtry share/services/useragentstrings
 @dirrmtry share/services/searchproviders
 @dirrmtry share/services
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
+@dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/sr@ijekavian/LC_MESSAGES
+@dirrmtry share/locale/sr@ijekavian
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/hsb/LC_MESSAGES
+@dirrmtry share/locale/hsb
+@dirrmtry share/locale/hne/LC_MESSAGES
+@dirrmtry share/locale/hne
 @dirrmtry share/locale/fy/LC_MESSAGES
 @dirrmtry share/locale/fy
 @dirrmtry share/locale/en_US
 @dirrmtry share/locale/csb/LC_MESSAGES
 @dirrmtry share/locale/csb
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/kde4/servicetypes
 @dirrmtry share/kde4/services/kresources/kcal
 @dirrmtry share/kde4/services/kresources/kabc
@@ -1158,61 +1195,87 @@ share/wallpapers/.keep_me
 @dirrmtry share/icons/oxygen/64x64/status
 @dirrmtry share/icons/oxygen/64x64/places
 @dirrmtry share/icons/oxygen/64x64/mimetypes
+@dirrmtry share/icons/oxygen/64x64/intl
+@dirrmtry share/icons/oxygen/64x64/filesystems
 @dirrmtry share/icons/oxygen/64x64/emotes
 @dirrmtry share/icons/oxygen/64x64/emblems
 @dirrmtry share/icons/oxygen/64x64/devices
 @dirrmtry share/icons/oxygen/64x64/categories
 @dirrmtry share/icons/oxygen/64x64/apps
+@dirrmtry share/icons/oxygen/64x64/animations
 @dirrmtry share/icons/oxygen/64x64/actions
 @dirrmtry share/icons/oxygen/64x64
 @dirrmtry share/icons/oxygen/48x48/status
 @dirrmtry share/icons/oxygen/48x48/places
 @dirrmtry share/icons/oxygen/48x48/mimetypes
+@dirrmtry share/icons/oxygen/48x48/intl
+@dirrmtry share/icons/oxygen/48x48/filesystems
 @dirrmtry share/icons/oxygen/48x48/emotes
 @dirrmtry share/icons/oxygen/48x48/emblems
 @dirrmtry share/icons/oxygen/48x48/devices
 @dirrmtry share/icons/oxygen/48x48/categories
 @dirrmtry share/icons/oxygen/48x48/apps
+@dirrmtry share/icons/oxygen/48x48/animations
 @dirrmtry share/icons/oxygen/48x48/actions
 @dirrmtry share/icons/oxygen/48x48
 @dirrmtry share/icons/oxygen/32x32/status
 @dirrmtry share/icons/oxygen/32x32/places
 @dirrmtry share/icons/oxygen/32x32/mimetypes
+@dirrmtry share/icons/oxygen/32x32/intl
+@dirrmtry share/icons/oxygen/32x32/filesystems
 @dirrmtry share/icons/oxygen/32x32/emotes
 @dirrmtry share/icons/oxygen/32x32/emblems
 @dirrmtry share/icons/oxygen/32x32/devices
 @dirrmtry share/icons/oxygen/32x32/categories
 @dirrmtry share/icons/oxygen/32x32/apps
+@dirrmtry share/icons/oxygen/32x32/animations
 @dirrmtry share/icons/oxygen/32x32/actions
 @dirrmtry share/icons/oxygen/32x32
+@dirrmtry share/icons/oxygen/256x256/status
+@dirrmtry share/icons/oxygen/256x256/places
+@dirrmtry share/icons/oxygen/256x256/mimetypes
+@dirrmtry share/icons/oxygen/256x256/devices
+@dirrmtry share/icons/oxygen/256x256/categories
+@dirrmtry share/icons/oxygen/256x256/apps
+@dirrmtry share/icons/oxygen/256x256/actions
+@dirrmtry share/icons/oxygen/256x256
 @dirrmtry share/icons/oxygen/22x22/status
 @dirrmtry share/icons/oxygen/22x22/places
 @dirrmtry share/icons/oxygen/22x22/mimetypes
+@dirrmtry share/icons/oxygen/22x22/intl
+@dirrmtry share/icons/oxygen/22x22/filesystems
 @dirrmtry share/icons/oxygen/22x22/emotes
 @dirrmtry share/icons/oxygen/22x22/emblems
 @dirrmtry share/icons/oxygen/22x22/devices
 @dirrmtry share/icons/oxygen/22x22/categories
 @dirrmtry share/icons/oxygen/22x22/apps
+@dirrmtry share/icons/oxygen/22x22/animations
 @dirrmtry share/icons/oxygen/22x22/actions
 @dirrmtry share/icons/oxygen/22x22
 @dirrmtry share/icons/oxygen/16x16/status
 @dirrmtry share/icons/oxygen/16x16/places
 @dirrmtry share/icons/oxygen/16x16/mimetypes
+@dirrmtry share/icons/oxygen/16x16/intl
+@dirrmtry share/icons/oxygen/16x16/filesystems
 @dirrmtry share/icons/oxygen/16x16/emotes
 @dirrmtry share/icons/oxygen/16x16/emblems
 @dirrmtry share/icons/oxygen/16x16/devices
 @dirrmtry share/icons/oxygen/16x16/categories
 @dirrmtry share/icons/oxygen/16x16/apps
+@dirrmtry share/icons/oxygen/16x16/animations
 @dirrmtry share/icons/oxygen/16x16/actions
 @dirrmtry share/icons/oxygen/16x16
 @dirrmtry share/icons/oxygen/128x128/status
 @dirrmtry share/icons/oxygen/128x128/places
 @dirrmtry share/icons/oxygen/128x128/mimetypes
+@dirrmtry share/icons/oxygen/128x128/intl
+@dirrmtry share/icons/oxygen/128x128/filesystems
 @dirrmtry share/icons/oxygen/128x128/emotes
 @dirrmtry share/icons/oxygen/128x128/emblems
 @dirrmtry share/icons/oxygen/128x128/devices
 @dirrmtry share/icons/oxygen/128x128/categories
 @dirrmtry share/icons/oxygen/128x128/apps
+@dirrmtry share/icons/oxygen/128x128/animations
 @dirrmtry share/icons/oxygen/128x128/actions
 @dirrmtry share/icons/oxygen/128x128
 @dirrmtry share/icons/oxygen
@@ -1572,43 +1635,6 @@ share/wallpapers/.keep_me
 @dirrmtry share/icons/crystalsvg/128x128/actions
 @dirrmtry share/icons/crystalsvg/128x128
 @dirrmtry share/icons/crystalsvg
-@dirrmtry share/icons/Locolor/64x64/mimetypes
-@dirrmtry share/icons/Locolor/64x64/filesystems
-@dirrmtry share/icons/Locolor/64x64/devices
-@dirrmtry share/icons/Locolor/64x64/apps
-@dirrmtry share/icons/Locolor/64x64/actions
-@dirrmtry share/icons/Locolor/64x64
-@dirrmtry share/icons/Locolor/48x48/mimetypes
-@dirrmtry share/icons/Locolor/48x48/filesystems
-@dirrmtry share/icons/Locolor/48x48/devices
-@dirrmtry share/icons/Locolor/48x48/apps
-@dirrmtry share/icons/Locolor/48x48/actions
-@dirrmtry share/icons/Locolor/48x48
-@dirrmtry share/icons/Locolor/32x32/mimetypes
-@dirrmtry share/icons/Locolor/32x32/filesystems
-@dirrmtry share/icons/Locolor/32x32/devices
-@dirrmtry share/icons/Locolor/32x32/apps
-@dirrmtry share/icons/Locolor/32x32/actions
-@dirrmtry share/icons/Locolor/32x32
-@dirrmtry share/icons/Locolor/22x22/mimetypes
-@dirrmtry share/icons/Locolor/22x22/filesystems
-@dirrmtry share/icons/Locolor/22x22/devices
-@dirrmtry share/icons/Locolor/22x22/apps
-@dirrmtry share/icons/Locolor/22x22/actions
-@dirrmtry share/icons/Locolor/22x22
-@dirrmtry share/icons/Locolor/16x16/mimetypes
-@dirrmtry share/icons/Locolor/16x16/filesystems
-@dirrmtry share/icons/Locolor/16x16/devices
-@dirrmtry share/icons/Locolor/16x16/apps
-@dirrmtry share/icons/Locolor/16x16/actions
-@dirrmtry share/icons/Locolor/16x16
-@dirrmtry share/icons/Locolor/128x128/mimetypes
-@dirrmtry share/icons/Locolor/128x128/filesystem
-@dirrmtry share/icons/Locolor/128x128/devices
-@dirrmtry share/icons/Locolor/128x128/apps
-@dirrmtry share/icons/Locolor/128x128/actions
-@dirrmtry share/icons/Locolor/128x128
-@dirrmtry share/icons/Locolor
 @dirrmtry share/icons
 @dirrmtry share/emoticons
 @dirrmtry share/doc/HTML/zh_TW
@@ -2189,6 +2215,5 @@ share/wallpapers/.keep_me
 %%MTREE%%@dirrm etc/pam.d
 %%MTREE%%@dirrm etc
 %%MTREE%%@dirrm bin
-%%MTREE%%@cwd %%LOCALBASE%%
-%%MTREE%%%%LDCONFIG_DIR%%/kdehier4
-%%MTREE%%@cwd %%KDE4_PREFIX%%
+%%MTREE%%@exec echo %D/lib > %%LOCALBASE%%/%%LDCONFIG_DIR%%/kdehier4
+%%MTREE%%@unexec [ -f %%LOCALBASE%%/%%LDCONFIG_DIR%%/kdehier4 ] && rm -f %%LOCALBASE%%/%%LDCONFIG_DIR%%/kdehier4  || true

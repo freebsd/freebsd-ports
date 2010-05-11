@@ -52,9 +52,9 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 #		but this could be changed in a future.
 #
 
-KDE4_VERSION=		4.3.5
+KDE4_VERSION=		4.4.3
 KDE4_BRANCH?=		stable
-KOFFICE2_VERSION=	2.1.0
+KOFFICE2_VERSION=	2.1.2
 KOFFICE2_BRANCH?=	stable
 
 #
@@ -76,16 +76,14 @@ MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@${ksub}/@g}
 #
 # KDE4 modules
 #
-_USE_KDE4_ALL=	akonadi automoc4 kdebase kdeexp kdehier kdelibs kdeprefix \
-		oxygen pimlibs pimruntime runtime sharedmime workspace
+_USE_KDE4_ALL=	akonadi automoc4 kdebase kdehier kdelibs kdeprefix \
+		oxygen pimlibs pimruntime pykde4 runtime sharedmime workspace
 
 akonadi_LIB_DEPENDS=		akonadiprotocolinternals.1:${PORTSDIR}/databases/akonadi
 
 automoc4_BUILD_DEPENDS=		${LOCALBASE}/bin/automoc4:${PORTSDIR}/devel/automoc4
 
 kdebase_LIB_DEPENDS=		konq.7:${PORTSDIR}/x11/kdebase4
-
-kdeexp_LIB_DEPENDS=		knotificationitem-1.1:${PORTSDIR}/x11/kdelibs4-experimental
 
 kdehier_RUN_DEPENDS=		kdehier4>=1:${PORTSDIR}/misc/kdehier4
 
@@ -99,6 +97,8 @@ pimlibs_LIB_DEPENDS=		kpimutils.5:${PORTSDIR}/deskutils/kdepimlibs4
 
 pimruntime_LIB_DEPENDS=		kdepim-copy.5:${PORTSDIR}/deskutils/kdepim4-runtime
 
+pykde4_RUN_DEPENDS=		${KDE4_PYTHON_SITELIBDIR}/PyKDE4/kdeui.so:${PORTSDIR}/devel/kdebindings4-python-pykde4
+
 runtime_BUILD_DEPENDS=		${KDE4_PREFIX}/bin/kdebugdialog:${PORTSDIR}/x11/kdebase4-runtime
 runtime_RUN_DEPENDS=		${KDE4_PREFIX}/bin/kdebugdialog:${PORTSDIR}/x11/kdebase4-runtime
 
@@ -109,6 +109,8 @@ workspace_LIB_DEPENDS=		kscreensaver.5:${PORTSDIR}/x11/kdebase4-workspace
 
 
 PLIST_SUB+=	KDE4_PREFIX="${KDE4_PREFIX}"
+
+KDE4_PYTHON_SITELIBDIR=	${PYTHON_SITELIBDIR:S;${PYTHONBASE};${KDE4_PREFIX};}
 
 #
 # Common build related stuff for kde4 ports. It's not intended for usage
@@ -136,9 +138,10 @@ PLIST_SUB+=	KDE4_VERSION="${KDE4_VERSION}" \
 USE_LDCONFIG=	yes
 
 USE_CMAKE=	yes
+USE_GMAKE=	yes
 CMAKE_SOURCE_PATH=	${WRKSRC}
-CONFIGURE_WRKSRC?=	${BUILD_WRKSRC}
-BUILD_WRKSRC?=		${WRKSRC}/build
+CONFIGURE_WRKSRC=	${CMAKE_SOURCE_PATH}/build
+BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC?=	${BUILD_WRKSRC}
 
 post-extract:	kde-create-builddir

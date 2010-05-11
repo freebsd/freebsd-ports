@@ -60,11 +60,9 @@ share/doc/HTML/en/kcontrol/knetworkconf/index.docbook
 share/doc/HTML/en/kcron/common
 share/doc/HTML/en/kcron/index.cache.bz2
 share/doc/HTML/en/kcron/index.docbook
-share/doc/HTML/en/kcron/kcron.png
 share/doc/HTML/en/kcron/kcronstart.png
 share/doc/HTML/en/kcron/newtask.png
 share/doc/HTML/en/kcron/newvariable.png
-share/doc/HTML/en/kcron/print.png
 share/doc/HTML/en/ksystemlog/common
 share/doc/HTML/en/ksystemlog/filter-process.png
 share/doc/HTML/en/ksystemlog/first-opening.png
@@ -105,5 +103,3 @@ share/kde4/services/kcm_knetworkconfmodule.desktop
 @dirrm share/apps/knetworkconf/pixmaps
 @dirrm share/apps/knetworkconf/backends
 @dirrm share/apps/knetworkconf
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake

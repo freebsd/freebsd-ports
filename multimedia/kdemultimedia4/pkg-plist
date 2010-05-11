@@ -53,7 +53,6 @@ share/apps/kmix/kmixui.rc
 share/apps/kmix/pics/kmixdocked.png
 share/apps/kmix/pics/kmixdocked_error.png
 share/apps/kmix/pics/kmixdocked_mute.png
-share/apps/kmix/pics/mix_record.png
 share/apps/kmix/pics/mixer-ac97.png
 share/apps/kmix/pics/mixer-capture.png
 share/apps/kmix/pics/mixer-cd.png
@@ -79,6 +78,7 @@ share/apps/kscd/skin/default.svg
 share/apps/profiles/kscd.profile.xml
 share/apps/solid/actions/dragonplayer-opendvd.desktop
 share/apps/solid/actions/kscd-play-audiocd.desktop
+share/apps/solid/actions/solid_audiocd.desktop
 share/apps/videothumbnail/sprocket-large.png
 share/apps/videothumbnail/sprocket-medium.png
 share/apps/videothumbnail/sprocket-small.png
@@ -110,6 +110,12 @@ share/doc/HTML/en/juk/juk-tag-guesser.png
 share/doc/HTML/en/juk/normal-playlist.png
 share/doc/HTML/en/juk/search-playlist.png
 share/doc/HTML/en/juk/toolbar.png
+share/doc/HTML/en/kcontrol/cddbretrieval/common
+share/doc/HTML/en/kcontrol/cddbretrieval/index.cache.bz2
+share/doc/HTML/en/kcontrol/cddbretrieval/index.docbook
+share/doc/HTML/en/kcontrol/cddbretrieval/kscd13.png
+share/doc/HTML/en/kcontrol/cddbretrieval/kscd14.png
+share/doc/HTML/en/kcontrol/cddbretrieval/kscd16.png
 share/doc/HTML/en/kioslave/audiocd/common
 share/doc/HTML/en/kioslave/audiocd/index.cache.bz2
 share/doc/HTML/en/kioslave/audiocd/index.docbook
@@ -120,23 +126,6 @@ share/doc/HTML/en/kmix/kmix-channel-playback.png
 share/doc/HTML/en/kmix/kmix-channel-record.png
 share/doc/HTML/en/kmix/kmix-channel-switches.png
 share/doc/HTML/en/kmix/kmix-window.png
-share/doc/HTML/en/kscd/common
-share/doc/HTML/en/kscd/index.cache.bz2
-share/doc/HTML/en/kscd/index.docbook
-share/doc/HTML/en/kscd/kscd.png
-share/doc/HTML/en/kscd/kscd11.png
-share/doc/HTML/en/kscd/kscd12.png
-share/doc/HTML/en/kscd/kscd13.png
-share/doc/HTML/en/kscd/kscd14.png
-share/doc/HTML/en/kscd/kscd16.png
-share/doc/HTML/en/kscd/kscd18.png
-share/doc/HTML/en/kscd/kscd19.png
-share/doc/HTML/en/kscd/kscd2.png
-share/doc/HTML/en/kscd/kscd3.png
-share/doc/HTML/en/kscd/kscd5.png
-share/doc/HTML/en/kscd/kscd6.png
-share/doc/HTML/en/kscd/kscd9.png
-share/doc/HTML/en/kscd/kscdannounc.png
 share/icons/hicolor/128x128/apps/dragonplayer.png
 share/icons/hicolor/128x128/apps/juk.png
 share/icons/hicolor/128x128/apps/kmix.png
@@ -173,9 +162,9 @@ share/kde4/services/dragonplayer_part.desktop
 share/kde4/services/kmixctrl_restore.desktop
 share/kde4/services/libkcddb.desktop
 share/kde4/services/videopreview.desktop
-@dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/kmix
 @dirrm share/doc/HTML/en/kioslave/audiocd
+@dirrm share/doc/HTML/en/kcontrol/cddbretrieval
 @dirrm share/doc/HTML/en/juk
 @dirrm share/doc/HTML/en/dragonplayer
 @dirrm share/apps/videothumbnail

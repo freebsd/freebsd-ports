@@ -22,9 +22,9 @@ NO_BUILD=	yes
 # OPTIONS+=	JAVA "Java bindings" on
 # OPTIONS+=	PHP "PHP bindings" on
 OPTIONS+=	PYTHON "Python bindings" on
-# OPTIONS+=	RUBY "Ruby bindings" on
+OPTIONS+=	RUBY "Ruby bindings" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 # .if !defined(WITHOUT_CSHARP)
 # RUN_DEPENDS+=	kdebindings-csharp>=4.1.0:${PORTSDIR}/devel/kdebindings4-csharp
@@ -42,11 +42,11 @@ OPTIONS+=	PYTHON "Python bindings" on
 RUN_DEPENDS+=	kdebindings-python>=4.1.0:${PORTSDIR}/devel/kdebindings4-python
 .endif
 
-# .if !defined(WITHOUT_RUBY)
-# RUN_DEPENDS+=	kdebindings-ruby>=4.1.0:${PORTSDIR}/devel/kdebindings4-ruby
-# .endif
+.if !defined(WITHOUT_RUBY)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/krubyapplication:${PORTSDIR}/devel/kdebindings4-ruby
+.endif
 
 do-install:
 	${DO_NADA}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

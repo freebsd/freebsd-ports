@@ -1,28 +1,9 @@
 bin/kmag
 bin/kmousetool
 bin/kmouth
-bin/kttsd
-bin/kttsmgr
-lib/kde4/kcm_kttsd.so
-lib/kde4/libkttsd_commandplugin.so
-lib/kde4/libkttsd_eposplugin.so
-lib/kde4/libkttsd_festivalintplugin.so
-lib/kde4/libkttsd_fliteplugin.so
-lib/kde4/libkttsd_freettsplugin.so
-lib/kde4/libkttsd_hadifixplugin.so
-lib/kde4/libkttsd_phononplugin.so
-lib/kde4/libkttsd_sbdplugin.so
-lib/kde4/libkttsd_stringreplacerplugin.so
-lib/kde4/libkttsd_talkerchooserplugin.so
-lib/kde4/libkttsd_xmltransformerplugin.so
-lib/kde4/libkttsjobmgrpart.so
-lib/libkttsd.so
-lib/libkttsd.so.5
-lib/libkttsd.so.5.0.1
 share/applications/kde4/kmag.desktop
 share/applications/kde4/kmousetool.desktop
 share/applications/kde4/kmouth.desktop
-share/applications/kde4/kttsmgr.desktop
 share/apps/color-schemes/Zion.colors
 share/apps/color-schemes/ZionReversed.colors
 share/apps/kmag/kmagui.rc
@@ -84,26 +65,6 @@ share/apps/kmouth/icons/hicolor/32x32/actions/speak.png
 share/apps/kmouth/icons/hicolor/48x48/actions/speak.png
 share/apps/kmouth/kmouthui.rc
 share/apps/kmouth/phrasebookdialogui.rc
-share/apps/kttsd/festivalint/sabletowave.scm
-share/apps/kttsd/festivalint/voices
-share/apps/kttsd/festivalint/xslt/SSMLtoSable.xsl
-share/apps/kttsd/hadifix/xslt/SSMLtoTxt2pho.xsl
-share/apps/kttsd/kcmkttsd_testmessage.desktop
-share/apps/kttsd/sbd/polish_festival_sbdrc
-share/apps/kttsd/sbd/standard_sbdrc
-share/apps/kttsd/stringreplacer/abbreviations.xml
-share/apps/kttsd/stringreplacer/chat-de.xml
-share/apps/kttsd/stringreplacer/chat.xml
-share/apps/kttsd/stringreplacer/emoticons.xml
-share/apps/kttsd/stringreplacer/festival_unspeakable_chars.xml
-share/apps/kttsd/stringreplacer/kmail.xml
-share/apps/kttsd/stringreplacer/polish_festival_fixes.xml
-share/apps/kttsd/stringreplacer/polish_festival_unspeakables.xml
-share/apps/kttsd/stringreplacer/qt2plaintext.xml
-share/apps/kttsd/talkerchooser/female_notifications_rc
-share/apps/kttsd/xmltransformer/xhtml2ssml.xsl
-share/apps/kttsd/xmltransformer/xhtml2ssml_simple.xsl
-share/apps/kttsd/xslt/SSMLtoPlainText.xsl
 share/config/kmouthrc
 share/doc/HTML/en/kmag/common
 share/doc/HTML/en/kmag/index.cache.bz2
@@ -124,41 +85,20 @@ share/doc/HTML/en/kmouth/kmouthedit.png
 share/doc/HTML/en/kmouth/kmouthmain.png
 share/doc/HTML/en/kmouth/kmouthwizard.png
 share/doc/HTML/en/kmouth/man-kmouth.1.docbook
-share/doc/HTML/en/kttsd/addtalker.png
-share/doc/HTML/en/kttsd/common
-share/doc/HTML/en/kttsd/filters.png
-share/doc/HTML/en/kttsd/general.png
-share/doc/HTML/en/kttsd/index.cache.bz2
-share/doc/HTML/en/kttsd/index.docbook
-share/doc/HTML/en/kttsd/jobs.png
-share/doc/HTML/en/kttsd/stringreplacer.png
-share/doc/HTML/en/kttsd/talkerchooser.png
-share/doc/HTML/en/kttsd/talkers.png
-share/doc/HTML/en/kttsd/xmltransformer.png
-share/icons/hicolor/16x16/actions/female.png
 share/icons/hicolor/16x16/actions/followmouse.png
 share/icons/hicolor/16x16/actions/hidemouse.png
 share/icons/hicolor/16x16/actions/kmousetool_off.png
 share/icons/hicolor/16x16/actions/kmousetool_on.png
-share/icons/hicolor/16x16/actions/male.png
-share/icons/hicolor/16x16/actions/nospeak.png
-share/icons/hicolor/16x16/actions/speak.png
 share/icons/hicolor/16x16/actions/window.png
 share/icons/hicolor/16x16/apps/kmag.png
 share/icons/hicolor/16x16/apps/kmousetool.png
 share/icons/hicolor/16x16/apps/kmouth.png
-share/icons/hicolor/22x22/actions/nospeak.png
-share/icons/hicolor/22x22/actions/speak.png
 share/icons/hicolor/22x22/apps/kmouth.png
 share/icons/hicolor/32x32/actions/kmousetool_off.png
 share/icons/hicolor/32x32/actions/kmousetool_on.png
-share/icons/hicolor/32x32/actions/nospeak.png
-share/icons/hicolor/32x32/actions/speak.png
 share/icons/hicolor/32x32/apps/kmag.png
 share/icons/hicolor/32x32/apps/kmousetool.png
 share/icons/hicolor/32x32/apps/kmouth.png
-share/icons/hicolor/48x48/actions/nospeak.png
-share/icons/hicolor/48x48/actions/speak.png
 share/icons/hicolor/48x48/apps/kmouth.png
 share/icons/mono/128x128/animations/process-idle.png
 share/icons/mono/128x128/animations/process-working.png
@@ -2189,23 +2129,6 @@ share/icons/mono/scalable/status/user-online.svgz
 share/icons/mono/scalable/status/user-trash-full.svgz
 share/icons/mono/scalable/status/wallet-closed.svgz
 share/icons/mono/scalable/status/wallet-open.svgz
-share/kde4/services/kcmkttsd.desktop
-share/kde4/services/kttsd.desktop
-share/kde4/services/kttsd_commandplugin.desktop
-share/kde4/services/kttsd_eposplugin.desktop
-share/kde4/services/kttsd_festivalintplugin.desktop
-share/kde4/services/kttsd_fliteplugin.desktop
-share/kde4/services/kttsd_freettsplugin.desktop
-share/kde4/services/kttsd_hadifixplugin.desktop
-share/kde4/services/kttsd_phononplugin.desktop
-share/kde4/services/kttsd_sbdplugin.desktop
-share/kde4/services/kttsd_stringreplacerplugin.desktop
-share/kde4/services/kttsd_talkerchooserplugin.desktop
-share/kde4/services/kttsd_xmltransformerplugin.desktop
-share/kde4/services/kttsjobmgr.desktop
-share/kde4/servicetypes/kttsd_audioplugin.desktop
-share/kde4/servicetypes/kttsd_filterplugin.desktop
-share/kde4/servicetypes/kttsd_synthplugin.desktop
 @dirrm share/icons/mono/scalable/status
 @dirrm share/icons/mono/scalable/places
 @dirrm share/icons/mono/scalable/mimetypes
@@ -2229,20 +2152,9 @@ share/kde4/servicetypes/kttsd_synthplugin.desktop
 @dirrm share/icons/mono/128x128/animations
 @dirrm share/icons/mono/128x128
 @dirrm share/icons/mono
-@dirrm share/doc/HTML/en/kttsd
 @dirrm share/doc/HTML/en/kmouth
 @dirrm share/doc/HTML/en/kmousetool
 @dirrm share/doc/HTML/en/kmag
-@dirrm share/apps/kttsd/xslt
-@dirrm share/apps/kttsd/xmltransformer
-@dirrm share/apps/kttsd/talkerchooser
-@dirrm share/apps/kttsd/stringreplacer
-@dirrm share/apps/kttsd/sbd
-@dirrm share/apps/kttsd/hadifix/xslt
-@dirrm share/apps/kttsd/hadifix
-@dirrm share/apps/kttsd/festivalint/xslt
-@dirrm share/apps/kttsd/festivalint
-@dirrm share/apps/kttsd
 @dirrm share/apps/kmouth/icons/hicolor/48x48/actions
 @dirrm share/apps/kmouth/icons/hicolor/48x48
 @dirrm share/apps/kmouth/icons/hicolor/32x32/actions

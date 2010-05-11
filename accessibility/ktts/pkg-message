@@ -1,0 +1,7 @@
+======================================================================
+
+To enable Text-to-Speech System (KTTSD), you first need to start
+speech-dispatcher daemon (accessibility/speech-dispatcher), either
+locally or with its rc.d script.
+
+======================================================================

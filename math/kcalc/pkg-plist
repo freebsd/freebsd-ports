@@ -2,7 +2,6 @@ bin/ark
 bin/irkick
 bin/kcalc
 bin/kcharselect
-bin/kdessh
 bin/kdf
 bin/kfloppy
 bin/kgpg
@@ -12,22 +11,31 @@ bin/kwikdisk
 bin/okteta
 bin/superkaramba
 bin/sweeper
+lib/kde4/arkpart.so
 lib/kde4/kcm_kdf.so
 lib/kde4/kcm_kwallet.so
 lib/kde4/kcm_lirc.so
-lib/kde4/kerfuffle_7z.so
+lib/kde4/kerfuffle_cli7z.so
 lib/kde4/kerfuffle_clirar.so
 lib/kde4/kerfuffle_clizip.so
 lib/kde4/kerfuffle_libarchive.so
 lib/kde4/kerfuffle_libbz2.so
 lib/kde4/kerfuffle_libgz.so
 lib/kde4/kerfuffle_libxz.so
-lib/kde4/libarkpart.so
 lib/kde4/libextracthere.so
 lib/kde4/libkbytearrayedit.so
 lib/kde4/oktetapart.so
 lib/kde4/plasma_package_superkaramba.so
 lib/kde4/plasma_scriptengine_superkaramba.so
+lib/libkastencontrollers.so
+lib/libkastencontrollers.so.5
+lib/libkastencontrollers.so.5.0.1
+lib/libkastencore.so
+lib/libkastencore.so.5
+lib/libkastencore.so.5.0.1
+lib/libkastengui.so
+lib/libkastengui.so.5
+lib/libkastengui.so.5.0.1
 lib/libkdeinit4_irkick.so
 lib/libkdeinit4_kcalc.so
 lib/libkdelirc_shared.so
@@ -42,6 +50,15 @@ lib/liboktetacore.so.5.0.1
 lib/liboktetagui.so
 lib/liboktetagui.so.5
 lib/liboktetagui.so.5.0.1
+lib/liboktetakastencontrollers.so
+lib/liboktetakastencontrollers.so.5
+lib/liboktetakastencontrollers.so.5.0.1
+lib/liboktetakastencore.so
+lib/liboktetakastencore.so.5
+lib/liboktetakastencore.so.5.0.1
+lib/liboktetakastengui.so
+lib/liboktetakastengui.so.5
+lib/liboktetakastengui.so.5.0.1
 lib/libsuperkaramba.so
 lib/libsuperkaramba.so.5
 lib/libsuperkaramba.so.5.0.1
@@ -102,15 +119,18 @@ share/apps/kgpg/icons/oxygen/scalable/status/key-group.svgz
 share/apps/kgpg/icons/oxygen/scalable/status/key-pair.svgz
 share/apps/kgpg/icons/oxygen/scalable/status/key-single.svgz
 share/apps/kgpg/keysmanager.rc
-share/apps/kgpg/kgpg.rc
-share/apps/kgpg/pics/kgpg_anim.gif
+share/apps/kgpg/kgpgeditor.rc
 share/apps/kgpg/tips
 share/apps/kwalletmanager/icons/oxygen/22x22/actions/folder_closed.png
 share/apps/kwalletmanager/icons/oxygen/22x22/actions/folder_open.png
 share/apps/kwalletmanager/kwalleteditor.rc
 share/apps/kwalletmanager/kwalletmanager.rc
 share/apps/okteta/oktetaui.rc
-share/apps/oktetapart/oktetapartui.rc
+share/apps/okteta/structures/elf/elf.desktop
+share/apps/okteta/structures/elf/elf.osd
+share/apps/oktetapart/oktetapartbrowserui.rc
+share/apps/oktetapart/oktetapartreadonlyui.rc
+share/apps/oktetapart/oktetapartreadwriteui.rc
 share/apps/profiles/amarok.profile.xml
 share/apps/profiles/dragonplayer.profile.xml
 share/apps/profiles/klauncher.profile.xml
@@ -121,15 +141,6 @@ share/apps/profiles/profile.dtd
 share/apps/profiles/shutdown.profile.xml
 share/apps/profiles/suspend.profile.xml
 share/apps/profiles/vlc.profile.xml
-share/apps/remotes/AppleRemote.remote.xml
-share/apps/remotes/AsusDH.remote.xml
-share/apps/remotes/RM-0010.remote.xml
-share/apps/remotes/cimr100.remote.xml
-share/apps/remotes/hauppauge.remote.xml
-share/apps/remotes/packbell.remote.xml
-share/apps/remotes/remote.dtd
-share/apps/remotes/sherwood.remote.xml
-share/apps/remotes/sonytv.remote.xml
 share/apps/superkaramba/superkarambaui.rc
 share/apps/sweeper/sweeperui.rc
 share/autostart/irkick.desktop
@@ -148,6 +159,8 @@ share/doc/HTML/en/ark/man-ark.1.docbook
 share/doc/HTML/en/irkick/common
 share/doc/HTML/en/irkick/index.cache.bz2
 share/doc/HTML/en/irkick/index.docbook
+share/doc/HTML/en/irkick/irkick.png
+share/doc/HTML/en/irkick/irkickoff.png
 share/doc/HTML/en/kcalc/commands.docbook
 share/doc/HTML/en/kcalc/common
 share/doc/HTML/en/kcalc/index.cache.bz2
@@ -158,6 +171,8 @@ share/doc/HTML/en/kcharselect/index.docbook
 share/doc/HTML/en/kcmlirc/common
 share/doc/HTML/en/kcmlirc/index.cache.bz2
 share/doc/HTML/en/kcmlirc/index.docbook
+share/doc/HTML/en/kcmlirc/irkick.png
+share/doc/HTML/en/kcmlirc/irkickoff.png
 share/doc/HTML/en/kcontrol/blockdevices/common
 share/doc/HTML/en/kcontrol/blockdevices/index.cache.bz2
 share/doc/HTML/en/kcontrol/blockdevices/index.docbook
@@ -201,14 +216,9 @@ share/doc/HTML/en/kwallet/oxygen48-status-wallet-open.png
 share/doc/HTML/en/kwallet/password1.png
 share/doc/HTML/en/kwallet/password2.png
 share/doc/HTML/en/kwallet/save-login-information.png
-share/doc/HTML/en/okteta/basics.docbook
 share/doc/HTML/en/okteta/common
-share/doc/HTML/en/okteta/credits.docbook
 share/doc/HTML/en/okteta/index.cache.bz2
 share/doc/HTML/en/okteta/index.docbook
-share/doc/HTML/en/okteta/introduction.docbook
-share/doc/HTML/en/okteta/menu.docbook
-share/doc/HTML/en/okteta/tools.docbook
 share/doc/HTML/en/superkaramba/common
 share/doc/HTML/en/superkaramba/index.cache.bz2
 share/doc/HTML/en/superkaramba/index.docbook
@@ -281,14 +291,13 @@ share/kde4/services/ServiceMenus/ark_addtoservicemenu.desktop
 share/kde4/services/ServiceMenus/ark_servicemenu.desktop
 share/kde4/services/ServiceMenus/encryptfile.desktop
 share/kde4/services/ServiceMenus/encryptfolder.desktop
-share/kde4/services/ServiceMenus/floppy_format.desktop
 share/kde4/services/ServiceMenus/viewdecrypted.desktop
 share/kde4/services/ark_dndextract.desktop
 share/kde4/services/ark_part.desktop
 share/kde4/services/kbytearrayedit.desktop
 share/kde4/services/kcm_lirc.desktop
 share/kde4/services/kcmdf.desktop
-share/kde4/services/kerfuffle_7z.desktop
+share/kde4/services/kerfuffle_cli7z.desktop
 share/kde4/services/kerfuffle_clirar.desktop
 share/kde4/services/kerfuffle_clizip.desktop
 share/kde4/services/kerfuffle_libarchive.desktop
@@ -318,15 +327,15 @@ share/kde4/servicetypes/kerfufflePlugin.desktop
 @dirrm share/doc/HTML/en/ark
 @dirrm share/apps/sweeper
 @dirrm share/apps/superkaramba
-@dirrm share/apps/remotes
 @dirrm share/apps/oktetapart
+@dirrm share/apps/okteta/structures/elf
+@dirrm share/apps/okteta/structures
 @dirrm share/apps/okteta
 @dirrm share/apps/kwalletmanager/icons/oxygen/22x22/actions
 @dirrm share/apps/kwalletmanager/icons/oxygen/22x22
 @dirrm share/apps/kwalletmanager/icons/oxygen
 @dirrm share/apps/kwalletmanager/icons
 @dirrm share/apps/kwalletmanager
-@dirrm share/apps/kgpg/pics
 @dirrm share/apps/kgpg/icons/oxygen/scalable/status
 @dirrm share/apps/kgpg/icons/oxygen/scalable/actions
 @dirrm share/apps/kgpg/icons/oxygen/scalable
