@@ -10,8 +10,10 @@ PORTVERSION=	1.0.5
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=${PORTNAME}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	IPC library used by GnuPG and gpgme
 
 LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth
@@ -27,5 +29,8 @@ CFLAGS+=	-I${LOCALBASE}/include/pth
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif
+
+verify: checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
 .include <bsd.port.post.mk>
