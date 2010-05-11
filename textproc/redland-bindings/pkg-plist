@@ -1,13 +1,9 @@
 @comment $FreeBSD$
-%%WITH_JAVA%%lib/java/librdf-java.a
-%%WITH_JAVA%%lib/java/librdf-java.la
-%%WITH_JAVA%%lib/java/librdf-java.so
-%%WITH_JAVA%%lib/java/librdf-java.so.0
-%%WITH_JAVA%%share/java/librdf-java.jar
-%%WITH_JAVA%%@unexec rmdir %D/lib/java
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/BlankNode.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/CORE.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/Iterator.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/LiteralNode.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/Model.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/Node.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/Parser.pm
@@ -19,9 +15,41 @@
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/Storage.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/Stream.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/URI.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/URINode.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland/XMLLiteralNode.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE/CORE.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE/CORE.so
 %%WITH_PHP%%lib/php/%%PHP_EXT_DIR%%/redland.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/Redland.so
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/RDF.py
-%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/redland.so
+%%WITH_RUBY%%%%RUBY_ARCHLIBDIR%%/redland.so
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/queryresults.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/model.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/convert_owl.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/dc.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/uri.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/util.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/serializer.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/parser.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/resource.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/stream.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/convertfoaf.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/statement.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/schemas/owl.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/schemas/rdfs.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/schemas/foaf.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/node.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/constants.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/query.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland/store.rb
+%%WITH_RUBY%%%%RUBY_LIBDIR%%/rdf/redland.rb
+%%WITH_RUBY%%@dirrm %%RUBY_LIBDIR%%/rdf/redland/schemas
+%%WITH_RUBY%%@dirrm %%RUBY_LIBDIR%%/rdf/redland
+%%WITH_RUBY%%@dirrm %%RUBY_LIBDIR%%/rdf
+%%WITH_PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland/CORE
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Redland
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDF/Redland
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RDF

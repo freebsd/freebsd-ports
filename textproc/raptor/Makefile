@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	raptor
 # Date created:			Nov 22, 2001
 # Whom:				ijliao
@@ -7,12 +6,10 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	1.4.18
-PORTREVISION=	1
+PORTVERSION=	1.4.21
 CATEGORIES=	textproc
 MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
 		http://download.librdf.org/source/
-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	RDF Parser Toolkit for Redland
