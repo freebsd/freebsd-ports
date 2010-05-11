@@ -51,13 +51,13 @@ you update your ports collection, before attempting any port upgrades.
 
   If you use portmaster:
 
-  portmaster -o multimedia/qt4-phonon multimedia/phonon
-  portmaster -o multimedia/qt4-phonon-gst multimedia/phonon-gstreamer
+  portmaster -o multimedia/phonon multimedia/qt4-phonon
+  portmaster -o multimedia/phonon-gstreamer multimedia/qt4-phonon-gst
 
   If you use portupgrade:
 
-  portupgrade -f -o multimedia/qt4-phonon multimedia/phonon
-  portupgrade -f -o multimedia/qt4-phonon-gst multimedia/phonon-gstreamer
+  portupgrade -f -o multimedia/phonon multimedia/qt4-phonon
+  portupgrade -f -o multimedia/phonon-gstreamer multimedia/qt4-phonon-gst
 
 201005010:
   AFFECTS: users of security/gnome-keyring
