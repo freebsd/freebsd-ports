@@ -10,7 +10,7 @@ PORTNAME=	gamin
 PORTVERSION=	0.1.10
 PORTREVISION?=	3
 CATEGORIES?=	devel
-MASTER_SITES=	http://www.gnome.org/~veillard/gamin/sources/
+MASTER_SITES=	http://people.gnome.org/~veillard/gamin/sources/
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A file and directory monitoring system
