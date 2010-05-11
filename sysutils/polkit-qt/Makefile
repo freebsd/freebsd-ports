@@ -1,21 +1,21 @@
-# New ports collection makefile for:	PolicyKit-qt
-# Date created:		2009-07-09
+# New ports collection makefile for:	PolKit-qt
+# Date created:		2009-12-25
 # Whom:			Dima Panov <fluffy@Fluffy.Khv.RU>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	policykit-qt
-PORTVERSION=	0.9.3
+PORTNAME=	polkit-qt
+PORTVERSION=	0.95.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/apps/KDE4.x/admin/
-DISTNAME=	polkit-qt-${PORTVERSION}
+MASTER_SITE_SUBDIR=	stable/polkit-qt-1
+DISTNAME=	polkit-qt-1-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	PolicyKit manager for Qt
+COMMENT=	Qt4 frontend to PolKit-1.
 
-LIB_DEPENDS=	polkit.2:${PORTSDIR}/sysutils/policykit
+LIB_DEPENDS=	polkit-agent-1.0:${PORTSDIR}/sysutils/polkit
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
