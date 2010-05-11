@@ -72,6 +72,7 @@ you update your ports collection, before attempting any port upgrades.
 
   or 
 
+  pkgdb -Ff
   portupgrade -R -x gnome-keyring -x libgnome-keyring gnome-keyring
   pkg_deinstall -fO gnome-keyring
   portinstall security/gnome-keyring
