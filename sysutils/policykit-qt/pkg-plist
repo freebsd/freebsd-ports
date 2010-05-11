@@ -9,12 +9,13 @@ include/PolicyKit/polkit-qt/actionbuttons.h
 include/PolicyKit/polkit-qt/auth.h
 include/PolicyKit/polkit-qt/context.h
 include/PolicyKit/polkit-qt/export.h
+include/PolicyKit/polkit-qt/polkitqtversion.h
 lib/libpolkit-qt-core.so
 lib/libpolkit-qt-core.so.0
-lib/libpolkit-qt-core.so.0.9.2
+lib/libpolkit-qt-core.so.0.9.3
 lib/libpolkit-qt-gui.so
 lib/libpolkit-qt-gui.so.0
-lib/libpolkit-qt-gui.so.0.9.2
+lib/libpolkit-qt-gui.so.0.9.3
 libdata/pkgconfig/polkit-qt-core.pc
 libdata/pkgconfig/polkit-qt-gui.pc
 libdata/pkgconfig/polkit-qt.pc

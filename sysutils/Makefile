@@ -635,6 +635,8 @@
     SUBDIR += policykit-qt
     SUBDIR += polkit
     SUBDIR += polkit-gnome
+    SUBDIR += polkit-kde
+    SUBDIR += polkit-qt
     SUBDIR += powerman
     SUBDIR += prips
     SUBDIR += procmap

@@ -1,0 +1,15 @@
+etc/xdg/autostart/polkit-kde-authentication-agent-1.desktop
+lib/kde4/libexec/polkit-kde-authentication-agent-1
+share/locale/da/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/en_GB/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/et/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/gl/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/lt/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/nl/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/pt/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/pt_BR/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/sk/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/sv/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/uk/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/zh_TW/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+@dirrmtry etc/xdg/autostart
