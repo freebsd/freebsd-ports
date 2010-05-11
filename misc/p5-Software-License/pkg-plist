@@ -1,0 +1,31 @@
+%%SITE_PERL%%/Software/License.pm
+%%SITE_PERL%%/Software/License/AGPL_3.pm
+%%SITE_PERL%%/Software/License/Apache_1_1.pm
+%%SITE_PERL%%/Software/License/Apache_2_0.pm
+%%SITE_PERL%%/Software/License/Artistic_1_0.pm
+%%SITE_PERL%%/Software/License/Artistic_2_0.pm
+%%SITE_PERL%%/Software/License/BSD.pm
+%%SITE_PERL%%/Software/License/CC0_1_0.pm
+%%SITE_PERL%%/Software/License/FreeBSD.pm
+%%SITE_PERL%%/Software/License/GFDL_1_2.pm
+%%SITE_PERL%%/Software/License/GPL_1.pm
+%%SITE_PERL%%/Software/License/GPL_2.pm
+%%SITE_PERL%%/Software/License/GPL_3.pm
+%%SITE_PERL%%/Software/License/LGPL_2_1.pm
+%%SITE_PERL%%/Software/License/LGPL_3_0.pm
+%%SITE_PERL%%/Software/License/MIT.pm
+%%SITE_PERL%%/Software/License/Mozilla_1_0.pm
+%%SITE_PERL%%/Software/License/Mozilla_1_1.pm
+%%SITE_PERL%%/Software/License/None.pm
+%%SITE_PERL%%/Software/License/OpenSSL.pm
+%%SITE_PERL%%/Software/License/Perl_5.pm
+%%SITE_PERL%%/Software/License/QPL_1_0.pm
+%%SITE_PERL%%/Software/License/SSLeay.pm
+%%SITE_PERL%%/Software/License/Sun.pm
+%%SITE_PERL%%/Software/License/Zlib.pm
+%%SITE_PERL%%/Software/LicenseUtils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Software/License/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Software/License
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Software
+@dirrmtry %%SITE_PERL%%/Software/License
+@dirrmtry %%SITE_PERL%%/Software
