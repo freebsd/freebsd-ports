@@ -158,7 +158,6 @@
     SUBDIR += kdelibs3
     SUBDIR += kdelibs3-nocups
     SUBDIR += kdelibs4
-    SUBDIR += kdelibs4-experimental
     SUBDIR += keylaunch
     SUBDIR += keynav
     SUBDIR += libICE
