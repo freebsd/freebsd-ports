@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	taglib
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 CATEGORIES=	audio
 MASTER_SITES=	http://developer.kde.org/~wheeler/files/src/ \
+		http://launchpad.net/taglib/trunk/1.6.3/+download/ \
 		ftp://ftp.musicbrainz.org/${MASTER_SITE_SUBDIR}/ \
-    		http://uk.musicbrainz.org/${MASTER_SITE_SUBDIR}/ \
+		http://uk.musicbrainz.org/${MASTER_SITE_SUBDIR}/ \
 		ftp://ftp.osuosl.org/pub/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	pub/musicbrainz/users/luks/${PORTNAME}
 
@@ -26,19 +27,18 @@ CMAKE_ARGS=	-DWITH_ASF:BOOL=ON \
 
 OPTIONS=	RCC "Build with RusXMMS librcc patches (experimental)" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_RCC)
 PKGNAMESUFFIX=	-rcc
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-rcc
-
 LIB_DEPENDS+=	rcc.2:${PORTSDIR}/devel/librcc
 PLIST_SUB+=	RCC=""
 .else
 PLIST_SUB+=	RCC="@comment "
 .endif
 
- post-patch:
+post-patch:
 .if defined(WITH_RCC)
 	@${REINPLACE_CMD} -e 's|-ltag|-ltag -lrcc|g' \
 		${WRKSRC}/taglib.pc.cmake ${WRKSRC}/taglib-config.cmake \
@@ -47,4 +47,4 @@ PLIST_SUB+=	RCC="@comment "
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt ${WRKSRC}/bindings/c/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
