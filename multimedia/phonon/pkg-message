@@ -1,0 +1,3 @@
+Please consider to install backends for phonon:
+- Xine backend (multimedia/phonon-xine) and/or
+- Gstreamer backend (multimedia/phonon-gstreamer)

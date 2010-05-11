@@ -1,0 +1,15 @@
+--- ./gstreamer/CMakeLists.txt.orig	2008-11-24 20:12:02.000000000 +0300
++++ ./gstreamer/CMakeLists.txt	2009-02-21 01:19:39.000000000 +0300
+@@ -16,9 +16,12 @@
+ project(phonon-gstreamer)
+ include(ConfigureChecks.cmake)
+ 
++find_package(Phonon)
++
+ if (BUILD_PHONON_GSTREAMER)
+    include_directories(
+ 	  ${CMAKE_CURRENT_BINARY_DIR}
++	  ${PHONON_INCLUDES}
+ 	  ${GSTREAMER_INCLUDE_DIR}
+ 	  ${GLIB2_INCLUDE_DIR}
+       ${LIBXML2_INCLUDE_DIR}

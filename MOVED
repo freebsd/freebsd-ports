@@ -4126,8 +4126,6 @@ audio/slimserver-superdatetime|audio/squeezecenter-superdatetime|2009-09-04|Slim
 audio/slimserver-trackstat|audio/squeezecenter-trackstat|2009-09-04|SlimServer has been superseded by SqueezeCenter
 www/conkeror|www/xpi-conkeror|2009-09-05|Please use www/xpi-conkeror
 www/nvu|www/kompozer|2009-09-10|Abandoned upstream since 2005
-multimedia/phonon-gstreamer|multimedia/qt4-phonon-gst|2009-09-11|Superseded by multimedia/qt4-phonon-gst
-multimedia/phonon|multimedia/qt4-phonon|2009-09-11|Superseded by multimedia/qt4-phonon
 editors/bed||2009-09-13|Removed: marked IGNORE for more than two years, unmaintained
 devel/eric||2009-09-16|Removed: obsoleted by devel/eric4
 devel/p5-Algorithm-MDiff||2009-09-16|Has expired: the module was removed from CPAN

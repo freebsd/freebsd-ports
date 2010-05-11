@@ -30,13 +30,12 @@
  if (Q_WS_MAC AND BUILD_PHONON_QT7)
    add_subdirectory(qt7)
  endif (Q_WS_MAC AND BUILD_PHONON_QT7)
-@@ -265,13 +265,13 @@
- endif (Q_WS_WIN)
+@@ -266,12 +266,12 @@
  
  if (Q_WS_X11)
--   add_subdirectory(gstreamer)
-+#   add_subdirectory(gstreamer)
-    add_subdirectory(xine)
+    add_subdirectory(gstreamer)
+-   add_subdirectory(xine)
++#    add_subdirectory(xine)
  endif (Q_WS_X11)
  
 -if(NOT WIN32) # pkgconfig file
