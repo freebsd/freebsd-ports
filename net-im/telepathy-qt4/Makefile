@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.3.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -27,15 +26,15 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README html
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO html
 
-PORTEXAMPLES=	Makefile Makefile.am Makefile.in \
-		accounts call extensions file-transfer roster
+PORTEXAMPLES=	Makefile accounts call extensions \
+		file-transfer protocols roster
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
+.if ${OSVERSION} < 700042
+BROKEN=		does not build on 6.X
 .endif
 
 pre-configure:
