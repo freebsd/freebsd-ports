@@ -52,6 +52,7 @@ include/telepathy-1.0/TelepathyQt4/ConnectionManagerInterface
 include/telepathy-1.0/TelepathyQt4/Constants
 include/telepathy-1.0/TelepathyQt4/Contact
 include/telepathy-1.0/TelepathyQt4/ContactCapabilities
+include/telepathy-1.0/TelepathyQt4/ContactLocation
 include/telepathy-1.0/TelepathyQt4/ContactManager
 include/telepathy-1.0/TelepathyQt4/DBus
 include/telepathy-1.0/TelepathyQt4/DBusDaemonInterface
@@ -80,6 +81,7 @@ include/telepathy-1.0/TelepathyQt4/PeerInterface
 include/telepathy-1.0/TelepathyQt4/PendingAccount
 include/telepathy-1.0/TelepathyQt4/PendingChannel
 include/telepathy-1.0/TelepathyQt4/PendingChannelRequest
+include/telepathy-1.0/TelepathyQt4/PendingComposite
 include/telepathy-1.0/TelepathyQt4/PendingConnection
 include/telepathy-1.0/TelepathyQt4/PendingContactAttributes
 include/telepathy-1.0/TelepathyQt4/PendingContacts
@@ -139,6 +141,7 @@ include/telepathy-1.0/TelepathyQt4/connection-manager.h
 include/telepathy-1.0/TelepathyQt4/connection.h
 include/telepathy-1.0/TelepathyQt4/constants.h
 include/telepathy-1.0/TelepathyQt4/contact-capabilities.h
+include/telepathy-1.0/TelepathyQt4/contact-location.h
 include/telepathy-1.0/TelepathyQt4/contact-manager-internal.h
 include/telepathy-1.0/TelepathyQt4/contact-manager.h
 include/telepathy-1.0/TelepathyQt4/contact.h
@@ -176,17 +179,18 @@ include/telepathy-1.0/TelepathyQt4/referenced-handles.h
 include/telepathy-1.0/TelepathyQt4/room-list-channel.h
 include/telepathy-1.0/TelepathyQt4/shared-ptr.h
 include/telepathy-1.0/TelepathyQt4/simple-pending-operations.h
+include/telepathy-1.0/TelepathyQt4/streamed-media-channel-internal.h
 include/telepathy-1.0/TelepathyQt4/streamed-media-channel.h
 include/telepathy-1.0/TelepathyQt4/text-channel.h
 include/telepathy-1.0/TelepathyQt4/types.h
 lib/libtelepathy-qt4-farsight.a
 lib/libtelepathy-qt4-farsight.la
 lib/libtelepathy-qt4-farsight.so
-lib/libtelepathy-qt4-farsight.so.1
+lib/libtelepathy-qt4-farsight.so.4
 lib/libtelepathy-qt4.a
 lib/libtelepathy-qt4.la
 lib/libtelepathy-qt4.so
-lib/libtelepathy-qt4.so.1
+lib/libtelepathy-qt4.so.4
 libdata/pkgconfig/TelepathyQt4.pc
 libdata/pkgconfig/TelepathyQt4Farsight.pc
 @dirrm include/telepathy-1.0/TelepathyQt4/_gen
