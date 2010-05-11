@@ -6,28 +6,27 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20100511:
-  AFFECTS: users of KDE4
+  AFFECTS: users of KDE SC 4
   AUTHOR: kde@FreeBSD.org
 
-  KDE SC 4.4.3 require x11/kdelibs4-experimental should be removed first,
-  libknotificationitem was integrated to kdelibs4
-
-  KDE SC 4.4.3 require databases/virtuoso installed (not running) to have
-  Nepomuk semantic desktop search enabled
-
-  In KDE SC 4.4.3 many libraries was moved between packages.
-  The recommended update procedure is to delete kdebase-*4*, kdepim-4*,
-  then update ports as usual and install desirable  KDE4 ports:
+  KDE SC ports have been updated from 4.3.5 to 4.4.3. A number of libraries
+  was moved between packages. The recommended update procedure is to delete
+  kdelibs-experimental*, kdebase-4*, kdebase-workspace-4*,
+  kdebase-runtime-4*, kdepim-4*, kdepim-runtime-4*,
+  and then update ports as usual and install desirable KDE4 ports:
 
   # pkg_delete -f kdebase-\*4\* kdepim-\*4\* kdelibs-experimental-\*4\*
   # portmaster -a (or portupgrade -aR)
+
+  In order to enabled Nepomuk semantic desktop search you have to install
+  databases/virtuoso (you don't need manually configure
+  or run virtuoso server).
 
 20100511:
   AFFECTS: users of textproc/redland RDF engine
   AUTHOR: kde@FreeBSD.org
 
-  Redland RDF engine was split into redland itself and rasqal engine
-  and update to new version, with shared libs bump.
+  Redland RDF engine has been split into redland itself and rasqal engine.
   The recommended update procedure is to delete redland,
   then update ports as usual and install desirable rdf ports:
 
@@ -39,8 +38,16 @@ you update your ports collection, before attempting any port upgrades.
   multimedia/phonon and multimedia/phonon-gstreamer
   AUTHOR: kde@FreeBSD.org
 
-  KDE 4.4.3 requires newer phonon than shipped with Qt 4.6.2.
-  By defaul Qt4 now uses separated phonon package
+  WITH_QT_PHONON global knob has been introduced to allow choice
+  between multimedia/qt4-phonon* ports (a bit outdated Phonon, which
+  is shipped with Qt4) and multimedia/phonon* ports. Since KDE SC 4.4
+  requires fresh Phonon, multimedia/phonon* are installed by default.
+  If you don't use KDE, you may set WITH_QT_PHONON=yes in /etc/make.conf
+  and continue to use Qt4 Phonon ports.
+
+  If you want to use KDE SC 4.4 (or if you want the latest Phonon),
+  do not define WITH_QT_PHONON, delete multimedia/qt4-phonon* ports
+  and install multimedia/phonon*:
 
   If you use portmaster:
 
@@ -51,13 +58,6 @@ you update your ports collection, before attempting any port upgrades.
 
   portupgrade -f -o multimedia/qt4-phonon multimedia/phonon
   portupgrade -f -o multimedia/qt4-phonon-gst multimedia/phonon-gstreamer
-
-20100511:
-  AFFECTS: users of unixODBC and Qt4
-  AUTHOR: kde@FreeBSD.org
-
-  databases/qt4-odbc-plugin is now required libiodbc as ODBC provider instead of unixODBC
-  It needs to get a virtuoso/iodbc backends for nepomuk (desktop search system)
 
 201005010:
   AFFECTS: users of security/gnome-keyring
