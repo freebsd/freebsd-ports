@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	urlgrabber
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.9.1
+PORTREVISION=	0
 CATEGORIES=	www python
-MASTER_SITES=	http://linux.duke.edu/projects/urlgrabber/download/ \
+MASTER_SITES=	http://urlgrabber.baseurl.org/download/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A high-level cross-protocol url-grabber
+
+BUILD_DEPENDS=	${PKGNAMEPREFIX}curl>=7.19.0_1:${PORTSDIR}/ftp/py-curl
+RUN_DEPENDS=	${PKGNAMEPREFIX}curl>=7.19.0_1:${PORTSDIR}/ftp/py-curl
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
