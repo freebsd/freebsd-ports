@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	digikam
-DISTVERSION=	1.1.0
-PORTREVISION=	2
+DISTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
@@ -20,7 +19,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.6:${PORTSDIR}/graphics/png \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		lqr-1.3:${PORTSDIR}/graphics/liblqr-1 \
-		kipi.6:${PORTSDIR}/graphics/kdegraphics4
+		kipi.7:${PORTSDIR}/graphics/kdegraphics4
 
 LATEST_LINK=	${PORTNAME}-kde4
 
@@ -43,7 +42,7 @@ OPTIONS=	GPHOTO2 "Compile with gphoto2 support" on \
 		MARBLE "Geolocation support (requires misc/kdeedu4)" off \
 		PIMLIBS "Address book support" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_GPHOTO2)
 CMAKE_ARGS+=	-DENABLE_GPHOTO2:BOOL=OFF
@@ -75,4 +74,4 @@ post-patch:
 	${GREP} -H -r "#include <q" ${WRKSRC} | ${CUT} -d: -f1 | uniq | \
 		${XARGS} ${REINPLACE_CMD} -f ${FILESDIR}/qt3to4headers.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
