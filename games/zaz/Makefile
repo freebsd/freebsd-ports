@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zaz
-PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTVERSION=	0.7.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -19,6 +18,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ftgl.2:${PORTSDIR}/graphics/ftgl
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image
 USE_GL=		gl glu
