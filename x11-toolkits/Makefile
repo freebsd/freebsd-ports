@@ -7,6 +7,7 @@
     SUBDIR += SoXt
     SUBDIR += Xaw3d
     SUBDIR += XawPlus
+    SUBDIR += attica
     SUBDIR += bakery
     SUBDIR += blt
     SUBDIR += bwidget
