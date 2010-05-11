@@ -28,7 +28,7 @@ USE_GNOME=	gtk20
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-*
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-*
 .endif
 
 post-extract:
