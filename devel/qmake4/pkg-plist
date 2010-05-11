@@ -72,6 +72,8 @@ share/qt4/mkspecs/features/staticlib.prf
 share/qt4/mkspecs/features/symbian/application_icon.prf
 share/qt4/mkspecs/features/symbian/armcc_warnings.prf
 share/qt4/mkspecs/features/symbian/data_caging_paths.prf
+share/qt4/mkspecs/features/symbian/def_files.prf
+share/qt4/mkspecs/features/symbian/def_files_disabled.prf
 share/qt4/mkspecs/features/symbian/default_post.prf
 share/qt4/mkspecs/features/symbian/default_pre.prf
 share/qt4/mkspecs/features/symbian/epocallowdlldata.prf

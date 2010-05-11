@@ -7,7 +7,6 @@
 
 PORTNAME=	phonon
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	multimedia
 PKGNAMEPREFIX=	qt4-
 
@@ -49,7 +48,7 @@ EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_KDE_PHONON)
+.if !defined(WITH_QT_PHONON)
 IGNORE=		conflicts with multimedia/phonon. You have defined WITH_KDE_PHONON to override Qt4 phonon
 .endif
 

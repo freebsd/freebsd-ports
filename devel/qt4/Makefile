@@ -7,7 +7,6 @@
 
 PORTNAME=	qt4
 PORTVERSION=	${QT4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -32,7 +31,7 @@ QT_COMPONENTS=	accessible assistant assistant-adp assistantclient \
 
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_NLS)
 QT_COMPONENTS+=	l10n
@@ -69,4 +68,4 @@ do-patch:	#empty
 do-install:	#empty
 	${DO_NADA}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

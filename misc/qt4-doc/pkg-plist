@@ -263,6 +263,8 @@
 %%DOCSDIR%%/html/demos-embedded-anomaly-src-main-cpp.html
 %%DOCSDIR%%/html/demos-embedded-anomaly-src-titlebar-cpp.html
 %%DOCSDIR%%/html/demos-embedded-anomaly-src-titlebar-h.html
+%%DOCSDIR%%/html/demos-embedded-anomaly-src-webview-cpp.html
+%%DOCSDIR%%/html/demos-embedded-anomaly-src-webview-h.html
 %%DOCSDIR%%/html/demos-embedded-anomaly-src-zoomstrip-cpp.html
 %%DOCSDIR%%/html/demos-embedded-anomaly-src-zoomstrip-h.html
 %%DOCSDIR%%/html/demos-embedded-anomaly.html
@@ -300,6 +302,7 @@
 %%DOCSDIR%%/html/demos-embedded-flightinfo-flightinfo-qrc.html
 %%DOCSDIR%%/html/demos-embedded-flightinfo-form-ui.html
 %%DOCSDIR%%/html/demos-embedded-flightinfo.html
+%%DOCSDIR%%/html/demos-embedded-fluidlauncher-backup-registration-xml.html
 %%DOCSDIR%%/html/demos-embedded-fluidlauncher-config-s60-config-xml.html
 %%DOCSDIR%%/html/demos-embedded-fluidlauncher-config-wince-config-xml.html
 %%DOCSDIR%%/html/demos-embedded-fluidlauncher-config-xml.html
@@ -823,6 +826,9 @@
 %%DOCSDIR%%/html/gestures-imagegestures.html
 %%DOCSDIR%%/html/gestures-overview.html
 %%DOCSDIR%%/html/gpl.html
+%%DOCSDIR%%/html/graphicsview-anchorlayout-anchorlayout-pro.html
+%%DOCSDIR%%/html/graphicsview-anchorlayout-main-cpp.html
+%%DOCSDIR%%/html/graphicsview-anchorlayout.html
 %%DOCSDIR%%/html/graphicsview-api.html
 %%DOCSDIR%%/html/graphicsview-basicgraphicslayouts-basicgraphicslayouts-pro.html
 %%DOCSDIR%%/html/graphicsview-basicgraphicslayouts-basicgraphicslayouts-qrc.html
@@ -886,6 +892,13 @@
 %%DOCSDIR%%/html/graphicsview-elasticnodes-node-cpp.html
 %%DOCSDIR%%/html/graphicsview-elasticnodes-node-h.html
 %%DOCSDIR%%/html/graphicsview-elasticnodes.html
+%%DOCSDIR%%/html/graphicsview-flowlayout-flowlayout-cpp.html
+%%DOCSDIR%%/html/graphicsview-flowlayout-flowlayout-h.html
+%%DOCSDIR%%/html/graphicsview-flowlayout-flowlayout-pro.html
+%%DOCSDIR%%/html/graphicsview-flowlayout-main-cpp.html
+%%DOCSDIR%%/html/graphicsview-flowlayout-window-cpp.html
+%%DOCSDIR%%/html/graphicsview-flowlayout-window-h.html
+%%DOCSDIR%%/html/graphicsview-flowlayout.html
 %%DOCSDIR%%/html/graphicsview-padnavigator-backside-ui.html
 %%DOCSDIR%%/html/graphicsview-padnavigator-images-artsfftscope-png.html
 %%DOCSDIR%%/html/graphicsview-padnavigator-images-kontact-contacts-png.html
@@ -927,6 +940,14 @@
 %%DOCSDIR%%/html/graphicsview-portedcanvas-portedcanvas-qrc.html
 %%DOCSDIR%%/html/graphicsview-portedcanvas.html
 %%DOCSDIR%%/html/graphicsview-porting.html
+%%DOCSDIR%%/html/graphicsview-simpleanchorlayout-main-cpp.html
+%%DOCSDIR%%/html/graphicsview-simpleanchorlayout-simpleanchorlayout-pro.html
+%%DOCSDIR%%/html/graphicsview-simpleanchorlayout.html
+%%DOCSDIR%%/html/graphicsview-weatheranchorlayout-images-weather-few-clouds-png.html
+%%DOCSDIR%%/html/graphicsview-weatheranchorlayout-main-cpp.html
+%%DOCSDIR%%/html/graphicsview-weatheranchorlayout-weatheranchorlayout-pro.html
+%%DOCSDIR%%/html/graphicsview-weatheranchorlayout-weatheranchorlayout-qrc.html
+%%DOCSDIR%%/html/graphicsview-weatheranchorlayout.html
 %%DOCSDIR%%/html/graphicsview.html
 %%DOCSDIR%%/html/groups.html
 %%DOCSDIR%%/html/gui-framework-edition-classes.html
@@ -2225,6 +2246,7 @@
 %%DOCSDIR%%/html/images/used-in-examples/graphicsview/padnavigator/images/kopeteavailable.png
 %%DOCSDIR%%/html/images/used-in-examples/graphicsview/padnavigator/images/metacontact_online.png
 %%DOCSDIR%%/html/images/used-in-examples/graphicsview/padnavigator/images/minitools.png
+%%DOCSDIR%%/html/images/used-in-examples/graphicsview/weatheranchorlayout/images/weather-few-clouds.png
 %%DOCSDIR%%/html/images/used-in-examples/itemviews/pixelator/images/qt.png
 %%DOCSDIR%%/html/images/used-in-examples/mainwindows/application/images/copy.png
 %%DOCSDIR%%/html/images/used-in-examples/mainwindows/application/images/cut.png
@@ -2802,6 +2824,16 @@
 %%DOCSDIR%%/html/network-broadcastsender-sender-cpp.html
 %%DOCSDIR%%/html/network-broadcastsender-sender-h.html
 %%DOCSDIR%%/html/network-broadcastsender.html
+%%DOCSDIR%%/html/network-download-download-pro.html
+%%DOCSDIR%%/html/network-download-main-cpp.html
+%%DOCSDIR%%/html/network-download.html
+%%DOCSDIR%%/html/network-downloadmanager-downloadmanager-cpp.html
+%%DOCSDIR%%/html/network-downloadmanager-downloadmanager-h.html
+%%DOCSDIR%%/html/network-downloadmanager-downloadmanager-pro.html
+%%DOCSDIR%%/html/network-downloadmanager-main-cpp.html
+%%DOCSDIR%%/html/network-downloadmanager-textprogressbar-cpp.html
+%%DOCSDIR%%/html/network-downloadmanager-textprogressbar-h.html
+%%DOCSDIR%%/html/network-downloadmanager.html
 %%DOCSDIR%%/html/network-fortuneclient-client-cpp.html
 %%DOCSDIR%%/html/network-fortuneclient-client-h.html
 %%DOCSDIR%%/html/network-fortuneclient-fortuneclient-pro.html
@@ -5646,6 +5678,20 @@
 %%DOCSDIR%%/html/script-helloscript-helloscript-qrc.html
 %%DOCSDIR%%/html/script-helloscript-main-cpp.html
 %%DOCSDIR%%/html/script-helloscript.html
+%%DOCSDIR%%/html/script-marshal-main-cpp.html
+%%DOCSDIR%%/html/script-marshal-marshal-pro.html
+%%DOCSDIR%%/html/script-marshal.html
+%%DOCSDIR%%/html/script-qscript-main-cpp.html
+%%DOCSDIR%%/html/script-qscript-qscript-pro.html
+%%DOCSDIR%%/html/script-qscript.html
+%%DOCSDIR%%/html/script-qsdbg-example-js.html
+%%DOCSDIR%%/html/script-qsdbg-main-cpp.html
+%%DOCSDIR%%/html/script-qsdbg-qsdbg-pro.html
+%%DOCSDIR%%/html/script-qsdbg-scriptbreakpointmanager-cpp.html
+%%DOCSDIR%%/html/script-qsdbg-scriptbreakpointmanager-h.html
+%%DOCSDIR%%/html/script-qsdbg-scriptdebugger-cpp.html
+%%DOCSDIR%%/html/script-qsdbg-scriptdebugger-h.html
+%%DOCSDIR%%/html/script-qsdbg.html
 %%DOCSDIR%%/html/script-qstetrix-main-cpp.html
 %%DOCSDIR%%/html/script-qstetrix-qstetrix-pro.html
 %%DOCSDIR%%/html/script-qstetrix-tetrix-qrc.html
@@ -6062,6 +6108,11 @@
 %%DOCSDIR%%/html/webkit-formextractor-mainwindow-cpp.html
 %%DOCSDIR%%/html/webkit-formextractor-mainwindow-h.html
 %%DOCSDIR%%/html/webkit-formextractor.html
+%%DOCSDIR%%/html/webkit-framecapture-framecapture-cpp.html
+%%DOCSDIR%%/html/webkit-framecapture-framecapture-h.html
+%%DOCSDIR%%/html/webkit-framecapture-framecapture-pro.html
+%%DOCSDIR%%/html/webkit-framecapture-main-cpp.html
+%%DOCSDIR%%/html/webkit-framecapture.html
 %%DOCSDIR%%/html/webkit-googlechat-form-ui.html
 %%DOCSDIR%%/html/webkit-googlechat-googlechat-cpp.html
 %%DOCSDIR%%/html/webkit-googlechat-googlechat-h.html
@@ -6182,6 +6233,11 @@
 %%DOCSDIR%%/html/widgets-sliders-window-cpp.html
 %%DOCSDIR%%/html/widgets-sliders-window-h.html
 %%DOCSDIR%%/html/widgets-sliders.html
+%%DOCSDIR%%/html/widgets-softkeys-main-cpp.html
+%%DOCSDIR%%/html/widgets-softkeys-softkeys-cpp.html
+%%DOCSDIR%%/html/widgets-softkeys-softkeys-h.html
+%%DOCSDIR%%/html/widgets-softkeys-softkeys-pro.html
+%%DOCSDIR%%/html/widgets-softkeys.html
 %%DOCSDIR%%/html/widgets-spinboxes-main-cpp.html
 %%DOCSDIR%%/html/widgets-spinboxes-spinboxes-pro.html
 %%DOCSDIR%%/html/widgets-spinboxes-window-cpp.html
@@ -6269,6 +6325,15 @@
 %%DOCSDIR%%/html/widgets-tooltips-tooltips-qrc.html
 %%DOCSDIR%%/html/widgets-tooltips.html
 %%DOCSDIR%%/html/widgets-tutorial.html
+%%DOCSDIR%%/html/widgets-validators-ledwidget-cpp.html
+%%DOCSDIR%%/html/widgets-validators-ledwidget-h.html
+%%DOCSDIR%%/html/widgets-validators-localeselector-cpp.html
+%%DOCSDIR%%/html/widgets-validators-localeselector-h.html
+%%DOCSDIR%%/html/widgets-validators-main-cpp.html
+%%DOCSDIR%%/html/widgets-validators-validators-pro.html
+%%DOCSDIR%%/html/widgets-validators-validators-qrc.html
+%%DOCSDIR%%/html/widgets-validators-validators-ui.html
+%%DOCSDIR%%/html/widgets-validators.html
 %%DOCSDIR%%/html/widgets-wiggly-dialog-cpp.html
 %%DOCSDIR%%/html/widgets-wiggly-dialog-h.html
 %%DOCSDIR%%/html/widgets-wiggly-main-cpp.html
@@ -6444,6 +6509,8 @@
 @dirrm %%DOCSDIR%%/html/images/used-in-examples/itemviews/pixelator/images
 @dirrm %%DOCSDIR%%/html/images/used-in-examples/itemviews/pixelator
 @dirrm %%DOCSDIR%%/html/images/used-in-examples/itemviews
+@dirrm %%DOCSDIR%%/html/images/used-in-examples/graphicsview/weatheranchorlayout/images
+@dirrm %%DOCSDIR%%/html/images/used-in-examples/graphicsview/weatheranchorlayout
 @dirrm %%DOCSDIR%%/html/images/used-in-examples/graphicsview/padnavigator/images
 @dirrm %%DOCSDIR%%/html/images/used-in-examples/graphicsview/padnavigator
 @dirrm %%DOCSDIR%%/html/images/used-in-examples/graphicsview/dragdroprobot/images
