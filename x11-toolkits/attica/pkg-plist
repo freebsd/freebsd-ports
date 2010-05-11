@@ -1,0 +1,27 @@
+include/attica/accountbalance.h
+include/attica/activity.h
+include/attica/atticabasejob.h
+include/attica/atticaclient_export.h
+include/attica/category.h
+include/attica/content.h
+include/attica/downloaddescription.h
+include/attica/downloaditem.h
+include/attica/event.h
+include/attica/folder.h
+include/attica/getjob.h
+include/attica/itemjob.h
+include/attica/knowledgebaseentry.h
+include/attica/listjob.h
+include/attica/message.h
+include/attica/metadata.h
+include/attica/person.h
+include/attica/platformdependent.h
+include/attica/postjob.h
+include/attica/provider.h
+include/attica/providermanager.h
+include/attica/version.h
+lib/libattica.so
+lib/libattica.so.0
+lib/libattica.so.0.1.2
+libdata/pkgconfig/libattica.pc
+@dirrmtry include/attica
