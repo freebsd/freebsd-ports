@@ -24,7 +24,7 @@ BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
 # Get gcc version suffix without the dot in USE_GCC
 CSUFF=		${_USE_GCC:S/.//}
 
-USE_GCC=	4.5
+USE_GCC=	4.5+
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gcc${CSUFF}
