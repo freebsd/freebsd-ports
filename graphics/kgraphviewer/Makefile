@@ -7,7 +7,6 @@
 
 PORTNAME=	kgraphviewer
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
-PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
@@ -27,6 +26,6 @@ USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 APP_VER=	2.0.2
-EXTRA_VER=	4.3.1
+EXTRA_VER=	4.4.0
 
 .include <bsd.port.mk>
