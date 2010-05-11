@@ -39,6 +39,10 @@ _REQUIRE=	LOGIN
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+CMAKE_USE_PTHREAD=	yes
+.endif
+
 .if !defined(WITH_DB4) || defined(WITHOUT_DB4)
 CMAKE_ARGS+=	-DWITHOUT_DB4=TRUE
 .else
