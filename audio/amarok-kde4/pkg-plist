@@ -37,6 +37,9 @@ lib/kde4/kcm_amarok_service_ampache.so
 lib/kde4/kcm_amarok_service_lastfm.so
 lib/kde4/kcm_amarok_service_magnatunestore.so
 %%LOUDMOUTH%%lib/kde4/kcm_amarok_service_mp3tunes.so
+lib/libamarok-sqlcollection.so
+lib/libamarok-sqlcollection.so.1
+lib/libamarok-sqlcollection.so.1.0.0
 lib/libamaroklib.so
 lib/libamaroklib.so.1
 lib/libamaroklib.so.1.0.0
@@ -490,11 +493,13 @@ share/kde4/services/amarok_service_magnatunestore_config.desktop
 %%LOUDMOUTH%%share/kde4/services/amarok_service_mp3tunes.desktop
 %%LOUDMOUTH%%share/kde4/services/amarok_service_mp3tunes_config.desktop
 share/kde4/services/amarok_service_opmldirectory.desktop
+share/kde4/services/amarokitpc.protocol
 share/kde4/services/amaroklastfm.protocol
 share/kde4/servicetypes/amarok_codecinstall.desktop
 share/kde4/servicetypes/amarok_context_applet.desktop
 share/kde4/servicetypes/amarok_data_engine.desktop
 share/kde4/servicetypes/amarok_plugin.desktop
+share/locale/af/LC_MESSAGES/amarok.mo
 share/locale/bg/LC_MESSAGES/amarok.mo
 share/locale/bg/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/bg/LC_MESSAGES/amarokcollectionscanner_qt.mo
@@ -503,6 +508,10 @@ share/locale/ca/LC_MESSAGES/amarok.mo
 share/locale/ca/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/ca/LC_MESSAGES/amarokcollectionscanner_qt.mo
 share/locale/ca/LC_MESSAGES/amarokpkg.mo
+share/locale/ca@valencia/LC_MESSAGES/amarok.mo
+share/locale/ca@valencia/LC_MESSAGES/amarok_scriptengine_qscript.mo
+share/locale/ca@valencia/LC_MESSAGES/amarokcollectionscanner_qt.mo
+share/locale/ca@valencia/LC_MESSAGES/amarokpkg.mo
 share/locale/cs/LC_MESSAGES/amarok.mo
 share/locale/cs/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/cs/LC_MESSAGES/amarokcollectionscanner_qt.mo
@@ -541,10 +550,6 @@ share/locale/it/LC_MESSAGES/amarok.mo
 share/locale/it/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/it/LC_MESSAGES/amarokcollectionscanner_qt.mo
 share/locale/it/LC_MESSAGES/amarokpkg.mo
-share/locale/km/LC_MESSAGES/amarok.mo
-share/locale/km/LC_MESSAGES/amarok_scriptengine_qscript.mo
-share/locale/km/LC_MESSAGES/amarokcollectionscanner_qt.mo
-share/locale/km/LC_MESSAGES/amarokpkg.mo
 share/locale/lv/LC_MESSAGES/amarok.mo
 share/locale/lv/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/lv/LC_MESSAGES/amarokcollectionscanner_qt.mo
@@ -576,10 +581,18 @@ share/locale/pt_BR/LC_MESSAGES/amarok.mo
 share/locale/pt_BR/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/pt_BR/LC_MESSAGES/amarokcollectionscanner_qt.mo
 share/locale/pt_BR/LC_MESSAGES/amarokpkg.mo
+share/locale/ro/LC_MESSAGES/amarok.mo
+share/locale/ro/LC_MESSAGES/amarok_scriptengine_qscript.mo
+share/locale/ro/LC_MESSAGES/amarokcollectionscanner_qt.mo
+share/locale/ro/LC_MESSAGES/amarokpkg.mo
 share/locale/ru/LC_MESSAGES/amarok.mo
 share/locale/ru/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/ru/LC_MESSAGES/amarokcollectionscanner_qt.mo
 share/locale/ru/LC_MESSAGES/amarokpkg.mo
+share/locale/sk/LC_MESSAGES/amarok.mo
+share/locale/sk/LC_MESSAGES/amarok_scriptengine_qscript.mo
+share/locale/sk/LC_MESSAGES/amarokcollectionscanner_qt.mo
+share/locale/sk/LC_MESSAGES/amarokpkg.mo
 share/locale/sl/LC_MESSAGES/amarok.mo
 share/locale/sl/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/sl/LC_MESSAGES/amarokcollectionscanner_qt.mo
@@ -588,11 +601,17 @@ share/locale/sr/LC_MESSAGES/amarok.mo
 share/locale/sr/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/sr/LC_MESSAGES/amarokcollectionscanner_qt.mo
 share/locale/sr/LC_MESSAGES/amarokpkg.mo
+share/locale/sr@ijekavian/LC_MESSAGES/amarok.mo
+share/locale/sr@ijekavian/LC_MESSAGES/amarok_scriptengine_qscript.mo
+share/locale/sr@ijekavian/LC_MESSAGES/amarokcollectionscanner_qt.mo
+share/locale/sr@ijekavian/LC_MESSAGES/amarokpkg.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/amarokcollectionscanner_qt.mo
 share/locale/sr@latin/LC_MESSAGES/amarokcollectionscanner_qt.mo
 share/locale/sv/LC_MESSAGES/amarok.mo
 share/locale/sv/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/sv/LC_MESSAGES/amarokcollectionscanner_qt.mo
 share/locale/sv/LC_MESSAGES/amarokpkg.mo
+share/locale/th/LC_MESSAGES/amarok.mo
 share/locale/tr/LC_MESSAGES/amarok.mo
 share/locale/tr/LC_MESSAGES/amarok_scriptengine_qscript.mo
 share/locale/tr/LC_MESSAGES/amarokcollectionscanner_qt.mo
@@ -609,18 +628,16 @@ share/locale/zh_CN/LC_MESSAGES/amarokcollectionscanner_qt.mo
 share/locale/zh_CN/LC_MESSAGES/amarokpkg.mo
 @dirrmtry share/locale/x-test/LC_MESSAGES
 @dirrmtry share/locale/x-test
-@dirrmtry share/locale/wa/LC_MESSAGES
-@dirrmtry share/locale/wa
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/sr@ijekavian/LC_MESSAGES
+@dirrmtry share/locale/sr@ijekavian
 @dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/locale/nds
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/en_GB/LC_MESSAGES
-@dirrmtry share/locale/en_GB
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale
 @dirrmtry share/dbus-1/interfaces
 @dirrmtry share/apps/desktoptheme/default/widgets

@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	2.2.2
-PORTREVISION=	3
+PORTVERSION=	2.3.0
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -42,11 +41,7 @@ OPTIONS=	GPOD "iPod support" on \
 		MTP "MTP device support" on \
 		LOUDMOUTH "Loudmouth support" on
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-CMAKE_USE_PTHREAD=	yes
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GPOD)
 LIB_DEPENDS+=	gpod.5:${PORTSDIR}/audio/libgpod
@@ -72,6 +67,10 @@ CMAKE_ARGS+=	-DWITH_Loudmouth:BOOL=Off
 PLIST_SUB+=	LOUDMOUTH="@comment "
 .endif
 
+.if ${OSVERSION} < 700000
+CMAKE_USE_PTHREAD=	yes
+.endif
+
 post-extract:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/modules/FindMySQLAmarok.cmake
@@ -80,4 +79,4 @@ post-extract:
 		${WRKSRC}/cmake/modules/FindLoudmouth.cmake \
 		${WRKSRC}/cmake/modules/FindGdk.cmake
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
