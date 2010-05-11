@@ -1,15 +1,11 @@
---- configure.orig	2007-09-22 09:28:35.000000000 +0200
-+++ configure	2007-09-22 09:29:34.000000000 +0200
-@@ -6676,9 +6676,9 @@
- 	        ;;
- 	esac
-     else
--	if test ! -f "${TCL_SRC_DIR}/generic/tclInt.h" ; then
--	    { { echo "$as_me:$LINENO: error: Cannot find private header tclInt.h in ${TCL_SRC_DIR}" >&5
--echo "$as_me: error: Cannot find private header tclInt.h in ${TCL_SRC_DIR}" >&2;}
-+	if test ! -f "${TCL_INCLUDEDIR}/generic/tclInt.h" ; then
-+	    { { echo "$as_me:$LINENO: error: Cannot find private header tclInt.h in ${TCL_INCLUDEDIR}" >&5
-+echo "$as_me: error: Cannot find private header tclInt.h in ${TCL_INCLUDEDIR}" >&2;}
+--- configure.orig	2010-03-06 11:14:38.000000000 +0100
++++ configure	2010-05-11 10:30:25.126687046 +0200
+@@ -7341,7 +7342,7 @@
+ 	    esac
+ 	    result="Using ${TCL_INCLUDES}"
+ 	else
+-	    if test ! -f "${TCL_SRC_DIR}/generic/tclInt.h" ; then
++	    if test ! -f "${TCL_INCLUDEDIR}/generic/tclInt.h" ; then
+ 		{ { echo "$as_me:$LINENO: error: Cannot find private header tclInt.h in ${TCL_SRC_DIR}" >&5
+ echo "$as_me: error: Cannot find private header tclInt.h in ${TCL_SRC_DIR}" >&2;}
     { (exit 1); exit 1; }; }
- 	fi
-     fi
