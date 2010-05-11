@@ -1,6 +1,8 @@
 bin/kcoloredit
 share/applications/kde4/kcoloredit.desktop
 share/apps/kcoloredit/kcoloreditui.rc
+share/apps/kcoloredit/pics/controls-input.png
+share/apps/kcoloredit/pics/text-input.png
 share/doc/HTML/da/kcoloredit/common
 share/doc/HTML/da/kcoloredit/index.cache.bz2
 share/doc/HTML/da/kcoloredit/index.docbook
@@ -45,6 +47,7 @@ share/locale/be/LC_MESSAGES/kcoloredit.mo
 share/locale/bg/LC_MESSAGES/kcoloredit.mo
 share/locale/br/LC_MESSAGES/kcoloredit.mo
 share/locale/ca/LC_MESSAGES/kcoloredit.mo
+share/locale/ca@valencia/LC_MESSAGES/kcoloredit.mo
 share/locale/cs/LC_MESSAGES/kcoloredit.mo
 share/locale/cy/LC_MESSAGES/kcoloredit.mo
 share/locale/da/LC_MESSAGES/kcoloredit.mo
@@ -101,16 +104,6 @@ share/locale/xh/LC_MESSAGES/kcoloredit.mo
 share/locale/zh_CN/LC_MESSAGES/kcoloredit.mo
 share/locale/zh_HK/LC_MESSAGES/kcoloredit.mo
 share/locale/zh_TW/LC_MESSAGES/kcoloredit.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/se/LC_MESSAGES
-@dirrmtry share/locale/se
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/hne/LC_MESSAGES
-@dirrmtry share/locale/hne
 @dirrm share/doc/HTML/uk/kcoloredit
 @dirrm share/doc/HTML/sv/kcoloredit
 @dirrm share/doc/HTML/ru/kcoloredit
@@ -123,4 +116,5 @@ share/locale/zh_TW/LC_MESSAGES/kcoloredit.mo
 @dirrm share/doc/HTML/en/kcoloredit
 @dirrm share/doc/HTML/de/kcoloredit
 @dirrm share/doc/HTML/da/kcoloredit
+@dirrm share/apps/kcoloredit/pics
 @dirrm share/apps/kcoloredit

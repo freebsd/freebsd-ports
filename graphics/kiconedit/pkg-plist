@@ -79,6 +79,7 @@ share/locale/be/LC_MESSAGES/kiconedit.mo
 share/locale/bg/LC_MESSAGES/kiconedit.mo
 share/locale/br/LC_MESSAGES/kiconedit.mo
 share/locale/ca/LC_MESSAGES/kiconedit.mo
+share/locale/ca@valencia/LC_MESSAGES/kiconedit.mo
 share/locale/cs/LC_MESSAGES/kiconedit.mo
 share/locale/cy/LC_MESSAGES/kiconedit.mo
 share/locale/da/LC_MESSAGES/kiconedit.mo
@@ -136,22 +137,6 @@ share/locale/xh/LC_MESSAGES/kiconedit.mo
 share/locale/zh_CN/LC_MESSAGES/kiconedit.mo
 share/locale/zh_HK/LC_MESSAGES/kiconedit.mo
 share/locale/zh_TW/LC_MESSAGES/kiconedit.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/se/LC_MESSAGES
-@dirrmtry share/locale/se
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/hne/LC_MESSAGES
-@dirrmtry share/locale/hne
 @dirrm share/doc/HTML/uk/kiconedit
 @dirrm share/doc/HTML/sv/kiconedit
 @dirrm share/doc/HTML/ru/kiconedit

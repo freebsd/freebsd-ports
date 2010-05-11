@@ -52,6 +52,9 @@ share/doc/HTML/it/kgraphviewer/index.docbook
 share/doc/HTML/pt/kgraphviewer/common
 share/doc/HTML/pt/kgraphviewer/index.cache.bz2
 share/doc/HTML/pt/kgraphviewer/index.docbook
+share/doc/HTML/pt_BR/kgraphviewer/common
+share/doc/HTML/pt_BR/kgraphviewer/index.cache.bz2
+share/doc/HTML/pt_BR/kgraphviewer/index.docbook
 share/doc/HTML/sv/kgraphviewer/common
 share/doc/HTML/sv/kgraphviewer/index.cache.bz2
 share/doc/HTML/sv/kgraphviewer/index.docbook
@@ -78,11 +81,15 @@ share/icons/hicolor/32x32/apps/kgraphviewer.png
 share/kde4/services/kgraphviewer_part.desktop
 share/locale/ar/LC_MESSAGES/kgraphviewer.mo
 share/locale/be/LC_MESSAGES/kgraphviewer.mo
+share/locale/bg/LC_MESSAGES/kgraphviewer.mo
+share/locale/ca/LC_MESSAGES/kgraphviewer.mo
+share/locale/ca@valencia/LC_MESSAGES/kgraphviewer.mo
 share/locale/cs/LC_MESSAGES/kgraphviewer.mo
 share/locale/da/LC_MESSAGES/kgraphviewer.mo
 share/locale/de/LC_MESSAGES/kgraphviewer.mo
 share/locale/el/LC_MESSAGES/kgraphviewer.mo
 share/locale/en_GB/LC_MESSAGES/kgraphviewer.mo
+share/locale/eo/LC_MESSAGES/kgraphviewer.mo
 share/locale/es/LC_MESSAGES/kgraphviewer.mo
 share/locale/et/LC_MESSAGES/kgraphviewer.mo
 share/locale/fr/LC_MESSAGES/kgraphviewer.mo
@@ -90,6 +97,7 @@ share/locale/ga/LC_MESSAGES/kgraphviewer.mo
 share/locale/gl/LC_MESSAGES/kgraphviewer.mo
 share/locale/hi/LC_MESSAGES/kgraphviewer.mo
 share/locale/hne/LC_MESSAGES/kgraphviewer.mo
+share/locale/hr/LC_MESSAGES/kgraphviewer.mo
 share/locale/is/LC_MESSAGES/kgraphviewer.mo
 share/locale/it/LC_MESSAGES/kgraphviewer.mo
 share/locale/ja/LC_MESSAGES/kgraphviewer.mo
@@ -115,14 +123,9 @@ share/locale/uk/LC_MESSAGES/kgraphviewer.mo
 share/locale/vi/LC_MESSAGES/kgraphviewer.mo
 share/locale/zh_CN/LC_MESSAGES/kgraphviewer.mo
 share/locale/zh_TW/LC_MESSAGES/kgraphviewer.mo
-@dirrmtry share/locale/se/LC_MESSAGES
-@dirrmtry share/locale/se
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/hne/LC_MESSAGES
-@dirrmtry share/locale/hne
 @dirrm share/doc/HTML/uk/kgraphviewer
 @dirrm share/doc/HTML/sv/kgraphviewer
+@dirrm share/doc/HTML/pt_BR/kgraphviewer
 @dirrm share/doc/HTML/pt/kgraphviewer
 @dirrm share/doc/HTML/it/kgraphviewer
 @dirrm share/doc/HTML/et/kgraphviewer

@@ -17,9 +17,21 @@ share/doc/HTML/en/skanlite/scanning.png
 share/doc/HTML/en/skanlite/settings.png
 share/doc/HTML/en/skanlite/zoom-in.png
 share/doc/HTML/en/skanlite/zoom-to-fit.png
+share/doc/HTML/es/skanlite/common
+share/doc/HTML/es/skanlite/index.cache.bz2
+share/doc/HTML/es/skanlite/index.docbook
+share/doc/HTML/et/skanlite/common
+share/doc/HTML/et/skanlite/index.cache.bz2
+share/doc/HTML/et/skanlite/index.docbook
+share/doc/HTML/it/skanlite/common
+share/doc/HTML/it/skanlite/index.cache.bz2
+share/doc/HTML/it/skanlite/index.docbook
 share/doc/HTML/pt/skanlite/common
 share/doc/HTML/pt/skanlite/index.cache.bz2
 share/doc/HTML/pt/skanlite/index.docbook
+share/doc/HTML/pt_BR/skanlite/common
+share/doc/HTML/pt_BR/skanlite/index.cache.bz2
+share/doc/HTML/pt_BR/skanlite/index.docbook
 share/doc/HTML/sv/skanlite/common
 share/doc/HTML/sv/skanlite/index.cache.bz2
 share/doc/HTML/sv/skanlite/index.docbook
@@ -28,16 +40,19 @@ share/doc/HTML/uk/skanlite/index.cache.bz2
 share/doc/HTML/uk/skanlite/index.docbook
 share/locale/be/LC_MESSAGES/skanlite.mo
 share/locale/ca/LC_MESSAGES/skanlite.mo
+share/locale/ca@valencia/LC_MESSAGES/skanlite.mo
 share/locale/cs/LC_MESSAGES/skanlite.mo
 share/locale/da/LC_MESSAGES/skanlite.mo
 share/locale/de/LC_MESSAGES/skanlite.mo
 share/locale/el/LC_MESSAGES/skanlite.mo
 share/locale/en_GB/LC_MESSAGES/skanlite.mo
+share/locale/eo/LC_MESSAGES/skanlite.mo
 share/locale/es/LC_MESSAGES/skanlite.mo
 share/locale/et/LC_MESSAGES/skanlite.mo
 share/locale/fr/LC_MESSAGES/skanlite.mo
 share/locale/ga/LC_MESSAGES/skanlite.mo
 share/locale/gl/LC_MESSAGES/skanlite.mo
+share/locale/hr/LC_MESSAGES/skanlite.mo
 share/locale/is/LC_MESSAGES/skanlite.mo
 share/locale/it/LC_MESSAGES/skanlite.mo
 share/locale/ja/LC_MESSAGES/skanlite.mo
@@ -64,6 +79,10 @@ share/locale/zh_CN/LC_MESSAGES/skanlite.mo
 share/locale/zh_TW/LC_MESSAGES/skanlite.mo
 @dirrm share/doc/HTML/uk/skanlite
 @dirrm share/doc/HTML/sv/skanlite
+@dirrm share/doc/HTML/pt_BR/skanlite
 @dirrm share/doc/HTML/pt/skanlite
+@dirrm share/doc/HTML/it/skanlite
+@dirrm share/doc/HTML/et/skanlite
+@dirrm share/doc/HTML/es/skanlite
 @dirrm share/doc/HTML/en/skanlite
 @dirrm share/doc/HTML/de/skanlite
