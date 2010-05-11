@@ -1,4 +1,3 @@
-share/apps/koffice/autocorrect/de.xml
 share/doc/HTML/de/karbon/common
 share/doc/HTML/de/karbon/index.cache.bz2
 share/doc/HTML/de/karbon/index.docbook
@@ -73,97 +72,6 @@ share/doc/HTML/de/kpresenter/menus.docbook
 share/doc/HTML/de/kpresenter/options.docbook
 share/doc/HTML/de/kpresenter/screen.docbook
 share/doc/HTML/de/kpresenter/tutorial.docbook
-share/doc/HTML/de/krita/commands-dialogs.docbook
-share/doc/HTML/de/krita/commands-menus.docbook
-share/doc/HTML/de/krita/commands-palettes.docbook
-share/doc/HTML/de/krita/commands-toolbars.docbook
-share/doc/HTML/de/krita/commands.docbook
-share/doc/HTML/de/krita/common
-share/doc/HTML/de/krita/createdocument.png
-share/doc/HTML/de/krita/credits.docbook
-share/doc/HTML/de/krita/developers-plugins.docbook
-share/doc/HTML/de/krita/developers-scripting.docbook
-share/doc/HTML/de/krita/developers.docbook
-share/doc/HTML/de/krita/dialogs-addpalette.png
-share/doc/HTML/de/krita/dialogs-blur.png
-share/doc/HTML/de/krita/dialogs-brightnesscontrast.png
-share/doc/HTML/de/krita/dialogs-bumpmap.png
-share/doc/HTML/de/krita/dialogs-coloradjustment.png
-share/doc/HTML/de/krita/dialogs-colorrange.png
-share/doc/HTML/de/krita/dialogs-colortoalpha.png
-share/doc/HTML/de/krita/dialogs-colortransfer.png
-share/doc/HTML/de/krita/dialogs-convertimagetype.png
-share/doc/HTML/de/krita/dialogs-convertlayertype.png
-share/doc/HTML/de/krita/dialogs-customconvolution.png
-share/doc/HTML/de/krita/dialogs-documentinformation.png
-share/doc/HTML/de/krita/dialogs-dropshadow.png
-share/doc/HTML/de/krita/dialogs-emboss.png
-share/doc/HTML/de/krita/dialogs-filtersgallery.png
-share/doc/HTML/de/krita/dialogs-gaussiannoise.png
-share/doc/HTML/de/krita/dialogs-imageproperties.png
-share/doc/HTML/de/krita/dialogs-imagerestoration.png
-share/doc/HTML/de/krita/dialogs-imagesize.png
-share/doc/HTML/de/krita/dialogs-layerproperties.png
-share/doc/HTML/de/krita/dialogs-layersize.png
-share/doc/HTML/de/krita/dialogs-lenscorrection.png
-share/doc/HTML/de/krita/dialogs-newlayer.png
-share/doc/HTML/de/krita/dialogs-oilpaint.png
-share/doc/HTML/de/krita/dialogs-pixelize.png
-share/doc/HTML/de/krita/dialogs-raindrops.png
-share/doc/HTML/de/krita/dialogs-randomnoise.png
-share/doc/HTML/de/krita/dialogs-randompick.png
-share/doc/HTML/de/krita/dialogs-rotateimage.png
-share/doc/HTML/de/krita/dialogs-rotatelayer.png
-share/doc/HTML/de/krita/dialogs-separateimage.png
-share/doc/HTML/de/krita/dialogs-shearimage.png
-share/doc/HTML/de/krita/dialogs-shearlayer.png
-share/doc/HTML/de/krita/dialogs-smalltiles.png
-share/doc/HTML/de/krita/dialogs-sobel.png
-share/doc/HTML/de/krita/dialogs-substrate.png
-share/doc/HTML/de/krita/dialogs-unsharpmask.png
-share/doc/HTML/de/krita/dialogs-wave.png
-share/doc/HTML/de/krita/dialogs-waveletnoise.png
-share/doc/HTML/de/krita/faq.docbook
-share/doc/HTML/de/krita/index.cache.bz2
-share/doc/HTML/de/krita/index.docbook
-share/doc/HTML/de/krita/installation.docbook
-share/doc/HTML/de/krita/introduction.docbook
-share/doc/HTML/de/krita/mainscreen.png
-share/doc/HTML/de/krita/newimage.png
-share/doc/HTML/de/krita/palettes-controlbox-brush.png
-share/doc/HTML/de/krita/palettes-controlbox-colorpicker.png
-share/doc/HTML/de/krita/palettes-controlbox-contiguousfill.png
-share/doc/HTML/de/krita/palettes-controlbox-crop.png
-share/doc/HTML/de/krita/palettes-controlbox-duplicate.png
-share/doc/HTML/de/krita/palettes-controlbox-gradient.png
-share/doc/HTML/de/krita/palettes-controlbox-line.png
-share/doc/HTML/de/krita/palettes-controlbox-paintwithfilters.png
-share/doc/HTML/de/krita/palettes-controlbox-rectangle.png
-share/doc/HTML/de/krita/palettes-controlbox-select.png
-share/doc/HTML/de/krita/palettes-controlbox-selectcontiguous.png
-share/doc/HTML/de/krita/palettes-controlbox-selectmagnetic.png
-share/doc/HTML/de/krita/palettes-controlbox-star.png
-share/doc/HTML/de/krita/palettes-controlbox-text.png
-share/doc/HTML/de/krita/preferences-color.png
-share/doc/HTML/de/krita/preferences-display.png
-share/doc/HTML/de/krita/preferences-general.png
-share/doc/HTML/de/krita/preferences-grid.png
-share/doc/HTML/de/krita/preferences-performance.png
-share/doc/HTML/de/krita/preferences-sidebar.png
-share/doc/HTML/de/krita/preferences-tablet.png
-share/doc/HTML/de/krita/settings.docbook
-share/doc/HTML/de/krita/toolbar-brushesandstuff.png
-share/doc/HTML/de/krita/tutorial-quick-starts.docbook
-share/doc/HTML/de/krita/tutorial-select-layer.docbook
-share/doc/HTML/de/krita/tutorial-starting.docbook
-share/doc/HTML/de/krita/tutorial-tablet.docbook
-share/doc/HTML/de/krita/tutorial.docbook
-share/doc/HTML/de/krita/using-colorspaces.docbook
-share/doc/HTML/de/krita/using-filters.docbook
-share/doc/HTML/de/krita/using-images.docbook
-share/doc/HTML/de/krita/using-layers.docbook
-share/doc/HTML/de/krita/using-selections.docbook
-share/doc/HTML/de/krita/using-views.docbook
 share/doc/HTML/de/kspread/a11y.docbook
 share/doc/HTML/de/kspread/advanced.docbook
 share/doc/HTML/de/kspread/basics.docbook
@@ -228,12 +136,9 @@ share/locale/de/LC_MESSAGES/kword.mo
 share/locale/de/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/de/thesaurus
 @dirrm share/doc/HTML/de/kspread
-@dirrm share/doc/HTML/de/krita
 @dirrm share/doc/HTML/de/kpresenter
 @dirrm share/doc/HTML/de/kplato
 @dirrm share/doc/HTML/de/koffice
 @dirrm share/doc/HTML/de/kformula
 @dirrm share/doc/HTML/de/kchart
 @dirrm share/doc/HTML/de/karbon
-@dirrmtry share/apps/koffice/autocorrect
-@dirrmtry share/apps/koffice

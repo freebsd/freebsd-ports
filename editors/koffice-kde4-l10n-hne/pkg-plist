@@ -29,5 +29,3 @@ share/locale/hne/LC_MESSAGES/kspreadsolver.mo
 share/locale/hne/LC_MESSAGES/kthesaurus.mo
 share/locale/hne/LC_MESSAGES/kword.mo
 share/locale/hne/LC_MESSAGES/thesaurus_tool.mo
-@dirrmtry share/locale/hne/LC_MESSAGES
-@dirrmtry share/locale/hne

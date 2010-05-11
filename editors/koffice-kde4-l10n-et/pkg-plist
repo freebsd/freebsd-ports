@@ -29,33 +29,6 @@ share/doc/HTML/et/kpresenter/menus.docbook
 share/doc/HTML/et/kpresenter/options.docbook
 share/doc/HTML/et/kpresenter/screen.docbook
 share/doc/HTML/et/kpresenter/tutorial.docbook
-share/doc/HTML/et/krita/commands-dialogs.docbook
-share/doc/HTML/et/krita/commands-menus.docbook
-share/doc/HTML/et/krita/commands-palettes.docbook
-share/doc/HTML/et/krita/commands-toolbars.docbook
-share/doc/HTML/et/krita/commands.docbook
-share/doc/HTML/et/krita/common
-share/doc/HTML/et/krita/credits.docbook
-share/doc/HTML/et/krita/developers-plugins.docbook
-share/doc/HTML/et/krita/developers-scripting.docbook
-share/doc/HTML/et/krita/developers.docbook
-share/doc/HTML/et/krita/faq.docbook
-share/doc/HTML/et/krita/index.cache.bz2
-share/doc/HTML/et/krita/index.docbook
-share/doc/HTML/et/krita/installation.docbook
-share/doc/HTML/et/krita/introduction.docbook
-share/doc/HTML/et/krita/settings.docbook
-share/doc/HTML/et/krita/tutorial-quick-starts.docbook
-share/doc/HTML/et/krita/tutorial-select-layer.docbook
-share/doc/HTML/et/krita/tutorial-starting.docbook
-share/doc/HTML/et/krita/tutorial-tablet.docbook
-share/doc/HTML/et/krita/tutorial.docbook
-share/doc/HTML/et/krita/using-colorspaces.docbook
-share/doc/HTML/et/krita/using-filters.docbook
-share/doc/HTML/et/krita/using-images.docbook
-share/doc/HTML/et/krita/using-layers.docbook
-share/doc/HTML/et/krita/using-selections.docbook
-share/doc/HTML/et/krita/using-views.docbook
 share/doc/HTML/et/kspread/a11y.docbook
 share/doc/HTML/et/kspread/advanced.docbook
 share/doc/HTML/et/kspread/basics.docbook
@@ -74,45 +47,6 @@ share/doc/HTML/et/kspread/shortcut1.png
 share/doc/HTML/et/kspread/shortcut2.png
 share/doc/HTML/et/kspread/sort1.png
 share/doc/HTML/et/kspread/starting1.png
-share/doc/HTML/et/kword/a11y.docbook
-share/doc/HTML/et/kword/basics.docbook
-share/doc/HTML/et/kword/bookmarks.docbook
-share/doc/HTML/et/kword/chapnumb.docbook
-share/doc/HTML/et/kword/columns.docbook
-share/doc/HTML/et/kword/common
-share/doc/HTML/et/kword/doccomments.docbook
-share/doc/HTML/et/kword/doclinks.docbook
-share/doc/HTML/et/kword/docstruct.docbook
-share/doc/HTML/et/kword/docvariables.docbook
-share/doc/HTML/et/kword/editing.docbook
-share/doc/HTML/et/kword/expressions.docbook
-share/doc/HTML/et/kword/footendnotes.docbook
-share/doc/HTML/et/kword/formatchar.docbook
-share/doc/HTML/et/kword/formatframes.docbook
-share/doc/HTML/et/kword/formatpara.docbook
-share/doc/HTML/et/kword/formulas.docbook
-share/doc/HTML/et/kword/frames.docbook
-share/doc/HTML/et/kword/fundimentals.docbook
-share/doc/HTML/et/kword/graphics.docbook
-share/doc/HTML/et/kword/headerfooter.docbook
-share/doc/HTML/et/kword/index.cache.bz2
-share/doc/HTML/et/kword/index.docbook
-share/doc/HTML/et/kword/insertfile.docbook
-share/doc/HTML/et/kword/kparts.docbook
-share/doc/HTML/et/kword/lists.docbook
-share/doc/HTML/et/kword/mailmerge.docbook
-share/doc/HTML/et/kword/mbtb.docbook
-share/doc/HTML/et/kword/migrating.docbook
-share/doc/HTML/et/kword/opt.docbook
-share/doc/HTML/et/kword/pageformat.docbook
-share/doc/HTML/et/kword/storeprint.docbook
-share/doc/HTML/et/kword/styles.docbook
-share/doc/HTML/et/kword/table.docbook
-share/doc/HTML/et/kword/tabstops.docbook
-share/doc/HTML/et/kword/techinfo.docbook
-share/doc/HTML/et/kword/templatecreation.docbook
-share/doc/HTML/et/kword/toc.docbook
-share/doc/HTML/et/kword/tutorial.docbook
 share/doc/HTML/et/thesaurus/common
 share/doc/HTML/et/thesaurus/index.cache.bz2
 share/doc/HTML/et/thesaurus/index.docbook
@@ -160,9 +94,7 @@ share/locale/et/LC_MESSAGES/kthesaurus.mo
 share/locale/et/LC_MESSAGES/kword.mo
 share/locale/et/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/et/thesaurus
-@dirrm share/doc/HTML/et/kword
 @dirrm share/doc/HTML/et/kspread
-@dirrm share/doc/HTML/et/krita
 @dirrm share/doc/HTML/et/kpresenter
 @dirrm share/doc/HTML/et/kplato
 @dirrm share/doc/HTML/et/koffice

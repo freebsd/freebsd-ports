@@ -40,5 +40,3 @@ share/locale/el/LC_MESSAGES/kspreadsolver.mo
 share/locale/el/LC_MESSAGES/kthesaurus.mo
 share/locale/el/LC_MESSAGES/kword.mo
 share/locale/el/LC_MESSAGES/thesaurus_tool.mo
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el

@@ -1,6 +1,5 @@
-
---- krita/ui/kis_png_converter.cpp.orig	2009-11-20 22:45:35.000000000 +0200
-+++ krita/ui/kis_png_converter.cpp	2010-03-29 08:23:02.980338247 +0300
+--- ./krita/ui/kis_png_converter.cpp.orig	2009-11-20 22:45:35.000000000 +0200
++++ ./krita/ui/kis_png_converter.cpp	2010-03-29 08:23:02.980338247 +0300
 @@ -404,7 +404,7 @@
  
      png_byte signature[8];
