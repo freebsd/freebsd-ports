@@ -1,0 +1,4 @@
+Bddsolve is a BDD-based tool for solving satisfiability and reachability
+problems.  It uses the BDD package Buddy as a backend.
+
+WWW: http://www.win.tue.nl/~wieger/bddsolve/
