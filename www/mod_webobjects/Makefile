@@ -13,6 +13,8 @@ COMMENT=	WebObjects WebServer Adaptor for Apache
 
 MASTERDIR=	${.CURDIR}/../woadaptor
 
+BROKEN= source code is now in SVN and no-longer in CVS
+
 WITH_APACHE?=	"yes"
 WITHOUT_CGI=	"yes"
 WITHOUT_FASTCGI="yes"

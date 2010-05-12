@@ -14,6 +14,8 @@ DISTNAME=	woadaptor-${PORTVERSION}
 MAINTAINER?=	q@onthenet.com.au
 COMMENT?=	WebObjects WebServer Adaptor (Apache Module and CGI)
 
+BROKEN= source code is now in SVN and no-longer in CVS
+
 MAKE_JOBS_UNSAFE=	yes
 IGNOREFILES=	${DISTFILES}
 
