@@ -21,6 +21,8 @@ LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INFO=		assuan
+PLIST_FILES=	bin/libassuan-config include/assuan.h lib/libassuan-pth.a \
+		lib/libassuan.a share/aclocal/libassuan.m4
 
 CFLAGS+=	-I${LOCALBASE}/include/pth
 
