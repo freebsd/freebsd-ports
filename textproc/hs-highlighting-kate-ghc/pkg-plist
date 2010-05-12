@@ -1,78 +1,78 @@
 @comment $FreeBSD$
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HShighlighting-kate-%%HLKATE_VERSION%%.o
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Paths_highlighting_kate.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Common.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Definitions.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Format.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Ada.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Alert.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Asp.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Awk.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Bash.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Bibtex.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/C.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Cmake.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Coldfusion.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Commonlisp.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Cpp.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Css.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/D.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Djangotemplate.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Doxygen.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Dtd.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Eiffel.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Erlang.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Fortran.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Haskell.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Html.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Java.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Javadoc.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Javascript.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Json.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Latex.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Lex.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/LiterateHaskell.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Lua.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Makefile.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Matlab.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Mediawiki.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Modula3.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Nasm.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Objectivec.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Ocaml.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Pascal.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Perl.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Php.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Postscript.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Prolog.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Python.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Relaxngcompact.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Rhtml.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Ruby.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Scala.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Scheme.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Sgml.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Sql.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/SqlMysql.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/SqlPostgresql.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Tcl.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Texinfo.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Xml.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Xslt.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Yacc.hi
-%%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHShighlighting-kate-%%HLKATE_VERSION%%.a
-%%HLKATE_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Paths_highlighting_kate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Common.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Definitions.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Format.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Ada.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Alert.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Asp.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Awk.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Bash.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Bibtex.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/C.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Cmake.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Coldfusion.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Commonlisp.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Cpp.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Css.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/D.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Djangotemplate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Doxygen.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Dtd.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Eiffel.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Erlang.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Fortran.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Haskell.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Html.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Java.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Javadoc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Javascript.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Json.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Latex.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Lex.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/LiterateHaskell.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Lua.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Makefile.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Matlab.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Mediawiki.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Modula3.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Nasm.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Objectivec.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Ocaml.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Pascal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Perl.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Php.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Postscript.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Prolog.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Python.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Relaxngcompact.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Rhtml.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Ruby.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Scala.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Scheme.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Sgml.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Sql.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/SqlMysql.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/SqlPostgresql.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Tcl.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Texinfo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Xml.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Xslt.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Yacc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax
-@dirrm %%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate
-@dirrm %%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting
-@dirrm %%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%HLKATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HLKATE_LIBDIR_REL%%
-@exec /bin/sh %D/%%HLKATE_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister highlighting-kate
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

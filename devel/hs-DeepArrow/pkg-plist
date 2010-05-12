@@ -1,23 +1,23 @@
 @comment $FreeBSD$
-%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/DeepArrow.hi
-%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/DeepArrow/Examples.hi
-%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/DDeepArrow.hi
-%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/FunArr.hi
-%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSDeepArrow-%%DEEPARROW_VERSION%%.o
-%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Parens.hi
-%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/ToHs.hi
-%%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSDeepArrow-%%DEEPARROW_VERSION%%.a
-%%DEEPARROW_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/DeepArrow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/DeepArrow/Examples.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/DDeepArrow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/FunArr.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/Parens.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/ToHs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell
-@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
-@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/DeepArrow
-@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow
-@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
-@dirrm %%DEEPARROW_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%DEEPARROW_LIBDIR_REL%%
-@exec /bin/sh %D/%%DEEPARROW_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/DeepArrow
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister DeepArrow
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

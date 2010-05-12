@@ -1,16 +1,16 @@
 @comment $FreeBSD$
-%%HSSHA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Digest/Pure/SHA.hi
-%%HSSHA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSSHA-%%HSSHA_VERSION%%.o
-%%HSSHA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSSHA-%%HSSHA_VERSION%%.a
-%%HSSHA_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Digest/Pure/SHA.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HSSHA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Digest/Pure
-@dirrm %%HSSHA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Digest
-@dirrm %%HSSHA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%HSSHA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HSSHA_LIBDIR_REL%%
-@exec /bin/sh %D/%%HSSHA_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Digest/Pure
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Digest
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister SHA
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

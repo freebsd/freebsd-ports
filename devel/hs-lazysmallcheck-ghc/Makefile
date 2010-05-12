@@ -8,76 +8,15 @@
 PORTNAME=	lazysmallcheck
 PORTVERSION=	0.5
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
-PKGNAMEPREFIX=	hs-
 PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A library for demand-driven testing of Haskell programs
 
-BUILD_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	ghc>=6.10:${PORTSDIR}/lang/ghc
+CABAL_SETUP=	Setup.hs
 
-GHC_VERSION=		6.10.4
-LAZYSMALLCHECK_VERSION=	${PORTVERSION}
+PORTEXAMPLES=		*
+INSTALL_PORTEXAMPLES=	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 
-GHC_CMD=	${LOCALBASE}/bin/ghc
-SETUP_CMD=	./setup
-
-EXAMPLESDIR=	${PREFIX}/share/examples/${DISTNAME}
-DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
-LAZYSMALLCHECK_LIBDIR_REL=	lib/${DISTNAME}
-
-PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
-		LAZYSMALLCHECK_VERSION=${LAZYSMALLCHECK_VERSION} \
-		LAZYSMALLCHECK_LIBDIR_REL=${LAZYSMALLCHECK_LIBDIR_REL}
-
-.if defined(NOPORTDOCS)
-PLIST_SUB+=		NOPORTDOCS=""
-.else
-PLIST_SUB+=		NOPORTDOCS="@comment "
-.endif
-
-.if !defined(NOPORTDOCS)
-
-PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
-.if !empty(PORT_HADDOCK:M?0)
-BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
-.endif
-BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
-
-HSCOLOUR_VERSION=	1.15
-HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
-
-PORTDOCS=	*
-.endif
-
-PORTEXAMPLES=	*
-
-.SILENT:
-
-do-configure:
-	cd ${WRKSRC} && ${GHC_CMD} --make Setup.hs -o setup -package Cabal \
-		     && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX}
-
-do-build:
-	cd ${WRKSRC} && ${SETUP_CMD} build \
-		     && ${SETUP_CMD} register --gen-script
-
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${SETUP_CMD} haddock --hyperlink-source \
-					     --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
-.endif
-
-do-install:
-	cd ${WRKSRC} && ${SETUP_CMD} install \
-		     && ${INSTALL_SCRIPT} register.sh ${PREFIX}/${LAZYSMALLCHECK_LIBDIR_REL}/register.sh
-
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR} && cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
-.endif
-
-post-install:
-	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
-
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

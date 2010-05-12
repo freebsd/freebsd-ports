@@ -1,61 +1,61 @@
 @comment $FreeBSD$
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/AAlign.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/ACE.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/AlignData.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Blast.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/BlastData.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/BlastFlat.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/BlastXML.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Bowtie.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Matrices.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Multiple.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/QAlign.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/SAlign.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Soap.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Clustering.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3/Escape.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3/Feature.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3/FeatureHier.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3/FeatureHierSequences.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3/SGD.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/ContigLocation.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/LocMap.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/Location.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/OnSeq.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/Position.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/SeqLocMap.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/SeqLocation.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/Strand.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/Entropy.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/FastQ.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/Fasta.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/GOA.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/GeneOntology.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/HashWord.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/KEGG.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/Phd.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/SFF.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/SFF_name.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/SeqData.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/TwoBit.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Util.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Util/Parsex.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Util/TestBase.hi
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSbio-%%BIO_VERSION%%.o
-%%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSbio-%%BIO_VERSION%%.a
-%%BIO_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/AAlign.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/ACE.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/AlignData.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Blast.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/BlastData.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/BlastFlat.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/BlastXML.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Bowtie.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Matrices.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Multiple.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/QAlign.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/SAlign.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Soap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Clustering.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3/Escape.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3/Feature.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3/FeatureHier.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3/FeatureHierSequences.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3/SGD.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/ContigLocation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/LocMap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/Location.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/OnSeq.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/Position.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/SeqLocMap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/SeqLocation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/Strand.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/Entropy.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/FastQ.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/Fasta.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/GOA.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/GeneOntology.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/HashWord.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/KEGG.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/Phd.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/SFF.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/SFF_name.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/SeqData.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/TwoBit.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Util.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Util/Parsex.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Util/TestBase.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Util
-@dirrm %%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence
-@dirrm %%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location
-@dirrm %%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3
-@dirrm %%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment
-@dirrm %%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio
-@dirrm %%BIO_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%BIO_LIBDIR_REL%%
-@exec /bin/sh %D/%%BIO_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Util
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/GFF3
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister bio
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

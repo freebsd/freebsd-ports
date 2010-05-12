@@ -1,34 +1,31 @@
 @comment $FreeBSD$
 bin/HsColour
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HShscolour-%%HSCOLOUR_VERSION%%.o
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/ANSI.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Anchors.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/CSS.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Classify.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/ColourHighlight.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Colourise.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/General.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/HTML.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/InlineCSS.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/LaTeX.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/MIRC.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Options.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Output.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/TTY.hi
-%%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHShscolour-%%HSCOLOUR_VERSION%%.a
-%%HSCOLOUR_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/ANSI.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Anchors.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/CSS.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Classify.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/ColourHighlight.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Colourise.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/General.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/HTML.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/InlineCSS.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/LaTeX.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/MIRC.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Options.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/Output.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour/TTY.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%DOCSDIR%%/LICENCE-GPL
-%%DOCSDIR%%/README
-%%DATADIR%%/hscolour.css
-@dirrm %%DATADIR%%
 @dirrmtry %%DOCSDIR%%
-@dirrm %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour
-@dirrm %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell
-@dirrm %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
-@dirrm %%HSCOLOUR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HSCOLOUR_LIBDIR_REL%%
-@exec /bin/sh %%LOCALBASE%%/%%HSCOLOUR_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell/HsColour
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Haskell
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %%LOCALBASE%%/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %%LOCALBASE%%/bin/ghc-pkg unregister hscolour
+@unexec %%LOCALBASE%%/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

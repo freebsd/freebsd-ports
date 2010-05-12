@@ -1,14 +1,14 @@
 @comment $FreeBSD$
-%%GHC-PATHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/GHC/Paths.hi
-%%GHC-PATHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSghc-paths-%%GHC-PATHS_VERSION%%.o
-%%GHC-PATHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSghc-paths-%%GHC-PATHS_VERSION%%.a
-%%GHC-PATHS_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/GHC/Paths.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%DOCSDIR%%/LICENSE
 @dirrmtry %%DOCSDIR%%
-@dirrm %%GHC-PATHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/GHC
-@dirrm %%GHC-PATHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%GHC-PATHS_LIBDIR_REL%%
-@exec /bin/sh %D/%%GHC-PATHS_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/GHC
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister ghc-paths
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

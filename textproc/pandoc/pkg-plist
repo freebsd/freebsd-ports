@@ -1,46 +1,47 @@
+@comment $FreeBSD$
 bin/hsmarkdown
 bin/markdown2pdf
 bin/pandoc
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSpandoc-%%PANDOC_VERSION%%.o
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Paths_pandoc.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Blocks.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/CharacterReferences.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Definition.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Highlighting.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/LaTeXMathML.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/ODT.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers/HTML.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers/LaTeX.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers/Markdown.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers/RST.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers/TeXMath.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Shared.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Templates.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/ConTeXt.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/Docbook.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/HTML.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/LaTeX.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/Man.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/Markdown.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/MediaWiki.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/OpenDocument.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/RST.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/RTF.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/S5.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/Texinfo.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/XML.hi
-%%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSpandoc-%%PANDOC_VERSION%%.a
-%%PANDOC_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Paths_pandoc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Blocks.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/CharacterReferences.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Definition.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Highlighting.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/LaTeXMathML.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/ODT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers/HTML.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers/LaTeX.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers/Markdown.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers/RST.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers/TeXMath.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Shared.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Templates.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/ConTeXt.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/Docbook.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/HTML.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/LaTeX.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/Man.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/Markdown.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/MediaWiki.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/OpenDocument.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/RST.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/RTF.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/S5.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers/Texinfo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/XML.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYING
 %%NOPORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers
-@dirrm %%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers
-@dirrm %%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc
-@dirrm %%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%PANDOC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%PANDOC_LIBDIR_REL%%
-@exec /bin/sh %D/%%PANDOC_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Writers
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Readers
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister pandoc
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

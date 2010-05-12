@@ -9,85 +9,20 @@ PORTNAME=	xmonad
 PORTVERSION=	0.9.1
 PORTREVISION=	1
 CATEGORIES=	x11-wm haskell
-MASTER_SITES=	http://hackage.haskell.org/packages/archive/xmonad/${PORTVERSION}/
+PKGNAMEPREFIX=
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Xmonad is a minimalist and tiling window manager for X
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		hs-x11-ghc>=1.4.1:${PORTSDIR}/x11/hs-x11-ghc
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		hs-x11-ghc>=1.4.1:${PORTSDIR}/x11/hs-x11-ghc
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
-
+USE_HACKAGE=	X11>=1.5.0.0
 USE_XORG=	x11
 
-GHC_VERSION=	6.10.4
-XMONAD_VERSION=	${PORTVERSION}
+MAN1=		xmonad.1
+MAN1SRC=	man
 
-GHC_CMD=	${LOCALBASE}/bin/ghc
-SETUP_CMD=	./setup
+EXECUTABLE=	xmonad
 
-DATADIR=		${PREFIX}/share/${DISTNAME}
 PORTDATA=		*
 
-DOCSDIR=		${PREFIX}/share/doc/${DISTNAME}
-XMONAD_LIBDIR_REL=	lib/${DISTNAME}
-
-PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
-		XMONAD_VERSION=${XMONAD_VERSION} \
-		XMONAD_LIBDIR_REL=${XMONAD_LIBDIR_REL}
-
-MAN1=		xmonad.1
-
-.if defined(NOPORTDOCS)
-PLIST_SUB+=		NOPORTDOCS=""
-.else
-PLIST_SUB+=		NOPORTDOCS="@comment "
-.endif
-
-.if !defined(NOPORTDOCS)
-
-PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
-.if !empty(PORT_HADDOCK:M?0)
-BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
-.endif
-BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
-
-HSCOLOUR_VERSION=	1.15
-HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
-
-PORTDOCS=	*
-.endif
-
-.SILENT:
-
-do-configure:
-	cd ${WRKSRC} && ${GHC_CMD} --make Setup.lhs -o setup -package Cabal
-.if !defined(NOPORTDATA)
-	cd ${WRKSRC} && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX} \
-			    --datadir='${PREFIX}/share' --datasubdir='${DISTNAME}'
-.else
-	cd ${WRKSRC} && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX} \
-			    --datadir='' --datasubdir='' --docdir='${DOCSDIR}'
-.endif
-
-do-build:
-	cd ${WRKSRC} && ${SETUP_CMD} build \
-		     && ${SETUP_CMD} register --gen-script
-
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${SETUP_CMD} haddock --executables --hyperlink-source \
-					     --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
-.endif
-
-do-install:
-	cd ${WRKSRC} && ${SETUP_CMD} install \
-		     && ${INSTALL_SCRIPT} register.sh ${PREFIX}/${XMONAD_LIBDIR_REL}/register.sh \
-		     && ${INSTALL_MAN} ${WRKSRC}/man/xmonad.1 ${MAN1PREFIX}/man/man1 \
-		     && ${INSTALL_DATA} ${WRKSRC}/CONFIG ${DOCSDIR}
-
-post-install:
-	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
-
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

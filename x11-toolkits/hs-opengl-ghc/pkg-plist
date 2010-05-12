@@ -1,101 +1,101 @@
 @comment $FreeBSD$
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Antialiasing.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BeginEnd.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Bitmaps.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BlendingFactor.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BufferMode.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BufferObjects.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Capability.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Clipping.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/ColorSum.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Colors.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/ComparisonFunction.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/ControlPoint.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/CoordTrans.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/DataType.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/DisplayLists.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Domain.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/EdgeFlag.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Evaluators.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Exception.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Face.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Feedback.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/FlushFinish.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Fog.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Framebuffer.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/GLboolean.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Hints.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/IOState.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/LineSegments.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PeekPoke.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PerFragment.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelData.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelFormat.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Reset.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Sink.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PointParameter.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Points.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PolygonMode.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Polygons.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PrimitiveMode.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/QueryUtils.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/RasterPos.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Rectangles.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/RenderMode.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/SavingState.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Selection.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Shaders.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/StringQueries.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Application.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Environments.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Objects.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Parameters.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/PixelInternalFormat.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Queries.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Specification.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/TextureTarget.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/TextureUnit.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/VertexArrays.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/VertexAttributes.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/VertexSpec.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Errors.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Initialization.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Matrix.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Mipmapping.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/NURBS.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Quadrics.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Tessellation.hi
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSOpenGL-%%HSOPENGL_VERSION%%.o
-%%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSOpenGL-%%HSOPENGL_VERSION%%.a
-%%HSOPENGL_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Antialiasing.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BeginEnd.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Bitmaps.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BlendingFactor.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BufferMode.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/BufferObjects.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Capability.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Clipping.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/ColorSum.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Colors.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/ComparisonFunction.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/ControlPoint.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/CoordTrans.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/DataType.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/DisplayLists.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Domain.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/EdgeFlag.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Evaluators.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Exception.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Face.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Feedback.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/FlushFinish.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Fog.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Framebuffer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/GLboolean.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Hints.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/IOState.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/LineSegments.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PeekPoke.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PerFragment.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelData.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelFormat.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/ColorTable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Convolution.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Histogram.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Minmax.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelMap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelStorage.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/PixelTransfer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Rasterization.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Reset.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles/Sink.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PointParameter.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Points.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PolygonMode.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Polygons.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PrimitiveMode.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/QueryUtils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/RasterPos.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/ReadCopyPixels.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Rectangles.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/RenderMode.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/SavingState.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Selection.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Shaders.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/StringQueries.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Application.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Environments.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Objects.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Parameters.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/PixelInternalFormat.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Queries.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/Specification.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/TexParameter.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/TextureTarget.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing/TextureUnit.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/VertexArrays.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/VertexAttributes.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/VertexSpec.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Errors.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/ErrorsInternal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Initialization.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Matrix.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Mipmapping.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/NURBS.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Quadrics.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU/Tessellation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSOpenGL-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSOpenGL-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU
-@dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing
-@dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles
-@dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL
-@dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL
-@dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering
-@dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics
-@dirrm %%HSOPENGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HSOPENGL_LIBDIR_REL%%
-@exec /bin/sh %D/%%HSOPENGL_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GLU
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/Texturing
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL/PixelRectangles
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL/GL
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering/OpenGL
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/Rendering
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister OpenGL
+@unexec %D/bin/ghc-pkg unregister OpenGL-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

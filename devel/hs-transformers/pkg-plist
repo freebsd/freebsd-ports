@@ -1,35 +1,35 @@
 @comment $FreeBSD$
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Identity.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Cont.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Error.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Identity.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/List.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Maybe.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/RWS.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/RWS/Lazy.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/RWS/Strict.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Reader.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/State.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/State/Lazy.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/State/Strict.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer/Lazy.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer/Strict.hi
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HStransformers-%%TRANSFORMERS_VERSION%%.o
-%%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHStransformers-%%TRANSFORMERS_VERSION%%.a
-%%TRANSFORMERS_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Identity.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Cont.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Error.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Identity.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/List.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Maybe.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/RWS.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/RWS/Lazy.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/RWS/Strict.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Reader.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/State.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/State/Lazy.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/State/Strict.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer/Lazy.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer/Strict.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer
-@dirrm %%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/State
-@dirrm %%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/RWS
-@dirrm %%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans
-@dirrm %%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
-@dirrm %%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
-@dirrm %%TRANSFORMERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%TRANSFORMERS_LIBDIR_REL%%
-@exec /bin/sh %D/%%TRANSFORMERS_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/State
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/RWS
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister transformers
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -1,24 +1,24 @@
 @comment $FreeBSD$
 bin/tagsoup
-%%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HStagsoup-%%TAGSOUP_VERSION%%.o
-%%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/Download.hi
-%%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup.hi
-%%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Entity.hi
-%%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Match.hi
-%%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Parser.hi
-%%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Render.hi
-%%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Tree.hi
-%%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Type.hi
-%%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHStagsoup-%%TAGSOUP_VERSION%%.a
-%%TAGSOUP_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/Download.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Entity.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Match.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Parser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Render.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Tree.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Type.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup
-@dirrm %%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML
-@dirrm %%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%TAGSOUP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%TAGSOUP_LIBDIR_REL%%
-@exec /bin/sh %D/%%TAGSOUP_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister tagsoup
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

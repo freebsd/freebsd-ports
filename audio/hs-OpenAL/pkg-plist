@@ -1,48 +1,48 @@
 @comment $FreeBSD$
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSOpenAL-%%HSOPENAL_VERSION%%.o
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/ALboolean.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Attenuation.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/BasicTypes.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Buffer.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/BufferInternal.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Doppler.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Errors.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Extensions.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Format.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Listener.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/PeekPoke.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/QueryUtils.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Source.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/SourceState.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/String.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/StringQueries.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/ALCboolean.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/BasicTypes.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/Capture.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/Context.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/Device.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/Errors.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/Extensions.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/QueryUtils.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/String.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/Config.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/Constants.hi
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsOpenAL.h
-%%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSOpenAL-%%HSOPENAL_VERSION%%.a
-%%HSOPENAL_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/ALboolean.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Attenuation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/BasicTypes.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Buffer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/BufferInternal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Doppler.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Errors.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Extensions.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Format.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Listener.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/PeekPoke.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/QueryUtils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/Source.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/SourceState.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/String.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL/StringQueries.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/ALCboolean.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/BasicTypes.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/Capture.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/Context.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/Device.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/Errors.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/Extensions.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/QueryUtils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC/String.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/Config.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/Constants.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsOpenAL.h
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
-@dirrm %%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC
-@dirrm %%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL
-@dirrm %%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL
-@dirrm %%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound
-@dirrm %%HSOPENAL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HSOPENAL_LIBDIR_REL%%
-@exec /bin/sh %D/%%HSOPENAL_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/ALC
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL/AL
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound/OpenAL
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Sound
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister OpenAL
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

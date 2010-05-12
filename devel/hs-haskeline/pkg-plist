@@ -1,44 +1,44 @@
 @comment $FreeBSD$
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HShaskeline-%%HASKELINE_VERSION%%.o
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend/DumbTerm.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend/IConv.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend/Posix.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/Completion.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/History.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/KillRing.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/Undo.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Completion.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Directory.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Emacs.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Encoding.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/History.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/IO.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/InputT.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Key.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/LineState.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/MonadException.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Monads.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Prefs.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/RunCommand.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Term.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Vi.hi
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/h_iconv.h
-%%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHShaskeline-%%HASKELINE_VERSION%%.a
-%%HASKELINE_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend/DumbTerm.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend/IConv.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend/Posix.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/Completion.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/History.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/KillRing.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/Undo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Completion.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Directory.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Emacs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Encoding.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/History.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/IO.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/InputT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Key.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/LineState.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/MonadException.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Monads.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Prefs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/RunCommand.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Term.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Vi.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/h_iconv.h
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
-@dirrm %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command
-@dirrm %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend
-@dirrm %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline
-@dirrm %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console
-@dirrm %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
-@dirrm %%HASKELINE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HASKELINE_LIBDIR_REL%%
-@exec /bin/sh %D/%%HASKELINE_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister haskeline
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -1,33 +1,30 @@
 @comment $FreeBSD$
 bin/cpphs
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HScpphs-%%CPPHS_VERSION%%.o
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/CppIfdef.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/HashDefine.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/MacroPass.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/Options.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/Position.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/ReadFirst.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/RunCpphs.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/SymTab.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/Tokenise.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Unlit.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/HuttonMeijer.hi
-%%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHScpphs-%%CPPHS_VERSION%%.a
-%%CPPHS_LIBDIR_REL%%/register.sh
-%%DATADIR%%/design
-%%DATADIR%%/index.html
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/CppIfdef.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/HashDefine.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/MacroPass.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/Options.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/Position.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/ReadFirst.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/RunCpphs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/SymTab.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/Tokenise.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Unlit.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/HuttonMeijer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENCE-LGPL
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators
-@dirrm %%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs
-@dirrm %%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor
-@dirrm %%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
-@dirrm %%CPPHS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%CPPHS_LIBDIR_REL%%
-@dirrmtry %%DATADIR%%
-@exec /bin/sh %D/%%CPPHS_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister cpphs
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

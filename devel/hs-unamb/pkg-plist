@@ -1,13 +1,13 @@
 @comment $FreeBSD$
-%%UNAMB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Unamb.hi
-%%UNAMB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSunamb-%%UNAMB_VERSION%%.o
-%%UNAMB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSunamb-%%UNAMB_VERSION%%.a
-%%UNAMB_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Unamb.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%UNAMB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%UNAMB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%UNAMB_LIBDIR_REL%%
-@exec /bin/sh %D/%%UNAMB_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister unamb
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

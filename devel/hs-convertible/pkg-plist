@@ -1,23 +1,23 @@
 @comment $FreeBSD$
-%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible.hi
-%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Base.hi
-%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances.hi
-%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/C.hi
-%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/Map.hi
-%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/Num.hi
-%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/Time.hi
-%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Utils.hi
-%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSconvertible-%%CONVERTIBLE_VERSION%%.o
-%%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSconvertible-%%CONVERTIBLE_VERSION%%.a
-%%CONVERTIBLE_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Base.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/C.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/Map.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/Num.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances/Time.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances
-@dirrm %%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible
-@dirrm %%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%CONVERTIBLE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%CONVERTIBLE_LIBDIR_REL%%
-@exec /bin/sh %D/%%CONVERTIBLE_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible/Instances
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Convertible
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister convertible
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

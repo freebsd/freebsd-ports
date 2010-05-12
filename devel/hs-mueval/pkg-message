@@ -1,8 +1,6 @@
-=======================================================================
  WARNING: If you installed devel/hs-transformers, then before starting
           "mueval" you have to:
 
              - hide it with the command: 'ghc-pkg hide transformers'
           or
              - pass to "mueval" the option: '-n transformers'.
-=======================================================================

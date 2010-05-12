@@ -1,44 +1,44 @@
 @comment $FreeBSD$
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Core.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Brush.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Font.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Monad.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Pen.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Picture.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Region.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Text.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Draw.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Event.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Events.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Flag.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Types.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Utilities.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Key.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Run.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Units.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Utils.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Window.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/DC.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/Display.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/Timer.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/Types.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/Window.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/SOE.hi
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSHGL-%%HGL_VERSION%%.o
-%%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSHGL-%%HGL_VERSION%%.a
-%%HGL_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Core.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Brush.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Font.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Monad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Pen.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Picture.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Region.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw/Text.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Draw.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Event.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Events.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Flag.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals/Utilities.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Key.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Run.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Units.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Window.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/DC.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/Display.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/Timer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11/Window.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/SOE.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11
-@dirrm %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals
-@dirrm %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw
-@dirrm %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL
-@dirrm %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics
-@dirrm %%HGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HGL_LIBDIR_REL%%
-@exec /bin/sh %D/%%HGL_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/X11
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Internals
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL/Draw
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/HGL
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister HGL
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

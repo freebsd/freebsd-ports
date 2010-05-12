@@ -1,55 +1,55 @@
 @comment $FreeBSD$
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bool/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bool/HT/Private.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Eq/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Function/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Function/HT/Private.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/HT/Private.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Key.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Key/Private.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Match.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Match/Private.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Maybe/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Ord/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Record/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Record/HT/Private.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Strictness/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tuple/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSutility-ht-%%UTILITYHT_VERSION%%.o
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Read/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Show/HT.hi
-%%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSutility-ht-%%UTILITYHT_VERSION%%.a
-%%UTILITYHT_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bool/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bool/HT/Private.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Eq/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Function/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Function/HT/Private.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/HT/Private.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Key.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Key/Private.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Match.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Match/Private.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Maybe/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Ord/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Record/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Record/HT/Private.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Strictness/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tuple/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Read/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Show/HT.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Show
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Read
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tuple
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Strictness
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Record/HT
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Record
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Ord
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Maybe
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Match
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Key
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/HT
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Function/HT
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Function
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Eq
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bool/HT
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bool
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
-@dirrm %%UTILITYHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%UTILITYHT_LIBDIR_REL%%
-@exec /bin/sh %D/%%UTILITYHT_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Show
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Read
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tuple
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Strictness
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Record/HT
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Record
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Ord
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Maybe
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Match
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Key
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/HT
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Function/HT
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Function
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Eq
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bool/HT
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bool
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister utility-ht
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

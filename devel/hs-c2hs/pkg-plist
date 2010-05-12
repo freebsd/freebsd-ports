@@ -1,6 +1,4 @@
 @comment $FreeBSD$
 bin/c2hs
-%%DATADIR%%/C2HS.hs
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYING
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%DATADIR%%

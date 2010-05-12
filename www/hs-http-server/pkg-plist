@@ -1,20 +1,20 @@
 @comment $FreeBSD$
-%%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HShttp-server-%%HTTPSERVER_VERSION%%.o
-%%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server.hi
-%%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server/HtmlForm.hi
-%%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server/Logger.hi
-%%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server/Response.hi
-%%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server/Utils.hi
-%%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHShttp-server-%%HTTPSERVER_VERSION%%.a
-%%HTTPSERVER_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server/HtmlForm.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server/Logger.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server/Response.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server
-@dirrm %%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP
-@dirrm %%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network
-@dirrm %%HTTPSERVER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HTTPSERVER_LIBDIR_REL%%
-@exec /bin/sh %D/%%HTTPSERVER_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Server
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister http-server
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

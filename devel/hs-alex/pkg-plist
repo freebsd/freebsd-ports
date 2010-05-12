@@ -1,19 +1,4 @@
 @comment $FreeBSD$
 bin/alex
-%%SUBDIR%%/AlexTemplate
-%%SUBDIR%%/AlexTemplate-debug
-%%SUBDIR%%/AlexTemplate-ghc
-%%SUBDIR%%/AlexTemplate-ghc-debug
-%%SUBDIR%%/AlexWrapper-basic
-%%SUBDIR%%/AlexWrapper-basic-bytestring
-%%SUBDIR%%/AlexWrapper-gscan
-%%SUBDIR%%/AlexWrapper-monad
-%%SUBDIR%%/AlexWrapper-monad-bytestring
-%%SUBDIR%%/AlexWrapper-posn
-%%SUBDIR%%/AlexWrapper-posn-bytestring
-%%SUBDIR%%/AlexWrapper-strict-bytestring
-%%SUBDIR%%/AlexWrapper-monadUserState
-%%SUBDIR%%/AlexWrapper-monadUserState-bytestring
-@dirrm %%SUBDIR%%
-%%RMLIC%%%%DOCSDIR%%/LICENSE
-%%RMLIC%%@dirrm %%DOCSDIR%%
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%

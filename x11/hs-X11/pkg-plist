@@ -1,45 +1,45 @@
 @comment $FreeBSD$
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/AP.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/DEC.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/HP.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/Sun.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/XF86.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/XorgDefault.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Types.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xinerama.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Atom.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Color.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Context.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Cursor.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Display.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Event.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Extras.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Font.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Image.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Misc.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Region.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Screen.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Types.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Window.hi
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSX11-%%HSX11_VERSION%%.o
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsAllKeysyms.h
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsXlib.h
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/XlibExtras.h
-%%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSX11-%%HSX11_VERSION%%.a
-%%HSX11_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/AP.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/DEC.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/HP.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/Sun.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/XF86.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes/XorgDefault.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xinerama.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Atom.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Color.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Context.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Cursor.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Display.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Event.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Extras.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Font.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Image.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Misc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Region.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Screen.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Window.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSX11-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsAllKeysyms.h
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsXlib.h
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/XlibExtras.h
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSX11-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
-@dirrm %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib
-@dirrm %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes
-@dirrm %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11
-@dirrm %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics
-@dirrm %%HSX11_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HSX11_LIBDIR_REL%%
-@exec /bin/sh %D/%%HSX11_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/ExtraTypes
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister X11
+@unexec %D/bin/ghc-pkg unregister X11-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
