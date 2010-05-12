@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scprotect
-PORTVERSION=	20091028
+PORTVERSION=	20091116
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://dindin.ru/download/
 
