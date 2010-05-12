@@ -43,11 +43,7 @@ USE_EFL+=	imlib2
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SLANG)
-.  if exists(${LOCALBASE}/lib/libslang.so.1)
-LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
-.  else
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
-.  endif
 CONFIGURE_ARGS+=--enable-slang
 .else
 CONFIGURE_ARGS+=--disable-slang
