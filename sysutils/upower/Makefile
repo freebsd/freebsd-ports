@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	upower
-DISTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://upower.freedesktop.org/releases/
 
