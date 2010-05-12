@@ -1,3 +1,6 @@
 MD5 (libassuan-1.0.5.tar.bz2) = c2db0974fcce4401f48f3fa41c4edc5a
 SHA256 (libassuan-1.0.5.tar.bz2) = c58b2408d81aa6d76e9d699a2bdaafd6acc2e63e9df89a142f07aa2a4b4459f5
 SIZE (libassuan-1.0.5.tar.bz2) = 297786
+MD5 (libassuan-1.0.5.tar.bz2.sig) = 167c1838f56f3b85083422668b369f17
+SHA256 (libassuan-1.0.5.tar.bz2.sig) = b9c47946261c264a1e162517fbf13184266e656a79b97be736d481484e9e7819
+SIZE (libassuan-1.0.5.tar.bz2.sig) = 158
