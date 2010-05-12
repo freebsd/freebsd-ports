@@ -1,10 +1,20 @@
 bin/openttd
+share/pixmaps/openttd.32.xpm
+%%DATADIR%%/ai/compat_0.7.nut
+%%DATADIR%%/ai/compat_1.0.nut
+@dirrm %%DATADIR%%/ai
+%%DATADIR%%/gm/no_music.obm
+%%DATADIR%%/gm/orig_win.obm
+@dirrm %%DATADIR%%/gm
 %%DATADIR%%/data/openttdd.grf
 %%DATADIR%%/data/openttdw.grf
 %%DATADIR%%/data/opntitle.dat
 %%DATADIR%%/data/orig_dos.obg
+%%DATADIR%%/data/orig_dos.obs
 %%DATADIR%%/data/orig_dos_de.obg
 %%DATADIR%%/data/orig_win.obg
+%%DATADIR%%/data/orig_win.obs
+%%DATADIR%%/data/no_sound.obs
 @dirrm %%DATADIR%%/data
 %%DATADIR%%/lang/afrikaans.lng
 %%DATADIR%%/lang/arabic_egypt.lng
@@ -23,6 +33,7 @@ bin/openttd
 %%DATADIR%%/lang/french.lng
 %%DATADIR%%/lang/galician.lng
 %%DATADIR%%/lang/german.lng
+%%DATADIR%%/lang/greek.lng
 %%DATADIR%%/lang/hebrew.lng
 %%DATADIR%%/lang/hungarian.lng
 %%DATADIR%%/lang/icelandic.lng
@@ -33,9 +44,9 @@ bin/openttd
 %%DATADIR%%/lang/latvian.lng
 %%DATADIR%%/lang/lithuanian.lng
 %%DATADIR%%/lang/luxembourgish.lng
+%%DATADIR%%/lang/malay.lng
 %%DATADIR%%/lang/norwegian_bokmal.lng
 %%DATADIR%%/lang/norwegian_nynorsk.lng
-%%DATADIR%%/lang/piglatin.lng
 %%DATADIR%%/lang/polish.lng
 %%DATADIR%%/lang/portuguese.lng
 %%DATADIR%%/lang/romanian.lng
@@ -49,6 +60,7 @@ bin/openttd
 %%DATADIR%%/lang/traditional_chinese.lng
 %%DATADIR%%/lang/turkish.lng
 %%DATADIR%%/lang/ukrainian.lng
+%%DATADIR%%/lang/vietnamese.lng
 %%DATADIR%%/lang/welsh.lng
 @dirrm %%DATADIR%%/lang
 %%DATADIR%%/scripts/autoexec.scr.example
