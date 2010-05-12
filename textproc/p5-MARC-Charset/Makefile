@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	MARC-Charset
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert MARC-8 encoded strings to UTF-8
 
 RUN_DEPENDS=	p5-XML-SAX>=0:${PORTSDIR}/textproc/p5-XML-SAX \
