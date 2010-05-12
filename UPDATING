@@ -12,93 +12,92 @@ you update your ports collection, before attempting any port upgrades.
   KDE SC ports have been updated from 4.3.5 to 4.4.3. A number of libraries
   was moved between packages. The recommended update procedure is to delete
   kdelibs-experimental*, kdebase-4*, kdebase-workspace-4*,
-  kdebase-runtime-4*, kdepim-4*, kdepim-runtime-4*,
-  and then update ports as usual and install desirable KDE4 ports:
+  kdebase-runtime-4*, kdepim-4*, kdepim-runtime-4*, and then update ports as
+  usual and install desired KDE4 ports:
 
-  # pkg_delete -f kdebase-\*4\* kdepim-\*4\* kdelibs-experimental-\*4\*
-  # portmaster -a (or portupgrade -aR)
+    # pkg_delete -f kdebase-\*4\* kdepim-\*4\* kdelibs-experimental-\*4\*
+    # portmaster -a (or portupgrade -aR)
 
   In order to enabled Nepomuk semantic desktop search you have to install
-  databases/virtuoso (you don't need manually configure
-  or run virtuoso server).
+  databases/virtuoso (you don't need manually configure or run virtuoso
+  server).
 
 20100511:
   AFFECTS: users of textproc/redland RDF engine
   AUTHOR: kde@FreeBSD.org
 
   Redland RDF engine has been split into redland itself and rasqal engine.
-  The recommended update procedure is to delete redland,
-  then update ports as usual and install desirable rdf ports:
+  The recommended update procedure is to delete redland, then update ports
+  as usual and install desired RDF ports:
 
-  # pkg_delete -f redland-\*
-  # portmaster raptor (or portupgrade -r raptor)
+    # pkg_delete -f redland-\*
+    # portmaster raptor (or portupgrade -r raptor)
 
 20100511:
   AFFECTS: users of multimedia/qt4-phonon, multimedia/qt4-phonon-gst,
-  multimedia/phonon and multimedia/phonon-gstreamer
+	   multimedia/phonon, and multimedia/phonon-gstreamer
   AUTHOR: kde@FreeBSD.org
 
-  WITH_QT_PHONON global knob has been introduced to allow choice
-  between multimedia/qt4-phonon* ports (a bit outdated Phonon, which
-  is shipped with Qt4) and multimedia/phonon* ports. Since KDE SC 4.4
-  requires fresh Phonon, multimedia/phonon* are installed by default.
-  If you don't use KDE, you may set WITH_QT_PHONON=yes in /etc/make.conf
-  and continue to use Qt4 Phonon ports.
+  WITH_QT_PHONON global knob has been introduced to allow selection between
+  multimedia/qt4-phonon* ports (a bit outdated Phonon, which is shipped with
+  Qt4) and multimedia/phonon* ports.  Since KDE SC 4.4 requires fresh Phonon,
+  multimedia/phonon* ports are installed by default.
 
-  If you want to use KDE SC 4.4 (or if you want the latest Phonon),
-  do not define WITH_QT_PHONON, delete multimedia/qt4-phonon* ports
-  and install multimedia/phonon*:
+  If you don't use KDE, you may set WITH_QT_PHONON=yes in /etc/make.conf
+  and continue to use Qt4 Phonon implementation ports.
+
+  If you want to use KDE SC 4.4 (or if you want the latest Phonon), do not
+  define WITH_QT_PHONON, delete multimedia/qt4-phonon* ports, and install
+  multimedia/phonon*:
 
   If you use portmaster:
 
-  portmaster -o multimedia/phonon multimedia/qt4-phonon
-  portmaster -o multimedia/phonon-gstreamer multimedia/qt4-phonon-gst
+    portmaster -o multimedia/phonon multimedia/qt4-phonon
+    portmaster -o multimedia/phonon-gstreamer multimedia/qt4-phonon-gst
 
   If you use portupgrade:
 
-  portupgrade -f -o multimedia/phonon multimedia/qt4-phonon
-  portupgrade -f -o multimedia/phonon-gstreamer multimedia/qt4-phonon-gst
+    portupgrade -f -o multimedia/phonon multimedia/qt4-phonon
+    portupgrade -f -o multimedia/phonon-gstreamer multimedia/qt4-phonon-gst
 
 201005010:
   AFFECTS: users of security/gnome-keyring
   AUTHOR: kwm@FreeBSD.org
 
-  libgnome-keyring was split out of the gnome-keyring package.
-  Do the following before doing your normal upgrade steps.
+  libgnome-keyring was split out of the gnome-keyring package.  Perform the
+  following before doing your normal upgrade steps:
 
-  pkg_delete -f "gnome-keyring-*"
-
-  portmaster security/gnome-keyring
-
-  or 
-
-  pkgdb -Ff
-  portupgrade -R -x gnome-keyring -x libgnome-keyring gnome-keyring
-  pkg_deinstall -fO gnome-keyring
-  portinstall security/gnome-keyring
+	pkg_delete -f "gnome-keyring-*"
+	portmaster security/gnome-keyring
+  or
+	pkgdb -Ff
+	portupgrade -R -x gnome-keyring -x libgnome-keyring gnome-keyring
+	pkg_deinstall -fO gnome-keyring
+	portinstall security/gnome-keyring
 
 20100506:
-  AFFECTS: users of mail/nullmailer on FreeBSD 6.x
+  AFFECTS: users of mail/nullmailer on FreeBSD 6.X
   AUTHOR: glarkin@FreeBSD.org
 
-  The nullmailer port was recently updated with an rc.d script to
-  correctly daemonize nullmailer-send with daemon(8). On FreeBSD 6.x,
-  daemon(8) does not suppport the "[-u user]" command-line switch,
-  causing the nullmailer rc.d script to fail to start nullmailer-send.
+  The nullmailer port was recently updated with an rc.d script to correctly
+  daemonize nullmailer-send with daemon(8).  On FreeBSD 6.X, daemon(8) does
+  not support "[-u user]" command-line switch, causing the nullmailer rc.d
+  script failure to start nullmailer-send.
 
-  Support for the "[-u user]" command-line switch was recently MFC'd
-  to 6-STABLE (http://www.freebsd.org/cgi/query-pr.cgi?pr=bin/146266).
-  FreeBSD 6.x users should patch and install daemon(8) with one of the
-  following methods:
+  Support for "[-u user]" command-line switch was recently MFC'd to 6-STABLE
+ (http://www.freebsd.org/cgi/query-pr.cgi?pr=bin/146266).  FreeBSD 6.X users
+  should patch and install daemon(8) by one of the methods described below.
 
-    # If /usr/src is not yet populated, csup the 6-STABLE sources
-    # and run these commands:
+  If /usr/src is not yet populated, csup the 6-STABLE sources and run these
+  commands:
+
     cd /usr/src/usr.sbin/daemon
     make install
     /usr/local/etc/rc.d/nullmailer start
 
-    # If /usr/src is already populated with sources from a previous 6.x
-    # release, use these commands:
+  If /usr/src is already populated with sources from a previous 6.X release,
+  use these commands:
+
     cd /usr/src/usr.sbin/daemon
     fetch 'http://people.freebsd.org/~glarkin/pr-links/daemon/patch-daemon.c'
     fetch 'http://people.freebsd.org/~glarkin/pr-links/daemon/patch-daemon.8'
@@ -114,23 +113,19 @@ you update your ports collection, before attempting any port upgrades.
   Starting with squid* the directory containing the default cache and log
   directory was changed from $PREFIX/squid/ to /var/squid/.
 
-  The default value for the following Squid configuration parameters
-  have changed as follows:
+  The default values for the following Squid configuration parameters have
+  changed as shown below:
 
   cache_log from $PREFIX/squid/logs/cache.log to /var/squid/logs/cache.log
-
   cache_store_log from $PREFIX/squid/logs/store.log to /var/squid/logs/store.log
-
   pid_filename from $PREFIX/squid/logs/squid.pid to /var/squid/logs/squid.pid
-
   coredump_dir from $PREFIX/squid/cache to /var/squid/cache
 
-  Please check whether you need to define any of these variables in
-  your squid.conf to the old defaults explicitly before updating,
-  especially if you have set up automated log processing or automated
-  log rotation. If you define pid_filename in your squid.conf you
-  should also set squid_pidfile to the same value in /etc/rc.conf,
-  cf. $PREFIX/etc/rc.d/squid.
+  Please check whether you need to define any of these variables in your
+  squid.conf to the old defaults explicitly before updating, especially if
+  you have set up automated log processing or automated log rotation.  If you
+  define pid_filename in your squid.conf, you should also set squid_pidfile
+  to the same value in /etc/rc.conf, cf. $PREFIX/etc/rc.d/squid.
 
 20100419:
   AFFECTS: users of math/libgmp4
@@ -143,7 +138,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Portmaster users, do the following before upgrading ports that depend on gmp:
 
-        portmaster -o math/gmp math/libgmp4
+	portmaster -o math/gmp math/libgmp4
 
 20100409:
   AFFECTS: users of lang/php5
@@ -174,7 +169,6 @@ you update your ports collection, before attempting any port upgrades.
   If you wish to continue to use the kernel library you'll need to install
   net/dgd-kernel after updating to dgd-1.4.1_2.
 
-
 20100330:
   AFFECTS: users of gstreamer-plugins-bad and gstreamer-plugins-good
   AUTHOR: kwm@FreeBSD.org
@@ -184,12 +178,11 @@ you update your ports collection, before attempting any port upgrades.
 
   If you use portmaster:
 
-        portmaster gstreamer-plugins-bad
+	portmaster gstreamer-plugins-bad
 
   If you use portupgrade:
 
-        portupgrade -R multimedia/gstreamer-plugins-bad
-
+	portupgrade -R multimedia/gstreamer-plugins-bad
 
 20100328:
   AFFECTS: users of graphics/png
@@ -198,20 +191,20 @@ you update your ports collection, before attempting any port upgrades.
   The png library has been updated to version 1.4.1.  Please rebuild all
   ports that depend on it.
 
-  If you use portmaster:
+  If you use portmaster: make sure you update to portmaster version 2.20 or
+  newer, then do:
 
-        Make sure you update to portmaster version 2.20 or newer, then:
-        portmaster -r png-
+	portmaster -r png-
 
   If you use portupgrade:
 
-        portupgrade -fr graphics/png
+	portupgrade -fr graphics/png
 
 20100221:
   AFFECTS: users of rblibtorrent-devel
   AUTHOR: dougb@FreeBSD.org
 
-  The port name has changed to libtorrent-rasterbar-14
+  The port name has changed to libtorrent-rasterbar-14.
 
   If you use portmaster:
 
@@ -753,7 +746,7 @@ you update your ports collection, before attempting any port upgrades.
   favor of their qt4 equivalents.  You can still use multimedia/phonon-xine
   however.  A number of files have been moved between packages.  The
   recommended update procedure is to delete phonon, phonon-gstreamer,
-  kdebase-*4*, kdepim-4*, then update ports as usual and install desirable
+  kdebase-*4*, kdepim-4*, then update ports as usual and install desired
   KDE4 ports:
 
   # pkg_delete -f phonon-4\* phonon-gstreamer\* kdebase-\*4\* kdepim-4\*
@@ -5531,9 +5524,11 @@ you update your ports collection, before attempting any port upgrades.
   as well. The amavisd-new port automatically recognizes arj, but not unzoo, so
   ${PREFIX}/etc/amavisd.conf should be modified. This line should be changed:
 
-	  ['zoo',	\&do_zoo,	'zoo'],
+	['zoo',	\&do_zoo,	'zoo'],
+
   To this one:
-	  ['zoo',	\&do_zoo,	['zoo','unzoo'] ],
+
+	['zoo',	\&do_zoo,	['zoo','unzoo'] ],
 
 20060526:
   AFFECTS: users of net/openldap23-server
@@ -6145,19 +6140,15 @@ you update your ports collection, before attempting any port upgrades.
 	   ports.
   AUTHOR: garga@FreeBSD.org
 
-  If you use qmail installed on a PREFIX different of /var/qmail,
-  please, set a var on /etc/make.conf named QMAIL_PREFIX with this
-  value. It'll be used for many ports that depends of qmail.
+  If you use qmail installed on a PREFIX different from /var/qmail,
+  please set variable in /etc/make.conf named QMAIL_PREFIX to this
+  value.  It'll be used for many ports that depends of qmail.
 
   To prevent stale dependencies, when you use one of qmail slave ports,
-  now you just need to set a var named QMAIL_SLAVEPORT on /etc/make.conf
-  assigning to it the name of slave port you are using.
+  now you just need to set variable named QMAIL_SLAVEPORT in /etc/make.conf
+  with the name of slave port you are using assigned to it.
 
-  The valid options for now are:
-  * ldap
-  * mysql
-  * spamcontrol
-  * tls
+  The valid options for now are: ldap, mysql, spamcontrol, tls.
 
 20060114:
   AFFECTS: users of www/apache13-ssl with suexec enabled.
