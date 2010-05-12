@@ -1492,6 +1492,7 @@
     SUBDIR += retawq
     SUBDIR += rnews
     SUBDIR += roundup
+    SUBDIR += rssdler
     SUBDIR += rssowl
     SUBDIR += rsstail
     SUBDIR += rsstool

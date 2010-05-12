@@ -1,0 +1,4 @@
+bin/rssdler
+%%PYTHON_SITELIBDIR%%/rssdler.py
+%%PYTHON_SITELIBDIR%%/rssdler.pyc
+%%PYTHON_SITELIBDIR%%/rssdler.pyo
