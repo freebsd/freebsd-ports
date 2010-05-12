@@ -1,10 +1,10 @@
-%%PORTDOCS%%share/glibmm-%%API_VERSION%%/doctool/doc-install.pl
-%%PORTDOCS%%share/glibmm-%%API_VERSION%%/doctool/doc-postprocess.pl
-%%PORTDOCS%%share/glibmm-%%API_VERSION%%/doctool/doxygen.css
-%%PORTDOCS%%share/glibmm-%%API_VERSION%%/doctool/tagfile-to-devhelp2.xsl
-%%PORTDOCS%%share/devhelp/books/glibmm-%%API_VERSION%%/glibmm-%%API_VERSION%%.devhelp2
-%%PORTDOCS%%@dirrmtry share/devhelp/books/glibmm-%%API_VERSION%%
-%%PORTDOCS%%@dirrmtry share/devhelp/books
-%%PORTDOCS%%@dirrmtry share/devhelp
-%%PORTDOCS%%@dirrmtry share/glibmm-%%API_VERSION%%/doctool
-%%PORTDOCS%%@dirrmtry share/glibmm-%%API_VERSION%%
+share/glibmm-%%API_VERSION%%/doctool/doc-install.pl
+share/glibmm-%%API_VERSION%%/doctool/doc-postprocess.pl
+share/glibmm-%%API_VERSION%%/doctool/doxygen.css
+share/glibmm-%%API_VERSION%%/doctool/tagfile-to-devhelp2.xsl
+share/devhelp/books/glibmm-%%API_VERSION%%/glibmm-%%API_VERSION%%.devhelp2
+@dirrmtry share/devhelp/books/glibmm-%%API_VERSION%%
+@dirrmtry share/devhelp/books
+@dirrmtry share/devhelp
+@dirrmtry share/glibmm-%%API_VERSION%%/doctool
+@dirrmtry share/glibmm-%%API_VERSION%%
