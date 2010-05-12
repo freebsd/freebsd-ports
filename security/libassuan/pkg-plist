@@ -1,5 +1,0 @@
-bin/libassuan-config
-include/assuan.h
-lib/libassuan-pth.a
-lib/libassuan.a
-share/aclocal/libassuan.m4
