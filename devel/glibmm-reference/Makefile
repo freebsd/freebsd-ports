@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	4
+PORTREVISION=	5
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc:${PORTSDIR}/devel/glibmm \
 		gm4:${PORTSDIR}/devel/m4
@@ -23,11 +23,9 @@ post-build:
 	@${TOUCH} ${WRKSRC}/docs/reference/html/index.html
 
 do-install:
-.if !defined(NOPORTDOCS)
 .  for d in docs examples
 	@cd ${WRKSRC}/${d} && ${GMAKE} install
 .  endfor
-.endif
 
 
 .include "${.CURDIR}/../../devel/glib20-reference/bsd.gnome-reference.mk"
