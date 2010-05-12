@@ -630,6 +630,8 @@ share/locale/zh_CN/LC_MESSAGES/amarokpkg.mo
 @dirrmtry share/locale/x-test
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/sr@ijekavianlatin/LC_MESSAGES
+@dirrmtry share/locale/sr@ijekavianlatin
 @dirrmtry share/locale/sr@ijekavian/LC_MESSAGES
 @dirrmtry share/locale/sr@ijekavian
 @dirrmtry share/locale/nds/LC_MESSAGES
