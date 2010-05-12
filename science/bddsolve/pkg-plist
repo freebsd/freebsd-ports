@@ -1,0 +1,4 @@
+bin/bddsolve
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/reach.b
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sat.b
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

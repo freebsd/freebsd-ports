@@ -11,6 +11,7 @@
     SUBDIR += at
     SUBDIR += avogadro
     SUBDIR += bblimage
+    SUBDIR += bddsolve
     SUBDIR += bft
     SUBDIR += bodr
     SUBDIR += brian
