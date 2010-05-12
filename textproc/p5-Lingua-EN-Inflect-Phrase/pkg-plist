@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Inflect/Phrase/.packlist
+%%SITE_PERL%%/Lingua/EN/Inflect/Phrase.pm
+@comment @dirrmtry %%SITE_PERL%%/Lingua/EN/Inflect
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Inflect/Phrase
+@comment @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/Inflect
