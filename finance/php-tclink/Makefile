@@ -5,24 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=      tclink
-PORTVERSION=   3.4.4
-CATEGORIES=    finance
-MASTER_SITES=  http://www.trustcommerce.com/downloads/
-PKGNAMEPREFIX= php-
-DISTNAME=      ${PORTNAME}-${PORTVERSION}-php
+PORTNAME=	tclink
+PORTVERSION=	3.4.4
+CATEGORIES=	finance
+MASTER_SITES=	http://www.trustcommerce.com/downloads/
+PKGNAMEPREFIX=	php-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-php
 
-MAINTAINER=    mbowie@buzmo.com
-COMMENT=       A PHP extension for TrustCommerce credit card processing
+MAINTAINER=	mbowie@buzmo.com
+COMMENT=	A PHP extension for TrustCommerce credit card processing
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
 USE_OPENSSL=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		does not compile on amd64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
