@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 MAN1=		iselect.1
 
 .if defined(WITH_SLANG)
-LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
 CONFIGURE_ARGS+=	--with-incdir=${LOCALBASE}/include \
 			--with-libdir=${LOCALBASE}/lib
 .endif

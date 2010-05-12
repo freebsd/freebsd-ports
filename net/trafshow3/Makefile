@@ -23,7 +23,7 @@ LATEST_LINK=	trafshow3
 
 .if defined(WITH_TRAFSHOW_SLANG) || \
     (exists(${LOCALBASE}/lib/libslang.a) && !defined(WITHOUT_TRAFSHOW_SLANG))
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 .endif
 
 GNU_CONFIGURE=	yes

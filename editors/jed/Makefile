@@ -46,8 +46,6 @@ MAN1=		jed.1 rgrep.1
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
-
 .if defined(WITHOUT_X11)
 PLIST_SUB+=	XJED="@comment "
 .else
