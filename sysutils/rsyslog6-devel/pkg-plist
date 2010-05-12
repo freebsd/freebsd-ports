@@ -52,6 +52,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/imgssapi.html
 %%PORTDOCS%%%%DOCSDIR%%/imklog.html
 %%PORTDOCS%%%%DOCSDIR%%/imrelp.html
+%%PORTDOCS%%%%DOCSDIR%%/imsolaris.html
 %%PORTDOCS%%%%DOCSDIR%%/imtcp.html
 %%PORTDOCS%%%%DOCSDIR%%/imuxsock.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -93,6 +94,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_dropmsgswithmaliciousdnsptrrecords.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_droptrailinglfonreception.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_dynafilecachesize.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_escape8bitcharsonreceive.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_escapecontrolcharactersonreceive.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_failonchownfailure.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_filecreatemode.html
