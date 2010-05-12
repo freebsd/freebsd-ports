@@ -1,0 +1,20 @@
+Obtained-From: http://lxr.cvs.sourceforge.net/viewvc/lxr/lxr/lib/LXR/Common.pm?r1=1.62&r2=1.63&view=patch
+Modified-As: two first hunks containing $Id$ changes were removed to allow clean patching
+
+--- a/lib/LXR/Common.pm	2009/05/10 11:54:29	1.62
++++ b/lib/LXR/Common.pm	2010/01/05 17:59:38	1.63
+@@ -526,9 +526,13 @@
+ }
+ 
+ sub clean_identifier {
++	# Cleans up the identifier parameter
++	# Result should be HTML-safe and a valid identifier in
++	# any supported language...
++	# Well, not Lisp symbols since they can contain anything
+ 	my $id = shift;
+ 
+-	$id =~ s/(^[\w`:.,]+).*/$1/ if defined $id;
++	$id =~ s/[^\w`:.,\-_ ]//g if defined $id;
+ 
+ 	return $id;
+ }
