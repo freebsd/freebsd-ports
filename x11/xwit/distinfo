@@ -1,3 +1,6 @@
 MD5 (xwit-3.4.tar.gz) = 627a2ff424ae5593be929f3def62dd1e
 SHA256 (xwit-3.4.tar.gz) = d915a7f2f8809da41edcc7784c2618be3f8ce179d82d8ace6d27ba264332c729
 SIZE (xwit-3.4.tar.gz) = 14536
+MD5 (xwit-patchset-3.4.tar.gz) = 0d19e3bc9b054e2aeb2f522c0de090e4
+SHA256 (xwit-patchset-3.4.tar.gz) = 24f295b6312cde2052e6f101e650b7972cbfc40777445f512e4a5734c5a59b9a
+SIZE (xwit-patchset-3.4.tar.gz) = 11075
