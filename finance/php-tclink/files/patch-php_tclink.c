@@ -1,0 +1,15 @@
+--- php_tclink.c.orig	2010-04-21 10:49:52.000000000 -0700
++++ php_tclink.c	2010-04-21 10:50:12.000000000 -0700
+@@ -46,7 +46,11 @@
+ #ifdef STANDARD_MODULE_HEADER
+ 	STANDARD_MODULE_HEADER,
+ #endif
+-	"tclink", php_tclink_functions, NULL, NULL, NULL, NULL, PHP_MINFO(tclink), STANDARD_MODULE_PROPERTIES
++	"tclink", php_tclink_functions, NULL, NULL, NULL, NULL, PHP_MINFO(tclink),
++#if ZEND_MODULE_API_NO >= 20010901
++	TCLINK_VERSION,
++#endif
++	STANDARD_MODULE_PROPERTIES
+ };
+ 
+ #define PHP_TCLINK_DEFAULT_BUFFER_SIZE 8196
