@@ -19,6 +19,8 @@ COMMENT=	Microsoft NetShow video stream player
 
 RESTRICTED=	"Commercial software"
 
+BROKEN=		does not fetch
+
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 PLIST_FILES=	bin/netshow
