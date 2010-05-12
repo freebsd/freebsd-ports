@@ -402,6 +402,8 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/email/test/data/msg_42.txt
 %%PYTHON_LIBDIR%%/email/test/data/msg_43.txt
 %%PYTHON_LIBDIR%%/email/test/data/msg_44.txt
+%%PYTHON_LIBDIR%%/email/test/data/msg_45.txt
+%%PYTHON_LIBDIR%%/email/test/data/msg_46.txt
 %%PYTHON_LIBDIR%%/email/test/test_email.py
 %%PYTHON_LIBDIR%%/email/test/test_email_codecs.py
 %%PYTHON_LIBDIR%%/email/test/test_email_torture.py
@@ -745,9 +747,9 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/lib-dynload/unicodedata.so
 %%PYTHON_LIBDIR%%/lib-dynload/zlib.so
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar3.1.1.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar3.1.2.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar3.1.1.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar3.1.2.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
@@ -818,6 +820,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/lib2to3/refactor.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/data/README
+%%PYTHON_LIBDIR%%/lib2to3/tests/data/bom.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/data/crlf.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/data/different_encoding.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/data/fixers/bad_order.py
@@ -836,6 +839,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/lib2to3/tests/support.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_all_fixers.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_fixers.py
+%%PYTHON_LIBDIR%%/lib2to3/tests/test_main.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_parser.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_pytree.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_refactor.py
@@ -1133,6 +1137,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/inspect_fodder2.py
 %%PYTHON_LIBDIR%%/test/keycert.pem
 %%PYTHON_LIBDIR%%/test/list_tests.py
+%%PYTHON_LIBDIR%%/test/lock_tests.py
 %%PYTHON_LIBDIR%%/test/mapping_tests.py
 %%PYTHON_LIBDIR%%/test/nullcert.pem
 %%PYTHON_LIBDIR%%/test/outstanding_bugs.py
@@ -1430,6 +1435,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/test_stringprep.py
 %%PYTHON_LIBDIR%%/test/test_strlit.py
 %%PYTHON_LIBDIR%%/test/test_strptime.py
+%%PYTHON_LIBDIR%%/test/test_strtod.py
 %%PYTHON_LIBDIR%%/test/test_struct.py
 %%PYTHON_LIBDIR%%/test/test_structmembers.py
 %%PYTHON_LIBDIR%%/test/test_structseq.py
@@ -1532,6 +1538,18 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/tkinter/messagebox.py
 %%PYTHON_LIBDIR%%/tkinter/scrolledtext.py
 %%PYTHON_LIBDIR%%/tkinter/simpledialog.py
+%%PYTHON_LIBDIR%%/tkinter/test/README
+%%PYTHON_LIBDIR%%/tkinter/test/__init__.py
+%%PYTHON_LIBDIR%%/tkinter/test/runtktests.py
+%%PYTHON_LIBDIR%%/tkinter/test/support.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/__init__.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_loadtk.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_tkinter/test_text.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_ttk/__init__.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_ttk/test_extensions.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_ttk/test_functions.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_ttk/test_style.py
+%%PYTHON_LIBDIR%%/tkinter/test/test_ttk/test_widgets.py
 %%PYTHON_LIBDIR%%/tkinter/tix.py
 %%PYTHON_LIBDIR%%/tkinter/ttk.py
 %%PYTHON_LIBDIR%%/token.py
@@ -1681,12 +1699,11 @@ libdata/pkgconfig/python-3.1.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/fact.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/find-uname.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/from.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/ftpstats.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/lpwatch.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/makedir.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/markov.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/mboxconvert.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/mkrcs.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/morse.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/newslist.doc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/newslist.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/pi.py
@@ -2018,6 +2035,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PORTDATA%%%%DATADIR%%/Tools/scripts/dutree.doc
 %%PORTDATA%%%%DATADIR%%/Tools/scripts/dutree.py
 %%PORTDATA%%%%DATADIR%%/Tools/scripts/eptags.py
+%%PORTDATA%%%%DATADIR%%/Tools/scripts/find_recursionlimit.py
 %%PORTDATA%%%%DATADIR%%/Tools/scripts/finddiv.py
 %%PORTDATA%%%%DATADIR%%/Tools/scripts/findlinksto.py
 %%PORTDATA%%%%DATADIR%%/Tools/scripts/findnocoding.py
@@ -2152,6 +2170,9 @@ libdata/pkgconfig/python-3.1.pc
 @dirrm %%PYTHON_LIBDIR%%/xml
 @dirrm %%PYTHON_LIBDIR%%/wsgiref
 @dirrm %%PYTHON_LIBDIR%%/urllib
+@dirrm %%PYTHON_LIBDIR%%/tkinter/test/test_tkinter
+@dirrm %%PYTHON_LIBDIR%%/tkinter/test/test_ttk
+@dirrm %%PYTHON_LIBDIR%%/tkinter/test
 @dirrm %%PYTHON_LIBDIR%%/tkinter
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
 @dirrm %%PYTHON_LIBDIR%%/test
