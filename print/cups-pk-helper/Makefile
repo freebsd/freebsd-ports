@@ -7,6 +7,7 @@
 
 PORTNAME=	cups-pk-helper
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/releases/
 
@@ -19,6 +20,8 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GNOME=	intlhack gtk20
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/libs"
 
