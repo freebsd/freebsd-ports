@@ -1,32 +1,32 @@
 @comment $FreeBSD$
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Prim/BUArr.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Prim/Debug.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Prim/Hyperstrict.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Prim/Text.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Stream.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Basics.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Enum.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Permute.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Stream.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Sums.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Text.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/UArr.hi
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSuvector-%%UVECTOR_VERSION%%.o
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/memcpy_extra.h
-%%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSuvector-%%UVECTOR_VERSION%%.a
-%%UVECTOR_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Prim/BUArr.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Prim/Debug.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Prim/Hyperstrict.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Prim/Text.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Stream.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Basics.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Enum.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Permute.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Stream.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Sums.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict/Text.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/UArr.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/memcpy_extra.h
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
-@dirrm %%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict
-@dirrm %%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Prim
-@dirrm %%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector
-@dirrm %%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array
-@dirrm %%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%UVECTOR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%UVECTOR_LIBDIR_REL%%
-@exec /bin/sh %D/%%UVECTOR_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Strict
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Prim
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister uvector
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

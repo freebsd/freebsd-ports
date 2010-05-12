@@ -1,14 +1,14 @@
 @comment $FreeBSD$
-%%DATETIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/DateTime.hi
-%%DATETIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSdatetime-%%DATETIME_VERSION%%.o
-%%DATETIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSdatetime-%%DATETIME_VERSION%%.a
-%%DATETIME_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/DateTime.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYING
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%DATETIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%DATETIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%DATETIME_LIBDIR_REL%%
-@exec /bin/sh %D/%%DATETIME_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister datetime
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

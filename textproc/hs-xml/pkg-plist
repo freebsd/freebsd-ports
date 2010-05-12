@@ -1,21 +1,21 @@
 @comment $FreeBSD$
-%%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSxml-%%HSXML_VERSION%%.o
-%%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light.hi
-%%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Cursor.hi
-%%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Input.hi
-%%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Output.hi
-%%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Proc.hi
-%%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Types.hi
-%%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSxml-%%HSXML_VERSION%%.a
-%%HSXML_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Cursor.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Input.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Output.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Proc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light
-@dirrm %%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML
-@dirrm %%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%HSXML_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HSXML_LIBDIR_REL%%
-@exec /bin/sh %D/%%HSXML_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister xml
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

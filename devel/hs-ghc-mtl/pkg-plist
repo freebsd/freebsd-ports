@@ -1,15 +1,15 @@
 @comment $FreeBSD$
-%%GHCMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Ghc.hi
-%%GHCMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSghc-mtl-%%GHCMTL_VERSION%%.o
-%%GHCMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSghc-mtl-%%GHCMTL_VERSION%%.a
-%%GHCMTL_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Ghc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%GHCMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
-@dirrm %%GHCMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
-@dirrm %%GHCMTL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%GHCMTL_LIBDIR_REL%%
-@exec /bin/sh %D/%%GHCMTL_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister ghc-mtl
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

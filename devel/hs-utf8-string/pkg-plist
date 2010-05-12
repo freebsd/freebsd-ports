@@ -1,29 +1,29 @@
 @comment $FreeBSD$
-%%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/UTF8/Generic.hi
-%%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/UTF8/String.hi
-%%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy/UTF8.hi
-%%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/UTF8.hi
-%%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String/UTF8.hi
-%%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSutf8-string-%%UTF8STR_VERSION%%.o
-%%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Environment/UTF8.hi
-%%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/UTF8.hi
-%%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSutf8-string-%%UTF8STR_VERSION%%.a
-%%UTF8STR_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/UTF8/Generic.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/UTF8/String.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy/UTF8.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/UTF8.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String/UTF8.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Environment/UTF8.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/UTF8.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Environment
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/UTF8
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec
-@dirrm %%UTF8STR_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%UTF8STR_LIBDIR_REL%%
-@exec /bin/sh %D/%%UTF8STR_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Environment
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/UTF8
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister utf8-string
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

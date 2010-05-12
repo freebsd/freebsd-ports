@@ -1,130 +1,130 @@
 @comment $FreeBSD$
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Allegory.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Applicative/Parameterized.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/BiKleisli.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/CoKleisli.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Associative.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Braided.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Cartesian.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Cartesian/Closed.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Discrete.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Distributive.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Dual.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Hask.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Monoidal.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Object.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Cofree.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Coideal.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Context.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Density.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Exponent.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Fix.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/HigherOrder.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Indexed.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Parameterized.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Pointer.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Reader.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Stream.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Supply.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Trans.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Dyad.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Adjunction.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Adjunction/HigherOrder.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Algebra.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Algebra/Elgot.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Categorical.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Biff.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Const.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Flip.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Join.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Lift.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Of.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Composition.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Cone.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Contra.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Exponential.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Extras.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Fix.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Full.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/HigherOrder.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/HigherOrder/Composition.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Indexed.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Internal/Adjunction.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Internal/Ideal.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/KanExtension.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/KanExtension/Interpreter.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Lambek.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Limit.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Pointed.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Pointed/Composition.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Representable.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Strong.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Yoneda.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Zap.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Zip.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Categorical.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Codensity.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Either.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Free.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/HigherOrder.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Hyper.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Ideal.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed/Cont.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed/Fix.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed/State.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed/Trans.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Parameterized.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Ana.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Apo.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Build.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Cata.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Chrono.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Destroy.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Dyna.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Exo.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Futu.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Histo.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Hylo.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Meta/Erwig.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Meta/Gibbons.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Para.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Postpro.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Prepro.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Span.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Synchro.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Universal.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Zygo.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Void.hi
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HScategory-extras-%%CATEGORYEXTRAS_VERSION%%.o
-%%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHScategory-extras-%%CATEGORYEXTRAS_VERSION%%.a
-%%CATEGORYEXTRAS_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Allegory.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Applicative/Parameterized.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/BiKleisli.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/CoKleisli.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Associative.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Braided.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Cartesian.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Cartesian/Closed.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Discrete.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Distributive.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Dual.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Hask.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Monoidal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Object.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Cofree.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Coideal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Context.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Density.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Exponent.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Fix.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/HigherOrder.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Indexed.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Parameterized.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Pointer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Reader.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Stream.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Supply.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad/Trans.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Dyad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Adjunction.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Adjunction/HigherOrder.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Algebra.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Algebra/Elgot.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Categorical.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Biff.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Const.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Flip.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Join.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Lift.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators/Of.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Composition.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Cone.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Contra.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Exponential.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Extras.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Fix.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Full.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/HigherOrder.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/HigherOrder/Composition.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Indexed.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Internal/Adjunction.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Internal/Ideal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/KanExtension.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/KanExtension/Interpreter.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Lambek.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Limit.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Pointed.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Pointed/Composition.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Representable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Strong.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Yoneda.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Zap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Zip.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Categorical.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Codensity.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Either.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Free.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/HigherOrder.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Hyper.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Ideal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed/Cont.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed/Fix.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed/State.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed/Trans.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Parameterized.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Ana.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Apo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Build.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Cata.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Chrono.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Destroy.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Dyna.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Exo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Futu.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Histo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Hylo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Meta/Erwig.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Meta/Gibbons.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Para.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Postpro.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Prepro.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Span.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Synchro.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Universal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Zygo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Void.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Meta
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Pointed
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/KanExtension
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Internal
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/HigherOrder
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Algebra
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Adjunction
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Cartesian
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Applicative
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%CATEGORYEXTRAS_LIBDIR_REL%%
-@exec /bin/sh %D/%%CATEGORYEXTRAS_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism/Meta
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Morphism
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Indexed
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Pointed
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/KanExtension
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Internal
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/HigherOrder
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Combinators
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Algebra
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor/Adjunction
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Functor
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Comonad
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category/Cartesian
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Category
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Applicative
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister category-extras
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

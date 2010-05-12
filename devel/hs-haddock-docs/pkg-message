@@ -1,5 +1,3 @@
-===================================================================
-
   WARNING: if the lang/ghc port doesn't install the hyperlinkable
   documentation for its libraries, then haddock can't know about
   these. But also in this case haddock can't handle recursive
@@ -7,5 +5,3 @@
   In general haddock detects and reports as an error recursive
   modules and emits chatting warnings listing all the identifiers
   it couldn't resolve.
-
-===================================================================

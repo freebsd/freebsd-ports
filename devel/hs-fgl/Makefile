@@ -8,75 +8,15 @@
 PORTNAME=	fgl
 PORTVERSION=	5.4.2.2
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
-PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	jacula@gmail.com
 COMMENT=	Martin Erwig Functional Graph Library
 
-BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+CABAL_SETUP=	Setup.hs
 
-GHC_VERSION=	6.10.4
-FGL_VERSION=	${PORTVERSION}
+PORTDATA=		*
+INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${DATADIR} \
+			  && ${INSTALL_DATA} ${WRKSRC}/doc/README ${DATADIR}
 
-GHC_CMD=	${LOCALBASE}/bin/ghc
-SETUP_CMD=	./setup
-
-DATADIR=	${PREFIX}/share/${DISTNAME}
-PORTDATA=	*
-
-DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
-FGL_LIBDIR_REL=	lib/${DISTNAME}
-
-PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
-		FGL_VERSION=${FGL_VERSION} \
-		FGL_LIBDIR_REL=${FGL_LIBDIR_REL}
-
-.if defined(NOPORTDOCS)
-PLIST_SUB+=	NOPORTDOCS=""
-.else
-PLIST_SUB+=	NOPORTDOCS="@comment "
-.endif
-
-.if !defined(NOPORTDOCS)
-
-PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
-.if !empty(PORT_HADDOCK:M?0)
-BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
-.endif
-BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
-
-HSCOLOUR_VERSION=	1.15
-HSCOLOUR_DATADIR=	${PREFIX}/share/hscolour-${HSCOLOUR_VERSION}
-
-PORTDOCS=	*
-.endif
-
-.SILENT:
-
-do-configure:
-	cd ${WRKSRC} && ${GHC_CMD} --make Setup.hs -o setup -package Cabal \
-		     && ${SETUP_CMD} configure --haddock-options=-w --prefix=${PREFIX}
-
-do-build:
-	cd ${WRKSRC} && ${SETUP_CMD} build \
-		     && ${SETUP_CMD} register --gen-script
-
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${SETUP_CMD} haddock --hyperlink-source \
-					     --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
-.endif
-
-do-install:
-	cd ${WRKSRC} && ${SETUP_CMD} install \
-		     && ${INSTALL_SCRIPT} register.sh ${PREFIX}/${FGL_LIBDIR_REL}/register.sh
-.if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR} && ${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${DATADIR} \
-			     && ${INSTALL_DATA} ${WRKSRC}/doc/README ${DATADIR}
-.endif
-
-post-install:
-	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
-
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

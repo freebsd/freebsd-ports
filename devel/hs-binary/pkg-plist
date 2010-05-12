@@ -1,18 +1,18 @@
 @comment $FreeBSD$
-%%BINARY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Binary.hi
-%%BINARY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Binary/Builder.hi
-%%BINARY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Binary/Get.hi
-%%BINARY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Binary/Put.hi
-%%BINARY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSbinary-%%BINARY_VERSION%%.o
-%%BINARY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSbinary-%%BINARY_VERSION%%.a
-%%BINARY_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Binary.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Binary/Builder.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Binary/Get.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Binary/Put.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%BINARY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Binary
-@dirrm %%BINARY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%BINARY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%BINARY_LIBDIR_REL%%
-@exec /bin/sh %D/%%BINARY_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Binary
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister binary
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

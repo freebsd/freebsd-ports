@@ -8,39 +8,15 @@ PORTNAME=	haddock
 PORTVERSION=	2.4.2
 PORTREVISION=	1
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.haskell.org/haddock/dist/ \
-		http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
-PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A documentation tool for Haskell
 
-.if !defined(SLAVE)
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-       		hs-ghc-paths>=0.1.0.5:${PORTSDIR}/devel/hs-ghc-paths
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-       		hs-ghc-paths>=0.1.0.5:${PORTSDIR}/devel/hs-ghc-paths
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
-.else
-NO_PKG_REGISTER=
-.endif
+USE_HACKAGE=	ghc-paths
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
+EXECUTABLE=	haddock
 
-GHC_VERSION=		6.10.4
-HADDOCK_VERSION=	${PORTVERSION}
-
-CABAL_CMD=	runghc Setup.lhs
-
-DATADIR=		${PREFIX}/share/${DISTNAME}
-HADDOCK_LIBDIR_REL=	lib/${DISTNAME}
-DOCSDIR=		${PREFIX}/share/doc/${DISTNAME}
-
-PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
-		DATADIR_REL=${DATADIR_REL} \
-		HADDOCK_LIBDIR_REL=${HADDOCK_LIBDIR_REL} \
-		HADDOCK_VERSION=${HADDOCK_VERSION} \
-		DOCSDIR_REL=${DOCSDIR_REL}
+PORTDATA=	*
 
 .include <bsd.port.pre.mk>
 
@@ -59,31 +35,9 @@ IGNORE+=	\t the ${LOCALBASE}/bin/haddock executable, for the WITH_HADDOCK\n
 IGNORE+=	\t option was set in it. You have to set the WITHOUT_HADDOCK\n
 IGNORE+=	\t options in lang/ghc before to install devel/hs-haddock.\n\c
 .endif
+.else
+GHC_CMD=	ghc
 .endif
 
-.SILENT:
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/doc/configure.ac
-
-do-configure:
-	cd ${WRKSRC} && ${CABAL_CMD} configure --ghc --prefix=${PREFIX}
-
-do-build:
-	cd ${WRKSRC} && ${CABAL_CMD} build
-.if !defined(SLAVE)
-	cd ${WRKSRC} && ${CABAL_CMD} register --gen-script
-.endif
-
-do-install:
-	cd ${WRKSRC} && ${CABAL_CMD} install
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/haddock
-.if !defined(SLAVE)
-	${INSTALL_SCRIPT} ${WRKSRC}/register.sh ${PREFIX}/${HADDOCK_LIBDIR_REL}/register.sh
-.endif
-	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
-
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.post.mk>

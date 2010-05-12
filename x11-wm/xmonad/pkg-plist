@@ -1,23 +1,22 @@
 @comment $FreeBSD$
 bin/xmonad
-%%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSxmonad-%%XMONAD_VERSION%%.o
-%%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad.hi
-%%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Config.hi
-%%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Core.hi
-%%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Layout.hi
-%%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Main.hi
-%%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/ManageHook.hi
-%%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Operations.hi
-%%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/StackSet.hi
-%%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSxmonad-%%XMONAD_VERSION%%.a
-%%XMONAD_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Config.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Core.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Layout.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Main.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/ManageHook.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/Operations.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad/StackSet.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
-%%NOPORTDOCS%%%%DOCSDIR%%/CONFIG
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad
-@dirrm %%XMONAD_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%XMONAD_LIBDIR_REL%%
-@exec /bin/sh %D/%%XMONAD_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/XMonad
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister xmonad
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

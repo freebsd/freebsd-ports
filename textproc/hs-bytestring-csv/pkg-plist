@@ -1,17 +1,17 @@
 @comment $FreeBSD$
-%%BYTESTRINGCSV_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSbytestring-csv-%%BYTESTRINGCSV_VERSION%%.o
-%%BYTESTRINGCSV_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/CSV/ByteString.hi
-%%BYTESTRINGCSV_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/CSV/ByteString/Lex.hi
-%%BYTESTRINGCSV_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSbytestring-csv-%%BYTESTRINGCSV_VERSION%%.a
-%%BYTESTRINGCSV_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/CSV/ByteString.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/CSV/ByteString/Lex.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%BYTESTRINGCSV_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/CSV/ByteString
-@dirrm %%BYTESTRINGCSV_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/CSV
-@dirrm %%BYTESTRINGCSV_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%BYTESTRINGCSV_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%BYTESTRINGCSV_LIBDIR_REL%%
-@exec /bin/sh %D/%%BYTESTRINGCSV_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/CSV/ByteString
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/CSV
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister bytestring-csv
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

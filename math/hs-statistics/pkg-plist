@@ -1,37 +1,37 @@
 @comment $FreeBSD$
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSstatistics-%%STATISTICS_VERSION%%.o
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Autocorrelation.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Constants.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Binomial.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Exponential.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Gamma.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Geometric.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Hypergeometric.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Normal.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Poisson.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Function.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Internal.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/KernelDensity.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Math.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Quantile.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/RandomVariate.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Resampling.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Resampling/Bootstrap.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Sample.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Sample/Powers.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Types.hi
-%%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSstatistics-%%STATISTICS_VERSION%%.a
-%%STATISTICS_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Autocorrelation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Constants.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Binomial.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Exponential.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Gamma.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Geometric.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Hypergeometric.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Normal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution/Poisson.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Function.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Internal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/KernelDensity.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Math.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Quantile.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/RandomVariate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Resampling.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Resampling/Bootstrap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Sample.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Sample/Powers.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Sample
-@dirrm %%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Resampling
-@dirrm %%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution
-@dirrm %%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics
-@dirrm %%STATISTICS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%STATISTICS_LIBDIR_REL%%
-@exec /bin/sh %D/%%STATISTICS_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Sample
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Resampling
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Distribution
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister statistics
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

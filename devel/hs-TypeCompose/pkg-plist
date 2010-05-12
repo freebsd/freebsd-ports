@@ -1,23 +1,23 @@
 @comment $FreeBSD$
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Compose.hi
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Instances.hi
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bijection.hi
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/CxMonoid.hi
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Lambda.hi
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Pair.hi
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Partial.hi
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/RefMonad.hi
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Title.hi
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Zip.hi
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSTypeCompose-%%TYPECOMPOSE_VERSION%%.o
-%%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSTypeCompose-%%TYPECOMPOSE_VERSION%%.a
-%%TYPECOMPOSE_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Compose.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Instances.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bijection.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/CxMonoid.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Lambda.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Pair.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Partial.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/RefMonad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Title.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Zip.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
-@dirrm %%TYPECOMPOSE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%TYPECOMPOSE_LIBDIR_REL%%
-@exec /bin/sh %D/%%TYPECOMPOSE_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister TypeCompose
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

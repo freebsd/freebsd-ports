@@ -1,26 +1,26 @@
 @comment $FreeBSD$
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/Biplate.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/Compos.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/PlateData.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/PlateDirect.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/PlateInternal.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/PlateTypeable.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/SYB.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/Str.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/Uniplate.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/UniplateOn.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/UniplateStr.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/UniplateStrOn.hi
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSuniplate-%%UNIPLATE_VERSION%%.o
-%%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSuniplate-%%UNIPLATE_VERSION%%.a
-%%UNIPLATE_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/Biplate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/Compos.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/PlateData.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/PlateDirect.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/PlateInternal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/PlateTypeable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/SYB.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/Str.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/Uniplate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/UniplateOn.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/UniplateStr.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics/UniplateStrOn.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics
-@dirrm %%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%UNIPLATE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%UNIPLATE_LIBDIR_REL%%
-@exec /bin/sh %D/%%UNIPLATE_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Generics
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister uniplate
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -1,54 +1,54 @@
 @comment $FreeBSD$
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSuulib-%%UULIB_VERSION%%.o
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntBag.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntMap.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntSet.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Map.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/MultiSet.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Queue.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Scc.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Seq.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Set.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/PPrint.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/CharParser.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Derived.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Interface.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Machine.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/MachineInterface.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Merge.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Offside.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Perms.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/StateParser.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Pretty.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Pretty/Basic.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Pretty/Ext.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/GenToken.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/GenTokenOrd.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/GenTokenParser.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/GenTokenSymbol.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/Position.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/Scanner.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/Token.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/TokenParser.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/TokenShow.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util/BinaryTrees.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util/PermTree.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util/Utils.hi
-%%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSuulib-%%UULIB_VERSION%%.a
-%%UULIB_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntBag.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntMap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntSet.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Map.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/MultiSet.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Queue.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Scc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Seq.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Set.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/PPrint.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/CharParser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Derived.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Interface.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Machine.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/MachineInterface.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Merge.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Offside.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/Perms.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/StateParser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Pretty.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Pretty/Basic.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Pretty/Ext.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/GenToken.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/GenTokenOrd.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/GenTokenParser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/GenTokenSymbol.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/Position.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/Scanner.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/Token.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/TokenParser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner/TokenShow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util/BinaryTrees.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util/PermTree.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util
-@dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner
-@dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Pretty
-@dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing
-@dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData
-@dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU
-@dirrm %%UULIB_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%UULIB_LIBDIR_REL%%
-@exec /bin/sh %D/%%UULIB_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Pretty
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister uulib
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

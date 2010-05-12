@@ -1,24 +1,24 @@
 @comment $FreeBSD$
-%%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Combinators.hi
-%%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Common.hi
-%%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Insertion.hi
-%%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Intro.hi
-%%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Merge.hi
-%%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Optimal.hi
-%%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Radix.hi
-%%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/TriHeap.hi
-%%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSuvector-algorithms-%%UVECTORALGORITHMS_VERSION%%.o
-%%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSuvector-algorithms-%%UVECTORALGORITHMS_VERSION%%.a
-%%UVECTORALGORITHMS_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Combinators.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Common.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Insertion.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Intro.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Merge.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Optimal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/Radix.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms/TriHeap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms
-@dirrm %%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector
-@dirrm %%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array
-@dirrm %%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%UVECTORALGORITHMS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%UVECTORALGORITHMS_LIBDIR_REL%%
-@exec /bin/sh %D/%%UVECTORALGORITHMS_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector/Algorithms
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array/Vector
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Array
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister uvector-algorithms
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

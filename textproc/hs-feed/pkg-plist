@@ -1,42 +1,42 @@
 @comment $FreeBSD$
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSfeed-%%FEED_VERSION%%.o
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed/Export.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed/Import.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed/Link.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed/Validate.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Pub.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Pub/Export.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/DublinCore/Types.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Constructor.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Export.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Import.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Query.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Translate.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Types.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Util.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS/Export.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS/Import.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS/Syntax.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS1/Export.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS1/Import.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS1/Syntax.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS1/Utils.hi
-%%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSfeed-%%FEED_VERSION%%.a
-%%FEED_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed/Export.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed/Import.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed/Link.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed/Validate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Pub.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Pub/Export.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/DublinCore/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Constructor.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Export.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Import.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Query.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Translate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed/Util.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS/Export.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS/Import.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS/Syntax.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS1/Export.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS1/Import.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS1/Syntax.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS1/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS1
-@dirrm %%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS
-@dirrm %%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed
-@dirrm %%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/DublinCore
-@dirrm %%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Pub
-@dirrm %%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed
-@dirrm %%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom
-@dirrm %%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%FEED_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%FEED_LIBDIR_REL%%
-@exec /bin/sh %D/%%FEED_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS1
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/RSS
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Feed
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/DublinCore
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Pub
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom/Feed
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Atom
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister feed
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

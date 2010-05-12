@@ -1,19 +1,19 @@
 @comment $FreeBSD$
 bin/testTeXMathML
 bin/texmath-cgi
-%%TEXMATH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HStexmath-%%TEXMATH_VERSION%%.o
-%%TEXMATH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/TeXMath.hi
-%%TEXMATH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/TeXMath/MathMLWriter.hi
-%%TEXMATH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/TeXMath/Parser.hi
-%%TEXMATH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHStexmath-%%TEXMATH_VERSION%%.a
-%%TEXMATH_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/TeXMath.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/TeXMath/MathMLWriter.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/TeXMath/Parser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%TEXMATH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/TeXMath
-@dirrm %%TEXMATH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%TEXMATH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%TEXMATH_LIBDIR_REL%%
-@exec /bin/sh %D/%%TEXMATH_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/TeXMath
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister texmath
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

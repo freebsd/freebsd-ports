@@ -1,42 +1,42 @@
 @comment $FreeBSD$
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSprobability-%%PROBABILITY_VERSION%%.o
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Distribution.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Alarm.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Barber.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Bayesian.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Boys.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Collection.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Diagnosis.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Dice.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/DiceAccum.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/MontyHall.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/NBoys.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Predator.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Profession.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Queuing.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/TreeGrowth.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Expectation.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Monad.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Object.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Percentage.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/PrintList.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Random.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Shape.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Show.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Simulation.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Trace.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Transition.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Visualize.hi
-%%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSprobability-%%PROBABILITY_VERSION%%.a
-%%PROBABILITY_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Distribution.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Alarm.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Barber.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Bayesian.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Boys.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Collection.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Diagnosis.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Dice.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/DiceAccum.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/MontyHall.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/NBoys.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Predator.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Profession.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/Queuing.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example/TreeGrowth.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Expectation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Monad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Object.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Percentage.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/PrintList.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Random.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Shape.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Show.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Simulation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Trace.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Transition.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Visualize.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example
-@dirrm %%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability
-@dirrm %%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric
-@dirrm %%PROBABILITY_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%PROBABILITY_LIBDIR_REL%%
-@exec /bin/sh %D/%%PROBABILITY_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability/Example
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric/Probability
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Numeric
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister probability
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -1,32 +1,32 @@
 @comment $FreeBSD$
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSHTTP-%%HTTP_VERSION%%.o
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Browser.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/BufferType.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Auth.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Base.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Base64.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Cookie.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/HandleStream.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Headers.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/MD5.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/MD5Aux.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Proxy.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Stream.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Utils.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Stream.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/StreamDebugger.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/StreamSocket.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/TCP.hi
-%%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSHTTP-%%HTTP_VERSION%%.a
-%%HTTP_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Browser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/BufferType.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Auth.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Base.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Base64.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Cookie.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/HandleStream.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Headers.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/MD5.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/MD5Aux.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Proxy.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Stream.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Stream.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/StreamDebugger.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/StreamSocket.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/TCP.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP
-@dirrm %%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network
-@dirrm %%HTTP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HTTP_LIBDIR_REL%%
-@exec /bin/sh %D/%%HTTP_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/HTTP
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister HTTP
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

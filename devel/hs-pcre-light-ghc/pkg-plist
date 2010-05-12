@@ -1,19 +1,19 @@
 @comment $FreeBSD$
-%%PCRELIGHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSpcre-light-%%PCRELIGHT_VERSION%%.o
-%%PCRELIGHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex/PCRE/Light.hi
-%%PCRELIGHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex/PCRE/Light/Base.hi
-%%PCRELIGHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex/PCRE/Light/Char8.hi
-%%PCRELIGHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSpcre-light-%%PCRELIGHT_VERSION%%.a
-%%PCRELIGHT_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex/PCRE/Light.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex/PCRE/Light/Base.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex/PCRE/Light/Char8.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%PCRELIGHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex/PCRE/Light
-@dirrm %%PCRELIGHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex/PCRE
-@dirrm %%PCRELIGHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex
-@dirrm %%PCRELIGHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%PCRELIGHT_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%PCRELIGHT_LIBDIR_REL%%
-@exec /bin/sh %D/%%PCRELIGHT_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex/PCRE/Light
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex/PCRE
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Regex
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister pcre-light
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

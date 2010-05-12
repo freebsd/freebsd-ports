@@ -1,21 +1,21 @@
 @comment $FreeBSD$
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/AdditiveGroup.hi
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/AffineSpace.hi
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Basis.hi
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Cross.hi
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Derivative.hi
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/LinearMap.hi
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Maclaurin.hi
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/NumInstances.hi
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/VectorSpace.hi
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSvector-space-%%VECTORSPACE_VERSION%%.o
-%%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSvector-space-%%VECTORSPACE_VERSION%%.a
-%%VECTORSPACE_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/AdditiveGroup.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/AffineSpace.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Basis.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Cross.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Derivative.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/LinearMap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Maclaurin.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/NumInstances.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/VectorSpace.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%VECTORSPACE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%VECTORSPACE_LIBDIR_REL%%
-@exec /bin/sh %D/%%VECTORSPACE_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister vector-space
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -1,21 +1,21 @@
 @comment $FreeBSD$
-%%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSjson-%%HSJSON_VERSION%%.o
-%%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON.hi
-%%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/Generic.hi
-%%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/Parsec.hi
-%%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/Pretty.hi
-%%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/ReadP.hi
-%%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/String.hi
-%%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/Types.hi
-%%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSjson-%%HSJSON_VERSION%%.a
-%%HSJSON_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/Generic.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/Parsec.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/Pretty.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/ReadP.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/String.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON
-@dirrm %%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%HSJSON_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HSJSON_LIBDIR_REL%%
-@exec /bin/sh %D/%%HSJSON_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/JSON
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister json
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

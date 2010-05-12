@@ -1,15 +1,15 @@
 @comment $FreeBSD$
-%%MMAP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSmmap-%%MMAP_VERSION%%.o
-%%MMAP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/MMap.hi
-%%MMAP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSmmap-%%MMAP_VERSION%%.a
-%%MMAP_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/MMap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%MMAP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO
-@dirrm %%MMAP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
-@dirrm %%MMAP_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%MMAP_LIBDIR_REL%%
-@exec /bin/sh %D/%%MMAP_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister mmap
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

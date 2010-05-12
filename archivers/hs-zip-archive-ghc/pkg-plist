@@ -1,15 +1,15 @@
 @comment $FreeBSD$
-%%ZIPARCHIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Archive/Zip.hi
-%%ZIPARCHIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSzip-archive-%%ZIPARCHIVE_VERSION%%.o
-%%ZIPARCHIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSzip-archive-%%ZIPARCHIVE_VERSION%%.a
-%%ZIPARCHIVE_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Archive/Zip.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%ZIPARCHIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Archive
-@dirrm %%ZIPARCHIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec
-@dirrm %%ZIPARCHIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%ZIPARCHIVE_LIBDIR_REL%%
-@exec /bin/sh %D/%%ZIPARCHIVE_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Archive
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister zip-archive
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

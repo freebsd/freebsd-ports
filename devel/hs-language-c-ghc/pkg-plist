@@ -1,51 +1,51 @@
 @comment $FreeBSD$
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSlanguage-c-%%LANGUAGEC_VERSION%%.o
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/AstAnalysis.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/Debug.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/DeclAnalysis.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/DefTable.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/Export.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/NameSpaceMap.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/SemError.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/SemRep.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/TravMonad.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Error.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Ident.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/InputStream.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Name.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Node.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Position.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/RList.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Builtin.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Lexer.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Parser.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/ParserMonad.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Tokens.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Pretty.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax/AST.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax/Constants.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax/Ops.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/System/GCC.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/System/Preprocess.hi
-%%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSlanguage-c-%%LANGUAGEC_VERSION%%.a
-%%LANGUAGEC_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/AstAnalysis.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/Debug.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/DeclAnalysis.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/DefTable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/Export.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/NameSpaceMap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/SemError.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/SemRep.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis/TravMonad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Error.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Ident.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/InputStream.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Name.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Node.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/Position.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data/RList.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Builtin.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Lexer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Parser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/ParserMonad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser/Tokens.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Pretty.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax/AST.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax/Constants.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax/Ops.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/System/GCC.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/System/Preprocess.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/System
-@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax
-@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser
-@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data
-@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis
-@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C
-@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
-@dirrm %%LANGUAGEC_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%LANGUAGEC_LIBDIR_REL%%
-@exec /bin/sh %D/%%LANGUAGEC_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/System
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Syntax
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Parser
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C/Analysis
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/C
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister language-c
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

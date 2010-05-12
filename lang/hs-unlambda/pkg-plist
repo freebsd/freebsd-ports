@@ -1,15 +1,15 @@
 @comment $FreeBSD$
 bin/unlambda
-%%UNLAMBDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSunlambda-%%UNLAMBDA_VERSION%%.o
-%%UNLAMBDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Unlambda.hi
-%%UNLAMBDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSunlambda-%%UNLAMBDA_VERSION%%.a
-%%UNLAMBDA_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Unlambda.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%UNLAMBDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
-@dirrm %%UNLAMBDA_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%UNLAMBDA_LIBDIR_REL%%
-@exec /bin/sh %D/%%UNLAMBDA_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister unlambda
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

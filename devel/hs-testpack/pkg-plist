@@ -1,18 +1,18 @@
 @comment $FreeBSD$
-%%TESTPACK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HStestpack-%%TESTPACK_VERSION%%.o
-%%TESTPACK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/HUnit/Tools.hi
-%%TESTPACK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances.hi
-%%TESTPACK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Tools.hi
-%%TESTPACK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHStestpack-%%TESTPACK_VERSION%%.a
-%%TESTPACK_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/HUnit/Tools.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Tools.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%TESTPACK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck
-@dirrm %%TESTPACK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/HUnit
-@dirrm %%TESTPACK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test
-@dirrm %%TESTPACK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%TESTPACK_LIBDIR_REL%%
-@exec /bin/sh %D/%%TESTPACK_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/HUnit
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister testpack
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

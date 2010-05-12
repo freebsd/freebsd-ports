@@ -1,18 +1,4 @@
 @comment $FreeBSD$
 bin/happy
-%%SUBDIR%%/GLR_Base
-%%SUBDIR%%/GLR_Lib
-%%SUBDIR%%/GLR_Lib-ghc
-%%SUBDIR%%/GLR_Lib-ghc-debug
-%%SUBDIR%%/HappyTemplate
-%%SUBDIR%%/HappyTemplate-arrays
-%%SUBDIR%%/HappyTemplate-arrays-coerce
-%%SUBDIR%%/HappyTemplate-arrays-coerce-debug
-%%SUBDIR%%/HappyTemplate-arrays-debug
-%%SUBDIR%%/HappyTemplate-arrays-ghc
-%%SUBDIR%%/HappyTemplate-arrays-ghc-debug
-%%SUBDIR%%/HappyTemplate-coerce
-%%SUBDIR%%/HappyTemplate-ghc
-@dirrm %%SUBDIR%%
-%%RMLIC%%%%DOCSDIR%%/LICENSE
-%%RMLIC%%@dirrm %%DOCSDIR%%
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%

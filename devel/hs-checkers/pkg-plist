@@ -1,33 +1,33 @@
 @comment $FreeBSD$
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Extensions.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HScheckers-%%CHECKERS_VERSION%%.o
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Bottoms.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Checkers.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Classes.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Array.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Char.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Eq.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Int.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/List.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Maybe.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Num.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Ord.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Tuple.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Word.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Later.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Utils.hi
-%%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHScheckers-%%CHECKERS_VERSION%%.a
-%%CHECKERS_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Extensions.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Bottoms.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Checkers.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Classes.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Array.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Char.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Eq.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Int.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/List.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Maybe.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Num.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Ord.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Tuple.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances/Word.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Later.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances
-@dirrm %%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck
-@dirrm %%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test
-@dirrm %%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
-@dirrm %%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
-@dirrm %%CHECKERS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%CHECKERS_LIBDIR_REL%%
-@exec /bin/sh %D/%%CHECKERS_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck/Instances
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/QuickCheck
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister checkers
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

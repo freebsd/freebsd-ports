@@ -1,22 +1,22 @@
 @comment $FreeBSD$
-%%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HShslogger-%%HSLOGGER_VERSION%%.o
-%%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log.hi
-%%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler.hi
-%%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Growl.hi
-%%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Log4jXML.hi
-%%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Simple.hi
-%%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Syslog.hi
-%%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Logger.hi
-%%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHShslogger-%%HSLOGGER_VERSION%%.a
-%%HSLOGGER_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Growl.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Log4jXML.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Simple.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Syslog.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Logger.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler
-@dirrm %%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log
-@dirrm %%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
-@dirrm %%HSLOGGER_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HSLOGGER_LIBDIR_REL%%
-@exec /bin/sh %D/%%HSLOGGER_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister hslogger
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

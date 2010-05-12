@@ -1,22 +1,22 @@
 @comment $FreeBSD$
-%%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HScgi-%%CGI_VERSION%%.o
-%%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI.hi
-%%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Accept.hi
-%%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Compat.hi
-%%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Cookie.hi
-%%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Header.hi
-%%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Monad.hi
-%%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Multipart.hi
-%%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Protocol.hi
-%%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHScgi-%%CGI_VERSION%%.a
-%%CGI_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Accept.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Compat.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Cookie.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Header.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Monad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Multipart.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI/Protocol.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI
-@dirrm %%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network
-@dirrm %%CGI_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%CGI_LIBDIR_REL%%
-@exec /bin/sh %D/%%CGI_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/CGI
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister cgi
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

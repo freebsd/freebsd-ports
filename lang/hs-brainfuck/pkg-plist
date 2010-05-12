@@ -1,17 +1,17 @@
 @comment $FreeBSD$
 bin/bf
-%%BRAINFUCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSbrainfuck-%%BRAINFUCK_VERSION%%.o
-%%BRAINFUCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Brainfuck.hi
-%%BRAINFUCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Brainfuck/Examples.hi
-%%BRAINFUCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSbrainfuck-%%BRAINFUCK_VERSION%%.a
-%%BRAINFUCK_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Brainfuck.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Brainfuck/Examples.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%BRAINFUCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Brainfuck
-@dirrm %%BRAINFUCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
-@dirrm %%BRAINFUCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%BRAINFUCK_LIBDIR_REL%%
-@exec /bin/sh %D/%%BRAINFUCK_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Brainfuck
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister brainfuck
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

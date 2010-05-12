@@ -1,41 +1,41 @@
 @comment $FreeBSD$
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/AddBounds.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Max.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Min.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/PairMonad.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Behavior.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Fun.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Future.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Improving.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Behavior.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Chan.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Clock.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Fun.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Future.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/IVar.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Misc.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Reactive.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Serial.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/TVal.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Timing.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/LegacyAdapters.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Num.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/PrimReactive.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Reactive.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/VectorSpace.hi
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSreactive-%%REACTIVE_VERSION%%.o
-%%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSreactive-%%REACTIVE_VERSION%%.a
-%%REACTIVE_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/AddBounds.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Max.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Min.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/PairMonad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Behavior.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Fun.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Future.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Improving.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Behavior.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Chan.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Clock.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Fun.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Future.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/IVar.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Misc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Reactive.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Serial.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/TVal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal/Timing.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/LegacyAdapters.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Num.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/PrimReactive.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Reactive.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/VectorSpace.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYING
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal
-@dirrm %%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive
-@dirrm %%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP
-@dirrm %%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%REACTIVE_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%REACTIVE_LIBDIR_REL%%
-@exec /bin/sh %D/%%REACTIVE_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive/Internal
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP/Reactive
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/FRP
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister reactive
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

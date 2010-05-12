@@ -1,47 +1,47 @@
 @comment $FreeBSD$
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Basic.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Example.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Graph.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Graphviz.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal/FiniteMap.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal/Heap.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal/Queue.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal/RootPath.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal/Thread.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Monad.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Monad/IOArray.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/NodeMap.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/PatriciaTree.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/ArtPoint.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/BCC.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/BFS.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/DFS.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/Dominators.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/GVD.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/Indep.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/MST.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/MaxFlow.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/MaxFlow2.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/Monad.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/SP.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/TransClos.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Tree.hi
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSfgl-%%FGL_VERSION%%.o
-%%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSfgl-%%FGL_VERSION%%.a
-%%FGL_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Basic.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Example.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Graph.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Graphviz.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal/FiniteMap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal/Heap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal/Queue.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal/RootPath.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal/Thread.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Monad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Monad/IOArray.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/NodeMap.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/PatriciaTree.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/ArtPoint.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/BCC.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/BFS.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/DFS.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/Dominators.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/GVD.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/Indep.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/MST.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/MaxFlow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/MaxFlow2.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/Monad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/SP.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query/TransClos.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Tree.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query
-@dirrm %%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Monad
-@dirrm %%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal
-@dirrm %%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive
-@dirrm %%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph
-@dirrm %%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%FGL_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%FGL_LIBDIR_REL%%
-@exec /bin/sh %D/%%FGL_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Query
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Monad
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive/Internal
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph/Inductive
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Graph
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister fgl
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -1,20 +1,20 @@
 @comment $FreeBSD$
-%%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/Base64.hi
-%%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/Decode.hi
-%%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/Parse.hi
-%%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/QuotedPrintable.hi
-%%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/Type.hi
-%%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/Utils.hi
-%%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSmime-%%HSMIME_VERSION%%.o
-%%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSmime-%%HSMIME_VERSION%%.a
-%%HSMIME_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/Base64.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/Decode.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/Parse.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/QuotedPrintable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/Type.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME
-@dirrm %%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec
-@dirrm %%HSMIME_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HSMIME_LIBDIR_REL%%
-@exec /bin/sh %D/%%HSMIME_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/MIME
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister mime
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

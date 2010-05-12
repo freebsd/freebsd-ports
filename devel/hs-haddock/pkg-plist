@@ -1,32 +1,23 @@
 @comment $FreeBSD$
 bin/haddock
-%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution/Haddock.hi
-%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HShaddock-%%HADDOCK_VERSION%%.o
-%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/DocName.hi
-%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/Exception.hi
-%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/GHC/Utils.hi
-%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/InterfaceFile.hi
-%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/Types.hi
-%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/Utils.hi
-%%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHShaddock-%%HADDOCK_VERSION%%.a
-%%HADDOCK_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution/Haddock.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/DocName.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/Exception.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/GHC/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/InterfaceFile.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%DOCSDIR%%/LICENSE
-%%DATADIR_REL%%/html/frames.html
-%%DATADIR_REL%%/html/haddock-DEBUG.css
-%%DATADIR_REL%%/html/haddock-util.js
-%%DATADIR_REL%%/html/haddock.css
-%%DATADIR_REL%%/html/haskell_icon.gif
-%%DATADIR_REL%%/html/minus.gif
-%%DATADIR_REL%%/html/plus.gif
-@dirrm %%DATADIR_REL%%/html
-@dirrm %%DATADIR_REL%%
 @dirrmtry %%DOCSDIR%%
-@dirrm %%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/GHC
-@dirrm %%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock
-@dirrm %%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution
-@dirrm %%HADDOCK_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%HADDOCK_LIBDIR_REL%%
-@exec /bin/sh %%LOCALBASE%%/%%HADDOCK_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock/GHC
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Haddock
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Distribution
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %%LOCALBASE%%/bin/ghc-pkg unregister haddock
+@unexec %%LOCALBASE%%/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -1,92 +1,92 @@
 @comment $FreeBSD$
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Concurrent/Thread/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/BinPacking.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bits/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/CSV.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Compression/Inflate.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Either/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/CRC32/GZip.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/CRC32/Posix.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/MD5.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/MD5/Zord64_HARD.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/MIME/Types.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Map/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Maybe/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Progress/Meter.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Progress/Tracker.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Quantity.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tuple/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSMissingH-%%MISSINGH_VERSION%%.o
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Email/Mailbox.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Email/Sendmail.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/SocketServer.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Cmd/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/GetOpt/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Daemon.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Debian.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Debian/ControlParser.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FileArchive/GZip.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/Binary.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVFS.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVFS/Combinators.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVFS/InstanceHelpers.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVFS/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVIO.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/PlafCompat.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/StatCompat.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/WindowsCompat.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Path.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Path/Glob.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Path/NameManip.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Path/WildMatch.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Posix/Consts.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Time/ParseDate.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Time/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Parsec/Utils.hi
-%%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSMissingH-%%MISSINGH_VERSION%%.a
-%%MISSINGH_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Concurrent/Thread/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/BinPacking.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bits/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/CSV.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Compression/Inflate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Either/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/CRC32/GZip.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/CRC32/Posix.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/MD5.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/MD5/Zord64_HARD.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/MIME/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Map/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Maybe/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Progress/Meter.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Progress/Tracker.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Quantity.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tuple/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Email/Mailbox.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Email/Sendmail.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/SocketServer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Cmd/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/GetOpt/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Daemon.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Debian.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Debian/ControlParser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FileArchive/GZip.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/Binary.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVFS.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVFS/Combinators.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVFS/InstanceHelpers.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVFS/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVIO.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/PlafCompat.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/StatCompat.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/WindowsCompat.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Path.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Path/Glob.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Path/NameManip.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Path/WildMatch.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Posix/Consts.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Time/ParseDate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Time/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Parsec/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Parsec
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Time
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Posix
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Path
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVFS
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FileArchive
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Debian
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/GetOpt
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Cmd
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Email
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tuple
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Progress
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Maybe
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Map
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/MIME
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/MD5
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/CRC32
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Either
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Compression
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bits
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Concurrent/Thread
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Concurrent
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
-@dirrm %%MISSINGH_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%MISSINGH_LIBDIR_REL%%
-@exec /bin/sh %D/%%MISSINGH_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/Parsec
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Time
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Posix
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Path
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO/HVFS
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/IO
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FileArchive
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Debian
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/GetOpt
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Cmd
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/Email
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tuple
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/String
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Progress
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Maybe
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Map
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/MIME
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/List
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/MD5
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash/CRC32
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Hash
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Either
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Compression
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Bits
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Concurrent/Thread
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Concurrent
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister MissingH
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -1,27 +1,27 @@
 @comment $FreeBSD$
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Internals.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Operations.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/All.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Automaton.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/CoState.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Error.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Reader.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/State.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Static.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Stream.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Writer.hi
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSarrows-%%ARROWS_VERSION%%.o
-%%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSarrows-%%ARROWS_VERSION%%.a
-%%ARROWS_LIBDIR_REL%%/register.sh
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Internals.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Operations.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/All.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Automaton.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/CoState.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Error.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Reader.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/State.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Static.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Stream.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer/Writer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrm %%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer
-@dirrm %%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow
-@dirrm %%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
-@dirrm %%ARROWS_LIBDIR_REL%%/ghc-%%GHC_VERSION%%
-@dirrm %%ARROWS_LIBDIR_REL%%
-@exec /bin/sh %D/%%ARROWS_LIBDIR_REL%%/register.sh
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/Transformer
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister arrows
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
