@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/supertuxkart/SuperTuxKart/${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.bz2
 
-MAINTAINER=	amdmi3@FreeBSD.ru
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free 3D kart racing game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
