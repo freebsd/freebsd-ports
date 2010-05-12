@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.6.0-10
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
@@ -63,7 +64,8 @@ OPTIONS=	X11				"X11 support" on \
 		IMAGEMAGICK_SVG			"SVG format support" off \
 		IMAGEMAGICK_PDF			"PDF format support" on \
 		IMAGEMAGICK_GSLIB	"libgs (Postscript SHLIB) support" off \
-		IMAGEMAGICK_LQR		"Liquid Rescale support" on
+		IMAGEMAGICK_LQR		"Liquid Rescale support" on \
+		IMAGEMAGICK_FFTW	"Discrete Fourier Transform support" on
 
 .include <bsd.port.pre.mk>
 
@@ -184,6 +186,13 @@ CONFIGURE_ARGS+=	--with-lqr
 LIB_DEPENDS+=		lqr-1.3:${PORTSDIR}/graphics/liblqr-1
 .else
 CONFIGURE_ARGS+=	--without-lqr
+.endif
+
+.if !defined(WITHOUT_IMAGEMAGICK_FFTW)
+CONFIGURE_ARGS+=        --with-fftw
+LIB_DEPENDS+=           fftw3.5:${PORTSDIR}/math/fftw3
+.else
+CONFIGURE_ARGS+=        --without-fftw
 .endif
 
 # Produce BZip compressed MIFF images
