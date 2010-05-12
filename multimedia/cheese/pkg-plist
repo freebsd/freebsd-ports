@@ -311,7 +311,7 @@ share/omf/cheese/cheese-zh_CN.omf
 @dirrm share/gnome/help/cheese/C/figures
 @dirrm share/gnome/help/cheese/C
 @dirrm share/gnome/help/cheese
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/icons/hicolor/scalable
