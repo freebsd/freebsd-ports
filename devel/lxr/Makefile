@@ -7,8 +7,9 @@
 
 PORTNAME=	lxr
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/development/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rea-fbsd@codelabs.ru
@@ -19,7 +20,6 @@ BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
 
 PATCH_STRIP=	-p1
-EXTRA_PATCHES=	${PATCHDIR}/fix-perl-warnings.patch
 
 USE_GZIP=	yes
 USE_PERL5=	yes
@@ -122,8 +122,8 @@ do-install:
 .endif # !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_DATA} ${WRKSRC}/Local.pm ${PREFIX}/${SITE_PERL_REL}
-	${TAR} -C ${WRKSRC}/lib -cf - --exclude *.orig LXR | ${TAR} -C ${PREFIX}/${SITE_PERL_REL} -xf -
-	${TAR} -C ${WRKSRC} -cf - --exclude *.orig templates | ${TAR} -C ${LXRDIR} -xf -
+	${TAR} -C ${WRKSRC}/lib -cf - --exclude '*.orig' LXR | ${TAR} -C ${PREFIX}/${SITE_PERL_REL} -xf -
+	${TAR} -C ${WRKSRC} -cf - --exclude '*.orig' templates | ${TAR} -C ${LXRDIR} -xf -
 	${CHMOD} 640 ${LXRDIR}/templates/lxr.conf
 
 post-install:
