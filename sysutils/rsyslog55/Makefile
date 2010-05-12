@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	5.4.0
+PORTVERSION=	5.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/
 .ifdef MNAME
@@ -17,12 +17,20 @@ MAINTAINER=	cristianorolim@hotmail.com
 COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
-RUN_DEPENDS=	rsyslog>=5:${PORTSDIR}/sysutils/rsyslog5
+RUN_DEPENDS=	rsyslog>=5.5.0:${PORTSDIR}/sysutils/rsyslog55
 
 PLIST=		${.CURDIR}/pkg-plist
 .endif
 
-CONFLICTS=	rsyslog-[!5].[0-9]*
+.ifdef WITH_MYSQL_MICROSECONDS
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
+.endif
+
+.ifdef WITH_SANE_HOSTNAME
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sane-hostname
+.endif
+
+CONFLICTS=	rsyslog-[!5].[0-9]* rsyslog-5.4.*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
@@ -52,6 +60,7 @@ post-patch:
 		${WRKSRC}/tools/syslogd.c
 	@${GREP} -rl '/etc/rsyslog.conf' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} -e\
 		's|/etc/rsyslog.conf|${PREFIX}/etc/rsyslog.conf|'
+	@${REINPLACE_CMD} -e 's,/lib/rsyslog,${PREFIX}/lib/rsyslog,' ${WRKSRC}/tools/syslogd.c
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
@@ -75,8 +84,8 @@ IGNORE=	with gssapi module is only supported on FreeBSD 7.x or later
 
 CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
 
-DESCR?=		${.CURDIR}/../rsyslog5/pkg-descr
-MD5_FILE?=	${.CURDIR}/../rsyslog5/distinfo
+DESCR?=		${.CURDIR}/../rsyslog55/pkg-descr
+MD5_FILE?=	${.CURDIR}/../rsyslog55/distinfo
 .endif
 
 .if ${OSVERSION} < 700042

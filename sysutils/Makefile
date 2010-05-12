@@ -715,6 +715,15 @@
     SUBDIR += rsyslog5-relp
     SUBDIR += rsyslog5-rfc3195
     SUBDIR += rsyslog5-snmp
+    SUBDIR += rsyslog55
+    SUBDIR += rsyslog55-dbi
+    SUBDIR += rsyslog55-gnutls
+    SUBDIR += rsyslog55-gssapi
+    SUBDIR += rsyslog55-mysql
+    SUBDIR += rsyslog55-pgsql
+    SUBDIR += rsyslog55-relp
+    SUBDIR += rsyslog55-rfc3195
+    SUBDIR += rsyslog55-snmp
     SUBDIR += rtty
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
