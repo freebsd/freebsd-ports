@@ -7,6 +7,7 @@
 
 PORTNAME=	suphp
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
@@ -24,7 +25,7 @@ WANT_PHP_CGI=	yes
 
 MYPORTDOCS=	apache/CONFIG apache/INSTALL apache/README CONFIG LICENSE INSTALL README
 
-CONFIGURE_ARGS=	--with-apxs=${APXS}
+CONFIGURE_ARGS=	CFLAGS=-I${LOCALBASE}/include --with-apxs=${APXS}
 
 # WITH_SETID_MODE should be a value of "owner", "force", or "paranoid".
 # It's important that you understand the differences between each mode.
