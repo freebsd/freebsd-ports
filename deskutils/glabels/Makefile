@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	glabels
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -15,6 +15,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program to create labels and business cards
 
 USE_GMAKE=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui \
 		desktopfileutils intlhack ltverhack
 WANT_GNOME=	yes
