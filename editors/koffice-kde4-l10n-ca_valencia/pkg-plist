@@ -41,5 +41,3 @@ share/locale/ca@valencia/LC_MESSAGES/kspreadsolver.mo
 share/locale/ca@valencia/LC_MESSAGES/kthesaurus.mo
 share/locale/ca@valencia/LC_MESSAGES/kword.mo
 share/locale/ca@valencia/LC_MESSAGES/thesaurus_tool.mo
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
