@@ -20,6 +20,8 @@ LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		kcddb:${PORTSDIR}/multimedia/kdemultimedia4 \
 		ksane:${PORTSDIR}/graphics/kdegraphics4
 
+LATEST_LINK=	${PORTNAME}-kde4
+
 USE_BZIP2=	yes
 USE_KDE4=	pimlibs kdelibs kdeprefix automoc4
 USE_QT_VER=	4
