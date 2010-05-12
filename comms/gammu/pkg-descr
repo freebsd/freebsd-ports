@@ -1,11 +1,24 @@
 Gammu (Gnu All Mobile Management Utilities)
 
-Gammu allows you to manage your mobile phone directly from
-your PC. It has many features, such as SMS handling, Calendar,
-Java support, ringtones, pictures, and many, many other good
-things.
+Gammu is the name of the project as well as name of command line
+utility, which you can use to control your phone. It is written in
+C and built on top of libGammu.
+
+Gammu command line utility provides access to wide range of phone
+features, however support level differs from phone to phone and you
+might want to check Gammu Phone Database for user experiences with
+various phones. Generally following features are supported:
+
+    * Call listing, initiating and handling;
+    * SMS retrieval, backup and sending;
+    * MMS retrieval;
+    * Phonebook listing, export and import (also from standard
+      formats such as vCard);
+    * Calendar and tasks listing, export and import (also from
+      standard formats such as vCalendar or iCalendar);
+    * Retrieval of phone and network information;
+    * Access to phone file system (note that some phones work also
+      as USB storage devices and those are not accessible through
+      Gammu).
 
 WWW: http://wammu.eu/gammu/
-
-- Kirill Bezzubets
-<kirill@solaris.ru>
