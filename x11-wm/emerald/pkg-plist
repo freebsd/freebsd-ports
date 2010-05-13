@@ -89,7 +89,6 @@ share/locale/sv/LC_MESSAGES/emerald.mo
 share/locale/tr/LC_MESSAGES/emerald.mo
 share/locale/bn_IN/LC_MESSAGES/emerald.mo
 share/pixmaps/emerald-theme-manager-icon.png
-@dirrmtry share/mime-info
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/ja_JP/LC_MESSAGES
