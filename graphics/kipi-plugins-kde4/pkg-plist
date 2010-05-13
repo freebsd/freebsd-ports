@@ -1133,14 +1133,6 @@ share/locale/zh_TW/LC_MESSAGES/kipiplugin_smug.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_timeadjust.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugin_wallpaper.mo
 share/locale/zh_TW/LC_MESSAGES/kipiplugins.mo
-@dirrmtry share/locale/se/LC_MESSAGES
-@dirrmtry share/locale/se
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
 %%OPENCV%%@dirrm share/apps/kipiplugin_removeredeyes
 @dirrm share/apps/kipiplugin_printimages/templates
 @dirrm share/apps/kipiplugin_printimages
