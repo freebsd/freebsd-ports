@@ -16,10 +16,9 @@ MASTER_SITE_SUBDIR=	clement
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful FTP server supporting IPv6, TLS, and much more
 
-USE_AUTOTOOLS=	autoconf:262
-USE_GMAKE=	yes
 USE_RC_SUBR=	moftpd
 USE_PERL5_BUILD=yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="${LIBS}" CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var
 MAKE_JOBS_UNSAFE=	yes
