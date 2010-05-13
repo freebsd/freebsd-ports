@@ -1,0 +1,5 @@
+Pickwick is a plain text small group chat server.  It uses a simple
+obfuscation scheme to keep traffic to and from the server unintelligible to
+casual perusal.  A client program, named weller(1) is also provided.
+
+WWW: http://www.mammothcheese.ca/
