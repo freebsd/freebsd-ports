@@ -1,0 +1,17 @@
+%%SITE_PERL%%/Pod/Perldoc.pm
+%%SITE_PERL%%/Pod/Perldoc/BaseTo.pm
+%%SITE_PERL%%/Pod/Perldoc/GetOptsOO.pm
+%%SITE_PERL%%/Pod/Perldoc/ToChecker.pm
+%%SITE_PERL%%/Pod/Perldoc/ToMan.pm
+%%SITE_PERL%%/Pod/Perldoc/ToNroff.pm
+%%SITE_PERL%%/Pod/Perldoc/ToPod.pm
+%%SITE_PERL%%/Pod/Perldoc/ToRtf.pm
+%%SITE_PERL%%/Pod/Perldoc/ToText.pm
+%%SITE_PERL%%/Pod/Perldoc/ToTk.pm
+%%SITE_PERL%%/Pod/Perldoc/ToXml.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Perldoc/.packlist
+%%SITE_PERL%%/perldoc.pod
+@dirrm %%SITE_PERL%%/mach/auto/Pod/Perldoc
+@dirrmtry %%SITE_PERL%%/mach/auto/Pod
+@dirrm %%SITE_PERL%%/Pod/Perldoc
+@dirrmtry %%SITE_PERL%%/Pod
