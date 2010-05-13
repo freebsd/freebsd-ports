@@ -332,8 +332,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>tomcat</name>
-	<range><gt>5.5.0</gt><le>5.5.28_*</le></range>
-	<range><gt>6.0.0</gt><le>6.0.24</le></range>
+	<range><gt>5.5.0</gt><lt>5.5.30</lt></range>
+	<range><gt>6.0.0</gt><lt>6.0.27</lt></range>
       </package>
     </affects>
     <description>
