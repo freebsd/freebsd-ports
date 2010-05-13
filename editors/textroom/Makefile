@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	textroom
-PORTVERSION=	0.6.3.2
-PORTREVISION=	1
+PORTVERSION=	0.6.4
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
@@ -24,7 +23,6 @@ QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build corelib gui
 QMAKE_ARGS=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lhunspell|-lhunspell-1.2|' \
