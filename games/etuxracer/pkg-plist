@@ -1,173 +1,471 @@
-bin/tuxracer
-share/tuxracer/courses/bumpy_ride/course.tcl
-share/tuxracer/courses/bumpy_ride/elev.rgb
-share/tuxracer/courses/bumpy_ride/preview.rgb
-share/tuxracer/courses/bumpy_ride/terrain.rgb
-share/tuxracer/courses/bumpy_ride/trees.rgb
-@dirrm share/tuxracer/courses/bumpy_ride
-share/tuxracer/courses/course_idx.tcl
-share/tuxracer/courses/bunny_hill/course.tcl
-share/tuxracer/courses/bunny_hill/elev.rgb
-share/tuxracer/courses/bunny_hill/preview.rgb
-share/tuxracer/courses/bunny_hill/terrain.rgb
-share/tuxracer/courses/bunny_hill/trees.rgb
-@dirrm share/tuxracer/courses/bunny_hill
-share/tuxracer/courses/common/buttprint.rgb
-share/tuxracer/courses/common/buttstart.rgb
-share/tuxracer/courses/common/buttstop.rgb
-share/tuxracer/courses/common/cloudyback.rgb
-share/tuxracer/courses/common/cloudybottom.rgb
-share/tuxracer/courses/common/cloudyfront.rgb
-share/tuxracer/courses/common/cloudyleft.rgb
-share/tuxracer/courses/common/cloudyright.rgb
-share/tuxracer/courses/common/cloudytop.rgb
-share/tuxracer/courses/common/courseinit.tcl
-share/tuxracer/courses/common/cupicon.rgb
-share/tuxracer/courses/common/envmap.rgb
-share/tuxracer/courses/common/finish.rgb
-share/tuxracer/courses/common/flag.rgb
-share/tuxracer/courses/common/foggy_light.tcl
-share/tuxracer/courses/common/herring_standard.rgb
-share/tuxracer/courses/common/herringrunicon.rgb
-share/tuxracer/courses/common/ice.rgb
-share/tuxracer/courses/common/night_light.tcl
-share/tuxracer/courses/common/nightback.rgb
-share/tuxracer/courses/common/nightbottom.rgb
-share/tuxracer/courses/common/nightenv.rgb
-share/tuxracer/courses/common/nightfront.rgb
-share/tuxracer/courses/common/nightleft.rgb
-share/tuxracer/courses/common/nightright.rgb
-share/tuxracer/courses/common/nighttop.rgb
-share/tuxracer/courses/common/nopreview.rgb
-share/tuxracer/courses/common/rock.rgb
-share/tuxracer/courses/common/shrub.rgb
-share/tuxracer/courses/common/snow.rgb
-share/tuxracer/courses/common/snowparticles.rgb
-share/tuxracer/courses/common/start.rgb
-share/tuxracer/courses/common/sunny_light.tcl
-share/tuxracer/courses/common/sunnyback.rgb
-share/tuxracer/courses/common/sunnybottom.rgb
-share/tuxracer/courses/common/sunnyfront.rgb
-share/tuxracer/courses/common/sunnyleft.rgb
-share/tuxracer/courses/common/sunnyright.rgb
-share/tuxracer/courses/common/sunnytop.rgb
-share/tuxracer/courses/common/tree.rgb
-share/tuxracer/courses/common/tree_barren.rgb
-share/tuxracer/courses/common/tux_walk.tcl
-share/tuxracer/courses/common/tree_polyhedron.tcl
-share/tuxracer/courses/common/tux_moonwalk.tcl
-@dirrm share/tuxracer/courses/common
-share/tuxracer/courses/contrib/downhill_fear/course.tcl
-share/tuxracer/courses/contrib/downhill_fear/elev.rgb
-share/tuxracer/courses/contrib/downhill_fear/preview.rgb
-share/tuxracer/courses/contrib/downhill_fear/terrain.rgb
-share/tuxracer/courses/contrib/downhill_fear/trees.rgb
-@dirrm share/tuxracer/courses/contrib/downhill_fear
-share/tuxracer/courses/contrib/ice_canyon/course.tcl
-share/tuxracer/courses/contrib/ice_canyon/elev.rgb
-share/tuxracer/courses/contrib/ice_canyon/preview.rgb
-share/tuxracer/courses/contrib/ice_canyon/terrain.rgb
-share/tuxracer/courses/contrib/ice_canyon/trees.rgb
-@dirrm share/tuxracer/courses/contrib/ice_canyon
-share/tuxracer/courses/contrib/ingos_speedway/course.tcl
-share/tuxracer/courses/contrib/ingos_speedway/elev.rgb
-share/tuxracer/courses/contrib/ingos_speedway/preview.rgb
-share/tuxracer/courses/contrib/ingos_speedway/terrain.rgb
-share/tuxracer/courses/contrib/ingos_speedway/trees.rgb
-@dirrm share/tuxracer/courses/contrib/ingos_speedway
-share/tuxracer/courses/contrib/jools_big_mountain/course.tcl
-share/tuxracer/courses/contrib/jools_big_mountain/elev.rgb
-share/tuxracer/courses/contrib/jools_big_mountain/preview.rgb
-share/tuxracer/courses/contrib/jools_big_mountain/terrain.rgb
-share/tuxracer/courses/contrib/jools_big_mountain/trees.rgb
-@dirrm share/tuxracer/courses/contrib/jools_big_mountain
-share/tuxracer/courses/contrib/nebula/course.tcl
-share/tuxracer/courses/contrib/nebula/elev.rgb
-share/tuxracer/courses/contrib/nebula/preview.rgb
-share/tuxracer/courses/contrib/nebula/terrain.rgb
-share/tuxracer/courses/contrib/nebula/trees.rgb
-@dirrm share/tuxracer/courses/contrib/nebula
-share/tuxracer/courses/contrib/penguins_cant_fly/course.tcl
-share/tuxracer/courses/contrib/penguins_cant_fly/elev.rgb
-share/tuxracer/courses/contrib/penguins_cant_fly/preview.rgb
-share/tuxracer/courses/contrib/penguins_cant_fly/terrain.rgb
-share/tuxracer/courses/contrib/penguins_cant_fly/trees.rgb
-@dirrm share/tuxracer/courses/contrib/penguins_cant_fly
-share/tuxracer/courses/contrib/sentinel_towers/course.tcl
-share/tuxracer/courses/contrib/sentinel_towers/elev.rgb
-share/tuxracer/courses/contrib/sentinel_towers/preview.rgb
-share/tuxracer/courses/contrib/sentinel_towers/terrain.rgb
-share/tuxracer/courses/contrib/sentinel_towers/trees.rgb
-@dirrm share/tuxracer/courses/contrib/sentinel_towers
-share/tuxracer/courses/contrib/twin_paths/course.tcl
-share/tuxracer/courses/contrib/twin_paths/elev.rgb
-share/tuxracer/courses/contrib/twin_paths/preview.rgb
-share/tuxracer/courses/contrib/twin_paths/terrain.rgb
-share/tuxracer/courses/contrib/twin_paths/trees.rgb
-@dirrm share/tuxracer/courses/contrib/twin_paths
-@dirrm share/tuxracer/courses/contrib
-share/tuxracer/courses/frozen_river/course.tcl
-share/tuxracer/courses/frozen_river/elev.rgb
-share/tuxracer/courses/frozen_river/preview.rgb
-share/tuxracer/courses/frozen_river/terrain.rgb
-share/tuxracer/courses/frozen_river/trees.rgb
-@dirrm share/tuxracer/courses/frozen_river
-share/tuxracer/courses/path_of_daggers/course.tcl
-share/tuxracer/courses/path_of_daggers/elev.rgb
-share/tuxracer/courses/path_of_daggers/preview.rgb
-share/tuxracer/courses/path_of_daggers/terrain.rgb
-share/tuxracer/courses/path_of_daggers/trees.rgb
-@dirrm share/tuxracer/courses/path_of_daggers
-share/tuxracer/courses/twisty_slope/course.tcl
-share/tuxracer/courses/twisty_slope/elev.rgb
-share/tuxracer/courses/twisty_slope/preview.rgb
-share/tuxracer/courses/twisty_slope/terrain.rgb
-share/tuxracer/courses/twisty_slope/trees.rgb
-@dirrm share/tuxracer/courses/twisty_slope
-@dirrm share/tuxracer/courses
-share/tuxracer/README
-share/tuxracer/fonts/trebuchet.tfm
-share/tuxracer/fonts/trebuchet_white.rgb
-share/tuxracer/fonts/trebuchet_yel_blk.rgb
-@dirrm share/tuxracer/fonts
-share/tuxracer/music/options1-jt.it
-share/tuxracer/music/race1-jt.it
-share/tuxracer/music/race2-jt.it
-share/tuxracer/music/readme
-share/tuxracer/music/start1-jt.it
-share/tuxracer/music/wonrace1-jt.it
-@dirrm share/tuxracer/music
-share/tuxracer/sounds/tux_hit_tree1.wav
-share/tuxracer/sounds/tux_on_ice1.wav
-share/tuxracer/sounds/tux_on_rock1.wav
-share/tuxracer/sounds/tux_on_snow1.wav
-share/tuxracer/sounds/fish_pickup1.wav
-share/tuxracer/sounds/fish_pickup2.wav
-share/tuxracer/sounds/fish_pickup3.wav
-@dirrm share/tuxracer/sounds
-share/tuxracer/textures/checkmark.rgb
-share/tuxracer/textures/conditions_button.rgb
-share/tuxracer/textures/gaugeenergymask.rgb
-share/tuxracer/textures/gaugeoutline.rgb
-share/tuxracer/textures/gaugespeedmask.rgb
-share/tuxracer/textures/herringicon.rgb
-share/tuxracer/textures/listbox_arrows.rgb
-share/tuxracer/textures/menu_bottom_left.rgb
-share/tuxracer/textures/menu_bottom_right.rgb
-share/tuxracer/textures/menu_title.rgb
-share/tuxracer/textures/menu_top_left.rgb
-share/tuxracer/textures/menu_top_right.rgb
-share/tuxracer/textures/mirror_button.rgb
-share/tuxracer/textures/mouse_cursor.rgb
-share/tuxracer/textures/noicon.rgb
-share/tuxracer/textures/snow_button.rgb
-share/tuxracer/textures/splash_bl.rgb
-share/tuxracer/textures/splash_br.rgb
-share/tuxracer/textures/splash_tl.rgb
-share/tuxracer/textures/splash_tr.rgb
-share/tuxracer/textures/tuxlife.rgb
-share/tuxracer/textures/wind_button.rgb
-@dirrm share/tuxracer/textures
-share/tuxracer/tux.tcl
-share/tuxracer/tuxracer_init.tcl
-@dirrm share/tuxracer
+bin/etracer
+share/extremetuxracer/courses/contrib/doing/course.tcl
+share/extremetuxracer/courses/contrib/doing/elev.png
+share/extremetuxracer/courses/contrib/doing/preview.png
+share/extremetuxracer/courses/contrib/doing/terrain.png
+share/extremetuxracer/courses/contrib/doing/trees.png
+share/extremetuxracer/courses/course_idx.tcl
+share/extremetuxracer/courses/events/a-tux_racer/bumpy_ride/course.tcl
+share/extremetuxracer/courses/events/a-tux_racer/bumpy_ride/elev.png
+share/extremetuxracer/courses/events/a-tux_racer/bumpy_ride/preview.png
+share/extremetuxracer/courses/events/a-tux_racer/bumpy_ride/terrain.png
+share/extremetuxracer/courses/events/a-tux_racer/bumpy_ride/trees.png
+share/extremetuxracer/courses/events/a-tux_racer/bunny_hill/course.tcl
+share/extremetuxracer/courses/events/a-tux_racer/bunny_hill/elev.png
+share/extremetuxracer/courses/events/a-tux_racer/bunny_hill/preview.png
+share/extremetuxracer/courses/events/a-tux_racer/bunny_hill/terrain.png
+share/extremetuxracer/courses/events/a-tux_racer/bunny_hill/trees.png
+share/extremetuxracer/courses/events/a-tux_racer/cupicon.png
+share/extremetuxracer/courses/events/a-tux_racer/event.tcl
+share/extremetuxracer/courses/events/a-tux_racer/frozen_river/course.tcl
+share/extremetuxracer/courses/events/a-tux_racer/frozen_river/elev.png
+share/extremetuxracer/courses/events/a-tux_racer/frozen_river/preview.png
+share/extremetuxracer/courses/events/a-tux_racer/frozen_river/terrain.png
+share/extremetuxracer/courses/events/a-tux_racer/frozen_river/trees.png
+share/extremetuxracer/courses/events/a-tux_racer/herringrunicon.png
+share/extremetuxracer/courses/events/a-tux_racer/path_of_daggers/course.tcl
+share/extremetuxracer/courses/events/a-tux_racer/path_of_daggers/elev.png
+share/extremetuxracer/courses/events/a-tux_racer/path_of_daggers/preview.png
+share/extremetuxracer/courses/events/a-tux_racer/path_of_daggers/terrain.png
+share/extremetuxracer/courses/events/a-tux_racer/path_of_daggers/trees.png
+share/extremetuxracer/courses/events/a-tux_racer/twisty_slope/course.tcl
+share/extremetuxracer/courses/events/a-tux_racer/twisty_slope/elev.png
+share/extremetuxracer/courses/events/a-tux_racer/twisty_slope/preview.png
+share/extremetuxracer/courses/events/a-tux_racer/twisty_slope/terrain.png
+share/extremetuxracer/courses/events/a-tux_racer/twisty_slope/trees.png
+share/extremetuxracer/courses/events/b-herring_run/bumpy_ride/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/bumpy_ride/elev.png
+share/extremetuxracer/courses/events/b-herring_run/bumpy_ride/preview.png
+share/extremetuxracer/courses/events/b-herring_run/bumpy_ride/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/bumpy_ride/trees.png
+share/extremetuxracer/courses/events/b-herring_run/cupicon.png
+share/extremetuxracer/courses/events/b-herring_run/deadman/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/deadman/elev.png
+share/extremetuxracer/courses/events/b-herring_run/deadman/preview.png
+share/extremetuxracer/courses/events/b-herring_run/deadman/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/deadman/trees.png
+share/extremetuxracer/courses/events/b-herring_run/event.tcl
+share/extremetuxracer/courses/events/b-herring_run/hamburger_hill/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/hamburger_hill/elev.png
+share/extremetuxracer/courses/events/b-herring_run/hamburger_hill/preview.png
+share/extremetuxracer/courses/events/b-herring_run/hamburger_hill/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/hamburger_hill/trees.png
+share/extremetuxracer/courses/events/b-herring_run/hazzard_valley/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/hazzard_valley/elev.png
+share/extremetuxracer/courses/events/b-herring_run/hazzard_valley/preview.png
+share/extremetuxracer/courses/events/b-herring_run/hazzard_valley/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/hazzard_valley/trees.png
+share/extremetuxracer/courses/events/b-herring_run/herringrunicon.png
+share/extremetuxracer/courses/events/b-herring_run/high_road/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/high_road/elev.png
+share/extremetuxracer/courses/events/b-herring_run/high_road/preview.png
+share/extremetuxracer/courses/events/b-herring_run/high_road/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/high_road/trees.png
+share/extremetuxracer/courses/events/b-herring_run/ice_labyrinth/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/ice_labyrinth/elev.png
+share/extremetuxracer/courses/events/b-herring_run/ice_labyrinth/preview.png
+share/extremetuxracer/courses/events/b-herring_run/ice_labyrinth/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/ice_labyrinth/trees.png
+share/extremetuxracer/courses/events/b-herring_run/ive_got_a_woody/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/ive_got_a_woody/elev.png
+share/extremetuxracer/courses/events/b-herring_run/ive_got_a_woody/preview.png
+share/extremetuxracer/courses/events/b-herring_run/ive_got_a_woody/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/ive_got_a_woody/trees.png
+share/extremetuxracer/courses/events/b-herring_run/keep_it_up/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/keep_it_up/elev.png
+share/extremetuxracer/courses/events/b-herring_run/keep_it_up/preview.png
+share/extremetuxracer/courses/events/b-herring_run/keep_it_up/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/keep_it_up/trees.png
+share/extremetuxracer/courses/events/b-herring_run/mount_herring/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/mount_herring/elev.png
+share/extremetuxracer/courses/events/b-herring_run/mount_herring/preview.png
+share/extremetuxracer/courses/events/b-herring_run/mount_herring/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/mount_herring/trees.png
+share/extremetuxracer/courses/events/b-herring_run/mount_satan/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/mount_satan/elev.png
+share/extremetuxracer/courses/events/b-herring_run/mount_satan/preview.png
+share/extremetuxracer/courses/events/b-herring_run/mount_satan/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/mount_satan/trees.png
+share/extremetuxracer/courses/events/b-herring_run/penguins_cant_fly/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/penguins_cant_fly/elev.png
+share/extremetuxracer/courses/events/b-herring_run/penguins_cant_fly/preview.png
+share/extremetuxracer/courses/events/b-herring_run/penguins_cant_fly/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/penguins_cant_fly/trees.png
+share/extremetuxracer/courses/events/b-herring_run/ski_jump/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/ski_jump/elev.png
+share/extremetuxracer/courses/events/b-herring_run/ski_jump/preview.png
+share/extremetuxracer/courses/events/b-herring_run/ski_jump/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/ski_jump/trees.png
+share/extremetuxracer/courses/events/b-herring_run/skull_mountain/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/skull_mountain/elev.png
+share/extremetuxracer/courses/events/b-herring_run/skull_mountain/preview.png
+share/extremetuxracer/courses/events/b-herring_run/skull_mountain/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/skull_mountain/trees.png
+share/extremetuxracer/courses/events/b-herring_run/slalom/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/slalom/elev.png
+share/extremetuxracer/courses/events/b-herring_run/slalom/preview.png
+share/extremetuxracer/courses/events/b-herring_run/slalom/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/slalom/trees.png
+share/extremetuxracer/courses/events/b-herring_run/snow_valley/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/snow_valley/elev.png
+share/extremetuxracer/courses/events/b-herring_run/snow_valley/preview.png
+share/extremetuxracer/courses/events/b-herring_run/snow_valley/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/snow_valley/trees.png
+share/extremetuxracer/courses/events/b-herring_run/the_narrow_way/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/the_narrow_way/elev.png
+share/extremetuxracer/courses/events/b-herring_run/the_narrow_way/preview.png
+share/extremetuxracer/courses/events/b-herring_run/the_narrow_way/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/the_narrow_way/trees.png
+share/extremetuxracer/courses/events/b-herring_run/tux-toboggan_run/course.tcl
+share/extremetuxracer/courses/events/b-herring_run/tux-toboggan_run/elev.png
+share/extremetuxracer/courses/events/b-herring_run/tux-toboggan_run/preview.png
+share/extremetuxracer/courses/events/b-herring_run/tux-toboggan_run/terrain.png
+share/extremetuxracer/courses/events/b-herring_run/tux-toboggan_run/trees.png
+share/extremetuxracer/courses/events/c-mountain_mania/bobsled_ride/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/bobsled_ride/elev.png
+share/extremetuxracer/courses/events/c-mountain_mania/bobsled_ride/preview.png
+share/extremetuxracer/courses/events/c-mountain_mania/bobsled_ride/terrain.png
+share/extremetuxracer/courses/events/c-mountain_mania/bobsled_ride/trees.png
+share/extremetuxracer/courses/events/c-mountain_mania/candy_lane/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/candy_lane/elev.png
+share/extremetuxracer/courses/events/c-mountain_mania/candy_lane/preview.png
+share/extremetuxracer/courses/events/c-mountain_mania/candy_lane/terrain.png
+share/extremetuxracer/courses/events/c-mountain_mania/candy_lane/trees.png
+share/extremetuxracer/courses/events/c-mountain_mania/crazy_path/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/crazy_path/elev.png
+share/extremetuxracer/courses/events/c-mountain_mania/crazy_path/preview.png
+share/extremetuxracer/courses/events/c-mountain_mania/crazy_path/terrain.png
+share/extremetuxracer/courses/events/c-mountain_mania/crazy_path/trees.png
+share/extremetuxracer/courses/events/c-mountain_mania/cupicon.png
+share/extremetuxracer/courses/events/c-mountain_mania/event.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/herringrunicon.png
+share/extremetuxracer/courses/events/c-mountain_mania/hey_tux/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/hey_tux/elev.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/hey_tux/preview.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/hey_tux/terrain.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/hey_tux/trees.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/hippo_run/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/hippo_run/elev.png
+share/extremetuxracer/courses/events/c-mountain_mania/hippo_run/preview.png
+share/extremetuxracer/courses/events/c-mountain_mania/hippo_run/terrain.png
+share/extremetuxracer/courses/events/c-mountain_mania/hippo_run/trees.png
+share/extremetuxracer/courses/events/c-mountain_mania/ice_pipeline/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/ice_pipeline/elev.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/ice_pipeline/preview.png
+share/extremetuxracer/courses/events/c-mountain_mania/ice_pipeline/terrain.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/ice_pipeline/trees.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/in_search_of_vodka/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/in_search_of_vodka/elev.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/in_search_of_vodka/preview.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/in_search_of_vodka/terrain.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/in_search_of_vodka/trees.rgb
+share/extremetuxracer/courses/events/c-mountain_mania/merry_go_round/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/merry_go_round/elev.png
+share/extremetuxracer/courses/events/c-mountain_mania/merry_go_round/preview.png
+share/extremetuxracer/courses/events/c-mountain_mania/merry_go_round/terrain.png
+share/extremetuxracer/courses/events/c-mountain_mania/merry_go_round/trees.png
+share/extremetuxracer/courses/events/c-mountain_mania/nature_stroll/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/nature_stroll/elev.png
+share/extremetuxracer/courses/events/c-mountain_mania/nature_stroll/preview.png
+share/extremetuxracer/courses/events/c-mountain_mania/nature_stroll/terrain.png
+share/extremetuxracer/courses/events/c-mountain_mania/nature_stroll/trees.png
+share/extremetuxracer/courses/events/c-mountain_mania/slippy_slidey/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/slippy_slidey/elev.png
+share/extremetuxracer/courses/events/c-mountain_mania/slippy_slidey/preview.png
+share/extremetuxracer/courses/events/c-mountain_mania/slippy_slidey/terrain.png
+share/extremetuxracer/courses/events/c-mountain_mania/slippy_slidey/trees.png
+share/extremetuxracer/courses/events/c-mountain_mania/volcanoes/course.tcl
+share/extremetuxracer/courses/events/c-mountain_mania/volcanoes/elev.png
+share/extremetuxracer/courses/events/c-mountain_mania/volcanoes/preview.png
+share/extremetuxracer/courses/events/c-mountain_mania/volcanoes/terrain.png
+share/extremetuxracer/courses/events/c-mountain_mania/volcanoes/trees.png
+share/extremetuxracer/courses/events/d-niehoff_experience/challenge_one/course.tcl
+share/extremetuxracer/courses/events/d-niehoff_experience/challenge_one/elev.png
+share/extremetuxracer/courses/events/d-niehoff_experience/challenge_one/preview.png
+share/extremetuxracer/courses/events/d-niehoff_experience/challenge_one/terrain.png
+share/extremetuxracer/courses/events/d-niehoff_experience/challenge_one/trees.png
+share/extremetuxracer/courses/events/d-niehoff_experience/chinese_wall/course.tcl
+share/extremetuxracer/courses/events/d-niehoff_experience/chinese_wall/elev.png
+share/extremetuxracer/courses/events/d-niehoff_experience/chinese_wall/preview.png
+share/extremetuxracer/courses/events/d-niehoff_experience/chinese_wall/terrain.png
+share/extremetuxracer/courses/events/d-niehoff_experience/chinese_wall/trees.png
+share/extremetuxracer/courses/events/d-niehoff_experience/cupicon.png
+share/extremetuxracer/courses/events/d-niehoff_experience/event.tcl
+share/extremetuxracer/courses/events/d-niehoff_experience/explore_mountains/course.tcl
+share/extremetuxracer/courses/events/d-niehoff_experience/explore_mountains/elev.png
+share/extremetuxracer/courses/events/d-niehoff_experience/explore_mountains/preview.png
+share/extremetuxracer/courses/events/d-niehoff_experience/explore_mountains/terrain.png
+share/extremetuxracer/courses/events/d-niehoff_experience/explore_mountains/trees.png
+share/extremetuxracer/courses/events/d-niehoff_experience/frozen_lakes/course.tcl
+share/extremetuxracer/courses/events/d-niehoff_experience/frozen_lakes/elev.png
+share/extremetuxracer/courses/events/d-niehoff_experience/frozen_lakes/preview.png
+share/extremetuxracer/courses/events/d-niehoff_experience/frozen_lakes/terrain.png
+share/extremetuxracer/courses/events/d-niehoff_experience/frozen_lakes/trees.png
+share/extremetuxracer/courses/events/d-niehoff_experience/herringrunicon.png
+share/extremetuxracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail/course.tcl
+share/extremetuxracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail/elev.png
+share/extremetuxracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail/preview.png
+share/extremetuxracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail/terrain.png
+share/extremetuxracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail/trees.png
+share/extremetuxracer/courses/events/d-niehoff_experience/secret_valleys/course.tcl
+share/extremetuxracer/courses/events/d-niehoff_experience/secret_valleys/elev.png
+share/extremetuxracer/courses/events/d-niehoff_experience/secret_valleys/preview.png
+share/extremetuxracer/courses/events/d-niehoff_experience/secret_valleys/terrain.png
+share/extremetuxracer/courses/events/d-niehoff_experience/secret_valleys/trees.png
+share/extremetuxracer/courses/events/d-niehoff_experience/tux_at_home/course.tcl
+share/extremetuxracer/courses/events/d-niehoff_experience/tux_at_home/elev.png
+share/extremetuxracer/courses/events/d-niehoff_experience/tux_at_home/preview.png
+share/extremetuxracer/courses/events/d-niehoff_experience/tux_at_home/terrain.png
+share/extremetuxracer/courses/events/d-niehoff_experience/tux_at_home/trees.png
+share/extremetuxracer/courses/events/d-niehoff_experience/wild_mountains/course.tcl
+share/extremetuxracer/courses/events/d-niehoff_experience/wild_mountains/elev.png
+share/extremetuxracer/courses/events/d-niehoff_experience/wild_mountains/preview.png
+share/extremetuxracer/courses/events/d-niehoff_experience/wild_mountains/terrain.png
+share/extremetuxracer/courses/events/d-niehoff_experience/wild_mountains/trees.png
+share/extremetuxracer/courses/themes/common.tcl
+share/extremetuxracer/courses/themes/conditions/common/cloudyback.png
+share/extremetuxracer/courses/themes/conditions/common/cloudybottom.png
+share/extremetuxracer/courses/themes/conditions/common/cloudyfront.png
+share/extremetuxracer/courses/themes/conditions/common/cloudyleft.png
+share/extremetuxracer/courses/themes/conditions/common/cloudyright.png
+share/extremetuxracer/courses/themes/conditions/common/cloudytop.png
+share/extremetuxracer/courses/themes/conditions/common/conditions.tcl
+share/extremetuxracer/courses/themes/conditions/common/envmap.png
+share/extremetuxracer/courses/themes/conditions/common/evening_light.tcl
+share/extremetuxracer/courses/themes/conditions/common/eveningback.png
+share/extremetuxracer/courses/themes/conditions/common/eveningbottom.png
+share/extremetuxracer/courses/themes/conditions/common/eveningenv.png
+share/extremetuxracer/courses/themes/conditions/common/eveningfront.png
+share/extremetuxracer/courses/themes/conditions/common/eveningleft.png
+share/extremetuxracer/courses/themes/conditions/common/eveningright.png
+share/extremetuxracer/courses/themes/conditions/common/eveningtop.png
+share/extremetuxracer/courses/themes/conditions/common/foggy_light.tcl
+share/extremetuxracer/courses/themes/conditions/common/night_light.tcl
+share/extremetuxracer/courses/themes/conditions/common/nightback.png
+share/extremetuxracer/courses/themes/conditions/common/nightbottom.png
+share/extremetuxracer/courses/themes/conditions/common/nightenv.png
+share/extremetuxracer/courses/themes/conditions/common/nightfront.png
+share/extremetuxracer/courses/themes/conditions/common/nightleft.png
+share/extremetuxracer/courses/themes/conditions/common/nightright.png
+share/extremetuxracer/courses/themes/conditions/common/nighttop.png
+share/extremetuxracer/courses/themes/conditions/common/sunny_light.tcl
+share/extremetuxracer/courses/themes/conditions/common/sunnyback.png
+share/extremetuxracer/courses/themes/conditions/common/sunnybottom.png
+share/extremetuxracer/courses/themes/conditions/common/sunnyfront.png
+share/extremetuxracer/courses/themes/conditions/common/sunnyleft.png
+share/extremetuxracer/courses/themes/conditions/common/sunnyright.png
+share/extremetuxracer/courses/themes/conditions/common/sunnytop.png
+share/extremetuxracer/courses/themes/huds/common/huds.tcl
+share/extremetuxracer/courses/themes/items/common/finish.png
+share/extremetuxracer/courses/themes/items/common/flag.png
+share/extremetuxracer/courses/themes/items/common/herring_standard.png
+share/extremetuxracer/courses/themes/items/common/items.tcl
+share/extremetuxracer/courses/themes/items/common/start.png
+share/extremetuxracer/courses/themes/items/flags/flag2.png
+share/extremetuxracer/courses/themes/items/flags/items.tcl
+share/extremetuxracer/courses/themes/items/herrings/herring_dead.png
+share/extremetuxracer/courses/themes/items/herrings/herring_green.png
+share/extremetuxracer/courses/themes/items/herrings/herring_red.png
+share/extremetuxracer/courses/themes/items/herrings/items.tcl
+share/extremetuxracer/courses/themes/items/herrings/star.png
+share/extremetuxracer/courses/themes/items/stuff/items.tcl
+share/extremetuxracer/courses/themes/items/stuff/life.png
+share/extremetuxracer/courses/themes/models/common/models.tcl
+share/extremetuxracer/courses/themes/models/common/shrub.ac
+share/extremetuxracer/courses/themes/models/common/shrub.png
+share/extremetuxracer/courses/themes/models/common/tree.ac
+share/extremetuxracer/courses/themes/models/common/tree.png
+share/extremetuxracer/courses/themes/models/common/tree_barren.ac
+share/extremetuxracer/courses/themes/models/common/tree_barren.png
+share/extremetuxracer/courses/themes/models/stuff/barrier.ac
+share/extremetuxracer/courses/themes/models/stuff/barrier.png
+share/extremetuxracer/courses/themes/models/stuff/models.tcl
+share/extremetuxracer/courses/themes/models/trees/models.tcl
+share/extremetuxracer/courses/themes/models/trees/tree_xmas.ac
+share/extremetuxracer/courses/themes/models/trees/tree_xmas.png
+share/extremetuxracer/courses/themes/ppracer.tcl
+share/extremetuxracer/courses/themes/terrains/add/road.png
+share/extremetuxracer/courses/themes/terrains/add/speed.png
+share/extremetuxracer/courses/themes/terrains/add/terrains.tcl
+share/extremetuxracer/courses/themes/terrains/common/buttprint.png
+share/extremetuxracer/courses/themes/terrains/common/buttstart.png
+share/extremetuxracer/courses/themes/terrains/common/buttstop.png
+share/extremetuxracer/courses/themes/terrains/common/ice.png
+share/extremetuxracer/courses/themes/terrains/common/rock.png
+share/extremetuxracer/courses/themes/terrains/common/snow.png
+share/extremetuxracer/courses/themes/terrains/common/snowparticles.png
+share/extremetuxracer/courses/themes/terrains/common/terrains.tcl
+share/extremetuxracer/courses/themes/terrains/ice/greenice.png
+share/extremetuxracer/courses/themes/terrains/ice/hardice.png
+share/extremetuxracer/courses/themes/terrains/ice/terrains.tcl
+share/extremetuxracer/courses/themes/terrains/lava/lava.png
+share/extremetuxracer/courses/themes/terrains/lava/lavastone.png
+share/extremetuxracer/courses/themes/terrains/lava/terrains.tcl
+share/extremetuxracer/courses/themes/terrains/mud/mud.png
+share/extremetuxracer/courses/themes/terrains/mud/mudparticles.png
+share/extremetuxracer/courses/themes/terrains/mud/mudprint.png
+share/extremetuxracer/courses/themes/terrains/mud/mudstart.png
+share/extremetuxracer/courses/themes/terrains/mud/mudstop.png
+share/extremetuxracer/courses/themes/terrains/mud/terrains.tcl
+share/extremetuxracer/courses/themes/terrains/rock/snowyrock.png
+share/extremetuxracer/courses/themes/terrains/rock/terrains.tcl
+share/extremetuxracer/courses/themes/terrains/sand/redsand.png
+share/extremetuxracer/courses/themes/terrains/sand/sand.png
+share/extremetuxracer/courses/themes/terrains/sand/terrains.tcl
+share/extremetuxracer/courses/themes/terrains/snow/buttprint.png
+share/extremetuxracer/courses/themes/terrains/snow/buttstart.png
+share/extremetuxracer/courses/themes/terrains/snow/buttstop.png
+share/extremetuxracer/courses/themes/terrains/snow/dirtsnow.png
+share/extremetuxracer/courses/themes/terrains/snow/dirtsnowparticles.png
+share/extremetuxracer/courses/themes/terrains/snow/dsnow.png
+share/extremetuxracer/courses/themes/terrains/snow/dsnow2.png
+share/extremetuxracer/courses/themes/terrains/snow/snowparticles.png
+share/extremetuxracer/courses/themes/terrains/snow/snowygrass.png
+share/extremetuxracer/courses/themes/terrains/snow/stsnow1.png
+share/extremetuxracer/courses/themes/terrains/snow/stsnow2.png
+share/extremetuxracer/courses/themes/terrains/snow/terrains.tcl
+share/extremetuxracer/etracer_init.tcl
+share/extremetuxracer/fonts/PaperCuts20.ttf
+share/extremetuxracer/fonts/PaperCuts_outline.ttf
+share/extremetuxracer/models.tcl
+share/extremetuxracer/music/credits1-cp.it
+share/extremetuxracer/music/options1-jt.it
+share/extremetuxracer/music/race1-jt.it
+share/extremetuxracer/music/readme
+share/extremetuxracer/music/start1-jt.it
+share/extremetuxracer/music/wonrace1-jt.it
+share/extremetuxracer/objects.png
+share/extremetuxracer/sounds/fish_pickup1.wav
+share/extremetuxracer/sounds/fish_pickup2.wav
+share/extremetuxracer/sounds/fish_pickup3.wav
+share/extremetuxracer/sounds/tux_hit_tree1.wav
+share/extremetuxracer/sounds/tux_on_ice1.wav
+share/extremetuxracer/sounds/tux_on_rock1.wav
+share/extremetuxracer/sounds/tux_on_snow1.wav
+share/extremetuxracer/terrains.png
+share/extremetuxracer/textures/checkmark.png
+share/extremetuxracer/textures/conditions_button.png
+share/extremetuxracer/textures/energymask.png
+share/extremetuxracer/textures/gaugeenergymask.png
+share/extremetuxracer/textures/gaugeoutline.png
+share/extremetuxracer/textures/gaugespeedmask.png
+share/extremetuxracer/textures/herringicon.png
+share/extremetuxracer/textures/listbox_arrows.png
+share/extremetuxracer/textures/mask_outline.png
+share/extremetuxracer/textures/mask_outline2.png
+share/extremetuxracer/textures/menu_bottom_left.png
+share/extremetuxracer/textures/menu_bottom_right.png
+share/extremetuxracer/textures/menu_title.png
+share/extremetuxracer/textures/menu_title_small.png
+share/extremetuxracer/textures/menu_top_left.png
+share/extremetuxracer/textures/menu_top_right.png
+share/extremetuxracer/textures/mirror_button.png
+share/extremetuxracer/textures/mouse_cursor.png
+share/extremetuxracer/textures/noicon.png
+share/extremetuxracer/textures/nopreview.png
+share/extremetuxracer/textures/snow_button.png
+share/extremetuxracer/textures/snowparticles.png
+share/extremetuxracer/textures/speedmask.png
+share/extremetuxracer/textures/splash.png
+share/extremetuxracer/textures/splash_small.png
+share/extremetuxracer/textures/timeicon.png
+share/extremetuxracer/textures/tuxlife.png
+share/extremetuxracer/textures/wind_button.png
+share/extremetuxracer/translations/de_DE.tcl
+share/extremetuxracer/translations/en_GB.tcl
+share/extremetuxracer/translations/es_ES.tcl
+share/extremetuxracer/translations/eu_ES.tcl
+share/extremetuxracer/translations/fi_FI.tcl
+share/extremetuxracer/translations/fr_FR.tcl
+share/extremetuxracer/translations/it_IT.tcl
+share/extremetuxracer/translations/languages.tcl
+share/extremetuxracer/translations/nb_NO.tcl
+share/extremetuxracer/translations/nl_NL.tcl
+share/extremetuxracer/translations/nn_NO.tcl
+share/extremetuxracer/translations/pl_PL.tcl
+share/extremetuxracer/translations/pt_PT.tcl
+share/extremetuxracer/translations/ro_RO.tcl
+share/extremetuxracer/translations/ru_RU.tcl
+share/extremetuxracer/translations/sk_SK.tcl
+share/extremetuxracer/translations/sv_SE.tcl
+share/extremetuxracer/tux.tcl
+share/extremetuxracer/tux_snowboard.tcl
+share/extremetuxracer/tux_walk.tcl
+@dirrm share/extremetuxracer/translations
+@dirrm share/extremetuxracer/textures
+@dirrm share/extremetuxracer/sounds
+@dirrm share/extremetuxracer/music
+@dirrm share/extremetuxracer/fonts
+@dirrm share/extremetuxracer/courses/themes/terrains/snow
+@dirrm share/extremetuxracer/courses/themes/terrains/sand
+@dirrm share/extremetuxracer/courses/themes/terrains/rock
+@dirrm share/extremetuxracer/courses/themes/terrains/mud
+@dirrm share/extremetuxracer/courses/themes/terrains/lava
+@dirrm share/extremetuxracer/courses/themes/terrains/ice
+@dirrm share/extremetuxracer/courses/themes/terrains/common
+@dirrm share/extremetuxracer/courses/themes/terrains/add
+@dirrm share/extremetuxracer/courses/themes/terrains
+@dirrm share/extremetuxracer/courses/themes/models/trees
+@dirrm share/extremetuxracer/courses/themes/models/stuff
+@dirrm share/extremetuxracer/courses/themes/models/common
+@dirrm share/extremetuxracer/courses/themes/models
+@dirrm share/extremetuxracer/courses/themes/items/stuff
+@dirrm share/extremetuxracer/courses/themes/items/herrings
+@dirrm share/extremetuxracer/courses/themes/items/flags
+@dirrm share/extremetuxracer/courses/themes/items/common
+@dirrm share/extremetuxracer/courses/themes/items
+@dirrm share/extremetuxracer/courses/themes/huds/common
+@dirrm share/extremetuxracer/courses/themes/huds
+@dirrm share/extremetuxracer/courses/themes/conditions/common
+@dirrm share/extremetuxracer/courses/themes/conditions
+@dirrm share/extremetuxracer/courses/themes
+@dirrm share/extremetuxracer/courses/events/d-niehoff_experience/wild_mountains
+@dirrm share/extremetuxracer/courses/events/d-niehoff_experience/tux_at_home
+@dirrm share/extremetuxracer/courses/events/d-niehoff_experience/secret_valleys
+@dirrm share/extremetuxracer/courses/events/d-niehoff_experience/in_search_of_the_holy_grail
+@dirrm share/extremetuxracer/courses/events/d-niehoff_experience/frozen_lakes
+@dirrm share/extremetuxracer/courses/events/d-niehoff_experience/explore_mountains
+@dirrm share/extremetuxracer/courses/events/d-niehoff_experience/chinese_wall
+@dirrm share/extremetuxracer/courses/events/d-niehoff_experience/challenge_one
+@dirrm share/extremetuxracer/courses/events/d-niehoff_experience
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/volcanoes
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/slippy_slidey
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/nature_stroll
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/merry_go_round
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/in_search_of_vodka
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/ice_pipeline
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/hippo_run
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/hey_tux
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/crazy_path
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/candy_lane
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania/bobsled_ride
+@dirrm share/extremetuxracer/courses/events/c-mountain_mania
+@dirrm share/extremetuxracer/courses/events/b-herring_run/tux-toboggan_run
+@dirrm share/extremetuxracer/courses/events/b-herring_run/the_narrow_way
+@dirrm share/extremetuxracer/courses/events/b-herring_run/snow_valley
+@dirrm share/extremetuxracer/courses/events/b-herring_run/slalom
+@dirrm share/extremetuxracer/courses/events/b-herring_run/skull_mountain
+@dirrm share/extremetuxracer/courses/events/b-herring_run/ski_jump
+@dirrm share/extremetuxracer/courses/events/b-herring_run/penguins_cant_fly
+@dirrm share/extremetuxracer/courses/events/b-herring_run/mount_satan
+@dirrm share/extremetuxracer/courses/events/b-herring_run/mount_herring
+@dirrm share/extremetuxracer/courses/events/b-herring_run/keep_it_up
+@dirrm share/extremetuxracer/courses/events/b-herring_run/ive_got_a_woody
+@dirrm share/extremetuxracer/courses/events/b-herring_run/ice_labyrinth
+@dirrm share/extremetuxracer/courses/events/b-herring_run/high_road
+@dirrm share/extremetuxracer/courses/events/b-herring_run/hazzard_valley
+@dirrm share/extremetuxracer/courses/events/b-herring_run/hamburger_hill
+@dirrm share/extremetuxracer/courses/events/b-herring_run/deadman
+@dirrm share/extremetuxracer/courses/events/b-herring_run/bumpy_ride
+@dirrm share/extremetuxracer/courses/events/b-herring_run
+@dirrm share/extremetuxracer/courses/events/a-tux_racer/twisty_slope
+@dirrm share/extremetuxracer/courses/events/a-tux_racer/path_of_daggers
+@dirrm share/extremetuxracer/courses/events/a-tux_racer/frozen_river
+@dirrm share/extremetuxracer/courses/events/a-tux_racer/bunny_hill
+@dirrm share/extremetuxracer/courses/events/a-tux_racer/bumpy_ride
+@dirrm share/extremetuxracer/courses/events/a-tux_racer
+@dirrm share/extremetuxracer/courses/events
+@dirrm share/extremetuxracer/courses/contrib/doing
+@dirrm share/extremetuxracer/courses/contrib
+@dirrm share/extremetuxracer/courses
+@dirrm share/extremetuxracer
