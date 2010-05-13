@@ -4,3 +4,5 @@
 %%SITE_PERL%%/Audio/MPD/Playlist.pm
 %%SITE_PERL%%/Audio/MPD/Types.pm
 bin/mpd-dynamic
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/MPD
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
