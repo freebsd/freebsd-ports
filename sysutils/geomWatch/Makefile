@@ -26,7 +26,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700036
+.if ${OSVERSION} < 702102
 MAKE_ARGS+=	WITHOUT_ZFS=yes
 .endif
 
