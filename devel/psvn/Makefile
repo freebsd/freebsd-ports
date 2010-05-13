@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	psvn
-PORTVERSION=	38969
-PORTREVISION=	4
+PORTVERSION=	915036
 CATEGORIES=	devel elisp
-MASTER_SITES=	http://svn.collab.net/viewvc/svn/trunk/contrib/client-side/emacs/
+MASTER_SITES=	http://svn.apache.org/viewvc/subversion/trunk/contrib/client-side/emacs/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	psvn.el\?revision=${PORTVERSION}
+DISTNAME=	psvn.el\?revision=${PORTVERSION}\&view=co
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	bsam@FreeBSD.org
