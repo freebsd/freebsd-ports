@@ -16,4 +16,6 @@ COMMENT=	Apache2 JK module for connecting to Tomcat using AJP1X
 
 MAKE_JOBS_SAFE=  yes
 
+CFLAGS+=	-I${LOCALBASE}/include
+
 .include "${MASTERDIR}/Makefile"
