@@ -1,6 +1,14 @@
 --- ./support/apxs.in.orig	2006-07-12 03:40:55.000000000 -0400
 +++ ./support/apxs.in	2010-05-06 16:06:03.795832133 -0400
-@@ -548,7 +548,10 @@
+@@ -83,7 +83,6 @@
+     my ($argumentative, @ARGV) = @_;
+     my $errs = 0;
+     local $_;
+-    local $[ = 0;
+ 
+     my @args = split / */, $argumentative;
+     while (@ARGV && ($_ = $ARGV[0]) =~ /^-(.)(.*)/) {
+@@ -548,7 +547,10 @@
          $c = '#' if ($opt_A);
          foreach $lmd (@lmd) {
              my $what = $opt_A ? "preparing" : "activating";
@@ -12,7 +20,7 @@
                  # check for open <containers>, so that the new LoadModule
                  # directive always appears *outside* of an <container>.
  
-@@ -611,7 +614,13 @@
+@@ -611,7 +613,13 @@
                  }
              } else {
                  # replace already existing LoadModule line
@@ -27,7 +35,7 @@
              }
              $lmd =~ m|LoadModule\s+(.+?)_module.*|;
              notice("[$what module `$1' in $CFG_SYSCONFDIR/$CFG_TARGET.conf]");
-@@ -628,8 +637,7 @@
+@@ -628,8 +636,7 @@
              if (open(FP, ">$CFG_SYSCONFDIR/$CFG_TARGET.conf.new")) {
                  print FP $content;
                  close(FP);
