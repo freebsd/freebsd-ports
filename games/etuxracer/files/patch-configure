@@ -1,0 +1,26 @@
+--- configure.old	2010-05-13 03:08:06.000000000 -0500
++++ configure	2010-05-13 03:08:52.000000000 -0500
+@@ -8765,16 +8765,16 @@
+ PKG_CONFIG="pkg-config"
+ 
+   if test x$with_libpng != xno && test -z "$LIBPNG"; then
+-    { echo "$as_me:$LINENO: checking for libpng12" >&5
+-echo $ECHO_N "checking for libpng12... $ECHO_C" >&6; }
+-    if $PKG_CONFIG --exists libpng12 ; then
++    { echo "$as_me:$LINENO: checking for libpng14" >&5
++echo $ECHO_N "checking for libpng14... $ECHO_C" >&6; }
++    if $PKG_CONFIG --exists libpng14 ; then
+         { echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6; }
+         PNG='png'
+-		PNG_DEP_CFLAGS_PACKAGES=libpng12
+-		PNG_LIBS=`$PKG_CONFIG --libs libpng12`
+-		PNG_CXXFLAGS=`$PKG_CONFIG --cflags libpng12`
+-		PNG_VERSION=`$PKG_CONFIG --modversion libpng12`
++		PNG_DEP_CFLAGS_PACKAGES=libpng14
++		PNG_LIBS=`$PKG_CONFIG --libs libpng`
++		PNG_CXXFLAGS=`$PKG_CONFIG --cflags libpng`
++		PNG_VERSION=`$PKG_CONFIG --modversion libpng`
+     else
+       { echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6; }

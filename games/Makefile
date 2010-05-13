@@ -215,6 +215,7 @@
     SUBDIR += ensemblist
     SUBDIR += enygma
     SUBDIR += etracer
+    SUBDIR += etuxracer
     SUBDIR += euchre
     SUBDIR += evilfinder
     SUBDIR += evq3
