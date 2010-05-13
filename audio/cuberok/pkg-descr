@@ -1,0 +1,21 @@
+Cuberok is a music player and a collection manager based on Qt4. It has
+lightweight interface, music collection support and many features, e.g.
+music autorating and Last.FM scrobbler.
+
+Features:
+-CUE support. Codepage selection for CUE sheets 
+-Shoutcast/icecast support (for GStreamer and Phonon) 
+-Support internet services Jamendo and MagnaTune (New in v.0.0.9) 
+-Last.FM and Libre.FM scrobblers 
+-Downloading images for albums and artists from Last.FM 
+-Loading artist and album info from Last.FM, loading lyrics from LyricWiki.org
+-Auto rating for songs. Rating for albums, artists and genres automatically
+calculated from rating of songs. 
+-Easy collection browsing. Just double click on genre to view all artist in
+this genre. 
+-Smart playlists (custom SQL requests) 
+-Support for AlbumArt as separate file on disk. Art can be assinged to genre
+and atrist too. 
+-And etc...
+
+WWW:	http://code.google.com/p/cuberok/

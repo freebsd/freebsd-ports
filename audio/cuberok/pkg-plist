@@ -1,0 +1,13 @@
+bin/cuberok
+lib/cuberok/libcuberok_style.so
+lib/cuberok/libplayer_ffmpeg.so
+lib/cuberok/libplayer_gst.so
+lib/cuberok/libplayer_phonon.so
+lib/cuberok/libplayer_audiere.so
+share/applications/cuberok.desktop
+%%DATADIR%%/locale/cuberok_ru.qm
+share/pixmaps/cuberok.xpm
+@dirrm share/cuberok/locale
+@dirrm share/cuberok
+@dirrm lib/cuberok
+@dirrmtry share/applications
