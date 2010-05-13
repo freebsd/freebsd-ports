@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100512:
+  AFFECTS: users of www/apache20
+  AUTHOR: pgollucci@FreeBSD.org
+
+  Two rc.d script has been renamed
+
+    apache2.sh -> apache2
+
+  You'll need to update any crons wrappers, etc. for the new paths.
+
 20100511:
   AFFECTS: users of KDE SC 4
   AUTHOR: kde@FreeBSD.org
