@@ -16,7 +16,6 @@ COMMENT=	Apache RealTime log stats
 
 MAKE_JOBS_SAFE=  yes
 
-USE_AUTOTOOLS=	autoconf:262:env
 GNU_CONFIGURE=	yes
 
 MAN1=		apachetop.1
@@ -48,7 +47,6 @@ post-patch:
 		${WRKSRC}/src/hits_circle.*
 	@${REINPLACE_CMD} -E -e 's,enum (adns_queryflags),\1,g' \
 		${WRKSRC}/src/log.*
-	@${REINPLACE_CMD} -e 's,@AUTOCONF@,${AUTOCONF},' \
-		-e 's,@AUTOHEADER@,${AUTOHEADER},' ${WRKSRC}/Makefile.in
+	@cd ${WRKSRC} && ${TOUCH} -r configure.ac aclocal.m4 stamp-h.in
 
 .include <bsd.port.post.mk>
