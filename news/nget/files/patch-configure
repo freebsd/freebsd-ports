@@ -1,0 +1,416 @@
+--- configure.orig	2010-05-13 19:52:32.000000000 +0200
++++ configure	2010-05-13 19:52:37.000000000 +0200
+@@ -2994,33 +3004,40 @@
+ 
+ 
+ 
+- echo "$as_me:$LINENO: checking attempted use of -fomit-frame-pointer on x86" >&5
+-echo $ECHO_N "checking attempted use of -fomit-frame-pointer on x86... $ECHO_C" >&6
++ echo "$as_me:$LINENO: checking for improper use of -fomit-frame-pointer" >&5
++echo $ECHO_N "checking for improper use of -fomit-frame-pointer... $ECHO_C" >&6
+  result=no
+- if echo "$CXX $CXXFLAGS" | grep fomit-frame-pointer ; then
++ if echo "$CXX $CXXFLAGS" | grep fomit-frame-pointer > /dev/null ; then
+   if test -n "$host_alias" ; then
+    my_host="$host_alias"
+   else
+    my_host=`uname -m`
+   fi
+-  if echo "$my_host" | grep 86 ; then
+-   { echo "$as_me:$LINENO: WARNING: cannot build with -fomit-frame-pointer on x86.
+-gcc does not handle exceptions properly in code compiled with
++  if echo "$my_host" | grep 86 > /dev/null ; then
++   if test "$GXX" = "yes"; then
++    case `$CXX -dumpversion` in
++
++     [012].* | 3.[012]* | 3.3 | 3.3.0* )
++            { echo "$as_me:$LINENO: WARNING: cannot build with -fomit-frame-pointer on x86.
++Old versions of gcc do not handle exceptions properly in code compiled with
+ -fomit-frame-pointer on x86 platforms.  See:
+ http://gcc.gnu.org/cgi-bin/gnatsweb.pl?cmd=view&pr=2447&database=gcc
+ 
+ Removing -fomit-frame-pointer from the compiler flags.
+ " >&5
+ echo "$as_me: WARNING: cannot build with -fomit-frame-pointer on x86.
+-gcc does not handle exceptions properly in code compiled with
++Old versions of gcc do not handle exceptions properly in code compiled with
+ -fomit-frame-pointer on x86 platforms.  See:
+ http://gcc.gnu.org/cgi-bin/gnatsweb.pl?cmd=view&pr=2447&database=gcc
+ 
+ Removing -fomit-frame-pointer from the compiler flags.
+ " >&2;}
+-   CXX=`echo $CXX | sed "s/-fomit-frame-pointer//"`
+-   CXXFLAGS=`echo $CXXFLAGS | sed "s/-fomit-frame-pointer//"`
+-   result=removed
++       CXX=`echo $CXX | sed "s/-fomit-frame-pointer//"`
++       CXXFLAGS=`echo $CXXFLAGS | sed "s/-fomit-frame-pointer//"`
++       result=removed
++       ;;
++    esac
++   fi
+   fi
+  fi
+  echo "$as_me:$LINENO: result: $result" >&5
+@@ -5449,13 +5491,136 @@
+ 
+ 
+ 
+-echo "$as_me:$LINENO: checking for a working term.h, tputs, and clr_bol" >&5
+-echo $ECHO_N "checking for a working term.h, tputs, and clr_bol... $ECHO_C" >&6
+-if test "${my_cv_working_termstuff+set}" = set; then
++
++echo "$as_me:$LINENO: checking for netbsd-style termcap" >&5
++echo $ECHO_N "checking for netbsd-style termcap... $ECHO_C" >&6
++if test "${my_cv_netbsd_curses+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_func_search_save_LIBS=$LIBS
+-my_cv_working_termstuff=no
++my_cv_netbsd_curses=no
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++#include <termcap.h>
++int
++main ()
++{
++struct tinfo *info;
++   char *term="foo";
++   int res = t_getent(&info, term);
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_cxx_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  my_cv_netbsd_curses="none required"
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++fi
++rm -f conftest.err conftest.$ac_objext \
++      conftest$ac_exeext conftest.$ac_ext
++if test "$my_cv_netbsd_curses" = no; then
++  for ac_lib in termcap; do
++    LIBS="-l$ac_lib $ac_func_search_save_LIBS"
++    cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++#include <termcap.h>
++int
++main ()
++{
++struct tinfo *info;
++   char *term="foo";
++   int res = t_getent(&info, term);
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_cxx_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  my_cv_netbsd_curses="-l$ac_lib"
++break
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++fi
++rm -f conftest.err conftest.$ac_objext \
++      conftest$ac_exeext conftest.$ac_ext
++  done
++fi
++LIBS=$ac_func_search_save_LIBS
++fi
++echo "$as_me:$LINENO: result: $my_cv_netbsd_curses" >&5
++echo "${ECHO_T}$my_cv_netbsd_curses" >&6
++if test "$my_cv_netbsd_curses" != no; then
++  test "$my_cv_netbsd_curses" = "none required" || LIBS="$my_cv_netbsd_curses $LIBS"
++
++cat >>confdefs.h <<\_ACEOF
++#define HAVE_NETBSD_CURSES 1
++_ACEOF
++
++fi
++
++ if test "$my_cv_netbsd_curses" = no ; then
++
++echo "$as_me:$LINENO: checking for new curses terminfo" >&5
++echo $ECHO_N "checking for new curses terminfo... $ECHO_C" >&6
++if test "${my_cv_new_curses+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_func_search_save_LIBS=$LIBS
++my_cv_new_curses=no
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -5463,11 +5628,11 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <term.h>
+-#include <stdio.h>
++    #include <stdio.h>
+ int
+ main ()
+ {
+-tputs(clr_bol, 1, putchar);
++int res = tputs(clr_bol, 1, putchar);
+   ;
+   return 0;
+ }
+@@ -5481,7 +5646,8 @@
+   cat conftest.err >&5
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); } &&
+-	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
++	 { ac_try='test -z "$ac_cxx_werror_flag"
++			 || test ! -s conftest.err'
+   { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+   (eval $ac_try) 2>&5
+   ac_status=$?
+@@ -5493,7 +5659,7 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  my_cv_working_termstuff="none required"
++  my_cv_new_curses="none required"
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -5501,7 +5667,7 @@
+ fi
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
+-if test "$my_cv_working_termstuff" = no; then
++if test "$my_cv_new_curses" = no; then
+   for ac_lib in termcap curses ncurses; do
+     LIBS="-l$ac_lib $ac_func_search_save_LIBS"
+     cat >conftest.$ac_ext <<_ACEOF
+@@ -5511,11 +5677,11 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ #include <term.h>
+-#include <stdio.h>
++    #include <stdio.h>
+ int
+ main ()
+ {
+-tputs(clr_bol, 1, putchar);
++int res = tputs(clr_bol, 1, putchar);
+   ;
+   return 0;
+ }
+@@ -5529,7 +5695,8 @@
+   cat conftest.err >&5
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); } &&
+-	 { ac_try='test -z "$ac_cxx_werror_flag"			 || test ! -s conftest.err'
++	 { ac_try='test -z "$ac_cxx_werror_flag"
++			 || test ! -s conftest.err'
+   { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+   (eval $ac_try) 2>&5
+   ac_status=$?
+@@ -5541,7 +5708,7 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  my_cv_working_termstuff="-l$ac_lib"
++  my_cv_new_curses="-l$ac_lib"
+ break
+ else
+   echo "$as_me: failed program was:" >&5
+@@ -5554,17 +5721,141 @@
+ fi
+ LIBS=$ac_func_search_save_LIBS
+ fi
+-echo "$as_me:$LINENO: result: $my_cv_working_termstuff" >&5
+-echo "${ECHO_T}$my_cv_working_termstuff" >&6
+-if test "$my_cv_working_termstuff" != no; then
+-  test "$my_cv_working_termstuff" = "none required" || LIBS="$my_cv_working_termstuff $LIBS"
++echo "$as_me:$LINENO: result: $my_cv_new_curses" >&5
++echo "${ECHO_T}$my_cv_new_curses" >&6
++if test "$my_cv_new_curses" != no; then
++  test "$my_cv_new_curses" = "none required" || LIBS="$my_cv_new_curses $LIBS"
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define HAVE_WORKING_TERMSTUFF 1
++#define HAVE_NEW_CURSES 1
+ _ACEOF
+ 
+ fi
+ 
++ fi
++ if test "$my_cv_netbsd_curses" = no -a "$my_cv_new_curses" = no ; then
++
++echo "$as_me:$LINENO: checking for sysv terminfo" >&5
++echo $ECHO_N "checking for sysv terminfo... $ECHO_C" >&6
++if test "${my_cv_old_curses+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_func_search_save_LIBS=$LIBS
++my_cv_old_curses=no
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++#include <curses.h>
++    #include <term.h>
++int
++main ()
++{
++setupterm((char *)0, 1, (int *)0);
++    int res = putp(clr_bol);
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_cxx_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  my_cv_old_curses="none required"
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++fi
++rm -f conftest.err conftest.$ac_objext \
++      conftest$ac_exeext conftest.$ac_ext
++if test "$my_cv_old_curses" = no; then
++  for ac_lib in curses; do
++    LIBS="-l$ac_lib $ac_func_search_save_LIBS"
++    cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++#include <curses.h>
++    #include <term.h>
++int
++main ()
++{
++setupterm((char *)0, 1, (int *)0);
++    int res = putp(clr_bol);
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_cxx_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  my_cv_old_curses="-l$ac_lib"
++break
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++fi
++rm -f conftest.err conftest.$ac_objext \
++      conftest$ac_exeext conftest.$ac_ext
++  done
++fi
++LIBS=$ac_func_search_save_LIBS
++fi
++echo "$as_me:$LINENO: result: $my_cv_old_curses" >&5
++echo "${ECHO_T}$my_cv_old_curses" >&6
++if test "$my_cv_old_curses" != no; then
++  test "$my_cv_old_curses" = "none required" || LIBS="$my_cv_old_curses $LIBS"
++
++cat >>confdefs.h <<\_ACEOF
++#define HAVE_OLD_CURSES 1
++_ACEOF
++
++fi
++
++ fi
+ 
+ 
+ 
