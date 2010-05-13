@@ -20,7 +20,6 @@ share/locale/tr/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_gcal_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_gcal_resource.mo
-@dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/akonadi/agents
 @dirrmtry share/akonadi
 @dirrmtry include/KDE

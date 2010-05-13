@@ -46,7 +46,6 @@ share/locale/fr/LC_MESSAGES/eqonomize.mo
 share/locale/nl/LC_MESSAGES/eqonomize.mo
 share/locale/cs/LC_MESSAGES/eqonomize.mo
 share/locale/pt_BR/LC_MESSAGES/eqonomize.mo
-@dirrmtry share/applications/kde4
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
 @dirrm %%DOCSDIR%%/HTML/fr/eqonomize

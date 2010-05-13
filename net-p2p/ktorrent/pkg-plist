@@ -634,16 +634,6 @@ share/locale/tr/LC_MESSAGES/ktorrent.mo
 share/locale/uk/LC_MESSAGES/ktorrent.mo
 share/locale/zh_CN/LC_MESSAGES/ktorrent.mo
 share/locale/zh_TW/LC_MESSAGES/ktorrent.mo
-@dirrmtry share/locale/se/LC_MESSAGES
-@dirrmtry share/locale/se
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/hne/LC_MESSAGES
-@dirrmtry share/locale/hne
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
 @dirrm share/apps/ktorrent/www/mobile
 @dirrm share/apps/ktorrent/www/default
 @dirrm share/apps/ktorrent/www/common

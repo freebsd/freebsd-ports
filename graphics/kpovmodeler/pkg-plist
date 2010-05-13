@@ -583,20 +583,6 @@ share/locale/vi/LC_MESSAGES/kpovmodeler.mo
 share/locale/xh/LC_MESSAGES/kpovmodeler.mo
 share/locale/zh_CN/LC_MESSAGES/kpovmodeler.mo
 share/locale/zh_TW/LC_MESSAGES/kpovmodeler.mo
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/se/LC_MESSAGES
-@dirrmtry share/locale/se
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/hne/LC_MESSAGES
-@dirrmtry share/locale/hne
 @dirrm share/doc/HTML/uk/kpovmodeler
 @dirrm share/doc/HTML/sv/kpovmodeler
 @dirrm share/doc/HTML/ru/kpovmodeler

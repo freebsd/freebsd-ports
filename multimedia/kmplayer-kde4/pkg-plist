@@ -69,7 +69,5 @@ share/locale/zh_TW/LC_MESSAGES/kmplayer.mo
 @dirrmtry share/apps/kmplayer/generators
 @dirrmtry share/apps/kmplayer
 @dirrmtry lib/kde4
-@dirrmtry share/locale/mai/LC_MESSAGES
-@dirrmtry share/locale/mai
 @dirrmtry share/locale/x-test/LC_MESSAGES
 @dirrmtry share/locale/x-test

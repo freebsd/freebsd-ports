@@ -564,8 +564,6 @@ share/icons/hicolor/scalable/apps/rkward.svgz
 @dirrmtry share/apps/katepart/syntax
 @dirrmtry share/apps/katepart
 @dirrmtry share/apps
-@dirrmtry share/applications/kde4
-@dirrmtry share/applications
 @cwd %%LOCALBASE%%
 lib/R/library/rkward/DESCRIPTION
 lib/R/library/rkward/INDEX
