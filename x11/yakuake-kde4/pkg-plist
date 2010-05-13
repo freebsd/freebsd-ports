@@ -125,10 +125,6 @@ share/locale/tr/LC_MESSAGES/yakuake.mo
 share/locale/uk/LC_MESSAGES/yakuake.mo
 share/locale/wa/LC_MESSAGES/yakuake.mo
 share/locale/zh_CN/LC_MESSAGES/yakuake.mo
-@dirrmtry share/locale/nds/LC_MESSAGES
-@dirrmtry share/locale/nds
-@dirrmtry share/locale/hne/LC_MESSAGES
-@dirrmtry share/locale/hne
 @dirrmtry share/icons/hicolor/256x256/apps
 @dirrmtry share/icons/hicolor/256x256
 @dirrm share/apps/yakuake/skins/plastik_light/title
