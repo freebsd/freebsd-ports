@@ -14,15 +14,15 @@ MASTER_SITES=	http://www.rz.uni-karlsruhe.de/~hj28/download.php?file=/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A remote system monitor for unix hosts
 
-USE_AUTOTOOLS=	autoconf:262:env
 USE_BZIP2=	YES
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-libwrap     \
 		--with-setgid=kmem
 
 MAN1=		nctopd.1 nctop.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
