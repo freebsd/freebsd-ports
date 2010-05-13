@@ -204,6 +204,7 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${RM} -f ${WRKSRC}/docs/conf/highperformance-std.conf
 	@${RM} -rf ${WRKSRC}/srclib/pcre ${WRKSRC}/include/pcreposix.h
+	@${GREP} -Rl REG_NOSUB ${WRKSRC}/modules | ${XARGS} ${REINPLACE_CMD} -e 's,REG_NOSUB,0,g'
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
 	@${REINPLACE_CMD} -e 's,freebsd\[2345\],freebsd\[23456789\],' \
