@@ -941,6 +941,7 @@ bcrypt                          ports/security/bcrypt
 bcusdk-eibd                     ports/net/bcusdk-eibd
 bcwipe                          ports/security/bcwipe
 bdc                             ports/security/bdc
+bddsolve                        ports/science/bddsolve
 bdelta                          ports/misc/bdelta
 bdesktopclock                   ports/x11-clocks/bdesktopclock
 bdfresize                       ports/x11-fonts/bdfresize
@@ -12440,6 +12441,7 @@ p5-Lingua-EN-Gender             ports/textproc/p5-Lingua-EN-Gender
 p5-Lingua-EN-Infinitive         ports/textproc/p5-Lingua-EN-Infinitive
 p5-Lingua-EN-Inflect            ports/textproc/p5-Lingua-EN-Inflect
 p5-Lingua-EN-Inflect-Number     ports/textproc/p5-Lingua-EN-Inflect-Number
+p5-Lingua-EN-Inflect-Phrase     ports/textproc/p5-Lingua-EN-Inflect-Phrase
 p5-Lingua-EN-MatchNames         ports/textproc/p5-Lingua-EN-MatchNames
 p5-Lingua-EN-NameCase           ports/textproc/p5-Lingua-EN-NameCase
 p5-Lingua-EN-NameParse          ports/textproc/p5-Lingua-EN-NameParse
@@ -16305,6 +16307,7 @@ p5-lingua-en-gender             ports/textproc/p5-Lingua-EN-Gender
 p5-lingua-en-infinitive         ports/textproc/p5-Lingua-EN-Infinitive
 p5-lingua-en-inflect            ports/textproc/p5-Lingua-EN-Inflect
 p5-lingua-en-inflect-number     ports/textproc/p5-Lingua-EN-Inflect-Number
+p5-lingua-en-inflect-phrase     ports/textproc/p5-Lingua-EN-Inflect-Phrase
 p5-lingua-en-matchnames         ports/textproc/p5-Lingua-EN-MatchNames
 p5-lingua-en-namecase           ports/textproc/p5-Lingua-EN-NameCase
 p5-lingua-en-namedentity        ports/textproc/p5-Lingua-EN-NamedEntity
@@ -20446,6 +20449,8 @@ py-goocanvas                    ports/graphics/py-goocanvas
 py-google                       ports/net/py-google
 py-gozerbot                     ports/irc/py-gozerbot
 py-graph                        ports/graphics/py-graph
+py-graph-core                   ports/graphics/py-graph-core
+py-graph-dot                    ports/graphics/py-graph-dot
 py-graphviz                     ports/graphics/py-graphviz
 py-greenlet                     ports/devel/py-greenlet
 py-grizzled                     ports/devel/py-grizzled
@@ -23604,6 +23609,7 @@ telepathy-qt                    ports/net-im/telepathy-qt
 telepathy-qt4                   ports/net-im/telepathy-qt4
 telepathy-salut                 ports/net-im/telepathy-salut
 tellico                         ports/misc/tellico
+tellico-kde4                    ports/misc/tellico-kde4
 telserv                         ports/net/telserv
 tempcontrol                     ports/misc/tempcontrol
 temperature.app                 ports/x11/temperature.app
