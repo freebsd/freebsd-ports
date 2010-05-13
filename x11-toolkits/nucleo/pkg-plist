@@ -11,6 +11,7 @@ include/nucleo/core/TimeKeeper.H
 include/nucleo/core/TimeStamp.H
 include/nucleo/core/URI.H
 include/nucleo/core/UUID.H
+@dirrm include/nucleo/core
 include/nucleo/gl/glIncludes.H
 include/nucleo/gl/glUtils.H
 include/nucleo/gl/scenegraph/sgClipper.H
@@ -28,8 +29,15 @@ include/nucleo/gl/window/_macos2keysym.H
 include/nucleo/gl/window/glWindow.H
 include/nucleo/gl/window/glWindow_GLX.H
 include/nucleo/gl/window/keysym.H
+@dirrm include/nucleo/gl/window
+@dirrm include/nucleo/gl/texture
+@dirrm include/nucleo/gl/text
+@dirrm include/nucleo/gl/shading
+@dirrm include/nucleo/gl/scenegraph
+@dirrm include/nucleo/gl
 include/nucleo/helpers/OpenCV.H
 include/nucleo/helpers/Phone.H
+@dirrm include/nucleo/helpers
 include/nucleo/image/Image.H
 include/nucleo/image/ImageBridge.H
 include/nucleo/image/RegionOfInterest.H
@@ -52,9 +60,11 @@ include/nucleo/image/processing/difference/SceneChangeDetector.H
 include/nucleo/image/processing/gamma/GammaCorrection.H
 include/nucleo/image/processing/noise/PerlinNoise.H
 include/nucleo/image/sink/ImageSink.H
+include/nucleo/image/sink/blackholeImageSink.H
 include/nucleo/image/sink/bufferedImageSink.H
 include/nucleo/image/sink/glwindowImageSink.H
 include/nucleo/image/sink/imagefileImageSink.H
+include/nucleo/image/sink/novImageSink.H
 include/nucleo/image/sink/nserverImageSink.H
 include/nucleo/image/sink/nudpImageSink.H
 include/nucleo/image/sink/nudppImageSink.H
@@ -62,12 +72,24 @@ include/nucleo/image/sink/serverpushImageSink.H
 include/nucleo/image/source/ImageSource.H
 include/nucleo/image/source/imagefileImageSource.H
 include/nucleo/image/source/noiseImageSource.H
+include/nucleo/image/source/novImageSource.H
 include/nucleo/image/source/nucImageSource.H
 include/nucleo/image/source/nudpImageSource.H
 include/nucleo/image/source/nudpcImageSource.H
 include/nucleo/image/source/nudppImageSource.H
 include/nucleo/image/source/serverpushImageSource.H
 include/nucleo/image/source/vssImageSource.H
+@dirrm include/nucleo/image/source
+@dirrm include/nucleo/image/sink
+@dirrm include/nucleo/image/processing/noise
+@dirrm include/nucleo/image/processing/gamma
+@dirrm include/nucleo/image/processing/difference
+@dirrm include/nucleo/image/processing/convolution
+@dirrm include/nucleo/image/processing/chromakeying
+@dirrm include/nucleo/image/processing/basic
+@dirrm include/nucleo/image/processing
+@dirrm include/nucleo/image/encoding
+@dirrm include/nucleo/image
 include/nucleo/network/NetworkUtils.H
 include/nucleo/network/dnssd/DNSService.H
 include/nucleo/network/dnssd/DNSServiceAnnouncer.H
@@ -86,10 +108,19 @@ include/nucleo/network/udp/UdpPlusSender.H
 include/nucleo/network/udp/UdpReceiver.H
 include/nucleo/network/udp/UdpSender.H
 include/nucleo/network/udp/UdpSocket.H
+include/nucleo/network/xmpp/XmppConnection.H
+@dirrm include/nucleo/network/xmpp
+@dirrm include/nucleo/network/udp
+@dirrm include/nucleo/network/tcp
+@dirrm include/nucleo/network/http
+@dirrm include/nucleo/network/dnssd
+@dirrm include/nucleo/network
 include/nucleo/nucleo.H
 %%QT4%%include/nucleo/plugins/qt/qtReactiveEngine.H
 %%QT4%%include/nucleo/plugins/qt/qtFileKeeper.H
 %%QT4%%include/nucleo/plugins/qt/qtTimeKeeper.H
+%%QT4%%@dirrm include/nucleo/plugins/qt
+%%QT4%%@dirrm include/nucleo/plugins
 include/nucleo/utils/AppUtils.H
 include/nucleo/utils/Base64.H
 include/nucleo/utils/ByteOrder.H
@@ -99,12 +130,22 @@ include/nucleo/utils/MD5.H
 include/nucleo/utils/SignalUtils.H
 include/nucleo/utils/StringUtils.H
 include/nucleo/utils/TimeUtils.H
+@dirrm include/nucleo/utils
+include/nucleo/xml/XmlText.H
+include/nucleo/xml/XmlStructure.H
+include/nucleo/xml/XmlParser.H
+@dirrm include/nucleo/xml
+@dirrm include/nucleo
 lib/libNucleo.la
 lib/libNucleo.so
 lib/libNucleo.so.0
+%%FFMPEG%%lib/nucleo/nPffmpeg.la
+%%FFMPEG%%lib/nucleo/nPffmpeg.so
+%%GD%%lib/nucleo/nPgd.la
+%%GD%%lib/nucleo/nPgd.so
 %%QT4%%lib/nucleo/nPqt.la
 %%QT4%%lib/nucleo/nPqt.so
-%%QT4%%lib/nucleo/nPqt.so.0
+@dirrmtry lib/nucleo
 libdata/pkgconfig/nucleo.pc
 %%DATADIR%%/Info.plist.tmpl
 %%DATADIR%%/fonts/Vera.ttf
@@ -122,32 +163,3 @@ libdata/pkgconfig/nucleo.pc
 %%DATADIR%%/plugin-list
 @dirrm share/nucleo/fonts
 @dirrm share/nucleo
-%%QT4%%@dirrm lib/nucleo
-@dirrm include/nucleo/utils
-%%QT4%%@dirrm include/nucleo/plugins/qt
-%%QT4%%@dirrm include/nucleo/plugins
-@dirrm include/nucleo/network/udp
-@dirrm include/nucleo/network/tcp
-@dirrm include/nucleo/network/http
-@dirrm include/nucleo/network/dnssd
-@dirrm include/nucleo/network
-@dirrm include/nucleo/image/source
-@dirrm include/nucleo/image/sink
-@dirrm include/nucleo/image/processing/noise
-@dirrm include/nucleo/image/processing/gamma
-@dirrm include/nucleo/image/processing/difference
-@dirrm include/nucleo/image/processing/convolution
-@dirrm include/nucleo/image/processing/chromakeying
-@dirrm include/nucleo/image/processing/basic
-@dirrm include/nucleo/image/processing
-@dirrm include/nucleo/image/encoding
-@dirrm include/nucleo/image
-@dirrm include/nucleo/helpers
-@dirrm include/nucleo/gl/window
-@dirrm include/nucleo/gl/texture
-@dirrm include/nucleo/gl/text
-@dirrm include/nucleo/gl/shading
-@dirrm include/nucleo/gl/scenegraph
-@dirrm include/nucleo/gl
-@dirrm include/nucleo/core
-@dirrm include/nucleo
