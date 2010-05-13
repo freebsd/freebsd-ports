@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	libmsn
-DISTVERSION=	4.0-beta8
+DISTVERSION=	4.1
 CATEGORIES=	net-im
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/4.0%20beta%208
+MASTER_SITES=	SF
 
 MAINTAINER=	decept0@gmail.com
 COMMENT=	A library for connecting to MSN Messenger service
@@ -23,5 +23,8 @@ MAKE_JOBS_SAFE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib$${LIB_SUFFIX}/pkgconfig|libdata/pkgconfig|g' \
 		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|crypto|${OPENSSLLIB}/libcrypto.so|g' -e 's|ssl|${OPENSSLLIB}/libssl.so|g' \
+		${WRKSRC}/msn/CMakeLists.txt \
+		${WRKSRC}/msntest/CMakeLists.txt
 
 .include <bsd.port.mk>

@@ -18,6 +18,6 @@ include/msn/switchboardserver.h
 include/msn/util.h
 lib/libmsn.so
 lib/libmsn.so.0
-lib/libmsn.so.0.1.0
+lib/libmsn.so.0.3.0
 libdata/pkgconfig/libmsn.pc
 @dirrm include/msn
