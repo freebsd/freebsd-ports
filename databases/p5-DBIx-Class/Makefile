@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIx-Class
 PORTVERSION=	0.08121
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +27,7 @@ BUILD_DEPENDS=	p5-Carp-Clan>=6:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
+		p5-Context-Preserve>=0.01:${PORTSDIR}/devel/p5-Context-Preserve \
 		p5-SQL-Abstract>=1.64:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.13:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name
