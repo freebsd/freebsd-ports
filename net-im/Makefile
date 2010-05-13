@@ -109,6 +109,7 @@
     SUBDIR += papyon
     SUBDIR += pebrot
     SUBDIR += pecl-stomp
+    SUBDIR += pickwick
     SUBDIR += pidgin
     SUBDIR += pidgin-birthday-reminder
     SUBDIR += pidgin-bs
