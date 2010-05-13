@@ -18,8 +18,6 @@ INFO=		cronolog
 MAN1=		cronolog.1m cronosplit.1m
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:262
-AUTOMAKE_ARGS+=	--add-missing
 
 OPTIONS=	SETUID_PATCH "Build with setuid functionality" On
 
@@ -37,6 +35,7 @@ USE_DOS2UNIX=	../cronolog-setugid-patch.txt
 
 post-extract:
 	@${CP} ${DISTDIR}/cronolog-setugid-patch.txt ${WRKDIR}/
+	@cd ${WRKSRC} && ${TOUCH} aclocal.m4 Makefile.in */Makefile.in
 .endif
 
 .include <bsd.port.post.mk>
