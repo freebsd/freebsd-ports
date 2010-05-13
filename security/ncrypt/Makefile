@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced AES file encryption tool
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:262
 
 PLIST_FILES=	bin/ncrypt bin/nrm
 
