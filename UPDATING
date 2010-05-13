@@ -9,7 +9,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/apache20
   AUTHOR: pgollucci@FreeBSD.org
 
-  Two rc.d script has been renamed
+  The rc.d script has been renamed
 
     apache2.sh -> apache2
 
