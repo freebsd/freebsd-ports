@@ -17,7 +17,7 @@ COMMENT=	Auto-resuming command line nntp file grabber
 
 MAN1=		nget.1 ngetlite.1
 MANCOMPRESSED=	no
-USE_AUTOTOOLS=	autoconf:262
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 post-extract:
