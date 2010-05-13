@@ -217,9 +217,9 @@
  
  void
  cpufreq_utils_display_error (const gchar *message,
---- cpufreq/src/cpufreq-monitor-sysctl.c.orig	Wed Feb 28 14:03:58 2007
-+++ cpufreq/src/cpufreq-monitor-sysctl.c	Wed Feb 28 14:28:47 2007
-@@ -0,0 +1,176 @@
+--- cpufreq/src/cpufreq-monitor-sysctl.c.orig	2010-05-13 11:27:57.000000000 +0200
++++ cpufreq/src/cpufreq-monitor-sysctl.c	2010-05-13 11:36:13.000000000 +0200
+@@ -0,0 +1,184 @@
 +/*
 + * Copyright (C) 2001, 2002 Free Software Foundation
 + *
@@ -305,6 +305,9 @@
 +	   fmax = atoi ((gchar *) list->data);
 +	   fmin = atoi ((gchar *) g_list_nth_data (list, (g_list_length (list) - 1)));
 +
++	   g_list_foreach (list, (GFunc) g_free, NULL);
++	   g_list_free (list);
++
 +	   g_object_get (G_OBJECT (monitor), "cpu", &mon_cpu, NULL);
 +	   len = sizeof (ifreq);
 +	   freq_oid = g_strdup_printf ("dev.cpu.%d.freq", 0);
@@ -329,6 +332,8 @@
 +			 "frequency", ifreq,
 +			 "max-frequency", fmax,
 +			 NULL);
++
++	   g_free (governer);
 +
 +	   return TRUE;
 +}
@@ -357,7 +362,10 @@
 +
 +	   levels = g_malloc (len);
 +	   if (sysctl (mib, 4, levels, &len, NULL, 0) == -1)
++	   {
++	        	 g_free(levels);
 +	       		 return NULL;
++	   }
 +
 +	   levelsp = g_strsplit (levels, " ", 0);
 +	   g_free (levels);
