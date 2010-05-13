@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.63
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
@@ -147,7 +147,7 @@ CONFIGURE_ARGS+=	--enable-ldap=shared --enable-auth-ldap --with-ldap \
 .include "${APACHEDIR}/Makefile.modules"
 .include <bsd.port.pre.mk>
 
-.if defined(OPENSSL_INSTALLED)
+.if defined(WITH_OPENSSL_PORT)
 EXTRA_PATCHES+=	${FILESDIR}/extra-openssl-9.8up.patch
 .endif
 
