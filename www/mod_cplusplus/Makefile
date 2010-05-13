@@ -17,6 +17,7 @@ MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	2.0+
 USE_AUTOTOOLS=	autoconf:262 autoheader:262 libtool:22 automake:19 aclocal:19
+CFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-apxs=${APXS}

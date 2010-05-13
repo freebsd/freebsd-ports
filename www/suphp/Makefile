@@ -20,12 +20,13 @@ USE_AUTOTOOLS=	aclocal:110:env automake:110:env autoconf:262:env libtool:22:env
 
 # Maintainer has not tested suPHP 0.6.x on Apache 1.3.
 USE_APACHE=	2.0+
+CFLAGS+=	-I${LOCALBASE}/include
 USE_PHP=	yes
 WANT_PHP_CGI=	yes
 
 MYPORTDOCS=	apache/CONFIG apache/INSTALL apache/README CONFIG LICENSE INSTALL README
 
-CONFIGURE_ARGS=	CFLAGS=-I${LOCALBASE}/include --with-apxs=${APXS}
+CONFIGURE_ARGS=	CFLAGS="${CFLAGS}" --with-apxs=${APXS}
 
 # WITH_SETID_MODE should be a value of "owner", "force", or "paranoid".
 # It's important that you understand the differences between each mode.
