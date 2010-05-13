@@ -1,10 +1,10 @@
 --- ./msn/CMakeLists.txt.orig	2008-11-18 18:17:55.000000000 +0300
 +++ ./msn/CMakeLists.txt	2008-12-28 22:24:22.000000000 +0300
-@@ -43,7 +43,7 @@
- 
- add_library(msn SHARED ${msn_STAT_SRCS})
- set_target_properties(msn PROPERTIES VERSION 0.1.0 
--                                     SOVERSION 0.1
+@@ -63,7 +63,7 @@
+ )
+ add_library(msn SHARED ${msn_STAT_SRCS} ${siren_STAT_SRCS})
+ set_target_properties(msn PROPERTIES VERSION 0.3.0 
+-                                     SOVERSION 0.3
 +                                     SOVERSION 0
  )
  
