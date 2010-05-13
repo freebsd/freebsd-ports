@@ -144,6 +144,7 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/zh_cn/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/messages/zh_tw/yii.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/.htaccess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/bg/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/de/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/de_de/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/el/index.php
@@ -191,6 +192,7 @@ bin/yiic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/el
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/de_de
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/de
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/bg
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/zh_tw
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/messages/zh_cn
@@ -303,6 +305,7 @@ bin/yiic
 %%DATADIR%%/framework/caching/CEAcceleratorCache.php
 %%DATADIR%%/framework/caching/CFileCache.php
 %%DATADIR%%/framework/caching/CMemCache.php
+%%DATADIR%%/framework/caching/CWinCache.php
 %%DATADIR%%/framework/caching/CXCache.php
 %%DATADIR%%/framework/caching/CZendDataCache.php
 %%DATADIR%%/framework/caching/dependencies/CCacheDependency.php
@@ -441,6 +444,102 @@ bin/yiic
 %%DATADIR%%/framework/db/schema/sqlite/CSqliteColumnSchema.php
 %%DATADIR%%/framework/db/schema/sqlite/CSqliteCommandBuilder.php
 %%DATADIR%%/framework/db/schema/sqlite/CSqliteSchema.php
+%%DATADIR%%/framework/gii/CCodeFile.php
+%%DATADIR%%/framework/gii/CCodeForm.php
+%%DATADIR%%/framework/gii/CCodeGenerator.php
+%%DATADIR%%/framework/gii/CCodeModel.php
+%%DATADIR%%/framework/gii/GiiModule.php
+%%DATADIR%%/framework/gii/assets/css/bg.gif
+%%DATADIR%%/framework/gii/assets/css/ie.css
+%%DATADIR%%/framework/gii/assets/css/main.css
+%%DATADIR%%/framework/gii/assets/css/print.css
+%%DATADIR%%/framework/gii/assets/css/screen.css
+%%DATADIR%%/framework/gii/assets/images/logo.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/blank.gif
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_close.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_loading.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_nav_left.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_nav_right.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_shadow_e.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_shadow_n.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_shadow_ne.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_shadow_nw.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_shadow_s.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_shadow_se.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_shadow_sw.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_shadow_w.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_title_left.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_title_main.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_title_over.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancy_title_right.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancybox-x.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancybox-y.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/fancybox.png
+%%DATADIR%%/framework/gii/assets/js/fancybox/jquery.fancybox-1.3.1.css
+%%DATADIR%%/framework/gii/assets/js/fancybox/jquery.fancybox-1.3.1.pack.js
+%%DATADIR%%/framework/gii/assets/js/main.js
+%%DATADIR%%/framework/gii/assets/js/tools.tooltip-1.1.3.min.js
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff/Engine/native.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff/Engine/shell.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff/Engine/string.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff/Engine/xdiff.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff/Mapped.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff/Renderer.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff/Renderer/context.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff/Renderer/inline.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff/Renderer/unified.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff/ThreeWay.php
+%%DATADIR%%/framework/gii/components/Pear/Text/Diff3.php
+%%DATADIR%%/framework/gii/components/TextDiff.php
+%%DATADIR%%/framework/gii/components/UserIdentity.php
+%%DATADIR%%/framework/gii/controllers/DefaultController.php
+%%DATADIR%%/framework/gii/generators/controller/ControllerCode.php
+%%DATADIR%%/framework/gii/generators/controller/ControllerGenerator.php
+%%DATADIR%%/framework/gii/generators/controller/templates/default/controller.php
+%%DATADIR%%/framework/gii/generators/controller/templates/default/view.php
+%%DATADIR%%/framework/gii/generators/controller/views/index.php
+%%DATADIR%%/framework/gii/generators/crud/CrudCode.php
+%%DATADIR%%/framework/gii/generators/crud/CrudGenerator.php
+%%DATADIR%%/framework/gii/generators/crud/templates/default/_form.php
+%%DATADIR%%/framework/gii/generators/crud/templates/default/_search.php
+%%DATADIR%%/framework/gii/generators/crud/templates/default/_view.php
+%%DATADIR%%/framework/gii/generators/crud/templates/default/admin.php
+%%DATADIR%%/framework/gii/generators/crud/templates/default/controller.php
+%%DATADIR%%/framework/gii/generators/crud/templates/default/create.php
+%%DATADIR%%/framework/gii/generators/crud/templates/default/index.php
+%%DATADIR%%/framework/gii/generators/crud/templates/default/update.php
+%%DATADIR%%/framework/gii/generators/crud/templates/default/view.php
+%%DATADIR%%/framework/gii/generators/crud/views/index.php
+%%DATADIR%%/framework/gii/generators/form/FormCode.php
+%%DATADIR%%/framework/gii/generators/form/FormGenerator.php
+%%DATADIR%%/framework/gii/generators/form/templates/default/action.php
+%%DATADIR%%/framework/gii/generators/form/templates/default/form.php
+%%DATADIR%%/framework/gii/generators/form/views/index.php
+%%DATADIR%%/framework/gii/generators/model/ModelCode.php
+%%DATADIR%%/framework/gii/generators/model/ModelGenerator.php
+%%DATADIR%%/framework/gii/generators/model/templates/default/model.php
+%%DATADIR%%/framework/gii/generators/model/views/index.php
+%%DATADIR%%/framework/gii/generators/module/ModuleCode.php
+%%DATADIR%%/framework/gii/generators/module/ModuleGenerator.php
+%%DATADIR%%/framework/gii/generators/module/templates/default/components/.yii
+%%DATADIR%%/framework/gii/generators/module/templates/default/controllers/DefaultController.php
+%%DATADIR%%/framework/gii/generators/module/templates/default/messages/.yii
+%%DATADIR%%/framework/gii/generators/module/templates/default/models/.yii
+%%DATADIR%%/framework/gii/generators/module/templates/default/module.php
+%%DATADIR%%/framework/gii/generators/module/templates/default/views/default/index.php
+%%DATADIR%%/framework/gii/generators/module/templates/default/views/layouts/.yii
+%%DATADIR%%/framework/gii/generators/module/views/index.php
+%%DATADIR%%/framework/gii/models/LoginForm.php
+%%DATADIR%%/framework/gii/views/common/code.php
+%%DATADIR%%/framework/gii/views/common/diff.php
+%%DATADIR%%/framework/gii/views/common/generator.php
+%%DATADIR%%/framework/gii/views/default/error.php
+%%DATADIR%%/framework/gii/views/default/index.php
+%%DATADIR%%/framework/gii/views/default/login.php
+%%DATADIR%%/framework/gii/views/layouts/column1.php
+%%DATADIR%%/framework/gii/views/layouts/generator.php
+%%DATADIR%%/framework/gii/views/layouts/main.php
 %%DATADIR%%/framework/i18n/CChoiceFormat.php
 %%DATADIR%%/framework/i18n/CDateFormatter.php
 %%DATADIR%%/framework/i18n/CDbMessageSource.php
@@ -931,6 +1030,7 @@ bin/yiic
 %%DATADIR%%/framework/logging/CProfileLogRoute.php
 %%DATADIR%%/framework/logging/CWebLogRoute.php
 %%DATADIR%%/framework/messages/bg/yii.php
+%%DATADIR%%/framework/messages/bg/zii.php
 %%DATADIR%%/framework/messages/bs/yii.php
 %%DATADIR%%/framework/messages/config.php
 %%DATADIR%%/framework/messages/de/yii.php
@@ -955,9 +1055,11 @@ bin/yiic
 %%DATADIR%%/framework/messages/sr_sr/yii.php
 %%DATADIR%%/framework/messages/sr_yu/yii.php
 %%DATADIR%%/framework/messages/sv/yii.php
+%%DATADIR%%/framework/messages/sv/zii.php
 %%DATADIR%%/framework/messages/ta_in/yii.php
 %%DATADIR%%/framework/messages/th/yii.php
 %%DATADIR%%/framework/messages/uk/yii.php
+%%DATADIR%%/framework/messages/uk/zii.php
 %%DATADIR%%/framework/messages/vi/yii.php
 %%DATADIR%%/framework/messages/vi/zii.php
 %%DATADIR%%/framework/messages/zh_cn/yii.php
@@ -1418,6 +1520,32 @@ bin/yiic
 %%DATADIR%%/framework/views/sv/profile-callstack.php
 %%DATADIR%%/framework/views/sv/profile-summary-firebug.php
 %%DATADIR%%/framework/views/sv/profile-summary.php
+%%DATADIR%%/framework/views/uk/error.php
+%%DATADIR%%/framework/views/uk/error400.php
+%%DATADIR%%/framework/views/uk/error403.php
+%%DATADIR%%/framework/views/uk/error404.php
+%%DATADIR%%/framework/views/uk/error500.php
+%%DATADIR%%/framework/views/uk/error503.php
+%%DATADIR%%/framework/views/uk/exception.php
+%%DATADIR%%/framework/views/uk/log-firebug.php
+%%DATADIR%%/framework/views/uk/log.php
+%%DATADIR%%/framework/views/uk/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/uk/profile-callstack.php
+%%DATADIR%%/framework/views/uk/profile-summary-firebug.php
+%%DATADIR%%/framework/views/uk/profile-summary.php
+%%DATADIR%%/framework/views/vi/error.php
+%%DATADIR%%/framework/views/vi/error400.php
+%%DATADIR%%/framework/views/vi/error403.php
+%%DATADIR%%/framework/views/vi/error404.php
+%%DATADIR%%/framework/views/vi/error500.php
+%%DATADIR%%/framework/views/vi/error503.php
+%%DATADIR%%/framework/views/vi/exception.php
+%%DATADIR%%/framework/views/vi/log-firebug.php
+%%DATADIR%%/framework/views/vi/log.php
+%%DATADIR%%/framework/views/vi/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/vi/profile-callstack.php
+%%DATADIR%%/framework/views/vi/profile-summary-firebug.php
+%%DATADIR%%/framework/views/vi/profile-summary.php
 %%DATADIR%%/framework/views/zh_cn/error.php
 %%DATADIR%%/framework/views/zh_cn/error400.php
 %%DATADIR%%/framework/views/zh_cn/error403.php
@@ -1509,7 +1637,6 @@ bin/yiic
 %%DATADIR%%/framework/web/js/source/jquery.min.js
 %%DATADIR%%/framework/web/js/source/jquery.multifile.js
 %%DATADIR%%/framework/web/js/source/jquery.rating.js
-%%DATADIR%%/framework/web/js/source/jquery.rating.js.patch
 %%DATADIR%%/framework/web/js/source/jquery.treeview.async.js
 %%DATADIR%%/framework/web/js/source/jquery.treeview.js
 %%DATADIR%%/framework/web/js/source/jquery.yii.js
@@ -1595,7 +1722,20 @@ bin/yiic
 %%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_888888_256x240.png
 %%DATADIR%%/framework/zii/vendors/jui/css/base/images/ui-icons_cd0a0a_256x240.png
 %%DATADIR%%/framework/zii/vendors/jui/css/base/jquery-ui.css
-%%DATADIR%%/framework/zii/vendors/jui/js/jquery-ui-i18n.js
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.accordion.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.all.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.autocomplete.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.base.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.button.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.core.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.datepicker.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.dialog.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.progressbar.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.resizable.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.slider.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.tabs.css
+%%DATADIR%%/framework/zii/vendors/jui/css/base/jquery.ui.theme.css
+%%DATADIR%%/framework/zii/vendors/jui/js/jquery-ui-i18n.min.js
 %%DATADIR%%/framework/zii/vendors/jui/js/jquery-ui.min.js
 %%DATADIR%%/framework/zii/widgets/CBaseListView.php
 %%DATADIR%%/framework/zii/widgets/CBreadcrumbs.php
@@ -1625,6 +1765,7 @@ bin/yiic
 %%DATADIR%%/framework/zii/widgets/grid/CGridView.php
 %%DATADIR%%/framework/zii/widgets/grid/CLinkColumn.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiAccordion.php
+%%DATADIR%%/framework/zii/widgets/jui/CJuiAutoComplete.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiDatePicker.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiDialog.php
 %%DATADIR%%/framework/zii/widgets/jui/CJuiDraggable.php
@@ -1677,6 +1818,8 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/web
 @dirrm %%DATADIR%%/framework/views/zh_tw
 @dirrm %%DATADIR%%/framework/views/zh_cn
+@dirrm %%DATADIR%%/framework/views/vi
+@dirrm %%DATADIR%%/framework/views/uk
 @dirrm %%DATADIR%%/framework/views/sv
 @dirrm %%DATADIR%%/framework/views/ru
 @dirrm %%DATADIR%%/framework/views/ro
@@ -1761,6 +1904,52 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/i18n/gettext
 @dirrm %%DATADIR%%/framework/i18n/data
 @dirrm %%DATADIR%%/framework/i18n
+@dirrm %%DATADIR%%/framework/gii/views/layouts
+@dirrm %%DATADIR%%/framework/gii/views/default
+@dirrm %%DATADIR%%/framework/gii/views/common
+@dirrm %%DATADIR%%/framework/gii/views
+@dirrm %%DATADIR%%/framework/gii/models
+@dirrm %%DATADIR%%/framework/gii/generators/module/views
+@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/views/layouts
+@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/views/default
+@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/views
+@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/models
+@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/messages
+@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/controllers
+@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default/components
+@dirrm %%DATADIR%%/framework/gii/generators/module/templates/default
+@dirrm %%DATADIR%%/framework/gii/generators/module/templates
+@dirrm %%DATADIR%%/framework/gii/generators/module
+@dirrm %%DATADIR%%/framework/gii/generators/model/views
+@dirrm %%DATADIR%%/framework/gii/generators/model/templates/default
+@dirrm %%DATADIR%%/framework/gii/generators/model/templates
+@dirrm %%DATADIR%%/framework/gii/generators/model
+@dirrm %%DATADIR%%/framework/gii/generators/form/views
+@dirrm %%DATADIR%%/framework/gii/generators/form/templates/default
+@dirrm %%DATADIR%%/framework/gii/generators/form/templates
+@dirrm %%DATADIR%%/framework/gii/generators/form
+@dirrm %%DATADIR%%/framework/gii/generators/crud/views
+@dirrm %%DATADIR%%/framework/gii/generators/crud/templates/default
+@dirrm %%DATADIR%%/framework/gii/generators/crud/templates
+@dirrm %%DATADIR%%/framework/gii/generators/crud
+@dirrm %%DATADIR%%/framework/gii/generators/controller/views
+@dirrm %%DATADIR%%/framework/gii/generators/controller/templates/default
+@dirrm %%DATADIR%%/framework/gii/generators/controller/templates
+@dirrm %%DATADIR%%/framework/gii/generators/controller
+@dirrm %%DATADIR%%/framework/gii/generators
+@dirrm %%DATADIR%%/framework/gii/controllers
+@dirrm %%DATADIR%%/framework/gii/components/Pear/Text/Diff/Renderer
+@dirrm %%DATADIR%%/framework/gii/components/Pear/Text/Diff/Engine
+@dirrm %%DATADIR%%/framework/gii/components/Pear/Text/Diff
+@dirrm %%DATADIR%%/framework/gii/components/Pear/Text
+@dirrm %%DATADIR%%/framework/gii/components/Pear
+@dirrm %%DATADIR%%/framework/gii/components
+@dirrm %%DATADIR%%/framework/gii/assets/js/fancybox
+@dirrm %%DATADIR%%/framework/gii/assets/js
+@dirrm %%DATADIR%%/framework/gii/assets/images
+@dirrm %%DATADIR%%/framework/gii/assets/css
+@dirrm %%DATADIR%%/framework/gii/assets
+@dirrm %%DATADIR%%/framework/gii
 @dirrm %%DATADIR%%/framework/db/schema/sqlite
 @dirrm %%DATADIR%%/framework/db/schema/pgsql
 @dirrm %%DATADIR%%/framework/db/schema/oci
