@@ -1,0 +1,13 @@
+--- apngasm.c~
++++ apngasm.c
+@@ -39,6 +39,10 @@ inline unsigned int swap32(unsigned int 
+ #include <byteswap.h>
+ inline unsigned short swap16(unsigned short data) {return(bswap_16(data));}
+ inline unsigned int swap32(unsigned int data) {return(bswap_32(data));}
++#elif defined(__FreeBSD__)
++#include <sys/endian.h>
++inline unsigned short swap16(unsigned short data) {return(bswap16(data));}
++inline unsigned int swap32(unsigned int data) {return(bswap32(data));}
+ #else
+ inline unsigned short swap16(unsigned short data) {return((data >> 8) | (data << 8));}
+ inline unsigned int swap32(unsigned int data) {return((swap16(data) << 16) | swap16(data >> 16));}
