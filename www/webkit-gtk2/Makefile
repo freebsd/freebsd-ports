@@ -63,6 +63,8 @@ LIB_DEPENDS+=	icutu.38:${PORTSDIR}/devel/icu
 .if defined(WITH_VIDEO)
 USE_GSTREAMER+=	yes
 CONFIGURE_ARGS+=--enable-video
+.else
+CONFIGURE_ARGS+=--disable-video
 .endif
 
 .if defined(WITH_DEBUG)
