@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.63
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
@@ -206,7 +206,7 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/srclib/pcre ${WRKSRC}/include/pcreposix.h
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
-	@${REINPLACE_CMD} -e 's,freebsd\[2345\],freebsd\[23456\],' \
+	@${REINPLACE_CMD} -e 's,freebsd\[2345\],freebsd\[23456789\],' \
 			${WRKSRC}/srclib/apr/build/apr_hints.m4
 	@${REINPLACE_CMD} -e "s,\$abs_builddir/srclib/pcre/libpcre.la,${LOCALBASE}/lib/libpcre.la," ${WRKSRC}/configure.in
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
