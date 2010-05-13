@@ -94,6 +94,10 @@ lib/libxcb-xinerama.a
 lib/libxcb-xinerama.la
 lib/libxcb-xinerama.so
 lib/libxcb-xinerama.so.0
+lib/libxcb-xinput.a
+lib/libxcb-xinput.la
+lib/libxcb-xinput.so
+lib/libxcb-xinput.so.0
 lib/libxcb-xprint.a
 lib/libxcb-xprint.la
 lib/libxcb-xprint.so
@@ -131,6 +135,7 @@ libdata/pkgconfig/xcb-xevie.pc
 libdata/pkgconfig/xcb-xf86dri.pc
 libdata/pkgconfig/xcb-xfixes.pc
 libdata/pkgconfig/xcb-xinerama.pc
+libdata/pkgconfig/xcb-xinput.pc
 libdata/pkgconfig/xcb-xprint.pc
 libdata/pkgconfig/xcb-xtest.pc
 libdata/pkgconfig/xcb-xv.pc

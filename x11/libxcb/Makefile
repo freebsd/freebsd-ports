@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxcb
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
 
-CONFIGURE_ARGS+=	--disable-build-docs --without-doxygen
+CONFIGURE_ARGS+=	--disable-build-docs --without-doxygen --enable-xinput
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack
