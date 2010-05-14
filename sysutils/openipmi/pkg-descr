@@ -1,0 +1,10 @@
+OpenIPMI was designed to aid building "complex IPMI management software".
+OpenIPMI library will connect with an IPMI controller, detect any
+management controllers on the bus, get their SDRs, manage all the
+entities in the system, manage the event log, and a host of other
+things. OpenIPMI is also dynamic and event-driven. It will come up
+and start discovering things in the managed system. As it discovers
+things, it will report them to the software using it (assuming the
+software has asked for this reporting).
+
+WWW: http://openipmi.sourceforge.net/

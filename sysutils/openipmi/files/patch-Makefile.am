@@ -1,0 +1,18 @@
+--- Makefile.am.orig	2006-11-14 19:28:31.000000000 +0300
++++ Makefile.am	2010-04-28 16:27:46.524370871 +0400
+@@ -16,12 +16,12 @@
+ 	     $(GLIB12_PKGCONF) $(TCL_PKGCONF)
+ 
+ install-data-local: $(PKGCONFIGS)
+-	$(mkinstalldirs) $(DESTDIR)$(libdir)/pkgconfig
+-	$(INSTALL_DATA) $(PKGCONFIGS) $(DESTDIR)$(libdir)/pkgconfig
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata/pkgconfig
++	$(INSTALL_DATA) $(PKGCONFIGS) $(DESTDIR)$(prefix)/libdata/pkgconfig
+ 
+ uninstall-local:
+ 	for i in $(PKGCONFIGS); do \
+-		rm -f $(DESTDIR)$(libdir)/pkgconfig/$$i; \
++		rm -f $(DESTDIR)$(prefix)/libdata/pkgconfig/$$i; \
+ 	done
+ 
+ rpm: dist
