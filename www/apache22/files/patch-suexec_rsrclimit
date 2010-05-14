@@ -1,0 +1,49 @@
+# http://www.chrishardie.com/tech/apache/suexec_rsrclimit.html
+--- support/suexec.c.orig	Wed Jul 12 07:38:44 2006
++++ support/suexec.c		Wed Nov 15 23:58:04 2006
+@@ -37,6 +37,7 @@
+ #include <sys/param.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
++#include <login_cap.h>
+ #include <string.h>
+ #include <time.h>
+ #if APR_HAVE_UNISTD_H
+@@ -259,6 +260,7 @@
+     char *cmd;              /* command to be executed    */
+     char cwd[AP_MAXPATH];   /* current working directory */
+     char dwd[AP_MAXPATH];   /* docroot working directory */
++    login_cap_t *lc;        /* user resource limits      */
+     struct passwd *pw;      /* password entry holder     */
+     struct group *gr;       /* group entry holder        */
+     struct stat dir_info;   /* directory info holder     */
+@@ -463,6 +465,18 @@
+         log_err("cannot run as forbidden gid (%d/%s)\n", gid, cmd);
+         exit(108);
+     }
++
++    /*
++     * Apply user resource limits based on login class.
++     */
++    if ((lc = login_getclassbyname(pw->pw_class, pw)) == NULL) {
++		log_err("failed to login_getclassbyname()\n");
++		exit(109);
++	}
++	if ((setusercontext(lc, pw, uid, LOGIN_SETRESOURCES)) != 0) {
++		log_err("failed to setusercontext()\n");
++		exit(109);
++	}
+ 
+     /*
+      * Change UID/GID here so that the following tests work over NFS.
+--- support/Makefile.in.orig	Thu Nov 16 02:20:47 2006
++++ support/Makefile.in	Thu Nov 16 02:11:29 2006
+@@ -65,7 +65,7 @@
+ 
+ suexec_OBJECTS = suexec.lo
+ suexec: $(suexec_OBJECTS)
+-	$(LINK) $(suexec_OBJECTS)
++	$(LINK) -lutil $(suexec_OBJECTS)
+ 
+ htcacheclean_OBJECTS = htcacheclean.lo
+ htcacheclean: $(htcacheclean_OBJECTS)

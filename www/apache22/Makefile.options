@@ -72,5 +72,6 @@ OPTIONS+= \
 	 PROXY_SCGI "Enable mod_proxy_scgi" OFF \
 	 SSL "Enable mod_ssl" ON \
 	 SUEXEC "Enable mod_suexec" OFF \
+     SUEXEC_RSRCLIMIT "SuEXEC rlimits based on login class" OFF \
 	 CGID "Enable mod_cgid" OFF \
 
