@@ -1,0 +1,10 @@
+The module provides a method to calculate geographic distances
+between coordinates in geodetic WGS84 format using the Haversine
+formula.
+
+It is similar to GIS::Distance, but without the extra bells and
+whistles and without the additional dependencies. Same great taste,
+less filling. It exists for those who cannot, or prefer not to
+install Moose and its dependencies.
+
+WWW:	http://search.cpan.org/dist/GIS-Distance-Lite/
