@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.2.6
+PORTVERSION=	2.2.7
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +21,7 @@ MAKE_JOBS_SAFE=	yes
 CONFLICTS=	qbittorrent-2.1.*
 
 OPTIONS=	NOTIFY "Enable libnotify support" on \
-		LT_15 "Use 0.15 (devel) version of libtorrent-rasterbar" on
+		LT_15 "Use 0.15 version of libtorrent-rasterbar" on
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network xml \
