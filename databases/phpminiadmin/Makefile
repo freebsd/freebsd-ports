@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpminiadmin
-DISTVERSION=	1.4.080217
+DISTVERSION=	1.5.091221
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -17,16 +17,15 @@ USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-MINIADMDIR=	www/${PORTNAME}
-PLIST_FILES=	${MINIADMDIR}/phpminiadmin.php
-PLIST_DIRS=	${MINIADMDIR}
+PLIST_FILES=	${WWWDIR_REL}/phpminiadmin.php
+PLIST_DIRS=	${WWWDIR_REL}
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	mysql session pcre
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/${MINIADMDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/phpminiadmin.php ${PREFIX}/${MINIADMDIR}/
+	${MKDIR} ${WWWDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/phpminiadmin.php ${WWWDIR}
 
 .include <bsd.port.mk>
