@@ -10,7 +10,7 @@ PORTVERSION=	5.8
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	niclas.zeising@gmail.com
 COMMENT=	A feature-filled tagfile generator for vi and emacs clones
 
 MAKE_JOBS_SAFE=  yes
