@@ -49,7 +49,7 @@ QTDIR?=		${QT_PREFIX}
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262 libtool:22
+USE_AUTOTOOLS=	autoconf:262 automake:19 libtool:22
 CONFIGURE_SCRIPT=	autogen.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
