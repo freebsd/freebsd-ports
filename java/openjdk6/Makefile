@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}:ant
 
-MAINTAINER=	openjdk@getsnappy.com
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun's java 6 virtual machine release under the GPL v2
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
