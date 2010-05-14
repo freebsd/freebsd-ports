@@ -44,6 +44,7 @@ lib/pam_gnome_keyring.so
 libdata/pkgconfig/gcr-0.pc
 libdata/pkgconfig/gp11-0.pc
 libexec/gnome-keyring-prompt
+share/dbus-1/services/org.freedesktop.secrets.service
 share/dbus-1/services/org.gnome.keyring.service
 share/doc/gcr/ch01.html
 share/doc/gcr/gcr-GcrCertificate.html
