@@ -7,12 +7,13 @@
 
 PORTNAME=	gammu
 PORTVERSION=	1.27.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
 
 MAINTAINER=	bsam@FreeBSD.org
-COMMENT=	GNU All Mobile Management Utilities
+COMMENT=	GNU All Mobile Management Utilities.
 
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
@@ -41,10 +42,12 @@ MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
 		gammu-smsd-dbi.7 gammu-smsd-tables.7
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
