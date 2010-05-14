@@ -63,7 +63,6 @@ OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 .include <bsd.port.pre.mk>
 
 USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if defined(WITH_PILOT)
 LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnome-pilot
