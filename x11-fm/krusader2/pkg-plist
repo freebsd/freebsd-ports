@@ -596,14 +596,6 @@ share/locale/tr/LC_MESSAGES/krusader.mo
 share/locale/uk/LC_MESSAGES/krusader.mo
 share/locale/zh_CN/LC_MESSAGES/krusader.mo
 share/locale/zh_TW/LC_MESSAGES/krusader.mo
-@dirrmtry share/locale/hr/LC_MESSAGES
-@dirrmtry share/locale/hr
-@dirrmtry share/locale/ga/LC_MESSAGES
-@dirrmtry share/locale/ga
-@dirrmtry share/locale/eo/LC_MESSAGES
-@dirrmtry share/locale/eo
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
 @dirrm share/apps/krusader/icons/hicolor/64x64/mimetypes
 @dirrm share/apps/krusader/icons/hicolor/64x64/devices
 @dirrm share/apps/krusader/icons/hicolor/64x64/apps
