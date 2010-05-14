@@ -7,6 +7,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.10.2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -15,9 +16,7 @@ COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		sane.1:${PORTSDIR}/graphics/sane-backends \
-		cups.2:${PORTSDIR}/print/cups-base \
-		dbus-1.3:${PORTSDIR}/devel/dbus \
-		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+		cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2 \
 		espgs:${PORTSDIR}/print/cups-pstoraster \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
@@ -29,6 +28,8 @@ CONFLICTS=	hpijs-[0-9]* hplip-2*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-pp-build \
+		--disable-dbus-build \
+		--disable-fax-build \
 		--enable-foomatic-ppd-install \
 		--enable-foomatic-rip-hplip-install \
 		--enable-hpijs-install \
@@ -37,7 +38,8 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-cupsfilterdir=${LOCALBASE}/libexec/cups/filter \
 		--with-drvdir=${LOCALBASE}/libexec/cups/driver \
 		--with-hpppddir=${LOCALBASE}/share/ppd/HP \
-		--with-mimedir=${LOCALBASE}/etc/cups
+		--with-mimedir=${LOCALBASE}/etc/cups \
+		--with-docdir=${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 USE_LDCONFIG=	yes
 USE_GHOSTSCRIPT_RUN=	yes
@@ -53,10 +55,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lcompat
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-OPTIONS=	GUI "build with Python QT" on \
-		DBUS "dbus support" on \
-		XSANE "build xsane scanner app" on
-
+OPTIONS=	GUI "build with Python QT" off \
+		DBUS "dbus support" off \
+		XSANE "build xsane scanner app" off \
+		NOSNMP "Build without snmp" on
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800069
@@ -74,10 +76,23 @@ LIB_DEPENDS+=	pyglib-2.0:${PORTSDIR}/devel/py-gobject
 .if !defined(WITHOUT_DBUS)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbus
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=	--enable-dbus-build \
+			--enable-fax-build
+PLIST_SUB+=	FAX=""
+.else
+PLIST_SUB+=	FAX="@comment "
 .endif
 
 .if !defined(WITHOUT_XSANE)
 RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
+.endif
+
+.if !defined(WITHOUT_NOSNMP)
+LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+CONFIGURE_ARGS+=	--enable-network-build
+.else
+CONFIGURE_ARGS+=	--disable-network-build
 .endif
 
 .if defined(NOPORTDOCS)

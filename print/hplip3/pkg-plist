@@ -34,8 +34,8 @@ sbin/hpssd
 etc/hp/hplip.conf.sample
 @exec if [ ! -f %B/hplip.conf ]; then cp -p %D/%F %B/hplip.conf; fi
 etc/xdg/autostart/hplip-systray.desktop
-etc/cups/pstotiff.convs
-etc/cups/pstotiff.types
+%%FAX%%etc/cups/pstotiff.convs
+%%FAX%%etc/cups/pstotiff.types
 lib/libhpip.la
 lib/libhpip.so
 lib/libhpip.so.0
@@ -55,11 +55,11 @@ lib/sane/libsane-hpaio.so
 lib/sane/libsane-hpaio.so.1
 libexec/cups/filter/hpcac
 libexec/cups/filter/hpcups
-libexec/cups/filter/hpcupsfax
+%%FAX%%libexec/cups/filter/hpcupsfax
 libexec/cups/filter/hplipjs
 libexec/cups/filter/pstotiff
 libexec/cups/backend/hp
-libexec/cups/backend/hpfax
+%%FAX%%libexec/cups/backend/hpfax
 libexec/cups/driver/hpcups.drv
 libexec/cups/filter/foomatic-rip-hplip
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -478,16 +478,16 @@ libexec/cups/filter/foomatic-rip-hplip
 %%DATADIR%%/data/ps/testpage.ps.gz
 %%DATADIR%%/devicesettings.py
 %%DATADIR%%/fab.py
-%%DATADIR%%/fax/__init__.py
-%%DATADIR%%/fax/coverpages.py
-%%DATADIR%%/fax/fax.py
-%%DATADIR%%/fax/faxdevice.py
-%%DATADIR%%/fax/pmlfax.py
-%%DATADIR%%/fax/soapfax.py
-%%DATADIR%%/fax/marvellfax.py
-%%DATADIR%%/fax/pstotiff
-%%DATADIR%%/fax/pstotiff.convs
-%%DATADIR%%/fax/pstotiff.types
+%%FAX%%%%DATADIR%%/fax/__init__.py
+%%FAX%%%%DATADIR%%/fax/coverpages.py
+%%FAX%%%%DATADIR%%/fax/fax.py
+%%FAX%%%%DATADIR%%/fax/faxdevice.py
+%%FAX%%%%DATADIR%%/fax/pmlfax.py
+%%FAX%%%%DATADIR%%/fax/soapfax.py
+%%FAX%%%%DATADIR%%/fax/marvellfax.py
+%%FAX%%%%DATADIR%%/fax/pstotiff
+%%FAX%%%%DATADIR%%/fax/pstotiff.convs
+%%FAX%%%%DATADIR%%/fax/pstotiff.types
 %%DATADIR%%/faxsetup.py
 %%DATADIR%%/firmware.py
 %%DATADIR%%/hpdio.py
@@ -587,8 +587,8 @@ libexec/cups/filter/foomatic-rip-hplip
 %%DATADIR%%/ui4/wifisetupdialog_base.py
 %%DATADIR%%/unload.py
 %%DATADIR%%/wificonfig.py
-share/ppd/HP/HP-Fax-hpcups.ppd.gz
-share/ppd/HP/HP-Fax2-hpcups.ppd.gz
+%%FAX%%share/ppd/HP/HP-Fax-hpcups.ppd.gz
+%%FAX%%share/ppd/HP/HP-Fax2-hpcups.ppd.gz
 share/ppd/HP/hp-2000c-hpijs.ppd.gz
 share/ppd/HP/hp-2500c-hpijs.ppd.gz
 share/ppd/HP/hp-910-hpijs.ppd.gz
@@ -1346,8 +1346,8 @@ share/ppd/HP/hp-psc_920-hpijs.ppd.gz
 share/ppd/HP/hp-psc_950-hpijs.ppd.gz
 share/ppd/HP/hp-psc_950vr-hpijs.ppd.gz
 share/ppd/HP/hp-psc_950xi-hpijs.ppd.gz
-share/ppd/HP/HP-Fax-hpijs.ppd.gz
-share/ppd/HP/HP-Fax2-hpijs.ppd.gz
+%%FAX%%share/ppd/HP/HP-Fax-hpijs.ppd.gz
+%%FAX%%share/ppd/HP/HP-Fax2-hpijs.ppd.gz
 share/ppd/HP/hp-laserjet_p3010_series-ps.ppd.gz
 share/ppd/HP/hp-laserjet_p3010_series-hpijs-pcl3.ppd.gz
 share/ppd/HP/hp-officejet_7000_e809a-hpijs.ppd.gz
@@ -1358,8 +1358,8 @@ share/ppd/HP/hp-photosmart_c4700_series-hpijs.ppd.gz
 share/ppd/HP/hp-deskjet_670c-hpijs.ppd.gz
 share/ppd/HP/hp-deskjet_d1600_series-hpijs.ppd.gz
 share/ppd/HP/hp-deskjet_d5500_series-hpijs.ppd.gz
-share/ppd/HP/HP-Fax3-hpcups.ppd.gz
-share/ppd/HP/HP-Fax3-hpijs.ppd.gz
+%%FAX%%share/ppd/HP/HP-Fax3-hpcups.ppd.gz
+%%FAX%%share/ppd/HP/HP-Fax3-hpijs.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp5225-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_cm6040_mfp-ps.ppd.gz
 share/ppd/HP/hp-color_laserjet_cp5225n-ps.ppd.gz
@@ -1394,7 +1394,7 @@ share/applications/hplip.desktop
 @dirrm %%DATADIR%%/prnt
 @dirrm %%DATADIR%%/pcard
 @dirrm %%DATADIR%%/installer
-@dirrm %%DATADIR%%/fax
+%%FAX%%@dirrm %%DATADIR%%/fax
 @dirrm %%DATADIR%%/data/ps
 @dirrm %%DATADIR%%/data/pcl
 @dirrm %%DATADIR%%/data/models
