@@ -7,15 +7,17 @@
 
 PORTNAME=	gammu
 PORTVERSION=	1.27.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
 
 MAINTAINER=	bsam@FreeBSD.org
-COMMENT=	GNU All Mobile Management Utilities.
+COMMENT=	GNU All Mobile Management Utilities
 
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
+
+CONFLICTS=	gammu-devel-[1-9]* gammu-python-[1-9]*
 
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
