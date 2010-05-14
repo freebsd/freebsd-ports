@@ -284,7 +284,7 @@ USE_ICONV=	yes
 XML_USED=	no
 .endif
 .if defined(MUTT_USES_NCURSES)
-.if defined(WITH_MUTT_NCURSES_PORT)
+.if defined(WITH_MUTT_NCURSES_PORT) || exists(${LOCALBASE}/lib/libncurses.a)
 MUTT_USES_NCURSES_PORT=	yes
 .endif
 .endif
