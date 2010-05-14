@@ -1,0 +1,50 @@
+diff -Nru support/Makefile.in.orig1 support/Makefile.in
+--- support/Makefile.in.orig1	2010-05-14 10:05:11.000000000 +0400
++++ support/Makefile.in	2010-05-14 10:05:41.000000000 +0400
+@@ -57,7 +57,7 @@
+ 
+ suexec_OBJECTS = suexec.lo
+ suexec: $(suexec_OBJECTS)
+-	$(LINK) $(suexec_OBJECTS)
++	$(LINK) -lutil $(suexec_OBJECTS)
+ 
+ httxt2dbm_OBJECTS = httxt2dbm.lo
+ httxt2dbm: $(httxt2dbm_OBJECTS)
+diff -Nru support/suexec.c.orig1 support/suexec.c
+--- support/suexec.c.orig1	2006-07-12 11:40:55.000000000 +0400
++++ support/suexec.c	2010-05-14 10:05:41.000000000 +0400
+@@ -37,6 +37,7 @@
+ #include <sys/param.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
++#include <login_cap.h>
+ #include <string.h>
+ #include <time.h>
+ #if APR_HAVE_UNISTD_H
+@@ -242,6 +243,7 @@
+     char *cmd;              /* command to be executed    */
+     char cwd[AP_MAXPATH];   /* current working directory */
+     char dwd[AP_MAXPATH];   /* docroot working directory */
++    login_cap_t *lc;        /* user resource limits      */
+     struct passwd *pw;      /* password entry holder     */
+     struct group *gr;       /* group entry holder        */
+     struct stat dir_info;   /* directory info holder     */
+@@ -448,6 +450,18 @@
+     }
+ 
+     /*
++     * Apply user resource limits based on login class.
++     */
++    if ((lc = login_getclassbyname(pw->pw_class, pw)) == NULL) {
++               log_err("failed to login_getclassbyname()\n");
++               exit(109);
++       }
++       if ((setusercontext(lc, pw, uid, LOGIN_SETRESOURCES)) != 0) {
++               log_err("failed to setusercontext()\n");
++               exit(109);
++       }
++
++    /*
+      * Change UID/GID here so that the following tests work over NFS.
+      *
+      * Initialize the group access list for the target user,
