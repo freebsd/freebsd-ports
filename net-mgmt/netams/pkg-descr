@@ -1,4 +1,4 @@
-NeTAMS stands for Network Traffic Accounting and Monitoring Software. 
+NeTAMS - Network Traffic Accounting and Monitoring Software. 
 It is built for UNIX and works for networks with Cisco routers or PC Unix 
 routers (Linux/FreeBSD/Solaris). Several methods of traffic gathering are 
 supported (tee/divert/ip_queue/libpcap/netflow v5), database storage 
