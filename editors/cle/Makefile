@@ -13,12 +13,17 @@ MASTER_SITES=	ftp://kaolin.unice.fr/pub/Cle/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command Line Editor (based on readline)
 
-USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-AUTOMAKE_ARGS=	--gnu --add-missing
 
 PLIST_FILES=	bin/cle
 
 MAN1=		cle.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@cd ${WRKSRC} && ${TOUCH} -r configure.in aclocal.m4 \
+		Makefile.in */Makefile.in stamp-h.in
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,11 @@
+--- configure.orig	2010-05-14 20:12:23.000000000 +0200
++++ configure	2010-05-14 20:12:34.000000000 +0200
+@@ -1328,7 +1328,7 @@ done
+ 
+ 
+ 
+-(cd readline; configure $prefix $curses) 
++(cd readline; ./configure --prefix=$prefix $curses) 
+ 
+ 
+ 
