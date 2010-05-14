@@ -1,37 +1,79 @@
 bin/stonesoup
-%%DATADIR%%/dat/lua/runrest.lua
-%%DATADIR%%/dat/lua/trapwalk.lua
-%%DATADIR%%/dat/lua/stash.lua
-%%DATADIR%%/dat/lua/wield.lua
-%%DATADIR%%/dat/lua/pickup.lua
-%%DATADIR%%/dat/lua/kills.lua
-%%DATADIR%%/dat/lua/gearset.lua
-%%DATADIR%%/dat/clua/dungeon.lua
+%%DATADIR%%/dat/des/variable/mini_features.des
+%%DATADIR%%/dat/des/variable/entry.des
+%%DATADIR%%/dat/des/variable/float.des
+%%DATADIR%%/dat/des/variable/large.des
+%%DATADIR%%/dat/des/variable/mini_monsters.des
+%%DATADIR%%/dat/des/variable/altar.des
+%%DATADIR%%/dat/des/variable/mini.des
+%%DATADIR%%/dat/des/portals/bailey.des
+%%DATADIR%%/dat/des/portals/trove.des
+%%DATADIR%%/dat/des/portals/bazaar.des
+%%DATADIR%%/dat/des/portals/sewer.des
+%%DATADIR%%/dat/des/portals/ziggurat.des
+%%DATADIR%%/dat/des/portals/ossuary.des
+%%DATADIR%%/dat/des/portals/wizlab.des
+%%DATADIR%%/dat/des/portals/icecave.des
+%%DATADIR%%/dat/des/portals/volcano.des
+%%DATADIR%%/dat/des/portals/lab.des
+%%DATADIR%%/dat/des/builder/arena.des
+%%DATADIR%%/dat/des/builder/uniques.des
+%%DATADIR%%/dat/des/builder/dummy.des
+%%DATADIR%%/dat/des/builder/didact.des
+%%DATADIR%%/dat/des/builder/rooms.des
+%%DATADIR%%/dat/des/builder/layout.des
+%%DATADIR%%/dat/des/branches/elf.des
+%%DATADIR%%/dat/des/branches/temple.des
+%%DATADIR%%/dat/des/branches/tomb.des
+%%DATADIR%%/dat/des/branches/zot.des
+%%DATADIR%%/dat/des/branches/lair.des
+%%DATADIR%%/dat/des/branches/shoals.des
+%%DATADIR%%/dat/des/branches/vaults.des
+%%DATADIR%%/dat/des/branches/crypt.des
+%%DATADIR%%/dat/des/branches/blade.des
+%%DATADIR%%/dat/des/branches/snake.des
+%%DATADIR%%/dat/des/branches/hive.des
+%%DATADIR%%/dat/des/branches/hells.des
+%%DATADIR%%/dat/des/branches/pan.des
+%%DATADIR%%/dat/des/branches/slime.des
+%%DATADIR%%/dat/des/branches/swamp.des
+%%DATADIR%%/dat/des/branches/orc.des
+%%DATADIR%%/dat/des/guide.txt
+%%DATADIR%%/dat/clua/debug.lua
 %%DATADIR%%/dat/clua/util.lua
 %%DATADIR%%/dat/clua/userbase.lua
+%%DATADIR%%/dat/clua/test.lua
+%%DATADIR%%/dat/clua/sanity.lua
 %%DATADIR%%/dat/clua/point.lua
 %%DATADIR%%/dat/clua/macro.lua
 %%DATADIR%%/dat/clua/luamark.lua
 %%DATADIR%%/dat/clua/loadmaps.lua
+%%DATADIR%%/dat/clua/lm_trove.lua
+%%DATADIR%%/dat/clua/lm_trig.lua
 %%DATADIR%%/dat/clua/lm_toll.lua
 %%DATADIR%%/dat/clua/lm_tmsg.lua
 %%DATADIR%%/dat/clua/lm_timed.lua
 %%DATADIR%%/dat/clua/lm_props.lua
 %%DATADIR%%/dat/clua/lm_pdesc.lua
+%%DATADIR%%/dat/clua/lm_mslav.lua
+%%DATADIR%%/dat/clua/lm_monst.lua
+%%DATADIR%%/dat/clua/lm_mon_prop.lua
 %%DATADIR%%/dat/clua/lm_fog.lua
 %%DATADIR%%/dat/clua/lm_flags.lua
+%%DATADIR%%/dat/clua/lm_door.lua
 %%DATADIR%%/dat/clua/lm_1way.lua
+%%DATADIR%%/dat/clua/iter.lua
+%%DATADIR%%/dat/clua/init.lua
+%%DATADIR%%/dat/clua/dungeon.lua
 %%DATADIR%%/dat/clua/ziggurat.lua
-%%DATADIR%%/dat/descript/ability.txt
-%%DATADIR%%/dat/descript/spells.txt
-%%DATADIR%%/dat/descript/skills.txt
-%%DATADIR%%/dat/descript/monsters.txt
-%%DATADIR%%/dat/descript/items.txt
-%%DATADIR%%/dat/descript/gods.txt
-%%DATADIR%%/dat/descript/features.txt
-%%DATADIR%%/dat/descript/cards.txt
-%%DATADIR%%/dat/descript/branches.txt
-%%DATADIR%%/dat/descript/unident.txt
+%%DATADIR%%/dat/lua/autofight.lua
+%%DATADIR%%/dat/lua/trapwalk.lua
+%%DATADIR%%/dat/lua/stash.lua
+%%DATADIR%%/dat/lua/runrest.lua
+%%DATADIR%%/dat/lua/pickup.lua
+%%DATADIR%%/dat/lua/kills.lua
+%%DATADIR%%/dat/lua/gearset.lua
+%%DATADIR%%/dat/lua/wield.lua
 %%DATADIR%%/dat/database/FAQ.txt
 %%DATADIR%%/dat/database/shout.txt
 %%DATADIR%%/dat/database/randname.txt
@@ -48,91 +90,91 @@ bin/stonesoup
 %%DATADIR%%/dat/database/help.txt
 %%DATADIR%%/dat/database/godspeak.txt
 %%DATADIR%%/dat/database/wpnnoise.txt
-%%DATADIR%%/dat/altar.des
-%%DATADIR%%/dat/ziggurat.des
-%%DATADIR%%/dat/vaults.des
-%%DATADIR%%/dat/temple.des
-%%DATADIR%%/dat/sewer.des
-%%DATADIR%%/dat/rooms.des
-%%DATADIR%%/dat/pan.des
-%%DATADIR%%/dat/orc.des
-%%DATADIR%%/dat/minitomb.des
-%%DATADIR%%/dat/mini.des
-%%DATADIR%%/dat/layout.des
-%%DATADIR%%/dat/large.des
-%%DATADIR%%/dat/lair.des
-%%DATADIR%%/dat/lab.des
-%%DATADIR%%/dat/icecave.des
-%%DATADIR%%/dat/hive.des
-%%DATADIR%%/dat/hells.des
-%%DATADIR%%/dat/float.des
-%%DATADIR%%/dat/entry.des
-%%DATADIR%%/dat/elf.des
-%%DATADIR%%/dat/dummy.des
-%%DATADIR%%/dat/didact.des
-%%DATADIR%%/dat/crypt.des
-%%DATADIR%%/dat/bazaar.des
-%%DATADIR%%/dat/arena.des
-%%DATADIR%%/dat/zot.des
-%%SDL%%%%DATADIR%%/dat/tiles/Vera.ttf
-%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-win32.png
-%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-32x32.png
-%%SDL%%%%DATADIR%%/dat/tiles/player.png
-%%SDL%%%%DATADIR%%/dat/tiles/main.png
-%%SDL%%%%DATADIR%%/dat/tiles/dngn.png
-%%SDL%%%%DATADIR%%/dat/tiles/VeraMono.ttf
-%%SDL%%%%DATADIR%%/dat/tiles/title.png
+%%DATADIR%%/dat/descript/ability.txt
+%%DATADIR%%/dat/descript/spells.txt
+%%DATADIR%%/dat/descript/skills.txt
+%%DATADIR%%/dat/descript/monsters.txt
+%%DATADIR%%/dat/descript/items.txt
+%%DATADIR%%/dat/descript/gods.txt
+%%DATADIR%%/dat/descript/features.txt
+%%DATADIR%%/dat/descript/cards.txt
+%%DATADIR%%/dat/descript/branches.txt
+%%DATADIR%%/dat/descript/unident.txt
+%%DATADIR%%/docs/develop/levels/triggerables.txt
+%%DATADIR%%/docs/develop/levels/syntax.txt
+%%DATADIR%%/docs/develop/levels/introduction.txt
+%%DATADIR%%/docs/develop/levels/advanced.txt
+%%DATADIR%%/docs/develop/IRC.txt
+%%DATADIR%%/docs/develop/testing.txt
+%%DATADIR%%/docs/develop/save_compatibility.txt
+%%DATADIR%%/docs/develop/release.txt
+%%DATADIR%%/docs/develop/process.txt
+%%DATADIR%%/docs/develop/patch_guide.txt
+%%DATADIR%%/docs/develop/monster_speech.txt
+%%DATADIR%%/docs/develop/coding_conventions.txt
+%%DATADIR%%/docs/develop/tiles_creation.txt
+%%DATADIR%%/docs/license/pcre_license.txt
+%%DATADIR%%/docs/license/mt19937.txt
+%%DATADIR%%/docs/license/lualicense.txt
+%%DATADIR%%/docs/license/libpng-LICENSE.txt
+%%DATADIR%%/docs/license/lgpl.txt
+%%DATADIR%%/docs/034_changes.txt
+%%DATADIR%%/docs/ssh_guide.txt
+%%DATADIR%%/docs/quickstart.txt
+%%DATADIR%%/docs/options_guide.txt
+%%DATADIR%%/docs/macros_guide.txt
+%%DATADIR%%/docs/keybind.txt
+%%DATADIR%%/docs/key_changes.txt
+%%DATADIR%%/docs/crawl_manual.txt
+%%DATADIR%%/docs/changelog.txt
+%%DATADIR%%/docs/arena.txt
+%%DATADIR%%/docs/aptitudes.txt
+%%DATADIR%%/docs/tiles_help.txt
 %%DATADIR%%/settings/034_command_keys.txt
 %%DATADIR%%/settings/tiles_options.txt
 %%DATADIR%%/settings/standard_colours.txt
+%%DATADIR%%/settings/no_vi_command_keys.txt
 %%DATADIR%%/settings/messages.txt
 %%DATADIR%%/settings/menu_colours.txt
 %%DATADIR%%/settings/init.txt
 %%DATADIR%%/settings/food_colouring.txt
+%%DATADIR%%/settings/dvorak_command_keys.txt
 %%DATADIR%%/settings/dolls.txt
 %%DATADIR%%/settings/autopickup_exceptions.txt
+%%DATADIR%%/settings/052_monster_glyphs.txt
 %%DATADIR%%/settings/034_monster_glyphs.txt
 %%DATADIR%%/settings/travel_stoppers.txt
-%%DATADIR%%/docs/034_changes.txt
-%%DATADIR%%/docs/ssh_guide.txt
-%%DATADIR%%/docs/quickstart.txt
-%%DATADIR%%/docs/pcre_license.txt
-%%DATADIR%%/docs/patch_guide.txt
-%%DATADIR%%/docs/options_guide.txt
-%%DATADIR%%/docs/mt19937.txt
-%%DATADIR%%/docs/monster_speech.txt
-%%DATADIR%%/docs/macros_guide.txt
-%%DATADIR%%/docs/lualicense.txt
-%%DATADIR%%/docs/lgpl.txt
-%%DATADIR%%/docs/level_design.txt
-%%DATADIR%%/docs/keybind.txt
-%%DATADIR%%/docs/key_changes.txt
-%%DATADIR%%/docs/crawl_manual.txt
-%%DATADIR%%/docs/crawl-0.5.1-options.txt
-%%DATADIR%%/docs/crawl-0.5.0-options.txt
-%%DATADIR%%/docs/coding_conventions.txt
-%%DATADIR%%/docs/arena.txt
-%%DATADIR%%/docs/changelog.txt
-%%DATADIR%%/docs/aptitudes.txt
-%%DATADIR%%/docs/tiles_help.txt
-%%DATADIR%%/docs/libpng-LICENSE.txt
-%%DATADIR%%/docs/tiles_creation.txt
-@exec chown -R root:games %D/%%DATADIR%%
-@exec install -d -o root -g games -m 775 %%SAVEDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/licence.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.crawlrc
-@dirrm %%DATADIR%%/dat/lua
-@dirrm %%DATADIR%%/dat/clua
-@dirrm %%DATADIR%%/dat/descript
-@dirrm %%DATADIR%%/dat/database
+%%SDL%%%%DATADIR%%/dat/tiles/player.png
+%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-win32.png
+%%SDL%%%%DATADIR%%/dat/tiles/stone_soup_icon-32x32.png
+%%SDL%%%%DATADIR%%/dat/tiles/title.png
+%%SDL%%%%DATADIR%%/dat/tiles/main.png
+%%SDL%%%%DATADIR%%/dat/tiles/gui.png
+%%SDL%%%%DATADIR%%/dat/tiles/dngn.png
+%%SDL%%%%DATADIR%%/dat/tiles/Vera.ttf
+%%SDL%%%%DATADIR%%/dat/tiles/VeraMono.ttf
 %%SDL%%@dirrm %%DATADIR%%/dat/tiles
+@dirrm %%DATADIR%%/dat/des/variable
+@dirrm %%DATADIR%%/dat/des/portals
+@dirrm %%DATADIR%%/dat/des/builder
+@dirrm %%DATADIR%%/dat/des/branches
+@dirrm %%DATADIR%%/dat/des
+@dirrm %%DATADIR%%/dat/clua
+@dirrm %%DATADIR%%/dat/lua
+@dirrm %%DATADIR%%/dat/database
+@dirrm %%DATADIR%%/dat/descript
 @dirrm %%DATADIR%%/dat
-@dirrm %%DATADIR%%/settings
+@dirrm %%DATADIR%%/docs/develop/levels
+@dirrm %%DATADIR%%/docs/develop
+@dirrm %%DATADIR%%/docs/license
 @dirrm %%DATADIR%%/docs
+@dirrm %%DATADIR%%/settings
 @dirrm %%DATADIR%%/
-@unexec rmdir %%SAVEDIR%% >/dev/null 2>&1 || echo 'stonesoup save-game directory (%%SAVEDIR%%) not removed due to existing save games. If you are permanently removing this port, you should do a ``rm -rf %%SAVEDIR%%``.' | fmt
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.crawlrc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/
+@exec install -d -o root -g games -m 775 %%SAVEDIR%%/saves %%SAVEDIR%%/morgue
+@exec touch %%SAVEDIR%%/saves/logfile %%SAVEDIR%%/saves/scores
+@exec chmod 664  %%SAVEDIR%%/saves/logfile %%SAVEDIR%%/saves/scores
+@unexec rmdir %%SAVEDIR%% >/dev/null 2>&1 || echo 'stonesoup save-game directory (%%SAVEDIR%%) not removed due to existing save games. If you are permanently removing this port, you should do a ``rm -rf %%SAVEDIR%%``.' | fmt
