@@ -1,11 +1,10 @@
 #!/bin/sh
-#
 # $FreeBSD$
-#
 
 # PROVIDE: netams
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown
+# REQUIRE: mysql
 
 # Define these netams_* variables in one of these files:
 #       /etc/rc.conf
@@ -19,19 +18,21 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
+netams_enable=${netams_enable-"NO"}
+netams_config=${netams_config-"%%PREFIX%%/etc/netams/netams.conf"}
+
+netams_pidfile="/var/run/netams.pid"
 
 . /etc/rc.subr
 
 name="netams"
 rcvar=`set_rcvar`
+command="%%PREFIX%%/libexec/netams"
 
 load_rc_config $name
 
-: ${netams_enable="NO"}
-: ${netams_config="%%PREFIX%%/etc/netams.conf"}
+pidfile="${netams_pidfile}"
 
-pidfile="/var/run/netams.pid"
-command="%%PREFIX%%/libexec/netams"
-command_args="-lf ${netams_config} > /dev/null &"
+start_cmd="echo \"Starting ${name}.\"; ${command} -lf ${netams_config} > /dev/null"
 
 run_rc_command "$1"
