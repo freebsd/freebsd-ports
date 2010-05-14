@@ -1,9 +1,15 @@
-lib/bsd-sysctl-1.0.6/ghc-6.10.4/System/BSD/Sysctl.hi
-lib/bsd-sysctl-1.0.6/ghc-6.10.4/libHSbsd-sysctl-1.0.6.a
-lib/bsd-sysctl-1.0.6/ghc-6.10.4/HSbsd-sysctl-1.0.6.o
-share/doc/bsd-sysctl-1.0.6/LICENSE
-@dirrm lib/bsd-sysctl-1.0.6/ghc-6.10.4/System/BSD
-@dirrm lib/bsd-sysctl-1.0.6/ghc-6.10.4/System
-@dirrm lib/bsd-sysctl-1.0.6/ghc-6.10.4
-@dirrm lib/bsd-sysctl-1.0.6
-@dirrm share/doc/bsd-sysctl-1.0.6
+@comment $FreeBSD$
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/BSD/Sysctl.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/BSD
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

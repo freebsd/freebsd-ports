@@ -8,20 +8,11 @@
 PORTNAME=	bsd-sysctl
 PORTVERSION=	1.0.6
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
-PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	jupengfei@gmail.com
-COMMENT=	Access to the BSD sysctl(3) interface via the Haskell FFI
+COMMENT=	Access to the BSD sysctl(3) interface
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	${BUILD_DEPENDS}
+CABAL_SETUP=	Setup.hs
 
-do-configure:
-	cd ${WRKSRC} && runghc Setup.hs configure --prefix=${PREFIX}
-do-build:
-	cd ${WRKSRC} && runghc Setup.hs build
-do-install:
-	cd ${WRKSRC} && runghc Setup.hs install
-
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
