@@ -238,8 +238,6 @@ share/mimelnk/application/x-tellico.desktop
 @dirrmtry share/mimelnk
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
 @dirrm share/doc/HTML/uk/tellico
 @dirrm share/doc/HTML/sv/tellico
 @dirrm share/doc/HTML/pt_BR/tellico
