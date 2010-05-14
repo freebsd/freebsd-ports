@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1.1
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}%20(plain%20zip)
-DISTNAME=	${PORTNAME}-${PORTVERSION}-standard
+DISTNAME=	${PORTNAME}-${PORTVERSION}-optional
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A universal SQL Client
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
-WRKSRC=		${WRKDIR}/SQuirreL SQL Client
+JAVA_VERSION=	1.6+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SUB_FILES=	squirrel-sql
 PKGMESSAGE=	pkg-messages
@@ -39,6 +39,6 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd "${WRKSRC}" && ${FIND} . | ${CPIO} -pdum -R root:wheel ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/squirrel-sql ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE} 
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
