@@ -1,0 +1,11 @@
+--- daemon/Makefile.in.orig	2010-05-14 00:25:44.000000000 -0400
++++ daemon/Makefile.in	2010-05-14 00:25:29.000000000 -0400
+@@ -906,7 +906,7 @@ uninstall-am: uninstall-binPROGRAMS unin
+ 
+ 
+ # Rule to make the service file with bindir expanded
+-$(service_DATA): $(service_in_files) Makefile
++%.service: %.service.in Makefile
+ 	@sed -e "s|\@PATH\@|$(service_PATH)|" $< > $@
+ 
+ @INTLTOOL_DESKTOP_RULE@

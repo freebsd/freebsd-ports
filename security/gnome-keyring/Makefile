@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-keyring
 PORTVERSION=	2.30.1
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -27,5 +28,11 @@ CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 GCONF_SCHEMAS=	gnome-keyring.schemas
+
+SUB_FILES=	org.freedesktop.secrets.service
+
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/org.freedesktop.secrets.service \
+	    	${PREFIX}/share/dbus-1/services
 
 .include <bsd.port.mk>
