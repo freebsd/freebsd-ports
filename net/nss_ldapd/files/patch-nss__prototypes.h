@@ -1,15 +1,5 @@
 --- nss/prototypes.h.orig	2009-09-04 15:55:35.000000000 +0400
 +++ nss/prototypes.h	2009-12-20 15:37:57.000000000 +0300
-@@ -24,7 +24,9 @@
- #define _NSS_EXPORTS_H 1
- 
- #include <nss.h>
-+#ifdef HAVE_ALIASES_H
- #include <aliases.h>
-+#endif
- #ifdef HAVE_NETINET_ETHER_H
- #include <netinet/ether.h>
- #endif /* HAVE_NETINET_ETHER_H */
 @@ -84,6 +86,27 @@
    void *nip; /* changed from `service_user *nip' */
  };
