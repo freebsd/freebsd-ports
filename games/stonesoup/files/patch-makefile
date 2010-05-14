@@ -1,0 +1,169 @@
+--- ./makefile.orig	2010-03-27 00:43:25.000000000 +0100
++++ ./makefile	2010-04-18 13:18:41.000000000 +0200
+@@ -44,7 +44,7 @@
+ #    ask for a package with convenience libraries instead -- we'll try to provide
+ #    them somewhere in the near future.
+ 
+-GAME = crawl
++GAME = stonesoup
+ 
+ #
+ # Compiler Flags
+@@ -82,19 +82,31 @@
+ 
+ endif # USE_ICC
+ 
++ifndef FREEBSD_PORT
+ CFOTHERS := -fno-strict-aliasing -pipe $(EXTERNAL_FLAGS)
+ CFOTHERS_L := -fsigned-char
+ CFWARN := -Wall
+ 
+ DEFINES := $(EXTERNAL_DEFINES)
++else
++NO_AUTO_OPT = YesPlease
++
++CFOTHERS := $(CFLAGS)
++CFOTHERS_L := -fsigned-char
++CFWARN := 
++
++DEFINES := $(EXTERNAL_DEFINES)
++endif
+ 
+ #
+ # The GCC and GXX variables are set later.
+ #
+ AR = ar
+ RANLIB = ranlib
++ifndef FREEBSD_PORT
+ CC = $(GCC)
+ CXX = $(GXX)
++endif
+ RM = rm -f
+ COPY = cp
+ COPY_R = cp -r
+@@ -268,9 +280,10 @@
+ 
+ # Permissions to set on the save directory.
+ MCHMOD_SAVEDIR := 775
++MCHMOD_LOGS := 664
+ 
+ # The user:group to install the game as.
+-INSTALL_UGRP := games:games
++INSTALL_UGRP := root:games
+ 
+ chroot_prefix :=
+ prefix        :=
+@@ -386,25 +399,34 @@
+ endif
+ endif
+ 
+-ifndef BUILD_LUA
+-  ifneq (,$(wildcard /usr/include/lua5.1))
+-    INCLUDES_L += -I/usr/include/lua5.1
+-    LIBS += -llua5.1
+-  else
+-    ifneq (,$(wildcard /usr/include/lua.h))
+-      LIBS += -llua
++ifndef FREEBSD_PORT
++  ifndef BUILD_LUA
++    ifneq (,$(wildcard /usr/include/lua5.1))
++      INCLUDES_L += -I/usr/include/lua5.1
++      LIBS += -llua5.1
+     else
+-      BUILD_LUA = yes
++      ifneq (,$(wildcard /usr/include/lua.h))
++        LIBS += -llua
++      else
++        BUILD_LUA = yes
++      endif
+     endif
+   endif
+-endif
+-
+-ifndef BUILD_SQLITE
+-  ifneq ($(shell grep -q sqlite3_prepare_v2 /usr/include/sqlite3.h 2>/dev/null && echo yes),yes)
+-    BUILD_SQLITE = yes
+-  else
+-    LIBS += -lsqlite3
++  
++  ifndef BUILD_SQLITE
++    ifneq ($(shell grep -q sqlite3_prepare_v2 /usr/include/sqlite3.h 2>/dev/null && echo yes),yes)
++      BUILD_SQLITE = yes
++    else
++      LIBS += -lsqlite3
++    endif
+   endif
++else
++  INCLUDES_L += -I${LOCALBASE}/include/
++  INCLUDES_L += -I${LOCALBASE}/include/lua51
++  LIBS += -L${LOCALBASE}/lib/
++  LIBS += -L${LOCALBASE}/lib/lua51
++  LIBS += -llua-5.1
++  LIBS += -lsqlite3
+ endif
+ 
+ RLTILES = rltiles
+@@ -476,11 +498,13 @@
+ 
+ endif # TILES
+ 
++ifndef FREEBSD_PORT
+ ifeq ($(GCC_GTE_4_3_0),1)
+ CFWARN_L += -Wno-array-bounds
+ endif
+ 
+ CFWARN_L += -Wno-parentheses -Wwrite-strings -Wshadow -pedantic -D_FORTIFY_SOURCE=0
++endif
+ CFOTHERS_L = $(EXTERNAL_FLAGS_L) $(EXTRA_FLAGS) $(DEFINES) $(SDL_CFLAGS)
+ 
+ ifndef NO_LUA_BINDINGS
+@@ -519,6 +543,7 @@
+ 	NO_OPTIMIZE=YesPlease
+ endif
+ 
++ifndef FREEBSD_PORT
+ ifdef FULLDEBUG
+ DEFINES += -DFULLDEBUG
+ endif
+@@ -544,6 +569,11 @@
+ CFWARN_L += -Wno-uninitialized
+ endif
+ endif
++else # ifdef FREEBSD_PORT
++ifdef WIZARD
++DEFINES += -DWIZARD
++endif
++endif # FREEBSD_PORT
+ 
+ ifneq ($(strip $(chroot_prefix)),)
+ 	USE_CHROOT=YesPlease
+@@ -756,7 +786,7 @@
+ SRC_VERSION   := $(shell git describe --tags --long 2>/dev/null || cat util/release_ver)
+ 
+ # when making release builds, use just the bare tag
+-SRC_VERSION_SHORT := $(shell git describe --tags 2>/dev/null)
++SRC_VERSION_SHORT := $(shell git describe --tags 2>/dev/null || cat util/release_ver)
+ ifneq (,$(SRC_VERSION_SHORT))
+   ifeq (,$(findstring -,$(SRC_VERSION_SHORT)))
+     SRC_VERSION := $(SRC_VERSION_SHORT)
+@@ -907,9 +937,11 @@
+ 	$(COPY) dat/tiles/VeraMono.ttf $(datadir_fp)/dat/tiles/
+ endif
+ endif
++ifndef FREEBSD_PORT
+ ifeq ($(USE_DGAMELAUNCH),)
+ 	$(CHOWN) -R $(INSTALL_UGRP) $(datadir_fp) || true
+ endif
++endif
+ ifneq ($(SAVEDIR),)
+ 	mkdir -p $(savedir_fp)/saves
+ ifneq ($(patsubst /var/%,%,$(savedir_fp)),$(savedir_fp))
+@@ -924,6 +956,8 @@
+ 	$(CHOWN) -R $(INSTALL_UGRP) $(savedir_fp) || true
+ 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp) || true
+ 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp)/saves || true
++	$(CHMOD) $(MCHMOD_LOGS) $(savedir_fp)/saves/logfile || true
++	$(CHMOD) $(MCHMOD_LOGS) $(savedir_fp)/saves/scores || true
+ 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp)/morgue || true
+ endif
+ endif
