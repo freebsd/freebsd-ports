@@ -41,16 +41,10 @@ MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
 		gammu-smsd-dbi.7 gammu-smsd-tables.7
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if (${ARCH} == "sparc64")
-USE_GCC=	4.3
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
