@@ -541,6 +541,7 @@ apertium                        ports/textproc/apertium
 apg                             ports/security/apg
 api-sanity-autotest             ports/devel/api-sanity-autotest
 apinger                         ports/net/apinger
+apngasm                         ports/graphics/apngasm
 apollon                         ports/net-p2p/apollon
 apoolGL                         ports/games/apoolGL
 apoolgl                         ports/games/apoolGL
@@ -1973,6 +1974,7 @@ ctrlproxy                       ports/irc/ctrlproxy
 ctwm                            ports/x11-wm/ctwm
 cu-prolog                       ports/lang/cu-prolog
 cube                            ports/games/cube
+cuberok                         ports/audio/cuberok
 cucipop                         ports/mail/cucipop
 cue2toc                         ports/audio/cue2toc
 cuecat                          ports/misc/cuecat
@@ -3153,6 +3155,7 @@ etrace                          ports/net/etrace
 etracer                         ports/games/etracer
 ettercap                        ports/net-mgmt/ettercap
 etunnel                         ports/net/etunnel
+etuxracer                       ports/games/etuxracer
 euchre                          ports/games/euchre
 eukleides                       ports/math/eukleides
 euler                           ports/science/euler
@@ -9238,7 +9241,6 @@ mod_dtcl                        ports/www/mod_dtcl
 mod_encoding                    ports/www/mod_encoding
 mod_evasive                     ports/www/mod_evasive
 mod_extract_forwarded           ports/www/mod_extract_forwarded
-mod_extract_forwarded2          ports/www/mod_extract_forwarded2
 mod_extract_forwarded_ap13      ports/www/mod_extract_forwarded_ap13
 mod_fastcgi                     ports/www/mod_fastcgi
 mod_fcgid                       ports/www/mod_fcgid
@@ -9292,6 +9294,7 @@ mod_put                         ports/www/mod_put
 mod_python                      ports/www/mod_python
 mod_python3                     ports/www/mod_python3
 mod_realip                      ports/www/mod_realip
+mod_remoteip                    ports/www/mod_remoteip
 mod_roaming                     ports/www/mod_roaming
 mod_roaming2                    ports/www/mod_roaming2
 mod_rpaf                        ports/www/mod_rpaf
@@ -13321,6 +13324,7 @@ p5-Pod-HtmlEasy                 ports/textproc/p5-Pod-HtmlEasy
 p5-Pod-POM                      ports/textproc/p5-Pod-POM
 p5-Pod-POM-View-HTML-Filter     ports/textproc/p5-Pod-POM-View-HTML-Filter
 p5-Pod-Parser                   ports/textproc/p5-Pod-Parser
+p5-Pod-Perldoc                  ports/textproc/p5-Pod-Perldoc
 p5-Pod-ProjectDocs              ports/textproc/p5-Pod-ProjectDocs
 p5-Pod-Simple                   ports/textproc/p5-Pod-Simple
 p5-Pod-Site                     ports/www/p5-Pod-Site
@@ -17132,6 +17136,7 @@ p5-pod-escapes                  ports/textproc/p5-Pod-Escapes
 p5-pod-eventual                 ports/textproc/p5-Pod-Eventual
 p5-pod-htmleasy                 ports/textproc/p5-Pod-HtmlEasy
 p5-pod-parser                   ports/textproc/p5-Pod-Parser
+p5-pod-perldoc                  ports/textproc/p5-Pod-Perldoc
 p5-pod-pom                      ports/textproc/p5-Pod-POM
 p5-pod-pom-view-html-filter     ports/textproc/p5-Pod-POM-View-HTML-Filter
 p5-pod-projectdocs              ports/textproc/p5-Pod-ProjectDocs
@@ -19520,6 +19525,7 @@ pib                             ports/ports-mgmt/pib
 pic2fig                         ports/print/pic2fig
 picard                          ports/audio/picard
 picasm                          ports/devel/picasm
+pickwick                        ports/net-im/pickwick
 picmonger                       ports/news/PicMonger
 pico-alpine                     ports/editors/pico-alpine
 picocom                         ports/comms/picocom
@@ -21693,6 +21699,7 @@ rsmb                            ports/net/rsmb
 rsnapshot                       ports/sysutils/rsnapshot
 rss2email                       ports/mail/rss2email
 rss2html                        ports/textproc/rss2html
+rssdler                         ports/www/rssdler
 rssh                            ports/shells/rssh
 rssowl                          ports/www/rssowl
 rsstail                         ports/www/rsstail
@@ -21729,6 +21736,15 @@ rsyslog5-pgsql                  ports/sysutils/rsyslog5-pgsql
 rsyslog5-relp                   ports/sysutils/rsyslog5-relp
 rsyslog5-rfc3195                ports/sysutils/rsyslog5-rfc3195
 rsyslog5-snmp                   ports/sysutils/rsyslog5-snmp
+rsyslog55                       ports/sysutils/rsyslog55
+rsyslog55-dbi                   ports/sysutils/rsyslog55-dbi
+rsyslog55-gnutls                ports/sysutils/rsyslog55-gnutls
+rsyslog55-gssapi                ports/sysutils/rsyslog55-gssapi
+rsyslog55-mysql                 ports/sysutils/rsyslog55-mysql
+rsyslog55-pgsql                 ports/sysutils/rsyslog55-pgsql
+rsyslog55-relp                  ports/sysutils/rsyslog55-relp
+rsyslog55-rfc3195               ports/sysutils/rsyslog55-rfc3195
+rsyslog55-snmp                  ports/sysutils/rsyslog55-snmp
 rt2-demo                        ports/games/rt2-demo
 rt36                            ports/www/rt36
 rt38                            ports/www/rt38
