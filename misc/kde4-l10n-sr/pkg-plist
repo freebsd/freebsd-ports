@@ -1309,11 +1309,11 @@ share/locale/sr/entry.desktop
 @dirrm share/apps/kvtml/sr@ijekavianlatin
 @dirrm share/apps/kvtml/sr@ijekavian
 @dirrm share/apps/kvtml/sr
-@dirrm share/apps/kvtml
+@dirrmtry share/apps/kvtml
 @dirrm share/apps/ktuberling/sounds/sr
-@dirrm share/apps/ktuberling/sounds
-@dirrm share/apps/ktuberling
-@dirrm share/apps/khangman
+@dirrmtry share/apps/ktuberling/sounds
+@dirrmtry share/apps/ktuberling
+@dirrmtry share/apps/khangman
 @dirrm share/apps/desktoptheme/default/widgets/l10n/sr@latin
 @dirrm share/apps/desktoptheme/default/widgets/l10n/sr@ijekavianlatin
 @dirrm share/apps/desktoptheme/default/widgets/l10n/sr@ijekavian

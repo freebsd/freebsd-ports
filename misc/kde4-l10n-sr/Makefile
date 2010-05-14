@@ -13,7 +13,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Serbian messages and documentation for KDE4
 
 KDE4_L10N=	sr
-MANLANG=	${KDE4_L10N} ${KDE4_L10N}@latin
+MANLANG=	${KDE4_L10N}
 .include <${.CURDIR}/Makefile.man>
 
 .include "${.CURDIR}/../../misc/kde4-l10n/files/bsd.l10n.mk"
