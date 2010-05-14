@@ -30,6 +30,8 @@ QT_COMPONENTS=	corelib assistant assistantclient clucene \
 
 OPTIONS=	PHP	"Install PHP support" on
 
+LATEST_LINK=	${PORTNAME}-kde4
+
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_PHP)
