@@ -15,6 +15,8 @@ MASTER_SITES=	http://ftp.jaist.ac.jp/pub/FreeBSD/distfiles/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese GB2312,BIG5 code input server
 
+BROKEN=		does not build
+
 LATEST_LINK=	zh-chinput3
 USE_XORG=	x11 xt
 USE_GETTEXT=	yes
