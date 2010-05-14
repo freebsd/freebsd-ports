@@ -10,25 +10,25 @@
  /* Define to 1 if you have the <aliases.h> header file. */
  #undef HAVE_ALIASES_H
  
---- configure.orig	19:44:43.000000000 +0300
-+++ configure	2009-12-20 19:47:20.000000000 +0300
-@@ -779,6 +779,7 @@
+--- configure.orig	2010-02-27 09:17:45.000000000 -0600
++++ configure	2010-04-29 07:28:11.044647697 -0500
+@@ -738,6 +738,7 @@
  enable_sasl
  enable_kerberos
  enable_configfile_checking
 +enable_nss_compat
  with_ldap_conf_file
+ with_bindpw_file
  with_nslcd_pidfile
- with_nslcd_socket
-@@ -1437,6 +1438,7 @@
-   --disable-kerberos      disable Kerberos support [default=yes]
+@@ -1386,6 +1387,7 @@
+   --disable-kerberos      disable Kerberos support [[default=enabled]]
    --disable-configfile-checking
-                           check configfile options [default=yes]
-+  --enable-nss_compat     check nss_compat option [default=no]
+                           check configfile options [[default=enabled]]
++  --enable-nss_compat     check nss_compat option [[default=disabled]]
  
  Optional Packages:
    --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
-@@ -5117,6 +5119,181 @@
+@@ -4782,6 +4784,181 @@
  
  fi
  

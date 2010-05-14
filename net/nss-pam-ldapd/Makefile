@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		nss_ldapd
-PORTVERSION=		0.7.1
+PORTVERSION=		0.7.3
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			http://static.ipfw.ru/files/
@@ -27,6 +27,9 @@ NSLCD_SOCKET?=		/var/run/nslcd.ctl
 OPTIONS=		NSS_COMPAT	"Enable nss_ldap compatibility" on \
 			SASL		"Enable SASL" off \
 			PAM		"Build pam_ldap" on
+
+USERS=			nslcd
+GROUPS=			nslcd
 
 .include <bsd.port.pre.mk>
 
