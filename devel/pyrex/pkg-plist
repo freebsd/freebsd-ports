@@ -17,6 +17,9 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ExprNodes.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ExprNodes.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ExprNodes.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Filenames.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Filenames.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Filenames.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Lexicon.pickle
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Lexicon.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Lexicon.pyc
@@ -151,6 +154,7 @@ bin/pyrexc
 %%PORTDOCS%%%%DOCSDIR%%/About.html
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/LanguageOverview.html
+%%PORTDOCS%%%%DOCSDIR%%/Release_Notes_0.9.9.html
 %%PORTDOCS%%%%DOCSDIR%%/Manual/Limitations.html
 %%PORTDOCS%%%%DOCSDIR%%/Manual/basics.html
 %%PORTDOCS%%%%DOCSDIR%%/Manual/extension_types.html
@@ -158,6 +162,7 @@ bin/pyrexc
 %%PORTDOCS%%%%DOCSDIR%%/Manual/sharing.html
 %%PORTDOCS%%%%DOCSDIR%%/Manual/source_files.html
 %%PORTDOCS%%%%DOCSDIR%%/Manual/special_methods.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual/using_with_c++.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/primes.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile

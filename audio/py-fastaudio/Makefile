@@ -8,6 +8,7 @@
 
 PORTNAME=	fastaudio
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.freenet.org.nz/python/pyPortAudio/:site1 \
 		http://www.portaudio.com/archives/:site2
