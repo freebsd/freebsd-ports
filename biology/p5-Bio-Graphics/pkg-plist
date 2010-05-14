@@ -26,7 +26,6 @@ bin/search_overview.pl
 %%SITE_PERL%%/Bio/Graphics/Glyph/wiggle_xyplot.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/heat_map_ideogram.pm
 %%SITE_PERL%%/Bio/Graphics/Wiggle/Loader.pm
-%%SITE_PERL%%/Bio/Graphics/WiggleCompressed.pm
 %%SITE_PERL%%/Bio/Graphics/DrawTransmembrane.pm
 %%SITE_PERL%%/Bio/Graphics/FeatureBase.pm
 %%SITE_PERL%%/Bio/Graphics/FeatureDir.pm
