@@ -995,7 +995,6 @@
     SUBDIR += ngpt
     SUBDIR += noweb
     SUBDIR += nspr
-    SUBDIR += nx
     SUBDIR += oaf
     SUBDIR += obby
     SUBDIR += obfuscatejs
