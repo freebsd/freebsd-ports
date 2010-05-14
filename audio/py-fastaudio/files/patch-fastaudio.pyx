@@ -1,5 +1,5 @@
---- fastaudio.pyx.orig	2004-06-15 20:37:39.000000000 +0900
-+++ fastaudio.pyx	2009-06-06 18:54:52.000000000 +0900
+--- fastaudio.pyx.orig	2004-06-15 13:37:39.000000000 +0200
++++ fastaudio.pyx	2010-05-08 09:24:38.000000000 +0200
 @@ -92,7 +92,7 @@
  #@+node:portaudio.h
  # portaudio-specifics
@@ -9,6 +9,15 @@
      ctypedef int PaError
  
      cdef enum PA_ERRORS:
+@@ -553,7 +553,7 @@
+     cdef int             isrunning
+     #@-node:attributes
+     #@+node:__new__
+-    def __new__(self, samplerate=8000, channels=2, format='int16', framesPerBuf=4096, maxbufs=16, **kwds):
++    def __cinit__(self, samplerate=8000, channels=2, format='int16', framesPerBuf=4096, maxbufs=16, **kwds):
+         """
+         Constructor for fastaudio stream objects.
+     
 @@ -586,8 +586,8 @@
          cdata.framesPerBuf = framesPerBuf
          cdata.bytesPerFrame = channels * _sampleFormatSizes[format]
