@@ -34,6 +34,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fcc39d22-5777-11df-bf33-001a92771ec2">
+    <topic>redmine -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>redmine</name>
+        <range><lt>0.9.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+         <p>The Redmine release announcement reports that
+           several cross side scripting vulnerabilities
+           and a potential data disclosure vulnerability have
+           been fixed in the latest release.
+         </p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.redmine.org/news/39</url>
+    </references>
+    <dates>
+      <discovery>2010-05-01</discovery>
+      <entry>2010-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="28022228-5a0e-11df-942d-0015587e2cc1">
     <topic>wireshark -- DOCSIS dissector denial of service</topic>
     <affects>
