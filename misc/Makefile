@@ -333,7 +333,6 @@
     SUBDIR += kwatch
     SUBDIR += latex-mk
     SUBDIR += lc
-    SUBDIR += ldconfig_compat
     SUBDIR += lesspipe
     SUBDIR += libeatmydata
     SUBDIR += libhome
