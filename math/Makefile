@@ -295,6 +295,7 @@
     SUBDIR += p5-Date-Handler
     SUBDIR += p5-GIS-Distance
     SUBDIR += p5-GIS-Distance-Fast
+    SUBDIR += p5-GIS-Distance-Lite
     SUBDIR += p5-Geo-Coordinates-UTM
     SUBDIR += p5-Geo-Distance
     SUBDIR += p5-Geo-Distance-XS
