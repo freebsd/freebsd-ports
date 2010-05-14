@@ -333,7 +333,7 @@
 +			 "max-frequency", fmax,
 +			 NULL);
 +
-+	   g_free (governer);
++	   g_free (governor);
 +
 +	   return TRUE;
 +}
