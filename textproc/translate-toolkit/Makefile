@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/translate/Translate%20Toolkit/${PORTVERSION} \
 		http://freebsd.unixfreunde.de/sources/
