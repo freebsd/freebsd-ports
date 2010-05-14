@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR=	. old related/postfix
 DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 VDAVERSION=	2.6.5
@@ -32,7 +32,7 @@ SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 # back compat pull in settings from POSTFIX_OPTIONS for convenience when
 # make config is run (happens first time port is built, too)
-.for o in SASL2 SASLKRB SASLKRB5 SASLKRB5MIT TLS BDB MySQL PgSQL OpenLDAP CDB NIS VDA Test
+.for o in SASL2 SASLKRB5 SASLKRB5MIT TLS BDB MySQL PgSQL OpenLDAP CDB NIS VDA Test
 STATUS_${o}=off
 .endfor
 .if defined(POSTFIX_OPTIONS)
@@ -44,7 +44,6 @@ STATUS_${o}=on
 OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		${STATUS_SASL2} \
 		DOVECOT		"Dovecot SASL authentication method"			off \
-		SASLKRB		"If your SASL req. Kerberos select this option"		${STATUS_SASLKRB} \
 		SASLKRB5	"If your SASL req. Kerberos5 select this option"	${STATUS_SASLKRB5} \
 		SASLKMIT	"If your SASL req. MIT Kerberos5 select this option"	${STATUS_SASLKRB5MIT} \
 		TLS		"Enable SSL and TLS support"				${STATUS_TLS} \
@@ -130,22 +129,15 @@ POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
 _REQUIRE+=		dovecot
 .endif
 
-.if defined(WITH_SASLKRB)
-.if defined(WITH_SASLKRB5) || defined(WITH_SASLKMIT)
-BROKEN=			Select only one SASL Kerberos option
-.endif
-POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
-.endif
-
 .if defined(WITH_SASLKRB5)
-.if defined(WITH_SASLKRB) || defined(WITH_SASLKMIT)
+.if defined(WITH_SASLKMIT)
 BROKEN=			Select only one SASL Kerberos option
 .endif
 POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if defined(WITH_SASLKMIT)
-.if defined(WITH_SASLKRB) || defined(WITH_SASLKRB5)
+.if defined(WITH_SASLKRB5)
 BROKEN=			Select only one SASL Kerberos option
 .endif
 LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
@@ -160,6 +152,7 @@ POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 
 .if defined(WITH_BDB)
 USE_BDB=		yes
+INVALID_BDB_VER=	50+
 POSTFIX_CCARGS+=	-I${BDB_INCLUDE_DIR}
 POSTFIX_AUXLIBS+=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 .endif
