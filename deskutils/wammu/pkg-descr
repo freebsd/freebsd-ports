@@ -1,0 +1,15 @@
+Wammu Mobile Phone Manager
+
+It works with any phone that Gammu supports, including many models from
+Nokia, Siemens, and Alcatel. It has complete support (read, edit,
+delete, copy) for contacts, todo, and calendar. It can read, save, and
+send SMS. It includes an SMS composer for multi-part SMS messages, and
+it can display SMS messages that include pictures. Currently, only text
+and predefined bitmaps or sounds can be edited in the SMS composer. It
+can export messages to an IMAP4 server (or other email storage).
+
+This program does not support browsing files in phone.
+
+LICENSE: GPLv2
+
+WWW: http://wammu.eu/
