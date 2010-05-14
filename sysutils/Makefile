@@ -536,6 +536,7 @@
     SUBDIR += obliterate
     SUBDIR += ods2
     SUBDIR += open
+    SUBDIR += openipmi
     SUBDIR += openupsd
     SUBDIR += p5-BSD-Jail-Object
     SUBDIR += p5-BSD-Sysctl
