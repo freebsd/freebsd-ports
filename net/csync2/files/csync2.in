@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# PROVIDE: csync2
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable csync2:
+# csync2_enable="YES"
+
+. /etc/rc.subr
+
+name="csync2"
+rcvar=${name}_enable
+
+pidfile=/var/run/${name}.pid
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+load_rc_config $name
+: ${csync2_enable="NO"}
+
+csync2_start()
+{
+  %%PREFIX%%/sbin/csync2 -ii & echo $! > ${pidfile}
+}
+csync2_stop()
+{   
+  if [ -f "${pidfile}" ]; then
+        kill `cat ${pidfile}`
+        wait_for_pid `cat ${pidfile}`
+        rm -f ${pidfile}
+  else 
+        echo "PIDFILE not found: ${pidfile}, ${name} may already be stopped"
+  fi
+}
+
+run_rc_command "$1"
+

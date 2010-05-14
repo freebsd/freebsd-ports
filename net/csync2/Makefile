@@ -7,7 +7,7 @@
 
 PORTNAME=	csync2
 PORTVERSION=	1.34
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://oss.linbit.com/csync2/ \
 		http://people.freebsd.org/~aaron/distfiles/
@@ -29,6 +29,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+=	LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config gnutls"
+
+USE_RC_SUBR=	csync2
 
 PLIST_FILES=	etc/csync2.cfg-dist \
 		sbin/csync2 \
