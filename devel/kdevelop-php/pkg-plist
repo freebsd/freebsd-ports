@@ -1,0 +1,9 @@
+lib/kde4/kdevphplanguagesupport.so
+lib/libkdev4phpcompletion.so
+lib/libkdev4phpduchain.so
+lib/libkdev4phpparser.so
+share/apps/kdevappwizard/templates/simple_phpapp.tar.bz2
+share/apps/kdevphpsupport/phpfunctions.php.gz
+share/kde4/services/kdevphpsupport.desktop
+@dirrm share/apps/kdevphpsupport
+@dirrmtry share/apps/kdevappwizard/templates
