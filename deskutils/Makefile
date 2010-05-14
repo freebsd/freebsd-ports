@@ -271,6 +271,7 @@
     SUBDIR += tuxcards
     SUBDIR += vboxgtk
     SUBDIR += vym
+    SUBDIR += wammu
     SUBDIR += when
     SUBDIR += wmpinboard
     SUBDIR += wyrd
