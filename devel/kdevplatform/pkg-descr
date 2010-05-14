@@ -1,0 +1,6 @@
+A free, opensource set of libraries that can be used as a foundation
+for IDE-like programs. It is programming-language independent, and
+it's planned to be used by programs like KDevelop, Quanta, Kile,
+KTechLab, etc.
+
+WWW: http://www.kdevelop.org/
