@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hudson
-PORTVERSION=	1.357
+PORTVERSION=	1.358
 CATEGORIES=	www java devel
-MASTER_SITES=	https://hudson.dev.java.net/files/documents/2402/150073/
+MASTER_SITES=	https://hudson.dev.java.net/files/documents/2402/150261/
 DISTNAME=	hudson
 EXTRACT_SUFX=	.war
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
