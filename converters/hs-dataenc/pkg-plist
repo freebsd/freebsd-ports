@@ -1,0 +1,29 @@
+@comment $FreeBSD$
+%%MAYBE_BUILDTESTS%%bin/tests
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Base16.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Base32.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Base32Hex.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Base64.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Base64Url.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Base85.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/DataEncoding.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/PythonString.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/QuotedPrintable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Url.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Util.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Uu.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Xx.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary/Yenc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Binary
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

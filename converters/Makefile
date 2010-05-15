@@ -26,6 +26,7 @@
     SUBDIR += fpc-iconvenc
     SUBDIR += fribidi
     SUBDIR += gbase
+    SUBDIR += hs-dataenc
     SUBDIR += hs-json
     SUBDIR += htx
     SUBDIR += i18ntools
