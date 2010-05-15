@@ -4042,6 +4042,7 @@ gamess                          ports/science/gamess
 gamin                           ports/devel/gamin
 gammu                           ports/comms/gammu
 gammu-devel                     ports/comms/gammu-devel
+gammu-python                    ports/comms/gammu-python
 ganglia-monitor-core            ports/sysutils/ganglia-monitor-core
 ganglia-webfrontend             ports/sysutils/ganglia-webfrontend
 ganttproject                    ports/deskutils/ganttproject
@@ -6965,6 +6966,10 @@ kdeutils3                       ports/misc/kdeutils3
 kdeutils4                       ports/misc/kdeutils4
 kdeutils4-printer-applet        ports/print/kdeutils4-printer-applet
 kdevelop                        ports/devel/kdevelop
+kdevelop-kde4                   ports/devel/kdevelop-kde4
+kdevelop-php                    ports/devel/kdevelop-php
+kdevelop-php-docs               ports/devel/kdevelop-php-docs
+kdevplatform                    ports/devel/kdevplatform
 kdewebdev                       ports/www/kdewebdev
 kdewebdev4                      ports/www/kdewebdev4
 kdiff3                          ports/textproc/kdiff3
@@ -10371,6 +10376,7 @@ opengrok                        ports/devel/opengrok
 opengtl                         ports/graphics/opengtl
 openh323                        ports/net/openh323
 openhbci                        ports/finance/openhbci
+openipmi                        ports/sysutils/openipmi
 openjade                        ports/textproc/openjade
 openjazz                        ports/games/openjazz
 openjdk6                        ports/java/openjdk6
@@ -11996,6 +12002,7 @@ p5-GDBM                         ports/databases/p5-GDBM
 p5-GDS2                         ports/cad/p5-GDS2
 p5-GIS-Distance                 ports/math/p5-GIS-Distance
 p5-GIS-Distance-Fast            ports/math/p5-GIS-Distance-Fast
+p5-GIS-Distance-Lite            ports/math/p5-GIS-Distance-Lite
 p5-GMail-IMAPD                  ports/mail/p5-GMail-IMAPD
 p5-GPS                          ports/astro/p5-GPS
 p5-GPS-Babel                    ports/astro/p5-GPS-Babel
@@ -15915,6 +15922,7 @@ p5-getopt-mixed                 ports/devel/p5-Getopt-Mixed
 p5-getopt-popt                  ports/devel/p5-Getopt-Popt
 p5-gis-distance                 ports/math/p5-GIS-Distance
 p5-gis-distance-fast            ports/math/p5-GIS-Distance-Fast
+p5-gis-distance-lite            ports/math/p5-GIS-Distance-Lite
 p5-git-pureperl                 ports/devel/p5-Git-PurePerl
 p5-github_creator               ports/devel/p5-github_creator
 p5-glade2                       ports/x11-toolkits/p5-Glade2
