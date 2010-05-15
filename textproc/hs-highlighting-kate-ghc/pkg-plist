@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%MAYBE_EXECUTABLE%%bin/Highlight
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Paths_highlighting_kate.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Common.hi
@@ -62,6 +62,7 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Xml.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Xslt.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Yacc.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
