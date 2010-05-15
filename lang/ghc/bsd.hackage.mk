@@ -27,6 +27,7 @@ checkers_port=			devel/hs-checkers
 convertible_port=		devel/hs-convertible
 cpphs_port=			devel/hs-cpphs		# executable
 criterion_port=			benchmarks/hs-criterion
+curl_port=			ftp/hs-curl
 dataenc_port=			converters/hs-dataenc
 datetime_port=			devel/hs-datetime
 DeepArrow_port=			devel/hs-DeepArrow
