@@ -1,0 +1,5 @@
+Data encoding library currently providing Base16, Base32, Base32Hex,
+Base64, Base64Url, Base85, Python string escaping, Quoted-Printable, URL
+encoding, uuencode, xxencode, and yEncoding.
+
+WWW: http://www.haskell.org/haskellwiki/Library/Data_encoding
