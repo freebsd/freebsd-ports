@@ -1,5 +1,5 @@
---- Makefile.orig	2010-03-31 11:30:14.000000000 -0400
-+++ Makefile	2010-04-10 01:28:44.000000000 -0400
+--- Makefile.orig	2010-05-11 01:55:01.000000000 -0400
++++ Makefile	2010-05-11 07:37:54.000000000 -0400
 @@ -9,7 +9,7 @@
  SHELL = /bin/sh
  OBJ_EXT = .o
@@ -27,19 +27,19 @@
  DI_MANDIR = $(DI_MANINSTDIR)/man1
  MAN_TARGET = $(PROG).1
  MANPERM = 644
-@@ -167,7 +167,7 @@
+@@ -180,7 +180,7 @@
+ 	$(MAKE) \
  		CC=cc LD=cc EXE_EXT="" OBJ_EXT=".o" \
- 		CFLAGS="$(CFLAGS) -O \
- 		-DDEFAULT_FORMAT=\\\"sMbuvpT\\\"" \
+ 		CFLAGS="$(CFLAGS) -O" \
 -		LDFLAGS="-O" di-programs
 +		LDFLAGS="-O $(LDFLAGS)" di-programs
  
  bsd43-gcc:
  	@echo ':' > di.env;chmod a+rx di.env
-@@ -177,7 +177,7 @@
- 		CC=cc LD=cc EXE_EXT="" OBJ_EXT=".o" \
- 		CFLAGS="$(CFLAGS) -O2 \
- 		-DDEFAULT_FORMAT=\\\"sMbuvpT\\\"" \
+@@ -190,7 +190,7 @@
+ 	$(MAKE) \
+ 		CC=gcc LD=gcc EXE_EXT="" OBJ_EXT=".o" \
+ 		CFLAGS="$(CFLAGS) -O2" \
 -		LDFLAGS="-O2" di-programs
 +		LDFLAGS="-O2 $(LDFLAGS)" di-programs
  
