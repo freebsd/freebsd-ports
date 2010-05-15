@@ -1,14 +1,20 @@
 @comment $FreeBSD$
-bin/tagsoup
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%MAYBE_TESTPROG%%bin/tagsoup
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/Download.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Entity.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Generated.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Implementation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Manual.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Match.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Options.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Parser.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Render.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Specification.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Tree.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/HTML/TagSoup/Type.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/StringLike.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
