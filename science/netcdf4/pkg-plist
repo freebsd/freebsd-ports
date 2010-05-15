@@ -29,11 +29,14 @@ include/ncUshort.h
 include/ncVar.h
 include/ncVarAtt.h
 include/ncVlenType.h
-include/netcdf
 include/ncvalues.h
+include/netcdf
 include/netcdf.h
 include/netcdf.hh
 include/netcdfcpp.h
+%%FORTRAN%%include/netcdf.inc
+%%FORTRAN%%include/netcdf.mod
+%%FORTRAN%%include/typesizes.mod
 lib/libnetcdf.a
 lib/libnetcdf.la
 lib/libnetcdf.so
@@ -46,6 +49,10 @@ lib/libnetcdf_c++4.a
 lib/libnetcdf_c++4.la
 lib/libnetcdf_c++4.so
 lib/libnetcdf_c++4.so.1
+%%FORTRAN%%lib/libnetcdff.a
+%%FORTRAN%%lib/libnetcdff.la
+%%FORTRAN%%lib/libnetcdff.so
+%%FORTRAN%%lib/libnetcdff.so.5
 libdata/pkgconfig/netcdf.pc
 %%PORTDOCS%%%%DOCSDIR%%/ncdump-man-1.html
 %%PORTDOCS%%%%DOCSDIR%%/ncgen-man-1.html
