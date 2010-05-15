@@ -1,6 +1,7 @@
 bin/cscout
 bin/csmake
 bin/cswc
+etc/cscout/SWILL-License
 etc/cscout/acl
 etc/cscout/cscout_defs.BORLAND
 @unexec if cmp -s %D/etc/cscout/cscout_defs.h %D/etc/cscout/cscout_defs.FBSD_GCC ; then rm -f %D/etc/cscout/cscout_defs.h; fi
@@ -17,11 +18,13 @@ etc/cscout/cscout_incs.LINUX_GCC
 etc/cscout/cscout_incs.WIN32_MINGW
 etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%DOCSDIR%%/access.html
+%%PORTDOCS%%%%DOCSDIR%%/awkinc.gif
 %%PORTDOCS%%%%DOCSDIR%%/bib.html
 %%PORTDOCS%%%%DOCSDIR%%/cg.html
 %%PORTDOCS%%%%DOCSDIR%%/change.html
 %%PORTDOCS%%%%DOCSDIR%%/concept.html
 %%PORTDOCS%%%%DOCSDIR%%/contents.html
+%%PORTDOCS%%%%DOCSDIR%%/context.png
 %%PORTDOCS%%%%DOCSDIR%%/copy_file.gif
 %%PORTDOCS%%%%DOCSDIR%%/csmake.html
 %%PORTDOCS%%%%DOCSDIR%%/cvs.html
@@ -30,7 +33,9 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%DOCSDIR%%/error.html
 %%PORTDOCS%%%%DOCSDIR%%/ext.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/fgraph-opt.png
 %%PORTDOCS%%%%DOCSDIR%%/file.html
+%%PORTDOCS%%%%DOCSDIR%%/filefuncall.gif
 %%PORTDOCS%%%%DOCSDIR%%/fileq.html
 %%PORTDOCS%%%%DOCSDIR%%/flow.gif
 %%PORTDOCS%%%%DOCSDIR%%/flow.html
@@ -42,12 +47,14 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%DOCSDIR%%/id.html
 %%PORTDOCS%%%%DOCSDIR%%/idq.html
 %%PORTDOCS%%%%DOCSDIR%%/idxprint.html
+%%PORTDOCS%%%%DOCSDIR%%/ig.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/indexw.html
 %%PORTDOCS%%%%DOCSDIR%%/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/main-inc.gif
 %%PORTDOCS%%%%DOCSDIR%%/maincall.gif
+%%PORTDOCS%%%%DOCSDIR%%/mainpage.png
 %%PORTDOCS%%%%DOCSDIR%%/mancscout.html
 %%PORTDOCS%%%%DOCSDIR%%/mancswc.html
 %%PORTDOCS%%%%DOCSDIR%%/metrics.html
@@ -58,6 +65,7 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%DOCSDIR%%/opt.html
 %%PORTDOCS%%%%DOCSDIR%%/optf.html
 %%PORTDOCS%%%%DOCSDIR%%/pragma.html
+%%PORTDOCS%%%%DOCSDIR%%/proto-inc.gif
 %%PORTDOCS%%%%DOCSDIR%%/qeg.html
 %%PORTDOCS%%%%DOCSDIR%%/re.html
 %%PORTDOCS%%%%DOCSDIR%%/run.html
@@ -67,15 +75,18 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%DOCSDIR%%/simul.html
 %%PORTDOCS%%%%DOCSDIR%%/smlogo.png
 %%PORTDOCS%%%%DOCSDIR%%/sql.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/tree.png
 %%PORTDOCS%%%%DOCSDIR%%/walk.html
 %%PORTDOCS%%%%DOCSDIR%%/web.html
+%%PORTDOCS%%%%DOCSDIR%%/wrk-inc.gif
 %%PORTDOCS%%%%DOCSDIR%%/wsp.html
 %%PORTDOCS%%%%DOCSDIR%%/wspd.html
 %%PORTDOCS%%%%DOCSDIR%%/yacc.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.cscout/cscout_defs.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.cscout/cscout_incs.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/.cscout/options
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.cscout/style.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk.prj
@@ -99,7 +110,6 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/proto.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/run.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/tran.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/vcvars32.bat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/ytab.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/ytab.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/awk/ytabc.bak
