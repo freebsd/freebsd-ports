@@ -4,11 +4,11 @@
 #
 # $FreeBSD$
 
-CATEGORIES=     cad science
+CATEGORIES=	cad science
 
-MASTERDIR=      ${.CURDIR}/../salome
+MASTERDIR=	${.CURDIR}/../salome
 
-PKGNAMESUFFIX=  -yacs
+PKGNAMESUFFIX=	-yacs
 SAL_MODULE_UPPER=	YACS
 
 .include "${MASTERDIR}/Makefile"

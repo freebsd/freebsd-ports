@@ -1,0 +1,22 @@
+--- src/yacsloader_swig/Makefile.am.orig	2010-05-07 12:03:58.000000000 +0700
++++ src/yacsloader_swig/Makefile.am	2010-05-07 12:04:19.000000000 +0700
+@@ -28,7 +28,7 @@
+ MYSWIG_FLAGS =
+ 
+ if DOXYGEN_IS_OK
+-MYSWIG_FLAGS += -DDOXYGEN_IS_OK
++#MYSWIG_FLAGS += -DDOXYGEN_IS_OK
+ endif
+ 
+ LOADERINCLUDES=parsers.hxx LoadState.hxx xmlParserBase.hxx ProcCataLoader.hxx 
+@@ -61,8 +61,8 @@
+ _loader_la_LIBADD =  ../yacsloader/libYACSloader.la $(OMNIORB_LIBS) $(PYTHON_LIBS)
+ 
+ docyacsloader.i:$(SWIGINCLUDES)
+-	(cd $(srcdir)/../yacsloader;doxygen ../../Misc/Doxyfile)
+-	python $(top_srcdir)/Misc/doxy2swig.py -n $(srcdir)/../yacsloader/xml/index.xml docyacsloader.i;rm -rf $(srcdir)/../yacsloader/xml
++#	(cd $(srcdir)/../yacsloader;doxygen ../../Misc/Doxyfile)
++#	python $(top_srcdir)/Misc/doxy2swig.py -n $(srcdir)/../yacsloader/xml/index.xml docyacsloader.i;rm -rf $(srcdir)/../yacsloader/xml
+ 
+ EXTRA_DIST = loader.i
+ 

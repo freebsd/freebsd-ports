@@ -4,13 +4,11 @@
 #
 # $FreeBSD$
 
-CATEGORIES=     cad science
+CATEGORIES=	cad science
 
-MASTERDIR=      ${.CURDIR}/../salome
+MASTERDIR=	${.CURDIR}/../salome
 
-PKGNAMESUFFIX=  -kernel
+PKGNAMESUFFIX=	-kernel
 SAL_MODULE_UPPER=	KERNEL
-
-BROKEN=		does not build
 
 .include "${MASTERDIR}/Makefile"

@@ -1,0 +1,24 @@
+--- src/runtime_swig/Makefile.am.orig	2010-05-07 11:24:21.000000000 +0700
++++ src/runtime_swig/Makefile.am	2010-05-07 11:24:45.000000000 +0700
+@@ -30,10 +30,6 @@
+ MYSWIG_FLAGS = -noexcept -DYACS_PTHREAD -I$(srcdir)/../bases -I$(srcdir)/../engine -I$(srcdir)/../runtime \
+                          -I$(srcdir)/../engine_swig -I../engine_swig
+ 
+-if DOXYGEN_IS_OK
+-MYSWIG_FLAGS += -DDOXYGEN_IS_OK
+-endif
+-
+ RUNTIMEINCLUDES= RuntimeSALOME.hxx SALOMEDispatcher.hxx SalomeProc.hxx PythonNode.hxx PythonPorts.hxx \
+ 							CORBANode.hxx CORBAPorts.hxx TypeConversions.hxx SalomeOptimizerLoop.hxx
+ 
+@@ -61,8 +57,8 @@
+ _SALOMERuntime_la_LIBADD = ../runtime/libYACSRuntimeSALOME.la 
+ 
+ docruntime.i:$(SWIGINCLUDES)
+-	(cd $(srcdir)/../runtime;doxygen ../../Misc/Doxyfile)
+-	python $(top_srcdir)/Misc/doxy2swig.py -n $(srcdir)/../runtime/xml/index.xml docruntime.i;rm -rf $(srcdir)/../runtime/xml
++#	(cd $(srcdir)/../runtime;doxygen ../../Misc/Doxyfile)
++#	python $(top_srcdir)/Misc/doxy2swig.py -n $(srcdir)/../runtime/xml/index.xml docruntime.i;rm -rf $(srcdir)/../runtime/xml
+ 
+ EXTRA_DIST = SALOMERuntime.i
+ 

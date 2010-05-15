@@ -4,11 +4,11 @@
 #
 # $FreeBSD$
 
-CATEGORIES=     cad science
+CATEGORIES=	cad science
 
-MASTERDIR=      ${.CURDIR}/../salome
+MASTERDIR=	${.CURDIR}/../salome
 
-PKGNAMESUFFIX=  -smesh
+PKGNAMESUFFIX=	-smesh
 SAL_MODULE_UPPER=	SMESH
 
 .include "${MASTERDIR}/Makefile"

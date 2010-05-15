@@ -17,20 +17,24 @@ EXTRACT_ONLY=	#none
 
 MAINTAINER=	devel@stasyan.com
 
-OPTIONS= \
-		GEOM		"GEOM module" 								on  \
-		MED			"MED module" 								on  \
+OPTIONS=	\
+		GEOM		"GEOM module" 					on  \
+		MED		"MED module" 					on  \
 		SMESH		"SMESH module (require MED & GEOM)" 		on  \
-		VISU		"VISU module (require MED)" 				on  \
-		LIGHT		"LIGHT module" 								on  \
-		YACS		"Yacs module" 								on  \
-		MULTIPR		"Multipr module" 							on  \
-		RANDOMIZER	"Randomizer module" 						on  \
-		SIERPINSKY	"Sierpinsky module" 						on  \
+		VISU		"VISU module (require MED)" 			on  \
+		LIGHT		"LIGHT module" 					on  \
+		YACS		"Yacs module" 					on  \
+		MULTIPR		"Multipr module" 				on  \
+		RANDOMIZER	"Randomizer module" 				on  \
+		SIERPINSKY	"Sierpinsky module" 				on  \
 		CPPUNIT		"build with C++ unit testing framework" 	off \
-		MPI			"build with support parrallel calculation" 	off
+		MPI		"build with support parrallel calculation" 	off
 
 RESOURCEDIR=	${DATADIR}/resources
+
+SLAVEDIRS=	cad/salome-kernel cad/salome-gui cad/salome-geom cad/salome-light	\
+		cad/salome-yacs cad/salome-randomizer cad/salome-visu cad/salome-med	\
+		cad/salome-sierpinsky cad/salome-smesh cad/salome-multipr
 
 .include <bsd.port.options.mk>
 
@@ -72,8 +76,15 @@ RUN_DEPENDS+=	${RESOURCEDIR}/smesh:${PORTSDIR}/cad/salome-smesh
 RUN_DEPENDS+=	${RESOURCEDIR}/multipr:${PORTSDIR}/cad/salome-multipr
 .endif
 
+SUB_LIST=	PREFIX=${PREFIX}
+SUB_FILES=	pkg-message runSalome.csh
+PLIST_FILES=	bin/runSalome.csh
+
 do-install:
-	${DO_NADA}
+	@${INSTALL_SCRIPT} ${WRKDIR}/runSalome.csh ${PREFIX}/bin/runSalome.csh
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
 .else
