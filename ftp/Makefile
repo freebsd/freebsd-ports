@@ -42,6 +42,7 @@
     SUBDIR += gproftpd
     SUBDIR += gwget
     SUBDIR += horde-gollem
+    SUBDIR += hs-curl
     SUBDIR += hsftp
     SUBDIR += jftp
     SUBDIR += jftpgw
