@@ -16,8 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	cjk32@cam.ac.uk
 COMMENT=	Application for generating MusicIP puids
 
-USE_LINUX=	yes
-NO_BUILD=	yes
+USE_LINUX=		yes
+NO_BUILD=		yes
+IA32_BINARY_PORT=	yes
 
 PLIST_FILES=	bin/genpuid bin/mipcore libexec/mipcore
 
