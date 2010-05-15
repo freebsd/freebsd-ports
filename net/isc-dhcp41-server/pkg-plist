@@ -4,3 +4,29 @@
 etc/dhcpd.conf.sample
 @exec if [ ! -f %D/etc/dhcpd.conf ] ; then cp -p %D/%F %B/dhcpd.conf; fi
 sbin/dhcpd
+bin/omshell
+include/dhcpctl.h
+include/isc-dhcp/boolean.h
+include/isc-dhcp/dst.h
+include/isc-dhcp/int.h
+include/isc-dhcp/lang.h
+include/isc-dhcp/list.h
+include/isc-dhcp/result.h
+include/isc-dhcp/types.h
+include/isc-dhcp/string.h
+include/isc-dhcp/print.h
+include/isc-dhcp/commandline.h
+include/isc-dhcp/mem.h
+include/isc-dhcp/formatcheck.h
+include/omapip/alloc.h
+include/omapip/buffer.h
+include/omapip/omapip.h
+include/omapip/omapip_p.h
+include/omapip/hash.h
+include/omapip/trace.h
+include/omapip/convert.h
+lib/libdhcpctl.a
+lib/libomapi.a
+lib/libdst.a
+@dirrm include/omapip
+@dirrm include/isc-dhcp
