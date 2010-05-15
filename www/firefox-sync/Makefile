@@ -15,21 +15,33 @@ MASTER_SITES=	http://files.roorback.net/ \
 MAINTAINER=	magik@roorback.net
 COMMENT=	Mozilla Weave extension
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox \
-		${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
+RUN_DEPENDS=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
+OPTIONS=	FF35 "Build for Firefox 3.5 instead of 3.6" Off
+
 .include <bsd.port.options.mk>
+
+.if defined(WITHOUT_FF35)
+FF_DEPENDS=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox
+AMD64_ARCH=	amd64
+.else
+FF_DEPENDS=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox35
+AMD64_ARCH=	x86_64
+.endif
+
+BUILD_DEPENDS+=	${FF_DEPENDS}
+RUN_DEPENDS+=	${FF_DEPENDS}
 
 REVID=		ad1ede89cbb2
 .if ${ARCH} == i386
 PLATFORM=	FreeBSD_x86-gcc3
 .elif ${ARCH} == amd64
-PLATFORM=	FreeBSD_amd64-gcc3
+PLATFORM=	FreeBSD_${AMD64_ARCH}-gcc3
 .endif
 
 GMAKE_FLAGS=	sdkdir=${PREFIX}/lib/firefox3/sdk release_build=1 platform_target=${PLATFORM} TOPSRCDIR=${WRKSRC}
@@ -45,6 +57,9 @@ PLIST_SUB+=	XPI_XPIDIR="${XPI_DIR:S,^${PREFIX}/,,}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\$$(shell hg tip --template '{node\|short}')|${REVID}|g" ${WRKSRC}/Makefile
+.if ${PLATFORM} == FreeBSD_x86_64-gcc3
+	${REINPLACE_CMD} -e 's|arch = amd64|arch = x86_64|g' ${WRKSRC}/crypto-obsolete/src/Makefile
+.endif
 
 post-install:
 	${MKDIR} ${XPI_DIR}
