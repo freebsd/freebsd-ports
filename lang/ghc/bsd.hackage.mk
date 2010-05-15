@@ -56,6 +56,7 @@ hint_port=			devel/hs-hint
 hoogle_port=			devel/hs-hoogle		# executable
 hscolour_port=			print/hs-hscolour	# executable
 hslogger_port=			devel/hs-hslogger
+hs-bibutils_port=		textproc/hs-hs-bibutils
 HTTP_port=			www/hs-HTTP
 http-server_port=		www/hs-http-server
 json_port=			converters/hs-json
