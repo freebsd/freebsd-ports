@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.4/src/
 
@@ -23,7 +23,7 @@ OPTIONS=	PCRE		"Use PCRE regex library"	On\
 
 .include <bsd.port.options.mk>
 
-MAKE_ARGS=	"TARGET=freebsd"
+MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS
 
 .if defined(WITH_PCRE)
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
@@ -41,6 +41,8 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif

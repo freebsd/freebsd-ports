@@ -32,39 +32,39 @@ sbin/haproxy
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/internals
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/design-thoughts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%%%EXAMPLESDIR%%/acl-content-sw.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/auth.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/build.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/check
-%%PORTDOCS%%%%EXAMPLESDIR%%/check.conf
-%%PORTDOCS%%%%EXAMPLESDIR%%/config.rc.haproxy
-%%PORTDOCS%%%%EXAMPLESDIR%%/content-sw-sample.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/cttproxy-src.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/debug2ansi
-%%PORTDOCS%%%%EXAMPLESDIR%%/debug2html
-%%PORTDOCS%%%%EXAMPLESDIR%%/debugfind
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorfiles/400.http
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorfiles/403.http
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorfiles/408.http
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorfiles/500.http
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorfiles/502.http
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorfiles/503.http
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorfiles/504.http
-%%PORTDOCS%%%%EXAMPLESDIR%%/errorfiles/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/examples.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/haproxy-1.1.21-flx.1.pkg
-%%PORTDOCS%%%%EXAMPLESDIR%%/haproxy.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/haproxy.init
-%%PORTDOCS%%%%EXAMPLESDIR%%/haproxy.spec
-%%PORTDOCS%%%%EXAMPLESDIR%%/haproxy.vim
-%%PORTDOCS%%%%EXAMPLESDIR%%/init.haproxy
-%%PORTDOCS%%%%EXAMPLESDIR%%/init.haproxy.flx0
-%%PORTDOCS%%%%EXAMPLESDIR%%/linux-2.4.21-40.EL-custom.diff
-%%PORTDOCS%%%%EXAMPLESDIR%%/option-http_proxy.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/rc.highsock
-%%PORTDOCS%%%%EXAMPLESDIR%%/stats_haproxy.sh
-%%PORTDOCS%%%%EXAMPLESDIR%%/tarpit.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/test-section-kw.cfg
-%%PORTDOCS%%%%EXAMPLESDIR%%/url-switching.cfg
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/errorfiles
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl-content-sw.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/build.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/check
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/check.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.rc.haproxy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content-sw-sample.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cttproxy-src.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/debug2ansi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/debug2html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/debugfind
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/400.http
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/403.http
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/408.http
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/500.http
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/502.http
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/503.http
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/504.http
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy-1.1.21-flx.1.pkg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy.init
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy.spec
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy.vim
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.haproxy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/init.haproxy.flx0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/linux-2.4.21-40.EL-custom.diff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/option-http_proxy.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rc.highsock
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stats_haproxy.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tarpit.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test-section-kw.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/url-switching.cfg
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/errorfiles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
