@@ -1,0 +1,8 @@
+--- adm/unix/make_begin.am.orig	2010-04-09 19:23:41.000000000 +0700
++++ adm/unix/make_begin.am	2010-04-09 19:23:52.000000000 +0700
+@@ -47,4 +47,4 @@
+ 
+ # translation (*.qm) files generation (lrelease)
+ %.qm: resources/%.ts
+-	$(QT_DIR)/bin/lrelease $< -qm $@
++	$(QT_DIR)/bin/lrelease-qt4 $< -qm $@

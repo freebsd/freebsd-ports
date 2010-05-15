@@ -570,7 +570,6 @@ share/salome/yacssupervsamples/testvisu20.xml
 @dirrm share/salome/yacssupervsamples
 @dirrm share/salome/yacssamples
 @dirrm share/salome/resources/yacs
-@dirrm share/doc/salome/gui/YACS
 @dirrm %%PYTHON_SITELIBDIR%%/salome/eo__POA
 @dirrm %%PYTHON_SITELIBDIR%%/salome/eo
 @dirrm %%PYTHON_SITELIBDIR%%/salome/YACS_ORB__POA

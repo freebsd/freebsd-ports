@@ -29,6 +29,7 @@ share/salome/resources/multipr/MULTIPR_msg_en.qm
 share/salome/resources/multipr/MULTIPR_msg_fr.qm
 share/salome/resources/multipr/MULTIPR_save_med.png
 share/salome/resources/multipr/SalomeApp.xml
+@dirrmtry share/doc/salome
 @dirrm share/salome/resources/multipr
 @dirrm %%PYTHON_SITELIBDIR%%/salome/MULTIPR_ORB__POA
 @dirrm %%PYTHON_SITELIBDIR%%/salome/MULTIPR_ORB

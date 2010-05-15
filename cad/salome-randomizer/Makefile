@@ -4,11 +4,11 @@
 #
 # $FreeBSD$
 
-CATEGORIES=     cad science
+CATEGORIES=	cad science
 
-MASTERDIR=      ${.CURDIR}/../salome
+MASTERDIR=	${.CURDIR}/../salome
 
-PKGNAMESUFFIX=  -randomizer
+PKGNAMESUFFIX=	-randomizer
 SAL_MODULE_UPPER=	RANDOMIZER
 
 .include "${MASTERDIR}/Makefile"

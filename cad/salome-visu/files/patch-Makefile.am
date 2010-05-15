@@ -1,0 +1,20 @@
+--- Makefile.am.orig	2010-05-04 16:31:50.000000000 +0700
++++ Makefile.am	2010-05-04 16:32:14.000000000 +0700
+@@ -31,7 +31,7 @@
+                   -I ${GUI_ROOT_DIR}/adm_local/unix/config_files \
+                   -I ${MED_ROOT_DIR}/adm_local/unix/config_files
+ 
+-SUBDIRS = adm_local idl resources src doc bin 
++SUBDIRS = adm_local idl resources src bin 
+ 
+ DISTCLEANFILES = a.out aclocal.m4 configure local-install.sh
+ 
+@@ -46,7 +46,7 @@
+ 	rm -rf `find $(distdir) -name CVS`
+ 
+ usr_docs:
+-	(cd doc && $(MAKE) $(AM_MAKEFLAGS) usr_docs)
++#	(cd doc && $(MAKE) $(AM_MAKEFLAGS) usr_docs)
+ 
+ docs: usr_docs
+ 

@@ -1,0 +1,23 @@
+--- Makefile.am.orig	2010-05-04 14:34:28.000000000 +0700
++++ Makefile.am	2010-05-04 14:34:47.000000000 +0700
+@@ -35,9 +35,9 @@
+                     -I ${KERNEL_ROOT_DIR}/salome_adm/unix/config_files
+ endif
+ 
+-SUBDIRS = idl adm_local resources src doc bin
++SUBDIRS = idl adm_local resources src bin
+ 
+-DIST_SUBDIRS = idl adm_local resources src doc bin 
++DIST_SUBDIRS = idl adm_local resources src bin 
+ 
+ DISTCLEANFILES = a.out aclocal.m4 configure local-install.sh
+ 
+@@ -52,7 +52,7 @@
+ 	rm -rf `find $(distdir) -name CVS`
+ 
+ usr_docs:
+-	(cd doc && $(MAKE) $(AM_MAKEFLAGS) usr_docs)
++#	(cd doc && $(MAKE) $(AM_MAKEFLAGS) usr_docs)
+ 
+ docs: usr_docs
+ 

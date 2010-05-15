@@ -1,0 +1,8 @@
+WARNING !!
+
+This port require gcc 4.4 build 20090512 or _EARLIER_ for successful _run_.
+Please downgrade your gcc via ports-mgmt/portdowngrade or
+you'll catch SIGSEGV at SALOME_Session_server.
+This bug may be fixed in the future.
+
+To run salome, type "runSalome.csh" at command line.

@@ -1,0 +1,21 @@
+--- bin/Makefile.am.orig	2009-12-01 20:58:39.000000000 +0600
++++ bin/Makefile.am	2010-01-06 20:57:08.000000000 +0600
+@@ -37,8 +37,7 @@
+ 	config_appli.xml	\
+ 	salome.launch
+ 
+-nodist_salomescript_DATA =	\
+-	VERSION
++nodist_salomescript_DATA =
+ 
+ # These files are executable scripts
+ dist_salomescript_SCRIPTS =		\
+@@ -90,7 +89,7 @@
+ 	$(INSTALL) -d $(DESTDIR)$(salomescriptdir)
+ 	$(RM) -rf $(DESTDIR)$(salomescriptdir)/appliskel 1> /dev/null 2>&1
+ 	cp -r $(srcdir)/appliskel $(DESTDIR)$(salomescriptdir)
+-	chmod a+x -R $(DESTDIR)$(salomescriptdir)/appliskel
++	chmod -R a+x $(DESTDIR)$(salomescriptdir)/appliskel
+ 	find $(DESTDIR)$(salomescriptdir) -name CVS -prune -exec rm -rf {} \;
+ 
+ uninstall-local:

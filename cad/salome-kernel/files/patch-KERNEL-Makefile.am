@@ -1,21 +1,24 @@
---- bin/Makefile.am.orig	2009-12-01 20:58:39.000000000 +0600
-+++ bin/Makefile.am	2010-01-06 20:57:08.000000000 +0600
-@@ -37,8 +37,7 @@
- 	config_appli.xml	\
- 	salome.launch
+--- Makefile.am.orig	2009-12-01 20:58:50.000000000 +0600
++++ Makefile.am	2010-05-04 13:35:43.000000000 +0700
+@@ -35,10 +35,10 @@
+ if WITHONLYLAUNCHER
+   SUBDIRS = src resources
+ else
+-  SUBDIRS = salome_adm $(IDLDIR) src doc bin resources
++  SUBDIRS = salome_adm $(IDLDIR) src bin resources
+ endif
  
--nodist_salomescript_DATA =	\
--	VERSION
-+nodist_salomescript_DATA =
+-DIST_SUBDIRS= salome_adm idl src doc bin resources
++DIST_SUBDIRS= salome_adm idl src bin resources
  
- # These files are executable scripts
- dist_salomescript_SCRIPTS =		\
-@@ -90,7 +89,7 @@
- 	$(INSTALL) -d $(DESTDIR)$(salomescriptdir)
- 	$(RM) -rf $(DESTDIR)$(salomescriptdir)/appliskel 1> /dev/null 2>&1
- 	cp -r $(srcdir)/appliskel $(DESTDIR)$(salomescriptdir)
--	chmod a+x -R $(DESTDIR)$(salomescriptdir)/appliskel
-+	chmod -R a+x $(DESTDIR)$(salomescriptdir)/appliskel
- 	find $(DESTDIR)$(salomescriptdir) -name CVS -prune -exec rm -rf {} \;
+ DISTCLEANFILES = a.out local-install.sh
  
- uninstall-local:
+@@ -55,7 +55,7 @@
+ 	rm -rf `find $(distdir) -name CVS`
+ 
+ usr_docs:
+-	(cd doc && $(MAKE) $(AM_MAKEFLAGS) usr_docs)
++#	(cd doc && $(MAKE) $(AM_MAKEFLAGS) usr_docs)
+ 
+ docs:usr_docs
+ 

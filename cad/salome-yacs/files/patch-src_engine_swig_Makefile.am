@@ -1,0 +1,23 @@
+--- src/engine_swig/Makefile.am.orig	2010-05-07 11:14:01.000000000 +0700
++++ src/engine_swig/Makefile.am	2010-05-07 11:14:33.000000000 +0700
+@@ -21,9 +21,6 @@
+ BUILT_SOURCES = pilotWRAP.cxx pypilotWRAP.cxx pypilotWRAP.h pilotWRAP.h
+ 
+ MYSWIG_FLAGS = -noexcept -DYACS_PTHREAD -I$(srcdir)/../bases -I$(srcdir)/../engine
+-if DOXYGEN_IS_OK
+-MYSWIG_FLAGS += -DDOXYGEN_IS_OK
+-endif
+ 
+ salomepython_PYTHON = pilot.py pypilot.py
+ salomepyexec_LTLIBRARIES = _pilot.la _pypilot.la
+@@ -81,8 +78,8 @@
+ _pypilot_la_LIBADD = ../engine/libYACSlibEngine.la $(OMNIORB_LIBS) $(PYTHON_LIBS)
+ 
+ docengine.i:$(SWIGINCLUDES)
+-	(cd $(srcdir)/../engine;doxygen ../../Misc/Doxyfile)
+-	python $(top_srcdir)/Misc/doxy2swig.py -n $(srcdir)/../engine/xml/index.xml docengine.i;rm -rf $(srcdir)/../engine/xml
++#	(cd $(srcdir)/../engine;doxygen ../../Misc/Doxyfile)
++#	python $(top_srcdir)/Misc/doxy2swig.py -n $(srcdir)/../engine/xml/index.xml docengine.i;rm -rf $(srcdir)/../engine/xml
+ 
+ EXTRA_DIST = ExecutorSwig.hxx pilot.i pypilot.i engtypemaps.i pypilotWRAP.h
+ 

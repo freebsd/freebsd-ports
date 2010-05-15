@@ -1,0 +1,14 @@
+--- Makefile.am.orig	2010-05-05 10:03:12.000000000 +0700
++++ Makefile.am	2010-05-05 10:03:26.000000000 +0700
+@@ -21,9 +21,9 @@
+ ACLOCAL_AMFLAGS = -I adm/unix/config_files
+ 
+ if SALOME_KERNEL
+-  SUBDIRS = idl src doc Demo
++  SUBDIRS = idl src Demo
+ else
+-  SUBDIRS = src doc Demo
++  SUBDIRS = src Demo
+ endif
+ 
+ check-local:

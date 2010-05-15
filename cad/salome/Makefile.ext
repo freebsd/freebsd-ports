@@ -4,13 +4,8 @@ USE_PYTHON=	2.4+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 SAL_MODULE=	${PKGNAMESUFFIX:S/-//}
-#.if ${SAL_MODULE} == "med" || ${SAL_MODULE} == "smesh" || ${SAL_MODULE} == "visu" || ${SAL_MODULE} == "sierpinsky" || ${SAL_MODULE} == "multipr"
-.if !${SAL_MODULE} == "gui" 
 USE_FORTRAN=yes
 USE_GCC=        4.4
-.else
-USE_GCC=        4.5
-.endif
 #SAL_MODULE_UPPER=	`${ECHO} ${SAL_MODULE} | ${AWK} '{ print(toupper($$1)); }'`
 #SAL_MODULE_UPPER=	YACS
 
@@ -37,9 +32,8 @@ HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ENV+=		MACHINE=${OPSYS:U}
-#CXXFLAGS+=		-L${LOCALBASE}/lib -I/usr/include -I${LOCALBASE}/include -D__freebsd__ -DFREEBSD -DHAVE_IOSTREAM -DHAVE_LIMITS_H -DHAVE_IOMANIP -DMPICH_IGNORE_CXX_SEEK
 CPPFLAGS+=		-L${LOCALBASE}/lib -I/usr/include -I${LOCALBASE}/include -D__freebsd__ -DFREEBSD -DHAVE_IOSTREAM -DHAVE_LIMITS_H -DHAVE_IOMANIP -DMPICH_IGNORE_CXX_SEEK
-CXXFLAGS+=		-ffriend-injection -fno-inline -fpermissive -L${LOCALBASE}/lib -L${LOCALBASE}/lib/salome
+CXXFLAGS+=		-ffriend-injection -fno-inline -fpermissive -fPIC -L${LOCALBASE}/lib -L${LOCALBASE}/lib/salome
 CONFIGURE_SCRIPT=	../configure
 PATCH_WRKSRC=		${WRKDIR}/${DISTNAME}/${SAL_MODULE_UPPER}_SRC_${RELEASENAME}
 WRKSRC=			${PATCH_WRKSRC}
@@ -53,6 +47,7 @@ PATCHDIR=		${MASTERDIR}/../salome-${SAL_MODULE}/files/
 .if !${SAL_MODULE} == "kernel"
 .for D in ${${SAL_MODULE_UPPER}_DEPEND}
     CONFIGURE_ENV+=	${D}_ROOT_DIR=${LOCALBASE}
+    AUTOTOOLS_ENV+=	${D}_ROOT_DIR=${LOCALBASE}
     CPPFLAGS+=		-L${LOCALBASE}/lib/salome
 .endfor
 .endif
@@ -74,6 +69,7 @@ RUN_DEPENDS+=		${RESOURCEDIR}/gui:${PORTSDIR}/cad/salome-gui
 .if ${SAL_MODULE} == "smesh" || ${SAL_MODULE} == "sierpinsky" || ${SAL_MODULE} == "multipr" || ${SAL_MODULE} == "visu"
 BUILD_DEPENDS+=		${RESOURCEDIR}/med:${PORTSDIR}/cad/salome-med
 RUN_DEPENDS+=		${RESOURCEDIR}/med:${PORTSDIR}/cad/salome-med
+AUTOTOOLS_ENV+= 	MED2HOME=${LOCALBASE}
 .endif
 
 #Depndency from GEOM module
@@ -90,17 +86,33 @@ RUN_DEPENDS+=		${RESOURCEDIR}/visu:${PORTSDIR}/cad/salome-visu \
 			${RESOURCEDIR}/randomizer:${PORTSDIR}/cad/salome-randomizer
 .endif
 
-
 ###########################################################################
 #Dependency from other ports
 ###########################################################################
 #Dependency from autotools
-USE_AUTOTOOLS=	autoconf:262 automake:15 libtool:22
+USE_AUTOTOOLS=	autoconf:262 automake:15 libtool:22 aclocal:19
+.if ${SAL_MODULE} == "kernel"
+    ACLOCAL_ARGS=	-I salome_adm/unix/config_files
+.else
+. if ${SAL_MODULE} == "yacs"
+    ACLOCAL_ARGS=	-I adm/unix/config_files
+    USE_AUTOTOOLS+=	autoheader:262
+    AUTOHEADER_ARGS=	-I adm/unix/config_files
+. else
+    ACLOCAL_ARGS=	-I adm_local/unix/config_files -I ${LOCALBASE}/salome_adm/unix/config_files 
+.	if ${SAL_MODULE} != "gui"
+    ACLOCAL_ARGS+= -I ${LOCALBASE}/adm_local/unix/config_files
+.	endif
+. endif
+.endif
+LIBTOOLFLAGS=--force --copy --automake 
+AUTOMAKE_ARGS=--add-missing --copy --gnu
 
 #Dependency from HDF5
 .if !${SAL_MODULE} == "randomizer" &&  !${SAL_MODULE} == "yacs" && !${SAL_MODULE} == "hello" && !${SAL_MODULE} == "pyhello"
 LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
 CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE} 
+AUTOTOOLS_ENV+= 	HDF5HOME=${LOCALBASE}
 .endif
 
 #Dependency from Opencascade
@@ -108,6 +120,7 @@ CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
 LIB_DEPENDS+=		TKernel.0:${PORTSDIR}/cad/opencascade
 CASROOT=		${LOCALBASE}/OpenCAS/ros
 CONFIGURE_ENV+=		CASROOT=${CASROOT}
+AUTOTOOLS_ENV+= 	CASROOT=${CASROOT}
 #CXXFLAGS+=		-I${CASROOT}/inc
 .endif
 
@@ -115,9 +128,6 @@ CONFIGURE_ENV+=		CASROOT=${CASROOT}
 .if !${SAL_MODULE} == "randomizer" && !${SAL_MODULE} == "light" && !${SAL_MODULE} == "multipr"
 BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
 .endif
-
-#Dependency from doxygen
-BUILD_DEPENDS+=		doxygen:${PORTSDIR}/devel/doxygen
 
 #Dependency from libxml2
 .if ${SAL_MODULE} == "gui" || ${SAL_MODULE} == "kernel" || ${SAL_MODULE} == "med" || ${SAL_MODULE} == "yacs" 
@@ -141,6 +151,7 @@ USE_QT_VER=			4
 CONFIGURE_ENV+=		QTDIR=${LOCALBASE}
 QTFLAGS+=		-I${LOCALBASE}/include/qt4 -L${LOCALBASE}/lib/qt4
 QT_COMPONENTS=		gui opengl svg xml qmake_build moc_build rcc_build uic_build linguist
+AUTOTOOLS_ENV+= 	QTDIR=${LOCALBASE}
 .endif
 
 #Dependency from qscintilla2
@@ -153,7 +164,7 @@ CONFIGURE_ARGS+=	--with-qsci4-libraries=${QT_LIBDIR} --with-qsci4-includes=${QT_
 #Dependency from vtk
 .if !${SAL_MODULE} == "kernel" && !${SAL_MODULE} == "randomizer"
 LIB_DEPENDS+=		vtkCommon.5:${PORTSDIR}/math/vtk5
-CONFIGURE_ENV+=		VTKHOME=${LOCALBASE}
+CONFIGURE_ENV+=		VTKHOME=${LOCALBASE} VTKSUFFIX=-5.4
 .endif
 
 #Dependency from qwt5
@@ -162,6 +173,7 @@ LIB_DEPENDS+=		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 #CONFIGURE_ENV+=		QWTHOME=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-qwt=${LOCALBASE}
 CPPFLAGS+=		-I/${LOCALBASE}/include/qwt/
+AUTOTOOLS_ENV+= 	QWTHOME=${LOCALBASE}
 .endif
 
 #Dependency from omniORB & py-omniorb
@@ -169,6 +181,7 @@ CPPFLAGS+=		-I/${LOCALBASE}/include/qwt/
 LIB_DEPENDS+=		omniORB4.1:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS+=		${LOCALBASE}/include/omniORBpy.h:${PORTSDIR}/devel/py-omniorb
 RUN_DEPENDS+=		notifd:${PORTSDIR}/devel/omniNotify
+AUTOTOOLS_ENV+= 	OMNIORBDIR=${LOCALBASE}
 .endif
 
 #Dependency from sip
@@ -196,18 +209,21 @@ CONFIGURE_ENV+=		METISDIR=${LOCALBASE} SCOTCHDIR=${LOCALBASE}
 CPPFLAGS+=		-I${LOCALBASE}/include/metis
 .endif
 
-#Dependency from graphviz
-BUILD_DEPENDS+=		gvgen:${PORTSDIR}/graphics/graphviz
-
 #Dependency from MED
 .if  ${SAL_MODULE} == "med"
 LIB_DEPENDS+=		med.2:${PORTSDIR}/french/med
 CONFIGURE_ENV+=		MED2HOME=${LOCALBASE}
 .endif
 
+#Dependency from gd
+.if  ${SAL_MODULE} == "sierpinsky"
+LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
+.endif
+
 .if ${SAL_MODULE} == "yacs"
 LIB_DEPENDS+=		argp.0:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS+=		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=		gvc.5:${PORTSDIR}/graphics/graphviz
 LDFLAGS+=		-largp 
 .endif
 
@@ -228,10 +244,10 @@ PLIST_SUB+=     CPPUNIT="@comment "
 .endif
 .endif
 
+#optionally dependency from mpich2
 .if ${SAL_MODULE} == "kernel" || ${SAL_MODULE} == "med"
 .if defined(WITH_MPI)
-BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/mpich2/lib/libmpich.so:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	mpich.1:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=	--with-mpich=${LOCALBASE}/mpich2 --with-mpi=${LOCALBASE}/mpich2
 PLIST_SUB+=     MPI=""
 .		else
@@ -247,11 +263,28 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" CXXFLAGS="${QSCIFLAGS} ${QTFLAGS} ${CXXFLA
 #MAKE_JOBS_SAFE=	yes
 
 .if ${SAL_MODULE} == "kernel"
-.		if ${PYTHON_REL} > 260
     post-patch:
-	${REINPLACE_CMD} 's|fromlist=None)|fromlist=None, level=-1)|g' ${WRKSRC}/src/KERNEL_PY/import_hook.py
-.		endif
+.	     if ${PYTHON_REL} > 260
+	    ${REINPLACE_CMD} 's|fromlist=None)|fromlist=None, level=-1)|g' ${WRKSRC}/src/KERNEL_PY/import_hook.py
+.	     endif
+	    ${REINPLACE_CMD} 's|/bin/bash|${LOCALBASE}/bin/bash|g' ${WRKSRC}/bin/appli_clean.sh ${WRKSRC}/bin/runSalome
 .endif
+
+.if ${SAL_MODULE} == "gui"
+    post-patch:
+	${REINPLACE_CMD} 's|/bin/bash|${LOCALBASE}/bin/bash|g' ${WRKSRC}/bin/runLightSalome.sh
+.endif
+
+.if ${SAL_MODULE} == "yacs"
+    post-patch:
+	${CP} ${WRKSRC}/configure.in.base  ${WRKSRC}/configure.in
+.endif
+
+.if ${SAL_MODULE} == "med"
+    post-install:
+	${MV} ${PREFIX}/include/salome/Node.hxx ${PREFIX}/include/salome/MEDNode.hxx
+.endif
+
 
 .if ${SAL_MODULE} == "kernel"
     pre-patch:
@@ -260,32 +293,43 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" CXXFLAGS="${QSCIFLAGS} ${QTFLAGS} ${CXXFLA
 	${REINPLACE_CMD} 's|__rpc_xdr|XDR|g' ${WRKSRC}/src/Communication/rpc/xdr.h
 .endif
 
+MMDEPENDS=${SAL_MODULE_UPPER}_DEPEND
+AUTOTOOLS_ENV+=	${SAL_MODULE_UPPER}_ROOT_DIR=${PREFIX}
 
-    pre-configure:
-#	SAL_MODULE_UPPER=`${ECHO} ${SAL_MODULE} | ${AWK} '{ print(toupper($1)); }'`; \
-	MMDEPENDS="${${SAL_MODULE_UPPER}_DEPEND}"; \
-	for D in $${MMDEPENDS}; do \
-	      export "$$D"_ROOT_DIR=${LOCALBASE}; \
-		if test "$$D"="MED2"; then \
-		    export MED2HOME=${LOCALBASE}; \
-		fi; \
-		if test "$$D"="QWT"; then \
-		    export QWTHOME=${LOCALBASE}; \
-		fi; \
-		if test "$$D"="HDF5HOME"; then \
-		    export HDF5HOME=${LOCALBASE}; \
-		fi; \
-		if test "$$D"="CASROOT"; then \
-		    export CASROOT=${CASROOT}; \
-		fi; \
-		if test "$$D"="QT"; then \
-		    export QTDIR=${LOCALBASE}; \
-		fi; \
-		if test "$$D"="OMNIORB"; then \
-		    export OMNIORBDIR=${LOCALBASE}; \
-		fi; \
-		echo "$$D"_ROOT_DIR; \
-	done; \
-	MACHINE=${OPSYS:U}; export MACHINE;  set ${SAL_MODULE_UPPER}_ROOT_DIR ${PREFIX};  export ${SAL_MODULE_UPPER}_ROOT_DIR; cd ${WRKSRC}; ${MKDIR} ${BUILD_WRKSRC}; ${SH} ./build_configure
+.for D in ${MMDEPENDS}
+    AUTOTOOLS_ENV+=${D}_ROOT_DIR=${LOCALBASE}
+.endfor
+
+run-autotools-aclocal:
+	echo "Start of aclocal"
+	@(cd ${PATCH_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
+		${ACLOCAL_ARGS})
+	echo "End of aclocal"
+
+run-autotools-autoconf:
+	echo "Start of autoconf"
+	@(cd ${PATCH_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
+		${AUTOCONF_ARGS})
+	echo "End of autotools"
+
+run-autotools-automake:
+	echo "Start of automake"
+	@(cd ${PATCH_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
+		${AUTOMAKE_ARGS})
+	echo "End of automake"
+
+.if ${SAL_MODULE} == "yacs"
+run-autotools-autoheader:
+	echo "Start of autoheader"
+	@(cd ${PATCH_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
+		${AUTOHEADER_ARGS})
+	echo "End of autoheader"
+.endif
+
+patch-autotools:
+	@(cd ${PATCH_WRKSRC}; ${LIBTOOLIZE} --force;)
+
+pre-configure:
+	${MKDIR} ${BUILD_WRKSRC}
 
 .include <bsd.port.post.mk>

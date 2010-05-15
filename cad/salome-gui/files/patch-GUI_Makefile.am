@@ -1,0 +1,23 @@
+--- Makefile.am.orig	2010-05-04 14:09:59.000000000 +0700
++++ Makefile.am	2010-05-04 14:10:21.000000000 +0700
+@@ -35,9 +35,9 @@
+     IDLDIR =
+ endif
+ 
+-SUBDIRS = $(IDLDIR) adm_local resources src doc bin 
++SUBDIRS = $(IDLDIR) adm_local resources src bin 
+ 
+-DIST_SUBDIRS = idl adm_local resources src doc bin 
++DIST_SUBDIRS = idl adm_local resources src bin 
+ 
+ DISTCLEANFILES = a.out aclocal.m4 configure local-install.sh
+ 
+@@ -52,7 +52,7 @@
+ 	rm -rf `find $(distdir) -name CVS`
+ 
+ usr_docs:
+-	(cd doc && $(MAKE) $(AM_MAKEFLAGS) usr_docs)
++#	(cd doc && $(MAKE) $(AM_MAKEFLAGS) usr_docs)
+ 
+ docs: usr_docs
+ 

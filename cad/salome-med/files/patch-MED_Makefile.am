@@ -1,0 +1,14 @@
+--- Makefile.am.orig	2010-05-04 15:06:16.000000000 +0700
++++ Makefile.am	2010-05-04 15:06:39.000000000 +0700
+@@ -56,9 +56,9 @@
+ SUBDIRS += adm_local_without_kernel
+ endif
+ 
+-SUBDIRS += $(IDLDIR) src doc resources bin
++SUBDIRS += $(IDLDIR) src resources bin
+ 
+-DIST_SUBDIRS = adm_local adm_local_without_kernel idl src doc resources bin
++DIST_SUBDIRS = adm_local adm_local_without_kernel idl src resources bin
+ 
+ DISTCLEANFILES = a.out aclocal.m4 configure local-install.sh
+ 
