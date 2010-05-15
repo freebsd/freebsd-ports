@@ -60,6 +60,7 @@ hslogger_port=			devel/hs-hslogger
 hs-bibutils_port=		textproc/hs-hs-bibutils
 HTTP_port=			www/hs-HTTP
 http-server_port=		www/hs-http-server
+hxt_port=			textproc/hs-hxt
 json_port=			converters/hs-json
 language-c_port=		devel/hs-language-c-ghc
 lazysmallcheck_port=		devel/hs-lazysmallcheck-ghc
