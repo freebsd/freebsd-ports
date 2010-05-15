@@ -36,6 +36,7 @@
     SUBDIR += bib2html
     SUBDIR += bibtex2html
     SUBDIR += bibtool
+    SUBDIR += bibutils
     SUBDIR += bn-aspell
     SUBDIR += bomstrip
     SUBDIR += br-aspell

@@ -1,0 +1,10 @@
+--- ./Makefile_start.orig	2010-04-08 18:31:00.000000000 +0200
++++ ./Makefile_start	2010-05-15 00:21:58.000000000 +0200
+@@ -34,6 +34,7 @@
+ 	@for p in ${PROGRAMS}; \
+ 		do ( cp bin/$$p ${INSTALLDIR}/$$p ); \
+ 	done
++	cp lib/libbibutils.a ${INSTALLDIR}/../lib
+ 
+ package: all FORCE
+ 	csh -f maketgz.csh ${VERSION} ${POSTFIX}
