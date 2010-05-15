@@ -1,22 +1,23 @@
 bin/kmplayer
-bin/knpplayer  
+bin/knpplayer
 bin/kphononplayer
 lib/kde4/libkmplayerpart.so
 lib/libkdeinit4_kmplayer.so
 lib/libkmplayercommon.so
+share/applications/kde4/kmplayer.desktop
 share/apps/kmplayer/blip-api.xsl
 share/apps/kmplayer/bookmarks.xml
 share/apps/kmplayer/find-media.sh
+share/apps/kmplayer/generators/blip-tv.xml
 share/apps/kmplayer/generators/find-media.xml
 share/apps/kmplayer/generators/shoutcast.xml
 share/apps/kmplayer/generators/youtube-query.xml
-share/apps/kmplayer/generators/blip-tv.xml
 share/apps/kmplayer/kmplayerpartui.rc
 share/apps/kmplayer/kmplayerui.rc
 share/apps/kmplayer/pluginsinfo
 share/apps/kmplayer/shoutcast.xsl
 share/apps/kmplayer/youtube.xsl
-share/applications/kde4/kmplayer.desktop                                      
+share/config/kmplayerrc
 share/doc/HTML/en/kmplayer/common
 share/doc/HTML/en/kmplayer/index.cache.bz2
 share/doc/HTML/en/kmplayer/index.docbook
@@ -27,9 +28,7 @@ share/icons/hicolor/32x32/apps/kmplayer.png
 share/icons/hicolor/48x48/apps/kmplayer.png
 share/icons/hicolor/64x64/apps/kmplayer.png
 share/icons/hicolor/scalable/apps/kmplayer.svgz
-share/icons/oxygen/scalable/apps/kmplayer.svgz
 share/kde4/services/kmplayer_part.desktop
-share/config/kmplayerrc
 share/locale/cs/LC_MESSAGES/kmplayer.mo
 share/locale/da/LC_MESSAGES/kmplayer.mo
 share/locale/de/LC_MESSAGES/kmplayer.mo
@@ -63,11 +62,8 @@ share/locale/uk/LC_MESSAGES/kmplayer.mo
 share/locale/x-test/LC_MESSAGES/kmplayer.mo
 share/locale/zh_CN/LC_MESSAGES/kmplayer.mo
 share/locale/zh_TW/LC_MESSAGES/kmplayer.mo
-@dirrmtry share/applications
 @dirrmtry share/doc/HTML/en/kmplayer
-@dirrmtry share/pixmaps
 @dirrmtry share/apps/kmplayer/generators
 @dirrmtry share/apps/kmplayer
-@dirrmtry lib/kde4
 @dirrmtry share/locale/x-test/LC_MESSAGES
 @dirrmtry share/locale/x-test
