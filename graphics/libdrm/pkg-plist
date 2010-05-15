@@ -4,7 +4,7 @@ include/drm/drm_sarea.h
 include/drm/i915_drm.h
 include/drm/mach64_drm.h
 include/drm/mga_drm.h
-%%OLD%%include/drm/nouveau_drm.h
+include/drm/nouveau_drm.h
 %%OLD%%include/drm/nouveau_drmif.h
 include/drm/r128_drm.h
 %%OLD%%include/drm/r300_reg.h
