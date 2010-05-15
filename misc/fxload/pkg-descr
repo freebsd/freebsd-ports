@@ -1,0 +1,10 @@
+The utility allows you to download firmware into and upload firmware from
+the memory of a Cypress EZ-USB/FX2 chip. It is a de facto standard for
+programming this family of devices.
+
+Port is based on original fxload(8) program available from Linux Hotplug
+Project. Libusb support has been provided to correctly work on FreeBSD.
+
+WWW:	http://FreeBSD.czest.pl/~wkoszek/fxload/
+
+- Wojciech A. Koszek <wkoszek@FreeBSD.org>
