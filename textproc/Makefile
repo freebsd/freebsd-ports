@@ -220,6 +220,7 @@
     SUBDIR += hr-aspell
     SUBDIR += hs-Diff
     SUBDIR += hs-bytestring-csv
+    SUBDIR += hs-citeproc-hs
     SUBDIR += hs-feed
     SUBDIR += hs-haxml
     SUBDIR += hs-highlighting-kate-ghc
