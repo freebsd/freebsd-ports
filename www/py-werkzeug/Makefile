@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	werkzeug
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,6 @@ DISTNAME=	Werkzeug-${DISTVERSION}
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	Python utilities collection for building WSGI applications
 
-USE_ZIP=	yes
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Werkzeug
