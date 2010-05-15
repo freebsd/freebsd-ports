@@ -1,0 +1,6 @@
+This library provides an interface to the terminfo database (via
+bindings to the curses library).  Terminfo allows POSIX systems to
+interact with a variety of terminals using a standard set of
+capabilities.
+
+WWW: http://code.haskell.org/terminfo

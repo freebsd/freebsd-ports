@@ -590,6 +590,7 @@
     SUBDIR += hs-show
     SUBDIR += hs-smallcheck
     SUBDIR += hs-split
+    SUBDIR += hs-terminfo
     SUBDIR += hs-testpack
     SUBDIR += hs-transformers
     SUBDIR += hs-unamb
