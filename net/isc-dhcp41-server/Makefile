@@ -18,10 +18,9 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 PORTREVISION_CLIENT=	0
 PORTREVISION_RELAY=	0
-PORTREVISION_DEVEL=	0
 
 SUBSYS?=	server
 
@@ -31,7 +30,7 @@ UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 OPTIONS=	DHCP_PARANOIA "Enable support for chroot" on
 .endif
 
-# PORTREVISION handling
+# PORTREVISION and CONFLICTS handling
 .if ${SUBSYS} == client
 CONFLICTS=	isc-dhcp3?-client*
 DHCP_PORTREVISION=	${PORTREVISION_CLIENT}
@@ -62,11 +61,12 @@ CONF_FILE=	dhclient.conf
 CONFIGURE_ARGS+=	--localstatedir=/var
 MAN5=		dhcpd.conf.5 dhcpd.leases.5
 MAN8=		dhcpd.8
-CONF_FILE=	dhcpd.conf
-.elif ${SUBSYS} == relay
-MAN8=		dhcrelay.8
-.else
+MAN1=		omshell.1
 MAN3=		dhcpctl.3 omapi.3
+CFLAGS+=	-fPIC
+CONF_FILE=	dhcpd.conf
+.else
+MAN8=		dhcrelay.8
 .endif
 
 DESCR=		${.CURDIR}/pkg-descr
@@ -108,6 +108,13 @@ post-patch:
 
 do-install:
 	${MAKE} -C ${WRKSRC}/${SUBSYS} install
+.if ${SUBSYS} == server
+	${MAKE} -C ${WRKSRC}/dhcpctl install
+	${MAKE} -C ${WRKSRC}/dst install
+	${MAKE} -C ${WRKSRC}/omapip install
+	${MAKE} -C ${WRKSRC}/includes install
+	${INSTALL_DATA} ${WRKSRC}/dhcpctl/dhcpctl.h ${PREFIX}/include
+.endif
 
 post-install:
 .if defined(CONF_FILE)
