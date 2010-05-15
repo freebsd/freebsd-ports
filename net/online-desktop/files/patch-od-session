@@ -5,7 +5,7 @@
  # Configure GConf, in a very hackish way
  subprocess.call(['gconftool-2', '--shutdown'])
 -os.environ['ONLINE_DESKTOP_GCONF'] = '/usr/share/online-desktop/gconf.path'
-+os.environ['ONLINE_DESKTOP_GCONF'] = '%%LOCALBASE%%/share/online-desktop/gconf.path'
++os.environ['ONLINE_DESKTOP_GCONF'] = '%%PREFIX%%/share/online-desktop/gconf.path'
  
  reset_autostart_data = '''
  [Desktop Entry]

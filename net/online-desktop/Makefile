@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	online-desktop
-PORTVERSION=	0.2.29
-PORTREVISION=	5
+PORTVERSION=	0.3.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -31,7 +30,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/desktop-data-engine:${PORTSDIR}/net/desktop-da
 		${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin
 
 USE_BZIP2=	yes
-USE_GNOME=	glib20 gconf2
+USE_GNOME=	glib20 gconf2 pygnomedesktop
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -41,6 +40,7 @@ INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
+	@${FIND} ${WRKSRC} -type f -exec fgrep -l '%%PREFIX%%' {} \; |${XARGS} ${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' -i .bak
 	@${FIND} ${WRKSRC} -type f -exec fgrep -l '%%LOCALBASE%%' {} \; |${XARGS} ${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' -i .bak
 
 .include <bsd.port.mk>

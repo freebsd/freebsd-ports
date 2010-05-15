@@ -5,7 +5,7 @@
      datadirs = datadir_env.split(':')
    else:
 -    datadirs = ['/usr/share/']
-+    datadirs = ['%%LOCALBASE%%/share/']
++    datadirs = ['%%PREFIX%%/share/']
    for dirname in datadirs:
      dirpath = os.path.join(dirname, name)
      if os.access(dirpath, os.R_OK):

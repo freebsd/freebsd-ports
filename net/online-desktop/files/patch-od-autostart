@@ -5,7 +5,7 @@
  	datadirs = datadir_env.split(':')
  else:
 -	datadirs = ['/usr/share/']
-+	datadirs = ['%%LOCALBASE%%/share/']
++	datadirs = ['%%PREFIX%%/share/']
  autostart_dirs = map(lambda x: os.path.join(x, 'online-desktop', 'autostart'), datadirs)
  for dir in autostart_dirs:
  	if os.access(dir, os.R_OK):
