@@ -636,5 +636,3 @@ share/locale/zh_TW/LC_MESSAGES/krusader.mo
 @dirrmtry share/icons/locolor/16x16/apps
 @dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor
-@dirrmtry share/applications/kde4
-@dirrmtry share/applications
