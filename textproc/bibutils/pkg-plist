@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+bin/bib2xml
+bin/biblatex2xml
+bin/copac2xml
+bin/ebi2xml
+bin/end2xml
+bin/endx2xml
+bin/isi2xml
+bin/med2xml
+bin/modsclean
+bin/ris2xml
+bin/wordbib2xml
+bin/xml2ads
+bin/xml2bib
+bin/xml2end
+bin/xml2isi
+bin/xml2ris
+bin/xml2wordbib
+lib/libbibutils.a
