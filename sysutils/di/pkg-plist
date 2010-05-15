@@ -2,5 +2,8 @@ bin/di
 bin/mi
 %%NLS%%share/locale/de/LC_MESSAGES/di.mo
 %%NLS%%share/locale/en/LC_MESSAGES/di.mo
+%%NLS%%share/locale/es/LC_MESSAGES/di.mo
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
 %%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de
