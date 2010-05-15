@@ -1,4 +1,7 @@
 @comment $FreeBSD$
+%%MAYBE_EXE%%bin/sha1
+%%MAYBE_EXE%%bin/sha384
+%%MAYBE_TEST%%bin/test_sha
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Digest/Pure/SHA.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
