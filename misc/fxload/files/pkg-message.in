@@ -1,0 +1,14 @@
+
+	fxload(8) with LibUSB support has been installed.
+
+	For more information on how to use it, visit fxload(8) manual page.
+	
+	devd(5) settings are provided with this program. Directory:
+
+		%%PREFIX%%/etc/devd
+
+	contains configuration files for known devices. In order to to
+	reprogram other USB devices automatically, you may want to modify one
+	of those fles or /etc/devd.conf contents. Check devd.conf(5) for
+	details on syntax.
+
