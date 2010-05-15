@@ -55,11 +55,27 @@ lib/pidgin/libdbus-api-plugin.so
 %%PYTHON_SITELIBDIR%%/pyonlinedesktop/widget.py
 %%PYTHON_SITELIBDIR%%/pyonlinedesktop/widget.pyc
 %%PYTHON_SITELIBDIR%%/pyonlinedesktop/widget.pyo
+%%PYTHON_SITELIBDIR%%/weblogindriver/__init__.py
+%%PYTHON_SITELIBDIR%%/weblogindriver/__init__.pyc
+%%PYTHON_SITELIBDIR%%/weblogindriver/__init__.pyo
+%%PYTHON_SITELIBDIR%%/weblogindriver/accounts_dialog.py
+%%PYTHON_SITELIBDIR%%/weblogindriver/accounts_dialog.pyc
+%%PYTHON_SITELIBDIR%%/weblogindriver/accounts_dialog.pyo
+%%PYTHON_SITELIBDIR%%/weblogindriver/ddm_util.py
+%%PYTHON_SITELIBDIR%%/weblogindriver/ddm_util.pyc
+%%PYTHON_SITELIBDIR%%/weblogindriver/ddm_util.pyo
+%%PYTHON_SITELIBDIR%%/weblogindriver/gutil.py
+%%PYTHON_SITELIBDIR%%/weblogindriver/gutil.pyc
+%%PYTHON_SITELIBDIR%%/weblogindriver/gutil.pyo
+%%PYTHON_SITELIBDIR%%/weblogindriver/keyring.py
+%%PYTHON_SITELIBDIR%%/weblogindriver/keyring.pyc
+%%PYTHON_SITELIBDIR%%/weblogindriver/keyring.pyo
 share/applications/flickr.desktop
 share/applications/gmail.desktop
 share/applications/google-calendar.desktop
 share/applications/google-docs.desktop
 share/applications/google-reader.desktop
+share/dbus-1/services/org.gnome.OnlineAccounts.service
 share/dbus-1/services/org.gnome.WebLoginDriver.service
 share/gnome/autostart/online-desktop-autostart.desktop
 share/gnome/autostart/online-prefs-sync.desktop
@@ -91,13 +107,13 @@ share/icons/hicolor/48x48/apps/yahoo-mail.png
 %%DATADIR%%/presession/panel-config.py
 share/online-prefs-sync/online-prefs-sync.synclist
 share/xsessions/online-desktop.desktop
-@dirrm share/xsessions
+@dirrmtry share/xsessions
 @dirrm share/online-prefs-sync
-@dirrm lib/locale
 @dirrm %%DATADIR%%/presession
 @dirrm %%DATADIR%%/gconf.xml.online-desktop
 @dirrm %%DATADIR%%/autostart
 @dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/weblogindriver
 @dirrm %%PYTHON_SITELIBDIR%%/pyonlinedesktop
 @dirrm %%PYTHON_SITELIBDIR%%/ddm
 @dirrmtry %%PYTHON_SITELIBDIR%%
