@@ -1,20 +1,160 @@
 @comment $FreeBSD$
 bin/darcs
-etc/bash_completion.d/darcs
-%%SERVER%%%%CGIDIR%%/darcs.cgi
-%%SERVER%%etc/darcs/cgi.conf.sample
-%%SERVER%%etc/darcs/styles.css
-%%SERVER%%share/darcs/xslt/annotate.xslt
-%%SERVER%%share/darcs/xslt/browse.xslt
-%%SERVER%%share/darcs/xslt/common.xslt
-%%SERVER%%share/darcs/xslt/errors.xslt
-%%SERVER%%share/darcs/xslt/errors.xml
-%%SERVER%%share/darcs/xslt/patches.xslt
-%%SERVER%%share/darcs/xslt/repos.xslt
-%%SERVER%%share/darcs/xslt/rss.xslt
-%%SERVER%%share/darcs/xslt/styles.css
-@dirrmtry etc/bash_completion.d
-%%SERVER%%@dirrmtry etc/darcs
-%%SERVER%%@dirrmtry www/cgi-bin
-%%SERVER%%@dirrm share/darcs/xslt
-%%SERVER%%@dirrm share/darcs
+%%MAYBE_TEST%%bin/unit
+%%MAYBE_TYPE_WITNESSES%%bin/witnesses
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/ByteStringUtils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/CommandLine.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Crypt/SHA256.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/ArgumentDefaults.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Arguments.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Bug.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/CheckFileSystem.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/ColorPrinter.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Add.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/AmendRecord.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Annotate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Apply.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Changes.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Check.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Convert.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Diff.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Dist.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/GZCRCs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Get.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Help.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Init.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/MarkConflicts.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Move.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Optimize.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Pull.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Push.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Put.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Record.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Remove.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Repair.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Replace.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Revert.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Rollback.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Send.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/SetPref.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Show.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/ShowAuthors.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/ShowBug.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/ShowContents.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/ShowFiles.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/ShowIndex.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/ShowRepo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/ShowTags.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Tag.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/TrackDown.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/TransferMode.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Unrecord.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/Unrevert.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands/WhatsNew.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/CommandsAux.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Compat.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Diff.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Email.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/External.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/FilePathMonad.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Flags.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Global.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Hopefully.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/IO.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Lock.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Match.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Apply.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Bundle.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Choices.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Commute.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Core.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Depends.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/FileName.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Info.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Match.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/MatchData.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Non.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/OldDate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Patchy.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Permutations.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Prim.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Properties.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Read.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/ReadMonads.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Real.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/RegChars.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Set.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Show.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Split.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/TouchesFiles.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch/Viewing.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Population.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/PopulationData.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/PrintPatch.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/ProgressPatches.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/RemoteApply.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/RepoPath.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/ApplyPatches.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/Cache.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/Checkpoint.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/DarcsRepo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/Format.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/HashedIO.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/HashedRepo.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/Internal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/InternalTypes.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/LowLevel.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/Merge.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/Motd.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/Prefs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/Pristine.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/Repair.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository/State.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Resolution.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/RunCommand.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/SelectChanges.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/SignalHandler.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/SlurpDirectory.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/SlurpDirectory/Internal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Test.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/TheCommands.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/URL.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Witnesses/Ordered.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Witnesses/Sealed.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Witnesses/Show.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/DateMatcher.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/English.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Exec.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HTTP.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/IsoDate.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Lcs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Printer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Progress.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Ratified.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/SHA1.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Ssh.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/URL.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Version.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Workaround.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/COPYING
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Witnesses
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/SlurpDirectory
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Repository
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Patch
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs/Commands
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Darcs
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Crypt
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
