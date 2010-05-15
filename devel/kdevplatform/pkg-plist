@@ -761,8 +761,6 @@ share/locale/zh_TW/LC_MESSAGES/kdevquickopen.mo
 share/locale/zh_TW/LC_MESSAGES/kdevsnippet.mo
 share/locale/zh_TW/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/zh_TW/LC_MESSAGES/kdevsubversion.mo
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
 @dirrm share/apps/kdevstandardoutputview
 @dirrm share/apps/kdevsourceformatter
 @dirrm share/apps/kdevsnippet
