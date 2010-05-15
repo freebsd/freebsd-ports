@@ -1,0 +1,121 @@
+@comment $FreeBSD$
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/ArrowIO.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/ArrowIf.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/ArrowList.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/ArrowNF.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/ArrowState.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/ArrowTree.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/IOListArrow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/IOStateListArrow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/ListArrow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/ListArrows.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow/StateListArrow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/AssocList.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Atom.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Char/UTF8.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tree/Class.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tree/NTree/TypeDefs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/DTDProcessing.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/DocumentInput.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/DocumentOutput.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/Edit.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/GeneralEntitySubstitution.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/Namespace.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/ParserInterface.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/Pickle.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/Pickle/DTD.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/Pickle/Schema.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/Pickle/Xml.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/ProcessDocument.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/ReadDocument.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/WriteDocument.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/XmlArrow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/XmlIOStateArrow.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/XmlRegex.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/FormatXmlTree.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/Interface.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/IsoLatinTables.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/MimeTypeDefaults.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/MimeTypes.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/QualifiedName.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/ShowXml.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/TypeDefs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/UTF8Decoding.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/Unicode.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/Util.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/XmlKeywords.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/XmlNode.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM/XmlOptions.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DTDValidation/AttributeValueValidation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DTDValidation/DTDValidation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DTDValidation/DocTransformation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DTDValidation/DocValidation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DTDValidation/IdValidation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DTDValidation/RE.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DTDValidation/TypeDefs.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DTDValidation/Validation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DTDValidation/XmlRE.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/IO/GetFILE.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/IO/GetHTTPLibCurl.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser/HtmlParsec.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser/ProtocolHandlerUtil.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser/TagSoup.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser/XhtmlEntities.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser/XmlCharParser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser/XmlDTDParser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser/XmlDTDTokenParser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser/XmlEntities.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser/XmlParsec.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser/XmlTokenParser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/BasicArrows.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/CreatePattern.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/DataTypeLibMysql.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/DataTypeLibUtils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/DataTypeLibraries.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/DataTypes.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/PatternFunctions.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/PatternToString.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/Schema.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/SchemaGrammar.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/Simplification.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/Unicode/Blocks.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/Unicode/CharProps.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/Validation.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/Validator.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/XmlSchema/DataTypeLibW3C.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/XmlSchema/Regex.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/XmlSchema/RegexMatch.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/XmlSchema/RegexParser.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Version.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENCE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/XmlSchema
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG/Unicode
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/RelaxNG
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Parser
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/IO
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DTDValidation
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/DOM
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow/Pickle
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT/Arrow
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HXT
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tree/NTree
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Tree
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Char
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Arrow
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
