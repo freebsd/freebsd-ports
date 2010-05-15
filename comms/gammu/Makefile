@@ -44,6 +44,13 @@ MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
 		gammu-smsd-dbi.7 gammu-smsd-tables.7
 .endif
 
+.if defined(WITH_PYTHON_GAMMU)
+post-install:
+.for opt in -Qold -O
+	${PYTHON_CMD} ${opt} -m compileall -l ${PYTHONPREFIX_SITELIBDIR}/gammu
+.endfor
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
