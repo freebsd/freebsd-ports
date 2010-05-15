@@ -7,7 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	1.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF
 
@@ -24,9 +24,7 @@ CONFIGURE_ARGS=	--with-k3bsetup=no --without-resmgr --without-hal
 USE_GMAKE=	yes
 USE_CDRTOOLS=	yes
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 USE_KDELIBS_VER=	3
-INSTALLS_ICONS=	yes
 
 OPTIONS=	FLAC "Add audio/flac decoder" On \
 		LAME "Add audio/lame encoder (for mp3 files)" On \
@@ -127,7 +125,7 @@ RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
 .if defined (WITH_VCDIMAGER)
-RUN_DEPENDS+=   vcdxrip:${PORTSDIR}/multimedia/vcdimager
+RUN_DEPENDS+=	vcdxrip:${PORTSDIR}/multimedia/vcdimager
 .endif
 
 .include <bsd.port.post.mk>
