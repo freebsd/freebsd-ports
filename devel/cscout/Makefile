@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cscout
-PORTVERSION=	2.4
+PORTVERSION=	2.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.spinellis.gr/cscout/ \
 		http://www.dmst.aueb.gr/dds/cscout/
@@ -47,8 +47,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/cscout ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/cswc ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/csmake ${PREFIX}/bin
-	cd ${WRKSRC}/etc && ${FIND} . -print | \
-	   ${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${PREFIX}/etc/${PORTNAME}
+	cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${PREFIX}/etc/${PORTNAME}
 # don't overwrite an existing config
 .if !exists(${PREFIX}/etc/${PORTNAME}/cscout_incs.h)
 	${INSTALL_DATA} ${WRKSRC}/etc/cscout_incs.FBSD_GCC ${PREFIX}/etc/${PORTNAME}/cscout_incs.h
@@ -56,11 +55,11 @@ do-install:
 .if !exists(${PREFIX}/etc/${PORTNAME}/cscout_defs.h)
 	${INSTALL_DATA} ${WRKDIR}/cscout_defs.h ${PREFIX}/etc/${PORTNAME}/cscout_defs.h
 .endif
+.if !defined(NOPORTEXAMPLES)
+	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/example && ${FIND} . -print | \
-		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${EXAMPLESDIR}
-	cd ${WRKSRC}/doc && ${FIND} . -print | \
-		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 .if !defined(NO_INSTALL_MANPAGES)
 .for i in ${MAN1}
