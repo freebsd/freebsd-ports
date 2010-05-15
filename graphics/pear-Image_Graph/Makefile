@@ -10,12 +10,15 @@ PORTVERSION=	0.7.2
 PORTREVISION=	2
 CATEGORIES=	graphics www pear
 
-MAINTAINER=	nick@foobar.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An OO PEAR graph rendering package
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log \
 		${PEARDIR}/Image/Canvas.php:${PORTSDIR}/graphics/pear-Image_Canvas
+
+USE_PHP=	yes
+USE_DOS2UNIX=	yes
 
 CATEGORY=	Image
 FILES=		Graph.php Graph/Axis.php Graph/Common.php Graph/Config.php \
@@ -163,12 +166,23 @@ DOCS=		ChangeLog colors.txt LICENSE README examples/antialias.php  \
 
 LATEST_LINK=	pear-Image_Graph
 
+.include <bsd.port.pre.mk>
 post-patch:
+# don't modify images
 .for file in ${FILES}
-	@${REINPLACE_CMD} -e "s|@package_version@|${DISTVERSION}|" ${WRKSRC}/${file}
+	@if ${ECHO_CMD} ${file} | ${GREP} -q -e "php$$" ; then \
+		${REINPLACE_CMD} -e "s|@package_version@|${DISTVERSION}|" ${WRKSRC}/${file}; \
+	fi
 .endfor
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
+# fix for php5.3, see http://pear.php.net/bugs/bug.php?id=16529
+.if ${PHP_VER} != 4
+.for file in ${FILES}
+	@if ${ECHO_CMD} ${file} | ${GREP} -q -e "php$$" ; then \
+		${REINPLACE_CMD} -e 's|parent::Image[^(]*|parent::__construct|' ${WRKSRC}/${file}; \
+	fi
+.endfor
+.endif
 
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
 .include <bsd.port.post.mk>
