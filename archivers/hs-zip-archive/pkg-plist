@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+%%MAYBE_EXECUTABLE%%bin/Zip
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Codec/Archive/Zip.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
