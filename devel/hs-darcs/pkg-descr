@@ -1,4 +1,19 @@
-David's Advanced Revision Control System is yet another replacement for
-CVS.  It is written in Haskell.
+Darcs is a free, open source revision control system. It is:
+
+* Distributed: Every user has access to the full command set, removing
+boundaries between server and client or committer and non-committers.
+
+* Interactive: Darcs is easy to learn and efficient to use because it
+asks you questions in response to simple commands, giving you choices in
+your work flow. You can choose to record one change in a file, while
+ignoring another. As you update from upstream, you can review each patch
+name, even the full "diff" for interesting patches.
+
+* Smart: Originally developed by physicist David Roundy, darcs is based
+on a unique algebra of patches.
+
+This smartness lets you respond to changing demands in ways that would
+otherwise not be possible. Learn more about spontaneous branches with
+darcs.
 
 WWW: http://darcs.net/

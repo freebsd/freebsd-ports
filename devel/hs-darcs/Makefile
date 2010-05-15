@@ -6,79 +6,109 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	2.2.0
-PORTREVISION=	7
-CATEGORIES=	devel
-MASTER_SITES=	http://darcs.net/
+PORTVERSION=	2.4.3
+CATEGORIES=	devel haskell
+PKGNAMEPREFIX=
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Yet another replacement for CVS, written in Haskell
+COMMENT=	A distributed, interactive, smart revision control system
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		gmp.10:${PORTSDIR}/math/gmp
+USE_HACKAGE=	hashed-storage haskeline>=0.6.1 utf8-string>=0.3 zlib>=0.5.1.0
 
-OPTIONS=	SERVER "install server" on
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${PREFIX}/lib/ ${PTHREAD_LIBS}"
-USE_GMAKE=	yes
-MAKEFILE=	GNUmakefile
-INSTALL_TARGET=	install
-PORTDOCS=	manual examples
+EXECUTABLE=	darcs
 
-.include <bsd.port.pre.mk>
+MAN1=		darcs.1
+MAN1SRC=	dist/build/darcs
 
-.if defined(WITH_SERVER)
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
-RUN_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt
-INSTALL_TARGET+=	installserver
-.if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
-CGIDIR?=	share/apache/cgi-bin
+OPTIONS=	CURL            "Use libcurl for HTTP support" on \
+		CURL_PIPELINING "Use libcurl's HTTP pipelining" off \
+		HTTP            "Use the pure HTTP package" off \
+		STATIC          "Build static binary" off \
+		TERMINFO        "Use the terminfo package" off \
+		THREADED        "Use threading and SMP support" on \
+		TYPE_WITNESSES  "Use GADT type witnesses" off \
+		COLOR           "Use ANSI color escapes" off \
+		MMAP            "Compile with mmap support" off \
+		TEST            "Compile unit tests" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_CURL)
+CONFIGURE_ARGS+=	--flags="curl"
+LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
 .else
-CGIDIR?=	www/cgi-bin
+CONFIGURE_ARGS+=	--flags="-curl"
 .endif
-PLIST_SUB+=	CGIDIR=${CGIDIR} SERVER=""
+
+.if defined(WITH_CURL_PIPELINING)
+CONFIGURE_ARGS+=	--flags="curl-pipelining"
+.if !defined(WITH_CURL)
+IGNORE=	cannot be compiled without CURL in this configuration.  Please (re)run 'make config' and choose CURL too
+.endif
 .else
-PLIST_SUB+=	SERVER="@comment "
+CONFIGURE_ARGS+=	--flags="-curl-pipelining"
 .endif
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
-		latex2html:${PORTSDIR}/textproc/latex2html
-ALL_TARGET+=	doc/manual/darcs.ps doc/manual/patch-theory.pdf doc/manual/index.html
-INSTALL_TARGET+=	install-ps install-pdf install-html install-examples
+
+.if defined(WITH_HTTP)
+CONFIGURE_ARGS+=	--flags="http"
+USE_HACKAGE+=		HTTP>=3000.0
 .else
-CONFIGURE_ARGS+=	--without-manual
+CONFIGURE_ARGS+=	--flags="-http"
 .endif
 
-MAN1=	darcs.1
-
-.if defined(WITH_SERVER)
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libexecdir)/cgi-bin|${PREFIX}/${CGIDIR}| ; \
-		s|darcs/cgi.conf|darcs/cgi.conf.sample|' \
-		${WRKSRC}/${MAKEFILE}
+.if !defined(WITH_CURL) && !defined(WITH_HTTP)
+IGNORE=	cannot be compiled without HTTP support.  Please (re)run 'make config' and choose either CURL or HTTP
 .endif
 
-pre-configure:
-.if ${OSVERSION} < 700000
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"###############################################################################"
-	@${ECHO_MSG}	"                                                                               "
-	@${ECHO_MSG}	"                                A T T E N T I O N                              "
-	@${ECHO_MSG}	"                                                                               "
-	@${ECHO_MSG}	"If you experience problems during the configure process, please add the        "
-	@${ECHO_MSG}    "following lines to your /etc/libmap.conf configuration file:                   "
-	@${ECHO_MSG}    "                                                                               "
-	@${ECHO_MSG}    "libpthread.so.1 libthr.so.1                                                    "
-	@${ECHO_MSG}    "libpthread.so.2 libthr.so.2                                                    "
-	@${ECHO_MSG}    "libkse.so.3 libthr.so.3                                                        "
-	@${ECHO_MSG}    "                                                                               "
-	@${ECHO_MSG}	"###############################################################################"
-	@${ECHO_MSG}	""
+.if defined(WITH_STATIC)
+CONFIGURE_ARGS+=	--flags="static"
+.else
+CONFIGURE_ARGS+=	--flags="-static"
 .endif
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/darcs
+.if defined(WITH_TERMINFO)
+CONFIGURE_ARGS+=	--flags="terminfo"
+USE_HACKAGE+=		terminfo>=0.3
+.else
+CONFIGURE_ARGS+=	--flags="-terminfo"
+.endif
 
-.include <bsd.port.post.mk>
+.if defined(WITH_THREADED)
+CONFIGURE_ARGS+=	--flags="threaded"
+.else
+CONFIGURE_ARGS+=	--flags="-threaded"
+.endif
+
+.if defined(WITH_TYPE_WITNESSES)
+CONFIGURE_ARGS+=	--flags="type-witnesses"
+EXECUTABLE+=		witnesses
+PLIST_SUB+=		MAYBE_TYPE_WITNESSES=""
+.else
+CONFIGURE_ARGS+=	--flags="-type-witnesses"
+PLIST_SUB+=		MAYBE_TYPE_WITNESSES="@comment "
+.endif
+
+.if defined(WITH_COLOR)
+CONFIGURE_ARGS+=	--flags="color"
+.else
+CONFIGURE_ARGS+=	--flags="-color"
+.endif
+
+.if defined(WITH_MMAP)
+CONFIGURE_ARGS+=	--flags="mmap"
+USE_HACKAGE+=		mmap>=0.2
+.else
+CONFIGURE_ARGS+=	--flags="-mmap"
+.endif
+
+.if defined(WITH_TEST)
+CONFIGURE_ARGS+=	--flags="test"
+EXECUTABLE+=		unit
+PLIST_SUB+=		MAYBE_TEST=""
+.else
+CONFIGURE_ARGS+=	--flags="-test"
+PLIST_SUB+=		MAYBE_TEST="@comment "
+.endif
+
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
+.include <bsd.port.mk>
