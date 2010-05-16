@@ -48,6 +48,8 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		plasmaengineexplorer.1
 
+CONFLICTS=	kde4-windeco-aurorae-*
+
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_BlueZ:BOOL=OFF \
 		-DWITH_Sensors:BOOL=OFF \
