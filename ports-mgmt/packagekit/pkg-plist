@@ -409,11 +409,11 @@ share/polkit-1/actions/org.freedesktop.packagekit.policy
 %%RUCK%%share/ruck/rucktalk.py
 %%RUCK%%share/ruck/ruckyum.py
 @exec mkdir -p /var/cache/PackageKit/downloads
-@unexec rmdir /var/cache/PackageKit/downloads 2>/dev/null
-@unexec rmdir /var/cache/PackageKit 2>/dev/null
-@unexec rmdir /var/cache 2>/dev/null
-@unexec rmdir /var/lib/PackageKit 2>/dev/null
-@unexec rmdir /var/lib 2>/dev/null
+@unexec rmdir /var/cache/PackageKit/downloads 2>/dev/null || true
+@unexec rmdir /var/cache/PackageKit 2>/dev/null || true
+@unexec rmdir /var/cache 2>/dev/null || true
+@unexec rmdir /var/lib/PackageKit 2>/dev/null || true
+@unexec rmdir /var/lib 2>/dev/null || true
 %%RUCK%%@dirrm share/ruck/commands
 %%RUCK%%@dirrm share/ruck
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -450,6 +450,6 @@ share/polkit-1/actions/org.freedesktop.packagekit.policy
 @dirrmtry etc/sysconfig
 @dirrmtry etc/profile.d
 @dirrmtry etc/cron.daily
-@dirrm etc/PackageKit
+@dirrmtry etc/PackageKit
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
