@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qore
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	lang
 MASTER_SITES=	SF/qore/qore/${PORTVERSION}/
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
+USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"LEX=${LOCALBASE}/bin/flex"
