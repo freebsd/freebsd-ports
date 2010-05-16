@@ -65,6 +65,7 @@ hxt_port=			textproc/hs-hxt
 json_port=			converters/hs-json
 language-c_port=		devel/hs-language-c-ghc
 lazysmallcheck_port=		devel/hs-lazysmallcheck-ghc
+libmpd_port=			audio/hs-libmpd
 MemoTrie_port=			devel/hs-MemoTrie
 mime_port=			mail/hs-mime
 MissingH_port=			devel/hs-MissingH

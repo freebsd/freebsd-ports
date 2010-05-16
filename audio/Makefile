@@ -296,6 +296,7 @@
     SUBDIR += holyshout
     SUBDIR += hs-ALUT
     SUBDIR += hs-OpenAL
+    SUBDIR += hs-libmpd
     SUBDIR += hydrogen
     SUBDIR += icecast
     SUBDIR += icecast2
