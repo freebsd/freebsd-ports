@@ -16,6 +16,10 @@
  * $FreeBSD$
  */
 
+#include <sys/param.h>
+
+#if __FreeBSD_version < 800041
+
 #include <sys/types.h>
 #include <limits.h>
 #include <stdlib.h>
@@ -66,3 +70,5 @@ arc4random_uniform(u_int32_t upper_bound)
 
 	return r % upper_bound;
 }
+
+#endif	/* __FreeBSD_version */
