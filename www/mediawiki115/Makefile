@@ -13,6 +13,8 @@ MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.15/
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
+BROKEN=		does not fetch
+
 CONFLICTS=	mediawiki-1.[0-9].* mediawiki-1.1[0-46-9].*
 
 USE_PHP=	iconv mbstring pcre session xml zlib readline dom
