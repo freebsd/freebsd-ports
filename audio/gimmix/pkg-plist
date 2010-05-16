@@ -1,8 +1,8 @@
 bin/gimmix
-lib/locale/de/LC_MESSAGES/gimmix.mo
-lib/locale/sv/LC_MESSAGES/gimmix.mo
-lib/locale/tr/LC_MESSAGES/gimmix.mo
-lib/locale/zh_TW/LC_MESSAGES/gimmix.mo
+share/locale/de/LC_MESSAGES/gimmix.mo
+share/locale/sv/LC_MESSAGES/gimmix.mo
+share/locale/tr/LC_MESSAGES/gimmix.mo
+share/locale/zh_TW/LC_MESSAGES/gimmix.mo
 share/applications/gimmix.desktop
 %%DATADIR%%/gimmix.glade
 %%DATADIR%%/gimmix_firstrun.png
@@ -12,14 +12,14 @@ share/pixmaps/gimmix_logo_small.png
 share/pixmaps/gimmix_playlist.png
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry lib/locale/zh_TW/LC_MESSAGES
-@dirrmtry lib/locale/zh_TW
-@dirrmtry lib/locale/tr/LC_MESSAGES
-@dirrmtry lib/locale/tr
-@dirrmtry lib/locale/sv/LC_MESSAGES
-@dirrmtry lib/locale/sv
-@dirrmtry lib/locale/de/LC_MESSAGES
-@dirrmtry lib/locale/de
-@dirrmtry lib/locale
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/tr/LC_MESSAGES
+@dirrmtry share/locale/tr
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sv
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

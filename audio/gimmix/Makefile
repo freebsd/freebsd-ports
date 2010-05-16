@@ -7,7 +7,7 @@
 
 PORTNAME=	gimmix
 PORTVERSION=	0.5.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gimmix
@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		gimmix.1
+
+CONFIGURE_ENV=	DATADIRNAME=share
 
 post-patch:
 	${LN} -sf ${LOCALBASE}/share/intltool/Makefile.in.in ${WRKSRC}/po/Makefile.in.in
