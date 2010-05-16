@@ -1,6 +1,7 @@
 lib/claws-mail/plugins/python_plugin.a
 lib/claws-mail/plugins/python_plugin.la
 lib/claws-mail/plugins/python_plugin.so
+%%NLS%%share/locale/es/LC_MESSAGES/python_plugin.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/python_plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/python_plugin.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/python_plugin.mo
