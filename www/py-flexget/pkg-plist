@@ -233,6 +233,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_feed_priority.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_feed_priority.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_feed_priority.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.pyo
