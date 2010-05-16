@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	0.3
-PORTREVISION=	3
+PORTVERSION=	0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,8 +15,8 @@ DISTNAME=	python_plugin-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Python plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.7.5:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.5:${PORTSDIR}/mail/claws-mail
+BUILD_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
 
 USE_GNOME=	pygtk2
 USE_GMAKE=	yes
