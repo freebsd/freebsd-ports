@@ -62,11 +62,11 @@ libexec/cups/backend/hp
 %%FAX%%libexec/cups/backend/hpfax
 libexec/cups/driver/hpcups.drv
 libexec/cups/filter/foomatic-rip-hplip
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/README_LIBJPG
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README_LIBJPG
 %%PORTDOCS%%%%DOCSDIR%%/commandline.html
 %%PORTDOCS%%%%DOCSDIR%%/copying.html
-%%DOCSDIR%%/copyright
+%%PORTDOCS%%%%DOCSDIR%%/copyright
 %%PORTDOCS%%%%DOCSDIR%%/devicemanager.html
 %%PORTDOCS%%%%DOCSDIR%%/faxtrouble.html
 %%PORTDOCS%%%%DOCSDIR%%/gettinghelp.html
@@ -1415,7 +1415,7 @@ share/applications/hplip.desktop
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/styles
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrmtry lib/sane
 @dirrmtry lib/%%PYTHON_VERSION%%/site-packages

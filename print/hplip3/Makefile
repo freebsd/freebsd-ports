@@ -7,7 +7,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -28,8 +28,6 @@ CONFLICTS=	hpijs-[0-9]* hplip-2*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-pp-build \
-		--disable-dbus-build \
-		--disable-fax-build \
 		--enable-foomatic-ppd-install \
 		--enable-foomatic-rip-hplip-install \
 		--enable-hpijs-install \
@@ -55,20 +53,25 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lcompat
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-OPTIONS=	GUI "build with Python QT" off \
-		DBUS "dbus support" off \
-		XSANE "build xsane scanner app" off \
-		NOSNMP "Build without snmp" on
+OPTIONS=	QT "Build QT4 gui" off \
+		DBUS "D-Bus support (required for fax tools)" off \
+		XSANE "Scanning support via XSane" off \
+		SNMP "Support for Simple Network Management Protocol" off
+
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
-.if !defined(WITHOUT_GUI)
+.if defined(WITH_SNMP) && (${ARCH} == i386)
+BROKEN=	can't link with libsnmp, net-mgmt/net-snmp should be fixed first
+.endif
+
+.if !defined(WITHOUT_QT)
 USE_QT_VER=	4
 QT_COMPONENTS=	gui
-CONFIGURE_ARGS+=--enable-qt4
+CONFIGURE_ARGS+=	--enable-qt4
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 LIB_DEPENDS+=	pyglib-2.0:${PORTSDIR}/devel/py-gobject
 .endif
@@ -77,10 +80,13 @@ LIB_DEPENDS+=	pyglib-2.0:${PORTSDIR}/devel/py-gobject
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbus
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
+# fax added as, no dbus no fax
 CONFIGURE_ARGS+=	--enable-dbus-build \
 			--enable-fax-build
 PLIST_SUB+=	FAX=""
 .else
+CONFIGURE_ARGS+=	--disable-dbus-build \
+			--disable-fax-build
 PLIST_SUB+=	FAX="@comment "
 .endif
 
@@ -88,7 +94,7 @@ PLIST_SUB+=	FAX="@comment "
 RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
 .endif
 
-.if !defined(WITHOUT_NOSNMP)
+.if defined(WITH_SNMP)
 LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-network-build
 .else
@@ -125,7 +131,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${LOCALBASE}/bin/python|g' \
 		${WRKSRC}/hpssd.py
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '/install-.*install-docDATA.*install-/ s|install-docDATA||' \
+	@${REINPLACE_CMD} -e '/[[:space:]]install-docDATA/ s|install-docDATA||' \
 		${WRKSRC}/Makefile.in
 .endif
 
