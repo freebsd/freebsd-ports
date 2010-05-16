@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+bin/tidyp
+include/tidyp/buffio.h
+include/tidyp/platform.h
+include/tidyp/tidyp.h
+include/tidyp/tidypenum.h
+lib/libtidyp-%%TIDYP_VER%%.so
+lib/libtidyp-%%TIDYP_VER%%.so.0
+lib/libtidyp.a
+lib/libtidyp.la
+lib/libtidyp.so
+@dirrm include/tidyp
