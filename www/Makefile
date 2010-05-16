@@ -1101,6 +1101,7 @@
     SUBDIR += p5-Plack-Handler-SCGI
     SUBDIR += p5-Plack-Middleware-Auth-Digest
     SUBDIR += p5-Plack-Middleware-AutoRefresh
+    SUBDIR += p5-Plack-Middleware-ConsoleLogger
     SUBDIR += p5-Plack-Middleware-Debug
     SUBDIR += p5-Plack-Middleware-Deflater
     SUBDIR += p5-Plack-Middleware-File-Sass
