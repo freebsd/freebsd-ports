@@ -996,6 +996,7 @@ biblical-curse                  ports/misc/biblical-curse
 biblio-py                       ports/print/biblio-py
 bibtex2html                     ports/textproc/bibtex2html
 bibtool                         ports/textproc/bibtool
+bibutils                        ports/textproc/bibutils
 bibview                         ports/print/bibview
 bicom                           ports/archivers/bicom
 bicyclerepair                   ports/devel/bicyclerepair
@@ -7430,7 +7431,6 @@ ldapscripts                     ports/net/ldapscripts
 ldapsdk                         ports/net/ldapsdk
 ldapsh                          ports/net/ldapsh
 ldapvi                          ports/sysutils/ldapvi
-ldconfig_compat                 ports/misc/ldconfig_compat
 ldmud                           ports/games/ldmud
 ldns                            ports/dns/ldns
 ldnsm                           ports/dns/ldnsm
@@ -10087,7 +10087,6 @@ nvtv                            ports/sysutils/nvtv
 nwcc                            ports/lang/nwcc
 nwndata                         ports/games/nwndata
 nwreckdum                       ports/archivers/nwreckdum
-nx                              ports/devel/nx
 nxml                            ports/editors/nxml
 nxml-emacs21                    ports/editors/nxml-emacs21
 nxserver                        ports/net/nxserver
@@ -24675,6 +24674,7 @@ waimea-devel                    ports/x11-wm/waimea-devel
 wait_on                         ports/sysutils/wait_on
 wakeonlan                       ports/net/wakeonlan
 walker                          ports/dns/walker
+wammu                           ports/deskutils/wammu
 wampager                        ports/x11-wm/wampager
 wand-libconfig                  ports/devel/wand-libconfig
 wanderer                        ports/games/wanderer
