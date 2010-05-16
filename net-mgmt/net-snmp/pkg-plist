@@ -398,7 +398,7 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/UCD-SNMP-MIB.txt
 %%DATADIR%%/mibs/UDP-MIB.txt
 @unexec rm -f %D/%%DATADIR%%/mibs/.index 2>/dev/null || true
-%%WITH_PERL%%%%DATADIR%%/snmp_perl.pl
+%%WITH_PERL_EMBEDDED%%%%DATADIR%%/snmp_perl.pl
 %%DATADIR%%/snmpconf-data/snmp-data/authopts
 %%DATADIR%%/snmpconf-data/snmp-data/debugging
 %%DATADIR%%/snmpconf-data/snmp-data/mibs
