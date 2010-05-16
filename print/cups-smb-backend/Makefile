@@ -15,11 +15,12 @@ DISTFILES=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CUPS backend for printing to Windows servers
 
-RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba3 \
+RUN_DEPENDS=	smbspool:${PORTSDIR}/net/${SAMBA_PORT} \
 		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
 NO_BUILD=	yes
 PLIST_FILES=	libexec/cups/backend/smb
+SAMBA_PORT?=	samba3
 SUB_FILES=	pkg-message
 
 do-install:
