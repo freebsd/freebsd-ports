@@ -37,9 +37,6 @@ lib/chicken/5/utils.import.so
 lib/libchicken.a
 lib/libchicken.so
 lib/libchicken.so.5
-lib/libuchicken.a
-lib/libuchicken.so
-lib/libuchicken.so.5
 %%DATADIR%%/setup.defaults
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/NEWS
