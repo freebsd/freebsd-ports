@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.3601
+PORTVERSION=	0.3607
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,9 @@ COMMENT=	Build and install Perl modules
 
 RUN_DEPENDS=	p5-YAML>=0.35:${PORTSDIR}/textproc/p5-YAML \
 		p5-ExtUtils-CBuilder>=0.15:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
-		p5-ExtUtils-ParseXS>=1.02:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+		p5-ExtUtils-ParseXS>=1.02:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
+		p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install \
+		p5-Test-Harness>=3.16:${PORTSDIR}/devel/p5-Test-Harness
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
