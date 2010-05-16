@@ -83,7 +83,6 @@ include/claws-mail/folder_item_prefs.h
 include/claws-mail/foldersel.h
 include/claws-mail/folderutils.h
 include/claws-mail/folderview.h
-include/claws-mail/gedit-print.h
 include/claws-mail/grouplistdialog.h
 include/claws-mail/gtk/about.h
 include/claws-mail/gtk/authors.h
@@ -100,7 +99,6 @@ include/claws-mail/gtk/gtkcmctree.h
 include/claws-mail/gtk/gtkcmoptionmenu.h
 include/claws-mail/gtk/gtksctree.h
 include/claws-mail/gtk/gtkshruler.h
-include/claws-mail/gtk/gtksourceprintjob.h
 include/claws-mail/gtk/gtkutils.h
 include/claws-mail/gtk/gtkvscrollbutton.h
 include/claws-mail/gtk/headers.h
@@ -279,6 +277,10 @@ share/applications/claws-mail.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.tools
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DOCSDIR%%/manual/de/claws-mail-manual.html
+%%DOCSDIR%%/manual/de/claws-mail-manual.pdf
+%%DOCSDIR%%/manual/de/claws-mail-manual.ps
+%%DOCSDIR%%/manual/de/claws-mail-manual.txt
 %%DOCSDIR%%/manual/en/claws-mail-manual.html
 %%DOCSDIR%%/manual/en/claws-mail-manual.pdf
 %%DOCSDIR%%/manual/en/claws-mail-manual.ps
@@ -317,6 +319,7 @@ share/locale/pt_PT/LC_MESSAGES/claws-mail.mo
 share/locale/ru/LC_MESSAGES/claws-mail.mo
 share/locale/sk/LC_MESSAGES/claws-mail.mo
 share/locale/sv/LC_MESSAGES/claws-mail.mo
+share/locale/uk/LC_MESSAGES/claws-mail.mo
 share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
 share/pixmaps/claws-mail-128x128.png
 share/pixmaps/claws-mail-64x64.png
@@ -326,6 +329,7 @@ share/pixmaps/claws-mail.png
 @dirrm %%DOCSDIR%%/manual/fr
 @dirrm %%DOCSDIR%%/manual/es
 @dirrm %%DOCSDIR%%/manual/en
+@dirrm %%DOCSDIR%%/manual/de
 @dirrm %%DOCSDIR%%/manual
 @dirrmtry %%DOCSDIR%%
 @dirrmtry share/applications
