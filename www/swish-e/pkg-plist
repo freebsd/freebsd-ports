@@ -36,13 +36,13 @@ lib/swish-e/swish.cgi
 lib/swish-e/swishspider
 libdata/pkgconfig/swish-e.pc
 @dirrm lib/swish-e
-share/swish-e/swish.tmpl
-share/swish-e/swish.tt
-share/swish-e/templates/search.tt
-share/swish-e/templates/page_layout
-share/swish-e/templates/common_header
-share/swish-e/templates/common_footer
-share/swish-e/templates/style.css
-share/swish-e/templates/markup.css
-@dirrmtry share/swish-e/templates
-@dirrmtry share/swish-e
+%%DATADIR%%/swish.tmpl
+%%DATADIR%%/swish.tt
+%%DATADIR%%/templates/search.tt
+%%DATADIR%%/templates/page_layout
+%%DATADIR%%/templates/common_header
+%%DATADIR%%/templates/common_footer
+%%DATADIR%%/templates/style.css
+%%DATADIR%%/templates/markup.css
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%
