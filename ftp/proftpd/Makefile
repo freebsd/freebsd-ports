@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -18,8 +18,6 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/ \
 		http://labratsoftware.com/mod_sql_tds/:sql_tds \
 		https://secure.thrallingpenguin.com/redmine/attachments/download/1/:clam \
-		http://www.smartftp.com/oss/proftpd/:digest \
-		LOCAL/beech:digest \
 		LOCAL/beech:sql_tds
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -53,7 +51,6 @@ CONFIGURE_ARGS=	--localstatedir=${LOCALSTATEDIR} \
 OPTIONS=	BAN "Include mod_ban (Requires CTRLS)" off \
 		CLAMAV "Include mod_clamav" off \
 		CTRLS "Include controls" off \
-		DIGEST "Include mod_digest" off \
 		EXEC "Include mod_exec" off \
 		HTMLDOCS "Include HTML documentation" off \
 		IFSESSION "Include mod_ifsession" on \
@@ -86,6 +83,7 @@ OPTIONS+=	NLS "Use nls (builds mod_lang)" on \
 		SFTP "Include mod_sftp" off\
 		SFTP_SQL "Include mod_sftp_sql" off \
 		SFTP_PAM "Include mod_sftp_pam" off \
+		SITE_MISC "Include mod_site_misc" off \
 		SQL_PASSWD "Include mod_sql_passwd" off \
 		UNIQUE "Include mod_unique_id" off \
 		WRAP "Include mod_wrap2" on \
@@ -147,6 +145,10 @@ MODULES:=${MODULES}:mod_radius
 
 .if defined(WITH_SHAPER)
 MODULES:=${MODULES}:mod_shaper
+.endif
+
+.if defined(WITH_SITE_MISC)
+MODULES:=${MODULES}:mod_site_misc
 .endif
 
 .if defined(WITH_QUOTATAB_RADIUS)
@@ -316,11 +318,6 @@ PLIST_SUB+=	CLAMAV=""
 PLIST_SUB+=	CLAMAV="@comment "
 .endif
 
-.if defined(WITH_DIGEST)
-DISTFILES+=	mod_digest.c:digest
-MODULES:=${MODULES}:mod_digest
-.endif
-
 .if defined(WITH_SFTP)
 MODULES:=${MODULES}:mod_sftp
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
@@ -372,9 +369,6 @@ post-extract:
 .if defined(WITH_CLAMAV)
 	(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mod_clamav-0.11rc.tar.gz ${EXTRACT_AFTER_ARGS})
 	@${CP} ${WRKDIR}/mod_clamav-0.11rc/mod_clamav.* ${WRKSRC}/contrib
-.endif
-.if defined(WITH_DIGEST)
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/mod_digest.c ${WRKSRC}/modules/
 .endif
 .if defined(WITH_TDS)
 	 @${MV} ${WRKDIR}/mod_sql_tds.c ${WRKSRC}/contrib/
