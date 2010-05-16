@@ -1,7 +1,7 @@
 bin/mixminion
 bin/mixminiond
-etc/blacklist.conf.sample
-etc/mixminiond.conf.sample
+%%SERVER%%etc/blacklist.conf.sample
+%%SERVER%%etc/mixminiond.conf.sample
 %%PYTHON_SITELIBDIR%%/mixminion/BuildMessage.py
 %%PYTHON_SITELIBDIR%%/mixminion/BuildMessage.pyc
 %%PYTHON_SITELIBDIR%%/mixminion/BuildMessage.pyo
@@ -44,6 +44,9 @@ etc/mixminiond.conf.sample
 %%PYTHON_SITELIBDIR%%/mixminion/Packet.py
 %%PYTHON_SITELIBDIR%%/mixminion/Packet.pyc
 %%PYTHON_SITELIBDIR%%/mixminion/Packet.pyo
+%%PYTHON_SITELIBDIR%%/mixminion/SExpression.py
+%%PYTHON_SITELIBDIR%%/mixminion/SExpression.pyc
+%%PYTHON_SITELIBDIR%%/mixminion/SExpression.pyo
 %%PYTHON_SITELIBDIR%%/mixminion/ScheduleUtils.py
 %%PYTHON_SITELIBDIR%%/mixminion/ScheduleUtils.pyc
 %%PYTHON_SITELIBDIR%%/mixminion/ScheduleUtils.pyo
@@ -115,10 +118,14 @@ etc/mixminiond.conf.sample
 %%PYTHON_SITELIBDIR%%/mixminion/server/ServerMain.pyc
 %%PYTHON_SITELIBDIR%%/mixminion/server/ServerMain.pyo
 %%PYTHON_SITELIBDIR%%/mixminion/server/ServerQueue.py
+%%PYTHON_SITELIBDIR%%/mixminion/server/ServerQueue.pyc
+%%PYTHON_SITELIBDIR%%/mixminion/server/ServerQueue.pyo
 %%PYTHON_SITELIBDIR%%/mixminion/server/__init__.py
 %%PYTHON_SITELIBDIR%%/mixminion/server/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mixminion/server/__init__.pyo
 %%PYTHON_SITELIBDIR%%/mixminion/test.py
+%%PYTHON_SITELIBDIR%%/mixminion/test.pyc
+%%PYTHON_SITELIBDIR%%/mixminion/test.pyo
 %%PYTHON_SITELIBDIR%%/mixminion/testSupport.py
 %%PYTHON_SITELIBDIR%%/mixminion/testSupport.pyc
 %%PYTHON_SITELIBDIR%%/mixminion/testSupport.pyo
