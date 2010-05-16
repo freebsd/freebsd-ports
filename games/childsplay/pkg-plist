@@ -1,169 +1,219 @@
 bin/childsplay
+childsplay/BASEPATH.py
+childsplay/BASEPATH.pyc
+childsplay/CPConstants.py
+childsplay/CPConstants.pyc
+childsplay/CPMenu.py
+childsplay/CPMenu.pyc
+childsplay/SpriteUtils.py
+childsplay/SpriteUtils.pyc
+childsplay/Timer.py
+childsplay/Timer.pyc
+childsplay/childsplay.py
+childsplay/childsplay.pyc
+childsplay/install.py
+childsplay/install.pyc
+childsplay/letters-trans.py
+childsplay/letters-trans.pyc
 childsplay/lib/letters.py
 childsplay/lib/letters.pyc
 childsplay/lib/memory.py
 childsplay/lib/memory.pyc
-childsplay/CPConstants.py
-childsplay/utils.py
-childsplay/splash.py
-childsplay/pyassetmlcreator.py
-childsplay/pyassetmlSDL.py
-childsplay/pyassetml.py
 childsplay/out.py
-childsplay/letters-trans.py
-childsplay/install.py
-childsplay/childsplay.py
-childsplay/Timer.py
-childsplay/SpriteUtils.py
-childsplay/ConfParser.py
-childsplay/CPMenu.py
-childsplay/version.py
-childsplay/CPConstants.pyc
-childsplay/utils.pyc
-childsplay/splash.pyc
-childsplay/pyassetmlcreator.pyc
-childsplay/pyassetmlSDL.pyc
 childsplay/out.pyc
+childsplay/pyassetml.py
 childsplay/pyassetml.pyc
-childsplay/letters-trans.pyc
-childsplay/install.pyc
-childsplay/childsplay.pyc
-childsplay/Timer.pyc
-childsplay/SpriteUtils.pyc
-childsplay/ConfParser.pyc
-childsplay/CPMenu.pyc
+childsplay/pyassetmlSDL.py
+childsplay/pyassetmlSDL.pyc
+childsplay/pyassetmlcreator.py
+childsplay/pyassetmlcreator.pyc
+childsplay/splash.py
+childsplay/splash.pyc
+childsplay/utils.py
+childsplay/utils.pyc
+childsplay/version.py
 childsplay/version.pyc
-childsplay/BASEPATH.py
-childsplay/BASEPATH.pyc
-share/doc/childsplay/po/fr/childsplay.po
-share/doc/childsplay/po/de/childsplay.po
-share/doc/childsplay/po/de/new_de.po
-share/doc/childsplay/po/de/.#childsplay.po.1.2
-share/doc/childsplay/po/es/childsplay.po
-share/doc/childsplay/po/es/new_es.po
-share/doc/childsplay/po/wordlist/words-de.gz
-share/doc/childsplay/po/wordlist/words-en.gz
-share/doc/childsplay/po/wordlist/words-fr.gz
-share/doc/childsplay/po/wordlist/words-nl.gz
-share/doc/childsplay/po/wordlist/README.gz
-share/doc/childsplay/po/wordlist/words-esp.gz
-share/doc/childsplay/po/da/childsplay.po
-share/doc/childsplay/po/da/new_da.po
-share/doc/childsplay/po/nl/childsplay.po
-share/doc/childsplay/po/tr/childsplay.po
-share/doc/childsplay/po/tr/new_tr.po
-share/doc/childsplay/po/it/childsplay.po
-share/doc/childsplay/po/childsplay_0.72.pot
-share/doc/childsplay/copyright
-share/doc/childsplay/README.rc-files
-share/doc/childsplay/README.develop
-share/doc/childsplay/GPL-2
-share/doc/childsplay/Changelog
-share/doc/childsplay/README.games-module
-share/locale/da/LC_MESSAGES/childsplay.mo
-share/locale/de/LC_MESSAGES/childsplay.mo
-share/locale/es/LC_MESSAGES/childsplay.mo
-share/locale/fr/LC_MESSAGES/childsplay.mo
-share/locale/it/LC_MESSAGES/childsplay.mo
-share/locale/nl/LC_MESSAGES/childsplay.mo
-share/assetml/childsplay/childsplay-images/po/Translation.raw
-share/assetml/childsplay/childsplay-images/bluebold.ttf
-share/assetml/childsplay/childsplay-images/OK_but.png
-share/assetml/childsplay/childsplay-images/question1.png
-share/assetml/childsplay/childsplay-images/bullpen3.ttf
-share/assetml/childsplay/childsplay-images/firework1.png
-share/assetml/childsplay/childsplay-images/firework2.png
-share/assetml/childsplay/childsplay-images/chpl-icon-48-flat.png
-share/assetml/childsplay/childsplay-images/cowsplash.png
-share/assetml/childsplay/childsplay-images/blue.jpg
-share/assetml/childsplay/childsplay-images/tux.png
-share/assetml/childsplay/childsplay-images/pointer.png
-share/assetml/childsplay/childsplay-images/arrow.png
-share/assetml/childsplay/childsplay-images/bluehigh.ttf
-share/assetml/childsplay/childsplay-images/cowsplash-load.png
-share/assetml/childsplay/childsplay-images/childsplay-images.assetml
-share/assetml/childsplay/childsplay-images/land.png
 share/assetml/childsplay/childsplay-images/MORE_but.png
+share/assetml/childsplay/childsplay-images/OK_but.png
+share/assetml/childsplay/childsplay-images/arrow.png
 share/assetml/childsplay/childsplay-images/balloonsl.png
 share/assetml/childsplay/childsplay-images/balloonsr.png
-share/assetml/childsplay/childsplay-images/stop.png
-share/assetml/childsplay/childsplay-images/hscore.png
+share/assetml/childsplay/childsplay-images/blue.png
+share/assetml/childsplay/childsplay-images/childsplay-images.assetml
+share/assetml/childsplay/childsplay-images/chpl-icon-48-flat.png
 share/assetml/childsplay/childsplay-images/chpl-icon-48.png
 share/assetml/childsplay/childsplay-images/chpl-icon-48.xpm
-share/assetml/childsplay/memory-136x136/po/es.po
-share/assetml/childsplay/memory-136x136/po/fr.po
-share/assetml/childsplay/memory-136x136/po/nl.po
-share/assetml/childsplay/memory-136x136/po/memory-136x136.pot
-share/assetml/childsplay/memory-136x136/tree.png
-share/assetml/childsplay/memory-136x136/plane.png
-share/assetml/childsplay/memory-136x136/apple.png
-share/assetml/childsplay/memory-136x136/bread.png
-share/assetml/childsplay/memory-136x136/dog.png
-share/assetml/childsplay/memory-136x136/bear.png
-share/assetml/childsplay/memory-136x136/fish.png
-share/assetml/childsplay/memory-136x136/monkey.png
-share/assetml/childsplay/memory-136x136/boat.png
-share/assetml/childsplay/memory-136x136/memory-136x136.assetml
-share/assetml/childsplay/memory-136x136/car.png
-share/assetml/childsplay/memory-136x136/grapes.png
-share/assetml/childsplay/memory-136x136/lion.png
-share/assetml/childsplay/childsplay-sounds/po/nl.po
-share/assetml/childsplay/childsplay-sounds/po/Translation.raw
+share/assetml/childsplay/childsplay-images/cowsplash-load.png
+share/assetml/childsplay/childsplay-images/cowsplash.png
+share/assetml/childsplay/childsplay-images/firework1.png
+share/assetml/childsplay/childsplay-images/firework2.png
+share/assetml/childsplay/childsplay-images/hscore.png
+share/assetml/childsplay/childsplay-images/land.png
+share/assetml/childsplay/childsplay-images/pointer.png
+share/assetml/childsplay/childsplay-images/question1.png
+share/assetml/childsplay/childsplay-images/stop.png
+share/assetml/childsplay/childsplay-images/tux.png
+share/assetml/childsplay/childsplay-sounds/Winner2.ogg
+share/assetml/childsplay/childsplay-sounds/boom.wav
 share/assetml/childsplay/childsplay-sounds/bummer.wav
 share/assetml/childsplay/childsplay-sounds/childsplay-sounds.assetml
+share/assetml/childsplay/childsplay-sounds/cows.ogg
+share/assetml/childsplay/childsplay-sounds/dealcard1.wav
 share/assetml/childsplay/childsplay-sounds/level_clear.wav
+share/assetml/childsplay/childsplay-sounds/music1.ogg
 share/assetml/childsplay/childsplay-sounds/rocket.wav
 share/assetml/childsplay/childsplay-sounds/wahoo.wav
-share/assetml/childsplay/childsplay-sounds/cows.ogg
-share/assetml/childsplay/childsplay-sounds/Winner2.ogg
-share/assetml/childsplay/childsplay-sounds/music1.ogg
-share/assetml/childsplay/childsplay-sounds/dealcard1.wav
-share/assetml/childsplay/childsplay-sounds/boom.wav
-share/childsplay/Data/bluebold.ttf
-share/childsplay/Data/bluehigh.ttf
+share/assetml/childsplay/memory-136x136/apple.png
+share/assetml/childsplay/memory-136x136/bear.png
+share/assetml/childsplay/memory-136x136/boat.png
+share/assetml/childsplay/memory-136x136/bread.png
+share/assetml/childsplay/memory-136x136/car.png
+share/assetml/childsplay/memory-136x136/dog.png
+share/assetml/childsplay/memory-136x136/fish.png
+share/assetml/childsplay/memory-136x136/grapes.png
+share/assetml/childsplay/memory-136x136/lion.png
+share/assetml/childsplay/memory-136x136/memory-136x136.assetml
+share/assetml/childsplay/memory-136x136/monkey.png
+share/assetml/childsplay/memory-136x136/plane.png
+share/assetml/childsplay/memory-136x136/po/ar.po
+share/assetml/childsplay/memory-136x136/po/ca.po
+share/assetml/childsplay/memory-136x136/po/de.po
+share/assetml/childsplay/memory-136x136/po/es.po
+share/assetml/childsplay/memory-136x136/po/fr.po
+share/assetml/childsplay/memory-136x136/po/he.po
+share/assetml/childsplay/memory-136x136/po/id.po
+share/assetml/childsplay/memory-136x136/po/memory-136x136.pot
+share/assetml/childsplay/memory-136x136/po/nl.po
+share/assetml/childsplay/memory-136x136/po/ru.po
+share/assetml/childsplay/memory-136x136/po/sl.po
+share/assetml/childsplay/memory-136x136/po/sv.po
+share/assetml/childsplay/memory-136x136/tree.png
+share/childsplay/Data/Domestic_Manners.ttf
+share/childsplay/Data/Galaga1.ogg
+share/childsplay/Data/GenR102.ttf
+share/childsplay/Data/License_ae.ttf.txt
+share/childsplay/Data/License_el.ttf
+share/childsplay/Data/License_he.ttf.txt
+share/childsplay/Data/SpaceComputer.ogg
+share/childsplay/Data/VeraSeBd.ttf
+share/childsplay/Data/ae_AlMohanad.ttf
+share/childsplay/Data/ae_Sindibad.ttf
 share/childsplay/Data/boom.wav
-share/childsplay/Data/bullpen3.ttf
 share/childsplay/Data/bummer.wav
 share/childsplay/Data/childsplay.ico
 share/childsplay/Data/childsplay.score
-share/childsplay/Data/chpl-icon-48-flat.png
-share/childsplay/Data/chpl-icon-48.png
-share/childsplay/Data/chpl-icon-48.xpm
+share/childsplay/Data/childsplay.score.org
 share/childsplay/Data/cows.ogg
-share/childsplay/Data/cowsplash-load.png
-share/childsplay/Data/cowsplash.png
-share/childsplay/Data/pointer_mask.xbm
-share/childsplay/Data/wahoo.wav
+share/childsplay/Data/dub.ogg
+share/childsplay/Data/he.ttf
 share/childsplay/Data/icons/letters.icon.png
 share/childsplay/Data/icons/memory.icon.png
-share/childsplay/Data/childsplay.score.org
+share/childsplay/Data/key_blank.gif
+share/childsplay/Data/key_enter.gif
+share/childsplay/Data/key_space.gif
+share/childsplay/Data/keyboard.gif
+share/childsplay/Data/keyboard_ico.png
+share/childsplay/Data/loading_splash.jpg
+share/childsplay/Data/logo_cp_16x16.png
+share/childsplay/Data/logo_cp_16x16.xpm
+share/childsplay/Data/logo_cp_180x180.png
+share/childsplay/Data/logo_cp_32x32.png
+share/childsplay/Data/logo_cp_32x32.xpm
+share/childsplay/Data/logo_cp_48x48.png
+share/childsplay/Data/logo_cp_48x48.xpm
+share/childsplay/Data/logo_cp_64x64.png
+share/childsplay/Data/pointer_mask.xbm
+share/childsplay/Data/thanks.ogg
+share/childsplay/Data/wahoo.wav
 share/childsplay/lib/ConfigData/childsplayrc
-share/childsplay/lib/MemoryData/cardfront.png
+share/childsplay/lib/ConfigData/multiTablesrc
 share/childsplay/lib/MemoryData/cardback.png
-@dirrm childsplay/lib
-@dirrm childsplay
-@dirrm share/doc/childsplay/po/fr
-@dirrm share/doc/childsplay/po/de
-@dirrm share/doc/childsplay/po/es
+share/childsplay/lib/MemoryData/cardfront.png
+share/doc/childsplay/Changelog
+share/doc/childsplay/FOSS.txt
+share/doc/childsplay/GPL-3
+share/doc/childsplay/README.develop
+share/doc/childsplay/README.games-module
+share/doc/childsplay/README.rc-files
+share/doc/childsplay/copyright
+share/doc/childsplay/mantemplate
+share/doc/childsplay/po/ar/childsplay.po
+share/doc/childsplay/po/ca/childsplay.po
+share/doc/childsplay/po/cards.pot
+share/doc/childsplay/po/childsplay-latest.pot
+share/doc/childsplay/po/da/childsplay.po
+share/doc/childsplay/po/de/childsplay.po
+share/doc/childsplay/po/el/childsplay.po
+share/doc/childsplay/po/es/childsplay.po
+share/doc/childsplay/po/fr/childsplay.po
+share/doc/childsplay/po/he/childsplay.po
+share/doc/childsplay/po/id/childsplay.po
+share/doc/childsplay/po/it/childsplay.po
+share/doc/childsplay/po/nl/childsplay.po
+share/doc/childsplay/po/no/childsplay.po
+share/doc/childsplay/po/pt/childsplay.po
+share/doc/childsplay/po/sl/childsplay.po
+share/doc/childsplay/po/sv/childsplay.po
+share/doc/childsplay/po/tr/childsplay.po
+share/doc/childsplay/po/wordlist/README.gz
+share/doc/childsplay/po/wordlist/words-ar.gz
+share/doc/childsplay/po/wordlist/words-ca.gz
+share/doc/childsplay/po/wordlist/words-de.gz
+share/doc/childsplay/po/wordlist/words-en.gz
+share/doc/childsplay/po/wordlist/words-esp.gz
+share/doc/childsplay/po/wordlist/words-fr.gz
+share/doc/childsplay/po/wordlist/words-he.gz
+share/doc/childsplay/po/wordlist/words-id.gz
+share/doc/childsplay/po/wordlist/words-nl.gz
+share/doc/childsplay/po/wordlist/words-no.gz
+share/doc/childsplay/po/wordlist/words-pt.gz
+share/doc/childsplay/po/wordlist/words-sl.gz
+share/doc/childsplay/po/wordlist/words-sv.gz
+share/locale/ar/LC_MESSAGES/childsplay.mo
+share/locale/ca/LC_MESSAGES/childsplay.mo
+share/locale/da/LC_MESSAGES/childsplay.mo
+share/locale/de/LC_MESSAGES/childsplay.mo
+share/locale/el/LC_MESSAGES/childsplay.mo
+share/locale/es/LC_MESSAGES/childsplay.mo
+share/locale/fr/LC_MESSAGES/childsplay.mo
+share/locale/he/LC_MESSAGES/childsplay.mo
+share/locale/id/LC_MESSAGES/childsplay.mo
+share/locale/it/LC_MESSAGES/childsplay.mo
+share/locale/nl/LC_MESSAGES/childsplay.mo
+share/locale/no/LC_MESSAGES/childsplay.mo
+share/locale/pt/LC_MESSAGES/childsplay.mo
+share/locale/sl/LC_MESSAGES/childsplay.mo
+share/locale/sv/LC_MESSAGES/childsplay.mo
+share/locale/tr/LC_MESSAGES/childsplay.mo
 @dirrm share/doc/childsplay/po/wordlist
-@dirrm share/doc/childsplay/po/da
-@dirrm share/doc/childsplay/po/nl
 @dirrm share/doc/childsplay/po/tr
+@dirrm share/doc/childsplay/po/sv
+@dirrm share/doc/childsplay/po/sl
+@dirrm share/doc/childsplay/po/pt
+@dirrm share/doc/childsplay/po/no
+@dirrm share/doc/childsplay/po/nl
 @dirrm share/doc/childsplay/po/it
+@dirrm share/doc/childsplay/po/id
+@dirrm share/doc/childsplay/po/he
+@dirrm share/doc/childsplay/po/fr
+@dirrm share/doc/childsplay/po/es
+@dirrm share/doc/childsplay/po/el
+@dirrm share/doc/childsplay/po/de
+@dirrm share/doc/childsplay/po/da
+@dirrm share/doc/childsplay/po/ca
+@dirrm share/doc/childsplay/po/ar
 @dirrm share/doc/childsplay/po
 @dirrm share/doc/childsplay
-@dirrm share/assetml/childsplay/childsplay-images/po
-@dirrm share/assetml/childsplay/childsplay-images
-@dirrm share/assetml/childsplay/memory-136x136/po
-@dirrm share/assetml/childsplay/memory-136x136
-@dirrm share/assetml/childsplay/childsplay-sounds/po
-@dirrm share/assetml/childsplay/childsplay-sounds
-@dirrm share/assetml/childsplay
+@dirrm share/childsplay/lib/MemoryData
+@dirrm share/childsplay/lib/ConfigData
+@dirrm share/childsplay/lib
 @dirrm share/childsplay/Data/icons
 @dirrm share/childsplay/Data
-@dirrm share/childsplay/lib/ConfigData
-@dirrm share/childsplay/lib/MemoryData
-@dirrm share/childsplay/lib
 @dirrm share/childsplay
-@cwd /
-var/games/childsplay.score
+@dirrm share/assetml/childsplay/memory-136x136/po
+@dirrm share/assetml/childsplay/memory-136x136
+@dirrm share/assetml/childsplay/childsplay-sounds
+@dirrm share/assetml/childsplay/childsplay-images
+@dirrm share/assetml/childsplay
+@dirrm childsplay/lib
+@dirrm childsplay
