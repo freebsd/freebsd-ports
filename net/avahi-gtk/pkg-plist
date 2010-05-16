@@ -12,6 +12,5 @@ share/applications/bssh.desktop
 share/applications/bvnc.desktop
 %%DATADIR%%/interfaces/avahi-discover.glade
 @dirrm %%DATADIR%%/interfaces
-@dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm include/avahi-ui
