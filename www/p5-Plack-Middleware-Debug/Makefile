@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack-Middleware-Debug
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,6 +32,7 @@ MAN3=	Plack::Middleware::Debug.3 \
 	Plack::Middleware::Debug::Environment.3 \
 	Plack::Middleware::Debug::Memory.3 \
 	Plack::Middleware::Debug::ModuleVersions.3 \
+	Plack::Middleware::Debug::Parameters.3 \
 	Plack::Middleware::Debug::PerlConfig.3 \
 	Plack::Middleware::Debug::Response.3 \
 	Plack::Middleware::Debug::Session.3 \

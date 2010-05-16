@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Plack/Middleware/Debug/Memory.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/ModuleVersions.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Panel.pm
+%%SITE_PERL%%/Plack/Middleware/Debug/Parameters.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/PerlConfig.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Response.pm
 %%SITE_PERL%%/Plack/Middleware/Debug/Session.pm
