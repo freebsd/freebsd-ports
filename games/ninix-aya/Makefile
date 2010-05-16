@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ninix-aya
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
-MASTER_SITE_SUBDIR=	ninix-aya/46821
+MASTER_SITE_SUBDIR=	ninix-aya/47201
 DISTNAME=	ninix-aya-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -32,4 +32,32 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+DOCSDIR=	${PREFIX}/share/doc/ninix
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -E -e 's,\$$\(DESTDIR\)(.*),\1,' \
+		-e 's,/opt/ninix-aya,$$(PREFIX),' \
+		-e 's,lib/ninix,libexec/ninix,'	\
+		-e 's,/doc,/share/doc/ninix,' \
+		${WRKSRC}/Makefile
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/docdir)$$/d' \
+		${WRKSRC}/Makefile
+.endif
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e '/localedir/d' \
+		${WRKSRC}/Makefile
+.endif
+
+.include <bsd.port.post.mk>
