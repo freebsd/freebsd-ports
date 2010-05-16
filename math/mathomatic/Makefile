@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	15.0.8
+PORTVERSION=	15.1.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		CRITICAL
@@ -15,14 +15,16 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
+
 MAKE_JOBS_SAFE=	yes
 
 MAKEFILE=	makefile
-MAKE_ARGS=	-DREADLINE
 
 PORTDOCS=	*
-
 MAN1=		mathomatic.1
+
+MAKE_ARGS=	READLINE=1
 
 OPTIONS=	PDF	"Install PDF manual (requires htmldoc)" off
 
