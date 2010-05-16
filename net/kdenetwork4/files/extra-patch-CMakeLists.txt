@@ -1,0 +1,12 @@
+--- ./CMakeLists.txt.orig	2010-03-27 03:29:39.000000000 +1000
++++ ./CMakeLists.txt	2010-05-16 16:29:43.300835439 +1100
+@@ -78,9 +78,7 @@
+ 
+   # kppp is broken on FreeBSD >= 8.0
+   # disabling until a fix appears
+-  if(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD AND NOT APPLE)
+     macro_optional_add_subdirectory(kppp)
+-  endif(NOT CMAKE_SYSTEM_NAME MATCHES FreeBSD AND NOT APPLE)
+ 
+   if(LIBVNCSERVER_FOUND)
+     macro_optional_add_subdirectory(krfb)
