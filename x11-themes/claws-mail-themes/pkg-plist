@@ -456,12 +456,18 @@ share/claws-mail/themes/Everaldo_Kids/address_book.png
 share/claws-mail/themes/Everaldo_Kids/anonymous.png
 share/claws-mail/themes/Everaldo_Kids/cancel.png
 share/claws-mail/themes/Everaldo_Kids/check_spelling.png
+share/claws-mail/themes/Everaldo_Kids/clip.png
 share/claws-mail/themes/Everaldo_Kids/close.png
+share/claws-mail/themes/Everaldo_Kids/delete_btn.png
 share/claws-mail/themes/Everaldo_Kids/dir_close.png
 share/claws-mail/themes/Everaldo_Kids/dir_close_hrm.png
+share/claws-mail/themes/Everaldo_Kids/dir_close_hrm_mark.png
+share/claws-mail/themes/Everaldo_Kids/dir_close_mark.png
 share/claws-mail/themes/Everaldo_Kids/dir_noselect.png
 share/claws-mail/themes/Everaldo_Kids/dir_open.png
 share/claws-mail/themes/Everaldo_Kids/dir_open_hrm.png
+share/claws-mail/themes/Everaldo_Kids/dir_open_hrm_mark.png
+share/claws-mail/themes/Everaldo_Kids/dir_open_mark.png
 share/claws-mail/themes/Everaldo_Kids/down_arrow.png
 share/claws-mail/themes/Everaldo_Kids/drafts_close.png
 share/claws-mail/themes/Everaldo_Kids/drafts_close_hrm.png
@@ -471,12 +477,15 @@ share/claws-mail/themes/Everaldo_Kids/edit_extern.png
 share/claws-mail/themes/Everaldo_Kids/edittrash.png
 share/claws-mail/themes/Everaldo_Kids/error.png
 share/claws-mail/themes/Everaldo_Kids/exec.png
+share/claws-mail/themes/Everaldo_Kids/group.png
+share/claws-mail/themes/Everaldo_Kids/ham.png
 share/claws-mail/themes/Everaldo_Kids/ham_btn.png
 share/claws-mail/themes/Everaldo_Kids/inbox_close.png
 share/claws-mail/themes/Everaldo_Kids/inbox_close_hrm.png
 share/claws-mail/themes/Everaldo_Kids/inbox_open.png
 share/claws-mail/themes/Everaldo_Kids/inbox_open_hrm.png
 share/claws-mail/themes/Everaldo_Kids/insert_file.png
+share/claws-mail/themes/Everaldo_Kids/interface.png
 share/claws-mail/themes/Everaldo_Kids/linewrap.png
 share/claws-mail/themes/Everaldo_Kids/linewrapcurrent.png
 share/claws-mail/themes/Everaldo_Kids/mail.png
@@ -491,15 +500,18 @@ share/claws-mail/themes/Everaldo_Kids/mail_reply_to_author.png
 share/claws-mail/themes/Everaldo_Kids/mail_send.png
 share/claws-mail/themes/Everaldo_Kids/mail_send_queue.png
 share/claws-mail/themes/Everaldo_Kids/mail_sign.png
+share/claws-mail/themes/Everaldo_Kids/mark.png
 share/claws-mail/themes/Everaldo_Kids/mime_application.png
 share/claws-mail/themes/Everaldo_Kids/mime_audio.png
 share/claws-mail/themes/Everaldo_Kids/mime_image.png
 share/claws-mail/themes/Everaldo_Kids/mime_message.png
+share/claws-mail/themes/Everaldo_Kids/mime_pdf.png
 share/claws-mail/themes/Everaldo_Kids/mime_pgpsig.png
-share/claws-mail/themes/Everaldo_Kids/mime_text_enriched
+share/claws-mail/themes/Everaldo_Kids/mime_text_enriched.png
 share/claws-mail/themes/Everaldo_Kids/mime_text_html.png
 share/claws-mail/themes/Everaldo_Kids/mime_text_plain.png
 share/claws-mail/themes/Everaldo_Kids/mime_unknown.png
+share/claws-mail/themes/Everaldo_Kids/new.png
 share/claws-mail/themes/Everaldo_Kids/notice_error.png
 share/claws-mail/themes/Everaldo_Kids/notice_note.png
 share/claws-mail/themes/Everaldo_Kids/notice_warn.png
@@ -516,7 +528,9 @@ share/claws-mail/themes/Everaldo_Kids/queue_close.png
 share/claws-mail/themes/Everaldo_Kids/queue_close_hrm.png
 share/claws-mail/themes/Everaldo_Kids/queue_open.png
 share/claws-mail/themes/Everaldo_Kids/queue_open_hrm.png
+share/claws-mail/themes/Everaldo_Kids/read.png
 share/claws-mail/themes/Everaldo_Kids/search.png
+share/claws-mail/themes/Everaldo_Kids/spam.png
 share/claws-mail/themes/Everaldo_Kids/spam_btn.png
 share/claws-mail/themes/Everaldo_Kids/trash.png
 share/claws-mail/themes/Everaldo_Kids/trash_btn.png
@@ -525,8 +539,11 @@ share/claws-mail/themes/Everaldo_Kids/trash_close_hrm.png
 share/claws-mail/themes/Everaldo_Kids/trash_hrm.png
 share/claws-mail/themes/Everaldo_Kids/trash_open.png
 share/claws-mail/themes/Everaldo_Kids/trash_open_hrm.png
+share/claws-mail/themes/Everaldo_Kids/tray_newmail.offline.png
 share/claws-mail/themes/Everaldo_Kids/tray_newmail.png
+share/claws-mail/themes/Everaldo_Kids/tray_nomail.offline.png
 share/claws-mail/themes/Everaldo_Kids/tray_nomail.png
+share/claws-mail/themes/Everaldo_Kids/unread.png
 share/claws-mail/themes/Everaldo_Kids/up_arrow.png
 share/claws-mail/themes/Fugue/.claws_themeinfo
 share/claws-mail/themes/Fugue/CHANGELOG.txt
@@ -3260,6 +3277,16 @@ share/claws-mail/themes/elementary/close.png
 share/claws-mail/themes/elementary/complete.png
 share/claws-mail/themes/elementary/continue.png
 share/claws-mail/themes/elementary/copied.png
+share/claws-mail/themes/elementary/dark_panel/tray_newmail.offline.png
+share/claws-mail/themes/elementary/dark_panel/tray_newmail.png
+share/claws-mail/themes/elementary/dark_panel/tray_newmarkedmail.offline.png
+share/claws-mail/themes/elementary/dark_panel/tray_newmarkedmail.png
+share/claws-mail/themes/elementary/dark_panel/tray_nomail.offline.png
+share/claws-mail/themes/elementary/dark_panel/tray_nomail.png
+share/claws-mail/themes/elementary/dark_panel/tray_unreadmail.offline.png
+share/claws-mail/themes/elementary/dark_panel/tray_unreadmail.png
+share/claws-mail/themes/elementary/dark_panel/tray_unreadmarkedmail.offline.png
+share/claws-mail/themes/elementary/dark_panel/tray_unreadmarkedmail.png
 share/claws-mail/themes/elementary/delete_btn.png
 share/claws-mail/themes/elementary/deleted.png
 share/claws-mail/themes/elementary/dir_close.png
@@ -3352,6 +3379,7 @@ share/claws-mail/themes/elementary/outbox_open_mark.png
 share/claws-mail/themes/elementary/paste.png
 share/claws-mail/themes/elementary/preferences.png
 share/claws-mail/themes/elementary/printer.png
+share/claws-mail/themes/elementary/privacy_emblem_encrypted.png
 share/claws-mail/themes/elementary/privacy_emblem_failed.png
 share/claws-mail/themes/elementary/privacy_emblem_passed.png
 share/claws-mail/themes/elementary/privacy_emblem_signed.png
@@ -4310,6 +4338,7 @@ share/claws-mail/themes/tom_2.1.1/work_online.xpm
 @dirrm share/claws-mail/themes/hydroxygen
 @dirrm share/claws-mail/themes/hash303030
 @dirrm share/claws-mail/themes/gnome-brave
+@dirrm share/claws-mail/themes/elementary/dark_panel
 @dirrm share/claws-mail/themes/elementary
 @dirrm share/claws-mail/themes/clawsola
 @dirrm share/claws-mail/themes/buuf
