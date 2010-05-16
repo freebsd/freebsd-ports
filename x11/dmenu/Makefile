@@ -16,7 +16,7 @@ PATCH_SITES=	http://schot.a-eskwadraat.nl/files/
 MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	X11 menu application (not only) for the dwm window manager
 
-OPTIONS=	XFT	"XFT support" On
+OPTIONS=	XFT	"XFT support" Off
 
 USE_XORG=	x11 xinerama
 
