@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-sys-location="${NET_SNMP_SYS_LOCATION}" \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
-		--with-gnu-ld --with-libwrap --with-libs="-lm -lkvm -ldevstat"
+		--with-gnu-ld --with-libwrap --with-ldflags="-lm -lkvm -ldevstat"
 
 .if defined(BATCH)
 CONFIGURE_ARGS+=--with-defaults
@@ -66,8 +66,10 @@ USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-perl-modules
 .if defined(WITHOUT_PERL_EMBEDDED)
 CONFIGURE_ARGS+=--disable-embedded-perl
+PLIST_SUB+=	WITH_PERL_EMBEDDED="@comment "
 .else
 CONFIGURE_ARGS+=--enable-embedded-perl
+PLIST_SUB+=	WITH_PERL_EMBEDDED=""
 .endif
 PLIST_SUB+=	WITH_PERL=""
 .else
