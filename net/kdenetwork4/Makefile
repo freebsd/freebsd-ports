@@ -6,7 +6,7 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -46,7 +46,7 @@ MAKE_JOBS_SAFE=	yes
 
 # Explicitly disable alsa, see for details:
 # http://mail.kde.org/pipermail/kde-freebsd/2010-March/008015.html
-CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
+#CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
 
 # Embedded btcore support already disconnected from the build and outdated
 CMAKE_ARGS+=	-DENABLE_EMBEDDED_TORRENT_SUPPORT=FALSE
@@ -67,6 +67,7 @@ OPTIONS=	BTCORE "Enable Bittorrent support in KGet" off \
 CMAKE_ARGS+=	-DBUILD_kppp:BOOL=OFF
 PLIST_SUB+=	KPPP="@comment "
 .else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-CMakeLists.txt
 CMAKE_ARGS+=	-DBUILD_kppp:BOOL=ON
 PLIST_SUB+=	KPPP=""
 .endif
