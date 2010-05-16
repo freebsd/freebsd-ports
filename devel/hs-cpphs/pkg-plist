@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 bin/cpphs
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/CppIfdef.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/HashDefine.hi
@@ -13,6 +12,7 @@ bin/cpphs
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Cpphs/Tokenise.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Language/Preprocessor/Unlit.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/ParserCombinators/HuttonMeijer.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENCE-LGPL

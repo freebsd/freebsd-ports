@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cpphs
-PORTVERSION=	1.9
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
