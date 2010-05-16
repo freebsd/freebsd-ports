@@ -22,4 +22,8 @@ QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+IGNORE=		is obsolete: Aurorae shipped with KDE SC since version 4.4
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2010-08-16
+
 .include <bsd.port.mk>
