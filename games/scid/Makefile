@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	scid
-PORTVERSION=	3.6.26
-PORTREVISION=	2
+PORTVERSION=	4.2.2
 CATEGORIES=	games databases
-MASTER_SITES=	SF/${PORTNAME}/Scid/Scid%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Scid/Scid%204.2/
 
 MAINTAINER=	bsd@volki.at
 COMMENT=	A free chess database application
