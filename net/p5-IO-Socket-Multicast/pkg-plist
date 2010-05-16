@@ -3,11 +3,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/Multicast/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/Multicast/Multicast.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/Multicast/Multicast.so
-%%PORTDOCS%%%%EXAMPLESDIR%%/client.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/server.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/client.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/Multicast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO/Socket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
-%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
