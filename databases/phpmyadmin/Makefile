@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.3.2
+DISTVERSION=	3.3.3
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -70,6 +70,7 @@ SUB_FILES+=	pkg-message
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
 .if !defined(WITHOUT_PHP_DEPENDS)
+
 # Options that default to on:
 .for opt in BZ2 GD OPENSSL PDF ZLIB MCRYPT MBSTRING ZIP
 .    if !defined(WITHOUT_${opt}) || defined(WITH_${opt})
