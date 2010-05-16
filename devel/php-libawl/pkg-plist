@@ -5,6 +5,10 @@
 %%LIBAWLDIR%%/inc/AWLUtilities.php
 %%LIBAWLDIR%%/inc/AuthPlugin.php
 %%LIBAWLDIR%%/inc/AuthPlugins.php
+%%LIBAWLDIR%%/inc/AwlDBDialect.php
+%%LIBAWLDIR%%/inc/AwlDatabase.php
+%%LIBAWLDIR%%/inc/AwlQuery.php
+%%LIBAWLDIR%%/inc/AwlUpgrader.php
 %%LIBAWLDIR%%/inc/DataEntry.php
 %%LIBAWLDIR%%/inc/DataUpdate.php
 %%LIBAWLDIR%%/inc/EMail.php
