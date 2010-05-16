@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgadu
-DISTVERSION=	1.9.0-rc2
+DISTVERSION=	1.9.0
 PORTEPOCH=	1
 CATEGORIES=	polish net
 MASTER_SITES=	http://toxygen.net/libgadu/files/
@@ -18,11 +18,12 @@ CONFLICTS=	pl-ekg-1.[0-6]*
 USE_GNOME=		gnomehack pkgconfig
 GNU_CONFIGURE=		yes
 
-CONFIGURE_ARGS=		--enable-shared --disable-static --with-pthread
+CONFIGURE_ARGS=		--enable-shared --disable-static --with-pthread \
+			--disable-tests
 
 USE_LDCONFIG=		yes
 
-OPTIONS=	OPENSSL "Build with OPENSSL support" on
+OPTIONS=	OPENSSL "Build with OpenSSL support" on
 
 PLIST_FILES=	include/libgadu.h \
 		lib/libgadu.la \
@@ -39,10 +40,10 @@ CONFIGURE_ARGS+=	--without-openssl
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's/^((DIST_)?SUBDIRS.*) test(.*)/\1\3/' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -Ee 's/@SUBDIRS_DOXYGEN@//' ${WRKSRC}/Makefile.in
 
 pre-install:
-
+# OpenSSL from base system lacks .pc file for pkgconfig
 .if defined(WITH_OPENSSL)
 	@${REINPLACE_CMD} -e 's|openssl| |g' ${WRKSRC}/pkgconfig/libgadu.pc
 .endif
