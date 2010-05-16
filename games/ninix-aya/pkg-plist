@@ -52,6 +52,7 @@ libexec/ninix/ninix/menu.py
 libexec/ninix/ninix/nekodorif.py
 libexec/ninix/ninix/ngm.py
 libexec/ninix/ninix/pix.py
+libexec/ninix/ninix/plugin.py
 libexec/ninix/ninix/prefs.py
 libexec/ninix/ninix/sakura.py
 libexec/ninix/ninix/script.py
@@ -75,6 +76,7 @@ libexec/ninix/ninix/makoto.pyc
 libexec/ninix/ninix/nekodorif.pyc
 libexec/ninix/ninix/ngm.pyc
 libexec/ninix/ninix/pix.pyc
+libexec/ninix/ninix/plugin.pyc
 libexec/ninix/ninix/prefs.pyc
 libexec/ninix/ninix/sakura.pyc
 libexec/ninix/ninix/seriko.pyc
@@ -88,17 +90,17 @@ libexec/ninix/sstplib.py
 libexec/ninix/ninix-install.py
 libexec/ninix/ninix-install.pyc
 libexec/ninix/sstplib.pyc
-share/locale/ja/LC_MESSAGES/ninix.mo
-share/locale/zh_TW/LC_MESSAGES/ninix.mo
-share/doc/ninix/README
-share/doc/ninix/COPYING
-share/doc/ninix/saori.txt
-share/doc/ninix/kawari.txt
-share/doc/ninix/extension.txt
-share/doc/ninix/TODO.ninix
-share/doc/ninix/README.ninix
-share/doc/ninix/ChangeLog
-@dirrm share/doc/ninix
+%%NLS%%share/locale/ja/LC_MESSAGES/ninix.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/ninix.mo
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/saori.txt
+%%PORTDOCS%%%%DOCSDIR%%/kawari.txt
+%%PORTDOCS%%%%DOCSDIR%%/extension.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.ninix
+%%PORTDOCS%%%%DOCSDIR%%/README.ninix
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/ninix/ninix/dll
 @dirrm libexec/ninix/ninix
 @dirrm libexec/ninix
