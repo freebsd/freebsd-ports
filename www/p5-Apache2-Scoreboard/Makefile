@@ -18,6 +18,8 @@ COMMENT=	Perl interface to the Apache scoreboard structure
 BUILD_DEPENDS=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		does not compile
+
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=		Apache::Scoreboard.3 Apache::DummyScoreboard.3
