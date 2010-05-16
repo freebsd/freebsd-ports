@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-LDAP-AutoDNs
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Automatically make some default decisions some LDAP DNs and scopes
-
-RUN_DEPENDS=	${SITE_PERL}/mach/BSD/Sysctl.pm:${PORTSDIR}/sysutils/p5-BSD-Sysctl
 
 PERL_CONFIGURE=	yes
 
