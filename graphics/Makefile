@@ -851,6 +851,7 @@
     SUBDIR += sane-epkowa
     SUBDIR += sane-frontends
     SUBDIR += scale2x
+    SUBDIR += scantailor
     SUBDIR += sced
     SUBDIR += scr2png
     SUBDIR += scrot
