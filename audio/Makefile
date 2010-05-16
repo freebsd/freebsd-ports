@@ -651,6 +651,7 @@
     SUBDIR += ruby-vorbisfile
     SUBDIR += ruby-xmms
     SUBDIR += ruby-xmms2
+    SUBDIR += rubygem-librmpd
     SUBDIR += rubygem-ruby-mp3info
     SUBDIR += s3mod
     SUBDIR += sbagen

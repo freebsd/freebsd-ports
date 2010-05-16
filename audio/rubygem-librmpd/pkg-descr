@@ -1,0 +1,5 @@
+librmpd is a simple yet powerful Music Player Daemon library written
+entirely in Ruby. It provides callback functionality to create an
+event/listener type of setup, along with thread safety for threaded apps.
+
+WWW:	http://librmpd.rubyforge.org/
