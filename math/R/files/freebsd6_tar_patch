@@ -1,0 +1,15 @@
+--- src/library/tools/R/install.R.orig	2010-05-16 07:18:27.000000000 -0400
++++ src/library/tools/R/install.R	2010-05-16 07:29:30.000000000 -0400
+@@ -1019,7 +1019,11 @@
+             of <- dir(tmpdir, full.names = TRUE)
+             ## force the use of internal untar unless over-ridden
+             ## so e.g. .tar.xz works everywhere
+-            TAR <- Sys.getenv("R_INSTALL_TAR", "internal")
++            ## Disable the default use of the internal tar on FreeBSD 6.X, it segfaults
++            ## on the default package MASS. This means that packages with lzma-compressed tarballs
++            ## will not be usable on FreeBSD 6.X versions before the import of xz, so
++            ## a better solution should be found. 
++            ## TAR <- Sys.getenv("R_INSTALL_TAR", "internal")
+             if (untar(pkg, exdir = tmpdir, tar = TAR))
+                 errmsg("error unpacking tarball")
+             ## Now see what we got

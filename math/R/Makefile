@@ -80,6 +80,10 @@ CONFIGURE_ARGS=	--with-system-bzlib --with-system-zlib rdocdir=${DOCSDIR}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+EXTRA_PATCHES+=	${FILESDIR}/freebsd6_tar_patch
+.endif
+
 .if !defined(LIBRMATH_SLAVEPORT)
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
