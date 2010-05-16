@@ -6,4 +6,5 @@ share/locale/es/LC_MESSAGES/gogglesmm.mo
 share/locale/fr/LC_MESSAGES/gogglesmm.mo
 share/locale/ru/LC_MESSAGES/gogglesmm.mo
 share/locale/hu/LC_MESSAGES/gogglesmm.mo
+share/locale/cs/LC_MESSAGES/gogglesmm.mo
 @dirrmtry share/applications

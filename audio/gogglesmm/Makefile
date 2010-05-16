@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmm
-PORTVERSION=	0.10.18
-PORTREVISION=	2
+PORTVERSION=	0.10.22
 CATEGORIES=	audio
 MASTER_SITES=	http://gogglesmm.googlecode.com/files/
 DISTNAME=	musicmanager-${PORTVERSION}
@@ -20,7 +19,8 @@ LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 		\
 		xine.1:${PORTSDIR}/multimedia/libxine		\
 		tag.1:${PORTSDIR}/audio/taglib			\
 		sqlite3.8:${PORTSDIR}/databases/sqlite3		\
-		dbus-1:${PORTSDIR}/devel/dbus
+		dbus-1:${PORTSDIR}/devel/dbus			\
+		curl.6:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
