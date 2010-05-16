@@ -12,35 +12,36 @@ bin/scidlet
 bin/scidpgn
 bin/scidt
 bin/scmerge
+bin/spf2spi
 bin/spliteco
 bin/tcscid
 bin/tkscid
-share/scid/bases/endings.sg3
-share/scid/bases/endings.si3
-share/scid/bases/endings.sn3
-share/scid/bases/matein1.sg3
-share/scid/bases/matein1.si3
-share/scid/bases/matein1.sn3
-share/scid/bases/matein2.sg3
-share/scid/bases/matein2.si3
-share/scid/bases/matein2.sn3
-share/scid/bases/matein3.sg3
-share/scid/bases/matein3.si3
-share/scid/bases/matein3.sn3
-share/scid/bases/matein4andmore.sg3
-share/scid/bases/matein4andmore.si3
-share/scid/bases/matein4andmore.sn3
-share/scid/bases/tactics.sg3
-share/scid/bases/tactics.si3
-share/scid/bases/tactics.sn3
+share/scid/bases/endings.sg4
+share/scid/bases/endings.si4
+share/scid/bases/endings.sn4
+share/scid/bases/matein1.sg4
+share/scid/bases/matein1.si4
+share/scid/bases/matein1.sn4
+share/scid/bases/matein2.sg4
+share/scid/bases/matein2.si4
+share/scid/bases/matein2.sn4
+share/scid/bases/matein3.sg4
+share/scid/bases/matein3.si4
+share/scid/bases/matein3.sn4
+share/scid/bases/matein4andmore.sg4
+share/scid/bases/matein4andmore.si4
+share/scid/bases/matein4andmore.sn4
+share/scid/bases/tactics.sg4
+share/scid/bases/tactics.si4
+share/scid/bases/tactics.sn4
 share/scid/books/Elo2400.bin
 share/scid/books/Performance.bin
 share/scid/books/gm2600.bin
 share/scid/books/readme.txt
 share/scid/books/varied.bin
 share/scid/data/scid.eco
-share/scid/engines/Phalanx-XXII/phalanx
-share/scid/engines/togaII1.2.1a/fruit
+share/scid/engines/phalanx-scid/phalanx-scid
+share/scid/engines/togaII1.2.1a/togaII
 share/scid/html/scid.css
 share/scid/html/scid.js
 share/scid/html/bitmaps/bb.gif
@@ -72,7 +73,7 @@ share/scid/html/bitmaps/mini/wr.gif
 @dirrm share/scid/books
 @dirrm share/scid/bases
 @dirrm share/scid/data
-@dirrm share/scid/engines/Phalanx-XXII
+@dirrm share/scid/engines/phalanx-scid
 @dirrm share/scid/engines/togaII1.2.1a
 @dirrm share/scid/engines
 @dirrm share/scid/html/bitmaps/mini

@@ -1,5 +1,5 @@
---- Makefile.orig	2008-10-10 10:59:55.000000000 +0200
-+++ Makefile	2009-01-26 12:27:47.000000000 +0100
+--- Makefile.orig	2010-01-20 10:48:13.000000000 +0100
++++ Makefile	2010-05-08 20:45:30.000000000 +0200
 @@ -9,16 +9,16 @@
  
  # BINDIR: where the Scid programs are copied for "make install".
@@ -24,35 +24,31 @@
  #
  # The settings determined by "./configure" are:
  #
--TCL_INCLUDE = -I/usr/local/ActiveTcl8.5/include
--TCL_LIBRARY = -L/usr/local/ActiveTcl8.5/lib -ltcl$(TCL_VERSION) -ldl
--TK_LIBRARY  = $(TCL_LIBRARY) -ltk$(TCL_VERSION) -L/usr/lib -lX11
-+#TCL_INCLUDE = -I/usr/local/ActiveTcl8.5/include
-+#TCL_LIBRARY = -L/usr/local/ActiveTcl8.5/lib -ltcl$(TCL_VERSION) -ldl
-+#TK_LIBRARY  = $(TCL_LIBRARY) -ltk$(TCL_VERSION) -L/usr/lib -lX11
+-TCL_INCLUDE = -I/usr/include
+-TCL_LIBRARY = -L/usr/lib -ltcl$(TCL_VERSION) -ldl
+-TK_LIBRARY  = $(TCL_LIBRARY) -ltk$(TCL_VERSION) -lX11
++#TCL_INCLUDE = -I/usr/include
++#TCL_LIBRARY = -L/usr/lib -ltcl$(TCL_VERSION) -ldl
++#TK_LIBRARY  = $(TCL_LIBRARY) -ltk$(TCL_VERSION) -lX11
  
  ### Here are other commonly used settings for the Tcl/Tk compiler options:
  
-@@ -54,6 +54,9 @@
- # TCL_INCLUDE = -I /usr/local/include/tcl8.0 -I /usr/local/include/tk8.0
- # TCL_LIBRARY = -L /usr/local/lib -ltcl80 -ldl
- # TK_LIBRARY  = $(TCL_LIBRARY) -ltk80 -L /usr/X11/lib -lX11
+@@ -49,11 +49,10 @@
+ # TCL_LIBRARY = -L /usr/lib -ltcl$(TCL_VERSION) -ldl
+ # TK_LIBRARY  = $(TCL_LIBRARY) -L /usr/X11R6/lib -ltk$(TCL_VERSION) -lX11
+ 
+-# Someone sent me these settings for FreeBSD with Tcl/Tk 8.0:
+ ### FreeBSD:
+-# TCL_INCLUDE = -I /usr/local/include/tcl8.0 -I /usr/local/include/tk8.0
+-# TCL_LIBRARY = -L /usr/local/lib -ltcl80 -ldl
+-# TK_LIBRARY  = $(TCL_LIBRARY) -ltk80 -L /usr/X11/lib -lX11
 +TCL_INCLUDE = -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${LOCALBASE}/include
 +TCL_LIBRARY = -L${LOCALBASE}/lib -ltcl${TCL_LIBVER}${TCL_THREADS_SUFFIX} ${PTHREAD_LIBS}
 +TK_LIBRARY  = $(TCL_LIBRARY) -ltk${TCL_LIBVER}${TCL_THREADS_SUFFIX} -L${LOCALBASE}/lib -lX11 ${PTHREAD_LIBS}
  
  
  ########################################
-@@ -71,7 +74,7 @@
- #      to include the code in the src/zlib directory.
- #      The default is to use the system zlib library.
- #
--SCIDFLAGS =  -DZLIB
-+#SCIDFLAGS =  -DZLIB
- 
- ### OPTIMIZE: Optimization options for C++ compiler.
- #      -O4 is the most optimization for g++. I have found -O2 to do
-@@ -80,7 +83,7 @@
+@@ -80,7 +79,7 @@
  #      On some systems, adding "-fno-rtti" and "-fno-exceptions" produces
  #      smaller, faster programs since Scid does not use those C++ features.
  #
@@ -61,7 +57,7 @@
  
  ### DEBUG: Defining the macro ASSERTIONS will turn on assertions, which
  #       helps to track bugs after modifications, but the programs will run 
-@@ -91,7 +94,7 @@
+@@ -91,7 +90,7 @@
  ### WARNINGS: I always compile with all warnings on (-Wall), and all the
  #       files should compile warning-free using g++.
  #
@@ -70,7 +66,7 @@
  
  ### PROFILE: Set this to "-pg" for profiling in g++ and gcc.
  #
-@@ -143,15 +146,15 @@
+@@ -143,11 +142,11 @@
  
  ### ZLIBOBJS: object files in the zlib compression library.
  #
@@ -84,11 +80,6 @@
 +#      src/zlib/zutil.o src/zlib/inflate.o src/zlib/infblock.o \
 +#      src/zlib/inftrees.o src/zlib/infcodes.o src/zlib/infutil.o \
 +#      src/zlib/inffast.o
+ 
         
  ### ZLIB: Should be "-lz" if your system has zlib, "" otherwise.
- #
--ZLIB = 
-+ZLIB = -lz
- 
- ### OBJS: Will be "$(SCIDOBJS)", "$(POLYGLOTOBJS)", and also "$(ZLIBOBJS)" if they are
- #      needed on your system.
