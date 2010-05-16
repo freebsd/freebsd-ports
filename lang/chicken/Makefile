@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.0
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/ \
 		http://chicken.wiki.br/releases/${PORTVERSION}/
@@ -16,8 +16,8 @@ COMMENT=	A Scheme-to-C compiler
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_ARGS+=	PLATFORM=bsd PREFIX=${PREFIX} TOPMANDIR=${PREFIX}/man
-MAKE_FLAGS+=	HOST=${HOST} PREFIX=${PREFIX} PLATFORM=${PLATFORM}
+MAKE_ARGS+=	PLATFORM=bsd PREFIX=${PREFIX} \
+		TOPMANDIR=${PREFIX}/man ARCH=${NEW_ARCH}
 
 PLATFORM=	bsd
 NEW_ARCH=	${ARCH:S/i386/x86/:S/amd64/x86-64/}
@@ -29,9 +29,6 @@ MAN1=		chicken.1 chicken-bug.1 chicken-install.1 chicken-profile.1 \
 
 .if ${ARCH} != "amd64" && ${ARCH} != "i386" && ${ARCH} != "sparc64"
 MAKE_ARGS+=	HACKED_APPLY=
-.elif ${ARCH} != ${NEW_ARCH}
-post-patch:
-	${MV} ${WRKSRC}/apply-hack.${NEW_ARCH}.S ${WRKSRC}/apply-hack.${ARCH}.S
 .endif
 
 post-install:
