@@ -1,36 +1,39 @@
---- Makefile.orig	Tue May  4 11:33:53 2004
-+++ Makefile	Sun Mar 27 16:13:40 2005
-@@ -2,23 +2,17 @@
+--- Makefile.orig	2010-03-27 07:28:34.000000000 +0800
++++ Makefile	2010-05-15 02:52:55.000000000 +0800
+@@ -1,20 +1,21 @@
+-all: id3v2
++all:	clean id3v2
  
- VERSION=0.1.11
+ VERSION=0.1.12
  
--PREFIX=	/usr/local
--CXXFLAGS+=	-I${PREFIX}/include/ -DVERSION="\"${VERSION}\"" #-DSORT_RUNTIME
+-PREFIX=	/opt/local
+-CXXFLAGS+=	-Wall -I${PREFIX}/include/ -DVERSION="\"${VERSION}\"" #-DSORT_RUNTIME
 -LDFLAGS+=	-L${PREFIX}/lib/ 
-+PREFIX?=	/usr/local
-+CXXFLAGS+=	-DVERSION="\"${VERSION}\"" #-DSORT_RUNTIME
-+#LDFLAGS+=	-L${PREFIX}/lib/ 
++#PREFIX=	/opt/local
++CXXFLAGS+=	-I${LOCALBASE}/include -DVERSION="\"${VERSION}\"" #-DSORT_RUNTIME
++LDFLAGS+=	-L${LOCALBASE}/lib
++MAKEOBJDIR=	${.CURDIR}	# ignore objwarn: in <bsd.obj.mk>
  
  id3v2:	convert.o list.o id3v2.o genre.o
--	c++ ${LDFLAGS} -pedantic -Wall -lz -lid3 -g -o $@ $^
--
--create_map: create_map.o
--	c++ -Wall -g -o $@ $^
+-	${CXX} ${LDFLAGS} -pedantic -Wall -g -o $@ $^ -lz -lid3
 +	${CXX} ${LDFLAGS} -lz -lid3 -o $@ $>
  
- install: all
--	install -c -s id3v2 ${PREFIX}/bin/id3v2
-+	${INSTALL} -c -s id3v2 ${PREFIX}/bin/id3v2
- 	nroff -man id3v2.1 > ${PREFIX}/man/man1/id3v2.1
+ create_map: create_map.o
+ 	${CXX} -Wall -g -o $@ $^
  
--clean:
--	rm -f id3v2 create_map core *.o
--
- tarball:
- 	ln -s . id3v2-${VERSION}
- 	tar zhcf id3v2-${VERSION}.tar.gz  \
-@@ -27,3 +21,4 @@
+-install: all
+-	install -c -s id3v2 ${PREFIX}/bin/id3v2
+-	nroff -man id3v2.1 > ${PREFIX}/share/man/man1/id3v2.1
++install:
++	${BSD_INSTALL_PROGRAM} id3v2 ${PREFIX}/bin
++	${BSD_INSTALL_MAN} id3v2.1 ${PREFIX}/man/man1
+ 
+ clean:
+ 	rm -f id3v2 create_map core *.o
+@@ -25,4 +26,5 @@
+ 		--exclude=id3v2-${VERSION}/id3v2-${VERSION} \
  		id3v2-${VERSION}
  	rm id3v2-${VERSION}
- 	
+-	
++
 +.include <bsd.prog.mk>
