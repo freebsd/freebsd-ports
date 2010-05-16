@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Socket-Multicast
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,7 @@ MAN3=		IO::Socket::Multicast.3
 PERL_CONFIGURE=	yes
 
 post-install:
-.ifndef(NOPORTDOCS)
+.ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
 		${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
