@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fancy
-PORTVERSION=	0.9.9
-PORTREVISION=	4
+PORTVERSION=	0.9.10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
