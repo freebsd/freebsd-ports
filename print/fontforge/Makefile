@@ -25,7 +25,7 @@ LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \
 		spiro.0:${PORTSDIR}/graphics/libspiro
 
 .if defined(FONTFORGE_WITH_TTF_DEBUGGER)
-FREETYPE_VERSION=	2.3.11
+FREETYPE_VERSION=	2.3.12
 EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 .endif
 
