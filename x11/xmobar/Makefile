@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmobar
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	x11 haskell
 PKGNAMEPREFIX=
 
@@ -19,21 +18,40 @@ USE_XORG=	x11
 EXECUTABLE=	xmobar
 STANDALONE=	yes
 
-PORTEXAMPLES=		*
-INSTALL_PORTEXAMPLES=	${INSTALL_DATA} ${WRKSRC}/xmobar.config-sample ${EXAMPLESDIR}
+PORTDATA=		*
+INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/xmobar.config-sample ${DATADIR}
 
-OPTIONS=	XFT "Enable Xft support for fonts" Off	\
-		UTF8 "Enable UTF-8 support" Off
+OPTIONS=	XFT   "Use Xft to render text (UTF-8 support included)" off \
+		UTF8  "UTF-8 support" on \
+		MPD   "mpd support" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+# Disable Linux-only options
+CONFIGURE_ARGS+=	--flags="-with_inotify -with_iwlib"
 
 .if defined(WITH_XFT)
 CONFIGURE_ARGS+=	--flags="with_xft"
-USE_HACKAGE+=		X11-xft>=0.2
-.elif defined(WITH_UTF8)
+USE_HACKAGE+=		utf8-string X11-xft>=0.2
+.else
+CONFIGURE_ARGS+=	--flags="-with_xft"
+.endif
+
+.if defined(WITH_UTF8)
 CONFIGURE_ARGS+=	--flags="with_utf8"
+.if !defined(WITH_XFT)
 USE_HACKAGE+=		utf8-string
+.endif
+.else
+CONFIGURE_ARGS+=	--flags="-with_utf8"
+.endif
+
+.if defined(WITH_MPD)
+CONFIGURE_ARGS+=	--flags="with_mpd"
+USE_HACKAGE+=		libmpd
+.else
+CONFIGURE_ARGS+=	--flags="-with_mpd"
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

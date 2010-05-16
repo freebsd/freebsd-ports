@@ -1,5 +1,5 @@
 Xmobar is a minimalistic text based status bar. Inspired by the Ion3 status
 bar, it supports similar features, like dynamic color management, output
-templates, and extensibility through plugins. 
+templates, and extensibility through plugins.
 
 WWW: http://code.haskell.org/~arossato/xmobar
