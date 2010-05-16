@@ -7,7 +7,7 @@
 
 PORTNAME=	mumble
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/Mumble/${PORTVERSION}
 
@@ -18,13 +18,14 @@ LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex \
 		celt.0:${PORTSDIR}/audio/celt \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		boost_iostreams:${PORTSDIR}/devel/boost-libs \
-		boost_python:${PORTSDIR}/devel/boost-python-libs
-BUILD_DEPENDS=	protoc:${PORTSDIR}/devel/protobuf
+		boost_python:${PORTSDIR}/devel/boost-python-libs \
+		protoc:${PORTSDIR}/devel/protobuf
 
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui svg iconengines xml sql network l10n \
-		linguist_build qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=	gui svg iconengines_run xml sql network l10n \
+		linguist_build qmake_build moc_build rcc_build uic_build \
+		opengl sql-sqlite3_run
 
 USE_XORG=	ice
 HAS_CONFIGURE=	yes
