@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mixminion
-DISTVERSION=	0.0.8alpha2
-PORTREVISION=	2
+DISTVERSION=	0.0.8alpha3
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mixminion.net/dist/${DISTVERSION}/
 
@@ -15,7 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Type III Anonymous Remailer
 
 USE_OPENSSL=	yes
-USE_PYTHON=	2.0+
+OPENSSL_LDFLAGS+=-lssl
+USE_PYTHON=	2.0-2.5
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 
@@ -32,6 +32,9 @@ OPTIONS=	SERVER "Also install the server" on
 .if !defined(WITHOUT_SERVER)
 USE_RC_SUBR+=	mixminiond
 SUB_FILES+=	pkg-message
+PLIST_SUB+=	SERVER=""
+.else
+PLIST_SUB+=	SERVER="@comment "
 .endif
 
 post-patch:
@@ -40,7 +43,7 @@ post-patch:
 post-install:
 .if !defined(WITHOUT_SERVER)
 	@${INSTALL_DATA} ${WRKSRC}/etc/mixminiond.conf \
-       		${PREFIX}/etc/mixminiond.conf.sample
+		${PREFIX}/etc/mixminiond.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/blacklist.conf \
 		${PREFIX}/etc/blacklist.conf.sample
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
