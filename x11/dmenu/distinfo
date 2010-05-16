@@ -1,3 +1,6 @@
 MD5 (dmenu-4.0.tar.gz) = 66e761a653930cc8a21614ba9fedf903
 SHA256 (dmenu-4.0.tar.gz) = c04508285e21a1fc055b76890ec47e9956d8edc4d460dbcac59f96f061b2e862
 SIZE (dmenu-4.0.tar.gz) = 8576
+MD5 (dmenu-4.0-xft.diff) = e259bf32b4ff15d345581f934ba99e46
+SHA256 (dmenu-4.0-xft.diff) = d7bbc1883453ef2d1025111fec48831f453c586007349a13ba2ab4b54177fd15
+SIZE (dmenu-4.0-xft.diff) = 8596
