@@ -1,0 +1,6 @@
+bin/scantailor
+%%DATADIR%%/translations/scantailor_bg.qm
+%%DATADIR%%/translations/scantailor_ja.qm
+%%DATADIR%%/translations/scantailor_ru.qm
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
