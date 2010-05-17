@@ -5,6 +5,7 @@ bin/googleearth
 %%DATADIR%%/PCOptimizations.ini
 %%DATADIR%%/README.linux
 %%DATADIR%%/bin/googleearth
+%%DATADIR%%/bin/browserwrapper
 %%DATADIR%%/drivers.ini
 %%DATADIR%%/googleearth-bin
 %%DATADIR%%/googleearth-icon.png

@@ -1,0 +1,23 @@
+Index: bin/googleearth
+@@ -34,11 +34,21 @@ FindPath()
+     dirname $fullpath
+ }
+ 
++ulimit -s 32768 2>/dev/null
++
+ # Set the home if not already set.
+ if [ "${GOOGLEEARTH_DATA_PATH}" = "" ]; then
+     GOOGLEEARTH_DATA_PATH="`FindPath $0`"
+ fi
+ 
++# For browser wrapper script (to use original LD_LIBRARY_PATH)
++if [ -n "${BROWSER}" ]
++then
++	export REAL_BROWSER="${BROWSER}"
++	export REAL_LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"
++	export BROWSER=${GOOGLEEARTH_DATA_PATH}/bin/browserwrapper
++fi
++
+ LD_LIBRARY_PATH=.:${GOOGLEEARTH_DATA_PATH}:${LD_LIBRARY_PATH}
+ export LD_LIBRARY_PATH
+ 
