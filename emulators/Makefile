@@ -96,6 +96,7 @@
     SUBDIR += lisaem
     SUBDIR += loemu
     SUBDIR += m2000
+    SUBDIR += mame
     SUBDIR += mame-extras
     SUBDIR += mastergear
     SUBDIR += mednafen
@@ -147,7 +148,6 @@
     SUBDIR += quasi88
     SUBDIR += raine
     SUBDIR += rtc
-    SUBDIR += sdlmame
     SUBDIR += sdlmame-devel
     SUBDIR += sdlmess
     SUBDIR += sim6811
