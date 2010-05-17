@@ -19,10 +19,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GTK+
 
-BUILD_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS=	\
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject
-RUN_DEPENDS=	${PYNUMPY} \
+RUN_DEPENDS=	\
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject
 
@@ -44,6 +44,18 @@ EG_SRC_DIR=	${WRKSRC}/examples
 EXAMPLESDIR=	${PREFIX}/share/examples/py-gtk
 
 CONFLICTS=	py*-gtk-0*
+
+OPTIONS=	NUMPY "Enable numpy support (pulls in gcc44)" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_NYMPY)
+BUILD_DEPENDS+=	${PYNUMPY}
+RUN_DEPENDS+=	${PYNUMPY}
+CONFIGURE_ARGS+=--enable-numpy
+.else
+CONFIGURE_ARGS+=--disable-numpy
+.endif
 
 #
 # Use the same way as the Python port to determine if we want
@@ -74,4 +86,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/THREADS ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
