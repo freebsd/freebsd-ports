@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-settings
 PORTVERSION=	4.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://www.xfce.org/archive/src/xfce/xfce4-settings/4.6/
 DIST_SUBDIR=	xfce4
@@ -44,7 +44,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|Rodent|Tango|g' \
 		${WRKSRC}/dialogs/appearance-settings/main.c \
 		${WRKSRC}/xfsettingsd/xsettings.xml
-	@${REINPLACE_CMD} -e 's|xkl_config_registry_load (settings->priv->xkl_registry)|xkl_config_registry_load (settings->priv->xkl_registry, FALSE)|g' \
+	@${REINPLACE_CMD} -e 's|xkl_config_registry_load (settings->priv->xkl_registry)|xkl_config_registry_load (settings->priv->xkl_registry, FALSE)|g; \
+		s|xkl_engine_stop_listen (settings->priv->xkl_engine)|xkl_engine_stop_listen (settings->priv->xkl_engine, FALSE)|g' \
 		${WRKSRC}/dialogs/keyboard-settings/xfce-keyboard-settings.c
 
 .include <bsd.port.post.mk>
