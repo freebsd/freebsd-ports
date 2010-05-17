@@ -7,7 +7,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	3.1.51r25618
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -144,10 +144,10 @@ do-install:
 	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxClient ${PREFIX}/sbin/
 
 	${MKDIR} ${VIDEODIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_16.so ${VIDEODIR}/vboxvideo_drv.so
+	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_17.so ${VIDEODIR}/vboxvideo_drv.so
 
 	${MKDIR} ${INPUTDIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_16.so ${INPUTDIR}/vboxmouse_drv.so
+	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_17.so ${INPUTDIR}/vboxmouse_drv.so
 .endif
 
 .if !defined(WITHOUT_HAL)
