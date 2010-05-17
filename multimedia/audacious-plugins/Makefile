@@ -274,7 +274,13 @@ PLIST_SUB+=	PARANORMALPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_NEON)
-LIB_DEPENDS+= neon.28:${PORTSDIR}/www/neon28
+.if exists(${LOCALBASE}/bin/neon-config)
+NEON_VER!=	${LOCALBASE}/bin/neon-config --version | \
+		${SED} -n -E  's/^neon [0-9]+\.([0-9]+)\..*$$/\1/p'
+.else
+NEON_VER=	29
+.endif
+LIB_DEPENDS+=	neon.${NEON_VER}:${PORTSDIR}/www/neon${NEON_VER}
 CONFIGURE_ARGS+=--enable-neon
 PLIST_SUB+=	NEONPLUGIN=""
 .else
