@@ -1,0 +1,22 @@
+--- eieio/eieio.texi.orig	2010-05-17 19:25:52.000000000 +0200
++++ eieio/eieio.texi	2010-05-17 19:26:35.000000000 +0200
+@@ -10,8 +10,8 @@
+ @c See the comments at the end of this document.
+ @c they need to be integrated into the text of this manual.
+ @c
+-@setfilename eieio.info
+-@set TITLE Enhanced Implementation of Emacs Interpreted Objects
++@setfilename eieio-cedet.info
++@set TITLE Enhanced Implementation of Emacs Interpreted Objects (cedet version)
+ @set AUTHOR Eric M. Ludlam
+ @settitle @value{TITLE}
+ 
+@@ -38,7 +38,7 @@
+ @ifinfo
+ @format
+ START-INFO-DIR-ENTRY
+-* eieio: (eieio).       Objects for Emacs
++* eieio-cedet: (eieio).       Objects for Emacs
+ END-INFO-DIR-ENTRY
+ @end format
+ @end ifinfo

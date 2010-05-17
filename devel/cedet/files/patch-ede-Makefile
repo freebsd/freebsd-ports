@@ -1,6 +1,6 @@
---- ede/Makefile.orig	2010-05-04 22:49:33.000000000 +0200
-+++ ede/Makefile	2010-05-04 22:49:53.000000000 +0200
-@@ -23,7 +23,7 @@
+--- ede/Makefile.orig	2010-05-17 08:36:43.000000000 +0200
++++ ede/Makefile	2010-05-17 08:38:03.000000000 +0200
+@@ -23,13 +23,13 @@
  projects_LISP=project-am.el ede-simple.el ede-cpp-root.el ede-emacs.el ede-linux.el
  aux-lisp_LISP=autoconf-edit.el autoconf-compat.el makefile-edit.el
  ede_info_TEXINFOS=ede.texi ede-projects.texi ede-targets.texi ede-sourcecode.texi ede-compilers.texi
@@ -9,3 +9,31 @@
  VERSION=1.0pre7
  DISTDIR=$(top)EDE-$(VERSION)
  
+ 
+ 
+-all: autoloads init ede proj-project projects aux-lisp ede.info EDE_Templates
++all: autoloads init ede proj-project projects aux-lisp ede-cedet.info EDE_Templates
+ 
+ .PHONY: autoloads
+ autoloads: 
+@@ -97,7 +97,7 @@
+ 	@echo "(setq debug-on-error t)" >> $@-compile-script
+ 	"$(EMACS)" $(EMACSFLAGS) -l $@-compile-script -f batch-byte-compile $^
+ 
+-ede.info: $(ede_info_TEXINFOS)
++ede-cedet.info: $(ede_info_TEXINFOS)
+ 	$(MAKEINFO) $<
+ 
+ .PHONY:EDE_Templates
+@@ -113,9 +113,9 @@
+ 
+ .PHONY: dist
+ 
+-dist: autoloads ede.info
++dist: autoloads ede-cedet.info
+ 	mkdir $(DISTDIR)
+-	cp ede-loaddefs.el $(init_LISP) $(ede_LISP) $(proj-project_LISP) $(projects_LISP) $(aux-lisp_LISP) $(misc_AUX) $(ede_info_TEXINFOS) ede.info* $(ede_FILES) $(DISTDIR)
++	cp ede-loaddefs.el $(init_LISP) $(ede_LISP) $(proj-project_LISP) $(projects_LISP) $(aux-lisp_LISP) $(misc_AUX) $(ede_info_TEXINFOS) ede-cedet.info* $(ede_FILES) $(DISTDIR)
+ 	$(MAKE) -C templates $(MFLAGS) DISTDIR=$(DISTDIR)/templates dist
+ 
+ Makefile: Project.ede

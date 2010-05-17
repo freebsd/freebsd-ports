@@ -1,0 +1,21 @@
+--- semantic/doc/semantic.texi.orig	2010-05-17 19:00:23.000000000 +0200
++++ semantic/doc/semantic.texi	2010-05-17 19:01:54.000000000 +0200
+@@ -1,7 +1,7 @@
+ \input texinfo  @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename semantic.info
+-@set TITLE  Semantic Manual
++@setfilename semantic-cedet.info
++@set TITLE  Semantic Manual (cedet version)
+ @set AUTHOR Eric M. Ludlam, David Ponce, and Richard Y. Kim
+ @settitle @value{TITLE}
+ 
+@@ -44,7 +44,7 @@
+ @ifinfo
+ @dircategory Emacs
+ @direntry
+-* Semantic: (semantic).	Infrastructure for parser based text analysis.
++* Semantic-cedet: (semantic).	Infrastructure for parser based text analysis.
+ @end direntry
+ @end ifinfo
+ 
