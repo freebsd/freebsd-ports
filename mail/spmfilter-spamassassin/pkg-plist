@@ -1,0 +1,5 @@
+bin/smf-spamq
+bin/smf-spamctl
+lib/spmfilter/libspamassassin.so
+lib/spmfilter/libspamassassin.so.0.1
+@dirrmtry lib/spmfilter

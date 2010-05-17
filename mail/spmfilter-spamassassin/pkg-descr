@@ -1,0 +1,6 @@
+spmfilter-spamassassin is a plugin for spmfilter that enables spmfilter to 
+spam-check emails with the help of the daemonized version of Spamassassin 
+(spamd). The major goal of this plugin is to provide an easy way for 
+spam-checking messages.
+
+WWW: http://www.spmfilter.org/
