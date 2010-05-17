@@ -4393,3 +4393,4 @@ x11/kdelibs4-experimental|x11/kdelibs4|2010-05-11|Now integrated to x11/kdelibs4
 www/mod_extract_forwarded2||2010-05-12|Use www/mod_extract_forwarded instead
 misc/ldconfig_compat||2010-05-14|Supported releases don't need the port anymore
 devel/nx||2010-05-14|Remove due math/py-networkx be the same port and with more appropriated name
+math/libranlib|math/librandlib|2010-05-17|Project renamed
