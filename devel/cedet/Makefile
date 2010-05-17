@@ -7,6 +7,7 @@
 
 PORTNAME=	cedet
 PORTVERSION=	1.0.p7
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.0pre7
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -21,13 +22,13 @@ USE_GMAKE=		yes
 
 CEDET_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
-INFO=		bovine cogre ede eieio grammar-fw semantic \
+INFO=		bovine cogre ede-cedet eieio-cedet grammar-fw semantic-cedet \
 		semantic-appdev semantic-langdev semantic-user \
 		wisent speedbar-cedet srecode
 
 SEMANTIC_ELISP_SUBDIRS=	bovine wisent
 SEMANTIC_INFOS=	bovine.info grammar-fw.info semantic-appdev.info \
-		semantic-langdev.info semantic-user.info semantic.info \
+		semantic-langdev.info semantic-user.info semantic-cedet.info \
 		wisent.info
 
 CONFLICTS=	eieio-[0-9]* semantic-[0-9]* speedbar-[0-9]*
@@ -67,14 +68,14 @@ do-install:
 .for i in *.el *.elc
 	${INSTALL_DATA} ${WRKSRC}/ede/${i} ${CEDET_LISPDIR}/ede
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/ede/ede.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/ede/ede-cedet.info ${PREFIX}/info
 
 # eieio
 	${MKDIR} ${CEDET_LISPDIR}/eieio
 .for i in *.el *.elc
 	${INSTALL_DATA} ${WRKSRC}/eieio/${i} ${CEDET_LISPDIR}/eieio
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/eieio/eieio.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/eieio/eieio-cedet.info ${PREFIX}/info
 
 # semantic
 	${MKDIR} ${CEDET_LISPDIR}/semantic
