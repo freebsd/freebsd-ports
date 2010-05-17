@@ -160,7 +160,7 @@
     SUBDIR += libneural
     SUBDIR += liborigin
     SUBDIR += libqalculate
-    SUBDIR += libranlib
+    SUBDIR += librandlib
     SUBDIR += libranlip
     SUBDIR += libtommath
     SUBDIR += linalg
