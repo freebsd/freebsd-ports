@@ -45,6 +45,7 @@ USE_RC_SUBR=	hpssd
 MAKE_JOBS_SAFE=	yes
 SUB_FILES=	pkg-message
 USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=.+\.(c|cpp|h|py)$
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
