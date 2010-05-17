@@ -7,6 +7,7 @@
 
 PORTNAME=	aaphoto
 PORTVERSION=	0.37
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://log69.com/downloads/
 DISTNAME=	${PORTNAME}_sources_v${PORTVERSION}
@@ -25,10 +26,26 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/aaphoto
+PORTDOCS=	AUTHORS ChangeLog COPYING COPYRIGHT INSTALL LICENSE \
+		NEWS README TODO
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+CFLAGS+=	-fno-openmp -Wno-unknown-pragmas -U__OPENMP__
+.endif
 
 do-install:
 .for FILE in aaphoto
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/bin
 .endfor
 
-.include <bsd.port.mk>
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
