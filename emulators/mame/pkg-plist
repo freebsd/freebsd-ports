@@ -1,15 +1,16 @@
-bin/sdlmame
-libexec/sdlmame/chdman
-libexec/sdlmame/ldverify
-libexec/sdlmame/ldresample
-libexec/sdlmame/testkeys
-%%PORTDOCS%%%%DOCSDIR%%/SDLMAME.txt
+bin/mame
+libexec/mame/chdman
+libexec/mame/ldresample
+libexec/mame/ldverify
+libexec/mame/romcmp
+libexec/mame/testkeys
+libexec/mame/unidasm
 %%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
-%%DATADIR%%/ui.bdf
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
 %%DATADIR%%/keymaps/km-be.txt
 %%DATADIR%%/keymaps/km-ch.txt
 %%DATADIR%%/keymaps/km-de.txt
@@ -19,7 +20,7 @@ libexec/sdlmame/testkeys
 %%EXAMPLESDIR%%/mame.ini
 @dirrm %%DATADIR%%/keymaps/
 @dirrm %%DATADIR%%/
-@dirrm libexec/sdlmame
+@dirrm libexec/mame
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
