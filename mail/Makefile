@@ -646,6 +646,7 @@
     SUBDIR += spamstats
     SUBDIR += spfval
     SUBDIR += spmfilter
+    SUBDIR += spmfilter-spamassassin
     SUBDIR += spruce
     SUBDIR += sqlgrey
     SUBDIR += squirrelmail
