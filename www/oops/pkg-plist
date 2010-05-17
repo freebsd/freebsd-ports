@@ -57,6 +57,7 @@ sbin/oopsctl
 @dirrmtry oops/logs
 @dirrmtry oops/storages
 @dirrmtry oops
+@cwd /
 @dirrmtry /var/log/oops
 @unexec rm -f /var/run/oops/oopsctl 2>/dev/null || true
 @unexec rm -f /var/run/oops/oops_statfile 2>/dev/null || true
