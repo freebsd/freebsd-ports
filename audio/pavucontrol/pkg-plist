@@ -1,24 +1,115 @@
 bin/pavucontrol
+lib/locale/as/LC_MESSAGES/pavucontrol.mo
+lib/locale/bn_IN/LC_MESSAGES/pavucontrol.mo
+lib/locale/ca/LC_MESSAGES/pavucontrol.mo
+lib/locale/cs/LC_MESSAGES/pavucontrol.mo
+lib/locale/da/LC_MESSAGES/pavucontrol.mo
 lib/locale/de/LC_MESSAGES/pavucontrol.mo
 lib/locale/el/LC_MESSAGES/pavucontrol.mo
+lib/locale/es/LC_MESSAGES/pavucontrol.mo
+lib/locale/fi/LC_MESSAGES/pavucontrol.mo
 lib/locale/fr/LC_MESSAGES/pavucontrol.mo
+lib/locale/gu/LC_MESSAGES/pavucontrol.mo
+lib/locale/hi/LC_MESSAGES/pavucontrol.mo
 lib/locale/hu/LC_MESSAGES/pavucontrol.mo
+lib/locale/it/LC_MESSAGES/pavucontrol.mo
+lib/locale/ja/LC_MESSAGES/pavucontrol.mo
+lib/locale/kn/LC_MESSAGES/pavucontrol.mo
+lib/locale/ml/LC_MESSAGES/pavucontrol.mo
+lib/locale/mr/LC_MESSAGES/pavucontrol.mo
+lib/locale/nl/LC_MESSAGES/pavucontrol.mo
+lib/locale/or/LC_MESSAGES/pavucontrol.mo
+lib/locale/pa/LC_MESSAGES/pavucontrol.mo
 lib/locale/pl/LC_MESSAGES/pavucontrol.mo
+lib/locale/pt/LC_MESSAGES/pavucontrol.mo
+lib/locale/pt_BR/LC_MESSAGES/pavucontrol.mo
+lib/locale/ru/LC_MESSAGES/pavucontrol.mo
+lib/locale/sk/LC_MESSAGES/pavucontrol.mo
+lib/locale/sr/LC_MESSAGES/pavucontrol.mo
+lib/locale/sr@latin/LC_MESSAGES/pavucontrol.mo
 lib/locale/sv/LC_MESSAGES/pavucontrol.mo
+lib/locale/ta/LC_MESSAGES/pavucontrol.mo
+lib/locale/te/LC_MESSAGES/pavucontrol.mo
+lib/locale/th/LC_MESSAGES/pavucontrol.mo
+lib/locale/tr/LC_MESSAGES/pavucontrol.mo
+lib/locale/uk/LC_MESSAGES/pavucontrol.mo
+lib/locale/zh_CN/LC_MESSAGES/pavucontrol.mo
 share/applications/pavucontrol.desktop
+share/doc/pavucontrol/README
+share/doc/pavucontrol/README.html
+share/doc/pavucontrol/style.css
 %%DATADIR%%/pavucontrol.glade
 @dirrm %%DATADIR%%
+@dirrm share/doc/pavucontrol
 @dirrmtry share/applications
-@dirrmtry lib/locale/de/LC_MESSAGES
-@dirrmtry lib/locale/de
-@dirrmtry lib/locale/el/LC_MESSAGES
-@dirrmtry lib/locale/el
-@dirrmtry lib/locale/fr/LC_MESSAGES
-@dirrmtry lib/locale/fr
-@dirrmtry lib/locale/hu/LC_MESSAGES
-@dirrmtry lib/locale/hu
-@dirrmtry lib/locale/pl/LC_MESSAGES
-@dirrmtry lib/locale/pl
+@dirrm lib/locale/zh_CN/LC_MESSAGES
+@dirrm lib/locale/zh_CN
+@dirrm lib/locale/uk/LC_MESSAGES
+@dirrm lib/locale/uk
+@dirrm lib/locale/tr/LC_MESSAGES
+@dirrm lib/locale/tr
+@dirrm lib/locale/th/LC_MESSAGES
+@dirrm lib/locale/th
+@dirrm lib/locale/te/LC_MESSAGES
+@dirrm lib/locale/te
+@dirrm lib/locale/ta/LC_MESSAGES
+@dirrm lib/locale/ta
 @dirrmtry lib/locale/sv/LC_MESSAGES
 @dirrmtry lib/locale/sv
+@dirrm lib/locale/sr@latin/LC_MESSAGES
+@dirrm lib/locale/sr@latin
+@dirrm lib/locale/sr/LC_MESSAGES
+@dirrm lib/locale/sr
+@dirrm lib/locale/sk/LC_MESSAGES
+@dirrm lib/locale/sk
+@dirrm lib/locale/ru/LC_MESSAGES
+@dirrm lib/locale/ru
+@dirrm lib/locale/pt_BR/LC_MESSAGES
+@dirrm lib/locale/pt_BR
+@dirrm lib/locale/pt/LC_MESSAGES
+@dirrm lib/locale/pt
+@dirrmtry lib/locale/pl/LC_MESSAGES
+@dirrmtry lib/locale/pl
+@dirrm lib/locale/pa/LC_MESSAGES
+@dirrm lib/locale/pa
+@dirrm lib/locale/or/LC_MESSAGES
+@dirrm lib/locale/or
+@dirrm lib/locale/nl/LC_MESSAGES
+@dirrm lib/locale/nl
+@dirrm lib/locale/mr/LC_MESSAGES
+@dirrm lib/locale/mr
+@dirrm lib/locale/ml/LC_MESSAGES
+@dirrm lib/locale/ml
+@dirrm lib/locale/kn/LC_MESSAGES
+@dirrm lib/locale/kn
+@dirrm lib/locale/ja/LC_MESSAGES
+@dirrm lib/locale/ja
+@dirrm lib/locale/it/LC_MESSAGES
+@dirrm lib/locale/it
+@dirrmtry lib/locale/hu/LC_MESSAGES
+@dirrmtry lib/locale/hu
+@dirrm lib/locale/hi/LC_MESSAGES
+@dirrm lib/locale/hi
+@dirrm lib/locale/gu/LC_MESSAGES
+@dirrm lib/locale/gu
+@dirrmtry lib/locale/fr/LC_MESSAGES
+@dirrmtry lib/locale/fr
+@dirrm lib/locale/fi/LC_MESSAGES
+@dirrm lib/locale/fi
+@dirrm lib/locale/es/LC_MESSAGES
+@dirrm lib/locale/es
+@dirrmtry lib/locale/el/LC_MESSAGES
+@dirrmtry lib/locale/el
+@dirrmtry lib/locale/de/LC_MESSAGES
+@dirrmtry lib/locale/de
+@dirrm lib/locale/da/LC_MESSAGES
+@dirrm lib/locale/da
+@dirrm lib/locale/cs/LC_MESSAGES
+@dirrm lib/locale/cs
+@dirrm lib/locale/ca/LC_MESSAGES
+@dirrm lib/locale/ca
+@dirrm lib/locale/bn_IN/LC_MESSAGES
+@dirrm lib/locale/bn_IN
+@dirrm lib/locale/as/LC_MESSAGES
+@dirrm lib/locale/as
 @dirrmtry lib/locale
