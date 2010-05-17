@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-DISTVERSION=	0.11.6
+DISTVERSION=	0.12.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/ \
 		http://voodoo.bawue.com/download/
@@ -21,6 +21,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 OPTIONS=	MYSQL "Enable MySQL support." Off \
 		PGSQL "Enable PostgreSQL support." Off \
 		SQLITE "Enable SQLite support." Off \
+		THREADS "Enable multi-threading." Off \
 		MMAP  "Enable mmap(2) support." On \
 		LAYER2 "Enable Layer-2 support: MAC Adresses and VLANs" On \
 		IPV6  "Enable IPv6 support." On
@@ -73,6 +74,12 @@ CONFIGURE_ARGS+=--enable-l2
 CONFIGURE_ARGS+=--disable-ipv6
 .else
 CONFIGURE_ARGS+=--enable-ipv6
+.endif
+
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=--enable-threads
+.else
+CONFIGURE_ARGS+=--disable-threads
 .endif
 
 post-patch:
