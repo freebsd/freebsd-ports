@@ -7,7 +7,7 @@
 
 PORTNAME=	loemu
 PORTVERSION=	0.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators python
 MASTER_SITES=	http://loemu.pegueroles.com/dists/
 
@@ -23,15 +23,15 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 NO_BUILD=		yes
 
-OPTIONS=	SDLMAME	"Install sdlmame emulator"	on \
+OPTIONS=	MAME	"Install mame emulator"	on \
 		XMAME	"Install xmame emulator"	off \
 		SNES9X	"Install snes9x emulator"	on \
 		ZSNES	"Install zsnes emulator"	off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_SDLMAME)
-RUN_DEPENDS+=	sdlmame:${PORTSDIR}/emulators/sdlmame
+.if !defined(WITHOUT_MAME)
+RUN_DEPENDS+=	mame:${PORTSDIR}/emulators/mame
 .endif
 
 .if defined(WITH_XMAME)
