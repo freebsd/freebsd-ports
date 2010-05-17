@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://biostatistics.mdanderson.org/SoftwareDownload/ProductDownloadFiles/
 DISTNAME=	RANDLIB_V90
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf1783@gmail.com
 COMMENT=	Library of Routines for Random Number Generation
 
 USE_LDCONFIG=	yes
