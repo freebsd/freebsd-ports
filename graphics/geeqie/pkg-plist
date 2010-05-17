@@ -38,6 +38,8 @@ share/locale/ro/LC_MESSAGES/geeqie.mo
 share/locale/ru/LC_MESSAGES/geeqie.mo
 share/locale/sk/LC_MESSAGES/geeqie.mo
 share/locale/sl/LC_MESSAGES/geeqie.mo
+share/locale/sr/LC_MESSAGES/geeqie.mo
+share/locale/sr@latin/LC_MESSAGES/geeqie.mo
 share/locale/sv/LC_MESSAGES/geeqie.mo
 share/locale/th/LC_MESSAGES/geeqie.mo
 share/locale/tr/LC_MESSAGES/geeqie.mo
@@ -46,6 +48,8 @@ share/locale/vi/LC_MESSAGES/geeqie.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/geeqie.mo
 share/locale/zh_TW/LC_MESSAGES/geeqie.mo
 share/pixmaps/geeqie.png
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrm %%DATADIR%%/applications
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
