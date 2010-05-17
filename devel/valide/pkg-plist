@@ -1,29 +1,149 @@
+bin/ctags-vala
 bin/valide
+include/valide-0.7/libvalide/valide-0.0.h
+include/valide-0.7/plugins/advanced-search/advanced-search.h
+include/valide-0.7/plugins/completion/completion.h
+include/valide-0.7/plugins/file-browser/file-browser.h
+include/valide-0.7/plugins/make/make.h
+include/valide-0.7/plugins/opened-documents/opened-documents.h
+include/valide-0.7/plugins/start-page/start-page.h
+include/valide-0.7/plugins/symbol/symbol.h
+include/valide-0.7/plugins/todo/todo.h
+include/valide-0.7/plugins/waf/waf.h
+lib/libvalide-0.0.so
+lib/libvalide-0.0.so.0
+lib/libvalide-0.0.so.0.7.0
+lib/valide/plugins/advanced-search/advanced-search.valide-plugin
+lib/valide/plugins/advanced-search/libadvanced-search.so
+lib/valide/plugins/completion/completion.valide-plugin
+lib/valide/plugins/completion/libcompletion.so
+lib/valide/plugins/file-browser/file-browser.valide-plugin
+lib/valide/plugins/file-browser/libfile-browser.so
+lib/valide/plugins/make/libmake.so
+lib/valide/plugins/make/make.valide-plugin
+lib/valide/plugins/opened-documents/libopened-documents.so
+lib/valide/plugins/opened-documents/opened-documents.valide-plugin
+lib/valide/plugins/start-page/libstart-page.so
+lib/valide/plugins/start-page/logo.png
+lib/valide/plugins/start-page/start-page.valide-plugin
+lib/valide/plugins/symbol/libsymbol.so
+lib/valide/plugins/symbol/symbol.valide-plugin
+lib/valide/plugins/todo/libtodo.so
+lib/valide/plugins/todo/todo.valide-plugin
+lib/valide/plugins/waf/libwaf.so
+lib/valide/plugins/waf/waf.valide-plugin
+share/applications/valide.desktop
+share/icons/hicolor/48x48/mimetypes/application-x-vide.png
+share/locale/es/LC_MESSAGES/valide.mo
+share/locale/fr/LC_MESSAGES/valide.mo
+share/locale/it/LC_MESSAGES/valide.mo
+share/locale/ru/LC_MESSAGES/valide.mo
+share/mime/application/x-vide.xml
+share/mime/packages/x-vide.xml
 share/pixmaps/valide/icone-16.xpm
 share/pixmaps/valide/icone-32.xpm
 share/pixmaps/valide/icone-48.xpm
 share/pixmaps/valide/icone-64.xpm
+share/pixmaps/valide/icone.xcf
 share/pixmaps/valide/logo.png
+share/pixmaps/valide/logo.xcf
+share/pixmaps/valide/plugins/symbol-browser.png
+share/pixmaps/valide/plugins/todo.png
+share/pixmaps/valide/pref-compiler.png
+share/pixmaps/valide/pref-executable.png
 share/pixmaps/valide/pref-general.png
 share/pixmaps/valide/pref-pkg.png
+share/pixmaps/valide/symbols/class.png
+share/pixmaps/valide/symbols/constructor.png
+share/pixmaps/valide/symbols/delegate.png
+share/pixmaps/valide/symbols/enum.png
+share/pixmaps/valide/symbols/enumvalue.png
+share/pixmaps/valide/symbols/errorcode.png
+share/pixmaps/valide/symbols/errordomain.png
+share/pixmaps/valide/symbols/field.png
+share/pixmaps/valide/symbols/function.png
+share/pixmaps/valide/symbols/interface.png
+share/pixmaps/valide/symbols/method.png
+share/pixmaps/valide/symbols/namespace.png
+share/pixmaps/valide/symbols/property.png
+share/pixmaps/valide/symbols/signal.png
+share/pixmaps/valide/symbols/struct.png
+share/pixmaps/valide/symbols/variable.png
+share/vala/vapi/advanced-search.deps
+share/vala/vapi/advanced-search.vapi
+share/vala/vapi/completion.deps
+share/vala/vapi/completion.vapi
+share/vala/vapi/file-browser.deps
+share/vala/vapi/file-browser.vapi
+share/vala/vapi/make.deps
+share/vala/vapi/make.vapi
+share/vala/vapi/opened-documents.deps
+share/vala/vapi/opened-documents.vapi
+share/vala/vapi/start-page.deps
+share/vala/vapi/start-page.vapi
+share/vala/vapi/symbol.deps
+share/vala/vapi/symbol.vapi
+share/vala/vapi/todo.deps
+share/vala/vapi/todo.vapi
+share/vala/vapi/valide-0.0.deps
+share/vala/vapi/valide-0.0.vapi
+share/vala/vapi/waf.deps
+share/vala/vapi/waf.vapi
+%%DATADIR%%/AUTHORS
 %%DATADIR%%/template/cmd/icon.png
+%%DATADIR%%/template/cmd/main.gs
 %%DATADIR%%/template/cmd/main.vala
-%%DATADIR%%/template/cmd/template.xml
+%%DATADIR%%/template/cmd/template.yml
 %%DATADIR%%/template/empty/icon.png
-%%DATADIR%%/template/empty/template.xml
+%%DATADIR%%/template/empty/template.yml
 %%DATADIR%%/template/gnome/icon.png
+%%DATADIR%%/template/gnome/main.gs
 %%DATADIR%%/template/gnome/main.vala
-%%DATADIR%%/template/gnome/template.xml
+%%DATADIR%%/template/gnome/template.yml
 %%DATADIR%%/template/gtk/icon.png
+%%DATADIR%%/template/gtk/main.gs
 %%DATADIR%%/template/gtk/main.vala
-%%DATADIR%%/template/gtk/template.xml
-%%DATADIR%%/valide-ui.xml
-%%DATADIR%%/COPYING
-@dirrm %%DATADIR%%/template/cmd
-@dirrm %%DATADIR%%/template/empty
-@dirrm %%DATADIR%%/template/gnome
+%%DATADIR%%/template/gtk/template.yml
+%%DATADIR%%/template/opengl/icon.png
+%%DATADIR%%/template/opengl/main.vala
+%%DATADIR%%/template/opengl/template.yml
+%%DATADIR%%/template/sdl/icon.png
+%%DATADIR%%/template/sdl/main.gs
+%%DATADIR%%/template/sdl/main.vala
+%%DATADIR%%/template/sdl/template.yml
+%%DATADIR%%/template/sdl/valide.bmp
+@dirrm %%DATADIR%%/template/sdl
+@dirrm %%DATADIR%%/template/opengl
 @dirrm %%DATADIR%%/template/gtk
+@dirrm %%DATADIR%%/template/gnome
+@dirrm %%DATADIR%%/template/empty
+@dirrm %%DATADIR%%/template/cmd
 @dirrm %%DATADIR%%/template
 @dirrm %%DATADIR%%
+@dirrm share/pixmaps/valide/symbols
+@dirrm share/pixmaps/valide/plugins
 @dirrm share/pixmaps/valide
-@dirrmtry lib/locale
+@dirrm share/applications
+@dirrm lib/valide/plugins/waf
+@dirrm lib/valide/plugins/todo
+@dirrm lib/valide/plugins/symbol
+@dirrm lib/valide/plugins/start-page
+@dirrm lib/valide/plugins/opened-documents
+@dirrm lib/valide/plugins/make
+@dirrm lib/valide/plugins/file-browser
+@dirrm lib/valide/plugins/completion
+@dirrm lib/valide/plugins/advanced-search
+@dirrm lib/valide/plugins
+@dirrm lib/valide
+@dirrm include/valide-0.7/plugins/waf
+@dirrm include/valide-0.7/plugins/todo
+@dirrm include/valide-0.7/plugins/symbol
+@dirrm include/valide-0.7/plugins/start-page
+@dirrm include/valide-0.7/plugins/opened-documents
+@dirrm include/valide-0.7/plugins/make
+@dirrm include/valide-0.7/plugins/file-browser
+@dirrm include/valide-0.7/plugins/completion
+@dirrm include/valide-0.7/plugins/advanced-search
+@dirrm include/valide-0.7/plugins
+@dirrm include/valide-0.7/libvalide
+@dirrm include/valide-0.7

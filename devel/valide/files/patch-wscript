@@ -1,0 +1,21 @@
+
+$FreeBSD$
+
+--- wscript.orig
++++ wscript
+@@ -101,11 +101,12 @@
+   conf.define ('LOCALE_DIR', prefix + '/share/locale/')
+   conf.define ('PIXMAPS_DIR', prefix + '/share/pixmaps/' + APPNAME)
+ 
+-  if prefix != '/usr' and prefix != '/usr/local' and prefix != '/usr/' and prefix != '/usr/local/':
+-    prefix = (os.getenv ('HOME') or os.getenv('USERPROFILE')) + '/.local'
++  # Don't f*** up the install when using 'port test'
++  #if prefix != '/usr' and prefix != '/usr/local' and prefix != '/usr/' and prefix != '/usr/local/':
++  #  prefix = (os.getenv ('HOME') or os.getenv('USERPROFILE')) + '/.local'
+ 
+   conf.define ('DESKTOP_DIR', prefix + '/share/applications/')
+-  conf.define ('MAN_DIR', prefix + '/share/man/')
++  conf.define ('MAN_DIR', prefix + '/man/')
+   conf.define ('MIME_DIR', prefix + '/share/mime/')
+   conf.define ('MIME_ICON_DIR', prefix + '/share/icons/hicolor/48x48/mimetypes')
+ 
