@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	openjdk6
-PORTVERSION=	b17
-PORTREVISION=	2
+PORTVERSION=	b19
+PORTREVISION=	0
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	14_oct_2009
+OPENJDK_BUILDDATE=	15_apr_2010
 
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
@@ -216,11 +216,11 @@ test: build-depends build
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/openjdk6/
-	${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/ ${PREFIX}/openjdk6/
+	@${MKDIR} ${PREFIX}/openjdk6/
+	@${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/ ${PREFIX}/openjdk6/
 .if defined(WITH_FASTDEBUG)
-	${MKDIR} ${PREFIX}/openjdk6-fastdebug/
-	${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}-fastdebug/j2sdk-image/ ${PREFIX}/openjdk6-fastdebug/
+	@${MKDIR} ${PREFIX}/openjdk6-fastdebug/
+	@${CP} -Rp ${WRKSRC}/build/${OPENJDK_OSARCH}-fastdebug/j2sdk-image/ ${PREFIX}/openjdk6-fastdebug/
 .endif
 	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/openjdk6/bin/java" >> ${TMPPLIST}
 	@${FIND} -s ${PREFIX}/openjdk6 -not -type d | \
@@ -240,10 +240,11 @@ do-install:
 .endif
 
 post-install:
-	# Register the VM
-	"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6/bin/java # OpenJDK6"
+	@# Register the VM
+	@"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6/bin/java # OpenJDK6"
 .if defined(WITH_FASTDEBUG)
-	"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"
+	@"${LOCALBASE}/bin/registervm" "${PREFIX}/openjdk6-fastdebug/bin/java # OpenJDK6"
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
