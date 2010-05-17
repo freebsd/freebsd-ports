@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ocp
-PORTVERSION=	0.1.18
-PORTREVISION=	1
+PORTVERSION=	0.1.20
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.cubic.org/ocp/ \
@@ -28,6 +27,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
+WANT_GNOME=	desktopfileutils
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -40,7 +40,10 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
 CONFIGURE_ARGS=	--with-dir-suffix="" \
+		--without-alsa \
 		--libdir=${LOCALBASE}/lib
+
+INFO=		ocp
 
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
@@ -60,8 +63,6 @@ OPTIONS=	ADPLUG "Build with adplug support" on \
 		X11    "Build with X11 support" on \
 		SDL    "Build with SDL support" on
 
-PORTSCOUT=	skipv:0.1.19
-
 .include <bsd.port.pre.mk>
 
 .if exists(${TIMIDITY_CFG}) || !defined(WITHOUT_MIDI)
@@ -72,14 +73,10 @@ RUN_DEPENDS+=	${TIMIDITY_CFG}:${PORTSDIR}/audio/eawpats
 CONFIGURE_ARGS+=	--without-x11
 PLIST_SUB+=		XORG="@comment "
 .else
-USE_XORG=	xxf86dga xxf86vm xpm
+USE_XORG=		xxf86dga xxf86vm xpm
+USE_GNOME=		desktopfileutils
 CONFIGURE_ARGS+=	--with-x11=yes
 PLIST_SUB+=		XORG=""
-.endif
-
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--with-debug
-EXTRA_PATCHES+=		${PATCHDIR}/extrapatch-*
 .endif
 
 .if defined(WITH_ADPLUG)
@@ -93,11 +90,18 @@ CONFIGURE_ARGS+=	--without-adplug
 
 .if defined(WITH_SDL)
 USE_SDL=		sound
+USE_GNOME+=		desktopfileutils
 CONFIGURE_ARGS+=	--with-sdl=yes
 PLIST_SUB+=		SDL=""
 .else
 CONFIGURE_ARGS+=	--with-sdl=no
 PLIST_SUB+=		SDL="@comment "
+.endif
+
+.if defined(WITH_SDL) || defined(WITH_X11)
+PLIST_SUB+=		DESKTOP=""
+.else
+PLIST_SUB+=		DESKTOP="@comment "
 .endif
 
 .if defined(WITH_FLAC)
@@ -118,11 +122,6 @@ LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 .endif
 
 post-patch:
-.if defined(WITH_DEBUG)
-	@${REINPLACE_CMD} -e 's|/\*\ \(#define\ LD_DEBUG\ 1\)\ \*/|\1|' \
-		${WRKSRC}/config.h.in
-.endif
-	@${REINPLACE_CMD} -e 's|stdint\.h|inttypes\.h|' ${WRKSRC}/types.h
 	@${REINPLACE_CMD} -e 's|/etc/.*\.cfg|${TIMIDITY_CFG}|' \
 		${WRKSRC}/playgmi/gmitimidity.c
 # conflicts with fnmatch.h from security/heimdal

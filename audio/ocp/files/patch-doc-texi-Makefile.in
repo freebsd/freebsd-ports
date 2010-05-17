@@ -1,15 +1,11 @@
---- doc/texi/Makefile.orig	2009-09-20 14:30:44.000000000 +0200
-+++ doc/texi/Makefile	2009-09-20 14:30:47.000000000 +0200
-@@ -17,10 +17,10 @@
- 
- install: all
+--- doc/texi/Makefile.orig	2010-05-17 11:55:16.000000000 +0200
++++ doc/texi/Makefile	2010-05-17 12:33:02.000000000 +0200
+@@ -19,8 +19,8 @@
  	mkdir -p "$(DESTDIR)$(INFODIR)"
--	$(CP) ocp.info.gz "$(DESTDIR)$(INFODIR)"
--	install-info --dir-file="$(DESTDIR)$(INFODIR)/dir" "$(DESTDIR)$(INFODIR)/ocp.info.gz" || true
+ 	$(CP) ocp.info.gz "$(DESTDIR)$(INFODIR)"
+ 	install-info --dir-file="$(DESTDIR)$(INFODIR)/dir" "$(DESTDIR)$(INFODIR)/ocp.info.gz" || true
 -	mkdir -p "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)/html"
 -	$(CP) -R ocp.html/* "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)/html"
-+	#$(CP) ocp.info.gz "$(DESTDIR)$(INFODIR)"
-+	$(DOCS)install-info --dir-file="$(DESTDIR)$(INFODIR)/dir" "$(DESTDIR)$(INFODIR)/ocp.info.gz" || true
 +	$(DOCS)mkdir -p "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)/html"
 +	$(DOCS)$(CP) -R ocp.html/* "$(DESTDIR)$(PREFIX)/share/doc/ocp$(DIR_SUFFIX)/html"
  uninstall:

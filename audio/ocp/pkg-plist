@@ -3,7 +3,6 @@ bin/ocp-curses
 %%XORG%%bin/ocp-x11
 %%SDL%%bin/ocp-sdl
 bin/ultrafix.sh
-%%XORG%%etc/X11/wmconfig/opencubicplayer
 lib/ocp/autoload/10-compat.so
 lib/ocp/autoload/10-devi.so
 lib/ocp/autoload/10-hardware.so
@@ -23,6 +22,7 @@ lib/ocp/autoload/30-mcpbase.so
 lib/ocp/autoload/30-playsid.so
 lib/ocp/autoload/30-plrbase.so
 lib/ocp/autoload/30-smpbase.so
+lib/ocp/autoload/30-ymtype.so
 lib/ocp/autoload/35-cpiface.so
 lib/ocp/autoload/40-cphlpif.so
 %%FLAC%%lib/ocp/autoload/30-flacptype.so
@@ -54,10 +54,10 @@ lib/ocp/playmp2.so
 lib/ocp/playogg.so
 lib/ocp/playsid.so
 lib/ocp/playwav.so
+lib/ocp/playym.so
 lib/ocp/playxm.so
 %%FLAC%%lib/ocp/playflac.so
 %%ADPLUG%%lib/ocp/playopl.so
-%%XORG%%share/applications/opencubicplayer.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -79,6 +79,7 @@ lib/ocp/playxm.so
 %%PORTDOCS%%%%DOCSDIR%%/html/wap.html
 %%XORG%%share/icons/hicolor/16x16/apps/opencubicplayer.xpm
 %%XORG%%share/icons/hicolor/48x48/apps/opencubicplayer.xpm
+%%DESKTOP%%share/applications/cubic.org-opencubicplayer.desktop
 %%DATADIR%%/data/ocp.hlp
 %%DATADIR%%/etc/ocp.ini
 @dirrm share/ocp/ultradir
@@ -96,5 +97,4 @@ lib/ocp/playxm.so
 %%XORG%%@dirrmtry share/applications
 @dirrm lib/ocp/autoload
 @dirrm lib/ocp
-%%XORG%%@dirrm etc/X11/wmconfig
 %%XORG%%@dirrmtry etc/X11
