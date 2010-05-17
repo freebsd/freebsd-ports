@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	separate
-PORTVERSION=	0.5.3
-PORTREVISION=	3
+PORTVERSION=	0.5.7
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
+MASTER_SITES=	SFJP \
 		http://people.freebsd.org/~gahr/distfiles/
-MASTER_SITE_SUBDIR=	gahr
+MASTER_SITE_SUBDIR=	separate-plus/46785
 DISTNAME=	${PORTNAME}+-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -22,38 +21,37 @@ BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep \
 		gimp-2.6:${PORTSDIR}/graphics/gimp
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 USE_ZIP=	yes
+USE_GMAKE=	yes
 
-GIMP_PLUGINS_DIR=	libexec/gimp/2.2/plug-ins/
-TARGETS=		separate separate_import icc_colorspace
+BIN_TARGETS=	separate separate_import icc_colorspace
+L10N_TARGETS=	cs fr ja ko pl ru
 
-.for PLUGIN in ${TARGETS}
-PLIST_FILES+=	${GIMP_PLUGINS_DIR}/${PLUGIN}
+.for PLUGIN in ${BIN_TARGETS}
+PLIST_FILES+=	libexec/gimp/2.2/plug-ins/${PLUGIN}
+.endfor
+.for lang in ${L10N_TARGETS}
+PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/gimp20-separate.mo
 .endfor
 
 PORTDOCS=	README*
-PORTEXAMPLES=	quickproof.scm quicksave.scm
+PORTEXAMPLES=	qproof.scm qexport.scm
 
-MAKE_ENV+=	TARGETS="${TARGETS}"
+MAKE_ENV+=	TARGETS="${BIN_TARGETS}"
 
-do-install:
-	${INSTALL} -d ${PREFIX}/${GIMP_PLUGINS_DIR}
-.for PLUGIN in ${TARGETS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PLUGIN} ${PREFIX}/${GIMP_PLUGINS_DIR}/
-.endfor
+post-patch:
+	@${REINPLACE_CMD} -e 's|make|${GMAKE}|; s|lib/gimp/2.0|libexec/gimp/2.2|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|$$(PREFIX)|${PREFIX}|g' ${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README_ICC_COLORSPACE ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample-scripts/for_GIMP2.3+/quickproof.scm ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample-scripts/for_GIMP2.3+/quicksave.scm ${EXAMPLESDIR}
+	cd ${WRKSRC}/sample-scripts && \
+	${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 	@${CAT} pkg-message
 
