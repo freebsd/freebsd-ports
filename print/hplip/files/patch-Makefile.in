@@ -1,99 +1,41 @@
---- Makefile.in.orig	2008-02-09 10:06:41.000000000 +0800
-+++ Makefile.in	2008-03-16 01:24:58.000000000 +0800
-@@ -697,7 +697,7 @@
- dist_faxppdDATA_INSTALL = $(INSTALL_DATA)
- am__dist_hplip_DATA_DIST = scan/sane/hpaio.desc
- dist_hplipDATA_INSTALL = $(INSTALL_DATA)
--am__dist_images_DATA_DIST = data/images/*
-+am__dist_images_DATA_DIST = data/images/*.png
- dist_imagesDATA_INSTALL = $(INSTALL_DATA)
- am__dist_ldl_DATA_DIST = data/ldl/cb2pcal.ldl.gz \
- 	data/ldl/cb2pcal_done.ldl.gz data/ldl/cbbcal.ldl.gz \
-@@ -1190,7 +1190,7 @@
- dist_www242DATA_INSTALL = $(INSTALL_DATA)
- am__dist_www243_DATA_DIST = $(wwwsrc)/install/step4/suse/*
- dist_www243DATA_INSTALL = $(INSTALL_DATA)
--am__dist_www251_DATA_DIST = $(wwwsrc)/install/manual/*
-+am__dist_www251_DATA_DIST = $(wwwsrc)/install/manual/*.html
- dist_www251DATA_INSTALL = $(INSTALL_DATA)
- am__dist_www252_DATA_DIST = $(wwwsrc)/install/manual/distros/*
- dist_www252DATA_INSTALL = $(INSTALL_DATA)
-@@ -1198,13 +1198,13 @@
- dist_www261DATA_INSTALL = $(INSTALL_DATA)
- am__dist_www3_DATA_DIST = $(wwwsrc)/styles/*
- dist_www3DATA_INSTALL = $(INSTALL_DATA)
--am__dist_www4_DATA_DIST = $(wwwsrc)/images/*
-+am__dist_www4_DATA_DIST = $(wwwsrc)/images/*.png
- dist_www4DATA_INSTALL = $(INSTALL_DATA)
- am__dist_www5_DATA_DIST = $(wwwsrc)/supported_devices/*
- dist_www5DATA_INSTALL = $(INSTALL_DATA)
--am__dist_www6_DATA_DIST = $(wwwsrc)/tech_docs/*
-+am__dist_www6_DATA_DIST = $(wwwsrc)/tech_docs/*.html
- dist_www6DATA_INSTALL = $(INSTALL_DATA)
--am__dist_www61_DATA_DIST = $(wwwsrc)/tech_docs/man_pages/*
-+am__dist_www61_DATA_DIST = $(wwwsrc)/tech_docs/man_pages/*.html
- dist_www61DATA_INSTALL = $(INSTALL_DATA)
- am__dist_www7_DATA_DIST = $(wwwsrc)/troubleshooting/*
- dist_www7DATA_INSTALL = $(INSTALL_DATA)
-@@ -1425,7 +1425,7 @@
- @DOC_BUILD_TRUE@www243dir = $(docdir)/install/step4/suse
- @DOC_BUILD_TRUE@dist_www243_DATA = $(wwwsrc)/install/step4/suse/*
- @DOC_BUILD_TRUE@www251dir = $(docdir)/install/manual
--@DOC_BUILD_TRUE@dist_www251_DATA = $(wwwsrc)/install/manual/*
-+@DOC_BUILD_TRUE@dist_www251_DATA = $(wwwsrc)/install/manual/*.html
- @DOC_BUILD_TRUE@www252dir = $(docdir)/install/manual/distros
- @DOC_BUILD_TRUE@dist_www252_DATA = $(wwwsrc)/install/manual/distros/*
- @DOC_BUILD_TRUE@www261dir = $(docdir)/install/install
-@@ -1433,13 +1433,13 @@
- @DOC_BUILD_TRUE@www3dir = $(docdir)/styles
- @DOC_BUILD_TRUE@dist_www3_DATA = $(wwwsrc)/styles/*
- @DOC_BUILD_TRUE@www4dir = $(docdir)/images
--@DOC_BUILD_TRUE@dist_www4_DATA = $(wwwsrc)/images/*
-+@DOC_BUILD_TRUE@dist_www4_DATA = $(wwwsrc)/images/*.png
- @DOC_BUILD_TRUE@www5dir = $(docdir)/supported_devices
- @DOC_BUILD_TRUE@dist_www5_DATA = $(wwwsrc)/supported_devices/*
- @DOC_BUILD_TRUE@www6dir = $(docdir)/tech_docs
--@DOC_BUILD_TRUE@dist_www6_DATA = $(wwwsrc)/tech_docs/*
-+@DOC_BUILD_TRUE@dist_www6_DATA = $(wwwsrc)/tech_docs/*.html
- @DOC_BUILD_TRUE@www61dir = $(docdir)/tech_docs/man_pages
--@DOC_BUILD_TRUE@dist_www61_DATA = $(wwwsrc)/tech_docs/man_pages/*
-+@DOC_BUILD_TRUE@dist_www61_DATA = $(wwwsrc)/tech_docs/man_pages/*.html
- @DOC_BUILD_TRUE@www7dir = $(docdir)/troubleshooting
- @DOC_BUILD_TRUE@dist_www7_DATA = $(wwwsrc)/troubleshooting/*
- @HPLIP_BUILD_TRUE@dist_hplip_DATA = scan/sane/hpaio.desc
-@@ -1489,7 +1489,7 @@
- @HPLIP_BUILD_TRUE@localzdir = $(hplipdir)/data/localization
- @HPLIP_BUILD_TRUE@dist_postscript_DATA = data/ps/testpage.ps.gz data/ps/clean_page.pdf.gz
- @HPLIP_BUILD_TRUE@dist_models_DATA = data/models/models.dat
--@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@dist_images_DATA = data/images/*
-+@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@dist_images_DATA = data/images/*.png
- @HPLIP_BUILD_TRUE@dist_pcl_DATA = data/pcl/align1_8xx.pcl.gz data/pcl/align1_9xx.pcl.gz data/pcl/align2_8xx.pcl.gz data/pcl/align3_8xx.pcl.gz data/pcl/align4_8xx.pcl.gz \
- @HPLIP_BUILD_TRUE@	data/pcl/align5_8xx.pcl.gz data/pcl/align2_9xx.pcl.gz data/pcl/align3_9xx.pcl.gz data/pcl/align4_450.pcl.gz data/pcl/align6_450.pcl.gz \
- @HPLIP_BUILD_TRUE@	data/pcl/colorcal1_450.pcl.gz data/pcl/colorcal2_450.pcl.gz data/pcl/crbcal.pcl.gz data/pcl/crcaldone.pcl.gz data/pcl/crcbcal.pcl.gz data/pcl/crccal.pcl.gz \
-@@ -2170,7 +2170,7 @@
- .SUFFIXES: .c .cpp .lo .o .obj
- am--refresh:
- 	@:
--$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(srcdir)/unreleased.inc $(srcdir)/foomatic_drv.inc $(am__configure_deps)
-+$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(srcdir)/unreleased.inc $(srcdir)/foomatic_drv.inc
- 	@for dep in $?; do \
- 	  case '$(am__configure_deps)' in \
- 	    *$$dep*) \
-@@ -2197,7 +2197,7 @@
- $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
- 	$(SHELL) ./config.status --recheck
+--- Makefile.in.old	2010-03-28 15:07:10.000000000 -0600
++++ Makefile.in	2010-03-28 15:08:01.000000000 -0600
+@@ -89,8 +89,8 @@
+ # ip library
+ @HPLIP_BUILD_TRUE@am__append_1 = libhpmud.la libhpip.la
+ @HPLIP_BUILD_TRUE@hp_mkuri_PROGRAMS = hp-mkuri$(EXEEXT)
+-@HPLIP_BUILD_TRUE@@UDEV_ACL_RULES_TRUE@am__append_2 = data/rules/40-hplip.rules
+-@HPLIP_BUILD_TRUE@@UDEV_ACL_RULES_FALSE@am__append_3 = data/rules/55-hpmud.rules
++#@HPLIP_BUILD_TRUE@@UDEV_ACL_RULES_TRUE@am__append_2 = data/rules/40-hplip.rules
++#@HPLIP_BUILD_TRUE@@UDEV_ACL_RULES_FALSE@am__append_3 = data/rules/55-hpmud.rules
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_4 =  \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	scan/sane/hpaio.desc \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/drv/hpijs.drv.in.template \
+@@ -2041,8 +2041,8 @@
+ 	ppd/hpcups/hp-psc_950vr.ppd.gz ppd/hpcups/hp-psc_950xi.ppd.gz
+ am__dist_prnt_DATA_DIST = prnt/cups.py prnt/__init__.py prnt/ldl.py \
+ 	prnt/pcl.py prnt/colorcal.py
+-am__dist_rules_DATA_DIST = data/rules/56-hpmud_support.rules \
+-	data/rules/40-hplip.rules data/rules/55-hpmud.rules
++#am__dist_rules_DATA_DIST = data/rules/56-hpmud_support.rules \
++#	data/rules/40-hplip.rules data/rules/55-hpmud.rules
+ am__dist_scan_DATA_DIST = scan/__init__.py scan/sane.py
+ am__dist_ui_DATA_DIST = ui/alignform.py ui/colorcalform_base.py \
+ 	ui/colorcalform.py ui/coloradjform_base.py ui/coloradjform.py \
+@@ -3777,11 +3777,11 @@
+ @HPLIP_BUILD_TRUE@hp_mkuri_CFLAGS = -DCONFDIR=\"$(hplip_confdir)\"
  
--$(top_srcdir)/configure:  $(am__configure_deps)
-+$(top_srcdir)/configure:
- 	cd $(srcdir) && $(AUTOCONF)
- $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
- 	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
-@@ -6210,7 +6210,7 @@
- 	install-dist_pcardSCRIPTS install-dist_pclDATA \
- 	install-dist_pluginsSCRIPTS install-dist_postscriptDATA \
- 	install-dist_prntSCRIPTS install-dist_ripSCRIPTS \
--	install-dist_rulesDATA install-dist_scanSCRIPTS \
-+	install-dist_scanSCRIPTS \
- 	install-dist_uiSCRIPTS install-dist_unrelDATA \
- 	install-dist_www0DATA install-dist_www1DATA \
- 	install-dist_www21DATA install-dist_www22DATA \
+ # hpmud.rules
+-@HPLIP_BUILD_TRUE@rulesdir = /etc/udev/rules.d
+-@HPLIP_BUILD_TRUE@dist_rules_DATA = data/rules/56-hpmud_support.rules \
+-@HPLIP_BUILD_TRUE@	$(am__append_2) $(am__append_3)
+-@HPLIP_BUILD_TRUE@halpredir = /usr/share/hal/fdi/preprobe/10osvendor
+-@HPLIP_BUILD_TRUE@dist_halpre_DATA = data/rules/20-hplip-devices.fdi
++#@HPLIP_BUILD_TRUE@rulesdir = /etc/udev/rules.d
++#@HPLIP_BUILD_TRUE@dist_rules_DATA = data/rules/56-hpmud_support.rules \
++#@HPLIP_BUILD_TRUE@	$(am__append_2) $(am__append_3)
++#@HPLIP_BUILD_TRUE@halpredir = /usr/share/hal/fdi/preprobe/10osvendor
++#@HPLIP_BUILD_TRUE@dist_halpre_DATA = data/rules/20-hplip-devices.fdi
+ 
+ # hplip.conf
+ @HPLIP_BUILD_TRUE@hplip_confdir = /etc/hp

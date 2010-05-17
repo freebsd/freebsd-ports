@@ -4394,3 +4394,4 @@ www/mod_extract_forwarded2||2010-05-12|Use www/mod_extract_forwarded instead
 misc/ldconfig_compat||2010-05-14|Supported releases don't need the port anymore
 devel/nx||2010-05-14|Remove due math/py-networkx be the same port and with more appropriated name
 math/libranlib|math/librandlib|2010-05-17|Project renamed
+print/hplip3|print/hplip|2010-05-17|hplip port updated to 3.X version
