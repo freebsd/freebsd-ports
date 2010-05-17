@@ -1,5 +1,5 @@
---- pwc.c.orig	2007-10-09 09:14:01.000000000 +0200
-+++ pwc.c	2009-09-09 10:33:33.000000000 +0200
+--- pwc.c.orig	2007-10-09 02:14:01.000000000 -0500
++++ pwc.c	2010-05-17 10:52:45.000000000 -0500
 @@ -28,7 +28,8 @@
  #include "pwc-dec1.h"
  #include "pwc-dec23.h"
@@ -268,7 +268,7 @@
  
  	sc->error_status = EPIPE;
  
-@@ -334,20 +313,15 @@
+@@ -334,21 +313,17 @@
  	
  	mtx_destroy(&sc->ptrlock);
  	pwc_free_buffers(sc,1);
@@ -287,11 +287,14 @@
 -	sc = devclass_get_softc(pwc_devclass,unit);
 -	if(sc == NULL)
 -		return ENXIO;
+-	
++#ifdef USB_DEBUG
 +	int unit = device_get_unit(sc->sc_dev);
- 	
++#endif
  	Trace(TRACE_OPEN,"pwc_open: flag=%d, mode=%d, unit=%d\n",flag, mode, unit);
  
-@@ -419,23 +393,6 @@
+ 	if(sc->error_status == EPIPE)
+@@ -419,23 +394,6 @@
  	for (i = 0; i < sc->pwc_mbufs; i++)
  		sc->image_used[i] = 0;
  
@@ -315,7 +318,7 @@
  	sc->state = 0;
  	sc->vframe_count = 0;
  	sc->vframes_dumped = 0;
-@@ -476,10 +433,9 @@
+@@ -476,10 +434,10 @@
  int
  pwc_close(struct cdev *dev, int flag, int mode, struct thread *p)
  {
@@ -324,12 +327,13 @@
 -	
 -	sc = devclass_get_softc(pwc_devclass, unit);
 +	struct pwc_softc *sc = dev->si_drv1;
++#ifdef USB_DEBUG
 +	int unit = device_get_unit(sc->sc_dev);
-+
++#endif
  	Trace(TRACE_OPEN,"pwc_close: flag=%d, mode=%d, unit=%d\n", flag, mode, unit);
  
  	/* Dump statistics, but only if a reasonable amount of frames were
-@@ -495,19 +451,14 @@
+@@ -495,19 +453,14 @@
  		pwc_dec1_exit();
  	else
  		pwc_dec23_exit();	/* Timon & Kiara */
@@ -352,14 +356,16 @@
  		pwc_set_leds(sc,0,0);
  		
  		if(sc->power_save) {
-@@ -523,15 +474,14 @@
+@@ -523,15 +476,16 @@
  int
  pwc_read(struct cdev *dev, struct uio *uio, int flag)
  {
 -	struct pwc_softc *sc;
 -	int unit = PWCUNIT(dev);
 +	struct pwc_softc *sc = dev->si_drv1;
++#ifdef USB_DEBUG
 +	int unit = device_get_unit(sc->sc_dev);
++#endif
          int bytes_to_read;
  	int count = uio->uio_resid;
  	int err;
@@ -370,7 +376,7 @@
  	if (sc->error_status)
  		return sc->error_status;
  
-@@ -565,7 +515,7 @@
+@@ -565,7 +519,7 @@
  	if(count + sc->image_read_pos > bytes_to_read)
  		count = bytes_to_read - sc->image_read_pos;
  	
@@ -379,7 +385,7 @@
  
  	err = uiomove(sc->images[sc->fill_image].bufmem + sc->image_read_pos,count,uio);
  	if(err)
-@@ -583,10 +533,9 @@
+@@ -583,10 +537,9 @@
  int
  pwc_ioctl(struct cdev *dev, u_long cmd, caddr_t addr, int flag, struct thread *p)
  {
@@ -392,7 +398,7 @@
  	if (sc->error_status)
  		return sc->error_status;
  	
-@@ -596,11 +545,9 @@
+@@ -596,11 +549,9 @@
  int
  pwc_poll(struct cdev *dev, int events, struct thread *p)
  {
@@ -405,8 +411,16 @@
  	if(sc->error_status)
  		return sc->error_status;
  
-@@ -628,13 +575,9 @@
+@@ -625,16 +576,17 @@
+ }
+ 
+ int
++#if D_VERSION == D_VERSION_03
++pwc_mmap(struct cdev *dev, vm_ooffset_t offset, vm_paddr_t *paddr, int nprot,
++	 __unused vm_memattr_t *memattr)
++#else
  pwc_mmap(struct cdev *dev, vm_offset_t offset, vm_paddr_t *paddr, int nprot)
++#endif
  {
  #ifdef USE_MMAP
 -	struct pwc_softc *sc;
@@ -421,7 +435,7 @@
  	if (sc->error_status)
  		return sc->error_status;
  
-@@ -652,16 +595,10 @@
+@@ -652,16 +604,10 @@
  int
  pwc_try_video_mode(struct pwc_softc *sc, int width, int height, int new_fps, int new_compression, int new_snapshot)
  {
@@ -442,7 +456,7 @@
  	pwc_reset_buffers(sc);
  	
  	/* Try to set video mode... if that fails fallback to previous mode  */
-@@ -678,52 +615,21 @@
+@@ -678,52 +624,21 @@
  	sc->drop_frames++; /* try to avoid garbage during switch */
  	sc->vsync = 0;
  
@@ -502,7 +516,7 @@
  	}
  	
  	if(sc->state & PWC_INIT)
-@@ -767,37 +673,41 @@
+@@ -767,37 +682,41 @@
  }
  
  static void
@@ -569,7 +583,7 @@
  
  	/* Reset ISOC error counter. We did get here, after all. */
  	sc->visoc_errors = 0;
-@@ -816,8 +726,8 @@
+@@ -816,8 +735,8 @@
  		/* XXX there is no individual framestatus in FreeBSD usbstack
  		 * so just assume all frames are good
  		 */
@@ -580,7 +594,7 @@
  
  		if (flen > 0) { /* if valid data... */
  			if(sc->vsync > NOCOPY) { /* ...and we are not sync-hunting... */
-@@ -830,7 +740,7 @@
+@@ -830,7 +749,7 @@
  					sc->vframes_error++;
  				}
  				else {
@@ -589,7 +603,7 @@
  					fillptr += flen;
  				}
  			}
-@@ -943,7 +853,6 @@
+@@ -943,7 +862,6 @@
  		sc->vlast_packet_size = flen;
  
  	}
@@ -597,7 +611,7 @@
  	if(awake) {
  		if(sc->state & PWC_ASLEEP) {
  			wakeup(sc);
-@@ -953,16 +862,6 @@
+@@ -953,16 +871,6 @@
  			selwakeuppri(&sc->rsel, PZERO);
  		}
  	}
@@ -614,7 +628,7 @@
  }
  
  int
-@@ -1050,6 +949,9 @@
+@@ -1050,6 +958,9 @@
  {
  	int i;
  	Trace(TRACE_MEMORY, "Entering free_buffers(%p).\n", sc);
@@ -624,7 +638,7 @@
  	if (sc->fbuf != NULL) {
  		for (i = 0; i < sc->pwc_fbufs; i++) {
  			if (sc->fbuf[i].data != NULL) {
-@@ -1074,13 +976,6 @@
+@@ -1074,13 +985,6 @@
  		free(sc->image_data,M_USBDEV);
  		sc->image_data = NULL;
  	}

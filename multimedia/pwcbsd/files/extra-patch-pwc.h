@@ -1,5 +1,5 @@
---- pwc.h.orig	2006-09-27 07:21:01.000000000 +0200
-+++ pwc.h	2009-09-09 10:16:04.000000000 +0200
+--- pwc.h.orig	2006-09-27 00:21:01.000000000 -0500
++++ pwc.h	2010-05-17 10:10:06.000000000 -0500
 @@ -44,8 +44,21 @@
  #include <vm/pmap.h>
  
@@ -24,15 +24,6 @@
  #include "pwc-uncompress.h"
  #include "pwc-ioctl.h"
  #include "videodev.h"
-@@ -69,7 +82,7 @@
- #define TRACE_READ_VERBOSE 0x0800
- #define TRACE_SEQUENCE	0x1000
- 
--#ifdef USB_DEBUG
-+#if USB_DEBUG
- #define Trace(R, A...) if (pwcdebug & R) printf(PWC_NAME " " A)
- #define Debug(A...) if(pwcdebug) printf(PWC_NAME " " A)
- extern int  pwcdebug;
 @@ -93,14 +106,9 @@
  #define FRAME_LOWMARK 5
  
