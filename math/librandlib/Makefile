@@ -5,31 +5,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ranlib
-PORTVERSION=	1.0
+PORTNAME=	randlib
+PORTVERSION=	1.3
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.netlib.org/random/
-DISTNAME=	ranlib.c
+MASTER_SITES=	http://biostatistics.mdanderson.org/SoftwareDownload/ProductDownloadFiles/
+DISTNAME=	RANDLIB_V90
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of Routines for Random Number Generation
 
 USE_LDCONFIG=	yes
 MAKE_ENV=	NOPROFILE=true
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-PORTDOCS=	Basegen.c.doc ranlib.c.chs ranlib.c.fdoc
-PLIST_FILES=	include/ranlib.h \
-		lib/libranlib.a \
-		lib/libranlib.so \
-		lib/libranlib.so.1
+WRKSRC=		${WRKDIR}/source/randlib.c/src
+PORTDOCS=	Basegen.c.doc randlib.c.chs randlib.c.fdoc
+PLIST_FILES=	include/randlib.h \
+		lib/librandlib.a \
+		lib/librandlib.so \
+		lib/librandlib.so.1
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR}/${DISTNAME}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${PREFIX}/share/doc/randlib
+	@${INSTALL_DATA} ${WRKDIR}/source/randlib.c/doc/* ${PREFIX}/share/doc/randlib
 .endif
 
 .include <bsd.port.mk>

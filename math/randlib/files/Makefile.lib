@@ -4,14 +4,12 @@ LIBDIR =	$(PREFIX)/lib
 
 SHLIB_MAJOR=	1
 SHLIB_MINOR=	0
-LIB=		ranlib
+LIB=		randlib
 
-.PATH: ${.CURDIR}/../linpack
-
-SRCS=		linpack.c com.c ranlib.c
+SRCS=		linpack.c com.c randlib.c
 
 beforeinstall:
-	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 ${.CURDIR}/ranlib.h \
+	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 ${.CURDIR}/randlib.h \
 		${PREFIX}/include
 
 .include <bsd.lib.mk>
