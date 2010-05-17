@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pavucontrol
-PORTVERSION=	0.9.7
-PORTREVISION=	3
+PORTVERSION=	0.9.10
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -16,7 +15,7 @@ COMMENT=	GTK mixer for PulseAudio
 
 LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		pulse.0:${PORTSDIR}/audio/pulseaudio \
-		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
+		canberra:${PORTSDIR}/audio/libcanberra
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
