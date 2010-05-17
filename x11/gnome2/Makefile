@@ -83,7 +83,6 @@ RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp \
 .endif
 .if ${.CURDIR:T}!="gnome2-lite"
 RUN_DEPENDS+=	empathy:${PORTSDIR}/net-im/empathy \
-		cheese:${PORTSDIR}/multimedia/cheese \
 		gucharmap:${PORTSDIR}/deskutils/gucharmap \
 		sound-juicer:${PORTSDIR}/audio/sound-juicer \
 		zenity:${PORTSDIR}/x11/zenity \
@@ -96,6 +95,9 @@ RUN_DEPENDS+=	empathy:${PORTSDIR}/net-im/empathy \
 		${LOCALBASE}/lib/hamster-applet/hamster-applet:${PORTSDIR}/deskutils/hamster-applet \
 		${LOCALBASE}/lib/gtk-2.0/modules/at-spi-dbus/modules/libatk-bridge.so:${PORTSDIR}/accessibility/at-spi2-atk \
 		gpk-application:${PORTSDIR}/ports-mgmt/gnome-packagekit
+.if ${OSVERSION}>=800000
+RUN_DEPENDS+=	cheese:${PORTSDIR}/multimedia/cheese
+.endif
 .if ${ARCH} == "i386"
 #RUN_DEPENDS+=	tomboy:${PORTSDIR}/deskutils/tomboy
 .endif
