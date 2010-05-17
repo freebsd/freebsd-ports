@@ -1,25 +1,31 @@
---- src/osd/sdl/sdl.mak.orig	2009-11-13 11:09:21.000000000 +0100
-+++ src/osd/sdl/sdl.mak	2009-11-13 11:10:24.000000000 +0100
-@@ -140,6 +140,7 @@
- endif
- 
+--- src/osd/sdl/sdl.mak.orig	2010-03-24 00:15:07.000000000 +0100
++++ src/osd/sdl/sdl.mak	2010-03-24 00:17:26.000000000 +0100
+@@ -139,7 +139,7 @@
  ifeq ($(TARGETOS),freebsd)
-+DEFS += -DNO_DEBUGGER
- TARGETOS = unix
- SYNC_IMPLEMENTATION = ntc
- endif
-@@ -288,10 +289,10 @@
+ BASE_TARGETOS = unix
+ SYNC_IMPLEMENTATION = tc
+-DEFS += -DNO_AFFINITY_NP
++DEFS += -DNO_AFFINITY_NP -DNO_DEBUGGER
+ # /usr/local/include is not considered a system include directory
+ # on FreeBSD. GL.h resides there and throws warnings
+ CCOMFLAGS += -isystem /usr/local/include
+@@ -304,7 +304,7 @@
+ ifeq ($(BASE_TARGETOS),unix)
+ 
+ DEFS += -DSDLMAME_UNIX
+-DEBUGOBJS = $(SDLOBJ)/debugwin.o $(SDLOBJ)/dview.o $(SDLOBJ)/debug-sup.o $(SDLOBJ)/debug-intf.o
++DEBUGOBJS = $(SDLOBJ)/debugwin.o
+ LIBGL = -lGL
+ ifeq ($(NO_X11),1)
+ NO_DEBUGGER = 1
+@@ -454,8 +454,8 @@
+ 
  # the new debugger relies on GTK+ in addition to the base SDLMAME needs
  # Non-X11 builds can not use the debugger
- ifndef NO_X11
--OSDCOREOBJS += $(SDLOBJ)/debugwin.o $(SDLOBJ)/dview.o $(SDLOBJ)/debug-sup.o $(SDLOBJ)/debug-intf.o
--CFLAGS += `pkg-config --cflags gtk+-2.0` `pkg-config --cflags gconf-2.0` 
+-CCOMFLAGS += `pkg-config --cflags gtk+-2.0` `pkg-config --cflags gconf-2.0`
 -LIBS += `pkg-config --libs gtk+-2.0` `pkg-config --libs gconf-2.0`
--CFLAGS += -DGTK_DISABLE_DEPRECATED
-+OSDCOREOBJS += $(SDLOBJ)/debugwin.o
-+#CFLAGS += `pkg-config --cflags gtk+-2.0` `pkg-config --cflags gconf-2.0` 
++#CCOMFLAGS += `pkg-config --cflags gtk+-2.0` `pkg-config --cflags gconf-2.0`
 +#LIBS += `pkg-config --libs gtk+-2.0` `pkg-config --libs gconf-2.0`
-+#CFLAGS += -DGTK_DISABLE_DEPRECATED
- else
- OSDCOREOBJS += $(SDLOBJ)/debugwin.o
- endif # NO_X11
+ #CCOMFLAGS += -DGTK_DISABLE_DEPRECATED
+ 
+ # some systems still put important things in a different prefix

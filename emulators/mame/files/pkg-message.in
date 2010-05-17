@@ -1,10 +1,10 @@
 ==============================================================================
 
-SDLMAME has been installed.
+MAME has been installed.
 
 A example configuration file has been installed in "%%EXAMPLESDIR%%/mame.ini"
 Should you create a "~/.mame" directory and place it here or
-launch "sdlmame -createconfig" and place the mame.ini created instead.
+launch "mame -createconfig" and place the mame.ini created instead.
 
 If you have a non-qwerty keyboard, you should put in your mame.ini :
 keymap      1
