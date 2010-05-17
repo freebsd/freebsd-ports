@@ -1,7 +1,6 @@
 bin/lspst
 bin/pst2ldif
 bin/readpst
-bin/readpstlog
 %%PST2DII%%bin/pst2dii
 %%PORTDOCS%%%%DOCSDIR%%/devel/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/classes.html
@@ -109,6 +108,7 @@ bin/readpstlog
 %%PORTDOCS%%%%DOCSDIR%%/devel/structpst__item__message__store__coll__graph.map
 %%PORTDOCS%%%%DOCSDIR%%/devel/structpst__item__message__store__coll__graph.md5
 %%PORTDOCS%%%%DOCSDIR%%/devel/structpst__item__message__store__coll__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/devel/structpst__recurrence.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/structpst__string.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/structpst__varbuf.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/structpst__x__attrib__ll.html
@@ -132,12 +132,10 @@ bin/readpstlog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/libpst.pdf
 %%PORTDOCS%%%%DOCSDIR%%/rn01re01.html
 %%PORTDOCS%%%%DOCSDIR%%/rn01re02.html
 %%PORTDOCS%%%%DOCSDIR%%/rn01re03.html
 %%PORTDOCS%%%%DOCSDIR%%/rn01re04.html
 %%PORTDOCS%%%%DOCSDIR%%/rn01re05.html
-%%PORTDOCS%%%%DOCSDIR%%/rn01re06.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/devel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
