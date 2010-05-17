@@ -1,0 +1,4 @@
+sbin/geomWatch
+@unexec if cmp -s %D/etc/geomWatch.conf.sample %D/etc/geomWatch.conf; then rm -f %D/etc/geomWatch.conf; fi
+etc/geomWatch.conf.sample
+@exec if [ ! -f %D/etc/geomWatch.conf ] ; then cp -p %D/%F %B/geomWatch.conf; fi
