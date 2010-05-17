@@ -1,0 +1,18 @@
+#! /bin/sh
+# browser wrapper script to restore original LD_LIBRARY_PATH so a native
+# browser won't pick up linux libs from google earth and fail to start
+
+if [ -n "${REAL_LD_LIBRARY_PATH}" ]
+then
+	export LD_LIBRARY_PATH="${REAL_LD_LIBRARY_PATH}"
+else
+	unset LD_LIBRARY_PATH
+fi
+
+BROWSER="$(/usr/bin/which ${REAL_BROWSER})"
+if [ -x "${BROWSER}" ]
+then
+	exec "${BROWSER}" "$@"
+else
+	echo browser not found: $REAL_BROWSER
+fi

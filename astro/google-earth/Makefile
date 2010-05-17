@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	5.1.3533.1731
+PORTVERSION=	5.1.3535.3218
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/current/
 DISTNAME=	GoogleEarthLinux
@@ -74,6 +74,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Google-googleearth.desktop ${PREFIX}/share/applications/googleearth.desktop
 	${CP} -rp ${WRKSRC}/* ${DATADIR}
 	${RM} -f ${DATADIR}/googleearth-mimetypes.xml ${DATADIR}/googleearth.desktop
+	${INSTALL_SCRIPT} ${FILESDIR}/browserwrapper ${DATADIR}/bin
 	${LN} -sf ${DATADIR}/bin/googleearth ${PREFIX}/bin/
 	-@update-mime-database ${PREFIX}/share/mime
 	-@update-desktop-database
