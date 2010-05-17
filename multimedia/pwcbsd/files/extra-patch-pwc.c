@@ -1,5 +1,5 @@
 --- pwc.c.orig	2007-10-09 02:14:01.000000000 -0500
-+++ pwc.c	2010-05-17 10:52:45.000000000 -0500
++++ pwc.c	2010-05-17 14:44:45.000000000 -0500
 @@ -28,7 +28,8 @@
  #include "pwc-dec1.h"
  #include "pwc-dec23.h"
@@ -415,7 +415,7 @@
  }
  
  int
-+#if D_VERSION == D_VERSION_03
++#ifdef D_VERSION_03
 +pwc_mmap(struct cdev *dev, vm_ooffset_t offset, vm_paddr_t *paddr, int nprot,
 +	 __unused vm_memattr_t *memattr)
 +#else
