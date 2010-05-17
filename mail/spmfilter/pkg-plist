@@ -20,4 +20,4 @@ etc/spmfilter.conf.sample
 @dirrmtry libdata/pkgconfig
 @dirrm include/spmfilter/smf
 @dirrm include/spmfilter
-@dirrm lib/spmfilter
+@dirrmtry lib/spmfilter
