@@ -6,7 +6,7 @@
  
 -def addbulletpath( val ):
 -    return "../bullet-2.73/src/"+val
-+if (sys.platform != 'freebsd6') and (sys.platform != 'freebsd7') and (sys.platform != 'freebsd8'):
++if (sys.platform != 'freebsd6') and (sys.platform != 'freebsd7') and (sys.platform != 'freebsd8') and (sys.platform != 'freebsd9'):
 +  def addbulletpath( val ):
 +      return "../bullet-2.73/src/"+val
  
@@ -19,7 +19,7 @@
 -bullet_src = map(addbulletpath, bullet_src)
  
 -src.extend(bullet_src)
-+if (sys.platform != 'freebsd6') and (sys.platform != 'freebsd7') and (sys.platform != 'freebsd8'):
++if (sys.platform != 'freebsd6') and (sys.platform != 'freebsd7') and (sys.platform != 'freebsd8') and (sys.platform != 'freebsd9'):
 +   bullet_src = map(addbulletpath, bullet_src)
 +   src.extend(bullet_src)
  
@@ -29,7 +29,7 @@
  vdrift_install = None
  common_libs = ['SDL_image', 'SDL_net', 'SDL_gfx', 'vorbisfile']
  
-+if (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7') or (sys.platform == 'freebsd8'):
++if (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7') or (sys.platform == 'freebsd8') or (sys.platform == 'freebsd9'):
 +  common_libs.append('libbulletcollision')
 +  common_libs.append('libbulletmath')
 +
