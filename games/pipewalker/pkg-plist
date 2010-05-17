@@ -1,8 +1,10 @@
 bin/pipewalker
 share/applications/pipewalker.desktop
 %%DATADIR%%/clatz.wav
+%%DATADIR%%/complete.wav
 %%DATADIR%%/font.tga
 %%DATADIR%%/network.tga
+%%DATADIR%%/plumbing.tga
 share/pixmaps/pipewalker.xpm
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
