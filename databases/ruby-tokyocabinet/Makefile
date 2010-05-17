@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	dgerow@FreeBSD.org
+MAINTAINER=	dgerow@afflictions.org
 COMMENT=	Ruby interface to the Tokyo Cabinet DB engine
 
 LIB_DEPENDS=	tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
