@@ -3,29 +3,10 @@ bin/edox
 bin/eesh
 bin/epp
 bin/starte16
-%%NLS%%share/locale/ar/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/it/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/eo/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/bs/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/da/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/de/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/en_US/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/es/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/e16.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/e16.mo
+share/applications/e16.desktop
+share/xsessions/e16-gnome.desktop
+share/xsessions/e16-kde.desktop
+share/xsessions/e16.desktop
 %%DATADIR%%/E-docs/bg.png
 %%DATADIR%%/E-docs/exit1.png
 %%DATADIR%%/E-docs/exit2.png
@@ -38,77 +19,83 @@ bin/starte16
 %%DATADIR%%/config/bindings.cfg
 %%DATADIR%%/config/definitions
 %%DATADIR%%/config/e16keyedit.db
-%%DATADIR%%/config/fonts.xft.cfg
 %%DATADIR%%/config/fonts.pango.cfg
+%%DATADIR%%/config/fonts.xft.cfg
 %%DATADIR%%/config/matches.cfg
-%%DATADIR%%/config/menus/desktop.menu
-%%DATADIR%%/config/menus/enlightenment.menu
-%%DATADIR%%/config/menus/maintenance.menu
-%%DATADIR%%/config/menus/settings.menu
-%%DATADIR%%/config/menus/winops.menu
-%%DATADIR%%/config/menus/winops_groups.menu
-%%DATADIR%%/config/menus/winops_layer.menu
-%%DATADIR%%/config/menus/winops_misc.menu
-%%DATADIR%%/config/menus/winops_opacity.menu
-%%DATADIR%%/config/menus/winops_size.menu
-%%DATADIR%%/config/pix/about.png
-%%DATADIR%%/config/pix/areas.png
-%%DATADIR%%/config/pix/bg.png
-%%DATADIR%%/config/pix/default.png
-%%DATADIR%%/config/pix/desktops.png
-%%DATADIR%%/config/pix/e.png
-%%DATADIR%%/config/pix/elogo48.png
-%%DATADIR%%/config/pix/focus.png
-%%DATADIR%%/config/pix/fx.png
-%%DATADIR%%/config/pix/iconbox.png
-%%DATADIR%%/config/pix/key_blank.png
-%%DATADIR%%/config/pix/key_ctrl.png
-%%DATADIR%%/config/pix/key_lock.png
-%%DATADIR%%/config/pix/key_mod1.png
-%%DATADIR%%/config/pix/key_mod2.png
-%%DATADIR%%/config/pix/key_mod3.png
-%%DATADIR%%/config/pix/key_mod4.png
-%%DATADIR%%/config/pix/key_mod5.png
-%%DATADIR%%/config/pix/key_shift.png
-%%DATADIR%%/config/pix/mon.png
-%%DATADIR%%/config/pix/mouse_0.png
-%%DATADIR%%/config/pix/mouse_1.png
-%%DATADIR%%/config/pix/mouse_2.png
-%%DATADIR%%/config/pix/mouse_3.png
-%%DATADIR%%/config/pix/mouse_4.png
-%%DATADIR%%/config/pix/mouse_5.png
-%%DATADIR%%/config/pix/mouse_any.png
-%%DATADIR%%/config/pix/moveres.png
-%%DATADIR%%/config/pix/pager.png
-%%DATADIR%%/config/pix/place.png
-%%DATADIR%%/config/pix/raise.png
-%%DATADIR%%/config/pix/snapshots.png
-%%DATADIR%%/config/pix/sound.png
-%%DATADIR%%/config/pix/tips.png
-%%DATADIR%%/config/pix/wait1.png
-%%DATADIR%%/config/pix/wait10.png
-%%DATADIR%%/config/pix/wait11.png
-%%DATADIR%%/config/pix/wait12.png
-%%DATADIR%%/config/pix/wait2.png
-%%DATADIR%%/config/pix/wait3.png
-%%DATADIR%%/config/pix/wait4.png
-%%DATADIR%%/config/pix/wait5.png
-%%DATADIR%%/config/pix/wait6.png
-%%DATADIR%%/config/pix/wait7.png
-%%DATADIR%%/config/pix/wait8.png
-%%DATADIR%%/config/pix/wait9.png
-%%DATADIR%%/misc/e16.desktop-app
-%%DATADIR%%/misc/e16.desktop
-%%DATADIR%%/misc/e16.png
+%%DATADIR%%/fonts/COPYRIGHT.Vera
+%%DATADIR%%/fonts/Vera.ttf
+%%DATADIR%%/fonts/VeraBd.ttf
+%%DATADIR%%/fonts/bold.ttf
+%%DATADIR%%/fonts/normal.ttf
+%%DATADIR%%/icons/default.png
+%%DATADIR%%/icons/e.png
+%%DATADIR%%/icons/e16.png
+%%DATADIR%%/icons/iconbox.png
+%%DATADIR%%/icons/mon.png
+%%DATADIR%%/icons/pager.png
+%%DATADIR%%/menus/desktop.menu
+%%DATADIR%%/menus/enlightenment.menu
+%%DATADIR%%/menus/maintenance.menu
+%%DATADIR%%/menus/settings.menu
+%%DATADIR%%/menus/winops.menu
+%%DATADIR%%/menus/winops_groups.menu
+%%DATADIR%%/menus/winops_layer.menu
+%%DATADIR%%/menus/winops_misc.menu
+%%DATADIR%%/menus/winops_opacity.menu
+%%DATADIR%%/menus/winops_size.menu
+%%DATADIR%%/misc/Xclients.e16-gnome.sh
+%%DATADIR%%/misc/Xclients.e16-kde.sh
+%%DATADIR%%/misc/Xclients.e16.sh
+%%DATADIR%%/misc/e16-dbus-cmd
 %%DATADIR%%/misc/e16-gnome.desktop
 %%DATADIR%%/misc/e16-kde.desktop
-%%DATADIR%%/misc/e16-dbus-cmd
+%%DATADIR%%/misc/e16.desktop
+%%DATADIR%%/misc/e16.desktop-app
 %%DATADIR%%/misc/starte16
 %%DATADIR%%/misc/starte16-gnome
 %%DATADIR%%/misc/starte16-kde
-%%DATADIR%%/misc/Xclients.e16.sh
-%%DATADIR%%/misc/Xclients.e16-gnome.sh
-%%DATADIR%%/misc/Xclients.e16-kde.sh
+%%DATADIR%%/pix/about.png
+%%DATADIR%%/pix/areas.png
+%%DATADIR%%/pix/bg.png
+%%DATADIR%%/pix/desktops.png
+%%DATADIR%%/pix/elogo48.png
+%%DATADIR%%/pix/focus.png
+%%DATADIR%%/pix/fx.png
+%%DATADIR%%/pix/key_blank.png
+%%DATADIR%%/pix/key_ctrl.png
+%%DATADIR%%/pix/key_lock.png
+%%DATADIR%%/pix/key_mod1.png
+%%DATADIR%%/pix/key_mod2.png
+%%DATADIR%%/pix/key_mod3.png
+%%DATADIR%%/pix/key_mod4.png
+%%DATADIR%%/pix/key_mod5.png
+%%DATADIR%%/pix/key_shift.png
+%%DATADIR%%/pix/mouse_0.png
+%%DATADIR%%/pix/mouse_1.png
+%%DATADIR%%/pix/mouse_2.png
+%%DATADIR%%/pix/mouse_3.png
+%%DATADIR%%/pix/mouse_4.png
+%%DATADIR%%/pix/mouse_5.png
+%%DATADIR%%/pix/mouse_any.png
+%%DATADIR%%/pix/moveres.png
+%%DATADIR%%/pix/pager.png
+%%DATADIR%%/pix/place.png
+%%DATADIR%%/pix/raise.png
+%%DATADIR%%/pix/snapshots.png
+%%DATADIR%%/pix/sound.png
+%%DATADIR%%/pix/tips.png
+%%DATADIR%%/pix/wait1.png
+%%DATADIR%%/pix/wait10.png
+%%DATADIR%%/pix/wait11.png
+%%DATADIR%%/pix/wait12.png
+%%DATADIR%%/pix/wait2.png
+%%DATADIR%%/pix/wait3.png
+%%DATADIR%%/pix/wait4.png
+%%DATADIR%%/pix/wait5.png
+%%DATADIR%%/pix/wait6.png
+%%DATADIR%%/pix/wait7.png
+%%DATADIR%%/pix/wait8.png
+%%DATADIR%%/pix/wait9.png
 %%DATADIR%%/scripts/e_cache_clean
 %%DATADIR%%/scripts/e_cache_query
 %%DATADIR%%/scripts/e_gen_menu
@@ -392,85 +379,103 @@ bin/starte16
 %%DATADIR%%/themes/winter/tooltips/images/clear.png
 %%DATADIR%%/themes/winter/tooltips/images/tooltipbg.png
 %%DATADIR%%/themes/winter/tooltips/tooltips.cfg
-%%DATADIR%%/fonts/Vera.ttf
-%%DATADIR%%/fonts/VeraBd.ttf
-%%DATADIR%%/fonts/COPYRIGHT.Vera
-%%DATADIR%%/fonts/normal.ttf
-%%DATADIR%%/fonts/bold.ttf
-share/applications/e16.desktop
-share/xsessions/e16.desktop
-share/xsessions/e16-gnome.desktop
-share/xsessions/e16-kde.desktop
+%%NLS%%share/locale/ar/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/csb/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/da/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/de/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/en_US/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/es/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/fo/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/it/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/e16.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/e16.mo
 %%PORTDOCS%%%%DOCSDIR%%/e16.html
-@dirrm lib/e16
-@dirrm %%DATADIR%%/E-docs
-@dirrm %%DATADIR%%/config/menus
-@dirrm %%DATADIR%%/config/pix
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/themes/winter/ABOUT
-@dirrm %%DATADIR%%/themes/winter/backgrounds/images
-@dirrm %%DATADIR%%/themes/winter/backgrounds
-@dirrm %%DATADIR%%/themes/winter/borders/AUTOSHADE
-@dirrm %%DATADIR%%/themes/winter/borders/BORDERLESS
-@dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY/images
-@dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY
-@dirrm %%DATADIR%%/themes/winter/borders/DEFAULT
-@dirrm %%DATADIR%%/themes/winter/borders/DIALOG
-@dirrm %%DATADIR%%/themes/winter/borders/FIXED_SIZE
-@dirrm %%DATADIR%%/themes/winter/borders/ICONBOX
-@dirrm %%DATADIR%%/themes/winter/borders/MENU
-@dirrm %%DATADIR%%/themes/winter/borders/MENU_BORDER_ONLY
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER/images
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER_AUTOSHADE
-@dirrm %%DATADIR%%/themes/winter/borders/PAGER_SHADE_RIGHT
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER
-@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER_SHADE_LEFT
-@dirrm %%DATADIR%%/themes/winter/borders/SHAPED
-@dirrm %%DATADIR%%/themes/winter/borders/TRANSIENT
-@dirrm %%DATADIR%%/themes/winter/borders/common/images
-@dirrm %%DATADIR%%/themes/winter/borders/common
-@dirrm %%DATADIR%%/themes/winter/borders
-@dirrm %%DATADIR%%/themes/winter/buttons
-@dirrm %%DATADIR%%/themes/winter/common/images
-@dirrm %%DATADIR%%/themes/winter/common
-@dirrm %%DATADIR%%/themes/winter/coords
-@dirrm %%DATADIR%%/themes/winter/cursors
-@dirrm %%DATADIR%%/themes/winter/dialogs/images
-@dirrm %%DATADIR%%/themes/winter/dialogs
-@dirrm %%DATADIR%%/themes/winter/dock
-@dirrm %%DATADIR%%/themes/winter/dragbar/images
-@dirrm %%DATADIR%%/themes/winter/dragbar
-@dirrm %%DATADIR%%/themes/winter/epplets/images
-@dirrm %%DATADIR%%/themes/winter/epplets
-@dirrm %%DATADIR%%/themes/winter/eterm/images
-@dirrm %%DATADIR%%/themes/winter/eterm
-@dirrm %%DATADIR%%/themes/winter/focuslist/images
-@dirrm %%DATADIR%%/themes/winter/focuslist
-@dirrm %%DATADIR%%/themes/winter/iconbox/images
-@dirrm %%DATADIR%%/themes/winter/iconbox
-@dirrm %%DATADIR%%/themes/winter/init/images
-@dirrm %%DATADIR%%/themes/winter/init
-@dirrm %%DATADIR%%/themes/winter/menustyles/images
-@dirrm %%DATADIR%%/themes/winter/menustyles
-@dirrm %%DATADIR%%/themes/winter/pager/images
-@dirrm %%DATADIR%%/themes/winter/pager
-@dirrm %%DATADIR%%/themes/winter/slideouts
-@dirrm %%DATADIR%%/themes/winter/sound
 @dirrm %%DATADIR%%/themes/winter/tooltips/images
 @dirrm %%DATADIR%%/themes/winter/tooltips
+@dirrm %%DATADIR%%/themes/winter/sound
+@dirrm %%DATADIR%%/themes/winter/slideouts
+@dirrm %%DATADIR%%/themes/winter/pager/images
+@dirrm %%DATADIR%%/themes/winter/pager
+@dirrm %%DATADIR%%/themes/winter/menustyles/images
+@dirrm %%DATADIR%%/themes/winter/menustyles
+@dirrm %%DATADIR%%/themes/winter/init/images
+@dirrm %%DATADIR%%/themes/winter/init
+@dirrm %%DATADIR%%/themes/winter/iconbox/images
+@dirrm %%DATADIR%%/themes/winter/iconbox
+@dirrm %%DATADIR%%/themes/winter/focuslist/images
+@dirrm %%DATADIR%%/themes/winter/focuslist
+@dirrm %%DATADIR%%/themes/winter/eterm/images
+@dirrm %%DATADIR%%/themes/winter/eterm
+@dirrm %%DATADIR%%/themes/winter/epplets/images
+@dirrm %%DATADIR%%/themes/winter/epplets
+@dirrm %%DATADIR%%/themes/winter/dragbar/images
+@dirrm %%DATADIR%%/themes/winter/dragbar
+@dirrm %%DATADIR%%/themes/winter/dock
+@dirrm %%DATADIR%%/themes/winter/dialogs/images
+@dirrm %%DATADIR%%/themes/winter/dialogs
+@dirrm %%DATADIR%%/themes/winter/cursors
+@dirrm %%DATADIR%%/themes/winter/coords
+@dirrm %%DATADIR%%/themes/winter/common/images
+@dirrm %%DATADIR%%/themes/winter/common
+@dirrm %%DATADIR%%/themes/winter/buttons
+@dirrm %%DATADIR%%/themes/winter/borders/common/images
+@dirrm %%DATADIR%%/themes/winter/borders/common
+@dirrm %%DATADIR%%/themes/winter/borders/TRANSIENT
+@dirrm %%DATADIR%%/themes/winter/borders/SHAPED
+@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER_SHADE_LEFT
+@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER/images
+@dirrm %%DATADIR%%/themes/winter/borders/RIGHT_PAGER
+@dirrm %%DATADIR%%/themes/winter/borders/PAGER_SHADE_RIGHT
+@dirrm %%DATADIR%%/themes/winter/borders/PAGER_AUTOSHADE
+@dirrm %%DATADIR%%/themes/winter/borders/PAGER/images
+@dirrm %%DATADIR%%/themes/winter/borders/PAGER
+@dirrm %%DATADIR%%/themes/winter/borders/MENU_BORDER_ONLY
+@dirrm %%DATADIR%%/themes/winter/borders/MENU
+@dirrm %%DATADIR%%/themes/winter/borders/ICONBOX
+@dirrm %%DATADIR%%/themes/winter/borders/FIXED_SIZE
+@dirrm %%DATADIR%%/themes/winter/borders/DIALOG
+@dirrm %%DATADIR%%/themes/winter/borders/DEFAULT
+@dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY/images
+@dirrm %%DATADIR%%/themes/winter/borders/BORDER_ONLY
+@dirrm %%DATADIR%%/themes/winter/borders/BORDERLESS
+@dirrm %%DATADIR%%/themes/winter/borders/AUTOSHADE
+@dirrm %%DATADIR%%/themes/winter/borders
+@dirrm %%DATADIR%%/themes/winter/backgrounds/images
+@dirrm %%DATADIR%%/themes/winter/backgrounds
+@dirrm %%DATADIR%%/themes/winter/ABOUT
 @dirrm %%DATADIR%%/themes/winter
 @dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/pix
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%/menus
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/E-docs
+@dirrm %%DATADIR%%
+@dirrm lib/e16
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/xsessions
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
-@dirrmtry etc/X11/dm/Sessions
-@dirrmtry etc/X11/dm
-@dirrmtry etc/X11
-@dirrmtry share/xsessions
-@dirrmtry share/applications
+@dirrmtry share/locale/csb/LC_MESSAGES
+@dirrmtry share/locale/csb
