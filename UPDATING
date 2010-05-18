@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20100518:
+  AFFECTS: users of devel/pylint
+  AUTHOR: mva@FreeBSD.org
+
+  The pylint user configuration files have been changed slightly in newer
+  versions (>=0.20.0). In some cases older configurations might crash
+  pylint at startup.
+  
+  If you run into startup problems, make sure to remove the .pylintrc
+  configuration settings and the .pylint.d directory from your home
+  directory:
+
+    # rm ~/.pylintrc
+    # rm -rf ~/.pylint.d
+
+20100518:
   AFFECTS: users of devel/apr0, devel/apr1, www/apache20, www/apache22
   AUTHOR: pgollucci@FreeBSD.org
 
