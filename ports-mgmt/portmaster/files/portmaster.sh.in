@@ -601,7 +601,7 @@ unset var newopts
 
 iport_from_origin () {
 	local dir
-	dir=`grep -l "@comment ORIGIN:${1}$" $pdb/*/+CONTENTS`
+	dir=`grep -l "@comment ORIGIN:${1}$" $pdb/*/+CONTENTS` || return 1
 
 	# It should not happen that more than one port meets this
 	# requirement, but it can if the pkg data is corrupted.
@@ -1060,6 +1060,7 @@ if [ -n "$CHECK_PORT_DBDIR" ]; then
 			case "$answer" in
 			[yY])	pm_rm_s -rf $dir ;;
 			esac
+			echo ''
 			;;
 		esac
 	done
@@ -1284,8 +1285,17 @@ check_for_updates () {
 	elif [ -z "$do_update" -a -z "$skip" ]; then
 		find_moved_port $origin $iport $nf
 
-		# If the port has moved, we have to update it, otherwise ignore
-		[ -n "$moved_npd" ] && do_update=do_update6
+		# If the port has moved and no +IGNOREME, we have to update it
+		if [ -n "$moved_npd" ]; then
+			if [ ! -e "$pdb/$iport/+IGNOREME" ]; then
+				do_update=do_update_moved
+			else
+				echo "	===>>> Continuing due to $pdb/$iport/+IGNOREME"
+				echo ''
+				CUR_DEPS="${CUR_DEPS}${iport}:${origin}:"
+				return 0
+			fi
+		fi
 	fi
 
 	if [ -z "$do_update" -a -n "$port_ver" ]; then
@@ -2810,6 +2820,8 @@ check_state || {
 # Do these things first time through, with or without 'make config'
 if [ -z "$PM_BUILDING" -a -z "$SHOW_WORK" -a -z "$NO_ACTION" ]; then
 dofetch () {
+	local fetchlog allfiles
+
 	echo "===>>> Launching 'make checksum' for $portdir in background"
 	fetchlog=`pm_mktemp fetchlog-${portdir#*/}`
 	(pm_make -DBATCH checksum >> $fetchlog 2>&1 && {
@@ -2835,8 +2847,8 @@ dofetch () {
 		# Make sure that different ports using the same distfiles
 		# do not clobber each other's fetchs
 		for file in $distfiles; do
-		if ! ls ${TMPDIR}/f-${PM_PARENT_PID}-${file}-* >/dev/null 2>&1
-			then
+			case "$file" in */*) file=`echo $file | sed s#/#_#g` ;; esac
+			if ! ls ${TMPDIR}/f-${PM_PARENT_PID}-${file}-* >/dev/null 2>&1; then
 				pm_mktemp ${file}-${portdir#*/} >/dev/null
 			else
 				DONT_FETCH=dont_fetch
@@ -2846,7 +2858,7 @@ dofetch () {
 
 		[ -z "$DONT_FETCH" -a -n "$distfiles" ] && dofetch
 	fi
-	unset master_sites
+	unset master_sites distfiles file DONT_FETCH
 
 	if [ -z "$FETCH_ONLY" -a ! "$PM_PACKAGES" = only ]; then
 		TESTINT=`grep -l ^IS_INTERACTIVE Makefile`
@@ -2861,6 +2873,7 @@ dofetch () {
 		echo -n "===>>> Press the [Enter] or [Return] key to continue "
 		read DISCARD
 		echo ''
+		unset TESTINT DISCARD
 	fi
 fi
 fi	# [ -z "$PM_INDEX_ONLY" ]
