@@ -49,10 +49,14 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 #	LDAP                    "Enable LDAP Support"                   Off \
 #	THREADS                 "Enable threads in apr"                 Off
 
-SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
-			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
-			LIBTOOL_M4=${LIBTOOL_M4} \
-			AUTOHEADER=${AUTOHEADER}
+SCRIPTS_ENV+=	\
+	LIBTOOL=${LIBTOOL} \
+	LIBTOOL_VERSION=${LIBTOOL_VERSION} \
+	LIBTOOL_M4=${LIBTOOL_M4} \
+	LIBTOOLIZE=${LIBTOOLIZE} \
+	AUTOCONF=${AUTOCONF} \
+	AUTOHEADER=${AUTOHEADER}
+
 USE_ICONV=		yes
 USE_AUTOTOOLS=		autoconf:262 libtool:22
 USE_PERL5=		yes
@@ -81,9 +85,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--libdir=${PREFIX_RELDEST}/lib/apache2 \
 		--includedir=${PREFIX_RELDEST}/include/apache2
 
-CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
-		LOCALBASE="${LOCALBASE}"
+CONFIGURE_ENV=	\
+	CC="${CC}" \
+	CPPFLAGS="${CPPFLAGS}" \
+	LDFLAGS="${LDFLAGS}" \
+	CONFIG_SHELL="${SH}" \
+	LOCALBASE="${LOCALBASE}"
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
