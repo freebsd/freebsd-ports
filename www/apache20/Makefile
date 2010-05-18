@@ -49,10 +49,6 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 #	LDAP                    "Enable LDAP Support"                   Off \
 #	THREADS                 "Enable threads in apr"                 Off
 
-.if defined(WITH_KQUEUE_SUPPORT)
-EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch
-.endif
-
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
 			LIBTOOL_M4=${LIBTOOL_M4} \
