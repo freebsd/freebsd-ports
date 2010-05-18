@@ -1,0 +1,13 @@
+# This patch prevents shadowing of hatari's header
+# files by files in directories mentioned in X_CFLAGS.
+--- tools/hmsa/Makefile	Sun Nov 22 01:43:31 2009 +0100
++++ tools/hmsa/Makefile	Sun Nov 22 01:59:13 2009 +0100
+@@ -8,7 +8,7 @@
+ OBJS = $(HMSA_OBJS) $(HATARI_OBJS:%.o=../../src/%.o)
+ 
+ # Additional include directories:
+-CPPFLAGS += $(SDL_CFLAGS) -I../.. -I../../src/includes -I../../src/uae-cpu
++CPPFLAGS += -I../.. -I../../src/includes -I../../src/uae-cpu $(SDL_CFLAGS)
+ 
+ all: hmsa
+ 
