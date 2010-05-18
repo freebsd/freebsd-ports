@@ -108,11 +108,11 @@ pre-everything::
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_APACHE2_APR)
-	@${ECHO_MSG} "Using APR from ${APACHE_PORT}.  If you have the devel/apr"
+	@${ECHO_MSG} "Using APR from ${APACHE_PORT}.  If you have the devel/apr1"
 	@${ECHO_MSG} "port/package installed, you may need to remove it."
 .else
 	@${ECHO_MSG} "You can link subversion against the APR built with"
-	@${ECHO_MSG} "the ${APACHE_PORT} port, rather than the devel/apr port."
+	@${ECHO_MSG} "the ${APACHE_PORT} port, rather than the devel/apr1 port."
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_MOD_DONTDOTHAT) && defined(WITH_MOD_DAV_SVN)

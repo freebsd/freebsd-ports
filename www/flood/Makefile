@@ -16,7 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Profile-driven HTTP load tester
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		apr-1:${PORTSDIR}/devel/apr
+		apr-1:${PORTSDIR}/devel/apr1
 
 WRKSRC=		${WRKDIR}/httpd-test/flood
 USE_AUTOTOOLS=	autoconf:262 libtool:22:env

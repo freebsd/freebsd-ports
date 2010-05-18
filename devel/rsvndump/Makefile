@@ -37,7 +37,7 @@ BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
 
 .if !exists(${APR_APU_DIR}/${APR_CONFIG})
-BUILD_DEPENDS+=	apr-1-config:${PORTSDIR}/devel/apr
+BUILD_DEPENDS+=	apr-1-config:${PORTSDIR}/devel/apr1
 .endif
 
 BUILD_DEPENDS+=	subversion>=0:${PORTSDIR}/devel/subversion

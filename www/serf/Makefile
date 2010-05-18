@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Serf HTTP client library
 
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr
+LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
 
 MAKE_JOBS_SAFE=  yes
 

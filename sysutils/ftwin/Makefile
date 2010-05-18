@@ -15,7 +15,7 @@ MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	A useful tool to find duplicate files
 
 LIB_DEPENDS=	puzzle.1:${PORTSDIR}/graphics/libpuzzle \
-		apr-1:${PORTSDIR}/devel/apr \
+		apr-1:${PORTSDIR}/devel/apr1 \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
