@@ -37,6 +37,7 @@
     SUBDIR += luna
     SUBDIR += match
     SUBDIR += merkaartor
+    SUBDIR += mkgmap
     SUBDIR += mymoon
     SUBDIR += nightfall
     SUBDIR += nova
