@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_layout
 PORTVERSION=	5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.tangent.org/
 

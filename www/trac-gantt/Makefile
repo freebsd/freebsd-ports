@@ -7,7 +7,7 @@
 
 PORTNAME=	TracGantt
 PORTVERSION=	0.3.2a
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www devel python
 MASTER_SITES=	http://willbarton.com/files/ \
 		http://dryice.name/computer/FreeBSD/distfiles/

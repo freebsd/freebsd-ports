@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_dnssd
 PORTVERSION=	0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://0pointer.de/lennart/projects/mod_dnssd/
 

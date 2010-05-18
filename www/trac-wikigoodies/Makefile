@@ -7,7 +7,7 @@
 
 PORTNAME=	wikigoodies
 PORTVERSION=	0.3.3522
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	trac-

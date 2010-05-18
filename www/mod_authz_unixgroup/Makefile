@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_authz_unixgroup
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/
 
