@@ -6,7 +6,7 @@
 
 PORTNAME=	ngmp
 PORTVERSION=	0.1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.prevantage.com/releases/ \
 		ftp://ftp2.prevantage.com/releases/

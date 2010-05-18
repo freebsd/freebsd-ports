@@ -7,7 +7,7 @@
 
 PORTNAME=	svn2cl
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://arthurdejong.org/svn2cl/ \
 		LOCAL/avl

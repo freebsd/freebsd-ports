@@ -7,7 +7,7 @@
 
 PORTNAME=	xmlrpc
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://shuqun.com/files/ \
 		LOCAL/glarkin

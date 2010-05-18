@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_h264_streaming
 PORTVERSION=	2.2.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://h264.code-shop.com/download/
 DISTNAME=	apache_${PORTNAME}-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	down
 PORTVERSION=	0.0.1.r11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	trac-
