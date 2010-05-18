@@ -1,0 +1,10 @@
+--- ./apr-0.9.18/config.layout.orig	2004-11-24 18:02:04.000000000 -0500
++++ ./apr-0.9.18/config.layout	2010-05-13 16:34:13.416618739 -0400
+@@ -229,3 +229,7 @@
+     infodir:       ${exec_prefix}/share/info
+     libsuffix:    -${APR_MAJOR_VERSION}
+ </Layout>
++
++<Layout FreeBSD>
++    libsuffix:
++</Layout>

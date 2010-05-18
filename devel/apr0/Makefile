@@ -6,7 +6,6 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -17,6 +16,8 @@ COMMENT=	Apache Portability Library
 
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
+CONFLICTS=	apr-*-1.*
+
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	THREADS "Enable Threads in apr"				on  \
@@ -24,14 +25,11 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 		BDB	"Enable Berkley BDB support in apr-util"	on  \
 		GDBM	"Enable GNU dbm support in apr-util"		on  \
 		LDAP	"Enable LDAP support in apr-util"		off \
-		MYSQL	"Enable MySQL suport in apr-util"		off \
 		NDBM	"Enable NDBM support in apr-util"		off \
-		PGSQL	"Enable Postgresql suport in apr-util"		off \
-		SQLITE  "Enable SQLite3 support in apr-util"		off \
 		DEVRANDOM "Use /dev/random or compatible in apr"	on
 
-APR_VERSION=	1.4.2
-APU_VERSION=	1.3.9
+APR_VERSION=	0.9.18
+APU_VERSION=	0.9.17
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:22:env
@@ -47,10 +45,10 @@ APR_WRKDIR=	${WRKDIR}/apr-${APR_VERSION}
 APU_WRKDIR=	${WRKDIR}/apr-util-${APU_VERSION}
 
 PLIST_SUB=	SHLIB_APR_MAJOR="${SHLIB_APR_MAJOR}" SHLIB_APU_MAJOR="${SHLIB_APU_MAJOR}"
-SHLIB_APR_MAJOR=	4
-SHLIB_APU_MAJOR=	3
+SHLIB_APR_MAJOR=	9
+SHLIB_APU_MAJOR=	9
 
-APR_CONF_ARGS=	--with-installbuilddir=${DATADIR}/build-1
+APR_CONF_ARGS=	--with-installbuilddir=${DATADIR}/build-0
 APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${LOCALBASE}
@@ -97,7 +95,6 @@ PLIST_SUB+=	GDBM="@comment "
 APU_CONF_ARGS+=	--without-gdbm
 .else
 PLIST_SUB+=	GDBM=""
-APU_EXTRAS=	yes
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
 .if defined(PKGNAMESUFFIX)
@@ -111,7 +108,6 @@ PKGNAMESUFFIX=	-gdbm
 PLIST_SUB+=	BDB="@comment "
 APU_CONF_ARGS+=	--without-berkeley-db
 .else
-APU_EXTRAS=	yes
 PLIST_SUB+=	BDB=""
 USE_BDB=	42+
 INVALID_BDB_VER=	50
@@ -124,7 +120,6 @@ PKGNAMESUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
 .endif
 
 .if defined(WITH_NDBM)
-APU_EXTRAS=	yes
 PLIST_SUB+=	NDBM=""
 APU_CONF_ARGS+=	--with-ndbm=/usr
 .if defined(PKGNAMESUFFIX)
@@ -138,7 +133,6 @@ APU_CONF_ARGS+=	--without-ndbm
 .endif
 
 .if defined(WITH_LDAP)
-APU_EXTRAS=	yes
 PLIST_SUB+=	LDAP=""
 USE_OPENLDAP=	yes
 APU_CONF_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
@@ -150,62 +144,6 @@ PKGNAMESUFFIX=	-ldap
 .endif
 .else
 PLIST_SUB+=	LDAP="@comment "
-APU_CONF_ARGS+=	--without-ldap
-.endif
-
-.if defined(WITH_MYSQL)
-APU_EXTRAS=	yes
-PLIST_SUB+=	MYSQL=""
-USE_MYSQL=	YES
-APU_CONF_ARGS+=	--with-mysql=${LOCALBASE}
-CONFIGURE_ENV+=	LIBS="${LIBS}"
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/mysql -DHAVE_MYSQL_H
-LDFLAGS+=	-L${LOCALBASE}/lib/mysql
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-mysql${MYSQL_VER}
-.else
-PKGNAMESUFFIX=	-mysql
-.endif
-.else
-PLIST_SUB+=	MYSQL="@comment "
-APU_CONF_ARGS+=	--without-mysql
-.endif
-
-.if defined(WITH_PGSQL)
-APU_EXTRAS=	yes
-PLIST_SUB+=	PGSQL=""
-USE_PGSQL=	YES
-APU_CONF_ARGS+=	--with-pgsql=${LOCALBASE}
-CONFIGURE_ENV+=	ac_cv_path_PGSQL_CONFIG=""
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-pgsql${PGSQL_VER}
-.else
-PKGNAMESUFFIX=	-pgsql
-.endif
-.else
-PLIST_SUB+=	PGSQL="@comment "
-APU_CONF_ARGS+=	--without-pgsql
-.endif
-
-.if defined(WITH_SQLITE)
-APU_EXTRAS=	yes
-PLIST_SUB+=	SQLITE3=""
-USE_SQLITE=	YES
-APU_CONF_ARGS+=	--with-sqlite3=${LOCALBASE}
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-sqlite3
-.else
-PKGNAMESUFFIX=	-sqlite3
-.endif
-.else
-APU_CONF_ARGS+=	--without-sqlite3
-PLIST_SUB+=	SQLITE3="@comment "
-.endif
-
-.if defined(APU_EXTRAS)
-PLIST_SUB+=	APU_EXTRAS=""
-.else
-PLIST_SUB+=	APU_EXTRAS="@comment "
 .endif
 
 post-patch:
