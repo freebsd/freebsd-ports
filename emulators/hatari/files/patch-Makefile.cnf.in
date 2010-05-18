@@ -1,0 +1,22 @@
+# This patch prevents shadowing of hatari's header
+# files by files in directories mentioned in X_CFLAGS.
+--- Makefile.cnf.in	Sun Nov 22 01:43:31 2009 +0100
++++ Makefile.cnf.in	Sun Nov 22 01:58:24 2009 +0100
+@@ -5,7 +5,7 @@
+ CC = @CC@
+ 
+ # Set flags passed to the compiler (e.g. optimization flags)
+-CFLAGS = @CFLAGS@ @X_CFLAGS@
++CFLAGS = @CFLAGS@
+ 
+ # Set flags passed to the preprocessor (e.g. -I<include dir>)
+ CPPFLAGS = @CPPFLAGS@
+@@ -30,7 +30,7 @@
+ 
+ 
+ # SDL-Library configuration (compiler flags and linker options)
+-SDL_CFLAGS = @SDL_CFLAGS@
++SDL_CFLAGS = @X_CFLAGS@ @SDL_CFLAGS@
+ SDL_LIBS = @SDL_LIBS@
+ 
+ 
