@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b19
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \

@@ -3441,19 +3441,17 @@
  
  void os::init_system_properties_values() {
  //  char arch[12];
-@@ -281,10 +356,8 @@
+@@ -281,9 +356,7 @@
   *        ...
   *        7: The default directories, normally /lib and /usr/lib.
   */
 -#if defined(AMD64) || defined(_LP64) && (defined(SPARC) || defined(PPC) || defined(S390))
 -#define DEFAULT_LIBPATH "/usr/lib64:/lib64:/lib:/usr/lib"
 -#else
--#define DEFAULT_LIBPATH "/lib:/usr/lib"
 +#ifndef DEFAULT_LIBPATH
-+#define DEFAULT_LIBPATH "/lib:/usr/lib:/usr/local/lib:/usr/local/lib"
+ #define DEFAULT_LIBPATH "/lib:/usr/lib"
  #endif
  
- #define EXTENSIONS_DIR  "/lib/ext"
 @@ -362,7 +435,11 @@
           * should always exist (until the legacy problem cited above is
           * addressed).
