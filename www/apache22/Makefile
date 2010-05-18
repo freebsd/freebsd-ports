@@ -128,7 +128,6 @@ WITH_LDAP=	yes
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
-
 .endif
 
 .if defined (WITH_LDAP) || defined (WITH_LDAP_MODULES)
