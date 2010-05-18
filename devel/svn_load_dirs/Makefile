@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	svn_load_dirs
-PORTVERSION=	1.6.9
-PORTREVISION=	2
+PORTVERSION=	${SVN_PORTVERSION}
+PORTREVISION=	0	# You would hardly need to update this!
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/downloads/
-DISTNAME=	subversion-${DISTVERSION}
-DIST_SUBDIR=	subversion
+MASTER_SITES=	# none
+DISTFILES=	# none
 
 MAINTAINER=	knu@freebsd.org
 COMMENT=	A Perl script to load directories into a Subversion repository
@@ -21,7 +20,22 @@ RUN_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 USE_BZIP2=	yes
 USE_PERL5=	5.8.0+
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/client-side/svn_load_dirs
+WRKSRC=		${WRKDIR}/subversion-${SVN_PORTVERSION}/contrib/client-side/svn_load_dirs
+
+PLIST_FILES=	bin/svn_load_dirs
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+PORTEXAMPLES=	*
+.endif
+
+.include <bsd.port.pre.mk>
+
+SVN_PORTDIR=		${PORTSDIR}/devel/subversion
+SVN_PORTVERSION!=	cd ${SVN_PORTDIR} && ${MAKE} -V PORTVERSION
+
+do-extract:
+	${MKDIR} ${WRKDIR}
+	cd ${SVN_PORTDIR} && ${MAKE} DISABLE_CONFLICTS=yes WRKDIR=${WRKDIR} extract
 
 do-build:
 	${SED} -E \
@@ -38,4 +52,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/svn_load_dirs.README ${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

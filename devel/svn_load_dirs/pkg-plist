@@ -1,5 +1,0 @@
-bin/svn_load_dirs
-%%PORTDOCS%%%%EXAMPLESDIR%%/svn_load_dirs_property_table.example
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/svn_load_dirs.README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
