@@ -4396,3 +4396,4 @@ devel/nx||2010-05-14|Remove due math/py-networkx be the same port and with more 
 math/libranlib|math/librandlib|2010-05-17|Project renamed
 print/hplip3|print/hplip|2010-05-17|hplip port updated to 3.X version
 emulators/sdlmame|emulators/mame|2010-05-17|SDL port has been integrated into mainstream
+devel/apr|devel/apr1|2010-05-18|Renamed to devel/apr1
