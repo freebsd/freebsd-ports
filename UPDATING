@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100518:
+  AFFECTS: users of devel/apr
+  AUTHOR: pgollucci@FreeBSD.org
+
+  devel/apr has been renamed to devel/apr1
+
+  If you use portmaster:
+
+    portmaster -o devel/apr1 devel/apr
+
+  If you use portupgrade:
+
+    portupgrade -f -o devel/apr1 devel/apr
+
 20100512:
   AFFECTS: users of www/apache20
   AUTHOR: pgollucci@FreeBSD.org
