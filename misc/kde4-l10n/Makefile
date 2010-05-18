@@ -7,6 +7,7 @@
 
 PORTNAME=	kde-l10n
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -19,13 +20,13 @@ NO_BUILD=	yes
 # NO_INSTALL=	yes
 USE_KDE4=	kdeprefix
 
-KDE4_LANG_ALL=	ar bg ca ca_valencia cs csb da de el en_GB es et eu fi fr \
+KDE4_LANG_ALL=	ar bg ca ca@valencia cs csb da de el en_GB es et eu fi fr \
 		fy ga gl gu he hi hr hu is id it ja kk km kn ko lt lv \
 		mai mk ml nb nds nl nn pa pl pt pt_BR ro ru \
 		si sk sl sr sv tg tr uk wa zh_CN zh_TW
 
 ar_PORT=	arabic/kde4-l10n
-ca_valencia_PORT=	misc/kde4-l10n-ca_valencia
+ca@valencia_PORT=	misc/kde4-l10n-ca_valencia
 de_PORT=	german/kde4-l10n
 fr_PORT=	french/kde4-l10n
 he_PORT=	hebrew/kde4-l10n
@@ -42,18 +43,18 @@ zh_TW_PORT=	chinese/kde4-l10n-zh_TW
 
 .include <${.CURDIR}/files/kde4-lang-names>
 
-.for lang in ${KDE4_LANG_ALL}
-${lang}_DETECT?=	${KDE4_PREFIX}/share/locale/${lang}/entry.desktop
-${lang}_PORT?=		misc/kde4-l10n-${lang}
-${lang}_NAME?=		${lang}
-.endfor
-
 OPTIONS=	ALL "All localizations" on
 .for lang in ${KDE4_LANG_ALL}
 OPTIONS+=	${lang} "${${lang}_NAME} localization" off
 .endfor
 
 .include <bsd.port.pre.mk>
+
+.for lang in ${KDE4_LANG_ALL}
+${lang}_DETECT?=	${KDE4_PREFIX}/share/locale/${lang}/entry.desktop
+${lang}_PORT?=		misc/kde4-l10n-${lang}
+${lang}_NAME?=		${lang}
+.endfor
 
 .for lang in ${KDE4_LANG_ALL}
 .if defined(WITH_ALL) || defined(WITH_${lang})
