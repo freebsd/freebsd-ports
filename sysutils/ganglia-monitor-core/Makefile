@@ -20,7 +20,7 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
 LIB_DEPENDS+=	confuse:${PORTSDIR}/devel/libconfuse
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr
+LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 

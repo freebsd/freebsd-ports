@@ -57,7 +57,7 @@ APACHEDIR=	${MASTERDIR}
 
 .if !defined(WITHOUT_APACHE_OPTIONS)
 OPTIONS=	\
-	APR_FROM_PORTS  "Use devel/apr (recommended)" 			On  \
+	APR_FROM_PORTS  "Use devel/apr1 (recommended)" 			On  \
 	THREADS 		"Enable threads support in APR" 		Off \
 	MYSQL 			"Enable MySQL support for apr-dbd" 		Off \
 	PGSQL 			"Enable PostgreSQL support for apr-dbd" Off \
@@ -136,7 +136,7 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 .if defined(WITH_APR_FROM_PORTS)
 PLIST_SUB+=	APR_PORTS="@comment "
-APR_PORT?=	devel/apr
+APR_PORT?=	devel/apr1
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/${APR_PORT}
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \
 			--with-apr-util=${LOCALBASE}/bin/apu-1-config

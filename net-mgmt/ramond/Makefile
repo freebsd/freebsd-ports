@@ -23,7 +23,7 @@ PORTDOCS=	README
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr
+LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ramond ${PREFIX}/sbin

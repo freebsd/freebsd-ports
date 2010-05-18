@@ -17,7 +17,7 @@ DIST_SUBDIR=	mod_webapp
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module mounts Tomcat web applications
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/apr:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/apr1:configure
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -41,8 +41,8 @@ APACHECTL?=	${LOCALBASE}/sbin/apachectl
 APR_LIB?=	${LOCALBASE}/lib/
 APR_INCLUDE?=	${LOCALBASE}/include/apr-${APR_MAJORVER}/
 APACHE_MODULES?=libexec/apache
-APR_VER!=	cd ${PORTSDIR}/devel/apr && ${MAKE} -V APR_VERSION
-APR_WRKSRC!=	cd ${PORTSDIR}/devel/apr && ${MAKE} -V WRKSRC
+APR_VER!=	cd ${PORTSDIR}/devel/apr1 && ${MAKE} -V APR_VERSION
+APR_WRKSRC!=	cd ${PORTSDIR}/devel/apr1 && ${MAKE} -V WRKSRC
 APR_MAJORVER=	${APR_VER:C/\..*//g}
 APR_SRC=	${APR_WRKSRC}/apr-${APR_VER}
 AUTOCONF?=	${LOCALBASE}/bin/autoconf

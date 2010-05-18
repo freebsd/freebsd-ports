@@ -14,7 +14,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tcovert@sahuagin.net
 COMMENT=	Log4cxx is a port to C++ of the Log4j project
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/apr-1-config:${PORTSDIR}/devel/apr
+BUILD_DEPENDS=	${LOCALBASE}/bin/apr-1-config:${PORTSDIR}/devel/apr1
 
 .if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen

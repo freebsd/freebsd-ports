@@ -13,7 +13,7 @@ MASTER_SITES=	http://butterfat.net/releases/mod_auth_openid/
 MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	An authentication module for the Apache 2 webserver with OpenID
 
-BUILD_DEPENDS=	apr-1-config:${PORTSDIR}/devel/apr
+BUILD_DEPENDS=	apr-1-config:${PORTSDIR}/devel/apr1
 LIB_DEPENDS=	opkele:${PORTSDIR}/devel/libopkele \
 		sqlite3:${PORTSDIR}/databases/sqlite34
 

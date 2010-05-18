@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Apache 2.2.x module to manage apr_memcache connections
 
-LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr
+LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
 MAKE_JOBS_SAFE=  yes
 
