@@ -69,8 +69,8 @@ replace:
 	@${ECHO_CMD} "send-mail	${PREFIX}/sbin/ssmtp" >> ${MAILERCONF}
 	@${ECHO_CMD} "mailq		${PREFIX}/sbin/ssmtp" >> ${MAILERCONF}
 	@${ECHO_CMD} "newaliases	${PREFIX}/sbin/ssmtp" >> ${MAILERCONF}
-	@${ECHO_CMD} "hoststat	${TRUE}" >> ${MAILERCONF}
-	@${ECHO_CMD} "purgestat	${TRUE}" >> ${MAILERCONF}
+	@${ECHO_CMD} "hoststat	/usr/bin/true" >> ${MAILERCONF}
+	@${ECHO_CMD} "purgestat	/usr/bin/true" >> ${MAILERCONF}
 
 pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
