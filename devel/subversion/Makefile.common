@@ -100,7 +100,7 @@ APU_CONFIG=	apu-config
 .endif
 APR_PORT=	${APACHE_PORT}
 .else
-APR_PORT=	devel/apr
+APR_PORT=	devel/apr1
 LIB_DEPENDS+=	apr-1:${PORTSDIR}/${APR_PORT}
 APR_APU_DIR=	${LOCALBASE}/bin
 APR_CONFIG=	apr-1-config
