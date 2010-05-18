@@ -19,6 +19,7 @@ MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		apr-1:${PORTSDIR}/devel/apr \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 MAKE_JOBS_SAFE=	yes
@@ -57,7 +58,6 @@ APACHEDIR=	${MASTERDIR}
 
 .if !defined(WITHOUT_APACHE_OPTIONS)
 OPTIONS=	\
-	APR_FROM_PORTS  "Use devel/apr1 (recommended)" 			On  \
 	THREADS 		"Enable threads support in APR" 		Off \
 	MYSQL 			"Enable MySQL support for apr-dbd" 		Off \
 	PGSQL 			"Enable PostgreSQL support for apr-dbd" Off \
@@ -82,7 +82,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${LOCALBASE} \
 		--enable-http \
-		--with-pcre=${LOCALBASE}
+		--with-pcre=${LOCALBASE} \
+		--with-apr=${LOCALBASE}/bin/apr-1-config \
+		--with-apr-util=${LOCALBASE}/bin/apu-1-config
 
 CONFIGURE_ENV= \
 		CC="${CC}" \
@@ -132,19 +134,6 @@ WITH_LDAP=	yes
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
-.endif
-
-.if defined(WITH_APR_FROM_PORTS)
-PLIST_SUB+=	APR_PORTS="@comment "
-APR_PORT?=	devel/apr1
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/${APR_PORT}
-CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \
-			--with-apr-util=${LOCALBASE}/bin/apu-1-config
-.else
-USE_LDCONFIG=	yes
-PLIST_SUB+=	APR_PORTS=""
-CONFLICTS+=	apr-*-1.*
-CONFIGURE_ENV+=	USE_BUNDLED_APR=YES
 .endif
 
 # When using apr_mysql_db we _must_ rebuild makefiles

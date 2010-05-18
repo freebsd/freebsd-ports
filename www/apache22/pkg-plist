@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%APR_PORTS%%@exec mkdir -p %D/lib/apr-util-1
 @exec mkdir -p %D/etc/apache22/extra 2> /dev/null
 @exec mkdir -p %D/etc/apache22/Includes 2> /dev/null || true
 @exec mkdir -p %D/etc/apache22/envvars.d 2> /dev/null || true
@@ -57,73 +56,6 @@ include/apache22/ap_provider.h
 include/apache22/ap_regex.h
 include/apache22/ap_regkey.h
 include/apache22/ap_release.h
-%%APR_PORTS%%include/apr-1/apr.h
-%%APR_PORTS%%include/apr-1/apr_allocator.h
-%%APR_PORTS%%include/apr-1/apr_anylock.h
-%%APR_PORTS%%include/apr-1/apr_atomic.h
-%%APR_PORTS%%include/apr-1/apr_base64.h
-%%APR_PORTS%%include/apr-1/apr_buckets.h
-%%APR_PORTS%%include/apr-1/apr_date.h
-%%APR_PORTS%%include/apr-1/apr_dbd.h
-%%APR_PORTS%%include/apr-1/apr_dbm.h
-%%APR_PORTS%%include/apr-1/apr_dso.h
-%%APR_PORTS%%include/apr-1/apr_env.h
-%%APR_PORTS%%include/apr-1/apr_errno.h
-%%APR_PORTS%%include/apr-1/apr_file_info.h
-%%APR_PORTS%%include/apr-1/apr_file_io.h
-%%APR_PORTS%%include/apr-1/apr_fnmatch.h
-%%APR_PORTS%%include/apr-1/apr_general.h
-%%APR_PORTS%%include/apr-1/apr_getopt.h
-%%APR_PORTS%%include/apr-1/apr_global_mutex.h
-%%APR_PORTS%%include/apr-1/apr_hash.h
-%%APR_PORTS%%include/apr-1/apr_hooks.h
-%%APR_PORTS%%include/apr-1/apr_inherit.h
-%%APR_PORTS%%include/apr-1/apr_ldap.h
-%%APR_PORTS%%include/apr-1/apr_ldap_init.h
-%%APR_PORTS%%include/apr-1/apr_ldap_option.h
-%%APR_PORTS%%include/apr-1/apr_ldap_rebind.h
-%%APR_PORTS%%include/apr-1/apr_ldap_url.h
-%%APR_PORTS%%include/apr-1/apr_lib.h
-%%APR_PORTS%%include/apr-1/apr_md4.h
-%%APR_PORTS%%include/apr-1/apr_md5.h
-%%APR_PORTS%%include/apr-1/apr_memcache.h
-%%APR_PORTS%%include/apr-1/apr_mmap.h
-%%APR_PORTS%%include/apr-1/apr_network_io.h
-%%APR_PORTS%%include/apr-1/apr_optional.h
-%%APR_PORTS%%include/apr-1/apr_optional_hooks.h
-%%APR_PORTS%%include/apr-1/apr_poll.h
-%%APR_PORTS%%include/apr-1/apr_pools.h
-%%APR_PORTS%%include/apr-1/apr_portable.h
-%%APR_PORTS%%include/apr-1/apr_proc_mutex.h
-%%APR_PORTS%%include/apr-1/apr_queue.h
-%%APR_PORTS%%include/apr-1/apr_random.h
-%%APR_PORTS%%include/apr-1/apr_reslist.h
-%%APR_PORTS%%include/apr-1/apr_ring.h
-%%APR_PORTS%%include/apr-1/apr_rmm.h
-%%APR_PORTS%%include/apr-1/apr_sdbm.h
-%%APR_PORTS%%include/apr-1/apr_sha1.h
-%%APR_PORTS%%include/apr-1/apr_shm.h
-%%APR_PORTS%%include/apr-1/apr_signal.h
-%%APR_PORTS%%include/apr-1/apr_strings.h
-%%APR_PORTS%%include/apr-1/apr_strmatch.h
-%%APR_PORTS%%include/apr-1/apr_support.h
-%%APR_PORTS%%include/apr-1/apr_tables.h
-%%APR_PORTS%%include/apr-1/apr_thread_cond.h
-%%APR_PORTS%%include/apr-1/apr_thread_mutex.h
-%%APR_PORTS%%include/apr-1/apr_thread_pool.h
-%%APR_PORTS%%include/apr-1/apr_thread_proc.h
-%%APR_PORTS%%include/apr-1/apr_thread_rwlock.h
-%%APR_PORTS%%include/apr-1/apr_time.h
-%%APR_PORTS%%include/apr-1/apr_uri.h
-%%APR_PORTS%%include/apr-1/apr_user.h
-%%APR_PORTS%%include/apr-1/apr_uuid.h
-%%APR_PORTS%%include/apr-1/apr_version.h
-%%APR_PORTS%%include/apr-1/apr_want.h
-%%APR_PORTS%%include/apr-1/apr_xlate.h
-%%APR_PORTS%%include/apr-1/apr_xml.h
-%%APR_PORTS%%include/apr-1/apu.h
-%%APR_PORTS%%include/apr-1/apu_version.h
-%%APR_PORTS%%include/apr-1/apu_want.h
 %%EVENT%%include/apache22/pod.h
 %%EVENT%%include/apache22/fdqueue.h
 %%WORKER%%include/apache22/fdqueue.h
@@ -163,38 +95,6 @@ include/apache22/util_md5.h
 include/apache22/util_script.h
 include/apache22/util_time.h
 include/apache22/util_xml.h
-%%APR_PORTS%%bin/apr-1-config
-%%APR_PORTS%%bin/apu-1-config
-%%APR_PORTS%%lib/apr.exp
-%%APR_PORTS%%lib/aprutil.exp
-%%APR_PORTS%%lib/libapr-1.a
-%%APR_PORTS%%lib/libapr-1.la
-%%APR_PORTS%%lib/libapr-1.so
-%%APR_PORTS%%lib/libapr-1.so.4
-%%APR_PORTS%%lib/libaprutil-1.a
-%%APR_PORTS%%lib/libaprutil-1.la
-%%APR_PORTS%%lib/libaprutil-1.so
-%%APR_PORTS%%lib/libaprutil-1.so.3
-%%APR_PORTS%%%%MYSQL%%lib/apr-util-1/apr_dbd_mysql-1.so
-%%APR_PORTS%%%%MYSQL%%lib/apr-util-1/apr_dbd_mysql.so
-%%APR_PORTS%%%%MYSQL%%lib/apr-util-1/apr_dbd_mysql.la
-%%APR_PORTS%%%%MYSQL%%lib/apr-util-1/apr_dbd_mysql.a
-%%APR_PORTS%%%%PGSQL%%lib/apr-util-1/apr_dbd_pgsql-1.so
-%%APR_PORTS%%%%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.so
-%%APR_PORTS%%%%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.la
-%%APR_PORTS%%%%PGSQL%%lib/apr-util-1/apr_dbd_pgsql.a
-%%APR_PORTS%%%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3-1.so
-%%APR_PORTS%%%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3.so
-%%APR_PORTS%%%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3.la
-%%APR_PORTS%%%%SQLITE3%%lib/apr-util-1/apr_dbd_sqlite3.a
-%%APR_PORTS%%%%BDB%%lib/apr-util-1/apr_dbm_db-1.so
-%%APR_PORTS%%%%BDB%%lib/apr-util-1/apr_dbm_db.so
-%%APR_PORTS%%%%BDB%%lib/apr-util-1/apr_dbm_db.la
-%%APR_PORTS%%%%BDB%%lib/apr-util-1/apr_dbm_db.a
-%%APR_PORTS%%%%MOD_LDAP%%lib/apr-util-1/apr_ldap-1.so
-%%APR_PORTS%%%%MOD_LDAP%%lib/apr-util-1/apr_ldap.so
-%%APR_PORTS%%%%MOD_LDAP%%lib/apr-util-1/apr_ldap.la
-%%APR_PORTS%%%%MOD_LDAP%%lib/apr-util-1/apr_ldap.a
 libexec/apache22/httpd.exp
 %%MOD_ACTIONS%%libexec/apache22/mod_actions.so
 %%MOD_ALIAS%%libexec/apache22/mod_alias.so
@@ -286,11 +186,6 @@ sbin/logresolve
 sbin/rotatelogs
 sbin/split-logfile
 %%MOD_SUEXEC%%sbin/suexec
-%%APR_PORTS%%build-1/apr_rules.mk
-%%APR_PORTS%%build-1/libtool
-%%APR_PORTS%%build-1/make_exports.awk
-%%APR_PORTS%%build-1/make_var_export.awk
-%%APR_PORTS%%build-1/mkdir.sh
 share/apache22/build/config_vars.mk
 share/apache22/build/config.nice
 share/apache22/build/instdso.sh
@@ -560,9 +455,6 @@ www/apache22/icons/world2.png
 @dirrmtry %%DOCSDIR%%
 @dirrm share/apache22/build
 @dirrm share/apache22
-%%APR_PORTS%%@dirrm include/apr-1
-%%APR_PORTS%%@dirrmtry lib/apr-util-1
-%%APR_PORTS%%@dirrm build-1
 @dirrmtry libexec/apache22
 @dirrmtry include/apache22
 @dirrmtry www/apache22
