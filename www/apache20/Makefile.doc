@@ -73,9 +73,6 @@
 ##           WITH_CUSTOM_WWW:     Let you choose your ${PREFIX}/www components
 ##                                [cgi|errordocs|icons|wwwdata]
 ##
-##  Optionnal patches:  
-##      WITH_KQUEUE_SUPPORT       Add kqueue support to apr/httpd
-##
 ## Available make targets:
 ##      show-options:             prints this message
 ##      show-modules:             prints list of available modules

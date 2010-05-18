@@ -23,7 +23,8 @@ MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.0.x of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-	pcre.0:${PORTSDIR}/devel/pcre
+	pcre.0:${PORTSDIR}/devel/pcre \
+	apr-0:${PORTSDIR}/devel/apr0
 
 MAKE_JOBS_SAFE=	yes
 
@@ -48,14 +49,6 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 #	EXCEPTION_HOOK          "Enable Exception Hook"                 On  \
 #	LDAP                    "Enable LDAP Support"                   Off \
 #	THREADS                 "Enable threads in apr"                 Off
-
-SCRIPTS_ENV+=	\
-	LIBTOOL=${LIBTOOL} \
-	LIBTOOL_VERSION=${LIBTOOL_VERSION} \
-	LIBTOOL_M4=${LIBTOOL_M4} \
-	LIBTOOLIZE=${LIBTOOLIZE} \
-	AUTOCONF=${AUTOCONF} \
-	AUTOHEADER=${AUTOHEADER}
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=		autoconf:262 libtool:22
@@ -82,6 +75,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--with-port=${WITH_HTTP_PORT} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${LOCALBASE} \
+		--with-apr=${LOCALBASE}/bin/apr-config \
+		--with-apr-util=${LOCALBASE}/bin/apu-config \
 		--libdir=${PREFIX_RELDEST}/lib/apache2 \
 		--includedir=${PREFIX_RELDEST}/include/apache2
 
@@ -166,10 +161,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-openssl-9.8up.patch
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 .endif
 
-.if exists(${LOCALBASE}/lib/libapr-0.so) || defined(WITH_APR_FROM_PORTS)
-IGNORE=	apr from ports (WITH_APR_FROM_PORTS) is no longer supported
-.endif
-
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 .   if ${ARCH} == i386
@@ -215,16 +206,12 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${RM} -f ${WRKSRC}/docs/conf/highperformance-std.conf
 	@${RM} -rf ${WRKSRC}/srclib/pcre ${WRKSRC}/include/pcreposix.h
+	@${RM} -rf ${WRKSRC}/srclib/apr ${WRKSRC}/srclib/apr-util
 	@${GREP} -Rl REG_NOSUB ${WRKSRC}/modules | ${XARGS} ${REINPLACE_CMD} -e 's,REG_NOSUB,0,g'
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
-	@${REINPLACE_CMD} -e 's,freebsd\[2345\],freebsd\[23456789\],' \
-			${WRKSRC}/srclib/apr/build/apr_hints.m4
 	@${REINPLACE_CMD} -e "s,\$abs_builddir/srclib/pcre/libpcre.la,${LOCALBASE}/lib/libpcre.la," ${WRKSRC}/configure.in
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
-
-pre-configure:
-	@cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
