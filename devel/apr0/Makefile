@@ -31,6 +31,8 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 APR_VERSION=	0.9.18
 APU_VERSION=	0.9.17
 
+NO_LATEST_LINK=	yes
+
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:22:env
 USE_PERL5_BUILD=	yes
