@@ -7,6 +7,7 @@
 
 PORTNAME=	logilab-common
 PORTVERSION=	0.50.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB/common
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +16,6 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Common low-level libraries shared among logilab projects
 
 USE_PYTHON=	2.4+
-USE_PYDISTUTILS=easy_install
-
-post-extract:
-	${TOUCH} ${WRKSRC}/test/__init__.py
+USE_PYDISTUTILS=yes
 
 .include <bsd.port.mk>
