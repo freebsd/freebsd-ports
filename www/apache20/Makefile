@@ -208,8 +208,7 @@ post-patch:
 	@${RM} -rf ${WRKSRC}/srclib/pcre ${WRKSRC}/include/pcreposix.h
 	@${RM} -rf ${WRKSRC}/srclib/apr ${WRKSRC}/srclib/apr-util
 	@${GREP} -Rl REG_NOSUB ${WRKSRC}/modules | ${XARGS} ${REINPLACE_CMD} -e 's,REG_NOSUB,0,g'
-	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
-			${WRKSRC}/server/core.c
+	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' ${WRKSRC}/server/core.c
 	@${REINPLACE_CMD} -e "s,\$abs_builddir/srclib/pcre/libpcre.la,${LOCALBASE}/lib/libpcre.la," ${WRKSRC}/configure.in
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
