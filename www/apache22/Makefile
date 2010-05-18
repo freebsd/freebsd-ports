@@ -19,7 +19,7 @@ MAINTAINER?=	apache@FreeBSD.org
 COMMENT?=	Version 2.2.x of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		apr-1:${PORTSDIR}/devel/apr \
+		apr-1:${PORTSDIR}/devel/apr1 \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 MAKE_JOBS_SAFE=	yes
@@ -34,18 +34,13 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		ru-apache+mod_ssl-1.* ru-apache-1.* \
 		apache-2.0.* apache-*-2.0.*
 
-SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
-			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
-			LIBTOOL_M4=${LIBTOOL_M4} \
-			AUTOHEADER=${AUTOHEADER}
-
 USE_APACHE=		common22
 USE_BZIP2=		yes
 USE_ICONV=		yes
 USE_AUTOTOOLS=		autoconf:262 libtool:22
 USE_PERL5=		yes
 USE_RC_SUBR=		apache22 htcacheclean
-LIBTOOLFILES=		configure
+LIBTOOLFILES=	configure
 
 MPM_ITK_VERSION?=	20090414-00
 
@@ -136,12 +131,6 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 .endif
 
-# When using apr_mysql_db we _must_ rebuild makefiles
-.if defined(WITH_FULLBUILD)
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-SCRIPTS_ENV+=	FULLBUILD=on
-.endif
-
 .if defined (WITH_LDAP) || defined (WITH_LDAP_MODULES)
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap=shared --with-ldap --enable-authnz-ldap \
@@ -199,9 +188,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' ${WRKSRC}/server/core.c
 	@${REINPLACE_CMD} -e "s,%%OSVERSION%%,${OSVERSION}," ${WRKSRC}/srclib/apr/build/apr_hints.m4
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
-
-pre-configure:
-	@cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
 
 post-configure:
 	@FTPUSERS=`${EGREP} -v '^#' /etc/ftpusers| ${TR} -s "\n" " "` ;\
