@@ -22,6 +22,8 @@ RUN_DEPENDS=	rsyslog>=5.5.0:${PORTSDIR}/sysutils/rsyslog55
 PLIST=		${.CURDIR}/pkg-plist
 .endif
 
+NO_LATEST_LINK=	yes
+
 .ifdef WITH_MYSQL_MICROSECONDS
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
 .endif
