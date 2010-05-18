@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astng
-PORTVERSION=	0.20.0
+PORTVERSION=	0.20.1
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +17,8 @@ COMMENT=	Extension for Python compiler.ast module
 
 RUN_DEPENDS=	pytest:${PORTSDIR}/devel/py-logilab-common
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	logilab-astng
 
 .include <bsd.port.mk>

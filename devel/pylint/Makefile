@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pylint
-PORTVERSION=	0.20.0
+PORTVERSION=	0.21.0
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -14,10 +14,10 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab_astng-0.20.0-py2.6.egg/logilab/astng/__init__.py:${PORTSDIR}/devel/py-astng
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/logilab/astng/__init__.py:${PORTSDIR}/devel/py-astng
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
 
 OPTIONS=	GUI	"Include Tkinter support for pylint-gui"	Off
 
