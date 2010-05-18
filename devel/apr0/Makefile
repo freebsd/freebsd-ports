@@ -34,7 +34,7 @@ APU_VERSION=	0.9.17
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:22:env
 USE_PERL5_BUILD=	yes
-USE_PYTHON_BUILD=	yes
+USE_PYTHON_BUILD=	-2.6
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 
@@ -154,6 +154,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' \
 		${APR_WRKDIR}/build/apr_threads.m4 ${APR_WRKDIR}/build/apr_hints.m4 \
 		${APU_WRKDIR}/build/apu-conf.m4
+	${REINPLACE_CMD} -e '1 s/python/${PYTHON_VERSION}/' \
+		${APR_WRKDIR}/build/gen-build.py
 
 run-autotools::
 	cd ${APR_WRKDIR} ; \
