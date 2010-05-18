@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qlandkartegt
-PORTVERSION=	0.16.1
-PORTREVISION=	2
+PORTVERSION=	0.18.2
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarteGT%20${PORTVERSION}
 
@@ -19,7 +18,9 @@ LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
 
 USE_CMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib moc_build uic_build rcc_build qmake_build opengl linguist
+QT_COMPONENTS=	gui opengl network sql xml linguist_build \
+		moc_build uic_build rcc_build qmake_build
+MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	qlandkartegt
 
