@@ -17,7 +17,7 @@ you update your ports collection, before attempting any port upgrades.
   Please manually delete apache-2.\* if installed _before_ updating using either
   portmaster or portupgrade.  
 
-    # pkg_deinstall -f apache-2.\*
+    # pkg_delete -f apache-2.\*
 
   If you use portmaster:
 
