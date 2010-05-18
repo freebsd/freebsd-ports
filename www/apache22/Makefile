@@ -186,7 +186,6 @@ show-options:
 post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' ${WRKSRC}/server/core.c
-	@${REINPLACE_CMD} -e "s,%%OSVERSION%%,${OSVERSION}," ${WRKSRC}/srclib/apr/build/apr_hints.m4
 	@${INSTALL_DATA} ${WRKSRC}/NOTICE ${WRKSRC}/docs/manual
 
 post-configure:
