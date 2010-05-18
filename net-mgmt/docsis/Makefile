@@ -23,6 +23,8 @@ USE_BISON=	build
 
 PLIST_SUB=	MIBS=share/snmp/mibs
 
+NOT_FOR_ARCHS=	amd64
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^htmldocdir =.*|htmldocdir = ${DOCSDIR}|' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|^examplesdir =.*|examplesdir = ${EXAMPLESDIR}|' ${WRKSRC}/examples/Makefile.in
