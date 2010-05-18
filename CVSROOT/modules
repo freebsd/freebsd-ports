@@ -5384,7 +5384,6 @@ hping                           ports/net/hping
 hping-devel                     ports/net/hping-devel
 hpl                             ports/benchmarks/hpl
 hplip                           ports/print/hplip
-hplip3                          ports/print/hplip3
 hploscripts                     ports/sysutils/hploscripts
 hppsmtools                      ports/graphics/hppsmtools
 hptools                         ports/devel/hptools
@@ -5476,6 +5475,7 @@ hs-idoc                         ports/devel/hs-idoc
 hs-json                         ports/converters/hs-json
 hs-language-c-ghc               ports/devel/hs-language-c-ghc
 hs-lazysmallcheck-ghc           ports/devel/hs-lazysmallcheck-ghc
+hs-libmpd                       ports/audio/hs-libmpd
 hs-memotrie                     ports/devel/hs-MemoTrie
 hs-mime                         ports/mail/hs-mime
 hs-missingh                     ports/devel/hs-MissingH
@@ -7984,7 +7984,7 @@ libqrencode                     ports/graphics/libqrencode
 libquantum                      ports/science/libquantum
 libquicktime                    ports/multimedia/libquicktime
 libquicktime-lame               ports/multimedia/libquicktime-lame
-libranlib                       ports/math/libranlib
+librandlib                      ports/math/librandlib
 libranlip                       ports/math/libranlip
 libraw                          ports/graphics/libraw
 librcc                          ports/devel/librcc
