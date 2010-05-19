@@ -776,6 +776,7 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/joomla.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/liferay.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/mailman.png
+%%ADMIN%%%%DATADIR%%/admin/static/images/wizards/mediawiki.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/moinmoin.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/mono.png
 %%ADMIN%%%%DATADIR%%/admin/static/images/wizards/moodle.png
@@ -826,6 +827,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/wizards/liferay.pyc
 %%ADMIN%%%%DATADIR%%/admin/wizards/mailman.py
 %%ADMIN%%%%DATADIR%%/admin/wizards/mailman.pyc
+%%ADMIN%%%%DATADIR%%/admin/wizards/mediawiki.py
+%%ADMIN%%%%DATADIR%%/admin/wizards/mediawiki.pyc
 %%ADMIN%%%%DATADIR%%/admin/wizards/moinmoin.py
 %%ADMIN%%%%DATADIR%%/admin/wizards/moinmoin.pyc
 %%ADMIN%%%%DATADIR%%/admin/wizards/mono.py
