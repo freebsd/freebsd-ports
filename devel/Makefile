@@ -307,6 +307,7 @@
     SUBDIR += doxygen
     SUBDIR += dparser
     SUBDIR += dprog
+    SUBDIR += dreampie
     SUBDIR += drpython
     SUBDIR += dsss
     SUBDIR += dulwich
