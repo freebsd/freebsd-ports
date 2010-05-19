@@ -9,9 +9,8 @@
 PORTNAME=	txtbdf2ps
 PORTVERSION=	0.7.1
 CATEGORIES=	print
-MASTER_SITES=	http://www.geocities.com/CapeCanaveral/Lab/5735/1/ \
-		http://oldrus-ispell.sourceforge.net/ \
-		http://src4.narod.ru/
+MASTER_SITES=	http://src4.narod.ru/ \
+		http://oldrus-ispell.sourceforge.net/
 EXTRACT_SUFX=	.txt
 
 MAINTAINER=	spam@rm-rf.kiev.ua
@@ -26,7 +25,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e "s|/usr/bin/perl|${PERL}|g" ${WRKSRC}/${DISTNAME}.txt
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/${DISTNAME}.txt
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME}.txt ${PREFIX}/bin/txtbdf2ps
