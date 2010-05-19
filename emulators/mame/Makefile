@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mame
-PORTVERSION=	0.137
+PORTVERSION=	0.138
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aarongiles.com/mirror/releases/ \
 		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
@@ -29,7 +29,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 SUB_FILES=	pkg-message
 USE_DOS2UNIX=	makefile sdl.mak
 
-OPTIONS=	DEBUG "Build sdlmame debugger" off
+OPTIONS=	DEBUG "Build mame debugger" off
 
 .include <bsd.port.pre.mk>
 
