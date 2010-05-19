@@ -7,7 +7,7 @@
 
 PORTNAME=	metis
 PORTVERSION=	4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/	\
 		http://www-users.cs.umn.edu/~karypis/metis/metis/files/
@@ -18,15 +18,16 @@ COMMENT=	A package for unstructured graph partitioning
 CONFLICTS=	metis-edf-[0-9]*
 
 ALL_TARGET=
+USE_LDCONFIG=	yes
 
 PROGRAMS=	graphchk kmetis mesh2dual mesh2nodal	\
 		oemetis onmetis partnmesh partdmesh pmetis
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "sparc64"
-PICFLAG?=       -fPIC
+PICFLAG?=	-fPIC
 .else
-PICFLAG?=       -fpic
+PICFLAG?=	-fpic
 .endif
 
 post-patch:
