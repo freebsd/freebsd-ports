@@ -223,6 +223,7 @@
     SUBDIR += howl
     SUBDIR += hping
     SUBDIR += hping-devel
+    SUBDIR += hs-pcap
     SUBDIR += htpdate
     SUBDIR += http_ping
     SUBDIR += httping
