@@ -475,7 +475,10 @@ share/xsessions/e16.desktop
 @dirrm lib/e16
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/xsessions
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
 @dirrmtry share/locale/csb/LC_MESSAGES
 @dirrmtry share/locale/csb
+@dirrmtry share/applications
