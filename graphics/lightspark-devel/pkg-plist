@@ -1,0 +1,6 @@
+bin/lightspark
+%%DATADIR%%/lightspark.frag
+%%DATADIR%%/lightspark.vert
+%%PLUGIN%%%%WEBPLUGINS_DIR%%/libgnashplugin.so
+%%PLUGIN%%@dirrm %%WEBPLUGINS_DIR%%
+@dirrm %%DATADIR%%

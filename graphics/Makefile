@@ -473,6 +473,7 @@
     SUBDIR += libwmf
     SUBDIR += libwpg
     SUBDIR += libx3dtk
+    SUBDIR += lightspark-devel
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
     SUBDIR += linux-ac3d
