@@ -1,11 +1,17 @@
---- Test/Makefile.orig	Thu Dec 12 13:47:59 2002
-+++ Test/Makefile	Sun Jun 29 16:00:25 2003
-@@ -4,7 +4,7 @@
+--- Test/Makefile.orig	2008-12-03 11:08:03.000000000 +0100
++++ Test/Makefile	2010-05-16 16:42:30.000000000 +0200
+@@ -4,12 +4,12 @@
  
  vers_check:
  	@echo "### Test 2 : test --version option, onmetis returns :"
 -	(../onmetis --version ; exit 0)
-+	@echo `../onmetis --version`
++	@echo `LD_LIBRARY_PATH=.. ../onmetis.exe --version`
  	@echo " "
  
  fort.85 : fort.81
+ 	@echo "### Test 1 : data file produced by Code_Aster"
+-	../onmetis fort.81
++	LD_LIBRARY_PATH=.. ../onmetis.exe fort.81
+ 	@echo " "
+ 
+ clean:

@@ -1,0 +1,20 @@
+--- Lib/Makefile.orig	2008-12-03 11:08:03.000000000 +0100
++++ Lib/Makefile	2010-05-16 16:33:40.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ INCLUDES = -I.
+ 
+-CFLAGS = $(COPTIONS) $(INCLUDES)
++CFLAGS = $(COPTIONS) $(INCLUDES) $(PICFLAG)
+ LD = $(CC) -L. 
+ 
+ 
+@@ -22,6 +22,8 @@
+ 
+ ../libmetis.a: $(OBJS)
+ 	$(AR) $@ $(OBJS)
++	$(LD) -Wl,-Bshareable -Wl,-o,../libmetis.so.1 -Wl,-x -Wl,-soname,libmetis.so.1 -Wl,--whole-archive ../libmetis.a -Wl,-no-whole-archive
++	(cd .. && ln -sf libmetis.so.1 libmetis.so)
+ 
+ clean:
+ 	rm -f *.o

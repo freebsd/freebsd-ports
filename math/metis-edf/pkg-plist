@@ -3,6 +3,15 @@ bin/onmetis
 bin/onmetis.exe
 bin/pmetis
 lib/libmetis.a
+lib/libmetis.so
+lib/libmetis.so.1
+include/metis/defs.h
+include/metis/macros.h
+include/metis/metis.h
+include/metis/proto.h
+include/metis/rename.h
+include/metis/struct.h
+@dirrm include/metis
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README_Code_Aster
 %%PORTDOCS%%%%DOCSDIR%%/manual.ps

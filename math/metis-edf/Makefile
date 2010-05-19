@@ -9,7 +9,7 @@ PORTNAME=	metis-edf
 DISTVERSIONPREFIX=	full-src-
 DISTVERSION=	4.1-2
 DISTVERSIONSUFFIX=	.noarch
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
@@ -24,11 +24,12 @@ ASTER_DISTVERSION=	${ASTER_VER}-4
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
 
 ALL_TARGET=	default
-MAKE_ENV+=	AR="${AR}"
+MAKE_ENV+=	AR="${AR}" PICFLAG="${PICFLAG}"
 MAKE_JOBS_UNSAFE=	yes
 REINPLACE_ARGS=	-i ""
 
 USE_FORTRAN=	yes
+USE_LDCONFIG=	yes
 FFLAGS+=	-O2
 
 WRKSRC=		${WRKDIR}/${PORTNAME:C/-/_/}-${PORTVERSION:R}
@@ -41,6 +42,12 @@ FORTRANLIBS=	-lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+PICFLAG?=	-fPIC
+.else
+PICFLAG?=	-fpic
+.endif
 
 post-extract:
 	(cd ${WRKDIR} &&	\
@@ -62,12 +69,15 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|$$prefix|${WRKSRC}|' ${WRKSRC}/onmetis
 
 do-install:
+	${MKDIR} ${PREFIX}/include/metis
+	${INSTALL_DATA} ${WRKSRC}/Lib/*.h    ${PREFIX}/include/metis
 	${CP} ${WRKSRC}/CONFIG/onmetis.in ${WRKSRC}/onmetis
 	${REINPLACE_CMD} -e "s#HOME_METIS#${PREFIX}/bin#" ${WRKSRC}/onmetis
 	${INSTALL_SCRIPT} ${WRKSRC}/onmetis ${PREFIX}/bin
 	${REINPLACE_CMD} -e 's|${WRKSRC}|${PREFIX}/bin|' ${PREFIX}/bin/onmetis
 	${INSTALL_PROGRAM} ${PROGS:S|^|${WRKSRC}/|} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${WRKSRC}/libmetis.so ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/libmetis.so.1 ${PREFIX}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)
