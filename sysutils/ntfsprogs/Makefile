@@ -7,6 +7,7 @@
 
 PORTNAME=	ntfsprogs
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/linux-ntfs/NTFS%20Tools%20and%20Library/${PORTVERSION}
 
@@ -35,6 +36,10 @@ MLINKS=	ntfsmount.8 mount_ntfs-fuse.8
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS:=	${CFLAGS:C/-O.?/-O0/g}
+.endif
 
 .if defined(WITH_GNOMEVFS2)
 CONFIGURE_ARGS+=--enable-gnome-vfs
