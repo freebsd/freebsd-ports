@@ -444,7 +444,6 @@ share/apache2/build/special.mk
 @dirrm share/apache2/build
 @dirrm share/apache2
 @dirrmtry libexec/apache2
-@dirrm lib/apache2
 @dirrm include/apache2
 @exec mkdir -p %D/etc/apache2/Includes 2> /dev/null || true
 @exec mkdir -p %D/etc/apache2/envvars.d 2> /dev/null || true
