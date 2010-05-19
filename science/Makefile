@@ -147,6 +147,7 @@
     SUBDIR += py-scipy
     SUBDIR += pybrain
     SUBDIR += pycdf
+    SUBDIR += pynn
     SUBDIR += qcl
     SUBDIR += qtresistors
     SUBDIR += ruby-dcl
