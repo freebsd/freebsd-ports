@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.2.14
-PORTREVISION=	2
+PORTVERSION=	2.3.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jupengfei@gmail.com
 COMMENT=	ODBC library suite for Unix
 
 CONFLICTS=	firebird-client-* libiodbc-[0-9]* virtuoso-*
@@ -23,22 +22,6 @@ CONFIGURE_ARGS=	--enable-static --enable-shared \
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
-
-.if defined(WITH_GUI)
-USE_QT_VER=	3
-QT_NONSTANDARD=	yes
-CONFIGURE_ENV=	MOC="${MOC}" \
-		QTINC="${QT_PREFIX}/include" \
-		QTLIB="${QT_PREFIX}/lib" \
-		USER_INCLUDES="${QTCPPFLAGS}" \
-		USER_LDFLAGS="${QTCFGLIBS}" \
-		QTMAX=030400
-CONFIGURE_ARGS+=--enable-gui
-PLIST_SUB=	GUI:=""
-.else
-CONFIGURE_ARGS+=--disable-gui
-PLIST_SUB=	GUI:="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's,$$LIBS $$THREADLIB,$$LIBS,;s,$$CFLAGS -pthread,$$CFLAGS,' \
@@ -57,10 +40,5 @@ post-install:
 	${FIND} ${DOCSDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 .endif
 .endif
-.for conffile in odbc.ini odbcinst.ini
-	@if [ ! -f ${PREFIX}/etc/${conffile} ]; then \
-		${CP} -p ${PREFIX}/etc/${conffile}.sample ${PREFIX}/etc/${conffile} ; \
-	fi
-.endfor
 
 .include <bsd.port.mk>
