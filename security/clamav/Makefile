@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-DISTVERSION=	0.96
-PORTREVISION=	1
+DISTVERSION=	0.96.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -68,7 +67,8 @@ MAN1=		clamconf.1 \
 		sigtool.1 \
 		clamdscan.1 \
 		clamdtop.1
-MAN5=		clamd.conf.5 \
+MAN5=		clamav-milter.conf.5 \
+		clamd.conf.5 \
 		freshclam.conf.5
 MAN8=		clamd.8 \
 		clamav-milter.8
