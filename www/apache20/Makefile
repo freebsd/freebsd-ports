@@ -62,10 +62,10 @@ USE_BZIP2=		yes
 MPM_ITK_VERSION?=	20061030-01
 
 .if defined(WITH_SUEXEC_RSRCLIMIT)
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-suexec_rsrclimit
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-suexec_rsrclimit
 .if !defined(WITH_SUEXEC)
-IGNORE=         suEXEC resource limit patch requires mod_suexec.\
-                Please add 'WITH_SUEXEC=YES' to you /etc/make.conf
+IGNORE=	suEXEC resource limit patch requires mod_suexec.\
+	Please add 'WITH_SUEXEC=YES' to you /etc/make.conf
 .endif
 .endif
 
