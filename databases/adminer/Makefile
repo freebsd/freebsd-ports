@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	adminer
-PORTVERSION=	1.11.1
+PORTVERSION=	2.3.2
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/Adminer/Adminer%20${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A full-featured MySQL management tool written in PHP
 
 USE_ZIP=	yes

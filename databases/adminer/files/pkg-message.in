@@ -6,7 +6,7 @@ Please add the following to your Apache configuration,
 and restart the server:
 
 ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
-   Alias /adminer %%WWWDIR%%
+   Alias /adminer %%WWWDIR%%/adminer
    AcceptPathInfo On
    <Directory %%WWWDIR%%>
       AllowOverride None
