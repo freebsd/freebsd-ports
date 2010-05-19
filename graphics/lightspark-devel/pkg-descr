@@ -1,0 +1,5 @@
+Lightspark is an alternative Flash Player implementation with
+llvm-based ActionScript JIT compiler and support for hardware
+accelerated rendering.
+
+WWW:	http://lightspark.sourceforge.net/
