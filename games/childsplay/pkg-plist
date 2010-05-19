@@ -217,3 +217,5 @@ share/locale/tr/LC_MESSAGES/childsplay.mo
 @dirrm share/assetml/childsplay
 @dirrm childsplay/lib
 @dirrm childsplay
+@cwd /var
+games/childsplay.score
