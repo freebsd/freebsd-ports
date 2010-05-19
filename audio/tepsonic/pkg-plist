@@ -1,0 +1,32 @@
+bin/tepsonic
+lib/libtepsonic_lastfmscrobbler.so
+lib/libtepsonic_lastfmscrobbler.so.0.1.0
+lib/libtepsonic_lastfmscrobbler.so.1
+share/applications/tepsonic.desktop
+share/icons/hicolor/128x128/apps/tepsonic.png
+share/icons/hicolor/16x16/apps/tepsonic.png
+share/icons/hicolor/256x256/apps/tepsonic.png
+share/icons/hicolor/32x32/apps/tepsonic.png
+share/icons/hicolor/48x48/apps/tepsonic.png
+share/icons/hicolor/64x64/apps/tepsonic.png
+share/tepsonic/locale/lastfmscrobbler/cs_CZ.qm
+share/tepsonic/locale/tepsonic/cs_CZ.qm
+@dirrm share/tepsonic/locale/tepsonic
+@dirrm share/tepsonic/locale/lastfmscrobbler
+@dirrm share/tepsonic/locale
+@dirrm share/tepsonic
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
