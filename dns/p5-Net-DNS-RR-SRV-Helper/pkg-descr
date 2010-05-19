@@ -1,0 +1,4 @@
+Net::DNS::RR::SRV::Helper is a perl module to order SRV records
+by priority and weight for Net::DNS.
+
+WWW: http://search.cpan.org/dist/Net-DNS-RR-SRV-Helper/
