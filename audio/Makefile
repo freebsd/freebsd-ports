@@ -583,6 +583,7 @@
     SUBDIR += playgsf
     SUBDIR += playmidi
     SUBDIR += pm3umpdl
+    SUBDIR += pms
     SUBDIR += pocketsphinx
     SUBDIR += portaudio
     SUBDIR += portaudio2
