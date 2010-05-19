@@ -1,6 +1,69 @@
---- run.c.orig	Mon Dec  6 06:44:42 2004
-+++ run.c	Sat Feb 26 18:01:46 2005
-@@ -1507,15 +1507,15 @@
+--- run.c.orig	2009-11-26 23:59:16.000000000 +0000
++++ run.c	2010-04-29 22:50:49.000000000 +0000
+@@ -1504,20 +1504,78 @@
+ 			nextarg = nextarg->nnext;
+ 		}
+ 		break;
++	case FCOMPL:
++		u = ~((int)getfval(x));
++		break;
++	case FAND:
++		if (nextarg == 0) {
++			WARNING("and requires two arguments; returning 0");
++			u = 0;
++			break;
++		}
++		y = execute(a[1]->nnext);
++		u = ((int)getfval(x)) & ((int)getfval(y));
++		tempfree(y);
++		nextarg = nextarg->nnext;
++		break;
++	case FFOR:
++		if (nextarg == 0) {
++			WARNING("or requires two arguments; returning 0");
++			u = 0;
++			break;
++		}
++		y = execute(a[1]->nnext);
++		u = ((int)getfval(x)) | ((int)getfval(y));
++		tempfree(y);
++		nextarg = nextarg->nnext;
++		break;
++	case FXOR:
++		if (nextarg == 0) {
++			WARNING("or requires two arguments; returning 0");
++			u = 0;
++			break;
++		}
++		y = execute(a[1]->nnext);
++		u = ((int)getfval(x)) ^ ((int)getfval(y));
++		tempfree(y);
++		nextarg = nextarg->nnext;
++		break;
++	case FLSHIFT:
++		if (nextarg == 0) {
++			WARNING("or requires two arguments; returning 0");
++			u = 0;
++			break;
++		}
++		y = execute(a[1]->nnext);
++		u = ((int)getfval(x)) << ((int)getfval(y));
++		tempfree(y);
++		nextarg = nextarg->nnext;
++		break;
++	case FRSHIFT:
++		if (nextarg == 0) {
++			WARNING("or requires two arguments; returning 0");
++			u = 0;
++			break;
++		}
++		y = execute(a[1]->nnext);
++		u = ((int)getfval(x)) >> ((int)getfval(y));
++		tempfree(y);
++		nextarg = nextarg->nnext;
++		break;
+ 	case FSYSTEM:
+ 		fflush(stdout);		/* in case something is buffered already */
  		u = (Awkfloat) system(getsval(x)) / 256;   /* 256 is unix-dep */
  		break;
  	case FRAND:
