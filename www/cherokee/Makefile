@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/1.0/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
@@ -73,7 +73,8 @@ OPTIONS=	WWWUSER	"Run as www:www user"	on \
 		FFMPEG	"FFMpeg Support"	off	\
 		NLS	"NLS Support"	on	\
 		INTPCRE	"Use Internal PCRE Library"	off	\
-		ADMIN	"Build the Admin Interface"	on
+		ADMIN	"Build the Admin Interface"	on \
+		RRDTOOL "Usage Graphs Support"  off
 
 .include <bsd.port.options.mk>
 
@@ -142,6 +143,10 @@ PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=	--enable-internal-pcre
 .else
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+.endif
+
+.ifdef WITH_RRDTOOL
+RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
 .endif
 
 post-patch:
