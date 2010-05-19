@@ -1,5 +1,6 @@
 bin/parrot
 bin/parrot-nqp
+bin/parrot-prove
 bin/parrot_config
 bin/parrot_debugger
 bin/parrot_nci_thunk_gen
@@ -7,7 +8,6 @@ bin/pbc_disassemble
 bin/pbc_dump
 bin/pbc_merge
 bin/pbc_to_exe
-bin/tapir
 include/parrot/%%PARROT_VER%%/parrot/atomic.h
 include/parrot/%%PARROT_VER%%/parrot/atomic/fallback.h
 include/parrot/%%PARROT_VER%%/parrot/atomic/gcc_pcc.h
@@ -57,9 +57,6 @@ include/parrot/%%PARROT_VER%%/parrot/oo_private.h
 include/parrot/%%PARROT_VER%%/parrot/op.h
 include/parrot/%%PARROT_VER%%/parrot/oplib.h
 include/parrot/%%PARROT_VER%%/parrot/oplib/core_ops.h
-include/parrot/%%PARROT_VER%%/parrot/oplib/core_ops_cg.h
-include/parrot/%%PARROT_VER%%/parrot/oplib/core_ops_cgp.h
-include/parrot/%%PARROT_VER%%/parrot/oplib/core_ops_switch.h
 include/parrot/%%PARROT_VER%%/parrot/oplib/ops.h
 include/parrot/%%PARROT_VER%%/parrot/packfile.h
 include/parrot/%%PARROT_VER%%/parrot/parrot.h
@@ -88,36 +85,102 @@ include/parrot/%%PARROT_VER%%/parrot/vtable.h
 include/parrot/%%PARROT_VER%%/parrot/vtables.h
 include/parrot/%%PARROT_VER%%/parrot/warnings.h
 include/parrot/%%PARROT_VER%%/pmc/dummy
+include/parrot/%%PARROT_VER%%/pmc/pmc_addrregistry.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_arrayiterator.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_bigint.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_bignum.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_boolean.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_callcontext.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_capture.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_class.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_codestring.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_complex.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_continuation.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_coroutine.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_default.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_env.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_eval.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_eventhandler.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_exception.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_exceptionhandler.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_exporter.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_filehandle.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_fixedbooleanarray.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_fixedfloatarray.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_fixedintegerarray.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_fixedpmcarray.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_fixedstringarray.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_float.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_handle.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_hash.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_hashiterator.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_hashiteratorkey.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_imageio.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_imageiosize.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_imageiostrings.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_integer.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_iterator.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_key.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_lexinfo.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_lexpad.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_managedstruct.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_multisub.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_namespace.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_nci.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_null.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_object.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_opcode.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_oplib.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_orderedhash.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_orderedhashiterator.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfile.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfileannotation.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfileannotations.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfileconstanttable.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfiledebug.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfiledirectory.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfilefixupentry.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfilefixuptable.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfilerawsegment.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfilesegment.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_parrotinterpreter.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_parrotlibrary.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_parrotthread.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_pmcproxy.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_pointer.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_resizablebooleanarray.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_resizablefloatarray.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_resizableintegerarray.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_resizablepmcarray.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_resizablestringarray.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_role.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_scalar.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_scheduler.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_schedulermessage.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_sockaddr.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_socket.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_string.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_stringbuilder.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_stringhandle.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_stringiterator.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_sub.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_task.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_threadinterpreter.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_timer.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_undef.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_unmanagedstruct.h
 lib/libparrot.a
 lib/libparrot.so
 lib/libparrot.so.%%PARROT_VER%%
 lib/parrot/%%PARROT_VER%%/VERSION
-lib/parrot/%%PARROT_VER%%/dynext/digest_group.so
+lib/parrot/%%PARROT_VER%%/bin/prove.pir
 lib/parrot/%%PARROT_VER%%/dynext/dynlexpad.so
-lib/parrot/%%PARROT_VER%%/dynext/libnci_test.so
+lib/parrot/%%PARROT_VER%%/dynext/file.so
+lib/parrot/%%PARROT_VER%%/dynext/gziphandle.so
 lib/parrot/%%PARROT_VER%%/dynext/math_ops.so
 lib/parrot/%%PARROT_VER%%/dynext/obscure_ops.so
+lib/parrot/%%PARROT_VER%%/dynext/os.so
 lib/parrot/%%PARROT_VER%%/dynext/rational.so
-lib/parrot/%%PARROT_VER%%/dynext/subproxy.so
 lib/parrot/%%PARROT_VER%%/include/call_bits.pasm
 lib/parrot/%%PARROT_VER%%/include/cclass.pasm
 lib/parrot/%%PARROT_VER%%/include/config.fpmc
@@ -156,16 +219,6 @@ lib/parrot/%%PARROT_VER%%/languages/data_json/data_json.pbc
 lib/parrot/%%PARROT_VER%%/languages/data_json/data_json.pir
 lib/parrot/%%PARROT_VER%%/languages/data_json/data_json/grammar.pg
 lib/parrot/%%PARROT_VER%%/languages/data_json/data_json/pge2pir.tg
-lib/parrot/%%PARROT_VER%%/languages/nqp/Defines.mak
-lib/parrot/%%PARROT_VER%%/languages/nqp/Rules.mak
-lib/parrot/%%PARROT_VER%%/languages/nqp/TODO.pod
-lib/parrot/%%PARROT_VER%%/languages/nqp/bootstrap/actions.pm
-lib/parrot/%%PARROT_VER%%/languages/nqp/bootstrap/nqp.pir
-lib/parrot/%%PARROT_VER%%/languages/nqp/nqp.pbc
-lib/parrot/%%PARROT_VER%%/languages/nqp/nqp.pir
-lib/parrot/%%PARROT_VER%%/languages/nqp/src/Grammar.pg
-lib/parrot/%%PARROT_VER%%/languages/nqp/src/Grammar/Actions.pir
-lib/parrot/%%PARROT_VER%%/languages/nqp/src/builtins.pir
 lib/parrot/%%PARROT_VER%%/languages/parrot/parrot.pir
 lib/parrot/%%PARROT_VER%%/languages/pct/Defines.mak
 lib/parrot/%%PARROT_VER%%/languages/pct/PCT.pir
@@ -200,6 +253,10 @@ lib/parrot/%%PARROT_VER%%/languages/tge/TGE/Parser.pg
 lib/parrot/%%PARROT_VER%%/languages/tge/TGE/Rule.pir
 lib/parrot/%%PARROT_VER%%/languages/tge/TGE/Tree.pir
 lib/parrot/%%PARROT_VER%%/languages/tge/tgc.pir
+lib/parrot/%%PARROT_VER%%/library/Archive/Tar.pbc
+lib/parrot/%%PARROT_VER%%/library/Archive/Tar.pir
+lib/parrot/%%PARROT_VER%%/library/Archive/Zip.pbc
+lib/parrot/%%PARROT_VER%%/library/Archive/Zip.pir
 lib/parrot/%%PARROT_VER%%/library/CGI/QueryHash.pbc
 lib/parrot/%%PARROT_VER%%/library/CGI/QueryHash.pir
 lib/parrot/%%PARROT_VER%%/library/Config/JSON.pbc
@@ -221,10 +278,14 @@ lib/parrot/%%PARROT_VER%%/library/Getopt/Obj.pbc
 lib/parrot/%%PARROT_VER%%/library/Getopt/Obj.pir
 lib/parrot/%%PARROT_VER%%/library/HLL.pbc
 lib/parrot/%%PARROT_VER%%/library/HTTP/Daemon.pir
+lib/parrot/%%PARROT_VER%%/library/HTTP/Message.pbc
+lib/parrot/%%PARROT_VER%%/library/HTTP/Message.pir
 lib/parrot/%%PARROT_VER%%/library/Iter.pbc
 lib/parrot/%%PARROT_VER%%/library/Iter.pir
 lib/parrot/%%PARROT_VER%%/library/JSON.pbc
 lib/parrot/%%PARROT_VER%%/library/JSON.pir
+lib/parrot/%%PARROT_VER%%/library/LWP.pbc
+lib/parrot/%%PARROT_VER%%/library/LWP.pir
 lib/parrot/%%PARROT_VER%%/library/MIME/Base64.pbc
 lib/parrot/%%PARROT_VER%%/library/MIME/Base64.pir
 lib/parrot/%%PARROT_VER%%/library/Math/Rand.pbc
@@ -281,7 +342,6 @@ lib/parrot/%%PARROT_VER%%/library/SDL/Rect.pir
 lib/parrot/%%PARROT_VER%%/library/SDL/Sprite.pir
 lib/parrot/%%PARROT_VER%%/library/SDL/StopWatch.pir
 lib/parrot/%%PARROT_VER%%/library/SDL/Surface.pir
-lib/parrot/%%PARROT_VER%%/library/SQLite3.pir
 lib/parrot/%%PARROT_VER%%/library/Stream/Base.pbc
 lib/parrot/%%PARROT_VER%%/library/Stream/Base.pir
 lib/parrot/%%PARROT_VER%%/library/Stream/Combiner.pbc
@@ -326,6 +386,8 @@ lib/parrot/%%PARROT_VER%%/library/Test/Class.pbc
 lib/parrot/%%PARROT_VER%%/library/Test/Class.pir
 lib/parrot/%%PARROT_VER%%/library/Test/More.pbc
 lib/parrot/%%PARROT_VER%%/library/Test/More.pir
+lib/parrot/%%PARROT_VER%%/library/URI.pbc
+lib/parrot/%%PARROT_VER%%/library/URI.pir
 lib/parrot/%%PARROT_VER%%/library/YAML/Dumper.pbc
 lib/parrot/%%PARROT_VER%%/library/YAML/Dumper.pir
 lib/parrot/%%PARROT_VER%%/library/YAML/Dumper/Base.pir
@@ -406,6 +468,7 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/IMCC.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/Info.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/Libs.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/Ops.pm
+lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/PCT_Tutorial.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/PDDs.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/PMCs.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Docs/Section/Parrot.pm
@@ -427,10 +490,6 @@ lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Op.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/OpLib/core.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/OpTrans.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/OpTrans/C.pm
-lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/OpTrans/CGP.pm
-lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/OpTrans/CGoto.pm
-lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/OpTrans/CPrederef.pm
-lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/OpTrans/CSwitch.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Ops2c/Auxiliary.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Ops2c/Utils.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/Ops2pm.pm
@@ -487,21 +546,90 @@ lib/pkgconfig/parrot/%%PARROT_VER%%/parrot.pc
 %%PARROT_DOCS%%/RESPONSIBLE_PARTIES
 %%PARROT_DOCS%%/TODO
 src/parrot/%%PARROT_VER%%/ops/ops.num
+src/parrot/%%PARROT_VER%%/pmc/addrregistry.dump
+src/parrot/%%PARROT_VER%%/pmc/arrayiterator.dump
+src/parrot/%%PARROT_VER%%/pmc/bigint.dump
+src/parrot/%%PARROT_VER%%/pmc/bignum.dump
 src/parrot/%%PARROT_VER%%/pmc/boolean.dump
+src/parrot/%%PARROT_VER%%/pmc/callcontext.dump
+src/parrot/%%PARROT_VER%%/pmc/capture.dump
+src/parrot/%%PARROT_VER%%/pmc/class.dump
+src/parrot/%%PARROT_VER%%/pmc/codestring.dump
+src/parrot/%%PARROT_VER%%/pmc/complex.dump
 src/parrot/%%PARROT_VER%%/pmc/continuation.dump
+src/parrot/%%PARROT_VER%%/pmc/coroutine.dump
 src/parrot/%%PARROT_VER%%/pmc/default.dump
+src/parrot/%%PARROT_VER%%/pmc/env.dump
+src/parrot/%%PARROT_VER%%/pmc/eval.dump
+src/parrot/%%PARROT_VER%%/pmc/eventhandler.dump
+src/parrot/%%PARROT_VER%%/pmc/exception.dump
+src/parrot/%%PARROT_VER%%/pmc/exceptionhandler.dump
+src/parrot/%%PARROT_VER%%/pmc/exporter.dump
+src/parrot/%%PARROT_VER%%/pmc/filehandle.dump
+src/parrot/%%PARROT_VER%%/pmc/fixedbooleanarray.dump
+src/parrot/%%PARROT_VER%%/pmc/fixedfloatarray.dump
+src/parrot/%%PARROT_VER%%/pmc/fixedintegerarray.dump
 src/parrot/%%PARROT_VER%%/pmc/fixedpmcarray.dump
+src/parrot/%%PARROT_VER%%/pmc/fixedstringarray.dump
 src/parrot/%%PARROT_VER%%/pmc/float.dump
+src/parrot/%%PARROT_VER%%/pmc/handle.dump
 src/parrot/%%PARROT_VER%%/pmc/hash.dump
+src/parrot/%%PARROT_VER%%/pmc/hashiterator.dump
+src/parrot/%%PARROT_VER%%/pmc/hashiteratorkey.dump
+src/parrot/%%PARROT_VER%%/pmc/imageio.dump
+src/parrot/%%PARROT_VER%%/pmc/imageiosize.dump
+src/parrot/%%PARROT_VER%%/pmc/imageiostrings.dump
 src/parrot/%%PARROT_VER%%/pmc/integer.dump
+src/parrot/%%PARROT_VER%%/pmc/iterator.dump
+src/parrot/%%PARROT_VER%%/pmc/key.dump
+src/parrot/%%PARROT_VER%%/pmc/lexinfo.dump
+src/parrot/%%PARROT_VER%%/pmc/lexpad.dump
+src/parrot/%%PARROT_VER%%/pmc/managedstruct.dump
 src/parrot/%%PARROT_VER%%/pmc/multisub.dump
+src/parrot/%%PARROT_VER%%/pmc/namespace.dump
+src/parrot/%%PARROT_VER%%/pmc/nci.dump
+src/parrot/%%PARROT_VER%%/pmc/null.dump
 src/parrot/%%PARROT_VER%%/pmc/object.dump
+src/parrot/%%PARROT_VER%%/pmc/opcode.dump
+src/parrot/%%PARROT_VER%%/pmc/oplib.dump
+src/parrot/%%PARROT_VER%%/pmc/orderedhash.dump
+src/parrot/%%PARROT_VER%%/pmc/orderedhashiterator.dump
+src/parrot/%%PARROT_VER%%/pmc/packfile.dump
+src/parrot/%%PARROT_VER%%/pmc/packfileannotation.dump
+src/parrot/%%PARROT_VER%%/pmc/packfileannotations.dump
+src/parrot/%%PARROT_VER%%/pmc/packfileconstanttable.dump
+src/parrot/%%PARROT_VER%%/pmc/packfiledebug.dump
+src/parrot/%%PARROT_VER%%/pmc/packfiledirectory.dump
+src/parrot/%%PARROT_VER%%/pmc/packfilefixupentry.dump
+src/parrot/%%PARROT_VER%%/pmc/packfilefixuptable.dump
+src/parrot/%%PARROT_VER%%/pmc/packfilerawsegment.dump
+src/parrot/%%PARROT_VER%%/pmc/packfilesegment.dump
+src/parrot/%%PARROT_VER%%/pmc/parrotinterpreter.dump
+src/parrot/%%PARROT_VER%%/pmc/parrotlibrary.dump
+src/parrot/%%PARROT_VER%%/pmc/parrotthread.dump
+src/parrot/%%PARROT_VER%%/pmc/pmcproxy.dump
+src/parrot/%%PARROT_VER%%/pmc/pointer.dump
+src/parrot/%%PARROT_VER%%/pmc/resizablebooleanarray.dump
+src/parrot/%%PARROT_VER%%/pmc/resizablefloatarray.dump
+src/parrot/%%PARROT_VER%%/pmc/resizableintegerarray.dump
 src/parrot/%%PARROT_VER%%/pmc/resizablepmcarray.dump
+src/parrot/%%PARROT_VER%%/pmc/resizablestringarray.dump
 src/parrot/%%PARROT_VER%%/pmc/role.dump
 src/parrot/%%PARROT_VER%%/pmc/scalar.dump
+src/parrot/%%PARROT_VER%%/pmc/scheduler.dump
+src/parrot/%%PARROT_VER%%/pmc/schedulermessage.dump
+src/parrot/%%PARROT_VER%%/pmc/sockaddr.dump
+src/parrot/%%PARROT_VER%%/pmc/socket.dump
 src/parrot/%%PARROT_VER%%/pmc/string.dump
+src/parrot/%%PARROT_VER%%/pmc/stringbuilder.dump
+src/parrot/%%PARROT_VER%%/pmc/stringhandle.dump
+src/parrot/%%PARROT_VER%%/pmc/stringiterator.dump
 src/parrot/%%PARROT_VER%%/pmc/sub.dump
+src/parrot/%%PARROT_VER%%/pmc/task.dump
+src/parrot/%%PARROT_VER%%/pmc/threadinterpreter.dump
+src/parrot/%%PARROT_VER%%/pmc/timer.dump
 src/parrot/%%PARROT_VER%%/pmc/undef.dump
+src/parrot/%%PARROT_VER%%/pmc/unmanagedstruct.dump
 src/parrot/%%PARROT_VER%%/vtable.dump
 src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm src/parrot/%%PARROT_VER%%/pmc
@@ -564,6 +692,7 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VER%%/library/Configure
 @dirrm lib/parrot/%%PARROT_VER%%/library/Config
 @dirrm lib/parrot/%%PARROT_VER%%/library/CGI
+@dirrm lib/parrot/%%PARROT_VER%%/library/Archive
 @dirrm lib/parrot/%%PARROT_VER%%/library
 @dirrm lib/parrot/%%PARROT_VER%%/languages/tge/TGE
 @dirrm lib/parrot/%%PARROT_VER%%/languages/tge
@@ -575,15 +704,12 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VER%%/languages/pct/src
 @dirrm lib/parrot/%%PARROT_VER%%/languages/pct
 @dirrm lib/parrot/%%PARROT_VER%%/languages/parrot
-@dirrm lib/parrot/%%PARROT_VER%%/languages/nqp/src/Grammar
-@dirrm lib/parrot/%%PARROT_VER%%/languages/nqp/src
-@dirrm lib/parrot/%%PARROT_VER%%/languages/nqp/bootstrap
-@dirrm lib/parrot/%%PARROT_VER%%/languages/nqp
 @dirrm lib/parrot/%%PARROT_VER%%/languages/data_json/data_json
 @dirrm lib/parrot/%%PARROT_VER%%/languages/data_json
 @dirrmtry lib/parrot/%%PARROT_VER%%/languages
 @dirrm lib/parrot/%%PARROT_VER%%/include
 @dirrmtry lib/parrot/%%PARROT_VER%%/dynext
+@dirrmtry lib/parrot/%%PARROT_VER%%/bin
 @dirrmtry lib/parrot/%%PARROT_VER%%
 @dirrmtry lib/parrot
 @dirrm include/parrot/%%PARROT_VER%%/pmc
