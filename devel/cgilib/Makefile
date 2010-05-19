@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgilib
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.infodrom.org/projects/cgilib/download/ \
 		http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/pub/libs/
