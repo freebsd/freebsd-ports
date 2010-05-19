@@ -12,46 +12,20 @@
 #
 # Variables definition
 # USE_APACHE:	Call this script. Values can be:
-#		<version>: 1.3/13/2.0/20/2.1/2.2/1.3+/2.0+/2.1+/2.2+
-#		common*: common13, common20, common21 and common22
-#
-# Note: Setting USE_APACHE to "yes" is deprecated. It will set 
-# APACHE_PORT to www/apache13 and if WITH_APACHE2 (deprecated too)
-# is defined, APACHE_PORT will be set to www/apache20
-#
+#		<version>: 1.3/13/2.0/20/2.2/1.3+/2.0+/2.2+
+#		common*: common13, common20, and common22
 
 .if !defined(Apache_Pre_Include) || defined(PORT_IS_MODULE)
 
 Apache_Pre_Include=		bsd.apache.mk
 
-.if defined(APACHE_COMPAT)
-USE_APACHE=yes
-.endif
-
 # Print warnings
 _ERROR_MSG=	: Error from bsd.apache.mk.
-APACHE_SUPPORTED_VERSION=	13 20 21 22
+APACHE_SUPPORTED_VERSION=	13 20 22
 .if ${USE_APACHE:Mcommon*} != ""
 AP_PORT_IS_SERVER=	YES
-.elif ${USE_APACHE:L} == apr
-APR_DEPS=			YES
-.elif ${USE_APACHE:C/\.//:C/\+//:M[12][3210]} != ""
+.elif ${USE_APACHE:C/\.//:C/\+//:M[12][320]} != ""
 AP_PORT_IS_MODULE=	YES
-
-#### for backward compatibility
-.elif ${USE_APACHE:L} == yes
-.   if defined(WITH_APACHE2)
-APACHE_PORT?=	www/apache20
-.   else
-APACHE_PORT?=	www/apache13
-.   endif
-APXS?=			${LOCALBASE}/sbin/apxs
-.if !defined(APACHE_COMPAT)
-BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-.endif
-#### End of backward compatibility
-
 .else
 IGNORE=		${_ERROR_MSG} Illegal use of USE_APACHE
 .endif
@@ -94,20 +68,6 @@ CONFIGURE_ARGS+=	--disable-access --disable-auth \
 			--disable-asis --disable-cgid --disable-cgi \
 			--disable-negotiation --disable-dir --disable-imap \
 			--disable-actions --disable-userdir --disable-alias
-.elif ${USE_APACHE} == common21
-CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
-			--disable-authz-host --disable-authz-groupfile \
-			--disable-authz-user --disable-authz-default \
-			--disable-auth-basic --disable-charset-lite \
-			--disable-include --disable-log-config --disable-env \
-			--disable-setenvif --disable-mime --disable-status \
-			--disable-autoindex --disable-asis --disable-cgid \
-			--disable-cgi --disable-negotiation --disable-dir \
-			--disable-imagemap --disable-actions --disable-userdir \
-			--disable-alias --disable-filter \
-			--disable-proxy --disable-proxy-connect \
-			--disable-proxy-ftp --disable-proxy-http \
-			--disable-proxy-ajp --disable-proxy-balancer
 .elif ${USE_APACHE} == common22
 CONFIGURE_ARGS+=	--disable-authn-file --disable-authn-default \
 			--disable-authz-host --disable-authz-groupfile \
@@ -267,9 +227,6 @@ PLIST_SUB+=	MOD_${module:U}=${${module}_PLIST_SUB}
 .endfor
 ####End of PORT_IS_SERVER ####
 
-.elif defined(APR_DEPS)
-IGNORE=		${_ERROR_MSG} apr support is not yet implemented
-
 .elif defined(AP_PORT_IS_MODULE)
 AP_VERSION=	${USE_APACHE:C/\.//}
 
@@ -321,7 +278,7 @@ APACHEMODDIR=	libexec/apache2
 APACHEINCLUDEDIR=include/apache2
 APACHEETCDIR=	etc/apache2
 APACHE_PORT?=	www/apache${APACHE_VERSION}
-.elif ${APACHE_VERSION} >= 21
+.elif ${APACHE_VERSION} >= 22
 AP_BUILDEXT=	la
 APACHEMODDIR=	libexec/apache${APACHE_VERSION}
 APACHEINCLUDEDIR=include/apache${APACHE_VERSION}
@@ -344,6 +301,8 @@ PLIST_SUB+=	APACHEMODDIR="${APACHEMODDIR}" \
 ${VAR} =${AP${APACHE_VERSION}_${VAR}}
 .  endif
 .endfor
+
+PKGNAMEPREFIX?= ap${APACHE_VERSION}-
 
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
