@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	HTML-Tidy
-PORTVERSION=	1.08
-PORTREVISION=	1
+PORTVERSION=	1.52
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web validation in a Perl object using tidy
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
-LIB_DEPENDS=	tidy:${PORTSDIR}/www/tidy-lib
+BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
+LIB_DEPENDS=	tidyp:${PORTSDIR}/textproc/tidyp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
