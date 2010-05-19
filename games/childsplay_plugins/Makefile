@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	childsplay_plugins
-PORTVERSION=	0.80.1.1
-PORTREVISION=	8
+PORTVERSION=	0.90
 CATEGORIES=	games
-MASTER_SITES=	SF/childsplay/OldFiles
+MASTER_SITES=	SF/childsplay/childsplay-plugins/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bruno@tinkerbox.org
