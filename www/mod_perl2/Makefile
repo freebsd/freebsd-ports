@@ -82,11 +82,7 @@ APR_HAS_THREADS=	0
 
 .if ${APR_HAS_THREADS} == 1
 PLIST_SUB+=	THREADMUTEX=""
-.if ${APR_MAJ_V} > 0
 PLIST_SUB+=	THREADRWLOCK=""
-.else
-PLIST_SUB+=	THREADRWLOCK="@comment "
-.endif
 .else
 PLIST_SUB+=	THREADMUTEX="@comment "
 PLIST_SUB+=	THREADRWLOCK="@comment "
