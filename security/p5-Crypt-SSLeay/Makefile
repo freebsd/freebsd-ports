@@ -7,6 +7,7 @@
 
 PORTNAME=	Crypt-SSLeay
 PORTVERSION=	0.57
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,5 +24,8 @@ MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 USE_OPENSSL=	yes
 
 MAN3=		Crypt::SSLeay.3 Net::SSL.3
+
+post-patch:
+	${RM} ${WRKSRC}/lib/Net/SSL.pm.orig
 
 .include <bsd.port.mk>
