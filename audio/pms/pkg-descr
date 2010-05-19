@@ -1,0 +1,7 @@
+Practical Music Search is an open source ncurses client for Music
+Player Daemon, written in C++. The target audience are power users who
+need an MPD client that is highly configurable and accessible. PMS
+features a simple but powerful interface similar to Vim, and runs on
+(at least) Linux and Mac OS X.
+
+WWW:	http://pms.sourceforge.net/
