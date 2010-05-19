@@ -721,6 +721,7 @@
     SUBDIR += teamspeak_client
     SUBDIR += teamspeak_server
     SUBDIR += tempest_for_eliza
+    SUBDIR += tepsonic
     SUBDIR += terminatorx
     SUBDIR += thunar-media-tags-plugin
     SUBDIR += timemachine
