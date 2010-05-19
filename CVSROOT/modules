@@ -548,7 +548,8 @@ apoolgl                         ports/games/apoolGL
 apparix                         ports/misc/apparix
 appres                          ports/x11/appres
 appwrapper                      ports/deskutils/appwrapper
-apr                             ports/devel/apr
+apr0                            ports/devel/apr0
+apr1                            ports/devel/apr1
 apricots                        ports/games/apricots
 aprsd                           ports/comms/aprsd
 apsfilter                       ports/print/apsfilter
@@ -8839,6 +8840,7 @@ maketool                        ports/devel/maketool
 makeztxt                        ports/palm/makeztxt
 malint                          ports/audio/malint
 mambo                           ports/www/mambo
+mame                            ports/emulators/mame
 mame-extras                     ports/emulators/mame-extras
 man.el                          ports/misc/man.el
 man2html                        ports/textproc/man2html
@@ -9147,6 +9149,7 @@ mkfile                          ports/sysutils/mkfile
 mkfontdir                       ports/x11-fonts/mkfontdir
 mkfontscale                     ports/x11-fonts/mkfontscale
 mkgichessclub                   ports/games/mkgichessclub
+mkgmap                          ports/astro/mkgmap
 mkhexgrid                       ports/games/mkhexgrid
 mkitalic                        ports/x11-fonts/mkitalic
 mkmf                            ports/devel/mkmf
@@ -21044,6 +21047,7 @@ py-zsi                          ports/net/py-zsi
 py25-bsddb                      ports/databases/py25-bsddb
 py2html                         ports/textproc/py2html
 py31-tkinter                    ports/x11-toolkits/py31-tkinter
+pyNN                            ports/science/pyNN
 py_otp_interface                ports/devel/py_otp_interface
 pyawale                         ports/games/pyawale
 pybaz                           ports/devel/pybaz
@@ -21081,6 +21085,7 @@ pymsgauth                       ports/mail/pymsgauth
 pymsn                           ports/net-im/pymsn
 pyne                            ports/news/pyne
 pynids                          ports/net/pynids
+pynn                            ports/science/pyNN
 pyobfuscate                     ports/devel/pyobfuscate
 pypanda                         ports/misc/pypanda
 pypanel                         ports/deskutils/pypanel
@@ -22575,7 +22580,6 @@ sdl_sge                         ports/devel/sdl_sge
 sdl_sound                       ports/audio/sdl_sound
 sdl_ttf                         ports/graphics/sdl_ttf
 sdlcc                           ports/games/sdlCC
-sdlmame                         ports/emulators/sdlmame
 sdlmame-devel                   ports/emulators/sdlmame-devel
 sdlmess                         ports/emulators/sdlmess
 sdlmm                           ports/devel/sdlmm
@@ -23087,6 +23091,8 @@ splint                          ports/devel/splint
 splitvt                         ports/misc/splitvt
 splix                           ports/print/splix
 spmfilter                       ports/mail/spmfilter
+spmfilter-clamav                ports/mail/spmfilter-clamav
+spmfilter-spamassassin          ports/mail/spmfilter-spamassassin
 spnetkit                        ports/net/spnetkit
 spoofer                         ports/net/spoofer
 spook                           ports/multimedia/spook
@@ -25133,6 +25139,7 @@ xbrightness                     ports/x11/xbrightness
 xbsql                           ports/databases/xbsql
 xbubble                         ports/games/xbubble
 xbuffy                          ports/mail/xbuffy
+xc3sprog                        ports/devel/xc3sprog
 xca                             ports/security/xca
 xcache                          ports/www/xcache
 xcalc                           ports/x11/xcalc
