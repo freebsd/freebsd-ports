@@ -145,7 +145,6 @@
     SUBDIR += py-paida
     SUBDIR += py-pydicom
     SUBDIR += py-scipy
-    SUBDIR += pyNN
     SUBDIR += pybrain
     SUBDIR += pycdf
     SUBDIR += qcl
