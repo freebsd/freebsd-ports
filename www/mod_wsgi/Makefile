@@ -29,6 +29,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
 
 SUB_FILES=	pkg-message
+PORTSCOUT=	limit:^2\.
 
 post-install:
 	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/${MODULENAME}.so"
