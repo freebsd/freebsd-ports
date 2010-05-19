@@ -7,6 +7,7 @@
 
 PORTNAME=	lightspark
 DISTVERSION=	r20100518
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel
