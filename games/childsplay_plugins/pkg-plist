@@ -1,4 +1,4 @@
-childsplay/lib/.#numberhunt.py.1.4
+bin/MT_users2csv.py
 childsplay/lib/billiard.py
 childsplay/lib/billiard.pyc
 childsplay/lib/fallingletters.py
@@ -7,21 +7,20 @@ childsplay/lib/findsound.py
 childsplay/lib/findsound.pyc
 childsplay/lib/findsound2.py
 childsplay/lib/findsound2.pyc
-childsplay/lib/in.ps
-childsplay/lib/in.ps~
-childsplay/lib/numberhunt.ps
+childsplay/lib/multiTables.py
+childsplay/lib/multiTables.pyc
 childsplay/lib/numbers.py
 childsplay/lib/numbers.pyc
-childsplay/lib/out.ps
 childsplay/lib/packid.py
 childsplay/lib/packid.pyc
 childsplay/lib/pong.py
 childsplay/lib/pong.pyc
+childsplay/lib/puzzle.py
+childsplay/lib/puzzle.pyc
 childsplay/lib/soundNpic.py
 childsplay/lib/soundNpic.pyc
 childsplay/lib/soundmemory.py
 childsplay/lib/soundmemory.pyc
-share/assetml/childsplay/sounds-misc/po/Translation.raw
 share/assetml/childsplay/sounds-misc/catmeow.ogg
 share/assetml/childsplay/sounds-misc/cow.ogg
 share/assetml/childsplay/sounds-misc/elephant.ogg
@@ -30,6 +29,7 @@ share/assetml/childsplay/sounds-misc/lion.ogg
 share/assetml/childsplay/sounds-misc/passby.ogg
 share/assetml/childsplay/sounds-misc/phone1.ogg
 share/assetml/childsplay/sounds-misc/plane.ogg
+share/assetml/childsplay/sounds-misc/po/Translation.raw
 share/assetml/childsplay/sounds-misc/police.ogg
 share/assetml/childsplay/sounds-misc/rocket.ogg
 share/assetml/childsplay/sounds-misc/rooster.ogg
@@ -40,16 +40,7 @@ share/assetml/childsplay/sounds-misc/sneeze3.ogg
 share/assetml/childsplay/sounds-misc/sounds-misc.assetml
 share/assetml/childsplay/sounds-misc/tomtom.ogg
 share/assetml/childsplay/sounds-misc/train.ogg
-share/childsplay/Data/icons/billiard.icon.png
-share/childsplay/Data/icons/soundNpic.icon.png
-share/childsplay/Data/icons/pong.icon.png
-share/childsplay/Data/icons/packid.icon.png
-share/childsplay/Data/icons/numbers.icon.png
-share/childsplay/Data/icons/findsound2.icon.png
-share/childsplay/Data/icons/findsound.icon.png
-share/childsplay/Data/icons/fallingletters.icon.png
-share/childsplay/Data/icons/soundmemory.icon.png
-share/childsplay/Data/AlphabetSounds/en/z.ogg
+share/childsplay/Data/AlphabetSounds/en/1.ogg
 share/childsplay/Data/AlphabetSounds/en/10.ogg
 share/childsplay/Data/AlphabetSounds/en/11.ogg
 share/childsplay/Data/AlphabetSounds/en/12.ogg
@@ -94,24 +85,36 @@ share/childsplay/Data/AlphabetSounds/en/v.ogg
 share/childsplay/Data/AlphabetSounds/en/w.ogg
 share/childsplay/Data/AlphabetSounds/en/x.ogg
 share/childsplay/Data/AlphabetSounds/en/y.ogg
-share/childsplay/Data/AlphabetSounds/en/1.ogg
-share/childsplay/lib/ConfigData/pongrc
-share/childsplay/lib/BilliardData/sndh.wav
+share/childsplay/Data/AlphabetSounds/en/z.ogg
+share/childsplay/Data/icons/billiard.icon.png
+share/childsplay/Data/icons/fallingletters.icon.png
+share/childsplay/Data/icons/findsound.icon.png
+share/childsplay/Data/icons/findsound2.icon.png
+share/childsplay/Data/icons/multiTables.icon.png
+share/childsplay/Data/icons/numbers.icon.png
+share/childsplay/Data/icons/packid.icon.png
+share/childsplay/Data/icons/pong.icon.png
+share/childsplay/Data/icons/puzzle.icon.png
+share/childsplay/Data/icons/soundNpic.icon.png
+share/childsplay/Data/icons/soundmemory.icon.png
+share/childsplay/lib/BilliardData/backgr.png
 share/childsplay/lib/BilliardData/ball1.png
 share/childsplay/lib/BilliardData/ball2.png
-share/childsplay/lib/BilliardData/backgr.png
+share/childsplay/lib/BilliardData/hole.png
+share/childsplay/lib/BilliardData/sndh.wav
 share/childsplay/lib/BilliardData/sndt.wav
 share/childsplay/lib/BilliardData/stick.png
-share/childsplay/lib/BilliardData/hole.png
-share/childsplay/lib/FallingLettersData/scenery2.png
+share/childsplay/lib/ConfigData/fallinglettersrc
+share/childsplay/lib/ConfigData/pongrc
 share/childsplay/lib/FallingLettersData/scenery0.png
 share/childsplay/lib/FallingLettersData/scenery1.png
+share/childsplay/lib/FallingLettersData/scenery2.png
 share/childsplay/lib/Findsound2Data/Data/back.jpg
 share/childsplay/lib/Findsound2Data/Data/soundbut.png
 share/childsplay/lib/FindsoundData/Data/back.jpg
 share/childsplay/lib/FindsoundData/Data/soundbut.png
-share/childsplay/lib/FindsoundData/Images/level1/elephant.png
 share/childsplay/lib/FindsoundData/Images/level1/cow.png
+share/childsplay/lib/FindsoundData/Images/level1/elephant.png
 share/childsplay/lib/FindsoundData/Images/level1/frog.png
 share/childsplay/lib/FindsoundData/Images/level1/lion.png
 share/childsplay/lib/FindsoundData/Images/level1/rooster.png
@@ -127,8 +130,8 @@ share/childsplay/lib/FindsoundData/Images/level3/guitar.png
 share/childsplay/lib/FindsoundData/Images/level3/harp.png
 share/childsplay/lib/FindsoundData/Images/level3/piano.png
 share/childsplay/lib/FindsoundData/Images/level3/violin.png
-share/childsplay/lib/FindsoundData/Sounds/level1/elephant.ogg
 share/childsplay/lib/FindsoundData/Sounds/level1/cow.ogg
+share/childsplay/lib/FindsoundData/Sounds/level1/elephant.ogg
 share/childsplay/lib/FindsoundData/Sounds/level1/frog.ogg
 share/childsplay/lib/FindsoundData/Sounds/level1/lion.ogg
 share/childsplay/lib/FindsoundData/Sounds/level1/rooster.ogg
@@ -144,9 +147,15 @@ share/childsplay/lib/FindsoundData/Sounds/level3/guitar.ogg
 share/childsplay/lib/FindsoundData/Sounds/level3/harp.ogg
 share/childsplay/lib/FindsoundData/Sounds/level3/piano.ogg
 share/childsplay/lib/FindsoundData/Sounds/level3/violin.ogg
+share/childsplay/lib/MultiTablesData/arrow.gif
+share/childsplay/lib/MultiTablesData/correct.wav
+share/childsplay/lib/MultiTablesData/failed.ogg
+share/childsplay/lib/MultiTablesData/levelarrow.gif
+share/childsplay/lib/MultiTablesData/tablesdiploma.png
+share/childsplay/lib/MultiTablesData/victory.ogg
 share/childsplay/lib/NumbersData/balloon.png
 share/childsplay/lib/NumbersData/shot.wav
-share/childsplay/lib/PackidData/words-nl
+share/childsplay/lib/PackidData/aardbei.png
 share/childsplay/lib/PackidData/appel.png
 share/childsplay/lib/PackidData/banaan.png
 share/childsplay/lib/PackidData/brick.png
@@ -183,28 +192,36 @@ share/childsplay/lib/PackidData/peer.png
 share/childsplay/lib/PackidData/sea.png
 share/childsplay/lib/PackidData/waka.wav
 share/childsplay/lib/PackidData/walk.wav
+share/childsplay/lib/PackidData/words-ar
+share/childsplay/lib/PackidData/words-ca
 share/childsplay/lib/PackidData/words-de
 share/childsplay/lib/PackidData/words-en
 share/childsplay/lib/PackidData/words-es
 share/childsplay/lib/PackidData/words-fr
-share/childsplay/lib/PackidData/aardbei.png
+share/childsplay/lib/PackidData/words-he
+share/childsplay/lib/PackidData/words-id
+share/childsplay/lib/PackidData/words-nl
+share/childsplay/lib/PackidData/words-no
+share/childsplay/lib/PackidData/words-pt
+share/childsplay/lib/PackidData/words-sl
+share/childsplay/lib/PackidData/words-sv
+share/childsplay/lib/PongData/arrow_down.png
 share/childsplay/lib/PongData/arrow_up.png
+share/childsplay/lib/PongData/bump.wav
+share/childsplay/lib/PongData/goal.wav
 share/childsplay/lib/PongData/loser.jpg
 share/childsplay/lib/PongData/multi_pc.jpg
 share/childsplay/lib/PongData/multi_person.jpg
 share/childsplay/lib/PongData/pick.wav
 share/childsplay/lib/PongData/single.jpg
 share/childsplay/lib/PongData/winner.jpg
-share/childsplay/lib/PongData/arrow_down.png
-share/childsplay/lib/PongData/bump.wav
-share/childsplay/lib/PongData/goal.wav
 share/childsplay/lib/PongData/winner.ogg
 share/childsplay/lib/SoundMemory/but_back.png
 share/childsplay/lib/SoundMemory/but_bleu_up.png
 share/childsplay/lib/SoundMemory/but_red_down.png
-share/childsplay/lib/SoundNpicData/Level1/sheep.png
 share/childsplay/lib/SoundNpicData/Level1/cow.ogg
 share/childsplay/lib/SoundNpicData/Level1/cow.png
+share/childsplay/lib/SoundNpicData/Level1/elephant.ogg
 share/childsplay/lib/SoundNpicData/Level1/elephant.png
 share/childsplay/lib/SoundNpicData/Level1/frog.ogg
 share/childsplay/lib/SoundNpicData/Level1/frog.png
@@ -213,28 +230,46 @@ share/childsplay/lib/SoundNpicData/Level1/lion.png
 share/childsplay/lib/SoundNpicData/Level1/rooster.ogg
 share/childsplay/lib/SoundNpicData/Level1/rooster.png
 share/childsplay/lib/SoundNpicData/Level1/sheep.ogg
-share/childsplay/lib/SoundNpicData/Level1/elephant.ogg
-@dirrm share/assetml/childsplay/sounds-misc/po
-@dirrm share/assetml/childsplay/sounds-misc
-@dirrm share/childsplay/Data/AlphabetSounds/en
-@dirrm share/childsplay/Data/AlphabetSounds
-@dirrm share/childsplay/lib/BilliardData
-@dirrm share/childsplay/lib/FallingLettersData
-@dirrm share/childsplay/lib/Findsound2Data/Data
-@dirrm share/childsplay/lib/Findsound2Data
-@dirrm share/childsplay/lib/FindsoundData/Data
-@dirrm share/childsplay/lib/FindsoundData/Images/level1
-@dirrm share/childsplay/lib/FindsoundData/Images/level2
-@dirrm share/childsplay/lib/FindsoundData/Images/level3
-@dirrm share/childsplay/lib/FindsoundData/Images
-@dirrm share/childsplay/lib/FindsoundData/Sounds/level1
-@dirrm share/childsplay/lib/FindsoundData/Sounds/level2
-@dirrm share/childsplay/lib/FindsoundData/Sounds/level3
-@dirrm share/childsplay/lib/FindsoundData/Sounds
-@dirrm share/childsplay/lib/FindsoundData
-@dirrm share/childsplay/lib/NumbersData
-@dirrm share/childsplay/lib/PackidData
-@dirrm share/childsplay/lib/PongData
-@dirrm share/childsplay/lib/SoundMemory
+share/childsplay/lib/SoundNpicData/Level1/sheep.png
+share/childsplay/lib/puzzleData/birthday_cake.png
+share/childsplay/lib/puzzleData/boat.png
+share/childsplay/lib/puzzleData/bus.png
+share/childsplay/lib/puzzleData/car01.png
+share/childsplay/lib/puzzleData/chick-hatched.png
+share/childsplay/lib/puzzleData/frog.png
+share/childsplay/lib/puzzleData/grapes.png
+share/childsplay/lib/puzzleData/miner.png
+share/childsplay/lib/puzzleData/paint.png
+share/childsplay/lib/puzzleData/pineapple.png
+share/childsplay/lib/puzzleData/slate.png
+share/childsplay/lib/puzzleData/tux.png
+share/childsplay/lib/puzzleData/wooden_cottage.png
+share/doc/childsplay/README
+share/doc/childsplay/README-PACKID
+share/doc/childsplay/README.MT_users2csv
+@dirrm share/childsplay/lib/puzzleData
 @dirrm share/childsplay/lib/SoundNpicData/Level1
 @dirrm share/childsplay/lib/SoundNpicData
+@dirrm share/childsplay/lib/SoundMemory
+@dirrm share/childsplay/lib/PongData
+@dirrm share/childsplay/lib/PackidData
+@dirrm share/childsplay/lib/NumbersData
+@dirrm share/childsplay/lib/MultiTablesData
+@dirrm share/childsplay/lib/FindsoundData/Sounds/level3
+@dirrm share/childsplay/lib/FindsoundData/Sounds/level2
+@dirrm share/childsplay/lib/FindsoundData/Sounds/level1
+@dirrm share/childsplay/lib/FindsoundData/Sounds
+@dirrm share/childsplay/lib/FindsoundData/Images/level3
+@dirrm share/childsplay/lib/FindsoundData/Images/level2
+@dirrm share/childsplay/lib/FindsoundData/Images/level1
+@dirrm share/childsplay/lib/FindsoundData/Images
+@dirrm share/childsplay/lib/FindsoundData/Data
+@dirrm share/childsplay/lib/FindsoundData
+@dirrm share/childsplay/lib/Findsound2Data/Data
+@dirrm share/childsplay/lib/Findsound2Data
+@dirrm share/childsplay/lib/FallingLettersData
+@dirrm share/childsplay/lib/BilliardData
+@dirrm share/childsplay/Data/AlphabetSounds/en
+@dirrm share/childsplay/Data/AlphabetSounds
+@dirrm share/assetml/childsplay/sounds-misc/po
+@dirrm share/assetml/childsplay/sounds-misc
