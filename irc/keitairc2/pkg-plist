@@ -21,6 +21,24 @@ bin/keitairc
 %%DATADIR%%/doc/manual.html
 %%DATADIR%%/doc/phones.jpg
 %%DATADIR%%/doc/screenshot.html
+%%DATADIR%%/doc/screenshot/2.0/iphone/all.jpg
+%%DATADIR%%/doc/screenshot/2.0/iphone/all_menu.jpg
+%%DATADIR%%/doc/screenshot/2.0/iphone/index.jpg
+%%DATADIR%%/doc/screenshot/2.0/iphone/index_menu.jpg
+%%DATADIR%%/doc/screenshot/2.0/iphone/location.jpg
+%%DATADIR%%/doc/screenshot/2.0/iphone/location_menu.jpg
+%%DATADIR%%/doc/screenshot/2.0/iphone/login.jpg
+%%DATADIR%%/doc/screenshot/2.0/iphone/nick.jpg
+%%DATADIR%%/doc/screenshot/2.0/iphone/recent.jpg
+%%DATADIR%%/doc/screenshot/2.0/iphone/topic.jpg
+%%DATADIR%%/doc/screenshot/2.0/keitai/all.png
+%%DATADIR%%/doc/screenshot/2.0/keitai/index.png
+%%DATADIR%%/doc/screenshot/2.0/keitai/link_menu.png
+%%DATADIR%%/doc/screenshot/2.0/keitai/location.png
+%%DATADIR%%/doc/screenshot/2.0/keitai/login.png
+%%DATADIR%%/doc/screenshot/2.0/keitai/nick.png
+%%DATADIR%%/doc/screenshot/2.0/keitai/recent.png
+%%DATADIR%%/doc/screenshot/2.0/keitai/topic.png
 %%DATADIR%%/doc/security.html
 %%DATADIR%%/doc/sitemap.txt
 %%DATADIR%%/doc/usage.html
@@ -115,6 +133,10 @@ bin/keitairc
 @dirrm %%DATADIR%%/lib/Keitairc
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/etc
+@dirrm %%DATADIR%%/doc/screenshot/2.0/keitai
+@dirrm %%DATADIR%%/doc/screenshot/2.0/iphone
+@dirrm %%DATADIR%%/doc/screenshot/2.0
+@dirrm %%DATADIR%%/doc/screenshot
 @dirrm %%DATADIR%%/doc/iui
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
