@@ -8,7 +8,8 @@
 PORTNAME=	mkgmap
 PORTVERSION=	r1625
 CATEGORIES=	astro java
-MASTER_SITES=	http://www.mkgmap.org.uk/snapshots/
+MASTER_SITES=	http://www.mkgmap.org.uk/snapshots/ \
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OpenStreetMap data into a Garmin format

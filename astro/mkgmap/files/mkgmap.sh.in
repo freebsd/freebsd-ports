@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/astro/mkgmap/files/mkgmap.sh.in,v 1.1 2010-05-19 12:06:51 amdmi3 Exp $
+
+JAVA="%%LOCALBASE%%/bin/java"
+JARPATH="%%JAVALIBDIR%%"
+export JAVA_VERSION="%%JAVA_VERSION%%"
+
+exec "${JAVA}" -Xmx1024m -jar "${JARPATH}/mkgmap.jar" "$@"
