@@ -482,7 +482,6 @@ pam_authsrv-*		security/pam_authsrv	No form of redistribution is
 						against fwtk
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on
 						usage and distribution
-perforce/*		devel/perforce		Restricted distribution
 pgp*			security/pgp*		Various locality restrictions
 platon*			biology/platon		$5000 USD for commercial users,
 						free for academic
