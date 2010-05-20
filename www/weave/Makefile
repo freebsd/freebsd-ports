@@ -59,7 +59,7 @@ PLIST_SUB+=	XPI_XPIDIR="${XPI_DIR:S,^${PREFIX}/,,}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\$$(shell hg tip --template '{node\|short}')|${REVID}|g" ${WRKSRC}/Makefile
-.if ${PLATFORM} == FreeBSD_x86_64-gcc3
+.if ${ARCH} == amd64
 	${REINPLACE_CMD} -e 's|arch = amd64|arch = x86_64|g' ${WRKSRC}/crypto-obsolete/src/Makefile
 .endif
 
