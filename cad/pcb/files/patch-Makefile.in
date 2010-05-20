@@ -1,16 +1,16 @@
---- Makefile.in.orig	2008-02-01 22:31:31.000000000 +0900
-+++ Makefile.in	2008-05-06 02:26:40.000000000 +0900
-@@ -270,11 +270,11 @@
+--- Makefile.in.orig	2010-05-21 03:09:49.000000000 +0900
++++ Makefile.in	2010-05-21 05:07:04.000000000 +0900
+@@ -282,11 +282,11 @@
  target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
--DIRS = win32 intl src data lib newlib example tools tutorial README_FILES po
-+DIRS = intl src data lib newlib example tools tutorial README_FILES po
+-DIRS = win32 intl src data lib newlib example tools tutorial README_FILES po tests
++DIRS = intl src data lib newlib example tools tutorial README_FILES po tests
  SUBDIRS = ${DIRS} @DOC@
  DIST_SUBDIRS = ${DIRS} doc
  INTLTOOL_FILES = intltool-extract.in intltool-merge.in  intltool-update.in
--EXTRA_DIST = config.rpath globalconst.h README.cvs README.win32 icon-theme-installer $(INTLTOOL_FILES)
-+EXTRA_DIST = config.rpath globalconst.h README.cvs icon-theme-installer $(INTLTOOL_FILES)
+-EXTRA_DIST = config.rpath globalconst.h README.git README.win32 icon-theme-installer $(INTLTOOL_FILES)
++EXTRA_DIST = config.rpath globalconst.h README.git icon-theme-installer $(INTLTOOL_FILES)
  DISTCLEANFILES = configure.lineno intltool-extract intltool-merge intltool-update po/.intltool-merge-cache
  MAINTAINERCLEANFILES = $(INTLTOOL_FILES)
  ACLOCAL_AMFLAGS = -I m4
