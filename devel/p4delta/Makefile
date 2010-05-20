@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Summarizes and manages differences between local files and Perforce
 
-RUN_DEPENDS=	${LOCALBASE}/bin/p4:${PORTSDIR}/devel/perforce
+RUN_DEPENDS=	${LOCALBASE}/bin/p4:${PORTSDIR}/devel/p4
 
 USE_RUBY=	yes
 NO_BUILD=	yes
