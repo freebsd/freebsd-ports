@@ -73,5 +73,6 @@ OPTIONS+= \
 	 SSL "Enable mod_ssl" ON \
 	 SUEXEC "Enable mod_suexec" OFF \
 	 SUEXEC_RSRCLIMIT "SuEXEC rlimits based on login class" OFF \
+	 REQTIMEOUT "Enable mod_reqtimeout" ON \
 	 CGID "Enable mod_cgid" OFF \
 
