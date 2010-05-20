@@ -19,7 +19,7 @@ LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=	rblibtorrent-[0-9]* libtorrent-rasterbar*-0.15.*
+CONFLICTS=	libtorrent-rasterbar*-0.15.*
 
 USE_GNOME=	gnomehack
 USE_OPENSSL=	yes
