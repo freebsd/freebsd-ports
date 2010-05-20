@@ -42,6 +42,8 @@ REVID=		ad1ede89cbb2
 PLATFORM=	FreeBSD_x86-gcc3
 .elif ${ARCH} == amd64
 PLATFORM=	FreeBSD_${AMD64_ARCH}-gcc3
+.else
+IGNORE=		unsupported platform
 .endif
 
 GMAKE_FLAGS=	sdkdir=${PREFIX}/lib/firefox3/sdk release_build=1 platform_target=${PLATFORM} TOPSRCDIR=${WRKSRC}
