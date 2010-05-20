@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xstream
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://repository.codehaus.org/com/thoughtworks/xstream/xstream-distribution/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-distribution-${PORTVERSION}-src
