@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	suhosin
-PORTVERSION=	0.9.30
+PORTVERSION=	0.9.31
 CATEGORIES=	security
 MASTER_SITES=	http://download.suhosin.org/
 PKGNAMEPREFIX=	php-
