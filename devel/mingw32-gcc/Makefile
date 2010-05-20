@@ -78,6 +78,10 @@ OPTIONS=	LANG_CXX     "Enable C++ compiler"                   on  \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+BROKEN=	missing files in plist
+.endif
+
 .if defined(WITH_LANG_OBJCPP)
 WITH_LANG_OBJC=true
 WITH_LANG_CXX=true
