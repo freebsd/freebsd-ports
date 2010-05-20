@@ -97,6 +97,7 @@
     SUBDIR += ncs
     SUBDIR += netcdf
     SUBDIR += netcdf-ftn
+    SUBDIR += netcdf3-ftn
     SUBDIR += netcdf4
     SUBDIR += nifticlib
     SUBDIR += oases
