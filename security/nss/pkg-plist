@@ -130,8 +130,6 @@ lib/nss/libsmime3.so
 lib/nss/libsmime3.so.1
 lib/nss/libsoftokn3.so
 lib/nss/libsoftokn3.so.1
-%%SYSSQLITE3%%lib/nss/libnsssqlite3.so
-%%SYSSQLITE3%%lib/nss/libnsssqlite3.so.1
 lib/nss/libssl3.so
 lib/nss/libssl3.so.1
 libdata/pkgconfig/nss.pc
