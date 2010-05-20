@@ -82,6 +82,7 @@
     SUBDIR += libsvm
     SUBDIR += libsvm-python
     SUBDIR += linsmith
+    SUBDIR += massxpert
     SUBDIR += mayavi
     SUBDIR += mbdyn
     SUBDIR += mcstas

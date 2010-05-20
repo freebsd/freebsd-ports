@@ -1,0 +1,20 @@
+The massXpert project aims at providing (bio)chemists with a software
+package allowing the following:
+
+* User-specific atom definitions and polymer chemistry definitions;
+* Powerful sequence editing with user-defined glyphs for each monomer
+and monomer chemical modification. Multi-region selections;
+* Polymer sequence chemical/enzymatic cleavage;
+* Intramolecular cross-linking, like disulfide bonds with total resolution
+of the peptides generated upon enzymatic cleavage;
+* Gas-phase fragmentation of oligomers;
+* Mass-to-charge ratio calculations with inline change of ionization agent;
+* Calculation of net electrical charge and of isoelectric point (even by
+taking into account monomer modifications if polymer is a protein);
+* Simulation of isotopic patterns for any chemical formula and z charge;
+* A number of plugins allow 1) translation of the sequence from one format
+to another (using a dictionary, like between the 1-letter code and the 3-letter
+code of proteins) 2) conversion of number format according to any localized
+number format 3) sort mass lists.
+
+WWW:	http://massxpert.org/
