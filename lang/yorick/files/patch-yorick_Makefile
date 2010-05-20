@@ -1,9 +1,9 @@
---- yorick/Makefile.orig	Mon Sep 19 00:04:08 2005
-+++ yorick/Makefile	Thu Mar  9 14:59:53 2006
+--- yorick/Makefile.orig	2009-07-12 06:16:14.000000000 +0200
++++ yorick/Makefile	2010-05-20 16:31:32.000000000 +0200
 @@ -15,7 +15,8 @@
    array.o range.o ops.o ops0.o ops1.o ops2.o ops3.o nonc.o debug.o \
    std0.o std1.o std2.o ascio.o defmem.o yhash.o  yrdwr.o bcast.o binio.o \
-   binobj.o binstd.o cache.o convrt.o binpdb.o clog.o ystr.o graph.o \
+   binobj.o binstd.o cache.o convrt.o binpdb.o clog.o ystr.o graph.o fwrap.o \
 -  graph0.o style.o list.o pathfun.o autold.o funcdef.o spawn.o fortrn.o
 +  graph0.o style.o list.o pathfun.o autold.o funcdef.o spawn.o fortrn.o \
 +  ywrap.o yinit.o

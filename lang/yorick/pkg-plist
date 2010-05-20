@@ -30,7 +30,9 @@ lib/yorick/i0/drat.i
 lib/yorick/i/README
 lib/yorick/i/zroots.i
 lib/yorick/i/ylmdec.i
+lib/yorick/i/unsigned.i
 lib/yorick/i/txpath.i
+lib/yorick/i/textload.i
 lib/yorick/i/teststr.i
 lib/yorick/i/testp.i
 lib/yorick/i/testm.i
@@ -74,6 +76,7 @@ lib/yorick/i/movie.i
 lib/yorick/i/mkdoc.i
 lib/yorick/i/md5.i
 lib/yorick/i/make.i
+lib/yorick/i/levmar.i
 lib/yorick/i/legndr.i
 lib/yorick/i/kepler.i
 lib/yorick/i/ieee.i
@@ -140,6 +143,7 @@ lib/yorick/include/play.h
 lib/yorick/include/phash.h
 lib/yorick/include/config.h
 lib/yorick/i-start/README
+lib/yorick/i-start/90pkg_mngr.i
 lib/yorick/i-start/70hex.i
 lib/yorick/i-start/70drat.i
 lib/yorick/i-start/50i.i
