@@ -1,5 +1,6 @@
-This is a collection of Haskell data structures and algorithms useful for
-building bioinformatics-related tools and utilities.
+This is a collection of Haskell data structures and algorithms useful
+for building bioinformatics-related tools and utilities.
+
 Current list of features includes: a Sequence data type supporting
 protein and nucleotide sequences and conversion between them.
 

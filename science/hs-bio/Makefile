@@ -7,6 +7,7 @@
 
 PORTNAME=	bio
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	science haskell
 
 MAINTAINER=	jacula@gmail.com
