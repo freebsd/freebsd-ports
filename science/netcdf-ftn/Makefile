@@ -10,15 +10,8 @@ PORTNAME=	netcdf
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	NetCDF (network Common Data Form), with Fortran support
 
-NETCDF_VER?=	4
-
-.if ${NETCDF_VER} == 4
-LATEST_LINK=	netcdf4-ftn
-MASTERDIR=	${.CURDIR}/../netcdf4
-.else
 LATEST_LINK=	netcdf-ftn
-MASTERDIR=	${.CURDIR}/../netcdf
-.endif
+MASTERDIR=	${.CURDIR}/../netcdf4
 
 WITH_FORTRAN=	yes
 
