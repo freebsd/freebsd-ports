@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.0.21
-PORTREVISION?=	1
+PORTVERSION?=	8.0.25
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -41,6 +40,7 @@ CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include \
 		--enable-thread-safety \
 		--with-docdir=${DOCSDIR}
+LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -106,7 +106,7 @@ USE_AUTOTOOLS=	autoconf:262
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-8019-icu-xx-2008-11-03.diff.gz:icu
+PATCHFILES+=	pg-8025-icu-xx-2010-05-14.diff.gz:icu
 .  endif
 
 PATCH_DIST_STRIP=-p1

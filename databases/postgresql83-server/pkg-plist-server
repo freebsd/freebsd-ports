@@ -216,6 +216,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Atikokan
 %%TZDATA%%share/postgresql/timezone/America/Atka
 %%TZDATA%%share/postgresql/timezone/America/Bahia
+%%TZDATA%%share/postgresql/timezone/America/Bahia_Banderas
 %%TZDATA%%share/postgresql/timezone/America/Barbados
 %%TZDATA%%share/postgresql/timezone/America/Belem
 %%TZDATA%%share/postgresql/timezone/America/Belize
@@ -288,6 +289,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Manaus
 %%TZDATA%%share/postgresql/timezone/America/Marigot
 %%TZDATA%%share/postgresql/timezone/America/Martinique
+%%TZDATA%%share/postgresql/timezone/America/Matamoros
 %%TZDATA%%share/postgresql/timezone/America/Mazatlan
 %%TZDATA%%share/postgresql/timezone/America/Mendoza
 %%TZDATA%%share/postgresql/timezone/America/Menominee
@@ -306,6 +308,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Noronha
 %%TZDATA%%share/postgresql/timezone/America/North_Dakota/Center
 %%TZDATA%%share/postgresql/timezone/America/North_Dakota/New_Salem
+%%TZDATA%%share/postgresql/timezone/America/Ojinaga
 %%TZDATA%%share/postgresql/timezone/America/Panama
 %%TZDATA%%share/postgresql/timezone/America/Pangnirtung
 %%TZDATA%%share/postgresql/timezone/America/Paramaribo
@@ -322,6 +325,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Resolute
 %%TZDATA%%share/postgresql/timezone/America/Rio_Branco
 %%TZDATA%%share/postgresql/timezone/America/Rosario
+%%TZDATA%%share/postgresql/timezone/America/Santa_Isabel
 %%TZDATA%%share/postgresql/timezone/America/Santarem
 %%TZDATA%%share/postgresql/timezone/America/Santiago
 %%TZDATA%%share/postgresql/timezone/America/Santo_Domingo
@@ -350,6 +354,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Antarctica/Casey
 %%TZDATA%%share/postgresql/timezone/Antarctica/Davis
 %%TZDATA%%share/postgresql/timezone/Antarctica/DumontDUrville
+%%TZDATA%%share/postgresql/timezone/Antarctica/Macquarie
 %%TZDATA%%share/postgresql/timezone/Antarctica/Mawson
 %%TZDATA%%share/postgresql/timezone/Antarctica/McMurdo
 %%TZDATA%%share/postgresql/timezone/Antarctica/Palmer
@@ -412,8 +417,8 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Asia/Manila
 %%TZDATA%%share/postgresql/timezone/Asia/Muscat
 %%TZDATA%%share/postgresql/timezone/Asia/Nicosia
-%%TZDATA%%share/postgresql/timezone/Asia/Novosibirsk
 %%TZDATA%%share/postgresql/timezone/Asia/Novokuznetsk
+%%TZDATA%%share/postgresql/timezone/Asia/Novosibirsk
 %%TZDATA%%share/postgresql/timezone/Asia/Omsk
 %%TZDATA%%share/postgresql/timezone/Asia/Oral
 %%TZDATA%%share/postgresql/timezone/Asia/Phnom_Penh

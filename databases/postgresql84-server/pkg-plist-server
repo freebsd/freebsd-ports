@@ -180,6 +180,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Atikokan
 %%TZDATA%%share/postgresql/timezone/America/Atka
 %%TZDATA%%share/postgresql/timezone/America/Bahia
+%%TZDATA%%share/postgresql/timezone/America/Bahia_Banderas
 %%TZDATA%%share/postgresql/timezone/America/Barbados
 %%TZDATA%%share/postgresql/timezone/America/Belem
 %%TZDATA%%share/postgresql/timezone/America/Belize
@@ -317,6 +318,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Antarctica/Casey
 %%TZDATA%%share/postgresql/timezone/Antarctica/Davis
 %%TZDATA%%share/postgresql/timezone/Antarctica/DumontDUrville
+%%TZDATA%%share/postgresql/timezone/Antarctica/Macquarie
 %%TZDATA%%share/postgresql/timezone/Antarctica/Mawson
 %%TZDATA%%share/postgresql/timezone/Antarctica/McMurdo
 %%TZDATA%%share/postgresql/timezone/Antarctica/Palmer

@@ -4398,3 +4398,4 @@ print/hplip3|print/hplip|2010-05-17|hplip port updated to 3.X version
 emulators/sdlmame|emulators/mame|2010-05-17|SDL port has been integrated into mainstream
 devel/apr|devel/apr1|2010-05-18|Renamed to devel/apr1
 science/pyNN|science/pynn|2010-05-19|Rename to science/pynn
+databases/postgresql-contrib|databases/postgresql82-contrib|2010-05-20|Use databases/postgresqlNN-contrib, select version to match your postgresql server
