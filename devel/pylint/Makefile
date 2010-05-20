@@ -7,6 +7,7 @@
 
 PORTNAME=	pylint
 PORTVERSION=	0.21.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	LOGILAB
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -16,6 +17,7 @@ COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/logilab/astng/__init__.py:${PORTSDIR}/devel/py-astng
 
+MAKE_ENV=	NO_SETUPTOOLS=1
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
