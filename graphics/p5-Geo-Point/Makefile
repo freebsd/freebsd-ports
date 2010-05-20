@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Geo-Point
-PORTVERSION=	0.92
-PORTREVISION=	1
+PORTVERSION=	0.93
 CATEGORIES=	graphics devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Module Tries To Abstract Coordinate Systems
 
 RUN_DEPENDS=	p5-Geo-Distance>=0.06:${PORTSDIR}/math/p5-Geo-Distance \
