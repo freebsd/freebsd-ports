@@ -878,6 +878,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-trotter-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm2fact-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm2fact-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec2-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec2-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-fincr-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-fincr-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rgs-kincr-demo.cc
