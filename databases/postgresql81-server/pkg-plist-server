@@ -208,6 +208,7 @@ share/postgresql/timezone/America/Asuncion
 share/postgresql/timezone/America/Atikokan
 share/postgresql/timezone/America/Atka
 share/postgresql/timezone/America/Bahia
+share/postgresql/timezone/America/Bahia_Banderas
 share/postgresql/timezone/America/Barbados
 share/postgresql/timezone/America/Belem
 share/postgresql/timezone/America/Belize
@@ -280,6 +281,7 @@ share/postgresql/timezone/America/Managua
 share/postgresql/timezone/America/Manaus
 share/postgresql/timezone/America/Marigot
 share/postgresql/timezone/America/Martinique
+share/postgresql/timezone/America/Matamoros
 share/postgresql/timezone/America/Mazatlan
 share/postgresql/timezone/America/Mendoza
 share/postgresql/timezone/America/Menominee
@@ -298,6 +300,7 @@ share/postgresql/timezone/America/Nome
 share/postgresql/timezone/America/Noronha
 share/postgresql/timezone/America/North_Dakota/Center
 share/postgresql/timezone/America/North_Dakota/New_Salem
+share/postgresql/timezone/America/Ojinaga
 share/postgresql/timezone/America/Panama
 share/postgresql/timezone/America/Pangnirtung
 share/postgresql/timezone/America/Paramaribo
@@ -310,10 +313,11 @@ share/postgresql/timezone/America/Puerto_Rico
 share/postgresql/timezone/America/Rainy_River
 share/postgresql/timezone/America/Rankin_Inlet
 share/postgresql/timezone/America/Recife
-share/postgresql/timezone/America/Resolute
 share/postgresql/timezone/America/Regina
+share/postgresql/timezone/America/Resolute
 share/postgresql/timezone/America/Rio_Branco
 share/postgresql/timezone/America/Rosario
+share/postgresql/timezone/America/Santa_Isabel
 share/postgresql/timezone/America/Santarem
 share/postgresql/timezone/America/Santiago
 share/postgresql/timezone/America/Santo_Domingo
@@ -342,6 +346,7 @@ share/postgresql/timezone/America/Yellowknife
 share/postgresql/timezone/Antarctica/Casey
 share/postgresql/timezone/Antarctica/Davis
 share/postgresql/timezone/Antarctica/DumontDUrville
+share/postgresql/timezone/Antarctica/Macquarie
 share/postgresql/timezone/Antarctica/Mawson
 share/postgresql/timezone/Antarctica/McMurdo
 share/postgresql/timezone/Antarctica/Palmer
@@ -404,6 +409,7 @@ share/postgresql/timezone/Asia/Makassar
 share/postgresql/timezone/Asia/Manila
 share/postgresql/timezone/Asia/Muscat
 share/postgresql/timezone/Asia/Nicosia
+share/postgresql/timezone/Asia/Novokuznetsk
 share/postgresql/timezone/Asia/Novosibirsk
 share/postgresql/timezone/Asia/Omsk
 share/postgresql/timezone/Asia/Oral
