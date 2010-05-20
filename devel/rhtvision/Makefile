@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	rhtvision
-PORTVERSION=	2.0.3
-PORTREVISION=	4
+PORTVERSION=	2.1.0
 CATEGORIES=	devel
-MASTER_SITES=	SF/tvision/UNIX/${PORTVERSION}
-DISTNAME=	rhtvision-${PORTVERSION}.src
+MASTER_SITES=	SF/tvision/UNIX/${PORTVERSION}%20CVS20070425%20Source%20and%20Debian%204.0/
+DISTNAME=	rhtvision-${PORTVERSION}-3.src
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Complete C++ Text User Interface (TUI) library

@@ -157,7 +157,8 @@ include/rhtvision/tv/yes_mss.h
 lib/librhtv.a
 lib/librhtv.so
 lib/librhtv.so.2
-lib/librhtv.so.2.0.3
+lib/librhtv.so.2.1.0
 lib/libtvfintl.a
-share/locale/es/LC_MESSAGES/tvision2.0.3.mo
-share/locale/ru/LC_MESSAGES/tvision2.0.3.mo
+share/locale/es/LC_MESSAGES/tvision2.1.0.mo
+share/locale/pl/LC_MESSAGES/tvision2.1.0.mo
+share/locale/ru/LC_MESSAGES/tvision2.1.0.mo
