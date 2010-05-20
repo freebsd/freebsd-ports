@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libdmtx
-PORTVERSION=	0.7.0
-PORTREVISION=	4
+PORTVERSION=	0.7.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -22,5 +21,9 @@ MAN3=		libdmtx.3
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e '/^pkgconfigdir /s:(libdir):{prefix}/libdata:' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
