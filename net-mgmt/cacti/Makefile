@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	cacti
-PORTVERSION=	0.8.7e${PATCHLEVEL}
+PORTVERSION=	0.8.7f${PATCHLEVEL}
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/
 DISTFILES=	${PORTNAME}-${SITEDISTVERSION}${EXTRACT_SUFX}
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
-PATCHFILES=	cli_add_graph.patch snmp_invalid_response.patch template_duplication.patch cross_site_fix.patch sql_injection_template_export.patch
-PATCHLEVEL=	5
+PATCHFILES=
+PATCHLEVEL=
 
 PATCH_DIST_STRIP=	-p1
 
