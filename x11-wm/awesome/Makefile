@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	3.4.4
-PORTREVISION=	1
+PORTVERSION=	3.4.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
@@ -45,6 +44,7 @@ MAN1=	awesome.1 \
 	awesome-client.1 \
 	awsetbg.1
 MAN5=	awesomerc.5
+MANLANG=	"" de es fr
 MANCOMPRESSED=	yes
 PORTDOCS=	AUTHORS BUGS LICENSE README
 

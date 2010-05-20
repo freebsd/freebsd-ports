@@ -1,7 +1,19 @@
---- CMakeLists.txt.orig	2009-01-08 12:04:44.000000000 +0200
-+++ CMakeLists.txt	2009-02-01 00:10:36.000000000 +0200
-@@ -330,7 +330,9 @@
- install(DIRECTORY ${BUILD_DIR}/themes DESTINATION ${AWESOME_DATA_PATH})
+--- CMakeLists.txt.orig	2010-05-10 09:39:57.000000000 -0300
++++ CMakeLists.txt	2010-05-20 14:37:08.000000000 -0300
+@@ -330,9 +330,9 @@
+         RENAME ${AWE_CONF_FILE})
+ if(GENERATE_MANPAGES)
+     if(COMPRESS_MANPAGES)
+-        set(regex "\\.(xml|[0-9])$")
++        set(regex "\\.(xml|txt|[0-9])$")
+     else()
+-        set(regex "\\.(xml|gz)$")
++        set(regex "\\.(xml|txt|gz)$")
+     endif()
+     install(DIRECTORY ${BUILD_DIR}/${relpath}/ DESTINATION ${AWESOME_MAN_PATH}
+             REGEX ${regex} EXCLUDE )
+@@ -342,7 +342,9 @@
+     PATTERN "*.in" EXCLUDE)
  install(DIRECTORY ${SOURCE_DIR}/themes DESTINATION ${AWESOME_DATA_PATH}
      PATTERN "*.in" EXCLUDE)
 -install(FILES ${AWE_DOC_FILES} DESTINATION ${AWESOME_DOC_PATH})
