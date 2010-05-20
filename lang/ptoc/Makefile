@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ptoc
-PORTVERSION=	3.56
-PORTREVISION=	2
+PORTVERSION=	3.58
 CATEGORIES=	lang
-MASTER_SITES=	http://www.garret.ru/~knizhnik/
+MASTER_SITES=	http://www.garret.ru/
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	ANSI/Turbo Pascal to C/C++ converter
