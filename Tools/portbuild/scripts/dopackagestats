@@ -55,8 +55,9 @@ write_row () {
 
     arch=$1
     build=$2
-    # MCL 20080916
     directory=${ROOT_DIRECTORY}/${arch}/${build}/builds/latest
+    # XXX MCL I hate this name
+    journal=${directory}/make
 
     branch=`echo $build | sed -e "s/-exp//"`
     if [ "$branch" = "4" ]; then
@@ -196,9 +197,9 @@ write_row () {
     # queue length -PAV-
     m_not_yet_built=""
     queue_length=""
-    if [ "$completed_flag" = "N" ]; then
-      m_not_yet_built=`tail -n 1000 /var/portbuild/$arch/$build/builds/latest/make|grep MASTER|grep Queue|tail -1|sed 's|.*remaining=|| ; s|, Queue.*||'`
-      queue_length=`tail -n 1000 /var/portbuild/$arch/$build/builds/latest/make|grep MASTER|grep Queue|tail -1|sed 's|.*length=||'`
+    if [ "$completed_flag" = "N" -a -f $journal ]; then
+      m_not_yet_built=`tail -n 1000 $journal | grep MASTER | grep Queue | tail -1 | sed 's@.*remaining=@@ ; s@, Queue.*@@'`
+      queue_length=`tail -n 1000 $journal | grep MASTER | grep Queue | tail -1 | sed 's@.*length=@@'`
     fi;
 
     # now write the row
