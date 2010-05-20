@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	since
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://welz.org.za/projects/since/
 
