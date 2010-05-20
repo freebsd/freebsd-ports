@@ -47,7 +47,7 @@ USE_MYSQL=	yes
 .endif
 .if defined(WITH_POSTGRES)
 USE_PGSQL=	83
-RUN_DEPENDS+=	pf-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 do-install:
