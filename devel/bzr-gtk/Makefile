@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bzr-gtk
-PORTVERSION=	0.97.0
-PORTREVISION=	2
+PORTVERSION=	0.98.0
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/30817826/
+MASTER_SITES=	http://launchpadlibrarian.net/39697819/
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	GTK interface to Bazaar-NG VCS
