@@ -2550,6 +2550,7 @@ dpsearch                        ports/www/dpsearch
 drac                            ports/mail/drac
 dragstack                       ports/deskutils/dragstack
 drbl                            ports/mail/drbl
+dreampie                        ports/devel/dreampie
 drexelsnmp                      ports/java/drexelsnmp
 drgeo                           ports/math/drgeo
 dri                             ports/graphics/dri
@@ -5489,6 +5490,7 @@ hs-oeis                         ports/www/hs-oeis
 hs-openal                       ports/audio/hs-OpenAL
 hs-opengl-ghc                   ports/x11-toolkits/hs-opengl-ghc
 hs-openglraw-ghc                ports/x11-toolkits/hs-OpenGLRaw-ghc
+hs-pcap                         ports/net/hs-pcap
 hs-pcre-light-ghc               ports/devel/hs-pcre-light-ghc
 hs-polyparse-ghc                ports/textproc/hs-polyparse-ghc
 hs-probability                  ports/math/hs-probability
@@ -6222,6 +6224,7 @@ ja-p5-Date-Japanese-Holiday     ports/japanese/p5-Date-Japanese-Holiday
 ja-p5-DateTime-Calendar-Japanese-Era  ports/japanese/p5-DateTime-Calendar-Japanese-Era
 ja-p5-DateTime-Format-Japanese  ports/japanese/p5-DateTime-Format-Japanese
 ja-p5-Encode-EUCJPMS            ports/japanese/p5-Encode-EUCJPMS
+ja-p5-Encode-JP-Emoji           ports/japanese/p5-Encode-JP-Emoji
 ja-p5-Encode-JP-Mobile          ports/japanese/p5-Encode-JP-Mobile
 ja-p5-FormValidator-Simple-Plugin-Number-Phone-JP  ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
 ja-p5-HTML-MobileJp             ports/japanese/p5-HTML-MobileJp
@@ -6246,6 +6249,7 @@ ja-p5-date-japanese-holiday     ports/japanese/p5-Date-Japanese-Holiday
 ja-p5-datetime-calendar-japanese-era  ports/japanese/p5-DateTime-Calendar-Japanese-Era
 ja-p5-datetime-format-japanese  ports/japanese/p5-DateTime-Format-Japanese
 ja-p5-encode-eucjpms            ports/japanese/p5-Encode-EUCJPMS
+ja-p5-encode-jp-emoji           ports/japanese/p5-Encode-JP-Emoji
 ja-p5-encode-jp-mobile          ports/japanese/p5-Encode-JP-Mobile
 ja-p5-formvalidator-simple-plugin-number-phone-jp  ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
 ja-p5-html-mobilejp             ports/japanese/p5-HTML-MobileJp
@@ -8213,6 +8217,7 @@ lifelines                       ports/misc/lifelines
 liferea                         ports/net/liferea
 lifetype                        ports/www/lifetype
 lightning-xpi                   ports/deskutils/lightning-xpi
+lightspark-devel                ports/graphics/lightspark-devel
 lightsquid                      ports/www/lightsquid
 lighttpd                        ports/www/lighttpd
 lighttpd-mysqlauth              ports/www/lighttpd-mysqlauth
@@ -12884,6 +12889,7 @@ p5-Net-DLookup                  ports/net/p5-Net-DLookup
 p5-Net-DNS                      ports/dns/p5-Net-DNS
 p5-Net-DNS-Async                ports/dns/p5-Net-DNS-Async
 p5-Net-DNS-Codes                ports/dns/p5-Net-DNS-Codes
+p5-Net-DNS-RR-SRV-Helper        ports/dns/p5-Net-DNS-RR-SRV-Helper
 p5-Net-DNS-Resolver-Programmable  ports/dns/p5-Net-DNS-Resolver-Programmable
 p5-Net-DNS-SEC                  ports/dns/p5-Net-DNS-SEC
 p5-Net-DNS-ToolKit              ports/dns/p5-Net-DNS-ToolKit
@@ -16773,6 +16779,7 @@ p5-net-dns                      ports/dns/p5-Net-DNS
 p5-net-dns-async                ports/dns/p5-Net-DNS-Async
 p5-net-dns-codes                ports/dns/p5-Net-DNS-Codes
 p5-net-dns-resolver-programmable  ports/dns/p5-Net-DNS-Resolver-Programmable
+p5-net-dns-rr-srv-helper        ports/dns/p5-Net-DNS-RR-SRV-Helper
 p5-net-dns-sec                  ports/dns/p5-Net-DNS-SEC
 p5-net-dns-toolkit              ports/dns/p5-Net-DNS-ToolKit
 p5-net-dns-zonecheck            ports/dns/p5-Net-DNS-ZoneCheck
@@ -19772,6 +19779,7 @@ pmars-sdl                       ports/games/pmars-sdl
 pmd                             ports/devel/pmd
 pmf                             ports/net/pmf
 pmk                             ports/devel/pmk
+pms                             ports/audio/pms
 pmt                             ports/sysutils/pmt
 pmw                             ports/print/pmw
 pmwiki                          ports/www/pmwiki
@@ -21047,7 +21055,6 @@ py-zsi                          ports/net/py-zsi
 py25-bsddb                      ports/databases/py25-bsddb
 py2html                         ports/textproc/py2html
 py31-tkinter                    ports/x11-toolkits/py31-tkinter
-pyNN                            ports/science/pyNN
 py_otp_interface                ports/devel/py_otp_interface
 pyawale                         ports/games/pyawale
 pybaz                           ports/devel/pybaz
@@ -21085,7 +21092,7 @@ pymsgauth                       ports/mail/pymsgauth
 pymsn                           ports/net-im/pymsn
 pyne                            ports/news/pyne
 pynids                          ports/net/pynids
-pynn                            ports/science/pyNN
+pynn                            ports/science/pynn
 pyobfuscate                     ports/devel/pyobfuscate
 pypanda                         ports/misc/pypanda
 pypanel                         ports/deskutils/pypanel
