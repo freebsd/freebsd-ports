@@ -12,6 +12,7 @@
 %%CACTIDIR%%/cli/add_graphs.php
 %%CACTIDIR%%/cli/add_perms.php
 %%CACTIDIR%%/cli/add_tree.php
+%%CACTIDIR%%/cli/convert_innodb.php
 %%CACTIDIR%%/cli/copy_user.php
 %%CACTIDIR%%/cli/host_update_template.php
 %%CACTIDIR%%/cli/import_template.php
@@ -425,7 +426,6 @@
 %%CACTIDIR%%/lib/variables.php
 %%CACTIDIR%%/lib/xml.php
 %%CACTIDIR%%/log/.htaccess
-%%CACTIDIR%%/log/.placeholder
 @unexec [ ! -s %%PREFIX%%/%%CACTIDIR%%/log/cacti.log ] && rm -f %%PREFIX%%/%%CACTIDIR%%/log/cacti.log
 %%CACTIDIR%%/logout.php
 %%CACTIDIR%%/poller.php
@@ -443,7 +443,7 @@
 %%CACTIDIR%%/resource/snmp_queries/netware_cpu.xml
 %%CACTIDIR%%/resource/snmp_queries/netware_disk.xml
 %%CACTIDIR%%/rra.php
-%%CACTIDIR%%/rra/.placeholder
+%%CACTIDIR%%/rra/.htaccess
 %%CACTIDIR%%/script_server.php
 %%CACTIDIR%%/script_server.pl
 %%CACTIDIR%%/scripts/3com_cable_modem.pl
