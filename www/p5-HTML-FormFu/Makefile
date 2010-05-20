@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.06001
-PORTREVISION=	2
+PORTVERSION=	0.07001
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +15,8 @@ MAINTAINER=	az@FreeBSD.org
 COMMENT=	HTML Form Creation, Rendering and Validation Framework
 
 BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
-		p5-Class-C3>=0.19:${PORTSDIR}/devel/p5-Class-C3 \
-		p5-Config-Any>=0.10:${PORTSDIR}/devel/p5-Config-Any \
+		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+		p5-Config-Any>=0.18:${PORTSDIR}/devel/p5-Config-Any \
 		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \
 		p5-Crypt-DES>=0:${PORTSDIR}/security/p5-Crypt-DES \
 		p5-Data-Visitor>=0.02:${PORTSDIR}/devel/p5-Data-Visitor \
@@ -36,6 +35,7 @@ BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-List-MoreUtils>=0.16:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Number-Format>=0:${PORTSDIR}/textproc/p5-Number-Format \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Regexp-Copy>=0:${PORTSDIR}/textproc/p5-Regexp-Copy \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
