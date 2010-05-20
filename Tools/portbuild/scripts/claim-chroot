@@ -127,6 +127,10 @@ while [ ${found} != 1 ]; do
 	mkdir ${chroot}/used
     elif [ "${use_md_swap}" = "1" ]; then
 	unit=$(mdconfig -a -t swap -s ${md_size})
+	if [ -z "${unit}" ]; then
+	    echo "error mdconfig"
+	    exit 1
+	fi
 	newfs /dev/${unit} > /dev/null
 	chrootnum=$(echo ${unit} | sed 's,md,,')
 	chroot=${chrootdir}/${chrootnum}

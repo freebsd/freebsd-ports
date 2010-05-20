@@ -75,6 +75,7 @@ while True:
 
         sockfile.close()
         conn.close()
-    except Exception:
+    except Exception, e:
+        print "buildproxy: exception: " + str( e )
         pass
 
