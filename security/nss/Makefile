@@ -7,7 +7,7 @@
 
 PORTNAME=	nss
 PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
@@ -16,13 +16,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
+		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 _MAJOR=	3
 _MINOR=	12
 _PATCH=	6
-
-OPTIONS=	SYSSQLITE3 "Use system SQLite3 (slower)" Off
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
@@ -31,23 +30,11 @@ USE_LDCONFIG=	${PREFIX}/lib/nss
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
-		BUILD_OPT=1 NSS_ENABLE_ECC=1
+		BUILD_OPT=1 NSS_ENABLE_ECC=1 NSS_USE_SYSTEM_SQLITE=1
 ALL_TARGET=	nss_build_all
 CFLAGS+=	-I${LOCALBASE}/include/nspr -L${LOCALBASE}/lib
 
 DIST=		${WRKSRC:H:H}/dist
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_SYSSQLITE3)
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
-EXTRA_PATCHES+=	${FILESDIR}/sqlite3-system.patch
-MAKE_ENV+=	NSS_USE_SYSTEM_SQLITE=1
-PLIST_SUB+=	SYSSQLITE3="@comment "
-.else
-EXTRA_PATCHES+=	${FILESDIR}/sqlite3-builtin.patch
-PLIST_SUB+=	SYSSQLITE3=""
-.endif
 
 EXTERNALS=	CVS dbm security/nss/cmd/zlib nsprpub security/dbm
 EXTRACT_AFTER_ARGS=| ${TAR} -xf -	\
@@ -89,12 +76,9 @@ post-patch:
 	@cd ${WRKSRC} && \
 		${FIND} . -name "*.c" -o -name "*.h" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"nspr.h"|<nspr.h>|'
-.if !defined(WITH_SYSSQLITE3)
-	@${MV} ${WRKSRC}/lib/sqlite/sqlite.def ${WRKSRC}/lib/sqlite/nsssqlite.def
-.endif
 
 do-install:
-	${MKDIR} -p ${PREFIX}/include/nss/nss ${PREFIX}/lib/nss
+	${MKDIR} ${PREFIX}/include/nss/nss ${PREFIX}/lib/nss
 	${FIND} ${DIST}/public/nss -type l \
 	    	-exec ${INSTALL_DATA} {} ${PREFIX}/include/nss/nss \;
 	${INSTALL_DATA} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/*.so.1 \
@@ -110,4 +94,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/nss-config ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/nss.pc ${PREFIX}/libdata/pkgconfig
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
