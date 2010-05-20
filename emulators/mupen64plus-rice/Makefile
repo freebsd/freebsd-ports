@@ -9,6 +9,8 @@ PKGNAMESUFFIX=	-rice
 
 COMMENT=	The rice graphics plugin for Mupen64plus
 
+BROKEN=		does not compile
+
 USE_GL=		yes
 USE_SDL=	sdl
 
