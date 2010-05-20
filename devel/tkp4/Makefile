@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.timshel.ca/tkp4/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tcl/Tk frontends to Perforce's p4
 
-RUN_DEPENDS=	p4:${PORTSDIR}/devel/perforce
+RUN_DEPENDS=	p4:${PORTSDIR}/devel/p4
 
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
