@@ -30,7 +30,7 @@ MISC_MODULES+=		actions alias asis autoindex cern_meta \
 			cgi charset_lite dbd deflate dir dumpio env expires \
 			headers imagemap include info log_config logio mime \
 			mime_magic negotiation rewrite setenvif speling status \
-			unique_id userdir usertrack vhost_alias filter version
+			unique_id userdir usertrack vhost_alias filter version reqtimeout
 PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http proxy_ajp proxy_balancer proxy_scgi
 SSL_MODULES=		ssl
 SUEXEC_MODULES=		suexec
