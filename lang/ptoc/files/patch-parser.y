@@ -1,20 +1,12 @@
---- parser.y.orig	2004-12-09 11:50:14.000000000 +0100
-+++ parser.y	2009-03-06 11:26:20.000000000 +0100
-@@ -1,19 +1,18 @@
+--- parser.y.orig	2010-05-20 18:31:37.000000000 +0400
++++ parser.y	2010-05-20 18:38:46.000000000 +0400
+@@ -1,4 +1,4 @@
 -%{
 +%code requires {
  
  #include <stdio.h>
  #include <stdlib.h>
- #include <string.h>
--#if defined(__DECCXX) || defined(__GNUC__)
--#include <alloca.h>
--#else
--#include <malloc.h>
--#endif
- 
- #include "nmtbl.h"
- #include "token.h"
+@@ -9,6 +9,10 @@
  #include "trnod.h"
  #include "util.h"
  
@@ -25,7 +17,7 @@
  static int zzcnv_table[] = {
  #define DEF_TOKEN(mnem, cat, cls, yacc) yacc,
  #include "token.dpp"
-@@ -26,7 +25,7 @@
+@@ -21,7 +25,7 @@
      error(curr_token, "syntax error: %s", text); 
  }
  
@@ -34,7 +26,7 @@
  
  
  %union {
-@@ -286,23 +285,27 @@
+@@ -281,23 +285,27 @@
      $2->attrib(ctx_program); 
      $2->translate(ctx_program); 
  } 
@@ -63,7 +55,7 @@
  
  /* Turbo Pascal specific */
  
-@@ -314,38 +317,46 @@
+@@ -309,38 +317,46 @@
      { $$ = new unit_node(NULL, NULL, NULL, $1, $2, $3, $4, NULL, $5, $6); }
  | INTERFACE unit_decl_list IMPLEMENTATION unit_def_list compoundst '.'
      { $$ = new unit_node(NULL, NULL, NULL, $1, $2, $3, $4, $5, NULL, $6); }
@@ -112,7 +104,7 @@
  
  /*
  //=============================================================================
-@@ -402,15 +413,20 @@
+@@ -397,15 +413,20 @@
      | ICONST ':' statement { $$ = new label_node($1, $2, $3); }
      | IDENT ':' statement { $$ = new label_node($1, $2, $3); }
      | compoundst { $$ = $1; }
@@ -133,7 +125,7 @@
  
  case_list: case_items
           | case_items otherwise sequence
-@@ -424,20 +440,26 @@
+@@ -419,20 +440,26 @@
  	         $$ = new case_node(NULL, $2, $3);
               }
  	   }
@@ -160,7 +152,7 @@
  
  /*
  //=============================================================================
-@@ -486,6 +508,7 @@
+@@ -481,6 +508,7 @@
     | expr OR expr  { $$ = new op_node(tn_or, $1, $2, $3); } 
     | expr XOR expr { $$ = new op_node(tn_xor, $1, $2, $3); } 
  
@@ -168,7 +160,7 @@
     | expr GT expr { $$ = new op_node(tn_gt, $1, $2, $3); } 
     | expr LT expr { $$ = new op_node(tn_lt, $1, $2, $3); } 
     | expr LE expr { $$ = new op_node(tn_le, $1, $2, $3); } 
-@@ -493,6 +516,7 @@
+@@ -488,6 +516,7 @@
     | expr EQ expr { $$ = new op_node(tn_eq, $1, $2, $3); } 
     | expr NE expr { $$ = new op_node(tn_ne, $1, $2, $3); } 
     | expr IN expr { $$ = new op_node(tn_in, $1, $2, $3); } 
@@ -176,7 +168,7 @@
  
  simple_expr: primary
     | PLUS simple_expr %prec UPLUS {
-@@ -503,6 +527,7 @@
+@@ -498,6 +527,7 @@
       { $$ = new op_node(tn_not, NULL, $1, $2); }
     | '@' primary { $$ = new address_node($1, $2); }
     | AND primary %prec ADDRESS { $$ = new address_node($1, $2); }
@@ -184,7 +176,7 @@
   
  primary: constant 
     | '(' expr_list ')' { $$ = new expr_group_node($1, $2, $3); }
-@@ -511,6 +536,7 @@
+@@ -506,6 +536,7 @@
     | primary '^' { $$ = new deref_expr_node($1, $2); }
     | primary '[' expr_list ']' { $$ = new idx_expr_node($1, $2, $3, $4); }
     | LOOPHOLE '(' type ',' expr ')' { $$ = new loophole_node($1, $2, $3, $4, $5, $6); }
@@ -192,7 +184,7 @@
  
  constant: record_constant
          | ICONST { $$ = new integer_node($1); }
-@@ -518,41 +544,49 @@
+@@ -513,41 +544,49 @@
          | SCONST { $$ = new string_node($1); }
          | '[' set_elem_list ']' { $$ = new set_node($1, $2, $3); }
          | IDENT { $$ = new atom_expr_node($1); }
@@ -246,7 +238,7 @@
  
  /*
  //=============================================================================
-@@ -595,31 +629,40 @@
+@@ -590,31 +629,40 @@
  
  label_decl_part: LABEL label_list ';' 
      { $$ = new label_decl_part_node($1, $2, $3); }
@@ -287,7 +279,7 @@
  
  var_decl_list: { $$ = NULL; }
       | var_decl
-@@ -635,29 +678,33 @@
+@@ -630,29 +678,33 @@
  	 $1->next = $5; $$ = $1; 
         }
       | var_decl ';' var_decl_list { $1->next = $3; $$ = $1; }
@@ -322,7 +314,7 @@
  
  proc_def: 
        PROCEDURE IDENT formal_params ';' block ';' 
-@@ -676,135 +723,166 @@
+@@ -671,135 +723,166 @@
                 { $$ = new proc_def_node($1, NULL, NULL, $2, $3, $4, $5, $6, $7, $8, $9, $10); } 
      | FUNCTION IDENT ';' FAR ';' block ';' 
                 { $$ = new proc_def_node($1, NULL, NULL, $2, NULL, NULL, NULL, $3, $4, $5, $6, $7); } 
