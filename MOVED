@@ -4400,3 +4400,4 @@ devel/apr|devel/apr1|2010-05-18|Renamed to devel/apr1
 science/pyNN|science/pynn|2010-05-19|Rename to science/pynn
 databases/postgresql-contrib|databases/postgresql82-contrib|2010-05-20|Use databases/postgresqlNN-contrib, select version to match your postgresql server
 lang/yorick-doc||2010-05-20|Has expired: up-to-date docs are included in the lang/yorick port
+devel/perforce|devel/p4|2010-05-20|Split into multiple ports

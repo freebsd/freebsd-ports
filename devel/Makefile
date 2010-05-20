@@ -2463,7 +2463,6 @@
     SUBDIR += pecl-uuid
     SUBDIR += pecl-vld
     SUBDIR += pedisassem
-    SUBDIR += perforce
     SUBDIR += performance
     SUBDIR += perlconsole
     SUBDIR += perltidy
