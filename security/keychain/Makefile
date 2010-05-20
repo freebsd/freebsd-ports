@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.funtoo.org/archive/keychain/ \
 		${MASTER_SITE_GENTOO}
@@ -20,7 +20,6 @@ USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 
 MAN1=		keychain.1
-MANCOMPRESSED=	yes
 
 PLIST_FILES=	bin/keychain
 
@@ -32,7 +31,7 @@ RUN_DEPENDS+=	ssh-agent:${PORTSDIR}/security/openssh-portable
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/keychain ${PREFIX}/bin/keychain
-	${INSTALL_MAN} ${WRKSRC}/keychain.1.gz ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/keychain.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
