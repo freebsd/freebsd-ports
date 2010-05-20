@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-LDAP-AutoServer
-PORTVERSION=	0.0.0
+PORTVERSION=	0.2.0
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -15,7 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Automatically make some default decisions some LDAP server information
 
-RUN_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
+RUN_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
+		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+		${SITE_PERL}/Net/DNS/RR/SRV/Helper.pm:${PORTSDIR}/dns/p5-Net-DNS-RR-SRV-Helper
 
 PERL_CONFIGURE=	yes
 
