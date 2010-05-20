@@ -7,9 +7,7 @@ import zfs, commands, datetime, os
 # List of filesystems to expire
 expirelist=(("a", 14), 
             ("a/nfs", 14),
-            ("a/src", 14),
             ("a/local", 14),
-            ("a/ports", 14),
             ("a/portbuild", 14),
             ("a/portbuild/amd64", 14),
             ("a/portbuild/i386", 14),
@@ -18,7 +16,6 @@ expirelist=(("a", 14),
             ("a/portbuild/sparc64", 14),
             ("a/snap", 7),
             ("a/snap/ports", 7),
-            ("a/snap/src-5", 7),
             ("a/snap/src-6", 7),
             ("a/snap/src-7", 7),
             ("a/snap/src-8", 7),
@@ -27,8 +24,11 @@ expirelist=(("a", 14),
             ("a/snap/world-i386-HEAD", 7))
 
 now = datetime.datetime.now()
+print "zexpire: starting at " + now.ctime()
 
 for (fs, maxage) in expirelist:
+    print
+
     try:
         snapdata = zfs.getallsnaps(fs)
     except zfs.NoSuchFS:
@@ -44,11 +44,16 @@ for (fs, maxage) in expirelist:
             try:
                 snapdate = datetime.datetime.strptime(snap, "%Y%m%d%H%M%S")
             except ValueError:
+                print "zexpire: don't know what to do with snap `" + snap + "'"
                 continue
 
         if (now - snapdate) > datetime.timedelta(days=maxage):
-            print "Snapshot %s@%s too old" % (fs, snap)
+            print "Snapshot %s@%s too old, attempting zfs destroy" % (fs, snap)
             (err, out) = commands.getstatusoutput("zfs destroy %s@%s" % (fs,snap))
 
             if err:
                 print "Error deleting snapshot", out
+
+then = datetime.datetime.now()
+print
+print "zexpire: ending at " + then.ctime()

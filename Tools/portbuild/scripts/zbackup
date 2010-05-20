@@ -8,7 +8,7 @@ import zfs, commands, datetime, sys, os, bz2
 from signal import *
 
 # List of filesystems to backup
-backuplist=["a", "a/nfs", "a/src", "a/local", "a/ports", "a/portbuild",
+backuplist=["a", "a/nfs", "a/local", "a/portbuild",
             "a/portbuild/amd64", "a/portbuild/i386",
             "a/portbuild/ia64", "a/portbuild/powerprc",
             "a/portbuild/sparc64"]
@@ -17,7 +17,7 @@ backuplist=["a", "a/nfs", "a/src", "a/local", "a/ports", "a/portbuild",
 backupdir="/dumpster/pointyhat/backup"
 
 # How many days between full backups
-fullinterval=3
+fullinterval=9
 
 def validate():
     fslist = zfs.getallfs()
@@ -48,7 +48,11 @@ class node(object):
         self.parent = None
         self.visited = 0
 
+print "zbackup: starting at " + datetime.datetime.now().ctime()
+
 for fs in backuplist:
+
+    print
 
     dir = backupdir + "/" + fs
     mkdirp(dir)
@@ -153,14 +157,14 @@ for fs in backuplist:
 
     chain.reverse()
 
-    print chain
+    print "chain is " + str( chain )
 
     # Prune stale links not in the backup chain
     for j in backups.iterkeys():
         cur = backups[j]
         for k in cur.child:
             stale="%s-%s" % (cur.name, k.name)
-            print "Deleting %s" % stale
+            print "Deleting stale backup %s" % stale
             os.remove("%s/%s/%s" % (backupdir, fs, stale))
 
     # Lookup date of full dump
@@ -186,7 +190,7 @@ for fs in backuplist:
     # zfs send aborts on receiving a signal
     signal(SIGTSTP, SIG_IGN)
     if not dofull:
-        print "Doing incremental of %s: %s-%s" % (fs, latest, nowdate)
+        print "Doing incremental backup of %s: %s-%s" % (fs, latest, nowdate)
         (err, out) = \
             commands.getstatusoutput("zfs send -i %s %s@%s | bzip2 > %s" % 
                                      (latest, fs, nowdate, outfile))
@@ -202,9 +206,9 @@ for fs in backuplist:
         print "Error from snapshot: (%s, %s)" % (err, out)
         try:
             os.remove(outfile)
-            print "Deleted %s" % outfile
+            print "Deleted file %s" % outfile
         except OSError, err:
-            print repr(err)
+            print "OSError: " + repr(err)
             if err.errno != 2:
                 raise
         finally:
@@ -214,10 +218,13 @@ for fs in backuplist:
     try:
         os.rename(outfile, "%s/%s/%s-%s" % (backupdir, fs, latest, nowdate))
     except:
-        print "Error renaming dump file!"
+        print "Error renaming dump file" + outfile + "!"
         raise
 
     if dofull:
         for i in seen:
             print "Removing stale snapshot %s/%s" % (dir, i)
             os.remove("%s/%s" % (dir, i))
+
+print
+print "zbackup: ending at " + datetime.datetime.now().ctime()
