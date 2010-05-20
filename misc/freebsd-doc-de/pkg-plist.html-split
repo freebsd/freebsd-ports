@@ -332,6 +332,22 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-matlab.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu-oracle.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/linuxemu.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-biba.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-bsdextended.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-ifoff.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-implementing.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-initial.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-inline-glossary.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-lomac.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-mls.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-modules.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-partition.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-planning.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-portacl.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-seeotheruids.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-troubleshoot.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-understandlabel.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac-userlocked.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mac.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail-agents.html
@@ -485,7 +501,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-rerolling-distfiles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sh-exec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-sysctl.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-uid-and-gids.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-workarounds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/freebsd-versions.html
@@ -546,6 +561,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-porttools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing-tinderbox.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/testing.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/users-and-groups.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-autotools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-databases.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-emacs.html
@@ -557,6 +573,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-perl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-php.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-python.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-qt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-ruby.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-sdl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-sub-files.html
