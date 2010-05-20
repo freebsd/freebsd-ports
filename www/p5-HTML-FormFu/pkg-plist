@@ -100,6 +100,7 @@ man/man1/html_formfu_deploy.pl.1
 %%SITE_PERL%%/HTML/FormFu/Filter/FormatNumber.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/Split.pm
 %%SITE_PERL%%/HTML/FormFu/Filter/CompoundJoin.pm
+%%SITE_PERL%%/HTML/FormFu/I18N/bg.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/pt_pt.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/pt_br.pm
 %%SITE_PERL%%/HTML/FormFu/I18N/de.pm
