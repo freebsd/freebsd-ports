@@ -1,6 +1,0 @@
-This port provides complete HTML documentation for the yorick interpreted
-language. The information in this port duplicates what is included in the
-yorick port, but provides cross referencing, indexing, and accessibility
-to a web browser.
-
-WWW: ftp://ftp-icf.llnl.gov/pub/Yorick/doc/index.html
