@@ -31,6 +31,7 @@ include/zzip/types.h
 include/zzip/wrap.h
 include/zzip/write.h
 include/zzip/zzip.h
+include/zzip/zzip32.h
 lib/libzzip.a
 lib/libzzip.la
 lib/libzzip.so
