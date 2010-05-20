@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zziplib
-PORTVERSION=	0.13.58
-PORTREVISION=	1
+PORTVERSION=	0.13.59
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}13/${PORTVERSION}
 
@@ -44,8 +43,8 @@ MAN3=		__zzip_fetch_disk_trailer.3 __zzip_parse_root_directory.3 __zzip_try_open
 		zzip_get_default_io.3 zzip_inflate_init.3 zzip_init_io.3 zzip_open.3 \
 		zzip_open_ext_io.3 zzip_open_shared_io.3 zzip_opendir.3 \
 		zzip_opendir_ext_io.3 zzip_read.3 zzip_readdir.3 zzip_realdir.3 \
-		zzip_realfd.3 zzip_rewind.3 zzip_rewinddir.3 zzip_seek.3 zzip_seekdir.3 \
-		zzip_seterror.3 zzip_strerror.3 zzip_strerror_of.3 zzip_tell.3 \
-		zzip_telldir.3
+		zzip_realfd.3 zzip_rewind.3 zzip_rewinddir.3 zzip_seek.3 zzip_seek32.3 zzip_seekdir.3 \
+		zzip_seekdir32.3 zzip_seterror.3 zzip_strerror.3 zzip_strerror_of.3 zzip_tell.3 \
+		zzip_tell32.3 zzip_telldir.3 zzip_telldir32.3
 
 .include <bsd.port.mk>
