@@ -54,7 +54,9 @@ etc/xdg/awesome/rc.lua
 %%DATADIR%%/lib/awful/widget/textclock.lua
 %%DATADIR%%/lib/beautiful.lua
 %%DATADIR%%/lib/naughty.lua
+%%DATADIR%%/themes/default/README
 %%DATADIR%%/themes/default/background.png
+%%DATADIR%%/themes/default/background_white.png
 %%DATADIR%%/themes/default/layouts/dwindle.png
 %%DATADIR%%/themes/default/layouts/dwindlew.png
 %%DATADIR%%/themes/default/layouts/fairh.png
@@ -175,4 +177,13 @@ share/xsessions/awesome.desktop
 @dirrm %%DATADIR%%
 @dirrmtry etc/xdg/awesome
 @dirrmtry etc/xdg
+@dirrmtry man/de/man1
+@dirrmtry man/de/man5
+@dirrmtry man/de
+@dirrmtry man/es/man1
+@dirrmtry man/es/man5
+@dirrmtry man/es
+@dirrmtry man/fr/man1
+@dirrmtry man/fr/man5
+@dirrmtry man/fr
 @dirrmtry share/xsessions
