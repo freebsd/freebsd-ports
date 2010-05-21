@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -209,7 +209,11 @@ PLIST_SUB+=	SOURCES=""
 .endif
 
 .if ${ARCH} == "ia64"
-BROKEN=	Emacs 22.X does not currently build on ia64
+BROKEN=	Emacs 23.X does not currently build on ia64
+.endif
+
+.if ${OSVERSION} < 700000 && defined(WITHOUT_X11) && defined(WITH_DBUS)
+BROKEN= Does not currently build with dbus support but without X11
 .endif
 
 post-patch:
