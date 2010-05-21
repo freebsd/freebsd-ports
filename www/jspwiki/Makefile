@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jspwiki
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.4
 CATEGORIES=	www java
 MASTER_SITES=	http://www.ecyrd.com/~jalkanen/JSPWiki/${PORTVERSION}/
 DISTNAME=	JSPWiki-${PORTVERSION}-bin
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A feature-rich and extensible Wiki engine built around J2EE
 
 RUN_DEPENDS=	${TOMCATDIR}:${PORTSDIR}/www/tomcat55
