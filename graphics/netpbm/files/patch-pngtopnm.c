@@ -1,6 +1,15 @@
---- converter/other/pngtopnm.c.orig	2004-04-04 02:18:34.000000000 +0200
-+++ converter/other/pngtopnm.c	2010-03-28 12:29:26.000000000 +0200
-@@ -494,7 +494,7 @@
+--- converter/other/pngtopnm.c.orig	2009-08-01 21:35:54.000000000 +0200
++++ converter/other/pngtopnm.c	2010-05-21 10:04:14.000000000 +0200
+@@ -43,7 +43,7 @@
+ #include "nstring.h"
+ #include "shhopt.h"
+ 
+-#if PNG_LIBPNG_VER >= 10400
++#if 0
+ #error Your PNG library (<png.h>) is incompatible with this Netpbm source code.
+ #error You need either an older PNG library (older than 1.4)
+ #error newer Netpbm source code (at least 10.48)
+@@ -500,7 +500,7 @@
              case PNG_COLOR_TYPE_GRAY:
                  setXel(&xelrow[col], c, c, c,
                         ((info_ptr->valid & PNG_INFO_tRNS) &&
@@ -9,7 +18,7 @@
                                              totalgamma))) ?
                         0 : maxval);
                  break;
-@@ -511,7 +511,7 @@
+@@ -517,7 +517,7 @@
                         info_ptr->palette[c].blue,
                         (info_ptr->valid & PNG_INFO_tRNS) &&
                         c < info_ptr->num_trans ?
@@ -18,7 +27,7 @@
                  break;
  
              case PNG_COLOR_TYPE_RGB: {
-@@ -519,11 +519,11 @@
+@@ -525,11 +525,11 @@
                  png_uint_16 const c3 = get_png_val(png_pixelP);
                  setXel(&xelrow[col], c, c2, c3,
                         ((info_ptr->valid & PNG_INFO_tRNS) &&
@@ -33,7 +42,7 @@
                                               totalgamma))) ?
                         0 : maxval);
              }
-@@ -688,7 +688,7 @@
+@@ -694,7 +694,7 @@
              (info_ptr->valid & PNG_INFO_tRNS)) {
            trans_mix = TRUE;
            for (i = 0 ; i < info_ptr->num_trans ; i++)
@@ -42,7 +51,7 @@
                trans_mix = FALSE;
                break;
              }
-@@ -841,7 +841,7 @@
+@@ -847,7 +847,7 @@
          pnm_type = PBM_TYPE;
          if (info_ptr->valid & PNG_INFO_tRNS) {
            for (i = 0 ; i < info_ptr->num_trans ; i++) {
