@@ -7,6 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.20
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.cubic.org/ocp/ \
