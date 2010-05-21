@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smstools
-PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTVERSION=	3.1.8
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
@@ -32,11 +31,12 @@ SUB_LIST+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
 
-DOCS=		blacklist.html book.html compiling.html \
-		configure.html configure2.html eventhandler.html \
-		faq.html fileformat.html gpl.html hardwarecomp.html \
-		history3.html index.html license.html localizing.html \
-		run.html statusmonitor.html udh.html windows.html
+DOCS=		at-commands.html blacklist.html book.html compiling.html \
+		configure.html configure2.html error-messages.html \
+		eventhandler.html faq.html fileformat.html gpl.html \
+		hardwarecomp.html history3.html index.html license.html \
+		localizing.html run.html statusmonitor.html udh.html \
+		windows.html
 
 SLIDESHOW=	blacklist.gif eventhandler.gif logfile.gif modem.gif \
 		move_l.gif move_r.gif page1.html page2.html page2.jpg \
@@ -48,12 +48,16 @@ EXAMPLES=	.procmailrc .qmailrc language-ISO-8859-15.fi \
 		language-UTF-8.fi operator_logo1.sms operator_logo2.sms \
 		received_report.sms received_sms.sms send_sms.sms \
 		send_sms_unicode.sms smsd.conf.easy smsd.conf.full \
-		smsd.conf.non-root
+		smsd.conf.net smsd.conf.non-root
 
-SCRIPTS=	checkhandler-utf-8 email2sms eventhandler-utf-8 forwardsms \
-		hex2bin hex2dec mysmsd pkill regular_run sendsms sms2html \
+SCRIPTS=	callhandler checkhandler-utf-8 email2sms eventhandler-utf-8 \
+		eventhandler_report forwardsms hex2bin hex2dec \
+		load_balancing.sh mysmsd pkill regular_run sendsms sms2html \
 		sms2unicode sms2xml sms3 smsevent smsresend smstest.php \
 		sql_demo unicode2sms
+
+PORTDOCS=	*
+PORTEXAMPLES=	.procmailrc .qmailrc *
 
 .include <bsd.port.pre.mk>
 
@@ -71,7 +75,7 @@ SMSTOOLS_DEFAULT_COMPORT?= /dev/cuau0
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile \
-		${WRKSRC}/install.sh ${WRKSRC}/src/smsd_cfg.c
+		${WRKSRC}/install.sh ${WRKSRC}/src/smsd_cfg.h
 	@${REINPLACE_CMD} 's|/dev/ttyS0|${SMSTOOLS_DEFAULT_COMPORT}|g' \
 		${WRKSRC}/examples/smsd.conf.easy \
 		${WRKSRC}/examples/smsd.conf.full \

@@ -3,12 +3,15 @@ bin/sendsms
 bin/sms2html
 bin/sms2unicode
 bin/unicode2sms
+%%DATADIR%%/callhandler
 %%DATADIR%%/checkhandler-utf-8
 %%DATADIR%%/email2sms
 %%DATADIR%%/eventhandler-utf-8
+%%DATADIR%%/eventhandler_report
 %%DATADIR%%/forwardsms
 %%DATADIR%%/hex2bin
 %%DATADIR%%/hex2dec
+%%DATADIR%%/load_balancing.sh
 %%DATADIR%%/mysmsd
 %%DATADIR%%/pkill
 %%DATADIR%%/regular_run
@@ -25,61 +28,6 @@ bin/unicode2sms
 @unexec if [ -f %D/etc/smsd.conf ] && cmp -s %D/etc/smsd.conf %D/etc/smsd.conf.sample; then rm -f %D/etc/smsd.conf; fi
 etc/smsd.conf.sample
 @exec if [ ! -f %D/etc/smsd.conf ] ; then cp -p %D/%F %B/smsd.conf; fi
-%%PORTDOCS%%%%DOCSDIR%%/blacklist.html
-%%PORTDOCS%%%%DOCSDIR%%/book.html
-%%PORTDOCS%%%%DOCSDIR%%/compiling.html
-%%PORTDOCS%%%%DOCSDIR%%/configure.html
-%%PORTDOCS%%%%DOCSDIR%%/configure2.html
-%%PORTDOCS%%%%DOCSDIR%%/eventhandler.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/fileformat.html
-%%PORTDOCS%%%%DOCSDIR%%/gpl.html
-%%PORTDOCS%%%%DOCSDIR%%/hardwarecomp.html
-%%PORTDOCS%%%%DOCSDIR%%/history3.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/localizing.html
-%%PORTDOCS%%%%DOCSDIR%%/run.html
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/blacklist.gif
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/eventhandler.gif
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/logfile.gif
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/modem.gif
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/move_l.gif
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/move_r.gif
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/page1.html
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/page2.html
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/page2.jpg
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/page2b.html
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/page3.html
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/page4.html
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/page5.html
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/page6.html
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/page7.html
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/page8.html
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/queue.gif
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/sms.gif
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/smstools3-small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/statistic.gif
-%%PORTDOCS%%%%DOCSDIR%%/slideshow/status.gif
-%%PORTDOCS%%%%DOCSDIR%%/statusmonitor.html
-%%PORTDOCS%%%%DOCSDIR%%/udh.html
-%%PORTDOCS%%%%DOCSDIR%%/windows.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.procmailrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/.qmailrc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/language-ISO-8859-15.fi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/language-UTF-8.fi
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/operator_logo1.sms
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/operator_logo2.sms
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/received_report.sms
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/received_sms.sms
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/send_sms.sms
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/send_sms_unicode.sms
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smsd.conf.easy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smsd.conf.full
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smsd.conf.non-root
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/slideshow
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @exec mkdir -p %%SPOOLDIR%%/incoming %%SPOOLDIR%%/outgoing %%SPOOLDIR%%/checked %%LOGDIR%% %%PIDDIR%%
 @exec chown -R %%SMSD_USER%%:%%SMSD_GROUP%% %%SPOOLDIR%% %%LOGDIR%% %%PIDDIR%%
