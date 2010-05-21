@@ -4,4 +4,4 @@ and all child dependencies specified in this manifest. It can manage any update
 to the gem manifest file and update the bundled gems accordingly. It also
 letsyou run any ruby code in context of the bundled gem environment.
 
-WWW: http://github.com/wycats/bundler
+WWW: http://gembundler.com/
