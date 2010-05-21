@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libadplug
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/adplug/AdPlug%20core%20library/${PORTVERSION}
 DISTNAME=	adplug-${PORTVERSION}

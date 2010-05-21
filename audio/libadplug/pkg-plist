@@ -57,8 +57,8 @@ include/adplug/temuopl.h
 include/adplug/u6m.h
 include/adplug/xad.h
 include/adplug/xsm.h
-lib/libadplug-2.2.so
-lib/libadplug-2.2.so.0
+lib/libadplug-2.2.1.so
+lib/libadplug-2.2.1.so.0
 lib/libadplug.a
 lib/libadplug.la
 lib/libadplug.so
