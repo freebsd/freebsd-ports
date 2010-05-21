@@ -1,5 +1,5 @@
 --- ./darcs.cabal.orig	2010-05-09 15:23:32.000000000 +0200
-+++ ./darcs.cabal	2010-05-15 13:36:40.000000000 +0200
++++ ./darcs.cabal	2010-05-21 21:08:36.000000000 +0200
 @@ -328,7 +328,7 @@
                     html         == 1.0.*,
                     filepath     == 1.1.*,
@@ -9,6 +9,15 @@
  
    if !os(windows)
      build-depends: unix >= 1.0 && < 2.5
+@@ -374,7 +374,7 @@
+       buildable: False
+ 
+   if flag(mmap) && !os(windows)
+-    build-depends:    mmap >= 0.2 && < 0.5
++    build-depends:    mmap >= 0.2
+     cpp-options:      -DHAVE_MMAP
+ 
+   build-depends:    zlib >= 0.5.1.0 && < 0.6.0.0
 @@ -459,7 +459,7 @@
                     html         == 1.0.*,
                     filepath     == 1.1.*,
@@ -18,3 +27,21 @@
  
    if !os(windows)
      build-depends: unix >= 1.0 && < 2.5
+@@ -497,7 +497,7 @@
+       buildable: False
+ 
+   if flag(mmap) && !os(windows)
+-    build-depends:    mmap >= 0.2 && < 0.5
++    build-depends:    mmap >= 0.2
+     cpp-options:      -DHAVE_MMAP
+ 
+   build-depends:    zlib >= 0.5.1.0 && < 0.6.0.0
+@@ -605,7 +605,7 @@
+                    random     == 1.0.*
+ 
+   if flag(mmap) && !os(windows)
+-    build-depends:    mmap >= 0.2 && < 0.5
++    build-depends:    mmap >= 0.2
+     cpp-options:      -DHAVE_MMAP
+ 
+   build-depends:    zlib >= 0.5.1.0 && < 0.6.0.0
