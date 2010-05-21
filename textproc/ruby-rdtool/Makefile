@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rdtool
-PORTVERSION=	0.6.20
+PORTVERSION=	0.6.22
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,8 +24,8 @@ USE_RUBY_SETUP=	yes
 
 RUBY_MODNAME=	rd
 
-DOCS_EN=	README.rd	README.html	doc/rd-draft.rd
-DOCS_JA=	README.rd.ja	README.ja.html	doc/rd-draft.rd.ja
+DOCS_EN=	README.rd	README.html	doc/rd-draft.html	doc/rd-draft.rd
+DOCS_JA=	README.rd.ja	README.ja.html	doc/rd-draft.ja.html	doc/rd-draft.rd.ja
 
 post-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/rd

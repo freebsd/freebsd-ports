@@ -1,5 +1,5 @@
 bin/rd2
-bin/rdswap.rb
+bin/rdswap
 %%RUBY_SITELIBDIR%%/rd/block-element.rb
 %%RUBY_SITELIBDIR%%/rd/complex-list-item.rb
 %%RUBY_SITELIBDIR%%/rd/desclist.rb
@@ -23,8 +23,10 @@ bin/rdswap.rb
 %%RUBY_SITELIBDIR%%/rd/rd2man-lib.rb
 %%RUBY_SITELIBDIR%%/rd/rd2rdo-lib.rb
 %%RUBY_SITELIBDIR%%/rd/rd2rmi-lib.rb
+%%RUBY_SITELIBDIR%%/rd/rdblockparser.ry
 %%RUBY_SITELIBDIR%%/rd/rdblockparser.tab.rb
 %%RUBY_SITELIBDIR%%/rd/rdfmt.rb
+%%RUBY_SITELIBDIR%%/rd/rdinlineparser.ry
 %%RUBY_SITELIBDIR%%/rd/rdinlineparser.tab.rb
 %%RUBY_SITELIBDIR%%/rd/rdvisitor.rb
 %%RUBY_SITELIBDIR%%/rd/reference-resolver.rb
@@ -39,7 +41,9 @@ bin/rdswap.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.rd.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rd-draft.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rd-draft.rd.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd-draft.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd-draft.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
