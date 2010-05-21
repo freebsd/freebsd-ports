@@ -1,4 +1,5 @@
 sbin/ladvd
+sbin/ladvdc
 @unexec echo ""
 @unexec echo "If you are permanently removing ladvd, you should also:" | /usr/bin/fmt
 @unexec echo "'remove user/group 'ladvd'." | /usr/bin/fmt
