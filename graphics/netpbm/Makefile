@@ -40,15 +40,16 @@ USE_LDCONFIG=	yes
 MAN1=		netpbm.1
 
 STABLE_PORTVERSION=	10.26.64
-DEVEL_PORTVERSION=	10.31
+DEVEL_PORTVERSION=	10.35.74
 .if defined(WITH_NETPBM_DEVEL)
-MASTER_SITES=	SF/netpbm/archive_of_old_release_system/${PORTVERSION}
+MASTER_SITES=	SF/netpbm/super_stable/${DEVEL_PORTVERSION}
 NETPBM_PORTVERSION=	${DEVEL_PORTVERSION}
-PORTREVISION=	4
+PORTREVISION=	0
 NETPBM_SUFFIX=	-devel
-CONFLICTS+=	netpbm-10.26.*
+#CONFLICTS+=	netpbm-10.26.*
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 PATCHDIR?=	${MASTERDIR}/../netpbm-devel/files
+USE_XORG=	x11
 CFLAGS+=	-Iutil
 PLIST_SUB+=	DEVEL=""
 .else
@@ -66,9 +67,12 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|<shhopt.h>|<pm_shhopt.h>|g' ${WRKSRC}/lib/pm.h
 	@${REINPLACE_CMD} -e 's| jpeg2000||g' \
 		${WRKSRC}/converter/other/Makefile
-	@${CP} ${FILESDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
+	@${CP} ${PATCHDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
 	@${LN} -sf ${WRKSRC}/lib/util/shhopt.h ${WRKSRC}/lib/util/pm_shhopt.h
 	@${LN} -sf ${WRKSRC}/lib/util/nstring.h ${WRKSRC}/lib/util/pm_nstring.h
+.if defined(WITH_NETPBM_DEVEL)
+	cd ${WRKSRC} && buildtools/stamp-date > ${WRKSRC}/lib/compile.h
+.endif
 
 post-install:
 	@${ECHO_MSG} "===>  Installing man pages..."

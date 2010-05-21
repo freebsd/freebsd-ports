@@ -1,17 +1,17 @@
---- lib/Makefile.orig	2005-12-03 17:52:33.000000000 +0100
-+++ lib/Makefile	2008-01-17 11:05:04.000000000 +0100
-@@ -36,6 +36,8 @@
+--- lib/Makefile.orig	2009-09-18 21:04:37.000000000 +0200
++++ lib/Makefile	2010-05-21 10:36:08.000000000 +0200
+@@ -42,6 +42,8 @@
  # Library objects to be linked but not built by Makefile.common:
- LIBOBJECTS_X = util/shhopt.o util/nstring.o
+ LIBOBJECTS_X = util/shhopt.o util/nstring.o util/filename.o
  
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
 +
  MANUALS3 = libnetpbm
  MANUALS5 = pbm pgm ppm pnm pam
  
-@@ -79,13 +81,17 @@
+@@ -80,13 +82,17 @@
  
- $(LIBOBJECTS): %.o: %.c $(HEADERLINKS)
+ $(LIBOBJECTS): %.o: %.c importinc
  # Note that the user may have configured -I options into CFLAGS.
 +	$(CC) -c $(INCLUDES) -DNDEBUG $(CFLAGS) \
 +	  $(CFLAGS_PERSONAL) $(CADD) -o $@ $<
@@ -28,7 +28,7 @@
  
  ifeq ($(NETPBMLIBTYPE),irixshared)
  # The libxxx.so link is needed to link the executables.
-@@ -110,11 +116,8 @@
+@@ -113,11 +119,8 @@
  # The $(SONAME) link is needed only to test the programs without
  # installing the libraries (in that case, you also need to direct the 
  # dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
@@ -39,10 +39,10 @@
 -	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
 +$(SONAME): $(SHLIBOBJECTS) $(LIBOBJECTS_X)
 +	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(LIBOBJECTS_X) \
-           $(SHLIB_CLIB) $(LADD)
+           $(SHLIB_CLIB) -lm $(LADD)
  endif
  
-@@ -208,13 +211,10 @@
+@@ -205,13 +208,10 @@
  .PHONY: install.lib
  ifeq ($(NETPBMLIBTYPE),unixshared)
  # install a Unix-style shared library
@@ -60,7 +60,7 @@
  endif
  ifeq ($(NETPBMLIBTYPE),dll)
  #install a Windows DLL shared library
-@@ -244,23 +244,23 @@
+@@ -241,23 +241,23 @@
  # directory when you compile your programs.
  
  %_installhdr: $(PKGDIR)/include
