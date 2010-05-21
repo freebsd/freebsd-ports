@@ -104,6 +104,7 @@ tagsoup_port=			textproc/hs-tagsoup	# executable
 Tensor_port=			devel/hs-Tensor
 terminfo_port=			devel/hs-terminfo
 test-framework_port=		devel/hs-test-framework
+test-framework-hunit_port=	devel/hs-test-framework-hunit
 testpack_port=			devel/hs-testpack
 texmath_port=			textproc/hs-texmath	# executable
 transformers_port=		devel/hs-transformers
