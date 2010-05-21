@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-MOP
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,8 @@ RUN_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDest
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList
+		p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Exception>=0.27:${PORTSDIR}/devel/p5-Test-Exception
 
