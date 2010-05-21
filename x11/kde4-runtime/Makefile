@@ -40,7 +40,7 @@ CMAKE_ARGS+=	-DWITH_ALSA:BOOL=OFF
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900012
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
 LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
 .endif
 

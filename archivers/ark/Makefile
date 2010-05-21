@@ -37,7 +37,7 @@ OPTIONS=	PRINTER_APPLET "Install printer system tray utility" off
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 900012
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
 LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
 .endif
 
