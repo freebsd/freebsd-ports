@@ -2,6 +2,8 @@
 Configuration hints:
 - Edit %%PREFIX%%/etc/anacrontab
 - Deactivate the 'periodic' commands in /etc/crontab
+- Add a call to anacron to /etc/crontab, like
+  0  0  *  *  *    root    %%PREFIX%%/sbin/anacron
 - Add anacron_enable="YES" to /etc/rc.conf
 - Read anacron(8) and anacrontab(5)
 

@@ -8,6 +8,6 @@ Anacron is not an attempt to make cron redundant.
 
 Requirements
  - A functioning syslog daemon.
- - A functioning /usr/lib/sendmail command.  (all MTAs should have that).
+ - A functioning /usr/sbin/sendmail command.  (all MTAs should have that).
 
 WWW: http://sourceforge.net/projects/anacron
