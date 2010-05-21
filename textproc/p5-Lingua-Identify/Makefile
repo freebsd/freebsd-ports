@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-Identify
-PORTVERSION=	0.23
+PORTVERSION=	0.26
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,39 +24,27 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN1=	langident.1 make-lingua-identify-language.1
 MAN3=	Lingua::Identify.3 \
-	Lingua::Identify::AF.3 \
 	Lingua::Identify::BG.3 \
-	Lingua::Identify::BR.3 \
-	Lingua::Identify::BS.3 \
-	Lingua::Identify::CY.3 \
 	Lingua::Identify::DA.3 \
 	Lingua::Identify::DE.3 \
 	Lingua::Identify::EN.3 \
-	Lingua::Identify::EO.3 \
 	Lingua::Identify::ES.3 \
 	Lingua::Identify::FI.3 \
 	Lingua::Identify::FR.3 \
-	Lingua::Identify::FY.3 \
-	Lingua::Identify::GA.3 \
 	Lingua::Identify::HR.3 \
 	Lingua::Identify::HU.3 \
 	Lingua::Identify::ID.3 \
-	Lingua::Identify::IS.3 \
 	Lingua::Identify::IT.3 \
 	Lingua::Identify::LA.3 \
-	Lingua::Identify::MS.3 \
 	Lingua::Identify::NL.3 \
-	Lingua::Identify::NO.3 \
 	Lingua::Identify::Nothing.3 \
 	Lingua::Identify::PL.3 \
 	Lingua::Identify::PT.3 \
 	Lingua::Identify::RO.3 \
 	Lingua::Identify::RU.3 \
 	Lingua::Identify::SL.3 \
-	Lingua::Identify::SO.3 \
 	Lingua::Identify::SQ.3 \
 	Lingua::Identify::SV.3 \
-	Lingua::Identify::SW.3 \
 	Lingua::Identify::TR.3
 
 .include <bsd.port.mk>
