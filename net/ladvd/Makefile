@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ladvd
-PORTVERSION=	0.8.5
+PORTVERSION=	0.9.0
 CATEGORIES=	net
 MASTER_SITES=	http://blinkenlights.nl/software/ladvd/
 
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-chroot-dir=/var/empty
 
 PORTDOCS=	*
-MAN8=		ladvd.8
+MAN8=		ladvd.8 ladvdc.8
 USE_RC_SUBR+=	ladvd
 SUB_FILES=	pkg-message pkg-install
 
