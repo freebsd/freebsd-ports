@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	inplace
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -27,7 +27,7 @@ MAN1=		inplace.1
 MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/inplace
 
-RUBY_REQUIRE=	Ruby > 180
+RUBY_REQUIRE=	Ruby > 182
 
 .include <bsd.port.pre.mk>
 
