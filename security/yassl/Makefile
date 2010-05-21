@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyassl
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.yassl.com/
 
