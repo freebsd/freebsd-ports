@@ -10,10 +10,20 @@ PORTVERSION=	b19
 PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
+		https://jaxp.dev.java.net/files/documents/913/147491/:jaxp \
+		http://kenai.com/projects/jdk6-drops/downloads/download/:jaxws \
+		http://icedtea.classpath.org/builds/icedtea6/src/ \
+		http://icedtea.classpath.org/builds/icedtea6/src/drops/:jaxp \
+		http://icedtea.classpath.org/builds/icedtea6/src/drops/:jaxws \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
 		http://download.java.net/openjdk/jtreg/promoted/${JTREGVERSION}/:jtreg
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}:ant
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${JAXPFILE}:jaxp \
+		${JAXWSFILE}:jaxws \
+		${JAFFILE}:jaxws \
+		${ANTFILE}:ant
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun's java 6 virtual machine release under the GPL v2
@@ -40,6 +50,12 @@ USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
 
+JAXP_BUILDDATE=	2010_01_15
+JAXPFILE=	jdk6-jaxp-${JAXP_BUILDDATE}.zip
+JAXWS_BUILDDATE=2009_10_27
+JAXWSFILE=	jdk6-jaxws-${JAXWS_BUILDDATE}.zip
+JAF_BUILDDATE=	2009_10_27
+JAFFILE=	jdk6-jaf-${JAF_BUILDDATE}.zip
 JTREGVERSION=	b03
 JTREGFILE=	jtreg-4_0-bin-${JTREGVERSION}-31_mar_2009.zip
 
@@ -95,6 +111,7 @@ MAKE_ENV=	LANG=C LC_ALL=C \
 		ALT_FREETYPE_LIB_PATH=${LOCALBASE}/lib \
 		ALT_X11_PATH=${LOCALBASE} \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
+		ALT_DROPS_DIR=${DISTDIR} \
 		ANT_HOME=${WRKDIR}/apache-ant-${ANTVERSION} \
 		BUILD_NUMBER=${PORTVERSION} \
 		NO_DOCS=true \
@@ -120,6 +137,7 @@ OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 
 .if defined(WITH_TEST)
 DISTFILES+=	${JTREGFILE}:jtreg
+EXTRACT_ONLY+=	${JTREGFILE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 USE_DISPLAY=	yes
 .endif
