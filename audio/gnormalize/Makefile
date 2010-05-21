@@ -14,7 +14,6 @@ MASTER_SITES=	SF
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	An alternative for replaygain
 
-BUILD_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		wavegain:${PORTSDIR}/audio/wavegain
 
@@ -78,6 +77,10 @@ RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
 
 .if defined(WITH_GNORMALIZE_MPC)
 RUN_DEPENDS+=	mppenc:${PORTSDIR}/audio/musepack
+.endif
+
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+BUILD_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
 .endif
 
 post-patch:

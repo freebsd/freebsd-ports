@@ -16,11 +16,16 @@ MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	Python binding for the LZMA compression library
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	lzma.0:${PORTSDIR}/archivers/xz
 
 USE_BZIP2=	yes
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	py${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
+.endif
+
+.include <bsd.port.post.mk>

@@ -16,11 +16,9 @@ EXTRACT_SUFX=	.tar.xz
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Ume Japanese TrueType fonts
 
-EXTRACT_DEPENDS=	xz:${PORTSDIR}/archivers/xz
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 NO_BUILD=	yes
-EXTRACT_CMD=	${LOCALBASE}/bin/xz
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
 SUB_FILES=	pkg-install
@@ -57,4 +55,13 @@ post-install:
 	${LOCALBASE}/bin/fc-cache -s -f -v ${LOCALBASE}/${X_FONTSDIR}/TTF
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+EXTRACT_DEPENDS+=	xz:${PORTSDIR}/archivers/xz
+EXTRACT_CMD=	${LOCALBASE}/bin/xz
+.else
+EXTRACT_CMD=	/usr/bin/xz
+.endif
+
+.include <bsd.port.post.mk>
