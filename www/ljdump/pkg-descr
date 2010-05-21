@@ -8,4 +8,4 @@ date.  Both new and updated items are downloaded.
 ljdump uses only standard Python libraries, so it will work wherever
 Python itself does (Windows, Linux, FreeBSD, Mac OS X, etc).
 
-WWW: http://hewgill.com/software/ljdump/
+WWW: http://hewgill.com/ljdump/
