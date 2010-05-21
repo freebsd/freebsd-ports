@@ -167,4 +167,3 @@ share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%QT_LIBDIR_REL%%/libphonon.so.4
 %%QT_LIBDIR_REL%%/libphononexperimental.so
 %%QT_LIBDIR_REL%%/libphononexperimental.so.4
-
