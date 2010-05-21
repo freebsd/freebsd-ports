@@ -20,7 +20,6 @@ RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc \
 		arj:${PORTSDIR}/archivers/arj \
 		cabextract:${PORTSDIR}/archivers/cabextract \
 		dpkg:${PORTSDIR}/archivers/dpkg \
-		lzma:${PORTSDIR}/archivers/xz \
 		lzop:${PORTSDIR}/archivers/lzop \
 		7z:${PORTSDIR}/archivers/p7zip \
 		rpm:${PORTSDIR}/archivers/rpm \
@@ -48,4 +47,10 @@ do-install:
 .endfor
 	@cd ${WRKDIR}/${PORTNAME}-archive-1.5.1/ && ${CP} -pPR * ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+RUN_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
+.endif
+
+.include <bsd.port.post.mk>

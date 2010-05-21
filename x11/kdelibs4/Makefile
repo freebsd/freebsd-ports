@@ -82,7 +82,7 @@ MAN8=	kbuildsycoca4.8 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900012
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
 LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
 .endif
 

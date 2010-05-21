@@ -14,8 +14,7 @@ MASTER_SITES=	ftp://ftp.pcbsd.org/pub/software/ \
 MAINTAINER=	kmoore@freebsd.org
 COMMENT=	PC-BSD's Jail Management Utility
 
-RUN_DEPENDS=	pbreg:${PORTSDIR}/sysutils/pbreg \
-		xz:${PORTSDIR}/archivers/xz
+RUN_DEPENDS=	pbreg:${PORTSDIR}/sysutils/pbreg
 
 WRKSRC=		${WRKDIR}/warden
 
@@ -42,4 +41,10 @@ do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${QMAKE} -unix CONFIG+="configure" ${QMAKE_PRO}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+RUN_DEPENDS+=	xz:${PORTSDIR}/archivers/xz
+.endif
+
+.include <bsd.port.post.mk>
