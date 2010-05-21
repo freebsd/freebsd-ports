@@ -595,6 +595,7 @@
     SUBDIR += hs-smallcheck
     SUBDIR += hs-split
     SUBDIR += hs-terminfo
+    SUBDIR += hs-test-framework
     SUBDIR += hs-testpack
     SUBDIR += hs-transformers
     SUBDIR += hs-unamb
