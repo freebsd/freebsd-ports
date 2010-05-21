@@ -25,7 +25,6 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		STDERR "Print logs to stderr instead of stdout" Off \
 		EXPERIMENTAL "Build experimental code" Off
 
-USE_GCC=		4.2+
 GNU_CONFIGURE=		yes
 MAKE_JOBS_SAFE=		yes
 USE_LDCONFIG=		yes
@@ -140,6 +139,7 @@ CONFIGURE_ARGS+=--without-iconv
 CONFIGURE_ARGS+=--enable-llvm
 USE_PYTHON_BUILD=	yes
 USE_GMAKE=		yes
+USE_GCC=		4.2+
 .else
 CONFIGURE_ARGS+=--disable-llvm
 .endif
