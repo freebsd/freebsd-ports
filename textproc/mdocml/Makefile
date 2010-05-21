@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mdocml
-PORTVERSION=	1.9.23
+PORTVERSION=	1.9.25
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		http://people.freebsd.org/~uqs/distfiles/
@@ -18,8 +18,5 @@ MAN1=	mandoc.1
 MAN7=	man.7 mdoc.7 mandoc_char.7
 
 PLIST_SUB+=	EXAMPLESDIR=share/examples/mandoc
-
-pre-install:
-	@${MKDIR} ${EXAMPLESDIR:S/mdocml/mandoc/}
 
 .include <bsd.port.mk>
