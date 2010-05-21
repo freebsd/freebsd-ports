@@ -29,6 +29,11 @@ CLASS_SRCDIR=	${WRKSRC}/source
 
 DOC_FILES=	COPYING ChangeLog INSTALL README
 
+
+IGNORE=		is ancient, unmaintained, works only with JDK 1.3, no master site
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2010-08-01
+
 post-patch:
 	@${SED} -e "s|%%JAR_DIR%%|${JAR_DIR}|;s|%%JAR_FILE%%|${JAR_FILE}|; \
 		s|%%JAVAVM%%|${JAVAVM}|;s|%%PREFIX%%|${PREFIX}|" \
