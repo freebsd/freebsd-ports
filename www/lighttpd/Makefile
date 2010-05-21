@@ -7,6 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.26
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -35,6 +36,7 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		MAGNET		"Enable magnet support" off \
 		MEMCACHE	"Enable memory caching support" off \
 		MYSQL		"Enable MYSQL support" off \
+		NODELAY		"Set TCP_NODELAY on listening sockets" off \
 		OPENLDAP	"Enable LDAP support" off \
 		OPENSSL		"Enable SSL support" on \
 		SPAWNFCGI	"Enable spawn-fcgi utility" on \
@@ -93,6 +95,10 @@ CONFIGURE_ARGS+=	--with-memcache
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql
 _REQUIRE+=		mysql
+.endif
+
+.if defined(WITH_NODELAY)
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-nodelay
 .endif
 
 .if defined(WITH_OPENLDAP)
