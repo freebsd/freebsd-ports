@@ -554,6 +554,7 @@
     SUBDIR += hs-TypeCompose
     SUBDIR += hs-alex
     SUBDIR += hs-ansi-terminal
+    SUBDIR += hs-ansi-wl-pprint
     SUBDIR += hs-arrows
     SUBDIR += hs-binary-ghc
     SUBDIR += hs-bsd-sysctl
