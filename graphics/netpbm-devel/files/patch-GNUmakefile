@@ -1,11 +1,11 @@
---- GNUmakefile.orig	Fri Jun 14 11:57:11 2002
-+++ GNUmakefile	Tue Jun 18 00:00:00 2002
-@@ -236,7 +236,7 @@
+--- GNUmakefile.orig	2008-09-27 03:37:09.000000000 +0200
++++ GNUmakefile	2010-05-21 10:33:07.000000000 +0200
+@@ -361,7 +361,7 @@
  install.hdr: $(PKGDIR)/include
  	$(MAKE) -C lib -f $(SRCDIR)/lib/Makefile \
  	    SRCDIR=$(SRCDIR) BUILDDIR=$(BUILDDIR) install.hdr
 -	$(INSTALL) -c -m $(INSTALL_PERM_HDR) \
 +	${BSD_INSTALL_DATA} \
- 	    $(SRCDIR)/pm_config.h $(PKGDIR)/include
+ 	    $(BUILDDIR)/pm_config.h $(PKGDIR)/include
  
  ifeq ($(STATICLIB_TOO),y)

@@ -1,6 +1,6 @@
---- editor/pnmquant.orig	Sun Feb 19 22:03:42 2006
-+++ editor/pnmquant	Mon Feb 20 09:41:57 2006
-@@ -116,7 +118,7 @@
+--- editor/pnmquant.orig	2006-08-19 05:12:28.000000000 +0200
++++ editor/pnmquant	2010-05-21 10:37:10.000000000 +0200
+@@ -149,7 +149,7 @@
              tell(INFH);  # Avoids bogus "INFH is not referenced" warning
          }
      } else {
@@ -9,12 +9,12 @@
              or die("Unable to open input file '$infile'.  Errno=$ERRNO");
      }
  }
-@@ -157,7 +159,7 @@
-         $spreadOpt = "-spreadbrightness";
+@@ -194,7 +194,7 @@
+         push(@options, '-quiet');
      }
  
 -    open(STDOUT, ">", $mapfileSpec);
 +    open(STDOUT, ">" . $mapfileSpec);
  
-     my $maprc = system("pnmcolormap", $ncolors, $averageOpt, $spreadOpt);
+     my $maprc = system("pnmcolormap", $ncolors, @options);
  

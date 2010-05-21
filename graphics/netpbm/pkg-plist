@@ -45,6 +45,7 @@ bin/pamchannel
 bin/pamcomp
 bin/pamcut
 bin/pamdeinterlace
+%%DEVEL%%bin/pamdepth
 bin/pamdice
 bin/pamditherbw
 bin/pamedge
@@ -75,6 +76,7 @@ bin/pamstretch
 bin/pamstretch-gen
 bin/pamsumm
 bin/pamsummcol
+%%DEVEL%%bin/pamthreshold
 %%DEVEL%%bin/pamtilt
 bin/pamtodjvurle
 %%DEVEL%%bin/pamtofits
@@ -82,9 +84,12 @@ bin/pamtohdiff
 bin/pamtohtmltbl
 bin/pamtopfm
 bin/pamtopnm
+%%DEVEL%%bin/pamtosvg
 bin/pamtotga
 %%DEVEL%%bin/pamtotiff
 bin/pamtouil
+%%DEVEL%%bin/pamtoxvmini
+%%DEVEL%%bin/pamx
 bin/pbmclean
 bin/pbmlife
 bin/pbmmake
@@ -137,10 +142,13 @@ bin/pfmtopam
 bin/pgmabel
 bin/pgmbentley
 bin/pgmcrater
+%%DEVEL%%bin/pgmdeshadow
 bin/pgmedge
 bin/pgmenhance
 bin/pgmhist
 bin/pgmkernel
+%%DEVEL%%bin/pgmmake
+%%DEVEL%%bin/pgmmedian
 bin/pgmminkowski
 bin/pgmmorphconv
 bin/pgmnoise
@@ -150,7 +158,6 @@ bin/pgmramp
 bin/pgmslice
 bin/pgmtexture
 bin/pgmtofs
-%%DEVEL%%bin/pgmmedian
 bin/pgmtolispm
 bin/pgmtopbm
 bin/pgmtopgm
@@ -287,6 +294,7 @@ bin/rasttopnm
 bin/rawtopgm
 bin/rawtoppm
 bin/rgb3toppm
+%%DEVEL%%bin/rlatopam
 bin/rletopnm
 bin/sbigtopgm
 bin/sgitopnm
@@ -295,6 +303,7 @@ bin/sldtoppm
 bin/spctoppm
 bin/spottopgm
 bin/sputoppm
+%%DEVEL%%bin/svgtopam
 bin/tgatoppm
 bin/thinkjettopbm
 bin/tifftopnm
