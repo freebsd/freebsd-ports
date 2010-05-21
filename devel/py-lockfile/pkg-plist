@@ -1,3 +1,16 @@
-%%PYTHON_SITELIBDIR%%/lockfile.py
-%%PYTHON_SITELIBDIR%%/lockfile.pyc
-%%PYTHON_SITELIBDIR%%/lockfile.pyo
+%%PYTHON_SITELIBDIR%%/lockfile/__init__.py
+%%PYTHON_SITELIBDIR%%/lockfile/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lockfile/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lockfile/linklockfile.py
+%%PYTHON_SITELIBDIR%%/lockfile/linklockfile.pyc
+%%PYTHON_SITELIBDIR%%/lockfile/linklockfile.pyo
+%%PYTHON_SITELIBDIR%%/lockfile/mkdirlockfile.py
+%%PYTHON_SITELIBDIR%%/lockfile/mkdirlockfile.pyc
+%%PYTHON_SITELIBDIR%%/lockfile/mkdirlockfile.pyo
+%%PYTHON_SITELIBDIR%%/lockfile/pidlockfile.py
+%%PYTHON_SITELIBDIR%%/lockfile/pidlockfile.pyc
+%%PYTHON_SITELIBDIR%%/lockfile/pidlockfile.pyo
+%%PYTHON_SITELIBDIR%%/lockfile/sqlitelockfile.py
+%%PYTHON_SITELIBDIR%%/lockfile/sqlitelockfile.pyc
+%%PYTHON_SITELIBDIR%%/lockfile/sqlitelockfile.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/lockfile

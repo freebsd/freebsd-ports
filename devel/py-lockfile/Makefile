@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	lockfile
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	devel python
 MASTER_SITES=	http://smontanaro.dyndns.org/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform-independent file locking module
 
 USE_PYTHON=		yes
