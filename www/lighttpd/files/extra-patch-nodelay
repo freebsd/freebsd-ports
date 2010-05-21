@@ -1,0 +1,15 @@
+--- src/network.c.orig	Tue Jan 26 14:33:01 2010
++++ src/network.c	Tue Jan 26 14:37:39 2010
+@@ -226,6 +226,12 @@
+ 		log_error_write(srv, __FILE__, __LINE__, "ss", "socketsockopt failed:", strerror(errno));
+ 		goto error_free_socket;
+ 	}
++	if(srv_socket->addr.plain.sa_family == AF_INET || srv_socket->addr.plain.sa_family == AF_INET6 ) {
++		if (setsockopt(srv_socket->fd, IPPROTO_TCP, TCP_NODELAY, &val, sizeof(val)) < 0) {
++			log_error_write(srv, __FILE__, __LINE__, "ss", "socketsockopt failed:", strerror(errno));
++			goto error_free_socket;
++		}
++	}
+ 
+ 	switch(srv_socket->addr.plain.sa_family) {
+ #ifdef HAVE_IPV6
