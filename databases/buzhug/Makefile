@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	buzhug
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	databases python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pure-Python database engine
 
 USE_ZIP=	yes
