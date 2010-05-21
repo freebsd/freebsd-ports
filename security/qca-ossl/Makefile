@@ -6,7 +6,7 @@
 
 PORTNAME=	qca-ossl
 DISTVERSION=	2.0.0-beta3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/plugins/
 
