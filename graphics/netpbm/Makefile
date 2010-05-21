@@ -7,7 +7,7 @@
 
 PORTNAME=	netpbm
 PORTVERSION=	${NETPBM_PORTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	# defined later
 PKGNAMESUFFIX=	${NETPBM_SUFFIX}${PKGNAMESUFFIX2}
@@ -23,8 +23,8 @@ COMMENT=	A toolkit for conversion of images between different formats
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
-		jbig.1:${PORTSDIR}/graphics/jbigkit
-#		jasper.4:${PORTSDIR}/graphics/jasper
+		jbig.1:${PORTSDIR}/graphics/jbigkit \
+		jasper.4:${PORTSDIR}/graphics/jasper
 
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	mgetty-1.*
@@ -44,9 +44,9 @@ DEVEL_PORTVERSION=	10.35.74
 .if defined(WITH_NETPBM_DEVEL)
 MASTER_SITES=	SF/netpbm/super_stable/${DEVEL_PORTVERSION}
 NETPBM_PORTVERSION=	${DEVEL_PORTVERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 NETPBM_SUFFIX=	-devel
-#CONFLICTS+=	netpbm-10.26.*
+CONFLICTS+=	netpbm-10.26.*
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 PATCHDIR?=	${MASTERDIR}/../netpbm-devel/files
 USE_XORG=	x11
