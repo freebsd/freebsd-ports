@@ -214,8 +214,7 @@ lib/kde4/plugins/designer/kalziumuiwidgets.so
 lib/kde4/plugins/marble/CompassFloatItem.so
 lib/kde4/plugins/marble/CrosshairsPlugin.so
 lib/kde4/plugins/marble/GeoRendererPlugin.so
-@comment requires new astro/gpsd
-@comment lib/kde4/plugins/marble/GpsdPositionProviderPlugin.so
+lib/kde4/plugins/marble/GpsdPositionProviderPlugin.so
 lib/kde4/plugins/marble/GraticulePlugin.so
 lib/kde4/plugins/marble/MapScaleFloatItem.so
 lib/kde4/plugins/marble/NavigationFloatItem.so
