@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.3.9
+PORTVERSION=	2.3.12
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \
@@ -26,7 +26,7 @@ USE_XORG=	xext
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22:env
 MAKE_ENV=	TOP_DIR="${FREETYPE_WRKSRC}"
-MAKE_ARGS=	X11_PATH="${LOCALBASE}"
+MAKE_ARGS=	EXES="${FT_PROGRAMS}" X11_PATH="${LOCALBASE}"
 
 PLIST_FILES=	${FT_PROGRAMS:S,^,bin/,}
 
