@@ -43,6 +43,7 @@ PLATFORM=	FreeBSD_x86-gcc3
 .elif ${ARCH} == amd64
 PLATFORM=	FreeBSD_${AMD64_ARCH}-gcc3
 .else
+PLATFORM=	dummy
 IGNORE=		unsupported platform
 .endif
 
@@ -59,7 +60,7 @@ PLIST_SUB+=	XPI_XPIDIR="${XPI_DIR:S,^${PREFIX}/,,}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|\$$(shell hg tip --template '{node\|short}')|${REVID}|g" ${WRKSRC}/Makefile
-.if ${ARCH} == amd64
+.if ${PLATFORM} == FreeBSD_x86_64-gcc3
 	${REINPLACE_CMD} -e 's|arch = amd64|arch = x86_64|g' ${WRKSRC}/crypto-obsolete/src/Makefile
 .endif
 
