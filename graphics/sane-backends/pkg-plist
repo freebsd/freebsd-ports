@@ -37,6 +37,7 @@ bin/scanimage
 %%IEEE1284%%@unexec if cmp -s %D/etc/sane.d/hpsj5s.conf %D/etc/sane.d/dist/hpsj5s.conf; then rm -f %D/etc/sane.d/hpsj5s.conf; fi
 @unexec if cmp -s %D/etc/sane.d/hs2p.conf %D/etc/sane.d/dist/hs2p.conf; then rm -f %D/etc/sane.d/hs2p.conf; fi
 @unexec if cmp -s %D/etc/sane.d/ibm.conf %D/etc/sane.d/dist/ibm.conf; then rm -f %D/etc/sane.d/ibm.conf; fi
+@unexec if cmp -s %D/etc/sane.d/kodak.conf %D/etc/sane.d/dist/kodak.conf; then rm -f %D/etc/sane.d/kodak.conf; fi
 @unexec if cmp -s %D/etc/sane.d/leo.conf %D/etc/sane.d/dist/leo.conf; then rm -f %D/etc/sane.d/leo.conf; fi
 @unexec if cmp -s %D/etc/sane.d/lexmark.conf %D/etc/sane.d/dist/lexmark.conf; then rm -f %D/etc/sane.d/lexmark.conf; fi
 @unexec if cmp -s %D/etc/sane.d/ma1509.conf %D/etc/sane.d/dist/ma1509.conf; then rm -f %D/etc/sane.d/ma1509.conf; fi
@@ -48,6 +49,7 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/mustek_usb.conf %D/etc/sane.d/dist/mustek_usb.conf; then rm -f %D/etc/sane.d/mustek_usb.conf; fi
 @unexec if cmp -s %D/etc/sane.d/nec.conf %D/etc/sane.d/dist/nec.conf; then rm -f %D/etc/sane.d/nec.conf; fi
 @unexec if cmp -s %D/etc/sane.d/net.conf %D/etc/sane.d/dist/net.conf; then rm -f %D/etc/sane.d/net.conf; fi
+@unexec if cmp -s %D/etc/sane.d/p5.conf %D/etc/sane.d/dist/p5.conf; then rm -f %D/etc/sane.d/p5.conf; fi
 @unexec if cmp -s %D/etc/sane.d/pie.conf %D/etc/sane.d/dist/pie.conf; then rm -f %D/etc/sane.d/pie.conf; fi
 @unexec if cmp -s %D/etc/sane.d/pixma.conf %D/etc/sane.d/dist/pixma.conf; then rm -f %D/etc/sane.d/pixma.conf; fi
 @unexec if cmp -s %D/etc/sane.d/plustek.conf %D/etc/sane.d/dist/plustek.conf; then rm -f %D/etc/sane.d/plustek.conf; fi
@@ -109,6 +111,7 @@ etc/sane.d/dist/hp5400.conf
 %%IEEE1284%%etc/sane.d/dist/hpsj5s.conf
 etc/sane.d/dist/hs2p.conf
 etc/sane.d/dist/ibm.conf
+etc/sane.d/dist/kodak.conf
 etc/sane.d/dist/leo.conf
 etc/sane.d/dist/lexmark.conf
 etc/sane.d/dist/ma1509.conf
@@ -120,6 +123,7 @@ etc/sane.d/dist/mustek.conf
 etc/sane.d/dist/mustek_usb.conf
 etc/sane.d/dist/nec.conf
 etc/sane.d/dist/net.conf
+etc/sane.d/dist/p5.conf
 etc/sane.d/dist/pie.conf
 etc/sane.d/dist/pixma.conf
 etc/sane.d/dist/plustek.conf
@@ -267,6 +271,12 @@ lib/sane/libsane-hs2p.so.1
 lib/sane/libsane-ibm.la
 lib/sane/libsane-ibm.so
 lib/sane/libsane-ibm.so.1
+lib/sane/libsane-kodak.la
+lib/sane/libsane-kodak.so
+lib/sane/libsane-kodak.so.1
+lib/sane/libsane-kvs1025.la
+lib/sane/libsane-kvs1025.so
+lib/sane/libsane-kvs1025.so.1
 lib/sane/libsane-leo.la
 lib/sane/libsane-leo.so
 lib/sane/libsane-leo.so.1
@@ -294,9 +304,6 @@ lib/sane/libsane-mustek.so.1
 lib/sane/libsane-mustek_usb.la
 lib/sane/libsane-mustek_usb.so
 lib/sane/libsane-mustek_usb.so.1
-lib/sane/libsane-mustek_usb2.la
-lib/sane/libsane-mustek_usb2.so
-lib/sane/libsane-mustek_usb2.so.1
 lib/sane/libsane-nec.la
 lib/sane/libsane-nec.so
 lib/sane/libsane-nec.so.1
@@ -306,6 +313,9 @@ lib/sane/libsane-net.so.1
 lib/sane/libsane-niash.la
 lib/sane/libsane-niash.so
 lib/sane/libsane-niash.so.1
+lib/sane/libsane-p5.la
+lib/sane/libsane-p5.so
+lib/sane/libsane-p5.so.1
 lib/sane/libsane-pie.la
 lib/sane/libsane-pie.so
 lib/sane/libsane-pie.so.1
@@ -473,13 +483,16 @@ sbin/saned
 %%NLS%%share/locale/es/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/sane-backends.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sane-backends.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/sane-backends.mo
 @exec mkdir %D/etc/sane.d/dll.d
 @exec mkdir %D/share/sane
 @exec mkdir %D/share/sane/artec_eplus48u
