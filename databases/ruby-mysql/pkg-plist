@@ -1,8 +1,0 @@
-%%RUBY_SITEARCHLIBDIR%%/mysql.so
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/tommy.css
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README_ja.html
-%%PORTDOCS%%@exec /bin/ln -fs ../tommy.css %D/%%RUBY_MODDOCDIR%%/ja/
-%%PORTDOCS%%@unexec /bin/rm -f %D/%%RUBY_MODDOCDIR%%/ja/tommy.css
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
