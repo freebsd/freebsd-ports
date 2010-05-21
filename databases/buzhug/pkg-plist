@@ -1,6 +1,3 @@
-%%PYTHON_SITELIBDIR%%/buzhug/SimpleAsyncHTTPServer.py
-%%PYTHON_SITELIBDIR%%/buzhug/SimpleAsyncHTTPServer.pyc
-%%PYTHON_SITELIBDIR%%/buzhug/SimpleAsyncHTTPServer.pyo
 %%PYTHON_SITELIBDIR%%/buzhug/__init__.py
 %%PYTHON_SITELIBDIR%%/buzhug/__init__.pyc
 %%PYTHON_SITELIBDIR%%/buzhug/__init__.pyo
@@ -10,18 +7,12 @@
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_algos.py
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_algos.pyc
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_algos.pyo
-%%PYTHON_SITELIBDIR%%/buzhug/buzhug_client.py
-%%PYTHON_SITELIBDIR%%/buzhug/buzhug_client.pyc
-%%PYTHON_SITELIBDIR%%/buzhug/buzhug_client.pyo
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_files.py
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_files.pyc
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_files.pyo
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_info.py
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_info.pyc
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_info.pyo
-%%PYTHON_SITELIBDIR%%/buzhug/buzhug_server.py
-%%PYTHON_SITELIBDIR%%/buzhug/buzhug_server.pyc
-%%PYTHON_SITELIBDIR%%/buzhug/buzhug_server.pyo
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_test.py
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_test.pyc
 %%PYTHON_SITELIBDIR%%/buzhug/buzhug_test.pyo
