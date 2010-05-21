@@ -53,4 +53,10 @@ pre-build:
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900012 || (${OSVERSION} < 900000 && ${OSVERSION} >= 800505)
+IGNORE=	is already in the base system
+.endif
+
+.include <bsd.port.post.mk>
