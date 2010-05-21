@@ -24,6 +24,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-graph.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-group.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-item.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-line.h
+include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-path.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-pixbuf.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-polygon.h
 include/libgoffice-%%SHORT_VER%%/goffice/canvas/goc-polyline.h
@@ -125,6 +126,7 @@ include/libgoffice-%%SHORT_VER%%/goffice/math/go-complex.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-cspline.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-distribution.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-fft.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-quad.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-math.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-matrix3x3.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-rangefunc.h
@@ -256,6 +258,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GOSelector.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOStyle.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOStyledObject.html
+%%DOCSDIR%%-%%SHORT_VER%%/GocArc.html
 %%DOCSDIR%%-%%SHORT_VER%%/GocCanvas.html
 %%DOCSDIR%%-%%SHORT_VER%%/GocCircle.html
 %%DOCSDIR%%-%%SHORT_VER%%/GocEllipse.html
