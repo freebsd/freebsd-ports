@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Unicode-Japanese
-PORTVERSION=	0.46
+PORTVERSION=	0.47
 CATEGORIES=	japanese converters perl5
 MASTER_SITES=	CPAN
 
