@@ -9,8 +9,7 @@
 #     math/gnumeric science/gchemutils
 
 PORTNAME=	goffice
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -31,6 +30,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		SHORT_VER=0.8
-#		SHORT_VER=${PORTVERSION:R}
 
 .include <bsd.port.mk>
