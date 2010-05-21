@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ljdump
-PORTVERSION=	1.2
+PORTVERSION=	1.5
 CATEGORIES=	www python
-MASTER_SITES=	http://hewgill.com/software/ljdump/ \
+MASTER_SITES=	http://hewgill.com/ljdump/ \
 		http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	danfe@FreeBSD.org
