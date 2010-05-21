@@ -1,0 +1,4 @@
+A very simple package providing a cross-platform means of determining
+the hostname.
+
+WWW: http://hackage.haskell.org/package/hostname
