@@ -8874,6 +8874,7 @@ mars                            ports/cad/mars
 mars_nwe                        ports/net/mars_nwe
 marsnomercy                     ports/games/marsnomercy
 masqmail                        ports/mail/masqmail
+massxpert                       ports/science/massxpert
 mastergear                      ports/emulators/mastergear
 masterserver                    ports/games/masterserver
 match                           ports/astro/match
@@ -9848,6 +9849,7 @@ netbsd-pkgsrc-mk-files          ports/devel/netbsd-pkgsrc-mk-files
 netcat                          ports/net/netcat
 netcdf                          ports/science/netcdf
 netcdf-ftn                      ports/science/netcdf-ftn
+netcdf3-ftn                     ports/science/netcdf3-ftn
 netcdf4                         ports/science/netcdf4
 netclasses                      ports/net/netclasses
 netcomponents                   ports/java/netcomponents
@@ -23669,6 +23671,7 @@ tendra                          ports/lang/TenDRA
 tenebrae                        ports/games/tenebrae
 tenshi                          ports/sysutils/tenshi
 tentakel                        ports/sysutils/tentakel
+tepsonic                        ports/audio/tepsonic
 termatrix                       ports/misc/termatrix
 terminal                        ports/x11/Terminal
 terminal.app                    ports/x11/terminal.app
