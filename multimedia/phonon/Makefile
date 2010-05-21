@@ -19,11 +19,12 @@ CONFLICTS=	qt4-phonon-4* kdebase-runtime-4.1.[0-4]*
 
 PHONON_BRANCH=	stable
 USE_BZIP2=	yes
+USE_CMAKE=	yes
 USE_KDE4=	kdehier automoc4 kdeprefix
-KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus xml qtestlib \
 		qmake_build moc_build rcc_build uic_build
+USE_LDCONFIG=	yes
 
 OPTIONS=	PULSEAUDIO "Phonon support for PulseAudio" off
 
