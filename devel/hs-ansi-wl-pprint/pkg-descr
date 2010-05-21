@@ -1,0 +1,5 @@
+This is a pretty printing library based on Wadler's paper "A Prettier
+Printer". It has been enhanced with support for ANSI terminal colored
+output using the ansi-terminal package.
+
+WWW: http://github.com/batterseapower/ansi-wl-pprint
