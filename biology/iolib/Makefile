@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	io_lib
-PORTVERSION=	1.12.1
+PORTVERSION=	1.12.2
 CATEGORIES=	biology
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	staden/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose trace file(and Experiment File) reading interface
 
 USE_AUTOTOOLS=	libtool:22:env
