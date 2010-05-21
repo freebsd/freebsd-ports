@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	q4m
-PORTVERSION=	0.9
+PORTVERSION=	0.9.2
 CATEGORIES=	databases
 MASTER_SITES=	http://q4m.31tools.com/dist/
 PKGNAMEPREFIX=	mysql${MYSQL_VER}-
