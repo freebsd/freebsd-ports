@@ -1,59 +1,73 @@
 bin/eiskaltdcpp
 share/applications/eiskaltdcpp.desktop
+%%DATADIR%%/examples/amr.en_US.sh
+%%DATADIR%%/examples/audacious.en_US.sh
+%%DATADIR%%/examples/mpc.en_US.sh
+%%DATADIR%%/examples/mpris_now_playing.en_US.sh
+%%DATADIR%%/examples/rhythmbox.en_US.sh
+%%DATADIR%%/examples/xmms2_audacious2.ru_RU.UTF-8.php
+%%DATADIR%%/icons/appl/default/application-exit.png
+%%DATADIR%%/icons/appl/default/application-x-archive.png
+%%DATADIR%%/icons/appl/default/application-x-executable.png
+%%DATADIR%%/icons/appl/default/audio-x-generic.png
 %%DATADIR%%/icons/appl/default/ball_green.png
-%%DATADIR%%/icons/appl/default/bookmark_add.png
+%%DATADIR%%/icons/appl/default/bookmark-new.png
 %%DATADIR%%/icons/appl/default/chat.png
-%%DATADIR%%/icons/appl/default/clear.png
 %%DATADIR%%/icons/appl/default/configure.png
-%%DATADIR%%/icons/appl/default/connect.png
-%%DATADIR%%/icons/appl/default/connect_no.png
-%%DATADIR%%/icons/appl/default/down.png
-%%DATADIR%%/icons/appl/default/downlist.png
+%%DATADIR%%/icons/appl/default/default.qrc
+%%DATADIR%%/icons/appl/default/dialog-close.png
+%%DATADIR%%/icons/appl/default/document-edit.png
 %%DATADIR%%/icons/appl/default/download.png
-%%DATADIR%%/icons/appl/default/download_as.png
-%%DATADIR%%/icons/appl/default/edit.png
-%%DATADIR%%/icons/appl/default/editadd.png
-%%DATADIR%%/icons/appl/default/editcopy.png
-%%DATADIR%%/icons/appl/default/editdelete.png
-%%DATADIR%%/icons/appl/default/emoticon.png
-%%DATADIR%%/icons/appl/default/exit.png
+%%DATADIR%%/icons/appl/default/edit-clear-locationbar-rtl.png
+%%DATADIR%%/icons/appl/default/edit-clear.png
+%%DATADIR%%/icons/appl/default/edit-copy.png
+%%DATADIR%%/icons/appl/default/edit-delete.png
+%%DATADIR%%/icons/appl/default/edit-find.png
+%%DATADIR%%/icons/appl/default/eraser.png
+%%DATADIR%%/icons/appl/default/face-smile.png
 %%DATADIR%%/icons/appl/default/fav.png
 %%DATADIR%%/icons/appl/default/favadd.png
 %%DATADIR%%/icons/appl/default/favrem.png
 %%DATADIR%%/icons/appl/default/favserver.png
 %%DATADIR%%/icons/appl/default/favusers.png
-%%DATADIR%%/icons/appl/default/fileclose.png
-%%DATADIR%%/icons/appl/default/filefind.png
-%%DATADIR%%/icons/appl/default/filetype-application.png
-%%DATADIR%%/icons/appl/default/filetype-archive.png
-%%DATADIR%%/icons/appl/default/filetype-audio.png
-%%DATADIR%%/icons/appl/default/filetype-document.png
-%%DATADIR%%/icons/appl/default/filetype-picture.png
-%%DATADIR%%/icons/appl/default/filetype-unknown.png
-%%DATADIR%%/icons/appl/default/filetype-video.png
-%%DATADIR%%/icons/appl/default/filter.png
 %%DATADIR%%/icons/appl/default/find.png
-%%DATADIR%%/icons/appl/default/folder_blue.png
+%%DATADIR%%/icons/appl/default/folder-blue.png
 %%DATADIR%%/icons/appl/default/freespace.png
+%%DATADIR%%/icons/appl/default/go-down-search.png
+%%DATADIR%%/icons/appl/default/go-down.png
+%%DATADIR%%/icons/appl/default/go-up-search.png
+%%DATADIR%%/icons/appl/default/go-up.png
 %%DATADIR%%/icons/appl/default/gui.png
 %%DATADIR%%/icons/appl/default/hashing.png
-%%DATADIR%%/icons/appl/default/hidewindow.png
+%%DATADIR%%/icons/appl/default/hubmsg.png
 %%DATADIR%%/icons/appl/default/icon_appl.png
 %%DATADIR%%/icons/appl/default/icon_msg.png
+%%DATADIR%%/icons/appl/default/im-user-away.png
+%%DATADIR%%/icons/appl/default/image-x-generic.png
+%%DATADIR%%/icons/appl/default/list-add.png
 %%DATADIR%%/icons/appl/default/log_file.png
 %%DATADIR%%/icons/appl/default/message.png
+%%DATADIR%%/icons/appl/default/network-connect.png
+%%DATADIR%%/icons/appl/default/network-disconnect.png
+%%DATADIR%%/icons/appl/default/openlist.png
 %%DATADIR%%/icons/appl/default/own_filelist.png
+%%DATADIR%%/icons/appl/default/pmmsg.png
 %%DATADIR%%/icons/appl/default/qt-logo.png
 %%DATADIR%%/icons/appl/default/reconnect.png
+%%DATADIR%%/icons/appl/default/refrlist.png
 %%DATADIR%%/icons/appl/default/reload.png
 %%DATADIR%%/icons/appl/default/server.png
 %%DATADIR%%/icons/appl/default/spam.png
 %%DATADIR%%/icons/appl/default/splash.png
 %%DATADIR%%/icons/appl/default/spy.png
+%%DATADIR%%/icons/appl/default/status.png
+%%DATADIR%%/icons/appl/default/text-x-generic.png
 %%DATADIR%%/icons/appl/default/transfer.png
-%%DATADIR%%/icons/appl/default/up.png
-%%DATADIR%%/icons/appl/default/uplist.png
+%%DATADIR%%/icons/appl/default/unknown.png
 %%DATADIR%%/icons/appl/default/users.png
+%%DATADIR%%/icons/appl/default/video-x-generic.png
+%%DATADIR%%/icons/appl/default/view-close.png
+%%DATADIR%%/icons/appl/default/view-filter.png
 %%DATADIR%%/icons/appl/default/zoom-in.png
 %%DATADIR%%/icons/appl/default/zoom-out.png
 %%DATADIR%%/icons/emot/default/default.png
@@ -62,8 +76,12 @@ share/applications/eiskaltdcpp.desktop
 %%DATADIR%%/icons/emot/flylink/flylink.xml
 %%DATADIR%%/icons/user/default/usericons.png
 %%DATADIR%%/icons/user/valknut/usericons.png
+%%DATADIR%%/resources/default.rcc
 %%DATADIR%%/ts/eiskaltdcpp.be.qm
 %%DATADIR%%/ts/eiskaltdcpp.en.qm
+%%DATADIR%%/ts/eiskaltdcpp.fr.qm
+%%DATADIR%%/ts/eiskaltdcpp.hu.qm
+%%DATADIR%%/ts/eiskaltdcpp.pl.qm
 %%DATADIR%%/ts/eiskaltdcpp.ru.qm
 share/icons/hicolor/128x128/apps/eiskaltdcpp.png
 share/icons/hicolor/16x16/apps/eiskaltdcpp.png
@@ -74,6 +92,7 @@ share/icons/hicolor/48x48/apps/eiskaltdcpp.png
 share/icons/hicolor/64x64/apps/eiskaltdcpp.png
 share/pixmaps/eiskaltdcpp.png
 @dirrm %%DATADIR%%/ts
+@dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/icons/user/valknut
 @dirrm %%DATADIR%%/icons/user/default
 @dirrm %%DATADIR%%/icons/user
@@ -83,5 +102,6 @@ share/pixmaps/eiskaltdcpp.png
 @dirrm %%DATADIR%%/icons/appl/default
 @dirrm %%DATADIR%%/icons/appl
 @dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
 @dirrmtry share/applications

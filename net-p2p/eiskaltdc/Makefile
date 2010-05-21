@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eiskaltdcpp
-PORTVERSION=	2.0
+PORTVERSION=	2.0.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 
 PROJECTHOST=	eiskaltdc
 
+USE_BZIP2=	yes
 USE_GCC=	4.2+
 USE_CMAKE=	yes
 USE_QT_VER=	4
