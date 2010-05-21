@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.20
-PORTREVISION=	6
+PORTVERSION=	1.0.21
 CATEGORIES=	graphics
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3026/ \
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3258/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
 		ftp://ftp3.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -22,8 +21,6 @@ COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
-
-MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	USB "USB support" on \
 		NLS "NLS support" on \
@@ -39,8 +36,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
 		--disable-latex \
 		--disable-locking
-
-MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
+MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	saned
@@ -95,6 +92,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^for ac_header in/s|libc.h||g ; \
 		 s|} -D_REENT|} ${PTHREAD_CFLAGS} -D_REENT|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@(cd ${WRKSRC}/po; ${BASENAME} -s .po `${LS} *.po` > LINGUAS)
 
 # Pass BATCH to pkg-install for Evil Things(tm)
 pre-install:

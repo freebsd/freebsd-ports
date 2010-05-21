@@ -1,7 +1,7 @@
---- doc/Makefile.in.orig	2009-04-30 22:41:18.000000000 +0900
-+++ doc/Makefile.in	2009-05-05 01:22:08.000000000 +0900
-@@ -49,8 +49,7 @@
- DIST_SOURCES =
+--- doc/Makefile.in.orig	2010-04-14 09:52:59.000000000 +0900
++++ doc/Makefile.in	2010-05-10 22:02:46.000000000 +0900
+@@ -73,8 +73,7 @@
+   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
  man1dir = $(mandir)/man1
  am__installdirs = "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man7dir)" \
 -	"$(DESTDIR)$(man8dir)" "$(DESTDIR)$(docdir)" \
@@ -10,49 +10,49 @@
  man7dir = $(mandir)/man7
  man8dir = $(mandir)/man8
  NROFF = nroff
-@@ -573,6 +572,7 @@
- 	  rm -f "$(DESTDIR)$(man8dir)/$$inst"; \
- 	done
+@@ -559,6 +558,7 @@
+ 	  echo " ( cd '$(DESTDIR)$(man8dir)' && rm -f" $$files ")"; \
+ 	  cd "$(DESTDIR)$(man8dir)" && rm -f $$files; }
  install-dist_docDATA: $(dist_doc_DATA)
 +ifndef NOPORTDOCS
  	@$(NORMAL_INSTALL)
  	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
- 	@list='$(dist_doc_DATA)'; for p in $$list; do \
-@@ -581,6 +581,7 @@
- 	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
- 	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+ 	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
+@@ -570,6 +570,7 @@
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
  	done
 +endif
  
  uninstall-dist_docDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -590,6 +591,7 @@
- 	  rm -f "$(DESTDIR)$(docdir)/$$f"; \
- 	done
+@@ -579,6 +580,7 @@
+ 	echo " ( cd '$(DESTDIR)$(docdir)' && rm -f" $$files ")"; \
+ 	cd "$(DESTDIR)$(docdir)" && rm -f $$files
  install-docDATA: $(doc_DATA)
 +ifndef NOPORTDOCS
  	@$(NORMAL_INSTALL)
  	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
- 	@list='$(doc_DATA)'; for p in $$list; do \
-@@ -598,6 +600,7 @@
- 	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
- 	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+ 	@list='$(doc_DATA)'; test -n "$(docdir)" || list=; \
+@@ -590,6 +592,7 @@
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
  	done
 +endif
  
  uninstall-docDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -607,6 +610,7 @@
- 	  rm -f "$(DESTDIR)$(docdir)/$$f"; \
- 	done
+@@ -599,6 +602,7 @@
+ 	echo " ( cd '$(DESTDIR)$(docdir)' && rm -f" $$files ")"; \
+ 	cd "$(DESTDIR)$(docdir)" && rm -f $$files
  install-nobase_dist_docDATA: $(nobase_dist_doc_DATA)
 +ifndef NOPORTDOCS
  	@$(NORMAL_INSTALL)
  	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
- 	@$(am__vpath_adj_setup) \
-@@ -616,6 +620,7 @@
- 	  echo " $(nobase_dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
- 	  $(nobase_dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+ 	@list='$(nobase_dist_doc_DATA)'; test -n "$(docdir)" || list=; \
+@@ -613,6 +617,7 @@
+ 	    echo " $(INSTALL_DATA) $$xfiles '$(DESTDIR)$(docdir)/$$dir'"; \
+ 	    $(INSTALL_DATA) $$xfiles "$(DESTDIR)$(docdir)/$$dir" || exit $$?; }; \
  	done
 +endif
  

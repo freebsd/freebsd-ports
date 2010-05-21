@@ -1,6 +1,15 @@
---- backend/Makefile.in.orig	2009-04-30 22:41:18.000000000 +0900
-+++ backend/Makefile.in	2009-05-13 15:25:25.000000000 +0900
-@@ -4432,7 +4433,7 @@
+--- backend/Makefile.in.orig	2010-04-14 09:52:59.000000000 +0900
++++ backend/Makefile.in	2010-05-10 21:51:54.000000000 +0900
+@@ -1244,7 +1244,7 @@
+ libxerox_mfp_la_LIBADD =
+ am_libxerox_mfp_la_OBJECTS = libxerox_mfp_la-xerox_mfp.lo
+ libxerox_mfp_la_OBJECTS = $(am_libxerox_mfp_la_OBJECTS)
+-DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/include/sane
++DEFAULT_INCLUDES = -I$(top_builddir)/include/sane -I$(top_builddir)/include -I.@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ am__mv = mv -f
+@@ -4701,7 +4701,7 @@
  	@# installed library in $(sanelibdir) to $(sanelibdir)/libsane.*.  
  	@# Having two libsane's can cause issues so get rid of it.
  	-rm -f $(DESTDIR)$(sanelibdir)/libsane.*
@@ -9,7 +18,7 @@
  	test -z "$(configdir)/dll.d" || $(MKDIR_P) "$(DESTDIR)$(configdir)/dll.d"
  	@list="$(BACKEND_CONFS_ENABLED) saned.conf dll.conf"; for cfg in $$list; do \
  	  if test ! -r $${cfg}; then continue; fi; \
-@@ -4443,6 +4444,7 @@
+@@ -4712,6 +4712,7 @@
  	  $(INSTALL_DATA) $${cfg} $(DESTDIR)$(configdir)/$${cfg} \
  	  || exit 1; \
  	  fi; \

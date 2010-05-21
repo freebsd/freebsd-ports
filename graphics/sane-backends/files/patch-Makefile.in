@@ -1,14 +1,14 @@
---- Makefile.in.orig	2009-04-30 22:41:20.000000000 +0900
-+++ Makefile.in	2009-05-05 01:23:45.000000000 +0900
-@@ -64,7 +64,6 @@
-     *) f=$$p;; \
-   esac;
- am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
+--- Makefile.in.orig	2010-04-14 09:52:59.000000000 +0900
++++ Makefile.in	2010-05-10 21:48:54.000000000 +0900
+@@ -82,7 +82,6 @@
+ am__base_list = \
+   sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
+   sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
 -am__installdirs = "$(DESTDIR)$(docdir)"
- dist_docDATA_INSTALL = $(INSTALL_DATA)
  DATA = $(dist_doc_DATA)
  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
-@@ -246,7 +245,7 @@
+   distclean-recursive maintainer-clean-recursive
+@@ -292,7 +291,7 @@
  top_srcdir = @top_srcdir@
  SUBDIRS = include lib sanei backend frontend tools doc po
  DIST_SUBDIRS = include lib sanei backend frontend tools doc po japi testsuite
@@ -17,23 +17,23 @@
   README README.aix README.beos README.darwin README.djpeg README.freebsd \
   README.hp-ux README.linux README.netbsd README.openbsd README.os2 \
   README.solaris README.unixware2 README.unixware7 README.windows \
-@@ -327,6 +326,7 @@
+@@ -375,6 +374,7 @@
  distclean-libtool:
- 	-rm -f libtool
+ 	-rm -f libtool config.lt
  install-dist_docDATA: $(dist_doc_DATA)
 +ifndef NOPORTDOCS
  	@$(NORMAL_INSTALL)
  	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
- 	@list='$(dist_doc_DATA)'; for p in $$list; do \
-@@ -335,6 +335,7 @@
- 	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
- 	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+ 	@list='$(dist_doc_DATA)'; test -n "$(docdir)" || list=; \
+@@ -386,6 +386,7 @@
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
+ 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
  	done
 +endif
  
  uninstall-dist_docDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -627,9 +628,6 @@
+@@ -710,9 +711,6 @@
  all-am: Makefile $(DATA)
  installdirs: installdirs-recursive
  installdirs-am:

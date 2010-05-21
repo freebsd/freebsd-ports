@@ -1,8 +1,8 @@
---- sanei/sanei_pa4s2.c.orig	Sun Oct  8 22:58:42 2000
-+++ sanei/sanei_pa4s2.c	Wed Feb  7 00:28:27 2001
-@@ -89,6 +89,12 @@
- #define IO_SUPPORT_MISSING
- #endif
+--- sanei/sanei_pa4s2.c.orig	2010-04-05 22:18:06.000000000 +0900
++++ sanei/sanei_pa4s2.c	2010-05-10 22:07:48.000000000 +0900
+@@ -109,6 +109,12 @@
+ 
+ #endif /* HAVE_LIBIEEE1284 */
  
 +#if defined(__FreeBSD__) && defined(__i386__)
 +#define HAVE_IOPERM
@@ -10,6 +10,6 @@
 +#include <machine/sysarch.h>
 +#endif
 +
- #include "sane/sane.h"
- #include "sane/sanei.h"
- #include "sane/sanei_pa4s2.h"
+ #include "../include/sane/sane.h"
+ #include "../include/sane/sanei.h"
+ #include "../include/sane/sanei_pa4s2.h"
