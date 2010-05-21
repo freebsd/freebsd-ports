@@ -1,14 +1,13 @@
-The Netwide Assembler, NASM, is an x86 and x86-64 assembler
-designed for portability and modularity.  It will output flat-form
-binary files, a.out (Linux and *BSD), COFF, ELF32, ELF64, Mach-O,
-Microsoft OMF (OBJ), Win32, Win64, as86 (Minix/Linux bin86 v0.3),
-LADsoft IEEE-695, Intel hex, Motorola S-record, and a home-grown 
-format called RDOFF. NASM syntax is similar to Intel's, but less
-complex.  It supports Pentium, P6, MMX. 3DNow!, SSE, SSE2, SSE3,
-SSE4.1, SSE4.2, XOP/FMA4/CVT16 (rev 3.03), and x64 opcodes, among
-others. It has strong support for macro conventions.
+The Netwide Assembler (NASM) is an x86 and amd64 (x86-64) assembler designed
+for portability and modularity.  It will output flat-form binary files, a.out
+(Linux and *BSD), COFF, ELF32, ELF64, Mach-O, Microsoft OMF (OBJ), Win32,
+Win64, as86 (Minix/Linux bin86 v0.3), LADsoft IEEE-695, Intel hex, Motorola
+S-record, and a home-grown format called RDOFF.  NASM syntax is similar to
+Intel's, but is less complex.  It supports Pentium, P6, MMX, 3DNow!, SSE,
+SSE2, SSE3, SSE4.1, SSE4.2, XOP/FMA4/CVT16 (rev 3.03), and x64 opcodes, among
+others.  It has strong support for macro conventions.
 
-Also included is NDISASM, a binary-file disassembler
-which uses the same instruction table as NASM.    
+The port also includes NDISASM, a binary file disassembler which uses the
+same instruction set as NASM.
 
 WWW: http://www.nasm.us/
