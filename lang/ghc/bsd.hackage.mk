@@ -56,6 +56,7 @@ HGL_port=			graphics/hs-HGL-ghc
 highlighting-kate_port=		textproc/hs-highlighting-kate-ghc
 hint_port=			devel/hs-hint
 hoogle_port=			devel/hs-hoogle		# executable
+hostname_port=			net/hs-hostname
 hscolour_port=			print/hs-hscolour	# executable
 hslogger_port=			devel/hs-hslogger
 hs-bibutils_port=		textproc/hs-hs-bibutils
