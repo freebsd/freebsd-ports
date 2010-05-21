@@ -13,35 +13,30 @@ MASTER_SITES=	http://asm.sourceforge.net/asmutils/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A set of UNIX utilities written in assembly language
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-
-BROKEN=		does not install
 ONLY_FOR_ARCHS=	i386
 
-USE_GMAKE=	yes
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
+USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/asmutils
 
 # This will play merry hell with portlint
 BINS=		bonus/asmutils basename cal cat chmod chown chroot cmp cp \
-		cpuinfo cut date dc dd deflate dirname du echo env bonus/execve \
-		extname factor fromdos ftpd getty grep head hexdump host hostname \
-		httpd id idea init kill kldload less ln ls lzss m_inetd md5 \
-		md5sum  mkdir mknod mount mv nc netstat nice nm nohup od \
-		paste ping pop3d proxy pwd rc6crypt readelf readkey readlink \
-		reboot renice bonus/report rm rmdsum rot13 scan scons sh sha1sum \
-		sleep strings sync tail tar tee telnet telnetd test touch tr \
-		true uname uuencode watch wc wget which whoami write yes
+		cpuinfo cut date dc dd deflate dirname du echo env \
+		bonus/execve extname factor fromdos ftpd getty grep head \
+		hexdump host hostname httpd id idea init kill kldload less \
+		ln ls lzss m_inetd md5 md5sum mkdir mknod mount mv nc \
+		netstat nice nm nohup od paste ping pop3d proxy pwd rc6crypt \
+		readelf readkey readlink reboot renice bonus/report rm \
+		rmdsum rot13 scan scons sh sha1sum sleep strings sync tail \
+		tar tee telnet telnetd test touch tr true uname uuencode \
+		watch wc wget which whoami write yes
 
 LINKS=		arch cpuspeed domainname false halt inflate kldstat kldunload \
 		mkfifo more poweroff regs rmdir size sln todos umount usleep
 
 LIBS=		libc.so.0 libcrypto.so.0 libm.so.0
-
-DOCS=		Asmutils-HOWTO.html acknowledgements.html endorsements.html \
-		history.html s-contrib.html s-debug.html s-include.html \
-		s-layout.html s-optimize.html sha1sum.html sha1sum_toc.html
 
 PLIST_FILES=	${BINS:S/^/bin\/asmutils\//:S/bonus\///} \
 		${LINKS:S/^/bin\/asmutils\//} ${LIBS:S/^/lib\/asmutils\//}
@@ -51,13 +46,15 @@ PORTDOCS=	*
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG
 	@${REINPLACE_CMD} -e 's,^static ,,' ${WRKSRC}/lib/libm.c
+# Workaround for broken macro local labels in nasm v2.07+
+	@${REINPLACE_CMD} -e 's,%{$$strucname},&%+,' ${WRKSRC}/inc/elf.inc \
+		${WRKSRC}/inc/system.inc
 
 # Stripping binaries will break install
 STRIP=	#
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin/asmutils
-	@${MKDIR} ${PREFIX}/lib/asmutils
+	@${MKDIR} ${PREFIX}/bin/asmutils ${PREFIX}/lib/asmutils
 .for B in ${BINS}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${B} ${PREFIX}/bin/asmutils
 .endfor
@@ -86,10 +83,8 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for D in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${D} ${DOCSDIR}
-.endfor
-	cd ${DOCSDIR} && ${LN} -sf Asmutils-HOWTO.html index.html
+	${INSTALL_DATA} ${WRKSRC}/doc/[^i]* ${DOCSDIR}
+	@cd ${DOCSDIR} && ${LN} -sf Asmutils-HOWTO.html index.html
 .endif
 
 .include <bsd.port.mk>
