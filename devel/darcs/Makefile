@@ -42,6 +42,7 @@ CONFIGURE_ARGS+=	--flags="-curl"
 
 .if defined(WITH_CURL_PIPELINING)
 CONFIGURE_ARGS+=	--flags="curl-pipelining"
+BUILD_DEPENDS+=		pkg-config>=0.9.0:${PORTSDIR}/devel/pkg-config
 .if !defined(WITH_CURL)
 IGNORE=	cannot be compiled without CURL in this configuration.  Please (re)run 'make config' and choose CURL too
 .endif
@@ -103,6 +104,7 @@ CONFIGURE_ARGS+=	--flags="-mmap"
 
 .if defined(WITH_TEST)
 CONFIGURE_ARGS+=	--flags="test"
+USE_HACKAGE+=		QuickCheck>=2.1.0.0 test-framework>=0.2.2 test-framework-hunit>=0.2.2 test-framework-quickcheck2>=0.2.2
 EXECUTABLE+=		unit
 PLIST_SUB+=		MAYBE_TEST=""
 .else
