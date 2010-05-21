@@ -25,6 +25,7 @@ include/licq/licq_interestcodes.h
 include/licq/licq_languagecodes.h
 include/licq/licq_log.h
 include/licq/licq_message.h
+include/licq/licq_mutex.h
 include/licq/licq_occupationcodes.h
 include/licq/licq_onevent.h
 include/licq/licq_organizationcodes.h
@@ -41,7 +42,6 @@ include/licq/licq_socket.h
 include/licq/licq_translate.h
 include/licq/licq_user.h
 include/licq/licq_utility.h
-include/licq/pthread_rdwr.h
 share/licq/sounds/Monty-Python.wav
 share/licq/sounds/fun/Auth.wav
 share/licq/sounds/fun/Chat.wav
