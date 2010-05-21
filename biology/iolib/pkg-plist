@@ -17,6 +17,7 @@ include/io_lib/misc.h
 include/io_lib/open_trace_file.h
 include/io_lib/os.h
 include/io_lib/plain.h
+include/io_lib/pooled_alloc.h
 include/io_lib/scf.h
 include/io_lib/scf_extras.h
 include/io_lib/seqIOABI.h
@@ -60,5 +61,5 @@ bin/ztr_dump
 lib/libstaden-read.a
 lib/libstaden-read.la
 lib/libstaden-read.so
-lib/libstaden-read.so.1
+lib/libstaden-read.so.2
 @dirrm include/io_lib
