@@ -23,6 +23,7 @@
 %%PYTHON_SITELIBDIR%%/astLib/astWCS.pyc
 %%PYTHON_SITELIBDIR%%/astLib/astWCS.pyo
 %%PYTHON_SITELIBDIR%%/astLib/data/bohlin2006_Vega.sed
+%%PYTHON_SITELIBDIR%%/astLib/data/sun_reference_stis_001.ascii
 %%PYTHON_SITELIBDIR%%/PyWCSTools/__init__.py
 %%PYTHON_SITELIBDIR%%/PyWCSTools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PyWCSTools/__init__.pyo
