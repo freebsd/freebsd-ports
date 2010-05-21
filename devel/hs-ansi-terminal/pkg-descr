@@ -1,0 +1,6 @@
+ANSI terminal support for Haskell: allows cursor movement, screen
+clearing, color output showing or hiding the cursor, and changing the
+title. Compatible with Windows and those Unixes with ANSI terminals, but
+only GHC is supported as a compiler.
+
+WWW: http://batterseapower.github.com/ansi-terminal

@@ -553,6 +553,7 @@
     SUBDIR += hs-Tensor
     SUBDIR += hs-TypeCompose
     SUBDIR += hs-alex
+    SUBDIR += hs-ansi-terminal
     SUBDIR += hs-arrows
     SUBDIR += hs-binary-ghc
     SUBDIR += hs-bsd-sysctl

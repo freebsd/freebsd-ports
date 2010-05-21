@@ -15,6 +15,7 @@ alex_port=			devel/hs-alex		# executable
 Agda_port=			math/hs-Agda		# executable
 Agda-executable_port=		math/hs-Agda-executable	# executable
 ALUT_port=			audio/hs-ALUT
+ansi-terminal_port=		devel/hs-ansi-terminal
 arrows_port=			devel/hs-arrows
 binary_port=			devel/hs-binary-ghc
 bio_port=			science/hs-bio
