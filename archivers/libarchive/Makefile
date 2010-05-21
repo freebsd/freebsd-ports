@@ -13,8 +13,6 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
 
-LIB_DEPENDS=	lzma.0:${PORTSDIR}/archivers/xz
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
@@ -55,4 +53,10 @@ CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
 check:
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
+.endif
+
+.include <bsd.port.post.mk>

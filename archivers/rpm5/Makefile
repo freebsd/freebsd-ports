@@ -22,7 +22,6 @@ LIB_DEPENDS=	db-${DB_VERSION:C/(.)/\1./}:${PORTSDIR}/databases/db${DB_VERSION} \
 		neon.28:${PORTSDIR}/www/neon28 \
 		magic:${PORTSDIR}/sysutils/file \
 		xar:${PORTSDIR}/archivers/xar \
-		lzma:${PORTSDIR}/archivers/xz \
 		pcre.0:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 .if !defined(NOPORTDOCS)
@@ -117,6 +116,10 @@ PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
+.endif
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC

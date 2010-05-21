@@ -16,7 +16,7 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	GNU version of the traditional tape archiver
 
 # only force dependencies for compressors that have a single-letter option
-RUN_DEPENDS=	xz:${PORTSDIR}/archivers/xz
+#RUN_DEPENDS=	# see below
 
 INFO=		tar
 
@@ -50,4 +50,10 @@ PLIST_SUB+=	NLS="@comment "
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+RUN_DEPENDS+=	xz:${PORTSDIR}/archivers/xz
+.endif
+
+.include <bsd.port.post.mk>
