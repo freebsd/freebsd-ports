@@ -103,6 +103,7 @@ stringsearch_port=		textproc/hs-stringsearch
 tagsoup_port=			textproc/hs-tagsoup	# executable
 Tensor_port=			devel/hs-Tensor
 terminfo_port=			devel/hs-terminfo
+test-framework_port=		devel/hs-test-framework
 testpack_port=			devel/hs-testpack
 texmath_port=			textproc/hs-texmath	# executable
 transformers_port=		devel/hs-transformers
