@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	odbc
-PORTVERSION=	0.9995
+PORTVERSION=	0.99991
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.ch-werner.de/rubyodbc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,19 +20,38 @@ LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+CONFIGURE_WRKSRC=	${WRKSRC}/ext
+BUILD_WRKSRC=		${WRKSRC}/ext
+INSTALL_WRKSRC=		${WRKSRC}/ext
 
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	ChangeLog README doc/odbc.html
+PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/odbc.so \
+		%%RUBY_SITELIBDIR%%/cqgen.rb
+
+.include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
+PORTEXAMPLES=	test
+
+DOCSDIR=	${RUBY_MODDOCDIR}
+PORTDOCS=	COPYING ChangeLog README doc
+.endif
+
+post-extract:
+	cd ${WRKSRC} && ${MV} lib ext/
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${CP} -R ${WRKSRC}/test* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${MKDIR} ${EXAMPLESDIR}
+.for f in ${PORTEXAMPLES}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${EXAMPLESDIR}/
+.endfor
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${f} ${DOCSDIR}/
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
