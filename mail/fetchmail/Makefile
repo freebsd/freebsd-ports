@@ -10,8 +10,7 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.16
-PORTREVISION=	1
+PORTVERSION=	6.3.17
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://mandree.home.pages.de/fetchmail/:ma \
