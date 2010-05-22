@@ -15,6 +15,7 @@ share/apps/QtCurve/Plastic.qtcurve
 share/apps/QtCurve/QtCurveui.rc
 share/apps/QtCurve/Silk.qtcurve
 share/apps/color-schemes/QtCurve.colors
+share/apps/color-schemes/QtCurveAgua.colors
 share/apps/kstyle/themes/qtcurve.themerc
 share/apps/kwin/qtcurve.desktop
 share/locale/tr/LC_MESSAGES/qtcurve.mo
