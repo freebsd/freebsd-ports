@@ -6,6 +6,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/Cookbook.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/Fallback.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/KDDIJIS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/MIME.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/MIME/AirH.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/MIME/DoCoMo.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/MIME/KDDI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/MIME/SoftBank.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/Vodafone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile/Mobile.bs
@@ -22,6 +27,7 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP/Mobile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/JP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile/MIME
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/Mobile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Encode
