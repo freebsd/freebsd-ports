@@ -53,6 +53,7 @@ SUB_LIST+=	SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 SUB_FILES=	pkg-message
 .endif
 
+.if !target(pre-everything)
 pre-everything::
 	@${ECHO_CMD} ""
 .ifndef WITHOUT_ACTIVATE
@@ -65,9 +66,11 @@ pre-everything::
 	@${ECHO_CMD} "WITHOUT_ACTIVATE"
 .endif
 	@${ECHO_CMD} ""
+.endif
 
 _SMSRCDIR?=	${SQUIRREL_PLUGIN_NAME}
 
+.if !target(do-install)
 do-install:
 	cd ${WRKSRC}/${_SMSRCDIR} && ${FIND} -d . | \
 		${CPIO} -dump ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} >/dev/null 2>&1 && \
@@ -75,7 +78,9 @@ do-install:
 		-type d -exec chmod 755 {} \; && \
 	${FIND} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} \
 		-type f -exec chmod 644 {} \;
+.endif
 
+.if !target(post-install)
 post-install:
 .ifndef WITHOUT_ACTIVATE
 .if exists( ${SQUIRRELDIR}/config/config.php )
@@ -91,4 +96,5 @@ post-install:
 .if exists(${FILESDIR}/pkg-message.in)
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD} ""
+.endif
 .endif
