@@ -1,13 +1,17 @@
 bin/midori
 etc/xdg/midori/search
+include/midori-0.2/extensions/external-applications.h
 lib/midori/libadblock.so
+lib/midori/libaddons.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
+lib/midori/libexternal-applications.so
 lib/midori/libfeed-panel.so
 lib/midori/libformhistory.so
 lib/midori/libmouse-gestures.so
 lib/midori/libpage-holder.so
 lib/midori/libshortcuts.so
+lib/midori/libstatus-clock.so
 lib/midori/libstatusbar-features.so
 lib/midori/libtab-panel.so
 lib/midori/libtab-switcher.so
@@ -47,6 +51,7 @@ share/icons/hicolor/48x48/status/news-feed.png
 %%NLS%%share/locale/fr/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/he/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/id/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/it/LC_MESSAGES/midori.mo
@@ -54,6 +59,7 @@ share/icons/hicolor/48x48/status/news-feed.png
 %%NLS%%share/locale/ko/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/no/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/midori.mo
@@ -74,15 +80,25 @@ share/icons/hicolor/48x48/status/news-feed.png
 %%DATADIR%%/res/mootools.js
 %%DATADIR%%/res/speeddial-head.html
 %%DATADIR%%/res/speeddial.json
+share/vala/vapi/external-applications.deps
+share/vala/vapi/external-applications.vapi
+@dirrmtry share/vala/vapi
+@dirrmtry share/vala
 @dirrm %%DATADIR%%/res
 @dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/pa/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pa
+%%NLS%%@dirrmtry share/locale/hr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hr
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
 @dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrm lib/midori
+@dirrm include/midori-0.2/extensions
+@dirrm include/midori-0.2
 @dirrm etc/xdg/midori
 @dirrmtry etc/xdg
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

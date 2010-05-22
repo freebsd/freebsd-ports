@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	www
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/${PORTVERSION:R}/
 
@@ -16,6 +16,8 @@ COMMENT=	Lightweight web browser using WebKit browser engine
 
 LIB_DEPENDS=	webkit-1.0:${PORTSDIR}/www/webkit-gtk2 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
+		notify.1:${PORTSDIR}/devel/libnotify \
+		vala.0:${PORTSDIR}/lang/vala \
 		soup-2.4:${PORTSDIR}/devel/libsoup
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		rsvg-convert:${PORTSDIR}/graphics/librsvg2
