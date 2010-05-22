@@ -1,5 +1,5 @@
---- params.h.orig	Mon May  8 15:14:13 2006
-+++ params.h	Mon May  8 15:16:41 2006
+--- src/params.h.orig
++++ src/params.h
 @@ -101,7 +101,11 @@
  /*
   * File names.

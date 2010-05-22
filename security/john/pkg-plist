@@ -8,6 +8,10 @@ etc/john.conf.default
 %%DATADIR%%/alnum.chr
 %%DATADIR%%/alpha.chr
 %%DATADIR%%/digits.chr
+%%DATADIR%%/genincstats.rb
 %%DATADIR%%/lanman.chr
+%%DATADIR%%/netntlm.pl
+%%DATADIR%%/netscreen.py
 %%DATADIR%%/password.lst
+%%DATADIR%%/sap_prepare.pl
 @dirrm %%DATADIR%%

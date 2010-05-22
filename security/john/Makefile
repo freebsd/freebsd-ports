@@ -1,4 +1,4 @@
-# Ports collection makefile for:	John the Ripper
+# New ports collection makefile for:	John the Ripper
 # Date created:				Sun Mar 09, 1997
 # Whom:					David O'Brien <obrien@FreeBSD.org>
 #
@@ -6,35 +6,30 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTVERSION=	1.7.5
 CATEGORIES=	security
-MASTER_SITES=	http://www.openwall.com/john/f/ \
-		ftp://ftp.ru.openwall.com/pub/projects/john/${PORTVERSION}/ \
-		ftp://ftp.se.openwall.com/pub/projects/john/${PORTVERSION}/ \
-		http://distro.ibiblio.org/pub/linux/distributions/openwall/projects/john/${PORTVERSION}/
+MASTER_SITES=	http://www.openwall.com/john/g/ \
+		http://mirrors.kernel.org/openwall/projects/john/${PORTVERSION}/ \
+		http://distro.ibiblio.org/pub/linux/distributions/openwall/projects/john/${PORTVERSION}/ \
+		http://gd.tuwien.ac.at/opsys/linux/openwall/projects/john/${PORTVERSION}/
 
-PATCH_SITES=	ftp://ftp.openwall.com/pub/projects/john/contrib/ \
-		http://www.mirrorgeek.com/openwall/projects/john/contrib/ \
-		ftp://ftp.cert.dfn.de/pub/tools/net/Openwall/projects/john/contrib/ \
-		http://ftp.sunet.se/pub/security/tools/net/Openwall/projects/john/contrib/
-PATCHFILES=	john-${PORTVERSION}-all-9.diff.gz
-PATCH_DIST_STRIP=	-p2
+PATCH_SITES=	${MASTER_SITES:H:H:S/$/\/contrib\//}
+PATCHFILES=	john-${PORTVERSION}-jumbo-3.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
 
-DATAFILES=	all.chr alnum.chr alpha.chr digits.chr lanman.chr password.lst
-PORTDOCS=	CHANGES CONFIG EXAMPLES EXTERNAL FAQ MODES OPTIONS README \
-		RULES CONTACT CREDITS
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_BZIP2=	yes
+BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
 OSNAME=		${OPSYS:L}
 CFLAGS+=	-DJOHN_SYSTEMWIDE=1 \
 		-DJOHN_SYSTEMWIDE_HOME=\\"${DATADIR}\\" \
 		-DCFG_FULL_NAME=\\"${PREFIX}/etc/${PORTNAME}.conf\\"
+
+PORTDOCS=	CHANGES CONFIG EXAMPLES EXTERNAL FAQ MODES OPTIONS README \
+		RULES CONTACT CREDITS
 
 .include <bsd.port.pre.mk>
 
@@ -57,7 +52,9 @@ ALL_TARGET=	generic
 post-patch:
 	@${REINPLACE_CMD} -e 's|= gcc|= ${CC}|g' \
 		-e 's|CFLAGS =.*|CFLAGS = -c ${CFLAGS}|g' \
-		${WRKSRC}/Makefile
+			${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -i '' -e 's|/usr/bin|${LOCALBASE}/bin|' \
+		${WRKSRC}/run/*.rb
 
 pre-build:
 	@${ECHO}
@@ -65,26 +62,22 @@ pre-build:
 	@${ECHO}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/run/john ${PREFIX}/bin
-.for l in xtract unshadow
-	${LN} -sf ${PREFIX}/bin/john ${PREFIX}/bin/${l}
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/run/john ${PREFIX}/bin
+	${LN} -sf john ${PREFIX}/bin/xtract
+	${LN} -sf john ${PREFIX}/bin/unshadow
 	@${MKDIR} ${DATADIR}
-.for f in ${DATAFILES}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/run/${f} ${DATADIR}
-.endfor
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/run/john.conf \
+	${INSTALL_DATA} ${WRKSRC}/run/*.??? ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/run/*.?? ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/run/john.conf \
 		${PREFIX}/etc/john.conf.default
 .if !exists(${PREFIX}/etc/john.conf)
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/run/john.conf \
+	${INSTALL_DATA} ${WRKSRC}/run/john.conf \
 		${PREFIX}/etc/john.conf
 .endif
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
