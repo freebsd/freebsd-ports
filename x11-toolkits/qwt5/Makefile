@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qwt
-PORTVERSION=	5.2.0
-PORTREVISION=	1
+PORTVERSION=	5.2.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 
@@ -21,6 +20,7 @@ USE_GMAKE=	yes
 QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	DESIGNER_PLUGIN "Install plugin for Qt Designer" on
 
@@ -39,13 +39,10 @@ PLIST_SUB+=	DESIGNER_PLUGIN="@comment "
 .endif
 
 do-configure:
-	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS})
-
-post-configure:
-	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^CC .*|CC=${CC}|; s|^CXX .*|CXX=${CXX}|; s|^LINK .*|LINK=${CXX}|'
+	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS})
 
 post-install:
+	${MKDIR} ${PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${PREFIX}/man/man3
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 .if !defined(NOPORTDOCS)

@@ -4,7 +4,7 @@
  VERSION      = $${VER_MAJ}.$${VER_MIN}.$${VER_PAT}
  
  unix {
--    INSTALLBASE    = /usr/local/qwt-5.2.0
+-    INSTALLBASE    = /usr/local/qwt-5.2.1
 +    INSTALLBASE    = $$PREFIX
  }
  
