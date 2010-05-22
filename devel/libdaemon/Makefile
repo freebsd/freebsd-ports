@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdaemon
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	devel
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
