@@ -70,7 +70,8 @@ OPTIONS=	RTP "Enable support for playing back RTP streams" off \
 		PCRE "Enable regular expression matching support" on \
 		IPV6 "Enable IPv6 support" on \
 		GEOIP "Enable GeoIP lookups" on \
-		LUA "Enable LUA scripting integration" off
+		LUA "Enable LUA scripting integration" off \
+		CARES "Asynchronous DNS resolution via c-ares" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -138,6 +139,13 @@ LIB_DEPENDS+=	adns.1:${PORTSDIR}/dns/adns
 CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-adns=no
+.endif
+
+.if !defined(WITHOUT_CARES) && !defined(LITE)
+LIB_DEPENDS+=		cares.2:${PORTSDIR}/dns/c-ares
+CONFIGURE_ARGS+=	--with-c-ares=${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--with-c-ares=no
 .endif
 
 .if !defined(WITHOUT_GEOIP) && !defined(LITE)
