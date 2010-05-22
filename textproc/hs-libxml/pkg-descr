@@ -1,0 +1,4 @@
+Minimal binding to libxml2.  Additional functions will be added when
+needed.
+
+WWW: http://hackage.haskell.org/package/libxml
