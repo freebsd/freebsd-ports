@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libcanberra
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTVERSION=	0.24
 CATEGORIES=	audio devel
 MASTER_SITES=	http://0pointer.de/lennart/projects/libcanberra/
 
