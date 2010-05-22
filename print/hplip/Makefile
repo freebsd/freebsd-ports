@@ -15,7 +15,10 @@ COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		sane.1:${PORTSDIR}/graphics/sane-backends \
-		cups.2:${PORTSDIR}/print/cups-base
+		cupsdriver.1:${PORTSDIR}/print/cups-base \
+		cups.2:${PORTSDIR}/print/cups-client \
+		cupsimage.2:${PORTSDIR}/print/cups-image
+		
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2 \
 		espgs:${PORTSDIR}/print/cups-pstoraster \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
@@ -26,10 +29,14 @@ CONFLICTS=	hpijs-[0-9]* hplip-2*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
-		--disable-pp-build \
+		--enable-pp-build \
 		--enable-foomatic-ppd-install \
 		--enable-foomatic-rip-hplip-install \
 		--enable-hpijs-install \
+		--enable-hpijs-only-build \
+		--enable-hpcups-only-build \
+		--enable-hpcups-install \
+		--enable-new-hpcups \
 		--with-icondir=${LOCALBASE}/share/applications \
 		--with-cupsbackenddir=${LOCALBASE}/libexec/cups/backend \
 		--with-cupsfilterdir=${LOCALBASE}/libexec/cups/filter \
