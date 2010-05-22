@@ -7,7 +7,7 @@
 
 PORTNAME?=	ioquake3
 DISTVERSION?=	1.36
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	games
 MASTER_SITES?=	http://ioquake3.org/files/${DISTVERSION}/
 
@@ -22,7 +22,7 @@ USE_ZIP?=	yes
 USE_GMAKE=	yes
 
 OPTIONS+=	CLIENT "Build client" on \
-		GAMELIBS "Build game libraries (when not mandatory)" off \
+		GAMELIBS "Build game libraries" off \
 		DEDICATED "Build dedicated server" on \
 		CURL "Enable cURL for http/ftp download" on \
 		OPENAL "Enable OpenAL audio output" on \
@@ -43,6 +43,15 @@ MAKE_JOBS_SAFE=	yes
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 BUILDDIR=	${WRKSRC}/build/release-${OPSYS:L}-${ARCH}
 BINSUFFIX?=
+Q3CLIENT?=	ioquake3
+Q3SERVER?=	ioq3ded
+Q3TOOLS?=	q3asm \
+		q3cpp \
+		q3lcc \
+		q3rcc
+Q3BASE?=	baseq3 \
+		missionpack
+Q3INSTALL?=
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -90,7 +99,7 @@ MAKE_ARGS+=	USE_MUMBLE=0
 .if defined(WITH_CLIENT) || defined(WITH_SMP)
 MAKE_ARGS+=	BUILD_CLIENT=1
 PLIST_SUB+=	CLIENT=""
-Q3BIN+=		ioquake3
+Q3BIN+=		${Q3CLIENT}
 .else
 PLIST_SUB+=	CLIENT="@comment "
 .endif
@@ -98,7 +107,7 @@ PLIST_SUB+=	CLIENT="@comment "
 .if defined(WITH_DEDICATED)
 MAKE_ARGS+=	BUILD_SERVER=1
 PLIST_SUB+=	DEDICATED=""
-Q3BIN+=		ioq3ded
+Q3BIN+=		${Q3SERVER}
 .else
 PLIST_SUB+=	DEDICATED="@comment "
 .endif
@@ -114,18 +123,22 @@ PLIST_SUB+=	GAMELIBS="@comment "
 .if defined(WITH_SMP)
 MAKE_ARGS+=	BUILD_CLIENT_SMP=1
 PLIST_SUB+=	SMP=""
-Q3BIN+=		ioquake3-smp
+Q3BIN+=		${Q3CLIENT}-smp
 .else
 PLIST_SUB+=	SMP="@comment "
 .endif
 
-do-install:
+do-install: ${Q3INSTALL}
 .for bin in ${Q3BIN}
 	${INSTALL_PROGRAM} ${BUILDDIR}/${bin}.${ARCH} \
 		${PREFIX}/bin/${bin}${BINSUFFIX}
 .endfor
+.for bin in ${Q3TOOLS}
+	${INSTALL_PROGRAM} ${BUILDDIR}/tools/${bin} \
+		${PREFIX}/bin/${bin}${BINSUFFIX}
+.endfor
 .if defined(WITH_GAMELIBS)
-.for dir in baseq3 missionpack
+.for dir in ${Q3BASE}
 	${MKDIR} ${LIBDIR}/${dir}
 	${INSTALL_PROGRAM} ${BUILDDIR}/${dir}/*.so ${LIBDIR}/${dir}
 .endfor
@@ -140,5 +153,8 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
+.if !defined(Q3TOTALCONV)
 .include "${.CURDIR}/../quake3-data/Makefile.include"
+.endif
+
 .include <bsd.port.mk>

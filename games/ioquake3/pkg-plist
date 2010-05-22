@@ -1,6 +1,10 @@
 %%DEDICATED%%bin/ioq3ded%%BINSUFFIX%%
 %%CLIENT%%bin/ioquake3%%BINSUFFIX%%
 %%SMP%%bin/ioquake3-smp%%BINSUFFIX%%
+bin/q3asm%%BINSUFFIX%%
+bin/q3cpp%%BINSUFFIX%%
+bin/q3lcc%%BINSUFFIX%%
+bin/q3rcc%%BINSUFFIX%%
 %%GAMELIBS%%%%LIBDIR%%/baseq3/cgame%%ARCH%%.so
 %%GAMELIBS%%%%LIBDIR%%/baseq3/qagame%%ARCH%%.so
 %%GAMELIBS%%%%LIBDIR%%/baseq3/ui%%ARCH%%.so
