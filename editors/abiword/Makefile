@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.8.1
-PORTREVISION=	4
+PORTVERSION=	2.8.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -22,6 +21,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		wv-1.2:${PORTSDIR}/textproc/wv \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		fribidi.3:${PORTSDIR}/converters/fribidi \
+		psiconv.10:${PORTSDIR}/converters/psiconv \
 		goffice-0.8.8:${PORTSDIR}/devel/goffice
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-fonts/dejavu
 
@@ -40,9 +40,10 @@ INSTALLS_ICONS=	yes
 ABIVERSION=	2.8
 PLIST_SUB+=	ABIVERSION=${ABIVERSION}
 
+MAN1=		abiword.1
+
 OPTIONS=	DEBUG "Enable debug" off \
 		BOOST "Build with boost" on \
-		GUCHARMAP "Use Gucharmap as the symbol insertion tool" on \
 		SPELLCHECK "Enable spell checking support" on \
 		CLIPART "Install clipart" on \
 		TEMPLATES "Install additional templates" on
@@ -67,13 +68,6 @@ PLIST_SUB+=		DICT=""
 .else
 CONFIGURE_ARGS+=	--disable-spell
 PLIST_SUB+=		DICT="@comment "
-.endif
-
-.if defined(WITH_GUCHARMAP)
-LIB_DEPENDS+=		gucharmap.7:${PORTSDIR}/deskutils/gucharmap
-CONFIGURE_ARGS+=	--with-gucharmap
-.else
-CONFIGURE_ARGS+=	--without-gucharmap
 .endif
 
 .if defined(WITH_TEMPLATES)
