@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.1.44
-PORTREVISION=	1
+DISTVERSION=	1.2-rc1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -109,6 +108,7 @@ post-install:
 	          ${MAN1PREFIX}/man/de.UTF-8/man1/winemaker.1 \
 	          ${MAN1PREFIX}/man/de.UTF-8/man1/wineserver.1 \
 	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wine.1 \
+	          ${MAN1PREFIX}/man/fr.UTF-8/man1/winemaker.1 \
 	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wineserver.1
 	@-${RMDIR} -p ${MAN1PREFIX}/man/de.UTF-8/man1 \
 	              ${MAN1PREFIX}/man/fr.UTF-8/man1
