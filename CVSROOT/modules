@@ -2127,6 +2127,11 @@ darts                           ports/devel/darts
 darwinstreamingserver           ports/net/DarwinStreamingServer
 dash                            ports/shells/dash
 dasher                          ports/accessibility/dasher
+databases_postgresql74-client   ports/databases/postgresql74-client
+databases_postgresql80-client   ports/databases/postgresql80-client
+databases_postgresql81-client   ports/databases/postgresql81-client
+databases_postgresql83-client   ports/databases/postgresql83-client
+databases_postgresql84-client   ports/databases/postgresql84-client
 datadesigner                    ports/devel/datadesigner
 datadraw                        ports/devel/datadraw
 datapipe                        ports/net/datapipe
@@ -5416,6 +5421,8 @@ hs-agda                         ports/math/hs-Agda
 hs-agda-executable              ports/math/hs-Agda-executable
 hs-alex                         ports/devel/hs-alex
 hs-alut                         ports/audio/hs-ALUT
+hs-ansi-terminal                ports/devel/hs-ansi-terminal
+hs-ansi-wl-pprint               ports/devel/hs-ansi-wl-pprint
 hs-arrows                       ports/devel/hs-arrows
 hs-binary-ghc                   ports/devel/hs-binary-ghc
 hs-bio                          ports/science/hs-bio
@@ -5466,6 +5473,7 @@ hs-highlighting-kate-ghc        ports/textproc/hs-highlighting-kate-ghc
 hs-hint                         ports/devel/hs-hint
 hs-hmake                        ports/devel/hs-hmake
 hs-hoogle                       ports/devel/hs-hoogle
+hs-hostname                     ports/net/hs-hostname
 hs-hs-bibutils                  ports/textproc/hs-hs-bibutils
 hs-hscolour                     ports/print/hs-hscolour
 hs-hscolour-docs                ports/print/hs-hscolour-docs
@@ -5510,6 +5518,8 @@ hs-stringsearch                 ports/textproc/hs-stringsearch
 hs-tagsoup                      ports/textproc/hs-tagsoup
 hs-tensor                       ports/devel/hs-Tensor
 hs-terminfo                     ports/devel/hs-terminfo
+hs-test-framework               ports/devel/hs-test-framework
+hs-test-framework-quickcheck2   ports/devel/hs-test-framework-quickcheck2
 hs-testpack                     ports/devel/hs-testpack
 hs-texmath                      ports/textproc/hs-texmath
 hs-transformers                 ports/devel/hs-transformers
@@ -19182,7 +19192,6 @@ penv                            ports/sysutils/penv
 peps                            ports/graphics/peps
 perdition                       ports/mail/perdition
 perf                            ports/sysutils/perf
-perforce                        ports/devel/perforce
 performance                     ports/devel/performance
 perl2html                       ports/textproc/perl2html
 perl5.10                        ports/lang/perl5.10
@@ -19972,7 +19981,6 @@ postfix26                       ports/mail/postfix26
 postfixadmin                    ports/mail/postfixadmin
 postgis                         ports/databases/postgis
 postgis-jdbc                    ports/databases/postgis-jdbc
-postgresql-contrib              ports/databases/postgresql-contrib
 postgresql-docs                 ports/databases/postgresql-docs
 postgresql-jdbc                 ports/databases/postgresql-jdbc
 postgresql-libpgeasy            ports/databases/postgresql-libpgeasy
@@ -19989,17 +19997,13 @@ postgresql-relay                ports/databases/postgresql-relay
 postgresql-tcltk                ports/databases/postgresql-tcltk
 postgresql73-client             ports/databases/postgresql73-client
 postgresql73-server             ports/databases/postgresql73-server
-postgresql74-client             ports/databases/postgresql74-client
 postgresql74-server             ports/databases/postgresql74-server
-postgresql80-client             ports/databases/postgresql80-client
 postgresql80-server             ports/databases/postgresql80-server
-postgresql81-client             ports/databases/postgresql81-client
 postgresql81-server             ports/databases/postgresql81-server
 postgresql82-client             ports/databases/postgresql82-client
+postgresql82-contrib            ports/databases/postgresql82-contrib
 postgresql82-server             ports/databases/postgresql82-server
-postgresql83-client             ports/databases/postgresql83-client
 postgresql83-server             ports/databases/postgresql83-server
-postgresql84-client             ports/databases/postgresql84-client
 postgresql84-server             ports/databases/postgresql84-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
 postgrey                        ports/mail/postgrey
@@ -26103,7 +26107,6 @@ yi-aspell                       ports/textproc/yi-aspell
 yii                             ports/www/yii
 yodl                            ports/textproc/yodl
 yorick                          ports/lang/yorick
-yorick-doc                      ports/lang/yorick-doc
 yould                           ports/textproc/yould
 yourls                          ports/www/yourls
 youtube_dl                      ports/www/youtube_dl
