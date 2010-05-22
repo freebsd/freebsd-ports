@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%MAYBE_TESTS%%bin/test-framework-tests
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/Framework.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/Framework/Core.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Test/Framework/Improving.hi
