@@ -1,13 +1,13 @@
 bin/OpenDPI_demo
-include/libopendpi-1.1/libopendpi/ipq_api.h
-include/libopendpi-1.1/libopendpi/ipq_basic_def.h
-include/libopendpi-1.1/libopendpi/ipq_debug_functions.h
-include/libopendpi-1.1/libopendpi/ipq_macros.h
-include/libopendpi-1.1/libopendpi/ipq_protocols_osdpi.h
-include/libopendpi-1.1/libopendpi/ipq_public_functions.h
+include/libopendpi-1.2/libopendpi/ipq_api.h
+include/libopendpi-1.2/libopendpi/ipq_basic_def.h
+include/libopendpi-1.2/libopendpi/ipq_debug_functions.h
+include/libopendpi-1.2/libopendpi/ipq_macros.h
+include/libopendpi-1.2/libopendpi/ipq_protocols_osdpi.h
+include/libopendpi-1.2/libopendpi/ipq_public_functions.h
 lib/libopendpi.a
 lib/libopendpi.la
 lib/libopendpi.so
 lib/libopendpi.so.1
-@dirrm include/libopendpi-1.1/libopendpi
-@dirrm include/libopendpi-1.1
+@dirrm include/libopendpi-1.2/libopendpi
+@dirrm include/libopendpi-1.2
