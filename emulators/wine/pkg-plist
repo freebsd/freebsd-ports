@@ -1025,6 +1025,7 @@ lib/wine/fakedlls/rsabase.dll
 lib/wine/fakedlls/rsaenh.dll
 lib/wine/fakedlls/rtutils.dll
 lib/wine/fakedlls/rundll32.exe
+lib/wine/fakedlls/samlib.dll
 lib/wine/fakedlls/sane.ds
 lib/wine/fakedlls/sc.exe
 lib/wine/fakedlls/sccbase.dll
@@ -1479,6 +1480,7 @@ lib/wine/rsabase.dll.so
 lib/wine/rsaenh.dll.so
 lib/wine/rtutils.dll.so
 lib/wine/rundll32.exe.so
+lib/wine/samlib.dll.so
 lib/wine/sane.ds.so
 lib/wine/sc.exe.so
 lib/wine/sccbase.dll.so
