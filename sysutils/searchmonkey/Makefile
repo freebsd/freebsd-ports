@@ -6,19 +6,26 @@
 #
 
 PORTNAME=	searchmonkey
-PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTVERSION=	2.0.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20%5Bstable%5D
+MASTER_SITES=	SF/${PORTNAME}/Searchmonkey2/${PORTVERSION}%20%5Bstable%5D
+DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search using regexes for file names and text
 
-USE_GNOME=	gtk20
-USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_ZIP=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build uic_build
+MAKE_JOBS_SAFE=	yes
+
+PLIST_FILES=	bin/${PORTNAME}
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${PORTNAME}_2_0.pro \
+		-spec ${QMAKESPEC}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
