@@ -28,6 +28,9 @@ CONFLICTS=	camaelon-nesedah-*
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Bundles/Camaelon
 
+post-configure:
+	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
