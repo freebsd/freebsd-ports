@@ -6,7 +6,7 @@
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -40,10 +40,12 @@ PLIST_SUB+=	WITH_PTH=''
 PLIST_SUB+=	WITH_PTH='@comment '
 .endif
 
-post-extract:
+post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/cmake/modules/*.cmake
 	${REINPLACE_CMD} -e '/find_package/s,PATHS,PATHS ${KDE4_PREFIX}/lib/cmake/Akonadi,' \
 		${PATCH_WRKSRC}/cmake/modules/FindAkonadi.cmake
+	${REINPLACE_CMD} -e 's|%%KDE4_PREFIX%%|${KDE4_PREFIX}|g' \
+		${PATCH_WRKSRC}/cmake/modules/FindQGpgme.cmake
 
 .include <bsd.port.post.mk>
