@@ -7,7 +7,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -142,7 +142,7 @@ CONFIGURE_ARGS+=	--with-x264
 . if !defined(WITH_X264_DEV)
 .  if exists(${LOCALBASE}/include/x264.h)
 X264_BUILD!=    ${GREP} "define X264_BUILD .." ${LOCALBASE}/include/x264.h | ${AWK} '{ print $$3 }'
-.   if ${X264_BUILD} == "85"
+.   if ${X264_BUILD} == "93"
 _WANT_X264_DEVEL=       yes
 .   endif
 .  endif
@@ -150,9 +150,9 @@ _WANT_X264_DEVEL=       yes
 _WANT_X264_DEVEL=yes
 . endif
 . if defined(_WANT_X264_DEVEL)
-LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264/devel
+LIB_DEPENDS+=	x264.93:${PORTSDIR}/multimedia/x264-devel
 . else
-LIB_DEPENDS+=	x264.65:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264
 . endif
 .else
 PLIST_SUB+=	X264="@comment "
