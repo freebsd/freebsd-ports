@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Celestia
+# New ports collection makefile for:	Celestia (master port)
 # Date created:				2002-05-17
 # Whom:					Trevor Johnson <trevor@FreeBSD.org>
 #
@@ -52,12 +52,13 @@ USE_GL+=	glut
 CONFIGURE_ARGS+=	--with-gtk
 USE_GNOME+=	gtk20
 .elif ${CELESTIA_UI} == "gnome"
+CATEGORIES+=	gnome
 CONFIGURE_ARGS+=	--with-gnome
 USE_GNOME+=	libgnomeui
 GCONF_SCHEMAS=	celestia.schemas
 .elif ${CELESTIA_UI} == "kde"
+CATEGORIES+=	kde
 CONFIGURE_ARGS+=	--with-kde
-USE_QT_VER=	3
 USE_KDELIBS_VER=	3
 INSTALLS_ICONS=	yes
 .else
