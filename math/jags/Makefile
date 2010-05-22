@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	mcmc-jags
-DISTVERSION=	2.0.0-20100430
+PORTVERSION=	2.1.0
 CATEGORIES=	math
 MASTER_SITES=	SF:1,2,3
-MASTER_SITE_SUBDIR=	${PORTNAME}/JAGS/2.0/Source/:1 \
+MASTER_SITE_SUBDIR=	${PORTNAME}/JAGS/2.x/Source/:1 \
 		${PORTNAME}/Examples/2.0/:2 \
 		${PORTNAME}/Manuals/2.0/:3
 DISTFILES=	${DISTNAME:S/mcmc-//:U}${EXTRACT_SUFX}:1
@@ -23,17 +23,10 @@ EXTRACT_ONLY=	${DISTNAME:S/mcmc-//:U}${EXTRACT_SUFX}
 MAINTAINER=	bf1783@gmail.com
 COMMENT=	Just Another Gibbs Sampler
 
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-CONFIGURE_ARGS=	--with-lapack=-lalapack --with-blas=-lf77blas
-.else
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-CONFIGURE_ARGS=	--with-lapack=-llapack --with-blas=-lblas
-.endif
+OPTIONS=	ATLAS "use ATLAS libraries instead of BLAS and LAPACK" off
 
 DIST_SUBDIR=	${PORTNAME}
-WRKSRC=		${WRKDIR}/${PKGNAME:S/mcmc-//:U:R}
+WRKSRC=		${WRKDIR}/${PKGNAME:S/mcmc-//:U}
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -42,6 +35,18 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 USE_BISON=	build
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+CONFIGURE_ARGS=	--with-lapack=-lalapack --with-blas=-lf77blas
+.else
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
+CONFIGURE_ARGS=	--with-lapack=-llapack --with-blas=-lblas
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
