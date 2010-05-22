@@ -38,6 +38,7 @@ share/apps/kile/complete/tex/bm.cwl
 share/apps/kile/complete/tex/booktabs.cwl
 share/apps/kile/complete/tex/braket.cwl
 share/apps/kile/complete/tex/calc.cwl
+share/apps/kile/complete/tex/cancel.cwl
 share/apps/kile/complete/tex/class-beamer.cwl
 share/apps/kile/complete/tex/class-letter.cwl
 share/apps/kile/complete/tex/class-scrartcl,scrreprt,scrbook.cwl
@@ -63,6 +64,7 @@ share/apps/kile/complete/tex/fancyunits_small-fractions.cwl
 share/apps/kile/complete/tex/fancyvrb.cwl
 share/apps/kile/complete/tex/float.cwl
 share/apps/kile/complete/tex/fontspec.cwl
+share/apps/kile/complete/tex/gauss.cwl
 share/apps/kile/complete/tex/glosstex.cwl
 share/apps/kile/complete/tex/graphicx.cwl
 share/apps/kile/complete/tex/hyperref.cwl
@@ -80,6 +82,7 @@ share/apps/kile/complete/tex/logsys.cwl
 share/apps/kile/complete/tex/longtable.cwl
 share/apps/kile/complete/tex/lscape.cwl
 share/apps/kile/complete/tex/manyfoot.cwl
+share/apps/kile/complete/tex/mathtools.cwl
 share/apps/kile/complete/tex/mdwlist.cwl
 share/apps/kile/complete/tex/multicol.cwl
 share/apps/kile/complete/tex/multido.cwl
@@ -138,12 +141,19 @@ share/apps/kile/help/latex-texlive-3.9.lst
 share/apps/kile/help/latexhelp.html
 share/apps/kile/icons/hicolor/128x128/actions/nroot.png
 share/apps/kile/icons/hicolor/128x128/actions/sqrt.png
+share/apps/kile/icons/hicolor/16x16/actions/BBmatrix.png
+share/apps/kile/icons/hicolor/16x16/actions/VVmatrix.png
 share/apps/kile/icons/hicolor/16x16/actions/acute.png
+share/apps/kile/icons/hicolor/16x16/actions/align.png
 share/apps/kile/icons/hicolor/16x16/actions/bar.png
 share/apps/kile/icons/hicolor/16x16/actions/beamerblock.png
 share/apps/kile/icons/hicolor/16x16/actions/beamerframe.png
+share/apps/kile/icons/hicolor/16x16/actions/bigskip.png
+share/apps/kile/icons/hicolor/16x16/actions/bigspace.png
 share/apps/kile/icons/hicolor/16x16/actions/binom.png
+share/apps/kile/icons/hicolor/16x16/actions/bmatrix.png
 share/apps/kile/icons/hicolor/16x16/actions/breve.png
+share/apps/kile/icons/hicolor/16x16/actions/cases.png
 share/apps/kile/icons/hicolor/16x16/actions/chapter.png
 share/apps/kile/icons/hicolor/16x16/actions/check.png
 share/apps/kile/icons/hicolor/16x16/actions/closeallenv.png
@@ -168,10 +178,13 @@ share/apps/kile/icons/hicolor/16x16/actions/delpar.png
 share/apps/kile/icons/hicolor/16x16/actions/delword.png
 share/apps/kile/icons/hicolor/16x16/actions/description.png
 share/apps/kile/icons/hicolor/16x16/actions/dot.png
+share/apps/kile/icons/hicolor/16x16/actions/enskip.png
 share/apps/kile/icons/hicolor/16x16/actions/enumerate.png
 share/apps/kile/icons/hicolor/16x16/actions/eqnarray.png
 share/apps/kile/icons/hicolor/16x16/actions/equation.png
 share/apps/kile/icons/hicolor/16x16/actions/file.png
+share/apps/kile/icons/hicolor/16x16/actions/flalign.png
+share/apps/kile/icons/hicolor/16x16/actions/gather.png
 share/apps/kile/icons/hicolor/16x16/actions/gotobeginenv.png
 share/apps/kile/icons/hicolor/16x16/actions/gotobegingroup.png
 share/apps/kile/icons/hicolor/16x16/actions/gotoendenv.png
@@ -179,11 +192,14 @@ share/apps/kile/icons/hicolor/16x16/actions/gotoendgroup.png
 share/apps/kile/icons/hicolor/16x16/actions/graphics.png
 share/apps/kile/icons/hicolor/16x16/actions/grave.png
 share/apps/kile/icons/hicolor/16x16/actions/hat.png
+share/apps/kile/icons/hicolor/16x16/actions/hspace-star.png
+share/apps/kile/icons/hicolor/16x16/actions/hspace.png
 share/apps/kile/icons/hicolor/16x16/actions/include.png
 share/apps/kile/icons/hicolor/16x16/actions/item.png
 share/apps/kile/icons/hicolor/16x16/actions/itemize.png
 share/apps/kile/icons/hicolor/16x16/actions/js.png
 share/apps/kile/icons/hicolor/16x16/actions/label.png
+share/apps/kile/icons/hicolor/16x16/actions/lr.png
 share/apps/kile/icons/hicolor/16x16/actions/masteritem.png
 share/apps/kile/icons/hicolor/16x16/actions/matchenv.png
 share/apps/kile/icons/hicolor/16x16/actions/matchgroup.png
@@ -199,16 +215,23 @@ share/apps/kile/icons/hicolor/16x16/actions/math7.png
 share/apps/kile/icons/hicolor/16x16/actions/math8.png
 share/apps/kile/icons/hicolor/16x16/actions/math9.png
 share/apps/kile/icons/hicolor/16x16/actions/mathmode.png
+share/apps/kile/icons/hicolor/16x16/actions/matrix.png
+share/apps/kile/icons/hicolor/16x16/actions/medskip.png
+share/apps/kile/icons/hicolor/16x16/actions/medspace.png
 share/apps/kile/icons/hicolor/16x16/actions/minipage.png
+share/apps/kile/icons/hicolor/16x16/actions/multline.png
 share/apps/kile/icons/hicolor/16x16/actions/nextbullet.png
 share/apps/kile/icons/hicolor/16x16/actions/nextparagraph.png
 share/apps/kile/icons/hicolor/16x16/actions/nextsection.png
 share/apps/kile/icons/hicolor/16x16/actions/nroot.png
 share/apps/kile/icons/hicolor/16x16/actions/part.png
+share/apps/kile/icons/hicolor/16x16/actions/pmatrix.png
 share/apps/kile/icons/hicolor/16x16/actions/prevbullet.png
 share/apps/kile/icons/hicolor/16x16/actions/prevparagraph.png
 share/apps/kile/icons/hicolor/16x16/actions/prevsection.png
 share/apps/kile/icons/hicolor/16x16/actions/projectitem.png
+share/apps/kile/icons/hicolor/16x16/actions/qquad.png
+share/apps/kile/icons/hicolor/16x16/actions/quad.png
 share/apps/kile/icons/hicolor/16x16/actions/refreshstructure.png
 share/apps/kile/icons/hicolor/16x16/actions/relation.png
 share/apps/kile/icons/hicolor/16x16/actions/scriptnew.png
@@ -223,12 +246,14 @@ share/apps/kile/icons/hicolor/16x16/actions/selmath.png
 share/apps/kile/icons/hicolor/16x16/actions/selpar.png
 share/apps/kile/icons/hicolor/16x16/actions/selword.png
 share/apps/kile/icons/hicolor/16x16/actions/smallfrac.png
+share/apps/kile/icons/hicolor/16x16/actions/smallskip.png
 share/apps/kile/icons/hicolor/16x16/actions/smartnewline.png
 share/apps/kile/icons/hicolor/16x16/actions/sqrt.png
 share/apps/kile/icons/hicolor/16x16/actions/structure.png
 share/apps/kile/icons/hicolor/16x16/actions/subsection.png
 share/apps/kile/icons/hicolor/16x16/actions/subsubsection.png
 share/apps/kile/icons/hicolor/16x16/actions/texlion.png
+share/apps/kile/icons/hicolor/16x16/actions/thinspace.png
 share/apps/kile/icons/hicolor/16x16/actions/tilde.png
 share/apps/kile/icons/hicolor/16x16/actions/vec.png
 share/apps/kile/icons/hicolor/16x16/actions/verb.png
@@ -237,10 +262,20 @@ share/apps/kile/icons/hicolor/16x16/actions/viewdvi.png
 share/apps/kile/icons/hicolor/16x16/actions/viewhtml.png
 share/apps/kile/icons/hicolor/16x16/actions/viewpdf.png
 share/apps/kile/icons/hicolor/16x16/actions/viewps.png
+share/apps/kile/icons/hicolor/16x16/actions/vmatrix.png
+share/apps/kile/icons/hicolor/16x16/actions/vspace-star.png
+share/apps/kile/icons/hicolor/16x16/actions/vspace.png
+share/apps/kile/icons/hicolor/22x22/actions/BBmatrix.png
+share/apps/kile/icons/hicolor/22x22/actions/VVmatrix.png
+share/apps/kile/icons/hicolor/22x22/actions/align.png
 share/apps/kile/icons/hicolor/22x22/actions/array.png
 share/apps/kile/icons/hicolor/22x22/actions/bboxnext.png
 share/apps/kile/icons/hicolor/22x22/actions/bboxprev.png
+share/apps/kile/icons/hicolor/22x22/actions/bigskip.png
+share/apps/kile/icons/hicolor/22x22/actions/bigspace.png
 share/apps/kile/icons/hicolor/22x22/actions/binom.png
+share/apps/kile/icons/hicolor/22x22/actions/bmatrix.png
+share/apps/kile/icons/hicolor/22x22/actions/cases.png
 share/apps/kile/icons/hicolor/22x22/actions/cline.png
 share/apps/kile/icons/hicolor/22x22/actions/complete1.png
 share/apps/kile/icons/hicolor/22x22/actions/complete2.png
@@ -253,44 +288,61 @@ share/apps/kile/icons/hicolor/22x22/actions/description.png
 share/apps/kile/icons/hicolor/22x22/actions/dfrac.png
 share/apps/kile/icons/hicolor/22x22/actions/displaymathmode.png
 share/apps/kile/icons/hicolor/22x22/actions/emph.png
+share/apps/kile/icons/hicolor/22x22/actions/enskip.png
 share/apps/kile/icons/hicolor/22x22/actions/enumerate.png
 share/apps/kile/icons/hicolor/22x22/actions/eqnarray.png
 share/apps/kile/icons/hicolor/22x22/actions/equation.png
 share/apps/kile/icons/hicolor/22x22/actions/errornext.png
 share/apps/kile/icons/hicolor/22x22/actions/errorprev.png
 share/apps/kile/icons/hicolor/22x22/actions/filegrep.png
+share/apps/kile/icons/hicolor/22x22/actions/flalign.png
+share/apps/kile/icons/hicolor/22x22/actions/gather.png
 share/apps/kile/icons/hicolor/22x22/actions/hline.png
+share/apps/kile/icons/hicolor/22x22/actions/hspace-star.png
+share/apps/kile/icons/hicolor/22x22/actions/hspace.png
 share/apps/kile/icons/hicolor/22x22/actions/item.png
 share/apps/kile/icons/hicolor/22x22/actions/itemize.png
 share/apps/kile/icons/hicolor/22x22/actions/js.png
 share/apps/kile/icons/hicolor/22x22/actions/jspage.png
 share/apps/kile/icons/hicolor/22x22/actions/label.png
+share/apps/kile/icons/hicolor/22x22/actions/lr.png
 share/apps/kile/icons/hicolor/22x22/actions/master.png
+share/apps/kile/icons/hicolor/22x22/actions/matrix.png
+share/apps/kile/icons/hicolor/22x22/actions/medskip.png
+share/apps/kile/icons/hicolor/22x22/actions/medspace.png
 share/apps/kile/icons/hicolor/22x22/actions/minipage.png
 share/apps/kile/icons/hicolor/22x22/actions/multicolumn.png
+share/apps/kile/icons/hicolor/22x22/actions/multline.png
 share/apps/kile/icons/hicolor/22x22/actions/newline.png
 share/apps/kile/icons/hicolor/22x22/actions/nroot.png
 share/apps/kile/icons/hicolor/22x22/actions/output_win.png
+share/apps/kile/icons/hicolor/22x22/actions/pmatrix.png
 share/apps/kile/icons/hicolor/22x22/actions/preview_env.png
 share/apps/kile/icons/hicolor/22x22/actions/preview_math.png
 share/apps/kile/icons/hicolor/22x22/actions/preview_sel.png
 share/apps/kile/icons/hicolor/22x22/actions/preview_subdoc.png
 share/apps/kile/icons/hicolor/22x22/actions/project_add.png
+share/apps/kile/icons/hicolor/22x22/actions/project_archive.png
+share/apps/kile/icons/hicolor/22x22/actions/project_rebuild.png
 share/apps/kile/icons/hicolor/22x22/actions/project_remove.png
 share/apps/kile/icons/hicolor/22x22/actions/project_show.png
 share/apps/kile/icons/hicolor/22x22/actions/projectgrep.png
+share/apps/kile/icons/hicolor/22x22/actions/qquad.png
+share/apps/kile/icons/hicolor/22x22/actions/quad.png
 share/apps/kile/icons/hicolor/22x22/actions/quick.png
 share/apps/kile/icons/hicolor/22x22/actions/quickwizard.png
 share/apps/kile/icons/hicolor/22x22/actions/refreshstructure.png
 share/apps/kile/icons/hicolor/22x22/actions/scriptnew.png
 share/apps/kile/icons/hicolor/22x22/actions/scriptopen.png
 share/apps/kile/icons/hicolor/22x22/actions/slanted.png
+share/apps/kile/icons/hicolor/22x22/actions/smallskip.png
 share/apps/kile/icons/hicolor/22x22/actions/smartnewline.png
 share/apps/kile/icons/hicolor/22x22/actions/sqrt.png
 share/apps/kile/icons/hicolor/22x22/actions/strong.png
 share/apps/kile/icons/hicolor/22x22/actions/tabbing.png
 share/apps/kile/icons/hicolor/22x22/actions/tabular.png
 share/apps/kile/icons/hicolor/22x22/actions/texlion.png
+share/apps/kile/icons/hicolor/22x22/actions/thinspace.png
 share/apps/kile/icons/hicolor/22x22/actions/typewriter.png
 share/apps/kile/icons/hicolor/22x22/actions/verb.png
 share/apps/kile/icons/hicolor/22x22/actions/verbatim.png
@@ -300,6 +352,9 @@ share/apps/kile/icons/hicolor/22x22/actions/viewlog.png
 share/apps/kile/icons/hicolor/22x22/actions/viewpdf.png
 share/apps/kile/icons/hicolor/22x22/actions/viewps.png
 share/apps/kile/icons/hicolor/22x22/actions/vline.png
+share/apps/kile/icons/hicolor/22x22/actions/vmatrix.png
+share/apps/kile/icons/hicolor/22x22/actions/vspace-star.png
+share/apps/kile/icons/hicolor/22x22/actions/vspace.png
 share/apps/kile/icons/hicolor/22x22/actions/warnnext.png
 share/apps/kile/icons/hicolor/22x22/actions/warnprev.png
 share/apps/kile/icons/hicolor/22x22/actions/watchfile.png
@@ -341,6 +396,8 @@ share/apps/kile/icons/hicolor/48x48/actions/sqrt.png
 share/apps/kile/icons/hicolor/64x64/actions/nroot.png
 share/apps/kile/icons/hicolor/64x64/actions/preview.png
 share/apps/kile/icons/hicolor/64x64/actions/sqrt.png
+share/apps/kile/icons/oxygen/16x16/actions/modified.png
+share/apps/kile/icons/oxygen/16x16/actions/modonhd.png
 share/apps/kile/kilestdtools.rc
 share/apps/kile/kileui.rc
 share/apps/kile/mathsymbols/arrows/img001arrows.png
@@ -1391,10 +1448,13 @@ share/doc/HTML/en/kile/dialog-docbrowser1.png
 share/doc/HTML/en/kile/dialog-docbrowser2.png
 share/doc/HTML/en/kile/dialog-pstools.png
 share/doc/HTML/en/kile/dialog-tabular.png
+share/doc/HTML/en/kile/dialog-userhelp.png
 share/doc/HTML/en/kile/environment.png
 share/doc/HTML/en/kile/includegraphics.png
 share/doc/HTML/en/kile/index.cache.bz2
+share/doc/HTML/en/kile/index.docbook
 share/doc/HTML/en/kile/latex_example.png
+share/doc/HTML/en/kile/menu-userhelp.png
 share/doc/HTML/en/kile/psutils1.png
 share/doc/HTML/en/kile/psutils15.png
 share/doc/HTML/en/kile/psutils16.png
@@ -1419,6 +1479,9 @@ share/doc/HTML/en/kile/snap_ref_select.png
 share/doc/HTML/en/kile/snap_sidebarmenu.png
 share/doc/HTML/en/kile/snap_structview_label.png
 share/doc/HTML/en/kile/snap_usertag.png
+share/doc/HTML/en/kile/structureview-context1.png
+share/doc/HTML/en/kile/structureview-context2.png
+share/doc/HTML/en/kile/structureview.png
 share/doc/HTML/en/kile/texgroup.png
 share/doc/kile/AUTHORS
 share/doc/kile/ChangeLog
@@ -1451,6 +1514,9 @@ share/mimelink/text/x-kilepr.desktop
 @dirrm share/apps/kile/mathsymbols/cyrillic
 @dirrm share/apps/kile/mathsymbols/arrows
 @dirrm share/apps/kile/mathsymbols
+@dirrm share/apps/kile/icons/oxygen/16x16/actions
+@dirrm share/apps/kile/icons/oxygen/16x16
+@dirrm share/apps/kile/icons/oxygen
 @dirrm share/apps/kile/icons/hicolor/64x64/actions
 @dirrm share/apps/kile/icons/hicolor/64x64
 @dirrm share/apps/kile/icons/hicolor/48x48/actions

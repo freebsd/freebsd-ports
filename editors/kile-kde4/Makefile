@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kile
-DISTVERSION=	2.1b3
-PORTREVISION=	2
+DISTVERSION=	2.1b4
 CATEGORIES=	editors kde
 MASTER_SITES=	SF/${PORTNAME}/unstable/${PORTNAME}-${DISTVERSION}
 
@@ -26,7 +25,7 @@ MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-OPTIONS=	OKULAR "Use Okular for viewing" on
+OPTIONS=	OKULAR "Use Okular for viewing" off
 
 .include <bsd.port.options.mk>
 
