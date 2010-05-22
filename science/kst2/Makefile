@@ -24,8 +24,9 @@ USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	NETCDF "Enable netcdf file support" off \
-		CDF "Enable cdf file support" off
+OPTIONS=	NETCDF "Enable netcdf data support" off \
+		CDF "Enable cdf data support" off \
+		KDEBASE "Enable JavaScript console" off
 
 MAN1=		kst.1
 
@@ -46,6 +47,10 @@ PLIST_SUB+=	CDF=""
 .else
 CONFIGURE_ARGS+=	--without-cdf
 PLIST_SUB+=	CDF="@comment "
+.endif
+
+.if defined(WITH_KDEBASE)
+RUN_DEPENDS+=	${KDE_PREFIX}/lib/kde3/libkonsolepart.so:${PORTSDIR}/x11/kdebase3
 .endif
 
 pre-configure:
