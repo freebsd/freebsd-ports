@@ -10,7 +10,7 @@ PORTVERSION=	0.98.0
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/39697819/
 
-MAINTAINER=	hsn@sendmail.cz
+MAINTAINER=	c-s@c-s.li
 COMMENT=	GTK interface to Bazaar-NG VCS
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
