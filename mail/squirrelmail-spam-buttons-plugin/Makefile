@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spam-buttons
-PORTVERSION=	2.2
+PORTVERSION=	2.3.1
 DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.4.0
 DIST_SUBDIR=	squirrelmail
 
@@ -21,5 +21,14 @@ SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"
+
+post-extract:
+	@${MV} ${WRKSRC}/${_SMSRCDIR}/config_example.php ${WRKSRC}/${_SMSRCDIR}/config.sample.php
+	@${RM} ${WRKSRC}/${_SMSRCDIR}/README
+.ifdef NOPORTDOCS
+	@${RM} -R ${WRKSRC}/${_SMSRCDIR}/docs
+.else
+	@${MV} ${WRKSRC}/${_SMSRCDIR}/docs ${WRKSRC}/${_SMSRCDIR}/doc
+.endif
 
 .include <bsd.port.post.mk>

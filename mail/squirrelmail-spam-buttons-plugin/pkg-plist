@@ -1,7 +1,4 @@
 @unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
-%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/COPYING
-%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/INSTALL
-%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/README
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/bounce_identity.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/bounce_send.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/buttons.php
@@ -11,14 +8,22 @@
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/compose_functions-1.5.2.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/config.sample.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/configtest.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib/index.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib/.htaccess
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib/confirm_action.diff
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib/sa-postfix-en.html
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib/sa-wrapper.html
+%%PORTDOCS%%%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/doc/.htaccess
+%%PORTDOCS%%%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/doc/index.php
+%%PORTDOCS%%%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/doc/INSTALL
+%%PORTDOCS%%%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/doc/COPYING
+%%PORTDOCS%%%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/doc/README
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/functions.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/getpot
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/index.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/make_release.sh
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/options.php
+%%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches/.htaccess
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches/index.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches/spam_buttons-squirrelmail-1.4.10.diff
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches/spam_buttons-squirrelmail-1.4.3.diff
@@ -35,6 +40,7 @@
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/index.php
 %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/version
 @dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/contrib
+%%PORTDOCS%%@dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/doc
 @dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/patches
 @dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates/default
 @dirrm %%SQUIRRELDIR%%/plugins/%%SQUIRREL_PLUGIN_NAME%%/templates
