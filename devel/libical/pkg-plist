@@ -47,14 +47,14 @@ include/libical/vobject.h
 lib/libical.a
 lib/libical.la
 lib/libical.so
-lib/libical.so.43
+lib/libical.so.44
 lib/libicalss.a
 lib/libicalss.la
 lib/libicalss.so
-lib/libicalss.so.43
+lib/libicalss.so.44
 lib/libicalvcal.a
 lib/libicalvcal.la
 lib/libicalvcal.so
-lib/libicalvcal.so.43
+lib/libicalvcal.so.44
 libdata/pkgconfig/libical.pc
 @dirrm include/libical
