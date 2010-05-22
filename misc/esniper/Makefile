@@ -10,7 +10,7 @@ CATEGORIES=	misc net
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lewiz@compsoc.man.ac.uk
+MAINTAINER=	ag-freebsd@muc.de
 COMMENT=	A lightweight console application for sniping ebay auctions
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
