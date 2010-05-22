@@ -54,7 +54,7 @@ OPTIONS=	ICAL	"Build with IETF iCal support"		off \
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libical.so) || defined(WITH_ICAL)
-LIB_DEPENDS+=	ical.43:${PORTSDIR}/devel/libical
+LIB_DEPENDS+=	ical.44:${PORTSDIR}/devel/libical
 .endif
 
 .if ${OSVERSION} < 800069

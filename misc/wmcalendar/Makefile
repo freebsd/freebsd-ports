@@ -7,14 +7,14 @@
 
 PORTNAME=	wmcalendar
 PORTVERSION=	0.5.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	SF
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A dockable calendar with interface to iCalendar based calendars
 
-LIB_DEPENDS=	ical.43:${PORTSDIR}/devel/libical
+LIB_DEPENDS=	ical.44:${PORTSDIR}/devel/libical
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 

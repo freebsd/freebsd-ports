@@ -7,7 +7,7 @@
 
 PORTNAME=	kmymoney
 PORTVERSION=	3.97.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/${PORTVERSION}
 
@@ -36,7 +36,7 @@ OPTIONS=	CALENDAR "Enable Calendar plugin" on \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_CALENDAR)
-LIB_DEPENDS+=	ical.43:${PORTSDIR}/devel/libical
+LIB_DEPENDS+=	ical.44:${PORTSDIR}/devel/libical
 CMAKE_ARGS+=	-DENABLE_LIBICAL:BOOL=ON
 PLIST_SUB+=	WITH_CALENDAR=""
 .else
