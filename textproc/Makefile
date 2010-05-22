@@ -226,6 +226,7 @@
     SUBDIR += hs-highlighting-kate-ghc
     SUBDIR += hs-hs-bibutils
     SUBDIR += hs-hxt
+    SUBDIR += hs-libxml
     SUBDIR += hs-polyparse-ghc
     SUBDIR += hs-stringsearch
     SUBDIR += hs-tagsoup
