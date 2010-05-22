@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	finch
-PORTREVISION=	1
+PORTREVISION=	0
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Finch multi-protocol messaging client (Console UI)
 
-LIB_DEPENDS=	purple.6:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.7:${PORTSDIR}/net-im/libpurple
 
 MASTERDIR=	${.CURDIR}/../libpurple
 BUILD_WRKSRC=	${WRKSRC}/finch

@@ -7,13 +7,14 @@
 
 PORTNAME=	pidgin-birthday-reminder
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	SF/pidgin-birthday/pidgin-birthday/${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	The birthday reminder for Pidgin
 
-LIB_DEPENDS=	purple.6:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.7:${PORTSDIR}/net-im/libpurple
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	libnotify
 PORTVERSION=	0.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	SF/gaim-${PORTNAME}/pidgin-${PORTNAME}/pidgin-${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	pidgin-
@@ -19,7 +19,7 @@ COMMENT=	This plugin adds a libnotify interface to Pidgin
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:${PORTSDIR}/net-im/pidgin \
     		${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/devel/libnotify
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
-		purple.6:${PORTSDIR}/net-im/libpurple
+		purple.7:${PORTSDIR}/net-im/libpurple
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
