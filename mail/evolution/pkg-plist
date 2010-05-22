@@ -841,6 +841,9 @@ share/doc/eshell/up.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/apps/contact-editor.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/status/offline.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/status/online.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_alarm.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_mail-flag-for-followup-done.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_mail-flag-for-followup.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_new-24h-appointment.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_new-meeting.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_notes.png
