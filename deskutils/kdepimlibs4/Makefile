@@ -6,6 +6,7 @@
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,7 +18,7 @@ COMMENT=	Libraries for KDE-PIM applications
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		boost_python:${PORTSDIR}/devel/boost-python-libs \
-		ical.43:${PORTSDIR}/devel/libical
+		ical.44:${PORTSDIR}/devel/libical
 
 CONFLICTS=	kdepim-runtime-4.3.[1-4]
 

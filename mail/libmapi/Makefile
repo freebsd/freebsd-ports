@@ -7,7 +7,7 @@
 
 PORTNAME=	libmapi
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=openchange/openchange/openchange-${PORTVERSION}%20${CODENAME}/
@@ -19,7 +19,7 @@ COMMENT=	Open Source implementation of Microsoft Exchange protocols
 BUILD_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4-devel \
 		pidl:${PORTSDIR}/devel/p5-Parse-Pidl
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		ical.43:${PORTSDIR}/devel/libical \
+		ical.44:${PORTSDIR}/devel/libical \
 		tdb.1:${PORTSDIR}/databases/tdb \
 		talloc.2:${PORTSDIR}/devel/talloc
 RUN_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4-devel

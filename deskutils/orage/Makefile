@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=--with-bdb4=no
 .endif
 
 .if defined(WITH_ICAL)
-LIB_DEPENDS+=	ical.43:${PORTSDIR}/devel/libical
+LIB_DEPENDS+=	ical.44:${PORTSDIR}/devel/libical
 .endif
 
 post-patch:
