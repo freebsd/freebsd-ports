@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	papyon
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
