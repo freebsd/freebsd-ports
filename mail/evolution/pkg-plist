@@ -778,6 +778,17 @@ share/doc/eshell/up.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/places/mail-inbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/places/mail-outbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/places/mail-sent.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_check-filled.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_score-high.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_score-higher.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_score-highest.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_score-low.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_score-lower.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_score-lowest.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_score-normal.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_signature-bad.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_signature-ok.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/stock_signature.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/status/wrapped.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/actions/go-today.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/actions/view-calendar-day.png
@@ -794,6 +805,16 @@ share/doc/eshell/up.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_new-meeting.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_notes.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_people.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_shared-by-me.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_shared-to-me.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_show-all.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_task-assigned-to.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_task-assigned.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_task-recurring.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_task.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_timezone.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_todo.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_video-conferencing.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/apps/contact-editor.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/places/mail-inbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/places/mail-outbox.png
@@ -809,6 +830,9 @@ share/doc/eshell/up.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/places/mail-inbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/places/mail-outbox.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/places/mail-sent.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/status/stock_signature-bad.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/status/stock_signature-ok.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/status/stock_signature.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/actions/view-calendar-day.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/actions/view-calendar-list.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/actions/view-calendar-month.png
@@ -817,6 +841,12 @@ share/doc/eshell/up.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/apps/contact-editor.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/status/offline.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/status/online.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_new-24h-appointment.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_new-meeting.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_notes.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_people.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_timezone.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions/stock_todo.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/apps/contact-editor.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-autocompletion.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-calendar-and-tasks.png
@@ -825,6 +855,9 @@ share/doc/eshell/up.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-mail-accounts.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-mail.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories/preferences-system-network-proxy.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/status/stock_signature-bad.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/status/stock_signature-ok.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/status/stock_signature.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions/view-calendar-day.svg
 %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions/view-calendar-list.svg
 %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions/view-calendar-month.svg
@@ -1870,13 +1903,15 @@ share/omf/evolution/evolution-sv.omf
 @dirrm %%DATADIR%%/%%VERSION%%/images
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories
+@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/status
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/apps
+@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/status
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/apps
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32/actions
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/32x32
+@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/status
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/places
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/apps
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions
