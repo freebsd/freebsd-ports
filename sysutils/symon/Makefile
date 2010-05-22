@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	symon
-PORTVERSION=	2.79
-PORTREVISION=	2
+PORTVERSION=	2.80
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
 
-MAINTAINER=	uqs@spoerlein.net
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Performance and information monitoring tool
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -53,9 +52,12 @@ SUBDIR+=	client
 
 MAKE_ARGS+=	SUBDIR="${SUBDIR}" RRDDIR="${LOCALBASE}"
 
-# Symux doesn't need additional LIBS.
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
 post-patch:
-	@${REINPLACE_CMD} 's/^LIBS+=/LIBS=/' ${WRKSRC}/symux/Makefile
+	@${REINPLACE_CMD} 's/^LIBS+=/LIBS= -pthread /' ${WRKSRC}/symux/Makefile
+.endif
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
@@ -63,4 +65,4 @@ pre-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
