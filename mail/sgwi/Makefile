@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sgwi
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.vanheusden.com/sgwi/
 DISTNAME=	sqlgreywebinterface-${PORTVERSION}
