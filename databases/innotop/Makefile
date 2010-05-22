@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	innotop
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.2
 CATEGORIES=	databases
-MASTER_SITES=	SF
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	A MySQL and InnoDB monitoring program
@@ -20,6 +20,5 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term
 PERL_CONFIGURE=	yes
 
 MAN1=		innotop.1
-MAN3=		InnoDBParser.3
 
 .include <bsd.port.mk>
