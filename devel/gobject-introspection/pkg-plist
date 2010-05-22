@@ -18,6 +18,7 @@ lib/girepository-1.0/libxml2-2.0.typelib
 lib/girepository-1.0/xfixes-4.0.typelib
 lib/girepository-1.0/xft-2.0.typelib
 lib/girepository-1.0/xlib-2.0.typelib
+lib/girepository-1.0/xrandr-1.3.typelib
 lib/gobject-introspection/giscanner/__init__.py
 lib/gobject-introspection/giscanner/__init__.pyc
 lib/gobject-introspection/giscanner/__init__.pyo
@@ -108,6 +109,7 @@ share/gir-1.0/libxml2-2.0.gir
 share/gir-1.0/xfixes-4.0.gir
 share/gir-1.0/xft-2.0.gir
 share/gir-1.0/xlib-2.0.gir
+share/gir-1.0/xrandr-1.3.gir
 share/gobject-introspection-1.0/Makefile.introspection
 @dirrm share/gobject-introspection-1.0
 @dirrm include/gobject-introspection-1.0
