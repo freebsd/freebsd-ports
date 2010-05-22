@@ -3,6 +3,7 @@
 %%MAYBE_EXECUTABLE%%bin/pandoc
 %%MAYBE_LIBRARY%%%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Paths_pandoc.hi
 %%MAYBE_LIBRARY%%%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc.hi
+%%MAYBE_LIBRARY%%%%MAYBE_CITEPROC%%%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Biblio.hi
 %%MAYBE_LIBRARY%%%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Blocks.hi
 %%MAYBE_LIBRARY%%%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/CharacterReferences.hi
 %%MAYBE_LIBRARY%%%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Pandoc/Definition.hi

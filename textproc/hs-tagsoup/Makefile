@@ -20,6 +20,7 @@ INSTALL_PORTDATA=	cd ${WRKSRC} && \
 
 OPTIONS=	TESTPROG "Build the test program" on
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_TESTPROG)

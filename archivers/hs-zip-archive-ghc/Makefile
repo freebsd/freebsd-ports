@@ -17,6 +17,7 @@ USE_HACKAGE=	binary digest>=0.0.0.1 utf8-string>=0.3.1 zlib
 
 OPTIONS=	EXECUTABLE "Build the Zip executable" off
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_EXECUTABLE)

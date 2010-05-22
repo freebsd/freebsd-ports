@@ -16,6 +16,7 @@ USE_HACKAGE=	ansi-terminal>=0.4.0
 
 OPTIONS=	EXAMPLE "Build the example application" off
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_EXAMPLE)

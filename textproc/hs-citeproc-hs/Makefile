@@ -18,6 +18,7 @@ PORTDATA=	*
 
 OPTIONS=	BIBUTILS "Use Chris Putnam's Bibutils" off
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_BIBUTILS)

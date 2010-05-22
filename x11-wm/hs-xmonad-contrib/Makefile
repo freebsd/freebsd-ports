@@ -19,7 +19,8 @@ USE_XORG=	x11
 
 OPTIONS=	XFT "Enable Xft support for fonts" On
 
-.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+.include <bsd.port.options.mk>
 
 .if defined(WITH_XFT)
 CONFIGURE_ARGS+=	--flags="use_xft"
@@ -27,4 +28,4 @@ USE_HACKAGE+=		X11-xft>=0.2
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

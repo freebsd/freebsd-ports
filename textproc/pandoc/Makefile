@@ -26,6 +26,7 @@ OPTIONS=	HIGHLIGHTING "Compile in support for syntax highlighting" off \
 		LIBRARY      "Build the pandoc library" on \
 		CITEPROC     "Compile in support for citeproc-hs" off
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_HIGHLIGHTING)
@@ -74,8 +75,10 @@ IGNORE=		cannot be compiled in this configuration.  Please (re)run 'make config'
 .if defined(WITH_CITEPROC)
 CONFIGURE_ARGS+=	--flags="citeproc"
 USE_HACKAGE+=		citeproc-hs
+PLIST_SUB+=		MAYBE_CITEPROC=""
 .else
 CONFIGURE_ARGS+=	--flags="-citeproc"
+PLIST_SUB+=		MAYBE_CITEPROC="@comment "
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
