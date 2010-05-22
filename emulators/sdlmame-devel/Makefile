@@ -29,6 +29,8 @@ SUB_FILES=	pkg-message
 
 OPTIONS=	DEBUG "Build sdlmame debugger" off
 
+IGNORE=		outdated, use emulators/mame
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_DEBUG)
