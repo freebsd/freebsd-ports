@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ohai
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gemcutter.org/gems/
 
