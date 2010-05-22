@@ -1,0 +1,17 @@
+bin/mpc2sv8
+bin/mpccut
+bin/mpcdec
+bin/mpcenc
+bin/wavcmp
+include/mpc/datatypes.h
+include/mpc/minimax.h
+include/mpc/mpc_types.h
+include/mpc/mpcdec.h
+include/mpc/mpcmath.h
+include/mpc/reader.h
+include/mpc/streaminfo.h
+lib/libmpcdec.a
+lib/libmpcdec.la
+lib/libmpcdec.so
+lib/libmpcdec.so.7
+@dirrm include/mpc
