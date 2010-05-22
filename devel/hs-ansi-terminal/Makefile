@@ -14,6 +14,7 @@ COMMENT=	Simple ANSI terminal support, with Windows compatibility
 
 OPTIONS=	EXAMPLE "Build the example application" off
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_EXAMPLE)

@@ -19,10 +19,12 @@ USE_HACKAGE=	binary
 OPTIONS=	TEST "Build the SHA test suite" off \
 		EXE  "Build a SHA2-384 executable similar to 'md5sum'" off
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_TEST)
 CONFIGURE_ARGS+=	--flags="Test"
+USE_HACKAGE+=		QuickCheck>=2.0.0.0
 EXECUTABLE+=		test_sha
 PLIST_SUB+=		MAYBE_TEST=""
 .else

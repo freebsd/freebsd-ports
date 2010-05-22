@@ -18,10 +18,12 @@ USE_HACKAGE=	binary dataenc mmap>=0.5 zlib
 
 OPTIONS=	TEST "Build tests" off
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_TEST)
 CONFIGURE_ARGS+=	--flags="test"
+USE_HACKAGE+=		test-framework test-framework-hunit test-framework-quickcheck2 QuickCheck>=2.0.0.0 zip-archive
 EXECUTABLE+=		hashed-storage-test
 PLIST_SUB+=		MAYBE_TEST=""
 .else

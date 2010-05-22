@@ -31,6 +31,7 @@ OPTIONS=	CURL            "Use libcurl for HTTP support" on \
 		MMAP            "Compile with mmap support" off \
 		TEST            "Compile unit tests" off
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_CURL)

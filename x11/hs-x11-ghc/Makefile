@@ -21,14 +21,15 @@ DISTNAME=	X11-${PORTVERSION}
 
 OPTIONS=	XINERAMA "Build with Xinerama support" off
 
-.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+.include <bsd.port.options.mk>
 
 .if defined(WITH_XINERAMA)
 USE_XORG+=		xinerama
-CONFIGURE_ARGS+=	--configure-option=--with-xinerama
+CONFIGURE_ARGS+=	--configure-option="--with-xinerama"
 .else
-CONFIGURE_ARGS+=	--configure-option=--without-xinerama
+CONFIGURE_ARGS+=	--configure-option="--without-xinerama"
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

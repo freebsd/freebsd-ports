@@ -17,11 +17,12 @@ USE_HACKAGE=	pcre-light
 
 OPTIONS=	EXECUTABLE "Build the Highlight executable" off
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_EXECUTABLE)
 CONFIGURE_ARGS+=	--flags="executable"
-EXECUTABLE+=		Highlighting
+EXECUTABLE+=		Highlight
 PLIST_SUB+=		MAYBE_EXECUTABLE=""
 .else
 CONFIGURE_ARGS+=	--flags="-executable"
