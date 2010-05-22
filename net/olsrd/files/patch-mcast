@@ -1,0 +1,29 @@
+--- src/bsd/net.c.orig	2010-01-13 16:49:47.000000000 +0000
++++ src/bsd/net.c	2010-02-10 10:55:16.582716012 +0000
+@@ -494,6 +494,8 @@
+   mcastreq.ipv6mr_multiaddr = ifs->int6_multaddr.sin6_addr;
+   mcastreq.ipv6mr_interface = ifs->if_index;
+ 
++if (ifs->olsr_socket == sock) {
++
+   OLSR_PRINTF(3, "Interface %s joining multicast %s...", ifs->int_name,
+               olsr_ip_to_string(&addrstr, (union olsr_ip_addr *)&ifs->int6_multaddr.sin6_addr));
+ 
+@@ -509,6 +511,7 @@
+     perror("Join multicast send");
+     return -1;
+   }
++}
+ 
+   if (setsockopt(sock, IPPROTO_IPV6, IPV6_MULTICAST_IF, (char *)&mcastreq.ipv6mr_interface, sizeof(mcastreq.ipv6mr_interface)) < 0) {
+     perror("Set multicast if");
+--- src/unix/ifnet.c.orig	2010-01-17 17:32:53.000000000 +0000
++++ src/unix/ifnet.c	2010-02-10 10:55:54.958215804 +0000
+@@ -840,6 +840,7 @@
+     ifp->send_socket = getsocket6(0, ifp);
+ 
+     join_mcast(ifp, ifp->olsr_socket);
++    join_mcast(ifp, ifp->send_socket);
+ 
+     if (ifp->olsr_socket < 0) {
+       fprintf(stderr, "Could not initialize socket... exiting!\n\n");

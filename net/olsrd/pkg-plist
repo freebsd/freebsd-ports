@@ -1,9 +1,10 @@
 sbin/olsrd
-etc/olsrd.conf.rfc
-etc/olsrd.conf.lq
-etc/olsrd.conf.lq-fisheye
+etc/olsrd.conf.default.full
+etc/olsrd.conf.default.rfc
+etc/olsrd.conf.default.lq
+etc/olsrd.conf.default.lq-fisheye
 lib/olsrd_dot_draw.so.0.3
-lib/olsrd_dyn_gw.so.0.4
+lib/olsrd_dyn_gw.so.0.5
 lib/olsrd_dyn_gw_plain.so.0.4
 lib/olsrd_httpinfo.so.0.1
 lib/olsrd_mini.so.0.1
