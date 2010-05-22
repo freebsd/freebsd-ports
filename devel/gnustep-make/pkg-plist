@@ -40,7 +40,6 @@ System/Library/Makefiles/Instance/test-application.make
 System/Library/Makefiles/Instance/test-library.make
 System/Library/Makefiles/Instance/test-tool.make
 System/Library/Makefiles/Instance/tool.make
-System/Library/Makefiles/Master/aggregate.make
 System/Library/Makefiles/Master/application.make
 System/Library/Makefiles/Master/bundle.make
 System/Library/Makefiles/Master/clibrary.make
@@ -55,9 +54,11 @@ System/Library/Makefiles/Master/library.make
 System/Library/Makefiles/Master/nsis.make
 System/Library/Makefiles/Master/objc.make
 System/Library/Makefiles/Master/palette.make
+System/Library/Makefiles/Master/parallel-subdirectories.make
 System/Library/Makefiles/Master/resource-set.make
 System/Library/Makefiles/Master/rpm.make
 System/Library/Makefiles/Master/rules.make
+System/Library/Makefiles/Master/serial-subdirectories.make
 System/Library/Makefiles/Master/service.make
 System/Library/Makefiles/Master/source-distribution.make
 System/Library/Makefiles/Master/subproject.make
@@ -106,10 +107,12 @@ System/Library/Makefiles/nsi-app.template
 System/Library/Makefiles/objc.make
 System/Library/Makefiles/os.sh
 System/Library/Makefiles/palette.make
+System/Library/Makefiles/parallel-subdirectories.make
 System/Library/Makefiles/print_unique_pathlist.sh
 System/Library/Makefiles/relative_path.sh
 System/Library/Makefiles/resource-set.make
 System/Library/Makefiles/rules.make
+System/Library/Makefiles/serial-subdirectories.make
 System/Library/Makefiles/service.make
 System/Library/Makefiles/spec-rules.template
 System/Library/Makefiles/strip_makefiles.sh
