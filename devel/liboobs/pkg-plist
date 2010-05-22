@@ -38,7 +38,6 @@ libdata/pkgconfig/liboobs-1.pc
 %%DOCSDIR%%/OobsGroup.html
 %%DOCSDIR%%/OobsGroupsConfig.html
 %%DOCSDIR%%/OobsHostsConfig.html
-%%DOCSDIR%%/OobsIface.html
 %%DOCSDIR%%/OobsIfaceEthernet.html
 %%DOCSDIR%%/OobsIfaceIRLan.html
 %%DOCSDIR%%/OobsIfacePPP.html
@@ -73,6 +72,7 @@ libdata/pkgconfig/liboobs-1.pc
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
 %%DOCSDIR%%/left.png
+%%DOCSDIR%%/liboobs-Oobs.html
 %%DOCSDIR%%/liboobs-OobsError.html
 %%DOCSDIR%%/liboobs.devhelp
 %%DOCSDIR%%/liboobs.devhelp2
