@@ -30,4 +30,7 @@ USE_GNUSTEP_MAKE_DIRS+=	Frameworks/LuceneKit
 
 OGREKIT_PORT?=	textproc/etoile-ogrekit
 
+post-configure:
+	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make
+
 .include <bsd.port.mk>
