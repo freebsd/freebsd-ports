@@ -166,6 +166,7 @@ share/locale/az/LC_MESSAGES/pidgin.mo
 share/locale/be@latin/LC_MESSAGES/pidgin.mo
 share/locale/bg/LC_MESSAGES/pidgin.mo
 share/locale/bn/LC_MESSAGES/pidgin.mo
+share/locale/bn_IN/LC_MESSAGES/pidgin.mo
 share/locale/bs/LC_MESSAGES/pidgin.mo
 share/locale/ca/LC_MESSAGES/pidgin.mo
 share/locale/ca@valencia/LC_MESSAGES/pidgin.mo
@@ -302,6 +303,8 @@ share/sounds/purple/send.wav
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
 @dirrm lib/purple-2
