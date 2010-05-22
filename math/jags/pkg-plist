@@ -74,20 +74,20 @@ include/JAGS/util/integer.h
 include/JAGS/util/logical.h
 include/JAGS/util/nainf.h
 include/JAGS/version.h
-lib/JAGS/modules-2.0.0/basemod.la
-lib/JAGS/modules-2.0.0/basemod.so
-lib/JAGS/modules-2.0.0/bugs.la
-lib/JAGS/modules-2.0.0/bugs.so
-lib/JAGS/modules-2.0.0/dic.la
-lib/JAGS/modules-2.0.0/dic.so
-lib/JAGS/modules-2.0.0/glm.la
-lib/JAGS/modules-2.0.0/glm.so
-lib/JAGS/modules-2.0.0/lecuyer.la
-lib/JAGS/modules-2.0.0/lecuyer.so
-lib/JAGS/modules-2.0.0/mix.la
-lib/JAGS/modules-2.0.0/mix.so
-lib/JAGS/modules-2.0.0/msm.la
-lib/JAGS/modules-2.0.0/msm.so
+lib/JAGS/modules-%%PORTVERSION%%/basemod.la
+lib/JAGS/modules-%%PORTVERSION%%/basemod.so
+lib/JAGS/modules-%%PORTVERSION%%/bugs.la
+lib/JAGS/modules-%%PORTVERSION%%/bugs.so
+lib/JAGS/modules-%%PORTVERSION%%/dic.la
+lib/JAGS/modules-%%PORTVERSION%%/dic.so
+lib/JAGS/modules-%%PORTVERSION%%/glm.la
+lib/JAGS/modules-%%PORTVERSION%%/glm.so
+lib/JAGS/modules-%%PORTVERSION%%/lecuyer.la
+lib/JAGS/modules-%%PORTVERSION%%/lecuyer.so
+lib/JAGS/modules-%%PORTVERSION%%/mix.la
+lib/JAGS/modules-%%PORTVERSION%%/mix.so
+lib/JAGS/modules-%%PORTVERSION%%/msm.la
+lib/JAGS/modules-%%PORTVERSION%%/msm.so
 lib/libjags.la
 lib/libjags.so
 lib/libjags.so.2
@@ -328,6 +328,7 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/cervix/cervix-data.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/cervix/cervix-inits.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/cervix/cervix.bug
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/cervix/test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/cervix/test1.cmd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/dugongs/bench-test1.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vol2/dugongs/dugongs-data.R
@@ -456,7 +457,7 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/R
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/JAGS/modules-2.0.0
+@dirrm lib/JAGS/modules-%%PORTVERSION%%
 @dirrm lib/JAGS
 @dirrm include/JAGS/util
 @dirrm include/JAGS/sarray
