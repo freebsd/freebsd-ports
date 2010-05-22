@@ -32,6 +32,10 @@ include/libpurple/idle.h
 include/libpurple/imgstore.h
 include/libpurple/log.h
 include/libpurple/marshallers.h
+include/libpurple/media/backend-iface.h
+include/libpurple/media/candidate.h
+include/libpurple/media/codec.h
+include/libpurple/media/enum-types.h
 include/libpurple/media-gst.h
 include/libpurple/media.h
 include/libpurple/mediamanager.h
@@ -149,10 +153,10 @@ lib/purple-2/statenotify.so
 %%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/Purple.pm
 %%DBUS%%lib/libpurple-client.la
 %%DBUS%%lib/libpurple-client.so
-%%DBUS%%lib/libpurple-client.so.6
+%%DBUS%%lib/libpurple-client.so.7
 lib/libpurple.la
 lib/libpurple.so
-lib/libpurple.so.6
+lib/libpurple.so.7
 libdata/pkgconfig/purple.pc
 share/aclocal/purple.m4
 share/locale/af/LC_MESSAGES/pidgin.mo
@@ -301,4 +305,5 @@ share/sounds/purple/send.wav
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
 @dirrm lib/purple-2
+@dirrm include/libpurple/media
 @dirrm include/libpurple

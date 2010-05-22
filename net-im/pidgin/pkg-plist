@@ -1,16 +1,9 @@
 bin/pidgin
-include/pidgin/eggtrayicon.h
-include/pidgin/pidgincombobox.h
-include/pidgin/pidginstock.h
 include/pidgin/gtkaccount.h
 include/pidgin/gtkblist-theme-loader.h
 include/pidgin/gtkblist-theme.h
 include/pidgin/gtkblist.h
-include/pidgin/gtkcelllayout.h
 include/pidgin/gtkcellrendererexpander.h
-include/pidgin/gtkcellrendererprogress.h
-include/pidgin/gtkcellview.h
-include/pidgin/gtkcellviewmenuitem.h
 include/pidgin/gtkcertmgr.h
 include/pidgin/gtkconn.h
 include/pidgin/gtkconv.h
@@ -20,7 +13,6 @@ include/pidgin/gtkdialogs.h
 include/pidgin/gtkdnd-hints.h
 include/pidgin/gtkdocklet.h
 include/pidgin/gtkeventloop.h
-include/pidgin/gtkexpander.h
 include/pidgin/gtkft.h
 include/pidgin/gtkgaim-compat.h
 include/pidgin/gtkicon-theme-loader.h
@@ -55,6 +47,7 @@ include/pidgin/gtkutils.h
 include/pidgin/gtkwhiteboard.h
 include/pidgin/minidialog.h
 include/pidgin/pidgin.h
+include/pidgin/pidginstock.h
 include/pidgin/pidgintooltip.h
 %%CAP%%lib/pidgin/cap.la
 %%CAP%%lib/pidgin/cap.so
@@ -62,8 +55,6 @@ lib/pidgin/convcolors.la
 lib/pidgin/convcolors.so
 lib/pidgin/extplacement.la
 lib/pidgin/extplacement.so
-lib/pidgin/pidginrc.la
-lib/pidgin/pidginrc.so
 lib/pidgin/gestures.la
 lib/pidgin/gestures.so
 %%EVO%%lib/pidgin/gevolution.la
@@ -80,6 +71,8 @@ lib/pidgin/markerline.so
 %%DBUS%%lib/pidgin/musicmessaging.so
 lib/pidgin/notify.la
 lib/pidgin/notify.so
+lib/pidgin/pidginrc.la
+lib/pidgin/pidginrc.so
 lib/pidgin/relnot.la
 lib/pidgin/relnot.so
 lib/pidgin/sendbutton.la
@@ -101,7 +94,12 @@ lib/pidgin/xmppconsole.so
 lib/pidgin/xmppdisco.la
 lib/pidgin/xmppdisco.so
 libdata/pkgconfig/pidgin.pc
-share/applications/pidgin.desktop
+%%NLS%%share/applications/pidgin.desktop
+share/icons/hicolor/16x16/apps/pidgin.png
+share/icons/hicolor/22x22/apps/pidgin.png
+share/icons/hicolor/24x24/apps/pidgin.png
+share/icons/hicolor/32x32/apps/pidgin.png
+share/icons/hicolor/48x48/apps/pidgin.png
 share/icons/hicolor/scalable/apps/pidgin.svg
 share/pixmaps/pidgin/animations/16/connect0.png
 share/pixmaps/pidgin/animations/16/connect1.png
@@ -189,8 +187,6 @@ share/pixmaps/pidgin/emblems/16/game.png
 share/pixmaps/pidgin/emblems/16/half-operator.png
 share/pixmaps/pidgin/emblems/16/hiptop.png
 share/pixmaps/pidgin/emblems/16/male.png
-share/pixmaps/pidgin/emblems/16/mobile.png
-share/pixmaps/pidgin/emblems/16/music.png
 share/pixmaps/pidgin/emblems/16/not-authorized.png
 share/pixmaps/pidgin/emblems/16/operator.png
 share/pixmaps/pidgin/emblems/16/qq-member.png
@@ -206,8 +202,6 @@ share/pixmaps/pidgin/emblems/scalable/female.svg
 share/pixmaps/pidgin/emblems/scalable/free-for-chat.svg
 share/pixmaps/pidgin/emblems/scalable/game.svg
 share/pixmaps/pidgin/emblems/scalable/male.svg
-share/pixmaps/pidgin/emblems/scalable/mobile.svg
-share/pixmaps/pidgin/emblems/scalable/music.svg
 share/pixmaps/pidgin/emblems/scalable/not-authorized.svg
 share/pixmaps/pidgin/emblems/scalable/qq-member.svg
 share/pixmaps/pidgin/emblems/scalable/secure.svg
@@ -215,8 +209,10 @@ share/pixmaps/pidgin/emblems/scalable/unavailable.svg
 share/pixmaps/pidgin/emblems/scalable/video.svg
 share/pixmaps/pidgin/emblems/scalable/voice.svg
 share/pixmaps/pidgin/emotes/default/act-up.png
+share/pixmaps/pidgin/emotes/default/afraid.png
 share/pixmaps/pidgin/emotes/default/airplane.png
 share/pixmaps/pidgin/emotes/default/alien.png
+share/pixmaps/pidgin/emotes/default/amorous.png
 share/pixmaps/pidgin/emotes/default/angel.png
 share/pixmaps/pidgin/emotes/default/angry.png
 share/pixmaps/pidgin/emotes/default/arrogant.png
@@ -271,8 +267,8 @@ share/pixmaps/pidgin/emotes/default/doh.png
 share/pixmaps/pidgin/emotes/default/dont-know.png
 share/pixmaps/pidgin/emotes/default/drink.png
 share/pixmaps/pidgin/emotes/default/drool.png
-share/pixmaps/pidgin/emotes/default/eat.png
 share/pixmaps/pidgin/emotes/default/embarrassed.png
+share/pixmaps/pidgin/emotes/default/excited.png
 share/pixmaps/pidgin/emotes/default/excruciating.png
 share/pixmaps/pidgin/emotes/default/eyeroll.png
 share/pixmaps/pidgin/emotes/default/female-fighter.png
@@ -292,11 +288,14 @@ share/pixmaps/pidgin/emotes/default/good.png
 share/pixmaps/pidgin/emotes/default/hammer.png
 share/pixmaps/pidgin/emotes/default/handcuffs.png
 share/pixmaps/pidgin/emotes/default/handshake.png
+share/pixmaps/pidgin/emotes/default/happy.png
 share/pixmaps/pidgin/emotes/default/highfive.png
+share/pixmaps/pidgin/emotes/default/hot.png
 share/pixmaps/pidgin/emotes/default/hug-left.png
 share/pixmaps/pidgin/emotes/default/hug-right.png
+share/pixmaps/pidgin/emotes/default/hungry.png
 share/pixmaps/pidgin/emotes/default/hypnotized.png
-share/pixmaps/pidgin/emotes/default/in-love.png
+share/pixmaps/pidgin/emotes/default/in_love.png
 share/pixmaps/pidgin/emotes/default/island.png
 share/pixmaps/pidgin/emotes/default/jump.png
 share/pixmaps/pidgin/emotes/default/kiss.png
@@ -309,7 +308,6 @@ share/pixmaps/pidgin/emotes/default/laugh.png
 share/pixmaps/pidgin/emotes/default/liquor.png
 share/pixmaps/pidgin/emotes/default/loser.png
 share/pixmaps/pidgin/emotes/default/love-over.png
-share/pixmaps/pidgin/emotes/default/love.png
 share/pixmaps/pidgin/emotes/default/lying.png
 share/pixmaps/pidgin/emotes/default/mad-tongue.png
 share/pixmaps/pidgin/emotes/default/mail.png
@@ -329,7 +327,7 @@ share/pixmaps/pidgin/emotes/default/msn.png
 share/pixmaps/pidgin/emotes/default/msn_online.png
 share/pixmaps/pidgin/emotes/default/music.png
 share/pixmaps/pidgin/emotes/default/musical-note.png
-share/pixmaps/pidgin/emotes/default/nailbiting.png
+share/pixmaps/pidgin/emotes/default/nervous.png
 share/pixmaps/pidgin/emotes/default/neutral.png
 share/pixmaps/pidgin/emotes/default/on-the-phone.png
 share/pixmaps/pidgin/emotes/default/party.png
@@ -359,7 +357,7 @@ share/pixmaps/pidgin/emotes/default/search.png
 share/pixmaps/pidgin/emotes/default/secret.png
 share/pixmaps/pidgin/emotes/default/shame.png
 share/pixmaps/pidgin/emotes/default/sheep.png
-share/pixmaps/pidgin/emotes/default/shock.png
+share/pixmaps/pidgin/emotes/default/shocked.png
 share/pixmaps/pidgin/emotes/default/shout.png
 share/pixmaps/pidgin/emotes/default/shut-mouth.png
 share/pixmaps/pidgin/emotes/default/sick.png
@@ -368,9 +366,8 @@ share/pixmaps/pidgin/emotes/default/silly.png
 share/pixmaps/pidgin/emotes/default/sinister.png
 share/pixmaps/pidgin/emotes/default/skeleton.png
 share/pixmaps/pidgin/emotes/default/skywalker.png
+share/pixmaps/pidgin/emotes/default/sleeping.png
 share/pixmaps/pidgin/emotes/default/sleepy.png
-share/pixmaps/pidgin/emotes/default/smile-big.png
-share/pixmaps/pidgin/emotes/default/smile.png
 share/pixmaps/pidgin/emotes/default/smirk.png
 share/pixmaps/pidgin/emotes/default/snail.png
 share/pixmaps/pidgin/emotes/default/snicker.png
@@ -382,7 +379,6 @@ share/pixmaps/pidgin/emotes/default/starving.png
 share/pixmaps/pidgin/emotes/default/stop.png
 share/pixmaps/pidgin/emotes/default/struggle.png
 share/pixmaps/pidgin/emotes/default/sun.png
-share/pixmaps/pidgin/emotes/default/sweat.png
 share/pixmaps/pidgin/emotes/default/talktohand.png
 share/pixmaps/pidgin/emotes/default/teeth.png
 share/pixmaps/pidgin/emotes/default/terror.png
@@ -391,7 +387,6 @@ share/pixmaps/pidgin/emotes/default/thinking.png
 share/pixmaps/pidgin/emotes/default/thunder.png
 share/pixmaps/pidgin/emotes/default/time-out.png
 share/pixmaps/pidgin/emotes/default/tongue.png
-share/pixmaps/pidgin/emotes/default/tremble.png
 share/pixmaps/pidgin/emotes/default/turtle.png
 share/pixmaps/pidgin/emotes/default/tv.png
 share/pixmaps/pidgin/emotes/default/umbrella.png
@@ -404,14 +399,17 @@ share/pixmaps/pidgin/emotes/default/weep.png
 share/pixmaps/pidgin/emotes/default/wilt.png
 share/pixmaps/pidgin/emotes/default/wink.png
 share/pixmaps/pidgin/emotes/default/worship.png
-share/pixmaps/pidgin/emotes/default/yawn.png
 share/pixmaps/pidgin/emotes/default/yin-yang.png
 share/pixmaps/pidgin/emotes/none/theme
+share/pixmaps/pidgin/emotes/small/afraid.png
+share/pixmaps/pidgin/emotes/small/amorous.png
 share/pixmaps/pidgin/emotes/small/angel.png
 share/pixmaps/pidgin/emotes/small/angry.png
+share/pixmaps/pidgin/emotes/small/bathing.png
 share/pixmaps/pidgin/emotes/small/beer.png
 share/pixmaps/pidgin/emotes/small/camera.png
 share/pixmaps/pidgin/emotes/small/cigarette.png
+share/pixmaps/pidgin/emotes/small/cinema.png
 share/pixmaps/pidgin/emotes/small/coffee.png
 share/pixmaps/pidgin/emotes/small/confused.png
 share/pixmaps/pidgin/emotes/small/console.png
@@ -419,13 +417,20 @@ share/pixmaps/pidgin/emotes/small/cool.png
 share/pixmaps/pidgin/emotes/small/cross.png
 share/pixmaps/pidgin/emotes/small/crying.png
 share/pixmaps/pidgin/emotes/small/devil.png
+share/pixmaps/pidgin/emotes/small/disappointed.png
 share/pixmaps/pidgin/emotes/small/dont-know.png
+share/pixmaps/pidgin/emotes/small/embarrassed.png
+share/pixmaps/pidgin/emotes/small/excited.png
 share/pixmaps/pidgin/emotes/small/grin.png
+share/pixmaps/pidgin/emotes/small/happy.png
 share/pixmaps/pidgin/emotes/small/hug-left.png
 share/pixmaps/pidgin/emotes/small/hug-right.png
+share/pixmaps/pidgin/emotes/small/in_love.png
+share/pixmaps/pidgin/emotes/small/internet.png
 share/pixmaps/pidgin/emotes/small/kiss.png
-share/pixmaps/pidgin/emotes/small/love.png
 share/pixmaps/pidgin/emotes/small/meeting.png
+share/pixmaps/pidgin/emotes/small/mobile.png
+share/pixmaps/pidgin/emotes/small/music.png
 share/pixmaps/pidgin/emotes/small/musical-note.png
 share/pixmaps/pidgin/emotes/small/nerdy.png
 share/pixmaps/pidgin/emotes/small/neutral.png
@@ -433,21 +438,28 @@ share/pixmaps/pidgin/emotes/small/party.png
 share/pixmaps/pidgin/emotes/small/phone.png
 share/pixmaps/pidgin/emotes/small/plate.png
 share/pixmaps/pidgin/emotes/small/question.png
+share/pixmaps/pidgin/emotes/small/restroom.png
 share/pixmaps/pidgin/emotes/small/sad.png
+share/pixmaps/pidgin/emotes/small/search.png
 share/pixmaps/pidgin/emotes/small/shame.png
-share/pixmaps/pidgin/emotes/small/shock.png
+share/pixmaps/pidgin/emotes/small/shocked.png
+share/pixmaps/pidgin/emotes/small/shopping.png
 share/pixmaps/pidgin/emotes/small/sick.png
 share/pixmaps/pidgin/emotes/small/silent.png
+share/pixmaps/pidgin/emotes/small/sleeping.png
 share/pixmaps/pidgin/emotes/small/sleepy.png
-share/pixmaps/pidgin/emotes/small/smile-big.png
-share/pixmaps/pidgin/emotes/small/smile.png
+share/pixmaps/pidgin/emotes/small/studying.png
+share/pixmaps/pidgin/emotes/small/suit.png
+share/pixmaps/pidgin/emotes/small/surfing.png
 share/pixmaps/pidgin/emotes/small/theme
 share/pixmaps/pidgin/emotes/small/thinking.png
 share/pixmaps/pidgin/emotes/small/tongue.png
 share/pixmaps/pidgin/emotes/small/tv.png
+share/pixmaps/pidgin/emotes/small/typing.png
 share/pixmaps/pidgin/emotes/small/uhm-yeah.png
 share/pixmaps/pidgin/emotes/small/wink.png
-share/pixmaps/pidgin/emotes/small/yawn.png
+share/pixmaps/pidgin/emotes/small/working.png
+share/pixmaps/pidgin/emotes/small/writing.png
 share/pixmaps/pidgin/logo.png
 share/pixmaps/pidgin/protocols/16/aim.png
 share/pixmaps/pidgin/protocols/16/bonjour.png
@@ -571,12 +583,12 @@ share/pixmaps/pidgin/status/48/away.png
 share/pixmaps/pidgin/status/48/busy.png
 share/pixmaps/pidgin/status/48/chat.png
 share/pixmaps/pidgin/status/48/extended-away.png
+share/pixmaps/pidgin/status/48/invisible.png
 share/pixmaps/pidgin/status/48/log-in.png
 share/pixmaps/pidgin/status/48/log-out.png
 share/pixmaps/pidgin/status/48/offline.png
 share/pixmaps/pidgin/status/48/person.png
 share/pixmaps/pidgin/status/48/rtl/extended-away.png
-share/pixmaps/pidgin/status/48/invisible.png
 share/pixmaps/pidgin/status/48/rtl/log-in.png
 share/pixmaps/pidgin/status/48/rtl/log-out.png
 share/pixmaps/pidgin/toolbar/11/message-new.png
@@ -587,6 +599,7 @@ share/pixmaps/pidgin/toolbar/16/emote-select.png
 share/pixmaps/pidgin/toolbar/16/font-face.png
 share/pixmaps/pidgin/toolbar/16/font-size-down.png
 share/pixmaps/pidgin/toolbar/16/font-size-up.png
+share/pixmaps/pidgin/toolbar/16/get-attention.png
 share/pixmaps/pidgin/toolbar/16/insert-image.png
 share/pixmaps/pidgin/toolbar/16/insert-link.png
 share/pixmaps/pidgin/toolbar/16/insert.png
@@ -611,89 +624,104 @@ share/pixmaps/pidgin/tray/16/extended-away_4bit.ico
 share/pixmaps/pidgin/tray/16/invisible_4bit.ico
 share/pixmaps/pidgin/tray/16/message_4bit.ico
 share/pixmaps/pidgin/tray/16/offline_4bit.ico
-share/pixmaps/pidgin/tray/16/tray-away.png
-share/pixmaps/pidgin/tray/16/tray-busy.png
-share/pixmaps/pidgin/tray/16/tray-connecting.png
-share/pixmaps/pidgin/tray/16/tray-extended-away.png
-share/pixmaps/pidgin/tray/16/tray-invisible.png
-share/pixmaps/pidgin/tray/16/tray-message.png
-share/pixmaps/pidgin/tray/16/tray-new-im.png
-share/pixmaps/pidgin/tray/16/tray-offline.png
-share/pixmaps/pidgin/tray/16/tray-online.png
-share/pixmaps/pidgin/tray/22/tray-away.png
-share/pixmaps/pidgin/tray/22/tray-busy.png
-share/pixmaps/pidgin/tray/22/tray-connecting.png
-share/pixmaps/pidgin/tray/22/tray-extended-away.png
-share/pixmaps/pidgin/tray/22/tray-invisible.png
-share/pixmaps/pidgin/tray/22/tray-message.png
-share/pixmaps/pidgin/tray/22/tray-new-im.png
-share/pixmaps/pidgin/tray/22/tray-offline.png
-share/pixmaps/pidgin/tray/22/tray-online.png
-share/pixmaps/pidgin/tray/32/tray-away.png
-share/pixmaps/pidgin/tray/32/tray-busy.png
-share/pixmaps/pidgin/tray/32/tray-connecting.png
-share/pixmaps/pidgin/tray/32/tray-extended-away.png
-share/pixmaps/pidgin/tray/32/tray-invisible.png
-share/pixmaps/pidgin/tray/32/tray-message.png
-share/pixmaps/pidgin/tray/32/tray-new-im.png
-share/pixmaps/pidgin/tray/32/tray-offline.png
-share/pixmaps/pidgin/tray/32/tray-online.png
-share/pixmaps/pidgin/tray/48/tray-away.png
-share/pixmaps/pidgin/tray/48/tray-busy.png
-share/pixmaps/pidgin/tray/48/tray-connecting.png
-share/pixmaps/pidgin/tray/48/tray-extended-away.png
-share/pixmaps/pidgin/tray/48/tray-invisible.png
-share/pixmaps/pidgin/tray/48/tray-message.png
-share/pixmaps/pidgin/tray/48/tray-new-im.png
-share/pixmaps/pidgin/tray/48/tray-offline.png
-share/pixmaps/pidgin/tray/48/tray-online.png
-share/icons/hicolor/16x16/apps/pidgin.png
-share/icons/hicolor/22x22/apps/pidgin.png
-share/icons/hicolor/24x24/apps/pidgin.png
-share/icons/hicolor/32x32/apps/pidgin.png
-share/icons/hicolor/48x48/apps/pidgin.png
-@dirrm share/pixmaps/pidgin/tray/48
-@dirrm share/pixmaps/pidgin/tray/32
-@dirrm share/pixmaps/pidgin/tray/22
-@dirrm share/pixmaps/pidgin/tray/16
-@dirrm share/pixmaps/pidgin/tray
-@dirrm share/pixmaps/pidgin/toolbar/48
-@dirrm share/pixmaps/pidgin/toolbar/32
-@dirrm share/pixmaps/pidgin/toolbar/22
-@dirrm share/pixmaps/pidgin/toolbar/16
-@dirrm share/pixmaps/pidgin/toolbar/11
-@dirrm share/pixmaps/pidgin/toolbar
-@dirrm share/pixmaps/pidgin/status/48/rtl
-@dirrm share/pixmaps/pidgin/status/48
-@dirrm share/pixmaps/pidgin/status/32/rtl
-@dirrm share/pixmaps/pidgin/status/32
-@dirrm share/pixmaps/pidgin/status/22/rtl
-@dirrm share/pixmaps/pidgin/status/22
-@dirrm share/pixmaps/pidgin/status/16/rtl
-@dirrm share/pixmaps/pidgin/status/16
-@dirrm share/pixmaps/pidgin/status/11/rtl
-@dirrm share/pixmaps/pidgin/status/11
-@dirrm share/pixmaps/pidgin/status
-@dirrm share/pixmaps/pidgin/protocols/scalable
-@dirrm share/pixmaps/pidgin/protocols/48
-@dirrm share/pixmaps/pidgin/protocols/22
-@dirrm share/pixmaps/pidgin/protocols/16
-@dirrm share/pixmaps/pidgin/protocols
-@dirrm share/pixmaps/pidgin/emotes/small
-@dirrm share/pixmaps/pidgin/emotes/none
-@dirrm share/pixmaps/pidgin/emotes/default
-@dirrm share/pixmaps/pidgin/emotes
-@dirrm share/pixmaps/pidgin/emblems/scalable
-@dirrm share/pixmaps/pidgin/emblems/16
-@dirrm share/pixmaps/pidgin/emblems
-@dirrm share/pixmaps/pidgin/dialogs/scalable
-@dirrm share/pixmaps/pidgin/dialogs/64
-@dirrm share/pixmaps/pidgin/dialogs/16
-@dirrm share/pixmaps/pidgin/dialogs
-@dirrm share/pixmaps/pidgin/buttons
+share/pixmaps/pidgin/tray/hicolor/16x16/status/pidgin-tray-available.png
+share/pixmaps/pidgin/tray/hicolor/16x16/status/pidgin-tray-away.png
+share/pixmaps/pidgin/tray/hicolor/16x16/status/pidgin-tray-busy.png
+share/pixmaps/pidgin/tray/hicolor/16x16/status/pidgin-tray-connect.png
+share/pixmaps/pidgin/tray/hicolor/16x16/status/pidgin-tray-email.png
+share/pixmaps/pidgin/tray/hicolor/16x16/status/pidgin-tray-invisible.png
+share/pixmaps/pidgin/tray/hicolor/16x16/status/pidgin-tray-offline.png
+share/pixmaps/pidgin/tray/hicolor/16x16/status/pidgin-tray-pending.png
+share/pixmaps/pidgin/tray/hicolor/16x16/status/pidgin-tray-xa.png
+share/pixmaps/pidgin/tray/hicolor/22x22/status/pidgin-tray-available.png
+share/pixmaps/pidgin/tray/hicolor/22x22/status/pidgin-tray-away.png
+share/pixmaps/pidgin/tray/hicolor/22x22/status/pidgin-tray-busy.png
+share/pixmaps/pidgin/tray/hicolor/22x22/status/pidgin-tray-connect.png
+share/pixmaps/pidgin/tray/hicolor/22x22/status/pidgin-tray-email.png
+share/pixmaps/pidgin/tray/hicolor/22x22/status/pidgin-tray-invisible.png
+share/pixmaps/pidgin/tray/hicolor/22x22/status/pidgin-tray-offline.png
+share/pixmaps/pidgin/tray/hicolor/22x22/status/pidgin-tray-pending.png
+share/pixmaps/pidgin/tray/hicolor/22x22/status/pidgin-tray-xa.png
+share/pixmaps/pidgin/tray/hicolor/32x32/status/pidgin-tray-available.png
+share/pixmaps/pidgin/tray/hicolor/32x32/status/pidgin-tray-away.png
+share/pixmaps/pidgin/tray/hicolor/32x32/status/pidgin-tray-busy.png
+share/pixmaps/pidgin/tray/hicolor/32x32/status/pidgin-tray-connect.png
+share/pixmaps/pidgin/tray/hicolor/32x32/status/pidgin-tray-email.png
+share/pixmaps/pidgin/tray/hicolor/32x32/status/pidgin-tray-invisible.png
+share/pixmaps/pidgin/tray/hicolor/32x32/status/pidgin-tray-offline.png
+share/pixmaps/pidgin/tray/hicolor/32x32/status/pidgin-tray-pending.png
+share/pixmaps/pidgin/tray/hicolor/32x32/status/pidgin-tray-xa.png
+share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-available.png
+share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-away.png
+share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-busy.png
+share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-connect.png
+share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-email.png
+share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-invisible.png
+share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-offline.png
+share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-pending.png
+share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-xa.png
+@dirrm include/pidgin
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/pixmaps/pidgin/animations/16
 @dirrm share/pixmaps/pidgin/animations
+@dirrm share/pixmaps/pidgin/buttons
+@dirrm share/pixmaps/pidgin/dialogs/16
+@dirrm share/pixmaps/pidgin/dialogs/64
+@dirrm share/pixmaps/pidgin/dialogs/scalable
+@dirrm share/pixmaps/pidgin/dialogs
+@dirrm share/pixmaps/pidgin/emblems/16
+@dirrm share/pixmaps/pidgin/emblems/scalable
+@dirrm share/pixmaps/pidgin/emblems
+@dirrm share/pixmaps/pidgin/emotes/default
+@dirrm share/pixmaps/pidgin/emotes/none
+@dirrm share/pixmaps/pidgin/emotes/small
+@dirrm share/pixmaps/pidgin/emotes
+@dirrm share/pixmaps/pidgin/protocols/16
+@dirrm share/pixmaps/pidgin/protocols/22
+@dirrm share/pixmaps/pidgin/protocols/48
+@dirrm share/pixmaps/pidgin/protocols/scalable
+@dirrm share/pixmaps/pidgin/protocols
+@dirrm share/pixmaps/pidgin/status/11/rtl
+@dirrm share/pixmaps/pidgin/status/11
+@dirrm share/pixmaps/pidgin/status/16/rtl
+@dirrm share/pixmaps/pidgin/status/16
+@dirrm share/pixmaps/pidgin/status/22/rtl
+@dirrm share/pixmaps/pidgin/status/22
+@dirrm share/pixmaps/pidgin/status/32/rtl
+@dirrm share/pixmaps/pidgin/status/32
+@dirrm share/pixmaps/pidgin/status/48/rtl
+@dirrm share/pixmaps/pidgin/status/48
+@dirrm share/pixmaps/pidgin/status
+@dirrm share/pixmaps/pidgin/toolbar/11
+@dirrm share/pixmaps/pidgin/toolbar/16
+@dirrm share/pixmaps/pidgin/toolbar/22
+@dirrm share/pixmaps/pidgin/toolbar/32
+@dirrm share/pixmaps/pidgin/toolbar/48
+@dirrm share/pixmaps/pidgin/toolbar
+@dirrm share/pixmaps/pidgin/tray/16
+@dirrm share/pixmaps/pidgin/tray/hicolor/16x16/status
+@dirrm share/pixmaps/pidgin/tray/hicolor/16x16
+@dirrm share/pixmaps/pidgin/tray/hicolor/22x22/status
+@dirrm share/pixmaps/pidgin/tray/hicolor/22x22
+@dirrm share/pixmaps/pidgin/tray/hicolor/32x32/status
+@dirrm share/pixmaps/pidgin/tray/hicolor/32x32
+@dirrm share/pixmaps/pidgin/tray/hicolor/48x48/status
+@dirrm share/pixmaps/pidgin/tray/hicolor/48x48
+@dirrm share/pixmaps/pidgin/tray/hicolor
+@dirrm share/pixmaps/pidgin/tray
 @dirrm share/pixmaps/pidgin
-@dirrmtry share/applications
 @dirrmtry lib/pidgin
-@dirrm include/pidgin
+@dirrmtry share/applications

@@ -7,7 +7,7 @@
 
 PORTNAME=	msn-pecan
 PORTVERSION=	0.1.0.r1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	pidgin-
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	Alternative MSN protocol plugin for libpurple
 
-LIB_DEPENDS=	purple.6:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.7:${PORTSDIR}/net-im/libpurple
 
 PROJECTHOST=	msn-pecan
 USE_BZIP2=	yes

@@ -7,8 +7,8 @@
 #
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.6.6
-PORTREVISION?=	2
+PORTVERSION=	2.7.0
+PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME?=	gnomeprefix gnomehack intlhack glib20 libxml2
+USE_GNOME?=	gnomeprefix gnomehack glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
 		--disable-consoleui \
@@ -167,9 +167,6 @@ PLIST_SUB+=	BONJOUR="@comment not installed: "
 .if defined(WITH_TCLTK)
 TCLTK_VER?=		8.4	# user can override it
 TCLTK_VER_NODOT=	${TCLTK_VER:S/.//}
-.if ${TCLTK_VER} != 8.3 && ${TCLTK_VER} != 8.4
-.error Currently Pidgin can only use Tcl/Tk 8.3 or 8.4
-.endif
 LIB_DEPENDS+=		tk${TCLTK_VER_NODOT}:${PORTSDIR}/x11-toolkits/tk${TCLTK_VER_NODOT}
 CONFIGURE_ARGS+=	--with-tclconfig=${LOCALBASE}/lib/tcl${TCLTK_VER} \
 			--with-tkconfig=${LOCALBASE}/lib/tk${TCLTK_VER}

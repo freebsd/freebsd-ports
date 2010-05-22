@@ -7,13 +7,14 @@
 
 PORTNAME=	minbif
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	irc net-im
 MASTER_SITES=	http://symlink.me/attachments/download/45/
 
 MAINTAINER=	steinex@nognu.de
 COMMENT=	An IRC to instant messaging gateway
 
-LIB_DEPENDS=	purple.6:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.7:${PORTSDIR}/net-im/libpurple
 
 USERS=		minbif
 GROUPS=		minbif
