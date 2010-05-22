@@ -32,7 +32,6 @@ CONFIGURE_ARGS+=--enable-libusb=${LOCALBASE} \
 		--disable-ocamlsolver
 
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 

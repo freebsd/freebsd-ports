@@ -33,7 +33,6 @@ USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
 		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
 		--with-ssl-dir=${OPENSSLBASE}
