@@ -8,12 +8,10 @@
 PORTNAME=	mediawiki
 PORTVERSION=	1.15.3
 CATEGORIES=	www
-MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.15/
+MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/1.15/
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
-
-BROKEN=		does not fetch
 
 CONFLICTS=	mediawiki-1.[0-9].* mediawiki-1.1[0-46-9].*
 
