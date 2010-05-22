@@ -1,0 +1,11 @@
+--- src/netif.c.orig	2010-05-21 23:59:23.000000000 +0200
++++ src/netif.c	2010-05-21 23:59:36.000000000 +0200
+@@ -264,7 +264,7 @@
+ #ifndef __FreeBSD__
+ 	ifr.ifr_data = (caddr_t)&netif->description;
+ #else
+-	ifr.ifr_buffer.buffer = &netif->description
++	ifr.ifr_buffer.buffer = &netif->description;
+ 	ifr.ifr_buffer.length = IFDESCRSIZE;
+ #endif
+ 	ioctl(sockfd, SIOCGIFDESCR, &ifr);
