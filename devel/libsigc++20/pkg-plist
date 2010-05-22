@@ -671,7 +671,6 @@ libdata/pkgconfig/sigc++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/ch03s02.html
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/ch04.html
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/ch04s02.html
-%%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/ch04s03.html
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/ch05.html
 %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html/index.html
 %%PORTDOCS%%@dirrm %%PORTDOCS%%share/doc/libsigc++-%%API_VERSION%%/tutorial/html
