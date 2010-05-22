@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%MAYBE_TEST%%bin/test
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/MPD.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/MPD/Commands.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Network/MPD/Commands/Arg.hi
