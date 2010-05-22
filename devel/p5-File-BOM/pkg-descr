@@ -1,0 +1,8 @@
+This module provides functions for handling unicode byte order
+marks, which are to be found at the beginning of some files and
+streams.
+
+The intention of File::BOM is for files with BOMs to be readable
+as seamlessly as possible, regardless of the encoding used.
+
+WWW: http://search.cpan.org/dist/File-BOM/lib/File/BOM.pm
