@@ -31,6 +31,7 @@ REINPLACE_ARGS=	-i ""
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 FFLAGS+=	-O2
+PICFLAG?=	-fPIC
 
 WRKSRC=		${WRKDIR}/${PORTNAME:C/-/_/}-${PORTVERSION:R}
 
@@ -40,14 +41,6 @@ DOCS=		CHANGES Doc/manual.ps README_Code_Aster
 MACHINEARCH=	${ARCH}
 FORTRANLIBS=	-lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
-PICFLAG?=	-fpic
-.endif
 
 post-extract:
 	(cd ${WRKDIR} &&	\
@@ -93,4 +86,4 @@ post-install:
 	@${ECHO_MSG} "===> Test file installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
