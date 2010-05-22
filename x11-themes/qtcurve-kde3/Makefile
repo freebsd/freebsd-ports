@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	qtcurve
-PORTVERSION=	0.69.1
-PORTREVISION=	2
+PORTVERSION=	1.4.1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://home.freeuk.com/cpdrummond/ \
 		http://craigd.wikispaces.com/file/view/
 PKGNAMEPREFIX=	kde-style-
 DISTNAME=	QtCurve-KDE3-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	QtCurve KDE3 widget style
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_KDEBASE_VER=3
+USE_QT_VER=	3
+CMAKE_ARGS=	-DQT_PLUGINS_DIR=${PREFIX}/lib/plugins
 
 .include <bsd.port.mk>
