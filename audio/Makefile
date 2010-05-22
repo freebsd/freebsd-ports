@@ -344,6 +344,7 @@
     SUBDIR += libao
     SUBDIR += libaudiofile
     SUBDIR += libbpm
+    SUBDIR += libbs2b
     SUBDIR += libcanberra
     SUBDIR += libcdaudio
     SUBDIR += libcddb
