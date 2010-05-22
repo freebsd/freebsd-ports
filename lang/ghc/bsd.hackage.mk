@@ -11,9 +11,9 @@
 
 # KEEP THE LIST ALPHABETICALLY SORTED!
 
-alex_port=			devel/hs-alex		# executable
 Agda_port=			math/hs-Agda		# executable
 Agda-executable_port=		math/hs-Agda-executable	# executable
+alex_port=			devel/hs-alex		# executable
 ALUT_port=			audio/hs-ALUT
 ansi-terminal_port=		devel/hs-ansi-terminal
 ansi-wl-pprint_port=		devel/hs-ansi-wl-pprint
@@ -59,9 +59,9 @@ highlighting-kate_port=		textproc/hs-highlighting-kate-ghc
 hint_port=			devel/hs-hint
 hoogle_port=			devel/hs-hoogle		# executable
 hostname_port=			net/hs-hostname
+hs-bibutils_port=		textproc/hs-hs-bibutils
 hscolour_port=			print/hs-hscolour	# executable
 hslogger_port=			devel/hs-hslogger
-hs-bibutils_port=		textproc/hs-hs-bibutils
 HTTP_port=			www/hs-HTTP
 http-server_port=		www/hs-http-server
 hxt_port=			textproc/hs-hxt
