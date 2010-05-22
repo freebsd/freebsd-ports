@@ -1,0 +1,11 @@
+#!/bin/sh
+# 
+# clean up stale chroots on all client machines.  MCL 20081216.
+#
+# original version from root crontab:
+#
+#/var/portbuild/scripts/allgohans all -q /var/portbuild/scripts/cleanup-chroots
+#
+# new code:
+#
+/var/portbuild/scripts/allgohans.safe all -q /var/portbuild/scripts/cleanup-chroots
