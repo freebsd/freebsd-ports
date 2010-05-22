@@ -1,0 +1,7 @@
+--- Makefile.am.orig	2008-03-25 15:31:41.000000000 +0100
++++ Makefile.am	2010-05-16 18:04:14.000000000 +0200
+@@ -1,3 +1,3 @@
+ AUTOMAKE_OPTIONS = foreign
+ SUBDIRS = include libmpcdec libmpcenc libmpcpsy libwavformat mpcenc mpc2sv8 \
+-	mpcchap mpccut mpcdec mpcgain wavcmp
++	mpccut mpcdec wavcmp

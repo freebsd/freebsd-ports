@@ -6,43 +6,17 @@
 #
 
 PORTNAME=	musepack
-PORTVERSION=	1.15v
+PORTVERSION=	2009.03.01
 CATEGORIES=	audio
 MASTER_SITES=	http://files.musepack.net/source/
-DISTNAME=	mpcsv7-src-${PORTVERSION}
+DISTNAME=	${PORTNAME}_src_r435
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Decoder, encoder and replaygain for musepack (mpc)
 
-LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
+USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	aclocal:110 autoheader:262 libtoolize automake:110 autoconf:262 libtool:22
+ACLOCAL_ARGS=	-I. -I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
 
-PLIST_FILES=	bin/mppdec bin/mppenc bin/replaygain
-BINS=		mppdec mppenc replaygain
-ALL_TARGET=	${BINS}
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/sv7
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == alpha
-BROKEN=		Does not compile on alpha
-.endif
-
-.if ${ARCH} == i386
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-.endif
-
-post-patch:
-.if ${ARCH} != i386
-	${REINPLACE_CMD} -e "s|#define USE_ASM|//#define USE_ASM|" ${WRKSRC}/mpp.h
-.endif
-	${REINPLACE_CMD} -e "s|#define USE_IRIX_AUDIO|//#define USE_IRIX_AUDIO|" ${WRKSRC}/mpp.h
-	${REINPLACE_CMD} -e "s|<machine/soundcard.h>|<sys/soundcard.h>|" ${WRKSRC}/mppdec.h
-
-do-install:
-.for _BIN in ${BINS}
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${_BIN} ${LOCALBASE}/bin
-.endfor
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
