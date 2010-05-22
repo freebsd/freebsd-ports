@@ -7,6 +7,7 @@
 
 PORTNAME=	ladvd
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://blinkenlights.nl/software/ladvd/
 
