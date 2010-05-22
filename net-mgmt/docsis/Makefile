@@ -23,10 +23,14 @@ USE_BISON=	build
 
 PLIST_SUB=	MIBS=share/snmp/mibs
 
-NOT_FOR_ARCHS=	amd64
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Produces corrupt files on amd64
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^htmldocdir =.*|htmldocdir = ${DOCSDIR}|' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|^examplesdir =.*|examplesdir = ${EXAMPLESDIR}|' ${WRKSRC}/examples/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
