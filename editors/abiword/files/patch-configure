@@ -1,6 +1,6 @@
---- configure.orig	2009-10-30 15:04:48.000000000 +0100
-+++ configure	2009-10-30 15:12:38.000000000 +0100
-@@ -16626,9 +16626,9 @@
+--- configure.orig	2010-05-22 09:12:00.000000000 +0200
++++ configure	2010-05-22 09:12:01.000000000 +0200
+@@ -16637,9 +16637,9 @@
  xp_funcs='localeconv strcspn strncasecmp strtoul' # "sqrt" test fails, hmm
  funcs=
  
@@ -12,7 +12,7 @@
  
  for ac_header in sys/time.h
  do
-@@ -17114,7 +17114,7 @@
+@@ -17125,7 +17125,7 @@
    esac
  
  	funcs="$unix_funcs $xp_funcs"
@@ -21,7 +21,7 @@
  	funcs="$win_funcs $xp_funcs"
  fi
  
-@@ -17233,7 +17233,7 @@
+@@ -17244,7 +17244,7 @@
  # Check whether --enable-default-plugins was given.
  if test "${enable_default_plugins+set}" = set; then
    enableval=$enable_default_plugins;
@@ -30,7 +30,7 @@
  		abi_cv_disable_default_plugins="yes"
  	fi
  
-@@ -17243,11 +17243,11 @@
+@@ -17254,11 +17254,11 @@
  # Check whether --enable-plugins was given.
  if test "${enable_plugins+set}" = set; then
    enableval=$enable_plugins;
@@ -44,7 +44,7 @@
  		# auto-detect which plugins can be built
  		abi_cv_plugins="auto"
  	else
-@@ -17261,9 +17261,9 @@
+@@ -17272,9 +17272,9 @@
  # Check whether --enable-builtin-plugins was given.
  if test "${enable_builtin_plugins+set}" = set; then
    enableval=$enable_builtin_plugins;
@@ -56,7 +56,7 @@
  		# just build default plugins
  		abi_cv_builtin_plugins=""
  	else
-@@ -17298,8 +17298,8 @@
+@@ -17309,8 +17309,8 @@
  fi
  
  
@@ -67,7 +67,7 @@
  	opt_pkgs="$opt_pkgs"
  fi
  
-@@ -17427,7 +17427,7 @@
+@@ -17438,7 +17438,7 @@
  else
  
  	# autodetect
@@ -76,7 +76,7 @@
  		if test -n "$PKG_CONFIG" && \
      { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$enchant_req \"") >&5
    ($PKG_CONFIG --exists --print-errors " $enchant_req ") 2>&5
-@@ -17449,7 +17449,7 @@
+@@ -17460,7 +17460,7 @@
  fi
  
  
@@ -85,7 +85,7 @@
  	opt_pkgs="$opt_pkgs $enchant_req"
  fi
  
-@@ -17517,7 +17517,7 @@
+@@ -17528,7 +17528,7 @@
  #
  # deferred from the "enable-embedded"
  #
@@ -94,7 +94,7 @@
  	opt_pkgs="$opt_pkgs $hildon_pkgs"
  fi
  
-@@ -17525,7 +17525,7 @@
+@@ -17536,7 +17536,7 @@
  # Check whether --enable-debug was given.
  if test "${enable_debug+set}" = set; then
    enableval=$enable_debug;
@@ -103,7 +103,7 @@
  		abi_cv_debug="yes"
  	fi
  
-@@ -17549,7 +17549,7 @@
+@@ -17560,7 +17560,7 @@
  else
  
  	# use gnomevfs if detected
@@ -112,7 +112,7 @@
  		if test -n "$PKG_CONFIG" && \
      { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$gnomevfs_req \"") >&5
    ($PKG_CONFIG --exists --print-errors " $gnomevfs_req ") 2>&5
-@@ -17571,7 +17571,7 @@
+@@ -17582,7 +17582,7 @@
  fi
  
  
@@ -121,7 +121,7 @@
  	opt_pkgs="$opt_pkgs $gnomevfs_req"
  fi
  
-@@ -17602,7 +17602,7 @@
+@@ -17613,7 +17613,7 @@
  fi
  
  
@@ -130,7 +130,7 @@
  	opt_pkgs="$opt_pkgs $gio_req"
  fi
  
-@@ -17615,7 +17615,7 @@
+@@ -17626,7 +17626,7 @@
  else
  
  	# use goffice if detected
@@ -139,7 +139,7 @@
  	if test -n "$PKG_CONFIG" && \
      { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$goffice_req \"") >&5
    ($PKG_CONFIG --exists --print-errors " $goffice_req ") 2>&5
-@@ -17637,8 +17637,8 @@
+@@ -17648,8 +17648,8 @@
  
  GOFFICE_BUILTIN_CPPFLAGS=
  GOFFICE_BUILTIN_LIBS=
@@ -150,25 +150,7 @@
  	opt_pkgs="$opt_pkgs $goffice_req"
  else
  	GOFFICE_BUILTIN_CPPFLAGS='-I${top_srcdir}/goffice-bits'
-@@ -17656,7 +17656,7 @@
- else
- 
- 	# use gucharmap if detected
--	if test "$TOOLKIT" == "gtk"; then
-+	if test "$TOOLKIT" = "gtk"; then
- 		if test -n "$PKG_CONFIG" && \
-     { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$gucharmap_req \"") >&5
-   ($PKG_CONFIG --exists --print-errors " $gucharmap_req ") 2>&5
-@@ -17678,7 +17678,7 @@
- fi
- 
- 
--if test "$abi_cv_gucharmap" == "yes"; then
-+if test "$abi_cv_gucharmap" = "yes"; then
- 	opt_pkgs="$opt_pkgs $gucharmap_req"
- fi
- 
-@@ -17712,7 +17712,7 @@
+@@ -17688,7 +17688,7 @@
  # Check whether --with-abisdk was given.
  if test "${with_abisdk+set}" = set; then
    withval=$with_abisdk;
@@ -177,7 +159,7 @@
  		{ { $as_echo "$as_me:$LINENO: error: The AbiSDK path must be specified." >&5
  $as_echo "$as_me: error: The AbiSDK path must be specified." >&2;}
     { (exit 1); exit 1; }; }
-@@ -18331,13 +18331,13 @@
+@@ -18389,13 +18389,13 @@
  deps_pkgs="$xp_pkgs $opt_pkgs"
  SYSTEM_LIBS=
  SYSTEM_CFLAGS=
@@ -186,14 +168,14 @@
  	deps_pkgs="$deps_pkgs $win_pkgs"
  	# nonstandard dlls go below the blank line
  	SYSTEM_LIBS="-ladvapi32 -lcomctl32 -lcomdlg32 -lgdi32 -lkernel32 -lole32 -loleaut32 -lshell32 -luser32 -luuid -lversion -lwinspool \
- 		     -lpng12 -lz -ljpeg"
+ 		      $PNG_LIBS -lz -ljpeg"
  	SYSTEM_CFLAGS="-mthreads"
 -elif test "$TOOLKIT" == "cocoa"; then
 +elif test "$TOOLKIT" = "cocoa"; then
  	deps_pkgs="$deps_pkgs $cocoa_pkgs"
  	SYSTEM_LIBS="-framework Cocoa"
  	# Extract the first word of "convert", so it can be a program name with args.
-@@ -18493,7 +18493,7 @@
+@@ -18551,7 +18551,7 @@
  $as_echo "yes" >&6; }
  	:
  fi
@@ -202,7 +184,7 @@
  
  pkg_failed=no
  { $as_echo "$as_me:$LINENO: checking for GTK214" >&5
-@@ -18561,7 +18561,7 @@
+@@ -18619,7 +18619,7 @@
  $as_echo "yes" >&6; }
  	abi_cv_gtk214=yes
  fi
@@ -211,7 +193,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_GTK214 1
-@@ -18570,7 +18570,7 @@
+@@ -18628,7 +18628,7 @@
  	fi
  fi
  
@@ -220,7 +202,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define WITH_CAIRO 1
-@@ -18578,7 +18578,7 @@
+@@ -18636,7 +18636,7 @@
  
  	WITH_CAIRO=1
  fi
@@ -229,7 +211,7 @@
    WITH_CAIRO_TRUE=
    WITH_CAIRO_FALSE='#'
  else
-@@ -18589,7 +18589,7 @@
+@@ -18647,7 +18647,7 @@
  
  
  
@@ -238,7 +220,7 @@
  
  pkg_failed=no
  { $as_echo "$as_me:$LINENO: checking for GSFGI" >&5
-@@ -18657,7 +18657,7 @@
+@@ -18715,7 +18715,7 @@
  $as_echo "yes" >&6; }
  	abi_cv_gsf_gio=yes
  fi
@@ -247,7 +229,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_GSF_GIO 1
-@@ -18753,7 +18753,7 @@
+@@ -18811,7 +18811,7 @@
  
  ABIWORD_HEADERSDIR="${includedir}/${PACKAGE_NAME}-${ABIWORD_SERIES}"
  
@@ -256,7 +238,7 @@
  ABIWORD_CONTENTSDIR="/AbiWord.app/Contents"
  
  ABIWORD_DATADIR="${ABIWORD_CONTENTSDIR}/Resources"
-@@ -18779,7 +18779,7 @@
+@@ -18837,7 +18837,7 @@
  
  # maybe just switch on TOOLKIT instead of the fancy TARGET defines
  # also for embedded, e.g. hildon would set TOOLKIT_GTK and TOOLKIT_HILDON
@@ -265,7 +247,7 @@
    TOOLKIT_COCOA_TRUE=
    TOOLKIT_COCOA_FALSE='#'
  else
-@@ -18787,7 +18787,7 @@
+@@ -18845,7 +18845,7 @@
    TOOLKIT_COCOA_FALSE=
  fi
  
@@ -274,7 +256,7 @@
    TOOLKIT_GTK_TRUE=
    TOOLKIT_GTK_FALSE='#'
  else
-@@ -18795,7 +18795,7 @@
+@@ -18853,7 +18853,7 @@
    TOOLKIT_GTK_FALSE=
  fi
  
@@ -283,7 +265,7 @@
    TOOLKIT_WIN_TRUE=
    TOOLKIT_WIN_FALSE='#'
  else
-@@ -18804,15 +18804,15 @@
+@@ -18862,15 +18862,15 @@
  fi
  
  
@@ -302,7 +284,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define TOOLKIT_WIN 1
-@@ -18831,7 +18831,7 @@
+@@ -18889,7 +18889,7 @@
  	# override static/dynamic, on win32 only static is possible
  	enable_dynamic="no"
  	enable_static="yes"
@@ -311,7 +293,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define TOOLKIT_COCOA 1
-@@ -18847,7 +18847,7 @@
+@@ -18905,7 +18905,7 @@
  _ACEOF
  
  fi
@@ -320,7 +302,7 @@
    ENABLE_DYNAMIC_TRUE=
    ENABLE_DYNAMIC_FALSE='#'
  else
-@@ -18855,7 +18855,7 @@
+@@ -18913,7 +18913,7 @@
    ENABLE_DYNAMIC_FALSE=
  fi
  
@@ -329,7 +311,7 @@
    ENABLE_STATIC_TRUE=
    ENABLE_STATIC_FALSE='#'
  else
-@@ -18974,22 +18974,22 @@
+@@ -19032,22 +19032,22 @@
  	:
  fi
  PLUGIN_CFLAGS="$PLUGIN_CFLAGS "'${WP_CPPFLAGS} -DABI_DLL'
@@ -357,7 +339,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define DISABLE_EXPORTS 1
-@@ -18997,14 +18997,14 @@
+@@ -19055,14 +19055,14 @@
  
  fi
  
@@ -374,7 +356,7 @@
    ENABLE_MENUBUTTON_TRUE=
    ENABLE_MENUBUTTON_FALSE='#'
  else
-@@ -19013,14 +19013,14 @@
+@@ -19071,14 +19071,14 @@
  fi
  
  
@@ -391,7 +373,7 @@
    ENABLE_PRINT_TRUE=
    ENABLE_PRINT_FALSE='#'
  else
-@@ -19029,7 +19029,7 @@
+@@ -19087,7 +19087,7 @@
  fi
  
  
@@ -400,7 +382,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define ENABLE_SPELL 1
-@@ -19042,7 +19042,7 @@
+@@ -19100,7 +19100,7 @@
  _ACEOF
  
  fi
@@ -409,7 +391,7 @@
    ENABLE_SPELL_TRUE=
    ENABLE_SPELL_FALSE='#'
  else
-@@ -19051,14 +19051,14 @@
+@@ -19109,14 +19109,14 @@
  fi
  
  
@@ -426,7 +408,7 @@
    ENABLE_STATUSBAR_TRUE=
    ENABLE_STATUSBAR_FALSE='#'
  else
-@@ -19074,7 +19074,7 @@
+@@ -19132,7 +19132,7 @@
  _ACEOF
  
  fi
@@ -435,7 +417,7 @@
    EMBEDDED_HILDON_TRUE=
    EMBEDDED_HILDON_FALSE='#'
  else
-@@ -19083,14 +19083,14 @@
+@@ -19141,14 +19141,14 @@
  fi
  
  
@@ -452,7 +434,7 @@
    ENABLE_EMACS_KEYBINDING_TRUE=
    ENABLE_EMACS_KEYBINDING_FALSE='#'
  else
-@@ -19099,14 +19099,14 @@
+@@ -19157,14 +19157,14 @@
  fi
  
  
@@ -469,7 +451,7 @@
    ENABLE_VI_KEYBINDING_TRUE=
    ENABLE_VI_KEYBINDING_FALSE='#'
  else
-@@ -19115,7 +19115,7 @@
+@@ -19173,7 +19173,7 @@
  fi
  
  
@@ -478,7 +460,7 @@
    ENABLE_CLIPART_TRUE=
    ENABLE_CLIPART_FALSE='#'
  else
-@@ -19123,7 +19123,7 @@
+@@ -19181,7 +19181,7 @@
    ENABLE_CLIPART_FALSE=
  fi
  
@@ -487,7 +469,7 @@
    ENABLE_TEMPLATES_TRUE=
    ENABLE_TEMPLATES_FALSE='#'
  else
-@@ -19132,7 +19132,7 @@
+@@ -19190,7 +19190,7 @@
  fi
  
  
@@ -496,7 +478,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define DEBUG 1
-@@ -19145,7 +19145,7 @@
+@@ -19203,7 +19203,7 @@
  _ACEOF
  
  fi
@@ -505,7 +487,7 @@
    DEBUG_TRUE=
    DEBUG_FALSE='#'
  else
-@@ -19158,7 +19158,7 @@
+@@ -19216,7 +19216,7 @@
  # Optional dependencies handling
  #
  
@@ -514,7 +496,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define WITH_GNOMEVFS 1
-@@ -19166,7 +19166,7 @@
+@@ -19224,7 +19224,7 @@
  
  fi
  
@@ -523,7 +505,7 @@
  
  cat >>confdefs.h <<\_ACEOF
  #define WITH_GIO 1
-@@ -19174,14 +19174,14 @@
+@@ -19232,14 +19232,14 @@
  
  fi
  
@@ -540,24 +522,7 @@
    WITH_GOFFICE_BUILTIN_TRUE=
    WITH_GOFFICE_BUILTIN_FALSE='#'
  else
-@@ -19191,14 +19191,14 @@
- 
- 
- 
--if test "$abi_cv_gucharmap" == "yes"; then
-+if test "$abi_cv_gucharmap" = "yes"; then
- 
- cat >>confdefs.h <<\_ACEOF
- #define WITH_GUCHARMAP 1
- _ACEOF
- 
- fi
-- if test "$abi_cv_gucharmap" == "yes"; then
-+ if test "$abi_cv_gucharmap" = "yes"; then
-   WITH_GUCHARMAP_TRUE=
-   WITH_GUCHARMAP_FALSE='#'
- else
-@@ -19216,7 +19216,7 @@
+@@ -19258,7 +19258,7 @@
  
  
  PLUGINS=
@@ -566,89 +531,26 @@
  
  	# which plugins to auto-enable
  	# this creates variables like "enable_wordperfect=auto"
-@@ -19259,7 +19259,7 @@
+@@ -19301,7 +19301,7 @@
  	BUILTIN_PLUGINS_LA="$BUILTIN_PLUGINS_LA ../../plugins/$plugin/$plugin.la"
  done
  
-- if test "$enable_loadbindings_builtin" == "yes"; then
-+ if test "$enable_loadbindings_builtin" = "yes"; then
-   LOADBINDINGS_BUILTIN_TRUE=
-   LOADBINDINGS_BUILTIN_FALSE='#'
+- if test "$enable_openxml_builtin" == "yes"; then
++ if test "$enable_openxml_builtin" = "yes"; then
+   OPENXML_BUILTIN_TRUE=
+   OPENXML_BUILTIN_FALSE='#'
  else
-@@ -19267,7 +19267,7 @@
-   LOADBINDINGS_BUILTIN_FALSE=
+@@ -19309,7 +19309,7 @@
+   OPENXML_BUILTIN_FALSE=
  fi
  
-- if test "$enable_paint_builtin" == "yes"; then
-+ if test "$enable_paint_builtin" = "yes"; then
-   PAINT_BUILTIN_TRUE=
-   PAINT_BUILTIN_FALSE='#'
+- if test "$enable_t602_builtin" == "yes"; then
++ if test "$enable_t602_builtin" = "yes"; then
+   T602_BUILTIN_TRUE=
+   T602_BUILTIN_FALSE='#'
  else
-@@ -19275,7 +19275,7 @@
-   PAINT_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_hrtext_builtin" == "yes"; then
-+ if test "$enable_hrtext_builtin" = "yes"; then
-   HRTEXT_BUILTIN_TRUE=
-   HRTEXT_BUILTIN_FALSE='#'
- else
-@@ -19283,7 +19283,7 @@
-   HRTEXT_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_pdb_builtin" == "yes"; then
-+ if test "$enable_pdb_builtin" = "yes"; then
-   PDB_BUILTIN_TRUE=
-   PDB_BUILTIN_FALSE='#'
- else
-@@ -19291,7 +19291,7 @@
-   PDB_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_goffice_builtin" == "yes"; then
-+ if test "$enable_goffice_builtin" = "yes"; then
-   GOFFICE_BUILTIN_TRUE=
-   GOFFICE_BUILTIN_FALSE='#'
- else
-@@ -19299,7 +19299,7 @@
-   GOFFICE_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_gimp_builtin" == "yes"; then
-+ if test "$enable_gimp_builtin" = "yes"; then
-   GIMP_BUILTIN_TRUE=
-   GIMP_BUILTIN_FALSE='#'
- else
-@@ -19307,7 +19307,7 @@
-   GIMP_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_mif_builtin" == "yes"; then
-+ if test "$enable_mif_builtin" = "yes"; then
-   MIF_BUILTIN_TRUE=
-   MIF_BUILTIN_FALSE='#'
- else
-@@ -19315,7 +19315,7 @@
-   MIF_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_mht_builtin" == "yes"; then
-+ if test "$enable_mht_builtin" = "yes"; then
-   MHT_BUILTIN_TRUE=
-   MHT_BUILTIN_FALSE='#'
- else
-@@ -19323,7 +19323,7 @@
-   MHT_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_applix_builtin" == "yes"; then
-+ if test "$enable_applix_builtin" = "yes"; then
-   APPLIX_BUILTIN_TRUE=
-   APPLIX_BUILTIN_FALSE='#'
- else
-@@ -19331,7 +19331,7 @@
-   APPLIX_BUILTIN_FALSE=
+@@ -19317,7 +19317,7 @@
+   T602_BUILTIN_FALSE=
  fi
  
 - if test "$enable_docbook_builtin" == "yes"; then
@@ -656,26 +558,44 @@
    DOCBOOK_BUILTIN_TRUE=
    DOCBOOK_BUILTIN_FALSE='#'
  else
-@@ -19339,7 +19339,7 @@
+@@ -19325,7 +19325,7 @@
    DOCBOOK_BUILTIN_FALSE=
  fi
  
-- if test "$enable_wikipedia_builtin" == "yes"; then
-+ if test "$enable_wikipedia_builtin" = "yes"; then
-   WIKIPEDIA_BUILTIN_TRUE=
-   WIKIPEDIA_BUILTIN_FALSE='#'
+- if test "$enable_gimp_builtin" == "yes"; then
++ if test "$enable_gimp_builtin" = "yes"; then
+   GIMP_BUILTIN_TRUE=
+   GIMP_BUILTIN_FALSE='#'
  else
-@@ -19347,7 +19347,7 @@
-   WIKIPEDIA_BUILTIN_FALSE=
+@@ -19333,7 +19333,7 @@
+   GIMP_BUILTIN_FALSE=
  fi
  
-- if test "$enable_babelfish_builtin" == "yes"; then
-+ if test "$enable_babelfish_builtin" = "yes"; then
-   BABELFISH_BUILTIN_TRUE=
-   BABELFISH_BUILTIN_FALSE='#'
+- if test "$enable_clarisworks_builtin" == "yes"; then
++ if test "$enable_clarisworks_builtin" = "yes"; then
+   CLARISWORKS_BUILTIN_TRUE=
+   CLARISWORKS_BUILTIN_FALSE='#'
  else
-@@ -19355,7 +19355,7 @@
-   BABELFISH_BUILTIN_FALSE=
+@@ -19341,7 +19341,7 @@
+   CLARISWORKS_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_bmp_builtin" == "yes"; then
++ if test "$enable_bmp_builtin" = "yes"; then
+   BMP_BUILTIN_TRUE=
+   BMP_BUILTIN_FALSE='#'
+ else
+@@ -19349,7 +19349,7 @@
+   BMP_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_wml_builtin" == "yes"; then
++ if test "$enable_wml_builtin" = "yes"; then
+   WML_BUILTIN_TRUE=
+   WML_BUILTIN_FALSE='#'
+ else
+@@ -19357,7 +19357,7 @@
+   WML_BUILTIN_FALSE=
  fi
  
 - if test "$enable_command_builtin" == "yes"; then
@@ -683,17 +603,89 @@
    COMMAND_BUILTIN_TRUE=
    COMMAND_BUILTIN_FALSE='#'
  else
-@@ -19363,7 +19363,7 @@
+@@ -19365,7 +19365,7 @@
    COMMAND_BUILTIN_FALSE=
  fi
  
-- if test "$enable_garble_builtin" == "yes"; then
-+ if test "$enable_garble_builtin" = "yes"; then
-   GARBLE_BUILTIN_TRUE=
-   GARBLE_BUILTIN_FALSE='#'
+- if test "$enable_freetranslation_builtin" == "yes"; then
++ if test "$enable_freetranslation_builtin" = "yes"; then
+   FREETRANSLATION_BUILTIN_TRUE=
+   FREETRANSLATION_BUILTIN_FALSE='#'
  else
-@@ -19371,7 +19371,7 @@
-   GARBLE_BUILTIN_FALSE=
+@@ -19373,7 +19373,7 @@
+   FREETRANSLATION_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_kword_builtin" == "yes"; then
++ if test "$enable_kword_builtin" = "yes"; then
+   KWORD_BUILTIN_TRUE=
+   KWORD_BUILTIN_FALSE='#'
+ else
+@@ -19381,7 +19381,7 @@
+   KWORD_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_iscii_builtin" == "yes"; then
++ if test "$enable_iscii_builtin" = "yes"; then
+   ISCII_BUILTIN_TRUE=
+   ISCII_BUILTIN_FALSE='#'
+ else
+@@ -19389,7 +19389,7 @@
+   ISCII_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_s5_builtin" == "yes"; then
++ if test "$enable_s5_builtin" = "yes"; then
+   S5_BUILTIN_TRUE=
+   S5_BUILTIN_FALSE='#'
+ else
+@@ -19397,7 +19397,7 @@
+   S5_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_babelfish_builtin" == "yes"; then
++ if test "$enable_babelfish_builtin" = "yes"; then
+   BABELFISH_BUILTIN_TRUE=
+   BABELFISH_BUILTIN_FALSE='#'
+ else
+@@ -19405,7 +19405,7 @@
+   BABELFISH_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_hancom_builtin" == "yes"; then
++ if test "$enable_hancom_builtin" = "yes"; then
+   HANCOM_BUILTIN_TRUE=
+   HANCOM_BUILTIN_FALSE='#'
+ else
+@@ -19413,7 +19413,7 @@
+   HANCOM_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_goffice_builtin" == "yes"; then
++ if test "$enable_goffice_builtin" = "yes"; then
+   GOFFICE_BUILTIN_TRUE=
+   GOFFICE_BUILTIN_FALSE='#'
+ else
+@@ -19421,7 +19421,7 @@
+   GOFFICE_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_mht_builtin" == "yes"; then
++ if test "$enable_mht_builtin" = "yes"; then
+   MHT_BUILTIN_TRUE=
+   MHT_BUILTIN_FALSE='#'
+ else
+@@ -19429,7 +19429,7 @@
+   MHT_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_openwriter_builtin" == "yes"; then
++ if test "$enable_openwriter_builtin" = "yes"; then
+   OPENWRITER_BUILTIN_TRUE=
+   OPENWRITER_BUILTIN_FALSE='#'
+ else
+@@ -19437,7 +19437,7 @@
+   OPENWRITER_BUILTIN_FALSE=
  fi
  
 - if test "$enable_ots_builtin" == "yes"; then
@@ -701,26 +693,125 @@
    OTS_BUILTIN_TRUE=
    OTS_BUILTIN_FALSE='#'
  else
-@@ -19379,7 +19379,7 @@
+@@ -19445,7 +19445,7 @@
    OTS_BUILTIN_FALSE=
  fi
  
-- if test "$enable_google_builtin" == "yes"; then
-+ if test "$enable_google_builtin" = "yes"; then
-   GOOGLE_BUILTIN_TRUE=
-   GOOGLE_BUILTIN_FALSE='#'
+- if test "$enable_opml_builtin" == "yes"; then
++ if test "$enable_opml_builtin" = "yes"; then
+   OPML_BUILTIN_TRUE=
+   OPML_BUILTIN_FALSE='#'
  else
-@@ -19387,7 +19387,7 @@
-   GOOGLE_BUILTIN_FALSE=
+@@ -19453,7 +19453,7 @@
+   OPML_BUILTIN_FALSE=
  fi
  
-- if test "$enable_opendocument_builtin" == "yes"; then
-+ if test "$enable_opendocument_builtin" = "yes"; then
-   OPENDOCUMENT_BUILTIN_TRUE=
-   OPENDOCUMENT_BUILTIN_FALSE='#'
+- if test "$enable_pdf_builtin" == "yes"; then
++ if test "$enable_pdf_builtin" = "yes"; then
+   PDF_BUILTIN_TRUE=
+   PDF_BUILTIN_FALSE='#'
  else
-@@ -19395,7 +19395,7 @@
-   OPENDOCUMENT_BUILTIN_FALSE=
+@@ -19461,7 +19461,7 @@
+   PDF_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_collab_builtin" == "yes"; then
++ if test "$enable_collab_builtin" = "yes"; then
+   COLLAB_BUILTIN_TRUE=
+   COLLAB_BUILTIN_FALSE='#'
+ else
+@@ -19469,7 +19469,7 @@
+   COLLAB_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_paint_builtin" == "yes"; then
++ if test "$enable_paint_builtin" = "yes"; then
+   PAINT_BUILTIN_TRUE=
+   PAINT_BUILTIN_FALSE='#'
+ else
+@@ -19477,7 +19477,7 @@
+   PAINT_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_wmf_builtin" == "yes"; then
++ if test "$enable_wmf_builtin" = "yes"; then
+   WMF_BUILTIN_TRUE=
+   WMF_BUILTIN_FALSE='#'
+ else
+@@ -19485,7 +19485,7 @@
+   WMF_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_loadbindings_builtin" == "yes"; then
++ if test "$enable_loadbindings_builtin" = "yes"; then
+   LOADBINDINGS_BUILTIN_TRUE=
+   LOADBINDINGS_BUILTIN_FALSE='#'
+ else
+@@ -19493,7 +19493,7 @@
+   LOADBINDINGS_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_wpg_builtin" == "yes"; then
++ if test "$enable_wpg_builtin" = "yes"; then
+   WPG_BUILTIN_TRUE=
+   WPG_BUILTIN_FALSE='#'
+ else
+@@ -19501,7 +19501,7 @@
+   WPG_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_mswrite_builtin" == "yes"; then
++ if test "$enable_mswrite_builtin" = "yes"; then
+   MSWRITE_BUILTIN_TRUE=
+   MSWRITE_BUILTIN_FALSE='#'
+ else
+@@ -19509,7 +19509,7 @@
+   MSWRITE_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_rsvg_builtin" == "yes"; then
++ if test "$enable_rsvg_builtin" = "yes"; then
+   RSVG_BUILTIN_TRUE=
+   RSVG_BUILTIN_FALSE='#'
+ else
+@@ -19517,7 +19517,7 @@
+   RSVG_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_garble_builtin" == "yes"; then
++ if test "$enable_garble_builtin" = "yes"; then
+   GARBLE_BUILTIN_TRUE=
+   GARBLE_BUILTIN_FALSE='#'
+ else
+@@ -19525,7 +19525,7 @@
+   GARBLE_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_latex_builtin" == "yes"; then
++ if test "$enable_latex_builtin" = "yes"; then
+   LATEX_BUILTIN_TRUE=
+   LATEX_BUILTIN_FALSE='#'
+ else
+@@ -19533,7 +19533,7 @@
+   LATEX_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_pdb_builtin" == "yes"; then
++ if test "$enable_pdb_builtin" = "yes"; then
+   PDB_BUILTIN_TRUE=
+   PDB_BUILTIN_FALSE='#'
+ else
+@@ -19541,7 +19541,7 @@
+   PDB_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_eml_builtin" == "yes"; then
++ if test "$enable_eml_builtin" = "yes"; then
+   EML_BUILTIN_TRUE=
+   EML_BUILTIN_FALSE='#'
+ else
+@@ -19549,7 +19549,7 @@
+   EML_BUILTIN_FALSE=
  fi
  
 - if test "$enable_wordperfect_builtin" == "yes"; then
@@ -728,8 +819,125 @@
    WORDPERFECT_BUILTIN_TRUE=
    WORDPERFECT_BUILTIN_FALSE='#'
  else
-@@ -19403,7 +19403,7 @@
+@@ -19557,7 +19557,7 @@
    WORDPERFECT_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_wikipedia_builtin" == "yes"; then
++ if test "$enable_wikipedia_builtin" = "yes"; then
+   WIKIPEDIA_BUILTIN_TRUE=
+   WIKIPEDIA_BUILTIN_FALSE='#'
+ else
+@@ -19565,7 +19565,7 @@
+   WIKIPEDIA_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_gda_builtin" == "yes"; then
++ if test "$enable_gda_builtin" = "yes"; then
+   GDA_BUILTIN_TRUE=
+   GDA_BUILTIN_FALSE='#'
+ else
+@@ -19573,7 +19573,7 @@
+   GDA_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_aiksaurus_builtin" == "yes"; then
++ if test "$enable_aiksaurus_builtin" = "yes"; then
+   AIKSAURUS_BUILTIN_TRUE=
+   AIKSAURUS_BUILTIN_FALSE='#'
+ else
+@@ -19581,7 +19581,7 @@
+   AIKSAURUS_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_applix_builtin" == "yes"; then
++ if test "$enable_applix_builtin" = "yes"; then
+   APPLIX_BUILTIN_TRUE=
+   APPLIX_BUILTIN_FALSE='#'
+ else
+@@ -19589,7 +19589,7 @@
+   APPLIX_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_grammar_builtin" == "yes"; then
++ if test "$enable_grammar_builtin" = "yes"; then
+   GRAMMAR_BUILTIN_TRUE=
+   GRAMMAR_BUILTIN_FALSE='#'
+ else
+@@ -19597,7 +19597,7 @@
+   GRAMMAR_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_mathview_builtin" == "yes"; then
++ if test "$enable_mathview_builtin" = "yes"; then
+   MATHVIEW_BUILTIN_TRUE=
+   MATHVIEW_BUILTIN_FALSE='#'
+ else
+@@ -19605,7 +19605,7 @@
+   MATHVIEW_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_gdict_builtin" == "yes"; then
++ if test "$enable_gdict_builtin" = "yes"; then
+   GDICT_BUILTIN_TRUE=
+   GDICT_BUILTIN_FALSE='#'
+ else
+@@ -19613,7 +19613,7 @@
+   GDICT_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_passepartout_builtin" == "yes"; then
++ if test "$enable_passepartout_builtin" = "yes"; then
+   PASSEPARTOUT_BUILTIN_TRUE=
+   PASSEPARTOUT_BUILTIN_FALSE='#'
+ else
+@@ -19621,7 +19621,7 @@
+   PASSEPARTOUT_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_xslfo_builtin" == "yes"; then
++ if test "$enable_xslfo_builtin" = "yes"; then
+   XSLFO_BUILTIN_TRUE=
+   XSLFO_BUILTIN_FALSE='#'
+ else
+@@ -19629,7 +19629,7 @@
+   XSLFO_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_opendocument_builtin" == "yes"; then
++ if test "$enable_opendocument_builtin" = "yes"; then
+   OPENDOCUMENT_BUILTIN_TRUE=
+   OPENDOCUMENT_BUILTIN_FALSE='#'
+ else
+@@ -19637,7 +19637,7 @@
+   OPENDOCUMENT_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_google_builtin" == "yes"; then
++ if test "$enable_google_builtin" = "yes"; then
+   GOOGLE_BUILTIN_TRUE=
+   GOOGLE_BUILTIN_FALSE='#'
+ else
+@@ -19645,7 +19645,7 @@
+   GOOGLE_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_sdw_builtin" == "yes"; then
++ if test "$enable_sdw_builtin" = "yes"; then
+   SDW_BUILTIN_TRUE=
+   SDW_BUILTIN_FALSE='#'
+ else
+@@ -19653,7 +19653,7 @@
+   SDW_BUILTIN_FALSE=
+ fi
+ 
+- if test "$enable_presentation_builtin" == "yes"; then
++ if test "$enable_presentation_builtin" = "yes"; then
+   PRESENTATION_BUILTIN_TRUE=
+   PRESENTATION_BUILTIN_FALSE='#'
+ else
+@@ -19661,7 +19661,7 @@
+   PRESENTATION_BUILTIN_FALSE=
  fi
  
 - if test "$enable_urldict_builtin" == "yes"; then
@@ -737,7 +945,7 @@
    URLDICT_BUILTIN_TRUE=
    URLDICT_BUILTIN_FALSE='#'
  else
-@@ -19411,7 +19411,7 @@
+@@ -19669,7 +19669,7 @@
    URLDICT_BUILTIN_FALSE=
  fi
  
@@ -746,372 +954,388 @@
    PSION_BUILTIN_TRUE=
    PSION_BUILTIN_FALSE='#'
  else
-@@ -19419,7 +19419,7 @@
+@@ -19677,7 +19677,7 @@
    PSION_BUILTIN_FALSE=
  fi
  
-- if test "$enable_opml_builtin" == "yes"; then
-+ if test "$enable_opml_builtin" = "yes"; then
-   OPML_BUILTIN_TRUE=
-   OPML_BUILTIN_FALSE='#'
+- if test "$enable_hrtext_builtin" == "yes"; then
++ if test "$enable_hrtext_builtin" = "yes"; then
+   HRTEXT_BUILTIN_TRUE=
+   HRTEXT_BUILTIN_FALSE='#'
  else
-@@ -19427,7 +19427,7 @@
-   OPML_BUILTIN_FALSE=
+@@ -19685,7 +19685,7 @@
+   HRTEXT_BUILTIN_FALSE=
  fi
  
-- if test "$enable_eml_builtin" == "yes"; then
-+ if test "$enable_eml_builtin" = "yes"; then
-   EML_BUILTIN_TRUE=
-   EML_BUILTIN_FALSE='#'
+- if test "$enable_mif_builtin" == "yes"; then
++ if test "$enable_mif_builtin" = "yes"; then
+   MIF_BUILTIN_TRUE=
+   MIF_BUILTIN_FALSE='#'
  else
-@@ -19435,7 +19435,7 @@
-   EML_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_collab_builtin" == "yes"; then
-+ if test "$enable_collab_builtin" = "yes"; then
-   COLLAB_BUILTIN_TRUE=
-   COLLAB_BUILTIN_FALSE='#'
- else
-@@ -19443,7 +19443,7 @@
-   COLLAB_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_pdf_builtin" == "yes"; then
-+ if test "$enable_pdf_builtin" = "yes"; then
-   PDF_BUILTIN_TRUE=
-   PDF_BUILTIN_FALSE='#'
- else
-@@ -19451,7 +19451,7 @@
-   PDF_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_wmf_builtin" == "yes"; then
-+ if test "$enable_wmf_builtin" = "yes"; then
-   WMF_BUILTIN_TRUE=
-   WMF_BUILTIN_FALSE='#'
- else
-@@ -19459,7 +19459,7 @@
-   WMF_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_t602_builtin" == "yes"; then
-+ if test "$enable_t602_builtin" = "yes"; then
-   T602_BUILTIN_TRUE=
-   T602_BUILTIN_FALSE='#'
- else
-@@ -19467,7 +19467,7 @@
-   T602_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_mswrite_builtin" == "yes"; then
-+ if test "$enable_mswrite_builtin" = "yes"; then
-   MSWRITE_BUILTIN_TRUE=
-   MSWRITE_BUILTIN_FALSE='#'
- else
-@@ -19475,7 +19475,7 @@
-   MSWRITE_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_clarisworks_builtin" == "yes"; then
-+ if test "$enable_clarisworks_builtin" = "yes"; then
-   CLARISWORKS_BUILTIN_TRUE=
-   CLARISWORKS_BUILTIN_FALSE='#'
- else
-@@ -19483,7 +19483,7 @@
-   CLARISWORKS_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_freetranslation_builtin" == "yes"; then
-+ if test "$enable_freetranslation_builtin" = "yes"; then
-   FREETRANSLATION_BUILTIN_TRUE=
-   FREETRANSLATION_BUILTIN_FALSE='#'
- else
-@@ -19491,7 +19491,7 @@
-   FREETRANSLATION_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_aiksaurus_builtin" == "yes"; then
-+ if test "$enable_aiksaurus_builtin" = "yes"; then
-   AIKSAURUS_BUILTIN_TRUE=
-   AIKSAURUS_BUILTIN_FALSE='#'
- else
-@@ -19499,7 +19499,7 @@
-   AIKSAURUS_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_hancom_builtin" == "yes"; then
-+ if test "$enable_hancom_builtin" = "yes"; then
-   HANCOM_BUILTIN_TRUE=
-   HANCOM_BUILTIN_FALSE='#'
- else
-@@ -19507,7 +19507,7 @@
-   HANCOM_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_iscii_builtin" == "yes"; then
-+ if test "$enable_iscii_builtin" = "yes"; then
-   ISCII_BUILTIN_TRUE=
-   ISCII_BUILTIN_FALSE='#'
- else
-@@ -19515,7 +19515,7 @@
-   ISCII_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_openxml_builtin" == "yes"; then
-+ if test "$enable_openxml_builtin" = "yes"; then
-   OPENXML_BUILTIN_TRUE=
-   OPENXML_BUILTIN_FALSE='#'
- else
-@@ -19523,7 +19523,7 @@
-   OPENXML_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_gdict_builtin" == "yes"; then
-+ if test "$enable_gdict_builtin" = "yes"; then
-   GDICT_BUILTIN_TRUE=
-   GDICT_BUILTIN_FALSE='#'
- else
-@@ -19531,7 +19531,7 @@
-   GDICT_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_s5_builtin" == "yes"; then
-+ if test "$enable_s5_builtin" = "yes"; then
-   S5_BUILTIN_TRUE=
-   S5_BUILTIN_FALSE='#'
- else
-@@ -19539,7 +19539,7 @@
-   S5_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_mathview_builtin" == "yes"; then
-+ if test "$enable_mathview_builtin" = "yes"; then
-   MATHVIEW_BUILTIN_TRUE=
-   MATHVIEW_BUILTIN_FALSE='#'
- else
-@@ -19547,7 +19547,7 @@
-   MATHVIEW_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_gda_builtin" == "yes"; then
-+ if test "$enable_gda_builtin" = "yes"; then
-   GDA_BUILTIN_TRUE=
-   GDA_BUILTIN_FALSE='#'
- else
-@@ -19555,7 +19555,7 @@
-   GDA_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_grammar_builtin" == "yes"; then
-+ if test "$enable_grammar_builtin" = "yes"; then
-   GRAMMAR_BUILTIN_TRUE=
-   GRAMMAR_BUILTIN_FALSE='#'
- else
-@@ -19563,7 +19563,7 @@
-   GRAMMAR_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_bmp_builtin" == "yes"; then
-+ if test "$enable_bmp_builtin" = "yes"; then
-   BMP_BUILTIN_TRUE=
-   BMP_BUILTIN_FALSE='#'
- else
-@@ -19571,7 +19571,7 @@
-   BMP_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_openwriter_builtin" == "yes"; then
-+ if test "$enable_openwriter_builtin"  "yes"; then
-   OPENWRITER_BUILTIN_TRUE=
-   OPENWRITER_BUILTIN_FALSE='#'
- else
-@@ -19579,7 +19579,7 @@
-   OPENWRITER_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_latex_builtin" == "yes"; then
-+ if test "$enable_latex_builtin" = "yes"; then
-   LATEX_BUILTIN_TRUE=
-   LATEX_BUILTIN_FALSE='#'
- else
-@@ -19587,7 +19587,7 @@
-   LATEX_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_presentation_builtin" == "yes"; then
-+ if test "$enable_presentation_builtin" = "yes"; then
-   PRESENTATION_BUILTIN_TRUE=
-   PRESENTATION_BUILTIN_FALSE='#'
- else
-@@ -19595,7 +19595,7 @@
-   PRESENTATION_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_rsvg_builtin" == "yes"; then
-+ if test "$enable_rsvg_builtin" = "yes"; then
-   RSVG_BUILTIN_TRUE=
-   RSVG_BUILTIN_FALSE='#'
- else
-@@ -19603,7 +19603,7 @@
-   RSVG_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_wml_builtin" == "yes"; then
-+ if test "$enable_wml_builtin" = "yes"; then
-   WML_BUILTIN_TRUE=
-   WML_BUILTIN_FALSE='#'
- else
-@@ -19611,7 +19611,7 @@
-   WML_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_passepartout_builtin" == "yes"; then
-+ if test "$enable_passepartout_builtin" = "yes"; then
-   PASSEPARTOUT_BUILTIN_TRUE=
-   PASSEPARTOUT_BUILTIN_FALSE='#'
- else
-@@ -19619,7 +19619,7 @@
-   PASSEPARTOUT_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_wpg_builtin" == "yes"; then
-+ if test "$enable_wpg_builtin" = "yes"; then
-   WPG_BUILTIN_TRUE=
-   WPG_BUILTIN_FALSE='#'
- else
-@@ -19627,7 +19627,7 @@
-   WPG_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_xslfo_builtin" == "yes"; then
-+ if test "$enable_xslfo_builtin" = "yes"; then
-   XSLFO_BUILTIN_TRUE=
-   XSLFO_BUILTIN_FALSE='#'
- else
-@@ -19635,7 +19635,7 @@
-   XSLFO_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_kword_builtin" == "yes"; then
-+ if test "$enable_kword_builtin" = "yes"; then
-   KWORD_BUILTIN_TRUE=
-   KWORD_BUILTIN_FALSE='#'
- else
-@@ -19643,7 +19643,7 @@
-   KWORD_BUILTIN_FALSE=
- fi
- 
-- if test "$enable_sdw_builtin" == "yes"; then
-+ if test "$enable_sdw_builtin" = "yes"; then
-   SDW_BUILTIN_TRUE=
-   SDW_BUILTIN_FALSE='#'
- else
-@@ -19670,15 +19670,15 @@
+@@ -19853,7 +19853,7 @@
  
  else
  
--	test "$enable_loadbindings" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: loadbindings plugin: dependencies not satisfied - $loadbindings_pkgs" >&5
-+	test "$enable_loadbindings" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: loadbindings plugin: dependencies not satisfied - $loadbindings_pkgs" >&5
- $as_echo "$as_me: WARNING: loadbindings plugin: dependencies not satisfied - $loadbindings_pkgs" >&2;}
+-		if test "$enable_openxml" == "auto"; then
++		if test "$enable_openxml" = "auto"; then
+ 		  { $as_echo "$as_me:$LINENO: WARNING: openxml plugin: \`boost/shared_ptr.hpp' not found, install boost or specify CPPFLAGS to include custom locations" >&5
+ $as_echo "$as_me: WARNING: openxml plugin: \`boost/shared_ptr.hpp' not found, install boost or specify CPPFLAGS to include custom locations" >&2;}
+ 		else
+@@ -19874,15 +19874,15 @@
+ 
+ else
+ 
+-	test "$enable_openxml" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: openxml plugin: dependencies not satisfied - $openxml_pkgs" >&5
++	test "$enable_openxml" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: openxml plugin: dependencies not satisfied - $openxml_pkgs" >&5
+ $as_echo "$as_me: WARNING: openxml plugin: dependencies not satisfied - $openxml_pkgs" >&2;}
  
  fi
  
  fi
  
--if test "$enable_loadbindings" == "yes" || \
--   test "$loadbindings_deps" == "yes"; then
-+if test "$enable_loadbindings" = "yes" || \
-+   test "$loadbindings_deps" = "yes"; then
+-if test "$enable_openxml" == "yes" || \
+-   test "$openxml_deps" == "yes"; then
++if test "$enable_openxml" = "yes" || \
++   test "$openxml_deps" = "yes"; then
  
  
  pkg_failed=no
-@@ -19790,12 +19790,12 @@
+@@ -19994,12 +19994,12 @@
  	:
  fi
  
--test "$enable_loadbindings" == "auto" && PLUGINS="$PLUGINS loadbindings"
-+test "$enable_loadbindings" = "auto" && PLUGINS="$PLUGINS loadbindings"
+-test "$enable_openxml" == "auto" && PLUGINS="$PLUGINS openxml"
++test "$enable_openxml" = "auto" && PLUGINS="$PLUGINS openxml"
  
- LOADBINDINGS_CFLAGS="$LOADBINDINGS_CFLAGS "'${PLUGIN_CFLAGS}'
- LOADBINDINGS_LIBS="$LOADBINDINGS_LIBS "'${PLUGIN_LIBS}'
+ OPENXML_CFLAGS="$OPENXML_CFLAGS "'${PLUGIN_CFLAGS}'
+ OPENXML_LIBS="$OPENXML_LIBS "'${PLUGIN_LIBS}'
  
--if test "$enable_loadbindings_builtin" == "yes"; then
-+if test "$enable_loadbindings_builtin" = "yes"; then
- 	LOADBINDINGS_CFLAGS="$LOADBINDINGS_CFLAGS -DABI_PLUGIN_BUILTIN"
+-if test "$enable_openxml_builtin" == "yes"; then
++if test "$enable_openxml_builtin" = "yes"; then
+ 	OPENXML_CFLAGS="$OPENXML_CFLAGS -DABI_PLUGIN_BUILTIN"
  fi
  
-@@ -19810,17 +19810,17 @@
- 
- if test "$enable_paint" != ""; then
- 
--test "$enable_paint" == "auto" && PLUGINS="$PLUGINS paint"
-+test "$enable_paint" = "auto" && PLUGINS="$PLUGINS paint"
- 
- # TODO check for libpng
--if test "$TOOLKIT" == "win"; then
-+if test "$TOOLKIT" = "win"; then
- 	PAINT_LIBS="-lgdi32 -lpng12"
- fi
- 
- PAINT_CFLAGS="$PAINT_CFLAGS "'${PLUGIN_CFLAGS}'
- PAINT_LIBS="$PAINT_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_paint_builtin" == "yes"; then
-+if test "$enable_paint_builtin" = "yes"; then
- 	PAINT_CFLAGS="$PAINT_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -19835,12 +19835,12 @@
- 
- if test "$enable_hrtext" != ""; then
- 
--test "$enable_hrtext" == "auto" && PLUGINS="$PLUGINS hrtext"
-+test "$enable_hrtext" = "auto" && PLUGINS="$PLUGINS hrtext"
- 
- HRTEXT_CFLAGS="$HRTEXT_CFLAGS "'${PLUGIN_CFLAGS}'
- HRTEXT_LIBS="$HRTEXT_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_hrtext_builtin" == "yes"; then
-+if test "$enable_hrtext_builtin" = "yes"; then
- 	HRTEXT_CFLAGS="$HRTEXT_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -19866,15 +19866,15 @@
+@@ -20025,15 +20025,15 @@
  
  else
  
--	test "$enable_pdb" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: pdb plugin: dependencies not satisfied - $pdb_pkgs" >&5
-+	test "$enable_pdb" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: pdb plugin: dependencies not satisfied - $pdb_pkgs" >&5
- $as_echo "$as_me: WARNING: pdb plugin: dependencies not satisfied - $pdb_pkgs" >&2;}
+-	test "$enable_t602" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: t602 plugin: dependencies not satisfied - $t602_pkgs" >&5
++	test "$enable_t602" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: t602 plugin: dependencies not satisfied - $t602_pkgs" >&5
+ $as_echo "$as_me: WARNING: t602 plugin: dependencies not satisfied - $t602_pkgs" >&2;}
  
  fi
  
  fi
  
--if test "$enable_pdb" == "yes" || \
--   test "$pdb_deps" == "yes"; then
-+if test "$enable_pdb" = "yes" || \
-+   test "$pdb_deps" = "yes"; then
+-if test "$enable_t602" == "yes" || \
+-   test "$t602_deps" == "yes"; then
++if test "$enable_t602" = "yes" || \
++   test "$t602_deps" = "yes"; then
  
  
  pkg_failed=no
-@@ -19986,12 +19986,12 @@
+@@ -20145,12 +20145,12 @@
  	:
  fi
  
--test "$enable_pdb" == "auto" && PLUGINS="$PLUGINS pdb"
-+test "$enable_pdb" = "auto" && PLUGINS="$PLUGINS pdb"
+-test "$enable_t602" == "auto" && PLUGINS="$PLUGINS t602"
++test "$enable_t602" = "auto" && PLUGINS="$PLUGINS t602"
  
- PDB_CFLAGS="$PDB_CFLAGS "'${PLUGIN_CFLAGS}'
- PDB_LIBS="$PDB_LIBS "'${PLUGIN_LIBS}'
+ T602_CFLAGS="$T602_CFLAGS "'${PLUGIN_CFLAGS}'
+ T602_LIBS="$T602_LIBS "'${PLUGIN_LIBS}'
  
--if test "$enable_pdb_builtin" == "yes"; then
-+if test "$enable_pdb_builtin" = "yes"; then
- 	PDB_CFLAGS="$PDB_CFLAGS -DABI_PLUGIN_BUILTIN"
+-if test "$enable_t602_builtin" == "yes"; then
++if test "$enable_t602_builtin" = "yes"; then
+ 	T602_CFLAGS="$T602_CFLAGS -DABI_PLUGIN_BUILTIN"
  fi
  
-@@ -20027,14 +20027,14 @@
+@@ -20176,15 +20176,15 @@
+ 
+ else
+ 
+-	test "$enable_docbook" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: docbook plugin: dependencies not satisfied - $docbook_pkgs" >&5
++	test "$enable_docbook" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: docbook plugin: dependencies not satisfied - $docbook_pkgs" >&5
+ $as_echo "$as_me: WARNING: docbook plugin: dependencies not satisfied - $docbook_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_docbook" == "yes" || \
+-   test "$docbook_deps" == "yes"; then
++if test "$enable_docbook" = "yes" || \
++   test "$docbook_deps" = "yes"; then
+ 
+ { $as_echo "$as_me:$LINENO: checking whether time.h and sys/time.h may both be included" >&5
+ $as_echo_n "checking whether time.h and sys/time.h may both be included... " >&6; }
+@@ -20359,12 +20359,12 @@
+ 	:
+ fi
+ 
+-test "$enable_docbook" == "auto" && PLUGINS="$PLUGINS docbook"
++test "$enable_docbook" = "auto" && PLUGINS="$PLUGINS docbook"
+ 
+ DOCBOOK_CFLAGS="$DOCBOOK_CFLAGS "'${PLUGIN_CFLAGS}'
+ DOCBOOK_LIBS="$DOCBOOK_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_docbook_builtin" == "yes"; then
++if test "$enable_docbook_builtin" = "yes"; then
+ 	DOCBOOK_CFLAGS="$DOCBOOK_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -20379,12 +20379,12 @@
+ 
+ if test "$enable_gimp" != ""; then
+ 
+-test "$enable_gimp" == "auto" && PLUGINS="$PLUGINS gimp"
++test "$enable_gimp" = "auto" && PLUGINS="$PLUGINS gimp"
+ 
+ GIMP_CFLAGS="$GIMP_CFLAGS "'${PLUGIN_CFLAGS}'
+ GIMP_LIBS="$GIMP_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_gimp_builtin" == "yes"; then
++if test "$enable_gimp_builtin" = "yes"; then
+ 	GIMP_CFLAGS="$GIMP_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -20410,15 +20410,15 @@
+ 
+ else
+ 
+-	test "$enable_clarisworks" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: clarisworks plugin: dependencies not satisfied - $clarisworks_pkgs" >&5
++	test "$enable_clarisworks" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: clarisworks plugin: dependencies not satisfied - $clarisworks_pkgs" >&5
+ $as_echo "$as_me: WARNING: clarisworks plugin: dependencies not satisfied - $clarisworks_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_clarisworks" == "yes" || \
+-   test "$clarisworks_deps" == "yes"; then
++if test "$enable_clarisworks" = "yes" || \
++   test "$clarisworks_deps" = "yes"; then
+ 
+ 
+ pkg_failed=no
+@@ -20530,12 +20530,12 @@
+ 	:
+ fi
+ 
+-test "$enable_clarisworks" == "auto" && PLUGINS="$PLUGINS clarisworks"
++test "$enable_clarisworks" = "auto" && PLUGINS="$PLUGINS clarisworks"
+ 
+ CLARISWORKS_CFLAGS="$CLARISWORKS_CFLAGS "'${PLUGIN_CFLAGS}'
+ CLARISWORKS_LIBS="$CLARISWORKS_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_clarisworks_builtin" == "yes"; then
++if test "$enable_clarisworks_builtin" = "yes"; then
+ 	CLARISWORKS_CFLAGS="$CLARISWORKS_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -20555,19 +20555,19 @@
+ 
+ fi
+ 
+-if test "$enable_bmp" == "yes" || \
+-   test "$bmp_deps" == "yes"; then
++if test "$enable_bmp" = "yes" || \
++   test "$bmp_deps" = "yes"; then
+ 
+ # TODO check for libpng, well abiword links to it anyways
+ 
+ BMP_CFLAGS="$BMP_CFLAGS $PNG_CFLAGS "'${PLUGIN_CFLAGS}'
+ BMP_LIBS="$BMP_LIBS $PNG_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_bmp_builtin" == "yes"; then
++if test "$enable_bmp_builtin" = "yes"; then
+ 	BMP_CFLAGS="$BMP_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+-test "$enable_bmp" == "auto" && PLUGINS="$PLUGINS bmp"
++test "$enable_bmp" = "auto" && PLUGINS="$PLUGINS bmp"
+ 
+ fi
+ 
+@@ -20591,15 +20591,15 @@
+ 
+ else
+ 
+-	test "$enable_wml" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: wml plugin: dependencies not satisfied - $wml_pkgs" >&5
++	test "$enable_wml" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: wml plugin: dependencies not satisfied - $wml_pkgs" >&5
+ $as_echo "$as_me: WARNING: wml plugin: dependencies not satisfied - $wml_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_wml" == "yes" || \
+-   test "$wml_deps" == "yes"; then
++if test "$enable_wml" = "yes" || \
++   test "$wml_deps" = "yes"; then
+ 
+ 
+ pkg_failed=no
+@@ -20711,12 +20711,12 @@
+ 	:
+ fi
+ 
+-test "$enable_wml" == "auto" && PLUGINS="$PLUGINS wml"
++test "$enable_wml" = "auto" && PLUGINS="$PLUGINS wml"
+ 
+ WML_CFLAGS="$WML_CFLAGS "'${PLUGIN_CFLAGS}'
+ WML_LIBS="$WML_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_wml_builtin" == "yes"; then
++if test "$enable_wml_builtin" = "yes"; then
+ 	WML_CFLAGS="$WML_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -21158,10 +21158,10 @@
+ 	fi
+ fi
+ 
+-if test "$enable_command" == "yes" || \
+-   test "$command_deps" == "yes"; then
++if test "$enable_command" = "yes" || \
++   test "$command_deps" = "yes"; then
+ 
+-if test "$enable_command_builtin" == "yes"; then
++if test "$enable_command_builtin" = "yes"; then
+ { { $as_echo "$as_me:$LINENO: error: command plugin: static linking not supported" >&5
+ $as_echo "$as_me: error: command plugin: static linking not supported" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -21179,7 +21179,7 @@
+         COMMAND_LIBS="-lreadline -lhistory $COMMAND_LIBS"
+ fi
+ 
+-test "$enable_command" == "auto" && PLUGINS="$PLUGINS command"
++test "$enable_command" = "auto" && PLUGINS="$PLUGINS command"
+ 
+ COMMAND_CFLAGS="$COMMAND_CFLAGS "'${PLUGIN_CFLAGS}'
+ COMMAND_LIBS="$COMMAND_LIBS "'${PLUGIN_LIBS}'
+@@ -21195,12 +21195,12 @@
+ 
+ if test "$enable_freetranslation" != ""; then
+ 
+-test "$enable_freetranslation" == "auto" && PLUGINS="$PLUGINS freetranslation"
++test "$enable_freetranslation" = "auto" && PLUGINS="$PLUGINS freetranslation"
+ 
+ FREETRANSLATION_CFLAGS="$FREETRANSLATION_CFLAGS "'${PLUGIN_CFLAGS}'
+ FREETRANSLATION_LIBS="$FREETRANSLATION_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_freetranslation_builtin" == "yes"; then
++if test "$enable_freetranslation_builtin" = "yes"; then
+ 	FREETRANSLATION_CFLAGS="$FREETRANSLATION_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -21226,15 +21226,15 @@
+ 
+ else
+ 
+-	test "$enable_kword" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: kword plugin: dependencies not satisfied - $kword_pkgs" >&5
++	test "$enable_kword" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: kword plugin: dependencies not satisfied - $kword_pkgs" >&5
+ $as_echo "$as_me: WARNING: kword plugin: dependencies not satisfied - $kword_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_kword" == "yes" || \
+-   test "$kword_deps" == "yes"; then
++if test "$enable_kword" = "yes" || \
++   test "$kword_deps" = "yes"; then
+ 
+ 
+ pkg_failed=no
+@@ -21346,7 +21346,7 @@
+ 	:
+ fi
+ 
+-test "$enable_kword" == "auto" && PLUGINS="$PLUGINS kword"
++test "$enable_kword" = "auto" && PLUGINS="$PLUGINS kword"
+ 
+ KWORD_CFLAGS="$KWORD_CFLAGS "'${PLUGIN_CFLAGS}'
+ KWORD_LIBS="$KWORD_LIBS "'${PLUGIN_LIBS}'
+@@ -21366,12 +21366,12 @@
+ 
+ if test "$enable_iscii" != ""; then
+ 
+-test "$enable_iscii" == "auto" && PLUGINS="$PLUGINS iscii"
++test "$enable_iscii" = "auto" && PLUGINS="$PLUGINS iscii"
+ 
+ ISCII_CFLAGS="$ISCII_CFLAGS "'${PLUGIN_CFLAGS}'
+ ISCII_LIBS="$ISCII_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_iscii_builtin" == "yes"; then
++if test "$enable_iscii_builtin" = "yes"; then
+ 	ISCII_CFLAGS="$ISCII_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -21386,12 +21386,12 @@
+ 
+ if test "$enable_s5" != ""; then
+ 
+-test "$enable_s5" == "auto" && PLUGINS="$PLUGINS s5"
++test "$enable_s5" = "auto" && PLUGINS="$PLUGINS s5"
+ 
+ S5_CFLAGS="$S5_CFLAGS "'${PLUGIN_CFLAGS}'
+ S5_LIBS="$S5_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_s5_builtin" == "yes"; then
++if test "$enable_s5_builtin" = "yes"; then
+ 	S5_CFLAGS="$S5_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -21406,12 +21406,12 @@
+ 
+ if test "$enable_babelfish" != ""; then
+ 
+-test "$enable_babelfish" == "auto" && PLUGINS="$PLUGINS babelfish"
++test "$enable_babelfish" = "auto" && PLUGINS="$PLUGINS babelfish"
+ 
+ BABELFISH_CFLAGS="$BABELFISH_CFLAGS "'${PLUGIN_CFLAGS}'
+ BABELFISH_LIBS="$BABELFISH_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_babelfish_builtin" == "yes"; then
++if test "$enable_babelfish_builtin" = "yes"; then
+ 	BABELFISH_CFLAGS="$BABELFISH_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -21437,15 +21437,15 @@
+ 
+ else
+ 
+-	test "$enable_hancom" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: hancom plugin: dependencies not satisfied - $hancom_pkgs" >&5
++	test "$enable_hancom" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: hancom plugin: dependencies not satisfied - $hancom_pkgs" >&5
+ $as_echo "$as_me: WARNING: hancom plugin: dependencies not satisfied - $hancom_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_hancom" == "yes" || \
+-   test "$hancom_deps" == "yes"; then
++if test "$enable_hancom" = "yes" || \
++   test "$hancom_deps" = "yes"; then
+ 
+ 
+ pkg_failed=no
+@@ -21557,12 +21557,12 @@
+ 	:
+ fi
+ 
+-test "$enable_hancom" == "auto" && PLUGINS="$PLUGINS hancom"
++test "$enable_hancom" = "auto" && PLUGINS="$PLUGINS hancom"
+ 
+ HANCOM_CFLAGS="$HANCOM_CFLAGS "'${PLUGIN_CFLAGS}'
+ HANCOM_LIBS="$HANCOM_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_hancom_builtin" == "yes"; then
++if test "$enable_hancom_builtin" = "yes"; then
+ 	HANCOM_CFLAGS="$HANCOM_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -21598,14 +21598,14 @@
  
  	{ $as_echo "$as_me:$LINENO: checking for gtk toolkit" >&5
  $as_echo_n "checking for gtk toolkit... " >&6; }
@@ -1128,7 +1352,7 @@
  	    { $as_echo "$as_me:$LINENO: WARNING: goffice plugin: only supported with gtk" >&5
  $as_echo "$as_me: WARNING: goffice plugin: only supported with gtk" >&2;}
  	  else
-@@ -20046,17 +20046,17 @@
+@@ -21617,17 +21617,17 @@
  
  else
  
@@ -1150,7 +1374,7 @@
  { { $as_echo "$as_me:$LINENO: error: goffice plugin: static linking not supported" >&5
  $as_echo "$as_me: error: goffice plugin: static linking not supported" >&2;}
     { (exit 1); exit 1; }; }
-@@ -20172,7 +20172,7 @@
+@@ -21743,7 +21743,7 @@
  	:
  fi
  
@@ -1159,37 +1383,7 @@
  
  GOFFICE_CFLAGS="$GOFFICE_CFLAGS "'${PLUGIN_CFLAGS}'
  GOFFICE_LIBS="$GOFFICE_LIBS "'${PLUGIN_LIBS}'
-@@ -20188,12 +20188,12 @@
- 
- if test "$enable_gimp" != ""; then
- 
--test "$enable_gimp" == "auto" && PLUGINS="$PLUGINS gimp"
-+test "$enable_gimp" = "auto" && PLUGINS="$PLUGINS gimp"
- 
- GIMP_CFLAGS="$GIMP_CFLAGS "'${PLUGIN_CFLAGS}'
- GIMP_LIBS="$GIMP_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_gimp_builtin" == "yes"; then
-+if test "$enable_gimp_builtin" = "yes"; then
- 	GIMP_CFLAGS="$GIMP_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -20208,12 +20208,12 @@
- 
- if test "$enable_mif" != ""; then
- 
--test "$enable_mif" == "auto" && PLUGINS="$PLUGINS mif"
-+test "$enable_mif" = "auto" && PLUGINS="$PLUGINS mif"
- 
- MIF_CFLAGS="$MIF_CFLAGS "'${PLUGIN_CFLAGS}'
- MIF_LIBS="$MIF_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_mif_builtin" == "yes"; then
-+if test "$enable_mif_builtin" = "yes"; then
- 	MIF_CFLAGS="$MIF_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -20270,19 +20270,19 @@
+@@ -21801,19 +21801,19 @@
  
  else
  
@@ -1214,7 +1408,7 @@
  { { $as_echo "$as_me:$LINENO: error: mht plugin: static linking not supported" >&5
  $as_echo "$as_me: error: mht plugin: static linking not supported" >&2;}
     { (exit 1); exit 1; }; }
-@@ -20612,27 +20612,27 @@
+@@ -22143,27 +22143,27 @@
  # Settings
  #
  
@@ -1250,7 +1444,7 @@
  	MHT_OPT_LIBS="$MHT_OPT_LIBS -ltidy"
  fi
  
-@@ -20763,7 +20763,7 @@
+@@ -22294,7 +22294,7 @@
    ABI_XHTML_XML2_FALSE=
  fi
  
@@ -1259,7 +1453,7 @@
    ABI_XHTML_MHT_TRUE=
    ABI_XHTML_MHT_FALSE='#'
  else
-@@ -20771,7 +20771,7 @@
+@@ -22302,7 +22302,7 @@
    ABI_XHTML_MHT_FALSE=
  fi
  
@@ -1268,162 +1462,41 @@
    ABI_XHTML_TIDY_TRUE=
    ABI_XHTML_TIDY_FALSE='#'
  else
-@@ -20797,15 +20797,15 @@
+@@ -22328,15 +22328,15 @@
  
  else
  
--	test "$enable_applix" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: applix plugin: dependencies not satisfied - $applix_pkgs" >&5
-+	test "$enable_applix" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: applix plugin: dependencies not satisfied - $applix_pkgs" >&5
- $as_echo "$as_me: WARNING: applix plugin: dependencies not satisfied - $applix_pkgs" >&2;}
+-	test "$enable_openwriter" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: openwriter plugin: dependencies not satisfied - $openwriter_pkgs" >&5
++	test "$enable_openwriter" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: openwriter plugin: dependencies not satisfied - $openwriter_pkgs" >&5
+ $as_echo "$as_me: WARNING: openwriter plugin: dependencies not satisfied - $openwriter_pkgs" >&2;}
  
  fi
  
  fi
  
--if test "$enable_applix" == "yes" || \
--   test "$applix_deps" == "yes"; then
-+if test "$enable_applix" = "yes" || \
-+   test "$applix_deps" = "yes"; then
+-if test "$enable_openwriter" == "yes" || \
+-   test "$openwriter_deps" == "yes"; then
++if test "$enable_openwriter" = "yes" || \
++   test "$openwriter_deps" = "yes"; then
  
  
  pkg_failed=no
-@@ -20917,12 +20917,12 @@
+@@ -22448,12 +22448,12 @@
  	:
  fi
  
--test "$enable_applix" == "auto" && PLUGINS="$PLUGINS applix"
-+test "$enable_applix" = "auto" && PLUGINS="$PLUGINS applix"
+-test "$enable_openwriter" == "auto" && PLUGINS="$PLUGINS openwriter"
++test "$enable_openwriter" = "auto" && PLUGINS="$PLUGINS openwriter"
  
- APPLIX_CFLAGS="$APPLIX_CFLAGS "'${PLUGIN_CFLAGS}'
- APPLIX_LIBS="$APPLIX_LIBS "'${PLUGIN_LIBS}'
+ OPENWRITER_CFLAGS="$OPENWRITER_CFLAGS "'${PLUGIN_CFLAGS}'
+ OPENWRITER_LIBS="$OPENWRITER_LIBS "'${PLUGIN_LIBS}'
  
--if test "$enable_applix_builtin" == "yes"; then
-+if test "$enable_applix_builtin" = "yes"; then
- 	APPLIX_CFLAGS="$APPLIX_CFLAGS -DABI_PLUGIN_BUILTIN"
+-if test "$enable_openwriter_builtin" == "yes"; then
++if test "$enable_openwriter_builtin" = "yes"; then
+ 	OPENWRITER_CFLAGS="$OPENWRITER_CFLAGS -DABI_PLUGIN_BUILTIN"
  fi
  
-@@ -20948,15 +20948,15 @@
- 
- else
- 
--	test "$enable_docbook" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: docbook plugin: dependencies not satisfied - $docbook_pkgs" >&5
-+	test "$enable_docbook" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: docbook plugin: dependencies not satisfied - $docbook_pkgs" >&5
- $as_echo "$as_me: WARNING: docbook plugin: dependencies not satisfied - $docbook_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_docbook" == "yes" || \
--   test "$docbook_deps" == "yes"; then
-+if test "$enable_docbook" = "yes" || \
-+   test "$docbook_deps" = "yes"; then
- 
- { $as_echo "$as_me:$LINENO: checking whether time.h and sys/time.h may both be included" >&5
- $as_echo_n "checking whether time.h and sys/time.h may both be included... " >&6; }
-@@ -21131,12 +21131,12 @@
- 	:
- fi
- 
--test "$enable_docbook" == "auto" && PLUGINS="$PLUGINS docbook"
-+test "$enable_docbook" = "auto" && PLUGINS="$PLUGINS docbook"
- 
- DOCBOOK_CFLAGS="$DOCBOOK_CFLAGS "'${PLUGIN_CFLAGS}'
- DOCBOOK_LIBS="$DOCBOOK_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_docbook_builtin" == "yes"; then
-+if test "$enable_docbook_builtin" = "yes"; then
- 	DOCBOOK_CFLAGS="$DOCBOOK_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -21151,12 +21151,12 @@
- 
- if test "$enable_wikipedia" != ""; then
- 
--test "$enable_wikipedia" == "auto" && PLUGINS="$PLUGINS wikipedia"
-+test "$enable_wikipedia" = "auto" && PLUGINS="$PLUGINS wikipedia"
- 
- WIKIPEDIA_CFLAGS="$WIKIPEDIA_CFLAGS "'${PLUGIN_CFLAGS}'
- WIKIPEDIA_LIBS="$WIKIPEDIA_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_wikipedia_builtin" == "yes"; then
-+if test "$enable_wikipedia_builtin" = "yes"; then
- 	WIKIPEDIA_CFLAGS="$WIKIPEDIA_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -21171,12 +21171,12 @@
- 
- if test "$enable_babelfish" != ""; then
- 
--test "$enable_babelfish" == "auto" && PLUGINS="$PLUGINS babelfish"
-+test "$enable_babelfish" = "auto" && PLUGINS="$PLUGINS babelfish"
- 
- BABELFISH_CFLAGS="$BABELFISH_CFLAGS "'${PLUGIN_CFLAGS}'
- BABELFISH_LIBS="$BABELFISH_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_babelfish_builtin" == "yes"; then
-+if test "$enable_babelfish_builtin" = "yes"; then
- 	BABELFISH_CFLAGS="$BABELFISH_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -21618,10 +21618,10 @@
- 	fi
- fi
- 
--if test "$enable_command" == "yes" || \
--   test "$command_deps" == "yes"; then
-+if test "$enable_command" = "yes" || \
-+   test "$command_deps" = "yes"; then
- 
--if test "$enable_command_builtin" == "yes"; then
-+if test "$enable_command_builtin" = "yes"; then
- { { $as_echo "$as_me:$LINENO: error: command plugin: static linking not supported" >&5
- $as_echo "$as_me: error: command plugin: static linking not supported" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -21639,7 +21639,7 @@
-         COMMAND_LIBS="-lreadline -lhistory $COMMAND_LIBS"
- fi
- 
--test "$enable_command" == "auto" && PLUGINS="$PLUGINS command"
-+test "$enable_command" = "auto" && PLUGINS="$PLUGINS command"
- 
- COMMAND_CFLAGS="$COMMAND_CFLAGS "'${PLUGIN_CFLAGS}'
- COMMAND_LIBS="$COMMAND_LIBS "'${PLUGIN_LIBS}'
-@@ -21666,15 +21666,15 @@
- 
- else
- 
--	test "$enable_garble" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: garble plugin: dependencies not satisfied - $garble_pkgs" >&5
-+	test "$enable_garble" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: garble plugin: dependencies not satisfied - $garble_pkgs" >&5
- $as_echo "$as_me: WARNING: garble plugin: dependencies not satisfied - $garble_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_garble" == "yes" || \
--   test "$garble_deps" == "yes"; then
-+if test "$enable_garble" = "yes" || \
-+   test "$garble_deps" = "yes"; then
- 
- { $as_echo "$as_me:$LINENO: checking whether time.h and sys/time.h may both be included" >&5
- $as_echo_n "checking whether time.h and sys/time.h may both be included... " >&6; }
-@@ -21849,12 +21849,12 @@
- 	:
- fi
- 
--test "$enable_garble" == "auto" && PLUGINS="$PLUGINS garble"
-+test "$enable_garble" = "auto" && PLUGINS="$PLUGINS garble"
- 
- GARBLE_CFLAGS="$GARBLE_CFLAGS "'${PLUGIN_CFLAGS}'
- GARBLE_LIBS="$GARBLE_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_garble_builtin" == "yes"; then
-+if test "$enable_garble_builtin" = "yes"; then
- 	GARBLE_CFLAGS="$GARBLE_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -21880,19 +21880,19 @@
+@@ -22479,19 +22479,19 @@
  
  else
  
@@ -1448,145 +1521,7 @@
  { { $as_echo "$as_me:$LINENO: error: ots plugin: static linking not supported" >&5
  $as_echo "$as_me: error: ots plugin: static linking not supported" >&2;}
     { (exit 1); exit 1; }; }
-@@ -22022,12 +22022,12 @@
- 
- if test "$enable_google" != ""; then
- 
--test "$enable_google" == "auto" && PLUGINS="$PLUGINS google"
-+test "$enable_google" = "auto" && PLUGINS="$PLUGINS google"
- 
- GOOGLE_CFLAGS="$GOOGLE_CFLAGS "'${PLUGIN_CFLAGS}'
- GOOGLE_LIBS="$GOOGLE_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_google_builtin" == "yes"; then
-+if test "$enable_google_builtin" = "yes"; then
- 	GOOGLE_CFLAGS="$GOOGLE_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -22053,15 +22053,15 @@
- 
- else
- 
--	test "$enable_opendocument" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: opendocument plugin: dependencies not satisfied - $opendocument_pkgs" >&5
-+	test "$enable_opendocument" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: opendocument plugin: dependencies not satisfied - $opendocument_pkgs" >&5
- $as_echo "$as_me: WARNING: opendocument plugin: dependencies not satisfied - $opendocument_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_opendocument" == "yes" || \
--   test "$opendocument_deps" == "yes"; then
-+if test "$enable_opendocument" = "yes" || \
-+   test "$opendocument_deps" = "yes"; then
- 
- 
- pkg_failed=no
-@@ -22173,12 +22173,12 @@
- 	:
- fi
- 
--test "$enable_opendocument" == "auto" && PLUGINS="$PLUGINS opendocument"
-+test "$enable_opendocument" = "auto" && PLUGINS="$PLUGINS opendocument"
- 
- OPENDOCUMENT_CFLAGS="$OPENDOCUMENT_CFLAGS "'${PLUGIN_CFLAGS}'
- OPENDOCUMENT_LIBS="$OPENDOCUMENT_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_opendocument_builtin" == "yes"; then
-+if test "$enable_opendocument_builtin" = "yes"; then
- 	OPENDOCUMENT_CFLAGS="$OPENDOCUMENT_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -22209,17 +22209,17 @@
- 
- else
- 
--	test "$enable_wordperfect" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: wordperfect plugin: dependencies not satisfied - $wordperfect_pkgs" >&5
-+	test "$enable_wordperfect" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: wordperfect plugin: dependencies not satisfied - $wordperfect_pkgs" >&5
- $as_echo "$as_me: WARNING: wordperfect plugin: dependencies not satisfied - $wordperfect_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_wordperfect" == "yes" || \
--   test "$wordperfect_deps" == "yes"; then
-+if test "$enable_wordperfect" = "yes" || \
-+   test "$wordperfect_deps" = "yes"; then
- 
--if test "$enable_wordperfect_builtin" == "yes"; then
-+if test "$enable_wordperfect_builtin" = "yes"; then
- { { $as_echo "$as_me:$LINENO: error: wordperfect plugin: static linking not supported" >&5
- $as_echo "$as_me: error: wordperfect plugin: static linking not supported" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -22349,7 +22349,7 @@
- 	:
- fi
- 
--test "$enable_wordperfect" == "auto" && PLUGINS="$PLUGINS wordperfect"
-+test "$enable_wordperfect" = "auto" && PLUGINS="$PLUGINS wordperfect"
- 
- WORDPERFECT_CFLAGS="$WORDPERFECT_CFLAGS "'${PLUGIN_CFLAGS}'"$WPS_DEFINE"
- WORDPERFECT_LIBS="$WORDPERFECT_LIBS "'${PLUGIN_LIBS}'
-@@ -22365,12 +22365,12 @@
- 
- if test "$enable_urldict" != ""; then
- 
--test "$enable_urldict" == "auto" && PLUGINS="$PLUGINS urldict"
-+test "$enable_urldict" = "auto" && PLUGINS="$PLUGINS urldict"
- 
- URLDICT_CFLAGS="$URLDICT_CFLAGS "'${PLUGIN_CFLAGS}'
- URLDICT_LIBS="$URLDICT_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_urldict_builtin" == "yes"; then
-+if test "$enable_urldict_builtin" = "yes"; then
- 	URLDICT_CFLAGS="$URLDICT_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -22479,8 +22479,8 @@
- 
- if test "$enable_psion" != ""; then
- 
--	if test "$psiconvconfig" == ""; then
--		if test "$enable_psion" == "yes"; then
-+	if test "$psiconvconfig" = ""; then
-+		if test "$enable_psion" = "yes"; then
- 		  { { $as_echo "$as_me:$LINENO: error: psiconv plugin: program psiconv-config not found in path" >&5
- $as_echo "$as_me: error: psiconv plugin: program psiconv-config not found in path" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -22509,10 +22509,10 @@
- 	fi
- fi
- 
--if test "$enable_psion" == "yes" || \
--   test "$psion_deps" == "yes"; then
-+if test "$enable_psion" = "yes" || \
-+   test "$psion_deps" = "yes"; then
- 
--if test "$enable_psion_builtin" == "yes"; then
-+if test "$enable_psion_builtin" = "yes"; then
- { { $as_echo "$as_me:$LINENO: error: psion plugin: static linking not supported" >&5
- $as_echo "$as_me: error: psion plugin: static linking not supported" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -22520,7 +22520,7 @@
- 
- { $as_echo "$as_me:$LINENO: checking for psiconv >= ${psiconv_major_req}.${psiconv_minor_req}.${psiconv_micro_req}" >&5
- $as_echo_n "checking for psiconv >= ${psiconv_major_req}.${psiconv_minor_req}.${psiconv_micro_req}... " >&6; }
--if test "$psion_deps" == "yes"; then
-+if test "$psion_deps" = "yes"; then
- 	{ $as_echo "$as_me:$LINENO: result: version ${psiconv_major_found}.${psiconv_minor_found}.${psiconv_micro_found} (ok)" >&5
- $as_echo "version ${psiconv_major_found}.${psiconv_minor_found}.${psiconv_micro_found} (ok)" >&6; }
- 	PSION_CFLAGS=`$psiconvconfig --cflags`
-@@ -22531,7 +22531,7 @@
-    { (exit 1); exit 1; }; }
- fi
- 
--test "$enable_psion" == "auto" && PLUGINS="$PLUGINS psion"
-+test "$enable_psion" = "auto" && PLUGINS="$PLUGINS psion"
- 
- PSION_CFLAGS="$PSION_CFLAGS "'${PLUGIN_CFLAGS}'
- PSION_LIBS="$PSION_LIBS "'${PLUGIN_LIBS}'
-@@ -22547,12 +22547,12 @@
+@@ -22621,12 +22621,12 @@
  
  if test "$enable_opml" != ""; then
  
@@ -1601,22 +1536,41 @@
  	OPML_CFLAGS="$OPML_CFLAGS -DABI_PLUGIN_BUILTIN"
  fi
  
-@@ -22567,12 +22567,12 @@
+@@ -22655,15 +22655,15 @@
  
- if test "$enable_eml" != ""; then
+ else
  
--test "$enable_eml" == "auto" && PLUGINS="$PLUGINS eml"
-+test "$enable_eml" = "auto" && PLUGINS="$PLUGINS eml"
+-	test "$enable_pdf" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: pdf plugin: dependencies not satisfied - $pdf_pkgs" >&5
++	test "$enable_pdf" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: pdf plugin: dependencies not satisfied - $pdf_pkgs" >&5
+ $as_echo "$as_me: WARNING: pdf plugin: dependencies not satisfied - $pdf_pkgs" >&2;}
  
- EML_CFLAGS="$EML_CFLAGS "'${PLUGIN_CFLAGS}'
- EML_LIBS="$EML_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_eml_builtin" == "yes"; then
-+if test "$enable_eml_builtin" = "yes"; then
- 	EML_CFLAGS="$EML_CFLAGS -DABI_PLUGIN_BUILTIN"
  fi
  
-@@ -22617,7 +22617,7 @@
+ fi
+ 
+-if test "$enable_pdf" == "yes" || \
+-   test "$pdf_deps" == "yes"; then
++if test "$enable_pdf" = "yes" || \
++   test "$pdf_deps" = "yes"; then
+ 
+ 
+ pkg_failed=no
+@@ -22775,12 +22775,12 @@
+ 	:
+ fi
+ 
+-test "$enable_pdf" == "auto" && PLUGINS="$PLUGINS pdf"
++test "$enable_pdf" = "auto" && PLUGINS="$PLUGINS pdf"
+ 
+ PDF_CFLAGS="$PDF_CFLAGS "'${PLUGIN_CFLAGS}'
+ PDF_LIBS="$PDF_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_pdf_builtin" == "yes"; then
++if test "$enable_pdf_builtin" = "yes"; then
+ 	PDF_CFLAGS="$PDF_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -22825,7 +22825,7 @@
  
  fi
  
@@ -1625,7 +1579,7 @@
  { $as_echo "$as_me:$LINENO: checking for collab telepathy backend" >&5
  $as_echo_n "checking for collab telepathy backend... " >&6; }
  { $as_echo "$as_me:$LINENO: result: $enable_collab_backend_telepathy" >&5
-@@ -22644,7 +22644,7 @@
+@@ -22852,7 +22852,7 @@
  
  fi
  
@@ -1634,7 +1588,7 @@
  { $as_echo "$as_me:$LINENO: checking for collab xmpp backend" >&5
  $as_echo_n "checking for collab xmpp backend... " >&6; }
  { $as_echo "$as_me:$LINENO: result: $enable_collab_backend_xmpp" >&5
-@@ -23020,7 +23020,7 @@
+@@ -23227,7 +23227,7 @@
  
  fi
  
@@ -1643,7 +1597,7 @@
  { $as_echo "$as_me:$LINENO: checking for collab sugar backend" >&5
  $as_echo_n "checking for collab sugar backend... " >&6; }
  { $as_echo "$as_me:$LINENO: result: $enable_collab_backend_sugar" >&5
-@@ -23370,7 +23370,7 @@
+@@ -23577,7 +23577,7 @@
  
  fi
  
@@ -1652,7 +1606,7 @@
  { $as_echo "$as_me:$LINENO: checking for collab service backend" >&5
  $as_echo_n "checking for collab service backend... " >&6; }
  { $as_echo "$as_me:$LINENO: result: $enable_collab_backend_service" >&5
-@@ -23409,17 +23409,17 @@
+@@ -23616,17 +23616,17 @@
  
  fi
  
@@ -1674,7 +1628,7 @@
  # check for various boost libs, needs to be done before
  
  
-@@ -23807,48 +23807,48 @@
+@@ -24014,48 +24014,48 @@
  	:
  fi
  
@@ -1734,7 +1688,7 @@
    COLLAB_BACKEND_FAKE_TRUE=
    COLLAB_BACKEND_FAKE_FALSE='#'
  else
-@@ -23856,7 +23856,7 @@
+@@ -24063,7 +24063,7 @@
    COLLAB_BACKEND_FAKE_FALSE=
  fi
  
@@ -1743,7 +1697,7 @@
    COLLAB_BACKEND_TELEPATHY_TRUE=
    COLLAB_BACKEND_TELEPATHY_FALSE='#'
  else
-@@ -23864,7 +23864,7 @@
+@@ -24071,7 +24071,7 @@
    COLLAB_BACKEND_TELEPATHY_FALSE=
  fi
  
@@ -1752,7 +1706,7 @@
    COLLAB_BACKEND_XMPP_TRUE=
    COLLAB_BACKEND_XMPP_FALSE='#'
  else
-@@ -23872,7 +23872,7 @@
+@@ -24079,7 +24079,7 @@
    COLLAB_BACKEND_XMPP_FALSE=
  fi
  
@@ -1761,7 +1715,7 @@
    COLLAB_BACKEND_TCP_TRUE=
    COLLAB_BACKEND_TCP_FALSE='#'
  else
-@@ -23880,7 +23880,7 @@
+@@ -24087,7 +24087,7 @@
    COLLAB_BACKEND_TCP_FALSE=
  fi
  
@@ -1770,7 +1724,7 @@
    COLLAB_BACKEND_SUGAR_TRUE=
    COLLAB_BACKEND_SUGAR_FALSE='#'
  else
-@@ -23888,7 +23888,7 @@
+@@ -24095,7 +24095,7 @@
    COLLAB_BACKEND_SUGAR_FALSE=
  fi
  
@@ -1779,7 +1733,7 @@
    COLLAB_BACKEND_SERVICE_TRUE=
    COLLAB_BACKEND_SERVICE_FALSE='#'
  else
-@@ -23896,7 +23896,7 @@
+@@ -24103,7 +24103,7 @@
    COLLAB_BACKEND_SERVICE_FALSE=
  fi
  
@@ -1788,41 +1742,29 @@
    COLLAB_RECORD_ALWAYS_TRUE=
    COLLAB_RECORD_ALWAYS_FALSE='#'
  else
-@@ -23929,15 +23929,15 @@
+@@ -24122,10 +24122,10 @@
  
- else
+ if test "$enable_paint" != ""; then
  
--	test "$enable_pdf" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: pdf plugin: dependencies not satisfied - $pdf_pkgs" >&5
-+	test "$enable_pdf" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: pdf plugin: dependencies not satisfied - $pdf_pkgs" >&5
- $as_echo "$as_me: WARNING: pdf plugin: dependencies not satisfied - $pdf_pkgs" >&2;}
+-test "$enable_paint" == "auto" && PLUGINS="$PLUGINS paint"
++test "$enable_paint" = "auto" && PLUGINS="$PLUGINS paint"
  
+ # TODO check for libpng
+-if test "$TOOLKIT" == "win"; then
++if test "$TOOLKIT" = "win"; then
+ 	PAINT_LIBS="-lgdi32 $PNG_LIBS"
+ 	PAINT_CFLAGS="$PAINT_CFLAGS $PNG_CFLAGS"
+ fi
+@@ -24133,7 +24133,7 @@
+ PAINT_CFLAGS="$PAINT_CFLAGS "'${PLUGIN_CFLAGS}'
+ PAINT_LIBS="$PAINT_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_paint_builtin" == "yes"; then
++if test "$enable_paint_builtin" = "yes"; then
+ 	PAINT_CFLAGS="$PAINT_CFLAGS -DABI_PLUGIN_BUILTIN"
  fi
  
- fi
- 
--if test "$enable_pdf" == "yes" || \
--   test "$pdf_deps" == "yes"; then
-+if test "$enable_pdf" = "yes" || \
-+   test "$pdf_deps" = "yes"; then
- 
- 
- pkg_failed=no
-@@ -24049,12 +24049,12 @@
- 	:
- fi
- 
--test "$enable_pdf" == "auto" && PLUGINS="$PLUGINS pdf"
-+test "$enable_pdf" = "auto" && PLUGINS="$PLUGINS pdf"
- 
- PDF_CFLAGS="$PDF_CFLAGS "'${PLUGIN_CFLAGS}'
- PDF_LIBS="$PDF_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_pdf_builtin" == "yes"; then
-+if test "$enable_pdf_builtin" = "yes"; then
- 	PDF_CFLAGS="$PDF_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -24163,8 +24163,8 @@
+@@ -24242,8 +24242,8 @@
  
  if test "$enable_wmf" != ""; then
  
@@ -1833,7 +1775,7 @@
  		  { { $as_echo "$as_me:$LINENO: error: wmf plugin: program libwmf-config not found in path" >&5
  $as_echo "$as_me: error: wmf plugin: program libwmf-config not found in path" >&2;}
     { (exit 1); exit 1; }; }
-@@ -24193,10 +24193,10 @@
+@@ -24272,10 +24272,10 @@
  	fi
  fi
  
@@ -1847,7 +1789,7 @@
  { { $as_echo "$as_me:$LINENO: error: wmf plugin: static linking not supported" >&5
  $as_echo "$as_me: error: wmf plugin: static linking not supported" >&2;}
     { (exit 1); exit 1; }; }
-@@ -24204,7 +24204,7 @@
+@@ -24283,7 +24283,7 @@
  
  { $as_echo "$as_me:$LINENO: checking for libwmf >= ${libwmf_major_req}.${libwmf_minor_req}.${libwmf_micro_req}" >&5
  $as_echo_n "checking for libwmf >= ${libwmf_major_req}.${libwmf_minor_req}.${libwmf_micro_req}... " >&6; }
@@ -1856,7 +1798,7 @@
  	{ $as_echo "$as_me:$LINENO: result: version ${libwmf_major_found}.${libwmf_minor_found}.${libwmf_micro_found} (ok)" >&5
  $as_echo "version ${libwmf_major_found}.${libwmf_minor_found}.${libwmf_micro_found} (ok)" >&6; }
  	WMF_CFLAGS=`$libwmfconfig --cflags`
-@@ -24215,7 +24215,7 @@
+@@ -24294,7 +24294,7 @@
     { (exit 1); exit 1; }; }
  fi
  
@@ -1865,640 +1807,41 @@
  
  WMF_CFLAGS="$WMF_CFLAGS "'${PLUGIN_CFLAGS}'
  WMF_LIBS="$WMF_LIBS "'${PLUGIN_LIBS}'
-@@ -24242,15 +24242,15 @@
+@@ -24321,15 +24321,15 @@
  
  else
  
--	test "$enable_t602" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: t602 plugin: dependencies not satisfied - $t602_pkgs" >&5
-+	test "$enable_t602" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: t602 plugin: dependencies not satisfied - $t602_pkgs" >&5
- $as_echo "$as_me: WARNING: t602 plugin: dependencies not satisfied - $t602_pkgs" >&2;}
+-	test "$enable_loadbindings" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: loadbindings plugin: dependencies not satisfied - $loadbindings_pkgs" >&5
++	test "$enable_loadbindings" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: loadbindings plugin: dependencies not satisfied - $loadbindings_pkgs" >&5
+ $as_echo "$as_me: WARNING: loadbindings plugin: dependencies not satisfied - $loadbindings_pkgs" >&2;}
  
  fi
  
  fi
  
--if test "$enable_t602" == "yes" || \
--   test "$t602_deps" == "yes"; then
-+if test "$enable_t602" = "yes" || \
-+   test "$t602_deps" = "yes"; then
+-if test "$enable_loadbindings" == "yes" || \
+-   test "$loadbindings_deps" == "yes"; then
++if test "$enable_loadbindings" = "yes" || \
++   test "$loadbindings_deps" = "yes"; then
  
  
  pkg_failed=no
-@@ -24362,12 +24362,12 @@
+@@ -24441,12 +24441,12 @@
  	:
  fi
  
--test "$enable_t602" == "auto" && PLUGINS="$PLUGINS t602"
-+test "$enable_t602" = "auto" && PLUGINS="$PLUGINS t602"
+-test "$enable_loadbindings" == "auto" && PLUGINS="$PLUGINS loadbindings"
++test "$enable_loadbindings" = "auto" && PLUGINS="$PLUGINS loadbindings"
  
- T602_CFLAGS="$T602_CFLAGS "'${PLUGIN_CFLAGS}'
- T602_LIBS="$T602_LIBS "'${PLUGIN_LIBS}'
+ LOADBINDINGS_CFLAGS="$LOADBINDINGS_CFLAGS "'${PLUGIN_CFLAGS}'
+ LOADBINDINGS_LIBS="$LOADBINDINGS_LIBS "'${PLUGIN_LIBS}'
  
--if test "$enable_t602_builtin" == "yes"; then
-+if test "$enable_t602_builtin" = "yes"; then
- 	T602_CFLAGS="$T602_CFLAGS -DABI_PLUGIN_BUILTIN"
+-if test "$enable_loadbindings_builtin" == "yes"; then
++if test "$enable_loadbindings_builtin" = "yes"; then
+ 	LOADBINDINGS_CFLAGS="$LOADBINDINGS_CFLAGS -DABI_PLUGIN_BUILTIN"
  fi
  
-@@ -24393,15 +24393,15 @@
- 
- else
- 
--	test "$enable_mswrite" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: mswrite plugin: dependencies not satisfied - $mswrite_pkgs" >&5
-+	test "$enable_mswrite" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: mswrite plugin: dependencies not satisfied - $mswrite_pkgs" >&5
- $as_echo "$as_me: WARNING: mswrite plugin: dependencies not satisfied - $mswrite_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_mswrite" == "yes" || \
--   test "$mswrite_deps" == "yes"; then
-+if test "$enable_mswrite" = "yes" || \
-+   test "$mswrite_deps" = "yes"; then
- 
- 
- pkg_failed=no
-@@ -24513,12 +24513,12 @@
- 	:
- fi
- 
--test "$enable_mswrite" == "auto" && PLUGINS="$PLUGINS mswrite"
-+test "$enable_mswrite" = "auto" && PLUGINS="$PLUGINS mswrite"
- 
- MSWRITE_CFLAGS="$MSWRITE_CFLAGS "'${PLUGIN_CFLAGS}'
- MSWRITE_LIBS="$MSWRITE_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_mswrite_builtin" == "yes"; then
-+if test "$enable_mswrite_builtin" = "yes"; then
- 	MSWRITE_CFLAGS="$MSWRITE_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -24544,15 +24544,15 @@
- 
- else
- 
--	test "$enable_clarisworks" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: clarisworks plugin: dependencies not satisfied - $clarisworks_pkgs" >&5
-+	test "$enable_clarisworks" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: clarisworks plugin: dependencies not satisfied - $clarisworks_pkgs" >&5
- $as_echo "$as_me: WARNING: clarisworks plugin: dependencies not satisfied - $clarisworks_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_clarisworks" == "yes" || \
--   test "$clarisworks_deps" == "yes"; then
-+if test "$enable_clarisworks" = "yes" || \
-+   test "$clarisworks_deps" = "yes"; then
- 
- 
- pkg_failed=no
-@@ -24664,12 +24664,12 @@
- 	:
- fi
- 
--test "$enable_clarisworks" == "auto" && PLUGINS="$PLUGINS clarisworks"
-+test "$enable_clarisworks" = "auto" && PLUGINS="$PLUGINS clarisworks"
- 
- CLARISWORKS_CFLAGS="$CLARISWORKS_CFLAGS "'${PLUGIN_CFLAGS}'
- CLARISWORKS_LIBS="$CLARISWORKS_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_clarisworks_builtin" == "yes"; then
-+if test "$enable_clarisworks_builtin" = "yes"; then
- 	CLARISWORKS_CFLAGS="$CLARISWORKS_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -24684,12 +24684,12 @@
- 
- if test "$enable_freetranslation" != ""; then
- 
--test "$enable_freetranslation" == "auto" && PLUGINS="$PLUGINS freetranslation"
-+test "$enable_freetranslation" = "auto" && PLUGINS="$PLUGINS freetranslation"
- 
- FREETRANSLATION_CFLAGS="$FREETRANSLATION_CFLAGS "'${PLUGIN_CFLAGS}'
- FREETRANSLATION_LIBS="$FREETRANSLATION_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_freetranslation_builtin" == "yes"; then
-+if test "$enable_freetranslation_builtin" = "yes"; then
- 	FREETRANSLATION_CFLAGS="$FREETRANSLATION_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -24712,7 +24712,7 @@
-   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; then
- 
--	if test "$TOOLKIT" == "gtk"; then
-+	if test "$TOOLKIT" = "gtk"; then
- 	if test -n "$PKG_CONFIG" && \
-     { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$aiksaurus_gtk_pkgs \"") >&5
-   ($PKG_CONFIG --exists --print-errors " $aiksaurus_gtk_pkgs ") 2>&5
-@@ -24724,7 +24724,7 @@
- 
- else
- 
--		test "$enable_aiksaurus" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_gtk_pkgs" >&5
-+		test "$enable_aiksaurus" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_gtk_pkgs" >&5
- $as_echo "$as_me: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_gtk_pkgs" >&2;}
- 
- fi
-@@ -24734,17 +24734,17 @@
- 
- else
- 
--	test "$enable_aiksaurus" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_pkgs" >&5
-+	test "$enable_aiksaurus" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_pkgs" >&5
- $as_echo "$as_me: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_aiksaurus" == "yes" || \
--   test "$aiksaurus_deps" == "yes"; then
-+if test "$enable_aiksaurus" = "yes" || \
-+   test "$aiksaurus_deps" = "yes"; then
- 
--if test "$enable_aiksaurus_builtin" == "yes"; then
-+if test "$enable_aiksaurus_builtin" = "yes"; then
- { { $as_echo "$as_me:$LINENO: error: aiksaurus plugin: static linking not supported" >&5
- $as_echo "$as_me: error: aiksaurus plugin: static linking not supported" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -24860,7 +24860,7 @@
- 	:
- fi
- 
--if test "$TOOLKIT" == "gtk"; then
-+if test "$TOOLKIT" = "gtk"; then
- 
- pkg_failed=no
- { $as_echo "$as_me:$LINENO: checking for AIKSAURUS_GTK" >&5
-@@ -24974,7 +24974,7 @@
- 	AIKSAURUS_LIBS="$AIKSAURUS_LIBS $AIKSAURUS_GTK_LIBS"
- fi
- 
--test "$enable_aiksaurus" == "auto" && PLUGINS="$PLUGINS aiksaurus"
-+test "$enable_aiksaurus" = "auto" && PLUGINS="$PLUGINS aiksaurus"
- 
- AIKSAURUS_CFLAGS="$AIKSAURUS_CFLAGS "'${PLUGIN_CFLAGS}'
- AIKSAURUS_LIBS="$AIKSAURUS_LIBS "'${PLUGIN_LIBS}'
-@@ -25001,15 +25001,15 @@
- 
- else
- 
--	test "$enable_hancom" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: hancom plugin: dependencies not satisfied - $hancom_pkgs" >&5
-+	test "$enable_hancom" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: hancom plugin: dependencies not satisfied - $hancom_pkgs" >&5
- $as_echo "$as_me: WARNING: hancom plugin: dependencies not satisfied - $hancom_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_hancom" == "yes" || \
--   test "$hancom_deps" == "yes"; then
-+if test "$enable_hancom" = "yes" || \
-+   test "$hancom_deps" = "yes"; then
- 
- 
- pkg_failed=no
-@@ -25121,12 +25121,12 @@
- 	:
- fi
- 
--test "$enable_hancom" == "auto" && PLUGINS="$PLUGINS hancom"
-+test "$enable_hancom" = "auto" && PLUGINS="$PLUGINS hancom"
- 
- HANCOM_CFLAGS="$HANCOM_CFLAGS "'${PLUGIN_CFLAGS}'
- HANCOM_LIBS="$HANCOM_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_hancom_builtin" == "yes"; then
-+if test "$enable_hancom_builtin" = "yes"; then
- 	HANCOM_CFLAGS="$HANCOM_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -25141,12 +25141,12 @@
- 
- if test "$enable_iscii" != ""; then
- 
--test "$enable_iscii" == "auto" && PLUGINS="$PLUGINS iscii"
-+test "$enable_iscii" = "auto" && PLUGINS="$PLUGINS iscii"
- 
- ISCII_CFLAGS="$ISCII_CFLAGS "'${PLUGIN_CFLAGS}'
- ISCII_LIBS="$ISCII_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_iscii_builtin" == "yes"; then
-+if test "$enable_iscii_builtin" = "yes"; then
- 	ISCII_CFLAGS="$ISCII_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -25312,7 +25312,7 @@
- 
- else
- 
--		if test "$enable_openxml" == "auto"; then
-+		if test "$enable_openxml" = "auto"; then
- 		  { $as_echo "$as_me:$LINENO: WARNING: openxml plugin: \`boost/shared_ptr.hpp' not found, install boost or specify CPPFLAGS to include custom locations" >&5
- $as_echo "$as_me: WARNING: openxml plugin: \`boost/shared_ptr.hpp' not found, install boost or specify CPPFLAGS to include custom locations" >&2;}
- 		else
-@@ -25333,15 +25333,15 @@
- 
- else
- 
--	test "$enable_openxml" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: openxml plugin: dependencies not satisfied - $openxml_pkgs" >&5
-+	test "$enable_openxml" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: openxml plugin: dependencies not satisfied - $openxml_pkgs" >&5
- $as_echo "$as_me: WARNING: openxml plugin: dependencies not satisfied - $openxml_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_openxml" == "yes" || \
--   test "$openxml_deps" == "yes"; then
-+if test "$enable_openxml" = "yes" || \
-+   test "$openxml_deps" = "yes"; then
- 
- 
- pkg_failed=no
-@@ -25453,12 +25453,12 @@
- 	:
- fi
- 
--test "$enable_openxml" == "auto" && PLUGINS="$PLUGINS openxml"
-+test "$enable_openxml" = "auto" && PLUGINS="$PLUGINS openxml"
- 
- OPENXML_CFLAGS="$OPENXML_CFLAGS "'${PLUGIN_CFLAGS}'
- OPENXML_LIBS="$OPENXML_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_openxml_builtin" == "yes"; then
-+if test "$enable_openxml_builtin" = "yes"; then
- 	OPENXML_CFLAGS="$OPENXML_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -25476,14 +25476,14 @@
- 
- { $as_echo "$as_me:$LINENO: checking for unix/gtk platform" >&5
- $as_echo_n "checking for unix/gtk platform... " >&6; }
--if test "$TOOLKIT" == "gtk"; then
-+if test "$TOOLKIT" = "gtk"; then
-   { $as_echo "$as_me:$LINENO: result: yes" >&5
- $as_echo "yes" >&6; }
-   gdict_deps="yes"
- else
-   { $as_echo "$as_me:$LINENO: result: no" >&5
- $as_echo "no" >&6; }
--  if test "$enable_gdict" == "auto"; then
-+  if test "$enable_gdict" = "auto"; then
-     { $as_echo "$as_me:$LINENO: WARNING: gdict plugin: only supported on UNIX/gtk platforms" >&5
- $as_echo "$as_me: WARNING: gdict plugin: only supported on UNIX/gtk platforms" >&2;}
-   else
-@@ -25495,8 +25495,8 @@
- 
- fi
- 
--if test "$enable_gdict" == "yes" || \
--   test "$gdict_deps" == "yes"; then
-+if test "$enable_gdict" = "yes" || \
-+   test "$gdict_deps" = "yes"; then
- 
- { $as_echo "$as_me:$LINENO: checking for pid_t" >&5
- $as_echo_n "checking for pid_t... " >&6; }
-@@ -25603,7 +25603,7 @@
- fi
- 
- 
--test "$enable_gdict" == "auto" && PLUGINS="$PLUGINS gdict"
-+test "$enable_gdict" = "auto" && PLUGINS="$PLUGINS gdict"
- 
- GDICT_CFLAGS="$GDICT_CFLAGS "'${PLUGIN_CFLAGS} -DUSE_FORK_AND_EXEC_METHOD=1'
- GDICT_LIBS='${PLUGIN_LIBS}'
-@@ -25623,12 +25623,12 @@
- 
- if test "$enable_s5" != ""; then
- 
--test "$enable_s5" == "auto" && PLUGINS="$PLUGINS s5"
-+test "$enable_s5" = "auto" && PLUGINS="$PLUGINS s5"
- 
- S5_CFLAGS="$S5_CFLAGS "'${PLUGIN_CFLAGS}'
- S5_LIBS="$S5_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_s5_builtin" == "yes"; then
-+if test "$enable_s5_builtin" = "yes"; then
- 	S5_CFLAGS="$S5_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -25957,17 +25957,17 @@
- 
- else
- 
--	test "$enable_mathview" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: mathview plugin: dependencies not satisfied - $mathview_pkgs" >&5
-+	test "$enable_mathview" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: mathview plugin: dependencies not satisfied - $mathview_pkgs" >&5
- $as_echo "$as_me: WARNING: mathview plugin: dependencies not satisfied - $mathview_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_mathview" == "yes" || \
--   test "$mathview_deps" == "yes"; then
-+if test "$enable_mathview" = "yes" || \
-+   test "$mathview_deps" = "yes"; then
- 
--if test "$enable_mathview_builtin" == "yes"; then
-+if test "$enable_mathview_builtin" = "yes"; then
- { { $as_echo "$as_me:$LINENO: error: mathview plugin: static linking not supported" >&5
- $as_echo "$as_me: error: mathview plugin: static linking not supported" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -26083,7 +26083,7 @@
- 	:
- fi
- 
--test "$enable_mathview" == "auto" && PLUGINS="$PLUGINS mathview"
-+test "$enable_mathview" = "auto" && PLUGINS="$PLUGINS mathview"
- 
- MATHVIEW_CFLAGS="$MATHVIEW_CFLAGS $HASHMAP_CFLAGS "'${PLUGIN_CFLAGS}'
- MATHVIEW_LIBS="$MATHVIEW_LIBS "'${PLUGIN_LIBS}'
-@@ -26371,14 +26371,14 @@
- 
- 	{ $as_echo "$as_me:$LINENO: checking for gtk toolkit" >&5
- $as_echo_n "checking for gtk toolkit... " >&6; }
--	if test "$TOOLKIT" == "gtk"; then
-+	if test "$TOOLKIT" = "gtk"; then
- 	  { $as_echo "$as_me:$LINENO: result: yes" >&5
- $as_echo "yes" >&6; }
- 	  gda_deps="yes"
- 	else
- 	  { $as_echo "$as_me:$LINENO: result: no" >&5
- $as_echo "no" >&6; }
--	  if test "$enable_gda" == "auto"; then
-+	  if test "$enable_gda" = "auto"; then
- 	    { $as_echo "$as_me:$LINENO: WARNING: gda plugin: only supported with gtk" >&5
- $as_echo "$as_me: WARNING: gda plugin: only supported with gtk" >&2;}
- 	  else
-@@ -26390,17 +26390,17 @@
- 
- else
- 
--	test "$enable_gda" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: gda plugin: dependencies not satisfied - $gda_pkgs" >&5
-+	test "$enable_gda" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: gda plugin: dependencies not satisfied - $gda_pkgs" >&5
- $as_echo "$as_me: WARNING: gda plugin: dependencies not satisfied - $gda_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_gda" == "yes" || \
--   test "$gda_deps" == "yes"; then
-+if test "$enable_gda" = "yes" || \
-+   test "$gda_deps" = "yes"; then
- 
--if test "$enable_gda_builtin" == "yes"; then
-+if test "$enable_gda_builtin" = "yes"; then
- { { $as_echo "$as_me:$LINENO: error: gda plugin: static linking not supported" >&5
- $as_echo "$as_me: error: gda plugin: static linking not supported" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -26516,7 +26516,7 @@
- 	:
- fi
- 
--test "$enable_gda" == "auto" && PLUGINS="$PLUGINS gda"
-+test "$enable_gda" = "auto" && PLUGINS="$PLUGINS gda"
- 
- GDA_CFLAGS="$GDA_CFLAGS "'${PLUGIN_CFLAGS}'
- GDA_LIBS="$GDA_LIBS "'${PLUGIN_LIBS}'
-@@ -26530,7 +26530,7 @@
- grammar_pkgs='link-grammar >= 4.2.1'
- grammar_deps="no"
- 
--if test "$enable_grammar" != "" && test  "$abi_cv_spell" == "yes"; then
-+if test "$enable_grammar" != "" && test  "$abi_cv_spell" = "yes"; then
- 
- if test -n "$PKG_CONFIG" && \
-     { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$grammar_pkgs \"") >&5
-@@ -26543,17 +26543,17 @@
- 
- else
- 
--	test "$enable_grammar" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: grammar plugin: dependencies not satisfied - $grammar_pkgs" >&5
-+	test "$enable_grammar" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: grammar plugin: dependencies not satisfied - $grammar_pkgs" >&5
- $as_echo "$as_me: WARNING: grammar plugin: dependencies not satisfied - $grammar_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_grammar" == "yes" || \
--   test "$grammar_deps" == "yes"; then
-+if test "$enable_grammar" = "yes" || \
-+   test "$grammar_deps" = "yes"; then
- 
--if test "$enable_grammar_builtin" == "yes"; then
-+if test "$enable_grammar_builtin" = "yes"; then
- { { $as_echo "$as_me:$LINENO: error: grammar plugin: static linking not supported" >&5
- $as_echo "$as_me: error: grammar plugin: static linking not supported" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -26669,7 +26669,7 @@
- 	:
- fi
- 
--test "$enable_grammar" == "auto" && PLUGINS="$PLUGINS grammar"
-+test "$enable_grammar" = "auto" && PLUGINS="$PLUGINS grammar"
- 
- GRAMMAR_CFLAGS="$GRAMMAR_CFLAGS "'${PLUGIN_CFLAGS}'
- GRAMMAR_LIBS="$GRAMMAR_LIBS "'${PLUGIN_LIBS}'
-@@ -26690,19 +26690,19 @@
- 
- fi
- 
--if test "$enable_bmp" == "yes" || \
--   test "$bmp_deps" == "yes"; then
-+if test "$enable_bmp" = "yes" || \
-+   test "$bmp_deps" = "yes"; then
- 
- # TODO check for libpng, well abiword links to it anyways
- 
- BMP_CFLAGS="$BMP_CFLAGS "'${PLUGIN_CFLAGS}'
- BMP_LIBS="$BMP_LIBS "'${PLUGIN_LIBS} -lpng12'
- 
--if test "$enable_bmp_builtin" == "yes"; then
-+if test "$enable_bmp_builtin" = "yes"; then
- 	BMP_CFLAGS="$BMP_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
--test "$enable_bmp" == "auto" && PLUGINS="$PLUGINS bmp"
-+test "$enable_bmp" = "auto" && PLUGINS="$PLUGINS bmp"
- 
- fi
- 
-@@ -26726,15 +26726,15 @@
- 
- else
- 
--	test "$enable_openwriter" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: openwriter plugin: dependencies not satisfied - $openwriter_pkgs" >&5
-+	test "$enable_openwriter" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: openwriter plugin: dependencies not satisfied - $openwriter_pkgs" >&5
- $as_echo "$as_me: WARNING: openwriter plugin: dependencies not satisfied - $openwriter_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_openwriter" == "yes" || \
--   test "$openwriter_deps" == "yes"; then
-+if test "$enable_openwriter" = "yes" || \
-+   test "$openwriter_deps" = "yes"; then
- 
- 
- pkg_failed=no
-@@ -26846,12 +26846,12 @@
- 	:
- fi
- 
--test "$enable_openwriter" == "auto" && PLUGINS="$PLUGINS openwriter"
-+test "$enable_openwriter" = "auto" && PLUGINS="$PLUGINS openwriter"
- 
- OPENWRITER_CFLAGS="$OPENWRITER_CFLAGS "'${PLUGIN_CFLAGS}'
- OPENWRITER_LIBS="$OPENWRITER_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_openwriter_builtin" == "yes"; then
-+if test "$enable_openwriter_builtin" = "yes"; then
- 	OPENWRITER_CFLAGS="$OPENWRITER_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -26880,7 +26880,7 @@
- 	abi_cv_libxslt="no"
- 
- fi
-- if test "$abi_cv_libxslt" == "yes"; then
-+ if test "$abi_cv_libxslt" = "yes"; then
-   HAVE_LIBXSLT_TRUE=
-   HAVE_LIBXSLT_FALSE='#'
- else
-@@ -26891,9 +26891,9 @@
- 
- if test "$enable_latex" != ""; then
- 
--test "$enable_latex" == "auto" && PLUGINS="$PLUGINS latex"
-+test "$enable_latex" = "auto" && PLUGINS="$PLUGINS latex"
- 
--if test "$abi_cv_libxslt" == "yes"; then
-+if test "$abi_cv_libxslt" = "yes"; then
- 
- pkg_failed=no
- { $as_echo "$as_me:$LINENO: checking for LIBXSLT" >&5
-@@ -27123,7 +27123,7 @@
- LATEX_CFLAGS="$LATEX_CFLAGS "'${PLUGIN_CFLAGS}'
- LATEX_LIBS="$LATEX_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_latex_builtin" == "yes"; then
-+if test "$enable_latex_builtin" = "yes"; then
- 	LATEX_CFLAGS="$LATEX_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -27138,12 +27138,12 @@
- 
- if test "$enable_presentation" != ""; then
- 
--test "$enable_presentation" == "auto" && PLUGINS="$PLUGINS presentation"
-+test "$enable_presentation" = "auto" && PLUGINS="$PLUGINS presentation"
- 
- PRESENTATION_CFLAGS="$PRESENTATION_CFLAGS "'${PLUGIN_CFLAGS}'
- PRESENTATION_LIBS="$PRESENTATION_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_presentation_builtin" == "yes"; then
-+if test "$enable_presentation_builtin" = "yes"; then
- 	PRESENTATION_CFLAGS="$PRESENTATION_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -27156,9 +27156,9 @@
- rsvg_pkgs="librsvg-2.0 >= 2.0 glib-2.0"
- rsvg_deps="no"
- 
--if test "$TOOLKIT" == "gtk"; then
-+if test "$TOOLKIT" = "gtk"; then
- 
-- if test "$enable_rsvg" == "auto"; then
-+ if test "$enable_rsvg" = "auto"; then
-    { $as_echo "$as_me:$LINENO: WARNING: rsvg plugin: not needed with gtk" >&5
- $as_echo "$as_me: WARNING: rsvg plugin: not needed with gtk" >&2;}
-  fi
-@@ -27178,17 +27178,17 @@
- 
- else
- 
--	test "$enable_rsvg" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: rsvg plugin: dependencies not satisfied - $rsvg_pkgs" >&5
-+	test "$enable_rsvg" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: rsvg plugin: dependencies not satisfied - $rsvg_pkgs" >&5
- $as_echo "$as_me: WARNING: rsvg plugin: dependencies not satisfied - $rsvg_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_rsvg" == "yes" || \
--   test "$rsvg_deps" == "yes"; then
-+if test "$enable_rsvg" = "yes" || \
-+   test "$rsvg_deps" = "yes"; then
- 
--if test "$enable_rsvg_builtin" == "yes"; then
-+if test "$enable_rsvg_builtin" = "yes"; then
- { { $as_echo "$as_me:$LINENO: error: rsvg plugin: static linking not supported" >&5
- $as_echo "$as_me: error: rsvg plugin: static linking not supported" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -27304,7 +27304,7 @@
- 	:
- fi
- 
--test "$enable_rsvg" == "auto" && PLUGINS="$PLUGINS rsvg"
-+test "$enable_rsvg" = "auto" && PLUGINS="$PLUGINS rsvg"
- 
- RSVG_CFLAGS="$RSVG_CFLAGS "'${PLUGIN_CFLAGS}'
- RSVG_LIBS="$RSVG_LIBS "'${PLUGIN_LIBS}'
-@@ -27331,15 +27331,15 @@
- 
- else
- 
--	test "$enable_wml" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: wml plugin: dependencies not satisfied - $wml_pkgs" >&5
-+	test "$enable_wml" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: wml plugin: dependencies not satisfied - $wml_pkgs" >&5
- $as_echo "$as_me: WARNING: wml plugin: dependencies not satisfied - $wml_pkgs" >&2;}
- 
- fi
- 
- fi
- 
--if test "$enable_wml" == "yes" || \
--   test "$wml_deps" == "yes"; then
-+if test "$enable_wml" = "yes" || \
-+   test "$wml_deps" = "yes"; then
- 
- 
- pkg_failed=no
-@@ -27451,12 +27451,12 @@
- 	:
- fi
- 
--test "$enable_wml" == "auto" && PLUGINS="$PLUGINS wml"
-+test "$enable_wml" = "auto" && PLUGINS="$PLUGINS wml"
- 
- WML_CFLAGS="$WML_CFLAGS "'${PLUGIN_CFLAGS}'
- WML_LIBS="$WML_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_wml_builtin" == "yes"; then
-+if test "$enable_wml_builtin" = "yes"; then
- 	WML_CFLAGS="$WML_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -27471,12 +27471,12 @@
- 
- if test "$enable_passepartout" != ""; then
- 
--test "$enable_passepartout" == "auto" && PLUGINS="$PLUGINS passepartout"
-+test "$enable_passepartout" = "auto" && PLUGINS="$PLUGINS passepartout"
- 
- PASSEPARTOUT_CFLAGS="$PASSEPARTOUT_CFLAGS "'${PLUGIN_CFLAGS}'
- PASSEPARTOUT_LIBS="$PASSEPARTOUT_LIBS "'${PLUGIN_LIBS}'
- 
--if test "$enable_passepartout_builtin" == "yes"; then
-+if test "$enable_passepartout_builtin" = "yes"; then
- 	PASSEPARTOUT_CFLAGS="$PASSEPARTOUT_CFLAGS -DABI_PLUGIN_BUILTIN"
- fi
- 
-@@ -27502,17 +27502,17 @@
+@@ -24472,17 +24472,17 @@
  
  else
  
@@ -2520,7 +1863,7 @@
  { { $as_echo "$as_me:$LINENO: error: wpg plugin: static linking not supported" >&5
  $as_echo "$as_me: error: wpg plugin: static linking not supported" >&2;}
     { (exit 1); exit 1; }; }
-@@ -27628,7 +27628,7 @@
+@@ -24598,7 +24598,7 @@
  	:
  fi
  
@@ -2529,7 +1872,506 @@
  
  WPG_CFLAGS="$WPG_CFLAGS "'${PLUGIN_CFLAGS}'
  WPG_LIBS="$WPG_LIBS "'${PLUGIN_LIBS}'
-@@ -27655,15 +27655,15 @@
+@@ -24625,15 +24625,15 @@
+ 
+ else
+ 
+-	test "$enable_mswrite" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: mswrite plugin: dependencies not satisfied - $mswrite_pkgs" >&5
++	test "$enable_mswrite" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: mswrite plugin: dependencies not satisfied - $mswrite_pkgs" >&5
+ $as_echo "$as_me: WARNING: mswrite plugin: dependencies not satisfied - $mswrite_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_mswrite" == "yes" || \
+-   test "$mswrite_deps" == "yes"; then
++if test "$enable_mswrite" = "yes" || \
++   test "$mswrite_deps" = "yes"; then
+ 
+ 
+ pkg_failed=no
+@@ -24745,12 +24745,12 @@
+ 	:
+ fi
+ 
+-test "$enable_mswrite" == "auto" && PLUGINS="$PLUGINS mswrite"
++test "$enable_mswrite" = "auto" && PLUGINS="$PLUGINS mswrite"
+ 
+ MSWRITE_CFLAGS="$MSWRITE_CFLAGS "'${PLUGIN_CFLAGS}'
+ MSWRITE_LIBS="$MSWRITE_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_mswrite_builtin" == "yes"; then
++if test "$enable_mswrite_builtin" = "yes"; then
+ 	MSWRITE_CFLAGS="$MSWRITE_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -24763,9 +24763,9 @@
+ rsvg_pkgs="librsvg-2.0 >= 2.0 glib-2.0"
+ rsvg_deps="no"
+ 
+-if test "$TOOLKIT" == "gtk"; then
++if test "$TOOLKIT" = "gtk"; then
+ 
+- if test "$enable_rsvg" == "auto"; then
++ if test "$enable_rsvg" = "auto"; then
+    { $as_echo "$as_me:$LINENO: WARNING: rsvg plugin: not needed with gtk" >&5
+ $as_echo "$as_me: WARNING: rsvg plugin: not needed with gtk" >&2;}
+  fi
+@@ -24785,17 +24785,17 @@
+ 
+ else
+ 
+-	test "$enable_rsvg" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: rsvg plugin: dependencies not satisfied - $rsvg_pkgs" >&5
++	test "$enable_rsvg" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: rsvg plugin: dependencies not satisfied - $rsvg_pkgs" >&5
+ $as_echo "$as_me: WARNING: rsvg plugin: dependencies not satisfied - $rsvg_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_rsvg" == "yes" || \
+-   test "$rsvg_deps" == "yes"; then
++if test "$enable_rsvg" = "yes" || \
++   test "$rsvg_deps" = "yes"; then
+ 
+-if test "$enable_rsvg_builtin" == "yes"; then
++if test "$enable_rsvg_builtin" = "yes"; then
+ { { $as_echo "$as_me:$LINENO: error: rsvg plugin: static linking not supported" >&5
+ $as_echo "$as_me: error: rsvg plugin: static linking not supported" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -24911,7 +24911,7 @@
+ 	:
+ fi
+ 
+-test "$enable_rsvg" == "auto" && PLUGINS="$PLUGINS rsvg"
++test "$enable_rsvg" = "auto" && PLUGINS="$PLUGINS rsvg"
+ 
+ RSVG_CFLAGS="$RSVG_CFLAGS "'${PLUGIN_CFLAGS}'
+ RSVG_LIBS="$RSVG_LIBS "'${PLUGIN_LIBS}'
+@@ -24938,15 +24938,15 @@
+ 
+ else
+ 
+-	test "$enable_garble" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: garble plugin: dependencies not satisfied - $garble_pkgs" >&5
++	test "$enable_garble" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: garble plugin: dependencies not satisfied - $garble_pkgs" >&5
+ $as_echo "$as_me: WARNING: garble plugin: dependencies not satisfied - $garble_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_garble" == "yes" || \
+-   test "$garble_deps" == "yes"; then
++if test "$enable_garble" = "yes" || \
++   test "$garble_deps" = "yes"; then
+ 
+ { $as_echo "$as_me:$LINENO: checking whether time.h and sys/time.h may both be included" >&5
+ $as_echo_n "checking whether time.h and sys/time.h may both be included... " >&6; }
+@@ -25121,12 +25121,12 @@
+ 	:
+ fi
+ 
+-test "$enable_garble" == "auto" && PLUGINS="$PLUGINS garble"
++test "$enable_garble" = "auto" && PLUGINS="$PLUGINS garble"
+ 
+ GARBLE_CFLAGS="$GARBLE_CFLAGS $PNG_CFLAGS "'${PLUGIN_CFLAGS}'
+ GARBLE_LIBS="$GARBLE_LIBS $PNG_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_garble_builtin" == "yes"; then
++if test "$enable_garble_builtin" = "yes"; then
+ 	GARBLE_CFLAGS="$GARBLE_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -25155,7 +25155,7 @@
+ 	abi_cv_libxslt="no"
+ 
+ fi
+- if test "$abi_cv_libxslt" == "yes"; then
++ if test "$abi_cv_libxslt" = "yes"; then
+   HAVE_LIBXSLT_TRUE=
+   HAVE_LIBXSLT_FALSE='#'
+ else
+@@ -25166,9 +25166,9 @@
+ 
+ if test "$enable_latex" != ""; then
+ 
+-test "$enable_latex" == "auto" && PLUGINS="$PLUGINS latex"
++test "$enable_latex" = "auto" && PLUGINS="$PLUGINS latex"
+ 
+-if test "$abi_cv_libxslt" == "yes"; then
++if test "$abi_cv_libxslt" = "yes"; then
+ 
+ pkg_failed=no
+ { $as_echo "$as_me:$LINENO: checking for LIBXSLT" >&5
+@@ -25398,7 +25398,7 @@
+ LATEX_CFLAGS="$LATEX_CFLAGS "'${PLUGIN_CFLAGS}'
+ LATEX_LIBS="$LATEX_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_latex_builtin" == "yes"; then
++if test "$enable_latex_builtin" = "yes"; then
+ 	LATEX_CFLAGS="$LATEX_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -25424,15 +25424,15 @@
+ 
+ else
+ 
+-	test "$enable_pdb" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: pdb plugin: dependencies not satisfied - $pdb_pkgs" >&5
++	test "$enable_pdb" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: pdb plugin: dependencies not satisfied - $pdb_pkgs" >&5
+ $as_echo "$as_me: WARNING: pdb plugin: dependencies not satisfied - $pdb_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_pdb" == "yes" || \
+-   test "$pdb_deps" == "yes"; then
++if test "$enable_pdb" = "yes" || \
++   test "$pdb_deps" = "yes"; then
+ 
+ 
+ pkg_failed=no
+@@ -25544,12 +25544,12 @@
+ 	:
+ fi
+ 
+-test "$enable_pdb" == "auto" && PLUGINS="$PLUGINS pdb"
++test "$enable_pdb" = "auto" && PLUGINS="$PLUGINS pdb"
+ 
+ PDB_CFLAGS="$PDB_CFLAGS "'${PLUGIN_CFLAGS}'
+ PDB_LIBS="$PDB_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_pdb_builtin" == "yes"; then
++if test "$enable_pdb_builtin" = "yes"; then
+ 	PDB_CFLAGS="$PDB_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -25564,12 +25564,12 @@
+ 
+ if test "$enable_eml" != ""; then
+ 
+-test "$enable_eml" == "auto" && PLUGINS="$PLUGINS eml"
++test "$enable_eml" = "auto" && PLUGINS="$PLUGINS eml"
+ 
+ EML_CFLAGS="$EML_CFLAGS "'${PLUGIN_CFLAGS}'
+ EML_LIBS="$EML_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_eml_builtin" == "yes"; then
++if test "$enable_eml_builtin" = "yes"; then
+ 	EML_CFLAGS="$EML_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -25600,17 +25600,17 @@
+ 
+ else
+ 
+-	test "$enable_wordperfect" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: wordperfect plugin: dependencies not satisfied - $wordperfect_pkgs" >&5
++	test "$enable_wordperfect" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: wordperfect plugin: dependencies not satisfied - $wordperfect_pkgs" >&5
+ $as_echo "$as_me: WARNING: wordperfect plugin: dependencies not satisfied - $wordperfect_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_wordperfect" == "yes" || \
+-   test "$wordperfect_deps" == "yes"; then
++if test "$enable_wordperfect" = "yes" || \
++   test "$wordperfect_deps" = "yes"; then
+ 
+-if test "$enable_wordperfect_builtin" == "yes"; then
++if test "$enable_wordperfect_builtin" = "yes"; then
+ { { $as_echo "$as_me:$LINENO: error: wordperfect plugin: static linking not supported" >&5
+ $as_echo "$as_me: error: wordperfect plugin: static linking not supported" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -25740,7 +25740,7 @@
+ 	:
+ fi
+ 
+-test "$enable_wordperfect" == "auto" && PLUGINS="$PLUGINS wordperfect"
++test "$enable_wordperfect" = "auto" && PLUGINS="$PLUGINS wordperfect"
+ 
+ WORDPERFECT_CFLAGS="$WORDPERFECT_CFLAGS "'${PLUGIN_CFLAGS}'"$WPS_DEFINE"
+ WORDPERFECT_LIBS="$WORDPERFECT_LIBS "'${PLUGIN_LIBS}'
+@@ -25756,12 +25756,12 @@
+ 
+ if test "$enable_wikipedia" != ""; then
+ 
+-test "$enable_wikipedia" == "auto" && PLUGINS="$PLUGINS wikipedia"
++test "$enable_wikipedia" = "auto" && PLUGINS="$PLUGINS wikipedia"
+ 
+ WIKIPEDIA_CFLAGS="$WIKIPEDIA_CFLAGS "'${PLUGIN_CFLAGS}'
+ WIKIPEDIA_LIBS="$WIKIPEDIA_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_wikipedia_builtin" == "yes"; then
++if test "$enable_wikipedia_builtin" = "yes"; then
+ 	WIKIPEDIA_CFLAGS="$WIKIPEDIA_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -25785,14 +25785,14 @@
+ 
+ 	{ $as_echo "$as_me:$LINENO: checking for gtk toolkit" >&5
+ $as_echo_n "checking for gtk toolkit... " >&6; }
+-	if test "$TOOLKIT" == "gtk"; then
++	if test "$TOOLKIT" = "gtk"; then
+ 	  { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
+ 	  gda_deps="yes"
+ 	else
+ 	  { $as_echo "$as_me:$LINENO: result: no" >&5
+ $as_echo "no" >&6; }
+-	  if test "$enable_gda" == "auto"; then
++	  if test "$enable_gda" = "auto"; then
+ 	    { $as_echo "$as_me:$LINENO: WARNING: gda plugin: only supported with gtk" >&5
+ $as_echo "$as_me: WARNING: gda plugin: only supported with gtk" >&2;}
+ 	  else
+@@ -25804,17 +25804,17 @@
+ 
+ else
+ 
+-	test "$enable_gda" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: gda plugin: dependencies not satisfied - $gda_pkgs" >&5
++	test "$enable_gda" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: gda plugin: dependencies not satisfied - $gda_pkgs" >&5
+ $as_echo "$as_me: WARNING: gda plugin: dependencies not satisfied - $gda_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_gda" == "yes" || \
+-   test "$gda_deps" == "yes"; then
++if test "$enable_gda" = "yes" || \
++   test "$gda_deps" = "yes"; then
+ 
+-if test "$enable_gda_builtin" == "yes"; then
++if test "$enable_gda_builtin" = "yes"; then
+ { { $as_echo "$as_me:$LINENO: error: gda plugin: static linking not supported" >&5
+ $as_echo "$as_me: error: gda plugin: static linking not supported" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -25930,7 +25930,7 @@
+ 	:
+ fi
+ 
+-test "$enable_gda" == "auto" && PLUGINS="$PLUGINS gda"
++test "$enable_gda" = "auto" && PLUGINS="$PLUGINS gda"
+ 
+ GDA_CFLAGS="$GDA_CFLAGS "'${PLUGIN_CFLAGS}'
+ GDA_LIBS="$GDA_LIBS "'${PLUGIN_LIBS}'
+@@ -25954,7 +25954,7 @@
+   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+ 
+-	if test "$TOOLKIT" == "gtk"; then
++	if test "$TOOLKIT" = "gtk"; then
+ 	if test -n "$PKG_CONFIG" && \
+     { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$aiksaurus_gtk_pkgs \"") >&5
+   ($PKG_CONFIG --exists --print-errors " $aiksaurus_gtk_pkgs ") 2>&5
+@@ -25966,7 +25966,7 @@
+ 
+ else
+ 
+-		test "$enable_aiksaurus" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_gtk_pkgs" >&5
++		test "$enable_aiksaurus" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_gtk_pkgs" >&5
+ $as_echo "$as_me: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_gtk_pkgs" >&2;}
+ 
+ fi
+@@ -25976,17 +25976,17 @@
+ 
+ else
+ 
+-	test "$enable_aiksaurus" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_pkgs" >&5
++	test "$enable_aiksaurus" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_pkgs" >&5
+ $as_echo "$as_me: WARNING: aiksaurus plugin: dependencies not satisfied - $aiksaurus_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_aiksaurus" == "yes" || \
+-   test "$aiksaurus_deps" == "yes"; then
++if test "$enable_aiksaurus" = "yes" || \
++   test "$aiksaurus_deps" = "yes"; then
+ 
+-if test "$enable_aiksaurus_builtin" == "yes"; then
++if test "$enable_aiksaurus_builtin" = "yes"; then
+ { { $as_echo "$as_me:$LINENO: error: aiksaurus plugin: static linking not supported" >&5
+ $as_echo "$as_me: error: aiksaurus plugin: static linking not supported" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -26102,7 +26102,7 @@
+ 	:
+ fi
+ 
+-if test "$TOOLKIT" == "gtk"; then
++if test "$TOOLKIT" = "gtk"; then
+ 
+ pkg_failed=no
+ { $as_echo "$as_me:$LINENO: checking for AIKSAURUS_GTK" >&5
+@@ -26216,7 +26216,7 @@
+ 	AIKSAURUS_LIBS="$AIKSAURUS_LIBS $AIKSAURUS_GTK_LIBS"
+ fi
+ 
+-test "$enable_aiksaurus" == "auto" && PLUGINS="$PLUGINS aiksaurus"
++test "$enable_aiksaurus" = "auto" && PLUGINS="$PLUGINS aiksaurus"
+ 
+ AIKSAURUS_CFLAGS="$AIKSAURUS_CFLAGS "'${PLUGIN_CFLAGS}'
+ AIKSAURUS_LIBS="$AIKSAURUS_LIBS "'${PLUGIN_LIBS}'
+@@ -26243,15 +26243,15 @@
+ 
+ else
+ 
+-	test "$enable_applix" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: applix plugin: dependencies not satisfied - $applix_pkgs" >&5
++	test "$enable_applix" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: applix plugin: dependencies not satisfied - $applix_pkgs" >&5
+ $as_echo "$as_me: WARNING: applix plugin: dependencies not satisfied - $applix_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_applix" == "yes" || \
+-   test "$applix_deps" == "yes"; then
++if test "$enable_applix" = "yes" || \
++   test "$applix_deps" = "yes"; then
+ 
+ 
+ pkg_failed=no
+@@ -26363,12 +26363,12 @@
+ 	:
+ fi
+ 
+-test "$enable_applix" == "auto" && PLUGINS="$PLUGINS applix"
++test "$enable_applix" = "auto" && PLUGINS="$PLUGINS applix"
+ 
+ APPLIX_CFLAGS="$APPLIX_CFLAGS "'${PLUGIN_CFLAGS}'
+ APPLIX_LIBS="$APPLIX_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_applix_builtin" == "yes"; then
++if test "$enable_applix_builtin" = "yes"; then
+ 	APPLIX_CFLAGS="$APPLIX_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -26381,7 +26381,7 @@
+ grammar_pkgs='link-grammar >= 4.2.1'
+ grammar_deps="no"
+ 
+-if test "$enable_grammar" != "" && test  "$abi_cv_spell" == "yes"; then
++if test "$enable_grammar" != "" && test  "$abi_cv_spell" = "yes"; then
+ 
+ if test -n "$PKG_CONFIG" && \
+     { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \" \$grammar_pkgs \"") >&5
+@@ -26394,17 +26394,17 @@
+ 
+ else
+ 
+-	test "$enable_grammar" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: grammar plugin: dependencies not satisfied - $grammar_pkgs" >&5
++	test "$enable_grammar" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: grammar plugin: dependencies not satisfied - $grammar_pkgs" >&5
+ $as_echo "$as_me: WARNING: grammar plugin: dependencies not satisfied - $grammar_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_grammar" == "yes" || \
+-   test "$grammar_deps" == "yes"; then
++if test "$enable_grammar" = "yes" || \
++   test "$grammar_deps" = "yes"; then
+ 
+-if test "$enable_grammar_builtin" == "yes"; then
++if test "$enable_grammar_builtin" = "yes"; then
+ { { $as_echo "$as_me:$LINENO: error: grammar plugin: static linking not supported" >&5
+ $as_echo "$as_me: error: grammar plugin: static linking not supported" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -26520,7 +26520,7 @@
+ 	:
+ fi
+ 
+-test "$enable_grammar" == "auto" && PLUGINS="$PLUGINS grammar"
++test "$enable_grammar" = "auto" && PLUGINS="$PLUGINS grammar"
+ 
+ GRAMMAR_CFLAGS="$GRAMMAR_CFLAGS "'${PLUGIN_CFLAGS}'
+ GRAMMAR_LIBS="$GRAMMAR_LIBS "'${PLUGIN_LIBS}'
+@@ -26850,17 +26850,17 @@
+ 
+ else
+ 
+-	test "$enable_mathview" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: mathview plugin: dependencies not satisfied - $mathview_pkgs" >&5
++	test "$enable_mathview" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: mathview plugin: dependencies not satisfied - $mathview_pkgs" >&5
+ $as_echo "$as_me: WARNING: mathview plugin: dependencies not satisfied - $mathview_pkgs" >&2;}
+ 
+ fi
+ 
+ fi
+ 
+-if test "$enable_mathview" == "yes" || \
+-   test "$mathview_deps" == "yes"; then
++if test "$enable_mathview" = "yes" || \
++   test "$mathview_deps" = "yes"; then
+ 
+-if test "$enable_mathview_builtin" == "yes"; then
++if test "$enable_mathview_builtin" = "yes"; then
+ { { $as_echo "$as_me:$LINENO: error: mathview plugin: static linking not supported" >&5
+ $as_echo "$as_me: error: mathview plugin: static linking not supported" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -26976,7 +26976,7 @@
+ 	:
+ fi
+ 
+-test "$enable_mathview" == "auto" && PLUGINS="$PLUGINS mathview"
++test "$enable_mathview" = "auto" && PLUGINS="$PLUGINS mathview"
+ 
+ MATHVIEW_CFLAGS="$MATHVIEW_CFLAGS $HASHMAP_CFLAGS "'${PLUGIN_CFLAGS}'
+ MATHVIEW_LIBS="$MATHVIEW_LIBS "'${PLUGIN_LIBS}'
+@@ -27258,14 +27258,14 @@
+ 
+ { $as_echo "$as_me:$LINENO: checking for unix/gtk platform" >&5
+ $as_echo_n "checking for unix/gtk platform... " >&6; }
+-if test "$TOOLKIT" == "gtk"; then
++if test "$TOOLKIT" = "gtk"; then
+   { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
+   gdict_deps="yes"
+ else
+   { $as_echo "$as_me:$LINENO: result: no" >&5
+ $as_echo "no" >&6; }
+-  if test "$enable_gdict" == "auto"; then
++  if test "$enable_gdict" = "auto"; then
+     { $as_echo "$as_me:$LINENO: WARNING: gdict plugin: only supported on UNIX/gtk platforms" >&5
+ $as_echo "$as_me: WARNING: gdict plugin: only supported on UNIX/gtk platforms" >&2;}
+   else
+@@ -27277,8 +27277,8 @@
+ 
+ fi
+ 
+-if test "$enable_gdict" == "yes" || \
+-   test "$gdict_deps" == "yes"; then
++if test "$enable_gdict" = "yes" || \
++   test "$gdict_deps" = "yes"; then
+ 
+ { $as_echo "$as_me:$LINENO: checking for pid_t" >&5
+ $as_echo_n "checking for pid_t... " >&6; }
+@@ -27385,7 +27385,7 @@
+ fi
+ 
+ 
+-test "$enable_gdict" == "auto" && PLUGINS="$PLUGINS gdict"
++test "$enable_gdict" = "auto" && PLUGINS="$PLUGINS gdict"
+ 
+ GDICT_CFLAGS="$GDICT_CFLAGS "'${PLUGIN_CFLAGS} -DUSE_FORK_AND_EXEC_METHOD=1'
+ GDICT_LIBS='${PLUGIN_LIBS}'
+@@ -27405,12 +27405,12 @@
+ 
+ if test "$enable_passepartout" != ""; then
+ 
+-test "$enable_passepartout" == "auto" && PLUGINS="$PLUGINS passepartout"
++test "$enable_passepartout" = "auto" && PLUGINS="$PLUGINS passepartout"
+ 
+ PASSEPARTOUT_CFLAGS="$PASSEPARTOUT_CFLAGS "'${PLUGIN_CFLAGS}'
+ PASSEPARTOUT_LIBS="$PASSEPARTOUT_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_passepartout_builtin" == "yes"; then
++if test "$enable_passepartout_builtin" = "yes"; then
+ 	PASSEPARTOUT_CFLAGS="$PASSEPARTOUT_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -27436,15 +27436,15 @@
  
  else
  
@@ -2548,7 +2390,7 @@
  
  
  pkg_failed=no
-@@ -27775,12 +27775,12 @@
+@@ -27556,12 +27556,12 @@
  	:
  fi
  
@@ -2563,35 +2405,56 @@
  	XSLFO_CFLAGS="$XSLFO_CFLAGS -DABI_PLUGIN_BUILTIN"
  fi
  
-@@ -27806,15 +27806,15 @@
+@@ -27587,15 +27587,15 @@
  
  else
  
--	test "$enable_kword" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: kword plugin: dependencies not satisfied - $kword_pkgs" >&5
-+	test "$enable_kword" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: kword plugin: dependencies not satisfied - $kword_pkgs" >&5
- $as_echo "$as_me: WARNING: kword plugin: dependencies not satisfied - $kword_pkgs" >&2;}
+-	test "$enable_opendocument" == "auto" && { $as_echo "$as_me:$LINENO: WARNING: opendocument plugin: dependencies not satisfied - $opendocument_pkgs" >&5
++	test "$enable_opendocument" = "auto" && { $as_echo "$as_me:$LINENO: WARNING: opendocument plugin: dependencies not satisfied - $opendocument_pkgs" >&5
+ $as_echo "$as_me: WARNING: opendocument plugin: dependencies not satisfied - $opendocument_pkgs" >&2;}
  
  fi
  
  fi
  
--if test "$enable_kword" == "yes" || \
--   test "$kword_deps" == "yes"; then
-+if test "$enable_kword" = "yes" || \
-+   test "$kword_deps" = "yes"; then
+-if test "$enable_opendocument" == "yes" || \
+-   test "$opendocument_deps" == "yes"; then
++if test "$enable_opendocument" = "yes" || \
++   test "$opendocument_deps" = "yes"; then
  
  
  pkg_failed=no
-@@ -27926,7 +27926,7 @@
+@@ -27707,12 +27707,12 @@
  	:
  fi
  
--test "$enable_kword" == "auto" && PLUGINS="$PLUGINS kword"
-+test "$enable_kword" = "auto" && PLUGINS="$PLUGINS kword"
+-test "$enable_opendocument" == "auto" && PLUGINS="$PLUGINS opendocument"
++test "$enable_opendocument" = "auto" && PLUGINS="$PLUGINS opendocument"
  
- KWORD_CFLAGS="$KWORD_CFLAGS "'${PLUGIN_CFLAGS}'
- KWORD_LIBS="$KWORD_LIBS "'${PLUGIN_LIBS}'
-@@ -27957,15 +27957,15 @@
+ OPENDOCUMENT_CFLAGS="$OPENDOCUMENT_CFLAGS "'${PLUGIN_CFLAGS}'
+ OPENDOCUMENT_LIBS="$OPENDOCUMENT_LIBS "'${PLUGIN_LIBS} -lz'
+ 
+-if test "$enable_opendocument_builtin" == "yes"; then
++if test "$enable_opendocument_builtin" = "yes"; then
+ 	OPENDOCUMENT_CFLAGS="$OPENDOCUMENT_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -27727,12 +27727,12 @@
+ 
+ if test "$enable_google" != ""; then
+ 
+-test "$enable_google" == "auto" && PLUGINS="$PLUGINS google"
++test "$enable_google" = "auto" && PLUGINS="$PLUGINS google"
+ 
+ GOOGLE_CFLAGS="$GOOGLE_CFLAGS "'${PLUGIN_CFLAGS}'
+ GOOGLE_LIBS="$GOOGLE_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_google_builtin" == "yes"; then
++if test "$enable_google_builtin" = "yes"; then
+ 	GOOGLE_CFLAGS="$GOOGLE_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -27758,15 +27758,15 @@
  
  else
  
@@ -2610,7 +2473,7 @@
  
  
  pkg_failed=no
-@@ -28077,12 +28077,12 @@
+@@ -27878,12 +27878,12 @@
  	:
  fi
  
@@ -2623,5 +2486,108 @@
 -if test "$enable_sdw_builtin" == "yes"; then
 +if test "$enable_sdw_builtin" = "yes"; then
  	SDW_CFLAGS="$SDW_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -27898,12 +27898,12 @@
+ 
+ if test "$enable_presentation" != ""; then
+ 
+-test "$enable_presentation" == "auto" && PLUGINS="$PLUGINS presentation"
++test "$enable_presentation" = "auto" && PLUGINS="$PLUGINS presentation"
+ 
+ PRESENTATION_CFLAGS="$PRESENTATION_CFLAGS "'${PLUGIN_CFLAGS}'
+ PRESENTATION_LIBS="$PRESENTATION_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_presentation_builtin" == "yes"; then
++if test "$enable_presentation_builtin" = "yes"; then
+ 	PRESENTATION_CFLAGS="$PRESENTATION_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -27918,12 +27918,12 @@
+ 
+ if test "$enable_urldict" != ""; then
+ 
+-test "$enable_urldict" == "auto" && PLUGINS="$PLUGINS urldict"
++test "$enable_urldict" = "auto" && PLUGINS="$PLUGINS urldict"
+ 
+ URLDICT_CFLAGS="$URLDICT_CFLAGS "'${PLUGIN_CFLAGS}'
+ URLDICT_LIBS="$URLDICT_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_urldict_builtin" == "yes"; then
++if test "$enable_urldict_builtin" = "yes"; then
+ 	URLDICT_CFLAGS="$URLDICT_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -28032,8 +28032,8 @@
+ 
+ if test "$enable_psion" != ""; then
+ 
+-	if test "$psiconvconfig" == ""; then
+-		if test "$enable_psion" == "yes"; then
++	if test "$psiconvconfig" = ""; then
++		if test "$enable_psion" = "yes"; then
+ 		  { { $as_echo "$as_me:$LINENO: error: psiconv plugin: program psiconv-config not found in path" >&5
+ $as_echo "$as_me: error: psiconv plugin: program psiconv-config not found in path" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -28062,10 +28062,10 @@
+ 	fi
+ fi
+ 
+-if test "$enable_psion" == "yes" || \
+-   test "$psion_deps" == "yes"; then
++if test "$enable_psion" = "yes" || \
++   test "$psion_deps" = "yes"; then
+ 
+-if test "$enable_psion_builtin" == "yes"; then
++if test "$enable_psion_builtin" = "yes"; then
+ { { $as_echo "$as_me:$LINENO: error: psion plugin: static linking not supported" >&5
+ $as_echo "$as_me: error: psion plugin: static linking not supported" >&2;}
+    { (exit 1); exit 1; }; }
+@@ -28073,7 +28073,7 @@
+ 
+ { $as_echo "$as_me:$LINENO: checking for psiconv >= ${psiconv_major_req}.${psiconv_minor_req}.${psiconv_micro_req}" >&5
+ $as_echo_n "checking for psiconv >= ${psiconv_major_req}.${psiconv_minor_req}.${psiconv_micro_req}... " >&6; }
+-if test "$psion_deps" == "yes"; then
++if test "$psion_deps" = "yes"; then
+ 	{ $as_echo "$as_me:$LINENO: result: version ${psiconv_major_found}.${psiconv_minor_found}.${psiconv_micro_found} (ok)" >&5
+ $as_echo "version ${psiconv_major_found}.${psiconv_minor_found}.${psiconv_micro_found} (ok)" >&6; }
+ 	PSION_CFLAGS=`$psiconvconfig --cflags`
+@@ -28084,7 +28084,7 @@
+    { (exit 1); exit 1; }; }
+ fi
+ 
+-test "$enable_psion" == "auto" && PLUGINS="$PLUGINS psion"
++test "$enable_psion" = "auto" && PLUGINS="$PLUGINS psion"
+ 
+ PSION_CFLAGS="$PSION_CFLAGS $PNG_CFLAGS "'${PLUGIN_CFLAGS}'
+ PSION_LIBS="$PSION_LIBS $PNG_LIBS -lgsf-1 "'${PLUGIN_LIBS}'
+@@ -28100,12 +28100,12 @@
+ 
+ if test "$enable_hrtext" != ""; then
+ 
+-test "$enable_hrtext" == "auto" && PLUGINS="$PLUGINS hrtext"
++test "$enable_hrtext" = "auto" && PLUGINS="$PLUGINS hrtext"
+ 
+ HRTEXT_CFLAGS="$HRTEXT_CFLAGS "'${PLUGIN_CFLAGS}'
+ HRTEXT_LIBS="$HRTEXT_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_hrtext_builtin" == "yes"; then
++if test "$enable_hrtext_builtin" = "yes"; then
+ 	HRTEXT_CFLAGS="$HRTEXT_CFLAGS -DABI_PLUGIN_BUILTIN"
+ fi
+ 
+@@ -28120,12 +28120,12 @@
+ 
+ if test "$enable_mif" != ""; then
+ 
+-test "$enable_mif" == "auto" && PLUGINS="$PLUGINS mif"
++test "$enable_mif" = "auto" && PLUGINS="$PLUGINS mif"
+ 
+ MIF_CFLAGS="$MIF_CFLAGS "'${PLUGIN_CFLAGS}'
+ MIF_LIBS="$MIF_LIBS "'${PLUGIN_LIBS}'
+ 
+-if test "$enable_mif_builtin" == "yes"; then
++if test "$enable_mif_builtin" = "yes"; then
+ 	MIF_CFLAGS="$MIF_CFLAGS -DABI_PLUGIN_BUILTIN"
  fi
  
