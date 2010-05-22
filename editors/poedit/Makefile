@@ -8,10 +8,9 @@
 #
 
 PORTNAME=	poedit
-PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTVERSION=	1.4.6.1
 CATEGORIES=	editors
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.4.6/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Gettext catalogs (.po files) editor

@@ -39,6 +39,7 @@ share/locale/is/LC_MESSAGES/poedit.mo
 share/locale/it/LC_MESSAGES/poedit.mo
 share/locale/ja/LC_MESSAGES/poedit.mo
 share/locale/ka/LC_MESSAGES/poedit.mo
+share/locale/kk/LC_MESSAGES/poedit.mo
 share/locale/ko/LC_MESSAGES/poedit.mo
 share/locale/ku/LC_MESSAGES/poedit.mo
 share/locale/ky/LC_MESSAGES/poedit.mo
@@ -155,6 +156,8 @@ share/pixmaps/poedit.png
 @dirrmtry share/locale/tt
 @dirrmtry share/locale/sq_AL/LC_MESSAGES
 @dirrmtry share/locale/sq_AL
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/ky/LC_MESSAGES
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
