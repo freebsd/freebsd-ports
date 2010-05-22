@@ -25,7 +25,6 @@ USE_AUTOTOOLS=  libtool:22
 USE_GMAKE=	yes
 
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>

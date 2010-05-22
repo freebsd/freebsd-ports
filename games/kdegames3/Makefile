@@ -24,7 +24,6 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=  libtool:22
 
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib
 
 CONFIGURE_ARGS=	--disable-setgid
 

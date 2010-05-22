@@ -28,7 +28,6 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdeutils-${PORTVERSION}
 
 USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 pre-configure:
 	${ECHO_CMD} ${PORTNAME} > ${WRKSRC}/inst-apps
