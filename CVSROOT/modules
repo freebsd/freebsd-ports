@@ -2127,11 +2127,6 @@ darts                           ports/devel/darts
 darwinstreamingserver           ports/net/DarwinStreamingServer
 dash                            ports/shells/dash
 dasher                          ports/accessibility/dasher
-databases_postgresql74-client   ports/databases/postgresql74-client
-databases_postgresql80-client   ports/databases/postgresql80-client
-databases_postgresql81-client   ports/databases/postgresql81-client
-databases_postgresql83-client   ports/databases/postgresql83-client
-databases_postgresql84-client   ports/databases/postgresql84-client
 datadesigner                    ports/devel/datadesigner
 datadraw                        ports/devel/datadraw
 datapipe                        ports/net/datapipe
@@ -5486,6 +5481,7 @@ hs-json                         ports/converters/hs-json
 hs-language-c-ghc               ports/devel/hs-language-c-ghc
 hs-lazysmallcheck-ghc           ports/devel/hs-lazysmallcheck-ghc
 hs-libmpd                       ports/audio/hs-libmpd
+hs-libxml                       ports/textproc/hs-libxml
 hs-memotrie                     ports/devel/hs-MemoTrie
 hs-mime                         ports/mail/hs-mime
 hs-missingh                     ports/devel/hs-MissingH
@@ -7586,6 +7582,7 @@ libbonoboui                     ports/x11-toolkits/libbonoboui
 libbonoboui-reference           ports/x11-toolkits/libbonoboui-reference
 libbonobouimm                   ports/x11-toolkits/libbonobouimm
 libbpm                          ports/audio/libbpm
+libbs2b                         ports/audio/libbs2b
 libbt                           ports/net-p2p/libbt
 libburn                         ports/devel/libburn
 libcabinet                      ports/archivers/libcabinet
@@ -11890,6 +11887,7 @@ p5-Feed-Find                    ports/www/p5-Feed-Find
 p5-File-Append-TempFile         ports/devel/p5-File-Append-TempFile
 p5-File-Attributes              ports/devel/p5-File-Attributes
 p5-File-Attributes-Recursive    ports/devel/p5-File-Attributes-Recursive
+p5-File-BOM                     ports/devel/p5-File-BOM
 p5-File-BaseDir                 ports/devel/p5-File-BaseDir
 p5-File-BasicFlock              ports/devel/p5-File-BasicFlock
 p5-File-Binary                  ports/devel/p5-File-Binary
@@ -13327,6 +13325,7 @@ p5-Plack-Handler-AnyEvent-HTTPD  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-Plack-Handler-AnyEvent-ReverseHTTP  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
 p5-Plack-Handler-AnyEvent-SCGI  ports/www/p5-Plack-Handler-AnyEvent-SCGI
 p5-Plack-Handler-SCGI           ports/www/p5-Plack-Handler-SCGI
+p5-Plack-Middleware-AMF         ports/www/p5-Plack-Middleware-AMF
 p5-Plack-Middleware-Auth-Digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-Plack-Middleware-AutoRefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-Plack-Middleware-ConsoleLogger  ports/www/p5-Plack-Middleware-ConsoleLogger
@@ -15756,6 +15755,7 @@ p5-file-attributes-recursive    ports/devel/p5-File-Attributes-Recursive
 p5-file-basedir                 ports/devel/p5-File-BaseDir
 p5-file-basicflock              ports/devel/p5-File-BasicFlock
 p5-file-binary                  ports/devel/p5-File-Binary
+p5-file-bom                     ports/devel/p5-File-BOM
 p5-file-cache                   ports/devel/p5-File-Cache
 p5-file-cat                     ports/devel/p5-File-Cat
 p5-file-changenotify            ports/devel/p5-File-ChangeNotify
@@ -17142,6 +17142,7 @@ p5-plack-handler-anyevent-httpd  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-plack-handler-anyevent-reversehttp  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
 p5-plack-handler-anyevent-scgi  ports/www/p5-Plack-Handler-AnyEvent-SCGI
 p5-plack-handler-scgi           ports/www/p5-Plack-Handler-SCGI
+p5-plack-middleware-amf         ports/www/p5-Plack-Middleware-AMF
 p5-plack-middleware-auth-digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-plack-middleware-autorefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-plack-middleware-consolelogger  ports/www/p5-Plack-Middleware-ConsoleLogger
@@ -19997,13 +19998,23 @@ postgresql-relay                ports/databases/postgresql-relay
 postgresql-tcltk                ports/databases/postgresql-tcltk
 postgresql73-client             ports/databases/postgresql73-client
 postgresql73-server             ports/databases/postgresql73-server
+postgresql74-client             ports/databases/postgresql74-client
+postgresql74-contrib            ports/databases/postgresql74-contrib
 postgresql74-server             ports/databases/postgresql74-server
+postgresql80-client             ports/databases/postgresql80-client
+postgresql80-contrib            ports/databases/postgresql80-contrib
 postgresql80-server             ports/databases/postgresql80-server
+postgresql81-client             ports/databases/postgresql81-client
+postgresql81-contrib            ports/databases/postgresql81-contrib
 postgresql81-server             ports/databases/postgresql81-server
 postgresql82-client             ports/databases/postgresql82-client
 postgresql82-contrib            ports/databases/postgresql82-contrib
 postgresql82-server             ports/databases/postgresql82-server
+postgresql83-client             ports/databases/postgresql83-client
+postgresql83-contrib            ports/databases/postgresql83-contrib
 postgresql83-server             ports/databases/postgresql83-server
+postgresql84-client             ports/databases/postgresql84-client
+postgresql84-contrib            ports/databases/postgresql84-contrib
 postgresql84-server             ports/databases/postgresql84-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
 postgrey                        ports/mail/postgrey
