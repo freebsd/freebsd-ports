@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openfts
-PORTVERSION=	0.39
-PORTREVISION=	2
+PORTVERSION=	0.40
 CATEGORIES=	textproc perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/OpenFTS-perl%2C%20v${PORTVERSION}
 DISTNAME=	Search-OpenFTS-${PORTVERSION}
@@ -15,8 +14,7 @@ DISTNAME=	Search-OpenFTS-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Open Source Full Text Search engine
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes	\
-		${LOCALBASE}/lib/postgresql/tsearch2.so:${PORTSDIR}/databases/postgresql82-contrib \
+RUN_DEPENDS=	${LOCALBASE}/lib/postgresql/tsearch2.so:${PORTSDIR}/databases/postgresql82-contrib \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 
 PERL_CONFIGURE=	yes
