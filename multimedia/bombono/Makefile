@@ -13,7 +13,7 @@ MASTER_SITES=	SF/bombono/bombono-dvd/${PORTVERSION} \
 		http://www.stasyan.com/devel/distfiles/
 DISTNAME=	bombono-dvd-${PORTVERSION}
 
-MAINTAINER=	stast@bsdportal.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DVD authoring program
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
@@ -38,7 +38,13 @@ SCONS_ENV=	CCFLAGS="${CCFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		CC="${CC}" CXX="${CXX}" \
 		DVDREAD_LIBPATH=${LOCALBASE}/lib DVDREAD_INCLUDE=${LOCALBASE}/include
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/SConstruct
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
