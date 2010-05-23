@@ -12,7 +12,7 @@ CATEGORIES=	irc gnome deskutils
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC display and sensor for gdesklets
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \

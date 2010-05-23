@@ -11,7 +11,7 @@ CATEGORIES=	math python
 MASTER_SITES=	SF/numpy/Old%20Numarray/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Numeric array manipulation extension module for Python
 
 USE_PYTHON=	yes

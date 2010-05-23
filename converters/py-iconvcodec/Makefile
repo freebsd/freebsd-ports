@@ -10,7 +10,7 @@ CATEGORIES=	converters python
 MASTER_SITES=	http://download.berlios.de/cjkpython/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Universal unicode codec using iconv(3) for Python
 
 USE_ICONV=	yes

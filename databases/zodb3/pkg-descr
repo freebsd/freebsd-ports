@@ -4,4 +4,3 @@ it can be used in non-Zope related Python applications to
 provide transparent object-oriented persistency.
 
 WWW: http://wiki.zope.org/ZODB/FrontPage
-- Martin Klaffenboeck <martin.klaffenboeck@gmx.at>

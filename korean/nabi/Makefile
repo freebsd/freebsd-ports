@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	korean gnome
 MASTER_SITES=	http://kldp.net/frs/download.php/4619/
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hangul X Input Method for Everywhere
 
 LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul

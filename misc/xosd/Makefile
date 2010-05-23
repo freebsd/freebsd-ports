@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ignavus.net/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	perky
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
 XMMS_CONFIG?=	${LOCALBASE}/bin/xmms-config

@@ -9,7 +9,7 @@ PORTVERSION=	1.2.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://people.freebsd.org/~perky/distfiles/
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PkgDB/pkg-plist generator by tracking installation
 
 USE_PYTHON=	2.4+

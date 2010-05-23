@@ -11,7 +11,7 @@ MASTER_SITES=	http://trentm.com/downloads/px/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce p4 wrapper and Python Perforce interface
 
 USE_ZIP=	yes

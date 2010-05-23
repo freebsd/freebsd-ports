@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts AlZip archives
 
 USE_ICONV=	yes

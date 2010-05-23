@@ -13,7 +13,7 @@ MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/py${PORTNAME}%20${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pypaint-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and flexible painting adaptor to libart for Python
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png

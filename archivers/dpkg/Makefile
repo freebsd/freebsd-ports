@@ -10,7 +10,7 @@ CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debian package maintenance system
 
 BUILD_DEPENDS=	po4a:${PORTSDIR}/textproc/po4a

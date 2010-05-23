@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/pyChing/${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Consult a I Ching, an ancient Chinese book of wisdom
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter

@@ -12,7 +12,7 @@ MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}-devel/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysnmp-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNMP framework for Python
 
 CONFLICTS=	py??-snmp2-[0-9]* py??-snmp4-[0-9]*

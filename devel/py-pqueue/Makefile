@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.csse.monash.edu.au/hons/projects/1999/Andrew.Snare/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PQueue-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fibonacci-Heap based Priority-Queue Extension for Python
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pqueue.so

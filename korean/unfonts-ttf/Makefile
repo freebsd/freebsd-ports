@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-ttf
 DISTFILES=	un-fonts-core-${PORTVERSION}.tar.gz:core \
 		un-fonts-extra-${PORTVERSION}.tar.gz:extra
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL'd Korean TrueType Fonts by UN Koaunghi
 
 WRKSRC=		${WRKDIR}/un-fonts

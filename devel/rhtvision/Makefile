@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/tvision/UNIX/${PORTVERSION}%20CVS20070425%20Source%20and%20Debian%204.0/
 DISTNAME=	rhtvision-${PORTVERSION}-3.src
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete C++ Text User Interface (TUI) library
 
 WRKSRC=		${WRKDIR}/tvision

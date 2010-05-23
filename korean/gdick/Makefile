@@ -11,7 +11,7 @@ PORTREVISION=	14
 CATEGORIES=	korean python
 MASTER_SITES=	SF
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English-Korean Dictionary Client for GNOME2
 
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-cjkcodecs

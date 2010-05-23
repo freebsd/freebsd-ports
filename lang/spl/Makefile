@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Shakespeare programming language
 
 USE_BISON=	build

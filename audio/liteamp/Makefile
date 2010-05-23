@@ -10,7 +10,7 @@ PORTREVISION=	16
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://kldp.net/frs/download.php/547/
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight Music Player for GNOME2
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
