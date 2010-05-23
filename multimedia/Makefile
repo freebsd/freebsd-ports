@@ -287,6 +287,7 @@
     SUBDIR += subtitleripper
     SUBDIR += subtools
     SUBDIR += swfdec-gnome
+    SUBDIR += szap-s2
     SUBDIR += tcmplex-panteltje
     SUBDIR += tivodecode
     SUBDIR += tkxanim
