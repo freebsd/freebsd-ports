@@ -710,14 +710,6 @@ if [ "$nofinish" = 0 ]; then
     fi
     
     wait
-    
-    if [ "$ftp" = 1 ]; then
-        echo "ended at $(date)"
-        echo "================================================"
-        echo "copying packages"
-        echo "================================================"
-        ${pb}/scripts/docppackages ${arch} ${branch} ${builddir}
-    fi
 fi
 
 if [ "${nocleanup}" -eq 1 ]; then
