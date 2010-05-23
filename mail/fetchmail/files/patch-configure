@@ -1,0 +1,11 @@
+--- configure.orig	2010-05-23 11:34:20.000000000 -0300
++++ configure	2010-05-23 11:36:40.000000000 -0300
+@@ -9207,7 +9207,7 @@
+   return 0;
+ }
+ _ACEOF
+-for ac_lib in '' md5 md; do
++for ac_lib in '' md; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
