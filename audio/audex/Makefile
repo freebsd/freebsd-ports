@@ -19,6 +19,8 @@ COMMENT=	Audio CD ripping utility for KDE4
 LIB_DEPENDS=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
 		kcddb.5:${PORTSDIR}/multimedia/kdemultimedia4
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
