@@ -7,7 +7,7 @@
 
 PORTNAME=	nexuiz
 PORTVERSION=	2.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -88,6 +88,9 @@ post-patch:
 		${WRKSRC}/${MAKEFILE} ${WRKSRC}/makefile.inc
 	@${REINPLACE_CMD} -e '/LDFLAGS_BSDSV/s,$$,-L${LOCALBASE}/lib,' \
 		${WRKSRC}/makefile.inc
+# Fix for libpng 1.4
+	@${REINPLACE_CMD} -e 's,gray_1_2_4_to_8,expand_&,g' \
+		${WRKSRC}/image_png.c
 
 do-install:
 	${SH} -c '${FIND} ${WRKSRC} -name "darkplaces-*[^vpj]" | \
