@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-infopipe
 PORTVERSION=	1.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.beastwithin.org/users/wwwwolf/code/xmms/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,12 +21,10 @@ RUN_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 
 LIBDIR?=	${PREFIX}/lib/xmms/General
 SRCLIBDIR?=	src/.libs
 
-LDCONFIG_DIRS=	%%LOCALBASE%%/lib/xmms/General
 PLIST_FILES=	lib/xmms/General/libinfopipe.so
 
 post-patch:
