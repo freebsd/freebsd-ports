@@ -45,8 +45,7 @@ RPCC_BIN?=	bin
 CONFIGURE_ARGS += --enable-system-bin
 .endif # define(BUILD_MODE)
 
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}/${BUILD_MODE}
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${BUILD_MODE}
 
 CONFIGURE_ARGS+=--with-mode=${BUILD_MODE}
 

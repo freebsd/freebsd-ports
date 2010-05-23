@@ -7,6 +7,7 @@
 
 PORTNAME=	lemmatizer
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://reki.ru/products/lemmatizer/
 DISTFILES=	lemmatizer-1.0.tar.gz \
@@ -27,9 +28,6 @@ USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS=	--with-datadir=${DB_DIR}
-
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib
 
 pre-fetch:
 	@${ECHO} ""

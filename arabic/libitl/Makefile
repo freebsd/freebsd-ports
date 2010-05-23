@@ -14,8 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An API abstraction to common Islamic calculations
 
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/itl
+USE_LDCONFIG=	${PREFIX}/lib/itl
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

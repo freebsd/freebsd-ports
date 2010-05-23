@@ -27,8 +27,7 @@ NO_MTREE=	yes
 
 TARGET_DIR=	${PREFIX}/lib/compat
 
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
+USE_LDCONFIG=	${TARGET_DIR}
 
 .include <bsd.port.pre.mk>
 
