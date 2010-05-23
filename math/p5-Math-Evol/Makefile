@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Math-Evol
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implements the evolution search strategy
 
 PERL_CONFIGURE=	yes
