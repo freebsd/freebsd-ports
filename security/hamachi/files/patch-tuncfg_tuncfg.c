@@ -1,5 +1,5 @@
---- tuncfg/tuncfg.c.orig	Tue Jun 20 21:47:28 2006
-+++ tuncfg/tuncfg.c	Fri Nov 17 11:14:51 2006
+--- tuncfg/tuncfg.c.orig	2006-06-20 16:47:28.000000000 -0300
++++ tuncfg/tuncfg.c	2010-05-23 11:08:53.000000000 -0300
 @@ -20,7 +20,7 @@
   *	normally required by a private networking software. Namely -
   *
@@ -208,6 +208,15 @@
  			if (tmp != -1)  close(tmp);
  			if (dev != -1)  close(dev);
  			if (r != 0)     close(cli);
+@@ -272,7 +308,7 @@
+ skip:
+ 		for (i=0; i<ctx_n; i++)
+ 		{
+-			unsigned long v[2];
++			unsigned int v[2];
+ 			char cmd[256];
+ 			
+ 			if (! FD_ISSET(ctx[i].fd, &fdr))
 @@ -295,7 +331,7 @@
  				goto ack;
  			}
