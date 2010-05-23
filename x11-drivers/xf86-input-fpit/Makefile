@@ -13,6 +13,8 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org fpit input driver
 
+BROKEN=		does not compile
+
 XORG_CAT=	driver
 USE_XORG=	xrandr
 

@@ -13,6 +13,8 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org citron input driver
 
+BROKEN=		does not compile
+
 XORG_CAT=	driver
 MAN4=		citron.4x
 
