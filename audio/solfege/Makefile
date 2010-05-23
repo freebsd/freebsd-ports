@@ -8,10 +8,9 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	3.15.1
-PORTREVISION=	3
+PORTVERSION=	3.16.3
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20unstable/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 PKGNAMESUFFIX=	-nosound
 
 MAINTAINER=	dhn@FreeBSD.org
@@ -53,6 +52,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|(datadir)/locale|(prefix)/share/locale|g' \
 		${WRKSRC}/po/Makefile
 	@${REINPLACE_CMD} -i '' -e 's|/bin/bash|/bin/sh|g' \
-		${WRKSRC}/lesson-files/bin/csound-play-harmonic-interval.sh
+		${WRKSRC}/exercises/standard/lesson-files/bin/csound-play-harmonic-interval.sh
 
 .include <bsd.port.post.mk>
