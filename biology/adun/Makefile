@@ -37,8 +37,9 @@ PLIST_SUB+=	LIBVERSION5=${DEFAULT_LIBVERSION5}
 PLIST_SUB+=	MAJORLIBVERSION5=${DEFAULT_LIBVERSION5:C/([0-9]).*/\1/1}
 ADDITIONAL_CPPFLAGS=	-D__FREEBSD__
 ADDITIONAL_INCLUDE_DIRS=	-I${WRKSRC}/Kernel -I${WRKSRC}
-ADDITIONAL_LIB_DIRS=	-L${WRKSRC}/Kernel/AdunKernel/AdunKernel.framework -L${LOCALBASE}/MolTalk/MolTalk.framework
-ADDITIONAL_LDFLAGS=	-rpath-link=${WRKSRC}/Kernel/AdunKernel/AdunKernel.framework:${LOCALBASE}/MolTalk/MolTalk.framework
+ADDITIONAL_LIB_DIRS=	-L${WRKSRC}/Kernel/AdunKernel/AdunKernel.framework -L${WRKSRC}/MolTalk/MolTalk.framework -L${WRKSRC}/Kernel/Base/obj
+ADDITIONAL_LDFLAGS=	-rpath-link=${WRKSRC}/Kernel/AdunKernel/AdunKernel.framework:${WRKSRC}/MolTalk/MolTalk.framework:${WRKSRC}/Kernel/Base/obj
+
 MAKE_ENV+=	GSL_LIB_DIR=${LOCALBASE}/lib
 MAKE_ENV+=	GSL_INCLUDE_DIR=${LOCALBASE}/include
 
