@@ -31,8 +31,8 @@ PORTDOCS=	AUTHORS ChangeLog COPYING COPYRIGHT INSTALL LICENSE \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-CFLAGS+=	-fno-openmp -Wno-unknown-pragmas -U__OPENMP__
+.if ${OSVERSION} >= 700000
+CFLAGS+=	-fopenmp -D__OPENMP__
 .endif
 
 do-install:
