@@ -105,6 +105,7 @@
     SUBDIR += hex
     SUBDIR += hns
     SUBDIR += ibus-anthy
+    SUBDIR += ibus-mozc
     SUBDIR += ibus-skk
     SUBDIR += ical
     SUBDIR += icanna
