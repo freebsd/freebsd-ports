@@ -127,9 +127,11 @@ System/Library/Headers/Foundation/NSXMLNode.h
 System/Library/Headers/Foundation/NSXMLNodeOptions.h
 System/Library/Headers/Foundation/NSXMLParser.h
 System/Library/Headers/Foundation/NSZone.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/Additions.h
 System/Library/Headers/GNUstepBase/GCObject.h
 System/Library/Headers/GNUstepBase/GNUstep.h
-System/Library/Headers/GNUstepBase/GSCategories.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSBlocks.h
+%%GNUSTEP_STABLE%%System/Library/Headers/GNUstepBase/GSCategories.h
 System/Library/Headers/GNUstepBase/GSConfig.h
 System/Library/Headers/GNUstepBase/GSFileHandle.h
 System/Library/Headers/GNUstepBase/GSFunctions.h
@@ -142,14 +144,36 @@ System/Library/Headers/GNUstepBase/GSObjCRuntime.h
 System/Library/Headers/GNUstepBase/GSUnion.h
 System/Library/Headers/GNUstepBase/GSVersionMacros.h
 System/Library/Headers/GNUstepBase/GSXML.h
-System/Library/Headers/GNUstepBase/NSTask+GS.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSArray+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSAttributedString+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSBundle+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSCalendarDate+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSData+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSDebug+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSFileHandle+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSLock+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSMutableString+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSNumber+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSObject+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSProcessInfo+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSStream+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSString+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSTask+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSThread+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/NSURL+GNUstepBase.h
+%%GNUSTEP_STABLE%%System/Library/Headers/GNUstepBase/NSTask+GS.h
 System/Library/Headers/GNUstepBase/Unicode.h
-System/Library/Headers/GNUstepBase/behavior.h
-System/Library/Headers/GNUstepBase/objc-gnu2next.h
+%%GNUSTEP_STABLE%%System/Library/Headers/GNUstepBase/behavior.h
+%%GNUSTEP_STABLE%%System/Library/Headers/GNUstepBase/objc-gnu2next.h
 System/Library/Headers/GNUstepBase/preface.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/ObjectiveC2/Availability.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/ObjectiveC2/blocks_runtime.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/ObjectiveC2/runtime.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/Additions.h
 System/Library/Headers/gnustep/base/GCObject.h
 System/Library/Headers/gnustep/base/GNUstep.h
-System/Library/Headers/gnustep/base/GSCategories.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/GSBlocks.h
+%%GNUSTEP_STABLE%%System/Library/Headers/gnustep/base/GSCategories.h
 System/Library/Headers/gnustep/base/GSFileHandle.h
 System/Library/Headers/gnustep/base/GSFunctions.h
 System/Library/Headers/gnustep/base/GSIArray.h
@@ -161,10 +185,27 @@ System/Library/Headers/gnustep/base/GSObjCRuntime.h
 System/Library/Headers/gnustep/base/GSUnion.h
 System/Library/Headers/gnustep/base/GSVersionMacros.h
 System/Library/Headers/gnustep/base/GSXML.h
-System/Library/Headers/gnustep/base/NSTask+GS.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSArray+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSAttributedString+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSBundle+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSCalendarDate+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSData+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSDebug+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSFileHandle+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSLock+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSMutableString+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSNumber+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSObject+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSProcessInfo+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSStream+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSString+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSTask+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSThread+GNUstepBase.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/NSURL+GNUstepBase.h
+%%GNUSTEP_STABLE%%System/Library/Headers/gnustep/base/NSTask+GS.h
 System/Library/Headers/gnustep/base/Unicode.h
 System/Library/Headers/gnustep/base/behavior.h
-System/Library/Headers/gnustep/base/objc-gnu2next.h
+%%GNUSTEP_STABLE%%System/Library/Headers/gnustep/base/objc-gnu2next.h
 System/Library/Headers/gnustep/base/preface.h
 System/Library/Headers/gnustep/unicode/caseconv.h
 System/Library/Headers/gnustep/unicode/cop.h
@@ -797,9 +838,6 @@ System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZ
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/Zulu
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/Localizable.strings
 System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/TraditionalChinese.lproj/Localizable.strings
-%%OPENSSL%%System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/SSL.bundle/SSL
-%%OPENSSL%%System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/SSL.bundle/Resources/Info-gnustep.plist
-%%OPENSSL%%System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/SSL.bundle/stamp.make
 System/Library/Libraries/libgnustep-base.so
 System/Library/Libraries/libgnustep-base.so.%%BASEVERSION%%
 System/Library/Libraries/libgnustep-base.so.%%VERSION%%
@@ -821,8 +859,6 @@ System/Tools/plparse
 System/Tools/plser
 System/Tools/sfparse
 System/Tools/xmlparse
-%%OPENSSL%%@dirrm System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/SSL.bundle/Resources
-%%OPENSSL%%@dirrm System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/SSL.bundle
 @dirrm System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/TraditionalChinese.lproj
 @dirrm System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/Spanish.lproj
 @dirrm System/Library/Libraries/gnustep-base/Versions/%%BASEVERSION%%/Resources/NSTimeZones/zones/US
@@ -862,6 +898,7 @@ System/Tools/xmlparse
 @dirrm System/Library/Headers/gnustep/unicode
 @dirrm System/Library/Headers/gnustep/base
 @dirrm System/Library/Headers/gnustep
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Headers/ObjectiveC2
 @dirrm System/Library/Headers/GNUstepBase/unicode
 @dirrm System/Library/Headers/GNUstepBase
 @dirrm System/Library/Headers/Foundation

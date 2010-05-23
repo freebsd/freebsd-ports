@@ -6,8 +6,12 @@
 #
 
 PORTNAME=	gnustep-base
+.if defined(WITH_GNUSTEP_DEVEL)
+PORTVERSION=	1.21.0
+.else
 PORTVERSION=	1.19.3
-PORTREVISION=	1
+PORTREVISION=	2
+.endif
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -18,10 +22,14 @@ COMMENT=	GNUstep Foundation library
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
+LIB_DEPENDS+=	gnutls-openssl.40:${PORTSDIR}/security/gnutls
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-procfs
+CONFIGURE_ARGS=	--disable-procfs --disable-openssl --enable-tls \
+		--with-tls-prefix=${LOCALBASE} TLS_CONFIG="pkg-config -gnutls"
 USE_GNUSTEP=	yes
 USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_CONFIGURE=	yes
@@ -30,23 +38,12 @@ USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 USE_ICONV=	yes
 
-NO_PACKAGE=	GPL3
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml
 BREAKS_IF_PEDANTIC=	yes
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 ETCDIR=		${LOCALBASE}/etc
-
-.if defined(WITHOUT_OPENSSL)
-CONFIGURE_ARGS+=	--disable-openssl
-PLIST_SUB+=	OPENSSL="@comment "
-.else
-USE_OPENSSL=	yes
-PLIST_SUB+=	OPENSSL=""
-MAKE_APPS=	SSL
-INSTALL_APPS=	SSL
-.endif
 
 .if !defined(WITHOUT_GNUSTEP_FAKEMAIN)
 CONFIGURE_ARGS+=	--enable-fake-main
