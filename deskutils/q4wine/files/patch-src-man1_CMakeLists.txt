@@ -1,0 +1,18 @@
+--- src/man1/CMakeLists.txt.orig	2010-05-22 12:08:37.000000000 -0300
++++ src/man1/CMakeLists.txt	2010-05-22 12:10:08.000000000 -0300
+@@ -40,7 +40,6 @@
+     endforeach()
+ 
+     install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/man1 DESTINATION
+-    ${CMAKE_INSTALL_PREFIX}/share/man FILES_MATCHING PATTERN "*.1.${ARC_SUFF}"
+     PATTERN "CMakeFiles" EXCLUDE)
+ 
+  ELSE (ARC)
+@@ -48,6 +47,6 @@
+     MESSAGE(STATUS "Installing not compressed man pages --\n")
+ 
+     install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/man1 DESTINATION
+-    ${CMAKE_INSTALL_PREFIX}/share/man FILES_MATCHING PATTERN "*.1"
++    ${CMAKE_INSTALL_PREFIX}/man FILES_MATCHING PATTERN "*.1"
+     PATTERN "CMakeFiles" EXCLUDE)
+  ENDIF (ARC)
