@@ -5,7 +5,7 @@ as released with WebObjects 4.5 from Apple Inc.
 
 This port also provides the GNUstep DBModeler and a Gorm GDL2 Palette.
 
-LICENSE: LGPL2 or later (framework)
-LICENSE: GPL2 or later (application)
+LICENSE: LGPL3 or later (framework)
+LICENSE: GPL3 or later (application)
 
 WWW: http://www.gnustep.org/experience/GDL2.html
