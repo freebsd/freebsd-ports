@@ -7,9 +7,9 @@
 #
 
 PORTNAME=		cdo
-PORTVERSION=		1.4.3
+PORTVERSION=		1.4.4
 CATEGORIES=		science
-MASTER_SITES=		https://code.zmaw.de/attachments/download/76/ \
+MASTER_SITES=		https://code.zmaw.de/attachments/download/174/ \
 			http://sunpoet.net/distfiles/
 
 MAINTAINER=		sunpoet@sunpoet.net
