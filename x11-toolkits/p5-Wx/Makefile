@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Wx
-PORTVERSION=	0.96
-PORTREVISION=	2
+PORTVERSION=	0.97
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +15,8 @@ MAINTAINER=	cm@therek.net
 COMMENT=	Perl5 interface to the wxWidgets cross-platform GUI toolkit
 
 BUILD_DEPENDS=	p5-Alien-wxWidgets>=0.25:${PORTSDIR}/x11-toolkits/p5-Alien-wxWidgets \
-		p5-ExtUtils-XSpp>=0.05:${PORTSDIR}/devel/p5-ExtUtils-XSpp
+		p5-ExtUtils-ParseXS>=2.22:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
+		p5-ExtUtils-XSpp>=0.06:${PORTSDIR}/devel/p5-ExtUtils-XSpp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	UNICODE "Build with Unicode support"    on
@@ -45,6 +45,7 @@ MAN3=		Wx::Perl::TextValidator.3 \
 		Wx::Perl::SplashFast.3 \
 		Wx::build::MakeMaker::Win32_MSVC.3 \
 		Wx::build::MakeMaker.3 \
+		Wx::Loader.3 \
 		Wx::Thread.3 \
 		Wx.3
 
