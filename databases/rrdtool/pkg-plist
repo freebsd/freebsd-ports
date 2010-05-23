@@ -20,7 +20,6 @@ libdata/pkgconfig/librrd.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
 %%WITH_PERL%%%%SITE_PERL%%/RRDp.pm
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/py_rrdtool-0.2.1-py2.6.egg-info
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtoolmodule.so
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp
