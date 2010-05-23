@@ -14,6 +14,7 @@ bin/wxperl_overload
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Grid.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Help.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Html.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Wx/Loader.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Locale.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/MDI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Wx/Media.pm
