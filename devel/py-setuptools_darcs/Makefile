@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	setuptools_darcs
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Setuptools plugin for darcs
 
 USE_PYTHON=	yes
