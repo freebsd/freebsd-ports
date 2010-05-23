@@ -1,7 +1,25 @@
 bin/q4wine
+bin/q4wine-cli
+bin/q4wine-helper
+lib/q4wine/libq4wine-core.so
+share/applications/q4wine.desktop
+share/pixmaps/q4wine.png
 %%DATADIR%%/i18n/en_us.qm
+%%DATADIR%%/i18n/es_es.qm
+%%DATADIR%%/i18n/it_it.qm
+%%DATADIR%%/i18n/pt_br.qm
 %%DATADIR%%/i18n/ru_ru.qm
 %%DATADIR%%/i18n/uk_ua.qm
+%%DATADIR%%/icons/eject.png
+%%DATADIR%%/icons/exec_wine.png
+%%DATADIR%%/icons/explorer.png
+%%DATADIR%%/icons/notepad.png
+%%DATADIR%%/icons/regedit.png
+%%DATADIR%%/icons/uninstaller.png
+%%DATADIR%%/icons/winecfg.png
+%%DATADIR%%/icons/wineconsole.png
+%%DATADIR%%/scripts/mount_image.sh
+%%DATADIR%%/scripts/umount.sh
 %%DATADIR%%/theme/nuvola/data/configure.png
 %%DATADIR%%/theme/nuvola/data/down.png
 %%DATADIR%%/theme/nuvola/data/edit.png
@@ -16,15 +34,16 @@ bin/q4wine
 %%DATADIR%%/theme/nuvola/data/rebuild.png
 %%DATADIR%%/theme/nuvola/data/reload.png
 %%DATADIR%%/theme/nuvola/data/stop.png
-%%DATADIR%%/theme/nuvola/data/theme.info
 %%DATADIR%%/theme/nuvola/data/up.png
 %%DATADIR%%/theme/nuvola/data/wine.png
 %%DATADIR%%/theme/nuvola/data/wizard.png
-share/applications/q4wine.desktop
-share/pixmaps/q4wine.png
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/theme/nuvola/data
 @dirrm %%DATADIR%%/theme/nuvola
 @dirrm %%DATADIR%%/theme
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%
+@dirrm share/man
+@dirrmtry share/applications
+@dirrm lib/q4wine
