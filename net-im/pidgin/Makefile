@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pidgin
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Pidgin multi-protocol messaging client (GTK+ UI)
@@ -37,17 +37,13 @@ CONFIGURE_ARGS=	--disable-consoleui \
 MAN1=		pidgin.1
 
 post-build:
-.if !defined(WITHOUT_NLS)
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 	    	Makefile ${MAKE_ARGS} pidgin.desktop
-.endif
 
 post-install:
-.if !defined(WITHOUT_NLS)
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/pidgin.desktop \
 	    	${PREFIX}/share/applications/pidgin.desktop
-.endif
 	${INSTALL_MAN} ${WRKSRC}/doc/pidgin.1 ${MAN1PREFIX}/man/man1
 
 .include "${MASTERDIR}/Makefile"

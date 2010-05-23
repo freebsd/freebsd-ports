@@ -94,7 +94,7 @@ lib/pidgin/xmppconsole.so
 lib/pidgin/xmppdisco.la
 lib/pidgin/xmppdisco.so
 libdata/pkgconfig/pidgin.pc
-%%NLS%%share/applications/pidgin.desktop
+share/applications/pidgin.desktop
 share/icons/hicolor/16x16/apps/pidgin.png
 share/icons/hicolor/22x22/apps/pidgin.png
 share/icons/hicolor/24x24/apps/pidgin.png
