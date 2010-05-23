@@ -1907,6 +1907,7 @@ share/omf/evolution/evolution-sv.omf
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable/actions
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/scalable
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/status
+@dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/categories
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/apps
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48/actions
 @dirrm %%DATADIR%%/%%VERSION%%/icons/hicolor/48x48
