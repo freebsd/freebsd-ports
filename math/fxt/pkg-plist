@@ -162,6 +162,9 @@ include/fxt/bpol/num-bitpol.h
 include/fxt/bpol/poly-tab.h
 include/fxt/chirpzt-all.h
 include/fxt/chirpzt/chirpzt.h
+include/fxt/comb/check-kpermgen.h
+include/fxt/comb/kperm-gray.h
+include/fxt/comb/kperm-lex.h
 include/fxt/comb-all.h
 include/fxt/comb/big-fact2perm.h
 include/fxt/comb/binary-debruijn.h
@@ -628,6 +631,12 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/thue-morse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/kperm-gray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/kperm-gray-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/ffact2kperm-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/ffact2kperm-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/kperm-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/kperm-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/acgray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/acgray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/fact2perm-rot-out.txt
