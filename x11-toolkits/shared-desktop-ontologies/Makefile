@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shared-desktop-ontologies
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/oscaf/${PORTNAME}/${PORTVERSION}
 
@@ -19,6 +19,7 @@ USE_GNOME=	pkgconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|g' \
+			-e 's|shared-desktop-ontologies NONE|shared-desktop-ontologies|g' \
 		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
