@@ -22,4 +22,12 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
+FIXME=	HandlerStructureXLP.h TextFormatterXLP.h
+
+post-patch:
+.for i in ${FIXME}
+	${REINPLACE_CMD} -e 's|Foundation/GSXML.h|GNUstepBase/GSXML.h|' \
+		${WRKSRC}/${i}
+.endfor
+
 .include <bsd.port.mk>
