@@ -1,9 +1,19 @@
+%%GNUSTEP_DEVEL%%System/Applications/GSSpeechServer.app/GSSpeechServer
+%%GNUSTEP_DEVEL%%System/Applications/GSSpeechServer.app/Resources/GSSpeechServer.desktop
+%%GNUSTEP_DEVEL%%System/Applications/GSSpeechServer.app/Resources/Info-gnustep.plist
+%%GNUSTEP_DEVEL%%System/Applications/GSSpeechServer.app/stamp.make
+%%GNUSTEP_DEVEL%%System/Library/Bundles/AudioOutput.nssound/AudioOutput
+%%GNUSTEP_DEVEL%%System/Library/Bundles/AudioOutput.nssound/Resources/Info-gnustep.plist
+%%GNUSTEP_DEVEL%%System/Library/Bundles/AudioOutput.nssound/stamp.make
 %%WITH_CUPS%%System/Library/Bundles/GSPrinting/GSCUPS.bundle/GSCUPS
 %%WITH_CUPS%%System/Library/Bundles/GSPrinting/GSCUPS.bundle/Resources/Info-gnustep.plist
 %%WITH_CUPS%%System/Library/Bundles/GSPrinting/GSCUPS.bundle/stamp.make
 System/Library/Bundles/GSPrinting/GSLPR.bundle/GSLPR
 System/Library/Bundles/GSPrinting/GSLPR.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/GSPrinting/GSLPR.bundle/stamp.make
+%%GNUSTEP_DEVEL%%System/Library/Bundles/Sndfile.nssound/Resources/Info-gnustep.plist
+%%GNUSTEP_DEVEL%%System/Library/Bundles/Sndfile.nssound/Sndfile
+%%GNUSTEP_DEVEL%%System/Library/Bundles/Sndfile.nssound/stamp.make
 System/Library/Bundles/TextConverters/RTFConverter.bundle/RTFConverter
 System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/TextConverters/RTFConverter.bundle/stamp.make
@@ -21,6 +31,7 @@ System/Library/ColorPickers/StandardPicker.bundle/Resources/GSGrayColorPicker.ti
 System/Library/ColorPickers/StandardPicker.bundle/Resources/GSHSBColorPicker.tiff
 System/Library/ColorPickers/StandardPicker.bundle/Resources/GSRGBColorPicker.tiff
 System/Library/ColorPickers/StandardPicker.bundle/Resources/Info-gnustep.plist
+%%GNUSTEP_DEVEL%%System/Library/ColorPickers/StandardPicker.bundle/Resources/Spanish.lproj/StandardPicker.strings
 System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj/StandardPicker.strings
 System/Library/ColorPickers/StandardPicker.bundle/StandardPicker
 System/Library/ColorPickers/StandardPicker.bundle/stamp.make
@@ -337,6 +348,8 @@ System/Library/Headers/AppKit/GSPDFPrintOperation.h
 System/Library/Headers/AppKit/GSPasteboardServer.h
 System/Library/Headers/AppKit/GSPrintOperation.h
 System/Library/Headers/AppKit/GSPrinting.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/GSSoundSink.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/GSSoundSource.h
 System/Library/Headers/AppKit/GSServicesManager.h
 System/Library/Headers/AppKit/GSTable.h
 System/Library/Headers/AppKit/GSTextConverter.h
@@ -347,6 +360,7 @@ System/Library/Headers/AppKit/GSTrackingRect.h
 System/Library/Headers/AppKit/GSTypesetter.h
 System/Library/Headers/AppKit/GSVbox.h
 System/Library/Headers/AppKit/GSVersion.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/GSWindowDecorationView.h
 System/Library/Headers/AppKit/IMConnectors.h
 System/Library/Headers/AppKit/IMCustomObject.h
 System/Library/Headers/AppKit/IMLoading.h
@@ -397,6 +411,7 @@ System/Library/Headers/AppKit/NSFontPanel.h
 System/Library/Headers/AppKit/NSForm.h
 System/Library/Headers/AppKit/NSFormCell.h
 System/Library/Headers/AppKit/NSGlyphGenerator.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/NSGradient.h
 System/Library/Headers/AppKit/NSGraphics.h
 System/Library/Headers/AppKit/NSGraphicsContext.h
 System/Library/Headers/AppKit/NSHelpManager.h
@@ -452,6 +467,7 @@ System/Library/Headers/AppKit/NSSecureTextField.h
 System/Library/Headers/AppKit/NSSegmentedCell.h
 System/Library/Headers/AppKit/NSSegmentedControl.h
 System/Library/Headers/AppKit/NSSelection.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/AppKit/NSShadow.h
 System/Library/Headers/AppKit/NSSlider.h
 System/Library/Headers/AppKit/NSSliderCell.h
 System/Library/Headers/AppKit/NSSound.h
@@ -516,6 +532,8 @@ System/Library/Headers/GNUstepGUI/GSPDFPrintOperation.h
 System/Library/Headers/GNUstepGUI/GSPasteboardServer.h
 System/Library/Headers/GNUstepGUI/GSPrintOperation.h
 System/Library/Headers/GNUstepGUI/GSPrinting.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSSoundSink.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSSoundSource.h
 System/Library/Headers/GNUstepGUI/GSServicesManager.h
 System/Library/Headers/GNUstepGUI/GSTable.h
 System/Library/Headers/GNUstepGUI/GSTextConverter.h
@@ -526,6 +544,7 @@ System/Library/Headers/GNUstepGUI/GSTrackingRect.h
 System/Library/Headers/GNUstepGUI/GSTypesetter.h
 System/Library/Headers/GNUstepGUI/GSVbox.h
 System/Library/Headers/GNUstepGUI/GSVersion.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepGUI/GSWindowDecorationView.h
 System/Library/Headers/GNUstepGUI/IMConnectors.h
 System/Library/Headers/GNUstepGUI/IMCustomObject.h
 System/Library/Headers/GNUstepGUI/IMLoading.h
@@ -554,6 +573,8 @@ System/Library/Headers/gnustep/gui/GSPDFPrintOperation.h
 System/Library/Headers/gnustep/gui/GSPasteboardServer.h
 System/Library/Headers/gnustep/gui/GSPrintOperation.h
 System/Library/Headers/gnustep/gui/GSPrinting.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSSoundSink.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSSoundSource.h
 System/Library/Headers/gnustep/gui/GSServicesManager.h
 System/Library/Headers/gnustep/gui/GSTable.h
 System/Library/Headers/gnustep/gui/GSTextConverter.h
@@ -564,6 +585,7 @@ System/Library/Headers/gnustep/gui/GSTrackingRect.h
 System/Library/Headers/gnustep/gui/GSTypesetter.h
 System/Library/Headers/gnustep/gui/GSVbox.h
 System/Library/Headers/gnustep/gui/GSVersion.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/gui/GSWindowDecorationView.h
 System/Library/Headers/gnustep/gui/IMConnectors.h
 System/Library/Headers/gnustep/gui/IMCustomObject.h
 System/Library/Headers/gnustep/gui/IMLoading.h
@@ -601,6 +623,7 @@ System/Library/Images/common_ComboBoxEllipsis.tiff
 System/Library/Images/common_DecimalTabStop.tiff
 System/Library/Images/common_Diamond.tiff
 System/Library/Images/common_Dimple.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_DimpleHoriz.tiff
 System/Library/Images/common_DownArrowSmall.tiff
 System/Library/Images/common_Folder.tiff
 System/Library/Images/common_HelpCursor.tiff
@@ -614,6 +637,20 @@ System/Library/Images/common_Mount.tiff
 System/Library/Images/common_Nibble.tiff
 System/Library/Images/common_OpenHandCursor.tiff
 System/Library/Images/common_Printer.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressIndeterminate_1.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressIndeterminate_2.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressIndeterminate_3.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressIndeterminate_4.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressIndeterminate_5.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressIndeterminate_6.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressSpinning_1.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressSpinning_2.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressSpinning_3.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressSpinning_4.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressSpinning_5.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressSpinning_6.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressSpinning_7.tiff
+%%GNUSTEP_DEVEL%%System/Library/Images/common_ProgressSpinning_8.tiff
 System/Library/Images/common_RadioOff.tiff
 System/Library/Images/common_RadioOn.tiff
 System/Library/Images/common_Right.tiff
@@ -687,6 +724,22 @@ System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/German.l
 System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Info-gnustep.plist
 System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Italian.lproj/Localizable.strings
 System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Lojban.lproj/Localizable.strings
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSDataLinkPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSDataLinkPanel.gorm/data.info
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSDataLinkPanel.gorm/objects.gorm
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPageLayout.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPageLayout.gorm/data.info
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPageLayout.gorm/objects.gorm
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPrintPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPrintPanel.gorm/data.info
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPrintPanel.gorm/objects.gorm
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSSpellPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSSpellPanel.gorm/data.info
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSSpellPanel.gorm/objects.gorm
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSToolbarCustomizationPalette.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSToolbarCustomizationPalette.gorm/data.info
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSToolbarCustomizationPalette.gorm/objects.gorm
+%%GNUSTEP_DEVEL%%System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/Localizable.strings
 System/Library/Libraries/libgnustep-gui.so
 System/Library/Libraries/libgnustep-gui.so.%%BASEVERSION%%
 System/Library/Libraries/libgnustep-gui.so.%%VERSION%%
@@ -695,16 +748,38 @@ System/Library/PostScript/GSProlog.ps
 System/Library/PostScript/PPD/English.lproj/Generic-PostScript_Printer-Postscript.ppd
 System/Library/Services/GSspell.service/GSspell
 System/Library/Services/GSspell.service/Resources/Info-gnustep.plist
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Basso.wav
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Blow.wav
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Bottle.wav
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Frog.wav
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Glass.wav
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Hero.wav
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Ping.wav
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Pop.wav
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Sosumi.wav
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Submarine.wav
+%%GNUSTEP_DEVEL%%System/Library/Sounds/Tink.wav
+%%GNUSTEP_DEVEL%%System/Tools/GSSpeechServer
 System/Tools/gclose
 System/Tools/gcloseall
 %%WITH_PORTAUDIO%%System/Tools/gnustep_sndd
 System/Tools/gopen
 System/Tools/make_services
+%%GNUSTEP_DEVEL%%System/Tools/say
 System/Tools/set_show_service
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Themes
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Themes
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Sounds
 @dirrm System/Library/Services/GSspell.service/Resources
 @dirrm System/Library/Services/GSspell.service
 @dirrm System/Library/PostScript/PPD/English.lproj
 @dirrm System/Library/PostScript/PPD
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSToolbarCustomizationPalette.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSSpellPanel.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPrintPanel.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSPageLayout.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj/GSDataLinkPanel.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Spanish.lproj
 @dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Lojban.lproj
 @dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Italian.lproj
 @dirrm System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/German.lproj
@@ -736,6 +811,7 @@ System/Tools/set_show_service
 @dirrm System/Library/ColorPickers/WheelPicker.bundle/Resources
 @dirrm System/Library/ColorPickers/WheelPicker.bundle
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/Spanish.lproj
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj
 @dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources
@@ -747,9 +823,15 @@ System/Tools/set_show_service
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle
 @dirrm System/Library/Bundles/TextConverters
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Bundles/Sndfile.nssound/Resources
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Bundles/Sndfile.nssound
 @dirrm System/Library/Bundles/GSPrinting/GSLPR.bundle/Resources
 @dirrm System/Library/Bundles/GSPrinting/GSLPR.bundle
 %%WITH_CUPS%%@dirrm System/Library/Bundles/GSPrinting/GSCUPS.bundle/Resources
 %%WITH_CUPS%%@dirrm System/Library/Bundles/GSPrinting/GSCUPS.bundle
 @dirrm System/Library/Bundles/GSPrinting
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Bundles/AudioOutput.nssound/Resources
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Bundles/AudioOutput.nssound
 %%PORTDOCS%%@exec mkdir -p %D/System/Library/Documentation/Developer/Gui/ProgrammingManual
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GSSpeechServer.app/Resources
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GSSpeechServer.app
