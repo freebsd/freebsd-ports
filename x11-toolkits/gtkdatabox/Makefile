@@ -41,7 +41,7 @@ PLIST_SUB+=	GLADE="@comment "
 .endif
 
 .if !defined(WITHOUT_GLADEUI)
-LIB_DEPENDS+=	gladeui-1.7:${PORTSDIR}/devel/glade3
+LIB_DEPENDS+=	gladeui-1.9:${PORTSDIR}/devel/glade3
 CONFIGURE_ARGS+=	--enable-glade
 PLIST_SUB+=	GLADEUI=""
 .else
