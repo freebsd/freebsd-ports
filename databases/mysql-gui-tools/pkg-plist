@@ -421,3 +421,4 @@
 %%QUERY_BROWSER%%@dirrm %%DATADIR%%/query-browser
 @dirrm %%DATADIR%%/common
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
