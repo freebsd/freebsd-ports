@@ -2,4 +2,15 @@ bin/rapidsvn
 lib/libsvncpp.a
 lib/libsvncpp.la
 lib/libsvncpp.so
-lib/libsvncpp.so.1
+lib/libsvncpp.so.3
+share/locale/de/LC_MESSAGES/rapidsvn.mo
+share/locale/es/LC_MESSAGES/rapidsvn.mo
+share/locale/fr/LC_MESSAGES/rapidsvn.mo
+share/locale/it_IT/LC_MESSAGES/rapidsvn.mo
+share/locale/ja/LC_MESSAGES/rapidsvn.mo
+share/locale/pt_BR/LC_MESSAGES/rapidsvn.mo
+share/locale/ru/LC_MESSAGES/rapidsvn.mo
+share/locale/uk/LC_MESSAGES/rapidsvn.mo
+share/locale/zh_CN/LC_MESSAGES/rapidsvn.mo
+@dirrmtry share/locale/it_IT/LC_MESSAGES
+@dirrmtry share/locale/it_IT

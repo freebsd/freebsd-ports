@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	rapidsvn
-PORTVERSION=	0.9.6
-PORTREVISION=	4
+PORTVERSION=	0.12.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.rapidsvn.org/download/release/${PORTVERSION}/
+MASTER_SITES=	http://www.rapidsvn.org/download/release/0.12/
+DISTNAME=	${PORTNAME}-0.12.0-1
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Cross-platform GUI front-end for the Subversion revision system
@@ -23,6 +23,7 @@ USE_WX=	2.6
 WX_CONF_ARGS=	absolute
 
 GNU_CONFIGURE=	yes
+USE_GETTEXT=	yes
 USE_AUTOTOOLS=	autoconf:262 libtool:22 automake:19
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
