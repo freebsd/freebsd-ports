@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	libjpeg-turbo
-PORTVERSION=	0.0.92
+PORTVERSION=	0.0.93
 CATEGORIES=	graphics
 MASTER_SITES=	http://openmoko.spb.ru/repository/ \
 		http://mesh.dl.sourceforge.net/project/libjpeg-turbo/${PORTVERSION}/ \
 		${MASTER_SITE_XCONTRIB}
 
 MAINTAINER=	bytestore@yandex.ru
-COMMENT=	Uses MMX, SSE, and SSE2 to accelerate baseline JPEG (de)compression
+COMMENT=	SIMD-accelerated JPEG codec which provides both the libjpeg,TurboJPEG
 
 CONFLICTS=	jpeg-[0-9]*
 ONLY_FOR_ARCH=	amd64 i386
