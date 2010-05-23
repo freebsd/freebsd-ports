@@ -3,7 +3,7 @@ bin/system-config-printer
 bin/system-config-printer-applet
 etc/dbus-1/system.d/newprinternotification.conf
 etc/xdg/autostart/print-applet.desktop
-%%PYTHON_SITELIBDIR%%/cupshelpers-1.0-py%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/cupshelpers-1.0-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/cupshelpers/__init__.py
 %%PYTHON_SITELIBDIR%%/cupshelpers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cupshelpers/cupshelpers.py
