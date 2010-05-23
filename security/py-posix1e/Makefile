@@ -12,7 +12,7 @@ MASTER_SITES=	SF/pylibacl/pylibacl/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pylibacl-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for manipulating POSIX.1e ACLs
 
 USE_PYTHON=	yes

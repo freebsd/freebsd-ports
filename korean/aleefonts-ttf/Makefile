@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	pool/main/t/ttf-alee
 PKGNAMESUFFIX=	-ttf
 DISTNAME=	ttf-alee_${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A-Lee's Hangul truetype fonts #'
 
 NO_BUILD=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	perky
 PKGNAMEPREFIX=  ${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module that provides easy anonymous function
 
 USE_PYTHON=	yes

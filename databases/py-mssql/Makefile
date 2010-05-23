@@ -12,7 +12,7 @@ MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pymssql-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python database interface for simple MS-SQL access
 
 LIB_DEPENDS=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib

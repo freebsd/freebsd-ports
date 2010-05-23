@@ -12,7 +12,7 @@ MASTER_SITES=	SF/python-${PORTNAME}/python-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-fam-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to the File Alteration Monitor
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_fam.so

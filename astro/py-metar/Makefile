@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.schwarzvogel.de/pkgs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pymetar-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module that provides access to NOAA's METAR weather reports
 
 USE_PYTHON=	yes

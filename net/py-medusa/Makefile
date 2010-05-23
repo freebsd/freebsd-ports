@@ -11,7 +11,7 @@ CATEGORIES=	net devel python
 MASTER_SITES=	http://www.amk.ca/files/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asynchronous socket-based server framework for Python
 
 USE_PYTHON=	yes

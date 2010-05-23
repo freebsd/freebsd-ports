@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	pywordnet-${PORTVERSION}.tar.gz:pywn \
 		WordNet-${WN_VERSION}.tar.gz:wn
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to WordNet
 
 USE_PYTHON=	yes

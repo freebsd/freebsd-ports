@@ -11,7 +11,7 @@ MASTER_SITES=	SF/${PORTNAME}-py/${PORTNAME}-py/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	id3-py_${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for retrieving and setting ID3 tags on MP3 files
 
 WRKSRC=		${WRKDIR}/id3-py-${PORTVERSION}

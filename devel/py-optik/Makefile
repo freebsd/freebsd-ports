@@ -12,7 +12,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line parsing library for Python
 
 USE_PYTHON=	yes

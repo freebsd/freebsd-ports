@@ -14,7 +14,7 @@ MASTER_SITES=	SF/pylib${PORTNAME}/pylib${PORTNAME}/${PORTVERSION} \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pylibpcap-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13

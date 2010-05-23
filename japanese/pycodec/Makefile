@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.python.jp/Zope/download/JapaneseCodecs/ \
 		http://www.asahi-net.or.jp/~rd6t-kjym/python/JapaneseCodecs/dist/
 DISTNAME=	JapaneseCodecs-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Unicode codecs for Japanese charsets
 
 USE_PYTHON=	yes

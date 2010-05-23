@@ -10,7 +10,7 @@ CATEGORIES=	converters python
 MASTER_SITES=	http://download.berlios.de/cjkpython/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Unicode Codecs for Chinese, Japanese and Korean encodings
 
 USE_PYTHON=	2.1+

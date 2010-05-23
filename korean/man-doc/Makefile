@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	perky
 PKGNAMESUFFIX=	-doc
 DISTNAME=	ko-man-doc-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean online manual pages
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff

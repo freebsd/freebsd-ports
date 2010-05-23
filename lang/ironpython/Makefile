@@ -12,7 +12,7 @@ CATEGORIES=	lang python
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 DISTNAME=	IronPython-1.0.1-Src
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New Python implementation targeting the .NET
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono

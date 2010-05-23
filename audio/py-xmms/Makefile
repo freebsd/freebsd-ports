@@ -13,7 +13,7 @@ MASTER_SITES=	http://people.via.ecp.fr/~flo/2002/PyXMMS/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyxmms-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS Remote Control Library for Python
 
 BUILD_DEPENDS=	${XMMS_CONFIG}:${PORTSDIR}/multimedia/xmms

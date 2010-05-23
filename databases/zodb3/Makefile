@@ -12,7 +12,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}
 DISTNAME=	ZODB3-${PORTVERSION}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Z - Object Database for python
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig \

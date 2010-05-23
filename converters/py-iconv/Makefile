@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	perky
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An iconv wrapper with unicode codec for Python
 
 USE_ICONV=	yes

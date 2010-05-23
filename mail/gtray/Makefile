@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://gnome-gtray.sourceforge.net/
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tray applet that checks your GMail account status
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtktrayicon.so:${PORTSDIR}/x11/ruby-gtktrayicon \
