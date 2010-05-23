@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	burpsuite
-PORTVERSION=	1.3
+PORTVERSION=	1.3.03
 CATEGORIES=	security java
 MASTER_SITES=	http://www.portswigger.net/suite/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
