@@ -1,0 +1,16 @@
+szap-s2 is a command line channel zapping (i.e. tuning) utility similar
+to szap but including support for S2API  a.k.a. DVB API version 5, which
+supports DVB-S2. When using szap-s2, one instructs it to change the channel
+to one of a list of channels supplied in a channels.conf type file.
+
+There is no manpage yet, but you can run szap-s2 without args to get a
+usage message.
+
+location of channel list file is ~/.szap/channels.conf
+
+one line of the szap channel file has the following format:
+name:frequency_MHz:polarization[coderate][delivery][modulation][rolloff]:sat_no:symbolrate:vpid:apid:service_id
+one line of the VDR channel file has the following format:
+name:frequency_MHz:polarization[coderate][delivery][modulation][rolloff]:sat_no:symbolrate:vpid:apid:tpid:?:service_id:?:?:?
+
+WWW: http://www.linuxtv.org/wiki/index.php/Szap-s2

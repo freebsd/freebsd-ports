@@ -1,0 +1,160 @@
+--- a/szap-s2.c
++++ b/szap-s2.c
+@@ -206,6 +206,7 @@ static char *usage_str =
+     "     -i        : run interactively, allowing you to type in channel names\n"
+     "     -p        : add pat and pmt to TS recording (implies -r)\n"
+     "                 or -n numbers for zapping\n"
++    "     -t        : add teletext to TS recording (needs -V)\n"
+     "     -S        : delivery system type DVB-S=0, DVB-S2=1\n"
+     "     -M        : modulation 1=BPSK 2=QPSK 5=8PSK\n"
+     "     -C        : fec 0=NONE 12=1/2 23=2/3 34=3/4 35=3/5 45=4/5 56=5/6 67=6/7 89=8/9 910=9/10 999=AUTO\n"
+@@ -434,7 +435,8 @@ int check_frontend (int fe_fd, int dvr, 
+ static
+ int zap_to(unsigned int adapter, unsigned int frontend, unsigned int demux,
+ 	   unsigned int sat_no, unsigned int freq, unsigned int pol,
+-	   unsigned int sr, unsigned int vpid, unsigned int apid, int sid,
++	   unsigned int sr, unsigned int vpid, unsigned int apid,
++	   unsigned int tpid, int sid,
+ 	   int dvr, int rec_psi, int bypass, unsigned int delivery,
+ 	   int modulation, int fec, int rolloff,  int human_readable)
+ {
+@@ -448,7 +450,7 @@ int zap_to(unsigned int adapter, unsigne
+ 	};
+ 
+ 	char fedev[128], dmxdev[128], auddev[128];
+-	static int fefd, dmxfda, dmxfdv, audiofd = -1, patfd, pmtfd;
++	static int fefd, dmxfda, dmxfdv, dmxfdt = -1, audiofd = -1, patfd, pmtfd;
+ 	int pmtpid;
+ 	uint32_t ifreq;
+ 	int hiband, result;
+@@ -475,7 +477,13 @@ int zap_to(unsigned int adapter, unsigne
+ 			close(fefd);
+ 			return FALSE;
+ 		}
+-		
++
++		if ((dmxfdt = open(dmxdev, O_RDWR)) < 0) {
++			perror("opening teletext demux failed");
++			close(fefd);
++			return FALSE;
++		}
++
+ 		if (dvr == 0)	/* DMX_OUT_DECODER */
+ 			audiofd = open(auddev, O_RDWR);
+ 
+@@ -485,6 +493,7 @@ int zap_to(unsigned int adapter, unsigne
+ 				close(audiofd);
+ 				close(dmxfda);
+ 				close(dmxfdv);
++				close(dmxfdt);
+ 				close(fefd);
+ 				return FALSE;
+ 			}
+@@ -495,6 +504,7 @@ int zap_to(unsigned int adapter, unsigne
+ 				close(audiofd);
+ 				close(dmxfda);
+ 				close(dmxfdv);
++				close(dmxfdt);
+ 				close(fefd);
+ 				return FALSE;
+ 			}
+@@ -544,6 +554,11 @@ int zap_to(unsigned int adapter, unsigne
+ 			result = TRUE;
+ 		}
+ 	}
++
++	if (tpid != -1 && !set_demux(dmxfdt, tpid, DMX_PES_TELETEXT, dvr)) {
++		fprintf(stderr, "set_demux DMX_PES_TELETEXT failed\n");
++	}
++
+ 	check_frontend (fefd, dvr, human_readable);
+ 
+ 	if (!interactive) {
+@@ -553,6 +568,7 @@ int zap_to(unsigned int adapter, unsigne
+ 			close(audiofd);
+ 		close(dmxfda);
+ 		close(dmxfdv);
++		close(dmxfdt);
+ 		close(fefd);
+ 	}
+ 
+@@ -581,14 +597,14 @@ static int read_channels(const char *fil
+ 			int bypass, unsigned int delsys,
+ 			int modulation, int fec, int rolloff,
+ 			int human_readable, int params_debug,
+-			int use_vdr_format)
++			int use_vdr_format, int use_tpid)
+ {
+ 	FILE *cfp;
+ 	char buf[4096];
+ 	char inp[256];
+ 	char *field, *tmp, *p;
+ 	unsigned int line;
+-	unsigned int freq, pol, sat_no, sr, vpid, apid, sid;
++	unsigned int freq, pol, sat_no, sr, vpid, apid, tpid, sid;
+ 	int ret;
+ 	int trash;
+ again:
+@@ -751,11 +767,14 @@ again:
+ 		if (!apid)
+ 			apid = 0x1fff;
+ 
++		tpid = -1;
+ 		if (use_vdr_format) {
+ 			if (!(field = strsep(&tmp, ":")))
+ 				goto syntax_err;
+ 
+-			strtoul(field, NULL, 0);
++			if (use_tpid)
++				tpid = strtoul(field, NULL, 0);
++
+ 			if (!(field = strsep(&tmp, ":")))
+ 				goto syntax_err;
+ 
+@@ -806,7 +825,7 @@ again:
+ 		}
+ 
+ 		ret = zap_to(adapter, frontend, demux, sat_no, freq * 1000,
+-				pol, sr, vpid, apid, sid, dvr, rec_psi, bypass,
++				pol, sr, vpid, apid, tpid, sid, dvr, rec_psi, bypass,
+ 				delsys, modulation, fec, rolloff, human_readable);
+ 
+ 		if (interactive)
+@@ -878,6 +897,8 @@ int main(int argc, char *argv[])
+ 	int human_readable = 0;
+ 	int params_debug = 0;
+ 	int use_vdr_format = 0;
++	int use_tpid = 0;
++
+ 
+ 	int delsys	= -1;
+ 	int modulation	= -1;
+@@ -885,7 +906,7 @@ int main(int argc, char *argv[])
+ 	int rolloff	= -1;
+ 	
+ 	lnb_type = *lnb_enum(0);
+-	while ((opt = getopt(argc, argv, "M:C:O:HDVhqrpn:a:f:d:S:c:l:xib")) != -1) {
++	while ((opt = getopt(argc, argv, "M:C:O:HDVhqrpn:a:f:d:S:c:l:xibt")) != -1) {
+ 		switch (opt) {
+ 		case '?':
+ 		case 'h':
+@@ -951,6 +972,9 @@ int main(int argc, char *argv[])
+ 		case 'V':
+ 			use_vdr_format = 1;
+ 			break;
++		case 't':
++			use_tpid = 1;
++			break;
+ 		case 'i':
+ 			interactive = 1;
+ 			exit_after_tuning = 1;
+@@ -993,7 +1017,8 @@ int main(int argc, char *argv[])
+ 
+ 	if (!read_channels(chanfile, list_channels, chan_no, chan_name,
+ 	    adapter, frontend, demux, dvr, rec_psi, bypass, delsys,
+-	    modulation, fec, rolloff, human_readable, params_debug, use_vdr_format))
++	    modulation, fec, rolloff, human_readable, params_debug,
++	    use_vdr_format, use_tpid))
+ 
+ 		return TRUE;
+ 
