@@ -6,8 +6,12 @@
 #
 
 PORTNAME=	gnustep-gui
+.if defined(WITH_GNUSTEP_DEVEL)
+PORTVERSION=	0.19.0
+.else
 PORTVERSION=	0.17.1
 PORTREVISION=	2
+.endif
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -18,8 +22,14 @@ COMMENT=	GNUstep GUI library
 LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
-LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
+.if defined(WITH_GNUSTEP_DEVEL)
+LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:${PORTSDIR}/audio/flite
+.else
+LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
+.endif
 
 NO_PACKAGE=	GPL3
 GNU_CONFIGURE=	yes
@@ -52,7 +62,7 @@ IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
 .endif
 .endif
 
-.if !defined(WITHOUT_PORTAUDIO2) && !defined(WITHOUT_PORTAUDIO)
+.if !defined(WITHOUT_PORTAUDIO2) && !defined(WITHOUT_PORTAUDIO) && !defined(WITH_GNUSTEP_DEVEL)
 LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio2
 CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 ${PTHREAD_CFLAGS}
 CFLAGS+=	${PTHREAD_CFLAGS}
