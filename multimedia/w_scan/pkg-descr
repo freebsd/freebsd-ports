@@ -1,0 +1,11 @@
+[From the README:]
+
+this is a small channel scan tool for vdr which generates ATSC, DVB-C,
+DVB-S/S2 and DVB-T channels.conf files.
+It's 50% "scan" from linuxtv-dvb-apps-1.1.0, the differences are:
+
+- no initial tuning data needed, because scanning without this data is exactly
+  what a scan tool like this should do
+- it detects automatically which DVB/ATSC card to use.
+
+WWW: http://wirbel.htpc-forum.de/w_scan/index_en.html

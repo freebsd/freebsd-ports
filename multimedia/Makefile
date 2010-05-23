@@ -312,6 +312,7 @@
     SUBDIR += vodcatcher
     SUBDIR += vstream-client
     SUBDIR += vtkmpeg2encode
+    SUBDIR += w_scan
     SUBDIR += webcamd
     SUBDIR += win32-codecs
     SUBDIR += x264
