@@ -58,4 +58,10 @@ maint-gen-distfile:
 	${RM} -rf ${GIT_WORK}
 
 .include "Makefile.rev"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
+BROKEN=		does not compile on 6.X
+.endif
+
+.include <bsd.port.post.mk>
