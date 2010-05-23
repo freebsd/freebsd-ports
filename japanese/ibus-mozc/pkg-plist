@@ -1,0 +1,5 @@
+libexec/ibus-engine-mozc
+share/ibus/component/mozc.xml
+share/ibus-mozc/icons/mozc-temp-icon.png
+@dirrm share/ibus-mozc/icons
+@dirrm share/ibus-mozc
