@@ -1,5 +1,5 @@
---- ./Makefile.in.orig	2004-11-24 14:31:09.000000000 -0500
-+++ ./Makefile.in	2010-05-06 16:06:03.709834927 -0400
+--- ./Makefile.in.orig	2010-05-23 19:54:31.000000000 -0400
++++ ./Makefile.in	2010-05-23 19:54:22.083759943 -0400
 @@ -31,15 +31,21 @@
  	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
  	    $(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) ; \
@@ -32,7 +32,7 @@
  	    				if test $$j != "^EOL^"; then \
  	    					echo "LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
  	    				fi; \
-@@ -70,23 +79,17 @@
+@@ -70,31 +79,23 @@
  	    				-e 's#@@Port@@#$(PORT)#g' \
  	    				< $$i; \
  	    		fi \
@@ -60,7 +60,15 @@
  
  install-build:
  	@echo Installing build system files 
-@@ -108,44 +111,40 @@
+ 	@test -d $(DESTDIR)$(installbuilddir) || $(MKINSTALLDIRS) $(DESTDIR)$(installbuilddir) 
+ 	@cp $(top_srcdir)/build/*.mk $(DESTDIR)$(installbuilddir); \
+ 	cp build/*.mk $(DESTDIR)$(installbuilddir); \
+-	sed 's#LIBTOOL = \(.*\)#LIBTOOL = $(SHELL) $(installbuilddir)/libtool $(LTFLAGS)#' \
+-	    build/config_vars.mk > $(DESTDIR)$(installbuilddir)/config_vars.mk; \
+ 	cp $(top_srcdir)/build/instdso.sh $(DESTDIR)$(installbuilddir); \
+ 	cp $(top_builddir)/config.nice $(DESTDIR)$(installbuilddir);
+ 
+@@ -108,44 +109,40 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -136,7 +144,7 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -179,7 +178,6 @@
+@@ -179,7 +176,6 @@
  	@cp -p $(srcdir)/modules/http/mod_core.h $(DESTDIR)$(includedir)
  	@cp -p $(srcdir)/modules/proxy/mod_proxy.h $(DESTDIR)$(includedir)
  	@cp -p $(srcdir)/modules/ssl/*.h $(DESTDIR)$(includedir)
@@ -144,7 +152,7 @@
  	@cp -p $(srcdir)/os/$(OS_DIR)/*.h $(DESTDIR)$(includedir)
  	@chmod 644 $(DESTDIR)$(includedir)/*.h
  
-@@ -191,8 +189,11 @@
+@@ -191,8 +187,11 @@
  	@test -d $(DESTDIR)$(manualdir)   || $(MKINSTALLDIRS) $(DESTDIR)$(manualdir)
  	@cp -p $(top_srcdir)/docs/man/*.1 $(DESTDIR)$(mandir)/man1
  	@cp -p $(top_srcdir)/docs/man/*.8 $(DESTDIR)$(mandir)/man8
