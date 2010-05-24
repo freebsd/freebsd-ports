@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glew
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -28,6 +28,7 @@ do-install:
 	${LN} -sf ${PREFIX}/lib/libGLEW.so.1 ${PREFIX}/lib/libGLEW.so
 	${INSTALL_DATA} ${WRKSRC}/lib/libGLEW.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/include/GL/*.h ${PREFIX}/include/GL
+	${INSTALL_DATA} ${WRKSRC}/glew.pc ${PREFIX}/libdata/pkgconfig
 
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
