@@ -45,7 +45,8 @@ CONFIGURE_ARGS=	--target=${GCC_TARG} \
 		--enable-threads --disable-nls --disable-shared \
 		--with-gmp=${LOCALBASE} --with-mpfr=${LOCALBASE} \
 		--includedir=${PREFIX}/${GCC_TARG}/include \
-		--datadir=${PREFIX}/${GCC_TARG}/share
+		--datadir=${PREFIX}/${GCC_TARG}/share \
+		--disable-plugin
 LIBTOOLFILES=	configure gcc/configure
 MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}cpp.1 \
 		${PKGNAMEPREFIX}gcov.1
@@ -77,10 +78,6 @@ OPTIONS=	LANG_CXX     "Enable C++ compiler"                   on  \
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-BROKEN=	missing files in plist
-.endif
 
 .if defined(WITH_LANG_OBJCPP)
 WITH_LANG_OBJC=true
