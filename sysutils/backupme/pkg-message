@@ -1,0 +1,10 @@
+******************************************************************************
+* Path to main program: %%LOCALBASE%%/bin/backupme                              *
+*                                                                            *
+* Rename and edit configuration file:                                        *
+* cp /%%LOCALBASE%%/etc/backupme.xml.sample /%%LOCALBASE%%/etc/backupme.xml          *
+* or run BackupMe with option -c /path/to/config.xml                         *
+*                                                                            *
+* See the documentation for more information at http://backupme.org.ua       *
+* Send your comments to the address: yaroslav@berezhinskiy.org.ua            *
+******************************************************************************
