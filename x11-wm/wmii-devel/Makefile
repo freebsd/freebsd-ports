@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmii
-DISTVERSION=	3.9b1
+DISTVERSION=	3.9
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/wmii/
 DISTNAME=	wmii+ixp-${DISTVERSION}
@@ -32,10 +32,13 @@ MAKE_ENV=	noisycc=1	# unmute build commands, useful for logs
 MAN1=		wimenu.1 wmii9menu.1 wmii.1 wmiir.1
 
 post-patch: .SILENT
-# Link against system libixp and strip debug build options
+# Link against `devel/libixp' from ports and drop extraneous build options
 	${REINPLACE_CMD} -e '/libixp/d' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's,-g,-L${LOCALBASE}/lib, ; /^CFLAGS +=/d' \
+	${REINPLACE_CMD} -e 's,/usr/lib,${LOCALBASE}/lib, ; /^CFLAGS +=/d' \
 		${WRKSRC}/config.mk
+# Reinstate lost $(LIBICONV) reference
+	${REINPLACE_CMD} -e 's,-lm,& $$(LIBICONV),' \
+		${WRKSRC}/cmd/wmii/Makefile
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e '/doc/d' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e '/DOCDIR/s,$$(INSTALL),:,' ${WRKSRC}/mk/common.mk
