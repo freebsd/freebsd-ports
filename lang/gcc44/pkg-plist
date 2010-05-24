@@ -12,32 +12,4 @@ bin/gccbug%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
-%%JAVA%%bin/%%GNU_HOST%%-gcj%%SUFFIX%%
-%%JAVA%%bin/aot-compile%%SUFFIX%%
-%%JAVA%%bin/gappletviewer%%SUFFIX%%
-%%JAVA%%bin/gc-analyze%%SUFFIX%%
-%%JAVA%%bin/gcj%%SUFFIX%%
-%%JAVA%%bin/gcj-dbtool%%SUFFIX%%
-%%JAVA%%bin/gcjh%%SUFFIX%%
-%%JAVA%%bin/gij%%SUFFIX%%
-%%JAVA%%bin/gjar%%SUFFIX%%
-%%JAVA%%bin/gjarsigner%%SUFFIX%%
-%%JAVA%%bin/gjavah%%SUFFIX%%
-%%JAVA%%bin/gkeytool%%SUFFIX%%
-%%JAVA%%bin/gnative2ascii%%SUFFIX%%
-%%JAVA%%bin/gorbd%%SUFFIX%%
-%%JAVA%%bin/grmic%%SUFFIX%%
-%%JAVA%%bin/grmid%%SUFFIX%%
-%%JAVA%%bin/grmiregistry%%SUFFIX%%
-%%JAVA%%bin/gserialver%%SUFFIX%%
-%%JAVA%%bin/gtnameserv%%SUFFIX%%
-%%JAVA%%bin/jcf-dump%%SUFFIX%%
-%%JAVA%%bin/jv-convert%%SUFFIX%%
-%%JAVA%%bin/rebuild-gcj-db%%SUFFIX%%
-%%JAVA%%libdata/pkgconfig/libgcj-4.4.pc
-%%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
-%%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
-%%JAVA%%share/python/aotcompile.py
-%%JAVA%%share/python/classfile.py
-%%JAVA%%@dirrmtry share/python
 @comment Insert PLIST.lib here
