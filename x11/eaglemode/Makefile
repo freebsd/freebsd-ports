@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.76.0
-PORTREVISION=	2
+PORTVERSION=	0.77.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +15,8 @@ COMMENT=	Futuristic zoomable user environment
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=	yes
