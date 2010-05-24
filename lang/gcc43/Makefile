@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.3.5.20100425
+PORTVERSION=	4.3.6.20100523
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -54,13 +54,15 @@ LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
-		--with-system-zlib \
-		--with-libiconv-prefix=${LOCALBASE} \
-		--with-gmp=${LOCALBASE} \
-		--program-suffix=${SUFFIX} \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
-		--with-gxx-include-dir=${TARGLIB}/include/c++/
+		--program-suffix=${SUFFIX} \
+		--with-as=/usr/bin/as \
+		--with-gmp=${LOCALBASE} \
+		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
+		--with-ld=/usr/bin/ld \
+		--with-libiconv-prefix=${LOCALBASE} \
+		--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
