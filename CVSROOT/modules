@@ -6103,6 +6103,7 @@ ja-gxditview                    ports/japanese/gxditview
 ja-hex                          ports/japanese/hex
 ja-hns                          ports/japanese/hns
 ja-ibus-anthy                   ports/japanese/ibus-anthy
+ja-ibus-mozc                    ports/japanese/ibus-mozc
 ja-ibus-skk                     ports/japanese/ibus-skk
 ja-ical                         ports/japanese/ical
 ja-icanna                       ports/japanese/icanna
@@ -23505,6 +23506,7 @@ sysutils_ipa                    ports/sysutils/ipa
 sysutils_muse                   ports/sysutils/muse
 sysutils_nut                    ports/sysutils/nut
 sysutils_tracker                ports/sysutils/tracker
+szap-s2                         ports/multimedia/szap-s2
 t-prot                          ports/mail/t-prot
 t1lib                           ports/devel/t1lib
 t1utils                         ports/print/t1utils
@@ -24705,6 +24707,7 @@ w3m-m17n                        ports/www/w3m-m17n
 w3m-m17n-img                    ports/www/w3m-m17n-img
 w3mir                           ports/www/w3mir
 w9wm                            ports/x11-wm/w9wm
+w_scan                          ports/multimedia/w_scan
 wa-aspell                       ports/textproc/wa-aspell
 waccess                         ports/www/waccess
 wackamole                       ports/net/wackamole
