@@ -29,8 +29,6 @@ CONFLICTS=	libfwbuilder-[23].* libfwbuilder-devel-*
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
 		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
-BROKEN=		does not configure
-
 PLIST_SUB=	BUILD_VERSION=${DISTVERSION}
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib \
