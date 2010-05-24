@@ -2968,6 +2968,7 @@
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastthread
     SUBDIR += rubygem-fattr
+    SUBDIR += rubygem-ffi
     SUBDIR += rubygem-file-tail
     SUBDIR += rubygem-gdata
     SUBDIR += rubygem-gem_plugin
