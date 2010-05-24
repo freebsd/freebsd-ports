@@ -55,7 +55,7 @@ PLIST_SUB+=	DEVEL=""
 .else
 MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION}
 NETPBM_PORTVERSION=	${STABLE_PORTVERSION}
-CONFLICTS+=	netpbm-devel-10.31.*
+CONFLICTS+=	netpbm-devel-10.35.*
 PORTSCOUT=	limit:^10\.26\.
 PLIST_SUB+=	DEVEL="@comment "
 .endif
