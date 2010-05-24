@@ -5,7 +5,7 @@ include/gss/ext.h
 lib/libgss.a
 lib/libgss.la
 lib/libgss.so
-lib/libgss.so.2
+lib/libgss.so.3
 libdata/pkgconfig/gss.pc
 share/locale/en@boldquot/LC_MESSAGES/gss.mo
 share/locale/en@quot/LC_MESSAGES/gss.mo
