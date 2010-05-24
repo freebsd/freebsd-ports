@@ -39,10 +39,6 @@ OPTIONS=		KRB5_DOC "Build and install krb5 documentation" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 .if defined(WITH_DNS_FOR_REALM)
 CONFIGURE_ARGS+=	--enable-dns-for-realm
 .endif
