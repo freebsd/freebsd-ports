@@ -10,6 +10,9 @@ bin/pyro-nsd
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.py
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Clients.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/Event.py
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/Event.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/EventService/Event.pyo
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Server.py
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Server.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/EventService/Server.pyo
@@ -100,7 +103,6 @@ bin/pyro-nsd
 %%PORTDOCS%%%%DOCSDIR%%/pyromanual_print.css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/AllInOne/Readme.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/AllInOne/allinone_ownloop.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/AllInOne/allinone_threads.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Bank2/BankServer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Bank2/Readme.txt
@@ -186,6 +188,8 @@ bin/pyro-nsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/denyhosts/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/denyhosts/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/denyhosts/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/disconnect/disconnect.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/disconnect/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/cell/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/cell/dispatcher.py
@@ -211,6 +215,7 @@ bin/pyro-nsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/factory/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filetransfer/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filetransfer/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filetransfer/db.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/filetransfer/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hugetransfer/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hugetransfer/client.py
@@ -246,6 +251,8 @@ bin/pyro-nsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneway/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneway/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oneway/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pickle/pickletest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pickle/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/proxysharing/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/proxysharing/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/proxysharing/server.py
@@ -271,9 +278,14 @@ bin/pyro-nsd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/tst.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple/tst$py.class
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/certs/ca.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/certs/client.key
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/certs/client_nokey.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/certs/client.pem
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/certs/server.key
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/certs/server_nokey.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/certs/server.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ssl/server.py
@@ -356,6 +368,7 @@ bin/pyro-nsd
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/circle
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/countingcars
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/denyhosts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/disconnect
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distributed-computing/cell
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distributed-computing/tasks
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distributed-computing
@@ -373,6 +386,7 @@ bin/pyro-nsd
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/naming
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/noNS
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oneway
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pickle
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proxysharing
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/quickstart
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/quickstart-noNS
