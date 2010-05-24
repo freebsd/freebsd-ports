@@ -1141,8 +1141,15 @@ MASTER_SITE_RUBY+= \
 # See http://rubyforge.org/credits/
 .if !defined(IGNORE_MASTER_SITE_RUBYFORGE)
 MASTER_SITE_RUBYFORGE+= \
-	http://files.rubyforge.mmmultiworks.com/%SUBDIR%/ \
-	http://files.rubyforge.vm.bytemark.co.uk/%SUBDIR%/
+	http://files.rubyforge.vm.bytemark.co.uk/%SUBDIR%/ \
+	http://files.ruby.inoack.com/%SUBDIR%/
+.endif
+
+# See http://rubygems.org/pages/about
+.if !defined(IGNORE_MASTER_SITE_RUBYGEMS)
+MASTER_SITE_RUBYGEMS+= \
+	http://production.s3.rubygems.org/gems/%SUBDIR%/ \
+	http://production.cf.rubygems.org/gems/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SAMBA)
@@ -1493,6 +1500,7 @@ MASTER_SITE_KERNEL_ORG+= \
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			SF:SOURCEFORGE \
 			SFJP:SOURCEFORGE_JP \
+			RG:RUBYGEMS \
 			RF:RUBYFORGE
 MASTER_SITES_SUBDIRS=	\
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
