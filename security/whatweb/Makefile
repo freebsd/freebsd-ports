@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	whatweb
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	security www
 MASTER_SITES=	http://www.morningstarsecurity.com/downloads/
 
 MAINTAINER=	niels@FreeBSD.org
 COMMENT=	A tool to fingerprint web site components
 
-RUN_DEPENDS=	rubygem-anemone>=0.4.0:${PORTSDIR}/www/rubygem-anemone
-
 USE_RUBY=	yes
 NO_BUILD=	yes
-PORTDOCS=	README INSTALL CHANGELOG TODO
+PORTDOCS=	README INSTALL CHANGELOG TODO How-to-develop-WhatWeb-plugins-1.1.txt
+MAN1=		${PORTNAME}.1
+MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e \
-	's!PLUGIN_DIR="!PLUGIN_DIR="${RUBY_SITELIBDIR}/${PORTNAME}/!' \
+	's!/usr/share/whatweb/!${RUBY_SITELIBDIR}/${PORTNAME}!' \
 	${WRKSRC}/${PORTNAME}
 
 do-install:
@@ -38,6 +37,7 @@ do-install:
 	( cd ${WRKSRC}/${DIR} && \
 	${COPYTREE_SHARE} . ${RUBY_SITELIBDIR}/${PORTNAME}/${DIR} )
 .endfor
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>
