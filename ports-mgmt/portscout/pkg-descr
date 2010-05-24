@@ -1,5 +1,7 @@
 portscout is a tool which looks for new versions of software in the
-FreeBSD ports tree, and potentially other software repositories.
+FreeBSD ports tree, and potentially other software repositories. It
+is also possible to provide an arbitrary list of software in a simple
+XML format.
 
 Various factors make this task a bit more difficult than it might
 initially seem. In particular, the array of weird and wonderful
@@ -12,9 +14,5 @@ with the CPU-heavy rapidly-expanding FreeBSD ports system.
 
 In addition to all this, it is possible to generate nice HTML reports
 and send reminder mails to interested parties.
-
-Regularly updated results can be found at:
-  http://beta.inerd.com/portscout/
-
 
 WWW: http://www.inerd.com/software/portscout/

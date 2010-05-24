@@ -6,13 +6,32 @@ etc/portscout.conf.sample
 %%DATADIR%%/templates/maintainer.html
 %%DATADIR%%/templates/reminder.mail
 %%DATADIR%%/templates/restricted-ports.html
-%%DATADIR%%/sql/mysql_init.sql
 %%DATADIR%%/sql/pgsql_init.sql
 %%DATADIR%%/sql/pgsql_destroy.sql
 %%DATADIR%%/sql/pgsql_upgrade_0.7.1_to_0.7.2.sql
 %%DATADIR%%/sql/pgsql_upgrade_0.7.3_to_0.7.4.sql
+%%DATADIR%%/sql/pgsql_upgrade_0.7.4_to_0.8.sql
+%%DATADIR%%/sql/sqlite_init.sql
+%%DATADIR%%/sql/sqlite_destroy.sql
+%%SITE_PERL%%/Portscout/SQL/SQLite.pm
+%%SITE_PERL%%/Portscout/SQL/Pg.pm
+%%SITE_PERL%%/Portscout/SiteHandler/SourceForge.pm
+%%SITE_PERL%%/Portscout/DataSrc/Ports.pm
+%%SITE_PERL%%/Portscout/DataSrc/XML.pm
+%%SITE_PERL%%/Portscout/SiteHandler.pm
+%%SITE_PERL%%/Portscout/SQL.pm
+%%SITE_PERL%%/Portscout/Make.pm
+%%SITE_PERL%%/Portscout/Const.pm
+%%SITE_PERL%%/Portscout/DataSrc.pm
 %%SITE_PERL%%/Portscout/Template.pm
+%%SITE_PERL%%/Portscout/Util.pm
+%%SITE_PERL%%/Portscout/API.pm
+%%SITE_PERL%%/Portscout/Config.pm
 %%SITE_PERL%%/Portscout.pm
+%%SITE_PERL%%/portscout.pod
+@dirrm %%SITE_PERL%%/Portscout/SQL
+@dirrm %%SITE_PERL%%/Portscout/SiteHandler
+@dirrm %%SITE_PERL%%/Portscout/DataSrc
 @dirrm %%SITE_PERL%%/Portscout
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/sql
