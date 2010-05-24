@@ -3,19 +3,108 @@ lib/eaglemode/README
 lib/eaglemode/bin/eaglemode
 lib/eaglemode/bin/emSendMiniIpc
 lib/eaglemode/bin/emShowStdDlg
+lib/eaglemode/bin/font2em
+lib/eaglemode/doc/examples/CppApiExamples/HelloWorldExample.cpp
+lib/eaglemode/doc/examples/CppApiExamples/InputExample.cpp
+lib/eaglemode/doc/examples/CppApiExamples/ModelExample.cpp
+lib/eaglemode/doc/examples/CppApiExamples/PaintExample.cpp
+lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etc/emCore/FpPlugins/PlEx.emFpPlugin
+lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etc/emMain/VcItemFiles/PlEx1.PlEx
+lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etc/emMain/VcItems/PlEx1.emVcItem
+lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etcw/emCore/FpPlugins/PlEx.emFpPlugin
+lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etcw/emMain/VcItemFiles/PlEx1.PlEx
+lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etcw/emMain/VcItems/PlEx1.emVcItem
+lib/eaglemode/doc/examples/CppApiExamples/PluginExample/makers/PlEx.maker.pm
+lib/eaglemode/doc/examples/CppApiExamples/PluginExample/src/PlEx/PlEx.cpp
+lib/eaglemode/doc/examples/CppApiExamples/README
+lib/eaglemode/doc/examples/CppApiExamples/SignalExample.cpp
+lib/eaglemode/doc/examples/CppApiExamples/SimpleAnimationExample.cpp
+lib/eaglemode/doc/examples/CppApiExamples/ToolkitExample.cpp
+lib/eaglemode/doc/examples/CppApiExamples/TreeExpansionExample.cpp
+lib/eaglemode/doc/examples/CppApiExamples/run-example.pl
+lib/eaglemode/doc/html/AdvancedConfiguration.html
 lib/eaglemode/doc/html/ChangeLog.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emATMatrix_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emArray_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emAvlTree_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emClipboard_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emColor_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emConfigModel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emContext_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emCoreConfig_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emCrossPtr_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emCursor_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emEngine_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emErrorPanel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emFileModel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emFilePanel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emFpPlugin_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emGUIFramework_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emImageFile_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emImage_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emInput_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emInstallInfo_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emList_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emMiniIpc_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emModel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emPainter_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emPanel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emPriSchedAgent_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emProcess_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emRecFileModel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emRec_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emRef_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emRes_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emScheduler_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emScreen_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emSigModel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emSignal_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emStd1_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emStd2_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emString_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emSubViewPanel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emThread_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emTimer_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emTmpFile_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emToolkit_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emVarModel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emVarSigModel_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emView_h.html
+lib/eaglemode/doc/html/CppApiRef/emCore_emWindow_h.html
+lib/eaglemode/doc/html/CppApiRef/index-noframes.html
+lib/eaglemode/doc/html/CppApiRef/index.html
+lib/eaglemode/doc/html/CppApiRef/script.js
+lib/eaglemode/doc/html/CppApiRef/styles.css
+lib/eaglemode/doc/html/CppApiRef/tree.html
+lib/eaglemode/doc/html/CppApiRef/tree0.html
+lib/eaglemode/doc/html/CppApiRef/tree1.html
+lib/eaglemode/doc/html/CppApiRef/tree10.html
+lib/eaglemode/doc/html/CppApiRef/tree2.html
+lib/eaglemode/doc/html/CppApiRef/tree3.html
+lib/eaglemode/doc/html/CppApiRef/tree4.html
+lib/eaglemode/doc/html/CppApiRef/tree5.html
+lib/eaglemode/doc/html/CppApiRef/tree6.html
+lib/eaglemode/doc/html/CppApiRef/tree7.html
+lib/eaglemode/doc/html/CppApiRef/tree8.html
+lib/eaglemode/doc/html/CppApiRef/tree9.html
+lib/eaglemode/doc/html/CppApiTutorial.html
 lib/eaglemode/doc/html/GeneralUserGuide.html
 lib/eaglemode/doc/html/InstallAndStart.html
 lib/eaglemode/doc/html/License.html
+lib/eaglemode/doc/html/MakeSystem.html
 lib/eaglemode/doc/html/SystemRequirements.html
 lib/eaglemode/doc/html/emFileManCustomization.html
 lib/eaglemode/doc/html/emFileManUserGuide.html
 lib/eaglemode/doc/html/images/ControlAndContent.png
+lib/eaglemode/doc/html/images/EngineClasses.png
+lib/eaglemode/doc/html/images/ModelClassesAndMore.png
 lib/eaglemode/doc/html/images/MouseFunc1.png
 lib/eaglemode/doc/html/images/MouseFunc2.png
 lib/eaglemode/doc/html/images/MouseFunc3.png
+lib/eaglemode/doc/html/images/ToolkitClasses.png
 lib/eaglemode/doc/html/images/emFileManOverview.png
 lib/eaglemode/doc/html/index.html
+lib/eaglemode/doc/ps/AdvancedConfiguration.ps
 lib/eaglemode/doc/ps/ChangeLog.ps
 lib/eaglemode/doc/ps/GeneralUserGuide.ps
 lib/eaglemode/doc/ps/InstallAndStart.ps
@@ -25,7 +114,6 @@ lib/eaglemode/doc/ps/emFileManCustomization.ps
 lib/eaglemode/doc/ps/emFileManUserGuide.ps
 lib/eaglemode/doc/ps/index.ps
 lib/eaglemode/eaglemode.sh
-lib/eaglemode/etc/emCore/FpPlugins/README
 lib/eaglemode/etc/emCore/FpPlugins/SilChess.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emAv_xine.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emBmp.emFpPlugin
@@ -143,6 +231,7 @@ lib/eaglemode/etc/emFileMan/Commands/Terminal.pl
 lib/eaglemode/etc/emFileMan/Commands/version
 lib/eaglemode/etc/emMain/CreateInitialBookmarks.pl
 lib/eaglemode/etc/emMain/VcItemFiles/AboutEagleMode.emFileLink
+lib/eaglemode/etc/emMain/VcItemFiles/AdvancedConfiguration.emFileLink
 lib/eaglemode/etc/emMain/VcItemFiles/ChangeLog.emFileLink
 lib/eaglemode/etc/emMain/VcItemFiles/Chess1.silchess
 lib/eaglemode/etc/emMain/VcItemFiles/Clock1.emClock
@@ -172,6 +261,7 @@ lib/eaglemode/etc/emMain/VcItemFiles/emFileManUserGuide.emFileLink
 lib/eaglemode/etc/emMain/VcItemFiles/emLKC.emFileLink
 lib/eaglemode/etc/emMain/VcItemFiles/version
 lib/eaglemode/etc/emMain/VcItems/AboutEagleMode.emVcItem
+lib/eaglemode/etc/emMain/VcItems/AdvancedConfiguration.emVcItem
 lib/eaglemode/etc/emMain/VcItems/ChangeLog.emVcItem
 lib/eaglemode/etc/emMain/VcItems/Chess1.emVcItem
 lib/eaglemode/etc/emMain/VcItems/Clock1.emVcItem
@@ -378,9 +468,7 @@ lib/eaglemode/res/emCore/font/01E00-01EF9_64x112_LatinExtendedAdditional_origina
 lib/eaglemode/res/emCore/font/02010-0205F_64x112_GeneralPunctuation_original.tga
 lib/eaglemode/res/emCore/font/020A0-020B5_64x112_CurrencySymbols_original.tga
 lib/eaglemode/res/emCore/font/CostlyChar.tga
-lib/eaglemode/res/emCore/font/README
 lib/eaglemode/res/emCore/font/UnknownChar.tga
-lib/eaglemode/res/emCore/font/font2em.c
 lib/eaglemode/res/emCore/toolkit/Button.tga
 lib/eaglemode/res/emCore/toolkit/ButtonBorder.tga
 lib/eaglemode/res/emCore/toolkit/ButtonChecked.tga
@@ -488,7 +576,26 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/etc
 @dirrm lib/eaglemode/doc/ps
 @dirrm lib/eaglemode/doc/html/images
+@dirrm lib/eaglemode/doc/html/CppApiRef
 @dirrm lib/eaglemode/doc/html
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/src/PlEx
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/src
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/makers
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etcw/emMain/VcItems
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etcw/emMain/VcItemFiles
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etcw/emMain
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etcw/emCore/FpPlugins
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etcw/emCore
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etcw
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etc/emMain/VcItems
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etc/emMain/VcItemFiles
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etc/emMain
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etc/emCore/FpPlugins
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etc/emCore
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample/etc
+@dirrm lib/eaglemode/doc/examples/CppApiExamples/PluginExample
+@dirrm lib/eaglemode/doc/examples/CppApiExamples
+@dirrm lib/eaglemode/doc/examples
 @dirrm lib/eaglemode/doc
 @dirrm lib/eaglemode/bin
 @dirrm lib/eaglemode
