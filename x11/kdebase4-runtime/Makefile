@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	0
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -21,6 +20,8 @@ LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
 		slp.1:${PORTSDIR}/net/openslp \
 		attica.0:${PORTSDIR}/x11-toolkits/attica \
 		ssh.4:${PORTSDIR}/security/libssh
+#explicitly depend on libssh to avoid interference with ssh.4 from compat7x
+BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4 #pimlibs
 KDE4_BUILDENV=	yes
