@@ -20,17 +20,15 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 USE_BZIP2=	yes
+USE_GCC=	4.4+
 USE_LDCONFIG=	yes
-USE_OPENAL=	al
-USE_GCC=	4.3+
 USE_LUA=	5.0+
-USE_SCONS=	yes
+USE_OPENAL=	al
 USE_SDL=	image sdl
+USE_SCONS=	yes
 SCONS_ARGS=	prefix=${PREFIX} resources_dir=${DATADIR}
-SCONS_BUILDENV+=CC="${CC}" \
-		CXX="${CXX}" \
-		CFLAGS="${CFLAGS}" \
-		CXXFLAGS="${CXXFLAGS}" \
+SCONS_BUILDENV=	CC="${CC}" CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
 		CPPPATH="${LOCALBASE}/include" \
 		LIBPATH="${LOCALBASE}/lib"
@@ -38,7 +36,8 @@ SCONS_BUILDENV+=CC="${CC}" \
 PORTDOCS=	LICENSE LICENSE.EXCEPTION README-en.txt README-linux.txt \
 		donate.url homepage.url project_page.url video.txt
 
-DESKTOP_ENTRIES="Battle Tanks" "${COMMENT}" "" "btanks" "Application;Game;" false
+DESKTOP_ENTRIES="Battle Tanks" "${COMMENT}" "" "btanks" \
+		"Application;Game;" false
 
 .include <bsd.port.pre.mk>
 
@@ -47,15 +46,13 @@ SCONS_ARGS+=	gcc_visibility=false
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/build/release/clunk/libclunk.so ${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}/build/release/engine/libbtanks_engine.so ${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}/build/release/mrt/libmrt.so ${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}/build/release/sdlx/libsdlx.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/build/release/clunk/libclunk.so \
+		${WRKSRC}/build/release/engine/libbtanks_engine.so \
+		${WRKSRC}/build/release/mrt/libmrt.so \
+		${WRKSRC}/build/release/sdlx/libsdlx.so ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
