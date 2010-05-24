@@ -12,7 +12,7 @@ MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyserial-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gcooper@FreeBSD.org
 COMMENT=	Serial port encapsulation library for Python
 
 USE_PYTHON=	yes
