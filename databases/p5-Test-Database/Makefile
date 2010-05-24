@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Test-Database
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Database handles ready for testing
 
 BUILD_DEPENDS=	${SITE_PERL}/mach/DBI.pm:${PORTSDIR}/databases/p5-DBI \
