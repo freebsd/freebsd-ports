@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	rtmpdump
-PORTVERSION=	2.2c
+PORTVERSION=	2.2d
 CATEGORIES=	multimedia net
 MASTER_SITES=	http://rtmpdump.mplayerhq.hu/download/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A tool to download RTMP streams
