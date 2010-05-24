@@ -85,6 +85,7 @@
     SUBDIR += inconsolata-ttf
     SUBDIR += indic-ttf
     SUBDIR += intlfonts
+    SUBDIR += isabella
     SUBDIR += jmk-x11-fonts
     SUBDIR += junicode
     SUBDIR += kaputa
