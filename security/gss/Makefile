@@ -7,15 +7,14 @@
 #
 
 PORTNAME=	gss
-PORTVERSION=	0.1.5
+PORTVERSION=	1.0.1
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU Generic Security Service Library
 
-LIB_DEPENDS=	shishi.0:${PORTSDIR}/security/shishi
+LIB_DEPENDS=	shishi.1:${PORTSDIR}/security/shishi
 
 CONFLICTS=	heimdal-[0-9]*
 
@@ -27,6 +26,7 @@ CONFIGURE_ARGS=	--disable-kerberos5
 USE_LDCONFIG=	yes
 
 INFO=		gss
+PORTDOCS=	gss.html gss.ps gss.pdf
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -34,7 +34,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_NLS)
+.ifdef	WITHOUT_NLS
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
@@ -45,9 +45,10 @@ PLIST_SUB+=	NLS=""
 pre-install:
 	@${MKDIR} ${PREFIX}/${INFO_PATH}
 
-post-patch:
-	# There is no need to re-run automake after configure
-	@${REINPLACE_CMD} '/^Makefile.gdoc/s,$$(top_builddir)/configure,,' \
-		${WRKSRC}/doc/Makefile.in
+post-install:
+.ifndef	NOPORTDOCS
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
