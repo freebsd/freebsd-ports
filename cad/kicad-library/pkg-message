@@ -1,0 +1,7 @@
+..........................................................
+If you plan to create 3D shapes for Printed board modules,
+install the 3D modeler wings3D (port graphics/wings).
+
+Pcbnew uses the exported files in wrml (.wrl) format from
+wings3d (not the native .wings format).
+..........................................................
