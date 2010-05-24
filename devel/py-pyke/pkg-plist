@@ -22,6 +22,9 @@
 %%PYTHON_SITELIBDIR%%/pyke/fc_rule.py
 %%PYTHON_SITELIBDIR%%/pyke/fc_rule.pyc
 %%PYTHON_SITELIBDIR%%/pyke/fc_rule.pyo
+%%PYTHON_SITELIBDIR%%/pyke/goal.py
+%%PYTHON_SITELIBDIR%%/pyke/goal.pyc
+%%PYTHON_SITELIBDIR%%/pyke/goal.pyo
 %%PYTHON_SITELIBDIR%%/pyke/immutable_dict.py
 %%PYTHON_SITELIBDIR%%/pyke/immutable_dict.pyc
 %%PYTHON_SITELIBDIR%%/pyke/immutable_dict.pyo
