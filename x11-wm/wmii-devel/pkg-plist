@@ -35,6 +35,8 @@ etc/wmii/wmiirc
 @dirrm etc/wmii/plan9port
 @dirrm etc/wmii
 lib/libwmii_hack.so
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/README
 %%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/plan9port/README
 %%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/python/README
