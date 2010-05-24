@@ -20,6 +20,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/convenience.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/doom.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/sampledm.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/transaction/tests/sampledm.pyc
