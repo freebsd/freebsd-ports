@@ -114,7 +114,6 @@
     SUBDIR += dgd
     SUBDIR += dgd-kernel
     SUBDIR += dgd-lpmud
-    SUBDIR += dgd-net
     SUBDIR += dhcp6
     SUBDIR += dhcpcd
     SUBDIR += dhcpdump
