@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hexxagon
-PORTVERSION=	1.0
-PORTREVISION=	8
+PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nesqi.se/hexxagon/hexxagon/download/
 
