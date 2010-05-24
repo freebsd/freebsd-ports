@@ -3,6 +3,7 @@ bin/lines
 bin/randcookie
 bin/tailx
 bin/unsort
+bin/verinfo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -110,6 +111,9 @@ bin/unsort
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/unsort.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/unsort.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/unsort.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/verinfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/verinfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/verinfo.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/strutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/strutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/strutil.pyo
