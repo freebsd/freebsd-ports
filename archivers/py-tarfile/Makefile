@@ -11,7 +11,7 @@ CATEGORIES=	archivers python
 MASTER_SITES=	http://www.gustaebel.de/lars/tarfile/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gcooper@FreeBSD.org
 COMMENT=	Python library for reading and writing tarballs
 
 USE_PYTHON=	yes
