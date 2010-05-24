@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	MooseX-Role-WithOverloading
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Roles which support overloading
 
 BUILD_DEPENDS=	p5-Moose>=0.78:${PORTSDIR}/devel/p5-Moose \
