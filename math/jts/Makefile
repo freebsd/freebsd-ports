@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	jts
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	math databases
 MASTER_SITES=	SF/${PORTNAME}-topo-suite/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	JTS Topology Suite
 
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom		\
