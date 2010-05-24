@@ -1,0 +1,4 @@
+Nice-FFI is a layer on top of Ruby-FFI  (and compatible FFI systems) to augment
+it with features to aid development of FFI-based libraries. 
+
+WWW: http://jacius.github.com/nice-ffi/

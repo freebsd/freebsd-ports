@@ -1,0 +1,23 @@
+# New ports collection makefile for:   rubygem-nice-ffi
+# Date created:    28 April 2010
+# Whom:	ws	Christoph Kick
+#
+# $FreeBSD$
+#
+
+PORTNAME=	nice-ffi
+PORTVERSION=	0.3
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RF
+
+MAINTAINER=	kick.christoph@googlemail.com
+COMMENT=	Nice-FFI is a layer on top of Ruby-FFI
+
+BUILD_DEPENDS=	rubygem-ffi>=0.5.3:${PORTSDIR}/devel/rubygem-ffi
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_RUBY=		yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+.include <bsd.port.mk>
