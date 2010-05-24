@@ -11,8 +11,4 @@ PKGNAMESUFFIX=	-nox11
 MASTERDIR=      ${.CURDIR}/../emacs
 LATEST_LINK=	emacs-nox11
 
-.if ${OSVERSION} < 700000 && defined(WITH_DBUS)
-BROKEN= Does not currently build with dbus support
-.endif
-
 .include "${MASTERDIR}/Makefile"
