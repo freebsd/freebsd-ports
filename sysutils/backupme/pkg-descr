@@ -1,0 +1,12 @@
+Flexible and easy backup utility.
+It can be used to backup your file system files, directories or even to
+backup databases.
+
+FEATURES:
+** Can be used with different types of archiveres (tar, rar, zip, 7z etc.);
+** Send backuped files using FTP or SCP protocol;
+** Backup MySQL and PostgreSQL databases;
+** Generate and send report via email or/and jabber.
+
+WWW: http://backupme.org.ua/
+
