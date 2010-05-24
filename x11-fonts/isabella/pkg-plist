@@ -1,0 +1,8 @@
+%%FONTDIR%%/Isabella.ttf
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec %%MKFONTSCL_CMD%% %D/%%FONTDIR%% && %%MKFONTDIR_CMD%% %D/%%FONTDIR%%
+@unexec cd %D/%%FONTDIR%% && if [ -f fonts.scale -a `head -1 fonts.scale` = 0 ]; then rm -f fonts.scale; fi
+@unexec cd %D/%%FONTDIR%% && if [ -f fonts.dir -a `head -1 fonts.dir` = 0 ]; then rm -f fonts.dir; fi
+@dirrmtry %%FONTDIR%%
+@exec %%MKFONTSCL_CMD%% %D/%%FONTDIR%% && %%MKFONTDIR_CMD%% %D/%%FONTDIR%%
