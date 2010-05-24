@@ -49,6 +49,7 @@
     SUBDIR += jspice3
     SUBDIR += kicad
     SUBDIR += kicad-devel
+    SUBDIR += kicad-library
     SUBDIR += klayout
     SUBDIR += leocad
     SUBDIR += libgeda
