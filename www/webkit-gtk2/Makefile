@@ -83,6 +83,7 @@ PLIST_SUB+=	STATIC="@comment "
 .if ${OSVERSION} < 700000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-JavaScriptCore_yarr_RegexJIT.h \
 		${FILESDIR}/extra-patch-JavaScriptCore_assembler_MacroAssemblerCodeRef.h
+BROKEN=		does not compile on 6.X
 .endif
 
 post-patch:
