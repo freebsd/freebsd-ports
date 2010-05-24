@@ -33,6 +33,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmake+modules+lasi.cmake
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 pre-install:
 .if defined(NOPORTEXAMPLES)
 	@${REINPLACE_CMD} 's/^\(add_subdirectory(examples)\)/#\1/' ${WRKSRC}/CMakeLists.txt
@@ -54,4 +60,5 @@ post-install:
 	@${RM} -rf ${DATADIR}/*
 .endif
 	@${TEST} -d ${DATADIR} && ${RMDIR} ${DATADIR} || ${TRUE}
-.include <bsd.port.mk>
+
+.include <bsd.port.post.mk>
