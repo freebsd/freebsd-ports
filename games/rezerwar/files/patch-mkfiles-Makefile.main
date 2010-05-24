@@ -1,26 +1,28 @@
---- mkfiles/Makefile.main.orig	2009-09-10 00:45:47.000000000 +0400
-+++ mkfiles/Makefile.main	2009-09-10 20:00:59.000000000 +0400
-@@ -28,16 +28,16 @@
- 	rm -f doc/DOWNLOADS
+--- mkfiles/Makefile.main.orig	2010-05-09 20:34:16.000000000 +0400
++++ mkfiles/Makefile.main	2010-05-20 19:41:00.000000000 +0400
+@@ -36,18 +36,18 @@
+ 	rm -rf mkfiles/
  
  install:
--	mkdir -p ${TARGET_BIN} ${TARGET_DOC} ${TARGET_DATA}
-+	mkdir -p ${TARGET_BIN} ${TARGET_DATA}
- 	mkdir -p ${TARGET_DATA}/gfx
- 	mkdir -p ${TARGET_DATA}/music
- 	mkdir -p ${TARGET_DATA}/sfx
- 	mkdir -p ${TARGET_DATA}/levels
- 	mkdir -p ${TARGET_DOC}
--	install -m 644 doc/* ${TARGET_DOC}/
--	install -m 644 data/gfx/*.bmp ${TARGET_DATA}/gfx/
--	install -m 644 data/levels/* ${TARGET_DATA}/levels/
--	install -m 644 data/sfx/*.wav ${TARGET_DATA}/sfx/
--	install -m 644 data/music/*.ogg ${TARGET_DATA}/music/
--	install -m 755 src/rezerwar ${TARGET_BIN}/
-+	${BSD_INSTALL_DATA} doc/* ${TARGET_DOC}/
-+	${BSD_INSTALL_DATA} data/gfx/*.bmp ${TARGET_DATA}/gfx/
-+	${BSD_INSTALL_DATA} data/levels/* ${TARGET_DATA}/levels/
-+	${BSD_INSTALL_DATA} data/sfx/*.wav ${TARGET_DATA}/sfx/
-+	${BSD_INSTALL_DATA} data/music/*.ogg ${TARGET_DATA}/music/
-+	${BSD_INSTALL_PROGRAM} src/rezerwar ${TARGET_BIN}/
+-	${INSTALL} -d ${TARGET_BIN} ${TARGET_DOC} ${TARGET_DATA}
++	${INSTALL} -d ${TARGET_BIN} ${TARGET_DATA}
+ 	${INSTALL} -d ${TARGET_DATA}/gfx
+ 	${INSTALL} -d ${TARGET_DATA}/music
+ 	${INSTALL} -d ${TARGET_DATA}/sfx
+ 	${INSTALL} -d ${TARGET_DATA}/levels
+ 	${INSTALL} -d ${TARGET_DOC}
+-	${INSTALL} -m 644 doc/* ${TARGET_DOC}/
+-	${INSTALL} -m 644 data/gfx/*.bmp ${TARGET_DATA}/gfx/
+-	${INSTALL} -m 644 data/levels/* ${TARGET_DATA}/levels/
+-	${INSTALL} -m 644 data/sfx/*.wav ${TARGET_DATA}/sfx/
+-	${INSTALL} -m 644 data/music/*.ogg ${TARGET_DATA}/music/
+-	${INSTALL} -m 755 src/rezerwar ${TARGET_BIN}/
++	${BSD_INSTALL_DATA} -m 644 doc/* ${TARGET_DOC}/
++	${BSD_INSTALL_DATA} -m 644 data/gfx/*.bmp ${TARGET_DATA}/gfx/
++	${BSD_INSTALL_DATA} -m 644 data/levels/* ${TARGET_DATA}/levels/
++	${BSD_INSTALL_DATA} -m 644 data/sfx/*.wav ${TARGET_DATA}/sfx/
++	${BSD_INSTALL_DATA} -m 644 data/music/*.ogg ${TARGET_DATA}/music/
++	${BSD_INSTALL_PROGRAM} -m 755 src/rezerwar ${TARGET_BIN}/
  
+ uninstall:
+ 	rm -f ${TARGET_BIN}/rezerwar
