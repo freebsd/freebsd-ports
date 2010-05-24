@@ -37,8 +37,8 @@ bin/XtractLazy
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Xtract/Combinators.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Xtract/Lex.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/HaXml/Xtract/Parse.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSHaXml-%%PORTVERSION%%.o
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSHaXml-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
@@ -53,5 +53,5 @@ bin/XtractLazy
 @dirrm %%LIBDIR_REL%%
 @exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister HaXml-%%PORTVERSION%%
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

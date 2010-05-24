@@ -4,20 +4,16 @@
 #
 # $FreeBSD$
 
-PORTNAME=	x11
+PORTNAME=	X11
 PORTVERSION=	1.5.0.0
 PORTREVISION=	1
 CATEGORIES=	x11 haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	X11 bindings for Haskell programs
 
 CABAL_SETUP=	Setup.hs
 USE_XORG=	x11 xext sm
-
-MASTER_SITES=	http://hackage.haskell.org/packages/archive/X11/${PORTVERSION}/
-DISTNAME=	X11-${PORTVERSION}
 
 OPTIONS=	XINERAMA "Build with Xinerama support" off
 

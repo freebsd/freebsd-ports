@@ -39,7 +39,7 @@
     SUBDIR += hffzip
     SUBDIR += hlextract
     SUBDIR += hpack.non-usa.only
-    SUBDIR += hs-zip-archive-ghc
+    SUBDIR += hs-zip-archive
     SUBDIR += hs-zlib
     SUBDIR += javatar
     SUBDIR += jzip.org

@@ -8,7 +8,6 @@
 PORTNAME=	digest
 PORTVERSION=	0.0.0.8
 CATEGORIES=	security haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Efficient cryptographic hash implementations in Haskell

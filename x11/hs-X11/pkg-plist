@@ -24,11 +24,11 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Screen.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Types.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Graphics/X11/Xlib/Window.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HSX11-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsAllKeysyms.h
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/HsXlib.h
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/XlibExtras.h
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHSX11-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
@@ -41,5 +41,5 @@
 @dirrm %%LIBDIR_REL%%
 @exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
 @exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
-@unexec %D/bin/ghc-pkg unregister X11-%%PORTVERSION%%
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
 @unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

@@ -9,7 +9,6 @@ PORTNAME=	xmonad-contrib
 PORTVERSION=	0.9.1
 PORTREVISION=	1
 CATEGORIES=	x11-wm haskell
-PKGNAMEPREFIX=
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Third party tiling algorithms, configurations and scripts to xmonad

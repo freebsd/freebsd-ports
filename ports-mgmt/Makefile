@@ -9,6 +9,7 @@
    SUBDIR += fastest_sites
    SUBDIR += genplist
    SUBDIR += gnome-packagekit
+   SUBDIR += hs-porte
    SUBDIR += jailaudit
    SUBDIR += kports
    SUBDIR += kports-qt4
@@ -45,7 +46,6 @@
    SUBDIR += portcheckout
    SUBDIR += portconf
    SUBDIR += portdowngrade
-   SUBDIR += porte
    SUBDIR += porteasy
    SUBDIR += portell
    SUBDIR += portless

@@ -9,7 +9,6 @@ PORTNAME=	xmonad
 PORTVERSION=	0.9.1
 PORTREVISION=	1
 CATEGORIES=	x11-wm haskell
-PKGNAMEPREFIX=
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Xmonad is a minimalist and tiling window manager for X

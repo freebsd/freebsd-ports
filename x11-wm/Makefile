@@ -64,6 +64,8 @@
     SUBDIR += genmenu
     SUBDIR += golem
     SUBDIR += hackedbox
+    SUBDIR += hs-xmonad
+    SUBDIR += hs-xmonad-contrib
     SUBDIR += i3
     SUBDIR += icewm
     SUBDIR += ion
@@ -144,7 +146,5 @@
     SUBDIR += xfce4-panel
     SUBDIR += xfce4-session
     SUBDIR += xfce4-wm
-    SUBDIR += xmonad
-    SUBDIR += xmonad-contrib
 
 .include <bsd.port.subdir.mk>

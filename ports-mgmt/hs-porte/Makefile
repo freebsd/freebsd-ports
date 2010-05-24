@@ -8,7 +8,6 @@ PORTNAME=	porte
 PORTVERSION=	0.0.3
 PORTREVISION=	4
 CATEGORIES=	ports-mgmt haskell
-PKGNAMEPREFIX=
 
 MAINTAINER=	sbahra@kerneled.org
 COMMENT=	FreeBSD ports index search and statistical analysis tool

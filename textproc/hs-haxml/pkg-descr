@@ -1,5 +1,0 @@
-HaXml is a collection of utilities for using Haskell and XML together. It
-includes a parser for XML, a separate error-correcting parser for HTML, and
-pretty-printers for XML and HTML.
-
-WWW: http://www.haskell.org/HaXml/

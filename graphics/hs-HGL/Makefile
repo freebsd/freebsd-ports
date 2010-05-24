@@ -8,7 +8,6 @@
 PORTNAME=	HGL
 PORTVERSION=	3.2.0.2
 CATEGORIES=	graphics haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	jacula@gmail.com
 COMMENT=	A simple Haskell graphics library based on X11 or Win32

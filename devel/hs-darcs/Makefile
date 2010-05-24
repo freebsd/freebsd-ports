@@ -8,7 +8,6 @@
 PORTNAME=	darcs
 PORTVERSION=	2.4.3
 CATEGORIES=	devel haskell
-PKGNAMEPREFIX=
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A distributed, interactive, smart revision control system

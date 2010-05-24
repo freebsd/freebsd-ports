@@ -8,7 +8,6 @@
 PORTNAME=	lazysmallcheck
 PORTVERSION=	0.5
 CATEGORIES=	devel haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A library for demand-driven testing of Haskell programs

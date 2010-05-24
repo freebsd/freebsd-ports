@@ -17,7 +17,7 @@ COMMENT=	A preprocessor to generate LaTeX code from literate Haskell sources
 
 BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		hs-utf8-string-ghc>=0.3:${PORTSDIR}/devel/hs-utf8-string-ghc
+		hs-utf8-string>=0.3:${PORTSDIR}/devel/hs-utf8-string
 
 RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 

@@ -135,8 +135,9 @@
     SUBDIR += gtstarter
     SUBDIR += gxset
     SUBDIR += hotwire-shell
-    SUBDIR += hs-x11-ghc
-    SUBDIR += hs-x11-xft-ghc
+    SUBDIR += hs-X11
+    SUBDIR += hs-X11-xft
+    SUBDIR += hs-xmobar
     SUBDIR += i3lock
     SUBDIR += iceauth
     SUBDIR += ico
@@ -421,7 +422,6 @@
     SUBDIR += xmascot
     SUBDIR += xmessage
     SUBDIR += xmh
-    SUBDIR += xmobar
     SUBDIR += xmodmap
     SUBDIR += xmold
     SUBDIR += xmon

@@ -1,7 +1,0 @@
-The OpenGL package contains a Haskell binding for the OpenGL graphics system.
-OpenGL is the industry's most widely used and supported 2D and 3D graphics
-application programming interface (API), incorporating a broad set of rendering,
-texture mapping, special effects, and other powerful visualization functions.
-For more information about OpenGL, please see: <http://www.opengl.org/>.
-
-WWW: http://www.haskell.org/HOpenGL/

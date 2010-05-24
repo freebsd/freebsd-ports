@@ -8,7 +8,6 @@
 PORTNAME=	zip-archive
 PORTVERSION=	0.1.1.6
 CATEGORIES=	archivers haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for working with zip archives

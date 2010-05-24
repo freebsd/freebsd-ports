@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for RDF site summaries based news-check
 
-BUILD_DEPENDS=	hs-haxml>=1.19:${PORTSDIR}/textproc/hs-haxml
+BUILD_DEPENDS=	hs-HaXml>=1.19:${PORTSDIR}/textproc/hs-HaXml
 
 USE_BZIP2=	yes
 

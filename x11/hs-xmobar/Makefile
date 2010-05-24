@@ -7,7 +7,6 @@
 PORTNAME=	xmobar
 PORTVERSION=	0.11.1
 CATEGORIES=	x11 haskell
-PKGNAMEPREFIX=
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A minimalistic text based status bar
@@ -25,6 +24,7 @@ OPTIONS=	XFT   "Use Xft to render text (UTF-8 support included)" off \
 		UTF8  "UTF-8 support" on \
 		MPD   "mpd support" off
 
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 # Disable Linux-only options
