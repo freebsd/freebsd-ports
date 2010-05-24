@@ -11,6 +11,7 @@
 %%SITE_PERL%%/IO/Lambda/HTTP/HTTPS.pm
 %%SITE_PERL%%/IO/Lambda/Loop/AnyEvent.pm
 %%SITE_PERL%%/IO/Lambda/Loop/Prima.pm
+%%SITE_PERL%%/IO/Lambda/Loop/POE.pm
 %%SITE_PERL%%/IO/Lambda/Loop/Select.pm
 %%SITE_PERL%%/IO/Lambda/Message.pm
 %%SITE_PERL%%/IO/Lambda/Mutex.pm
@@ -19,6 +20,7 @@
 %%SITE_PERL%%/IO/Lambda/Signal.pm
 %%SITE_PERL%%/IO/Lambda/Socket.pm
 %%SITE_PERL%%/IO/Lambda/Thread.pm
+%%SITE_PERL%%/IO/Lambda/Throttle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Lambda/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Lambda
 @dirrm %%SITE_PERL%%/IO/Lambda/Loop
