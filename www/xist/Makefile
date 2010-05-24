@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	xist
-PORTVERSION=	3.7.4
+PORTVERSION=	3.7.6
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://ftp.livinglogic.de/xist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ll-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XML-based extensible HTML generator
 
 RUN_DEPENDS=	${PYXML} \
