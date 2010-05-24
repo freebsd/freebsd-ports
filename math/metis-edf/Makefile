@@ -29,7 +29,6 @@ MAKE_JOBS_UNSAFE=	yes
 REINPLACE_ARGS=	-i ""
 
 USE_FORTRAN=	yes
-USE_LDCONFIG=	yes
 FFLAGS+=	-O2
 PICFLAG?=	-fPIC
 
@@ -38,9 +37,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME:C/-/_/}-${PORTVERSION:R}
 PROGS=		kmetis onmetis.exe pmetis
 DOCS=		CHANGES Doc/manual.ps README_Code_Aster
 
-MACHINEARCH=	${ARCH}
 FORTRANLIBS=	-lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
+
+.include <bsd.port.pre.mk>
+
+MACHINEARCH=	${ARCH}
+.if ${ARCH} == "i386"
+USE_LDCONFIG=	yes
+PLIST_SUB+=	SHLIB=""
+.else
+PLIST_SUB+=	SHLIB="@comment "
+.endif
 
 post-extract:
 	(cd ${WRKDIR} &&	\
@@ -54,6 +62,9 @@ pre-configure:
 			-e "s|\(%[[:digit:]]\)ld|\1d|g"				\
 			-e "s|\(%[[:digit:]]\.[[:digit:]]\)le|\1e|g"		\
 			-e "s|%ld|%d|g"
+	${REINPLACE_CMD} -e 's|%%SHLIB%%|#|' ${WRKSRC}/Lib/Makefile
+.else
+	${REINPLACE_CMD} -e 's|%%SHLIB%%||' ${WRKSRC}/Lib/Makefile
 .endif
 	${DIRNAME} `${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	${REINPLACE_CMD} -e 's|%%FORTRANLIBS%%|${FORTRANLIBS}|g' -e 's|%%GCCLIBDIR%%|${GCCLIBDIR}|g'\
@@ -69,8 +80,11 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/onmetis ${PREFIX}/bin
 	${REINPLACE_CMD} -e 's|${WRKSRC}|${PREFIX}/bin|' ${PREFIX}/bin/onmetis
 	${INSTALL_PROGRAM} ${PROGS:S|^|${WRKSRC}/|} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${WRKSRC}/libmetis.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${PREFIX}/lib
+.if ${MACHINEARCH} == "i386"
+	${INSTALL_DATA} ${WRKSRC}/libmetis.so ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/libmetis.so.1 ${PREFIX}/lib
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -86,4 +100,4 @@ post-install:
 	@${ECHO_MSG} "===> Test file installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
