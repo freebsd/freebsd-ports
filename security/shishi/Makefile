@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	shishi
-PORTVERSION=	0.0.43
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A free implementation of the Kerberos 5 network security system
@@ -63,8 +61,5 @@ post-patch:
 		${WRKSRC}/db/gl/Makefile.in
 	@${REINPLACE_CMD} -e 's:\.\./gl/libgnu.la:../db/gl/libgnu.la &:' \
 		${WRKSRC}/src/Makefile.in
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
