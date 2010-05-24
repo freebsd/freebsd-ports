@@ -1,5 +1,5 @@
 --- base/Makefile.in.orig	2009-12-18 16:04:10.000000000 +0900
-+++ base/Makefile.in	2010-04-11 00:55:04.000000000 +0900
++++ base/Makefile.in	2010-05-23 03:04:55.000000000 +0900
 @@ -47,9 +47,8 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
@@ -72,6 +72,55 @@
  
  # programs we use
  RM=rm -f
+@@ -436,27 +435,27 @@
+ #DEVICE_DEVS20=$(DD)cljet5.dev $(DD)cljet5c.dev
+ #DEVICE_DEVS21=$(DD)spotcmyk.dev $(DD)devicen.dev $(DD)xcf.dev $(DD)psdcmyk.dev $(DD)psdrgb.dev
+ DEVICE_DEVS=$(DISPLAY_DEV) @X_DEVS@
+-DEVICE_DEVS1=@FILES@
+-DEVICE_DEVS2=@PRINTERS@
+-DEVICE_DEVS3=@CUPSDEV@
+-DEVICE_DEVS4=@IJSDEVS@
+-DEVICE_DEVS5=@OMNIDEVS@
+-DEVICE_DEVS6=@PNGDEVS@
+-DEVICE_DEVS7=@JBIG2DEVS@
+-DEVICE_DEVS8=$(DD)svgwrite.dev
+-DEVICE_DEVS9=
+-DEVICE_DEVS10=
+-DEVICE_DEVS11=
+-DEVICE_DEVS12=
+-DEVICE_DEVS13=
+-DEVICE_DEVS14=
+-DEVICE_DEVS15=
+-DEVICE_DEVS16=
+-DEVICE_DEVS17=
+-DEVICE_DEVS18=
+-DEVICE_DEVS19=
+-DEVICE_DEVS20=
+-DEVICE_DEVS21=
++#DEVICE_DEVS1=@FILES@
++#DEVICE_DEVS2=@PRINTERS@
++#DEVICE_DEVS3=@CUPSDEV@
++#DEVICE_DEVS4=@IJSDEVS@
++#DEVICE_DEVS5=@OMNIDEVS@
++#DEVICE_DEVS6=@PNGDEVS@
++#DEVICE_DEVS7=@JBIG2DEVS@
++#DEVICE_DEVS8=$(DD)svgwrite.dev
++#DEVICE_DEVS9=
++#DEVICE_DEVS10=
++#DEVICE_DEVS11=
++#DEVICE_DEVS12=
++#DEVICE_DEVS13=
++#DEVICE_DEVS14=
++#DEVICE_DEVS15=
++#DEVICE_DEVS16=
++#DEVICE_DEVS17=
++#DEVICE_DEVS18=
++#DEVICE_DEVS19=
++#DEVICE_DEVS20=
++#DEVICE_DEVS21=
+ 
+ 
+ # Shared library target to build.
 @@ -490,6 +489,7 @@
  # ---------------- End of platform-specific section ---------------- #
  

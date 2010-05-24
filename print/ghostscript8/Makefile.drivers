@@ -3,39 +3,6 @@
 OPTIONS_GS_DEFAULT_ON=	on
 OPTIONS_GS_DEFAULT_OFF=	off
 
-.if !defined(WITHOUT_X11)
-OPTIONS_X11_DEFAULT=	on
-.else
-OPTIONS_X11_DEFAULT=	off
-.endif
-
-.if !defined(WITH_SVGALIB)
-OPTIONS_SVGALIB_DEFAULT=	off
-.else
-OPTIONS_SVGALIB_DEFAULT=	on
-.endif
-
-.if !defined(WITHOUT_ICONV)
-OPTIONS_ICONV_DEFAULT=	on
-.else
-OPTIONS_ICONV_DEFAULT=	off
-.endif
-
-.if !defined(WITH_CAIRO)
-OPTIONS_CAIRO_DEFAULT=	off
-.else
-OPTIONS_CAIRO_DEFAULT=	on
-.endif
-
-.if make(makesum)
-OPTIONS_X11_DEFAULT=	on
-OPTIONS_SVGALIB_DEFAULT=on
-OPTIONS_ICONV_DEFAULT=	on
-OPTIONS_CAIRO_DEFAULT=	on
-OPTIONS_GS_DEFAULT_ON=	on
-OPTIONS_GS_DEFAULT_OFF=	on
-.endif
-
 OPTIONS_X11= \
 GS_x11		"D: X Window System version 11, release >=4"	${OPTIONS_X11_DEFAULT} \
 GS_x11alpha	"D: X Window System masquer. alpha capability"	${OPTIONS_X11_DEFAULT} \
@@ -60,13 +27,18 @@ GS_opvp		"D: OpenPrinting Vecter driver interface"	${OPTIONS_ICONV_DEFAULT}
 OPTIONS_CAIRO= \
 GS_cairo	"D: cairo driver for PDF, SVG, EPS or PNG files"	${OPTIONS_CAIRO_DEFAULT}
 
+OPTIONS_CUPS= \
+GS_cups		"D: CUPS driver"	${OPTIONS_CUPS_DEFAULT}
+
 OPTIONS+=	${OPTIONS_X11}
 OPTIONS+=	${OPTIONS_SVGALIB}
 OPTIONS+=	${OPTIONS_CAIRO}
 OPTIONS+=	${OPTIONS_ICONV}
+OPTIONS+=	${OPTIONS_CUPS}
 
 OPTIONS+=	\
 GS_display	"D: display device for GS shared library"	${OPTIONS_GS_DEFAULT_ON} \
+GS_omni		"D: Omni driver"	${OPTIONS_GS_DEFAULT_ON} \
 GS_md2k		"D: ALPS MD-2000/2010/4000/1300/1500/5000"	${OPTIONS_GS_DEFAULT_ON} \
 GS_md5k		"D: ALPS MD-5000 Eco Mode"	${OPTIONS_GS_DEFAULT_ON} \
 GS_md50Mono	"D: ALPS MD-5000 Monochrome"	${OPTIONS_GS_DEFAULT_ON} \
@@ -321,6 +293,7 @@ GS_png16	"D: PNG 4-bit Color"	${OPTIONS_GS_DEFAULT_ON} \
 GS_png256	"D: PNG 8-bit Color"	${OPTIONS_GS_DEFAULT_ON} \
 GS_png16m	"D: PNG 24-bit Color"	${OPTIONS_GS_DEFAULT_ON} \
 GS_pngalpha	"D: PNG 32-bit RGBA Color"	${OPTIONS_GS_DEFAULT_ON} \
+GS_png48	"D: PNG 48-bit Color"	${OPTIONS_GS_DEFAULT_ON} \
 GS_psmono	"D: PostScript (Level 1) monochrome image"	${OPTIONS_GS_DEFAULT_ON} \
 GS_psgray	"D: PostScript (Level 1) 8-bit gray image"	${OPTIONS_GS_DEFAULT_ON} \
 GS_psrgb	"D: PostScript (Level 2) 24-bit color image"	${OPTIONS_GS_DEFAULT_ON} \
@@ -330,6 +303,7 @@ GS_epswrite	"D: Encapsulated PostScript"	${OPTIONS_GS_DEFAULT_ON} \
 GS_cfax		"D: SFF format for CAPI FAX interface"	${OPTIONS_GS_DEFAULT_ON} \
 GS_sgirgb	"D: SGI RGB pixmap format"	${OPTIONS_GS_DEFAULT_ON} \
 GS_sunhmono	"D: Harlequin variant of 1-bit Sun raster file"	${OPTIONS_GS_DEFAULT_ON} \
+GS_svgwrite	"D: SVG driver"	${OPTIONS_GS_DEFAULT_ON} \
 GS_tiffcrle	"D: TIFF CCITT RLE 1 dim (G3 FAX with no EOL)"	${OPTIONS_GS_DEFAULT_ON} \
 GS_tiffg3	"D: TIFF Group 3 FAX (with EOL)"	${OPTIONS_GS_DEFAULT_ON} \
 GS_tiffg32d	"D: TIFF Group 3 2-D FAX"	${OPTIONS_GS_DEFAULT_ON} \
