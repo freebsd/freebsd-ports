@@ -29,14 +29,10 @@ CONFLICTS=	hpijs-[0-9]* hplip-2*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
-		--enable-pp-build \
+		--disable-pp-build \
 		--enable-foomatic-ppd-install \
 		--enable-foomatic-rip-hplip-install \
 		--enable-hpijs-install \
-		--enable-hpijs-only-build \
-		--enable-hpcups-only-build \
-		--enable-hpcups-install \
-		--enable-new-hpcups \
 		--with-icondir=${LOCALBASE}/share/applications \
 		--with-cupsbackenddir=${LOCALBASE}/libexec/cups/backend \
 		--with-cupsfilterdir=${LOCALBASE}/libexec/cups/filter \
