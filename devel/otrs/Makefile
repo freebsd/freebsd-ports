@@ -7,7 +7,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	2.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -41,7 +41,8 @@ OPTIONS=	MYSQL "MySQL database support" on \
 		IMAP "Fetch email via IMAP" on \
 		LDAP "Enable LDAP support" off \
 		PDF "Enable PDF output" on \
-		ISPELL "Enable spell checking" on \
+		ISPELL "Enable ispell checking" off \
+		ASPELL "Enable aspell checking" on \
 		GNUPG "Use GnuPG" off
 
 USE_BZIP2=	yes
@@ -113,8 +114,16 @@ RUN_DEPENDS+=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
+.ifdef WITH_ASPELL
+RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+.endif
+
 .ifdef WITH_GNUPG
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
+.endif
+
+.ifdef WITH_ISPELL && WITH_ASPELL
+IGNORE=	you only need 1 spell checker
 .endif
 
 do-build:
@@ -128,6 +137,10 @@ do-build:
 .ifdef WITH_ISPELL
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${SED} -i '' \
 		-e "s=/usr/bin/ispell=${PREFIX}/bin/ispell=g"
+.endif
+.ifdef WITH_ASPELL
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${SED} -i '' \
+		-e "s=/usr/bin/ispell=${PREFIX}/bin/aspell=g"
 .endif
 .ifdef WITH_GNUPG
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${SED} -i '' \
