@@ -5,6 +5,55 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100524:
+  AFFECTS: users of darcs, pandoc, xmonad, xmonad-contrib, xmobar, porte
+  AUTHOR: pgj@FreeBSD.org
+
+  The following applications have been renamed to improve consistency
+  among Haskell Cabal ports:
+    - devel/darcs           -> devel/hs-darcs
+    - ports-mgmt/porte      -> ports-mgmt/hs-porte
+    - textproc/pandoc       -> textproc/hs-pandoc
+    - x11/xmobar            -> x11/hs-xmobar
+    - x11-wm/xmonad         -> x11-wm/hs-xmonad
+    - x11-wm/xmonad-contrib -> x11-wm/hs-xmonad-contrib
+
+  Please follow the steps below to update your installation.
+
+  1) Reinstall the renamed Haskell port dependencies (see below).  This
+     will possibly makes you remove the affected packages above.
+
+  2) Reinstall the renamed application(s) you use.
+
+20100524:
+  AFFECTS: users of hs-* ports
+  AUTHOR: pgj@FreeBSD.org
+
+  The following Haskell packages have been renamed in order to bring
+  them in sync with the naming scheme used at HackageDB.  Please follow
+  the steps below to update your installation.
+
+  1) Delete the following packages (if installed):
+     - hs-zip-archive-ghc
+     - hs-binary-ghc
+     - hs-language-c-ghc
+     - hs-lazysmallcheck-c-ghc
+     - hs-pcre-light-ghc
+     - hs-utf8-string-ghc
+     - hs-HGL-ghc
+     - hs-digest-ghc
+     - hs-haxml
+     - hs-highlighting-kate-ghc
+     - hs-polyparse-ghc
+     - hs-x11-ghc
+     - hs-x11-xft-ghc
+     - hs-opengl-ghc
+     - hs-OpenGLRaw-ghc
+     - hs-OpenGLURaw-ghc
+     - hs-glut-ghc
+
+  2) Rebuild the renamed packages and all ports depending on them.
+
 20100518:
   AFFECTS: users of devel/pylint
   AUTHOR: mva@FreeBSD.org
