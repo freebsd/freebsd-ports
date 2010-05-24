@@ -3002,6 +3002,7 @@
     SUBDIR += rubygem-msgpack
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-newgem
+    SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-parsetree
