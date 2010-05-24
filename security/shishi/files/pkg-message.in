@@ -1,7 +1,6 @@
 =================================================================
 NOTE: To finish installing this port, you need to execute the
-following commands:
+following command:
 
-# mkdir -m 0700 -p /var/shishi
 # %%PREFIX%%/bin/shisa -a > %%PREFIX%%/etc/shishi/shishi.keys
 =================================================================

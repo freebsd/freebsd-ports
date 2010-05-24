@@ -13,11 +13,11 @@ include/shishi.h
 lib/libshisa.a
 lib/libshisa.la
 lib/libshisa.so
-lib/libshisa.so.0
+lib/libshisa.so.1
 lib/libshishi.a
 lib/libshishi.la
 lib/libshishi.so
-lib/libshishi.so.0
+lib/libshishi.so.1
 lib/security/pam_shishi.so
 lib/security/pam_shishi.la
 lib/security/pam_shishi.a
@@ -33,3 +33,5 @@ libdata/pkgconfig/shishi.pc
 %%NLS%%@dirrmtry share/locale/en@quot
 @dirrmtry etc/shishi
 @dirrmtry lib/security
+@exec mkdir -m 0700 -p /var/shishi
+@dirrmtry /var/shishi
