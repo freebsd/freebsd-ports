@@ -3022,6 +3022,7 @@
     SUBDIR += rubygem-ruby-debug
     SUBDIR += rubygem-ruby-debug-base
     SUBDIR += rubygem-ruby-debug-ide
+    SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby-sdl-ffi

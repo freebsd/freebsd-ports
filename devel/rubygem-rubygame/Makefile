@@ -1,31 +1,25 @@
-# New ports collection makefile for:   ruby-game
-# Date created:    9 June 2006
-# Whom:	ws
+# New ports collection makefile for:   rubygem-rubygame
+# Date created:    28 April 2010
+# Whom:	ws	Christoph Kick
 #
 # $FreeBSD$
 #
 
-PORTNAME=	game
-PORTVERSION=	1.1.0
-PORTREVISION=	8
-CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubygame.seul.org/files/
-PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
-DIST_SUBDIR=	ruby
+PORTNAME=	rubygame
+PORTVERSION=	2.6.2
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RF
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	kick.christoph@googlemail.com
 COMMENT=	A game-development extension and library for the ruby language
 
-USE_SDL=	gfx image ttf
-USE_RUBY=	yes
-USE_BZIP2=	yes
-USE_RUBY_SETUP=	yes
+BUILD_DEPENDS=	rubygem-ruby-sdl-ffi>=0.2:${PORTSDIR}/devel/rubygem-ruby-sdl-ffi
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
+USE_SDL=		gfx image mixer ttf
+USE_RUBY=		yes
+USE_RAKE=		yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
-do-patch:
-		${REINPLACE_CMD} 's|"sdl-config"|"${SDL_CONFIG}"|' \
-		${WRKSRC}/ext/rubygame/extconf.rb
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
