@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	rubygem-
 MAINTAINER=	jatzen@gmail.com
 COMMENT=	Modules for running Ruby on Rails and Rack applications
 
-OPTIONS=	APACHEPORT	"Use apache22"		on \
+OPTIONS=	APACHE	"Use apache22"		on \
 		NGINXPORT	"Use nginx"		off
 
 USE_RUBY=	yes
@@ -24,12 +24,12 @@ RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_APACHEPORT) && defined(WITH_NGINXPORT)
+.if defined(WITH_APACHE) && defined(WITH_NGINXPORT)
 IGNORE=		supports only one web-server: apache22 or nginx. \
 		Please 'make config' again
 .endif
 
-.if !defined(WITHOUT_APACHEPORT)
+.if !defined(WITHOUT_APACHE)
 USE_APACHE=	2.2+
 .endif
 
@@ -68,7 +68,7 @@ post-install:
 		s!-lpthread!${PTHREAD_LIBS}!g' \
 		${PREFIX}/${GEM_LIB_DIR}/lib/phusion_passenger/platform_info.rb
 
-.if !defined(WITHOUT_APACHEPORT)
+.if !defined(WITHOUT_APACHE)
 	(${PREFIX}/bin/passenger-install-apache2-module --auto)
 	@${CAT} ${PKGMESSAGE}
 .endif
