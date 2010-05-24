@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.4.5.20100518
-CATEGORIES=	lang java
+CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -43,10 +43,6 @@ PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != i386
-WITHOUT_JAVA=	yes
-.endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
@@ -89,43 +85,6 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
 
-.if ! defined(WITHOUT_JAVA)
-DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
-# FIXME: we are currently getting weird build failures with libjava on
-# some 4.x and 5.x systems, which the following works around. PR 81788.
-CONFIGURE_ARGS+=--disable-rpath
-MAN1+=		aot-compile${SUFFIX}.1 \
-		gappletviewer${SUFFIX}.1 \
-		gc-analyze${SUFFIX}.1 \
-		gcj${SUFFIX}.1 \
-		gcj-dbtool${SUFFIX}.1 \
-		gcjh${SUFFIX}.1 \
-		gij${SUFFIX}.1 \
-		gjar${SUFFIX}.1 \
-		gjarsigner${SUFFIX}.1 \
-		gjavah${SUFFIX}.1 \
-		gjdoc${SUFFIX}.1 \
-		gkeytool${SUFFIX}.1 \
-		gnative2ascii${SUFFIX}.1 \
-		gorbd${SUFFIX}.1 \
-		grmic${SUFFIX}.1 \
-		grmid${SUFFIX}.1 \
-		grmiregistry${SUFFIX}.1 \
-		gserialver${SUFFIX}.1 \
-		gtnameserv${SUFFIX}.1 \
-		jcf-dump${SUFFIX}.1 \
-		jv-convert${SUFFIX}.1 \
-		rebuild-gcj-db${SUFFIX}.1
-INFO+=		gcc${SUFFIX}/cp-tools \
-		gcc${SUFFIX}/gcj
-PLIST_SUB+=	JAVA=""
-.else
-CONFIGURE_ARGS+=--disable-libgcj
-PLIST_SUB+=	JAVA="@comment "
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
 
@@ -147,7 +106,7 @@ post-install:
 	${RM} -f ${TARGLIB}/*.la
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
+.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
 	cd ${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} $d -type d | ${SORT} -r \
