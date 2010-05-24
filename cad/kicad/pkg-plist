@@ -1,1133 +1,410 @@
 bin/cvpcb
 bin/eeschema
+bin/freeroute.jnlp
 bin/gerbview
 bin/kicad
+bin/minizip
 bin/pcbnew
-bin/netlist_form_pads-pcb
-%%DESKTOPDIR%%/cvpcb.desktop
+lib/kicad/plugins/netlist_form_pads-pcb
 %%DESKTOPDIR%%/eeschema.desktop
-%%DESKTOPDIR%%/gerbview.desktop
 %%DESKTOPDIR%%/kicad.desktop
-%%DESKTOPDIR%%/pcbnew.desktop
-%%DATADIR%%/internat/cs/kicad.mo
-%%DATADIR%%/internat/cs/kicad.po
-%%DATADIR%%/internat/de/kicad.mo
-%%DATADIR%%/internat/de/kicad.po
-%%DATADIR%%/internat/es/kicad.mo
-%%DATADIR%%/internat/es/kicad.po
-%%DATADIR%%/internat/fr/kicad.mo
-%%DATADIR%%/internat/fr/kicad.po
-%%DATADIR%%/internat/hu/kicad.mo
-%%DATADIR%%/internat/hu/kicad.po
-%%DATADIR%%/internat/it/kicad.mo
-%%DATADIR%%/internat/it/kicad.po
-%%DATADIR%%/internat/ko/kicad.mo
-%%DATADIR%%/internat/ko/kicad.po
-%%DATADIR%%/internat/pl/kicad.mo
-%%DATADIR%%/internat/pl/kicad.po
-%%DATADIR%%/internat/pt/kicad.mo
-%%DATADIR%%/internat/pt/kicad.po
-%%DATADIR%%/internat/ru/kicad.mo
-%%DATADIR%%/internat/ru/kicad.po
-%%DATADIR%%/internat/sl/kicad.mo
-%%DATADIR%%/internat/sl/kicad.po
-%%DATADIR%%/library/74xx.dcm
-%%DATADIR%%/library/74xx.lib
-%%DATADIR%%/library/adc-dac.dcm
-%%DATADIR%%/library/adc-dac.lib
-%%DATADIR%%/library/ampli_op.sym
-%%DATADIR%%/library/analog_switches.dcm
-%%DATADIR%%/library/analog_switches.lib
-%%DATADIR%%/library/and.sym
-%%DATADIR%%/library/audio.dcm
-%%DATADIR%%/library/audio.lib
-%%DATADIR%%/library/brooktre.dcm
-%%DATADIR%%/library/brooktre.lib
-%%DATADIR%%/library/buffer.sym
-%%DATADIR%%/library/cmos4000.dcm
-%%DATADIR%%/library/cmos4000.lib
-%%DATADIR%%/library/cmos_ieee.dcm
-%%DATADIR%%/library/cmos_ieee.lib
-%%DATADIR%%/library/conn.dcm
-%%DATADIR%%/library/conn.lib
-%%DATADIR%%/library/contrib.dcm
-%%DATADIR%%/library/contrib.lib
-%%DATADIR%%/library/cypress.lib
-%%DATADIR%%/library/device.dcm
-%%DATADIR%%/library/device.lib
-%%DATADIR%%/library/digital-audio.dcm
-%%DATADIR%%/library/digital-audio.lib
-%%DATADIR%%/library/display.dcm
-%%DATADIR%%/library/display.lib
-%%DATADIR%%/library/dsp.dcm
-%%DATADIR%%/library/dsp.lib
-%%DATADIR%%/library/elec-unifil.dcm
-%%DATADIR%%/library/elec-unifil.lib
-%%DATADIR%%/library/et-ou.sym
-%%DATADIR%%/library/gennum.dcm
-%%DATADIR%%/library/gennum.lib
-%%DATADIR%%/library/graphic.dcm
-%%DATADIR%%/library/graphic.lib
-%%DATADIR%%/library/hc11.lib
-%%DATADIR%%/library/intel.dcm
-%%DATADIR%%/library/intel.lib
-%%DATADIR%%/library/interface.dcm
-%%DATADIR%%/library/interface.lib
-%%DATADIR%%/library/inv.sym
-%%DATADIR%%/library/linear.dcm
-%%DATADIR%%/library/linear.lib
-%%DATADIR%%/library/memory.dcm
-%%DATADIR%%/library/memory.lib
-%%DATADIR%%/library/microchip.dcm
-%%DATADIR%%/library/microchip.lib
-%%DATADIR%%/library/microchip1.dcm
-%%DATADIR%%/library/microchip1.lib
-%%DATADIR%%/library/microcontrollers.dcm
-%%DATADIR%%/library/microcontrollers.lib
-%%DATADIR%%/library/motorola.dcm
-%%DATADIR%%/library/motorola.lib
-%%DATADIR%%/library/nand.sym
-%%DATADIR%%/library/neg_power_symbol.sym
-%%DATADIR%%/library/or.sym
-%%DATADIR%%/library/philips.dcm
-%%DATADIR%%/library/philips.lib
-%%DATADIR%%/library/power.dcm
-%%DATADIR%%/library/power.lib
-%%DATADIR%%/library/power_symbol.sym
-%%DATADIR%%/library/pspice.dcm
-%%DATADIR%%/library/pspice.lib
-%%DATADIR%%/library/regul.dcm
-%%DATADIR%%/library/regul.lib
-%%DATADIR%%/library/siliconi.lib
-%%DATADIR%%/library/smalland.sym
-%%DATADIR%%/library/special.dcm
-%%DATADIR%%/library/special.lib
-%%DATADIR%%/library/texas.dcm
-%%DATADIR%%/library/texas.lib
-%%DATADIR%%/library/ttl_ieee.dcm
-%%DATADIR%%/library/ttl_ieee.lib
-%%DATADIR%%/library/valves.dcm
-%%DATADIR%%/library/valves.lib
-%%DATADIR%%/library/xilinx.dcm
-%%DATADIR%%/library/xilinx.lib
-%%DATADIR%%/library/xor.sym
-%%DATADIR%%/modules/affich.brd
-%%DATADIR%%/modules/capa_pol.equ
-%%DATADIR%%/modules/ci.equ
-%%DATADIR%%/modules/conn_DBxx.brd
-%%DATADIR%%/modules/conn_HExx.brd
-%%DATADIR%%/modules/connect.mdc
-%%DATADIR%%/modules/connect.mod
-%%DATADIR%%/modules/connect1.brd
-%%DATADIR%%/modules/connect2.brd
-%%DATADIR%%/modules/devcms.equ
-%%DATADIR%%/modules/device.equ
-%%DATADIR%%/modules/dil_ell.brd
-%%DATADIR%%/modules/dil_rd.brd
-%%DATADIR%%/modules/discret.mdc
-%%DATADIR%%/modules/discret.mod
-%%DATADIR%%/modules/discret1.brd
-%%DATADIR%%/modules/display.brd
-%%DATADIR%%/modules/display.mdc
-%%DATADIR%%/modules/display.mod
-%%DATADIR%%/modules/divers.mdc
-%%DATADIR%%/modules/divers.mod
-%%DATADIR%%/modules/iut.mdc
-%%DATADIR%%/modules/iut.mod
-%%DATADIR%%/modules/libcms.brd
-%%DATADIR%%/modules/libcms.mdc
-%%DATADIR%%/modules/libcms.mod
-%%DATADIR%%/modules/miscellanous.brd
-%%DATADIR%%/modules/miscellanous.equ
-%%DATADIR%%/modules/muonde.brd
-%%DATADIR%%/modules/muonde.mdc
-%%DATADIR%%/modules/muonde.mod
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_female.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_female.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_female_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_female_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_male.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_male.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_male_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db15_male_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_female.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_female.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_female_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_female_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_male.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_male.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_male_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db25_male_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db37_female_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db37_female_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_female.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_female.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_female_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_female_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_male.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_male.wrl
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_male_pin90deg.wings
-%%DATADIR%%/modules/packages3d/conn_DBxx/db9_male_pin90deg.wrl
-%%DATADIR%%/modules/packages3d/conn_HExx/he10_20.wings
-%%DATADIR%%/modules/packages3d/conn_HExx/he10_20.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c64abfd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c64abfd.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c64abmd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c64abmd.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c64acfd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c64acfd.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c64acmd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c64acmd.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c96abcfd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c96abcfd.wrl
-%%DATADIR%%/modules/packages3d/conn_europe/c96abcmd.wings
-%%DATADIR%%/modules/packages3d/conn_europe/c96abcmd.wrl
-%%DATADIR%%/modules/packages3d/connectors/fpc_conn_zif_smt_18.wings
-%%DATADIR%%/modules/packages3d/connectors/fpc_conn_zif_smt_18.wrl
-%%DATADIR%%/modules/packages3d/connectors/subclick_horiz.wings
-%%DATADIR%%/modules/packages3d/connectors/subclick_horiz.wrl
-%%DATADIR%%/modules/packages3d/connectors/testpoint.wings
-%%DATADIR%%/modules/packages3d/connectors/testpoint.wrl
-%%DATADIR%%/modules/packages3d/connectors/xrl3male_90deg.wings
-%%DATADIR%%/modules/packages3d/connectors/xrl3male_90deg.wrl
-%%DATADIR%%/modules/packages3d/connectors/xrl5male_90deg.wings
-%%DATADIR%%/modules/packages3d/connectors/xrl5male_90deg.wrl
-%%DATADIR%%/modules/packages3d/device/bnc-ci.wings
-%%DATADIR%%/modules/packages3d/device/bnc-ci.wrl
-%%DATADIR%%/modules/packages3d/device/bnc.wings
-%%DATADIR%%/modules/packages3d/device/bnc.wrl
-%%DATADIR%%/modules/packages3d/device/bornier_2.wings
-%%DATADIR%%/modules/packages3d/device/bornier_2.wrl
-%%DATADIR%%/modules/packages3d/device/bornier_3.wings
-%%DATADIR%%/modules/packages3d/device/bornier_3.wrl
-%%DATADIR%%/modules/packages3d/device/bornier_4.wings
-%%DATADIR%%/modules/packages3d/device/bornier_4.wrl
-%%DATADIR%%/modules/packages3d/device/bornier_6.wings
-%%DATADIR%%/modules/packages3d/device/bornier_6.wrl
-%%DATADIR%%/modules/packages3d/device/douille_4mm(black).wings
-%%DATADIR%%/modules/packages3d/device/douille_4mm(black).wrl
-%%DATADIR%%/modules/packages3d/device/douille_4mm(green).wings
-%%DATADIR%%/modules/packages3d/device/douille_4mm(green).wrl
-%%DATADIR%%/modules/packages3d/device/douille_4mm(red).wings
-%%DATADIR%%/modules/packages3d/device/douille_4mm(red).wrl
-%%DATADIR%%/modules/packages3d/device/switch_push.wings
-%%DATADIR%%/modules/packages3d/device/switch_push.wrl
-%%DATADIR%%/modules/packages3d/device/transf_LL1538.wings
-%%DATADIR%%/modules/packages3d/device/transf_LL1538.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_10.wings
-%%DATADIR%%/modules/packages3d/dil/dil_10.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_14.wings
-%%DATADIR%%/modules/packages3d/dil/dil_14.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_16.wings
-%%DATADIR%%/modules/packages3d/dil/dil_16.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_18.wings
-%%DATADIR%%/modules/packages3d/dil/dil_18.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_20.wings
-%%DATADIR%%/modules/packages3d/dil/dil_20.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_22-w400.wings
-%%DATADIR%%/modules/packages3d/dil/dil_22-w400.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_22.wings
-%%DATADIR%%/modules/packages3d/dil/dil_22.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_24-w300.wings
-%%DATADIR%%/modules/packages3d/dil/dil_24-w300.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_24-w400.wings
-%%DATADIR%%/modules/packages3d/dil/dil_24-w400.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_24-w600.wings
-%%DATADIR%%/modules/packages3d/dil/dil_24-w600.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_28-w300.wings
-%%DATADIR%%/modules/packages3d/dil/dil_28-w300.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_28-w600.wings
-%%DATADIR%%/modules/packages3d/dil/dil_28-w600.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_32-w600.wings
-%%DATADIR%%/modules/packages3d/dil/dil_32-w600.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_40-w600.wings
-%%DATADIR%%/modules/packages3d/dil/dil_40-w600.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_48-w600.wings
-%%DATADIR%%/modules/packages3d/dil/dil_48-w600.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_6.wings
-%%DATADIR%%/modules/packages3d/dil/dil_6.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_64-w600.wings
-%%DATADIR%%/modules/packages3d/dil/dil_64-w600.wrl
-%%DATADIR%%/modules/packages3d/dil/dil_8.wings
-%%DATADIR%%/modules/packages3d/dil/dil_8.wrl
-%%DATADIR%%/modules/packages3d/dil/textool_40.wings
-%%DATADIR%%/modules/packages3d/dil/textool_40.wrl
-%%DATADIR%%/modules/packages3d/discret/adjustable_rx2.wings
-%%DATADIR%%/modules/packages3d/discret/adjustable_rx2.wrl
-%%DATADIR%%/modules/packages3d/discret/adjustable_rx2v4.wings
-%%DATADIR%%/modules/packages3d/discret/adjustable_rx2v4.wrl
-%%DATADIR%%/modules/packages3d/discret/c_horiz_c1v7.wings
-%%DATADIR%%/modules/packages3d/discret/c_horiz_c1v7.wrl
-%%DATADIR%%/modules/packages3d/discret/c_horiz_c2v10.wings
-%%DATADIR%%/modules/packages3d/discret/c_horiz_c2v10.wrl
-%%DATADIR%%/modules/packages3d/discret/c_pol.wings
-%%DATADIR%%/modules/packages3d/discret/c_pol.wrl
-%%DATADIR%%/modules/packages3d/discret/c_vert_big.wings
-%%DATADIR%%/modules/packages3d/discret/c_vert_big.wrl
-%%DATADIR%%/modules/packages3d/discret/c_vert_c1v5.wings
-%%DATADIR%%/modules/packages3d/discret/c_vert_c1v5.wrl
-%%DATADIR%%/modules/packages3d/discret/c_vert_c1v7.wings
-%%DATADIR%%/modules/packages3d/discret/c_vert_c1v7.wrl
-%%DATADIR%%/modules/packages3d/discret/c_vert_c1v8.wrl
-%%DATADIR%%/modules/packages3d/discret/c_vert_c1v8l.wings
-%%DATADIR%%/modules/packages3d/discret/c_vert_c2v10.wings
-%%DATADIR%%/modules/packages3d/discret/c_vert_c2v10.wrl
-%%DATADIR%%/modules/packages3d/discret/c_vert_c2v8.wings
-%%DATADIR%%/modules/packages3d/discret/c_vert_c2v8.wrl
-%%DATADIR%%/modules/packages3d/discret/capa_1_pas.wings
-%%DATADIR%%/modules/packages3d/discret/capa_1_pas.wrl
-%%DATADIR%%/modules/packages3d/discret/capa_2pas_5x5mm.wings
-%%DATADIR%%/modules/packages3d/discret/capa_2pas_5x5mm.wrl
-%%DATADIR%%/modules/packages3d/discret/crystal_hc18u_horizontal.wings
-%%DATADIR%%/modules/packages3d/discret/crystal_hc18u_horizontal.wrl
-%%DATADIR%%/modules/packages3d/discret/crystal_hc18u_vertical.wings
-%%DATADIR%%/modules/packages3d/discret/crystal_hc18u_vertical.wrl
-%%DATADIR%%/modules/packages3d/discret/diode.wings
-%%DATADIR%%/modules/packages3d/discret/diode.wrl
-%%DATADIR%%/modules/packages3d/discret/emi_filter.wings
-%%DATADIR%%/modules/packages3d/discret/emi_filter.wrl
-%%DATADIR%%/modules/packages3d/discret/inductorV.wings
-%%DATADIR%%/modules/packages3d/discret/inductorV.wrl
-%%DATADIR%%/modules/packages3d/discret/led3_vertical.wings
-%%DATADIR%%/modules/packages3d/discret/led5_vertical.wings
-%%DATADIR%%/modules/packages3d/discret/led5_vertical.wrl
-%%DATADIR%%/modules/packages3d/discret/push_butt_shape1_blue.wings
-%%DATADIR%%/modules/packages3d/discret/push_butt_shape1_blue.wrl
-%%DATADIR%%/modules/packages3d/discret/push_butt_shape1_green.wings
-%%DATADIR%%/modules/packages3d/discret/push_butt_shape1_green.wrl
-%%DATADIR%%/modules/packages3d/discret/push_butt_shape1_red.wings
-%%DATADIR%%/modules/packages3d/discret/push_butt_shape1_red.wrl
-%%DATADIR%%/modules/packages3d/discret/qmontre.wings
-%%DATADIR%%/modules/packages3d/discret/qmontre.wrl
-%%DATADIR%%/modules/packages3d/discret/r_pack8.wings
-%%DATADIR%%/modules/packages3d/discret/r_pack8.wrl
-%%DATADIR%%/modules/packages3d/discret/r_pack9.wings
-%%DATADIR%%/modules/packages3d/discret/r_pack9.wrl
-%%DATADIR%%/modules/packages3d/discret/resistor.wings
-%%DATADIR%%/modules/packages3d/discret/resistor.wrl
-%%DATADIR%%/modules/packages3d/discret/resistor1.wrl
-%%DATADIR%%/modules/packages3d/discret/resistor2.wrl
-%%DATADIR%%/modules/packages3d/discret/self26.wings
-%%DATADIR%%/modules/packages3d/discret/self26.wrl
-%%DATADIR%%/modules/packages3d/discret/to18.wings
-%%DATADIR%%/modules/packages3d/discret/to18.wrl
-%%DATADIR%%/modules/packages3d/discret/to220_horiz.wings
-%%DATADIR%%/modules/packages3d/discret/to220_horiz.wrl
-%%DATADIR%%/modules/packages3d/discret/to220_vert.wings
-%%DATADIR%%/modules/packages3d/discret/to220_vert.wrl
-%%DATADIR%%/modules/packages3d/discret/to221_horiz.wings
-%%DATADIR%%/modules/packages3d/discret/to3.wings
-%%DATADIR%%/modules/packages3d/discret/to3.wrl
-%%DATADIR%%/modules/packages3d/discret/to5.wings
-%%DATADIR%%/modules/packages3d/discret/to5.wrl
-%%DATADIR%%/modules/packages3d/discret/to98.wings
-%%DATADIR%%/modules/packages3d/discret/to98.wrl
-%%DATADIR%%/modules/packages3d/discret/verti_resistor.wings
-%%DATADIR%%/modules/packages3d/discret/verti_resistor.wrl
-%%DATADIR%%/modules/packages3d/divers/optoresistor_nls-32.wings
-%%DATADIR%%/modules/packages3d/divers/optoresistor_nls-32.wrl
-%%DATADIR%%/modules/packages3d/pga/pga120.wings
-%%DATADIR%%/modules/packages3d/pga/pga120.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pin_array_1x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pin_array_1x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_12x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_12x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_12x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_12x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_13x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_13x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_20x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_20x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_2x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_2x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_2x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_2x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_30x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_30x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_3x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_3x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_3x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_3x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_4x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_4x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_5x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_5x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_5x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_5x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_6x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_6x1.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_6x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_6x2.wrl
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_8x1.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_8x2.wings
-%%DATADIR%%/modules/packages3d/pin_array/pins_array_8x2.wrl
-%%DATADIR%%/modules/packages3d/smd/chip_cms.wings
-%%DATADIR%%/modules/packages3d/smd/chip_cms.wrl
-%%DATADIR%%/modules/packages3d/smd/chip_cms_4pins.wings
-%%DATADIR%%/modules/packages3d/smd/chip_cms_4pins.wrl
-%%DATADIR%%/modules/packages3d/smd/chip_cms_pol.wings
-%%DATADIR%%/modules/packages3d/smd/chip_cms_pol.wrl
-%%DATADIR%%/modules/packages3d/smd/chip_smd_pol_wide.wings
-%%DATADIR%%/modules/packages3d/smd/chip_smd_pol_wide.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_self.wings
-%%DATADIR%%/modules/packages3d/smd/cms_self.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_so10.wings
-%%DATADIR%%/modules/packages3d/smd/cms_so10.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_so14.wings
-%%DATADIR%%/modules/packages3d/smd/cms_so14.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_so16.wings
-%%DATADIR%%/modules/packages3d/smd/cms_so16.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_so20.wings
-%%DATADIR%%/modules/packages3d/smd/cms_so20.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_so8.wings
-%%DATADIR%%/modules/packages3d/smd/cms_so8.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_soj24.wings
-%%DATADIR%%/modules/packages3d/smd/cms_soj24.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_soj28.wings
-%%DATADIR%%/modules/packages3d/smd/cms_soj28.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_soj32.wings
-%%DATADIR%%/modules/packages3d/smd/cms_soj32.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_soj40.wings
-%%DATADIR%%/modules/packages3d/smd/cms_soj40.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_soj42.wings
-%%DATADIR%%/modules/packages3d/smd/cms_soj42.wrl
-%%DATADIR%%/modules/packages3d/smd/cms_sot23.wings
-%%DATADIR%%/modules/packages3d/smd/cms_sot23.wrl
-%%DATADIR%%/modules/packages3d/smd/conn20_smd.wings
-%%DATADIR%%/modules/packages3d/smd/conn20_smd.wrl
-%%DATADIR%%/modules/packages3d/smd/conn3_smd.wings
-%%DATADIR%%/modules/packages3d/smd/conn3_smd.wrl
-%%DATADIR%%/modules/packages3d/smd/conn5_smd.wings
-%%DATADIR%%/modules/packages3d/smd/conn5_smd.wrl
-%%DATADIR%%/modules/packages3d/smd/dpack_2.wings
-%%DATADIR%%/modules/packages3d/smd/dpack_2.wrl
-%%DATADIR%%/modules/packages3d/smd/dpack_3.wings
-%%DATADIR%%/modules/packages3d/smd/dpack_3.wrl
-%%DATADIR%%/modules/packages3d/smd/dpack_5.wings
-%%DATADIR%%/modules/packages3d/smd/dpack_5.wrl
-%%DATADIR%%/modules/packages3d/smd/generic_bga.wings
-%%DATADIR%%/modules/packages3d/smd/generic_bga.wrl
-%%DATADIR%%/modules/packages3d/smd/pqfp100.wings
-%%DATADIR%%/modules/packages3d/smd/pqfp100.wrl
-%%DATADIR%%/modules/packages3d/smd/pqfp160.wings
-%%DATADIR%%/modules/packages3d/smd/pqfp160.wrl
-%%DATADIR%%/modules/packages3d/smd/pqfp208.wings
-%%DATADIR%%/modules/packages3d/smd/pqfp208.wrl
-%%DATADIR%%/modules/packages3d/smd/self_cms_we-pd3.wings
-%%DATADIR%%/modules/packages3d/smd/self_cms_we-pd3.wrl
-%%DATADIR%%/modules/packages3d/smd/smd_fuse_socket.wings
-%%DATADIR%%/modules/packages3d/smd/smd_fuse_socket.wrl
-%%DATADIR%%/modules/packages3d/smd/tqfp32.wings
-%%DATADIR%%/modules/packages3d/smd/tqfp32.wrl
-%%DATADIR%%/modules/packages3d/smd/vqfp100.wings
-%%DATADIR%%/modules/packages3d/smd/vqfp100.wrl
-%%DATADIR%%/modules/packages3d/smd/vqfp44.wings
-%%DATADIR%%/modules/packages3d/smd/vqfp44.wrl
-%%DATADIR%%/modules/packages3d/smd/vqfp64.wings
-%%DATADIR%%/modules/packages3d/smd/vqfp64.wrl
-%%DATADIR%%/modules/packages3d/smd/vsop56.wings
-%%DATADIR%%/modules/packages3d/smd/vsop56.wrl
-%%DATADIR%%/modules/packages3d/support/supp_pga120.wings
-%%DATADIR%%/modules/packages3d/support/supp_pga120.wrl
-%%DATADIR%%/modules/packages3d/support/supp_plcc68.wings
-%%DATADIR%%/modules/packages3d/support/supp_plcc68.wrl
-%%DATADIR%%/modules/packages3d/support/supp_plcc84.wings
-%%DATADIR%%/modules/packages3d/support/supp_plcc84.wrl
-%%DATADIR%%/modules/packages3d/support/support_so8_zif.wings
-%%DATADIR%%/modules/packages3d/support/support_so8_zif.wrl
-%%DATADIR%%/modules/packages3d/valves/ecc83.wings
-%%DATADIR%%/modules/packages3d/valves/ecc83.wrl
-%%DATADIR%%/modules/pin_array.brd
-%%DATADIR%%/modules/pin_array.mdc
-%%DATADIR%%/modules/pin_array.mod
-%%DATADIR%%/modules/smd_active.equ
-%%DATADIR%%/modules/smd_capa_0805.equ
-%%DATADIR%%/modules/smd_capa_1206.equ
-%%DATADIR%%/modules/smd_capa_pol.equ
-%%DATADIR%%/modules/smd_passive.equ
-%%DATADIR%%/modules/smd_resistor_0805.equ
-%%DATADIR%%/modules/smd_resistor_1206.equ
-%%DATADIR%%/modules/smd_trans-diodes.equ
-%%DATADIR%%/modules/sockets-part1.brd
-%%DATADIR%%/modules/sockets-part2.brd
-%%DATADIR%%/modules/standard-trans-diodes.equ
-%%DATADIR%%/modules/supports.mdc
-%%DATADIR%%/modules/supports.mod
-%%DATADIR%%/modules/valves.mdc
-%%DATADIR%%/modules/valves.mod
+%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/74xx/74LS393.pdf
+%%PORTDOCS%%%%DOCSDIR%%/74xx/74f181.pdf
+%%PORTDOCS%%%%DOCSDIR%%/74xx/74hc573.pdf
+%%PORTDOCS%%%%DOCSDIR%%/74xx/74hc_hct74.pdf
+%%PORTDOCS%%%%DOCSDIR%%/74xx/74ls393.pdf
+%%PORTDOCS%%%%DOCSDIR%%/74xx/74ls86.pdf
+%%PORTDOCS%%%%DOCSDIR%%/adc-dac/ad7533.pdf
+%%PORTDOCS%%%%DOCSDIR%%/adc-dac/ad775.pdf
+%%PORTDOCS%%%%DOCSDIR%%/adc-dac/ad7819.pdf
+%%PORTDOCS%%%%DOCSDIR%%/adc-dac/adc0800.pdf
+%%PORTDOCS%%%%DOCSDIR%%/adc-dac/adc08060.pdf
+%%PORTDOCS%%%%DOCSDIR%%/adc-dac/adc1173.pdf
+%%PORTDOCS%%%%DOCSDIR%%/adc-dac/ltc1406.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/AD9283.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/AD9891_9895.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ADuC816.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ad626_c.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ad629_a.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ad9280.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ad9283.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ad9708.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/mat02.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/mat03.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/op275.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ssm2135.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ssm2141.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ssm2142.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ssm2143.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ssm2163.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ssm2165.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog-dev/ssm2402.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog_mux&switches/DG417-DG419.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog_mux&switches/adg636.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog_mux&switches/dg308.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog_mux&switches/dg441.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog_mux&switches/dg611_2_3_0.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog_mux&switches/dg619-620.pdf
+%%PORTDOCS%%%%DOCSDIR%%/analog_mux&switches/dg9421-22.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cmos4000/mc14020.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cmos4000/mc14040.pdf
+%%PORTDOCS%%%%DOCSDIR%%/contrib/fx614ds.pdf
+%%PORTDOCS%%%%DOCSDIR%%/crystal/cs5361.pdf
+%%PORTDOCS%%%%DOCSDIR%%/crystal/cs5396.pdf
+%%PORTDOCS%%%%DOCSDIR%%/digital-audio/DS1267.pdf
+%%PORTDOCS%%%%DOCSDIR%%/digital-audio/cs5361.pdf
+%%PORTDOCS%%%%DOCSDIR%%/digital-audio/cs5396.pdf
+%%PORTDOCS%%%%DOCSDIR%%/digital-audio/cs8406.pdf
+%%PORTDOCS%%%%DOCSDIR%%/digital-audio/cs8413-4.pdf
+%%PORTDOCS%%%%DOCSDIR%%/digital-audio/cs8420.pdf
+%%PORTDOCS%%%%DOCSDIR%%/digital-audio/cs8427-f.pdf
+%%PORTDOCS%%%%DOCSDIR%%/digital-audio/ds1267.pdf
+%%PORTDOCS%%%%DOCSDIR%%/digital-audio/tpa5050.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/D426GWA.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/D426SURWAS530A2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/HDSP-48xx.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/HDSP-7xxx.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/LTC-6960HR.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/LTC-6980HR.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/MV57164.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/d426gwa.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/display-DA04-11GWA.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/display-DC04-11GWA.pdf
+%%PORTDOCS%%%%DOCSDIR%%/display/mv57164.pdf
+%%PORTDOCS%%%%DOCSDIR%%/elantec/el7242.pdf
+%%PORTDOCS%%%%DOCSDIR%%/elantec/el7243.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gennum/gs9020.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gennum/gs9025a.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gennum/gs9032.pdf
+%%PORTDOCS%%%%DOCSDIR%%/intersil/dg441_2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/intersil/icl7660.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ir/ir2110.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/4607f.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/lt1086.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/lt1108.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/lt1129.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/lt1175.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/lt1611f.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/lt1761.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/lt1932.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/lt3010.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/lt3430f.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/ltc1594-8.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/ltc1624.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/ltc1878.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/ltc2859-2861.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/ltc3442.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/ltc3525.pdf
+%%PORTDOCS%%%%DOCSDIR%%/linear-tec/ltc4007.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/DS1302.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/MAX1647-MAX1648.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/MAX220-MAX249.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/MAX2605-MAX2609.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/MAX5436-MAX5439.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/MAX872-MAX874.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/ds1302.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/ds1621.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/max200-max213.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/max3224-max3245.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/max471-max472.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/max6351-max6360.pdf
+%%PORTDOCS%%%%DOCSDIR%%/maxim/max690-max695.pdf
+%%PORTDOCS%%%%DOCSDIR%%/memory/24xx512.pdf
+%%PORTDOCS%%%%DOCSDIR%%/memory/27c010.pdf
+%%PORTDOCS%%%%DOCSDIR%%/memory/27c020.pdf
+%%PORTDOCS%%%%DOCSDIR%%/memory/27c040.pdf
+%%PORTDOCS%%%%DOCSDIR%%/memory/27c080.pdf
+%%PORTDOCS%%%%DOCSDIR%%/memory/28c256.pdf
+%%PORTDOCS%%%%DOCSDIR%%/micrel/mic2026.pdf
+%%PORTDOCS%%%%DOCSDIR%%/micrel/mic2177.pdf
+%%PORTDOCS%%%%DOCSDIR%%/microchip/PIC16F819.pdf
+%%PORTDOCS%%%%DOCSDIR%%/microchip/pic16c62b-72b.pdf
+%%PORTDOCS%%%%DOCSDIR%%/microchip/pic16f62x.pdf
+%%PORTDOCS%%%%DOCSDIR%%/microchip/pic16f84.pdf
+%%PORTDOCS%%%%DOCSDIR%%/motorola/m68hc12B.pdf
+%%PORTDOCS%%%%DOCSDIR%%/motorola/mmc2114.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ns/DS7830.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ns/ds7830.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ns/lf398.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ns/lm158.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ns/lm1877.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ns/lm193.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ns/lm555.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ns/pc16550d.pdf
+%%PORTDOCS%%%%DOCSDIR%%/onsemi/mc33178.pdf
+%%PORTDOCS%%%%DOCSDIR%%/onsemi/mc34064.pdf
+%%PORTDOCS%%%%DOCSDIR%%/op_amps/lm324.pdf
+%%PORTDOCS%%%%DOCSDIR%%/op_amps/lm358.pdf
+%%PORTDOCS%%%%DOCSDIR%%/op_amps/lmc6062.pdf
+%%PORTDOCS%%%%DOCSDIR%%/op_amps/lmc6082.pdf
+%%PORTDOCS%%%%DOCSDIR%%/opto/cpc1017n.pdf
+%%PORTDOCS%%%%DOCSDIR%%/opto/laa110.pdf
+%%PORTDOCS%%%%DOCSDIR%%/opto/lbb110.pdf
+%%PORTDOCS%%%%DOCSDIR%%/opto/lcc110.pdf
+%%PORTDOCS%%%%DOCSDIR%%/opto/silonex_nsl-32sr3.pdf
+%%PORTDOCS%%%%DOCSDIR%%/philips/HTRC11001T-hitag_reader.pdf
+%%PORTDOCS%%%%DOCSDIR%%/philips/SA605.pdf
+%%PORTDOCS%%%%DOCSDIR%%/philips/dac08.pdf
+%%PORTDOCS%%%%DOCSDIR%%/philips/pca9516.pdf
+%%PORTDOCS%%%%DOCSDIR%%/philips/pca9516_3.pdf
+%%PORTDOCS%%%%DOCSDIR%%/philips/pcf8574.pdf
+%%PORTDOCS%%%%DOCSDIR%%/philips/pcf8591.pdf
+%%PORTDOCS%%%%DOCSDIR%%/philips/sa605.pdf
+%%PORTDOCS%%%%DOCSDIR%%/philips/tda8702.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/LP2985.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lm117.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lm1578a.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lm78lxx.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lm78xx.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lm79lxx.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lm79xx.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lp2985.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lp3963.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lt1372-1377.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lt1373.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/lt3472.pdf
+%%PORTDOCS%%%%DOCSDIR%%/regulator/mc34063.pdf
+%%DOCSDIR%%/scripts/kicad-devel
+%%DOCSDIR%%/scripts/kicad-get-rss
+%%DOCSDIR%%/scripts/packagesrc.sh
+%%DOCSDIR%%/scripts/pcb-dr-adjust/example.brd
+%%DOCSDIR%%/scripts/pcb-dr-adjust/howto.txt
+%%DOCSDIR%%/scripts/pcb-dr-adjust/pcb-dr-adjust.cfg
+%%DOCSDIR%%/scripts/pcb-dr-adjust/pcb-dr-adjust.pl
+%%DOCSDIR%%/scripts/setfont.sh
+%%PORTDOCS%%%%DOCSDIR%%/siliconix/si9986.pdf
+%%PORTDOCS%%%%DOCSDIR%%/temic/tk5550.pdf
+%%PORTDOCS%%%%DOCSDIR%%/temic/u2770B.pdf
+%%PORTDOCS%%%%DOCSDIR%%/texas/pga4311.pdf
+%%PORTDOCS%%%%DOCSDIR%%/texas/tl497a.pdf
+%%PORTDOCS%%%%DOCSDIR%%/texas/tl7702a.pdf
+%%PORTDOCS%%%%DOCSDIR%%/texas/tl7702b.pdf
+%%PORTDOCS%%%%DOCSDIR%%/texas/tms320c240.pdf
+%%PORTDOCS%%%%DOCSDIR%%/texas/tms320f2810.pdf
+%%PORTDOCS%%%%DOCSDIR%%/texas/tms320lf240x/tms320lf2406a.pdf
+%%PORTDOCS%%%%DOCSDIR%%/texas/tms320lf240x/tms320lf240x-periph-spru357.pdf
+%%PORTDOCS%%%%DOCSDIR%%/texas/tms320lf240x/tms320lf240x.pdf
+%%PORTDOCS%%%%DOCSDIR%%/that_corporation/vca-2180x.pdf
+%%PORTDOCS%%%%DOCSDIR%%/that_corporation/vca-2181x.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/bipolar/2n4401.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/bipolar/BC807.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/bipolar/BC817.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/bipolar/MPSA42.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/bipolar/bc237.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/bipolar/bc307.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/bipolar/bc807.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/bipolar/bc817.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/bipolar/mpsa42.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/bipolar/mpsa92.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/mos/2n7000-7002.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/mos/IRFU024.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/mos/irf530.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/mos/irfu024.pdf
+%%PORTDOCS%%%%DOCSDIR%%/transistors/mos/si4569DY.pdf
+%%PORTDOCS%%%%DOCSDIR%%/valves/philips-em84.pdf
+%%PORTDOCS%%%%DOCSDIR%%/video/av9173.pdf
+%%PORTDOCS%%%%DOCSDIR%%/video/cxd3400n.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xicor/x9118.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xicor/x9250.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xicor/x9258.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xicor/x9268.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xicor/x9269.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/9500.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/spartan2/ac_dc_car.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/spartan2/description.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/spartan2/intro.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/spartan2/pinout.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/spartan2e/spartan2e.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/spartan3/spartan3.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/xc18V00proms.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/xc400x-pinout.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/xc95108.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/xc9536.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/xc9572.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/xcr3032xl.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/xcr3064a.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/xcr3064xl.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/xcr3128xl.pdf
+%%PORTDOCS%%%%DOCSDIR%%/xilinx/xcr3256xl.pdf
+share/icons/hicolor/16x16/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/22x22/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/24x24/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/32x32/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/48x48/apps/kicad.png
+share/icons/hicolor/48x48/mimetypes/application-x-kicad-project.png
+share/icons/hicolor/scalable/apps/kicad.svg
+share/icons/hicolor/scalable/mimetypes/application-x-kicad-project.svg
+%%DATADIR%%/demos/complex_hierarchy/ampli_ht.sch
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.brd
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.cmp
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.lib
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.net
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.pro
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.sch
+%%DATADIR%%/demos/ecc83/ecc83-pp.brd
+%%DATADIR%%/demos/ecc83/ecc83-pp.cache.lib
+%%DATADIR%%/demos/ecc83/ecc83-pp.cmp
+%%DATADIR%%/demos/ecc83/ecc83-pp.net
+%%DATADIR%%/demos/ecc83/ecc83-pp.pro
+%%DATADIR%%/demos/ecc83/ecc83-pp.sch
+%%DATADIR%%/demos/ecc83/ecc83-pp_v2.brd
+%%DATADIR%%/demos/ecc83/ecc83-pp_v2.pro
+%%DATADIR%%/demos/ecc83/ecc83-pp_v2.sch
+%%DATADIR%%/demos/electric/electric.cache.lib
+%%DATADIR%%/demos/electric/electric.pro
+%%DATADIR%%/demos/electric/electric.sch
+%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.brd
+%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.cache.lib
+%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.cmp
+%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.net
+%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.pro
+%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.sch
+%%DATADIR%%/demos/flat_hierarchy/pic_programmer.sch
+%%DATADIR%%/demos/flat_hierarchy/pic_sockets.sch
+%%DATADIR%%/demos/interf_u/interf_u-cache.dcm
+%%DATADIR%%/demos/interf_u/interf_u-cache.lib
+%%DATADIR%%/demos/interf_u/interf_u.brd
+%%DATADIR%%/demos/interf_u/interf_u.cmp
+%%DATADIR%%/demos/interf_u/interf_u.net
+%%DATADIR%%/demos/interf_u/interf_u.pro
+%%DATADIR%%/demos/interf_u/interf_u.sch
+%%DATADIR%%/demos/microwave/microwave.brd
+%%DATADIR%%/demos/microwave/microwave.pro
+%%DATADIR%%/demos/microwave/shape1.txt
+%%DATADIR%%/demos/pic_programmer/pic_programmer.brd
+%%DATADIR%%/demos/pic_programmer/pic_programmer.cache.lib
+%%DATADIR%%/demos/pic_programmer/pic_programmer.cmp
+%%DATADIR%%/demos/pic_programmer/pic_programmer.net
+%%DATADIR%%/demos/pic_programmer/pic_programmer.pro
+%%DATADIR%%/demos/pic_programmer/pic_programmer.sch
+%%DATADIR%%/demos/pic_programmer/pic_sockets.sch
+%%DATADIR%%/demos/pspice/pspice.cache.lib
+%%DATADIR%%/demos/pspice/pspice.cir
+%%DATADIR%%/demos/pspice/pspice.pro
+%%DATADIR%%/demos/pspice/pspice.sch
+%%DATADIR%%/demos/sonde xilinx/sonde xilinx.brd
+%%DATADIR%%/demos/sonde xilinx/sonde xilinx.cache.lib
+%%DATADIR%%/demos/sonde xilinx/sonde xilinx.cmp
+%%DATADIR%%/demos/sonde xilinx/sonde xilinx.drl
+%%DATADIR%%/demos/sonde xilinx/sonde xilinx.net
+%%DATADIR%%/demos/sonde xilinx/sonde xilinx.pro
+%%DATADIR%%/demos/sonde xilinx/sonde xilinx.sch
+%%DATADIR%%/demos/test_xil_95108/carte_test.brd
+%%DATADIR%%/demos/test_xil_95108/carte_test.cache.lib
+%%DATADIR%%/demos/test_xil_95108/carte_test.cmp
+%%DATADIR%%/demos/test_xil_95108/carte_test.net
+%%DATADIR%%/demos/test_xil_95108/carte_test.pro
+%%DATADIR%%/demos/test_xil_95108/carte_test.sch
+%%DATADIR%%/demos/video/bus_pci.sch
+%%DATADIR%%/demos/video/esvideo.sch
+%%DATADIR%%/demos/video/graphic.sch
+%%DATADIR%%/demos/video/modul.sch
+%%DATADIR%%/demos/video/muxdata.sch
+%%DATADIR%%/demos/video/pal-ntsc.sch
+%%DATADIR%%/demos/video/rams.sch
+%%DATADIR%%/demos/video/video-cache.lib
+%%DATADIR%%/demos/video/video.brd
+%%DATADIR%%/demos/video/video.cmp
+%%DATADIR%%/demos/video/video.net
+%%DATADIR%%/demos/video/video.pro
+%%DATADIR%%/demos/video/video.sch
+%%NLS%%%%DATADIR%%/internat/ca/kicad.mo
+%%NLS%%%%DATADIR%%/internat/cs/kicad.mo
+%%NLS%%%%DATADIR%%/internat/de/kicad.mo
+%%NLS%%%%DATADIR%%/internat/es/kicad.mo
+%%NLS%%%%DATADIR%%/internat/fi/kicad.mo
+%%NLS%%%%DATADIR%%/internat/fr/kicad.mo
+%%NLS%%%%DATADIR%%/internat/hu/kicad.mo
+%%NLS%%%%DATADIR%%/internat/it/kicad.mo
+%%NLS%%%%DATADIR%%/internat/ko/kicad.mo
+%%NLS%%%%DATADIR%%/internat/nl/kicad.mo
+%%NLS%%%%DATADIR%%/internat/pl/kicad.mo
+%%NLS%%%%DATADIR%%/internat/pt/kicad.mo
+%%NLS%%%%DATADIR%%/internat/ru/kicad.mo
+%%NLS%%%%DATADIR%%/internat/sl/kicad.mo
+%%NLS%%%%DATADIR%%/internat/sv/kicad.mo
+%%NLS%%%%DATADIR%%/internat/zh_CN/kicad.mo
 %%DATADIR%%/template/kicad.pro
-%%DOCSDIR%%/help/CMakeLists.txt
-%%DOCSDIR%%/help/de/contents.hhc
-%%DOCSDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_01_DE.odt
-%%DOCSDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_02_DE.odt
-%%DOCSDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_03_DE.odt
-%%DOCSDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_06_DE.odt
-%%DOCSDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_07_DE.odt
-%%DOCSDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_09_DE.odt
-%%DOCSDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_12_DE.odt
-%%DOCSDIR%%/help/de/kicad.hhp
-%%DOCSDIR%%/help/en/contents.hhc
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en.html
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_10907a97.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_15f50cc9.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_16d1daed.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_1b76db63.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_2bb79e55.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_3ad74e38.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_46963029.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_5c0e6601.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_5ec697a9.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_66ed9576.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_6818c805.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_6eae571a.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_753ddb29.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m1f2a82d2.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m34e24679.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m355bf6ae.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m35d91fcb.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m39b7bc1b.gif
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m465458b7.gif
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m577c9b2d.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m64f95031.gif
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m68f5886e.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m710c0eda.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m7211a9fc.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m7717e802.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m7ad16255.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_m7e427ed3.png
-%%DOCSDIR%%/help/en/cvpcb/cvpcb-en_html_maab4014.png
-%%DOCSDIR%%/help/en/docs_src/cvpcb/cvpcb_EN.odt
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter10_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter11_EN.odt
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter11_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter12_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter1_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter2_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter3_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter4_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter5_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter6_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter7_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter8_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_Chapter9_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/Eeschema_covers_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/eeschema/eeschema.html
-%%DOCSDIR%%/help/en/docs_src/file_formats/board_file_format_EN.odt
-%%DOCSDIR%%/help/en/docs_src/file_formats/board_file_format_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/file_formats/file_formats.html
-%%DOCSDIR%%/help/en/docs_src/file_formats/library_file_format_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/file_formats/schematic_file_format_EN.odt
-%%DOCSDIR%%/help/en/docs_src/file_formats/schematic_file_format_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/gerbview/dcodes.sxw
-%%DOCSDIR%%/help/en/docs_src/gerbview/gerbview.html
-%%DOCSDIR%%/help/en/docs_src/gerbview/rs274x.sxw
-%%DOCSDIR%%/help/en/docs_src/kicad/kicad_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew.html
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_EN.sxg
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap10_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap11_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap1_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap2_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap3_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap4_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap5_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap6_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap7_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap8_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_chap9_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/pcbnew/pcbnew_covers_EN.sxw
-%%DOCSDIR%%/help/en/docs_src/python_binding/python.odt
-%%DOCSDIR%%/help/en/eeschema/doc_eeschema.zip
-%%DOCSDIR%%/help/en/eeschema/eeschema.html
-%%DOCSDIR%%/help/en/file_formats/file_formats.html
-%%DOCSDIR%%/help/en/file_formats/file_formats.zip
-%%DOCSDIR%%/help/en/gerbview/doc_gerbview.zip
-%%DOCSDIR%%/help/en/gerbview/gerbview.html
-%%DOCSDIR%%/help/en/kicad.hhp
-%%DOCSDIR%%/help/en/kicad/kicad.html
-%%DOCSDIR%%/help/en/kicad/kicad_html_1f2b2ef9.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_21af0dc0.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_450a70e8.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_4e2d3537.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_7907960d.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_7f7f71a7.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_m121af765.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_m20223bf4.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_m20d2b210.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_m5da4dd8d.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_m5e89f6f4.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_m6738784a.png
-%%DOCSDIR%%/help/en/kicad/kicad_html_m7fc53a80.png
-%%DOCSDIR%%/help/en/pcbnew/doc_pcbnew.zip
-%%DOCSDIR%%/help/en/pcbnew/footprints.pdf
-%%DOCSDIR%%/help/en/pcbnew/pcbnew.html
-%%DOCSDIR%%/help/es/contents.hhc
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es.html
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_163859f5.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_1de2e523.gif
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_1ed7ac6f.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_445df7ae.gif
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_4604a6d9.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_5810ed21.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_5e042dbf.gif
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_676c5f75.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_712a8f63.gif
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_77adc12a.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m11acf4e8.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m1253cc2c.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m1d2ff954.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m1e94d17.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m214299f.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m25ec8043.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m336f54e7.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m35847702.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m3721a797.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m446f2400.gif
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m56c39fcf.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m56ca91e1.gif
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m632ae088.png
-%%DOCSDIR%%/help/es/cvpcb/cvpcb-es_html_m660c105b.png
-%%DOCSDIR%%/help/es/docs_src/cvpcb/cvpcb-es.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter10_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter11_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter12_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter1_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter2_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter3_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter4_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter5_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter6_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter7_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter8_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/Eeschema_Chapter9_ES.sxw
-%%DOCSDIR%%/help/es/docs_src/eeschema/eeschema-es.html
-%%DOCSDIR%%/help/es/docs_src/eeschema/eeschema.sxg
-%%DOCSDIR%%/help/es/docs_src/eeschema/tablemat.sxw
-%%DOCSDIR%%/help/es/docs_src/file_format/board_file_format.sxw
-%%DOCSDIR%%/help/es/docs_src/file_format/formato_archivo_biblioteca.sxw
-%%DOCSDIR%%/help/es/docs_src/file_format/formato_archivo_esquema.sxw
-%%DOCSDIR%%/help/es/docs_src/kicad/kicad-es.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/Tablemat.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap1.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap10.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap11.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap2.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap3.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap4.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap5.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap6.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap7.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap8.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/cap9.sxw
-%%DOCSDIR%%/help/es/docs_src/pcbnew/pcbnew-es.html
-%%DOCSDIR%%/help/es/docs_src/pcbnew/pcbnew.sxg
-%%DOCSDIR%%/help/es/eeschema/doc_eeschema-es.zip
-%%DOCSDIR%%/help/es/eeschema/eeschema-es.html
-%%DOCSDIR%%/help/es/file_formats/file_formats-es.html
-%%DOCSDIR%%/help/es/file_formats/file_formats.zip
-%%DOCSDIR%%/help/es/gerbview/doc_gerbview.zip
-%%DOCSDIR%%/help/es/gerbview/gerbview.html
-%%DOCSDIR%%/help/es/kicad.hhp
-%%DOCSDIR%%/help/es/kicad/kicad-es.html
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_1f2b2ef9.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_21af0dc0.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_450a70e8.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_4e2d3537.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_5816cb05.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_7907960d.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_m121af765.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_m1b04bf.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_m20d2b210.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_m3565d118.jpg
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_m356c7c74.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_m5e89f6f4.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_m6c6141ac.png
-%%DOCSDIR%%/help/es/kicad/kicad-es_html_mec018c7.png
-%%DOCSDIR%%/help/es/pcbnew/doc_pcbnew-es.zip
-%%DOCSDIR%%/help/es/pcbnew/footprints.pdf
-%%DOCSDIR%%/help/es/pcbnew/pcbnew-es.html
-%%DOCSDIR%%/help/fr/contents.hhc
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr.html
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_10907a97.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_16d1daed.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_1b76db63.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_374244ea.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_3ad74e38.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_3f529e12.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_46963029.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_5c0e6601.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_5ec697a9.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_5f6c7d3.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_66ed9576.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_6818c805.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_6eae571a.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_753ddb29.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m1f2a82d2.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m2f3880bd.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m34e24679.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m465458b7.gif
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m4d7e20ed.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m5330974a.gif
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m577c9b2d.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m5e043466.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m64f95031.gif
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m710c0eda.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m7211a9fc.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m740fae3a.gif
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m7717e802.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m7ad16255.png
-%%DOCSDIR%%/help/fr/cvpcb/cvpcb-fr_html_m7e427ed3.png
-%%DOCSDIR%%/help/fr/docs_src/cvpcb/cvpcb-cover-FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/cvpcb/cvpcb-fr.odt
-%%DOCSDIR%%/help/fr/docs_src/cvpcb/cvpcb-fr.sxg
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap1.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap10-libedit-bases.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap11-libedit-av.odt
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap12-viewlib.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap2-commandes.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap3-menu.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap4-toolbar.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap5-edition.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap6-annotation.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap7-erc.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap8-netlistes.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/chap9-plot-print.sxw
-%%DOCSDIR%%/help/fr/docs_src/eeschema/eeschema.html
-%%DOCSDIR%%/help/fr/docs_src/eeschema/eeschema.sxg
-%%DOCSDIR%%/help/fr/docs_src/eeschema/eeschema_covers_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/file_formats/board_file_format.odt
-%%DOCSDIR%%/help/fr/docs_src/file_formats/file_formats.html
-%%DOCSDIR%%/help/fr/docs_src/file_formats/library_file_format.sxw
-%%DOCSDIR%%/help/fr/docs_src/file_formats/schematic_file_format.sxw
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/conn_DBxx.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/conn_HExx.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/connect1.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/connect2.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/dil_ell.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/dil_rd.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/discret1.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/libcms.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/merge_ps-files.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/miscellanous.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/pin_array.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/sockets-part1.ps
-%%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc/sockets-part2.ps
-%%DOCSDIR%%/help/fr/docs_src/gerbview/dcodes.sxw
-%%DOCSDIR%%/help/fr/docs_src/gerbview/gerbview.html
-%%DOCSDIR%%/help/fr/docs_src/gerbview/rs274x.sxw
-%%DOCSDIR%%/help/fr/docs_src/kicad/kicad_FR.sxg
-%%DOCSDIR%%/help/fr/docs_src/kicad/kicad_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/kicad/kicad_couv_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew.html
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew.sxg
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap10_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap11_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap1_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap2_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap3_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap4_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap5_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap6_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap7_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap8_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_chap9_FR.sxw
-%%DOCSDIR%%/help/fr/docs_src/pcbnew/pcbnew_covers_FR.sxw
-%%DOCSDIR%%/help/fr/eeschema/doc_eeschema.zip
-%%DOCSDIR%%/help/fr/eeschema/eeschema.html
-%%DOCSDIR%%/help/fr/eeschema/eeschema.pdf
-%%DOCSDIR%%/help/fr/file_formats/file_formats.html
-%%DOCSDIR%%/help/fr/file_formats/file_formats.zip
-%%DOCSDIR%%/help/fr/gerbview/doc_gerbview.zip
-%%DOCSDIR%%/help/fr/gerbview/gerbview.html
-%%DOCSDIR%%/help/fr/kicad.hhp
-%%DOCSDIR%%/help/fr/kicad/kicad.html
-%%DOCSDIR%%/help/fr/kicad/kicad.pdf
-%%DOCSDIR%%/help/fr/kicad/kicad_html_1f2b2ef9.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_21af0dc0.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_3c10fb23.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_450a70e8.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_4e2d3537.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_5816cb05.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_7907960d.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_m121af765.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_m20d2b210.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_m356c7c74.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_m5bdff0e6.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_m5e89f6f4.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_m6c6141ac.png
-%%DOCSDIR%%/help/fr/kicad/kicad_html_mec018c7.png
-%%DOCSDIR%%/help/fr/pcbnew/doc_pcbnew.zip
-%%DOCSDIR%%/help/fr/pcbnew/footprints.pdf
-%%DOCSDIR%%/help/fr/pcbnew/pcbnew.html
-%%DOCSDIR%%/help/it/contents.hhc
-%%DOCSDIR%%/help/it/docs_src/eeschema/Eeschema_Chapter12_IT.sxw
-%%DOCSDIR%%/help/it/docs_src/eeschema/Eeschema_Chapter1_IT.sxw
-%%DOCSDIR%%/help/it/docs_src/eeschema/Eeschema_Chapter6_IT.sxw
-%%DOCSDIR%%/help/it/docs_src/pcbnew/pcbnew_chap1_IT.sxw
-%%DOCSDIR%%/help/it/docs_src/pcbnew/pcbnew_chap2_IT.sxw
-%%DOCSDIR%%/help/it/docs_src/pcbnew/pcbnew_chap3_IT.sxw
-%%DOCSDIR%%/help/it/kicad.hhp
-%%DOCSDIR%%/help/makefile
-%%DOCSDIR%%/help/pt/contents.hhc
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt.html
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_11370164.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_30f04152.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_37fab2f2.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_41084b87.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_535e1801.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_53814bf1.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_5470c784.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_55ad0c61.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_618c7091.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_66d42369.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_674e844.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_6c43823e.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_88d72ec.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_eecbfff.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_m13b5b7a1.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_m21e00917.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_m30efa244.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_m48305158.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_m49c35e7f.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_m4eda1ccc.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_m50b52a88.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_m6575c7c8.gif
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_m78416bcd.png
-%%DOCSDIR%%/help/pt/cvpcb/cvpcb-pt_html_mfaa4758.png
-%%DOCSDIR%%/help/pt/docs_src/cvpcb/cvpcb-pt.sxg
-%%DOCSDIR%%/help/pt/docs_src/cvpcb/cvpcb-pt.sxw
-%%DOCSDIR%%/help/pt/docs_src/cvpcb/cvpcb_capa_pt_br.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/EEschema_capa.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap10_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap11_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap12_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap1_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap2_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap3_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap4_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap5_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap6_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap7_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap8_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/Eeschema_Cap9_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/eeschema/eeschema.sxg
-%%DOCSDIR%%/help/pt/docs_src/eeschema/eeschema_pt_BR.html
-%%DOCSDIR%%/help/pt/docs_src/file_formats/board_file_format.sxw
-%%DOCSDIR%%/help/pt/docs_src/file_formats/library_file_format.sxw
-%%DOCSDIR%%/help/pt/docs_src/file_formats/schematic_file_format.sxw
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/conn_DBxx.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/conn_HExx.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/connect1.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/connect2.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/dil_ell.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/dil_rd.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/discret1.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/libcms.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/merge_ps-files.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/miscellanous.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/pin_array.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/sockets-part1.ps
-%%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc/sockets-part2.ps
-%%DOCSDIR%%/help/pt/docs_src/kicad/kicad_capa_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/kicad/kicad_pt_BR.sxg
-%%DOCSDIR%%/help/pt/docs_src/kicad/kicad_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew.html
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew.sxg
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_capa_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap10_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap11_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap1_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap2_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap3_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap4_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap5_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap6_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap7_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap8_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_chap9_pt_BR.sxw
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_pt_BR.html
-%%DOCSDIR%%/help/pt/docs_src/pcbnew/pcbnew_pt_BR.sxg
-%%DOCSDIR%%/help/pt/eeschema/doc_eeschema-pt.zip
-%%DOCSDIR%%/help/pt/eeschema/eeschema-pt.html
-%%DOCSDIR%%/help/pt/eeschema/eeschema_pt_BR.html
-%%DOCSDIR%%/help/pt/file_formats/file_formats.html
-%%DOCSDIR%%/help/pt/file_formats/file_formats.zip
-%%DOCSDIR%%/help/pt/gerbview/doc_gerbview.zip
-%%DOCSDIR%%/help/pt/gerbview/gerbview.html
-%%DOCSDIR%%/help/pt/kicad.hhp
-%%DOCSDIR%%/help/pt/kicad/kicad-pt.html
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR.html
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_1f2b2ef9.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_21af0dc0.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_240131a9.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_3d3a3f29.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_450a70e8.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_5c707ff7.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_m121af765.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_m1b04bf.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_m1d9ca2c7.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_m20d2b210.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_m260932da.gif
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_m3262df08.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_m341a8791.png
-%%DOCSDIR%%/help/pt/kicad/kicad_pt_BR_html_m662f19ea.png
-%%DOCSDIR%%/help/pt/pcbnew/doc_pcbnew.zip
-%%DOCSDIR%%/help/pt/pcbnew/pcbnew.html
-%%DOCSDIR%%/help/pt/pcbnew/pcbnew_pt_BR.html
-%%DOCSDIR%%/help/ru/contents.hhc
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb.html
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_10907a97.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_15f50cc9.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_16d1daed.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_1b76db63.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_2bb79e55.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_3ad74e38.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_46963029.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_5c0e6601.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_5ec697a9.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_66ed9576.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_6818c805.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_6eae571a.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_753ddb29.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m1f2a82d2.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m34e24679.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m355bf6ae.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m35d91fcb.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m465458b7.gif
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m577c9b2d.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m64f95031.gif
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m68f5886e.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m710c0eda.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m7211a9fc.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m7717e802.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m7ad16255.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_m7e427ed3.png
-%%DOCSDIR%%/help/ru/cvpcb/cvpcb_html_maab4014.png
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter10_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter11_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter12_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter1_RU.odt
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter2_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter3_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter4_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter5_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter6_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter7_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter8_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/Eeschema_Chapter9_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/eeschema/eeschema_ru.html
-%%DOCSDIR%%/help/ru/docs_src/kicad/kicad_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/pcbnew/pcbnew_chap1_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/pcbnew/pcbnew_chap2_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/pcbnew/pcbnew_chap3_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/pcbnew/pcbnew_chap4_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/pcbnew/pcbnew_chap5_RU.sxw
-%%DOCSDIR%%/help/ru/docs_src/pcbnew/pcbnew_ru.html
-%%DOCSDIR%%/help/ru/eeschema/doc_eeschema.zip
-%%DOCSDIR%%/help/ru/eeschema/eeschema_ru.html
-%%DOCSDIR%%/help/ru/file_formats/file_formats.html
-%%DOCSDIR%%/help/ru/file_formats/file_formats.zip
-%%DOCSDIR%%/help/ru/gerbview/doc_gerbview.zip
-%%DOCSDIR%%/help/ru/gerbview/gerbview.html
-%%DOCSDIR%%/help/ru/kicad.hhp
-%%DOCSDIR%%/help/ru/kicad/kicad.html
-%%DOCSDIR%%/help/ru/kicad/kicad_html_1f2b2ef9.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_21af0dc0.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_450a70e8.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_4e2d3537.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_7907960d.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_7f7f71a7.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_m121af765.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_m20223bf4.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_m20d2b210.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_m5da4dd8d.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_m5e89f6f4.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_m6738784a.png
-%%DOCSDIR%%/help/ru/kicad/kicad_html_m7fc53a80.png
-%%DOCSDIR%%/help/ru/pcbnew/doc_pcbnew.zip
-%%DOCSDIR%%/help/ru/pcbnew/pcbnew_ru.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecc83/ecc83-pp.brd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecc83/ecc83-pp.cache.lib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecc83/ecc83-pp.cmp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecc83/ecc83-pp.net
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecc83/ecc83-pp.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecc83/ecc83-pp.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecc83/ecc83-pp_v2.brd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecc83/ecc83-pp_v2.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ecc83/ecc83-pp_v2.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/electric/electric.cache.lib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/electric/electric.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/electric/electric.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flat_hierarchy/flat_hierarchy.brd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flat_hierarchy/flat_hierarchy.cache.lib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flat_hierarchy/flat_hierarchy.cmp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flat_hierarchy/flat_hierarchy.net
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flat_hierarchy/flat_hierarchy.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flat_hierarchy/flat_hierarchy.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flat_hierarchy/pic_programmer.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flat_hierarchy/pic_sockets.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interf_u/interf_u.brd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interf_u/interf_u.cache.lib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interf_u/interf_u.cmp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interf_u/interf_u.net
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interf_u/interf_u.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interf_u/interf_u.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/microwave/microwave.brd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/microwave/microwave.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/microwave/shape1.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pic_programmer/pic_programmer.brd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pic_programmer/pic_programmer.cache.lib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pic_programmer/pic_programmer.cmp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pic_programmer/pic_programmer.net
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pic_programmer/pic_programmer.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pic_programmer/pic_programmer.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pic_programmer/pic_sockets.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pspice/pspice.cache.lib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pspice/pspice.cir
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pspice/pspice.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pspice/pspice.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sonde xilinx/sonde xilinx.brd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sonde xilinx/sonde xilinx.cache.lib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sonde xilinx/sonde xilinx.cmp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sonde xilinx/sonde xilinx.drl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sonde xilinx/sonde xilinx.net
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sonde xilinx/sonde xilinx.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sonde xilinx/sonde xilinx.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_xil_95108/carte_test.brd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_xil_95108/carte_test.cache.lib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_xil_95108/carte_test.cmp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_xil_95108/carte_test.net
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_xil_95108/carte_test.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_xil_95108/carte_test.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/bus_pci.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/esvideo.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/graphic.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/modul.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/muxdata.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/pal-ntsc.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/rams.sch
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/video.brd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/video.cache.lib
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/video.cmp
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/video.net
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/video.pro
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/video/video.sch
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/video
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/test_xil_95108
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sonde xilinx
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pspice
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pic_programmer
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/microwave
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/interf_u
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/flat_hierarchy
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/electric
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ecc83
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+share/mime/packages/kicad.xml
+share/mimelnk/application/x-kicad-project.desktop
+share/mimelnk/application/x-kicad-schematic.desktop
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
 @dirrm %%DATADIR%%/template
-@dirrm %%DATADIR%%/modules/packages3d/valves
-@dirrm %%DATADIR%%/modules/packages3d/support
-@dirrm %%DATADIR%%/modules/packages3d/smd
-@dirrm %%DATADIR%%/modules/packages3d/pin_array
-@dirrm %%DATADIR%%/modules/packages3d/pga
-@dirrm %%DATADIR%%/modules/packages3d/divers
-@dirrm %%DATADIR%%/modules/packages3d/discret
-@dirrm %%DATADIR%%/modules/packages3d/dil
-@dirrm %%DATADIR%%/modules/packages3d/device
-@dirrm %%DATADIR%%/modules/packages3d/connectors
-@dirrm %%DATADIR%%/modules/packages3d/conn_europe
-@dirrm %%DATADIR%%/modules/packages3d/conn_HExx
-@dirrm %%DATADIR%%/modules/packages3d/conn_DBxx
-@dirrm %%DATADIR%%/modules/packages3d
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/library
-@dirrm %%DATADIR%%/internat/sl
-@dirrm %%DATADIR%%/internat/ru
-@dirrm %%DATADIR%%/internat/pt
-@dirrm %%DATADIR%%/internat/pl
-@dirrm %%DATADIR%%/internat/ko
-@dirrm %%DATADIR%%/internat/it
-@dirrm %%DATADIR%%/internat/hu
-@dirrm %%DATADIR%%/internat/fr
-@dirrm %%DATADIR%%/internat/es
-@dirrm %%DATADIR%%/internat/de
-@dirrm %%DATADIR%%/internat/cs
-@dirrm %%DATADIR%%/internat
-@dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/help/ru/pcbnew
-@dirrm %%DOCSDIR%%/help/ru/kicad
-@dirrm %%DOCSDIR%%/help/ru/gerbview
-@dirrm %%DOCSDIR%%/help/ru/file_formats
-@dirrm %%DOCSDIR%%/help/ru/eeschema
-@dirrm %%DOCSDIR%%/help/ru/docs_src/pcbnew
-@dirrm %%DOCSDIR%%/help/ru/docs_src/kicad
-@dirrm %%DOCSDIR%%/help/ru/docs_src/eeschema
-@dirrm %%DOCSDIR%%/help/ru/docs_src
-@dirrm %%DOCSDIR%%/help/ru/cvpcb
-@dirrm %%DOCSDIR%%/help/ru
-@dirrm %%DOCSDIR%%/help/pt/pcbnew
-@dirrm %%DOCSDIR%%/help/pt/kicad
-@dirrm %%DOCSDIR%%/help/pt/gerbview
-@dirrm %%DOCSDIR%%/help/pt/file_formats
-@dirrm %%DOCSDIR%%/help/pt/eeschema
-@dirrm %%DOCSDIR%%/help/pt/docs_src/pcbnew
-@dirrm %%DOCSDIR%%/help/pt/docs_src/kicad
-@dirrm %%DOCSDIR%%/help/pt/docs_src/footprint-for-pcbnew-doc
-@dirrm %%DOCSDIR%%/help/pt/docs_src/file_formats
-@dirrm %%DOCSDIR%%/help/pt/docs_src/eeschema
-@dirrm %%DOCSDIR%%/help/pt/docs_src/cvpcb
-@dirrm %%DOCSDIR%%/help/pt/docs_src
-@dirrm %%DOCSDIR%%/help/pt/cvpcb
-@dirrm %%DOCSDIR%%/help/pt
-@dirrm %%DOCSDIR%%/help/it/docs_src/pcbnew
-@dirrm %%DOCSDIR%%/help/it/docs_src/eeschema
-@dirrm %%DOCSDIR%%/help/it/docs_src
-@dirrm %%DOCSDIR%%/help/it
-@dirrm %%DOCSDIR%%/help/fr/pcbnew
-@dirrm %%DOCSDIR%%/help/fr/kicad
-@dirrm %%DOCSDIR%%/help/fr/gerbview
-@dirrm %%DOCSDIR%%/help/fr/file_formats
-@dirrm %%DOCSDIR%%/help/fr/eeschema
-@dirrm %%DOCSDIR%%/help/fr/docs_src/pcbnew
-@dirrm %%DOCSDIR%%/help/fr/docs_src/kicad
-@dirrm %%DOCSDIR%%/help/fr/docs_src/gerbview
-@dirrm %%DOCSDIR%%/help/fr/docs_src/footprint-for-pcbnew-doc
-@dirrm %%DOCSDIR%%/help/fr/docs_src/file_formats
-@dirrm %%DOCSDIR%%/help/fr/docs_src/eeschema
-@dirrm %%DOCSDIR%%/help/fr/docs_src/cvpcb
-@dirrm %%DOCSDIR%%/help/fr/docs_src
-@dirrm %%DOCSDIR%%/help/fr/cvpcb
-@dirrm %%DOCSDIR%%/help/fr
-@dirrm %%DOCSDIR%%/help/es/pcbnew
-@dirrm %%DOCSDIR%%/help/es/kicad
-@dirrm %%DOCSDIR%%/help/es/gerbview
-@dirrm %%DOCSDIR%%/help/es/file_formats
-@dirrm %%DOCSDIR%%/help/es/eeschema
-@dirrm %%DOCSDIR%%/help/es/docs_src/pcbnew
-@dirrm %%DOCSDIR%%/help/es/docs_src/kicad
-@dirrm %%DOCSDIR%%/help/es/docs_src/file_format
-@dirrm %%DOCSDIR%%/help/es/docs_src/eeschema
-@dirrm %%DOCSDIR%%/help/es/docs_src/cvpcb
-@dirrm %%DOCSDIR%%/help/es/docs_src
-@dirrm %%DOCSDIR%%/help/es/cvpcb
-@dirrm %%DOCSDIR%%/help/es
-@dirrm %%DOCSDIR%%/help/en/pcbnew
-@dirrm %%DOCSDIR%%/help/en/kicad
-@dirrm %%DOCSDIR%%/help/en/gerbview
-@dirrm %%DOCSDIR%%/help/en/file_formats
-@dirrm %%DOCSDIR%%/help/en/eeschema
-@dirrm %%DOCSDIR%%/help/en/docs_src/python_binding
-@dirrm %%DOCSDIR%%/help/en/docs_src/pcbnew
-@dirrm %%DOCSDIR%%/help/en/docs_src/kicad
-@dirrm %%DOCSDIR%%/help/en/docs_src/gerbview
-@dirrm %%DOCSDIR%%/help/en/docs_src/file_formats
-@dirrm %%DOCSDIR%%/help/en/docs_src/eeschema
-@dirrm %%DOCSDIR%%/help/en/docs_src/cvpcb
-@dirrm %%DOCSDIR%%/help/en/docs_src
-@dirrm %%DOCSDIR%%/help/en/cvpcb
-@dirrm %%DOCSDIR%%/help/en
-@dirrm %%DOCSDIR%%/help/de/docs_src/eeschema
-@dirrm %%DOCSDIR%%/help/de/docs_src
-@dirrm %%DOCSDIR%%/help/de
-@dirrm %%DOCSDIR%%/help
+%%NLS%%@dirrm %%DATADIR%%/internat/zh_CN
+%%NLS%%@dirrm %%DATADIR%%/internat/sv
+%%NLS%%@dirrm %%DATADIR%%/internat/sl
+%%NLS%%@dirrm %%DATADIR%%/internat/ru
+%%NLS%%@dirrm %%DATADIR%%/internat/pt
+%%NLS%%@dirrm %%DATADIR%%/internat/pl
+%%NLS%%@dirrm %%DATADIR%%/internat/nl
+%%NLS%%@dirrm %%DATADIR%%/internat/ko
+%%NLS%%@dirrm %%DATADIR%%/internat/it
+%%NLS%%@dirrm %%DATADIR%%/internat/hu
+%%NLS%%@dirrm %%DATADIR%%/internat/fr
+%%NLS%%@dirrm %%DATADIR%%/internat/fi
+%%NLS%%@dirrm %%DATADIR%%/internat/es
+%%NLS%%@dirrm %%DATADIR%%/internat/de
+%%NLS%%@dirrm %%DATADIR%%/internat/cs
+%%NLS%%@dirrm %%DATADIR%%/internat/ca
+%%NLS%%@dirrm %%DATADIR%%/internat
+@dirrm %%DATADIR%%/demos/video
+@dirrm %%DATADIR%%/demos/test_xil_95108
+@dirrm %%DATADIR%%/demos/sonde xilinx
+@dirrm %%DATADIR%%/demos/pspice
+@dirrm %%DATADIR%%/demos/pic_programmer
+@dirrm %%DATADIR%%/demos/microwave
+@dirrm %%DATADIR%%/demos/interf_u
+@dirrm %%DATADIR%%/demos/flat_hierarchy
+@dirrm %%DATADIR%%/demos/electric
+@dirrm %%DATADIR%%/demos/ecc83
+@dirrm %%DATADIR%%/demos/complex_hierarchy
+@dirrm %%DATADIR%%/demos
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xilinx/spartan3
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xilinx/spartan2e
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xilinx/spartan2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xilinx
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xicor
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/video
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/valves
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/transistors/mos
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/transistors/bipolar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/transistors
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/that_corporation
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/texas/tms320lf240x
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/texas
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/temic
+@dirrm %%DOCSDIR%%/scripts/pcb-dr-adjust
+@dirrm %%DOCSDIR%%/scripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/siliconix
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/regulator
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/philips
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/opto
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/op_amps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/onsemi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ns
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/motorola
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/microchip
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/micrel
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/memory
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/maxim
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/linear-tec
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ir
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/intersil
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gennum
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/elantec
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/display
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/digital-audio
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/crystal
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cmos4000
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/analog_mux&switches
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/analog-dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/adc-dac
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/74xx
 @dirrm %%DOCSDIR%%
-@dirrmtry %%DESKTOPDIR%%
+@dirrmtry share/applications
+@dirrm lib/kicad/plugins
+@dirrm lib/kicad
