@@ -8,7 +8,6 @@
 PORTNAME=	pandoc
 PORTVERSION=	1.5.1.1
 CATEGORIES=	textproc haskell
-PKGNAMEPREFIX=
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A general markup converter

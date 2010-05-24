@@ -8,7 +8,6 @@
 PORTNAME=	highlighting-kate
 PORTVERSION=	0.2.6.2
 CATEGORIES=	textproc haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell syntax highlighting library for 50+ languages

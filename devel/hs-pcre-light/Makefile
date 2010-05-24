@@ -8,7 +8,6 @@
 PORTNAME=	pcre-light
 PORTVERSION=	0.3.1.1
 CATEGORIES=	devel haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A lightweight Haskell regex library compatible with Perl 5

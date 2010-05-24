@@ -219,15 +219,16 @@
     SUBDIR += hil-aspell
     SUBDIR += hr-aspell
     SUBDIR += hs-Diff
+    SUBDIR += hs-HaXml
     SUBDIR += hs-bytestring-csv
     SUBDIR += hs-citeproc-hs
     SUBDIR += hs-feed
-    SUBDIR += hs-haxml
-    SUBDIR += hs-highlighting-kate-ghc
+    SUBDIR += hs-highlighting-kate
     SUBDIR += hs-hs-bibutils
     SUBDIR += hs-hxt
     SUBDIR += hs-libxml
-    SUBDIR += hs-polyparse-ghc
+    SUBDIR += hs-pandoc
+    SUBDIR += hs-polyparse
     SUBDIR += hs-stringsearch
     SUBDIR += hs-tagsoup
     SUBDIR += hs-texmath
@@ -897,7 +898,6 @@
     SUBDIR += p5-podlators
     SUBDIR += p5-xmltv
     SUBDIR += pa-aspell
-    SUBDIR += pandoc
     SUBDIR += par
     SUBDIR += pardiff
     SUBDIR += pcrs

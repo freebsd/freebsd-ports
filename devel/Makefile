@@ -269,7 +269,6 @@
     SUBDIR += cxmon
     SUBDIR += cxref
     SUBDIR += cxxtest
-    SUBDIR += darcs
     SUBDIR += darts
     SUBDIR += datadesigner
     SUBDIR += datadraw
@@ -556,12 +555,13 @@
     SUBDIR += hs-ansi-terminal
     SUBDIR += hs-ansi-wl-pprint
     SUBDIR += hs-arrows
-    SUBDIR += hs-binary-ghc
+    SUBDIR += hs-binary
     SUBDIR += hs-bsd-sysctl
     SUBDIR += hs-c2hs
     SUBDIR += hs-checkers
     SUBDIR += hs-convertible
     SUBDIR += hs-cpphs
+    SUBDIR += hs-darcs
     SUBDIR += hs-datetime
     SUBDIR += hs-deepseq
     SUBDIR += hs-dlist
@@ -583,11 +583,11 @@
     SUBDIR += hs-hoogle
     SUBDIR += hs-hslogger
     SUBDIR += hs-idoc
-    SUBDIR += hs-language-c-ghc
-    SUBDIR += hs-lazysmallcheck-ghc
+    SUBDIR += hs-language-c
+    SUBDIR += hs-lazysmallcheck
     SUBDIR += hs-mmap
     SUBDIR += hs-mueval
-    SUBDIR += hs-pcre-light-ghc
+    SUBDIR += hs-pcre-light
     SUBDIR += hs-reactive
     SUBDIR += hs-readline
     SUBDIR += hs-safe
@@ -603,7 +603,7 @@
     SUBDIR += hs-unamb
     SUBDIR += hs-uniplate
     SUBDIR += hs-unix-compat
-    SUBDIR += hs-utf8-string-ghc
+    SUBDIR += hs-utf8-string
     SUBDIR += hs-utility-ht
     SUBDIR += hs-uuagc
     SUBDIR += hs-uulib

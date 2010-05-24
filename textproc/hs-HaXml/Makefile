@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-PORTNAME=	haxml
+PORTNAME=	HaXml
 PORTVERSION=	1.20.2
 CATEGORIES=	textproc haskell
 
@@ -17,9 +17,6 @@ USE_HACKAGE=	polyparse>=1.2
 EXECUTABLE=	Canonicalise CanonicaliseLazy \
 		DtdToHaskell MkOneOf Validate \
 		Xtract XtractLazy
-
-MASTER_SITES=	http://hackage.haskell.org/packages/archive/HaXml/${PORTVERSION}/
-DISTNAME=	HaXml-${PORTVERSION}
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

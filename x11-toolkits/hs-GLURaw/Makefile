@@ -8,7 +8,6 @@
 PORTNAME=	GLURaw
 PORTVERSION=	1.1.0.0
 CATEGORIES=	x11-toolkits haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	jacula@gmail.com
 COMMENT=	A raw Haskell binding for the OpenGL Utility Toolkit

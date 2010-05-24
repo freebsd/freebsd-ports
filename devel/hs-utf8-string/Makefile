@@ -8,7 +8,6 @@
 PORTNAME=	utf8-string
 PORTVERSION=	0.3.6
 CATEGORIES=	devel haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	wahjava@gmail.com
 COMMENT=	Support for reading/writing UTF8 strings for Haskell programs

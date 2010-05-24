@@ -8,7 +8,6 @@
 PORTNAME=	polyparse
 PORTVERSION=	1.4
 CATEGORIES=	textproc haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Alternative parser combinator libraries for Haskell

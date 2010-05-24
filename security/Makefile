@@ -192,7 +192,7 @@
     SUBDIR += hostsentry
     SUBDIR += hotssh
     SUBDIR += hs-SHA
-    SUBDIR += hs-digest-ghc
+    SUBDIR += hs-digest
     SUBDIR += httprint
     SUBDIR += hunch
     SUBDIR += hydra

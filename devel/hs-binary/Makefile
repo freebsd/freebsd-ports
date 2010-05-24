@@ -8,7 +8,6 @@
 PORTNAME=	binary
 PORTVERSION=	0.5.0.2
 CATEGORIES=	devel haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Efficient binary serialisation for Haskell

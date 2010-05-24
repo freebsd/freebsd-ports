@@ -9,7 +9,6 @@ PORTNAME=	language-c
 PORTVERSION=	0.3.1.1
 PORTREVISION=	2
 CATEGORIES=	devel haskell
-PKGNAMESUFFIX=	-ghc
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Analysis and generation of C code in Haskell
