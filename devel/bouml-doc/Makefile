@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouml-doc
-PORTVERSION=	4.17
+PORTVERSION=	4.21
 CATEGORIES=	devel
 MASTER_SITES=	SF/bouml/bouml%20documentation/reference%20manual%20${PORTVERSION}	\
 		http://bouml.free.fr/

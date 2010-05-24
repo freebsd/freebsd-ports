@@ -589,6 +589,7 @@
 %%DOCSDIR%%/figs/classmenu1a.png
 %%DOCSDIR%%/figs/classmenu2.png
 %%DOCSDIR%%/figs/classpictmenu.png
+%%DOCSDIR%%/figs/classpictmenu2.png
 %%DOCSDIR%%/figs/classsettings.png
 %%DOCSDIR%%/figs/classsettings2.png
 %%DOCSDIR%%/figs/classstereotypes.png
@@ -758,6 +759,7 @@
 %%DOCSDIR%%/figs/misc_style_menu2.png
 %%DOCSDIR%%/figs/multipleselectionmenu.png
 %%DOCSDIR%%/figs/multipleselectionmenu1.png
+%%DOCSDIR%%/figs/multipleselectionmenu1bis.png
 %%DOCSDIR%%/figs/multipleselectionmenu2.png
 %%DOCSDIR%%/figs/multipleselectionmenu3.png
 %%DOCSDIR%%/figs/nodedrawing.png
@@ -946,6 +948,7 @@
 %%DOCSDIR%%/figs/relationstereotypes.png
 %%DOCSDIR%%/figs/required.bmp
 %%DOCSDIR%%/figs/required_button.xpm
+%%DOCSDIR%%/figs/revroundsettings.png
 %%DOCSDIR%%/figs/ro_free_package.png
 %%DOCSDIR%%/figs/ro_other_package.png
 %%DOCSDIR%%/figs/ro_protected_package.png
