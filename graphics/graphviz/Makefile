@@ -70,7 +70,6 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 		XPM "Build with XPM support" on \
 		DIGCOLA "DIGCOLA features in neato layout engine" on \
 		IPSEPCOLA "IPSEPCOLA features in neato layout engine" on \
-		SMYRNA "SMYRNA large graph viewer" off \
 		NLS "Build with gettext support" on \
 		TK "Build with TK support" off \
 		PANGOCAIRO "build with pangocairo support" on \
@@ -78,6 +77,7 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 		GTK "build with gtk plugin" off \
 		GDK_PIXBUF  "build with gdk pixbuf support" off \
 		GNOMEUI  "build with libgnomeui support" off \
+		SMYRNA "SMYRNA large graph viewer (GTK is required)" off \
 		MING "Build with ming plugin" off \
 		DEVIL "Build with devil plugin" off \
 		GHOSTSCRIPT "Build with ghostscript plugin" off \
@@ -208,6 +208,9 @@ CONFIGURE_ARGS+=	--without-gnomeui
 .if defined(WITH_SMYRNA)
 CONFIGURE_ARGS+=	--with-glade=yes
 USE_GNOME+=		gnomelibs libglade2
+.if !defined(WITH_GTK)
+IGNORE=			option WITH_GTK is required for option WITH_SMYRNA
+.endif
 .else
 CONFIGURE_ARGS+=	--without-glade
 .endif
