@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.71
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -45,7 +45,8 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--enable-contrib \
 		--enable-dynamic \
 		--with-ijs \
-		--with-jasper
+		--with-jasper \
+		--with-drivers=""
 CPPFLAGS=	-DUPD_SIGNAL=0 -I. \
 		-I${WRKSRC}/jasper/src/libjasper/include \
 		-I${LOCALBASE}/include/libpng \
@@ -81,6 +82,7 @@ CIDFONTDIR=	${DATADIR}/${PORTVERSION}/Resource
 
 .include "Makefile.drivers"
 .include <bsd.port.pre.mk>
+.include "${FILESDIR}/Makefile.drivers_post"
 
 .for D in ${OPTIONS:MGS_*:S/^GS_//}
 .if !defined(WITHOUT_GS_${D})
@@ -89,96 +91,6 @@ PLIST_SUB+=	GS_${D}=""
 PLIST_SUB+=	GS_${D}="@comment "
 .endif
 .endfor
-
-.if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=	cupsimage.2:${PORTSDIR}/print/cups-image
-CONFIGURE_ARGS+=	--enable-cups
-.else
-CONFIGURE_ARGS+=	--disable-cups
-.endif
-
-.if !defined(WITHOUT_GS_dmprt)
-.include "${FILESDIR}/Makefile.dmprt"
-.endif
-
-.if !defined(WITHOUT_GS_epag)
-.include "${FILESDIR}/Makefile.epag"
-.endif
-
-EPAG_BASE=	epag
-EPAG_SRCS=	${EPAG_BASE}-3.09.tar.gz
-EPAG_NAME=	${EPAG_SRCS:S,.tar.gz$,,}
-
-post-extract-epag:
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
-	${LN} -s -f ${EPAG_NAME} ${WRKSRC}/${EPAG_BASE}
-	${INSTALL_DATA} ${FILESDIR}/epag.contrib.mak ${WRKSRC}/base/epag.contrib.mak
-
-post-extract: post-extract-epag
-
-.if !defined(WITHOUT_GS_pcl3)
-.include "${FILESDIR}/Makefile.pcl3"
-.endif
-
-.if defined(WITHOUT_SVGALIB)
-.undef WITH_GS_lvga256
-.undef WITH_GS_vgalib
-.endif
-
-.if defined(WITH_GS_lvga256) \
-	|| defined(WITH_GS_vgalib)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
-.endif
-
-.if defined(WITHOUT_X11)
-. undef WITH_GS_x11
-. undef WITH_GS_x11alpha
-. undef WITH_GS_x11cmyk
-. undef WITH_GS_x11cmyk2
-. undef WITH_GS_x11cmyk4
-. undef WITH_GS_x11cmyk8
-. undef WITH_GS_x11gray2
-. undef WITH_GS_x11gray4
-. undef WITH_GS_x11mono
-. undef WITH_GS_x11rg16x
-. undef WITH_GS_x11rg32x
-.endif
-
-.if defined(WITH_GS_x11) \
-	|| defined(WITH_GS_x11alpha) \
-	|| defined(WITH_GS_x11cmyk) \
-	|| defined(WITH_GS_x11cmyk2) \
-	|| defined(WITH_GS_x11cmyk4) \
-	|| defined(WITH_GS_x11cmyk8) \
-	|| defined(WITH_GS_x11gray2) \
-	|| defined(WITH_GS_x11gray4) \
-	|| defined(WITH_GS_x11mono) \
-	|| defined(WITH_GS_x11rg16x) \
-	|| defined(WITH_GS_x11rg32x)
-USE_XORG=	xt xext
-CONFIGURE_ARGS+=--with-x \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
-CONFLICTS+=	ghostscript8-nox11-[0-9]*
-.else
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
-CONFIGURE_ARGS+=--without-x
-CONFLICTS+=	ghostscript8-[0-9]*
-.endif
-
-.if defined(WITHOUT_ICONV)
-. undef WITH_GS_oprp
-. undef WITH_GS_opvp
-.endif
-
-_ICONV_ARG=	no
-.if defined(WITH_GS_oprp) \
-	|| defined(WITH_GS_opvp)
-USE_ICONV=	yes
-_ICONV_ARG=	gnu
-EXTRALIBS+=	-liconv
-.endif
-CONFIGURE_ARGS+=--with-libiconv=${_ICONV_ARG}
 
 .if !defined(WITH_LETTERSIZE)
 .if defined(A4) || defined(WITH_A4SIZE)
@@ -194,6 +106,13 @@ CONFIGURE_ARGS+=	--enable-fontconfig
 CONFIGURE_ARGS+=	--disable-fontconfig
 .endif
 
+.if !defined(WITHOUT_CUPS)
+LIB_DEPENDS+=	cupsimage.2:${PORTSDIR}/print/cups-image
+CONFIGURE_ARGS+=	--enable-cups
+.else
+CONFIGURE_ARGS+=	--disable-cups
+.endif
+
 .if !defined(WITHOUT_FT_BRIDGE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".so"
@@ -201,13 +120,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include/freetype2
 PLIST_SUB+=	FAPI=""
 .else
 PLIST_SUB+=	FAPI="@comment "
-.endif
-
-.if defined(WITH_GS_cairo)
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
-CONFIGURE_ARGS+=	--enable-cairo
-.else
-CONFIGURE_ARGS+=	--disable-cairo
 .endif
 
 ALL_TARGET=	so
@@ -239,11 +151,18 @@ post-patch:
 			${WRKSRC}/contrib/japanese/dmp_site.ps
 
 pre-build-drivers.mak:
-	@${ECHO_CMD} 'DEVICE_DEVS= \' > ${WRKSRC}/base/drivers.mak
+	@${ECHO_CMD} '# automatically generated' > ${WRKSRC}/base/drivers.mak
+.for N in ${DEVS_LIST}
+	@${ECHO_CMD} 'DEVICE_${N}=' >> ${WRKSRC}/base/drivers.mak
+.endfor
 .for D in ${OPTIONS:MGS_*:S/^GS_//}
+.for N in ${DEVS_LIST}
 .if defined(WITH_GS_${D})
-	@${ECHO_CMD} '$$(DD)${D}.dev \' >> ${WRKSRC}/base/drivers.mak
+.for X in ${DEVICE_${N}:M${D}.dev}
+	@${ECHO_CMD} 'DEVICE_${N}+= $$(DD)${D}.dev'  >> ${WRKSRC}/base/drivers.mak
+.endfor
 .endif
+.endfor
 .endfor
 
 pre-build: pre-build-drivers.mak

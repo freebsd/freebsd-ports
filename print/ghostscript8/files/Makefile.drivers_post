@@ -1,0 +1,208 @@
+# $FreeBSD$
+# pre/postprocessing driver variables
+
+# define defaults which depend on WITHOUT_*/WITH_*
+.for D in X11 SVGALIB ICONV
+.if !defined(WITHOUT_${D})
+OPTIONS_${D}_DEFAULT=	on
+.else
+OPTIONS_${D}_DEFAULT=	off
+.endif
+.endfor
+.for D in SVGALIB CAIRO CUPS
+.if !defined(WITH_${D})
+OPTIONS_${D}_DEFAULT=	off
+.else
+OPTIONS_${D}_DEFAULT=	on
+.endif
+.endfor
+
+# makesum needs lowest common multiple
+.if make(makesum)
+OPTIONS_X11_DEFAULT=	on
+OPTIONS_SVGALIB_DEFAULT=on
+OPTIONS_ICONV_DEFAULT=	on
+OPTIONS_CAIRO_DEFAULT=	on
+OPTIONS_CUPS_DEFAULT=	on
+OPTIONS_GS_DEFAULT_ON=	on
+OPTIONS_GS_DEFAULT_OFF=	on
+.endif
+
+# dmprt specific
+.if !defined(WITHOUT_GS_dmprt)
+.include "${FILESDIR}/Makefile.dmprt"
+.endif
+
+# epag specific
+.if !defined(WITHOUT_GS_epag)
+.include "${FILESDIR}/Makefile.epag"
+.endif
+
+EPAG_BASE=	epag
+EPAG_SRCS=	${EPAG_BASE}-3.09.tar.gz
+EPAG_NAME=	${EPAG_SRCS:S,.tar.gz$,,}
+
+post-extract-epag:
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
+	${LN} -s -f ${EPAG_NAME} ${WRKSRC}/${EPAG_BASE}
+	${INSTALL_DATA} ${FILESDIR}/epag.contrib.mak ${WRKSRC}/base/epag.contrib.mak
+
+post-extract: post-extract-epag
+
+# pcl3 specific
+.if !defined(WITHOUT_GS_pcl3)
+.include "${FILESDIR}/Makefile.pcl3"
+.endif
+
+# vgalib specific
+VGA_DEVS= lvga256 vgalib
+.undef _VGA_DEVS
+
+.for D in ${VGA_DEVS}
+.if defined(WITHOUT_SVGALIB)
+.undef WITH_GS_${D}
+.elif defined(WITH_GS_${D})
+_VGA_DEVS+= ${D}
+.endif
+.endfor
+
+.if defined(_VGA_DEVS)
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+.endif
+
+# x11 specific
+X11_DEVS= x11 x11alpha x11cmyk x11cmyk2 x11cmyk4 x11cmyk8 x11gray2	\
+	x11gray4 x11mono x11rg16x x11rg32x
+.undef _X11_DEVS
+
+.for D in ${X11_DEVS}
+.if defined(WITHOUT_X11)
+. undef WITH_GS_${D}
+.elif defined(WITH_GS_${D})
+_X11_DEVS+= ${D}
+.endif
+.endfor
+
+.if defined(_X11_DEVS)
+USE_XORG=	xt xext
+CONFIGURE_ARGS+=--with-x \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
+CONFLICTS+=	ghostscript8-nox11-[0-9]*
+.else
+CONFIGURE_ARGS+=--without-x
+CONFLICTS+=	ghostscript8-[0-9]*
+.endif
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
+.endif
+
+# iconv specific
+ICONV_DEVS= oprp opvp
+.undef _ICONV_DEVS
+
+.for D in ${ICONV_DEVS}
+.if defined(WITHOUT_ICONV)
+.undef WITH_GS_${D}
+.elif defined(WITH_GS_${D})
+_ICONV_DEVS+= ${D}
+.endif
+.endfor
+
+.if defined(_ICONV_DEVS)
+USE_ICONV=	yes
+CONFIGURE_ARGS+=--with-libiconv=gnu
+EXTRALIBS+=	-liconv
+.else
+CONFIGURE_ARGS+=--with-libiconv=no
+.endif
+
+# cairo specific
+.if defined(WITH_GS_cairo)
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+CONFIGURE_ARGS+=	--enable-cairo
+.else
+CONFIGURE_ARGS+=	--disable-cairo
+.endif
+
+# pre-defined order
+DEVS_LIST= DEVS1 DEVS2 DEVS3 DEVS4 DEVS5 DEVS6 DEVS7 DEVS8 DEVS9	\
+	DEVS10 DEVS11 DEVS12 DEVS13 DEVS14 DEVS15 DEVS16 DEVS17 DEVS18	\
+	DEVS19 DEVS20 DEVS21
+
+DEVICE_DEVS1= bmpmono.dev bmpgray.dev bmpsep1.dev bmpsep8.dev	\
+	bmp16.dev bmp256.dev bmp16m.dev bmp32b.dev stcolor.dev
+DEVICE_DEVS2= epson.dev eps9high.dev eps9mid.dev epsonc.dev ibmpro.dev
+DEVICE_DEVS3= deskjet.dev djet500.dev laserjet.dev ljetplus.dev	\
+	ljet2p.dev ljet3.dev ljet3d.dev ljet4.dev ljet4d.dev	\
+	lj5mono.dev lj5gray.dev cups.dev
+DEVICE_DEVS4= cdeskjet.dev cdjcolor.dev cdjmono.dev cdj550.dev pj.dev	\
+	pjxl.dev pjxl300.dev ijs.dev
+DEVICE_DEVS5= uniprint.dev omni.dev
+DEVICE_DEVS6= bj10e.dev bj200.dev bjc600.dev bjc800.dev png48.dev	\
+	png16m.dev pnggray.dev pngmono.dev png256.dev png16.dev		\
+	pngalpha.dev
+DEVICE_DEVS7= faxg3.dev faxg32d.dev faxg4.dev
+DEVICE_DEVS8= pcxmono.dev pcxgray.dev pcx16.dev pcx256.dev pcx24b.dev	\
+	pcxcmyk.dev svgwrite.dev
+DEVICE_DEVS9= pbm.dev pbmraw.dev pgm.dev pgmraw.dev pgnm.dev		\
+	pgnmraw.dev pnm.dev pnmraw.dev ppm.dev ppmraw.dev pkm.dev	\
+	pkmraw.dev pksm.dev pksmraw.dev
+DEVICE_DEVS10= tiffcrle.dev tiffg3.dev tiffg32d.dev tiffg4.dev	\
+	tifflzw.dev tiffpack.dev
+DEVICE_DEVS11= tiff12nc.dev tiff24nc.dev tiff48nc tiffgray.dev	\
+	tiff32nc.dev tiff64nc.dev tiffsep.dev tiffsep1.dev
+DEVICE_DEVS12= psmono.dev psgray.dev psrgb.dev bit.dev bitrgb.dev	\
+	bitcmyk.dev
+DEVICE_DEVS13=
+DEVICE_DEVS14= jpeg.dev jpeggray.dev jpegcmyk.dev
+DEVICE_DEVS15= pdfwrite.dev pswrite.dev ps2write.dev epswrite.dev	\
+	txtwrite.dev pxlmono.dev pxlcolor.dev
+DEVICE_DEVS16= bbox.dev
+DEVICE_DEVS17=
+DEVICE_DEVS18=
+DEVICE_DEVS20= cljet5.dev cljet5c.dev
+DEVICE_DEVS21= spotcmyk.dev devicen.dev xcf.dev psdcmyk.dev psdrgb.dev	\
+	pamcmyk32.dev
+
+# DEVS19 is for this port specific
+DEVICE_DEVS19= alc1900.dev alc2000.dev alc4000.dev alc4100.dev		\
+	alc8500.dev alc8600.dev ap3250.dev appledmp.dev atx23.dev	\
+	atx24.dev atx38.dev bj10v.dev bj10vh.dev bjc880j.dev		\
+	bjccmyk.dev bjccolor.dev bjcgray.dev bjcmono.dev cairo.dev	\
+	ccr.dev cdj1600.dev cdj500.dev cdj670.dev cdj850.dev		\
+	cdj880.dev cdj890.dev cdj970.dev cdnj500.dev cfax.dev		\
+	cgm24.dev cgm8.dev cgmmono.dev chp2200.dev cif.dev		\
+	cljet5pr.dev coslw2p.dev coslwxl.dev cp50.dev declj250.dev	\
+	dfaxhigh.dev dfaxlow.dev display.dev dj505j.dev djet500c.dev	\
+	dl2100.dev dmprt.dev dnj650c.dev epag.dev epl2050.dev		\
+	epl2050p.dev epl2120.dev epl2500.dev epl2750.dev epl5800.dev	\
+	epl5900.dev epl6100.dev eplcolor.dev eplmono.dev escpage.dev	\
+	fmlbp.dev fmpr.dev fs600.dev gdi.dev hl1240.dev hl1250.dev	\
+	hl7x0.dev imagen.dev imdi.dev inferno.dev iwhi.dev iwlo.dev	\
+	iwlq.dev jetp3852.dev jj100.dev jpegcmyk.dev la50.dev la70.dev	\
+	la75.dev la75plus.dev lbp310.dev lbp320.dev lbp8.dev		\
+	lex2050.dev lex3200.dev lex5700.dev lex7000.dev lips2p.dev	\
+	lips3.dev lips4.dev lips4v.dev lj250.dev lj4dith.dev		\
+	lj4dithp.dev ljet4pjl.dev ln03.dev lp1800.dev lp1900.dev	\
+	lp2000.dev lp2200.dev lp2400.dev lp2500.dev lp2563.dev		\
+	lp3000c.dev lp7500.dev lp7700.dev lp7900.dev lp8000.dev		\
+	lp8000c.dev lp8100.dev lp8200c.dev lp8300c.dev lp8300f.dev	\
+	lp8400f.dev lp8500c.dev lp8600.dev lp8600f.dev lp8700.dev	\
+	lp8800c.dev lp8900.dev lp9000b.dev lp9000c.dev lp9100.dev	\
+	lp9300.dev lp9400.dev lp9500c.dev lp9600.dev lp9600s.dev	\
+	lp9800c.dev lq850.dev lvga256.dev lx5000.dev lxm3200.dev	\
+	lxm5700m.dev m8510.dev mag16.dev mag256.dev md1xMono.dev	\
+	md2k.dev md50Eco.dev md50Mono.dev md5k.dev mgr4.dev mgr8.dev	\
+	mgrgray2.dev mgrgray4.dev mgrgray8.dev mgrmono.dev miff24.dev	\
+	mj500c.dev mj6000c.dev mj700v2c.dev mj8000c.dev ml600.dev	\
+	necp6.dev npdl.dev oce9050.dev oki182.dev oki4w.dev okiibm.dev	\
+	oprp.dev opvp.dev paintjet.dev pam.dev pamcmyk32.dev pcl3.dev	\
+	perm.dev photoex.dev picty180.dev pjetxl.dev plan9bm.dev	\
+	pr1000.dev pr1000_4.dev pr150.dev pr201.dev r4081.dev rpdl.dev	\
+	sgirgb.dev sj48.dev st800.dev sunhmono.dev t4693d2.dev		\
+	t4693d4.dev t4693d8.dev tek4696.dev tiff48nc tiff64nc.dev	\
+	tiffsep1.dev txtwrite.dev vgalib.dev wtscmyk.dev wtsimdi.dev	\
+	x11.dev x11alpha.dev x11cmyk.dev x11cmyk2.dev x11cmyk4.dev	\
+	x11cmyk8.dev x11gray2.dev x11gray4.dev x11mono.dev		\
+	x11rg16x.dev x11rg32x.dev xcfcmyk.dev xes.dev
