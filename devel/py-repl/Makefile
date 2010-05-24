@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyrepl-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gcooper@FreeBSD.org
 COMMENT=	Replacement for readline and interactive environment for Python
 
 USE_PYTHON=	yes
