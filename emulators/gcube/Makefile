@@ -7,7 +7,7 @@
 
 PORTNAME=	gcube
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.liquidx.org/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -20,7 +20,6 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 WRKSRC=		${WRKDIR}/${PORTVERSION}
 USE_GL=		yes
 USE_SDL=	sdl
-USE_GCC=	3.4
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
