@@ -7,13 +7,12 @@
 
 PORTNAME=	ftasv
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://fabletech.com/${PORTNAME}-download/
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Is a commandline scoreboard viewer for the Apache server
-
-BUILD_DEPENDS=	${LOCALBASE}/bin/apr-1-config:${PORTSDIR}/devel/apr1
 
 GNU_CONFIGURE=	yes
 USE_APACHE=	2.0+
