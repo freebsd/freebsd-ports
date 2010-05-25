@@ -76,12 +76,20 @@
 %%WWWDIR%%/plugins/mediabox/NonverBlaster.swf
 %%WWWDIR%%/plugins/mediabox/css/mediabox.css
 %%WWWDIR%%/plugins/mediabox/css/mediabox_src.css
+%%WWWDIR%%/plugins/mediabox/css/mediabox_white.css
+%%WWWDIR%%/plugins/mediabox/css/mediabox_white_src.css
 %%WWWDIR%%/plugins/mediabox/images/50.gif
 %%WWWDIR%%/plugins/mediabox/images/80.png
 %%WWWDIR%%/plugins/mediabox/images/BlackClose.gif
 %%WWWDIR%%/plugins/mediabox/images/BlackLoading.gif
 %%WWWDIR%%/plugins/mediabox/images/BlackNext.gif
 %%WWWDIR%%/plugins/mediabox/images/BlackPrevious.gif
+%%WWWDIR%%/plugins/mediabox/images/CustomBlackClose.gif
+%%WWWDIR%%/plugins/mediabox/images/CustomBlackNext.gif
+%%WWWDIR%%/plugins/mediabox/images/CustomBlackPrevious.gif
+%%WWWDIR%%/plugins/mediabox/images/CustomWhiteClose.gif
+%%WWWDIR%%/plugins/mediabox/images/CustomWhiteNext.gif
+%%WWWDIR%%/plugins/mediabox/images/CustomWhitePrevious.gif
 %%WWWDIR%%/plugins/mediabox/images/MinimalClose.png
 %%WWWDIR%%/plugins/mediabox/images/MinimalLoading.gif
 %%WWWDIR%%/plugins/mediabox/images/MinimalNext.png
@@ -298,7 +306,6 @@
 %%WWWDIR%%/plugins/tcpdf/images/_blank.png
 %%WWWDIR%%/plugins/tcpdf/tcpdf.php
 %%WWWDIR%%/plugins/tcpdf/unicode_data.php
-%%WWWDIR%%/plugins/tinyMCE/blank.htm
 %%WWWDIR%%/plugins/tinyMCE/langs/ar.js
 %%WWWDIR%%/plugins/tinyMCE/langs/bg.js
 %%WWWDIR%%/plugins/tinyMCE/langs/br.js
@@ -393,6 +400,7 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/autosave/editor_plugin.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/autosave/editor_plugin_src.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/autosave/langs/en.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/directionality/editor_plugin.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/directionality/editor_plugin_src.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/editor_plugin.js
@@ -469,6 +477,8 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
 %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/skins/clearlooks2/window.css
 %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/template.htm
+%%WWWDIR%%/plugins/tinyMCE/plugins/legacyoutput/editor_plugin.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/legacyoutput/editor_plugin_src.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/editor_plugin.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/editor_plugin_src.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/js/pastetext.js
@@ -518,9 +528,6 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs/zh_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/pastetext.htm
 %%WWWDIR%%/plugins/tinyMCE/plugins/paste/pasteword.htm
-%%WWWDIR%%/plugins/tinyMCE/plugins/safari/blank.htm
-%%WWWDIR%%/plugins/tinyMCE/plugins/safari/editor_plugin.js
-%%WWWDIR%%/plugins/tinyMCE/plugins/safari/editor_plugin_src.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/save/editor_plugin.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/save/editor_plugin_src.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/css/searchreplace.css
@@ -766,6 +773,8 @@
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/nl_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/pl.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/pl_dlg.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/ru.js
+%%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/langs/ru_dlg.js
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/typobox.html
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/typoimages.php
 %%WWWDIR%%/plugins/tinyMCE/plugins/typolinks/typolib.php
@@ -1923,6 +1932,8 @@
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/js
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/advimage/langs
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/advimage
+@dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/autosave/images
+@dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/autosave/langs
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/autosave
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/directionality
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/emotions/img
@@ -1933,10 +1944,10 @@
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/skins/clearlooks2
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups/skins
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/inlinepopups
+@dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/legacyoutput
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/paste/js
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/paste/langs
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/paste
-@dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/safari
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/save
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/css
 @dirrm %%WWWDIR%%/plugins/tinyMCE/plugins/searchreplace/js
