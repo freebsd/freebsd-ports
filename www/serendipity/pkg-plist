@@ -846,6 +846,7 @@
 %%SERENDIPITY%%/htmlarea/plugins/ImageManager/backend.php
 %%SERENDIPITY%%/htmlarea/plugins/ImageManager/config.inc.php
 %%SERENDIPITY%%/htmlarea/plugins/ImageManager/ddt.php
+%%SERENDIPITY%%/htmlarea/plugins/ImageManager/demo_images/.htaccess
 %%SERENDIPITY%%/htmlarea/plugins/ImageManager/demo_images/bikerpeep.jpg
 %%SERENDIPITY%%/htmlarea/plugins/ImageManager/demo_images/linux/linux.gif
 %%SERENDIPITY%%/htmlarea/plugins/ImageManager/demo_images/wesnoth078.jpg
