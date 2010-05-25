@@ -5,12 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	asterisk-sounds
+PORTNAME=	asterisk
 PORTVERSION=	1.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese net
-MASTER_SITES=	ftp://ftp.voip-info.jp/asterisk/sounds/
-DISTNAME=	${PORTVERSION:S|.|_|}/${PORTNAME:S|sounds|sound|}-jp_${PORTVERSION:S|.||}_beta
+MASTER_SITES=	ftp://ftp.voip-info.jp/asterisk/sounds/${PORTVERSION:S|.|_|}/ \
+		http://ftp.voip-info.jp/asterisk/sounds/${PORTVERSION:S|.|_|}/
+PKGNAMESUFFIX=	-sounds
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX:S|s$||}-jp_${PORTVERSION:S|.||}_beta
 
 MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	Japanese sound files for Asterisk
@@ -18,19 +20,29 @@ COMMENT=	Japanese sound files for Asterisk
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
 NO_BUILD=	yes
-ASTERISKSDIR=	${LOCALBASE}/share/asterisk/sounds
+ASTERISKDIR=	${DATADIR}/${PKGNAMESUFFIX:S|-||}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+
+post-extract:
+	${MV} ${WRKDIR}/jp/README.txt ${WRKDIR}
 
 do-install:
-	@-${MKDIR} ${ASTERISKSDIR}
-	@${CP} -pR ${WRKDIR}/jp ${ASTERISKSDIR}
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -pv ${WRKDIR}/jp/README.txt ${DOCSDIR}
+	@-${MKDIR} ${ASTERISKDIR}
+	@${CP} -pR ${WRKDIR}/jp ${ASTERISKDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/ja
+	@cd ${WRKDIR} && ${INSTALL_DATA} README.txt ${DOCSDIR}/ja
+.endif
 
 post-install:
-	@cd ${WRKDIR} && ${FIND} ./jp -type f -o -type l | ${SED} -e 's,^\.,${ASTERISKSDIR:S|${LOCALBASE}/||},' > ${TMPPLIST}
-	@cd ${WRKDIR} && ${FIND} ./jp -type d -depth  | ${SED} -e 's,^\.,@dirrm ${ASTERISKSDIR:S|${LOCALBASE}/||},' >> ${TMPPLIST}
-	@${ECHO} ${DOCSDIR:S|${LOCALBASE}/||}/README.txt >> ${TMPPLIST}
-	@${ECHO} "@dirrm" ${DOCSDIR:S|${LOCALBASE}/||}  >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
+
+# This target is only meant to be used by the port maintainer.
+x-generate-plist:
+	@${FIND} ${ASTERISKDIR}/jp -type f -o -type l | ${SORT} | ${SED} -e 's,^${PREFIX}/,,' > pkg-plist.new
+	@${FIND} ${ASTERISKDIR}/jp -type d -depth | ${SORT} -r | ${SED} -e 's,^${PREFIX}/,@dirrm ,' >> pkg-plist.new
+	@${ECHO} %%PORTDOCS%%%%DOCSDIR%%/ja/README.txt >> pkg-plist.new
+	@${ECHO} %%PORTDOCS%%@dirrm %%DOCSDIR%%/ja >> pkg-plist.new
+	@${ECHO} %%PORTDOCS%%@dirrm %%DOCSDIR%% >> pkg-plist.new
 
 .include <bsd.port.mk>
