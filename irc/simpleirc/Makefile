@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simpleirc
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	irc
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		${MASTER_SITE_LOCAL}
