@@ -743,6 +743,7 @@
     SUBDIR += xbsql
     SUBDIR += xmbase-grok
     SUBDIR += xmysqladmin
+    SUBDIR += xtrabackup
     SUBDIR += yasql
     SUBDIR += zodb3
 

@@ -1,0 +1,11 @@
+--- storage/innobase/xtrabackup/innobackupex-1.5.1.orig	2010-03-29 02:44:57.000000000 +0300
++++ storage/innobase/xtrabackup/innobackupex-1.5.1	2010-03-29 02:45:07.000000000 +0300
+@@ -81,7 +81,7 @@
+ my $option_no_timestamp = '';
+ my $option_slave_info = '';
+ my $option_no_lock = '';
+-my $option_ibbackup_binary = 'xtrabackup';
++my $option_ibbackup_binary = '/usr/local/bin/xtrabackup';
+ 
+ my $option_defaults_file = '';
+ my $option_incremental = '';
