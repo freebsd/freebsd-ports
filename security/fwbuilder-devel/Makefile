@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fwbuilder
-DISTVERSION=	4.0.0
+DISTVERSION=	4.0.1
 PORTVERSION=	${DISTVERSION}
-BUILD=		2877
+BUILD=		2929
 CATEGORIES=	security
 .if defined(BUILD)
 MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-4.0/build-${BUILD}/
