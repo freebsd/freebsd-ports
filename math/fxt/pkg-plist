@@ -213,6 +213,7 @@ include/fxt/comb/mixedradix-gslex.h
 include/fxt/comb/mixedradix-lex.h
 include/fxt/comb/mixedradix-modular-gray.h
 include/fxt/comb/mixedradix-modular-gray2.h
+include/fxt/comb/mixedradix-sod-lex.h
 include/fxt/comb/mixedradix.h
 include/fxt/comb/mpartition.h
 include/fxt/comb/mset-perm-2invtab.h
@@ -757,6 +758,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-modular-gray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-modular-gray2-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-modular-gray2-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-sod-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mixedradix-sod-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/monotonicgray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/monotonicgray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mpartition-demo.cc
