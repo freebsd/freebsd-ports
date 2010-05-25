@@ -1,5 +1,5 @@
---- /home/shaun/local/work/dumpster/home/shaun/local/ports/databases/xtrabackup/work/xtrabackup-1.1/storage/innobase/xtrabackup/Makefile.orig	2010-05-25 17:07:27.336100000 +0000
-+++ /home/shaun/local/work/dumpster/home/shaun/local/ports/databases/xtrabackup/work/xtrabackup-1.1/storage/innobase/xtrabackup/Makefile	2010-05-25 17:07:35.679748000 +0000
+--- storage/innobase/xtrabackup/Makefile.orig	2010-05-25 17:07:27.336100000 +0000
++++ storage/innobase/xtrabackup/Makefile	2010-05-25 17:07:35.679748000 +0000
 @@ -1,4 +1,4 @@
 -LIBS=	-lpthread
 +LIBS=	-lpthread -lz
