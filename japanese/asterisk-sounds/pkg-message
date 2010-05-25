@@ -1,19 +1,20 @@
-
 =============================================================================
 [FYI]
- There is 2 patch files for Japanese grammar of Asterisk to a ftp server.
 
- - set patch files into  ports/asterisk/files 
-	patch-apps::app_voicemail.c
-	patch-main::say.c
-   see ftp://ftp.voip-info.jp/asterisk/patch/
- 
- - recompile of Asterisk ports
+ To get natural word order in Japanese sentences
+ you can patch to net/asterisk and reinstall it as below.
 
+ For example,
+ 1. Download app_voicemail.c.yymmdd-01.patch and say.c.yymmdd-01.patch from
+    ftp://ftp.voip-info.jp/asterisk/patch/1.4.X/
+    where 1.4.X is corresponding to PORTVERSION in
+    ports/net/asterisk/Makefile.
+ 2. Put them to ports/net/asterisk/files as patch-apps::app_voicemail.c and
+    patch-main::say.c, respectively.
+ 3. Reinstall net/asterisk.
+ 4. Add the following options section to asterisk.conf.
 
- You have to validate next two lines in asterisk.conf. 
-
- [options]
- languageprefix=yes
+     [options]
+     languageprefix=yes
 
 =============================================================================
