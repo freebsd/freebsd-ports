@@ -1,0 +1,18 @@
+Smooth Streaming Module for Apache. Encode your content once 
+and playback on Silverlight, iPhone and Flash 10.1.
+
+Advantages & features:
+
+  * It's HTTP-based, so no problems with firewalls.
+  * It's cache/proxy friendly, so you can use generic HTTP caches/proxies.
+  * It's cheap, there is no need for additional media streaming 
+    services offered by hosting providers.
+  * The end user will appreciate the fast starting and seeking 
+    anywhere in the video.
+  * The video dynamically adapts to network conditions.
+  * It uses the industry standard MPEG4 file format.
+  * Use your favourite open source software (X264) to encode your videos.
+  * Encoded content is compatible with both Smooth Streaming for Silverlight
+    as well as for HTTP Streaming to the iPhone.
+
+WWW: http://smoothstreaming.code-shop.com/trac/wiki/Mod-Smooth-Streaming-Apache

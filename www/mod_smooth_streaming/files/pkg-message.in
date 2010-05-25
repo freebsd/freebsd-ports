@@ -1,0 +1,11 @@
+***************************************************************
+
+To enable, add these lines to your main web server config:
+
+  LoadModule smooth_streaming_module %%APACHEMODDIR%%/mod_smooth_streaming.so
+  AddHandler smooth-streaming.extensions .ism
+
+For more information on how to configure, see
+http://smoothstreaming.code-shop.com/trac/wiki/Mod-Smooth-Streaming-Apache
+
+***************************************************************
