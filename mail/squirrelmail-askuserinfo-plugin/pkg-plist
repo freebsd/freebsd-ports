@@ -1,0 +1,7 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
+%%SQUIRRELDIR%%/plugins/askuserinfo/README
+%%SQUIRRELDIR%%/plugins/askuserinfo/index.php
+%%SQUIRRELDIR%%/plugins/askuserinfo/setup.php
+%%SQUIRRELDIR%%/plugins/askuserinfo/version
+@dirrm %%SQUIRRELDIR%%/plugins/askuserinfo
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
