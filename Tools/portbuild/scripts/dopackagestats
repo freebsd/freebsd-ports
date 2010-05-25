@@ -7,10 +7,15 @@
 
 # alpha is obsolete
 SUPPORTED_ARCHS="amd64 i386 ia64 powerpc sparc64"
+# 4 and 5 are obsolete
+SUPPORTED_BUILDS_PATTERN="^[67891]"
 ROOT_DIRECTORY=/var/portbuild
 
 OUTFILE=`basename $0 | sed -e "s/^do//"`".html"
 TMPFILE=.${OUTFILE}
+
+# TODO change this to 'journal'
+journalname="make"
 
 # stylesheet seems like overkill for something this simple
 TABLEBGCOLOR="#F0F0F0"
@@ -56,10 +61,9 @@ write_row () {
     arch=$1
     build=$2
     directory=${ROOT_DIRECTORY}/${arch}/${build}/builds/latest
-    # XXX MCL I hate this name
-    journal=${directory}/make
+    journal=${directory}/${journalname}
 
-    branch=`echo $build | sed -e "s/-exp//"`
+    branch=`echo $build | awk -F '-' '{print $1}'`
     if [ "$branch" = "4" ]; then
       indexfile=$directory/ports/INDEX
     else
@@ -331,8 +335,7 @@ write_header
 # display all the mainstream builds first
 for arch in ${SUPPORTED_ARCHS}; do
 
-  # drop 4 and 5 as obsolete
-  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[67891]$' | sort`
+  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep "${SUPPORTED_BUILDS_PATTERN}$" | sort`
   if [ ! -z "$builds" ]; then
     write_table_begin
 
@@ -348,7 +351,7 @@ done
 #   would break up the logical flow of the above)
 for arch in ${SUPPORTED_ARCHS}; do
 
-  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep '^[67891]-exp$' | sort`
+  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep "${SUPPORTED_BUILDS_PATTERN}-" | sort`
   if [ ! -z "$builds" ]; then
     write_table_begin
 
