@@ -66,6 +66,7 @@ ads-java-novm-*		databases/adstudio	Only free for qualified Open Source
 						usages
 annelid-*		games/annelid		Redistribution is limited
 apache_*ssl_*		www/apache13-ssl	Crypto; export-controlled
+apache_mod_smooth_streaming-*  www/mod_smooth_streaming Not for commerical use
 apache2/mod_traf_thief-*.c www/mod_traf_thief	No license
 apple_pascal_0.dsk.gz	emulators/p-interp	Redistribution rights for Apple
 						Pascal disk images are unclear
