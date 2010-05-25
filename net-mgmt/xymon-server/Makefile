@@ -67,6 +67,12 @@ MAKE_ENV+=	WITH_LDAP=1
 USE_OPENLDAP=	yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 # Configure script is interactive
 do-configure:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
@@ -86,4 +92,4 @@ post-install:
 		${WWWDIR}/server/etc/${i}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

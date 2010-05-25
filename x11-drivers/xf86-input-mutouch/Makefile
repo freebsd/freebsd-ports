@@ -16,4 +16,10 @@ COMMENT=	X.Org mutouch input driver
 XORG_CAT=	driver
 MAN4=		mutouch.4x
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
+.include <bsd.port.post.mk>
