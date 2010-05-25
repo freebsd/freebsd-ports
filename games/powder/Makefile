@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powder
-PORTVERSION=	113
+PORTVERSION=	114
 CATEGORIES=	games
 MASTER_SITES=	http://www.zincland.com/powder/release/ \
 		http://mirror.amdmi3.ru/distfiles/
