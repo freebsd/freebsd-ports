@@ -95,6 +95,10 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/libxml2 \
 			-I${LOCALBASE}/include/glib-2.0"
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.X
+.endif
+
 post-extract:
 	@${RM} ${WRKSRC}/configureextra/FREEBSD
 	@${CP} ${_DISTDIR}/etter.finger.os.gz ${WRKSRC}
