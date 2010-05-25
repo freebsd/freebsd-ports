@@ -106,13 +106,6 @@ CONFIGURE_ARGS+=	--enable-fontconfig
 CONFIGURE_ARGS+=	--disable-fontconfig
 .endif
 
-.if !defined(WITHOUT_CUPS)
-LIB_DEPENDS+=	cupsimage.2:${PORTSDIR}/print/cups-image
-CONFIGURE_ARGS+=	--enable-cups
-.else
-CONFIGURE_ARGS+=	--disable-cups
-.endif
-
 .if !defined(WITHOUT_FT_BRIDGE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".so"
