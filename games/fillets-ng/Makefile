@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fillets-ng
-PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTVERSION=	0.9.3
 CATEGORIES=	games
 MASTER_SITES=	SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${PORTVERSION}:source \
 		SF/fillets/Fish%20Fillets%20-%20Next%20Generation/${DATAVERSION}:data
@@ -26,7 +25,7 @@ CONFIGURE_ARGS=	--datadir="${DATADIR}" --with-lua="${LOCALBASE}"
 MAKE_JOBS_SAFE=	yes
 PORTDOCS=	*
 
-DATAVERSION=	0.9.0
+DATAVERSION=	0.9.2
 
 ONLY_FOR_ARCHS=	i386 amd64
 
