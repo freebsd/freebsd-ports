@@ -11,6 +11,7 @@ PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/mod_line_edit/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTFILES=	mod_line_edit.c
 
 MAINTAINER=	apache@FreeBSD.org

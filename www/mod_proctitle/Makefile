@@ -9,6 +9,7 @@ PORTNAME=	mod_proctitle
 PORTVERSION=	0.3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Set httpd process titles to reflect currently processed request

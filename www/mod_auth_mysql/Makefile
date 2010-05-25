@@ -8,6 +8,7 @@ PORTNAME=	mod_auth_mysql
 PORTVERSION=	3.2
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-auth-mysql/mod-auth-mysql/mod-auth-mysql-1.0
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication

@@ -11,6 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.parisc-linux.org/~varenet/musicindex/ \
 		http://depot.fsck.ch/mirror/distfiles/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that allows downloading and streaming of audio

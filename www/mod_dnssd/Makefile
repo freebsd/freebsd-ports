@@ -10,6 +10,7 @@ PORTVERSION=	0.6
 PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://0pointer.de/lennart/projects/mod_dnssd/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An Apache module that provides DNS-SD capabilities

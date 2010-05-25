@@ -10,6 +10,7 @@ PORTVERSION=	0.12.0
 PORTREVISION=	1
 CATEGORIES=	www tcl
 MASTER_SITES=	http://tcl.apache.org/mod_dtcl/download/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server

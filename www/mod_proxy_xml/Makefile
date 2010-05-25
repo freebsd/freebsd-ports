@@ -10,6 +10,7 @@ PORTNAME=	mod_proxy_xml
 PORTVERSION=	0.1
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/svn/apache/filters/xmlns/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTFILES=	xmlns.h mod_proxy_xml.c
 
 MAINTAINER=	apache@FreeBSD.org

@@ -10,6 +10,7 @@ PORTVERSION=	0.40
 PORTREVISION=	1
 CATEGORIES=	www audio
 MASTER_SITES=	http://download.tangent.org/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to allow MP3 streaming

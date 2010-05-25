@@ -10,6 +10,7 @@ PORTVERSION=	0.04
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dominia.org/djao/limit/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Limit the number of simultaneous connections from a single IP address

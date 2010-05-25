@@ -9,6 +9,7 @@ PORTVERSION=	0.9.12
 PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/${PORTNAME}/dist/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PostgreSQL databases for user authentication

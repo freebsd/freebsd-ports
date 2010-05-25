@@ -9,6 +9,7 @@ PORTNAME=	mod_transform
 PORTVERSION=	0.6.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.outoforder.cc/downloads/mod_transform/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	stan@stormier.net
 COMMENT=	An XSLT and XIncludes Filter module for Apache 2.0

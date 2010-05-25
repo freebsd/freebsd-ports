@@ -9,6 +9,7 @@ PORTNAME=	mod_auth_pubtkt
 PORTVERSION=	0.5
 CATEGORIES=	www
 MASTER_SITES=	https://neon1.net/mod_auth_pubtkt/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTNAME=	mod_auth_pubtkt-${PORTVERSION}
 
 MAINTAINER=	mk@neon1.net
