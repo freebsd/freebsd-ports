@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Scope-Guard
-PORTVERSION=	0.03
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=  	../by-authors/id/C/CH/CHOCOLATE
+MASTER_SITE_SUBDIR=	../by-authors/id/C/CH/CHOCOLATE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	cmanley@xs4all.nl
+MAINTAINER=	v.a.popov@gmail.com
 COMMENT=	Lexically scoped resource management
 
 PERL_CONFIGURE=	yes

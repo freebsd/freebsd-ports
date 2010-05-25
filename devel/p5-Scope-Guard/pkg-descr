@@ -5,6 +5,6 @@ subroutine that is guaranteed to be called even if the thread of execution is
 aborted prematurely. This effectively allows lexically-scoped "promises" to be
 made that are automatically honoured by perl's garbage collector.
 
-For more info, see: http://www.cuj.com/documents/s=8000/cujcexp1812alexandr/
+For more info, see: http://www.drdobbs.com/cpp/184403758
 
 WWW: http://search.cpan.org/dist/Scope-Guard/
