@@ -29,6 +29,8 @@ SUB_FILES=	wings.sh
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
+PORTSCOUT=	limitw:1,even
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(GCC)|${CC} -I${LOCALBASE}/include -L${LOCALBASE}/lib|g' \
 		${WRKSRC}/plugins_src/accel/Makefile
