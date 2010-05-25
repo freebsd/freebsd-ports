@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	MooseX-NonMoose
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy subclassing of non-Moose classes
 
 RUN_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
