@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	YABT
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.2
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A General Purpose Braille Translation System
 
 USE_PYTHON=	yes
