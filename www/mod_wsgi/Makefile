@@ -9,9 +9,9 @@ PORTNAME=	mod_wsgi
 PORTVERSION=	2.8
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 		http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python WSGI adapter module for Apache
