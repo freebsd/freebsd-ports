@@ -7,35 +7,26 @@
 #
 
 PORTNAME=	epix
-PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTVERSION=	1.2.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/epix/
-DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates math plots and line figures using easy-to-learn syntax
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		dvips:${PORTSDIR}/print/dvipsk-tetex \
+		latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		latex:${PORTSDIR}/print/teTeX
 
 USE_BZIP2=	yes
-USE_GCC=	3.4
-MAKE_ARGS=	CXX="${CXX}" CFLAGS="${CXXFLAGS} -c" \
-		prefix=${PREFIX} \
-		INSTALL_PROGRAM="${INSTALL_DATA}" \
-		INSTALL_BIN="${INSTALL_SCRIPT}"
-PLIST_SUB=	VERSION="${PORTVERSION}"
+USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS+=--prefix="${PREFIX}" --mandir="${PREFIX}/man" \
+		--infodir="${PREFIX}/info" --with-bash=${LOCALBASE}/bin/bash
 
-MAN1=		epix.1
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/newbash.sh
-	@${REINPLACE_CMD} -e 's|COPYING ||g' ${WRKSRC}/helpfiles.sh
-
-pre-build:
-	@(cd ${WRKSRC} ; ./newbash.sh)
+MAN1=		elaps.1 epix.1 flix.1 laps.1
+INFO=		epix
 
 .include <bsd.port.mk>
