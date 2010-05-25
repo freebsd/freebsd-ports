@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	phplot
-PORTVERSION=	5.0.7
-PORTREVISION=	1
+PORTVERSION=	5.1.1
 CATEGORIES=	graphics www
 MASTER_SITES=	SF:source1 \
 		SF/${PORTNAME}/Manual/20090614:source2
