@@ -7,6 +7,7 @@
 
 PORTNAME=	bip
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://bip.t1r.net/downloads/ \
 		http://distfiles.gentoo.org/distfiles/ \
@@ -16,6 +17,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A simple IRC proxy with SSL support
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 INSTALL_TARGET=	SUBDIR=src install-exec
 
