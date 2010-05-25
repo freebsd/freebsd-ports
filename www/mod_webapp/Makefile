@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_webapp
 PORTVERSION=	4.1.24
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://jakarta.apache.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	builds/jakarta-tomcat-4.0/release/v${TOMCAT_RELEASE}/src
@@ -18,7 +18,7 @@ DIST_SUBDIR=	mod_webapp
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module mounts Tomcat web applications
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/apr1:configure
+LIB_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/apr1:configure
 
 MAKE_JOBS_UNSAFE=	yes
 
