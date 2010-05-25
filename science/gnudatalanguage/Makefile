@@ -92,7 +92,7 @@ CONFIGURE_ARGS+=--with-python=no
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libfftw3.so)
+.if defined(PACKAGE_BUILDING) || exists(${LOCALBASE}/lib/libfftw3.so)
 WITH_FFTW3=	yes
 .endif
 .if defined(WITH_FFTW3)
