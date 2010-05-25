@@ -172,7 +172,7 @@ write_row () {
 
     # column: running flag
     running_flag="N"
-    # the last grep eliminates false positive of i386-6-exp for i386-6;
+    # the last grep eliminates false positive of i386-6-xyz for i386-6;
     # if we are still running FreeBSD in the year 3000, s/2/3/
     running_processes_for_build=`ps axww | \
       grep "pdispatch $arch $build " | \
@@ -335,7 +335,9 @@ write_header
 # display all the mainstream builds first
 for arch in ${SUPPORTED_ARCHS}; do
 
-  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep "${SUPPORTED_BUILDS_PATTERN}$" | sort`
+  builds=`ls ${ROOT_DIRECTORY}/${arch} | \
+    grep "${SUPPORTED_BUILDS_PATTERN}$" | \
+    sort`
   if [ ! -z "$builds" ]; then
     write_table_begin
 
@@ -347,11 +349,13 @@ for arch in ${SUPPORTED_ARCHS}; do
   fi
 done
 
-# then display all -exp builds (probably only of interest to portmgr;
-#   would break up the logical flow of the above)
+# then display all the non-mainstream builds (probably only of interest
+#   to portmgr; would break up the logical flow of the above)
 for arch in ${SUPPORTED_ARCHS}; do
 
-  builds=`ls ${ROOT_DIRECTORY}/${arch} | grep "${SUPPORTED_BUILDS_PATTERN}-" | sort`
+  builds=`ls ${ROOT_DIRECTORY}/${arch} | \
+    grep "${SUPPORTED_BUILDS_PATTERN}[-\.]" | \
+    sort`
   if [ ! -z "$builds" ]; then
     write_table_begin
 
