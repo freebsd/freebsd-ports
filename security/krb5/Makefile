@@ -7,11 +7,14 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.8.1
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
+PATCHFILES=		2010-005-patch.txt
+PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
@@ -38,7 +41,6 @@ OPTIONS=		KRB5_DOC "Build and install krb5 documentation" on \
 			DNS_FOR_REALM "enable DNS lookups of Kerberos realm names" off
 
 .include <bsd.port.pre.mk>
-
 .if defined(WITH_DNS_FOR_REALM)
 CONFIGURE_ARGS+=	--enable-dns-for-realm
 .endif

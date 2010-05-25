@@ -1,3 +1,6 @@
 MD5 (krb5-1.8.1-signed.tar) = e29a78b108c4687f7e7937110d1d0415
 SHA256 (krb5-1.8.1-signed.tar) = 470c486ec5580d12f2a72cde059e3bdfa567cf96215b724fec5a3b6cfa7eebb9
 SIZE (krb5-1.8.1-signed.tar) = 11632640
+MD5 (2010-005-patch.txt) = 4fc65f831afbd9fe6bb428774251e2b2
+SHA256 (2010-005-patch.txt) = 02d778775bf3f7576f5cf7a9a1a3d14ccf1654b71c77a6a4e00a7bd5b775b221
+SIZE (2010-005-patch.txt) = 670
