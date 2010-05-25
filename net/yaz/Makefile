@@ -10,7 +10,7 @@ PORTVERSION=	3.0.47
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Z39.50/SR client and API library
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
