@@ -21,6 +21,12 @@ USE_GNOME=	vte
 
 MAN1=		evilvte.1 showvte.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 pre-everything::
 .if !defined(EVILVTE_CONF)
 	@${ECHO_MSG}
@@ -43,4 +49,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/misc/evilvte.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/misc/showvte.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
