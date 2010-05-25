@@ -18,12 +18,17 @@
 %%PYTHON_INCLUDEDIR%%/pygsl/solver.h
 %%PYTHON_INCLUDEDIR%%/pygsl/swig.h
 %%PYTHON_INCLUDEDIR%%/pygsl/utils.h
+%%PYTHON_SITELIBDIR%%/pygsl/_callback_function_test.so
+%%PYTHON_SITELIBDIR%%/pygsl/_sum.so
 %%PYTHON_SITELIBDIR%%/pygsl/_version.py
 %%PYTHON_SITELIBDIR%%/pygsl/_version.pyc
 %%PYTHON_SITELIBDIR%%/pygsl/_version.pyo
 %%PYTHON_SITELIBDIR%%/pygsl/bspline.py
 %%PYTHON_SITELIBDIR%%/pygsl/bspline.pyc
 %%PYTHON_SITELIBDIR%%/pygsl/bspline.pyo
+%%PYTHON_SITELIBDIR%%/pygsl/callback_function_test.py
+%%PYTHON_SITELIBDIR%%/pygsl/callback_function_test.pyc
+%%PYTHON_SITELIBDIR%%/pygsl/callback_function_test.pyo
 %%PYTHON_SITELIBDIR%%/pygsl/errno.so
 %%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/__init__.py
 %%PYTHON_SITELIBDIR%%/pygsl/gsl_dist/__init__.pyc
