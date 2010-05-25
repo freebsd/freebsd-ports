@@ -201,10 +201,15 @@ BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/PyQt4/QtXml.so:${PORTSDIR}/textproc/py-qt4
 
 #Dependency from metis & scotsch
 .if ${SAL_MODULE} == "med"
-BUILD_DEPENDS+=		kmetis:${PORTSDIR}/math/metis \
-    			gmap:${PORTSDIR}/cad/scotch
-RUN_DEPENDS+=		kmetis:${PORTSDIR}/math/metis \
-    			gmap:${PORTSDIR}/cad/scotch
+. if exists(${LOCALBASE}/bin/graphchk)
+BUILD_DEPENDS+=		kmetis:${PORTSDIR}/math/metis
+RUN_DEPENDS+=		kmetis:${PORTSDIR}/math/metis
+. else
+BUILD_DEPENDS+=		kmetis:${PORTSDIR}/math/metis-edf
+RUN_DEPENDS+=		kmetis:${PORTSDIR}/math/metis-edf
+.endif
+BUILD_DEPENDS+=		gmap:${PORTSDIR}/cad/scotch
+RUN_DEPENDS+=		gmap:${PORTSDIR}/cad/scotch
 CONFIGURE_ENV+=		METISDIR=${LOCALBASE} SCOTCHDIR=${LOCALBASE}
 CPPFLAGS+=		-I${LOCALBASE}/include/metis
 .endif
