@@ -6,6 +6,7 @@ bin/fwb_pf
 bin/fwb_pix
 bin/fwbedit
 bin/fwbuilder
+bin/fwb_procurve_acl
 bin/transfer_secuwall
 share/applications/fwbuilder.desktop
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/carp_interface
@@ -32,6 +33,7 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/tools
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/installer_commands_post_config
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/installer_commands_pre_config
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/safety_net_acl
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/script_skeleton
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ios/top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ipcop/automatic_rules
@@ -109,6 +111,12 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/vlan_parent_interface_6
 share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/vlan_parent_interface_7
 share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/vlan_subinterface_6
 share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os/vlan_subinterface_7
+share/fwbuilder-%%BUILD_VERSION%%/configlets/procurve/installer_commands_post_config
+share/fwbuilder-%%BUILD_VERSION%%/configlets/procurve/installer_commands_pre_config
+share/fwbuilder-%%BUILD_VERSION%%/configlets/procurve/installer_commands_reg_user
+share/fwbuilder-%%BUILD_VERSION%%/configlets/procurve/safety_net_acl
+share/fwbuilder-%%BUILD_VERSION%%/configlets/procurve/script_skeleton
+share/fwbuilder-%%BUILD_VERSION%%/configlets/procurve/top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/secuwall/installer_commands_reg_user
 share/fwbuilder-%%BUILD_VERSION%%/configlets/secuwall/installer_commands_root
 share/fwbuilder-%%BUILD_VERSION%%/configlets/secuwall/management_rules
@@ -176,6 +184,7 @@ share/fwbuilder-%%BUILD_VERSION%%/os/oneshield.xml
 share/fwbuilder-%%BUILD_VERSION%%/os/openbsd.xml
 share/fwbuilder-%%BUILD_VERSION%%/os/openwrt.xml
 share/fwbuilder-%%BUILD_VERSION%%/os/pix_os.xml
+share/fwbuilder-%%BUILD_VERSION%%/os/procurve.xml
 share/fwbuilder-%%BUILD_VERSION%%/os/secuwall.xml
 share/fwbuilder-%%BUILD_VERSION%%/os/solaris.xml
 share/fwbuilder-%%BUILD_VERSION%%/os/sveasoft.xml
@@ -187,6 +196,7 @@ share/fwbuilder-%%BUILD_VERSION%%/platform/ipfw.xml
 share/fwbuilder-%%BUILD_VERSION%%/platform/iptables.xml
 share/fwbuilder-%%BUILD_VERSION%%/platform/pf.xml
 share/fwbuilder-%%BUILD_VERSION%%/platform/pix.xml
+share/fwbuilder-%%BUILD_VERSION%%/platform/procurve_acl.xml
 share/fwbuilder-%%BUILD_VERSION%%/platform/unknown.xml
 share/fwbuilder-%%BUILD_VERSION%%/resources.xml
 share/fwbuilder-%%BUILD_VERSION%%/templates.xml
@@ -198,6 +208,7 @@ share/fwbuilder-%%BUILD_VERSION%%/templates.xml
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/sveasoft
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/solaris
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/secuwall
+@dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/procurve
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/pix_os
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/pf
 @dirrm share/fwbuilder-%%BUILD_VERSION%%/configlets/openwrt
