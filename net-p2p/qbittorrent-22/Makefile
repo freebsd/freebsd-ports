@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=	qbittorrent-2.1.*
+CONFLICTS=	qbittorrent*-2.3.*
 
 OPTIONS=	NOTIFY "Enable libnotify support" on \
 		LT_15 "Use 0.15 version of libtorrent-rasterbar" on
