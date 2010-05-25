@@ -137,6 +137,7 @@ libexec/spacejunk
 %%DATADIR%%/data/art/viewpointbutton.png
 %%DATADIR%%/data/art/zoomminusbutton.png
 %%DATADIR%%/data/art/zoomplusbutton.png
+%%DATADIR%%/data/config.txt
 %%DATADIR%%/data/en/levels/level1
 %%DATADIR%%/data/en/levels/level10
 %%DATADIR%%/data/en/levels/level11
