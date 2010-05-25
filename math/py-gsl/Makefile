@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTVERSION=	0.9.5
 CATEGORIES=	math python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/py${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygsl-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python interface to GNU Scientific Library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/include/numpy/arrayobject.h:${PORTSDIR}/math/py-numpy
