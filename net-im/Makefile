@@ -130,6 +130,7 @@
     SUBDIR += pork
     SUBDIR += prosody
     SUBDIR += psi
+    SUBDIR += pwytter
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
     SUBDIR += py-msnp

@@ -1,0 +1,15 @@
+Pwytter is a multi-platform, standalone Twitter client written in Python
+using Tkinter.  It currently features:
+
+  - Switchable timelines: User (own tweets), Friends, Public, Replies,
+    Direct messages, Composite
+  - Clean and compact user interface
+  - Full Unicode support for all languages
+  - Friends and Followers list display
+  - Easy Replies and Direct Messages
+  - In message URL detection
+  - Image and request caching for fast UI response
+  - Automatic and manual refresh
+  - Pwytter update autodetection
+
+WWW: http://www.pwytter.com/

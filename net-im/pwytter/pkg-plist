@@ -1,0 +1,127 @@
+bin/pwytter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/pwytter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/de_DE/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/en_US/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/es_ES/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/fr_FR/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/it_IT/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/ja_JP/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/pl_PL/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/pt_BR/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/ro_RO/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/ru_RU/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/sr_RS/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/sv_SE/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/zh_CN/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/zh_TW/LC_MESSAGES/pwytter.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwCache.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwCache.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwCache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwParam.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwParam.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwParam.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwSplashScreen.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwSplashScreen.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwSplashScreen.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwTheme.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwTheme.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwTheme.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwTools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwTools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwTools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwytter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwytter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pwytter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/text/CHANGES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/text/COPYING.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/text/LICENSE.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tkBalloon.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tkBalloon.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tkBalloon.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twclient/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twclient/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twclient/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twclient/twitter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twclient/twitter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twclient/twitter.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/twclient
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/text
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/sv_SE
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/sr_RS/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/sr_RS
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/ru_RU
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/ro_RO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/pl_PL
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/ja_JP
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/it_IT/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/it_IT
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/fr_FR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/es_ES/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/es_ES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/en_US/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/en_US
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/de_DE/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale/de_DE
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%DATADIR%%/media/arrow_down.png
+%%DATADIR%%/media/arrow_nb.png
+%%DATADIR%%/media/arrow_refresh.png
+%%DATADIR%%/media/arrow_right.png
+%%DATADIR%%/media/arrow_undo.png
+%%DATADIR%%/media/asterisk_nb.png
+%%DATADIR%%/media/asterisk_yellow.png
+%%DATADIR%%/media/award_star_gold_2.png
+%%DATADIR%%/media/br.gif
+%%DATADIR%%/media/cn.gif
+%%DATADIR%%/media/cog.png
+%%DATADIR%%/media/comment.png
+%%DATADIR%%/media/cross.png
+%%DATADIR%%/media/de.gif
+%%DATADIR%%/media/es.gif
+%%DATADIR%%/media/fr.gif
+%%DATADIR%%/media/home.png
+%%DATADIR%%/media/it.gif
+%%DATADIR%%/media/jp.gif
+%%DATADIR%%/media/loading.png
+%%DATADIR%%/media/page_go.png
+%%DATADIR%%/media/pl.gif
+%%DATADIR%%/media/pwytter.icns
+%%DATADIR%%/media/pwytter.ico
+%%DATADIR%%/media/pwytter.png
+%%DATADIR%%/media/pwytter.svg
+%%DATADIR%%/media/ro.gif
+%%DATADIR%%/media/rs.gif
+%%DATADIR%%/media/ru.gif
+%%DATADIR%%/media/se.gif
+%%DATADIR%%/media/side_contract.png
+%%DATADIR%%/media/side_expand.png
+%%DATADIR%%/media/tw.gif
+%%DATADIR%%/media/us.gif
+%%DATADIR%%/media/world_go.png
+%%DATADIR%%/media/world_nb.png
+%%DATADIR%%/theme/black.pwt
+%%DATADIR%%/theme/blue.pwt
+%%DATADIR%%/theme/white.pwt
+@dirrm %%DATADIR%%/theme
+@dirrm %%DATADIR%%/media
+@dirrm %%DATADIR%%
