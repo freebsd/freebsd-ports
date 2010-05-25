@@ -17,6 +17,8 @@ COMMENT=	Mono based web server
 BUILD_DEPENDS=	${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	${LOCALBASE}/bin/mono:${PORTSDIR}/lang/mono
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_SQLITE=	3
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gnomehack
