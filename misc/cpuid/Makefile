@@ -8,7 +8,7 @@
 
 PORTNAME=	cpuid
 PORTVERSION=	3.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ka9q.net/code/cpuid/
 

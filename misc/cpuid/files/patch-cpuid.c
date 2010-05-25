@@ -1,15 +1,16 @@
---- cpuid.c.orig	2002-01-02 15:14:51.000000000 +0900
-+++ cpuid.c	2009-08-26 14:08:07.000000000 +0900
-@@ -3,14 +3,17 @@
+--- cpuid.c
++++ cpuid.c
+@@ -3,34 +3,56 @@
   * Updated 24 Apr 2001 to latest Intel CPUID spec
   * Updated 22 Dec 2001 to decode Intel flag 28, hyper threading
   * Updated 1 Jan 2002 to cover AMD Duron, Athlon
 + * Updated 24 Aug 2009 to decode additional Intel flags
++ * Updated 23 May 2010 to decode additional Intel flags
   * May be used under the terms of the GNU Public License (GPL)
  
   * Reference documents:
 - * ftp://download.intel.com/design/pro/applnots/24161809.pdf  (AP-485)
-+ * http://www.intel.com/Assets/PDF/appnote/241618.pdf (AP-485 August 2009)
++ * http://www.intel.com/Assets/PDF/appnote/241618.pdf (AN-485 August 2009)
   * http://developer.intel.com/design/Pentium4/manuals/24547103.pdf
   * http://developer.intel.com/design/pentiumiii/applnots/24512501.pdf (AP-909)
   * http://www.amd.com/us-en/assets/content_type/white_papers_and_tech_docs/20734.pdf
@@ -20,7 +21,10 @@
   */
  
  #include <stdio.h>
-@@ -20,17 +23,34 @@
++#include <stdlib.h>
+ 
+ void decode_intel_tlb(int);
+ void decode_cyrix_tlb(int);
  void dointel(int),doamd(int),docyrix(int);
  void printregs(int eax,int ebx,int ecx,int edx);
  
@@ -61,7 +65,7 @@
  };
  
  #define cpuid(in,a,b,c,d)\
-@@ -89,7 +109,7 @@
+@@ -89,7 +110,7 @@
    exit(0);
  }
  
@@ -70,10 +74,14 @@
    "FPU    Floating Point Unit",
    "VME    Virtual 8086 Mode Enhancements",
    "DE     Debugging Extensions",
-@@ -124,6 +144,60 @@
-   "31     reserved",
- };
- 
+@@ -121,7 +142,64 @@
+   "HT     Hyper Threading",
+   "TM     Thermal monitor",
+   "30     reserved",
+-  "31     reserved",
++  "31     Pending Break Enable"
++};
++
 +char *Intel_feature_flags2[32] = {
 +  "SSE3     SSE3 extensions",
 +  "PCLMULDQ PCLMULDQ instruction",
@@ -95,15 +103,16 @@
 +  NULL,
 +  "DCA      Direct Cache Access",
 +  "SSE4.1   Streaming SIMD Extension 4.1",
-+  "SSE4.1   Streaming SIMD Extension 4.2",
++  "SSE4.2   Streaming SIMD Extension 4.2",
 +  "x2APIC   Extended xAPIC support",
 +  "MOVBE    MOVBE instruction",
 +  "POPCNT   POPCNT instruction",
 +  NULL,
-+  "AES      AES Instruction",
++  "AESNI    AES Instruction set",
 +  "XSAVE    XSAVE/XSTOR states",
 +  "OSXSAVE  OS-enabled extended state managerment",
-+  NULL, NULL, NULL, NULL
++  "AVX      AVX extensions",
++  NULL, NULL, NULL
 +};
 +
 +char *Intel_ext_feature_flags[32] = {
@@ -114,42 +123,55 @@
 +  NULL, NULL, NULL, NULL,
 +  "XD-bit    Execution Disable bit",
 +  NULL, NULL, NULL,
-+  NULL, NULL, NULL, NULL, NULL,
++  NULL, NULL,
++  "1GBP      1 GByte pages are available",
++  "RDTSCP    RDTSCP and IA32_TSC_AUX are available",
++  NULL,
 +  "EM64T     Intel Extended Memory 64 Technology",
 +  NULL, NULL
 +};
 +
 +char *Intel_ext_feature_flags2[32] = {
-+  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-+  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-+  NULL, NULL, NULL, NULL,
 +  "LAHF      LAHF/SAHF available in IA-32e mode",
-+  NULL, NULL, NULL,
++  NULL, NULL, NULL, NULL, NULL, NULL, NULL,
 +  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
-+};
-+
++  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
++  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+ };
+ 
  /* Intel-specific information */
- void dointel(int maxi){
-   printf("Intel-specific functions:\n");
-@@ -131,12 +205,15 @@
+@@ -131,22 +209,31 @@
    if(maxi >= 1){
      /* Family/model/type etc */
      int clf,apic_id,feature_flags;
+-    int extended_model = -1,extended_family = -1;
+-    unsigned long eax,ebx,edx,unused;
+-    int stepping,model,family,type,reserved,brand,siblings;
 +    int feature_flags2 = 0;
 +    int ext_feature_flags = 0;
 +    int ext_feature_flags2 = 0;
-     int extended_model = -1,extended_family = -1;
--    unsigned long eax,ebx,edx,unused;
++    int basic_family, extended_family, basic_model, extended_model;
++    int family, model;
 +    unsigned long eax,ebx,ecx,edx;
-     int stepping,model,family,type,reserved,brand,siblings;
++    int stepping,type,reserved,brand,siblings;
      int i;
  
 -    cpuid(1,eax,ebx,unused,edx);
 +    cpuid(1,eax,ebx,ecx,edx);
      printf("Version %08lx:\n",eax);
      stepping = eax & 0xf;
-     model = (eax >> 4) & 0xf;
-@@ -147,6 +224,7 @@
+-    model = (eax >> 4) & 0xf;
+-    family = (eax >> 8) & 0xf;
++    basic_family = (eax >> 8) & 0xf;
++    extended_family = (eax >> 20) & 0xff;
++    family = basic_family + extended_family;
++    basic_model = (eax >> 4) & 0xf;
++    extended_model = (eax >> 16) & 0xf;
++    model = (extended_model << 4) | basic_model;
+     type = (eax >> 12) & 0x3;
+-    reserved = eax >> 14;
++    reserved = eax & 0xf000c000l;
+     clf = (ebx >> 8) & 0xff;
      apic_id = (ebx >> 24) & 0xff;
      siblings = (ebx >> 16) & 0xff;
      feature_flags = edx;
@@ -157,7 +179,18 @@
  
      printf("Type %d - ",type);
      switch(type){
-@@ -253,9 +331,25 @@
+@@ -183,10 +270,6 @@
+       printf("Pentium 4");
+     }
+     printf("\n");
+-    if(family == 15){
+-      extended_family = (eax >> 20) & 0xff;
+-      printf("Extended family %d\n",extended_family);
+-    }
+     printf("Model %d - ",model);
+     switch(family){
+     case 3:
+@@ -253,33 +336,72 @@
        case 8:
  	printf("Pentium III/Pentium III Xeon - internal L2 cache");
  	break;
@@ -173,17 +206,46 @@
 +      case 13:
 +	printf("Intel Pentium M processor model D");
 +	break;
++      case 14:
++	printf("Intel Core family processor, 65nm");
++	break;
++      case 15:
++	printf("Intel Core2 family processor, 65nm");
++	break;
++      case 21:
++	printf("Intel EP80579 integrated processor");
++	break;
++      case 22:
++	printf("Intel Celeron processor model 16h, 65nm");
++	break;
++      case 23:
++	printf("Intel Core2 Extreme or Xeon processor, 45nm");
++	break;
++      case 28:
++	printf("Intel Atom processor, 45nm");
++	break;
++      case 30:
++	printf("Intel Corei7 or Xeon processor, 45nm");
++	break;
++      case 31:
++	printf("Intel Xeon processor MP, 45nm");
++	break;
        }
        break;
      case 15:
-+      extended_model = (eax >> 16) & 0xf;
-+      if (extended_model == 0) {
-+	printf("Intel Pentium 4 processor (generic) or newer");
-+      }
++      printf("Intel Pentium 4 processor (generic) or newer");
        break;
      }
      printf("\n");
-@@ -270,16 +364,22 @@
+-    if(model == 15){
+-      extended_model = (eax >> 16) & 0xf;
+-      printf("Extended model %d\n",extended_model);
+-    }
+     printf("Stepping %d\n",stepping);
+ 
+-    printf("Reserved %d\n\n",reserved);
++    printf("Reserved %x\n\n",reserved);
+ 
      brand = ebx & 0xff;
      if(brand > 0){
        printf("Brand index: %d [",brand);
@@ -208,7 +270,7 @@
        if(maxe >= 0x80000004){
  	int i;
  
-@@ -303,12 +403,48 @@
+@@ -303,12 +425,48 @@
        printf("Hyper threading siblings: %d\n",siblings);
      }
  
@@ -258,7 +320,7 @@
      printf("\n");
    }
    if(maxi >= 2){
-@@ -396,18 +532,66 @@
+@@ -396,18 +554,66 @@
    case 0x4:
      printf("Data TLB: 4MB pages, 4-way set assoc, 8 entries\n");
      break;
@@ -325,7 +387,7 @@
    case 0x40:
      printf("No 2nd-level cache, or if 2nd-level cache exists, no 3rd-level cache\n");
      break;
-@@ -426,23 +610,67 @@
+@@ -426,23 +632,67 @@
    case 0x45:
      printf("2nd-level cache: 2MB, 4-way set assoc, 32 byte line size\n");
      break;
@@ -399,7 +461,7 @@
      break;
    case 0x66:
      printf("1st-level data cache: 8KB, 4-way set assoc, 64 byte line size\n");
-@@ -454,25 +682,37 @@
+@@ -454,25 +704,37 @@
      printf("1st-level data cache: 32KB, 4-way set assoc, 64 byte line size\n");
      break;
    case 0x70:
@@ -442,7 +504,7 @@
      break;
    case 0x82:
      printf("2nd-level cache: 256KB, 8-way set assoc, 32 byte line size\n");
-@@ -486,44 +726,189 @@
+@@ -486,44 +748,189 @@
    case 0x85:
      printf("2nd-level cache: 2MB, 8-way set assoc, 32 byte line size\n");
      break;
@@ -664,7 +726,7 @@
  };
  
  char *Assoc[] = {
-@@ -657,10 +1042,16 @@
+@@ -657,10 +1064,16 @@
  	printf("Global Paging Extensions\n");
        } else {
  	if(edx & (1<<i)){
