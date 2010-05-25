@@ -1,6 +1,8 @@
 bin/gnurobbo
 %%DATADIR%%/levels/boss.dat
+%%DATADIR%%/levels/demo.dat
 %%DATADIR%%/levels/designer.dat
+%%DATADIR%%/levels/forever.dat
 %%DATADIR%%/levels/k-robbo.dat
 %%DATADIR%%/levels/millenium_demo.dat
 %%DATADIR%%/levels/original.dat
@@ -19,6 +21,7 @@ bin/gnurobbo
 %%DATADIR%%/levels/robbo13.dat
 %%DATADIR%%/levels/robbo2001.dat
 %%DATADIR%%/levels/robbo2009.dat
+%%DATADIR%%/levels/robbo3cs.dat
 %%DATADIR%%/levels/robbo97.dat
 %%DATADIR%%/levels/robbo98.dat
 %%DATADIR%%/levels/robbo_b.dat
@@ -27,6 +30,8 @@ bin/gnurobbo
 %%DATADIR%%/locales/de_DE/text
 %%DATADIR%%/locales/en_GB/localerc
 %%DATADIR%%/locales/en_GB/text
+%%DATADIR%%/locales/id_ID/localerc
+%%DATADIR%%/locales/id_ID/text
 %%DATADIR%%/locales/pl_PL/localerc
 %%DATADIR%%/locales/pl_PL/text
 %%DATADIR%%/locales/ru_RU/localerc
@@ -46,8 +51,11 @@ bin/gnurobbo
 %%DATADIR%%/skins/oily/font24x32.bmp
 %%DATADIR%%/skins/oily/icons16.png
 %%DATADIR%%/skins/oily/icons32.png
+%%DATADIR%%/skins/oily/k_icons16.png
+%%DATADIR%%/skins/oily/k_icons32.png
 %%DATADIR%%/skins/oily/robbo.ttf
 %%DATADIR%%/skins/oily/skinrc
+%%DATADIR%%/skins/oily/wm_icon.bmp
 %%DATADIR%%/skins/original/alpha16.bmp
 %%DATADIR%%/skins/original/alpha32.bmp
 %%DATADIR%%/skins/original/ciphers16.bmp
@@ -56,18 +64,26 @@ bin/gnurobbo
 %%DATADIR%%/skins/original/font24x32.bmp
 %%DATADIR%%/skins/original/icons16.png
 %%DATADIR%%/skins/original/icons32.png
+%%DATADIR%%/skins/original/k_icons16.png
+%%DATADIR%%/skins/original/k_icons32.png
 %%DATADIR%%/skins/original/robbo.ttf
 %%DATADIR%%/skins/original/skinrc
+%%DATADIR%%/skins/original/wm_icon.bmp
 %%DATADIR%%/skins/tronic/alpha16.bmp
 %%DATADIR%%/skins/tronic/alpha32.bmp
+%%DATADIR%%/skins/tronic/background16.png
+%%DATADIR%%/skins/tronic/background32.png
 %%DATADIR%%/skins/tronic/ciphers16.bmp
 %%DATADIR%%/skins/tronic/ciphers32.bmp
 %%DATADIR%%/skins/tronic/font12x16.bmp
 %%DATADIR%%/skins/tronic/font24x32.bmp
 %%DATADIR%%/skins/tronic/icons16.png
 %%DATADIR%%/skins/tronic/icons32.png
+%%DATADIR%%/skins/tronic/k_icons16.png
+%%DATADIR%%/skins/tronic/k_icons32.png
 %%DATADIR%%/skins/tronic/robbo.ttf
 %%DATADIR%%/skins/tronic/skinrc
+%%DATADIR%%/skins/tronic/wm_icon.bmp
 %%DATADIR%%/sounds/default/ammo.ogg
 %%DATADIR%%/sounds/default/bird.ogg
 %%DATADIR%%/sounds/default/bomb.ogg
@@ -103,6 +119,7 @@ bin/gnurobbo
 @dirrm %%DATADIR%%/locales/sk_SK
 @dirrm %%DATADIR%%/locales/ru_RU
 @dirrm %%DATADIR%%/locales/pl_PL
+@dirrm %%DATADIR%%/locales/id_ID
 @dirrm %%DATADIR%%/locales/en_GB
 @dirrm %%DATADIR%%/locales/de_DE
 @dirrm %%DATADIR%%/locales
