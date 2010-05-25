@@ -379,7 +379,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
 .endif
 
 .if defined(WITH_SLOWFS_CACHE_MODULE)
-NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.3
+NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.4
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
 DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}.tar.gz:slowfs_cache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}
