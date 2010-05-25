@@ -51,6 +51,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 BROKEN=		Need bind9 import post 6.1
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.X
+.endif
+
 # NOTE: Feel free to submit patches adding support for any of these
 #       disabled plugins.  If a plugin requires external dependencies,
 #       make it optional through OPTIONS defaulting to Off.  Some of
