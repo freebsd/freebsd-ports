@@ -27,6 +27,10 @@ OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.X
+.endif
+
 #for compatibility
 #
 .ifndef(WITHOUT_NFDUMP14_SUPPORT)
