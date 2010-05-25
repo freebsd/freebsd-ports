@@ -9,6 +9,7 @@ PORTNAME=	mod_bandwidth
 PORTVERSION=	2.1.0
 CATEGORIES=	www
 MASTER_SITES=	http://potatohead.estat.com/FreeBSD/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 #Orignal locations: ftp://ftp.cohprog.com/pub/apache/module/1.3.0/mod_bandwidth.c
 #                   ftp://ftp.cohprog.com/pub/apache/module/cleanlink.pl
 DIST_SUBDIR=	apache

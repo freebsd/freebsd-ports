@@ -12,6 +12,7 @@ PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	apache@FreeBSD.org

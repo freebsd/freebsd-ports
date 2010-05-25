@@ -9,6 +9,7 @@ PORTNAME=	mod_cplusplus
 PORTVERSION=	1.5.4
 CATEGORIES=	www
 MASTER_SITES=	SF/modcplusplus/modcplusplus/${PORTNAME}-${PORTVERSION}
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for loading C++ objects as handlers

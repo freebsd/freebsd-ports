@@ -12,6 +12,7 @@ PORTVERSION=	5.3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/modauthkerb/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module for authenticating users with Kerberos v5

@@ -11,6 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	www security
 MASTER_SITES=	http://software.othello.ch/mod_clamav/ \
 		http://www.kommunity.net/download/mod_clamav/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	tmueko@kommunity.net
 COMMENT=	Scans content delivered by the Apache20 proxy module for viruses

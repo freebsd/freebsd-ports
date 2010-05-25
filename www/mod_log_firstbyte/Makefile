@@ -9,6 +9,7 @@ PORTNAME=	mod_log_firstbyte
 PORTVERSION=	1.01
 CATEGORIES=	www
 MASTER_SITES=	http://mod-log-firstbyte.googlecode.com/svn/trunk/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}.c readme.txt
 
 MAINTAINER=	leeym@FreeBSD.org

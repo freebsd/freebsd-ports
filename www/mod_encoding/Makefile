@@ -10,6 +10,7 @@ PORTVERSION=	20021209
 PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://webdav.todo.gr.jp/download/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Apache module for non-ascii filename interoperability

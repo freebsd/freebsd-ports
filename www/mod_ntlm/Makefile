@@ -9,6 +9,7 @@ PORTNAME=	mod_ntlm
 PORTVERSION=	0.4
 CATEGORIES=	www
 MASTER_SITES=	SF/modntlm/modntlm/${PORTVERSION}
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	NTLM authentication module for the Apache webserver

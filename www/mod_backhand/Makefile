@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mirrors.omniti.com/mod_backhand/ \
 		http://people.FreeBSD.org/~seanc/ports/mod_backhand/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that allows seamless redirection and load balancing of HTTP requests

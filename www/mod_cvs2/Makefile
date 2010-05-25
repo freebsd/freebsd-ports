@@ -10,6 +10,7 @@ PORTVERSION=	0.5.91
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://resare.com/noa/mod_cvs/dist/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A module that makes Apache 2 CVS aware

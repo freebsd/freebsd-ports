@@ -9,6 +9,7 @@ PORTNAME=	mod_limitipconn
 PORTVERSION=	0.23
 CATEGORIES=	www
 MASTER_SITES=	http://dominia.org/djao/limit/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	ychsiao@ychsiao.org

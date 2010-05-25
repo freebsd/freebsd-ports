@@ -10,6 +10,7 @@ PORTVERSION=	0.5
 PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-acct/mod-acct/${PORTVERSION}
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that records traffic statistics into a database

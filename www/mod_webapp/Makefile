@@ -11,6 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://jakarta.apache.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	builds/jakarta-tomcat-4.0/release/v${TOMCAT_RELEASE}/src
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTNAME=	jakarta-tomcat-connectors-${CONNECTORS_RELEASE}-src
 DIST_SUBDIR=	mod_webapp
 

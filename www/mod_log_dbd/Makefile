@@ -9,6 +9,7 @@ PORTVERSION=	0.2
 PORTREVISION=	3
 CATEGORIES=	www databases
 MASTER_SITES=	http://bfoz.net/projects/${PORTNAME}/release/
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Uses APR DBD to store Apache access logs in a database

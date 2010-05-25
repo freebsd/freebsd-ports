@@ -9,7 +9,7 @@ PORTNAME=	pubcookie
 PORTVERSION=	3.3.0
 CATEGORIES=	www security
 MASTER_SITES=	http://pubcookie.org/downloads/
-PKGNAMEPREFIX=	mod_
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}mod_
 DISTNAME=	${PORTNAME}-3.3.0a
 
 MAINTAINER=	brooks@FreeBSD.org

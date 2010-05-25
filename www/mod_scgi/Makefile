@@ -10,7 +10,7 @@ PORTVERSION=	1.12
 CATEGORIES=	www
 MASTER_SITES=	http://quixote.python.ca/releases/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
-PKGNAMEPREFIX=	mod_
+PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}mod_
 DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	dryice@dryice.name
