@@ -48,7 +48,7 @@ AUTHOR: pgollucci@FreeBSD.org
 
   * USE_APACHE=yes is dead!
 
-  * WITH_APACHE2, WITH_APACHE20, WITH_APACHE22 are dead
+  * WITH_APACHE13, WITH_APACHE2, WITH_APACHE20, and WITH_APACHE22 are dead
 
     You should set USE_APACHE=13|20|22+.  WITH_APACHE option can
     be used to conditional include support for ANY version of
