@@ -7,7 +7,7 @@
 
 PORTNAME=	sabernetdcs
 PORTVERSION=	2.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	finance www
 MASTER_SITES=	SF/${PORTNAME}/SaberNet%20DCS/${PORTVERSION}
 PKGNAMESUFFIX=	-client
@@ -18,7 +18,7 @@ COMMENT=	SaberNet DCS - A labor data collection system
 
 RUN_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
-		${PYTHONPREFIX_SITELIBDIR}/Pyro/__init__.py:${PORTSDIR}/devel/py-ro
+		${PYTHONPREFIX_SITELIBDIR}/Pyro/__init__.py:${PORTSDIR}/devel/py-pyro
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
