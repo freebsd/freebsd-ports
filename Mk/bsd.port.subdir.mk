@@ -517,8 +517,10 @@ _PORTSEARCH=	\
 	     } \
 	    { \
 		oldname = $$1;  newname = $$2; \
+		if (oldname ~ /^\#/) next; \
 		sub(".*\/", "", oldname);  newname = sub(".*\/", "", newname); \
-	        if (((icase ? tolower(oldname) : oldname) ~ name) || ((icase ? tolower(newname) : newname) ~ name)) { \
+	        if (((icase ? tolower(oldname) : oldname) ~ name) || \
+		  ((icase ? tolower(newname) : newname) ~ name)) { \
 	    	    for (i = 1; i <= 4; i++) { \
 	    		printf("%s:\t%s\n", names[i], $$i); \
 	    	    } \
