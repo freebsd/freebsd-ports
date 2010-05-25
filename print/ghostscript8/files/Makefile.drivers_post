@@ -54,6 +54,25 @@ post-extract: post-extract-epag
 .include "${FILESDIR}/Makefile.pcl3"
 .endif
 
+# cups specific
+CUPS_DEVS= cups
+.undef _CUPS_DEVS
+
+.for D in ${CUPS_DEVS}
+.if defined(WITHOUT_CUPS)
+.undef WITH_GS_${D}
+.elif defined(WITH_GS_${D})
+_CUPS_DEVS+= ${D}
+.endif
+.endfor
+
+.if defined(_CUPS_DEVS)
+LIB_DEPENDS+=	cupsimage.2:${PORTSDIR}/print/cups-image
+CONFIGURE_ARGS+=	--enable-cups
+.else
+CONFIGURE_ARGS+=	--disable-cups
+.endif
+
 # vgalib specific
 VGA_DEVS= lvga256 vgalib
 .undef _VGA_DEVS
