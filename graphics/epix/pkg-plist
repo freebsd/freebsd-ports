@@ -90,24 +90,24 @@ include/epix/utils.h
 include/epix/verbatim.h
 lib/epix/epix-lib.sh
 lib/epix/libepix.a
-%%PORTDOCS%%%%DOCSDIR%%/config/bash_completions
-%%PORTDOCS%%%%DOCSDIR%%/config/epix.el
-%%PORTDOCS%%%%DOCSDIR%%/manual.pdf.gz
-%%PORTDOCS%%%%DOCSDIR%%/manual.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/manual_src.tar.gz
-%%PORTDOCS%%%%DOCSDIR%%/notes/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/notes/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/notes/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/notes/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/notes/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/notes/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/notes/POST-INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/notes/README
-%%PORTDOCS%%%%DOCSDIR%%/notes/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/notes/VERSION
-%%PORTDOCS%%%%DOCSDIR%%/sample_src.tar.gz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/notes
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/config
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/config/bash_completions
+%%DOCSDIR%%/config/epix.el
+%%DOCSDIR%%/manual.pdf.gz
+%%DOCSDIR%%/manual.ps.gz
+%%DOCSDIR%%/manual_src.tar.gz
+%%DOCSDIR%%/notes/AUTHORS
+%%DOCSDIR%%/notes/BUGS
+%%DOCSDIR%%/notes/COPYING
+%%DOCSDIR%%/notes/ChangeLog
+%%DOCSDIR%%/notes/INSTALL
+%%DOCSDIR%%/notes/NEWS
+%%DOCSDIR%%/notes/POST-INSTALL
+%%DOCSDIR%%/notes/README
+%%DOCSDIR%%/notes/THANKS
+%%DOCSDIR%%/notes/VERSION
+%%DOCSDIR%%/sample_src.tar.gz
+@dirrm %%DOCSDIR%%/notes
+@dirrm %%DOCSDIR%%/config
+@dirrm %%DOCSDIR%%
 @dirrm lib/epix
 @dirrm include/epix
