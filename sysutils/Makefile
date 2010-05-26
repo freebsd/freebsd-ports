@@ -562,6 +562,7 @@
     SUBDIR += p5-MogileFS-Client
     SUBDIR += p5-MogileFS-Utils
     SUBDIR += p5-Plugtools
+    SUBDIR += p5-Plugtools-Plugins-HomeOU
     SUBDIR += p5-Probe-Perl
     SUBDIR += p5-Proc-PidUtil
     SUBDIR += p5-Quota
