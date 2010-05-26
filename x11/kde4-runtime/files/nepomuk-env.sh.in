@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ %%PREFIX%% != %%LOCALBASE%% ]; then
+STRIGI_PLUGIN_PATH=${STRIGI_PLUGIN_PATH}:%%PREFIX%%/lib/strigi:%%LOCALBASE%%/lib/strigi
+export STRIGI_PLUGIN_PATH
+fi
