@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mod_webkit
-PORTVERSION=	1.0.2b1
+PORTVERSION=	1.1b1
 CATEGORIES=	www
-MASTER_SITES=	SF/webware/OldFiles
+MASTER_SITES=	SF/webware/Webware/1.1b1
 DISTNAME=	Webware-${PORTVERSION}
 
 MAINTAINER=	apache@FreeBSD.org
@@ -23,7 +23,6 @@ AP_GENPLIST=	yes
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} >= 20
-PKGNAMESUFFIX=	-ap2
 APACHE_VER=	2
 .else
 APACHE_VER=	1
