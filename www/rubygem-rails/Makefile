@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.8
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MVC web application framework

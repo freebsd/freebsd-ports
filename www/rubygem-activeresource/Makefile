@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	activeresource
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.8
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A coherent wrapper object-relational mapping for REST web services
 
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rack
-PORTVERSION=	1.0.1   ## XXX: www/rubygem-rails(2.3.4, 2.3.5): gem 'rack', '~> 1.0.1'
+PORTVERSION=	1.1.0
 PORTEPOCH=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
