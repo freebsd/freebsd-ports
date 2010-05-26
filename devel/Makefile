@@ -596,8 +596,8 @@
     SUBDIR += hs-split
     SUBDIR += hs-terminfo
     SUBDIR += hs-test-framework
-    SUBDIR += hs-test-framework-unit
     SUBDIR += hs-test-framework-quickcheck2
+    SUBDIR += hs-test-framework-unit
     SUBDIR += hs-testpack
     SUBDIR += hs-transformers
     SUBDIR += hs-unamb
@@ -1575,9 +1575,9 @@
     SUBDIR += p5-File-HStore
     SUBDIR += p5-File-HomeDir
     SUBDIR += p5-File-Lock
-    SUBDIR += p5-File-Map
     SUBDIR += p5-File-MMagic
     SUBDIR += p5-File-MMagic-XS
+    SUBDIR += p5-File-Map
     SUBDIR += p5-File-MimeInfo
     SUBDIR += p5-File-Modified
     SUBDIR += p5-File-Monitor
@@ -3022,13 +3022,13 @@
     SUBDIR += rubygem-ruby-debug
     SUBDIR += rubygem-ruby-debug-base
     SUBDIR += rubygem-ruby-debug-ide
-    SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby-sdl-ffi
     SUBDIR += rubygem-ruby2ruby
     SUBDIR += rubygem-ruby_parser
     SUBDIR += rubygem-rubyforge
+    SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-runt
     SUBDIR += rubygem-ruport
