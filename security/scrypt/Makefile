@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	scrypt
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.tarsnap.com/scrypt/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Key Derivation Function
 
 GNU_CONFIGURE=	yes
