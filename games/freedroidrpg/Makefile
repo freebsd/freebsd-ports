@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freedroidrpg
-PORTVERSION=	0.12.1
-PORTREVISION=	4
+PORTVERSION=	0.13
 CATEGORIES=	games
 MASTER_SITES=	SF/freedroid/freedroidRPG/freedroidRPG-${PORTVERSION}
 
@@ -16,18 +15,14 @@ COMMENT=	Modification of the classical Freedroid engine into an RPG
 
 USE_BZIP2=	yes
 USE_SDL=	sdl image mixer
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-transform-name=
 MAKE_JOBS_SAFE=	yes
-
-MAN6=		freedroidRPG.6
 
 OPTIONS=	BACKTRACE "Use backtrace() to generate nice bug reports" on \
 		OPENGL "Enable the OpenGL support (highly recommended!)" on \
 		VORBIS "Enable vorbis support (music)" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_BACKTRACE)
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
@@ -52,4 +47,4 @@ CONFIGURE_ARGS+=--enable-vorbis
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
