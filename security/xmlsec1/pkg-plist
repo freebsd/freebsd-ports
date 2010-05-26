@@ -1,0 +1,86 @@
+bin/xmlsec1
+bin/xmlsec1-config
+etc/xmlsec1Conf.sh
+share/aclocal/xmlsec1.m4
+lib/libxmlsec1-gcrypt.a
+lib/libxmlsec1-gcrypt.la
+lib/libxmlsec1-gcrypt.so
+lib/libxmlsec1-gcrypt.so.3
+lib/libxmlsec1-openssl.a
+lib/libxmlsec1-openssl.la
+lib/libxmlsec1-openssl.so
+lib/libxmlsec1-openssl.so.3
+lib/libxmlsec1.a
+lib/libxmlsec1.la
+lib/libxmlsec1.so
+lib/libxmlsec1.so.3
+%%GNUTLS%%lib/libxmlsec1-gnutls.a
+%%GNUTLS%%lib/libxmlsec1-gnutls.la
+%%GNUTLS%%lib/libxmlsec1-gnutls.so
+%%GNUTLS%%lib/libxmlsec1-gnutls.so.3
+%%NSS%%lib/libxmlsec1-nss.a
+%%NSS%%lib/libxmlsec1-nss.la
+%%NSS%%lib/libxmlsec1-nss.so
+%%NSS%%lib/libxmlsec1-nss.so.3
+include/xmlsec1/xmlsec/private/xkms.h
+include/xmlsec1/xmlsec/openssl/app.h
+include/xmlsec1/xmlsec/openssl/bn.h
+include/xmlsec1/xmlsec/openssl/crypto.h
+include/xmlsec1/xmlsec/openssl/evp.h
+include/xmlsec1/xmlsec/openssl/symbols.h
+include/xmlsec1/xmlsec/openssl/x509.h
+include/xmlsec1/xmlsec/gcrypt/app.h
+include/xmlsec1/xmlsec/gcrypt/crypto.h
+include/xmlsec1/xmlsec/gcrypt/symbols.h
+%%GNUTLS%%include/xmlsec1/xmlsec/gnutls/app.h
+%%GNUTLS%%include/xmlsec1/xmlsec/gnutls/crypto.h
+%%GNUTLS%%include/xmlsec1/xmlsec/gnutls/symbols.h
+%%GNUTLS%%include/xmlsec1/xmlsec/gnutls/x509.h
+%%NSS%%include/xmlsec1/xmlsec/nss/app.h
+%%NSS%%include/xmlsec1/xmlsec/nss/bignum.h
+%%NSS%%include/xmlsec1/xmlsec/nss/crypto.h
+%%NSS%%include/xmlsec1/xmlsec/nss/keysstore.h
+%%NSS%%include/xmlsec1/xmlsec/nss/pkikeys.h
+%%NSS%%include/xmlsec1/xmlsec/nss/symbols.h
+%%NSS%%include/xmlsec1/xmlsec/nss/x509.h
+include/xmlsec1/xmlsec/app.h
+include/xmlsec1/xmlsec/base64.h
+include/xmlsec1/xmlsec/bn.h
+include/xmlsec1/xmlsec/buffer.h
+include/xmlsec1/xmlsec/crypto.h
+include/xmlsec1/xmlsec/dl.h
+include/xmlsec1/xmlsec/errors.h
+include/xmlsec1/xmlsec/exports.h
+include/xmlsec1/xmlsec/io.h
+include/xmlsec1/xmlsec/keyinfo.h
+include/xmlsec1/xmlsec/keysdata.h
+include/xmlsec1/xmlsec/keys.h
+include/xmlsec1/xmlsec/keysmngr.h
+include/xmlsec1/xmlsec/list.h
+include/xmlsec1/xmlsec/membuf.h
+include/xmlsec1/xmlsec/nodeset.h
+include/xmlsec1/xmlsec/parser.h
+include/xmlsec1/xmlsec/private.h
+include/xmlsec1/xmlsec/soap.h
+include/xmlsec1/xmlsec/strings.h
+include/xmlsec1/xmlsec/templates.h
+include/xmlsec1/xmlsec/transforms.h
+include/xmlsec1/xmlsec/version.h
+include/xmlsec1/xmlsec/x509.h
+include/xmlsec1/xmlsec/xkms.h
+include/xmlsec1/xmlsec/xmldsig.h
+include/xmlsec1/xmlsec/xmlenc.h
+include/xmlsec1/xmlsec/xmlsec.h
+include/xmlsec1/xmlsec/xmltree.h
+%%GNUTLS%%@dirrm include/xmlsec1/xmlsec/gnutls
+%%NSS%%@dirrm include/xmlsec1/xmlsec/nss
+@dirrm include/xmlsec1/xmlsec/gcrypt
+@dirrm include/xmlsec1/xmlsec/openssl
+@dirrm include/xmlsec1/xmlsec/private
+@dirrm include/xmlsec1/xmlsec
+@dirrm include/xmlsec1
+%%GNUTLS%%libdata/pkgconfig/xmlsec1-gnutls.pc
+%%NSS%%libdata/pkgconfig/xmlsec1-nss.pc
+libdata/pkgconfig/xmlsec1-gcrypt.pc
+libdata/pkgconfig/xmlsec1-openssl.pc
+libdata/pkgconfig/xmlsec1.pc
