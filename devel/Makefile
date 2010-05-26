@@ -2972,6 +2972,7 @@
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-georuby
     SUBDIR += rubygem-getopt
+    SUBDIR += rubygem-gettext
     SUBDIR += rubygem-git
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-highline
@@ -2985,6 +2986,7 @@
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-linecache
     SUBDIR += rubygem-little_plugger
+    SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logging
     SUBDIR += rubygem-loquacious
