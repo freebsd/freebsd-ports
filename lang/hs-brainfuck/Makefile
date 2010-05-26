@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	lang haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Brainfuck interpreter written in Haskell
 
 CABAL_SETUP=	Setup.hs

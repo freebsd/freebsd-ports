@@ -9,7 +9,7 @@ PORTNAME=	statistics
 PORTVERSION=	0.4.1
 CATEGORIES=	math haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library of statistical types, data, and functions
 
 USE_HACKAGE=	erf mwc-random uvector>=0.1.0.4 uvector-algorithms>=0.2

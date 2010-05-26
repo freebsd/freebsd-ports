@@ -9,7 +9,7 @@ PORTNAME=	haskell-src-exts
 PORTVERSION=	1.5.3
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Manipulating Haskell source
 
 CABAL_SETUP=	Setup.hs

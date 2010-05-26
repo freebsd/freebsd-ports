@@ -9,7 +9,7 @@ PORTNAME=	hint
 PORTVERSION=	0.3.2.1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Runtime Haskell interpreter (GHC API wrapper)
 
 USE_HACKAGE=	ghc-mtl>=1.0.1.0 ghc-paths MonadCatchIO-mtl>=0.2 utf8-string

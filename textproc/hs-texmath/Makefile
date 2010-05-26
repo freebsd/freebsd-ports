@@ -9,7 +9,7 @@ PORTNAME=	texmath
 PORTVERSION=	0.1.1
 CATEGORIES=	textproc haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Conversion of LaTeX math formulas to MathML for Haskell
 
 CABAL_SETUP=	Setup.hs

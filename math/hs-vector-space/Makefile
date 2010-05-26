@@ -9,7 +9,7 @@ PORTNAME=	vector-space
 PORTVERSION=	0.5.7
 CATEGORIES=	math haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Vector & affine spaces, linear maps, and derivatives in Haskell
 
 USE_HACKAGE=	MemoTrie>=0.4.2

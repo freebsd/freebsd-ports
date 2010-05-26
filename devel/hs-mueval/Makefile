@@ -10,7 +10,7 @@ PORTVERSION=	0.7.1
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Safely evaluate Haskell expressions
 
 CABAL_SETUP=	Setup.hs

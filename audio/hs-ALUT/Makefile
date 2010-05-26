@@ -10,7 +10,7 @@ PORTVERSION=	2.2.0.0
 PORTREVISION=	1
 CATEGORIES=	audio haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell binding for the OpenAL Utility Toolkit
 
 CABAL_SETUP=	Setup.hs

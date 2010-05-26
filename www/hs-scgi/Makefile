@@ -9,7 +9,7 @@ PORTNAME=	scgi
 PORTVERSION=	0.3.1
 CATEGORIES=	www haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for writing SCGI programs
 
 USE_HACKAGE=	cgi

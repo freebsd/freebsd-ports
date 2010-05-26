@@ -9,7 +9,7 @@ PORTNAME=	MissingH
 PORTVERSION=	1.1.0.1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Large Haskell utility library
 
 CABAL_SETUP=	Setup.hs

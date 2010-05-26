@@ -9,7 +9,7 @@ PORTNAME=	utility-ht
 PORTVERSION=	0.0.5.1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Various small Haskell helper functions for Lists, Maybes, Tuples, Functions
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

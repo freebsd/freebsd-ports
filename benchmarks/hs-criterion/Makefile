@@ -9,7 +9,7 @@ PORTNAME=	criterion
 PORTVERSION=	0.4.1.0
 CATEGORIES=	benchmarks haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Robust, reliable performance measurement and analysis for Haskell
 
 CABAL_SETUP=	Setup.hs

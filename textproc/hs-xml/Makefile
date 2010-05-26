@@ -9,7 +9,7 @@ PORTNAME=	xml
 PORTVERSION=	1.3.5
 CATEGORIES=	textproc haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A simple XML library for Haskell
 
 CABAL_SETUP=	Setup.hs

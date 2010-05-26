@@ -9,7 +9,7 @@ PORTNAME=	mwc-random
 PORTVERSION=	0.4.1.1
 CATEGORIES=	math haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Fast, high quality pseudo random number generation in Haskell
 
 USE_HACKAGE=	uvector>=0.1.0.4

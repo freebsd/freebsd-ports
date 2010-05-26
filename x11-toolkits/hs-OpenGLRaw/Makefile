@@ -9,7 +9,7 @@ PORTNAME=	OpenGLRaw
 PORTVERSION=	1.1.0.1
 CATEGORIES=	x11-toolkits haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A raw Haskell binding for the OpenGL graphics system
 
 CABAL_SETUP=	Setup.hs

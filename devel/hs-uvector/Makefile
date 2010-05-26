@@ -9,7 +9,7 @@ PORTNAME=	uvector
 PORTVERSION=	0.1.1.0
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Fast unboxed arrays with a flexible interface for Haskell
 
 PORTDATA=	*

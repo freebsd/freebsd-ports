@@ -10,7 +10,7 @@ PORTVERSION=	0.9.10
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell Utrecht Tools Library
 
 CABAL_SETUP=	Setup.hs

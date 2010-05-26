@@ -9,7 +9,7 @@ PORTNAME=	json
 PORTVERSION=	0.4.3
 CATEGORIES=	converters haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Support for serialising Haskell to and from JSON
 
 CABAL_SETUP=	Setup.hs

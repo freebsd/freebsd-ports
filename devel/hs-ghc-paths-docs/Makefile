@@ -9,7 +9,7 @@ PORTVERSION=	0.1.0.5
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Documentation for ghc-paths
 
 CABAL_SETUP=	Setup.hs

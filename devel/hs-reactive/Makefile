@@ -9,7 +9,7 @@ PORTNAME=	reactive
 PORTVERSION=	0.11.4
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Push-pull functional reactive programming
 
 USE_HACKAGE=	category-extras>=0.53.5 checkers>=0.2.3 \

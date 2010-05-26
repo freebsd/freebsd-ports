@@ -10,7 +10,7 @@ PORTVERSION=	4.0.7
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell API Search
 
 CABAL_SETUP=	Setup.hs

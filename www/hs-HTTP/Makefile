@@ -9,7 +9,7 @@ PORTNAME=	HTTP
 PORTVERSION=	4000.0.9
 CATEGORIES=	www haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for client-side HTTP
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

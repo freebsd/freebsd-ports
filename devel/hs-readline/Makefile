@@ -9,7 +9,7 @@ PORTVERSION=	1.0.1.0
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell interface to the GNU readline library
 
 CABAL_SETUP=	Setup.hs

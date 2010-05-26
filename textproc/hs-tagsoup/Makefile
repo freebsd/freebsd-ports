@@ -9,7 +9,7 @@ PORTNAME=	tagsoup
 PORTVERSION=	0.8
 CATEGORIES=	textproc haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for extracting information from HTML documents
 
 CABAL_SETUP=	Setup.hs

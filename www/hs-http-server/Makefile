@@ -9,7 +9,7 @@ PORTNAME=	http-server
 PORTVERSION=	1
 CATEGORIES=	www haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A library for writing Haskell web servers
 
 CABAL_SETUP=	Setup.hs

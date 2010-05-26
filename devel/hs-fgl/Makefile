@@ -9,7 +9,7 @@ PORTNAME=	fgl
 PORTVERSION=	5.4.2.2
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Martin Erwig Functional Graph Library
 
 CABAL_SETUP=	Setup.hs

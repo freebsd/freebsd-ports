@@ -9,7 +9,7 @@ PORTNAME=	DeepArrow
 PORTVERSION=	0.3.3
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell arrows for deep application
 
 USE_HACKAGE=	TypeCompose>=0.6.7

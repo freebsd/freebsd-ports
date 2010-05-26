@@ -9,7 +9,7 @@ PORTNAME=	oeis
 PORTVERSION=	0.2.2
 CATEGORIES=	www haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell interface to the Online Encyclopedia of Integer Sequences
 
 USE_HACKAGE=	HTTP>=4000.0.2
