@@ -17,6 +17,8 @@ COMMENT=	A plugin for Pidgin to provide LCS/OCS connectivity
 LIB_DEPENDS=	purple.7:${PORTSDIR}/net-im/libpurple
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
+BROKEN=		does not build with pidgin 2.7
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
