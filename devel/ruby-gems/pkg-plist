@@ -48,6 +48,7 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/dependency_installer.rb
 %%RUBY_SITELIBDIR%%/rubygems/dependency_list.rb
 %%RUBY_SITELIBDIR%%/rubygems/doc_manager.rb
+%%RUBY_SITELIBDIR%%/rubygems/errors.rb
 %%RUBY_SITELIBDIR%%/rubygems/exceptions.rb
 %%RUBY_SITELIBDIR%%/rubygems/ext.rb
 %%RUBY_SITELIBDIR%%/rubygems/ext/builder.rb
