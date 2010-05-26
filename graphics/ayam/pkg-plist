@@ -26,6 +26,7 @@ lib/ayam/tcl/camera.tcl
 lib/ayam/tcl/cap.tcl
 lib/ayam/tcl/clone.tcl
 lib/ayam/tcl/concatnc.tcl
+lib/ayam/tcl/concatnp.tcl
 lib/ayam/tcl/cone.tcl
 lib/ayam/tcl/console.tcl
 lib/ayam/tcl/control.tcl
@@ -51,6 +52,7 @@ lib/ayam/tcl/npatch.tcl
 lib/ayam/tcl/objbar.tcl
 lib/ayam/tcl/objsel.tcl
 lib/ayam/tcl/offnc.tcl
+lib/ayam/tcl/offnp.tcl
 lib/ayam/tcl/olb.tcl
 lib/ayam/tcl/pamesh.tcl
 lib/ayam/tcl/pane.tcl
@@ -69,6 +71,7 @@ lib/ayam/tcl/riopt.tcl
 lib/ayam/tcl/riproc.tcl
 lib/ayam/tcl/root.tcl
 lib/ayam/tcl/run.tcl
+lib/ayam/tcl/safe.tcl
 lib/ayam/tcl/script.tcl
 lib/ayam/tcl/sdmesh.tcl
 lib/ayam/tcl/select.tcl
@@ -86,6 +89,7 @@ lib/ayam/tcl/tmp.tcl
 lib/ayam/tcl/toolbox.tcl
 lib/ayam/tcl/torus.tcl
 lib/ayam/tcl/tree.tcl
+lib/ayam/tcl/trim.tcl
 lib/ayam/tcl/uie.tcl
 lib/ayam/tcl/view.tcl
 lib/ayam/tcl/vmenu.tcl
@@ -170,7 +174,7 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/Setup.txt
 %%PORTDOCS%%%%DOCSDIR%%/ayam.pdf
-%%PORTDOCS%%%%DOCSDIR%%/refcard.ps
+%%PORTDOCS%%%%DOCSDIR%%/refcard.pdf
 %%PORTDOCS%%%%DOCSDIR%%/refcard.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/ayam-1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ayam-2.html
@@ -191,16 +195,21 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/birail2.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/birail2vc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/cap.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/chordalex.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/clampnc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/clampnp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/clone.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/pics/concatnc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/coarsen.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/concatnc.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/concatnp.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/console.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/csgex.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/elevate.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/extrnc.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/extrnp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/extrude.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/pics/gordoncap.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/gordon-hood.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/gordoncap.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/icurves.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/inskn.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/insknnp.gif
@@ -211,6 +220,8 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/multicolcsg.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/multip.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/ncircle.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/ncircles.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/ncurve.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/offnc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/plotcur.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/prefs.gif
@@ -221,12 +232,14 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/revolve.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/scriptex1.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/scriptex2.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/pics/shiftclsbsp.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/scriptex3.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/sgordon.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/shiftclsbsp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/skin.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/splitnc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/ssweep.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/sweep.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/sweepinterp.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/swin.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/swing.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/tce.gif
