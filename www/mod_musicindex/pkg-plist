@@ -13,4 +13,8 @@
 %%DATADIR%%/soundok.png
 %%NLS%%share/locale/fr/LC_MESSAGES/mod_musicindex.mo
 %%NLS%%share/locale/it/LC_MESSAGES/mod_musicindex.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/mod_musicindex.mo
+%%NLS%%share/locale/pt-br/LC_MESSAGES/mod_musicindex.mo
+%%NLS%%@dirrm share/locale/pt-br/LC_MESSAGES
+%%NLS%%@dirrm share/locale/pt-br
 @dirrm %%DATADIR%%
