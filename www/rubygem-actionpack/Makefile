@@ -13,7 +13,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Action Controller and Action View of Rails MVC Framework
 
 BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
-  				rubygem-rack=1.1.0:${PORTSDIR}/www/rubygem-rack
+  				rubygem-rack>=1.1.0:${PORTSDIR}/www/rubygem-rack
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
