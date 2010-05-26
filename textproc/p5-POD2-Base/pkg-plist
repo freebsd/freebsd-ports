@@ -1,0 +1,9 @@
+%%SITE_PERL%%/POD2/Base.pm
+%%SITE_PERL%%/POD2/Base.pod
+%%SITE_PERL%%/POD2/PT/POD2/Base.pod
+%%SITE_PERL%%/mach/auto/POD2/Base/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/POD2/Base
+@dirrmtry %%SITE_PERL%%/mach/auto/POD2
+@dirrm %%SITE_PERL%%/POD2/PT/POD2
+@dirrm %%SITE_PERL%%/POD2/PT
+@dirrmtry %%SITE_PERL%%/POD2
