@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	actionmailer
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.8
 CATEGORIES=	mail rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Easy email delivery and testing for Ruby
