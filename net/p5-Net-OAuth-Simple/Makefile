@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-OAuth-Simple
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +21,7 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-Test-Simple>=0.86:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
-
+PERL_CONFIGURE=	yes
 MAN3=	Net::OAuth::Simple.3
 
 .include <bsd.port.mk>
