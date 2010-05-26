@@ -24,7 +24,8 @@ CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
 		--with-xslt=${LOCALBASE} --enable-tcpd
 USE_LDCONFIG=	yes
 
-MAN1=		yaz-asncomp.1 yaz-client.1 yaz-iconv.1 yaz-marcdump.1 \
+MAN1=		yaz-asncomp.1 yaz-client.1 yaz-iconv.1 \
+		yaz-json-parse.1 yaz-marcdump.1 \
 		zoomsh.1 yaz-icu.1 yaz-illclient.1
 MAN7=		bib1-attr.7 yaz-log.7 yaz.7
 MAN8=		yaz-config.8 yaz-ztest.8
