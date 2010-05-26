@@ -6,31 +6,27 @@
 #
 
 PORTNAME=	mod_authn_sasl
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-authn-sasl/mod-authn-sasl/${PORTVERSION}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows user authentication based on libsasl2 mechanisms on apache 2.2
 
-LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
 MAKE_JOBS_SAFE=  yes
 
-FETCH_BEFORE_ARGS=	-v -v
+OPTIONS=	SASLAUTHD	"Register dependency for cyrus-sasl2-saslauthd"	off
 
-USE_APACHE=	22
 USE_BZIP2=	yes
+USE_APACHE=	22
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
-#SHORTMODNAME=	authn_sasl
-
-OPTIONS=	SASLAUTHD	"Register dependency for cyrus-sasl2-saslauthd"	off
 
 PORTDOCS=	AUTHORS LICENSE
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_SASLAUTHD)
 RUN_DEPENDS+=	saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
@@ -38,10 +34,10 @@ RUN_DEPENDS+=	saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
 .   for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .   endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
