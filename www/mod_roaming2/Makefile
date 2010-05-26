@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	mod_roaming2
-PORTVERSION=	2.0b1
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.klomp.org/mod_roaming/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
