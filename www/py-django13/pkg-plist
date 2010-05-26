@@ -305,7 +305,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/hu/formats.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/hu/formats.pyc
 %%PYTHON_SITELIBDIR%%/django/conf/locale/hu/formats.pyo
-%%PYTHON_SITELIBDIR%%/django/conf/locale/id/LC_MESSAGES
 %%PYTHON_SITELIBDIR%%/django/conf/locale/id/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/id/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/id/LC_MESSAGES/djangojs.mo
