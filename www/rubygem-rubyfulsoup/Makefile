@@ -7,7 +7,7 @@
 PORTNAME=	rubyfulsoup
 PORTVERSION=	1.0.4
 CATEGORIES=	www textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 DISTNAME=	rubyful_soup-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

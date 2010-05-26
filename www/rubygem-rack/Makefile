@@ -9,7 +9,7 @@ PORTNAME=	rack
 PORTVERSION=	1.1.0
 PORTEPOCH=	1
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rack, a Ruby Webserver Interface

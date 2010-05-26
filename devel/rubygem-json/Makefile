@@ -8,7 +8,7 @@
 PORTNAME=	json
 PORTVERSION=	1.1.9
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Parse JSON texts and generate them from ruby data structures

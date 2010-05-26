@@ -7,7 +7,7 @@
 PORTNAME=	logging
 PORTVERSION=	1.3.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Logging library based on Java's log4j

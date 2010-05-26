@@ -7,7 +7,7 @@
 PORTNAME=	callsign
 PORTVERSION=	1.0.3
 CATEGORIES=	comms rubygems hamradio
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	codeblock@eighthbit.net
 COMMENT=	Provides a Ruby-Frontend to callook.info ham Radio Callsign Lookup

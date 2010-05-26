@@ -8,7 +8,7 @@
 PORTNAME=	file-tail
 PORTVERSION=	1.0.4
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	This is a small Ruby library that allows Ruby to 'tail' files

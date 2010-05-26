@@ -9,7 +9,7 @@
 PORTNAME=	layout-yullio
 PORTVERSION=	0.9.0
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 DISTNAME=	layout_yullio_generator-${PORTVERSION}
 
 MAINTAINER=	ijliao@FreeBSD.org

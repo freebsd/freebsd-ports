@@ -8,7 +8,7 @@
 PORTNAME=	stomp
 PORTVERSION=	1.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Streaming Text Orientated Messaging Protocol gem

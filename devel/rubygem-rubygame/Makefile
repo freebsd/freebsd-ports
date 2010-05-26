@@ -8,7 +8,7 @@
 PORTNAME=	rubygame
 PORTVERSION=	2.6.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	kick.christoph@googlemail.com
 COMMENT=	A game-development extension and library for the ruby language

@@ -9,7 +9,7 @@
 PORTNAME=	builder
 PORTVERSION=	2.1.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Facilitate programatic generation of XML markup

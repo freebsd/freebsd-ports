@@ -8,7 +8,7 @@
 PORTNAME=	nicovideo
 PORTVERSION=	0.1.8
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Scraping NICONICO DOUGA utility for Ruby

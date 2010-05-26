@@ -8,7 +8,7 @@
 PORTNAME=	metaid
 PORTVERSION=	1.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Ruby metaprogramming helpers

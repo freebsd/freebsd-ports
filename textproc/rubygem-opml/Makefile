@@ -8,7 +8,7 @@
 PORTNAME=	opml
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	A simple wrapper for parsing OPML files

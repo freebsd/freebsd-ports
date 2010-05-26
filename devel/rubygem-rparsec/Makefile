@@ -7,7 +7,7 @@
 PORTNAME=	rparsec
 PORTVERSION=	1.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Recursive descent parser combinator framework for Ruby

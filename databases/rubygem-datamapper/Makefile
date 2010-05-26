@@ -8,7 +8,7 @@
 PORTNAME=	datamapper
 PORTVERSION=	0.3.2
 CATEGORIES=	databases rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, thread-safe, object-relational mapper

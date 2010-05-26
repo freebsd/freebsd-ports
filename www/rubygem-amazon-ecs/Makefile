@@ -8,7 +8,7 @@
 PORTNAME=	amazon-ecs
 PORTVERSION=	0.5.7
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A generic Amazon E-commerce REST API written in Ruby

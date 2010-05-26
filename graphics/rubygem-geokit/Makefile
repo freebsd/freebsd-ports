@@ -7,7 +7,7 @@
 PORTNAME=	geokit
 PORTVERSION=	1.5.0
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Ruby gem for maps-based apps

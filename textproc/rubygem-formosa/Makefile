@@ -9,7 +9,7 @@
 PORTNAME=	formosa
 PORTVERSION=	0.2.0
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	lukhnos@gmail.com
 COMMENT=	A collection of libraries for Taiwanese languages processing

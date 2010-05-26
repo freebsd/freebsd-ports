@@ -9,7 +9,7 @@
 PORTNAME=	scruffy
 PORTVERSION=	0.2.6
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Beautiful Graphs for Ruby

@@ -7,7 +7,7 @@
 PORTNAME=	crack
 PORTVERSION=	0.1.4
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Ruby Library of Simple JSON and XML Parsing

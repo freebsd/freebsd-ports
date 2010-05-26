@@ -8,7 +8,7 @@
 PORTNAME=	librmpd
 PORTVERSION=	0.1.1
 CATEGORIES=	audio rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Is a simple yet powerful Music Player Daemon library

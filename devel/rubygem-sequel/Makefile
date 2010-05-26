@@ -8,7 +8,7 @@
 PORTNAME=	sequel
 PORTVERSION=	3.6.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	The Database Toolkit for Ruby

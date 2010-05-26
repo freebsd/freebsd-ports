@@ -7,7 +7,7 @@
 PORTNAME=	mocha
 PORTVERSION=	0.9.8
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A library for mocking and stubbing syntax like JMock, and SchMock

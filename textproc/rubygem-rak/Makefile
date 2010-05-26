@@ -7,7 +7,7 @@
 PORTNAME=	rak
 PORTVERSION=	1.0
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	A grep replacement in pure Ruby

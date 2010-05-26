@@ -8,7 +8,7 @@
 PORTNAME=	treetop
 PORTVERSION=	1.4.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Ruby-based DSL for text parsing and interpretation

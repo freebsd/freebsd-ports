@@ -8,7 +8,7 @@
 PORTNAME=	markaby
 PORTVERSION=	0.5
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	HTML Markup as Ruby

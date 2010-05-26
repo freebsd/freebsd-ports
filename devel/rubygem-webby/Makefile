@@ -7,7 +7,7 @@
 PORTNAME=	webby
 PORTVERSION=	0.9.4
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	A small website management system

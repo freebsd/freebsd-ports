@@ -8,7 +8,7 @@
 PORTNAME=	rubyinlineaccel
 PORTVERSION=	0.0.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 DISTNAME=	RubyInlineAcceleration-${PORTVERSION}
 
 MAINTAINER=	tota@rtfm.jp

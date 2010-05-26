@@ -8,7 +8,7 @@
 PORTNAME=	rgl
 PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Framework for graph datastructures and algorithms implemented in Ruby

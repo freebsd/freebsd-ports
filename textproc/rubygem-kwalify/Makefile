@@ -8,7 +8,7 @@
 PORTNAME=	kwalify
 PORTVERSION=	0.7.1
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Kwalify is a parser, schema validator, and data binding tool for YAML and JSON.

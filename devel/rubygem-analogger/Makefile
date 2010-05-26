@@ -7,7 +7,7 @@
 PORTNAME=	analogger
 PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A fast, flexible, easy to use logging service for Ruby

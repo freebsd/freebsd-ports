@@ -9,7 +9,7 @@ PORTNAME=	objectdetect
 PORTVERSION=	0.0.3
 PORTREVISION=	4
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	tota@rtfm.jp
 COMMENT=	A simple library for detecting objects in pictures

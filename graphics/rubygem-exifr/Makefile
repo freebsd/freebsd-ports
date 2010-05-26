@@ -7,7 +7,7 @@
 PORTNAME=	exifr
 PORTVERSION=	0.10.9
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A pure-ruby EXIF reader

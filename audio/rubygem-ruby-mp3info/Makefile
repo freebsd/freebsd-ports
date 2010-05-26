@@ -8,7 +8,7 @@
 PORTNAME=	ruby-mp3info
 PORTVERSION=	0.6.13
 CATEGORIES=	audio rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	tha_walka@hotmail.com
 COMMENT=	A Ruby library to access information on mp3 files

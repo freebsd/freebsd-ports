@@ -7,7 +7,7 @@
 PORTNAME=	rubigen
 PORTVERSION=	1.5.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Ruby generic generator framework

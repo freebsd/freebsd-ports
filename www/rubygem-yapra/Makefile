@@ -8,7 +8,7 @@
 PORTNAME=	yapra
 PORTVERSION=	0.1.2
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	tota@rtfm.jp
 COMMENT=	Yet Another Pragger implementation

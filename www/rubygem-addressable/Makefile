@@ -7,7 +7,7 @@
 PORTNAME=	addressable
 PORTVERSION=	2.1.2
 CATEGORIES=	www devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A replacement for the URI implementation

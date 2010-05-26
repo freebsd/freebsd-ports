@@ -7,7 +7,7 @@
 PORTNAME=	rscm
 PORTVERSION=	0.5.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	daniel@roe.ch
 COMMENT=	Ruby SCM, an SCM-independent API for accessing SCMs

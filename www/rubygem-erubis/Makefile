@@ -7,7 +7,7 @@
 PORTNAME=	erubis
 PORTVERSION=	2.6.5
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@freebsd.org
 COMMENT=	A fast, secure, and very extensible implementation of eRuby

@@ -8,7 +8,7 @@
 PORTNAME=	jpmobile
 PORTVERSION=	0.0.6
 CATEGORIES=	japanese www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A Rails plugin for Japanese mobile-phones

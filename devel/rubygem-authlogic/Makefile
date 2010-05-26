@@ -7,7 +7,7 @@
 PORTNAME=	authlogic
 PORTVERSION=	2.1.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A clean, simple, and unobtrusive Ruby authentication solution

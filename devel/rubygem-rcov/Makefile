@@ -8,7 +8,7 @@
 PORTNAME=	rcov
 PORTVERSION=	0.8.1.2.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Code coverage tool for Ruby

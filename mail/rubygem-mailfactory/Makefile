@@ -7,10 +7,10 @@
 PORTNAME=	mailfactory
 PORTVERSION=	1.4.0
 CATEGORIES=	mail rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A simple to use module for generating RFC compliant MIME mail
+COMMENT=	A simple to use module for generating RGC compliant MIME mail
 
 BUILD_DEPENDS=	rubygem-mime-types>=1.13.1:${PORTSDIR}/misc/rubygem-mime-types
 RUN_DEPENDS=	${BUILD_DEPENDS}

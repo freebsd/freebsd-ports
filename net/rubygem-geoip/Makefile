@@ -8,7 +8,7 @@
 PORTNAME=	geoip
 PORTVERSION=	0.8.4
 CATEGORIES=	net rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Geoip implementation for rubygems

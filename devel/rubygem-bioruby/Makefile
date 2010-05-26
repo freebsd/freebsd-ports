@@ -8,7 +8,7 @@
 PORTNAME=	bioruby
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF \
+MASTER_SITES=	RG \
 		http://rubyforge.org/frs/download.php/68266/
 DISTNAME=	bio-${PORTVERSION}
 

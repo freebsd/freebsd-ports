@@ -7,7 +7,7 @@
 PORTNAME=	mime-types
 PORTVERSION=	1.16
 CATEGORIES=	misc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@freebsd.org
 COMMENT=	Ruby gem which provides a mailcap-like MIME Content-Type lookup

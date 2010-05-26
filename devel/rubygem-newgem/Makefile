@@ -8,7 +8,7 @@
 PORTNAME=	newgem
 PORTVERSION=	1.5.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Bundle ruby libraries into gems

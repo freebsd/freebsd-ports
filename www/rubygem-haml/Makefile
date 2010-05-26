@@ -7,7 +7,7 @@
 PORTNAME=	haml
 PORTVERSION=	2.2.19
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Markup language to describe XHTML

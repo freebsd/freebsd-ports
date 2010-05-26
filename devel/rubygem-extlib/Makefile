@@ -7,7 +7,7 @@
 PORTNAME=	extlib
 PORTVERSION=	0.9.14
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	General Ruby extensions

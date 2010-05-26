@@ -8,7 +8,7 @@
 PORTNAME=	igraph
 PORTVERSION=	0.9.7
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Ruby extension for using the igraph library

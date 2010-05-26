@@ -7,7 +7,7 @@
 PORTNAME=	xml-simple
 PORTVERSION=	1.0.12
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A ruby take off of p5-XML-Simple

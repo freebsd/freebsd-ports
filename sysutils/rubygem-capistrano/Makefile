@@ -9,7 +9,7 @@ PORTNAME=	capistrano
 PORTVERSION=	2.5.9
 PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A utility for executing commands in parallel on multiple machines

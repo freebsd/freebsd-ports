@@ -7,7 +7,7 @@
 PORTNAME=	kirbybase
 PORTVERSION=	2.6
 CATEGORIES=	databases rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 DISTNAME=	KirbyBase-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com

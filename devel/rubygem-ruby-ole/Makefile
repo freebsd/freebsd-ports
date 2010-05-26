@@ -8,7 +8,7 @@
 PORTNAME=	ruby-ole
 PORTVERSION=	1.2.10
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A library for easy read/write access to OLE compound documents

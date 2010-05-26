@@ -7,7 +7,7 @@
 PORTNAME=	railroad
 PORTVERSION=	0.5.0
 CATEGORIES=	graphics devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A class diagrams generator for Ruby on Rails applications
