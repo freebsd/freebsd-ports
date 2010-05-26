@@ -1,5 +1,5 @@
---- src/ftpd.c.orig	Tue Apr  5 03:22:01 2005
-+++ src/ftpd.c	Tue Apr  5 04:10:13 2005
+--- src/ftpd.c.orig	2010-05-27 01:19:29.000000000 +0400
++++ src/ftpd.c	2010-05-27 01:19:56.000000000 +0400
 @@ -447,7 +447,6 @@
  #ifdef OPIE
  #include <opie.h>
@@ -95,6 +95,15 @@
  #ifdef VERBOSE_ERROR_LOGING
  		syslog(LOG_NOTICE, "FTP LOGIN FAILED (cannot chdir) for %s, %s",
  		       remoteident, pw->pw_name);
+@@ -3508,7 +3510,7 @@
+ {
+     char *a;
+     a = (char *) malloc(len + 1);
+-    memset(a, ' ', len-1);
++    memset(a, ' ', len);
+     a[len] = 0;
+     if (strlen(s) <= len)
+ 	memcpy(a, s, strlen(s));
 @@ -7469,6 +7471,8 @@
  	    in++;
  	    if (*in == '/')
