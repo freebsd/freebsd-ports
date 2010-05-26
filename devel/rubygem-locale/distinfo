@@ -1,3 +1,3 @@
-MD5 (ruby/ruby-gettext-package-1.93.0.tar.gz) = a23cf402e0bc7fed2857e3d6b6fd1f37
-SHA256 (ruby/ruby-gettext-package-1.93.0.tar.gz) = 7c8eba9edb109e3eb89feb22326e8211b34ac1762d783ed771cfcc4b568e173b
-SIZE (ruby/ruby-gettext-package-1.93.0.tar.gz) = 527338
+MD5 (rubygem/locale-2.0.5.gem) = fb02d272c69249f1d18a4c05b2eb14f2
+SHA256 (rubygem/locale-2.0.5.gem) = 4bd4b98dd9b74d18325546ec08f0b34adc847efbd7aa189f347ab7c2abd6f179
+SIZE (rubygem/locale-2.0.5.gem) = 111616
