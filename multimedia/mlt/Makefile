@@ -174,6 +174,8 @@ pre-configure:
 		${WRKSRC}/src/framework/Makefile \
 		${WRKSRC}/src/melt/Makefile \
 		${WRKSRC}/src/modules/*/Makefile
+	${REINPLACE_CMD} -e 's|-ldl|$$(LIBDL)|g' \
+		${WRKSRC}/src/modules/avformat/Makefile
 	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
 
