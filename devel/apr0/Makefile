@@ -16,8 +16,6 @@ COMMENT=	Apache Portability Library
 
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
-CONFLICTS=	apr-*-1.*
-
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	THREADS "Enable Threads in apr"				on  \
