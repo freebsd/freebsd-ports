@@ -8,7 +8,7 @@
 PORTNAME=	nice-ffi
 PORTVERSION=	0.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	kick.christoph@googlemail.com
 COMMENT=	Nice-FFI is a layer on top of Ruby-FFI

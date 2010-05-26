@@ -7,7 +7,7 @@
 PORTNAME=	daemons
 PORTVERSION=	1.0.10
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A toolkit to convert your script to a controllable daemon

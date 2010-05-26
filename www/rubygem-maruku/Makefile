@@ -7,7 +7,7 @@
 PORTNAME=	maruku
 PORTVERSION=	0.6.0
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A Markdown and PHP Markdown extra interpreter for Ruby

@@ -8,7 +8,7 @@
 PORTNAME=	piston
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Utility to manage local copies of Subversion repositories

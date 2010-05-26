@@ -7,7 +7,7 @@
 PORTNAME=	mechanize
 PORTVERSION=	1.0.0
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	WWW::Mechanize, a handy web browsing ruby object

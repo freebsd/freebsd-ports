@@ -8,7 +8,7 @@
 PORTNAME=	facets
 PORTVERSION=	2.7.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	yds@CoolRat.org
 COMMENT=	RubyGem port of the single most extensive additions and extensions

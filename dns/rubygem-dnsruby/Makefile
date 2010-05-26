@@ -8,7 +8,7 @@
 PORTNAME=	dnsruby
 PORTVERSION=	1.47
 CATEGORIES=	dns rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A pure Ruby DNS client library

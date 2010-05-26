@@ -7,7 +7,7 @@
 PORTNAME=	imagesize
 PORTVERSION=	0.1.1
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	codeblock@eighthbit.net
 COMMENT=	A RubyGem for finding the size of an image.

@@ -8,7 +8,7 @@
 PORTNAME=	deprecated
 PORTVERSION=	2.0.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A library intended to aid developers working with deprecated code

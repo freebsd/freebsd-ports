@@ -8,7 +8,7 @@
 PORTNAME=	fastercsv
 PORTVERSION=	1.5.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A complete replacement to the CSV standard library

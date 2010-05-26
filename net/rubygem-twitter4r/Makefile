@@ -9,7 +9,7 @@
 PORTNAME=	twitter4r
 PORTVERSION=	0.3.1
 CATEGORIES=	net rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Twitter client API in pure Ruby

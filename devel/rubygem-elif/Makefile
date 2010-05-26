@@ -8,7 +8,7 @@
 PORTNAME=	elif
 PORTVERSION=	0.1.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Read file in reverse order

@@ -8,7 +8,7 @@
 PORTNAME=	net-ssh
 PORTVERSION=	2.0.15
 CATEGORIES=	security rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Non-interactive SSH processing

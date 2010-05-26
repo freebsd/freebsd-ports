@@ -7,7 +7,7 @@
 PORTNAME=	rspec
 PORTVERSION=	1.2.9
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	romanbsd@yahoo.com
 COMMENT=	Behaviour Driven Development in Ruby

@@ -8,7 +8,7 @@
 PORTNAME=	chronic
 PORTVERSION=	0.2.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Chronic is a natural language date/time parser written in pure Ruby

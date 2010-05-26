@@ -8,7 +8,7 @@ PORTNAME=	railsbench
 PORTVERSION=	0.9.2
 PORTREVISION=	1
 CATEGORIES=	benchmarks rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Scripts designed for benchmarking of Rails applications

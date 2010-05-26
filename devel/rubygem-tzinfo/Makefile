@@ -8,7 +8,7 @@
 PORTNAME=	tzinfo
 PORTVERSION=	0.3.20
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Daylight-savings aware timezone support for Ruby

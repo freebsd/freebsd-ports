@@ -8,7 +8,7 @@ PORTNAME=	turing
 PORTVERSION=	0.0.11
 PORTREVISION=	3
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Easy to use and customize/extend implementation of captcha

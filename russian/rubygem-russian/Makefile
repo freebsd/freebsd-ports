@@ -7,7 +7,7 @@
 PORTNAME=	russian
 PORTVERSION=	0.2.5
 CATEGORIES=	russian devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Russian language support for Ruby and Rails, based on I18n library

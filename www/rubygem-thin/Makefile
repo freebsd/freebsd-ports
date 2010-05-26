@@ -7,7 +7,7 @@
 PORTNAME=	thin
 PORTVERSION=	1.2.4
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A fast and very simple Ruby web server

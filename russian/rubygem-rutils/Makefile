@@ -7,7 +7,7 @@
 PORTNAME=	rutils
 PORTVERSION=	1.0.2
 CATEGORIES=	russian devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Simple processing of russian strings

@@ -8,7 +8,7 @@
 PORTNAME=	rfeedfinder
 PORTVERSION=	0.9.13
 CATEGORIES=	www textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	A Ruby library to find the feed.

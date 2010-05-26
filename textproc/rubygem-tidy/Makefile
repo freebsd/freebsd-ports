@@ -8,7 +8,7 @@
 PORTNAME=	tidy
 PORTVERSION=	1.1.2
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Ruby interface to HTML Tidy Library Project

@@ -8,7 +8,7 @@
 PORTNAME=	scrapi
 PORTVERSION=	1.2.0
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	A scrAPI toolkit for Ruby

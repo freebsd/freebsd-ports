@@ -8,7 +8,7 @@
 PORTNAME=	soap4r
 PORTVERSION=	1.5.8
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby implementation of SOAP 1.1

@@ -8,7 +8,7 @@
 PORTNAME=	rfacebook
 PORTVERSION=	0.9.8
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Ruby interface to the Facebook API

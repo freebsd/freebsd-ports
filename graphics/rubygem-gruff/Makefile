@@ -10,7 +10,7 @@ PORTNAME=	gruff
 PORTVERSION=	0.3.6
 PORTREVISION=	2
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A beautiful graphing library for Ruby using RMagick

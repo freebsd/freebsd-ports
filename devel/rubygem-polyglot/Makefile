@@ -8,7 +8,7 @@
 PORTNAME=	polyglot
 PORTVERSION=	0.2.9
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Provides a registry of file types

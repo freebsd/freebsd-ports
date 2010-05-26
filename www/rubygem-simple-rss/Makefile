@@ -8,7 +8,7 @@
 PORTNAME=	simple-rss
 PORTVERSION=	1.2
 CATEGORIES=	www textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	A simple, flexible, extensible, and liberal RSS and Atom reader for Ruby.

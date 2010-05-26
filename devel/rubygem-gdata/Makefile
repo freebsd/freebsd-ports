@@ -7,7 +7,7 @@
 PORTNAME=	gdata
 PORTVERSION=	1.1.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Assist Ruby developers in working with Google Data APIs

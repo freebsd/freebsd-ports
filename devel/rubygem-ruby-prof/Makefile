@@ -7,7 +7,7 @@
 PORTNAME=	ruby-prof
 PORTVERSION=	0.7.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	A fast profiler for Ruby

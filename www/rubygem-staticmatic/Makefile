@@ -7,7 +7,7 @@
 PORTNAME=	staticmatic
 PORTVERSION=	0.10.6
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Manage static websites using Haml and Sass

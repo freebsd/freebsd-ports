@@ -8,7 +8,7 @@
 PORTNAME=	feed-normalizer
 PORTVERSION=	1.5.1
 CATEGORIES=	www textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	An extensible wrapper for Atom and RSS parsers

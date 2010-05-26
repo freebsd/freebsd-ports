@@ -7,7 +7,7 @@
 PORTNAME=	tmail
 PORTVERSION=	1.2.3.1
 CATEGORIES=	mail rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A RFC2822/MIME compliant mail manipulating library for Ruby

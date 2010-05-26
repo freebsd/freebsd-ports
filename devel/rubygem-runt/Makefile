@@ -8,7 +8,7 @@
 PORTNAME=	runt
 PORTVERSION=	0.7.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby implementation of select Martin Fowler patterns

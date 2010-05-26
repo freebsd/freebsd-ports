@@ -8,7 +8,7 @@
 PORTNAME=	ruport
 PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	 Ruby Reports (Ruport) is an extensible reporting system.

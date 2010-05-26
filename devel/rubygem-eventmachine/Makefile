@@ -7,7 +7,7 @@
 PORTNAME=	eventmachine
 PORTVERSION=	0.12.10
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A fast, simple event-processing library for Ruby programs

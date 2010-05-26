@@ -8,7 +8,7 @@ PORTNAME=	gd2
 PORTVERSION=	1.1.1
 PORTREVISION=	3
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Ruby binding for Thomas Boutell's gd 2.x graphics library #'

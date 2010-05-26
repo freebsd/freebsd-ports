@@ -7,7 +7,7 @@
 PORTNAME=	god
 PORTVERSION=	0.7.18
 CATEGORIES=	sysutils rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Monitoring framework written in Ruby

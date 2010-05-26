@@ -8,7 +8,7 @@
 PORTNAME=	templater
 PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby code generation framework

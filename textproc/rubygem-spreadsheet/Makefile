@@ -8,7 +8,7 @@
 PORTNAME=	spreadsheet
 PORTVERSION=	0.6.4.1
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A Ruby module to generate Microsoft Excel compatible files

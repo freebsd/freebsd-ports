@@ -8,7 +8,7 @@
 PORTNAME=	validatable
 PORTVERSION=	1.6.7
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Library for adding database/object validations

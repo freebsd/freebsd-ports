@@ -8,7 +8,7 @@
 PORTNAME=	ffi
 PORTVERSION=	0.5.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	kick.christoph@googlemail.com
 COMMENT=	Extension for dynamic libraries & binding functions
