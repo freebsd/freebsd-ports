@@ -6,14 +6,14 @@
 
 PORTNAME=	kbibtex
 PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases kde
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~fischer/${PORTNAME}/download/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BibTeX editor for KDE
 
-LIB_DEPENDS=	yaz.3:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
