@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_musicindex
-PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTVERSION=	1.3.3
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.parisc-linux.org/~varenet/musicindex/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -24,19 +23,18 @@ OPTIONS=	NLS "Native language support" on \
 		LIBARCHIVE "Archive downloading support" on \
 		FILECACHE "Caching support" on
 
-USE_APACHE=	1.3+
+USE_APACHE=	2.0+
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
-PORTDOCS=	README
+
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	README
 
-.if ${OSVERSION} >= 800000
-BROKEN=		does not build
-.endif
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -82,11 +80,11 @@ CONFIGURE_ARGS+=	--disable-filecache
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
