@@ -9,7 +9,7 @@ PORTNAME=	cgi
 PORTVERSION=	3001.1.7.1
 CATEGORIES=	www haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for writing CGI programs
 
 CABAL_SETUP=	Setup.hs

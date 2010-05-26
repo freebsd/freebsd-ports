@@ -9,7 +9,7 @@ PORTNAME=	TypeCompose
 PORTVERSION=	0.6.7
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Type composition classes and instances for Haskell
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

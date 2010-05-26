@@ -9,7 +9,7 @@ PORTNAME=	erf
 PORTVERSION=	1.0.0.0
 CATEGORIES=	math haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	The error function, erf, and friends for Haskell
 
 CABAL_SETUP=	Setup.hs

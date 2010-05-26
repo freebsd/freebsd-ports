@@ -9,7 +9,7 @@ PORTNAME=	GLURaw
 PORTVERSION=	1.1.0.0
 CATEGORIES=	x11-toolkits haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A raw Haskell binding for the OpenGL Utility Toolkit
 
 CABAL_SETUP=	Setup.hs

@@ -10,7 +10,7 @@ PORTVERSION=	0.9.12
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Attribute Grammar System of Universiteit Utrecht
 
 CABAL_SETUP=	Setup.hs

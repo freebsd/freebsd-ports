@@ -9,7 +9,7 @@ PORTNAME=	checkers
 PORTVERSION=	0.2.4
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Check properties on standard Haskell classes and data structures
 
 USE_HACKAGE=	QuickCheck>=2.1.0.2

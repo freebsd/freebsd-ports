@@ -9,7 +9,7 @@ PORTNAME=	deepseq
 PORTVERSION=	1.1.0.0
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Fully evaluate Haskell data structures
 
 CABAL_SETUP=	Setup.hs

@@ -9,7 +9,7 @@ PORTNAME=	Diff
 PORTVERSION=	0.1.2
 CATEGORIES=	textproc haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	O(ND) diff algorithm in haskell
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

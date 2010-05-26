@@ -9,7 +9,7 @@ PORTNAME=	hslogger
 PORTVERSION=	1.0.7
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Versatile logging framework for Haskell
 
 CABAL_SETUP=	Setup.hs

@@ -9,7 +9,7 @@ PORTNAME=	convertible
 PORTVERSION=	1.0.7
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell type classes and instances for converting between types
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

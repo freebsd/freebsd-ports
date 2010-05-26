@@ -8,7 +8,7 @@ PORTNAME=	QuickCheck
 PORTVERSION=	2.1.0.3
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Library for random testing in haskell
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

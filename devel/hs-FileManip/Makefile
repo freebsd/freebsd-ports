@@ -9,7 +9,7 @@ PORTNAME=	FileManip
 PORTVERSION=	0.3.2
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Expressive file and directory manipulation for Haskell
 
 CONFIGURE_ARGS+=	--constraint='base<4'

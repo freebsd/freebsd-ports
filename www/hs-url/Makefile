@@ -9,7 +9,7 @@ PORTNAME=	url
 PORTVERSION=	2.1
 CATEGORIES=	www haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for working with URLs
 
 CABAL_SETUP=	Setup.hs

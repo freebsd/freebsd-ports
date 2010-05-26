@@ -8,7 +8,7 @@ PORTNAME=	haskeline
 PORTVERSION=	0.6.2.2
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A command-line interface for user input, written in Haskell
 
 CABAL_SETUP=	Setup.hs

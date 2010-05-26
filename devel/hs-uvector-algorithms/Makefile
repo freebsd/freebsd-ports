@@ -9,7 +9,7 @@ PORTNAME=	uvector-algorithms
 PORTVERSION=	0.2
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Efficient algorithms for uvector unboxed arrays in Haskell
 
 USE_HACKAGE=	uvector>=0.1.0.4

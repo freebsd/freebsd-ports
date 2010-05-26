@@ -9,7 +9,7 @@ PORTNAME=	probability
 PORTVERSION=	0.2.2
 CATEGORIES=	math haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Probabilistic Functional Programming in Haskell
 
 USE_HACKAGE=	transformers>=0.0.1

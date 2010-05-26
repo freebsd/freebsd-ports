@@ -9,7 +9,7 @@ PORTNAME=	unamb
 PORTVERSION=	0.2.2
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Unambiguous choice library for Haskell
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

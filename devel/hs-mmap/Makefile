@@ -8,7 +8,7 @@ PORTNAME=	mmap
 PORTVERSION=	0.5.4
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Memory mapped files for POSIX and Windows
 
 CABAL_SETUP=	Setup.hs

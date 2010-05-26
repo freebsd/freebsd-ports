@@ -10,7 +10,7 @@ PORTVERSION=	2.2.6
 PORTREVISION=	1
 CATEGORIES=	math haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Command-line program for type-checking and compiling Agda programs
 
 CABAL_SETUP=	Setup.hs

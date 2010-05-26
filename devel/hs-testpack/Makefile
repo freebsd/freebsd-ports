@@ -9,7 +9,7 @@ PORTNAME=	testpack
 PORTVERSION=	1.0.2
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell Test Utility Pack for HUnit and QuickCheck
 
 CABAL_SETUP=	Setup.hs

@@ -9,7 +9,7 @@ PORTNAME=	arrows
 PORTVERSION=	0.4.1.2
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell arrow classes and transformers
 
 CABAL_SETUP=	Setup.hs

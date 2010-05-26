@@ -9,7 +9,7 @@ PORTNAME=	uniplate
 PORTVERSION=	1.2.0.3
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Uniform type generic traversals for Haskell
 
 CABAL_SETUP=	Setup.hs

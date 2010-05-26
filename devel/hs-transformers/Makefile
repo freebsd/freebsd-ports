@@ -9,7 +9,7 @@ PORTNAME=	transformers
 PORTVERSION=	0.1.4.0
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Concrete Haskell monad transformers
 
 CABAL_SETUP=	Setup.hs

@@ -9,7 +9,7 @@ PORTNAME=	MemoTrie
 PORTVERSION=	0.4.7
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Trie-based memo functions for Haskell
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

@@ -9,7 +9,7 @@ PORTNAME=	safe
 PORTVERSION=	0.2
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for safe (pattern match free) functions
 
 CABAL_SETUP=	Setup.hs

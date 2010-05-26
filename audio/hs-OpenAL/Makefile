@@ -10,7 +10,7 @@ PORTVERSION=	1.4.0.0
 PORTREVISION=	1
 CATEGORIES=	audio haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell binding to the OpenAL cross-platform 3D audio API
 
 CABAL_SETUP=	Setup.hs

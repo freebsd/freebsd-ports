@@ -9,7 +9,7 @@ PORTNAME=	show
 PORTVERSION=	0.3.3
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell Show instances for Lambdabot
 
 CABAL_SETUP=	Setup.hs

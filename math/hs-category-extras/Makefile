@@ -9,7 +9,7 @@ PORTNAME=	category-extras
 PORTVERSION=	0.53.5
 CATEGORIES=	math haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Various Haskell modules and constructs inspired by category theory
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

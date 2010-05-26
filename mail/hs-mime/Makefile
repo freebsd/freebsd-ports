@@ -9,7 +9,7 @@ PORTNAME=	mime
 PORTVERSION=	0.3.2
 CATEGORIES=	mail haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell library for working with MIME types
 
 CABAL_SETUP=	Setup.hs

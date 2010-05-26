@@ -9,7 +9,7 @@ PORTNAME=	datetime
 PORTVERSION=	0.1
 CATEGORIES=	devel haskell
 
-MAINTAINER=	jacula@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Utilities to make Data.Time.* easier to use in Haskell
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
