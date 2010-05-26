@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -33,7 +34,11 @@ USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdesu.1
-OPTIONS=	PULSEAUDIO "Enable playback via PulseAudio soundserver" off
+
+SUB_FILES=	nepomuk-env.sh
+
+OPTIONS=	PULSEAUDIO "Enable playback via PulseAudio soundserver" off \
+		VIRTUOSO "Install Virtuoso SQL server (required for Nepomuk)" off
 
 # Explicitly disable alsa, see for details:
 # http://mail.kde.org/pipermail/kde-freebsd/2010-March/008015.html
@@ -52,6 +57,10 @@ LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
 .endif
 
+.if defined(WITH_VIRTUOSO)
+RUN_DEPENDS+=	${LOCALBASE}/bin/virtuoso-t:${PORTSDIR}/databases/virtuoso
+.endif
+
 .if exists(${LOCALBASE}/lib/soprano/libsoprano_virtuosobackend.so)
 CMAKE_ARGS+=	-DWITH_Nepomuk:BOOL=ON
 MAN8=		nepomukserver.8 nepomukservicestub.8
@@ -68,5 +77,9 @@ post-patch:
 		${PATCH_WRKSRC}/kioslave/man/kio_man.cpp \
 		${PATCH_WRKSRC}/kioslave/man/man2html.cpp \
 		${PATCH_WRKSRC}/cmake/modules/FindCLucene.cmake
+
+post-install:
+	${MKDIR} ${PREFIX}/env
+	${INSTALL_SCRIPT} ${WRKDIR}/nepomuk-env.sh ${PREFIX}/env
 
 .include <bsd.port.mk>

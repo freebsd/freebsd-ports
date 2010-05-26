@@ -28,6 +28,7 @@ bin/kwriteconfig
 %%NEPOMUK%%bin/nepomukservicestub
 bin/plasmapkg
 bin/solid-hardware
+env/nepomuk-env.sh
 etc/xdg/menus/kde-information.menu
 lib/attica_kde.so
 lib/kconf_update_bin/phonon_devicepreference_update
@@ -2077,3 +2078,4 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm lib/kde4/plugins/phonon_platform
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg
+@dirrmtry env
