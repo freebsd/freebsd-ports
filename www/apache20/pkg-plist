@@ -21,6 +21,7 @@ include/apache2/ap_mmn.h
 include/apache2/ap_mpm.h
 include/apache2/ap_provider.h
 include/apache2/ap_regkey.h
+include/apache2/ap_regex.h
 include/apache2/ap_release.h
 %%WORKER%%include/apache2/fdqueue.h
 %%THREADPOOL%%include/apache2/pod.h
