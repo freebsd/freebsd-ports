@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	reportlab2
-PORTVERSION=	2.3
-PORTREVISION=	2
+PORTVERSION=	2.4
 CATEGORIES=	print python
-MASTER_SITES=	http://www.reportlab.org/ftp/ \
+MASTER_SITES=	http://www.reportlab.com/ftp/ \
 		ftp://ftp.reportlab.org/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ReportLab_${PORTVERSION:S/./_/}
