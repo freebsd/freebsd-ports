@@ -1,0 +1,66 @@
+%%SITE_PERL%%/PPIx/Regexp.pm
+%%SITE_PERL%%/PPIx/Regexp/Constant.pm
+%%SITE_PERL%%/PPIx/Regexp/Dumper.pm
+%%SITE_PERL%%/PPIx/Regexp/Element.pm
+%%SITE_PERL%%/PPIx/Regexp/Lexer.pm
+%%SITE_PERL%%/PPIx/Regexp/Node.pm
+%%SITE_PERL%%/PPIx/Regexp/Node/Range.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Assertion.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/BranchReset.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Capture.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/CharClass.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Code.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Main.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Modifier.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/NamedCapture.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Quantifier.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Regexp.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Replacement.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Subexpression.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Switch.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/Unknown.pm
+%%SITE_PERL%%/PPIx/Regexp/Support.pm
+%%SITE_PERL%%/PPIx/Regexp/Token.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Assertion.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Backreference.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Backtrack.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/CharClass.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/CharClass/POSIX.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/CharClass/Simple.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Code.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Comment.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Condition.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Control.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Delimiter.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Greediness.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/GroupType.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/GroupType/Assertion.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/GroupType/BranchReset.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/GroupType/Code.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/GroupType/Modifier.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/GroupType/NamedCapture.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/GroupType/Subexpression.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/GroupType/Switch.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Interpolation.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Literal.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Modifier.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Operator.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Quantifier.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Recursion.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Reference.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Structure.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Unknown.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Unmatched.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/Whitespace.pm
+%%SITE_PERL%%/PPIx/Regexp/Tokenizer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx/Regexp/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx/Regexp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx
+@dirrm %%SITE_PERL%%/PPIx/Regexp/Token/GroupType
+@dirrm %%SITE_PERL%%/PPIx/Regexp/Token/CharClass
+@dirrm %%SITE_PERL%%/PPIx/Regexp/Token
+@dirrm %%SITE_PERL%%/PPIx/Regexp/Structure
+@dirrm %%SITE_PERL%%/PPIx/Regexp/Node
+@dirrm %%SITE_PERL%%/PPIx/Regexp
+@dirrmtry %%SITE_PERL%%/PPIx
