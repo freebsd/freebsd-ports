@@ -1411,6 +1411,7 @@
     SUBDIR += py-django-signals-ahoy
     SUBDIR += py-django-tagging
     SUBDIR += py-django-threaded-multihost
+    SUBDIR += py-django11
     SUBDIR += py-dtflickr
     SUBDIR += py-ez_web
     SUBDIR += py-fcgi
