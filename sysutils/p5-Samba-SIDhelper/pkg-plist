@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Samba/SIDhelper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba/SIDhelper/.packlist
+@dirrmtry %%SITE_PERL%%/Samba/SIDhelper/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba/SIDhelper/
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba/
