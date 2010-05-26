@@ -1,0 +1,1310 @@
+Index: server/Makefile.in
+===================================================================
+--- server/Makefile.in	(revision 948227)
++++ server/Makefile.in	(working copy)
+@@ -13,7 +13,7 @@
+ 	util_script.c util_md5.c util_cfgtree.c util_ebcdic.c util_time.c \
+ 	rfc1413.c connection.c listen.c \
+ 	mpm_common.c util_charset.c util_debug.c util_xml.c \
+-	util_filter.c exports.c buildmark.c \
++	util_filter.c util_pcre.c buildmark.c exports.c \
+ 	scoreboard.c error_bucket.c protocol.c core.c request.c provider.c \
+ 	eoc_bucket.c
+ 
+Index: server/util.c
+===================================================================
+--- server/util.c	(revision 948227)
++++ server/util.c	(working copy)
+@@ -247,25 +247,25 @@
+ }
+ 
+ /*
+- * Here's a pool-based interface to POSIX regex's regcomp().
+- * Note that we return regex_t instead of being passed one.
+- * The reason is that if you use an already-used regex_t structure,
++ * Here's a pool-based interface to the POSIX-esque ap_regcomp().
++ * Note that we return ap_regex_t instead of being passed one.
++ * The reason is that if you use an already-used ap_regex_t structure,
+  * the memory that you've already allocated gets forgotten, and
+  * regfree() doesn't clear it. So we don't allow it.
+  */
+ 
+ static apr_status_t regex_cleanup(void *preg)
+ {
+-    regfree((regex_t *) preg);
++    ap_regfree((ap_regex_t *) preg);
+     return APR_SUCCESS;
+ }
+ 
+-AP_DECLARE(regex_t *) ap_pregcomp(apr_pool_t *p, const char *pattern,
+-                                   int cflags)
++AP_DECLARE(ap_regex_t *) ap_pregcomp(apr_pool_t *p, const char *pattern,
++                                     int cflags)
+ {
+-    regex_t *preg = apr_palloc(p, sizeof(regex_t));
++    ap_regex_t *preg = apr_palloc(p, sizeof *preg);
+ 
+-    if (regcomp(preg, pattern, cflags)) {
++    if (ap_regcomp(preg, pattern, cflags)) {
+         return NULL;
+     }
+ 
+@@ -275,9 +275,9 @@
+     return preg;
+ }
+ 
+-AP_DECLARE(void) ap_pregfree(apr_pool_t *p, regex_t * reg)
++AP_DECLARE(void) ap_pregfree(apr_pool_t *p, ap_regex_t *reg)
+ {
+-    regfree(reg);
++    ap_regfree(reg);
+     apr_pool_cleanup_kill(p, (void *) reg, regex_cleanup);
+ }
+ 
+@@ -344,29 +344,10 @@
+     return bigstring;
+ }
+ 
+-/* 
+- * Apache stub function for the regex libraries regexec() to make sure the
+- * whole regex(3) API is available through the Apache (exported) namespace.
+- * This is especially important for the DSO situations of modules.
+- * DO NOT MAKE A MACRO OUT OF THIS FUNCTION!
+- */
+-AP_DECLARE(int) ap_regexec(regex_t *preg, const char *string,
+-                           size_t nmatch, regmatch_t pmatch[], int eflags)
+-{
+-    return regexec(preg, string, nmatch, pmatch, eflags);
+-}
+-
+-AP_DECLARE(size_t) ap_regerror(int errcode, const regex_t *preg, char *errbuf,
+-                               size_t errbuf_size)
+-{
+-    return regerror(errcode, preg, errbuf, errbuf_size);
+-}
+-
+-
+ /* This function substitutes for $0-$9, filling in regular expression
+  * submatches. Pass it the same nmatch and pmatch arguments that you
+  * passed ap_regexec(). pmatch should not be greater than the maximum number
+- * of subexpressions - i.e. one more than the re_nsub member of regex_t.
++ * of subexpressions - i.e. one more than the re_nsub member of ap_regex_t.
+  *
+  * input should be the string with the $-expressions, source should be the
+  * string that was matched against.
+@@ -379,7 +360,7 @@
+ 
+ AP_DECLARE(char *) ap_pregsub(apr_pool_t *p, const char *input,
+                               const char *source, size_t nmatch,
+-                              regmatch_t pmatch[])
++                              ap_regmatch_t pmatch[])
+ {
+     const char *src = input;
+     char *dest, *dst;
+Index: server/util_pcre.c
+===================================================================
+--- server/util_pcre.c	(revision 0)
++++ server/util_pcre.c	(revision 0)
+@@ -0,0 +1,225 @@
++/*************************************************
++*      Perl-Compatible Regular Expressions       *
++*************************************************/
++
++/*
++This is a library of functions to support regular expressions whose syntax
++and semantics are as close as possible to those of the Perl 5 language. See
++the file Tech.Notes for some information on the internals.
++
++This module is a wrapper that provides a POSIX API to the underlying PCRE
++functions.
++
++Written by: Philip Hazel <ph10@cam.ac.uk>
++
++           Copyright (c) 1997-2004 University of Cambridge
++
++-----------------------------------------------------------------------------
++Redistribution and use in source and binary forms, with or without
++modification, are permitted provided that the following conditions are met:
++
++    * Redistributions of source code must retain the above copyright notice,
++      this list of conditions and the following disclaimer.
++
++    * Redistributions in binary form must reproduce the above copyright
++      notice, this list of conditions and the following disclaimer in the
++      documentation and/or other materials provided with the distribution.
++
++    * Neither the name of the University of Cambridge nor the names of its
++      contributors may be used to endorse or promote products derived from
++      this software without specific prior written permission.
++
++THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
++AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
++LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++POSSIBILITY OF SUCH DAMAGE.
++-----------------------------------------------------------------------------
++*/
++
++#include "apr.h"
++#include "apr_strings.h"
++
++#define APR_WANT_STRFUNC
++#include "apr_want.h"
++
++#include "ap_regex.h"
++#include "pcre.h"
++
++#ifndef POSIX_MALLOC_THRESHOLD
++#define POSIX_MALLOC_THRESHOLD (10)
++#endif
++
++/* Table of error strings corresponding to POSIX error codes; must be
++ * kept in synch with include/ap_regex.h's AP_REG_E* definitions. */
++
++static const char *const pstring[] = {
++  "",                                /* Dummy for value 0 */
++  "internal error",                  /* AP_REG_ASSERT */
++  "failed to get memory",            /* AP_REG_ESPACE */
++  "bad argument",                    /* AP_REG_INVARG */
++  "match failed"                     /* AP_REG_NOMATCH */
++};
++
++AP_DECLARE(size_t) ap_regerror(int errcode, const ap_regex_t *preg, 
++                               char *errbuf, size_t errbuf_size)
++{
++const char *message, *addmessage;
++size_t length, addlength;
++
++message = (errcode >= (int)(sizeof(pstring)/sizeof(char *)))?
++  "unknown error code" : pstring[errcode];
++length = strlen(message) + 1;
++
++addmessage = " at offset ";
++addlength = (preg != NULL && (int)preg->re_erroffset != -1)?
++  strlen(addmessage) + 6 : 0;
++
++if (errbuf_size > 0)
++  {
++  if (addlength > 0 && errbuf_size >= length + addlength)
++      apr_snprintf(errbuf, sizeof errbuf,
++                   "%s%s%-6d", message, addmessage, (int)preg->re_erroffset);
++  else
++    {
++    strncpy(errbuf, message, errbuf_size - 1);
++    errbuf[errbuf_size-1] = 0;
++    }
++  }
++
++return length + addlength;
++}
++
++
++
++
++/*************************************************
++*           Free store held by a regex           *
++*************************************************/
++
++AP_DECLARE(void) ap_regfree(ap_regex_t *preg)
++{
++(pcre_free)(preg->re_pcre);
++}
++
++
++
++
++/*************************************************
++*            Compile a regular expression        *
++*************************************************/
++
++/*
++Arguments:
++  preg        points to a structure for recording the compiled expression
++  pattern     the pattern to compile
++  cflags      compilation flags
++
++Returns:      0 on success
++              various non-zero codes on failure
++*/
++
++AP_DECLARE(int) ap_regcomp(ap_regex_t *preg, const char *pattern, int cflags)
++{
++const char *errorptr;
++int erroffset;
++int options = 0;
++
++if ((cflags & AP_REG_ICASE) != 0) options |= PCRE_CASELESS;
++if ((cflags & AP_REG_NEWLINE) != 0) options |= PCRE_MULTILINE;
++
++preg->re_pcre = pcre_compile(pattern, options, &errorptr, &erroffset, NULL);
++preg->re_erroffset = erroffset;
++
++if (preg->re_pcre == NULL) return AP_REG_INVARG;
++
++preg->re_nsub = pcre_info((const pcre *)preg->re_pcre, NULL, NULL);
++return 0;
++}
++
++
++
++
++/*************************************************
++*              Match a regular expression        *
++*************************************************/
++
++/* Unfortunately, PCRE requires 3 ints of working space for each captured
++substring, so we have to get and release working store instead of just using
++the POSIX structures as was done in earlier releases when PCRE needed only 2
++ints. However, if the number of possible capturing brackets is small, use a
++block of store on the stack, to reduce the use of malloc/free. The threshold is
++in a macro that can be changed at configure time. */
++
++AP_DECLARE(int) ap_regexec(const ap_regex_t *preg, const char *string, size_t nmatch,
++                           ap_regmatch_t pmatch[], int eflags)
++{
++int rc;
++int options = 0;
++int *ovector = NULL;
++int small_ovector[POSIX_MALLOC_THRESHOLD * 3];
++int allocated_ovector = 0;
++
++if ((eflags & AP_REG_NOTBOL) != 0) options |= PCRE_NOTBOL;
++if ((eflags & AP_REG_NOTEOL) != 0) options |= PCRE_NOTEOL;
++
++((ap_regex_t *)preg)->re_erroffset = (size_t)(-1);  /* Only has meaning after compile */
++
++if (nmatch > 0)
++  {
++  if (nmatch <= POSIX_MALLOC_THRESHOLD)
++    {
++    ovector = &(small_ovector[0]);
++    }
++  else
++    {
++    ovector = (int *)malloc(sizeof(int) * nmatch * 3);
++    if (ovector == NULL) return AP_REG_ESPACE;
++    allocated_ovector = 1;
++    }
++  }
++
++rc = pcre_exec((const pcre *)preg->re_pcre, NULL, string, (int)strlen(string),
++  0, options, ovector, nmatch * 3);
++
++if (rc == 0) rc = nmatch;    /* All captured slots were filled in */
++
++if (rc >= 0)
++  {
++  size_t i;
++  for (i = 0; i < (size_t)rc; i++)
++    {
++    pmatch[i].rm_so = ovector[i*2];
++    pmatch[i].rm_eo = ovector[i*2+1];
++    }
++  if (allocated_ovector) free(ovector);
++  for (; i < nmatch; i++) pmatch[i].rm_so = pmatch[i].rm_eo = -1;
++  return 0;
++  }
++
++else
++  {
++  if (allocated_ovector) free(ovector);
++  switch(rc)
++    {
++    case PCRE_ERROR_NOMATCH: return AP_REG_NOMATCH;
++    case PCRE_ERROR_NULL: return AP_REG_INVARG;
++    case PCRE_ERROR_BADOPTION: return AP_REG_INVARG;
++    case PCRE_ERROR_BADMAGIC: return AP_REG_INVARG;
++    case PCRE_ERROR_UNKNOWN_NODE: return AP_REG_ASSERT;
++    case PCRE_ERROR_NOMEMORY: return AP_REG_ESPACE;
++    case PCRE_ERROR_MATCHLIMIT: return AP_REG_ESPACE;
++    case PCRE_ERROR_BADUTF8: return AP_REG_INVARG;
++    case PCRE_ERROR_BADUTF8_OFFSET: return AP_REG_INVARG;
++    default: return AP_REG_ASSERT;
++    }
++  }
++}
++
++/* End of pcreposix.c */
+
+Index: server/core.c
+===================================================================
+--- server/core.c	(revision 948227)
++++ server/core.c	(working copy)
+@@ -1624,7 +1624,7 @@
+  */
+ 
+ #ifdef WIN32
+-#define USE_ICASE REG_ICASE
++#define USE_ICASE AP_REG_ICASE
+ #else
+ #define USE_ICASE 0
+ #endif
+@@ -1646,7 +1646,7 @@
+     char *old_path = cmd->path;
+     core_dir_config *conf;
+     ap_conf_vector_t *new_dir_conf = ap_create_per_dir_config(cmd->pool);
+-    regex_t *r = NULL;
++    ap_regex_t *r = NULL;
+     const command_rec *thiscmd = cmd->cmd;
+ 
+     const char *err = ap_check_cmd_context(cmd,
+@@ -1675,13 +1675,13 @@
+         cmd->path = ap_getword_conf(cmd->pool, &arg);
+         if (!cmd->path)
+             return "<Directory ~ > block must specify a path";
+-        r = ap_pregcomp(cmd->pool, cmd->path, REG_EXTENDED|USE_ICASE);
++        r = ap_pregcomp(cmd->pool, cmd->path, AP_REG_EXTENDED|USE_ICASE);
+         if (!r) {
+             return "Regex could not be compiled";
+         }
+     }
+     else if (thiscmd->cmd_data) { /* <DirectoryMatch> */
+-        r = ap_pregcomp(cmd->pool, cmd->path, REG_EXTENDED|USE_ICASE);
++        r = ap_pregcomp(cmd->pool, cmd->path, AP_REG_EXTENDED|USE_ICASE);
+         if (!r) {
+             return "Regex could not be compiled";
+         }
+@@ -1746,7 +1746,7 @@
+     int old_overrides = cmd->override;
+     char *old_path = cmd->path;
+     core_dir_config *conf;
+-    regex_t *r = NULL;
++    ap_regex_t *r = NULL;
+     const command_rec *thiscmd = cmd->cmd;
+     ap_conf_vector_t *new_url_conf = ap_create_per_dir_config(cmd->pool);
+     const char *err = ap_check_cmd_context(cmd,
+@@ -1765,14 +1765,14 @@
+     cmd->override = OR_ALL|ACCESS_CONF;
+ 
+     if (thiscmd->cmd_data) { /* <LocationMatch> */
+-        r = ap_pregcomp(cmd->pool, cmd->path, REG_EXTENDED);
++        r = ap_pregcomp(cmd->pool, cmd->path, AP_REG_EXTENDED);
+         if (!r) {
+             return "Regex could not be compiled";
+         }
+     }
+     else if (!strcmp(cmd->path, "~")) {
+         cmd->path = ap_getword_conf(cmd->pool, &arg);
+-        r = ap_pregcomp(cmd->pool, cmd->path, REG_EXTENDED);
++        r = ap_pregcomp(cmd->pool, cmd->path, AP_REG_EXTENDED);
+         if (!r) {
+             return "Regex could not be compiled";
+         }
+@@ -1810,7 +1810,7 @@
+     int old_overrides = cmd->override;
+     char *old_path = cmd->path;
+     core_dir_config *conf;
+-    regex_t *r = NULL;
++    ap_regex_t *r = NULL;
+     const command_rec *thiscmd = cmd->cmd;
+     core_dir_config *c = mconfig;
+     ap_conf_vector_t *new_file_conf = ap_create_per_dir_config(cmd->pool);
+@@ -1833,14 +1833,14 @@
+     }
+ 
+     if (thiscmd->cmd_data) { /* <FilesMatch> */
+-        r = ap_pregcomp(cmd->pool, cmd->path, REG_EXTENDED|USE_ICASE);
++        r = ap_pregcomp(cmd->pool, cmd->path, AP_REG_EXTENDED|USE_ICASE);
+         if (!r) {
+             return "Regex could not be compiled";
+         }
+     }
+     else if (!strcmp(cmd->path, "~")) {
+         cmd->path = ap_getword_conf(cmd->pool, &arg);
+-        r = ap_pregcomp(cmd->pool, cmd->path, REG_EXTENDED|USE_ICASE);
++        r = ap_pregcomp(cmd->pool, cmd->path, AP_REG_EXTENDED|USE_ICASE);
+         if (!r) {
+             return "Regex could not be compiled";
+         }
+Index: server/request.c
+===================================================================
+--- server/request.c	(revision 948227)
++++ server/request.c	(working copy)
+@@ -1040,7 +1040,7 @@
+                 continue;
+             }
+ 
+-            if (ap_regexec(entry_core->r, r->filename, 0, NULL, REG_NOTEOL)) {
++            if (ap_regexec(entry_core->r, r->filename, 0, NULL, AP_REG_NOTEOL)) {
+                 continue;
+             }
+ 
+Index: modules/metadata/mod_usertrack.c
+===================================================================
+--- modules/metadata/mod_usertrack.c	(revision 948227)
++++ modules/metadata/mod_usertrack.c	(working copy)
+@@ -84,7 +84,7 @@
+     char *cookie_name;
+     char *cookie_domain;
+     char *regexp_string;  /* used to compile regexp; save for debugging */
+-    regex_t *regexp;  /* used to find usertrack cookie in cookie header */
++    ap_regex_t *regexp;  /* used to find usertrack cookie in cookie header */
+ } cookie_dir_rec;
+ 
+ /* Make Cookie: Now we have to generate something that is going to be
+@@ -201,7 +201,7 @@
+                                       cookie_name,
+                                       "=([^;]+)", NULL);
+ 
+-    dcfg->regexp = ap_pregcomp(p, dcfg->regexp_string, REG_EXTENDED);
++    dcfg->regexp = ap_pregcomp(p, dcfg->regexp_string, AP_REG_EXTENDED);
+     ap_assert(dcfg->regexp != NULL);
+ }
+ 
+@@ -210,7 +210,7 @@
+     cookie_dir_rec *dcfg = ap_get_module_config(r->per_dir_config,
+ 						&usertrack_module);
+     const char *cookie_header;
+-    regmatch_t regm[NUM_SUBS];
++    ap_regmatch_t regm[NUM_SUBS];
+ 
+     /* Do not run in subrequests */
+     if (!dcfg->enabled || r->main) {
+Index: modules/metadata/mod_version.c
+===================================================================
+--- modules/metadata/mod_version.c	(revision 948227)
++++ modules/metadata/mod_version.c	(working copy)
+@@ -142,11 +142,11 @@
+ static int match_version(apr_pool_t *pool, char *version_string,
+                          const char **error)
+ {
+-    regex_t *compiled;
++    ap_regex_t *compiled;
+     const char *to_match;
+     int rc;
+ 
+-    compiled = ap_pregcomp(pool, version_string, REG_EXTENDED);
++    compiled = ap_pregcomp(pool, version_string, AP_REG_EXTENDED);
+     if (!compiled) {
+         *error = "Unable to compile regular expression";
+         return 0;
+Index: modules/metadata/mod_headers.c
+===================================================================
+--- modules/metadata/mod_headers.c	(revision 948227)
++++ modules/metadata/mod_headers.c	(working copy)
+@@ -113,7 +113,7 @@
+     hdr_actions action;
+     char *header;
+     apr_array_header_t *ta;   /* Array of format_tag structs */
+-    regex_t *regex;
++    ap_regex_t *regex;
+     const char *condition_var;
+ } header_entry;
+ 
+@@ -344,13 +344,13 @@
+             return "header unset takes two arguments";
+     }
+     else if (new->action == hdr_echo) {
+-        regex_t *regex;
++        ap_regex_t *regex;
+         if (value)
+             return "Header echo takes two arguments";
+         else if (cmd->info == &hdr_in)
+             return "Header echo only valid on Header directive";
+         else {
+-            regex = ap_pregcomp(cmd->pool, hdr, REG_EXTENDED | REG_NOSUB);
++            regex = ap_pregcomp(cmd->pool, hdr, AP_REG_EXTENDED | AP_REG_NOSUB);
+             if (regex == NULL) {
+                 return "Header echo regex could not be compiled";
+             }
+Index: modules/metadata/mod_setenvif.c
+===================================================================
+--- modules/metadata/mod_setenvif.c	(revision 948227)
++++ modules/metadata/mod_setenvif.c	(working copy)
+@@ -106,9 +106,9 @@
+ };
+ typedef struct {
+     char *name;                 /* header name */
+-    regex_t *pnamereg;          /* compiled header name regex */
++    ap_regex_t *pnamereg;       /* compiled header name regex */
+     char *regex;                /* regex to match against */
+-    regex_t *preg;              /* compiled regex */
++    ap_regex_t *preg;           /* compiled regex */
+     const apr_strmatch_pattern *pattern; /* non-regex pattern to match */
+     apr_table_t *features;      /* env vars to set (or unset) */
+     enum special special_type;  /* is it a "special" header ? */
+@@ -159,7 +159,7 @@
+ }
+ 
+ /*
+- * any non-NULL magic constant will do... used to indicate if REG_ICASE should
++ * any non-NULL magic constant will do... used to indicate if AP_REG_ICASE should
+  * be used
+  */
+ #define ICASE_MAGIC	((void *)(&setenvif_module))
+@@ -171,8 +171,8 @@
+      *    -,_,[A-Z\, [a-z] and [0-9].
+      * assume the header name is a regular expression.
+      */
+-    regex_t *preg = ap_pregcomp(p, "^[-A-Za-z0-9_]*$",
+-                                (REG_EXTENDED | REG_NOSUB ));
++    ap_regex_t *preg = ap_pregcomp(p, "^[-A-Za-z0-9_]*$",
++                                   (AP_REG_EXTENDED | AP_REG_NOSUB ));
+     ap_assert(preg != NULL);
+ 
+     if (ap_regexec(preg, name, 0, NULL, 0)) {
+@@ -318,7 +318,7 @@
+         }
+         else {
+             new->preg = ap_pregcomp(cmd->pool, regex,
+-                                    (REG_EXTENDED | (icase ? REG_ICASE : 0)));
++                                    (AP_REG_EXTENDED | (icase ? AP_REG_ICASE : 0)));
+             if (new->preg == NULL) {
+                 return apr_pstrcat(cmd->pool, cmd->cmd->name,
+                                    " regex could not be compiled.", NULL);
+@@ -354,8 +354,8 @@
+              */
+             if (is_header_regex(cmd->pool, fname)) {
+                 new->pnamereg = ap_pregcomp(cmd->pool, fname,
+-                                            (REG_EXTENDED | REG_NOSUB
+-                                             | (icase ? REG_ICASE : 0)));
++                                            (AP_REG_EXTENDED | AP_REG_NOSUB
++                                             | (icase ? AP_REG_ICASE : 0)));
+                 if (new->pnamereg == NULL)
+                     return apr_pstrcat(cmd->pool, cmd->cmd->name,
+                                        "Header name regex could not be "
+@@ -453,7 +453,7 @@
+     apr_size_t val_len = 0;
+     int i, j;
+     char *last_name;
+-    regmatch_t regm[AP_MAX_REG_MATCH];
++    ap_regmatch_t regm[AP_MAX_REG_MATCH];
+ 
+     if (!ap_get_module_config(r->request_config, &setenvif_module)) {
+         ap_set_module_config(r->request_config, &setenvif_module,
+Index: modules/proxy/mod_proxy.c
+===================================================================
+--- modules/proxy/mod_proxy.c	(revision 948227)
++++ modules/proxy/mod_proxy.c	(working copy)
+@@ -573,7 +573,7 @@
+     struct proxy_remote *new;
+     char *p, *q;
+     char *r, *f, *scheme;
+-    regex_t *reg = NULL;
++    ap_regex_t *reg = NULL;
+     int port;
+ 
+     r = apr_pstrdup(cmd->pool, r1);
+@@ -603,7 +603,7 @@
+         port = -1;
+     *p = '\0';
+     if (regex) {
+-        reg = ap_pregcomp(cmd->pool, f, REG_EXTENDED);
++        reg = ap_pregcomp(cmd->pool, f, AP_REG_EXTENDED);
+         if (!reg)
+             return "Regular expression for ProxyRemoteMatch could not be compiled.";
+     }
+@@ -970,7 +970,7 @@
+     char *old_path = cmd->path;
+     proxy_dir_conf *conf;
+     ap_conf_vector_t *new_dir_conf = ap_create_per_dir_config(cmd->pool);
+-    regex_t *r = NULL;
++    ap_regex_t *r = NULL;
+     const command_rec *thiscmd = cmd->cmd;
+ 
+     const char *err = ap_check_cmd_context(cmd,
+@@ -1004,7 +1004,7 @@
+      * scheme?  See proxy_fixup()
+      */
+     if (thiscmd->cmd_data) { /* <ProxyMatch> */
+-        r = ap_pregcomp(cmd->pool, cmd->path, REG_EXTENDED);
++        r = ap_pregcomp(cmd->pool, cmd->path, AP_REG_EXTENDED);
+         if (!r) {
+             return "Regex could not be compiled";
+         }
+@@ -1015,7 +1015,7 @@
+             return "<Proxy ~ > block must specify a path";
+         if (strncasecmp(cmd->path, "proxy:", 6))
+             cmd->path += 6;
+-        r = ap_pregcomp(cmd->pool, cmd->path, REG_EXTENDED);
++        r = ap_pregcomp(cmd->pool, cmd->path, AP_REG_EXTENDED);
+         if (!r) {
+             return "Regex could not be compiled";
+         }
+Index: modules/proxy/mod_proxy.h
+===================================================================
+--- modules/proxy/mod_proxy.h	(revision 948227)
++++ modules/proxy/mod_proxy.h	(working copy)
+@@ -90,12 +90,12 @@
+ 
+ /* static information about a remote proxy */
+ struct proxy_remote {
+-    const char *scheme;		/* the schemes handled by this proxy, or '*' */
+-    const char *protocol;	/* the scheme used to talk to this proxy */
+-    const char *hostname;	/* the hostname of this proxy */
+-    apr_port_t  port;		/* the port for this proxy */
+-    regex_t *regexp;		/* compiled regex (if any) for the remote */
+-    int use_regex;		/* simple boolean. True if we have a regex pattern */
++    const char *scheme;     /* the schemes handled by this proxy, or '*' */
++    const char *protocol;   /* the scheme used to talk to this proxy */
++    const char *hostname;   /* the hostname of this proxy */
++    apr_port_t  port;       /* the port for this proxy */
++    ap_regex_t *regexp;        /* compiled regex (if any) for the remote */
++    int use_regex;          /* simple boolean. True if we have a regex pattern */
+ };
+ 
+ struct proxy_alias {
+@@ -165,7 +165,7 @@
+ typedef struct {
+     const char *p;            /* The path */
+     int         p_is_fnmatch; /* Is this path an fnmatch candidate? */
+-    regex_t    *r;            /* Is this a regex? */
++    ap_regex_t  *r;            /* Is this a regex? */
+     const char *ftp_directory_charset;
+ } proxy_dir_conf;
+ 
+Index: modules/proxy/proxy_ftp.c
+===================================================================
+--- modules/proxy/proxy_ftp.c	(revision 948227)
++++ modules/proxy/proxy_ftp.c	(working copy)
+@@ -426,8 +426,8 @@
+         int found = 0;
+         int eos = 0;
+ 
+-        regex_t *re = NULL;
+-        regmatch_t re_result[LS_REG_MATCH];
++        ap_regex_t *re = NULL;
++        ap_regmatch_t re_result[LS_REG_MATCH];
+ 
+         /* Compile the output format of "ls -s1" as a fallback for non-unix ftp listings */
+         re = ap_pregcomp(p, LS_REG_PATTERN, REG_EXTENDED);
+Index: modules/ssl/ssl_expr_eval.c
+===================================================================
+--- modules/ssl/ssl_expr_eval.c	(revision 948227)
++++ modules/ssl/ssl_expr_eval.c	(working copy)
+@@ -126,24 +126,24 @@
+             ssl_expr *e1;
+             ssl_expr *e2;
+             char *word;
+-            regex_t *regex;
++            ap_regex_t *regex;
+ 
+             e1 = (ssl_expr *)node->node_arg1;
+             e2 = (ssl_expr *)node->node_arg2;
+             word = ssl_expr_eval_word(r, e1);
+-            regex = (regex_t *)(e2->node_arg1);
++            regex = (ap_regex_t *)(e2->node_arg1);
+             return (ap_regexec(regex, word, 0, NULL, 0) == 0);
+         }
+         case op_NRE: {
+             ssl_expr *e1;
+             ssl_expr *e2;
+             char *word;
+-            regex_t *regex;
++            ap_regex_t *regex;
+ 
+             e1 = (ssl_expr *)node->node_arg1;
+             e2 = (ssl_expr *)node->node_arg2;
+             word = ssl_expr_eval_word(r, e1);
+-            regex = (regex_t *)(e2->node_arg1);
++            regex = (ap_regex_t *)(e2->node_arg1);
+             return !(ap_regexec(regex, word, 0, NULL, 0) == 0);
+         }
+         default: {
+Index: modules/ssl/ssl_expr_parse.c
+===================================================================
+--- modules/ssl/ssl_expr_parse.c	(revision 948227)
++++ modules/ssl/ssl_expr_parse.c	(working copy)
+@@ -818,9 +818,9 @@
+ case 24:
+ #line 148 "ssl_expr_parse.y"
+ { 
+-                regex_t *regex;
++                ap_regex_t *regex;
+                 if ((regex = ap_pregcomp(ssl_expr_info.pool, ssl_expr_yyvsp[0].cpVal, 
+-                                         REG_EXTENDED|REG_NOSUB)) == NULL) {
++                                         AP_REG_EXTENDED|AP_REG_NOSUB)) == NULL) {
+                     ssl_expr_error = "Failed to compile regular expression";
+                     YYERROR;
+                     regex = NULL;
+@@ -831,9 +831,9 @@
+ case 25:
+ #line 158 "ssl_expr_parse.y"
+ {
+-                regex_t *regex;
++                ap_regex_t *regex;
+                 if ((regex = ap_pregcomp(ssl_expr_info.pool, ssl_expr_yyvsp[0].cpVal, 
+-                                         REG_EXTENDED|REG_NOSUB|REG_ICASE)) == NULL) {
++                                         AP_REG_EXTENDED|AP_REG_NOSUB|AP_REG_ICASE)) == NULL) {
+                     ssl_expr_error = "Failed to compile regular expression";
+                     YYERROR;
+                     regex = NULL;
+Index: modules/ssl/ssl_expr_parse.y
+===================================================================
+--- modules/ssl/ssl_expr_parse.y	(revision 948227)
++++ modules/ssl/ssl_expr_parse.y	(working copy)
+@@ -113,18 +113,18 @@
+           ;
+ 
+ regex     : T_REGEX { 
+-                regex_t *regex;
++                ap_regex_t *regex;
+                 if ((regex = ap_pregcomp(ssl_expr_info.pool, $1, 
+-                                         REG_EXTENDED|REG_NOSUB)) == NULL) {
++                                         AP_REG_EXTENDED|AP_REG_NOSUB)) == NULL) {
+                     ssl_expr_error = "Failed to compile regular expression";
+                     YYERROR;
+                 }
+                 $$ = ssl_expr_make(op_Regex, regex, NULL);
+             }
+           | T_REGEX_I {
+-                regex_t *regex;
++                ap_regex_t *regex;
+                 if ((regex = ap_pregcomp(ssl_expr_info.pool, $1, 
+-                                         REG_EXTENDED|REG_NOSUB|REG_ICASE)) == NULL) {
++                                         AP_REG_EXTENDED|AP_REG_NOSUB|AP_REG_ICASE)) == NULL) {
+                     ssl_expr_error = "Failed to compile regular expression";
+                     YYERROR;
+                 }
+Index: modules/mappers/mod_rewrite.c
+===================================================================
+--- modules/mappers/mod_rewrite.c	(revision 948227)
++++ modules/mappers/mod_rewrite.c	(working copy)
+@@ -552,7 +552,7 @@
+     char *str = apr_pstrdup(cmd->pool, in_str);
+     rewrite_server_conf *sconf;
+     rewritecond_entry *newcond;
+-    regex_t *regexp;
++    ap_regex_t *regexp;
+     char *a1;
+     char *a2;
+     char *a3;
+@@ -602,11 +602,11 @@
+        we can compile the pattern for case insensitive matching,
+        under the old V8 library we have to do it self via a hack */
+     if (newcond->flags & CONDFLAG_NOCASE) {
+-        rc = ((regexp = ap_pregcomp(cmd->pool, cp, REG_EXTENDED|REG_ICASE))
++        rc = ((regexp = ap_pregcomp(cmd->pool, cp, AP_REG_EXTENDED|AP_REG_ICASE))
+               == NULL);
+     }
+     else {
+-        rc = ((regexp = ap_pregcomp(cmd->pool, cp, REG_EXTENDED)) == NULL);
++        rc = ((regexp = ap_pregcomp(cmd->pool, cp, AP_REG_EXTENDED)) == NULL);
+     }
+     if (rc) {
+         return apr_pstrcat(cmd->pool,
+@@ -697,7 +697,7 @@
+     char *str = apr_pstrdup(cmd->pool, in_str);
+     rewrite_server_conf *sconf;
+     rewriterule_entry *newrule;
+-    regex_t *regexp;
++    ap_regex_t *regexp;
+     char *a1;
+     char *a2;
+     char *a3;
+@@ -743,9 +743,9 @@
+         newrule->flags |= RULEFLAG_NOTMATCH;
+         cp++;
+     }
+-    mode = REG_EXTENDED;
++    mode = AP_REG_EXTENDED;
+     if (newrule->flags & RULEFLAG_NOCASE) {
+-        mode |= REG_ICASE;
++        mode |= AP_REG_ICASE;
+     }
+     if ((regexp = ap_pregcomp(cmd->pool, cp, mode)) == NULL) {
+         return apr_pstrcat(cmd->pool,
+@@ -1945,8 +1945,8 @@
+     char *output;
+     const char *vary;
+     char newuri[MAX_STRING_LEN];
+-    regex_t *regexp;
+-    regmatch_t regmatch[AP_MAX_REG_MATCH];
++    ap_regex_t *regexp;
++    ap_regmatch_t regmatch[AP_MAX_REG_MATCH];
+     backrefinfo *briRR = NULL;
+     backrefinfo *briRC = NULL;
+     int failed;
+@@ -2303,7 +2303,7 @@
+     char input[MAX_STRING_LEN];
+     apr_finfo_t sb;
+     request_rec *rsub;
+-    regmatch_t regmatch[AP_MAX_REG_MATCH];
++    ap_regmatch_t regmatch[AP_MAX_REG_MATCH];
+     int rc;
+ 
+     /*
+Index: modules/mappers/mod_rewrite.h
+===================================================================
+--- modules/mappers/mod_rewrite.h	(revision 948227)
++++ modules/mappers/mod_rewrite.h	(working copy)
+@@ -199,14 +199,14 @@
+ typedef struct {
+     char    *input;                /* Input string of RewriteCond */
+     char    *pattern;              /* the RegExp pattern string */
+-    regex_t *regexp;
++    ap_regex_t *regexp;
+     int      flags;                /* Flags which control the match */
+ } rewritecond_entry;
+ 
+ typedef struct {
+     apr_array_header_t *rewriteconds;    /* the corresponding RewriteCond entries */
+     char    *pattern;              /* the RegExp pattern string */
+-    regex_t *regexp;               /* the RegExp pattern compilation */
++    ap_regex_t *regexp;               /* the RegExp pattern compilation */
+     char    *output;               /* the Substitution string */
+     int      flags;                /* Flags which control the substitution */
+     char    *forced_mimetype;      /* forced MIME type of substitution */
+@@ -290,7 +290,7 @@
+ typedef struct backrefinfo {
+     char *source;
+     int nsub;
+-    regmatch_t regmatch[AP_MAX_REG_MATCH];
++    ap_regmatch_t regmatch[AP_MAX_REG_MATCH];
+ } backrefinfo;
+ 
+ 
+Index: modules/mappers/mod_alias.c
+===================================================================
+--- modules/mappers/mod_alias.c	(revision 948227)
++++ modules/mappers/mod_alias.c	(working copy)
+@@ -40,7 +40,7 @@
+     const char *real;
+     const char *fake;
+     char *handler;
+-    regex_t *regexp;
++    ap_regex_t *regexp;
+     int redir_status;                /* 301, 302, 303, 410, etc */
+ } alias_entry;
+ 
+@@ -112,7 +112,7 @@
+     /* XX r can NOT be relative to DocumentRoot here... compat bug. */
+ 
+     if (use_regex) {
+-        new->regexp = ap_pregcomp(cmd->pool, f, REG_EXTENDED);
++        new->regexp = ap_pregcomp(cmd->pool, f, AP_REG_EXTENDED);
+         if (new->regexp == NULL)
+             return "Regular expression could not be compiled.";
+         new->real = r;
+@@ -176,7 +176,7 @@
+     alias_server_conf *serverconf = ap_get_module_config(s->module_config,
+                                                          &alias_module);
+     int status = (int) (long) cmd->info;
+-    regex_t *r = NULL;
++    ap_regex_t *r = NULL;
+     const char *f = arg2;
+     const char *url = arg3;
+ 
+@@ -196,7 +196,7 @@
+     }
+ 
+     if (use_regex) {
+-        r = ap_pregcomp(cmd->pool, f, REG_EXTENDED);
++        r = ap_pregcomp(cmd->pool, f, AP_REG_EXTENDED);
+         if (r == NULL)
+             return "Regular expression could not be compiled.";
+     }
+@@ -314,7 +314,7 @@
+                             int doesc, int *status)
+ {
+     alias_entry *entries = (alias_entry *) aliases->elts;
+-    regmatch_t regm[AP_MAX_REG_MATCH];
++    ap_regmatch_t regm[AP_MAX_REG_MATCH];
+     char *found = NULL;
+     int i;
+ 
+Index: modules/filters/mod_include.c
+===================================================================
+--- modules/filters/mod_include.c	(revision 948227)
++++ modules/filters/mod_include.c	(working copy)
+@@ -1173,11 +1173,11 @@
+ static int re_check(request_rec *r, include_ctx_t *ctx, 
+                     char *string, char *rexp)
+ {
+-    regex_t *compiled;
+-    const apr_size_t nres = sizeof(*ctx->re_result) / sizeof(regmatch_t);
++    ap_regex_t *compiled;
++    const apr_size_t nres = sizeof(*ctx->re_result) / sizeof(ap_regmatch_t);
+     int regex_error;
+ 
+-    compiled = ap_pregcomp(r->pool, rexp, REG_EXTENDED | REG_NOSUB);
++    compiled = ap_pregcomp(r->pool, rexp, AP_REG_EXTENDED | AP_REG_NOSUB);
+     if (compiled == NULL) {
+         ap_log_rerror(APLOG_MARK, APLOG_ERR, 0, r,
+                       "unable to compile pattern \"%s\"", rexp);
+Index: include/ap_regex.h
+===================================================================
+--- include/ap_regex.h	(revision 0)
++++ include/ap_regex.h	(revision 0)
+@@ -0,0 +1,145 @@
++/* Copyright 1999-2005 The Apache Software Foundation or its licensors, as
++ * applicable.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++/* This is the header for the POSIX wrapper interface to the PCRE Perl-
++Compatible Regular Expression library. It defines the things POSIX says should
++be there. I hope.
++
++            Copyright (c) 1997-2004 University of Cambridge
++
++-----------------------------------------------------------------------------
++Redistribution and use in source and binary forms, with or without
++modification, are permitted provided that the following conditions are met:
++
++    * Redistributions of source code must retain the above copyright notice,
++      this list of conditions and the following disclaimer.
++
++    * Redistributions in binary form must reproduce the above copyright
++      notice, this list of conditions and the following disclaimer in the
++      documentation and/or other materials provided with the distribution.
++
++    * Neither the name of the University of Cambridge nor the names of its
++      contributors may be used to endorse or promote products derived from
++      this software without specific prior written permission.
++
++THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
++AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
++LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++POSSIBILITY OF SUCH DAMAGE.
++-----------------------------------------------------------------------------
++*/
++
++#ifndef AP_REGEX_H
++#define AP_REGEX_H
++
++/* Have to include stdlib.h in order to ensure that size_t is defined. */
++
++#include <stdlib.h>
++
++/* Allow for C++ users */
++
++#ifdef __cplusplus
++extern "C" {
++#endif
++
++/* Options for ap_regexec: */
++
++#define AP_REG_ICASE    0x01 /** use a case-insensitive match */
++#define AP_REG_NEWLINE  0x02 /** don't match newlines against '.' etc */
++#define AP_REG_NOTBOL   0x04 /** ^ will not match against start-of-string */
++#define AP_REG_NOTEOL   0x08 /** $ will not match against end-of-string */
++
++#define AP_REG_EXTENDED (0)  /** unused */
++#define AP_REG_NOSUB    (0)  /** unused */
++
++/* Error values: */
++enum {
++  AP_REG_ASSERT = 1,  /** internal error ? */
++  AP_REG_ESPACE,      /** failed to get memory */
++  AP_REG_INVARG,      /** invalid argument */
++  AP_REG_NOMATCH      /** match failed */
++};
++
++/* The structure representing a compiled regular expression. */
++typedef struct {
++  void *re_pcre;
++  size_t re_nsub;
++  size_t re_erroffset;
++} ap_regex_t;
++
++typedef int regoff_t;
++
++/* The structure in which a captured offset is returned. */
++typedef struct {
++  regoff_t rm_so;
++  regoff_t rm_eo;
++} ap_regmatch_t;
++
++#ifndef AP_DECLARE
++#define AP_DECLARE(x) x
++#endif /* AP_DECLARE */
++
++/* The functions */
++
++/**
++ * Compile a regeular expression.
++ * @param preg Returned compiled regex
++ * @param regex The regular expression string
++ * @param cflags Must be zero (currently).
++ * @return Zero on success or non-zero on error
++ */
++AP_DECLARE(int) ap_regcomp(ap_regex_t *preg, const char *regex, int cflags);
++
++/**
++ * Match a null-terminated string against a pre-compiled regex.
++ * @param preg The pre-compiled regex
++ * @param string The string to match
++ * @param nmatch Provide information regarding the location of any matches
++ * @param pmatch Provide information regarding the location of any matches
++ * @param eflags Bitwise OR of any of AP_REG_* flags 
++ * @return 0 for successful match, #REG_NOMATCH otherwise
++ */ 
++AP_DECLARE(int) ap_regexec(const ap_regex_t *preg, const char *string,
++                           size_t nmatch, ap_regmatch_t *pmatch, int eflags);
++
++/**
++ * Return the error code returned by regcomp or regexec into error messages
++ * @param errcode the error code returned by regexec or regcomp
++ * @param preg The precompiled regex
++ * @param errbuf A buffer to store the error in
++ * @param errbuf_size The size of the buffer
++ */
++AP_DECLARE(size_t) ap_regerror(int errcode, const ap_regex_t *preg, 
++                               char *errbuf, size_t errbuf_size);
++
++/** Destroy a pre-compiled regex.
++ * @param preg The pre-compiled regex to free.
++ */
++AP_DECLARE(void) ap_regfree(ap_regex_t *preg);
++
++#ifdef __cplusplus
++}   /* extern "C" */
++#endif
++
++#endif /* AP_REGEX_T */
++
+
+Property changes on: include/ap_regex.h
+___________________________________________________________________
+Added: svn:mime-type
+   + text/plain
+Added: svn:keywords
+   + FreeBSD=%H
+Added: svn:eol-style
+   + native
+
+Index: include/ap_mmn.h
+===================================================================
+--- include/ap_mmn.h	(revision 948227)
++++ include/ap_mmn.h	(working copy)
+@@ -87,12 +87,15 @@
+  * 20020903.11 (2.0.55-dev) added trace_enable to core_server_config
+  * 20020903.12 (2.0.56-dev) added ap_get_server_revision / ap_version_t
+  * 20020903.13 (2.0.62-dev) Add *ftp_directory_charset to proxy_dir_conf
++ * 20050127.0 (2.1.3-dev) renamed regex_t->ap_regex_t, regmatch_t->ap_regmatch_t,
++ *                        REG_*->AP_REG_*, removed reg* in place of ap_reg*;
++ *                        added ap_regex.h
+  */
+ 
+ #define MODULE_MAGIC_COOKIE 0x41503230UL /* "AP20" */
+ 
+ #ifndef MODULE_MAGIC_NUMBER_MAJOR
+-#define MODULE_MAGIC_NUMBER_MAJOR 20020903
++#define MODULE_MAGIC_NUMBER_MAJOR 20050127
+ #endif
+ #define MODULE_MAGIC_NUMBER_MINOR 13                    /* 0...n */
+ 
+Index: include/pcreposix.h
+===================================================================
+--- include/pcreposix.h	(revision 948227)
++++ include/pcreposix.h	(working copy)
+@@ -1,99 +0,0 @@
+-/*************************************************
+-*       Perl-Compatible Regular Expressions      *
+-*************************************************/
+-
+-/* Copyright (c) 1997-2000 University of Cambridge */
+-
+-/**
+- * @file include/pcreposix.h
+- * @brief PCRE definitions
+- */
+-
+-#ifndef _PCREPOSIX_H
+-#define _PCREPOSIX_H
+-
+-/* This is the header for the POSIX wrapper interface to the PCRE Perl-
+-Compatible Regular Expression library. It defines the things POSIX says should
+-be there. I hope. */
+-
+-/* Have to include stdlib.h in order to ensure that size_t is defined. */
+-
+-#include <stdlib.h>
+-
+-/* Allow for C++ users */
+-
+-#ifdef __cplusplus
+-extern "C" {
+-#endif
+-
+-/* Options defined by POSIX. */
+-
+-  /** Ignore case */
+-#define REG_ICASE     0x01
+-  /** Don't match newlines with wildcards */
+-#define REG_NEWLINE   0x02
+-  /** Don't match BOL */
+-#define REG_NOTBOL    0x04
+-  /** Don't match EOL */
+-#define REG_NOTEOL    0x08
+-
+-/* These are not used by PCRE, but by defining them we make it easier
+-to slot PCRE into existing programs that make POSIX calls. */
+-
+-  /** UNUSED! */
+-#define REG_EXTENDED  0
+-  /** UNUSED! */
+-#define REG_NOSUB     0
+-
+-/* Error values. Not all these are relevant or used by the wrapper. */
+-
+-enum {
+-  REG_ASSERT = 1,  /* internal error ? */
+-  REG_BADBR,       /* invalid repeat counts in {} */
+-  REG_BADPAT,      /* pattern error */
+-  REG_BADRPT,      /* ? * + invalid */
+-  REG_EBRACE,      /* unbalanced {} */
+-  REG_EBRACK,      /* unbalanced [] */
+-  REG_ECOLLATE,    /* collation error - not relevant */
+-  REG_ECTYPE,      /* bad class */
+-  REG_EESCAPE,     /* bad escape sequence */
+-  REG_EMPTY,       /* empty expression */
+-  REG_EPAREN,      /* unbalanced () */
+-  REG_ERANGE,      /* bad range inside [] */
+-  REG_ESIZE,       /* expression too big */
+-  REG_ESPACE,      /* failed to get memory */
+-  REG_ESUBREG,     /* bad back reference */
+-  REG_INVARG,      /* bad argument */
+-  REG_NOMATCH      /* match failed */
+-};
+-
+-
+-/* The structure representing a compiled regular expression. */
+-
+-typedef struct {
+-  void *re_pcre;
+-  size_t re_nsub;
+-  size_t re_erroffset;
+-} regex_t;
+-
+-/* The structure in which a captured offset is returned. */
+-
+-typedef int regoff_t;
+-
+-typedef struct {
+-  regoff_t rm_so;
+-  regoff_t rm_eo;
+-} regmatch_t;
+-
+-/* The functions */
+-
+-extern int regcomp(regex_t *, const char *, int);
+-extern int regexec(regex_t *, const char *, size_t, regmatch_t *, int);
+-extern size_t regerror(int, const regex_t *, char *, size_t);
+-extern void regfree(regex_t *);
+-
+-#ifdef __cplusplus
+-}   /* extern "C" */
+-#endif
+-
+-#endif /* End of pcreposix.h */
+Index: include/httpd.h
+===================================================================
+--- include/httpd.h	(revision 948227)
++++ include/httpd.h	(working copy)
+@@ -41,7 +41,7 @@
+ 
+ #include "os.h"
+ 
+-#include "pcreposix.h"
++#include "ap_regex.h"
+ 
+ /* Note: util_uri.h is also included, see below */
+ 
+@@ -1523,42 +1523,17 @@
+  *   @li #REG_NEWLINE  - Match-any-character operators don't match new-line
+  * @return The compiled regular expression
+  */
+-AP_DECLARE(regex_t *) ap_pregcomp(apr_pool_t *p, const char *pattern,
+-				   int cflags);
+-
++AP_DECLARE(ap_regex_t *) ap_pregcomp(apr_pool_t *p, const char *pattern,
++                                     int cflags);
++    
+ /**
+  * Free the memory associated with a compiled regular expression
+  * @param p The pool the regex was allocated from
+  * @param reg The regular expression to free
+  */
+-AP_DECLARE(void) ap_pregfree(apr_pool_t *p, regex_t *reg);
++AP_DECLARE(void) ap_pregfree(apr_pool_t *p, ap_regex_t *reg);
+ 
+ /**
+- * Match a null-terminated string against a pre-compiled regex.
+- * @param preg The pre-compiled regex
+- * @param string The string to match
+- * @param nmatch Provide information regarding the location of any matches
+- * @param pmatch Provide information regarding the location of any matches
+- * @param eflags Bitwise or of any of:
+- *   @li #REG_NOTBOL - match-beginning-of-line operator always
+- *     fails to match
+- *   @li #REG_NOTEOL - match-end-of-line operator always fails to match
+- * @return 0 for successful match, #REG_NOMATCH otherwise
+- */ 
+-AP_DECLARE(int)    ap_regexec(regex_t *preg, const char *string,
+-                              size_t nmatch, regmatch_t pmatch[], int eflags);
+-
+-/**
+- * Return the error code returned by regcomp or regexec into error messages
+- * @param errcode the error code returned by regexec or regcomp
+- * @param preg The precompiled regex
+- * @param errbuf A buffer to store the error in
+- * @param errbuf_size The size of the buffer
+- */
+-AP_DECLARE(size_t) ap_regerror(int errcode, const regex_t *preg, 
+-                               char *errbuf, size_t errbuf_size);
+-
+-/**
+  * After performing a successful regex match, you may use this function to 
+  * perform a series of string substitutions based on subexpressions that were
+  * matched during the call to ap_regexec
+@@ -1570,7 +1545,7 @@
+  * @param pmatch the pmatch array returned from ap_pregex
+  */
+ AP_DECLARE(char *) ap_pregsub(apr_pool_t *p, const char *input, const char *source,
+-                              size_t nmatch, regmatch_t pmatch[]);
++                              size_t nmatch, ap_regmatch_t pmatch[]);
+ 
+ /**
+  * We want to downcase the type/subtype for comparison purposes
+Index: include/http_core.h
+===================================================================
+--- include/http_core.h	(revision 948227)
++++ include/http_core.h	(working copy)
+@@ -493,7 +493,7 @@
+     
+     /* Access control */
+     apr_array_header_t *sec_file;
+-    regex_t *r;
++    ap_regex_t *r;
+ 
+     const char *mime_type;       /* forced with ForceType  */
+     const char *handler;         /* forced with SetHandler */
+Index: include/mod_include.h
+===================================================================
+--- modules/filters/mod_include.h.orig	2010-05-25 19:51:03.245669563 -0400
++++ modules/filters/mod_include.h	2010-05-25 19:50:37.236961248 -0400
+@@ -140,7 +140,7 @@
+     int          start_seq_len;
+     char         *end_seq;
+     char         *re_string;
+-    regmatch_t   (*re_result)[10];
++    ap_regmatch_t   (*re_result)[10];
+ } include_ctx_t;
+ 
+ /* These flags are used to set flag bits. */
