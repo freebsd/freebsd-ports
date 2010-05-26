@@ -216,7 +216,7 @@ _LICENSE_TYPE=		known
 _LICENSE_ERROR?=	redefining LICENSE_${var} is not allowed for known licenses, to define a custom license try another LICENSE name like ${_LICENSE}-variant
 .				endif
 .				if !defined(_LICENSE_${var}_${lic})
-_LICENGE_ERROR?=	ERROR: missing _LICENSE_${var}_${lic} in bsd.licenses.db.mk
+_LICENSE_ERROR?=	ERROR: missing _LICENSE_${var}_${lic} in bsd.licenses.db.mk
 .				else
 _LICENSE_${var}=	${_LICENSE_${var}_${lic}}
 .				endif
@@ -293,7 +293,7 @@ _LICENSE_TYPE_${lic}=	known
 _LICENSE_ERROR?=	redefining LICENSE_${var}_${lic} is not allowed for known licenses, to define a custom license try another LICENSE name for ${lic} like ${lic}-variant
 .				endif
 .				if !defined(_LICENSE_${var}_${lic})
-_LICENGE_ERROR?=	ERROR: missing _LICENSE_${var}_${lic} in bsd.licenses.db.mk
+_LICENSE_ERROR?=	ERROR: missing _LICENSE_${var}_${lic} in bsd.licenses.db.mk
 .				endif
 .			endfor
 # Check for LICENSE_FILE or at least LICENSE_TEXT (which simulates it)
