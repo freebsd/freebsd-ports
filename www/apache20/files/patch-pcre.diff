@@ -663,7 +663,7 @@ Index: modules/proxy/proxy_ftp.c
 ===================================================================
 --- modules/proxy/proxy_ftp.c	(revision 948227)
 +++ modules/proxy/proxy_ftp.c	(working copy)
-@@ -426,8 +426,8 @@
+@@ -426,11 +426,11 @@
          int found = 0;
          int eos = 0;
  
@@ -673,7 +673,11 @@ Index: modules/proxy/proxy_ftp.c
 +        ap_regmatch_t re_result[LS_REG_MATCH];
  
          /* Compile the output format of "ls -s1" as a fallback for non-unix ftp listings */
-         re = ap_pregcomp(p, LS_REG_PATTERN, REG_EXTENDED);
+-        re = ap_pregcomp(p, LS_REG_PATTERN, REG_EXTENDED);
++        re = ap_pregcomp(p, LS_REG_PATTERN, AP_REG_EXTENDED);
+         ap_assert(re != NULL);
+ 
+         /* get a complete line */
 Index: modules/ssl/ssl_expr_eval.c
 ===================================================================
 --- modules/ssl/ssl_expr_eval.c	(revision 948227)
