@@ -7,6 +7,7 @@
 
 PORTNAME=	zoom
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 MAINTAINER=	mitsuru@riken.jp
 COMMENT=	A Ruby binding to the Z39.50 Object-Orientation Model (ZOOM)
 
-LIB_DEPENDS=	yaz.3:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

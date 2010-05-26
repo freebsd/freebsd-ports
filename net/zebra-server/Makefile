@@ -7,6 +7,7 @@
 
 PORTNAME=	zebra-server
 PORTVERSION=	2.0.43
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
 DISTNAME=	idzebra-${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	ben@gibbed.org
 COMMENT=	Z39.50/SR server software
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		yaz.3:${PORTSDIR}/net/yaz
+		yaz.4:${PORTSDIR}/net/yaz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \

@@ -7,7 +7,7 @@
 
 PORTNAME=	tellico
 PORTVERSION=	1.3.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
@@ -16,7 +16,7 @@ COMMENT=	Collection manager for KDE
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		poppler-qt:${PORTSDIR}/graphics/poppler-qt \
-		yaz.3:${PORTSDIR}/net/yaz \
+		yaz.4:${PORTSDIR}/net/yaz \
 		exempi:${PORTSDIR}/textproc/exempi
 
 USE_KDELIBS_VER=3
