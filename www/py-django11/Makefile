@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	django
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	www python
 MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION}/ \
 		CHEESESHOP
@@ -71,6 +71,9 @@ PORTDOCS=	*
 
 post-build:
 .if defined(WITH_DOCS)
+.	if defined(NOPORTDOCS)
+IGNORE=	you cannot build documentation while setting NOPORTDOCS
+.	endif
 	cd ${WRKSRC}/docs && ${MAKE} html
 .endif
 
