@@ -6,11 +6,13 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20100524:
-  AFFECTS: users of darcs, pandoc, xmonad, xmonad-contrib, xmobar, porte
+  AFFECTS: users of devel/darcs, ports-mgmt/porte, textproc/pandoc,
+	   x11/xmobar, x11-wm/xmonad, x11-wm/xmonad-contrib
   AUTHOR: pgj@FreeBSD.org
 
-  The following applications have been renamed to improve consistency
-  among Haskell Cabal ports:
+  The following ports have been renamed to improve consistency among Haskell
+  Cabal ports:
+
     - devel/darcs           -> devel/hs-darcs
     - ports-mgmt/porte      -> ports-mgmt/hs-porte
     - textproc/pandoc       -> textproc/hs-pandoc
@@ -18,10 +20,12 @@ you update your ports collection, before attempting any port upgrades.
     - x11-wm/xmonad         -> x11-wm/hs-xmonad
     - x11-wm/xmonad-contrib -> x11-wm/hs-xmonad-contrib
 
-  Please follow the steps below to update your installation.
+  Please follow these steps below to update Haskell ports that you have
+  installed:
 
-  1) Reinstall the renamed Haskell port dependencies (see below).  This
-     will possibly makes you remove the affected packages above.
+  1) Reinstall the renamed Haskell port dependencies (see previous entry).
+     Note that this will possibly require that you remove the affected leaf
+     (aforementioned) ports as well;
 
   2) Reinstall the renamed application(s) you use.
 
@@ -29,11 +33,12 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of hs-* ports
   AUTHOR: pgj@FreeBSD.org
 
-  The following Haskell packages have been renamed in order to bring
-  them in sync with the naming scheme used at HackageDB.  Please follow
-  the steps below to update your installation.
+  The following Haskell ports have been renamed in order to bring them in
+  sync with the naming scheme used at HackageDB.  Please follow these steps
+  below to update your installation:
 
-  1) Delete the following packages (if installed):
+  1) Delete the following ports (if you have any of them installed):
+
      - hs-zip-archive-ghc
      - hs-binary-ghc
      - hs-language-c-ghc
@@ -52,57 +57,57 @@ you update your ports collection, before attempting any port upgrades.
      - hs-OpenGLURaw-ghc
      - hs-glut-ghc
 
-  2) Rebuild the renamed packages and all ports depending on them.
+  2) Rebuild the renamed ports and all ports that depend on them.
 
 20100518:
   AFFECTS: users of devel/pylint
   AUTHOR: mva@FreeBSD.org
 
   The pylint user configuration files have been changed slightly in newer
-  versions (>=0.20.0). In some cases older configurations might crash
+  versions (>=0.20.0).  In some cases, older configurations might crash
   pylint at startup.
-  
-  If you run into startup problems, make sure to remove the .pylintrc
+
+  If you run into startup problems, make sure you remove the .pylintrc
   configuration settings and the .pylint.d directory from your home
   directory:
 
-    # rm ~/.pylintrc
-    # rm -rf ~/.pylint.d
+	$ rm ~/.pylintrc
+	$ rm -rf ~/.pylint.d
 
 20100518:
   AFFECTS: users of devel/apr0, devel/apr1, www/apache20, www/apache22
   AUTHOR: pgollucci@FreeBSD.org
 
-  devel/apr has been renamed to devel/apr1
+  devel/apr port has been renamed to devel/apr1.
 
-  WITH_APR_FROM_PORTS=yes for www/apache22 has been dissolved and
-  may be removed from your configs. devel/apr1 is always used now.
+  WITH_APR_FROM_PORTS=yes for www/apache22 has been dissolved and may be
+  removed from your configuration files; devel/apr1 is always used now.
 
-  Please manually delete apache-2.\* if installed _before_ updating using either
-  portmaster or portupgrade.  
+  Please manually delete apache-2.\* if installed _before_ updating using
+  either portmaster or portupgrade:
 
-    # pkg_delete -f apache-2.\*
+	pkg_delete -f apache-2.\*
 
-  If you use portmaster:
+  Then, if you use portmaster:
 
-    portmaster -o devel/apr1 devel/apr
+	portmaster -o devel/apr1 devel/apr
 
   If you use portupgrade:
 
-    portupgrade -f -o devel/apr1 devel/apr
+	portupgrade -f -o devel/apr1 devel/apr
 
-  Finally re-install apache if you deleted it earlier and update ports as usual.
-  (where XX is either 20 or 22)
+  Finally, reinstall Apache port if you deleted it earlier and update ports as
+  usual (`XX' below is either 20 or 22):
 
-    portinstall www/apacheXX
+	portinstall www/apacheXX
 
 20100512:
   AFFECTS: users of www/apache20
   AUTHOR: pgollucci@FreeBSD.org
 
-  The rc.d script has been renamed
+  The rc.d script has been renamed:
 
-    apache2.sh -> apache2
+	apache2.sh -> apache2
 
   You'll need to update any crons wrappers, etc. for the new paths.
 
@@ -120,7 +125,7 @@ you update your ports collection, before attempting any port upgrades.
     # portmaster -a (or portupgrade -aR)
 
   In order to enabled Nepomuk semantic desktop search you have to install
-  databases/virtuoso (you don't need manually configure or run virtuoso
+  databases/virtuoso (you don't need to manually configure or run virtuoso
   server).
 
 20100511:
@@ -232,12 +237,13 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of math/libgmp4
   AUTHOR: ale@FreeBSD.org
 
-  The default gmp version in FreeBSD is now 5.0.x. The port directory changed
-  from math/libgmp4 to math/gmp. An entry has been added in MOVED and all
-  depending ports have been bumped, so the update should be handled
-  correctly by common ports management tools like portupgrade.
+  The default gmp version in FreeBSD is now 5.0.x.  The port directory
+  changed from math/libgmp4 to math/gmp.  An entry has been added to MOVED
+  and all depending ports revisions have been bumped, so the update should
+  be handled correctly by usual port management tools such as portupgrade.
 
-  Portmaster users, do the following before upgrading ports that depend on gmp:
+  Portmaster users, please do the following before upgrading ports that
+  depend on gmp:
 
 	portmaster -o math/gmp math/libgmp4
 
@@ -245,8 +251,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of lang/php5
   AUTHOR: ale@FreeBSD.org
 
-  As of php 5.3, a few extensions were removed from or included into the core
-  php5 package.  Follow the steps below to update your installation.
+  As of PHP 5.3, a few extensions were removed from or included into the core
+  PHP5 package.  Follow the steps below to update your installation.
 
   1) Delete the following packages (if installed):
      - php5-dbase
@@ -256,7 +262,7 @@ you update your ports collection, before attempting any port upgrades.
      - php5-ming
      - php5-mhash
 
-  2) Rebuild php5 and all ports depending on it.
+  2) Rebuild lang/php5 and all ports that depend on it.
 
 20100403:
   AFFECTS: users of net/dgd
@@ -274,8 +280,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of gstreamer-plugins-bad and gstreamer-plugins-good
   AUTHOR: kwm@FreeBSD.org
 
-  Plugin moved from the -bad port to the -good port. Please use the instruction
-  below before running the normal update steps.
+  Plugin moved from the -bad port to the -good port.  Please follow the
+  instructions below before proceeding with normal update steps.
 
   If you use portmaster:
 
@@ -289,7 +295,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of graphics/png
   AUTHOR: dinoex@FreeBSD.org
 
-  The png library has been updated to version 1.4.1.  Please rebuild all
+  The PNG library has been updated to version 1.4.1.  Please rebuild all
   ports that depend on it.
 
   If you use portmaster: make sure you update to portmaster version 2.20 or
@@ -850,9 +856,9 @@ you update your ports collection, before attempting any port upgrades.
   kdebase-*4*, kdepim-4*, then update ports as usual and install desired
   KDE4 ports:
 
-  # pkg_delete -f phonon-4\* phonon-gstreamer\* kdebase-\*4\* kdepim-4\*
-  # portmaster -a (or portupgrade -a)
-  # cd ${PORTSDIR}/x11/kde4 && make config && make install clean
+    # pkg_delete -f phonon-4\* phonon-gstreamer\* kdebase-\*4\* kdepim-4\*
+    # portmaster -a (or portupgrade -a)
+    # cd ${PORTSDIR}/x11/kde4 && make config && make install clean
 
 20090804:
   AFFECTS: users of devel/dbus-qt4, devel/qt4-designer
@@ -870,21 +876,19 @@ you update your ports collection, before attempting any port upgrades.
   and libltdl22, respectively, then updated to 2.2.6a. You will need to run
   portmaster or portupgrade to properly perform the upgrade:
 
-  Portmaster:
-  -----------
+  If using portmaster:
 
-  portmaster -o devel/libtool22 devel/libtool15
-  portmaster -o devel/libltdl22 devel/libltdl15
+	portmaster -o devel/libtool22 devel/libtool15
+	portmaster -o devel/libltdl22 devel/libltdl15
 
-  Portupgrade:
-  ------------
+  If using portupgrade:
 
-  portupgrade -o devel/libtool22 libtool-1.5\*
-  portupgrade -o devel/libltdl22 libltdl-1.5\*
+	portupgrade -o devel/libtool22 libtool-1.5\*
+	portupgrade -o devel/libltdl22 libltdl-1.5\*
 
   After that, you will need to rebuild all ports that depend on libltdl.
   Since all dependent ports' PORTREVISIONs have been bumped, you can run
-  portupgrade or portmaster with '-a' to complete the upgrade.
+  portupgrade or portmaster with `-a' option to complete the upgrade.
 
 20090801:
   AFFECTS: users of x11-drivers/xf86-video-nouveau
@@ -927,8 +931,8 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: delphij@FreeBSD.org
 
   OpenLDAP has been upgraded to 2.4.17, which requires a shared library
-  version bump.  Therefore, you need to reinstall all ports depending on it.
-  Run something like:
+  version bump.  Therefore, you need to reinstall all ports that depend on
+  it.  Please do something like:
 
 	# portupgrade -fr net/openldap24-client
   or
@@ -1249,7 +1253,7 @@ you update your ports collection, before attempting any port upgrades.
   will need to update paths accordingly.
 
 20090401:
-  AFFECTS: users of linux Fedora 8 infrastructure ports
+  AFFECTS: users of Fedora 8 Linux infrastructure ports
   AUTHOR: bsam@FreeBSD.org
 
   ATTENTION! Those ports are not default for any version of FreeBSD for now
@@ -1260,7 +1264,7 @@ you update your ports collection, before attempting any port upgrades.
 
   For more information about transition please read item "20070327: AFFECTS:
   users of emulators/linux_base-fc6". That note may be used for upgrading
-  to linux_base-f8 and linux Fedora 8 infrastructure ports as well.
+  to linux_base-f8 and Fedora 8 Linux infrastructure ports as well.
 
   If you want to switch to linux-f8 ports, please define at /etc/make.conf:
 
@@ -1344,17 +1348,17 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of sysutils/lire
   AUTHOR: edwin@FreeBSD.org
 
-  Lire now requires DBD::SQLite, which uses SQLite 3.0.
-  This means that the Lire database format has changed. If you have
-  one or more old lire stores, you will need to convert each of
-  them from SQLite2 format to SQLite3 format, like this:
+  Lire now requires DBD::SQLite, which uses SQLite 3.0.  This means that the
+  Lire database format has changed.  If you have one or more old Lire stores,
+  you will need to convert each of them from SQLite2 format to SQLite3 like
+  this:
 
 	$ sqlite oldstore.db .dump | sqlite3 newstore.db
 
-  This assumes that you have both sqlite2 and sqlite3 installed on
-  your system, and that the names of the command line interface for
-  the old and new version are sqlite and sqlite3 respectively (this
-  is at least correct for Fedora).
+  This assumes that you have both SQLite2 and SQLite3 installed on your
+  system, and that the names of the command line interface for the old and
+  new version are `sqlite' and `sqlite3' respectively (this is at least
+  correct for Fedora).
 
 20090310:
   AFFECTS: users of multimedia/mythtv
@@ -1490,9 +1494,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net/openldap24-{client,server}
   AUTHOR: delphij@FreeBSD.org
 
-  OpenLDAP has been upgraded to 2.4.14, which requires a shared
-  library version bump.  Therefore, you need to reinstall all
-  ports depending on it.  Run something like:
+  OpenLDAP has been upgraded to 2.4.14, which requires a shared library
+  version bump.  Therefore you need to reinstall all ports that depend on
+  it.  Please do something like:
 
 	# portupgrade -fr net/openldap24-client
 
@@ -1516,7 +1520,7 @@ you update your ports collection, before attempting any port upgrades.
 
   devel/libslang has been removed in favor of devel/libslang2 after not
   being released during last five years.  WITH_SLANG2 is no longer a
-  valid ports KNOB.  All ports depending on devel/libslang should be
+  valid ports KNOB.  All ports that depend on devel/libslang should be
   recompiled, e.g.:
 
 	# portupgrade -o devel/libslang2 devel/libslang
@@ -1596,7 +1600,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: bsam@FreeBSD.org
 
   Glib2 now is incorporated to emulation/linux_base-fc4 (it has always
-  been a part of more recent linux base ports). All users should deinstall
+  been a part of more recent Linux base ports). All users should deinstall
   devel/linux-glib2 and then deinstall/reinstall emulation/linux_base-f4.
 
 20090119:
@@ -1736,7 +1740,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: rafan@FreeBSD.org
 
   libgcrypt has been upgraded to 1.4.3 which has a shared library version
-  bump. You need to reinstall all ports depending on it.  Use something
+  bump.  You need to reinstall all ports that depend on it.  Use something
   like this:
 
 	portupgrade -rf libgcrypt
@@ -1746,9 +1750,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net/openldap24-{client,server}
   AUTHOR: delphij@FreeBSD.org
 
-  OpenLDAP has been upgraded to 2.4.13, which requires a shared
-  library version bump.  Therefore, you need to reinstall all
-  ports depending on it.  Run something like:
+  OpenLDAP has been upgraded to 2.4.13, which requires a shared library
+  version bump.  Therefore, you need to reinstall all ports  that depend on
+  it.  Please do something like:
 
 	# portupgrade -fr net/openldap24-client
 
@@ -1823,7 +1827,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of lang/php5
   AUTHOR: pav@FreeBSD.org, itetcu@FreeBSD.org, ale@FreeBSD.org
 
-  As of php 5.2.7, pcre extension is distributed with the core php5 package,
+  As of PHP 5.2.7, pcre extension is distributed with the core PHP5 package,
   and not as a standalone module anymore.  Follow the steps below to update
   your installation.
 
@@ -1845,13 +1849,13 @@ you update your ports collection, before attempting any port upgrades.
 	portmaster pecl
 
   If you have the pecl hash, json and/or zip extensions you need to replace
-  them with the php5 bundled ones, ie.:
+  them with the PHP5 bundled ones, e.g.:
 
 	portmaster/portupgrade -o archivers/php5-zip archivers/pecl-zip
 	portmaster/portupgrade -o devel/php5-json devel/pecl-json
 	portmaster/portupgrade -o security/php5-hash security/pecl-hash
 
-  If you build your INDEX locally and you tried to build it after the php
+  If you build your INDEX locally and you tried to build it after the PHP
   update commit, you need to rebuild it _after_ you updated lang/php5:
 
 	cd /usr/ports && make index
@@ -2342,8 +2346,8 @@ you update your ports collection, before attempting any port upgrades.
 	# portupgrade shared-mime-info
 	# portinstall -O nautilus
 
-  Once misc/shared-mime-info has been updated, each user will need to run the
-  following command:
+  Once misc/shared-mime-info has been updated, each user will need to run
+  the following command:
 
 	$ update-mime-database ~/.local/share/mime/
 
@@ -2351,9 +2355,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of www/ojs2
   AUTHOR: Greg Larkin <glarkin@FreeBSD.org>
 
-  If you are upgrading from a prior version of ojs2, please backup
-  your database, uploaded files directory, and your config.inc.php before
-  the upgrade.  Read /usr/local/share/docs/ojs2/UPGRADE or visit
+  If you are upgrading from a prior version of ojs2, please backup your
+  database, uploaded files directory, and your config.inc.php before the
+  upgrade.  Read /usr/local/share/docs/ojs2/UPGRADE or visit
   http://pkp.sfu.ca/ojs/UPGRADE for additional upgrade information.
 
 20080721:
@@ -2689,9 +2693,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of editors/emacs
   AUTHOR: Yasuhiro KIMURA <yasu@utahime.org>
 
-  The port (editors/emacs) is updated to 22.2 and some of emacs lisp
-  directories had changed. So you should reinstall all ports depending on
-  this one. Run something like:
+  The port (editors/emacs) is updated to 22.2 and some of Emacs Lisp
+  directories had changed.  So you should reinstall all ports that depend
+  on it.  Please do something like:
 
 	# portupgrade -fr emacs
 
@@ -2777,9 +2781,10 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of audio/ampache
   AUTHOR: jadawin@FreeBSD.org
 
-  Ampache 3.4 uses a different config parser. Unfortunately the new parser
-  is unable to read old config files. You must run php
-  ${WWWDIR}/bin/migrate_config.inc from the command line.
+  Ampache 3.4 uses a different config parser.  Unfortunately the new parser
+  is unable to read old config files.  In order to migrate your current
+  configuration, you should run `php ${WWWDIR}/bin/migrate_config.inc' from
+  the command line.
 
 20080508:
   AFFECTS: users of databases/ptop
@@ -2827,13 +2832,13 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: beech@FreeBSD.org
 
   The install location of phpgedview has changed from www/data/phpGedView to
-  www/phpgedview. If you are updating from a previous version please do
+  www/phpgedview.  If you are updating from a previous version please do
   the following:
 
 	mv /usr/local/www/data/phpGedView /usr/local/www
 
-  You will also need to adjust the paths in your web server to reflect the new
-  location.
+  You will also need to adjust the paths in your web server to reflect the
+  new location.
 
 20080416:
   AFFECTS: users of security/clamav
@@ -2882,7 +2887,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: mnag@FreeBSD.org
 
   Port databases/sqlite3 was updated to 3.5.6 and now has threads enabled
-  by default. If you encounter any problem with it, you can recompile sqlite3
+  by default.  If you encounter any problem with it, you can rebuild SQLite3
   without threads and test or change Makefile of affected port with this:
 
 	sed -i.bak -E -e "s|USE_SQLITE=.*|USE_SQLITE=34|g" \
@@ -2996,7 +3001,7 @@ you update your ports collection, before attempting any port upgrades.
   It is required with both skype and skype-devel to update to linux_base-fc6.
   Please do the following:
 
-  1. Make sure there are no running linux applications.
+  1. Make sure there are no running Linux applications.
   2. Unmount linprocfs (umount /compat/linux/proc)
   3. Uninstall your current linux_base port
   4. Set appropriate sysctl (sysctl compat.linux.osrelease=2.6.16)
@@ -3008,7 +3013,7 @@ you update your ports collection, before attempting any port upgrades.
   Note: These instructions also apply to linux_base-f8, please use the same
   osrelease.
 
-  For FreeBSD versions 5.x and 6.x:
+  For FreeBSD versions 5.X and 6.X:
 
   Please use the legacy version net/skype12:
 
@@ -4209,29 +4214,29 @@ you update your ports collection, before attempting any port upgrades.
   ATTENTION! The port is experimental for now. Use it at your own risk. This
   port may be used only with 7-CURRENT and compat.linux.osrelease=2.6.16.
 
-  To use/test the port (along with linux FC4 infrastructure ports) you
+  To use/test the port (along with FC4 Linux infrastructure ports) you
   should do:
 
   0. Backup all your vital information!
-  1. Remove the current linux base port.
+  1. Remove the current Linux base port.
   2. Add to your /etc/make.conf "OVERRIDE_LINUX_BASE_PORT=fc6".
-  3. Make sure no linux application is running.
+  3. Make sure no Linux application is running.
   4. Set appropriate sysctl (compat.linux.osrelease=2.6.16).
   5. Install emulation/linux_base-fc6.
-  5a. Those who use linux ports with automatic plist building should
+  5a. Those who use Linux ports with automatic plist building should
       apply the following patch:
       ftp://mail.ipt.ru/pub/FreeBSD/patches/bsd.linux-rpm.mk-autoplist.diff
 
   That should be enough at most circumstances. If you have difficulties,
   please be sure to expand item 1 to:
 
-  1a. Remove all ports that depend on linux base port.
-  1b. Remove linux base port.
+  1a. Remove all ports that depend on Linux base port.
+  1b. Remove Linux base port.
   1c. Clean /compat/linux/ directory.
 
   In case you want to get rid of the port, deinstall it, then return
   back compat.linux.osrelease to 2.4.2 (as usual, make sure that no
-  linux application is running) and remove from /etc/make.conf the line
+  Linux application is running) and remove from /etc/make.conf the line
   containing the OVERRIDE_LINUX_BASE_PORT variable.
 
 20070327:
@@ -4591,12 +4596,12 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of databases/postgresql*
   AUTHOR: girgen@FreeBSD.org
 
-  The server-side utilities of postgresql (initdb, initlocation,
-  ipcclean, pg_controldata, pg_ctl, pg_id and pg_resetxlog) are now
-  installed by the respective postgresql*-server port (previously
-  they where installed with the client). If you update the client, you
-  should also update the server to make sure you are not left without
-  the server-side tools. Do something like:
+  The server-side utilities of PostgreSQL (initdb, initlocation, ipcclean,
+  pg_controldata, pg_ctl, pg_id and pg_resetxlog) are now installed by the
+  respective postgresql*-server port (previously they where installed with
+  the client).  If you update the client, you should also update the server
+  port to make sure you would not be left without the server-side tools.
+  Do something like this:
 
 	portupgrade postgresql-client postgresql-server
 
@@ -5190,11 +5195,13 @@ you update your ports collection, before attempting any port upgrades.
   Starting with version 3.0.5rc1 of the ISC DHCPD package, any running
   "dhcpd" or "dhcrelay" processes are stopped automatically when the port
   gets deinstalled.
+
   Please remember to start the services again manually, in case you upgrade
   from version 3.0.5rc1 or newer to any other version.
+
   Due to the better use of the USE_RC_SUBR framework, the rc script name may
-  change from isc-dhcpd.sh or isc-dhcrelay.sh to isc-dhcpd or isc-dhcrelay
-  depending on the FreeBSD version you use.
+  change from `isc-dhcpd.sh' or `isc-dhcrelay.sh' to `isc-dhcpd' or
+  `isc-dhcrelay' depending on the FreeBSD version you use.
 
 20060818:
   AFFECTS: users of www/gallery2
@@ -5532,29 +5539,30 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of emulation/linux_base-*
   AUTHOR: netchild@FreeBSD.org
 
-  We now use Fedora Core 4 as the linux base port, and the corresponding
-  xorg libs for the linux X11 libs port.
+  We now use Fedora Core 4 as the Linux base port, and the corresponding
+  xorg libraries for the Linux X11 libraries port.
 
-  To upgrade you have to run
+  To upgrade you have to run:
+
 	portupgrade -f -o emulators/linux_base-fc4 linux_base\*
 	portupgrade -f -o x11/linux-xorg-libs linux-XFree86-libs
 
   You need to make sure that you have not changed the sysctl
-  compat.linux.osrelease. FC4 behaves differently depending on the
-  content of this sysctl. Only the default value of this sysctl is
-  supported. In case of problems also revert to the default of the
-  compat.linux.osname if changed.
+  compat.linux.osrelease.  FC4 behaves differently depending on the
+  contents of this sysctl.  Only the default value of this sysctl is
+  supported.  In case of problems, please also revert to the default of
+  the compat.linux.osname if it was changed.
 
   In case "printenv | grep LD_" prints something, e.g., LD_LIBRARY_PATH
   or LD_PRELOAD, you have to make sure it is not set when starting
-  linux programs, else FreeBSD libraries will be picked up and the
+  Linux programs, else FreeBSD libraries will be picked up and the
   programs do not start.
 
-  After this start a linux program to test, e.g., acroread. If you get
-  errors when starting linux programs about problems with libraries, and
+  After this start a Linux program to test, e.g., acroread.  If you get
+  errors when starting Linux programs about problems with libraries, and
   you made sure no LD_* variable is set as described above, you are one of
   those unlucky people where we do not have a better solution as to tell
-  you to deinstall every linux port, remove /compat/linux completely to
+  you to deinstall every Linux port, remove /compat/linux completely to
   make sure no cruft is left and reinstall everything you need.
 
 20060612:
@@ -5562,8 +5570,8 @@ you update your ports collection, before attempting any port upgrades.
 	   german/staroffice70
   AUTHOR: erwin@FreeBSD.org
 
-  The USE_CDROM knob was renamed to WITH_CDROM for consistency
-  within the ports tree.
+  The USE_CDROM knob was renamed to WITH_CDROM for consistency within the
+  Ports Tree.
 
 20060611:
   AFFECTS: users of www/c-icap
@@ -5585,7 +5593,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net/quagga
   AUTHOR: lawrance@FreeBSD.org
 
-  As of version 0.99.4 quagga no longer supports UCD-SNMP v4. If you
+  As of version 0.99.4, quagga no longer supports UCD-SNMP v4.  If you
   require this functionality, you should make alternative arrangements
   before upgrading quagga.
 
@@ -5658,7 +5666,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of java/jasmin
   AUTHOR: hq@FreeBSD.org
 
-  The executable has been renamed to 'jasmin' (was 'jasmin.sh')
+  The executable has been renamed to `jasmin' (was `jasmin.sh').
 
 20060522:
   AFFECTS: users of astro/boinc-setiathome-enhanced,
@@ -5667,10 +5675,12 @@ you update your ports collection, before attempting any port upgrades.
 
   As SETI@home doesn't generate work for 4.x clients anymore, the ports
   structure has been updated to use the 5.x client by default.
+
   People currently using any of the above ports should finish and report
   their existing work (both for normal and enhanced) and not allow any
   new work until after their ports are updated, to minimize loss of
   work.
+
   Note that this update changes the enhanced client to work for the
   normal instead of the beta project. When a beta client for Astropulse
   is released, it will work as the new client for the beta project.
@@ -5723,11 +5733,14 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net-im/sulci
   AUTHOR: Denis Shaposhnikov <dsh@vlink.ru>
 
-  After upgrading from 0.5.a.20050918 version you have to convert your
-  vocabulary database to sqlite using:
-    /usr/local/libexec/sulci/wtf_convert
+  After upgrading from version 0.5.a.20050918 you have to convert your
+  vocabulary database to SQLite by issuing command:
+
+	/usr/local/libexec/sulci/wtf_convert
+
   and change sulci's configuration file in "vocabulary" directive, see
-    /usr/local/share/examples/sulci/sulci.conf.example
+
+	/usr/local/share/examples/sulci/sulci.conf.example
 
 20060507:
   AFFECTS: users of net/isc-dhcp3-server with failover setup
@@ -5873,8 +5886,10 @@ you update your ports collection, before attempting any port upgrades.
 
   These ports have been removed because the End User License Agreement
   explicitly forbids to run the Flash Player on FreeBSD.
-  For more details, see
-    http://www.macromedia.com/shockwave/download/license/desktop/.
+
+  For more details, please visit this URL:
+
+    http://www.macromedia.com/shockwave/download/license/desktop/
 
 20060407:
   AFFECTS: users of sysutils/bacula*
@@ -6133,9 +6148,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of lang/perl5.8
   AUTHOR: tobez@FreeBSD.org
 
-  lang/perl5.8 has been updated to 5.8.8. You should update everything
-  depending on perl. The easiest way to do that is to use
-  perl-after-upgrade script supplied with lang/perl5.8. Please see
+  lang/perl5.8 has been updated to version 5.8.8.  You should update
+  everything that depend on perl.  The easiest way to do it is to use
+  perl-after-upgrade script supplied with lang/perl5.8.  Please see
   its manual page for details.
 
 20060220:
@@ -6293,35 +6308,35 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of multimedia/lxdvdrip
   AUTHOR: lioux@FreeBSD.org
 
-  lxdvdrip has been updated to version 1.51 depending on port
-  multimedia/vamps. However, multimedia/vamps needs to know beforehand
-  how many bytes will be processed in order to work. Unfortunately,
-  lxdvdrip cannot provide such information. Therefore, vamps and
+  lxdvdrip has been updated to version 1.51, which depends on port
+  multimedia/vamps.  However, multimedia/vamps needs to know beforehand
+  how many bytes will be processed in order to work.  Unfortunately,
+  lxdvdrip cannot provide such information.  Therefore, vamps and
   playcell specific tailored versions shipped within the lxdvdrip
-  distribution will be used. They will be named so that lxdvdrip
-  does not conflict with multimedia/vamps. This is for lxdvdrip
-  version 1.51_1.
+  distribution will be used.  They will be named so that lxdvdrip does
+  not conflict with multimedia/vamps.  This is for lxdvdrip version
+  1.51_1.
 
   However, users that used lxdvdrip previously to this update, are
-  required to modify their configuration file in order to comply
-  to the new naming scheme.
+  required to modify their configuration file in order to comply to the
+  new naming scheme.
 
-  File: ~/.lxdvdrip.conf
-  From: play_cell_name=play_cell
-	vamps_name=vamps
-  To:   play_cell_name=play_cell_lxdvdrip
-	vamps_name=vamps_lxdvdrip
+    File: ~/.lxdvdrip.conf
+    From: play_cell_name=play_cell
+	  vamps_name=vamps
+    To:   play_cell_name=play_cell_lxdvdrip
+	  vamps_name=vamps_lxdvdrip
 
 20060111:
   AFFECTS: users of devel/perforce
   AUTHOR: lth@FreeBSD.org
 
-  Perforce has been updated to version 2005.2. As usual, there has
-  been significant schema upgrades, so even though upgrading to
-  2005.2 is straightforward, it is still highly recommended to
-  follow the upgrading instructions in the release notes:
+  Perforce has been updated to version 2005.2.  As usual, there has been
+  significant schema upgrades, so even though upgrading to 2005.2 is
+  straightforward, it is still highly recommended to follow the upgrading
+  instructions in the release notes:
 
-    http://www.perforce.com/perforce/doc.052/user/relnotes.txt
+	http://www.perforce.com/perforce/doc.052/user/relnotes.txt
 
 20060110:
   AFFECTS: users of www/drupal
@@ -6335,61 +6350,58 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of databases/postgresql??-server
   AUTHOR: girgen@FreeBSD.org
 
-  All postgresql versions have been updated. These patch releases fix
-  a problem with character string comparisons for locales that
-  consider different character combinations as equal, such as
-  Hungarian. This might require "REINDEX" to fix existing indexes on
-  textual columns. Also, if plperl is used, a "REINDEX" might be
-  required under certain conditions. Check the HISTORY file in the
-  source for details.
+  All PostgreSQL versions have been updated.  These patch releases fix a
+  problem with character string comparisons for locales that consider
+  different character combinations as equal, such as Hungarian.  This might
+  require "REINDEX" to fix existing indexes on textual columns.  Also, if
+  plperl is used, a "REINDEX" might be required under certain conditions.
+  Check the HISTORY file in the source distribution for details.
 
 20060108:
   AFFECTS: users of x11/kdelibs3, x11/kdebase3, deskutils/superkaramba,
 	   x11-themes/kde-windeco-smoothblend, irc/kvirc, editors/vimpart
   AUTHOR: kde@FreeBSD.org
 
-  A number of files have been moved from kdebase to kdelibs between
-  KDE 3.4.3 and KDE 3.5.0 and some applications which used to be
-  distributed separately from KDE have been included in the release.
+  A number of files have been moved from kdebase to kdelibs between KDE
+  3.4.3 and KDE 3.5.0 and some applications which used to be distributed
+  separately from KDE have been included in the release.
 
   This means that you will have to take some precautions in order to
   update your KDE installation without interruptions.
 
-  We recommend sticking to the following procedure. This procedure requires you
-  to have sysutils/portupgrade installed and to be the superuser (or using
-  sudo).
+  We recommend sticking to the following procedure.  This procedure requires
+  you to have sysutils/portupgrade installed and to be the superuser (or
+  use sudo).
 
-  1.) Delete installed packages which conflict with the updated KDE
-      ports.
+  1) Delete installed packages which conflict with the updated KDE
+     ports:
 
 	pkg_deinstall -f kdebase-\[0-9\]\* superkaramba-\[0-9\]\* \
 	kde-windeco-smoothblend-\[0-9]\* kvirc-\[0-9\]\* \
 	kdeaddons-vimpart-\[0-9\]\*
 
-  2.) Now update the remaining KDE ports.
+  2) Now update the remaining KDE ports:
 
 	portupgrade -O arts\* kde\* \*kde-i18n\*
 
-      or, if you want to update KDE along with other updated ports:
+     or, if you want to update KDE along with other updated ports:
 
 	portupgrade -a
 
-  3.) Reinstall the KDE ports you deleted in step 1.
+  3) Reinstall the KDE ports you deleted in step 1:
 
 	portinstall -O kdebase
 
-  Superkaramba is now included in misc/kdeutils3.
-
-  The smoothblend window decoration is now included in x11-themes/kdeartwork3.
-
-  Vimpart is being discontinued and no longer part of KDE.
+  Superkaramba is now included in misc/kdeutils3.  The smoothblend window
+  decoration is now included in x11-themes/kdeartwork3.  Vimpart is being
+  discontinued and is no longer part of KDE.
 
   KNOWN ISSUES:
   =============
 
-  Just like KDE 3.4, KDE 3.5 does not play nice with openssl-0.9.8. In
-  particular it breaks kwallet, some of the SSL handling in konqueror and
-  SSL/TLS support in kmail/kontact.
+  Just like KDE 3.4, KDE 3.5 does not play nice with openssl-0.9.8.  In
+  particular it breaks Kwallet, some of the SSL handling in Konqueror, and
+  SSL/TLS support in KMail/Kontact.
 
   If you're using the openssl ports rather than the base-system openssl,
   make sure to use security/openssl-stable.
@@ -6677,7 +6689,7 @@ you update your ports collection, before attempting any port upgrades.
     $ export TRAC_ENV=/path/to/trac/env
     $ # backup existing trac environment
     $ cp -Rp $TRAC_ENV $TRAC_ENV.backup # backup existing trac env
-    $ # convert database from sqlite 2 to sqlite 3 format
+    $ # convert database from SQLite 2 to SQLite 3 format
     $ mv $TRAC_ENV/db/trac.db $TRAC_ENV/db/trac2.db
     $ sqlite $TRAC_ENV/db/trac2.db .dump | sqlite3 $TRAC_ENV/db/trac.db
     $ # upgrade trac environment
@@ -6792,10 +6804,12 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of mail/dovecot
   AUTHOR: robin@isometry.net
 
-  Dovecot has been upgraded to version 1.0a3 that breaks down
-  backward compatibility with previous versions of dovecot.
-  For information about upgrading existing dovecot installations
-  one must consult with http://wiki.dovecot.org/moin.cgi/UpgradingDovecot
+  Dovecot has been upgraded to version 1.0a3, which breaks backwards
+  compatibility with previous versions of Dovecot.  For information about
+  upgrading existing Dovecot installations, please consult with the
+  following document:
+
+	http://wiki.dovecot.org/moin.cgi/UpgradingDovecot
 
 20050923:
   AFFECTS: users of www/b2evo
@@ -6826,13 +6840,13 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of games/pvpgn
   AUTHOR: mek@mek.uz.ua
 
-  sql_DB_layout.conf-sample: includes changes needed for the new "username" SQL
-  field; if you update to 1.7.8 YOU MUST update this file too if you have your
-  accounts on SQL
+  sql_DB_layout.conf-sample: includes changes needed for the new "username"
+  SQL field; if you update to 1.7.8, you MUST update this file too if you
+  have your accounts in SQL.
 
   bnetd.conf-sample: changed "servaddrs" directive to not be totally commented
   and be as ":" by default in bnetd.conf (if "servaddrs" is commented this
-  means "bnetd" will not listen for b.net services at all)
+  means "bnetd" will not listen for b.net services at all).
 
 20050902:
   AFFECTS: users of www/jakarta-tomcat55
@@ -7035,6 +7049,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: netchild@FreeBSD.org
 
   The Ports Collection now allows to override the default linux_base port.
+
   Specify e.g. OVERRIDE_LINUX_BASE_PORT=rh-9 in /etc/make.conf to use
   ${PORTSDIR}/emulators/linux_base-rh-9 (the logic is to use
   ${PORTSDIR}/emulators/linux_base-${OVERRIDE_LINUX_BASE_PORT}).
@@ -7241,9 +7256,9 @@ you update your ports collection, before attempting any port upgrades.
 	# rm -rf ~/.linux-opera
 
   After that, you can put your bookmark, email, contacts and etc back in
-  ~/.linux-opera/. The bookmark is ~/.linux-opera/opera6.adr and the email is
-  ~/.linux-opera/mail as you can figure out by view in ~/.linux-opera/. It is
-  probably not good idea to put opera6.ini, userstyle.ini, search.ini,
+  ~/.linux-opera/. The bookmark is ~/.linux-opera/opera6.adr and the email
+  is ~/.linux-opera/mail as you can figure out by view in ~/.linux-opera/.
+  It is probably not good idea to put opera6.ini, userstyle.ini, search.ini,
   pluginpath.ini and other non-personal stuff back in ~/.linux-opera/. The
   non-personal stuff should be re-configure on new stuff by either Opera
   preferences in GUI or hand (manual) in your editor.
@@ -7428,11 +7443,11 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of databases/postgresql7[34]-server
   AUTHOR: girgen@FreeBSD.org
 
-  The startup script has been merged from 8.0 to 7.3 and 7.4. Hence,
-  to start the PostgreSQL server at boot time (regardless of version),
-  add the following to /etc/rc.conf:
+  The startup script has been merged from 8.0 to 7.3 and 7.4.  Hence, to
+  start the PostgreSQL server at boot time (regardless of version), add the
+  following to /etc/rc.conf:
 
-  postgresql_enable=yes
+	postgresql_enable=yes
 
 20050318:
   AFFECTS: users of x11-wm/blackbox, x11-wm/boxtools, x11-wm/bbkeys, and
@@ -7679,20 +7694,19 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of PostgreSQL
   AUTHOR: girgen@FreeBSD.org
 
-  Each of the PostgreSQL ports have been split into a server and a
-  client part. Please use postgresqlNN-server and/or
-  postgresqlNN-client as needed. Versions currently supported are 7.3,
-  7.4 and 8.0.
+  Each of the PostgreSQL ports have been split into a server and a client
+  part.  Please use postgresqlNN-server and/or postgresqlNN-client as
+  needed.  Versions currently supported are 7.3, 7.4, and 8.0.
 
-  To start the PostgreSQL server at boot time, add the following to
+  To start the PostgreSQL server at boot time, add the following line to
   /etc/rc.conf:
 
-  postgresql_enable=yes
+	postgresql_enable=yes
 
   The maintenance script is installed in etc/periodic/daily, and is
-  controlled by a set of new knobs in periodic.conf. Use it for
-  vacuuming your databases and get daily backups. Note that daily
-  vacuuming is on by default. See the script for details.
+  controlled by a set of new knobs in periodic.conf.  Use it for vacuuming
+  your databases and getting daily backups.  Note that daily vacuuming is
+  on by default.  See the script for details.
 
 20050130:
   AFFECTS: users of net/howl
@@ -7855,15 +7869,16 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   Please update configuration according instructions in pkg-message.
 
 20041231:
-  AFFECTS: users of the linux compatibility environment
+  AFFECTS: users of the Linux compatibility environment
   AUTHOR: netchild@FreeBSD.org
 
-  The default linux_base was changed from v7 to v8. You need to update from
-  v7 to v8 and rebuild every linux port. To update run:
+  The default linux_base was changed from v7 to v8.  You need to update
+  from v7 to v8 and rebuild every Linux port you have installed.  In order
+  to update, run:
 
 	portupgrade -rf -o emulators/linux_base-8 emulators/linux_base
 
-  In case you already use linux_base-8 you have to run:
+  In case you already use linux_base-8, you have to run:
 
 	portupgrade -rf emulators/linux_base-8
 
@@ -7991,8 +8006,9 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   AFFECTS: users of databases/postgresql-relay
   AUTHOR: edwin@FreeBSD.org
 
-  The PostgreSQL Relay must now be enabled/ disabled in rc.conf:
-    postgresqlrelay_enable="YES"
+  The PostgreSQL Relay must now be enabled or disabled explicitly in rc.conf:
+
+	postgresqlrelay_enable="YES"
 
 20041212:
   AFFECTS: users of sysutils/bacula
@@ -8996,8 +9012,8 @@ Option "XkbRules" "xfree86"
   AFFECTS: users of databases/postgresql-client
   AUTHOR: mat@FreeBSD.org
 
-  This port was removed because of dependencies problem. If you still want to
-  have it, install databases/postgresql7 with -DWITHOUT_SERVER.
+  This port was removed because of dependencies problem.  If you still want
+  to have it, install databases/postgresql7 with -DWITHOUT_SERVER.
 
 20040521:
   AFFECTS: users of irc/ircd-hybrid-ru
