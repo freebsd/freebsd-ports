@@ -10,7 +10,7 @@ CATEGORIES=		korean www
 MASTER_SITES=		http://kle.kldp.org/apache/
 DISTFILES=		${PORTNAME}.c readme.${PORTNAME}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		apache@FreeBSD.org
 COMMENT=		Apache module for manipulating euc-kr encoded URL
 
 MAKE_JOBS_SAFE=  yes
