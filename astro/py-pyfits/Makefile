@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pyfits
-PORTVERSION=	1.3
+PORTVERSION=	2.3
 CATEGORIES=	astro python
 MASTER_SITES=	http://www.stsci.edu/resources/software_hardware/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	tonymaher@optusnet.com.au
 COMMENT=	Python Interface to FITS Formatted Files
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
