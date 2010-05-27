@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mongodb
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	databases net
 MASTER_SITES=	http://downloads.mongodb.org/src/ \
 		http://derzinn.de/files/
