@@ -7,7 +7,7 @@
 
 PORTNAME=	xiphos
 PORTVERSION=	3.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
@@ -28,24 +28,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/nspr" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--disable-maintainer-mode
+CONFIGURE_ARGS+=	--disable-maintainer-mode --without-gecko
 
-OPTIONS=	LIBXUL  "Build with libxul" on \
-		GTKHTML	"Build with gtkhtml" off \
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_LIBXUL) && defined(WITH_GTKHTML)
-IGNORE=		choose only one of LIBXUL or GTKHTML
-.endif
-
-.if defined(WITH_GTKHTML) || defined(WITHOUT_LIBXUL)
-CONFIGURE_ARGS+=	--without-gecko
-.endif
-
-.if !defined(WITHOUT_LIBXUL) || !defined(WITH_GTKHTML)
-USE_GECKO=	libxul
-CONFIGURE_ARGS+=	--with-gecko=${GECKO} --with-gecko-home=${LOCALBASE}/lib/libxul
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

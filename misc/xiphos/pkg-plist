@@ -256,4 +256,5 @@ share/pixmaps/xiphos/xiphos.xpm
 @dirrm share/gnome/help/xiphos/C/figures
 @dirrm share/gnome/help/xiphos/C
 @dirrm share/gnome/help/xiphos
+@dirrmtry share/applications
 @dirrm %%DOCSDIR%%
