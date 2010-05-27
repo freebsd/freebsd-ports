@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTNAME=	apache_${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	apache22
 
-MAINTAINER=
+MAINTAINER=	bmhermansson@gmail.com
 COMMENT=	Apache smooth streaming module
 
 RESTRICTED=	no-commercial-use
