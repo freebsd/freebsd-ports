@@ -19,7 +19,7 @@ COMMENT=	Apache module that embeds the Python interpreter within the server
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	2.0+
+USE_APACHE=	2.2+
 USE_PYTHON=	yes
 
 INSTALLS_EGGINFO=	yes
