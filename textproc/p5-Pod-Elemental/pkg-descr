@@ -1,0 +1,7 @@
+Pod::Elemental is a system for treating a Pod (plain old documentation)
+documents as trees of elements. This model may be familiar from many other
+document systems, especially the HTML DOM. Pod::Elemental's document
+object model is much less sophisticated than the HTML DOM, but still makes
+a lot of document transformations easy.
+
+WWW: http://search.cpan.org/dist/Pod-Elemental/
