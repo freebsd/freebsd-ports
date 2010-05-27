@@ -42,8 +42,15 @@ OPTIONS=	MPEG4IP	 "Enable AAC and H.264 support with MPEG4IP"	off \
 
 .if defined(WITH_MPEG4IP) || exists(${LOCALBASE}/lib/libmp4v2.so)
 LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
-RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac faad:${PORTSDIR}/audio/faad
+# Define HAVE_GTK to unbreak the build with libmp4v2.so (it is built
+# without Gtk support by default, which can result in gtkpod breakage)
+MAKE_ARGS+=	CPPFLAGS="-DHAVE_GTK"
 .endif
+.for x in faac faad
+.  if exists(${LOCALBASE}/bin/${x})
+RUN_DEPENDS+=	${x}:${PORTSDIR}/audio/${x}
+.  endif
+.endfor
 
 .if defined(WITH_VORBIS) || exists(${LOCALBASE}/lib/libvorbis.so)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
@@ -71,7 +78,7 @@ LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .endif
 
 pre-configure: .SILENT
-# install locale correctly (share dir instead of lib dir)
+# Install locale files correctly (to share dir instead of lib dir)
 	${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|' \
 		${WRKSRC}/configure
 
