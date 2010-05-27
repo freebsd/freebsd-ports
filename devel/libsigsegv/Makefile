@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	libsigsegv
-PORTVERSION=	2.5
+PORTVERSION=	2.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libsigsegv
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Handling page faults in user mode
 
 USE_AUTOTOOLS=	libtool:22

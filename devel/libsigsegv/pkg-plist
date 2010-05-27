@@ -1,5 +1,5 @@
 include/sigsegv.h
 lib/libsigsegv.a
 lib/libsigsegv.la
-lib/libsigsegv.so.0
+lib/libsigsegv.so.2
 lib/libsigsegv.so
