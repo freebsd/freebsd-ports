@@ -8,7 +8,7 @@
 PORTNAME=	ezamar
 PORTVERSION=	2009.06
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	http://s3.amazonaws.com/gemcutter_production/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	A light-weight and simple templating engine for Ruby

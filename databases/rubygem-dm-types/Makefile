@@ -8,7 +8,7 @@
 PORTNAME=	dm-types
 PORTVERSION=	0.10.1
 CATEGORIES=	databases rubygems
-MASTER_SITES=	http://s3.amazonaws.com/gemcutter_production/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	DataMapper plugin providing extra data types

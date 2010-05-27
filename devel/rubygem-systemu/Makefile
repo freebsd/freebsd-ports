@@ -8,7 +8,7 @@
 PORTNAME=	systemu
 PORTVERSION=	1.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	A portable replacement for popen4

@@ -8,7 +8,7 @@
 PORTNAME=	mixlib-log
 PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	A gem that provides a simple mixin for log functionality

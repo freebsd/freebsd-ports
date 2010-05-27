@@ -8,7 +8,7 @@
 PORTNAME=	mixlib-authentication
 PORTVERSION=	1.1.2
 CATEGORIES=	devel
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Mixes in simple per-request authentication
