@@ -8,7 +8,7 @@
 PORTNAME=	ramaze
 PORTVERSION=	2009.10
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://s3.amazonaws.com/gemcutter_production/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	Ramaze is a simple and modular web framework

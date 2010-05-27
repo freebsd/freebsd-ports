@@ -8,7 +8,7 @@
 PORTNAME=	mixlib-config
 PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	A class based config mixin, similar to the one found in Chef

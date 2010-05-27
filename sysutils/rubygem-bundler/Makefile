@@ -7,7 +7,7 @@
 PORTNAME=	bundler
 PORTVERSION=	0.9.25
 CATEGORIES=	sysutils rubygems
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	gogolok+freebsd@gmail.com
 COMMENT=	A tool that manages gem dependencies for ruby applications

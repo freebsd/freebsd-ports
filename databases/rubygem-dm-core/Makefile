@@ -8,7 +8,7 @@
 PORTNAME=	dm-core
 PORTVERSION=	0.10.1
 CATEGORIES=	databases rubygems
-MASTER_SITES=	http://s3.amazonaws.com/gemcutter_production/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	An Object/Relational Mapper for Ruby

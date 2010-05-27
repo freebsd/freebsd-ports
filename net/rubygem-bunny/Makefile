@@ -8,7 +8,7 @@
 PORTNAME=	bunny
 PORTVERSION=	0.6.0
 CATEGORIES=	net
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Another synchronous Ruby AMQP client

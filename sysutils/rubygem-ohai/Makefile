@@ -8,7 +8,7 @@
 PORTNAME=	ohai
 PORTVERSION=	0.5.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Ohai profiles your system and emits JSON

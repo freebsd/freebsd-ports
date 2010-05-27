@@ -8,8 +8,7 @@
 PORTNAME=	notify
 PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	http://rubygems.org/downloads/ \
-		http://production.cf.rubygems.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Provides notification functionalities on cross platforms

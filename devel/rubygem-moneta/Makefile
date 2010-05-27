@@ -8,7 +8,7 @@
 PORTNAME=	moneta
 PORTVERSION=	0.6.0
 CATEGORIES=	devel
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	An unified interface to key/value stores
