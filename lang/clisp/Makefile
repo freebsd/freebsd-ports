@@ -7,7 +7,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.48
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	A Common Lisp implementation
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
 LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline \
-		sigsegv.0:${PORTSDIR}/devel/libsigsegv
+		sigsegv.2:${PORTSDIR}/devel/libsigsegv
 
 USE_ICONV=	yes
 USE_GHOSTSCRIPT_BUILD=	yes
