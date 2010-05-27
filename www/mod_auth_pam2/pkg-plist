@@ -3,7 +3,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%APACHEMODDIR%%/mod_auth_pam.so
-@exec %D/sbin/apxs -e -a -n auth_pam %D/%f
+@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%f
 %%APACHEMODDIR%%/mod_auth_sys_group.so
 @exec %D/sbin/apxs -e -a -n auth_sys_group %D/%f
 %%EXAMPLESDIR%%/pam-httpd.sample
