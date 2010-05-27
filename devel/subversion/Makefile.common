@@ -161,6 +161,13 @@ PLIST_SUB+=	DYNAMIC_ENABLED="@comment "
 PLIST_SUB+=	DYNAMIC_ENABLED=""
 .endif
 
+.if defined(WITH_GNOME_KEYRING)
+LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+CONFIGURE_ARGS+=--with-gnome-keyring
+.else
+CONFIGURE_ARGS+=--without-gnome-keyring
+.endif
+
 post-extract:
 	@${RM} -rf ${WRKSRC}/neon
 	@${RM} -rf ${WRKSRC}/apr
