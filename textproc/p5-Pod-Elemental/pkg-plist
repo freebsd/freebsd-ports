@@ -1,0 +1,34 @@
+%%SITE_PERL%%/Pod/Elemental/Element/Generic/Blank.pm
+%%SITE_PERL%%/Pod/Elemental/Element/Generic/Text.pm
+%%SITE_PERL%%/Pod/Elemental/Element/Generic/Nonpod.pm
+%%SITE_PERL%%/Pod/Elemental/Element/Generic/Command.pm
+%%SITE_PERL%%/Pod/Elemental/Element/Pod5/Region.pm
+%%SITE_PERL%%/Pod/Elemental/Element/Pod5/Command.pm
+%%SITE_PERL%%/Pod/Elemental/Element/Pod5/Nonpod.pm
+%%SITE_PERL%%/Pod/Elemental/Element/Pod5/Verbatim.pm
+%%SITE_PERL%%/Pod/Elemental/Element/Pod5/Data.pm
+%%SITE_PERL%%/Pod/Elemental/Element/Pod5/Ordinary.pm
+%%SITE_PERL%%/Pod/Elemental/Element/Nested.pm
+%%SITE_PERL%%/Pod/Elemental/Transformer/Nester.pm
+%%SITE_PERL%%/Pod/Elemental/Transformer/Gatherer.pm
+%%SITE_PERL%%/Pod/Elemental/Transformer/Pod5.pm
+%%SITE_PERL%%/Pod/Elemental/Autoblank.pm
+%%SITE_PERL%%/Pod/Elemental/Autochomp.pm
+%%SITE_PERL%%/Pod/Elemental/Command.pm
+%%SITE_PERL%%/Pod/Elemental/Flat.pm
+%%SITE_PERL%%/Pod/Elemental/Document.pm
+%%SITE_PERL%%/Pod/Elemental/Node.pm
+%%SITE_PERL%%/Pod/Elemental/Objectifier.pm
+%%SITE_PERL%%/Pod/Elemental/Paragraph.pm
+%%SITE_PERL%%/Pod/Elemental/Selectors.pm
+%%SITE_PERL%%/Pod/Elemental/Transformer.pm
+%%SITE_PERL%%/Pod/Elemental/Types.pm
+%%SITE_PERL%%/Pod/Elemental.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Elemental/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Elemental
+@dirrmtry %%SITE_PERL%%/Pod/Elemental/Element/Generic
+@dirrmtry %%SITE_PERL%%/Pod/Elemental/Element/Pod5
+@dirrmtry %%SITE_PERL%%/Pod/Elemental/Transformer
+@dirrmtry %%SITE_PERL%%/Pod/Elemental/Element
+@dirrmtry %%SITE_PERL%%/Pod/Elemental
+@dirrmtry %%SITE_PERL%%/Pod

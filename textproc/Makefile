@@ -565,6 +565,7 @@
     SUBDIR += p5-Pod-Autopod
     SUBDIR += p5-Pod-Constants
     SUBDIR += p5-Pod-DocBook
+    SUBDIR += p5-Pod-Elemental
     SUBDIR += p5-Pod-Escapes
     SUBDIR += p5-Pod-Eventual
     SUBDIR += p5-Pod-HtmlEasy
