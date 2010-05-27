@@ -13,6 +13,14 @@ MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
 DIST_SUBDIR=	subversion
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+
+# Patches required for use with the FreeBSD Project repository only
+.if defined(WITH_FREEBSD_SUBVERSION)
+PATCH_SITES=		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	lev
+PATCHFILES+=		svn_hacks_1.4.diff
+.endif
+
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
