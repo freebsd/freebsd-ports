@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_layout
 PORTVERSION=	5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.tangent.org/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache2.2 module to wrap served pages with a header and/or footer
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=  mod_layout-3.* mod_layout-4.*
 
@@ -28,7 +28,7 @@ MAKE_ARGS+=	builddir=${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 .endif
 
