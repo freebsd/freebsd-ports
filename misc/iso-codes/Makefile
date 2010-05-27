@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Lists of the country, language and currency iso names
 
-BUILD_DEPENDS=	xmlproc_parse:${PORTSDIR}/textproc/py-xml
-
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_PYTHON_BUILD=	yes
