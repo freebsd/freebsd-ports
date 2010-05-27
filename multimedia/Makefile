@@ -190,6 +190,7 @@
     SUBDIR += moonlight
     SUBDIR += motion
     SUBDIR += mp3cd
+    SUBDIR += mp4split
     SUBDIR += mpeg
     SUBDIR += mpeg2codec
     SUBDIR += mpeg2play
