@@ -7,7 +7,7 @@
 PORTNAME=	liquid
 PORTVERSION=	2.0.0
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	Library for rendering safe templates
