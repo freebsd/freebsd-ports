@@ -7,7 +7,7 @@
 PORTNAME=	jekyll
 PORTVERSION=	0.5.4
 CATEGORIES=	www
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A is a simple, blog aware, static site generator
