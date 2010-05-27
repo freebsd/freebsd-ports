@@ -8,7 +8,7 @@
 PORTNAME=	locale
 PORTVERSION=	2.0.5
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RG
+MASTER_SITES=	RF
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A pure ruby library to support locales
