@@ -1,4 +1,4 @@
 @unexec %%SED%% -i '' '/LoadModule %%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
 %%APACHEMODDIR%%/%%AP_MODULE%%
-@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
+@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
 @unexec echo "Don't forget to remove all mod_h264_streaming-related directives in your httpd.conf"
