@@ -19,7 +19,7 @@ COMMENT=	Apache module for simple text rewriting
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	2.0+
+USE_APACHE=	2.2+
 
 do-extract:
 	@${DO_NADA}
