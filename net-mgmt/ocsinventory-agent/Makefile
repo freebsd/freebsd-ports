@@ -7,6 +7,7 @@
 
 PORTNAME=	Ocsinventory
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME:L}/OCS%20Inventory%20NG/${PORTVERSION}
 PKGNAMESUFFIX=	-Agent
@@ -15,11 +16,11 @@ DISTNAME=	OCSNG_UNIX_AGENT-${PORTVERSION}
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Keep track of the computers configuration and software
 
-BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
-		${SITE_PERL}/Proc/Daemon.pm:${PORTSDIR}/devel/p5-Proc-Daemon \
-		dmidecode:${PORTSDIR}/sysutils/dmidecode \
+		${SITE_PERL}/Proc/Daemon.pm:${PORTSDIR}/devel/p5-Proc-Daemon
+BUILD_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
 		lspci:${PORTSDIR}/sysutils/pciutils
 
 USE_PERL5=	yes
