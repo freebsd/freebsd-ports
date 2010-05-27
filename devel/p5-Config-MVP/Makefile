@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-MVP
-PORTVERSION=	0.093350
-PORTREVISION=	1
+PORTVERSION=	2.101460
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +23,7 @@ MAN3=	Config::MVP.3\
 	Config::MVP::Assembler::WithBundles.3\
 	Config::MVP::Reader.3\
 	Config::MVP::Reader::Findable.3\
+	Config::MVP::Reader::Findable::ByExtension.3 \
 	Config::MVP::Reader::Finder.3\
 	Config::MVP::Reader::Hash.3\
 	Config::MVP::Section.3\
