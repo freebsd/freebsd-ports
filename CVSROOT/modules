@@ -9347,6 +9347,7 @@ mod_security21                  ports/www/mod_security21
 mod_sed                         ports/www/mod_sed
 mod_sequester                   ports/www/mod_sequester
 mod_shapvh                      ports/www/mod_shapvh
+mod_smooth_streaming            ports/www/mod_smooth_streaming
 mod_sqlinclude                  ports/www/mod_sqlinclude
 mod_ticket                      ports/www/mod_ticket
 mod_tidy                        ports/www/mod_tidy
@@ -13172,6 +13173,7 @@ p5-PGP-Sign                     ports/security/p5-PGP-Sign
 p5-PHP-Serialization            ports/devel/p5-PHP-Serialization
 p5-PHP-Session                  ports/www/p5-PHP-Session
 p5-PLP                          ports/www/p5-PLP
+p5-POD2-Base                    ports/textproc/p5-POD2-Base
 p5-POE                          ports/devel/p5-POE
 p5-POE-API-Hooks                ports/devel/p5-POE-API-Hooks
 p5-POE-API-Peek                 ports/devel/p5-POE-API-Peek
@@ -13253,6 +13255,7 @@ p5-PPI                          ports/textproc/p5-PPI
 p5-PPI-HTML                     ports/textproc/p5-PPI-HTML
 p5-PPI-XS                       ports/textproc/p5-PPI-XS
 p5-PPIx-EditorTools             ports/textproc/p5-PPIx-EditorTools
+p5-PPIx-Regexp                  ports/textproc/p5-PPIx-Regexp
 p5-PPerl                        ports/devel/p5-PPerl
 p5-PSGI                         ports/www/p5-PSGI
 p5-PV                           ports/devel/p5-PV
@@ -17204,6 +17207,7 @@ p5-pod-tree                     ports/textproc/p5-Pod-Tree
 p5-pod-wsdl                     ports/textproc/p5-Pod-WSDL
 p5-pod-xhtml                    ports/textproc/p5-Pod-Xhtml
 p5-pod-xml                      ports/textproc/p5-Pod-XML
+p5-pod2-base                    ports/textproc/p5-POD2-Base
 p5-pod2pdf                      ports/textproc/p5-pod2pdf
 p5-podlators                    ports/textproc/p5-podlators
 p5-podtohtml                    ports/www/p5-PodToHTML
@@ -17292,6 +17296,7 @@ p5-ppi                          ports/textproc/p5-PPI
 p5-ppi-html                     ports/textproc/p5-PPI-HTML
 p5-ppi-xs                       ports/textproc/p5-PPI-XS
 p5-ppix-editortools             ports/textproc/p5-PPIx-EditorTools
+p5-ppix-regexp                  ports/textproc/p5-PPIx-Regexp
 p5-pquery                       ports/www/p5-pQuery
 p5-prefork                      ports/devel/p5-prefork
 p5-prima                        ports/x11-toolkits/p5-Prima
@@ -20269,6 +20274,7 @@ pwm                             ports/x11-wm/pwm
 pwman                           ports/security/pwman
 pwman3                          ports/security/pwman3
 pwsafe                          ports/sysutils/pwsafe
+pwytter                         ports/net-im/pwytter
 pxe                             ports/net/pxe
 pxlib                           ports/databases/pxlib
 pxtools                         ports/databases/pxtools
@@ -20420,6 +20426,7 @@ py-django-registration          ports/www/py-django-registration
 py-django-signals-ahoy          ports/www/py-django-signals-ahoy
 py-django-tagging               ports/www/py-django-tagging
 py-django-threaded-multihost    ports/www/py-django-threaded-multihost
+py-django11                     ports/www/py-django11
 py-dns                          ports/dns/py-dns
 py-dnspython                    ports/dns/py-dnspython
 py-docutils                     ports/textproc/py-docutils
@@ -21354,6 +21361,7 @@ qtcreator                       ports/devel/qtcreator
 qtcurve-gtk2                    ports/x11-themes/qtcurve-gtk2
 qtcurve-kde3                    ports/x11-themes/qtcurve-kde3
 qtcurve-kde4                    ports/x11-themes/qtcurve-kde4
+qtcurve-qt4                     ports/x11-themes/qtcurve-qt4
 qtella                          ports/net-p2p/qtella
 qtemu                           ports/emulators/qtemu
 qtfw                            ports/security/qtfw
@@ -22215,6 +22223,7 @@ rubygem-geoip                   ports/net/rubygem-geoip
 rubygem-geokit                  ports/graphics/rubygem-geokit
 rubygem-georuby                 ports/devel/rubygem-georuby
 rubygem-getopt                  ports/devel/rubygem-getopt
+rubygem-gettext                 ports/devel/rubygem-gettext
 rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
 rubygem-graphviz                ports/graphics/rubygem-graphviz
@@ -22248,6 +22257,7 @@ rubygem-librmpd                 ports/audio/rubygem-librmpd
 rubygem-linecache               ports/devel/rubygem-linecache
 rubygem-liquid                  ports/textproc/rubygem-liquid
 rubygem-little_plugger          ports/devel/rubygem-little_plugger
+rubygem-locale                  ports/devel/rubygem-locale
 rubygem-lockfile                ports/devel/rubygem-lockfile
 rubygem-logging                 ports/devel/rubygem-logging
 rubygem-loquacious              ports/devel/rubygem-loquacious
@@ -26004,6 +26014,7 @@ xtimer                          ports/x11-clocks/xtimer
 xtl                             ports/devel/xtl
 xtla                            ports/devel/xtla
 xtoolwait                       ports/x11/xtoolwait
+xtrabackup                      ports/databases/xtrabackup
 xtraceroute                     ports/net/xtraceroute
 xtrader                         ports/finance/xtrader
 xtrans                          ports/x11/xtrans
