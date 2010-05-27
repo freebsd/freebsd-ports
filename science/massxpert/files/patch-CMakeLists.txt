@@ -1,0 +1,29 @@
+--- CMakeLists.txt.orig	2010-05-11 01:23:01.000000000 +0800
++++ CMakeLists.txt	2010-05-21 20:17:36.000000000 +0800
+@@ -153,7 +153,7 @@
+   # The manual page
+   IF (UNIX AND NOT APPLE)
+     INSTALL (FILES massxpert.1
+-      DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man1)
++      DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
+   ENDIF (UNIX AND NOT APPLE)
+ 
+   ###############
+@@ -188,7 +188,7 @@
+   # The manual pages (data)
+   IF (UNIX AND NOT APPLE)
+     INSTALL (FILES massxpert-data.7
+-      DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man7)
++      DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man7)
+   ENDIF (UNIX AND NOT APPLE)
+   
+   #################
+@@ -222,7 +222,7 @@
+   # The manual pages (user manual)
+   IF (UNIX AND NOT APPLE)
+     INSTALL (FILES massxpert-doc.7
+-      DESTINATION ${CMAKE_INSTALL_PREFIX}/share/man/man7)
++      DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man7)
+   ENDIF (UNIX AND NOT APPLE)
+   
+   

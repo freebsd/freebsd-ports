@@ -4,8 +4,6 @@ lib/massxpert/plugins/libseqToolsPlugin.so
 lib/massxpert/plugins/libnumeralsLocaleConverterPlugin.so
 %%DOCSDIR%%/COPYING
 share/applications/massxpert.desktop
-share/man/man1/massxpert.1
-share/man/man7/massxpert-data.7
 %%DATADIR%%/locales/massxpert_fr.qm
 %%DATADIR%%/pol-chem-defs/dna/adenine.svg
 %%DATADIR%%/pol-chem-defs/dna/biotlink.svg
@@ -217,9 +215,6 @@ share/man/man7/massxpert-data.7
 @dirrmtry %%DATADIR%%/dictionaries
 @dirrmtry share/applications
 @dirrmtry %%DATADIR%%
-@dirrmtry share/man/man7
-@dirrmtry share/man/man1
-@dirrmtry share/man
 @dirrm %%DOCSDIR%%
 @dirrm lib/massxpert/plugins
 @dirrm lib/massxpert
