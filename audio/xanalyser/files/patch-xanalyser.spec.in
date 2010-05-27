@@ -1,0 +1,10 @@
+--- xanalyser.spec.in.orig	2008-12-06 06:50:02.000000000 -0500
++++ xanalyser.spec.in	2010-05-25 13:16:27.000000000 -0400
+@@ -47,6 +47,6 @@
+ %defattr (-, root, root)
+ /usr/bin/xanalyser
+ %doc %{_mandir}/man1/xanalyser.1.gz
+-%config /usr/share/X11/app-defaults/XAnalyser
++%config %%PREFIX%%/lib/X11/app-defaults/XAnalyser
+ 
+ %changelog -n xanalyser

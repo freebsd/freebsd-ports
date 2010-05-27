@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xanalyser
-PORTVERSION=	1.30
-PORTREVISION=	2
+PORTVERSION=	1.32
 CATEGORIES=	audio hamradio
 MASTER_SITES=	http://arvin.schnell-web.net/xanalyser/ \
 		${MASTER_SITE_LOCAL}
@@ -26,7 +25,9 @@ PLIST_FILES=	bin/xanalyser \
 		lib/X11/app-defaults/XAnalyser
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
-	-e 's|-lXm |${MOTIFLIB} |g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	    -e 's|%%MOTIFLIB%%|${MOTIFLIB} |g' \
+	    -e 's|%%PREFIX%%|${PREFIX}|g' \
+	    ${WRKSRC}/xanalyser.spec ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
