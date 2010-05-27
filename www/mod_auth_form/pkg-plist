@@ -3,5 +3,5 @@ lib/mod_auth_form.la
 lib/mod_auth_form.so
 lib/mod_auth_form.so.2
 %%APACHEMODDIR%%/mod_auth_form.so
-@exec %D/sbin/apxs -e -A -n auth_form %D/%F
+@exec %D/sbin/apxs -e -a -n auth_form %D/%F
 @unexec %D/sbin/apxs -e -A -n auth_form %D/%F

@@ -1,4 +1,4 @@
 @unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%%APACHEMODDIR%%/%%AP_MODULE%%
 %%APACHEMODDIR%%/%%AP_MODULE%%
-@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
+@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
 @unexec echo "Don't forget to remove all mod_cband-related directives in your httpd.conf"

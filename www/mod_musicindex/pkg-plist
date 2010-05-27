@@ -1,5 +1,5 @@
 %%APACHEMODDIR%%/mod_musicindex.so
-@exec %D/sbin/apxs -e -A -n musicindex %D/%F
+@exec %D/sbin/apxs -e -a -n musicindex %D/%F
 @unexec %D/sbin/apxs -e -A -n musicindex %D/%F
 %%DATADIR%%/musicindex.css
 %%DATADIR%%/directory.png

@@ -1,5 +1,5 @@
 libexec/apache/mod_dtcl.so
-@exec %D/sbin/apxs -e -A -n dtcl %D/%F
+@exec %D/sbin/apxs -e -a -n dtcl %D/%F
 @unexec %D/sbin/apxs -e -A -n dtcl %D/%F
 %%PORTDOCS%%share/doc/mod_dtcl/commands.html
 %%PORTDOCS%%share/doc/mod_dtcl/directives.html

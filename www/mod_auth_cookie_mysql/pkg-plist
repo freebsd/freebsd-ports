@@ -1,5 +1,5 @@
 %%APACHEMODDIR%%/mod_auth_cookie_mysql.so
-@exec %D/sbin/apxs -e -A -n auth_cookie_mysql %D/%f
+@exec %D/sbin/apxs -e -a -n auth_cookie_mysql %D/%f
 @unexec %D/sbin/apxs -e -A -n auth_cookie_mysql %D/%f
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/authform.tmpl
