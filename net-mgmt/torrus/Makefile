@@ -7,7 +7,7 @@
 
 PORTNAME=	torrus
 PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -26,20 +26,12 @@ BUILD_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		db-4.3.0:${PORTSDIR}/databases/db43
 
-.if !defined(WITH_MOD_PERL)
-.if defined(WITH_APACHE2)
-WITH_MOD_PERL=	2
+.if defined(WITH_MODPERL2)
+USE_APACHE= 2.0+
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/APR/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .else
-WITH_MOD_PERL=	1
-.endif
-.endif
-.if ${WITH_MOD_PERL} == 1
-PKGNAMESUFFIX=	-mod_perl
+USE_APACHE= 1.3
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
-.elif ${WITH_MOD_PERL} == 2
-PKGNAMESUFFIX=	-mod_perl2
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
-		${SITE_PERL}/${PERL_ARCH}/APR/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .endif
 
 USE_PERL5_RUN=	5.8.1+
@@ -78,12 +70,12 @@ pre-fetch:
 	@${ECHO_CMD}
 	@${ECHO_CMD} "This port supports either mod_perl 1 or mod_perl 2"
 	@${ECHO_CMD}
-	@${ECHO_CMD} "  WITH_MOD_PERL=1  Enables mod_perl 1.x support (DEFAULT)"
-	@${ECHO_CMD} "  WITH_MOD_PERL=2  Enables mod_perl 2.x support"
+	@${ECHO_CMD} "  mod_perl 1.x support (DEFAULT)"
+	@${ECHO_CMD} "  WITH_MODPERL2=yes  Enables mod_perl 2.x support"
 	@${ECHO_CMD}
-.if ${WITH_MOD_PERL} == 1
+.if !defined(WITH_MODPERL2)
 	@${ECHO_CMD} "Enabling mod_perl 1.x support."
-.elif ${WITH_MOD_PERL} == 2
+.else
 	@${ECHO_CMD} "Enabling mod_perl 2.x support."
 .endif
 	@${ECHO_CMD}
