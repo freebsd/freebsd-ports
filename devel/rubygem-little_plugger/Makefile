@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	little_plugger
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/codeforpeople
 DISTNAME=	little-plugger-${PORTVERSION}
