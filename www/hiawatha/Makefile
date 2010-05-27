@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	7.1
+PORTVERSION=	7.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/
 
 MAINTAINER=	hugo@leisink.net
 COMMENT=	An advanced and secure webserver for Unix
 
-DOCS=		AUTHORS COPYING ChangeLog INSTALL
-EXAMPLES=	hiawatha mkcert newroot php-fcgi
+PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL
+PORTEXAMPLES=	hiawatha mkcert newroot php-fcgi
 CONFIG_FILES=	hiawatha.conf mimetype.conf cgi-wrapper.conf php-fcgi.conf
 MAN1=		cgi-wrapper.1 hiawatha.1 newroot.1 php-fcgi.1 ssi-cgi.1 wigwam.1
-MANCOMPRESSED=	no
 
 USE_RC_SUBR=	hiawatha
 SUB_FILES=	pkg-message
@@ -73,11 +72,13 @@ CPPFLAGS+=	-I${LOCALBASE}/include/libxml2
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR} ${ETCDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/extra/,} ${EXAMPLESDIR}/
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
-	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/doc/,} ${MAN1PREFIX}/man/man1/
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/extra/,} ${EXAMPLESDIR}/
+.endif
 .for FILE in ${CONFIG_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/etc/hiawatha/${FILE} ${PREFIX}/etc/hiawatha/${FILE}.sample
 	@if [ ! -f ${PREFIX}/etc/hiawatha/${FILE} ]; then \
