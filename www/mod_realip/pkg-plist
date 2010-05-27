@@ -1,3 +1,3 @@
 %%APACHEMODDIR%%/mod_realip.so
-@exec %D/sbin/apxs -e -a -n realip %D/%F
-@unexec %D/sbin/apxs -e -A -n realip %D/%F
+@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
+@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F

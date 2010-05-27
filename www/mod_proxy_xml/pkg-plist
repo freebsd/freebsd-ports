@@ -1,3 +1,3 @@
 %%APACHEMODDIR%%/mod_proxy_xml.so
-@exec %D/sbin/apxs -e -a -n proxy_xml %D/%F
-@unexec %D/sbin/apxs -e -A -n proxy_xml %D/%F
+@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
+@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F

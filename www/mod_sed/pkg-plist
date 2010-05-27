@@ -1,3 +1,3 @@
 %%APACHEMODDIR%%/mod_sed.so
-@exec %D/sbin/apxs -e -a -n sed %D/%F
-@unexec %D/sbin/apxs -e -A -n sed %D/%F
+@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
+@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
