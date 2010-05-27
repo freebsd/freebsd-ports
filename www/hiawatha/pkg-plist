@@ -23,13 +23,3 @@ sbin/wigwam
 %%WWWDIR%%/index.hiawatha.html
 @exec if [ ! -f %D/www/hiawatha/index.html ] ; then cp -p %D/%F %%WWWDIR%%/index.html; fi
 @unexec t=`/bin/ls %D/www/hiawatha`; if [ -z "$t" ]; then echo "WWW directory is empty, remove it."; rmdir %D/www/hiawatha; fi;
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hiawatha
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mkcert
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newroot
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/php-fcgi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
