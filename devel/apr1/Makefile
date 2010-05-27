@@ -15,7 +15,7 @@ DISTFILES=	apr-${APR_VERSION}.tar.gz apr-util-${APU_VERSION}.tar.gz
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache Portability Library
 
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 MAKE_JOBS_SAFE=	yes
 
