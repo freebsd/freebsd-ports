@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_dnssd
 PORTVERSION=	0.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	http://0pointer.de/lennart/projects/mod_dnssd/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ COMMENT=	An Apache module that provides DNS-SD capabilities
 
 LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi-app
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 USE_GMAKE=	yes
 USE_APACHE=	2.2+
@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--disable-lynx
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/README ${DOCSDIR}/README
 .endif
 

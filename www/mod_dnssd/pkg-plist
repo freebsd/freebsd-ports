@@ -1,5 +1,5 @@
-@unexec sed -i '' '/LoadModule %%AP_NAME%%_module/d' %D/%%APACHEETCDIR%%/httpd.conf
-%%APACHEMODDIR%%/mod_dnssd.so
-@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%f || true
+@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%f
+%%APACHEMODDIR%%/%%AP_MODULE%%
+@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%f
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
