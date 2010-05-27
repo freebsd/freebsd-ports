@@ -47,10 +47,10 @@ PLIST_SUB+=	MAPPACK=""
 PLIST_SUB+=	MAPPACK="@comment "
 .endif
 
-LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+		jpeg.11:${PORTSDIR}/graphics/jpeg
 .if defined(WITH_CLIENT) || defined(WITH_SDL_CLIENT)
 LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		theora.0:${PORTSDIR}/multimedia/libtheora
 .endif
