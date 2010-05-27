@@ -19,11 +19,11 @@ include/yazpp/zoom.h
 lib/libyazpp.a
 lib/libyazpp.la
 lib/libyazpp.so
-lib/libyazpp.so.3
+lib/libyazpp.so.4
 lib/libzoompp.a
 lib/libzoompp.la
 lib/libzoompp.so
-lib/libzoompp.so.3
+lib/libzoompp.so.4
 share/aclocal/yazpp.m4
 share/doc/yazpp/api.html
 share/doc/yazpp/common/id.png

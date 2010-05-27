@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz++
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.2
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yazpp/
 DISTNAME=	yazpp-${PORTVERSION}
@@ -14,7 +14,7 @@ DISTNAME=	yazpp-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	C++ toolkit for development of Z39.50v3 clients and servers
 
-LIB_DEPENDS=	yaz.3:${PORTSDIR}/net/yaz
+LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --with-yaz=${LOCALBASE}/bin
