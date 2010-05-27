@@ -14,9 +14,9 @@ MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A library for direct access of iPod contents
 
-USE_GNOME=	gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -42,12 +42,12 @@ PLIST_SUB+=	PYTHON="@comment "
 
 # SysInfo detection utility is required in order to support iPod classic
 # and nano 3G
-.if defined(WITH_TOOLS) || exists(${LOCALBASE}/lib/libsgutils.so)
+.if defined(WITH_TOOLS) || exists(${LOCALBASE}/lib/libsgutils2.so)
 LIB_DEPENDS+=	sgutils2.2:${PORTSDIR}/sysutils/sg3_utils
 PLIST_FILES+=	bin/ipod-read-sysinfo-extended
 .endif
 
-pre-patch: .SILENT
+post-patch: .SILENT
 # Adjust pkgconfigdir to the FreeBSD world
 	${REINPLACE_CMD} -e \
 		's,libdir)/pkgconfig,prefix)/libdata/pkgconfig,' \
