@@ -8,8 +8,7 @@
 PORTNAME=		ruby-sdl-ffi
 PORTVERSION=		0.2
 CATEGORIES=		devel rubygems
-MASTER_SITES=		RF
-MASTER_SITE_SUBDIR=	rubygame
+MASTER_SITES=		RG
 
 MAINTAINER=	kick.christoph@googlemail.com
 COMMENT=	Low-level binding to SDL and related libraries using Ruby-FFI
