@@ -17,6 +17,8 @@ DIST_SUBDIR=	python
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
+LATEST_LINK=	${PYTHON_PKGNAMEPREFIX}django11
+
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
