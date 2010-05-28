@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ioncube
-DISTVERSION=	3.3.16
-PORTREVISION=	0	#20100428
+DISTVERSION=	3.3.19
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads2.ioncube.com/loader_downloads/ \
 		http://dl.dropbox.com/u/4211495/ioncube/
@@ -26,14 +25,14 @@ SUB_FILES=	pkg-message
 
 # ionCube have no build for PHP 5.3 FreeBSD 6.x amd64
 .if ${OSVERSION} < 700000 && ${ARCH} == amd64 && ${PHP_VER} == 5
-BROKEN=         Does not work with PHP 5.3 on FreeBSD 6 amd64
+BROKEN=		Does not work with PHP 5.3 on FreeBSD 6 amd64
 .endif
 
-# Detect Version: for FreeBSD 8.x i386 install 8.x build, else using build for FreeBSD 7.x
-.if ${OSVERSION} >= 800000 && ${ARCH} == i386
+# Detect OS Version
+.if ${OSVERSION} >= 800000
 VER=		8
 .endif
-.if (${OSVERSION} >= 700000 && ${OSVERSION} < 800000) || (${OSVERSION} >= 700000 && ${ARCH} == amd64)
+.if (${OSVERSION} >= 700000 && ${OSVERSION} < 800000)
 VER=		7
 .endif
 .if ${OSVERSION} < 700000
@@ -49,14 +48,14 @@ ARCH_DIST=	x86
 
 # Detect PHP version
 .if ${PHP_VER} == 4
-PHP_INSTVER=    4.4
+PHP_INSTVER=	4.4
 .endif
 .if ${PHP_VER} == 5
-PHP_INSTVER=    5.3
+PHP_INSTVER=	5.3
 .endif
 # If you have old lang/php52
 .if ${PHP_VER} == 52
-PHP_INSTVER=    5.2
+PHP_INSTVER=	5.2
 .endif
 
 do-install:
