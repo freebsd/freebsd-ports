@@ -75,6 +75,7 @@ PLIST_SUB+=	WITH_PERL=""
 .else
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS+=--disable-embedded-perl --without-perl-modules
+PLIST_SUB+=	WITH_PERL_EMBEDDED="@comment "
 PLIST_SUB+=	WITH_PERL="@comment "
 .endif
 
