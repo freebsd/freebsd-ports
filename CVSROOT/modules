@@ -9469,6 +9469,7 @@ mp3towav-bundle                 ports/audio/mp3towav-bundle
 mp3unicode                      ports/audio/mp3unicode
 mp3val                          ports/audio/mp3val
 mp3wrap                         ports/audio/mp3wrap
+mp4split                        ports/multimedia/mp4split
 mpack                           ports/converters/mpack
 mpage                           ports/print/mpage
 mpatrol                         ports/devel/mpatrol
@@ -13363,12 +13364,14 @@ p5-Plucene-Analysis-CJKAnalyzer  ports/textproc/p5-Plucene-Analysis-CJKAnalyzer
 p5-Plucene-Plugin-Analyzer-SnowballAnalyzer  ports/textproc/p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
 p5-Plucene-Simple               ports/textproc/p5-Plucene-Simple
 p5-Plugtools                    ports/sysutils/p5-Plugtools
+p5-Plugtools-Plugins-HomeOU     ports/sysutils/p5-Plugtools-Plugins-HomeOU
 p5-Pod-Abstract                 ports/textproc/p5-Pod-Abstract
 p5-Pod-Autopod                  ports/textproc/p5-Pod-Autopod
 p5-Pod-Constants                ports/textproc/p5-Pod-Constants
 p5-Pod-Coverage                 ports/devel/p5-Pod-Coverage
 p5-Pod-Coverage-Moose           ports/devel/p5-Pod-Coverage-Moose
 p5-Pod-DocBook                  ports/textproc/p5-Pod-DocBook
+p5-Pod-Elemental                ports/textproc/p5-Pod-Elemental
 p5-Pod-Escapes                  ports/textproc/p5-Pod-Escapes
 p5-Pod-Eventual                 ports/textproc/p5-Pod-Eventual
 p5-Pod-HtmlEasy                 ports/textproc/p5-Pod-HtmlEasy
@@ -13543,6 +13546,7 @@ p5-SWF-Chart                    ports/www/p5-SWF-Chart
 p5-SWF-File                     ports/graphics/p5-SWF-File
 p5-Safe-Hole                    ports/security/p5-Safe-Hole
 p5-Samba-LDAP                   ports/net/p5-Samba-LDAP
+p5-Samba-SIDhelper              ports/sysutils/p5-Samba-SIDhelper
 p5-Sane                         ports/graphics/p5-Sane
 p5-Scalar-Defer                 ports/devel/p5-Scalar-Defer
 p5-Scalar-List-Utils            ports/lang/p5-Scalar-List-Utils
@@ -13689,6 +13693,7 @@ p5-String-Truncate              ports/textproc/p5-String-Truncate
 p5-Sub-Current                  ports/devel/p5-Sub-Current
 p5-Sub-Delete                   ports/devel/p5-Sub-Delete
 p5-Sub-Exporter                 ports/devel/p5-Sub-Exporter
+p5-Sub-Exporter-ForMethods      ports/devel/p5-Sub-Exporter-ForMethods
 p5-Sub-Identify                 ports/devel/p5-Sub-Identify
 p5-Sub-Install                  ports/devel/p5-Sub-Install
 p5-Sub-Installer                ports/devel/p5-Sub-Installer
@@ -17183,12 +17188,14 @@ p5-plucene-analysis-cjkanalyzer  ports/textproc/p5-Plucene-Analysis-CJKAnalyzer
 p5-plucene-plugin-analyzer-snowballanalyzer  ports/textproc/p5-Plucene-Plugin-Analyzer-SnowballAnalyzer
 p5-plucene-simple               ports/textproc/p5-Plucene-Simple
 p5-plugtools                    ports/sysutils/p5-Plugtools
+p5-plugtools-plugins-homeou     ports/sysutils/p5-Plugtools-Plugins-HomeOU
 p5-pod-abstract                 ports/textproc/p5-Pod-Abstract
 p5-pod-autopod                  ports/textproc/p5-Pod-Autopod
 p5-pod-constants                ports/textproc/p5-Pod-Constants
 p5-pod-coverage                 ports/devel/p5-Pod-Coverage
 p5-pod-coverage-moose           ports/devel/p5-Pod-Coverage-Moose
 p5-pod-docbook                  ports/textproc/p5-Pod-DocBook
+p5-pod-elemental                ports/textproc/p5-Pod-Elemental
 p5-pod-escapes                  ports/textproc/p5-Pod-Escapes
 p5-pod-eventual                 ports/textproc/p5-Pod-Eventual
 p5-pod-htmleasy                 ports/textproc/p5-Pod-HtmlEasy
@@ -17390,6 +17397,7 @@ p5-runapp                       ports/devel/p5-RunApp
 p5-s3                           ports/net/p5-S3
 p5-safe-hole                    ports/security/p5-Safe-Hole
 p5-samba-ldap                   ports/net/p5-Samba-LDAP
+p5-samba-sidhelper              ports/sysutils/p5-Samba-SIDhelper
 p5-sane                         ports/graphics/p5-Sane
 p5-savi-perl                    ports/security/p5-SAVI-Perl
 p5-scalar-defer                 ports/devel/p5-Scalar-Defer
@@ -17580,6 +17588,7 @@ p5-string-truncate              ports/textproc/p5-String-Truncate
 p5-sub-current                  ports/devel/p5-Sub-Current
 p5-sub-delete                   ports/devel/p5-Sub-Delete
 p5-sub-exporter                 ports/devel/p5-Sub-Exporter
+p5-sub-exporter-formethods      ports/devel/p5-Sub-Exporter-ForMethods
 p5-sub-identify                 ports/devel/p5-Sub-Identify
 p5-sub-install                  ports/devel/p5-Sub-Install
 p5-sub-installer                ports/devel/p5-Sub-Installer
