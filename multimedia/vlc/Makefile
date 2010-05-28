@@ -10,6 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.0.6
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -470,7 +471,7 @@ CONFIGURE_ARGS+=--disable-mad
 .endif
 
 .if !defined(WITHOUT_MODDEMUX)
-LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 CONFIGURE_ARGS+=--enable-mod
 .else
 CONFIGURE_ARGS+=--disable-mod

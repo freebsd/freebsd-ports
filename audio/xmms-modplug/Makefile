@@ -7,7 +7,7 @@
 
 PORTNAME=	modplug
 PORTVERSION=	2.0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}-xmms/${PORTNAME}-xmms/2.05
 PKGNAMEPREFIX=	xmms-
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modplug-based plugin for XMMS
 
 LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes

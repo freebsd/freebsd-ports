@@ -7,7 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.15.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -137,7 +137,7 @@ CONFIGURE_ARGS+=--disable-mikmod
 .endif
 
 .if defined(WITH_MODPLUG)
-LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 CONFIGURE_ARGS+=--enable-modplug
 .else
 CONFIGURE_ARGS+=--disable-modplug
