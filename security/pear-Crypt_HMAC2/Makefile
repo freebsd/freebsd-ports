@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Crypt_HMAC2
-PORTVERSION=	0.2.1
+PORTVERSION=	1.0.0
 CATEGORIES=	security www pear
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Implementation of Hashed Message Authentication Code for PHP5
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	Crypt
-FILES=		HMAC2.php HMAC2/Exception.php
+#CATEGORY=	Crypt
+FILES=		Crypt/HMAC2.php Crypt/HMAC2/Exception.php
 TESTS=		AllTests.php HMAC2Test.php \
 		TestConfiguration.php.dist \
 		TestHelper.php
