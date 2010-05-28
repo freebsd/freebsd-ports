@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	goblin
-DISTVERSION=	2.8b28
+DISTVERSION=	2.8b30
 CATEGORIES=	math
-MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}2/${PORTNAME}.2.8b28
+MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}2/${PORTNAME}.${DISTVERSION}
 DISTNAME=	${PORTNAME}.${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -25,7 +25,7 @@ MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		LD="${CXX}" LIBS="-lm ${LDFLAGS}" LISShared="-lm ${LDFLAGS}" \
 		libtcl=84 libtk=84 prefix=${PREFIX}
-ALL_TARGET=	all
+ALL_TARGET=	all shared
 PLIST_SUB+=	VERSION=${PORTVERSION:R}
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/ \
@@ -46,15 +46,17 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gosh ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/goblet ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/gosh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/goblet ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/display ${PREFIX}/bin/goblin-display
 	${INSTALL} -d ${PREFIX}/include/${PORTNAME}
 	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} \*.h ${PREFIX}/include/${PORTNAME})
 	${INSTALL} -d ${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC}/tcl && ${COPYTREE_SHARE} \* ${PREFIX}/lib/${PORTNAME})
-	${INSTALL_DATA} ${WRKSRC}/libglpk.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libgoblin.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libglpk.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/libgoblin.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libglpk.so ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libgoblin.so ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d ${DOCSDIR}
 	${INSTALL} -d ${DOCSDIR}/html
