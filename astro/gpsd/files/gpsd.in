@@ -26,15 +26,48 @@
 name=gpsd
 rcvar=`set_rcvar`
 
+start_postcmd=start_postcmd
+stop_postcmd=stop_postcmd
+
+start_postcmd()
+{
+	if ! checkyesno gpxlogger_enable; then
+		return;
+	fi
+
+	cd ${gpxlogger_logdir};
+	gpx=$(date +"${gpxlogger_format}")
+	touch "${pidfile_logger}" "${gpx}"
+	chown nobody:nobody "${pidfile_logger}" "${gpx}"
+	/usr/sbin/daemon -u nobody -p "${pidfile_logger}"	\
+		${gpxlogger} ${gpxlogger_flags} > ${gpx}
+}
+
+stop_postcmd()
+{
+	if ! checkyesno gpxlogger_enable; then
+		return;
+	fi
+
+	/bin/kill $(/bin/cat "${pidfile_logger}")
+}
+
 load_rc_config $name
 
 # Set defaults
 : ${gpsd_enable:="NO"}
 : ${gpsd_flags:=""}
 : ${gpsd_devices:=""}
+: ${gpxlogger_enable:="NO"}
+: ${gpxlogger_flags:="-i 600"}
+: ${gpxlogger_logdir:="/var/log"}
+: ${gpxlogger_format:="%d %B %Y - %H:%M.gpx"}
 
 pidfile=/var/run/$name.pid
 command=%%PREFIX%%/sbin/$name
 command_args="-P $pidfile $gpsd_devices"
+
+gpxlogger=/usr/local/bin/gpxlogger
+pidfile_logger=/var/run/gpxlogger.pid
 
 run_rc_command "$1"
