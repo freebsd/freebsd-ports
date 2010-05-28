@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://1978th.net/kyotocabinet/rubypkg/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -55,6 +55,6 @@ post-install:
 .endif
 
 check:
-	cd ${BUILD_WRKSRC} && ${SETENV} RUBYLIB=. ${RUBY} maketest.rb
+	cd ${BUILD_WRKSRC} && ${SETENV} RUBYLIB=. ${RUBY} test.rb
 
 .include <bsd.port.post.mk>
