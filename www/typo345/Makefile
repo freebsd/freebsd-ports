@@ -7,6 +7,7 @@
 
 PORTNAME=	typo3
 PORTVERSION=	4.3.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The typo3 content management system
 
 NO_BUILD=	yes
-USE_PHP=	mysql pcre xml session ctype filter
+USE_PHP=	mysql pcre xml session ctype filter json
 WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=	4
 
