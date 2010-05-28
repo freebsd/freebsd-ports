@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dosbox
-PORTVERSION=	0.73
-PORTREVISION=	1
+PORTVERSION=	0.74
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -18,6 +17,8 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl net sound
+PLIST_FILES=	bin/dosbox
+PORTDOCS=	NEWS README
 
 MAN1=		dosbox.1
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -37,7 +38,6 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
