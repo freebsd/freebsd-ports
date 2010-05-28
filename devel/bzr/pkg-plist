@@ -962,6 +962,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_push.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_push.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_push.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_revert.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_revert.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_revert.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_update.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_update.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/commands/test_update.pyo
