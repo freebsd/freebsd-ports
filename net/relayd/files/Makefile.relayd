@@ -1,0 +1,38 @@
+# $FreeBSD$
+
+PROG=	relayd
+
+MAN=	relayd.8 \
+	relayd.conf.5
+
+SRCS=	parse.y \
+	log.c \
+	control.c \
+	buffer.c \
+	imsg.c \
+	ssl.c \
+	ssl_privsep.c \
+	relayd.c \
+	pfe.c \
+	pfe_filter.c \
+	hce.c \
+	relay.c \
+	relay_udp.c \
+	check_icmp.c \
+	check_tcp.c \
+	check_script.c \
+	name2id.c \
+	arc4random.c \
+	shuffle.c
+
+CFLAGS+=	-DSHA1_DIGEST_LENGTH=SHA_DIGEST_LENGTH \
+		-DSHA1_DIGEST_STRING_LENGTH=SHA_DIGEST_LENGTH \
+		-DOPENSSL_NO_SHA -DOPENSSL_NO_MD5 \
+		-D__dead=''
+CFLAGS+=	-I${.CURDIR} -I${PREFIX}/include
+CLEANFILES+=	y.tab.h
+
+LDADD=		-lmd -L${PREFIX}/lib ${LIBEVENT} -lssl -lcrypto
+DPADD=		${LIBEVENT} ${LIBSSL} ${LIBCRYPTO}
+
+.include <bsd.prog.mk>

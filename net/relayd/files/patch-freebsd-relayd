@@ -1,0 +1,684 @@
+diff -Naur relayd.orig/carp.c relayd/carp.c
+--- relayd.orig/carp.c	2010-05-27 11:05:52.871795234 +0200
++++ relayd/carp.c	2010-05-27 11:05:58.266605620 +0200
+@@ -19,6 +19,7 @@
+ #include <sys/param.h>
+ #include <sys/socket.h>
+ #include <sys/ioctl.h>
++#include <sys/queue.h>
+ 
+ #include <net/if.h>
+ 
+diff -Naur relayd.orig/check_tcp.c relayd/check_tcp.c
+--- relayd.orig/check_tcp.c	2010-05-27 11:05:52.872794016 +0200
++++ relayd/check_tcp.c	2010-05-27 11:05:58.269605038 +0200
+@@ -31,7 +31,7 @@
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <fnmatch.h>
+-#include <sha1.h>
++#include <sha.h>
+ 
+ #include <openssl/ssl.h>
+ 
+@@ -285,7 +285,11 @@
+ 	if (b == NULL)
+ 		fatal("out of memory");
+ 	*b = '\0';
++#ifndef __FreeBSD__
+ 	if (fnmatch(cte->table->conf.exbuf, cte->buf->buf, 0) == 0) {
++#else
++	if (fnmatch(cte->table->conf.exbuf, (char *)cte->buf->buf, 0) == 0) {
++#endif
+ 		cte->host->he = HCE_SEND_EXPECT_OK;
+ 		cte->host->up = HOST_UP;
+ 		return (0);
+@@ -318,7 +322,11 @@
+ 		fatal("out of memory");
+ 	*b = '\0';
+ 
++#ifndef __FreeBSD__
+ 	head = cte->buf->buf;
++#else
++	head = (char *)cte->buf->buf;
++#endif
+ 	host = cte->host;
+ 	host->he = HCE_HTTP_CODE_ERROR;
+ 
+@@ -370,7 +378,11 @@
+ 		fatal("out of memory");
+ 	*b = '\0';
+ 
++#ifndef __FreeBSD__
+ 	head = cte->buf->buf;
++#else
++	head = (char *)cte->buf->buf;
++#endif
+ 	host = cte->host;
+ 	host->he = HCE_HTTP_DIGEST_ERROR;
+ 
+@@ -382,7 +394,11 @@
+ 	}
+ 	head += strlen("\r\n\r\n");
+ 
++#ifndef __FreeBSD__
+ 	digeststr(cte->table->conf.digest_type, head, strlen(head), digest);
++#else
++	digeststr(cte->table->conf.digest_type, (u_int8_t*)head, strlen(head), digest);
++#endif
+ 
+ 	if (strcmp(cte->table->conf.digest, digest)) {
+ 		log_warnx("check_http_digest: %s failed "
+diff -Naur relayd.orig/hce.c relayd/hce.c
+--- relayd.orig/hce.c	2010-05-27 11:05:52.872794016 +0200
++++ relayd/hce.c	2010-05-27 11:05:58.270605497 +0200
+@@ -167,7 +167,7 @@
+ 	struct timeval	 tv;
+ 	struct table	*table;
+ 
+-	snmp_init(env, iev_main);
++//	snmp_init(env, iev_main);
+ 
+ 	if (!TAILQ_EMPTY(env->sc_tables)) {
+ 		evtimer_set(&env->sc_ev, hce_launch_checks, env);
+@@ -336,8 +336,10 @@
+ 		    print_availability(host->check_cnt, host->up_cnt));
+ 	}
+ 
++/*
+ 	if (host->last_up != host->up)
+ 		snmp_hosttrap(table, host);
++*/
+ 
+ 	host->last_up = host->up;
+ 
+diff -Naur relayd.orig/log.c relayd/log.c
+--- relayd.orig/log.c	2010-05-27 11:05:52.872794016 +0200
++++ relayd/log.c	2010-05-27 11:05:58.271605396 +0200
+@@ -16,7 +16,11 @@
+  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#else
+ #include <sys/types.h>
++#endif
+ #include <sys/queue.h>
+ #include <sys/socket.h>
+ #include <sys/tree.h>
+diff -Naur relayd.orig/parse.y relayd/parse.y
+--- relayd.orig/parse.y	2010-05-27 11:05:52.874794374 +0200
++++ relayd/parse.y	2010-05-27 11:07:06.666448151 +0200
+@@ -343,6 +343,7 @@
+ 			}
+ 			conf->sc_prefork_relay = $2;
+ 		}
++/* FreeBSD exclude
+ 		| DEMOTE STRING		{
+ 			conf->sc_flags |= F_DEMOTE;
+ 			if (strlcpy(conf->sc_demote_group, $2,
+@@ -360,6 +361,7 @@
+ 			}
+ 		}
+ 		| SEND TRAP		{ conf->sc_flags |= F_TRAP; }
++*/
+ 		;
+ 
+ loglevel	: UPDATES		{ $$ = RELAYD_OPT_LOGUPDATE; }
+@@ -615,6 +617,7 @@
+ 			bcopy(&$2, &table->conf.timeout,
+ 			    sizeof(struct timeval));
+ 		}
++/* FreeBSD exclude
+ 		| DEMOTE STRING		{
+ 			table->conf.flags |= F_DEMOTE;
+ 			if (strlcpy(table->conf.demote_group, $2,
+@@ -632,6 +635,7 @@
+ 				YYERROR;
+ 			}
+ 		}
++*/
+ 		| INTERVAL NUMBER	{
+ 			if ($2 < conf->sc_interval.tv_sec ||
+ 			    $2 % conf->sc_interval.tv_sec) {
+@@ -1562,7 +1566,7 @@
+ 		{ "ciphers",		CIPHERS },
+ 		{ "code",		CODE },
+ 		{ "cookie",		COOKIE },
+-		{ "demote",		DEMOTE },
++// FreeBSD	{ "demote",		DEMOTE },
+ 		{ "digest",		DIGEST },
+ 		{ "disable",		DISABLE },
+ 		{ "error",		ERROR },
+@@ -1625,7 +1629,7 @@
+ 		{ "timeout",		TIMEOUT },
+ 		{ "to",			TO },
+ 		{ "transparent",	TRANSPARENT },
+-		{ "trap",		TRAP },
++// FreeBSD	{ "trap",		TRAP },
+ 		{ "ttl",		TTL },
+ 		{ "updates",		UPDATES },
+ 		{ "url",		URL },
+@@ -2260,7 +2264,8 @@
+ 	hints.ai_family = PF_UNSPEC;
+ 	hints.ai_socktype = SOCK_DGRAM; /* DUMMY */
+ 	error = getaddrinfo(s, NULL, &hints, &res0);
+-	if (error == EAI_AGAIN || error == EAI_NODATA || error == EAI_NONAME)
++//	if (error == EAI_AGAIN || error == EAI_NODATA || error == EAI_NONAME)
++	if (error == EAI_AGAIN || error == EAI_NONAME)
+ 		return (0);
+ 	if (error) {
+ 		log_warnx("host_dns: could not parse \"%s\": %s", s,
+diff -Naur relayd.orig/pfe.c relayd/pfe.c
+--- relayd.orig/pfe.c	2010-05-27 11:05:52.874794374 +0200
++++ relayd/pfe.c	2010-05-27 11:05:58.276615510 +0200
+@@ -17,6 +17,9 @@
+  */
+ 
+ #include <sys/param.h>
++#ifdef __FreeBSD__
++#include <sys/queue.h>
++#endif
+ #include <sys/stat.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
+@@ -859,7 +862,9 @@
+ 	struct table		*table;
+ 	struct ctl_id		 id;
+ 	struct imsg		 imsg;
++#ifndef __FreeBSD__
+ 	struct ctl_demote	 demote;
++#endif
+ 
+ 	bzero(&id, sizeof(id));
+ 	bzero(&imsg, sizeof(imsg));
+@@ -920,6 +925,7 @@
+ 		 */
+ 		table->conf.flags &= ~(F_CHANGED);
+ 
++#ifndef __FreeBSD__
+ 		/*
+ 		 * handle demotion.
+ 		 */
+@@ -942,6 +948,7 @@
+ 		    sizeof(demote.group));
+ 		imsg_compose_event(iev_main, IMSG_DEMOTE, 0, 0, -1,
+ 		    &demote, sizeof(demote));
++#endif
+ 	}
+ }
+ 
+diff -Naur relayd.orig/pfe_filter.c relayd/pfe_filter.c
+--- relayd.orig/pfe_filter.c	2010-05-27 11:05:52.873793915 +0200
++++ relayd/pfe_filter.c	2010-05-27 11:05:58.277615689 +0200
+@@ -97,6 +97,10 @@
+ 		    sizeof(tables[i].pfrt_name))
+ 			goto toolong;
+ 		tables[i].pfrt_flags |= PFR_TFLAG_PERSIST;
++#ifdef __FreeBSD__
++		log_debug("init_tables: prepare anchor \"%s\" and table \"%s\"",
++#endif
++		    tables[i].pfrt_anchor, tables[i].pfrt_name);
+ 		i++;
+ 	}
+ 	if (i != env->sc_rdrcount)
+@@ -280,12 +284,11 @@
+ 		}
+ 			
+ 		psnk.psnk_af = host->conf.ss.ss_family;
+-		psnk.psnk_killed = 0;
+ 
+ 		if (ioctl(env->sc_pf->dev,
+ 		    DIOCKILLSRCNODES, &psnk) == -1)
+ 			fatal("kill_srcnodes: cannot kill src nodes");
+-		cnt += psnk.psnk_killed;
++		cnt += psnk.psnk_af;
+ 	}
+ 
+ 	return (cnt);
+@@ -370,7 +373,11 @@
+ 	struct sockaddr_in6	*sain6;
+ 	struct address		*address;
+ 	char			 anchor[PF_ANCHOR_NAME_SIZE];
++#ifndef __FreeBSD__
+ 	int			 rs;
++#else
++	int			 rs = 0;
++#endif
+ 	struct table		*t = rdr->table;
+ 
+ 	if (!(env->sc_flags & F_NEEDPF))
+@@ -418,7 +425,9 @@
+ 
+ 			/* Use sloppy state handling for half connections */
+ 			rio.rule.keep_state = PF_STATE_NORMAL;
++#if 0
+ 			rio.rule.rule_flag = PFRULE_STATESLOPPY;
++#endif
+ 			break;
+ 		default:
+ 			fatalx("sync_ruleset: invalid forward mode");
+@@ -437,7 +446,9 @@
+ 		rio.rule.dst.port_op = address->port.op;
+ 		rio.rule.dst.port[0] = address->port.val[0];
+ 		rio.rule.dst.port[1] = address->port.val[1];
++#if 0
+ 		rio.rule.rtableid = -1; /* stay in the main routing table */
++#endif
+ 
+ 		if (rio.rule.proto == IPPROTO_TCP)
+ 			rio.rule.timeout[PFTM_TCP_ESTABLISHED] =
+diff -Naur relayd.orig/relay.c relayd/relay.c
+--- relayd.orig/relay.c	2010-05-27 11:05:52.872794016 +0200
++++ relayd/relay.c	2010-05-27 11:05:58.280728536 +0200
+@@ -16,7 +16,11 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#else
+ #include <sys/types.h>
++#endif
+ #include <sys/queue.h>
+ #include <sys/time.h>
+ #include <sys/stat.h>
+@@ -683,6 +687,7 @@
+ 		    &val, sizeof(val)) == -1)
+ 			goto bad;
+ 	}
++#ifndef __FreeBSD__
+ 	if (proto->tcpflags & (TCPFLAG_SACK|TCPFLAG_NSACK)) {
+ 		if (proto->tcpflags & TCPFLAG_NSACK)
+ 			val = 0;
+@@ -692,6 +697,7 @@
+ 		    &val, sizeof(val)) == -1)
+ 			goto bad;
+ 	}
++#endif
+ 
+ 	return (s);
+ 
+@@ -1027,7 +1033,11 @@
+ 	}
+ 	if (strstr(val, "$TIMEOUT") != NULL) {
+ 		snprintf(ibuf, sizeof(ibuf), "%lu",
++#ifdef __FreeBSD__
++		    (unsigned long)rlay->rl_conf.timeout.tv_sec);
++#else
+ 		    rlay->rl_conf.timeout.tv_sec);
++#endif
+ 		if (expand_string(buf, len, "$TIMEOUT", ibuf) != 0)
+ 			return (NULL);
+ 	}
+@@ -1624,7 +1634,11 @@
+ 	switch (type) {
+ 	case DIGEST_SHA1:
+ 	case DIGEST_MD5:
++#ifdef __FreeBSD__
++		if ((md = digeststr(type, (u_int8_t*)val, strlen(val), NULL)) == NULL) {
++#else
+ 		if ((md = digeststr(type, val, strlen(val), NULL)) == NULL) {
++#endif
+ 			relay_close_http(con, 500,
+ 			    "failed to allocate digest", 0);
+ 			goto fail;
+@@ -2642,8 +2656,12 @@
+ 		goto err;
+ 
+ 	/* Set session context to the local relay name */
+-	if (!SSL_CTX_set_session_id_context(ctx, rlay->rl_conf.name,
+-	    strlen(rlay->rl_conf.name)))
++	if (!SSL_CTX_set_session_id_context(ctx,
++#ifdef __FreeBSD__
++	    (unsigned char*)rlay->rl_conf.name, strlen(rlay->rl_conf.name)))
++#else
++	    rlay->rl_conf.name, strlen(rlay->rl_conf.name)))
++#endif
+ 		goto err;
+ 
+ 	return (ctx);
+@@ -3104,7 +3122,11 @@
+ 	if (fstat(fd, &st) != 0)
+ 		goto fail;
+ 	size = st.st_size;
++#ifndef __FreeBSD__
+ 	if ((buf = (char *)calloc(1, size + 1)) == NULL)
++#else
++	if ((buf = (u_int8_t *)calloc(1, size + 1)) == NULL)
++#endif
+ 		goto fail;
+ 	if (read(fd, buf, size) != size)
+ 		goto fail;
+@@ -3112,7 +3134,11 @@
+ 	close(fd);
+ 
+ 	*len = size + 1;
++#ifndef __FreeBSD__
+ 	return (buf);
++#else
++	return (char *)(buf);
++#endif
+ 
+  fail:
+ 	if (buf != NULL)
+diff -Naur relayd.orig/relay_udp.c relayd/relay_udp.c
+--- relayd.orig/relay_udp.c	2010-05-27 11:05:52.873793915 +0200
++++ relayd/relay_udp.c	2010-05-27 11:05:58.281790178 +0200
+@@ -16,7 +16,11 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#else
+ #include <sys/types.h>
++#endif
+ #include <sys/queue.h>
+ #include <sys/time.h>
+ #include <sys/stat.h>
+diff -Naur relayd.orig/relayd.8 relayd/relayd.8
+--- relayd.orig/relayd.8	2010-05-27 11:05:52.871795234 +0200
++++ relayd/relayd.8	2010-05-27 11:05:58.282841763 +0200
+@@ -117,7 +117,7 @@
+ .It Fl f Ar file
+ Specify an alternative configuration file.
+ The default is
+-.Pa /etc/relayd.conf .
++.Pa %%PREFIX%%/etc/relayd.conf .
+ .It Fl n
+ Configtest mode.
+ Only check the configuration file for validity.
+@@ -126,7 +126,7 @@
+ .El
+ .Sh FILES
+ .Bl -tag -width "/var/run/relayd.sockXX" -compact
+-.It /etc/relayd.conf
++.It %%PREFIX%%/etc/relayd.conf
+ Default configuration file.
+ .It /var/run/relayd.sock
+ Unix-domain socket used for communication with
+diff -Naur relayd.orig/relayd.c relayd/relayd.c
+--- relayd.orig/relayd.c	2010-05-27 11:05:52.873793915 +0200
++++ relayd/relayd.c	2010-05-27 11:05:58.284862515 +0200
+@@ -17,7 +17,11 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#else
+ #include <sys/types.h>
++#endif
+ #include <sys/queue.h>
+ #include <sys/socket.h>
+ #include <sys/wait.h>
+@@ -37,7 +41,11 @@
+ #include <unistd.h>
+ #include <ctype.h>
+ #include <pwd.h>
++#ifdef __FreeBSD__
++#include <sha.h>
++#else
+ #include <sha1.h>
++#endif
+ #include <md5.h>
+ 
+ #include <openssl/ssl.h>
+@@ -292,9 +300,10 @@
+ 	    iev_hce->handler, iev_hce);
+ 	event_add(&iev_hce->ev, NULL);
+ 
++#ifndef __FreeBSD__
+ 	if (env->sc_flags & F_DEMOTE)
+ 		carp_demote_reset(env->sc_demote_group, 0);
+-
++#endif
+ 	event_dispatch();
+ 
+ 	return (0);
+@@ -319,9 +328,11 @@
+ 	} while (pid != -1 || (pid == -1 && errno == EINTR));
+ 
+ 	control_cleanup();
++#ifndef __FreeBSD__
+ 	carp_demote_shutdown();
+ 	if (env->sc_flags & F_DEMOTE)
+ 		carp_demote_reset(env->sc_demote_group, 128);
++#endif
+ 	log_info("terminating");
+ 	exit(0);
+ }
+@@ -383,8 +394,10 @@
+ 	memcpy(&env->sc_proto_default, &new_env->sc_proto_default,
+ 	    sizeof(env->sc_proto_default));
+ 	env->sc_prefork_relay = new_env->sc_prefork_relay;
++#ifndef __FreeBSD__
+ 	(void)strlcpy(env->sc_demote_group, new_env->sc_demote_group,
+ 	    sizeof(env->sc_demote_group));
++#endif
+ 
+ 	env->sc_tables = new_env->sc_tables;
+ 	env->sc_rdrs = new_env->sc_rdrs;
+@@ -610,7 +623,9 @@
+ 	struct imsgbuf		*ibuf;
+ 	struct imsg		 imsg;
+ 	ssize_t			 n;
++#ifndef __FreeBSD__
+ 	struct ctl_demote	 demote;
++#endif
+ 
+ 	iev = ptr;
+ 	ibuf = &iev->ibuf;
+@@ -638,6 +653,7 @@
+ 			break;
+ 
+ 		switch (imsg.hdr.type) {
++#ifndef __FreeBSD__
+ 		case IMSG_DEMOTE:
+ 			if (imsg.hdr.len - IMSG_HEADER_SIZE !=
+ 			    sizeof(demote))
+@@ -646,6 +662,7 @@
+ 			memcpy(&demote, imsg.data, sizeof(demote));
+ 			carp_demote_set(demote.group, demote.level);
+ 			break;
++#endif
+ 		case IMSG_CTL_RELOAD:
+ 			/*
+ 			 * so far we only get here if no L7 (relay) is done.
+@@ -709,9 +726,11 @@
+ 			imsg_compose_event(iev_hce, IMSG_SCRIPT,
+ 			    0, 0, -1, &scr, sizeof(scr));
+ 			break;
++/*
+ 		case IMSG_SNMPSOCK:
+ 			(void)snmp_sendsock(iev);
+ 			break;
++*/
+ 		default:
+ 			log_debug("main_dispatch_hce: unexpected imsg %d",
+ 			    imsg.hdr.type);
+@@ -1021,7 +1040,11 @@
+ {
+ 	switch (type) {
+ 	case DIGEST_SHA1:
++#ifdef __FreeBSD__
++		return (SHA1_Data(data, len, buf));
++#else
+ 		return (SHA1Data(data, len, buf));
++#endif
+ 		break;
+ 	case DIGEST_MD5:
+ 		return (MD5Data(data, len, buf));
+@@ -1258,9 +1281,11 @@
+ 	    bnd->bnd_proto == IPPROTO_TCP ? SOCK_STREAM : SOCK_DGRAM,
+ 	    bnd->bnd_proto)) == -1)
+ 		goto fail;
++#ifndef __FreeBSD__
+ 	if (setsockopt(s, SOL_SOCKET, SO_BINDANY,
+ 	    &v, sizeof(v)) == -1)
+ 		goto fail;
++#endif
+ 	if (bind(s, (struct sockaddr *)&bnd->bnd_ss,
+ 	    bnd->bnd_ss.ss_len) == -1)
+ 		goto fail;
+diff -Naur relayd.orig/relayd.conf.5 relayd/relayd.conf.5
+--- relayd.orig/relayd.conf.5	2010-05-27 11:05:52.873793915 +0200
++++ relayd/relayd.conf.5	2010-05-27 11:05:58.285863811 +0200
+@@ -103,17 +103,6 @@
+ .Sh GLOBAL CONFIGURATION
+ Here are the settings that can be set globally:
+ .Bl -tag -width Ds
+-.It Ic demote Ar group
+-Enable the global
+-.Xr carp 4
+-demotion option, resetting the carp demotion counter for the
+-specified interface group to zero on startup and to 128 on shutdown of
+-the daemon.
+-For more information on interface groups,
+-see the
+-.Ic group
+-keyword in
+-.Xr ifconfig 8 .
+ .It Ic interval Ar number
+ Set the interval in seconds at which the hosts will be checked.
+ The default interval is 10 seconds.
+@@ -143,15 +132,6 @@
+ .Xr relayd 8
+ runs 5 relay processes by default and every process will handle
+ all configured relays.
+-.It Ic send trap
+-Send an SNMP trap when the state of a host changes.
+-.Xr relayd 8
+-will try to connect to
+-.Xr snmpd 8
+-and request it send a trap to the registered trap receivers;
+-see
+-.Xr snmpd.conf 5
+-for more information about the configuration.
+ .It Ic timeout Ar number
+ Set the global timeout in milliseconds for checks.
+ This can be overridden by the timeout value in the table definitions.
+@@ -349,17 +329,6 @@
+ .Pp
+ The following general table options are available:
+ .Bl -tag -width Ds
+-.It Ic demote Ar group
+-Enable the per-table
+-.Xr carp 4
+-demotion option.
+-This will increment the carp demotion counter for the
+-specified interface group if all hosts in the table are down.
+-For more information on interface groups,
+-see the
+-.Ic group
+-keyword in
+-.Xr ifconfig 8 .
+ .It Ic interval Ar number
+ Override the global interval and specify one for this table.
+ It must be a multiple of the global interval.
+@@ -1037,7 +1006,7 @@
+ .El
+ .Sh FILES
+ .Bl -tag -width "/etc/ssl/private/address.keyXX" -compact
+-.It Pa /etc/relayd.conf
++.It Pa %%PREFIX%%/etc/relayd.conf
+ .Xr relayd 8
+ configuration file.
+ .Pp
+@@ -1146,7 +1115,6 @@
+ .Sh SEE ALSO
+ .Xr relayctl 8 ,
+ .Xr relayd 8 ,
+-.Xr snmpd 8 ,
+ .Xr ssl 8
+ .Sh HISTORY
+ The
+diff -Naur relayd.orig/relayd.h relayd/relayd.h
+--- relayd.orig/relayd.h	2010-05-27 11:05:52.871795234 +0200
++++ relayd/relayd.h	2010-05-27 11:05:58.286913720 +0200
+@@ -19,10 +19,18 @@
+  */
+ 
+ #include <sys/tree.h>
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#include <sys/queue.h>
++#endif
+ 
+ #include <imsg.h>
+ 
++#ifdef __FreeBSD__
++#define CONF_FILE		"%%PREFIX%%/etc/relayd.conf"
++#else
+ #define CONF_FILE		"/etc/relayd.conf"
++#endif
+ #define RELAYD_SOCKET		"/var/run/relayd.sock"
+ #define PF_SOCKET		"/dev/pf"
+ #define RELAYD_USER		"_relayd"
+@@ -57,7 +65,18 @@
+ #define PURGE_PROTOS		0x08
+ #define PURGE_EVERYTHING	0xff
+ 
++#ifndef __FreeBSD__
+ #define SNMP_RECONNECT_TIMEOUT	{ 3, 0 }	/* sec, usec */
++#else
++#define	SIMPLEQ_HEAD		STAILQ_HEAD
++#define	SIMPLEQ_FIRST		STAILQ_FIRST
++#define	SIMPLEQ_REMOVE_HEAD	STAILQ_REMOVE_HEAD
++#define	SIMPLEQ_ENTRY		STAILQ_ENTRY
++#define	SIMPLEQ_INIT		STAILQ_INIT
++#define	SIMPLEQ_EMPTY		STAILQ_EMPTY
++#define	SIMPLEQ_NEXT		STAILQ_NEXT
++#define	SIMPLEQ_INSERT_TAIL	STAILQ_INSERT_TAIL
++#endif
+ 
+ #if DEBUG > 1
+ #define DPRINTF		log_debug
+@@ -607,10 +626,11 @@
+ 	struct event		 sc_statev;
+ 	struct timeval		 sc_statinterval;
+ 
++#ifndef __FreeBSD__
+ 	int			 sc_snmp;
+ 	struct event		 sc_snmpto;
+ 	struct event		 sc_snmpev;
+-
++#endif
+ 	int			 sc_has_icmp;
+ 	int			 sc_has_icmp6;
+ 	struct ctl_icmp_event	 sc_icmp_send;
+@@ -688,7 +708,9 @@
+ 	IMSG_HOST_STATUS,	/* notifies from hce to pfe */
+ 	IMSG_SYNC,
+ 	IMSG_NATLOOK,
++#ifndef __FreeBSD__
+ 	IMSG_DEMOTE,
++#endif
+ 	IMSG_STATISTICS,
+ 	IMSG_RECONF,		/* reconfiguration notifies */
+ 	IMSG_RECONF_TABLE,
+@@ -704,7 +726,9 @@
+ 	IMSG_RECONF_RELAY,
+ 	IMSG_RECONF_END,
+ 	IMSG_SCRIPT,
++#ifndef __FreeBSD__
+ 	IMSG_SNMPSOCK,
++#endif
+ 	IMSG_BINDANY
+ };
+ 
+@@ -857,10 +881,12 @@
+ void		 pn_unref(u_int16_t);
+ void		 pn_ref(u_int16_t);
+ 
++#ifndef __FreeBSD__
+ /* snmp.c */
+ void	 snmp_init(struct relayd *, struct imsgev *);
+ int	 snmp_sendsock(struct imsgev *);
+ void	 snmp_hosttrap(struct table *, struct host *);
++#endif
+ 
+ /* shuffle.c */
+ void		shuffle_init(struct shuffle *);

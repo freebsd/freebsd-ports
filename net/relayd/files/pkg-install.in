@@ -4,8 +4,8 @@
 
 case $2 in
 PRE-INSTALL)
-	USER=${RUSER}
-	GROUP=${RGROUP}
+	USER=%%RUSER%%
+	GROUP=%%RGROUP%%
 	UID=913
 	GID=913
 
