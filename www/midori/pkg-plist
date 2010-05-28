@@ -17,12 +17,62 @@ lib/midori/libtab-panel.so
 lib/midori/libtab-switcher.so
 lib/midori/libtoolbar-editor.so
 lib/midori/libweb-cache.so
-%%NLS%%share/applications/midori.desktop
+share/applications/midori.desktop
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/EXPAT
 %%DOCSDIR%%/README
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/api-index-full.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/ch01.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/home.png
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/index.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/index.sgml
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-KatzeItem.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-KatzePreferences.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-KatzeScrolled.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-array.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-arrayaction.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-http-auth.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-http-cookies.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-net.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-separatoraction.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-throbber.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze-katze-utils.html
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze.devhelp
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/katze.devhelp2
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/left.png
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/right.png
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/style.css
+%%APIDOCS%%%%DOCSDIR%%/api/katze/html/up.png
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/api-index-full.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/ch01.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/home.png
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/index.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/index.sgml
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/left.png
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-GtkIconEntry.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriBrowser.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriExtension.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriPreferences.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-MidoriViewable.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-app.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-array.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-locationaction.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-panel.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-searchaction.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-stock.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-view.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori-websettings.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-midori.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-socket.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori-sokoke.html
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori.devhelp
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/midori.devhelp2
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/right.png
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/style.css
+%%APIDOCS%%%%DOCSDIR%%/api/midori/html/up.png
+%%USERDOCS%%%%DOCSDIR%%/user/midori.html
 share/icons/hicolor/16x16/apps/midori.png
 share/icons/hicolor/16x16/categories/extension.png
 share/icons/hicolor/16x16/status/news-feed.png
@@ -70,6 +120,7 @@ share/icons/hicolor/48x48/status/news-feed.png
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/midori.mo
@@ -86,14 +137,18 @@ share/vala/vapi/external-applications.vapi
 @dirrmtry share/vala
 @dirrm %%DATADIR%%/res
 @dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
-%%NLS%%@dirrmtry share/locale/pa/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pa
-%%NLS%%@dirrmtry share/locale/hr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/hr
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
+%%APIDOCS%%@dirrm %%DOCSDIR%%/api/midori/html
+%%APIDOCS%%@dirrm %%DOCSDIR%%/api/midori
+%%APIDOCS%%@dirrm %%DOCSDIR%%/api/katze/html
+%%APIDOCS%%@dirrm %%DOCSDIR%%/api/katze
+%%APIDOCS%%@dirrm %%DOCSDIR%%/api
+%%USERDOCS%%@dirrm %%DOCSDIR%%/user
 @dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrm lib/midori
