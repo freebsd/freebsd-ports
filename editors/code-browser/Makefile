@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	3.11
-PORTREVISION=	3
+PORTVERSION=	3.17
 CATEGORIES=	editors
-MASTER_SITES=	SF
+MASTER_SITES=	http://tibleiz.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	gahr@FreeBSD.org
