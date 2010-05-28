@@ -1,15 +1,15 @@
---- configure.orig	2010-03-30 10:14:50.000000000 +0200
-+++ configure	2010-03-30 10:16:26.000000000 +0200
-@@ -20312,7 +20312,7 @@
+--- configure.orig	2010-05-28 10:24:40.000000000 +0200
++++ configure	2010-05-28 10:25:59.000000000 +0200
+@@ -16253,7 +16253,7 @@
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-larchive  $LIBS"
 +LIBS="-larchive -lcrypto -lmd  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -20388,7 +20388,7 @@
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16298,7 +16298,7 @@
                  if test x$with_archive_libs != x/usr/lib; then
                          ARCHIVE_LIBS="-L$with_archive_libs -larchive"
                  else
@@ -17,13 +17,13 @@
 +                	ARCHIVE_LIBS="-larchive -lcrypto -lmd"
                  fi
  	else
- 		{ $as_echo "$as_me:$LINENO: checking for archive_entry_filetype in -larchive" >&5
-@@ -20397,7 +20397,7 @@
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for archive_entry_filetype in -larchive" >&5
+@@ -16307,7 +16307,7 @@
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-larchive  $LIBS"
-+LIBS="-larchive -lcrypto -lmd $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
++LIBS="-larchive -lcrypto -lmd  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
