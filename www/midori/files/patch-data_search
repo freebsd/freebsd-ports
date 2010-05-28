@@ -1,0 +1,16 @@
+--- data/search.orig	2010-05-26 12:31:56.000000000 +0200
++++ data/search	2010-05-26 12:34:03.000000000 +0200
+@@ -6,6 +6,13 @@
+ icon=
+ token=g
+ 
++[FreshPorts]
++name=FreshPorts
++text=The changes made to the FreeBSD ports tree
++uri=http://www.freshports.org/search.php?query=%s
++icon=
++token=fp
++
+ [Wikipedia]
+ name=Wikipedia
+ text=The free encyclopedia

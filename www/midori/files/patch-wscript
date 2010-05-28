@@ -1,0 +1,12 @@
+--- wscript.orig	2010-05-26 12:34:09.000000000 +0200
++++ wscript	2010-05-26 12:35:30.000000000 +0200
+@@ -267,8 +267,7 @@
+     if not conf.env['HAVE_UNIQUE']:
+         if Options.platform == 'win32':
+             conf.check (lib='ws2_32')
+-        check_pkg ('openssl', mandatory=False)
+-        conf.define ('USE_SSL', [0,1][conf.env['HAVE_OPENSSL'] == 1])
++        conf.define ('HAVE_OPENSSL', [0,1][conf.check (header_name='openssl/opensslv.h')])
+         conf.define ('HAVE_NETDB_H', [0,1][conf.check (header_name='netdb.h')])
+         conf.check (header_name='sys/wait.h')
+         conf.check (header_name='sys/select.h')
