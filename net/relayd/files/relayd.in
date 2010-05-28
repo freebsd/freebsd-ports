@@ -20,5 +20,12 @@ load_rc_config $name
 : ${relayd_enable="NO"}
 
 command="%%PREFIX%%/sbin/relayd"
+relayctl="%%PREFIX%%/sbin/relayctl"
+reload_cmd="relayd_reload_cmd"
+extra_commands="reload"
+
+relayd_reload_cmd () {
+	${relayctl} reload
+}
 
 run_rc_command "$1"

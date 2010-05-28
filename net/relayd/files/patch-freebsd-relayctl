@@ -1,0 +1,75 @@
+diff -Naur relayctl.orig/parser.c relayctl/parser.c
+--- relayctl.orig/parser.c	2007-12-20 21:15:43.000000000 +0100
++++ relayctl/parser.c	2010-05-27 10:12:35.000000000 +0200
+@@ -18,7 +18,11 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#else
+ #include <sys/types.h>
++#endif
+ #include <sys/socket.h>
+ #include <sys/queue.h>
+ 
+@@ -124,6 +128,11 @@
+ 
+ static struct parse_result	res;
+ 
++#ifdef __FreeBSD__
++const struct token	*match_token(const char *, const struct token []);
++void			show_valid_args(const struct token []);
++#endif
++
+ struct parse_result *
+ parse(int argc, char *argv[])
+ {
+diff -Naur relayctl.orig/parser.h relayctl/parser.h
+--- relayctl.orig/parser.h	2007-12-20 21:15:43.000000000 +0100
++++ relayctl/parser.h	2010-05-27 10:12:03.000000000 +0200
+@@ -41,5 +41,7 @@
+ };
+ 
+ struct parse_result	*parse(int, char *[]);
++#ifndef __FreeBSD__
+ const struct token      *match_token(const char *, const struct token []);
+ void                     show_valid_args(const struct token []);
++#endif
+diff -Naur relayctl.orig/relayctl.c relayctl/relayctl.c
+--- relayctl.orig/relayctl.c	2009-06-06 01:39:51.000000000 +0200
++++ relayctl/relayctl.c	2010-05-27 10:11:39.000000000 +0200
+@@ -20,6 +20,9 @@
+  */
+ 
+ #include <sys/types.h>
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#endif
+ #include <sys/socket.h>
+ #include <sys/queue.h>
+ #include <sys/un.h>
+@@ -290,7 +293,11 @@
+ 	imn = monitor_lookup(imsg->hdr.type);
+ 	printf("%s: imsg type %u len %u peerid %u pid %d\n", imn->name,
+ 	    imsg->hdr.type, imsg->hdr.len, imsg->hdr.peerid, imsg->hdr.pid);
++#ifdef __FreeBSD__
++	printf("\ttimestamp: %lu, %s", (unsigned long)now, ctime(&now));
++#else
+ 	printf("\ttimestamp: %u, %s", now, ctime(&now));
++#endif
+ 	if (imn->type == -1)
+ 		done = 1;
+ 	if (imn->func != NULL)
+@@ -509,7 +516,11 @@
+ 	printf("\t%8s\ttotal: %llu sessions\n"
+ 	    "\t%8s\tlast: %u/%us %u/h %u/d sessions\n"
+ 	    "\t%8s\taverage: %u/%us %u/h %u/d sessions\n",
++#ifdef __FreeBSD__
++	    "", (long long unsigned)crs.cnt,
++#else
+ 	    "", crs.cnt,
++#endif
+ 	    "", crs.last, crs.interval,
+ 	    crs.last_hour, crs.last_day,
+ 	    "", crs.avg, crs.interval,

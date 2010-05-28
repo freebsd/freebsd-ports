@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PROG=	relayctl
+
+.PATH:	${.CURDIR}/../relayd
+SRCS=	buffer.c \
+	imsg.c \
+	log.c
+
+.PATH:	${.CURDIR}
+SRCS+=	relayctl.c \
+	parser.c
+
+MAN=	relayctl.8
+
+CFLAGS+=	-D__dead=''
+CFLAGS+=	-I${.CURDIR} \
+		-I${.CURDIR}/../relayd \
+		-I${PREFIX}/include
+
+.include <bsd.prog.mk>
