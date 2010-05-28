@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	yapra
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Yet Another Pragger implementation
 
 RUN_DEPENDS=	rubygem-mechanize>=0.7.6:${PORTSDIR}/www/rubygem-mechanize
