@@ -1,5 +1,5 @@
 lib/libmodplug.la
-lib/libmodplug.so.0
+lib/libmodplug.so.1
 lib/libmodplug.so
 libdata/pkgconfig/libmodplug.pc
 include/libmodplug/stdafx.h
