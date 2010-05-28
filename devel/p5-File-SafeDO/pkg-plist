@@ -1,0 +1,6 @@
+%%SITE_PERL%%/File/SafeDO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/SafeDO/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/SafeDO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File

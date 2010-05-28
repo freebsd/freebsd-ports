@@ -1592,6 +1592,7 @@
     SUBDIR += p5-File-Random
     SUBDIR += p5-File-ReadBackwards
     SUBDIR += p5-File-Remove
+    SUBDIR += p5-File-SafeDO
     SUBDIR += p5-File-ShareDir
     SUBDIR += p5-File-ShareDir-PAR
     SUBDIR += p5-File-Slurp
