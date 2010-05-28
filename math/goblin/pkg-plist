@@ -47,6 +47,7 @@ include/goblin/goblin.h
 include/goblin/goblinController.h
 include/goblin/goblinQueue.h
 include/goblin/gosh.h
+include/goblin/graphDisplayProxy.h
 include/goblin/graphInclude.h
 include/goblin/graphRepresentation.h
 include/goblin/graphToBalanced.h
@@ -61,8 +62,10 @@ include/goblin/matrix.h
 include/goblin/messenger.h
 include/goblin/mixedGraph.h
 include/goblin/moduleGuard.h
+include/goblin/movingLineModel.h
 include/goblin/nestedFamily.h
 include/goblin/networkSimplex.h
+include/goblin/orthogonalGrid.h
 include/goblin/segment.h
 include/goblin/sequentialQueue.h
 include/goblin/sequentialStack.h
@@ -74,6 +77,7 @@ include/goblin/sparseInclude.h
 include/goblin/sparseRepresentation.h
 include/goblin/staticQueue.h
 include/goblin/staticStack.h
+include/goblin/stripeDissectionModel.h
 include/goblin/subgraph.h
 include/goblin/surfaceGraph.h
 include/goblin/switchBaseTypes.h
@@ -221,7 +225,9 @@ lib/goblin/toggleBrowser.gif
 lib/goblin/toggleEditor.gif
 lib/goblin/toggleScript.gif
 lib/libglpk.a
+lib/libglpk.so
 lib/libgoblin.a
+lib/libgoblin.so
 %%PORTDOCS%%%%DOCSDIR%%/auxiliary1.eps
 %%PORTDOCS%%%%DOCSDIR%%/auxiliary2.eps
 %%PORTDOCS%%%%DOCSDIR%%/bipartite1.eps

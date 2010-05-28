@@ -1,6 +1,6 @@
---- Makefile.orig	2008-05-05 07:51:22.000000000 +0200
-+++ Makefile	2008-05-31 02:28:31.000000000 +0200
-@@ -318,19 +318,11 @@
+--- Makefile.orig	2010-05-28 10:41:25.000000000 +0000
++++ Makefile	2010-05-28 10:41:41.000000000 +0000
+@@ -335,19 +335,11 @@
  shared : intro $(shared_objects)
  
  libgoblin.$(so_suffix) : $(lib_objects) $(shell_objects)
@@ -20,10 +20,10 @@
  	@echo "...Shared object ($@) has been successfully linked"
  
  
-@@ -349,11 +341,7 @@
+@@ -367,11 +359,7 @@
  else
  
- gosh : $(gosh_objects) $(shared_objects) 
+ gosh : $(gosh_objects) $(shared_objects)
 -ifeq ($(CC),gcc)
  	$(LD)    -o $@ $(gosh_objects) -L. $(LDFLAGS) -lgoblin $(glpk) $(LIBS)
 -else
