@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.16.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib%20%28${PORTNAME}%20core%29/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -25,7 +25,7 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fame-0.9.1:${PORTSDIR}/multimedia/libfame \
 		cdio.12:${PORTSDIR}/sysutils/libcdio \
-		modplug.0:${PORTSDIR}/audio/libmodplug \
+		modplug.1:${PORTSDIR}/audio/libmodplug \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		mad.2:${PORTSDIR}/audio/libmad \

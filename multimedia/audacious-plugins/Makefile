@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -198,7 +198,7 @@ PLIST_SUB+=	SNDFILEPLUGIN="@comment "
 .endif
 
 .if defined(WITH_MODPLUG)
-LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 PLIST_SUB+=	MODPLUG=""
 CONFIGURE_ARGS+=--enable-modplug
 .else

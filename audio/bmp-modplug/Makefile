@@ -7,7 +7,7 @@
 
 PORTNAME=	modplug
 PORTVERSION=	2.0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES?=	audio
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
 		http://ftp.osuosl.org/pub/FreeBSD/distfiles/ \
@@ -21,7 +21,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modplug-based plugin for beep-media-player
 
 LIB_DEPENDS?=	beep.2:${PORTSDIR}/multimedia/beep-media-player
-LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 
 USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes

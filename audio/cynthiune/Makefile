@@ -7,7 +7,7 @@
 
 PORTNAME=	cynthiune
 PORTVERSION=	0.9.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio gnustep
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/c/cynthiune.app
@@ -20,7 +20,7 @@ LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
 LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
 LIB_DEPENDS+=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
-LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
 

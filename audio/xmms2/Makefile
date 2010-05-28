@@ -7,7 +7,7 @@
 
 PORTNAME?=	xmms2
 PORTVERSION=	0.6
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONSUFFIX=DrMattDestruction
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20DrMattDestruction
@@ -226,7 +226,7 @@ PLIST_SUB+=	MMS="@comment "
 .endif
 
 .if !defined(WITHOUT_MODPLUG)
-LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 PLIST_SUB+=	MODPLUG=""
 .else
 EXCLUDE+=	--without-plugins="modplug"
