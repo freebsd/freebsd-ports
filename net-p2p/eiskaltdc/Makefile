@@ -10,7 +10,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	devel@stasyan.com
+MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	A Direct Connect client QT GUI
 
 LIB_DEPENDS=	upnp.3:${PORTSDIR}/devel/upnp \
