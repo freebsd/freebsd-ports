@@ -7,7 +7,7 @@
 PORTNAME=	anemone
 PORTVERSION=	0.4.0
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	niels@FreeBSD.org
 COMMENT=	Anemone is a library that allows programs to spider websites
