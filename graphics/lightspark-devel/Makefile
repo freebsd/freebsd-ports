@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lightspark
-DISTVERSION=	r20100520
+DISTVERSION=	r20100528
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -73,7 +73,7 @@ pre-everything::
 	@${ECHO_CMD} "Lightspark is currently in pre-alpha state, so only use its plugin"
 	@${ECHO_CMD} "if you know what you are doing; otherwise, expect browser crashes and hangs"
 	@${ECHO_CMD} "Also, you'll probably need to edit kernel source and bump SEM_MAX from 30"
-	@${ECHO_CMD} "to something much higher (1024 or so) to make the plugin work.. for some time"
+	@${ECHO_CMD} "to something much higher (1024 or so) to make the plugin work..."
 	@sleep 3
 .endif
 
