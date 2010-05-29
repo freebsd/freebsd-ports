@@ -52,8 +52,10 @@ MAKE_ARGS+=	wizard
 .endif
 
 .if defined(WITHOUT_SDL)
+CONFLICTS+=	${PORTNAME}-sdl-[0-9]*
 PLIST_SUB+=	SDL="@comment "
 .else
+CONFLICTS+=	${PORTNAME}-[0-9]*
 MAKE_ARGS+=	TILES=y
 PLIST_SUB+=	SDL=""
 PKGNAMESUFFIX=	-sdl
