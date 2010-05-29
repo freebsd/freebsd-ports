@@ -4,8 +4,9 @@ environments, including *BSD, Linux, Plan 9, and the unmentionable
 horror.
 
 The S9fES code strives to be simple and comprehensible. It is
-particularly interesting to people who want to try Scheme without
-having to jump through too many hoops (S9fES is very portable) or
-study the implementation of Scheme (in a language other than Scheme).
+particularly interesting to people who want to (a) write Unix
+programs in a high-level language (b) try Scheme without having
+to jump through too many hoops (c) study the implementation of
+Scheme (in a language other than Scheme). 
 
 WWW: http://www.t3x.org/s9fes/
