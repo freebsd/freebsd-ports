@@ -85,6 +85,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/radiusd.conf
 %%EXAMPLESDIR%%/raddb/sites-available/README
 %%EXAMPLESDIR%%/raddb/sites-available/buffered-sql
+%%EXAMPLESDIR%%/raddb/sites-available/coa
 %%EXAMPLESDIR%%/raddb/sites-available/control-socket
 %%EXAMPLESDIR%%/raddb/sites-available/copy-acct-to-home-server
 %%EXAMPLESDIR%%/raddb/sites-available/decoupled-accounting
@@ -749,6 +750,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.vqp
 %%DATADIR%%/dictionary.walabi
 %%DATADIR%%/dictionary.waverider
+%%DATADIR%%/dictionary.wichorus
 %%DATADIR%%/dictionary.wimax
 %%DATADIR%%/dictionary.wispr
 %%DATADIR%%/dictionary.xedia

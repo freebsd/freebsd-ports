@@ -3,14 +3,8 @@
 
 PATH=/usr/sbin:/usr/bin:/bin ; export PATH
 
-radius_user="%%USER%%"
-radius_uid="%%UID%%"
-radius_gecos="%%GECOS%%"
-radius_home="%%HOME%%"
-radius_shell="%%SHELL%%"
-
-radius_group="%%GROUP%%"
-radius_gid="%%GID%%"
+radius_user="%%RADIUS_USER%%"
+radius_group="%%RADIUS_GROUP%%"
 
 radius_raddb_work="%%RADDB_WORK%%"
 radius_raddb="%%RADDB%%"
@@ -20,87 +14,10 @@ radius_libdir="%%LIBDIR%%"
 radius_run_as_user="%%RUN_AS_USER%%"
 
 
-create_group() {
-    local user uid group gid gecos home shell
-
-    user=$1
-    uid=$2
-    group=$3
-    gid=$4
-    gecos=$5
-    home=$6
-    shell=$7
-
-
-    if pw group show -n $group >/dev/null 2>&1 ; then
-        echo "===> Using existing group $group"
-    else
-        if pw groupadd -n $group -g $gid ; then
-            echo "===> Created group $group"
-        else
-            cat <<-EOERRORMSG
-*** Failed to create group $group.
-
-Please add user $user and group $group
-manually with the following commands:
-
-    pw groupadd -n $group -g $gid
-    pw useradd -n $user -u $uid -g $group -c "$gecos" \\
-        -d $home -s $shell -h -
-
-and retry installing this package.
-EOERRORMSG
-            exit 1
-        fi
-    fi
-
-}
-
-
-create_user() {
-    local user uid group gid gecos home shell
-
-    user=$1
-    uid=$2
-    group=$3
-    gid=$4
-    gecos=$5
-    home=$6
-    shell=$7
-
-    if pw user show -n $user >/dev/null 2>&1 ; then
-        echo "===> Using existing user $user"
-    else
-        if pw useradd -n $user -u $uid -g $group -c "$gecos" \
-            -d $home -s $shell -h - ; then
-            echo "===> Created user $user"
-        else
-            cat <<-EOERRORMSG
-*** Failed to create user $user.
-
-Please add user $user manually with the following command:
-
-    pw useradd -n $user -u $uid -g $group -c "$gecos" \\
-       -d $home -s $shell -h -
-
-and retry installing this package.
-EOERRORMSG
-            exit 1
-        fi
-    fi
-}
-
-
 if [ ${radius_run_as_user} != "yes" ]; then exit 0; fi
 
 case $2 in
     PRE-INSTALL)
-        # Create the radius user and group if they do not already exist
-        create_group $radius_user $radius_uid $radius_group $radius_gid \
-                     "$radius_gecos" $radius_home $radius_shell
-        create_user  $radius_user $radius_uid $radius_group $radius_gid \
-                     "$radius_gecos" $radius_home $radius_shell
-
         # Fix the user and group in raddb/radiusd.conf
 	echo "===> Setting user and group in radiusd.conf"
 	for file in ${radius_raddb_work}/radiusd.conf ${radius_raddb}/radiusd.conf; do
