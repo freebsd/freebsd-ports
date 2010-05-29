@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}_src_r435
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Decoder, encoder and replaygain for musepack (mpc)
 
+CONFLICTS=	libmpcdec-[0-9]*
+
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 libtoolize automake:110 autoconf:262 libtool:22
 ACLOCAL_ARGS=	-I. -I ${LOCALBASE}/share/aclocal
