@@ -3,6 +3,7 @@ bin/ods-hsmspeed
 bin/ods-hsmutil
 bin/ods-ksmutil
 bin/ods-kaspcheck
+bin/ods-kasp2html
 %%ETCDIR%%/conf.xml
 %%ETCDIR%%/conf.xml.sample
 %%ETCDIR%%/kasp.xml
@@ -24,6 +25,7 @@ lib/opendnssec/kasp_auditor/key_tracker.rb
 lib/opendnssec/kasp_auditor/parse.rb
 lib/opendnssec/kasp_auditor/preparser.rb
 lib/opendnssec/kasp_auditor.rb
+lib/opendnssec/kasp_auditor/partial_auditor.rb
 lib/opendnssec/kasp_checker.rb
 lib/opendnssec/signer/Engine.py
 lib/opendnssec/signer/Engine.pyc
@@ -51,11 +53,8 @@ libexec/opendnssec/create_dnskey
 libexec/opendnssec/finalizer
 libexec/opendnssec/get_class
 libexec/opendnssec/get_serial
-libexec/opendnssec/nsec3er
-libexec/opendnssec/nseccer
+libexec/opendnssec/quicksorter
 libexec/opendnssec/signer
-libexec/opendnssec/signer_threads
-libexec/opendnssec/sorter
 libexec/opendnssec/zone_fetcher
 libexec/opendnssec/zone_reader
 sbin/ods-control
