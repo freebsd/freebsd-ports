@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tktreectrl
-PORTVERSION=	0.7
-PORTREVISION=	3
+PORTVERSION=	0.8
 CATEGORIES=	x11-toolkits tk python
 MASTER_SITES=	http://klappnase.bubble.org/TkinterTreectrl/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +24,6 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	TkinterTreectrl
-PYDISTUTILS_PKGVERSION=	0.4
+PYDISTUTILS_PKGVERSION=	0.8
 
 .include <bsd.port.mk>
