@@ -15,11 +15,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.sakura.5
 MAINTAINER=	hotaru@tail.net
 COMMENT=	A cat, Sakura or Tomoyo chasing a mouse all over the screen
 
+CONFLICTS=	oneko-2.*
+
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 MAN6=		oneko.6
 PLIST_FILES=	bin/oneko
-NO_CDROM=	"Including derivatives from CARDCAPTOR SAKURA. See http://www.clamp-net.com/ -> INFORMATION"
+NO_CDROM=	Including derivatives from CARDCAPTOR SAKURA. See http://www.clamp-net.com/ -> INFORMATION
 
 NO_LATEST_LINK=	yes
 
