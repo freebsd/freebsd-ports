@@ -6,30 +6,33 @@
 #
 
 PORTNAME=	metar
-PORTVERSION=	0.14
+PORTVERSION=	0.16
 CATEGORIES=	astro python geography
-MASTER_SITES=	http://www.schwarzvogel.de/pkgs/
+MASTER_SITES=	http://www.schwarzvogel.de/pkgs/ \
+		http://sunpoet.net/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pymetar-${PORTVERSION}
+DISTNAME=	${REALPORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Python module that provides access to NOAA's METAR weather reports
 
-USE_PYTHON=	yes
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+PYDISTUTILS_PKGNAME=	${REALPORTNAME}
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pymetar
+USE_PYTHON=	-2.6
 
-PLIST_FILES=	bin/weather.py \
-		%%PYTHON_SITELIBDIR%%/pymetar.py \
-		%%PYTHON_SITELIBDIR%%/pymetar.pyc \
-		%%PYTHON_SITELIBDIR%%/pymetar.pyo
-
+PLIST_FILES=	bin/${REALPORTNAME} \
+		%%PYTHON_SITELIBDIR%%/${REALPORTNAME}.py \
+		%%PYTHON_SITELIBDIR%%/${REALPORTNAME}.pyc \
+		%%PYTHON_SITELIBDIR%%/${REALPORTNAME}.pyo
 PORTDOCS=	COPYING README THANKS librarydoc.txt
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+REALPORTNAME=	pymetar
 
 post-patch:
-.ifndef NOPORTDOCS
+	@${REINPLACE_CMD} -E '1 s|/usr/bin/(env *)?python|${PYTHON_CMD}|' \
+		${WRKSRC}/setup.py ${WRKSRC}/bin/${REALPORTNAME}
+.if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} \
 		-e 's|"share/doc/pymetar-%s/"%pymetar.__version__|"${DOCSDIR}"|' \
 		${WRKSRC}/setup.py
