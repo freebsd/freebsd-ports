@@ -1,6 +1,6 @@
---- src/unix/ibus/mozc.xml.org	2010-05-23 14:00:13.346604513 +0900
-+++ src/unix/ibus/mozc.xml	2010-05-23 13:38:30.173956314 +0900
-@@ -2,7 +2,7 @@
+--- src/unix/ibus/mozc.xml.org	2010-05-29 12:45:05.978914232 +0900
++++ src/unix/ibus/mozc.xml	2010-05-29 20:08:12.040296893 +0900
+@@ -2,12 +2,12 @@
  <component>
    <name>com.google.IBus.Mozc</name>
    <description>Mozc Component</description>
@@ -9,21 +9,9 @@
    <!-- TODO(mazda): Generate the version number -->
    <version>0.0.0.0</version>
    <author>Google Inc.</author>
-@@ -15,7 +15,7 @@
-       <language>ja</language>
-       <license>New BSD</license>
-       <author>Google Inc.</author>
--      <icon>/usr/share/ibus-mozc/product_icon.png</icon>
-+      <icon>@@LOCALBASE@@/share/ibus-mozc/icons/mozc-temp-icon.png</icon>
-       <layout>us</layout>
-       <longname>Mozc (US keyboard layout)</longname>
-       <description>Mozc Japanese input method</description>
-@@ -26,7 +26,7 @@
-       <language>ja</language>
-       <license>New BSD</license>
-       <author>Google Inc.</author>
--      <icon>/usr/share/ibus-mozc/product_icon.png</icon>
-+      <icon>@@LOCALBASE@@/share/ibus-mozc/icons/mozc-temp-icon.png</icon>
-       <layout>jp</layout>
-       <longname>Mozc (Japanese keyboard layout)</longname>
-       <description>Mozc Japanese input method</description>
+   <license>New BSD</license>
+   <homepage>http://code.google.com/p/mozc/</homepage>
+   <textdomain>ibus-mozc</textdomain>
+-  <engines exec="/usr/libexec/ibus-engine-mozc --xml" />
++  <engines exec="@@LOCALBASE@@/libexec/ibus-engine-mozc --xml" />
+ </component>
