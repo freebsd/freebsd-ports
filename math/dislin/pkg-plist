@@ -112,6 +112,7 @@ dislin/chf/conn3d.chf
 dislin/chf/connpt.chf
 dislin/chf/conpts.chf
 dislin/chf/conshd.chf
+dislin/chf/conshd3d.chf
 dislin/chf/contri.chf
 dislin/chf/contur.chf
 dislin/chf/cross.chf
@@ -330,6 +331,7 @@ dislin/chf/lnmlt.chf
 dislin/chf/logtic.chf
 dislin/chf/mapbas.chf
 dislin/chf/mapfil.chf
+dislin/chf/mapimg.chf
 dislin/chf/maplab.chf
 dislin/chf/maplev.chf
 dislin/chf/mapmod.chf
@@ -433,9 +435,11 @@ dislin/chf/pyra3d.chf
 dislin/chf/qplbar.chf
 dislin/chf/qplclr.chf
 dislin/chf/qplcon.chf
+dislin/chf/qplcrv.chf
 dislin/chf/qplot.chf
 dislin/chf/qplpie.chf
 dislin/chf/qplsca.chf
+dislin/chf/qplscl.chf
 dislin/chf/qplsur.chf
 dislin/chf/quad3d.chf
 dislin/chf/rbfpng.chf
@@ -690,6 +694,7 @@ dislin/chf/wgpbar.chf
 dislin/chf/wgpbut.chf
 dislin/chf/wgpop.chf
 dislin/chf/wgquit.chf
+dislin/chf/wgsep.chf
 dislin/chf/wgscl.chf
 dislin/chf/wgstxt.chf
 dislin/chf/wgtbl.chf
