@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lionwiki
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 CATEGORIES=	www
 MASTER_SITES=	http://lionwiki.0o.cz/download/${PORTVERSION}/
 
