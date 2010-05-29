@@ -7,6 +7,7 @@
 
 PORTNAME=	netams
 PORTVERSION=	3.4.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netams.com/files/
 
