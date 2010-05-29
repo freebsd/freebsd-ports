@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A simple library for detecting objects in pictures
 
 LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv

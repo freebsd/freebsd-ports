@@ -12,7 +12,7 @@ MASTER_SITES=	http://0xcc.net/ruby-progressbar/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A text progress bar library for Ruby
 
 USE_RUBY=	yes

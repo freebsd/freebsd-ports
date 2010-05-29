@@ -10,7 +10,7 @@ PORTVERSION=	0.4.11
 CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A powerful web scraping toolkit written in Ruby
 
 RUN_DEPENDS=	rubygem-mechanize>=0.6.3:${PORTSDIR}/www/rubygem-mechanize

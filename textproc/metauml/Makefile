@@ -14,7 +14,7 @@ DISTFILES=	${PORTNAME}_lib_${PORTVERSION}.tgz ${PORTNAME}_manual_${PORTVERSION}.
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}_lib_${PORTVERSION}.tgz lop-release.tgz
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A MetaPost library for typesetting UML diagrams
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
