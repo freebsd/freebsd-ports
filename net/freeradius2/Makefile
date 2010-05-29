@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.1.8
-PORTREVISION=	1
+DISTVERSION=	2.1.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -22,8 +21,9 @@ DISTNAME=	freeradius-server-${DISTVERSION}
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	A free RADIUS server implementation
 
-RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+
+USE_GMAKE=	yes
 
 USE_BZIP2=	yes
 
@@ -67,6 +67,13 @@ SUB_LIST+=	RUN_AS_USER="yes"
 .else
 SUB_LIST+=	RUN_AS_USER="no"
 .endif
+
+# User and group to use if USER option is chosen
+RADIUS_USER=	freeradius
+RADIUS_GROUP=	freeradius
+
+USERS=		${RADIUS_USER}
+GROUPS=		${RADIUS_GROUP}
 
 .if defined(WITH_HEIMDAL) && !defined(WITH_KERBEROS)
 WITH_KERBEROS=	yes
@@ -207,7 +214,7 @@ WITH_EXPERIMENTAL=	yes
 
 # Oracle support is experimental under FreeBSD
 .ifdef(WITH_OCI8)
-EXTRA_PATCHES+=	files/extra-patch-exec.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-exec.c
 CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}"
 ORACLE_HOME?=	${LOCALBASE}/oracle8-client
 BUILD_DEPENDS+=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client
@@ -236,10 +243,6 @@ CFLAGS!=	${ECHO} ${CFLAGS} | ${SED} -Ee 's:-O[0-9]?[[:space:]]*::g'
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
 BROKEN=		Does not build on sparc64-6
 .endif
-
-# User and group to use if USER option is chosen
-USER=	freeradius
-GROUP=	freeradius
 
 FREERADIUS_LIBDIR=	lib/freeradius-${PORTVERSION}
 PLIST_SUB+=	LIBDIR="${FREERADIUS_LIBDIR}"
@@ -280,31 +283,8 @@ CONFIGURE_ARGS+=--without-rlm_eap_ikev2 \
 CONFIGURE_ARGS+=	--with-pic
 .endif
 
-# Credentials for WITH_USER are RADIUS_USER, RADIUS_UID, RADIUS_GECOS,
-# RADIUS_HOME, RADIUS_SHELL, RADIUS_GROUP and RADIUS_GID.
-
-# Parse ${PORTSDIR}/UIDs and GIDs for the defaults
-USERCREDS!=	${GREP} -E '^${USER}:' ${PORTSDIR}/UIDs | \
-		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*)::0:0:([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
-GROUPCREDS!=	${GREP} -E '^${GROUP}:' ${PORTSDIR}/GIDs | \
-		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):$$/GROUP="\1" GID="\3"/'
-
-# Apply the defaults where necessary
-RADIUS_USER?=	${USERCREDS:MUSER*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_UID?=	${USERCREDS:MUID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_GECOS?=	${USERCREDS:MGECOS*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_HOME?=	${USERCREDS:MHOME*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_SHELL?=	${USERCREDS:MSHELL*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_GROUP?=	${GROUPCREDS:MGROUP*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-RADIUS_GID?=	${GROUPCREDS:MGID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-
-SUB_LIST+=	USER="${RADIUS_USER}" \
-		UID="${RADIUS_UID}" \
-		GECOS="${RADIUS_GECOS}" \
-		HOME="${RADIUS_HOME}" \
-		SHELL="${RADIUS_SHELL}" \
-		GROUP="${RADIUS_GROUP}" \
-		GID="${RADIUS_GID}" \
+SUB_LIST+=	RADIUS_USER="${RADIUS_USER}" \
+		RADIUS_GROUP="${RADIUS_GROUP}" \
 		RADDB_WORK="${WRKSRC}/raddb" \
 		RADDB="${PREFIX}/etc/raddb" \
 		LOGDIR="${LOGDIR}" \

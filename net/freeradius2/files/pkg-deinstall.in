@@ -9,15 +9,15 @@ case $2 in
 
 If you are not upgrading and don't intend to use
 FreeRADIUS any more then you may wish to delete
-the %%GROUP%% group, which can be done with the
+the %%RADIUS_GROUP%% group, which can be done with the
 following command:
 
-    # pw groupdel %%GROUP%%
+    # pw groupdel %%RADIUS_GROUP%%
 
-You may also wish to delete the %%USER%% user,
+You may also wish to delete the %%RADIUS_USER%% user,
 which can be done with the following command:
 
-    # pw userdel %%USER%%
+    # pw userdel %%RADIUS_USER%%
 EOMSG
         ;;
 esac
