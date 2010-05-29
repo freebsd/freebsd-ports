@@ -9,7 +9,7 @@ PORTNAME=	html2text
 PORTVERSION=	1.3.2a
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://userpage.fu-berlin.de/~mbayer/tools/
+		http://www.mbayer.de/html2text/downloads/
 MASTER_SITE_SUBDIR=	apps/www/converters
 
 MAINTAINER=	ports@FreeBSD.org
