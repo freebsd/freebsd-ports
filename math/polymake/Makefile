@@ -7,7 +7,7 @@
 
 PORTNAME=	polymake
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.tu-berlin.de/pub/combi/polymake/
 
@@ -22,7 +22,6 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	5.8.1+
-USE_GCC=	3.4
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install install-devel
@@ -35,6 +34,9 @@ PLIST=		${WRKDIR}/pkg-plist
 .if ${PERL_LEVEL} >= 501000
 BROKEN=		Does not build with perl >= 5.10
 .endif
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|return "$$CXX seems not to be any|\#|' ${WRKSRC}/support/configure.pl
 
 do-configure:
 	cd ${WRKSRC}; \
@@ -52,7 +54,7 @@ do-configure:
 	  ${ECHO_CMD} PerlExe='${PERL}'; \
 	  ${ECHO_CMD} Arch=; \
 	  ${ECHO_CMD} ProcessDep=none; \
-	} | ${GMAKE} configure
+	} | ${GMAKE} ${MAKE_ENV} LD=${LD} configure
 
 pre-install:
 	${RM} -f `find ${WRKSRC} -name '*.orig'`
