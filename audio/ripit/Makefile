@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ripit
-PORTVERSION=	3.8.2
+PORTVERSION=	3.8.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.suwald.com/ripit/
 
