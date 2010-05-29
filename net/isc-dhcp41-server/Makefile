@@ -19,7 +19,7 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 PORTREVISION_SERVER=	1
-PORTREVISION_CLIENT=	0
+PORTREVISION_CLIENT=	1
 PORTREVISION_RELAY=	0
 
 SUBSYS?=	server
@@ -51,6 +51,7 @@ GROUPS=	dhcpd
 
 MAN_COMPRESSED=	no
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-D_PATH_DHCLIENT_SCRIPT='\"${PREFIX}/sbin/dhclient-script\"' -D_PATH_DHCLIENT_CONF='\"${PREFIX}/etc/dhclient.conf\"'"
 SCRIPTS_ENV+=	PKG_PREFIX=${PREFIX}
 
 .if ${SUBSYS} == client
