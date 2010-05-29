@@ -11956,6 +11956,7 @@ p5-File-ReadBackwards           ports/devel/p5-File-ReadBackwards
 p5-File-Remove                  ports/devel/p5-File-Remove
 p5-File-Rsync                   ports/net/p5-File-Rsync
 p5-File-RsyncP                  ports/net/p5-File-RsyncP
+p5-File-SafeDO                  ports/devel/p5-File-SafeDO
 p5-File-Scan                    ports/security/p5-File-Scan
 p5-File-Scan-ClamAV             ports/security/p5-File-Scan-ClamAV
 p5-File-ShareDir                ports/devel/p5-File-ShareDir
@@ -15831,6 +15832,7 @@ p5-file-readbackwards           ports/devel/p5-File-ReadBackwards
 p5-file-remove                  ports/devel/p5-File-Remove
 p5-file-rsync                   ports/net/p5-File-Rsync
 p5-file-rsyncp                  ports/net/p5-File-RsyncP
+p5-file-safedo                  ports/devel/p5-File-SafeDO
 p5-file-scan                    ports/security/p5-File-Scan
 p5-file-scan-clamav             ports/security/p5-File-Scan-ClamAV
 p5-file-sharedir                ports/devel/p5-File-ShareDir
