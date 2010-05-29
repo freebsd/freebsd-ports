@@ -1,6 +1,6 @@
 diff -Naur relayd.orig/carp.c relayd/carp.c
---- relayd.orig/carp.c	2010-05-27 11:05:52.871795234 +0200
-+++ relayd/carp.c	2010-05-27 11:05:58.266605620 +0200
+--- relayd.orig/carp.c	2010-05-29 10:41:49.559000800 +0200
++++ relayd/carp.c	2010-05-29 10:41:54.579324977 +0200
 @@ -19,6 +19,7 @@
  #include <sys/param.h>
  #include <sys/socket.h>
@@ -10,8 +10,8 @@ diff -Naur relayd.orig/carp.c relayd/carp.c
  #include <net/if.h>
  
 diff -Naur relayd.orig/check_tcp.c relayd/check_tcp.c
---- relayd.orig/check_tcp.c	2010-05-27 11:05:52.872794016 +0200
-+++ relayd/check_tcp.c	2010-05-27 11:05:58.269605038 +0200
+--- relayd.orig/check_tcp.c	2010-05-29 10:41:49.561008583 +0200
++++ relayd/check_tcp.c	2010-05-29 10:41:54.580329287 +0200
 @@ -31,7 +31,7 @@
  #include <stdlib.h>
  #include <errno.h>
@@ -70,8 +70,8 @@ diff -Naur relayd.orig/check_tcp.c relayd/check_tcp.c
  	if (strcmp(cte->table->conf.digest, digest)) {
  		log_warnx("check_http_digest: %s failed "
 diff -Naur relayd.orig/hce.c relayd/hce.c
---- relayd.orig/hce.c	2010-05-27 11:05:52.872794016 +0200
-+++ relayd/hce.c	2010-05-27 11:05:58.270605497 +0200
+--- relayd.orig/hce.c	2010-05-29 10:41:49.560005111 +0200
++++ relayd/hce.c	2010-05-29 10:41:54.582336791 +0200
 @@ -167,7 +167,7 @@
  	struct timeval	 tv;
  	struct table	*table;
@@ -93,8 +93,8 @@ diff -Naur relayd.orig/hce.c relayd/hce.c
  	host->last_up = host->up;
  
 diff -Naur relayd.orig/log.c relayd/log.c
---- relayd.orig/log.c	2010-05-27 11:05:52.872794016 +0200
-+++ relayd/log.c	2010-05-27 11:05:58.271605396 +0200
+--- relayd.orig/log.c	2010-05-29 10:41:49.560005111 +0200
++++ relayd/log.c	2010-05-29 10:41:54.585349444 +0200
 @@ -16,7 +16,11 @@
   * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
@@ -108,8 +108,8 @@ diff -Naur relayd.orig/log.c relayd/log.c
  #include <sys/socket.h>
  #include <sys/tree.h>
 diff -Naur relayd.orig/parse.y relayd/parse.y
---- relayd.orig/parse.y	2010-05-27 11:05:52.874794374 +0200
-+++ relayd/parse.y	2010-05-27 11:07:06.666448151 +0200
+--- relayd.orig/parse.y	2010-05-29 10:41:49.561008583 +0200
++++ relayd/parse.y	2010-05-29 10:41:54.588360421 +0200
 @@ -343,6 +343,7 @@
  			}
  			conf->sc_prefork_relay = $2;
@@ -171,8 +171,8 @@ diff -Naur relayd.orig/parse.y relayd/parse.y
  	if (error) {
  		log_warnx("host_dns: could not parse \"%s\": %s", s,
 diff -Naur relayd.orig/pfe.c relayd/pfe.c
---- relayd.orig/pfe.c	2010-05-27 11:05:52.874794374 +0200
-+++ relayd/pfe.c	2010-05-27 11:05:58.276615510 +0200
+--- relayd.orig/pfe.c	2010-05-29 10:41:49.559000800 +0200
++++ relayd/pfe.c	2010-05-29 10:41:54.596392393 +0200
 @@ -17,6 +17,9 @@
   */
  
@@ -210,8 +210,8 @@ diff -Naur relayd.orig/pfe.c relayd/pfe.c
  }
  
 diff -Naur relayd.orig/pfe_filter.c relayd/pfe_filter.c
---- relayd.orig/pfe_filter.c	2010-05-27 11:05:52.873793915 +0200
-+++ relayd/pfe_filter.c	2010-05-27 11:05:58.277615689 +0200
+--- relayd.orig/pfe_filter.c	2010-05-29 10:41:49.560005111 +0200
++++ relayd/pfe_filter.c	2010-05-29 10:41:54.600408239 +0200
 @@ -97,6 +97,10 @@
  		    sizeof(tables[i].pfrt_name))
  			goto toolong;
@@ -270,8 +270,8 @@ diff -Naur relayd.orig/pfe_filter.c relayd/pfe_filter.c
  		if (rio.rule.proto == IPPROTO_TCP)
  			rio.rule.timeout[PFTM_TCP_ESTABLISHED] =
 diff -Naur relayd.orig/relay.c relayd/relay.c
---- relayd.orig/relay.c	2010-05-27 11:05:52.872794016 +0200
-+++ relayd/relay.c	2010-05-27 11:05:58.280728536 +0200
+--- relayd.orig/relay.c	2010-05-29 10:41:49.560005111 +0200
++++ relayd/relay.c	2010-05-29 10:41:54.603420334 +0200
 @@ -16,7 +16,11 @@
   * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
@@ -363,9 +363,27 @@ diff -Naur relayd.orig/relay.c relayd/relay.c
  
   fail:
  	if (buf != NULL)
+@@ -3142,7 +3168,7 @@
+ 		return (-1);
+ 
+ 	if (snprintf(certfile, sizeof(certfile),
+-	    "/etc/ssl/%s.crt", hbuf) == -1)
++	    "%%PREFIX%%/etc/ssl/%s.crt", hbuf) == -1)
+ 		return (-1);
+ 	if ((rlay->rl_ssl_cert = relay_load_file(certfile,
+ 	    &rlay->rl_ssl_cert_len)) == NULL)
+@@ -3150,7 +3176,7 @@
+ 	log_debug("relay_load_certfiles: using certificate %s", certfile);
+ 
+ 	if (snprintf(certfile, sizeof(certfile),
+-	    "/etc/ssl/private/%s.key", hbuf) == -1)
++	    "%%PREFIX%%/etc/ssl/private/%s.key", hbuf) == -1)
+ 		return -1;
+ 	if ((rlay->rl_ssl_key = relay_load_file(certfile,
+ 	    &rlay->rl_ssl_key_len)) == NULL)
 diff -Naur relayd.orig/relay_udp.c relayd/relay_udp.c
---- relayd.orig/relay_udp.c	2010-05-27 11:05:52.873793915 +0200
-+++ relayd/relay_udp.c	2010-05-27 11:05:58.281790178 +0200
+--- relayd.orig/relay_udp.c	2010-05-29 10:41:49.559000800 +0200
++++ relayd/relay_udp.c	2010-05-29 10:41:54.613459810 +0200
 @@ -16,7 +16,11 @@
   * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
@@ -379,8 +397,8 @@ diff -Naur relayd.orig/relay_udp.c relayd/relay_udp.c
  #include <sys/time.h>
  #include <sys/stat.h>
 diff -Naur relayd.orig/relayd.8 relayd/relayd.8
---- relayd.orig/relayd.8	2010-05-27 11:05:52.871795234 +0200
-+++ relayd/relayd.8	2010-05-27 11:05:58.282841763 +0200
+--- relayd.orig/relayd.8	2010-05-29 10:41:49.559000800 +0200
++++ relayd/relayd.8	2010-05-29 10:41:54.616471625 +0200
 @@ -117,7 +117,7 @@
  .It Fl f Ar file
  Specify an alternative configuration file.
@@ -400,8 +418,8 @@ diff -Naur relayd.orig/relayd.8 relayd/relayd.8
  .It /var/run/relayd.sock
  Unix-domain socket used for communication with
 diff -Naur relayd.orig/relayd.c relayd/relayd.c
---- relayd.orig/relayd.c	2010-05-27 11:05:52.873793915 +0200
-+++ relayd/relayd.c	2010-05-27 11:05:58.284862515 +0200
+--- relayd.orig/relayd.c	2010-05-29 10:41:49.561008583 +0200
++++ relayd/relayd.c	2010-05-29 10:41:54.617476494 +0200
 @@ -17,7 +17,11 @@
   * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
@@ -524,8 +542,17 @@ diff -Naur relayd.orig/relayd.c relayd/relayd.c
  	    bnd->bnd_ss.ss_len) == -1)
  		goto fail;
 diff -Naur relayd.orig/relayd.conf.5 relayd/relayd.conf.5
---- relayd.orig/relayd.conf.5	2010-05-27 11:05:52.873793915 +0200
-+++ relayd/relayd.conf.5	2010-05-27 11:05:58.285863811 +0200
+--- relayd.orig/relayd.conf.5	2010-05-29 10:41:49.559000800 +0200
++++ relayd/relayd.conf.5	2010-05-29 10:41:54.622495534 +0200
+@@ -78,7 +78,7 @@
+ .Ic include
+ keyword, for example:
+ .Bd -literal -offset indent
+-include "/etc/relayd.conf.local"
++include "%%PREFIX%%/etc/relayd.conf.local"
+ .Ed
+ .Sh MACROS
+ Macros can be defined that will later be expanded in context.
 @@ -103,17 +103,6 @@
  .Sh GLOBAL CONFIGURATION
  Here are the settings that can be set globally:
@@ -578,16 +605,56 @@ diff -Naur relayd.orig/relayd.conf.5 relayd/relayd.conf.5
  .It Ic interval Ar number
  Override the global interval and specify one for this table.
  It must be a multiple of the global interval.
-@@ -1037,7 +1006,7 @@
+@@ -604,9 +573,9 @@
+ keyword is present, the relay will accept connections using the
+ encrypted SSL protocol.
+ The relay will look up a private key in
+-.Pa /etc/ssl/private/address.key
++.Pa %%PREFIX%%/etc/ssl/private/address.key
+ and a public certificate in
+-.Pa /etc/ssl/address.crt ,
++.Pa %%PREFIX%%/etc/ssl/address.crt ,
+ where
+ .Ar address
+ is the specified IP address of the relay to listen on.
+@@ -955,9 +924,6 @@
+ This option enables CA verification in SSL client mode.
+ The daemon will load the CA (Certificate Authority) certificates from
+ the specified path to verify the server certificates.
+-.Ox
+-provides a default CA bundle in
+-.Pa /etc/ssl/cert.pem .
+ .It Ic ciphers Ar string
+ Set the string defining the SSL cipher suite.
+ If not specified, the default value
+@@ -1036,22 +1002,19 @@
+ .El
  .El
  .Sh FILES
- .Bl -tag -width "/etc/ssl/private/address.keyXX" -compact
+-.Bl -tag -width "/etc/ssl/private/address.keyXX" -compact
 -.It Pa /etc/relayd.conf
++.Bl -tag -width "%%PREFIX%%/etc/ssl/private/address.keyXX" -compact
 +.It Pa %%PREFIX%%/etc/relayd.conf
  .Xr relayd 8
  configuration file.
  .Pp
-@@ -1146,7 +1115,6 @@
+ .It Pa /etc/services
+ Service name database.
+ .Pp
+-.It Pa /etc/ssl/address.crt
+-.It Pa /etc/ssl/private/address.key
++.It Pa %%PREFIX%%/etc/ssl/address.crt
++.It Pa %%PREFIX%%/etc/ssl/private/address.key
+ Location of the relay SSL server certificates, where
+ .Ar address
+ is the configured IP address of the relay.
+-.It Pa /etc/ssl/cert.pem
+-Default location of the CA bundle that can be used with
+-.Xr relayd 8 .
+ .El
+ .Sh EXAMPLES
+ This configuration file would create a redirection service
+@@ -1146,7 +1109,6 @@
  .Sh SEE ALSO
  .Xr relayctl 8 ,
  .Xr relayd 8 ,
@@ -596,8 +663,8 @@ diff -Naur relayd.orig/relayd.conf.5 relayd/relayd.conf.5
  .Sh HISTORY
  The
 diff -Naur relayd.orig/relayd.h relayd/relayd.h
---- relayd.orig/relayd.h	2010-05-27 11:05:52.871795234 +0200
-+++ relayd/relayd.h	2010-05-27 11:05:58.286913720 +0200
+--- relayd.orig/relayd.h	2010-05-29 10:41:49.559000800 +0200
++++ relayd/relayd.h	2010-05-29 10:41:54.627515412 +0200
 @@ -19,10 +19,18 @@
   */
  

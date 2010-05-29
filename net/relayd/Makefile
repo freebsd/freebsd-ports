@@ -6,6 +6,7 @@
 
 PORTNAME=	relayd
 PORTVERSION=	4.6.20090813
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -33,22 +34,6 @@ SUB_FILES+=	pkg-install
 SUB_LIST+=	RUSER=${RUSER} \
 		RGROUP=${RGROUP}
 
-post-extract:
-	@${CP} ${FILESDIR}/Makefile.all ${WRKSRC}/Makefile
-	@${CP} ${FILESDIR}/Makefile.relayctl ${WRKSRC}/relayctl/Makefile
-	@${CP} ${FILESDIR}/Makefile.relayd ${WRKSRC}/relayd/Makefile
-	@${CP} ${FILESDIR}/arc4random.c ${WRKSRC}/relayd
-
-pre-build:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/relayd/relayd.h \
-		${WRKSRC}/relayd/relayd.conf.5 \
-		${WRKSRC}/relayd/relayd.8
-
-pre-su-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
-
 OPTIONS=	LIBEVENT_STATIC "Build with static libevent" Off
 
 .include <bsd.port.pre.mk>
@@ -64,5 +49,25 @@ MAKE_ARGS+=	LIBEVENT=-levent
 .if (${OSVERSION} < 700049) && !defined(I_KNOW_WHAT_I_AM_DOING)
 IGNORE=	needs a patched kernel to work correctly (http://www.openbsd.org/cgi-bin/cvsweb/src/sys/net/pf_table.c.diff?r1=1.67&r2=1.68)
 .endif
+
+post-extract:
+	@${CP} ${FILESDIR}/Makefile.all ${WRKSRC}/Makefile
+	@${CP} ${FILESDIR}/Makefile.relayctl ${WRKSRC}/relayctl/Makefile
+	@${CP} ${FILESDIR}/Makefile.relayd ${WRKSRC}/relayd/Makefile
+	@${CP} ${FILESDIR}/arc4random.c ${WRKSRC}/relayd
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/relayd/relay.c \
+		${WRKSRC}/relayd/relayd.h \
+		${WRKSRC}/relayd/relayd.conf.5 \
+		${WRKSRC}/relayd/relayd.8
+
+pre-su-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+
+post-install:
+	@${INSTALL_DATA} ${FILESDIR}/relayd.conf.sample ${PREFIX}/etc
 
 .include <bsd.port.post.mk>
