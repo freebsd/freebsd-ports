@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openconnect
-PORTVERSION=	2.01
-PORTREVISION=	2
+PORTVERSION=	2.25
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		CRITICAL
