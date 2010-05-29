@@ -27,7 +27,9 @@ MAN3=		firemime_decode_body.3 firemime_get_full_header.3 firemime_get_header.3 \
 
 .include <bsd.port.pre.mk>
 
-USE_GCC=	3.4
+post-patch:
+	@${REINPLACE_CMD} -e 's|(unsigned char) dest-\>s\[o++\] = c|dest-\>s\[o++\] = (char) c|' \
+		${WRKSRC}/firemime.c
 
 pre-configure:
 	@-${RM} -r ${WRKSRC}/firemake/*.orig
