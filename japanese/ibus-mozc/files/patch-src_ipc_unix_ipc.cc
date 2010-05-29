@@ -1,5 +1,5 @@
---- src/ipc/unix_ipc.cc.org	2010-05-23 14:04:22.558128045 +0900
-+++ src/ipc/unix_ipc.cc	2010-05-23 13:58:38.472786193 +0900
+--- src/ipc/unix_ipc.cc.org	2010-05-29 11:06:11.125610530 +0900
++++ src/ipc/unix_ipc.cc	2010-05-29 11:33:18.938743764 +0900
 @@ -41,7 +41,7 @@
  #include <sys/time.h>
  #include <sys/types.h>
@@ -26,11 +26,12 @@
  #ifdef OS_LINUX
    // On ARM Linux, we do nothing and just return true since the platform (at
    // least the qemu emulator) doesn't support the getsockopt(sock, SOL_SOCKET,
-@@ -172,6 +171,7 @@
+@@ -171,7 +172,7 @@
    *pid = peer_cred.pid;
  #endif  // __arm__
  #endif
+-
 +*/
- 
    return true;
  }
+ 
