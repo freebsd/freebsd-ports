@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://pitecan.com/Lens/
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A mail filter written in Ruby
 
 NO_BUILD=	yes

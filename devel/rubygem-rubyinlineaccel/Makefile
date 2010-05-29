@@ -11,7 +11,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 DISTNAME=	RubyInlineAcceleration-${PORTVERSION}
 
-MAINTAINER=	tota@rtfm.jp
+MAINTAINER=	tota@FreeBSD.org
 COMMENT=	An extension to RubyInline
 
 BUILD_DEPENDS=	rubygem-inline>=3.6.3:${PORTSDIR}/devel/rubygem-inline
