@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnometarget
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	"--with-ffmpeg-extra-configure=--cc=${CC}"
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		CPPFLAGS="${CPPFLAGS}" \
 		CFLAGS="${CFLAGS} -fno-force-addr" \
