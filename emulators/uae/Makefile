@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	uae
-PORTVERSION=	0.8.25
-PORTREVISION=	7
+PORTVERSION=	0.8.29
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/ \
-		http://www.electronghost.co.uk/~bernds/
+MASTER_SITES=	http://www.amigaemulator.org/files/sources/develop/
 
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Amiga emulator
 
 CONFLICTS=	e-uae-[0-9]*
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:262
-CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
+CONFIGURE_ARGS=	--enable-sound
 USE_GNOME=	gtk20
-USE_GCC=	3.4
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 
