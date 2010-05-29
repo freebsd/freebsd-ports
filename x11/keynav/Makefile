@@ -7,6 +7,7 @@
 
 PORTNAME=	keynav
 DISTVERSION=	0.20100302.2713
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://semicomplete.googlecode.com/files/
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Quickly select a portion of the screen using minimal keystrokes
 
-LIB_DEPENDS=	xdo.1:${PORTSDIR}/x11/xdotool
+LIB_DEPENDS=	xdo.2:${PORTSDIR}/x11/xdotool
 
 USE_GNOME=	glib20
 USE_XORG=	xtst x11 xinerama
