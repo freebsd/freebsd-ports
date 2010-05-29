@@ -7,7 +7,7 @@
 PORTNAME=	robots
 PORTVERSION=	0.8.0
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://gemcutter.org/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	niels@FreeBSD.org
 COMMENT=	A simple library to parse robots.txt files
