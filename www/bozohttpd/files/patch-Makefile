@@ -1,13 +1,16 @@
---- Makefile.orig	Thu Aug 22 22:43:44 2002
-+++ Makefile	Sun Oct 20 14:26:17 2002
-@@ -4,6 +4,10 @@
- MAN=	bozohttpd.8
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -23,6 +23,10 @@
+ SRCS+=	main.c
  
- WARNS=	3
+ WARNS?=	4
 +NO_WERROR=1
-+
++ 
 +BINDIR=$(PREFIX)/libexec
 +MANDIR=$(PREFIX)/man/man
  
- .include <bsd.prog.mk>
- 
+ check:
+ 	cd $(.CURDIR)/testsuite && $(MAKE) check
