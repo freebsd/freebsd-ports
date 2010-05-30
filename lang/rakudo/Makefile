@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rakudo
-PORTVERSION=	2010.04
+PORTVERSION=	2010.05
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/rakudo/
@@ -17,8 +17,6 @@ COMMENT=	The Rakudo Perl 6 Compiler targets the Parrot Virtual Machine
 BUILD_DEPENDS=	parrot>=${PARROT_VERSION}:${PORTSDIR}/lang/parrot
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 RUN_DEPENDS=	parrot>=${PARROT_VERSION}:${PORTSDIR}/lang/parrot
-
-BROKEN=		does not build
 
 .include <bsd.port.pre.mk>
 

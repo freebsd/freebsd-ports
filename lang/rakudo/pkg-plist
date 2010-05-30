@@ -1,11 +1,17 @@
 bin/perl6
 lib/parrot/%%PARROT_VERSION%%/dynext/perl6_group.so
 lib/parrot/%%PARROT_VERSION%%/dynext/perl6_ops.so
-lib/parrot/%%PARROT_VERSION%%/dynext/perl6_ops_switch.so
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Safe.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/perl6.pbc
+share/doc/rakudo/CREDITS
+share/doc/rakudo/ChangeLog
+share/doc/rakudo/LICENSE
+share/doc/rakudo/README
+share/doc/rakudo/ROADMAP
+share/doc/rakudo/S11-Modules-proposal.pod
+@dirrm share/doc/rakudo
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages
