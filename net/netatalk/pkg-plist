@@ -1,39 +1,39 @@
 bin/achfile
-bin/acleandir.rc
+bin/ad
+bin/add_netatalk_printer
 bin/adv1tov2
 bin/aecho
 bin/afile
 bin/afppasswd
 bin/apple_cp
+bin/apple_dump
 bin/apple_mv
 bin/apple_rm
 bin/asip-status.pl
-bin/cleanappledouble.pl
 bin/cnid2_create
-bin/cnid_index
-bin/cnid_maint
+bin/dbd
 bin/getzones
+bin/logger_test
 bin/macusers
 bin/megatron
-@unexec rm -f %B/unbin
-@unexec rm -f %B/unhex
-@unexec rm -f %B/unsingle
-@unexec rm -f %B/hqx2bin
-@unexec rm -f %B/single2bin
-@unexec rm -f %B/macbinary
-@unexec rm -f %B/binheader
-@unexec rm -f %B/nadheader
+@exec cd %B && ln -s megatron hqx2bin
+@exec cd %B && ln -s megatron macbinary
+@exec cd %B && ln -s megatron nadheader
+@exec cd %B && ln -s megatron single2bin
 @exec cd %B && ln -s megatron unbin
 @exec cd %B && ln -s megatron unhex
 @exec cd %B && ln -s megatron unsingle
-@exec cd %B && ln -s megatron hqx2bin
-@exec cd %B && ln -s megatron single2bin
-@exec cd %B && ln -s megatron macbinary
-@exec cd %B && ln -s megatron binheader
-@exec cd %B && ln -s megatron nadheader
+@unexec rm -f %B/hqx2bin
+@unexec rm -f %B/macbinary
+@unexec rm -f %B/nadheader
+@unexec rm -f %B/single2bin
+@unexec rm -f %B/unbin
+@unexec rm -f %B/unhex
+@unexec rm -f %B/unsingle
 bin/nbplkup
 bin/nbprgstr
 bin/nbpunrgstr
+bin/netacnv
 bin/netatalk-config
 bin/pap
 bin/papstatus
@@ -58,36 +58,37 @@ etc/netatalk.conf.dist
 @unexec if cmp -s %D/etc/papd.conf %D/etc/papd.conf.dist; then rm -f %D/etc/papd.conf; fi
 etc/papd.conf.dist
 @exec [ ! -f %B/papd.conf ] && cp %B/%f %B/papd.conf
-etc/uams/uams_clrtxt.so
-etc/uams/uams_dhx.so
-etc/uams/uams_dhx2.so
-%%NETATALKPAM%%etc/uams/uams_dhx2_pam.a
-%%NETATALKPAM%%etc/uams/uams_dhx2_pam.la
-%%NETATALKPAM%%etc/uams/uams_dhx2_pam.so
-etc/uams/uams_dhx2_passwd.a
-etc/uams/uams_dhx2_passwd.la
-etc/uams/uams_dhx2_passwd.so
-%%NETATALKPAM%%etc/uams/uams_dhx_pam.a
-%%NETATALKPAM%%etc/uams/uams_dhx_pam.la
-%%NETATALKPAM%%etc/uams/uams_dhx_pam.so
-etc/uams/uams_dhx_passwd.a
-etc/uams/uams_dhx_passwd.la
-etc/uams/uams_dhx_passwd.so
-%%NETATALKKRB5%%etc/uams/uams_gss.a
-%%NETATALKKRB5%%etc/uams/uams_gss.la
-%%NETATALKKRB5%%etc/uams/uams_gss.so
-etc/uams/uams_guest.a
-etc/uams/uams_guest.la
-etc/uams/uams_guest.so
-%%NETATALKPAM%%etc/uams/uams_pam.a
-%%NETATALKPAM%%etc/uams/uams_pam.la
-%%NETATALKPAM%%etc/uams/uams_pam.so
-etc/uams/uams_passwd.a
-etc/uams/uams_passwd.la
-etc/uams/uams_passwd.so
-etc/uams/uams_randnum.a
-etc/uams/uams_randnum.la
-etc/uams/uams_randnum.so
+libexec/netatalk-uams/uams_clrtxt.so
+libexec/netatalk-uams/uams_dhx.so
+libexec/netatalk-uams/uams_dhx2.so
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.a
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.la
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx2_pam.so
+libexec/netatalk-uams/uams_dhx2_passwd.a
+libexec/netatalk-uams/uams_dhx2_passwd.la
+libexec/netatalk-uams/uams_dhx2_passwd.so
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.a
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.la
+%%NETATALKPAM%%libexec/netatalk-uams/uams_dhx_pam.so
+libexec/netatalk-uams/uams_dhx_passwd.a
+libexec/netatalk-uams/uams_dhx_passwd.la
+libexec/netatalk-uams/uams_dhx_passwd.so
+%%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.a
+%%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.la
+%%NETATALKKRB5%%libexec/netatalk-uams/uams_gss.so
+libexec/netatalk-uams/uams_guest.a
+libexec/netatalk-uams/uams_guest.la
+libexec/netatalk-uams/uams_guest.so
+%%NETATALKPAM%%libexec/netatalk-uams/uams_pam.a
+%%NETATALKPAM%%libexec/netatalk-uams/uams_pam.la
+%%NETATALKPAM%%libexec/netatalk-uams/uams_pam.so
+libexec/netatalk-uams/uams_passwd.a
+libexec/netatalk-uams/uams_passwd.la
+libexec/netatalk-uams/uams_passwd.so
+libexec/netatalk-uams/uams_randnum.a
+libexec/netatalk-uams/uams_randnum.la
+libexec/netatalk-uams/uams_randnum.so
+include/atalk/acl.h
 include/atalk/adouble.h
 include/atalk/aep.h
 include/atalk/afp.h
@@ -97,7 +98,11 @@ include/atalk/boolean.h
 include/atalk/cnid.h
 include/atalk/compat.h
 include/atalk/ddp.h
+include/atalk/directory.h
 include/atalk/dsi.h
+include/atalk/ea.h
+include/atalk/hash.h
+include/atalk/ldapconfig.h
 include/atalk/list.h
 include/atalk/logger.h
 include/atalk/nbp.h
@@ -110,15 +115,19 @@ include/atalk/server_ipc.h
 include/atalk/tdb.h
 include/atalk/uam.h
 include/atalk/unicode.h
+include/atalk/unix.h
 include/atalk/util.h
+include/atalk/uuid.h
+include/atalk/vfs.h
 include/atalk/volinfo.h
+include/atalk/volume.h
 include/atalk/zip.h
 include/netatalk/aarp.h
 include/netatalk/at.h
 include/netatalk/at_var.h
 include/netatalk/ddp.h
-include/netatalk/endian.h
 include/netatalk/ddp_var.h
+include/netatalk/endian.h
 include/netatalk/phase2.h
 lib/libatalk.a
 lib/libatalk.la
@@ -156,4 +165,4 @@ share/aclocal/netatalk.m4
 @dirrm share/netatalk
 @dirrm include/netatalk
 @dirrm include/atalk
-@dirrm etc/uams
+@dirrm libexec/netatalk-uams
