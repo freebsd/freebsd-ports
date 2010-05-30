@@ -5,24 +5,20 @@ include/PCSC/pcsclite.h
 include/PCSC/reader.h
 include/PCSC/winscard.h
 include/PCSC/wintypes.h
-lib/libpcsclite.a
 lib/libpcsclite.so
 lib/libpcsclite.so.1
 lib/pcsc/drivers/.keep_me
 lib/pcsc/services/.keep_me
 libdata/pkgconfig/libpcsclite.pc
 sbin/pcscd
-sbin/update-reader.conf
-%%DOCSDIR%%/README.DAEMON
-%%DOCSDIR%%/pcsc-lite.tex
-%%DOCSDIR%%/pcsc-lite.bib
-%%DOCSDIR%%/ifdhandler-3.tex
-%%EXAMPLESDIR%%/Makefile.am
-%%EXAMPLESDIR%%/Makefile.in
-%%EXAMPLESDIR%%/pcsc_demo.c
-@dirrm include/PCSC
-@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
-@dirrm lib/pcsc/drivers
+%%PORTDOCS%%%%DOCSDIR%%/README.DAEMON
+%%PORTDOCS%%%%DOCSDIR%%/ifdhandler-3.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcsc_demo.c
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/pcsc/services
+@dirrm lib/pcsc/drivers
 @dirrm lib/pcsc
+@dirrm include/PCSC
