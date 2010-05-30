@@ -8,7 +8,7 @@ PORTNAME=	open4
 PORTVERSION=	0.9.6
 PORTREVISION=	2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	http://codeforpeople.com/lib/ruby/open4/${DISTNAME}/
+MASTER_SITES=	RG
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Open4 manages child processes and their io handles
