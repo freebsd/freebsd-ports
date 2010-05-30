@@ -6,6 +6,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/alsasrc.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/audioclock.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/audioconvert.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/audiofilter.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/audiorate.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/audioresample.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/audiosink.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/audiosrc.h
@@ -85,6 +86,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/alsasrc_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/audioclock_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/audioconvert_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/audiofilter_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/audiorate_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/audioresample_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/audiosink_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/audiosrc_p.h
@@ -158,11 +160,13 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/propertyprobe_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/pushsrc_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/query_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/queue_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/queue2_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/registry_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/ringbuffer_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/segment_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/streamvolume_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/structure_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/subtitleoverlay_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/systemclock_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/taglist_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/tagsetter_p.h
@@ -206,11 +210,13 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/propertyprobe.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/pushsrc.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/query.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/queue.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/queue2.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/registry.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/ringbuffer.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/segment.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/streamvolume.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/structure.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/subtitleoverlay.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/systemclock.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/taglist.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/tagsetter.h
