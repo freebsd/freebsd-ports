@@ -1,467 +1,471 @@
-System/Applications/Gorm.app/Gorm
-System/Applications/Gorm.app/Resources/0Menus.palette/0Menus
-System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuDrag.tiff
-System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/0Menus.palette/Resources/Info-gnustep.plist
-System/Applications/Gorm.app/Resources/0Menus.palette/Resources/MenusPalette.tiff
-System/Applications/Gorm.app/Resources/0Menus.palette/Resources/palette.table
-System/Applications/Gorm.app/Resources/1Windows.palette/1Windows
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/Drawer.tiff
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/DrawerSmall.tiff
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormDrawerAttributesInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormDrawerAttributesInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormDrawerAttributesInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/Info-gnustep.plist
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/WindowDrag.tiff
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/WindowsPalette.tiff
-System/Applications/Gorm.app/Resources/1Windows.palette/Resources/palette.table
-System/Applications/Gorm.app/Resources/2Controls.palette/2Controls
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.tiff
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSButtonInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSButtonInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSButtonInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSCellInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSCellInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSCellInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSColorWellInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSColorWellInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSColorWellInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSFormInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSFormInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSFormInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSMatrixInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSMatrixInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSMatrixInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSProgressIndicatorInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSProgressIndicatorInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSProgressIndicatorInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSSliderInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSSliderInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSSliderInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSStepperInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSStepperInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSStepperInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/Info-gnustep.plist
-System/Applications/Gorm.app/Resources/2Controls.palette/Resources/palette.table
-System/Applications/Gorm.app/Resources/3Containers.palette/3Containers
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/ContainersPalette.tiff
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableViewInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableViewInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableViewInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabViewInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabViewInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabViewInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/Info-gnustep.plist
-System/Applications/Gorm.app/Resources/3Containers.palette/Resources/palette.table
-System/Applications/Gorm.app/Resources/4Data.palette/4Data
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/DataPalette.tiff
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSDateFormatterInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSDateFormatterInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSDateFormatterInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSImageViewInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSImageViewInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSImageViewInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSTextViewInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSTextViewInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSTextViewInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/Info-gnustep.plist
-System/Applications/Gorm.app/Resources/4Data.palette/Resources/palette.table
-System/Applications/Gorm.app/Resources/ClassInformation.plist
-System/Applications/Gorm.app/Resources/Defaults.plist
-System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormHelpInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormHelpInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormHelpInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/Gorm.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/ff.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/pause.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/play.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/rec.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/rw.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/stop.tiff
-System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/data.classes
-System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/data.info
-System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/objects.gorm
-System/Applications/Gorm.app/Resources/FileIcon_gmodel.tiff
-System/Applications/Gorm.app/Resources/GModel.plugin/GModel
-System/Applications/Gorm.app/Resources/GModel.plugin/Resources/Info-gnustep.plist
-System/Applications/Gorm.app/Resources/GModel.plugin/stamp.make
-System/Applications/Gorm.app/Resources/Gorm.desktop
-System/Applications/Gorm.app/Resources/Gorm.plugin/Gorm
-System/Applications/Gorm.app/Resources/Gorm.plugin/Resources/Info-gnustep.plist
-System/Applications/Gorm.app/Resources/Gorm.plugin/stamp.make
-System/Applications/Gorm.app/Resources/Gorm.tiff
-System/Applications/Gorm.app/Resources/GormAction.tiff
-System/Applications/Gorm.app/Resources/GormActionSelected.tiff
-System/Applications/Gorm.app/Resources/GormClass.tiff
-System/Applications/Gorm.app/Resources/GormEHCoil.tiff
-System/Applications/Gorm.app/Resources/GormEHLine.tiff
-System/Applications/Gorm.app/Resources/GormEVCoil.tiff
-System/Applications/Gorm.app/Resources/GormEVLine.tiff
-System/Applications/Gorm.app/Resources/GormFile.tiff
-System/Applications/Gorm.app/Resources/GormFilesOwner.tiff
-System/Applications/Gorm.app/Resources/GormFirstResponder.tiff
-System/Applications/Gorm.app/Resources/GormFontManager.tiff
-System/Applications/Gorm.app/Resources/GormImage.tiff
-System/Applications/Gorm.app/Resources/GormInfo.plist
-System/Applications/Gorm.app/Resources/GormLinkImage.tiff
-System/Applications/Gorm.app/Resources/GormMHCoil.tiff
-System/Applications/Gorm.app/Resources/GormMHLine.tiff
-System/Applications/Gorm.app/Resources/GormMVCoil.tiff
-System/Applications/Gorm.app/Resources/GormMVLine.tiff
-System/Applications/Gorm.app/Resources/GormMenu.tiff
-System/Applications/Gorm.app/Resources/GormNib.tiff
-System/Applications/Gorm.app/Resources/GormObject.tiff
-System/Applications/Gorm.app/Resources/GormOutlet.tiff
-System/Applications/Gorm.app/Resources/GormOutletSelected.tiff
-System/Applications/Gorm.app/Resources/GormPalette.tiff
-System/Applications/Gorm.app/Resources/GormSound.tiff
-System/Applications/Gorm.app/Resources/GormSourceTag.tiff
-System/Applications/Gorm.app/Resources/GormTargetTag.tiff
-System/Applications/Gorm.app/Resources/GormTesting.tiff
-System/Applications/Gorm.app/Resources/GormUnknown.tiff
-System/Applications/Gorm.app/Resources/GormView.tiff
-System/Applications/Gorm.app/Resources/GormWindow.tiff
-System/Applications/Gorm.app/Resources/Info-gnustep.plist
-System/Applications/Gorm.app/Resources/LeftArr.tiff
-System/Applications/Gorm.app/Resources/Nib.plugin/Nib
-System/Applications/Gorm.app/Resources/Nib.plugin/Resources/Info-gnustep.plist
-System/Applications/Gorm.app/Resources/Nib.plugin/stamp.make
-System/Applications/Gorm.app/Resources/RightArr.tiff
-System/Applications/Gorm.app/Resources/Sunday_seurat.tiff
-System/Applications/Gorm.app/Resources/VersionProfiles.plist
-System/Applications/Gorm.app/Resources/bezel_nib.tiff
-System/Applications/Gorm.app/Resources/browserView.tiff
-System/Applications/Gorm.app/Resources/button_nib.tiff
-System/Applications/Gorm.app/Resources/centeralign_nib.tiff
-System/Applications/Gorm.app/Resources/date_formatter.tiff
-System/Applications/Gorm.app/Resources/iconAbove_nib.tiff
-System/Applications/Gorm.app/Resources/iconBelow_nib.tiff
-System/Applications/Gorm.app/Resources/iconBottomLeft_nib.tiff
-System/Applications/Gorm.app/Resources/iconBottomRight_nib.tiff
-System/Applications/Gorm.app/Resources/iconBottom_nib.tiff
-System/Applications/Gorm.app/Resources/iconCenterLeft_nib.tiff
-System/Applications/Gorm.app/Resources/iconCenterRight_nib.tiff
-System/Applications/Gorm.app/Resources/iconCenter_nib.tiff
-System/Applications/Gorm.app/Resources/iconLeft_nib.tiff
-System/Applications/Gorm.app/Resources/iconOnly_nib.tiff
-System/Applications/Gorm.app/Resources/iconRight_nib.tiff
-System/Applications/Gorm.app/Resources/iconTopLeft_nib.tiff
-System/Applications/Gorm.app/Resources/iconTopRight_nib.tiff
-System/Applications/Gorm.app/Resources/iconTop_nib.tiff
-System/Applications/Gorm.app/Resources/justifyalign_nib.tiff
-System/Applications/Gorm.app/Resources/leftalign_nib.tiff
-System/Applications/Gorm.app/Resources/line_nib.tiff
-System/Applications/Gorm.app/Resources/naturalalign_nib.tiff
-System/Applications/Gorm.app/Resources/noBorder_nib.tiff
-System/Applications/Gorm.app/Resources/number_formatter.tiff
-System/Applications/Gorm.app/Resources/outlineView.tiff
-System/Applications/Gorm.app/Resources/photoframe_nib.tiff
-System/Applications/Gorm.app/Resources/ridge_nib.tiff
-System/Applications/Gorm.app/Resources/rightalign_nib.tiff
-System/Applications/Gorm.app/Resources/shortbutton_nib.tiff
-System/Applications/Gorm.app/Resources/tabbot_nib.tiff
-System/Applications/Gorm.app/Resources/tabtop_nib.tiff
-System/Applications/Gorm.app/Resources/titleOnly_nib.tiff
-System/Applications/Gorm.app/stamp.make
-System/Library/Headers/GormCore/GormBoxEditor.h
-System/Library/Headers/GormCore/GormClassEditor.h
-System/Library/Headers/GormCore/GormClassInspector.h
-System/Library/Headers/GormCore/GormClassManager.h
-System/Library/Headers/GormCore/GormClassPanelController.h
-System/Library/Headers/GormCore/GormConnectionInspector.h
-System/Library/Headers/GormCore/GormControlEditor.h
-System/Library/Headers/GormCore/GormCustomClassInspector.h
-System/Library/Headers/GormCore/GormCustomView.h
-System/Library/Headers/GormCore/GormDocument.h
-System/Library/Headers/GormCore/GormDocumentController.h
-System/Library/Headers/GormCore/GormDocumentWindow.h
-System/Library/Headers/GormCore/GormFilePrefsManager.h
-System/Library/Headers/GormCore/GormFilesOwner.h
-System/Library/Headers/GormCore/GormFontViewController.h
-System/Library/Headers/GormCore/GormFunctions.h
-System/Library/Headers/GormCore/GormGenericEditor.h
-System/Library/Headers/GormCore/GormHelpInspector.h
-System/Library/Headers/GormCore/GormImage.h
-System/Library/Headers/GormCore/GormImageEditor.h
-System/Library/Headers/GormCore/GormImageInspector.h
-System/Library/Headers/GormCore/GormInspectorsManager.h
-System/Library/Headers/GormCore/GormInternalViewEditor.h
-System/Library/Headers/GormCore/GormMatrixEditor.h
-System/Library/Headers/GormCore/GormNSSplitViewInspector.h
-System/Library/Headers/GormCore/GormObjectEditor.h
-System/Library/Headers/GormCore/GormObjectInspector.h
-System/Library/Headers/GormCore/GormOpenGLView.h
-System/Library/Headers/GormCore/GormOutlineView.h
-System/Library/Headers/GormCore/GormPalettesManager.h
-System/Library/Headers/GormCore/GormPlacementInfo.h
-System/Library/Headers/GormCore/GormPlugin.h
-System/Library/Headers/GormCore/GormPluginManager.h
-System/Library/Headers/GormCore/GormPrivate.h
-System/Library/Headers/GormCore/GormProtocol.h
-System/Library/Headers/GormCore/GormResource.h
-System/Library/Headers/GormCore/GormResourceEditor.h
-System/Library/Headers/GormCore/GormResourceManager.h
-System/Library/Headers/GormCore/GormScrollViewAttributesInspector.h
-System/Library/Headers/GormCore/GormSetNameController.h
-System/Library/Headers/GormCore/GormSound.h
-System/Library/Headers/GormCore/GormSoundEditor.h
-System/Library/Headers/GormCore/GormSoundInspector.h
-System/Library/Headers/GormCore/GormSoundView.h
-System/Library/Headers/GormCore/GormSplitViewEditor.h
-System/Library/Headers/GormCore/GormViewEditor.h
-System/Library/Headers/GormCore/GormViewKnobs.h
-System/Library/Headers/GormCore/GormViewSizeInspector.h
-System/Library/Headers/GormCore/GormViewWindow.h
-System/Library/Headers/GormCore/GormViewWithContentViewEditor.h
-System/Library/Headers/GormCore/GormViewWithSubviewsEditor.h
-System/Library/Headers/GormCore/GormWindowEditor.h
-System/Library/Headers/GormCore/GormWrapperBuilder.h
-System/Library/Headers/GormCore/GormWrapperLoader.h
-System/Library/Headers/GormCore/NSCell+GormAdditions.h
-System/Library/Headers/GormCore/NSColorWell+GormExtensions.h
-System/Library/Headers/GormCore/NSFontManager+GormExtensions.h
-System/Library/Headers/GormCore/NSView+GormExtensions.h
-System/Library/Headers/GormObjCHeaderParser/NSScanner+OCHeaderParser.h
-System/Library/Headers/GormObjCHeaderParser/OCClass.h
-System/Library/Headers/GormObjCHeaderParser/OCHeaderParser.h
-System/Library/Headers/GormObjCHeaderParser/OCIVar.h
-System/Library/Headers/GormObjCHeaderParser/OCIVarDecl.h
-System/Library/Headers/GormObjCHeaderParser/OCMethod.h
-System/Library/Headers/GormObjCHeaderParser/ParserFunctions.h
-System/Library/Headers/GormPrefs/GormColorsPref.h
-System/Library/Headers/GormPrefs/GormGeneralPref.h
-System/Library/Headers/GormPrefs/GormGuidelinePref.h
-System/Library/Headers/GormPrefs/GormHeadersPref.h
-System/Library/Headers/GormPrefs/GormPalettesPref.h
-System/Library/Headers/GormPrefs/GormPluginsPref.h
-System/Library/Headers/GormPrefs/GormPrefController.h
-System/Library/Headers/GormPrefs/GormShelfPref.h
-System/Library/Headers/InterfaceBuilder/IBApplicationAdditions.h
-System/Library/Headers/InterfaceBuilder/IBCellAdditions.h
-System/Library/Headers/InterfaceBuilder/IBCellProtocol.h
-System/Library/Headers/InterfaceBuilder/IBConnectors.h
-System/Library/Headers/InterfaceBuilder/IBDefines.h
-System/Library/Headers/InterfaceBuilder/IBDocuments.h
-System/Library/Headers/InterfaceBuilder/IBEditors.h
-System/Library/Headers/InterfaceBuilder/IBInspector.h
-System/Library/Headers/InterfaceBuilder/IBInspectorManager.h
-System/Library/Headers/InterfaceBuilder/IBInspectorMode.h
-System/Library/Headers/InterfaceBuilder/IBObjectAdditions.h
-System/Library/Headers/InterfaceBuilder/IBObjectProtocol.h
-System/Library/Headers/InterfaceBuilder/IBPalette.h
-System/Library/Headers/InterfaceBuilder/IBPlugin.h
-System/Library/Headers/InterfaceBuilder/IBProjectFiles.h
-System/Library/Headers/InterfaceBuilder/IBProjects.h
-System/Library/Headers/InterfaceBuilder/IBResourceManager.h
-System/Library/Headers/InterfaceBuilder/IBSystem.h
-System/Library/Headers/InterfaceBuilder/IBViewAdditions.h
-System/Library/Headers/InterfaceBuilder/IBViewProtocol.h
-System/Library/Headers/InterfaceBuilder/IBViewResourceDragging.h
-System/Library/Headers/InterfaceBuilder/InterfaceBuilder.h
-System/Library/Libraries/libGorm.so
-System/Library/Libraries/libGorm.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libGorm.so.%%LIBVERSION%%
-System/Library/Libraries/libGormCore.so
-System/Library/Libraries/libGormCore.so.%%MAJORVERSION%%
-System/Library/Libraries/libGormCore.so.%%VERSION%%
-System/Library/Libraries/libGormObjCHeaderParser.so
-System/Library/Libraries/libGormObjCHeaderParser.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libGormObjCHeaderParser.so.%%LIBVERSION%%
-System/Library/Libraries/libGormPrefs.so
-System/Library/Libraries/libGormPrefs.so.%%MAJORVERSION%%
-System/Library/Libraries/libGormPrefs.so.%%VERSION%%
-System/Tools/Gorm
-@dirrm System/Library/Headers/InterfaceBuilder
-@dirrm System/Library/Headers/GormPrefs
-@dirrm System/Library/Headers/GormObjCHeaderParser
-@dirrm System/Library/Headers/GormCore
-@dirrm System/Applications/Gorm.app/Resources/Nib.plugin/Resources
-@dirrm System/Applications/Gorm.app/Resources/Nib.plugin
-@dirrm System/Applications/Gorm.app/Resources/Gorm.plugin/Resources
-@dirrm System/Applications/Gorm.app/Resources/Gorm.plugin
-@dirrm System/Applications/Gorm.app/Resources/GModel.plugin/Resources
-@dirrm System/Applications/Gorm.app/Resources/GModel.plugin
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormHelpInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm
-@dirrm System/Applications/Gorm.app/Resources/English.lproj
-@dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSTextViewInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSImageViewInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSDateFormatterInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources
-@dirrm System/Applications/Gorm.app/Resources/4Data.palette
-@dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabViewInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableViewInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources
-@dirrm System/Applications/Gorm.app/Resources/3Containers.palette
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFieldInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSStepperInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSSliderInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSProgressIndicatorInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSMatrixInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSFormInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSColorWellInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSCellInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSButtonInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources
-@dirrm System/Applications/Gorm.app/Resources/2Controls.palette
-@dirrm System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormDrawerAttributesInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/1Windows.palette/Resources
-@dirrm System/Applications/Gorm.app/Resources/1Windows.palette
-@dirrm System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm
-@dirrm System/Applications/Gorm.app/Resources/0Menus.palette/Resources
-@dirrm System/Applications/Gorm.app/Resources/0Menus.palette
-@dirrm System/Applications/Gorm.app/Resources
-@dirrm System/Applications/Gorm.app
+GNUstep/System/Applications/Gorm.app/Gorm
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/0Menus
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuDrag.tiff
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/MenusPalette.tiff
+GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/palette.table
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/1Windows
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/Drawer.tiff
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/DrawerSmall.tiff
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormDrawerAttributesInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormDrawerAttributesInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormDrawerAttributesInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/WindowDrag.tiff
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/WindowsPalette.tiff
+GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/palette.table
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/2Controls
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.tiff
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSButtonInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSButtonInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSButtonInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSCellInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSCellInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSCellInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSColorWellInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSColorWellInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSColorWellInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSFormInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSFormInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSFormInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSMatrixInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSMatrixInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSMatrixInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSProgressIndicatorInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSProgressIndicatorInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSProgressIndicatorInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSSliderInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSSliderInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSSliderInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSStepperInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSStepperInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSStepperInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/palette.table
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/3Containers
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/ContainersPalette.tiff
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableViewInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableViewInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableViewInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabViewInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabViewInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabViewInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/palette.table
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/4Data
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/DataPalette.tiff
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSDateFormatterInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSDateFormatterInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSDateFormatterInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSImageViewInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSImageViewInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSImageViewInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSTextViewInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSTextViewInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSTextViewInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/palette.table
+GNUstep/System/Applications/Gorm.app/Resources/ClassInformation.plist
+GNUstep/System/Applications/Gorm.app/Resources/Defaults.plist
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormHelpInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormHelpInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormHelpInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/Gorm.tiff
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/ff.tiff
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/pause.tiff
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/play.tiff
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/rec.tiff
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/rw.tiff
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm/stop.tiff
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/data.classes
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/data.info
+GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/objects.gorm
+GNUstep/System/Applications/Gorm.app/Resources/FileIcon_gmodel.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GModel.plugin/GModel
+GNUstep/System/Applications/Gorm.app/Resources/GModel.plugin/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Gorm.app/Resources/GModel.plugin/stamp.make
+GNUstep/System/Applications/Gorm.app/Resources/Gorm.desktop
+GNUstep/System/Applications/Gorm.app/Resources/Gorm.plugin/Gorm
+GNUstep/System/Applications/Gorm.app/Resources/Gorm.plugin/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Gorm.app/Resources/Gorm.plugin/stamp.make
+GNUstep/System/Applications/Gorm.app/Resources/Gorm.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormAction.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormActionSelected.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormClass.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormEHCoil.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormEHLine.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormEVCoil.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormEVLine.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormFile.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormFilesOwner.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormFirstResponder.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormFontManager.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormImage.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormInfo.plist
+GNUstep/System/Applications/Gorm.app/Resources/GormLinkImage.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormMHCoil.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormMHLine.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormMVCoil.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormMVLine.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormMenu.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormNib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormObject.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormOutlet.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormOutletSelected.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormPalette.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormSound.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormSourceTag.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormTargetTag.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormTesting.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormUnknown.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormView.tiff
+GNUstep/System/Applications/Gorm.app/Resources/GormWindow.tiff
+GNUstep/System/Applications/Gorm.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Gorm.app/Resources/LeftArr.tiff
+GNUstep/System/Applications/Gorm.app/Resources/Nib.plugin/Nib
+GNUstep/System/Applications/Gorm.app/Resources/Nib.plugin/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Gorm.app/Resources/Nib.plugin/stamp.make
+GNUstep/System/Applications/Gorm.app/Resources/RightArr.tiff
+GNUstep/System/Applications/Gorm.app/Resources/Sunday_seurat.tiff
+GNUstep/System/Applications/Gorm.app/Resources/VersionProfiles.plist
+GNUstep/System/Applications/Gorm.app/Resources/bezel_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/browserView.tiff
+GNUstep/System/Applications/Gorm.app/Resources/button_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/centeralign_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/date_formatter.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconAbove_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconBelow_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconBottomLeft_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconBottomRight_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconBottom_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconCenterLeft_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconCenterRight_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconCenter_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconLeft_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconOnly_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconRight_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconTopLeft_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconTopRight_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/iconTop_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/justifyalign_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/leftalign_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/line_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/naturalalign_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/noBorder_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/number_formatter.tiff
+GNUstep/System/Applications/Gorm.app/Resources/outlineView.tiff
+GNUstep/System/Applications/Gorm.app/Resources/photoframe_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/ridge_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/rightalign_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/shortbutton_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/tabbot_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/tabtop_nib.tiff
+GNUstep/System/Applications/Gorm.app/Resources/titleOnly_nib.tiff
+GNUstep/System/Applications/Gorm.app/stamp.make
+GNUstep/System/Library/Headers/GormCore/GormBoxEditor.h
+GNUstep/System/Library/Headers/GormCore/GormClassEditor.h
+GNUstep/System/Library/Headers/GormCore/GormClassInspector.h
+GNUstep/System/Library/Headers/GormCore/GormClassManager.h
+GNUstep/System/Library/Headers/GormCore/GormClassPanelController.h
+GNUstep/System/Library/Headers/GormCore/GormConnectionInspector.h
+GNUstep/System/Library/Headers/GormCore/GormControlEditor.h
+GNUstep/System/Library/Headers/GormCore/GormCustomClassInspector.h
+GNUstep/System/Library/Headers/GormCore/GormCustomView.h
+GNUstep/System/Library/Headers/GormCore/GormDocument.h
+GNUstep/System/Library/Headers/GormCore/GormDocumentController.h
+GNUstep/System/Library/Headers/GormCore/GormDocumentWindow.h
+GNUstep/System/Library/Headers/GormCore/GormFilePrefsManager.h
+GNUstep/System/Library/Headers/GormCore/GormFilesOwner.h
+GNUstep/System/Library/Headers/GormCore/GormFontViewController.h
+GNUstep/System/Library/Headers/GormCore/GormFunctions.h
+GNUstep/System/Library/Headers/GormCore/GormGenericEditor.h
+GNUstep/System/Library/Headers/GormCore/GormHelpInspector.h
+GNUstep/System/Library/Headers/GormCore/GormImage.h
+GNUstep/System/Library/Headers/GormCore/GormImageEditor.h
+GNUstep/System/Library/Headers/GormCore/GormImageInspector.h
+GNUstep/System/Library/Headers/GormCore/GormInspectorsManager.h
+GNUstep/System/Library/Headers/GormCore/GormInternalViewEditor.h
+GNUstep/System/Library/Headers/GormCore/GormMatrixEditor.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GormCore/GormNSPanel.h
+GNUstep/System/Library/Headers/GormCore/GormNSSplitViewInspector.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GormCore/GormNSWindow.h
+GNUstep/System/Library/Headers/GormCore/GormObjectEditor.h
+GNUstep/System/Library/Headers/GormCore/GormObjectInspector.h
+GNUstep/System/Library/Headers/GormCore/GormOpenGLView.h
+GNUstep/System/Library/Headers/GormCore/GormOutlineView.h
+GNUstep/System/Library/Headers/GormCore/GormPalettesManager.h
+GNUstep/System/Library/Headers/GormCore/GormPlacementInfo.h
+GNUstep/System/Library/Headers/GormCore/GormPlugin.h
+GNUstep/System/Library/Headers/GormCore/GormPluginManager.h
+GNUstep/System/Library/Headers/GormCore/GormPrivate.h
+GNUstep/System/Library/Headers/GormCore/GormProtocol.h
+GNUstep/System/Library/Headers/GormCore/GormResource.h
+GNUstep/System/Library/Headers/GormCore/GormResourceEditor.h
+GNUstep/System/Library/Headers/GormCore/GormResourceManager.h
+GNUstep/System/Library/Headers/GormCore/GormScrollViewAttributesInspector.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GormCore/GormServer.h
+GNUstep/System/Library/Headers/GormCore/GormSetNameController.h
+GNUstep/System/Library/Headers/GormCore/GormSound.h
+GNUstep/System/Library/Headers/GormCore/GormSoundEditor.h
+GNUstep/System/Library/Headers/GormCore/GormSoundInspector.h
+GNUstep/System/Library/Headers/GormCore/GormSoundView.h
+GNUstep/System/Library/Headers/GormCore/GormSplitViewEditor.h
+%%GNUSTEP_DEVEL%%GNUstep/System/Library/Headers/GormCore/GormStandaloneViewEditor.h
+GNUstep/System/Library/Headers/GormCore/GormViewEditor.h
+GNUstep/System/Library/Headers/GormCore/GormViewKnobs.h
+GNUstep/System/Library/Headers/GormCore/GormViewSizeInspector.h
+GNUstep/System/Library/Headers/GormCore/GormViewWindow.h
+GNUstep/System/Library/Headers/GormCore/GormViewWithContentViewEditor.h
+GNUstep/System/Library/Headers/GormCore/GormViewWithSubviewsEditor.h
+GNUstep/System/Library/Headers/GormCore/GormWindowEditor.h
+GNUstep/System/Library/Headers/GormCore/GormWrapperBuilder.h
+GNUstep/System/Library/Headers/GormCore/GormWrapperLoader.h
+GNUstep/System/Library/Headers/GormCore/NSCell+GormAdditions.h
+GNUstep/System/Library/Headers/GormCore/NSColorWell+GormExtensions.h
+GNUstep/System/Library/Headers/GormCore/NSFontManager+GormExtensions.h
+GNUstep/System/Library/Headers/GormCore/NSView+GormExtensions.h
+GNUstep/System/Library/Headers/GormObjCHeaderParser/NSScanner+OCHeaderParser.h
+GNUstep/System/Library/Headers/GormObjCHeaderParser/OCClass.h
+GNUstep/System/Library/Headers/GormObjCHeaderParser/OCHeaderParser.h
+GNUstep/System/Library/Headers/GormObjCHeaderParser/OCIVar.h
+GNUstep/System/Library/Headers/GormObjCHeaderParser/OCIVarDecl.h
+GNUstep/System/Library/Headers/GormObjCHeaderParser/OCMethod.h
+GNUstep/System/Library/Headers/GormObjCHeaderParser/ParserFunctions.h
+GNUstep/System/Library/Headers/GormPrefs/GormColorsPref.h
+GNUstep/System/Library/Headers/GormPrefs/GormGeneralPref.h
+GNUstep/System/Library/Headers/GormPrefs/GormGuidelinePref.h
+GNUstep/System/Library/Headers/GormPrefs/GormHeadersPref.h
+GNUstep/System/Library/Headers/GormPrefs/GormPalettesPref.h
+GNUstep/System/Library/Headers/GormPrefs/GormPluginsPref.h
+GNUstep/System/Library/Headers/GormPrefs/GormPrefController.h
+GNUstep/System/Library/Headers/GormPrefs/GormShelfPref.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBApplicationAdditions.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBCellAdditions.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBCellProtocol.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBConnectors.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBDefines.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBDocuments.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBEditors.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBInspector.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBInspectorManager.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBInspectorMode.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBObjectAdditions.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBObjectProtocol.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBPalette.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBPlugin.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBProjectFiles.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBProjects.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBResourceManager.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBSystem.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBViewAdditions.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBViewProtocol.h
+GNUstep/System/Library/Headers/InterfaceBuilder/IBViewResourceDragging.h
+GNUstep/System/Library/Headers/InterfaceBuilder/InterfaceBuilder.h
+GNUstep/System/Library/Libraries/libGorm.so
+GNUstep/System/Library/Libraries/libGorm.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libGorm.so.%%LIBVERSION%%
+GNUstep/System/Library/Libraries/libGormCore.so
+GNUstep/System/Library/Libraries/libGormCore.so.%%MAJORVERSION%%
+GNUstep/System/Library/Libraries/libGormCore.so.%%VERSION%%
+GNUstep/System/Library/Libraries/libGormObjCHeaderParser.so
+GNUstep/System/Library/Libraries/libGormObjCHeaderParser.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libGormObjCHeaderParser.so.%%LIBVERSION%%
+GNUstep/System/Library/Libraries/libGormPrefs.so
+GNUstep/System/Library/Libraries/libGormPrefs.so.%%MAJORVERSION%%
+GNUstep/System/Library/Libraries/libGormPrefs.so.%%VERSION%%
+GNUstep/System/Tools/Gorm
+@dirrm GNUstep/System/Library/Headers/InterfaceBuilder
+@dirrm GNUstep/System/Library/Headers/GormPrefs
+@dirrm GNUstep/System/Library/Headers/GormObjCHeaderParser
+@dirrm GNUstep/System/Library/Headers/GormCore
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/Nib.plugin/Resources
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/Nib.plugin
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/Gorm.plugin/Resources
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/Gorm.plugin
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/GModel.plugin/Resources
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/GModel.plugin
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSoundInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormShelfPref.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormSetName.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormScrollViewAttributesInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPreferences.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefPlugins.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefPalettes.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefHeaders.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefGuideline.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefGeneral.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPrefColors.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormPalettePanel.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormObjectInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormNSSplitViewInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormInspectorPanel.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormInconsistenciesPanel.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormImageInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormHelpInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormFontView.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormDummyInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormDocument.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormCustomClassInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormConnectionInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassPanel.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/GormClassEditor.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj/Gorm.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/English.lproj
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSTextViewInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSImageViewInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSDateFormatterInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/4Data.palette/Resources
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/4Data.palette
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabViewInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableViewInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette/Resources
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/3Containers.palette
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFieldInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSStepperInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSSliderInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSProgressIndicatorInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSPopUpButtonInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSMatrixInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSFormInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSColorWellInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSCellInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSButtonInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette/Resources
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/2Controls.palette
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormDrawerAttributesInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette/Resources
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/1Windows.palette
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette/Resources
+@dirrm GNUstep/System/Applications/Gorm.app/Resources/0Menus.palette
+@dirrm GNUstep/System/Applications/Gorm.app/Resources
+@dirrm GNUstep/System/Applications/Gorm.app

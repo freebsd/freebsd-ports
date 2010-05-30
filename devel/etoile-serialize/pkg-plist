@@ -1,33 +1,33 @@
-Local/Library/Frameworks/EtoileSerialize.framework/EtoileSerialize
-Local/Library/Frameworks/EtoileSerialize.framework/EtoileSerialize.framework
-Local/Library/Frameworks/EtoileSerialize.framework/Headers
-Local/Library/Frameworks/EtoileSerialize.framework/Resources
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/EtoileSerialize
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ESProxy.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETDeserializer.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETDeserializerBackend.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETDeserializerBackendBinary.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETObjectStore.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializer.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackend.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackendBinary.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackendExample.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackendXML.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerNullBackend.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETUtility.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/EtoileSerialize.h
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so.%%MAJORVERSION%%
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so.%%VERSION%%
-Local/Library/Frameworks/EtoileSerialize.framework/Versions/Current
-Local/Library/Frameworks/EtoileSerialize.framework/libEtoileSerialize.so
-Local/Library/Headers/EtoileSerialize
-Local/Library/Libraries/libEtoileSerialize.so
-Local/Library/Libraries/libEtoileSerialize.so.%%MAJORVERSION%%
-Local/Library/Libraries/libEtoileSerialize.so.%%VERSION%%
-@dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%
-@dirrm Local/Library/Frameworks/EtoileSerialize.framework/Versions
-@dirrm Local/Library/Frameworks/EtoileSerialize.framework
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/EtoileSerialize
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/EtoileSerialize.framework
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Headers
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Resources
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/EtoileSerialize
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ESProxy.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETDeserializer.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETDeserializerBackend.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETDeserializerBackendBinary.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETObjectStore.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializer.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackend.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackendBinary.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackendExample.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerBackendXML.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETSerializerNullBackend.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/ETUtility.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers/EtoileSerialize.h
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/libEtoileSerialize.so.%%VERSION%%
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/libEtoileSerialize.so
+GNUstep/Local/Library/Headers/EtoileSerialize
+GNUstep/Local/Library/Libraries/libEtoileSerialize.so
+GNUstep/Local/Library/Libraries/libEtoileSerialize.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Libraries/libEtoileSerialize.so.%%VERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions/%%MAJORVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/EtoileSerialize.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/EtoileSerialize.framework

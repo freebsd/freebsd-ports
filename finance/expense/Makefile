@@ -16,7 +16,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Application to track your expense under GNUstep
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

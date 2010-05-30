@@ -1,16 +1,16 @@
-Local/Applications/batmon.app/Resources/BatMon_icon.tif
-Local/Applications/batmon.app/Resources/Info-gnustep.plist
-Local/Applications/batmon.app/Resources/LICENSE
-Local/Applications/batmon.app/Resources/README
-Local/Applications/batmon.app/Resources/batmon.desktop
-Local/Applications/batmon.app/Resources/batmon.gorm/data.classes
-Local/Applications/batmon.app/Resources/batmon.gorm/data.info
-Local/Applications/batmon.app/Resources/batmon.gorm/objects.gorm
-Local/Applications/batmon.app/Resources/small_battery.tif
-Local/Applications/batmon.app/Resources/small_plug.tif
-Local/Applications/batmon.app/batmon
-Local/Applications/batmon.app/stamp.make
-Local/Tools/batmon
-@dirrm Local/Applications/batmon.app/Resources/batmon.gorm
-@dirrm Local/Applications/batmon.app/Resources
-@dirrm Local/Applications/batmon.app
+GNUstep/Local/Applications/batmon.app/Resources/BatMon_icon.tif
+GNUstep/Local/Applications/batmon.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/batmon.app/Resources/LICENSE
+GNUstep/Local/Applications/batmon.app/Resources/README
+GNUstep/Local/Applications/batmon.app/Resources/batmon.desktop
+GNUstep/Local/Applications/batmon.app/Resources/batmon.gorm/data.classes
+GNUstep/Local/Applications/batmon.app/Resources/batmon.gorm/data.info
+GNUstep/Local/Applications/batmon.app/Resources/batmon.gorm/objects.gorm
+GNUstep/Local/Applications/batmon.app/Resources/small_battery.tif
+GNUstep/Local/Applications/batmon.app/Resources/small_plug.tif
+GNUstep/Local/Applications/batmon.app/batmon
+GNUstep/Local/Applications/batmon.app/stamp.make
+GNUstep/Local/Tools/batmon
+@dirrm GNUstep/Local/Applications/batmon.app/Resources/batmon.gorm
+@dirrm GNUstep/Local/Applications/batmon.app/Resources
+@dirrm GNUstep/Local/Applications/batmon.app

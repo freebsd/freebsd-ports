@@ -15,7 +15,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Image filtering and manipulation using GNUstep
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

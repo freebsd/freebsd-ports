@@ -19,11 +19,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Objective-C libraries based on the OpenStep standard
 
-NO_PACKAGE=	GPL3
 NO_BUILD=	yes
 NO_INSTALL=	yes
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_BACK=	yes

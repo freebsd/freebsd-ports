@@ -1,39 +1,39 @@
-Local/Applications/HelpViewer.app/HelpViewer
-Local/Applications/HelpViewer.app/Resources/Back.tiff
-Local/Applications/HelpViewer.app/Resources/Bookshelf.tiff
-Local/Applications/HelpViewer.app/Resources/HelpViewer.desktop
-Local/Applications/HelpViewer.app/Resources/HelpViewer.help/.gwdir
-Local/Applications/HelpViewer.app/Resources/HelpViewer.help/Bases.xlp
-Local/Applications/HelpViewer.app/Resources/HelpViewer.help/Creation.xlp
-Local/Applications/HelpViewer.app/Resources/HelpViewer.help/Introduction.xlp
-Local/Applications/HelpViewer.app/Resources/HelpViewer.help/Logo.tiff
-Local/Applications/HelpViewer.app/Resources/HelpViewer.help/ToDo.xlp
-Local/Applications/HelpViewer.app/Resources/HelpViewer.help/attention.png
-Local/Applications/HelpViewer.app/Resources/HelpViewer.help/helpviewer-200.tiff
-Local/Applications/HelpViewer.app/Resources/HelpViewer.help/main.xlp
-Local/Applications/HelpViewer.app/Resources/HelpViewer.help/note.png
-Local/Applications/HelpViewer.app/Resources/HelpViewer.tiff
-Local/Applications/HelpViewer.app/Resources/Icon-hlpd.tiff
-Local/Applications/HelpViewer.app/Resources/Index.tiff
-Local/Applications/HelpViewer.app/Resources/Info-gnustep.plist
-Local/Applications/HelpViewer.app/Resources/Logo.tiff
-Local/Applications/HelpViewer.app/Resources/Main.gorm/data.classes
-Local/Applications/HelpViewer.app/Resources/Main.gorm/objects.gorm
-Local/Applications/HelpViewer.app/Resources/Point.tiff
-Local/Applications/HelpViewer.app/Resources/Point2.tiff
-Local/Applications/HelpViewer.app/Resources/Search.tiff
-Local/Applications/HelpViewer.app/Resources/caution.png
-Local/Applications/HelpViewer.app/Resources/chapter.tiff
-Local/Applications/HelpViewer.app/Resources/errorloading.tiff
-Local/Applications/HelpViewer.app/Resources/helpviewer-200.tiff
-Local/Applications/HelpViewer.app/Resources/information.png
-Local/Applications/HelpViewer.app/Resources/listing.png
-Local/Applications/HelpViewer.app/Resources/note.png
-Local/Applications/HelpViewer.app/Resources/notloaded.tiff
-Local/Applications/HelpViewer.app/Resources/part.tiff
-Local/Applications/HelpViewer.app/stamp.make
-Local/Tools/HelpViewer
-@dirrm Local/Applications/HelpViewer.app/Resources/Main.gorm
-@dirrm Local/Applications/HelpViewer.app/Resources/HelpViewer.help
-@dirrm Local/Applications/HelpViewer.app/Resources
-@dirrm Local/Applications/HelpViewer.app
+GNUstep/Local/Applications/HelpViewer.app/HelpViewer
+GNUstep/Local/Applications/HelpViewer.app/Resources/Back.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/Bookshelf.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.desktop
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help/.gwdir
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help/Bases.xlp
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help/Creation.xlp
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help/Introduction.xlp
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help/Logo.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help/ToDo.xlp
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help/attention.png
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help/helpviewer-200.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help/main.xlp
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help/note.png
+GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/Icon-hlpd.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/Index.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/HelpViewer.app/Resources/Logo.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/Main.gorm/data.classes
+GNUstep/Local/Applications/HelpViewer.app/Resources/Main.gorm/objects.gorm
+GNUstep/Local/Applications/HelpViewer.app/Resources/Point.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/Point2.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/Search.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/caution.png
+GNUstep/Local/Applications/HelpViewer.app/Resources/chapter.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/errorloading.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/helpviewer-200.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/information.png
+GNUstep/Local/Applications/HelpViewer.app/Resources/listing.png
+GNUstep/Local/Applications/HelpViewer.app/Resources/note.png
+GNUstep/Local/Applications/HelpViewer.app/Resources/notloaded.tiff
+GNUstep/Local/Applications/HelpViewer.app/Resources/part.tiff
+GNUstep/Local/Applications/HelpViewer.app/stamp.make
+GNUstep/Local/Tools/HelpViewer
+@dirrm GNUstep/Local/Applications/HelpViewer.app/Resources/Main.gorm
+@dirrm GNUstep/Local/Applications/HelpViewer.app/Resources/HelpViewer.help
+@dirrm GNUstep/Local/Applications/HelpViewer.app/Resources
+@dirrm GNUstep/Local/Applications/HelpViewer.app

@@ -17,7 +17,6 @@ COMMENT=	Obj-C wrapper for gtk, a x11 graphics library
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_MAKEFILE=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes

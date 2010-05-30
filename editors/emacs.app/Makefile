@@ -19,7 +19,6 @@ USE_GNUSTEP=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_MAKE=	yes
 
@@ -47,7 +46,7 @@ post-install:
 	cd ${BASEDIR}/bin && ${RM} -f emacs emacs-23*
 	cd ${BASEDIR}/libexec && ${MV} -f emacs/*/*/* .
 	cd ${BASEDIR}/libexec && ${RM} -fr emacs
-	${CP} -r ${WRKSRC}/nextstep/build/Emacs.app ${PREFIX}/System/Applications/
+	${CP} -r ${WRKSRC}/nextstep/build/Emacs.app ${GNUSTEP_PREFIX}/System/Applications/
 .if defined(PACKAGE_BUILDING) || defined(BATCH) || defined(CLEAN_ROOT)
 	${RM} -rf /root/GNUstep
 .endif

@@ -1,4 +1,4 @@
-Local/Library/Services/LaTeX.service/LaTeX
-Local/Library/Services/LaTeX.service/Resources/Info-gnustep.plist
-@dirrm Local/Library/Services/LaTeX.service/Resources
-@dirrm Local/Library/Services/LaTeX.service
+GNUstep/Local/Library/Services/LaTeX.service/LaTeX
+GNUstep/Local/Library/Services/LaTeX.service/Resources/Info-gnustep.plist
+@dirrm GNUstep/Local/Library/Services/LaTeX.service/Resources
+@dirrm GNUstep/Local/Library/Services/LaTeX.service

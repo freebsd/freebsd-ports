@@ -1,110 +1,110 @@
-Local/Library/Documentation/EtoileThread
-Local/Library/Documentation/EtoileXML
-Local/Library/Frameworks/EtoileFoundation.framework/EtoileFoundation
-Local/Library/Frameworks/EtoileFoundation.framework/EtoileFoundation.framework
-Local/Library/Frameworks/EtoileFoundation.framework/Headers
-Local/Library/Frameworks/EtoileFoundation.framework/Resources
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/EtoileFoundation
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETCArray.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETCollection.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/EtoileCompatibility.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETFilter.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETGetOptionsDictionary.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETHistoryManager.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETObjectChain.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETObjectRegistry.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETPropertyValueCoding.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETRendering.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETTransform.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETTranscript.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETUTI.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETUUID.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/EtoileFoundation.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/Macros.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSArray+map.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSFileManager+NameForTempFile.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSFileManager+TempFile.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSIndexPath+Etoile.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSIndexSet+Etoile.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSInvocation+Etoile.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+Etoile.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+Mixins.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+Model.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSString+Etoile.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSURL+Etoile.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/OSBundleExtensionLoader.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/UKFileWatcher.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/UKMainThreadProxy.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/UKPluginsRegistry.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/UKPushbackMessenger.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/UKThreadMessenger.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+Prototypes.h
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Resources/UTIDefinitions.plist
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/libEtoileFoundation.so
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/libEtoileFoundation.so.%%MAJORVERSION%%
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/libEtoileFoundation.so.%%VERSION%%
-Local/Library/Frameworks/EtoileFoundation.framework/Versions/Current
-Local/Library/Frameworks/EtoileFoundation.framework/libEtoileFoundation.so
-Local/Library/Frameworks/EtoileThread.framework/EtoileThread
-Local/Library/Frameworks/EtoileThread.framework/EtoileThread.framework
-Local/Library/Frameworks/EtoileThread.framework/Headers
-Local/Library/Frameworks/EtoileThread.framework/Resources
-Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/EtoileThread
-Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETThread.h
-Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETThreadProxyReturn.h
-Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETThreadedObject.h
-Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSObject+Futures.h
-Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSObject+Threaded.h
-Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/libEtoileThread.so
-Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/libEtoileThread.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/libEtoileThread.so.%%LIBVERSION%%
-Local/Library/Frameworks/EtoileThread.framework/Versions/Current
-Local/Library/Frameworks/EtoileThread.framework/libEtoileThread.so
-Local/Library/Frameworks/EtoileXML.framework/EtoileXML
-Local/Library/Frameworks/EtoileXML.framework/EtoileXML.framework
-Local/Library/Frameworks/EtoileXML.framework/Headers
-Local/Library/Frameworks/EtoileXML.framework/Resources
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/EtoileXML
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLDeclaration.h
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLNode.h
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLNullHandler.h
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLParser.h
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLParserDelegate.h
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLString.h
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLXHTML-IMParser.h
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/NSAttributedString+HTML.h
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/libEtoileXML.so
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/libEtoileXML.so.%%MAJORLIBVERSION2%%
-Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/libEtoileXML.so.%%LIBVERSION2%%
-Local/Library/Frameworks/EtoileXML.framework/Versions/Current
-Local/Library/Frameworks/EtoileXML.framework/libEtoileXML.so
-Local/Library/Headers/EtoileFoundation
-Local/Library/Headers/EtoileThread
-Local/Library/Headers/EtoileXML
-Local/Library/Libraries/libEtoileFoundation.so
-Local/Library/Libraries/libEtoileFoundation.so.%%MAJORVERSION%%
-Local/Library/Libraries/libEtoileFoundation.so.%%VERSION%%
-Local/Library/Libraries/libEtoileThread.so
-Local/Library/Libraries/libEtoileThread.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libEtoileThread.so.%%LIBVERSION%%
-Local/Library/Libraries/libEtoileXML.so
-Local/Library/Libraries/libEtoileXML.so.%%MAJORLIBVERSION2%%
-Local/Library/Libraries/libEtoileXML.so.%%LIBVERSION2%%
-@dirrm Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Resources
-@dirrm Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers
-@dirrm Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%
-@dirrm Local/Library/Frameworks/EtoileXML.framework/Versions
-@dirrm Local/Library/Frameworks/EtoileXML.framework
-@dirrm Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/EtoileThread.framework/Versions
-@dirrm Local/Library/Frameworks/EtoileThread.framework
-@dirrm Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%
-@dirrm Local/Library/Frameworks/EtoileFoundation.framework/Versions
-@dirrm Local/Library/Frameworks/EtoileFoundation.framework
+GNUstep/Local/Library/Documentation/EtoileThread
+GNUstep/Local/Library/Documentation/EtoileXML
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/EtoileFoundation
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/EtoileFoundation.framework
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Headers
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Resources
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/EtoileFoundation
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETCArray.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETCollection.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/EtoileCompatibility.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETFilter.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETGetOptionsDictionary.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETHistoryManager.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETObjectChain.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETObjectRegistry.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETPropertyValueCoding.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETRendering.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETTransform.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETTranscript.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETUTI.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/ETUUID.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/EtoileFoundation.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/Macros.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSArray+map.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSFileManager+NameForTempFile.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSFileManager+TempFile.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSIndexPath+Etoile.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSIndexSet+Etoile.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSInvocation+Etoile.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+Etoile.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+Mixins.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+Model.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSString+Etoile.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSURL+Etoile.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/OSBundleExtensionLoader.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/UKFileWatcher.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/UKMainThreadProxy.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/UKPluginsRegistry.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/UKPushbackMessenger.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/UKThreadMessenger.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+Prototypes.h
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Resources/UTIDefinitions.plist
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/libEtoileFoundation.so
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/libEtoileFoundation.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/libEtoileFoundation.so.%%VERSION%%
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/libEtoileFoundation.so
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/EtoileThread
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/EtoileThread.framework
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Headers
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Resources
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/EtoileThread
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETThread.h
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETThreadProxyReturn.h
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers/ETThreadedObject.h
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSObject+Futures.h
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSObject+Threaded.h
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/libEtoileThread.so
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/libEtoileThread.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/libEtoileThread.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/EtoileThread.framework/libEtoileThread.so
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/EtoileXML
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/EtoileXML.framework
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Headers
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Resources
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/EtoileXML
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLDeclaration.h
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLNode.h
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLNullHandler.h
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLParser.h
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLParserDelegate.h
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLString.h
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ETXMLXHTML-IMParser.h
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers/NSAttributedString+HTML.h
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/libEtoileXML.so
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/libEtoileXML.so.%%MAJORLIBVERSION2%%
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/libEtoileXML.so.%%LIBVERSION2%%
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/EtoileXML.framework/libEtoileXML.so
+GNUstep/Local/Library/Headers/EtoileFoundation
+GNUstep/Local/Library/Headers/EtoileThread
+GNUstep/Local/Library/Headers/EtoileXML
+GNUstep/Local/Library/Libraries/libEtoileFoundation.so
+GNUstep/Local/Library/Libraries/libEtoileFoundation.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Libraries/libEtoileFoundation.so.%%VERSION%%
+GNUstep/Local/Library/Libraries/libEtoileThread.so
+GNUstep/Local/Library/Libraries/libEtoileThread.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libEtoileThread.so.%%LIBVERSION%%
+GNUstep/Local/Library/Libraries/libEtoileXML.so
+GNUstep/Local/Library/Libraries/libEtoileXML.so.%%MAJORLIBVERSION2%%
+GNUstep/Local/Library/Libraries/libEtoileXML.so.%%LIBVERSION2%%
+@dirrm GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions/%%MAJORLIBVERSION2%%
+@dirrm GNUstep/Local/Library/Frameworks/EtoileXML.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/EtoileXML.framework
+@dirrm GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/EtoileThread.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/EtoileThread.framework
+@dirrm GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions/%%MAJORVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/EtoileFoundation.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/EtoileFoundation.framework

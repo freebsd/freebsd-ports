@@ -1,10 +1,10 @@
-Local/Applications/AppWrapper.app/AppWrapper
-Local/Applications/AppWrapper.app/Resources/AppWrapper.app.tiff
-Local/Applications/AppWrapper.app/Resources/AppWrapper.desktop
-Local/Applications/AppWrapper.app/Resources/AppWrapper.gorm
-Local/Applications/AppWrapper.app/Resources/AppWrapperInfo.plist
-Local/Applications/AppWrapper.app/Resources/Info-gnustep.plist
-Local/Applications/AppWrapper.app/stamp.make
-Local/Tools/AppWrapper
-@dirrm Local/Applications/AppWrapper.app/Resources
-@dirrm Local/Applications/AppWrapper.app
+GNUstep/Local/Applications/AppWrapper.app/AppWrapper
+GNUstep/Local/Applications/AppWrapper.app/Resources/AppWrapper.app.tiff
+GNUstep/Local/Applications/AppWrapper.app/Resources/AppWrapper.desktop
+GNUstep/Local/Applications/AppWrapper.app/Resources/AppWrapper.gorm
+GNUstep/Local/Applications/AppWrapper.app/Resources/AppWrapperInfo.plist
+GNUstep/Local/Applications/AppWrapper.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/AppWrapper.app/stamp.make
+GNUstep/Local/Tools/AppWrapper
+@dirrm GNUstep/Local/Applications/AppWrapper.app/Resources
+@dirrm GNUstep/Local/Applications/AppWrapper.app

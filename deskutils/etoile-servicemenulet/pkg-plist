@@ -1,5 +1,5 @@
-Local/Library/Bundles/ServiceMenulet.menulet/Resources/Info-gnustep.plist
-Local/Library/Bundles/ServiceMenulet.menulet/ServiceMenulet
-Local/Library/Bundles/ServiceMenulet.menulet/stamp.make
-@dirrm Local/Library/Bundles/ServiceMenulet.menulet/Resources
-@dirrm Local/Library/Bundles/ServiceMenulet.menulet
+GNUstep/Local/Library/Bundles/ServiceMenulet.menulet/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/ServiceMenulet.menulet/ServiceMenulet
+GNUstep/Local/Library/Bundles/ServiceMenulet.menulet/stamp.make
+@dirrm GNUstep/Local/Library/Bundles/ServiceMenulet.menulet/Resources
+@dirrm GNUstep/Local/Library/Bundles/ServiceMenulet.menulet

@@ -1,23 +1,23 @@
-System/Applications/WrapperFactory.app/Resources/DefaultAppIcon.tiff
-System/Applications/WrapperFactory.app/Resources/DesktopEntry.tiff
-System/Applications/WrapperFactory.app/Resources/English.lproj/Localizable.strings
-System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperDocument.gorm/data.classes
-System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperDocument.gorm/objects.gorm
-System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperFactory.gorm/data.classes
-System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperFactory.gorm/objects.gorm
-System/Applications/WrapperFactory.app/Resources/GSWrapper_Launcher
-System/Applications/WrapperFactory.app/Resources/Info-gnustep.plist
-System/Applications/WrapperFactory.app/Resources/WrapperFactory.desktop
-System/Applications/WrapperFactory.app/Resources/WrapperFactory.tiff
-System/Applications/WrapperFactory.app/WrapperFactory
-System/Applications/WrapperFactory.app/stamp.make
-System/Library/Libraries/libGSWrapper.so
-System/Library/Libraries/libGSWrapper.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libGSWrapper.so.%%LIBVERSION%%
-System/Tools/GSWrapper_Launcher
-System/Tools/WrapperFactory
-@dirrm System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperFactory.gorm
-@dirrm System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperDocument.gorm
-@dirrm System/Applications/WrapperFactory.app/Resources/English.lproj
-@dirrm System/Applications/WrapperFactory.app/Resources
-@dirrm System/Applications/WrapperFactory.app
+GNUstep/System/Applications/WrapperFactory.app/Resources/DefaultAppIcon.tiff
+GNUstep/System/Applications/WrapperFactory.app/Resources/DesktopEntry.tiff
+GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj/Localizable.strings
+GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperDocument.gorm/data.classes
+GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperDocument.gorm/objects.gorm
+GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperFactory.gorm/data.classes
+GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperFactory.gorm/objects.gorm
+GNUstep/System/Applications/WrapperFactory.app/Resources/GSWrapper_Launcher
+GNUstep/System/Applications/WrapperFactory.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/WrapperFactory.app/Resources/WrapperFactory.desktop
+GNUstep/System/Applications/WrapperFactory.app/Resources/WrapperFactory.tiff
+GNUstep/System/Applications/WrapperFactory.app/WrapperFactory
+GNUstep/System/Applications/WrapperFactory.app/stamp.make
+GNUstep/System/Library/Libraries/libGSWrapper.so
+GNUstep/System/Library/Libraries/libGSWrapper.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libGSWrapper.so.%%LIBVERSION%%
+GNUstep/System/Tools/GSWrapper_Launcher
+GNUstep/System/Tools/WrapperFactory
+@dirrm GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperFactory.gorm
+@dirrm GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj/WrapperDocument.gorm
+@dirrm GNUstep/System/Applications/WrapperFactory.app/Resources/English.lproj
+@dirrm GNUstep/System/Applications/WrapperFactory.app/Resources
+@dirrm GNUstep/System/Applications/WrapperFactory.app

@@ -1,20 +1,20 @@
-Local/Applications/GSBench.app/GSBench
-Local/Applications/GSBench.app/Resources/Bundles.plist
-Local/Applications/GSBench.app/Resources/GSBench.desktop
-Local/Applications/GSBench.app/Resources/GSBench.tiff
-Local/Applications/GSBench.app/Resources/GSBenchInfo.plist
-Local/Applications/GSBench.app/Resources/Info-gnustep.plist
-Local/Applications/GSBench.app/stamp.make
-Local/Library/Bundles/Dhry.bundle/Dhry
-Local/Library/Bundles/Dhry.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Dhry.bundle/stamp.make
-Local/Library/Bundles/GSFactor.bundle/GSFactor
-Local/Library/Bundles/GSFactor.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/GSFactor.bundle/stamp.make
-Local/Tools/GSBench
-@dirrm Local/Library/Bundles/GSFactor.bundle/Resources
-@dirrm Local/Library/Bundles/GSFactor.bundle
-@dirrm Local/Library/Bundles/Dhry.bundle/Resources
-@dirrm Local/Library/Bundles/Dhry.bundle
-@dirrm Local/Applications/GSBench.app/Resources
-@dirrm Local/Applications/GSBench.app
+GNUstep/Local/Applications/GSBench.app/GSBench
+GNUstep/Local/Applications/GSBench.app/Resources/Bundles.plist
+GNUstep/Local/Applications/GSBench.app/Resources/GSBench.desktop
+GNUstep/Local/Applications/GSBench.app/Resources/GSBench.tiff
+GNUstep/Local/Applications/GSBench.app/Resources/GSBenchInfo.plist
+GNUstep/Local/Applications/GSBench.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/GSBench.app/stamp.make
+GNUstep/Local/Library/Bundles/Dhry.bundle/Dhry
+GNUstep/Local/Library/Bundles/Dhry.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Dhry.bundle/stamp.make
+GNUstep/Local/Library/Bundles/GSFactor.bundle/GSFactor
+GNUstep/Local/Library/Bundles/GSFactor.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/GSFactor.bundle/stamp.make
+GNUstep/Local/Tools/GSBench
+@dirrm GNUstep/Local/Library/Bundles/GSFactor.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/GSFactor.bundle
+@dirrm GNUstep/Local/Library/Bundles/Dhry.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Dhry.bundle
+@dirrm GNUstep/Local/Applications/GSBench.app/Resources
+@dirrm GNUstep/Local/Applications/GSBench.app

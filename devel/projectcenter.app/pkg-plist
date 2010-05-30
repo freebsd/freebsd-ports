@@ -1,279 +1,279 @@
-System/Applications/ProjectCenter.app/ProjectCenter
-System/Applications/ProjectCenter.app/Resources/Aggregate.project/Aggregate
-System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Info-gnustep.plist
-System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Info.table
-System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Inspector.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Inspector.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Inspector.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/PC.project
-System/Applications/ProjectCenter.app/Resources/Aggregate.project/stamp.make
-System/Applications/ProjectCenter.app/Resources/Application.project/Application
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/AppController.h
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/AppController.m
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Info-gnustep.plist
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Info.gnustep
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Info.table
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Inspector.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Inspector.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Inspector.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Main.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Main.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Main.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Main.gsmarkup
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/MainMenu-GNUstep.gsmarkup
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/MainMenu-OSX.gsmarkup
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/PC.project
-System/Applications/ProjectCenter.app/Resources/Application.project/Resources/main.m
-System/Applications/ProjectCenter.app/Resources/Application.project/stamp.make
-System/Applications/ProjectCenter.app/Resources/Build.tiff
-System/Applications/ProjectCenter.app/Resources/Bundle.project/Bundle
-System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Info-gnustep.plist
-System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Info.table
-System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Inspector.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Inspector.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Inspector.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/PC.project
-System/Applications/ProjectCenter.app/Resources/Bundle.project/stamp.make
-System/Applications/ProjectCenter.app/Resources/Clean.tiff
-System/Applications/ProjectCenter.app/Resources/Debug.tiff
-System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/Info.tiff
-System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/English.lproj/ProjectCenter.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/English.lproj/ProjectCenter.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/English.lproj/ProjectCenter.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/FileProject.tiff
-System/Applications/ProjectCenter.app/Resources/Files.tiff
-System/Applications/ProjectCenter.app/Resources/Find.tiff
-System/Applications/ProjectCenter.app/Resources/Framework.project/Framework
-System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Info-gnustep.plist
-System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Info.table
-System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Inspector.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Inspector.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Inspector.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/PC.project
-System/Applications/ProjectCenter.app/Resources/Framework.project/stamp.make
-System/Applications/ProjectCenter.app/Resources/Info-gnustep.plist
-System/Applications/ProjectCenter.app/Resources/Inspector.tiff
-System/Applications/ProjectCenter.app/Resources/Install.tiff
-System/Applications/ProjectCenter.app/Resources/Library.project/Library
-System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Info-gnustep.plist
-System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Info.table
-System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Inspector.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Inspector.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Inspector.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/Library.project/Resources/PC.project
-System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Version
-System/Applications/ProjectCenter.app/Resources/Library.project/stamp.make
-System/Applications/ProjectCenter.app/Resources/MultiFiles.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.desktop
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/ProjectCenter
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/C.syntax
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileC.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileCH.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileH.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileHH.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileM.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileMH.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Info-gnustep.plist
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Info.table
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/ObjC.syntax
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Plist.syntax
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/stamp.make
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser/ProjectCenter
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser/Resources/Info-gnustep.plist
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser/Resources/Info.table
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser/stamp.make
-System/Applications/ProjectCenter.app/Resources/ProjectCenter.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter_add.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter_cvs.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter_dist.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter_documentation.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter_profile.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter_rpm.tiff
-System/Applications/ProjectCenter.app/Resources/ProjectCenter_uml.tiff
-System/Applications/ProjectCenter.app/Resources/ResourceSet.project/ResourceSet
-System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Info-gnustep.plist
-System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Info.table
-System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Inspector.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Inspector.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Inspector.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/PC.project
-System/Applications/ProjectCenter.app/Resources/ResourceSet.project/stamp.make
-System/Applications/ProjectCenter.app/Resources/Run.tiff
-System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Info-gnustep.plist
-System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Info.gnustep
-System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Info.table
-System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gorm/data.classes
-System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gorm/data.info
-System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gorm/objects.gorm
-System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/PC.project
-System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/main.m
-System/Applications/ProjectCenter.app/Resources/Tool.project/Tool
-System/Applications/ProjectCenter.app/Resources/Tool.project/stamp.make
-System/Applications/ProjectCenter.app/Resources/classSuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/classSuitcaseH.tiff
-System/Applications/ProjectCenter.app/Resources/genericSuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/genericSuitcaseH.tiff
-System/Applications/ProjectCenter.app/Resources/headerSuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/headerSuitcaseH.tiff
-System/Applications/ProjectCenter.app/Resources/helpSuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/helpSuitcaseH.tiff
-System/Applications/ProjectCenter.app/Resources/iconSuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/iconSuitcaseH.tiff
-System/Applications/ProjectCenter.app/Resources/librarySuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/librarySuitcaseH.tiff
-System/Applications/ProjectCenter.app/Resources/nibSuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/nibSuitcaseH.tiff
-System/Applications/ProjectCenter.app/Resources/otherSuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/otherSuitcaseH.tiff
-System/Applications/ProjectCenter.app/Resources/projectSuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/projectSuitcaseH.tiff
-System/Applications/ProjectCenter.app/Resources/soundSuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/soundSuitcaseH.tiff
-System/Applications/ProjectCenter.app/Resources/subprojectSuitcase.tiff
-System/Applications/ProjectCenter.app/Resources/subprojectSuitcaseH.tiff
-System/Applications/ProjectCenter.app/stamp.make
-System/Library/Frameworks/ProjectCenter.framework/Headers
-System/Library/Frameworks/ProjectCenter.framework/ProjectCenter
-System/Library/Frameworks/ProjectCenter.framework/Resources
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCAddFilesPanel.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCBundleManager.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCDefines.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCEditorManager.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCFileCreator.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCFileManager.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCLogController.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCMakefileFactory.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCPrefController.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProject.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectBrowser.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectBuilder.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectBuilderOptions.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectBuilderPanel.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectEditor.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectInspector.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectLauncher.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectLauncherPanel.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectLoadedFiles.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectLoadedFilesPanel.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectManager.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectWindow.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/ProjectCenter.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/Protocols/CodeEditor.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/Protocols/CodeParser.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/Protocols/ProjectType.h
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/ProjectCenter
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuildAttributes.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuildAttributes.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuildAttributes.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Builder.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Builder.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Builder.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderOptions.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderOptions.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderOptions.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderPanel.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderPanel.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderPanel.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/FileAttributes.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/FileAttributes.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/FileAttributes.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/LogPanel.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/LogPanel.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/LogPanel.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewFile.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewFile.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewFile.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewSubproject.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewSubproject.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewSubproject.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Preferences.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Preferences.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Preferences.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectAttributes.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectAttributes.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectAttributes.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectDescription.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectDescription.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectDescription.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectInspector.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectInspector.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectInspector.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectWindow.gorm/data.classes
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectWindow.gorm/data.info
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectWindow.gorm/objects.gorm
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/Info-gnustep.plist
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/cfile.template
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/cheader.template
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/class.template
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/gsmarkup.template
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/header.template
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/postamble.template
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/protocol.template
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/libProjectCenter.so
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/libProjectCenter.so.%%MAJORVERSION%%
-System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/libProjectCenter.so.%%FRAMEVERSION%%
-System/Library/Frameworks/ProjectCenter.framework/Versions/Current
-System/Library/Frameworks/ProjectCenter.framework/libProjectCenter.so
-System/Library/Headers/ProjectCenter
-System/Library/Libraries/libProjectCenter.so
-System/Library/Libraries/libProjectCenter.so.%%MAJORVERSION%%
-System/Library/Libraries/libProjectCenter.so.%%FRAMEVERSION%%
-System/Tools/ProjectCenter
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectWindow.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectInspector.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectDescription.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectAttributes.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Preferences.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewSubproject.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewFile.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/LogPanel.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/FileAttributes.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderPanel.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderOptions.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Builder.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuildAttributes.gorm
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/Protocols
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions
-@dirrm System/Library/Frameworks/ProjectCenter.framework
-@dirrm System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/Tool.project/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/Tool.project
-@dirrm System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/ResourceSet.project
-@dirrm System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser
-@dirrm System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor
-@dirrm System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/Library.project/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/Library.project
-@dirrm System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/Framework.project/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/Framework.project
-@dirrm System/Applications/ProjectCenter.app/Resources/English.lproj/ProjectCenter.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/English.lproj
-@dirrm System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/Bundle.project
-@dirrm System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Main.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/Application.project/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/Application.project
-@dirrm System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/Aggregate.project
-@dirrm System/Applications/ProjectCenter.app/Resources
-@dirrm System/Applications/ProjectCenter.app
+GNUstep/System/Applications/ProjectCenter.app/ProjectCenter
+GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project/Aggregate
+GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Info.table
+GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Inspector.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Inspector.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Inspector.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/PC.project
+GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project/stamp.make
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Application
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/AppController.h
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/AppController.m
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Info.gnustep
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Info.table
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Inspector.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Inspector.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Inspector.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Main.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Main.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Main.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Main.gsmarkup
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/MainMenu-GNUstep.gsmarkup
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/MainMenu-OSX.gsmarkup
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/PC.project
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/main.m
+GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/stamp.make
+GNUstep/System/Applications/ProjectCenter.app/Resources/Build.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project/Bundle
+GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Info.table
+GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Inspector.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Inspector.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Inspector.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/PC.project
+GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project/stamp.make
+GNUstep/System/Applications/ProjectCenter.app/Resources/Clean.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/Debug.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/Info.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/ProjectCenter.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/ProjectCenter.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/ProjectCenter.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/FileProject.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/Files.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/Find.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project/Framework
+GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Info.table
+GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Inspector.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Inspector.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Inspector.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/PC.project
+GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project/stamp.make
+GNUstep/System/Applications/ProjectCenter.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ProjectCenter.app/Resources/Inspector.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/Install.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/Library
+GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Info.table
+GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Inspector.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Inspector.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Inspector.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/Resources/PC.project
+GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Version
+GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/stamp.make
+GNUstep/System/Applications/ProjectCenter.app/Resources/MultiFiles.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.desktop
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/ProjectCenter
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/C.syntax
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileC.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileCH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileHH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileM.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileMH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Info.table
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/ObjC.syntax
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Plist.syntax
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/stamp.make
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser/ProjectCenter
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser/Resources/Info.table
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser/stamp.make
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter_add.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter_cvs.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter_dist.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter_documentation.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter_profile.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter_rpm.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter_uml.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project/ResourceSet
+GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Info.table
+GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Inspector.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Inspector.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Inspector.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/PC.project
+GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project/stamp.make
+GNUstep/System/Applications/ProjectCenter.app/Resources/Run.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Info.gnustep
+GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Info.table
+GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gorm/data.classes
+GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gorm/data.info
+GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gorm/objects.gorm
+GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/PC.project
+GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/main.m
+GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Tool
+GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/stamp.make
+GNUstep/System/Applications/ProjectCenter.app/Resources/classSuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/classSuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/genericSuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/genericSuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/headerSuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/headerSuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/helpSuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/helpSuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/iconSuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/iconSuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/librarySuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/librarySuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/nibSuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/nibSuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/otherSuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/otherSuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/projectSuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/projectSuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/soundSuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/soundSuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/subprojectSuitcase.tiff
+GNUstep/System/Applications/ProjectCenter.app/Resources/subprojectSuitcaseH.tiff
+GNUstep/System/Applications/ProjectCenter.app/stamp.make
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Headers
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/ProjectCenter
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Resources
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCAddFilesPanel.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCBundleManager.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCDefines.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCEditorManager.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCFileCreator.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCFileManager.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCLogController.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCMakefileFactory.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCPrefController.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProject.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectBrowser.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectBuilder.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectBuilderOptions.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectBuilderPanel.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectEditor.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectInspector.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectLauncher.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectLauncherPanel.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectLoadedFiles.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectLoadedFilesPanel.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectManager.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCProjectWindow.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/ProjectCenter.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/Protocols/CodeEditor.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/Protocols/CodeParser.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/Protocols/ProjectType.h
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/ProjectCenter
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuildAttributes.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuildAttributes.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuildAttributes.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Builder.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Builder.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Builder.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderOptions.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderOptions.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderOptions.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderPanel.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderPanel.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderPanel.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/FileAttributes.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/FileAttributes.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/FileAttributes.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/LogPanel.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/LogPanel.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/LogPanel.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewFile.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewFile.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewFile.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewSubproject.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewSubproject.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewSubproject.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Preferences.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Preferences.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Preferences.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectAttributes.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectAttributes.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectAttributes.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectDescription.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectDescription.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectDescription.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectInspector.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectInspector.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectInspector.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectWindow.gorm/data.classes
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectWindow.gorm/data.info
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectWindow.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/Info-gnustep.plist
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/cfile.template
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/cheader.template
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/class.template
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/gsmarkup.template
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/header.template
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/postamble.template
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/protocol.template
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/libProjectCenter.so
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/libProjectCenter.so.%%MAJORVERSION%%
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/libProjectCenter.so.%%FRAMEVERSION%%
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/Current
+GNUstep/System/Library/Frameworks/ProjectCenter.framework/libProjectCenter.so
+GNUstep/System/Library/Headers/ProjectCenter
+GNUstep/System/Library/Libraries/libProjectCenter.so
+GNUstep/System/Library/Libraries/libProjectCenter.so.%%MAJORVERSION%%
+GNUstep/System/Library/Libraries/libProjectCenter.so.%%FRAMEVERSION%%
+GNUstep/System/Tools/ProjectCenter
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectWindow.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectInspector.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectDescription.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/ProjectAttributes.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Preferences.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewSubproject.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/NewFile.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/LogPanel.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/FileAttributes.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderPanel.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuilderOptions.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/Builder.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj/BuildAttributes.gorm
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/English.lproj
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/Protocols
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework/Versions
+@dirrm GNUstep/System/Library/Frameworks/ProjectCenter.framework
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project/Resources
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Tool.project
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources/Inspector.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project/Resources
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/ResourceSet.project
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser/Resources
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.parser
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor/Resources
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/ProjectCenter.editor
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/Resources/Inspector.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project/Resources
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Library.project
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project/Resources/Inspector.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project/Resources
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Framework.project
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/ProjectCenter.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/Info.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj/FindPanel.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/English.lproj
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources/Inspector.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project/Resources
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Bundle.project
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Main.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources/Inspector.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project/Resources
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Application.project
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources/Inspector.gorm
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project/Resources
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources/Aggregate.project
+@dirrm GNUstep/System/Applications/ProjectCenter.app/Resources
+@dirrm GNUstep/System/Applications/ProjectCenter.app

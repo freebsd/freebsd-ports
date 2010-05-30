@@ -17,7 +17,6 @@ COMMENT=	Etoile Project hot-corners
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
@@ -28,7 +27,7 @@ USE_XORG=	x11
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/Corner
-PLIST_FILES=	System/Tools/Corner
+PLIST_FILES=	GUNstep/System/Tools/Corner
 
 SMALLTALKKIT_PORT?=	lang/etoile-smalltalkkit
 SCRIPTKIT_PORT?=	lang/etoile-scriptkit

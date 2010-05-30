@@ -16,7 +16,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Get rid of those nasty Wingdows viruses
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

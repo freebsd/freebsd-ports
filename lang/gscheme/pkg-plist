@@ -1,10 +1,10 @@
-Local/Applications/GScheme.app/GScheme
-Local/Applications/GScheme.app/Resources/GScheme.desktop
-Local/Applications/GScheme.app/Resources/GScheme.tiff
-Local/Applications/GScheme.app/Resources/Info-gnustep.plist
-Local/Applications/GScheme.app/Resources/lambda1.tiff
-Local/Applications/GScheme.app/Resources/library.scm
-Local/Applications/GScheme.app/stamp.make
-Local/Tools/GScheme
-@dirrm Local/Applications/GScheme.app/Resources
-@dirrm Local/Applications/GScheme.app
+GNUstep/Local/Applications/GScheme.app/GScheme
+GNUstep/Local/Applications/GScheme.app/Resources/GScheme.desktop
+GNUstep/Local/Applications/GScheme.app/Resources/GScheme.tiff
+GNUstep/Local/Applications/GScheme.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/GScheme.app/Resources/lambda1.tiff
+GNUstep/Local/Applications/GScheme.app/Resources/library.scm
+GNUstep/Local/Applications/GScheme.app/stamp.make
+GNUstep/Local/Tools/GScheme
+@dirrm GNUstep/Local/Applications/GScheme.app/Resources
+@dirrm GNUstep/Local/Applications/GScheme.app

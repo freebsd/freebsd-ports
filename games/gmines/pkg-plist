@@ -1,8 +1,8 @@
-Local/Applications/GMines.app/GMines
-Local/Applications/GMines.app/Resources/GMines.desktop
-Local/Applications/GMines.app/Resources/GMines.tiff
-Local/Applications/GMines.app/Resources/Info-gnustep.plist
-Local/Applications/GMines.app/stamp.make
-Local/Tools/GMines
-@dirrm Local/Applications/GMines.app/Resources
-@dirrm Local/Applications/GMines.app
+GNUstep/Local/Applications/GMines.app/GMines
+GNUstep/Local/Applications/GMines.app/Resources/GMines.desktop
+GNUstep/Local/Applications/GMines.app/Resources/GMines.tiff
+GNUstep/Local/Applications/GMines.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/GMines.app/stamp.make
+GNUstep/Local/Tools/GMines
+@dirrm GNUstep/Local/Applications/GMines.app/Resources
+@dirrm GNUstep/Local/Applications/GMines.app

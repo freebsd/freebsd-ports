@@ -1,13 +1,13 @@
-Local/Applications/LaternaMagica.app/LaternaMagica
-Local/Applications/LaternaMagica.app/Resources/Info-gnustep.plist
-Local/Applications/LaternaMagica.app/Resources/LaternaMagica.desktop
-Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm/data.classes
-Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm/data.info
-Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm/objects.gorm
-Local/Applications/LaternaMagica.app/Resources/laternamagica_48.tif
-Local/Applications/LaternaMagica.app/Resources/laternamagica_64.tif
-Local/Applications/LaternaMagica.app/stamp.make
-Local/Tools/LaternaMagica
-@dirrm Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm
-@dirrm Local/Applications/LaternaMagica.app/Resources
-@dirrm Local/Applications/LaternaMagica.app
+GNUstep/Local/Applications/LaternaMagica.app/LaternaMagica
+GNUstep/Local/Applications/LaternaMagica.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/LaternaMagica.app/Resources/LaternaMagica.desktop
+GNUstep/Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm/data.classes
+GNUstep/Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm/data.info
+GNUstep/Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm/objects.gorm
+GNUstep/Local/Applications/LaternaMagica.app/Resources/laternamagica_48.tif
+GNUstep/Local/Applications/LaternaMagica.app/Resources/laternamagica_64.tif
+GNUstep/Local/Applications/LaternaMagica.app/stamp.make
+GNUstep/Local/Tools/LaternaMagica
+@dirrm GNUstep/Local/Applications/LaternaMagica.app/Resources/LaternaMagica.gorm
+@dirrm GNUstep/Local/Applications/LaternaMagica.app/Resources
+@dirrm GNUstep/Local/Applications/LaternaMagica.app

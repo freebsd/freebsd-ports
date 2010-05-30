@@ -1,27 +1,27 @@
-Local/Applications/Cartotheque.app/Cartotheque
-Local/Applications/Cartotheque.app/Resources/CardInspector.gorm/data.classes
-Local/Applications/Cartotheque.app/Resources/CardInspector.gorm/data.info
-Local/Applications/Cartotheque.app/Resources/CardInspector.gorm/objects.gorm
-Local/Applications/Cartotheque.app/Resources/CardWindow.gorm/data.classes
-Local/Applications/Cartotheque.app/Resources/CardWindow.gorm/data.info
-Local/Applications/Cartotheque.app/Resources/CardWindow.gorm/objects.gorm
-Local/Applications/Cartotheque.app/Resources/Cartotheque.desktop
-Local/Applications/Cartotheque.app/Resources/Cartotheque.gorm/data.classes
-Local/Applications/Cartotheque.app/Resources/Cartotheque.gorm/data.info
-Local/Applications/Cartotheque.app/Resources/Cartotheque.gorm/objects.gorm
-Local/Applications/Cartotheque.app/Resources/CartothequeWindow.gorm/data.classes
-Local/Applications/Cartotheque.app/Resources/CartothequeWindow.gorm/data.info
-Local/Applications/Cartotheque.app/Resources/CartothequeWindow.gorm/objects.gorm
-Local/Applications/Cartotheque.app/Resources/Info-gnustep.plist
-Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/data.classes
-Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/data.info
-Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/objects.gorm
-Local/Applications/Cartotheque.app/stamp.make
-Local/Tools/Cartotheque
-@dirrm Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm
-@dirrm Local/Applications/Cartotheque.app/Resources/CartothequeWindow.gorm
-@dirrm Local/Applications/Cartotheque.app/Resources/Cartotheque.gorm
-@dirrm Local/Applications/Cartotheque.app/Resources/CardWindow.gorm
-@dirrm Local/Applications/Cartotheque.app/Resources/CardInspector.gorm
-@dirrm Local/Applications/Cartotheque.app/Resources
-@dirrm Local/Applications/Cartotheque.app
+GNUstep/Local/Applications/Cartotheque.app/Cartotheque
+GNUstep/Local/Applications/Cartotheque.app/Resources/CardInspector.gorm/data.classes
+GNUstep/Local/Applications/Cartotheque.app/Resources/CardInspector.gorm/data.info
+GNUstep/Local/Applications/Cartotheque.app/Resources/CardInspector.gorm/objects.gorm
+GNUstep/Local/Applications/Cartotheque.app/Resources/CardWindow.gorm/data.classes
+GNUstep/Local/Applications/Cartotheque.app/Resources/CardWindow.gorm/data.info
+GNUstep/Local/Applications/Cartotheque.app/Resources/CardWindow.gorm/objects.gorm
+GNUstep/Local/Applications/Cartotheque.app/Resources/Cartotheque.desktop
+GNUstep/Local/Applications/Cartotheque.app/Resources/Cartotheque.gorm/data.classes
+GNUstep/Local/Applications/Cartotheque.app/Resources/Cartotheque.gorm/data.info
+GNUstep/Local/Applications/Cartotheque.app/Resources/Cartotheque.gorm/objects.gorm
+GNUstep/Local/Applications/Cartotheque.app/Resources/CartothequeWindow.gorm/data.classes
+GNUstep/Local/Applications/Cartotheque.app/Resources/CartothequeWindow.gorm/data.info
+GNUstep/Local/Applications/Cartotheque.app/Resources/CartothequeWindow.gorm/objects.gorm
+GNUstep/Local/Applications/Cartotheque.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/data.classes
+GNUstep/Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/data.info
+GNUstep/Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/objects.gorm
+GNUstep/Local/Applications/Cartotheque.app/stamp.make
+GNUstep/Local/Tools/Cartotheque
+@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm
+@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources/CartothequeWindow.gorm
+@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources/Cartotheque.gorm
+@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources/CardWindow.gorm
+@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources/CardInspector.gorm
+@dirrm GNUstep/Local/Applications/Cartotheque.app/Resources
+@dirrm GNUstep/Local/Applications/Cartotheque.app

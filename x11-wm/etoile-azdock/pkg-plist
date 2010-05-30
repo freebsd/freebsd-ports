@@ -1,9 +1,9 @@
-System/Applications/AZDock.app/AZDock
-System/Applications/AZDock.app/Resources/AZDock.desktop
-System/Applications/AZDock.app/Resources/Etoile.tiff
-System/Applications/AZDock.app/Resources/Info-gnustep.plist
-System/Applications/AZDock.app/Resources/Unknown.tiff
-System/Applications/AZDock.app/stamp.make
-System/Tools/AZDock
-@dirrm System/Applications/AZDock.app/Resources
-@dirrm System/Applications/AZDock.app
+GNUstep/System/Applications/AZDock.app/AZDock
+GNUstep/System/Applications/AZDock.app/Resources/AZDock.desktop
+GNUstep/System/Applications/AZDock.app/Resources/Etoile.tiff
+GNUstep/System/Applications/AZDock.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/AZDock.app/Resources/Unknown.tiff
+GNUstep/System/Applications/AZDock.app/stamp.make
+GNUstep/System/Tools/AZDock
+@dirrm GNUstep/System/Applications/AZDock.app/Resources
+@dirrm GNUstep/System/Applications/AZDock.app

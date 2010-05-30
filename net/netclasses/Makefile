@@ -14,7 +14,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Objective-C framework for socket programming with GNUstep
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

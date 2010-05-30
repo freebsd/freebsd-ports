@@ -1,18 +1,18 @@
-Local/Applications/LuserNET.app/LuserNET
-Local/Applications/LuserNET.app/Resources/English.lproj/Localizable.strings
-Local/Applications/LuserNET.app/Resources/French.lproj/Localizable.strings
-Local/Applications/LuserNET.app/Resources/German.lproj/Localizable.strings
-Local/Applications/LuserNET.app/Resources/Info-gnustep.plist
-Local/Applications/LuserNET.app/Resources/LuserNET.desktop
-Local/Applications/LuserNET.app/Resources/News.app.tiff
-Local/Applications/LuserNET.app/Resources/Spanish.lproj/Localizable.strings
-Local/Applications/LuserNET.app/Resources/Swedish.lproj/Localizable.strings
-Local/Applications/LuserNET.app/stamp.make
-Local/Tools/LuserNET
-@dirrm Local/Applications/LuserNET.app/Resources/Swedish.lproj
-@dirrm Local/Applications/LuserNET.app/Resources/Spanish.lproj
-@dirrm Local/Applications/LuserNET.app/Resources/German.lproj
-@dirrm Local/Applications/LuserNET.app/Resources/French.lproj
-@dirrm Local/Applications/LuserNET.app/Resources/English.lproj
-@dirrm Local/Applications/LuserNET.app/Resources
-@dirrm Local/Applications/LuserNET.app
+GNUstep/Local/Applications/LuserNET.app/LuserNET
+GNUstep/Local/Applications/LuserNET.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/LuserNET.app/Resources/French.lproj/Localizable.strings
+GNUstep/Local/Applications/LuserNET.app/Resources/German.lproj/Localizable.strings
+GNUstep/Local/Applications/LuserNET.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/LuserNET.app/Resources/LuserNET.desktop
+GNUstep/Local/Applications/LuserNET.app/Resources/News.app.tiff
+GNUstep/Local/Applications/LuserNET.app/Resources/Spanish.lproj/Localizable.strings
+GNUstep/Local/Applications/LuserNET.app/Resources/Swedish.lproj/Localizable.strings
+GNUstep/Local/Applications/LuserNET.app/stamp.make
+GNUstep/Local/Tools/LuserNET
+@dirrm GNUstep/Local/Applications/LuserNET.app/Resources/Swedish.lproj
+@dirrm GNUstep/Local/Applications/LuserNET.app/Resources/Spanish.lproj
+@dirrm GNUstep/Local/Applications/LuserNET.app/Resources/German.lproj
+@dirrm GNUstep/Local/Applications/LuserNET.app/Resources/French.lproj
+@dirrm GNUstep/Local/Applications/LuserNET.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/LuserNET.app/Resources
+@dirrm GNUstep/Local/Applications/LuserNET.app

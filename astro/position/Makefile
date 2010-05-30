@@ -17,7 +17,6 @@ COMMENT=	GPS and Moving-Map Applikation
 LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

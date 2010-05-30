@@ -1,14 +1,14 @@
-Local/Applications/Waiho.app/Resources/Bookmarks.tiff
-Local/Applications/Waiho.app/Resources/Connect-zoom.tiff
-Local/Applications/Waiho.app/Resources/Connect.tiff
-Local/Applications/Waiho.app/Resources/Disconnect.tiff
-Local/Applications/Waiho.app/Resources/Get.tiff
-Local/Applications/Waiho.app/Resources/Info-gnustep.plist
-Local/Applications/Waiho.app/Resources/Put.tiff
-Local/Applications/Waiho.app/Resources/Waiho.desktop
-Local/Applications/Waiho.app/Resources/Waiho.tiff
-Local/Applications/Waiho.app/Waiho
-Local/Applications/Waiho.app/stamp.make
-Local/Tools/Waiho
-@dirrm Local/Applications/Waiho.app/Resources
-@dirrm Local/Applications/Waiho.app
+GNUstep/Local/Applications/Waiho.app/Resources/Bookmarks.tiff
+GNUstep/Local/Applications/Waiho.app/Resources/Connect-zoom.tiff
+GNUstep/Local/Applications/Waiho.app/Resources/Connect.tiff
+GNUstep/Local/Applications/Waiho.app/Resources/Disconnect.tiff
+GNUstep/Local/Applications/Waiho.app/Resources/Get.tiff
+GNUstep/Local/Applications/Waiho.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Waiho.app/Resources/Put.tiff
+GNUstep/Local/Applications/Waiho.app/Resources/Waiho.desktop
+GNUstep/Local/Applications/Waiho.app/Resources/Waiho.tiff
+GNUstep/Local/Applications/Waiho.app/Waiho
+GNUstep/Local/Applications/Waiho.app/stamp.make
+GNUstep/Local/Tools/Waiho
+@dirrm GNUstep/Local/Applications/Waiho.app/Resources
+@dirrm GNUstep/Local/Applications/Waiho.app

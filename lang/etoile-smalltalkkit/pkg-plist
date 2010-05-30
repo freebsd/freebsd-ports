@@ -1,26 +1,26 @@
-Local/Library/Bundles/LanguageKit/Smalltalk.language/Resources/Info-gnustep.plist
-Local/Library/Bundles/LanguageKit/Smalltalk.language/Smalltalk
-Local/Library/Bundles/LanguageKit/Smalltalk.language/stamp.make
-Local/Library/Frameworks/SmalltalkSupport.framework/Headers
-Local/Library/Frameworks/SmalltalkSupport.framework/Resources
-Local/Library/Frameworks/SmalltalkSupport.framework/SmalltalkSupport
-Local/Library/Frameworks/SmalltalkSupport.framework/SmalltalkSupport.framework
-Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/SmalltalkSupport
-Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkSupport.so
-Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkSupport.so.%%MAJORLIBVERSION2%%
-Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkSupport.so.%%LIBVERSION2%%
-Local/Library/Frameworks/SmalltalkSupport.framework/Versions/Current
-Local/Library/Frameworks/SmalltalkSupport.framework/libSmalltalkSupport.so
-Local/Library/Headers/SmalltalkSupport
-Local/Library/Libraries/libSmalltalkSupport.so
-Local/Library/Libraries/libSmalltalkSupport.so.%%MAJORLIBVERSION2%%
-Local/Library/Libraries/libSmalltalkSupport.so.%%LIBVERSION2%%
-@dirrm Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/SmalltalkSupport.framework/Versions
-@dirrm Local/Library/Frameworks/SmalltalkSupport.framework
-@dirrm Local/Library/Bundles/LanguageKit/Smalltalk.language/Resources
-@dirrm Local/Library/Bundles/LanguageKit/Smalltalk.language
-@dirrm Local/Library/Bundles/LanguageKit
+GNUstep/Local/Library/Bundles/LanguageKit/Smalltalk.language/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/LanguageKit/Smalltalk.language/Smalltalk
+GNUstep/Local/Library/Bundles/LanguageKit/Smalltalk.language/stamp.make
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Headers
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Resources
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/SmalltalkSupport
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/SmalltalkSupport.framework
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/SmalltalkSupport
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkSupport.so
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkSupport.so.%%MAJORLIBVERSION2%%
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/libSmalltalkSupport.so.%%LIBVERSION2%%
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/libSmalltalkSupport.so
+GNUstep/Local/Library/Headers/SmalltalkSupport
+GNUstep/Local/Library/Libraries/libSmalltalkSupport.so
+GNUstep/Local/Library/Libraries/libSmalltalkSupport.so.%%MAJORLIBVERSION2%%
+GNUstep/Local/Library/Libraries/libSmalltalkSupport.so.%%LIBVERSION2%%
+@dirrm GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/SmalltalkSupport.framework
+@dirrm GNUstep/Local/Library/Bundles/LanguageKit/Smalltalk.language/Resources
+@dirrm GNUstep/Local/Library/Bundles/LanguageKit/Smalltalk.language
+@dirrm GNUstep/Local/Library/Bundles/LanguageKit

@@ -1,53 +1,53 @@
-Local/Applications/Gomoku.app/Gomoku
-Local/Applications/Gomoku.app/Resources/Computer.png
-Local/Applications/Gomoku.app/Resources/ComputerBottom.png
-Local/Applications/Gomoku.app/Resources/ComputerBottomLeft.png
-Local/Applications/Gomoku.app/Resources/ComputerBottomRight.png
-Local/Applications/Gomoku.app/Resources/ComputerLeft.png
-Local/Applications/Gomoku.app/Resources/ComputerRight.png
-Local/Applications/Gomoku.app/Resources/ComputerTop.png
-Local/Applications/Gomoku.app/Resources/ComputerTopLeft.png
-Local/Applications/Gomoku.app/Resources/ComputerTopRight.png
-Local/Applications/Gomoku.app/Resources/Empty.png
-Local/Applications/Gomoku.app/Resources/EmptyBottom.png
-Local/Applications/Gomoku.app/Resources/EmptyBottomLeft.png
-Local/Applications/Gomoku.app/Resources/EmptyBottomRight.png
-Local/Applications/Gomoku.app/Resources/EmptyLeft.png
-Local/Applications/Gomoku.app/Resources/EmptyRight.png
-Local/Applications/Gomoku.app/Resources/EmptyTop.png
-Local/Applications/Gomoku.app/Resources/EmptyTopLeft.png
-Local/Applications/Gomoku.app/Resources/EmptyTopRight.png
-Local/Applications/Gomoku.app/Resources/English.lproj/Localizable.strings
-Local/Applications/Gomoku.app/Resources/French.lproj/Localizable.strings
-Local/Applications/Gomoku.app/Resources/German.lproj/Localizable.strings
-Local/Applications/Gomoku.app/Resources/Gomoku.desktop
-Local/Applications/Gomoku.app/Resources/Gomoku.png
-Local/Applications/Gomoku.app/Resources/Human.png
-Local/Applications/Gomoku.app/Resources/HumanBottom.png
-Local/Applications/Gomoku.app/Resources/HumanBottomLeft.png
-Local/Applications/Gomoku.app/Resources/HumanBottomRight.png
-Local/Applications/Gomoku.app/Resources/HumanLeft.png
-Local/Applications/Gomoku.app/Resources/HumanRight.png
-Local/Applications/Gomoku.app/Resources/HumanTop.png
-Local/Applications/Gomoku.app/Resources/HumanTopLeft.png
-Local/Applications/Gomoku.app/Resources/HumanTopRight.png
-Local/Applications/Gomoku.app/Resources/Hungarian.lproj/Localizable.strings
-Local/Applications/Gomoku.app/Resources/Info-gnustep.plist
-Local/Applications/Gomoku.app/Resources/Italian.lproj/Localizable.strings
-Local/Applications/Gomoku.app/Resources/Norwegian.lproj/Localizable.strings
-Local/Applications/Gomoku.app/Resources/Spanish.lproj/Localizable.strings
-Local/Applications/Gomoku.app/Resources/Swedish.lproj/Localizable.strings
-Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj/Localizable.strings
-Local/Applications/Gomoku.app/stamp.make
-Local/Tools/Gomoku
-@dirrm Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj
-@dirrm Local/Applications/Gomoku.app/Resources/Swedish.lproj
-@dirrm Local/Applications/Gomoku.app/Resources/Spanish.lproj
-@dirrm Local/Applications/Gomoku.app/Resources/Norwegian.lproj
-@dirrm Local/Applications/Gomoku.app/Resources/Italian.lproj
-@dirrm Local/Applications/Gomoku.app/Resources/Hungarian.lproj
-@dirrm Local/Applications/Gomoku.app/Resources/German.lproj
-@dirrm Local/Applications/Gomoku.app/Resources/French.lproj
-@dirrm Local/Applications/Gomoku.app/Resources/English.lproj
-@dirrm Local/Applications/Gomoku.app/Resources
-@dirrm Local/Applications/Gomoku.app
+GNUstep/Local/Applications/Gomoku.app/Gomoku
+GNUstep/Local/Applications/Gomoku.app/Resources/Computer.png
+GNUstep/Local/Applications/Gomoku.app/Resources/ComputerBottom.png
+GNUstep/Local/Applications/Gomoku.app/Resources/ComputerBottomLeft.png
+GNUstep/Local/Applications/Gomoku.app/Resources/ComputerBottomRight.png
+GNUstep/Local/Applications/Gomoku.app/Resources/ComputerLeft.png
+GNUstep/Local/Applications/Gomoku.app/Resources/ComputerRight.png
+GNUstep/Local/Applications/Gomoku.app/Resources/ComputerTop.png
+GNUstep/Local/Applications/Gomoku.app/Resources/ComputerTopLeft.png
+GNUstep/Local/Applications/Gomoku.app/Resources/ComputerTopRight.png
+GNUstep/Local/Applications/Gomoku.app/Resources/Empty.png
+GNUstep/Local/Applications/Gomoku.app/Resources/EmptyBottom.png
+GNUstep/Local/Applications/Gomoku.app/Resources/EmptyBottomLeft.png
+GNUstep/Local/Applications/Gomoku.app/Resources/EmptyBottomRight.png
+GNUstep/Local/Applications/Gomoku.app/Resources/EmptyLeft.png
+GNUstep/Local/Applications/Gomoku.app/Resources/EmptyRight.png
+GNUstep/Local/Applications/Gomoku.app/Resources/EmptyTop.png
+GNUstep/Local/Applications/Gomoku.app/Resources/EmptyTopLeft.png
+GNUstep/Local/Applications/Gomoku.app/Resources/EmptyTopRight.png
+GNUstep/Local/Applications/Gomoku.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/Gomoku.app/Resources/French.lproj/Localizable.strings
+GNUstep/Local/Applications/Gomoku.app/Resources/German.lproj/Localizable.strings
+GNUstep/Local/Applications/Gomoku.app/Resources/Gomoku.desktop
+GNUstep/Local/Applications/Gomoku.app/Resources/Gomoku.png
+GNUstep/Local/Applications/Gomoku.app/Resources/Human.png
+GNUstep/Local/Applications/Gomoku.app/Resources/HumanBottom.png
+GNUstep/Local/Applications/Gomoku.app/Resources/HumanBottomLeft.png
+GNUstep/Local/Applications/Gomoku.app/Resources/HumanBottomRight.png
+GNUstep/Local/Applications/Gomoku.app/Resources/HumanLeft.png
+GNUstep/Local/Applications/Gomoku.app/Resources/HumanRight.png
+GNUstep/Local/Applications/Gomoku.app/Resources/HumanTop.png
+GNUstep/Local/Applications/Gomoku.app/Resources/HumanTopLeft.png
+GNUstep/Local/Applications/Gomoku.app/Resources/HumanTopRight.png
+GNUstep/Local/Applications/Gomoku.app/Resources/Hungarian.lproj/Localizable.strings
+GNUstep/Local/Applications/Gomoku.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Gomoku.app/Resources/Italian.lproj/Localizable.strings
+GNUstep/Local/Applications/Gomoku.app/Resources/Norwegian.lproj/Localizable.strings
+GNUstep/Local/Applications/Gomoku.app/Resources/Spanish.lproj/Localizable.strings
+GNUstep/Local/Applications/Gomoku.app/Resources/Swedish.lproj/Localizable.strings
+GNUstep/Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj/Localizable.strings
+GNUstep/Local/Applications/Gomoku.app/stamp.make
+GNUstep/Local/Tools/Gomoku
+@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj
+@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/Swedish.lproj
+@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/Spanish.lproj
+@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/Norwegian.lproj
+@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/Italian.lproj
+@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/Hungarian.lproj
+@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/German.lproj
+@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/French.lproj
+@dirrm GNUstep/Local/Applications/Gomoku.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/Gomoku.app/Resources
+@dirrm GNUstep/Local/Applications/Gomoku.app

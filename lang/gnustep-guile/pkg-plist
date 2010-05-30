@@ -1,42 +1,42 @@
-%%USEX11%%System/Applications/guile-gui.app/Resources/Info-gnustep.plist
-%%USEX11%%System/Applications/guile-gui.app/Resources/guile-gui.desktop
-%%USEX11%%System/Applications/guile-gui.app/guile-gui
-%%USEX11%%System/Applications/guile-gui.app/stamp.make
-%%USEX11%%System/Applications/gui.app/Resources/Info-gnustep.plist
-%%USEX11%%System/Applications/gui.app/Resources/gui.desktop
-%%USEX11%%System/Applications/gui.app/gui
-%%USEX11%%System/Applications/gui.app/stamp.make
-System/Library/Headers/GNUstepGuile/gstep_guile.h
-System/Library/Headers/GNUstepGuile/gg_Object.h
-System/Library/Headers/ScriptKit/Guile.h
-System/Library/Headers/ScriptKit/GuileInterpreter.h
-System/Library/Headers/ScriptKit/GuileInvocation.h
-System/Library/Headers/ScriptKit/GuileProcedure.h
-System/Library/Headers/ScriptKit/GuileSCM.h
-System/Library/Headers/ScriptKit/GuileScript.h
-System/Library/Headers/ScriptKit/SKInterpreter.h
-System/Library/Headers/ScriptKit/SKScript.h
-System/Library/Headers/ScriptKit/ScriptKit.h
-System/Library/Headers/gnustep/guile/gstep_guile.h
-System/Library/Headers/gnustep/guile/gg_Object.h
-System/Library/Libraries/Guile/languages/gstep-guile.scm
-System/Library/Libraries/libScriptKit.so
-System/Library/Libraries/libScriptKit.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libScriptKit.so.%%LIBVERSION%%
-System/Library/Libraries/libgg_base.so
-System/Library/Libraries/libgg_base.so.%%VERSION%%
-System/Library/Libraries/libgg_base.so.1
-%%USEX11%%System/Library/Libraries/libgg_gui.so
-%%USEX11%%System/Library/Libraries/libgg_gui.so.%%VERSION%%
-%%USEX11%%System/Library/Libraries/libgg_gui.so.1
-System/Library/Libraries/libgstep_guile.so
-System/Library/Libraries/libgstep_guile.so.%%VERSION%%
-System/Library/Libraries/libgstep_guile.so.1
-System/Library/Makefiles/Additional/guile.make
-System/Tools/go
-%%USEX11%%System/Tools/gui
-System/Tools/guile-base
-%%USEX11%%System/Tools/guile-gui
+%%USEX11%%GNUstep/System/Applications/guile-gui.app/Resources/Info-gnustep.plist
+%%USEX11%%GNUstep/System/Applications/guile-gui.app/Resources/guile-gui.desktop
+%%USEX11%%GNUstep/System/Applications/guile-gui.app/guile-gui
+%%USEX11%%GNUstep/System/Applications/guile-gui.app/stamp.make
+%%USEX11%%GNUstep/System/Applications/gui.app/Resources/Info-gnustep.plist
+%%USEX11%%GNUstep/System/Applications/gui.app/Resources/gui.desktop
+%%USEX11%%GNUstep/System/Applications/gui.app/gui
+%%USEX11%%GNUstep/System/Applications/gui.app/stamp.make
+GNUstep/System/Library/Headers/GNUstepGuile/gstep_guile.h
+GNUstep/System/Library/Headers/GNUstepGuile/gg_Object.h
+GNUstep/System/Library/Headers/ScriptKit/Guile.h
+GNUstep/System/Library/Headers/ScriptKit/GuileInterpreter.h
+GNUstep/System/Library/Headers/ScriptKit/GuileInvocation.h
+GNUstep/System/Library/Headers/ScriptKit/GuileProcedure.h
+GNUstep/System/Library/Headers/ScriptKit/GuileSCM.h
+GNUstep/System/Library/Headers/ScriptKit/GuileScript.h
+GNUstep/System/Library/Headers/ScriptKit/SKInterpreter.h
+GNUstep/System/Library/Headers/ScriptKit/SKScript.h
+GNUstep/System/Library/Headers/ScriptKit/ScriptKit.h
+GNUstep/System/Library/Headers/gnustep/guile/gstep_guile.h
+GNUstep/System/Library/Headers/gnustep/guile/gg_Object.h
+GNUstep/System/Library/Libraries/Guile/languages/gstep-guile.scm
+GNUstep/System/Library/Libraries/libScriptKit.so
+GNUstep/System/Library/Libraries/libScriptKit.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libScriptKit.so.%%LIBVERSION%%
+GNUstep/System/Library/Libraries/libgg_base.so
+GNUstep/System/Library/Libraries/libgg_base.so.%%VERSION%%
+GNUstep/System/Library/Libraries/libgg_base.so.1
+%%USEX11%%GNUstep/System/Library/Libraries/libgg_gui.so
+%%USEX11%%GNUstep/System/Library/Libraries/libgg_gui.so.%%VERSION%%
+%%USEX11%%GNUstep/System/Library/Libraries/libgg_gui.so.1
+GNUstep/System/Library/Libraries/libgstep_guile.so
+GNUstep/System/Library/Libraries/libgstep_guile.so.%%VERSION%%
+GNUstep/System/Library/Libraries/libgstep_guile.so.1
+GNUstep/System/Library/Makefiles/Additional/guile.make
+GNUstep/System/Tools/go
+%%USEX11%%GNUstep/System/Tools/gui
+GNUstep/System/Tools/guile-base
+%%USEX11%%GNUstep/System/Tools/guile-gui
 bin/greg
 info/dir
 @comment @unexec install-info --delete %D/info/greg.info %D/info/dir
@@ -46,21 +46,15 @@ lib/libgreg.a
 lib/libgreg.la
 lib/libgreg.so
 lib/libgreg.so.1
-%%USEX11%%@dirrm System/Applications/guile-gui.app/Resources
-%%USEX11%%@dirrm System/Applications/guile-gui.app
-%%USEX11%%@dirrm System/Applications/gui.app/Resources
-%%USEX11%%@dirrm System/Applications/gui.app
-@dirrm System/Library/Libraries/Guile/languages/gstep-guile
-@dirrm System/Library/Libraries/Guile/languages
-@dirrm System/Library/Libraries/Guile
-@dirrm System/Library/Headers/gnustep/guile
-@dirrm System/Library/Headers/ScriptKit
-@dirrm System/Library/Headers/GNUstepGuile
-@dirrm man/man1
-@dirrm man
-@dirrm lib
-@dirrm info
-@dirrm bin
-@exec mkdir -p %D/System/Library/Libraries/Guile/languages/gstep-guile
-@cwd %%LOCALBASE%%
+%%USEX11%%@dirrm GNUstep/System/Applications/guile-gui.app/Resources
+%%USEX11%%@dirrm GNUstep/System/Applications/guile-gui.app
+%%USEX11%%@dirrm GNUstep/System/Applications/gui.app/Resources
+%%USEX11%%@dirrm GNUstep/System/Applications/gui.app
+@dirrm GNUstep/System/Library/Libraries/Guile/languages/gstep-guile
+@dirrm GNUstep/System/Library/Libraries/Guile/languages
+@dirrm GNUstep/System/Library/Libraries/Guile
+@dirrm GNUstep/System/Library/Headers/gnustep/guile
+@dirrm GNUstep/System/Library/Headers/ScriptKit
+@dirrm GNUstep/System/Library/Headers/GNUstepGuile
+@exec mkdir -p %D/GNUstep/System/Library/Libraries/Guile/languages/gstep-guile
 share/guile/%%GUILE_VER%%/ice-9/greg.scm

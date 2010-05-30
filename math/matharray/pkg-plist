@@ -1,12 +1,12 @@
-Local/Library/Headers/MathArray/MAValue.h
-Local/Library/Headers/MathArray/MAValueData.h
-Local/Library/Headers/MathArray/MaskedException.h
-Local/Library/Headers/MathArray/MathArray.h
-Local/Library/Headers/MathArray/MathArrayExtensions.h
-Local/Library/Headers/MathArray/NSObjectExtra.h
-Local/Library/Headers/MathArray/array_encoding.h
-Local/Library/Headers/MathArray/complex.h
-Local/Library/Libraries/libMathArray.so
-Local/Library/Libraries/libMathArray.so.%%MAJORVERSION%%
-Local/Library/Libraries/libMathArray.so.%%VERSION%%
-@dirrm Local/Library/Headers/MathArray
+GNUstep/Local/Library/Headers/MathArray/MAValue.h
+GNUstep/Local/Library/Headers/MathArray/MAValueData.h
+GNUstep/Local/Library/Headers/MathArray/MaskedException.h
+GNUstep/Local/Library/Headers/MathArray/MathArray.h
+GNUstep/Local/Library/Headers/MathArray/MathArrayExtensions.h
+GNUstep/Local/Library/Headers/MathArray/NSObjectExtra.h
+GNUstep/Local/Library/Headers/MathArray/array_encoding.h
+GNUstep/Local/Library/Headers/MathArray/complex.h
+GNUstep/Local/Library/Libraries/libMathArray.so
+GNUstep/Local/Library/Libraries/libMathArray.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Libraries/libMathArray.so.%%VERSION%%
+@dirrm GNUstep/Local/Library/Headers/MathArray

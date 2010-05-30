@@ -25,7 +25,6 @@ USE_GMAKE=		yes
 USE_GNUSTEP=		yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_BUILD=	yes
-USE_GNUSTEP_PREFIX=	yes
 MAKEFILE=		GNUmakefile
 MAKE_FLAGS+=		debug=no
 SUB_FILES=		pkg-message

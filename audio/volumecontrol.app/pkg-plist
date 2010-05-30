@@ -1,13 +1,13 @@
-Local/Applications/VolumeControl.app/Resources/Info-gnustep.plist
-Local/Applications/VolumeControl.app/Resources/VolumeControl.desktop
-Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm/data.classes
-Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm/data.info
-Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm/objects.gorm
-Local/Applications/VolumeControl.app/Resources/VolumeControl.rtf
-Local/Applications/VolumeControl.app/Resources/headphones.tiff
-Local/Applications/VolumeControl.app/VolumeControl
-Local/Applications/VolumeControl.app/stamp.make
-Local/Tools/VolumeControl
-@dirrm Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm
-@dirrm Local/Applications/VolumeControl.app/Resources
-@dirrm Local/Applications/VolumeControl.app
+GNUstep/Local/Applications/VolumeControl.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/VolumeControl.app/Resources/VolumeControl.desktop
+GNUstep/Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm/data.classes
+GNUstep/Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm/data.info
+GNUstep/Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm/objects.gorm
+GNUstep/Local/Applications/VolumeControl.app/Resources/VolumeControl.rtf
+GNUstep/Local/Applications/VolumeControl.app/Resources/headphones.tiff
+GNUstep/Local/Applications/VolumeControl.app/VolumeControl
+GNUstep/Local/Applications/VolumeControl.app/stamp.make
+GNUstep/Local/Tools/VolumeControl
+@dirrm GNUstep/Local/Applications/VolumeControl.app/Resources/VolumeControl.gorm
+@dirrm GNUstep/Local/Applications/VolumeControl.app/Resources
+@dirrm GNUstep/Local/Applications/VolumeControl.app

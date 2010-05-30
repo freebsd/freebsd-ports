@@ -1,29 +1,29 @@
-Local/Library/Frameworks/HighlighterKit.framework/Headers
-Local/Library/Frameworks/HighlighterKit.framework/HighlighterKit
-Local/Library/Frameworks/HighlighterKit.framework/Resources
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/HKSyntaxDefinition.h
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/HKSyntaxHighlighter.h
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/HKTextPattern.h
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/HighlighterKit.h
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/HighlighterKit
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/C++.syntax
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/C-Header.syntax
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/C.syntax
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/ObjC++.syntax
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/ObjC.syntax
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Plist.syntax
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/libHighlighterKit.so
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/libHighlighterKit.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/libHighlighterKit.so.%%LIBVERSION%%
-Local/Library/Frameworks/HighlighterKit.framework/Versions/Current
-Local/Library/Frameworks/HighlighterKit.framework/libHighlighterKit.so
-Local/Library/Headers/HighlighterKit
-Local/Library/Libraries/libHighlighterKit.so
-Local/Library/Libraries/libHighlighterKit.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libHighlighterKit.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/HighlighterKit.framework/Versions
-@dirrm Local/Library/Frameworks/HighlighterKit.framework
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Headers
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/HighlighterKit
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Resources
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/HKSyntaxDefinition.h
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/HKSyntaxHighlighter.h
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/HKTextPattern.h
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/HighlighterKit.h
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/HighlighterKit
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/C++.syntax
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/C-Header.syntax
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/C.syntax
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/ObjC++.syntax
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/ObjC.syntax
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Plist.syntax
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/libHighlighterKit.so
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/libHighlighterKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/libHighlighterKit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/HighlighterKit.framework/libHighlighterKit.so
+GNUstep/Local/Library/Headers/HighlighterKit
+GNUstep/Local/Library/Libraries/libHighlighterKit.so
+GNUstep/Local/Library/Libraries/libHighlighterKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libHighlighterKit.so.%%LIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/HighlighterKit.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/HighlighterKit.framework

@@ -1,29 +1,29 @@
-Local/Applications/TBrowser.app/Resources/Controller.gorm/data.classes
-Local/Applications/TBrowser.app/Resources/Controller.gorm/data.info
-Local/Applications/TBrowser.app/Resources/Controller.gorm/objects.gorm
-Local/Applications/TBrowser.app/Resources/Info.plist
-Local/Applications/TBrowser.app/Resources/Info-gnustep.plist
-Local/Applications/TBrowser.app/Resources/TBrowser.desktop
-Local/Applications/TBrowser.app/Resources/TBrowser.png
-Local/Applications/TBrowser.app/TBrowser
-Local/Applications/TBrowser.app/stamp.make
-Local/Applications/TChat.app/Resources/Controller.gorm/data.classes
-Local/Applications/TChat.app/Resources/Controller.gorm/data.info
-Local/Applications/TChat.app/Resources/Controller.gorm/objects.gorm
-Local/Applications/TChat.app/Resources/Info-gnustep.plist
-Local/Applications/TChat.app/Resources/TChat.desktop
-Local/Applications/TChat.app/Resources/TChat.png
-Local/Applications/TChat.app/Resources/TChatInfo.plist
-Local/Applications/TChat.app/Resources/WindowController.gorm/data.classes
-Local/Applications/TChat.app/Resources/WindowController.gorm/objects.gorm
-Local/Applications/TChat.app/TChat
-Local/Applications/TChat.app/stamp.make
-Local/Tools/TBrowser
-Local/Tools/TChat
-@dirrm Local/Applications/TChat.app/Resources/WindowController.gorm
-@dirrm Local/Applications/TChat.app/Resources/Controller.gorm
-@dirrm Local/Applications/TChat.app/Resources
-@dirrm Local/Applications/TChat.app
-@dirrm Local/Applications/TBrowser.app/Resources/Controller.gorm
-@dirrm Local/Applications/TBrowser.app/Resources
-@dirrm Local/Applications/TBrowser.app
+GNUstep/Local/Applications/TBrowser.app/Resources/Controller.gorm/data.classes
+GNUstep/Local/Applications/TBrowser.app/Resources/Controller.gorm/data.info
+GNUstep/Local/Applications/TBrowser.app/Resources/Controller.gorm/objects.gorm
+GNUstep/Local/Applications/TBrowser.app/Resources/Info.plist
+GNUstep/Local/Applications/TBrowser.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/TBrowser.app/Resources/TBrowser.desktop
+GNUstep/Local/Applications/TBrowser.app/Resources/TBrowser.png
+GNUstep/Local/Applications/TBrowser.app/TBrowser
+GNUstep/Local/Applications/TBrowser.app/stamp.make
+GNUstep/Local/Applications/TChat.app/Resources/Controller.gorm/data.classes
+GNUstep/Local/Applications/TChat.app/Resources/Controller.gorm/data.info
+GNUstep/Local/Applications/TChat.app/Resources/Controller.gorm/objects.gorm
+GNUstep/Local/Applications/TChat.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/TChat.app/Resources/TChat.desktop
+GNUstep/Local/Applications/TChat.app/Resources/TChat.png
+GNUstep/Local/Applications/TChat.app/Resources/TChatInfo.plist
+GNUstep/Local/Applications/TChat.app/Resources/WindowController.gorm/data.classes
+GNUstep/Local/Applications/TChat.app/Resources/WindowController.gorm/objects.gorm
+GNUstep/Local/Applications/TChat.app/TChat
+GNUstep/Local/Applications/TChat.app/stamp.make
+GNUstep/Local/Tools/TBrowser
+GNUstep/Local/Tools/TChat
+@dirrm GNUstep/Local/Applications/TChat.app/Resources/WindowController.gorm
+@dirrm GNUstep/Local/Applications/TChat.app/Resources/Controller.gorm
+@dirrm GNUstep/Local/Applications/TChat.app/Resources
+@dirrm GNUstep/Local/Applications/TChat.app
+@dirrm GNUstep/Local/Applications/TBrowser.app/Resources/Controller.gorm
+@dirrm GNUstep/Local/Applications/TBrowser.app/Resources
+@dirrm GNUstep/Local/Applications/TBrowser.app

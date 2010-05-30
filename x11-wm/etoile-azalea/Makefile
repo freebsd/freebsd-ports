@@ -19,7 +19,6 @@ COMMENT=	Azalea is a GNUstep window manager
 PORTSCOUT=	limit:^0\.2
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

@@ -1,28 +1,28 @@
-Local/Applications/Expense.app/Expense
-Local/Applications/Expense.app/Resources/ArrowLeft.tiff
-Local/Applications/Expense.app/Resources/ArrowRight.tiff
-Local/Applications/Expense.app/Resources/English.lproj/ExpDocument.gorm/data.classes
-Local/Applications/Expense.app/Resources/English.lproj/ExpDocument.gorm/objects.gorm
-Local/Applications/Expense.app/Resources/English.lproj/Expense.gorm/data.classes
-Local/Applications/Expense.app/Resources/English.lproj/Expense.gorm/objects.gorm
-Local/Applications/Expense.app/Resources/English.lproj/Localizable.strings
-Local/Applications/Expense.app/Resources/English.lproj/Localizable.strings~
-Local/Applications/Expense.app/Resources/Expense.desktop
-Local/Applications/Expense.app/Resources/Expense.tiff
-Local/Applications/Expense.app/Resources/ExpenseInfo.plist
-Local/Applications/Expense.app/Resources/FileIcon_exp.tiff
-Local/Applications/Expense.app/Resources/Info-gnustep.plist
-Local/Applications/Expense.app/Resources/Thai.lproj/Expense.gorm/data.classes
-Local/Applications/Expense.app/Resources/Thai.lproj/Expense.gorm/objects.gorm
-Local/Applications/Expense.app/Resources/Thai.lproj/Localizable.strings
-Local/Applications/Expense.app/Resources/Thai.lproj/Localizable.strings~
-Local/Applications/Expense.app/Resources/Thai.lproj/temp.txt
-Local/Applications/Expense.app/stamp.make
-Local/Tools/Expense
-@dirrm Local/Applications/Expense.app/Resources/Thai.lproj/Expense.gorm
-@dirrm Local/Applications/Expense.app/Resources/Thai.lproj
-@dirrm Local/Applications/Expense.app/Resources/English.lproj/Expense.gorm
-@dirrm Local/Applications/Expense.app/Resources/English.lproj/ExpDocument.gorm
-@dirrm Local/Applications/Expense.app/Resources/English.lproj
-@dirrm Local/Applications/Expense.app/Resources
-@dirrm Local/Applications/Expense.app
+GNUstep/Local/Applications/Expense.app/Expense
+GNUstep/Local/Applications/Expense.app/Resources/ArrowLeft.tiff
+GNUstep/Local/Applications/Expense.app/Resources/ArrowRight.tiff
+GNUstep/Local/Applications/Expense.app/Resources/English.lproj/ExpDocument.gorm/data.classes
+GNUstep/Local/Applications/Expense.app/Resources/English.lproj/ExpDocument.gorm/objects.gorm
+GNUstep/Local/Applications/Expense.app/Resources/English.lproj/Expense.gorm/data.classes
+GNUstep/Local/Applications/Expense.app/Resources/English.lproj/Expense.gorm/objects.gorm
+GNUstep/Local/Applications/Expense.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/Expense.app/Resources/English.lproj/Localizable.strings~
+GNUstep/Local/Applications/Expense.app/Resources/Expense.desktop
+GNUstep/Local/Applications/Expense.app/Resources/Expense.tiff
+GNUstep/Local/Applications/Expense.app/Resources/ExpenseInfo.plist
+GNUstep/Local/Applications/Expense.app/Resources/FileIcon_exp.tiff
+GNUstep/Local/Applications/Expense.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj/Expense.gorm/data.classes
+GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj/Expense.gorm/objects.gorm
+GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj/Localizable.strings
+GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj/Localizable.strings~
+GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj/temp.txt
+GNUstep/Local/Applications/Expense.app/stamp.make
+GNUstep/Local/Tools/Expense
+@dirrm GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj/Expense.gorm
+@dirrm GNUstep/Local/Applications/Expense.app/Resources/Thai.lproj
+@dirrm GNUstep/Local/Applications/Expense.app/Resources/English.lproj/Expense.gorm
+@dirrm GNUstep/Local/Applications/Expense.app/Resources/English.lproj/ExpDocument.gorm
+@dirrm GNUstep/Local/Applications/Expense.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/Expense.app/Resources
+@dirrm GNUstep/Local/Applications/Expense.app

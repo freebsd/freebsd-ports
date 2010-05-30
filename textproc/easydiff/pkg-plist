@@ -1,14 +1,14 @@
-Local/Applications/EasyDiff.app/EasyDiff
-Local/Applications/EasyDiff.app/Resources/EasyDiff.desktop
-Local/Applications/EasyDiff.app/Resources/Info-gnustep.plist
-Local/Applications/EasyDiff.app/Resources/main.gorm/data.classes
-Local/Applications/EasyDiff.app/Resources/main.gorm/data.info
-Local/Applications/EasyDiff.app/Resources/main.gorm/objects.gorm
-Local/Applications/EasyDiff.app/Resources/window.gorm/data.classes
-Local/Applications/EasyDiff.app/Resources/window.gorm/objects.gorm
-Local/Applications/EasyDiff.app/stamp.make
-Local/Tools/EasyDiff
-@dirrm Local/Applications/EasyDiff.app/Resources/window.gorm
-@dirrm Local/Applications/EasyDiff.app/Resources/main.gorm
-@dirrm Local/Applications/EasyDiff.app/Resources
-@dirrm Local/Applications/EasyDiff.app
+GNUstep/Local/Applications/EasyDiff.app/EasyDiff
+GNUstep/Local/Applications/EasyDiff.app/Resources/EasyDiff.desktop
+GNUstep/Local/Applications/EasyDiff.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/EasyDiff.app/Resources/main.gorm/data.classes
+GNUstep/Local/Applications/EasyDiff.app/Resources/main.gorm/data.info
+GNUstep/Local/Applications/EasyDiff.app/Resources/main.gorm/objects.gorm
+GNUstep/Local/Applications/EasyDiff.app/Resources/window.gorm/data.classes
+GNUstep/Local/Applications/EasyDiff.app/Resources/window.gorm/objects.gorm
+GNUstep/Local/Applications/EasyDiff.app/stamp.make
+GNUstep/Local/Tools/EasyDiff
+@dirrm GNUstep/Local/Applications/EasyDiff.app/Resources/window.gorm
+@dirrm GNUstep/Local/Applications/EasyDiff.app/Resources/main.gorm
+@dirrm GNUstep/Local/Applications/EasyDiff.app/Resources
+@dirrm GNUstep/Local/Applications/EasyDiff.app

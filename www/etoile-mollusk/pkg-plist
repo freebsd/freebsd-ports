@@ -1,39 +1,39 @@
-Local/Applications/Mollusk.app/Mollusk
-Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/Download-to-HardDrive.png
-Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/Feeds-panel.png
-Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/Feeds.png
-Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/Zange.png
-Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/data.classes
-Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/data.info
-Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/minus.png
-Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/objects.gorm
-Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/plus.png
-Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/read-news.png
-Local/Applications/Mollusk.app/Resources/English.lproj/FontPreferencePane.gorm/data.classes
-Local/Applications/Mollusk.app/Resources/English.lproj/FontPreferencePane.gorm/data.info
-Local/Applications/Mollusk.app/Resources/English.lproj/FontPreferencePane.gorm/objects.gorm
-Local/Applications/Mollusk.app/Resources/English.lproj/Localizable.strings
-Local/Applications/Mollusk.app/Resources/English.lproj/MainMenu.gorm/data.classes
-Local/Applications/Mollusk.app/Resources/English.lproj/MainMenu.gorm/data.info
-Local/Applications/Mollusk.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
-Local/Applications/Mollusk.app/Resources/English.lproj/PreferencePane.gorm/data.classes
-Local/Applications/Mollusk.app/Resources/English.lproj/PreferencePane.gorm/data.info
-Local/Applications/Mollusk.app/Resources/English.lproj/PreferencePane.gorm/objects.gorm
-Local/Applications/Mollusk.app/Resources/Info-gnustep.plist
-Local/Applications/Mollusk.app/Resources/Mollusk.desktop
-Local/Applications/Mollusk.app/Resources/MolluskInfo.plist
-Local/Applications/Mollusk.app/Resources/rdf.tiff
-Local/Applications/Mollusk.app/Resources/rss.tiff
-Local/Applications/Mollusk.app/Resources/rssreader-working.png
-Local/Applications/Mollusk.app/Resources/rssreader.icns
-Local/Applications/Mollusk.app/Resources/rssreader.png
-Local/Applications/Mollusk.app/Resources/xml.tiff
-Local/Applications/Mollusk.app/stamp.make
-Local/Tools/Mollusk
-@dirrm Local/Applications/Mollusk.app/Resources/English.lproj/PreferencePane.gorm
-@dirrm Local/Applications/Mollusk.app/Resources/English.lproj/MainMenu.gorm
-@dirrm Local/Applications/Mollusk.app/Resources/English.lproj/FontPreferencePane.gorm
-@dirrm Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm
-@dirrm Local/Applications/Mollusk.app/Resources/English.lproj
-@dirrm Local/Applications/Mollusk.app/Resources
-@dirrm Local/Applications/Mollusk.app
+GNUstep/Local/Applications/Mollusk.app/Mollusk
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/Download-to-HardDrive.png
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/Feeds-panel.png
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/Feeds.png
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/Zange.png
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/data.classes
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/data.info
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/minus.png
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/objects.gorm
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/plus.png
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm/read-news.png
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/FontPreferencePane.gorm/data.classes
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/FontPreferencePane.gorm/data.info
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/FontPreferencePane.gorm/objects.gorm
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/MainMenu.gorm/data.info
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/PreferencePane.gorm/data.classes
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/PreferencePane.gorm/data.info
+GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/PreferencePane.gorm/objects.gorm
+GNUstep/Local/Applications/Mollusk.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Mollusk.app/Resources/Mollusk.desktop
+GNUstep/Local/Applications/Mollusk.app/Resources/MolluskInfo.plist
+GNUstep/Local/Applications/Mollusk.app/Resources/rdf.tiff
+GNUstep/Local/Applications/Mollusk.app/Resources/rss.tiff
+GNUstep/Local/Applications/Mollusk.app/Resources/rssreader-working.png
+GNUstep/Local/Applications/Mollusk.app/Resources/rssreader.icns
+GNUstep/Local/Applications/Mollusk.app/Resources/rssreader.png
+GNUstep/Local/Applications/Mollusk.app/Resources/xml.tiff
+GNUstep/Local/Applications/Mollusk.app/stamp.make
+GNUstep/Local/Tools/Mollusk
+@dirrm GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/PreferencePane.gorm
+@dirrm GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/MainMenu.gorm
+@dirrm GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/FontPreferencePane.gorm
+@dirrm GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj/AddFeedPanel.gorm
+@dirrm GNUstep/Local/Applications/Mollusk.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/Mollusk.app/Resources
+@dirrm GNUstep/Local/Applications/Mollusk.app

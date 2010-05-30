@@ -1,112 +1,112 @@
-Local/Applications/GTAMSAnalyzer.app/GTAMSAnalyzer
-Local/Applications/GTAMSAnalyzer.app/Resources/FileIcon_rtf.tiff
-Local/Applications/GTAMSAnalyzer.app/Resources/FileIcon_txt.tiff
-Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.gorm/data.classes
-Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.gorm/data.info
-Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.gorm/objects.gorm
-Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.strings
-Local/Applications/GTAMSAnalyzer.app/Resources/FreqCount.gorm/data.classes
-Local/Applications/GTAMSAnalyzer.app/Resources/FreqCount.gorm/objects.gorm
-Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.desktop
-Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.gorm/data.classes
-Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.gorm/data.info
-Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.gorm/objects.gorm
-Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzerInfo.plist
-Local/Applications/GTAMSAnalyzer.app/Resources/Info-gnustep.plist
-Local/Applications/GTAMSAnalyzer.app/Resources/MWSummaryReport.gorm/data.classes
-Local/Applications/GTAMSAnalyzer.app/Resources/MWSummaryReport.gorm/data.info
-Local/Applications/GTAMSAnalyzer.app/Resources/MWSummaryReport.gorm/objects.gorm
-Local/Applications/GTAMSAnalyzer.app/Resources/MyPanedDocument.gorm/data.classes
-Local/Applications/GTAMSAnalyzer.app/Resources/MyPanedDocument.gorm/data.info
-Local/Applications/GTAMSAnalyzer.app/Resources/MyPanedDocument.gorm/objects.gorm
-Local/Applications/GTAMSAnalyzer.app/Resources/Save.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/codeBrowser.gorm/data.classes
-Local/Applications/GTAMSAnalyzer.app/Resources/codeBrowser.gorm/objects.gorm
-Local/Applications/GTAMSAnalyzer.app/Resources/codeicn.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/column.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/comment.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/dataSumm2.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/dataSummary.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/decolorTags.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/def.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/defFromSel.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/delRoot.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/delRoot2.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/delRoot3.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/docTemplate.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/docback.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/export.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/findRecord.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/kappa.gorm/data.classes
-Local/Applications/GTAMSAnalyzer.app/Resources/kappa.gorm/data.info
-Local/Applications/GTAMSAnalyzer.app/Resources/kappa.gorm/objects.gorm
-Local/Applications/GTAMSAnalyzer.app/Resources/largeApp.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/markRec.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/metaicn.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/myPanedResults.gorm/data.classes
-Local/Applications/GTAMSAnalyzer.app/Resources/myPanedResults.gorm/data.info
-Local/Applications/GTAMSAnalyzer.app/Resources/myPanedResults.gorm/objects.gorm
-Local/Applications/GTAMSAnalyzer.app/Resources/myProject.gorm/data.classes
-Local/Applications/GTAMSAnalyzer.app/Resources/myProject.gorm/data.info
-Local/Applications/GTAMSAnalyzer.app/Resources/myProject.gorm/objects.gorm
-Local/Applications/GTAMSAnalyzer.app/Resources/nextTag.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/playMedia.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/preference.gorm/data.classes
-Local/Applications/GTAMSAnalyzer.app/Resources/preference.gorm/data.info
-Local/Applications/GTAMSAnalyzer.app/Resources/preference.gorm/objects.gorm
-Local/Applications/GTAMSAnalyzer.app/Resources/prevTag.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/prevTag3.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/reCode.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/reCode2.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/reColor.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/refresh.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/removeFrom.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/sel2codeset.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/selCodeSet.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/selCodeSet2.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/selOtherTag.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/selectAll.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/selectAll2.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/selectAll3.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/selectReverse.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/selectSome.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/smartSort.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/sort09.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/sort09Within.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/sortAZ.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/sortAZWithin.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/sortCode.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/sortCodeWithin.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/ta-rslt.tiff
-Local/Applications/GTAMSAnalyzer.app/Resources/taSmallProj.tiff
-Local/Applications/GTAMSAnalyzer.app/Resources/taSmallestProj.tiff
-Local/Applications/GTAMSAnalyzer.app/Resources/tag2.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/tag3.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/tag4.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/tags.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-1.tiff
-Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-2.tiff
-Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-3.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-3.tiff
-Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-4.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-proj.tiff
-Local/Applications/GTAMSAnalyzer.app/Resources/twoTagBasic.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/twoTagBasicNot.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/txt2Button.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/unmarkRec.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/unmarkRec2.tif
-Local/Applications/GTAMSAnalyzer.app/Resources/wbicn.tif
-Local/Applications/GTAMSAnalyzer.app/stamp.make
-Local/Tools/GTAMSAnalyzer
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources/preference.gorm
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources/myProject.gorm
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources/myPanedResults.gorm
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources/kappa.gorm
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources/codeBrowser.gorm
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources/MyPanedDocument.gorm
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources/MWSummaryReport.gorm
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.gorm
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources/FreqCount.gorm
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.gorm
-@dirrm Local/Applications/GTAMSAnalyzer.app/Resources
-@dirrm Local/Applications/GTAMSAnalyzer.app
+GNUstep/Local/Applications/GTAMSAnalyzer.app/GTAMSAnalyzer
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FileIcon_rtf.tiff
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FileIcon_txt.tiff
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.gorm/data.classes
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.gorm/data.info
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.gorm/objects.gorm
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.strings
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FreqCount.gorm/data.classes
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FreqCount.gorm/objects.gorm
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.desktop
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.gorm/data.classes
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.gorm/data.info
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.gorm/objects.gorm
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzerInfo.plist
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/MWSummaryReport.gorm/data.classes
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/MWSummaryReport.gorm/data.info
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/MWSummaryReport.gorm/objects.gorm
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/MyPanedDocument.gorm/data.classes
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/MyPanedDocument.gorm/data.info
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/MyPanedDocument.gorm/objects.gorm
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/Save.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/codeBrowser.gorm/data.classes
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/codeBrowser.gorm/objects.gorm
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/codeicn.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/column.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/comment.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/dataSumm2.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/dataSummary.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/decolorTags.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/def.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/defFromSel.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/delRoot.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/delRoot2.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/delRoot3.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/docTemplate.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/docback.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/export.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/findRecord.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/kappa.gorm/data.classes
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/kappa.gorm/data.info
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/kappa.gorm/objects.gorm
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/largeApp.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/markRec.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/metaicn.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/myPanedResults.gorm/data.classes
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/myPanedResults.gorm/data.info
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/myPanedResults.gorm/objects.gorm
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/myProject.gorm/data.classes
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/myProject.gorm/data.info
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/myProject.gorm/objects.gorm
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/nextTag.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/playMedia.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/preference.gorm/data.classes
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/preference.gorm/data.info
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/preference.gorm/objects.gorm
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/prevTag.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/prevTag3.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/reCode.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/reCode2.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/reColor.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/refresh.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/removeFrom.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/sel2codeset.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/selCodeSet.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/selCodeSet2.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/selOtherTag.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/selectAll.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/selectAll2.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/selectAll3.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/selectReverse.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/selectSome.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/smartSort.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/sort09.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/sort09Within.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/sortAZ.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/sortAZWithin.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/sortCode.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/sortCodeWithin.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/ta-rslt.tiff
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/taSmallProj.tiff
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/taSmallestProj.tiff
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/tag2.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/tag3.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/tag4.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/tags.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-1.tiff
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-2.tiff
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-3.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-3.tiff
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-4.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/tamsanalysis-proj.tiff
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/twoTagBasic.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/twoTagBasicNot.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/txt2Button.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/unmarkRec.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/unmarkRec2.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/wbicn.tif
+GNUstep/Local/Applications/GTAMSAnalyzer.app/stamp.make
+GNUstep/Local/Tools/GTAMSAnalyzer
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/preference.gorm
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/myProject.gorm
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/myPanedResults.gorm
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/kappa.gorm
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/codeBrowser.gorm
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/MyPanedDocument.gorm
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/MWSummaryReport.gorm
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/GTAMSAnalyzer.gorm
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FreqCount.gorm
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources/FindPanel.gorm
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app/Resources
+@dirrm GNUstep/Local/Applications/GTAMSAnalyzer.app

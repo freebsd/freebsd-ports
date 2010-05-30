@@ -1,49 +1,49 @@
-System/Applications/EtoileMenuServer.app/EtoileMenuServer
-System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/AboutEtoileEntry
-System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/Credits.rtf
-System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/Credits.tiff
-System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/English.lproj/AboutEtoileEntry.gorm/data.classes
-System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/English.lproj/AboutEtoileEntry.gorm/data.info
-System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/English.lproj/AboutEtoileEntry.gorm/objects.gorm
-System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/Info-gnustep.plist
-System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/stamp.make
-System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/ApplicationsEntry
-System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/English.lproj/ApplicationsPanel.gorm/data.classes
-System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/English.lproj/ApplicationsPanel.gorm/data.info
-System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/English.lproj/ApplicationsPanel.gorm/objects.gorm
-System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/Info-gnustep.plist
-System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/stamp.make
-System/Applications/EtoileMenuServer.app/Resources/ClockMenulet.menulet/ClockMenulet
-System/Applications/EtoileMenuServer.app/Resources/ClockMenulet.menulet/Resources/Info-gnustep.plist
-System/Applications/EtoileMenuServer.app/Resources/ClockMenulet.menulet/stamp.make
-System/Applications/EtoileMenuServer.app/Resources/Etoile.tiff
-System/Applications/EtoileMenuServer.app/Resources/EtoileLogo.tiff
-System/Applications/EtoileMenuServer.app/Resources/EtoileLogoH.tiff
-System/Applications/EtoileMenuServer.app/Resources/EtoileMenuServer.desktop
-System/Applications/EtoileMenuServer.app/Resources/Info-gnustep.plist
-System/Applications/EtoileMenuServer.app/Resources/MenuBarFiller.tiff
-System/Applications/EtoileMenuServer.app/Resources/MenuBarLeftEdge.tiff
-System/Applications/EtoileMenuServer.app/Resources/MenuBarRightEdge.tiff
-System/Applications/EtoileMenuServer.app/Resources/SystemPreferencesEntry.sysbarentry/Resources/Info-gnustep.plist
-System/Applications/EtoileMenuServer.app/Resources/SystemPreferencesEntry.sysbarentry/SystemPreferencesEntry
-System/Applications/EtoileMenuServer.app/Resources/SystemPreferencesEntry.sysbarentry/stamp.make
-System/Applications/EtoileMenuServer.app/stamp.make
-System/Tools/EtoileMenuServer
-@dirrm System/Applications/EtoileMenuServer.app/Resources/SystemPreferencesEntry.sysbarentry/Resources
-@dirrm System/Applications/EtoileMenuServer.app/Resources/SystemPreferencesEntry.sysbarentry
-@dirrm System/Applications/EtoileMenuServer.app/Resources/LookAndBehaviorEntry.sysbarentry/Resources
-@dirrm System/Applications/EtoileMenuServer.app/Resources/LookAndBehaviorEntry.sysbarentry
-@dirrm System/Applications/EtoileMenuServer.app/Resources/HardwareEntry.sysbarentry/Resources
-@dirrm System/Applications/EtoileMenuServer.app/Resources/HardwareEntry.sysbarentry
-@dirrm System/Applications/EtoileMenuServer.app/Resources/ClockMenulet.menulet/Resources
-@dirrm System/Applications/EtoileMenuServer.app/Resources/ClockMenulet.menulet
-@dirrm System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/English.lproj/ApplicationsPanel.gorm
-@dirrm System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/English.lproj
-@dirrm System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources
-@dirrm System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry
-@dirrm System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/English.lproj/AboutEtoileEntry.gorm
-@dirrm System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/English.lproj
-@dirrm System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources
-@dirrm System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry
-@dirrm System/Applications/EtoileMenuServer.app/Resources
-@dirrm System/Applications/EtoileMenuServer.app
+GNUstep/System/Applications/EtoileMenuServer.app/EtoileMenuServer
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/AboutEtoileEntry
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/Credits.rtf
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/Credits.tiff
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/English.lproj/AboutEtoileEntry.gorm/data.classes
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/English.lproj/AboutEtoileEntry.gorm/data.info
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/English.lproj/AboutEtoileEntry.gorm/objects.gorm
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/Info-gnustep.plist
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/stamp.make
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/ApplicationsEntry
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/English.lproj/ApplicationsPanel.gorm/data.classes
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/English.lproj/ApplicationsPanel.gorm/data.info
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/English.lproj/ApplicationsPanel.gorm/objects.gorm
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/Info-gnustep.plist
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/stamp.make
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/ClockMenulet.menulet/ClockMenulet
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/ClockMenulet.menulet/Resources/Info-gnustep.plist
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/ClockMenulet.menulet/stamp.make
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/Etoile.tiff
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/EtoileLogo.tiff
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/EtoileLogoH.tiff
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/EtoileMenuServer.desktop
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/MenuBarFiller.tiff
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/MenuBarLeftEdge.tiff
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/MenuBarRightEdge.tiff
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/SystemPreferencesEntry.sysbarentry/Resources/Info-gnustep.plist
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/SystemPreferencesEntry.sysbarentry/SystemPreferencesEntry
+GNUstep/System/Applications/EtoileMenuServer.app/Resources/SystemPreferencesEntry.sysbarentry/stamp.make
+GNUstep/System/Applications/EtoileMenuServer.app/stamp.make
+GNUstep/System/Tools/EtoileMenuServer
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/SystemPreferencesEntry.sysbarentry/Resources
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/SystemPreferencesEntry.sysbarentry
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/LookAndBehaviorEntry.sysbarentry/Resources
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/LookAndBehaviorEntry.sysbarentry
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/HardwareEntry.sysbarentry/Resources
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/HardwareEntry.sysbarentry
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/ClockMenulet.menulet/Resources
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/ClockMenulet.menulet
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/English.lproj/ApplicationsPanel.gorm
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources/English.lproj
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry/Resources
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/ApplicationsEntry.sysbarentry
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/English.lproj/AboutEtoileEntry.gorm
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources/English.lproj
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry/Resources
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources/AboutEtoileEntry.sysbarentry
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app/Resources
+@dirrm GNUstep/System/Applications/EtoileMenuServer.app

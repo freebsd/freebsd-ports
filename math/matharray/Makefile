@@ -16,7 +16,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Class library for mathematical manipulation of matrices
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

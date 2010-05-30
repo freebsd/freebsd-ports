@@ -1,6 +1,6 @@
-Local/Library/Libraries/libSlideShow.so
-Local/Library/Libraries/libSlideShow.so.%%MAJORVERSION%%
-Local/Library/Libraries/libSlideShow.so.%%VERSION%%
-Local/Library/Headers/SlideShow/SlideShow.h
-Local/Library/Headers/SlideShow/SlideShowWindow.h
-@dirrm Local/Library/Headers/SlideShow
+GNUstep/Local/Library/Libraries/libSlideShow.so
+GNUstep/Local/Library/Libraries/libSlideShow.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Libraries/libSlideShow.so.%%VERSION%%
+GNUstep/Local/Library/Headers/SlideShow/SlideShow.h
+GNUstep/Local/Library/Headers/SlideShow/SlideShowWindow.h
+@dirrm GNUstep/Local/Library/Headers/SlideShow

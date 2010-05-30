@@ -1,13 +1,13 @@
-Local/Library/Burn/MP3ToWav.bundle/MP3ToWav
-Local/Library/Burn/MP3ToWav.bundle/Resources/English.lproj/Localizable.strings
-Local/Library/Burn/MP3ToWav.bundle/Resources/French.lproj/Localizable.strings
-Local/Library/Burn/MP3ToWav.bundle/Resources/German.lproj/Localizable.strings
-Local/Library/Burn/MP3ToWav.bundle/Resources/Info-gnustep.plist
-Local/Library/Burn/MP3ToWav.bundle/Resources/iconMP3ToWav.tiff
-Local/Library/Burn/MP3ToWav.bundle/stamp.make
-@dirrm Local/Library/Burn/MP3ToWav.bundle/Resources/German.lproj
-@dirrm Local/Library/Burn/MP3ToWav.bundle/Resources/French.lproj
-@dirrm Local/Library/Burn/MP3ToWav.bundle/Resources/English.lproj
-@dirrm Local/Library/Burn/MP3ToWav.bundle/Resources
-@dirrm Local/Library/Burn/MP3ToWav.bundle
-@dirrm Local/Library/Burn
+GNUstep/Local/Library/Burn/MP3ToWav.bundle/MP3ToWav
+GNUstep/Local/Library/Burn/MP3ToWav.bundle/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Library/Burn/MP3ToWav.bundle/Resources/French.lproj/Localizable.strings
+GNUstep/Local/Library/Burn/MP3ToWav.bundle/Resources/German.lproj/Localizable.strings
+GNUstep/Local/Library/Burn/MP3ToWav.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Burn/MP3ToWav.bundle/Resources/iconMP3ToWav.tiff
+GNUstep/Local/Library/Burn/MP3ToWav.bundle/stamp.make
+@dirrm GNUstep/Local/Library/Burn/MP3ToWav.bundle/Resources/German.lproj
+@dirrm GNUstep/Local/Library/Burn/MP3ToWav.bundle/Resources/French.lproj
+@dirrm GNUstep/Local/Library/Burn/MP3ToWav.bundle/Resources/English.lproj
+@dirrm GNUstep/Local/Library/Burn/MP3ToWav.bundle/Resources
+@dirrm GNUstep/Local/Library/Burn/MP3ToWav.bundle
+@dirrm GNUstep/Local/Library/Burn

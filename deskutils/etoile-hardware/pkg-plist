@@ -1,12 +1,12 @@
-Local/Applications/Hardware.app/Hardware
-Local/Applications/Hardware.app/Resources/Hardware.desktop
-Local/Applications/Hardware.app/Resources/HardwareInfo.plist
-Local/Applications/Hardware.app/Resources/Info-gnustep.plist
-Local/Applications/Hardware.app/Resources/MainMenu.gorm/data.classes
-Local/Applications/Hardware.app/Resources/MainMenu.gorm/data.info
-Local/Applications/Hardware.app/Resources/MainMenu.gorm/objects.gorm
-Local/Applications/Hardware.app/stamp.make
-Local/Tools/Hardware
-@dirrm Local/Applications/Hardware.app/Resources/MainMenu.gorm
-@dirrm Local/Applications/Hardware.app/Resources
-@dirrm Local/Applications/Hardware.app
+GNUstep/Local/Applications/Hardware.app/Hardware
+GNUstep/Local/Applications/Hardware.app/Resources/Hardware.desktop
+GNUstep/Local/Applications/Hardware.app/Resources/HardwareInfo.plist
+GNUstep/Local/Applications/Hardware.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Hardware.app/Resources/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/Hardware.app/Resources/MainMenu.gorm/data.info
+GNUstep/Local/Applications/Hardware.app/Resources/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/Hardware.app/stamp.make
+GNUstep/Local/Tools/Hardware
+@dirrm GNUstep/Local/Applications/Hardware.app/Resources/MainMenu.gorm
+@dirrm GNUstep/Local/Applications/Hardware.app/Resources
+@dirrm GNUstep/Local/Applications/Hardware.app

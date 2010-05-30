@@ -14,7 +14,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Object containers and generic algorithms for Objective-C
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes

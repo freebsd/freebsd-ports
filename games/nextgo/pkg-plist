@@ -1,19 +1,19 @@
-Local/Applications/NeXTGo.app/NeXTGo
-Local/Applications/NeXTGo.app/Resources/Background.tiff
-Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm/data.classes
-Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm/data.info
-Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm/objects.gorm
-Local/Applications/NeXTGo.app/Resources/Info-gnustep.plist
-Local/Applications/NeXTGo.app/Resources/NeXTGo.background-2.0.draw
-Local/Applications/NeXTGo.app/Resources/NeXTGo.background.draw
-Local/Applications/NeXTGo.app/Resources/NeXTGo.desktop
-Local/Applications/NeXTGo.app/Resources/NeXTGo.tiff
-Local/Applications/NeXTGo.app/Resources/NeXTGoFile.tiff
-Local/Applications/NeXTGo.app/Resources/NeXTGoHelp.rtf
-Local/Applications/NeXTGo.app/Resources/intergo.dct
-Local/Applications/NeXTGo.app/stamp.make
-Local/Tools/NeXTGo
-@dirrm Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm
-@dirrm Local/Applications/NeXTGo.app/Resources/English.lproj
-@dirrm Local/Applications/NeXTGo.app/Resources
-@dirrm Local/Applications/NeXTGo.app
+GNUstep/Local/Applications/NeXTGo.app/NeXTGo
+GNUstep/Local/Applications/NeXTGo.app/Resources/Background.tiff
+GNUstep/Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm/data.classes
+GNUstep/Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm/data.info
+GNUstep/Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm/objects.gorm
+GNUstep/Local/Applications/NeXTGo.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/NeXTGo.app/Resources/NeXTGo.background-2.0.draw
+GNUstep/Local/Applications/NeXTGo.app/Resources/NeXTGo.background.draw
+GNUstep/Local/Applications/NeXTGo.app/Resources/NeXTGo.desktop
+GNUstep/Local/Applications/NeXTGo.app/Resources/NeXTGo.tiff
+GNUstep/Local/Applications/NeXTGo.app/Resources/NeXTGoFile.tiff
+GNUstep/Local/Applications/NeXTGo.app/Resources/NeXTGoHelp.rtf
+GNUstep/Local/Applications/NeXTGo.app/Resources/intergo.dct
+GNUstep/Local/Applications/NeXTGo.app/stamp.make
+GNUstep/Local/Tools/NeXTGo
+@dirrm GNUstep/Local/Applications/NeXTGo.app/Resources/English.lproj/NeXTGo.gorm
+@dirrm GNUstep/Local/Applications/NeXTGo.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/NeXTGo.app/Resources
+@dirrm GNUstep/Local/Applications/NeXTGo.app

@@ -1,15 +1,15 @@
-Local/Applications/iTerm.app/Resources/FreeMono.ttf
-Local/Applications/iTerm.app/Resources/FreeMonoBold.ttf
-Local/Applications/iTerm.app/Resources/FreeMonoBoldOblique.ttf
-Local/Applications/iTerm.app/Resources/FreeMonoOblique.ttf
-Local/Applications/iTerm.app/Resources/Info-gnustep.plist
-Local/Applications/iTerm.app/Resources/Profiles.plist
-Local/Applications/iTerm.app/Resources/iTerm.desktop
-Local/Applications/iTerm.app/Resources/iTerm.iconheader
-Local/Applications/iTerm.app/Resources/iTerm.plist
-Local/Applications/iTerm.app/Resources/iTerm_Framework.plist
-Local/Applications/iTerm.app/iTerm
-Local/Applications/iTerm.app/stamp.make
-Local/Tools/iTerm
-@dirrm Local/Applications/iTerm.app/Resources
-@dirrm Local/Applications/iTerm.app
+GNUstep/Local/Applications/iTerm.app/Resources/FreeMono.ttf
+GNUstep/Local/Applications/iTerm.app/Resources/FreeMonoBold.ttf
+GNUstep/Local/Applications/iTerm.app/Resources/FreeMonoBoldOblique.ttf
+GNUstep/Local/Applications/iTerm.app/Resources/FreeMonoOblique.ttf
+GNUstep/Local/Applications/iTerm.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/iTerm.app/Resources/Profiles.plist
+GNUstep/Local/Applications/iTerm.app/Resources/iTerm.desktop
+GNUstep/Local/Applications/iTerm.app/Resources/iTerm.iconheader
+GNUstep/Local/Applications/iTerm.app/Resources/iTerm.plist
+GNUstep/Local/Applications/iTerm.app/Resources/iTerm_Framework.plist
+GNUstep/Local/Applications/iTerm.app/iTerm
+GNUstep/Local/Applications/iTerm.app/stamp.make
+GNUstep/Local/Tools/iTerm
+@dirrm GNUstep/Local/Applications/iTerm.app/Resources
+@dirrm GNUstep/Local/Applications/iTerm.app

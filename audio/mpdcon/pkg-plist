@@ -1,61 +1,61 @@
-Local/Applications/MPDCon.app/MPDCon
-Local/Applications/MPDCon.app/Resources/COPYING
-Local/Applications/MPDCon.app/Resources/Collection.gorm/data.classes
-Local/Applications/MPDCon.app/Resources/Collection.gorm/data.info
-Local/Applications/MPDCon.app/Resources/Collection.gorm/objects.gorm
-Local/Applications/MPDCon.app/Resources/Crossfade.tiff
-Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm/data.classes
-Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm/data.info
-Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm/objects.gorm
-Local/Applications/MPDCon.app/Resources/Current.tiff
-Local/Applications/MPDCon.app/Resources/GNUstep.tiff
-Local/Applications/MPDCon.app/Resources/Info-gnustep.plist
-Local/Applications/MPDCon.app/Resources/Install
-Local/Applications/MPDCon.app/Resources/MPDCon.desktop
-Local/Applications/MPDCon.app/Resources/MPDCon.tiff
-Local/Applications/MPDCon.app/Resources/MoveSong.tiff
-Local/Applications/MPDCon.app/Resources/Next.tiff
-Local/Applications/MPDCon.app/Resources/Pause.tiff
-Local/Applications/MPDCon.app/Resources/Play.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/CD.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/Crossfade.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/Next.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/Pause.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/Play.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/Playlist.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/Prev.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/Repeat.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/Shuffle.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/Stop.tiff
-Local/Applications/MPDCon.app/Resources/Player.gorm/data.classes
-Local/Applications/MPDCon.app/Resources/Player.gorm/data.info
-Local/Applications/MPDCon.app/Resources/Player.gorm/objects.gorm
-Local/Applications/MPDCon.app/Resources/Playlist.tiff
-Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/Current.tiff
-Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/data.classes
-Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/data.info
-Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/objects.gorm
-Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm/data.classes
-Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm/data.info
-Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm/objects.gorm
-Local/Applications/MPDCon.app/Resources/Preferences.gorm/data.classes
-Local/Applications/MPDCon.app/Resources/Preferences.gorm/data.info
-Local/Applications/MPDCon.app/Resources/Preferences.gorm/objects.gorm
-Local/Applications/MPDCon.app/Resources/Prev.tiff
-Local/Applications/MPDCon.app/Resources/Repeat.tiff
-Local/Applications/MPDCon.app/Resources/Shuffle.tiff
-Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/data.classes
-Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/data.info
-Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/objects.gorm
-Local/Applications/MPDCon.app/Resources/Stop.tiff
-Local/Applications/MPDCon.app/stamp.make
-Local/Tools/MPDCon
-@dirrm Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm
-@dirrm Local/Applications/MPDCon.app/Resources/Preferences.gorm
-@dirrm Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm
-@dirrm Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm
-@dirrm Local/Applications/MPDCon.app/Resources/Player.gorm
-@dirrm Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm
-@dirrm Local/Applications/MPDCon.app/Resources/Collection.gorm
-@dirrm Local/Applications/MPDCon.app/Resources
-@dirrm Local/Applications/MPDCon.app
+GNUstep/Local/Applications/MPDCon.app/MPDCon
+GNUstep/Local/Applications/MPDCon.app/Resources/COPYING
+GNUstep/Local/Applications/MPDCon.app/Resources/Collection.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/Collection.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/Collection.gorm/objects.gorm
+GNUstep/Local/Applications/MPDCon.app/Resources/Crossfade.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm/objects.gorm
+GNUstep/Local/Applications/MPDCon.app/Resources/Current.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/GNUstep.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/MPDCon.app/Resources/Install
+GNUstep/Local/Applications/MPDCon.app/Resources/MPDCon.desktop
+GNUstep/Local/Applications/MPDCon.app/Resources/MPDCon.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/MoveSong.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Next.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Pause.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Play.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/CD.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/Crossfade.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/Next.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/Pause.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/Play.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/Playlist.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/Prev.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/Repeat.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/Shuffle.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/Stop.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm/objects.gorm
+GNUstep/Local/Applications/MPDCon.app/Resources/Playlist.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/Current.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm/objects.gorm
+GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm/objects.gorm
+GNUstep/Local/Applications/MPDCon.app/Resources/Preferences.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/Preferences.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/Preferences.gorm/objects.gorm
+GNUstep/Local/Applications/MPDCon.app/Resources/Prev.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Repeat.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/Shuffle.tiff
+GNUstep/Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/data.classes
+GNUstep/Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/data.info
+GNUstep/Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/objects.gorm
+GNUstep/Local/Applications/MPDCon.app/Resources/Stop.tiff
+GNUstep/Local/Applications/MPDCon.app/stamp.make
+GNUstep/Local/Tools/MPDCon
+@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm
+@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/Preferences.gorm
+@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm
+@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/PlaylistViewer.gorm
+@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/Player.gorm
+@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/CrossfadeView.gorm
+@dirrm GNUstep/Local/Applications/MPDCon.app/Resources/Collection.gorm
+@dirrm GNUstep/Local/Applications/MPDCon.app/Resources
+@dirrm GNUstep/Local/Applications/MPDCon.app

@@ -17,7 +17,6 @@ COMMENT=	Molecular Simulator for GNUstep
 LIB_DEPENDS+=	gsl.15:${PORTSDIR}/math/gsl
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

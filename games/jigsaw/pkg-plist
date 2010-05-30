@@ -1,8 +1,8 @@
-Local/Applications/Jigsaw.app/Jigsaw
-Local/Applications/Jigsaw.app/Resources/GPuzzle2.tiff
-Local/Applications/Jigsaw.app/Resources/Info-gnustep.plist
-Local/Applications/Jigsaw.app/Resources/Jigsaw.desktop
-Local/Applications/Jigsaw.app/stamp.make
-Local/Tools/Jigsaw
-@dirrm Local/Applications/Jigsaw.app/Resources
-@dirrm Local/Applications/Jigsaw.app
+GNUstep/Local/Applications/Jigsaw.app/Jigsaw
+GNUstep/Local/Applications/Jigsaw.app/Resources/GPuzzle2.tiff
+GNUstep/Local/Applications/Jigsaw.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Jigsaw.app/Resources/Jigsaw.desktop
+GNUstep/Local/Applications/Jigsaw.app/stamp.make
+GNUstep/Local/Tools/Jigsaw
+@dirrm GNUstep/Local/Applications/Jigsaw.app/Resources
+@dirrm GNUstep/Local/Applications/Jigsaw.app

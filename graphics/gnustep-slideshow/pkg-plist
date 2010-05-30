@@ -1,22 +1,22 @@
-Local/Applications/SlideShow.app/Resources/DefaultSlideShowKeyBindings.dict
-Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/data.classes
-Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/data.info
-Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/objects.gorm
-Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/data.classes
-Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/data.info
-Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/objects.gorm
-Local/Applications/SlideShow.app/Resources/Info-gnustep.plist
-Local/Applications/SlideShow.app/Resources/SlideShow.desktop
-Local/Applications/SlideShow.app/Resources/arrowLeft.tiff
-Local/Applications/SlideShow.app/Resources/arrowRight.tiff
-Local/Applications/SlideShow.app/Resources/quit.tiff
-Local/Applications/SlideShow.app/Resources/rotateLeft.tiff
-Local/Applications/SlideShow.app/Resources/rotateRight.tiff
-Local/Applications/SlideShow.app/SlideShow
-Local/Applications/SlideShow.app/stamp.make
-Local/Tools/SlideShow
-@dirrm Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm
-@dirrm Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm
-@dirrm Local/Applications/SlideShow.app/Resources/English.lproj
-@dirrm Local/Applications/SlideShow.app/Resources
-@dirrm Local/Applications/SlideShow.app
+GNUstep/Local/Applications/SlideShow.app/Resources/DefaultSlideShowKeyBindings.dict
+GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/data.classes
+GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/data.info
+GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm/objects.gorm
+GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/data.classes
+GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/data.info
+GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm/objects.gorm
+GNUstep/Local/Applications/SlideShow.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/SlideShow.app/Resources/SlideShow.desktop
+GNUstep/Local/Applications/SlideShow.app/Resources/arrowLeft.tiff
+GNUstep/Local/Applications/SlideShow.app/Resources/arrowRight.tiff
+GNUstep/Local/Applications/SlideShow.app/Resources/quit.tiff
+GNUstep/Local/Applications/SlideShow.app/Resources/rotateLeft.tiff
+GNUstep/Local/Applications/SlideShow.app/Resources/rotateRight.tiff
+GNUstep/Local/Applications/SlideShow.app/SlideShow
+GNUstep/Local/Applications/SlideShow.app/stamp.make
+GNUstep/Local/Tools/SlideShow
+@dirrm GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm
+@dirrm GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm
+@dirrm GNUstep/Local/Applications/SlideShow.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/SlideShow.app/Resources
+@dirrm GNUstep/Local/Applications/SlideShow.app

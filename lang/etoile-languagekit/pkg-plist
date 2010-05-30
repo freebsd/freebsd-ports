@@ -1,88 +1,88 @@
-Local/Library/Frameworks/LanguageKit.framework/Headers
-Local/Library/Frameworks/LanguageKit.framework/LanguageKit
-Local/Library/Frameworks/LanguageKit.framework/LanguageKit.framework
-Local/Library/Frameworks/LanguageKit.framework/Resources
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKAST.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKASTVisitor.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKArrayExpr.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKAssignExpr.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKBlockExpr.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKCategory.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKCodeGen.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKComment.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKComparison.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKCompiler.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKDeclRef.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKIfStatement.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKLiteral.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKMessageSend.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKMethod.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKModule.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKReturn.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKSubclass.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKSymbolRef.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKSymbolTable.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKToken.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKVariableDecl.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LanguageKit.h
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/LanguageKit
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/ObjCConstants.plist
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKit.so
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKit.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKit.so.%%LIBVERSION%%
-Local/Library/Frameworks/LanguageKit.framework/Versions/Current
-Local/Library/Frameworks/LanguageKit.framework/libLanguageKit.so
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Headers
-Local/Library/Frameworks/LanguageKitCodeGen.framework/LanguageKitCodeGen
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Resources
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Headers/CodeGenBlock.h
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Headers/CodeGenModule.h
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/LanguageKitCodeGen
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Resources/MsgSendSmallInt.bc
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKitCodeGen.so
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKitCodeGen.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKitCodeGen.so.%%LIBVERSION%%
-Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/Current
-Local/Library/Frameworks/LanguageKitCodeGen.framework/libLanguageKitCodeGen.so
-Local/Library/Frameworks/LanguageKitRuntime.framework/Headers
-Local/Library/Frameworks/LanguageKitRuntime.framework/LanguageKitRuntime
-Local/Library/Frameworks/LanguageKitRuntime.framework/LanguageKitRuntime.framework
-Local/Library/Frameworks/LanguageKitRuntime.framework/Resources
-Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/Headers/BigInt.h
-Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/Headers/BlockClosure.h
-Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/LanguageKitRuntime
-Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/libLanguageKitRuntime.so
-Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/libLanguageKitRuntime.so.%%MAJORLIBVERSION2%%
-Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORVERSION%%/libLanguageKitRuntime.so.%%LIBVERSION2%%
-Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/Current
-Local/Library/Frameworks/LanguageKitRuntime.framework/libLanguageKitRuntime.so
-Local/Library/Headers/LanguageKit
-Local/Library/Headers/LanguageKitCodeGen
-Local/Library/Headers/LanguageKitRuntime
-Local/Library/Libraries/libLanguageKit.so
-Local/Library/Libraries/libLanguageKit.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libLanguageKit.so.%%LIBVERSION%%
-Local/Library/Libraries/libLanguageKitCodeGen.so
-Local/Library/Libraries/libLanguageKitCodeGen.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libLanguageKitCodeGen.so.%%LIBVERSION%%
-Local/Library/Libraries/libLanguageKitRuntime.so
-Local/Library/Libraries/libLanguageKitRuntime.so.%%MAJORLIBVERSION2%%
-Local/Library/Libraries/libLanguageKitRuntime.so.%%LIBVERSION2%%
-@dirrm Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/Resources
-@dirrm Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/Headers
-@dirrm Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%
-@dirrm Local/Library/Frameworks/LanguageKitRuntime.framework/Versions
-@dirrm Local/Library/Frameworks/LanguageKitRuntime.framework
-@dirrm Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions
-@dirrm Local/Library/Frameworks/LanguageKitCodeGen.framework
-@dirrm Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/LanguageKit.framework/Versions
-@dirrm Local/Library/Frameworks/LanguageKit.framework
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Headers
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/LanguageKit
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/LanguageKit.framework
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Resources
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKAST.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKASTVisitor.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKArrayExpr.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKAssignExpr.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKBlockExpr.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKCategory.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKCodeGen.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKComment.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKComparison.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKCompiler.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKDeclRef.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKIfStatement.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKLiteral.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKMessageSend.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKMethod.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKModule.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKReturn.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKSubclass.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKSymbolRef.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKSymbolTable.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKToken.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LKVariableDecl.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/LanguageKit.h
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/LanguageKit
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/ObjCConstants.plist
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKit.so
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/LanguageKit.framework/libLanguageKit.so
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Headers
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/LanguageKitCodeGen
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Resources
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Headers/CodeGenBlock.h
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Headers/CodeGenModule.h
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/LanguageKitCodeGen
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Resources/MsgSendSmallInt.bc
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKitCodeGen.so
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKitCodeGen.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/libLanguageKitCodeGen.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/libLanguageKitCodeGen.so
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Headers
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/LanguageKitRuntime
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/LanguageKitRuntime.framework
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Resources
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/Headers/BigInt.h
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/Headers/BlockClosure.h
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/LanguageKitRuntime
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/libLanguageKitRuntime.so
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/libLanguageKitRuntime.so.%%MAJORLIBVERSION2%%
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORVERSION%%/libLanguageKitRuntime.so.%%LIBVERSION2%%
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/libLanguageKitRuntime.so
+GNUstep/Local/Library/Headers/LanguageKit
+GNUstep/Local/Library/Headers/LanguageKitCodeGen
+GNUstep/Local/Library/Headers/LanguageKitRuntime
+GNUstep/Local/Library/Libraries/libLanguageKit.so
+GNUstep/Local/Library/Libraries/libLanguageKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libLanguageKit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Libraries/libLanguageKitCodeGen.so
+GNUstep/Local/Library/Libraries/libLanguageKitCodeGen.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libLanguageKitCodeGen.so.%%LIBVERSION%%
+GNUstep/Local/Library/Libraries/libLanguageKitRuntime.so
+GNUstep/Local/Library/Libraries/libLanguageKitRuntime.so.%%MAJORLIBVERSION2%%
+GNUstep/Local/Library/Libraries/libLanguageKitRuntime.so.%%LIBVERSION2%%
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions/%%MAJORLIBVERSION2%%
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKitRuntime.framework
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKitCodeGen.framework
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKit.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/LanguageKit.framework

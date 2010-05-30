@@ -1,8 +1,8 @@
-Local/Applications/Ticker.app/Resources/Info-gnustep.plist
-Local/Applications/Ticker.app/Resources/Ticker.desktop
-Local/Applications/Ticker.app/Resources/Ticker.tiff
-Local/Applications/Ticker.app/Ticker
-Local/Applications/Ticker.app/stamp.make
-Local/Tools/Ticker
-@dirrm Local/Applications/Ticker.app/Resources
-@dirrm Local/Applications/Ticker.app
+GNUstep/Local/Applications/Ticker.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Ticker.app/Resources/Ticker.desktop
+GNUstep/Local/Applications/Ticker.app/Resources/Ticker.tiff
+GNUstep/Local/Applications/Ticker.app/Ticker
+GNUstep/Local/Applications/Ticker.app/stamp.make
+GNUstep/Local/Tools/Ticker
+@dirrm GNUstep/Local/Applications/Ticker.app/Resources
+@dirrm GNUstep/Local/Applications/Ticker.app

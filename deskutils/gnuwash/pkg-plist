@@ -1,20 +1,20 @@
-Local/Applications/GNUWash.app/GNUWash
-Local/Applications/GNUWash.app/Resources/GNUTimer.tiff
-Local/Applications/GNUWash.app/Resources/GNUWash.desktop
-Local/Applications/GNUWash.app/Resources/GNUWash.gorm/data.classes
-Local/Applications/GNUWash.app/Resources/GNUWash.gorm/gnuwash.tiff
-Local/Applications/GNUWash.app/Resources/GNUWash.gorm/objects.gorm
-Local/Applications/GNUWash.app/Resources/GNUWashInfo.plist
-Local/Applications/GNUWash.app/Resources/Info-gnustep.plist
-Local/Applications/GNUWash.app/Resources/Preferences.gorm/data.classes
-Local/Applications/GNUWash.app/Resources/Preferences.gorm/objects.gorm
-Local/Applications/GNUWash.app/Resources/alarm.tiff
-Local/Applications/GNUWash.app/Resources/gnuwash.tiff
-Local/Applications/GNUWash.app/Resources/pizza.tiff
-Local/Applications/GNUWash.app/Resources/tea.tiff
-Local/Applications/GNUWash.app/stamp.make
-Local/Tools/GNUWash
-@dirrm Local/Applications/GNUWash.app/Resources/Preferences.gorm
-@dirrm Local/Applications/GNUWash.app/Resources/GNUWash.gorm
-@dirrm Local/Applications/GNUWash.app/Resources
-@dirrm Local/Applications/GNUWash.app
+GNUstep/Local/Applications/GNUWash.app/GNUWash
+GNUstep/Local/Applications/GNUWash.app/Resources/GNUTimer.tiff
+GNUstep/Local/Applications/GNUWash.app/Resources/GNUWash.desktop
+GNUstep/Local/Applications/GNUWash.app/Resources/GNUWash.gorm/data.classes
+GNUstep/Local/Applications/GNUWash.app/Resources/GNUWash.gorm/gnuwash.tiff
+GNUstep/Local/Applications/GNUWash.app/Resources/GNUWash.gorm/objects.gorm
+GNUstep/Local/Applications/GNUWash.app/Resources/GNUWashInfo.plist
+GNUstep/Local/Applications/GNUWash.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/GNUWash.app/Resources/Preferences.gorm/data.classes
+GNUstep/Local/Applications/GNUWash.app/Resources/Preferences.gorm/objects.gorm
+GNUstep/Local/Applications/GNUWash.app/Resources/alarm.tiff
+GNUstep/Local/Applications/GNUWash.app/Resources/gnuwash.tiff
+GNUstep/Local/Applications/GNUWash.app/Resources/pizza.tiff
+GNUstep/Local/Applications/GNUWash.app/Resources/tea.tiff
+GNUstep/Local/Applications/GNUWash.app/stamp.make
+GNUstep/Local/Tools/GNUWash
+@dirrm GNUstep/Local/Applications/GNUWash.app/Resources/Preferences.gorm
+@dirrm GNUstep/Local/Applications/GNUWash.app/Resources/GNUWash.gorm
+@dirrm GNUstep/Local/Applications/GNUWash.app/Resources
+@dirrm GNUstep/Local/Applications/GNUWash.app

@@ -17,7 +17,6 @@ COMMENT=	Etoile Project Smalltalk Compiler
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
@@ -29,7 +28,7 @@ USE_GNUSTEP_LOCAL_LIBS+=	SmalltalkSupport:${SMALLTALKKIT_PORT}
 DEFAULT_LIBVERSION=	0.1
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Languages/Compiler
-PLIST_FILES=	Local/Tools/edlc
+PLIST_FILES=	GNUstep/Local/Tools/edlc
 
 FOUNDATION_PORT?=	devel/etoile-foundation
 LANGUAGEKIT_PORT?=	lang/etoile-languagekit

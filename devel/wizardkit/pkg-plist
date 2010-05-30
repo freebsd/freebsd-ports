@@ -1,21 +1,21 @@
-Local/Library/Frameworks/WizardKit.framework/Headers
-Local/Library/Frameworks/WizardKit.framework/Resources
-Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Headers/WKWizardPanel.h
-Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Headers/WizardKit.h
-Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/WizardKit
-Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/libWizardKit.so
-Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/libWizardKit.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/libWizardKit.so.%%LIBVERSION%%
-Local/Library/Frameworks/WizardKit.framework/Versions/Current
-Local/Library/Frameworks/WizardKit.framework/WizardKit
-Local/Library/Frameworks/WizardKit.framework/libWizardKit.so
-Local/Library/Headers/WizardKit
-Local/Library/Libraries/libWizardKit.so
-Local/Library/Libraries/libWizardKit.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libWizardKit.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%
-@dirrm Local/Library/Frameworks/WizardKit.framework/Versions
-@dirrm Local/Library/Frameworks/WizardKit.framework
+GNUstep/Local/Library/Frameworks/WizardKit.framework/Headers
+GNUstep/Local/Library/Frameworks/WizardKit.framework/Resources
+GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Headers/WKWizardPanel.h
+GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Headers/WizardKit.h
+GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/WizardKit
+GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/libWizardKit.so
+GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/libWizardKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/libWizardKit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/WizardKit.framework/WizardKit
+GNUstep/Local/Library/Frameworks/WizardKit.framework/libWizardKit.so
+GNUstep/Local/Library/Headers/WizardKit
+GNUstep/Local/Library/Libraries/libWizardKit.so
+GNUstep/Local/Library/Libraries/libWizardKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libWizardKit.so.%%LIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions/%%MAJORVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/WizardKit.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/WizardKit.framework

@@ -1,11 +1,11 @@
-Local/Library/Bundles/LanguageKit/CommentToLog.ast/CommentToLog
-Local/Library/Bundles/LanguageKit/CommentToLog.ast/Resources/Info-gnustep.plist
-Local/Library/Bundles/LanguageKit/CommentToLog.ast/stamp.make
-Local/Library/Bundles/LanguageKit/LowerIfTrue.ast/LowerIfTrue
-Local/Library/Bundles/LanguageKit/LowerIfTrue.ast/Resources/Info-gnustep.plist
-Local/Library/Bundles/LanguageKit/LowerIfTrue.ast/stamp.make
-@dirrm Local/Library/Bundles/LanguageKit/LowerIfTrue.ast/Resources
-@dirrm Local/Library/Bundles/LanguageKit/LowerIfTrue.ast
-@dirrm Local/Library/Bundles/LanguageKit/CommentToLog.ast/Resources
-@dirrm Local/Library/Bundles/LanguageKit/CommentToLog.ast
-@dirrm Local/Library/Bundles/LanguageKit
+GNUstep/Local/Library/Bundles/LanguageKit/CommentToLog.ast/CommentToLog
+GNUstep/Local/Library/Bundles/LanguageKit/CommentToLog.ast/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/LanguageKit/CommentToLog.ast/stamp.make
+GNUstep/Local/Library/Bundles/LanguageKit/LowerIfTrue.ast/LowerIfTrue
+GNUstep/Local/Library/Bundles/LanguageKit/LowerIfTrue.ast/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/LanguageKit/LowerIfTrue.ast/stamp.make
+@dirrm GNUstep/Local/Library/Bundles/LanguageKit/LowerIfTrue.ast/Resources
+@dirrm GNUstep/Local/Library/Bundles/LanguageKit/LowerIfTrue.ast
+@dirrm GNUstep/Local/Library/Bundles/LanguageKit/CommentToLog.ast/Resources
+@dirrm GNUstep/Local/Library/Bundles/LanguageKit/CommentToLog.ast
+@dirrm GNUstep/Local/Library/Bundles/LanguageKit

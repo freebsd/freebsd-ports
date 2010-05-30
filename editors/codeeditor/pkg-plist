@@ -1,46 +1,46 @@
-Local/Applications/CodeEditor.app/CodeEditor
-Local/Applications/CodeEditor.app/Resources/CodeEditor.desktop
-Local/Applications/CodeEditor.app/Resources/CodeEditor.tiff
-Local/Applications/CodeEditor.app/Resources/CodeEditorInfo.plist
-Local/Applications/CodeEditor.app/Resources/FindPanel.gorm/data.classes
-Local/Applications/CodeEditor.app/Resources/FindPanel.gorm/objects.gorm
-Local/Applications/CodeEditor.app/Resources/FontAttributesPanel.gorm/data.classes
-Local/Applications/CodeEditor.app/Resources/FontAttributesPanel.gorm/objects.gorm
-Local/Applications/CodeEditor.app/Resources/Info-gnustep.plist
-Local/Applications/CodeEditor.app/Resources/Inspector.gorm/data.classes
-Local/Applications/CodeEditor.app/Resources/Inspector.gorm/objects.gorm
-Local/Applications/CodeEditor.app/Resources/MethodPanel.gorm/data.classes
-Local/Applications/CodeEditor.app/Resources/MethodPanel.gorm/objects.gorm
-Local/Applications/CodeEditor.app/Resources/OpenInWorkspace.tiff
-Local/Applications/CodeEditor.app/Resources/Preference.gorm/data.classes
-Local/Applications/CodeEditor.app/Resources/Preference.gorm/objects.gorm
-Local/Applications/CodeEditor.app/Resources/ScriptingInfo.plist
-Local/Applications/CodeEditor.app/Resources/Scripts/autogsdoc.rb
-Local/Applications/CodeEditor.app/Resources/Scripts/autogsdoc.rb.stinfo
-Local/Applications/CodeEditor.app/Resources/Scripts/welcome.st
-Local/Applications/CodeEditor.app/Resources/Scripts/welcome.st.stinfo
-Local/Applications/CodeEditor.app/Resources/Window.gorm/data.classes
-Local/Applications/CodeEditor.app/Resources/Window.gorm/objects.gorm
-Local/Applications/CodeEditor.app/stamp.make
-Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle/ObjCHandler
-Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle/Resources/Info-gnustep.plist
-Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle/stamp.make
-Local/Library/Bundles/CodeEditorView.bundle/CodeEditorView
-Local/Library/Bundles/CodeEditorView.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/CodeEditorView.bundle/Resources/OpenInWorkspace.tiff
-Local/Library/Bundles/CodeEditorView.bundle/stamp.make
-Local/Tools/CodeEditor
-@dirrm Local/Library/Bundles/CodeEditorView.bundle/Resources
-@dirrm Local/Library/Bundles/CodeEditorView.bundle
-@dirrm Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle/Resources
-@dirrm Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle
-@dirrm Local/Library/ApplicationSupport/CodeEditorView
-@dirrm Local/Applications/CodeEditor.app/Resources/Window.gorm
-@dirrm Local/Applications/CodeEditor.app/Resources/Scripts
-@dirrm Local/Applications/CodeEditor.app/Resources/Preference.gorm
-@dirrm Local/Applications/CodeEditor.app/Resources/MethodPanel.gorm
-@dirrm Local/Applications/CodeEditor.app/Resources/Inspector.gorm
-@dirrm Local/Applications/CodeEditor.app/Resources/FontAttributesPanel.gorm
-@dirrm Local/Applications/CodeEditor.app/Resources/FindPanel.gorm
-@dirrm Local/Applications/CodeEditor.app/Resources
-@dirrm Local/Applications/CodeEditor.app
+GNUstep/Local/Applications/CodeEditor.app/CodeEditor
+GNUstep/Local/Applications/CodeEditor.app/Resources/CodeEditor.desktop
+GNUstep/Local/Applications/CodeEditor.app/Resources/CodeEditor.tiff
+GNUstep/Local/Applications/CodeEditor.app/Resources/CodeEditorInfo.plist
+GNUstep/Local/Applications/CodeEditor.app/Resources/FindPanel.gorm/data.classes
+GNUstep/Local/Applications/CodeEditor.app/Resources/FindPanel.gorm/objects.gorm
+GNUstep/Local/Applications/CodeEditor.app/Resources/FontAttributesPanel.gorm/data.classes
+GNUstep/Local/Applications/CodeEditor.app/Resources/FontAttributesPanel.gorm/objects.gorm
+GNUstep/Local/Applications/CodeEditor.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/CodeEditor.app/Resources/Inspector.gorm/data.classes
+GNUstep/Local/Applications/CodeEditor.app/Resources/Inspector.gorm/objects.gorm
+GNUstep/Local/Applications/CodeEditor.app/Resources/MethodPanel.gorm/data.classes
+GNUstep/Local/Applications/CodeEditor.app/Resources/MethodPanel.gorm/objects.gorm
+GNUstep/Local/Applications/CodeEditor.app/Resources/OpenInWorkspace.tiff
+GNUstep/Local/Applications/CodeEditor.app/Resources/Preference.gorm/data.classes
+GNUstep/Local/Applications/CodeEditor.app/Resources/Preference.gorm/objects.gorm
+GNUstep/Local/Applications/CodeEditor.app/Resources/ScriptingInfo.plist
+GNUstep/Local/Applications/CodeEditor.app/Resources/Scripts/autogsdoc.rb
+GNUstep/Local/Applications/CodeEditor.app/Resources/Scripts/autogsdoc.rb.stinfo
+GNUstep/Local/Applications/CodeEditor.app/Resources/Scripts/welcome.st
+GNUstep/Local/Applications/CodeEditor.app/Resources/Scripts/welcome.st.stinfo
+GNUstep/Local/Applications/CodeEditor.app/Resources/Window.gorm/data.classes
+GNUstep/Local/Applications/CodeEditor.app/Resources/Window.gorm/objects.gorm
+GNUstep/Local/Applications/CodeEditor.app/stamp.make
+GNUstep/Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle/ObjCHandler
+GNUstep/Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle/stamp.make
+GNUstep/Local/Library/Bundles/CodeEditorView.bundle/CodeEditorView
+GNUstep/Local/Library/Bundles/CodeEditorView.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/CodeEditorView.bundle/Resources/OpenInWorkspace.tiff
+GNUstep/Local/Library/Bundles/CodeEditorView.bundle/stamp.make
+GNUstep/Local/Tools/CodeEditor
+@dirrm GNUstep/Local/Library/Bundles/CodeEditorView.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/CodeEditorView.bundle
+@dirrm GNUstep/Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle/Resources
+@dirrm GNUstep/Local/Library/ApplicationSupport/CodeEditorView/ObjCHandler.bundle
+@dirrm GNUstep/Local/Library/ApplicationSupport/CodeEditorView
+@dirrm GNUstep/Local/Applications/CodeEditor.app/Resources/Window.gorm
+@dirrm GNUstep/Local/Applications/CodeEditor.app/Resources/Scripts
+@dirrm GNUstep/Local/Applications/CodeEditor.app/Resources/Preference.gorm
+@dirrm GNUstep/Local/Applications/CodeEditor.app/Resources/MethodPanel.gorm
+@dirrm GNUstep/Local/Applications/CodeEditor.app/Resources/Inspector.gorm
+@dirrm GNUstep/Local/Applications/CodeEditor.app/Resources/FontAttributesPanel.gorm
+@dirrm GNUstep/Local/Applications/CodeEditor.app/Resources/FindPanel.gorm
+@dirrm GNUstep/Local/Applications/CodeEditor.app/Resources
+@dirrm GNUstep/Local/Applications/CodeEditor.app

@@ -1,16 +1,16 @@
-Local/Applications/FTP.app/FTP
-Local/Applications/FTP.app/Resources/FTP.desktop
-Local/Applications/FTP.app/Resources/FTP.gorm/arrow_left.tiff
-Local/Applications/FTP.app/Resources/FTP.gorm/arrow_right.tiff
-Local/Applications/FTP.app/Resources/FTP.gorm/data.classes
-Local/Applications/FTP.app/Resources/FTP.gorm/data.info
-Local/Applications/FTP.app/Resources/FTP.gorm/objects.gorm
-Local/Applications/FTP.app/Resources/FTP_icon_gs.tif
-Local/Applications/FTP.app/Resources/Info-gnustep.plist
-Local/Applications/FTP.app/Resources/arrow_left.tiff
-Local/Applications/FTP.app/Resources/arrow_right.tiff
-Local/Applications/FTP.app/stamp.make
-Local/Tools/FTP
-@dirrm Local/Applications/FTP.app/Resources/FTP.gorm
-@dirrm Local/Applications/FTP.app/Resources
-@dirrm Local/Applications/FTP.app
+GNUstep/Local/Applications/FTP.app/FTP
+GNUstep/Local/Applications/FTP.app/Resources/FTP.desktop
+GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm/arrow_left.tiff
+GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm/arrow_right.tiff
+GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm/data.classes
+GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm/data.info
+GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm/objects.gorm
+GNUstep/Local/Applications/FTP.app/Resources/FTP_icon_gs.tif
+GNUstep/Local/Applications/FTP.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/FTP.app/Resources/arrow_left.tiff
+GNUstep/Local/Applications/FTP.app/Resources/arrow_right.tiff
+GNUstep/Local/Applications/FTP.app/stamp.make
+GNUstep/Local/Tools/FTP
+@dirrm GNUstep/Local/Applications/FTP.app/Resources/FTP.gorm
+@dirrm GNUstep/Local/Applications/FTP.app/Resources
+@dirrm GNUstep/Local/Applications/FTP.app

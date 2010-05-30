@@ -1,30 +1,30 @@
-Local/Applications/StepChat.app/Resources/English.lproj/AccountBox.nib/classes.nib
-Local/Applications/StepChat.app/Resources/English.lproj/AccountBox.nib/info.nib
-Local/Applications/StepChat.app/Resources/English.lproj/AccountBox.nib/keyedobjects.nib
-Local/Applications/StepChat.app/Resources/English.lproj/MainMenu.nib/classes.nib
-Local/Applications/StepChat.app/Resources/English.lproj/MainMenu.nib/info.nib
-Local/Applications/StepChat.app/Resources/English.lproj/MainMenu.nib/keyedobjects.nib
-Local/Applications/StepChat.app/Resources/English.lproj/MessageWindow.gorm/data.classes
-Local/Applications/StepChat.app/Resources/English.lproj/MessageWindow.gorm/data.info
-Local/Applications/StepChat.app/Resources/English.lproj/MessageWindow.gorm/objects.gorm
-Local/Applications/StepChat.app/Resources/English.lproj/PasswordBox.nib/classes.nib
-Local/Applications/StepChat.app/Resources/English.lproj/PasswordBox.nib/info.nib
-Local/Applications/StepChat.app/Resources/English.lproj/PasswordBox.nib/keyedobjects.nib
-Local/Applications/StepChat.app/Resources/English.lproj/RosterWindow.gorm/data.classes
-Local/Applications/StepChat.app/Resources/English.lproj/RosterWindow.gorm/data.info
-Local/Applications/StepChat.app/Resources/English.lproj/RosterWindow.gorm/objects.gorm
-Local/Applications/StepChat.app/Resources/Info-gnustep.plist
-Local/Applications/StepChat.app/Resources/StepChat.desktop
-Local/Applications/StepChat.app/Resources/StepChat.tiff
-Local/Applications/StepChat.app/Resources/StepChatInfo.plist
-Local/Applications/StepChat.app/StepChat
-Local/Applications/StepChat.app/stamp.make
-Local/Tools/StepChat
-@dirrm Local/Applications/StepChat.app/Resources/English.lproj/RosterWindow.gorm
-@dirrm Local/Applications/StepChat.app/Resources/English.lproj/PasswordBox.nib
-@dirrm Local/Applications/StepChat.app/Resources/English.lproj/MessageWindow.gorm
-@dirrm Local/Applications/StepChat.app/Resources/English.lproj/MainMenu.nib
-@dirrm Local/Applications/StepChat.app/Resources/English.lproj/AccountBox.nib
-@dirrm Local/Applications/StepChat.app/Resources/English.lproj
-@dirrm Local/Applications/StepChat.app/Resources
-@dirrm Local/Applications/StepChat.app
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/AccountBox.nib/classes.nib
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/AccountBox.nib/info.nib
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/AccountBox.nib/keyedobjects.nib
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/MainMenu.nib/classes.nib
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/MainMenu.nib/info.nib
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/MainMenu.nib/keyedobjects.nib
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/MessageWindow.gorm/data.classes
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/MessageWindow.gorm/data.info
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/MessageWindow.gorm/objects.gorm
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/PasswordBox.nib/classes.nib
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/PasswordBox.nib/info.nib
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/PasswordBox.nib/keyedobjects.nib
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/RosterWindow.gorm/data.classes
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/RosterWindow.gorm/data.info
+GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/RosterWindow.gorm/objects.gorm
+GNUstep/Local/Applications/StepChat.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/StepChat.app/Resources/StepChat.desktop
+GNUstep/Local/Applications/StepChat.app/Resources/StepChat.tiff
+GNUstep/Local/Applications/StepChat.app/Resources/StepChatInfo.plist
+GNUstep/Local/Applications/StepChat.app/StepChat
+GNUstep/Local/Applications/StepChat.app/stamp.make
+GNUstep/Local/Tools/StepChat
+@dirrm GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/RosterWindow.gorm
+@dirrm GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/PasswordBox.nib
+@dirrm GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/MessageWindow.gorm
+@dirrm GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/MainMenu.nib
+@dirrm GNUstep/Local/Applications/StepChat.app/Resources/English.lproj/AccountBox.nib
+@dirrm GNUstep/Local/Applications/StepChat.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/StepChat.app/Resources
+@dirrm GNUstep/Local/Applications/StepChat.app

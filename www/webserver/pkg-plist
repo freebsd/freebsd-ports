@@ -1,10 +1,10 @@
-Local/Library/Documentation/WebServer/WebServer.gsdoc
-Local/Library/Documentation/WebServer/WebServer.html
-Local/Library/Documentation/WebServer/WebServer.igsdoc
-Local/Library/Documentation/WebServer/dependencies
-Local/Library/Headers/WebServer/WebServer.h
-Local/Library/Libraries/libWebServer.so
-Local/Library/Libraries/libWebServer.so.%%LIBVERSION%%
-Local/Library/Libraries/libWebServer.so.%%LIBVERSION2%%
-@dirrm Local/Library/Headers/WebServer
-@dirrm Local/Library/Documentation/WebServer
+GNUstep/Local/Library/Documentation/WebServer/WebServer.gsdoc
+GNUstep/Local/Library/Documentation/WebServer/WebServer.html
+GNUstep/Local/Library/Documentation/WebServer/WebServer.igsdoc
+GNUstep/Local/Library/Documentation/WebServer/dependencies
+GNUstep/Local/Library/Headers/WebServer/WebServer.h
+GNUstep/Local/Library/Libraries/libWebServer.so
+GNUstep/Local/Library/Libraries/libWebServer.so.%%LIBVERSION%%
+GNUstep/Local/Library/Libraries/libWebServer.so.%%LIBVERSION2%%
+@dirrm GNUstep/Local/Library/Headers/WebServer
+@dirrm GNUstep/Local/Library/Documentation/WebServer

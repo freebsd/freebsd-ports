@@ -1,30 +1,30 @@
-System/Applications/ClipBook.app/ClipBook
-System/Applications/ClipBook.app/Resources/ClipBook.desktop
-System/Applications/ClipBook.app/Resources/ClipBook.tiff
-System/Applications/ClipBook.app/Resources/English.lproj/ClipBookWindow.gorm/data.classes
-System/Applications/ClipBook.app/Resources/English.lproj/ClipBookWindow.gorm/objects.gorm
-System/Applications/ClipBook.app/Resources/English.lproj/Localizable.strings
-System/Applications/ClipBook.app/Resources/Info-gnustep.plist
-System/Applications/ClipBook.app/Resources/Pboard.tiff
-System/Applications/ClipBook.app/Resources/Resources/English.lproj/ClipBookWindow.gorm/data.classes
-System/Applications/ClipBook.app/Resources/Resources/English.lproj/ClipBookWindow.gorm/objects.gorm
-System/Applications/ClipBook.app/Resources/Resources/English.lproj/Localizable.strings
-System/Applications/ClipBook.app/Resources/colorPboard.tiff
-System/Applications/ClipBook.app/Resources/common_ArrowLeftH.tiff
-System/Applications/ClipBook.app/Resources/common_ArrowRightH.tiff
-System/Applications/ClipBook.app/Resources/filecontsPboard.tiff
-System/Applications/ClipBook.app/Resources/fwdbckw.tiff
-System/Applications/ClipBook.app/Resources/gormPboard.tiff
-System/Applications/ClipBook.app/Resources/rtfPboard.tiff
-System/Applications/ClipBook.app/Resources/rtfdPboard.tiff
-System/Applications/ClipBook.app/Resources/stringPboard.tiff
-System/Applications/ClipBook.app/Resources/tiffPboard.tiff
-System/Applications/ClipBook.app/stamp.make
-System/Tools/ClipBook
-@dirrm System/Applications/ClipBook.app/Resources/Resources/English.lproj/ClipBookWindow.gorm
-@dirrm System/Applications/ClipBook.app/Resources/Resources/English.lproj
-@dirrm System/Applications/ClipBook.app/Resources/Resources
-@dirrm System/Applications/ClipBook.app/Resources/English.lproj/ClipBookWindow.gorm
-@dirrm System/Applications/ClipBook.app/Resources/English.lproj
-@dirrm System/Applications/ClipBook.app/Resources
-@dirrm System/Applications/ClipBook.app
+GNUstep/System/Applications/ClipBook.app/ClipBook
+GNUstep/System/Applications/ClipBook.app/Resources/ClipBook.desktop
+GNUstep/System/Applications/ClipBook.app/Resources/ClipBook.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/English.lproj/ClipBookWindow.gorm/data.classes
+GNUstep/System/Applications/ClipBook.app/Resources/English.lproj/ClipBookWindow.gorm/objects.gorm
+GNUstep/System/Applications/ClipBook.app/Resources/English.lproj/Localizable.strings
+GNUstep/System/Applications/ClipBook.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/ClipBook.app/Resources/Pboard.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/Resources/English.lproj/ClipBookWindow.gorm/data.classes
+GNUstep/System/Applications/ClipBook.app/Resources/Resources/English.lproj/ClipBookWindow.gorm/objects.gorm
+GNUstep/System/Applications/ClipBook.app/Resources/Resources/English.lproj/Localizable.strings
+GNUstep/System/Applications/ClipBook.app/Resources/colorPboard.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/common_ArrowLeftH.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/common_ArrowRightH.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/filecontsPboard.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/fwdbckw.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/gormPboard.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/rtfPboard.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/rtfdPboard.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/stringPboard.tiff
+GNUstep/System/Applications/ClipBook.app/Resources/tiffPboard.tiff
+GNUstep/System/Applications/ClipBook.app/stamp.make
+GNUstep/System/Tools/ClipBook
+@dirrm GNUstep/System/Applications/ClipBook.app/Resources/Resources/English.lproj/ClipBookWindow.gorm
+@dirrm GNUstep/System/Applications/ClipBook.app/Resources/Resources/English.lproj
+@dirrm GNUstep/System/Applications/ClipBook.app/Resources/Resources
+@dirrm GNUstep/System/Applications/ClipBook.app/Resources/English.lproj/ClipBookWindow.gorm
+@dirrm GNUstep/System/Applications/ClipBook.app/Resources/English.lproj
+@dirrm GNUstep/System/Applications/ClipBook.app/Resources
+@dirrm GNUstep/System/Applications/ClipBook.app

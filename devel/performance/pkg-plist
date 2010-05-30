@@ -1,19 +1,19 @@
-Local/Library/Documentation/Performance/GSCache.gsdoc
-Local/Library/Documentation/Performance/GSCache.html
-Local/Library/Documentation/Performance/GSSkipMutableArray.gsdoc
-Local/Library/Documentation/Performance/GSSkipMutableArray.html
-Local/Library/Documentation/Performance/GSThroughput.gsdoc
-Local/Library/Documentation/Performance/GSThroughput.html
-Local/Library/Documentation/Performance/GSTicker.gsdoc
-Local/Library/Documentation/Performance/GSTicker.html
-Local/Library/Documentation/Performance/Performance.igsdoc
-Local/Library/Documentation/Performance/dependencies
-Local/Library/Headers/Performance/GSCache.h
-Local/Library/Headers/Performance/GSSkipMutableArray.h
-Local/Library/Headers/Performance/GSThroughput.h
-Local/Library/Headers/Performance/GSTicker.h
-Local/Library/Libraries/libPerformance.so
-Local/Library/Libraries/libPerformance.so.%%LIBVERSION%%
-Local/Library/Libraries/libPerformance.so.%%LIBVERSION%%.0
-@dirrm Local/Library/Headers/Performance
-@dirrm Local/Library/Documentation/Performance
+GNUstep/Local/Library/Documentation/Performance/GSCache.gsdoc
+GNUstep/Local/Library/Documentation/Performance/GSCache.html
+GNUstep/Local/Library/Documentation/Performance/GSSkipMutableArray.gsdoc
+GNUstep/Local/Library/Documentation/Performance/GSSkipMutableArray.html
+GNUstep/Local/Library/Documentation/Performance/GSThroughput.gsdoc
+GNUstep/Local/Library/Documentation/Performance/GSThroughput.html
+GNUstep/Local/Library/Documentation/Performance/GSTicker.gsdoc
+GNUstep/Local/Library/Documentation/Performance/GSTicker.html
+GNUstep/Local/Library/Documentation/Performance/Performance.igsdoc
+GNUstep/Local/Library/Documentation/Performance/dependencies
+GNUstep/Local/Library/Headers/Performance/GSCache.h
+GNUstep/Local/Library/Headers/Performance/GSSkipMutableArray.h
+GNUstep/Local/Library/Headers/Performance/GSThroughput.h
+GNUstep/Local/Library/Headers/Performance/GSTicker.h
+GNUstep/Local/Library/Libraries/libPerformance.so
+GNUstep/Local/Library/Libraries/libPerformance.so.%%LIBVERSION%%
+GNUstep/Local/Library/Libraries/libPerformance.so.%%LIBVERSION%%.0
+@dirrm GNUstep/Local/Library/Headers/Performance
+@dirrm GNUstep/Local/Library/Documentation/Performance

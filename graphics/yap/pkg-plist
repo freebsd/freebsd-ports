@@ -1,10 +1,10 @@
-Local/Applications/Yap.app/Resources/GPSText.tiff
-Local/Applications/Yap.app/Resources/GPSText.tiff.old
-Local/Applications/Yap.app/Resources/Info-gnustep.plist
-Local/Applications/Yap.app/Resources/Yap.desktop
-Local/Applications/Yap.app/Resources/Yap.tiff
-Local/Applications/Yap.app/Yap
-Local/Applications/Yap.app/stamp.make
-Local/Tools/Yap
-@dirrm Local/Applications/Yap.app/Resources
-@dirrm Local/Applications/Yap.app
+GNUstep/Local/Applications/Yap.app/Resources/GPSText.tiff
+GNUstep/Local/Applications/Yap.app/Resources/GPSText.tiff.old
+GNUstep/Local/Applications/Yap.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Yap.app/Resources/Yap.desktop
+GNUstep/Local/Applications/Yap.app/Resources/Yap.tiff
+GNUstep/Local/Applications/Yap.app/Yap
+GNUstep/Local/Applications/Yap.app/stamp.make
+GNUstep/Local/Tools/Yap
+@dirrm GNUstep/Local/Applications/Yap.app/Resources
+@dirrm GNUstep/Local/Applications/Yap.app

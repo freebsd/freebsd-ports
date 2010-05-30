@@ -1,13 +1,13 @@
-Local/Applications/Camera.app/Camera
-Local/Applications/Camera.app/Resources/Camera.desktop
-Local/Applications/Camera.app/Resources/Camera.gorm/data.classes
-Local/Applications/Camera.app/Resources/Camera.gorm/objects.gorm
-Local/Applications/Camera.app/Resources/Camera.png
-Local/Applications/Camera.app/Resources/CameraInfo.plist
-Local/Applications/Camera.app/Resources/Info-gnustep.plist
-Local/Applications/Camera.app/Resources/no_thumbnail.jpg
-Local/Applications/Camera.app/stamp.make
-Local/Tools/Camera
-@dirrm Local/Applications/Camera.app/Resources/Camera.gorm
-@dirrm Local/Applications/Camera.app/Resources
-@dirrm Local/Applications/Camera.app
+GNUstep/Local/Applications/Camera.app/Camera
+GNUstep/Local/Applications/Camera.app/Resources/Camera.desktop
+GNUstep/Local/Applications/Camera.app/Resources/Camera.gorm/data.classes
+GNUstep/Local/Applications/Camera.app/Resources/Camera.gorm/objects.gorm
+GNUstep/Local/Applications/Camera.app/Resources/Camera.png
+GNUstep/Local/Applications/Camera.app/Resources/CameraInfo.plist
+GNUstep/Local/Applications/Camera.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Camera.app/Resources/no_thumbnail.jpg
+GNUstep/Local/Applications/Camera.app/stamp.make
+GNUstep/Local/Tools/Camera
+@dirrm GNUstep/Local/Applications/Camera.app/Resources/Camera.gorm
+@dirrm GNUstep/Local/Applications/Camera.app/Resources
+@dirrm GNUstep/Local/Applications/Camera.app

@@ -1,31 +1,31 @@
-Local/Applications/DictionaryReader.app/DictionaryReader
-Local/Applications/DictionaryReader.app/Resources/DictionaryReader.desktop
-Local/Applications/DictionaryReader.app/Resources/DictionaryReader.tif
-Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/Magnify.tiff
-Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/Magnify_32.tiff
-Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/data.classes
-Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/data.info
-Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/magnifyingGlass.tiff
-Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/objects.gorm
-Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib/classes.nib
-Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib/info.nib
-Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib/keyedobjects.nib
-Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm/data.classes
-Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm/data.info
-Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm/objects.gorm
-Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/classes.nib
-Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/info.nib
-Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/keyedobjects.nib
-Local/Applications/DictionaryReader.app/Resources/Info-gnustep.plist
-Local/Applications/DictionaryReader.app/Resources/dict.png
-Local/Applications/DictionaryReader.app/Resources/etoile_back.tiff
-Local/Applications/DictionaryReader.app/Resources/etoile_forward.tiff
-Local/Applications/DictionaryReader.app/stamp.make
-Local/Tools/DictionaryReader
-@dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib
-@dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm
-@dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib
-@dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm
-@dirrm Local/Applications/DictionaryReader.app/Resources/English.lproj
-@dirrm Local/Applications/DictionaryReader.app/Resources
-@dirrm Local/Applications/DictionaryReader.app
+GNUstep/Local/Applications/DictionaryReader.app/DictionaryReader
+GNUstep/Local/Applications/DictionaryReader.app/Resources/DictionaryReader.desktop
+GNUstep/Local/Applications/DictionaryReader.app/Resources/DictionaryReader.tif
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/Magnify.tiff
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/Magnify_32.tiff
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/data.classes
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/data.info
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/magnifyingGlass.tiff
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm/objects.gorm
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib/classes.nib
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib/info.nib
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib/keyedobjects.nib
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm/data.classes
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm/data.info
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm/objects.gorm
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/classes.nib
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/info.nib
+GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib/keyedobjects.nib
+GNUstep/Local/Applications/DictionaryReader.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/DictionaryReader.app/Resources/dict.png
+GNUstep/Local/Applications/DictionaryReader.app/Resources/etoile_back.tiff
+GNUstep/Local/Applications/DictionaryReader.app/Resources/etoile_forward.tiff
+GNUstep/Local/Applications/DictionaryReader.app/stamp.make
+GNUstep/Local/Tools/DictionaryReader
+@dirrm GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.nib
+@dirrm GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/Preferences.gorm
+@dirrm GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.nib
+@dirrm GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj/DictionaryReader.gorm
+@dirrm GNUstep/Local/Applications/DictionaryReader.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/DictionaryReader.app/Resources
+@dirrm GNUstep/Local/Applications/DictionaryReader.app

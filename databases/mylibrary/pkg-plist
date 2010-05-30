@@ -1,60 +1,60 @@
-Local/Applications/MyLibrary.app/MyLibrary
-Local/Applications/MyLibrary.app/Resources/Add20.png
-Local/Applications/MyLibrary.app/Resources/English.lproj/AttributesViewer.gorm/data.classes
-Local/Applications/MyLibrary.app/Resources/English.lproj/AttributesViewer.gorm/data.info
-Local/Applications/MyLibrary.app/Resources/English.lproj/AttributesViewer.gorm/objects.gorm
-Local/Applications/MyLibrary.app/Resources/English.lproj/ContentIndexingPanel.gorm/data.classes
-Local/Applications/MyLibrary.app/Resources/English.lproj/ContentIndexingPanel.gorm/data.info
-Local/Applications/MyLibrary.app/Resources/English.lproj/ContentIndexingPanel.gorm/objects.gorm
-Local/Applications/MyLibrary.app/Resources/English.lproj/ImportFilePanel.gorm/data.classes
-Local/Applications/MyLibrary.app/Resources/English.lproj/ImportFilePanel.gorm/data.info
-Local/Applications/MyLibrary.app/Resources/English.lproj/ImportFilePanel.gorm/objects.gorm
-Local/Applications/MyLibrary.app/Resources/English.lproj/LibraryLocationPanel.gorm/data.classes
-Local/Applications/MyLibrary.app/Resources/English.lproj/LibraryLocationPanel.gorm/data.info
-Local/Applications/MyLibrary.app/Resources/English.lproj/LibraryLocationPanel.gorm/objects.gorm
-Local/Applications/MyLibrary.app/Resources/English.lproj/Localizable.strings
-Local/Applications/MyLibrary.app/Resources/English.lproj/MainLibrary.gorm/data.classes
-Local/Applications/MyLibrary.app/Resources/English.lproj/MainLibrary.gorm/data.info
-Local/Applications/MyLibrary.app/Resources/English.lproj/MainLibrary.gorm/objects.gorm
-Local/Applications/MyLibrary.app/Resources/English.lproj/SmartFolderEditor.gorm/data.classes
-Local/Applications/MyLibrary.app/Resources/English.lproj/SmartFolderEditor.gorm/data.info
-Local/Applications/MyLibrary.app/Resources/English.lproj/SmartFolderEditor.gorm/objects.gorm
-Local/Applications/MyLibrary.app/Resources/English.lproj/SummaryViewer.gorm/data.classes
-Local/Applications/MyLibrary.app/Resources/English.lproj/SummaryViewer.gorm/data.info
-Local/Applications/MyLibrary.app/Resources/English.lproj/SummaryViewer.gorm/objects.gorm
-Local/Applications/MyLibrary.app/Resources/Folder12.png
-Local/Applications/MyLibrary.app/Resources/Folder14.png
-Local/Applications/MyLibrary.app/Resources/Home12.png
-Local/Applications/MyLibrary.app/Resources/Home14.png
-Local/Applications/MyLibrary.app/Resources/Info-gnustep.plist
-Local/Applications/MyLibrary.app/Resources/MyLibrary.desktop
-Local/Applications/MyLibrary.app/Resources/MyLibrary.tif
-Local/Applications/MyLibrary.app/Resources/Page12.png
-Local/Applications/MyLibrary.app/Resources/Page14.png
-Local/Applications/MyLibrary.app/Resources/Remove20.png
-Local/Applications/MyLibrary.app/Resources/Search12.png
-Local/Applications/MyLibrary.app/Resources/Search14.png
-Local/Applications/MyLibrary.app/Resources/SmartFolder12.png
-Local/Applications/MyLibrary.app/Resources/SmartFolder14.png
-Local/Applications/MyLibrary.app/Resources/caution.png
-Local/Applications/MyLibrary.app/Resources/caution48.png
-Local/Applications/MyLibrary.app/Resources/information.png
-Local/Applications/MyLibrary.app/Resources/information48.png
-Local/Applications/MyLibrary.app/Resources/note.png
-Local/Applications/MyLibrary.app/Resources/note48.png
-Local/Applications/MyLibrary.app/Resources/refresh12.png
-Local/Applications/MyLibrary.app/Resources/remove11.png
-Local/Applications/MyLibrary.app/Resources/remove12.png
-Local/Applications/MyLibrary.app/Resources/remove13.png
-Local/Applications/MyLibrary.app/stamp.make
-Local/Tools/MyLibrary
-@dirrm Local/Applications/MyLibrary.app/Resources/English.lproj/SummaryViewer.gorm
-@dirrm Local/Applications/MyLibrary.app/Resources/English.lproj/SmartFolderEditor.gorm
-@dirrm Local/Applications/MyLibrary.app/Resources/English.lproj/MainLibrary.gorm
-@dirrm Local/Applications/MyLibrary.app/Resources/English.lproj/LibraryLocationPanel.gorm
-@dirrm Local/Applications/MyLibrary.app/Resources/English.lproj/ImportFilePanel.gorm
-@dirrm Local/Applications/MyLibrary.app/Resources/English.lproj/ContentIndexingPanel.gorm
-@dirrm Local/Applications/MyLibrary.app/Resources/English.lproj/AttributesViewer.gorm
-@dirrm Local/Applications/MyLibrary.app/Resources/English.lproj
-@dirrm Local/Applications/MyLibrary.app/Resources
-@dirrm Local/Applications/MyLibrary.app
+GNUstep/Local/Applications/MyLibrary.app/MyLibrary
+GNUstep/Local/Applications/MyLibrary.app/Resources/Add20.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/AttributesViewer.gorm/data.classes
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/AttributesViewer.gorm/data.info
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/AttributesViewer.gorm/objects.gorm
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/ContentIndexingPanel.gorm/data.classes
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/ContentIndexingPanel.gorm/data.info
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/ContentIndexingPanel.gorm/objects.gorm
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/ImportFilePanel.gorm/data.classes
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/ImportFilePanel.gorm/data.info
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/ImportFilePanel.gorm/objects.gorm
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/LibraryLocationPanel.gorm/data.classes
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/LibraryLocationPanel.gorm/data.info
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/LibraryLocationPanel.gorm/objects.gorm
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/MainLibrary.gorm/data.classes
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/MainLibrary.gorm/data.info
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/MainLibrary.gorm/objects.gorm
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/SmartFolderEditor.gorm/data.classes
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/SmartFolderEditor.gorm/data.info
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/SmartFolderEditor.gorm/objects.gorm
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/SummaryViewer.gorm/data.classes
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/SummaryViewer.gorm/data.info
+GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/SummaryViewer.gorm/objects.gorm
+GNUstep/Local/Applications/MyLibrary.app/Resources/Folder12.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/Folder14.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/Home12.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/Home14.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/MyLibrary.app/Resources/MyLibrary.desktop
+GNUstep/Local/Applications/MyLibrary.app/Resources/MyLibrary.tif
+GNUstep/Local/Applications/MyLibrary.app/Resources/Page12.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/Page14.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/Remove20.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/Search12.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/Search14.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/SmartFolder12.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/SmartFolder14.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/caution.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/caution48.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/information.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/information48.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/note.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/note48.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/refresh12.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/remove11.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/remove12.png
+GNUstep/Local/Applications/MyLibrary.app/Resources/remove13.png
+GNUstep/Local/Applications/MyLibrary.app/stamp.make
+GNUstep/Local/Tools/MyLibrary
+@dirrm GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/SummaryViewer.gorm
+@dirrm GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/SmartFolderEditor.gorm
+@dirrm GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/MainLibrary.gorm
+@dirrm GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/LibraryLocationPanel.gorm
+@dirrm GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/ImportFilePanel.gorm
+@dirrm GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/ContentIndexingPanel.gorm
+@dirrm GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj/AttributesViewer.gorm
+@dirrm GNUstep/Local/Applications/MyLibrary.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/MyLibrary.app/Resources
+@dirrm GNUstep/Local/Applications/MyLibrary.app

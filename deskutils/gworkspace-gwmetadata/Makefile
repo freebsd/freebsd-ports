@@ -18,7 +18,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GWMetadata for GNUstep workspace manager
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes

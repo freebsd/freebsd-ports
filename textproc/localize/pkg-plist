@@ -1,30 +1,30 @@
-Local/Applications/Localize.app/Localize
-Local/Applications/Localize.app/Resources/English.lproj/GenericStrings.gorm/data.classes
-Local/Applications/Localize.app/Resources/English.lproj/GenericStrings.gorm/objects.gorm
-Local/Applications/Localize.app/Resources/English.lproj/Localizable.strings
-Local/Applications/Localize.app/Resources/English.lproj/Localizable.strings~
-Local/Applications/Localize.app/Resources/English.lproj/Localize.gorm/data.classes
-Local/Applications/Localize.app/Resources/English.lproj/Localize.gorm/objects.gorm
-Local/Applications/Localize.app/Resources/English.lproj/MakeStrings.gorm/data.classes
-Local/Applications/Localize.app/Resources/English.lproj/MakeStrings.gorm/objects.gorm
-Local/Applications/Localize.app/Resources/Info-gnustep.plist
-Local/Applications/Localize.app/Resources/Localize.desktop
-Local/Applications/Localize.app/Resources/Localize.tiff
-Local/Applications/Localize.app/Resources/NotTransUnMatch.tiff
-Local/Applications/Localize.app/Resources/NotTranslated.tiff
-Local/Applications/Localize.app/Resources/Thai.lproj/Localizable.strings
-Local/Applications/Localize.app/Resources/Thai.lproj/Localizable.strings~
-Local/Applications/Localize.app/Resources/Thai.lproj/Localize.gorm/data.classes
-Local/Applications/Localize.app/Resources/Thai.lproj/Localize.gorm/objects.gorm
-Local/Applications/Localize.app/Resources/Translated.tiff
-Local/Applications/Localize.app/Resources/UnMatched.tiff
-Local/Applications/Localize.app/stamp.make
-Local/Tools/Localize
-@dirrm Local/Applications/Localize.app/Resources/Thai.lproj/Localize.gorm
-@dirrm Local/Applications/Localize.app/Resources/Thai.lproj
-@dirrm Local/Applications/Localize.app/Resources/English.lproj/MakeStrings.gorm
-@dirrm Local/Applications/Localize.app/Resources/English.lproj/Localize.gorm
-@dirrm Local/Applications/Localize.app/Resources/English.lproj/GenericStrings.gorm
-@dirrm Local/Applications/Localize.app/Resources/English.lproj
-@dirrm Local/Applications/Localize.app/Resources
-@dirrm Local/Applications/Localize.app
+GNUstep/Local/Applications/Localize.app/Localize
+GNUstep/Local/Applications/Localize.app/Resources/English.lproj/GenericStrings.gorm/data.classes
+GNUstep/Local/Applications/Localize.app/Resources/English.lproj/GenericStrings.gorm/objects.gorm
+GNUstep/Local/Applications/Localize.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/Localize.app/Resources/English.lproj/Localizable.strings~
+GNUstep/Local/Applications/Localize.app/Resources/English.lproj/Localize.gorm/data.classes
+GNUstep/Local/Applications/Localize.app/Resources/English.lproj/Localize.gorm/objects.gorm
+GNUstep/Local/Applications/Localize.app/Resources/English.lproj/MakeStrings.gorm/data.classes
+GNUstep/Local/Applications/Localize.app/Resources/English.lproj/MakeStrings.gorm/objects.gorm
+GNUstep/Local/Applications/Localize.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Localize.app/Resources/Localize.desktop
+GNUstep/Local/Applications/Localize.app/Resources/Localize.tiff
+GNUstep/Local/Applications/Localize.app/Resources/NotTransUnMatch.tiff
+GNUstep/Local/Applications/Localize.app/Resources/NotTranslated.tiff
+GNUstep/Local/Applications/Localize.app/Resources/Thai.lproj/Localizable.strings
+GNUstep/Local/Applications/Localize.app/Resources/Thai.lproj/Localizable.strings~
+GNUstep/Local/Applications/Localize.app/Resources/Thai.lproj/Localize.gorm/data.classes
+GNUstep/Local/Applications/Localize.app/Resources/Thai.lproj/Localize.gorm/objects.gorm
+GNUstep/Local/Applications/Localize.app/Resources/Translated.tiff
+GNUstep/Local/Applications/Localize.app/Resources/UnMatched.tiff
+GNUstep/Local/Applications/Localize.app/stamp.make
+GNUstep/Local/Tools/Localize
+@dirrm GNUstep/Local/Applications/Localize.app/Resources/Thai.lproj/Localize.gorm
+@dirrm GNUstep/Local/Applications/Localize.app/Resources/Thai.lproj
+@dirrm GNUstep/Local/Applications/Localize.app/Resources/English.lproj/MakeStrings.gorm
+@dirrm GNUstep/Local/Applications/Localize.app/Resources/English.lproj/Localize.gorm
+@dirrm GNUstep/Local/Applications/Localize.app/Resources/English.lproj/GenericStrings.gorm
+@dirrm GNUstep/Local/Applications/Localize.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/Localize.app/Resources
+@dirrm GNUstep/Local/Applications/Localize.app

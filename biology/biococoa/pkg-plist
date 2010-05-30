@@ -1,8 +1,8 @@
-Local/Applications/BioCocoa.app/BioCocoa
-Local/Applications/BioCocoa.app/Resources/BioCocoa.desktop
-Local/Applications/BioCocoa.app/Resources/Info-gnustep.plist
-Local/Applications/BioCocoa.app/Resources/biococoa.tiff
-Local/Applications/BioCocoa.app/stamp.make
-Local/Tools/BioCocoa
-@dirrm Local/Applications/BioCocoa.app/Resources
-@dirrm Local/Applications/BioCocoa.app
+GNUstep/Local/Applications/BioCocoa.app/BioCocoa
+GNUstep/Local/Applications/BioCocoa.app/Resources/BioCocoa.desktop
+GNUstep/Local/Applications/BioCocoa.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/BioCocoa.app/Resources/biococoa.tiff
+GNUstep/Local/Applications/BioCocoa.app/stamp.make
+GNUstep/Local/Tools/BioCocoa
+@dirrm GNUstep/Local/Applications/BioCocoa.app/Resources
+@dirrm GNUstep/Local/Applications/BioCocoa.app

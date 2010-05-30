@@ -31,7 +31,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:${PORTSDIR}/audio/flite
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
 .endif
 
-NO_PACKAGE=	GPL3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
@@ -41,7 +40,6 @@ CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/lib
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
@@ -91,7 +89,7 @@ PLIST_SUB+=	WITH_ASPELL="@comment "
 
 pre-configure:
 .for file in config.guess config.sub install-sh
-	@${CP} ${PREFIX}/System/Library/Makefiles/${file} ${WRKSRC}
+	@${CP} ${GNUSTEP_PREFIX}/System/Library/Makefiles/${file} ${WRKSRC}
 .endfor
 .if !defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e "s|doc=no|doc=yes|" ${WRKSRC}/GNUmakefile

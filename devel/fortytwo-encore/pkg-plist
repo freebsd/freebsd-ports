@@ -1,59 +1,59 @@
-Local/Library/Frameworks/Encore.framework/Encore
-Local/Library/Frameworks/Encore.framework/Headers
-Local/Library/Frameworks/Encore.framework/Resources
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Encore
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECArrayIterator.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECCache.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECCacheItem.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECDefaultLoggingFormatter.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECEmptyIterator.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECEnumeratorIterator.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECExceptions.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECFileLoggingWriter.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECIterator.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECKeyToListMap.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLogger.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLogging.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLoggingConfiguration.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLoggingFormatter.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLoggingWriter.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLoggingXMLConfiguration.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECMemory.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECNSLogLoggingWriter.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECObject.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECParameterString.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECStack.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECStandardOutput.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECStringUtils.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECTestResult.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECTestSuite.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECTestcase.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControl.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlContext.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlDefaultAllocatorRule.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlDefaultRule.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlDelegateMessageRule.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlEvent.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlReferenceRule.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlRule.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlRuleSelector.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlState.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/Encore.h
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/libEncore.so
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/libEncore.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/libEncore.so.%%LIBVERSION%%
-Local/Library/Frameworks/Encore.framework/Versions/Current
-Local/Library/Frameworks/Encore.framework/libEncore.so
-Local/Library/Headers/Encore
-Local/Library/Libraries/libEncore.so
-Local/Library/Libraries/libEncore.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libEncore.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%
-@dirrm Local/Library/Frameworks/Encore.framework/Versions
-@dirrm Local/Library/Frameworks/Encore.framework
+GNUstep/Local/Library/Frameworks/Encore.framework/Encore
+GNUstep/Local/Library/Frameworks/Encore.framework/Headers
+GNUstep/Local/Library/Frameworks/Encore.framework/Resources
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Encore
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECArrayIterator.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECCache.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECCacheItem.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECDefaultLoggingFormatter.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECEmptyIterator.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECEnumeratorIterator.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECExceptions.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECFileLoggingWriter.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECIterator.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECKeyToListMap.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLogger.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLogging.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLoggingConfiguration.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLoggingFormatter.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLoggingWriter.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECLoggingXMLConfiguration.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECMemory.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECNSLogLoggingWriter.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECObject.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECParameterString.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECStack.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECStandardOutput.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECStringUtils.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECTestResult.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECTestSuite.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECTestcase.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControl.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlContext.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlDefaultAllocatorRule.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlDefaultRule.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlDelegateMessageRule.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlEvent.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlReferenceRule.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlRule.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlRuleSelector.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/ECXMLControlState.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers/Encore.h
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/libEncore.so
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/libEncore.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/libEncore.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/Encore.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/Encore.framework/libEncore.so
+GNUstep/Local/Library/Headers/Encore
+GNUstep/Local/Library/Libraries/libEncore.so
+GNUstep/Local/Library/Libraries/libEncore.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libEncore.so.%%LIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/Encore.framework/Versions/%%MAJORVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/Encore.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/Encore.framework
 %%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/Classes/ECArrayIterator/CompositePage.html
 %%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/Classes/ECArrayIterator/ECArrayIterator.html
 %%PORTDOCS%%%%DOCSDIR%%/ECArrayIterator/Classes/ECArrayIterator/Methods/Methods.html

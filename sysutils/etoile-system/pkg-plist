@@ -1,10 +1,10 @@
-System/Library/Etoile/SystemTaskList.plist
-System/Library/Headers/WorkspaceCommKit/NSWorkspace+Communication.h
-System/Library/Libraries/libWorkspaceCommKit.so
-System/Library/Libraries/libWorkspaceCommKit.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libWorkspaceCommKit.so.%%LIBVERSION%%
-System/Tools/etoile_system
-System/Tools/setup.sh
-System/Tools/setdown.sh
-@dirrm System/Library/Headers/WorkspaceCommKit
-@dirrm System/Library/Etoile
+GNUstep/System/Library/Etoile/SystemTaskList.plist
+GNUstep/System/Library/Headers/WorkspaceCommKit/NSWorkspace+Communication.h
+GNUstep/System/Library/Libraries/libWorkspaceCommKit.so
+GNUstep/System/Library/Libraries/libWorkspaceCommKit.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libWorkspaceCommKit.so.%%LIBVERSION%%
+GNUstep/System/Tools/etoile_system
+GNUstep/System/Tools/setup.sh
+GNUstep/System/Tools/setdown.sh
+@dirrm GNUstep/System/Library/Headers/WorkspaceCommKit
+@dirrm GNUstep/System/Library/Etoile

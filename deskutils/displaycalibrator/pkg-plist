@@ -1,15 +1,15 @@
-Local/Applications/DisplayCalibrator.app/DisplayCalibrator
-Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.desktop
-Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/GammaControl.png
-Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/GammaCorrect.png
-Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/data.classes
-Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/data.info
-Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/objects.gorm
-Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/white-black.png
-Local/Applications/DisplayCalibrator.app/Resources/Info-gnustep.plist
-Local/Applications/DisplayCalibrator.app/Resources/gammascrew.png
-Local/Applications/DisplayCalibrator.app/stamp.make
-Local/Tools/DisplayCalibrator
-@dirrm Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm
-@dirrm Local/Applications/DisplayCalibrator.app/Resources
-@dirrm Local/Applications/DisplayCalibrator.app
+GNUstep/Local/Applications/DisplayCalibrator.app/DisplayCalibrator
+GNUstep/Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.desktop
+GNUstep/Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/GammaControl.png
+GNUstep/Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/GammaCorrect.png
+GNUstep/Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/data.classes
+GNUstep/Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/data.info
+GNUstep/Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/objects.gorm
+GNUstep/Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/white-black.png
+GNUstep/Local/Applications/DisplayCalibrator.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/DisplayCalibrator.app/Resources/gammascrew.png
+GNUstep/Local/Applications/DisplayCalibrator.app/stamp.make
+GNUstep/Local/Tools/DisplayCalibrator
+@dirrm GNUstep/Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm
+@dirrm GNUstep/Local/Applications/DisplayCalibrator.app/Resources
+@dirrm GNUstep/Local/Applications/DisplayCalibrator.app

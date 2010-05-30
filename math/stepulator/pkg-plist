@@ -1,12 +1,12 @@
-Local/Applications/Stepulator.app/Resources/Info-gnustep.plist
-Local/Applications/Stepulator.app/Resources/LICENSE
-Local/Applications/Stepulator.app/Resources/Stepulator.desktop
-Local/Applications/Stepulator.app/Resources/Stepulator.gorm/data.classes
-Local/Applications/Stepulator.app/Resources/Stepulator.gorm/objects.gorm
-Local/Applications/Stepulator.app/Resources/StepulatorInfo.plist
-Local/Applications/Stepulator.app/Stepulator
-Local/Applications/Stepulator.app/stamp.make
-Local/Tools/Stepulator
-@dirrm Local/Applications/Stepulator.app/Resources/Stepulator.gorm
-@dirrm Local/Applications/Stepulator.app/Resources
-@dirrm Local/Applications/Stepulator.app
+GNUstep/Local/Applications/Stepulator.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Stepulator.app/Resources/LICENSE
+GNUstep/Local/Applications/Stepulator.app/Resources/Stepulator.desktop
+GNUstep/Local/Applications/Stepulator.app/Resources/Stepulator.gorm/data.classes
+GNUstep/Local/Applications/Stepulator.app/Resources/Stepulator.gorm/objects.gorm
+GNUstep/Local/Applications/Stepulator.app/Resources/StepulatorInfo.plist
+GNUstep/Local/Applications/Stepulator.app/Stepulator
+GNUstep/Local/Applications/Stepulator.app/stamp.make
+GNUstep/Local/Tools/Stepulator
+@dirrm GNUstep/Local/Applications/Stepulator.app/Resources/Stepulator.gorm
+@dirrm GNUstep/Local/Applications/Stepulator.app/Resources
+@dirrm GNUstep/Local/Applications/Stepulator.app

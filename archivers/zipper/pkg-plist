@@ -1,16 +1,16 @@
-Local/Applications/Zipper.app/Resources/FileIcon.tiff
-Local/Applications/Zipper.app/Resources/Info-gnustep.plist
-Local/Applications/Zipper.app/Resources/MainMenu-GNUstep.gsmarkup
-Local/Applications/Zipper.app/Resources/Preferences.gsmarkup
-Local/Applications/Zipper.app/Resources/Zipper.desktop
-Local/Applications/Zipper.app/Resources/Zipper.gsmarkup
-Local/Applications/Zipper.app/Resources/ZipperInfo.plist
-Local/Applications/Zipper.app/Resources/no_order.tiff
-Local/Applications/Zipper.app/Resources/sort_ascending.tiff
-Local/Applications/Zipper.app/Resources/sort_descending.tiff
-Local/Applications/Zipper.app/Resources/zipper.tiff
-Local/Applications/Zipper.app/Zipper
-Local/Applications/Zipper.app/stamp.make
-Local/Tools/Zipper
-@dirrm Local/Applications/Zipper.app/Resources
-@dirrm Local/Applications/Zipper.app
+GNUstep/Local/Applications/Zipper.app/Resources/FileIcon.tiff
+GNUstep/Local/Applications/Zipper.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Zipper.app/Resources/MainMenu-GNUstep.gsmarkup
+GNUstep/Local/Applications/Zipper.app/Resources/Preferences.gsmarkup
+GNUstep/Local/Applications/Zipper.app/Resources/Zipper.desktop
+GNUstep/Local/Applications/Zipper.app/Resources/Zipper.gsmarkup
+GNUstep/Local/Applications/Zipper.app/Resources/ZipperInfo.plist
+GNUstep/Local/Applications/Zipper.app/Resources/no_order.tiff
+GNUstep/Local/Applications/Zipper.app/Resources/sort_ascending.tiff
+GNUstep/Local/Applications/Zipper.app/Resources/sort_descending.tiff
+GNUstep/Local/Applications/Zipper.app/Resources/zipper.tiff
+GNUstep/Local/Applications/Zipper.app/Zipper
+GNUstep/Local/Applications/Zipper.app/stamp.make
+GNUstep/Local/Tools/Zipper
+@dirrm GNUstep/Local/Applications/Zipper.app/Resources
+@dirrm GNUstep/Local/Applications/Zipper.app

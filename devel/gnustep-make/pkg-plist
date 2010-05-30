@@ -1,218 +1,218 @@
-GNUstep.conf
-System/Library/Documentation/man/man1/debugapp.1.gz
-System/Library/Documentation/man/man1/openapp.1.gz
-System/Library/Documentation/man/man1/gnustep-config.1.gz
-System/Library/Documentation/man/man1/opentool.1.gz
-System/Library/Documentation/man/man7/GNUstep.7.gz
-System/Library/Documentation/man/man7/library-combo.7.gz
-System/Library/Makefiles/GNUstep-reset.sh
-System/Library/Makefiles/GNUstep.csh
-System/Library/Makefiles/GNUstep.sh
-System/Library/Makefiles/Instance/Documentation/autogsdoc.make
-System/Library/Makefiles/Instance/Documentation/gsdoc.make
-System/Library/Makefiles/Instance/Documentation/install_files.make
-System/Library/Makefiles/Instance/Documentation/javadoc.make
-System/Library/Makefiles/Instance/Documentation/latex.make
-System/Library/Makefiles/Instance/Documentation/texi.make
-System/Library/Makefiles/Instance/Shared/bundle.make
-System/Library/Makefiles/Instance/Shared/headers.make
-System/Library/Makefiles/Instance/Shared/java.make
-System/Library/Makefiles/Instance/Shared/stamp-string.make
-System/Library/Makefiles/Instance/Shared/strings.make
-System/Library/Makefiles/Instance/application.make
-System/Library/Makefiles/Instance/bundle.make
-System/Library/Makefiles/Instance/clibrary.make
-System/Library/Makefiles/Instance/ctool.make
-System/Library/Makefiles/Instance/documentation.make
-System/Library/Makefiles/Instance/framework.make
-System/Library/Makefiles/Instance/gswapp.make
-System/Library/Makefiles/Instance/gswbundle.make
-System/Library/Makefiles/Instance/java-tool.make
-System/Library/Makefiles/Instance/java.make
-System/Library/Makefiles/Instance/library.make
-System/Library/Makefiles/Instance/objc.make
-System/Library/Makefiles/Instance/palette.make
-System/Library/Makefiles/Instance/resource-set.make
-System/Library/Makefiles/Instance/rules.make
-System/Library/Makefiles/Instance/service.make
-System/Library/Makefiles/Instance/subproject.make
-System/Library/Makefiles/Instance/test-application.make
-System/Library/Makefiles/Instance/test-library.make
-System/Library/Makefiles/Instance/test-tool.make
-System/Library/Makefiles/Instance/tool.make
-System/Library/Makefiles/Master/application.make
-System/Library/Makefiles/Master/bundle.make
-System/Library/Makefiles/Master/clibrary.make
-System/Library/Makefiles/Master/ctool.make
-System/Library/Makefiles/Master/documentation.make
-System/Library/Makefiles/Master/framework.make
-System/Library/Makefiles/Master/gswapp.make
-System/Library/Makefiles/Master/gswbundle.make
-System/Library/Makefiles/Master/java-tool.make
-System/Library/Makefiles/Master/java.make
-System/Library/Makefiles/Master/library.make
-System/Library/Makefiles/Master/nsis.make
-System/Library/Makefiles/Master/objc.make
-System/Library/Makefiles/Master/palette.make
-System/Library/Makefiles/Master/parallel-subdirectories.make
-System/Library/Makefiles/Master/resource-set.make
-System/Library/Makefiles/Master/rpm.make
-System/Library/Makefiles/Master/rules.make
-System/Library/Makefiles/Master/serial-subdirectories.make
-System/Library/Makefiles/Master/service.make
-System/Library/Makefiles/Master/source-distribution.make
-System/Library/Makefiles/Master/subproject.make
-System/Library/Makefiles/Master/test-application.make
-System/Library/Makefiles/Master/test-library.make
-System/Library/Makefiles/Master/test-tool.make
-System/Library/Makefiles/Master/tool.make
-System/Library/Makefiles/aggregate.make
-System/Library/Makefiles/app-wrapper.template
-System/Library/Makefiles/application.make
-System/Library/Makefiles/bundle.make
-System/Library/Makefiles/clean_cpu.sh
-System/Library/Makefiles/clean_os.sh
-System/Library/Makefiles/clean_vendor.sh
-System/Library/Makefiles/clibrary.make
-System/Library/Makefiles/common.make
-System/Library/Makefiles/config-noarch.make
-System/Library/Makefiles/config.guess
-System/Library/Makefiles/config.make
-System/Library/Makefiles/config.sub
-System/Library/Makefiles/cpu.sh
-System/Library/Makefiles/ctool.make
-System/Library/Makefiles/documentation.make
-System/Library/Makefiles/empty.make
-System/Library/Makefiles/executable.template
-System/Library/Makefiles/filesystem.sh
-System/Library/Makefiles/filesystem.csh
-System/Library/Makefiles/filesystem.make
-System/Library/Makefiles/fixpath.sh
-System/Library/Makefiles/framework.make
-System/Library/Makefiles/gnustep-make-help
-System/Library/Makefiles/gswapp.make
-System/Library/Makefiles/gswbundle.make
-System/Library/Makefiles/install-sh
-System/Library/Makefiles/java-executable.template
-System/Library/Makefiles/java-tool.make
-System/Library/Makefiles/java.make
-System/Library/Makefiles/jni.make
-System/Library/Makefiles/library-combo.make
-System/Library/Makefiles/library.make
-System/Library/Makefiles/messages.make
-System/Library/Makefiles/mkinstalldirs
-System/Library/Makefiles/names.make
-System/Library/Makefiles/native-library.make
-System/Library/Makefiles/nsi-app.template
-System/Library/Makefiles/objc.make
-System/Library/Makefiles/os.sh
-System/Library/Makefiles/palette.make
-System/Library/Makefiles/parallel-subdirectories.make
-System/Library/Makefiles/print_unique_pathlist.sh
-System/Library/Makefiles/relative_path.sh
-System/Library/Makefiles/resource-set.make
-System/Library/Makefiles/rules.make
-System/Library/Makefiles/serial-subdirectories.make
-System/Library/Makefiles/service.make
-System/Library/Makefiles/spec-rules.template
-System/Library/Makefiles/strip_makefiles.sh
-System/Library/Makefiles/tar-exclude-list
-System/Library/Makefiles/subproject.make
-System/Library/Makefiles/target.make
-System/Library/Makefiles/test-application.make
-System/Library/Makefiles/test-library.make
-System/Library/Makefiles/test-tool.make
-System/Library/Makefiles/tool.make
-System/Library/Makefiles/vendor.sh
-System/Tools/debugapp
-System/Tools/gnustep-config
-System/Tools/openapp
-System/Tools/opentool
-@exec ln -s Library/Makefiles %D/System
-@dirrm System/Tools/Resources
-@dirrm System/Tools/Java
-@dirrm System/Tools
-@rmtry System/Makefiles
-@dirrm System/Library/Sounds
-@dirrm System/Library/Services
-@dirrm System/Library/PostScript
-@dirrm System/Library/Makefiles/%%GNU_ARCH%%
-@dirrm System/Library/Makefiles/Master
-@dirrm System/Library/Makefiles/Instance/Shared
-@dirrm System/Library/Makefiles/Instance/Documentation
-@dirrm System/Library/Makefiles/Instance
-@dirrm System/Library/Makefiles/Auxiliary
-@dirrm System/Library/Makefiles/Additional
-@dirrm System/Library/Makefiles
-@dirrm System/Library/Libraries/Resources
-@dirrm System/Library/Libraries/Java
-@dirrm System/Library/Libraries
-@dirrm System/Library/KeyBindings
-@dirrm System/Library/Images
-@dirrm System/Library/Headers
-@dirrm System/Library/Frameworks
-@dirrm System/Library/Fonts
-@dirrm System/Library/Documentation/man/man7
-@dirrm System/Library/Documentation/man/man1
-@dirrm System/Library/Documentation/man
-@dirrm System/Library/Documentation/info
-@dirrm System/Library/Documentation/User
-@dirrm System/Library/Documentation/Developer
-@dirrm System/Library/Documentation
-@dirrm System/Library/DocTemplates
-@dirrm System/Library/Colors
-@dirrm System/Library/ColorPickers
-@dirrm System/Library/Bundles
-@dirrm System/Library/ApplicationSupport
-@dirrm System/Library
-@dirrm System/Applications
-@dirrm System
-@dirrm Local/Tools/Resources
-@dirrm Local/Tools
-@dirrm Local/Library/Services
-@dirrm Local/Library/Preferences
-@dirrm Local/Library/Libraries
-@dirrm Local/Library/Headers
-@dirrm Local/Library/Frameworks
-@dirrm Local/Library/Documentation
-@dirrm Local/Library/Bundles
-@dirrm Local/Library/ApplicationSupport
-@dirrm Local/Library
-@dirrm Local/Applications
-@dirrm Local
-@unexec rmdir %D
-@exec mkdir -p %D/Local/Applications
-@exec mkdir -p %D/Local/Library/ApplicationSupport
-@exec mkdir -p %D/Local/Library/Bundles
-@exec mkdir -p %D/Local/Library/Documentation
-@exec mkdir -p %D/Local/Library/Frameworks
-@exec mkdir -p %D/Local/Library/Headers
-@exec mkdir -p %D/Local/Library/Libraries
-@exec mkdir -p %D/Local/Library/Preferences
-@exec mkdir -p %D/Local/Library/Services
-@exec mkdir -p %D/Local/Tools/Resources
-@exec mkdir -p %D/System/Applications
-@exec mkdir -p %D/System/Library/ApplicationSupport
-@exec mkdir -p %D/System/Library/Bundles
-@exec mkdir -p %D/System/Library/ColorPickers
-@exec mkdir -p %D/System/Library/Colors
-@exec mkdir -p %D/System/Library/DocTemplates
-@exec mkdir -p %D/System/Library/Documentation/man
-@exec mkdir -p %D/System/Library/Documentation/info
-@exec mkdir -p %D/System/Library/Documentation/Developer
-@exec mkdir -p %D/System/Library/Documentation/User
-@exec mkdir -p %D/System/Library/Fonts
-@exec mkdir -p %D/System/Library/Frameworks
-@exec mkdir -p %D/System/Library/Headers
-@exec mkdir -p %D/System/Library/Images
-@exec mkdir -p %D/System/Library/KeyBindings
-@exec mkdir -p %D/System/Library/Libraries/Java
-@exec mkdir -p %D/System/Library/Libraries/Resources
-@exec mkdir -p %D/System/Library/Makefiles/Additional
-@exec mkdir -p %D/System/Library/Makefiles/Auxiliary
-@exec mkdir -p %D/System/Library/Makefiles/%%GNU_ARCH%%
-@exec mkdir -p %D/System/Library/PostScript
-@exec mkdir -p %D/System/Library/Sounds
-@exec mkdir -p %D/System/Library/Services
-@exec mkdir -p %D/System/Tools/Java
-@exec mkdir -p %D/System/Tools/Resources
+GNUstep/GNUstep.conf
+GNUstep/System/Library/Documentation/man/man1/debugapp.1.gz
+GNUstep/System/Library/Documentation/man/man1/openapp.1.gz
+GNUstep/System/Library/Documentation/man/man1/gnustep-config.1.gz
+GNUstep/System/Library/Documentation/man/man1/opentool.1.gz
+GNUstep/System/Library/Documentation/man/man7/GNUstep.7.gz
+GNUstep/System/Library/Documentation/man/man7/library-combo.7.gz
+GNUstep/System/Library/Makefiles/GNUstep-reset.sh
+GNUstep/System/Library/Makefiles/GNUstep.csh
+GNUstep/System/Library/Makefiles/GNUstep.sh
+GNUstep/System/Library/Makefiles/Instance/Documentation/autogsdoc.make
+GNUstep/System/Library/Makefiles/Instance/Documentation/gsdoc.make
+GNUstep/System/Library/Makefiles/Instance/Documentation/install_files.make
+GNUstep/System/Library/Makefiles/Instance/Documentation/javadoc.make
+GNUstep/System/Library/Makefiles/Instance/Documentation/latex.make
+GNUstep/System/Library/Makefiles/Instance/Documentation/texi.make
+GNUstep/System/Library/Makefiles/Instance/Shared/bundle.make
+GNUstep/System/Library/Makefiles/Instance/Shared/headers.make
+GNUstep/System/Library/Makefiles/Instance/Shared/java.make
+GNUstep/System/Library/Makefiles/Instance/Shared/stamp-string.make
+GNUstep/System/Library/Makefiles/Instance/Shared/strings.make
+GNUstep/System/Library/Makefiles/Instance/application.make
+GNUstep/System/Library/Makefiles/Instance/bundle.make
+GNUstep/System/Library/Makefiles/Instance/clibrary.make
+GNUstep/System/Library/Makefiles/Instance/ctool.make
+GNUstep/System/Library/Makefiles/Instance/documentation.make
+GNUstep/System/Library/Makefiles/Instance/framework.make
+GNUstep/System/Library/Makefiles/Instance/gswapp.make
+GNUstep/System/Library/Makefiles/Instance/gswbundle.make
+GNUstep/System/Library/Makefiles/Instance/java-tool.make
+GNUstep/System/Library/Makefiles/Instance/java.make
+GNUstep/System/Library/Makefiles/Instance/library.make
+GNUstep/System/Library/Makefiles/Instance/objc.make
+GNUstep/System/Library/Makefiles/Instance/palette.make
+GNUstep/System/Library/Makefiles/Instance/resource-set.make
+GNUstep/System/Library/Makefiles/Instance/rules.make
+GNUstep/System/Library/Makefiles/Instance/service.make
+GNUstep/System/Library/Makefiles/Instance/subproject.make
+GNUstep/System/Library/Makefiles/Instance/test-application.make
+GNUstep/System/Library/Makefiles/Instance/test-library.make
+GNUstep/System/Library/Makefiles/Instance/test-tool.make
+GNUstep/System/Library/Makefiles/Instance/tool.make
+GNUstep/System/Library/Makefiles/Master/application.make
+GNUstep/System/Library/Makefiles/Master/bundle.make
+GNUstep/System/Library/Makefiles/Master/clibrary.make
+GNUstep/System/Library/Makefiles/Master/ctool.make
+GNUstep/System/Library/Makefiles/Master/documentation.make
+GNUstep/System/Library/Makefiles/Master/framework.make
+GNUstep/System/Library/Makefiles/Master/gswapp.make
+GNUstep/System/Library/Makefiles/Master/gswbundle.make
+GNUstep/System/Library/Makefiles/Master/java-tool.make
+GNUstep/System/Library/Makefiles/Master/java.make
+GNUstep/System/Library/Makefiles/Master/library.make
+GNUstep/System/Library/Makefiles/Master/nsis.make
+GNUstep/System/Library/Makefiles/Master/objc.make
+GNUstep/System/Library/Makefiles/Master/palette.make
+GNUstep/System/Library/Makefiles/Master/parallel-subdirectories.make
+GNUstep/System/Library/Makefiles/Master/resource-set.make
+GNUstep/System/Library/Makefiles/Master/rpm.make
+GNUstep/System/Library/Makefiles/Master/rules.make
+GNUstep/System/Library/Makefiles/Master/serial-subdirectories.make
+GNUstep/System/Library/Makefiles/Master/service.make
+GNUstep/System/Library/Makefiles/Master/source-distribution.make
+GNUstep/System/Library/Makefiles/Master/subproject.make
+GNUstep/System/Library/Makefiles/Master/test-application.make
+GNUstep/System/Library/Makefiles/Master/test-library.make
+GNUstep/System/Library/Makefiles/Master/test-tool.make
+GNUstep/System/Library/Makefiles/Master/tool.make
+GNUstep/System/Library/Makefiles/aggregate.make
+GNUstep/System/Library/Makefiles/app-wrapper.template
+GNUstep/System/Library/Makefiles/application.make
+GNUstep/System/Library/Makefiles/bundle.make
+GNUstep/System/Library/Makefiles/clean_cpu.sh
+GNUstep/System/Library/Makefiles/clean_os.sh
+GNUstep/System/Library/Makefiles/clean_vendor.sh
+GNUstep/System/Library/Makefiles/clibrary.make
+GNUstep/System/Library/Makefiles/common.make
+GNUstep/System/Library/Makefiles/config-noarch.make
+GNUstep/System/Library/Makefiles/config.guess
+GNUstep/System/Library/Makefiles/config.make
+GNUstep/System/Library/Makefiles/config.sub
+GNUstep/System/Library/Makefiles/cpu.sh
+GNUstep/System/Library/Makefiles/ctool.make
+GNUstep/System/Library/Makefiles/documentation.make
+GNUstep/System/Library/Makefiles/empty.make
+GNUstep/System/Library/Makefiles/executable.template
+GNUstep/System/Library/Makefiles/filesystem.sh
+GNUstep/System/Library/Makefiles/filesystem.csh
+GNUstep/System/Library/Makefiles/filesystem.make
+GNUstep/System/Library/Makefiles/fixpath.sh
+GNUstep/System/Library/Makefiles/framework.make
+GNUstep/System/Library/Makefiles/gnustep-make-help
+GNUstep/System/Library/Makefiles/gswapp.make
+GNUstep/System/Library/Makefiles/gswbundle.make
+GNUstep/System/Library/Makefiles/install-sh
+GNUstep/System/Library/Makefiles/java-executable.template
+GNUstep/System/Library/Makefiles/java-tool.make
+GNUstep/System/Library/Makefiles/java.make
+GNUstep/System/Library/Makefiles/jni.make
+GNUstep/System/Library/Makefiles/library-combo.make
+GNUstep/System/Library/Makefiles/library.make
+GNUstep/System/Library/Makefiles/messages.make
+GNUstep/System/Library/Makefiles/mkinstalldirs
+GNUstep/System/Library/Makefiles/names.make
+GNUstep/System/Library/Makefiles/native-library.make
+GNUstep/System/Library/Makefiles/nsi-app.template
+GNUstep/System/Library/Makefiles/objc.make
+GNUstep/System/Library/Makefiles/os.sh
+GNUstep/System/Library/Makefiles/palette.make
+GNUstep/System/Library/Makefiles/parallel-subdirectories.make
+GNUstep/System/Library/Makefiles/print_unique_pathlist.sh
+GNUstep/System/Library/Makefiles/relative_path.sh
+GNUstep/System/Library/Makefiles/resource-set.make
+GNUstep/System/Library/Makefiles/rules.make
+GNUstep/System/Library/Makefiles/serial-subdirectories.make
+GNUstep/System/Library/Makefiles/service.make
+GNUstep/System/Library/Makefiles/spec-rules.template
+GNUstep/System/Library/Makefiles/strip_makefiles.sh
+GNUstep/System/Library/Makefiles/tar-exclude-list
+GNUstep/System/Library/Makefiles/subproject.make
+GNUstep/System/Library/Makefiles/target.make
+GNUstep/System/Library/Makefiles/test-application.make
+GNUstep/System/Library/Makefiles/test-library.make
+GNUstep/System/Library/Makefiles/test-tool.make
+GNUstep/System/Library/Makefiles/tool.make
+GNUstep/System/Library/Makefiles/vendor.sh
+GNUstep/System/Tools/debugapp
+GNUstep/System/Tools/gnustep-config
+GNUstep/System/Tools/openapp
+GNUstep/System/Tools/opentool
+@rmtry GNUstep/System/Makefiles
+@dirrm GNUstep/System/Tools/Resources
+@dirrm GNUstep/System/Tools/Java
+@dirrm GNUstep/System/Tools
+@dirrm GNUstep/System/Library/Sounds
+@dirrm GNUstep/System/Library/Services
+@dirrm GNUstep/System/Library/PostScript
+@dirrm GNUstep/System/Library/Makefiles/%%GNU_ARCH%%
+@dirrm GNUstep/System/Library/Makefiles/Master
+@dirrm GNUstep/System/Library/Makefiles/Instance/Shared
+@dirrm GNUstep/System/Library/Makefiles/Instance/Documentation
+@dirrm GNUstep/System/Library/Makefiles/Instance
+@dirrm GNUstep/System/Library/Makefiles/Auxiliary
+@dirrm GNUstep/System/Library/Makefiles/Additional
+@dirrm GNUstep/System/Library/Makefiles
+@dirrm GNUstep/System/Library/Libraries/Resources
+@dirrm GNUstep/System/Library/Libraries/Java
+@dirrm GNUstep/System/Library/Libraries
+@dirrm GNUstep/System/Library/KeyBindings
+@dirrm GNUstep/System/Library/Images
+@dirrm GNUstep/System/Library/Headers
+@dirrm GNUstep/System/Library/Frameworks
+@dirrm GNUstep/System/Library/Fonts
+@dirrm GNUstep/System/Library/Documentation/man/man7
+@dirrm GNUstep/System/Library/Documentation/man/man1
+@dirrm GNUstep/System/Library/Documentation/man
+@dirrm GNUstep/System/Library/Documentation/info
+@dirrm GNUstep/System/Library/Documentation/User
+@dirrm GNUstep/System/Library/Documentation/Developer
+@dirrm GNUstep/System/Library/Documentation
+@dirrm GNUstep/System/Library/DocTemplates
+@dirrm GNUstep/System/Library/Colors
+@dirrm GNUstep/System/Library/ColorPickers
+@dirrm GNUstep/System/Library/Bundles
+@dirrm GNUstep/System/Library/ApplicationSupport
+@dirrm GNUstep/System/Library
+@dirrm GNUstep/System/Applications
+@dirrm GNUstep/System
+@dirrm GNUstep/Local/Tools/Resources
+@dirrm GNUstep/Local/Tools
+@dirrm GNUstep/Local/Library/Services
+@dirrm GNUstep/Local/Library/Preferences
+@dirrm GNUstep/Local/Library/Libraries
+@dirrm GNUstep/Local/Library/Headers
+@dirrm GNUstep/Local/Library/Frameworks
+@dirrm GNUstep/Local/Library/Documentation
+@dirrm GNUstep/Local/Library/Bundles
+@dirrm GNUstep/Local/Library/ApplicationSupport
+@dirrm GNUstep/Local/Library
+@dirrm GNUstep/Local/Applications
+@dirrm GNUstep/Local
+@dirrm GNUstep
+@exec ln -s Library/Makefiles %D/GNUstep/System/
+@exec mkdir -p %D/GNUstep/Local/Applications
+@exec mkdir -p %D/GNUstep/Local/Library/ApplicationSupport
+@exec mkdir -p %D/GNUstep/Local/Library/Bundles
+@exec mkdir -p %D/GNUstep/Local/Library/Documentation
+@exec mkdir -p %D/GNUstep/Local/Library/Frameworks
+@exec mkdir -p %D/GNUstep/Local/Library/Headers
+@exec mkdir -p %D/GNUstep/Local/Library/Libraries
+@exec mkdir -p %D/GNUstep/Local/Library/Preferences
+@exec mkdir -p %D/GNUstep/Local/Library/Services
+@exec mkdir -p %D/GNUstep/Local/Tools/Resources
+@exec mkdir -p %D/GNUstep/System/Applications
+@exec mkdir -p %D/GNUstep/System/Library/ApplicationSupport
+@exec mkdir -p %D/GNUstep/System/Library/Bundles
+@exec mkdir -p %D/GNUstep/System/Library/ColorPickers
+@exec mkdir -p %D/GNUstep/System/Library/Colors
+@exec mkdir -p %D/GNUstep/System/Library/DocTemplates
+@exec mkdir -p %D/GNUstep/System/Library/Documentation/man
+@exec mkdir -p %D/GNUstep/System/Library/Documentation/info
+@exec mkdir -p %D/GNUstep/System/Library/Documentation/Developer
+@exec mkdir -p %D/GNUstep/System/Library/Documentation/User
+@exec mkdir -p %D/GNUstep/System/Library/Fonts
+@exec mkdir -p %D/GNUstep/System/Library/Frameworks
+@exec mkdir -p %D/GNUstep/System/Library/Headers
+@exec mkdir -p %D/GNUstep/System/Library/Images
+@exec mkdir -p %D/GNUstep/System/Library/KeyBindings
+@exec mkdir -p %D/GNUstep/System/Library/Libraries/Java
+@exec mkdir -p %D/GNUstep/System/Library/Libraries/Resources
+@exec mkdir -p %D/GNUstep/System/Library/Makefiles/Additional
+@exec mkdir -p %D/GNUstep/System/Library/Makefiles/Auxiliary
+@exec mkdir -p %D/GNUstep/System/Library/Makefiles/%%GNU_ARCH%%
+@exec mkdir -p %D/GNUstep/System/Library/PostScript
+@exec mkdir -p %D/GNUstep/System/Library/Sounds
+@exec mkdir -p %D/GNUstep/System/Library/Services
+@exec mkdir -p %D/GNUstep/System/Tools/Java
+@exec mkdir -p %D/GNUstep/System/Tools/Resources
