@@ -17,6 +17,9 @@ LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
 		xcb.2:${PORTSDIR}/x11/libxcb
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes

@@ -16,6 +16,9 @@ COMMENT=	XMMS plugin, that plays a sound on incoming mail and opens the MUA
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

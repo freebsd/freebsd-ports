@@ -16,6 +16,9 @@ COMMENT=	KDE card game
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 USE_AUTOTOOLS=		libtool:22

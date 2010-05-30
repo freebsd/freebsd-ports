@@ -16,6 +16,10 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	KDE4 version of kaffeine
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LATEST_LINK=	${PORTNAME}-devel
 USE_KDE4=	kdehier kdeprefix automoc4 kdelibs
 USE_QT_VER=	4

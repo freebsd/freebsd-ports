@@ -14,6 +14,9 @@ MASTER_SITES=	http://alioth.debian.org/frs/download.php/3279/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -18,6 +18,9 @@ LIB_DEPENDS=	cddb.4:${PORTSDIR}/audio/libcddb \
 		popt.0:${PORTSDIR}/devel/popt \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget pkgconfig gnomehack
 USE_GMAKE=	yes

@@ -16,6 +16,8 @@ DISTNAME=	socket++-${PORTVERSION}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A C++ wrapper library to the sockets
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:22

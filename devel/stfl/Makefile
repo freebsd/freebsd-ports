@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.clifford.at/stfl/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Structured Terminal Forms Language/Library
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes

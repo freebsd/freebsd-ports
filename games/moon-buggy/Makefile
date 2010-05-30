@@ -20,6 +20,9 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure.ac
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Drive a buggy across the moons surface
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 .if defined (WITH_ESOUND)
 LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound:install
 .endif
