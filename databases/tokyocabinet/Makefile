@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tokyocabinet
-PORTVERSION=	1.4.44
+PORTVERSION=	1.4.45
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://1978th.net/tokyocabinet/
@@ -17,7 +17,6 @@ COMMENT=	A modern implementation of DBM
 
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ARGS=	--enable-off64
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -36,14 +35,14 @@ MAN3=		tcadb.3 tcbdb.3 tcfdb.3 tchdb.3 tclist.3 tcmap.3 \
 
 OPTIONS=	DEBUG "Debugging support" off \
 		DEVEL "Development build" off \
-		PROFILE "Profiling build" off \
-		OFF64 "Use to compile on 64-bit system" off \
 		FASTEST "Fastest run" off \
+		LZMA "Enable LZMA codec" off \
+		LZO "Enable LZO codec" off \
+		PTHREAD "Disable POSIX thread support" on \
+		PROFILE "Profiling build" off \
+		SHARED "Shared build" on \
 		SWAB "Swapping byte-orders build" off \
-		UYIELD "Detecting race conditions" off \
-		ZLIB "Disable ZLIB compression" off \
-		BZIP2 "BZIP2 compression" on \
-		PTHREAD "Disable POSIX thread support" off
+		UYIELD "Detecting race conditions" off
 
 .include <bsd.port.pre.mk>
 
@@ -57,14 +56,26 @@ CONFIGURE_ARGS+=	--enable-debug
 .if defined(WITH_DEVEL)
 CONFIGURE_ARGS+=	--enable-devel
 .endif
+.if defined(WITH_FASTEST)
+CONFIGURE_ARGS+=	--enable-fastest
+.endif
+# liblzma on 9-current does not have liblzma.h file.
+.if defined(WITH_LZMA) || exists(${LOCALBASE}/include/liblzma.h)
+CONFIGURE_ARGS+=	--enable-exlzma
+LIB_DEPENDS+=		lzma:${PORTSDIR}/archivers/lzmalib
+.endif
+.if defined(WITH_LZO) || exists(${LOCALBASE}/lib/liblzo2.so)
+CONFIGURE_ARGS+=	--enable-exlzo
+LIB_DEPENDS+=		lzo2:${PORTSDIR}/archivers/lzo2
+.endif
+.if defined(WITHOUT_PTHREAD)
+CONFIGURE_ARGS+=	--disable-pthread
+.endif
 .if defined(WITH_PROFILE)
 CONFIGURE_ARGS+=	--enable-profile
 .endif
-.if defined(WITH_OFF64)
-CONFIGURE_ARGS+=	--enable-off64
-.endif
-.if defined(WITH_FASTEST)
-CONFIGURE_ARGS+=	--enable-fastest
+.if defined(WITHOUT_SHARED)
+CONFIGURE_ARGS+=	--disable-shared
 .endif
 .if defined(WITH_SWAB)
 CONFIGURE_ARGS+=	--enable-swab
@@ -72,20 +83,8 @@ CONFIGURE_ARGS+=	--enable-swab
 .if defined(WITH_UYIELD)
 CONFIGURE_ARGS+=	--enable-uyield
 .endif
-.if defined(WITH_ZLIB)
-CONFIGURE_ARGS+=	--disable-zlib
-.endif
-.if defined(WITHOUT_BZIP2)
-CONFIGURE_ARGS+=	--disable-bzip
-.endif
-.if defined(WITH_PTHREAD)
-CONFIGURE_ARGS+=	--disable-pthread
-.endif
-.if defined(WITH_SHARED)
-CONFIGURE_ARGS+=	--disable-shared
-.endif
 
-SHLIB_VER=	9.7.0
+SHLIB_VER=	9.8.0
 SHLIB_VER_MAJ=	9
 
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
