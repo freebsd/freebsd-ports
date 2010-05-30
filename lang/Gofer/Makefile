@@ -23,6 +23,11 @@ DOCSDIR=	${PREFIX}/share/doc/Gofer
 LIBDIR=		${PREFIX}/lib/Gofer
 MAN1=		gofer.1
 
+post-patch:
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKDIR}/scripts/gofer \
+		${WRKDIR}/scripts/goferc
+
 do-install:
 	@${MKDIR} ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.prelude ${LIBDIR}
