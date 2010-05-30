@@ -35,11 +35,7 @@ SITE+=		${FILESDIR}/site.config.m4
 MAN3=		ar.3
 PLIST_FILES+=	include/libar.h lib/libar.a
 .endif
-.if defined(WITHOUT_RC_NG)
-PLIST_FILES+=	etc/rc.d/milter-sid.sh.sample
-.else
 USE_RC_SUBR=	milter-sid.sh
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -50,10 +46,6 @@ SITE+=		${FILESDIR}/site.config.m4.milter
 .endif
 
 pre-configure:
-.if defined(WITHOUT_RC_NG)
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/milter-sid.sh \
-		> ${WRKSRC}/milter-sid.sh
-.endif
 	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' \
 		-e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
 		-e "s|\`-O'|\`${CFLAGS}'|g" \
@@ -69,10 +61,6 @@ pre-configure:
 .endif
 
 post-install:
-.if defined(WITHOUT_RC_NG)
-	${INSTALL_SCRIPT} ${WRKSRC}/milter-sid.sh \
-		${PREFIX}/etc/rc.d/milter-sid.sh.sample
-.endif
 .for i in ${MAN8}
 	@${RM} -f ${MANPREFIX}/man/cat8/${i} ${MANPREFIX}/man/cat8/${i}.gz
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man8/
