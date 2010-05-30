@@ -137,6 +137,12 @@
 %%CGIDIR%%/tmpl/cms/include/entry_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/editor.tmpl
 %%CGIDIR%%/tmpl/cms/include/display_options.tmpl
+%%CGIDIR%%/tmpl/cms/include/debug_hover.tmpl
+%%CGIDIR%%/tmpl/cms/include/debug_toolbar/cache.tmpl
+%%CGIDIR%%/tmpl/cms/include/debug_toolbar/headers.tmpl
+%%CGIDIR%%/tmpl/cms/include/debug_toolbar/requestvars.tmpl
+%%CGIDIR%%/tmpl/cms/include/debug_toolbar/sql.tmpl
+%%CGIDIR%%/tmpl/cms/include/debug_toolbar/sql2.tmpl
 %%CGIDIR%%/tmpl/cms/include/copyright.tmpl
 %%CGIDIR%%/tmpl/cms/include/commenter_table.tmpl
 %%CGIDIR%%/tmpl/cms/include/comment_table.tmpl
@@ -218,7 +224,6 @@
 %%CGIDIR%%/themes/pico/thumb-small.png
 %%CGIDIR%%/themes/pico/thumb-medium.png
 %%CGIDIR%%/themes/pico/theme.yaml
-%%CGIDIR%%/themes/pico/templates/verify-subscribe.mtml
 %%CGIDIR%%/themes/pico/templates/trackbacks.mtml
 %%CGIDIR%%/themes/pico/templates/technorati_search.mtml
 %%CGIDIR%%/themes/pico/templates/tag_cloud.mtml
@@ -228,7 +233,6 @@
 %%CGIDIR%%/themes/pico/templates/search_results.mtml
 %%CGIDIR%%/themes/pico/templates/search.mtml
 %%CGIDIR%%/themes/pico/templates/rsd.mtml
-%%CGIDIR%%/themes/pico/templates/recover-password.mtml
 %%CGIDIR%%/themes/pico/templates/recent_entries.mtml
 %%CGIDIR%%/themes/pico/templates/recent_comments.mtml
 %%CGIDIR%%/themes/pico/templates/recent_assets.mtml
@@ -236,9 +240,6 @@
 %%CGIDIR%%/themes/pico/templates/pages_list.mtml
 %%CGIDIR%%/themes/pico/templates/page.mtml
 %%CGIDIR%%/themes/pico/templates/openid.mtml
-%%CGIDIR%%/themes/pico/templates/notify-entry.mtml
-%%CGIDIR%%/themes/pico/templates/new-ping.mtml
-%%CGIDIR%%/themes/pico/templates/new-comment.mtml
 %%CGIDIR%%/themes/pico/templates/navigation.mtml
 %%CGIDIR%%/themes/pico/templates/monthly_entry_listing.mtml
 %%CGIDIR%%/themes/pico/templates/monthly_archive_list.mtml
@@ -247,7 +248,6 @@
 %%CGIDIR%%/themes/pico/templates/main_index.mtml
 %%CGIDIR%%/themes/pico/templates/javascript.mtml
 %%CGIDIR%%/themes/pico/templates/html_head.mtml
-%%CGIDIR%%/themes/pico/templates/footer-email.mtml
 %%CGIDIR%%/themes/pico/templates/feed_recent.mtml
 %%CGIDIR%%/themes/pico/templates/entry_summary.mtml
 %%CGIDIR%%/themes/pico/templates/entry.mtml
@@ -258,9 +258,6 @@
 %%CGIDIR%%/themes/pico/templates/current_author_monthly_archive_list.mtml
 %%CGIDIR%%/themes/pico/templates/creative_commons.mtml
 %%CGIDIR%%/themes/pico/templates/comments.mtml
-%%CGIDIR%%/themes/pico/templates/commenter_notify.mtml
-%%CGIDIR%%/themes/pico/templates/commenter_confirm.mtml
-%%CGIDIR%%/themes/pico/templates/comment_throttle.mtml
 %%CGIDIR%%/themes/pico/templates/comment_response.mtml
 %%CGIDIR%%/themes/pico/templates/comment_preview.mtml
 %%CGIDIR%%/themes/pico/templates/comment_listing.mtml
@@ -296,7 +293,6 @@
 %%CGIDIR%%/themes/classic_website/thumb-small.png
 %%CGIDIR%%/themes/classic_website/thumb-medium.png
 %%CGIDIR%%/themes/classic_website/theme.yaml
-%%CGIDIR%%/themes/classic_website/templates/verify-subscribe.mtml
 %%CGIDIR%%/themes/classic_website/templates/trackbacks.mtml
 %%CGIDIR%%/themes/classic_website/templates/technorati_search.mtml
 %%CGIDIR%%/themes/classic_website/templates/tag_cloud.mtml
@@ -307,7 +303,6 @@
 %%CGIDIR%%/themes/classic_website/templates/search_results.mtml
 %%CGIDIR%%/themes/classic_website/templates/search.mtml
 %%CGIDIR%%/themes/classic_website/templates/rsd.mtml
-%%CGIDIR%%/themes/classic_website/templates/recover-password.mtml
 %%CGIDIR%%/themes/classic_website/templates/recent_entries.mtml
 %%CGIDIR%%/themes/classic_website/templates/recent_comments.mtml
 %%CGIDIR%%/themes/classic_website/templates/recent_assets.mtml
@@ -316,23 +311,16 @@
 %%CGIDIR%%/themes/classic_website/templates/pages_list.mtml
 %%CGIDIR%%/themes/classic_website/templates/page.mtml
 %%CGIDIR%%/themes/classic_website/templates/openid.mtml
-%%CGIDIR%%/themes/classic_website/templates/notify-entry.mtml
-%%CGIDIR%%/themes/classic_website/templates/new-ping.mtml
-%%CGIDIR%%/themes/classic_website/templates/new-comment.mtml
 %%CGIDIR%%/themes/classic_website/templates/main_index_widgets_group.mtml
 %%CGIDIR%%/themes/classic_website/templates/main_index.mtml
 %%CGIDIR%%/themes/classic_website/templates/javascript.mtml
 %%CGIDIR%%/themes/classic_website/templates/html_head.mtml
-%%CGIDIR%%/themes/classic_website/templates/footer-email.mtml
 %%CGIDIR%%/themes/classic_website/templates/feed_recent.mtml
 %%CGIDIR%%/themes/classic_website/templates/entry_summary.mtml
 %%CGIDIR%%/themes/classic_website/templates/entry.mtml
 %%CGIDIR%%/themes/classic_website/templates/dynamic_error.mtml
 %%CGIDIR%%/themes/classic_website/templates/creative_commons.mtml
 %%CGIDIR%%/themes/classic_website/templates/comments.mtml
-%%CGIDIR%%/themes/classic_website/templates/commenter_notify.mtml
-%%CGIDIR%%/themes/classic_website/templates/commenter_confirm.mtml
-%%CGIDIR%%/themes/classic_website/templates/comment_throttle.mtml
 %%CGIDIR%%/themes/classic_website/templates/comment_response.mtml
 %%CGIDIR%%/themes/classic_website/templates/comment_preview.mtml
 %%CGIDIR%%/themes/classic_website/templates/comment_listing.mtml
@@ -345,7 +333,6 @@
 %%CGIDIR%%/themes/classic_blog/thumb-small.png
 %%CGIDIR%%/themes/classic_blog/thumb-medium.png
 %%CGIDIR%%/themes/classic_blog/theme.yaml
-%%CGIDIR%%/themes/classic_blog/templates/verify-subscribe.mtml
 %%CGIDIR%%/themes/classic_blog/templates/trackbacks.mtml
 %%CGIDIR%%/themes/classic_blog/templates/technorati_search.mtml
 %%CGIDIR%%/themes/classic_blog/templates/tag_cloud.mtml
@@ -356,7 +343,6 @@
 %%CGIDIR%%/themes/classic_blog/templates/search_results.mtml
 %%CGIDIR%%/themes/classic_blog/templates/search.mtml
 %%CGIDIR%%/themes/classic_blog/templates/rsd.mtml
-%%CGIDIR%%/themes/classic_blog/templates/recover-password.mtml
 %%CGIDIR%%/themes/classic_blog/templates/recent_entries.mtml
 %%CGIDIR%%/themes/classic_blog/templates/recent_comments.mtml
 %%CGIDIR%%/themes/classic_blog/templates/recent_assets.mtml
@@ -365,9 +351,6 @@
 %%CGIDIR%%/themes/classic_blog/templates/pages_list.mtml
 %%CGIDIR%%/themes/classic_blog/templates/page.mtml
 %%CGIDIR%%/themes/classic_blog/templates/openid.mtml
-%%CGIDIR%%/themes/classic_blog/templates/notify-entry.mtml
-%%CGIDIR%%/themes/classic_blog/templates/new-ping.mtml
-%%CGIDIR%%/themes/classic_blog/templates/new-comment.mtml
 %%CGIDIR%%/themes/classic_blog/templates/monthly_entry_listing.mtml
 %%CGIDIR%%/themes/classic_blog/templates/monthly_archive_list.mtml
 %%CGIDIR%%/themes/classic_blog/templates/monthly_archive_dropdown.mtml
@@ -375,7 +358,6 @@
 %%CGIDIR%%/themes/classic_blog/templates/main_index.mtml
 %%CGIDIR%%/themes/classic_blog/templates/javascript.mtml
 %%CGIDIR%%/themes/classic_blog/templates/html_head.mtml
-%%CGIDIR%%/themes/classic_blog/templates/footer-email.mtml
 %%CGIDIR%%/themes/classic_blog/templates/feed_recent.mtml
 %%CGIDIR%%/themes/classic_blog/templates/entry_summary.mtml
 %%CGIDIR%%/themes/classic_blog/templates/entry.mtml
@@ -386,9 +368,6 @@
 %%CGIDIR%%/themes/classic_blog/templates/current_author_monthly_archive_list.mtml
 %%CGIDIR%%/themes/classic_blog/templates/creative_commons.mtml
 %%CGIDIR%%/themes/classic_blog/templates/comments.mtml
-%%CGIDIR%%/themes/classic_blog/templates/commenter_notify.mtml
-%%CGIDIR%%/themes/classic_blog/templates/commenter_confirm.mtml
-%%CGIDIR%%/themes/classic_blog/templates/comment_throttle.mtml
 %%CGIDIR%%/themes/classic_blog/templates/comment_response.mtml
 %%CGIDIR%%/themes/classic_blog/templates/comment_preview.mtml
 %%CGIDIR%%/themes/classic_blog/templates/comment_listing.mtml
@@ -1660,7 +1639,6 @@
 %%DATADIR%%/mt-static/images/progress-bar.gif
 %%DATADIR%%/mt-static/images/progress-bar-indeterminate.gif
 %%DATADIR%%/mt-static/images/preview.gif
-%%DATADIR%%/mt-static/images/powered.gif
 %%DATADIR%%/mt-static/images/plugin.gif
 %%DATADIR%%/mt-static/images/plugin-error.gif
 %%DATADIR%%/mt-static/images/plugin-bullet.gif
@@ -1931,6 +1909,16 @@
 %%DATADIR%%/mt-static/htc/editor-content.htc
 %%DATADIR%%/mt-static/flash/date_slider_open.swf
 %%DATADIR%%/mt-static/flash/JavaScriptFlashGateway.swf
+%%DATADIR%%/mt-static/debug_toolbar/back.png
+%%DATADIR%%/mt-static/debug_toolbar/back_hover.png
+%%DATADIR%%/mt-static/debug_toolbar/close.png
+%%DATADIR%%/mt-static/debug_toolbar/close_hover.png
+%%DATADIR%%/mt-static/debug_toolbar/djdt_vertical.png
+%%DATADIR%%/mt-static/debug_toolbar/indicator.png
+%%DATADIR%%/mt-static/debug_toolbar/jquery.cookie.js
+%%DATADIR%%/mt-static/debug_toolbar/panel_bg.png
+%%DATADIR%%/mt-static/debug_toolbar/toolbar.css
+%%DATADIR%%/mt-static/debug_toolbar/toolbar.js
 %%DATADIR%%/mt-static/css/widget.css
 %%DATADIR%%/mt-static/css/utilities.css
 %%DATADIR%%/mt-static/css/structure.css
@@ -2505,6 +2493,7 @@
 %%CGIDIR%%/extlib/Module/Load.pm
 %%CGIDIR%%/extlib/Math/BigInt/Trace.pm
 %%CGIDIR%%/extlib/Math/BigInt/Scalar.pm
+%%CGIDIR%%/extlib/Math/BigInt/CalcEmu.pm
 %%CGIDIR%%/extlib/Math/BigInt/Calc.pm
 %%CGIDIR%%/extlib/Math/BigInt.pm
 %%CGIDIR%%/extlib/MIME/EncWords/JA_JP.pod
@@ -2520,6 +2509,34 @@
 %%CGIDIR%%/extlib/Locale/Maketext/Guts.pm
 %%CGIDIR%%/extlib/Locale/Maketext.pod
 %%CGIDIR%%/extlib/Locale/Maketext.pm
+%%CGIDIR%%/extlib/LWP.pm
+%%CGIDIR%%/extlib/LWP/Authen/Basic.pm
+%%CGIDIR%%/extlib/LWP/Authen/Digest.pm
+%%CGIDIR%%/extlib/LWP/Authen/Ntlm.pm
+%%CGIDIR%%/extlib/LWP/ConnCache.pm
+%%CGIDIR%%/extlib/LWP/Debug.pm
+%%CGIDIR%%/extlib/LWP/DebugFile.pm
+%%CGIDIR%%/extlib/LWP/MediaTypes.pm
+%%CGIDIR%%/extlib/LWP/MemberMixin.pm
+%%CGIDIR%%/extlib/LWP/Protocol.pm
+%%CGIDIR%%/extlib/LWP/Protocol/GHTTP.pm
+%%CGIDIR%%/extlib/LWP/Protocol/cpan.pm
+%%CGIDIR%%/extlib/LWP/Protocol/data.pm
+%%CGIDIR%%/extlib/LWP/Protocol/file.pm
+%%CGIDIR%%/extlib/LWP/Protocol/ftp.pm
+%%CGIDIR%%/extlib/LWP/Protocol/gopher.pm
+%%CGIDIR%%/extlib/LWP/Protocol/http.pm
+%%CGIDIR%%/extlib/LWP/Protocol/http10.pm
+%%CGIDIR%%/extlib/LWP/Protocol/https.pm
+%%CGIDIR%%/extlib/LWP/Protocol/https10.pm
+%%CGIDIR%%/extlib/LWP/Protocol/loopback.pm
+%%CGIDIR%%/extlib/LWP/Protocol/mailto.pm
+%%CGIDIR%%/extlib/LWP/Protocol/nntp.pm
+%%CGIDIR%%/extlib/LWP/Protocol/nogo.pm
+%%CGIDIR%%/extlib/LWP/RobotUA.pm
+%%CGIDIR%%/extlib/LWP/Simple.pm
+%%CGIDIR%%/extlib/LWP/UserAgent.pm
+%%CGIDIR%%/extlib/LWP/media.types
 %%CGIDIR%%/extlib/JSON/PP58.pm
 %%CGIDIR%%/extlib/JSON/PP56.pm
 %%CGIDIR%%/extlib/JSON/PP5005.pm
@@ -2539,7 +2556,24 @@
 %%CGIDIR%%/extlib/HTML/Template.pm
 %%CGIDIR%%/extlib/HTML/Form.pm
 %%CGIDIR%%/extlib/HTML/Diff.pm
+%%CGIDIR%%/extlib/HTTP/Config.pm
+%%CGIDIR%%/extlib/HTTP/Cookies.pm
+%%CGIDIR%%/extlib/HTTP/Cookies/Microsoft.pm
+%%CGIDIR%%/extlib/HTTP/Cookies/Netscape.pm
+%%CGIDIR%%/extlib/HTTP/Daemon.pm
+%%CGIDIR%%/extlib/HTTP/Date.pm
+%%CGIDIR%%/extlib/HTTP/Headers.pm
+%%CGIDIR%%/extlib/HTTP/Headers/Auth.pm
+%%CGIDIR%%/extlib/HTTP/Headers/ETag.pm
+%%CGIDIR%%/extlib/HTTP/Headers/Util.pm
+%%CGIDIR%%/extlib/HTTP/Message.pm
+%%CGIDIR%%/extlib/HTTP/Negotiate.pm
+%%CGIDIR%%/extlib/HTTP/Request.pm
+%%CGIDIR%%/extlib/HTTP/Request/Common.pm
+%%CGIDIR%%/extlib/HTTP/Response.pm
+%%CGIDIR%%/extlib/HTTP/Status.pm
 %%CGIDIR%%/extlib/File/Temp.pm
+%%CGIDIR%%/extlib/File/Listing.pm
 %%CGIDIR%%/extlib/File/Copy/Recursive.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver/SQL/Oracle.pm
 %%CGIDIR%%/extlib/Data/ObjectDriver/SQL.pm
@@ -2661,6 +2695,7 @@
 @dirrm %%CGIDIR%%/tmpl/cms/popup
 @dirrm %%CGIDIR%%/tmpl/cms/include/theme_exporters
 @dirrm %%CGIDIR%%/tmpl/cms/include/list_associations
+@dirrm %%CGIDIR%%/tmpl/cms/include/debug_toolbar
 @dirrm %%CGIDIR%%/tmpl/cms/include
 @dirrm %%CGIDIR%%/tmpl/cms/dialog
 @dirrm %%CGIDIR%%/tmpl/cms
@@ -2802,6 +2837,7 @@
 @dirrm %%DATADIR%%/mt-static/html
 @dirrm %%DATADIR%%/mt-static/htc
 @dirrm %%DATADIR%%/mt-static/flash
+@dirrm %%DATADIR%%/mt-static/debug_toolbar
 @dirrm %%DATADIR%%/mt-static/css/hacks
 @dirrm %%DATADIR%%/mt-static/css/editor
 @dirrm %%DATADIR%%/mt-static/css
@@ -2900,6 +2936,9 @@
 @dirrm %%CGIDIR%%/extlib/Lucene
 @dirrm %%CGIDIR%%/extlib/Locale/Maketext
 @dirrm %%CGIDIR%%/extlib/Locale
+@dirrm %%CGIDIR%%/extlib/LWP/Protocol
+@dirrm %%CGIDIR%%/extlib/LWP/Authen
+@dirrm %%CGIDIR%%/extlib/LWP
 @dirrm %%CGIDIR%%/extlib/JSON/PP
 @dirrm %%CGIDIR%%/extlib/JSON
 @dirrm %%CGIDIR%%/extlib/Image
@@ -2908,6 +2947,10 @@
 @dirrm %%CGIDIR%%/extlib/I18N/LangTags
 @dirrm %%CGIDIR%%/extlib/I18N
 @dirrm %%CGIDIR%%/extlib/Heap
+@dirrm %%CGIDIR%%/extlib/HTTP/Request
+@dirrm %%CGIDIR%%/extlib/HTTP/Headers
+@dirrm %%CGIDIR%%/extlib/HTTP/Cookies
+@dirrm %%CGIDIR%%/extlib/HTTP
 @dirrm %%CGIDIR%%/extlib/HTML
 @dirrm %%CGIDIR%%/extlib/File/Copy
 @dirrm %%CGIDIR%%/extlib/File

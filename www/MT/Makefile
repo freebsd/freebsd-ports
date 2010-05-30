@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	5.01
-PORTREVISION=	2
+PORTVERSION=	5.02
 CATEGORIES?=	www
 MASTER_SITES=	http://www.movabletype.org/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION}-en
 
-MAINTAINER?=	arved@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A web-based personal publishing system for weblogs
 
 CONFLICTS?=	ja-MT-[2-5].* fr-MT-[2-5].* de-MT-[2-5].* es-MT-[2-5].* nl-MT-[2-5].*
