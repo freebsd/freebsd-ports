@@ -5,16 +5,16 @@ $FreeBSD$
 +++ config_ndpmon.xml.in
 @@ -8,12 +8,12 @@
          <actions_low_pri>
-         	<sendmail>1</sendmail>
-         	<syslog>1</syslog>
--        	<exec_pipe_program>/usr/local/ndpmon/create_html_table.py</exec_pipe_program>
-+        	<exec_pipe_program>@prefix@/share/ndpmon/create_html_table.py</exec_pipe_program>
+             <sendmail>1</sendmail>
+             <syslog>1</syslog>
+-            <exec_pipe_program>/usr/local/ndpmon/create_html_table.py</exec_pipe_program>
++            <exec_pipe_program>%%PREFIX%%/share/ndpmon/create_html_table.py</exec_pipe_program>
          </actions_low_pri>
          <actions_high_pri>
-         	<sendmail>1</sendmail>
-         	<syslog>1</syslog>
--        	<exec_pipe_program>/usr/local/ndpmon/create_html_table.py</exec_pipe_program>
-+        	<exec_pipe_program>@prefix@/share/ndpmon/create_html_table.py</exec_pipe_program>
+             <sendmail>1</sendmail>
+             <syslog>1</syslog>
+-            <exec_pipe_program>/usr/local/ndpmon/create_html_table.py</exec_pipe_program>
++            <exec_pipe_program>%%PREFIX%%/share/ndpmon/create_html_table.py</exec_pipe_program>
          </actions_high_pri>
          <use_reverse_hostlookups>1</use_reverse_hostlookups>
-         <routers>
+     <routers>
