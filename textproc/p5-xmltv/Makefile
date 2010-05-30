@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.53
+PORTVERSION=	0.5.57
 CATEGORIES=	textproc perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -60,18 +60,18 @@ PORTDOCS=	COPYING \
 .endif
 
 MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_ar.1 tv_extractinfo_en.1 \
-	tv_find_grabbers.1 tv_grab_ar.1 tv_grab_be.1 tv_grab_br_net.1 \
+	tv_find_grabbers.1 tv_grab_ar.1 \
 	tv_grab_ch_search.1 tv_grab_combiner.1 tv_grab_dk_dr.1 \
-	tv_grab_dtv_la.1 tv_grab_ee.1 tv_grab_es.1 tv_grab_es_laguiatv.1 \
+	tv_grab_dtv_la.1 tv_grab_ee.1 tv_grab_es_laguiatv.1 \
 	tv_grab_es_miguiatv.1 tv_grab_fi.1 tv_grab_fr.1 tv_grab_hr.1 \
-	tv_grab_huro.1 tv_grab_it.1 tv_grab_is.1 tv_grab_jp.1 \
-	tv_grab_na_dd.1 tv_grab_na_icons.1 tv_grab_no_gfeed.1 tv_grab_pt.1 \
-	tv_grab_re.1 tv_grab_se_swedb.1 tv_grab_uk_bleb.1 \
-	tv_grab_uk_rt.1 tv_grab_za.1 tv_grep.1 tv_imdb.1 \
+	tv_grab_huro.1 tv_grab_il.1 tv_grab_in.1 tv_grab_it.1 tv_grab_it_dvb.1 \
+	tv_grab_is.1 tv_grab_na_dd.1 tv_grab_na_icons.1 tv_grab_nl.1 \
+	tv_grab_no_gfeed.1 tv_grab_pt.1 tv_grab_re.1 tv_grab_se_swedb.1 \
+	tv_grab_uk_bleb.1 tv_grab_uk_rt.1 tv_grab_za.1 tv_grep.1 tv_imdb.1 \
 	tv_remove_some_overlapping.1 tv_sort.1 tv_split.1 tv_to_latex.1 \
 	tv_to_potatoe.1 tv_to_text.1 tv_validate_file.1 \
 	tv_validate_grabber.1 tv_grab_eu_epgdata.1 tv_grab_na_dtv.1
-MAN3=	Configure.3 Configure::Writer.3 Options.3 PreferredMethod.3 \
+MAN3=	Configure.3 Configure::Writer.3 Lineup.3 Options.3 PreferredMethod.3 \
 	ValidateFile.3 ValidateGrabber.3 Version.3 \
 	XMLTV.3 XMLTV::Date.3 XMLTV::Grab_XML.3 XMLTV::Gunzip.3 \
 	XMLTV::GUI.3 XMLTV::Summarize.3 XMLTV::Supplement.3

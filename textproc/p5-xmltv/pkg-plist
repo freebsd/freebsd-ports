@@ -4,14 +4,11 @@ bin/tv_extractinfo_ar
 bin/tv_extractinfo_en
 bin/tv_find_grabbers
 bin/tv_grab_ar
-bin/tv_grab_be
-bin/tv_grab_br_net
 bin/tv_grab_ch_search
 bin/tv_grab_combiner
 bin/tv_grab_dk_dr
 bin/tv_grab_dtv_la
 bin/tv_grab_ee
-bin/tv_grab_es
 bin/tv_grab_es_laguiatv
 bin/tv_grab_es_miguiatv
 bin/tv_grab_eu_epgdata
@@ -19,12 +16,15 @@ bin/tv_grab_fi
 bin/tv_grab_fr
 bin/tv_grab_hr
 bin/tv_grab_huro
+bin/tv_grab_il
+bin/tv_grab_in
 bin/tv_grab_is
 bin/tv_grab_it
-bin/tv_grab_jp
+bin/tv_grab_it_dvb
 bin/tv_grab_na_dd
 bin/tv_grab_na_dtv
 bin/tv_grab_na_icons
+bin/tv_grab_nl
 bin/tv_grab_no_gfeed
 bin/tv_grab_pt
 bin/tv_grab_re
@@ -60,6 +60,7 @@ bin/tv_validate_grabber
 %%SITE_PERL%%/XMLTV/Grep.pm
 %%SITE_PERL%%/XMLTV/Gunzip.pm
 %%SITE_PERL%%/XMLTV/IMDB.pm
+%%SITE_PERL%%/XMLTV/Lineup.pm
 %%SITE_PERL%%/XMLTV/Memoize.pm
 %%SITE_PERL%%/XMLTV/Mode.pm
 %%SITE_PERL%%/XMLTV/Options.pm
@@ -76,28 +77,34 @@ bin/tv_validate_grabber
 %%SITE_PERL%%/XMLTV/ValidateGrabber.pm
 %%SITE_PERL%%/XMLTV/Version.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
-%%DATADIR%%/tv_grab_be/channel_ids_fr
-%%DATADIR%%/tv_grab_be/channel_ids_nl
 %%DATADIR%%/tv_grab_ch_search/channel_ids
 %%DATADIR%%/tv_grab_eu_epgdata/channel_ids
+%%DATADIR%%/tv_grab_huro/catmap.cz
 %%DATADIR%%/tv_grab_huro/catmap.hu
 %%DATADIR%%/tv_grab_huro/catmap.ro
+%%DATADIR%%/tv_grab_huro/catmap.sk
 %%DATADIR%%/tv_grab_huro/jobmap
 %%DATADIR%%/tv_grab_it/channel_ids
+%%DATADIR%%/tv_grab_it_dvb/channel_ids
+%%DATADIR%%/tv_grab_it_dvb/sky_it.dict
+%%DATADIR%%/tv_grab_it_dvb/sky_it.themes
+%%DATADIR%%/tv_grab_it_dvb/channel_ids
 %%DATADIR%%/tv_grab_uk_bleb/icon_urls
 %%DATADIR%%/tv_grab_uk_rt/channel_ids
 %%DATADIR%%/tv_grab_uk_rt/channels_platforms
 %%DATADIR%%/tv_grab_uk_rt/prog_titles_to_process
 %%DATADIR%%/tv_grab_uk_rt/regional_channels_by_postcode
+%%DATADIR%%/tv_grab_uk_rt/utf8_fixups
 %%DATADIR%%/xmltv.dtd
+%%DATADIR%%/xmltv-lineup.dtd
 www/cgi-bin/tv_pick.cgi
 @dirrm %%DATADIR%%/tv_grab_uk_rt
 @dirrm %%DATADIR%%/tv_grab_uk_bleb
+@dirrm %%DATADIR%%/tv_grab_it_dvb
 @dirrm %%DATADIR%%/tv_grab_it
 @dirrm %%DATADIR%%/tv_grab_huro
 @dirrm %%DATADIR%%/tv_grab_eu_epgdata
 @dirrm %%DATADIR%%/tv_grab_ch_search
-@dirrm %%DATADIR%%/tv_grab_be
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV
 @dirrm %%SITE_PERL%%/XMLTV/ProgressBar
