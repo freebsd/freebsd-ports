@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.0
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3082/
-DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3279/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
@@ -29,8 +28,11 @@ CONFIGURE_ARGS+=--enable-ipcdir=/var/tmp/ \
 		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.if !defined(NOPORTDOCS)
 MAN5=		reader.conf.5
-MAN8=		pcscd.8 update-reader.conf.8
+MAN8=		pcscd.8
+.endif
 
 .include <bsd.port.pre.mk>
 
