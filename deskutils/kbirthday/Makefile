@@ -11,7 +11,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.gfai.de/~jaham/download/ \
 		http://freshmeat.net/redir/kbirthday/32531/url_tgz/
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE kicker-applet that reminds you of birthdays and anniversaries
 
 USE_AUTOTOOLS=	libtool:22
