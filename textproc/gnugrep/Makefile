@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grep
-PORTVERSION=	2.5.4
+PORTVERSION=	2.6.3
 CATEGORIES=     textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,6 +40,6 @@ CONFIGURE_ARGS+=	--disable-perl-regexp
 
 post-patch:
 	@${REINPLACE_CMD} 's|mkinstalldirs = .*|mkinstalldirs = mkdir -p|g' \
-		${WRKSRC}/intl/Makefile.in
+		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.post.mk>
