@@ -1,0 +1,20 @@
+Flare is distributed, and persistent key-value storage compatible
+w/ memcached, and has more features(as follows):
+
+ * persistent storage (you can use flare as persistent memcached)
+ * pluggable storage (currently only Tokyo Cabinet is available, though:)
+ * data replication (synchronous or asynchronous)
+ * data partitioning (automatically partitioned according to # of master
+   servers (clients do not have to care about it))
+ * dynamic reconstruction, and partitioning (you can dynamically (I mean,
+   without any service interruption) add slave servers and partition
+   master servers)
+ * node monitoring and failover (if any server is down, the server is
+   automatically isolated from active servers and another slave server
+   is promoted to master server)
+ * request proxy (you can always get same result regardless of servers
+   you connect to. so you can think flare servers as one big key-value
+   storage)
+ * over 256 bytes keys, and over 1M bytes values are available
+
+WWW:	http://labs.gree.jp/Top/OpenSource/Flare-en.html
