@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nfdump
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -25,7 +24,7 @@ OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
-BROKEN=		does not configure on 6.X
+#BROKEN=		does not configure on 6.X
 .endif
 
 #for compatibility
