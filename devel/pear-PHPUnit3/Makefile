@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.12
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 
@@ -41,36 +41,24 @@ IGNORE_WITH_PHP=4
 
 USE_PHP=	dom spl pcre
 
-FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
+FILES=		PHPUnit/Extensions/Database/AbstractTester.php \
+		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Extensions/Database/Constraint/TableIsEqual.php \
-		PHPUnit/Extensions/Database/DB/MetaData/InformationSchema.php \
-		PHPUnit/Extensions/Database/DB/MetaData/MySQL.php \
-		PHPUnit/Extensions/Database/DB/MetaData/Oci.php \
-		PHPUnit/Extensions/Database/DB/MetaData/PgSQL.php \
-		PHPUnit/Extensions/Database/DB/MetaData/Sqlite.php \
 		PHPUnit/Extensions/Database/DB/DataSet.php \
 		PHPUnit/Extensions/Database/DB/DefaultDatabaseConnection.php \
 		PHPUnit/Extensions/Database/DB/FilteredDataSet.php \
 		PHPUnit/Extensions/Database/DB/IDatabaseConnection.php \
 		PHPUnit/Extensions/Database/DB/IMetaData.php \
 		PHPUnit/Extensions/Database/DB/MetaData.php \
+		PHPUnit/Extensions/Database/DB/MetaData/InformationSchema.php \
+		PHPUnit/Extensions/Database/DB/MetaData/MySQL.php \
+		PHPUnit/Extensions/Database/DB/MetaData/Oci.php \
+		PHPUnit/Extensions/Database/DB/MetaData/PgSQL.php \
+		PHPUnit/Extensions/Database/DB/MetaData/Sqlite.php \
 		PHPUnit/Extensions/Database/DB/ResultSetTable.php \
 		PHPUnit/Extensions/Database/DB/Table.php \
 		PHPUnit/Extensions/Database/DB/TableIterator.php \
 		PHPUnit/Extensions/Database/DB/TableMetaData.php \
-		PHPUnit/Extensions/Database/DataSet/Persistors/Abstract.php \
-		PHPUnit/Extensions/Database/DataSet/Persistors/Factory.php \
-		PHPUnit/Extensions/Database/DataSet/Persistors/FlatXml.php \
-		PHPUnit/Extensions/Database/DataSet/Persistors/Xml.php \
-		PHPUnit/Extensions/Database/DataSet/Persistors/Yaml.php \
-		PHPUnit/Extensions/Database/DataSet/Specs/Csv.php \
-		PHPUnit/Extensions/Database/DataSet/Specs/DbQuery.php \
-		PHPUnit/Extensions/Database/DataSet/Specs/DbTable.php \
-		PHPUnit/Extensions/Database/DataSet/Specs/Factory.php \
-		PHPUnit/Extensions/Database/DataSet/Specs/FlatXml.php \
-		PHPUnit/Extensions/Database/DataSet/Specs/IFactory.php \
-		PHPUnit/Extensions/Database/DataSet/Specs/Xml.php \
-		PHPUnit/Extensions/Database/DataSet/Specs/Yaml.php \
 		PHPUnit/Extensions/Database/DataSet/AbstractDataSet.php \
 		PHPUnit/Extensions/Database/DataSet/AbstractTable.php \
 		PHPUnit/Extensions/Database/DataSet/AbstractTableMetaData.php \
@@ -89,15 +77,31 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Extensions/Database/DataSet/ITable.php \
 		PHPUnit/Extensions/Database/DataSet/ITableIterator.php \
 		PHPUnit/Extensions/Database/DataSet/ITableMetaData.php \
+		PHPUnit/Extensions/Database/DataSet/Persistors/Abstract.php \
+		PHPUnit/Extensions/Database/DataSet/Persistors/Factory.php \
+		PHPUnit/Extensions/Database/DataSet/Persistors/FlatXml.php \
+		PHPUnit/Extensions/Database/DataSet/Persistors/Xml.php \
+		PHPUnit/Extensions/Database/DataSet/Persistors/Yaml.php \
 		PHPUnit/Extensions/Database/DataSet/QueryDataSet.php \
 		PHPUnit/Extensions/Database/DataSet/QueryTable.php \
 		PHPUnit/Extensions/Database/DataSet/ReplacementDataSet.php \
 		PHPUnit/Extensions/Database/DataSet/ReplacementTable.php \
 		PHPUnit/Extensions/Database/DataSet/ReplacementTableIterator.php \
+		PHPUnit/Extensions/Database/DataSet/Specs/Csv.php \
+		PHPUnit/Extensions/Database/DataSet/Specs/DbQuery.php \
+		PHPUnit/Extensions/Database/DataSet/Specs/DbTable.php \
+		PHPUnit/Extensions/Database/DataSet/Specs/Factory.php \
+		PHPUnit/Extensions/Database/DataSet/Specs/FlatXml.php \
+		PHPUnit/Extensions/Database/DataSet/Specs/IFactory.php \
+		PHPUnit/Extensions/Database/DataSet/Specs/Xml.php \
+		PHPUnit/Extensions/Database/DataSet/Specs/Yaml.php \
 		PHPUnit/Extensions/Database/DataSet/TableFilter.php \
 		PHPUnit/Extensions/Database/DataSet/TableMetaDataFilter.php \
 		PHPUnit/Extensions/Database/DataSet/XmlDataSet.php \
 		PHPUnit/Extensions/Database/DataSet/YamlDataSet.php \
+		PHPUnit/Extensions/Database/DefaultTester.php \
+		PHPUnit/Extensions/Database/IDatabaseListConsumer.php \
+		PHPUnit/Extensions/Database/ITester.php \
 		PHPUnit/Extensions/Database/Operation/Composite.php \
 		PHPUnit/Extensions/Database/Operation/Delete.php \
 		PHPUnit/Extensions/Database/Operation/DeleteAll.php \
@@ -110,56 +114,57 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Extensions/Database/Operation/RowBased.php \
 		PHPUnit/Extensions/Database/Operation/Truncate.php \
 		PHPUnit/Extensions/Database/Operation/Update.php \
-		PHPUnit/Extensions/Database/UI/Mediums/Text.php \
-		PHPUnit/Extensions/Database/UI/Modes/ExportDataSet/Arguments.php \
-		PHPUnit/Extensions/Database/UI/Modes/ExportDataSet.php \
+		PHPUnit/Extensions/Database/TestCase.php \
 		PHPUnit/Extensions/Database/UI/Command.php \
 		PHPUnit/Extensions/Database/UI/Context.php \
 		PHPUnit/Extensions/Database/UI/IMedium.php \
 		PHPUnit/Extensions/Database/UI/IMediumPrinter.php \
-		PHPUnit/Extensions/Database/UI/IModeFactory.php \
 		PHPUnit/Extensions/Database/UI/IMode.php \
+		PHPUnit/Extensions/Database/UI/IModeFactory.php \
 		PHPUnit/Extensions/Database/UI/InvalidModeException.php \
+		PHPUnit/Extensions/Database/UI/Mediums/Text.php \
 		PHPUnit/Extensions/Database/UI/ModeFactory.php \
-		PHPUnit/Extensions/Database/AbstractTester.php \
-		PHPUnit/Extensions/Database/DefaultTester.php \
-		PHPUnit/Extensions/Database/IDatabaseListConsumer.php \
-		PHPUnit/Extensions/Database/ITester.php \
-		PHPUnit/Extensions/Database/TestCase.php \
+		PHPUnit/Extensions/Database/UI/Modes/ExportDataSet.php \
+		PHPUnit/Extensions/Database/UI/Modes/ExportDataSet/Arguments.php \
+		PHPUnit/Extensions/GroupTestSuite.php \
+		PHPUnit/Extensions/OutputTestCase.php \
+		PHPUnit/Extensions/PerformanceTestCase.php \
+		PHPUnit/Extensions/PhptTestCase.php \
 		PHPUnit/Extensions/PhptTestCase/Logger.php \
+		PHPUnit/Extensions/PhptTestSuite.php \
+		PHPUnit/Extensions/RepeatedTest.php \
+		PHPUnit/Extensions/SeleniumTestCase.php \
 		PHPUnit/Extensions/SeleniumTestCase/Driver.php \
 		PHPUnit/Extensions/SeleniumTestCase/append.php \
 		PHPUnit/Extensions/SeleniumTestCase/phpunit_coverage.php \
 		PHPUnit/Extensions/SeleniumTestCase/prepend.php \
+		PHPUnit/Extensions/Story/Given.php \
+		PHPUnit/Extensions/Story/ResultPrinter.php \
+		PHPUnit/Extensions/Story/ResultPrinter/HTML.php \
 		PHPUnit/Extensions/Story/ResultPrinter/Template/scenario.html.dist \
 		PHPUnit/Extensions/Story/ResultPrinter/Template/scenario_header.html.dist \
 		PHPUnit/Extensions/Story/ResultPrinter/Template/scenarios.html.dist \
 		PHPUnit/Extensions/Story/ResultPrinter/Template/step.html.dist \
-		PHPUnit/Extensions/Story/ResultPrinter/HTML.php \
 		PHPUnit/Extensions/Story/ResultPrinter/Text.php \
-		PHPUnit/Extensions/Story/Given.php \
-		PHPUnit/Extensions/Story/ResultPrinter.php \
 		PHPUnit/Extensions/Story/Scenario.php \
 		PHPUnit/Extensions/Story/SeleniumTestCase.php \
 		PHPUnit/Extensions/Story/Step.php \
 		PHPUnit/Extensions/Story/TestCase.php \
 		PHPUnit/Extensions/Story/Then.php \
 		PHPUnit/Extensions/Story/When.php \
-		PHPUnit/Extensions/TicketListener/Trac.php \
-		PHPUnit/Extensions/GroupTestSuite.php \
-		PHPUnit/Extensions/OutputTestCase.php \
-		PHPUnit/Extensions/PerformanceTestCase.php \
-		PHPUnit/Extensions/PhptTestCase.php \
-		PHPUnit/Extensions/PhptTestSuite.php \
-		PHPUnit/Extensions/RepeatedTest.php \
-		PHPUnit/Extensions/SeleniumTestCase.php \
 		PHPUnit/Extensions/TestDecorator.php \
 		PHPUnit/Extensions/TicketListener.php \
+		PHPUnit/Extensions/TicketListener/Trac.php \
+		PHPUnit/Framework.php \
+		PHPUnit/Framework/Assert.php \
+		PHPUnit/Framework/AssertionFailedError.php \
+		PHPUnit/Framework/ComparisonFailure.php \
 		PHPUnit/Framework/ComparisonFailure/Array.php \
 		PHPUnit/Framework/ComparisonFailure/Object.php \
 		PHPUnit/Framework/ComparisonFailure/Scalar.php \
 		PHPUnit/Framework/ComparisonFailure/String.php \
 		PHPUnit/Framework/ComparisonFailure/Type.php \
+		PHPUnit/Framework/Constraint.php \
 		PHPUnit/Framework/Constraint/And.php \
 		PHPUnit/Framework/Constraint/ArrayHasKey.php \
 		PHPUnit/Framework/Constraint/Attribute.php \
@@ -186,8 +191,13 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Framework/Constraint/TraversableContains.php \
 		PHPUnit/Framework/Constraint/TraversableContainsOnly.php \
 		PHPUnit/Framework/Constraint/Xor.php \
+		PHPUnit/Framework/Error.php \
 		PHPUnit/Framework/Error/Notice.php \
 		PHPUnit/Framework/Error/Warning.php \
+		PHPUnit/Framework/Exception.php \
+		PHPUnit/Framework/ExpectationFailedException.php \
+		PHPUnit/Framework/IncompleteTest.php \
+		PHPUnit/Framework/IncompleteTestError.php \
 		PHPUnit/Framework/MockObject/Builder/Identity.php \
 		PHPUnit/Framework/MockObject/Builder/InvocationMocker.php \
 		PHPUnit/Framework/MockObject/Builder/Match.php \
@@ -195,12 +205,17 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Framework/MockObject/Builder/Namespace.php \
 		PHPUnit/Framework/MockObject/Builder/ParametersMatch.php \
 		PHPUnit/Framework/MockObject/Builder/Stub.php \
+		PHPUnit/Framework/MockObject/Generator.php \
 		PHPUnit/Framework/MockObject/Generator/mocked_class.tpl.dist \
 		PHPUnit/Framework/MockObject/Generator/mocked_clone.tpl.dist \
 		PHPUnit/Framework/MockObject/Generator/mocked_method.tpl.dist \
 		PHPUnit/Framework/MockObject/Generator/unmocked_clone.tpl.dist \
 		PHPUnit/Framework/MockObject/Generator/wsdl_class.tpl.dist \
 		PHPUnit/Framework/MockObject/Generator/wsdl_method.tpl.dist \
+		PHPUnit/Framework/MockObject/Invocation.php \
+		PHPUnit/Framework/MockObject/InvocationMocker.php \
+		PHPUnit/Framework/MockObject/Invokable.php \
+		PHPUnit/Framework/MockObject/Matcher.php \
 		PHPUnit/Framework/MockObject/Matcher/AnyInvokedCount.php \
 		PHPUnit/Framework/MockObject/Matcher/AnyParameters.php \
 		PHPUnit/Framework/MockObject/Matcher/Invocation.php \
@@ -211,31 +226,16 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Framework/MockObject/Matcher/MethodName.php \
 		PHPUnit/Framework/MockObject/Matcher/Parameters.php \
 		PHPUnit/Framework/MockObject/Matcher/StatelessInvocation.php \
+		PHPUnit/Framework/MockObject/MockObject.php \
+		PHPUnit/Framework/MockObject/Stub.php \
 		PHPUnit/Framework/MockObject/Stub/ConsecutiveCalls.php \
 		PHPUnit/Framework/MockObject/Stub/Exception.php \
 		PHPUnit/Framework/MockObject/Stub/MatcherCollection.php \
 		PHPUnit/Framework/MockObject/Stub/Return.php \
 		PHPUnit/Framework/MockObject/Stub/ReturnArgument.php \
 		PHPUnit/Framework/MockObject/Stub/ReturnCallback.php \
-		PHPUnit/Framework/MockObject/Generator.php \
-		PHPUnit/Framework/MockObject/Invocation.php \
-		PHPUnit/Framework/MockObject/InvocationMocker.php \
-		PHPUnit/Framework/MockObject/Invokable.php \
-		PHPUnit/Framework/MockObject/Matcher.php \
-		PHPUnit/Framework/MockObject/MockObject.php \
-		PHPUnit/Framework/MockObject/Stub.php \
 		PHPUnit/Framework/MockObject/Verifiable.php \
 		PHPUnit/Framework/Process/TestCaseMethod.tpl.dist \
-		PHPUnit/Framework/TestSuite/DataProvider.php \
-		PHPUnit/Framework/Assert.php \
-		PHPUnit/Framework/AssertionFailedError.php \
-		PHPUnit/Framework/ComparisonFailure.php \
-		PHPUnit/Framework/Constraint.php \
-		PHPUnit/Framework/Error.php \
-		PHPUnit/Framework/Exception.php \
-		PHPUnit/Framework/ExpectationFailedException.php \
-		PHPUnit/Framework/IncompleteTest.php \
-		PHPUnit/Framework/IncompleteTestError.php \
 		PHPUnit/Framework/SelfDescribing.php \
 		PHPUnit/Framework/SkippedTest.php \
 		PHPUnit/Framework/SkippedTestError.php \
@@ -246,6 +246,7 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Framework/TestListener.php \
 		PHPUnit/Framework/TestResult.php \
 		PHPUnit/Framework/TestSuite.php \
+		PHPUnit/Framework/TestSuite/DataProvider.php \
 		PHPUnit/Framework/Warning.php \
 		PHPUnit/Runner/BaseTestRunner.php \
 		PHPUnit/Runner/IncludePathTestCollector.php \
@@ -256,41 +257,60 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/TextUI/Command.php \
 		PHPUnit/TextUI/ResultPrinter.php \
 		PHPUnit/TextUI/TestRunner.php \
+		PHPUnit/Util/Class.php \
+		PHPUnit/Util/CodeCoverage.php \
+		PHPUnit/Util/Configuration.php \
+		PHPUnit/Util/Diff.php \
+		PHPUnit/Util/ErrorHandler.php \
+		PHPUnit/Util/File.php \
+		PHPUnit/Util/Fileloader.php \
+		PHPUnit/Util/Filesystem.php \
+		PHPUnit/Util/Filter.php \
+		PHPUnit/Util/FilterIterator.php \
+		PHPUnit/Util/Getopt.php \
+		PHPUnit/Util/GlobalState.php \
+		PHPUnit/Util/InvalidArgumentHelper.php \
+		PHPUnit/Util/Log/CPD.php \
+		PHPUnit/Util/Log/CodeCoverage/Database.php \
 		PHPUnit/Util/Log/CodeCoverage/XML/Clover.php \
 		PHPUnit/Util/Log/CodeCoverage/XML/Source.php \
-		PHPUnit/Util/Log/CodeCoverage/Database.php \
+		PHPUnit/Util/Log/Database.php \
 		PHPUnit/Util/Log/Database/MySQL.sql \
 		PHPUnit/Util/Log/Database/SQLite3.sql \
-		PHPUnit/Util/Log/PMD/Rule/Class/DepthOfInheritanceTree.php \
-		PHPUnit/Util/Log/PMD/Rule/Class/EfferentCoupling.php \
-		PHPUnit/Util/Log/PMD/Rule/Class/ExcessiveClassLength.php \
-		PHPUnit/Util/Log/PMD/Rule/Class/ExcessivePublicCount.php \
-		PHPUnit/Util/Log/PMD/Rule/Class/TooManyFields.php \
-		PHPUnit/Util/Log/PMD/Rule/Function/CRAP.php \
-		PHPUnit/Util/Log/PMD/Rule/Function/CodeCoverage.php \
-		PHPUnit/Util/Log/PMD/Rule/Function/CyclomaticComplexity.php \
-		PHPUnit/Util/Log/PMD/Rule/Function/ExcessiveMethodLength.php \
-		PHPUnit/Util/Log/PMD/Rule/Function/ExcessiveParameterList.php \
-		PHPUnit/Util/Log/PMD/Rule/Function/NPathComplexity.php \
-		PHPUnit/Util/Log/PMD/Rule/Project/CRAP.php \
-		PHPUnit/Util/Log/PMD/Rule/Class.php \
-		PHPUnit/Util/Log/PMD/Rule/File.php \
-		PHPUnit/Util/Log/PMD/Rule/Function.php \
-		PHPUnit/Util/Log/PMD/Rule/Project.php \
-		PHPUnit/Util/Log/PMD/Rule.php \
-		PHPUnit/Util/Log/CPD.php \
-		PHPUnit/Util/Log/Database.php \
 		PHPUnit/Util/Log/GraphViz.php \
 		PHPUnit/Util/Log/JSON.php \
 		PHPUnit/Util/Log/JUnit.php \
 		PHPUnit/Util/Log/Metrics.php \
 		PHPUnit/Util/Log/PEAR.php \
 		PHPUnit/Util/Log/PMD.php \
+		PHPUnit/Util/Log/PMD/Rule.php \
+		PHPUnit/Util/Log/PMD/Rule/Class.php \
+		PHPUnit/Util/Log/PMD/Rule/Class/DepthOfInheritanceTree.php \
+		PHPUnit/Util/Log/PMD/Rule/Class/EfferentCoupling.php \
+		PHPUnit/Util/Log/PMD/Rule/Class/ExcessiveClassLength.php \
+		PHPUnit/Util/Log/PMD/Rule/Class/ExcessivePublicCount.php \
+		PHPUnit/Util/Log/PMD/Rule/Class/TooManyFields.php \
+		PHPUnit/Util/Log/PMD/Rule/File.php \
+		PHPUnit/Util/Log/PMD/Rule/Function.php \
+		PHPUnit/Util/Log/PMD/Rule/Function/CRAP.php \
+		PHPUnit/Util/Log/PMD/Rule/Function/CodeCoverage.php \
+		PHPUnit/Util/Log/PMD/Rule/Function/CyclomaticComplexity.php \
+		PHPUnit/Util/Log/PMD/Rule/Function/ExcessiveMethodLength.php \
+		PHPUnit/Util/Log/PMD/Rule/Function/ExcessiveParameterList.php \
+		PHPUnit/Util/Log/PMD/Rule/Function/NPathComplexity.php \
+		PHPUnit/Util/Log/PMD/Rule/Project.php \
+		PHPUnit/Util/Log/PMD/Rule/Project/CRAP.php \
 		PHPUnit/Util/Log/TAP.php \
+		PHPUnit/Util/Metrics.php \
 		PHPUnit/Util/Metrics/Class.php \
 		PHPUnit/Util/Metrics/File.php \
 		PHPUnit/Util/Metrics/Function.php \
 		PHPUnit/Util/Metrics/Project.php \
+		PHPUnit/Util/PDO.php \
+		PHPUnit/Util/PHP.php \
+		PHPUnit/Util/Printer.php \
+		PHPUnit/Util/Report.php \
+		PHPUnit/Util/Report/Node.php \
 		PHPUnit/Util/Report/Node/Directory.php \
 		PHPUnit/Util/Report/Node/File.php \
 		PHPUnit/Util/Report/Template/butter.png \
@@ -310,7 +330,8 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Util/Report/Template/style.css \
 		PHPUnit/Util/Report/Template/yahoo-dom-event.js \
 		PHPUnit/Util/Report/Template/yui_item.js \
-		PHPUnit/Util/Report/Node.php \
+		PHPUnit/Util/Skeleton.php \
+		PHPUnit/Util/Skeleton/Class.php \
 		PHPUnit/Util/Skeleton/Template/Class.tpl.dist \
 		PHPUnit/Util/Skeleton/Template/IncompleteTestMethod.tpl.dist \
 		PHPUnit/Util/Skeleton/Template/Method.tpl.dist \
@@ -321,42 +342,18 @@ FILES=		PHPUnit/Extensions/Database/Constraint/DataSetIsEqual.php \
 		PHPUnit/Util/Skeleton/Template/TestMethodException.tpl.dist \
 		PHPUnit/Util/Skeleton/Template/TestMethodExceptionStatic.tpl.dist \
 		PHPUnit/Util/Skeleton/Template/TestMethodStatic.tpl.dist \
-		PHPUnit/Util/Skeleton/Class.php \
 		PHPUnit/Util/Skeleton/Test.php \
-		PHPUnit/Util/TestDox/ResultPrinter/HTML.php \
-		PHPUnit/Util/TestDox/ResultPrinter/Text.php \
-		PHPUnit/Util/TestDox/NamePrettifier.php \
-		PHPUnit/Util/TestDox/ResultPrinter.php \
-		PHPUnit/Util/YAML/sfYaml.class.php \
-		PHPUnit/Util/YAML/sfYamlDumper.class.php \
-		PHPUnit/Util/YAML/sfYamlInline.class.php \
-		PHPUnit/Util/YAML/sfYamlParser.class.php \
-		PHPUnit/Util/Class.php \
-		PHPUnit/Util/CodeCoverage.php \
-		PHPUnit/Util/Configuration.php \
-		PHPUnit/Util/ErrorHandler.php \
-		PHPUnit/Util/Diff.php \
-		PHPUnit/Util/Fileloader.php \
-		PHPUnit/Util/Filesystem.php \
-		PHPUnit/Util/File.php \
-		PHPUnit/Util/Filter.php \
-		PHPUnit/Util/FilterIterator.php \
-		PHPUnit/Util/Getopt.php \
-		PHPUnit/Util/GlobalState.php \
-		PHPUnit/Util/InvalidArgumentHelper.php \
-		PHPUnit/Util/Metrics.php \
-		PHPUnit/Util/PDO.php \
-		PHPUnit/Util/PHP.php \
-		PHPUnit/Util/Printer.php \
-		PHPUnit/Util/Report.php \
-		PHPUnit/Util/Skeleton.php \
 		PHPUnit/Util/Template.php \
 		PHPUnit/Util/Test.php \
+		PHPUnit/Util/TestDox/NamePrettifier.php \
+		PHPUnit/Util/TestDox/ResultPrinter.php \
+		PHPUnit/Util/TestDox/ResultPrinter/HTML.php \
+		PHPUnit/Util/TestDox/ResultPrinter/Text.php \
 		PHPUnit/Util/TestSuiteIterator.php \
 		PHPUnit/Util/Timer.php \
 		PHPUnit/Util/Type.php \
-		PHPUnit/Util/XML.php \
-		PHPUnit/Framework.php
+		PHPUnit/Util/XML.php
+
 EXAMPLES=	BankAccount/BankAccount.php \
 		BankAccount/BankAccountTest.php \
 		BankAccountDB/_files/bank-account-after-deposits.xml \
@@ -373,237 +370,8 @@ EXAMPLES=	BankAccount/BankAccount.php \
 		Money/Money.php \
 		Money/MoneyBag.php \
 		Money/MoneyTest.php
-TESTS=		Extensions/Database/DataSet/AllTests.php \
-		Extensions/Database/DataSet/CompositeDataSetTest.php \
-		Extensions/Database/DataSet/CsvDataSetTest.php \
-		Extensions/Database/DataSet/FilterTest.php \
-		Extensions/Database/DataSet/PersistorTest.php \
-		Extensions/Database/DataSet/QueryDataSetTest.php \
-		Extensions/Database/DataSet/QueryTableTest.php \
-		Extensions/Database/DataSet/ReplacementDataSetTest.php \
-		Extensions/Database/DataSet/ReplacementTableTest.php \
-		Extensions/Database/DataSet/XmlDataSetsTest.php \
-		Extensions/Database/DataSet/YamlDataSetTest.php \
-		Extensions/Database/Operation/AllTests.php \
-		Extensions/Database/Operation/OperationsTest.php \
-		Extensions/Database/Operation/RowBasedTest.php \
-		Extensions/Database/_files/CsvDataSets/table1.csv \
-		Extensions/Database/_files/CsvDataSets/table2.csv \
-		Extensions/Database/_files/XmlDataSets/AllEmptyTableInsertResult.xml \
-		Extensions/Database/_files/XmlDataSets/AllEmptyTableInsertTest.xml \
-		Extensions/Database/_files/XmlDataSets/DeleteAllOperationTest.xml \
-		Extensions/Database/_files/XmlDataSets/DeleteOperationResult.xml \
-		Extensions/Database/_files/XmlDataSets/DeleteOperationTest.xml \
-		Extensions/Database/_files/XmlDataSets/EmptyTableInsertResult.xml \
-		Extensions/Database/_files/XmlDataSets/EmptyTableInsertTest.xml \
-		Extensions/Database/_files/XmlDataSets/FilteredTestComparison.xml \
-		Extensions/Database/_files/XmlDataSets/FilteredTestFixture.xml \
-		Extensions/Database/_files/XmlDataSets/FlatXmlDataSet.xml \
-		Extensions/Database/_files/XmlDataSets/FlatXmlWriter.xml \
-		Extensions/Database/_files/XmlDataSets/InsertOperationResult.xml \
-		Extensions/Database/_files/XmlDataSets/InsertOperationTest.xml \
-		Extensions/Database/_files/XmlDataSets/OperationsTestFixture.xml \
-		Extensions/Database/_files/XmlDataSets/QueryDataSetTest.xml \
-		Extensions/Database/_files/XmlDataSets/ReplaceOperationResult.xml \
-		Extensions/Database/_files/XmlDataSets/ReplaceOperationTest.xml \
-		Extensions/Database/_files/XmlDataSets/RowBasedExecute.xml \
-		Extensions/Database/_files/XmlDataSets/UpdateOperationResult.xml \
-		Extensions/Database/_files/XmlDataSets/UpdateOperationTest.xml \
-		Extensions/Database/_files/XmlDataSets/XmlDataSet.xml \
-		Extensions/Database/_files/XmlDataSets/XmlWriter.xml \
-		Extensions/Database/_files/YamlDataSets/testDataSet.yaml \
-		Extensions/Database/_files/DatabaseTestUtility.php \
-		Extensions/Database/_files/.dummy \
-		Extensions/Database/AllTests.php \
-		Extensions/AllTests.php \
-		Extensions/OutputTestCaseTest.php \
-		Extensions/PerformanceTestCaseTest.php \
-		Extensions/RepeatedTestTest.php \
-		Extensions/SeleniumTestCaseTest.php \
-		Framework/MockObject/class_call_parent_clone.phpt \
-		Framework/MockObject/class_call_parent_constructor.phpt \
-		Framework/MockObject/class_dont_call_parent_clone.phpt \
-		Framework/MockObject/class_dont_call_parent_constructor.phpt \
-		Framework/MockObject/class_implementing_interface_call_parent_constructor.phpt \
-		Framework/MockObject/class_implementing_interface_dont_call_parent_constructor.phpt \
-		Framework/MockObject/class_partial.phpt \
-		Framework/MockObject/class.phpt \
-		Framework/MockObject/interface.phpt \
-		Framework/MockObject/namespaced_class_call_parent_clone.phpt \
-		Framework/MockObject/namespaced_class_call_parent_constructor.phpt \
-		Framework/MockObject/namespaced_class_dont_call_parent_clone.phpt \
-		Framework/MockObject/namespaced_class_dont_call_parent_constructor.phpt \
-		Framework/MockObject/namespaced_class_implementing_interface_call_parent_constructor.phpt \
-		Framework/MockObject/namespaced_class_implementing_interface_dont_call_parent_constructor.phpt \
-		Framework/MockObject/namespaced_class_partial.phpt \
-		Framework/MockObject/namespaced_class.phpt \
-		Framework/MockObject/namespaced_interface.phpt \
-		Framework/MockObject/wsdl_class_partial.phpt \
-		Framework/MockObject/wsdl_class.phpt \
-		Framework/AllTests.php \
-		Framework/AssertTest.php \
-		Framework/ComparisonFailureTest.php \
-		Framework/ConstraintTest.php \
-		Framework/MockObjectTest.php \
-		Framework/SuiteTest.php \
-		Framework/TestCaseTest.php \
-		Framework/TestFailureTest.php \
-		Framework/TestImplementorTest.php \
-		Framework/TestListenerTest.php \
-		Runner/AllTests.php \
-		Runner/BaseTestRunnerTest.php \
-		TextUI/abstract-test-class.phpt \
-		TextUI/concrete-test-class.phpt \
-		TextUI/coverage-clover-class-extended-isolation.phpt \
-		TextUI/coverage-clover-class-extended.phpt \
-		TextUI/coverage-clover-class-isolation.phpt \
-		TextUI/coverage-clover-class.phpt \
-		TextUI/coverage-clover-isolation.phpt \
-		TextUI/coverage-clover-method-isolation.phpt \
-		TextUI/coverage-clover-method.phpt \
-		TextUI/coverage-clover-not-private-isolation.phpt \
-		TextUI/coverage-clover-not-private.phpt \
-		TextUI/coverage-clover-not-protected-isolation.phpt \
-		TextUI/coverage-clover-not-protected.phpt \
-		TextUI/coverage-clover-not-public-isolation.phpt \
-		TextUI/coverage-clover-not-public.phpt \
-		TextUI/coverage-clover-private-isolation.phpt \
-		TextUI/coverage-clover-private.phpt \
-		TextUI/coverage-clover-protected-isolation.phpt \
-		TextUI/coverage-clover-protected.phpt \
-		TextUI/coverage-clover-public-isolation.phpt \
-		TextUI/coverage-clover-public.phpt \
-		TextUI/coverage-clover.phpt \
-		TextUI/coverage-source.phpt \
-		TextUI/dataprovider-log-xml-isolation.phpt \
-		TextUI/dataprovider-log-xml.phpt \
-		TextUI/dataprovider-testdox.phpt \
-		TextUI/debug.phpt \
-		TextUI/default-isolation.phpt \
-		TextUI/default.phpt \
-		TextUI/dependencies.phpt \
-		TextUI/dependencies2.phpt \
-		TextUI/dependencies3.phpt \
-		TextUI/dependencies-isolation.phpt \
-		TextUI/dependencies2-isolation.phpt \
-		TextUI/dependencies3-isolation.phpt \
-		TextUI/empty-testcase.phpt \
-		TextUI/empty-testcase-coverage.phpt \
-		TextUI/exclude-group-isolation.phpt \
-		TextUI/exclude-group.phpt \
-		TextUI/failure-isolation.phpt \
-		TextUI/failure.phpt \
-		TextUI/failure-verbose-isolation.phpt \
-		TextUI/failure-verbose.phpt \
-		TextUI/filter-class-isolation.phpt \
-		TextUI/filter-class.phpt \
-		TextUI/filter-method-isolation.phpt \
-		TextUI/filter-method.phpt \
-		TextUI/group-isolation.phpt \
-		TextUI/group.phpt \
-		TextUI/help.phpt \
-		TextUI/help2.phpt \
-		TextUI/list-groups.phpt \
-		TextUI/log-graphviz.phpt \
-		TextUI/log-json.phpt \
-		TextUI/log-tap.phpt \
-		TextUI/log-xml.phpt \
-		TextUI/skeleton.phpt \
-		TextUI/story-isolation.phpt \
-		TextUI/story.phpt \
-		TextUI/tap.phpt \
-		TextUI/testdox-html.phpt \
-		TextUI/testdox-text.phpt \
-		TextUI/testdox.phpt \
-		TextUI/verbose-isolation.phpt \
-		TextUI/verbose.phpt \
-		Util/TestDox/AllTests.php \
-		Util/TestDox/NamePrettifierTest.php \
-		Util/AllTests.php \
-		Util/ConfigurationTest.php \
-		Util/TestTest.php \
-		Util/TimerTest.php \
-		Util/XMLTest.php \
-		_files/AbstractMockTestClass.php \
-		_files/AbstractTest.php \
-		_files/AnInterface.php \
-		_files/Calculator.php \
-		_files/ClassWithNonPublicAttributes.php \
-		_files/ConcreteTest.php \
-		_files/CoverageClassExtendedTest.php \
-		_files/CoverageClassTest.php \
-		_files/CoverageMethodTest.php \
-		_files/CoverageNotPrivateTest.php \
-		_files/CoverageNotProtectedTest.php \
-		_files/CoverageNotPublicTest.php \
-		_files/CoveragePrivateTest.php \
-		_files/CoverageProtectedTest.php \
-		_files/CoveragePublicTest.php \
-		_files/CoveredClass.php \
-		_files/DataProviderTest.php \
-		_files/DependencyFailureTest.php \
-		_files/DependencySuccessTest.php \
-		_files/DependencyTestSuite.php \
-		_files/DoubleTestCase.php \
-		_files/EmptyTestCaseTest.php \
-		_files/Error.php \
-		_files/ExceptionInAssertPostConditionsTest.php \
-		_files/ExceptionInAssertPreConditionsTest.php \
-		_files/ExceptionInSetUpTest.php \
-		_files/ExceptionInTearDownTest.php \
-		_files/ExceptionInTest.php \
-		_files/Failure.php \
-		_files/FailureTest.php \
-		_files/FunctionCallback.php \
-		_files/GoogleSearch.wsdl \
-		_files/InheritedTestCase.php \
-		_files/MethodCallback.php \
-		_files/MockRunner.php \
-		_files/MultiDependencyTest.php \
-		_files/NoArgTestCaseTest.php \
-		_files/NoTestCaseClass.php \
-		_files/NoTestCases.php \
-		_files/NonStatic.php \
-		_files/NotPublicTestCase.php \
-		_files/NotVoidTestCase.php \
-		_files/OneTestCase.php \
-		_files/OutputTestCase.php \
-		_files/OverrideTestCase.php \
-		_files/PartialMockTestClass.php \
-		_files/SampleClass.php \
-		_files/SelectorAssertionsFixture.html \
-		_files/Singleton.php \
-		_files/SleepTest.php \
-		_files/StackTest.php \
-		_files/Struct.php \
-		_files/Success.php \
-		_files/TestIterator.php \
-		_files/ThrowExceptionTestCase.php \
-		_files/ThrowNoExceptionTestCase.php \
-		_files/WasRun.php \
-		_files/bar.xml \
-		_files/configuration.xml \
-		_files/foo.xml \
-		_files/structureAttributesAreSameButValuesAreNot.xml \
-		_files/structureExpected.xml \
-		_files/structureIgnoreTextNodes.xml \
-		_files/structureIsSameButDataIsNot.xml \
-		_files/structureWrongNumberOfAttributes.xml \
-		_files/structureWrongNumberOfNodes.xml \
-		AllTests.php \
-		phpunit.xml.dist \
-		Regression/578/Issue578Test.php \
-		Regression/684/Issue684Test.php \
-		Regression/783/ChildSuite.php \
-		Regression/783/OneTest.php \
-		Regression/783/ParentSuite.php \
-		Regression/783/TwoTest.php \
-		Regression/578.phpt \
-		Regression/684.phpt \
-		Regression/783.phpt
 SCRIPTFILES=	phpunit dbunit
 _EXAMPLESDIR=	PHPUnit/Samples
-_TESTSDIR=	PHPUnit/Tests
 
 .include <bsd.port.pre.mk>
 
@@ -640,7 +408,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xdebug.so:${PORTSDIR}/devel/ph
 .endif
 
 post-patch:
-	@${TOUCH} ${WRKSRC}/PHPUnit/Tests/Extensions/Database/_files/.dummy
 	@${MV} ${WRKSRC}/dbunit.php ${WRKSRC}/pear-dbunit
 	@${MV} ${WRKSRC}/phpunit.php ${WRKSRC}/pear-phpunit
 
