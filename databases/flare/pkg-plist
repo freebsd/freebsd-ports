@@ -1,0 +1,10 @@
+bin/flared
+bin/flarei
+@unexec if cmp -s %D/etc/flared.conf %D/etc/flared.conf-dist; then rm -f %D/etc/flared.conf; fi
+etc/flared.conf-dist
+@exec [ ! -f %B/flared.conf ] && cp %B/%f %B/flared.conf
+@unexec if cmp -s %D/etc/flarei.conf %D/etc/flarei.conf-dist; then rm -f %D/etc/flarei.conf; fi
+etc/flarei.conf-dist
+@exec [ ! -f %B/flarei.conf ] && cp %B/%f %B/flarei.conf
+@unexec rmdir /var/db/flare 2>/dev/null || true
+@exec install -d -o root -g wheel -m 0750 /var/db/flare

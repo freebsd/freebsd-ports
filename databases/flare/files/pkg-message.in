@@ -1,0 +1,31 @@
+===============================================================================
+
+		* SETUP NOTICE * SETUP NOTICE * SETUP NOTICE *
+
+o Add following lines to /etc/syslog.conf before !* line.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+!flarei
+*.*						/var/log/flarei.log
+!flared
+*.*						/var/log/flared.log
+!*
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+o Set flarei_enable="YES" and/or flared_enable="YES" to /etc/rc.conf.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+flarei_enable="YES"
+flared_enable="YES"
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+o See also configuration files:
+
+%%PREFIX%%/etc/flarei.conf
+%%PREFIX%%/etc/flared.conf
+
+o And see also setup tutorial:
+
+  http://labs.gree.jp/Top/OpenSource/Flare/Document/Tutorial-en.html
+
+===============================================================================

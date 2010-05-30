@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: flared
+# REQUIRE: LOGIN flarei
+#
+flared_enable=${flared_enable-"NO"}
+flared_config=${flared_conffile-"%%PREFIX%%/etc/flared.conf"}
+flared_pidfile=${flared_pidfile-"/var/run/flared.pid"}
+flared_flags="--daemonize"
+
+. /etc/rc.subr
+
+name=flared
+rcvar=`set_rcvar`
+command=%%PREFIX%%/bin/${name}
+
+load_rc_config ${name}
+
+case "${flared_flags}" in
+*-p\ *)
+	echo "Warning: \$flared_flags includes -p option." \
+	    "Please use \$flared_pidfile instead."
+	;;
+*--pid\ *)
+	echo "Warning: \$flared_flags includes -p option." \
+	    "Please use \$flared_pidfile instead."
+	;;
+*)
+	flared_flags="--pid ${flared_pidfile} ${flared_flags}"
+	;;
+esac
+
+case "${flared_flags}" in
+*-f\ *)
+	echo "Warning: \$flared_flags includes -f option." \
+	    "Please use \$flared_config instead."
+	;;
+*--config\ *)
+	echo "Warning: \$flared_flags includes --config option." \
+	    "Please use \$flared_config instead."
+	;;
+*)
+	flared_flags="--config ${flared_config} ${flared_flags}"
+	;;
+esac
+
+pidfile=${flared_pidfile}
+required_files=${flared_conffile}
+
+run_rc_command "$1"

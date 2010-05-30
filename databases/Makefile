@@ -66,6 +66,7 @@
     SUBDIR += firebird20-server
     SUBDIR += fireprofile
     SUBDIR += flamerobin
+    SUBDIR += flare
     SUBDIR += fortytwo-bdb
     SUBDIR += fpc-gdbm
     SUBDIR += fpc-ibase
