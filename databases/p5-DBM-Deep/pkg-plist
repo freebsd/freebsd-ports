@@ -1,13 +1,41 @@
-%%SITE_PERL%%/DBM/Deep.pm
-%%SITE_PERL%%/DBM/Deep.pod
-%%SITE_PERL%%/DBM/Deep/Array.pm
-%%SITE_PERL%%/DBM/Deep/Cookbook.pod
-%%SITE_PERL%%/DBM/Deep/Engine.pm
-%%SITE_PERL%%/DBM/Deep/File.pm
+%%SITE_PERL%%/DBM/Deep/Engine/DBI.pm
+%%SITE_PERL%%/DBM/Deep/Engine/File.pm
+%%SITE_PERL%%/DBM/Deep/Iterator/File/BucketList.pm
+%%SITE_PERL%%/DBM/Deep/Iterator/File/Index.pm
+%%SITE_PERL%%/DBM/Deep/Iterator/File.pm
+%%SITE_PERL%%/DBM/Deep/Iterator/DBI.pm
+%%SITE_PERL%%/DBM/Deep/Sector/DBI/Scalar.pm
+%%SITE_PERL%%/DBM/Deep/Sector/DBI/Reference.pm
+%%SITE_PERL%%/DBM/Deep/Sector/File/Scalar.pm
+%%SITE_PERL%%/DBM/Deep/Sector/File/BucketList.pm
+%%SITE_PERL%%/DBM/Deep/Sector/File/Data.pm
+%%SITE_PERL%%/DBM/Deep/Sector/File/Index.pm
+%%SITE_PERL%%/DBM/Deep/Sector/File/Null.pm
+%%SITE_PERL%%/DBM/Deep/Sector/File/Reference.pm
+%%SITE_PERL%%/DBM/Deep/Sector/DBI.pm
+%%SITE_PERL%%/DBM/Deep/Sector/File.pm
+%%SITE_PERL%%/DBM/Deep/Storage/DBI.pm
+%%SITE_PERL%%/DBM/Deep/Storage/File.pm
 %%SITE_PERL%%/DBM/Deep/Hash.pm
+%%SITE_PERL%%/DBM/Deep/Array.pm
+%%SITE_PERL%%/DBM/Deep/Engine.pm
+%%SITE_PERL%%/DBM/Deep/Null.pm
+%%SITE_PERL%%/DBM/Deep/Sector.pm
 %%SITE_PERL%%/DBM/Deep/Internals.pod
+%%SITE_PERL%%/DBM/Deep/Iterator.pm
+%%SITE_PERL%%/DBM/Deep/Storage.pm
+%%SITE_PERL%%/DBM/Deep/Cookbook.pod
+%%SITE_PERL%%/DBM/Deep.pod
+%%SITE_PERL%%/DBM/Deep.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM
+@dirrm %%SITE_PERL%%/DBM/Deep/Engine
+@dirrm %%SITE_PERL%%/DBM/Deep/Iterator/File
+@dirrm %%SITE_PERL%%/DBM/Deep/Iterator
+@dirrm %%SITE_PERL%%/DBM/Deep/Sector/DBI
+@dirrm %%SITE_PERL%%/DBM/Deep/Sector/File
+@dirrm %%SITE_PERL%%/DBM/Deep/Sector
+@dirrm %%SITE_PERL%%/DBM/Deep/Storage
 @dirrm %%SITE_PERL%%/DBM/Deep
 @dirrmtry %%SITE_PERL%%/DBM
