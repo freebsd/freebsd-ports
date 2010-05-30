@@ -46,8 +46,8 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 MAKE_ARGS+=	LIBEVENT=-levent
 .endif
 
-.if (${OSVERSION} < 700049) && !defined(I_KNOW_WHAT_I_AM_DOING)
-IGNORE=	needs a patched kernel to work correctly (http://www.openbsd.org/cgi-bin/cvsweb/src/sys/net/pf_table.c.diff?r1=1.67&r2=1.68)
+.if (${OSVERSION} < 702104)
+IGNORE=		requires newer FreeBSD (osreldate 702104 and higher)
 .endif
 
 post-extract:
