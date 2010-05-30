@@ -76,23 +76,23 @@ do-install:
 		${WRKSRC}/src/unix/ibus/mozc.xml \
 		${LOCALBASE}/share/ibus/component/mozc.xml
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/../${DISTNAME2}/bin/mozc_server_start \
+		${WRKSRC}/../${ADDITIONNAME}/bin/mozc_server_start \
 		${LOCALBASE}/bin/mozc_server_start
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/../${DISTNAME2}/bin/mozc_server_stop \
+		${WRKSRC}/../${ADDITIONNAME}/bin/mozc_server_stop \
 		${LOCALBASE}/bin/mozc_server_stop
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/../${DISTNAME2}/bin/mozc_server_restart \
+		${WRKSRC}/../${ADDITIONNAME}/bin/mozc_server_restart \
 		${LOCALBASE}/bin/mozc_server_restart
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/../${DISTNAME2}/bin/mozc_tool_config \
+		${WRKSRC}/../${ADDITIONNAME}/bin/mozc_tool_config \
 		${LOCALBASE}/bin/mozc_tool_config
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/../${DISTNAME2}/bin/mozc_tool_dictionary \
+		${WRKSRC}/../${ADDITIONNAME}/bin/mozc_tool_dictionary \
 		${LOCALBASE}/bin/mozc_tool_dictionary
 	@${MKDIR} ${LOCALBASE}/share/ibus-mozc/icons
 	@${INSTALL} -o 0 -g 0 -m 444 \
-		${WRKSRC}/../${DISTNAME2}/icons/mozc-temp-icon.png \
+		${WRKSRC}/../${ADDITIONNAME}/icons/mozc-temp-icon.png \
 		${LOCALBASE}/share/ibus-mozc/icons/product_icon.png
 
 post-install:
