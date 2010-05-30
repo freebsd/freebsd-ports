@@ -18,7 +18,7 @@ COMMENT=	Universal vector graphics translator
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
 
-CONFLICTS=	yudit-[0-9]*
+CONFLICTS=	yudit-[0-9]* netatalk-[0-9]*
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
