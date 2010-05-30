@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	JavaScript-Minifier-XS
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	XS based JavaScript minifier
 
 PERL_CONFIGURE=	yes
