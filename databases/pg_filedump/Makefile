@@ -18,6 +18,8 @@ COMMENT=	Utility to format PostgreSQL heap, index, etc into human-readable form
 BUILD_DEPENDS=	\
 	${NONEXISTENT}:${PORTSDIR}/databases/postgresql83-client:patch
 
+BROKEN=		does not build
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pg_filedump ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
