@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	wgetpaste
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	www
-MASTER_SITES=	http://wgetpaste.zlin.dk/
+MASTER_SITES=	http://wgetpaste.zlin.dk/ \
+		http://sunpoet.net/distfiles/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}.example zlin.conf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Paste to several pastebin services via bash script
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-USE_BZIP2=	yes
 NO_BUILD=	yes
+USE_BZIP2=	yes
 
-post-patch:	.SILENT
-	${REINPLACE_CMD} \
+post-patch:
+	@${REINPLACE_CMD} \
 		-e 's|/etc/|${PREFIX}/etc/|g' \
 		-e 's|\(INFO_COMMAND=\).*|\1"pkg_info -aE"|' \
 		-e 's|\(INFO_ARGS=\).*|\1|' \
