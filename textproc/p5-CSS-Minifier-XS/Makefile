@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	CSS-Minifier-XS
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	XS based CSS minifier
 
 PERL_CONFIGURE=	yes
