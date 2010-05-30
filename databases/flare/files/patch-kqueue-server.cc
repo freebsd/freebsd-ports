@@ -1,5 +1,5 @@
 --- src/lib/server.cc.orig	2009-10-09 19:08:47.000000000 +0900
-+++ src/lib/server.cc	2010-05-30 06:10:23.363742550 +0900
++++ src/lib/server.cc	2010-05-30 23:58:14.924160278 +0900
 @@ -21,6 +21,9 @@
  #ifdef HAVE_EPOLL
  		_epoll_socket(0),
@@ -51,27 +51,37 @@
  	return 0;
  }
  
-@@ -208,6 +231,10 @@
+@@ -204,10 +227,14 @@
+ vector<shared_connection> server::wait() {
+ 	vector<shared_connection> connection_list;
+ 
+-#ifdef HAVE_EPOLL
++#if defined(HAVE_EPOLL)
  	const char* poll_type = "epoll_wait";		// just for logging
  	struct epoll_event ev_list[this->max_listen_socket];
  	int n = epoll_wait(this->_epoll_socket, ev_list, this->max_listen_socket, -1);
-+#elifdef HAVE_KQUEUE
++#elif defined(HAVE_KQUEUE)
 +	const char* poll_type = "kqueue_wait";		// just for logging
-+	struct kevent kev;
-+	int n = kevent(this->_kqueue_socket, &kev, 1, NULL, 0, NULL);
++	struct kevent kev[this->max_listen_socket];
++	int n = kevent(this->_kqueue_socket, NULL, 0, kev, this->max_listen_socket, NULL);
  #else
  	const char* poll_type = "select";		// just for logging
  	fd_set fds;
-@@ -230,6 +257,8 @@
- #ifdef HAVE_EPOLL
+@@ -227,9 +254,12 @@
+ 	}
+ 
+ 	// accpet anyway
+-#ifdef HAVE_EPOLL
++#if defined(HAVE_EPOLL)
  	for (int i = 0; i < n; i++) {
  		int listen_socket = ev_list[i].data.fd;
-+#elifdef HAVE_KQUEUE
-+		int listen_socket = kev.ident;
++#elif defined(HAVE_KQUEUE)
++	for (int i = 0; i < n; i++) {
++		int listen_socket = kev[i].ident;
  #else
  	for (int i = 0; i < this->_listen_socket_index; i++) {
  		if (!FD_ISSET(this->_listen_socket[i], &fds)) {
-@@ -369,6 +398,32 @@
+@@ -369,6 +399,32 @@
  	return 0;
  }
  #endif

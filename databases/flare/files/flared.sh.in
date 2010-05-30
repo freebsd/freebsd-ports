@@ -16,6 +16,8 @@ name=flared
 rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/${name}
 
+extra_commands="reload"
+
 load_rc_config ${name}
 
 case "${flared_flags}" in

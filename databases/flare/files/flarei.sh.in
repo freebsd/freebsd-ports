@@ -10,12 +10,20 @@ flarei_enable=${flarei_enable-"NO"}
 flarei_config=${flarei_conffile-"%%PREFIX%%/etc/flarei.conf"}
 flarei_pidfile=${flarei_pidfile-"/var/run/flarei.pid"}
 flarei_flags="--daemonize"
+flarei_sleepwait="2"
 
 . /etc/rc.subr
 
 name=flarei
 rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/${name}
+
+extra_commands="reload"
+start_postcmd="flarei_poststart"
+
+flarei_poststart () {
+	sleep "${flarei_sleepwait}"
+}
 
 load_rc_config ${name}
 
