@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_smooth_streaming
 PORTVERSION=	1.0.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://smoothstreaming.code-shop.com/download/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
