@@ -7,6 +7,7 @@
 
 PORTNAME=	flare
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://labs.gree.jp/data/source/
 EXTRACT_SUFX=	.tgz
@@ -21,7 +22,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_KQUEUE" LDFLAGS=-L${LOCALBASE}/lib
+# There is a stability and performance issue, so temporary disabled HAVE_KQUEUE.
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
 
 USE_RC_SUBR=	flared.sh flarei.sh
 SUB_FILES=	pkg-message
