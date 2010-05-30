@@ -1,439 +1,439 @@
-Local/Applications/ProjectManager.app/ProjectManager
-Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/AggregateProjectType
-Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/AggregateProjectType.tiff
-Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/EmptyAggregate.template/$PROJECT_NAME$.pmproj
-Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/English.lproj/Description.txt
-Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/English.lproj/MakefileEditWarning.txt
-Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/stamp.make
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/ApplicationProjectType
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/AppInfoAttributes.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/ApplicationProjectType.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/ClassFiles.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/$PROJECT_NAME$.pmproj
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/$PROJECT_NAME$_main.m
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/AppController.h
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/AppController.m
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/Document.h
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/Document.m
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/$PROJECT_NAME$_MainMenu.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/$PROJECT_NAME$_MainMenu.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/$PROJECT_NAME$_MainMenu.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/Document.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/Document.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/Document.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/GNUmakefile.postamble
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/GNUmakefile.preamble
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBasedAppTemplate.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/Empty.template/$PROJECT_NAME$.pmproj
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/Empty.template/GNUmakefile.postamble
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/Empty.template/GNUmakefile.preamble
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/EmptyAppTemplate.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationGeneralAttributes.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationGeneralAttributes.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationGeneralAttributes.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationTypeAttributes.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationTypeAttributes.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationTypeAttributes.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Description.txt
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.pmdesc
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.pmdesc
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/MakefileEditWarning.txt
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/HeaderFiles.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/InterfaceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/LocalizedResourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/OtherSourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/ResourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/$PROJECT_NAME$.pmproj
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/$PROJECT_NAME$_main.m
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/AppController.h
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/AppController.m
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/English.lproj/$PROJECT_NAME$.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/English.lproj/$PROJECT_NAME$.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/English.lproj/$PROJECT_NAME$.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/GNUmakefile.postamble
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/GNUmakefile.preamble
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SupportingFiles.tiff
-Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/stamp.make
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/BundleProjectType
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/ClassFiles.tiff
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/EmptyBundle.template/$PROJECT_NAME$.pmproj
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/EmptyBundle.template/GNUmakefile.postamble
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/EmptyBundle.template/GNUmakefile.preamble
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/BundleGeneralAttributes.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/BundleGeneralAttributes.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/BundleGeneralAttributes.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Description.txt
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.pmdesc
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.pmdesc
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/MakefileEditWarning.txt
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/HeaderFiles.tiff
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/InterfaceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/LocalizedResourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/OtherSourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/ResourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/SupportingFiles.tiff
-Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/stamp.make
-Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/EditingPreferences
-Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/English.lproj/EditingPreferences.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/English.lproj/EditingPreferences.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/English.lproj/EditingPreferences.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/stamp.make
-Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/EditorLooksPreferences
-Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/English.lproj/EditorLooksPreferences.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/English.lproj/EditorLooksPreferences.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/English.lproj/EditorLooksPreferences.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/stamp.make
-Local/Applications/ProjectManager.app/Resources/English.lproj/CommandQueryPanel.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/CommandQueryPanel.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/CommandQueryPanel.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/English.lproj/Editor.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/Editor.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/Editor.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/English.lproj/FileTemplateChooser.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/FileTemplateChooser.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/FileTemplateChooser.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/English.lproj/FindPanel.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/FindPanel.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/FindPanel.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/English.lproj/LineQueryPanel.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/LineQueryPanel.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/LineQueryPanel.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/English.lproj/NewFileTypePanel.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/NewFileTypePanel.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/NewFileTypePanel.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/English.lproj/PreferencesPanel.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/PreferencesPanel.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/PreferencesPanel.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/English.lproj/Project.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/Project.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/Project.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectCreator.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectCreator.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectCreator.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectManager.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectManager.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectManager.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectNameQueryPanel.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectNameQueryPanel.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectNameQueryPanel.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/FileManager
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/FileManager.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/FileManager.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/FileManager.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/TemplateFileSelector.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/TemplateFileSelector.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/TemplateFileSelector.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/LinkIndicator.tiff
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/MultipleSelection.tiff
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/NewCategory.tiff
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/ProjectCategory.tiff
-Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/stamp.make
-Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/FileOperationPreferences
-Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/English.lproj/FileOperations.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/English.lproj/FileOperations.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/English.lproj/FileOperations.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/stamp.make
-Local/Applications/ProjectManager.app/Resources/File_c.tiff
-Local/Applications/ProjectManager.app/Resources/File_c_mod.tiff
-Local/Applications/ProjectManager.app/Resources/File_cc.tiff
-Local/Applications/ProjectManager.app/Resources/File_cc_mod.tiff
-Local/Applications/ProjectManager.app/Resources/File_framework.tiff
-Local/Applications/ProjectManager.app/Resources/File_framework_mod.tiff
-Local/Applications/ProjectManager.app/Resources/File_h.tiff
-Local/Applications/ProjectManager.app/Resources/File_h_mod.tiff
-Local/Applications/ProjectManager.app/Resources/File_library.tiff
-Local/Applications/ProjectManager.app/Resources/File_m.tiff
-Local/Applications/ProjectManager.app/Resources/File_m_mod.tiff
-Local/Applications/ProjectManager.app/Resources/File_mm.tiff
-Local/Applications/ProjectManager.app/Resources/File_mm_mod.tiff
-Local/Applications/ProjectManager.app/Resources/File_project.tiff
-Local/Applications/ProjectManager.app/Resources/File_project_mod.tiff
-Local/Applications/ProjectManager.app/Resources/File_txt.tiff
-Local/Applications/ProjectManager.app/Resources/File_txt_mod.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/FrameworkProjectType
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/ClassFiles.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyFramework.template/$PROJECT_NAME$.pmproj
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyFramework.template/GNUmakefile.postamble
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyFramework.template/GNUmakefile.preamble
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyLibrary.template/$PROJECT_NAME$.pmproj
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyLibrary.template/GNUmakefile.postamble
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyLibrary.template/GNUmakefile.preamble
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyLibraryTemplate.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Description.txt
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/FrameworkGeneralAttributes.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/FrameworkGeneralAttributes.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/FrameworkGeneralAttributes.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm.pmdesc
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm.pmdesc
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/MakefileEditWarning.txt
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/FrameworkInfoAttributes.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/FrameworkProjectType.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/HeaderFiles.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/InterfaceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/LocalizedResourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/OtherSourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/ResourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/SupportingFiles.tiff
-Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/stamp.make
-Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/GNUstepAppLauncher
-Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/English.lproj/GNUstepAppLauncher.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/English.lproj/GNUstepAppLauncher.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/English.lproj/GNUstepAppLauncher.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/Kill.tiff
-Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/Launch.tiff
-Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/Stop.tiff
-Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/stamp.make
-Local/Applications/ProjectManager.app/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/MakeBuilder
-Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/Build.tiff
-Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/English.lproj/MakeBuilder.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/English.lproj/MakeBuilder.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/English.lproj/MakeBuilder.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/Stop.tiff
-Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/stamp.make
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/PaletteProjectType
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/ClassFiles.tiff
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m.pmdesc
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Description.txt
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h.pmdesc
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm.pmdesc
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm.pmdesc
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/MakefileEditWarning.txt
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/PaletteGeneralAttributes.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/PaletteGeneralAttributes.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/PaletteGeneralAttributes.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/HeaderFiles.tiff
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/InterfaceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/LocalizedResourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/OtherSourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/PaletteInfoAttributes.tiff
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/PaletteProjectType.tiff
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/ResourceFiles.tiff
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/$PROJECT_NAME$.pmproj
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/English.lproj/$PROJECT_NAME$.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/English.lproj/$PROJECT_NAME$.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/English.lproj/$PROJECT_NAME$.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/GNUmakefile.postamble
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/GNUmakefile.preamble
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/MyPalette.h
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/MyPalette.m
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/SupportingFiles.tiff
-Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/stamp.make
-Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/ProjectAttributes
-Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/English.lproj/ProjectAttributes.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/English.lproj/ProjectAttributes.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/English.lproj/ProjectAttributes.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/GeneralAttributes.tiff
-Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/stamp.make
-Local/Applications/ProjectManager.app/Resources/ProjectManager.desktop
-Local/Applications/ProjectManager.app/Resources/ProjectManager.tiff
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/AddSubproject.tiff
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/English.lproj/SubprojectsManager.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/English.lproj/SubprojectsManager.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/English.lproj/SubprojectsManager.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/NewSubproject.tiff
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/NewSubprojectCategory.tiff
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/RemoveSubproject.tiff
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/RemoveSubprojectCategory.tiff
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/SubprojectsManager
-Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/stamp.make
-Local/Applications/ProjectManager.app/Resources/Tab_Debug.tiff
-Local/Applications/ProjectManager.app/Resources/Tab_Files.tiff
-Local/Applications/ProjectManager.app/Resources/Tab_Subprojects.tiff
-Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj/UserPipes.gorm/data.classes
-Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj/UserPipes.gorm/data.info
-Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj/UserPipes.gorm/objects.gorm
-Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/Info-gnustep.plist
-Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/UserPipePreferences
-Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/stamp.make
-Local/Applications/ProjectManager.app/stamp.make
-Local/Tools/ProjectManager
-@dirrm Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj/UserPipes.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs
-@dirrm Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/English.lproj/SubprojectsManager.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule
-@dirrm Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/English.lproj/ProjectAttributes.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/English.lproj/$PROJECT_NAME$.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/PaletteGeneralAttributes.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype
-@dirrm Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/English.lproj/MakeBuilder.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule
-@dirrm Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/English.lproj/GNUstepAppLauncher.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/FrameworkGeneralAttributes.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyLibrary.template
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyFramework.template
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype
-@dirrm Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/English.lproj/FileOperations.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs
-@dirrm Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/TemplateFileSelector.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/FileManager.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/FileManager.projmodule
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectNameQueryPanel.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectManager.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectCreator.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/Project.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/PreferencesPanel.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/NewFileTypePanel.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/LineQueryPanel.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/FindPanel.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/FileTemplateChooser.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/Editor.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj/CommandQueryPanel.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/English.lproj/EditorLooksPreferences.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs
-@dirrm Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/English.lproj/EditingPreferences.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs
-@dirrm Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/BundleGeneralAttributes.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/EmptyBundle.template
-@dirrm Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/English.lproj/$PROJECT_NAME$.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationTypeAttributes.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationGeneralAttributes.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/Empty.template
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/Document.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/$PROJECT_NAME$_MainMenu.gorm
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype
-@dirrm Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/English.lproj
-@dirrm Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/EmptyAggregate.template
-@dirrm Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources
-@dirrm Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype
-@dirrm Local/Applications/ProjectManager.app/Resources
-@dirrm Local/Applications/ProjectManager.app
+GNUstep/Local/Applications/ProjectManager.app/ProjectManager
+GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/AggregateProjectType
+GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/AggregateProjectType.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/EmptyAggregate.template/$PROJECT_NAME$.pmproj
+GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/English.lproj/Description.txt
+GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/English.lproj/MakefileEditWarning.txt
+GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/ApplicationProjectType
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/AppInfoAttributes.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/ApplicationProjectType.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/ClassFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/$PROJECT_NAME$.pmproj
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/$PROJECT_NAME$_main.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/AppController.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/AppController.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/Document.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/Document.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/$PROJECT_NAME$_MainMenu.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/$PROJECT_NAME$_MainMenu.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/$PROJECT_NAME$_MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/Document.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/Document.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/Document.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/GNUmakefile.postamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/GNUmakefile.preamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBasedAppTemplate.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/Empty.template/$PROJECT_NAME$.pmproj
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/Empty.template/GNUmakefile.postamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/Empty.template/GNUmakefile.preamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/EmptyAppTemplate.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationGeneralAttributes.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationGeneralAttributes.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationGeneralAttributes.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationTypeAttributes.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationTypeAttributes.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationTypeAttributes.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Description.txt
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/MakefileEditWarning.txt
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/HeaderFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/InterfaceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/LocalizedResourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/OtherSourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/ResourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/$PROJECT_NAME$.pmproj
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/$PROJECT_NAME$_main.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/AppController.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/AppController.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/English.lproj/$PROJECT_NAME$.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/English.lproj/$PROJECT_NAME$.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/English.lproj/$PROJECT_NAME$.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/GNUmakefile.postamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/GNUmakefile.preamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SupportingFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/BundleProjectType
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/ClassFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/EmptyBundle.template/$PROJECT_NAME$.pmproj
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/EmptyBundle.template/GNUmakefile.postamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/EmptyBundle.template/GNUmakefile.preamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/BundleGeneralAttributes.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/BundleGeneralAttributes.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/BundleGeneralAttributes.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Description.txt
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/MakefileEditWarning.txt
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/HeaderFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/InterfaceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/LocalizedResourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/OtherSourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/ResourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/SupportingFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/EditingPreferences
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/English.lproj/EditingPreferences.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/English.lproj/EditingPreferences.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/English.lproj/EditingPreferences.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/EditorLooksPreferences
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/English.lproj/EditorLooksPreferences.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/English.lproj/EditorLooksPreferences.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/English.lproj/EditorLooksPreferences.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/CommandQueryPanel.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/CommandQueryPanel.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/CommandQueryPanel.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/Editor.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/Editor.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/Editor.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/FileTemplateChooser.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/FileTemplateChooser.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/FileTemplateChooser.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/FindPanel.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/FindPanel.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/FindPanel.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/LineQueryPanel.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/LineQueryPanel.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/LineQueryPanel.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/NewFileTypePanel.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/NewFileTypePanel.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/NewFileTypePanel.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/PreferencesPanel.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/PreferencesPanel.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/PreferencesPanel.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/Project.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/Project.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/Project.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectCreator.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectCreator.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectCreator.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectManager.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectManager.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectManager.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectNameQueryPanel.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectNameQueryPanel.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectNameQueryPanel.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/FileManager
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/FileManager.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/FileManager.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/FileManager.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/TemplateFileSelector.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/TemplateFileSelector.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/TemplateFileSelector.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/LinkIndicator.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/MultipleSelection.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/NewCategory.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/ProjectCategory.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/FileOperationPreferences
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/English.lproj/FileOperations.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/English.lproj/FileOperations.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/English.lproj/FileOperations.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_c.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_c_mod.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_cc.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_cc_mod.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_framework.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_framework_mod.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_h.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_h_mod.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_library.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_m.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_m_mod.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_mm.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_mm_mod.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_project.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_project_mod.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_txt.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/File_txt_mod.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/FrameworkProjectType
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/ClassFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyFramework.template/$PROJECT_NAME$.pmproj
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyFramework.template/GNUmakefile.postamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyFramework.template/GNUmakefile.preamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyLibrary.template/$PROJECT_NAME$.pmproj
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyLibrary.template/GNUmakefile.postamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyLibrary.template/GNUmakefile.preamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyLibraryTemplate.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Description.txt
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/FrameworkGeneralAttributes.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/FrameworkGeneralAttributes.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/FrameworkGeneralAttributes.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/MakefileEditWarning.txt
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/FrameworkInfoAttributes.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/FrameworkProjectType.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/HeaderFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/InterfaceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/LocalizedResourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/OtherSourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/ResourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/SupportingFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/GNUstepAppLauncher
+GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/English.lproj/GNUstepAppLauncher.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/English.lproj/GNUstepAppLauncher.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/English.lproj/GNUstepAppLauncher.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/Kill.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/Launch.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/Stop.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/MakeBuilder
+GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/Build.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/English.lproj/MakeBuilder.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/English.lproj/MakeBuilder.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/English.lproj/MakeBuilder.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/Stop.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/PaletteProjectType
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/ClassFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/Class.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/Empty File.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates/NSView Subclass.m.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Description.txt
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/Class.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/Empty File.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates/NSView Subclass.h.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm.pmdesc
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/MakefileEditWarning.txt
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/PaletteGeneralAttributes.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/PaletteGeneralAttributes.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/PaletteGeneralAttributes.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/HeaderFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/InterfaceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/LocalizedResourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/OtherSourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/PaletteInfoAttributes.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/PaletteProjectType.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/ResourceFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/$PROJECT_NAME$.pmproj
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/English.lproj/$PROJECT_NAME$.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/English.lproj/$PROJECT_NAME$.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/English.lproj/$PROJECT_NAME$.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/GNUmakefile.postamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/GNUmakefile.preamble
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/MyPalette.h
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/MyPalette.m
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/SupportingFiles.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/ProjectAttributes
+GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/English.lproj/ProjectAttributes.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/English.lproj/ProjectAttributes.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/English.lproj/ProjectAttributes.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/GeneralAttributes.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectManager.desktop
+GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectManager.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/AddSubproject.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/English.lproj/SubprojectsManager.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/English.lproj/SubprojectsManager.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/English.lproj/SubprojectsManager.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/NewSubproject.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/NewSubprojectCategory.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/RemoveSubproject.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/RemoveSubprojectCategory.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/SubprojectsManager
+GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/Resources/Tab_Debug.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/Tab_Files.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/Tab_Subprojects.tiff
+GNUstep/Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj/UserPipes.gorm/data.classes
+GNUstep/Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj/UserPipes.gorm/data.info
+GNUstep/Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj/UserPipes.gorm/objects.gorm
+GNUstep/Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/UserPipePreferences
+GNUstep/Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/stamp.make
+GNUstep/Local/Applications/ProjectManager.app/stamp.make
+GNUstep/Local/Tools/ProjectManager
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj/UserPipes.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/English.lproj/SubprojectsManager.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/SubprojectsManager.projmodule
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/English.lproj/ProjectAttributes.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ProjectAttributes.projmodule
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/English.lproj/$PROJECT_NAME$.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/StandardPalette.template
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/PaletteGeneralAttributes.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Interfaces.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Header_Files.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj/Class_Files.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/PaletteProjectType.projtype
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/English.lproj/MakeBuilder.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/MakeBuilder.projmodule
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/English.lproj/GNUstepAppLauncher.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/GNUstepAppLauncher.projmodule
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Interfaces.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Header_Files.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/FrameworkGeneralAttributes.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj/Class_Files.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyLibrary.template
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources/EmptyFramework.template
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FrameworkProjectType.projtype
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/English.lproj/FileOperations.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FileOperationPreferences.prefs
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/TemplateFileSelector.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj/FileManager.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/FileManager.projmodule
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectNameQueryPanel.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectManager.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/ProjectCreator.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/Project.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/PreferencesPanel.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/NewFileTypePanel.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/LineQueryPanel.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/FindPanel.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/FileTemplateChooser.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/Editor.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj/CommandQueryPanel.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/English.lproj/EditorLooksPreferences.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/EditorLooksPreferences.prefs
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/English.lproj/EditingPreferences.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/EditingPreferences.prefs
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Interfaces.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Header_Files.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/Class_Files.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj/BundleGeneralAttributes.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources/EmptyBundle.template
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/BundleProjectType.projtype
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/English.lproj/$PROJECT_NAME$.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/SimpleApp.template
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Main Application Gorm File.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates/Empty.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Interfaces.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Header_Files.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/Class_Files.templates
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationTypeAttributes.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj/ApplicationGeneralAttributes.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/Empty.template
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/Document.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj/$PROJECT_NAME$_MainMenu.gorm
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources/DocumentBased.template
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/ApplicationProjectType.projtype
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources/EmptyAggregate.template
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources/AggregateProjectType.projtype
+@dirrm GNUstep/Local/Applications/ProjectManager.app/Resources
+@dirrm GNUstep/Local/Applications/ProjectManager.app

@@ -1,9 +1,9 @@
-System/Library/Bundles/EtoileMenus.bundle/EtoileMenus
-System/Library/Bundles/EtoileMenus.bundle/Resources/EtoileMenuClose.tiff
-System/Library/Bundles/EtoileMenus.bundle/Resources/EtoileMenuCloseH.tiff
-System/Library/Bundles/EtoileMenus.bundle/Resources/Info-gnustep.plist
-System/Library/Bundles/EtoileMenus.bundle/Resources/MenuBarFiller.tiff
-System/Library/Bundles/EtoileMenus.bundle/Resources/MenuTitleFiller.tiff
-System/Library/Bundles/EtoileMenus.bundle/stamp.make
-@dirrm System/Library/Bundles/EtoileMenus.bundle/Resources
-@dirrm System/Library/Bundles/EtoileMenus.bundle
+GNUstep/System/Library/Bundles/EtoileMenus.bundle/EtoileMenus
+GNUstep/System/Library/Bundles/EtoileMenus.bundle/Resources/EtoileMenuClose.tiff
+GNUstep/System/Library/Bundles/EtoileMenus.bundle/Resources/EtoileMenuCloseH.tiff
+GNUstep/System/Library/Bundles/EtoileMenus.bundle/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/EtoileMenus.bundle/Resources/MenuBarFiller.tiff
+GNUstep/System/Library/Bundles/EtoileMenus.bundle/Resources/MenuTitleFiller.tiff
+GNUstep/System/Library/Bundles/EtoileMenus.bundle/stamp.make
+@dirrm GNUstep/System/Library/Bundles/EtoileMenus.bundle/Resources
+@dirrm GNUstep/System/Library/Bundles/EtoileMenus.bundle

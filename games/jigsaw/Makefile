@@ -17,7 +17,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simulates a jigsaw puzzle and illustrates the use of clipping paths
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

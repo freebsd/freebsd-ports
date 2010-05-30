@@ -1,56 +1,56 @@
-System/Applications/Preferences.app/Preferences
-System/Applications/Preferences.app/Resources/English.lproj/Localizable.strings
-System/Applications/Preferences.app/Resources/English.lproj/Preferences.gorm
-System/Applications/Preferences.app/Resources/Info-gnustep.plist
-System/Applications/Preferences.app/Resources/Preferences.desktop
-System/Applications/Preferences.app/Resources/Preferences.tiff
-System/Applications/Preferences.app/Resources/PreferencesInfo.plist
-System/Applications/Preferences.app/Resources/PrefsApp.prefs/PrefsApp
-System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources/Info-gnustep.plist
-System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources/PrefsApp.gorm
-System/Applications/Preferences.app/Resources/PrefsApp.prefs/stamp.make
-System/Applications/Preferences.app/Resources/PrefsIcon_Appearances.tiff
-System/Applications/Preferences.app/Resources/PrefsIcon_Keyboard.tiff
-System/Applications/Preferences.app/Resources/PrefsIcon_Localisation.tiff
-System/Applications/Preferences.app/Resources/PrefsIcon_Login.tiff
-System/Applications/Preferences.app/Resources/PrefsIcon_Mouse.tiff
-System/Applications/Preferences.app/Resources/PrefsIcon_Screen.tiff
-System/Applications/Preferences.app/Resources/PrefsIcon_SelectSpooler.tiff
-System/Applications/Preferences.app/Resources/PrefsModule.tiff
-System/Applications/Preferences.app/stamp.make
-System/Library/Frameworks/PrefsModule.framework/Headers
-System/Library/Frameworks/PrefsModule.framework/PrefsModule
-System/Library/Frameworks/PrefsModule.framework/Resources
-System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/Headers/PrefsModule.h
-System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/PrefsModule
-System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/libPrefsModule.so
-System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/libPrefsModule.so.%%MAJORLIBVERSION%%
-System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/libPrefsModule.so.%%LIBVERSION%%
-System/Library/Frameworks/PrefsModule.framework/Versions/Current
-System/Library/Frameworks/PrefsModule.framework/libPrefsModule.so
-System/Library/Headers/PrefsModule
-System/Library/Libraries/libPrefsModule.so
-System/Library/Libraries/libPrefsModule.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libPrefsModule.so.%%LIBVERSION%%
-System/Library/Preferences/Keyboard.prefs/Keyboard
-System/Library/Preferences/Keyboard.prefs/Resources/Info-gnustep.plist
-System/Library/Preferences/Keyboard.prefs/Resources/Keyboard.gorm
-System/Library/Preferences/Keyboard.prefs/stamp.make
-System/Tools/Preferences
-@dirrm System/Library/Preferences/Keyboard.prefs/Resources
-@dirrm System/Library/Preferences/Keyboard.prefs
-@dirrm System/Library/Preferences
-@dirrm System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm System/Library/Frameworks/PrefsModule.framework/Versions
-@dirrm System/Library/Frameworks/PrefsModule.framework
-@dirrm System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources
-@dirrm System/Applications/Preferences.app/Resources/PrefsApp.prefs
-@dirrm System/Applications/Preferences.app/Resources/English.lproj
-@dirrm System/Applications/Preferences.app/Resources
-@dirrm System/Applications/Preferences.app
+GNUstep/System/Applications/Preferences.app/Preferences
+GNUstep/System/Applications/Preferences.app/Resources/English.lproj/Localizable.strings
+GNUstep/System/Applications/Preferences.app/Resources/English.lproj/Preferences.gorm
+GNUstep/System/Applications/Preferences.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Preferences.app/Resources/Preferences.desktop
+GNUstep/System/Applications/Preferences.app/Resources/Preferences.tiff
+GNUstep/System/Applications/Preferences.app/Resources/PreferencesInfo.plist
+GNUstep/System/Applications/Preferences.app/Resources/PrefsApp.prefs/PrefsApp
+GNUstep/System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources/PrefsApp.gorm
+GNUstep/System/Applications/Preferences.app/Resources/PrefsApp.prefs/stamp.make
+GNUstep/System/Applications/Preferences.app/Resources/PrefsIcon_Appearances.tiff
+GNUstep/System/Applications/Preferences.app/Resources/PrefsIcon_Keyboard.tiff
+GNUstep/System/Applications/Preferences.app/Resources/PrefsIcon_Localisation.tiff
+GNUstep/System/Applications/Preferences.app/Resources/PrefsIcon_Login.tiff
+GNUstep/System/Applications/Preferences.app/Resources/PrefsIcon_Mouse.tiff
+GNUstep/System/Applications/Preferences.app/Resources/PrefsIcon_Screen.tiff
+GNUstep/System/Applications/Preferences.app/Resources/PrefsIcon_SelectSpooler.tiff
+GNUstep/System/Applications/Preferences.app/Resources/PrefsModule.tiff
+GNUstep/System/Applications/Preferences.app/stamp.make
+GNUstep/System/Library/Frameworks/PrefsModule.framework/Headers
+GNUstep/System/Library/Frameworks/PrefsModule.framework/PrefsModule
+GNUstep/System/Library/Frameworks/PrefsModule.framework/Resources
+GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/Headers/PrefsModule.h
+GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/PrefsModule
+GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/libPrefsModule.so
+GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/libPrefsModule.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/libPrefsModule.so.%%LIBVERSION%%
+GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/Current
+GNUstep/System/Library/Frameworks/PrefsModule.framework/libPrefsModule.so
+GNUstep/System/Library/Headers/PrefsModule
+GNUstep/System/Library/Libraries/libPrefsModule.so
+GNUstep/System/Library/Libraries/libPrefsModule.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libPrefsModule.so.%%LIBVERSION%%
+GNUstep/System/Library/Preferences/Keyboard.prefs/Keyboard
+GNUstep/System/Library/Preferences/Keyboard.prefs/Resources/Info-gnustep.plist
+GNUstep/System/Library/Preferences/Keyboard.prefs/Resources/Keyboard.gorm
+GNUstep/System/Library/Preferences/Keyboard.prefs/stamp.make
+GNUstep/System/Tools/Preferences
+@dirrm GNUstep/System/Library/Preferences/Keyboard.prefs/Resources
+@dirrm GNUstep/System/Library/Preferences/Keyboard.prefs
+@dirrm GNUstep/System/Library/Preferences
+@dirrm GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/System/Library/Frameworks/PrefsModule.framework/Versions
+@dirrm GNUstep/System/Library/Frameworks/PrefsModule.framework
+@dirrm GNUstep/System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources
+@dirrm GNUstep/System/Applications/Preferences.app/Resources/PrefsApp.prefs
+@dirrm GNUstep/System/Applications/Preferences.app/Resources/English.lproj
+@dirrm GNUstep/System/Applications/Preferences.app/Resources
+@dirrm GNUstep/System/Applications/Preferences.app
 @dirrmtry Network/Library/Preferences
 @dirrmtry Network/Library
 @dirrmtry Network

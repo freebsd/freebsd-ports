@@ -18,7 +18,6 @@ COMMENT=	Metaport for Etoile desktop
 NO_BUILD=	yes
 NO_INSTALL=	yes
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_BACK=	yes

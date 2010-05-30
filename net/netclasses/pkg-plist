@@ -1,23 +1,23 @@
-Local/Library/Frameworks/netclasses.framework/Headers
-Local/Library/Frameworks/netclasses.framework/Resources
-Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers/IRCObject.h
-Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers/LineObject.h
-Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers/NetBase.h
-Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers/NetTCP.h
-Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/libnetclasses.so
-Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/libnetclasses.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/libnetclasses.so.%%LIBVERSION%%
-Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/netclasses
-Local/Library/Frameworks/netclasses.framework/Versions/Current
-Local/Library/Frameworks/netclasses.framework/libnetclasses.so
-Local/Library/Frameworks/netclasses.framework/netclasses
-Local/Library/Headers/netclasses
-Local/Library/Libraries/libnetclasses.so
-Local/Library/Libraries/libnetclasses.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libnetclasses.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Resources
-@dirrm Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers
-@dirrm Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%
-@dirrm Local/Library/Frameworks/netclasses.framework/Versions
-@dirrm Local/Library/Frameworks/netclasses.framework
+GNUstep/Local/Library/Frameworks/netclasses.framework/Headers
+GNUstep/Local/Library/Frameworks/netclasses.framework/Resources
+GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers/IRCObject.h
+GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers/LineObject.h
+GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers/NetBase.h
+GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers/NetTCP.h
+GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/libnetclasses.so
+GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/libnetclasses.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/libnetclasses.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/netclasses
+GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/netclasses.framework/libnetclasses.so
+GNUstep/Local/Library/Frameworks/netclasses.framework/netclasses
+GNUstep/Local/Library/Headers/netclasses
+GNUstep/Local/Library/Libraries/libnetclasses.so
+GNUstep/Local/Library/Libraries/libnetclasses.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libnetclasses.so.%%LIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/netclasses.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/netclasses.framework

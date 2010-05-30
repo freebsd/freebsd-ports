@@ -1,23 +1,23 @@
-Local/Applications/Typewriter.app/Resources/Document-RichText.tiff
-Local/Applications/Typewriter.app/Resources/Document-Text.tiff
-Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/data.classes
-Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/data.info
-Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/objects.gorm
-Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm/data.classes
-Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm/data.info
-Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm/objects.gorm
-Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm/data.classes
-Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm/data.info
-Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
-Local/Applications/Typewriter.app/Resources/Info-gnustep.plist
-Local/Applications/Typewriter.app/Resources/Typewriter.desktop
-Local/Applications/Typewriter.app/Resources/Typewriter.tiff
-Local/Applications/Typewriter.app/Typewriter
-Local/Applications/Typewriter.app/stamp.make
-Local/Tools/Typewriter
-@dirrm Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm
-@dirrm Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm
-@dirrm Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm
-@dirrm Local/Applications/Typewriter.app/Resources/English.lproj
-@dirrm Local/Applications/Typewriter.app/Resources
-@dirrm Local/Applications/Typewriter.app
+GNUstep/Local/Applications/Typewriter.app/Resources/Document-RichText.tiff
+GNUstep/Local/Applications/Typewriter.app/Resources/Document-Text.tiff
+GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/data.classes
+GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/data.info
+GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm/objects.gorm
+GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm/data.classes
+GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm/data.info
+GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm/objects.gorm
+GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm/data.info
+GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/Typewriter.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Typewriter.app/Resources/Typewriter.desktop
+GNUstep/Local/Applications/Typewriter.app/Resources/Typewriter.tiff
+GNUstep/Local/Applications/Typewriter.app/Typewriter
+GNUstep/Local/Applications/Typewriter.app/stamp.make
+GNUstep/Local/Tools/Typewriter
+@dirrm GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm
+@dirrm GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm
+@dirrm GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm
+@dirrm GNUstep/Local/Applications/Typewriter.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/Typewriter.app/Resources
+@dirrm GNUstep/Local/Applications/Typewriter.app

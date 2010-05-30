@@ -1,47 +1,47 @@
-Local/Applications/SimpleAgenda.app/Resources/1left.tiff
-Local/Applications/SimpleAgenda.app/Resources/1right.tiff
-Local/Applications/SimpleAgenda.app/Resources/2left.tiff
-Local/Applications/SimpleAgenda.app/Resources/2right.tiff
-Local/Applications/SimpleAgenda.app/Resources/Agenda.gorm/data.classes
-Local/Applications/SimpleAgenda.app/Resources/Agenda.gorm/data.info
-Local/Applications/SimpleAgenda.app/Resources/Agenda.gorm/objects.gorm
-Local/Applications/SimpleAgenda.app/Resources/Alarm.gorm/data.classes
-Local/Applications/SimpleAgenda.app/Resources/Alarm.gorm/data.info
-Local/Applications/SimpleAgenda.app/Resources/Alarm.gorm/objects.gorm
-Local/Applications/SimpleAgenda.app/Resources/Appointment.gorm/data.classes
-Local/Applications/SimpleAgenda.app/Resources/Appointment.gorm/data.info
-Local/Applications/SimpleAgenda.app/Resources/Appointment.gorm/objects.gorm
-Local/Applications/SimpleAgenda.app/Resources/Calendar.tiff
-Local/Applications/SimpleAgenda.app/Resources/English.lproj/Localizable.strings
-Local/Applications/SimpleAgenda.app/Resources/French.lproj/Localizable.strings
-Local/Applications/SimpleAgenda.app/Resources/GroupDAV.gorm/data.classes
-Local/Applications/SimpleAgenda.app/Resources/GroupDAV.gorm/data.info
-Local/Applications/SimpleAgenda.app/Resources/GroupDAV.gorm/objects.gorm
-Local/Applications/SimpleAgenda.app/Resources/Info-gnustep.plist
-Local/Applications/SimpleAgenda.app/Resources/Preferences.gorm/data.classes
-Local/Applications/SimpleAgenda.app/Resources/Preferences.gorm/data.info
-Local/Applications/SimpleAgenda.app/Resources/Preferences.gorm/objects.gorm
-Local/Applications/SimpleAgenda.app/Resources/SimpleAgenda.desktop
-Local/Applications/SimpleAgenda.app/Resources/Task.gorm/data.classes
-Local/Applications/SimpleAgenda.app/Resources/Task.gorm/data.info
-Local/Applications/SimpleAgenda.app/Resources/Task.gorm/objects.gorm
-Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/data.classes
-Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/data.info
-Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/objects.gorm
-Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/warning.tiff
-Local/Applications/SimpleAgenda.app/Resources/ical-file.tiff
-Local/Applications/SimpleAgenda.app/Resources/repeat.tiff
-Local/Applications/SimpleAgenda.app/SimpleAgenda
-Local/Applications/SimpleAgenda.app/stamp.make
-Local/Tools/SimpleAgenda
-@dirrm Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm
-@dirrm Local/Applications/SimpleAgenda.app/Resources/Task.gorm
-@dirrm Local/Applications/SimpleAgenda.app/Resources/Preferences.gorm
-@dirrm Local/Applications/SimpleAgenda.app/Resources/GroupDAV.gorm
-@dirrm Local/Applications/SimpleAgenda.app/Resources/French.lproj
-@dirrm Local/Applications/SimpleAgenda.app/Resources/English.lproj
-@dirrm Local/Applications/SimpleAgenda.app/Resources/Appointment.gorm
-@dirrm Local/Applications/SimpleAgenda.app/Resources/Alarm.gorm
-@dirrm Local/Applications/SimpleAgenda.app/Resources/Agenda.gorm
-@dirrm Local/Applications/SimpleAgenda.app/Resources
-@dirrm Local/Applications/SimpleAgenda.app
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/1left.tiff
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/1right.tiff
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/2left.tiff
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/2right.tiff
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Agenda.gorm/data.classes
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Agenda.gorm/data.info
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Agenda.gorm/objects.gorm
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Alarm.gorm/data.classes
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Alarm.gorm/data.info
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Alarm.gorm/objects.gorm
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Appointment.gorm/data.classes
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Appointment.gorm/data.info
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Appointment.gorm/objects.gorm
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Calendar.tiff
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/French.lproj/Localizable.strings
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/GroupDAV.gorm/data.classes
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/GroupDAV.gorm/data.info
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/GroupDAV.gorm/objects.gorm
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Preferences.gorm/data.classes
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Preferences.gorm/data.info
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Preferences.gorm/objects.gorm
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/SimpleAgenda.desktop
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Task.gorm/data.classes
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Task.gorm/data.info
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/Task.gorm/objects.gorm
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/data.classes
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/data.info
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/objects.gorm
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/warning.tiff
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/ical-file.tiff
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/repeat.tiff
+GNUstep/Local/Applications/SimpleAgenda.app/SimpleAgenda
+GNUstep/Local/Applications/SimpleAgenda.app/stamp.make
+GNUstep/Local/Tools/SimpleAgenda
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/Task.gorm
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/Preferences.gorm
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/GroupDAV.gorm
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/French.lproj
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/Appointment.gorm
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/Alarm.gorm
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources/Agenda.gorm
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app/Resources
+@dirrm GNUstep/Local/Applications/SimpleAgenda.app

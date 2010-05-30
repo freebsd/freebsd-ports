@@ -1,23 +1,23 @@
-Local/Library/Frameworks/MediaKit.framework/Headers
-Local/Library/Frameworks/MediaKit.framework/MediaKit
-Local/Library/Frameworks/MediaKit.framework/MediaKit.framework
-Local/Library/Frameworks/MediaKit.framework/Resources
-Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MKMediaFile.h
-Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MKMusicPlayer.h
-Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MKSoundDevice.h
-Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/MediaKit
-Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/libMediaKit.so
-Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/libMediaKit.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/libMediaKit.so.%%LIBVERSION%%
-Local/Library/Frameworks/MediaKit.framework/Versions/Current
-Local/Library/Frameworks/MediaKit.framework/libMediaKit.so
-Local/Library/Headers/MediaKit
-Local/Library/Libraries/libMediaKit.so
-Local/Library/Libraries/libMediaKit.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libMediaKit.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/MediaKit.framework/Versions
-@dirrm Local/Library/Frameworks/MediaKit.framework
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Headers
+GNUstep/Local/Library/Frameworks/MediaKit.framework/MediaKit
+GNUstep/Local/Library/Frameworks/MediaKit.framework/MediaKit.framework
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Resources
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MKMediaFile.h
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MKMusicPlayer.h
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MKSoundDevice.h
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/MediaKit
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/libMediaKit.so
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/libMediaKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/libMediaKit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/MediaKit.framework/libMediaKit.so
+GNUstep/Local/Library/Headers/MediaKit
+GNUstep/Local/Library/Libraries/libMediaKit.so
+GNUstep/Local/Library/Libraries/libMediaKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libMediaKit.so.%%LIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/MediaKit.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/MediaKit.framework

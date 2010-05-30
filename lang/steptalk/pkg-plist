@@ -1,120 +1,120 @@
-Local/Library/Bundles/ApplicationScripting.bundle/ApplicationScripting
-Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptingMenu.gorm/data.classes
-Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptingMenu.gorm/objects.gorm
-Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptsPanel.gorm/data.classes
-Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptsPanel.gorm/objects.gorm
-Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/TranscriptWindow.gorm/data.classes
-Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/TranscriptWindow.gorm/objects.gorm
-Local/Library/Bundles/ApplicationScripting.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/ApplicationScripting.bundle/stamp.make
-Local/Library/Frameworks/StepTalk.framework/Headers
-Local/Library/Frameworks/StepTalk.framework/Resources
-Local/Library/Frameworks/StepTalk.framework/StepTalk
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSInvocation+additions.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSObject+additions.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STActor.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STBundleInfo.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STContext.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STConversation.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STEngine.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STEnvironment.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STEnvironmentDescription.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STExterns.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STFileScript.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STFunctions.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STLanguageManager.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STMethod.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STObjCRuntime.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STObjectReference.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STRemoteConversation.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STScript.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STScriptObject.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STScripting.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STScriptsManager.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STSelector.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STUndefinedObject.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/StepTalk.h
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/AppKit.stenv
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Common.stenv
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Distributed.stenv
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Foundation-operators.stenv
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Foundation.stenv
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Safe.stenv
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Standard.stenv
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/StepTalk.stenv
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/SymbolicSelectors.stenv
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/ScriptingInfo.plist
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/StepTalk
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/libStepTalk.so
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/libStepTalk.so.%%MAJORVERSION%%
-Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/libStepTalk.so.%%VERSION%%
-Local/Library/Frameworks/StepTalk.framework/Versions/Current
-Local/Library/Frameworks/StepTalk.framework/libStepTalk.so
-Local/Library/Headers/StepTalk
-Local/Library/Libraries/libStepTalk.so
-Local/Library/Libraries/libStepTalk.so.%%MAJORVERSION%%
-Local/Library/Libraries/libStepTalk.so.%%VERSION%%
-Local/Library/StepTalk/Finders/ApplicationFinder.bundle/ApplicationFinder
-Local/Library/StepTalk/Finders/ApplicationFinder.bundle/Resources/Info-gnustep.plist
-Local/Library/StepTalk/Finders/ApplicationFinder.bundle/stamp.make
-Local/Library/StepTalk/Finders/DistributedFinder.bundle/DistributedFinder
-Local/Library/StepTalk/Finders/DistributedFinder.bundle/Resources/Info-gnustep.plist
-Local/Library/StepTalk/Finders/DistributedFinder.bundle/stamp.make
-Local/Library/StepTalk/Languages/Smalltalk.stlanguage/Resources/Info-gnustep.plist
-Local/Library/StepTalk/Languages/Smalltalk.stlanguage/Smalltalk
-Local/Library/StepTalk/Languages/Smalltalk.stlanguage/stamp.make
-Local/Library/StepTalk/Modules/AppKit.bundle/AppKit
-Local/Library/StepTalk/Modules/AppKit.bundle/Resources/Info-gnustep.plist
-Local/Library/StepTalk/Modules/AppKit.bundle/Resources/ScriptingInfo.plist
-Local/Library/StepTalk/Modules/AppKit.bundle/stamp.make
-Local/Library/StepTalk/Modules/Foundation.bundle/Foundation
-Local/Library/StepTalk/Modules/Foundation.bundle/Resources/Info-gnustep.plist
-Local/Library/StepTalk/Modules/Foundation.bundle/Resources/ScriptingInfo.plist
-Local/Library/StepTalk/Modules/Foundation.bundle/stamp.make
-%%WITH_GDL2%%Local/Library/StepTalk/Modules/GDL2.bundle/GDL2
-%%WITH_GDL2%%Local/Library/StepTalk/Modules/GDL2.bundle/Resources/Info-gnustep.plist
-%%WITH_GDL2%%Local/Library/StepTalk/Modules/GDL2.bundle/Resources/ScriptingInfo.plist
-%%WITH_GDL2%%Local/Library/StepTalk/Modules/GDL2.bundle/stamp.make
-Local/Library/StepTalk/Modules/ObjectiveC.bundle/ObjectiveC
-Local/Library/StepTalk/Modules/ObjectiveC.bundle/Resources/Info-gnustep.plist
-Local/Library/StepTalk/Modules/ObjectiveC.bundle/Resources/ScriptingInfo.plist
-Local/Library/StepTalk/Modules/ObjectiveC.bundle/stamp.make
-Local/Library/StepTalk/Modules/SimpleTranscript.bundle/Resources/Info-gnustep.plist
-Local/Library/StepTalk/Modules/SimpleTranscript.bundle/Resources/ScriptingInfo.plist
-Local/Library/StepTalk/Modules/SimpleTranscript.bundle/SimpleTranscript
-Local/Library/StepTalk/Modules/SimpleTranscript.bundle/stamp.make
-Local/Tools/stenvironment
-Local/Tools/stexec
-@dirrm Local/Library/StepTalk/Modules/SimpleTranscript.bundle/Resources
-@dirrm Local/Library/StepTalk/Modules/SimpleTranscript.bundle
-@dirrm Local/Library/StepTalk/Modules/ObjectiveC.bundle/Resources
-@dirrm Local/Library/StepTalk/Modules/ObjectiveC.bundle
-%%WITH_GDL2%%@dirrm Local/Library/StepTalk/Modules/GDL2.bundle/Resources
-%%WITH_GDL2%%@dirrm Local/Library/StepTalk/Modules/GDL2.bundle
-@dirrm Local/Library/StepTalk/Modules/Foundation.bundle/Resources
-@dirrm Local/Library/StepTalk/Modules/Foundation.bundle
-@dirrm Local/Library/StepTalk/Modules/AppKit.bundle/Resources
-@dirrm Local/Library/StepTalk/Modules/AppKit.bundle
-@dirrm Local/Library/StepTalk/Modules
-@dirrm Local/Library/StepTalk/Languages/Smalltalk.stlanguage/Resources
-@dirrm Local/Library/StepTalk/Languages/Smalltalk.stlanguage
-@dirrm Local/Library/StepTalk/Languages
-@dirrm Local/Library/StepTalk/Finders/DistributedFinder.bundle/Resources
-@dirrm Local/Library/StepTalk/Finders/DistributedFinder.bundle
-@dirrm Local/Library/StepTalk/Finders/ApplicationFinder.bundle/Resources
-@dirrm Local/Library/StepTalk/Finders/ApplicationFinder.bundle
-@dirrm Local/Library/StepTalk/Finders
-@dirrm Local/Library/StepTalk
-@dirrm Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments
-@dirrm Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/StepTalk.framework/Versions
-@dirrm Local/Library/Frameworks/StepTalk.framework
-@dirrm Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/TranscriptWindow.gorm
-@dirrm Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptsPanel.gorm
-@dirrm Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptingMenu.gorm
-@dirrm Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj
-@dirrm Local/Library/Bundles/ApplicationScripting.bundle/Resources
-@dirrm Local/Library/Bundles/ApplicationScripting.bundle
+GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/ApplicationScripting
+GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptingMenu.gorm/data.classes
+GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptingMenu.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptsPanel.gorm/data.classes
+GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptsPanel.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/TranscriptWindow.gorm/data.classes
+GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/TranscriptWindow.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/stamp.make
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Headers
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Resources
+GNUstep/Local/Library/Frameworks/StepTalk.framework/StepTalk
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSInvocation+additions.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSObject+additions.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STActor.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STBundleInfo.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STContext.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STConversation.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STEngine.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STEnvironment.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STEnvironmentDescription.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STExterns.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STFileScript.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STFunctions.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STLanguageManager.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STMethod.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STObjCRuntime.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STObjectReference.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STRemoteConversation.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STScript.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STScriptObject.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STScripting.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STScriptsManager.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STSelector.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/STUndefinedObject.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers/StepTalk.h
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/AppKit.stenv
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Common.stenv
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Distributed.stenv
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Foundation-operators.stenv
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Foundation.stenv
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Safe.stenv
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/Standard.stenv
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/StepTalk.stenv
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments/SymbolicSelectors.stenv
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/ScriptingInfo.plist
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/StepTalk
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/libStepTalk.so
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/libStepTalk.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/libStepTalk.so.%%VERSION%%
+GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/StepTalk.framework/libStepTalk.so
+GNUstep/Local/Library/Headers/StepTalk
+GNUstep/Local/Library/Libraries/libStepTalk.so
+GNUstep/Local/Library/Libraries/libStepTalk.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Libraries/libStepTalk.so.%%VERSION%%
+GNUstep/Local/Library/StepTalk/Finders/ApplicationFinder.bundle/ApplicationFinder
+GNUstep/Local/Library/StepTalk/Finders/ApplicationFinder.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/StepTalk/Finders/ApplicationFinder.bundle/stamp.make
+GNUstep/Local/Library/StepTalk/Finders/DistributedFinder.bundle/DistributedFinder
+GNUstep/Local/Library/StepTalk/Finders/DistributedFinder.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/StepTalk/Finders/DistributedFinder.bundle/stamp.make
+GNUstep/Local/Library/StepTalk/Languages/Smalltalk.stlanguage/Resources/Info-gnustep.plist
+GNUstep/Local/Library/StepTalk/Languages/Smalltalk.stlanguage/Smalltalk
+GNUstep/Local/Library/StepTalk/Languages/Smalltalk.stlanguage/stamp.make
+GNUstep/Local/Library/StepTalk/Modules/AppKit.bundle/AppKit
+GNUstep/Local/Library/StepTalk/Modules/AppKit.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/StepTalk/Modules/AppKit.bundle/Resources/ScriptingInfo.plist
+GNUstep/Local/Library/StepTalk/Modules/AppKit.bundle/stamp.make
+GNUstep/Local/Library/StepTalk/Modules/Foundation.bundle/Foundation
+GNUstep/Local/Library/StepTalk/Modules/Foundation.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/StepTalk/Modules/Foundation.bundle/Resources/ScriptingInfo.plist
+GNUstep/Local/Library/StepTalk/Modules/Foundation.bundle/stamp.make
+%%WITH_GDL2%%GNUstep/Local/Library/StepTalk/Modules/GDL2.bundle/GDL2
+%%WITH_GDL2%%GNUstep/Local/Library/StepTalk/Modules/GDL2.bundle/Resources/Info-gnustep.plist
+%%WITH_GDL2%%GNUstep/Local/Library/StepTalk/Modules/GDL2.bundle/Resources/ScriptingInfo.plist
+%%WITH_GDL2%%GNUstep/Local/Library/StepTalk/Modules/GDL2.bundle/stamp.make
+GNUstep/Local/Library/StepTalk/Modules/ObjectiveC.bundle/ObjectiveC
+GNUstep/Local/Library/StepTalk/Modules/ObjectiveC.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/StepTalk/Modules/ObjectiveC.bundle/Resources/ScriptingInfo.plist
+GNUstep/Local/Library/StepTalk/Modules/ObjectiveC.bundle/stamp.make
+GNUstep/Local/Library/StepTalk/Modules/SimpleTranscript.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/StepTalk/Modules/SimpleTranscript.bundle/Resources/ScriptingInfo.plist
+GNUstep/Local/Library/StepTalk/Modules/SimpleTranscript.bundle/SimpleTranscript
+GNUstep/Local/Library/StepTalk/Modules/SimpleTranscript.bundle/stamp.make
+GNUstep/Local/Tools/stenvironment
+GNUstep/Local/Tools/stexec
+@dirrm GNUstep/Local/Library/StepTalk/Modules/SimpleTranscript.bundle/Resources
+@dirrm GNUstep/Local/Library/StepTalk/Modules/SimpleTranscript.bundle
+@dirrm GNUstep/Local/Library/StepTalk/Modules/ObjectiveC.bundle/Resources
+@dirrm GNUstep/Local/Library/StepTalk/Modules/ObjectiveC.bundle
+%%WITH_GDL2%%@dirrm GNUstep/Local/Library/StepTalk/Modules/GDL2.bundle/Resources
+%%WITH_GDL2%%@dirrm GNUstep/Local/Library/StepTalk/Modules/GDL2.bundle
+@dirrm GNUstep/Local/Library/StepTalk/Modules/Foundation.bundle/Resources
+@dirrm GNUstep/Local/Library/StepTalk/Modules/Foundation.bundle
+@dirrm GNUstep/Local/Library/StepTalk/Modules/AppKit.bundle/Resources
+@dirrm GNUstep/Local/Library/StepTalk/Modules/AppKit.bundle
+@dirrm GNUstep/Local/Library/StepTalk/Modules
+@dirrm GNUstep/Local/Library/StepTalk/Languages/Smalltalk.stlanguage/Resources
+@dirrm GNUstep/Local/Library/StepTalk/Languages/Smalltalk.stlanguage
+@dirrm GNUstep/Local/Library/StepTalk/Languages
+@dirrm GNUstep/Local/Library/StepTalk/Finders/DistributedFinder.bundle/Resources
+@dirrm GNUstep/Local/Library/StepTalk/Finders/DistributedFinder.bundle
+@dirrm GNUstep/Local/Library/StepTalk/Finders/ApplicationFinder.bundle/Resources
+@dirrm GNUstep/Local/Library/StepTalk/Finders/ApplicationFinder.bundle
+@dirrm GNUstep/Local/Library/StepTalk/Finders
+@dirrm GNUstep/Local/Library/StepTalk
+@dirrm GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources/Environments
+@dirrm GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/StepTalk.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/StepTalk.framework
+@dirrm GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/TranscriptWindow.gorm
+@dirrm GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptsPanel.gorm
+@dirrm GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj/ScriptingMenu.gorm
+@dirrm GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources/English.lproj
+@dirrm GNUstep/Local/Library/Bundles/ApplicationScripting.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/ApplicationScripting.bundle

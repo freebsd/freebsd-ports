@@ -1,38 +1,38 @@
-System/Applications/TextEdit.app/Resources/Edit.tiff
-System/Applications/TextEdit.app/Resources/EditTitle.tiff
-System/Applications/TextEdit.app/Resources/Encodings.txt
-System/Applications/TextEdit.app/Resources/English.lproj/Document.gorm/data.classes
-System/Applications/TextEdit.app/Resources/English.lproj/Document.gorm/objects.gorm
-System/Applications/TextEdit.app/Resources/English.lproj/Edit.gorm/data.classes
-System/Applications/TextEdit.app/Resources/English.lproj/Edit.gorm/objects.gorm
-System/Applications/TextEdit.app/Resources/English.lproj/EncodingAccessory.gorm/data.classes
-System/Applications/TextEdit.app/Resources/English.lproj/EncodingAccessory.gorm/objects.gorm
-System/Applications/TextEdit.app/Resources/English.lproj/FindPanel.gorm/data.classes
-System/Applications/TextEdit.app/Resources/English.lproj/FindPanel.gorm/objects.gorm
-System/Applications/TextEdit.app/Resources/English.lproj/FindPanel.strings
-System/Applications/TextEdit.app/Resources/English.lproj/Info.gorm/data.classes
-System/Applications/TextEdit.app/Resources/English.lproj/Info.gorm/objects.gorm
-System/Applications/TextEdit.app/Resources/English.lproj/Localizable.strings
-System/Applications/TextEdit.app/Resources/English.lproj/Preferences.gorm/data.classes
-System/Applications/TextEdit.app/Resources/English.lproj/Preferences.gorm/objects.gorm
-System/Applications/TextEdit.app/Resources/German.lproj/Localizable.strings
-System/Applications/TextEdit.app/Resources/Info-gnustep.plist
-System/Applications/TextEdit.app/Resources/Russian.lproj/Localizable.strings
-System/Applications/TextEdit.app/Resources/TextEdit.desktop
-System/Applications/TextEdit.app/Resources/rtf.tiff
-System/Applications/TextEdit.app/Resources/rtfd.tiff
-System/Applications/TextEdit.app/Resources/text.tiff
-System/Applications/TextEdit.app/TextEdit
-System/Applications/TextEdit.app/stamp.make
-System/Tools/TextEdit
-@dirrm System/Applications/TextEdit.app/Resources/Russian.lproj
-@dirrm System/Applications/TextEdit.app/Resources/German.lproj
-@dirrm System/Applications/TextEdit.app/Resources/English.lproj/Preferences.gorm
-@dirrm System/Applications/TextEdit.app/Resources/English.lproj/Info.gorm
-@dirrm System/Applications/TextEdit.app/Resources/English.lproj/FindPanel.gorm
-@dirrm System/Applications/TextEdit.app/Resources/English.lproj/EncodingAccessory.gorm
-@dirrm System/Applications/TextEdit.app/Resources/English.lproj/Edit.gorm
-@dirrm System/Applications/TextEdit.app/Resources/English.lproj/Document.gorm
-@dirrm System/Applications/TextEdit.app/Resources/English.lproj
-@dirrm System/Applications/TextEdit.app/Resources
-@dirrm System/Applications/TextEdit.app
+GNUstep/System/Applications/TextEdit.app/Resources/Edit.tiff
+GNUstep/System/Applications/TextEdit.app/Resources/EditTitle.tiff
+GNUstep/System/Applications/TextEdit.app/Resources/Encodings.txt
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Document.gorm/data.classes
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Document.gorm/objects.gorm
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Edit.gorm/data.classes
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Edit.gorm/objects.gorm
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/EncodingAccessory.gorm/data.classes
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/EncodingAccessory.gorm/objects.gorm
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/FindPanel.gorm/data.classes
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/FindPanel.gorm/objects.gorm
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/FindPanel.strings
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Info.gorm/data.classes
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Info.gorm/objects.gorm
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Localizable.strings
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Preferences.gorm/data.classes
+GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Preferences.gorm/objects.gorm
+GNUstep/System/Applications/TextEdit.app/Resources/German.lproj/Localizable.strings
+GNUstep/System/Applications/TextEdit.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/TextEdit.app/Resources/Russian.lproj/Localizable.strings
+GNUstep/System/Applications/TextEdit.app/Resources/TextEdit.desktop
+GNUstep/System/Applications/TextEdit.app/Resources/rtf.tiff
+GNUstep/System/Applications/TextEdit.app/Resources/rtfd.tiff
+GNUstep/System/Applications/TextEdit.app/Resources/text.tiff
+GNUstep/System/Applications/TextEdit.app/TextEdit
+GNUstep/System/Applications/TextEdit.app/stamp.make
+GNUstep/System/Tools/TextEdit
+@dirrm GNUstep/System/Applications/TextEdit.app/Resources/Russian.lproj
+@dirrm GNUstep/System/Applications/TextEdit.app/Resources/German.lproj
+@dirrm GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Preferences.gorm
+@dirrm GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Info.gorm
+@dirrm GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/FindPanel.gorm
+@dirrm GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/EncodingAccessory.gorm
+@dirrm GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Edit.gorm
+@dirrm GNUstep/System/Applications/TextEdit.app/Resources/English.lproj/Document.gorm
+@dirrm GNUstep/System/Applications/TextEdit.app/Resources/English.lproj
+@dirrm GNUstep/System/Applications/TextEdit.app/Resources
+@dirrm GNUstep/System/Applications/TextEdit.app

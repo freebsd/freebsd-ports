@@ -1,163 +1,163 @@
-System/Applications/MDFinder.app/MDFinder
-System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/data.classes
-System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/data.info
-System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
-System/Applications/MDFinder.app/Resources/Info-gnustep.plist
-System/Applications/MDFinder.app/Resources/MDFinder.desktop
-System/Applications/MDFinder.app/Resources/MDFinder.tiff
-System/Applications/MDFinder.app/Resources/SavedSearch.tiff
-System/Applications/MDFinder.app/stamp.make
-System/Library/Bundles/AbiwordExtractor.extr/AbiwordExtractor
-System/Library/Bundles/AbiwordExtractor.extr/Resources/Info-gnustep.plist
-System/Library/Bundles/AbiwordExtractor.extr/stamp.make
-System/Library/Bundles/AppExtractor.extr/AppExtractor
-System/Library/Bundles/AppExtractor.extr/Resources/Info-gnustep.plist
-System/Library/Bundles/AppExtractor.extr/stamp.make
-System/Library/Bundles/HtmlExtractor.extr/HtmlExtractor
-System/Library/Bundles/HtmlExtractor.extr/Resources/Info-gnustep.plist
-System/Library/Bundles/HtmlExtractor.extr/stamp.make
-System/Library/Bundles/JpegExtractor.extr/JpegExtractor
-System/Library/Bundles/JpegExtractor.extr/Resources/Info-gnustep.plist
-System/Library/Bundles/JpegExtractor.extr/stamp.make
-System/Library/Bundles/MDIndexing.prefPane/MDIndexing
-System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/data.classes
-System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/data.info
-System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/objects.gorm
-System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm/data.classes
-System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm/objects.gorm
-System/Library/Bundles/MDIndexing.prefPane/Resources/Info-gnustep.plist
-System/Library/Bundles/MDIndexing.prefPane/Resources/Info.plist
-System/Library/Bundles/MDIndexing.prefPane/Resources/MDIndexing.tiff
-System/Library/Bundles/MDIndexing.prefPane/Resources/applications.tiff
-System/Library/Bundles/MDIndexing.prefPane/Resources/categories.plist
-System/Library/Bundles/MDIndexing.prefPane/Resources/documents.tiff
-System/Library/Bundles/MDIndexing.prefPane/Resources/folders.tiff
-System/Library/Bundles/MDIndexing.prefPane/Resources/images.tiff
-System/Library/Bundles/MDIndexing.prefPane/Resources/movies.tiff
-System/Library/Bundles/MDIndexing.prefPane/Resources/music.tiff
-System/Library/Bundles/MDIndexing.prefPane/Resources/pdfdocs.tiff
-System/Library/Bundles/MDIndexing.prefPane/Resources/plainfiles.tiff
-System/Library/Bundles/MDIndexing.prefPane/Resources/sources.tiff
-System/Library/Bundles/MDIndexing.prefPane/stamp.make
-System/Library/Bundles/OpenOfficeExtractor.extr/OpenOfficeExtractor
-System/Library/Bundles/OpenOfficeExtractor.extr/Resources/Info-gnustep.plist
-System/Library/Bundles/OpenOfficeExtractor.extr/stamp.make
-System/Library/Bundles/RtfExtractor.extr/Resources/Info-gnustep.plist
-System/Library/Bundles/RtfExtractor.extr/RtfExtractor
-System/Library/Bundles/RtfExtractor.extr/stamp.make
-System/Library/Bundles/TextExtractor.extr/Resources/Info-gnustep.plist
-System/Library/Bundles/TextExtractor.extr/TextExtractor
-System/Library/Bundles/TextExtractor.extr/stamp.make
-System/Library/Bundles/XmlExtractor.extr/Resources/Info-gnustep.plist
-System/Library/Bundles/XmlExtractor.extr/XmlExtractor
-System/Library/Bundles/XmlExtractor.extr/stamp.make
-System/Library/Frameworks/MDKit.framework/Headers
-System/Library/Frameworks/MDKit.framework/MDKit
-System/Library/Frameworks/MDKit.framework/Resources
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttribute.h
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttributeChooser.h
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttributeEditor.h
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttributeView.h
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKQuery.h
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKQueryManager.h
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKWindow.h
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKit.h
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/SQLite.h
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/MDKit
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/MDFinder.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/add.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-%%MAJORVERSION%%.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-1.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-2.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-3.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-4.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-5.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-6.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-7.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/attributes.plist
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/casesens.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/remove.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/switchOff.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/switchOn.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/whiteArrowDown.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/whiteArrowRight.tiff
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/libMDKit.so
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/libMDKit.so.%%MAJORVERSION%%
-System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/libMDKit.so.%%MAJORVERSION%%.1.%%MAJORVERSION%%
-System/Library/Frameworks/MDKit.framework/Versions/Current
-System/Library/Frameworks/MDKit.framework/libMDKit.so
-System/Library/Headers/MDKit
-System/Library/Libraries/libMDKit.so
-System/Library/Libraries/libMDKit.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libMDKit.so.%%LIBVERSION%%
-System/Tools/MDFinder
-System/Tools/gmds
-System/Tools/mdextractor
-System/Tools/mdfind
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%
-@dirrm System/Library/Frameworks/MDKit.framework/Versions
-@dirrm System/Library/Frameworks/MDKit.framework
-@dirrm System/Library/Bundles/XmlExtractor.extr/Resources
-@dirrm System/Library/Bundles/XmlExtractor.extr
-@dirrm System/Library/Bundles/TextExtractor.extr/Resources
-@dirrm System/Library/Bundles/TextExtractor.extr
-@dirrm System/Library/Bundles/RtfExtractor.extr/Resources
-@dirrm System/Library/Bundles/RtfExtractor.extr
-@dirrm System/Library/Bundles/OpenOfficeExtractor.extr/Resources
-@dirrm System/Library/Bundles/OpenOfficeExtractor.extr
-@dirrm System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm
-@dirrm System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm
-@dirrm System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj
-@dirrm System/Library/Bundles/MDIndexing.prefPane/Resources
-@dirrm System/Library/Bundles/MDIndexing.prefPane
-@dirrm System/Library/Bundles/JpegExtractor.extr/Resources
-@dirrm System/Library/Bundles/JpegExtractor.extr
-@dirrm System/Library/Bundles/HtmlExtractor.extr/Resources
-@dirrm System/Library/Bundles/HtmlExtractor.extr
-@dirrm System/Library/Bundles/AppExtractor.extr/Resources
-@dirrm System/Library/Bundles/AppExtractor.extr
-@dirrm System/Library/Bundles/AbiwordExtractor.extr/Resources
-@dirrm System/Library/Bundles/AbiwordExtractor.extr
-@dirrm System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm
-@dirrm System/Applications/MDFinder.app/Resources/English.lproj
-@dirrm System/Applications/MDFinder.app/Resources
-@dirrm System/Applications/MDFinder.app
+GNUstep/System/Applications/MDFinder.app/MDFinder
+GNUstep/System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/data.classes
+GNUstep/System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/data.info
+GNUstep/System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
+GNUstep/System/Applications/MDFinder.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/MDFinder.app/Resources/MDFinder.desktop
+GNUstep/System/Applications/MDFinder.app/Resources/MDFinder.tiff
+GNUstep/System/Applications/MDFinder.app/Resources/SavedSearch.tiff
+GNUstep/System/Applications/MDFinder.app/stamp.make
+GNUstep/System/Library/Bundles/AbiwordExtractor.extr/AbiwordExtractor
+GNUstep/System/Library/Bundles/AbiwordExtractor.extr/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/AbiwordExtractor.extr/stamp.make
+GNUstep/System/Library/Bundles/AppExtractor.extr/AppExtractor
+GNUstep/System/Library/Bundles/AppExtractor.extr/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/AppExtractor.extr/stamp.make
+GNUstep/System/Library/Bundles/HtmlExtractor.extr/HtmlExtractor
+GNUstep/System/Library/Bundles/HtmlExtractor.extr/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/HtmlExtractor.extr/stamp.make
+GNUstep/System/Library/Bundles/JpegExtractor.extr/JpegExtractor
+GNUstep/System/Library/Bundles/JpegExtractor.extr/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/JpegExtractor.extr/stamp.make
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/MDIndexing
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/data.classes
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/data.info
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/objects.gorm
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm/data.classes
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm/objects.gorm
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/Info.plist
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/MDIndexing.tiff
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/applications.tiff
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/categories.plist
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/documents.tiff
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/folders.tiff
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/images.tiff
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/movies.tiff
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/music.tiff
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/pdfdocs.tiff
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/plainfiles.tiff
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/sources.tiff
+GNUstep/System/Library/Bundles/MDIndexing.prefPane/stamp.make
+GNUstep/System/Library/Bundles/OpenOfficeExtractor.extr/OpenOfficeExtractor
+GNUstep/System/Library/Bundles/OpenOfficeExtractor.extr/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/OpenOfficeExtractor.extr/stamp.make
+GNUstep/System/Library/Bundles/RtfExtractor.extr/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/RtfExtractor.extr/RtfExtractor
+GNUstep/System/Library/Bundles/RtfExtractor.extr/stamp.make
+GNUstep/System/Library/Bundles/TextExtractor.extr/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/TextExtractor.extr/TextExtractor
+GNUstep/System/Library/Bundles/TextExtractor.extr/stamp.make
+GNUstep/System/Library/Bundles/XmlExtractor.extr/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/XmlExtractor.extr/XmlExtractor
+GNUstep/System/Library/Bundles/XmlExtractor.extr/stamp.make
+GNUstep/System/Library/Frameworks/MDKit.framework/Headers
+GNUstep/System/Library/Frameworks/MDKit.framework/MDKit
+GNUstep/System/Library/Frameworks/MDKit.framework/Resources
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttribute.h
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttributeChooser.h
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttributeEditor.h
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttributeView.h
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKQuery.h
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKQueryManager.h
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKWindow.h
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKit.h
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/SQLite.h
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/MDKit
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/Help.rtfd/TXT.rtf
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/Help.rtfd/dummy.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm/data.classes
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm/data.info
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm/data.classes
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm/data.info
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm/data.classes
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm/data.info
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm/data.classes
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm/data.info
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm/data.classes
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm/data.info
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm/data.classes
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm/data.info
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm/data.classes
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm/data.info
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm/data.classes
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm/data.info
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/MDFinder.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/add.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-%%MAJORVERSION%%.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-1.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-2.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-3.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-4.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-5.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-6.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-7.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/attributes.plist
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/casesens.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/remove.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/switchOff.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/switchOn.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/whiteArrowDown.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/whiteArrowRight.tiff
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/libMDKit.so
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/libMDKit.so.%%MAJORVERSION%%
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/libMDKit.so.%%MAJORVERSION%%.1.%%MAJORVERSION%%
+GNUstep/System/Library/Frameworks/MDKit.framework/Versions/Current
+GNUstep/System/Library/Frameworks/MDKit.framework/libMDKit.so
+GNUstep/System/Library/Headers/MDKit
+GNUstep/System/Library/Libraries/libMDKit.so
+GNUstep/System/Library/Libraries/libMDKit.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libMDKit.so.%%LIBVERSION%%
+GNUstep/System/Tools/MDFinder
+GNUstep/System/Tools/gmds
+GNUstep/System/Tools/mdextractor
+GNUstep/System/Tools/mdfind
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/Help.rtfd
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework/Versions
+@dirrm GNUstep/System/Library/Frameworks/MDKit.framework
+@dirrm GNUstep/System/Library/Bundles/XmlExtractor.extr/Resources
+@dirrm GNUstep/System/Library/Bundles/XmlExtractor.extr
+@dirrm GNUstep/System/Library/Bundles/TextExtractor.extr/Resources
+@dirrm GNUstep/System/Library/Bundles/TextExtractor.extr
+@dirrm GNUstep/System/Library/Bundles/RtfExtractor.extr/Resources
+@dirrm GNUstep/System/Library/Bundles/RtfExtractor.extr
+@dirrm GNUstep/System/Library/Bundles/OpenOfficeExtractor.extr/Resources
+@dirrm GNUstep/System/Library/Bundles/OpenOfficeExtractor.extr
+@dirrm GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm
+@dirrm GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm
+@dirrm GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/MDIndexing.prefPane/Resources
+@dirrm GNUstep/System/Library/Bundles/MDIndexing.prefPane
+@dirrm GNUstep/System/Library/Bundles/JpegExtractor.extr/Resources
+@dirrm GNUstep/System/Library/Bundles/JpegExtractor.extr
+@dirrm GNUstep/System/Library/Bundles/HtmlExtractor.extr/Resources
+@dirrm GNUstep/System/Library/Bundles/HtmlExtractor.extr
+@dirrm GNUstep/System/Library/Bundles/AppExtractor.extr/Resources
+@dirrm GNUstep/System/Library/Bundles/AppExtractor.extr
+@dirrm GNUstep/System/Library/Bundles/AbiwordExtractor.extr/Resources
+@dirrm GNUstep/System/Library/Bundles/AbiwordExtractor.extr
+@dirrm GNUstep/System/Applications/MDFinder.app/Resources/English.lproj/StartAppWin.gorm
+@dirrm GNUstep/System/Applications/MDFinder.app/Resources/English.lproj
+@dirrm GNUstep/System/Applications/MDFinder.app/Resources
+@dirrm GNUstep/System/Applications/MDFinder.app

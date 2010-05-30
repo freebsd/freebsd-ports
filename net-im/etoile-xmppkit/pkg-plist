@@ -1,54 +1,54 @@
-Local/Library/Frameworks/XMPPKit.framework/Headers
-Local/Library/Frameworks/XMPPKit.framework/Resources
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ChatLog.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CompareHack.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Conversation.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/DefaultHandler.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/DiscoInfo.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/DiscoItems.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Dispatcher.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/GroupChat.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Iq.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/IqStanzaFactory.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/JID.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/JabberIdentity.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/JabberPerson.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/JabberResource.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/JabberRootIdentity.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Message.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MessageStanzaFactory.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSData+Base64.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Presence.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PresenceStanzaFactory.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Query_jabber_iq_roster.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Roster.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RosterGroup.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ServiceDiscovery.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Stanza.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/StanzaFactory.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/StreamFeatures.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Timestamp.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XMPPAccount.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XMPPConnection.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XMPPError.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XMPPvCard.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/jabber_iq_roster.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/query_jabber_iq_auth.h
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/XMPPKit
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/libXMPPKit.so
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/libXMPPKit.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/libXMPPKit.so.%%LIBVERSION%%
-Local/Library/Frameworks/XMPPKit.framework/Versions/Current
-Local/Library/Frameworks/XMPPKit.framework/XMPPKit
-Local/Library/Frameworks/XMPPKit.framework/XMPPKit.framework
-Local/Library/Frameworks/XMPPKit.framework/libXMPPKit.so
-Local/Library/Headers/XMPPKit
-Local/Library/Libraries/libXMPPKit.so
-Local/Library/Libraries/libXMPPKit.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libXMPPKit.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/XMPPKit.framework/Versions
-@dirrm Local/Library/Frameworks/XMPPKit.framework
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Headers
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Resources
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ChatLog.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CompareHack.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Conversation.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/DefaultHandler.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/DiscoInfo.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/DiscoItems.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Dispatcher.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/GroupChat.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Iq.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/IqStanzaFactory.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/JID.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/JabberIdentity.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/JabberPerson.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/JabberResource.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/JabberRootIdentity.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Message.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MessageStanzaFactory.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSData+Base64.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Presence.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/PresenceStanzaFactory.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Query_jabber_iq_roster.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Roster.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/RosterGroup.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ServiceDiscovery.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Stanza.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/StanzaFactory.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/StreamFeatures.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Timestamp.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XMPPAccount.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XMPPConnection.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XMPPError.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/XMPPvCard.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/jabber_iq_roster.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/query_jabber_iq_auth.h
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/XMPPKit
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/libXMPPKit.so
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/libXMPPKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/libXMPPKit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/XMPPKit
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/XMPPKit.framework
+GNUstep/Local/Library/Frameworks/XMPPKit.framework/libXMPPKit.so
+GNUstep/Local/Library/Headers/XMPPKit
+GNUstep/Local/Library/Libraries/libXMPPKit.so
+GNUstep/Local/Library/Libraries/libXMPPKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libXMPPKit.so.%%LIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/XMPPKit.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/XMPPKit.framework

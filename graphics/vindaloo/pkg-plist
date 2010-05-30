@@ -1,29 +1,29 @@
-Local/Applications/Vindaloo.app/Resources/English.lproj/Document.gorm/data.classes
-Local/Applications/Vindaloo.app/Resources/English.lproj/Document.gorm/data.info
-Local/Applications/Vindaloo.app/Resources/English.lproj/Document.gorm/objects.gorm
-Local/Applications/Vindaloo.app/Resources/English.lproj/Main.gorm/data.classes
-Local/Applications/Vindaloo.app/Resources/English.lproj/Main.gorm/data.info
-Local/Applications/Vindaloo.app/Resources/English.lproj/Main.gorm/objects.gorm
-Local/Applications/Vindaloo.app/Resources/First.png
-Local/Applications/Vindaloo.app/Resources/FitHeight.png
-Local/Applications/Vindaloo.app/Resources/FitHeightOn.png
-Local/Applications/Vindaloo.app/Resources/FitPage.png
-Local/Applications/Vindaloo.app/Resources/FitPageOn.png
-Local/Applications/Vindaloo.app/Resources/FitWidth.png
-Local/Applications/Vindaloo.app/Resources/FitWidthOn.png
-Local/Applications/Vindaloo.app/Resources/Info-gnustep.plist
-Local/Applications/Vindaloo.app/Resources/Last.png
-Local/Applications/Vindaloo.app/Resources/Next.png
-Local/Applications/Vindaloo.app/Resources/Previous.png
-Local/Applications/Vindaloo.app/Resources/Vindaloo.desktop
-Local/Applications/Vindaloo.app/Resources/Vindaloo.tif
-Local/Applications/Vindaloo.app/Resources/ZoomIn.png
-Local/Applications/Vindaloo.app/Resources/ZoomOut.png
-Local/Applications/Vindaloo.app/Vindaloo
-Local/Applications/Vindaloo.app/stamp.make
-Local/Tools/Vindaloo
-@dirrm Local/Applications/Vindaloo.app/Resources/English.lproj/Main.gorm
-@dirrm Local/Applications/Vindaloo.app/Resources/English.lproj/Document.gorm
-@dirrm Local/Applications/Vindaloo.app/Resources/English.lproj
-@dirrm Local/Applications/Vindaloo.app/Resources
-@dirrm Local/Applications/Vindaloo.app
+GNUstep/Local/Applications/Vindaloo.app/Resources/English.lproj/Document.gorm/data.classes
+GNUstep/Local/Applications/Vindaloo.app/Resources/English.lproj/Document.gorm/data.info
+GNUstep/Local/Applications/Vindaloo.app/Resources/English.lproj/Document.gorm/objects.gorm
+GNUstep/Local/Applications/Vindaloo.app/Resources/English.lproj/Main.gorm/data.classes
+GNUstep/Local/Applications/Vindaloo.app/Resources/English.lproj/Main.gorm/data.info
+GNUstep/Local/Applications/Vindaloo.app/Resources/English.lproj/Main.gorm/objects.gorm
+GNUstep/Local/Applications/Vindaloo.app/Resources/First.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/FitHeight.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/FitHeightOn.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/FitPage.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/FitPageOn.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/FitWidth.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/FitWidthOn.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Vindaloo.app/Resources/Last.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/Next.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/Previous.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/Vindaloo.desktop
+GNUstep/Local/Applications/Vindaloo.app/Resources/Vindaloo.tif
+GNUstep/Local/Applications/Vindaloo.app/Resources/ZoomIn.png
+GNUstep/Local/Applications/Vindaloo.app/Resources/ZoomOut.png
+GNUstep/Local/Applications/Vindaloo.app/Vindaloo
+GNUstep/Local/Applications/Vindaloo.app/stamp.make
+GNUstep/Local/Tools/Vindaloo
+@dirrm GNUstep/Local/Applications/Vindaloo.app/Resources/English.lproj/Main.gorm
+@dirrm GNUstep/Local/Applications/Vindaloo.app/Resources/English.lproj/Document.gorm
+@dirrm GNUstep/Local/Applications/Vindaloo.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/Vindaloo.app/Resources
+@dirrm GNUstep/Local/Applications/Vindaloo.app

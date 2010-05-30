@@ -1,10 +1,10 @@
-Local/Applications/PhotoClip.app/PhotoClip
-Local/Applications/PhotoClip.app/Resources/Info-gnustep.plist
-Local/Applications/PhotoClip.app/Resources/KeyBindings.dict
-Local/Applications/PhotoClip.app/Resources/PhotoClip.desktop
-Local/Applications/PhotoClip.app/Resources/PhotoClip.tiff
-Local/Applications/PhotoClip.app/Resources/sample.jpg
-Local/Applications/PhotoClip.app/stamp.make
-Local/Tools/PhotoClip
-@dirrm Local/Applications/PhotoClip.app/Resources
-@dirrm Local/Applications/PhotoClip.app
+GNUstep/Local/Applications/PhotoClip.app/PhotoClip
+GNUstep/Local/Applications/PhotoClip.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/PhotoClip.app/Resources/KeyBindings.dict
+GNUstep/Local/Applications/PhotoClip.app/Resources/PhotoClip.desktop
+GNUstep/Local/Applications/PhotoClip.app/Resources/PhotoClip.tiff
+GNUstep/Local/Applications/PhotoClip.app/Resources/sample.jpg
+GNUstep/Local/Applications/PhotoClip.app/stamp.make
+GNUstep/Local/Tools/PhotoClip
+@dirrm GNUstep/Local/Applications/PhotoClip.app/Resources
+@dirrm GNUstep/Local/Applications/PhotoClip.app

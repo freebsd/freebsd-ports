@@ -20,7 +20,6 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
@@ -32,5 +31,8 @@ WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Frameworks/IconKit
 
 UNITKIT_PORT?=	devel/etoile-unitkit
+
+post-configure:
+	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make
 
 .include <bsd.port.mk>

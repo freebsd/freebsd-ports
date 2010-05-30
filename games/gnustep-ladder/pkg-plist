@@ -1,27 +1,27 @@
-Local/Applications/Ladder.app/Ladder
-Local/Applications/Ladder.app/Resources/COPYING.GPL
-Local/Applications/Ladder.app/Resources/Clock.gorm/data.classes
-Local/Applications/Ladder.app/Resources/Clock.gorm/data.info
-Local/Applications/Ladder.app/Resources/Clock.gorm/objects.gorm
-Local/Applications/Ladder.app/Resources/GoDocument.gorm/data.classes
-Local/Applications/Ladder.app/Resources/GoDocument.gorm/data.info
-Local/Applications/Ladder.app/Resources/GoDocument.gorm/objects.gorm
-Local/Applications/Ladder.app/Resources/Info-gnustep.plist
-Local/Applications/Ladder.app/Resources/Ladder.desktop
-Local/Applications/Ladder.app/Resources/Ladder.gorm/bigladder.png
-Local/Applications/Ladder.app/Resources/Ladder.gorm/data.classes
-Local/Applications/Ladder.app/Resources/Ladder.gorm/data.info
-Local/Applications/Ladder.app/Resources/Ladder.gorm/objects.gorm
-Local/Applications/Ladder.app/Resources/Ladder.tiff
-Local/Applications/Ladder.app/Resources/LadderInfo.plist
-Local/Applications/Ladder.app/Resources/machine_icon.png
-Local/Applications/Ladder.app/Resources/man_icon.png
-Local/Applications/Ladder.app/Resources/network_icon.png
-Local/Applications/Ladder.app/Resources/wood.jpg
-Local/Applications/Ladder.app/stamp.make
-Local/Tools/Ladder
-@dirrm Local/Applications/Ladder.app/Resources/Ladder.gorm
-@dirrm Local/Applications/Ladder.app/Resources/Clock.gorm
-@dirrm Local/Applications/Ladder.app/Resources/GoDocument.gorm
-@dirrm Local/Applications/Ladder.app/Resources
-@dirrm Local/Applications/Ladder.app
+GNUstep/Local/Applications/Ladder.app/Ladder
+GNUstep/Local/Applications/Ladder.app/Resources/COPYING.GPL
+GNUstep/Local/Applications/Ladder.app/Resources/Clock.gorm/data.classes
+GNUstep/Local/Applications/Ladder.app/Resources/Clock.gorm/data.info
+GNUstep/Local/Applications/Ladder.app/Resources/Clock.gorm/objects.gorm
+GNUstep/Local/Applications/Ladder.app/Resources/GoDocument.gorm/data.classes
+GNUstep/Local/Applications/Ladder.app/Resources/GoDocument.gorm/data.info
+GNUstep/Local/Applications/Ladder.app/Resources/GoDocument.gorm/objects.gorm
+GNUstep/Local/Applications/Ladder.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Ladder.app/Resources/Ladder.desktop
+GNUstep/Local/Applications/Ladder.app/Resources/Ladder.gorm/bigladder.png
+GNUstep/Local/Applications/Ladder.app/Resources/Ladder.gorm/data.classes
+GNUstep/Local/Applications/Ladder.app/Resources/Ladder.gorm/data.info
+GNUstep/Local/Applications/Ladder.app/Resources/Ladder.gorm/objects.gorm
+GNUstep/Local/Applications/Ladder.app/Resources/Ladder.tiff
+GNUstep/Local/Applications/Ladder.app/Resources/LadderInfo.plist
+GNUstep/Local/Applications/Ladder.app/Resources/machine_icon.png
+GNUstep/Local/Applications/Ladder.app/Resources/man_icon.png
+GNUstep/Local/Applications/Ladder.app/Resources/network_icon.png
+GNUstep/Local/Applications/Ladder.app/Resources/wood.jpg
+GNUstep/Local/Applications/Ladder.app/stamp.make
+GNUstep/Local/Tools/Ladder
+@dirrm GNUstep/Local/Applications/Ladder.app/Resources/Ladder.gorm
+@dirrm GNUstep/Local/Applications/Ladder.app/Resources/Clock.gorm
+@dirrm GNUstep/Local/Applications/Ladder.app/Resources/GoDocument.gorm
+@dirrm GNUstep/Local/Applications/Ladder.app/Resources
+@dirrm GNUstep/Local/Applications/Ladder.app

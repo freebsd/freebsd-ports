@@ -1,16 +1,16 @@
-System/Library/Headers/objc/hash.h
-System/Library/Headers/objc/objc-list.h
-System/Library/Headers/objc/sarray.h
-System/Library/Headers/objc/objc.h
-System/Library/Headers/objc/objc-api.h
-System/Library/Headers/objc/objc-decls.h
-System/Library/Headers/objc/NXConstStr.h
-System/Library/Headers/objc/Object.h
-System/Library/Headers/objc/Protocol.h
-System/Library/Headers/objc/encoding.h
-System/Library/Headers/objc/typedstream.h
-System/Library/Headers/objc/thr.h
-System/Library/Libraries/libobjc.so
-System/Library/Libraries/libobjc.so.%%MAJORVERSION%%
-System/Library/Libraries/libobjc.so.%%VERSION%%
-@dirrm System/Library/Headers/objc
+GNUstep/System/Library/Headers/objc/hash.h
+GNUstep/System/Library/Headers/objc/objc-list.h
+GNUstep/System/Library/Headers/objc/sarray.h
+GNUstep/System/Library/Headers/objc/objc.h
+GNUstep/System/Library/Headers/objc/objc-api.h
+GNUstep/System/Library/Headers/objc/objc-decls.h
+GNUstep/System/Library/Headers/objc/NXConstStr.h
+GNUstep/System/Library/Headers/objc/Object.h
+GNUstep/System/Library/Headers/objc/Protocol.h
+GNUstep/System/Library/Headers/objc/encoding.h
+GNUstep/System/Library/Headers/objc/typedstream.h
+GNUstep/System/Library/Headers/objc/thr.h
+GNUstep/System/Library/Libraries/libobjc.so
+GNUstep/System/Library/Libraries/libobjc.so.%%MAJORVERSION%%
+GNUstep/System/Library/Libraries/libobjc.so.%%VERSION%%
+@dirrm GNUstep/System/Library/Headers/objc

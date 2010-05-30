@@ -1,32 +1,32 @@
-Local/Applications/InnerSpace.app/InnerSpace
-Local/Applications/InnerSpace.app/Resources/Black.InnerSpace/Black
-Local/Applications/InnerSpace.app/Resources/Black.InnerSpace/Resources/Info-gnustep.plist
-Local/Applications/InnerSpace.app/Resources/Black.InnerSpace/stamp.make
-Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/Boxes
-Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/Resources/Info-gnustep.plist
-Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/stamp.make
-Local/Applications/InnerSpace.app/Resources/English.lproj/InnerSpace.gorm/data.classes
-Local/Applications/InnerSpace.app/Resources/English.lproj/InnerSpace.gorm/data.info
-Local/Applications/InnerSpace.app/Resources/English.lproj/InnerSpace.gorm/objects.gorm
-Local/Applications/InnerSpace.app/Resources/Info-gnustep.plist
-Local/Applications/InnerSpace.app/Resources/InnerSpace.desktop
-Local/Applications/InnerSpace.app/Resources/InnerSpace.tiff
-Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/NickSpace
-Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/Info-gnustep.plist
-Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm/data.classes
-Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm/data.info
-Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm/objects.gorm
-Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/stamp.make
-Local/Applications/InnerSpace.app/stamp.make
-Local/Tools/InnerSpace
-@dirrm Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm
-@dirrm Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources
-@dirrm Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace
-@dirrm Local/Applications/InnerSpace.app/Resources/English.lproj/InnerSpace.gorm
-@dirrm Local/Applications/InnerSpace.app/Resources/English.lproj
-@dirrm Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/Resources
-@dirrm Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace
-@dirrm Local/Applications/InnerSpace.app/Resources/Black.InnerSpace/Resources
-@dirrm Local/Applications/InnerSpace.app/Resources/Black.InnerSpace
-@dirrm Local/Applications/InnerSpace.app/Resources
-@dirrm Local/Applications/InnerSpace.app
+GNUstep/Local/Applications/InnerSpace.app/InnerSpace
+GNUstep/Local/Applications/InnerSpace.app/Resources/Black.InnerSpace/Black
+GNUstep/Local/Applications/InnerSpace.app/Resources/Black.InnerSpace/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/InnerSpace.app/Resources/Black.InnerSpace/stamp.make
+GNUstep/Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/Boxes
+GNUstep/Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/stamp.make
+GNUstep/Local/Applications/InnerSpace.app/Resources/English.lproj/InnerSpace.gorm/data.classes
+GNUstep/Local/Applications/InnerSpace.app/Resources/English.lproj/InnerSpace.gorm/data.info
+GNUstep/Local/Applications/InnerSpace.app/Resources/English.lproj/InnerSpace.gorm/objects.gorm
+GNUstep/Local/Applications/InnerSpace.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/InnerSpace.app/Resources/InnerSpace.desktop
+GNUstep/Local/Applications/InnerSpace.app/Resources/InnerSpace.tiff
+GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/NickSpace
+GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm/data.classes
+GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm/data.info
+GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm/objects.gorm
+GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/stamp.make
+GNUstep/Local/Applications/InnerSpace.app/stamp.make
+GNUstep/Local/Tools/InnerSpace
+@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm
+@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources
+@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace
+@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/English.lproj/InnerSpace.gorm
+@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace/Resources
+@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/Boxes.InnerSpace
+@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/Black.InnerSpace/Resources
+@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources/Black.InnerSpace
+@dirrm GNUstep/Local/Applications/InnerSpace.app/Resources
+@dirrm GNUstep/Local/Applications/InnerSpace.app

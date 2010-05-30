@@ -1,25 +1,25 @@
-Local/Applications/ImageViewer.app/ImageViewer
-Local/Applications/ImageViewer.app/Resources/English.lproj/Localizable.strings
-Local/Applications/ImageViewer.app/Resources/French.lproj/Localizable.strings
-Local/Applications/ImageViewer.app/Resources/German.lproj/Localizable.strings
-Local/Applications/ImageViewer.app/Resources/Hungarian.lproj/Localizable.strings
-Local/Applications/ImageViewer.app/Resources/AUTHORS
-Local/Applications/ImageViewer.app/Resources/COPYING
-Local/Applications/ImageViewer.app/Resources/FileIcon_.gif.tiff
-Local/Applications/ImageViewer.app/Resources/FileIcon_.jpg.tiff
-Local/Applications/ImageViewer.app/Resources/FileIcon_.tiff.tiff
-Local/Applications/ImageViewer.app/Resources/FileIcon_.xpm.tiff
-Local/Applications/ImageViewer.app/Resources/ImageViewer.desktop
-Local/Applications/ImageViewer.app/Resources/ImageViewer.tiff
-Local/Applications/ImageViewer.app/Resources/ImageViewerInfo.plist
-Local/Applications/ImageViewer.app/Resources/Info-gnustep.plist
-Local/Applications/ImageViewer.app/Resources/README
-Local/Applications/ImageViewer.app/Resources/genericImage.tiff
-Local/Applications/ImageViewer.app/stamp.make
-Local/Tools/ImageViewer
-@dirrm Local/Applications/ImageViewer.app/Resources/Hungarian.lproj
-@dirrm Local/Applications/ImageViewer.app/Resources/German.lproj
-@dirrm Local/Applications/ImageViewer.app/Resources/French.lproj
-@dirrm Local/Applications/ImageViewer.app/Resources/English.lproj
-@dirrm Local/Applications/ImageViewer.app/Resources
-@dirrm Local/Applications/ImageViewer.app
+GNUstep/Local/Applications/ImageViewer.app/ImageViewer
+GNUstep/Local/Applications/ImageViewer.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/ImageViewer.app/Resources/French.lproj/Localizable.strings
+GNUstep/Local/Applications/ImageViewer.app/Resources/German.lproj/Localizable.strings
+GNUstep/Local/Applications/ImageViewer.app/Resources/Hungarian.lproj/Localizable.strings
+GNUstep/Local/Applications/ImageViewer.app/Resources/AUTHORS
+GNUstep/Local/Applications/ImageViewer.app/Resources/COPYING
+GNUstep/Local/Applications/ImageViewer.app/Resources/FileIcon_.gif.tiff
+GNUstep/Local/Applications/ImageViewer.app/Resources/FileIcon_.jpg.tiff
+GNUstep/Local/Applications/ImageViewer.app/Resources/FileIcon_.tiff.tiff
+GNUstep/Local/Applications/ImageViewer.app/Resources/FileIcon_.xpm.tiff
+GNUstep/Local/Applications/ImageViewer.app/Resources/ImageViewer.desktop
+GNUstep/Local/Applications/ImageViewer.app/Resources/ImageViewer.tiff
+GNUstep/Local/Applications/ImageViewer.app/Resources/ImageViewerInfo.plist
+GNUstep/Local/Applications/ImageViewer.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ImageViewer.app/Resources/README
+GNUstep/Local/Applications/ImageViewer.app/Resources/genericImage.tiff
+GNUstep/Local/Applications/ImageViewer.app/stamp.make
+GNUstep/Local/Tools/ImageViewer
+@dirrm GNUstep/Local/Applications/ImageViewer.app/Resources/Hungarian.lproj
+@dirrm GNUstep/Local/Applications/ImageViewer.app/Resources/German.lproj
+@dirrm GNUstep/Local/Applications/ImageViewer.app/Resources/French.lproj
+@dirrm GNUstep/Local/Applications/ImageViewer.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/ImageViewer.app/Resources
+@dirrm GNUstep/Local/Applications/ImageViewer.app

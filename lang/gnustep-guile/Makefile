@@ -21,7 +21,6 @@ COMMENT=	GNUstep interface to the GUILE scheme interpreter
 LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
@@ -62,5 +61,8 @@ post-patch:
 
 pre-configure:
 	${TOUCH} ${WRKSRC}/Greg/ac_nonexistent.h
+
+post-configure:
+	${MV} ${WRKSRC}/Greg/Makefile ${WRKSRC}/Greg/GNUmakefile
 
 .include <bsd.port.post.mk>

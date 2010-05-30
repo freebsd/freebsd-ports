@@ -1,77 +1,77 @@
-Local/Applications/StepBill.app/Resources/Bulgarian.lproj/Localizable.strings
-Local/Applications/StepBill.app/Resources/Bulgarian.lproj/StepBill.gorm/data.classes
-Local/Applications/StepBill.app/Resources/Bulgarian.lproj/StepBill.gorm/data.info
-Local/Applications/StepBill.app/Resources/Bulgarian.lproj/StepBill.gorm/objects.gorm
-Local/Applications/StepBill.app/Resources/Bulgarian.lproj/rules.txt
-Local/Applications/StepBill.app/Resources/Bulgarian.lproj/story.txt
-Local/Applications/StepBill.app/Resources/Defaults.plist
-Local/Applications/StepBill.app/Resources/English.lproj/Localizable.strings
-Local/Applications/StepBill.app/Resources/English.lproj/StepBill.gorm/data.classes
-Local/Applications/StepBill.app/Resources/English.lproj/StepBill.gorm/objects.gorm
-Local/Applications/StepBill.app/Resources/English.lproj/rules.txt
-Local/Applications/StepBill.app/Resources/English.lproj/story.txt
-Local/Applications/StepBill.app/Resources/Info-gnustep.plist
-Local/Applications/StepBill.app/Resources/Japanese.lproj/Localizable.strings
-Local/Applications/StepBill.app/Resources/StepBill.desktop
-Local/Applications/StepBill.app/Resources/about.tiff
-Local/Applications/StepBill.app/Resources/apple.tiff
-Local/Applications/StepBill.app/Resources/billA_0.tiff
-Local/Applications/StepBill.app/Resources/billA_1.tiff
-Local/Applications/StepBill.app/Resources/billA_10.tiff
-Local/Applications/StepBill.app/Resources/billA_11.tiff
-Local/Applications/StepBill.app/Resources/billA_12.tiff
-Local/Applications/StepBill.app/Resources/billA_2.tiff
-Local/Applications/StepBill.app/Resources/billA_3.tiff
-Local/Applications/StepBill.app/Resources/billA_4.tiff
-Local/Applications/StepBill.app/Resources/billA_5.tiff
-Local/Applications/StepBill.app/Resources/billA_6.tiff
-Local/Applications/StepBill.app/Resources/billA_7.tiff
-Local/Applications/StepBill.app/Resources/billA_8.tiff
-Local/Applications/StepBill.app/Resources/billA_9.tiff
-Local/Applications/StepBill.app/Resources/billD_0.tiff
-Local/Applications/StepBill.app/Resources/billD_1.tiff
-Local/Applications/StepBill.app/Resources/billD_2.tiff
-Local/Applications/StepBill.app/Resources/billD_3.tiff
-Local/Applications/StepBill.app/Resources/billD_4.tiff
-Local/Applications/StepBill.app/Resources/billL_0.tiff
-Local/Applications/StepBill.app/Resources/billL_1.tiff
-Local/Applications/StepBill.app/Resources/billL_2.tiff
-Local/Applications/StepBill.app/Resources/billR_0.tiff
-Local/Applications/StepBill.app/Resources/billR_1.tiff
-Local/Applications/StepBill.app/Resources/billR_2.tiff
-Local/Applications/StepBill.app/Resources/bsd.tiff
-Local/Applications/StepBill.app/Resources/bsdcpu.tiff
-Local/Applications/StepBill.app/Resources/bucket.tiff
-Local/Applications/StepBill.app/Resources/hand_down.tiff
-Local/Applications/StepBill.app/Resources/hand_up.tiff
-Local/Applications/StepBill.app/Resources/hurd.tiff
-Local/Applications/StepBill.app/Resources/icon.tiff
-Local/Applications/StepBill.app/Resources/icon_orig.tiff
-Local/Applications/StepBill.app/Resources/linux.tiff
-Local/Applications/StepBill.app/Resources/logo.tiff
-Local/Applications/StepBill.app/Resources/maccpu.tiff
-Local/Applications/StepBill.app/Resources/next.tiff
-Local/Applications/StepBill.app/Resources/nextcpu.tiff
-Local/Applications/StepBill.app/Resources/os2.tiff
-Local/Applications/StepBill.app/Resources/os2cpu.tiff
-Local/Applications/StepBill.app/Resources/palm.tiff
-Local/Applications/StepBill.app/Resources/palmcpu.tiff
-Local/Applications/StepBill.app/Resources/redhat.tiff
-Local/Applications/StepBill.app/Resources/sgi.tiff
-Local/Applications/StepBill.app/Resources/sgicpu.tiff
-Local/Applications/StepBill.app/Resources/spark_0.tiff
-Local/Applications/StepBill.app/Resources/spark_1.tiff
-Local/Applications/StepBill.app/Resources/sun.tiff
-Local/Applications/StepBill.app/Resources/suncpu.tiff
-Local/Applications/StepBill.app/Resources/toaster.tiff
-Local/Applications/StepBill.app/Resources/wingdows.tiff
-Local/Applications/StepBill.app/StepBill
-Local/Applications/StepBill.app/stamp.make
-Local/Tools/StepBill
-@dirrm Local/Applications/StepBill.app/Resources/Japanese.lproj
-@dirrm Local/Applications/StepBill.app/Resources/English.lproj/StepBill.gorm
-@dirrm Local/Applications/StepBill.app/Resources/English.lproj
-@dirrm Local/Applications/StepBill.app/Resources/Bulgarian.lproj/StepBill.gorm
-@dirrm Local/Applications/StepBill.app/Resources/Bulgarian.lproj
-@dirrm Local/Applications/StepBill.app/Resources
-@dirrm Local/Applications/StepBill.app
+GNUstep/Local/Applications/StepBill.app/Resources/Bulgarian.lproj/Localizable.strings
+GNUstep/Local/Applications/StepBill.app/Resources/Bulgarian.lproj/StepBill.gorm/data.classes
+GNUstep/Local/Applications/StepBill.app/Resources/Bulgarian.lproj/StepBill.gorm/data.info
+GNUstep/Local/Applications/StepBill.app/Resources/Bulgarian.lproj/StepBill.gorm/objects.gorm
+GNUstep/Local/Applications/StepBill.app/Resources/Bulgarian.lproj/rules.txt
+GNUstep/Local/Applications/StepBill.app/Resources/Bulgarian.lproj/story.txt
+GNUstep/Local/Applications/StepBill.app/Resources/Defaults.plist
+GNUstep/Local/Applications/StepBill.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/StepBill.app/Resources/English.lproj/StepBill.gorm/data.classes
+GNUstep/Local/Applications/StepBill.app/Resources/English.lproj/StepBill.gorm/objects.gorm
+GNUstep/Local/Applications/StepBill.app/Resources/English.lproj/rules.txt
+GNUstep/Local/Applications/StepBill.app/Resources/English.lproj/story.txt
+GNUstep/Local/Applications/StepBill.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/StepBill.app/Resources/Japanese.lproj/Localizable.strings
+GNUstep/Local/Applications/StepBill.app/Resources/StepBill.desktop
+GNUstep/Local/Applications/StepBill.app/Resources/about.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/apple.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_0.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_1.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_10.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_11.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_12.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_2.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_3.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_4.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_5.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_6.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_7.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_8.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billA_9.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billD_0.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billD_1.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billD_2.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billD_3.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billD_4.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billL_0.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billL_1.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billL_2.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billR_0.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billR_1.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/billR_2.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/bsd.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/bsdcpu.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/bucket.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/hand_down.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/hand_up.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/hurd.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/icon.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/icon_orig.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/linux.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/logo.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/maccpu.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/next.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/nextcpu.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/os2.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/os2cpu.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/palm.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/palmcpu.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/redhat.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/sgi.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/sgicpu.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/spark_0.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/spark_1.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/sun.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/suncpu.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/toaster.tiff
+GNUstep/Local/Applications/StepBill.app/Resources/wingdows.tiff
+GNUstep/Local/Applications/StepBill.app/StepBill
+GNUstep/Local/Applications/StepBill.app/stamp.make
+GNUstep/Local/Tools/StepBill
+@dirrm GNUstep/Local/Applications/StepBill.app/Resources/Japanese.lproj
+@dirrm GNUstep/Local/Applications/StepBill.app/Resources/English.lproj/StepBill.gorm
+@dirrm GNUstep/Local/Applications/StepBill.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/StepBill.app/Resources/Bulgarian.lproj/StepBill.gorm
+@dirrm GNUstep/Local/Applications/StepBill.app/Resources/Bulgarian.lproj
+@dirrm GNUstep/Local/Applications/StepBill.app/Resources
+@dirrm GNUstep/Local/Applications/StepBill.app

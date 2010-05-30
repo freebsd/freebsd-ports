@@ -1,8 +1,8 @@
-System/Library/Bundles/ServicesBarMenulet.menulet/Resources/Info-gnustep.plist
-System/Library/Bundles/ServicesBarMenulet.menulet/ServicesBarMenulet
-System/Library/Bundles/ServicesBarMenulet.menulet/stamp.make
-System/Library/Libraries/libServicesBarKit.so
-System/Library/Libraries/libServicesBarKit.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libServicesBarKit.so.%%LIBVERSION%%
-@dirrm System/Library/Bundles/ServicesBarMenulet.menulet/Resources
-@dirrm System/Library/Bundles/ServicesBarMenulet.menulet
+GNUstep/System/Library/Bundles/ServicesBarMenulet.menulet/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/ServicesBarMenulet.menulet/ServicesBarMenulet
+GNUstep/System/Library/Bundles/ServicesBarMenulet.menulet/stamp.make
+GNUstep/System/Library/Libraries/libServicesBarKit.so
+GNUstep/System/Library/Libraries/libServicesBarKit.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libServicesBarKit.so.%%LIBVERSION%%
+@dirrm GNUstep/System/Library/Bundles/ServicesBarMenulet.menulet/Resources
+@dirrm GNUstep/System/Library/Bundles/ServicesBarMenulet.menulet

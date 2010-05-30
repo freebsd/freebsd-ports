@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/X11/extensions/scrnsaver.h:${PORTSDIR}/x11/s
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
@@ -28,7 +27,7 @@ USE_XORG=	xscrnsaver
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/Idle
-PLIST_FILES=	System/Tools/Idle
+PLIST_FILES=	GNUstep/System/Tools/Idle
 
 XWINDOWSERVERKIT_PORT?=		x11/etoile-xwindowserverkit
 

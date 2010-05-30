@@ -1,7 +1,7 @@
-System/Applications/AZSwitch.app/AZSwitch
-System/Applications/AZSwitch.app/Resources/AZSwitch.desktop
-System/Applications/AZSwitch.app/Resources/Info-gnustep.plist
-System/Applications/AZSwitch.app/stamp.make
-System/Tools/AZSwitch
-@dirrm System/Applications/AZSwitch.app/Resources
-@dirrm System/Applications/AZSwitch.app
+GNUstep/System/Applications/AZSwitch.app/AZSwitch
+GNUstep/System/Applications/AZSwitch.app/Resources/AZSwitch.desktop
+GNUstep/System/Applications/AZSwitch.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/AZSwitch.app/stamp.make
+GNUstep/System/Tools/AZSwitch
+@dirrm GNUstep/System/Applications/AZSwitch.app/Resources
+@dirrm GNUstep/System/Applications/AZSwitch.app

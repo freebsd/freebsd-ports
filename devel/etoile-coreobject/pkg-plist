@@ -1,41 +1,41 @@
-Local/Library/Frameworks/CoreObject.framework/CoreObject
-Local/Library/Frameworks/CoreObject.framework/CoreObject.framework
-Local/Library/Frameworks/CoreObject.framework/Headers
-Local/Library/Frameworks/CoreObject.framework/Resources
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/CoreObject
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COCollection.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COCoreObjectProtocol.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/CODeserializer.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/CODirectory.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COFile.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COFileObject.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COGroup.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COMetadataServer.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COMultiValue.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COObject.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COObjectContext.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COObjectServer.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COPersistentPool.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COPropertyType.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COProxy.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COSerializer.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COSmartGroup.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COUtility.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/CoreObject.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/GNUstep.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+CoreObject.h
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/libCoreObject.so
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/libCoreObject.so.%%MAJORVERSION%%
-Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/libCoreObject.so.%%VERSION%%
-Local/Library/Frameworks/CoreObject.framework/Versions/Current
-Local/Library/Frameworks/CoreObject.framework/libCoreObject.so
-Local/Library/Headers/CoreObject
-Local/Library/Libraries/libCoreObject.so
-Local/Library/Libraries/libCoreObject.so.%%MAJORVERSION%%
-Local/Library/Libraries/libCoreObject.so.%%VERSION%%
-@dirrm Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%
-@dirrm Local/Library/Frameworks/CoreObject.framework/Versions
-@dirrm Local/Library/Frameworks/CoreObject.framework
+GNUstep/Local/Library/Frameworks/CoreObject.framework/CoreObject
+GNUstep/Local/Library/Frameworks/CoreObject.framework/CoreObject.framework
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Headers
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Resources
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/CoreObject
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COCollection.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COCoreObjectProtocol.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/CODeserializer.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/CODirectory.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COFile.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COFileObject.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COGroup.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COMetadataServer.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COMultiValue.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COObject.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COObjectContext.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COObjectServer.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COPersistentPool.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COPropertyType.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COProxy.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COSerializer.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COSmartGroup.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/COUtility.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/CoreObject.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/GNUstep.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers/NSObject+CoreObject.h
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/libCoreObject.so
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/libCoreObject.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/libCoreObject.so.%%VERSION%%
+GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/CoreObject.framework/libCoreObject.so
+GNUstep/Local/Library/Headers/CoreObject
+GNUstep/Local/Library/Libraries/libCoreObject.so
+GNUstep/Local/Library/Libraries/libCoreObject.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Libraries/libCoreObject.so.%%VERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions/%%MAJORVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/CoreObject.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/CoreObject.framework

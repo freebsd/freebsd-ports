@@ -1,14 +1,14 @@
-Local/Applications/RemoteDesk.app/RemoteDesk
-Local/Applications/RemoteDesk.app/Resources/Info-gnustep.plist
-Local/Applications/RemoteDesk.app/Resources/LICENSE
-Local/Applications/RemoteDesk.app/Resources/README
-Local/Applications/RemoteDesk.app/Resources/RemoteDesk.desktop
-Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/data.classes
-Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/data.info
-Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/objects.gorm
-Local/Applications/RemoteDesk.app/Resources/remotedesk.tiff
-Local/Applications/RemoteDesk.app/stamp.make
-Local/Tools/RemoteDesk
-@dirrm Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm
-@dirrm Local/Applications/RemoteDesk.app/Resources
-@dirrm Local/Applications/RemoteDesk.app
+GNUstep/Local/Applications/RemoteDesk.app/RemoteDesk
+GNUstep/Local/Applications/RemoteDesk.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/RemoteDesk.app/Resources/LICENSE
+GNUstep/Local/Applications/RemoteDesk.app/Resources/README
+GNUstep/Local/Applications/RemoteDesk.app/Resources/RemoteDesk.desktop
+GNUstep/Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/data.classes
+GNUstep/Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/data.info
+GNUstep/Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/objects.gorm
+GNUstep/Local/Applications/RemoteDesk.app/Resources/remotedesk.tiff
+GNUstep/Local/Applications/RemoteDesk.app/stamp.make
+GNUstep/Local/Tools/RemoteDesk
+@dirrm GNUstep/Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm
+@dirrm GNUstep/Local/Applications/RemoteDesk.app/Resources
+@dirrm GNUstep/Local/Applications/RemoteDesk.app

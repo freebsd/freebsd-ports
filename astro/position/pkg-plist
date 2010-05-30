@@ -1,262 +1,262 @@
-System/Applications/Position.app/Position
-System/Applications/Position.app/Resources/0-130.jpeg
-System/Applications/Position.app/Resources/0-170.jpeg
-System/Applications/Position.app/Resources/0-210.jpeg
-System/Applications/Position.app/Resources/0-25.jpeg
-System/Applications/Position.app/Resources/0-250.jpeg
-System/Applications/Position.app/Resources/0-290.jpeg
-System/Applications/Position.app/Resources/0-330.jpeg
-System/Applications/Position.app/Resources/0-50.jpeg
-System/Applications/Position.app/Resources/0-90.jpeg
-System/Applications/Position.app/Resources/25N-10.jpeg
-System/Applications/Position.app/Resources/25N-130.jpeg
-System/Applications/Position.app/Resources/25N-170.jpeg
-System/Applications/Position.app/Resources/25N-210.jpeg
-System/Applications/Position.app/Resources/25N-250.jpeg
-System/Applications/Position.app/Resources/25N-290.jpeg
-System/Applications/Position.app/Resources/25N-330.jpeg
-System/Applications/Position.app/Resources/25N-50.jpeg
-System/Applications/Position.app/Resources/25N-90.jpeg
-System/Applications/Position.app/Resources/25S-10.jpeg
-System/Applications/Position.app/Resources/25S-130.jpeg
-System/Applications/Position.app/Resources/25S-170.jpeg
-System/Applications/Position.app/Resources/25S-210.jpeg
-System/Applications/Position.app/Resources/25S-250.jpeg
-System/Applications/Position.app/Resources/25S-290.jpeg
-System/Applications/Position.app/Resources/25S-330.jpeg
-System/Applications/Position.app/Resources/25S-50.jpeg
-System/Applications/Position.app/Resources/25S-90.jpeg
-System/Applications/Position.app/Resources/45N-10.jpeg
-System/Applications/Position.app/Resources/45N-130.jpeg
-System/Applications/Position.app/Resources/45N-170.jpeg
-System/Applications/Position.app/Resources/45N-210.jpeg
-System/Applications/Position.app/Resources/45N-250.jpeg
-System/Applications/Position.app/Resources/45N-290.jpeg
-System/Applications/Position.app/Resources/45N-330.jpeg
-System/Applications/Position.app/Resources/45N-50.jpeg
-System/Applications/Position.app/Resources/45N-90.jpeg
-System/Applications/Position.app/Resources/45S-10.jpeg
-System/Applications/Position.app/Resources/45S-130.jpeg
-System/Applications/Position.app/Resources/45S-170.jpeg
-System/Applications/Position.app/Resources/45S-210.jpeg
-System/Applications/Position.app/Resources/45S-250.jpeg
-System/Applications/Position.app/Resources/45S-290.jpeg
-System/Applications/Position.app/Resources/45S-330.jpeg
-System/Applications/Position.app/Resources/45S-50.jpeg
-System/Applications/Position.app/Resources/45S-90.jpeg
-System/Applications/Position.app/Resources/60N-10.jpeg
-System/Applications/Position.app/Resources/60N-130.jpeg
-System/Applications/Position.app/Resources/60N-170.jpeg
-System/Applications/Position.app/Resources/60N-210.jpeg
-System/Applications/Position.app/Resources/60N-250.jpeg
-System/Applications/Position.app/Resources/60N-290.jpeg
-System/Applications/Position.app/Resources/60N-330.jpeg
-System/Applications/Position.app/Resources/60N-50.jpeg
-System/Applications/Position.app/Resources/60N-90.jpeg
-System/Applications/Position.app/Resources/60S-10.jpeg
-System/Applications/Position.app/Resources/60S-130.jpeg
-System/Applications/Position.app/Resources/60S-170.jpeg
-System/Applications/Position.app/Resources/60S-210.jpeg
-System/Applications/Position.app/Resources/60S-250.jpeg
-System/Applications/Position.app/Resources/60S-290.jpeg
-System/Applications/Position.app/Resources/60S-330.jpeg
-System/Applications/Position.app/Resources/60S-50.jpeg
-System/Applications/Position.app/Resources/60S-90.jpeg
-System/Applications/Position.app/Resources/English.lproj/.DS_Store
-System/Applications/Position.app/Resources/English.lproj/.gwdir
-System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/GeneralPref.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/GeneralPref.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/GeneralPref.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/GeneralPref.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/GeneralPref.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/GeneralPref.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/ImportMapWin.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/ImportMapWin.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/ImportMapWin.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/ImportMapWin.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/ImportMapWin.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/ImportMapWin.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm_copy/.gwdir
-System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm_copy/data.classes
-System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm_copy/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/InspectorsWin.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/InspectorsWin.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/InspectorsWin.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/Localizable.strings
-System/Applications/Position.app/Resources/English.lproj/MainMenu.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/MainMenu.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/MainMenu.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/MapWindow.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/MapWindow.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/MapWindow.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/MapWindow.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/MapWindow.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/MapWindow.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/NavigationInspector.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/NavigationInspector.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/NavigationInspector.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/NavigationInspector.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/NavigationInspector.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/NavigationInspector.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/PrefWindow.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/PrefWindow.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/PrefWindow.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/PrefWindow.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/PrefWindow.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/PrefWindow.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/RouteInspector.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/RouteInspector.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/RouteInspector.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/RouteInspector.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/RouteInspector.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/RouteInspector.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/SatIndicator.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/SatIndicator.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/SatIndicator.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/SatIndicator.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/SatIndicator.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/SatIndicator.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/SatsInspector.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/SatsInspector.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/SatsInspector.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/SatsInspector.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/SatsInspector.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/SatsInspector.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.nib/objects.nib
-System/Applications/Position.app/Resources/English.lproj/WayPointInspector.gorm/.gwdir
-System/Applications/Position.app/Resources/English.lproj/WayPointInspector.gorm/data.classes
-System/Applications/Position.app/Resources/English.lproj/WayPointInspector.gorm/objects.gorm
-System/Applications/Position.app/Resources/English.lproj/WayPointInspector.nib/classes.nib
-System/Applications/Position.app/Resources/English.lproj/WayPointInspector.nib/info.nib
-System/Applications/Position.app/Resources/English.lproj/WayPointInspector.nib/objects.nib
-System/Applications/Position.app/Resources/Info-gnustep.plist
-System/Applications/Position.app/Resources/Position.desktop
-System/Applications/Position.app/Resources/Position.icns
-System/Applications/Position.app/Resources/Position.tiff
-System/Applications/Position.app/Resources/Resources/English.lproj/DefaultMapPref.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/DefaultMapPref.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/DefaultMapPref.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/DownloadMapWin.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/DownloadMapWin.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/DownloadMapWin.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/GPSDHostPref.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/GPSDHostPref.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/GPSDHostPref.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/GeneralPref.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/GeneralPref.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/GeneralPref.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/ImportMapWin.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/ImportMapWin.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/ImportMapWin.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/InspectorsWin.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/InspectorsWin.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/InspectorsWin.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/Localizable.strings
-System/Applications/Position.app/Resources/Resources/English.lproj/MapWindow.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/MapWindow.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/MapWindow.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/NavigationInspector.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/NavigationInspector.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/NavigationInspector.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/PrefWindow.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/PrefWindow.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/PrefWindow.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/RouteInspector.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/RouteInspector.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/RouteInspector.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/SatIndicator.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/SatIndicator.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/SatIndicator.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/SatsInspector.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/SatsInspector.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/SatsInspector.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/UnitsAndTuningPref.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/UnitsAndTuningPref.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/UnitsAndTuningPref.gorm/objects.gorm
-System/Applications/Position.app/Resources/Resources/English.lproj/WayPointInspector.gorm/.gwdir
-System/Applications/Position.app/Resources/Resources/English.lproj/WayPointInspector.gorm/data.classes
-System/Applications/Position.app/Resources/Resources/English.lproj/WayPointInspector.gorm/objects.gorm
-System/Applications/Position.app/Resources/defaultmap.jpeg
-System/Applications/Position.app/Resources/defaultmaps.plist
-System/Applications/Position.app/Resources/defaultmaps_mac.plist
-System/Applications/Position.app/Resources/navigationCircle.tiff
-System/Applications/Position.app/Resources/point.tiff
-System/Applications/Position.app/Resources/satCircle.tiff
-System/Applications/Position.app/Resources/wayPointHiLight.tiff
-System/Applications/Position.app/stamp.make
-System/Tools/Position
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/WayPointInspector.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/UnitsAndTuningPref.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/SatsInspector.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/SatIndicator.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/RouteInspector.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/PrefWindow.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/NavigationInspector.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/MapWindow.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/InspectorsWin.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/ImportMapWin.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/GeneralPref.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/GPSDHostPref.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/DownloadMapWin.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj/DefaultMapPref.gorm
-@dirrm System/Applications/Position.app/Resources/Resources/English.lproj
-@dirrm System/Applications/Position.app/Resources/Resources
-@dirrm System/Applications/Position.app/Resources/English.lproj/WayPointInspector.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/WayPointInspector.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/SatsInspector.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/SatsInspector.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/SatIndicator.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/SatIndicator.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/RouteInspector.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/RouteInspector.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/PrefWindow.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/PrefWindow.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/NavigationInspector.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/NavigationInspector.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/MapWindow.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/MapWindow.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/MainMenu.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/InspectorsWin.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm_copy
-@dirrm System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/ImportMapWin.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/ImportMapWin.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/GeneralPref.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/GeneralPref.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.nib
-@dirrm System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.gorm
-@dirrm System/Applications/Position.app/Resources/English.lproj
-@dirrm System/Applications/Position.app/Resources
-@dirrm System/Applications/Position.app
+GNUstep/System/Applications/Position.app/Position
+GNUstep/System/Applications/Position.app/Resources/0-130.jpeg
+GNUstep/System/Applications/Position.app/Resources/0-170.jpeg
+GNUstep/System/Applications/Position.app/Resources/0-210.jpeg
+GNUstep/System/Applications/Position.app/Resources/0-25.jpeg
+GNUstep/System/Applications/Position.app/Resources/0-250.jpeg
+GNUstep/System/Applications/Position.app/Resources/0-290.jpeg
+GNUstep/System/Applications/Position.app/Resources/0-330.jpeg
+GNUstep/System/Applications/Position.app/Resources/0-50.jpeg
+GNUstep/System/Applications/Position.app/Resources/0-90.jpeg
+GNUstep/System/Applications/Position.app/Resources/25N-10.jpeg
+GNUstep/System/Applications/Position.app/Resources/25N-130.jpeg
+GNUstep/System/Applications/Position.app/Resources/25N-170.jpeg
+GNUstep/System/Applications/Position.app/Resources/25N-210.jpeg
+GNUstep/System/Applications/Position.app/Resources/25N-250.jpeg
+GNUstep/System/Applications/Position.app/Resources/25N-290.jpeg
+GNUstep/System/Applications/Position.app/Resources/25N-330.jpeg
+GNUstep/System/Applications/Position.app/Resources/25N-50.jpeg
+GNUstep/System/Applications/Position.app/Resources/25N-90.jpeg
+GNUstep/System/Applications/Position.app/Resources/25S-10.jpeg
+GNUstep/System/Applications/Position.app/Resources/25S-130.jpeg
+GNUstep/System/Applications/Position.app/Resources/25S-170.jpeg
+GNUstep/System/Applications/Position.app/Resources/25S-210.jpeg
+GNUstep/System/Applications/Position.app/Resources/25S-250.jpeg
+GNUstep/System/Applications/Position.app/Resources/25S-290.jpeg
+GNUstep/System/Applications/Position.app/Resources/25S-330.jpeg
+GNUstep/System/Applications/Position.app/Resources/25S-50.jpeg
+GNUstep/System/Applications/Position.app/Resources/25S-90.jpeg
+GNUstep/System/Applications/Position.app/Resources/45N-10.jpeg
+GNUstep/System/Applications/Position.app/Resources/45N-130.jpeg
+GNUstep/System/Applications/Position.app/Resources/45N-170.jpeg
+GNUstep/System/Applications/Position.app/Resources/45N-210.jpeg
+GNUstep/System/Applications/Position.app/Resources/45N-250.jpeg
+GNUstep/System/Applications/Position.app/Resources/45N-290.jpeg
+GNUstep/System/Applications/Position.app/Resources/45N-330.jpeg
+GNUstep/System/Applications/Position.app/Resources/45N-50.jpeg
+GNUstep/System/Applications/Position.app/Resources/45N-90.jpeg
+GNUstep/System/Applications/Position.app/Resources/45S-10.jpeg
+GNUstep/System/Applications/Position.app/Resources/45S-130.jpeg
+GNUstep/System/Applications/Position.app/Resources/45S-170.jpeg
+GNUstep/System/Applications/Position.app/Resources/45S-210.jpeg
+GNUstep/System/Applications/Position.app/Resources/45S-250.jpeg
+GNUstep/System/Applications/Position.app/Resources/45S-290.jpeg
+GNUstep/System/Applications/Position.app/Resources/45S-330.jpeg
+GNUstep/System/Applications/Position.app/Resources/45S-50.jpeg
+GNUstep/System/Applications/Position.app/Resources/45S-90.jpeg
+GNUstep/System/Applications/Position.app/Resources/60N-10.jpeg
+GNUstep/System/Applications/Position.app/Resources/60N-130.jpeg
+GNUstep/System/Applications/Position.app/Resources/60N-170.jpeg
+GNUstep/System/Applications/Position.app/Resources/60N-210.jpeg
+GNUstep/System/Applications/Position.app/Resources/60N-250.jpeg
+GNUstep/System/Applications/Position.app/Resources/60N-290.jpeg
+GNUstep/System/Applications/Position.app/Resources/60N-330.jpeg
+GNUstep/System/Applications/Position.app/Resources/60N-50.jpeg
+GNUstep/System/Applications/Position.app/Resources/60N-90.jpeg
+GNUstep/System/Applications/Position.app/Resources/60S-10.jpeg
+GNUstep/System/Applications/Position.app/Resources/60S-130.jpeg
+GNUstep/System/Applications/Position.app/Resources/60S-170.jpeg
+GNUstep/System/Applications/Position.app/Resources/60S-210.jpeg
+GNUstep/System/Applications/Position.app/Resources/60S-250.jpeg
+GNUstep/System/Applications/Position.app/Resources/60S-290.jpeg
+GNUstep/System/Applications/Position.app/Resources/60S-330.jpeg
+GNUstep/System/Applications/Position.app/Resources/60S-50.jpeg
+GNUstep/System/Applications/Position.app/Resources/60S-90.jpeg
+GNUstep/System/Applications/Position.app/Resources/English.lproj/.DS_Store
+GNUstep/System/Applications/Position.app/Resources/English.lproj/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GeneralPref.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GeneralPref.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GeneralPref.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GeneralPref.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GeneralPref.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/GeneralPref.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/ImportMapWin.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/ImportMapWin.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/ImportMapWin.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/ImportMapWin.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/ImportMapWin.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/ImportMapWin.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm_copy/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm_copy/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm_copy/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/Localizable.strings
+GNUstep/System/Applications/Position.app/Resources/English.lproj/MainMenu.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/MainMenu.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/MainMenu.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/MapWindow.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/MapWindow.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/MapWindow.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/MapWindow.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/MapWindow.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/MapWindow.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/NavigationInspector.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/NavigationInspector.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/NavigationInspector.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/NavigationInspector.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/NavigationInspector.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/NavigationInspector.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/PrefWindow.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/PrefWindow.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/PrefWindow.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/PrefWindow.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/PrefWindow.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/PrefWindow.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/RouteInspector.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/RouteInspector.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/RouteInspector.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/RouteInspector.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/RouteInspector.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/RouteInspector.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatIndicator.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatIndicator.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatIndicator.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatIndicator.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatIndicator.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatIndicator.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatsInspector.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatsInspector.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatsInspector.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatsInspector.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatsInspector.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/SatsInspector.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/WayPointInspector.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/English.lproj/WayPointInspector.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/English.lproj/WayPointInspector.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/English.lproj/WayPointInspector.nib/classes.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/WayPointInspector.nib/info.nib
+GNUstep/System/Applications/Position.app/Resources/English.lproj/WayPointInspector.nib/objects.nib
+GNUstep/System/Applications/Position.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Position.app/Resources/Position.desktop
+GNUstep/System/Applications/Position.app/Resources/Position.icns
+GNUstep/System/Applications/Position.app/Resources/Position.tiff
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/DefaultMapPref.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/DefaultMapPref.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/DefaultMapPref.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/DownloadMapWin.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/DownloadMapWin.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/DownloadMapWin.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/GPSDHostPref.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/GPSDHostPref.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/GPSDHostPref.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/GeneralPref.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/GeneralPref.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/GeneralPref.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/ImportMapWin.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/ImportMapWin.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/ImportMapWin.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/InspectorsWin.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/InspectorsWin.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/InspectorsWin.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/Localizable.strings
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/MapWindow.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/MapWindow.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/MapWindow.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/NavigationInspector.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/NavigationInspector.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/NavigationInspector.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/PrefWindow.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/PrefWindow.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/PrefWindow.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/RouteInspector.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/RouteInspector.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/RouteInspector.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/SatIndicator.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/SatIndicator.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/SatIndicator.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/SatsInspector.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/SatsInspector.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/SatsInspector.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/UnitsAndTuningPref.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/UnitsAndTuningPref.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/UnitsAndTuningPref.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/WayPointInspector.gorm/.gwdir
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/WayPointInspector.gorm/data.classes
+GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/WayPointInspector.gorm/objects.gorm
+GNUstep/System/Applications/Position.app/Resources/defaultmap.jpeg
+GNUstep/System/Applications/Position.app/Resources/defaultmaps.plist
+GNUstep/System/Applications/Position.app/Resources/defaultmaps_mac.plist
+GNUstep/System/Applications/Position.app/Resources/navigationCircle.tiff
+GNUstep/System/Applications/Position.app/Resources/point.tiff
+GNUstep/System/Applications/Position.app/Resources/satCircle.tiff
+GNUstep/System/Applications/Position.app/Resources/wayPointHiLight.tiff
+GNUstep/System/Applications/Position.app/stamp.make
+GNUstep/System/Tools/Position
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/WayPointInspector.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/UnitsAndTuningPref.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/SatsInspector.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/SatIndicator.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/RouteInspector.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/PrefWindow.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/NavigationInspector.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/MapWindow.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/InspectorsWin.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/ImportMapWin.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/GeneralPref.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/GPSDHostPref.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/DownloadMapWin.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj/DefaultMapPref.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources/English.lproj
+@dirrm GNUstep/System/Applications/Position.app/Resources/Resources
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/WayPointInspector.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/WayPointInspector.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/UnitsAndTuningPref.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/SatsInspector.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/SatsInspector.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/SatIndicator.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/SatIndicator.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/RouteInspector.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/RouteInspector.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/PrefWindow.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/PrefWindow.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/NavigationInspector.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/NavigationInspector.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/MapWindow.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/MapWindow.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/MainMenu.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm_copy
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/InspectorsWin.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/ImportMapWin.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/ImportMapWin.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/GeneralPref.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/GeneralPref.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/GPSDHostPref.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/DownloadMapWin.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.nib
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj/DefaultMapPref.gorm
+@dirrm GNUstep/System/Applications/Position.app/Resources/English.lproj
+@dirrm GNUstep/System/Applications/Position.app/Resources
+@dirrm GNUstep/System/Applications/Position.app

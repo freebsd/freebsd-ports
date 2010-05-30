@@ -1,16 +1,16 @@
-Local/Applications/Melodie.app/Melodie
-Local/Applications/Melodie.app/Resources/ETPlaylist.st
-Local/Applications/Melodie.app/Resources/Info-gnustep.plist
-Local/Applications/Melodie.app/Resources/LKInfo.plist
-Local/Applications/Melodie.app/Resources/Melodie.desktop
-Local/Applications/Melodie.app/Resources/Melodie.gorm/data.classes
-Local/Applications/Melodie.app/Resources/Melodie.gorm/data.info
-Local/Applications/Melodie.app/Resources/Melodie.gorm/objects.gorm
-Local/Applications/Melodie.app/Resources/Melodie.tiff
-Local/Applications/Melodie.app/Resources/MelodieController.st
-Local/Applications/Melodie.app/Resources/MusicPlayerController.st
-Local/Applications/Melodie.app/stamp.make
-Local/Tools/Melodie
-@dirrm Local/Applications/Melodie.app/Resources/Melodie.gorm
-@dirrm Local/Applications/Melodie.app/Resources
-@dirrm Local/Applications/Melodie.app
+GNUstep/Local/Applications/Melodie.app/Melodie
+GNUstep/Local/Applications/Melodie.app/Resources/ETPlaylist.st
+GNUstep/Local/Applications/Melodie.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Melodie.app/Resources/LKInfo.plist
+GNUstep/Local/Applications/Melodie.app/Resources/Melodie.desktop
+GNUstep/Local/Applications/Melodie.app/Resources/Melodie.gorm/data.classes
+GNUstep/Local/Applications/Melodie.app/Resources/Melodie.gorm/data.info
+GNUstep/Local/Applications/Melodie.app/Resources/Melodie.gorm/objects.gorm
+GNUstep/Local/Applications/Melodie.app/Resources/Melodie.tiff
+GNUstep/Local/Applications/Melodie.app/Resources/MelodieController.st
+GNUstep/Local/Applications/Melodie.app/Resources/MusicPlayerController.st
+GNUstep/Local/Applications/Melodie.app/stamp.make
+GNUstep/Local/Tools/Melodie
+@dirrm GNUstep/Local/Applications/Melodie.app/Resources/Melodie.gorm
+@dirrm GNUstep/Local/Applications/Melodie.app/Resources
+@dirrm GNUstep/Local/Applications/Melodie.app

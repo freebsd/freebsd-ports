@@ -1,216 +1,216 @@
-Local/Applications/Paje.app/Paje
-Local/Applications/Paje.app/Resources/Info-gnustep.plist
-Local/Applications/Paje.app/Resources/Paje.desktop
-Local/Applications/Paje.app/Resources/Paje.gorm/data.classes
-Local/Applications/Paje.app/Resources/Paje.gorm/data.info
-Local/Applications/Paje.app/Resources/Paje.gorm/objects.gorm
-Local/Applications/Paje.app/Resources/Paje.tiff
-Local/Applications/Paje.app/Resources/PajeEntityInspector.gorm/data.classes
-Local/Applications/Paje.app/Resources/PajeEntityInspector.gorm/data.info
-Local/Applications/Paje.app/Resources/PajeEntityInspector.gorm/objects.gorm
-Local/Applications/Paje.app/Resources/PajeInfo.plist
-Local/Applications/Paje.app/Resources/distant.tiff
-Local/Applications/Paje.app/Resources/near.tiff
-Local/Applications/Paje.app/Resources/toselection.tiff
-Local/Applications/Paje.app/Resources/traceFilePaje.tiff
-Local/Applications/Paje.app/stamp.make
-Local/Library/Bundles/Paje/AggregatingFilter.bundle/AggregatingFilter
-Local/Library/Bundles/Paje/AggregatingFilter.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/AggregatingFilter.bundle/stamp.make
-Local/Library/Bundles/Paje/ContainerFilter.bundle/ContainerFilter
-Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources/ContainerSelector.gorm/data.classes
-Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources/ContainerSelector.gorm/objects.gorm
-Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/ContainerFilter.bundle/stamp.make
-Local/Library/Bundles/Paje/EntityTypeFilter.bundle/EntityTypeFilter
-Local/Library/Bundles/Paje/EntityTypeFilter.bundle/Resources/EntityTypeSelector.gorm/data.classes
-Local/Library/Bundles/Paje/EntityTypeFilter.bundle/Resources/EntityTypeSelector.gorm/objects.gorm
-Local/Library/Bundles/Paje/EntityTypeFilter.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/EntityTypeFilter.bundle/stamp.make
-Local/Library/Bundles/Paje/FieldFilter.bundle/FieldFilter
-Local/Library/Bundles/Paje/FieldFilter.bundle/Resources/FieldFilter.gorm/data.classes
-Local/Library/Bundles/Paje/FieldFilter.bundle/Resources/FieldFilter.gorm/data.info
-Local/Library/Bundles/Paje/FieldFilter.bundle/Resources/FieldFilter.gorm/objects.gorm
-Local/Library/Bundles/Paje/FieldFilter.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/FieldFilter.bundle/stamp.make
-Local/Library/Bundles/Paje/FileReader.bundle/FileReader
-Local/Library/Bundles/Paje/FileReader.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/FileReader.bundle/stamp.make
-Local/Library/Bundles/Paje/General.bundle/General
-Local/Library/Bundles/Paje/General.bundle/Resources/HierarchyBrowser.gorm/data.classes
-Local/Library/Bundles/Paje/General.bundle/Resources/HierarchyBrowser.gorm/objects.gorm
-Local/Library/Bundles/Paje/General.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/General.bundle/Resources/PajeEntityInspector.gorm/data.classes
-Local/Library/Bundles/Paje/General.bundle/Resources/PajeEntityInspector.gorm/data.info
-Local/Library/Bundles/Paje/General.bundle/Resources/PajeEntityInspector.gorm/objects.gorm
-Local/Library/Bundles/Paje/General.bundle/Resources/SourceTextViewer.gorm/data.classes
-Local/Library/Bundles/Paje/General.bundle/Resources/SourceTextViewer.gorm/objects.gorm
-Local/Library/Bundles/Paje/General.bundle/stamp.make
-Local/Library/Bundles/Paje/ImbricationFilter.bundle/ImbricationFilter
-Local/Library/Bundles/Paje/ImbricationFilter.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/ImbricationFilter.bundle/Resources/InsetLimit.gorm/data.classes
-Local/Library/Bundles/Paje/ImbricationFilter.bundle/Resources/InsetLimit.gorm/objects.gorm
-Local/Library/Bundles/Paje/ImbricationFilter.bundle/stamp.make
-Local/Library/Bundles/Paje/OrderFilter.bundle/OrderFilter
-Local/Library/Bundles/Paje/OrderFilter.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/OrderFilter.bundle/Resources/Order.gorm/data.classes
-Local/Library/Bundles/Paje/OrderFilter.bundle/Resources/Order.gorm/objects.gorm
-Local/Library/Bundles/Paje/OrderFilter.bundle/stamp.make
-Local/Library/Bundles/Paje/PajeEventDecoder.bundle/PajeEventDecoder
-Local/Library/Bundles/Paje/PajeEventDecoder.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/PajeEventDecoder.bundle/stamp.make
-Local/Library/Bundles/Paje/PajeSimulator.bundle/PajeSimulator
-Local/Library/Bundles/Paje/PajeSimulator.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/PajeSimulator.bundle/stamp.make
-Local/Library/Bundles/Paje/ReductionFilter.bundle/ReductionFilter
-Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources/ReductionFilter.gorm/data.classes
-Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources/ReductionFilter.gorm/data.info
-Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources/ReductionFilter.gorm/objects.gorm
-Local/Library/Bundles/Paje/ReductionFilter.bundle/stamp.make
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/STEntityTypeLayout.gorm/data.classes
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/STEntityTypeLayout.gorm/data.info
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/STEntityTypeLayout.gorm/objects.gorm
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm/data.classes
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm/distant.tiff
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm/near.tiff
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm/objects.gorm
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm/toselection.tiff
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/crosscursor.tiff
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/distant.tiff
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/near.tiff
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/toselection.tiff
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/SpaceTimeViewer
-Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/stamp.make
-Local/Library/Bundles/Paje/StatViewer.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/StatViewer.bundle/Resources/StatViewer.gorm/data.classes
-Local/Library/Bundles/Paje/StatViewer.bundle/Resources/StatViewer.gorm/data.info
-Local/Library/Bundles/Paje/StatViewer.bundle/Resources/StatViewer.gorm/objects.gorm
-Local/Library/Bundles/Paje/StatViewer.bundle/StatViewer
-Local/Library/Bundles/Paje/StatViewer.bundle/stamp.make
-Local/Library/Bundles/Paje/StorageController.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/Paje/StorageController.bundle/StorageController
-Local/Library/Bundles/Paje/StorageController.bundle/stamp.make
-Local/Library/Headers/AggregatingFilter/AggregateEvent.h
-Local/Library/Headers/AggregatingFilter/AggregateLink.h
-Local/Library/Headers/AggregatingFilter/AggregateState.h
-Local/Library/Headers/AggregatingFilter/AggregateValue.h
-Local/Library/Headers/AggregatingFilter/AggregatingChunk.h
-Local/Library/Headers/AggregatingFilter/AggregatingChunkArray.h
-Local/Library/Headers/AggregatingFilter/AggregatingFilter.h
-Local/Library/Headers/AggregatingFilter/EntityAggregator.h
-Local/Library/Headers/ContainerFilter/ContainerSelector.h
-Local/Library/Headers/EntityTypeFilter/EntityTypeSelector.h
-Local/Library/Headers/FieldFilter/FieldFilter.h
-Local/Library/Headers/FieldFilter/FieldFilterDescriptor.h
-Local/Library/Headers/General/Association.h
-Local/Library/Headers/General/CStringCallBacks.h
-Local/Library/Headers/General/ChunkArray.h
-Local/Library/Headers/General/ColoredSwitchButtonCell.h
-Local/Library/Headers/General/Comparing.h
-Local/Library/Headers/General/CondensedEntitiesArray.h
-Local/Library/Headers/General/DataScanner.h
-Local/Library/Headers/General/EntityChunk.h
-Local/Library/Headers/General/FilteredEnumerator.h
-Local/Library/Headers/General/FoundationAdditions.h
-Local/Library/Headers/General/HierarchyBrowser.h
-Local/Library/Headers/General/Macros.h
-Local/Library/Headers/General/MultiEnumerator.h
-Local/Library/Headers/General/NSArray+Additions.h
-Local/Library/Headers/General/NSColor+Additions.h
-Local/Library/Headers/General/NSDate+Additions.h
-Local/Library/Headers/General/NSDictionary+Additions.h
-Local/Library/Headers/General/NSMatrix+Additions.h
-Local/Library/Headers/General/NSObject+Additions.h
-Local/Library/Headers/General/NSString+Additions.h
-Local/Library/Headers/General/NSUserDefaults+Additions.h
-Local/Library/Headers/General/PSortedArray.h
-Local/Library/Headers/General/PTime.h
-Local/Library/Headers/General/PajeContainer.h
-Local/Library/Headers/General/PajeEntity.h
-Local/Library/Headers/General/PajeEntityInspector.h
-Local/Library/Headers/General/PajeEvent.h
-Local/Library/Headers/General/PajeFilter.h
-Local/Library/Headers/General/PajeType.h
-Local/Library/Headers/General/Protocols.h
-Local/Library/Headers/General/SourceCodeReference.h
-Local/Library/Headers/General/SourceTextController.h
-Local/Library/Headers/General/TranslationTable.h
-Local/Library/Headers/General/UniqueString.h
-Local/Library/Headers/ImbricationFilter/InsetLimit.h
-Local/Library/Headers/OrderFilter/Order.h
-Local/Library/Headers/ReductionFilter/BusyArray.h
-Local/Library/Headers/ReductionFilter/BusyDate.h
-Local/Library/Headers/ReductionFilter/BusyNode.h
-Local/Library/Headers/ReductionFilter/ReduceEntity.h
-Local/Library/Headers/ReductionFilter/ReduceEntityType.h
-Local/Library/Headers/SpaceTimeViewer/DrawView.h
-Local/Library/Headers/SpaceTimeViewer/HierarchyRuler.h
-Local/Library/Headers/SpaceTimeViewer/STController.h
-Local/Library/Headers/SpaceTimeViewer/STEntityTypeLayout.h
-Local/Library/Headers/SpaceTimeViewer/STEntityTypeLayoutController.h
-Local/Library/Headers/SpaceTimeViewer/STLayoutEditor.h
-Local/Library/Headers/SpaceTimeViewer/Shape.h
-Local/Library/Headers/StatViewer/PieCell.h
-Local/Library/Headers/StatViewer/StatArray.h
-Local/Library/Headers/StatViewer/StatViewer.h
-Local/Library/Headers/StorageController/AnchorFilter.h
-Local/Library/Headers/StorageController/Encapsulate.h
-Local/Tools/Paje
-@dirrm Local/Library/Headers/StorageController
-@dirrm Local/Library/Headers/StatViewer
-@dirrm Local/Library/Headers/SpaceTimeViewer
-@dirrm Local/Library/Headers/ReductionFilter
-@dirrm Local/Library/Headers/OrderFilter
-@dirrm Local/Library/Headers/ImbricationFilter
-@dirrm Local/Library/Headers/General
-@dirrm Local/Library/Headers/FieldFilter
-@dirrm Local/Library/Headers/EntityTypeFilter
-@dirrm Local/Library/Headers/ContainerFilter
-@dirrm Local/Library/Headers/AggregatingFilter
-@dirrm Local/Library/Bundles/Paje/StorageController.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/StorageController.bundle
-@dirrm Local/Library/Bundles/Paje/StatViewer.bundle/Resources/StatViewer.gorm
-@dirrm Local/Library/Bundles/Paje/StatViewer.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/StatViewer.bundle
-@dirrm Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm
-@dirrm Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/STEntityTypeLayout.gorm
-@dirrm Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/SpaceTimeViewer.bundle
-@dirrm Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources/ReductionFilter.gorm
-@dirrm Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/ReductionFilter.bundle
-@dirrm Local/Library/Bundles/Paje/PajeSimulator.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/PajeSimulator.bundle
-@dirrm Local/Library/Bundles/Paje/PajeEventDecoder.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/PajeEventDecoder.bundle
-@dirrm Local/Library/Bundles/Paje/OrderFilter.bundle/Resources/Order.gorm
-@dirrm Local/Library/Bundles/Paje/OrderFilter.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/OrderFilter.bundle
-@dirrm Local/Library/Bundles/Paje/ImbricationFilter.bundle/Resources/InsetLimit.gorm
-@dirrm Local/Library/Bundles/Paje/ImbricationFilter.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/ImbricationFilter.bundle
-@dirrm Local/Library/Bundles/Paje/General.bundle/Resources/SourceTextViewer.gorm
-@dirrm Local/Library/Bundles/Paje/General.bundle/Resources/PajeEntityInspector.gorm
-@dirrm Local/Library/Bundles/Paje/General.bundle/Resources/HierarchyBrowser.gorm
-@dirrm Local/Library/Bundles/Paje/General.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/General.bundle
-@dirrm Local/Library/Bundles/Paje/FileReader.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/FileReader.bundle
-@dirrm Local/Library/Bundles/Paje/FieldFilter.bundle/Resources/FieldFilter.gorm
-@dirrm Local/Library/Bundles/Paje/FieldFilter.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/FieldFilter.bundle
-@dirrm Local/Library/Bundles/Paje/EntityTypeFilter.bundle/Resources/EntityTypeSelector.gorm
-@dirrm Local/Library/Bundles/Paje/EntityTypeFilter.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/EntityTypeFilter.bundle
-@dirrm Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources/ContainerSelector.gorm
-@dirrm Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/ContainerFilter.bundle
-@dirrm Local/Library/Bundles/Paje/AggregatingFilter.bundle/Resources
-@dirrm Local/Library/Bundles/Paje/AggregatingFilter.bundle
-@dirrm Local/Library/Bundles/Paje
-@dirrm Local/Applications/Paje.app/Resources/PajeEntityInspector.gorm
-@dirrm Local/Applications/Paje.app/Resources/Paje.gorm
-@dirrm Local/Applications/Paje.app/Resources
-@dirrm Local/Applications/Paje.app
+GNUstep/Local/Applications/Paje.app/Paje
+GNUstep/Local/Applications/Paje.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Paje.app/Resources/Paje.desktop
+GNUstep/Local/Applications/Paje.app/Resources/Paje.gorm/data.classes
+GNUstep/Local/Applications/Paje.app/Resources/Paje.gorm/data.info
+GNUstep/Local/Applications/Paje.app/Resources/Paje.gorm/objects.gorm
+GNUstep/Local/Applications/Paje.app/Resources/Paje.tiff
+GNUstep/Local/Applications/Paje.app/Resources/PajeEntityInspector.gorm/data.classes
+GNUstep/Local/Applications/Paje.app/Resources/PajeEntityInspector.gorm/data.info
+GNUstep/Local/Applications/Paje.app/Resources/PajeEntityInspector.gorm/objects.gorm
+GNUstep/Local/Applications/Paje.app/Resources/PajeInfo.plist
+GNUstep/Local/Applications/Paje.app/Resources/distant.tiff
+GNUstep/Local/Applications/Paje.app/Resources/near.tiff
+GNUstep/Local/Applications/Paje.app/Resources/toselection.tiff
+GNUstep/Local/Applications/Paje.app/Resources/traceFilePaje.tiff
+GNUstep/Local/Applications/Paje.app/stamp.make
+GNUstep/Local/Library/Bundles/Paje/AggregatingFilter.bundle/AggregatingFilter
+GNUstep/Local/Library/Bundles/Paje/AggregatingFilter.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/AggregatingFilter.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/ContainerFilter.bundle/ContainerFilter
+GNUstep/Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources/ContainerSelector.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources/ContainerSelector.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/ContainerFilter.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/EntityTypeFilter.bundle/EntityTypeFilter
+GNUstep/Local/Library/Bundles/Paje/EntityTypeFilter.bundle/Resources/EntityTypeSelector.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/EntityTypeFilter.bundle/Resources/EntityTypeSelector.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/EntityTypeFilter.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/EntityTypeFilter.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/FieldFilter.bundle/FieldFilter
+GNUstep/Local/Library/Bundles/Paje/FieldFilter.bundle/Resources/FieldFilter.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/FieldFilter.bundle/Resources/FieldFilter.gorm/data.info
+GNUstep/Local/Library/Bundles/Paje/FieldFilter.bundle/Resources/FieldFilter.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/FieldFilter.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/FieldFilter.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/FileReader.bundle/FileReader
+GNUstep/Local/Library/Bundles/Paje/FileReader.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/FileReader.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/General.bundle/General
+GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/HierarchyBrowser.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/HierarchyBrowser.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/PajeEntityInspector.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/PajeEntityInspector.gorm/data.info
+GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/PajeEntityInspector.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/SourceTextViewer.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/SourceTextViewer.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/General.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/ImbricationFilter.bundle/ImbricationFilter
+GNUstep/Local/Library/Bundles/Paje/ImbricationFilter.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/ImbricationFilter.bundle/Resources/InsetLimit.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/ImbricationFilter.bundle/Resources/InsetLimit.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/ImbricationFilter.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/OrderFilter.bundle/OrderFilter
+GNUstep/Local/Library/Bundles/Paje/OrderFilter.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/OrderFilter.bundle/Resources/Order.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/OrderFilter.bundle/Resources/Order.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/OrderFilter.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/PajeEventDecoder.bundle/PajeEventDecoder
+GNUstep/Local/Library/Bundles/Paje/PajeEventDecoder.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/PajeEventDecoder.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/PajeSimulator.bundle/PajeSimulator
+GNUstep/Local/Library/Bundles/Paje/PajeSimulator.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/PajeSimulator.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/ReductionFilter.bundle/ReductionFilter
+GNUstep/Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources/ReductionFilter.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources/ReductionFilter.gorm/data.info
+GNUstep/Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources/ReductionFilter.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/ReductionFilter.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/STEntityTypeLayout.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/STEntityTypeLayout.gorm/data.info
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/STEntityTypeLayout.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm/distant.tiff
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm/near.tiff
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm/toselection.tiff
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/crosscursor.tiff
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/distant.tiff
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/near.tiff
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/toselection.tiff
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/SpaceTimeViewer
+GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/StatViewer.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/StatViewer.bundle/Resources/StatViewer.gorm/data.classes
+GNUstep/Local/Library/Bundles/Paje/StatViewer.bundle/Resources/StatViewer.gorm/data.info
+GNUstep/Local/Library/Bundles/Paje/StatViewer.bundle/Resources/StatViewer.gorm/objects.gorm
+GNUstep/Local/Library/Bundles/Paje/StatViewer.bundle/StatViewer
+GNUstep/Local/Library/Bundles/Paje/StatViewer.bundle/stamp.make
+GNUstep/Local/Library/Bundles/Paje/StorageController.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/Paje/StorageController.bundle/StorageController
+GNUstep/Local/Library/Bundles/Paje/StorageController.bundle/stamp.make
+GNUstep/Local/Library/Headers/AggregatingFilter/AggregateEvent.h
+GNUstep/Local/Library/Headers/AggregatingFilter/AggregateLink.h
+GNUstep/Local/Library/Headers/AggregatingFilter/AggregateState.h
+GNUstep/Local/Library/Headers/AggregatingFilter/AggregateValue.h
+GNUstep/Local/Library/Headers/AggregatingFilter/AggregatingChunk.h
+GNUstep/Local/Library/Headers/AggregatingFilter/AggregatingChunkArray.h
+GNUstep/Local/Library/Headers/AggregatingFilter/AggregatingFilter.h
+GNUstep/Local/Library/Headers/AggregatingFilter/EntityAggregator.h
+GNUstep/Local/Library/Headers/ContainerFilter/ContainerSelector.h
+GNUstep/Local/Library/Headers/EntityTypeFilter/EntityTypeSelector.h
+GNUstep/Local/Library/Headers/FieldFilter/FieldFilter.h
+GNUstep/Local/Library/Headers/FieldFilter/FieldFilterDescriptor.h
+GNUstep/Local/Library/Headers/General/Association.h
+GNUstep/Local/Library/Headers/General/CStringCallBacks.h
+GNUstep/Local/Library/Headers/General/ChunkArray.h
+GNUstep/Local/Library/Headers/General/ColoredSwitchButtonCell.h
+GNUstep/Local/Library/Headers/General/Comparing.h
+GNUstep/Local/Library/Headers/General/CondensedEntitiesArray.h
+GNUstep/Local/Library/Headers/General/DataScanner.h
+GNUstep/Local/Library/Headers/General/EntityChunk.h
+GNUstep/Local/Library/Headers/General/FilteredEnumerator.h
+GNUstep/Local/Library/Headers/General/FoundationAdditions.h
+GNUstep/Local/Library/Headers/General/HierarchyBrowser.h
+GNUstep/Local/Library/Headers/General/Macros.h
+GNUstep/Local/Library/Headers/General/MultiEnumerator.h
+GNUstep/Local/Library/Headers/General/NSArray+Additions.h
+GNUstep/Local/Library/Headers/General/NSColor+Additions.h
+GNUstep/Local/Library/Headers/General/NSDate+Additions.h
+GNUstep/Local/Library/Headers/General/NSDictionary+Additions.h
+GNUstep/Local/Library/Headers/General/NSMatrix+Additions.h
+GNUstep/Local/Library/Headers/General/NSObject+Additions.h
+GNUstep/Local/Library/Headers/General/NSString+Additions.h
+GNUstep/Local/Library/Headers/General/NSUserDefaults+Additions.h
+GNUstep/Local/Library/Headers/General/PSortedArray.h
+GNUstep/Local/Library/Headers/General/PTime.h
+GNUstep/Local/Library/Headers/General/PajeContainer.h
+GNUstep/Local/Library/Headers/General/PajeEntity.h
+GNUstep/Local/Library/Headers/General/PajeEntityInspector.h
+GNUstep/Local/Library/Headers/General/PajeEvent.h
+GNUstep/Local/Library/Headers/General/PajeFilter.h
+GNUstep/Local/Library/Headers/General/PajeType.h
+GNUstep/Local/Library/Headers/General/Protocols.h
+GNUstep/Local/Library/Headers/General/SourceCodeReference.h
+GNUstep/Local/Library/Headers/General/SourceTextController.h
+GNUstep/Local/Library/Headers/General/TranslationTable.h
+GNUstep/Local/Library/Headers/General/UniqueString.h
+GNUstep/Local/Library/Headers/ImbricationFilter/InsetLimit.h
+GNUstep/Local/Library/Headers/OrderFilter/Order.h
+GNUstep/Local/Library/Headers/ReductionFilter/BusyArray.h
+GNUstep/Local/Library/Headers/ReductionFilter/BusyDate.h
+GNUstep/Local/Library/Headers/ReductionFilter/BusyNode.h
+GNUstep/Local/Library/Headers/ReductionFilter/ReduceEntity.h
+GNUstep/Local/Library/Headers/ReductionFilter/ReduceEntityType.h
+GNUstep/Local/Library/Headers/SpaceTimeViewer/DrawView.h
+GNUstep/Local/Library/Headers/SpaceTimeViewer/HierarchyRuler.h
+GNUstep/Local/Library/Headers/SpaceTimeViewer/STController.h
+GNUstep/Local/Library/Headers/SpaceTimeViewer/STEntityTypeLayout.h
+GNUstep/Local/Library/Headers/SpaceTimeViewer/STEntityTypeLayoutController.h
+GNUstep/Local/Library/Headers/SpaceTimeViewer/STLayoutEditor.h
+GNUstep/Local/Library/Headers/SpaceTimeViewer/Shape.h
+GNUstep/Local/Library/Headers/StatViewer/PieCell.h
+GNUstep/Local/Library/Headers/StatViewer/StatArray.h
+GNUstep/Local/Library/Headers/StatViewer/StatViewer.h
+GNUstep/Local/Library/Headers/StorageController/AnchorFilter.h
+GNUstep/Local/Library/Headers/StorageController/Encapsulate.h
+GNUstep/Local/Tools/Paje
+@dirrm GNUstep/Local/Library/Headers/StorageController
+@dirrm GNUstep/Local/Library/Headers/StatViewer
+@dirrm GNUstep/Local/Library/Headers/SpaceTimeViewer
+@dirrm GNUstep/Local/Library/Headers/ReductionFilter
+@dirrm GNUstep/Local/Library/Headers/OrderFilter
+@dirrm GNUstep/Local/Library/Headers/ImbricationFilter
+@dirrm GNUstep/Local/Library/Headers/General
+@dirrm GNUstep/Local/Library/Headers/FieldFilter
+@dirrm GNUstep/Local/Library/Headers/EntityTypeFilter
+@dirrm GNUstep/Local/Library/Headers/ContainerFilter
+@dirrm GNUstep/Local/Library/Headers/AggregatingFilter
+@dirrm GNUstep/Local/Library/Bundles/Paje/StorageController.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/StorageController.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/StatViewer.bundle/Resources/StatViewer.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/StatViewer.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/StatViewer.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/SpaceTime.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources/STEntityTypeLayout.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/SpaceTimeViewer.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources/ReductionFilter.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/ReductionFilter.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/ReductionFilter.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/PajeSimulator.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/PajeSimulator.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/PajeEventDecoder.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/PajeEventDecoder.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/OrderFilter.bundle/Resources/Order.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/OrderFilter.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/OrderFilter.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/ImbricationFilter.bundle/Resources/InsetLimit.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/ImbricationFilter.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/ImbricationFilter.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/SourceTextViewer.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/PajeEntityInspector.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources/HierarchyBrowser.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/General.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/General.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/FileReader.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/FileReader.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/FieldFilter.bundle/Resources/FieldFilter.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/FieldFilter.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/FieldFilter.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/EntityTypeFilter.bundle/Resources/EntityTypeSelector.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/EntityTypeFilter.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/EntityTypeFilter.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources/ContainerSelector.gorm
+@dirrm GNUstep/Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/ContainerFilter.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje/AggregatingFilter.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/Paje/AggregatingFilter.bundle
+@dirrm GNUstep/Local/Library/Bundles/Paje
+@dirrm GNUstep/Local/Applications/Paje.app/Resources/PajeEntityInspector.gorm
+@dirrm GNUstep/Local/Applications/Paje.app/Resources/Paje.gorm
+@dirrm GNUstep/Local/Applications/Paje.app/Resources
+@dirrm GNUstep/Local/Applications/Paje.app

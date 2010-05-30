@@ -1,40 +1,40 @@
-Local/Library/Frameworks/BDB.framework/BDB
-Local/Library/Frameworks/BDB.framework/Headers
-Local/Library/Frameworks/BDB.framework/Resources
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/BDB
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDB.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBConfig.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBConstants.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBCursor.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBCursorConfig.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabase.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseConfig.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseEntry.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseEntryData.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseRecordNumber.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBErrorHandling.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBExceptions.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBLockMode.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBObject.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBOperationStatus.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBSerializer.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBTransaction.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/NSArchiver-BDBExtensions.h
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/libBDB.so
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/libBDB.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/libBDB.so.%%LIBVERSION%%
-Local/Library/Frameworks/BDB.framework/Versions/Current
-Local/Library/Frameworks/BDB.framework/libBDB.so
-Local/Library/Headers/BDB
-Local/Library/Libraries/libBDB.so
-Local/Library/Libraries/libBDB.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libBDB.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%
-@dirrm Local/Library/Frameworks/BDB.framework/Versions
-@dirrm Local/Library/Frameworks/BDB.framework
+GNUstep/Local/Library/Frameworks/BDB.framework/BDB
+GNUstep/Local/Library/Frameworks/BDB.framework/Headers
+GNUstep/Local/Library/Frameworks/BDB.framework/Resources
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/BDB
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDB.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBConfig.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBConstants.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBCursor.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBCursorConfig.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabase.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseConfig.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseEntry.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseEntryData.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseRecordNumber.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBErrorHandling.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBExceptions.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBLockMode.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBObject.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBOperationStatus.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBSerializer.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBTransaction.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/NSArchiver-BDBExtensions.h
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/libBDB.so
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/libBDB.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/libBDB.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/BDB.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/BDB.framework/libBDB.so
+GNUstep/Local/Library/Headers/BDB
+GNUstep/Local/Library/Libraries/libBDB.so
+GNUstep/Local/Library/Libraries/libBDB.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libBDB.so.%%LIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/BDB.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/BDB.framework
 %%PORTDOCS%%%%DOCSDIR%%/BDB/BDB.html
 %%PORTDOCS%%%%DOCSDIR%%/BDB/CompositePage.html
 %%PORTDOCS%%%%DOCSDIR%%/BDB/index.html

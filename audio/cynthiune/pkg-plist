@@ -1,212 +1,212 @@
-Local/Applications/Cynthiune.app/Cynthiune
-Local/Applications/Cynthiune.app/Resources/Armenian.lproj/Localizable.strings
-Local/Applications/Cynthiune.app/Resources/COPYING
-Local/Applications/Cynthiune.app/Resources/Cynthiune-playlist-48.tiff
-Local/Applications/Cynthiune.app/Resources/Cynthiune-song-48.tiff
-Local/Applications/Cynthiune.app/Resources/Cynthiune.desktop
-Local/Applications/Cynthiune.app/Resources/Cynthiune.gorm/data.classes
-Local/Applications/Cynthiune.app/Resources/Cynthiune.gorm/data.info
-Local/Applications/Cynthiune.app/Resources/Cynthiune.gorm/objects.gorm
-Local/Applications/Cynthiune.app/Resources/Cynthiune.tiff
-Local/Applications/Cynthiune.app/Resources/English.lproj/Localizable.strings
-Local/Applications/Cynthiune.app/Resources/French.lproj/Localizable.strings
-Local/Applications/Cynthiune.app/Resources/GeneralPreference.gorm/data.classes
-Local/Applications/Cynthiune.app/Resources/GeneralPreference.gorm/data.info
-Local/Applications/Cynthiune.app/Resources/GeneralPreference.gorm/objects.gorm
-Local/Applications/Cynthiune.app/Resources/German.lproj/Localizable.strings
-Local/Applications/Cynthiune.app/Resources/Hungarian.lproj/Localizable.strings
-Local/Applications/Cynthiune.app/Resources/Info-gnustep.plist
-Local/Applications/Cynthiune.app/Resources/Italian.lproj/Localizable.strings
-Local/Applications/Cynthiune.app/Resources/Preferences.gorm/data.classes
-Local/Applications/Cynthiune.app/Resources/Preferences.gorm/data.info
-Local/Applications/Cynthiune.app/Resources/Preferences.gorm/objects.gorm
-Local/Applications/Cynthiune.app/Resources/Slovak.lproj/Localizable.strings
-Local/Applications/Cynthiune.app/Resources/SongInspector.gorm/data.classes
-Local/Applications/Cynthiune.app/Resources/SongInspector.gorm/data.info
-Local/Applications/Cynthiune.app/Resources/SongInspector.gorm/objects.gorm
-Local/Applications/Cynthiune.app/Resources/Spanish.lproj/Localizable.strings
-Local/Applications/Cynthiune.app/Resources/TraditionalChinese.lproj/Localizable.strings
-Local/Applications/Cynthiune.app/Resources/add.tiff
-Local/Applications/Cynthiune.app/Resources/anim-logo-1.tiff
-Local/Applications/Cynthiune.app/Resources/anim-logo-2.tiff
-Local/Applications/Cynthiune.app/Resources/anim-logo-3.tiff
-Local/Applications/Cynthiune.app/Resources/anim-logo-4.tiff
-Local/Applications/Cynthiune.app/Resources/anim-logo-5.tiff
-Local/Applications/Cynthiune.app/Resources/anim-logo-6.tiff
-Local/Applications/Cynthiune.app/Resources/anim-logo-7.tiff
-Local/Applications/Cynthiune.app/Resources/anim-logo-8.tiff
-Local/Applications/Cynthiune.app/Resources/cleanup.tiff
-Local/Applications/Cynthiune.app/Resources/common_ToolbarSeparatorItem.tiff
-Local/Applications/Cynthiune.app/Resources/cynthiune-splash-faded.tiff
-Local/Applications/Cynthiune.app/Resources/cynthiune-splash.tiff
-Local/Applications/Cynthiune.app/Resources/dragged-song.tiff
-Local/Applications/Cynthiune.app/Resources/dragged-songs.tiff
-Local/Applications/Cynthiune.app/Resources/eject-pushed.tiff
-Local/Applications/Cynthiune.app/Resources/eject.tiff
-Local/Applications/Cynthiune.app/Resources/lock.tiff
-Local/Applications/Cynthiune.app/Resources/lookup-mb-off.tiff
-Local/Applications/Cynthiune.app/Resources/lookup-mb-on.tiff
-Local/Applications/Cynthiune.app/Resources/next-pushed.tiff
-Local/Applications/Cynthiune.app/Resources/next.tiff
-Local/Applications/Cynthiune.app/Resources/pause-pushed.tiff
-Local/Applications/Cynthiune.app/Resources/pause.tiff
-Local/Applications/Cynthiune.app/Resources/play-pushed.tiff
-Local/Applications/Cynthiune.app/Resources/play.tiff
-Local/Applications/Cynthiune.app/Resources/playlist-pushed.tiff
-Local/Applications/Cynthiune.app/Resources/playlist.tiff
-Local/Applications/Cynthiune.app/Resources/previous-pushed.tiff
-Local/Applications/Cynthiune.app/Resources/previous.tiff
-Local/Applications/Cynthiune.app/Resources/remove.tiff
-Local/Applications/Cynthiune.app/Resources/repeat-pushed.tiff
-Local/Applications/Cynthiune.app/Resources/repeat.tiff
-Local/Applications/Cynthiune.app/Resources/save-as.tiff
-Local/Applications/Cynthiune.app/Resources/shuffle-pushed.tiff
-Local/Applications/Cynthiune.app/Resources/shuffle.tiff
-Local/Applications/Cynthiune.app/Resources/slider-knob-disabled.tiff
-Local/Applications/Cynthiune.app/Resources/slider-knob-enabled.tiff
-Local/Applications/Cynthiune.app/Resources/song-inspector-pushed.tiff
-Local/Applications/Cynthiune.app/Resources/song-inspector.tiff
-Local/Applications/Cynthiune.app/Resources/song-pointer.tiff
-Local/Applications/Cynthiune.app/Resources/stop-pushed.tiff
-Local/Applications/Cynthiune.app/Resources/stop.tiff
-Local/Applications/Cynthiune.app/stamp.make
-Local/Library/Cynthiune/ASFTags.tags/ASFTags
-Local/Library/Cynthiune/ASFTags.tags/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/ASFTags.tags/stamp.make
-Local/Library/Cynthiune/AudioFile.format/AudioFile
-Local/Library/Cynthiune/AudioFile.format/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/AudioFile.format/stamp.make
-Local/Library/Cynthiune/Esound.output/Esound
-Local/Library/Cynthiune/Esound.output/Resources/English.lproj/Localizable.strings
-Local/Library/Cynthiune/Esound.output/Resources/EsoundPreferences.gorm/data.classes
-Local/Library/Cynthiune/Esound.output/Resources/EsoundPreferences.gorm/data.info
-Local/Library/Cynthiune/Esound.output/Resources/EsoundPreferences.gorm/objects.gorm
-Local/Library/Cynthiune/Esound.output/Resources/French.lproj/Localizable.strings
-Local/Library/Cynthiune/Esound.output/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/Esound.output/stamp.make
-Local/Library/Cynthiune/FLAC.format/FLAC
-Local/Library/Cynthiune/FLAC.format/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/FLAC.format/stamp.make
-Local/Library/Cynthiune/FLACTags.tags/FLACTags
-Local/Library/Cynthiune/FLACTags.tags/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/FLACTags.tags/stamp.make
-Local/Library/Cynthiune/ID3Tag.tags/ID3Tag
-Local/Library/Cynthiune/ID3Tag.tags/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/ID3Tag.tags/stamp.make
-Local/Library/Cynthiune/MP3.format/MP3
-Local/Library/Cynthiune/MP3.format/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/MP3.format/stamp.make
-Local/Library/Cynthiune/Mod.format/Mod
-Local/Library/Cynthiune/Mod.format/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/Mod.format/stamp.make
-Local/Library/Cynthiune/Musepack.format/Musepack
-Local/Library/Cynthiune/Musepack.format/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/Musepack.format/stamp.make
-Local/Library/Cynthiune/OSS.output/OSS
-Local/Library/Cynthiune/OSS.output/Resources/English.lproj/Localizable.strings
-Local/Library/Cynthiune/OSS.output/Resources/French.lproj/Localizable.strings
-Local/Library/Cynthiune/OSS.output/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/OSS.output/Resources/OSSPreferences.gorm/data.classes
-Local/Library/Cynthiune/OSS.output/Resources/OSSPreferences.gorm/data.info
-Local/Library/Cynthiune/OSS.output/Resources/OSSPreferences.gorm/objects.gorm
-Local/Library/Cynthiune/OSS.output/stamp.make
-Local/Library/Cynthiune/Ogg.format/Ogg
-Local/Library/Cynthiune/Ogg.format/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/Ogg.format/stamp.make
-Local/Library/Cynthiune/Taglib.tags/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/Taglib.tags/Taglib
-Local/Library/Cynthiune/Taglib.tags/stamp.make
-Local/Library/Cynthiune/Timidity.format/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/Timidity.format/Timidity
-Local/Library/Cynthiune/Timidity.format/stamp.make
-Local/Library/Cynthiune/VorbisTags.tags/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/VorbisTags.tags/VorbisTags
-Local/Library/Cynthiune/VorbisTags.tags/stamp.make
-Local/Library/Cynthiune/aRts.output/Resources/Info-gnustep.plist
-Local/Library/Cynthiune/aRts.output/aRts
-Local/Library/Cynthiune/aRts.output/stamp.make
-Local/Library/Frameworks/Cynthiune.framework/Cynthiune
-Local/Library/Frameworks/Cynthiune.framework/Headers
-Local/Library/Frameworks/Cynthiune.framework/Resources
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Cynthiune
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/CynthiuneBundle.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/Format.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/MailService.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSArrayExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSCellExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSColorExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSNumberExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSStringExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSTimerExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSViewExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/Output.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/Preference.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/utils.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/libCynthiune.so
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/libCynthiune.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/libCynthiune.so.%%LIBVERSION%%
-Local/Library/Frameworks/Cynthiune.framework/Versions/Current
-Local/Library/Frameworks/Cynthiune.framework/libCynthiune.so
-Local/Library/Headers/Cynthiune
-Local/Library/Libraries/libCynthiune.so
-Local/Library/Libraries/libCynthiune.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libCynthiune.so.%%LIBVERSION%%
-Local/Tools/Cynthiune
-@dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%
-@dirrm Local/Library/Frameworks/Cynthiune.framework/Versions
-@dirrm Local/Library/Frameworks/Cynthiune.framework
-@dirrm Local/Library/Cynthiune/aRts.output/Resources
-@dirrm Local/Library/Cynthiune/aRts.output
-@dirrm Local/Library/Cynthiune/VorbisTags.tags/Resources
-@dirrm Local/Library/Cynthiune/VorbisTags.tags
-@dirrm Local/Library/Cynthiune/Timidity.format/Resources
-@dirrm Local/Library/Cynthiune/Timidity.format
-@dirrm Local/Library/Cynthiune/Taglib.tags/Resources
-@dirrm Local/Library/Cynthiune/Taglib.tags
-@dirrm Local/Library/Cynthiune/Ogg.format/Resources
-@dirrm Local/Library/Cynthiune/Ogg.format
-@dirrm Local/Library/Cynthiune/OSS.output/Resources/OSSPreferences.gorm
-@dirrm Local/Library/Cynthiune/OSS.output/Resources/French.lproj
-@dirrm Local/Library/Cynthiune/OSS.output/Resources/English.lproj
-@dirrm Local/Library/Cynthiune/OSS.output/Resources
-@dirrm Local/Library/Cynthiune/OSS.output
-@dirrm Local/Library/Cynthiune/Musepack.format/Resources
-@dirrm Local/Library/Cynthiune/Musepack.format
-@dirrm Local/Library/Cynthiune/Mod.format/Resources
-@dirrm Local/Library/Cynthiune/Mod.format
-@dirrm Local/Library/Cynthiune/MP3.format/Resources
-@dirrm Local/Library/Cynthiune/MP3.format
-@dirrm Local/Library/Cynthiune/ID3Tag.tags/Resources
-@dirrm Local/Library/Cynthiune/ID3Tag.tags
-@dirrm Local/Library/Cynthiune/FLACTags.tags/Resources
-@dirrm Local/Library/Cynthiune/FLACTags.tags
-@dirrm Local/Library/Cynthiune/FLAC.format/Resources
-@dirrm Local/Library/Cynthiune/FLAC.format
-@dirrm Local/Library/Cynthiune/Esound.output/Resources/French.lproj
-@dirrm Local/Library/Cynthiune/Esound.output/Resources/EsoundPreferences.gorm
-@dirrm Local/Library/Cynthiune/Esound.output/Resources/English.lproj
-@dirrm Local/Library/Cynthiune/Esound.output/Resources
-@dirrm Local/Library/Cynthiune/Esound.output
-@dirrm Local/Library/Cynthiune/AudioFile.format/Resources
-@dirrm Local/Library/Cynthiune/AudioFile.format
-@dirrm Local/Library/Cynthiune/ASFTags.tags/Resources
-@dirrm Local/Library/Cynthiune/ASFTags.tags
-@dirrm Local/Library/Cynthiune
-@dirrm Local/Applications/Cynthiune.app/Resources/TraditionalChinese.lproj
-@dirrm Local/Applications/Cynthiune.app/Resources/Spanish.lproj
-@dirrm Local/Applications/Cynthiune.app/Resources/SongInspector.gorm
-@dirrm Local/Applications/Cynthiune.app/Resources/Slovak.lproj
-@dirrm Local/Applications/Cynthiune.app/Resources/Preferences.gorm
-@dirrm Local/Applications/Cynthiune.app/Resources/Italian.lproj
-@dirrm Local/Applications/Cynthiune.app/Resources/Hungarian.lproj
-@dirrm Local/Applications/Cynthiune.app/Resources/German.lproj
-@dirrm Local/Applications/Cynthiune.app/Resources/GeneralPreference.gorm
-@dirrm Local/Applications/Cynthiune.app/Resources/French.lproj
-@dirrm Local/Applications/Cynthiune.app/Resources/English.lproj
-@dirrm Local/Applications/Cynthiune.app/Resources/Cynthiune.gorm
-@dirrm Local/Applications/Cynthiune.app/Resources/Armenian.lproj
-@dirrm Local/Applications/Cynthiune.app/Resources
-@dirrm Local/Applications/Cynthiune.app
+GNUstep/Local/Applications/Cynthiune.app/Cynthiune
+GNUstep/Local/Applications/Cynthiune.app/Resources/Armenian.lproj/Localizable.strings
+GNUstep/Local/Applications/Cynthiune.app/Resources/COPYING
+GNUstep/Local/Applications/Cynthiune.app/Resources/Cynthiune-playlist-48.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/Cynthiune-song-48.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/Cynthiune.desktop
+GNUstep/Local/Applications/Cynthiune.app/Resources/Cynthiune.gorm/data.classes
+GNUstep/Local/Applications/Cynthiune.app/Resources/Cynthiune.gorm/data.info
+GNUstep/Local/Applications/Cynthiune.app/Resources/Cynthiune.gorm/objects.gorm
+GNUstep/Local/Applications/Cynthiune.app/Resources/Cynthiune.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/Cynthiune.app/Resources/French.lproj/Localizable.strings
+GNUstep/Local/Applications/Cynthiune.app/Resources/GeneralPreference.gorm/data.classes
+GNUstep/Local/Applications/Cynthiune.app/Resources/GeneralPreference.gorm/data.info
+GNUstep/Local/Applications/Cynthiune.app/Resources/GeneralPreference.gorm/objects.gorm
+GNUstep/Local/Applications/Cynthiune.app/Resources/German.lproj/Localizable.strings
+GNUstep/Local/Applications/Cynthiune.app/Resources/Hungarian.lproj/Localizable.strings
+GNUstep/Local/Applications/Cynthiune.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Cynthiune.app/Resources/Italian.lproj/Localizable.strings
+GNUstep/Local/Applications/Cynthiune.app/Resources/Preferences.gorm/data.classes
+GNUstep/Local/Applications/Cynthiune.app/Resources/Preferences.gorm/data.info
+GNUstep/Local/Applications/Cynthiune.app/Resources/Preferences.gorm/objects.gorm
+GNUstep/Local/Applications/Cynthiune.app/Resources/Slovak.lproj/Localizable.strings
+GNUstep/Local/Applications/Cynthiune.app/Resources/SongInspector.gorm/data.classes
+GNUstep/Local/Applications/Cynthiune.app/Resources/SongInspector.gorm/data.info
+GNUstep/Local/Applications/Cynthiune.app/Resources/SongInspector.gorm/objects.gorm
+GNUstep/Local/Applications/Cynthiune.app/Resources/Spanish.lproj/Localizable.strings
+GNUstep/Local/Applications/Cynthiune.app/Resources/TraditionalChinese.lproj/Localizable.strings
+GNUstep/Local/Applications/Cynthiune.app/Resources/add.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/anim-logo-1.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/anim-logo-2.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/anim-logo-3.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/anim-logo-4.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/anim-logo-5.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/anim-logo-6.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/anim-logo-7.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/anim-logo-8.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/cleanup.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/common_ToolbarSeparatorItem.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/cynthiune-splash-faded.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/cynthiune-splash.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/dragged-song.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/dragged-songs.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/eject-pushed.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/eject.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/lock.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/lookup-mb-off.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/lookup-mb-on.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/next-pushed.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/next.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/pause-pushed.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/pause.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/play-pushed.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/play.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/playlist-pushed.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/playlist.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/previous-pushed.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/previous.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/remove.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/repeat-pushed.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/repeat.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/save-as.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/shuffle-pushed.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/shuffle.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/slider-knob-disabled.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/slider-knob-enabled.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/song-inspector-pushed.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/song-inspector.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/song-pointer.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/stop-pushed.tiff
+GNUstep/Local/Applications/Cynthiune.app/Resources/stop.tiff
+GNUstep/Local/Applications/Cynthiune.app/stamp.make
+GNUstep/Local/Library/Cynthiune/ASFTags.tags/ASFTags
+GNUstep/Local/Library/Cynthiune/ASFTags.tags/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/ASFTags.tags/stamp.make
+GNUstep/Local/Library/Cynthiune/AudioFile.format/AudioFile
+GNUstep/Local/Library/Cynthiune/AudioFile.format/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/AudioFile.format/stamp.make
+GNUstep/Local/Library/Cynthiune/Esound.output/Esound
+GNUstep/Local/Library/Cynthiune/Esound.output/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Library/Cynthiune/Esound.output/Resources/EsoundPreferences.gorm/data.classes
+GNUstep/Local/Library/Cynthiune/Esound.output/Resources/EsoundPreferences.gorm/data.info
+GNUstep/Local/Library/Cynthiune/Esound.output/Resources/EsoundPreferences.gorm/objects.gorm
+GNUstep/Local/Library/Cynthiune/Esound.output/Resources/French.lproj/Localizable.strings
+GNUstep/Local/Library/Cynthiune/Esound.output/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/Esound.output/stamp.make
+GNUstep/Local/Library/Cynthiune/FLAC.format/FLAC
+GNUstep/Local/Library/Cynthiune/FLAC.format/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/FLAC.format/stamp.make
+GNUstep/Local/Library/Cynthiune/FLACTags.tags/FLACTags
+GNUstep/Local/Library/Cynthiune/FLACTags.tags/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/FLACTags.tags/stamp.make
+GNUstep/Local/Library/Cynthiune/ID3Tag.tags/ID3Tag
+GNUstep/Local/Library/Cynthiune/ID3Tag.tags/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/ID3Tag.tags/stamp.make
+GNUstep/Local/Library/Cynthiune/MP3.format/MP3
+GNUstep/Local/Library/Cynthiune/MP3.format/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/MP3.format/stamp.make
+GNUstep/Local/Library/Cynthiune/Mod.format/Mod
+GNUstep/Local/Library/Cynthiune/Mod.format/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/Mod.format/stamp.make
+GNUstep/Local/Library/Cynthiune/Musepack.format/Musepack
+GNUstep/Local/Library/Cynthiune/Musepack.format/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/Musepack.format/stamp.make
+GNUstep/Local/Library/Cynthiune/OSS.output/OSS
+GNUstep/Local/Library/Cynthiune/OSS.output/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Library/Cynthiune/OSS.output/Resources/French.lproj/Localizable.strings
+GNUstep/Local/Library/Cynthiune/OSS.output/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/OSS.output/Resources/OSSPreferences.gorm/data.classes
+GNUstep/Local/Library/Cynthiune/OSS.output/Resources/OSSPreferences.gorm/data.info
+GNUstep/Local/Library/Cynthiune/OSS.output/Resources/OSSPreferences.gorm/objects.gorm
+GNUstep/Local/Library/Cynthiune/OSS.output/stamp.make
+GNUstep/Local/Library/Cynthiune/Ogg.format/Ogg
+GNUstep/Local/Library/Cynthiune/Ogg.format/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/Ogg.format/stamp.make
+GNUstep/Local/Library/Cynthiune/Taglib.tags/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/Taglib.tags/Taglib
+GNUstep/Local/Library/Cynthiune/Taglib.tags/stamp.make
+GNUstep/Local/Library/Cynthiune/Timidity.format/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/Timidity.format/Timidity
+GNUstep/Local/Library/Cynthiune/Timidity.format/stamp.make
+GNUstep/Local/Library/Cynthiune/VorbisTags.tags/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/VorbisTags.tags/VorbisTags
+GNUstep/Local/Library/Cynthiune/VorbisTags.tags/stamp.make
+GNUstep/Local/Library/Cynthiune/aRts.output/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Cynthiune/aRts.output/aRts
+GNUstep/Local/Library/Cynthiune/aRts.output/stamp.make
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Cynthiune
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Headers
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Resources
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Cynthiune
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/CynthiuneBundle.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/Format.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/MailService.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSArrayExtensions.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSCellExtensions.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSColorExtensions.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSNumberExtensions.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSStringExtensions.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSTimerExtensions.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSViewExtensions.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/Output.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/Preference.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/utils.h
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/libCynthiune.so
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/libCynthiune.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/libCynthiune.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/Cynthiune.framework/libCynthiune.so
+GNUstep/Local/Library/Headers/Cynthiune
+GNUstep/Local/Library/Libraries/libCynthiune.so
+GNUstep/Local/Library/Libraries/libCynthiune.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libCynthiune.so.%%LIBVERSION%%
+GNUstep/Local/Tools/Cynthiune
+@dirrm GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/Cynthiune.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/Cynthiune.framework
+@dirrm GNUstep/Local/Library/Cynthiune/aRts.output/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/aRts.output
+@dirrm GNUstep/Local/Library/Cynthiune/VorbisTags.tags/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/VorbisTags.tags
+@dirrm GNUstep/Local/Library/Cynthiune/Timidity.format/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/Timidity.format
+@dirrm GNUstep/Local/Library/Cynthiune/Taglib.tags/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/Taglib.tags
+@dirrm GNUstep/Local/Library/Cynthiune/Ogg.format/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/Ogg.format
+@dirrm GNUstep/Local/Library/Cynthiune/OSS.output/Resources/OSSPreferences.gorm
+@dirrm GNUstep/Local/Library/Cynthiune/OSS.output/Resources/French.lproj
+@dirrm GNUstep/Local/Library/Cynthiune/OSS.output/Resources/English.lproj
+@dirrm GNUstep/Local/Library/Cynthiune/OSS.output/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/OSS.output
+@dirrm GNUstep/Local/Library/Cynthiune/Musepack.format/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/Musepack.format
+@dirrm GNUstep/Local/Library/Cynthiune/Mod.format/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/Mod.format
+@dirrm GNUstep/Local/Library/Cynthiune/MP3.format/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/MP3.format
+@dirrm GNUstep/Local/Library/Cynthiune/ID3Tag.tags/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/ID3Tag.tags
+@dirrm GNUstep/Local/Library/Cynthiune/FLACTags.tags/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/FLACTags.tags
+@dirrm GNUstep/Local/Library/Cynthiune/FLAC.format/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/FLAC.format
+@dirrm GNUstep/Local/Library/Cynthiune/Esound.output/Resources/French.lproj
+@dirrm GNUstep/Local/Library/Cynthiune/Esound.output/Resources/EsoundPreferences.gorm
+@dirrm GNUstep/Local/Library/Cynthiune/Esound.output/Resources/English.lproj
+@dirrm GNUstep/Local/Library/Cynthiune/Esound.output/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/Esound.output
+@dirrm GNUstep/Local/Library/Cynthiune/AudioFile.format/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/AudioFile.format
+@dirrm GNUstep/Local/Library/Cynthiune/ASFTags.tags/Resources
+@dirrm GNUstep/Local/Library/Cynthiune/ASFTags.tags
+@dirrm GNUstep/Local/Library/Cynthiune
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/TraditionalChinese.lproj
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/Spanish.lproj
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/SongInspector.gorm
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/Slovak.lproj
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/Preferences.gorm
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/Italian.lproj
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/Hungarian.lproj
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/German.lproj
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/GeneralPreference.gorm
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/French.lproj
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/Cynthiune.gorm
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources/Armenian.lproj
+@dirrm GNUstep/Local/Applications/Cynthiune.app/Resources
+@dirrm GNUstep/Local/Applications/Cynthiune.app

@@ -20,7 +20,6 @@ COMMENT=	Implementation of Apples Bonjour for GNUstep
 LIB_DEPENDS=	dns_sd:${PORTSDIR}/net/mDNSResponder
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

@@ -1,14 +1,14 @@
-Local/Applications/ScriptServices.app/Resources/Info-gnustep.plist
-Local/Applications/ScriptServices.app/Resources/ScriptServices.desktop
-Local/Applications/ScriptServices.app/Resources/Scripts/Calculate_.sh
-Local/Applications/ScriptServices.app/Resources/Scripts/Current_Time_.sh
-Local/Applications/ScriptServices.app/Resources/Scripts/Open_in_Wikipedia.sh
-Local/Applications/ScriptServices.app/Resources/Scripts/Open_in_Wiktionary.sh
-Local/Applications/ScriptServices.app/Resources/Scripts/today.plist
-Local/Applications/ScriptServices.app/Resources/Scripts/today.sh
-Local/Applications/ScriptServices.app/ScriptServices
-Local/Applications/ScriptServices.app/stamp.make
-Local/Tools/ScriptServices
-@dirrm Local/Applications/ScriptServices.app/Resources/Scripts
-@dirrm Local/Applications/ScriptServices.app/Resources
-@dirrm Local/Applications/ScriptServices.app
+GNUstep/Local/Applications/ScriptServices.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/ScriptServices.app/Resources/ScriptServices.desktop
+GNUstep/Local/Applications/ScriptServices.app/Resources/Scripts/Calculate_.sh
+GNUstep/Local/Applications/ScriptServices.app/Resources/Scripts/Current_Time_.sh
+GNUstep/Local/Applications/ScriptServices.app/Resources/Scripts/Open_in_Wikipedia.sh
+GNUstep/Local/Applications/ScriptServices.app/Resources/Scripts/Open_in_Wiktionary.sh
+GNUstep/Local/Applications/ScriptServices.app/Resources/Scripts/today.plist
+GNUstep/Local/Applications/ScriptServices.app/Resources/Scripts/today.sh
+GNUstep/Local/Applications/ScriptServices.app/ScriptServices
+GNUstep/Local/Applications/ScriptServices.app/stamp.make
+GNUstep/Local/Tools/ScriptServices
+@dirrm GNUstep/Local/Applications/ScriptServices.app/Resources/Scripts
+@dirrm GNUstep/Local/Applications/ScriptServices.app/Resources
+@dirrm GNUstep/Local/Applications/ScriptServices.app

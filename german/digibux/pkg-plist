@@ -1,32 +1,32 @@
-Local/Applications/Digibux.app/Digibux
-Local/Applications/Digibux.app/Resources/AutorenNIB.gorm/data.classes
-Local/Applications/Digibux.app/Resources/AutorenNIB.gorm/data.info
-Local/Applications/Digibux.app/Resources/AutorenNIB.gorm/objects.gorm
-Local/Applications/Digibux.app/Resources/COVER1.BMP
-Local/Applications/Digibux.app/Resources/COVER1B.BMP
-Local/Applications/Digibux.app/Resources/Digibux.desktop
-Local/Applications/Digibux.app/Resources/Digibux_app.tiff
-Local/Applications/Digibux.app/Resources/ImageLocator.plist
-Local/Applications/Digibux.app/Resources/ImageViewer.gorm/data.classes
-Local/Applications/Digibux.app/Resources/ImageViewer.gorm/objects.gorm
-Local/Applications/Digibux.app/Resources/Info-gnustep.plist
-Local/Applications/Digibux.app/Resources/StartWindow.gorm/data.classes
-Local/Applications/Digibux.app/Resources/StartWindow.gorm/objects.gorm
-Local/Applications/Digibux.app/Resources/digibiball.plist
-Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-blau.tiff
-Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-gelb.tiff
-Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-gruen.tiff
-Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-rot.tiff
-Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-temp.tiff
-Local/Applications/Digibux.app/Resources/ldp.gorm/data.classes
-Local/Applications/Digibux.app/Resources/ldp.gorm/data.info
-Local/Applications/Digibux.app/Resources/ldp.gorm/objects.gorm
-Local/Applications/Digibux.app/Resources/unicode.plist
-Local/Applications/Digibux.app/stamp.make
-Local/Tools/Digibux
-@dirrm Local/Applications/Digibux.app/Resources/ldp.gorm
-@dirrm Local/Applications/Digibux.app/Resources/StartWindow.gorm
-@dirrm Local/Applications/Digibux.app/Resources/ImageViewer.gorm
-@dirrm Local/Applications/Digibux.app/Resources/AutorenNIB.gorm
-@dirrm Local/Applications/Digibux.app/Resources
-@dirrm Local/Applications/Digibux.app
+GNUstep/Local/Applications/Digibux.app/Digibux
+GNUstep/Local/Applications/Digibux.app/Resources/AutorenNIB.gorm/data.classes
+GNUstep/Local/Applications/Digibux.app/Resources/AutorenNIB.gorm/data.info
+GNUstep/Local/Applications/Digibux.app/Resources/AutorenNIB.gorm/objects.gorm
+GNUstep/Local/Applications/Digibux.app/Resources/COVER1.BMP
+GNUstep/Local/Applications/Digibux.app/Resources/COVER1B.BMP
+GNUstep/Local/Applications/Digibux.app/Resources/Digibux.desktop
+GNUstep/Local/Applications/Digibux.app/Resources/Digibux_app.tiff
+GNUstep/Local/Applications/Digibux.app/Resources/ImageLocator.plist
+GNUstep/Local/Applications/Digibux.app/Resources/ImageViewer.gorm/data.classes
+GNUstep/Local/Applications/Digibux.app/Resources/ImageViewer.gorm/objects.gorm
+GNUstep/Local/Applications/Digibux.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Digibux.app/Resources/StartWindow.gorm/data.classes
+GNUstep/Local/Applications/Digibux.app/Resources/StartWindow.gorm/objects.gorm
+GNUstep/Local/Applications/Digibux.app/Resources/digibiball.plist
+GNUstep/Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-blau.tiff
+GNUstep/Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-gelb.tiff
+GNUstep/Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-gruen.tiff
+GNUstep/Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-rot.tiff
+GNUstep/Local/Applications/Digibux.app/Resources/ldp.gorm/Stift-temp.tiff
+GNUstep/Local/Applications/Digibux.app/Resources/ldp.gorm/data.classes
+GNUstep/Local/Applications/Digibux.app/Resources/ldp.gorm/data.info
+GNUstep/Local/Applications/Digibux.app/Resources/ldp.gorm/objects.gorm
+GNUstep/Local/Applications/Digibux.app/Resources/unicode.plist
+GNUstep/Local/Applications/Digibux.app/stamp.make
+GNUstep/Local/Tools/Digibux
+@dirrm GNUstep/Local/Applications/Digibux.app/Resources/ldp.gorm
+@dirrm GNUstep/Local/Applications/Digibux.app/Resources/StartWindow.gorm
+@dirrm GNUstep/Local/Applications/Digibux.app/Resources/ImageViewer.gorm
+@dirrm GNUstep/Local/Applications/Digibux.app/Resources/AutorenNIB.gorm
+@dirrm GNUstep/Local/Applications/Digibux.app/Resources
+@dirrm GNUstep/Local/Applications/Digibux.app

@@ -1,70 +1,70 @@
-Local/Applications/Poe.app/Poe
-Local/Applications/Poe.app/Resources/B_add.tiff
-Local/Applications/Poe.app/Resources/B_add_old_.png
-Local/Applications/Poe.app/Resources/B_remove.tiff
-Local/Applications/Poe.app/Resources/B_remove_old_.png
-Local/Applications/Poe.app/Resources/Bulgarian.lproj/CommentInfo.strings
-Local/Applications/Poe.app/Resources/Bulgarian.lproj/Editor.gorm/data.classes
-Local/Applications/Poe.app/Resources/Bulgarian.lproj/Editor.gorm/data.info
-Local/Applications/Poe.app/Resources/Bulgarian.lproj/Editor.gorm/objects.gorm
-Local/Applications/Poe.app/Resources/Bulgarian.lproj/Localizable.strings
-Local/Applications/Poe.app/Resources/CommentInfo.plist
-Local/Applications/Poe.app/Resources/English.lproj/AddPanel.gorm/data.classes
-Local/Applications/Poe.app/Resources/English.lproj/AddPanel.gorm/data.info
-Local/Applications/Poe.app/Resources/English.lproj/AddPanel.gorm/objects.gorm
-Local/Applications/Poe.app/Resources/English.lproj/BrowserEditor.gorm/data.classes
-Local/Applications/Poe.app/Resources/English.lproj/BrowserEditor.gorm/objects.gorm
-Local/Applications/Poe.app/Resources/English.lproj/CommentInfo.strings
-Local/Applications/Poe.app/Resources/English.lproj/Editor.gorm/data.classes
-Local/Applications/Poe.app/Resources/English.lproj/Editor.gorm/data.info
-Local/Applications/Poe.app/Resources/English.lproj/Editor.gorm/objects.gorm
-Local/Applications/Poe.app/Resources/English.lproj/Localizable.strings
-Local/Applications/Poe.app/Resources/English.lproj/Poe.gorm/data.classes
-Local/Applications/Poe.app/Resources/English.lproj/Poe.gorm/data.info
-Local/Applications/Poe.app/Resources/English.lproj/Poe.gorm/objects.gorm
-Local/Applications/Poe.app/Resources/English.lproj/Preferences.gorm/data.classes
-Local/Applications/Poe.app/Resources/English.lproj/Preferences.gorm/objects.gorm
-Local/Applications/Poe.app/Resources/FI_ogg.tiff
-Local/Applications/Poe.app/Resources/German.lproj/CommentInfo.strings
-Local/Applications/Poe.app/Resources/German.lproj/Editor.gorm/data.classes
-Local/Applications/Poe.app/Resources/German.lproj/Editor.gorm/data.info
-Local/Applications/Poe.app/Resources/German.lproj/Editor.gorm/objects.gorm
-Local/Applications/Poe.app/Resources/German.lproj/Localizable.strings
-Local/Applications/Poe.app/Resources/Info-gnustep.plist
-Local/Applications/Poe.app/Resources/Italian.lproj/CommentInfo.strings
-Local/Applications/Poe.app/Resources/Italian.lproj/Editor.gorm/data.classes
-Local/Applications/Poe.app/Resources/Italian.lproj/Editor.gorm/data.info
-Local/Applications/Poe.app/Resources/Italian.lproj/Editor.gorm/objects.gorm
-Local/Applications/Poe.app/Resources/Italian.lproj/Localizable.strings
-Local/Applications/Poe.app/Resources/Japanese.lproj/AddPanel.gorm/data.classes
-Local/Applications/Poe.app/Resources/Japanese.lproj/AddPanel.gorm/data.info
-Local/Applications/Poe.app/Resources/Japanese.lproj/AddPanel.gorm/objects.gorm
-Local/Applications/Poe.app/Resources/Japanese.lproj/CommentInfo.strings
-Local/Applications/Poe.app/Resources/Japanese.lproj/Editor.gorm/data.classes
-Local/Applications/Poe.app/Resources/Japanese.lproj/Editor.gorm/data.info
-Local/Applications/Poe.app/Resources/Japanese.lproj/Editor.gorm/objects.gorm
-Local/Applications/Poe.app/Resources/Japanese.lproj/Localizable.strings
-Local/Applications/Poe.app/Resources/Poe.desktop
-Local/Applications/Poe.app/Resources/Poe.tiff
-Local/Applications/Poe.app/Resources/Thai.lproj/CommentInfo.strings
-Local/Applications/Poe.app/Resources/Thai.lproj/Localizable.strings
-Local/Applications/Poe.app/stamp.make
-Local/Tools/Poe
-@dirrm Local/Applications/Poe.app/Resources/Thai.lproj
-@dirrm Local/Applications/Poe.app/Resources/Japanese.lproj/Editor.gorm
-@dirrm Local/Applications/Poe.app/Resources/Japanese.lproj/AddPanel.gorm
-@dirrm Local/Applications/Poe.app/Resources/Japanese.lproj
-@dirrm Local/Applications/Poe.app/Resources/Italian.lproj/Editor.gorm
-@dirrm Local/Applications/Poe.app/Resources/Italian.lproj
-@dirrm Local/Applications/Poe.app/Resources/German.lproj/Editor.gorm
-@dirrm Local/Applications/Poe.app/Resources/German.lproj
-@dirrm Local/Applications/Poe.app/Resources/English.lproj/Preferences.gorm
-@dirrm Local/Applications/Poe.app/Resources/English.lproj/Poe.gorm
-@dirrm Local/Applications/Poe.app/Resources/English.lproj/Editor.gorm
-@dirrm Local/Applications/Poe.app/Resources/English.lproj/BrowserEditor.gorm
-@dirrm Local/Applications/Poe.app/Resources/English.lproj/AddPanel.gorm
-@dirrm Local/Applications/Poe.app/Resources/English.lproj
-@dirrm Local/Applications/Poe.app/Resources/Bulgarian.lproj/Editor.gorm
-@dirrm Local/Applications/Poe.app/Resources/Bulgarian.lproj
-@dirrm Local/Applications/Poe.app/Resources
-@dirrm Local/Applications/Poe.app
+GNUstep/Local/Applications/Poe.app/Poe
+GNUstep/Local/Applications/Poe.app/Resources/B_add.tiff
+GNUstep/Local/Applications/Poe.app/Resources/B_add_old_.png
+GNUstep/Local/Applications/Poe.app/Resources/B_remove.tiff
+GNUstep/Local/Applications/Poe.app/Resources/B_remove_old_.png
+GNUstep/Local/Applications/Poe.app/Resources/Bulgarian.lproj/CommentInfo.strings
+GNUstep/Local/Applications/Poe.app/Resources/Bulgarian.lproj/Editor.gorm/data.classes
+GNUstep/Local/Applications/Poe.app/Resources/Bulgarian.lproj/Editor.gorm/data.info
+GNUstep/Local/Applications/Poe.app/Resources/Bulgarian.lproj/Editor.gorm/objects.gorm
+GNUstep/Local/Applications/Poe.app/Resources/Bulgarian.lproj/Localizable.strings
+GNUstep/Local/Applications/Poe.app/Resources/CommentInfo.plist
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/AddPanel.gorm/data.classes
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/AddPanel.gorm/data.info
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/AddPanel.gorm/objects.gorm
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/BrowserEditor.gorm/data.classes
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/BrowserEditor.gorm/objects.gorm
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/CommentInfo.strings
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Editor.gorm/data.classes
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Editor.gorm/data.info
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Editor.gorm/objects.gorm
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Poe.gorm/data.classes
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Poe.gorm/data.info
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Poe.gorm/objects.gorm
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Preferences.gorm/data.classes
+GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Preferences.gorm/objects.gorm
+GNUstep/Local/Applications/Poe.app/Resources/FI_ogg.tiff
+GNUstep/Local/Applications/Poe.app/Resources/German.lproj/CommentInfo.strings
+GNUstep/Local/Applications/Poe.app/Resources/German.lproj/Editor.gorm/data.classes
+GNUstep/Local/Applications/Poe.app/Resources/German.lproj/Editor.gorm/data.info
+GNUstep/Local/Applications/Poe.app/Resources/German.lproj/Editor.gorm/objects.gorm
+GNUstep/Local/Applications/Poe.app/Resources/German.lproj/Localizable.strings
+GNUstep/Local/Applications/Poe.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Poe.app/Resources/Italian.lproj/CommentInfo.strings
+GNUstep/Local/Applications/Poe.app/Resources/Italian.lproj/Editor.gorm/data.classes
+GNUstep/Local/Applications/Poe.app/Resources/Italian.lproj/Editor.gorm/data.info
+GNUstep/Local/Applications/Poe.app/Resources/Italian.lproj/Editor.gorm/objects.gorm
+GNUstep/Local/Applications/Poe.app/Resources/Italian.lproj/Localizable.strings
+GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/AddPanel.gorm/data.classes
+GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/AddPanel.gorm/data.info
+GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/AddPanel.gorm/objects.gorm
+GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/CommentInfo.strings
+GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/Editor.gorm/data.classes
+GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/Editor.gorm/data.info
+GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/Editor.gorm/objects.gorm
+GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/Localizable.strings
+GNUstep/Local/Applications/Poe.app/Resources/Poe.desktop
+GNUstep/Local/Applications/Poe.app/Resources/Poe.tiff
+GNUstep/Local/Applications/Poe.app/Resources/Thai.lproj/CommentInfo.strings
+GNUstep/Local/Applications/Poe.app/Resources/Thai.lproj/Localizable.strings
+GNUstep/Local/Applications/Poe.app/stamp.make
+GNUstep/Local/Tools/Poe
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/Thai.lproj
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/Editor.gorm
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj/AddPanel.gorm
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/Japanese.lproj
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/Italian.lproj/Editor.gorm
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/Italian.lproj
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/German.lproj/Editor.gorm
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/German.lproj
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Preferences.gorm
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Poe.gorm
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj/Editor.gorm
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj/BrowserEditor.gorm
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj/AddPanel.gorm
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/Bulgarian.lproj/Editor.gorm
+@dirrm GNUstep/Local/Applications/Poe.app/Resources/Bulgarian.lproj
+@dirrm GNUstep/Local/Applications/Poe.app/Resources
+@dirrm GNUstep/Local/Applications/Poe.app

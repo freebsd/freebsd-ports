@@ -1,63 +1,63 @@
-Local/Applications/Popup.app/Popup
-Local/Applications/Popup.app/Resources/AddEntry.tiff
-Local/Applications/Popup.app/Resources/DeleteEntry.tiff
-Local/Applications/Popup.app/Resources/DraggedCard.tiff
-Local/Applications/Popup.app/Resources/DraggedCards.tiff
-Local/Applications/Popup.app/Resources/English.lproj/CardInspector.gorm/data.classes
-Local/Applications/Popup.app/Resources/English.lproj/CardInspector.gorm/data.info
-Local/Applications/Popup.app/Resources/English.lproj/CardInspector.gorm/objects.gorm
-Local/Applications/Popup.app/Resources/English.lproj/CardQuiz.gorm/data.classes
-Local/Applications/Popup.app/Resources/English.lproj/CardQuiz.gorm/data.info
-Local/Applications/Popup.app/Resources/English.lproj/CardQuiz.gorm/objects.gorm
-Local/Applications/Popup.app/Resources/English.lproj/ChoiceQuiz.gorm/data.classes
-Local/Applications/Popup.app/Resources/English.lproj/ChoiceQuiz.gorm/data.info
-Local/Applications/Popup.app/Resources/English.lproj/ChoiceQuiz.gorm/objects.gorm
-Local/Applications/Popup.app/Resources/English.lproj/Editor.gorm/data.classes
-Local/Applications/Popup.app/Resources/English.lproj/Editor.gorm/data.info
-Local/Applications/Popup.app/Resources/English.lproj/Editor.gorm/objects.gorm
-Local/Applications/Popup.app/Resources/English.lproj/Localizable.strings
-Local/Applications/Popup.app/Resources/English.lproj/MainMenu.gorm/data.classes
-Local/Applications/Popup.app/Resources/English.lproj/MainMenu.gorm/data.info
-Local/Applications/Popup.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
-Local/Applications/Popup.app/Resources/English.lproj/Preferences.gorm/data.classes
-Local/Applications/Popup.app/Resources/English.lproj/Preferences.gorm/data.info
-Local/Applications/Popup.app/Resources/English.lproj/Preferences.gorm/objects.gorm
-Local/Applications/Popup.app/Resources/English.lproj/SpellingQuiz.gorm/data.classes
-Local/Applications/Popup.app/Resources/English.lproj/SpellingQuiz.gorm/data.info
-Local/Applications/Popup.app/Resources/English.lproj/SpellingQuiz.gorm/objects.gorm
-Local/Applications/Popup.app/Resources/Fail.tiff
-Local/Applications/Popup.app/Resources/FileIcon_cstack.tiff
-Local/Applications/Popup.app/Resources/German.lproj/Localizable.strings
-Local/Applications/Popup.app/Resources/German.lproj/MainMenu.gorm/data.classes
-Local/Applications/Popup.app/Resources/German.lproj/MainMenu.gorm/data.info
-Local/Applications/Popup.app/Resources/German.lproj/MainMenu.gorm/objects.gorm
-Local/Applications/Popup.app/Resources/Info-gnustep.plist
-Local/Applications/Popup.app/Resources/InsertSched.tiff
-Local/Applications/Popup.app/Resources/Pass.tiff
-Local/Applications/Popup.app/Resources/Popup.desktop
-Local/Applications/Popup.app/Resources/Popup.tiff
-Local/Applications/Popup.app/Resources/PracticeImage.tiff
-Local/Applications/Popup.app/Resources/QuizImage.tiff
-Local/Applications/Popup.app/Resources/RemoveSched.tiff
-Local/Applications/Popup.app/Resources/Schedule.plist
-Local/Applications/Popup.app/Resources/Thai.lproj/Localizable.strings
-Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm/data.classes
-Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm/data.info
-Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm/objects.gorm
-Local/Applications/Popup.app/Resources/Wrong.wav
-Local/Applications/Popup.app/stamp.make
-Local/Tools/Popup
-@dirrm Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm
-@dirrm Local/Applications/Popup.app/Resources/Thai.lproj
-@dirrm Local/Applications/Popup.app/Resources/German.lproj/MainMenu.gorm
-@dirrm Local/Applications/Popup.app/Resources/German.lproj
-@dirrm Local/Applications/Popup.app/Resources/English.lproj/SpellingQuiz.gorm
-@dirrm Local/Applications/Popup.app/Resources/English.lproj/Preferences.gorm
-@dirrm Local/Applications/Popup.app/Resources/English.lproj/MainMenu.gorm
-@dirrm Local/Applications/Popup.app/Resources/English.lproj/Editor.gorm
-@dirrm Local/Applications/Popup.app/Resources/English.lproj/ChoiceQuiz.gorm
-@dirrm Local/Applications/Popup.app/Resources/English.lproj/CardQuiz.gorm
-@dirrm Local/Applications/Popup.app/Resources/English.lproj/CardInspector.gorm
-@dirrm Local/Applications/Popup.app/Resources/English.lproj
-@dirrm Local/Applications/Popup.app/Resources
-@dirrm Local/Applications/Popup.app
+GNUstep/Local/Applications/Popup.app/Popup
+GNUstep/Local/Applications/Popup.app/Resources/AddEntry.tiff
+GNUstep/Local/Applications/Popup.app/Resources/DeleteEntry.tiff
+GNUstep/Local/Applications/Popup.app/Resources/DraggedCard.tiff
+GNUstep/Local/Applications/Popup.app/Resources/DraggedCards.tiff
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/CardInspector.gorm/data.classes
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/CardInspector.gorm/data.info
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/CardInspector.gorm/objects.gorm
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/CardQuiz.gorm/data.classes
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/CardQuiz.gorm/data.info
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/CardQuiz.gorm/objects.gorm
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/ChoiceQuiz.gorm/data.classes
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/ChoiceQuiz.gorm/data.info
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/ChoiceQuiz.gorm/objects.gorm
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Editor.gorm/data.classes
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Editor.gorm/data.info
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Editor.gorm/objects.gorm
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/MainMenu.gorm/data.info
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Preferences.gorm/data.classes
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Preferences.gorm/data.info
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Preferences.gorm/objects.gorm
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/SpellingQuiz.gorm/data.classes
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/SpellingQuiz.gorm/data.info
+GNUstep/Local/Applications/Popup.app/Resources/English.lproj/SpellingQuiz.gorm/objects.gorm
+GNUstep/Local/Applications/Popup.app/Resources/Fail.tiff
+GNUstep/Local/Applications/Popup.app/Resources/FileIcon_cstack.tiff
+GNUstep/Local/Applications/Popup.app/Resources/German.lproj/Localizable.strings
+GNUstep/Local/Applications/Popup.app/Resources/German.lproj/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/Popup.app/Resources/German.lproj/MainMenu.gorm/data.info
+GNUstep/Local/Applications/Popup.app/Resources/German.lproj/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/Popup.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Popup.app/Resources/InsertSched.tiff
+GNUstep/Local/Applications/Popup.app/Resources/Pass.tiff
+GNUstep/Local/Applications/Popup.app/Resources/Popup.desktop
+GNUstep/Local/Applications/Popup.app/Resources/Popup.tiff
+GNUstep/Local/Applications/Popup.app/Resources/PracticeImage.tiff
+GNUstep/Local/Applications/Popup.app/Resources/QuizImage.tiff
+GNUstep/Local/Applications/Popup.app/Resources/RemoveSched.tiff
+GNUstep/Local/Applications/Popup.app/Resources/Schedule.plist
+GNUstep/Local/Applications/Popup.app/Resources/Thai.lproj/Localizable.strings
+GNUstep/Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm/data.info
+GNUstep/Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/Popup.app/Resources/Wrong.wav
+GNUstep/Local/Applications/Popup.app/stamp.make
+GNUstep/Local/Tools/Popup
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/Thai.lproj
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/German.lproj/MainMenu.gorm
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/German.lproj
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/SpellingQuiz.gorm
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Preferences.gorm
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/MainMenu.gorm
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/Editor.gorm
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/ChoiceQuiz.gorm
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/CardQuiz.gorm
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj/CardInspector.gorm
+@dirrm GNUstep/Local/Applications/Popup.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/Popup.app/Resources
+@dirrm GNUstep/Local/Applications/Popup.app

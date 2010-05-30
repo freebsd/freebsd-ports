@@ -1,29 +1,29 @@
-Local/Library/Frameworks/CollectionKit.framework/CollectionKit
-Local/Library/Frameworks/CollectionKit.framework/Headers
-Local/Library/Frameworks/CollectionKit.framework/Resources
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/CollectionKit
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKCollection.h
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKCollectionView.h
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKGlobals.h
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKGroup.h
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKItem.h
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKMultiValue.h
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKRecord.h
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKSearchElement.h
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKTypedefs.h
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CollectionKit.h
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/libCollectionKit.so
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/libCollectionKit.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/libCollectionKit.so.%%LIBVERSION%%
-Local/Library/Frameworks/CollectionKit.framework/Versions/Current
-Local/Library/Frameworks/CollectionKit.framework/libCollectionKit.so
-Local/Library/Headers/CollectionKit
-Local/Library/Libraries/libCollectionKit.so
-Local/Library/Libraries/libCollectionKit.so.%%LIBVERSION%%
-Local/Library/Libraries/libCollectionKit.so.%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/CollectionKit.framework/Versions
-@dirrm Local/Library/Frameworks/CollectionKit.framework
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/CollectionKit
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Headers
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Resources
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/CollectionKit
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKCollection.h
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKCollectionView.h
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKGlobals.h
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKGroup.h
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKItem.h
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKMultiValue.h
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKRecord.h
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKSearchElement.h
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CKTypedefs.h
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/CollectionKit.h
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/libCollectionKit.so
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/libCollectionKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/libCollectionKit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/CollectionKit.framework/libCollectionKit.so
+GNUstep/Local/Library/Headers/CollectionKit
+GNUstep/Local/Library/Libraries/libCollectionKit.so
+GNUstep/Local/Library/Libraries/libCollectionKit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Libraries/libCollectionKit.so.%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/CollectionKit.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/CollectionKit.framework

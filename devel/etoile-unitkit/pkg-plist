@@ -1,28 +1,28 @@
-Local/Library/Frameworks/UnitKit.framework/Headers
-Local/Library/Frameworks/UnitKit.framework/Resources
-Local/Library/Frameworks/UnitKit.framework/UnitKit
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers/UKRunner.h
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers/UKTask.h
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers/UKTest.h
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers/UKTestHandler.h
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers/UnitKit.h
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/UKRunner.strings
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/UKTestHandler.strings
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/UnitKit
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/libUnitKit.so
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/libUnitKit.so.%%MAJORVERSION%%
-Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/libUnitKit.so.%%VERSION%%
-Local/Library/Frameworks/UnitKit.framework/Versions/Current
-Local/Library/Frameworks/UnitKit.framework/libUnitKit.so
-Local/Library/Headers/UnitKit
-Local/Library/Libraries/libUnitKit.so
-Local/Library/Libraries/libUnitKit.so.%%MAJORVERSION%%
-Local/Library/Libraries/libUnitKit.so.%%VERSION%%
-Local/Tools/ukrun
-@dirrm Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj
-@dirrm Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Resources
-@dirrm Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers
-@dirrm Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%
-@dirrm Local/Library/Frameworks/UnitKit.framework/Versions
-@dirrm Local/Library/Frameworks/UnitKit.framework
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Headers
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Resources
+GNUstep/Local/Library/Frameworks/UnitKit.framework/UnitKit
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers/UKRunner.h
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers/UKTask.h
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers/UKTest.h
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers/UKTestHandler.h
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers/UnitKit.h
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/UKRunner.strings
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/UKTestHandler.strings
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/UnitKit
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/libUnitKit.so
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/libUnitKit.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/libUnitKit.so.%%VERSION%%
+GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/UnitKit.framework/libUnitKit.so
+GNUstep/Local/Library/Headers/UnitKit
+GNUstep/Local/Library/Libraries/libUnitKit.so
+GNUstep/Local/Library/Libraries/libUnitKit.so.%%MAJORVERSION%%
+GNUstep/Local/Library/Libraries/libUnitKit.so.%%VERSION%%
+GNUstep/Local/Tools/ukrun
+@dirrm GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj
+@dirrm GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions/%%MAJORVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/UnitKit.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/UnitKit.framework

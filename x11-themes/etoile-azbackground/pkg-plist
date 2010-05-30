@@ -1,10 +1,10 @@
-System/Applications/AZBackground.app/AZBackground
-System/Applications/AZBackground.app/Resources/2560x1440.jpg
-System/Applications/AZBackground.app/Resources/2560x1600.jpg
-System/Applications/AZBackground.app/Resources/2560x1920.jpg
-System/Applications/AZBackground.app/Resources/AZBackground.desktop
-System/Applications/AZBackground.app/Resources/Info-gnustep.plist
-System/Applications/AZBackground.app/stamp.make
-System/Tools/AZBackground
-@dirrm System/Applications/AZBackground.app/Resources
-@dirrm System/Applications/AZBackground.app
+GNUstep/System/Applications/AZBackground.app/AZBackground
+GNUstep/System/Applications/AZBackground.app/Resources/2560x1440.jpg
+GNUstep/System/Applications/AZBackground.app/Resources/2560x1600.jpg
+GNUstep/System/Applications/AZBackground.app/Resources/2560x1920.jpg
+GNUstep/System/Applications/AZBackground.app/Resources/AZBackground.desktop
+GNUstep/System/Applications/AZBackground.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/AZBackground.app/stamp.make
+GNUstep/System/Tools/AZBackground
+@dirrm GNUstep/System/Applications/AZBackground.app/Resources
+@dirrm GNUstep/System/Applications/AZBackground.app

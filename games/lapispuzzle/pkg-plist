@@ -1,12 +1,12 @@
-Local/Applications/LapisPuzzle.app/LapisPuzzle
-Local/Applications/LapisPuzzle.app/Resources/Info-gnustep.plist
-Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.desktop
-Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.gorm/data.classes
-Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.gorm/objects.gorm
-Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.tiff
-Local/Applications/LapisPuzzle.app/Resources/LapisPuzzleInfo.plist
-Local/Applications/LapisPuzzle.app/stamp.make
-Local/Tools/LapisPuzzle
-@dirrm Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.gorm
-@dirrm Local/Applications/LapisPuzzle.app/Resources
-@dirrm Local/Applications/LapisPuzzle.app
+GNUstep/Local/Applications/LapisPuzzle.app/LapisPuzzle
+GNUstep/Local/Applications/LapisPuzzle.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.desktop
+GNUstep/Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.gorm/data.classes
+GNUstep/Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.gorm/objects.gorm
+GNUstep/Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.tiff
+GNUstep/Local/Applications/LapisPuzzle.app/Resources/LapisPuzzleInfo.plist
+GNUstep/Local/Applications/LapisPuzzle.app/stamp.make
+GNUstep/Local/Tools/LapisPuzzle
+@dirrm GNUstep/Local/Applications/LapisPuzzle.app/Resources/LapisPuzzle.gorm
+@dirrm GNUstep/Local/Applications/LapisPuzzle.app/Resources
+@dirrm GNUstep/Local/Applications/LapisPuzzle.app

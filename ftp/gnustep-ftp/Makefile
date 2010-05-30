@@ -17,7 +17,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Compact and handy FTP client for GNUstep
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

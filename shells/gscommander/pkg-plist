@@ -1,11 +1,11 @@
-Local/Applications/GSCommander.app/GSCommander
-Local/Applications/GSCommander.app/Resources/COPYING
-Local/Applications/GSCommander.app/Resources/GSCommander.desktop
-Local/Applications/GSCommander.app/Resources/GSCommander.tiff
-Local/Applications/GSCommander.app/Resources/GSCommanderInfo.plist
-Local/Applications/GSCommander.app/Resources/Info-gnustep.plist
-Local/Applications/GSCommander.app/Resources/README
-Local/Applications/GSCommander.app/stamp.make
-Local/Tools/GSCommander
-@dirrm Local/Applications/GSCommander.app/Resources
-@dirrm Local/Applications/GSCommander.app
+GNUstep/Local/Applications/GSCommander.app/GSCommander
+GNUstep/Local/Applications/GSCommander.app/Resources/COPYING
+GNUstep/Local/Applications/GSCommander.app/Resources/GSCommander.desktop
+GNUstep/Local/Applications/GSCommander.app/Resources/GSCommander.tiff
+GNUstep/Local/Applications/GSCommander.app/Resources/GSCommanderInfo.plist
+GNUstep/Local/Applications/GSCommander.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/GSCommander.app/Resources/README
+GNUstep/Local/Applications/GSCommander.app/stamp.make
+GNUstep/Local/Tools/GSCommander
+@dirrm GNUstep/Local/Applications/GSCommander.app/Resources
+@dirrm GNUstep/Local/Applications/GSCommander.app

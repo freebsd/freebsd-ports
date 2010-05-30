@@ -1,39 +1,39 @@
-Local/Library/Frameworks/ObjcUnit.framework/Headers
-Local/Library/Frameworks/ObjcUnit.framework/ObjcUnit
-Local/Library/Frameworks/ObjcUnit.framework/Resources
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/AbstractExpectation.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/AbstractExpectationCollection.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/AssertionFailedException.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ExpectationCounter.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ExpectationGroup.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ExpectationList.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ExpectationSet.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ExpectationValue.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MockCoder.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MockObjects.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSObject-ObjcUnitAdditions.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ObjcUnit.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Test.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestCase.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestFailure.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestListener.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestResult.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestRunner.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestSuite.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/_WarningTest.h
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/ObjcUnit
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/libObjcUnit.so
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/libObjcUnit.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/libObjcUnit.so.%%LIBVERSION%%
-Local/Library/Frameworks/ObjcUnit.framework/Versions/Current
-Local/Library/Frameworks/ObjcUnit.framework/libObjcUnit.so
-Local/Library/Libraries/libObjcUnit.so
-Local/Library/Libraries/libObjcUnit.so.%%LIBVERSION%%
-Local/Library/Libraries/libObjcUnit.so.%%MAJORLIBVERSION%%
-Local/Library/Headers/ObjcUnit
-@dirrm Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/ObjcUnit.framework/Versions
-@dirrm Local/Library/Frameworks/ObjcUnit.framework
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Headers
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/ObjcUnit
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Resources
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/AbstractExpectation.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/AbstractExpectationCollection.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/AssertionFailedException.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ExpectationCounter.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ExpectationGroup.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ExpectationList.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ExpectationSet.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ExpectationValue.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MockCoder.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/MockObjects.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/NSObject-ObjcUnitAdditions.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/ObjcUnit.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/Test.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestCase.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestFailure.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestListener.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestResult.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestRunner.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/TestSuite.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers/_WarningTest.h
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/ObjcUnit
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/libObjcUnit.so
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/libObjcUnit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/libObjcUnit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/ObjcUnit.framework/libObjcUnit.so
+GNUstep/Local/Library/Libraries/libObjcUnit.so
+GNUstep/Local/Library/Libraries/libObjcUnit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Libraries/libObjcUnit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Headers/ObjcUnit
+@dirrm GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/ObjcUnit.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/ObjcUnit.framework

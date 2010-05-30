@@ -1,22 +1,22 @@
-Local/Applications/FreeTar.app/FreeTar
-Local/Applications/FreeTar.app/Resources/English.lproj/MainMenu.gorm/data.classes
-Local/Applications/FreeTar.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
-Local/Applications/FreeTar.app/Resources/English.lproj/Preferences.gorm/data.classes
-Local/Applications/FreeTar.app/Resources/English.lproj/Preferences.gorm/objects.gorm
-Local/Applications/FreeTar.app/Resources/FreeTar.desktop
-Local/Applications/FreeTar.app/Resources/FreeTar.tiff
-Local/Applications/FreeTar.app/Resources/French.lproj/MainMenu.gorm/data.classes
-Local/Applications/FreeTar.app/Resources/French.lproj/MainMenu.gorm/objects.gorm
-Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm/data.classes
-Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm/objects.gorm
-Local/Applications/FreeTar.app/Resources/Info-gnustep.plist
-Local/Applications/FreeTar.app/stamp.make
-Local/Tools/FreeTar
-@dirrm Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm
-@dirrm Local/Applications/FreeTar.app/Resources/French.lproj/MainMenu.gorm
-@dirrm Local/Applications/FreeTar.app/Resources/French.lproj
-@dirrm Local/Applications/FreeTar.app/Resources/English.lproj/Preferences.gorm
-@dirrm Local/Applications/FreeTar.app/Resources/English.lproj/MainMenu.gorm
-@dirrm Local/Applications/FreeTar.app/Resources/English.lproj
-@dirrm Local/Applications/FreeTar.app/Resources
-@dirrm Local/Applications/FreeTar.app
+GNUstep/Local/Applications/FreeTar.app/FreeTar
+GNUstep/Local/Applications/FreeTar.app/Resources/English.lproj/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/FreeTar.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/FreeTar.app/Resources/English.lproj/Preferences.gorm/data.classes
+GNUstep/Local/Applications/FreeTar.app/Resources/English.lproj/Preferences.gorm/objects.gorm
+GNUstep/Local/Applications/FreeTar.app/Resources/FreeTar.desktop
+GNUstep/Local/Applications/FreeTar.app/Resources/FreeTar.tiff
+GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm/data.classes
+GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm/objects.gorm
+GNUstep/Local/Applications/FreeTar.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/FreeTar.app/stamp.make
+GNUstep/Local/Tools/FreeTar
+@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm
+@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj/MainMenu.gorm
+@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/French.lproj
+@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/English.lproj/Preferences.gorm
+@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/English.lproj/MainMenu.gorm
+@dirrm GNUstep/Local/Applications/FreeTar.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/FreeTar.app/Resources
+@dirrm GNUstep/Local/Applications/FreeTar.app

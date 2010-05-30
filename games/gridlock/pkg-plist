@@ -1,36 +1,36 @@
-Local/Applications/Gridlock.app/Gridlock
-Local/Applications/Gridlock.app/Resources/ClientWindow.gorm/data.classes
-Local/Applications/Gridlock.app/Resources/ClientWindow.gorm/objects.gorm
-Local/Applications/Gridlock.app/Resources/GameWindow.gorm/data.classes
-Local/Applications/Gridlock.app/Resources/GameWindow.gorm/objects.gorm
-Local/Applications/Gridlock.app/Resources/Games.plist
-Local/Applications/Gridlock.app/Resources/Gridlock.desktop
-Local/Applications/Gridlock.app/Resources/Gridlock.gorm/data.classes
-Local/Applications/Gridlock.app/Resources/Gridlock.gorm/objects.gorm
-Local/Applications/Gridlock.app/Resources/Gridlock.tiff
-Local/Applications/Gridlock.app/Resources/Info-gnustep.plist
-Local/Applications/Gridlock.app/Resources/Localizable.strings
-Local/Applications/Gridlock.app/Resources/PieceImages.plist
-Local/Applications/Gridlock.app/Resources/PrefsWindow.gorm/data.classes
-Local/Applications/Gridlock.app/Resources/PrefsWindow.gorm/objects.gorm
-Local/Applications/Gridlock.app/Resources/README.GNUstep
-Local/Applications/Gridlock.app/Resources/ServerWindow.gorm/data.classes
-Local/Applications/Gridlock.app/Resources/ServerWindow.gorm/objects.gorm
-Local/Applications/Gridlock.app/Resources/aqua.tiff
-Local/Applications/Gridlock.app/Resources/blue.tiff
-Local/Applications/Gridlock.app/Resources/graphite.tiff
-Local/Applications/Gridlock.app/Resources/green.tiff
-Local/Applications/Gridlock.app/Resources/purple.tiff
-Local/Applications/Gridlock.app/Resources/readme.html
-Local/Applications/Gridlock.app/Resources/red.tiff
-Local/Applications/Gridlock.app/Resources/wall.tiff
-Local/Applications/Gridlock.app/Resources/yellow.tiff
-Local/Applications/Gridlock.app/stamp.make
-Local/Tools/Gridlock
-@dirrm Local/Applications/Gridlock.app/Resources/ServerWindow.gorm
-@dirrm Local/Applications/Gridlock.app/Resources/PrefsWindow.gorm
-@dirrm Local/Applications/Gridlock.app/Resources/Gridlock.gorm
-@dirrm Local/Applications/Gridlock.app/Resources/GameWindow.gorm
-@dirrm Local/Applications/Gridlock.app/Resources/ClientWindow.gorm
-@dirrm Local/Applications/Gridlock.app/Resources
-@dirrm Local/Applications/Gridlock.app
+GNUstep/Local/Applications/Gridlock.app/Gridlock
+GNUstep/Local/Applications/Gridlock.app/Resources/ClientWindow.gorm/data.classes
+GNUstep/Local/Applications/Gridlock.app/Resources/ClientWindow.gorm/objects.gorm
+GNUstep/Local/Applications/Gridlock.app/Resources/GameWindow.gorm/data.classes
+GNUstep/Local/Applications/Gridlock.app/Resources/GameWindow.gorm/objects.gorm
+GNUstep/Local/Applications/Gridlock.app/Resources/Games.plist
+GNUstep/Local/Applications/Gridlock.app/Resources/Gridlock.desktop
+GNUstep/Local/Applications/Gridlock.app/Resources/Gridlock.gorm/data.classes
+GNUstep/Local/Applications/Gridlock.app/Resources/Gridlock.gorm/objects.gorm
+GNUstep/Local/Applications/Gridlock.app/Resources/Gridlock.tiff
+GNUstep/Local/Applications/Gridlock.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Gridlock.app/Resources/Localizable.strings
+GNUstep/Local/Applications/Gridlock.app/Resources/PieceImages.plist
+GNUstep/Local/Applications/Gridlock.app/Resources/PrefsWindow.gorm/data.classes
+GNUstep/Local/Applications/Gridlock.app/Resources/PrefsWindow.gorm/objects.gorm
+GNUstep/Local/Applications/Gridlock.app/Resources/README.GNUstep
+GNUstep/Local/Applications/Gridlock.app/Resources/ServerWindow.gorm/data.classes
+GNUstep/Local/Applications/Gridlock.app/Resources/ServerWindow.gorm/objects.gorm
+GNUstep/Local/Applications/Gridlock.app/Resources/aqua.tiff
+GNUstep/Local/Applications/Gridlock.app/Resources/blue.tiff
+GNUstep/Local/Applications/Gridlock.app/Resources/graphite.tiff
+GNUstep/Local/Applications/Gridlock.app/Resources/green.tiff
+GNUstep/Local/Applications/Gridlock.app/Resources/purple.tiff
+GNUstep/Local/Applications/Gridlock.app/Resources/readme.html
+GNUstep/Local/Applications/Gridlock.app/Resources/red.tiff
+GNUstep/Local/Applications/Gridlock.app/Resources/wall.tiff
+GNUstep/Local/Applications/Gridlock.app/Resources/yellow.tiff
+GNUstep/Local/Applications/Gridlock.app/stamp.make
+GNUstep/Local/Tools/Gridlock
+@dirrm GNUstep/Local/Applications/Gridlock.app/Resources/ServerWindow.gorm
+@dirrm GNUstep/Local/Applications/Gridlock.app/Resources/PrefsWindow.gorm
+@dirrm GNUstep/Local/Applications/Gridlock.app/Resources/Gridlock.gorm
+@dirrm GNUstep/Local/Applications/Gridlock.app/Resources/GameWindow.gorm
+@dirrm GNUstep/Local/Applications/Gridlock.app/Resources/ClientWindow.gorm
+@dirrm GNUstep/Local/Applications/Gridlock.app/Resources
+@dirrm GNUstep/Local/Applications/Gridlock.app

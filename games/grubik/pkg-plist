@@ -1,7 +1,7 @@
-System/Applications/GRubik.app/GRubik
-System/Applications/GRubik.app/Resources/GRubik.desktop
-System/Applications/GRubik.app/Resources/Info-gnustep.plist
-System/Applications/GRubik.app/stamp.make
-System/Tools/GRubik
-@dirrm System/Applications/GRubik.app/Resources
-@dirrm System/Applications/GRubik.app
+GNUstep/System/Applications/GRubik.app/GRubik
+GNUstep/System/Applications/GRubik.app/Resources/GRubik.desktop
+GNUstep/System/Applications/GRubik.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/GRubik.app/stamp.make
+GNUstep/System/Tools/GRubik
+@dirrm GNUstep/System/Applications/GRubik.app/Resources
+@dirrm GNUstep/System/Applications/GRubik.app

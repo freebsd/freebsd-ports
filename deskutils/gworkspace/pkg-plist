@@ -1,681 +1,681 @@
-System/Applications/GWorkspace.app/GWorkspace
-System/Applications/GWorkspace.app/Resources/BrasilPortuguese.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/CellHighlight.tiff
-System/Applications/GWorkspace.app/Resources/CellHighlight_osx.tiff
-System/Applications/GWorkspace.app/Resources/ComputeSize.tiff
-System/Applications/GWorkspace.app/Resources/ComputeSize_dimm.tiff
-System/Applications/GWorkspace.app/Resources/Date-0.tiff
-System/Applications/GWorkspace.app/Resources/Date-1.tiff
-System/Applications/GWorkspace.app/Resources/Date-2.tiff
-System/Applications/GWorkspace.app/Resources/Date-3.tiff
-System/Applications/GWorkspace.app/Resources/Date-4.tiff
-System/Applications/GWorkspace.app/Resources/Date-5.tiff
-System/Applications/GWorkspace.app/Resources/Date-6.tiff
-System/Applications/GWorkspace.app/Resources/Date-7.tiff
-System/Applications/GWorkspace.app/Resources/Date-8.tiff
-System/Applications/GWorkspace.app/Resources/Date-9.tiff
-System/Applications/GWorkspace.app/Resources/Date-Colon.tiff
-System/Applications/GWorkspace.app/Resources/Date.tiff
-System/Applications/GWorkspace.app/Resources/Dimple.tiff
-System/Applications/GWorkspace.app/Resources/DragableDocument.tiff
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/English.lproj/BrowserViewerPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/BrowserViewerPref.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/BrowserViewerPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/FindModuleView.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/FindModuleView.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/FindModuleView.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/browsing.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/dummy.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/views.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Desktop.rtfd/FileManager.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Desktop.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd/dock.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd/dummy.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/Fiend-Develop.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/Fiend-menu.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/dummy.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/GWorkspace.rtfd/FileManager.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/GWorkspace.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/History.rtfd/FileManager.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/History.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Inspector.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Inspector.rtfd/dummy.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Preferences.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Preferences.rtfd/dummy.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/Recycler-content.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/Recycler-drag.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/Recycler.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/RecyclerFull.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/dummy.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/Run-panel.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/dummy.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/dummy.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/spatial.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/TXT.rtf
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/TabbedShelf-develop.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/dummy.tiff
-System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/LSFEditor.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/LSFEditor.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/LSFEditor.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.info
-System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Esperanto.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/FFArrow.tiff
-System/Applications/GWorkspace.app/Resources/FFArrow_disabled.tiff
-System/Applications/GWorkspace.app/Resources/FileIcon_Directory.tiff
-System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open.tiff
-System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_Small.tiff
-System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_Small_alt.tiff
-System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_Small_osx.tiff
-System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_alt.tiff
-System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_osx.tiff
-System/Applications/GWorkspace.app/Resources/FileManager.tiff
-System/Applications/GWorkspace.app/Resources/French.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/GWorkspace.desktop
-System/Applications/GWorkspace.app/Resources/GWorkspaceInfo.plist
-System/Applications/GWorkspace.app/Resources/German.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/Hungarian.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/Info-gnustep.plist
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/Kill.tiff
-System/Applications/GWorkspace.app/Resources/LED-0.tiff
-System/Applications/GWorkspace.app/Resources/LED-1.tiff
-System/Applications/GWorkspace.app/Resources/LED-2.tiff
-System/Applications/GWorkspace.app/Resources/LED-3.tiff
-System/Applications/GWorkspace.app/Resources/LED-4.tiff
-System/Applications/GWorkspace.app/Resources/LED-5.tiff
-System/Applications/GWorkspace.app/Resources/LED-6.tiff
-System/Applications/GWorkspace.app/Resources/LED-7.tiff
-System/Applications/GWorkspace.app/Resources/LED-8.tiff
-System/Applications/GWorkspace.app/Resources/LED-9.tiff
-System/Applications/GWorkspace.app/Resources/LED-AM.tiff
-System/Applications/GWorkspace.app/Resources/LED-Colon.tiff
-System/Applications/GWorkspace.app/Resources/LED-PM.tiff
-System/Applications/GWorkspace.app/Resources/LED.tiff
-System/Applications/GWorkspace.app/Resources/LeftArr.tiff
-System/Applications/GWorkspace.app/Resources/LiveSearchFolder.tiff
-System/Applications/GWorkspace.app/Resources/Magnify.tiff
-System/Applications/GWorkspace.app/Resources/MagnifyGlas.tiff
-System/Applications/GWorkspace.app/Resources/Magnify_16.tiff
-System/Applications/GWorkspace.app/Resources/Magnify_24.tiff
-System/Applications/GWorkspace.app/Resources/Magnify_32.tiff
-System/Applications/GWorkspace.app/Resources/Magnify_48.tiff
-System/Applications/GWorkspace.app/Resources/Mask.tiff
-System/Applications/GWorkspace.app/Resources/Month-1.tiff
-System/Applications/GWorkspace.app/Resources/Month-10.tiff
-System/Applications/GWorkspace.app/Resources/Month-11.tiff
-System/Applications/GWorkspace.app/Resources/Month-12.tiff
-System/Applications/GWorkspace.app/Resources/Month-2.tiff
-System/Applications/GWorkspace.app/Resources/Month-3.tiff
-System/Applications/GWorkspace.app/Resources/Month-4.tiff
-System/Applications/GWorkspace.app/Resources/Month-5.tiff
-System/Applications/GWorkspace.app/Resources/Month-6.tiff
-System/Applications/GWorkspace.app/Resources/Month-7.tiff
-System/Applications/GWorkspace.app/Resources/Month-8.tiff
-System/Applications/GWorkspace.app/Resources/Month-9.tiff
-System/Applications/GWorkspace.app/Resources/Month.tiff
-System/Applications/GWorkspace.app/Resources/MultipleSelection.tiff
-System/Applications/GWorkspace.app/Resources/Norvegian.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/Pboard.tiff
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/REWArrow.tiff
-System/Applications/GWorkspace.app/Resources/REWArrow_disabled.tiff
-System/Applications/GWorkspace.app/Resources/Recycler.tiff
-System/Applications/GWorkspace.app/Resources/RecyclerFull.tiff
-System/Applications/GWorkspace.app/Resources/RightArr.tiff
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/SlideMask.tiff
-System/Applications/GWorkspace.app/Resources/SmallCellHighlight.tiff
-System/Applications/GWorkspace.app/Resources/SmallCellHighlightSmall.tiff
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/TileHighlight.tiff
-System/Applications/GWorkspace.app/Resources/Weekday-0.tiff
-System/Applications/GWorkspace.app/Resources/Weekday-1.tiff
-System/Applications/GWorkspace.app/Resources/Weekday-2.tiff
-System/Applications/GWorkspace.app/Resources/Weekday-3.tiff
-System/Applications/GWorkspace.app/Resources/Weekday-4.tiff
-System/Applications/GWorkspace.app/Resources/Weekday-5.tiff
-System/Applications/GWorkspace.app/Resources/Weekday-6.tiff
-System/Applications/GWorkspace.app/Resources/Weekday.tiff
-System/Applications/GWorkspace.app/Resources/add.tiff
-System/Applications/GWorkspace.app/Resources/anim-logo-0.tiff
-System/Applications/GWorkspace.app/Resources/anim-logo-1.tiff
-System/Applications/GWorkspace.app/Resources/anim-logo-2.tiff
-System/Applications/GWorkspace.app/Resources/anim-logo-3.tiff
-System/Applications/GWorkspace.app/Resources/anim-logo-4.tiff
-System/Applications/GWorkspace.app/Resources/anim-logo-5.tiff
-System/Applications/GWorkspace.app/Resources/anim-logo-6.tiff
-System/Applications/GWorkspace.app/Resources/anim-logo-7.tiff
-System/Applications/GWorkspace.app/Resources/colorPboard.tiff
-System/Applications/GWorkspace.app/Resources/common_ArrowLeftH.tiff
-System/Applications/GWorkspace.app/Resources/common_ArrowRightH.tiff
-System/Applications/GWorkspace.app/Resources/filecontsPboard.tiff
-System/Applications/GWorkspace.app/Resources/gormPboard.tiff
-System/Applications/GWorkspace.app/Resources/littleArrowDown.tiff
-System/Applications/GWorkspace.app/Resources/littleArrowRight.tiff
-System/Applications/GWorkspace.app/Resources/magnify_small.tiff
-System/Applications/GWorkspace.app/Resources/page.tiff
-System/Applications/GWorkspace.app/Resources/pause.tiff
-System/Applications/GWorkspace.app/Resources/play.tiff
-System/Applications/GWorkspace.app/Resources/remove.tiff
-System/Applications/GWorkspace.app/Resources/rtfPboard.tiff
-System/Applications/GWorkspace.app/Resources/rtfdPboard.tiff
-System/Applications/GWorkspace.app/Resources/stop.tiff
-System/Applications/GWorkspace.app/Resources/stop_16.tiff
-System/Applications/GWorkspace.app/Resources/stop_24.tiff
-System/Applications/GWorkspace.app/Resources/stop_32.tiff
-System/Applications/GWorkspace.app/Resources/stop_48.tiff
-System/Applications/GWorkspace.app/Resources/stop_small.tiff
-System/Applications/GWorkspace.app/Resources/stringPboard.tiff
-System/Applications/GWorkspace.app/Resources/switchMultiple.tiff
-System/Applications/GWorkspace.app/Resources/switchOff.tiff
-System/Applications/GWorkspace.app/Resources/switchOn.tiff
-System/Applications/GWorkspace.app/Resources/tabSelectedLeft.tiff
-System/Applications/GWorkspace.app/Resources/tabSelectedRight.tiff
-System/Applications/GWorkspace.app/Resources/tabSelectedToUnSelectedJunction.tiff
-System/Applications/GWorkspace.app/Resources/tabUnSelectToSelectedJunction.tiff
-System/Applications/GWorkspace.app/Resources/tabUnSelectedJunction.tiff
-System/Applications/GWorkspace.app/Resources/tabUnSelectedLeft.tiff
-System/Applications/GWorkspace.app/Resources/tabUnSelectedRight.tiff
-System/Applications/GWorkspace.app/Resources/tiffPboard.tiff
-System/Applications/GWorkspace.app/Resources/watch.tiff
-System/Applications/GWorkspace.app/stamp.make
-System/Applications/Recycler.app/Recycler
-System/Applications/Recycler.app/Resources/English.lproj/Localizable.strings
-System/Applications/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/data.classes
-System/Applications/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/objects.gorm
-System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm/data.classes
-System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
-System/Applications/Recycler.app/Resources/Info-gnustep.plist
-System/Applications/Recycler.app/Resources/Recycler.desktop
-System/Applications/Recycler.app/Resources/Recycler.tiff
-System/Applications/Recycler.app/stamp.make
-System/Library/Bundles/AppViewer.inspector/AppViewer
-System/Library/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Bundles/AppViewer.inspector/Resources/Info-gnustep.plist
-System/Library/Bundles/AppViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/AppViewer.inspector/stamp.make
-System/Library/Bundles/FModuleAnnotations.finder/FModuleAnnotations
-System/Library/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm/data.classes
-System/Library/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm/data.info
-System/Library/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm/objects.gorm
-System/Library/Bundles/FModuleAnnotations.finder/Resources/Info-gnustep.plist
-System/Library/Bundles/FModuleAnnotations.finder/stamp.make
-System/Library/Bundles/FModuleContents.finder/FModuleContents
-System/Library/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm/data.classes
-System/Library/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm/data.info
-System/Library/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm/objects.gorm
-System/Library/Bundles/FModuleContents.finder/Resources/Info-gnustep.plist
-System/Library/Bundles/FModuleContents.finder/stamp.make
-System/Library/Bundles/FModuleCrDate.finder/FModuleCrDate
-System/Library/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm/data.classes
-System/Library/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm/data.info
-System/Library/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm/objects.gorm
-System/Library/Bundles/FModuleCrDate.finder/Resources/Info-gnustep.plist
-System/Library/Bundles/FModuleCrDate.finder/stamp.make
-System/Library/Bundles/FModuleKind.finder/FModuleKind
-System/Library/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm/data.classes
-System/Library/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm/data.info
-System/Library/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm/objects.gorm
-System/Library/Bundles/FModuleKind.finder/Resources/Info-gnustep.plist
-System/Library/Bundles/FModuleKind.finder/stamp.make
-System/Library/Bundles/FModuleModDate.finder/FModuleModDate
-System/Library/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm/data.classes
-System/Library/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm/data.info
-System/Library/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm/objects.gorm
-System/Library/Bundles/FModuleModDate.finder/Resources/Info-gnustep.plist
-System/Library/Bundles/FModuleModDate.finder/stamp.make
-System/Library/Bundles/FModuleName.finder/FModuleName
-System/Library/Bundles/FModuleName.finder/Resources/FModuleName.gorm/data.classes
-System/Library/Bundles/FModuleName.finder/Resources/FModuleName.gorm/data.info
-System/Library/Bundles/FModuleName.finder/Resources/FModuleName.gorm/objects.gorm
-System/Library/Bundles/FModuleName.finder/Resources/Info-gnustep.plist
-System/Library/Bundles/FModuleName.finder/stamp.make
-System/Library/Bundles/FModuleOwner.finder/FModuleOwner
-System/Library/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm/data.classes
-System/Library/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm/data.info
-System/Library/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm/objects.gorm
-System/Library/Bundles/FModuleOwner.finder/Resources/Info-gnustep.plist
-System/Library/Bundles/FModuleOwner.finder/stamp.make
-System/Library/Bundles/FModuleSize.finder/FModuleSize
-System/Library/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm/data.classes
-System/Library/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm/data.info
-System/Library/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm/objects.gorm
-System/Library/Bundles/FModuleSize.finder/Resources/Info-gnustep.plist
-System/Library/Bundles/FModuleSize.finder/stamp.make
-System/Library/Bundles/FolderViewer.inspector/FolderViewer
-System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Bundles/FolderViewer.inspector/Resources/Info-gnustep.plist
-System/Library/Bundles/FolderViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/FolderViewer.inspector/stamp.make
-System/Library/Bundles/IBViewViewer.inspector/IBViewViewer
-System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
-System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Bundles/IBViewViewer.inspector/Resources/Info-gnustep.plist
-System/Library/Bundles/IBViewViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/IBViewViewer.inspector/stamp.make
-System/Library/Bundles/ImageThumbnailer.thumb/ImageThumbnailer
-System/Library/Bundles/ImageThumbnailer.thumb/Resources/Info-gnustep.plist
-System/Library/Bundles/ImageThumbnailer.thumb/stamp.make
-System/Library/Bundles/ImageViewer.inspector/ImageViewer
-System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
-System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Bundles/ImageViewer.inspector/Resources/Info-gnustep.plist
-System/Library/Bundles/ImageViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/ImageViewer.inspector/stamp.make
-System/Library/Bundles/MDModuleAnnotations.mdm/MDModuleAnnotations
-System/Library/Bundles/MDModuleAnnotations.mdm/Resources/Info-gnustep.plist
-System/Library/Bundles/MDModuleAnnotations.mdm/stamp.make
-System/Library/Bundles/NSColorViewer.inspector/NSColorViewer
-System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
-System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Bundles/NSColorViewer.inspector/Resources/Info-gnustep.plist
-System/Library/Bundles/NSColorViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/NSColorViewer.inspector/stamp.make
-System/Library/Bundles/NSRTFViewer.inspector/NSRTFViewer
-System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Bundles/NSRTFViewer.inspector/Resources/Info-gnustep.plist
-System/Library/Bundles/NSRTFViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/NSRTFViewer.inspector/stamp.make
-System/Library/Bundles/NSTIFFViewer.inspector/NSTIFFViewer
-System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Bundles/NSTIFFViewer.inspector/Resources/Info-gnustep.plist
-System/Library/Bundles/NSTIFFViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/NSTIFFViewer.inspector/stamp.make
-System/Library/Bundles/Role.extinfo/Resources/Info-gnustep.plist
-System/Library/Bundles/Role.extinfo/Role
-System/Library/Bundles/Role.extinfo/stamp.make
-System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Bundles/RtfViewer.inspector/Resources/Info-gnustep.plist
-System/Library/Bundles/RtfViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/RtfViewer.inspector/RtfViewer
-System/Library/Bundles/RtfViewer.inspector/stamp.make
-System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Bundles/SoundViewer.inspector/Resources/Info-gnustep.plist
-System/Library/Bundles/SoundViewer.inspector/Resources/InspectorInfo.plist
-System/Library/Bundles/SoundViewer.inspector/Resources/pause.tiff
-System/Library/Bundles/SoundViewer.inspector/Resources/play.tiff
-System/Library/Bundles/SoundViewer.inspector/Resources/progind.tiff
-System/Library/Bundles/SoundViewer.inspector/Resources/progind10.tiff
-System/Library/Bundles/SoundViewer.inspector/Resources/stop.tiff
-System/Library/Bundles/SoundViewer.inspector/SoundViewer
-System/Library/Bundles/SoundViewer.inspector/stamp.make
-System/Library/Frameworks/FSNode.framework/FSNode
-System/Library/Frameworks/FSNode.framework/Headers
-System/Library/Frameworks/FSNode.framework/Resources
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/FSNode
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowser.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserCell.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserColumn.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserMatrix.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserScroll.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNFunctions.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNIcon.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNIconsView.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNListView.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNPathComponentsViewer.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNTextCell.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNode.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNodeRep.h
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/ArrowRight.tiff
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Localizable.strings
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/FolderOpen.tiff
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/HardDisk.tiff
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/HardDiskOpen.tiff
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Info-gnustep.plist
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/MultipleSelection.tiff
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Recycler.tiff
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/RecyclerFull.tiff
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Workspace.tiff
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/libFSNode.so
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/libFSNode.so.%%MAJORLIBVERSION2%%
-System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/libFSNode.so.%%LIBVERSION2%%
-System/Library/Frameworks/FSNode.framework/Versions/Current
-System/Library/Frameworks/FSNode.framework/libFSNode.so
-System/Library/Frameworks/Inspector.framework/Headers
-System/Library/Frameworks/Inspector.framework/Inspector
-System/Library/Frameworks/Inspector.framework/Resources
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ContentViewersProtocol.h
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Headers/Inspector.h
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Inspector
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-0.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-1.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-2.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-3.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-4.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-5.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-6.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-7.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-8.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-9.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-Colon.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm/data.classes
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm/data.info
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm/objects.gorm
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm/data.classes
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm/data.info
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm/objects.gorm
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm/data.classes
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm/data.info
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm/objects.gorm
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm/data.classes
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm/data.info
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm/objects.gorm
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Localizable.strings
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm/data.classes
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm/data.info
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm/objects.gorm
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Info-gnustep.plist
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Inspector.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-0.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-1.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-2.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-3.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-4.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-5.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-6.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-7.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-8.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-9.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-AM.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-Colon.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-PM.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Magnify.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Mask.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-10.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-1.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-11.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-12.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-2.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-3.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-4.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-5.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-6.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-7.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-8.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-9.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/MultipleSelection.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Pboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-0.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-1.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-2.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-3.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-4.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-5.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-6.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-0.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-1.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-2.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-3.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-4.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-5.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-6.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-7.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/colorPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/filecontsPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/gormPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/progind.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/progind10.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/rtfPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/rtfdPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/stringPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/switchMultiple.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/switchOff.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/switchOn.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/tiffPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/libInspector.so
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/libInspector.so.%%MAJORLIBVERSION2%%
-System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/libInspector.so.%%LIBVERSION2%%
-System/Library/Frameworks/Inspector.framework/Versions/Current
-System/Library/Frameworks/Inspector.framework/libInspector.so
-System/Library/Frameworks/Operation.framework/Headers
-System/Library/Frameworks/Operation.framework/Operation
-System/Library/Frameworks/Operation.framework/Resources
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Headers/Operation.h
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Operation
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm/data.classes
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm/data.info
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm/objects.gorm
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/Localizable.strings
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/Info-gnustep.plist
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/Operation.tiff
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/progind.tiff
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so.%%MAJORLIBVERSION3%%
-System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so.%%LIBVERSION3%%
-System/Library/Frameworks/Operation.framework/Versions/Current
-System/Library/Frameworks/Operation.framework/libOperation.so
-System/Library/Headers/DBKit/DBKBTree.h
-System/Library/Headers/DBKit/DBKBTreeNode.h
-System/Library/Headers/DBKit/DBKFixLenRecordsFile.h
-System/Library/Headers/DBKit/DBKPathsTree.h
-System/Library/Headers/DBKit/DBKVarLenRecordsFile.h
-System/Library/Headers/FSNode
-System/Library/Headers/Inspector
-System/Library/Headers/Operation
-System/Library/Libraries/libDBKit.so
-System/Library/Libraries/libDBKit.so.%%MAJORLIBVERSION%%
-System/Library/Libraries/libDBKit.so.%%LIBVERSION%%
-System/Library/Libraries/libFSNode.so
-System/Library/Libraries/libFSNode.so.%%MAJORLIBVERSION2%%
-System/Library/Libraries/libFSNode.so.%%LIBVERSION2%%
-System/Library/Libraries/libInspector.so
-System/Library/Libraries/libInspector.so.%%MAJORLIBVERSION2%%
-System/Library/Libraries/libInspector.so.%%LIBVERSION2%%
-System/Library/Libraries/libOperation.so
-System/Library/Libraries/libOperation.so.%%MAJORLIBVERSION3%%
-System/Library/Libraries/libOperation.so.%%LIBVERSION3%%
-System/Library/Services/thumbnailer.service/Resources/Info-gnustep.plist
-System/Library/Services/thumbnailer.service/thumbnailer
-System/Tools/GWorkspace
-System/Tools/Recycler
-System/Tools/ddbd
-System/Tools/fswatcher
-System/Tools/lsfupdater
-System/Tools/resizer
-System/Tools/searchtool
-System/Tools/wopen
-@dirrm System/Library/Services/thumbnailer.service/Resources
-@dirrm System/Library/Services/thumbnailer.service
-@dirrm System/Library/Headers/DBKit
-@dirrm System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm
-@dirrm System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj
-@dirrm System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources
-@dirrm System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Headers
-@dirrm System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%
-@dirrm System/Library/Frameworks/Operation.framework/Versions
-@dirrm System/Library/Frameworks/Operation.framework
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Headers
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%
-@dirrm System/Library/Frameworks/Inspector.framework/Versions
-@dirrm System/Library/Frameworks/Inspector.framework
-@dirrm System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj
-@dirrm System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources
-@dirrm System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers
-@dirrm System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%
-@dirrm System/Library/Frameworks/FSNode.framework/Versions
-@dirrm System/Library/Frameworks/FSNode.framework
-@dirrm System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj
-@dirrm System/Library/Bundles/SoundViewer.inspector/Resources
-@dirrm System/Library/Bundles/SoundViewer.inspector
-@dirrm System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj
-@dirrm System/Library/Bundles/RtfViewer.inspector/Resources
-@dirrm System/Library/Bundles/RtfViewer.inspector
-@dirrm System/Library/Bundles/Role.extinfo/Resources
-@dirrm System/Library/Bundles/Role.extinfo
-@dirrm System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj
-@dirrm System/Library/Bundles/NSTIFFViewer.inspector/Resources
-@dirrm System/Library/Bundles/NSTIFFViewer.inspector
-@dirrm System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj
-@dirrm System/Library/Bundles/NSRTFViewer.inspector/Resources
-@dirrm System/Library/Bundles/NSRTFViewer.inspector
-@dirrm System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj
-@dirrm System/Library/Bundles/NSColorViewer.inspector/Resources
-@dirrm System/Library/Bundles/NSColorViewer.inspector
-@dirrm System/Library/Bundles/MDModuleAnnotations.mdm/Resources
-@dirrm System/Library/Bundles/MDModuleAnnotations.mdm
-@dirrm System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj
-@dirrm System/Library/Bundles/ImageViewer.inspector/Resources
-@dirrm System/Library/Bundles/ImageViewer.inspector
-@dirrm System/Library/Bundles/ImageThumbnailer.thumb/Resources
-@dirrm System/Library/Bundles/ImageThumbnailer.thumb
-@dirrm System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj
-@dirrm System/Library/Bundles/IBViewViewer.inspector/Resources
-@dirrm System/Library/Bundles/IBViewViewer.inspector
-@dirrm System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj
-@dirrm System/Library/Bundles/FolderViewer.inspector/Resources
-@dirrm System/Library/Bundles/FolderViewer.inspector
-@dirrm System/Library/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm
-@dirrm System/Library/Bundles/FModuleSize.finder/Resources
-@dirrm System/Library/Bundles/FModuleSize.finder
-@dirrm System/Library/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm
-@dirrm System/Library/Bundles/FModuleOwner.finder/Resources
-@dirrm System/Library/Bundles/FModuleOwner.finder
-@dirrm System/Library/Bundles/FModuleName.finder/Resources/FModuleName.gorm
-@dirrm System/Library/Bundles/FModuleName.finder/Resources
-@dirrm System/Library/Bundles/FModuleName.finder
-@dirrm System/Library/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm
-@dirrm System/Library/Bundles/FModuleModDate.finder/Resources
-@dirrm System/Library/Bundles/FModuleModDate.finder
-@dirrm System/Library/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm
-@dirrm System/Library/Bundles/FModuleKind.finder/Resources
-@dirrm System/Library/Bundles/FModuleKind.finder
-@dirrm System/Library/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm
-@dirrm System/Library/Bundles/FModuleCrDate.finder/Resources
-@dirrm System/Library/Bundles/FModuleCrDate.finder
-@dirrm System/Library/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm
-@dirrm System/Library/Bundles/FModuleContents.finder/Resources
-@dirrm System/Library/Bundles/FModuleContents.finder
-@dirrm System/Library/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm
-@dirrm System/Library/Bundles/FModuleAnnotations.finder/Resources
-@dirrm System/Library/Bundles/FModuleAnnotations.finder
-@dirrm System/Library/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Bundles/AppViewer.inspector/Resources/English.lproj
-@dirrm System/Library/Bundles/AppViewer.inspector/Resources
-@dirrm System/Library/Bundles/AppViewer.inspector
-@dirrm System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm
-@dirrm System/Applications/Recycler.app/Resources/English.lproj/PreferencesWin.gorm
-@dirrm System/Applications/Recycler.app/Resources/English.lproj
-@dirrm System/Applications/Recycler.app/Resources
-@dirrm System/Applications/Recycler.app
-@dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Norvegian.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Hungarian.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/German.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/French.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Esperanto.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/LSFEditor.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Preferences.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Inspector.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/History.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/GWorkspace.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/Desktop.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Help
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/FindModuleView.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/BrowserViewerPref.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/BrasilPortuguese.lproj
-@dirrm System/Applications/GWorkspace.app/Resources
-@dirrm System/Applications/GWorkspace.app
+GNUstep/System/Applications/GWorkspace.app/GWorkspace
+GNUstep/System/Applications/GWorkspace.app/Resources/BrasilPortuguese.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/CellHighlight.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/CellHighlight_osx.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/ComputeSize.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/ComputeSize_dimm.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-0.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-1.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-2.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-3.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-4.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-5.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-6.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-7.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-8.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-9.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date-Colon.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Date.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Dimple.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/DragableDocument.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Dutch.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/BrowserViewerPref.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/BrowserViewerPref.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/BrowserViewerPref.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/FindModuleView.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/FindModuleView.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/FindModuleView.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/browsing.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/dummy.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd/views.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Desktop.rtfd/FileManager.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Desktop.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd/dock.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd/dummy.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/Fiend-Develop.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/Fiend-menu.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd/dummy.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/GWorkspace.rtfd/FileManager.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/GWorkspace.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/History.rtfd/FileManager.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/History.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Inspector.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Inspector.rtfd/dummy.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Preferences.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Preferences.rtfd/dummy.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/Recycler-content.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/Recycler-drag.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/Recycler.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/RecyclerFull.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd/dummy.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/Run-panel.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd/dummy.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/dummy.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd/spatial.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/TXT.rtf
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/TabbedShelf-develop.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd/dummy.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/LSFEditor.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/LSFEditor.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/LSFEditor.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/data.info
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm/objects.gorm
+GNUstep/System/Applications/GWorkspace.app/Resources/Esperanto.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/FFArrow.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/FFArrow_disabled.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/FileIcon_Directory.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_Small.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_Small_alt.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_Small_osx.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_alt.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_osx.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/FileManager.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/French.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/GWorkspace.desktop
+GNUstep/System/Applications/GWorkspace.app/Resources/GWorkspaceInfo.plist
+GNUstep/System/Applications/GWorkspace.app/Resources/German.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/Hungarian.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/GWorkspace.app/Resources/Italian.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/Kill.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-0.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-1.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-2.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-3.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-4.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-5.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-6.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-7.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-8.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-9.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-AM.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-Colon.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED-PM.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LED.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LeftArr.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/LiveSearchFolder.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Magnify.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/MagnifyGlas.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Magnify_16.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Magnify_24.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Magnify_32.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Magnify_48.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Mask.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-1.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-10.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-11.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-12.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-2.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-3.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-4.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-5.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-6.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-7.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-8.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month-9.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Month.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/MultipleSelection.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Norvegian.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/Pboard.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/REWArrow.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/REWArrow_disabled.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Recycler.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/RecyclerFull.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/RightArr.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Romanian.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/SlideMask.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/SmallCellHighlight.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/SmallCellHighlightSmall.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Spanish.lproj/Localizable.strings
+GNUstep/System/Applications/GWorkspace.app/Resources/TileHighlight.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Weekday-0.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Weekday-1.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Weekday-2.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Weekday-3.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Weekday-4.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Weekday-5.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Weekday-6.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/Weekday.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/add.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/anim-logo-0.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/anim-logo-1.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/anim-logo-2.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/anim-logo-3.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/anim-logo-4.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/anim-logo-5.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/anim-logo-6.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/anim-logo-7.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/colorPboard.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/common_ArrowLeftH.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/common_ArrowRightH.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/filecontsPboard.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/gormPboard.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/littleArrowDown.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/littleArrowRight.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/magnify_small.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/page.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/pause.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/play.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/remove.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/rtfPboard.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/rtfdPboard.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/stop.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/stop_16.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/stop_24.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/stop_32.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/stop_48.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/stop_small.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/stringPboard.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/switchMultiple.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/switchOff.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/switchOn.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/tabSelectedLeft.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/tabSelectedRight.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/tabSelectedToUnSelectedJunction.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/tabUnSelectToSelectedJunction.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/tabUnSelectedJunction.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/tabUnSelectedLeft.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/tabUnSelectedRight.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/tiffPboard.tiff
+GNUstep/System/Applications/GWorkspace.app/Resources/watch.tiff
+GNUstep/System/Applications/GWorkspace.app/stamp.make
+GNUstep/System/Applications/Recycler.app/Recycler
+GNUstep/System/Applications/Recycler.app/Resources/English.lproj/Localizable.strings
+GNUstep/System/Applications/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/data.classes
+GNUstep/System/Applications/Recycler.app/Resources/English.lproj/PreferencesWin.gorm/objects.gorm
+GNUstep/System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm/data.classes
+GNUstep/System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
+GNUstep/System/Applications/Recycler.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Recycler.app/Resources/Recycler.desktop
+GNUstep/System/Applications/Recycler.app/Resources/Recycler.tiff
+GNUstep/System/Applications/Recycler.app/stamp.make
+GNUstep/System/Library/Bundles/AppViewer.inspector/AppViewer
+GNUstep/System/Library/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+GNUstep/System/Library/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
+GNUstep/System/Library/Bundles/AppViewer.inspector/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/AppViewer.inspector/Resources/InspectorInfo.plist
+GNUstep/System/Library/Bundles/AppViewer.inspector/stamp.make
+GNUstep/System/Library/Bundles/FModuleAnnotations.finder/FModuleAnnotations
+GNUstep/System/Library/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm/data.classes
+GNUstep/System/Library/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm/data.info
+GNUstep/System/Library/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm/objects.gorm
+GNUstep/System/Library/Bundles/FModuleAnnotations.finder/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/FModuleAnnotations.finder/stamp.make
+GNUstep/System/Library/Bundles/FModuleContents.finder/FModuleContents
+GNUstep/System/Library/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm/data.classes
+GNUstep/System/Library/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm/data.info
+GNUstep/System/Library/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm/objects.gorm
+GNUstep/System/Library/Bundles/FModuleContents.finder/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/FModuleContents.finder/stamp.make
+GNUstep/System/Library/Bundles/FModuleCrDate.finder/FModuleCrDate
+GNUstep/System/Library/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm/data.classes
+GNUstep/System/Library/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm/data.info
+GNUstep/System/Library/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm/objects.gorm
+GNUstep/System/Library/Bundles/FModuleCrDate.finder/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/FModuleCrDate.finder/stamp.make
+GNUstep/System/Library/Bundles/FModuleKind.finder/FModuleKind
+GNUstep/System/Library/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm/data.classes
+GNUstep/System/Library/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm/data.info
+GNUstep/System/Library/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm/objects.gorm
+GNUstep/System/Library/Bundles/FModuleKind.finder/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/FModuleKind.finder/stamp.make
+GNUstep/System/Library/Bundles/FModuleModDate.finder/FModuleModDate
+GNUstep/System/Library/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm/data.classes
+GNUstep/System/Library/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm/data.info
+GNUstep/System/Library/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm/objects.gorm
+GNUstep/System/Library/Bundles/FModuleModDate.finder/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/FModuleModDate.finder/stamp.make
+GNUstep/System/Library/Bundles/FModuleName.finder/FModuleName
+GNUstep/System/Library/Bundles/FModuleName.finder/Resources/FModuleName.gorm/data.classes
+GNUstep/System/Library/Bundles/FModuleName.finder/Resources/FModuleName.gorm/data.info
+GNUstep/System/Library/Bundles/FModuleName.finder/Resources/FModuleName.gorm/objects.gorm
+GNUstep/System/Library/Bundles/FModuleName.finder/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/FModuleName.finder/stamp.make
+GNUstep/System/Library/Bundles/FModuleOwner.finder/FModuleOwner
+GNUstep/System/Library/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm/data.classes
+GNUstep/System/Library/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm/data.info
+GNUstep/System/Library/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm/objects.gorm
+GNUstep/System/Library/Bundles/FModuleOwner.finder/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/FModuleOwner.finder/stamp.make
+GNUstep/System/Library/Bundles/FModuleSize.finder/FModuleSize
+GNUstep/System/Library/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm/data.classes
+GNUstep/System/Library/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm/data.info
+GNUstep/System/Library/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm/objects.gorm
+GNUstep/System/Library/Bundles/FModuleSize.finder/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/FModuleSize.finder/stamp.make
+GNUstep/System/Library/Bundles/FolderViewer.inspector/FolderViewer
+GNUstep/System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+GNUstep/System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
+GNUstep/System/Library/Bundles/FolderViewer.inspector/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/FolderViewer.inspector/Resources/InspectorInfo.plist
+GNUstep/System/Library/Bundles/FolderViewer.inspector/stamp.make
+GNUstep/System/Library/Bundles/IBViewViewer.inspector/IBViewViewer
+GNUstep/System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
+GNUstep/System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+GNUstep/System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
+GNUstep/System/Library/Bundles/IBViewViewer.inspector/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/IBViewViewer.inspector/Resources/InspectorInfo.plist
+GNUstep/System/Library/Bundles/IBViewViewer.inspector/stamp.make
+GNUstep/System/Library/Bundles/ImageThumbnailer.thumb/ImageThumbnailer
+GNUstep/System/Library/Bundles/ImageThumbnailer.thumb/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/ImageThumbnailer.thumb/stamp.make
+GNUstep/System/Library/Bundles/ImageViewer.inspector/ImageViewer
+GNUstep/System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
+GNUstep/System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+GNUstep/System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
+GNUstep/System/Library/Bundles/ImageViewer.inspector/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/ImageViewer.inspector/Resources/InspectorInfo.plist
+GNUstep/System/Library/Bundles/ImageViewer.inspector/stamp.make
+GNUstep/System/Library/Bundles/MDModuleAnnotations.mdm/MDModuleAnnotations
+GNUstep/System/Library/Bundles/MDModuleAnnotations.mdm/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/MDModuleAnnotations.mdm/stamp.make
+GNUstep/System/Library/Bundles/NSColorViewer.inspector/NSColorViewer
+GNUstep/System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/.gwdir
+GNUstep/System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+GNUstep/System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
+GNUstep/System/Library/Bundles/NSColorViewer.inspector/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/NSColorViewer.inspector/Resources/InspectorInfo.plist
+GNUstep/System/Library/Bundles/NSColorViewer.inspector/stamp.make
+GNUstep/System/Library/Bundles/NSRTFViewer.inspector/NSRTFViewer
+GNUstep/System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+GNUstep/System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
+GNUstep/System/Library/Bundles/NSRTFViewer.inspector/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/NSRTFViewer.inspector/Resources/InspectorInfo.plist
+GNUstep/System/Library/Bundles/NSRTFViewer.inspector/stamp.make
+GNUstep/System/Library/Bundles/NSTIFFViewer.inspector/NSTIFFViewer
+GNUstep/System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+GNUstep/System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
+GNUstep/System/Library/Bundles/NSTIFFViewer.inspector/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/NSTIFFViewer.inspector/Resources/InspectorInfo.plist
+GNUstep/System/Library/Bundles/NSTIFFViewer.inspector/stamp.make
+GNUstep/System/Library/Bundles/Role.extinfo/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/Role.extinfo/Role
+GNUstep/System/Library/Bundles/Role.extinfo/stamp.make
+GNUstep/System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+GNUstep/System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
+GNUstep/System/Library/Bundles/RtfViewer.inspector/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/RtfViewer.inspector/Resources/InspectorInfo.plist
+GNUstep/System/Library/Bundles/RtfViewer.inspector/RtfViewer
+GNUstep/System/Library/Bundles/RtfViewer.inspector/stamp.make
+GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
+GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/InspectorInfo.plist
+GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/pause.tiff
+GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/play.tiff
+GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/progind.tiff
+GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/progind10.tiff
+GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/stop.tiff
+GNUstep/System/Library/Bundles/SoundViewer.inspector/SoundViewer
+GNUstep/System/Library/Bundles/SoundViewer.inspector/stamp.make
+GNUstep/System/Library/Frameworks/FSNode.framework/FSNode
+GNUstep/System/Library/Frameworks/FSNode.framework/Headers
+GNUstep/System/Library/Frameworks/FSNode.framework/Resources
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/FSNode
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowser.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserCell.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserColumn.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserMatrix.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserScroll.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNFunctions.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNIcon.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNIconsView.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNListView.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNPathComponentsViewer.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNTextCell.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNode.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNodeRep.h
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/ArrowRight.tiff
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Localizable.strings
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/FolderOpen.tiff
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/HardDisk.tiff
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/HardDiskOpen.tiff
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Info-gnustep.plist
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/MultipleSelection.tiff
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Recycler.tiff
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/RecyclerFull.tiff
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Workspace.tiff
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/libFSNode.so
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/libFSNode.so.%%MAJORLIBVERSION2%%
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/libFSNode.so.%%LIBVERSION2%%
+GNUstep/System/Library/Frameworks/FSNode.framework/Versions/Current
+GNUstep/System/Library/Frameworks/FSNode.framework/libFSNode.so
+GNUstep/System/Library/Frameworks/Inspector.framework/Headers
+GNUstep/System/Library/Frameworks/Inspector.framework/Inspector
+GNUstep/System/Library/Frameworks/Inspector.framework/Resources
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ContentViewersProtocol.h
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Headers/Inspector.h
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Inspector
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-0.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-1.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-2.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-3.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-4.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-5.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-6.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-7.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-8.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-9.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-Colon.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm/data.classes
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm/data.info
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm/data.classes
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm/data.info
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm/data.classes
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm/data.info
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm/data.classes
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm/data.info
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Localizable.strings
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm/data.classes
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm/data.info
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Info-gnustep.plist
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Inspector.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-0.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-1.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-2.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-3.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-4.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-5.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-6.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-7.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-8.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-9.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-AM.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-Colon.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-PM.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Magnify.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Mask.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-10.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-1.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-11.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-12.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-2.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-3.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-4.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-5.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-6.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-7.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-8.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-9.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/MultipleSelection.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Pboard.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-0.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-1.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-2.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-3.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-4.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-5.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-6.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-0.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-1.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-2.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-3.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-4.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-5.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-6.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-7.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/colorPboard.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/filecontsPboard.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/gormPboard.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/progind.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/progind10.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/rtfPboard.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/rtfdPboard.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/stringPboard.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/switchMultiple.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/switchOff.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/switchOn.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/tiffPboard.tiff
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/libInspector.so
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/libInspector.so.%%MAJORLIBVERSION2%%
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/libInspector.so.%%LIBVERSION2%%
+GNUstep/System/Library/Frameworks/Inspector.framework/Versions/Current
+GNUstep/System/Library/Frameworks/Inspector.framework/libInspector.so
+GNUstep/System/Library/Frameworks/Operation.framework/Headers
+GNUstep/System/Library/Frameworks/Operation.framework/Operation
+GNUstep/System/Library/Frameworks/Operation.framework/Resources
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Headers/Operation.h
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Operation
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm/data.classes
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm/data.info
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm/objects.gorm
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/Localizable.strings
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/Info-gnustep.plist
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/Operation.tiff
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/progind.tiff
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so.%%MAJORLIBVERSION3%%
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so.%%LIBVERSION3%%
+GNUstep/System/Library/Frameworks/Operation.framework/Versions/Current
+GNUstep/System/Library/Frameworks/Operation.framework/libOperation.so
+GNUstep/System/Library/Headers/DBKit/DBKBTree.h
+GNUstep/System/Library/Headers/DBKit/DBKBTreeNode.h
+GNUstep/System/Library/Headers/DBKit/DBKFixLenRecordsFile.h
+GNUstep/System/Library/Headers/DBKit/DBKPathsTree.h
+GNUstep/System/Library/Headers/DBKit/DBKVarLenRecordsFile.h
+GNUstep/System/Library/Headers/FSNode
+GNUstep/System/Library/Headers/Inspector
+GNUstep/System/Library/Headers/Operation
+GNUstep/System/Library/Libraries/libDBKit.so
+GNUstep/System/Library/Libraries/libDBKit.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libDBKit.so.%%LIBVERSION%%
+GNUstep/System/Library/Libraries/libFSNode.so
+GNUstep/System/Library/Libraries/libFSNode.so.%%MAJORLIBVERSION2%%
+GNUstep/System/Library/Libraries/libFSNode.so.%%LIBVERSION2%%
+GNUstep/System/Library/Libraries/libInspector.so
+GNUstep/System/Library/Libraries/libInspector.so.%%MAJORLIBVERSION2%%
+GNUstep/System/Library/Libraries/libInspector.so.%%LIBVERSION2%%
+GNUstep/System/Library/Libraries/libOperation.so
+GNUstep/System/Library/Libraries/libOperation.so.%%MAJORLIBVERSION3%%
+GNUstep/System/Library/Libraries/libOperation.so.%%LIBVERSION3%%
+GNUstep/System/Library/Services/thumbnailer.service/Resources/Info-gnustep.plist
+GNUstep/System/Library/Services/thumbnailer.service/thumbnailer
+GNUstep/System/Tools/GWorkspace
+GNUstep/System/Tools/Recycler
+GNUstep/System/Tools/ddbd
+GNUstep/System/Tools/fswatcher
+GNUstep/System/Tools/lsfupdater
+GNUstep/System/Tools/resizer
+GNUstep/System/Tools/searchtool
+GNUstep/System/Tools/wopen
+@dirrm GNUstep/System/Library/Services/thumbnailer.service/Resources
+@dirrm GNUstep/System/Library/Services/thumbnailer.service
+@dirrm GNUstep/System/Library/Headers/DBKit
+@dirrm GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm
+@dirrm GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj
+@dirrm GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources
+@dirrm GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Headers
+@dirrm GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%
+@dirrm GNUstep/System/Library/Frameworks/Operation.framework/Versions
+@dirrm GNUstep/System/Library/Frameworks/Operation.framework
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Headers
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework/Versions
+@dirrm GNUstep/System/Library/Frameworks/Inspector.framework
+@dirrm GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj
+@dirrm GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources
+@dirrm GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers
+@dirrm GNUstep/System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%
+@dirrm GNUstep/System/Library/Frameworks/FSNode.framework/Versions
+@dirrm GNUstep/System/Library/Frameworks/FSNode.framework
+@dirrm GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/SoundViewer.inspector/Resources
+@dirrm GNUstep/System/Library/Bundles/SoundViewer.inspector
+@dirrm GNUstep/System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm GNUstep/System/Library/Bundles/RtfViewer.inspector/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/RtfViewer.inspector/Resources
+@dirrm GNUstep/System/Library/Bundles/RtfViewer.inspector
+@dirrm GNUstep/System/Library/Bundles/Role.extinfo/Resources
+@dirrm GNUstep/System/Library/Bundles/Role.extinfo
+@dirrm GNUstep/System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm GNUstep/System/Library/Bundles/NSTIFFViewer.inspector/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/NSTIFFViewer.inspector/Resources
+@dirrm GNUstep/System/Library/Bundles/NSTIFFViewer.inspector
+@dirrm GNUstep/System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm GNUstep/System/Library/Bundles/NSRTFViewer.inspector/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/NSRTFViewer.inspector/Resources
+@dirrm GNUstep/System/Library/Bundles/NSRTFViewer.inspector
+@dirrm GNUstep/System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm GNUstep/System/Library/Bundles/NSColorViewer.inspector/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/NSColorViewer.inspector/Resources
+@dirrm GNUstep/System/Library/Bundles/NSColorViewer.inspector
+@dirrm GNUstep/System/Library/Bundles/MDModuleAnnotations.mdm/Resources
+@dirrm GNUstep/System/Library/Bundles/MDModuleAnnotations.mdm
+@dirrm GNUstep/System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm GNUstep/System/Library/Bundles/ImageViewer.inspector/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/ImageViewer.inspector/Resources
+@dirrm GNUstep/System/Library/Bundles/ImageViewer.inspector
+@dirrm GNUstep/System/Library/Bundles/ImageThumbnailer.thumb/Resources
+@dirrm GNUstep/System/Library/Bundles/ImageThumbnailer.thumb
+@dirrm GNUstep/System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm GNUstep/System/Library/Bundles/IBViewViewer.inspector/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/IBViewViewer.inspector/Resources
+@dirrm GNUstep/System/Library/Bundles/IBViewViewer.inspector
+@dirrm GNUstep/System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm GNUstep/System/Library/Bundles/FolderViewer.inspector/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/FolderViewer.inspector/Resources
+@dirrm GNUstep/System/Library/Bundles/FolderViewer.inspector
+@dirrm GNUstep/System/Library/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm
+@dirrm GNUstep/System/Library/Bundles/FModuleSize.finder/Resources
+@dirrm GNUstep/System/Library/Bundles/FModuleSize.finder
+@dirrm GNUstep/System/Library/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm
+@dirrm GNUstep/System/Library/Bundles/FModuleOwner.finder/Resources
+@dirrm GNUstep/System/Library/Bundles/FModuleOwner.finder
+@dirrm GNUstep/System/Library/Bundles/FModuleName.finder/Resources/FModuleName.gorm
+@dirrm GNUstep/System/Library/Bundles/FModuleName.finder/Resources
+@dirrm GNUstep/System/Library/Bundles/FModuleName.finder
+@dirrm GNUstep/System/Library/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm
+@dirrm GNUstep/System/Library/Bundles/FModuleModDate.finder/Resources
+@dirrm GNUstep/System/Library/Bundles/FModuleModDate.finder
+@dirrm GNUstep/System/Library/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm
+@dirrm GNUstep/System/Library/Bundles/FModuleKind.finder/Resources
+@dirrm GNUstep/System/Library/Bundles/FModuleKind.finder
+@dirrm GNUstep/System/Library/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm
+@dirrm GNUstep/System/Library/Bundles/FModuleCrDate.finder/Resources
+@dirrm GNUstep/System/Library/Bundles/FModuleCrDate.finder
+@dirrm GNUstep/System/Library/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm
+@dirrm GNUstep/System/Library/Bundles/FModuleContents.finder/Resources
+@dirrm GNUstep/System/Library/Bundles/FModuleContents.finder
+@dirrm GNUstep/System/Library/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm
+@dirrm GNUstep/System/Library/Bundles/FModuleAnnotations.finder/Resources
+@dirrm GNUstep/System/Library/Bundles/FModuleAnnotations.finder
+@dirrm GNUstep/System/Library/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd
+@dirrm GNUstep/System/Library/Bundles/AppViewer.inspector/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/AppViewer.inspector/Resources
+@dirrm GNUstep/System/Library/Bundles/AppViewer.inspector
+@dirrm GNUstep/System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm
+@dirrm GNUstep/System/Applications/Recycler.app/Resources/English.lproj/PreferencesWin.gorm
+@dirrm GNUstep/System/Applications/Recycler.app/Resources/English.lproj
+@dirrm GNUstep/System/Applications/Recycler.app/Resources
+@dirrm GNUstep/System/Applications/Recycler.app
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/Spanish.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/Romanian.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/Portuguese.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/Norvegian.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/Italian.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/Hungarian.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/German.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/French.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/Esperanto.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/StartAppWin.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/LSFEditor.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/HistoryPref.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/TabbedShelf.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/SViewer.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/RunExternal.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Recycler.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Preferences.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Inspector.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/History.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/GWorkspace.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Fiend.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Dock.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/Desktop.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help/BViewer.rtfd
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Help
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Finder.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/FindModuleView.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DesktopPref.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/DefEditorPref.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/BrowserViewerPref.gorm
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/Dutch.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources/BrasilPortuguese.lproj
+@dirrm GNUstep/System/Applications/GWorkspace.app/Resources
+@dirrm GNUstep/System/Applications/GWorkspace.app

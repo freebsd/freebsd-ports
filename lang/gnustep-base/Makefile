@@ -31,7 +31,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs --disable-openssl --enable-tls \
 		--with-tls-prefix=${LOCALBASE} TLS_CONFIG="pkg-config -gnutls"
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

@@ -1,12 +1,12 @@
-Local/Library/Bundles/PowerMenulet.menulet/PowerMenulet
-Local/Library/Bundles/PowerMenulet.menulet/Resources/Info-gnustep.plist
-Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_0.tiff
-Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_1.tiff
-Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_2.tiff
-Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_3.tiff
-Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_4.tiff
-Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_5.tiff
-Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_6.tiff
-Local/Library/Bundles/PowerMenulet.menulet/stamp.make
-@dirrm Local/Library/Bundles/PowerMenulet.menulet/Resources
-@dirrm Local/Library/Bundles/PowerMenulet.menulet
+GNUstep/Local/Library/Bundles/PowerMenulet.menulet/PowerMenulet
+GNUstep/Local/Library/Bundles/PowerMenulet.menulet/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_0.tiff
+GNUstep/Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_1.tiff
+GNUstep/Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_2.tiff
+GNUstep/Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_3.tiff
+GNUstep/Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_4.tiff
+GNUstep/Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_5.tiff
+GNUstep/Local/Library/Bundles/PowerMenulet.menulet/Resources/Power_6.tiff
+GNUstep/Local/Library/Bundles/PowerMenulet.menulet/stamp.make
+@dirrm GNUstep/Local/Library/Bundles/PowerMenulet.menulet/Resources
+@dirrm GNUstep/Local/Library/Bundles/PowerMenulet.menulet

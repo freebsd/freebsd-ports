@@ -1,27 +1,27 @@
-Local/Library/Frameworks/BookmarkKit.framework/BookmarkKit
-Local/Library/Frameworks/BookmarkKit.framework/Headers
-Local/Library/Frameworks/BookmarkKit.framework/Resources
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/BookmarkKit
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmark.h
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkQuery.h
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkSearchResult.h
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkStore.h
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkView.h
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKGlobals.h
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKGroup.h
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BookmarkKit.h
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/libBookmarkKit.so
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/libBookmarkKit.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/libBookmarkKit.so.%%LIBVERSION%%
-Local/Library/Frameworks/BookmarkKit.framework/Versions/Current
-Local/Library/Frameworks/BookmarkKit.framework/libBookmarkKit.so
-Local/Library/Headers/BookmarkKit
-Local/Library/Libraries/libBookmarkKit.so
-Local/Library/Libraries/libBookmarkKit.so.%%MAJORLIBVERSION%%
-Local/Library/Libraries/libBookmarkKit.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%
-@dirrm Local/Library/Frameworks/BookmarkKit.framework/Versions
-@dirrm Local/Library/Frameworks/BookmarkKit.framework
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/BookmarkKit
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Headers
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Resources
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/BookmarkKit
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmark.h
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkQuery.h
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkSearchResult.h
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkStore.h
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKBookmarkView.h
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKGlobals.h
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BKGroup.h
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers/BookmarkKit.h
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/libBookmarkKit.so
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/libBookmarkKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/libBookmarkKit.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/BookmarkKit.framework/libBookmarkKit.so
+GNUstep/Local/Library/Headers/BookmarkKit
+GNUstep/Local/Library/Libraries/libBookmarkKit.so
+GNUstep/Local/Library/Libraries/libBookmarkKit.so.%%MAJORLIBVERSION%%
+GNUstep/Local/Library/Libraries/libBookmarkKit.so.%%LIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions/%%MAJORLIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/BookmarkKit.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/BookmarkKit.framework

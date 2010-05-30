@@ -1,41 +1,41 @@
-Local/Library/Bundles/SQLClient/ECPG.bundle/ECPG
-Local/Library/Bundles/SQLClient/ECPG.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/SQLClient/ECPG.bundle/stamp.make
-Local/Library/Bundles/SQLClient/ECPG_libs.bundle/ECPG_libs
-Local/Library/Bundles/SQLClient/ECPG_libs.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/SQLClient/ECPG_libs.bundle/stamp.make
-Local/Library/Bundles/SQLClient/Postgres.bundle/Postgres
-Local/Library/Bundles/SQLClient/Postgres.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/SQLClient/Postgres.bundle/stamp.make
-Local/Library/Bundles/SQLClient/Postgres_libs.bundle/Postgres_libs
-Local/Library/Bundles/SQLClient/Postgres_libs.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/SQLClient/Postgres_libs.bundle/stamp.make
-Local/Library/Bundles/SQLClient/SQLite.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/SQLClient/SQLite.bundle/SQLite
-Local/Library/Bundles/SQLClient/SQLite.bundle/stamp.make
-Local/Library/Bundles/SQLClient/SQLite_libs.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/SQLClient/SQLite_libs.bundle/SQLite_libs
-Local/Library/Bundles/SQLClient/SQLite_libs.bundle/stamp.make
-Local/Library/Documentation/SQLClient/SQLClient.gsdoc
-Local/Library/Documentation/SQLClient/SQLClient.html
-Local/Library/Documentation/SQLClient/SQLClient.igsdoc
-Local/Library/Documentation/SQLClient/dependencies
-Local/Library/Headers/SQLClient/SQLClient.h
-Local/Library/Libraries/libSQLClient.so
-Local/Library/Libraries/libSQLClient.so.%%LIBVERSION%%
-Local/Library/Libraries/libSQLClient.so.%%VERSION%%
-@dirrm Local/Library/Headers/SQLClient
-@dirrm Local/Library/Documentation/SQLClient
-@dirrm Local/Library/Bundles/SQLClient/SQLite_libs.bundle/Resources
-@dirrm Local/Library/Bundles/SQLClient/SQLite_libs.bundle
-@dirrm Local/Library/Bundles/SQLClient/SQLite.bundle/Resources
-@dirrm Local/Library/Bundles/SQLClient/SQLite.bundle
-@dirrm Local/Library/Bundles/SQLClient/Postgres_libs.bundle/Resources
-@dirrm Local/Library/Bundles/SQLClient/Postgres_libs.bundle
-@dirrm Local/Library/Bundles/SQLClient/Postgres.bundle/Resources
-@dirrm Local/Library/Bundles/SQLClient/Postgres.bundle
-@dirrm Local/Library/Bundles/SQLClient/ECPG_libs.bundle/Resources
-@dirrm Local/Library/Bundles/SQLClient/ECPG_libs.bundle
-@dirrm Local/Library/Bundles/SQLClient/ECPG.bundle/Resources
-@dirrm Local/Library/Bundles/SQLClient/ECPG.bundle
-@dirrm Local/Library/Bundles/SQLClient
+GNUstep/Local/Library/Bundles/SQLClient/ECPG.bundle/ECPG
+GNUstep/Local/Library/Bundles/SQLClient/ECPG.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/SQLClient/ECPG.bundle/stamp.make
+GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle/ECPG_libs
+GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle/stamp.make
+GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle/Postgres
+GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle/stamp.make
+GNUstep/Local/Library/Bundles/SQLClient/Postgres_libs.bundle/Postgres_libs
+GNUstep/Local/Library/Bundles/SQLClient/Postgres_libs.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/SQLClient/Postgres_libs.bundle/stamp.make
+GNUstep/Local/Library/Bundles/SQLClient/SQLite.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/SQLClient/SQLite.bundle/SQLite
+GNUstep/Local/Library/Bundles/SQLClient/SQLite.bundle/stamp.make
+GNUstep/Local/Library/Bundles/SQLClient/SQLite_libs.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/SQLClient/SQLite_libs.bundle/SQLite_libs
+GNUstep/Local/Library/Bundles/SQLClient/SQLite_libs.bundle/stamp.make
+GNUstep/Local/Library/Documentation/SQLClient/SQLClient.gsdoc
+GNUstep/Local/Library/Documentation/SQLClient/SQLClient.html
+GNUstep/Local/Library/Documentation/SQLClient/SQLClient.igsdoc
+GNUstep/Local/Library/Documentation/SQLClient/dependencies
+GNUstep/Local/Library/Headers/SQLClient/SQLClient.h
+GNUstep/Local/Library/Libraries/libSQLClient.so
+GNUstep/Local/Library/Libraries/libSQLClient.so.%%LIBVERSION%%
+GNUstep/Local/Library/Libraries/libSQLClient.so.%%VERSION%%
+@dirrm GNUstep/Local/Library/Headers/SQLClient
+@dirrm GNUstep/Local/Library/Documentation/SQLClient
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/SQLite_libs.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/SQLite_libs.bundle
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/SQLite.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/SQLite.bundle
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/Postgres_libs.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/Postgres_libs.bundle
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/Postgres.bundle
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/ECPG_libs.bundle
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/ECPG.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/SQLClient/ECPG.bundle
+@dirrm GNUstep/Local/Library/Bundles/SQLClient

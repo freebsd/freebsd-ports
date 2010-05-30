@@ -1,27 +1,27 @@
-Local/Applications/MyWiki.app/MyWiki
-Local/Applications/MyWiki.app/Resources/English.lproj/MainMenu.gorm/data.classes
-Local/Applications/MyWiki.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
-Local/Applications/MyWiki.app/Resources/English.lproj/MyDocument.gorm/data.classes
-Local/Applications/MyWiki.app/Resources/English.lproj/MyDocument.gorm/objects.gorm
-Local/Applications/MyWiki.app/Resources/Home12black.png
-Local/Applications/MyWiki.app/Resources/Home12white.png
-Local/Applications/MyWiki.app/Resources/Info-gnustep.plist
-Local/Applications/MyWiki.app/Resources/Journal12black.png
-Local/Applications/MyWiki.app/Resources/Journal12white.png
-Local/Applications/MyWiki.app/Resources/MyWiki.desktop
-Local/Applications/MyWiki.app/Resources/Page12black.png
-Local/Applications/MyWiki.app/Resources/Page12white.png
-Local/Applications/MyWiki.app/Resources/Search12black.png
-Local/Applications/MyWiki.app/Resources/Search12white.png
-Local/Applications/MyWiki.app/Resources/caution.png
-Local/Applications/MyWiki.app/Resources/common_ArrowLeft.tif
-Local/Applications/MyWiki.app/Resources/common_ArrowRight.tif
-Local/Applications/MyWiki.app/Resources/information.png
-Local/Applications/MyWiki.app/Resources/note.png
-Local/Applications/MyWiki.app/stamp.make
-Local/Tools/MyWiki
-@dirrm Local/Applications/MyWiki.app/Resources/English.lproj/MyDocument.gorm
-@dirrm Local/Applications/MyWiki.app/Resources/English.lproj/MainMenu.gorm
-@dirrm Local/Applications/MyWiki.app/Resources/English.lproj
-@dirrm Local/Applications/MyWiki.app/Resources
-@dirrm Local/Applications/MyWiki.app
+GNUstep/Local/Applications/MyWiki.app/MyWiki
+GNUstep/Local/Applications/MyWiki.app/Resources/English.lproj/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/MyWiki.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/MyWiki.app/Resources/English.lproj/MyDocument.gorm/data.classes
+GNUstep/Local/Applications/MyWiki.app/Resources/English.lproj/MyDocument.gorm/objects.gorm
+GNUstep/Local/Applications/MyWiki.app/Resources/Home12black.png
+GNUstep/Local/Applications/MyWiki.app/Resources/Home12white.png
+GNUstep/Local/Applications/MyWiki.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/MyWiki.app/Resources/Journal12black.png
+GNUstep/Local/Applications/MyWiki.app/Resources/Journal12white.png
+GNUstep/Local/Applications/MyWiki.app/Resources/MyWiki.desktop
+GNUstep/Local/Applications/MyWiki.app/Resources/Page12black.png
+GNUstep/Local/Applications/MyWiki.app/Resources/Page12white.png
+GNUstep/Local/Applications/MyWiki.app/Resources/Search12black.png
+GNUstep/Local/Applications/MyWiki.app/Resources/Search12white.png
+GNUstep/Local/Applications/MyWiki.app/Resources/caution.png
+GNUstep/Local/Applications/MyWiki.app/Resources/common_ArrowLeft.tif
+GNUstep/Local/Applications/MyWiki.app/Resources/common_ArrowRight.tif
+GNUstep/Local/Applications/MyWiki.app/Resources/information.png
+GNUstep/Local/Applications/MyWiki.app/Resources/note.png
+GNUstep/Local/Applications/MyWiki.app/stamp.make
+GNUstep/Local/Tools/MyWiki
+@dirrm GNUstep/Local/Applications/MyWiki.app/Resources/English.lproj/MyDocument.gorm
+@dirrm GNUstep/Local/Applications/MyWiki.app/Resources/English.lproj/MainMenu.gorm
+@dirrm GNUstep/Local/Applications/MyWiki.app/Resources/English.lproj
+@dirrm GNUstep/Local/Applications/MyWiki.app/Resources
+@dirrm GNUstep/Local/Applications/MyWiki.app

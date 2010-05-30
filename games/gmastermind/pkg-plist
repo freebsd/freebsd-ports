@@ -1,10 +1,10 @@
-Local/Applications/GMastermind2.app/GMastermind2
-Local/Applications/GMastermind2.app/Resources/French.lproj/Localizable.strings
-Local/Applications/GMastermind2.app/Resources/GMastermind2.desktop
-Local/Applications/GMastermind2.app/Resources/GMastermind2.tiff
-Local/Applications/GMastermind2.app/Resources/Info-gnustep.plist
-Local/Applications/GMastermind2.app/stamp.make
-Local/Tools/GMastermind2
-@dirrm Local/Applications/GMastermind2.app/Resources/French.lproj
-@dirrm Local/Applications/GMastermind2.app/Resources
-@dirrm Local/Applications/GMastermind2.app
+GNUstep/Local/Applications/GMastermind2.app/GMastermind2
+GNUstep/Local/Applications/GMastermind2.app/Resources/French.lproj/Localizable.strings
+GNUstep/Local/Applications/GMastermind2.app/Resources/GMastermind2.desktop
+GNUstep/Local/Applications/GMastermind2.app/Resources/GMastermind2.tiff
+GNUstep/Local/Applications/GMastermind2.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/GMastermind2.app/stamp.make
+GNUstep/Local/Tools/GMastermind2
+@dirrm GNUstep/Local/Applications/GMastermind2.app/Resources/French.lproj
+@dirrm GNUstep/Local/Applications/GMastermind2.app/Resources
+@dirrm GNUstep/Local/Applications/GMastermind2.app

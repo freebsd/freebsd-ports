@@ -1,11 +1,11 @@
-Local/Applications/AClock.app/AClock
-Local/Applications/AClock.app/Resources/AClock.desktop
-Local/Applications/AClock.app/Resources/AClock.gorm/data.classes
-Local/Applications/AClock.app/Resources/AClock.gorm/objects.gorm
-Local/Applications/AClock.app/Resources/AClock.tiff
-Local/Applications/AClock.app/Resources/Info-gnustep.plist
-Local/Applications/AClock.app/stamp.make
-Local/Tools/AClock
-@dirrm Local/Applications/AClock.app/Resources/AClock.gorm
-@dirrm Local/Applications/AClock.app/Resources
-@dirrm Local/Applications/AClock.app
+GNUstep/Local/Applications/AClock.app/AClock
+GNUstep/Local/Applications/AClock.app/Resources/AClock.desktop
+GNUstep/Local/Applications/AClock.app/Resources/AClock.gorm/data.classes
+GNUstep/Local/Applications/AClock.app/Resources/AClock.gorm/objects.gorm
+GNUstep/Local/Applications/AClock.app/Resources/AClock.tiff
+GNUstep/Local/Applications/AClock.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/AClock.app/stamp.make
+GNUstep/Local/Tools/AClock
+@dirrm GNUstep/Local/Applications/AClock.app/Resources/AClock.gorm
+@dirrm GNUstep/Local/Applications/AClock.app/Resources
+@dirrm GNUstep/Local/Applications/AClock.app

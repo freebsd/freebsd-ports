@@ -1,12 +1,12 @@
-Local/Applications/SVGViewer.app/Resources/Info-gnustep.plist
-Local/Applications/SVGViewer.app/Resources/SVGViewer.desktop
-Local/Applications/SVGViewer.app/SVGViewer
-Local/Applications/SVGViewer.app/stamp.make
-Local/Library/Bundles/SVGImageRep.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/SVGImageRep.bundle/SVGImageRep
-Local/Library/Bundles/SVGImageRep.bundle/stamp.make
-Local/Tools/SVGViewer
-@dirrm Local/Library/Bundles/SVGImageRep.bundle/Resources
-@dirrm Local/Library/Bundles/SVGImageRep.bundle
-@dirrm Local/Applications/SVGViewer.app/Resources
-@dirrm Local/Applications/SVGViewer.app
+GNUstep/Local/Applications/SVGViewer.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/SVGViewer.app/Resources/SVGViewer.desktop
+GNUstep/Local/Applications/SVGViewer.app/SVGViewer
+GNUstep/Local/Applications/SVGViewer.app/stamp.make
+GNUstep/Local/Library/Bundles/SVGImageRep.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/SVGImageRep.bundle/SVGImageRep
+GNUstep/Local/Library/Bundles/SVGImageRep.bundle/stamp.make
+GNUstep/Local/Tools/SVGViewer
+@dirrm GNUstep/Local/Library/Bundles/SVGImageRep.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/SVGImageRep.bundle
+@dirrm GNUstep/Local/Applications/SVGViewer.app/Resources
+@dirrm GNUstep/Local/Applications/SVGViewer.app

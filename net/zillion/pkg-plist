@@ -1,8 +1,8 @@
-Local/Library/Bundles/simpleZillionJob.bundle/Resources/Info-gnustep.plist
-Local/Library/Bundles/simpleZillionJob.bundle/simpleZillionJob
-Local/Library/Bundles/simpleZillionJob.bundle/stamp.make
-Local/Tools/zillion
-Local/Tools/zillionClient
-Local/Tools/zillionLoader
-@dirrm Local/Library/Bundles/simpleZillionJob.bundle/Resources
-@dirrm Local/Library/Bundles/simpleZillionJob.bundle
+GNUstep/Local/Library/Bundles/simpleZillionJob.bundle/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Bundles/simpleZillionJob.bundle/simpleZillionJob
+GNUstep/Local/Library/Bundles/simpleZillionJob.bundle/stamp.make
+GNUstep/Local/Tools/zillion
+GNUstep/Local/Tools/zillionClient
+GNUstep/Local/Tools/zillionLoader
+@dirrm GNUstep/Local/Library/Bundles/simpleZillionJob.bundle/Resources
+@dirrm GNUstep/Local/Library/Bundles/simpleZillionJob.bundle

@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}"
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
@@ -41,7 +40,6 @@ USE_GNUSTEP_INSTALL=	yes
 USE_XORG=		xft xrender xmu xext x11
 USE_GL=			yes
 
-NO_PACKAGE=	GPL3
 MAKE_FLAGS+=		OPTFLAG="${CFLAGS} -I${LOCALBASE}/include"
 MAKE_ENV+=		GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 BACKVERSION=		${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
@@ -93,7 +91,7 @@ PLIST_SUB+=		BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 
 pre-configure:
 .for file in config.guess config.sub install-sh
-	@${CP} ${PREFIX}/System/Library/Makefiles/${file} ${WRKSRC}
+	@${CP} ${GNUSTEP_PREFIX}/System/Library/Makefiles/${file} ${WRKSRC}
 .endfor
 
 .include <bsd.port.post.mk>

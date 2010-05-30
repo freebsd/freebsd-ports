@@ -1,13 +1,13 @@
-Local/Applications/Charmap.app/Charmap
-Local/Applications/Charmap.app/Resources/Charmap.desktop
-Local/Applications/Charmap.app/Resources/Charmap.gorm/data.classes
-Local/Applications/Charmap.app/Resources/Charmap.gorm/objects.gorm
-Local/Applications/Charmap.app/Resources/Charmap.png
-Local/Applications/Charmap.app/Resources/CharmapInfo.plist
-Local/Applications/Charmap.app/Resources/Info-gnustep.plist
-Local/Applications/Charmap.app/Resources/UnicodeData.txt
-Local/Applications/Charmap.app/stamp.make
-Local/Tools/Charmap
-@dirrm Local/Applications/Charmap.app/Resources/Charmap.gorm
-@dirrm Local/Applications/Charmap.app/Resources
-@dirrm Local/Applications/Charmap.app
+GNUstep/Local/Applications/Charmap.app/Charmap
+GNUstep/Local/Applications/Charmap.app/Resources/Charmap.desktop
+GNUstep/Local/Applications/Charmap.app/Resources/Charmap.gorm/data.classes
+GNUstep/Local/Applications/Charmap.app/Resources/Charmap.gorm/objects.gorm
+GNUstep/Local/Applications/Charmap.app/Resources/Charmap.png
+GNUstep/Local/Applications/Charmap.app/Resources/CharmapInfo.plist
+GNUstep/Local/Applications/Charmap.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/Charmap.app/Resources/UnicodeData.txt
+GNUstep/Local/Applications/Charmap.app/stamp.make
+GNUstep/Local/Tools/Charmap
+@dirrm GNUstep/Local/Applications/Charmap.app/Resources/Charmap.gorm
+@dirrm GNUstep/Local/Applications/Charmap.app/Resources
+@dirrm GNUstep/Local/Applications/Charmap.app

@@ -1,98 +1,98 @@
-Local/Library/Frameworks/Pantomime.framework/Headers
-Local/Library/Frameworks/Pantomime.framework/Pantomime
-Local/Library/Frameworks/Pantomime.framework/Resources
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWCacheManager.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWCharset.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWConnection.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWConstants.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWContainer.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWDNSManager.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWFlags.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWFolder.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWFolderInformation.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWIMAPCacheManager.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWIMAPFolder.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWIMAPMessage.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWIMAPStore.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_1.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_10.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_11.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_13.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_14.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_15.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_2.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_3.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_4.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_5.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_6.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_7.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_8.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_9.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWInternetAddress.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWKOI8_R.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWKOI8_U.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalCacheManager.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalFolder+maildir.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalFolder+mbox.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalFolder.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalMessage.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalStore.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWMD5.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWMIMEMultipart.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWMIMEUtility.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWMessage.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPOP3CacheManager.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPOP3CacheObject.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPOP3Folder.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPOP3Message.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPOP3Store.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWParser.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPart.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWRegEx.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWSMTP.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWSendmail.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWService.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWStore.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWTCPConnection.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWTransport.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWURLName.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWUUFile.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWVirtualFolder.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWWINDOWS_1250.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWWINDOWS_1251.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWWINDOWS_1252.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWWINDOWS_1253.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWWINDOWS_1254.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/NSData+Extensions.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/NSFileManager+Extensions.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/NSScanner+Extensions.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/NSString+Extensions.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/Pantomime.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/io.h
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Pantomime
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/English.lproj/Localizable.strings
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/English.lproj/InfoPlist.strings
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/German.lproj/InfoPlist.strings
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/German.lproj/Localizable.strings
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/Info-gnustep.plist
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/libPantomime.so
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/libPantomime.so.%%LIBVERSION%%
-Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/libPantomime.so.%%VERSION%%
-Local/Library/Frameworks/Pantomime.framework/Versions/Current
-Local/Library/Frameworks/Pantomime.framework/Versions/Resources/English.lproj/Localizable.strings
-Local/Library/Frameworks/Pantomime.framework/Versions/Resources/German.lproj/Localizable.strings
-Local/Library/Frameworks/Pantomime.framework/libPantomime.so
-Local/Library/Headers/Pantomime
-Local/Library/Libraries/libPantomime.so
-Local/Library/Libraries/libPantomime.so.%%LIBVERSION%%
-Local/Library/Libraries/libPantomime.so.%%VERSION%%
-@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/Resources/German.lproj
-@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/Resources/English.lproj
-@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/Resources
-@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/German.lproj
-@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/English.lproj
-@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources
-@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers
-@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/Pantomime.framework/Versions
-@dirrm Local/Library/Frameworks/Pantomime.framework
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Headers
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Pantomime
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Resources
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWCacheManager.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWCharset.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWConnection.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWConstants.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWContainer.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWDNSManager.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWFlags.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWFolder.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWFolderInformation.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWIMAPCacheManager.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWIMAPFolder.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWIMAPMessage.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWIMAPStore.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_1.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_10.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_11.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_13.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_14.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_15.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_2.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_3.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_4.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_5.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_6.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_7.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_8.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWISO8859_9.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWInternetAddress.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWKOI8_R.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWKOI8_U.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalCacheManager.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalFolder+maildir.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalFolder+mbox.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalFolder.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalMessage.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWLocalStore.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWMD5.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWMIMEMultipart.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWMIMEUtility.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWMessage.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPOP3CacheManager.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPOP3CacheObject.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPOP3Folder.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPOP3Message.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPOP3Store.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWParser.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWPart.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWRegEx.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWSMTP.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWSendmail.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWService.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWStore.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWTCPConnection.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWTransport.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWURLName.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWUUFile.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWVirtualFolder.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWWINDOWS_1250.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWWINDOWS_1251.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWWINDOWS_1252.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWWINDOWS_1253.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/CWWINDOWS_1254.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/NSData+Extensions.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/NSFileManager+Extensions.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/NSScanner+Extensions.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/NSString+Extensions.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/Pantomime.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers/io.h
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Pantomime
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/English.lproj/InfoPlist.strings
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/German.lproj/InfoPlist.strings
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/German.lproj/Localizable.strings
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/Info-gnustep.plist
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/libPantomime.so
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/libPantomime.so.%%LIBVERSION%%
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/libPantomime.so.%%VERSION%%
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/Resources/English.lproj/Localizable.strings
+GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/Resources/German.lproj/Localizable.strings
+GNUstep/Local/Library/Frameworks/Pantomime.framework/libPantomime.so
+GNUstep/Local/Library/Headers/Pantomime
+GNUstep/Local/Library/Libraries/libPantomime.so
+GNUstep/Local/Library/Libraries/libPantomime.so.%%LIBVERSION%%
+GNUstep/Local/Library/Libraries/libPantomime.so.%%VERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/Resources/German.lproj
+@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/Resources/English.lproj
+@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/Resources
+@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/German.lproj
+@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources/English.lproj
+@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Resources
+@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%/Headers
+@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions/%%LIBVERSION%%
+@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework/Versions
+@dirrm GNUstep/Local/Library/Frameworks/Pantomime.framework

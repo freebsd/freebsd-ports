@@ -1,22 +1,22 @@
-System/Applications/Azalea.app/Azalea
-System/Applications/Azalea.app/Resources/Azalea.desktop
-System/Applications/Azalea.app/Resources/Info-gnustep.plist
-System/Applications/Azalea.app/Resources/openbox/menu.xml
-System/Applications/Azalea.app/Resources/openbox/rc.xml
-System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/bullet.xbm
-System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/close.xbm
-System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/desk.xbm
-System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/desk_toggled.xbm
-System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/iconify.xbm
-System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/max.xbm
-System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/max_toggled.xbm
-System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/shade.xbm
-System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/themerc
-System/Applications/Azalea.app/stamp.make
-System/Tools/Azalea
-@dirrm System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3
-@dirrm System/Applications/Azalea.app/Resources/themes/Azalea
-@dirrm System/Applications/Azalea.app/Resources/themes
-@dirrm System/Applications/Azalea.app/Resources/openbox
-@dirrm System/Applications/Azalea.app/Resources
-@dirrm System/Applications/Azalea.app
+GNUstep/System/Applications/Azalea.app/Azalea
+GNUstep/System/Applications/Azalea.app/Resources/Azalea.desktop
+GNUstep/System/Applications/Azalea.app/Resources/Info-gnustep.plist
+GNUstep/System/Applications/Azalea.app/Resources/openbox/menu.xml
+GNUstep/System/Applications/Azalea.app/Resources/openbox/rc.xml
+GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/bullet.xbm
+GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/close.xbm
+GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/desk.xbm
+GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/desk_toggled.xbm
+GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/iconify.xbm
+GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/max.xbm
+GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/max_toggled.xbm
+GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/shade.xbm
+GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/themerc
+GNUstep/System/Applications/Azalea.app/stamp.make
+GNUstep/System/Tools/Azalea
+@dirrm GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea/openbox-3
+@dirrm GNUstep/System/Applications/Azalea.app/Resources/themes/Azalea
+@dirrm GNUstep/System/Applications/Azalea.app/Resources/themes
+@dirrm GNUstep/System/Applications/Azalea.app/Resources/openbox
+@dirrm GNUstep/System/Applications/Azalea.app/Resources
+@dirrm GNUstep/System/Applications/Azalea.app

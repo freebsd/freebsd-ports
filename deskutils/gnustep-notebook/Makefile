@@ -18,7 +18,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A place to store notes in an organized manner
 
 USE_GNUSTEP=	yes
-USE_GNUSTEP_PREFIX=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

@@ -1,34 +1,34 @@
-Local/Applications/LookAndBehavior.app/LookAndBehavior
-Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/AppearancePrefPane
-Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/Appearance.gorm/data.classes
-Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/Appearance.gorm/data.info
-Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/Appearance.gorm/objects.gorm
-Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/AppearancePrefPaneInfo.plist
-Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/Info-gnustep.plist
-Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/stamp.make
-Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/LanguagesPrefPane
-Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Info-gnustep.plist
-Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.gorm/data.classes
-Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.gorm/data.info
-Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.gorm/objects.gorm
-Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.png
-Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/LanguagesPrefPaneInfo.plist
-Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/stamp.make
-Local/Applications/LookAndBehavior.app/Resources/Info-gnustep.plist
-Local/Applications/LookAndBehavior.app/Resources/LookAndBehavior.desktop
-Local/Applications/LookAndBehavior.app/Resources/LookAndBehaviorInfo.plist
-Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm/data.classes
-Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm/data.info
-Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm/objects.gorm
-Local/Applications/LookAndBehavior.app/stamp.make
-Local/Tools/LookAndBehavior
-@dirrm Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm
-@dirrm Local/Applications/LookAndBehavior.app/Resources
-@dirrm Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.gorm
-@dirrm Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources
-@dirrm Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane
-@dirrm Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/Appearance.gorm
-@dirrm Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources
-@dirrm Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane
-@dirrm Local/Applications/LookAndBehavior.app/PlugIns
-@dirrm Local/Applications/LookAndBehavior.app
+GNUstep/Local/Applications/LookAndBehavior.app/LookAndBehavior
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/AppearancePrefPane
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/Appearance.gorm/data.classes
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/Appearance.gorm/data.info
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/Appearance.gorm/objects.gorm
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/AppearancePrefPaneInfo.plist
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/stamp.make
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/LanguagesPrefPane
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.gorm/data.classes
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.gorm/data.info
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.gorm/objects.gorm
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.png
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/LanguagesPrefPaneInfo.plist
+GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/stamp.make
+GNUstep/Local/Applications/LookAndBehavior.app/Resources/Info-gnustep.plist
+GNUstep/Local/Applications/LookAndBehavior.app/Resources/LookAndBehavior.desktop
+GNUstep/Local/Applications/LookAndBehavior.app/Resources/LookAndBehaviorInfo.plist
+GNUstep/Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm/data.classes
+GNUstep/Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm/data.info
+GNUstep/Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm/objects.gorm
+GNUstep/Local/Applications/LookAndBehavior.app/stamp.make
+GNUstep/Local/Tools/LookAndBehavior
+@dirrm GNUstep/Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm
+@dirrm GNUstep/Local/Applications/LookAndBehavior.app/Resources
+@dirrm GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.gorm
+@dirrm GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources
+@dirrm GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane
+@dirrm GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources/Appearance.gorm
+@dirrm GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane/Resources
+@dirrm GNUstep/Local/Applications/LookAndBehavior.app/PlugIns/AppearancePrefPane.prefPane
+@dirrm GNUstep/Local/Applications/LookAndBehavior.app/PlugIns
+@dirrm GNUstep/Local/Applications/LookAndBehavior.app
