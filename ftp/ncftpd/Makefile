@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	YES
-LICENSE=	shareware
 RESTRICTED=	30 day evaluation license
 
 USE_RC_SUBR=	ncftpd.sh
