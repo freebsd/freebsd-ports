@@ -1,52 +1,43 @@
 #!/bin/sh
 #
 # $FreeBSD$
-# 
-if ! test -x %%PREFIX%%/libexec/sid-filter
-then
-	exit 0
-fi
-sid_filter_args="-t -r 0"
-case "$1" in
-start)
-	sh "${0}" wait
-	cd /var/crash
-	rm -f /var/run/sid-filter.pid /var/run/sid-filter
-	%%PREFIX%%/libexec/sid-filter -l -p local:/var/run/sid-filter \
-		-P /var/run/sid-filter.pid ${sid_filter_args}
-	echo -n ' sid-filter'
-	;;
-stop)
-	if test -r /var/run/sid-filter.pid
-	then
-		kill `head -1 /var/run/sid-filter.pid`
-	else
-		echo " sid-filter: not running" 2>&1
-	fi
-	sh "${0}" wait
-	rm -f /var/run/sid-filter.pid
-	;;
-wait)
-	while ps -ax -o command | grep ^%%PREFIX%%/libexec/sid-filter
-	do
-		echo "please wait"
-		sleep 1
-	done
-	;;
-reload)
-	if test -r /var/run/sid-filter.pid
-	then
-		kill -USR1 `head -1 /var/run/sid-filter.pid`
-	else
-		echo " sid-filter: not running" 2>&1
-	fi
-	;;
-restart)
-	$0 stop
-	$0 start
-	;;
-*)
-	echo "Usage: ${0##*/}: { start | stop | reload | restart }" >&2
-	exit 64
-	;;
-esac
+#
+
+# PROVIDE: miltersid
+# REQUIRE: DAEMON
+# BEFORE: mail localpkg
+
+# Define these miltersid_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/miltersid
+#
+
+. /etc/rc.subr
+
+name="miltersid"
+rcvar=`set_rcvar`
+load_rc_config $name
+
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+: ${miltersid_enable="NO"}
+: ${miltersid_socket="local:/var/run/sid-filter"}
+: ${miltersid_pid="/var/run/sid-filter.pid"}
+: ${miltersid_flags="-r 0 -t"}
+
+pidfile=${miltersid_pid}
+command="%%PREFIX%%/libexec/sid-filter"
+command_args="-l -p ${miltersid_socket} -P ${miltersid_pid}"
+start_precmd="sid_precmd"
+
+sid_precmd ()
+{
+    if [ -S ${miltersid_socket##local:} ] ; then
+        rm -f ${miltersid_socket##local:}
+    elif [ -S ${miltersid_socket##unix:} ] ; then
+        rm -f ${miltersid_socket##unix:}
+    fi
+}
+
+run_rc_command "$1"
