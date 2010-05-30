@@ -18,6 +18,9 @@ COMMENT=	Steganography tool to hide data in binary files
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:22

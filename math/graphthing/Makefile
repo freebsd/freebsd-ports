@@ -15,6 +15,9 @@ MASTER_SITES=	http://graph.seul.org/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A tool that allows you to create, manipulate and study graphs
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget gtk20
 USE_BISON=	build

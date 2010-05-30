@@ -16,6 +16,9 @@ COMMENT=	IFD Handler Developer's Kit for MUSCLE PC/SC Lite
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_LDCONFIG=	yes
 
 NOMAN=

@@ -16,6 +16,9 @@ COMMENT=	Python SNMP module based on net-snmp
 
 LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
 
+LICENSE=	LGPL
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_PYTHON=	yes

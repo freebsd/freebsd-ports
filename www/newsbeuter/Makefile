@@ -15,6 +15,9 @@ COMMENT=	An RSS feed reader for the text console
 LIB_DEPENDS=	stfl.1:${PORTSDIR}/devel/stfl \
 		curl.6:${PORTSDIR}/ftp/curl
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes

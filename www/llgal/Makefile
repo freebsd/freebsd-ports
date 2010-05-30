@@ -23,6 +23,9 @@ RUN_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/Image/ExifTool.pm:${PORTSDIR}/graphics/p5-Image-ExifTool \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes

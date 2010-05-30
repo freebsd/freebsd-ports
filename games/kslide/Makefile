@@ -14,6 +14,9 @@ MASTER_SITES=	http://david.bieder.free.fr/eric/taquin/ \
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	KDE puzzle game
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:22

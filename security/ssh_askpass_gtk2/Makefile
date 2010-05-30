@@ -15,6 +15,9 @@ DISTNAME=	ssh-askpass-fullscreen-${PORTVERSION}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A tiny GTK2 ssh askpass replacement
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/ssh-askpass-fullscreen

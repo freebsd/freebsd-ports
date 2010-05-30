@@ -21,6 +21,9 @@ LIB_DEPENDS=	gpod.5:${PORTSDIR}/audio/libgpod \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		fftw3f.5:${PORTSDIR}/math/fftw3-float
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall
