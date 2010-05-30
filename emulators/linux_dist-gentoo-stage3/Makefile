@@ -15,6 +15,7 @@ MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
+BROKEN=		does not fetch
 
 USE_BZIP2=		YES
 DIST_SUBDIR=		gentoo-linux
