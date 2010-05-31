@@ -7,6 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	20100521
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		http://freebsd.unixfreunde.de/sources/

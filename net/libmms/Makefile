@@ -7,6 +7,7 @@
 
 PORTNAME=	libmms
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://launchpadlibrarian.net/35014059/
 

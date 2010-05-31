@@ -7,7 +7,7 @@
 
 PORTNAME=	simple-ccsm
 PORTVERSION=	0.8.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 

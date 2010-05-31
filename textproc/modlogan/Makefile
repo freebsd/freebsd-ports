@@ -7,7 +7,7 @@
 
 PORTNAME=	modlogan
 PORTVERSION=	0.8.13
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/

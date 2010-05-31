@@ -7,6 +7,7 @@
 
 PORTNAME=	tornado
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://kiza.kcore.de/media/software/${PORTNAME}/
 

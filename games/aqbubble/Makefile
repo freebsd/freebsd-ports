@@ -7,7 +7,7 @@
 
 PORTNAME=	aqbubble
 PORTVERSION=	0.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/aqbubble/descargas/
 

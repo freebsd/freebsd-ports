@@ -7,6 +7,7 @@
 
 PORTNAME=	nano
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v2.2/ \
 		${MASTER_SITE_GNU}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gwenhywfar
 PORTVERSION=	3.11.3
+PORTREVISION=	1
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
 DISTFILES=	download.php\?package=01\&release=31\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}

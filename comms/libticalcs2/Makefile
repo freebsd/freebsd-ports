@@ -7,6 +7,7 @@
 
 PORTNAME=	libticalcs2
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.11
 DISTNAME=	tilibs2-20080328

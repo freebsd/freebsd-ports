@@ -7,6 +7,7 @@
 
 PORTNAME=	xtermcontrol
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.thrysoee.dk/xtermcontrol/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gaupol
 PORTVERSION=	0.15.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/gaupol/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:R}

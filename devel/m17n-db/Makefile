@@ -7,6 +7,7 @@
 
 PORTNAME=	m17n-db
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/:m17n \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/:m17n \

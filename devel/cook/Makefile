@@ -7,7 +7,7 @@
 
 PORTNAME=	cook
 PORTVERSION=	2.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://miller.emu.id.au/pmiller/software/cook/ \
 		${MASTER_SITE_LOCAL}

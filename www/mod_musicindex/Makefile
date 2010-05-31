@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_musicindex
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.parisc-linux.org/~varenet/musicindex/ \
 		http://depot.fsck.ch/mirror/distfiles/

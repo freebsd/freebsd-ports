@@ -7,7 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.5.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${PORTVERSION:R}.x/ \
 		ftp://ftp.planetmirror.com/pub/lyx/stable/${PORTVERSION:R}.x/ \

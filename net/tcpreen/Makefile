@@ -7,7 +7,7 @@
 
 PORTNAME=	tcpreen
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.remlab.net/files/tcpreen/
 

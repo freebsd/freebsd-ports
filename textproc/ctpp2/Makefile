@@ -7,6 +7,7 @@
 
 PORTNAME=	ctpp2
 PORTVERSION=	2.5.18
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://ctpp.havoc.ru/download/
 

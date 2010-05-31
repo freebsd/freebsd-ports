@@ -7,6 +7,7 @@
 
 PORTNAME=	gnucflow
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/cflow/ \
 		http://mirror.amdmi3.ru/distfiles/

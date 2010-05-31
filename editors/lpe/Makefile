@@ -7,7 +7,7 @@
 
 PORTNAME=	lpe
 PORTVERSION=	1.2.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.sasknow.com/pub/ \
 		ftp://ftp.twu.net/users/cdsmith/lpe/

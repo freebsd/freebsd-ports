@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-packagekit
 PORTVERSION=	2.30.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt sysutils gnome
 MASTER_SITES=	GNOME
 

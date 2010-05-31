@@ -7,7 +7,7 @@
 
 PORTNAME=	gmpc-lyricsplugin
 PORTVERSION=	0.19.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/

@@ -7,7 +7,7 @@
 
 PORTNAME=	cplay
 PORTVERSION=	1.49
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 

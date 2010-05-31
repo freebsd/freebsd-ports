@@ -6,6 +6,7 @@
 
 PORTNAME=	dwdiff
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/ \
 		http://www.logvinov.ru/files/dist/ \

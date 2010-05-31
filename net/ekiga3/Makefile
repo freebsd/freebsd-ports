@@ -7,7 +7,7 @@
 
 PORTNAME=	ekiga3
 PORTVERSION=	3.2.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/ekiga_${PORTVERSION}/
 DISTNAME=	ekiga-${PORTVERSION}

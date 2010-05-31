@@ -7,7 +7,7 @@
 
 PORTNAME=	progsreiserfs
 PORTVERSION=	0.3.1.r8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}

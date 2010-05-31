@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-netload-plugin
 PORTVERSION=	0.4.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4

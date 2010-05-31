@@ -7,7 +7,7 @@
 
 PORTNAME=	po4a
 PORTVERSION=	0.32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/2108/ GENTOO/distfiles
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	axel
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/3015/ \
 		ftp://ftp.linuxforum.hu/mirrors/frugalware/pub/frugalware/frugalware-testing/source/apps-extra/axel/ \

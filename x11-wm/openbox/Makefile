@@ -8,6 +8,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.4.11.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/ \
 		http://dougbarton.us/Downloads/

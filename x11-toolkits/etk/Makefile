@@ -8,7 +8,7 @@
 
 PORTNAME=	etk
 PORTVERSION=	0.1.0.042
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \

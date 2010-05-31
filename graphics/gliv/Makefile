@@ -7,7 +7,7 @@
 
 PORTNAME=	gliv
 PORTVERSION=	1.9.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://guichaz.free.fr/gliv/files/
 

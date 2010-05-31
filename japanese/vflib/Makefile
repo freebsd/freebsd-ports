@@ -7,7 +7,7 @@
 
 PORTNAME=	vflib
 PORTVERSION=	2.25.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/
 DISTNAME=	VFlib2-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	0.4.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 DISTNAME=	${PORTNAME}-ko-${PORTVERSION}

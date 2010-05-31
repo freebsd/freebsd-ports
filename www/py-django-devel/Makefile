@@ -7,6 +7,7 @@
 
 PORTNAME=	django
 PORTVERSION=	${REVISION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/ \

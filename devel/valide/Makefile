@@ -7,6 +7,7 @@
 
 PORTNAME=	valide
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/
 

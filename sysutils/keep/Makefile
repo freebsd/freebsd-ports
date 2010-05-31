@@ -7,7 +7,7 @@
 
 PORTNAME=	keep
 PORTVERSION=	0.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://jr.falleri.free.fr/files/devel/keep/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	linm
 PORTVERSION=	${LINM_VER}.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc shells
 MASTER_SITES=	http://kldp.net/frs/download.php/3152/ \
 		ftp://ftp.kr.freebsd.org/pub/kldp.net/download/mls/1.LinMStable/LinM${LINM_VER}/

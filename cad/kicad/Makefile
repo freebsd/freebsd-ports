@@ -7,6 +7,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	2010-05-05-BZR2356
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://iut-tice.ujf-grenoble.fr/cao/	\

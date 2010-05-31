@@ -8,7 +8,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	6.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU:S,$,:gdb,}	\
 		http://aldan.algebra.com/~mi/:gdbtk

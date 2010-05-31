@@ -5,6 +5,7 @@
 
 PORTNAME=	ampache
 PORTVERSION=	3.5.4
+PORTREVISION=	1
 CATEGORIES=	audio www
 MASTER_SITES=	http://ampache.org/downloads/
 

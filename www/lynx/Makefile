@@ -7,6 +7,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.7.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://lynx.isc.org/lynx${PORTVERSION}/patches/:patches

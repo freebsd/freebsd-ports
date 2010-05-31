@@ -7,7 +7,7 @@
 
 PORTNAME=	elm
 PORTVERSION=	2.5.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.virginia.edu/pub/elm/ \
 		http://www.dragondata.com/software/

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkballs
 PORTVERSION=	3.1.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://gtkballs.antex.ru/dist/
 

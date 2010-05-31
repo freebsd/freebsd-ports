@@ -7,7 +7,7 @@
 
 PORTNAME=	zoinks
 PORTVERSION=	0.3.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	http://zoinks.mikelockwood.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

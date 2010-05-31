@@ -7,6 +7,7 @@
 
 PORTNAME=	openerp-web
 PORTVERSION=	5.0.6
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	http://openerp.com/download/stable/source/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

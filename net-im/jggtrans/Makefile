@@ -6,6 +6,7 @@
 
 PORTNAME=		jggtrans
 PORTVERSION=		2.2.4
+PORTREVISION=	1
 CATEGORIES=		net-im polish
 MASTER_SITES=		http://jggtrans.jajcus.net/downloads/ \
 			http://freebsd.e.pl/distfiles/

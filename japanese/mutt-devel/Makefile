@@ -9,7 +9,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/${VERSION}/ \
 		http://www.emaillab.org/mutt/1.5/doc/:ja_doc \

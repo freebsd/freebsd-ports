@@ -6,7 +6,7 @@
 
 PORTNAME=	open-cobol
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://freebsd.dev-urandom.com/open-cobol/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=		regexxer
 PORTVERSION=		0.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=		devel textproc gnome
 MASTER_SITES=		SF
 

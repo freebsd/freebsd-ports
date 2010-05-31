@@ -7,7 +7,7 @@
 
 PORTNAME=	grzip
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ CENKES
 

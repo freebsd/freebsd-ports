@@ -7,7 +7,7 @@
 
 PORTNAME=	zenmap
 PORTVERSION=	5.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		http://nmap.ucsd.edu/dist/ \

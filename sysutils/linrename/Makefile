@@ -7,7 +7,7 @@
 
 PORTNAME=	linrename
 PORTVERSION=	2.12r
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mirror.linux.org.au/pub/linux/utils/util-linux/ \
 		http://debian.csail.mit.edu/pub/linux/utils/util-linux/ \

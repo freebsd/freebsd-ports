@@ -8,6 +8,7 @@
 
 PORTNAME=	star
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 

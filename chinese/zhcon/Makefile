@@ -7,6 +7,7 @@
 
 PORTNAME=	zhcon
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/chinsan/chinese
 

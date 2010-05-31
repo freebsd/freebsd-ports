@@ -7,6 +7,7 @@
 
 PORTNAME=	libidn
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/

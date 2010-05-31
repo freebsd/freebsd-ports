@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-array
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	http://of.openfoundry.org/download/scimarray/${PORTVERSION}/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	hungarian textproc
 MASTER_SITES=	SF/${PORTNAME}/Hunspell/${PORTVERSION}:code \
 		SF/magyarispell/Magyar%20Ispell/${DICTVERSION}:data

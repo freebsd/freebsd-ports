@@ -8,7 +8,7 @@
 
 PORTNAME=	nscache
 PORTVERSION=	0.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	SF \
 		http://www.idata.sk/~ondrej/sw/

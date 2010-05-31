@@ -7,6 +7,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.8d2
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}2.8.8dev.2

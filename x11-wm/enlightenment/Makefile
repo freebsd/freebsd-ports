@@ -7,7 +7,7 @@
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.16.999.042
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \

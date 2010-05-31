@@ -6,7 +6,7 @@
 
 PORTNAME=	libkexif
 PORTVERSION=	0.2.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/kipi/OldFiles
 
