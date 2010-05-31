@@ -144,15 +144,6 @@
     data = NULL;
  }
  
-@@ -234,7 +313,7 @@
- {
-    char                s[2] = { 0, 0 };
- 
--   color = (int)data;
-+   color = (size_t)data;
-    s[0] = '0' + color;
-    Epplet_modify_config("color", s);
-    Epplet_save_config();
 @@ -283,10 +362,10 @@
  
     p = Epplet_create_popup();

@@ -31,30 +31,3 @@
  
  static char       **dirscan(char *dir, unsigned long *num);
  static char       **randomize_file_list(char **names, unsigned long num);
-@@ -376,7 +376,7 @@
- cfg_popup_cb(void *data)
- {
- 
--   int                 n = (int)data;
-+   size_t                 n = (size_t)data;
- 
-    switch (n)
-      {
-@@ -404,7 +404,7 @@
- play_cb(void *data)
- {
- 
--   int                 op = (int)data;
-+   size_t                 op = (size_t)data;
- 
-    switch (op)
-      {
-@@ -588,7 +588,7 @@
- static void
- auto_popup_cb(void *data)
- {
--   cfg_auto_setbg = (int)data;
-+   cfg_auto_setbg = (size_t)data;
- }
- 
- static void
