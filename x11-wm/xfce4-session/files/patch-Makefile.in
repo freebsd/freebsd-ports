@@ -1,0 +1,28 @@
+--- Makefile.in.orig	2010-05-21 18:58:41.000000000 +0200
++++ Makefile.in	2010-05-24 12:01:05.000000000 +0200
+@@ -293,7 +293,6 @@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = \
+ 	libxfsm								\
+-	doc								\
+ 	engines								\
+ 	icons								\
+ 	po								\
+@@ -809,7 +808,7 @@
+ 	dist-gzip dist-hook dist-lzma dist-shar dist-tarZ dist-xz \
+ 	dist-zip distcheck distclean distclean-generic distclean-hdr \
+ 	distclean-libtool distclean-local distclean-tags \
+-	distcleancheck distdir distuninstallcheck dvi dvi-am html \
++	distcleancheck distdir distuninstallcheck dvi dvi-am \
+ 	html-am info info-am install install-am install-data \
+ 	install-data-am install-dvi install-dvi-am install-exec \
+ 	install-exec-am install-html install-html-am install-info \
+@@ -821,8 +820,6 @@
+ 	uninstall uninstall-am
+ 
+ 
+-html:
+-	(cd doc && $(MAKE) $(AM_MAKEFLAGS) html)
+ 
+ distclean-local:
+ 	rm -rf xfce4-session.spec *.cache *~

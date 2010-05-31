@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-parole
 PORTVERSION=	0.2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://archive.xfce.org/src/apps/parole/0.2/
 DISTNAME=	parole-${PORTVERSION}

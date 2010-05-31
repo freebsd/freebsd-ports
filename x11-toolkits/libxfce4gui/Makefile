@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libxfce4gui
-PORTVERSION=	4.6.2
-PORTREVISION=	3
+PORTVERSION=	4.6.4
 CATEGORIES=	x11-toolkits xfce
-MASTER_SITES=	http://archive.xfce.org/src/xfce/libxfcegui4/4.6/
+MASTER_SITES=	${MASTER_SITE_XFCE}
 DISTNAME=	libxfcegui4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 

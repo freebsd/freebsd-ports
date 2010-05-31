@@ -6,49 +6,53 @@
 #
 
 PORTNAME=	Terminal
-PORTVERSION=	0.4.3
-PORTREVISION=	3
+PORTVERSION=	0.4.5
 CATEGORIES=	x11 xfce
-MASTER_SITES=	http://www.xfce.org/archive/src/apps/terminal/0.4/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/apps/${PORTNAME:L}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Terminal emulator for the X windowing system
 
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS= yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig vte
+USE_GNOME=	gnometarget gtk20 glib20 intltool intlhack pkgconfig vte
 USE_XFCE=	configenv libexo
+USE_XORG=	x11
 
 OPTIONS=	DBUS	"Enable D-BUS support"			on \
-		STARTUP "Enable startup notification support"	on
+		NLS	"Enable Native Language Support"	on
 
 MAN1=		Terminal.1
+MANLANG=	"" ca da es fr gl id it ja pt ru ug zh_CN
 
 .include  <bsd.port.pre.mk>
+
+.if defined(NOPORTDOCS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-doc-Makefile.in
+.endif
 
 .if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
-PLIST_SUB+=	WITH_DBUS=""
 .else
 CONFIGURE_ARGS+=--disable-dbus
-PLIST_SUB+=	WITH_DBUS="@comment "
 .endif
 
-.if !defined(WITHOUT_STARTUP)
-LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
-CONFIGURE_ARGS+=--enable-startup-notification
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=--disable-startup-notification
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-post-patch:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|	doc[    ]*||' ${WRKSRC}/Makefile.in
-.endif
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>

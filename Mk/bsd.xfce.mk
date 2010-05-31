@@ -15,33 +15,33 @@ Xfce_Include_MAINTAINER=	oliver@FreeBSD.org
 _USE_XFCE_ALL=			configenv libexo libgui libmenu libutil panel \
 				thunar wm xfconf xfdev
 
-MASTER_SITE_SUBDIR?=		xfce-4.6.1
+MASTER_SITE_SUBDIR?=		xfce/4.6.2/src
 
 configenv_CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
-libexo_BUILD_DEPENDS=		libexo>=0.3.100:${PORTSDIR}/x11/libexo
-libexo_RUN_DEPENDS=		libexo>=0.3.100:${PORTSDIR}/x11/libexo
+libexo_BUILD_DEPENDS=		libexo>=0.3.107:${PORTSDIR}/x11/libexo
+libexo_RUN_DEPENDS=		libexo>=0.3.107:${PORTSDIR}/x11/libexo
 
-libgui_BUILD_DEPENDS=		libxfce4gui>=4.6.0:${PORTSDIR}/x11-toolkits/libxfce4gui
-libgui_RUN_DEPENDS=		libxfce4gui>=4.6.0:${PORTSDIR}/x11-toolkits/libxfce4gui
+libgui_BUILD_DEPENDS=		libxfce4gui>=4.6.4:${PORTSDIR}/x11-toolkits/libxfce4gui
+libgui_RUN_DEPENDS=		libxfce4gui>=4.6.4:${PORTSDIR}/x11-toolkits/libxfce4gui
 
-libmenu_BUILD_DEPENDS=		libxfce4menu>=4.6.0:${PORTSDIR}/x11/libxfce4menu
-libmenu_RUN_DEPENDS=		libxfce4menu>=4.6.0:${PORTSDIR}/x11/libxfce4menu
+libmenu_BUILD_DEPENDS=		libxfce4menu>=4.6.2:${PORTSDIR}/x11/libxfce4menu
+libmenu_RUN_DEPENDS=		libxfce4menu>=4.6.2:${PORTSDIR}/x11/libxfce4menu
 
-libutil_BUILD_DEPENDS=		libxfce4util>=4.6.0:${PORTSDIR}/x11/libxfce4util
-libutil_RUN_DEPENDS=		libxfce4util>=4.6.0:${PORTSDIR}/x11/libxfce4util
+libutil_BUILD_DEPENDS=		libxfce4util>=4.6.2:${PORTSDIR}/x11/libxfce4util
+libutil_RUN_DEPENDS=		libxfce4util>=4.6.2:${PORTSDIR}/x11/libxfce4util
 
-panel_BUILD_DEPENDS=		xfce4-panel>=4.6.0:${PORTSDIR}/x11-wm/xfce4-panel
-panel_RUN_DEPENDS=		xfce4-panel>=4.6.0:${PORTSDIR}/x11-wm/xfce4-panel
+panel_BUILD_DEPENDS=		xfce4-panel>=4.6.4:${PORTSDIR}/x11-wm/xfce4-panel
+panel_RUN_DEPENDS=		xfce4-panel>=4.6.4:${PORTSDIR}/x11-wm/xfce4-panel
 
-thunar_BUILD_DEPENDS=		Thunar>=1.0.0:${PORTSDIR}/x11-fm/thunar
-thunar_RUN_DEPENDS=		Thunar>=1.0.0:${PORTSDIR}/x11-fm/thunar
+thunar_BUILD_DEPENDS=		Thunar>=1.0.2:${PORTSDIR}/x11-fm/thunar
+thunar_RUN_DEPENDS=		Thunar>=1.0.2:${PORTSDIR}/x11-fm/thunar
 
-wm_BUILD_DEPENDS=		xfce4-wm>=4.6.0:${PORTSDIR}/x11-wm/xfce4-wm
-wm_RUN_DEPENDS=			xfce4-wm>=4.6.0:${PORTSDIR}/x11-wm/xfce4-wm
+wm_BUILD_DEPENDS=		xfce4-wm>=4.6.2:${PORTSDIR}/x11-wm/xfce4-wm
+wm_RUN_DEPENDS=			xfce4-wm>=4.6.2:${PORTSDIR}/x11-wm/xfce4-wm
 
-xfconf_BUILD_DEPENDS=		xfce4-conf>=4.6.0:${PORTSDIR}/x11/xfce4-conf
-xfconf_RUN_DEPENDS=		xfce4-conf>=4.6.0:${PORTSDIR}/x11/xfce4-conf
+xfconf_BUILD_DEPENDS=		xfce4-conf>=4.6.2:${PORTSDIR}/x11/xfce4-conf
+xfconf_RUN_DEPENDS=		xfce4-conf>=4.6.2:${PORTSDIR}/x11/xfce4-conf
 
 xfdev_RUN_DEPENDS=		xfce4-dev-tools:${PORTSDIR}/devel/xfce4-dev-tools
 

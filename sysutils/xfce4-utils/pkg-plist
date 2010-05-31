@@ -12,6 +12,11 @@ etc/xdg/xfce4/xinitrc
 libexec/xfce4/xfconf-migration/xfconf-migration-4.6.pl
 %%WITH_DBUS%%share/dbus-1/services/org.xfce.RunDialog.service
 share/icons/hicolor/48x48/apps/xfce4-logo.png
+share/locale/ast/LC_MESSAGES/xfce-utils.mo
+share/locale/kk/LC_MESSAGES/xfce-utils.mo
+share/locale/nn/LC_MESSAGES/xfce-utils.mo
+share/locale/ug/LC_MESSAGES/xfce-utils.mo
+share/locale/ur_PK/LC_MESSAGES/xfce-utils.mo
 share/locale/af/LC_MESSAGES/xfce-utils.mo
 share/locale/am/LC_MESSAGES/xfce-utils.mo
 share/locale/ar/LC_MESSAGES/xfce-utils.mo
@@ -122,6 +127,14 @@ share/xsessions/xfce.desktop
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
 @dirrmtry share/xfce4/doc/C/images
 @dirrmtry share/xfce4/doc/C
 @dirrmtry share/xfce4/doc/fr

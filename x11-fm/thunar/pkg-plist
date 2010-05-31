@@ -155,6 +155,27 @@ share/gtk-doc/html/thunarx/up.png
 %%DOCSDIR%%/html/C/the-file-manager-window.html
 %%DOCSDIR%%/html/C/using-removable-media.html
 %%DOCSDIR%%/html/C/working-with-files-and-folders.html
+%%DOCSDIR%%/html/am/images/bulk-rename.png
+%%DOCSDIR%%/html/am/images/file-manager-window.png
+%%DOCSDIR%%/html/am/images/file-properties.png
+%%DOCSDIR%%/html/am/images/preferences-advanced.png
+%%DOCSDIR%%/html/am/images/preferences-behavior.png
+%%DOCSDIR%%/html/am/images/preferences-side-pane.png
+%%DOCSDIR%%/html/am/images/preferences-views.png
+%%DOCSDIR%%/html/am/images/removable-drives-and-media.png
+%%DOCSDIR%%/html/am/images/removable-media-unmount.png
+%%DOCSDIR%%/html/am/images/sendto-menu.png
+%%DOCSDIR%%/html/am/images/visible-columns.png
+%%DOCSDIR%%/html/am/advanced-topics.html
+%%DOCSDIR%%/html/am/copyright.html
+%%DOCSDIR%%/html/am/customizing-thunar.html
+%%DOCSDIR%%/html/am/faq.html
+%%DOCSDIR%%/html/am/index.html
+%%DOCSDIR%%/html/am/preferences.html
+%%DOCSDIR%%/html/am/support.html
+%%DOCSDIR%%/html/am/the-file-manager-window.html
+%%DOCSDIR%%/html/am/using-removable-media.html
+%%DOCSDIR%%/html/am/working-with-files-and-folders.html
 %%DOCSDIR%%/html/es/advanced-topics.html
 %%DOCSDIR%%/html/es/copyright.html
 %%DOCSDIR%%/html/es/customizing-thunar.html
@@ -218,6 +239,17 @@ share/gtk-doc/html/thunarx/up.png
 %%DOCSDIR%%/html/fr/the-file-manager-window.html
 %%DOCSDIR%%/html/fr/using-removable-media.html
 %%DOCSDIR%%/html/fr/working-with-files-and-folders.html
+%%DOCSDIR%%/html/gl/images/bulk-rename.png
+%%DOCSDIR%%/html/gl/images/file-manager-window.png
+%%DOCSDIR%%/html/gl/images/file-properties.png
+%%DOCSDIR%%/html/gl/images/preferences-advanced.png
+%%DOCSDIR%%/html/gl/images/preferences-behavior.png
+%%DOCSDIR%%/html/gl/images/preferences-side-pane.png
+%%DOCSDIR%%/html/gl/images/preferences-views.png
+%%DOCSDIR%%/html/gl/images/removable-drives-and-media.png
+%%DOCSDIR%%/html/gl/images/removable-media-unmount.png
+%%DOCSDIR%%/html/gl/images/sendto-menu.png
+%%DOCSDIR%%/html/gl/images/visible-columns.png
 %%DOCSDIR%%/html/ja/advanced-topics.html
 %%DOCSDIR%%/html/ja/copyright.html
 %%DOCSDIR%%/html/ja/customizing-thunar.html
@@ -403,6 +435,12 @@ share/icons/hicolor/16x16/stock/navigation/stock_thunar-templates.png
 share/icons/hicolor/24x24/apps/Thunar.png
 share/icons/hicolor/48x48/apps/Thunar.png
 share/icons/hicolor/scalable/apps/Thunar.svg
+share/locale/am/LC_MESSAGES/Thunar.mo
+share/locale/ast/LC_MESSAGES/Thunar.mo
+share/locale/bn/LC_MESSAGES/Thunar.mo
+share/locale/kk/LC_MESSAGES/Thunar.mo
+share/locale/ug/LC_MESSAGES/Thunar.mo
+share/locale/ur_PK/LC_MESSAGES/Thunar.mo
 share/locale/ar/LC_MESSAGES/Thunar.mo
 share/locale/be/LC_MESSAGES/Thunar.mo
 share/locale/ca/LC_MESSAGES/Thunar.mo
@@ -468,12 +506,16 @@ share/thumbnailers/thunar-vfs-font-thumbnailer-1.desktop
 %%PLUGIN_TPA%%@dirrmtry share/xfce4
 @dirrmtry %%DOCSDIR%%/html/C/images
 @dirrm %%DOCSDIR%%/html/C
+@dirrmtry %%DOCSDIR%%/html/am/images
+@dirrm %%DOCSDIR%%/html/am
 @dirrmtry %%DOCSDIR%%/html/es/images
 @dirrm %%DOCSDIR%%/html/es
 @dirrmtry %%DOCSDIR%%/html/eu/images
 @dirrm %%DOCSDIR%%/html/eu
 @dirrmtry %%DOCSDIR%%/html/fr/images
 @dirrm %%DOCSDIR%%/html/fr
+@dirrmtry %%DOCSDIR%%/html/gl/images
+@dirrm %%DOCSDIR%%/html/gl
 @dirrmtry %%DOCSDIR%%/html/ja/images
 @dirrm %%DOCSDIR%%/html/ja
 @dirrmtry %%DOCSDIR%%/html/nl/images
@@ -514,4 +556,12 @@ share/thumbnailers/thunar-vfs-font-thumbnailer-1.desktop
 @dirrmtry share/locale/nn_NO
 @dirrmtry share/locale/tr/LC_MESSAGES
 @dirrmtry share/locale/tr
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
 @dirrm share/thumbnailers

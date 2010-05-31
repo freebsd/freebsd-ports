@@ -149,6 +149,7 @@ share/locale/sq/LC_MESSAGES/libxfcegui4.mo
 share/locale/sv/LC_MESSAGES/libxfcegui4.mo
 share/locale/ta/LC_MESSAGES/libxfcegui4.mo
 share/locale/tr/LC_MESSAGES/libxfcegui4.mo
+share/locale/ug/LC_MESSAGES/libxfcegui4.mo
 share/locale/uk/LC_MESSAGES/libxfcegui4.mo
 share/locale/ur/LC_MESSAGES/libxfcegui4.mo
 share/locale/ur_PK/LC_MESSAGES/libxfcegui4.mo
@@ -177,6 +178,8 @@ share/locale/zh_TW/LC_MESSAGES/libxfcegui4.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
 @dirrmtry share/locale/ur_PK/LC_MESSAGES

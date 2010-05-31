@@ -1,6 +1,11 @@
 bin/xfce4-appfinder
 share/applications/xfce4-appfinder.desktop
 share/icons/hicolor/48x48/apps/xfce4-appfinder.png
+share/locale/ast/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/kk/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/nn/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/ug/LC_MESSAGES/xfce4-appfinder.mo
+share/locale/ur_PK/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/am/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/ar/LC_MESSAGES/xfce4-appfinder.mo
 share/locale/da/LC_MESSAGES/xfce4-appfinder.mo
@@ -62,4 +67,12 @@ share/locale/hy/LC_MESSAGES/xfce4-appfinder.mo
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
 

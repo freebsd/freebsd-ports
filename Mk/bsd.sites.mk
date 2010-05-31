@@ -1438,11 +1438,11 @@ MASTER_SITE_XEMACS+= \
 
 .if !defined(IGNORE_MASTER_SITE_XFCE)
 MASTER_SITE_XFCE+= \
-	http://mocha.xfce.org/archive/%SUBDIR%/src/ \
-	http://www.us.xfce.org/archive/%SUBDIR%/src/ \
-	http://www.de.xfce.org/archive/%SUBDIR%/src/ \
+	http://archive.xfce.org/%SUBDIR%/ \
+	http://mocha.xfce.org/archive/%SUBDIR%/ \
+	http://www.tx-us.xfce.org/archive/%SUBDIR%/ \
 	http://www.ca-us.xfce.org/archive/%SUBDIR%/src/ \
-	http://www.p0llux.be/xfce/%SUBDIR%/src/
+	http://www.p0llux.be/xfce/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XFREE)

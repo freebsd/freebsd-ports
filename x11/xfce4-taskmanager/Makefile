@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-taskmanager
 PORTVERSION=	0.4.0.r2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}

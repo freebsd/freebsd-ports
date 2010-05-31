@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Thunar
-PORTVERSION=	1.0.1
-PORTREVISION=	5
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -135,6 +134,10 @@ LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
+.endif
+
+.if (${OSVERSION} < 701000)
+CFLAGS+=	-DHAVE_SYS_MOUNT_H
 .endif
 
 post-patch:

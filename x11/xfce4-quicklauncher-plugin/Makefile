@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-quicklauncher-plugin
 PORTVERSION=	1.9.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4

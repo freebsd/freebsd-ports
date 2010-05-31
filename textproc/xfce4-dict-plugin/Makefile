@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-dict
 PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc xfce
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/0.6/
 PKGNAMESUFFIX=	-plugin

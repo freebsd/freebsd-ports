@@ -1,0 +1,25 @@
+--- Makefile.in.orig	2010-05-21 18:51:18.000000000 +0200
++++ Makefile.in	2010-05-23 19:55:57.000000000 +0200
+@@ -71,8 +71,8 @@
+ ETAGS = etags
+ CTAGS = ctags
+ DIST_SUBDIRS = exo exo-csource exo-support exo-desktop-item-edit \
+-	exo-hal exo-helper exo-mount exo-mount-notify exo-open docs \
+-	icons pixmaps po po-doc python tests
++	exo-hal exo-helper exo-mount exo-mount-notify exo-open \
++	icons pixmaps po python tests
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ distdir = $(PACKAGE)-$(VERSION)
+ top_distdir = $(distdir)
+@@ -320,11 +320,9 @@
+ 	exo-mount							\
+ 	$(EXO_MOUNT_NOTIFY_SUBDIR)					\
+ 	exo-open							\
+-	docs								\
+ 	icons								\
+ 	pixmaps								\
+ 	po								\
+-	po-doc								\
+ 	$(PYTHON_SUBDIR)						\
+ 	tests
+ 

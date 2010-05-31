@@ -1,11 +1,10 @@
 bin/Terminal
 bin/terminal
-libexec/TerminalHelp
 share/Terminal/Terminal-toolbars.ui
 share/Terminal/Terminal.glade
-share/applications/Terminal.desktop
-share/gnome-control-center/default-apps/Terminal-default-apps.xml
+%%NLS%%share/applications/Terminal.desktop
 %%PORTDOCS%%%%DOCSDIR%%/C/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/C/command-line.html
 %%PORTDOCS%%%%DOCSDIR%%/C/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/C/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/C/getting-started.html
@@ -25,6 +24,7 @@ share/gnome-control-center/default-apps/Terminal-default-apps.xml
 %%PORTDOCS%%%%DOCSDIR%%/C/support.html
 %%PORTDOCS%%%%DOCSDIR%%/C/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/ca/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/ca/command-line.html
 %%PORTDOCS%%%%DOCSDIR%%/ca/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/ca/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/ca/getting-started.html
@@ -34,6 +34,7 @@ share/gnome-control-center/default-apps/Terminal-default-apps.xml
 %%PORTDOCS%%%%DOCSDIR%%/ca/support.html
 %%PORTDOCS%%%%DOCSDIR%%/ca/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/da/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/da/command-line.html
 %%PORTDOCS%%%%DOCSDIR%%/da/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/da/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/da/getting-started.html
@@ -42,7 +43,18 @@ share/gnome-control-center/default-apps/Terminal-default-apps.xml
 %%PORTDOCS%%%%DOCSDIR%%/da/preferences.html
 %%PORTDOCS%%%%DOCSDIR%%/da/support.html
 %%PORTDOCS%%%%DOCSDIR%%/da/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/es/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/es/command-line.html
+%%PORTDOCS%%%%DOCSDIR%%/es/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/es/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/es/getting-started.html
+%%PORTDOCS%%%%DOCSDIR%%/es/images
+%%PORTDOCS%%%%DOCSDIR%%/es/index.html
+%%PORTDOCS%%%%DOCSDIR%%/es/preferences.html
+%%PORTDOCS%%%%DOCSDIR%%/es/support.html
+%%PORTDOCS%%%%DOCSDIR%%/es/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/fr/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/fr/command-line.html
 %%PORTDOCS%%%%DOCSDIR%%/fr/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/fr/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/fr/getting-started.html
@@ -52,6 +64,7 @@ share/gnome-control-center/default-apps/Terminal-default-apps.xml
 %%PORTDOCS%%%%DOCSDIR%%/fr/support.html
 %%PORTDOCS%%%%DOCSDIR%%/fr/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/gl/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/gl/command-line.html
 %%PORTDOCS%%%%DOCSDIR%%/gl/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/gl/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/gl/getting-started.html
@@ -60,7 +73,18 @@ share/gnome-control-center/default-apps/Terminal-default-apps.xml
 %%PORTDOCS%%%%DOCSDIR%%/gl/preferences.html
 %%PORTDOCS%%%%DOCSDIR%%/gl/support.html
 %%PORTDOCS%%%%DOCSDIR%%/gl/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/hr/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/hr/command-line.html
+%%PORTDOCS%%%%DOCSDIR%%/hr/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/hr/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/hr/getting-started.html
+%%PORTDOCS%%%%DOCSDIR%%/hr/images
+%%PORTDOCS%%%%DOCSDIR%%/hr/index.html
+%%PORTDOCS%%%%DOCSDIR%%/hr/preferences.html
+%%PORTDOCS%%%%DOCSDIR%%/hr/support.html
+%%PORTDOCS%%%%DOCSDIR%%/hr/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/id/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/id/command-line.html
 %%PORTDOCS%%%%DOCSDIR%%/id/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/id/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/id/getting-started.html
@@ -70,6 +94,7 @@ share/gnome-control-center/default-apps/Terminal-default-apps.xml
 %%PORTDOCS%%%%DOCSDIR%%/id/support.html
 %%PORTDOCS%%%%DOCSDIR%%/id/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/it/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/it/command-line.html
 %%PORTDOCS%%%%DOCSDIR%%/it/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/it/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/it/getting-started.html
@@ -79,6 +104,7 @@ share/gnome-control-center/default-apps/Terminal-default-apps.xml
 %%PORTDOCS%%%%DOCSDIR%%/it/support.html
 %%PORTDOCS%%%%DOCSDIR%%/it/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/command-line.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/getting-started.html
@@ -97,8 +123,39 @@ share/gnome-control-center/default-apps/Terminal-default-apps.xml
 %%PORTDOCS%%%%DOCSDIR%%/ja/preferences.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/support.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/pt/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/pt/command-line.html
+%%PORTDOCS%%%%DOCSDIR%%/pt/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/pt/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/pt/getting-started.html
+%%PORTDOCS%%%%DOCSDIR%%/pt/images
+%%PORTDOCS%%%%DOCSDIR%%/pt/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pt/preferences.html
+%%PORTDOCS%%%%DOCSDIR%%/pt/support.html
+%%PORTDOCS%%%%DOCSDIR%%/pt/usage.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/command-line.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/getting-started.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/images
+%%PORTDOCS%%%%DOCSDIR%%/ru/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/preferences.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/support.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/terminal.css
+%%PORTDOCS%%%%DOCSDIR%%/ug/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/ug/command-line.html
+%%PORTDOCS%%%%DOCSDIR%%/ug/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/ug/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/ug/getting-started.html
+%%PORTDOCS%%%%DOCSDIR%%/ug/images
+%%PORTDOCS%%%%DOCSDIR%%/ug/index.html
+%%PORTDOCS%%%%DOCSDIR%%/ug/preferences.html
+%%PORTDOCS%%%%DOCSDIR%%/ug/support.html
+%%PORTDOCS%%%%DOCSDIR%%/ug/usage.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_CN/advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/zh_CN/command-line.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_CN/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_CN/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_CN/getting-started.html
@@ -107,6 +164,7 @@ share/gnome-control-center/default-apps/Terminal-default-apps.xml
 %%PORTDOCS%%%%DOCSDIR%%/zh_CN/preferences.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_CN/support.html
 %%PORTDOCS%%%%DOCSDIR%%/zh_CN/usage.html
+share/gnome-control-center/default-apps/Terminal-default-apps.xml
 share/icons/hicolor/16x16/stock/navigation/stock_terminal-closetab.png
 share/icons/hicolor/16x16/stock/navigation/stock_terminal-newtab.png
 share/icons/hicolor/16x16/stock/navigation/stock_terminal-newwindow.png
@@ -117,93 +175,187 @@ share/icons/hicolor/24x24/stock/navigation/stock_terminal-newwindow.png
 share/icons/hicolor/24x24/stock/navigation/stock_terminal-reportbug.png
 share/icons/hicolor/24x24/stock/navigation/stock_terminal-showborders.png
 share/icons/hicolor/24x24/stock/navigation/stock_terminal-showmenu.png
-share/icons/hicolor/48x48/stock/navigation/stock_terminal-compose.png
 share/icons/hicolor/48x48/apps/Terminal.png
+share/icons/hicolor/48x48/stock/navigation/stock_terminal-compose.png
 share/icons/hicolor/scalable/apps/Terminal.svg
-share/locale/ar/LC_MESSAGES/Terminal.mo
-share/locale/ast/LC_MESSAGES/Terminal.mo
-share/locale/be/LC_MESSAGES/Terminal.mo
-share/locale/ca/LC_MESSAGES/Terminal.mo
-share/locale/cs/LC_MESSAGES/Terminal.mo
-share/locale/da/LC_MESSAGES/Terminal.mo
-share/locale/de/LC_MESSAGES/Terminal.mo
-share/locale/dz/LC_MESSAGES/Terminal.mo
-share/locale/el/LC_MESSAGES/Terminal.mo
-share/locale/en_GB/LC_MESSAGES/Terminal.mo
-share/locale/eo/LC_MESSAGES/Terminal.mo
-share/locale/et/LC_MESSAGES/Terminal.mo
-share/locale/es/LC_MESSAGES/Terminal.mo
-share/locale/eu/LC_MESSAGES/Terminal.mo
-share/locale/fi/LC_MESSAGES/Terminal.mo
-share/locale/fr/LC_MESSAGES/Terminal.mo
-share/locale/gl/LC_MESSAGES/Terminal.mo
-share/locale/he/LC_MESSAGES/Terminal.mo
-share/locale/hu/LC_MESSAGES/Terminal.mo
-share/locale/id/LC_MESSAGES/Terminal.mo
-share/locale/it/LC_MESSAGES/Terminal.mo
-share/locale/ja/LC_MESSAGES/Terminal.mo
-share/locale/kk/LC_MESSAGES/Terminal.mo
-share/locale/ko/LC_MESSAGES/Terminal.mo
-share/locale/ku/LC_MESSAGES/Terminal.mo
-share/locale/lt/LC_MESSAGES/Terminal.mo
-share/locale/lv/LC_MESSAGES/Terminal.mo
-share/locale/nb/LC_MESSAGES/Terminal.mo
-share/locale/nl/LC_MESSAGES/Terminal.mo
-share/locale/pa/LC_MESSAGES/Terminal.mo
-share/locale/pl/LC_MESSAGES/Terminal.mo
-share/locale/pt_BR/LC_MESSAGES/Terminal.mo
-share/locale/pt/LC_MESSAGES/Terminal.mo
-share/locale/ro/LC_MESSAGES/Terminal.mo
-share/locale/ru/LC_MESSAGES/Terminal.mo
-share/locale/sk/LC_MESSAGES/Terminal.mo
-share/locale/sq/LC_MESSAGES/Terminal.mo
-share/locale/sv/LC_MESSAGES/Terminal.mo
-share/locale/tr/LC_MESSAGES/Terminal.mo
-share/locale/uk/LC_MESSAGES/Terminal.mo
-share/locale/ur/LC_MESSAGES/Terminal.mo
-share/locale/ur_PK/LC_MESSAGES/Terminal.mo
-share/locale/vi/LC_MESSAGES/Terminal.mo
-share/locale/zh_CN/LC_MESSAGES/Terminal.mo
-share/locale/zh_TW/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/be/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/da/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/de/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/dz/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/el/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/es/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/et/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/he/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/id/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/it/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/si/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/Terminal.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/Terminal.mo
 share/pixmaps/terminal.xpm
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/vi
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tr
+%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv
+%%NLS%%@dirrmtry share/locale/sq/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sq
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt_BR
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pa/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pa
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb
+%%NLS%%@dirrmtry share/locale/lv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lv
+%%NLS%%@dirrmtry share/locale/lt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lt
+%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ku
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id
+%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hu
+%%NLS%%@dirrmtry share/locale/hr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hr
+%%NLS%%@dirrmtry share/locale/he/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/he
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eu
+%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/eo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eo
+%%NLS%%@dirrmtry share/locale/en_GB/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_GB
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/dz
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/da
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+%%NLS%%@dirrmtry share/locale/be/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/be
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%NLS%%@dirrmtry share/locale/ar/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ar
+@dirrmtry man/zh_CN/man1
+@dirrmtry man/zh_CN
+@dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/stock/navigation
+@dirrmtry share/icons/hicolor/48x48/stock
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/24x24/stock/navigation
 @dirrmtry share/icons/hicolor/24x24/stock
 @dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/48x48/stock/navigation
-@dirrmtry share/icons/hicolor/48x48/stock
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/C/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/C
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/da
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ca
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/gl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/id
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/it
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_CN
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
-@dirrm share/Terminal
-@dirrmtry share/gnome-control-center/default-apps
 @dirrmtry share/icons/hicolor/16x16/stock/navigation
 @dirrmtry share/icons/hicolor/16x16/stock
 @dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/48x48/stock/navigation
-@dirrmtry share/icons/hicolor/48x48/stock
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
+@dirrmtry share/gnome-control-center/default-apps
+@dirrmtry share/gnome-control-center
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_CN
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ug
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ru
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/it
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/id
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/hr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/es
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/da
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ca
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/C/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/C
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/Terminal

@@ -1,0 +1,181 @@
+--- doc/Makefile.in.orig	2010-05-21 22:10:01.000000000 +0200
++++ doc/Makefile.in	2010-05-24 18:36:50.000000000 +0200
+@@ -53,9 +53,9 @@
+ SOURCES =
+ DIST_SOURCES =
+ RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
+-	html-recursive info-recursive install-data-recursive \
++	info-recursive install-data-recursive \
+ 	install-dvi-recursive install-exec-recursive \
+-	install-html-recursive install-info-recursive \
++	install-info-recursive \
+ 	install-pdf-recursive install-ps-recursive install-recursive \
+ 	installcheck-recursive installdirs-recursive pdf-recursive \
+ 	ps-recursive uninstall-recursive
+@@ -291,7 +291,6 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = \
+-	images \
+ 	po
+ 
+ HTML_STYLESHEET = $(PACKAGE)-html.xsl
+@@ -359,18 +358,6 @@
+ 
+ clean-libtool:
+ 	-rm -rf .libs _libs
+-install-cssDATA: $(css_DATA)
+-	@$(NORMAL_INSTALL)
+-	test -z "$(cssdir)" || $(MKDIR_P) "$(DESTDIR)$(cssdir)"
+-	@list='$(css_DATA)'; test -n "$(cssdir)" || list=; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(cssdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(cssdir)" || exit $$?; \
+-	done
+ 
+ uninstall-cssDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -581,9 +568,6 @@
+ all-am: Makefile $(DATA)
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	for dir in "$(DESTDIR)$(cssdir)"; do \
+-	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+-	done
+ install: install-recursive
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
+@@ -622,15 +606,11 @@
+ 
+ dvi-am:
+ 
+-html: html-recursive
+-
+-html-am:
+-
+ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-cssDATA install-data-local
++install-data-am: install-data-local
+ 
+ install-dvi: install-dvi-recursive
+ 
+@@ -638,10 +618,6 @@
+ 
+ install-exec-am:
+ 
+-install-html: install-html-recursive
+-
+-install-html-am:
+-
+ install-info: install-info-recursive
+ 
+ install-info-am:
+@@ -683,10 +659,10 @@
+ 	all all-am check check-am clean clean-generic clean-libtool \
+ 	clean-local ctags ctags-recursive dist-hook distclean \
+ 	distclean-generic distclean-libtool distclean-tags distdir dvi \
+-	dvi-am html html-am info info-am install install-am \
+-	install-cssDATA install-data install-data-am \
++	dvi-am  info info-am install install-am \
++	install-data install-data-am \
+ 	install-data-local install-dvi install-dvi-am install-exec \
+-	install-exec-am install-html install-html-am install-info \
++	install-exec-am install-info \
+ 	install-info-am install-man install-pdf install-pdf-am \
+ 	install-ps install-ps-am install-strip installcheck \
+ 	installcheck-am installdirs installdirs-am maintainer-clean \
+@@ -698,19 +674,6 @@
+ # install the html files to the destdir
+ install-data-local:
+ 	for lang in $(ALL_LINGUAS); do \
+-		if test -d $(srcdir)/html/$$lang; then \
+-			dest=$(DESTDIR)$(docdir)/$$lang; \
+-			$(mkinstalldirs) $$dest; \
+-			installfiles=`echo $(srcdir)/html/$$lang/*`; \
+-			for file in $$installfiles; do \
+-				echo "--- Installing "$$file; \
+-				$(INSTALL_DATA) $$file $$dest/; \
+-			done; \
+-			if test x"$$lang" != x"C" -a ! -d $(srcdir)/images/$$lang; then \
+-				echo "--- Creating symlink to C images for $$lang"; \
+-				ln -sf $(docdir)/C/images $$dest/images; \
+-			fi \
+-		fi; \
+ 		file=$(srcdir)/man/$$lang/$(PACKAGE_NAME).1; \
+ 		if test -f $$file ; then \
+ 			if test x"$$lang" = x"C"; then \
+@@ -728,13 +691,6 @@
+ uninstall-local:
+ 	for lang in $(ALL_LINGUAS); do \
+ 		dest=$(DESTDIR)$(docdir)/$$lang; \
+-		if test -d $$dest; then \
+-			if test -L $$dest/images; then \
+-				rm -rf $$dest; \
+-			else \
+-				rm -f $$dest/*.html; \
+-			fi \
+-		fi; \
+ 		if test x"$$lang" = x"C"; then \
+ 			dest=$(DESTDIR)$(mandir)/man1/$(PACKAGE).1; \
+ 		else \
+@@ -748,7 +704,7 @@
+ 
+ # remove generate html from the srcdir
+ clean-local:
+-	rm -rf $(srcdir)/html $(srcdir)/man
++	rm -rf $(srcdir)/man
+ 
+ # regenerate po(t) files
+ @GENERATE_DOCUMENTATION_TRUE@update-po:
+@@ -760,9 +716,9 @@
+ @GENERATE_DOCUMENTATION_TRUE@	done
+ 
+ # build the translated help files
+-@GENERATE_DOCUMENTATION_TRUE@doc-build.stamp: $(srcdir)/$(DOCUMENT) $(srcdir)/$(MANPAGE) $(srcdir)/$(HTML_STYLESHEET) $(srcdir)/$(MAN_STYLESHEET)
++@GENERATE_DOCUMENTATION_TRUE@doc-build.stamp: $(srcdir)/$(DOCUMENT) $(srcdir)/$(MANPAGE) $(srcdir)/$(MAN_STYLESHEET)
+ @GENERATE_DOCUMENTATION_TRUE@	@chmod -R u+w $(srcdir); \
+-@GENERATE_DOCUMENTATION_TRUE@	rm -rf $(srcdir)/html $(srcdir)/man; \
++@GENERATE_DOCUMENTATION_TRUE@	rm -rf $(srcdir)/man; \
+ @GENERATE_DOCUMENTATION_TRUE@	echo; \
+ @GENERATE_DOCUMENTATION_TRUE@	echo "*** Generating full XML file ***"; \
+ @GENERATE_DOCUMENTATION_TRUE@	echo "Creating Terminal-options.xml"; \
+@@ -788,11 +744,9 @@
+ @GENERATE_DOCUMENTATION_TRUE@			-i xgen-doc xgen-man; \
+ @GENERATE_DOCUMENTATION_TRUE@		echo "Validating DocBook XML files"; \
+ @GENERATE_DOCUMENTATION_TRUE@		$(XMLLINT) --noout --valid xgen-doc xgen-man; \
+-@GENERATE_DOCUMENTATION_TRUE@		echo "Creating the HTML pages"; \
+-@GENERATE_DOCUMENTATION_TRUE@		$(XSLTPROC) --nonet -o $(srcdir)/html/$$lang/ $(srcdir)/$(HTML_STYLESHEET) xgen-doc; \
+ @GENERATE_DOCUMENTATION_TRUE@		echo "Creating the MAN page"; \
+ @GENERATE_DOCUMENTATION_TRUE@		$(XSLTPROC) --nonet -o $(srcdir)/man/$$lang/$(PACKAGE_NAME).1 $(srcdir)/$(MAN_STYLESHEET) xgen-man; \
+-@GENERATE_DOCUMENTATION_TRUE@		chmod -R u+w $(srcdir)/html/$$lang $(srcdir)/man/$$lang; \
++@GENERATE_DOCUMENTATION_TRUE@		chmod -R u+w $(srcdir)/man/$$lang; \
+ @GENERATE_DOCUMENTATION_TRUE@		rm -f xgen-doc xgen-man; \
+ @GENERATE_DOCUMENTATION_TRUE@		echo; \
+ @GENERATE_DOCUMENTATION_TRUE@	done; \
+@@ -806,7 +760,7 @@
+ @GENERATE_DOCUMENTATION_FALSE@	@false
+ 
+ @GENERATE_DOCUMENTATION_FALSE@doc-build.stamp:
+-@GENERATE_DOCUMENTATION_FALSE@	@if test ! -d $(srcdir)/html -a ! -d $(srcdir)/man; then \
++@GENERATE_DOCUMENTATION_FALSE@	@if test ! -d $(srcdir)/man; then \
+ @GENERATE_DOCUMENTATION_FALSE@		echo; \
+ @GENERATE_DOCUMENTATION_FALSE@		echo "*** No generated documentation found. If you want to"; \
+ @GENERATE_DOCUMENTATION_FALSE@		echo "*** generate the (translated) documentation, run configure"; \
+@@ -825,10 +779,6 @@
+ # include the html and man files in the dist
+ dist-hook: dist-check-doc doc-build.stamp
+ 	for lang in $(ALL_LINGUAS); do \
+-		if test -d $(srcdir)/html/$$lang; then \
+-			mkdir -p $(distdir)/html/$$lang; \
+-			cp $(srcdir)/html/$$lang/* $(distdir)/html/$$lang/; \
+-		fi; \
+ 		if test -d $(srcdir)/man/$$lang; then \
+ 			mkdir -p $(distdir)/man/$$lang; \
+ 			cp $(srcdir)/man/$$lang/* $(distdir)/man/$$lang/; \

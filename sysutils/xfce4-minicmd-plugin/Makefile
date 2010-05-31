@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-minicmd-plugin
 PORTVERSION=	0.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/panel-plugins/4.4/
 DIST_SUBDIR=	xfce4
