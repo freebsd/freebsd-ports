@@ -42,6 +42,7 @@ MAN1=		evince.1
 OPTIONS=	DVI		"Enable DVI viewer support"		off \
 		T1LIB		"Enable T1LIB for TYPE1 fonts to DVI (Enables DVI)"	off \
 		NAUTILUS	"Enable Nautilus plugin"		on  \
+		KEYRING		"Enable Gnome-Keyring without Nautilus" on \
 		DBUS		"Enable D-BUS support"			on \
 		COMICS		"Enable comic book archives support"	on \
 		IMPRESS		"Enable Impress presentations support"	off \
@@ -76,8 +77,11 @@ PLIST_SUB+=		NAUTILUS=""
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
+.if !defined(WITHOUT_KEYRING)
 LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
-USE_GNOME+=		libglade2
+.else
+CONFIGURE_ARGS+=	--without-keyring
+.endif
 CONFIGURE_ARGS+=	--disable-nautilus
 PLIST_SUB+=		NAUTILUS="@comment "
 .endif
