@@ -4,12 +4,12 @@ bin/xfce4-session-settings
 bin/xfce4-tips
 etc/xdg/autostart/xfce4-tips-autostart.desktop
 etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
-include/xfce4/xfce4-session-4.6/libxfsm/xfsm-splash-engine.h
-include/xfce4/xfce4-session-4.6/libxfsm/xfsm-splash-rc.h
-lib/libxfsm-4.6.a
-lib/libxfsm-4.6.la
-lib/libxfsm-4.6.so
-lib/libxfsm-4.6.so.0
+include/xfce4/xfce4-session-%%VERSION%%/libxfsm/xfsm-splash-engine.h
+include/xfce4/xfce4-session-%%VERSION%%/libxfsm/xfsm-splash-rc.h
+lib/libxfsm-%%VERSION%%.a
+lib/libxfsm-%%VERSION%%.la
+lib/libxfsm-%%VERSION%%.so
+lib/libxfsm-%%VERSION%%.so.0
 lib/xfce4/splash/engines/libbalou.a
 lib/xfce4/splash/engines/libbalou.la
 lib/xfce4/splash/engines/libbalou.so
@@ -23,12 +23,14 @@ libdata/pkgconfig/xfce4-session-2.0.pc
 libexec/balou-export-theme
 libexec/balou-install-theme
 libexec/xfsm-shutdown-helper
-share/applications/xfce-session-settings.desktop
+%%NLS%%share/applications/xfce-session-settings.desktop
 share/icons/hicolor/128x128/apps/xfce4-session.png
 share/icons/hicolor/48x48/apps/xfce4-autostart-editor.png
 share/icons/hicolor/48x48/apps/xfce4-session.png
 share/icons/hicolor/48x48/apps/xfce4-splash.png
 share/icons/hicolor/48x48/apps/xfsm-hibernate.png
+share/icons/hicolor/48x48/apps/xfsm-logout.png
+share/icons/hicolor/48x48/apps/xfsm-reboot.png
 share/icons/hicolor/48x48/apps/xfsm-shutdown.png
 share/icons/hicolor/48x48/apps/xfsm-suspend.png
 share/icons/hicolor/64x64/apps/xfsm-gnome-kde-logo.png
@@ -36,109 +38,206 @@ share/icons/hicolor/72x72/apps/xfsm-trash-hilight.png
 share/icons/hicolor/72x72/apps/xfsm-trash-normal.png
 share/icons/hicolor/scalable/apps/xfce4-session.svg
 share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
-share/locale/am/LC_MESSAGES/xfce4-session.mo
-share/locale/ar/LC_MESSAGES/xfce4-session.mo
-share/locale/az/LC_MESSAGES/xfce4-session.mo
-share/locale/be/LC_MESSAGES/xfce4-session.mo
-share/locale/bn_IN/LC_MESSAGES/xfce4-session.mo
-share/locale/ca/LC_MESSAGES/xfce4-session.mo
-share/locale/cs/LC_MESSAGES/xfce4-session.mo
-share/locale/da/LC_MESSAGES/xfce4-session.mo
-share/locale/de/LC_MESSAGES/xfce4-session.mo
-share/locale/dz/LC_MESSAGES/xfce4-session.mo
-share/locale/el/LC_MESSAGES/xfce4-session.mo
-share/locale/en_GB/LC_MESSAGES/xfce4-session.mo
-share/locale/eo/LC_MESSAGES/xfce4-session.mo
-share/locale/es/LC_MESSAGES/xfce4-session.mo
-share/locale/es_MX/LC_MESSAGES/xfce4-session.mo
-share/locale/et/LC_MESSAGES/xfce4-session.mo
-share/locale/eu/LC_MESSAGES/xfce4-session.mo
-share/locale/fa/LC_MESSAGES/xfce4-session.mo
-share/locale/fi/LC_MESSAGES/xfce4-session.mo
-share/locale/fr/LC_MESSAGES/xfce4-session.mo
-share/locale/gl/LC_MESSAGES/xfce4-session.mo
-share/locale/gu/LC_MESSAGES/xfce4-session.mo
-share/locale/he/LC_MESSAGES/xfce4-session.mo
-share/locale/hi/LC_MESSAGES/xfce4-session.mo
-share/locale/hu/LC_MESSAGES/xfce4-session.mo
-share/locale/id/LC_MESSAGES/xfce4-session.mo
-share/locale/it/LC_MESSAGES/xfce4-session.mo
-share/locale/ja/LC_MESSAGES/xfce4-session.mo
-share/locale/ka/LC_MESSAGES/xfce4-session.mo
-share/locale/ko/LC_MESSAGES/xfce4-session.mo
-share/locale/lt/LC_MESSAGES/xfce4-session.mo
-share/locale/lv/LC_MESSAGES/xfce4-session.mo
-share/locale/mk/LC_MESSAGES/xfce4-session.mo
-share/locale/mr/LC_MESSAGES/xfce4-session.mo
-share/locale/ms/LC_MESSAGES/xfce4-session.mo
-share/locale/nb/LC_MESSAGES/xfce4-session.mo
-share/locale/nl/LC_MESSAGES/xfce4-session.mo
-share/locale/pa/LC_MESSAGES/xfce4-session.mo
-share/locale/pl/LC_MESSAGES/xfce4-session.mo
-share/locale/pt_BR/LC_MESSAGES/xfce4-session.mo
-share/locale/pt/LC_MESSAGES/xfce4-session.mo
-share/locale/ro/LC_MESSAGES/xfce4-session.mo
-share/locale/ru/LC_MESSAGES/xfce4-session.mo
-share/locale/si/LC_MESSAGES/xfce4-session.mo
-share/locale/sk/LC_MESSAGES/xfce4-session.mo
-share/locale/sq/LC_MESSAGES/xfce4-session.mo
-share/locale/sv/LC_MESSAGES/xfce4-session.mo
-share/locale/ta/LC_MESSAGES/xfce4-session.mo
-share/locale/tr/LC_MESSAGES/xfce4-session.mo
-share/locale/uk/LC_MESSAGES/xfce4-session.mo
-share/locale/ur/LC_MESSAGES/xfce4-session.mo
-share/locale/vi/LC_MESSAGES/xfce4-session.mo
-share/locale/zh_CN/LC_MESSAGES/xfce4-session.mo
-share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/am/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/az/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/dz/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/es_MX/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/id/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/si/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-session.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
 share/themes/Default/balou/logo.png
 share/themes/Default/balou/themerc
-share/xfce4/doc/C/images/xfsm-advanced.png
-share/xfce4/doc/C/images/xfsm-general.png
-share/xfce4/doc/C/images/xfsm-splash.png
-share/xfce4/doc/C/xfce4-session.html
-share/xfce4/doc/fr/images/xfsm-advanced.png
-share/xfce4/doc/fr/images/xfsm-general.png
-share/xfce4/doc/fr/images/xfsm-splash.png
-share/xfce4/doc/fr/xfce4-session.html
 share/xfce4/tips/tips
 share/xfce4/tips/tips.dat
-share/icons/hicolor/48x48/apps/xfsm-logout.png
-share/icons/hicolor/48x48/apps/xfsm-reboot.png
-@dirrm etc/xdg/autostart
+@dirrm share/xfce4/tips
+@dirrmtry share/xfce4
+@dirrm share/themes/Default/balou
+@dirrm share/themes/Default
+@dirrm share/themes
+%%NLS%%@dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/vi
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tr
+%%NLS%%@dirrmtry share/locale/ta/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ta
+%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv
+%%NLS%%@dirrmtry share/locale/sq/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sq
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt_BR
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pa/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pa
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb
+%%NLS%%@dirrmtry share/locale/ms/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ms
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/mk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mk
+%%NLS%%@dirrmtry share/locale/lv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lv
+%%NLS%%@dirrmtry share/locale/lt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lt
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/ka/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ka
+%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id
+%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hu
+%%NLS%%@dirrmtry share/locale/hi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hi
+%%NLS%%@dirrmtry share/locale/he/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/he
+%%NLS%%@dirrmtry share/locale/gu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gu
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/fa/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fa
+%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eu
+%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/eo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eo
+%%NLS%%@dirrmtry share/locale/en_GB/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_GB
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/dz
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/da
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_IN
+%%NLS%%@dirrmtry share/locale/be/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/be
+%%NLS%%@dirrmtry share/locale/az/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/az
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%NLS%%@dirrmtry share/locale/ar/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ar
+%%NLS%%@dirrmtry share/locale/am/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/am
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/72x72
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrm lib/xfce4/splash/engines
+@dirrm lib/xfce4/splash
+@dirrm lib/xfce4
+@dirrm include/xfce4/xfce4-session-%%VERSION%%/libxfsm
+@dirrm include/xfce4/xfce4-session-%%VERSION%%
+@dirrmtry include/xfce4
 @dirrmtry etc/xdg/xfce4/xfconf/xfce-perchannel-xml
 @dirrmtry etc/xdg/xfce4/xfconf
 @dirrmtry etc/xdg/xfce4
+@dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
-@dirrm include/xfce4/xfce4-session-4.6/libxfsm
-@dirrm include/xfce4/xfce4-session-4.6
-@dirrmtry include/xfce4
-@dirrmtry share/applications
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrm share/themes/Default/balou
-@dirrmtry share/themes/Default
-@dirrmtry share/themes
-@dirrmtry share/xfce4/doc/C/images
-@dirrmtry share/xfce4/doc/C
-@dirrmtry share/xfce4/doc/fr/images
-@dirrmtry share/xfce4/doc/fr
-@dirrmtry share/xfce4/doc
-@dirrmtry share/xfce4/tips
-@dirrmtry share/xfce4
-@dirrmtry lib/xfce4/splash/engines
-@dirrmtry lib/xfce4/splash
-@dirrmtry lib/xfce4
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor/72x72/apps
-@dirrmtry share/icons/hicolor/72x72
-@dirrmtry share/icons/hicolor/128x128/apps
-@dirrmtry share/icons/hicolor/128x128
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable

@@ -8,8 +8,8 @@ etc/xdg/xfce4/panel/launcher-9.rc
 etc/xdg/xfce4/panel/panels.xml
 etc/xdg/xfce4/panel/systray-4.rc
 etc/xdg/xfce4/panel/xfce4-menu-5.rc
-include/xfce4/libxfce4panel/libxfce4panel.h
 include/xfce4/libxfce4panel/libxfce4panel-enum-types.h
+include/xfce4/libxfce4panel/libxfce4panel.h
 include/xfce4/libxfce4panel/xfce-arrow-button.h
 include/xfce4/libxfce4panel/xfce-hvbox.h
 include/xfce4/libxfce4panel/xfce-itembar.h
@@ -21,31 +21,42 @@ include/xfce4/libxfce4panel/xfce-panel-macros.h
 include/xfce4/libxfce4panel/xfce-panel-plugin-iface.h
 include/xfce4/libxfce4panel/xfce-panel-plugin.h
 include/xfce4/libxfce4panel/xfce-panel-window.h
+lib/libxfce4panel.a
 lib/libxfce4panel.la
 lib/libxfce4panel.so
 lib/libxfce4panel.so.2
+lib/xfce4/panel-plugins/libactions.a
 lib/xfce4/panel-plugins/libactions.la
 lib/xfce4/panel-plugins/libactions.so
+lib/xfce4/panel-plugins/libclock.a
 lib/xfce4/panel-plugins/libclock.la
 lib/xfce4/panel-plugins/libclock.so
+lib/xfce4/panel-plugins/libiconbox.a
 lib/xfce4/panel-plugins/libiconbox.la
 lib/xfce4/panel-plugins/libiconbox.so
+lib/xfce4/panel-plugins/liblauncher.a
 lib/xfce4/panel-plugins/liblauncher.la
 lib/xfce4/panel-plugins/liblauncher.so
+lib/xfce4/panel-plugins/libpager.a
 lib/xfce4/panel-plugins/libpager.la
 lib/xfce4/panel-plugins/libpager.so
+lib/xfce4/panel-plugins/libseparator.a
 lib/xfce4/panel-plugins/libseparator.la
 lib/xfce4/panel-plugins/libseparator.so
+lib/xfce4/panel-plugins/libshowdesktop.a
 lib/xfce4/panel-plugins/libshowdesktop.la
 lib/xfce4/panel-plugins/libshowdesktop.so
+lib/xfce4/panel-plugins/libsystray.a
 lib/xfce4/panel-plugins/libsystray.la
 lib/xfce4/panel-plugins/libsystray.so
+lib/xfce4/panel-plugins/libtasklist.a
 lib/xfce4/panel-plugins/libtasklist.la
 lib/xfce4/panel-plugins/libtasklist.so
+lib/xfce4/panel-plugins/libwindowlist.a
 lib/xfce4/panel-plugins/libwindowlist.la
 lib/xfce4/panel-plugins/libwindowlist.so
 libdata/pkgconfig/libxfce4panel-1.0.pc
-share/applications/xfce4-panel-manager.desktop
+%%NLS%%share/applications/xfce4-panel-manager.desktop
 share/gtk-doc/html/libxfce4panel/XfceArrowButton.html
 share/gtk-doc/html/libxfce4panel/XfceExternalPanelPlugin.html
 share/gtk-doc/html/libxfce4panel/XfceHVBox.html
@@ -71,9 +82,9 @@ share/gtk-doc/html/libxfce4panel/libxfce4panel.devhelp2
 share/gtk-doc/html/libxfce4panel/right.png
 share/gtk-doc/html/libxfce4panel/style.css
 share/gtk-doc/html/libxfce4panel/up.png
-share/icons/hicolor/16x16/apps/xfce4-panel.png
 share/icons/hicolor/16x16/apps/xfce-system-exit.png
 share/icons/hicolor/16x16/apps/xfce-system-lock.png
+share/icons/hicolor/16x16/apps/xfce4-panel.png
 share/icons/hicolor/22x22/apps/xfce4-panel.png
 share/icons/hicolor/24x24/apps/xfce4-panel.png
 share/icons/hicolor/32x32/apps/xfce4-panel.png
@@ -84,74 +95,68 @@ share/icons/hicolor/48x48/apps/xfce4-panel.png
 share/icons/hicolor/48x48/apps/xfce4-separator.png
 share/icons/hicolor/48x48/apps/xfce4-systray.png
 share/icons/hicolor/48x48/apps/xfce4-taskbar.png
-share/locale/am/LC_MESSAGES/xfce4-panel.mo
-share/locale/ar/LC_MESSAGES/xfce4-panel.mo
-share/locale/ast/LC_MESSAGES/xfce4-panel.mo
-share/locale/az/LC_MESSAGES/xfce4-panel.mo
-share/locale/be/LC_MESSAGES/xfce4-panel.mo
-share/locale/bg/LC_MESSAGES/xfce4-panel.mo
-share/locale/bn_IN/LC_MESSAGES/xfce4-panel.mo
-share/locale/ca/LC_MESSAGES/xfce4-panel.mo
-share/locale/cs/LC_MESSAGES/xfce4-panel.mo
-share/locale/da/LC_MESSAGES/xfce4-panel.mo
-share/locale/de/LC_MESSAGES/xfce4-panel.mo
-share/locale/dz/LC_MESSAGES/xfce4-panel.mo
-share/locale/el/LC_MESSAGES/xfce4-panel.mo
-share/locale/en_GB/LC_MESSAGES/xfce4-panel.mo
-share/locale/eo/LC_MESSAGES/xfce4-panel.mo
-share/locale/es/LC_MESSAGES/xfce4-panel.mo
-share/locale/es_MX/LC_MESSAGES/xfce4-panel.mo
-share/locale/et/LC_MESSAGES/xfce4-panel.mo
-share/locale/eu/LC_MESSAGES/xfce4-panel.mo
-share/locale/fa/LC_MESSAGES/xfce4-panel.mo
-share/locale/fi/LC_MESSAGES/xfce4-panel.mo
-share/locale/fr/LC_MESSAGES/xfce4-panel.mo
-share/locale/gl/LC_MESSAGES/xfce4-panel.mo
-share/locale/gu/LC_MESSAGES/xfce4-panel.mo
-share/locale/he/LC_MESSAGES/xfce4-panel.mo
-share/locale/hi/LC_MESSAGES/xfce4-panel.mo
-share/locale/hu/LC_MESSAGES/xfce4-panel.mo
-share/locale/hy/LC_MESSAGES/xfce4-panel.mo
-share/locale/id/LC_MESSAGES/xfce4-panel.mo
-share/locale/it/LC_MESSAGES/xfce4-panel.mo
-share/locale/ja/LC_MESSAGES/xfce4-panel.mo
-share/locale/ka/LC_MESSAGES/xfce4-panel.mo
-share/locale/kk/LC_MESSAGES/xfce4-panel.mo
-share/locale/ko/LC_MESSAGES/xfce4-panel.mo
-share/locale/ku/LC_MESSAGES/xfce4-panel.mo
-share/locale/lt/LC_MESSAGES/xfce4-panel.mo
-share/locale/lv/LC_MESSAGES/xfce4-panel.mo
-share/locale/mk/LC_MESSAGES/xfce4-panel.mo
-share/locale/mr/LC_MESSAGES/xfce4-panel.mo
-share/locale/ms/LC_MESSAGES/xfce4-panel.mo
-share/locale/nb/LC_MESSAGES/xfce4-panel.mo
-share/locale/nl/LC_MESSAGES/xfce4-panel.mo
-share/locale/nn/LC_MESSAGES/xfce4-panel.mo
-share/locale/pa/LC_MESSAGES/xfce4-panel.mo
-share/locale/pl/LC_MESSAGES/xfce4-panel.mo
-share/locale/pt_BR/LC_MESSAGES/xfce4-panel.mo
-share/locale/pt/LC_MESSAGES/xfce4-panel.mo
-share/locale/ro/LC_MESSAGES/xfce4-panel.mo
-share/locale/ru/LC_MESSAGES/xfce4-panel.mo
-share/locale/si/LC_MESSAGES/xfce4-panel.mo
-share/locale/sk/LC_MESSAGES/xfce4-panel.mo
-share/locale/sq/LC_MESSAGES/xfce4-panel.mo
-share/locale/sv/LC_MESSAGES/xfce4-panel.mo
-share/locale/ta/LC_MESSAGES/xfce4-panel.mo
-share/locale/tr/LC_MESSAGES/xfce4-panel.mo
-share/locale/uk/LC_MESSAGES/xfce4-panel.mo
-share/locale/ur/LC_MESSAGES/xfce4-panel.mo
-share/locale/ur_PK/LC_MESSAGES/xfce4-panel.mo
-share/locale/vi/LC_MESSAGES/xfce4-panel.mo
-share/locale/zh_CN/LC_MESSAGES/xfce4-panel.mo
-share/locale/zh_TW/LC_MESSAGES/xfce4-panel.mo
-share/xfce4/doc/C/images/default_top_panel.png
-share/xfce4/doc/C/images/default_bottom_panel.png
-share/xfce4/doc/C/images/item_popup.png
-share/xfce4/doc/C/images/add_item_dialog.png
-share/xfce4/doc/C/images/launcher_properties.png
-share/xfce4/doc/C/images/panel_manager.png
-share/xfce4/doc/C/xfce4-panel.html
+%%NLS%%share/locale/am/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/az/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/dz/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/el/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/es_MX/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/hy/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/id/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/si/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-panel.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-panel.mo
 share/xfce4/panel-plugins/actions.desktop
 share/xfce4/panel-plugins/clock.desktop
 share/xfce4/panel-plugins/iconbox.desktop
@@ -162,35 +167,148 @@ share/xfce4/panel-plugins/showdesktop.desktop
 share/xfce4/panel-plugins/systray.desktop
 share/xfce4/panel-plugins/tasklist.desktop
 share/xfce4/panel-plugins/windowlist.desktop
-@dirrm etc/xdg/xfce4/panel
-@dirrmtry etc/xdg/xfce4
-@dirrmtry etc/xdg
-@dirrm include/xfce4/libxfce4panel
-@dirrmtry include/xfce4
-@dirrmtry lib/xfce4/mcs-plugins
-@dirrmtry lib/xfce4/panel-plugins
-@dirrmtry lib/xfce4
+@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4
+%%NLS%%@dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/vi
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tr
+%%NLS%%@dirrmtry share/locale/ta/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ta
+%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv
+%%NLS%%@dirrmtry share/locale/sq/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sq
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt_BR
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pa/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pa
+%%NLS%%@dirrmtry share/locale/nn/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nn
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb
+%%NLS%%@dirrmtry share/locale/ms/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ms
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/mk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mk
+%%NLS%%@dirrmtry share/locale/lv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lv
+%%NLS%%@dirrmtry share/locale/lt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lt
+%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ku
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/ka/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ka
+%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id
+%%NLS%%@dirrmtry share/locale/hy/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hy
+%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hu
+%%NLS%%@dirrmtry share/locale/hi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hi
+%%NLS%%@dirrmtry share/locale/he/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/he
+%%NLS%%@dirrmtry share/locale/gu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gu
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/fa/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fa
+%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eu
+%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/eo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eo
+%%NLS%%@dirrmtry share/locale/en_GB/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_GB
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/dz
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/da
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_IN
+%%NLS%%@dirrmtry share/locale/bg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bg
+%%NLS%%@dirrmtry share/locale/be/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/be
+%%NLS%%@dirrmtry share/locale/az/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/az
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%NLS%%@dirrmtry share/locale/ar/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ar
+%%NLS%%@dirrmtry share/locale/am/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/am
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
 @dirrm share/gtk-doc/html/libxfce4panel
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrmtry share/locale/bn_IN/LC_MESSAGES
-@dirrmtry share/locale/bn_IN
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/xfce4/doc/C/images
-@dirrmtry share/xfce4/doc/C
-@dirrmtry share/xfce4/doc
-@dirrmtry share/xfce4/panel-plugins
-@dirrmtry share/xfce4
-@dirrmtry share/locale/hy/LC_MESSAGES
-@dirrmtry share/locale/hy
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
+@dirrmtry lib/xfce4/panel-plugins
+@dirrmtry lib/xfce4
+@dirrm include/xfce4/libxfce4panel
+@dirrmtry include/xfce4
+@dirrmtry etc/xdg/xfce4/panel
+@dirrmtry etc/xdg/xfce4
+@dirrmtry etc/xdg

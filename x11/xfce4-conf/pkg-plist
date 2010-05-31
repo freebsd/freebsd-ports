@@ -4,10 +4,10 @@ include/xfce4/xfconf-0/xfconf/xfconf-channel.h
 include/xfce4/xfconf-0/xfconf/xfconf-errors.h
 include/xfce4/xfconf-0/xfconf/xfconf-types.h
 include/xfce4/xfconf-0/xfconf/xfconf.h
-lib/libxfconf-0.so.2
-lib/libxfconf-0.so
-lib/libxfconf-0.la
 lib/libxfconf-0.a
+lib/libxfconf-0.la
+lib/libxfconf-0.so
+lib/libxfconf-0.so.2
 libdata/pkgconfig/libxfconf-0.pc
 libexec/xfconfd
 share/dbus-1/services/org.xfce.Xfconf.service
@@ -29,30 +29,37 @@ share/gtk-doc/html/xfconf/xfconf-xfconf-types.html
 share/gtk-doc/html/xfconf/xfconf-xfconf.html
 share/gtk-doc/html/xfconf/xfconf.devhelp
 share/gtk-doc/html/xfconf/xfconf.devhelp2
-share/locale/ca/LC_MESSAGES/xfconf.mo
-share/locale/cs/LC_MESSAGES/xfconf.mo
-share/locale/da/LC_MESSAGES/xfconf.mo
-share/locale/de/LC_MESSAGES/xfconf.mo
-share/locale/es/LC_MESSAGES/xfconf.mo
-share/locale/eu/LC_MESSAGES/xfconf.mo
-share/locale/fi/LC_MESSAGES/xfconf.mo
-share/locale/fr/LC_MESSAGES/xfconf.mo
-share/locale/gl/LC_MESSAGES/xfconf.mo
-share/locale/hu/LC_MESSAGES/xfconf.mo
-share/locale/id/LC_MESSAGES/xfconf.mo
-share/locale/it/LC_MESSAGES/xfconf.mo
-share/locale/ja/LC_MESSAGES/xfconf.mo
-share/locale/nb/LC_MESSAGES/xfconf.mo
-share/locale/nl/LC_MESSAGES/xfconf.mo
-share/locale/pl/LC_MESSAGES/xfconf.mo
-share/locale/pt_BR/LC_MESSAGES/xfconf.mo
-share/locale/pt/LC_MESSAGES/xfconf.mo
-share/locale/ro/LC_MESSAGES/xfconf.mo
-share/locale/ru/LC_MESSAGES/xfconf.mo
-share/locale/sv/LC_MESSAGES/xfconf.mo
-share/locale/tr/LC_MESSAGES/xfconf.mo
-share/locale/uk/LC_MESSAGES/xfconf.mo
-share/locale/zh_CN/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/am/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/da/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/es/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/id/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/it/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfconf.mo
 %%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.so
 %%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/Xfconf.bs
 %%PERLBIND%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Xfce4/Xfconf/.packlist
@@ -66,6 +73,68 @@ share/locale/zh_CN/LC_MESSAGES/xfconf.mo
 %%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf/Install
 %%PERLBIND%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4/Xfconf
 %%PERLBIND%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Xfce4
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tr
+%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt_BR
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb
+%%NLS%%@dirrmtry share/locale/lv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lv
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id
+%%NLS%%@dirrmtry share/locale/hu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hu
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eu
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/da
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%NLS%%@dirrmtry share/locale/am/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/am
 @dirrm share/gtk-doc/html/xfconf
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc

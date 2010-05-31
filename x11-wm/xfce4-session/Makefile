@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-session
-PORTVERSION=	4.6.1
-PORTREVISION=	5
+PORTVERSION=	4.6.2
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 DIST_SUBDIR=	xfce4
@@ -20,10 +19,10 @@ RUN_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth
 LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
@@ -31,5 +30,16 @@ USE_XFCE=	configenv libgui libutil xfconf
 USE_XORG=	x11 sm ice
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
+
+PLIST_SUB=	VERSION="${PORTVERSION:R}"
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>

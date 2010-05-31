@@ -7,7 +7,7 @@
 
 PORTNAME=	thunar-volman
 PORTVERSION=	0.3.80
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
