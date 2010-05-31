@@ -11,8 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://ftp1.sourceforge.net/wmtop/ \
 		SF		
 
-
-MAINTAINER=	uqs@spoerlein.net
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Windowmaker dock app to display top 3 CPU consuming processes
 
 USE_XORG=	xpm x11
