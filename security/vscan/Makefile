@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Evaluation version of a DOS/Windows/Linux file virus scanner
 
+BROKEN=		Does not fetch
+
 # misc/compat3x is forbidden, but with FreeBSD 5.1 or later you can use
 # libmap.conf(5) to map against current libc. This may affect the system
 # security. Use at your own risk.
