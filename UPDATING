@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100530:
+  AFFECTS: users of devel/gettext (i.e.: YOU)
+  AUTHOR: ade@FreeBSD.org
+
+  Another version of gettext (0.18), and another shlib version bump
+  (from intl.7 to intl.8)
+
+  All ports that have an identifiable known direct dependency on gettext
+  have had their PORTREVISIONs bumped.  If after upgrading:
+
+	# portupgrade -rf gettext
+	# portmaster -r gettext
+
+  there are still ports on your system that are looking for libintl.so.7
+  (either in ${LOCALBASE}/lib/compat/pkg, or non-existent), _please_ file
+  a PR so that a correct direct dependency can be added.
+
 20100524:
   AFFECTS: users of devel/darcs, ports-mgmt/porte, textproc/pandoc,
 	   x11/xmobar, x11-wm/xmonad, x11-wm/xmonad-contrib
