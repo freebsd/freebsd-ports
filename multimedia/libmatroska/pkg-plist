@@ -11,6 +11,7 @@ include/matroska/KaxContentEncoding.h
 include/matroska/KaxContexts.h
 include/matroska/KaxCues.h
 include/matroska/KaxCuesData.h
+include/matroska/KaxDefines.h
 include/matroska/KaxInfo.h
 include/matroska/KaxInfoData.h
 include/matroska/KaxSeekHead.h

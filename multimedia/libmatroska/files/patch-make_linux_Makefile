@@ -1,0 +1,11 @@
+--- make/linux/Makefile.orig	2010-05-31 18:55:06.000000000 +0200
++++ make/linux/Makefile	2010-05-31 19:05:08.000000000 +0200
+@@ -99,7 +99,7 @@
+ 	$(RANLIB) $@
+ 
+ $(LIBRARY_SO): $(objects_so)
+-	$(CXX) -shared -Wl,-soname,$(LIBRARY_SO_VER) -o $(LIBRARY_SO_VER) $(objects_so) -lebml
++	$(CXX) -shared -Wl,-soname,$(LIBRARY_SO_VER) -o $(LIBRARY_SO_VER) $(objects_so) -L$(LIBEBML_LIB_DIR) -lebml
+ 	rm -f $(LIBRARY_SO)
+ 	ln -s $(LIBRARY_SO_VER) $(LIBRARY_SO)
+ 
