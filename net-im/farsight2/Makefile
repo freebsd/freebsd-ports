@@ -7,6 +7,7 @@
 
 PORTNAME=	farsight2
 PORTVERSION=	0.0.19
+PORTREVISION=	1
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://farsight.freedesktop.org/releases/farsight2/
 
@@ -16,6 +17,7 @@ COMMENT=	Collection of GStreamer modules and libraries for videoconferencing
 LIB_DEPENDS=	nice.0:${PORTSDIR}/net-im/libnice
 
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 ltverhack gnometarget \

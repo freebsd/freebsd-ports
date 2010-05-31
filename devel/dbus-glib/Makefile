@@ -7,6 +7,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	0.86
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-glib/
 PKGNAMESUFFIX=	-glib
@@ -18,6 +19,7 @@ COMMENT=	GLib bindings for the D-BUS messaging system
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 
 USE_GNOME=	gnomehack glib20 ltverhack
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
