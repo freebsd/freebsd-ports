@@ -3055,6 +3055,7 @@
     SUBDIR += rubygem-zoom
     SUBDIR += rudeconfig
     SUBDIR += rudiments
+    SUBDIR += runawk
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += safestr
