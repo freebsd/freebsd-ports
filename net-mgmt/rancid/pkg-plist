@@ -5,6 +5,7 @@ bin/rancid-cvs
 bin/rancid-run
 libexec/rancid/alogin
 libexec/rancid/arancid
+libexec/rancid/arrancid
 libexec/rancid/avologin
 libexec/rancid/avorancid
 libexec/rancid/agmrancid
