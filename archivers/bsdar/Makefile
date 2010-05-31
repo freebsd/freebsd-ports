@@ -20,7 +20,7 @@ MAN1=		ar.1 ranlib.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700055
+.if ${OSVERSION} < 700055 || ${OSVERSION} >= 900012
 IGNORE=		does not compile
 .endif
 
