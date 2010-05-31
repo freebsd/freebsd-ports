@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opentracker
-PORTVERSION=	0.2009.06.27
+PORTVERSION=	0.2010.05.30
 CATEGORIES=	net
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
 		http://www.glenbarber.us/ports/net/${PORTNAME}/
@@ -16,6 +16,7 @@ COMMENT=	A free lightweight bittorrent tracker using libowfat
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 
+USE_BZIP2=		yes
 USE_RC_SUBR=	${PORTNAME}
 
 OPTIONS=	WANT_ACCESSLIST_BLACK "Enable client blacklisting" Off \
@@ -63,5 +64,6 @@ post-install:
 		${CP} -p ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf.sample \
 			${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf ; \
 		fi
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
