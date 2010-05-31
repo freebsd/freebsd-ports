@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	lmdbg
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	Lightweight malloc debugger
 
-BUILD_DEPENDS=	mk-configure>=0.14.0:${PORTSDIR}/devel/mk-configure
+BUILD_DEPENDS=	mk-configure>=0.15.1:${PORTSDIR}/devel/mk-configure
+RUN_DEPENDS=	runawk:${PORTSDIR}/devel/runawk
 
 USE_LDCONFIG=	yes
 
