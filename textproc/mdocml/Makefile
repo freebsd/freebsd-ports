@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mdocml
-PORTVERSION=	1.9.25
+PORTVERSION=	1.10.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		http://people.freebsd.org/~uqs/distfiles/
@@ -15,7 +15,7 @@ MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	mdoc macro compiler
 
 MAN1=	mandoc.1
-MAN7=	man.7 mdoc.7 mandoc_char.7
+MAN7=	man.7 mdoc.7 roff.7 mandoc_char.7
 
 PLIST_SUB+=	EXAMPLESDIR=share/examples/mandoc
 
