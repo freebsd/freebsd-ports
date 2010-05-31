@@ -1,6 +1,6 @@
 # New ports collection makefile for:	games/wmquake
 # Date created:				17.01.2005
-# Whom:					Ulrich Spoerlein <q@uni.de>
+# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
 #
 # $FreeBSD$
 #
@@ -9,9 +9,10 @@ PORTNAME=	wmquake
 PORTVERSION=	1.1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
+MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
+		http://people.freebsd.org/~uqs/distfiles/
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Id Software\'s Quake I in a 64x64 WM dockapp window
 
 USE_BZIP2=	yes

@@ -9,10 +9,10 @@ PORTNAME=	ipbt
 DISTVERSION=	r7471
 CATEGORIES=	misc
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/ipbt/ \
-		http://freebsd.unixfreunde.de/sources/	\
-		https://www.spoerlein.net/pub/
+		http://freebsd.unixfreunde.de/sources/ \
+		http://people.freebsd.org/~uqs/distfiles/
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	A high-tech ttyrec player with improvements over ttyplay
 
 MAN1=		ipbt.1

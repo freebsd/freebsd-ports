@@ -1,6 +1,6 @@
 # New ports collection makefile for:	audio/mp3wrap
 # Date created:				30.05.2003
-# Whom:					Ulrich Spoerlein <q@uni.de>
+# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Utility to merge mp3 files (and other formats)
 
 GNU_CONFIGURE=	yes
