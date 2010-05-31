@@ -115,6 +115,7 @@ buildenv () {
     export ARCH=${arch}
     export MACHINE_ARCH=${arch}
 
+    export X11BASE=/usr/local
     export LOCALBASE=/usr/local
     export PKGSUFFIX=.tbz
     export PKGZIPCMD=bzip2
