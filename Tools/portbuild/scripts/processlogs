@@ -178,7 +178,7 @@ sort .logs/.all | while read line; do
 
     test "$9" = "yes" && echo "<font color=\"red\">[B]</font>" >> $of
     reason="$7"
-    echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://$master/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     date="${10}"
@@ -219,7 +219,7 @@ sort -t \| +4 .logs/.all | while read line; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason="$7"
-    echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://$master/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     date="${10}"
@@ -260,7 +260,7 @@ sort -t \| +5 .logs/.all | while read line; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason="$7"
-    echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://$master/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     date="${10}"
@@ -293,7 +293,7 @@ sort -t \| +7 .logs/.all | while read line; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason="$7"
-    echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://$master/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
@@ -346,7 +346,7 @@ sort -t \| +9 .logs/.all | while read line; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason="$7"
-    echo "<a href=\"http://pointyhat.freebsd.org/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://$master/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     echo "</tr>" >> $of
