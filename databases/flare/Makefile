@@ -7,7 +7,7 @@
 
 PORTNAME=	flare
 PORTVERSION=	1.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://labs.gree.jp/data/source/
 EXTRACT_SUFX=	.tgz
@@ -24,7 +24,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_KQUEUE" LDFLAGS=-L${LOCALBASE}/lib
 
-USE_RC_SUBR=	flared.sh flarei.sh
+USE_RC_SUBR=	flared flarei
 SUB_FILES=	pkg-message
 MAKE_JOBS_SAFE=	yes
 

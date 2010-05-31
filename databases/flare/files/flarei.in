@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: flarei
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# flarei_enable (bool): Set to NO by default.
+#			Set it to YES to enable flarei.
+# flarei_config (path): Set to %%PREFIX%%/etc/flarei.conf by default.
+#
+
+. /etc/rc.subr
+
+name=flarei
+rcvar=`set_rcvar`
+command=%%PREFIX%%/bin/${name}
+extra_commands="reload"
+start_precmd=${name}_prestart
+start_postcmd=${name}_poststart
+
+flarei_prestart () {
+	case "$flarei_flags" in
+	*-p\ *|*--pid\ *)
+		err 1 "\$flarei_flags includes -p option." \
+		    "Please use \$flarei_pidfile instead."
+		;;
+	esac
+
+	case "$flarei_flags" in
+	*-f\ *|*--config\ *)
+		err 1 "\$flarei_flags includes -f option." \
+		    "Please use \$flarei_config instead."
+		;;
+	esac
+}
+
+flarei_poststart () {
+	sleep "$flarei_sleepwait"
+}
+
+load_rc_config $name
+
+: flarei_enable=${flarei_enable-"NO"}
+: flarei_config=${flarei_config-"%%PREFIX%%/etc/${name}.conf"}
+: flarei_pidfile=${flarei_pidfile-"/var/run/${name}.pid"}
+: flarei_sleepwait=${flarei_sleepwait-2}
+
+pidfile=$flarei_pidfile
+required_files=$flarei_config
+command_args="--daemonize --config $flarei_config --pid $pidfile"
+
+run_rc_command "$1"
