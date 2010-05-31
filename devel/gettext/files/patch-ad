@@ -1,14 +1,9 @@
---- gettext-tools/misc/Makefile.in.orig	Mon Mar 14 07:24:11 2005
-+++ gettext-tools/misc/Makefile.in	Mon Mar 14 20:40:33 2005
-@@ -447,11 +447,9 @@
- 	  list='$(lisp_LISP)'; for p in $$list; do \
- 	    if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	    f=$(am__strip_dir) \
+--- gettext-tools/misc/Makefile.in.orig	2010-05-09 11:58:59.000000000 -0700
++++ gettext-tools/misc/Makefile.in	2010-05-17 18:05:21.000000000 -0700
+@@ -1285,6 +1285,4 @@
+ 	    $(am__strip_dir) \
 -	    echo " $(lispLISP_INSTALL) '$$d$$p' '$(DESTDIR)$(lispdir)/$$f'"; \
- 	    $(lispLISP_INSTALL) "$$d$$p" "$(DESTDIR)$(lispdir)/$$f"; \
+ 	    $(lispLISP_INSTALL) "$$d$$p" "$(DESTDIR)$(lispdir)/$$f" || exit $$?; \
  	    if test -f $${p}c; then \
- 	      echo " $(lispLISP_INSTALL) '$${p}c' '$(DESTDIR)$(lispdir)/$${f}c'"; \
--	      $(lispLISP_INSTALL) "$${p}c" "$(DESTDIR)$(lispdir)/$${f}c"; \
- 	    else : ; fi; \
- 	  done; \
- 	else : ; fi
+-	      echo " $(lispLISP_INSTALL) '$${p}c' '$(DESTDIR)$(lispdir)/$${f}c'"; \
+ 	      $(lispLISP_INSTALL) "$${p}c" "$(DESTDIR)$(lispdir)/$${f}c" || exit $$?; \

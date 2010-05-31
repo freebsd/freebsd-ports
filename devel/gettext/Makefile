@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gettext
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.18
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -19,7 +18,7 @@ MAINTAINER=	autotools@FreeBSD.org
 COMMENT=	GNU gettext package
 
 USE_ICONV=	yes
-LIBTOOLFILES=	autoconf-lib-link/configure gettext-runtime/configure \
+LIBTOOLFILES=	gettext-runtime/configure \
 		gettext-runtime/libasprintf/configure gettext-tools/configure
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
