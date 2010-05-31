@@ -395,6 +395,7 @@
     SUBDIR += jetpack
     SUBDIR += jfduke3d
     SUBDIR += jfk
+    SUBDIR += jfsw
     SUBDIR += jigsaw
     SUBDIR += jigzo
     SUBDIR += jin

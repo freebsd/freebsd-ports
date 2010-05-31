@@ -1,0 +1,125 @@
+diff -Nur jfbuild_src_20051009.orig/include/editor.h jfbuild_src_20051009/include/editor.h
+--- jfbuild_src_20051009.orig/include/editor.h	2005-10-09 15:23:02.000000000 +0200
++++ jfbuild_src_20051009/include/editor.h	2005-10-10 15:06:18.000000000 +0200
+@@ -18,7 +18,7 @@
+ 
+ extern short temppicnum, tempcstat, templotag, temphitag, tempextra;
+ extern char tempshade, temppal, tempxrepeat, tempyrepeat;
+-extern char somethingintab;
++static char somethingintab;
+ 
+ extern char buildkeys[NUMBUILDKEYS];
+ 
+diff -Nur jfbuild_src_20051009.orig/Makefile jfbuild_src_20051009/Makefile
+--- jfbuild_src_20051009.orig/Makefile	2005-10-09 15:23:00.000000000 +0200
++++ jfbuild_src_20051009/Makefile	2005-10-10 15:06:22.000000000 +0200
+@@ -27,7 +27,7 @@
+ # Debugging options
+ #  RELEASE - 1 = no debugging
+ #  EFENCE  - 1 = compile with Electric Fence for malloc() debugging
+-RELEASE?=0
++RELEASE?=1
+ EFENCE?=0
+ 
+ # SDK locations - adjust to match your setup
+diff -Nur jfbuild_src_20051009.orig/src/build.c jfbuild_src_20051009/src/build.c
+--- jfbuild_src_20051009.orig/src/build.c	2005-10-09 15:23:00.000000000 +0200
++++ jfbuild_src_20051009/src/build.c	2005-10-10 15:06:18.000000000 +0200
+@@ -86,7 +86,7 @@
+ 
+ short temppicnum, tempcstat, templotag, temphitag, tempextra;
+ char tempshade, temppal, tempvis, tempxrepeat, tempyrepeat;
+-char somethingintab = 255;
++static char somethingintab = 255;
+ 
+ static char boardfilename[BMAX_PATH], selectedboardfilename[BMAX_PATH];
+ static struct _directoryitem {
+diff -Nur jfbuild_src_20051009.orig/src/crc32.c jfbuild_src_20051009/src/crc32.c
+--- jfbuild_src_20051009.orig/src/crc32.c	2005-10-09 15:23:00.000000000 +0200
++++ jfbuild_src_20051009/src/crc32.c	2005-10-10 15:06:18.000000000 +0200
+@@ -73,16 +73,6 @@
+ 	}
+ }
+ 
+-
+-unsigned long crc32(unsigned char *blk, unsigned long len)
+-{
+-	unsigned long crc;
+-	
+-	crc32init(&crc);
+-	crc32block(&crc, blk, len);
+-	return crc32finish(&crc);
+-}
+-
+ void crc32init(unsigned long *crcvar)
+ {
+ 	if (!crcvar) return;
+diff -Nur jfbuild_src_20051009.orig/src/sdlayer.c jfbuild_src_20051009/src/sdlayer.c
+--- jfbuild_src_20051009.orig/src/sdlayer.c	2005-10-09 15:23:00.000000000 +0200
++++ jfbuild_src_20051009/src/sdlayer.c	2005-10-10 15:06:22.000000000 +0200
+@@ -24,6 +24,10 @@
+ // undefine to restrict windowed resolutions to conventional sizes
+ #define ANY_WINDOWED_SIZE
+ 
++// fix for mousewheel
++#define MWHEELTICKS 10
++static unsigned long mwheelup, mwheeldown;
++
+ int   _buildargc = 1;
+ char **_buildargv = NULL;
+ extern long app_main(long argc, char *argv[]);
+@@ -486,8 +490,8 @@
+ 	initprintf("Initialising mouse\n");
+ 
+ 	// grab input
+-	grabmouse(1);
+ 	moustat=1;
++	grabmouse(1);
+ 
+ 	return 0;
+ }
+@@ -1363,14 +1367,22 @@
+ 					case SDL_BUTTON_LEFT: j = 0; break;
+ 					case SDL_BUTTON_RIGHT: j = 1; break;
+ 					case SDL_BUTTON_MIDDLE: j = 2; break;
+-					default: j = -1; break;
++					default: j = ev.button.button; break;
+ 				}
+ 				if (j<0) break;
+ 				
+-				if (ev.button.state == SDL_PRESSED)
++				if (ev.button.state == SDL_PRESSED) {
++					if (ev.button.button == SDL_BUTTON_WHEELUP) {
++						mwheelup = totalclock;
++					}
++					if (ev.button.button == SDL_BUTTON_WHEELDOWN) {
++						mwheeldown = totalclock;
++					}
+ 					mouseb |= (1<<j);
+-				else
+-					mouseb &= ~(1<<j);
++				}
++				else {
++					if (j < 4) mouseb &= ~(1<<j);
++				}
+ 
+ 				if (mousepresscallback)
+ 					mousepresscallback(j+1, ev.button.state == SDL_PRESSED);
+@@ -1435,6 +1447,17 @@
+ 
+ 	sampletimer();
+ 
++	if (moustat) {
++		if ((mwheelup) && (mwheelup <= (totalclock - MWHEELTICKS))) {
++			mouseb &= ~16;
++			mwheelup = 0;
++		}
++		if ((mwheeldown) && (mwheeldown <= (totalclock - MWHEELTICKS))) {
++			mouseb &= ~32;
++			mwheeldown = 0;
++		}
++	}
++
+ #ifdef HAVE_GTK2
+ 	if (gtkenabled) update_startwin();
+ #endif

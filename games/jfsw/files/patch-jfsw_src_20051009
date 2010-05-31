@@ -1,0 +1,4597 @@
+diff -Nur jfsw_src_20051009.orig/Makefile jfsw_src_20051009/Makefile
+--- jfsw_src_20051009.orig/Makefile	2005-10-09 15:28:24.000000000 +0200
++++ jfsw_src_20051009/Makefile	2005-10-10 15:02:08.000000000 +0200
+@@ -12,7 +12,7 @@
+ NOASM = 0
+ 
+ # Debugging options
+-RELEASE?=0
++RELEASE?=1
+ 
+ # build locations
+ SRC=source/
+@@ -56,11 +56,8 @@
+ AUDIOLIB_FX=$(OBJ)mv_mix.$o \
+ 	  $(OBJ)mv_mix16.$o \
+ 	  $(OBJ)mvreverb.$o \
+-	  $(OBJ)pitch.$o \
+-	  $(OBJ)multivoc.$o \
+ 	  $(OBJ)ll_man.$o \
+-	  $(OBJ)fx_man.$o \
+-	  $(OBJ)dsoundout.$o
++	  $(OBJ)fx_man.$o
+ AUDIOLIB_MUSIC=$(OBJ)midi.$o \
+ 	  $(OBJ)mpu401.$o \
+ 	  $(OBJ)music.$o
+@@ -157,9 +154,16 @@
+ 	EDITOROBJS+= $(OBJ)buildres.$o
+ endif
+ 
+-ifeq ($(RENDERTYPE),SDL)
+-	override CFLAGS+= $(subst -Dmain=SDL_main,,$(shell sdl-config --cflags))
+-	AUDIOLIBOBJ=$(AUDIOLIB_MUSIC_STUB) $(AUDIOLIB_FX_STUB)
++ifeq ($(RENDERTYPE),SDL)
++	override CFLAGS+= $(subst -Dmain=SDL_main,,$(shell sdl-config --cflags) -D__cdecl=" ") 
++	LIBS+= $(shell sdl-config --libs) -lSDL_mixer
++	AUDIOLIB_FX+= $(OBJ)dsl.$o \
++		      $(OBJ)nodpmi.$o \
++		      $(OBJ)unixpitch.$o \
++		      $(OBJ)unixvoc.$o
++		      
++	AUDIOLIB_MUSIC=$(OBJ)sdlmusic.$o $(OBJ)unixglob.$o
++	AUDIOLIBOBJ=$(AUDIOLIB_MUSIC) $(AUDIOLIB_FX)
+ 
+ 	ifeq (1,$(HAVE_GTK2))
+ 		override CFLAGS+= -DHAVE_GTK2 $(shell pkg-config --cflags gtk+-2.0)
+@@ -170,7 +174,11 @@
+ 	GAMEOBJS+= $(OBJ)game_icon.$o
+ 	EDITOROBJS+= $(OBJ)build_icon.$o
+ endif
+-ifeq ($(RENDERTYPE),WIN)
++ifeq ($(RENDERTYPE),WIN)
++	AUDIOLIB_FX+= $(OBJ)audiolib_fx_fmod.$o \
++	              $(OBJ)dsoundout.$o \
++	              $(OBJ)pitch.$o \
++	              $(OBJ)multivoc.$o
+ 	AUDIOLIBOBJ=$(AUDIOLIB_MUSIC) $(AUDIOLIB_FX)
+ endif
+ 
+diff -Nur jfsw_src_20051009.orig/Makefile.deps jfsw_src_20051009/Makefile.deps
+--- jfsw_src_20051009.orig/Makefile.deps	2005-10-09 15:28:24.000000000 +0200
++++ jfsw_src_20051009/Makefile.deps	2005-10-10 15:02:08.000000000 +0200
+@@ -95,6 +95,11 @@
+ $(OBJ)animlib.$o: $(SRC)jmact/animlib.c $(SRC)jmact/types.h $(SRC)jmact/develop.h $(SRC)jmact/util_lib.h $(SRC)jmact/animlib.h
+ 
+ # jAudioLib objects
++$(OBJ)dsl.$o: $(SRC)jaudiolib/dsl.c $(SRC)jaudiolib/util.h
++$(OBJ)nodpmi.$o: $(SRC)jaudiolib/nodpmi.c $(SRC)jaudiolib/dpmi.h
++$(OBJ)unixpitch.$o: $(SRC)jaudiolib/unixpitch.c $(SRC)jaudiolib/pitch.h
++$(OBJ)unixvoc.$o: $(SRC)jaudiolib/unixvoc.c $(SRC)jaudiolib/usrhooks.h $(SRC)jaudiolib/linklist.h $(SRC)jaudiolib/pitch.h $(SRC)jaudiolib/multivoc.h $(SRC)jaudiolib/_multivc.h
++
+ $(OBJ)audiolib_fxstub.$o: $(SRC)jaudiolib/audiolib_fxstub.c $(SRC)jaudiolib/fx_man.h
+ $(OBJ)audiolib_musicstub.$o: $(SRC)jaudiolib/audiolib_musicstub.c $(SRC)jaudiolib/music.h
+ 
+diff -Nur jfsw_src_20051009.orig/source/config.c jfsw_src_20051009/source/config.c
+--- jfsw_src_20051009.orig/source/config.c	2005-10-09 15:28:26.000000000 +0200
++++ jfsw_src_20051009/source/config.c	2005-10-10 15:02:08.000000000 +0200
+@@ -63,8 +63,8 @@
+ //
+ // Sound variables
+ //
+-int32 FXDevice    = -1;
+-int32 MusicDevice = -1;
++int32 FXDevice    = 1;
++int32 MusicDevice = 1;
+ int32 FXVolume    = 192;
+ int32 MusicVolume = 128;
+ int32 NumVoices   = 4;
+@@ -215,8 +215,8 @@
+    ScreenWidth = 640;
+    ScreenHeight = 480;
+    ScreenBPP = 8;
+-   FXDevice = -1;
+-   MusicDevice = -1;
++   FXDevice = 1;
++   MusicDevice = 1;
+    FXVolume = 192;
+    MusicVolume = 128;
+    NumVoices = 4;
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/debugio.h jfsw_src_20051009/source/jaudiolib/debugio.h
+--- jfsw_src_20051009.orig/source/jaudiolib/debugio.h	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/debugio.h	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,30 @@
++/*
++Copyright (C) 1994-1995 Apogee Software, Ltd.
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++*/
++#ifndef __DEBUGIO_H
++#define __DEBUGIO_H
++
++void DB_SetXY( int x, int y );
++void DB_PutChar( char ch );
++int  DB_PrintString( char *string );
++int  DB_PrintNum( int number );
++int  DB_PrintUnsigned( unsigned long number, int radix );
++int  DB_printf( char *fmt, ... );
++
++#endif
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/dma.h jfsw_src_20051009/source/jaudiolib/dma.h
+--- jfsw_src_20051009.orig/source/jaudiolib/dma.h	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/dma.h	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,83 @@
++/*
++Copyright (C) 1994-1995 Apogee Software, Ltd.
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++*/
++/**********************************************************************
++   file:   DMA.H
++
++   author: James R. Dose
++   date:   February 4, 1994
++
++   Public header file for DMA.C
++
++   (c) Copyright 1994 James R. Dose.  All Rights Reserved.
++**********************************************************************/
++
++#ifndef __DMA_H
++#define __DMA_H
++
++enum DMA_ERRORS
++   {
++   DMA_Error = -1,
++   DMA_Ok    = 0,
++   DMA_ChannelOutOfRange,
++   DMA_InvalidChannel
++   };
++
++enum DMA_Modes
++   {
++   DMA_SingleShotRead,
++   DMA_SingleShotWrite,
++   DMA_AutoInitRead,
++   DMA_AutoInitWrite
++   };
++
++char *DMA_ErrorString
++   (
++   int ErrorNumber
++   );
++
++int DMA_VerifyChannel
++   (
++   int channel
++   );
++
++int DMA_SetupTransfer
++   (
++   int  channel,
++   char *address,
++   int  length,
++   int  mode
++   );
++
++int DMA_EndTransfer
++   (
++   int channel
++   );
++
++char *DMA_GetCurrentPos
++   (
++   int channel
++   );
++
++int DMA_GetTransferCount
++   (
++   int channel
++   );
++
++#endif
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/dpmi.h jfsw_src_20051009/source/jaudiolib/dpmi.h
+--- jfsw_src_20051009.orig/source/jaudiolib/dpmi.h	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/dpmi.h	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,43 @@
++/*
++Copyright (C) 1994-1995 Apogee Software, Ltd.
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++*/
++/**********************************************************************
++   module: DPMI.H
++
++   author: James R. Dose
++   date:   March 31, 1994
++
++   Inline functions for performing DPMI calls.
++
++   (c) Copyright 1994 James R. Dose.  All Rights Reserved.
++**********************************************************************/
++
++#ifndef __DPMI_H
++#define __DPMI_H
++
++enum DPMI_Errors
++   {
++   DPMI_Warning = -2,
++   DPMI_Error   = -1,
++   DPMI_Ok      = 0
++   };
++
++int  DPMI_GetDOSMemory( void **ptr, int *descriptor, unsigned length );
++int  DPMI_FreeDOSMemory( int descriptor );
++#endif
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/dsl.c jfsw_src_20051009/source/jaudiolib/dsl.c
+--- jfsw_src_20051009.orig/source/jaudiolib/dsl.c	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/dsl.c	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,257 @@
++/*
++Copyright (C) 2003-2004 Ryan C. Gordon. and James Bentler
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++Originally written by Ryan C. Gordon. (icculus@clutteredmind.org)
++Adapted to work with JonoF's port by James Bentler (bentler@cs.umn.edu)
++
++*/
++#include <stdlib.h>
++#include <string.h>
++
++#include "dsl.h"
++#include "util.h"
++
++#include "SDL.h"
++#include "SDL_mixer.h"
++
++extern volatile int MV_MixPage;
++
++static int DSL_ErrorCode = DSL_Ok;
++
++static int mixer_initialized;
++
++static void ( *_CallBackFunc )( void );
++static volatile char *_BufferStart;
++static int _BufferSize;
++static int _NumDivisions;
++static int _SampleRate;
++static int _remainder;
++
++static Mix_Chunk *blank;
++static unsigned char *blank_buf;
++
++/*
++possible todo ideas: cache sdl/sdl mixer error messages.
++*/
++
++char *DSL_ErrorString( int ErrorNumber )
++{
++   char *ErrorString;
++   
++   switch (ErrorNumber) {
++       case DSL_Warning:
++       case DSL_Error:
++           ErrorString = DSL_ErrorString(DSL_ErrorCode);
++           break;
++       
++       case DSL_Ok:
++           ErrorString = "SDL Driver ok.";
++           break;
++       
++       case DSL_SDLInitFailure:
++           ErrorString = "SDL Audio initialization failed.";
++           break;
++       
++       case DSL_MixerActive:
++           ErrorString = "SDL Mixer already initialized.";
++           break;  
++   
++       case DSL_MixerInitFailure:
++           ErrorString = "SDL Mixer initialization failed.";
++           break;
++           
++       default:
++           ErrorString = "Unknown SDL Driver error.";
++           break;
++   }
++   
++   return ErrorString;
++}
++
++static void DSL_SetErrorCode(int ErrorCode)
++{
++   DSL_ErrorCode = ErrorCode;
++}
++
++int DSL_Init( void )
++{
++   DSL_SetErrorCode(DSL_Ok);
++   
++   if (SDL_InitSubSystem(SDL_INIT_AUDIO) < 0) {
++       DSL_SetErrorCode(DSL_SDLInitFailure);
++       
++       return DSL_Error;
++   }
++   
++   return DSL_Ok;
++}
++
++void DSL_Shutdown( void )
++{
++   DSL_StopPlayback();
++}
++
++static void mixer_callback(int chan, void *stream, int len, void *udata)
++{
++   Uint8 *stptr;
++   Uint8 *fxptr;
++   int copysize;
++   
++   /* len should equal _BufferSize, else this is screwed up */
++
++   stptr = (Uint8 *)stream;
++   
++   if (_remainder > 0) {
++       copysize = min(len, _remainder);
++       
++       fxptr = (Uint8 *)(&_BufferStart[MV_MixPage * 
++           _BufferSize]);
++       
++       memcpy(stptr, fxptr+(_BufferSize-_remainder), copysize);
++       
++       len -= copysize;
++       _remainder -= copysize;
++       
++       stptr += copysize;
++   }
++   
++   while (len > 0) {
++       /* new buffer */
++       
++       _CallBackFunc();
++       
++       fxptr = (Uint8 *)(&_BufferStart[MV_MixPage * 
++           _BufferSize]);
++
++       copysize = min(len, _BufferSize);
++       
++       memcpy(stptr, fxptr, copysize);
++       
++       len -= copysize;
++       
++       stptr += copysize;
++   }
++   
++   _remainder = len;
++}
++
++int   DSL_BeginBufferedPlayback( char *BufferStart,
++      int BufferSize, int NumDivisions, unsigned SampleRate,
++      int MixMode, void ( *CallBackFunc )( void ) )
++{
++   Uint16 format;
++   Uint8 *tmp;
++   int channels;
++   int chunksize;
++       
++   if (mixer_initialized) {
++       DSL_SetErrorCode(DSL_MixerActive);
++       
++       return DSL_Error;
++   }
++   
++   _CallBackFunc = CallBackFunc;
++   _BufferStart = BufferStart;
++   _BufferSize = (BufferSize / NumDivisions);
++   _NumDivisions = NumDivisions;
++   _SampleRate = SampleRate;
++
++   _remainder = 0;
++   
++   format = (MixMode & SIXTEEN_BIT) ? AUDIO_S16SYS : AUDIO_U8;
++   channels = (MixMode & STEREO) ? 2 : 1;
++
++/*
++   23ms is typically ideal (11025,22050,44100)
++   46ms isn't bad
++*/
++   
++   chunksize = 512;
++   
++   if (SampleRate >= 16000) chunksize *= 2;
++   if (SampleRate >= 32000) chunksize *= 2;
++   
++/* 
++// SDL mixer does this already
++   if (MixMode & SIXTEEN_BIT) chunksize *= 2;
++   if (MixMode & STEREO) chunksize *= 2;
++*/
++   
++   if (Mix_OpenAudio(SampleRate, format, channels, chunksize) < 0) {
++       DSL_SetErrorCode(DSL_MixerInitFailure);
++       
++       return DSL_Error;
++   }
++
++/*
++   Mix_SetPostMix(mixer_callback, NULL);
++*/
++   /* have to use a channel because postmix will overwrite the music... */
++   Mix_RegisterEffect(0, mixer_callback, NULL, NULL);
++   
++   /* create a dummy sample just to allocate that channel */
++   blank_buf = (Uint8 *)malloc(4096);
++   memset(blank_buf, 0, 4096);
++   
++   blank = Mix_QuickLoad_RAW(blank_buf, 4096);
++       
++   Mix_PlayChannel(0, blank, -1);
++   
++   mixer_initialized = 1;
++   
++   return DSL_Ok;
++}
++
++void DSL_StopPlayback( void )
++{
++   if (mixer_initialized) {
++       Mix_HaltChannel(0);
++   }
++   
++   if (blank != NULL) {
++       Mix_FreeChunk(blank);
++   }
++   
++   blank = NULL;
++   
++   if (blank_buf  != NULL) {
++       free(blank_buf);
++   }
++   
++   blank_buf = NULL;
++   
++   if (mixer_initialized) {
++       Mix_CloseAudio();
++   }
++   
++   mixer_initialized = 0;
++}
++
++unsigned DSL_GetPlaybackRate( void )
++{
++   return _SampleRate;
++}
++
++unsigned long DisableInterrupts( void )
++{
++   return 0;
++}
++
++void RestoreInterrupts( unsigned long flags )
++{
++}
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/dsl.h jfsw_src_20051009/source/jaudiolib/dsl.h
+--- jfsw_src_20051009.orig/source/jaudiolib/dsl.h	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/dsl.h	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,50 @@
++/*
++Copyright (C) 2003-2004 Ryan C. Gordon. and James Bentler
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++Originally written by Ryan C. Gordon. (icculus@clutteredmind.org)
++Adapted to work with JonoF's port by James Bentler (bentler@cs.umn.edu)
++
++*/
++#ifndef AUDIOLIB__DSL_H
++#define AUDIOLIB__DSL_H
++
++#define MONO_8BIT    0
++#define STEREO      1
++#define SIXTEEN_BIT 2
++#define STEREO_16BIT ( STEREO | SIXTEEN_BIT )
++
++enum DSL_ERRORS
++   {
++   DSL_Warning = -2,
++   DSL_Error = -1,
++   DSL_Ok = 0,
++   DSL_SDLInitFailure,
++   DSL_MixerActive,
++   DSL_MixerInitFailure
++   };
++
++char *DSL_ErrorString( int ErrorNumber );
++int   DSL_Init( void );
++void  DSL_StopPlayback( void );
++unsigned DSL_GetPlaybackRate( void );
++int   DSL_BeginBufferedPlayback( char *BufferStart,
++      int BufferSize, int NumDivisions, unsigned SampleRate,
++      int MixMode, void ( *CallBackFunc )( void ) );
++void  DSL_Shutdown( void );
++
++#endif
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/interrup.h jfsw_src_20051009/source/jaudiolib/interrup.h
+--- jfsw_src_20051009.orig/source/jaudiolib/interrup.h	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/interrup.h	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,50 @@
++/*
++Copyright (C) 1994-1995 Apogee Software, Ltd.
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++*/
++/**********************************************************************
++   module: INTERRUP.H
++
++   author: James R. Dose
++   date:   March 31, 1994
++
++   Inline functions for disabling and restoring the interrupt flag.
++
++   (c) Copyright 1994 James R. Dose.  All Rights Reserved.
++**********************************************************************/
++
++#ifndef __INTERRUPT_H
++#define __INTERRUPT_H
++
++unsigned long DisableInterrupts( void );
++void          RestoreInterrupts( unsigned long flags );
++
++#ifdef PLAT_DOS
++#pragma aux DisableInterrupts = \
++   "pushfd",                    \
++   "pop    eax",                \
++   "cli"                        \
++   modify [ eax ];
++
++#pragma aux RestoreInterrupts = \
++   "push   eax",                \
++   "popfd"                      \
++   parm [ eax ];
++#endif
++
++#endif
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/_multivc.h jfsw_src_20051009/source/jaudiolib/_multivc.h
+--- jfsw_src_20051009.orig/source/jaudiolib/_multivc.h	2005-10-09 15:28:24.000000000 +0200
++++ jfsw_src_20051009/source/jaudiolib/_multivc.h	2005-10-10 15:02:08.000000000 +0200
+@@ -67,8 +67,11 @@
+ #define SILENCE_8BIT      0x80808080
+ //#define SILENCE_16BIT_PAS 0
+ 
+-//#define MixBufferSize     256
++#ifdef WINDOWS
+ #define MixBufferSize     (MV_GetBufferSize(MV_RequestedMixRate))
++#else
++#define MixBufferSize     256
++#endif
+ 
+ #define NumberOfBuffers   16
+ #define TotalBufferSize   ( MixBufferSize * NumberOfBuffers )
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/nodpmi.c jfsw_src_20051009/source/jaudiolib/nodpmi.c
+--- jfsw_src_20051009.orig/source/jaudiolib/nodpmi.c	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/nodpmi.c	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,50 @@
++/*
++Copyright (C) 1994-1995 Apogee Software, Ltd.
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++*/
++/**********************************************************************
++   module: NODPMI.C
++
++   Functions for faking DPMI calls.
++
++**********************************************************************/
++
++#include <stdlib.h>
++#include <string.h>
++#include "dpmi.h"
++
++#define TRUE  ( 1 == 1 )
++#define FALSE ( !TRUE )
++
++int DPMI_GetDOSMemory( void **ptr, int *descriptor, unsigned length )
++{
++   /* Lovely... */
++   
++   *ptr = (void *)malloc(length);
++   
++   *descriptor = (int) *ptr;
++   
++   return (descriptor == 0) ? DPMI_Error : DPMI_Ok;
++}
++
++int DPMI_FreeDOSMemory( int descriptor )
++{
++   free((void *)descriptor);
++   
++   return (descriptor == 0) ? DPMI_Error : DPMI_Ok;
++}
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/platform.h jfsw_src_20051009/source/jaudiolib/platform.h
+--- jfsw_src_20051009.orig/source/jaudiolib/platform.h	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/platform.h	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,60 @@
++#ifndef _INCLUDE_PLATFORM_H_
++#define _INCLUDE_PLATFORM_H_
++
++#if (!defined __EXPORT__)
++#define __EXPORT__
++#endif
++
++#if (defined __WATCOMC__)
++#define snprintf _snprintf
++#endif
++
++static __inline unsigned short _swap16(unsigned short D)
++{
++#if PLATFORM_MACOSX
++    register unsigned short returnValue;
++    __asm__ volatile("lhbrx %0,0,%1"
++        : "=r" (returnValue)
++        : "r" (&D)
++    );
++    return returnValue;
++#else
++    return((D<<8)|(D>>8));
++#endif
++}
++
++static __inline unsigned int _swap32(unsigned int D)
++{
++#if PLATFORM_MACOSX
++    register unsigned int returnValue;
++    __asm__ volatile("lwbrx %0,0,%1"
++        : "=r" (returnValue)
++        : "r" (&D)
++    );
++    return returnValue;
++#else
++    return((D<<24)|((D<<8)&0x00FF0000)|((D>>8)&0x0000FF00)|(D>>24));
++#endif
++}
++
++#if PLATFORM_MACOSX
++#define PLATFORM_BIGENDIAN 1
++#define BUILDSWAP_INTEL16(x) _swap16(x)
++#define BUILDSWAP_INTEL32(x) _swap32(x)
++#else
++#if __BYTE_ORDER == __LITTLE_ENDIAN
++#define PLATFORM_LITTLEENDIAN 1
++#define BUILDSWAP_INTEL16(x) (x)
++#define BUILDSWAP_INTEL32(x) (x)
++#else
++#define PLATFORM_BIGENDIAN 1
++#define BUILDSWAP_INTEL16(x) _swap16(x)
++#define BUILDSWAP_INTEL32(x) _swap32(x)
++#endif
++#endif
++
++extern int has_altivec;  /* PowerPC-specific. */
++
++#endif  /* !defined _INCLUDE_PLATFORM_H_ */
++
++/* end of platform.h ... */
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/sdlmusic.c jfsw_src_20051009/source/jaudiolib/sdlmusic.c
+--- jfsw_src_20051009.orig/source/jaudiolib/sdlmusic.c	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/sdlmusic.c	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,480 @@
++/*
++Copyright (C) 2003-2004 Ryan C. Gordon. and James Bentler
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++Originally written by Ryan C. Gordon. (icculus@clutteredmind.org)
++Adapted to work with JonoF's port by James Bentler (bentler@cs.umn.edu)
++
++*/
++/*
++ * A reimplementation of Jim Dose's FX_MAN routines, using  SDL_mixer 1.2.
++ *   Whee. FX_MAN is also known as the "Apogee Sound System", or "ASS" for
++ *   short. How strangely appropriate that seems.
++ */
++
++#include <stdio.h>
++#include <stdlib.h>
++#include <stdarg.h>
++#include <string.h>
++#include <assert.h>
++
++#include "types.h"
++#include "file_lib.h"
++#include "compat.h"
++#include "cache1d.h"
++
++#ifndef MAX_PATH
++#define MAX_PATH 256
++#endif
++
++#if (defined __WATCOMC__)
++// This is probably out of date.  --ryan.
++#include "dukesnd_watcom.h"
++#endif
++
++#if (!defined __WATCOMC__)
++#define cdecl
++#endif
++
++#include "SDL.h"
++#include "SDL_mixer.h"
++#include "music.h"
++
++#define __FX_TRUE  (1 == 1)
++#define __FX_FALSE (!__FX_TRUE)
++
++#define DUKESND_DEBUG       "DUKESND_DEBUG"
++
++#ifndef min
++#define min(a, b)  (((a) < (b)) ? (a) : (b))
++#endif
++
++#ifndef max
++#define max(a, b)  (((a) > (b)) ? (a) : (b))
++#endif
++
++void GetUnixPathFromEnvironment( char *fullname, int32 length, const char *filename );
++
++int MUSIC_ErrorCode = MUSIC_Ok;
++
++static char warningMessage[80];
++static char errorMessage[80];
++static int fx_initialized = 0;
++static int numChannels = MIX_CHANNELS;
++static void (*callback)(unsigned long);
++static int reverseStereo = 0;
++static int reverbDelay = 256;
++static int reverbLevel = 0;
++static int fastReverb = 0;
++static FILE *debug_file = NULL;
++static int initialized_debugging = 0;
++static int mixerIsStereo = 1;
++
++// This gets called all over the place for information and debugging messages.
++//  If the user set the DUKESND_DEBUG environment variable, the messages
++//  go to the file that is specified in that variable. Otherwise, they
++//  are ignored for the expense of the function call. If DUKESND_DEBUG is
++//  set to "-" (without the quotes), then the output goes to stdout.
++static void musdebug(const char *fmt, ...)
++{
++    va_list ap;
++
++    if (debug_file)
++    {
++        fprintf(debug_file, "DUKEMUS: ");
++        va_start(ap, fmt);
++        vfprintf(debug_file, fmt, ap);
++        va_end(ap);
++        fprintf(debug_file, "\n");
++        fflush(debug_file);
++    } // if
++} // musdebug
++
++static void init_debugging(void)
++{
++    const char *envr;
++
++    if (initialized_debugging)
++        return;
++
++    envr = getenv(DUKESND_DEBUG);
++    if (envr != NULL)
++    {
++        if (strcmp(envr, "-") == 0)
++            debug_file = stdout;
++        else
++            debug_file = fopen(envr, "w");
++
++        if (debug_file == NULL)
++            fprintf(stderr, "DUKESND: -WARNING- Could not open debug file!\n");
++        else
++            setbuf(debug_file, NULL);
++    } // if
++
++    initialized_debugging = 1;
++} // init_debugging
++
++static void setWarningMessage(const char *msg)
++{
++    strncpy(warningMessage, msg, sizeof (warningMessage));
++    // strncpy() doesn't add the null char if there isn't room...
++    warningMessage[sizeof (warningMessage) - 1] = '\0';
++    musdebug("Warning message set to [%s].", warningMessage);
++} // setErrorMessage
++
++
++static void setErrorMessage(const char *msg)
++{
++    strncpy(errorMessage, msg, sizeof (errorMessage));
++    // strncpy() doesn't add the null char if there isn't room...
++    errorMessage[sizeof (errorMessage) - 1] = '\0';
++    musdebug("Error message set to [%s].", errorMessage);
++} // setErrorMessage
++
++// The music functions...
++
++char *MUSIC_ErrorString(int ErrorNumber)
++{
++    switch (ErrorNumber)
++    {
++        case MUSIC_Warning:
++            return(warningMessage);
++
++        case MUSIC_Error:
++            return(errorMessage);
++
++        case MUSIC_Ok:
++            return("OK; no error.");
++
++        case MUSIC_ASSVersion:
++            return("Incorrect sound library version.");
++
++        case MUSIC_SoundCardError:
++            return("General sound card error.");
++
++        case MUSIC_InvalidCard:
++            return("Invalid sound card.");
++
++        case MUSIC_MidiError:
++            return("MIDI error.");
++
++        case MUSIC_MPU401Error:
++            return("MPU401 error.");
++
++        case MUSIC_TaskManError:
++            return("Task Manager error.");
++
++        //case MUSIC_FMNotDetected:
++        //    return("FM not detected error.");
++
++        case MUSIC_DPMI_Error:
++            return("DPMI error.");
++
++        default:
++            return("Unknown error.");
++    } // switch
++
++    assert(0);    // shouldn't hit this point.
++    return(NULL);
++} // MUSIC_ErrorString
++
++
++static int music_initialized = 0;
++static int music_context = 0;
++static int music_loopflag = MUSIC_PlayOnce;
++static char *music_songdata = NULL;
++static Mix_Music *music_musicchunk = NULL;
++
++int MUSIC_Init(int SoundCard, int Address)
++{
++    init_debugging();
++
++    musdebug("INIT! card=>%d, address=>%d...", SoundCard, Address);
++
++    if (music_initialized)
++    {
++        setErrorMessage("Music system is already initialized.");
++        return(MUSIC_Error);
++    } // if
++    
++    SoundCard = 1;
++
++    music_initialized = 1;
++    return(MUSIC_Ok);
++} // MUSIC_Init
++
++
++int MUSIC_Shutdown(void)
++{
++    musdebug("shutting down sound subsystem.");
++
++    MUSIC_StopSong();
++    music_context = 0;
++    music_initialized = 0;
++    music_loopflag = MUSIC_PlayOnce;
++    return(MUSIC_Ok);
++} // MUSIC_Shutdown
++
++
++void MUSIC_SetMaxFMMidiChannel(int channel)
++{
++    musdebug("STUB ... MUSIC_SetMaxFMMidiChannel(%d).\n", channel);
++} // MUSIC_SetMaxFMMidiChannel
++
++
++void MUSIC_SetVolume(int volume)
++{
++    volume = max( 0, volume );
++    volume = min( volume, 255 );
++
++    Mix_VolumeMusic(volume >> 1);  // convert 0-255 to 0-128.
++} // MUSIC_SetVolume
++
++
++void MUSIC_SetMidiChannelVolume(int channel, int volume)
++{
++    musdebug("STUB ... MUSIC_SetMidiChannelVolume(%d, %d).\n", channel, volume);
++} // MUSIC_SetMidiChannelVolume
++
++
++void MUSIC_ResetMidiChannelVolumes(void)
++{
++    musdebug("STUB ... MUSIC_ResetMidiChannelVolumes().\n");
++} // MUSIC_ResetMidiChannelVolumes
++
++
++int MUSIC_GetVolume(void)
++{
++    return(Mix_VolumeMusic(-1) << 1);  // convert 0-128 to 0-255.
++} // MUSIC_GetVolume
++
++
++void MUSIC_SetLoopFlag(int loopflag)
++{
++    music_loopflag = loopflag;
++} // MUSIC_SetLoopFlag
++
++
++int MUSIC_SongPlaying(void)
++{
++    return((Mix_PlayingMusic()) ? __FX_TRUE : __FX_FALSE);
++} // MUSIC_SongPlaying
++
++
++void MUSIC_Continue(void)
++{
++    if (Mix_PausedMusic())
++        Mix_ResumeMusic();
++    else if (music_songdata)
++        MUSIC_PlaySong(music_songdata, MUSIC_PlayOnce);
++} // MUSIC_Continue
++
++
++void MUSIC_Pause(void)
++{
++    Mix_PauseMusic();
++} // MUSIC_Pause
++
++
++int MUSIC_StopSong(void)
++{
++    //if (!fx_initialized)
++    if (!Mix_QuerySpec(NULL, NULL, NULL))
++    {
++        setErrorMessage("Need FX system initialized, too. Sorry.");
++        return(MUSIC_Error);
++    } // if
++
++    if ( (Mix_PlayingMusic()) || (Mix_PausedMusic()) )
++        Mix_HaltMusic();
++
++    if (music_musicchunk)
++        Mix_FreeMusic(music_musicchunk);
++
++    music_songdata = NULL;
++    music_musicchunk = NULL;
++    return(MUSIC_Ok);
++} // MUSIC_StopSong
++
++
++int MUSIC_PlaySong(unsigned char *song, int loopflag)
++{
++    //SDL_RWops *rw;
++
++    MUSIC_StopSong();
++
++    music_songdata = song;
++
++    // !!! FIXME: This could be a problem...SDL/SDL_mixer wants a RWops, which
++    // !!! FIXME:  is an i/o abstraction. Since we already have the MIDI data
++    // !!! FIXME:  in memory, we fake it with a memory-based RWops. None of
++    // !!! FIXME:  this is a problem, except the RWops wants to know how big
++    // !!! FIXME:  its memory block is (so it can do things like seek on an
++    // !!! FIXME:  offset from the end of the block), and since we don't have
++    // !!! FIXME:  this information, we have to give it SOMETHING.
++
++    /* !!! ARGH! There's no LoadMUS_RW  ?!
++    rw = SDL_RWFromMem((void *) song, (10 * 1024) * 1024);  // yikes.
++    music_musicchunk = Mix_LoadMUS_RW(rw);
++    Mix_PlayMusic(music_musicchunk, (loopflag == MUSIC_PlayOnce) ? 0 : -1);
++    */
++
++    return(MUSIC_Ok);
++} // MUSIC_PlaySong
++
++
++extern char ApogeePath[256] = "/tmp/";
++
++// Duke3D-specific.  --ryan.
++void PlayMusic(char *_filename)
++{
++    //char filename[MAX_PATH];
++    //strcpy(filename, _filename);
++    //FixFilePath(filename);
++
++    char filename[MAX_PATH];
++    long handle;
++    long size;
++    void *song;
++    long rc;
++
++    MUSIC_StopSong();
++
++    // Read from a groupfile, write it to disk so SDL_mixer can read it.
++    //   Lame.  --ryan.
++    handle = kopen4load(_filename, 0);
++    if (handle == -1)
++        return;
++
++    size = kfilelength(handle);
++    if (size == -1)
++    {
++        kclose(handle);
++        return;
++    } // if
++
++    song = malloc(size);
++    if (song == NULL)
++    {
++        kclose(handle);
++        return;
++    } // if
++
++    rc = kread(handle, song, size);
++    kclose(handle);
++    if (rc != size)
++    {
++        free(song);
++        return;
++    } // if
++
++    // save the file somewhere, so SDL_mixer can load it
++    GetUnixPathFromEnvironment(filename, MAX_PATH, "tmpsong.mid");
++    handle = SafeOpenWrite(filename, filetype_binary);
++    
++    SafeWrite(handle, song, size);
++    close(handle);
++    free(song);
++    
++    //music_songdata = song;
++
++    music_musicchunk = Mix_LoadMUS(filename);
++    if (music_musicchunk != NULL)
++    {
++        // !!! FIXME: I set the music to loop. Hope that's okay. --ryan.
++        Mix_PlayMusic(music_musicchunk, -1);
++    } // if
++}
++
++
++void MUSIC_SetContext(int context)
++{
++    musdebug("STUB ... MUSIC_SetContext().\n");
++    music_context = context;
++} // MUSIC_SetContext
++
++
++int MUSIC_GetContext(void)
++{
++    return(music_context);
++} // MUSIC_GetContext
++
++
++void MUSIC_SetSongTick(unsigned long PositionInTicks)
++{
++    musdebug("STUB ... MUSIC_SetSongTick().\n");
++} // MUSIC_SetSongTick
++
++
++void MUSIC_SetSongTime(unsigned long milliseconds)
++{
++    musdebug("STUB ... MUSIC_SetSongTime().\n");
++}// MUSIC_SetSongTime
++
++
++void MUSIC_SetSongPosition(int measure, int beat, int tick)
++{
++    musdebug("STUB ... MUSIC_SetSongPosition().\n");
++} // MUSIC_SetSongPosition
++
++
++void MUSIC_GetSongPosition(songposition *pos)
++{
++    musdebug("STUB ... MUSIC_GetSongPosition().\n");
++} // MUSIC_GetSongPosition
++
++
++void MUSIC_GetSongLength(songposition *pos)
++{
++    musdebug("STUB ... MUSIC_GetSongLength().\n");
++} // MUSIC_GetSongLength
++
++
++int MUSIC_FadeVolume(int tovolume, int milliseconds)
++{
++    Mix_FadeOutMusic(milliseconds);
++    return(MUSIC_Ok);
++} // MUSIC_FadeVolume
++
++
++int MUSIC_FadeActive(void)
++{
++    return((Mix_FadingMusic() == MIX_FADING_OUT) ? __FX_TRUE : __FX_FALSE);
++} // MUSIC_FadeActive
++
++
++void MUSIC_StopFade(void)
++{
++    musdebug("STUB ... MUSIC_StopFade().\n");
++} // MUSIC_StopFade
++
++
++void MUSIC_RerouteMidiChannel(int channel, int cdecl (*function)( int event, int c1, int c2 ))
++{
++    musdebug("STUB ... MUSIC_RerouteMidiChannel().\n");
++} // MUSIC_RerouteMidiChannel
++
++
++void MUSIC_RegisterTimbreBank(unsigned char *timbres)
++{
++    musdebug("STUB ... MUSIC_RegisterTimbreBank().\n");
++} // MUSIC_RegisterTimbreBank
++
++
++void MUSIC_Update(void)
++{
++}
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/unixglob.c jfsw_src_20051009/source/jaudiolib/unixglob.c
+--- jfsw_src_20051009.orig/source/jaudiolib/unixglob.c	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/unixglob.c	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,152 @@
++/*
++Copyright (C) 2003-2004 Ryan C. Gordon. and James Bentler
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++Originally written by Ryan C. Gordon. (icculus@clutteredmind.org)
++Adapted to work with JonoF's port by James Bentler (bentler@cs.umn.edu)
++
++*/
++
++static char ApogeePath[256] = "/tmp/";
++
++#define PATH_SEP_CHAR '/'
++#define PATH_SEP_STR  "/"
++#define ROOTDIR       "/"
++#define CURDIR        "./"
++
++#include "types.h"
++#include "compat.h"
++#include <dirent.h>
++#include <errno.h>
++
++#define Error printf
++
++#ifndef MAX_PATH
++#define MAX_PATH 256
++#endif
++
++void FixFilePath(char *filename)
++{
++    char *ptr;
++    char *lastsep = filename;
++
++    if ((!filename) || (*filename == '\0'))
++        return;
++
++    if (access(filename, F_OK) == 0)  /* File exists; we're good to go. */
++        return;
++
++    for (ptr = filename; 1; ptr++)
++    {
++        if (*ptr == '\\')
++            *ptr = PATH_SEP_CHAR;
++
++        if ((*ptr == PATH_SEP_CHAR) || (*ptr == '\0'))
++        {
++            char pch = *ptr;
++            struct dirent *dent = NULL;
++            DIR *dir;
++
++            if ((pch == PATH_SEP_CHAR) && (*(ptr + 1) == '\0'))
++                return; /* eos is pathsep; we're done. */
++
++            if (lastsep == ptr)
++                continue;  /* absolute path; skip to next one. */
++
++            *ptr = '\0';
++            if (lastsep == filename) {
++                dir = opendir((*lastsep == PATH_SEP_CHAR) ? ROOTDIR : CURDIR);
++                
++                if (*lastsep == PATH_SEP_CHAR) {
++                    lastsep++;
++                }
++            } 
++            else
++            {
++                *lastsep = '\0';
++                dir = opendir(filename);
++                *lastsep = PATH_SEP_CHAR;
++                lastsep++;
++            }
++
++            if (dir == NULL)
++            {
++                *ptr = PATH_SEP_CHAR;
++                return;  /* maybe dir doesn't exist? give up. */
++            }
++
++            while ((dent = readdir(dir)) != NULL)
++            {
++                if (strcasecmp(dent->d_name, lastsep) == 0)
++                {
++                    /* found match; replace it. */
++                    strcpy(lastsep, dent->d_name);
++                    break;
++                }
++            }
++
++            closedir(dir);
++            *ptr = pch;
++            lastsep = ptr;
++
++            if (dent == NULL)
++                return;  /* no match. oh well. */
++
++            if (pch == '\0')  /* eos? */
++                return;
++        }
++    }
++}
++
++int32 SafeOpenWrite (const char *_filename, int32 filetype)
++{
++   int handle;
++    char filename[MAX_PATH];
++    strncpy(filename, _filename, sizeof (filename));
++    filename[sizeof (filename) - 1] = '\0';
++    FixFilePath(filename);
++
++   handle = open(filename,O_RDWR | O_BINARY | O_CREAT | O_TRUNC
++   , S_IREAD | S_IWRITE);
++
++   if (handle == -1)
++       Error ("Error opening %s: %s",filename,strerror(errno));
++
++   return handle;
++}
++
++
++void SafeWrite (int32 handle, void *buffer, int32 count)
++{
++   unsigned    iocount;
++
++   while (count)
++   {
++       iocount = count > 0x8000 ? 0x8000 : count;
++       if (write (handle,buffer,iocount) != (int)iocount)
++           Error ("File write failure writing %ld bytes",count);
++       buffer = (void *)( (byte *)buffer + iocount );
++       count -= iocount;
++   }
++}
++
++
++
++void GetUnixPathFromEnvironment( char *fullname, int32 length, const char *filename )
++{
++   snprintf(fullname, length-1, "%s%s", ApogeePath, filename);
++}
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/unixpitch.c jfsw_src_20051009/source/jaudiolib/unixpitch.c
+--- jfsw_src_20051009.orig/source/jaudiolib/unixpitch.c	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/unixpitch.c	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,212 @@
++/*
++Copyright (C) 1994-1995 Apogee Software, Ltd.
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++*/
++/**********************************************************************
++   module: PITCH.C
++
++   author: James R. Dose
++   date:   June 14, 1993
++
++   Routines for pitch scaling.
++
++   (c) Copyright 1993 James R. Dose.  All Rights Reserved.
++**********************************************************************/
++
++#include <stdlib.h>
++//#include <math.h>
++#include "dpmi.h"
++#include "standard.h"
++#include "pitch.h"
++
++#define MAXDETUNE 25
++
++static unsigned long PitchTable[ 12 ][ MAXDETUNE ] =
++   {
++      { 0x10000, 0x10097, 0x1012f, 0x101c7, 0x10260, 0x102f9, 0x10392, 0x1042c,
++      0x104c6, 0x10561, 0x105fb, 0x10696, 0x10732, 0x107ce, 0x1086a, 0x10907,
++      0x109a4, 0x10a41, 0x10adf, 0x10b7d, 0x10c1b, 0x10cba, 0x10d59, 0x10df8,
++      0x10e98 },
++      { 0x10f38, 0x10fd9, 0x1107a, 0x1111b, 0x111bd, 0x1125f, 0x11302, 0x113a5,
++      0x11448, 0x114eb, 0x1158f, 0x11634, 0x116d8, 0x1177e, 0x11823, 0x118c9,
++      0x1196f, 0x11a16, 0x11abd, 0x11b64, 0x11c0c, 0x11cb4, 0x11d5d, 0x11e06,
++      0x11eaf },
++      { 0x11f59, 0x12003, 0x120ae, 0x12159, 0x12204, 0x122b0, 0x1235c, 0x12409,
++      0x124b6, 0x12563, 0x12611, 0x126bf, 0x1276d, 0x1281c, 0x128cc, 0x1297b,
++      0x12a2b, 0x12adc, 0x12b8d, 0x12c3e, 0x12cf0, 0x12da2, 0x12e55, 0x12f08,
++      0x12fbc },
++      { 0x1306f, 0x13124, 0x131d8, 0x1328d, 0x13343, 0x133f9, 0x134af, 0x13566,
++      0x1361d, 0x136d5, 0x1378d, 0x13846, 0x138fe, 0x139b8, 0x13a72, 0x13b2c,
++      0x13be6, 0x13ca1, 0x13d5d, 0x13e19, 0x13ed5, 0x13f92, 0x1404f, 0x1410d,
++      0x141cb },
++      { 0x1428a, 0x14349, 0x14408, 0x144c8, 0x14588, 0x14649, 0x1470a, 0x147cc,
++      0x1488e, 0x14951, 0x14a14, 0x14ad7, 0x14b9b, 0x14c5f, 0x14d24, 0x14dea,
++      0x14eaf, 0x14f75, 0x1503c, 0x15103, 0x151cb, 0x15293, 0x1535b, 0x15424,
++      0x154ee },
++      { 0x155b8, 0x15682, 0x1574d, 0x15818, 0x158e4, 0x159b0, 0x15a7d, 0x15b4a,
++      0x15c18, 0x15ce6, 0x15db4, 0x15e83, 0x15f53, 0x16023, 0x160f4, 0x161c5,
++      0x16296, 0x16368, 0x1643a, 0x1650d, 0x165e1, 0x166b5, 0x16789, 0x1685e,
++      0x16934 },
++      { 0x16a09, 0x16ae0, 0x16bb7, 0x16c8e, 0x16d66, 0x16e3e, 0x16f17, 0x16ff1,
++      0x170ca, 0x171a5, 0x17280, 0x1735b, 0x17437, 0x17513, 0x175f0, 0x176ce,
++      0x177ac, 0x1788a, 0x17969, 0x17a49, 0x17b29, 0x17c09, 0x17cea, 0x17dcc,
++      0x17eae },
++      { 0x17f91, 0x18074, 0x18157, 0x1823c, 0x18320, 0x18406, 0x184eb, 0x185d2,
++      0x186b8, 0x187a0, 0x18888, 0x18970, 0x18a59, 0x18b43, 0x18c2d, 0x18d17,
++      0x18e02, 0x18eee, 0x18fda, 0x190c7, 0x191b5, 0x192a2, 0x19391, 0x19480,
++      0x1956f },
++      { 0x1965f, 0x19750, 0x19841, 0x19933, 0x19a25, 0x19b18, 0x19c0c, 0x19d00,
++      0x19df4, 0x19ee9, 0x19fdf, 0x1a0d5, 0x1a1cc, 0x1a2c4, 0x1a3bc, 0x1a4b4,
++      0x1a5ad, 0x1a6a7, 0x1a7a1, 0x1a89c, 0x1a998, 0x1aa94, 0x1ab90, 0x1ac8d,
++      0x1ad8b },
++      { 0x1ae89, 0x1af88, 0x1b088, 0x1b188, 0x1b289, 0x1b38a, 0x1b48c, 0x1b58f,
++      0x1b692, 0x1b795, 0x1b89a, 0x1b99f, 0x1baa4, 0x1bbaa, 0x1bcb1, 0x1bdb8,
++      0x1bec0, 0x1bfc9, 0x1c0d2, 0x1c1dc, 0x1c2e6, 0x1c3f1, 0x1c4fd, 0x1c609,
++      0x1c716 },
++      { 0x1c823, 0x1c931, 0x1ca40, 0x1cb50, 0x1cc60, 0x1cd70, 0x1ce81, 0x1cf93,
++      0x1d0a6, 0x1d1b9, 0x1d2cd, 0x1d3e1, 0x1d4f6, 0x1d60c, 0x1d722, 0x1d839,
++      0x1d951, 0x1da69, 0x1db82, 0x1dc9c, 0x1ddb6, 0x1ded1, 0x1dfec, 0x1e109,
++      0x1e225 },
++      { 0x1e343, 0x1e461, 0x1e580, 0x1e6a0, 0x1e7c0, 0x1e8e0, 0x1ea02, 0x1eb24,
++      0x1ec47, 0x1ed6b, 0x1ee8f, 0x1efb4, 0x1f0d9, 0x1f1ff, 0x1f326, 0x1f44e,
++      0x1f576, 0x1f69f, 0x1f7c9, 0x1f8f3, 0x1fa1e, 0x1fb4a, 0x1fc76, 0x1fda3,
++      0x1fed1 }
++   };
++
++
++//static int PITCH_Installed = FALSE;
++
++
++/*---------------------------------------------------------------------
++   Function: PITCH_Init
++
++   Initializes pitch table.
++---------------------------------------------------------------------*/
++/*
++void PITCH_Init
++   (
++   void
++   )
++
++   {
++   int note;
++   int detune;
++
++   if ( !PITCH_Installed )
++      {
++      for( note = 0; note < 12; note++ )
++         {
++         for( detune = 0; detune < MAXDETUNE; detune++ )
++            {
++            PitchTable[ note ][ detune ] = 0x10000 *
++               pow( 2, ( note * MAXDETUNE + detune ) / ( 12.0 * MAXDETUNE ) );
++            }
++         }
++
++      PITCH_Installed = TRUE;
++      }
++   }
++*/
++
++/**********************************************************************
++
++   Memory locked functions:
++
++**********************************************************************/
++
++
++#define PITCH_LockStart PITCH_GetScale
++
++
++/*---------------------------------------------------------------------
++   Function: PITCH_GetScale
++
++   Returns a fixed-point value to scale number the specified amount.
++---------------------------------------------------------------------*/
++
++unsigned long PITCH_GetScale
++   (
++   int pitchoffset
++   )
++
++   {
++   unsigned long scale;
++   int octaveshift;
++   int noteshift;
++   int note;
++   int detune;
++
++//   if ( !PITCH_Installed )
++//      {
++//      PITCH_Init();
++//      }
++
++   if ( pitchoffset == 0 )
++      {
++      return( PitchTable[ 0 ][ 0 ] );
++      }
++
++   noteshift = pitchoffset % 1200;
++   if ( noteshift < 0 )
++      {
++      noteshift += 1200;
++      }
++
++   note   = noteshift / 100;
++   detune = ( noteshift % 100 ) / ( 100 / MAXDETUNE );
++   octaveshift = ( pitchoffset - noteshift ) / 1200;
++
++   if ( detune < 0 )
++      {
++      detune += ( 100 / MAXDETUNE );
++      note--;
++      if ( note < 0 )
++         {
++         note += 12;
++         octaveshift--;
++         }
++      }
++
++   scale = PitchTable[ note ][ detune ];
++
++   if ( octaveshift < 0 )
++      {
++      scale >>= -octaveshift;
++      }
++   else
++      {
++      scale <<= octaveshift;
++      }
++
++   return( scale );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: PITCH_LockEnd
++
++   Used for determining the length of the functions to lock in memory.
++---------------------------------------------------------------------*/
++
++static void PITCH_LockEnd
++   (
++   void
++   )
++
++   {
++   }
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/unixvoc.c jfsw_src_20051009/source/jaudiolib/unixvoc.c
+--- jfsw_src_20051009.orig/source/jaudiolib/unixvoc.c	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/unixvoc.c	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,2877 @@
++/*
++Copyright (C) 1994-1995 Apogee Software, Ltd.
++
++This program is free software; you can redistribute it and/or
++modify it under the terms of the GNU General Public License
++as published by the Free Software Foundation; either version 2
++of the License, or (at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
++
++See the GNU General Public License for more details.
++
++ou should have received a copy of the GNU General Public License
++long with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
++
++*/
++/**********************************************************************
++   module: MULTIVOC.C
++
++   author: James R. Dose
++   date:   December 20, 1993
++
++   Routines to provide multichannel digitized sound playback for
++   Sound Blaster compatible sound cards.
++
++   (c) Copyright 1993 James R. Dose.  All Rights Reserved.
++**********************************************************************/
++
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <time.h>
++
++#include "util.h"
++#include "dpmi.h"
++#include "usrhooks.h"
++#include "interrup.h"
++#include "dma.h"
++#include "linklist.h"
++#include "dsl.h"
++
++#include "pitch.h"
++#include "multivoc.h"
++#include "_multivc.h"
++#include "debugio.h"
++
++// platform.h is from the build engine, but I need the byteswapping macros... --ryan.
++#include "platform.h"
++
++#define RoundFixed( fixedval, bits )            \
++        (                                       \
++          (                                     \
++            (fixedval) + ( 1 << ( (bits) - 1 ) )\
++          ) >> (bits)                           \
++        )
++
++#define IS_QUIET( ptr )  ( ( void * )( ptr ) == ( void * )&MV_VolumeTable[ 0 ] )
++
++static int       MV_ReverbLevel;
++static int       MV_ReverbDelay;
++static VOLUME16 *MV_ReverbTable = NULL;
++
++//static signed short MV_VolumeTable[ MV_MaxVolume + 1 ][ 256 ];
++static signed short MV_VolumeTable[ 63 + 1 ][ 256 ];
++
++//static Pan MV_PanTable[ MV_NumPanPositions ][ MV_MaxVolume + 1 ];
++static Pan MV_PanTable[ MV_NumPanPositions ][ 63 + 1 ];
++
++static int MV_Installed   = FALSE;
++static int MV_SoundCard   = 1;
++static int MV_TotalVolume = MV_MaxTotalVolume;
++static int MV_MaxVoices   = 1;
++static int MV_Recording;
++
++static int MV_BufferSize = MixBufferSize;
++static int MV_BufferLength;
++
++static int MV_NumberOfBuffers = NumberOfBuffers;
++
++static int MV_MixMode    = MONO_8BIT;
++static int MV_Channels   = 1;
++static int MV_Bits       = 8;
++
++static int MV_Silence    = SILENCE_8BIT;
++static int MV_SwapLeftRight = FALSE;
++
++static int MV_RequestedMixRate;
++static int MV_MixRate;
++
++static int MV_DMAChannel = -1;
++static int MV_BuffShift;
++
++static int MV_TotalMemory;
++
++static int   MV_BufferDescriptor;
++static int   MV_BufferEmpty[ NumberOfBuffers ];
++char *MV_MixBuffer[ NumberOfBuffers + 1 ];
++
++static VoiceNode *MV_Voices = NULL;
++
++static volatile VoiceNode VoiceList;
++static volatile VoiceNode VoicePool;
++
++/*static*/ int MV_MixPage      = 0;
++static int MV_VoiceHandle  = MV_MinVoiceHandle;
++
++static void ( *MV_CallBackFunc )( unsigned long ) = NULL;
++static void ( *MV_RecordFunc )( char *ptr, int length ) = NULL;
++static void ( *MV_MixFunction )( VoiceNode *voice, int buffer );
++
++static int MV_MaxVolume = 63;
++
++char  *MV_HarshClipTable;
++char  *MV_MixDestination;
++short *MV_LeftVolume;
++short *MV_RightVolume;
++int    MV_SampleSize = 1;
++int    MV_RightChannelOffset;
++
++unsigned long MV_MixPosition;
++
++int MV_ErrorCode = MV_Ok;
++
++#define MV_SetErrorCode( status ) \
++   MV_ErrorCode   = ( status );
++
++
++/*---------------------------------------------------------------------
++   Function: MV_ErrorString
++
++   Returns a pointer to the error message associated with an error
++   number.  A -1 returns a pointer the current error.
++---------------------------------------------------------------------*/
++
++char *MV_ErrorString
++   (
++   int ErrorNumber
++   )
++
++   {
++   char *ErrorString;
++
++   switch( ErrorNumber )
++      {
++      case MV_Warning :
++      case MV_Error :
++         ErrorString = MV_ErrorString( MV_ErrorCode );
++         break;
++
++      case MV_Ok :
++         ErrorString = "Multivoc ok.";
++         break;
++
++      case MV_UnsupportedCard :
++         ErrorString = "Selected sound card is not supported by Multivoc.";
++         break;
++
++      case MV_NotInstalled :
++         ErrorString = "Multivoc not installed.";
++         break;
++
++      case MV_NoVoices :
++         ErrorString = "No free voices available to Multivoc.";
++         break;
++
++      case MV_NoMem :
++         ErrorString = "Out of memory in Multivoc.";
++         break;
++
++      case MV_VoiceNotFound :
++         ErrorString = "No voice with matching handle found.";
++         break;
++
++      case MV_DPMI_Error :
++         ErrorString = "DPMI Error in Multivoc.";
++         break;
++
++      case MV_InvalidVOCFile :
++         ErrorString = "Invalid VOC file passed in to Multivoc.";
++         break;
++
++      case MV_InvalidWAVFile :
++         ErrorString = "Invalid WAV file passed in to Multivoc.";
++         break;
++
++      case MV_InvalidMixMode :
++         ErrorString = "Invalid mix mode request in Multivoc.";
++         break;
++
++      case MV_IrqFailure :
++         ErrorString = "Playback failed, possibly due to an invalid or conflicting IRQ.";
++         break;
++
++      case MV_DMAFailure :
++         ErrorString = "Playback failed, possibly due to an invalid or conflicting DMA channel.";
++         break;
++
++      case MV_DMA16Failure :
++         ErrorString = "Playback failed, possibly due to an invalid or conflicting DMA channel.  \n"
++                       "Make sure the 16-bit DMA channel is correct.";
++         break;
++
++      case MV_NullRecordFunction :
++         ErrorString = "Null record function passed to MV_StartRecording.";
++         break;
++
++      default :
++         ErrorString = "Unknown Multivoc error code.";
++         break;
++      }
++
++   return( ErrorString );
++   }
++
++
++/**********************************************************************
++
++   Memory locked functions:
++
++**********************************************************************/
++
++
++#define MV_LockStart MV_Mix
++
++
++/*---------------------------------------------------------------------
++   Function: MV_Mix
++
++   Mixes the sound into the buffer.
++---------------------------------------------------------------------*/
++
++static void MV_Mix
++   (
++   VoiceNode *voice,
++   int        buffer
++   )
++
++   {
++   char          *start;
++   int            length;
++   long           voclength;
++   unsigned long  position;
++   unsigned long  rate;
++   unsigned long  FixedPointBufferSize;
++
++   if ( ( voice->length == 0 ) &&
++        ( voice->GetSound != NULL ) &&
++        ( voice->GetSound( voice ) != KeepPlaying ) )
++      {
++      return;
++      }
++
++   length               = MixBufferSize;
++   FixedPointBufferSize = voice->FixedPointBufferSize;
++
++   MV_MixDestination    = MV_MixBuffer[ buffer ];
++   MV_LeftVolume        = voice->LeftVolume;
++   MV_RightVolume       = voice->RightVolume;
++
++   if ( ( MV_Channels == 2 ) && ( IS_QUIET( MV_LeftVolume ) ) )
++      {
++      MV_LeftVolume      = MV_RightVolume;
++      MV_MixDestination += MV_RightChannelOffset;
++      }
++
++   // Add this voice to the mix
++   while( length > 0 )
++      {
++      start    = voice->sound;
++      rate     = voice->RateScale;
++      position = voice->position;
++
++      // Check if the last sample in this buffer would be
++      // beyond the length of the sample block
++      if ( ( position + FixedPointBufferSize ) >= voice->length )
++         {
++         if ( position < voice->length )
++            {
++            voclength = ( voice->length - position + rate - 1 ) / rate;
++            }
++         else
++            {
++            voice->GetSound( voice );
++            return;
++            }
++         }
++      else
++         {
++         voclength = length;
++         }
++
++      voice->mix( position, rate, start, voclength );
++
++      if ( voclength & 1 )
++         {
++         MV_MixPosition += rate;
++         voclength -= 1;
++         }
++      voice->position = MV_MixPosition;
++
++      length -= voclength;
++
++      if ( voice->position >= voice->length )
++         {
++         // Get the next block of sound
++         if ( voice->GetSound( voice ) != KeepPlaying )
++            {
++            return;
++            }
++
++         if ( length > 0 )
++            {
++            // Get the position of the last sample in the buffer
++            FixedPointBufferSize = voice->RateScale * ( length - 1 );
++            }
++         }
++      }
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_PlayVoice
++
++   Adds a voice to the play list.
++---------------------------------------------------------------------*/
++
++void MV_PlayVoice
++   (
++   VoiceNode *voice
++   )
++
++   {
++   unsigned flags;
++
++   flags = DisableInterrupts();
++   LL_SortedInsertion( &VoiceList, voice, prev, next, VoiceNode, priority );
++
++   RestoreInterrupts( flags );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_StopVoice
++
++   Removes the voice from the play list and adds it to the free list.
++---------------------------------------------------------------------*/
++
++void MV_StopVoice
++   (
++   VoiceNode *voice
++   )
++
++   {
++   unsigned  flags;
++
++   flags = DisableInterrupts();
++
++   // move the voice from the play list to the free list
++   LL_Remove( voice, next, prev );
++   LL_Add( (VoiceNode *)&VoicePool, voice, next, prev );
++
++   RestoreInterrupts( flags );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_ServiceVoc
++
++   Starts playback of the waiting buffer and mixes the next one.
++---------------------------------------------------------------------*/
++
++// static int backcolor = 1;
++
++static int MV_ServiceVoc(int dummy_arg)
++   {
++   VoiceNode *voice;
++   VoiceNode *next;
++   char      *buffer;
++
++   // Toggle which buffer we'll mix next
++   MV_MixPage++;
++   if ( MV_MixPage >= MV_NumberOfBuffers )
++      {
++      MV_MixPage -= MV_NumberOfBuffers;
++      }
++
++   if ( MV_ReverbLevel == 0 )
++      {
++      // Initialize buffer
++      //Commented out so that the buffer is always cleared.
++      //This is so the guys at Echo Speech can mix into the
++      //buffer even when no sounds are playing.
++      //if ( !MV_BufferEmpty[ MV_MixPage ] )
++         {
++         ClearBuffer_DW( MV_MixBuffer[ MV_MixPage ], MV_Silence, MV_BufferSize >> 2 );
++         MV_BufferEmpty[ MV_MixPage ] = TRUE;
++         }
++      }
++   else
++      {
++      char *end;
++      char *source;
++      char *dest;
++      int   count;
++      int   length;
++
++      end = MV_MixBuffer[ 0 ] + MV_BufferLength;;
++      dest = MV_MixBuffer[ MV_MixPage ];
++      source = MV_MixBuffer[ MV_MixPage ] - MV_ReverbDelay;
++      if ( source < MV_MixBuffer[ 0 ] )
++         {
++         source += MV_BufferLength;
++         }
++
++      length = MV_BufferSize;
++      while( length > 0 )
++         {
++         count = length;
++         if ( source + count > end )
++            {
++            count = end - source;
++            }
++
++         if ( MV_Bits == 16 )
++            {
++            if ( MV_ReverbTable != NULL )
++                MV_16BitReverb( source, dest, (const VOLUME16 *)MV_ReverbTable, count / 2 );
++            else
++                MV_16BitReverbFast( source, dest, count / 2, MV_ReverbLevel );
++            }
++         else
++            {
++            if ( MV_ReverbTable != NULL )
++                MV_8BitReverb( source, dest, (const VOLUME16 *)MV_ReverbTable, count );
++            else
++                MV_8BitReverbFast( source, dest, count, MV_ReverbLevel );
++            }
++
++         // if we go through the loop again, it means that we've wrapped around the buffer
++         source  = MV_MixBuffer[ 0 ];
++         dest   += count;
++         length -= count;
++         }
++      }
++
++   // Play any waiting voices
++   for( voice = VoiceList.next; voice != &VoiceList; voice = next )
++      {
++//      if ( ( voice < &MV_Voices[ 0 ] ) || ( voice > &MV_Voices[ 8 ] ) )
++//         {
++//         SetBorderColor(backcolor++);
++//         break;
++//         }
++
++      MV_BufferEmpty[ MV_MixPage ] = FALSE;
++
++      if (MV_MixFunction != NULL)
++        MV_MixFunction( voice, MV_MixPage );
++
++      next = voice->next;
++
++      // Is this voice done?
++      if ( !voice->Playing )
++         {
++         MV_StopVoice( voice );
++
++         if ( MV_CallBackFunc )
++            {
++            MV_CallBackFunc( voice->callbackval );
++            }
++         }
++      }
++   }
++
++
++int leftpage  = -1;
++int rightpage = -1;
++
++void MV_ServiceGus( char **ptr, unsigned long *length )
++   {
++   if ( leftpage == MV_MixPage )
++      {
++      MV_ServiceVoc(0);
++      }
++
++   leftpage = MV_MixPage;
++
++   *ptr = MV_MixBuffer[ MV_MixPage ];
++   *length = MV_BufferSize;
++   }
++
++void MV_ServiceRightGus( char **ptr, unsigned long *length )
++   {
++   if ( rightpage == MV_MixPage )
++      {
++      MV_ServiceVoc(0);
++      }
++
++   rightpage = MV_MixPage;
++
++   *ptr = MV_MixBuffer[ MV_MixPage ] + MV_RightChannelOffset;
++   *length = MV_BufferSize;
++   }
++
++/*---------------------------------------------------------------------
++   Function: MV_GetNextVOCBlock
++
++   Interperate the information of a VOC format sound file.
++---------------------------------------------------------------------*/
++static __inline unsigned int get_le32(void *p0)
++{
++   //unsigned char *p = p0;
++   //return p[0] | (p[1]<<8) | (p[2]<<16) | (p[3]<<24);
++   unsigned int val = *((unsigned int *) p0);
++   return(BUILDSWAP_INTEL32(val));
++}
++
++static __inline unsigned int get_le16(void *p0)
++{
++   //unsigned char *p = p0;
++   //return p[0] | (p[1]<<8);
++   unsigned short val = *((unsigned short *) p0);
++   return( (unsigned int) (BUILDSWAP_INTEL16(val)) );
++}
++
++playbackstatus MV_GetNextVOCBlock
++   (
++   VoiceNode *voice
++   )
++
++   {
++   unsigned char *ptr;
++   int            blocktype=0;
++   int            lastblocktype=0;
++   unsigned long  blocklength=0l;
++   unsigned long  samplespeed=0l;
++   unsigned int   tc=0;
++   int            packtype=0;
++   int            voicemode=0;
++   int            done=0;
++   unsigned       BitsPerSample;
++   unsigned       Channels;
++   unsigned       Format;
++
++   if ( voice->BlockLength > 0 )
++      {
++      voice->position    -= voice->length;
++      voice->sound       += voice->length >> 16;
++      if ( voice->bits == 16 )
++         {
++         voice->sound += voice->length >> 16;
++         }
++      voice->length       = min( voice->BlockLength, 0x8000 );
++      voice->BlockLength -= voice->length;
++      voice->length     <<= 16;
++      return( KeepPlaying );
++      }
++
++   if ( ( voice->length > 0 ) && ( voice->LoopEnd != NULL ) &&
++      ( voice->LoopStart != NULL ) )
++      {
++      voice->BlockLength  = voice->LoopSize;
++      voice->sound        = voice->LoopStart;
++      voice->position     = 0;
++      voice->length       = min( voice->BlockLength, 0x8000 );
++      voice->BlockLength -= voice->length;
++      voice->length     <<= 16;
++      return( KeepPlaying );
++      }
++
++   ptr = ( unsigned char * )voice->NextBlock;
++
++   voice->Playing = TRUE;
++
++   voicemode = 0;
++   lastblocktype = 0;
++   packtype = 0;
++
++   done = FALSE;
++   while( !done )
++      {
++      // Stop playing if we get a NULL pointer
++      if ( ptr == NULL )
++         {
++         voice->Playing = FALSE;
++         done = TRUE;
++         break;
++         }
++
++      {
++      unsigned tmp = get_le32(ptr);
++      blocktype = tmp&255;
++      blocklength = tmp>>8;
++      }
++      ptr += 4;
++
++      switch( blocktype )
++         {
++         case 0 :
++            // End of data
++            if ( ( voice->LoopStart == NULL ) ||
++               ( (unsigned char *)voice->LoopStart >= ( ptr - 4 ) ) )
++               {
++               voice->Playing = FALSE;
++               done = TRUE;
++               }
++            else
++               {
++               voice->BlockLength  = ( ptr - 4 ) - (unsigned char *)voice->LoopStart;
++               voice->sound        = voice->LoopStart;
++               voice->position     = 0;
++               voice->length       = min( voice->BlockLength, 0x8000 );
++               voice->BlockLength -= voice->length;
++               voice->length     <<= 16;
++               return( KeepPlaying );
++               }
++            break;
++
++         case 1 :
++            // Sound data block
++            voice->bits  = 8;
++            if ( lastblocktype != 8 )
++               {
++               tc = ( unsigned int )*ptr << 8;
++               packtype = *( ptr + 1 );
++               }
++
++            ptr += 2;
++            blocklength -= 2;
++
++            samplespeed = 256000000L / ( 65536 - tc );
++
++            // Skip packed or stereo data
++            if ( ( packtype != 0 ) || ( voicemode != 0 ) )
++               {
++               ptr += blocklength;
++               }
++            else
++               {
++               done = TRUE;
++               }
++            voicemode = 0;
++            break;
++
++         case 2 :
++            // Sound continuation block
++            samplespeed = voice->SamplingRate;
++            done = TRUE;
++            break;
++
++         case 3 :
++            // Silence
++            // Not implimented.
++            ptr += blocklength;
++            break;
++
++         case 4 :
++            // Marker
++            // Not implimented.
++            ptr += blocklength;
++            break;
++
++         case 5 :
++            // ASCII string
++            // Not implimented.
++            ptr += blocklength;
++            break;
++
++         case 6 :
++            // Repeat begin
++            if ( voice->LoopEnd == NULL )
++               {
++               voice->LoopCount = get_le16(ptr);
++               voice->LoopStart = ptr + blocklength;
++               }
++            ptr += blocklength;
++            break;
++
++         case 7 :
++            // Repeat end
++            ptr += blocklength;
++            if ( lastblocktype == 6 )
++               {
++               voice->LoopCount = 0;
++               }
++            else
++               {
++               if ( ( voice->LoopCount > 0 ) && ( voice->LoopStart != NULL ) )
++                  {
++                  ptr = voice->LoopStart;
++                  if ( voice->LoopCount < 0xffff )
++                     {
++                     voice->LoopCount--;
++                     if ( voice->LoopCount == 0 )
++                        {
++                        voice->LoopStart = NULL;
++                        }
++                     }
++                  }
++               }
++            break;
++
++         case 8 :
++            // Extended block
++            voice->bits  = 8;
++            tc = get_le16(ptr);
++            packtype = *( ptr + 2 );
++            voicemode = *( ptr + 3 );
++            ptr += blocklength;
++            break;
++
++         case 9 :
++            // New sound data block
++            samplespeed = get_le32(ptr);
++            BitsPerSample = ptr[4];
++            Channels = ptr[5];
++            Format = get_le16(ptr+6);
++
++            if ( ( BitsPerSample == 8 ) && ( Channels == 1 ) &&
++               ( Format == VOC_8BIT ) )
++               {
++               ptr         += 12;
++               blocklength -= 12;
++               voice->bits  = 8;
++               done         = TRUE;
++               }
++            else if ( ( BitsPerSample == 16 ) && ( Channels == 1 ) &&
++               ( Format == VOC_16BIT ) )
++               {
++               ptr         += 12;
++               blocklength -= 12;
++               voice->bits  = 16;
++               done         = TRUE;
++               }
++            else
++               {
++               ptr += blocklength;
++               }
++            break;
++
++         default :
++            // Unknown data.  Probably not a VOC file.
++            voice->Playing = FALSE;
++            done = TRUE;
++            break;
++         }
++
++      lastblocktype = blocktype;
++      }
++
++   if ( voice->Playing )
++      {
++      voice->NextBlock    = ptr + blocklength;
++      voice->sound        = ptr;
++
++      voice->SamplingRate = samplespeed;
++      voice->RateScale    = ( voice->SamplingRate * voice->PitchScale ) / MV_MixRate;
++
++      // Multiply by MixBufferSize - 1
++      voice->FixedPointBufferSize = ( voice->RateScale * MixBufferSize ) -
++         voice->RateScale;
++
++      if ( voice->LoopEnd != NULL )
++         {
++         if ( blocklength > ( unsigned long )voice->LoopEnd )
++            {
++            blocklength = ( unsigned long )voice->LoopEnd;
++            }
++         else
++            {
++            voice->LoopEnd = ( char * )blocklength;
++            }
++
++         voice->LoopStart = voice->sound + ( unsigned long )voice->LoopStart;
++         voice->LoopEnd   = voice->sound + ( unsigned long )voice->LoopEnd;
++         voice->LoopSize  = voice->LoopEnd - voice->LoopStart;
++         }
++
++      if ( voice->bits == 16 )
++         {
++         blocklength /= 2;
++         }
++
++      voice->position     = 0;
++      voice->length       = min( blocklength, 0x8000 );
++      voice->BlockLength  = blocklength - voice->length;
++      voice->length     <<= 16;
++
++      MV_SetVoiceMixMode( voice );
++
++      return( KeepPlaying );
++      }
++
++   return( NoMoreData );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_GetNextDemandFeedBlock
++
++   Controls playback of demand fed data.
++---------------------------------------------------------------------*/
++
++playbackstatus MV_GetNextDemandFeedBlock
++   (
++   VoiceNode *voice
++   )
++
++   {
++   if ( voice->BlockLength > 0 )
++      {
++      voice->position    -= voice->length;
++      voice->sound       += voice->length >> 16;
++      voice->length       = min( voice->BlockLength, 0x8000 );
++      voice->BlockLength -= voice->length;
++      voice->length     <<= 16;
++
++      return( KeepPlaying );
++      }
++
++   if ( voice->DemandFeed == NULL )
++      {
++      return( NoMoreData );
++      }
++
++   voice->position     = 0;
++   ( voice->DemandFeed )( &voice->sound, &voice->BlockLength );
++   voice->length       = min( voice->BlockLength, 0x8000 );
++   voice->BlockLength -= voice->length;
++   voice->length     <<= 16;
++
++   if ( ( voice->length > 0 ) && ( voice->sound != NULL ) )
++      {
++      return( KeepPlaying );
++      }
++   return( NoMoreData );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_GetNextRawBlock
++
++   Controls playback of demand fed data.
++---------------------------------------------------------------------*/
++
++playbackstatus MV_GetNextRawBlock
++   (
++   VoiceNode *voice
++   )
++
++   {
++   if ( voice->BlockLength <= 0 )
++      {
++      if ( voice->LoopStart == NULL )
++         {
++         voice->Playing = FALSE;
++         return( NoMoreData );
++         }
++
++      voice->BlockLength = voice->LoopSize;
++      voice->NextBlock   = voice->LoopStart;
++      voice->length = 0;
++      voice->position = 0;
++      }
++
++   voice->sound        = voice->NextBlock;
++   voice->position    -= voice->length;
++   voice->length       = min( voice->BlockLength, 0x8000 );
++   voice->NextBlock   += voice->length;
++   if ( voice->bits == 16 )
++      {
++      voice->NextBlock += voice->length;
++      }
++   voice->BlockLength -= voice->length;
++   voice->length     <<= 16;
++
++   return( KeepPlaying );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_GetNextWAVBlock
++
++   Controls playback of demand fed data.
++---------------------------------------------------------------------*/
++
++playbackstatus MV_GetNextWAVBlock
++   (
++   VoiceNode *voice
++   )
++
++   {
++   if ( voice->BlockLength <= 0 )
++      {
++      if ( voice->LoopStart == NULL )
++         {
++         voice->Playing = FALSE;
++         return( NoMoreData );
++         }
++
++      voice->BlockLength = voice->LoopSize;
++      voice->NextBlock   = voice->LoopStart;
++      voice->length      = 0;
++      voice->position    = 0;
++      }
++
++   voice->sound        = voice->NextBlock;
++   voice->position    -= voice->length;
++   voice->length       = min( voice->BlockLength, 0x8000 );
++   voice->NextBlock   += voice->length;
++   if ( voice->bits == 16 )
++      {
++      voice->NextBlock += voice->length;
++      }
++   voice->BlockLength -= voice->length;
++   voice->length     <<= 16;
++
++   return( KeepPlaying );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_ServiceRecord
++
++   Starts recording of the waiting buffer.
++---------------------------------------------------------------------*/
++
++static void MV_ServiceRecord
++   (
++   void
++   )
++
++   {
++   if ( MV_RecordFunc )
++      {
++      MV_RecordFunc( MV_MixBuffer[ 0 ] + MV_MixPage * MixBufferSize,
++         MixBufferSize );
++      }
++
++   // Toggle which buffer we'll mix next
++   MV_MixPage++;
++   if ( MV_MixPage >= NumberOfBuffers )
++      {
++      MV_MixPage = 0;
++      }
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_GetVoice
++
++   Locates the voice with the specified handle.
++---------------------------------------------------------------------*/
++
++VoiceNode *MV_GetVoice
++   (
++   int handle
++   )
++
++   {
++   VoiceNode *voice;
++   unsigned  flags;
++
++   flags = DisableInterrupts();
++
++   for( voice = VoiceList.next; voice != &VoiceList; voice = voice->next )
++      {
++      if ( handle == voice->handle )
++         {
++         break;
++         }
++      }
++
++   RestoreInterrupts( flags );
++
++   if ( voice == &VoiceList )
++      {
++      MV_SetErrorCode( MV_VoiceNotFound );
++      
++      // SBF - should this return null?
++      return NULL;
++      }
++
++   return( voice );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_VoicePlaying
++
++   Checks if the voice associated with the specified handle is
++   playing.
++---------------------------------------------------------------------*/
++
++int MV_VoicePlaying
++   (
++   int handle
++   )
++
++   {
++   VoiceNode *voice;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( FALSE );
++      }
++
++   voice = MV_GetVoice( handle );
++
++   if ( voice == NULL )
++      {
++      return( FALSE );
++      }
++
++   return( TRUE );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_KillAllVoices
++
++   Stops output of all currently active voices.
++---------------------------------------------------------------------*/
++
++int MV_KillAllVoices
++   (
++   void
++   )
++
++   {
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   // Remove all the voices from the list
++   while( VoiceList.next != &VoiceList )
++      {
++      MV_Kill( VoiceList.next->handle );
++      }
++
++   return( MV_Ok );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_Kill
++
++   Stops output of the voice associated with the specified handle.
++---------------------------------------------------------------------*/
++
++int MV_Kill
++   (
++   int handle
++   )
++
++   {
++   VoiceNode *voice;
++   unsigned  flags;
++   unsigned  long callbackval;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   flags = DisableInterrupts();
++
++   voice = MV_GetVoice( handle );
++   if ( voice == NULL )
++      {
++      RestoreInterrupts( flags );
++      MV_SetErrorCode( MV_VoiceNotFound );
++      return( MV_Error );
++      }
++
++   callbackval = voice->callbackval;
++
++   MV_StopVoice( voice );
++
++   RestoreInterrupts( flags );
++
++   if ( MV_CallBackFunc )
++      {
++      MV_CallBackFunc( callbackval );
++      }
++
++   return( MV_Ok );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_VoicesPlaying
++
++   Determines the number of currently active voices.
++---------------------------------------------------------------------*/
++
++int MV_VoicesPlaying
++   (
++   void
++   )
++
++   {
++   VoiceNode   *voice;
++   int         NumVoices = 0;
++   unsigned    flags;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( 0 );
++      }
++
++   flags = DisableInterrupts();
++
++   for( voice = VoiceList.next; voice != &VoiceList; voice = voice->next )
++      {
++      NumVoices++;
++      }
++
++   RestoreInterrupts( flags );
++
++   return( NumVoices );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_AllocVoice
++
++   Retrieve an inactive or lower priority voice for output.
++---------------------------------------------------------------------*/
++
++VoiceNode *MV_AllocVoice
++   (
++   int priority
++   )
++
++   {
++   VoiceNode   *voice;
++   VoiceNode   *node;
++   unsigned    flags;
++
++//return( NULL );
++   if ( MV_Recording )
++      {
++      return( NULL );
++      }
++
++   flags = DisableInterrupts();
++
++   // Check if we have any free voices
++   if ( LL_Empty( &VoicePool, next, prev ) )
++      {
++      // check if we have a higher priority than a voice that is playing.
++      voice = VoiceList.next;
++      for( node = voice->next; node != &VoiceList; node = node->next )
++         {
++         if ( node->priority < voice->priority )
++            {
++            voice = node;
++            }
++         }
++
++      if ( priority >= voice->priority )
++         {
++         MV_Kill( voice->handle );
++         }
++      }
++
++   // Check if any voices are in the voice pool
++   if ( LL_Empty( &VoicePool, next, prev ) )
++      {
++      // No free voices
++      RestoreInterrupts( flags );
++      return( NULL );
++      }
++
++   voice = VoicePool.next;
++   LL_Remove( voice, next, prev );
++   RestoreInterrupts( flags );
++
++   // Find a free voice handle
++   do
++      {
++      MV_VoiceHandle++;
++      if ( MV_VoiceHandle < MV_MinVoiceHandle )
++         {
++         MV_VoiceHandle = MV_MinVoiceHandle;
++         }
++      }
++   while( MV_VoicePlaying( MV_VoiceHandle ) );
++
++   voice->handle = MV_VoiceHandle;
++
++   return( voice );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_VoiceAvailable
++
++   Checks if a voice can be play at the specified priority.
++---------------------------------------------------------------------*/
++
++int MV_VoiceAvailable
++   (
++   int priority
++   )
++
++   {
++   VoiceNode   *voice;
++   VoiceNode   *node;
++   unsigned    flags;
++
++   // Check if we have any free voices
++   if ( !LL_Empty( &VoicePool, next, prev ) )
++      {
++      return( TRUE );
++      }
++
++   flags = DisableInterrupts();
++
++   // check if we have a higher priority than a voice that is playing.
++   voice = VoiceList.next;
++   for( node = VoiceList.next; node != &VoiceList; node = node->next )
++      {
++      if ( node->priority < voice->priority )
++         {
++         voice = node;
++         }
++      }
++
++   RestoreInterrupts( flags );
++
++   if ( ( voice != &VoiceList ) && ( priority >= voice->priority ) )
++      {
++      return( TRUE );
++      }
++
++   return( FALSE );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetVoicePitch
++
++   Sets the pitch for the specified voice.
++---------------------------------------------------------------------*/
++
++void MV_SetVoicePitch
++   (
++   VoiceNode *voice,
++   unsigned long rate,
++   int pitchoffset
++   )
++
++   {
++   voice->SamplingRate = rate;
++   voice->PitchScale   = PITCH_GetScale( pitchoffset );
++   voice->RateScale    = ( rate * voice->PitchScale ) / MV_MixRate;
++
++   // Multiply by MixBufferSize - 1
++   voice->FixedPointBufferSize = ( voice->RateScale * MixBufferSize ) -
++      voice->RateScale;
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetPitch
++
++   Sets the pitch for the voice associated with the specified handle.
++---------------------------------------------------------------------*/
++
++int MV_SetPitch
++   (
++   int handle,
++   int pitchoffset
++   )
++
++   {
++   VoiceNode *voice;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   voice = MV_GetVoice( handle );
++   if ( voice == NULL )
++      {
++      MV_SetErrorCode( MV_VoiceNotFound );
++      return( MV_Error );
++      }
++
++   MV_SetVoicePitch( voice, voice->SamplingRate, pitchoffset );
++
++   return( MV_Ok );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetFrequency
++
++   Sets the frequency for the voice associated with the specified handle.
++---------------------------------------------------------------------*/
++
++int MV_SetFrequency
++   (
++   int handle,
++   int frequency
++   )
++
++   {
++   VoiceNode *voice;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   voice = MV_GetVoice( handle );
++   if ( voice == NULL )
++      {
++      MV_SetErrorCode( MV_VoiceNotFound );
++      return( MV_Error );
++      }
++
++   MV_SetVoicePitch( voice, frequency, 0 );
++
++   return( MV_Ok );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_GetVolumeTable
++
++   Returns a pointer to the volume table associated with the specified
++   volume.
++---------------------------------------------------------------------*/
++
++static short *MV_GetVolumeTable
++   (
++   int vol
++   )
++
++   {
++   int volume;
++   short *table;
++
++   volume = MIX_VOLUME( vol );
++
++   table = (short *)&MV_VolumeTable[ volume ];
++
++   return( table );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetVoiceMixMode
++
++   Selects which method should be used to mix the voice.
++---------------------------------------------------------------------*/
++
++static void MV_SetVoiceMixMode
++   (
++   VoiceNode *voice
++   )
++
++   {
++   unsigned flags;
++   int test;
++
++   flags = DisableInterrupts();
++
++   test = T_DEFAULT;
++   if ( MV_Bits == 8 )
++      {
++      test |= T_8BITS;
++      }
++
++   if ( voice->bits == 16 )
++      {
++      test |= T_16BITSOURCE;
++      }
++
++   if ( MV_Channels == 1 )
++      {
++      test |= T_MONO;
++      }
++   else
++      {
++      if ( IS_QUIET( voice->RightVolume ) )
++         {
++         test |= T_RIGHTQUIET;
++         }
++      else if ( IS_QUIET( voice->LeftVolume ) )
++         {
++         test |= T_LEFTQUIET;
++         }
++      }
++
++   // Default case
++   voice->mix = MV_Mix8BitMono;
++
++   switch( test )
++      {
++      case T_8BITS | T_MONO | T_16BITSOURCE :
++         voice->mix = MV_Mix8BitMono16;
++         break;
++
++      case T_8BITS | T_MONO :
++         voice->mix = MV_Mix8BitMono;
++         break;
++
++      case T_8BITS | T_16BITSOURCE | T_LEFTQUIET :
++         MV_LeftVolume = MV_RightVolume;
++         voice->mix = MV_Mix8BitMono16;
++         break;
++
++      case T_8BITS | T_LEFTQUIET :
++         MV_LeftVolume = MV_RightVolume;
++         voice->mix = MV_Mix8BitMono;
++         break;
++
++      case T_8BITS | T_16BITSOURCE | T_RIGHTQUIET :
++         voice->mix = MV_Mix8BitMono16;
++         break;
++
++      case T_8BITS | T_RIGHTQUIET :
++         voice->mix = MV_Mix8BitMono;
++         break;
++
++      case T_8BITS | T_16BITSOURCE :
++         voice->mix = MV_Mix8BitStereo16;
++         break;
++
++      case T_8BITS :
++         voice->mix = MV_Mix8BitStereo;
++         break;
++
++      case T_MONO | T_16BITSOURCE :
++         voice->mix = MV_Mix16BitMono16;
++         break;
++
++      case T_MONO :
++         voice->mix = MV_Mix16BitMono;
++         break;
++
++      case T_16BITSOURCE | T_LEFTQUIET :
++         MV_LeftVolume = MV_RightVolume;
++         voice->mix = MV_Mix16BitMono16;
++         break;
++
++      case T_LEFTQUIET :
++         MV_LeftVolume = MV_RightVolume;
++         voice->mix = MV_Mix16BitMono;
++         break;
++
++      case T_16BITSOURCE | T_RIGHTQUIET :
++         voice->mix = MV_Mix16BitMono16;
++         break;
++
++      case T_RIGHTQUIET :
++         voice->mix = MV_Mix16BitMono;
++         break;
++
++      case T_16BITSOURCE :
++         voice->mix = MV_Mix16BitStereo16;
++         break;
++
++      case T_SIXTEENBIT_STEREO :
++         voice->mix = MV_Mix16BitStereo;
++         break;
++
++      default :
++         voice->mix = MV_Mix8BitMono;
++      }
++
++   RestoreInterrupts( flags );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetVoiceVolume
++
++   Sets the stereo and mono volume level of the voice associated
++   with the specified handle.
++---------------------------------------------------------------------*/
++
++void MV_SetVoiceVolume
++   (
++   VoiceNode *voice,
++   int vol,
++   int left,
++   int right
++   )
++
++   {
++   if ( MV_Channels == 1 )
++      {
++      left  = vol;
++      right = vol;
++      }
++
++   if ( MV_SwapLeftRight )
++      {
++      // SBPro uses reversed panning
++      voice->LeftVolume  = MV_GetVolumeTable( right );
++      voice->RightVolume = MV_GetVolumeTable( left );
++      }
++   else
++      {
++      voice->LeftVolume  = MV_GetVolumeTable( left );
++      voice->RightVolume = MV_GetVolumeTable( right );
++      }
++
++   MV_SetVoiceMixMode( voice );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_EndLooping
++
++   Stops the voice associated with the specified handle from looping
++   without stoping the sound.
++---------------------------------------------------------------------*/
++
++int MV_EndLooping
++   (
++   int handle
++   )
++
++   {
++   VoiceNode *voice;
++   unsigned flags;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   flags = DisableInterrupts();
++
++   voice = MV_GetVoice( handle );
++   if ( voice == NULL )
++      {
++      RestoreInterrupts( flags );
++      MV_SetErrorCode( MV_VoiceNotFound );
++      return( MV_Warning );
++      }
++
++   voice->LoopCount = 0;
++   voice->LoopStart = NULL;
++   voice->LoopEnd   = NULL;
++
++   RestoreInterrupts( flags );
++
++   return( MV_Ok );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetPan
++
++   Sets the stereo and mono volume level of the voice associated
++   with the specified handle.
++---------------------------------------------------------------------*/
++
++int MV_SetPan
++   (
++   int handle,
++   int vol,
++   int left,
++   int right
++   )
++
++   {
++   VoiceNode *voice;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   voice = MV_GetVoice( handle );
++   if ( voice == NULL )
++      {
++      MV_SetErrorCode( MV_VoiceNotFound );
++      return( MV_Warning );
++      }
++
++   MV_SetVoiceVolume( voice, vol, left, right );
++
++   return( MV_Ok );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_Pan3D
++
++   Set the angle and distance from the listener of the voice associated
++   with the specified handle.
++---------------------------------------------------------------------*/
++
++int MV_Pan3D
++   (
++   int handle,
++   int angle,
++   int distance
++   )
++
++   {
++   int left;
++   int right;
++   int mid;
++   int volume;
++   int status;
++
++   if ( distance < 0 )
++      {
++      distance  = -distance;
++      angle    += MV_NumPanPositions / 2;
++      }
++
++   volume = MIX_VOLUME( distance );
++
++   // Ensure angle is within 0 - 31
++   angle &= MV_MaxPanPosition;
++
++   left  = MV_PanTable[ angle ][ volume ].left;
++   right = MV_PanTable[ angle ][ volume ].right;
++   mid   = max( 0, 255 - distance );
++
++   status = MV_SetPan( handle, mid, left, right );
++
++   return( status );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetReverb
++
++   Sets the level of reverb to add to mix.
++---------------------------------------------------------------------*/
++
++void MV_SetReverb
++   (
++   int reverb
++   )
++
++   {
++   MV_ReverbLevel = MIX_VOLUME( reverb );
++   MV_ReverbTable = &MV_VolumeTable[ MV_ReverbLevel ];
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetFastReverb
++
++   Sets the level of reverb to add to mix.
++---------------------------------------------------------------------*/
++
++void MV_SetFastReverb
++   (
++   int reverb
++   )
++
++   {
++   MV_ReverbLevel = max( 0, min( 16, reverb ) );
++   MV_ReverbTable = NULL;
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_GetMaxReverbDelay
++
++   Returns the maximum delay time for reverb.
++---------------------------------------------------------------------*/
++
++int MV_GetMaxReverbDelay
++   (
++   void
++   )
++
++   {
++   int maxdelay;
++
++   maxdelay = MixBufferSize * MV_NumberOfBuffers;
++
++   return maxdelay;
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_GetReverbDelay
++
++   Returns the current delay time for reverb.
++---------------------------------------------------------------------*/
++
++int MV_GetReverbDelay
++   (
++   void
++   )
++
++   {
++   return MV_ReverbDelay / MV_SampleSize;
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetReverbDelay
++
++   Sets the delay level of reverb to add to mix.
++---------------------------------------------------------------------*/
++
++void MV_SetReverbDelay
++   (
++   int delay
++   )
++
++   {
++   int maxdelay;
++
++   maxdelay = MV_GetMaxReverbDelay();
++   MV_ReverbDelay = max( MixBufferSize, min( delay, maxdelay ) );
++   MV_ReverbDelay *= MV_SampleSize;
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetMixMode
++
++   Prepares Multivoc to play stereo of mono digitized sounds.
++---------------------------------------------------------------------*/
++
++int MV_SetMixMode
++   (
++   int numchannels,
++   int samplebits
++   )
++
++   {
++   int mode;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   mode = 0;
++   if ( numchannels == 2 )
++      {
++      mode |= STEREO;
++      }
++   if ( samplebits == 16 )
++      {
++      mode |= SIXTEEN_BIT;
++      }
++
++   MV_MixMode = mode;
++
++   MV_Channels = 1;
++   if ( MV_MixMode & STEREO )
++      {
++      MV_Channels = 2;
++      }
++
++   MV_Bits = 8;
++   if ( MV_MixMode & SIXTEEN_BIT )
++      {
++      MV_Bits = 16;
++      }
++
++   MV_BuffShift  = 7 + MV_Channels;
++   MV_SampleSize = sizeof( MONO8 ) * MV_Channels;
++
++   if ( MV_Bits == 8 )
++      {
++      MV_Silence = SILENCE_8BIT;
++      }
++   else
++      {
++      MV_Silence     = SILENCE_16BIT;
++      MV_BuffShift  += 1;
++      MV_SampleSize *= 2;
++      }
++
++   MV_BufferSize = MixBufferSize * MV_SampleSize;
++   MV_NumberOfBuffers = TotalBufferSize / MV_BufferSize;
++   MV_BufferLength = TotalBufferSize;
++
++   MV_RightChannelOffset = MV_SampleSize / 2;
++
++   return( MV_Ok );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_StartPlayback
++
++   Starts the sound playback engine.
++---------------------------------------------------------------------*/
++
++int MV_StartPlayback
++   (
++   void
++   )
++
++   {
++   int status;
++   int buffer;
++
++   // Initialize the buffers
++   ClearBuffer_DW( MV_MixBuffer[ 0 ], MV_Silence, TotalBufferSize >> 2 );
++   for( buffer = 0; buffer < MV_NumberOfBuffers; buffer++ )
++      {
++      MV_BufferEmpty[ buffer ] = TRUE;
++      }
++
++   // Set the mix buffer variables
++   MV_MixPage = 1;
++
++   MV_MixFunction = MV_Mix;
++
++    status = DSL_BeginBufferedPlayback( MV_MixBuffer[ 0 ],
++            TotalBufferSize, MV_NumberOfBuffers,
++            MV_RequestedMixRate, MV_MixMode, MV_ServiceVoc );
++
++    if ( status != DSL_Ok )
++       {
++       MV_SetErrorCode( MV_BlasterError );
++       return( MV_Error );
++       }
++
++    MV_MixRate = DSL_GetPlaybackRate();
++
++   return( MV_Ok );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_StopPlayback
++
++   Stops the sound playback engine.
++---------------------------------------------------------------------*/
++
++void MV_StopPlayback
++   (
++   void
++   )
++
++   {
++   VoiceNode   *voice;
++   VoiceNode   *next;
++   unsigned    flags;
++
++   DSL_StopPlayback();
++
++   // Make sure all callbacks are done.
++   flags = DisableInterrupts();
++
++   for( voice = VoiceList.next; voice != &VoiceList; voice = next )
++      {
++      next = voice->next;
++
++      MV_StopVoice( voice );
++
++      if ( MV_CallBackFunc )
++         {
++         MV_CallBackFunc( voice->callbackval );
++         }
++      }
++
++   RestoreInterrupts( flags );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_StartRecording
++
++   Starts the sound recording engine.
++---------------------------------------------------------------------*/
++
++int MV_StartRecording
++   (
++   int MixRate,
++   void ( *function )( char *ptr, int length )
++   )
++
++   {
++   MV_SetErrorCode( MV_UnsupportedCard );
++   return( MV_Error );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_StopRecord
++
++   Stops the sound record engine.
++---------------------------------------------------------------------*/
++
++void MV_StopRecord
++   (
++   void
++   )
++
++   {
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_StartDemandFeedPlayback
++
++   Plays a digitized sound from a user controlled buffering system.
++---------------------------------------------------------------------*/
++
++int MV_StartDemandFeedPlayback
++   (
++   void ( *function )( char **ptr, unsigned long *length ),
++   int rate,
++   int pitchoffset,
++   int vol,
++   int left,
++   int right,
++   int priority,
++   unsigned long callbackval
++   )
++
++   {
++   VoiceNode *voice;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   // Request a voice from the voice pool
++   voice = MV_AllocVoice( priority );
++   if ( voice == NULL )
++      {
++      MV_SetErrorCode( MV_NoVoices );
++      return( MV_Error );
++      }
++
++   voice->wavetype    = DemandFeed;
++   voice->bits        = 8;
++   voice->GetSound    = MV_GetNextDemandFeedBlock;
++   voice->NextBlock   = NULL;
++   voice->DemandFeed  = function;
++   voice->LoopStart   = NULL;
++   voice->LoopCount   = 0;
++   voice->BlockLength = 0;
++   voice->position    = 0;
++   voice->sound       = NULL;
++   voice->length      = 0;
++   voice->BlockLength = 0;
++   voice->Playing     = TRUE;
++   voice->next        = NULL;
++   voice->prev        = NULL;
++   voice->priority    = priority;
++   voice->callbackval = callbackval;
++
++   MV_SetVoicePitch( voice, rate, pitchoffset );
++   MV_SetVoiceVolume( voice, vol, left, right );
++   MV_PlayVoice( voice );
++
++   return( voice->handle );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_PlayRaw
++
++   Begin playback of sound data with the given sound levels and
++   priority.
++---------------------------------------------------------------------*/
++
++int MV_PlayRaw
++   (
++   char *ptr,
++   unsigned long length,
++   unsigned rate,
++   int   pitchoffset,
++   int   vol,
++   int   left,
++   int   right,
++   int   priority,
++   unsigned long callbackval
++   )
++
++   {
++   int status;
++
++   status = MV_PlayLoopedRaw( ptr, length, NULL, NULL, rate, pitchoffset,
++      vol, left, right, priority, callbackval );
++
++   return( status );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_PlayLoopedRaw
++
++   Begin playback of sound data with the given sound levels and
++   priority.
++---------------------------------------------------------------------*/
++
++int MV_PlayLoopedRaw
++   (
++   char *ptr,
++   long length,
++   char *loopstart,
++   char *loopend,
++   unsigned rate,
++   int   pitchoffset,
++   int   vol,
++   int   left,
++   int   right,
++   int   priority,
++   unsigned long callbackval
++   )
++
++   {
++   VoiceNode *voice;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   // Request a voice from the voice pool
++   voice = MV_AllocVoice( priority );
++   if ( voice == NULL )
++      {
++      MV_SetErrorCode( MV_NoVoices );
++      return( MV_Error );
++      }
++
++   voice->wavetype    = Raw;
++   voice->bits        = 8;
++   voice->GetSound    = MV_GetNextRawBlock;
++   voice->Playing     = TRUE;
++   voice->NextBlock   = ptr;
++   voice->position    = 0;
++   voice->BlockLength = length;
++   voice->length      = 0;
++   voice->next        = NULL;
++   voice->prev        = NULL;
++   voice->priority    = priority;
++   voice->callbackval = callbackval;
++   voice->LoopStart   = loopstart;
++   voice->LoopEnd     = loopend;
++   voice->LoopSize    = ( voice->LoopEnd - voice->LoopStart ) + 1;
++
++   MV_SetVoicePitch( voice, rate, pitchoffset );
++   MV_SetVoiceVolume( voice, vol, left, right );
++   MV_PlayVoice( voice );
++
++   return( voice->handle );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_PlayWAV
++
++   Begin playback of sound data with the given sound levels and
++   priority.
++---------------------------------------------------------------------*/
++
++int MV_PlayWAV
++   (
++   char *ptr,
++   int   pitchoffset,
++   int   vol,
++   int   left,
++   int   right,
++   int   priority,
++   unsigned long callbackval
++   )
++
++   {
++   int status;
++
++   status = MV_PlayLoopedWAV( ptr, -1, -1, pitchoffset, vol, left, right,
++      priority, callbackval );
++
++   return( status );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_PlayWAV3D
++
++   Begin playback of sound data at specified angle and distance
++   from listener.
++---------------------------------------------------------------------*/
++
++int MV_PlayWAV3D
++   (
++   char *ptr,
++   int  pitchoffset,
++   int  angle,
++   int  distance,
++   int  priority,
++   unsigned long callbackval
++   )
++
++   {
++   int left;
++   int right;
++   int mid;
++   int volume;
++   int status;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   if ( distance < 0 )
++      {
++      distance  = -distance;
++      angle    += MV_NumPanPositions / 2;
++      }
++
++   volume = MIX_VOLUME( distance );
++
++   // Ensure angle is within 0 - 31
++   angle &= MV_MaxPanPosition;
++
++   left  = MV_PanTable[ angle ][ volume ].left;
++   right = MV_PanTable[ angle ][ volume ].right;
++   mid   = max( 0, 255 - distance );
++
++   status = MV_PlayWAV( ptr, pitchoffset, mid, left, right, priority,
++      callbackval );
++
++   return( status );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_PlayLoopedWAV
++
++   Begin playback of sound data with the given sound levels and
++   priority.
++---------------------------------------------------------------------*/
++
++int MV_PlayLoopedWAV
++   (
++   char *ptr,
++   long  loopstart,
++   long  loopend,
++   int   pitchoffset,
++   int   vol,
++   int   left,
++   int   right,
++   int   priority,
++   unsigned long callbackval
++   )
++
++   {
++   riff_header   *riff;
++   format_header *format;
++   data_header   *data;
++   VoiceNode     *voice;
++   int length;
++   int absloopend;
++   int absloopstart;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   riff = ( riff_header * )ptr;
++
++   if ( ( strncmp( riff->RIFF, "RIFF", 4 ) != 0 ) ||
++      ( strncmp( riff->WAVE, "WAVE", 4 ) != 0 ) ||
++      ( strncmp( riff->fmt, "fmt ", 4) != 0 ) )
++      {
++      MV_SetErrorCode( MV_InvalidWAVFile );
++      return( MV_Error );
++      }
++
++   format = ( format_header * )( riff + 1 );
++   data   = ( data_header * )( ( ( char * )format ) + riff->format_size );
++
++   // Check if it's PCM data.
++   if ( format->wFormatTag != 1 )
++      {
++      MV_SetErrorCode( MV_InvalidWAVFile );
++      return( MV_Error );
++      }
++
++   if ( format->nChannels != 1 )
++      {
++      MV_SetErrorCode( MV_InvalidWAVFile );
++      return( MV_Error );
++      }
++
++   if ( ( format->nBitsPerSample != 8 ) &&
++      ( format->nBitsPerSample != 16 ) )
++      {
++      MV_SetErrorCode( MV_InvalidWAVFile );
++      return( MV_Error );
++      }
++
++   if ( strncmp( data->DATA, "data", 4 ) != 0 )
++      {
++      MV_SetErrorCode( MV_InvalidWAVFile );
++      return( MV_Error );
++      }
++
++   // Request a voice from the voice pool
++   voice = MV_AllocVoice( priority );
++   if ( voice == NULL )
++      {
++      MV_SetErrorCode( MV_NoVoices );
++      return( MV_Error );
++      }
++
++   voice->wavetype    = WAV;
++   voice->bits        = format->nBitsPerSample;
++   voice->GetSound    = MV_GetNextWAVBlock;
++
++   length = data->size;
++   absloopstart = loopstart;
++   absloopend   = loopend;
++   if ( voice->bits == 16 )
++      {
++      loopstart  *= 2;
++      data->size &= ~1;
++      loopend    *= 2;
++      length     /= 2;
++      }
++
++   loopend    = min( loopend, (long)data->size );
++   absloopend = min( absloopend, length );
++
++   voice->Playing     = TRUE;
++   voice->DemandFeed  = NULL;
++   voice->LoopStart   = NULL;
++   voice->LoopCount   = 0;
++   voice->position    = 0;
++   voice->length      = 0;
++   voice->BlockLength = absloopend;
++   voice->NextBlock   = ( char * )( data + 1 );
++   voice->next        = NULL;
++   voice->prev        = NULL;
++   voice->priority    = priority;
++   voice->callbackval = callbackval;
++   voice->LoopStart   = voice->NextBlock + loopstart;
++   voice->LoopEnd     = voice->NextBlock + loopend;
++   voice->LoopSize    = absloopend - absloopstart;
++
++   if ( ( loopstart >= (long)data->size ) || ( loopstart < 0 ) )
++      {
++      voice->LoopStart = NULL;
++      voice->LoopEnd   = NULL;
++      voice->BlockLength = length;
++      }
++
++   MV_SetVoicePitch( voice, format->nSamplesPerSec, pitchoffset );
++   MV_SetVoiceVolume( voice, vol, left, right );
++   MV_PlayVoice( voice );
++
++   return( voice->handle );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_PlayVOC3D
++
++   Begin playback of sound data at specified angle and distance
++   from listener.
++---------------------------------------------------------------------*/
++
++int MV_PlayVOC3D
++   (
++   char *ptr,
++   int  pitchoffset,
++   int  angle,
++   int  distance,
++   int  priority,
++   unsigned long callbackval
++   )
++
++   {
++   int left;
++   int right;
++   int mid;
++   int volume;
++   int status;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   if ( distance < 0 )
++      {
++      distance  = -distance;
++      angle    += MV_NumPanPositions / 2;
++      }
++
++   volume = MIX_VOLUME( distance );
++
++   // Ensure angle is within 0 - 31
++   angle &= MV_MaxPanPosition;
++
++   left  = MV_PanTable[ angle ][ volume ].left;
++   right = MV_PanTable[ angle ][ volume ].right;
++   mid   = max( 0, 255 - distance );
++
++   status = MV_PlayVOC( ptr, pitchoffset, mid, left, right, priority,
++      callbackval );
++
++   return( status );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_PlayVOC
++
++   Begin playback of sound data with the given sound levels and
++   priority.
++---------------------------------------------------------------------*/
++
++int MV_PlayVOC
++   (
++   char *ptr,
++   int   pitchoffset,
++   int   vol,
++   int   left,
++   int   right,
++   int   priority,
++   unsigned long callbackval
++   )
++
++   {
++   int status;
++
++   status = MV_PlayLoopedVOC( ptr, -1, -1, pitchoffset, vol, left, right,
++      priority, callbackval );
++
++   return( status );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_PlayLoopedVOC
++
++   Begin playback of sound data with the given sound levels and
++   priority.
++---------------------------------------------------------------------*/
++
++int MV_PlayLoopedVOC
++   (
++   char *ptr,
++   long  loopstart,
++   long  loopend,
++   int   pitchoffset,
++   int   vol,
++   int   left,
++   int   right,
++   int   priority,
++   unsigned long callbackval
++   )
++
++   {
++   VoiceNode   *voice;
++   int          status;
++   unsigned short nextpos;
++
++   if ( !MV_Installed )
++      {
++      MV_SetErrorCode( MV_NotInstalled );
++      return( MV_Error );
++      }
++
++   // Make sure it's a valid VOC file.
++   status = strncmp( ptr, "Creative Voice File", 19 );
++   if ( status != 0 )
++      {
++      MV_SetErrorCode( MV_InvalidVOCFile );
++      return( MV_Error );
++      }
++
++   // Request a voice from the voice pool
++   voice = MV_AllocVoice( priority );
++   if ( voice == NULL )
++      {
++      MV_SetErrorCode( MV_NoVoices );
++      return( MV_Error );
++      }
++
++   voice->wavetype    = VOC;
++   voice->bits        = 8;
++   voice->GetSound    = MV_GetNextVOCBlock;
++
++   nextpos = *( unsigned short * )( ptr + 0x14 );
++   voice->NextBlock   = ptr + BUILDSWAP_INTEL16(nextpos);
++
++   voice->DemandFeed  = NULL;
++   voice->LoopStart   = NULL;
++   voice->LoopCount   = 0;
++   voice->BlockLength = 0;
++   voice->PitchScale  = PITCH_GetScale( pitchoffset );
++   voice->length      = 0;
++   voice->next        = NULL;
++   voice->prev        = NULL;
++   voice->priority    = priority;
++   voice->callbackval = callbackval;
++   voice->LoopStart   = ( char * )loopstart;
++   voice->LoopEnd     = ( char * )loopend;
++   voice->LoopSize    = loopend - loopstart + 1;
++
++   if ( loopstart < 0 )
++      {
++      voice->LoopStart = NULL;
++      voice->LoopEnd   = NULL;
++      }
++
++   MV_SetVoiceVolume( voice, vol, left, right );
++   MV_PlayVoice( voice );
++
++   return( voice->handle );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_LockEnd
++
++   Used for determining the length of the functions to lock in memory.
++---------------------------------------------------------------------*/
++
++static void MV_LockEnd
++   (
++   void
++   )
++
++   {
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_CreateVolumeTable
++
++   Create the table used to convert sound data to a specific volume
++   level.
++---------------------------------------------------------------------*/
++
++void MV_CreateVolumeTable
++   (
++   int index,
++   int volume,
++   int MaxVolume
++   )
++
++   {
++   int val;
++   int level;
++   int i;
++
++   level = ( volume * MaxVolume ) / MV_MaxTotalVolume;
++   if ( MV_Bits == 16 )
++      {
++      for( i = 0; i < 65536; i += 256 )
++         {
++         val   = i - 0x8000;
++         val  *= level;
++         val  /= MV_MaxVolume;
++         MV_VolumeTable[ index ][ i / 256 ] = val;
++         }
++      }
++   else
++      {
++      for( i = 0; i < 256; i++ )
++         {
++         val   = i - 0x80;
++         val  *= level;
++         val  /= MV_MaxVolume;
++         MV_VolumeTable[ volume ][ i ] = val;
++         }
++      }
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_CalcVolume
++
++   Create the table used to convert sound data to a specific volume
++   level.
++---------------------------------------------------------------------*/
++
++void MV_CalcVolume
++   (
++   int MaxVolume
++   )
++
++   {
++   int volume;
++
++   for( volume = 0; volume < 128; volume++ )
++      {
++      MV_HarshClipTable[ volume ] = 0;
++      MV_HarshClipTable[ volume + 384 ] = 255;
++      }
++   for( volume = 0; volume < 256; volume++ )
++      {
++      MV_HarshClipTable[ volume + 128 ] = volume;
++      }
++
++   // For each volume level, create a translation table with the
++   // appropriate volume calculated.
++   for( volume = 0; volume <= MV_MaxVolume; volume++ )
++      {
++      MV_CreateVolumeTable( volume, volume, MaxVolume );
++      }
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_CalcPanTable
++
++   Create the table used to determine the stereo volume level of
++   a sound located at a specific angle and distance from the listener.
++---------------------------------------------------------------------*/
++
++void MV_CalcPanTable
++   (
++   void
++   )
++
++   {
++   int   level;
++   int   angle;
++   int   distance;
++   int   HalfAngle;
++   int   ramp;
++
++   HalfAngle = ( MV_NumPanPositions / 2 );
++
++   for( distance = 0; distance <= MV_MaxVolume; distance++ )
++      {
++      level = ( 255 * ( MV_MaxVolume - distance ) ) / MV_MaxVolume;
++      for( angle = 0; angle <= HalfAngle / 2; angle++ )
++         {
++         ramp = level - ( ( level * angle ) /
++            ( MV_NumPanPositions / 4 ) );
++
++         MV_PanTable[ angle ][ distance ].left = ramp;
++         MV_PanTable[ HalfAngle - angle ][ distance ].left = ramp;
++         MV_PanTable[ HalfAngle + angle ][ distance ].left = level;
++         MV_PanTable[ MV_MaxPanPosition - angle ][ distance ].left = level;
++
++         MV_PanTable[ angle ][ distance ].right = level;
++         MV_PanTable[ HalfAngle - angle ][ distance ].right = level;
++         MV_PanTable[ HalfAngle + angle ][ distance ].right = ramp;
++         MV_PanTable[ MV_MaxPanPosition - angle ][ distance ].right = ramp;
++         }
++      }
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetVolume
++
++   Sets the volume of digitized sound playback.
++---------------------------------------------------------------------*/
++
++void MV_SetVolume
++   (
++   int volume
++   )
++
++   {
++   volume = max( 0, volume );
++   volume = min( volume, MV_MaxTotalVolume );
++
++   MV_TotalVolume = volume;
++
++   // Calculate volume table
++   MV_CalcVolume( volume );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_GetVolume
++
++   Returns the volume of digitized sound playback.
++---------------------------------------------------------------------*/
++
++int MV_GetVolume
++   (
++   void
++   )
++
++   {
++   return( MV_TotalVolume );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetCallBack
++
++   Set the function to call when a voice stops.
++---------------------------------------------------------------------*/
++
++void MV_SetCallBack
++   (
++   void ( *function )( unsigned long )
++   )
++
++   {
++   MV_CallBackFunc = function;
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_SetReverseStereo
++
++   Set the orientation of the left and right channels.
++---------------------------------------------------------------------*/
++
++void MV_SetReverseStereo
++   (
++   int setting
++   )
++
++   {
++   MV_SwapLeftRight = setting;
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_GetReverseStereo
++
++   Returns the orientation of the left and right channels.
++---------------------------------------------------------------------*/
++
++int MV_GetReverseStereo
++   (
++   void
++   )
++
++   {
++   return( MV_SwapLeftRight );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_TestPlayback
++
++   Checks if playback has started.
++---------------------------------------------------------------------*/
++
++int MV_TestPlayback(void)
++   {
++   return MV_Ok;
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_Init
++
++   Perform the initialization of variables and memory used by
++   Multivoc.
++---------------------------------------------------------------------*/
++
++int MV_Init
++   (
++   int soundcard,
++   int MixRate,
++   int Voices,
++   int numchannels,
++   int samplebits
++   )
++
++   {
++   char *ptr;
++   int  status;
++   int  buffer;
++   int  index;
++
++   if ( MV_Installed )
++      {
++      MV_Shutdown();
++      }
++
++   MV_SetErrorCode( MV_Ok );
++
++   MV_TotalMemory = Voices * sizeof( VoiceNode ) + sizeof( HARSH_CLIP_TABLE_8 );
++   status = USRHOOKS_GetMem( ( void ** )&ptr, MV_TotalMemory );
++   if ( status != USRHOOKS_Ok )
++      {
++      MV_SetErrorCode( MV_NoMem );
++      return( MV_Error );
++      }
++
++   MV_Voices = ( VoiceNode * )ptr;
++   MV_HarshClipTable = ptr + ( MV_TotalMemory - sizeof( HARSH_CLIP_TABLE_8 ) );
++
++   // Set number of voices before calculating volume table
++   MV_MaxVoices = Voices;
++
++   LL_Reset( (VoiceNode *)&VoiceList, next, prev );
++   LL_Reset( (VoiceNode *)&VoicePool, next, prev );
++
++   for( index = 0; index < Voices; index++ )
++      {
++      LL_Add( (VoiceNode *)&VoicePool, &MV_Voices[ index ], next, prev );
++      }
++
++   // Allocate mix buffer within 1st megabyte
++   status = DPMI_GetDOSMemory( ( void ** )&ptr, &MV_BufferDescriptor,
++      2 * TotalBufferSize );
++
++   if ( status )
++      {
++      USRHOOKS_FreeMem( MV_Voices );
++      MV_Voices      = NULL;
++      MV_TotalMemory = 0;
++
++      MV_SetErrorCode( MV_NoMem );
++      return( MV_Error );
++      }
++
++   MV_SetReverseStereo( FALSE );
++
++   // Initialize the sound card
++   status = DSL_Init();
++   if ( status != DSL_Ok )
++      {
++      MV_SetErrorCode( MV_BlasterError );
++      }
++
++   if ( MV_ErrorCode != MV_Ok )
++      {
++      status = MV_ErrorCode;
++
++      USRHOOKS_FreeMem( MV_Voices );
++      MV_Voices      = NULL;
++      MV_TotalMemory = 0;
++
++      DPMI_FreeDOSMemory( MV_BufferDescriptor );
++
++      MV_SetErrorCode( status );
++      return( MV_Error );
++      }
++
++   MV_SoundCard    = soundcard;
++   MV_Installed    = TRUE;
++   MV_CallBackFunc = NULL;
++   MV_RecordFunc   = NULL;
++   MV_Recording    = FALSE;
++   MV_ReverbLevel  = 0;
++   MV_ReverbTable  = NULL;
++
++   // Set the sampling rate
++   MV_RequestedMixRate = MixRate;
++
++   // Set Mixer to play stereo digitized sound
++   MV_SetMixMode( numchannels, samplebits );
++   MV_ReverbDelay = MV_BufferSize * 3;
++
++   MV_MixBuffer[ MV_NumberOfBuffers ] = ptr;
++   for( buffer = 0; buffer < MV_NumberOfBuffers; buffer++ )
++      {
++      MV_MixBuffer[ buffer ] = ptr;
++      ptr += MV_BufferSize;
++      }
++
++   // Calculate pan table
++   MV_CalcPanTable();
++
++   MV_SetVolume( MV_MaxTotalVolume );
++
++   // Start the playback engine
++   status = MV_StartPlayback();
++   if ( status != MV_Ok )
++      {
++      // Preserve error code while we shutdown.
++      status = MV_ErrorCode;
++      MV_Shutdown();
++      MV_SetErrorCode( status );
++      return( MV_Error );
++      }
++
++   if ( MV_TestPlayback() != MV_Ok )
++      {
++      status = MV_ErrorCode;
++      MV_Shutdown();
++      MV_SetErrorCode( status );
++      return( MV_Error );
++      }
++
++   return( MV_Ok );
++   }
++
++
++/*---------------------------------------------------------------------
++   Function: MV_Shutdown
++
++   Restore any resources allocated by Multivoc back to the system.
++---------------------------------------------------------------------*/
++
++int MV_Shutdown
++   (
++   void
++   )
++
++   {
++   int      buffer;
++   unsigned flags;
++
++   if ( !MV_Installed )
++      {
++      return( MV_Ok );
++      }
++
++   flags = DisableInterrupts();
++
++   MV_KillAllVoices();
++
++   MV_Installed = FALSE;
++
++   // Stop the sound recording engine
++   if ( MV_Recording )
++      {
++      MV_StopRecord();
++      }
++
++   // Stop the sound playback engine
++   MV_StopPlayback();
++
++   // Shutdown the sound card
++   DSL_Shutdown();
++
++   RestoreInterrupts( flags );
++
++   // Free any voices we allocated
++   USRHOOKS_FreeMem( MV_Voices );
++   MV_Voices      = NULL;
++   MV_TotalMemory = 0;
++
++   LL_Reset( (VoiceNode *)&VoiceList, next, prev );
++   LL_Reset( (VoiceNode *)&VoicePool, next, prev );
++
++   MV_MaxVoices = 1;
++
++   // Release the descriptor from our mix buffer
++   DPMI_FreeDOSMemory( MV_BufferDescriptor );
++   for( buffer = 0; buffer < NumberOfBuffers; buffer++ )
++      {
++      MV_MixBuffer[ buffer ] = NULL;
++      }
++
++   return( MV_Ok );
++   }
+diff -Nur jfsw_src_20051009.orig/source/jaudiolib/util.h jfsw_src_20051009/source/jaudiolib/util.h
+--- jfsw_src_20051009.orig/source/jaudiolib/util.h	1970-01-01 01:00:00.000000000 +0100
++++ jfsw_src_20051009/source/jaudiolib/util.h	2005-10-10 15:02:08.000000000 +0200
+@@ -0,0 +1,12 @@
++#ifndef AUDIOLIB__UTIL_H
++#define AUDIOLIB__UTIL_H
++
++#ifndef min
++#define min(a, b)  ((a) < (b) ? (a) : (b))
++#endif
++
++#ifndef max
++#define max(a, b)  ((a) > (b) ? (a) : (b))
++#endif
++
++#endif
+diff -Nur jfsw_src_20051009.orig/source/lists.h jfsw_src_20051009/source/lists.h
+--- jfsw_src_20051009.orig/source/lists.h	2005-10-09 15:28:24.000000000 +0200
++++ jfsw_src_20051009/source/lists.h	2005-10-10 15:02:08.000000000 +0200
+@@ -57,7 +57,7 @@
+                                      ((LIST) nodep)->Next->Prev = ((LIST) nodep)->Prev)
+ 
+ 
+-      #define TRAVERSE(l, o, n)    ASSERT(((LIST)l)->Next && ((LIST)l)->Prev); for ((LIST) o = ((LIST)l)->Next;      \
++      #define TRAVERSE(l, o, n)    ASSERT(((LIST)l)->Next && ((LIST)l)->Prev); for (o = ((LIST)l)->Next;      \
+                                       n = o->Next, (LIST) o != (LIST) l; \
+                                       o = n)
+ 
+diff -Nur jfsw_src_20051009.orig/source/sounds.c jfsw_src_20051009/source/sounds.c
+--- jfsw_src_20051009.orig/source/sounds.c	2005-10-09 15:28:24.000000000 +0200
++++ jfsw_src_20051009/source/sounds.c	2005-10-10 15:02:08.000000000 +0200
+@@ -392,6 +392,7 @@
+     if (DemoMode)    
+         return(MUSIC_Error);
+     
++#ifdef WINDOWS
+     if (SongPtr)    
+         StopSong();
+     
+@@ -412,7 +413,16 @@
+     //DSPRINTF(ds,"Playing song");
+     //MONO_PRINT(ds);
+ 
+-    return((int)MUSIC_PlaySong(SongPtr, loopflag));
++    return((int)MUSIC_PlaySong(SongPtr, loopflag));
++    
++#else
++    void PlayMusic(char *_filename);
++    if(MusicDevice < 0) return;
++
++     // FIXME: I need this to get the music volume initialized (not sure why) -- Jim Bentler
++    MUSIC_SetVolume( MusicVolume );
++    PlayMusic(song_file_name);
++#endif
+     }
+ 
+ VOID
+--- jfsw_src_20051009/source/game.c.orig	2005-10-09 15:28:24.000000000 +0000
++++ jfsw_src_20051009/source/game.c	2010-03-17 07:30:51.119214522 +0000
+@@ -197,7 +197,7 @@
+ TRUE, // fx on
+ TRUE, // Music on
+ TRUE, // talking
+-TRUE, // ambient
++FALSE, // ambient
+ FALSE, // Flip Stereo
+ 
+ // Network game settings
+@@ -5182,7 +5182,10 @@
+             angvel = info.dyaw >> 8;
+         }
+     
+-    svel -= info.dx;
++    if (!running) svel -= (info.dx / 8.75);
++    else svel -= (info.dx / 4.375);
++    if (!running) vel -= (info.dpitch / 8.75);
++    else vel -= (info.dpitch / 4.375);
+ 
+     switch (ControllerType)
+         {
+--- jfsw_src_20051009/source/menus.c.orig	2010-03-17 07:27:03.425230860 +0000
++++ jfsw_src_20051009/source/menus.c	2010-03-17 07:27:14.823211050 +0000
+@@ -196,7 +196,7 @@
+     {DefInert(0, NULL), OPT_XSIDE,                            OPT_LINE(3), 0, m_defshade, 0, NULL, NULL, NULL}, 
+     
+     //{DefButton(btn_talking, 0, "Talking"), OPT_XS,            OPT_LINE(4), 1, m_defshade, 0, NULL, MNU_FxCheck, NULL},
+-    {DefButton(btn_ambience, 0, "Ambience"), OPT_XS,          OPT_LINE(4), 1, m_defshade, 0, NULL, MNU_FxCheck, NULL},
++    //{DefButton(btn_ambience, 0, "Ambience"), OPT_XS,          OPT_LINE(4), 1, m_defshade, 0, NULL, MNU_FxCheck, NULL},
+     {DefButton(btn_flipstereo, 0, "Flip Stereo"), OPT_XS,     OPT_LINE(5), 1, m_defshade, 0, NULL, MNU_FxCheck, NULL},
+     //{DefButton(btn_playcd, 0, "Play CD"), OPT_XS,         OPT_LINE(6), 1, m_defshade, 0, NULL, NULL, NULL},
+     {DefNone}
