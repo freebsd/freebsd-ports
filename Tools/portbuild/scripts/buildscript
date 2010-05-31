@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# client-side script to actually build a package
+
 # usage: $0 DIRNAME PHASE
 #   PHASE is 1 (checksum) or 2 (package)
 
