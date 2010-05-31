@@ -12,7 +12,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	rgl
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface for external iterators
 
 USE_RUBY=	yes
