@@ -2342,8 +2342,8 @@ etc/freevo/local_conf.py.example
 %%NLS%%share/locale/sv/LC_MESSAGES/freevo.po
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/freevo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/freevo.po
-@dirrm %%NLS%%share/locale/nn_NO/LC_MESSAGES
-@dirrm %%NLS%%share/locale/nn_NO
+%%NLS%%@dirrm share/locale/nn_NO/LC_MESSAGES
+%%NLS%%@dirrm share/locale/nn_NO
 @dirrmtry etc/freevo
 @dirrm %%PYTHON_SITELIBDIR%%/freevo/animation
 @dirrm %%PYTHON_SITELIBDIR%%/freevo/audio/plugins

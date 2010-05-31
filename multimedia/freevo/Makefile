@@ -62,11 +62,12 @@ PLIST_SUB+=	NLS=""
 
 post-patch:
 .if defined(WITHOUT_NLS)
-	@${REINPLACE_CMD} -e  '451d' ${WRKSRC}/${PORTNAME}
+	@${REINPLACE_CMD} -e 's| freevo_locale| # freevo_locale|' ${WRKSRC}/${PORTNAME}
+	@${MV} ${WRKSRC}/i18n ${WRKSRC}/i18n-nls-disabled
 .endif
-
 	@${REINPLACE_CMD} -e 's|/etc/freevo|${PREFIX}/etc/freevo|' ${WRKSRC}/freevo_config.py
 	@${REINPLACE_CMD} -e 's|/etc/freevo|${PREFIX}/etc/freevo|' ${WRKSRC}/local_conf.py.example
+	@${MV} ${WRKSRC}/src/www/htdocs/favorites.rpy.orig ${WRKDIR}
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
