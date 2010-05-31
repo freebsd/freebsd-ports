@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/cserv/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Camserv is a free program to do streaming video via the web
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
