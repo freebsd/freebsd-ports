@@ -49,7 +49,7 @@ OPTIONS=	NUMPY "Enable numpy support (pulls in gcc44)" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NYMPY)
+.if defined(WITH_NUMPY)
 BUILD_DEPENDS+=	${PYNUMPY}
 RUN_DEPENDS+=	${PYNUMPY}
 CONFIGURE_ARGS+=--enable-numpy
