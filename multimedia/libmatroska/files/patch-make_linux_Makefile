@@ -1,5 +1,5 @@
---- make/linux/Makefile.orig	2010-05-31 18:55:06.000000000 +0200
-+++ make/linux/Makefile	2010-05-31 19:05:08.000000000 +0200
+--- make/linux/Makefile.orig	2010-03-23 12:58:04.000000000 -0300
++++ make/linux/Makefile	2010-05-31 15:03:28.000000000 -0300
 @@ -99,7 +99,7 @@
  	$(RANLIB) $@
  
