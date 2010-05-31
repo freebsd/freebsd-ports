@@ -38,11 +38,10 @@ unset DISPLAY
 
 # Don't pick up installed packages from the host
 export LOCALBASE=/nonexistentlocal
-export X11BASE=/nonexistentx
 
 cd ${PORTSDIR}
 make index
 
 # remove extra spaces in dependency list -- this causes problems
 # Also transform the dummy paths to their canonical locations
-sed -i '' -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,${LOCALBASE},/usr/local," -e "s,${X11BASE},/usr/local," ${INDEXFILE}
+sed -i '' -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,${LOCALBASE},/usr/local," ${INDEXFILE}

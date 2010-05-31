@@ -27,7 +27,6 @@ unset DISPLAY
 export __MAKE_SHELL=/rescue/sh
 export PACKAGE_BUILDING=1
 export LOCALBASE=/nonexistentlocal
-export X11BASE=/nonexistentx
 export LINUXBASE=/nonexistentlinux
 export PKG_DBDIR=/nonexistentpkg
 export PORT_DBDIR=/nonexistentport
