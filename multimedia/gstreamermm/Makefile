@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamermm/Makefile,v 1.6 2009/09/26 13:42:00 marcus Exp $
 
 PORTNAME=	gstreamermm
-PORTVERSION=	0.10.7.2
+PORTVERSION=	0.10.7.3
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 
