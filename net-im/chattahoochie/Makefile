@@ -6,7 +6,7 @@
 #
 
 PORTNAME=      pickwick
-PORTVERSION=   1.10
+PORTVERSION=   1.11
 CATEGORIES=    net-im
 MASTER_SITES=  http://www.mammothcheese.ca/
 
