@@ -12,9 +12,9 @@ PORTEPOCH=	1
 CATEGORIES=	games
 # Fetched from http://gitweb.dragonflybsd.org/dragonfly.git/tree/v2.4.0:/games
 # Content is stable, but file timestamps differ. Bad gitweb, no cookie!
-MASTER_SITES=	https://www.spoerlein.net/pub/
+MASTER_SITES=	http://people.freebsd.org/~uqs/distfiles/
 
-MAINTAINER=	uqs@spoerlein.net
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Traditional BSD games taken from DragonFly BSD
 
 WRKSRC=		${WRKDIR}/dragonfly

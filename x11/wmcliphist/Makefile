@@ -9,9 +9,10 @@ PORTNAME=	wmcliphist
 PORTVERSION=	0.6
 PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/
+MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/ \
+		http://people.freebsd.org/~uqs/distfiles/
 
-MAINTAINER=	uqs@spoerlein.net
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Clipboard history management dockapp for Window Maker
 
 USE_XORG=	xpm

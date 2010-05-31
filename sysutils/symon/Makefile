@@ -8,7 +8,8 @@
 PORTNAME=	symon
 PORTVERSION=	2.80
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/
+MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/ \
+		http://people.freebsd.org/~uqs/distfiles/
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Performance and information monitoring tool

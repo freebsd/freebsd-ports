@@ -1,6 +1,6 @@
 # New ports collection makefile for:	net/wmwifi
 # Date created:				01.07.2005
-# Whom:					Ulrich Spoerlein <q@galgenberg.net>
+# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,9 +10,10 @@ PORTVERSION=	0.4
 DISTVERSIONSUFFIX=-bsd
 PORTREVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	http://digitalssg.net/debian/
+MASTER_SITES=	http://digitalssg.net/debian/ \
+		http://people.freebsd.org/~uqs/distfiles/
 
-MAINTAINER=	uqs@spoerlein.net
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Dockapp displaying the signal strength of WiFi connection
 
 GNU_CONFIGURE=	yes

@@ -9,9 +9,10 @@ PORTNAME=	wmtimer
 PORTVERSION=	2.92
 PORTREVISION=	8
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	http://www.darkops.net/wmtimer/
+MASTER_SITES=	http://www.darkops.net/wmtimer/ \
+		http://people.freebsd.org/~uqs/distfiles/
 
-MAINTAINER=	uqs@spoerlein.net
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Multi-Function timer dockapp for WindowMaker
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtimer
