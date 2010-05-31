@@ -1,0 +1,23 @@
+Correct two configure tests that fail whenn g++ is used instead of gcc.
+--- configure.orig	2010-05-30 16:00:03.000000000 +0200
++++ configure	2010-05-30 16:00:33.000000000 +0200
+@@ -48547,7 +48547,10 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
++#include <sys/types.h> /* for setresuid(2) on FreeBSD */
++#include <stdio.h> /* for perror(3) on FreeBSD */
+ #include <stdlib.h>
++#include <unistd.h> /* for setresuid(2) on FreeBSD */
+   int main(int argc, char **argv) {
+     if(setresuid(-1,-1,-1)) {
+       perror("setresuid:");
+@@ -48632,7 +48635,7 @@
+ int main(int argc, char **argv)
+ {
+     int size = 20;
+-    char *str = malloc(size);
++    char *str = (char *)malloc(size);
+     memset(str, 'x', size);
+     strnstr(str, "fubar", size);
+     return 0;
