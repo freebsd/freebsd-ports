@@ -3468,6 +3468,7 @@ flac                            ports/audio/flac
 flac123                         ports/audio/flac123
 flam3                           ports/graphics/flam3
 flamerobin                      ports/databases/flamerobin
+flare                           ports/databases/flare
 flash                           ports/shells/flash
 flasher                         ports/sysutils/flasher
 flashplayer                     ports/graphics/flashplayer
