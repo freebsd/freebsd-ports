@@ -7,6 +7,7 @@
 
 PORTNAME=	libcroco
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 
@@ -14,6 +15,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CSS2 parsing library
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes

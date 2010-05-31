@@ -7,6 +7,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
     		http://wireshark.osmirror.nl/download/src/ \
@@ -23,6 +24,7 @@ DATADIR_NAME=	wireshark
 
 USE_PERL5_BUILD=yes
 USE_PYTHON_BUILD=yes
+USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

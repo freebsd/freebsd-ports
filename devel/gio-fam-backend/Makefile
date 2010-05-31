@@ -8,7 +8,7 @@
 
 PORTNAME=	gio-fam-backend
 PORTVERSION=	2.24.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
 		ftp://ftp.gtk.org/pub/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
@@ -24,6 +24,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	FAM backend for GLib's GIO library
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 BUILD_WRKSRC=	${WRKSRC}/gio/fam
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 GNU_CONFIGURE=	yes

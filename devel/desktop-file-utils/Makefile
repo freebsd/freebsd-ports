@@ -8,7 +8,7 @@
 
 PORTNAME=	desktop-file-utils
 PORTVERSION=	0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -16,6 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A couple of command line utilities for working with desktop entries
 
 USE_GNOME=	glib20
+USE_GETTEXT=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lispdir

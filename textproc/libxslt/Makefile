@@ -20,6 +20,7 @@ COMMENT?=	The XSLT C library for GNOME
 .if !defined(REFERENCE_PORT)
 
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME?=	gnomehack gnometarget libxml2

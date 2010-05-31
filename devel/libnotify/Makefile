@@ -8,7 +8,7 @@
 
 PORTNAME=	libnotify
 PORTVERSION=	0.4.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/libnotify/
 
@@ -18,6 +18,7 @@ COMMENT=	A library for desktop notifications
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
 USE_GNOME=	gnomehack gnometarget intlhack glib20 gtk20 ltverhack
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22

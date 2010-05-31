@@ -7,6 +7,7 @@
 
 PORTNAME=	libnice
 PORTVERSION=	0.0.12
+PORTREVISION=	1
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://nice.freedesktop.org/releases/
 
@@ -14,6 +15,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library and transmitter that implements ICE-19
 
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 ltverhack gnometarget
 USE_GSTREAMER=	yes

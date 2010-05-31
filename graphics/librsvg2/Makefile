@@ -8,6 +8,7 @@
 
 PORTNAME=	librsvg2
 PORTVERSION=	2.26.3
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,6 +24,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 RUN_DEPENDS=	gtk-engines2>=2.7.5_1:${PORTSDIR}/x11-themes/gtk-engines2
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22

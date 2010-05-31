@@ -8,7 +8,7 @@
 
 PORTNAME=	gamin
 PORTVERSION=	0.1.10
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	devel
 MASTER_SITES=	http://people.gnome.org/~veillard/gamin/sources/
 
@@ -17,6 +17,7 @@ COMMENT?=	A file and directory monitoring system
 
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_GNOME?=	gnomehack _glib20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \

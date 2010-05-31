@@ -8,7 +8,7 @@
 
 PORTNAME=	ORBit2
 PORTVERSION=	2.14.18
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 .if !defined(REFERENCE_PORT)
 
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack libidl ltverhack referencehack

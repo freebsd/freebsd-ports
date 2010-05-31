@@ -8,7 +8,7 @@
 
 PORTNAME=	libsoup
 PORTVERSION=	2.30.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -25,6 +25,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehack glib20 libxml2 ltverhack referencehack gconf2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
