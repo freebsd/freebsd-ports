@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	gpkgdep
-PORTVERSION=	0.0
-PORTREVISION=	11
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	Shows package dependencies in tree views
