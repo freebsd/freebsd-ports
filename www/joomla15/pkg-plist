@@ -1761,9 +1761,9 @@
 %%WWWDIR%%/installation/installer/views/index.html
 %%WWWDIR%%/installation/installer/views/install/index.html
 %%WWWDIR%%/installation/installer/views/install/view.php
-%%WWWDIR%%/installation/language/ar-DZ/ar-DZ.ini
-%%WWWDIR%%/installation/language/ar-DZ/ar-DZ.xml
-%%WWWDIR%%/installation/language/ar-DZ/index.html
+%%WWWDIR%%/installation/language/ar-AA/ar-AA.ini
+%%WWWDIR%%/installation/language/ar-AA/ar-AA.xml
+%%WWWDIR%%/installation/language/ar-AA/index.html
 %%WWWDIR%%/installation/language/az-AZ/az-AZ.ini
 %%WWWDIR%%/installation/language/az-AZ/az-AZ.xml
 %%WWWDIR%%/installation/language/az-AZ/index.html
@@ -1790,6 +1790,9 @@
 %%WWWDIR%%/installation/language/el-GR/el-GR.ini
 %%WWWDIR%%/installation/language/el-GR/el-GR.xml
 %%WWWDIR%%/installation/language/el-GR/index.html
+%%WWWDIR%%/installation/language/en-AU/en-AU.ini
+%%WWWDIR%%/installation/language/en-AU/en-AU.xml
+%%WWWDIR%%/installation/language/en-AU/index.html
 %%WWWDIR%%/installation/language/en-GB/en-GB.ini
 %%WWWDIR%%/installation/language/en-GB/en-GB.xml
 %%WWWDIR%%/installation/language/en-GB/index.html
@@ -1823,6 +1826,9 @@
 %%WWWDIR%%/installation/language/gu-IN/gu-IN.ini
 %%WWWDIR%%/installation/language/gu-IN/gu-IN.xml
 %%WWWDIR%%/installation/language/gu-IN/index.html
+%%WWWDIR%%/installation/language/hi-IN/hi-IN.ini
+%%WWWDIR%%/installation/language/hi-IN/hi-IN.xml
+%%WWWDIR%%/installation/language/hi-IN/index.html
 %%WWWDIR%%/installation/language/hr-HR/hr-HR.ini
 %%WWWDIR%%/installation/language/hr-HR/hr-HR.xml
 %%WWWDIR%%/installation/language/hr-HR/index.html
@@ -1904,6 +1910,9 @@
 %%WWWDIR%%/installation/language/sr-RS/index.html
 %%WWWDIR%%/installation/language/sr-RS/sr-RS.ini
 %%WWWDIR%%/installation/language/sr-RS/sr-RS.xml
+%%WWWDIR%%/installation/language/sr-YU/index.html
+%%WWWDIR%%/installation/language/sr-YU/sr-YU.ini
+%%WWWDIR%%/installation/language/sr-YU/sr-YU.xml
 %%WWWDIR%%/installation/language/sv-SE/index.html
 %%WWWDIR%%/installation/language/sv-SE/sv-SE.ini
 %%WWWDIR%%/installation/language/sv-SE/sv-SE.xml
@@ -1919,6 +1928,7 @@
 %%WWWDIR%%/installation/language/tl-PH/index.html
 %%WWWDIR%%/installation/language/tl-PH/tl-PH.ini
 %%WWWDIR%%/installation/language/tl-PH/tl-PH.xml
+%%WWWDIR%%/installation/language/tr-TR/index.html
 %%WWWDIR%%/installation/language/tr-TR/tr-TR.ini
 %%WWWDIR%%/installation/language/tr-TR/tr-TR.xml
 %%WWWDIR%%/installation/language/uk-UA/index.html
@@ -4618,6 +4628,7 @@
 @dirrm %%WWWDIR%%/installation/language/ta-LK
 @dirrm %%WWWDIR%%/installation/language/sy-IQ
 @dirrm %%WWWDIR%%/installation/language/sv-SE
+@dirrm %%WWWDIR%%/installation/language/sr-YU
 @dirrm %%WWWDIR%%/installation/language/sr-RS
 @dirrm %%WWWDIR%%/installation/language/sr-ME
 @dirrm %%WWWDIR%%/installation/language/sq-AL
@@ -4645,6 +4656,7 @@
 @dirrm %%WWWDIR%%/installation/language/id-ID
 @dirrm %%WWWDIR%%/installation/language/hu-HU
 @dirrm %%WWWDIR%%/installation/language/hr-HR
+@dirrm %%WWWDIR%%/installation/language/hi-IN
 @dirrm %%WWWDIR%%/installation/language/gu-IN
 @dirrm %%WWWDIR%%/installation/language/gl-ES
 @dirrm %%WWWDIR%%/installation/language/fr-FR
@@ -4656,6 +4668,7 @@
 @dirrm %%WWWDIR%%/installation/language/eo-XX
 @dirrm %%WWWDIR%%/installation/language/en-US
 @dirrm %%WWWDIR%%/installation/language/en-GB
+@dirrm %%WWWDIR%%/installation/language/en-AU
 @dirrm %%WWWDIR%%/installation/language/el-GR
 @dirrm %%WWWDIR%%/installation/language/de-DE
 @dirrm %%WWWDIR%%/installation/language/da-DK
@@ -4665,7 +4678,7 @@
 @dirrm %%WWWDIR%%/installation/language/bg-BG
 @dirrm %%WWWDIR%%/installation/language/be-BY
 @dirrm %%WWWDIR%%/installation/language/az-AZ
-@dirrm %%WWWDIR%%/installation/language/ar-DZ
+@dirrm %%WWWDIR%%/installation/language/ar-AA
 @dirrm %%WWWDIR%%/installation/language
 @dirrm %%WWWDIR%%/installation/installer/views/install
 @dirrm %%WWWDIR%%/installation/installer/views
