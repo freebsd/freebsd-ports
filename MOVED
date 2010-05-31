@@ -4428,4 +4428,4 @@ x11-wm/xmonad|x11-wm/hs-xmonad|2010-05-24|Renamed: It has become a Cabal transcr
 x11-wm/xmonad-contrib|hs-xmonad-contrib|2010-05-24|Renamed: It has become a Cabal transcript.
 devel/ruby-game|devel/rubygem-rubygame|2010-05-24|Use devel/rubygem-rubygame instead
 devel/py-ro||2010-05-25|Use devel/py-pyro instead
-devel/runawk|2010-05-31|Port duplicate with lang/runawk
+devel/runawk||2010-05-31|Port duplicate with lang/runawk
