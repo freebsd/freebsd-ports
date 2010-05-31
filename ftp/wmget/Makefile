@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wmget
 # Date created:				05.01.2004
-# Whom:					Ulrich Spoerlein <q@uni.de>
+# Whom:					Ulrich Spoerlein <uspoerlein@gmail.com>
 #
 # $FreeBSD$
 
@@ -8,10 +8,11 @@ PORTNAME=	wmget
 PORTVERSION=	0.6.0
 PORTREVISION=	5
 CATEGORIES=	ftp
-MASTER_SITES=	http://amtrickey.net/download/
+MASTER_SITES=	http://amtrickey.net/download/ \
+		http://people.freebsd.org/~uqs/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Dock app for Window Maker providing wget functionality
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl

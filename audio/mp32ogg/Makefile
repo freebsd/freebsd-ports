@@ -10,10 +10,11 @@ PORTNAME=	mp32ogg
 PORTVERSION=	0.11
 PORTREVISION=	2
 CATEGORIES=	audio perl5
-MASTER_SITES=	ftp://ftp.faceprint.com/pub/software/scripts/
+MASTER_SITES=	ftp://ftp.faceprint.com/pub/software/scripts/ \
+		http://people.freebsd.org/~uqs/distfiles/
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	uspoerlein@gmail.com
+MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Convert MP3 files to Ogg Vorbis files
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
