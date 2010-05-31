@@ -2,10 +2,12 @@ bin/lmdbg
 bin/lmdbg-grep
 bin/lmdbg-leaks
 bin/lmdbg-m2s
+bin/lmdbg-modules
 bin/lmdbg-run
 bin/lmdbg-s2m
 bin/lmdbg-sort
 bin/lmdbg-stat
+bin/lmdbg-strip
 bin/lmdbg-sym
 bin/lmdbg-sysleaks
 lib/liblmdbg.a
