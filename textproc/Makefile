@@ -270,6 +270,7 @@
     SUBDIR += info_to_html
     SUBDIR += intltool
     SUBDIR += ipdf
+    SUBDIR += irstlm
     SUBDIR += is-aspell
     SUBDIR += iso12083
     SUBDIR += iso8879
