@@ -10,7 +10,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: ade@FreeBSD.org
 
   Another version of gettext (0.18), and another shlib version bump
-  (from intl.7 to intl.8)
+  (from intl.8 to intl.9)
 
   All ports that have an identifiable known direct dependency on gettext
   have had their PORTREVISIONs bumped.  If after upgrading:
@@ -18,7 +18,7 @@ you update your ports collection, before attempting any port upgrades.
 	# portupgrade -rf gettext
 	# portmaster -r gettext
 
-  there are still ports on your system that are looking for libintl.so.7
+  there are still ports on your system that are looking for libintl.so.8
   (either in ${LOCALBASE}/lib/compat/pkg, or non-existent), _please_ file
   a PR so that a correct direct dependency can be added.
 
