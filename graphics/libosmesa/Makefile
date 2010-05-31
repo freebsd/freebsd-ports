@@ -46,6 +46,8 @@ do-install:
 # shlib
 	${INSTALL_DATA} ${WRKSRC}/lib/libOSMesa32.so.${SHLIB_VERS} ${PREFIX}/lib
 	${LN} -sf libOSMesa32.so.${SHLIB_VERS} ${PREFIX}/lib/libOSMesa32.so
+	${LN} -sf libOSMesa32.so.${SHLIB_VERS} ${PREFIX}/lib/libOSMesa.so.${SHLIB_VERS}
+	${LN} -sf libOSMesa32.so.${SHLIB_VERS} ${PREFIX}/lib/libOSMesa.so
 # pkg-config
 	cd ${WRKSRC}/src/mesa && ${GMAKE} osmesa.pc
 	${INSTALL_DATA} ${WRKSRC}/src/mesa/osmesa.pc ${PREFIX}/libdata/pkgconfig
