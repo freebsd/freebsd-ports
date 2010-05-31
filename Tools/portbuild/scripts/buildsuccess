@@ -29,6 +29,7 @@ buildenv ${pb} ${arch} ${branch} ${builddir}
 
 # Don't pick up installed packages from the host
 export LOCALBASE=/nonexistentlocal
+export X11BASE=/nonexistentx
 
 index=${PORTSDIR}/${INDEXFILE}
 
