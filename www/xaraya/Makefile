@@ -8,7 +8,7 @@
 # extension would be used by default.
 
 PORTNAME=	xaraya
-PORTVERSION=	1.1.5
+PORTVERSION=	1.2.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/Core%20plus%20Modules/Xaraya%20${PORTVERSION}%20Core%20Plus
 DISTNAME=	${PORTNAME}-${PORTVERSION}-base
