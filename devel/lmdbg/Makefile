@@ -14,7 +14,7 @@ MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	Lightweight malloc debugger
 
 BUILD_DEPENDS=	mk-configure>=0.15.1:${PORTSDIR}/devel/mk-configure
-RUN_DEPENDS=	runawk:${PORTSDIR}/devel/runawk
+RUN_DEPENDS=	runawk:${PORTSDIR}/lang/runawk
 
 USE_LDCONFIG=	yes
 
