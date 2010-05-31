@@ -7,7 +7,7 @@
 
 PORTNAME=	xfburn
 PORTVERSION=	0.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://goodies.xfce.org/releases/xfburn/
 

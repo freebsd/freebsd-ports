@@ -7,6 +7,7 @@
 
 PORTNAME=	lftp
 PORTVERSION=	4.0.5
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \

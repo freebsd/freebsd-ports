@@ -8,7 +8,7 @@
 
 PORTNAME=	gsmlib
 PORTVERSION=	1.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	comms
 MASTER_SITES=	http://www.pxh.de/fs/gsmlib/download/
 

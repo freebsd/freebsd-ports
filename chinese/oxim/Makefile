@@ -7,7 +7,7 @@
 
 PORTNAME=	oxim
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 		ftp://140.111.128.66/odp/OXIM/Source/

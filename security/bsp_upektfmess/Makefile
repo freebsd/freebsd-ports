@@ -7,6 +7,7 @@
 
 PORTNAME=	bsp_upektfmess
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.upek.com/support/download/ \
 		http://www.shapeshifter.se/pub/bsp_upektfmess/

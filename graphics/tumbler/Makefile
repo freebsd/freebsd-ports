@@ -7,7 +7,7 @@
 
 PORTNAME=	tumbler
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics xfce
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/0.1/
 

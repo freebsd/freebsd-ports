@@ -7,7 +7,7 @@
 
 PORTNAME=	wxguitar
 PORTVERSION=	1.01
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/

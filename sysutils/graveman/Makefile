@@ -7,7 +7,7 @@
 
 PORTNAME=	graveman
 PORTVERSION=	0.3.12.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://graveman.tuxfamily.org/sources/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-\1/}

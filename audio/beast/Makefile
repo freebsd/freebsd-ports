@@ -7,7 +7,7 @@
 
 PORTNAME=	beast
 PORTVERSION=	0.7.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	ftp://beast.gtk.org/pub/beast/v0.7/ \
 		http://beast.gtk.org/beast-ftp/v0.7/

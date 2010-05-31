@@ -7,6 +7,7 @@
 
 PORTNAME=	openxpki-i18n
 PORTVERSION=	0.9.1395
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	SF/openxpki/openxpki/0.9.1300
 PKGNAMEPREFIX=	p5-

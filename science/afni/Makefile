@@ -16,7 +16,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2008.01.02.1043
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://www.neuro.mcw.edu/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://afni.nimh.nih.gov/pub/dist/tgz/

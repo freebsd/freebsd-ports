@@ -7,7 +7,7 @@
 
 PORTNAME=	Xaw3d
 PORTVERSION=	1.5E
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/ \
 		http://www.mirrorservice.org/sites/ftp.slackware.com/pub/slackware/slackware_source/x/xaw3d/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	giram
 PORTVERSION=	0.3.5
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
 		#http://www.giram.org/downloads/

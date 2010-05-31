@@ -7,6 +7,7 @@
 
 PORTNAME=	brasero
 PORTVERSION=	2.30.1
+PORTREVISION=	1
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

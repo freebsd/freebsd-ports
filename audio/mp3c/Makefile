@@ -7,6 +7,7 @@
 
 PORTNAME=	mp3c
 PORTVERSION=	0.31
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.wspse.de/linux/wspse/:src
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \

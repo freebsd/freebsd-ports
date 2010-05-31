@@ -7,7 +7,7 @@
 
 PORTNAME=	griffith
 PORTVERSION=	0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/37682783/
 

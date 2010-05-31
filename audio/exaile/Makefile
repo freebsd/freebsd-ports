@@ -7,6 +7,7 @@
 
 PORTNAME=	exaile
 PORTVERSION=	${PORTVERSION_MAJOR}.${PORTVERSION_MINOR}
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpad.net/${LP_DIR}/ \
 		http://wickedmachine.net/mirror/

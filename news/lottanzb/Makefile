@@ -8,7 +8,7 @@
 
 PORTNAME=	lottanzb
 PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	http://www.lottanzb.org/releases/
 

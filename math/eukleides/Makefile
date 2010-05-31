@@ -8,7 +8,7 @@
 
 PORTNAME=	eukleides
 PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.eukleides.org/files/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	conkyforecast
 PORTVERSION=	2.09
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/37518633/ \
 		http://fbsd.zlonet.ru/distfiles/

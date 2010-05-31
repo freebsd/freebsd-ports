@@ -7,7 +7,7 @@
 
 PORTNAME=	cakephp
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://cakeforge.org/frs/download.php/733/ \
 		LOCAL/glarkin

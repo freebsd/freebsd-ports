@@ -7,7 +7,7 @@
 
 PORTNAME=	xcowsay
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		http://www.predatorlabs.net/dl/

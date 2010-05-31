@@ -7,7 +7,7 @@
 
 PORTNAME=	newpki-lib
 DISTVERSION=	2.0.0-beta4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	SF/newpki/${PORTNAME}/2.0.0-beta4
 

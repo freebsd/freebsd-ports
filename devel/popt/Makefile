@@ -7,6 +7,7 @@
 
 PORTNAME=	popt
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.sunfreeware.com/pub/freeware/SOURCES/
 MASTER_SITE_SUBDIR=	rpm-4.1.x

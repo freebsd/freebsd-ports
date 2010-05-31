@@ -7,7 +7,7 @@
 
 PORTNAME=	cups-pk-helper
 PORTVERSION=	0.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/releases/
 

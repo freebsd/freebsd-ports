@@ -6,6 +6,7 @@
 
 PORTNAME=	ikiwiki
 PORTVERSION=	3.20100403
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/

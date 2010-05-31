@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.3rc4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \

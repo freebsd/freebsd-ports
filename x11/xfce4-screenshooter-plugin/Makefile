@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-screenshooter-plugin
 PORTVERSION=	1.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-screenshooter/
 DISTNAME=	xfce4-screenshooter-${PORTVERSION}

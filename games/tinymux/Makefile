@@ -7,6 +7,7 @@
 
 PORTNAME=	tinymux
 PORTVERSION=	2.6.5.${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	games net
 MASTER_SITES=	ftp://ftp.tinymux.org/TinyMUX/tinymux-2.6/${PATCHLEVEL}/ \
 		http://www.tinymux.org/

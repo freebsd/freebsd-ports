@@ -7,7 +7,7 @@
 
 PORTNAME=	verve-plugin
 PORTVERSION=	0.3.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/xfce4-verve-plugin/
 PKGNAMEPREFIX=	xfce4-

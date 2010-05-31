@@ -7,7 +7,7 @@
 
 PORTNAME=	hinversi
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://asturio.gmxhome.de/ CENKES
 

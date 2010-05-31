@@ -7,7 +7,7 @@
 
 PORTNAME=	xfmpc
 PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio xfce
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/0.2/
 DIST_SUBDIR=	xfce4

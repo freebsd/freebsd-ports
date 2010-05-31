@@ -7,7 +7,7 @@
 
 PORTNAME=	motor
 PORTVERSION=	3.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://thekonst.net/download/
 

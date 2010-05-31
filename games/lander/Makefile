@@ -7,7 +7,7 @@
 
 PORTNAME=	lander
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		http://mirror.amdmi3.ru/distfiles/

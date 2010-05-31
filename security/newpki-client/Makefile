@@ -7,7 +7,7 @@
 
 PORTNAME=	newpki-client
 DISTVERSION=	2.0.0-beta4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF/newpki/${PORTNAME}/2.0.0-beta4
 

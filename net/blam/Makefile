@@ -8,7 +8,7 @@
 
 PORTNAME=	blam
 PORTVERSION=	1.8.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.cmartin.tk/${PORTNAME}/ \
 		http://romain.blogreen.org/distfiles/

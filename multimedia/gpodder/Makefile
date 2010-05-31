@@ -7,6 +7,7 @@
 
 PORTNAME=	gpodder
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thpinfo.com/2010/mygpoclient/:mygpoclient

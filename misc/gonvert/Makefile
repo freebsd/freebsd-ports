@@ -8,7 +8,7 @@
 
 PORTNAME=	gonvert
 PORTVERSION=	0.2.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc python gnome
 MASTER_SITES=	http://www.unihedron.com/projects/gonvert/downloads/
 

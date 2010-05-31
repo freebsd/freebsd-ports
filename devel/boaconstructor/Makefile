@@ -7,7 +7,7 @@
 
 PORTNAME=	boaconstructor
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 #MASTER_SITES=	SF/boa-constructor/Boa-Constructor/${PORTVERSION}-alpha
 MASTER_SITES=	SF/boa-constructor/Boa-Constructor/${PORTVERSION}-beta

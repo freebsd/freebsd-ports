@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus-chewing
 PORTVERSION=	1.2.0.20090817
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	http://github.com/definite/ibus-chewing/tarball/${PORTVERSION}/
 DISTNAME=	definite-ibus-chewing-${GITCOMMIT}

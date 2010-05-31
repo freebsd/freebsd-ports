@@ -7,7 +7,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.52r79
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://snes9x-gtk.googlecode.com/files/
 PKGNAMESUFFIX=	-gtk

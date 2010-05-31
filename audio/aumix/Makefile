@@ -7,7 +7,7 @@
 
 PORTNAME=	aumix
 PORTVERSION=	2.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://jpj.net/~trevor/aumix/ \

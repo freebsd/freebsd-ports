@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-kmfl-imengine
 PORTVERSION=	0.9.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/

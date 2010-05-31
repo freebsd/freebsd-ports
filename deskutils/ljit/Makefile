@@ -7,7 +7,7 @@
 
 PORTNAME=	ljit
 PORTVERSION=	0.2.5
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	deskutils
 MASTER_SITES=	http://kir.vtx.ru/ljit/dl/ \
 		http://freebsd.nsu.ru/distfiles/

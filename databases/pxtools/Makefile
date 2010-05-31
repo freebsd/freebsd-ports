@@ -7,7 +7,7 @@
 
 PORTNAME=	pxtools
 PORTVERSION=	0.0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://jan.kneschke.de/assets/2007/2/16/
 

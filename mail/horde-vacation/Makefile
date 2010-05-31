@@ -7,6 +7,7 @@
 
 PORTNAME=	vacation
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 DIST_SUBDIR=	horde
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	audex
 DISTVERSION=	0.72b1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://opensource.maniatek.de/${PORTNAME}/files/

@@ -7,7 +7,7 @@
 
 PORTNAME=	mirage
 PORTVERSION=	0.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://hop.at/mirage/download/
 PKGNAMEPREFIX=	banshee-

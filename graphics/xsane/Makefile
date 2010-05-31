@@ -7,7 +7,7 @@
 
 PORTNAME=	xsane
 PORTVERSION=	0.996
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/ \
 		http://gd.tuwien.ac.at/hci/sane/xsane/ \

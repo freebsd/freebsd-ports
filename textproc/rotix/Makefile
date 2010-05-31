@@ -8,7 +8,7 @@
 
 PORTNAME=	rotix
 PORTVERSION=	0.82
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/${DISTNAME}/
 

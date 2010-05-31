@@ -7,7 +7,7 @@
 
 PORTNAME=	bmp-extra-plugins
 PORTVERSION=	0.2.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://wrzask.pl/files/
 

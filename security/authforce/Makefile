@@ -7,7 +7,7 @@
 
 PORTNAME=	authforce
 PORTVERSION=	0.9.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security www
 MASTER_SITES=	http://www.divineinvasion.net/authforce/
 

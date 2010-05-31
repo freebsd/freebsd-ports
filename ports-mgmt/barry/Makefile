@@ -7,7 +7,7 @@
 
 PORTNAME=	barry
 PORTVERSION=	0.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	ports-mgmt kde
 MASTER_SITES=	http://www.student.uni-oldenburg.de/frerich.raabe/barry/ \
 		http://freebsd.so14k.com/barry/

@@ -7,6 +7,7 @@
 
 PORTNAME=	typespeed
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://tobias.eyedacor.org/typespeed/

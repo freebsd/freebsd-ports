@@ -7,7 +7,7 @@
 
 PORTNAME=	epdfview
 PORTVERSION=	0.1.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	http://trac.emma-soft.com/epdfview/chrome/site/releases/ \
 		http://mirror.slitaz.org/sources/packages/e/

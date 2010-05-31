@@ -7,6 +7,7 @@
 
 PORTNAME=	hermes
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 
 MAINTAINER=	ports@FreeBSD.org

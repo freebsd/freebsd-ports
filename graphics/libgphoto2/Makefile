@@ -7,6 +7,7 @@
 
 PORTNAME=	libgphoto2
 PORTVERSION=	2.4.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 

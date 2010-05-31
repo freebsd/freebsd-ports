@@ -8,7 +8,7 @@
 
 PORTNAME=	fwlogwatch
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.kybs.de/boris/sw/
 

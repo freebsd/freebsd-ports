@@ -7,7 +7,7 @@
 
 PORTNAME=	pcmanx
 PORTVERSION=	0.3.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	chinese net gnome
 MASTER_SITES=	http://pcmanx.csie.net/release/ \
 		LOCAL/chinsan

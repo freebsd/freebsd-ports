@@ -7,7 +7,7 @@
 
 PORTNAME=	pidgin-birthday-reminder
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	SF/pidgin-birthday/pidgin-birthday/${PORTVERSION}
 

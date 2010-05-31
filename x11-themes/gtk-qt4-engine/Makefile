@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-qt4-engine
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://gtk-qt-engine.googlecode.com/files/
 DISTFILES=	gtk-qt-engine-${PORTVERSION}${EXTRACT_SUFX}

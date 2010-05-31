@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-gmail-notifier
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	mail deskutils
 MASTER_SITES=	GOOGLE_CODE
 

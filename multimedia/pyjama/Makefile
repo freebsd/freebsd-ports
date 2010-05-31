@@ -6,7 +6,7 @@
 
 PORTNAME=	pyjama
 PORTVERSION=	0.3.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://launchpadlibrarian.net/26637583/
 DISTNAME=	pyjama-0.3.0.1_all

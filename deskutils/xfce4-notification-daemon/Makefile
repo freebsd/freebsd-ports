@@ -7,7 +7,7 @@
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.3.7
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/notification-daemon-xfce/ \
 		CRITICAL

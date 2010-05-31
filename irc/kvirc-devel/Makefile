@@ -7,6 +7,7 @@
 
 PORTNAME=	kvirc
 DISTVERSION=	4.0rc3
+PORTREVISION=	1
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/snapshots/source/ \
 		http://distfiles.officialunix.com/

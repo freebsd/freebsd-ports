@@ -7,6 +7,7 @@
 
 PORTNAME=	gitg
 PORTVERSION=	0.0.6
+PORTREVISION=	1
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	http://trac.novowork.com/gitg/raw-attachment/wiki/Releases/ \
 		http://mirror.amdmi3.ru/distfiles/

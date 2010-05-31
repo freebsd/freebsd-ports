@@ -7,7 +7,7 @@
 
 PORTNAME=	sagasu
 PORTVERSION=	2.0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 

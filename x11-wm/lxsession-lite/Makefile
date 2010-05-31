@@ -7,7 +7,7 @@
 
 PORTNAME=	lxsession-lite
 PORTVERSION=	0.3.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm gnome
 MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%20Lite%20${PORTVERSION}
 

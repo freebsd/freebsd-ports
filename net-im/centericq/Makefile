@@ -8,7 +8,7 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.21.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net-im
 MASTER_SITES=	http://thekonst.net/download/
 

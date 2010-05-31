@@ -6,7 +6,7 @@
 
 PORTNAME=	kdesvn
 DISTVERSION=	1.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
 PKGNAMESUFFIX=	-kde4

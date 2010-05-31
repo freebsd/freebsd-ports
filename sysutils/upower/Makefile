@@ -8,6 +8,7 @@
 
 PORTNAME=	upower
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://upower.freedesktop.org/releases/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	Terminal
 PORTVERSION=	0.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://www.xfce.org/archive/src/apps/terminal/0.4/
 DIST_SUBDIR=	xfce4

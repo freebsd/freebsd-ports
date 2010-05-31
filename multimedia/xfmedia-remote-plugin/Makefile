@@ -7,7 +7,7 @@
 
 PORTNAME=	xfmedia-remote-plugin
 PORTVERSION=	0.2.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4

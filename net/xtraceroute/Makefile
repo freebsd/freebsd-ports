@@ -7,7 +7,7 @@
 
 PORTNAME=	xtraceroute
 PORTVERSION=	0.9.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/dl/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}

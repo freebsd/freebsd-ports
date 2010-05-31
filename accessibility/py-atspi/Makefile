@@ -8,6 +8,7 @@
 
 PORTNAME=	atspi
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=     sources/pyatspi/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

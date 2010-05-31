@@ -7,6 +7,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	1.4.14
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagiosplug/nagiosplug/${PORTVERSION}

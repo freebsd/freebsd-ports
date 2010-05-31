@@ -7,6 +7,7 @@
 
 PORTNAME=	tnef
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-

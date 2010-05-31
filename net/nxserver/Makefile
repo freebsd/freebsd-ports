@@ -7,7 +7,7 @@
 
 PORTNAME=	nxserver
 PORTVERSION=	2.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://web04.nomachine.com/download/${PORTVERSION}/sources/
 DISTFILES=	nx-X11-${PORTVERSION}-3.tar.gz \

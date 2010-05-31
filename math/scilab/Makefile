@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz

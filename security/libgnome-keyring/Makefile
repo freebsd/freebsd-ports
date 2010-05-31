@@ -7,6 +7,7 @@
 
 PORTNAME=	libgnome-keyring
 PORTVERSION=	2.30.1
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 

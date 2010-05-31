@@ -7,6 +7,7 @@
 
 PORTNAME=	drizzle
 PORTVERSION=	2010.03.1412
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/42665881/ \
 		LOCAL/glarkin

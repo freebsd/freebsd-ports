@@ -7,7 +7,7 @@
 
 PORTNAME=	pike78
 PORTVERSION=	7.8.352
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \

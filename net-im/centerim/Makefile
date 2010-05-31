@@ -8,7 +8,7 @@
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/releases/ \
 		ftp://ftp.centerim.org/releases/
