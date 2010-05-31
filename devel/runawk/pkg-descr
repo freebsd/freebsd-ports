@@ -1,0 +1,7 @@
+A small wrapper for AWK interpreter that helps to write
+the standalone programs in AWK. It provides MODULES for AWK
+similar to PERL's "use" command and other powerful
+features. Dozens of ready to use modules are also provided.
+
+WWW: http://sourceforge.net/projects/runawk/
+Author: Aleksey Cheusov (cheusov at users.sourceforge.net)
