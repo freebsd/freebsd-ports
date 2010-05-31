@@ -11,24 +11,27 @@ bin/mkc_test_helper
 bin/mkc_check_compiler
 bin/mkc_install
 bin/mkc_check_common.sh
-share/mk-configure/custom/endianess
-share/mk-configure/custom/prog_bison
-share/mk-configure/custom/prog_flex
-share/mk-configure/custom/prog_gawk
-share/mk-configure/custom/prog_gm4
-@dirrm share/mk-configure/custom
-@dirrm share/mk-configure
+%%DATADIR%%/custom/endianess
+%%DATADIR%%/custom/prog_bison
+%%DATADIR%%/custom/prog_flex
+%%DATADIR%%/custom/prog_gawk
+%%DATADIR%%/custom/prog_gm4
+@dirrm %%DATADIR%%/custom
+@dirrm %%DATADIR%%
 share/mkc-mk/configure.mk
 share/mkc-mk/mkc.configure.mk
 share/mkc-mk/mkc.files.mk
 share/mkc-mk/mkc.lib.mk
 share/mkc-mk/mkc.prog.mk
 share/mkc-mk/mkc.subdir.mk
+share/mkc-mk/mkc.subprj.mk
+share/mkc-mk/mkc.subprjs.mk
 share/mkc-mk/mkc.own.mk
 share/mkc-mk/mkc.intexts.mk
 share/mkc-mk/mkc.minitest.mk
 share/mkc-mk/mkc.pkg-config.mk
 share/mkc-mk/mkc.ver.mk
+share/mkc-mk/mkc_imp.dep.mk
 share/mkc-mk/mkc_imp.files.mk
 share/mkc-mk/mkc_imp.inc.mk
 share/mkc-mk/mkc_imp.info.mk
@@ -38,6 +41,7 @@ share/mkc-mk/mkc_imp.man.mk
 share/mkc-mk/mkc_imp.own.mk
 share/mkc-mk/mkc_imp.prog.mk
 share/mkc-mk/mkc_imp.subdir.mk
+share/mkc-mk/mkc_imp.subprj.mk
 share/mkc-mk/mkc_imp.sys.mk
 share/mkc-mk/mkc_imp.init.mk
 share/mkc-mk/mkc_imp.final.mk

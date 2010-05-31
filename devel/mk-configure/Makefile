@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mk-configure
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -23,7 +23,8 @@ DOCFILES=
 .endif
 
 MAN1=		mkc_check_funclib.1 mkc_check_header.1 mkc_check_sizeof.1 \
-		mkc_check_decl.1 mkc_check_prog.1 mkc_check_custom.1
+		mkc_check_decl.1 mkc_check_prog.1 mkc_check_custom.1 \
+		mkcmake.1
 MAN7=		mk-configure.7
 
 do-build:
