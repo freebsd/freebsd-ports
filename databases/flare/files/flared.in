@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: flared
+# REQUIRE: LOGIN flarei
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# flared_enable (bool):	Set to NO by default.
+#			Set it to YES to enable flared.
+# flared_config (path):	Set to %%PREFIX%%/etc/flared.conf by default.
+#
+
+. /etc/rc.subr
+
+name=flared
+rcvar=`set_rcvar`
+command=%%PREFIX%%/bin/${name}
+extra_commands="reload"
+start_precmd=${name}_prestart
+
+flared_prestart () {
+	case "$flared_flags" in
+	*-p\ *|*--pid\ *)
+		err 1 "\$flared_flags includes -p option." \
+		    "Please use \$flared_pidfile instead."
+		;;
+	esac
+
+	case "$flared_flags" in
+	*-f\ *|*--config\ *)
+		err 1 "\$flared_flags includes -f option." \
+		    "Please use \$flared_config instead."
+		;;
+	esac
+}
+
+load_rc_config $name
+
+: flared_enable=${flared_enable-"NO"}
+: flared_config=${flared_config-"%%PREFIX%%/etc/${name}.conf"}
+: flared_pidfile=${flared_pidfile-"/var/run/${name}.pid"}
+
+pidfile=$flared_pidfile
+required_files=$flared_config
+command_args="--daemonize --config $flared_config --pid $pidfile"
+
+run_rc_command "$1"
