@@ -1,0 +1,110 @@
+--- /tmp/configure	2010-06-01 15:06:19.000000000 +0200
++++ configure	2010-06-01 15:06:40.813799251 +0200
+@@ -15182,7 +15182,7 @@
+ 
+ 
+ # If any of these headers are missing, things should still work correctly:
+-for ac_header in sys/param.h sys/sysctl.h byteswap.h
++for ac_header in sys/param.h sys/sysctl.h byteswap.h sys/endian.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "
+@@ -15296,6 +15296,98 @@
+ 
+ 	fi
+ 
++if test x$ac_cv_header_sys_endian_h = xyes ; then
++
++		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if bswap16 is available" >&5
++$as_echo_n "checking if bswap16 is available... " >&6; }
++		cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++#include <sys/endian.h>
++int
++main(void)
++{
++	bswap16(42);
++	return 0;
++}
++
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++
++
++$as_echo "#define HAVE_BSWAP16 1" >>confdefs.h
++
++			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++
++else
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++
++
++		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if bswap32 is available" >&5
++$as_echo_n "checking if bswap32 is available... " >&6; }
++		cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++#include <sys/endian.h>
++int
++main(void)
++{
++	bswap32(42);
++	return 0;
++}
++
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++
++
++$as_echo "#define HAVE_BSWAP32 1" >>confdefs.h
++
++			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++
++else
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++
++
++		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if bswap64 is available" >&5
++$as_echo_n "checking if bswap64 is available... " >&6; }
++		cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++
++#include <sys/endian.h>
++int
++main(void)
++{
++	bswap64(42);
++	return 0;
++}
++
++_ACEOF
++if ac_fn_c_try_link "$LINENO"; then :
++
++
++$as_echo "#define HAVE_BSWAP64 1" >>confdefs.h
++
++			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++
++else
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++fi
++rm -f core conftest.err conftest.$ac_objext \
++    conftest$ac_exeext conftest.$ac_ext
++
++	fi
+ 
+ ###############################################################################
+ # Checks for typedefs, structures, and compiler characteristics.
