@@ -15,8 +15,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Reverse polish math expression evaluation
 
 RUN_DEPENDS=	${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
-    		${SITE_PERL}/ExtUtils/MakeMaker.pm::${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-
+		p5-ExtUtils-MakeMaker>=6.52:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
