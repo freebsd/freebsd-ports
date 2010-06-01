@@ -16,7 +16,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra plasmoids for KDE4
 
 BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2
-LIB_DEPENDS=	kipi.7:${PORTSDIR}/graphics/kdegraphics4
+LIB_DEPENDS=	kipi.7:${PORTSDIR}/graphics/kdegraphics4 \
+		qalculate.5:${PORTSDIR}/math/libqalculate
 
 USE_KDE4=	kdelibs pimlibs workspace kdeprefix kdehier automoc4 sharedmime
 KDE4_BUILDENV=	yes
@@ -37,7 +38,7 @@ OPTIONS=	MARBLE "Marble globe wallpaper for Plasma" on \
 .if defined(WITHOUT_MARBLE)
 PLIST_SUB+=	MARBLE="@comment "
 .else
-LIB_DEPENDS+=	marblewidget.5:${PORTSDIR}/misc/kdeedu4
+LIB_DEPENDS+=	marblewidget.5:${PORTSDIR}/astro/marble
 PLIST_SUB+=	MARBLE=""
 .endif
 

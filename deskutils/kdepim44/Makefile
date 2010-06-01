@@ -32,9 +32,6 @@ QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 USE_OPENLDAP=	yes
 MAKE_JOBS_SAFE=	yes
 
-#fix build when kdepim3 is here
-CMAKE_ARGS+=	-DGPGME_LIBRARY_DIR:PATH="${KDE4_PREFIX}/lib"
-
 MAN1=		kabcclient.1
 
 #OPTIONS=	KITCHENSYNC "PIM synchronization utility" off

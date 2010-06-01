@@ -19,8 +19,14 @@ share/apps/kvtml/fi/animals.kvtml
 share/apps/kvtml/fi/easy.kvtml
 share/apps/kvtml/fi/hard.kvtml
 share/apps/kvtml/fi/medium.kvtml
+share/locale/fi/LC_MESSAGES/akonadi-kcal.mo
+share/locale/fi/LC_MESSAGES/akonadi_birthdays_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_imap_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_kabc_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_kcal_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_kolabproxy_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_kresourceassistant.mo
 share/locale/fi/LC_MESSAGES/akonadi_localbookmarks_resource.mo
@@ -29,6 +35,8 @@ share/locale/fi/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_next.mo
 share/locale/fi/LC_MESSAGES/akonadi_nntp_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_openchange_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_singlefile_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/fi/LC_MESSAGES/akonadicontact.mo
 share/locale/fi/LC_MESSAGES/akonaditray.mo
 share/locale/fi/LC_MESSAGES/akregator.mo

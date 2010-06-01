@@ -20,5 +20,6 @@ COMMENT=	The Oxygen icon theme for KDE
 USE_BZIP2=	yes
 USE_KDE4=	kdeprefix kdehier
 USE_CMAKE=	yes
+INSTALL_TARGET=	install
 
 .include <bsd.port.mk>

@@ -384,6 +384,7 @@ share/locale/he/LC_MESSAGES/phonon_kde.mo
 share/locale/he/LC_MESSAGES/phononserver.mo
 share/locale/he/LC_MESSAGES/plasma-desktop.mo
 share/locale/he/LC_MESSAGES/plasma-netbook.mo
+share/locale/he/LC_MESSAGES/plasma-overlay.mo
 share/locale/he/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/he/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/he/LC_MESSAGES/plasma_applet_battery.mo
@@ -454,12 +455,14 @@ share/locale/he/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/he/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/he/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/he/LC_MESSAGES/plasma_wallpaper_color.mo
+share/locale/he/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/he/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/he/LC_MESSAGES/plasmoidviewer.mo
 share/locale/he/LC_MESSAGES/policykit-kde.mo
 share/locale/he/LC_MESSAGES/powerdevil.mo
 share/locale/he/LC_MESSAGES/processcore.mo
 share/locale/he/LC_MESSAGES/processui.mo
+share/locale/he/LC_MESSAGES/randrmonitor.mo
 share/locale/he/LC_MESSAGES/solid-bluetooth.mo
 share/locale/he/LC_MESSAGES/solid-hardware.mo
 share/locale/he/LC_MESSAGES/solid-network.mo

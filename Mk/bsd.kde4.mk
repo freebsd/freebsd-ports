@@ -52,7 +52,7 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 #		but this could be changed in a future.
 #
 
-KDE4_VERSION=		4.4.3
+KDE4_VERSION=		4.4.4
 KDE4_BRANCH?=		stable
 KOFFICE2_VERSION=	2.1.2
 KOFFICE2_BRANCH?=	stable
@@ -79,7 +79,8 @@ MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@${ksub}/@g}
 # KDE4 modules
 #
 _USE_KDE4_ALL=	akonadi automoc4 kdebase kdehier kdelibs kdeprefix \
-		oxygen pimlibs pimruntime pykde4 runtime sharedmime workspace
+		oxygen pimlibs pimruntime pykde4 pykdeuic4 runtime \
+		sharedmime workspace
 
 akonadi_LIB_DEPENDS=		akonadiprotocolinternals.1:${PORTSDIR}/databases/akonadi
 
@@ -100,6 +101,8 @@ pimlibs_LIB_DEPENDS=		kpimutils.5:${PORTSDIR}/deskutils/kdepimlibs4
 pimruntime_LIB_DEPENDS=		kdepim-copy.5:${PORTSDIR}/deskutils/kdepim4-runtime
 
 pykde4_RUN_DEPENDS=		${KDE4_PYTHON_SITELIBDIR}/PyKDE4/kdeui.so:${PORTSDIR}/devel/kdebindings4-python-pykde4
+
+pykdeuic4_RUN_DEPENDS=		${LOCALBASE}/bin/pykdeuic4:${PORTSDIR}/devel/kdebindings4-python-pykdeuic4
 
 runtime_BUILD_DEPENDS=		${KDE4_PREFIX}/bin/kdebugdialog:${PORTSDIR}/x11/kdebase4-runtime
 runtime_RUN_DEPENDS=		${KDE4_PREFIX}/bin/kdebugdialog:${PORTSDIR}/x11/kdebase4-runtime

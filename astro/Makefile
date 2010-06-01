@@ -35,6 +35,7 @@
     SUBDIR += libnova
     SUBDIR += libroadnav
     SUBDIR += luna
+    SUBDIR += marble
     SUBDIR += match
     SUBDIR += merkaartor
     SUBDIR += mkgmap

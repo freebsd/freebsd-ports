@@ -244,6 +244,9 @@ share/doc/HTML/de/gwenview/introduction.docbook
 share/doc/HTML/de/gwenview/keybindings.docbook
 share/doc/HTML/de/gwenview/mouse.docbook
 share/doc/HTML/de/gwenview/view_mode.png
+share/doc/HTML/de/irkick/common
+share/doc/HTML/de/irkick/index.cache.bz2
+share/doc/HTML/de/irkick/index.docbook
 share/doc/HTML/de/juk/common
 share/doc/HTML/de/juk/history-playlist.png
 share/doc/HTML/de/juk/index.cache.bz2
@@ -596,6 +599,11 @@ share/doc/HTML/de/kdf/kdf_config.png
 share/doc/HTML/de/kdiamond/common
 share/doc/HTML/de/kdiamond/index.cache.bz2
 share/doc/HTML/de/kdiamond/index.docbook
+share/doc/HTML/de/kdm/common
+share/doc/HTML/de/kdm/index.cache.bz2
+share/doc/HTML/de/kdm/index.docbook
+share/doc/HTML/de/kdm/kdmrc-ref.docbook
+share/doc/HTML/de/kdm/theme-ref.docbook
 share/doc/HTML/de/kfilereplace/addstringsdialog_window.png
 share/doc/HTML/de/kfilereplace/backup_option.png
 share/doc/HTML/de/kfilereplace/casesensitive_option.png
@@ -776,6 +784,25 @@ share/doc/HTML/de/khelpcenter/visualdict/pict7.png
 share/doc/HTML/de/khelpcenter/visualdict/pict8.png
 share/doc/HTML/de/khelpcenter/welcome.docbook
 share/doc/HTML/de/khelpcenter/whatiskde.docbook
+share/doc/HTML/de/kig/common
+share/doc/HTML/de/kig/constructed_a_point.png
+share/doc/HTML/de/kig/constructed_script_object.png
+share/doc/HTML/de/kig/constructing_a_circle.png
+share/doc/HTML/de/kig/constructing_a_circle_2.png
+share/doc/HTML/de/kig/edit_types_dialog.png
+share/doc/HTML/de/kig/index.cache.bz2
+share/doc/HTML/de/kig/index.docbook
+share/doc/HTML/de/kig/macro_wizard.png
+share/doc/HTML/de/kig/macros_at_work.png
+share/doc/HTML/de/kig/man-kig.1.docbook
+share/doc/HTML/de/kig/script_wizard.png
+share/doc/HTML/de/kig/script_wizard_entering_code.png
+share/doc/HTML/de/kig/selecting_objects.png
+share/doc/HTML/de/kig/simple_locus_construction.png
+share/doc/HTML/de/kig/test_run_macro.png
+share/doc/HTML/de/kig/text_label_attaching.png
+share/doc/HTML/de/kig/text_label_wizard.png
+share/doc/HTML/de/kig/text_label_wizard__select_property.png
 share/doc/HTML/de/kigo/common
 share/doc/HTML/de/kigo/get-new-games.png
 share/doc/HTML/de/kigo/hint.png
@@ -1006,6 +1033,17 @@ share/doc/HTML/de/kmahjongg/index.cache.bz2
 share/doc/HTML/de/kmahjongg/index.docbook
 share/doc/HTML/de/kmahjongg/numbered.png
 share/doc/HTML/de/kmahjongg/shortcuts.png
+share/doc/HTML/de/kmail/common
+share/doc/HTML/de/kmail/configure.docbook
+share/doc/HTML/de/kmail/credits-and-licenses.docbook
+share/doc/HTML/de/kmail/faq.docbook
+share/doc/HTML/de/kmail/getting-started.docbook
+share/doc/HTML/de/kmail/importing.docbook
+share/doc/HTML/de/kmail/index.cache.bz2
+share/doc/HTML/de/kmail/index.docbook
+share/doc/HTML/de/kmail/intro.docbook
+share/doc/HTML/de/kmail/menus.docbook
+share/doc/HTML/de/kmail/using-kmail.docbook
 share/doc/HTML/de/kmenuedit/common
 share/doc/HTML/de/kmenuedit/index.cache.bz2
 share/doc/HTML/de/kmenuedit/index.docbook
@@ -1131,6 +1169,34 @@ share/doc/HTML/de/kommander/widgets.docbook
 share/doc/HTML/de/kompare/common
 share/doc/HTML/de/kompare/index.cache.bz2
 share/doc/HTML/de/kompare/index.docbook
+share/doc/HTML/de/konqueror/basics.docbook
+share/doc/HTML/de/konqueror/bookmarks.docbook
+share/doc/HTML/de/konqueror/browser.docbook
+share/doc/HTML/de/konqueror/cmdline.png
+share/doc/HTML/de/konqueror/cmndline.png
+share/doc/HTML/de/konqueror/commands.docbook
+share/doc/HTML/de/konqueror/common
+share/doc/HTML/de/konqueror/config.docbook
+share/doc/HTML/de/konqueror/credits.docbook
+share/doc/HTML/de/konqueror/dirtree.png
+share/doc/HTML/de/konqueror/dragdrop.png
+share/doc/HTML/de/konqueror/faq.docbook
+share/doc/HTML/de/konqueror/filemanager.docbook
+share/doc/HTML/de/konqueror/filetype1.png
+share/doc/HTML/de/konqueror/filetype3.png
+share/doc/HTML/de/konqueror/filetype4.png
+share/doc/HTML/de/konqueror/index.cache.bz2
+share/doc/HTML/de/konqueror/index.docbook
+share/doc/HTML/de/konqueror/introduction.docbook
+share/doc/HTML/de/konqueror/konqorg.png
+share/doc/HTML/de/konqueror/man-kbookmarkmerger.1.docbook
+share/doc/HTML/de/konqueror/parts.png
+share/doc/HTML/de/konqueror/path-complete.docbook
+share/doc/HTML/de/konqueror/plugins.docbook
+share/doc/HTML/de/konqueror/save-settings.docbook
+share/doc/HTML/de/konqueror/shortcut1.png
+share/doc/HTML/de/konqueror/shortcut2.png
+share/doc/HTML/de/konqueror/sidebar.docbook
 share/doc/HTML/de/konquest/common
 share/doc/HTML/de/konquest/index.cache.bz2
 share/doc/HTML/de/konquest/index.docbook
@@ -1386,6 +1452,9 @@ share/doc/HTML/de/kubrick/index.docbook
 share/doc/HTML/de/kuser/common
 share/doc/HTML/de/kuser/index.cache.bz2
 share/doc/HTML/de/kuser/index.docbook
+share/doc/HTML/de/kwallet/common
+share/doc/HTML/de/kwallet/index.cache.bz2
+share/doc/HTML/de/kwallet/index.docbook
 share/doc/HTML/de/kwatchgnupg/common
 share/doc/HTML/de/kwatchgnupg/index.cache.bz2
 share/doc/HTML/de/kwatchgnupg/index.docbook
@@ -1410,6 +1479,9 @@ share/doc/HTML/de/kwordquiz/kwq-editor.png
 share/doc/HTML/de/kwordquiz/kwq-flashcard.png
 share/doc/HTML/de/kwordquiz/kwq-multiple.png
 share/doc/HTML/de/kwordquiz/kwq-qanda.png
+share/doc/HTML/de/kwrite/common
+share/doc/HTML/de/kwrite/index.cache.bz2
+share/doc/HTML/de/kwrite/index.docbook
 share/doc/HTML/de/lokalize/common
 share/doc/HTML/de/lokalize/index.cache.bz2
 share/doc/HTML/de/lokalize/index.docbook
@@ -1433,6 +1505,9 @@ share/doc/HTML/de/parley/index.docbook
 share/doc/HTML/de/plasma-desktop/common
 share/doc/HTML/de/plasma-desktop/index.cache.bz2
 share/doc/HTML/de/plasma-desktop/index.docbook
+share/doc/HTML/de/printer-applet/common
+share/doc/HTML/de/printer-applet/index.cache.bz2
+share/doc/HTML/de/printer-applet/index.docbook
 share/doc/HTML/de/sonnet/common
 share/doc/HTML/de/sonnet/index.cache.bz2
 share/doc/HTML/de/sonnet/index.docbook
@@ -2139,6 +2214,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/superkaramba
 @dirrm share/doc/HTML/de/step
 @dirrm share/doc/HTML/de/sonnet
+@dirrm share/doc/HTML/de/printer-applet
 @dirrm share/doc/HTML/de/plasma-desktop
 @dirrm share/doc/HTML/de/parley
 @dirrm share/doc/HTML/de/palapeli
@@ -2146,9 +2222,11 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/marble
 @dirrm share/doc/HTML/de/lskat
 @dirrm share/doc/HTML/de/lokalize
+@dirrm share/doc/HTML/de/kwrite
 @dirrm share/doc/HTML/de/kwordquiz
 @dirrm share/doc/HTML/de/kweather
 @dirrm share/doc/HTML/de/kwatchgnupg
+@dirrm share/doc/HTML/de/kwallet
 @dirrm share/doc/HTML/de/kuser
 @dirrm share/doc/HTML/de/kubrick
 @dirrm share/doc/HTML/de/ktuberling
@@ -2180,6 +2258,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/konsolekalendar
 @dirrm share/doc/HTML/de/konsole
 @dirrm share/doc/HTML/de/konquest
+@dirrm share/doc/HTML/de/konqueror
 @dirrm share/doc/HTML/de/kompare
 @dirrm share/doc/HTML/de/kommander
 @dirrm share/doc/HTML/de/kolourpaint
@@ -2195,6 +2274,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kmix
 @dirrm share/doc/HTML/de/kmines
 @dirrm share/doc/HTML/de/kmenuedit
+@dirrm share/doc/HTML/de/kmail
 @dirrm share/doc/HTML/de/kmahjongg
 @dirrm share/doc/HTML/de/kmag
 @dirrm share/doc/HTML/de/klipper
@@ -2262,6 +2342,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kimagemapeditor
 @dirrm share/doc/HTML/de/killbots
 @dirrm share/doc/HTML/de/kigo
+@dirrm share/doc/HTML/de/kig
 @dirrm share/doc/HTML/de/khelpcenter/visualdict
 @dirrm share/doc/HTML/de/khelpcenter/userguide
 @dirrm share/doc/HTML/de/khelpcenter/quickstart
@@ -2276,6 +2357,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kfloppy
 @dirrm share/doc/HTML/de/kfind
 @dirrm share/doc/HTML/de/kfilereplace
+@dirrm share/doc/HTML/de/kdm
 @dirrm share/doc/HTML/de/kdiamond
 @dirrm share/doc/HTML/de/kdf
 @dirrm share/doc/HTML/de/kdesu
@@ -2368,6 +2450,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kalarm
 @dirrm share/doc/HTML/de/kabcclient
 @dirrm share/doc/HTML/de/juk
+@dirrm share/doc/HTML/de/irkick
 @dirrm share/doc/HTML/de/gwenview
 @dirrm share/doc/HTML/de/granatier
 @dirrm share/doc/HTML/de/dragonplayer

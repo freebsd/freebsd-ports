@@ -842,6 +842,9 @@ share/doc/HTML/it/kioslave/webdav/index.docbook
 share/doc/HTML/it/kioslave/xz/common
 share/doc/HTML/it/kioslave/xz/index.cache.bz2
 share/doc/HTML/it/kioslave/xz/index.docbook
+share/doc/HTML/it/kiriki/common
+share/doc/HTML/it/kiriki/index.cache.bz2
+share/doc/HTML/it/kiriki/index.docbook
 share/doc/HTML/it/kiten/common
 share/doc/HTML/it/kiten/index.cache.bz2
 share/doc/HTML/it/kiten/index.docbook
@@ -2040,6 +2043,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kjumpingcube
 @dirrm share/doc/HTML/it/kjots
 @dirrm share/doc/HTML/it/kiten
+@dirrm share/doc/HTML/it/kiriki
 @dirrm share/doc/HTML/it/kioslave/xz
 @dirrm share/doc/HTML/it/kioslave/webdav
 @dirrm share/doc/HTML/it/kioslave/thumbnail

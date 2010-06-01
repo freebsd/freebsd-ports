@@ -1,0 +1,10 @@
+bin/pykdeuic4
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/pykdeuic4.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/pykdeuic4.pyc
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/kde4.py
+%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/kde4.pyc
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4/uic
+@dirrmtry %%PYTHON_SITELIBDIR%%/PyQt4
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%
