@@ -18,8 +18,6 @@ COMMENT?=	The "meta-port" for PyQt4
 
 USE_PYTHON=	yes
 
-EXAMPLESDIR=	${PREFIX}/share/examples/py-qt4
-
 NO_BUILD=	yes
 .include "../../devel/py-sip/files/bsd.pyqt.mk"
 
@@ -42,8 +40,12 @@ RUN_DEPENDS+=	${PKGNAMEPREFIX2}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-c
 		${PKGNAMEPREFIX2}webkit>=${PYQT4_VERSION}:${PORTSDIR}/www/py-qt4-webkit \
 		${PKGNAMEPREFIX2}multimedia>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-multimedia \
 		${PKGNAMEPREFIX2}phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon \
-		${PKGNAMEPREFIX2}qscintilla2>=${QSCI2_VERSION}:${PORTSDIR}/devel/py-qt4-qscintilla2 \
-		${EXAMPLESDIR}/README:${PORTSDIR}/misc/py-qt4-demo
+		${PKGNAMEPREFIX2}qscintilla2>=${QSCI2_VERSION}:${PORTSDIR}/devel/py-qt4-qscintilla2
+
+.if !defined(NOPORTEXAMPLES)
+RUN_DEPENDS+=	${PKGNAMEPREFIX2}demo>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-demo
+.endif
+
 .if !defined(NOPORTDOCS)
 RUN_DEPENDS+=	${PKGNAMEPREFIX2}doc>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-doc
 .endif
