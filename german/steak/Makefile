@@ -11,10 +11,9 @@ PORTREVISION=	6
 CATEGORIES=	german
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Steak%20${PORTVERSION} \
 		http://www.tm.informatik.uni-frankfurt.de/%7Erazi/steak/program/
-
 DISTNAME=	Steak.${PORTVERSION}
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An english <-> german dictionary under the GPL
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell

@@ -1,22 +1,22 @@
 bin/steak
 %%NOXSTEAK:%%bin/xsteak
-share/steak/iso2txt
-share/steak/poll
-share/steak/printbuffer
-share/steak/spacefilter
-share/steak/Datensatz/README
-share/steak/Datensatz/datenbankaktualisieren.sh
-share/steak/Datensatz/ger-eng.txt
-share/steak/Datensatz/insert_my_words.txt
-share/steak/README
-share/steak/README.eng
-share/steak/help.txt
-share/steak/ksteak.xpm
-share/steak/mini-ksteak.xpm
-share/steak/pinguin_steak_icon_old.xpm
-share/steak/mini_steak_icon.xpm
-share/steak/pinguin_steak_icon.xpm
-share/steak/.Steakconfig
-share/steak/steak.xpm
-@dirrm share/steak/Datensatz
-@dirrm share/steak
+%%DATADIR%%/iso2txt
+%%DATADIR%%/poll
+%%DATADIR%%/printbuffer
+%%DATADIR%%/spacefilter
+%%DATADIR%%/Datensatz/README
+%%DATADIR%%/Datensatz/datenbankaktualisieren.sh
+%%DATADIR%%/Datensatz/ger-eng.txt
+%%DATADIR%%/Datensatz/insert_my_words.txt
+%%DATADIR%%/README
+%%DATADIR%%/README.eng
+%%DATADIR%%/help.txt
+%%DATADIR%%/ksteak.xpm
+%%DATADIR%%/mini-ksteak.xpm
+%%DATADIR%%/pinguin_steak_icon_old.xpm
+%%DATADIR%%/mini_steak_icon.xpm
+%%DATADIR%%/pinguin_steak_icon.xpm
+%%DATADIR%%/.Steakconfig
+%%DATADIR%%/steak.xpm
+@dirrm %%DATADIR%%/Datensatz
+@dirrm %%DATADIR%%
