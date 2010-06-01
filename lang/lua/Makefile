@@ -111,7 +111,7 @@ do-install:
 	${MKDIR} ${LUA_MODLIBDIR}
 	${MKDIR} ${LUA_MODSHAREDIR}
 
-.if ${MACHINE_ARCH:L} == "amd64"
+.if ${MACHINE_ARCH:L} == "amd64" || ${MACHINE_ARCH:L} == "powerpc"
 CFLAGS+=	-fPIC
 .endif
 
