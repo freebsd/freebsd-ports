@@ -3,6 +3,7 @@ bin/ispell-hu
 %%DATADIR%%/magyar.dict
 %%DATADIR%%/magyar.hash
 %%DATADIR%%/hungarian.hash
+@dirrmtry %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/OLVASSEL
 %%PORTDOCS%%%%DOCSDIR%%/GYIK

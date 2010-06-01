@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ispell
-PORTVERSION=	1.4
+PORTVERSION=	1.6.1
 CATEGORIES=	hungarian textproc
 #MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
 MASTER_SITES=	SF/magyar${PORTNAME}/Magyar%20Ispell/${PORTVERSION}
-DISTNAME=	magyarispell-${PORTVERSION:S/.R.1/-RC1/}
+DISTNAME=	magyarispell-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Hungarian dictionary for ispell
@@ -24,6 +24,7 @@ DOCSDIR=	${PREFIX}/share/doc/hu-ispell
 DOCS=		OLVASSEL README GYIK ChangeLog
 
 do-install:
+	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/tmp/magyar4ispell.hash ${DATADIR}/magyar.hash
 	${INSTALL_DATA} ${WRKSRC}/tmp/magyar4ispell.dict ${DATADIR}/magyar.dict
 	${INSTALL_DATA} ${WRKSRC}/tmp/magyar.aff ${DATADIR}
