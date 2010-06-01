@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	boo
-PORTVERSION=	0.9.2
-PORTREVISION=	2
+PORTVERSION=	0.9.3
 CATEGORIES=	lang
 MASTER_SITES=	http://dist.codehaus.org/boo/distributions/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.${BUILD_NUMBER}-src
@@ -24,8 +23,17 @@ WRKSRC=		${WRKDIR}
 USE_GNOME=	gtksourceview
 USE_NANT=	yes
 USE_ZIP=	yes
+# These two lines seems to help to prevent some weird random bug in nant.
+#  - Without them, nant fails to build boo sort of 'really often';
+#  - With them it seems to fail less.
+#  I (romain@) have not yet found a test condition that triggers the failure in
+#  a deterministic way.  This is under investigation.
+MAKE_ENV=	LC_ALL=C
+NANT_FLAGS+=	-debug
 
-BUILD_NUMBER=	3383
+BUILD_NUMBER=	3457
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

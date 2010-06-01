@@ -1,11 +1,13 @@
-#
-# http://www.freebsd.org/cgi/query-pr.cgi?pr=118092
-#
-# Rename uudecode and uuencode to gmime-* to not conflict with userland
-#
---- src/Makefile.in.orig	2008-07-19 20:57:47.000000000 -0300
-+++ src/Makefile.in	2008-07-20 21:29:18.000000000 -0300
-@@ -24,6 +24,7 @@
+
+$FreeBSD$
+
+http://www.freebsd.org/cgi/query-pr.cgi?pr=118092
+
+Rename uudecode and uuencode to gmime-* to not conflict with userland
+
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -26,6 +26,7 @@
  install_sh_SCRIPT = $(install_sh) -c
  INSTALL_HEADER = $(INSTALL_DATA)
  transform = $(program_transform_name)
@@ -13,21 +15,21 @@
  NORMAL_INSTALL = :
  PRE_INSTALL = :
  POST_INSTALL = :
-@@ -293,7 +294,7 @@
- 	  if test -f $$p \
- 	     || test -f $$p1 \
- 	  ; then \
--	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
-+	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/;$(add_gmime)'`; \
- 	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(binPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(bindir)/$$f'"; \
- 	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(binPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
- 	  else :; fi; \
-@@ -302,7 +303,7 @@
- uninstall-binPROGRAMS:
+@@ -333,7 +334,7 @@
+ 	  then echo "$$p"; echo "$$p"; else :; fi; \
+ 	done | \
+ 	sed -e 'p;s,.*/,,;n;h' -e 's|.*|.|' \
+-	    -e 'p;x;s,.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/' | \
++	    -e 'p;x;s,.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/;$(add_gmime)' | \
+ 	sed 'N;N;N;s,\n, ,g' | \
+ 	$(AWK) 'BEGIN { files["."] = ""; dirs["."] = 1 } \
+ 	  { d=$$3; if (dirs[d] != 1) { print "d", d; dirs[d] = 1 } \
+@@ -352,7 +353,7 @@
  	@$(NORMAL_UNINSTALL)
- 	@list='$(bin_PROGRAMS)'; for p in $$list; do \
--	  f=`echo "$$p" | sed 's,^.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
-+	  f=`echo "$$p" | sed 's,^.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/;$(add_gmime)'`; \
- 	  echo " rm -f '$(DESTDIR)$(bindir)/$$f'"; \
- 	  rm -f "$(DESTDIR)$(bindir)/$$f"; \
- 	done
+ 	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+ 	files=`for p in $$list; do echo "$$p"; done | \
+-	  sed -e 'h;s,^.*/,,;s/$(EXEEXT)$$//;$(transform)' \
++	  sed -e 'h;s,^.*/,,;s/$(EXEEXT)$$//;$(transform);$(add_gmime)' \
+ 	      -e 's/$$/$(EXEEXT)/' `; \
+ 	test -n "$$list" || exit 0; \
+ 	echo " ( cd '$(DESTDIR)$(bindir)' && rm -f" $$files ")"; \

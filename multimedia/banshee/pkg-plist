@@ -24,7 +24,6 @@ lib/banshee-1/Banshee.Services.addins
 lib/banshee-1/Banshee.Services.dll
 lib/banshee-1/Banshee.Services.dll.mdb
 lib/banshee-1/Banshee.ThickClient.dll
-lib/banshee-1/Banshee.ThickClient.dll.config
 lib/banshee-1/Banshee.ThickClient.dll.mdb
 lib/banshee-1/Banshee.Widgets.dll
 lib/banshee-1/Banshee.Widgets.dll.config
@@ -36,6 +35,10 @@ lib/banshee-1/Beroe.exe
 lib/banshee-1/Beroe.exe.mdb
 lib/banshee-1/Extensions/Banshee.AudioCd.dll
 lib/banshee-1/Extensions/Banshee.AudioCd.dll.mdb
+lib/banshee-1/Extensions/Banshee.Audiobook.dll
+lib/banshee-1/Extensions/Banshee.Audiobook.dll.mdb
+%%OPT_BOO%%lib/banshee-1/Extensions/Banshee.BooScript.dll
+%%OPT_BOO%%lib/banshee-1/Extensions/Banshee.BooScript.dll.mdb
 lib/banshee-1/Extensions/Banshee.Bookmarks.dll
 lib/banshee-1/Extensions/Banshee.Bookmarks.dll.mdb
 lib/banshee-1/Extensions/Banshee.Bpm.dll
@@ -52,12 +55,18 @@ lib/banshee-1/Extensions/Banshee.Dap.MassStorage.dll.mdb
 %%OPT_MTP%%lib/banshee-1/Extensions/Banshee.Dap.Mtp.dll.mdb
 lib/banshee-1/Extensions/Banshee.Dap.dll
 lib/banshee-1/Extensions/Banshee.Dap.dll.mdb
+lib/banshee-1/Extensions/Banshee.Emusic.dll
+lib/banshee-1/Extensions/Banshee.Emusic.dll.mdb
 lib/banshee-1/Extensions/Banshee.FileSystemQueue.dll
 lib/banshee-1/Extensions/Banshee.FileSystemQueue.dll.mdb
+lib/banshee-1/Extensions/Banshee.InternetArchive.dll
+lib/banshee-1/Extensions/Banshee.InternetArchive.dll.mdb
 lib/banshee-1/Extensions/Banshee.InternetRadio.dll
 lib/banshee-1/Extensions/Banshee.InternetRadio.dll.mdb
 lib/banshee-1/Extensions/Banshee.Lastfm.dll
 lib/banshee-1/Extensions/Banshee.Lastfm.dll.mdb
+lib/banshee-1/Extensions/Banshee.LibraryWatcher.dll
+lib/banshee-1/Extensions/Banshee.LibraryWatcher.dll.mdb
 lib/banshee-1/Extensions/Banshee.MiniMode.dll
 lib/banshee-1/Extensions/Banshee.MiniMode.dll.mdb
 lib/banshee-1/Extensions/Banshee.MultimediaKeys.dll
@@ -66,7 +75,6 @@ lib/banshee-1/Extensions/Banshee.NotificationArea.dll
 lib/banshee-1/Extensions/Banshee.NotificationArea.dll.config
 lib/banshee-1/Extensions/Banshee.NotificationArea.dll.mdb
 lib/banshee-1/Extensions/Banshee.NowPlaying.dll
-lib/banshee-1/Extensions/Banshee.NowPlaying.dll.config
 lib/banshee-1/Extensions/Banshee.NowPlaying.dll.mdb
 lib/banshee-1/Extensions/Banshee.PlayQueue.dll
 lib/banshee-1/Extensions/Banshee.PlayQueue.dll.mdb
@@ -74,10 +82,12 @@ lib/banshee-1/Extensions/Banshee.PlayerMigration.dll
 lib/banshee-1/Extensions/Banshee.PlayerMigration.dll.mdb
 lib/banshee-1/Extensions/Banshee.Podcasting.dll
 lib/banshee-1/Extensions/Banshee.Podcasting.dll.mdb
+%%OPT_WEBKIT%%lib/banshee-1/Extensions/Banshee.Wikipedia.dll
+%%OPT_WEBKIT%%lib/banshee-1/Extensions/Banshee.Wikipedia.dll.mdb
+%%OPT_YOUTUBE%%lib/banshee-1/Extensions/Banshee.YouTube.dll
+%%OPT_YOUTUBE%%lib/banshee-1/Extensions/Banshee.YouTube.dll.mdb
 %%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp-ui.dll
-%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp-ui.dll.mdb
 %%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll
-%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll.mdb
 lib/banshee-1/Halie.exe
 lib/banshee-1/Halie.exe.mdb
 lib/banshee-1/Hyena.Gui.dll
@@ -125,11 +135,13 @@ libdata/pkgconfig/banshee-1-lastfm-gui.pc
 libdata/pkgconfig/banshee-1-lastfm.pc
 libdata/pkgconfig/banshee-1-mono-media.pc
 libdata/pkgconfig/banshee-1-musicbrainz.pc
+libdata/pkgconfig/banshee-1-nowplaying.pc
 libdata/pkgconfig/banshee-1-services.pc
 libdata/pkgconfig/banshee-1-thickclient.pc
 share/applications/banshee-1-audiocd.desktop
 share/applications/banshee-1-media-player.desktop
 share/applications/banshee-1.desktop
+share/banshee-1/audio-profiles/aac-novell.xml
 share/banshee-1/audio-profiles/base.xml
 share/banshee-1/audio-profiles/flac.xml
 share/banshee-1/audio-profiles/mp3-lame.xml
@@ -138,16 +150,20 @@ share/banshee-1/audio-profiles/vorbis.xml
 share/banshee-1/audio-profiles/wav.xml
 share/banshee-1/audio-profiles/wavpack.xml
 share/banshee-1/audio-profiles/wma.xml
+share/banshee-1/icons/hicolor/128x128/devices/phone-google-nexus-one.png
 share/banshee-1/icons/hicolor/128x128/devices/phone-htc-g1-white.png
+share/banshee-1/icons/hicolor/128x128/devices/phone-nokia-n900.png
 share/banshee-1/icons/hicolor/16x16/actions/media-import-audio-cd.png
 share/banshee-1/icons/hicolor/16x16/actions/media-repeat-all.png
 share/banshee-1/icons/hicolor/16x16/actions/media-repeat-none.png
 share/banshee-1/icons/hicolor/16x16/actions/media-repeat-single.png
 share/banshee-1/icons/hicolor/16x16/actions/media-write-cd.png
 share/banshee-1/icons/hicolor/16x16/categories/amazon-mp3-source.png
+share/banshee-1/icons/hicolor/16x16/categories/audiobook.png
 share/banshee-1/icons/hicolor/16x16/categories/podcast.png
 share/banshee-1/icons/hicolor/16x16/categories/source-playlist.png
 share/banshee-1/icons/hicolor/16x16/categories/source-smart-playlist.png
+share/banshee-1/icons/hicolor/16x16/categories/wikipedia.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-U2-color.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-U2-monochrome.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-mini-blue.png
@@ -162,7 +178,10 @@ share/banshee-1/icons/hicolor/16x16/categories/source-smart-playlist.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-standard-monochrome.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-video-black.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/16x16/devices/multimedia-player-ipod-video-white.png
+share/banshee-1/icons/hicolor/16x16/devices/phone-google-nexus-one.png
 share/banshee-1/icons/hicolor/16x16/devices/phone-htc-g1-white.png
+share/banshee-1/icons/hicolor/16x16/devices/phone-nokia-n900.png
+share/banshee-1/icons/hicolor/16x16/devices/phone-palm-pre.png
 share/banshee-1/icons/hicolor/16x16/emblems/creative-commons-by.png
 share/banshee-1/icons/hicolor/16x16/emblems/creative-commons-nc.png
 share/banshee-1/icons/hicolor/16x16/emblems/creative-commons-nd.png
@@ -173,6 +192,8 @@ share/banshee-1/icons/hicolor/22x22/actions/encode.png
 share/banshee-1/icons/hicolor/22x22/actions/media-import-audio-cd.png
 share/banshee-1/icons/hicolor/22x22/actions/media-write-cd.png
 share/banshee-1/icons/hicolor/22x22/categories/amazon-mp3-source.png
+share/banshee-1/icons/hicolor/22x22/categories/audiobook.png
+share/banshee-1/icons/hicolor/22x22/categories/internet-archive.png
 share/banshee-1/icons/hicolor/22x22/categories/lastfm-audioscrobbler.png
 share/banshee-1/icons/hicolor/22x22/categories/lastfm-neighbour.png
 share/banshee-1/icons/hicolor/22x22/categories/lastfm-personal.png
@@ -182,6 +203,7 @@ share/banshee-1/icons/hicolor/22x22/categories/podcast.png
 share/banshee-1/icons/hicolor/22x22/categories/radio.png
 share/banshee-1/icons/hicolor/22x22/categories/source-playlist.png
 share/banshee-1/icons/hicolor/22x22/categories/source-smart-playlist.png
+share/banshee-1/icons/hicolor/22x22/categories/wikipedia.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-U2-color.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-U2-monochrome.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-mini-blue.png
@@ -196,14 +218,34 @@ share/banshee-1/icons/hicolor/22x22/categories/source-smart-playlist.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-standard-monochrome.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-video-black.png
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/22x22/devices/multimedia-player-ipod-video-white.png
+share/banshee-1/icons/hicolor/22x22/devices/phone-google-nexus-one.png
 share/banshee-1/icons/hicolor/22x22/devices/phone-htc-g1-white.png
+share/banshee-1/icons/hicolor/22x22/devices/phone-nokia-n900.png
+share/banshee-1/icons/hicolor/22x22/devices/phone-palm-pre.png
+share/banshee-1/icons/hicolor/24x24/devices/phone-google-nexus-one.png
+share/banshee-1/icons/hicolor/24x24/devices/phone-htc-g1-white.png
+share/banshee-1/icons/hicolor/24x24/devices/phone-nokia-n900.png
+share/banshee-1/icons/hicolor/24x24/devices/phone-palm-pre.png
+share/banshee-1/icons/hicolor/256x256/devices/phone-google-nexus-one.png
+share/banshee-1/icons/hicolor/256x256/devices/phone-palm-pre.png
 share/banshee-1/icons/hicolor/32x32/actions/media-write-cd.png
+share/banshee-1/icons/hicolor/32x32/categories/wikipedia.png
+share/banshee-1/icons/hicolor/32x32/devices/phone-google-nexus-one.png
 share/banshee-1/icons/hicolor/32x32/devices/phone-htc-g1-white.png
+share/banshee-1/icons/hicolor/32x32/devices/phone-nokia-n900.png
+share/banshee-1/icons/hicolor/32x32/devices/phone-palm-pre.png
 share/banshee-1/icons/hicolor/48x48/actions/media-write-cd.png
+share/banshee-1/icons/hicolor/48x48/categories/audiobook.png
 share/banshee-1/icons/hicolor/48x48/categories/podcast.png
 share/banshee-1/icons/hicolor/48x48/categories/radio.png
+share/banshee-1/icons/hicolor/48x48/categories/wikipedia.png
+share/banshee-1/icons/hicolor/48x48/devices/phone-google-nexus-one.png
 share/banshee-1/icons/hicolor/48x48/devices/phone-htc-g1-white.png
+share/banshee-1/icons/hicolor/48x48/devices/phone-nokia-n900.png
+share/banshee-1/icons/hicolor/48x48/devices/phone-palm-pre.png
+share/banshee-1/icons/hicolor/scalable/categories/audiobook.svg
 share/banshee-1/icons/hicolor/scalable/categories/radio.svg
+share/banshee-1/icons/hicolor/scalable/categories/wikipedia.svg
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-U2-color.svg
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-U2-monochrome.svg
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-mini-blue.svg
@@ -218,6 +260,8 @@ share/banshee-1/icons/hicolor/scalable/categories/radio.svg
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-standard-monochrome.svg
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-video-black.svg
 %%OPT_IPOD%%share/banshee-1/icons/hicolor/scalable/devices/multimedia-player-ipod-video-white.svg
+share/banshee-1/icons/hicolor/scalable/devices/phone-nokia-n900.svg
+share/banshee-1/icons/hicolor/scalable/devices/phone-palm-pre.svg
 share/dbus-1/services/org.bansheeproject.Banshee.service
 share/dbus-1/services/org.bansheeproject.CollectionIndexer.service
 share/icons/hicolor/16x16/apps/media-player-banshee.png
@@ -278,8 +322,13 @@ share/locale/zh_TW/LC_MESSAGES/banshee-1.mo
 @dirrm share/banshee-1/icons/hicolor/48x48/actions
 @dirrm share/banshee-1/icons/hicolor/48x48
 @dirrm share/banshee-1/icons/hicolor/32x32/devices
+@dirrm share/banshee-1/icons/hicolor/32x32/categories
 @dirrm share/banshee-1/icons/hicolor/32x32/actions
 @dirrm share/banshee-1/icons/hicolor/32x32
+@dirrm share/banshee-1/icons/hicolor/256x256/devices
+@dirrm share/banshee-1/icons/hicolor/256x256
+@dirrm share/banshee-1/icons/hicolor/24x24/devices
+@dirrm share/banshee-1/icons/hicolor/24x24
 @dirrm share/banshee-1/icons/hicolor/22x22/devices
 @dirrm share/banshee-1/icons/hicolor/22x22/categories
 @dirrm share/banshee-1/icons/hicolor/22x22/actions

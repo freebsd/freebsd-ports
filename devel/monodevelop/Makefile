@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	monodevelop
-PORTVERSION=	2.0
-PORTREVISION=	5
+PORTVERSION=	2.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -31,16 +30,37 @@ MAN1=		mdtool.1 monodevelop.1
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 
-OPTIONS=	SVN "Enable subversion support" on
+OPTIONS=	MONOEXT "Enable extensions for Mono development" on \
+		VCS "Enable version control support" on \
+		SVN "Enable subversion support" on
+
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_MONOEXT)
+CONFIGURE_ARGS+=--enable-monoextensions
+PLIST_SUB+=	MONOEXT=""
+.else
+CONFIGURE_ARGS+=--disable-monoextensions
+PLIST_SUB+=	MONOEXT="@comment "
+.endif
+
+.if defined(WITH_VCS) && !defined(WITHOUT_VCS)
+CONFIGURE_ARGS+=--enable-versioncontrol
+PLIST_SUB+=	VCS=""
+.else
+CONFIGURE_ARGS+=--disable-versioncontrol
+PLIST_SUB+=	VCS="@comment "
+.endif
+
 .if !defined(WITHOUT_SVN)
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-CONFIGURE_ARGS+=	--enable-subversion
+CONFIGURE_ARGS+=--enable-subversion
 PLIST_SUB+=	SVN=""
 .else
-CONFIGURE_ARGS+=	--disable-subversion
+CONFIGURE_ARGS+=--disable-subversion
 PLIST_SUB+=	SVN="@comment "
 .endif
 

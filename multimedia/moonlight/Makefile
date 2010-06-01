@@ -6,35 +6,50 @@
 #
 
 PORTNAME=	moonlight
-PORTVERSION=	1.0.1
-PORTREVISION=	6
+PORTVERSION=	2.0
 CATEGORIES=	multimedia www
-MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/moon/
-DISTNAME=	moon-${PORTVERSION}
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/moon/${PORTVERSION}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		mono-${MONO_VERSION}${EXTRACT_SUFX} \
+		mono-basic-${MONO_BASIC_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	OpenSource Implementation of Silverlight
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
+USE_BISON=	build
 USE_GECKO=	libxul
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomedesktopsharp20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-cairo=system \
 		--with-debug=yes \
 		--with-ff2=no \
-		--with-ff3=yes
+		--with-ff3=yes \
+		--with-mcspath=${MONODIR}/mcs/ \
+		--with-mono-basic-path=${MONOBASICDIR}/
+
+MONO_VERSION=	2.6
+MONO_BASIC_VERSION=2.6
+
+MONODIR=	${WRKDIR}/mono-${MONO_VERSION}
+MONOBASICDIR=	${WRKDIR}/mono-basic-${MONO_BASIC_VERSION}
 
 USE_WEBPLUGINS=		gecko19
-WEBPLUGINS_DIR=		${PREFIX}/lib/moon/plugin
+WEBPLUGINS_DIR=		${PREFIX}/lib/moonlight/plugin
 WEBPLUGINS_FILES=	libmoonloader.so \
 			libmoonplugin.so \
 			libmoonplugin-ff3bridge.so
 
 OPTIONS=	PULSEAUDIO "Build with PA (needed for sound support)" on
+
+MAN1=	mopen.1 mxap.1 respack.1 sockpol.1 svg2xaml.1 xamlg.1
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
@@ -63,21 +78,18 @@ PLIST_FILES=	${WEBPLUGINS_DIR}/${PKGNAME}-freebsd-${OSREL}.xpi
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/TEST_SUBDIR =/d' \
-			${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!/usr/bin/env bash|' \
+			${MONODIR}/mcs/class/Mono.WebBrowser/build-csproj2k5
 	@${REINPLACE_CMD} -e '/<malloc.h>/d' \
-			${WRKSRC}/src/animation.cpp \
 			${WRKSRC}/src/runtime.cpp \
-			${WRKSRC}/src/xaml.cpp \
-			${WRKSRC}/src/xap.cpp \
-			${WRKSRC}/src/value.cpp
-	@${REINPLACE_CMD} -e 's|CODEC_URL|""|' \
-			${WRKSRC}/src/pipeline-ui.cpp
+			${WRKSRC}/src/xaml.cpp
 	@${REINPLACE_CMD} -e 's|\(^LIBS\) =|\1 = -lexecinfo|' \
-		-e 's|/proc/|/compat/linux/proc/| ' \
 			${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 			${WRKSRC}/plugin/Makefile.in
+
+pre-configure:
+	@( cd ${MONODIR} && ./configure --with-profile2=no --with-moonlight=yes --with-profile4=no --with-monotouch=no --with-mcs-docs=no && ${GMAKE} )
 
 .if defined(WITH_XPI_PLUGIN_ONLY)
 do-install:

@@ -1,12 +1,11 @@
 @comment $FreeBSD$
-lib/mono/gac/webkit-sharp/1.0.0.0__eaa1d335d2e19745/webkit-sharp.dll
-lib/mono/gac/webkit-sharp/1.0.0.0__eaa1d335d2e19745/webkit-sharp.dll.config
+lib/mono/gac/webkit-sharp/%%ASSEMBLY_VERSION%%.0__eaa1d335d2e19745/webkit-sharp.dll
+lib/mono/gac/webkit-sharp/%%ASSEMBLY_VERSION%%.0__eaa1d335d2e19745/webkit-sharp.dll.config
 lib/mono/webkit-sharp/webkit-sharp.dll
 lib/monodoc/sources/webkit-sharp-docs.source
 lib/monodoc/sources/webkit-sharp-docs.tree
 lib/monodoc/sources/webkit-sharp-docs.zip
 libdata/pkgconfig/webkit-sharp-1.0.pc
-@dirrm lib/pkgconfig
 @dirrm lib/mono/webkit-sharp
-@dirrm lib/mono/gac/webkit-sharp/1.0.0.0__eaa1d335d2e19745
+@dirrm lib/mono/gac/webkit-sharp/%%ASSEMBLY_VERSION%%.0__eaa1d335d2e19745
 @dirrm lib/mono/gac/webkit-sharp

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	monodevelop-java
-PORTVERSION=	2.0
-PORTREVISION=	5
+PORTVERSION=	2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -28,5 +27,8 @@ USE_GNOME=	gtksharp20
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]prefix[)]/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/JavaBinding.make
+
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.mk>
