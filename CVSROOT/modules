@@ -5935,6 +5935,7 @@ irssi-themes                    ports/x11-themes/irssi-themes
 irssi-xmpp                      ports/irc/irssi-xmpp
 irssi-xmpp-devel                ports/irc/irssi-xmpp-devel
 irssistats                      ports/irc/irssistats
+irstlm                          ports/textproc/irstlm
 is-aspell                       ports/textproc/is-aspell
 isaac-cfd                       ports/science/isaac-cfd
 isabella                        ports/x11-fonts/isabella
