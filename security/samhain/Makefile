@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	2.6.4
+PORTVERSION=	2.7.0
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
@@ -27,6 +27,8 @@ SUB_FILES+=	pkg-install
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CONFLICTS=	samhain-client-2*
+
+LICENSE=	GPLv2
 
 .include <bsd.port.pre.mk>
 
