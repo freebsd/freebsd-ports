@@ -57,6 +57,8 @@ MAN3=	_U_dyn_cancel.3			\
 
 .if ${OSVERSION} < 701100 || (${OSVERSION} > 800000 && ${OSVERSION} < 800053)
 IGNORE=	your FreeBSD version is not supported
+.elif ${ARCH} == i386
+BROKEN=		does not build
 .endif
 
 #
