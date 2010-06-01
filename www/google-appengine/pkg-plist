@@ -553,6 +553,8 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/memcache/memcache_stub.py
 %%DATADIR%%/google/appengine/api/namespace_manager/__init__.py
 %%DATADIR%%/google/appengine/api/namespace_manager/namespace_manager.py
+%%DATADIR%%/google/appengine/api/oauth/__init__.py
+%%DATADIR%%/google/appengine/api/oauth/oauth_api.py
 %%DATADIR%%/google/appengine/api/queueinfo.py
 %%DATADIR%%/google/appengine/api/quota.py
 %%DATADIR%%/google/appengine/api/urlfetch.py
@@ -648,7 +650,17 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/ext/blobstore/blobstore.py
 %%DATADIR%%/google/appengine/ext/bulkload/__init__.py
 %%DATADIR%%/google/appengine/ext/bulkload/bulkload_deprecated.py
+%%DATADIR%%/google/appengine/ext/bulkload/bulkloader_config.py
+%%DATADIR%%/google/appengine/ext/bulkload/bulkloader_errors.py
+%%DATADIR%%/google/appengine/ext/bulkload/bulkloader_parser.py
+%%DATADIR%%/google/appengine/ext/bulkload/bulkloader_wizard.py
+%%DATADIR%%/google/appengine/ext/bulkload/bulkloader_wizard.yaml
+%%DATADIR%%/google/appengine/ext/bulkload/connector_interface.py
 %%DATADIR%%/google/appengine/ext/bulkload/constants.py
+%%DATADIR%%/google/appengine/ext/bulkload/csv_connector.py
+%%DATADIR%%/google/appengine/ext/bulkload/simpletext_connector.py
+%%DATADIR%%/google/appengine/ext/bulkload/simplexml_connector.py
+%%DATADIR%%/google/appengine/ext/bulkload/transform.py
 %%DATADIR%%/google/appengine/ext/db/__init__.py
 %%DATADIR%%/google/appengine/ext/db/djangoforms.py
 %%DATADIR%%/google/appengine/ext/db/polymodel.py
@@ -690,6 +702,7 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_index.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_login.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_main.py
+%%DATADIR%%/google/appengine/tools/dev_appserver_oauth.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_upload.py
 %%DATADIR%%/google/appengine/tools/https_wrapper.py
 %%DATADIR%%/google/appengine/tools/os_compat.py
@@ -1634,6 +1647,7 @@ bin/remote_api_shell.py
 @dirrm %%DATADIR%%/google/appengine/cron
 @dirrm %%DATADIR%%/google/appengine/base
 @dirrm %%DATADIR%%/google/appengine/api/xmpp
+@dirrm %%DATADIR%%/google/appengine/api/oauth
 @dirrm %%DATADIR%%/google/appengine/api/namespace_manager
 @dirrm %%DATADIR%%/google/appengine/api/memcache
 @dirrm %%DATADIR%%/google/appengine/api/labs/taskqueue
