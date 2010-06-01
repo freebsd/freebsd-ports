@@ -341,6 +341,7 @@
     SUBDIR += p5-Math-Pari
     SUBDIR += p5-Math-Polygon
     SUBDIR += p5-Math-Polynomial-Solve
+    SUBDIR += p5-Math-RPN
     SUBDIR += p5-Math-Random
     SUBDIR += p5-Math-Random-ISAAC
     SUBDIR += p5-Math-Random-ISAAC-XS

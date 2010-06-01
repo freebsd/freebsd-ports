@@ -1,0 +1,5 @@
+The rpn function will take a scalar or list of sclars which 
+contain an RPN expression as a set of comma delimited values and 
+operators, and return the result or stack, depending on context. 
+
+WWW: http://search.cpan.org/dist/Math-RPN/
