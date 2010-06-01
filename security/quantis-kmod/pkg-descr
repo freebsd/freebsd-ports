@@ -1,0 +1,10 @@
+Quantis is a physical random number generator exploiting
+an elementary quantum optics process.
+
+This port contains the kernel driver to access Quantis
+PCI and PCIe devices.
+
+WWW:	http://www.idquantique.com/
+
+- Alex Dupre
+ale@FreeBSD.org
