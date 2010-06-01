@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	monodevelop-vala
-PORTVERSION=	2.0
-PORTREVISION=	4
+PORTVERSION=	2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -23,5 +22,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PLIST_FILES=	lib/monodevelop/AddIns/BackendBindings/MonoDevelop.ValaBinding.dll
+
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.mk>

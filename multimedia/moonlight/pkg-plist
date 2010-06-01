@@ -1,13 +1,126 @@
-bin/mopen1
+bin/mopen
+bin/munxap
+bin/mxap
+bin/respack
+bin/smcs
+bin/sockpol
+bin/unrespack
+bin/xaml2html
+bin/xamlg
 lib/libmoon.la
 lib/libmoon.so
 lib/libmoon.so.0
-lib/moon/plugin/README
-lib/moon/plugin/libmoonloader.la
-lib/moon/plugin/libmoonloader.so
-lib/moon/plugin/libmoonplugin-ff3bridge.la
-lib/moon/plugin/libmoonplugin-ff3bridge.so
-lib/moon/plugin/libmoonplugin.la
-lib/moon/plugin/libmoonplugin.so
-@dirrm lib/moon/plugin
-@dirrm lib/moon
+lib/mono/gac/Moon.Windows.Desktop/3.0.0.0__0738eb9f132ed756/Moon.Windows.Desktop.dll
+lib/mono/gac/Moon.Windows.Desktop/3.0.0.0__0738eb9f132ed756/Moon.Windows.Desktop.dll.mdb
+lib/mono/gac/Moonlight.Gtk/3.0.0.0__976ad8f3443f9a4d/Moonlight.Gtk.dll
+lib/mono/gac/Moonlight.Gtk/3.0.0.0__976ad8f3443f9a4d/Moonlight.Gtk.dll.mdb
+lib/mono/gac/System.Windows.Browser/3.0.0.0__0738eb9f132ed756/System.Windows.Browser.dll
+lib/mono/gac/System.Windows.Browser/3.0.0.0__0738eb9f132ed756/System.Windows.Browser.dll.mdb
+lib/mono/gac/System.Windows.Controls.Data/2.0.5.0__0738eb9f132ed756/System.Windows.Controls.Data.dll
+lib/mono/gac/System.Windows.Controls.Data/2.0.5.0__0738eb9f132ed756/System.Windows.Controls.Data.dll.mdb
+lib/mono/gac/System.Windows.Controls/2.0.5.0__0738eb9f132ed756/System.Windows.Controls.dll
+lib/mono/gac/System.Windows.Controls/2.0.5.0__0738eb9f132ed756/System.Windows.Controls.dll.mdb
+lib/mono/gac/System.Windows/3.0.0.0__0738eb9f132ed756/System.Windows.dll
+lib/mono/gac/System.Windows/3.0.0.0__0738eb9f132ed756/System.Windows.dll.config
+lib/mono/gac/System.Windows/3.0.0.0__0738eb9f132ed756/System.Windows.dll.mdb
+lib/mono/moonlight/Moon.Windows.Desktop.dll
+lib/mono/moonlight/Moonlight.Gtk.dll
+lib/mono/moonlight/System.Windows.Browser.dll
+lib/mono/moonlight/System.Windows.Controls.Data.dll
+lib/mono/moonlight/System.Windows.Controls.dll
+lib/mono/moonlight/System.Windows.dll
+lib/monodoc/sources/moonlight-gtk.source
+lib/monodoc/sources/moonlight-gtk.tree
+lib/monodoc/sources/moonlight-gtk.zip
+lib/moonlight/2.0-redist/System.Windows.Controls.Data.dll
+lib/moonlight/2.0-redist/System.Windows.Controls.Data.dll.mdb
+lib/moonlight/2.0-redist/System.Windows.Controls.dll
+lib/moonlight/2.0-redist/System.Windows.Controls.dll.mdb
+lib/moonlight/2.0-redist/System.Xml.Linq.dll
+lib/moonlight/2.0-redist/System.Xml.Linq.dll.mdb
+lib/moonlight/2.0/Microsoft.VisualBasic.dll
+lib/moonlight/2.0/Mono.CompilerServices.SymbolWriter.dll
+lib/moonlight/2.0/Mono.CompilerServices.SymbolWriter.dll.mdb
+lib/moonlight/2.0/System.Core.dll
+lib/moonlight/2.0/System.Core.dll.mdb
+lib/moonlight/2.0/System.Net.dll
+lib/moonlight/2.0/System.Net.dll.mdb
+lib/moonlight/2.0/System.Runtime.Serialization.dll
+lib/moonlight/2.0/System.Runtime.Serialization.dll.mdb
+lib/moonlight/2.0/System.ServiceModel.Web.dll
+lib/moonlight/2.0/System.ServiceModel.Web.dll.mdb
+lib/moonlight/2.0/System.ServiceModel.dll
+lib/moonlight/2.0/System.ServiceModel.dll.mdb
+lib/moonlight/2.0/System.Windows.Browser.dll
+lib/moonlight/2.0/System.Windows.Browser.dll.mdb
+lib/moonlight/2.0/System.Windows.dll
+lib/moonlight/2.0/System.Windows.dll.mdb
+lib/moonlight/2.0/System.Xml.dll
+lib/moonlight/2.0/System.Xml.dll.mdb
+lib/moonlight/2.0/System.dll
+lib/moonlight/2.0/System.dll.mdb
+lib/moonlight/2.0/buildversion
+lib/moonlight/2.0/mscorlib.dll
+lib/moonlight/2.0/mscorlib.dll.mdb
+lib/moonlight/2.0/respack.exe
+lib/moonlight/2.0/respack.exe.mdb
+lib/moonlight/2.0/smcs.exe
+lib/moonlight/2.0/smcs.exe.mdb
+lib/moonlight/mopen.exe
+lib/moonlight/mopen.exe.config
+lib/moonlight/mopen.exe.mdb
+lib/moonlight/munxap.exe
+lib/moonlight/mxap.exe
+lib/moonlight/plugin/Microsoft.VisualBasic.dll
+lib/moonlight/plugin/System.Core.dll
+lib/moonlight/plugin/System.Core.dll.mdb
+lib/moonlight/plugin/System.Net.dll
+lib/moonlight/plugin/System.Net.dll.mdb
+lib/moonlight/plugin/System.Runtime.Serialization.dll
+lib/moonlight/plugin/System.Runtime.Serialization.dll.mdb
+lib/moonlight/plugin/System.ServiceModel.Web.dll
+lib/moonlight/plugin/System.ServiceModel.Web.dll.mdb
+lib/moonlight/plugin/System.ServiceModel.dll
+lib/moonlight/plugin/System.ServiceModel.dll.mdb
+lib/moonlight/plugin/System.Windows.Browser.dll
+lib/moonlight/plugin/System.Windows.Browser.dll.mdb
+lib/moonlight/plugin/System.Windows.dll
+lib/moonlight/plugin/System.Windows.dll.config
+lib/moonlight/plugin/System.Windows.dll.mdb
+lib/moonlight/plugin/System.Xml.dll
+lib/moonlight/plugin/System.Xml.dll.mdb
+lib/moonlight/plugin/System.dll
+lib/moonlight/plugin/System.dll.mdb
+lib/moonlight/plugin/libmoonloader.la
+lib/moonlight/plugin/libmoonloader.so
+lib/moonlight/plugin/libmoonplugin-ff3bridge.la
+lib/moonlight/plugin/libmoonplugin-ff3bridge.so
+lib/moonlight/plugin/libmoonplugin.la
+lib/moonlight/plugin/libmoonplugin.so
+lib/moonlight/plugin/mscorlib.dll
+lib/moonlight/plugin/mscorlib.dll.mdb
+lib/moonlight/respack.exe
+lib/moonlight/sockpol.exe
+lib/moonlight/xaml2html.exe
+lib/moonlight/xamlg.exe
+share/pkgconfig/moonlight-desktop-2.0.pc
+share/pkgconfig/moonlight-gtk-2.0.pc
+share/pkgconfig/moonlight-web-2.0.pc
+@dirrm share/pkgconfig
+@dirrm lib/moonlight/plugin
+@dirrm lib/moonlight/2.0-redist
+@dirrm lib/moonlight/2.0
+@dirrm lib/moonlight
+@dirrm lib/mono/moonlight
+@dirrm lib/mono/gac/System.Windows/3.0.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/System.Windows.Controls/2.0.5.0__0738eb9f132ed756
+@dirrm lib/mono/gac/System.Windows.Controls.Data/2.0.5.0__0738eb9f132ed756
+@dirrm lib/mono/gac/System.Windows.Controls.Data
+@dirrm lib/mono/gac/System.Windows.Controls
+@dirrm lib/mono/gac/System.Windows.Browser/3.0.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/System.Windows.Browser
+@dirrm lib/mono/gac/System.Windows
+@dirrm lib/mono/gac/Moonlight.Gtk/3.0.0.0__976ad8f3443f9a4d
+@dirrm lib/mono/gac/Moonlight.Gtk
+@dirrm lib/mono/gac/Moon.Windows.Desktop/3.0.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/Moon.Windows.Desktop

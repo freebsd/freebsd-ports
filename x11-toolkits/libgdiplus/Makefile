@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libgdiplus
-PORTVERSION=	2.4.2
-PORTREVISION=	3
+PORTVERSION=	2.6.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -27,8 +26,7 @@ USE_LDCONFIG=   yes
 LIBTOOLFILES=	configure cairo/configure
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		png_REQUIRES="libpng"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 # Included cairo does not work for us.  Enable below when Mono catches
 # up with our port.  For now, use included but patch out glitz manually.
 #CONFIGURE_ARGS+= --with-cairo=installed

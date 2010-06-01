@@ -1,11 +1,13 @@
 @comment $FreeBSD$
 bin/create-native-map
+bin/emveepee
 bin/gasnview
 bin/gendarme
 bin/gendarme-wizard
 bin/gsharp
 bin/gui-compare
 bin/ilcontrast
+bin/minvoke
 bin/monodoc
 bin/mperfmon
 bin/mprof-decoder
@@ -37,6 +39,11 @@ lib/gsharp/gsharp.exe
 lib/gsharp/gsharp.exe.config
 lib/gui-compare/gui-compare.exe
 lib/ilcontrast/ilcontrast.exe
+lib/minvoke/minvoke.exe
+lib/mono-tools/Mono.Profiler.Widgets.dll
+lib/mono-tools/Mono.Profiler.Widgets.dll.mdb
+lib/mono-tools/emveepee.exe
+lib/mono-tools/emveepee.exe.mdb
 lib/mono-tools/mprof-decoder-library.dll
 lib/mono-tools/mprof-decoder-library.dll.mdb
 lib/mono-tools/mprof-decoder.exe
@@ -182,7 +189,6 @@ share/applications/gendarme-wizard.desktop
 share/applications/gsharp.desktop
 share/applications/ilcontrast.desktop
 share/applications/monodoc.desktop
-share/applications/mprof-heap-viewer.desktop
 share/pixmaps/gendarme.svg
 share/pixmaps/ilcontrast.png
 share/pixmaps/monodoc.png
@@ -196,6 +202,7 @@ share/pixmaps/monodoc.png
 @dirrm lib/monodoc/web/images
 @dirrm lib/monodoc/web
 @dirrm lib/mono-tools
+@dirrm lib/minvoke
 @dirrm lib/ilcontrast
 @dirrm lib/gui-compare
 @dirrm lib/gsharp

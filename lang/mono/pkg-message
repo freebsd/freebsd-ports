@@ -12,13 +12,6 @@ following first:
   - Removing kernel options or changing defaults to use experimental
     options can adversely affect Mono's ability to build and run.
 
-* The FreeBSD 6 kernel support for user threads (KSE(2), enabled by
-  default) is known to break Mono. KSE has been disabled by default in
-  FreeBSD 7.0 and removed in FreeBSD 8.0.  Use libmap.conf(5) to use
-  libthr(3):
-   # echo "libpthread.so.2  libthr.so.2" >> /etc/libmap.conf
-   # echo "libpthread.so    libthr.so"   >> /etc/libmap.conf
-
 * Remove leftover semaphores / increase semaphore limits.
   - Close apps which use Mono and run `ipcs -sbt`.  Remove the
     semaphores with MODE "--rw-------" and NSEMS "8" using ipcrm (1)

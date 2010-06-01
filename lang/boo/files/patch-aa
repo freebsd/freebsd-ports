@@ -1,0 +1,150 @@
+$FreeBSD$
+
+This patch was checked-out from the boo SVN repository, r3468.
+It prevents build failures if an older lang/boo is already installed, more details at:
+http://jira.codehaus.org/browse/BOO-1282
+
+Index: src/Boo.Lang.Compiler/Compilation.cs
+===================================================================
+--- src/Boo.Lang.Compiler/Compilation.cs	(révision 3467)
++++ src/Boo.Lang.Compiler/Compilation.cs	(révision 3468)
+@@ -87,16 +87,26 @@
+ 			return compiler.Run(unit);
+ 		}
+ 
++		public static CompilerContext compile_(CompileUnit unit, params ICompileUnit[] references)
++		{
++			return NewCompilerWithReferences(references).Run(unit);
++		}
++
+ 		private static BooCompiler NewCompilerWithReferences(IEnumerable<ICompileUnit> references)
+ 		{
+-			BooCompiler compiler = NewCompiler();
++			BooCompiler compiler = NewCompiler(false);
+ 			compiler.Parameters.References.AddAll(references);
+ 			return compiler;
+ 		}
+ 
+ 		private static BooCompiler NewCompiler()
+ 		{
+-			BooCompiler compiler = new BooCompiler();
++			return NewCompiler(true);
++		}
++
++		private static BooCompiler NewCompiler(bool loadDefaultReferences)
++		{
++			BooCompiler compiler = new BooCompiler(new CompilerParameters(loadDefaultReferences));
+ 			compiler.Parameters.OutputType = CompilerOutputType.Auto;
+ 			compiler.Parameters.Pipeline = new Boo.Lang.Compiler.Pipelines.CompileToMemory();
+ 			return compiler;
+@@ -114,10 +124,5 @@
+ 			module.Members.Add(klass);
+ 			return module;
+ 		}
+-
+-		public static CompilerContext compile_(CompileUnit unit, params ICompileUnit[] references)
+-		{
+-			return NewCompilerWithReferences(references).Run(unit);
+-		}
+ 	}
+ }
+Index: src/Boo.Lang.Compiler/Steps/MacroProcessing/MacroCompiler.cs
+===================================================================
+--- src/Boo.Lang.Compiler/Steps/MacroProcessing/MacroCompiler.cs	(révision 3467)
++++ src/Boo.Lang.Compiler/Steps/MacroProcessing/MacroCompiler.cs	(révision 3468)
+@@ -121,9 +121,7 @@
+ 			m.Namespace = CleanClone(node.EnclosingModule.Namespace);
+ 			m.Name = node.Name;
+ 			foreach (Import i in node.EnclosingModule.Imports)
+-			{
+ 				m.Imports.Add(CleanClone(i));
+-			}
+ 			m.Members.Add(CleanClone(node));
+ 			return m;
+ 		}
+@@ -139,17 +137,13 @@
+ 		private void ReportErrors(CompilerErrorCollection errors)
+ 		{
+ 			foreach (CompilerError e in errors)
+-			{
+ 				Errors.Add(e);
+-			}
+ 		}
+ 
+ 		private void ReportWarnings(CompilerWarningCollection warnings)
+ 		{
+ 			foreach (CompilerWarning w in warnings)
+-			{
+ 				Warnings.Add(w);
+-			}
+ 		}
+ 
+ 		private static void CacheType(TypeDefinition node, Type type)
+Index: tests/BooCompiler.Tests/ExtensionsCompilationTest.cs
+===================================================================
+--- tests/BooCompiler.Tests/ExtensionsCompilationTest.cs	(révision 0)
++++ tests/BooCompiler.Tests/ExtensionsCompilationTest.cs	(révision 3468)
+@@ -0,0 +1,33 @@
++﻿using System.Collections.Generic;
++using System.IO;
++using Boo.Lang.Compiler;
++using Boo.Lang.Compiler.IO;
++using NUnit.Framework;
++
++namespace BooCompiler.Tests
++{
++	[TestFixture]
++	public class ExtensionsCompilationTest
++	{
++		[Test]
++		public void MacroMacroCompilation()
++		{
++			var parameters = new CompilerParameters(false);
++			parameters.References.Add(typeof(IEnumerable<>).Assembly);
++			
++			parameters.Input.Add(BooLangExtensionsSource("Macros/MacroMacro.boo"));
++			parameters.Input.Add(BooLangExtensionsSource("Macros/AssertMacro.boo"));
++
++			parameters.Pipeline = new Boo.Lang.Compiler.Pipelines.ResolveExpressions();
++
++			var compiler = new Boo.Lang.Compiler.BooCompiler(parameters);
++			var results = compiler.Run();
++			Assert.AreEqual(0, results.Errors.Count, results.Errors.ToString());
++		}
++
++		private FileInput BooLangExtensionsSource(string file)
++		{
++			return new FileInput(Path.Combine(BooTestCaseUtil.BasePath, "src/Boo.Lang.Extensions/" + file));
++		}
++	}
++}
+Index: tests/BooCompiler.Tests/BooTestCaseUtil.cs
+===================================================================
+--- tests/BooCompiler.Tests/BooTestCaseUtil.cs	(révision 3467)
++++ tests/BooCompiler.Tests/BooTestCaseUtil.cs	(révision 3468)
+@@ -31,7 +31,6 @@
+ 	using System;
+ 	using System.IO;
+ 	using System.Reflection;
+-	using System.Xml;
+ 	using System.Xml.Serialization;
+ 	using Boo.Lang.Compiler.Ast;
+ 	using NUnit.Framework;
+@@ -43,11 +42,15 @@
+ 	{
+ 		public static string TestCasesPath
+ 		{
++			get { return Path.Combine(BasePath, "tests/testcases"); }
++		}
++
++		public static string BasePath
++		{
+ 			get
+ 			{
+ 				Uri codebase = new Uri(Assembly.GetExecutingAssembly().CodeBase);
+-				Uri path = new Uri(codebase, "../testcases");
+-				return path.LocalPath;
++				return new Uri(codebase, "../..").LocalPath;
+ 			}
+ 		}
+ 

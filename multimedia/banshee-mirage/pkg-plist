@@ -6,6 +6,6 @@ lib/banshee-1/Extensions/Mirage.dll
 lib/banshee-1/Extensions/Mirage.dll.mdb
 lib/banshee-1/Extensions/Banshee.Mirage.dll
 lib/banshee-1/Extensions/Banshee.Mirage.dll.mdb
-share/locale/de/LC_MESSAGES/mirage.mo
-share/locale/it/LC_MESSAGES/mirage.mo
+share/locale/de/LC_MESSAGES/banshee-mirage.mo
+share/locale/it/LC_MESSAGES/banshee-mirage.mo
 @dirrmtry lib/banshee-1/Extensions
