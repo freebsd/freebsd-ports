@@ -1,0 +1,6 @@
+*******************************************************
+
+Add quantis_load="YES" to /boot/loader.conf to load the
+kernel module automatically.
+
+*******************************************************
