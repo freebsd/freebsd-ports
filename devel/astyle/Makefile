@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astyle
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	devel textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_linux
@@ -20,7 +20,7 @@ LDFLAGS+=	-s
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
 USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/astyle/buildgcc
+WRKSRC=		${WRKDIR}/astyle/build/gcc
 
 pre-patch:
 	${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},;' ${WRKSRC}/Makefile
@@ -31,7 +31,7 @@ PORTDOCS=	*
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/astyle ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/astyle ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/astyle/doc/*.html ${DOCSDIR}
