@@ -3,6 +3,9 @@ include/dahdi/compat/types.h
 include/dahdi/tonezone.h
 include/dahdi/user.h
 include/dahdi/wctdm_user.h
+lib/dahdi/dahdi-fw-hx8.bin.ko
+lib/dahdi/dahdi-fw-oct6114-064.bin.ko
+lib/dahdi/dahdi-fw-oct6114-128.bin.ko
 lib/dahdi/dahdi.ko
 lib/dahdi/dahdi_dynamic.ko
 lib/dahdi/dahdi_dynamic_eth.ko
@@ -13,14 +16,17 @@ lib/dahdi/dahdi_echocan_kb1.ko
 lib/dahdi/dahdi_echocan_mg2.ko
 lib/dahdi/dahdi_echocan_sec.ko
 lib/dahdi/dahdi_echocan_sec2.ko
-lib/dahdi/dahdi_fw_oct6114_064.ko
-lib/dahdi/dahdi_fw_oct6114_128.ko
 lib/dahdi/dahdi_voicebus.ko
 lib/dahdi/linker.hints
 lib/dahdi/ng_dahdi_netdev.ko
 lib/dahdi/wcb4xxp.ko
+lib/dahdi/wcfxo.ko
 lib/dahdi/wct4xxp.ko
 lib/dahdi/wctdm24xxp.ko
+%%X86%%%%WITH_EXPERIMENTAL%%lib/dahdi/dahdi_vpmadt032_loader.ko
+%%WITH_EXPERIMENTAL%%lib/dahdi/wctdm.ko
+%%WITH_EXPERIMENTAL%%lib/dahdi/wcte11xp.ko
+%%WITH_EXPERIMENTAL%%lib/dahdi/wcte12xp.ko
 lib/libtonezone.a
 lib/libtonezone.so
 lib/libtonezone.so.1
@@ -28,6 +34,7 @@ lib/libtonezone.so.1.0
 lib/libtonezone.so.2
 lib/libtonezone.so.2.0
 sbin/dahdi_cfg
+sbin/dahdi_maint
 sbin/dahdi_monitor
 sbin/dahdi_scan
 sbin/dahdi_speed
