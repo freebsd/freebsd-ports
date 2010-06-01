@@ -2821,6 +2821,7 @@
     SUBDIR += pysvn
     SUBDIR += pythk
     SUBDIR += pythontidy
+    SUBDIR += qbzr
     SUBDIR += qca
     SUBDIR += qct
     SUBDIR += qdevelop

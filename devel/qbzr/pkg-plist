@@ -1,0 +1,387 @@
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/AUTHORS.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/COPYING.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/NEWS.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/README.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/TODO.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/add.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/add.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/add.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/annotate.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/annotate.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/annotate.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/autocomplete.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/autocomplete.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/autocomplete.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/bind.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/bind.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/bind.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/branch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/branch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/branch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/browse.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/browse.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/browse.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/bugs.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/bugs.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/bugs.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/cat.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/cat.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/cat.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commands.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commands.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commit.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commit.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commit.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commit_data.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commit_data.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commit_data.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conditional_dataview.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conditional_dataview.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conditional_dataview.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/config.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/config.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/config.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conflicts.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conflicts.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conflicts.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diff.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diff.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diff.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diff_arg.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diff_arg.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diff_arg.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diffview.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diffview.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diffview.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diffwindow.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diffwindow.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/diffwindow.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/encoding_selector.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/encoding_selector.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/encoding_selector.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/export.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/export.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/export.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/bugurl.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/bugurl.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/bugurl.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/isignored.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/isignored.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/isignored.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/isversioned.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/isversioned.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra/isversioned.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/getnew.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/getnew.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/getnew.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/getupdates.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/getupdates.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/getupdates.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/help.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/help.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/help.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/html_log.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/html_log.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/html_log.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/i18n.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/i18n.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/i18n.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/info.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/info.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/info.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/init.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/init.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/init.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/lazycachedrevloader.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/lazycachedrevloader.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/lazycachedrevloader.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/log.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/log.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/log.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/loggraphprovider.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/loggraphprovider.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/loggraphprovider.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/logmodel.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/logmodel.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/logmodel.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/logwidget.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/logwidget.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/logwidget.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/main.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/main.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/main.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/plugins.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/plugins.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/plugins.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/pull.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/pull.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/pull.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/resources.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/resources.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/resources.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revert.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revert.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revert.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revisionmessagebrowser.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revisionmessagebrowser.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revisionmessagebrowser.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revisionview.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revisionview.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revisionview.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revtreeview.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revtreeview.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/revtreeview.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/run.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/run.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/run.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/send.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/send.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/send.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/spellcheck.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/spellcheck.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/spellcheck.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/spellcheck_enchant.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/spellcheck_enchant.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/spellcheck_enchant.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/statuscache.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/statuscache.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/statuscache.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/subprocess.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/subprocess.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/subprocess.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/switch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/switch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/switch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/syntaxhighlighter.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/syntaxhighlighter.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/syntaxhighlighter.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/sysinfo.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/sysinfo.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/sysinfo.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/sysinfo_data.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/sysinfo_data.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/sysinfo_data.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tag.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tag.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tag.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/excepthookwatcher.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/excepthookwatcher.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/excepthookwatcher.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/mock.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/mock.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/mock.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/modeltest.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/modeltest.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/modeltest.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_annotate.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_annotate.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_annotate.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_autocomplete.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_autocomplete.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_autocomplete.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_bugs.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_bugs.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_bugs.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_cat.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_cat.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_cat.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit_data.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit_data.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit_data.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_diffview.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_diffview.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_diffview.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_extra_isignored.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_extra_isignored.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_extra_isignored.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_extra_isversioned.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_extra_isversioned.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_extra_isversioned.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_i18n.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_i18n.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_i18n.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_log.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_log.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_log.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_loggraphprovider.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_loggraphprovider.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_loggraphprovider.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_logmodel.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_logmodel.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_logmodel.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_revisionmessagebrowser.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_revisionmessagebrowser.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_revisionmessagebrowser.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_spellcheck.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_spellcheck.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_spellcheck.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_subprocess.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_subprocess.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_subprocess.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_tree_branch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_tree_branch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_tree_branch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_treewidget.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_treewidget.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_treewidget.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_util.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_util.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_util.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/texteditannotate.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/texteditannotate.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/texteditannotate.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/trace.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/trace.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/trace.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tree_branch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tree_branch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tree_branch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/treewidget.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/treewidget.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/treewidget.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_bookmark.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_bookmark.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_bookmark.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_branch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_branch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_branch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_info.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_info.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_info.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_init.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_init.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_init.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_merge.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_merge.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_merge.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_new_tree.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_new_tree.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_new_tree.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_pull.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_pull.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_pull.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_push.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_push.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_push.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_run.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_run.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_run.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_sysinfo.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_sysinfo.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_sysinfo.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_tag.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_tag.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_tag.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_update_branch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_update_branch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_update_branch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_update_checkout.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_update_checkout.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/ui_update_checkout.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/uifactory.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/uifactory.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/uifactory.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/unbind.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/unbind.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/unbind.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/uncommit.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/uncommit.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/uncommit.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/update.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/update.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/update.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/util.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/util.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/util.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ar/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/cs/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/da/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/de/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/en/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/en_GB/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/es/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/et/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/fr/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/gl/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/he/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/hu/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/it/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ja/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/nl/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/pl/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/pt_BR/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ru/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sk/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sl/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sr/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sv/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/tr/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/uk/LC_MESSAGES/qbzr.mo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/uk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/uk
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sr
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sl
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sk
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/hu
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/he
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/gl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/gl
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/et/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/et
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/en_GB/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/en_GB
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/da
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ar/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/ar
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/extra
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib

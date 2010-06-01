@@ -1,0 +1,8 @@
+QBzr is a simple Qt cross-platform frontend for some of Bazaar commands.
+
+Purpose of this plugin is to provide a graphical user interface for those
+Bazaar commands where it can simplify the usage. Highlighting of differences
+between files, "browsable" log view, possibility to commit only some files
+without listing them all on the command line, etc.
+
+WWW:	http://bazaar-vcs.org/QBzr
