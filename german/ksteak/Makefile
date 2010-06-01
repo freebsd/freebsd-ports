@@ -12,7 +12,7 @@ CATEGORIES=	german kde
 MASTER_SITES=	http://www.der-fritz.de/ksteak/
 DISTNAME=	ksteak-1.0.0pre2
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE frontend for steak, an english - german dictionary
 
 RUN_DEPENDS=	steak:${PORTSDIR}/german/steak
@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
+INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
