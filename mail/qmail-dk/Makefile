@@ -7,6 +7,7 @@
 
 PORTNAME=	dk
 PORTVERSION=	0.54
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_QMAIL}
 PKGNAMEPREFIX=	qmail-
@@ -58,7 +59,7 @@ post-patch:
 		${WRKSRC}/conf-groups
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qmail-dk ${PREFIX}/bin
+	${INSTALL} -o qmailq -m 4711 ${WRKSRC}/qmail-dk ${PREFIX}/bin
 .for m in ${MAN8}
 	${INSTALL_MAN} ${WRKSRC}/${m} ${MAN8PREFIX}/man/man8
 .endfor
