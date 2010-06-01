@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liboggz
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/liboggz/ \
 		http://wickedmachine.net/mirror/
