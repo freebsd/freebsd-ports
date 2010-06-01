@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -25,8 +24,7 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		cfitsio.0:${PORTSDIR}/astro/cfitsio \
 		qalculate.5:${PORTSDIR}/math/libqalculate \
 		gsl.15:${PORTSDIR}/math/gsl \
-		spectre.1:${PORTSDIR}/print/libspectre \
-		gps.19:${PORTSDIR}/astro/gpsd
+		spectre.1:${PORTSDIR}/print/libspectre
 RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet
 
 LATEST_LINK=	${PORTNAME}4
@@ -53,5 +51,17 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
 		-DBOOST_PYTHON_INCLUDES="${LOCALBASE}/include;${PYTHON_INCLUDEDIR}" \
 		-DBOOST_PYTHON_LIBS="-L${LOCALBASE}/lib -lboost_python -l${PYTHON_VERSION}" \
 		-DWITH_R:BOOL=OFF
+
+OPTIONS=	MARBLE "Install Marble - Virtual globe and world atlas" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_MARBLE)
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/marble:${PORTSDIR}/astro/marble
+.endif
+
+pre-configure:
+	${REINPLACE_CMD} -e '/macro_optional_add_subdirectory(marble)/d' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

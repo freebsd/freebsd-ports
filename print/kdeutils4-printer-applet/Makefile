@@ -22,7 +22,7 @@ RUN_DEPENDS=	system-config-printer:${PORTSDIR}/print/system-config-printer \
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_KDE4=	kdeprefix pimlibs automoc4 pykde4
+USE_KDE4=	kdeprefix pimlibs automoc4 pykde4 pykdeuic4
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
 USE_PYTHON=	2.5+

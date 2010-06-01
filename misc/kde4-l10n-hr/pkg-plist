@@ -66,6 +66,8 @@ share/locale/hr/LC_MESSAGES/kbounce.mo
 share/locale/hr/LC_MESSAGES/kbreakout.mo
 share/locale/hr/LC_MESSAGES/kbruch.mo
 share/locale/hr/LC_MESSAGES/kbugbuster.mo
+share/locale/hr/LC_MESSAGES/kcachegrind.mo
+share/locale/hr/LC_MESSAGES/kcachegrind_qt.mo
 share/locale/hr/LC_MESSAGES/kcalc.mo
 share/locale/hr/LC_MESSAGES/kcertpart.mo
 share/locale/hr/LC_MESSAGES/kcharselect.mo
@@ -271,6 +273,7 @@ share/locale/hr/LC_MESSAGES/konsolekalendar.mo
 share/locale/hr/LC_MESSAGES/kontact.mo
 share/locale/hr/LC_MESSAGES/kopete.mo
 share/locale/hr/LC_MESSAGES/korganizer.mo
+share/locale/hr/LC_MESSAGES/kpartloader.mo
 share/locale/hr/LC_MESSAGES/kpartsaver.mo
 share/locale/hr/LC_MESSAGES/kpasswdserver.mo
 share/locale/hr/LC_MESSAGES/kpat.mo

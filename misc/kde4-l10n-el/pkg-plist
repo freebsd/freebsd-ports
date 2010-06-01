@@ -25,6 +25,7 @@ share/locale/el/LC_MESSAGES/akonaditray.mo
 share/locale/el/LC_MESSAGES/akregator.mo
 share/locale/el/LC_MESSAGES/amor.mo
 share/locale/el/LC_MESSAGES/ark.mo
+share/locale/el/LC_MESSAGES/attica_kde.mo
 share/locale/el/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/el/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/el/LC_MESSAGES/audiorename_plugin.mo
@@ -102,8 +103,10 @@ share/locale/el/LC_MESSAGES/kcalc.mo
 share/locale/el/LC_MESSAGES/kcertpart.mo
 share/locale/el/LC_MESSAGES/kcharselect.mo
 share/locale/el/LC_MESSAGES/kcm_akonadi.mo
+share/locale/el/LC_MESSAGES/kcm_attica.mo
 share/locale/el/LC_MESSAGES/kcm_autostart.mo
 share/locale/el/LC_MESSAGES/kcm_desktopthemedetails.mo
+share/locale/el/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/el/LC_MESSAGES/kcm_emoticons.mo
 share/locale/el/LC_MESSAGES/kcm_krfb.mo
 share/locale/el/LC_MESSAGES/kcm_kwindesktop.mo
@@ -165,6 +168,7 @@ share/locale/el/LC_MESSAGES/kcmsolidproc.mo
 share/locale/el/LC_MESSAGES/kcmstyle.mo
 share/locale/el/LC_MESSAGES/kcmusb.mo
 share/locale/el/LC_MESSAGES/kcmview1394.mo
+share/locale/el/LC_MESSAGES/kcmworkspaceoptions.mo
 share/locale/el/LC_MESSAGES/kcmxinerama.mo
 share/locale/el/LC_MESSAGES/kcolorchooser.mo
 share/locale/el/LC_MESSAGES/kcron.mo
@@ -218,6 +222,7 @@ share/locale/el/LC_MESSAGES/kfontinst.mo
 share/locale/el/LC_MESSAGES/kfourinline.mo
 share/locale/el/LC_MESSAGES/kgeography.mo
 share/locale/el/LC_MESSAGES/kget.mo
+share/locale/el/LC_MESSAGES/kglobalaccel.mo
 share/locale/el/LC_MESSAGES/kgoldrunner.mo
 share/locale/el/LC_MESSAGES/kgpg.mo
 share/locale/el/LC_MESSAGES/kgreet_classic.mo
@@ -252,6 +257,7 @@ share/locale/el/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/el/LC_MESSAGES/kio_ldap.mo
 share/locale/el/LC_MESSAGES/kio_man.mo
 share/locale/el/LC_MESSAGES/kio_mbox.mo
+share/locale/el/LC_MESSAGES/kio_nepomuk.mo
 share/locale/el/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/el/LC_MESSAGES/kio_nfs.mo
 share/locale/el/LC_MESSAGES/kio_nntp.mo
@@ -264,6 +270,7 @@ share/locale/el/LC_MESSAGES/kio_smb.mo
 share/locale/el/LC_MESSAGES/kio_smtp.mo
 share/locale/el/LC_MESSAGES/kio_svn.mo
 share/locale/el/LC_MESSAGES/kio_thumbnail.mo
+share/locale/el/LC_MESSAGES/kio_timeline.mo
 share/locale/el/LC_MESSAGES/kio_trash.mo
 share/locale/el/LC_MESSAGES/kio_zeroconf.mo
 share/locale/el/LC_MESSAGES/kioclient.mo
@@ -474,6 +481,7 @@ share/locale/el/LC_MESSAGES/plasma_applet_bubblemon.mo
 share/locale/el/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/el/LC_MESSAGES/plasma_applet_clock.mo
 share/locale/el/LC_MESSAGES/plasma_applet_comic.mo
+share/locale/el/LC_MESSAGES/plasma_applet_currentappcontrol.mo
 share/locale/el/LC_MESSAGES/plasma_applet_devicenotifier.mo
 share/locale/el/LC_MESSAGES/plasma_applet_dig_clock.mo
 share/locale/el/LC_MESSAGES/plasma_applet_fifteenPuzzle.mo
@@ -522,6 +530,8 @@ share/locale/el/LC_MESSAGES/plasma_applet_weatherstation.mo
 share/locale/el/LC_MESSAGES/plasma_applet_webbrowser.mo
 share/locale/el/LC_MESSAGES/plasma_appletscriptengine_dashboard.mo
 share/locale/el/LC_MESSAGES/plasma_appletscriptengine_qedjescripts.mo
+share/locale/el/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
+share/locale/el/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/el/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/el/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/el/LC_MESSAGES/plasma_engine_nowplaying.mo
@@ -539,6 +549,7 @@ share/locale/el/LC_MESSAGES/plasma_runner_kopete.mo
 share/locale/el/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/el/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/el/LC_MESSAGES/plasma_runner_placesrunner.mo
+share/locale/el/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/el/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/el/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/el/LC_MESSAGES/plasma_runner_services.mo
@@ -546,6 +557,7 @@ share/locale/el/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/el/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/el/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/el/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/el/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/el/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/el/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/el/LC_MESSAGES/plasma_wallpaper_image.mo

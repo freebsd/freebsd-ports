@@ -285,6 +285,7 @@ share/icons/oxygen/128x128/devices/network-wireless.png
 share/icons/oxygen/128x128/devices/pda.png
 share/icons/oxygen/128x128/devices/phone-openmoko-freerunner.png
 share/icons/oxygen/128x128/devices/phone.png
+share/icons/oxygen/128x128/devices/printer-laser.png
 share/icons/oxygen/128x128/devices/printer.png
 share/icons/oxygen/128x128/devices/scanner.png
 share/icons/oxygen/128x128/devices/secure-card.png
@@ -2928,6 +2929,7 @@ share/icons/oxygen/256x256/apps/MameExecutor.png
 share/icons/oxygen/256x256/apps/accessories-calculator.png
 share/icons/oxygen/256x256/apps/accessories-dictionary.png
 share/icons/oxygen/256x256/apps/akonadi.png
+share/icons/oxygen/256x256/apps/internet-web-browser.png
 share/icons/oxygen/256x256/apps/k3b.png
 share/icons/oxygen/256x256/apps/karbon.png
 share/icons/oxygen/256x256/apps/kbruch.png
@@ -3003,6 +3005,7 @@ share/icons/oxygen/256x256/devices/network-wireless-connected-50.png
 share/icons/oxygen/256x256/devices/network-wireless-connected-75.png
 share/icons/oxygen/256x256/devices/network-wireless-disconnected.png
 share/icons/oxygen/256x256/devices/network-wireless.png
+share/icons/oxygen/256x256/devices/printer-laser.png
 share/icons/oxygen/256x256/devices/secure-card.png
 share/icons/oxygen/256x256/devices/video-display.png
 share/icons/oxygen/256x256/mimetypes/application-javascript.png
@@ -3522,6 +3525,7 @@ share/icons/oxygen/32x32/actions/services.png
 share/icons/oxygen/32x32/actions/shapes.png
 share/icons/oxygen/32x32/actions/show-menu.png
 share/icons/oxygen/32x32/actions/speaker.png
+share/icons/oxygen/32x32/actions/split.png
 share/icons/oxygen/32x32/actions/story-editor.png
 share/icons/oxygen/32x32/actions/stroke-cap-butt.png
 share/icons/oxygen/32x32/actions/stroke-cap-round.png
@@ -3599,6 +3603,7 @@ share/icons/oxygen/32x32/actions/view-calendar-week.png
 share/icons/oxygen/32x32/actions/view-calendar-whatsnext.png
 share/icons/oxygen/32x32/actions/view-calendar-workweek.png
 share/icons/oxygen/32x32/actions/view-calendar.png
+share/icons/oxygen/32x32/actions/view-catalog.png
 share/icons/oxygen/32x32/actions/view-certificate-add.png
 share/icons/oxygen/32x32/actions/view-certificate-export-secret.png
 share/icons/oxygen/32x32/actions/view-certificate-export-server.png
@@ -3609,6 +3614,8 @@ share/icons/oxygen/32x32/actions/view-certificate-sign.png
 share/icons/oxygen/32x32/actions/view-certificate.png
 share/icons/oxygen/32x32/actions/view-choose.png
 share/icons/oxygen/32x32/actions/view-close.png
+share/icons/oxygen/32x32/actions/view-credit-card-account.png
+share/icons/oxygen/32x32/actions/view-currency-list.png
 share/icons/oxygen/32x32/actions/view-file-columns.png
 share/icons/oxygen/32x32/actions/view-filter.png
 share/icons/oxygen/32x32/actions/view-financial-list.png
@@ -3618,6 +3625,7 @@ share/icons/oxygen/32x32/actions/view-form.png
 share/icons/oxygen/32x32/actions/view-fullscreen.png
 share/icons/oxygen/32x32/actions/view-grid.png
 share/icons/oxygen/32x32/actions/view-history.png
+share/icons/oxygen/32x32/actions/view-investment.png
 share/icons/oxygen/32x32/actions/view-ldap-resource.png
 share/icons/oxygen/32x32/actions/view-left-close.png
 share/icons/oxygen/32x32/actions/view-list-details.png
@@ -3659,6 +3667,7 @@ share/icons/oxygen/32x32/actions/view-sort-descending.png
 share/icons/oxygen/32x32/actions/view-split-left-right.png
 share/icons/oxygen/32x32/actions/view-split-top-bottom.png
 share/icons/oxygen/32x32/actions/view-statistics.png
+share/icons/oxygen/32x32/actions/view-stock-account.png
 share/icons/oxygen/32x32/actions/view-table-of-contents-ltr.png
 share/icons/oxygen/32x32/actions/view-table-of-contents-rtl.png
 share/icons/oxygen/32x32/actions/view-task-add.png
@@ -3894,6 +3903,7 @@ share/icons/oxygen/32x32/devices/network-wireless.png
 share/icons/oxygen/32x32/devices/pda.png
 share/icons/oxygen/32x32/devices/phone-openmoko-freerunner.png
 share/icons/oxygen/32x32/devices/phone.png
+share/icons/oxygen/32x32/devices/printer-laser.png
 share/icons/oxygen/32x32/devices/printer.png
 share/icons/oxygen/32x32/devices/scanner.png
 share/icons/oxygen/32x32/devices/secure-card.png
@@ -4617,6 +4627,7 @@ share/icons/oxygen/48x48/actions/select-rectangular.png
 share/icons/oxygen/48x48/actions/services.png
 share/icons/oxygen/48x48/actions/show-menu.png
 share/icons/oxygen/48x48/actions/speaker.png
+share/icons/oxygen/48x48/actions/split.png
 share/icons/oxygen/48x48/actions/story-editor.png
 share/icons/oxygen/48x48/actions/stroke-cap-butt.png
 share/icons/oxygen/48x48/actions/stroke-cap-round.png
@@ -4641,6 +4652,7 @@ share/icons/oxygen/48x48/actions/tab-detach.png
 share/icons/oxygen/48x48/actions/tab-duplicate.png
 share/icons/oxygen/48x48/actions/tab-new-background.png
 share/icons/oxygen/48x48/actions/tab-new.png
+share/icons/oxygen/48x48/actions/taxes-finances.png
 share/icons/oxygen/48x48/actions/text-field.png
 share/icons/oxygen/48x48/actions/text-frame-link.png
 share/icons/oxygen/48x48/actions/text-frame-unlink.png
@@ -4692,6 +4704,7 @@ share/icons/oxygen/48x48/actions/view-calendar-week.png
 share/icons/oxygen/48x48/actions/view-calendar-whatsnext.png
 share/icons/oxygen/48x48/actions/view-calendar-workweek.png
 share/icons/oxygen/48x48/actions/view-calendar.png
+share/icons/oxygen/48x48/actions/view-catalog.png
 share/icons/oxygen/48x48/actions/view-certificate-add.png
 share/icons/oxygen/48x48/actions/view-certificate-export-secret.png
 share/icons/oxygen/48x48/actions/view-certificate-export-server.png
@@ -4702,6 +4715,9 @@ share/icons/oxygen/48x48/actions/view-certificate-sign.png
 share/icons/oxygen/48x48/actions/view-certificate.png
 share/icons/oxygen/48x48/actions/view-choose.png
 share/icons/oxygen/48x48/actions/view-close.png
+share/icons/oxygen/48x48/actions/view-credit-card-account.png
+share/icons/oxygen/48x48/actions/view-currency-list.png
+share/icons/oxygen/48x48/actions/view-documents-finances.png
 share/icons/oxygen/48x48/actions/view-file-columns.png
 share/icons/oxygen/48x48/actions/view-filter.png
 share/icons/oxygen/48x48/actions/view-financial-list.png
@@ -4711,6 +4727,8 @@ share/icons/oxygen/48x48/actions/view-form.png
 share/icons/oxygen/48x48/actions/view-fullscreen.png
 share/icons/oxygen/48x48/actions/view-grid.png
 share/icons/oxygen/48x48/actions/view-history.png
+share/icons/oxygen/48x48/actions/view-investment-account.png
+share/icons/oxygen/48x48/actions/view-investment.png
 share/icons/oxygen/48x48/actions/view-ldap-resource.png
 share/icons/oxygen/48x48/actions/view-left-close.png
 share/icons/oxygen/48x48/actions/view-list-details.png
@@ -4984,6 +5002,7 @@ share/icons/oxygen/48x48/devices/network-wireless.png
 share/icons/oxygen/48x48/devices/pda.png
 share/icons/oxygen/48x48/devices/phone-openmoko-freerunner.png
 share/icons/oxygen/48x48/devices/phone.png
+share/icons/oxygen/48x48/devices/printer-laser.png
 share/icons/oxygen/48x48/devices/printer.png
 share/icons/oxygen/48x48/devices/scanner.png
 share/icons/oxygen/48x48/devices/secure-card.png
@@ -5626,6 +5645,7 @@ share/icons/oxygen/64x64/devices/network-wireless.png
 share/icons/oxygen/64x64/devices/pda.png
 share/icons/oxygen/64x64/devices/phone-openmoko-freerunner.png
 share/icons/oxygen/64x64/devices/phone.png
+share/icons/oxygen/64x64/devices/printer-laser.png
 share/icons/oxygen/64x64/devices/printer.png
 share/icons/oxygen/64x64/devices/scanner.png
 share/icons/oxygen/64x64/devices/video-display.png

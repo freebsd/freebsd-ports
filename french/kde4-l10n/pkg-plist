@@ -124,8 +124,19 @@ share/doc/HTML/fr/common/gpl-translated.html
 share/doc/HTML/fr/common/kde-localised.css
 share/doc/HTML/fr/common/lgpl-translated.html
 share/doc/HTML/fr/dolphin/common
+share/doc/HTML/fr/dolphin/default-ui.png
 share/doc/HTML/fr/dolphin/index.cache.bz2
 share/doc/HTML/fr/dolphin/index.docbook
+share/doc/HTML/fr/dolphin/locationbar-breadcrumb.png
+share/doc/HTML/fr/dolphin/locationbar-editable.png
+share/doc/HTML/fr/dolphin/preferences-general-behavior.png
+share/doc/HTML/fr/dolphin/preferences-navigation.png
+share/doc/HTML/fr/dolphin/preferences-startup.png
+share/doc/HTML/fr/dolphin/preferences-trash.png
+share/doc/HTML/fr/dolphin/preferences-viewmodes-icons.png
+share/doc/HTML/fr/dolphin/toolbar-navigation.png
+share/doc/HTML/fr/dolphin/toolbar-view-appearance.png
+share/doc/HTML/fr/dolphin/viewproperties-dialog.png
 share/doc/HTML/fr/dragonplayer/common
 share/doc/HTML/fr/dragonplayer/index.cache.bz2
 share/doc/HTML/fr/dragonplayer/index.docbook
@@ -244,6 +255,9 @@ share/doc/HTML/fr/kcharselect/index.docbook
 share/doc/HTML/fr/kcmlirc/common
 share/doc/HTML/fr/kcmlirc/index.cache.bz2
 share/doc/HTML/fr/kcmlirc/index.docbook
+share/doc/HTML/fr/kcontrol/attica/common
+share/doc/HTML/fr/kcontrol/attica/index.cache.bz2
+share/doc/HTML/fr/kcontrol/attica/index.docbook
 share/doc/HTML/fr/kcontrol/autostart/common
 share/doc/HTML/fr/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/fr/kcontrol/autostart/index.docbook
@@ -259,6 +273,9 @@ share/doc/HTML/fr/kcontrol/bookmarks/index.docbook
 share/doc/HTML/fr/kcontrol/cache/common
 share/doc/HTML/fr/kcontrol/cache/index.cache.bz2
 share/doc/HTML/fr/kcontrol/cache/index.docbook
+share/doc/HTML/fr/kcontrol/cddbretrieval/common
+share/doc/HTML/fr/kcontrol/cddbretrieval/index.cache.bz2
+share/doc/HTML/fr/kcontrol/cddbretrieval/index.docbook
 share/doc/HTML/fr/kcontrol/clock/common
 share/doc/HTML/fr/kcontrol/clock/index.cache.bz2
 share/doc/HTML/fr/kcontrol/clock/index.docbook
@@ -1360,6 +1377,9 @@ share/doc/HTML/fr/parley/index.docbook
 share/doc/HTML/fr/plasma-desktop/common
 share/doc/HTML/fr/plasma-desktop/index.cache.bz2
 share/doc/HTML/fr/plasma-desktop/index.docbook
+share/doc/HTML/fr/printer-applet/common
+share/doc/HTML/fr/printer-applet/index.cache.bz2
+share/doc/HTML/fr/printer-applet/index.docbook
 share/doc/HTML/fr/sonnet/common
 share/doc/HTML/fr/sonnet/index.cache.bz2
 share/doc/HTML/fr/sonnet/index.docbook
@@ -2034,6 +2054,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/superkaramba
 @dirrm share/doc/HTML/fr/step
 @dirrm share/doc/HTML/fr/sonnet
+@dirrm share/doc/HTML/fr/printer-applet
 @dirrm share/doc/HTML/fr/plasma-desktop
 @dirrm share/doc/HTML/fr/parley
 @dirrm share/doc/HTML/fr/okular
@@ -2231,11 +2252,13 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kcontrol/cookies
 @dirrm share/doc/HTML/fr/kcontrol/colors
 @dirrm share/doc/HTML/fr/kcontrol/clock
+@dirrm share/doc/HTML/fr/kcontrol/cddbretrieval
 @dirrm share/doc/HTML/fr/kcontrol/cache
 @dirrm share/doc/HTML/fr/kcontrol/bookmarks
 @dirrm share/doc/HTML/fr/kcontrol/blockdevices
 @dirrm share/doc/HTML/fr/kcontrol/bell
 @dirrm share/doc/HTML/fr/kcontrol/autostart
+@dirrm share/doc/HTML/fr/kcontrol/attica
 @dirrm share/doc/HTML/fr/kcontrol
 @dirrm share/doc/HTML/fr/kcmlirc
 @dirrm share/doc/HTML/fr/kcharselect

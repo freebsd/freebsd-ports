@@ -1,0 +1,10 @@
+--- ./marble/CMakeLists.txt.orig	2009-12-05 02:09:36.000000000 +0300
++++ ./marble/CMakeLists.txt	2010-06-01 01:15:13.928157277 +0400
+@@ -283,6 +283,7 @@
+ # Descend into subdirectories
+ add_subdirectory(src)
+ add_subdirectory(data)
++add_subdirectory(marble)
+ 
+ include(DistTarget)
+ 

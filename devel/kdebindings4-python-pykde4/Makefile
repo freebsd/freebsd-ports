@@ -44,9 +44,9 @@ BROKEN=		Fails to build with RTLD_NOLOAD
 pre-configure:
 	${REINPLACE_CMD} -e 's,$${SIP_DEFAULT_SIP_DIR},${PREFIX}/${SIPDIR_REL},g' \
 		-e 's,$${PYTHON_SITE_PACKAGES_DIR},${PYTHONPREFIX_SITELIBDIR},g' \
-		${BUILD_WRKSRC}/CMakeLists.txt \
-		${BUILD_WRKSRC}/tools/pykdeuic4/CMakeLists.txt
+		${BUILD_WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e '/ADD_SUBDIRECTORY(examples)/d' \
+		-e '/ADD_SUBDIRECTORY(tools)/d' \
 		${BUILD_WRKSRC}/CMakeLists.txt
 	${RM} ${BUILD_WRKSRC}/examples/CMakeLists.txt
 

@@ -304,6 +304,7 @@ share/icons/hicolor/128x128/apps/bball.png
 share/icons/hicolor/128x128/apps/lancelot-part.png
 share/icons/hicolor/128x128/apps/lancelot.png
 share/icons/hicolor/128x128/apps/previewer.png
+share/icons/hicolor/128x128/apps/qalculate-applet.png
 share/icons/hicolor/16x16/apps/bball.png
 %%OBSERVATORY%%share/icons/hicolor/16x16/apps/kdeobservatory.png
 share/icons/hicolor/16x16/apps/lancelot-part.png
@@ -323,6 +324,7 @@ share/icons/hicolor/48x48/apps/bball.png
 share/icons/hicolor/48x48/apps/lancelot-part.png
 share/icons/hicolor/48x48/apps/lancelot.png
 share/icons/hicolor/48x48/apps/previewer.png
+share/icons/hicolor/48x48/apps/qalculate-applet.png
 share/icons/hicolor/64x64/apps/bball.png
 %%OBSERVATORY%%share/icons/hicolor/64x64/apps/kdeobservatory.png
 share/icons/hicolor/64x64/apps/lancelot-part.png
@@ -332,8 +334,6 @@ share/icons/hicolor/scalable/apps/accessories-dictionary.svgz
 share/icons/hicolor/scalable/apps/bball.svgz
 share/icons/hicolor/scalable/apps/fifteenpuzzle.svgz
 %%OBSERVATORY%%share/icons/hicolor/scalable/apps/kdeobservatory.svgz
-share/icons/oxygen/128x128/apps/qalculate-applet.png
-share/icons/oxygen/48x48/apps/qalculate-applet.png
 share/kde4/services/ServiceMenus/preview.desktop
 share/kde4/services/apodprovider.desktop
 share/kde4/services/browserhistory.desktop
@@ -422,8 +422,8 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm share/apps/plasma_wallpaper_pattern/patterns
 @dirrm share/apps/plasma_wallpaper_pattern
 @dirrm share/apps/plasma_pastebin
-@dirrm share/apps/plasma-applet-opendesktop
 @dirrm share/apps/plasma-applet-opendesktop-activities
+@dirrm share/apps/plasma-applet-opendesktop
 @dirrm share/apps/plasma-applet-frame
 @dirrm share/apps/lancelot
 @dirrm share/apps/desktoptheme/slim-glow/lancelot
@@ -446,8 +446,6 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrmtry share/apps/desktoptheme/Clean-Bend
 @dirrm share/apps/desktoptheme/Aya/lancelot
 @dirrmtry share/apps/desktoptheme/Aya
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake
 @dirrm share/apps/bball
 @dirrm include/lancelot/widgets
 @dirrm include/lancelot/models

@@ -294,6 +294,9 @@ share/doc/HTML/pt_BR/kcontrol/bookmarks/index.docbook
 share/doc/HTML/pt_BR/kcontrol/cache/common
 share/doc/HTML/pt_BR/kcontrol/cache/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/cache/index.docbook
+share/doc/HTML/pt_BR/kcontrol/cddbretrieval/common
+share/doc/HTML/pt_BR/kcontrol/cddbretrieval/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/cddbretrieval/index.docbook
 share/doc/HTML/pt_BR/kcontrol/clock/common
 share/doc/HTML/pt_BR/kcontrol/clock/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/clock/index.docbook
@@ -2199,6 +2202,7 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/kcontrol/componentchooser
 @dirrm share/doc/HTML/pt_BR/kcontrol/colors
 @dirrm share/doc/HTML/pt_BR/kcontrol/clock
+@dirrm share/doc/HTML/pt_BR/kcontrol/cddbretrieval
 @dirrm share/doc/HTML/pt_BR/kcontrol/cache
 @dirrm share/doc/HTML/pt_BR/kcontrol/bookmarks
 @dirrm share/doc/HTML/pt_BR/kcontrol/blockdevices
