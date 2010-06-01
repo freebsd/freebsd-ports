@@ -4,25 +4,43 @@
 #
 # $FreeBSD$
 
-PORTNAME=		kphotoalbum
-PORTVERSION=		3.1.1
-PORTREVISION=	7
-CATEGORIES=		graphics kde
-MASTER_SITES=		http://www.kphotoalbum.org/data/download/
+PORTNAME=	kphotoalbum
+PORTVERSION=	${APP_VER}.${EXTRA_VER}
+CATEGORIES=	graphics kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
+DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
+DIST_SUBDIR=	KDE/extragear
 
-MAINTAINER=		markus@FreeBSD.org
-COMMENT=		Image database for KDE
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Image viewer and organizer for KDE
 
-LIB_DEPENDS=		kipi.2:${PORTSDIR}/graphics/libkipi \
-			exiv2.7:${PORTSDIR}/graphics/exiv2 \
-			kdcraw.4:${PORTSDIR}/graphics/libkdcraw
+LIB_DEPENDS=	kipi.7:${PORTSDIR}/graphics/kdegraphics4
 
-USE_KDELIBS_VER=	3
-USE_BZIP2=		yes
-USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:22
+USE_BZIP2=	yes
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+USE_CMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+LATEST_LINK=	${PORTNAME}-kde4
+
+APP_VER=	4.1.1
+EXTRA_VER=	4.4.0
+
+OPTIONS=	MARBLE "Geolocation support (requires astro/marble)" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_MARBLE)
+LIB_DEPENDS+=	marblewidget.5:${PORTSDIR}/astro/marble
+.endif
+
+pre-configure:
+.if !defined(WITH_MARBLE)
+	${REINPLACE_CMD} -e '/macro_optional_find_package(Marble)/d' \
+		${WRKSRC}/CMakeLists.txt
+.endif
 
 .include <bsd.port.mk>
