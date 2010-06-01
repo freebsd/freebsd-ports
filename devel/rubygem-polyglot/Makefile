@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polyglot
-PORTVERSION=	0.2.9
+PORTVERSION=	0.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
