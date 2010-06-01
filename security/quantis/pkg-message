@@ -1,0 +1,10 @@
+************************************************************
+
+To give Quantis USB access to other users than 'root',
+you have to change permissions on the generated 'ugen'
+device.
+
+A devd config sample has been put in the examples directory.
+Copy it into /usr/local/etc/devd ad modify it at your needs.
+
+************************************************************

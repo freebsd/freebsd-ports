@@ -717,6 +717,7 @@
     SUBDIR += qca-tls
     SUBDIR += qident
     SUBDIR += qtfw
+    SUBDIR += quantis
     SUBDIR += quantis-kmod
     SUBDIR += quintuple-agent
     SUBDIR += racoon2

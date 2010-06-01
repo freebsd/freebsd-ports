@@ -1,0 +1,10 @@
+Quantis is a physical random number generator exploiting
+an elementary quantum optics process.
+
+This port contains the user library and a CLI/GUI application
+to access such devices.
+
+WWW:	http://www.idquantique.com/
+
+- Alex Dupre
+ale@FreeBSD.org
