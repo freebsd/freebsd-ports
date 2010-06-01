@@ -69,6 +69,10 @@ ARGS+=		--trace
 BROKEN=		Does not compile on sparc64
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.X
+.endif
+
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV}\
 		${PYTHON_CMD} configure.py ${ARGS}
