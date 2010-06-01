@@ -137,6 +137,7 @@
 %%WWWDIR%%/lib/.htaccess
 %%WWWDIR%%/lib/tools.inc
 %%WWWDIR%%/lib/account.inc
+%%WWWDIR%%/lib/account.inc.orig
 %%WWWDIR%%/lib/baseModule.inc
 %%WWWDIR%%/lib/baseType.inc
 %%WWWDIR%%/lib/cache.inc
