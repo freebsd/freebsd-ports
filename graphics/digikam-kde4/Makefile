@@ -7,7 +7,7 @@
 
 PORTNAME=	digikam
 DISTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
@@ -40,7 +40,7 @@ MAN1=		digitaglinktree.1 \
 
 OPTIONS=	GPHOTO2 "Compile with gphoto2 support" on \
 		LENSFUN "Compile lens auto-correction image editor plugin" off \
-		MARBLE "Geolocation support (requires misc/kdeedu4)" off \
+		MARBLE "Geolocation support (requires astro/marble)" off \
 		PIMLIBS "Address book support" on
 
 .include <bsd.port.options.mk>
@@ -58,7 +58,7 @@ CMAKE_ARGS+=	-DWITH_LensFun:BOOL=OFF
 .endif
 
 .if defined(WITH_MARBLE)
-LIB_DEPENDS+=	marblewidget.5:${PORTSDIR}/misc/kdeedu4
+LIB_DEPENDS+=	marblewidget.5:${PORTSDIR}/astro/marble
 PLIST_SUB+=		MARBLE=""
 .else
 CMAKE_ARGS+=	-DWITH_MarbleWidget:BOOL=OFF
