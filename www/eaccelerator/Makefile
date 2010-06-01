@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eaccelerator
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.6.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/eAccelerator%20${PORTVERSION}/ \
 		http://bart.eaccelerator.net/source/${PORTVERSION}/
