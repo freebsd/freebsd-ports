@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	innate
-PORTVERSION=	2009.10
+PORTVERSION=	2010.04
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://s3.amazonaws.com/gemcutter_production/gems/
+MASTER_SITES=	RG
 
 MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	Powerful web-framework wrapper for Rack
 
-RUN_DEPENDS=	rubygem-rack>=1.0.0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack=1.1.0:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes
-
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
