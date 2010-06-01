@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	vttest
-PORTVERSION=	2007.12.16
+PORTVERSION=	2010.05.28
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://invisible-island.net/vttest/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,,g}
 EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A program to test "VT100-compatibility" of terminals
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 MAKEFILE=	makefile
 
 MAN1=		vttest.1
