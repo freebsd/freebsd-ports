@@ -42,6 +42,7 @@
     SUBDIR += api-sanity-autotest
     SUBDIR += apr0
     SUBDIR += apr1
+    SUBDIR += apr2
     SUBDIR += arduino
     SUBDIR += argouml
     SUBDIR += argp-standalone
