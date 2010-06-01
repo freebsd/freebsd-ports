@@ -7,7 +7,7 @@
 
 PORTNAME=	rsvndump
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -36,10 +36,6 @@ CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
 
 BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto
-
-.if !exists(${APR_APU_DIR}/${APR_CONFIG})
-BUILD_DEPENDS+=	apr-1-config:${PORTSDIR}/devel/apr1
-.endif
 
 BUILD_DEPENDS+=	subversion>=0:${PORTSDIR}/devel/subversion
 .include <bsd.port.post.mk>
