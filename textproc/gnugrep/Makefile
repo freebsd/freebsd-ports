@@ -7,6 +7,7 @@
 
 PORTNAME=	grep
 PORTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=     textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +23,8 @@ MAN1=		egrep.1 \
 INFO=		grep
 PLIST_FILES=    bin/egrep \
 		bin/fgrep \
-		bin/grep
+		bin/grep \
+		lib/charset.alias
 
 OPTIONS=	PCRE	"Compile with Perl-compatible regex support"	off
 
