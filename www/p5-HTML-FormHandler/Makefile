@@ -5,7 +5,7 @@
 # Generated with portupload. Do not edit directly, please
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.31002
+PORTVERSION=	0.31003
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
