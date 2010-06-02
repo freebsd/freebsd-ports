@@ -1,5 +1,5 @@
---- GNUmakefile	2010-04-05 18:53:17.000000000 +0400
-+++ GNUmakefile.orig	2010-04-06 11:19:35.000000000 +0400
+--- GNUmakefile.orig	2010-06-02 09:48:21.000000000 +0400
++++ GNUmakefile	2010-06-02 09:55:21.000000000 +0400
 @@ -5,7 +5,7 @@
  
  -include Makefile.private
@@ -24,12 +24,13 @@
  BIN_EXT       ?=
  endif
  
-@@ -249,7 +249,7 @@
+@@ -249,7 +249,8 @@
  	@if [ ! -d $(UHUB_CONF_DIR) ]; then echo Creating $(UHUB_CONF_DIR); mkdir -p $(UHUB_CONF_DIR); fi
  	@if [ ! -f $(UHUB_CONF_DIR)/uhub.conf ]; then cp doc/uhub.conf $(UHUB_CONF_DIR); fi
  	@if [ ! -f $(UHUB_CONF_DIR)/users.conf ]; then cp doc/users.conf  $(UHUB_CONF_DIR); fi
 -	@touch $(UHUB_CONF_DIR)/motd.txt
 +	@if [ ! -f $(UHUB_CONF_DIR)/motd.txt ]; then touch $(UHUB_CONF_DIR)/motd.txt; fi
++	@if [ ! -f $(UHUB_CONF_DIR)/rules.txt ]; then touch $(UHUB_CONF_DIR)/rules.txt; fi
  	@echo done.
  endif
  
