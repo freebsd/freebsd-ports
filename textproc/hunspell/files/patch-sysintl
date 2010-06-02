@@ -1,18 +1,14 @@
---- configure	2008-08-14 05:53:13.000000000 -0400
-+++ configure	2008-08-26 06:35:15.000000000 -0400
-@@ -24576,5 +24576,5 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -20562,7 +20562,7 @@
+ fi
  
  
--ac_config_files="$ac_config_files Makefile hunspell.pc man/Makefile man/hu/Makefile intl/Makefile po/Makefile.in m4/Makefile src/Makefile src/hunspell/Makefile src/parsers/Makefile src/tools/Makefile src/win_api/Makefile tests/Makefile tests/suggestiontest/Makefile"
-+ac_config_files="$ac_config_files Makefile hunspell.pc man/Makefile man/hu/Makefile po/Makefile.in m4/Makefile src/Makefile src/hunspell/Makefile src/parsers/Makefile src/tools/Makefile src/win_api/Makefile tests/Makefile tests/suggestiontest/Makefile"
+-ac_config_files="$ac_config_files Makefile hunspell.pc man/Makefile man/hu/Makefile intl/Makefile po/Makefile.in m4/Makefile src/Makefile src/hunspell/Makefile src/hunspell/hunvisapi.h src/parsers/Makefile src/tools/Makefile src/win_api/Makefile tests/Makefile tests/suggestiontest/Makefile"
++ac_config_files="$ac_config_files Makefile hunspell.pc man/Makefile man/hu/Makefile po/Makefile.in m4/Makefile src/Makefile src/hunspell/Makefile src/hunspell/hunvisapi.h src/parsers/Makefile src/tools/Makefile src/win_api/Makefile tests/Makefile tests/suggestiontest/Makefile"
  
  cat >confcache <<\_ACEOF
---- Makefile.in	2008-08-14 05:53:15.000000000 -0400
-+++ Makefile.in	2008-08-26 06:37:41.000000000 -0400
-@@ -230,5 +230,5 @@
- top_srcdir = @top_srcdir@
- ACLOCAL_AMFLAGS = -I m4
--SUBDIRS = intl po src man m4 tests
-+SUBDIRS = po src man m4 tests
- pkgconfdir = $(libdir)/pkgconfig
- pkgconf_DATA = hunspell.pc
+ # This file is a shell script that caches the results of configure

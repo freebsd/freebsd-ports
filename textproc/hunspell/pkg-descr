@@ -5,15 +5,15 @@ It has better affix rules than hu-ispell.
 It is installing hungarian dictionary by default, but other dictionaries can
 be found at: http://wiki.services.openoffice.org/wiki/Dictionaries
 
-Magyar helyesírás ellenõrzõ hunspell. Elõnyök az ispell-hez képest:
-- Több karakter változással járó tipikus hibákra javítási javaslat.
-- Helyes összetett szónak látszó szavak tiltása.
-- 6-3-as szabály
-- mozgószabály
-- összetételi szabályok
-- többszörös képzõk helyes használata
-- ékezetesítési javaslatok
-Alepesetben csak a magyar szótárat installálja, de további szótárak
-elérhetöek: http://wiki.services.openoffice.org/wiki/Dictionaries
+Magyar helyes.r.s ellen.rz. hunspell. El.ny.k az ispell-hez k.pest:
+- T.bb karakter v.ltoz.ssal j.r. tipikus hib.kra jav.t.si javaslat.
+- Helyes .sszetett sz.nak l.tsz. szavak tilt.sa.
+- 6-3-as szab.ly
+- mozg.szab.ly
+- .sszet.teli szab.lyok
+- t.bbsz.r.s k.pz.k helyes haszn.lata
+- .kezetes.t.si javaslatok
+Alepesetben csak a magyar sz.t.rat install.lja, de tov.bbi sz.t.rak
+el.rhet.ek: http://wiki.services.openoffice.org/wiki/Dictionaries
 
 WWW: http://magyarispell.sourceforge.net/

@@ -17,6 +17,8 @@ include/hunspell/phonet.hxx
 include/hunspell/replist.hxx
 include/hunspell/suggestmgr.hxx
 include/hunspell/w_char.hxx
+include/hunspell/hunvisapi.h
+include/hunspell/hunvisapi.h.in
 @dirrm include/hunspell
 lib/libhunspell-1.2.a
 lib/libhunspell-1.1.la

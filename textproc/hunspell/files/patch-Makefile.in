@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -320,7 +320,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4
+-SUBDIRS = intl po src man m4 tests
++SUBDIRS = po src man m4 tests
+ pkgconfdir = $(libdir)/pkgconfig
+ pkgconf_DATA = hunspell.pc
+ EXTRA_DIST = BUGS README.myspell AUTHORS.myspell license.myspell license.hunspell \
