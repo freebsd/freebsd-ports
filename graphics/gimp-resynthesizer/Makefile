@@ -7,6 +7,7 @@
 
 PORTNAME=	resynthesizer
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.logarithmic.net/pfh-files/resynthesizer/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -21,6 +22,7 @@ GIMPTOOL?=	gimptool-2.0
 PLUGINS_DIR?=	libexec/gimp/2.2/plug-ins
 SCRIPTS_DIR?=	share/gimp/scripts
 
+USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 PLIST_FILES=	${PLUGINS_DIR}/resynth \
 		${SCRIPTS_DIR}/smart-enlarge.scm \
