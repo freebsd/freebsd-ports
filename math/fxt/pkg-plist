@@ -303,6 +303,7 @@ include/fxt/ds/rarray.h
 include/fxt/ds/ringbuffer.h
 include/fxt/ds/rset.h
 include/fxt/ds/stack.h
+include/fxt/fft/slowft.h
 include/fxt/fft-all.h
 include/fxt/fft/fft-default.h
 include/fxt/fft/fft.h
