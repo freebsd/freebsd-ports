@@ -9,6 +9,7 @@ bin/apple_cp
 bin/apple_dump
 bin/apple_mv
 bin/apple_rm
+bin/binheader
 bin/asip-status.pl
 bin/cnid2_create
 bin/dbd
