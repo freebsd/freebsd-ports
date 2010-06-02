@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scite
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -27,8 +27,8 @@ MAKEFILE=	makefile
 MAN1=		scite.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[(]CC[)]|(CXX)|g ; s|gcc|$$(CC)|g ; s| -Os||g' \
-		${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's|[(]CC[)]|(CXX)|g ; s|[(]CCOMP[)]|(CC)|g ; \
+		s| -Os||g' ${WRKSRC}/makefile
 .if defined(WITH_FULL_BUFFER_MENU)
 	@${REINPLACE_CMD} -e 's|30, "/Buffers|props.GetInt("buffers") > 30 ? props.GetInt("buffers") - 10 : 30, "/Buffers|g' ${WRKSRC}/SciTEGTK.cxx
 .endif
