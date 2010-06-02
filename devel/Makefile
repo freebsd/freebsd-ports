@@ -3042,6 +3042,7 @@
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sexp_processor
     SUBDIR += rubygem-soap4r
+    SUBDIR += rubygem-spruz
     SUBDIR += rubygem-stemmer
     SUBDIR += rubygem-stomp
     SUBDIR += rubygem-stream
