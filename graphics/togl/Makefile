@@ -7,7 +7,7 @@
 
 PORTNAME=	togl
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics tk
 MASTER_SITES=	SF/${PORTNAME}/Togl/${PORTVERSION}
 DISTNAME=	Togl-${PORTVERSION}
@@ -29,6 +29,7 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include/tk8.4" \
 CONFIGURE_ARGS=	--with-tk=${LOCALBASE}/lib/tk8.4 \
 		--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-tclinclude=${LOCALBASE}/include/tcl8.4 \
+USE_LDCONFIG=	yes
 
 TOGL_INSTDIR=	${PREFIX}/lib/tk8.4/${DISTNAME}
 PLIST_SUB=	TOGL_INSTDIR=${TOGL_INSTDIR:S,^${PREFIX}/,,}
@@ -42,8 +43,10 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${TOGL_INSTDIR}
-	${INSTALL_DATA} ${WRKSRC}/libTogl1.7.so ${TOGL_INSTDIR}/togl.so
-	${INSTALL_DATA} ${WRKSRC}/togl.h ${WRKSRC}/pkgIndex.tcl ${TOGL_INSTDIR}
+	${INSTALL_DATA} ${WRKSRC}/libTogl1.7.so ${TOGL_INSTDIR}/libTogl1.7.so
+	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${TOGL_INSTDIR}/libtogl.so.1
+	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${PREFIX}/lib/libtogl.so.1
+	${INSTALL_DATA} ${WRKSRC}/togl.h ${WRKSRC}/togl_ws.h ${WRKSRC}/pkgIndex.tcl ${TOGL_INSTDIR}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Makefile ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/togl.c ${WRKSRC}/togl.h ${EXAMPLESDIR}
