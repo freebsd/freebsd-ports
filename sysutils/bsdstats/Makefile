@@ -20,6 +20,7 @@ do-install:
 	${CP} ${FILESDIR}/300.statistics ${LOCALBASE}/etc/periodic/monthly
 	${CP} ${FILESDIR}/bsdstats.sh ${LOCALBASE}/etc/rc.d
 	${CHMOD} 0755 ${LOCALBASE}/etc/rc.d/bsdstats.sh
+	${CHMOD} 0755 ${LOCALBASE}/etc/periodic/monthly/300.statistics
 post-install:
 	${CAT} ${PKGMESSAGE}
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
