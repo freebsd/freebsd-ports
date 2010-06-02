@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	banshee
-PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTVERSION=	1.6.1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://download.banshee-project.org/${PORTNAME}/stable/${PORTVERSION}/
@@ -32,9 +31,9 @@ OPTIONS=	DOCS      "Install documentation"    on \
 		BOO       "Enable Boo support"       off \
 		BPMDETECT "Enable BPM detection"     on \
 		MTP       "Enable MTP support"       on \
-		IPOD      "Enable iPod support (BROKEN)"      off \
+		IPOD      "Enable iPod support"      on \
 		WEBKIT    "Enable Wikipedia support" on \
-		YOUTUBE   "Enable Youtube support (BROKEN)"   off
+		YOUTUBE   "Enable Youtube support"   on
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
