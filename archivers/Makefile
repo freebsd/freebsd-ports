@@ -72,6 +72,7 @@
     SUBDIR += linux-ucl
     SUBDIR += linux-upx
     SUBDIR += lzip
+    SUBDIR += lzlib
     SUBDIR += lzma
     SUBDIR += lzmalib
     SUBDIR += lzo
