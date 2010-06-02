@@ -16,9 +16,11 @@
 # NO_MAILWRAPPER=yes	If defined, let configure guess which sendmail binary
 #			to use
 # MAILDROP_LOG_COLUMNS	lenght of 'File:' line in log - 8; default: 72
+# WITH_DOVECOTAUTH=yes	Enable optional support for Dovecot Authentication
+#			extension (http://wiki.dovecot.org/maildrop/)
 
 PORTNAME=	maildrop
-PORTVERSION=	2.4.3
+PORTVERSION=	2.5.0
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -76,6 +78,15 @@ USE_FAM=	yes
 CONFIGURE_ARGS+=	--enable-trusted-users="${MAILDROP_TRUSTED_USERS}"
 .endif
 
+.if defined(WITH_DOVECOTAUTH)
+PATCH_SITES+=	http://www.max.rs/ozone/
+PATCHFILES+=	maildrop-2.3.0-dovecotauth.patch.txt
+PATCH_DIST_STRIP=	-p1
+PLIST_SUB+=	DOVECOTAUTH=""
+.else
+PLIST_SUB+=	DOVECOTAUTH="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s/l= 72 - szbuf.Length();/l= ${MAILDROP_LOG_COLUMNS} - szbuf.Length();/" \
 		${WRKSRC}/maildrop/log.C
@@ -112,6 +123,9 @@ post-install:
 		${PREFIX}/etc/quotawarnmsg.sample
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.if defined(WITH_DOVECOTAUTH)
+	${INSTALL_DATA} ${WRKSRC}/README.dovecotauth ${DOCSDIR}
+.endif
 .endif
 .if defined(MAILDROP_SUID)
 	${CHMOD} u+s ${PREFIX}/bin/maildrop

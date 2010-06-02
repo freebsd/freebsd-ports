@@ -14,6 +14,7 @@ etc/quotawarnmsg.sample
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%DOVECOTAUTH%%%%PORTDOCS%%%%DOCSDIR%%/README.dovecotauth
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/README.imapkeywords.html
 %%PORTDOCS%%%%DOCSDIR%%/README.maildirfilter.html
