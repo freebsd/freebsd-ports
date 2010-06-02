@@ -1743,6 +1743,7 @@
     SUBDIR += udmsearch
     SUBDIR += ump
     SUBDIR += usermanager
+    SUBDIR += uwsgi
     SUBDIR += uzbl
     SUBDIR += validator
     SUBDIR += varnish

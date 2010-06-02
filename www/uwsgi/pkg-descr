@@ -1,0 +1,7 @@
+uWSGI is a fast (pure C), self-healing, developer-friendly WSGI server,
+aimed for professional python webapps deployment and development.  Over
+time it has evolved in a complete stack for networked/clustered python
+applications, implementing message/object passing, RPC and process
+management.
+
+WWW: http://projects.unbit.it/uwsgi/
