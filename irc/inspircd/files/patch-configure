@@ -1,11 +1,11 @@
---- ./configure.orig	2008-02-21 20:35:25.000000000 +0000
-+++ ./configure	2008-04-18 09:12:20.000000000 +0100
-@@ -136,7 +136,7 @@
+--- ./configure.orig	2008-05-10 20:19:59.000000000 -0400
++++ ./configure	2010-03-23 18:50:19.000000000 -0400
+@@ -135,7 +135,7 @@
+ {
  	$config{LIBRARY_DIR} = $opt_library_dir;
  }
- chomp($config{HAS_GNUTLS}   = `libgnutls-config --version 2>/dev/null | cut -c 1,2,3`); # GNUTLS Version.
--chomp($config{HAS_OPENSSL}  = `pkg-config --modversion openssl 2>/dev/null`);		# Openssl version
-+chomp($config{HAS_OPENSSL}  = `openssl version | cut -d ' ' -f 2`);		# Openssl version
+-chomp($config{HAS_GNUTLS}   = `libgnutls-config --version 2>/dev/null | cut -c 1,2,3`); # GNUTLS Version.
++chomp($config{HAS_GNUTLS}   = `pkg-config gnutls --modversion 2>/dev/null | cut -c 1,2,3`); # GNUTLS Version.
+ chomp($config{HAS_OPENSSL}  = `pkg-config --modversion openssl 2>/dev/null`);		# Openssl version
  chomp($gnutls_ver = $config{HAS_GNUTLS});
  chomp($openssl_ver = $config{HAS_OPENSSL});
- $config{USE_GNUTLS}	    = "n";
