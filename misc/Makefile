@@ -189,6 +189,7 @@
     SUBDIR += instant-server
     SUBDIR += ipa_conv
     SUBDIR += ipbt
+    SUBDIR += ipod-sharp
     SUBDIR += iselect
     SUBDIR += iso-codes
     SUBDIR += jargon

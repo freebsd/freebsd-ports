@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+lib/ipod-sharp/ipod-sharp-firmware.dll
+lib/ipod-sharp/ipod-sharp-firmware.dll.mdb
+lib/ipod-sharp/ipod-sharp-ui.dll
+lib/ipod-sharp/ipod-sharp-ui.dll.mdb
+lib/ipod-sharp/ipod-sharp.dll
+lib/ipod-sharp/ipod-sharp.dll.mdb
+lib/monodoc/sources/ipod-sharp-docs.source
+lib/monodoc/sources/ipod-sharp-docs.tree
+lib/monodoc/sources/ipod-sharp-docs.zip
+libdata/pkgconfig/ipod-sharp-ui.pc
+libdata/pkgconfig/ipod-sharp.pc
+@dirrmtry lib/ipod-sharp
