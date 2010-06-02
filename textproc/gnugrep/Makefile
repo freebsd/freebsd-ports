@@ -7,7 +7,7 @@
 
 PORTNAME=	grep
 PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=     textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ PKGNAMEPREFIX=	gnu
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	GNU grep
 
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 MAN1=		egrep.1 \
 		fgrep.1 \
@@ -23,8 +24,7 @@ MAN1=		egrep.1 \
 INFO=		grep
 PLIST_FILES=    bin/egrep \
 		bin/fgrep \
-		bin/grep \
-		lib/charset.alias
+		bin/grep
 
 OPTIONS=	PCRE	"Compile with Perl-compatible regex support"	off
 
