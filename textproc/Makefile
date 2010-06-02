@@ -26,6 +26,7 @@
     SUBDIR += aspell
     SUBDIR += aspell-without-dicten
     SUBDIR += atom
+    SUBDIR += augeas
     SUBDIR += az-aspell
     SUBDIR += bar
     SUBDIR += bbe
