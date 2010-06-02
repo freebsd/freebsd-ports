@@ -65,6 +65,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/interfaces.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/interfaces.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/interfaces.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/protocols.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/protocols.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/protocols.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/protocols/unused_setup
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/__init__.pyc
@@ -114,6 +117,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_copyable_trait_names.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_copyable_trait_names.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_copyable_trait_names.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_enum.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_enum.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_enum.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_event_order.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_event_order.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_event_order.pyo
@@ -141,6 +147,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_str_handler.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_str_handler.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_str_handler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_target.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_target.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_target.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_trait_cycle.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_trait_cycle.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/traits/tests/test_trait_cycle.pyo
@@ -591,6 +600,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/TextEditor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/TreeEditor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/Popup_versions/TupleEditor_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/RGBColorEditor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/RangeEditor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/SetEditor_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo/Standard Editors/TableEditor_demo.py
@@ -739,6 +749,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials/traits_3.0
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tutorials
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/Pydoh_T3UMdoc_HOWTO.txt
 %%PORTDOCS%%%%DOCSDIR%%/Traits UI User Guide.doc
 %%PORTDOCS%%%%DOCSDIR%%/Traits UI User Guide.pdf
