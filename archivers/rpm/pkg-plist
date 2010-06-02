@@ -74,14 +74,16 @@ lib/rpmrc
 @dirrmtry src/redhat/SRPMS
 @dirrmtry src/redhat/SPECS
 @dirrmtry src/redhat/SOURCES
-@dirrmtry src/redhat/RPMS/noarch
 @dirrmtry src/redhat/RPMS/amd64
 @dirrmtry src/redhat/RPMS/athlon
-@dirrmtry src/redhat/RPMS/i686
-@dirrmtry src/redhat/RPMS/i586
-@dirrmtry src/redhat/RPMS/i486
 @dirrmtry src/redhat/RPMS/i386
+@dirrmtry src/redhat/RPMS/i486
+@dirrmtry src/redhat/RPMS/i586
+@dirrmtry src/redhat/RPMS/i686
 @dirrmtry src/redhat/RPMS/ia64
+@dirrmtry src/redhat/RPMS/noarch
+@dirrmtry src/redhat/RPMS/powerpc
+@dirrmtry src/redhat/RPMS/ppc
 @dirrmtry src/redhat/RPMS/sparc
 @dirrmtry src/redhat/RPMS/sparcv9
 @dirrmtry src/redhat/RPMS/sparc64
@@ -105,6 +107,8 @@ lib/rpmrc
 @exec mkdir -p %D/src/redhat/RPMS/i686
 @exec mkdir -p %D/src/redhat/RPMS/ia64
 @exec mkdir -p %D/src/redhat/RPMS/noarch
+@exec mkdir -p %D/src/redhat/RPMS/powerpc
+@exec mkdir -p %D/src/redhat/RPMS/ppc
 @exec mkdir -p %D/src/redhat/RPMS/sparc
 @exec mkdir -p %D/src/redhat/RPMS/sparcv9
 @exec mkdir -p %D/src/redhat/RPMS/sparc64
