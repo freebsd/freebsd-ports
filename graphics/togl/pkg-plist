@@ -1,5 +1,8 @@
-%%TOGL_INSTDIR%%/togl.so
+%%TOGL_INSTDIR%%/libTogl1.7.so
+%%TOGL_INSTDIR%%/libtogl.so.1
+lib/libtogl.so.1
 %%TOGL_INSTDIR%%/togl.h
+%%TOGL_INSTDIR%%/togl_ws.h
 %%TOGL_INSTDIR%%/pkgIndex.tcl
 @dirrm %%TOGL_INSTDIR%%
 %%EXAMPLESDIR%%/Makefile
