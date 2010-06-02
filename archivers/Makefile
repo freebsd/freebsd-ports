@@ -137,6 +137,7 @@
     SUBDIR += php52-zip
     SUBDIR += php52-zlib
     SUBDIR += pigz
+    SUBDIR += plzip
     SUBDIR += ppmd
     SUBDIR += ppmd-7z
     SUBDIR += ppunpack
