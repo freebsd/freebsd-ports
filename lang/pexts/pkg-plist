@@ -1,6 +1,0 @@
-pike/%%PIKEVERSION%%/lib/modules/Curses.so
-pike/%%PIKEVERSION%%/lib/modules/Gzip.so
-pike/%%PIKEVERSION%%/lib/modules/Mhash.so
-pike/%%PIKEVERSION%%/lib/modules/PCRE.so
-pike/%%PIKEVERSION%%/lib/modules/bzip2.so
-pike/%%PIKEVERSION%%/lib/modules/mcrypt.so
