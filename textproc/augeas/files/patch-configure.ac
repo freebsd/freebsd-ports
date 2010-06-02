@@ -1,0 +1,12 @@
+--- configure.ac.orig	2010-04-28 13:15:44.000000000 -0700
++++ configure.ac	2010-04-28 13:16:07.000000000 -0700
+@@ -2,8 +2,7 @@
+ AC_CONFIG_SRCDIR([src/augeas.c])
+ AC_CONFIG_AUX_DIR([build/aux])
+ AM_CONFIG_HEADER([config.h])
+-AM_INIT_AUTOMAKE([-Wno-portability 1.11 color-tests parallel-tests])
+-AM_SILENT_RULES([yes]) # make --enable-silent-rules the default.
++AM_INIT_AUTOMAKE()
+ 
+ 
+ dnl Check for NaturalDocs
