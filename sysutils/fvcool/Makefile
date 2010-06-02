@@ -8,11 +8,10 @@
 PORTNAME=	fvcool
 PORTVERSION=	1.0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/fvcool/ \
-		http://www.infracaninophile.co.uk/fvcool/
+MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/fvcool/
 DISTNAME=	FVCool${PORTVERSION:S/.//g}
 
-MAINTAINER=	m.seaman@infracaninophile.co.uk
+MAINTAINER=	ports@freebsd.org
 COMMENT=	VCool for FreeBSD - Cooling software for AMD Athlon/Duron CPUs
 
 ONLY_FOR_ARCHS=	i386
