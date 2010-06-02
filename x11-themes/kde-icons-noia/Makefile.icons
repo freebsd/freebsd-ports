@@ -100,4 +100,10 @@ do-install: annotate-install generate-install-scripts generate-tmpplist install-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc" && ${PORTNAME} == "crystal-project"
+BROKEN=		Does not install on powerpc: syntax error in files.sh
+.endif
+
+.include <bsd.port.post.mk>
