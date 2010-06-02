@@ -12,6 +12,9 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/errors.py
 %%PYTHON_SITELIBDIR%%/dulwich/errors.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/errors.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/fastexport.py
+%%PYTHON_SITELIBDIR%%/dulwich/fastexport.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/fastexport.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/file.py
 %%PYTHON_SITELIBDIR%%/dulwich/file.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/file.pyo
@@ -54,6 +57,9 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_client.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_client.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_client.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_fastexport.py
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_fastexport.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_fastexport.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_file.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_file.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_file.pyo
@@ -72,6 +78,9 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_pack.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_pack.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_pack.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_patch.py
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_patch.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_patch.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_protocol.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_protocol.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_protocol.pyo
@@ -84,5 +93,8 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_web.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_web.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_web.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/tests/utils.py
+%%PYTHON_SITELIBDIR%%/dulwich/tests/utils.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/tests/utils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/dulwich/tests
 @dirrm %%PYTHON_SITELIBDIR%%/dulwich
