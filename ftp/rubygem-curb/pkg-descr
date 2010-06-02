@@ -1,0 +1,6 @@
+Curb (probably CUrl-RuBy or something) provides Ruby-language
+bindings for libcurl, a fully-featured client-side URL
+transfer library.
+
+WWW: http://taf2.github.com/curb/
+WWW: http://curb.rubyforge.org/
