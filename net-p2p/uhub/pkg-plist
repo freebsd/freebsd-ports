@@ -8,4 +8,7 @@ etc/uhub/users.conf.sample
 @unexec if cmp -s %D/etc/uhub/motd.txt.sample %D/etc/uhub/motd.txt; then rm -f %D/etc/uhub/motd.txt; fi
 etc/uhub/motd.txt.sample
 @exec if [ ! -f %D/etc/uhub/motd.txt ] ; then cp -p %D/%F %B/uhub/motd.txt; fi
+@unexec if cmp -s %D/etc/uhub/rules.txt.sample %D/etc/uhub/rules.txt; then rm -f %D/etc/uhub/rules.txt; fi
+etc/uhub/rules.txt.sample
+@exec if [ ! -f %D/etc/uhub/rules.txt ] ; then cp -p %D/%F %B/uhub/rules.txt; fi
 @dirrmtry etc/uhub

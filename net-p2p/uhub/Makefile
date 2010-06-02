@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uhub
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.extatic.org/downloads/uhub/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -41,6 +41,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/users.conf ${PREFIX}/etc/uhub/users.conf.sample
 	@if [ -f ${PREFIX}/etc/uhub/motd.txt ]; then \
 		${TOUCH} ${PREFIX}/etc/uhub/motd.txt.sample ; \
+	fi
+	@if [ -f ${PREFIX}/etc/uhub/rules.txt ]; then \
+		${TOUCH} ${PREFIX}/etc/uhub/rules.txt.sample ; \
 	fi
 
 .include <bsd.port.post.mk>
