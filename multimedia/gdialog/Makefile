@@ -11,7 +11,7 @@ CATEGORIES=	multimedia java
 MASTER_SITES=	SF/${PORTNAME}-x/${PORTNAME}-090400/${PORTVERSION}
 DISTNAME=	GDialog-090400-25
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Project X addon to read Siemens Gigaset M740AV video recordings
 
 BUILD_DEPENDS=	projectx>=0.90.4.00:${PORTSDIR}/multimedia/projectx
