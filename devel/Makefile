@@ -501,6 +501,7 @@
     SUBDIR += goffice06
     SUBDIR += goffice1
     SUBDIR += gonzui
+    SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-sparsehash
     SUBDIR += googlemock
