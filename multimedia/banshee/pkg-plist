@@ -87,7 +87,9 @@ lib/banshee-1/Extensions/Banshee.Podcasting.dll.mdb
 %%OPT_YOUTUBE%%lib/banshee-1/Extensions/Banshee.YouTube.dll
 %%OPT_YOUTUBE%%lib/banshee-1/Extensions/Banshee.YouTube.dll.mdb
 %%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp-ui.dll
+%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp-ui.dll.mdb
 %%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll
+%%OPT_IPOD%%lib/banshee-1/Extensions/ipod-sharp.dll.mdb
 lib/banshee-1/Halie.exe
 lib/banshee-1/Halie.exe.mdb
 lib/banshee-1/Hyena.Gui.dll
