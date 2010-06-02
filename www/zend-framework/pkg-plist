@@ -5904,7 +5904,6 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.tool.project.providers.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.tool.usage.cli.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.translate.adapter.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/zend.translate.additional.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.translate.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.translate.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.translate.plurals.html
@@ -6192,6 +6191,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/BootstrapBaseCircularDependency.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/Zf-6719-1.ini
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/Zf-6719-2.ini
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/Zf7696Bootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/ZfAppBadBootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/ZfAppBootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/ZfAppNoBootstrap.php
@@ -6461,6 +6461,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/Helpers/TestHelper.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/Helpers/Url.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/IndexController.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/ManuallyIncludedControllers.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/ObController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/ViewController.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Controller/_files/modules/bar/controllers/IndexController.php
@@ -7004,6 +7005,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/none/rss20.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/rss20-zf-7908.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/datemodified/plain/rss20_en_US.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss090.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss091.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Entry/_files/Rss/description/plain/dc10/rss092.xml
@@ -7148,12 +7150,17 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain/atom10-relative.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/feedlink/plain/atom10_NoFeedLink.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/generator/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/hubs/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/hubs/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image/plain/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image/plain/atom10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image/plain/none/atom03.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image/plain/none/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language/plain/atom03.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language/plain/atom10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link/plain/atom03.xml
@@ -7297,6 +7304,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none/rss10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/none/rss20.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/datemodified/plain/rss20_en_US.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10/rss090.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10/rss091.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/description/plain/dc10/rss092.xml
@@ -7339,6 +7347,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss094.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/feedlink/plain/rss20_NoFeedLink.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none/rss090.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none/rss091.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/generator/plain/none/rss092.xml
@@ -7367,6 +7376,20 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/hubs/plain/none/rss094.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/hubs/plain/none/rss10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/hubs/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/none/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/none/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/none/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/none/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/none/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/none/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/rss090.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/rss091.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/rss092.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/rss093.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/rss094.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/rss10.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/rss20.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10/rss090.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10/rss091.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10/rss092.xml
@@ -7396,6 +7419,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rss094.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rss10.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/lastbuilddate/plain/none/rss20.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/lastbuilddate/plain/rss20.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none/rss090.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none/rss091.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none/rss092.xml
@@ -9520,12 +9545,18 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain/none
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link/plain
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/link
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/lastbuilddate/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/lastbuilddate/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/lastbuilddate
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/rdf
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/none
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc11
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain/dc10
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language/plain
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/language
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/image
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/hubs/plain/none
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/hubs/plain/atom10
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Rss/hubs/plain
@@ -9586,6 +9617,9 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/link
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language/plain
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/language
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image/plain/none
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image/plain
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/image
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id/plain
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/id
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Reader/Feed/_files/Atom/hubs/plain
