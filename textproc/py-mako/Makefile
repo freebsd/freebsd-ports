@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mako
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	textproc www python
 MASTER_SITES=	http://www.makotemplates.org/downloads/ \
 		CHEESESHOP
