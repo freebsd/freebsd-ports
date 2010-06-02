@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imce
-DISTVERSION=	6.x-1.3
+DISTVERSION=	6.x-1.4
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
@@ -17,40 +17,42 @@ DRUPAL6_MODULE=	yes
 
 MODULE_DIRS=	translations tpl js inc css
 
-MODULE_FILES=	css/collapsed.png \
-		css/expanded.png \
-		css/folder-open.png \
-		css/folder.png \
-		css/imce-content.css \
-		css/leaf.png \
-		css/loading.gif \
-		css/x-grippie.png \
-		css/y-grippie.png \
-		inc/admin.inc \
-		inc/core_profiles.inc \
-		inc/js.inc \
-		inc/page.inc \
-		inc/subdir.inc \
-		imce.info \
-		imce.install \
-		imce.module \
-		js/imce.js \
-		js/imce_extras.js \
-		js/imce_set_app.js \
-		js/imce_set_inline.js \
-		tpl/imce-content.tpl.php \
-		tpl/imce-file-list.tpl.php \
-		tpl/imce-page.tpl.php \
-		translations/imce.pot \
-		translations/cs.po \
-		translations/es.po \
-		translations/fi.po \
-		translations/fr.po \
-		translations/hu.po \
+MODULE_FILES=	translations/uk.po \
+		translations/uk-ua.po \
+		translations/sv.po \
 		translations/pt-br.po \
-		translations/ja.po \
 		translations/nl.po \
-		translations/sv.po
+		translations/ja.po \
+		translations/imce.pot \
+		translations/hu.po \
+		translations/fr.po \
+		translations/fi.po \
+		translations/es.po \
+		translations/cs.po \
+		tpl/imce-page.tpl.php \
+		tpl/imce-file-list.tpl.php \
+		tpl/imce-content.tpl.php \
+		js/imce_set_inline.js \
+		js/imce_set_app.js \
+		js/imce_extras.js \
+		js/imce.js \
+		inc/subdir.inc \
+		inc/page.inc \
+		inc/js.inc \
+		inc/core_profiles.inc \
+		inc/admin.inc \
+		imce.module \
+		imce.install \
+		imce.info \
+		css/y-grippie.png \
+		css/x-grippie.png \
+		css/loading.gif \
+		css/leaf.png \
+		css/imce-content.css \
+		css/folder.png \
+		css/folder-open.png \
+		css/expanded.png \
+		css/collapsed.png
 
 DOC_FILES=	README.txt LICENSE.txt
 
