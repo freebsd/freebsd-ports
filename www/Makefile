@@ -183,6 +183,7 @@
     SUBDIR += drupal6-pathauto
     SUBDIR += drupal6-print
     SUBDIR += drupal6-seo_checklist
+    SUBDIR += drupal6-services
     SUBDIR += drupal6-tagadelic
     SUBDIR += drupal6-token
     SUBDIR += drupal6-views
