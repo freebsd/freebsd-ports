@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	mpdscribble
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.19
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kimelto@gmail.com
 COMMENT=	Musicpd last.fm client
 
-OPTIONS=	SOUP    "Use libsoup for HTTP client library"    off
+LIB_DEPENDS+=	mpdclient.2:${PORTSDIR}/audio/libmpdclient
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 pkgconfig
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	mpdscribble
+
 MAN1=		mpdscribble.1
 
-USE_RC_SUBR=	mpdscribble
+OPTIONS=	SOUP	"Use libsoup instead of libcurl"	off
 
 .include <bsd.port.pre.mk>
 
