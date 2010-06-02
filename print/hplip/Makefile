@@ -7,6 +7,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.10.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -98,7 +99,7 @@ RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
 .endif
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-network-build
 .else
 CONFIGURE_ARGS+=	--disable-network-build

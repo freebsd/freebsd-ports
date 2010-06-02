@@ -7,6 +7,7 @@
 
 PORTNAME=	spine
 PORTVERSION=	0.8.7.e
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-0.8.7e
@@ -14,7 +15,7 @@ DISTNAME=	cacti-${PORTNAME}-0.8.7e
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	A multithreaded poller for Cacti written in C
 
-LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}

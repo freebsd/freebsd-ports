@@ -7,7 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.14.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20Stable/${PORTVERSION}:src_sf \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
@@ -108,7 +108,7 @@ CONFIGURE_ARGS+=	--disable-snmp
 .endif
 
 .ifdef(WITH_SNMP_DRV_OLD)
-LIB_DEPENDS+=		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=		netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-net-snmp
 .else
 CONFIGURE_ARGS+=	--disable-net-snmp

@@ -6,6 +6,7 @@
 
 PORTNAME=	SNMP-Info
 PORTVERSION=	2.01
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -13,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A perl5 module for gathering information from network devices
 
-LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 PERL_CONFIGURE=	yes
 

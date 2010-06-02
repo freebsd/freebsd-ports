@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.26.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -155,7 +155,7 @@ CONFIGURE_ARGS+= --without-netsnmp
 .else
 PLIST_SUB+=	WITH_SNMP=""
 CONFIGURE_ARGS+= --with-netsnmp
-LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 .if !defined(WITH_JABBER)

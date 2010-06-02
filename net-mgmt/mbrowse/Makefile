@@ -7,13 +7,14 @@
 
 PORTNAME=	mbrowse
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	An SNMP MIB Browser for X
 
-LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mbrowse
