@@ -10,7 +10,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/movix/eMoviX/0.9
 
-MAINTAINER=	h.eichmann@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mini linux distro to create bootable video CDs
 
 GNU_CONFIGURE=	yes
