@@ -267,6 +267,7 @@
     SUBDIR += tomboy-plugin-latex
     SUBDIR += tomboy-plugin-reminder
     SUBDIR += tomboy-plugin-todo
+    SUBDIR += tomboy-plugin-wordcount
     SUBDIR += toolbox
     SUBDIR += toolboxkit
     SUBDIR += tpb
