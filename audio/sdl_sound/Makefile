@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl_sound
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://offload1.icculus.org:9090/SDL_sound/downloads/ \
 		http://offload2.icculus.org:9090/SDL_sound/downloads/
@@ -21,13 +21,14 @@ USE_LDCONFIG=	yes
 USE_SDL=	sdl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-OPTIONS=	FLAC "Enable flac support" on \
-		MIKMOD "Enable mikmod support" on \
-		PHYSFS "Enable physfs support" on \
-		SMPEG "Enable smpeg support" on \
-		SPEEX "Enable speex support" on \
-		MIDI "Enable MIDI support" on \
-		VORBIS "Enable Ogg Vorbis support" on
+OPTIONS=	FLAC "Enable FLAC decoding support" on \
+		MIKMOD "Enable MOD decoding support using mikmod" on \
+		MIDI "Enable software MIDI music" on \
+		MODPLUG "Enable MOD decoding support using modplug" on \
+		PHYSFS "Enable PhysicsFS support" on \
+		SMPEG "Enable MP3 decoding support" on \
+		SPEEX "Enable SPX decoding support" on \
+		VORBIS "Enable Ogg Vorbis decoding support" on
 
 .include <bsd.port.pre.mk>
 
@@ -41,6 +42,12 @@ CONFIGURE_ARGS+=--disable-flac
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 .else
 CONFIGURE_ARGS+=--disable-mikmod
+.endif
+
+.if !defined(WITHOUT_MODPLUG)
+LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
+.else
+CONFIGURE_ARGS+=--disable-modplug
 .endif
 
 .if !defined(WITHOUT_PHYSFS)
