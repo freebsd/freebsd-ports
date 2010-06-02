@@ -52,6 +52,8 @@
 %%WWWDIR%%/admin/editor/plugins/advlink/langs/de_dlg.js
 %%WWWDIR%%/admin/editor/plugins/advlink/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/advlink/link.htm
+%%WWWDIR%%/admin/editor/plugins/advlist/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/advlist/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/_ajax_get_details_listing.php
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/_ajax_get_thumbnail_listing.php
 %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/_ajax_load_folders.php
@@ -372,6 +374,7 @@
 %%WWWDIR%%/admin/editor/plugins/autoresize/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/autosave/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/autosave/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/autosave/langs/en.js
 %%WWWDIR%%/admin/editor/plugins/bbcode/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/bbcode/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/compat2x/editor_plugin.js
@@ -436,6 +439,8 @@
 %%WWWDIR%%/admin/editor/plugins/insertdatetime/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/layer/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/layer/editor_plugin_src.js
+%%WWWDIR%%/admin/editor/plugins/legacyoutput/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/legacyoutput/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/media/css/content.css
 %%WWWDIR%%/admin/editor/plugins/media/css/media.css
 %%WWWDIR%%/admin/editor/plugins/media/editor_plugin.js
@@ -508,6 +513,7 @@
 %%WWWDIR%%/admin/editor/plugins/syntaxhl/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/syntaxhl/img/highlight.gif
 %%WWWDIR%%/admin/editor/plugins/syntaxhl/js/dialog.js
+%%WWWDIR%%/admin/editor/plugins/syntaxhl/langs/de.js
 %%WWWDIR%%/admin/editor/plugins/syntaxhl/langs/en.js
 %%WWWDIR%%/admin/editor/plugins/syntaxhl/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/syntaxhl/langs/zh.js
@@ -650,6 +656,7 @@
 %%WWWDIR%%/admin/images/url-noajax.png
 %%WWWDIR%%/admin/images/url-nolinks.png
 %%WWWDIR%%/admin/images/url-noscript.png
+%%WWWDIR%%/admin/js/user.js
 %%WWWDIR%%/admin/index.php
 %%WWWDIR%%/admin/linkconfig.main.php
 %%WWWDIR%%/admin/news.php
@@ -1068,6 +1075,7 @@
 @dirrm %%WWWDIR%%/attachments
 @dirrm %%WWWDIR%%/admin/style
 @dirrm %%WWWDIR%%/admin/images
+@dirrm %%WWWDIR%%/admin/js
 @dirrm %%WWWDIR%%/admin/editor/utils
 @dirrm %%WWWDIR%%/admin/editor/themes/simple/skins/o2k7/img
 @dirrm %%WWWDIR%%/admin/editor/themes/simple/skins/o2k7
@@ -1136,6 +1144,7 @@
 @dirrm %%WWWDIR%%/admin/editor/plugins/media/css
 @dirrm %%WWWDIR%%/admin/editor/plugins/media
 @dirrm %%WWWDIR%%/admin/editor/plugins/layer
+@dirrm %%WWWDIR%%/admin/editor/plugins/legacyoutput
 @dirrm %%WWWDIR%%/admin/editor/plugins/insertdatetime
 @dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups/skins/clearlooks2/img
 @dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups/skins/clearlooks2
@@ -1159,6 +1168,7 @@
 @dirrm %%WWWDIR%%/admin/editor/plugins/contextmenu
 @dirrm %%WWWDIR%%/admin/editor/plugins/compat2x
 @dirrm %%WWWDIR%%/admin/editor/plugins/bbcode
+@dirrm %%WWWDIR%%/admin/editor/plugins/autosave/langs
 @dirrm %%WWWDIR%%/admin/editor/plugins/autosave
 @dirrm %%WWWDIR%%/admin/editor/plugins/autoresize
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/theme/default/images/standard
@@ -1187,6 +1197,7 @@
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/jscripts
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager/inc
 @dirrm %%WWWDIR%%/admin/editor/plugins/ajaxfilemanager
+@dirrm %%WWWDIR%%/admin/editor/plugins/advlist
 @dirrm %%WWWDIR%%/admin/editor/plugins/advlink/langs
 @dirrm %%WWWDIR%%/admin/editor/plugins/advlink/js
 @dirrm %%WWWDIR%%/admin/editor/plugins/advlink/css
