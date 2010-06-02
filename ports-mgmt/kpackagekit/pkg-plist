@@ -1,0 +1,92 @@
+bin/kpackagekit
+lib/kde4/kcm_kpk_addrm.so
+lib/kde4/kcm_kpk_settings.so
+lib/kde4/kcm_kpk_update.so
+lib/kde4/kded_kpackagekitd.so
+lib/kde4/libexec/kpackagekitsmarticon
+lib/libkpackagekitlib.so
+share/applications/kde4/kpackagekit.desktop
+share/apps/KPackageKitSmartIcon/KPackageKitSmartIcon.notifyrc
+share/apps/kpackagekit/icons/hicolor/22x22/actions/package-wait.png
+share/apps/kpackagekit/icons/hicolor/24x24/actions/pk-cleaning-up.mng
+share/apps/kpackagekit/icons/hicolor/24x24/actions/pk-installing.mng
+share/apps/kpackagekit/icons/hicolor/24x24/actions/pk-refresh-cache.mng
+share/apps/kpackagekit/icons/hicolor/24x24/actions/pk-searching.mng
+share/apps/kpackagekit/icons/hicolor/24x24/actions/pk-testing.mng
+share/apps/kpackagekit/icons/hicolor/24x24/actions/pk-waiting.mng
+share/apps/kpackagekit/icons/hicolor/48x48/actions/distro-upgrade.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/kpk-clean-up.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/kpk-important.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/kpk-package-add.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/kpk-refresh-cache.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/package-download.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/package-info.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/package-orign.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/package-rollback.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/package-search.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/package-setup.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/package-update.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/package-wait.png
+share/apps/kpackagekit/icons/hicolor/48x48/actions/pk-cleaning-up.mng
+share/apps/kpackagekit/icons/hicolor/48x48/actions/pk-downloading.mng
+share/apps/kpackagekit/icons/hicolor/48x48/actions/pk-installing.mng
+share/apps/kpackagekit/icons/hicolor/48x48/actions/pk-refresh-cache.mng
+share/apps/kpackagekit/icons/hicolor/48x48/actions/pk-searching.mng
+share/apps/kpackagekit/icons/hicolor/48x48/actions/pk-testing.mng
+share/apps/kpackagekit/icons/hicolor/48x48/actions/pk-waiting.mng
+share/apps/kpackagekit/icons/hicolor/48x48/categories/kpk-desktop-gnome.png
+share/apps/kpackagekit/icons/hicolor/48x48/categories/kpk-desktop-xfce.png
+share/apps/kpackagekit/icons/hicolor/64x64/actions/package-installed.png
+share/apps/kpackagekit/icons/hicolor/64x64/actions/package-removed.png
+share/apps/kpackagekit/icons/hicolor/64x64/actions/package.png
+share/dbus-1/services/org.freedesktop.PackageKit.service
+share/dbus-1/services/org.kde.KPackageKitSmartIcon.service
+share/kde4/services/kded/kpackagekitd.desktop
+share/kde4/services/kpk_addrm.desktop
+share/kde4/services/kpk_settings.desktop
+share/kde4/services/kpk_update.desktop
+share/kde4/services/settings-add-and-remove-software.desktop
+share/locale/bg/LC_MESSAGES/kpackagekit.mo
+share/locale/ca/LC_MESSAGES/kpackagekit.mo
+share/locale/ca@valencia/LC_MESSAGES/kpackagekit.mo
+share/locale/cs/LC_MESSAGES/kpackagekit.mo
+share/locale/da/LC_MESSAGES/kpackagekit.mo
+share/locale/de/LC_MESSAGES/kpackagekit.mo
+share/locale/el/LC_MESSAGES/kpackagekit.mo
+share/locale/en_GB/LC_MESSAGES/kpackagekit.mo
+share/locale/eo/LC_MESSAGES/kpackagekit.mo
+share/locale/es/LC_MESSAGES/kpackagekit.mo
+share/locale/et/LC_MESSAGES/kpackagekit.mo
+share/locale/fr/LC_MESSAGES/kpackagekit.mo
+share/locale/ga/LC_MESSAGES/kpackagekit.mo
+share/locale/gl/LC_MESSAGES/kpackagekit.mo
+share/locale/lt/LC_MESSAGES/kpackagekit.mo
+share/locale/nb/LC_MESSAGES/kpackagekit.mo
+share/locale/nds/LC_MESSAGES/kpackagekit.mo
+share/locale/nl/LC_MESSAGES/kpackagekit.mo
+share/locale/nn/LC_MESSAGES/kpackagekit.mo
+share/locale/pa/LC_MESSAGES/kpackagekit.mo
+share/locale/pl/LC_MESSAGES/kpackagekit.mo
+share/locale/pt/LC_MESSAGES/kpackagekit.mo
+share/locale/pt_BR/LC_MESSAGES/kpackagekit.mo
+share/locale/ro/LC_MESSAGES/kpackagekit.mo
+share/locale/ru/LC_MESSAGES/kpackagekit.mo
+share/locale/sk/LC_MESSAGES/kpackagekit.mo
+share/locale/sv/LC_MESSAGES/kpackagekit.mo
+share/locale/tr/LC_MESSAGES/kpackagekit.mo
+share/locale/uk/LC_MESSAGES/kpackagekit.mo
+share/locale/zh_CN/LC_MESSAGES/kpackagekit.mo
+share/locale/zh_TW/LC_MESSAGES/kpackagekit.mo
+@dirrm share/apps/kpackagekit/icons/hicolor/64x64/actions
+@dirrm share/apps/kpackagekit/icons/hicolor/64x64
+@dirrm share/apps/kpackagekit/icons/hicolor/48x48/categories
+@dirrm share/apps/kpackagekit/icons/hicolor/48x48/actions
+@dirrm share/apps/kpackagekit/icons/hicolor/48x48
+@dirrm share/apps/kpackagekit/icons/hicolor/24x24/actions
+@dirrm share/apps/kpackagekit/icons/hicolor/24x24
+@dirrm share/apps/kpackagekit/icons/hicolor/22x22/actions
+@dirrm share/apps/kpackagekit/icons/hicolor/22x22
+@dirrm share/apps/kpackagekit/icons/hicolor
+@dirrm share/apps/kpackagekit/icons
+@dirrm share/apps/kpackagekit
+@dirrm share/apps/KPackageKitSmartIcon

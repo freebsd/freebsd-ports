@@ -1,0 +1,9 @@
+KPackageKit is the KDE interface for PackageKit. It features
+everything Gnome PackageKit does except:
+- install catalog;
+- service pack;
+- a D-Bus session interface.
+These items are not mandatory since they are more features of the GUI
+itself than a feature in PackageKit.
+
+WWW: http://kde-apps.org/content/show.php/KPackageKit?content=84745
