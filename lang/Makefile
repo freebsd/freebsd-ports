@@ -245,7 +245,6 @@
     SUBDIR += perl5.10
     SUBDIR += perl5.8
     SUBDIR += petite-chez
-    SUBDIR += pexts
     SUBDIR += pfe-devel
     SUBDIR += phc
     SUBDIR += php-mode.el
@@ -257,7 +256,6 @@
     SUBDIR += php52
     SUBDIR += php52-extensions
     SUBDIR += php_doc
-    SUBDIR += pike72
     SUBDIR += pike76
     SUBDIR += pike78
     SUBDIR += plt-scheme
