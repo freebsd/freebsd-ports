@@ -103,6 +103,7 @@
     SUBDIR += chgrep
     SUBDIR += ciso
     SUBDIR += ck4up
+    SUBDIR += ckl
     SUBDIR += clean
     SUBDIR += clockspeed
     SUBDIR += clockspeed-conf

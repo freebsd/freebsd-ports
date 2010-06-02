@@ -1,0 +1,2 @@
+ckl_endpoint http://ckl.example.com/
+secret mySuperSecret
