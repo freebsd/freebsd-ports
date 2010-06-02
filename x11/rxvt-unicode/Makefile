@@ -27,6 +27,7 @@ OPTIONS=	\
 	PERL		"Embedded perl interpreter"			On	\
 	XIM		"Support for XIM (X Input Method) protocol"	On	\
 	UNICODE3	"Support Unicode codepoints above 65535"	On	\
+	ISO14755	"Support for extended ISO 14755 modes"		On	\
 	COMBINING	"Automatic composition of combining chars"	On	\
 	MENUBAR		"Support for the menu bar system"		On	\
 	RXVT_SCROLLBAR	"Support for the original rxvt scrollbar"	On	\
@@ -76,6 +77,11 @@ CONFIGURE_ARGS+=	--disable-xim
 # disable support for Unicode codepoints above 65535
 .if defined(WITHOUT_UNICODE3)
 CONFIGURE_ARGS+=	--disable-unicode3
+.endif
+
+# disable support for extended ISO 14755 modes
+.if defined(WITHOUT_ISO14755)
+CONFIGURE_ARGS+=	--disable-iso14755
 .endif
 
 # disable automatic composition of combining characters
