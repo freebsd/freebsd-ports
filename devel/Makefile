@@ -600,7 +600,7 @@
     SUBDIR += hs-terminfo
     SUBDIR += hs-test-framework
     SUBDIR += hs-test-framework-quickcheck2
-    SUBDIR += hs-test-framework-unit
+    SUBDIR += hs-test-framework-hunit
     SUBDIR += hs-testpack
     SUBDIR += hs-transformers
     SUBDIR += hs-unamb
