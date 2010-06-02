@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTVERSION=	1.2.11
 CATEGORIES=	hungarian textproc
 MASTER_SITES=	SF/${PORTNAME}/Hunspell/${PORTVERSION}:code \
 		SF/magyarispell/Magyar%20Ispell/${DICTVERSION}:data
@@ -19,12 +18,12 @@ COMMENT=	Improved spell-checker for Hungarian and other languages
 
 #EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-USE_GETTEXT=	yes
-USE_ICONV=	yes
+#USE_GETTEXT=	yes
+#USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ui --with-libintl-prefix=${PREFIX} --with-readline
+CONFIGURE_ARGS=	--with-ui --with-readline --disable-nls
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include LDFLAGS=-L${PREFIX}/lib
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude intl
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
@@ -32,7 +31,7 @@ ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 MAN1=		hunspell.1
 MAN4=		hunspell.4
 
-DICTVERSION=	1.4
+DICTVERSION=	1.6.1
 PORTDOCS=	README README.myspell
 
 .include <bsd.port.pre.mk>
