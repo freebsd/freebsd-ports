@@ -5533,11 +5533,11 @@ package-recursive: package
 
 # Show missing dependiencies
 missing:
-	@for dir in $$(${ALL-DEPENDS-LIST}); do \
-		THISORIGIN=$${dir##${PORTSDIR}/}; \
-		installed=$$(${PKG_INFO} -qO $${THISORIGIN}); \
-		if [ -z "$$installed" ]; then \
-			${ECHO_CMD} $$THISORIGIN; \
+	@_origins=$$(${PKG_INFO} -aoq); \
+	for dir in $$(${ALL-DEPENDS-LIST}); do \
+		_origin=$${dir##${PORTSDIR}/}; \
+		if ! $$(${ECHO_CMD} $${_origins} | ${GREP} -q $${_origin}); then \
+			${ECHO_CMD} $${_origin}; \
 		fi; \
 	done
 
