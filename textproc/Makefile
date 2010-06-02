@@ -1098,6 +1098,7 @@
     SUBDIR += ruby-xmlscan-old
     SUBDIR += ruby-xslt
     SUBDIR += ruby-xtemplate
+    SUBDIR += rubygem-augeas
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-ezamar
     SUBDIR += rubygem-ferret
