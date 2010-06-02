@@ -6598,6 +6598,7 @@ jffnms                          ports/net-mgmt/jffnms
 jfk                             ports/games/jfk
 jflex                           ports/java/jflex
 jfreechart                      ports/java/jfreechart
+jfsw                            ports/games/jfsw
 jftp                            ports/ftp/jftp
 jftpgw                          ports/ftp/jftpgw
 jggtrans                        ports/net-im/jggtrans
@@ -12713,6 +12714,7 @@ p5-Math-NumberCruncher          ports/math/p5-Math-NumberCruncher
 p5-Math-Pari                    ports/math/p5-Math-Pari
 p5-Math-Polygon                 ports/math/p5-Math-Polygon
 p5-Math-Polynomial-Solve        ports/math/p5-Math-Polynomial-Solve
+p5-Math-RPN                     ports/math/p5-Math-RPN
 p5-Math-Random                  ports/math/p5-Math-Random
 p5-Math-Random-ISAAC            ports/math/p5-Math-Random-ISAAC
 p5-Math-Random-ISAAC-XS         ports/math/p5-Math-Random-ISAAC-XS
@@ -16587,6 +16589,7 @@ p5-math-random-oo               ports/math/p5-Math-Random-OO
 p5-math-randomorg               ports/math/p5-Math-RandomOrg
 p5-math-round                   ports/math/p5-Math-Round
 p5-math-round-var               ports/math/p5-Math-Round-Var
+p5-math-rpn                     ports/math/p5-Math-RPN
 p5-math-sequence                ports/math/p5-Math-Sequence
 p5-math-series                  ports/math/p5-Math-Series
 p5-math-sigfigs                 ports/math/p5-Math-SigFigs
@@ -21198,6 +21201,7 @@ qalculate                       ports/math/qalculate
 qar-bufo                        ports/mail/qar-bufo
 qbittorrent-22                  ports/net-p2p/qbittorrent-22
 qbrew                           ports/misc/qbrew
+qbzr                            ports/devel/qbzr
 qca                             ports/devel/qca
 qca-cyrus-sasl                  ports/security/qca-cyrus-sasl
 qca-gnupg                       ports/security/qca-gnupg
@@ -21425,6 +21429,8 @@ quake3-rq3                      ports/games/quake3-rq3
 quake3-ut                       ports/games/quake3-ut
 quake3-wfa                      ports/games/quake3-wfa
 quakeforge                      ports/games/quakeforge
+quantis                         ports/security/quantis
+quantis-kmod                    ports/security/quantis-kmod
 quantlib                        ports/finance/quantlib
 quantumminigolf                 ports/games/quantumminigolf
 quaqut                          ports/games/quaqut
