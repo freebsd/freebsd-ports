@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fc55e396-6deb-11df-8b8e-000c29ba66d2">
+    <topic>mediawiki -- two security vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>mediawiki</name>
+        <range><lt>1.15.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Two security vulnerabilities were discovered:</p>
+        <blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2010-May/000091.html">
+          <p>Noncompliant CSS parsing behaviour in Internet Explorer
+            allows attackers to construct CSS strings which are treated
+            as safe by previous versions of MediaWiki, but are decoded
+            to unsafe strings by Internet Explorer.</p>
+          <p>A CSRF vulnerability was discovered in our login interface.
+            Although regular logins are protected as of 1.15.3,  it was
+            discovered that the account creation and password reset
+            reset features were not protected from CSRF. This could lead
+            to unauthorised access to private wikis.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/39922/</url>
+      <url>http://lists.wikimedia.org/pipermail/mediawiki-announce/2010-May/000091.html</url>
+    </references>
+    <dates>
+      <discovery>2010-05-28</discovery>
+      <entry>2010-06-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fcc39d22-5777-11df-bf33-001a92771ec2">
     <topic>redmine -- multiple vulnerabilities</topic>
     <affects>
