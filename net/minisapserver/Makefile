@@ -39,6 +39,10 @@ CONFIGURE_ARGS+=--disable-slp
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.x
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(prefix)/share/man|${MANPREFIX}/man|; \
 		s|$$(prefix)/share/doc/sapserver|${DOCSDIR}|; \
