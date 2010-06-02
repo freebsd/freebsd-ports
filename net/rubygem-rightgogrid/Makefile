@@ -8,8 +8,7 @@
 PORTNAME=	rightgogrid
 PORTVERSION=	0.1.0
 CATEGORIES=	net rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	rightscale
+MASTER_SITES=	RG
 DISTNAME=	right_gogrid-${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org

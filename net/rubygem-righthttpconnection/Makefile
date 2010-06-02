@@ -8,8 +8,7 @@
 PORTNAME=	righthttpconnection
 PORTVERSION=	1.2.4
 CATEGORIES=	net rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	rightaws
+MASTER_SITES=	RG
 DISTNAME=	right_http_connection-${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
