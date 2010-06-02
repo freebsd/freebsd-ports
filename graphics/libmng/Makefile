@@ -19,7 +19,7 @@ COMMENT=	Multiple-image Network Graphics (MNG) reference library
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		lcms:${PORTSDIR}/graphics/lcms
 
-OPTIONS=	MNG_OPTIMIZE "Use vendor's new optimization flags" no
+OPTIONS=	MNG_OPTIMIZE "Use vendor's new optimization flags" off
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ARGS+=	WITH_MNG_OPTIMIZE=${WITH_MNG_OPTIMIZE}
