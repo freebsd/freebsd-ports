@@ -164,12 +164,12 @@ libdata/pkgconfig/ogmjob.pc
 libdata/pkgconfig/ogmrip-gtk.pc
 libdata/pkgconfig/ogmrip.pc
 %%GUI_SUPPORT%%share/applications/ogmrip.desktop
-share/locale/ca/LC_MESSAGES/ogmrip.mo
 share/locale/cs/LC_MESSAGES/ogmrip.mo
 share/locale/de/LC_MESSAGES/ogmrip.mo
 share/locale/fr/LC_MESSAGES/ogmrip.mo
+share/locale/nb/LC_MESSAGES/ogmrip.mo
+share/locale/ru/LC_MESSAGES/ogmrip.mo
 share/locale/sk/LC_MESSAGES/ogmrip.mo
-share/locale/sv/LC_MESSAGES/ogmrip.mo
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-crop.glade
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-lavc.glade
 %%GUI_SUPPORT%%%%DATADIR%%/ogmrip-main.glade
