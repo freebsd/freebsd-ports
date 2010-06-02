@@ -20,11 +20,10 @@ COMMENT?=	The XSLT C library for GNOME
 .if !defined(REFERENCE_PORT)
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME?=	gnomehack gnometarget libxml2
-CONFIGURE_ARGS?= --with-html-dir=${PREFIX}/share/doc \
+CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -47,6 +46,7 @@ CONFIGURE_ARGS+=	--with-mem-debug
 
 .if defined(WITH_CRYPTO)
 LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
+USE_GETTEXT=	yes
 .else
 CONFIGURE_ARGS+=--without-crypto
 .endif
