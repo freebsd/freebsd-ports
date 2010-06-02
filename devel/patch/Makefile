@@ -21,8 +21,4 @@ USE_GMAKE=	yes
 MAN1=		gpatch.1
 PLIST_FILES=	bin/gpatch
 
-post-patch:
-	@${REINPLACE_CMD} -e 's!HAVE_SETMODE!HAVE_SETMODE_DISABLE!' \
-		${WRKSRC}/config.hin
-
 .include <bsd.port.mk>
