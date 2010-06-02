@@ -11,6 +11,7 @@
    SUBDIR += gnome-packagekit
    SUBDIR += hs-porte
    SUBDIR += jailaudit
+   SUBDIR += kpackagekit
    SUBDIR += kports
    SUBDIR += kports-qt4
    SUBDIR += lsknobs
