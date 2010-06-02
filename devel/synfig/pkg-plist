@@ -62,6 +62,7 @@ include/synfig-0.0/synfig/target_null.h
 include/synfig-0.0/synfig/target_null_tile.h
 include/synfig-0.0/synfig/target_scanline.h
 include/synfig-0.0/synfig/target_tile.h
+include/synfig-0.0/synfig/targetparam.h
 include/synfig-0.0/synfig/time.h
 include/synfig-0.0/synfig/timepointcollect.h
 include/synfig-0.0/synfig/transform.h
@@ -173,6 +174,8 @@ libdata/pkgconfig/synfig.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+share/locale/de/LC_MESSAGES/synfig.mo
+share/locale/it/LC_MESSAGES/synfig.mo
 share/locale/es/LC_MESSAGES/synfig.mo
 share/locale/fr/LC_MESSAGES/synfig.mo
 share/locale/ru/LC_MESSAGES/synfig.mo
