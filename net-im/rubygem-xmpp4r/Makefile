@@ -9,7 +9,7 @@ PORTNAME=	xmpp4r
 PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	net-im ruby
-MASTER_SITES=	http://download.gna.org/xmpp4r/
+MASTER_SITES=	RG
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	XMPP/Jabber library for Ruby
