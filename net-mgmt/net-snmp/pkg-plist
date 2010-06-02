@@ -4,6 +4,7 @@ bin/ipf-mod.pl
 bin/mib2c
 bin/mib2c-update
 bin/net-snmp-config
+bin/net-snmp-create-v3-user
 bin/snmpbulkget
 bin/snmpbulkwalk
 bin/snmpcheck
@@ -23,7 +24,7 @@ bin/snmptrap
 bin/snmpusm
 bin/snmpvacm
 bin/snmpwalk
-%%WITH_TKMIB%%bin/tkmib
+bin/tkmib
 bin/traptoemail
 @exec mkdir %D/etc/snmp 2>/dev/null || true
 include/net-snmp/agent/agent_callbacks.h
@@ -32,6 +33,7 @@ include/net-snmp/agent/agent_index.h
 include/net-snmp/agent/agent_module_config.h
 include/net-snmp/agent/agent_read_config.h
 include/net-snmp/agent/agent_registry.h
+include/net-snmp/agent/agent_sysORTable.h
 include/net-snmp/agent/agent_trap.h
 include/net-snmp/agent/all_helpers.h
 include/net-snmp/agent/auto_nlist.h
@@ -60,6 +62,7 @@ include/net-snmp/agent/snmp_agent.h
 include/net-snmp/agent/snmp_vars.h
 include/net-snmp/agent/stash_cache.h
 include/net-snmp/agent/stash_to_next.h
+include/net-snmp/agent/sysORTable.h
 include/net-snmp/agent/table.h
 include/net-snmp/agent/table_array.h
 include/net-snmp/agent/table_container.h
@@ -84,12 +87,14 @@ include/net-snmp/library/container_list_ssll.h
 include/net-snmp/library/container_null.h
 include/net-snmp/library/data_list.h
 include/net-snmp/library/default_store.h
+include/net-snmp/library/dir_utils.h
 include/net-snmp/library/factory.h
 include/net-snmp/library/fd_event_manager.h
 include/net-snmp/library/file_utils.h
 include/net-snmp/library/getopt.h
 include/net-snmp/library/int64.h
 include/net-snmp/library/keytools.h
+include/net-snmp/library/large_fd_set.h
 include/net-snmp/library/lcd_time.h
 include/net-snmp/library/md5.h
 include/net-snmp/library/mib.h
@@ -100,6 +105,7 @@ include/net-snmp/library/read_config.h
 include/net-snmp/library/scapi.h
 include/net-snmp/library/snmp-tc.h
 include/net-snmp/library/snmp.h
+include/net-snmp/library/snmpAliasDomain.h
 include/net-snmp/library/snmpCallbackDomain.h
 include/net-snmp/library/snmpTCPDomain.h
 %%WITH_IPV6%%include/net-snmp/library/snmpTCPIPv6Domain.h
@@ -125,6 +131,7 @@ include/net-snmp/library/system.h
 include/net-snmp/library/text_utils.h
 include/net-snmp/library/tools.h
 include/net-snmp/library/transform_oids.h
+include/net-snmp/library/types.h
 include/net-snmp/library/ucd_compat.h
 include/net-snmp/library/vacm.h
 include/net-snmp/library/winpipe.h
@@ -269,6 +276,7 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c.notify.conf
 %%DATADIR%%/mib2c.old-api.conf
 %%DATADIR%%/mib2c.perl.conf
+%%DATADIR%%/mib2c.raw-table.conf
 %%DATADIR%%/mib2c.scalar.conf
 %%DATADIR%%/mib2c.table_data.conf
 %%DATADIR%%/mib2c-data/default-mfd-top.m2c
@@ -338,7 +346,7 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c-data/syntax-StorageType-dependencies.m2i
 %%DATADIR%%/mib2c-data/syntax-TestAndIncr-get.m2i
 %%DATADIR%%/mibs/AGENTX-MIB.txt
-%%WITH_EVENT-MIB%%%%DATADIR%%/mibs/DISMAN-EVENT-MIB.txt
+%%DATADIR%%/mibs/DISMAN-EVENT-MIB.txt
 %%DATADIR%%/mibs/DISMAN-SCHEDULE-MIB.txt
 %%DATADIR%%/mibs/DISMAN-SCRIPT-MIB.txt
 %%DATADIR%%/mibs/EtherLike-MIB.txt
@@ -359,14 +367,15 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/IPV6-TC.txt
 %%DATADIR%%/mibs/IPV6-TCP-MIB.txt
 %%DATADIR%%/mibs/IPV6-UDP-MIB.txt
-%%WITH_MTA_SENDMAIL%%%%DATADIR%%/mibs/MTA-MIB.txt
+%%DATADIR%%/mibs/MTA-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-AGENT-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-EXAMPLES-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-EXTEND-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-MIB.txt
+%%DATADIR%%/mibs/NET-SNMP-PASS-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-TC.txt
 %%DATADIR%%/mibs/NET-SNMP-VACM-MIB.txt
-%%WITH_MTA_SENDMAIL%%%%DATADIR%%/mibs/NETWORK-SERVICES-MIB.txt
+%%DATADIR%%/mibs/NETWORK-SERVICES-MIB.txt
 %%DATADIR%%/mibs/NOTIFICATION-LOG-MIB.txt
 %%DATADIR%%/mibs/RFC-1215.txt
 %%DATADIR%%/mibs/RFC1155-SMI.txt
