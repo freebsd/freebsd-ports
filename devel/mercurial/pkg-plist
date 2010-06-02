@@ -65,6 +65,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/convert/transport.py
 %%PYTHON_SITELIBDIR%%/hgext/convert/transport.pyc
 %%PYTHON_SITELIBDIR%%/hgext/convert/transport.pyo
+%%PYTHON_SITELIBDIR%%/hgext/eol.py
+%%PYTHON_SITELIBDIR%%/hgext/eol.pyc
+%%PYTHON_SITELIBDIR%%/hgext/eol.pyo
 %%PYTHON_SITELIBDIR%%/hgext/extdiff.py
 %%PYTHON_SITELIBDIR%%/hgext/extdiff.pyc
 %%PYTHON_SITELIBDIR%%/hgext/extdiff.pyo
