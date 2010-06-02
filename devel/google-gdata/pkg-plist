@@ -1,0 +1,74 @@
+@comment $FreeBSD$
+lib/mono/GData-Sharp/Google.GData.AccessControl.dll
+lib/mono/GData-Sharp/Google.GData.Apps.dll
+lib/mono/GData-Sharp/Google.GData.Blogger.dll
+lib/mono/GData-Sharp/Google.GData.Calendar.dll
+lib/mono/GData-Sharp/Google.GData.Client.dll
+lib/mono/GData-Sharp/Google.GData.CodeSearch.dll
+lib/mono/GData-Sharp/Google.GData.Contacts.dll
+lib/mono/GData-Sharp/Google.GData.Documents.dll
+lib/mono/GData-Sharp/Google.GData.Extensions.dll
+lib/mono/GData-Sharp/Google.GData.GoogleBase.dll
+lib/mono/GData-Sharp/Google.GData.Health.dll
+lib/mono/GData-Sharp/Google.GData.Photos.dll
+lib/mono/GData-Sharp/Google.GData.Spreadsheets.dll
+lib/mono/GData-Sharp/Google.GData.YouTube.dll
+lib/mono/gac/Google.GData.AccessControl/1.4.0.2__b4b8eb9a7afc8328/Google.GData.AccessControl.dll
+lib/mono/gac/Google.GData.Apps/1.4.0.2__e6feebfe441b89cb/Google.GData.Apps.dll
+lib/mono/gac/Google.GData.Blogger/1.4.0.2__6f8943d33947d761/Google.GData.Blogger.dll
+lib/mono/gac/Google.GData.Calendar/1.4.0.2__aa6748391206b888/Google.GData.Calendar.dll
+lib/mono/gac/Google.GData.Client/1.4.0.2__04a59ca9b0273830/Google.GData.Client.dll
+lib/mono/gac/Google.GData.Client/1.4.0.2__04a59ca9b0273830/Google.GData.Client.dll.config
+lib/mono/gac/Google.GData.Client/1.4.0.2__04a59ca9b0273830/libz.so.1.2.3
+lib/mono/gac/Google.GData.CodeSearch/1.4.0.2__cac30bb7c678972d/Google.GData.CodeSearch.dll
+lib/mono/gac/Google.GData.Contacts/1.4.0.2__7e065189dd4b982f/Google.GData.Contacts.dll
+lib/mono/gac/Google.GData.Documents/1.4.0.2__099e9a853da5b089/Google.GData.Documents.dll
+lib/mono/gac/Google.GData.Extensions/1.4.0.2__0b4c5df2ebf20876/Google.GData.Extensions.dll
+lib/mono/gac/Google.GData.GoogleBase/1.4.0.2__b361faa2ad5bd3db/Google.GData.GoogleBase.dll
+lib/mono/gac/Google.GData.Health/1.4.0.2__7dc2246c3cef9211/Google.GData.Health.dll
+lib/mono/gac/Google.GData.Photos/1.4.0.2__a25b50f2e8e3887a/Google.GData.Photos.dll
+lib/mono/gac/Google.GData.Spreadsheets/1.4.0.2__3f77feb76ff0d9a1/Google.GData.Spreadsheets.dll
+lib/mono/gac/Google.GData.YouTube/1.4.0.2__af04a32718ae8833/Google.GData.YouTube.dll
+libdata/pkgconfig/gdata-sharp-acl.pc
+libdata/pkgconfig/gdata-sharp-apps.pc
+libdata/pkgconfig/gdata-sharp-base.pc
+libdata/pkgconfig/gdata-sharp-blogger.pc
+libdata/pkgconfig/gdata-sharp-calendar.pc
+libdata/pkgconfig/gdata-sharp-codesearch.pc
+libdata/pkgconfig/gdata-sharp-contacts.pc
+libdata/pkgconfig/gdata-sharp-core.pc
+libdata/pkgconfig/gdata-sharp-documents.pc
+libdata/pkgconfig/gdata-sharp-health.pc
+libdata/pkgconfig/gdata-sharp-photos.pc
+libdata/pkgconfig/gdata-sharp-spreadsheets.pc
+libdata/pkgconfig/gdata-sharp-youtube.pc
+@dirrm lib/pkgconfig
+@dirrm lib/mono/gac/Google.GData.YouTube/1.4.0.2__af04a32718ae8833
+@dirrm lib/mono/gac/Google.GData.YouTube
+@dirrm lib/mono/gac/Google.GData.Spreadsheets/1.4.0.2__3f77feb76ff0d9a1
+@dirrm lib/mono/gac/Google.GData.Spreadsheets
+@dirrm lib/mono/gac/Google.GData.Photos/1.4.0.2__a25b50f2e8e3887a
+@dirrm lib/mono/gac/Google.GData.Photos
+@dirrm lib/mono/gac/Google.GData.Health/1.4.0.2__7dc2246c3cef9211
+@dirrm lib/mono/gac/Google.GData.Health
+@dirrm lib/mono/gac/Google.GData.GoogleBase/1.4.0.2__b361faa2ad5bd3db
+@dirrm lib/mono/gac/Google.GData.GoogleBase
+@dirrm lib/mono/gac/Google.GData.Extensions/1.4.0.2__0b4c5df2ebf20876
+@dirrm lib/mono/gac/Google.GData.Extensions
+@dirrm lib/mono/gac/Google.GData.Documents/1.4.0.2__099e9a853da5b089
+@dirrm lib/mono/gac/Google.GData.Documents
+@dirrm lib/mono/gac/Google.GData.Contacts/1.4.0.2__7e065189dd4b982f
+@dirrm lib/mono/gac/Google.GData.Contacts
+@dirrm lib/mono/gac/Google.GData.CodeSearch/1.4.0.2__cac30bb7c678972d
+@dirrm lib/mono/gac/Google.GData.CodeSearch
+@dirrm lib/mono/gac/Google.GData.Client/1.4.0.2__04a59ca9b0273830
+@dirrm lib/mono/gac/Google.GData.Client
+@dirrm lib/mono/gac/Google.GData.Calendar/1.4.0.2__aa6748391206b888
+@dirrm lib/mono/gac/Google.GData.Calendar
+@dirrm lib/mono/gac/Google.GData.Blogger/1.4.0.2__6f8943d33947d761
+@dirrm lib/mono/gac/Google.GData.Blogger
+@dirrm lib/mono/gac/Google.GData.Apps/1.4.0.2__e6feebfe441b89cb
+@dirrm lib/mono/gac/Google.GData.Apps
+@dirrm lib/mono/gac/Google.GData.AccessControl/1.4.0.2__b4b8eb9a7afc8328
+@dirrm lib/mono/gac/Google.GData.AccessControl
+@dirrm lib/mono/GData-Sharp
