@@ -27,4 +27,20 @@ Then restart Apache: 'apachectl graceful'
 
 Please visit 'http://localhost/gallery3/' in a
 web-browser and follow the configuration instructions.
+
+*****************************************************************
+
+Upgrading: http://codex.gallery2.org/Gallery3:Upgrading
+
+Note: You can upgrade from Beta 1, 2 or 3 (but not from earlier releases -- sorry!) 
+
+Upgrading is really easy! Unpack the new version on top of the old one to replace the existing files 
+and then either browse to:
+
+	http://example.com/gallery3/index.php/upgrader
+
+(except use your real domain name) or if you have shell access, run:
+
+	php index.php upgrade
+
 *****************************************************************
