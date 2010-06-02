@@ -1,0 +1,13 @@
+This command-line utility is intended to provide quick access to current
+weather conditions and forecasts. Presently, it is capable of returning data
+for localities throughout the USA by retrieving and formatting decoded METARs
+(Meteorological Aerodrome Reports) from NOAA (the USA National Oceanic and
+Atmospheric Administration) and forecasts from NWS (the USA National Weather
+Service). The tool is written to function in the same spirit as other command-
+line informational utilities like cal(1), calendar(1) and dict(1). It can
+retrieve arbitrary weather data via specific command-line switches (station
+ID, city, state), or aliases can be configured system wide and on a per-user
+basis. It can be freely used and redistributed under the terms of a BSD-like
+License. 
+
+WWW:	http://fungi.yuggoth.org/weather/
