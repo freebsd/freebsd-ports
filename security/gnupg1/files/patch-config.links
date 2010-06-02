@@ -13,3 +13,14 @@
      sparc9*-*-*     | \
      sparc64*-*-*    | \
      ultrasparc*-*-* )
+@@ -227,8 +227,8 @@
+ 	path="powerpc32"
+ 	;;
+ 
+-    powerpc*-*-netbsd* | powerpc*-*-openbsd*)
+-       echo '/* configured for {Open,Net}BSD on powerpc */' >>./mpi/asm-syntax.h
++    powerpc*-*-freebsd* | powerpc*-*-netbsd* | powerpc*-*-openbsd*)
++       echo '/* configured for {Free,Open,Net}BSD on powerpc */' >>./mpi/asm-syntax.h
+        echo '#define ELF_SYNTAX'                 >>./mpi/asm-syntax.h
+        cat   $srcdir/mpi/powerpc32/syntax.h	 >>./mpi/asm-syntax.h
+        mpi_sflags="-Wa,-mppc"
