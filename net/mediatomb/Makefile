@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	mediatomb
-PORTVERSION=	0.11.0
-PORTREVISION=	4
+PORTVERSION=	0.12.1
 CATEGORIES=	net multimedia
 MASTER_SITES=	SF/${PORTNAME}/MediaTomb/${PORTVERSION}
 
 MAINTAINER=	leo@mediatomb.cc
 COMMENT=	UPnP AV MediaServer
+
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 MAN1=		mediatomb.1
 GNU_CONFIGURE=	yes
@@ -24,7 +25,6 @@ CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		CFLAGS="${CFLAGS}"
-LIB_DEPENDS+=	expat:${PORTSDIR}/textproc/expat2
 USE_RC_SUBR=	mediatomb.sh
 
 # --- configurable variables ---
@@ -54,6 +54,7 @@ OPTIONS=	SQLITE3 "sqlite3 support" on \
 		LIBEXIF "libexif support" on \
 		TAGLIB "taglib support" on \
 		FFMPEG "ffmpeg metadata extraction support" on \
+		FFMPEGTHUMBNAILER "ffmpeg thumbnailer support" on \
 		EXTERNAL_TRANSCODING "external transcoding support" on \
 		CURL "curl support" on \
 		ID3LIB "id3lib support" off \
@@ -95,8 +96,8 @@ CONFIGURE_ARGS+=	--disable-libjs
 
 .if defined(WITH_LIBEXIF)
 CONFIGURE_ARGS+=	--enable-libexif \
-			--with-exif-h="${LOCALBASE}/include" \
-			--with-exif-libs="${LOCALBASE}/lib"
+			--with-libexif-h="${LOCALBASE}/include" \
+			--with-libexif-libs="${LOCALBASE}/lib"
 LIB_DEPENDS+=		exif:${PORTSDIR}/graphics/libexif
 .else
 CONFIGURE_ARGS+=	--disable-libexif
@@ -106,6 +107,15 @@ CONFIGURE_ARGS+=	--disable-libexif
 CONFIGURE_ARGS+=	--enable-external-transcoding
 .else
 CONFIGURE_ARGS+=	--disable-external-transcoding
+.endif
+
+.if defined(WITH_FFMPEGTHUMBNAILER)
+CONFIGURE_ARGS+=	--enable-ffmpegthumbnailer \
+			--with-ffmpegthumbnailer-h="${LOCALBASE}/include" \
+			--with-ffmpegthumbnailer-libs="${LOCALBASE}/lib"
+LIB_DEPENDS+=		ffmpegthumbnailer:${PORTSDIR}/multimedia/ffmpegthumbnailer
+.else
+CONFIGURE_ARGS+=	--disable-ffmpegthumbnailer
 .endif
 
 # CURL is only useful in combination with EXTERNAL_TRANSCODING
@@ -122,9 +132,7 @@ IGNORE=	cannot be compiled with both, ffmpeg and libextractor. Please (re)run 'm
 .endif
 
 .if defined(WITH_FFMPEG)
-CONFIGURE_ARGS+=	--enable-ffmpeg \
-			--with-ffmpeg-h="${LOCALBASE}/include" \
-			--with-ffmpeg-libs="${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--enable-ffmpeg
 LIB_DEPENDS+=		avformat:${PORTSDIR}/multimedia/ffmpeg
 .else
 CONFIGURE_ARGS+=	--disable-ffmpeg
