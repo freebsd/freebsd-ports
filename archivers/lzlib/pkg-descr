@@ -1,0 +1,8 @@
+The lzlib compression library provides in-memory LZMA compression
+and decompression functions, including integrity checking of the
+uncompressed data.  The compressed data format used by the library
+is the lzip format.
+
+WWW: http://www.nongnu.org/lzip/lzlib.html
+
+Albert Vernon <f3cun3c02@sneakemail.com>
