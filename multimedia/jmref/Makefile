@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/JM
 
 PLIST_FILES=	bin/ldecod bin/lencod \
 		bin/rtp_loss bin/rtpdump
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ldecod.exe ${PREFIX}/bin/ldecod
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/lencod.exe ${PREFIX}/bin/lencod
@@ -28,4 +27,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rtpdump.exe ${PREFIX}/bin/rtpdump
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.x
+.endif
+
 .include <bsd.port.post.mk>
