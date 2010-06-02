@@ -7,7 +7,7 @@
 
 PORTNAME=	liblqr-1
 DISTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://liblqr.wdfiles.com/local--files/en:download-page/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 pkgconfig
+USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
