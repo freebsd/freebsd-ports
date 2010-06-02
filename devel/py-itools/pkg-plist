@@ -3,28 +3,19 @@ bin/igettext-build.py
 bin/igettext-extract.py
 bin/igettext-merge.py
 bin/ipkg-build.py
-bin/ipkg-cache-list.py
 bin/ipkg-copyright.py
 bin/ipkg-info.py
-bin/ipkg-install.py
 bin/ipkg-quality.py
 bin/ipkg-update-locale.py
 bin/ixapian-inspect.py
-%%PYTHON_SITELIBDIR%%/itools/.gitignore
 %%PYTHON_SITELIBDIR%%/itools/CREDITS
 %%PYTHON_SITELIBDIR%%/itools/LICENSE.txt
 %%PYTHON_SITELIBDIR%%/itools/MANIFEST
 %%PYTHON_SITELIBDIR%%/itools/README.txt
-%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.0
-%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.1
-%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.2
-%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.3
-%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.4
-%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.5
-%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.6
-%%PYTHON_SITELIBDIR%%/itools/UPGRADE-0.60.0
-%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.7
-%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.60.8
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.61.0
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.61.1
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.61.2
+%%PYTHON_SITELIBDIR%%/itools/UPGRADE-0.61.0
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyo
@@ -58,9 +49,15 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/core/freeze.py
 %%PYTHON_SITELIBDIR%%/itools/core/freeze.pyc
 %%PYTHON_SITELIBDIR%%/itools/core/freeze.pyo
+%%PYTHON_SITELIBDIR%%/itools/core/lazy.py
+%%PYTHON_SITELIBDIR%%/itools/core/lazy.pyc
+%%PYTHON_SITELIBDIR%%/itools/core/lazy.pyo
 %%PYTHON_SITELIBDIR%%/itools/core/mimetypes_.py
 %%PYTHON_SITELIBDIR%%/itools/core/mimetypes_.pyc
 %%PYTHON_SITELIBDIR%%/itools/core/mimetypes_.pyo
+%%PYTHON_SITELIBDIR%%/itools/core/odict.py
+%%PYTHON_SITELIBDIR%%/itools/core/odict.pyc
+%%PYTHON_SITELIBDIR%%/itools/core/odict.pyo
 %%PYTHON_SITELIBDIR%%/itools/core/py25.py
 %%PYTHON_SITELIBDIR%%/itools/core/py25.pyc
 %%PYTHON_SITELIBDIR%%/itools/core/py25.pyo
@@ -70,6 +67,9 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/core/subprocess_.py
 %%PYTHON_SITELIBDIR%%/itools/core/subprocess_.pyc
 %%PYTHON_SITELIBDIR%%/itools/core/subprocess_.pyo
+%%PYTHON_SITELIBDIR%%/itools/core/thingy.py
+%%PYTHON_SITELIBDIR%%/itools/core/thingy.pyc
+%%PYTHON_SITELIBDIR%%/itools/core/thingy.pyo
 %%PYTHON_SITELIBDIR%%/itools/core/utils.py
 %%PYTHON_SITELIBDIR%%/itools/core/utils.pyc
 %%PYTHON_SITELIBDIR%%/itools/core/utils.pyo
@@ -155,6 +155,28 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/doc/UPGRADE-0.16.3
 %%PYTHON_SITELIBDIR%%/itools/doc/UPGRADE-0.20.0
 %%PYTHON_SITELIBDIR%%/itools/doc/UPGRADE-0.50.0
+%%PYTHON_SITELIBDIR%%/itools/doc/RELEASE-0.60.0
+%%PYTHON_SITELIBDIR%%/itools/doc/RELEASE-0.60.1
+%%PYTHON_SITELIBDIR%%/itools/doc/RELEASE-0.60.2
+%%PYTHON_SITELIBDIR%%/itools/doc/RELEASE-0.60.3
+%%PYTHON_SITELIBDIR%%/itools/doc/RELEASE-0.60.4
+%%PYTHON_SITELIBDIR%%/itools/doc/RELEASE-0.60.5
+%%PYTHON_SITELIBDIR%%/itools/doc/RELEASE-0.60.6
+%%PYTHON_SITELIBDIR%%/itools/doc/RELEASE-0.60.7
+%%PYTHON_SITELIBDIR%%/itools/doc/RELEASE-0.60.8
+%%PYTHON_SITELIBDIR%%/itools/doc/UPGRADE-0.60.0
+%%PYTHON_SITELIBDIR%%/itools/fs/__init__.py
+%%PYTHON_SITELIBDIR%%/itools/fs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/itools/fs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/itools/fs/common.py
+%%PYTHON_SITELIBDIR%%/itools/fs/common.pyc
+%%PYTHON_SITELIBDIR%%/itools/fs/common.pyo
+%%PYTHON_SITELIBDIR%%/itools/fs/lfs.py
+%%PYTHON_SITELIBDIR%%/itools/fs/lfs.pyc
+%%PYTHON_SITELIBDIR%%/itools/fs/lfs.pyo
+%%PYTHON_SITELIBDIR%%/itools/fs/vfs.py
+%%PYTHON_SITELIBDIR%%/itools/fs/vfs.pyc
+%%PYTHON_SITELIBDIR%%/itools/fs/vfs.pyo
 %%PYTHON_SITELIBDIR%%/itools/gettext/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/gettext/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/gettext/__init__.pyo
@@ -240,6 +262,7 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/http/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/http/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/http/__init__.pyo
+%%PYTHON_SITELIBDIR%%/itools/http/TODO
 %%PYTHON_SITELIBDIR%%/itools/http/cookies.py
 %%PYTHON_SITELIBDIR%%/itools/http/cookies.pyc
 %%PYTHON_SITELIBDIR%%/itools/http/cookies.pyo
@@ -252,18 +275,15 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/http/headers.py
 %%PYTHON_SITELIBDIR%%/itools/http/headers.pyc
 %%PYTHON_SITELIBDIR%%/itools/http/headers.pyo
-%%PYTHON_SITELIBDIR%%/itools/http/message.py
-%%PYTHON_SITELIBDIR%%/itools/http/message.pyc
-%%PYTHON_SITELIBDIR%%/itools/http/message.pyo
 %%PYTHON_SITELIBDIR%%/itools/http/parsing.py
 %%PYTHON_SITELIBDIR%%/itools/http/parsing.pyc
 %%PYTHON_SITELIBDIR%%/itools/http/parsing.pyo
-%%PYTHON_SITELIBDIR%%/itools/http/request.py
-%%PYTHON_SITELIBDIR%%/itools/http/request.pyc
-%%PYTHON_SITELIBDIR%%/itools/http/request.pyo
-%%PYTHON_SITELIBDIR%%/itools/http/response.py
-%%PYTHON_SITELIBDIR%%/itools/http/response.pyc
-%%PYTHON_SITELIBDIR%%/itools/http/response.pyo
+%%PYTHON_SITELIBDIR%%/itools/http/server.py
+%%PYTHON_SITELIBDIR%%/itools/http/server.pyc
+%%PYTHON_SITELIBDIR%%/itools/http/server.pyo
+%%PYTHON_SITELIBDIR%%/itools/http/utils.py
+%%PYTHON_SITELIBDIR%%/itools/http/utils.pyc
+%%PYTHON_SITELIBDIR%%/itools/http/utils.pyo
 %%PYTHON_SITELIBDIR%%/itools/i18n/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/i18n/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/i18n/__init__.pyo
@@ -309,6 +329,12 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/locale/locale.pot
 %%PYTHON_SITELIBDIR%%/itools/locale/zh.mo
 %%PYTHON_SITELIBDIR%%/itools/locale/zh.po
+%%PYTHON_SITELIBDIR%%/itools/log/__init__.py
+%%PYTHON_SITELIBDIR%%/itools/log/__init__.pyc
+%%PYTHON_SITELIBDIR%%/itools/log/__init__.pyo
+%%PYTHON_SITELIBDIR%%/itools/log/log.py
+%%PYTHON_SITELIBDIR%%/itools/log/log.pyc
+%%PYTHON_SITELIBDIR%%/itools/log/log.pyo
 %%PYTHON_SITELIBDIR%%/itools/odf/OpenDocument-schema-v1.1.rng
 %%PYTHON_SITELIBDIR%%/itools/odf/OpenDocument-strict-schema-v1.1.rng
 %%PYTHON_SITELIBDIR%%/itools/odf/__init__.py
@@ -375,9 +401,6 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/pkg/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/pkg/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/pkg/__init__.pyo
-%%PYTHON_SITELIBDIR%%/itools/pkg/distribution.py
-%%PYTHON_SITELIBDIR%%/itools/pkg/distribution.pyc
-%%PYTHON_SITELIBDIR%%/itools/pkg/distribution.pyo
 %%PYTHON_SITELIBDIR%%/itools/pkg/handlers.py
 %%PYTHON_SITELIBDIR%%/itools/pkg/handlers.pyc
 %%PYTHON_SITELIBDIR%%/itools/pkg/handlers.pyo
@@ -390,9 +413,6 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/pkg/packages_db.py
 %%PYTHON_SITELIBDIR%%/itools/pkg/packages_db.pyc
 %%PYTHON_SITELIBDIR%%/itools/pkg/packages_db.pyo
-%%PYTHON_SITELIBDIR%%/itools/pkg/repository.py
-%%PYTHON_SITELIBDIR%%/itools/pkg/repository.pyc
-%%PYTHON_SITELIBDIR%%/itools/pkg/repository.pyo
 %%PYTHON_SITELIBDIR%%/itools/pkg/utils.py
 %%PYTHON_SITELIBDIR%%/itools/pkg/utils.pyc
 %%PYTHON_SITELIBDIR%%/itools/pkg/utils.pyo
@@ -425,6 +445,11 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/rss/rss.pyc
 %%PYTHON_SITELIBDIR%%/itools/rss/rss.pyo
 %%PYTHON_SITELIBDIR%%/itools/setup.conf
+%%PYTHON_SITELIBDIR%%/itools/soup/__init__.py
+%%PYTHON_SITELIBDIR%%/itools/soup/__init__.pyc
+%%PYTHON_SITELIBDIR%%/itools/soup/__init__.pyo
+%%PYTHON_SITELIBDIR%%/itools/soup/soup.c
+%%PYTHON_SITELIBDIR%%/itools/soup/soup.so
 %%PYTHON_SITELIBDIR%%/itools/srx/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/srx/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/srx/__init__.pyo
@@ -470,21 +495,6 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/uri/uri.pyc
 %%PYTHON_SITELIBDIR%%/itools/uri/uri.pyo
 %%PYTHON_SITELIBDIR%%/itools/version.txt
-%%PYTHON_SITELIBDIR%%/itools/vfs/__init__.py
-%%PYTHON_SITELIBDIR%%/itools/vfs/__init__.pyc
-%%PYTHON_SITELIBDIR%%/itools/vfs/__init__.pyo
-%%PYTHON_SITELIBDIR%%/itools/vfs/archive.py
-%%PYTHON_SITELIBDIR%%/itools/vfs/archive.pyc
-%%PYTHON_SITELIBDIR%%/itools/vfs/archive.pyo
-%%PYTHON_SITELIBDIR%%/itools/vfs/filename.py
-%%PYTHON_SITELIBDIR%%/itools/vfs/filename.pyc
-%%PYTHON_SITELIBDIR%%/itools/vfs/filename.pyo
-%%PYTHON_SITELIBDIR%%/itools/vfs/folder.py
-%%PYTHON_SITELIBDIR%%/itools/vfs/folder.pyc
-%%PYTHON_SITELIBDIR%%/itools/vfs/folder.pyo
-%%PYTHON_SITELIBDIR%%/itools/vfs/vfs.py
-%%PYTHON_SITELIBDIR%%/itools/vfs/vfs.pyc
-%%PYTHON_SITELIBDIR%%/itools/vfs/vfs.pyo
 %%PYTHON_SITELIBDIR%%/itools/web/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/web/__init__.pyc
 %%PYTHON_SITELIBDIR%%/itools/web/__init__.pyo
@@ -581,6 +591,7 @@ bin/ixapian-inspect.py
 @dirrm %%PYTHON_SITELIBDIR%%/itools/csv
 @dirrm %%PYTHON_SITELIBDIR%%/itools/datatypes
 @dirrm %%PYTHON_SITELIBDIR%%/itools/doc
+@dirrm %%PYTHON_SITELIBDIR%%/itools/fs
 @dirrm %%PYTHON_SITELIBDIR%%/itools/gettext
 @dirrm %%PYTHON_SITELIBDIR%%/itools/git
 @dirrm %%PYTHON_SITELIBDIR%%/itools/handlers
@@ -589,6 +600,7 @@ bin/ixapian-inspect.py
 @dirrm %%PYTHON_SITELIBDIR%%/itools/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/itools/ical
 @dirrm %%PYTHON_SITELIBDIR%%/itools/locale
+@dirrm %%PYTHON_SITELIBDIR%%/itools/log
 @dirrm %%PYTHON_SITELIBDIR%%/itools/odf
 @dirrm %%PYTHON_SITELIBDIR%%/itools/office
 @dirrm %%PYTHON_SITELIBDIR%%/itools/pdf
@@ -597,11 +609,11 @@ bin/ixapian-inspect.py
 @dirrm %%PYTHON_SITELIBDIR%%/itools/relaxng
 @dirrm %%PYTHON_SITELIBDIR%%/itools/rest
 @dirrm %%PYTHON_SITELIBDIR%%/itools/rss
+@dirrm %%PYTHON_SITELIBDIR%%/itools/soup
 @dirrm %%PYTHON_SITELIBDIR%%/itools/srx
 @dirrm %%PYTHON_SITELIBDIR%%/itools/stl
 @dirrm %%PYTHON_SITELIBDIR%%/itools/tmx
 @dirrm %%PYTHON_SITELIBDIR%%/itools/uri
-@dirrm %%PYTHON_SITELIBDIR%%/itools/vfs
 @dirrm %%PYTHON_SITELIBDIR%%/itools/web
 @dirrm %%PYTHON_SITELIBDIR%%/itools/workflow
 @dirrm %%PYTHON_SITELIBDIR%%/itools/xapian
