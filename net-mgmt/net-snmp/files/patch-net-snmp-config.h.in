@@ -1,15 +1,6 @@
---- include/net-snmp/net-snmp-config.h.in.orig	2008-07-28 20:41:40.000000000 +0900
-+++ include/net-snmp/net-snmp-config.h.in	2009-01-25 22:15:35.000000000 +0900
-@@ -126,7 +126,7 @@
- #undef STRUCT_SIGACTION_HAS_SA_SIGACTION
- 
- /* Does struct tm have a tm_gmtoff field? */
--#undef STRUCT_TM_HAS_TM_GMTOFFF
-+#undef STRUCT_TM_HAS_TM_GMTOFF
- 
- /* Does struct sockaddr have a sa_len field? */
- #undef STRUCT_SOCKADDR_HAS_SA_LEN
-@@ -1564,7 +1564,7 @@
+--- include/net-snmp/net-snmp-config.h.in.orig	2010-05-31 22:08:28.000000000 -0300
++++ include/net-snmp/net-snmp-config.h.in	2010-05-31 22:09:31.000000000 -0300
+@@ -1721,7 +1721,7 @@
  
  #define NETSNMP_EXCACHETIME 30
  #define NETSNMP_CACHEFILE ".snmp-exec-cache"

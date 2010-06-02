@@ -1,11 +1,11 @@
---- Makefile.in.orig	2007-06-09 05:32:56.000000000 +0900
-+++ Makefile.in	2008-03-25 21:10:08.842515763 +0900
-@@ -16,7 +16,7 @@
- INSTALLHEADERS=version.h
+--- Makefile.in.orig	2008-09-09 17:27:23.000000000 -0300
++++ Makefile.in	2010-06-02 14:21:34.000000000 -0300
+@@ -17,7 +17,7 @@
  INCLUDESUBDIR=system
  INCLUDESUBDIRHEADERS= aix.h bsd.h bsdi3.h bsdi4.h bsdi.h cygwin.h \
--	darwin.h darwin7.h darwin8.h darwin9.h freebsd5.h freebsd6.h \
-+	darwin.h darwin7.h darwin8.h darwin9.h freebsd5.h freebsd6.h freebsd7.h freebsd8.h freebsd9.h \
- 	dynix.h freebsd2.h freebsd3.h freebsd4.h freebsd.h generic.h hpux.h \
- 	irix.h linux.h mingw32.h mips.h netbsd.h openbsd.h osf5.h \
+ 	darwin.h darwin7.h darwin8.h darwin9.h dragonfly.h dynix.h \
+-	freebsd2.h freebsd3.h freebsd4.h freebsd5.h freebsd6.h freebsd.h \
++	freebsd2.h freebsd3.h freebsd4.h freebsd5.h freebsd6.h freebsd7.h freebsd8.h freebsd9.h freebsd.h \
+ 	generic.h \
+ 	hpux.h irix.h linux.h mingw32.h mips.h netbsd.h openbsd.h osf5.h \
  	solaris2.3.h solaris2.4.h solaris2.5.h solaris2.6.h \

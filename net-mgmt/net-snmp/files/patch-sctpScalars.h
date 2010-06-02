@@ -1,11 +1,11 @@
---- agent/mibgroup/sctp-mib/sctpScalars.h.orig	2009-01-23 23:43:37.000000000 +0900
-+++ agent/mibgroup/sctp-mib/sctpScalars.h	2009-01-23 23:44:12.000000000 +0900
-@@ -7,6 +7,8 @@
+--- agent/mibgroup/sctp-mib/sctpScalars.h.orig	2009-04-08 12:29:04.000000000 -0300
++++ agent/mibgroup/sctp-mib/sctpScalars.h	2010-06-01 11:02:56.000000000 -0300
+@@ -7,7 +7,7 @@
  config_require(sctp-mib/sctpScalars_common)
  #if defined( linux )
  config_require(sctp-mib/sctpScalars_linux)
-+#elif defined ( freebsd7 )
-+config_require(sctp-mib/sctpScalars_freebsd)
+-#elif defined( freebsd8 ) || defined ( freebsd7 )
++#elif defined( freebsd9 ) || defined( freebsd8 ) || defined ( freebsd7 )
+ config_require(sctp-mib/sctpScalars_freebsd)	 
  #else
  /*
-  * couldn't determine the correct file!
