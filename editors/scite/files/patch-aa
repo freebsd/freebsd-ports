@@ -1,33 +1,44 @@
---- makefile.orig	2010-03-13 20:41:15.000000000 -0500
-+++ makefile	2010-04-05 07:57:38.000000000 -0400
-@@ -5,7 +5,7 @@
+--- makefile.orig	2010-05-31 23:35:36.000000000 -0400
++++ makefile	2010-06-01 18:35:04.000000000 -0400
+@@ -5,20 +5,20 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
  .SUFFIXES: .cxx .o .h .a .c
+-ifdef CLANG
+-CC = clang
+-CCOMP = clang
+-else
 -CC = g++
+-CCOMP = gcc
+-endif
++#ifdef CLANG
++#CC = clang
++#CCOMP = clang
++#else
 +#CC = g++
++#CCOMP = gcc
++#endif
  AR = ar
  
- # If explicit setting of GTK1 or GTK2 then use that else look for
-@@ -26,7 +26,7 @@
+ # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
  CONFIGFLAGS:=$(shell pkg-config --cflags gtk+-2.0)
  CONFIGLIB:=$(shell pkg-config --libs gtk+-2.0 gthread-2.0)
  CONFIGTHREADS:=
 -gnomeprefix:=$(shell pkg-config --variable=prefix gtk+-2.0 2>/dev/null)
 +gnomeprefix:=$(PREFIX)
- else
- CONFIGFLAGS:=$(shell gtk-config --cflags)
- CONFIGLIB:=$(shell gtk-config --libs)
-@@ -76,12 +76,12 @@
+ ifndef prefix
+ ifdef gnomeprefix
+   prefix=$(gnomeprefix)
+@@ -61,12 +61,12 @@
  
  INCLUDEDIRS=-I ../../scintilla/include -I ../src -I../lua/include
  $(LUA_CORE_OBJS): ../lua/src/*.c
--	gcc $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/*.c
-+	gcc $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/*.c
+-	$(CCOMP) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/*.c
++	$(CCOMP) $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/*.c
  $(LUA_LIB_OBJS): ../lua/src/lib/*.c
--	gcc $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/lib/*.c
+-	$(CCOMP) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/lib/*.c
 -CXXFLAGS=$(CXXTFLAGS)
-+	gcc $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/lib/*.c
++	$(CCOMP) $(CFLAGS) $(INCLUDEDIRS) -DLUA_USE_POSIX $(CXXTFLAGS) -c ../lua/src/lib/*.c
 +CXXFLAGS+=$(CXXTFLAGS)
  else
 -CXXFLAGS=$(CXXTFLAGS) -DNO_LUA
@@ -35,15 +46,15 @@
  endif
  
  ifeq ($(shell uname), Darwin)
-@@ -102,8 +102,9 @@
+@@ -87,8 +87,9 @@
  
  $(PROG): SciTEGTK.o GUIGTK.o FilePath.o SciTEBase.o SciTEBuffers.o SciTEIO.o StringList.o Exporters.o \
  PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleWriter.o Utf8_16.o \
 -	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
--	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB)
+-	$(CC) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@ $(CONFIGLIB) -lstdc++
 +	JobQueue.o GTKMutex.o IFaceTable.o $(LUA_OBJS)
-+	$(CC) $(CONFIGLIB) -lscintilla -lscintilla_lexers \
-+	-rdynamic -Wl,--version-script lua.vers -DGTK $^ -o $@
++	$(CC) $(CONFIGLIB) -lscintilla -lscintilla_lexers -lstdc++ \
++	 -rdynamic -Wl,--as-needed -Wl,--version-script lua.vers -DGTK $^ -o $@
  
  # Automatically generate header dependencies with "make deps"
  include deps.mak
