@@ -1,0 +1,6 @@
+Tomboy-LaTeX is a plugin for the desktop note-taking application Tomboy. It
+automatically converts LaTeX math code enclosed in \[...\] into inline images.
+Clicking on the image or moving the cursor over the image reveals the markup
+again.
+
+WWW:	http://www.reitwiessner.de/programs/tomboy-latex.html

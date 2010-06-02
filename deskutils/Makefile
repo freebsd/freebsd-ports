@@ -264,6 +264,7 @@
     SUBDIR += timer-applet
     SUBDIR += todo
     SUBDIR += tomboy
+    SUBDIR += tomboy-plugin-latex
     SUBDIR += toolbox
     SUBDIR += toolboxkit
     SUBDIR += tpb
