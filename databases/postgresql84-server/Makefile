@@ -194,8 +194,6 @@ CONFIGURE_ARGS+=--with-krb5
 .endif # !SLAVE_ONLY
 
 .if defined(CLIENT_ONLY)
-BROKEN=		incomplete plist
-
 MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
 		dropdb.1 droplang.1 dropuser.1 ecpg.1 initdb.1	   \
 		pg_config.1 pg_controldata.1 pg_ctl.1   \
