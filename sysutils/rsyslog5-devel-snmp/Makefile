@@ -9,7 +9,7 @@ COMMENT=	SNMP trap sender for rsyslog
 MASTERDIR=	${.CURDIR}/../rsyslog5
 
 MNAME=	snmp
-LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 CONFIGURE_ARGS+=--enable-snmp
 

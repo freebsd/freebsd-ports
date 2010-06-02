@@ -7,14 +7,14 @@
 
 PORTNAME=	rtg
 PORTVERSION=	0.7.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible, high-performance SNMP statistics monitoring system
 
-LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 MAN1=	rtgplot.1 rtgpoll.1
 

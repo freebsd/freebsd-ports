@@ -7,7 +7,7 @@
 
 PORTNAME=	ifstat
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://gael.roualland.free.fr/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ PLIST_FILES=	bin/ifstat
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 .else
 CONFIGURE_ARGS+=	--without-snmp
 .endif

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Enhanced syslog daemon
 

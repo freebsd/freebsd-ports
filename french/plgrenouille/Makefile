@@ -7,7 +7,7 @@
 
 PORTNAME=	plgrenouille
 PORTVERSION=	0.70.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	french net
 MASTER_SITES=	http://concept.free.free.fr/plgrenouille/beta/
 DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Un client pour determiner votre bande passante a un raccordement large bande
 
-LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 RUN_DEPENDS=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
 
 .if !defined(BATCH)

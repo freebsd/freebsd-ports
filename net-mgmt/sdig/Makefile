@@ -7,14 +7,14 @@
 
 PORTNAME=	sdig
 PORTVERSION=	0.43
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	raj@cserv62.csub.edu
 COMMENT=	Translate IP/DNS/WINS/MAC address into port description
 
-LIB_DEPENDS=	netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@
 PORTNAME=	libfwbuilder
 DISTVERSION=	4.0.1
 PORTVERSION=	${DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	security
 .if defined(BUILD)
 MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-4.0/build-${BUILD}/ \
@@ -27,7 +28,7 @@ CONFLICTS=	libfwbuilder-[23].* libfwbuilder-devel-[23].*
 CONFLICTS=	libfwbuilder-[23].* libfwbuilder-devel-*
 .endif
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
-		netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+		netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 PLIST_SUB=	BUILD_VERSION=${DISTVERSION}
 USE_QT_VER=	4
