@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	synfigstudio
-DISTVERSION=	0.62.00
-PORTREVISION=	3
+DISTVERSION=	0.62.01
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/synfig/${PORTNAME}/${PORTVERSION}
 
@@ -21,6 +20,7 @@ LIB_DEPENDS=	synfig.0:${PORTSDIR}/devel/synfig \
 USE_GNOME=	gnomehack gnometarget gtk20
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
