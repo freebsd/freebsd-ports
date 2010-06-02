@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		3.0.0
+PORTVERSION=		3.0.1
 CATEGORIES=		www
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -65,7 +65,7 @@ post-install:
 .endif
 
 	@${MKDIR} ${DATADIR}/error
-.for FILE in ${ERRORFILES}
+.for FILE in ${ERROR_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/var/ziproxy/error/${FILE} ${DATADIR}/error/${FILE}
 .endfor
 

@@ -13,5 +13,13 @@ etc/ziproxy/replace_ct.list.sample
 @exec if [ ! -f %D/etc/ziproxy/ziproxy.conf ] ; then cp -p %D/%F %B/ziproxy.conf; fi
 etc/ziproxy/ziproxy.conf.sample
 @dirrmtry etc/ziproxy
+%%DATADIR%%/error/400.html
+%%DATADIR%%/error/403.html
+%%DATADIR%%/error/404.html
+%%DATADIR%%/error/407.html
+%%DATADIR%%/error/408.html
+%%DATADIR%%/error/409.html
+%%DATADIR%%/error/500.html
+%%DATADIR%%/error/503.html
 @dirrm %%DATADIR%%/error
 @dirrm %%DATADIR%%
