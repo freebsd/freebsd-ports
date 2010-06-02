@@ -14,7 +14,6 @@ DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
 DISTFILES+=	Smarty-${DOCSVERSION}-docs${EXTRACT_SUFX}:manual
 .endif
-PORTSCOUT=	limit:^2\.6\.
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	The PHP compiling template engine
