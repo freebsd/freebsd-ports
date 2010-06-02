@@ -12,6 +12,7 @@ CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
+GNU_CONFIGURE=	yes
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/splines.tar.gz:${PORTSDIR}/math/octave-forge-splines
 RUN_DEPENDS+=	gmsh:${PORTSDIR}/cad/gmsh

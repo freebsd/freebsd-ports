@@ -9,7 +9,8 @@
 # into math/octave.
 
 
-MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/R2009-06-07 \
+MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases \
+		SF/octave/Octave%20Forge%20Packages/R2009-06-07 \
 		SF/octave/Octave%20Forge%20Packages/R2009-05-08
 DISTNAME=	${OCTAVE_PKGNAME}-${PORTVERSION}
 
@@ -22,7 +23,6 @@ LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 USE_FORTRAN=	yes
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 
 DIST_SUBDIR=	octave-forge
 OCTAVE_PKGNAME=	${PORTNAME:S/octave-forge-//}
