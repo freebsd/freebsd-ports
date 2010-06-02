@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aribas
-PORTVERSION=	1.63
+PORTVERSION=	1.64
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.mathematik.uni-muenchen.de/pub/forster/aribas/UNIX_LINUX/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -23,7 +23,8 @@ MAN1=		aribas.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d;' \
-	       -e '/^CFLAGS/s/-O//' ${BUILD_WRKSRC}/Makefile
+	       -e '/^CFLAGS/{s/=/+=/;s/-O -v//;}' \
+		-e 's/CC) -o/CC) $$(CFLAGS) -o/' ${BUILD_WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/aribas ${PREFIX}/bin/
