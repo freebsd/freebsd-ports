@@ -442,6 +442,7 @@
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
+    SUBDIR += podsleuth
     SUBDIR += posixtestsuite
     SUBDIR += projectionlib
     SUBDIR += proxyper

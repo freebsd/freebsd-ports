@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/podsleuth
+etc/dbus-1/system.d/podsleuth.conf
+lib/podsleuth/PodSleuth.dll
+lib/podsleuth/PodSleuth.dll.mdb
+lib/podsleuth/PodSleuth.dll.config
+lib/podsleuth/PodSleuth.Hal.exe
+lib/podsleuth/PodSleuth.Hal.exe.mdb
+libdata/pkgconfig/podsleuth.pc
+libexec/hal-podsleuth
+share/hal/fdi/policy/20thirdparty/20-podsleuth.fdi
+@dirrmtry lib/podsleuth
+@dirrmtry lib/hal
