@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gentoo-stage3
-PORTVERSION=	20100126
+PORTVERSION=	20100601
 PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
@@ -15,7 +15,6 @@ MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Files from Gentoo distribution, for Linux compatibility
 
 RESTRICTED=	binaries licensed under GNU GPL without accompanying source
-BROKEN=		does not fetch
 
 USE_BZIP2=		YES
 DIST_SUBDIR=		gentoo-linux
@@ -94,7 +93,7 @@ pre-fetch:
 	@${ECHO_MSG} "                         WARNING"
 	@${ECHO_MSG} "======================================================="
 	@${ECHO_MSG} "The i686 version may segfault in some environments."
-	@${ECHO_MSG} "If this is your case, please use te i486 version."
+	@${ECHO_MSG} "If this is your case, please use the i486 version."
 	@${ECHO_MSG} ""
 
 do-install:
