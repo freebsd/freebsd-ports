@@ -6,6 +6,7 @@ bin/dbicdump
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Component/QuotedDefault.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/DB2.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/InterBase.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Informix.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/ODBC/Firebird.pm
@@ -22,8 +23,10 @@ bin/dbicdump
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/mysql.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Manual/UpgradingFromV4.pod
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/Utils.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_040.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_05.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_06.pm
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder/Compat
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/Manual
