@@ -16,7 +16,7 @@ you update your ports collection, before attempting any port upgrades.
   have had their PORTREVISIONs bumped.  If after upgrading:
 
 	# portupgrade -rf gettext
-	# portmaster -r gettext
+	# portmaster -w -r gettext
 
   The upgrade of devel/gobject-introspection may fail because it is looking
   for libintl.so.8.  In this case, do the following:
@@ -28,9 +28,13 @@ you update your ports collection, before attempting any port upgrades.
 
   Then continue your upgrade.
 
-  there are still ports on your system that are looking for libintl.so.8
+  If there are still ports on your system that are looking for libintl.so.8
   (either in ${LOCALBASE}/lib/compat/pkg, or non-existent), _please_ file
   a PR so that a correct direct dependency can be added.
+
+  Once you are satisfied that no ports still depend on the old versions (such
+  as libgettextpo.so.4 and libintl.so.8) you can safely delete them from the
+  ${LOCALBASE}/lib/compat/pkg directory if they are present there.
 
 20100524:
   AFFECTS: users of devel/darcs, ports-mgmt/porte, textproc/pandoc,
