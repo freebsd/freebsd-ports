@@ -134,6 +134,7 @@
     SUBDIR += bullet
     SUBDIR += bunny
     SUBDIR += byaccj
+    SUBDIR += bzr-explorer
     SUBDIR += bzr-gtk
     SUBDIR += bzrtools
     SUBDIR += c2lib

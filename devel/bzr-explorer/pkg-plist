@@ -1,0 +1,369 @@
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/COPYING.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/NEWS
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/README.txt
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/app-suite-bzr-gtk.ini
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/app-suite-qbzr.ini
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Bazaar support/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Register on Launchpad/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Register on Savannah/logos/gnu-savannah.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Register on Savannah/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Register on SourceForge/logos/sourceforge.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Register on SourceForge/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-explorer/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-explorer/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-fastimport/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-git/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-git/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-gtk/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-gtk/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-hg/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-hg/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-svn/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-svn/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/do/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/do/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/drizzle/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/drizzle/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/gwibber/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/gwibber/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/inkscape/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/inkscape/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/launchpad/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/launchpad/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/loggerhead/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/loggerhead/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/mailman/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/mailman/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/maria/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/maria/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/mysql/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/mysql/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/qbzr/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/qbzr/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/ubuntuone/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/ubuntuone/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/udd/icon.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/udd/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/accessories_dialog.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/accessories_dialog.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/accessories_dialog.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/app_runner.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/app_runner.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/app_runner.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/app_suite.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/app_suite.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/app_suite.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/builders/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/builders/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/builders/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/builders/toolset_builders.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/builders/toolset_builders.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/builders/toolset_builders.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/checkout_dialog.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/checkout_dialog.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/checkout_dialog.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/commands.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/commands.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/commands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/custom_dialogs.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/custom_dialogs.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/custom_dialogs.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/desktop_env.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/desktop_env.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/desktop_env.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/explorer.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/explorer.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/explorer.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/explorer_preferences.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/explorer_preferences.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/explorer_preferences.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/explorer_rc.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/explorer_rc.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/explorer_rc.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/accessories.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/accessories.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/accessories.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/bookmarks.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/bookmarks.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/bookmarks.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/tools.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/tools.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions/tools.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/helpers.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/helpers.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/helpers.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/history_manager.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/history_manager.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/history_manager.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/hosted_url_resolver.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/hosted_url_resolver.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/hosted_url_resolver.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/html_extras.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/html_extras.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/html_extras.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/html_log.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/html_log.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/html_log.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/html_report_view.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/html_report_view.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/html_report_view.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/i18n.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/i18n.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/i18n.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/kinds.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/kinds.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/kinds.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location_selector.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location_selector.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location_selector.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location_set_browser.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location_set_browser.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location_set_browser.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location_viewer.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location_viewer.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/location_viewer.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/options_panel.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/options_panel.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/options_panel.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/parameter_parser.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/parameter_parser.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/parameter_parser.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/script_engine.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/script_engine.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/script_engine.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/sidebar_toolbox.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/sidebar_toolbox.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/sidebar_toolbox.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/status_data.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/status_data.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/status_data.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/status_report.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/status_report.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/status_report.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/switch_dialog.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/switch_dialog.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/switch_dialog.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/tool_dialogs.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/tool_dialogs.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/tool_dialogs.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/ui_explorer.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/ui_explorer.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/ui_explorer.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/view_repository.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/view_repository.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/view_repository.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/view_submit.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/view_submit.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/view_submit.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/view_workingtree.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/view_workingtree.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/view_workingtree.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/welcome.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/welcome.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/welcome.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/workspace_dialogs.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/workspace_dialogs.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/workspace_dialogs.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/workspace_models.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/workspace_models.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/workspace_models.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/wt_browser.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/wt_browser.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/wt_browser.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ar/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ca/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/cs/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/da/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/de/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/el/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en_AU/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en_CA/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en_GB/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/es/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/et/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fi/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fr/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/gl/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/he/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/hu/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/id/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/it/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ja/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/lo/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/lt/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/nl/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/oc/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pl/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pt_BR/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ru/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/sk/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/sr/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/sv/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/th/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/tr/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/uk/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/zh_CN/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/zh_TW/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/menus-for-ides.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/editors.conf
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos/bazaar.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos/canonical.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos/launchpad.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos/project-hosting-site.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos/ubuntu.png
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/toolbars.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_test_suite.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_test_suite.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_test_suite.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_welcome.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_welcome.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_welcome.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/collapsable_section.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/collapsable_section.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/collapsable_section.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/conditional_dataview.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/conditional_dataview.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/conditional_dataview.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/filesystem_browser.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/filesystem_browser.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/filesystem_browser.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/filter_bar.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/filter_bar.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/filter_bar.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/tab_widget.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/tab_widget.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/tab_widget.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/uk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/uk
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/th/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/th
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/sr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/sr
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/sk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/sk
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/oc/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/oc
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/lt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/lt
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/lo/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/lo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/id/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/id
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/hu
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/he
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/gl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/gl
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fi
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/et/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/et
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en_GB/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en_GB
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en_CA/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en_CA
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en_AU/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en_AU
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/el
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/da
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ca/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ca
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ar/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ar
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/extensions
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/builders
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/udd
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/ubuntuone
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/qbzr
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/mysql
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/maria
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/mailman
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/loggerhead
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/launchpad
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/inkscape
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/gwibber
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/drizzle
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/do
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-svn
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-hg
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-gtk
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-git
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-fastimport
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr-explorer
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats/bzr
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/hats
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Register on SourceForge/logos
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Register on SourceForge
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Register on Savannah/logos
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Register on Savannah
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Register on Launchpad
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Bazaar support
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer
+@dirrm share/licenses
+@dirrm share/licenses/bzr-explorer-1.0.2
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+share/licenses/bzr-explorer-1.0.2/GPLv2
+share/licenses/bzr-explorer-1.0.2/LICENSE
+share/licenses/bzr-explorer-1.0.2/catalog.mk
