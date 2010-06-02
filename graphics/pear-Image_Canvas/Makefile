@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Image_Canvas
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	numisemis@yahoo.com
@@ -17,16 +16,18 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color
 
 USE_PHP=	gd
+USE_DOS2UNIX=	yes
 
-CATEGORY=	Image
-FILES=		Canvas.php Canvas/Color.php Canvas/GD.php \
-		Canvas/ImageMap.php Canvas/PDF.php Canvas/SVG.php \
-		Canvas/Tool.php Canvas/WithMap.php Canvas/Fonts/fontmap.txt \
-		Canvas/Fonts/README Canvas/GD/JPG.php Canvas/GD/PNG.php
+FILES=		Image/Canvas.php Image/Canvas/Color.php Image/Canvas/GD.php \
+		Image/Canvas/ImageMap.php Image/Canvas/PDF.php Image/Canvas/PS.php \
+		Image/Canvas/SVG.php Image/Canvas/SWF.php Image/Canvas/Tool.php \
+		Image/Canvas/WithMap.php Image/Canvas/Fonts/fontmap.txt \
+		Image/Canvas/Fonts/README Image/Canvas/GD/JPG.php \
+		Image/Canvas/GD/PNG.php
 TESTS=		canvas_body.php gradients.php imagemap.php jpg.php \
-		lineends.php pdf.php pear-icon.png png.php README svg.php \
-		text.php
-DOCS=		ChangeLog README
+		lineends.php pdf.php pear-icon.png png.php ps.php \
+		README svg.php text.php
+DOCS=		ChangeLog README TODO
 EXAMPLES=	canvas.php pear-icon.png
 _EXAMPLESDIR=	docs/examples
 
