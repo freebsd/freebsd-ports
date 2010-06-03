@@ -57,6 +57,10 @@ PLIST_SUB+=	CFM=""
 PLIST_SUB+=	CFM="@comment "
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Fails to deinstall on powerpc: leaves files behind
+.endif
+
 post-extract:
 	@${MV} ${WRKDIR}/${DISTNAME}/p ${WRKSRC}/gcc
 
