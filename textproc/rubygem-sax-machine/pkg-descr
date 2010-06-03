@@ -1,0 +1,3 @@
+A declarative SAX parsing library backed by Nokogiri.
+
+WWW: http://github.com/pauldix/sax-machine
