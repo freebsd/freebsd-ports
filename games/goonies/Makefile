@@ -31,6 +31,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-patch:
 .if ${OSVERSION} < 800501 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900006)
 	@${REINPLACE_CMD} -e 's|__APPLE__|__FreeBSD__|' \
