@@ -12,15 +12,16 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://jeff.bovine.net/download/fli2gif/
 DISTNAME=	${PORTNAME}b
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	Automatic Flic to animated GIF convertor
 
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	fli2gif.cpp FLI2GIF.TXT
 
 post-extract:
-	@cd ${WRKSRC} && unzip -q -aa source.zip \
+	@cd ${WRKSRC} && ${UNZIP_CMD} -q source.zip \
 		&& ${LN} -sf GIF.CPP gif.cpp \
 		&& ${LN} -sf FLIPLAY.CPP fliplay.cpp
 
@@ -31,7 +32,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fli2gif ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA}	${WRKSRC}/*.TXT ${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/FLI2GIF.TXT ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

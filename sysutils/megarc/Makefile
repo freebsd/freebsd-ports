@@ -15,6 +15,7 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	LSI Logic's MegaRAID controlling software
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	Release\ History.txt
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -25,7 +26,7 @@ PLIST_FILES=	sbin/megarc
 PORTDOCS=	*
 
 post-extract:
-	@cd ${WRKSRC} && ${UNZIP_CMD} -aqo 'MegaRC 1.04.zip'
+	@cd ${WRKSRC} && ${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} 'MegaRC 1.04.zip'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/megarc ${PREFIX}/sbin

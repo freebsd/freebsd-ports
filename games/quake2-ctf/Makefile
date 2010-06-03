@@ -20,6 +20,7 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake II CTF (Capture The Flag) modification
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	../../../ctf/readme.txt ../../../ctf/server.cfg
 WRKSRC=		${WRKDIR}/${CTF_SRC:S/.tar.gz//}/src/ctf
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
@@ -36,7 +37,7 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/${CTF_SRC} -C ${WRKDIR} \
 		--include "${CTF_SRC:S/.tar.gz//}/src/ctf/*"
-	@${UNZIP_CMD} -aq -d ${WRKDIR}/ctf \
+	@${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} -d ${WRKDIR}/ctf \
 		${DISTDIR}/${DIST_SUBDIR}/${CTF_DATA} -x *.dll *.ico
 
 post-extract:

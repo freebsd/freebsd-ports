@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/magic/acrobatviewer/unix/1.x/:1 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Viewer for the PDF files written in Java(TM)
 
+#XXX need info-unzip for archive.zip
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+

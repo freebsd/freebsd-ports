@@ -34,6 +34,7 @@ pre-su-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
 
 do-install:
+	@${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES} -d ${INSTDIR}
 	@unzip -a -q -o ${DISTDIR}/${DISTFILES} -d ${INSTDIR}
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/catalog
 	@${CHMOD} ${SHAREMODE} ${INSTDIR}/*

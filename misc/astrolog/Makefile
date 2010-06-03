@@ -22,6 +22,7 @@ MAINTAINER=	ache@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	ephem/EPHINDEX.TXT
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11
 MAKE_ARGS=	-DX11
@@ -35,7 +36,7 @@ NO_WRKSUBDIR=	yes
 
 post-extract:
 	-@${MKDIR} ${WRKDIR}/ephem
-	${UNZIP_CMD} -qao ${_DISTDIR}/${EPHEM} -d ${WRKDIR}/ephem
+	${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EPHEM} -d ${WRKDIR}/ephem
 
 post-patch:
 	@${REINPLACE_CMD} -e "s@malloc.h@stdlib.h@g" \
