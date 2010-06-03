@@ -17,6 +17,12 @@ COMMENT=	Online encrypted backup service (client)
 
 RESTRICTED=	license restricts redistribution of source and binaries
 
+# Workaround for bug in libfetch(3)
+FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+FETCH_CMD=	${LOCALBASE}/bin/wget
+FETCH_BEFORE_ARGS=	--no-check-certificate
+DISABLE_SIZE=	yes
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
