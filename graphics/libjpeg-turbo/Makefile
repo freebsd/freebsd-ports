@@ -28,8 +28,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm:install
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS=	--host x86_64-unknown-freebsd
-.elif ${ARCH} == i386
-CONFIGURE_ARGS=	--host i386-unknown-freebsd
+.else
+CONFIGURE_ARGS=	--host ${ARCH}-unknown-freebsd
 .endif
 
 pre-configure:
