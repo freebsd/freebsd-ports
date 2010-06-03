@@ -15,6 +15,8 @@ COMMENT=	Apache Portability Library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+NO_LATEST_LINK= yes
+
 SNAPDATE= 20100527031346
 
 MAKE_JOBS_SAFE=	yes
