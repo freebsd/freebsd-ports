@@ -550,6 +550,7 @@ appres                          ports/x11/appres
 appwrapper                      ports/deskutils/appwrapper
 apr0                            ports/devel/apr0
 apr1                            ports/devel/apr1
+apr2                            ports/devel/apr2
 apricots                        ports/games/apricots
 aprsd                           ports/comms/aprsd
 apsfilter                       ports/print/apsfilter
@@ -756,6 +757,7 @@ audio_muse                      ports/audio/muse
 audio_tracker                   ports/audio/tracker
 audiotag                        ports/audio/audiotag
 audit                           ports/security/audit
+augeas                          ports/textproc/augeas
 august                          ports/www/august
 aumix                           ports/audio/aumix
 aureal-kmod                     ports/audio/aureal-kmod
@@ -1310,6 +1312,7 @@ byaccj                          ports/devel/byaccj
 bygfoot                         ports/games/bygfoot
 bzflag                          ports/games/bzflag
 bzip                            ports/archivers/bzip
+bzr-explorer                    ports/devel/bzr-explorer
 bzr-gtk                         ports/devel/bzr-gtk
 bzrtools                        ports/devel/bzrtools
 c-a-i-r                         ports/graphics/c-a-i-r
@@ -2612,6 +2615,7 @@ drupal6-path_redirect           ports/www/drupal6-path_redirect
 drupal6-pathauto                ports/www/drupal6-pathauto
 drupal6-print                   ports/www/drupal6-print
 drupal6-seo_checklist           ports/www/drupal6-seo_checklist
+drupal6-services                ports/www/drupal6-services
 drupal6-tagadelic               ports/www/drupal6-tagadelic
 drupal6-token                   ports/www/drupal6-token
 drupal6-views                   ports/www/drupal6-views
@@ -4770,6 +4774,7 @@ google-appengine                ports/www/google-appengine
 google-ctemplate                ports/textproc/google-ctemplate
 google-earth                    ports/astro/google-earth
 google-gadgets                  ports/deskutils/google-gadgets
+google-gdata                    ports/devel/google-gdata
 google-perftools                ports/devel/google-perftools
 google-sitemapgen               ports/www/google-sitemapgen
 google-sparsehash               ports/devel/google-sparsehash
@@ -5522,6 +5527,7 @@ hs-tagsoup                      ports/textproc/hs-tagsoup
 hs-tensor                       ports/devel/hs-Tensor
 hs-terminfo                     ports/devel/hs-terminfo
 hs-test-framework               ports/devel/hs-test-framework
+hs-test-framework-hunit         ports/devel/hs-test-framework-hunit
 hs-test-framework-quickcheck2   ports/devel/hs-test-framework-quickcheck2
 hs-testpack                     ports/devel/hs-testpack
 hs-texmath                      ports/textproc/hs-texmath
@@ -5885,6 +5891,7 @@ iplike                          ports/databases/iplike
 iplog                           ports/net/iplog
 ipmi-kmod                       ports/sysutils/ipmi-kmod
 ipmitool                        ports/sysutils/ipmitool
+ipod-sharp                      ports/audio/ipod-sharp
 ipplan                          ports/net-mgmt/ipplan
 ipsc                            ports/sysutils/ipsc
 ipsec-tools                     ports/security/ipsec-tools
@@ -6967,6 +6974,7 @@ kdebindings4                    ports/devel/kdebindings4
 kdebindings4-python             ports/devel/kdebindings4-python
 kdebindings4-python-krosspython  ports/devel/kdebindings4-python-krosspython
 kdebindings4-python-pykde4      ports/devel/kdebindings4-python-pykde4
+kdebindings4-python-pykdeuic4   ports/devel/kdebindings4-python-pykdeuic4
 kdebindings4-ruby               ports/devel/kdebindings4-ruby
 kdebindings4-smoke              ports/devel/kdebindings4-smoke
 kdedict                         ports/www/kdedict
@@ -7284,6 +7292,7 @@ koth                            ports/games/koth
 kover                           ports/print/kover
 kovpn                           ports/security/kovpn
 kp                              ports/misc/kp
+kpackagekit                     ports/ports-mgmt/kpackagekit
 kpdftool                        ports/print/kpdftool
 kphone                          ports/net/kphone
 kphotoalbum                     ports/graphics/kphotoalbum
@@ -8785,6 +8794,7 @@ lynx-current                    ports/www/lynx-current
 lyx                             ports/print/lyx
 lyx15                           ports/print/lyx15
 lzip                            ports/archivers/lzip
+lzlib                           ports/archivers/lzlib
 lzma                            ports/archivers/lzma
 lzmalib                         ports/archivers/lzmalib
 lzo                             ports/archivers/lzo
@@ -8891,6 +8901,7 @@ mapserver                       ports/graphics/mapserver
 mapyrus                         ports/graphics/mapyrus
 mar                             ports/archivers/mar
 maradns                         ports/dns/maradns
+marble                          ports/astro/marble
 markdown                        ports/textproc/markdown
 mars                            ports/cad/mars
 mars_nwe                        ports/net/mars_nwe
@@ -19243,7 +19254,6 @@ petite-chez                     ports/lang/petite-chez
 pets                            ports/games/pets
 petsc                           ports/math/petsc
 petsc-mpich                     ports/math/petsc-mpich
-pexts                           ports/lang/pexts
 pfbtopfa                        ports/print/pfbtopfa
 pfe-devel                       ports/lang/pfe-devel
 pfflowd                         ports/net/pfflowd
@@ -19632,7 +19642,6 @@ pidof                           ports/sysutils/pidof
 piewm                           ports/x11-wm/piewm
 pigz                            ports/archivers/pigz
 pikdev                          ports/devel/pikdev
-pike72                          ports/lang/pike72
 pike76                          ports/lang/pike76
 pike78                          ports/lang/pike78
 piklab                          ports/devel/piklab
@@ -19814,6 +19823,7 @@ plugger                         ports/www/plugger
 plugger-plugins-hubbe           ports/www/plugger-plugins-hubbe
 plutocracy                      ports/games/plutocracy
 plwm                            ports/x11-wm/plwm
+plzip                           ports/archivers/plzip
 pm-lib                          ports/mail/pm-lib
 pm3umpdl                        ports/audio/pm3umpdl
 pmacct                          ports/net-mgmt/pmacct
@@ -19855,6 +19865,7 @@ poco-ssl                        ports/devel/poco-ssl
 podcastamatic                   ports/www/podcastamatic
 podcatcher                      ports/multimedia/podcatcher
 podofo                          ports/graphics/podofo
+podsleuth                       ports/misc/podsleuth
 poe                             ports/multimedia/poe
 poedit                          ports/editors/poedit
 poink                           ports/net/poink
@@ -22187,6 +22198,7 @@ rubygem-analogger               ports/devel/rubygem-analogger
 rubygem-anemone                 ports/www/rubygem-anemone
 rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
 rubygem-arrayfields             ports/devel/rubygem-arrayfields
+rubygem-augeas                  ports/textproc/rubygem-augeas
 rubygem-authlogic               ports/devel/rubygem-authlogic
 rubygem-bioruby                 ports/devel/rubygem-bioruby
 rubygem-bluecloth               ports/www/rubygem-bluecloth
@@ -22203,6 +22215,7 @@ rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-configuration           ports/devel/rubygem-configuration
 rubygem-crack                   ports/devel/rubygem-crack
+rubygem-curb                    ports/ftp/rubygem-curb
 rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-data_objects            ports/databases/rubygem-data_objects
 rubygem-datamapper              ports/databases/rubygem-datamapper
@@ -22385,6 +22398,7 @@ rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
 rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
+rubygem-spruz                   ports/devel/rubygem-spruz
 rubygem-sqlite3                 ports/databases/rubygem-sqlite3
 rubygem-staticmatic             ports/www/rubygem-staticmatic
 rubygem-stemmer                 ports/devel/rubygem-stemmer
@@ -23981,6 +23995,10 @@ tolua4                          ports/lang/tolua4
 tolua50                         ports/lang/tolua50
 tomatoes                        ports/games/tomatoes
 tomboy                          ports/deskutils/tomboy
+tomboy-plugin-latex             ports/deskutils/tomboy-plugin-latex
+tomboy-plugin-reminder          ports/deskutils/tomboy-plugin-reminder
+tomboy-plugin-todo              ports/deskutils/tomboy-plugin-todo
+tomboy-plugin-wordcount         ports/deskutils/tomboy-plugin-wordcount
 tomcat-native                   ports/www/tomcat-native
 tomcat41                        ports/www/tomcat41
 tomcat55                        ports/www/tomcat55
@@ -24510,6 +24528,7 @@ uudeview                        ports/converters/uudeview
 uudx                            ports/converters/uudx
 uulib                           ports/converters/uulib
 uwatch                          ports/sysutils/uwatch
+uwsgi                           ports/www/uwsgi
 uz-aspell                       ports/textproc/uz-aspell
 uzap                            ports/editors/uzap
 uzbl                            ports/www/uzbl
@@ -24805,6 +24824,7 @@ wcslib                          ports/astro/wcslib
 wdiag                           ports/net-mgmt/wdiag
 wdiff                           ports/textproc/wdiff
 wdm                             ports/x11/wdm
+weather                         ports/astro/weather
 weatherget                      ports/astro/weatherget
 weathermap                      ports/net-mgmt/weathermap
 weatherspect                    ports/astro/weatherspect
@@ -25324,6 +25344,7 @@ xeyesplus                       ports/games/xeyesplus
 xf-spf                          ports/mail/xf-spf
 xf86-input-acecad               ports/x11-drivers/xf86-input-acecad
 xf86-input-citron               ports/x11-drivers/xf86-input-citron
+xf86-input-egalax               ports/x11-drivers/xf86-input-egalax
 xf86-input-elographics          ports/x11-drivers/xf86-input-elographics
 xf86-input-fpit                 ports/x11-drivers/xf86-input-fpit
 xf86-input-hyperpen             ports/x11-drivers/xf86-input-hyperpen
