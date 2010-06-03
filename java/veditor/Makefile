@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	veditor
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.7.1
 CATEGORIES=	java cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20runtime/VEditor%20${PORTVERSION}
 DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
@@ -22,7 +21,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 OPTIONS=	VERILOG "Support Verilog with Icarus Verilog" On \
 		VHDL "Support VHDL with FreeHDL" On
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_VERILOG)
 RUN_DEPENDS+=	iverilog:${PORTSDIR}/cad/iverilog
@@ -44,4 +43,4 @@ do-install:
 	@${MKDIR} ${ECLIPSE}/${PLUGINS}
 	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${ECLIPSE}/${PLUGINS}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
