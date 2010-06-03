@@ -80,6 +80,10 @@ CONFIGURE_ARGS+=	--without-mysql
 
 CONFIGURE_ARGS+=	--with-games='${Q2GAMES}'
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-patch: .SILENT
 	${REINPLACE_CMD} -E 's,^(eval PKGDATADIR=).*$$,\1"${Q2DIR}", ; \
 		19752s,sdl-config,${SDL_CONFIG}, ; \
