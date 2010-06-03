@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100602:
+  AFFECTS: users of lang/mono
+  AUTHOR: romain@FreeBSD.org
+
+  Starting with mono-2.6, the Moonlight compiler and assemblies are not
+  installed by the lang/mono port anymore. They are however provided by the
+  multimedia/moonlight port.
+
+  If you are doing some Silverlight development, install multimedia/moonlight
+  after updating lang/mono.
+
 20100530:
   AFFECTS: users of devel/gettext (i.e.: YOU)
   AUTHOR: ade@FreeBSD.org
