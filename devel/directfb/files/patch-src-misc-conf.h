@@ -1,12 +1,11 @@
---- src/misc/conf.h.orig	2007-12-15 15:16:37.000000000 +0200
-+++ src/misc/conf.h	2008-03-16 16:43:14.000000000 +0200
-@@ -38,6 +38,9 @@
- #include <core/coredefs.h>
+--- src/misc/conf.c
++++ src/misc/conf.c
+@@ -56,6 +56,8 @@
  
+ D_DEBUG_DOMAIN( DirectFB_Config, "DirectFB/Config", "Runtime configuration options for DirectFB" );
  
 +typedef unsigned long ulong;
 +
-+
- typedef struct {
-      bool                                init;
+ DFBConfig *dfb_config = NULL;
  
+ static const char *config_usage =

@@ -1,15 +1,34 @@
+%%TESTS%%bin/coretest_blit2
 bin/dfbdump
 bin/dfbfx
 bin/dfbg
 bin/dfbinfo
 bin/dfbinput
+bin/dfbinspector
 bin/dfblayer
+bin/dfbmaster
 bin/dfbpenmount
+bin/dfbproxy
 bin/dfbscreen
+%%TESTS%%bin/dfbtest_blit
+%%TESTS%%bin/dfbtest_blit2
+%%TESTS%%bin/dfbtest_mirror
+%%TESTS%%bin/dfbtest_reinit
+%%TESTS%%bin/dfbtest_scale
+%%TESTS%%bin/dfbtest_sync
+%%TESTS%%bin/dfbtest_window
+%%TESTS%%bin/dfbtest_window_flip_once
+%%TESTS%%bin/direct_stream
+%%TESTS%%bin/direct_test
 bin/directfb-config
 bin/directfb-csource
+%%TESTS%%bin/fusion_fork
+%%TESTS%%bin/fusion_reactor
+%%TESTS%%bin/fusion_skirmish
+%%TESTS%%bin/fusion_stream
 bin/mkdfiff
 %%FREETYPE2%%bin/mkdgiff
+%%UNIQUE%%bin/uwmdump
 include/directfb-internal/core/clipboard.h
 include/directfb-internal/core/colorhash.h
 include/directfb-internal/core/core.h
@@ -35,6 +54,7 @@ include/directfb-internal/core/state.h
 include/directfb-internal/core/surface.h
 include/directfb-internal/core/surface_buffer.h
 include/directfb-internal/core/surface_pool.h
+include/directfb-internal/core/surface_pool_bridge.h
 include/directfb-internal/core/system.h
 include/directfb-internal/core/windows.h
 include/directfb-internal/core/windows_internal.h
@@ -117,81 +137,188 @@ include/directfb/fusion/shm/shm_internal.h
 include/directfb/fusion/shmalloc.h
 include/directfb/fusion/types.h
 include/directfb/fusion/vector.h
-%%SDL%%lib/directfb-%%DIRECTFB_VER%%/gfxdrivers/libdirectfb_sdlgraphics.a
-%%SDL%%lib/directfb-%%DIRECTFB_VER%%/gfxdrivers/libdirectfb_sdlgraphics.la
-%%SDL%%lib/directfb-%%DIRECTFB_VER%%/gfxdrivers/libdirectfb_sdlgraphics.so
-%%SDL%%lib/directfb-%%DIRECTFB_VER%%/inputdrivers/libdirectfb_sdlinput.a
-%%SDL%%lib/directfb-%%DIRECTFB_VER%%/inputdrivers/libdirectfb_sdlinput.la
-%%SDL%%lib/directfb-%%DIRECTFB_VER%%/inputdrivers/libdirectfb_sdlinput.so
-%%X11%%lib/directfb-%%DIRECTFB_VER%%/inputdrivers/libdirectfb_x11input.a
-%%X11%%lib/directfb-%%DIRECTFB_VER%%/inputdrivers/libdirectfb_x11input.la
-%%X11%%lib/directfb-%%DIRECTFB_VER%%/inputdrivers/libdirectfb_x11input.so
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBFont/libidirectfbfont_default.a
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBFont/libidirectfbfont_default.la
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBFont/libidirectfbfont_default.so
-%%FREETYPE2%%lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBFont/libidirectfbfont_ft2.a
-%%FREETYPE2%%lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBFont/libidirectfbfont_ft2.la
-%%FREETYPE2%%lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBFont/libidirectfbfont_ft2.so
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dfiff.a
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dfiff.la
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dfiff.so
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_gif.a
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_gif.la
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_gif.so
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_jpeg.a
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_jpeg.la
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_jpeg.so
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_mpeg2.a
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_mpeg2.la
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_mpeg2.so
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_png.a
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_png.la
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_png.so
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBVideoProvider/libidirectfbvideoprovider_gif.a
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBVideoProvider/libidirectfbvideoprovider_gif.la
-lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBVideoProvider/libidirectfbvideoprovider_gif.so
-lib/directfb-%%DIRECTFB_VER%%/systems/libdirectfb_devmem.a
-lib/directfb-%%DIRECTFB_VER%%/systems/libdirectfb_devmem.la
-lib/directfb-%%DIRECTFB_VER%%/systems/libdirectfb_devmem.so
-%%SDL%%lib/directfb-%%DIRECTFB_VER%%/systems/libdirectfb_sdl.a
-%%SDL%%lib/directfb-%%DIRECTFB_VER%%/systems/libdirectfb_sdl.la
-%%SDL%%lib/directfb-%%DIRECTFB_VER%%/systems/libdirectfb_sdl.so
-%%X11%%lib/directfb-%%DIRECTFB_VER%%/systems/libdirectfb_x11.a
-%%X11%%lib/directfb-%%DIRECTFB_VER%%/systems/libdirectfb_x11.la
-%%X11%%lib/directfb-%%DIRECTFB_VER%%/systems/libdirectfb_x11.so
-lib/directfb-%%DIRECTFB_VER%%/wm/libdirectfbwm_default.a
-lib/directfb-%%DIRECTFB_VER%%/wm/libdirectfbwm_default.la
-lib/directfb-%%DIRECTFB_VER%%/wm/libdirectfbwm_default.so
-lib/libdirect-1.1.so
-lib/libdirect-1.1.so.1
+%%UNIQUE%%include/directfb/unique/context.h
+%%UNIQUE%%include/directfb/unique/decoration.h
+%%UNIQUE%%include/directfb/unique/device.h
+%%UNIQUE%%include/directfb/unique/input_channel.h
+%%UNIQUE%%include/directfb/unique/input_events.h
+%%UNIQUE%%include/directfb/unique/input_switch.h
+%%UNIQUE%%include/directfb/unique/stret.h
+%%UNIQUE%%include/directfb/unique/stret_iteration.h
+%%UNIQUE%%include/directfb/unique/types.h
+%%UNIQUE%%include/directfb/unique/uniquewm.h
+%%UNIQUE%%include/directfb/unique/window.h
+include/directfb/voodoo/build.h
+include/directfb/voodoo/client.h
+include/directfb/voodoo/conf.h
+include/directfb/voodoo/interface.h
+include/directfb/voodoo/manager.h
+include/directfb/voodoo/message.h
+include/directfb/voodoo/server.h
+include/directfb/voodoo/types.h
+%%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/gfxdrivers/libdirectfb_sdlgraphics.a
+%%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/gfxdrivers/libdirectfb_sdlgraphics.la
+%%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/gfxdrivers/libdirectfb_sdlgraphics.so
+%%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/inputdrivers/libdirectfb_sdlinput.a
+%%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/inputdrivers/libdirectfb_sdlinput.la
+%%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/inputdrivers/libdirectfb_sdlinput.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFB/libidirectfb_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFB/libidirectfb_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFB/libidirectfb_dispatcher.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFB/libidirectfb_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFB/libidirectfb_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFB/libidirectfb_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDataBuffer/libidirectfbdatabuffer_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDataBuffer/libidirectfbdatabuffer_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDataBuffer/libidirectfbdatabuffer_dispatcher.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDataBuffer/libidirectfbdatabuffer_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDataBuffer/libidirectfbdatabuffer_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDataBuffer/libidirectfbdatabuffer_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDisplayLayer/libidirectfbdisplaylayer_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDisplayLayer/libidirectfbdisplaylayer_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDisplayLayer/libidirectfbdisplaylayer_dispatcher.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDisplayLayer/libidirectfbdisplaylayer_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDisplayLayer/libidirectfbdisplaylayer_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDisplayLayer/libidirectfbdisplaylayer_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer/libidirectfbeventbuffer_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer/libidirectfbeventbuffer_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer/libidirectfbeventbuffer_dispatcher.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer/libidirectfbeventbuffer_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer/libidirectfbeventbuffer_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer/libidirectfbeventbuffer_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_default.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_default.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_default.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_dgiff.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_dgiff.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_dgiff.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_dispatcher.so
+%%FREETYPE2%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_ft2.a
+%%FREETYPE2%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_ft2.la
+%%FREETYPE2%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_ft2.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont/libidirectfbfont_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dfiff.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dfiff.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dfiff.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_dispatcher.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_gif.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_gif.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_gif.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_jpeg.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_jpeg.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_jpeg.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_png.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_png.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_png.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider/libidirectfbimageprovider_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBInputDevice/libidirectfbinputdevice_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBInputDevice/libidirectfbinputdevice_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBInputDevice/libidirectfbinputdevice_dispatcher.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBInputDevice/libidirectfbinputdevice_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBInputDevice/libidirectfbinputdevice_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBInputDevice/libidirectfbinputdevice_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBPalette/libidirectfbpalette_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBPalette/libidirectfbpalette_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBPalette/libidirectfbpalette_dispatcher.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBPalette/libidirectfbpalette_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBPalette/libidirectfbpalette_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBPalette/libidirectfbpalette_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBScreen/libidirectfbscreen_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBScreen/libidirectfbscreen_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBScreen/libidirectfbscreen_dispatcher.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBScreen/libidirectfbscreen_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBScreen/libidirectfbscreen_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBScreen/libidirectfbscreen_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBSurface/libidirectfbsurface_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBSurface/libidirectfbsurface_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBSurface/libidirectfbsurface_dispatcher.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBSurface/libidirectfbsurface_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBSurface/libidirectfbsurface_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBSurface/libidirectfbsurface_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBVideoProvider/libidirectfbvideoprovider_gif.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBVideoProvider/libidirectfbvideoprovider_gif.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBVideoProvider/libidirectfbvideoprovider_gif.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBWindow/libidirectfbwindow_dispatcher.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBWindow/libidirectfbwindow_dispatcher.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBWindow/libidirectfbwindow_dispatcher.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBWindow/libidirectfbwindow_requestor.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBWindow/libidirectfbwindow_requestor.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBWindow/libidirectfbwindow_requestor.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_devmem.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_devmem.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_devmem.so
+%%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_sdl.a
+%%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_sdl.la
+%%SDL%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_sdl.so
+%%X11%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_x11.a
+%%X11%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_x11.la
+%%X11%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems/libdirectfb_x11.so
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/wm/libdirectfbwm_default.a
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/wm/libdirectfbwm_default.la
+lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/wm/libdirectfbwm_default.so
+%%UNIQUE%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/wm/libdirectfbwm_unique.a
+%%UNIQUE%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/wm/libdirectfbwm_unique.la
+%%UNIQUE%%lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/wm/libdirectfbwm_unique.so
+lib/libdirect-%%DIRECTFB_RELEASE%%.so
+lib/libdirect-%%DIRECTFB_RELEASE%%.so.%%DIRECTFB_SHLIB%%
 lib/libdirect.a
 lib/libdirect.la
 lib/libdirect.so
-lib/libdirectfb-1.1.so
-lib/libdirectfb-1.1.so.1
+lib/libdirectfb-%%DIRECTFB_RELEASE%%.so
+lib/libdirectfb-%%DIRECTFB_RELEASE%%.so.%%DIRECTFB_SHLIB%%
 lib/libdirectfb.a
 lib/libdirectfb.la
 lib/libdirectfb.so
-lib/libfusion-1.1.so
-lib/libfusion-1.1.so.1
+lib/libfusion-%%DIRECTFB_RELEASE%%.so
+lib/libfusion-%%DIRECTFB_RELEASE%%.so.%%DIRECTFB_SHLIB%%
 lib/libfusion.a
 lib/libfusion.la
 lib/libfusion.so
+%%UNIQUE%%lib/libuniquewm-%%DIRECTFB_RELEASE%%.so
+%%UNIQUE%%lib/libuniquewm-%%DIRECTFB_RELEASE%%.so.%%DIRECTFB_SHLIB%%
+%%UNIQUE%%lib/libuniquewm.a
+%%UNIQUE%%lib/libuniquewm.la
+%%UNIQUE%%lib/libuniquewm.so
+lib/libvoodoo-%%DIRECTFB_RELEASE%%.so
+lib/libvoodoo-%%DIRECTFB_RELEASE%%.so.%%DIRECTFB_SHLIB%%
+lib/libvoodoo.a
+lib/libvoodoo.la
+lib/libvoodoo.so
 libdata/pkgconfig/direct.pc
 libdata/pkgconfig/directfb-internal.pc
 libdata/pkgconfig/directfb.pc
 libdata/pkgconfig/fusion.pc
+libdata/pkgconfig/voodoo.pc
 %%DATADIR%%-%%DIRECTFB_VERSION%%/cursor.dat
 @dirrm %%DATADIR%%-%%DIRECTFB_VERSION%%
-@dirrm lib/directfb-%%DIRECTFB_VER%%/wm
-@dirrm lib/directfb-%%DIRECTFB_VER%%/systems
-@dirrm lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBVideoProvider
-@dirrm lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBImageProvider
-@dirrm lib/directfb-%%DIRECTFB_VER%%/interfaces/IDirectFBFont
-@dirrm lib/directfb-%%DIRECTFB_VER%%/interfaces
-%%INPUTDRIVERS%%@dirrm lib/directfb-%%DIRECTFB_VER%%/inputdrivers
-%%GFXDRIVERS%%@dirrm lib/directfb-%%DIRECTFB_VER%%/gfxdrivers
-@dirrm lib/directfb-%%DIRECTFB_VER%%
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/wm
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/systems
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBWindow
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBVideoProvider
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBSurface
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBScreen
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBPalette
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBInputDevice
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBImageProvider
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBFont
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBEventBuffer
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDisplayLayer
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFBDataBuffer
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces/IDirectFB
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/interfaces
+%%SDL%%@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/inputdrivers
+%%SDL%%@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%/gfxdrivers
+@dirrm lib/directfb-%%DIRECTFB_RELEASE%%-%%DIRECTFB_BIN%%
+@dirrm include/directfb/voodoo
+%%UNIQUE%%@dirrm include/directfb/unique
 @dirrm include/directfb/fusion/shm
 @dirrm include/directfb/fusion
 @dirrm include/directfb/direct
