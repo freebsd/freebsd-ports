@@ -31,6 +31,10 @@ PORTDOCS=	AUTHORS ChangeLog COPYING COPYRIGHT INSTALL LICENSE \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "amd64" && ${ARCH} != "i386"
+BROKEN=		Does not compile on !amd64 and !i386
+.endif
+
 .if ${OSVERSION} >= 700000
 CFLAGS+=	-fopenmp -D__OPENMP__
 .endif
