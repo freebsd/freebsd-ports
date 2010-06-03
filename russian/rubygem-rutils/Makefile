@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rutils
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	russian devel rubygems
 MASTER_SITES=	RG
 
