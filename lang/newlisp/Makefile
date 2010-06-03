@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	newlisp
-PORTVERSION=	10.2.1
-PORTREVISION=	1
+PORTVERSION=	10.2.8
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 #MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
@@ -28,7 +28,7 @@ MODULES=	cgi crypto ftp infix odbc pop3 postscript smtp stat unix \
 		xmlrpc-client zlib
 
 DOCS=		CHANGES CodePatterns.html ExpressionEvaluation.html \
-		MemoryManagement.html newLISP-${PORTVERSION:R}-Release.html \
+		MemoryManagement.html newLISP-${PORTVERSION}-Release.html \
 		manual_frame.html newLISPdoc.html \
 		newlisp_index.html newlisp_manual.html \
 

@@ -8,7 +8,7 @@ bin/newlispdoc
 %%PORTDOCS%%%%DOCSDIR%%/ExpressionEvaluation.html
 %%PORTDOCS%%%%DOCSDIR%%/MemoryManagement.html
 %%PORTDOCS%%%%DOCSDIR%%/manual_frame.html
-%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.2-Release.html
+%%PORTDOCS%%%%DOCSDIR%%/newLISP-10.2.8-Release.html
 %%PORTDOCS%%%%DOCSDIR%%/newLISPdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_index.html
 %%PORTDOCS%%%%DOCSDIR%%/newlisp_manual.html
@@ -18,6 +18,7 @@ bin/newlispdoc
 %%PORTDOCS%%%%EXAMPLESDIR%%/form.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/init.lsp.example
 %%PORTDOCS%%%%EXAMPLESDIR%%/newLISP-Excel-Import.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/observer
 %%PORTDOCS%%%%EXAMPLESDIR%%/opengl-demo.lsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/prodcons.lsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/server
