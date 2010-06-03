@@ -1,7 +1,7 @@
---- lib/direct/log.c
-+++ lib/direct/log.c
-@@ -335,10 +335,12 @@ parse_host_addr( const char       *hostport,
-                     D_ERROR( "Direct/Log: Port %s is unreachable!\n", portstr );
+--- lib/voodoo/client.c
++++ lib/voodoo/client.c
+@@ -97,10 +97,12 @@ voodoo_client_create( const char     *hostname,
+                     D_ERROR( "Direct/Log: Port 2323 is unreachable!\n" );
                      return DR_FAILURE;
                 
 +/*
