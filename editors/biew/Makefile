@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--enable-slang
 CONFIGURE_ARGS+=	--enable-curses
 .endif
 
-.if ${ARCH} == "sparc64"
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile
 .endif
 
