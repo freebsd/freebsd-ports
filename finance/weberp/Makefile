@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	weberp
-PORTVERSION=	3.11
+PORTVERSION=	3.11.3
 PORTREVISION=	1
 CATEGORIES=	finance www
-MASTER_SITES=	SF/web-erp/webERP/webERP%20${PORTVERSION}
+MASTER_SITES=	SF/web-erp/webERP/webERP_3.11
 DISTNAME=	webERP_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -18,7 +18,7 @@ COMMENT=	An Open-Source Web-Based ERP System
 USE_ZIP=	yes
 USE_PHP=	mysql gettext
 USE_GETTEXT=	yes
-WRKSRC=		${WRKDIR}/webERP
+WRKSRC=		${WRKDIR}/webERP-temp
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

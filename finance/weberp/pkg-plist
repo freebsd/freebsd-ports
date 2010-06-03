@@ -311,6 +311,22 @@
 %%WWWDIR%%/api/api_webERPsettings.php
 %%WWWDIR%%/api/api_workorders.php
 %%WWWDIR%%/api/api_xml-rpc.php
+%%WWWDIR%%/api.zip
+%%WWWDIR%%/companies/weberp-stable/logo.jpg
+%%WWWDIR%%/companies/weberp-stable/logo1.jpg
+%%WWWDIR%%/companies/weberp-stable/logo2.jpg
+%%WWWDIR%%/companies/weberp-stable/logo4.jpg
+%%WWWDIR%%/companies/weberp-stable/logo5.jpg
+%%WWWDIR%%/companies/weberp-stable/logo6.jpg
+%%WWWDIR%%/companies/weberp-stable/logo7.jpg
+%%WWWDIR%%/companies/weberp-stable/part_pics/HON90021.jpg
+%%WWWDIR%%/companies/weberp-stable/part_pics/HON90022.jpg
+%%WWWDIR%%/companies/weberp-stable/part_pics/PHIS01.jpg
+%%WWWDIR%%/companies/weberp-stable/part_pics/webERPsmall.png
+%%WWWDIR%%/companies/weberp-stable/pdf_append/blankfile
+%%WWWDIR%%/companies/weberp-stable/reportwriter/CustomerList.rpt.txt
+%%WWWDIR%%/companies/weberp-stable/reportwriter/Invoice.pdf
+%%WWWDIR%%/companies/weberp-stable/reportwriter/InvoiceReport.rpt.txt
 %%WWWDIR%%/companies/weberpdemo/logo.jpg
 %%WWWDIR%%/companies/weberpdemo/logo1.jpg
 %%WWWDIR%%/companies/weberpdemo/logo2.jpg
@@ -318,13 +334,7 @@
 %%WWWDIR%%/companies/weberpdemo/logo5.jpg
 %%WWWDIR%%/companies/weberpdemo/logo6.jpg
 %%WWWDIR%%/companies/weberpdemo/logo7.jpg
-%%WWWDIR%%/companies/weberpdemo/part_pics/HON90021.jpg
-%%WWWDIR%%/companies/weberpdemo/part_pics/HON90022.jpg
-%%WWWDIR%%/companies/weberpdemo/part_pics/PHIS01.jpg
-%%WWWDIR%%/companies/weberpdemo/part_pics/webERPsmall.png
-%%WWWDIR%%/companies/weberpdemo/pdf_append/blankfile
-%%WWWDIR%%/companies/weberpdemo/reportwriter/CustomerList.rpt.txt
-%%WWWDIR%%/companies/weberpdemo/reportwriter/InvoiceReport.rpt.txt
+%%WWWDIR%%/companies/weberpdemo/reportwriter/Invoice.pdf
 %%WWWDIR%%/config.distrib.php
 %%WWWDIR%%/css/bg.gif
 %%WWWDIR%%/css/default/default.css
@@ -479,6 +489,7 @@
 %%WWWDIR%%/css/gel/images/transactions.png
 %%WWWDIR%%/css/gel/images/user.png
 %%WWWDIR%%/css/gel/login.css
+%%WWWDIR%%/css/green/images/transactions.png
 %%WWWDIR%%/css/jelly/default.css
 %%WWWDIR%%/css/jelly/images/Graphique-32.png
 %%WWWDIR%%/css/jelly/images/accept.png
@@ -1130,8 +1141,8 @@
 %%WWWDIR%%/sql/mysql/upgrade3.08-3.09.sql
 %%WWWDIR%%/sql/mysql/upgrade3.09-3.10.sql
 %%WWWDIR%%/sql/mysql/upgrade3.10-3.11.sql
+%%WWWDIR%%/sql/mysql/upgrade3.11-3.11.1.sql
 %%WWWDIR%%/sql/mysql/weberp-demo.sql
-%%WWWDIR%%/sql/mysql/weberp-demo.sql~
 %%WWWDIR%%/sql/mysql/weberp-new.sql
 %%WWWDIR%%/xmlrpc/Changelog
 %%WWWDIR%%/xmlrpc/Makefile
@@ -1155,10 +1166,10 @@
 @dirrm %%WWWDIR%%/Numbers/Words
 @dirrm %%WWWDIR%%/Numbers
 @dirrm %%WWWDIR%%/api
-@dirrm %%WWWDIR%%/companies/weberp/pdf_append
-@dirrm %%WWWDIR%%/companies/weberp
-@dirrm %%WWWDIR%%/companies/weberpdemo/part_pics
-@dirrm %%WWWDIR%%/companies/weberpdemo/pdf_append
+@dirrm %%WWWDIR%%/companies/weberp-stable/part_pics
+@dirrm %%WWWDIR%%/companies/weberp-stable/pdf_append
+@dirrm %%WWWDIR%%/companies/weberp-stable/reportwriter
+@dirrm %%WWWDIR%%/companies/weberp-stable
 @dirrm %%WWWDIR%%/companies/weberpdemo/reportwriter
 @dirrm %%WWWDIR%%/companies/weberpdemo
 @dirrm %%WWWDIR%%/companies
@@ -1168,6 +1179,8 @@
 @dirrm %%WWWDIR%%/css/fresh
 @dirrm %%WWWDIR%%/css/gel/images
 @dirrm %%WWWDIR%%/css/gel
+@dirrm %%WWWDIR%%/css/green/images
+@dirrm %%WWWDIR%%/css/green
 @dirrm %%WWWDIR%%/css/jelly/images
 @dirrm %%WWWDIR%%/css/jelly
 @dirrm %%WWWDIR%%/css/professional/images
