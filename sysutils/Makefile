@@ -688,6 +688,7 @@
     SUBDIR += rename
     SUBDIR += reoback
     SUBDIR += respond
+    SUBDIR += retail
     SUBDIR += rfstool
     SUBDIR += rmonitor
     SUBDIR += roottail

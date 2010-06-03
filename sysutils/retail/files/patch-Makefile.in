@@ -1,0 +1,12 @@
+--- Makefile.in-orig    2010-05-23 01:04:54.000000000 +0400
++++ Makefile.in 2010-05-23 01:05:04.000000000 +0400
+@@ -1,6 +1,8 @@
+ default:
+        cd src ; make
+
++all: default
++
+ clean:
+        cd src ; make clean
+        rm -f *~
+
