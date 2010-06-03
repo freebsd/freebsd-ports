@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mono-addins
-PORTVERSION=	0.4
-PORTREVISION=	3
+PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -29,16 +28,18 @@ OPTIONS=	GTK2 "Enable GTK support" on
 
 MAN1=		mautil.1
 
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
 
 .if !defined(WITHOUT_GTK2) && !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 USE_GNOME+=	gtksharp20
 CONFIGURE_ARGS+=	--enable-gui
-PLIST_SUB=	OPT_GTK2=""
+PLIST_SUB+=	OPT_GTK2=""
 .else
 CONFIGURE_ARGS+=	--disable-gui
-PLIST_SUB=	OPT_GTK2="@comment "
+PLIST_SUB+=	OPT_GTK2="@comment "
 .endif
 
 .include <bsd.port.post.mk>
