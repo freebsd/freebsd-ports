@@ -21,7 +21,8 @@ if [ "$2" = INSTALL ] ; then
 Error:   this package, $1, was compiled for a newer FreeBSD
 ======   version that uses different boot scripts.
          Therefore, the rc.d script WILL NOT WORK.
-         Please update your ports tree and install security/openvpn from there.
+         Please update your ports tree and install security/openvpn-devel 
+         from there.
 
 EOF
 		exit 1
