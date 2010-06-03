@@ -232,6 +232,7 @@
     SUBDIR += mysqlman
     SUBDIR += mysqlreport
     SUBDIR += mysqlsla
+    SUBDIR += mysqlsniffer
     SUBDIR += mysqltcl
     SUBDIR += mysqltuner
     SUBDIR += mytop

@@ -1,0 +1,6 @@
+mysqlsniffer is a tcpdump clone specifically for dumping/sniffing/watching MySQL
+network protocol traffic over TCP/IP networks.
+mysqlsniffer is coded in C using the pcap library and works with MySQL version
+4.0 and newer. mysqlsniffer is the only MySQL-specific network sniffer.
+
+WWW: http://hackmysql.com/mysqlsniffer
