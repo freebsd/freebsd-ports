@@ -6,6 +6,7 @@
 
 PORTNAME=	ogg2mp3
 PORTVERSION=	0.6.1
+PORTREVISION?=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://jamesa.com/projects/ogg2mp3/releases/
 

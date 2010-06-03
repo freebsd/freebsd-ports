@@ -7,6 +7,7 @@
 
 PORTNAME=	ebook2cw
 PORTVERSION=	0.7.0
+PORTREVISION?=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/ebook2cw/ \
 		${MASTER_SITE_LOCAL}

@@ -7,7 +7,7 @@
 
 PORTNAME=	mbox
 PORTVERSION=	0.7.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mbox.wz.cz/src/ CENKES
 

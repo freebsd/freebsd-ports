@@ -7,7 +7,7 @@
 
 PORTNAME=	cd2mp3
 PORTVERSION=	0.82
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ \

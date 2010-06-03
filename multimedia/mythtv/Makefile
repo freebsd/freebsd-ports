@@ -8,7 +8,7 @@
 
 PORTNAME=	mythtv
 PORTVERSION=	0.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/mythtv/ \
 		LOCAL/glarkin
