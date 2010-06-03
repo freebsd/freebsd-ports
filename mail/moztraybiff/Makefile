@@ -20,14 +20,17 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTS
 		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	${LOCALBASE}/lib/thunderbird/components/libwidget_gtk2.so:${PORTSDIR}/mail/thunderbird
 
-.if !exists(../thunderbird/Makefile)
-BROKEN=		${PORTNAME} needs the Thunderbird port in order to build
-.else
-TBVER!=		cd ../thunderbird && ${MAKE} -V PORTVERSION
-.endif
-
 USE_GMAKE=	yes
 USE_GNOME=	libgnome
+
+.include <bsd.port.pre.mk>
+
+.if !exists(${PORTSDIR}/mail/thunderbird/Makefile)
+BROKEN=		${PORTNAME} needs the Thunderbird port in order to build
+.else
+TBVER!=		(cd ${PORTSDIR}/mail/thunderbird && ${MAKE} -V PORTVERSION)
+.endif
+
 MAKE_ARGS+=	MOZILLA_PLATFORM=tbird TBVER=${TBVER} MOZ_TRUNK=0
 
 FILENAME=	mozTrayBiff-${PORTVERSION}-tb${TBVER}.xpi
@@ -50,4 +53,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
