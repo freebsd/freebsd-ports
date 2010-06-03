@@ -5,7 +5,7 @@
 PORTNAME=	bluecloth
 PORTVERSION=	1.0.1
 CATEGORIES=	www rubygems
-MASTER_SITES=	http://www.deveiate.org/code/
+MASTER_SITES=	RG
 DISTNAME=	BlueCloth-${PORTVERSION}
 
 MAINTAINER=	avl@FreeBSD.org
@@ -15,6 +15,6 @@ GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
