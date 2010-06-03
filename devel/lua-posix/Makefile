@@ -21,16 +21,21 @@ WRKSRC=		${WRKDIR}/posix
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/posix.lua \
 		%%LUA_MODLIBDIR%%/lposix.so
 
+.include <bsd.port.pre.mk>
+
 .if ${USE_LUA} == 5.1
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-51-lposix.c \
 		${FILESDIR}/extrapatch-51-posix.lua \
 		${FILESDIR}/extrapatch-51-test.lua
 .elif ${USE_LUA} == 5.0
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-50-Makefile
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
 .endif
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/posix.lua ${LUA_MODSHAREDIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/lposix.so ${LUA_MODLIBDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
