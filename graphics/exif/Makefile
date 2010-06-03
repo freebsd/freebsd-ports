@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	exif
-PORTVERSION=	0.6.17
-PORTREVISION=	1
+PORTVERSION=	0.6.19
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-popt-prefix=${LOCALBASE}
+MAKE_JOBS_SAFE=	yes
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls --without-libiconv-prefix
