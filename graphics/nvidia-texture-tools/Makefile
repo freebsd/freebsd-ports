@@ -47,7 +47,7 @@ PLIST_SUB+=	COMPRESSUI="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		does not build
 .endif
 
