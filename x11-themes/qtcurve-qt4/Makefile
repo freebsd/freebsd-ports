@@ -16,6 +16,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	QtCurve Qt4 widget style
 
 USE_BZIP2=	yes
+USE_GCC=	4.2+
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	dbus gui svg imageformats_run \
