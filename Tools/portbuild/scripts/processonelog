@@ -124,6 +124,7 @@ elif bzgrep -q "error in dependency .*, exiting" $1; then
 elif bzgrep -qE "pkg_(add|create):.*(can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
   reason="disk_full"; tag="df"
 elif bzgrep -qE "((Can't|unable to) open display|Cannot open /dev/tty for read|RuntimeError: cannot open display|You must run this program under the X-Window System)" $1; then
+  reason="DISPLAY"; tag="display"
 elif bzgrep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
   reason="distinfo_update"; tag="distinfo"
 elif bzgrep -qE "Member name contains .\.\." $1; then
