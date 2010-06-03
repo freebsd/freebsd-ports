@@ -1,3 +1,3 @@
-MD5 (sqlite-ext/extension-functions.c) = 625757faf99dde4e976a85f04a8f5e65
-SHA256 (sqlite-ext/extension-functions.c) = 4d8eeb7046e0c9671beadd0c5bea105c24a38ff1cf5fb318543a982d6ca3b1da
-SIZE (sqlite-ext/extension-functions.c) = 51748
+MD5 (sqlite-ext/extension-functions-1.0.c) = 625757faf99dde4e976a85f04a8f5e65
+SHA256 (sqlite-ext/extension-functions-1.0.c) = 4d8eeb7046e0c9671beadd0c5bea105c24a38ff1cf5fb318543a982d6ca3b1da
+SIZE (sqlite-ext/extension-functions-1.0.c) = 51748
