@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	treetop
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Ruby-based DSL for text parsing and interpretation
 
-BUILD_DEPENDS=	rubygem-polyglot>=0.2.9:${PORTSDIR}/devel/rubygem-polyglot
+BUILD_DEPENDS=	rubygem-polyglot>=0.3.1:${PORTSDIR}/devel/rubygem-polyglot
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
