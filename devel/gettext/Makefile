@@ -7,6 +7,7 @@
 
 PORTNAME=	gettext
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -29,7 +30,9 @@ CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		EMACS="no"
-CONFIGURE_ARGS=	--disable-csharp --disable-threads --disable-openmp
+CONFIGURE_ARGS=	--disable-csharp --disable-threads --disable-openmp \
+		--with-included-gettext --with-included-glib \
+		--with-included-libcroco --with-included-libxml
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
