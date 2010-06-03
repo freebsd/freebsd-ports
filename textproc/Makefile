@@ -1108,6 +1108,7 @@
     SUBDIR += rubygem-ini
     SUBDIR += rubygem-kwalify
     SUBDIR += rubygem-liquid
+    SUBDIR += rubygem-loofah
     SUBDIR += rubygem-markaby
     SUBDIR += rubygem-nokogiri
     SUBDIR += rubygem-opml

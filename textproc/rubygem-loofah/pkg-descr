@@ -1,0 +1,7 @@
+Loofah is a general library for manipulating HTML/XML documents and fragments.
+It's built on top of Nokogiri and libxml2, so it's fast and has a nice API.
+Loofah excels at HTML sanitization (XSS prevention). It includes some nice HTML
+sanitizers, which are based on HTML5lib's whitelist.
+
+WWW: http://github.com/flavorjones/loofah
+WWW: http://loofah.rubyforge.org/loofah/
