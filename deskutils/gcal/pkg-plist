@@ -1,14 +1,26 @@
 bin/gcal
+bin/gcal-daily
+bin/gcal-ddiff
+bin/gcal-ddiffdrv
+bin/gcal-dst
+bin/gcal-gcalltx
+bin/gcal-gcalltxp
+bin/gcal-moon
+bin/gcal-mrms
+bin/gcal-srss
+bin/gcal-wlocdrv
 bin/gcal2txt
 bin/tcal
 bin/txt2gcal
-%%DATADIR%%/CREDITS.dates
+%%DATADIR%%/CREDITS
+%%DATADIR%%/Makefile.in
 %%DATADIR%%/README
-%%DATADIR%%/README.dates
 %%DATADIR%%/ancient
 %%DATADIR%%/ansipic.rc
 %%DATADIR%%/birthday.rc
 %%DATADIR%%/bkk.rc
+%%DATADIR%%/cal2gcal.awk
+%%DATADIR%%/cal2gcal.pl
 %%DATADIR%%/calendar.birth
 %%DATADIR%%/calendar.chris
 %%DATADIR%%/calendar.compu
@@ -20,6 +32,8 @@ bin/txt2gcal
 %%DATADIR%%/can_holiday
 %%DATADIR%%/celtic
 %%DATADIR%%/computing
+%%DATADIR%%/ct2gcal.awk
+%%DATADIR%%/ct2gcal.pl
 %%DATADIR%%/de-mdata.rc
 %%DATADIR%%/de-sdata.rc
 %%DATADIR%%/events
@@ -29,6 +43,7 @@ bin/txt2gcal
 %%DATADIR%%/events4
 %%DATADIR%%/events5
 %%DATADIR%%/events6
+%%DATADIR%%/gcalrc
 %%DATADIR%%/gdead
 %%DATADIR%%/hawaii
 %%DATADIR%%/literature
@@ -42,57 +57,52 @@ bin/txt2gcal
 %%DATADIR%%/lotr
 %%DATADIR%%/mdata.rc
 %%DATADIR%%/meteoric.rc
+%%DATADIR%%/misc/Makefile
+%%DATADIR%%/misc/Makefile.am
 %%DATADIR%%/misc/README
 %%DATADIR%%/misc/daily/daily
-@exec ln -fs ../%F %D/bin/gcal-%f
-@rmtry bin/gcal-%f
 %%DATADIR%%/misc/daily/daily.awk
+%%DATADIR%%/misc/daily/daily.bat
 %%DATADIR%%/misc/daily/daily.pl
 %%DATADIR%%/misc/daily/daily.rc
 %%DATADIR%%/misc/ddiff/ddiff
-@exec ln -fs ../%F %D/bin/gcal-%f
-@rmtry bin/gcal-%f
+%%DATADIR%%/misc/ddiff/ddiff.@
+%%DATADIR%%/misc/ddiff/ddiff.bat
 %%DATADIR%%/misc/ddiff/ddiff1.awk
 %%DATADIR%%/misc/ddiff/ddiff1.pl
 %%DATADIR%%/misc/ddiff/ddiff2.awk
 %%DATADIR%%/misc/ddiff/ddiff2.pl
 %%DATADIR%%/misc/ddiff/ddiffdrv
-@exec ln -fs ../%F %D/bin/gcal-%f
-@rmtry bin/gcal-%f
 %%DATADIR%%/misc/ddiff/ddiffdrv.awk
+%%DATADIR%%/misc/ddiff/ddiffdrv.bat
 %%DATADIR%%/misc/ddiff/ddiffdrv.pl
 %%DATADIR%%/misc/ddiff/zone.tab
 %%DATADIR%%/misc/dst/dst
-@exec ln -fs ../%F %D/bin/gcal-%f
-@rmtry bin/gcal-%f
 %%DATADIR%%/misc/dst/dst.awk
 %%DATADIR%%/misc/dst/dst.pl
 %%DATADIR%%/misc/gcalltx/gcalltx
-@exec ln -fs ../%F %D/bin/gcal-%f
-@rmtry bin/gcal-%f
+%%DATADIR%%/misc/gcalltx/gcalltx.bat
 %%DATADIR%%/misc/gcalltx/gcalltx.pl
-@exec ln -fs ../%F %D/bin/gcal-%f
-@rmtry bin/gcal-%f
 %%DATADIR%%/misc/gcalltx/gcalltx.sed
+%%DATADIR%%/misc/gcalltx/gcalltxp
 %%DATADIR%%/misc/gcalmagic.add
+%%DATADIR%%/misc/magic.add
 %%DATADIR%%/misc/moon/moon
-@exec ln -fs ../%F %D/bin/gcal-%f
-@rmtry bin/gcal-%f
+%%DATADIR%%/misc/moon/moon.bat
+%%DATADIR%%/misc/moon/moon1.awk
+%%DATADIR%%/misc/moon/moon2.awk
 %%DATADIR%%/misc/mrms/mrms
-@exec ln -fs ../%F %D/bin/gcal-%f
-@rmtry bin/gcal-%f
 %%DATADIR%%/misc/mrms/mrms.awk
+%%DATADIR%%/misc/mrms/mrms.bat
 %%DATADIR%%/misc/mrms/mrms.pl
 %%DATADIR%%/misc/mrms/mrms.rc
 %%DATADIR%%/misc/srss/srss
-@exec ln -fs ../%F %D/bin/gcal-%f
-@rmtry bin/gcal-%f
 %%DATADIR%%/misc/srss/srss.awk
+%%DATADIR%%/misc/srss/srss.bat
 %%DATADIR%%/misc/srss/srss.pl
 %%DATADIR%%/misc/srss/srss.rc
 %%DATADIR%%/misc/wloc/wlocdrv
-@exec ln -fs ../%F %D/bin/gcal-%f
-@rmtry bin/gcal-%f
+%%DATADIR%%/misc/wloc/wlocdrv.bat
 %%DATADIR%%/misc/wloc/wlocdrv1.awk
 %%DATADIR%%/misc/wloc/wlocdrv1.pl
 %%DATADIR%%/misc/wloc/wlocdrv2.awk
@@ -101,15 +111,9 @@ bin/txt2gcal
 %%DATADIR%%/movies
 %%DATADIR%%/ms.rc
 %%DATADIR%%/music
+%%DATADIR%%/old2v220.awk
+%%DATADIR%%/old2v220.pl
 %%DATADIR%%/radio
-%%DATADIR%%/scripts/cal2gcal.awk
-%%DATADIR%%/scripts/cal2gcal.pl
-%%DATADIR%%/scripts/ct2gcal.awk
-%%DATADIR%%/scripts/ct2gcal.pl
-%%DATADIR%%/scripts/old2v220.awk
-%%DATADIR%%/scripts/old2v220.pl
-%%DATADIR%%/scripts/v2x2v300.awk
-%%DATADIR%%/scripts/v2x2v300.pl
 %%DATADIR%%/sdata.rc
 %%DATADIR%%/sfo
 %%DATADIR%%/space
@@ -120,19 +124,14 @@ bin/txt2gcal
 %%DATADIR%%/usa_holiday
 %%DATADIR%%/usa_other
 %%DATADIR%%/usa_states
+%%DATADIR%%/v2x2v300.awk
+%%DATADIR%%/v2x2v300.pl
 %%DATADIR%%/witchcraft
 %%DATADIR%%/wloc.rc
 %%DATADIR%%/world
 %%DATADIR%%/wtt1.rc
 %%DATADIR%%/wtt2.rc
 %%DATADIR%%/wtt3.rc
-share/locale/de/LC_MESSAGES/gcal.mo
-share/locale/fr/LC_MESSAGES/gcal.mo
-share/locale/nl/LC_MESSAGES/gcal.mo
-share/locale/pl/LC_MESSAGES/gcal.mo
-share/locale/ru/LC_MESSAGES/gcal.mo
-share/locale/sv/LC_MESSAGES/gcal.mo
-@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/misc/wloc
 @dirrm %%DATADIR%%/misc/srss
 @dirrm %%DATADIR%%/misc/mrms
@@ -143,3 +142,17 @@ share/locale/sv/LC_MESSAGES/gcal.mo
 @dirrm %%DATADIR%%/misc/daily
 @dirrm %%DATADIR%%/misc
 @dirrm %%DATADIR%%
+%%NLS%%share/locale/ca/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/da/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gcal.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/gcal.mo
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
