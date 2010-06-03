@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sqlite-ext-miscfuncs
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
