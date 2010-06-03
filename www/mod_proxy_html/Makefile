@@ -18,7 +18,7 @@ COMMENT=	Apache module for rewriting HTML links in proxied content
 MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
-USE_APACHE=	2.0+
+USE_APACHE=	2.2+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 SHORTMODNAME=	proxy_html
