@@ -7,7 +7,7 @@
 
 PORTNAME=	guile
 PORTVERSION=	1.1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	libs
@@ -31,6 +31,7 @@ MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 PLIST_SUB+=	GUILE_VER="${GUILE_VER}"
 
 MAN1=	greg.1
+INFO=	greg
 
 FIXME=		Library/gg_class.m ScriptKit/Library/GuileInterpreter.m
 

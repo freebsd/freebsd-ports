@@ -38,10 +38,6 @@ GNUstep/System/Tools/go
 GNUstep/System/Tools/guile-base
 %%USEX11%%GNUstep/System/Tools/guile-gui
 bin/greg
-info/dir
-@comment @unexec install-info --delete %D/info/greg.info %D/info/dir
-info/greg.info
-@exec install-info %D/info/greg.info %D/info/dir
 lib/libgreg.a
 lib/libgreg.la
 lib/libgreg.so
