@@ -38,6 +38,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra::patch-nfs.c
 BROKEN=		does not build
 .endif
 
+.if ${ARCH} == "powerpc"
+BROKEN=		Does not compile on powerpc
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
