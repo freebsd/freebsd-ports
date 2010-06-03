@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	capistrano
-PORTVERSION=	2.5.10
+PORTVERSION=	2.5.15
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
