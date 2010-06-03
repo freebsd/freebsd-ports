@@ -28,6 +28,9 @@ lib/libgphoto2/%%VERSION%%/agfa_cl20.so
 lib/libgphoto2/%%VERSION%%/aox.a
 lib/libgphoto2/%%VERSION%%/aox.la
 lib/libgphoto2/%%VERSION%%/aox.so
+lib/libgphoto2/%%VERSION%%/ax203.a
+lib/libgphoto2/%%VERSION%%/ax203.la
+lib/libgphoto2/%%VERSION%%/ax203.so
 lib/libgphoto2/%%VERSION%%/barbie.a
 lib/libgphoto2/%%VERSION%%/barbie.la
 lib/libgphoto2/%%VERSION%%/barbie.so
@@ -181,6 +184,9 @@ lib/libgphoto2/%%VERSION%%/spca50x.so
 lib/libgphoto2/%%VERSION%%/sq905.a
 lib/libgphoto2/%%VERSION%%/sq905.la
 lib/libgphoto2/%%VERSION%%/sq905.so
+lib/libgphoto2/%%VERSION%%/st2205.a
+lib/libgphoto2/%%VERSION%%/st2205.la
+lib/libgphoto2/%%VERSION%%/st2205.so
 lib/libgphoto2/%%VERSION%%/stv0674.a
 lib/libgphoto2/%%VERSION%%/stv0674.la
 lib/libgphoto2/%%VERSION%%/stv0674.so
@@ -209,6 +215,12 @@ lib/libgphoto2_port/%%VERSION_PORT%%/serial.so
 lib/libgphoto2_port/%%VERSION_PORT%%/usb.a
 lib/libgphoto2_port/%%VERSION_PORT%%/usb.la
 lib/libgphoto2_port/%%VERSION_PORT%%/usb.so
+lib/libgphoto2_port/%%VERSION_PORT%%/usbdiskdirect.a
+lib/libgphoto2_port/%%VERSION_PORT%%/usbdiskdirect.la
+lib/libgphoto2_port/%%VERSION_PORT%%/usbdiskdirect.so
+lib/libgphoto2_port/%%VERSION_PORT%%/usbscsi.a
+lib/libgphoto2_port/%%VERSION_PORT%%/usbscsi.la
+lib/libgphoto2_port/%%VERSION_PORT%%/usbscsi.so
 lib/libgphoto2.a
 lib/libgphoto2.la
 lib/libgphoto2.so
@@ -229,6 +241,8 @@ share/doc/libgphoto2/README.packaging
 share/doc/libgphoto2/camlibs/README.adc65
 share/doc/libgphoto2/camlibs/README.agfa-cl20
 share/doc/libgphoto2/camlibs/README.aox
+share/doc/libgphoto2/camlibs/README.ax203
+share/doc/libgphoto2/camlibs/README.ax203-compression
 share/doc/libgphoto2/camlibs/README.canon
 share/doc/libgphoto2/camlibs/README.clicksmart310
 share/doc/libgphoto2/camlibs/README.enigma13
@@ -255,6 +269,8 @@ share/doc/libgphoto2/camlibs/README.sonydscf1
 share/doc/libgphoto2/camlibs/README.soundvision
 share/doc/libgphoto2/camlibs/README.spca50x
 share/doc/libgphoto2/camlibs/README.sq905
+share/doc/libgphoto2/camlibs/README.st2205
+share/doc/libgphoto2/camlibs/README.st2205-compression
 share/doc/libgphoto2/camlibs/README.toshiba-pdrm11
 share/doc/libgphoto2/camlibs/README.905C
 share/doc/libgphoto2/camlibs/README.9050
