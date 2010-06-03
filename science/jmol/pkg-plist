@@ -104,6 +104,7 @@
 %%JAVAJARDIR%%/JmolApplet0_i18n_ko.jar
 %%JAVAJARDIR%%/JmolApplet0_i18n_nb.jar
 %%JAVAJARDIR%%/JmolApplet0_i18n_nl.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_oc.jar
 %%JAVAJARDIR%%/JmolApplet0_i18n_pl.jar
 %%JAVAJARDIR%%/JmolApplet0_i18n_pt.jar
 %%JAVAJARDIR%%/JmolApplet0_i18n_pt_BR.jar
@@ -111,6 +112,7 @@
 %%JAVAJARDIR%%/JmolApplet0_i18n_sv.jar
 %%JAVAJARDIR%%/JmolApplet0_i18n_tr.jar
 %%JAVAJARDIR%%/JmolApplet0_i18n_uk.jar
+%%JAVAJARDIR%%/JmolApplet0_i18n_zh_CN.jar
 %%JAVAJARDIR%%/JmolApplet0_i18n_zh_TW.jar
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/xml2po-modes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source/po
