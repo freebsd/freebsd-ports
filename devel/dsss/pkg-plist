@@ -26,6 +26,7 @@ include/d/sss/install.d
 include/d/sss/net.d
 include/d/sss/platform.d
 include/d/sss/stub.d
+include/d/sss/system.d
 include/d/sss/uninstall.d
 include/d/util/booltype.d
 include/d/util/fdt.d

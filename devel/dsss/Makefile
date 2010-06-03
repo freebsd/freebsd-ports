@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	dsss
-PORTVERSION=	0.75
+PORTVERSION=	0.78
 CATEGORIES=	devel
 MASTER_SITES=	http://svn.dsource.org/projects/dsss/downloads/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	D Shared Software System
 
 BUILD_DEPENDS=	gdc:${PORTSDIR}/lang/gdc
