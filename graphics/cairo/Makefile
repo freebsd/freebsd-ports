@@ -25,6 +25,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		pixman-1.9:${PORTSDIR}/x11/pixman
 
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
+		--disable-directfb \
 		--enable-pdf \
 		--enable-ps
 USE_GNOME=	gnomehack ltverhack referencehack
