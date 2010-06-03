@@ -1750,7 +1750,7 @@ CONFIGURE_ENV+=	MAKE=${GMAKE}
 .if defined(USE_OPENAL)
 _OPENAL_ALL=	al si soft alut
 _OPENAL_LIBS=	si soft
-# Default choie.
+# Default choice.
 _DEFAULT_OPENAL=	soft
 
 _OPENAL_SOFT=	openal.1:${PORTSDIR}/audio/openal-soft
