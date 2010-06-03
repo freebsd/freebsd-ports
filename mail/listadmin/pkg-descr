@@ -1,0 +1,7 @@
+listadmin is a command-line alternative to Mailman's Web interface
+for administering mailing lists. It allows you to inspect messages
+or subscription requests, approve or discard them manually, or
+discard messages automatically when certain conditions are true.
+listadmin can also be configured to run out of cron to do routine cleaning.
+
+WWW: http://heim.ifi.uio.no/kjetilho/hacks/#listadmin
