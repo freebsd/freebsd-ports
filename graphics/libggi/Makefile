@@ -120,6 +120,8 @@ MLINKS=		ggi-demo.1 demo.1 \
 		- ggidev-le0_3.3 \
 		- ggidev-lt0_3.3
 
+CONFIGURE_ARGS=	--disable-directfb
+
 .if exists(/usr/include/dev/kgi/kgi.h)
 CONFIGURE_ARGS+=	--enable-kgi --with-extra-includes=/usr/include/dev
 .endif
