@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	replex
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.6.8
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.metzlerbros.org/dvb/
@@ -15,7 +15,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Remultiplex an MPEG2 TS into a PS for DVD
 
 USE_GMAKE=	yes
-MAKE_ARGS=	CFLAGS="${CFLAGS}" DEFINES="${CPPFLAGS} -DO_LARGEFILE=0" \
+MAKE_ARGS=	CFLAGS="${CFLAGS}" DEFINES="${CPPFLAGS} -DO_LARGEFILE=0 -DVERSION=\\\"$(PORTVERSION)\\\"" \
 		LIBS="${LDFLAGS}"
 
 PLIST_FILES=	bin/replex
