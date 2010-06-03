@@ -7,8 +7,10 @@
 
 PORTNAME=	sqlite-ext-miscfuncs
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	LOCAL/glarkin
+MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
+		LOCAL/glarkin
 DISTNAME=	${SRCFILE}
 EXTRACT_SUFX=
 
@@ -19,7 +21,7 @@ USE_SQLITE=	yes
 DIST_SUBDIR=	sqlite-ext
 NO_WRKSUBDIR=	yes
 
-SRCFILE=	extension-functions.c
+SRCFILE=	extension-functions-${PORTVERSION}.c
 LIBFILE=	libsqlitemiscfuncs.so
 INST_DIR=	${PREFIX}/libexec/${DIST_SUBDIR}
 USE_LDCONFIG=	${INST_DIR}
