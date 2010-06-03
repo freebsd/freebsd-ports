@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.7.2.6
+PORTVERSION=	1.7.2.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://obsd.isc.org/pub/sudo/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://boulder.tele.dk/pub/sudo/ \
 		ftp://core.ring.gr.jp/pub/misc/sudo/ \
 		ftp://ftp.wiretapped.net/pub/security/host-security/sudo/
-DISTNAME=	${PORTNAME}-1.7.2p6
+DISTNAME=	${PORTNAME}-1.7.2p7
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
