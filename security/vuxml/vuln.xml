@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d42e5b66-6ea0-11df-9c8d-00e0815b8da8">
+    <topic>sudo -- Secure path vulnerability</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><lt>1.7.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Todd Miller reports:</p>
+	<blockquote cite="http://sudo.ws/sudo/alerts/secure_path.html">
+	  <p>Most versions of the C library function getenv() return the
+	    first instance of an environment variable to the caller.  However,
+	    some programs, notably the GNU Bourne Again SHell (bash), do
+	    their own environment parsing and may choose the last instance
+	    of a variable rather than the first one.</p>
+	  <p>An attacker may manipulate the environment of the process that
+	    executes Sudo such that a second PATH variable is present.  When
+	    Sudo runs a bash script, it is this second PATH variable that
+	    is used by bash, regardless of whether or not Sudo has overwritten
+	    the first instance of PATH.  This may allow an attacker to
+	    subvert the program being run under Sudo and execute commands
+	    he/she would not otherwise be allowed to run.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://sudo.ws/sudo/alerts/secure_path.html</url>
+      <cvename>CVE-2010-1646</cvename>
+    </references>
+    <dates>
+      <discovery>2010-06-02</discovery>
+      <entry>2010-06-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b43004b8-6a53-11df-bc7b-0245fb008c0b">
     <topic>ziproxy -- atypical huge picture files vulnerability</topic>
     <affects>
