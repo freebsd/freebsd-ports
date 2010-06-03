@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	rubytter
-PORTVERSION=	0.9.3
+PORTVERSION=	1.2.2
 CATEGORIES=	net rubygems
-MASTER_SITES=	RF/rubytter
+MASTER_SITES=	RG
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A simple twitter library
 
-BUILD_DEPENDS=	rubygem-json_pure>0:${PORTSDIR}/devel/rubygem-json_pure
+BUILD_DEPENDS=	rubygem-json>=1.1.3:${PORTSDIR}/devel/rubygem-json \
+		rubygem-oauth>=0.3.6:${PORTSDIR}/net/rubygem-oauth
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
