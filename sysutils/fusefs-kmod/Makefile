@@ -65,6 +65,10 @@ IGNORE=		requires the Kernel source to be installed. Set SRC_BASE if it is not i
 IGNORE=		requires the userland sources to be installed. Set SRC_BASE if it is not in /usr/src
 .endif
 
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+BROKEN=		Does not compile on other than i386/amd64
+.endif
+
 .if defined(WITH_AUTOSETUP)
 SUB_FILES+=	${SETUP}
 .else
