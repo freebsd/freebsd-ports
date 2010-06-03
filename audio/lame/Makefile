@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	lame
-PORTVERSION=	3.98.2
-PORTREVISION=	2
+PORTVERSION=	3.98.4
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		ftp://ftp.fu-berlin.de/unix/sound/%SUBDIR%/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//:S/./-/}
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Fast MP3 encoder kit
