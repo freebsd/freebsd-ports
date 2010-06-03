@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	russian
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.7
 CATEGORIES=	russian devel rubygems
 MASTER_SITES=	RG
 
