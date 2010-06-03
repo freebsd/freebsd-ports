@@ -3,15 +3,24 @@
 PKGNAME=$1
 [ ! -n "${PKG_PREFIX}" ] && exit 1
 
+CONFFILE="${PKG_PREFIX}/news/cleanfeed/etc/cleanfeed.local"
+
 case $2 in
     POST-INSTALL)
 	cd ${PKG_PREFIX}/news/bin/filter \
 		&& mv filter_innd.pl filter_innd.pl.orig \
 		&& ln -s cleanfeed filter_innd.pl
+	mkdir -p /var/log/cleanfeed
+	chown news:news /var/log/cleanfeed
+	test -f ${CONFFILE} || cp -p ${CONFFILE}.sample ${CONFFILE}
+	;;
+    DEINSTALL)
+	cmp -s ${CONFFILE}.sample ${CONFFILE} && rm -f ${CONFFILE}
 	;;
     POST-DEINSTALL)
 	cd ${PKG_PREFIX}/news/bin/filter \
 		&& mv filter_innd.pl.orig filter_innd.pl
+	rmdir /var/log/cleanfeed
 	;;
 esac
 exit 0
