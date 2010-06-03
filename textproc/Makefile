@@ -1114,6 +1114,7 @@
     SUBDIR += rubygem-opml
     SUBDIR += rubygem-rak
     SUBDIR += rubygem-rdiscount
+    SUBDIR += rubygem-sax-machine
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-syntax
     SUBDIR += rubygem-termcolor
