@@ -231,6 +231,7 @@
     SUBDIR += libvmime
     SUBDIR += lightning
     SUBDIR += linux-thunderbird
+    SUBDIR += listadmin
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
     SUBDIR += lmtpd
