@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haml
-PORTVERSION=	2.2.19
+PORTVERSION=	3.0.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -16,5 +16,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/css2sass bin/haml bin/html2haml bin/sass
+PLIST_FILES=	bin/css2sass bin/haml bin/html2haml bin/sass bin/sass-convert
+
 .include <bsd.port.mk>
