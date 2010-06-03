@@ -45,6 +45,12 @@
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_cursor_pget_bug.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_cursor_pget_bug.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_cursor_pget_bug.pyo
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_db.py
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_db.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_db.pyo
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_dbenv.py
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_dbenv.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/tests/test_dbenv.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_dbobj.py
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_dbobj.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/tests/test_dbobj.pyo
