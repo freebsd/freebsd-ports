@@ -22,6 +22,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	neon.28:${PORTSDIR}/www/neon28 \
 		gpgme.18:${PORTSDIR}/security/gpgme
 
+CONFLICTS=	gd-2.*
+
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
