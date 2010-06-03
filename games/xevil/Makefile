@@ -17,6 +17,7 @@ COMMENT=	A fast-action, networked, anti-social, kill-everything game
 
 USE_ZIP=	yes
 USE_XORG=	xpm
+USE_DOS2UNIX= makefile config.mk cmn/makefile cmn/*.cpp cmn/*.h x11/makefile x11/*.cpp
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd
 MAKE_JOBS_UNSAFE=	yes
@@ -32,7 +33,7 @@ pre-extract:
 	@${MKDIR} ${WRKDIR}/${DISTNAME}
 
 do-extract:
-	@unzip -aqo ${DISTDIR}/${DISTFILES} -d ${WRKSRC}
+	@${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES} -d ${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x11/FREEBSD/xevil ${PREFIX}/bin/xevil

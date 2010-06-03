@@ -16,11 +16,10 @@ COMMENT=	A C++ wrapper for the USGS GCTP projection library
 
 LIB_DEPENDS=	gctpc.1:${PORTSDIR}/misc/gctpc
 
-EXTRACT_CMD=	unzip -a
-
 WRKSRC=		${WRKDIR}/dlgv32/ProjectionLib
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	*.cpp *.h
 USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 

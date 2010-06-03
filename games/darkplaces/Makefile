@@ -18,6 +18,7 @@ COMMENT=	Quake engine modification
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_XORG=	xxf86dga xpm
+USE_DOS2UNIX=	darkplaces.txt
 MAKE_ENV=	DP_FS_BASEDIR="${Q1DIR}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -68,8 +69,8 @@ PLIST_FILES+=	bin/${PORTNAME}-sdl
 .endif
 
 post-extract:
-	@${UNZIP_CMD} -aq \
-		-o ${WRKDIR}/${PORTNAME}enginesource${PORTVERSION}.zip \
+	@${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${WRKDIR}/${PORTNAME}enginesource${PORTVERSION}.zip \
 		-d ${WRKDIR}
 
 do-install:
@@ -80,7 +81,7 @@ do-install:
 	@${TOUCH} ${DATADIR}/dummy
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/darkplaces.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/darkplaces.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

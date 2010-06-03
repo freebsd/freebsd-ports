@@ -19,6 +19,7 @@ DISTFILES=	${Q2_UPDATE}:data \
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake II data files
 
+#XXX need info-unzip for q2-314-demo-x86.exe
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 

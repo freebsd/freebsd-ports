@@ -1,5 +1,4 @@
---- fli2gif.cpp.orig	Fri Sep  6 00:10:14 1996
-+++ fli2gif.cpp	Fri Nov  1 06:18:18 2002
+Index: fli2gif.cpp
 @@ -43,7 +43,9 @@
  // ******************
  #include <stdio.h>
@@ -11,6 +10,15 @@
  #include <string.h>
  #if defined(__TURBOC__) || defined(_MSC_VER)
      #include <conio.h>
+@@ -81,7 +83,7 @@
+ // ***  Function prototypes  ***
+ // *****************************
+ void handle_error(int errorcode);
+-char *add_extension(char *filename, char *extension, BOOL enforce);
++char *add_extension(char *filename, const char *extension, BOOL enforce);
+ 
+ 
+ // **************************
 @@ -95,7 +97,7 @@
  //############################################################################
  //############################################################################
@@ -38,3 +46,12 @@
          #endif    
          ")\n\n");
      {
+@@ -389,7 +393,7 @@
+ // Takes a user-entered filename and adds the specified extension if an
+ // entension is not explicitly stated in the passed filename.  A pointer
+ // to a static buffer is returned.
+-char *add_extension(char *filename, char *extension, BOOL enforce)
++char *add_extension(char *filename, const char *extension, BOOL enforce)
+ {
+     static char Path[_MAX_PATH];
+ 
