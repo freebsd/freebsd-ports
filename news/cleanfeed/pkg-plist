@@ -1,6 +1,13 @@
-news/bin/filter/bad_adult_paths
-news/bin/filter/bad_cancel_paths
-news/bin/filter/bad_hosts
-news/bin/filter/bad_paths
 news/bin/filter/cleanfeed
-news/bin/filter/cleanfeed.local.sample
+news/cleanfeed/etc/bad_adult_paths
+news/cleanfeed/etc/bad_body
+news/cleanfeed/etc/bad_cancel_paths
+news/cleanfeed/etc/bad_from
+news/cleanfeed/etc/bad_groups
+news/cleanfeed/etc/bad_hosts
+news/cleanfeed/etc/bad_paths
+news/cleanfeed/etc/bad_subject
+news/cleanfeed/etc/bad_url
+news/cleanfeed/etc/cleanfeed.local.sample
+@dirrmtry news/cleanfeed/etc
+@dirrmtry news/cleanfeed
