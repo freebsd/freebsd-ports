@@ -12,7 +12,7 @@ MASTER_SITES=	http://apache.webthing.com/${PORTNAME}/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for rewriting HTML links in proxied content
 
 MAKE_JOBS_SAFE=	yes
