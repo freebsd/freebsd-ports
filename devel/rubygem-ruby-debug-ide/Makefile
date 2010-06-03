@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-debug-ide
-PORTVERSION=	0.4.9
+PORTVERSION=	0.4.10
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	debug-commons
