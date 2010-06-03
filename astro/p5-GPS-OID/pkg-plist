@@ -1,0 +1,5 @@
+%%SITE_PERL%%/GPS/OID.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS/OID/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS/OID
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GPS
+@dirrmtry %%SITE_PERL%%/GPS
