@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	net-ssh
-PORTVERSION=	2.0.16
+PORTVERSION=	2.0.21
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
