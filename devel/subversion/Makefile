@@ -18,7 +18,6 @@ MAN8=		svnserve.8
 TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 
 OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
-		APACHE2_APR	"Use APR from Apache 2.X" off \
 		MOD_DONTDOTHAT	"mod_dontdothat for Apache 2.X" off \
 		NEON		"WebDAV/Delta-V repo access module (neon)" on \
 		SERF		"WebDAV/Delta-V repo access module (serf)" off \
@@ -103,17 +102,8 @@ pre-everything::
 	@${FALSE}
 .endif
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
-	@${ECHO_MSG} "This option implies the WITH_APACHE2_APR option."
 .else
 	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
-.endif
-	@${ECHO_MSG} ""
-.if defined(WITH_APACHE2_APR)
-	@${ECHO_MSG} "Using APR from ${APACHE_PORT}.  If you have the devel/apr1"
-	@${ECHO_MSG} "port/package installed, you may need to remove it."
-.else
-	@${ECHO_MSG} "You can link subversion against the APR built with"
-	@${ECHO_MSG} "the ${APACHE_PORT} port, rather than the devel/apr1 port."
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_MOD_DONTDOTHAT) && defined(WITH_MOD_DAV_SVN)
@@ -168,13 +158,6 @@ pre-everything::
 	@${ECHO_MSG} "Many useful scripts will be installed into ${DATADIR}"
 
 pre-configure:
-	@if [ ! -x ${APR_APU_DIR}/${APR_CONFIG} -o ! -x ${APR_APU_DIR}/${APU_CONFIG} ] ; then \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You selected to use`'"${APR_PORT}' for apr library." ; \
-		${ECHO_MSG} 'It seems that `'"${APR_PORT}' is not properly installed." ; \
-		${ECHO_MSG} "" ; \
-		${FALSE} ; \
-	fi
 .if !defined(WITHOUT_BDB)
 	@if [ `${APR_APU_DIR}/${APU_CONFIG} --db-version` != "4" ] ; then \
 		${ECHO_MSG} "" ; \

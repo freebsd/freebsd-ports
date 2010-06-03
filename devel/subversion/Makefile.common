@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.6.11
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.5/:book
@@ -75,7 +75,7 @@ PLIST_SUB+=		BDB="@comment "
 .endif
 
 .if defined(WITH_MOD_DAV_SVN)
-WITH_APACHE2_APR=	yes
+WITH_APACHE=	yes
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 PLIST_SUB+=	MOD_DAV_SVN=""
 SUB_LIST+=	MOD_DAV_SVN_INSTALL="YES"
@@ -94,34 +94,28 @@ SVNGROUP?=	svn
 SVNUSER?=	svn
 .endif
 
-.if defined(WITH_APACHE2_APR)
-USE_APACHE=	2.0+
+.if defined(WITH_APACHE)
+USE_APACHE=   2.0+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
-.if ${APACHE_VERSION} >= 21
-APR_APU_DIR=	${LOCALBASE}/bin
-APR_CONFIG=	apr-1-config
-APU_CONFIG=	apu-1-config
+.if ${APACHE_VERSION} > 20
+LIB_DEPENDS+= apr-1:${PORTSDIR}/devel/apr1
+APR_CONFIG=   ${LOCALBASE}/bin/apr-1-config
+APU_CONFIG=   ${LOCALBASE}/bin/apu-1-config
 .else
-APR_APU_DIR=	${LOCALBASE}/lib/apache2
-APR_CONFIG=	apr-config
-APU_CONFIG=	apu-config
+LIB_DEPENDS+= apr-0:${PORTSDIR}/devel/apr0
+APR_CONFIG=   ${LOCALBASE}/bin/apr-config
+APU_CONFIG=   ${LOCALBASE}/bin/apu-config
 .endif
-APR_PORT=	${APACHE_PORT}
 .else
-APR_PORT=	devel/apr1
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/${APR_PORT}
-APR_APU_DIR=	${LOCALBASE}/bin
-APR_CONFIG=	apr-1-config
-APU_CONFIG=	apu-1-config
+LIB_DEPENDS+= apr-1:${PORTSDIR}/devel/apr1
+APR_CONFIG=   ${LOCALBASE}/bin/apr-1-config
+APU_CONFIG=   ${LOCALBASE}/bin/apu-1-config
 .endif
 
-CONFIGURE_ARGS+=--with-apr=${APR_APU_DIR}/${APR_CONFIG} \
-		--with-apr-util=${APR_APU_DIR}/${APU_CONFIG}
+CONFIGURE_ARGS+=  --with-apr=${APR_CONFIG} --with-apr-util=${APU_CONFIG}
 
 .if defined(WITH_SVNAUTHZ_VALIDATE)
-.if exists(${APR_APU_DIR}/${APR_CONFIG})
-APR_INCLUDE_DIR!=	${APR_APU_DIR}/${APR_CONFIG} --includedir
-.endif
+APR_INCLUDE_DIR!=	${APR_CONFIG} --includedir
 PLIST_SUB+=     SVNAUTHZ_VALIDATE=""
 .else
 PLIST_SUB+=     SVNAUTHZ_VALIDATE="@comment "
