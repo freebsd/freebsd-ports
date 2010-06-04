@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	batmon
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	sysutils gnustep
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	gap
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep battery monitor for laptops
+
+LICENSE=	GPLv2
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
