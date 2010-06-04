@@ -14,15 +14,16 @@ MASTER_SITES=	GNOME
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	VoIP phone for GNOME
 
+LIB_DEPENDS=	opal_r:${PORTSDIR}/net/opal
+
 OPTIONS=	AVAHI	"Support Avahi for service discovery on LAN" on \
 		DBUS	"Use D-BUS for interprocess communication" on
-
-LIB_DEPENDS=	opal_r:${PORTSDIR}/net/opal
 
 CONFLICTS=	ekiga-3.*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_SDL=	sdl
 INSTALLS_OMF=	yes
 USE_GNOME=	libgnomeui gnomeprefix gnomehack gnomedocutils \
@@ -33,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_ARGS=	--with-pwlib-dir=${LOCALBASE} \
 		--with-opal-dir=${LOCALBASE}
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+MAKE_JOBS_SAFE=	yes
 
 GCONF_SCHEMAS=	ekiga.schemas
 MAN1=		ekiga.1
