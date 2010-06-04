@@ -26,6 +26,8 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 
+LICENSE=	GPLv3
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include

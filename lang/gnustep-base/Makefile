@@ -26,6 +26,8 @@ LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 LIB_DEPENDS+=	gnutls-openssl.40:${PORTSDIR}/security/gnutls
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 
+LICENSE=        GPLv3
+
 USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs --disable-openssl --enable-tls \

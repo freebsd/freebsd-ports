@@ -18,6 +18,8 @@ COMMENT=	Open source, cross-platform, free C/C++ IDE
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
+LICENSE=	GPLv3
+
 USE_BZIP2=	yes
 USE_WX=		2.8
 WANT_UNICODE=	yes
