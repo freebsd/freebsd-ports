@@ -41,6 +41,10 @@ USE_GHOSTSCRIPT_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+MANUAL_PACKAGE_BUILD=	takes a tremendous amount of time to build on pointyhat nodes
+.endif
+
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
