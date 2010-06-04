@@ -1,0 +1,26 @@
+bin/kstreamripper
+share/applications/kde4/kstreamripper.desktop
+share/apps/kstreamripper/action-favorite-genres-amarok.svgz
+share/apps/kstreamripper/kstreamripperui.rc
+share/apps/kstreamripper/parse_rules.txt
+share/apps/kstreamripper/tips
+share/config.kcfg/settings_general.kcfg
+share/config.kcfg/settings_stream.kcfg
+share/icons/hicolor/128x128/apps/kstreamripper.png
+share/icons/hicolor/16x16/apps/kstreamripper.png
+share/icons/hicolor/22x22/apps/kstreamripper.png
+share/icons/hicolor/256x256/apps/kstreamripper.png
+share/icons/hicolor/32x32/apps/kstreamripper.png
+share/icons/hicolor/48x48/apps/kstreamripper.png
+share/icons/hicolor/64x64/apps/kstreamripper.png
+share/icons/hicolor/8x8/apps/kstreamripper.png
+share/icons/hicolor/scalable/apps/kstreamripper.svgz
+share/locale/cs/LC_MESSAGES/kstreamripper.mo
+share/locale/de/LC_MESSAGES/kstreamripper.mo
+share/locale/fr/LC_MESSAGES/kstreamripper.mo
+share/locale/pt_BR/LC_MESSAGES/kstreamripper.mo
+@dirrmtry share/icons/hicolor/8x8/apps
+@dirrmtry share/icons/hicolor/8x8
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrm share/apps/kstreamripper
