@@ -13,7 +13,7 @@ MASTER_SITES=	http://homepage3.nifty.com/seto-yoneji/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese address book
 
 ALL_TARGET=

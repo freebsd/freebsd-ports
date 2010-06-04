@@ -18,7 +18,7 @@ DISTFILES=	maru14.bdf.v13.gz maru18.bdf.v10.gz \
 		9x18maru.bdf.gz 9x18rkmr.bdf.gz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese marumoji fonts
 
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \

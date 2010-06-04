@@ -16,7 +16,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	irchat-pj-${PORTVERSION}pl2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DCC support program for irchat-pj
 
 USE_BZIP2=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ring.aist.go.jp/pub/elisp/semi/semi-1.14-for-flim-1.14/ \
 		http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/semi/semi-1.14-for-flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIME extension of mh-e.el
 
 BUILD_DEPENDS+=	${LOCALBASE}/share/semi/${SEMI_COOKIE}:${PORTSDIR}/editors/semi${DEPPORT_SUFFIX}

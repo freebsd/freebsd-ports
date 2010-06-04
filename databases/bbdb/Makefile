@@ -12,7 +12,7 @@ CATEGORIES=	databases elisp
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Big Brother Database
 
 USE_EMACS=	yes

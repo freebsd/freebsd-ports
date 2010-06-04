@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	ftp www elisp
 MASTER_SITES=	http://pop-club.hp.infoseek.co.jp/emacs/emacs-wget/
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple front-end to wget on Emacsen
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget

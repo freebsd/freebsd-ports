@@ -14,7 +14,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/ \
 		http://www.ring.gr.jp/archives/elisp/skk/maintrunk/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 
 USE_EMACS=      yes

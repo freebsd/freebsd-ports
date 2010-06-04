@@ -12,7 +12,7 @@ CATEGORIES=	misc elisp
 MASTER_SITES=	ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU screen like utility on Emacsen
 
 USE_EMACS=	yes

@@ -17,7 +17,7 @@ PATCH_SITES=	http://www.tamaru.kuee.kyoto-u.ac.jp/~tsuchiya/misc/kpcal/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-20040518.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make Calendar in Postscript format
 
 ALL_TARGET=	kpcal

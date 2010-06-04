@@ -18,7 +18,7 @@ PATCHFILES=	${DISTNAME}-xim.patch.gz \
 
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A color vt102 terminal emulator with transparency support
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \

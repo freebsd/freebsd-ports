@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.quickhack.net/mhc/arc/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-current-snap${PORTVERSION}
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Message Harmonized Calendaring system
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/emacs
