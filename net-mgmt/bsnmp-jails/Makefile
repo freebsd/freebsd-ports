@@ -13,6 +13,8 @@ MASTER_SITES=	http://memberwebs.com/stef/software/bsnmp-jails/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A bsnmpd module to measure statistics about jails
 
+LICENSE=	BSD
+
 GNU_CONFIGURE=	yes
 
 MAN8=		bsnmp-jails.8

@@ -36,6 +36,7 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An news server
 
+LICENSE=	BSD
 MAKE_JOBS_UNSAFE=	yes
 
 DIST_SUBDIR=	${DISTNAME}

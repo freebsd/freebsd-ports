@@ -17,6 +17,8 @@ COMMENT=	Etoile Project SmalltalkKit framework
 
 BUILD_DEPENDS=	lemon:${PORTSDIR}/devel/lemon
 
+LICENSE=	BSD
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

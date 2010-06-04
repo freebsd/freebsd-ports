@@ -15,6 +15,8 @@ DISTFILES=	xyssl-${PORTVERSION}-bsd.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A liteweight SSL and TLS toolkit for C developers
 
+LICENSE=	BSD
+
 # HAS_CONFIGURE=	no
 # GNU_CONFIGURE=	no
 

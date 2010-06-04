@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.benzedrine.cx/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter plugin to sendmail for regular expression filtering
 
+LICENSE=	BSD
+
 DIST_SUBDIR=	repacked
 MAILUSER?=	mailnull
 MAN8=		milter-regex.8

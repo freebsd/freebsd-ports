@@ -18,10 +18,10 @@ CONFLICTS=	tidy-devel-[0-9]* tidy-lib-[0-9]*
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fixes and tidies up HTML files
 
+LICENSE=	BSD
+
 MAN1=		tidy.1
-
 ALL_TARGET=	tidy
-
 DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif
 
 do-install:

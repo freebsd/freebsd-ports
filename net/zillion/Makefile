@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-0_1
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Distributed computing project
 
+LICENSE=	BSD
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

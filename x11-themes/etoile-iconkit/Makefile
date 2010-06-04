@@ -18,6 +18,8 @@ COMMENT=	Etoile Project IconKit framework
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
+LICENSE=	BSD
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

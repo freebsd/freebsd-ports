@@ -19,6 +19,7 @@ COMMENT=	An open-source JPEG 2000 codec
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
+LICENSE=	BSD
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GMAKE=	yes
