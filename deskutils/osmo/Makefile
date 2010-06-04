@@ -7,7 +7,7 @@
 
 PORTNAME=	osmo
 PORTVERSION=	0.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}-pim/${PORTNAME}-pim/${PORTNAME}-${PORTVERSION}/
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		notify:${PORTSDIR}/devel/libnotify \
 		ical:${PORTSDIR}/devel/libical \
 		tar:${PORTSDIR}/devel/libtar \
-		gringotts:${PORTSDIR}/security/libgringotts
+		gringotts:${PORTSDIR}/security/libgringotts \
+		gtkhtml:${PORTSDIR}/www/libgtkhtml
 
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
