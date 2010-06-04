@@ -107,7 +107,7 @@ meta1s:*:260:260::0:0:MeTA1 SMTPS:/nonexistent:/usr/sbin/nologin
 meta1q:*:261:261::0:0:MeTA1 QMGR:/nonexistent:/usr/sbin/nologin
 meta1c:*:262:262::0:0:MeTA1 SMTPC:/nonexistent:/usr/sbin/nologin
 meta1m:*:263:263::0:0:MeTA1 misc:/nonexistent:/usr/sbin/nologin
-meta1:*:264:264::0:0: X other:/nonexistent:/usr/sbin/nologin
+meta1:*:264:264::0:0:MeTA1 other:/nonexistent:/usr/sbin/nologin
 hacluster:*:275:275::0:0:Heartbeat cluster user:/nonexistent:/usr/sbin/nologin
 frontbase:*:276:276::0:0:FrontBase Daemon:/usr/local/FrontBase/Databases:/bin/sh
 mrtg:*:279:279::0:0:MRTG daemon:/nonexistent:/usr/sbin/nologin
