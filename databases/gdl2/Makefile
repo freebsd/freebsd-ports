@@ -18,6 +18,8 @@ COMMENT=	GNUstep Database Library 2 (Enterprise Objects Framework)
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 
+LICENSE=	GPLv3
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_CONFIGURE=	yes

@@ -15,6 +15,8 @@ DISTNAME=	Performance-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Help improve the performance of GNUstep applications
 
+LICENSE=	GPLv3
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_BUILD=	yes

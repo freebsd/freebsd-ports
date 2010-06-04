@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	core
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep makefile package
 
+LICENSE=        GPLv3
+
 USE_GNUSTEP=	yes
 GNU_CONFIGURE=	yes
 

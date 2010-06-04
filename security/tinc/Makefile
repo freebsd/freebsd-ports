@@ -18,6 +18,8 @@ COMMENT=	A Virtual Private Network (VPN) daemon
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
+LICENSE=	GPLv3
+
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
