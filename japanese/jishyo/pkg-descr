@@ -4,6 +4,6 @@ queries, as well as multi-radical lookups for kanji. Jishyo is based in
 large part on code from Jim Breen's xjdic. It also uses the dictionary
 data from the same software.
 
-LICENSE: GPL2+
+LICENSE: GPL2 or later
 
 WWW: http://www.eskimo.com/~pburns/Dictionaries/

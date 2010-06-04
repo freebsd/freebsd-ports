@@ -6,6 +6,6 @@ Ctrl-left-click and drag to connect knobs to slots.
 Right-click to disassemble a cluster.
 Ctrl-right-click to extract a piece from a cluster.
 
-LICENSE: GPL2+
+LICENSE: GPL2 or later
 
 WWW: http://www.gnustep.it/marko/GPuzzle2/
