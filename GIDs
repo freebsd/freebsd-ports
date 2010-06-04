@@ -95,8 +95,8 @@ fcron:*:247:
 _tor:*:256:
 meta1s:*:260:
 meta1q:*:261:
-meta1c:*:262:
-meta1m:*:263:
+meta1c:*:262:meta1s
+meta1m:*:263:meta1s,meta1q
 meta1:*:264:
 haclient:*:275:
 frontbase:*:276:
