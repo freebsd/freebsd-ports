@@ -17,7 +17,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${PORTNAME}-${PORTVERSION}pl2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Primitive Universal Relay-chat Environment
 
 USE_BZIP2=	yes

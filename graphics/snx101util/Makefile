@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.medias.ne.jp/~takam/bsd/
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image capture programs for Webcam based SN9C101
 
 .if defined(WITHOUT_X11)

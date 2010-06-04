@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}.el
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A front-end of Egg V4
 
 NO_WRKSUBDIR=	yes

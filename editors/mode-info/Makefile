@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://namazu.org/~tsuchiya/elisp/
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functions to refer Manuals on Emacsen with describe-* like interface
 
 MI_INDEX+=	mi-emacs.idx
