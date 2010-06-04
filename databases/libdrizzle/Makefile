@@ -7,6 +7,7 @@
 
 PORTNAME=	libdrizzle
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/41155299/ \
 		LOCAL/glarkin
@@ -15,6 +16,8 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Client and protocol library for the Drizzle database
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+
+OPTIONS=	DOCS "Build documentation with doxygen" Off
 
 USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
@@ -28,12 +31,17 @@ SAMPLE_PROGS=	client pipe_query proxy server simple \
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)
+.if defined(WITH_DOCS)
 BUILD_DEPENDS+=	doxygen>=0:${PORTSDIR}/devel/doxygen
 ALL_TARGET=	all doxygen
+PLIST_SUB+=	PORTDOCS=""
 
 post-install::
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+.else
+PLIST_SUB+=	PORTDOCS="@comment "
+.endif
 .endif
 
 .if !defined(NOPORTEXAMPLES)
