@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	X11 arcade game
 
+LICENSE=	MIT
+
 USE_IMAKE=	yes
 USE_XORG=	xpm xext x11
 WRKSRC=		${WRKDIR}/xboing
