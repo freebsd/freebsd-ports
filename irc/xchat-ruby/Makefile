@@ -17,6 +17,8 @@ COMMENT=	An ruby-scripting plugin for XChat
 
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
+LICENSE=	GPLv2
+
 USE_RUBY=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 DOCSRC=		${WRKDIR}/${DISTNAME}

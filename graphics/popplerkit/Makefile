@@ -16,6 +16,8 @@ COMMENT=	Framework that supports rendering of PDF content
 
 LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

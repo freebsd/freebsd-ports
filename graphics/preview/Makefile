@@ -16,6 +16,8 @@ DISTNAME=	Preview-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple image viewer
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

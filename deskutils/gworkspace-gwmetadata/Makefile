@@ -17,6 +17,8 @@ PKGNAMESUFFIX=	-gwmetadata${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GWMetadata for GNUstep workspace manager
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_CONFIGURE=	yes

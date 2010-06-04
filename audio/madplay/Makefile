@@ -19,6 +19,8 @@ COMMENT=	Madplay MP3 player (part of MAD project)
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
 
+LICENSE=	GPLv2
+
 WANT_GNOME=	yes
 
 GNU_CONFIGURE=	yes

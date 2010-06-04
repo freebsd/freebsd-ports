@@ -16,6 +16,8 @@ DISTFILES=	English-German.cstack.gz German-French.cstack.gz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Stacks for use with Popup
 
+LICENSE=	GPLv2
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}

@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	usr-apps
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Free clone of KlipFolio for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	MPEG audio player/decoder decoding layer I and II MPEG audio streams
 
+LICENSE=	GPLv2
+
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/maplay

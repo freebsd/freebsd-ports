@@ -15,6 +15,8 @@ DISTNAME=	Preferences-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep workspace manager
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

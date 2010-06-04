@@ -14,6 +14,8 @@ DISTNAME=	zidrav4unix-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A file corruption detection and repair program
 
+LICENSE=	GPLv2
+
 ALL_TARGET=	zidrav
 MAN1=		zidrav.1
 PLIST_FILES=	bin/zidrav

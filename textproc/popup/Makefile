@@ -15,6 +15,8 @@ DISTNAME=	Popup-${PORTVERSION}pre1
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Interactive learning aid for pairs of words
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

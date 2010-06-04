@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.gnustep.it/enrico/system-preferences/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	System Preferences application for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

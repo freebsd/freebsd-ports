@@ -18,6 +18,8 @@ DISTNAME=	GNUstepWrapper-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Create GNUstep app-wrappers of non-GNUstep applications
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

@@ -15,6 +15,8 @@ DISTNAME=	Expense-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Application to track your expense under GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

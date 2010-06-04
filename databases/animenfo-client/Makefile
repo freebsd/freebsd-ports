@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	AnimeNfo client
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 PLIST_FILES=	bin/animenfo-client
 

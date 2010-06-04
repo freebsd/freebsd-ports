@@ -14,14 +14,16 @@ MASTER_SITE_SUBDIR=	gperf
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Generates perfect hash functions for sets of keywords
 
-MAKE_JOBS_UNSAFE=	yes
+LICENSE=	GPLv2
 CONFLICTS=	ace+tao-[0-9]*
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
+CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
 MAN1=		gperf.1
 INFO=		gperf
-CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
+
 # avoid GPL3
 PORTSCOUT=	skipv:3.0.4
 

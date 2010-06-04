@@ -20,6 +20,8 @@ COMMENT=	GNUstep interface to the GUILE scheme interpreter
 
 LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes

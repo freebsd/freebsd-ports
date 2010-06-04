@@ -16,6 +16,8 @@ DISTNAME=	Duncan-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	English to Thai dictionary for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
