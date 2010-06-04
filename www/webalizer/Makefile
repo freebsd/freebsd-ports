@@ -38,7 +38,7 @@ WEBALIZER_LANG?=english
 DISTFILES+=	webalizer-flags.tgz:main
 .endif
 .if defined(WITH_GEODB) || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	webalizer-geodb-20100401.tgz:geodb
+DISTFILES+=	webalizer-geodb-20100601.tgz:geodb
 .endif
 
 .if !defined(LIB_DEPENDS)
@@ -73,9 +73,6 @@ PLIST_SUB+=	WITH_GEOIP="@comment "
 .if defined(WITH_BDB_VER) || defined(WITH_BDB)
 USE_BDB=	yes
 INVALID_BDB_VER=	2 3 40
-.if defined(WITH_GEODB)
-INVALID_BDB_VER+=	41 42 43 44 45
-.endif
 LDFLAGS+=	-L${BDB_LIB_DIR}
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
 .else
