@@ -75,6 +75,10 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man" \
 		--enable-shared \
@@ -110,7 +114,7 @@ USE_RC_SUBR=	ffserver
 
 .if defined(WITH_SSSE3)
 USE_GCC=	4.4+
-BUILD_DEPENDS+=	as:${PORTSDIR}/devel/binutils 
+BUILD_DEPENDS+=	as:${PORTSDIR}/devel/binutils
 .endif
 
 # sse hardware vector support
