@@ -7,6 +7,7 @@
 
 PORTNAME=	moonlight
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/moon/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -50,6 +51,9 @@ WEBPLUGINS_FILES=	libmoonloader.so \
 OPTIONS=	PULSEAUDIO "Build with PA (needed for sound support)" on
 
 MAN1=	mopen.1 mxap.1 respack.1 sockpol.1 svg2xaml.1 xamlg.1
+
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
