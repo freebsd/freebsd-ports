@@ -20,6 +20,8 @@ COMMENT=	A gnome frontend for tinyfuge
 
 RUN_DEPENDS=	tf:${PORTSDIR}/net/tinyfugue
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-compile-warnings=yes

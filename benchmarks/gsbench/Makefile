@@ -15,6 +15,8 @@ DISTNAME=	GSBench-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Benchmarking tool for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

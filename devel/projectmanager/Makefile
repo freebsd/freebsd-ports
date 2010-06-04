@@ -15,6 +15,8 @@ DISTNAME=	ProjectManager-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple, but very usable development environment
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

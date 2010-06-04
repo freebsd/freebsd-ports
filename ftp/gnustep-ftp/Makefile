@@ -16,6 +16,8 @@ DISTNAME=	FTP-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Compact and handy FTP client for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

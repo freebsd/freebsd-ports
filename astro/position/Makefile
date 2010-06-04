@@ -16,6 +16,8 @@ COMMENT=	GPS and Moving-Map Applikation
 
 LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

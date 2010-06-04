@@ -15,6 +15,8 @@ DISTNAME=	etoile-0.4.1
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PDF Reader for GNUstep
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

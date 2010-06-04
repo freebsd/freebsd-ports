@@ -17,6 +17,8 @@ DIST_SUBDIR=	repacked
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep-aware scheme interpreter
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

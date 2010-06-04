@@ -20,6 +20,8 @@ COMMENT=	GNU Go frontend for GNUstep
 
 RUN_DEPENDS=	gnugo:${PORTSDIR}/games/gnugo
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

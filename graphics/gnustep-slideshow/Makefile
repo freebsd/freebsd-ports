@@ -16,6 +16,8 @@ DISTNAME=	SlideShow-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SlideShow Viewer
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

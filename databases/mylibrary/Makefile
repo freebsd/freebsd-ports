@@ -16,6 +16,8 @@ DISTNAME=	MyLibrary-${PORTVERSION}g
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Wiki-style data management application for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

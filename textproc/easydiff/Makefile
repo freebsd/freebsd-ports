@@ -15,6 +15,8 @@ DISTNAME=	EasyDiff-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep graphical diff
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

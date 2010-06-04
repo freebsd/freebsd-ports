@@ -18,6 +18,8 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}.patch.gz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Spread sheet for X Window System
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 USE_XORG=	x11
 USE_TK=		82

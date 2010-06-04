@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A multi purpose wrapper plugin for Nagios
 
+LICENSE=	GPLv2
+
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 

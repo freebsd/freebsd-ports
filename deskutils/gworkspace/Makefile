@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	usr-apps
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep workspace manager
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_CONFIGURE=	yes

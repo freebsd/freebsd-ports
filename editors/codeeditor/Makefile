@@ -16,6 +16,8 @@ DISTNAME=	CodeEditor-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	CodeEditor is a text and code editor for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

@@ -20,6 +20,8 @@ DISTFILES=	${DISTNAME}.tgz:main
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	A web server log file analysis program
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}

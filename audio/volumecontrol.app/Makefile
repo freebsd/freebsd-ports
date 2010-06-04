@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.linuks.mine.nu/volumecontrol/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Audio mixer for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

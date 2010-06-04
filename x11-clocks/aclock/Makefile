@@ -15,6 +15,8 @@ DISTNAME=	aclock-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Analog Clock for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

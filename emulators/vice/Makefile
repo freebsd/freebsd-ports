@@ -26,6 +26,7 @@ LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
 RESTRICTED=	"ROMs are copyrighted by Commodore Business Machines"
+LICENSE=	GPLv2
 
 USE_XORG=	xpm ice sm xext xv xt x11 xmu
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes

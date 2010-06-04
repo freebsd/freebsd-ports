@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.linuks.mine.nu/stepbill/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Get rid of those nasty Wingdows viruses
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

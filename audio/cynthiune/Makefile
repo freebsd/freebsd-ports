@@ -24,6 +24,8 @@ LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

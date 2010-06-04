@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.infodrom.org/projects/dtaus/download/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Belegloser DatenTraegerAUStausch
 
+LICENSE=	GPLv2
+
 ALL_TARGET=	dtaus
 PLIST_FILES=	bin/dtaus
 

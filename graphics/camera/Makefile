@@ -18,6 +18,8 @@ COMMENT=	GNUstep application for digital still cameras
 
 LIB_DEPENDS+=	gphoto2_port:${PORTSDIR}/graphics/libgphoto2
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

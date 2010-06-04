@@ -13,6 +13,8 @@ MASTER_SITES=	https://oss.euedge.com/downloads/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Finds sets of identical files
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 
 MAN1=	kua.1 ua.1

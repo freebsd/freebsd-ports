@@ -19,6 +19,8 @@ COMMENT=	AnimeNfo client with GTK support
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20

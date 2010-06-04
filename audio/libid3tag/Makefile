@@ -15,6 +15,8 @@ MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION} \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	ID3 tags library (part of MAD project)
 
+LICENSE=	GPLv2
+
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -15,6 +15,8 @@ DISTNAME=	EdenMath_GNUstep-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Scientific calcualtor for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

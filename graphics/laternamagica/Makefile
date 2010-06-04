@@ -15,6 +15,8 @@ DISTNAME=	LaternaMagica-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Image viewer and slideshow application
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

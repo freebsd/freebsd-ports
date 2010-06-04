@@ -18,6 +18,8 @@ DIST_SUBDIR=	repacked
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	RSS monitor for RSS and Atom feeds
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

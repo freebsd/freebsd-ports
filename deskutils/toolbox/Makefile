@@ -17,6 +17,8 @@ DISTNAME=	Toolbox-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Collection of tools for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

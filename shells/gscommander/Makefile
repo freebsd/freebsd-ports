@@ -15,6 +15,8 @@ DISTNAME=	GSCommander-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep simple unix command monitor
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

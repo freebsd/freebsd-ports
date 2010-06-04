@@ -14,6 +14,8 @@ PKGNAMESUFFIX=	-client${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	System for monitoring servers and networks - Client
 
+LICENSE=	GPLv2
+
 # Options
 BBUSER?=	hobbit
 BBHOSTIP?=	127.0.0.1

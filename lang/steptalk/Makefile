@@ -16,6 +16,8 @@ DISTNAME=	StepTalk-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The official GNUstep scripting framework
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_GUI=	yes
 USE_GNUSTEP_BUILD=	yes

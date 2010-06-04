@@ -15,6 +15,8 @@ DISTNAME=	digibux_${PORTVERSION}+CVS20060118.orig
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reader for editions of Digitale Bibliothek
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
