@@ -16,6 +16,8 @@ DISTNAME=	Gridlock-gnustep-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A collection of grid-based board games for GNUstep
 
+LICENSE=	MIT
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
