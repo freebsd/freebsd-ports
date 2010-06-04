@@ -583,7 +583,6 @@
     SUBDIR += postgresql84-contrib
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
-    SUBDIR += ptop
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
