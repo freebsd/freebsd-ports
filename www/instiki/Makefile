@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	instiki
-PORTVERSION=	0.17.3
+PORTVERSION=	0.18.1
 CATEGORIES=	www ruby
 MASTER_SITES=	LOCAL/wen
+DISTNAME=	parasew-instiki-0.18.1-0-g6a5b0e1
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Easy to set up wiki clone implemented in ruby
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}iconv>=0:${PORTSDIR}/converters/ruby-iconv
 USE_RUBY=	yes
 USE_RAKE=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/parasew-instiki-4176ef2
+WRKSRC=		${WRKDIR}/parasew-instiki-6a5b0e1
 INSTIKIPORT?=	2500
 INSTIKIDIR?=	www/instiki
 INSTIKILOGDIR=	${INSTIKIDIR}/log
