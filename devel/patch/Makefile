@@ -17,6 +17,7 @@ COMMENT=	GNU patch utility
 USE_AUTOTOOLS=	autoconf:262 aclocal:110
 CONFIGURE_ARGS=	--program-prefix=g
 USE_GMAKE=	yes
+USE_XZ=		yes
 
 MAN1=		gpatch.1
 PLIST_FILES=	bin/gpatch

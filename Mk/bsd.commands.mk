@@ -93,6 +93,12 @@ XARGS?=		/usr/bin/xargs
 XMKMF?=		${LOCALBASE}/bin/xmkmf -a
 YACC?=		/usr/bin/yacc
 
+.if exists(/usr/bin/xz)
+XZ_CMD?=	/usr/bin/xz
+.else
+XZ_CMD?=	${LOCALBASE}/bin/xz
+.endif
+
 .if exists(/sbin/md5)
 MD5?=		/sbin/md5
 .else

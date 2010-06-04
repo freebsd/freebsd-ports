@@ -94,7 +94,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # EXTRACT_SUFX	- Suffix for archive names
 #				  You never have to set both DISTFILES and EXTRACT_SUFX.
 #				  Default: .tar.bz2 if USE_BZIP2 is set, .zip if USE_ZIP is
-#				  set, .run if USE_MAKESELF is set, .tar.gz otherwise).
+#				  set, .tar.xz if USE_XZ is set, .run if USE_MAKESELF is set,
+#				  .tar.gz otherwise).
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.  See bsd.sites.mk for common choices for
 #				  MASTER_SITES.
@@ -296,6 +297,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # USE_BZIP2		- If set, this port tarballs use bzip2, not gzip, for
 #				  compression.
+# USE_XZ		- If set, this port tarballs use xz (or lzma)
+#				  for compression
 # USE_ZIP		- If set, this port distfile uses zip, not tar w/[bg]zip
 #				  for compression.
 # USE_MAKESELF		- If set, this port distfile uses makeself, not tar w/[bg]zip
@@ -1413,6 +1416,8 @@ IGNORE=		cannot be installed: bad X_WINDOW_SYSTEM setting; valid value is 'xorg'
 EXTRACT_SUFX?=			.tar.bz2
 .elif defined(USE_ZIP)
 EXTRACT_SUFX?=			.zip
+.elif defined(USE_XZ)
+EXTRACT_SUFX?=			.tar.xz
 .elif defined(USE_MAKESELF)
 EXTRACT_SUFX?=			.run
 .else
@@ -1730,6 +1735,9 @@ PLIST_SUB+=	LIB32DIR=${LIB32DIR}
 
 .if defined(USE_ZIP)
 EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+.endif
+.if defined(USE_XZ) && ( (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505 )
+EXTRACT_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
 .endif
 .if defined(USE_MAKESELF)
 EXTRACT_DEPENDS+=	unmakeself:${PORTSDIR}/archivers/unmakeself
@@ -2370,6 +2378,8 @@ EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --no-same-owner --no-same-permissions
 .endif
 .if defined(USE_BZIP2)
 EXTRACT_CMD?=			${BZIP2_CMD}
+.elif defined(USE_XZ)
+EXTRACT_CMD?=			${XZ_CMD}
 .else
 EXTRACT_CMD?=			${GZIP_CMD}
 .endif

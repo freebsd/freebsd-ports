@@ -12,9 +12,12 @@ PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
 		http://homepages.uni-paderborn.de/mandree/
+EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP and TFTP server
+
+USE_XZ=		yes
 
 MAN8=		dnsmasq.8
 
