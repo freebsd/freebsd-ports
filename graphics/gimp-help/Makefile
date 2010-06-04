@@ -34,4 +34,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|mkdir_p = .*|mkdir_p = ${WRKSRC}/install-sh -c -d|g' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+.include <bsd.port.post.mk>
