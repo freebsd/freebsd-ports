@@ -1582,6 +1582,7 @@ citrix_xenapp                   ports/net/citrix_xenapp
 cjc                             ports/net-im/cjc
 cjk-lyx                         ports/print/cjk-lyx
 ck4up                           ports/sysutils/ck4up
+ckl                             ports/sysutils/ckl
 cksfv                           ports/security/cksfv
 cl-alexandria                   ports/devel/cl-alexandria
 cl-alexandria-clisp             ports/devel/cl-alexandria-clisp
@@ -8621,6 +8622,7 @@ liquidwar                       ports/games/liquidwar
 lirc                            ports/comms/lirc
 lire                            ports/sysutils/lire
 lisaem                          ports/emulators/lisaem
+listadmin                       ports/mail/listadmin
 listener                        ports/audio/listener
 listmanager                     ports/mail/listmanager
 listres                         ports/x11/listres
@@ -9723,6 +9725,7 @@ mysqlman                        ports/databases/mysqlman
 mysqlphp2postgres               ports/www/mysqlphp2postgres
 mysqlreport                     ports/databases/mysqlreport
 mysqlsla                        ports/databases/mysqlsla
+mysqlsniffer                    ports/databases/mysqlsniffer
 mysqltcl                        ports/databases/mysqltcl
 mysqltuner                      ports/databases/mysqltuner
 mythtv                          ports/multimedia/mythtv
@@ -12061,6 +12064,7 @@ p5-GIS-Distance-Lite            ports/math/p5-GIS-Distance-Lite
 p5-GMail-IMAPD                  ports/mail/p5-GMail-IMAPD
 p5-GPS                          ports/astro/p5-GPS
 p5-GPS-Babel                    ports/astro/p5-GPS-Babel
+p5-GPS-OID                      ports/astro/p5-GPS-OID
 p5-GSSAPI                       ports/security/p5-GSSAPI
 p5-GStreamer                    ports/multimedia/p5-GStreamer
 p5-Games-Alak                   ports/games/p5-Games-Alak
@@ -16011,6 +16015,7 @@ p5-google-saml-response         ports/net/p5-Google-SAML-Response
 p5-gopher-server                ports/net/p5-Gopher-Server
 p5-gps                          ports/astro/p5-GPS
 p5-gps-babel                    ports/astro/p5-GPS-Babel
+p5-gps-oid                      ports/astro/p5-GPS-OID
 p5-graph                        ports/math/p5-Graph
 p5-graph-easy                   ports/graphics/p5-Graph-Easy
 p5-graph-readwrite              ports/graphics/p5-Graph-ReadWrite
@@ -21659,6 +21664,7 @@ resourceproto                   ports/x11/resourceproto
 respond                         ports/sysutils/respond
 resume                          ports/textproc/resume
 resume-extensions               ports/textproc/resume-extensions
+retail                          ports/sysutils/retail
 retawq                          ports/www/retawq
 revelation                      ports/security/revelation
 rexima                          ports/audio/rexima
@@ -22292,6 +22298,7 @@ rubygem-little_plugger          ports/devel/rubygem-little_plugger
 rubygem-locale                  ports/devel/rubygem-locale
 rubygem-lockfile                ports/devel/rubygem-lockfile
 rubygem-logging                 ports/devel/rubygem-logging
+rubygem-loofah                  ports/textproc/rubygem-loofah
 rubygem-loquacious              ports/devel/rubygem-loquacious
 rubygem-macaddr                 ports/net/rubygem-macaddr
 rubygem-mailfactory             ports/mail/rubygem-mailfactory
@@ -22388,6 +22395,7 @@ rubygem-rubyinlineaccel         ports/devel/rubygem-rubyinlineaccel
 rubygem-rubytter                ports/net/rubygem-rubytter
 rubygem-runt                    ports/devel/rubygem-runt
 rubygem-ruport                  ports/devel/rubygem-ruport
+rubygem-sax-machine             ports/textproc/rubygem-sax-machine
 rubygem-scrapi                  ports/www/rubygem-scrapi
 rubygem-scrubyt                 ports/www/rubygem-scrubyt
 rubygem-scruffy                 ports/graphics/rubygem-scruffy
