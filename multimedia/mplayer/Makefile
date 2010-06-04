@@ -71,6 +71,10 @@ CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 CONFIGURE_ARGS+=	--disable-ssse3 \
 			--disable-directfb \
 			--disable-faac \
