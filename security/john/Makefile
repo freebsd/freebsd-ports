@@ -49,6 +49,10 @@ ALL_TARGET=	${OSNAME}-alpha
 ALL_TARGET=	generic
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|= gcc|= ${CC}|g' \
 		-e 's|CFLAGS =.*|CFLAGS = -c ${CFLAGS}|g' \
