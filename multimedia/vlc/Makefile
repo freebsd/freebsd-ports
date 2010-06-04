@@ -80,6 +80,7 @@ CONFIGURE_ARGS+=	--enable-vlc \
 			--enable-avformat \
 			--enable-postproc \
 			--without-dv-raw1394 \
+			--disable-alsa \
 			--disable-dv \
 			--disable-galaktos \
 			--disable-glx
