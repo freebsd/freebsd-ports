@@ -17,7 +17,7 @@ COMMENT=	A library for multiple-precision floating-point computations
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 USE_LDCONFIG=	yes

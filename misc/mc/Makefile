@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc
 DISTNAME=	${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tar.lzma
 
 PATCH_SITES=	${MASTER_SITES}
 
@@ -26,7 +27,7 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_PERL5=	yes
-USE_BZIP2=	yes
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 
 OPTIONS=	SLANG		"Build with SLang library" on \

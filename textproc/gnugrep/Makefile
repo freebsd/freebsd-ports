@@ -30,6 +30,8 @@ OPTIONS=	PCRE	"Compile with Perl-compatible regex support"	off
 
 CONFLICTS=	bsd-grep-*
 
+USE_XZ=		yes
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--disable-nls

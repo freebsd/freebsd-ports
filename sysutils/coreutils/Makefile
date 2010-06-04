@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
+USE_XZ=		yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 #USE_BISON=	yes

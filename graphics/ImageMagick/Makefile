@@ -10,15 +10,14 @@ DISTVERSION=	6.6.1-10
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
-		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
-		SF/${PORTNAME:L}/${PORTNAME}/6.5 \
+		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Image processing tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_PERL5=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_AUTOTOOLS=	libltdl:22
