@@ -331,6 +331,7 @@
     SUBDIR += kirocker
     SUBDIR += kmp
     SUBDIR += ksmp3play
+    SUBDIR += kstreamripper
     SUBDIR += ladspa
     SUBDIR += lame
     SUBDIR += lash
