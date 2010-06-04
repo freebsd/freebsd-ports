@@ -14,7 +14,7 @@ COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
-LICENSE=	LGPL
+LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes

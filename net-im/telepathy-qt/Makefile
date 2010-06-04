@@ -13,7 +13,7 @@ MASTER_SITES=	SF/tapioca-voip/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Framework for VoIP and IP applications
 
-LICENSE=	LGPL
+LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 USE_CMAKE=	yes
