@@ -15,6 +15,8 @@ DISTNAME=	Pixen-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graphics editing software for small-scale pictures for GNUstep
 
+LICENSE=	MIT
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
