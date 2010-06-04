@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A 3-D Athena Widget set that looks like Motif
 
+LICENSE=	MIT
+
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xmu xt sm ice xpm
