@@ -15,7 +15,7 @@ COMMENT=	Framework for VoIP and IP applications
 
 LIB_DEPENDS=	QtTelepathyCore.0:${PORTSDIR}/net-im/telepathy-qt
 
-LICENSE=	LGPL
+LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/build

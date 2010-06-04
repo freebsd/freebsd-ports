@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Linux Audio Developer's Simple Plugin API
 
-LICENSE=	LGPL	
+LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 WRKSRC=		${WRKDIR}/ladspa_sdk

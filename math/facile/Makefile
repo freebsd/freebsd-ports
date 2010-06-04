@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.recherche.enac.fr/log/facile/distrib/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A Functional Constraint Library
 
-LICENSE=	LGPL
+LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_OCAML=	yes
 HAS_CONFIGURE=	yes
