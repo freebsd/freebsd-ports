@@ -243,6 +243,7 @@
     SUBDIR += rolo
     SUBDIR += rox-memo
     SUBDIR += rubrica
+    SUBDIR += silence
     SUBDIR += simpleagenda
     SUBDIR += sliderule
     SUBDIR += snotes
