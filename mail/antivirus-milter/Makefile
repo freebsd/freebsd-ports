@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Sendmail milter wich uses Mcafee Virus Scan or clamav
 
+LICENSE=	BSD
+
 USE_RC_SUBR=	antivirus-milter.sh
 
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}

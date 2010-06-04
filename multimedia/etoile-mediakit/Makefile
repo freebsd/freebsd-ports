@@ -17,6 +17,8 @@ COMMENT=	Etoile Project MediaKit framework
 
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
+LICENSE=	BSD
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

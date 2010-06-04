@@ -15,6 +15,8 @@ DISTNAME=	etoile-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	General text editor for plain and rich format text
 
+LICENSE=	BSD
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
