@@ -32,4 +32,8 @@ post-install:
 BROKEN=		jail version not supported
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .include <bsd.port.post.mk>
