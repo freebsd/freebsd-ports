@@ -8,7 +8,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.30.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gladeui-1.9:${PORTSDIR}/devel/glade3 \
-		neon.28:${PORTSDIR}/www/neon28 \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		gdl-1.3:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
@@ -67,25 +66,9 @@ OPTIONS=	SVN "Build subversion plugin" off \
 
 .if defined(WITH_SVN)
 BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+LIB_DEPENDS+=	apr-1.4:${PORTSDIR}/devel/apr1 \
+		neon.28:${PORTSDIR}/www/neon28
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-USE_APACHE=	2.0+
-
-## Test if we got apache 20 or 22.
-.if exists(${LOCALBASE}/include/apache22/httpd.h)
-APR_CONFIG=${LOCALBASE}/bin/apr-1-config
-APU_CONFIG=${LOCALBASE}/bin/apu-1-config
-.else
-APR_CONFIG=${LOCALBASE}/lib/apache2/apr-config
-APU_CONFIG=${LOCALBASE}/lib/apache2/apu-config
-.endif
-CONFIGURE_ENV+=	APR_CFLAGS="`${APR_CONFIG} --includes`" \
-		APR_LIBS="`${APU_CONFIG} --libs`" \
-		APR_UTILS_CFLAGS="`${APU_CONFIG} --includes`" \
-		APR_UTILS_LIBS="`${APU_CONFIG} --libs`" \
-
-CONFIGURE_ARGS+=--with-subversion-dir=${LOCALBASE}/bin \
-		--with-svn-include=${LOCALBASE}/include \
-		--with-svn-lib=${LOCALBASE}/lib
 PLIST_SUB+=	SVN=""
 .else
 CONFIGURE_ARGS+=--disable-plugin-subversion
@@ -107,8 +90,6 @@ post-patch:
 	@${RM} ${WRKSRC}/plugins/debug-manager/anjuta-debug-manager.schemas
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|PKG_PATH|PKG_CONFIG_PATH|g' \
-	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"make|"gmake|g' \
 		${WRKSRC}/plugins/build-basic-autotools/plugin.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
