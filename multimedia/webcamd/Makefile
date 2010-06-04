@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webcamd
-PORTVERSION=	0.1.12
+PORTVERSION=	0.1.14
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/video4bsd/releases/
 
