@@ -3,6 +3,6 @@ NEXTSTEP. I rewrote the entire application for version 0.5 in order to have an
 open architecture which allows the integration of other benchmarks by using
 bundles.
 
-LICENSE: GPL2+
+LICENSE: GPL2 or later
 
 WWW: http://www.nice.ch/~phip/softcorner.html

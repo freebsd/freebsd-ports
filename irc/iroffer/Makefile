@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.ORG
 COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 
+LICENSE=	GPLv2
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFLICTS=	iroffer-lamm-1.* iroffer-dinoex-3.*

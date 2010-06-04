@@ -5,6 +5,6 @@ GScheme is fully tail recursive. The garbage collector bypasses GNUstep's
 retain/release mechanism in order to deal with circular data structures.
 GScheme is document-based and you can edit more than one file at the same time.
 
-LICENSE: GPL2+
+LICENSE: GPL2 or later
 
 WWW: http://www.gnustep.it/marko/GScheme/index.html

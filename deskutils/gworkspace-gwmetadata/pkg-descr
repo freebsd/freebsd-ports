@@ -7,6 +7,6 @@ Bundles:      AbiwordExtractor HtmlExtractor JpegExtractor
 Libraries:    SQLite
 Tools:        gmds mdextractor
 
-LICENSE: GPL2+
+LICENSE: GPL2 or later
 
 WWW: http://www.gnustep.it/enrico/gworkspace/
