@@ -60,10 +60,6 @@ LATEST_LINK=	emacs21
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 .if ${ARCH} == "ia64"
 CFLAGS:=	${CFLAGS:C/-O.?/-O0/g}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
