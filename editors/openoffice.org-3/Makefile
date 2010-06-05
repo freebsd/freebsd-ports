@@ -7,7 +7,6 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
-PORTREVISION=	2
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/misc/moz/:mozsrc \
@@ -24,7 +23,7 @@ COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(releas
 
 CONFLICTS=	cppunit*
 
-OOOVERSION=	3.2.0
+OOOVERSION=	3.2.1
 NO_LATEST_LINK=	yes
 
 .if !defined(WITHOUT_MOZILLA)
@@ -76,7 +75,7 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
-MILESTONE?=		12
+MILESTONE?=		19
 OOOTAG?=		OOO320_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
@@ -151,11 +150,11 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-wiki-publisher				\
 			--enable-report-builder
 
-OOOEXTENSIONS+=		minimizer/sun-presentation-minimizer.oxt
+OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
 OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
 OOOEXTENSIONS+=		swext/wiki-publisher.oxt
-OOOEXTENSIONS+=		sun-report-builder.oxt
+OOOEXTENSIONS+=		report-builder.oxt
 
 .if (${OSVERSION} <= 602102)
 EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
