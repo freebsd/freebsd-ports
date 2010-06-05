@@ -15,6 +15,8 @@ DISTNAME=	Cartotheque-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Managing notes on small cards
 
+LICENSE=	LGPL21
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

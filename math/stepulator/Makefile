@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Scientific calculator implementing RPN notation for GNUstep
 
+LICENSE=	BSD
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
