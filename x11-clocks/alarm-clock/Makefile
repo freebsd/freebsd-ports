@@ -6,22 +6,29 @@
 #
 
 PORTNAME=	alarm-clock
-PORTVERSION=	0.9.11.2
-PORTREVISION=	4
+PORTVERSION=	1.4
 CATEGORIES=	x11-clocks deskutils
-MASTER_SITES=	http://dp0154.debowypark.waw.pl/ac/downloads/
+MASTER_SITES=	http://www.alarm-clock.pl/media/distfiles/
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Alarm Clock for the GNOME desktop
 
-LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
-		${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
+LIB_DEPENDS=	unique-1:${PORTSDIR}/x11-toolkits/unique \
+		notify.1:${PORTSDIR}/devel/libnotify
 
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}
+USE_GMAKE=	yes
+USE_GSTREAMER=	yes
+USE_GNOME=	gnomehack gtk20
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
