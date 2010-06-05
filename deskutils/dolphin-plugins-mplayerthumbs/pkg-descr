@@ -1,7 +1,0 @@
-MPlayerThumbs is a thumbnail generator for all KDE file managers (konqueror,
-dolphin, ...)  It needs mplayer (of course) to generate thumbnails, and it
-contains no linking to any library, so in a x86_64 system you can freely use the
-32bit mplayer binary with win32codecs by configuring the application launching
-the mplayerthumbsconfig helper application.
-
-WWW:	http://www.kde-apps.org/content/show.php?content=41180
