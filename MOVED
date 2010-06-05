@@ -4433,3 +4433,5 @@ misc/ipod-sharp|audio/ipod-sharp|2010-06-02|Fix category
 lang/pike72|lang/pike76|2010-06-02|Has expired: Please use pike76 or pike78
 lang/pexts||2010-06-02|Depends on expired port lang/pike72
 databases/ptop||2010-06-04|Broken with no update from maintainer or upstream.
+deskutils/dolphin-plugins-mplayerthumbs||2010-06-05|no longer supported by upstream.
+
