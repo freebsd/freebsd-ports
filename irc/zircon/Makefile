@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 interface to Internet Relay Chat
 
+LICENSE=	BSD
+
 # zircon will start with tk84, but a lot of functions won't work
 # a lot of variable names conflicts with new functions.
 .if defined(ZIRCON_WITH_TCL84) || defined(ZIRCON_WITH_TK84)
