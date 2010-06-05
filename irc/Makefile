@@ -87,6 +87,7 @@
     SUBDIR += p5-IRC-Bot-Hangman
     SUBDIR += p5-POE-Component-IRC
     SUBDIR += p5-POE-Component-IRC-Object
+    SUBDIR += p5-POE-Component-IRC-Plugin-Blowfish
     SUBDIR += p5-POE-Component-IRC-Plugin-Bollocks
     SUBDIR += p5-POE-Component-IRC-Plugin-CoreList
     SUBDIR += p5-POE-Component-IRC-Plugin-POE-Knee
