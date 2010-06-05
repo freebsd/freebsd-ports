@@ -42,6 +42,10 @@ PORTDOCS=	README.dvi README.html README.pdf README.ps README.txt \
 PLIST_SUB+=	NOLOGIN=${NOLOGIN_CMD}
 EXTRA_SBIN=	libcheck/noroot libconf/tree libmta/statit \
 		libmta/t-hostname checks/t-getgroup
+# GROUPS/USERS does not work from package
+#GROUPS=	meta1s meta1q meta1c meta1m meta1
+#USERS=		meta1s meta1q meta1c meta1m meta1
+
 
 # Options to define Features:
 # META1_WITHOUT_TLS=yes
