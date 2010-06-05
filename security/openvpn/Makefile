@@ -7,6 +7,7 @@
 
 PORTNAME=	openvpn
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -73,6 +74,9 @@ CONFIGURE_ARGS+=	--disable-pkcs11
 .endif
 
 post-patch:
+	@${FIND} ${WRKSRC}/easy-rsa/?.0 -type f \
+	    -exec ${REINPLACE_CMD} -e 's;#!/bin/bash;#!/bin/sh;' \
+				   -e 's,source ./vars,. ./vars,' \{\} +
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 	@${FIND} ${WRKSRC} -name \*.bak -delete
 
