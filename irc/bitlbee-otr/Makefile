@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	bitlbee-otr
-PORTVERSION=	1.2.6a
+PORTVERSION=	1.2.7
 CATEGORIES=	irc
-MASTER_SITES=	http://wahjava.users.sourceforge.net/ \
+MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
+		http://wahjava.users.sourceforge.net/ \
 		${MASTER_SITE_FREEBSD}
 
 MAINTAINER=	wahjava@gmail.com
@@ -35,7 +36,7 @@ OPTIONS=	MSN "Enable MSN protocol support" On \
 		XMPP "Enable XMPP protocol support" On \
 		OSCAR "Enable OSCAR (ICQ,AIM) protocol support" On \
 		YAHOO "Enable Yahoo protocol support" On \
-		TWITTER "Enable Yahoo protocol support" On
+		TWITTER "Enable Twitter protocol support" On
 
 CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 
