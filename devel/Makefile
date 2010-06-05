@@ -1006,6 +1006,7 @@
     SUBDIR += newfile
     SUBDIR += newt
     SUBDIR += ngpt
+    SUBDIR += nini
     SUBDIR += noweb
     SUBDIR += nspr
     SUBDIR += oaf
