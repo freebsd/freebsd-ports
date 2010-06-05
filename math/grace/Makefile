@@ -7,7 +7,7 @@
 
 PORTNAME=	grace
 PORTVERSION=	5.1.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math print
 #
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
