@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Average/.packlist
+%%SITE_PERL%%/Data/Average/Bounded.pm
+%%SITE_PERL%%/Data/Average/BoundedExpires.pm
+%%SITE_PERL%%/Data/Average/Expires.pm
+%%SITE_PERL%%/Data/Average.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Average
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data/Average
+@dirrmtry %%SITE_PERL%%/Data
