@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mongo
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
