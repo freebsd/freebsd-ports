@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Sieve
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.1
 CATEGORIES=	net www pear
 
 MAINTAINER=	amistry@am-productions.biz
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 CATEGORY=	Net
 FILES=		Sieve.php
 TESTS=		SieveTest.php largescript.siv
-_TESTSDIR=	.
+_TESTSDIR=	tests
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
