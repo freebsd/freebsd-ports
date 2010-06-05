@@ -1,0 +1,514 @@
+--- include/asoundlib-head.h.orig	2009-09-09 20:34:54.000000000 +0800
++++ include/asoundlib-head.h	2009-09-15 00:35:55.000000000 +0800
+@@ -34,7 +34,11 @@
+ #include <string.h>
+ #include <fcntl.h>
+ #include <assert.h>
++#ifdef __FreeBSD__
++#include <sys/endian.h>
++#else
+ #include <endian.h>
++#endif
+ #include <sys/poll.h>
+ #include <errno.h>
+ #include <stdarg.h>
+@@ -46,3 +50,31 @@
+ #include <alsa/output.h>
+ #include <alsa/error.h>
+ #include <alsa/conf.h>
++
++#ifdef __FreeBSD__
++
++#define ESTRPIPE	0x7a69	/* Linux PCM suspend errno, fehh?! */
++#define EBADFD		EBADF
++
++#define bswap_16(x)	bswap16(x)
++#define bswap_32(x)	bswap32(x)
++#define bswap_64(x)	bswap64(x)
++
++#if __BYTE_ORDER == __LITTLE_ENDIAN
++#define __cpu_to_le32(x) (x)
++#define __cpu_to_be32(x) bswap_32(x)
++#define __cpu_to_le16(x) (x)
++#define __cpu_to_be16(x) bswap_16(x)
++#else
++#define __cpu_to_le32(x) bswap_32(x)
++#define __cpu_to_be32(x) (x)
++#define __cpu_to_le16(x) bswap_16(x)
++#define __cpu_to_be16(x) (x)
++#endif
++
++#define __le32_to_cpu __cpu_to_le32
++#define __be32_to_cpu __cpu_to_be32
++#define __le16_to_cpu __cpu_to_le16
++#define __be16_to_cpu __cpu_to_be16
++
++#endif	/* !__FreeBSD__ */
+--- include/global.h.orig	2009-09-09 20:34:54.000000000 +0800
++++ include/global.h	2009-09-15 00:39:54.000000000 +0800
+@@ -133,7 +133,7 @@
+ 
+ int snd_user_file(const char *file, char **result);
+ 
+-#if !defined(_POSIX_C_SOURCE) && !defined(_POSIX_SOURCE)
++#if !defined(_POSIX_C_SOURCE) && !defined(_POSIX_SOURCE) && !defined(__FreeBSD__)
+ struct timeval {
+ 	time_t		tv_sec;		/* seconds */
+ 	long		tv_usec;	/* microseconds */
+--- include/local.h.orig	2009-09-09 20:34:54.000000000 +0800
++++ include/local.h	2009-09-15 00:26:08.000000000 +0800
+@@ -28,7 +28,11 @@
+ #include <string.h>
+ #include <fcntl.h>
+ #include <assert.h>
++#ifdef __FreeBSD__
++#include <sys/endian.h>
++#else
+ #include <endian.h>
++#endif
+ #include <stdarg.h>
+ #include <sys/poll.h>
+ #include <errno.h>
+--- include/search.h.orig	2009-09-09 20:34:54.000000000 +0800
++++ include/search.h	2009-09-15 00:49:10.000000000 +0800
+@@ -20,7 +20,9 @@
+ #ifndef _SEARCH_H
+ #define	_SEARCH_H 1
+ 
++#ifndef __FreeBSD__
+ #include <features.h>
++#endif
+ 
+ #define __need_size_t
+ #include <stddef.h>
+@@ -49,10 +51,18 @@
+ #endif
+ 
+ 
++#ifdef __FreeBSD__
++#define __PMT	__P
++#endif
++
+ /* For use with hsearch(3).  */
+ #ifndef __COMPAR_FN_T
+ # define __COMPAR_FN_T
++#ifdef __FreeBSD__
++typedef int (*__compar_fn_t) __PMT ((__const void *, __const void *));
++#else
+ typedef int (*__compar_fn_t) __PMT ((__const __ptr_t, __const __ptr_t));
++#endif
+ 
+ # ifdef	__USE_GNU
+ typedef __compar_fn_t comparison_fn_t;
+--- include/sound/asound.h.orig	2009-09-09 20:34:54.000000000 +0800
++++ include/sound/asound.h	2009-09-15 00:44:37.000000000 +0800
+@@ -62,6 +62,31 @@
+ #include <sys/ioctl.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#define ESTRPIPE	0x7a69	/* Linux PCM suspend errno, fehh?! */
++#define EBADFD		EBADF
++
++#define bswap_16(x)	bswap16(x)
++#define bswap_32(x)	bswap32(x)
++#define bswap_64(x)	bswap64(x)
++
++#if __BYTE_ORDER == __LITTLE_ENDIAN
++#define __cpu_to_le32(x) (x)
++#define __cpu_to_be32(x) bswap_32(x)
++#define __cpu_to_le16(x) (x)
++#define __cpu_to_be16(x) bswap_16(x)
++#else
++#define __cpu_to_le32(x) bswap_32(x)
++#define __cpu_to_be32(x) (x)
++#define __cpu_to_le16(x) bswap_16(x)
++#define __cpu_to_be16(x) (x)
++#endif
++
++#define __le32_to_cpu __cpu_to_le32
++#define __be32_to_cpu __cpu_to_be32
++#define __le16_to_cpu __cpu_to_le16
++#define __be16_to_cpu __cpu_to_be16
++#endif
+ /*
+  *  protocol version
+  */
+--- include/sound/type_compat.h.orig	2009-09-09 20:34:54.000000000 +0800
++++ include/sound/type_compat.h	2009-09-15 00:36:14.000000000 +0800
+@@ -10,8 +10,15 @@
+ typedef int16_t __s16;
+ typedef int32_t __s32;
+ 
++#ifdef __FreeBSD__
++#include <sys/endian.h>
++#define bswap_16(x)	bswap16(x)
++#define bswap_32(x)	bswap32(x)
++#define bswap_64(x)	bswap64(x)
++#else
+ #include <endian.h>
+ #include <byteswap.h>
++#endif
+ #if __BYTE_ORDER == __LITTLE_ENDIAN
+ #define __cpu_to_le32(x) (x)
+ #define __cpu_to_be32(x) bswap_32(x)
+--- src/async.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/async.c	2009-09-15 00:49:34.000000000 +0800
+@@ -51,6 +51,7 @@
+ 
+ static void snd_async_handler(int signo ATTRIBUTE_UNUSED, siginfo_t *siginfo, void *context ATTRIBUTE_UNUSED)
+ {
++#ifndef __FreeBSD__
+ 	int fd;
+ 	struct list_head *i;
+ 	//assert(siginfo->si_code == SI_SIGIO);
+@@ -60,6 +61,7 @@
+ 		if (h->fd == fd && h->callback)
+ 			h->callback(h);
+ 	}
++#endif
+ }
+ 
+ /**
+--- src/compat/hsearch_r.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/compat/hsearch_r.c	2009-09-15 00:22:11.000000000 +0800
+@@ -18,7 +18,9 @@
+    Boston, MA 02111-1307, USA.  */
+ 
+ #include <errno.h>
++#ifndef __FreeBSD__
+ #include <malloc.h>
++#endif
+ #include <string.h>
+ 
+ #define __USE_GNU
+--- src/pcm/pcm.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm.c	2009-09-15 00:19:09.000000000 +0800
+@@ -630,7 +630,9 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
++#ifndef __FreeBSD__
+ #include <malloc.h>
++#endif
+ #include <stdarg.h>
+ #include <signal.h>
+ #include <sys/poll.h>
+--- src/pcm/pcm_adpcm.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_adpcm.c	2009-09-15 00:19:14.000000000 +0800
+@@ -56,7 +56,9 @@
+   come across a good description of XA yet.
+  */
+ 
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+ 
+--- src/pcm/pcm_alaw.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_alaw.c	2009-09-15 00:19:19.000000000 +0800
+@@ -26,7 +26,9 @@
+  *
+  */
+   
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+ 
+--- src/pcm/pcm_copy.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_copy.c	2009-09-15 00:21:29.000000000 +0800
+@@ -26,7 +26,9 @@
+  *
+  */
+   
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+ 
+--- src/pcm/pcm_direct.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_direct.c	2009-09-15 00:45:34.000000000 +0800
+@@ -44,12 +44,14 @@
+  *
+  */
+  
++#ifndef __FreeBSD__
+ union semun {
+ 	int              val;    /* Value for SETVAL */
+ 	struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
+ 	unsigned short  *array;  /* Array for GETALL, SETALL */
+ 	struct seminfo  *__buf;  /* Buffer for IPC_INFO (Linux specific) */
+ };
++#endif
+  
+ /*
+  * FIXME:
+--- src/pcm/pcm_dmix_generic.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_dmix_generic.c	2009-09-15 00:18:52.000000000 +0800
+@@ -125,7 +125,9 @@
+ 	 (1ULL << SND_PCM_FORMAT_S24_3LE) | \
+ 	 (1ULL << SND_PCM_FORMAT_U8))
+ 
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ 
+ static void generic_mix_areas_16_native(unsigned int size,
+ 					volatile signed short *dst,
+--- src/pcm/pcm_file.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_file.c	2009-09-15 00:21:10.000000000 +0800
+@@ -26,8 +26,12 @@
+  *
+  */
+   
++#ifdef __FreeBSD__
++#include <sys/endian.h>
++#else
+ #include <endian.h>
+ #include <byteswap.h>
++#endif
+ #include <ctype.h>
+ #include <string.h>
+ #include "pcm_local.h"
+--- src/pcm/pcm_iec958.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_iec958.c	2009-09-15 00:19:44.000000000 +0800
+@@ -26,7 +26,9 @@
+  *
+  */
+   
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+ 
+--- src/pcm/pcm_lfloat.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_lfloat.c	2009-09-15 00:21:48.000000000 +0800
+@@ -26,7 +26,9 @@
+  *
+  */
+   
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+ 
+--- src/pcm/pcm_linear.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_linear.c	2009-09-15 00:21:37.000000000 +0800
+@@ -26,7 +26,9 @@
+  *
+  */
+   
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+ 
+--- src/pcm/pcm_meter.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_meter.c	2009-09-15 00:18:38.000000000 +0800
+@@ -27,7 +27,9 @@
+  */
+   
+ 
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include <time.h>
+ #include <pthread.h>
+ #include <dlfcn.h>
+--- src/pcm/pcm_misc.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_misc.c	2009-09-15 00:18:31.000000000 +0800
+@@ -23,7 +23,9 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include "pcm_local.h"
+ 
+ 
+--- src/pcm/pcm_mmap.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_mmap.c	2009-09-15 00:17:43.000000000 +0800
+@@ -19,7 +19,9 @@
+  */
+   
+ #include <stdio.h>
++#ifndef __FreeBSD__
+ #include <malloc.h>
++#endif
+ #include <string.h>
+ #include <sys/poll.h>
+ #include <sys/mman.h>
+--- src/pcm/pcm_mulaw.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_mulaw.c	2009-09-15 00:21:21.000000000 +0800
+@@ -26,7 +26,9 @@
+  *
+  */
+   
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+ 
+--- src/pcm/pcm_null.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_null.c	2009-09-15 00:19:32.000000000 +0800
+@@ -26,7 +26,9 @@
+  *
+  */
+   
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include <limits.h>
+ #include <sys/shm.h>
+ #include "pcm_local.h"
+--- src/pcm/pcm_rate.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_rate.c	2009-09-15 00:21:43.000000000 +0800
+@@ -28,7 +28,9 @@
+  *
+  */
+ #include <inttypes.h>
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+ #include "pcm_rate.h"
+--- src/pcm/pcm_rate_linear.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_rate_linear.c	2009-09-15 00:19:26.000000000 +0800
+@@ -21,7 +21,9 @@
+  */
+ 
+ #include <inttypes.h>
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+ #include "pcm_rate.h"
+--- src/pcm/pcm_route.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_route.c	2009-09-15 00:19:38.000000000 +0800
+@@ -26,7 +26,9 @@
+  *
+  */
+   
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include <math.h>
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+--- src/pcm/pcm_softvol.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/pcm/pcm_softvol.c	2009-09-15 00:19:02.000000000 +0800
+@@ -26,7 +26,9 @@
+  *
+  */
+ 
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include <math.h>
+ #include "pcm_local.h"
+ #include "pcm_plugin.h"
+--- src/seq/seq_midi_event.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/seq/seq_midi_event.c	2009-09-15 00:21:55.000000000 +0800
+@@ -28,7 +28,9 @@
+  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+  */
+ 
++#ifndef __FreeBSD__
+ #include <malloc.h>
++#endif
+ #include "local.h"
+ 
+ #ifndef DOC_HIDDEN
+--- src/shmarea.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/shmarea.c	2009-09-15 00:22:00.000000000 +0800
+@@ -19,7 +19,9 @@
+  */
+   
+ #include <stdio.h>
++#ifndef __FreeBSD__
+ #include <malloc.h>
++#endif
+ #include <string.h>
+ #include <errno.h>
+ #include <sys/poll.h>
+--- src/userfile.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/userfile.c	2009-09-18 00:57:22.000000000 +0800
+@@ -19,9 +19,47 @@
+  */
+   
+ #include <config.h>
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#endif
+ #include <string.h>
+ #include <errno.h>
+ 
++/*
++ * XXX Something is definitely wrong, very very wrong, here or there.
++ *     Apparently mplayer (so far) is the only app that break, returning
++ *     WRDE_SYNTAX. For now, this simple home/path expansion should work.
++ *     I'll investigate this further in future.
++ */
++#ifdef __FreeBSD__
++int snd_user_file(const char *file, char **result)
++{
++
++	if (file == NULL)
++		return -EINVAL;
++
++	if (strlen(file) > 2 && strncmp(file, "~/", 2) == 0) {
++		char *homedir, *path;
++
++		homedir = getenv("HOME");
++		if (homedir == NULL)
++			return -EINVAL;
++
++		/* offset -1 by removing '~' */
++		path = malloc(strlen(homedir) + strlen(file));
++		if (path == NULL)
++			return -ENOMEM;
++
++		strcpy(path, homedir);	/* copy home directory */
++		strcat(path, file + 1);	/* discard '~', start with '/' */
++
++		*result = path;
++	} else
++		*result = strdup(file);
++
++	return 0;
++}
++#else
+ /**
+  * \brief Get the full file name
+  * \param file The file name string to parse
+@@ -70,3 +108,4 @@
+ 	return 0;
+ }
+ #endif /* HAVE_WORDEXP_H */
++#endif /* __FreeBSD__ */
+--- src/timer/timer_hw.c.orig	2009-09-09 20:34:54.000000000 +0800
++++ src/timer/timer_hw.c	2009-09-15 00:46:06.000000000 +0800
+@@ -92,10 +92,12 @@
+ 	}
+ 	if (sig < 0)
+ 		return 0;
++#ifndef __FreeBSD__
+ 	if (fcntl(fd, F_SETSIG, (long)sig) < 0) {
+ 		SYSERR("F_SETSIG failed");
+ 		return -errno;
+ 	}
++#endif
+ 	if (fcntl(fd, F_SETOWN, (long)pid) < 0) {
+ 		SYSERR("F_SETOWN failed");
+ 		return -errno;
