@@ -8,6 +8,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.clutter-project.org/sources/pyclutter/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +25,7 @@ LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	gnomehack pygnome2 pygtk2
 USE_PYTHON=	2.5+

@@ -7,6 +7,7 @@
 
 PORTNAME=	clutter
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME \
 		http://www.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
@@ -15,6 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL based interactive canvas library
 
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig gtk20 gnomehack ltverhack gnomeprefix

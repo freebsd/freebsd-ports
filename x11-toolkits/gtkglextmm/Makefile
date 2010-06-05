@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkglextmm
 PORTVERSION=	1.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/gtkglext/${PORTNAME}/${PORTVERSION}
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
