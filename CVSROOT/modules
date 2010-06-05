@@ -20258,7 +20258,6 @@ ptmalloc                        ports/devel/ptmalloc
 ptmalloc2                       ports/devel/ptmalloc2
 ptoc                            ports/lang/ptoc
 ptools                          ports/games/ptools
-ptop                            ports/databases/ptop
 ptpd                            ports/net/ptpd
 ptunnel                         ports/net/ptunnel
 pty                             ports/devel/pty
@@ -20554,6 +20553,7 @@ py-graph                        ports/graphics/py-graph
 py-graph-core                   ports/graphics/py-graph-core
 py-graph-dot                    ports/graphics/py-graph-dot
 py-graphviz                     ports/graphics/py-graphviz
+py-graphy                       ports/graphics/py-graphy
 py-greenlet                     ports/devel/py-greenlet
 py-grizzled                     ports/devel/py-grizzled
 py-grouch                       ports/devel/py-grouch
