@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlitemanager
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.3
 CATEGORIES=	databases www
 MASTER_SITES=	SF
 DISTNAME=	SQLiteManager-${PORTVERSION}
@@ -14,12 +14,13 @@ DISTNAME=	SQLiteManager-${PORTVERSION}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A multilingual web based tool to manage SQLite database
 
+IGNORE_WITH_PHP=	4
 NO_BUILD=	yes
+PLIST_SUB+=	WWWDIR_REL="${WWWDIR_REL}"
 USE_PHP=	sqlite
-IGNORE_WITH_PHP=4
 
 do-install:
-	${MKDIR} ${PREFIX}/www/${PORTNAME}
-	${CP} -R ${WRKSRC}/ ${PREFIX}/www/${PORTNAME}
+	${MKDIR} ${WWWDIR}
+	${CP} -R ${WRKSRC}/ ${WWWDIR}
 
 .include <bsd.port.mk>
