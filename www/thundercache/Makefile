@@ -7,7 +7,7 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.bmsoftware.org/freebsd/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
@@ -57,15 +57,16 @@ WANT_PGSQL_VER=	84
 RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 .endif
 
+.if defined(WITH_PHP) && defined(WITH_PGSQL)
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pgsql.so:${PORTSDIR}/databases/php5-pgsql
+.endif
+
 .if defined(WITH_PHP)
-USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session pgsql
+USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session
 .endif
 
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl:install
-
-.if defined(APACHE+PHP) && defined(WITH_PGSQL)
-LIB_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
-.endif
 
 SUB_FILES=	pkg-message log.sh test-deps.sh
 SUB_LIST=	"GREP=${GREP}"
