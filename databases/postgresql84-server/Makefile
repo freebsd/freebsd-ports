@@ -57,6 +57,7 @@ INSTALL_DIRS?=	${BUILD_DIRS}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 SERVER_ONLY=	yes
+PORTREVISION=	2
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}

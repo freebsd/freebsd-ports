@@ -102,6 +102,12 @@ share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_ctl-8.4.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_controldata-8.4.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_resetxlog-8.4.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/initdb-8.4.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_controldata-8.4.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_ctl-8.4.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_resetxlog-8.4.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/plpgsql-8.4.mo
+%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/postgres-8.4.mo
 share/postgresql/postgres.shdescription
 share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Africa/Abidjan
