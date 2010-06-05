@@ -6,8 +6,12 @@
 #
 
 PORTNAME=	gnustep-examples
+.if defined(WITH_GNUSTEP_DEVEL)
+PORTVERSION=	1.3.0
+.else
 PORTVERSION=	1.2.0
 PORTREVISION=	1
+.endif
 CATEGORIES=	misc gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -22,7 +26,7 @@ USE_GNUSTEP_INSTALL=	yes
 USE_GL=		yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_GNUSTEP_MAKE_DIRS+=	. gui/Finger gui/GFractal gui/HostAddress
+USE_GNUSTEP_MAKE_DIRS+=	. gui/Finger gui/GFractal gui/HostAddress gui/MyGL
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 
 .include <bsd.port.mk>

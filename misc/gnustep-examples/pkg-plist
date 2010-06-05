@@ -46,6 +46,7 @@ GNUstep/Local/Applications/Ink.app/Resources/FileIcon_rtf.tiff
 GNUstep/Local/Applications/Ink.app/Resources/FileIcon_txt.tiff
 GNUstep/Local/Applications/Ink.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/Ink.app/Resources/Ink.desktop
+%%GNUSTEP_DEVEL%%GNUstep/Local/Applications/Ink.app/Resources/Ink_app.ico
 GNUstep/Local/Applications/Ink.app/Resources/Ink_app.tiff
 GNUstep/Local/Applications/Ink.app/stamp.make
 GNUstep/Local/Applications/MyGL.app/MyGL
@@ -95,6 +96,9 @@ GNUstep/Local/Library/ApplicationSupport/GSTest/NSAnimation-test.bundle/stamp.ma
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle/NSBox-test
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle/Resources/Info-gnustep.plist
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle/stamp.make
+%%GNUSTEP_DEVEL%%GNUstep/Local/Library/ApplicationSupport/GSTest/NSButton-test.bundle/NSButton-test
+%%GNUSTEP_DEVEL%%GNUstep/Local/Library/ApplicationSupport/GSTest/NSButton-test.bundle/Resources/Info-gnustep.plist
+%%GNUSTEP_DEVEL%%GNUstep/Local/Library/ApplicationSupport/GSTest/NSButton-test.bundle/stamp.make
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSColorList-test.bundle/NSColorList-test
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSColorList-test.bundle/Resources/Info-gnustep.plist
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSColorList-test.bundle/stamp.make
@@ -104,6 +108,9 @@ GNUstep/Local/Library/ApplicationSupport/GSTest/NSColorWell-test.bundle/stamp.ma
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSForm-test.bundle/NSForm-test
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSForm-test.bundle/Resources/Info-gnustep.plist
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSForm-test.bundle/stamp.make
+%%GNUSTEP_DEVEL%%GNUstep/Local/Library/ApplicationSupport/GSTest/NSOpenPanel-test.bundle/NSOpenPanel-test
+%%GNUSTEP_DEVEL%%GNUstep/Local/Library/ApplicationSupport/GSTest/NSOpenPanel-test.bundle/Resources/Info-gnustep.plist
+%%GNUSTEP_DEVEL%%GNUstep/Local/Library/ApplicationSupport/GSTest/NSOpenPanel-test.bundle/stamp.make
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSOutlineView-test.bundle/NSOutlineView-test
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSOutlineView-test.bundle/Resources/Info-gnustep.plist
 GNUstep/Local/Library/ApplicationSupport/GSTest/NSOutlineView-test.bundle/stamp.make
@@ -176,12 +183,16 @@ GNUstep/Local/Tools/md5Digest
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSSavePanel-test.bundle
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSOutlineView-test.bundle/Resources
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSOutlineView-test.bundle
+%%GNUSTEP_DEVEL%%@dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSOpenPanel-test.bundle/Resources
+%%GNUSTEP_DEVEL%%@dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSOpenPanel-test.bundle
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSForm-test.bundle/Resources
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSForm-test.bundle
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSColorWell-test.bundle/Resources
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSColorWell-test.bundle
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSColorList-test.bundle/Resources
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSColorList-test.bundle
+%%GNUSTEP_DEVEL%%@dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSButton-test.bundle/Resources
+%%GNUSTEP_DEVEL%%@dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSButton-test.bundle
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle/Resources
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSBox-test.bundle
 @dirrm GNUstep/Local/Library/ApplicationSupport/GSTest/NSAnimation-test.bundle/Resources
