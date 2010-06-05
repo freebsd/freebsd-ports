@@ -1,0 +1,36 @@
+include/geglmm-1.0/geglmm.h
+include/geglmm-1.0/geglmm/buffer.h
+include/geglmm-1.0/geglmm/color.h
+include/geglmm-1.0/geglmm/curve.h
+include/geglmm-1.0/geglmm/init.h
+include/geglmm-1.0/geglmm/matrix3.h
+include/geglmm-1.0/geglmm/node.h
+include/geglmm-1.0/geglmm/operation.h
+include/geglmm-1.0/geglmm/path.h
+include/geglmm-1.0/geglmm/private/buffer_p.h
+include/geglmm-1.0/geglmm/private/color_p.h
+include/geglmm-1.0/geglmm/private/curve_p.h
+include/geglmm-1.0/geglmm/private/matrix3_p.h
+include/geglmm-1.0/geglmm/private/node_p.h
+include/geglmm-1.0/geglmm/private/operation_p.h
+include/geglmm-1.0/geglmm/private/path_p.h
+include/geglmm-1.0/geglmm/private/processor_p.h
+include/geglmm-1.0/geglmm/private/rectangle_p.h
+include/geglmm-1.0/geglmm/processor.h
+include/geglmm-1.0/geglmm/rectangle.h
+include/geglmm-1.0/geglmm/wrap_init.h
+lib/geglmm-1.0/include/geglmmconfig.h
+lib/geglmm-1.0/proc/m4/convert.m4
+lib/geglmm-1.0/proc/m4/convert_libgeglmm.m4
+lib/libgeglmm.la
+lib/libgeglmm.so
+lib/libgeglmm.so.3
+libdata/pkgconfig/geglmm.pc
+@dirrmtry libdata/pkgconfig
+@dirrm lib/geglmm-1.0/proc/m4
+@dirrm lib/geglmm-1.0/proc
+@dirrm lib/geglmm-1.0/include
+@dirrm lib/geglmm-1.0
+@dirrm include/geglmm-1.0/geglmm/private
+@dirrm include/geglmm-1.0/geglmm
+@dirrm include/geglmm-1.0
