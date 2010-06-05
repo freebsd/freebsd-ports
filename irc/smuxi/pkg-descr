@@ -1,4 +1,14 @@
 Smuxi is an irssi-inspired, flexible, user-friendly and cross-platform IRC
-client for advanced users, targeting the GNOME desktop.
+client for sophisticated users, targeting the GNOME desktop.
+
+Smuxi is based on the client-server model: The core application (engine) can
+be placed onto a server which is connected to the Internet around-the-clock;
+one or more frontends then connect to the core. This way, the connection to
+IRC can be kept up even when all frontends have been closed. The combination
+of screen and irssi served as example for this architecture.
+
+Smuxi also supports the regular single application mode. This behaves like a
+typical IRC client; it doesn't need separate core management and utilizes a
+local engine that is used by the local frontend client.
 
 WWW:	http://www.smuxi.org
