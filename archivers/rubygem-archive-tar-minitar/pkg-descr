@@ -7,6 +7,6 @@ The library can only handle files and directories at this point.
 The command line utility, minitar, can only create archives, extract from
 archives, and list archive contents.
 
-LICENSE: Ruby License / GPL2 or later
+LICENSE: Ruby License or GPL2 or later
 
 WWW: http://rubyforge.org/projects/ruwiki/

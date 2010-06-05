@@ -6,7 +6,7 @@ Use this module if you have code that already works, and you just want
 the fixes that have been committed to this module (for instance,
 this module is compatible with PostgreSQL 8.3).
 
-LICENSE: BSD or GPL2
+LICENSE: Ruby License or GPL2
 
 Authors: Yukihiro Matsumoto, Eiji Matsumoto
 WWW:	http://rubyforge.org/projects/ruby-pg/
