@@ -1,10 +1,13 @@
 bin/blobby
 bin/blobby-server
-%%DATADIR%%/gfx.zip
-%%DATADIR%%/sounds.zip
-%%DATADIR%%/scripts.zip
 %%DATADIR%%/backgrounds.zip
 %%DATADIR%%/config.xml
+%%DATADIR%%/gfx.zip
 %%DATADIR%%/inputconfig.xml
+%%DATADIR%%/lang_de.xml
+%%DATADIR%%/lang_en.xml
+%%DATADIR%%/lang_fr.xml
+%%DATADIR%%/scripts.zip
 %%DATADIR%%/server.xml
+%%DATADIR%%/sounds.zip
 @dirrm %%DATADIR%%

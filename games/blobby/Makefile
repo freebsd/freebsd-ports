@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	blobby
-PORTVERSION=	0.8a
+PORTVERSION=	0.9b
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/Alpha%208
+MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/Beta%200.9b
 DISTNAME=	blobby2-linux-${PORTVERSION}
 
 MAINTAINER=	ganael.laplanche@martymac.com
@@ -24,7 +24,7 @@ USE_SDL=	sdl
 USE_GL=		glu
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DDATADIR:PATH="${DATADIR}"
-WRKSRC=		${WRKDIR}/blobby-alpha-8
+WRKSRC=		${WRKDIR}/blobby-beta-0.9b
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 
