@@ -17,6 +17,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby interface to termios
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
