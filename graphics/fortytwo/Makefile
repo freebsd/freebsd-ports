@@ -16,6 +16,8 @@ DISTFILES=	FT-${PORTVERSION}-src.tgz \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph management system for GNUstep
 
+LICENSE=	LGPL21
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

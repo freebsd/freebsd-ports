@@ -13,6 +13,8 @@ MASTER_SITES=	SF
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Object containers and generic algorithms for Objective-C
 
+LICENSE=	LGPL21
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_CONFIGURE=	yes

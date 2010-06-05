@@ -16,6 +16,8 @@ DISTNAME=	biococoa.app_${PORTVERSION}.orig
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Bioinformatics framework
 
+LICENSE=	LGPL21
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

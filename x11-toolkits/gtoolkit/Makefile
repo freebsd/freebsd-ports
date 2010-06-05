@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Obj-C wrapper for gtk, a x11 graphics library
 
+LICENSE=	LGPL21
+
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
 USE_MAKEFILE=	yes

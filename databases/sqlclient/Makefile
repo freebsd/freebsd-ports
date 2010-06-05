@@ -16,7 +16,7 @@ DISTNAME=	SQLClient-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Lightweight database abstraction layer
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BASE=	yes

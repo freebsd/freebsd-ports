@@ -17,6 +17,8 @@ DISTFILES=	BDB-${PORTVERSION}-src.tgz \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Interface to Berkeley DB for GNUstep
 
+LICENSE=	LGPL21
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
