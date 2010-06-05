@@ -15,6 +15,8 @@ DISTNAME=	systempreferences-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PreferencePanes framework for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
