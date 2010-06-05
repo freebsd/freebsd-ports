@@ -1,0 +1,11 @@
+--- Plugins/PointSprite/ParaViewPlugin/CMakeLists.txt.orig	2010-03-19 22:12:33.000000000 +0600
++++ Plugins/PointSprite/ParaViewPlugin/CMakeLists.txt	2010-04-19 16:40:56.000000000 +0700
+@@ -17,6 +17,8 @@
+   ${CMAKE_CURRENT_BINARY_DIR}
+   ${CMAKE_CURRENT_BINARY_DIR}/Resources
+ )
++INCLUDE_DIRECTORIES(BEFORE ${QT_QTCORE_INCLUDE_DIR})
++INCLUDE_DIRECTORIES(BEFORE ${QT_QTGUI_INCLUDE_DIR})
+ 
+ set(SM_SOURCES
+   vtkSMPointSpriteRepresentationProxy.cxx
