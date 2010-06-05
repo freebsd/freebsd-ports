@@ -15,6 +15,17 @@ COMMENT=	A bsnmpd module allowing creation of counters from log files
 
 GNU_CONFIGURE=	yes
 
+OPTIONS=	PCRE	"Use PCRE instead of the default regex library"	Off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+CONFIGURE_ARGS+=	--enable-pcre
+.else
+CONFIGURE_ARGS+=	--disable-pcre
+.endif
+
 MAN1=		sockin.1
 MAN5=		bsnmp-regex.conf.5
 MAN8=		bsnmp-regex.8
