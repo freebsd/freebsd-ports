@@ -1,0 +1,4 @@
+bin/retranslator
+@unexec if cmp -s %D/etc/retranslator.conf.sample %D/etc/retranslator.conf; then rm -f %D/etc/retranslator.conf; fi
+etc/retranslator.conf.sample
+@exec if [ ! -f %D/etc/retranslator.conf ] ; then cp -p %D/%F %B/retranslator.conf; fi
