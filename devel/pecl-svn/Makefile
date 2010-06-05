@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	svn
-PORTVERSION=	0.5.1
-PORTREVISION=	2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
