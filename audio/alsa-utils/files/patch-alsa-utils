@@ -1,0 +1,77 @@
+--- aplay/aplay.c.orig	2010-04-16 13:11:06.000000000 +0200
++++ aplay/aplay.c	2010-04-23 04:17:13.000000000 +0200
+@@ -28,7 +28,9 @@
+ 
+ #define _GNU_SOURCE
+ #include <stdio.h>
++#ifndef __FreeBSD__
+ #include <malloc.h>
++#endif
+ #include <unistd.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -45,7 +47,11 @@
+ #include <sys/uio.h>
+ #include <sys/time.h>
+ #include <sys/signal.h>
++#ifndef __FreeBSD__
+ #include <asm/byteorder.h>
++#else
++#include <sys/stat.h>
++#endif
+ #include "aconfig.h"
+ #include "gettext.h"
+ #include "formats.h"
+@@ -116,6 +122,11 @@
+ static int use_strftime = 0;
+ volatile static int recycle_capture_file = 0;
+ 
++typedef off_t off64_t;
++
++#define lseek64 lseek
++#define open64 open
++
+ static int fd = -1;
+ static off64_t pbrec_count = LLONG_MAX, fdcount;
+ static int vocmajor, vocminor;
+@@ -1086,8 +1097,8 @@
+ 		err = snd_pcm_hw_params_get_buffer_time_max(params,
+ 							    &buffer_time, 0);
+ 		assert(err >= 0);
+-		if (buffer_time > 500000)
+-			buffer_time = 500000;
++		/* if (buffer_time > 500000) XXX WHO CARES?!?!?
++			buffer_time = 500000; */
+ 	}
+ 	if (period_time == 0 && period_frames == 0) {
+ 		if (buffer_time > 0)
+--- aplay/formats.h.orig	2009-08-31 23:13:36.000000000 +0800
++++ aplay/formats.h	2009-09-15 01:22:05.000000000 +0800
+@@ -1,8 +1,15 @@
+ #ifndef FORMATS_H
+ #define FORMATS_H		1
+ 
++#ifdef __FreeBSD__
++#include <sys/endian.h>
++#define bswap_16(x)	bswap16(x)
++#define bswap_32(x)	bswap32(x)
++#define bswap_64(x)	bswap64(x)
++#else
+ #include <endian.h>
+ #include <byteswap.h>
++#endif
+ 
+ /* Definitions for .VOC files */
+ 
+--- speaker-test/speaker-test.c.orig	2009-08-31 23:13:36.000000000 +0800
++++ speaker-test/speaker-test.c	2009-09-15 01:22:48.000000000 +0800
+@@ -44,7 +44,9 @@
+ #include <getopt.h>
+ #include <inttypes.h>
+ #include <ctype.h>
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ 
+ #define ALSA_PCM_NEW_HW_PARAMS_API
+ #define ALSA_PCM_NEW_SW_PARAMS_API
