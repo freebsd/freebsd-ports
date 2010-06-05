@@ -7,7 +7,7 @@
 
 PORTNAME=	dieharder
 DISTVERSION=	3.29.4beta
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/
 EXTRACT_SUFX=	.tgz
@@ -19,6 +19,7 @@ LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 
 MAKE_JOBS_UNSAFE=	yes
 
+USE_DOS2UNIX=	yes
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 libtool:22
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -28,16 +29,13 @@ MAN1=		dieharder.1
 MAN3=		libdieharder.3
 
 .include <bsd.port.pre.mk>
-.if ${ARCH} == "i386" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=	does not compile on i386, ia64, or sparc64
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|./configure|#./configure|g" \
 		${WRKSRC}/autogen.sh
 
 run-autotools:
-	@(cd ${WRKSRC}; ${SETENV} ${AUTOTOOLS_ENV} ${SH} ./autogen.sh)
+	(cd ${WRKSRC}; ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -ifv)
 	@${REINPLACE_CMD} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
 		-e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
 			${WRKSRC}/configure
