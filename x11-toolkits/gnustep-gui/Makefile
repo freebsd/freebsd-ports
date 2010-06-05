@@ -31,7 +31,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:${PORTSDIR}/audio/flite
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile
 .endif
 
-LICENSE=	GPLv3
+LICENSE_COMB=	multi
+LICENSE=	GPLv3 LGPL3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
