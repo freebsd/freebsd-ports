@@ -1,0 +1,8 @@
+bin/gtimer
+share/locale/cs/LC_MESSAGES/gtimer.mo
+share/locale/cz/LC_MESSAGES/gtimer.mo
+share/locale/es/LC_MESSAGES/gtimer.mo
+share/locale/fr/LC_MESSAGES/gtimer.mo
+share/locale/sv/LC_MESSAGES/gtimer.mo
+@dirrmtry share/locale/cz/LC_MESSAGES
+@dirrmtry share/locale/cz
