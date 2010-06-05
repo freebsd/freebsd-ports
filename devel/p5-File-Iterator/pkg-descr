@@ -1,0 +1,9 @@
+File::Iterator wraps a simple iteration interface around
+the files in a directory or directory tree. It builds a
+list of filenames, and maintains a cursor that points to
+one filename in the list. The user can work through the
+filenames sequentially by repeatedly doing stuff with
+the next filename that the cursor points to until their
+are no filenames left.
+
+WWW: http://search.cpan.org/dist/File-Iterator/Iterator.pm
