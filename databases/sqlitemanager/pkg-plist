@@ -1,769 +1,769 @@
 @comment $FreeBSD$
-www/sqlitemanager/CHANGES
-www/sqlitemanager/INSTALL
-www/sqlitemanager/LICENCE
-www/sqlitemanager/TODO
-www/sqlitemanager/favicon.ico
-www/sqlitemanager/include/JSCookMenu.js
-www/sqlitemanager/include/ParsingQuery.class.php
-www/sqlitemanager/include/SQLite.i18n.php
-www/sqlitemanager/include/SQLiteAuth.class.php
-www/sqlitemanager/include/SQLiteAutoConnect.class.php
-www/sqlitemanager/include/SQLiteDbConnect.class.php
-www/sqlitemanager/include/SQLiteDbOperation.class.php
-www/sqlitemanager/include/SQLiteDbOption.class.php
-www/sqlitemanager/include/SQLiteExport.class.php
-www/sqlitemanager/include/SQLiteFunctionProperties.class.php
-www/sqlitemanager/include/SQLiteSelect.class.php
-www/sqlitemanager/include/SQLiteTableProperties.class.php
-www/sqlitemanager/include/SQLiteToGrid.class.php
-www/sqlitemanager/include/SQLiteTriggerProperties.class.php
-www/sqlitemanager/include/SQLiteViewProperties.class.php
-www/sqlitemanager/include/TableIndex.class.php
-www/sqlitemanager/include/add_database.php
-www/sqlitemanager/include/browse.php
-www/sqlitemanager/include/common.lib.php
-www/sqlitemanager/include/config.db
-www/sqlitemanager/include/config.inc.php
-www/sqlitemanager/include/config3.db
-www/sqlitemanager/include/dbproperties.php
-www/sqlitemanager/include/defined.inc.php
-www/sqlitemanager/include/function.js
-www/sqlitemanager/include/functproperties.php
-www/sqlitemanager/include/grab_global.php
-www/sqlitemanager/include/index.html
-www/sqlitemanager/include/sql.class.php
-www/sqlitemanager/include/sql.php
-www/sqlitemanager/include/sqlite.class.php
-www/sqlitemanager/include/sqlite2.class.php
-www/sqlitemanager/include/sqlite3.class.php
-www/sqlitemanager/include/sqlite_fulltextsearch.class.php
-www/sqlitemanager/include/sqlite_fulltextsearchex.class.php
-www/sqlitemanager/include/tableproperties.php
-www/sqlitemanager/include/triggerproperties.php
-www/sqlitemanager/include/user_defined.inc.php
-www/sqlitemanager/include/viewproperties.php
-www/sqlitemanager/index.php
-www/sqlitemanager/jscalendar/ChangeLog
-www/sqlitemanager/jscalendar/README
-www/sqlitemanager/jscalendar/bugtest-hidden-selects.html
-www/sqlitemanager/jscalendar/calendar-blue.css
-www/sqlitemanager/jscalendar/calendar-blue2.css
-www/sqlitemanager/jscalendar/calendar-brown.css
-www/sqlitemanager/jscalendar/calendar-green.css
-www/sqlitemanager/jscalendar/calendar-setup.js
-www/sqlitemanager/jscalendar/calendar-setup_stripped.js
-www/sqlitemanager/jscalendar/calendar-system.css
-www/sqlitemanager/jscalendar/calendar-tas.css
-www/sqlitemanager/jscalendar/calendar-win2k-1.css
-www/sqlitemanager/jscalendar/calendar-win2k-2.css
-www/sqlitemanager/jscalendar/calendar-win2k-cold-1.css
-www/sqlitemanager/jscalendar/calendar-win2k-cold-2.css
-www/sqlitemanager/jscalendar/calendar.js
-www/sqlitemanager/jscalendar/calendar.php
-www/sqlitemanager/jscalendar/calendar_stripped.js
-www/sqlitemanager/jscalendar/dayinfo.html
-www/sqlitemanager/jscalendar/doc/html/field-button.jpg
-www/sqlitemanager/jscalendar/doc/html/reference-Z-S.css
-www/sqlitemanager/jscalendar/doc/html/reference.css
-www/sqlitemanager/jscalendar/doc/html/reference.html
-www/sqlitemanager/jscalendar/doc/reference.pdf
-www/sqlitemanager/jscalendar/img.gif
-www/sqlitemanager/jscalendar/index.html
-www/sqlitemanager/jscalendar/lang/calendar-af.js
-www/sqlitemanager/jscalendar/lang/calendar-al.js
-www/sqlitemanager/jscalendar/lang/calendar-bg.js
-www/sqlitemanager/jscalendar/lang/calendar-big5-utf8.js
-www/sqlitemanager/jscalendar/lang/calendar-big5.js
-www/sqlitemanager/jscalendar/lang/calendar-br.js
-www/sqlitemanager/jscalendar/lang/calendar-ca.js
-www/sqlitemanager/jscalendar/lang/calendar-cs-utf8.js
-www/sqlitemanager/jscalendar/lang/calendar-cs-win.js
-www/sqlitemanager/jscalendar/lang/calendar-da.js
-www/sqlitemanager/jscalendar/lang/calendar-de.js
-www/sqlitemanager/jscalendar/lang/calendar-du.js
-www/sqlitemanager/jscalendar/lang/calendar-el.js
-www/sqlitemanager/jscalendar/lang/calendar-en.js
-www/sqlitemanager/jscalendar/lang/calendar-es.js
-www/sqlitemanager/jscalendar/lang/calendar-fi.js
-www/sqlitemanager/jscalendar/lang/calendar-fr.js
-www/sqlitemanager/jscalendar/lang/calendar-he-utf8.js
-www/sqlitemanager/jscalendar/lang/calendar-hr-utf8.js
-www/sqlitemanager/jscalendar/lang/calendar-hr.js
-www/sqlitemanager/jscalendar/lang/calendar-hu.js
-www/sqlitemanager/jscalendar/lang/calendar-it.js
-www/sqlitemanager/jscalendar/lang/calendar-jp.js
-www/sqlitemanager/jscalendar/lang/calendar-ko-utf8.js
-www/sqlitemanager/jscalendar/lang/calendar-ko.js
-www/sqlitemanager/jscalendar/lang/calendar-lt-utf8.js
-www/sqlitemanager/jscalendar/lang/calendar-lt.js
-www/sqlitemanager/jscalendar/lang/calendar-lv.js
-www/sqlitemanager/jscalendar/lang/calendar-nl.js
-www/sqlitemanager/jscalendar/lang/calendar-no.js
-www/sqlitemanager/jscalendar/lang/calendar-pl-utf8.js
-www/sqlitemanager/jscalendar/lang/calendar-pl.js
-www/sqlitemanager/jscalendar/lang/calendar-pt.js
-www/sqlitemanager/jscalendar/lang/calendar-ro.js
-www/sqlitemanager/jscalendar/lang/calendar-ru.js
-www/sqlitemanager/jscalendar/lang/calendar-ru_win_.js
-www/sqlitemanager/jscalendar/lang/calendar-si.js
-www/sqlitemanager/jscalendar/lang/calendar-sk.js
-www/sqlitemanager/jscalendar/lang/calendar-sp.js
-www/sqlitemanager/jscalendar/lang/calendar-sv.js
-www/sqlitemanager/jscalendar/lang/calendar-tr.js
-www/sqlitemanager/jscalendar/lang/calendar-zh.js
-www/sqlitemanager/jscalendar/lang/cn_utf8.js
-www/sqlitemanager/jscalendar/menuarrow.gif
-www/sqlitemanager/jscalendar/menuarrow2.gif
-www/sqlitemanager/jscalendar/multiple-dates.html
-www/sqlitemanager/jscalendar/readme
-www/sqlitemanager/jscalendar/release-notes.html
-www/sqlitemanager/jscalendar/simple-1.html
-www/sqlitemanager/jscalendar/simple-2.html
-www/sqlitemanager/jscalendar/simple-3.html
-www/sqlitemanager/jscalendar/skins/aqua/active-bg.gif
-www/sqlitemanager/jscalendar/skins/aqua/dark-bg.gif
-www/sqlitemanager/jscalendar/skins/aqua/hover-bg.gif
-www/sqlitemanager/jscalendar/skins/aqua/menuarrow.gif
-www/sqlitemanager/jscalendar/skins/aqua/normal-bg.gif
-www/sqlitemanager/jscalendar/skins/aqua/rowhover-bg.gif
-www/sqlitemanager/jscalendar/skins/aqua/status-bg.gif
-www/sqlitemanager/jscalendar/skins/aqua/theme.css
-www/sqlitemanager/jscalendar/skins/aqua/title-bg.gif
-www/sqlitemanager/jscalendar/skins/aqua/today-bg.gif
-www/sqlitemanager/jscalendar/test-position.html
-www/sqlitemanager/jscalendar/test.php
-www/sqlitemanager/lang/brazilian_portuguese.inc.php
-www/sqlitemanager/lang/croatian.inc.php
-www/sqlitemanager/lang/danish.inc.php
-www/sqlitemanager/lang/dutch.inc.php
-www/sqlitemanager/lang/english.inc.php
-www/sqlitemanager/lang/french.inc.php
-www/sqlitemanager/lang/german.inc.php
-www/sqlitemanager/lang/italian.inc.php
-www/sqlitemanager/lang/japanese.inc.php
-www/sqlitemanager/lang/polish.inc.php
-www/sqlitemanager/lang/simplified_chinese.inc.php
-www/sqlitemanager/lang/spanish.inc.php
-www/sqlitemanager/lang/traditional_chinese.inc.php
-www/sqlitemanager/left.php
-www/sqlitemanager/main.php
-www/sqlitemanager/plugins/MySQL_Import/pics/base.png
-www/sqlitemanager/plugins/MySQL_Import/pics/data.png
-www/sqlitemanager/plugins/MySQL_Import/pics/table.png
-www/sqlitemanager/plugins/MySQL_Import/pics/url.png
-www/sqlitemanager/plugins/MySQL_Import/plugin.php
-www/sqlitemanager/plugins/MySQL_Import/select.js
-www/sqlitemanager/plugins/MySQL_Import/table_import.php
-www/sqlitemanager/plugins/MySQL_Import/todo.php
-www/sqlitemanager/plugins/Pear_Tools/pics/url.png
-www/sqlitemanager/plugins/Pear_Tools/plugin.php
-www/sqlitemanager/plugins/Pear_Tools/sqlite_xml.php
-www/sqlitemanager/plugins/Pear_Tools/todo.php
-www/sqlitemanager/plugins/index.html
-www/sqlitemanager/plugins/phpinfo.php
-www/sqlitemanager/plugins/plugins.txt
-www/sqlitemanager/spaw/class/lang.class.php
-www/sqlitemanager/spaw/class/script.js.php
-www/sqlitemanager/spaw/class/script_gecko.js.php
-www/sqlitemanager/spaw/class/toolbars.class.php
-www/sqlitemanager/spaw/class/util.class.php
-www/sqlitemanager/spaw/config/.cvsignore
-www/sqlitemanager/spaw/config/spaw_control.config.php
-www/sqlitemanager/spaw/dialogs/a.php
-www/sqlitemanager/spaw/dialogs/colorpicker.php
-www/sqlitemanager/spaw/dialogs/confirm.php
-www/sqlitemanager/spaw/dialogs/img.php
-www/sqlitemanager/spaw/dialogs/img_library.php
-www/sqlitemanager/spaw/dialogs/spacer.gif
-www/sqlitemanager/spaw/dialogs/table.php
-www/sqlitemanager/spaw/dialogs/td.php
-www/sqlitemanager/spaw/dialogs/utils.gecko.js
-www/sqlitemanager/spaw/dialogs/utils.js
-www/sqlitemanager/spaw/empty.html
-www/sqlitemanager/spaw/img_popup.php
-www/sqlitemanager/spaw/lib/lang/bg/bg_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/br/br_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/ca/ca_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/cz/cz_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/de/de_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/dk/dk_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/en/en_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/es/es_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/et/et_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/fi/fi_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/fr/fr_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/gr/gr_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/gz/gz_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/he/he_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/hr/hr_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/hu/hu_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/it/it_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/ja-euc/ja-euc_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/ja-jis/ja-jis_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/ja-sjis/ja-sjis_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/ja-utf8/ja-utf8_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/ko/ko_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/lt/lt_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/nl/nl_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/no/no_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/pl/pl_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/pt/pt_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/ru/ru_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/se/se_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/si/si_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/sk/sk_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/th/th_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/tr/tr_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/uk/uk_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/vn/vn_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/zh-big5/zh-big5_lang_data.inc.php
-www/sqlitemanager/spaw/lib/lang/zh-gb2312/zh-gb2312_lang_data.inc.php
-www/sqlitemanager/spaw/lib/themes/classic/css/dialog.css
-www/sqlitemanager/spaw/lib/themes/classic/css/toolbar.css
-www/sqlitemanager/spaw/lib/themes/classic/img/table.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_baseline.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_baseline_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_bg_color.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_bg_color_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_bold.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_bold_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_bottom.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_bottom_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_bulleted_list.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_bulleted_list_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_center.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_center_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_cleanup.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_cleanup_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_colorpicker.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_colorpicker_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_copy.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_copy_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_cut.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_cut_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_design_tab.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_design_tab_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_design_tab_on.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_design_tab_on_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_fore_color.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_fore_color_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_hr.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_hr_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_html_tab.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_html_tab_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_html_tab_on.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_html_tab_on_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_hyperlink.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_hyperlink_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_image_insert.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_image_insert_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_image_popup.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_image_popup_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_image_prop.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_image_prop_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_indent.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_indent_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_internal_link.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_internal_link_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_italic.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_italic_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_justify.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_justify_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_left.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_left_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_middle.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_middle_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_ordered_list.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_ordered_list_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_paste.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_paste_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_redo.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_redo_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_right.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_right_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_subscript.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_subscript_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_superscript.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_superscript_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_cell_merge_down.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_cell_merge_down_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_cell_merge_right.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_cell_merge_right_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_cell_prop.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_cell_prop_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_cell_split_horizontal.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_cell_split_horizontal_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_cell_split_vertical.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_cell_split_vertical_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_column_delete.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_column_delete_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_column_insert.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_column_insert_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_create.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_create_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_prop.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_prop_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_row_delete.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_row_delete_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_row_insert.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_table_row_insert_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_toggle_borders.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_toggle_borders_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_top.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_top_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_underline.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_underline_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_undo.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_undo_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_unindent.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_unindent_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_vertical_separator.gif
-www/sqlitemanager/spaw/lib/themes/classic/img/tb_vertical_separator_off.gif
-www/sqlitemanager/spaw/lib/themes/classic/js/toolbar.js.php
-www/sqlitemanager/spaw/lib/themes/default/css/dialog.css
-www/sqlitemanager/spaw/lib/themes/default/css/toolbar.css
-www/sqlitemanager/spaw/lib/themes/default/img/tb_baseline.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_baseline_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_baseline_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_baseline_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bg_color.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bg_color_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bg_color_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bg_color_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bold.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bold_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bold_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bold_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bottom.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bottom_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bottom_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bottom_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bulleted_list.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bulleted_list_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bulleted_list_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_bulleted_list_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_center.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_center_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_center_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_center_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_cleanup.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_cleanup_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_cleanup_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_cleanup_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_colorpicker.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_colorpicker_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_colorpicker_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_colorpicker_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_copy.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_copy_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_copy_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_copy_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_cut.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_cut_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_cut_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_cut_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_delete.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_delete_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_delete_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_delete_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_design_tab.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_design_tab_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_design_tab_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_design_tab_on.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_design_tab_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_fore_color.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_fore_color_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_fore_color_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_fore_color_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_hr.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_hr_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_hr_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_hr_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_html_tab.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_html_tab_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_html_tab_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_html_tab_on.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_html_tab_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_hyperlink.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_hyperlink_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_hyperlink_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_hyperlink_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_insert.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_insert_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_insert_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_insert_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_map.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_map_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_map_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_map_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_popup.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_popup_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_popup_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_popup_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_prop.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_prop_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_prop_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_image_prop_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_indent.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_indent_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_indent_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_indent_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_internal_link.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_internal_link_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_internal_link_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_internal_link_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_italic.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_italic_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_italic_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_italic_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_justify.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_justify_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_justify_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_justify_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_left.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_left_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_left_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_left_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_middle.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_middle_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_middle_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_middle_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_new.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_new_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_new_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_new_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_ordered_list.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_ordered_list_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_ordered_list_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_ordered_list_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_page_prop.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_page_prop_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_page_prop_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_page_prop_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_paste.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_paste_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_paste_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_paste_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_preview.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_preview_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_preview_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_preview_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_redo.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_redo_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_redo_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_redo_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_right.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_right_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_right_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_right_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_save.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_save_all.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_save_all_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_save_all_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_save_all_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_save_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_save_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_save_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_special_chars.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_special_chars_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_special_chars_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_strike.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_strike_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_strike_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_strike_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_subscript.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_subscript_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_subscript_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_subscript_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_superscript.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_superscript_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_superscript_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_superscript_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_merge_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_merge_down_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_merge_down_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_merge_down_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_merge_right.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_merge_right_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_merge_right_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_merge_right_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_prop.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_prop_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_prop_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_prop_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_split_horizontal.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_split_horizontal_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_split_horizontal_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_split_horizontal_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_split_vertical.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_split_vertical_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_split_vertical_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_cell_split_vertical_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_column_delete.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_column_delete_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_column_delete_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_column_delete_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_column_insert.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_column_insert_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_column_insert_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_column_insert_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_create.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_create_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_create_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_create_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_prop.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_prop_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_prop_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_prop_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_delete.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_delete_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_delete_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_delete_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_insert.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_insert_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_insert_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_insert_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_prop.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_prop_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_prop_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_table_row_prop_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_toggle_borders.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_toggle_borders_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_toggle_borders_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_toggle_borders_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_toggle_mode.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_top.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_top_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_top_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_top_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_underline.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_underline_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_underline_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_underline_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_undo.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_undo_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_undo_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_undo_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_unindent.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_unindent_down.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_unindent_off.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_unindent_over.gif
-www/sqlitemanager/spaw/lib/themes/default/img/tb_vertical_separator.gif
-www/sqlitemanager/spaw/lib/themes/default/img/toolbar_background.gif
-www/sqlitemanager/spaw/lib/themes/default/js/toolbar.js.php
-www/sqlitemanager/spaw/lib/toolbars/default/default_toolbar_data.gecko.inc.php
-www/sqlitemanager/spaw/lib/toolbars/default/default_toolbar_data.inc.php
-www/sqlitemanager/spaw/lib/toolbars/full/full_toolbar_data.gecko.inc.php
-www/sqlitemanager/spaw/lib/toolbars/full/full_toolbar_data.inc.php
-www/sqlitemanager/spaw/lib/toolbars/intlink/intlink_toolbar_data.gecko.inc.php
-www/sqlitemanager/spaw/lib/toolbars/intlink/intlink_toolbar_data.inc.php
-www/sqlitemanager/spaw/lib/toolbars/mini/mini_toolbar_data.gecko.inc.php
-www/sqlitemanager/spaw/lib/toolbars/mini/mini_toolbar_data.inc.php
-www/sqlitemanager/spaw/lib/toolbars/sidetable/sidetable_toolbar_data.gecko.inc.php
-www/sqlitemanager/spaw/lib/toolbars/sidetable/sidetable_toolbar_data.inc.php
-www/sqlitemanager/spaw/lib/toolbars/sqlitemanager/sqlitemanager_toolbar_data.gecko.inc.php
-www/sqlitemanager/spaw/lib/toolbars/sqlitemanager/sqlitemanager_toolbar_data.inc.php
-www/sqlitemanager/spaw/spacer.gif
-www/sqlitemanager/spaw/spaw_control.class.php
-www/sqlitemanager/spaw/spaw_script.js.php
-www/sqlitemanager/spaw/wysiwyg.css
-www/sqlitemanager/test.sqlite
-www/sqlitemanager/test.sqlite3
-www/sqlitemanager/theme/PMA/define.php
-www/sqlitemanager/theme/PMA/left.css
-www/sqlitemanager/theme/PMA/main.css
-www/sqlitemanager/theme/default/define.php
-www/sqlitemanager/theme/default/left.css
-www/sqlitemanager/theme/default/main.css
-www/sqlitemanager/theme/default/menu/arrow.png
-www/sqlitemanager/theme/default/menu/blank.png
-www/sqlitemanager/theme/default/menu/index.html
-www/sqlitemanager/theme/default/menu/spacer.png
-www/sqlitemanager/theme/default/menu/theme.css
-www/sqlitemanager/theme/default/menu/theme.js
-www/sqlitemanager/theme/default/pics/HTML_off.png
-www/sqlitemanager/theme/default/pics/HTML_on.png
-www/sqlitemanager/theme/default/pics/arrow_ltr.gif
-www/sqlitemanager/theme/default/pics/asc_order.png
-www/sqlitemanager/theme/default/pics/browse.png
-www/sqlitemanager/theme/default/pics/browse2.png
-www/sqlitemanager/theme/default/pics/browse_off.png
-www/sqlitemanager/theme/default/pics/database.png
-www/sqlitemanager/theme/default/pics/database2.png
-www/sqlitemanager/theme/default/pics/database3.png
-www/sqlitemanager/theme/default/pics/database_link.png
-www/sqlitemanager/theme/default/pics/delete_table.png
-www/sqlitemanager/theme/default/pics/delete_table_off.png
-www/sqlitemanager/theme/default/pics/deletecol.png
-www/sqlitemanager/theme/default/pics/deletecol_off.png
-www/sqlitemanager/theme/default/pics/deleterow.png
-www/sqlitemanager/theme/default/pics/deleterow_off.png
-www/sqlitemanager/theme/default/pics/desc_order.png
-www/sqlitemanager/theme/default/pics/down.gif
-www/sqlitemanager/theme/default/pics/edit.png
-www/sqlitemanager/theme/default/pics/edit_off.png
-www/sqlitemanager/theme/default/pics/edittrash.png
-www/sqlitemanager/theme/default/pics/edittrash_off.png
-www/sqlitemanager/theme/default/pics/encrypted.png
-www/sqlitemanager/theme/default/pics/encrypted_off.png
-www/sqlitemanager/theme/default/pics/end.gif
-www/sqlitemanager/theme/default/pics/fulltext.png
-www/sqlitemanager/theme/default/pics/functions.png
-www/sqlitemanager/theme/default/pics/index.png
-www/sqlitemanager/theme/default/pics/index_off.png
-www/sqlitemanager/theme/default/pics/insertrow.png
-www/sqlitemanager/theme/default/pics/insertrow_off.png
-www/sqlitemanager/theme/default/pics/left.gif
-www/sqlitemanager/theme/default/pics/minus.png
-www/sqlitemanager/theme/default/pics/nobrowse.png
-www/sqlitemanager/theme/default/pics/nofulltext.png
-www/sqlitemanager/theme/default/pics/plus.png
-www/sqlitemanager/theme/default/pics/primaire.png
-www/sqlitemanager/theme/default/pics/primaire_off.png
-www/sqlitemanager/theme/default/pics/properties.png
-www/sqlitemanager/theme/default/pics/properties_off.png
-www/sqlitemanager/theme/default/pics/right.gif
-www/sqlitemanager/theme/default/pics/sqlitemanager.png
-www/sqlitemanager/theme/default/pics/supprime.gif
-www/sqlitemanager/theme/default/pics/tables.png
-www/sqlitemanager/theme/default/pics/top.gif
-www/sqlitemanager/theme/default/pics/triggers.png
-www/sqlitemanager/theme/default/pics/unique.png
-www/sqlitemanager/theme/default/pics/unique_off.png
-www/sqlitemanager/theme/default/pics/up.gif
-www/sqlitemanager/theme/default/pics/views.png
-www/sqlitemanager/theme/green/define.php
-www/sqlitemanager/theme/green/left.css
-www/sqlitemanager/theme/green/main.css
-www/sqlitemanager/theme/green/menu/arrow.png
-www/sqlitemanager/theme/green/menu/blank.png
-www/sqlitemanager/theme/green/menu/index.html
-www/sqlitemanager/theme/green/menu/spacer.png
-www/sqlitemanager/theme/green/menu/theme.css
-www/sqlitemanager/theme/green/menu/theme.js
-www/sqlitemanager/theme/green/pics/bg.png
-www/sqlitemanager/theme/green/pics/bg_left.png
-www/sqlitemanager/theme/green/pics/bg_th.png
-www/sqlitemanager/theme/green/pics/bg_title.png
-www/sqlitemanager/theme/green/pics/browse.png
-www/sqlitemanager/theme/green/pics/browse2.png
-www/sqlitemanager/theme/green/pics/browse_off.png
-www/sqlitemanager/theme/green/pics/database.png
-www/sqlitemanager/theme/green/pics/database2.png
-www/sqlitemanager/theme/green/pics/database3.png
-www/sqlitemanager/theme/green/pics/database_link.png
-www/sqlitemanager/theme/green/pics/delete_table.png
-www/sqlitemanager/theme/green/pics/delete_table_off.png
-www/sqlitemanager/theme/green/pics/deletecol.png
-www/sqlitemanager/theme/green/pics/deletecol_off.png
-www/sqlitemanager/theme/green/pics/deleterow.png
-www/sqlitemanager/theme/green/pics/deleterow_off.png
-www/sqlitemanager/theme/green/pics/down.gif
-www/sqlitemanager/theme/green/pics/edit.png
-www/sqlitemanager/theme/green/pics/edit_off.png
-www/sqlitemanager/theme/green/pics/edittrash.png
-www/sqlitemanager/theme/green/pics/edittrash_off.png
-www/sqlitemanager/theme/green/pics/functions.png
-www/sqlitemanager/theme/green/pics/index.png
-www/sqlitemanager/theme/green/pics/index_off.png
-www/sqlitemanager/theme/green/pics/input.png
-www/sqlitemanager/theme/green/pics/insertrow.png
-www/sqlitemanager/theme/green/pics/insertrow_off.png
-www/sqlitemanager/theme/green/pics/primaire.png
-www/sqlitemanager/theme/green/pics/primaire_off.png
-www/sqlitemanager/theme/green/pics/properties.png
-www/sqlitemanager/theme/green/pics/properties_off.png
-www/sqlitemanager/theme/green/pics/sqlitemanager.png
-www/sqlitemanager/theme/green/pics/supprime.gif
-www/sqlitemanager/theme/green/pics/tables.png
-www/sqlitemanager/theme/green/pics/triggers.png
-www/sqlitemanager/theme/green/pics/unique.png
-www/sqlitemanager/theme/green/pics/unique_off.png
-www/sqlitemanager/theme/green/pics/up.gif
-www/sqlitemanager/theme/green/pics/views.png
-www/sqlitemanager/theme/jall/define.php
-www/sqlitemanager/theme/jall/left.css
-www/sqlitemanager/theme/jall/main.css
-@dirrmtry www/sqlitemanager/theme/jall
-@dirrmtry www/sqlitemanager/theme/green/pics
-@dirrmtry www/sqlitemanager/theme/green/menu
-@dirrmtry www/sqlitemanager/theme/green
-@dirrmtry www/sqlitemanager/theme/default/pics
-@dirrmtry www/sqlitemanager/theme/default/menu
-@dirrmtry www/sqlitemanager/theme/default
-@dirrmtry www/sqlitemanager/theme/PMA
-@dirrmtry www/sqlitemanager/theme
-@dirrmtry www/sqlitemanager/spaw/lib/toolbars/sqlitemanager
-@dirrmtry www/sqlitemanager/spaw/lib/toolbars/sidetable
-@dirrmtry www/sqlitemanager/spaw/lib/toolbars/mini
-@dirrmtry www/sqlitemanager/spaw/lib/toolbars/intlink
-@dirrmtry www/sqlitemanager/spaw/lib/toolbars/full
-@dirrmtry www/sqlitemanager/spaw/lib/toolbars/default
-@dirrmtry www/sqlitemanager/spaw/lib/toolbars
-@dirrmtry www/sqlitemanager/spaw/lib/themes/default/js
-@dirrmtry www/sqlitemanager/spaw/lib/themes/default/img
-@dirrmtry www/sqlitemanager/spaw/lib/themes/default/css
-@dirrmtry www/sqlitemanager/spaw/lib/themes/default
-@dirrmtry www/sqlitemanager/spaw/lib/themes/classic/js
-@dirrmtry www/sqlitemanager/spaw/lib/themes/classic/img
-@dirrmtry www/sqlitemanager/spaw/lib/themes/classic/css
-@dirrmtry www/sqlitemanager/spaw/lib/themes/classic
-@dirrmtry www/sqlitemanager/spaw/lib/themes
-@dirrmtry www/sqlitemanager/spaw/lib/lang/zh-gb2312
-@dirrmtry www/sqlitemanager/spaw/lib/lang/zh-big5
-@dirrmtry www/sqlitemanager/spaw/lib/lang/vn
-@dirrmtry www/sqlitemanager/spaw/lib/lang/uk
-@dirrmtry www/sqlitemanager/spaw/lib/lang/tr
-@dirrmtry www/sqlitemanager/spaw/lib/lang/th
-@dirrmtry www/sqlitemanager/spaw/lib/lang/sk
-@dirrmtry www/sqlitemanager/spaw/lib/lang/si
-@dirrmtry www/sqlitemanager/spaw/lib/lang/se
-@dirrmtry www/sqlitemanager/spaw/lib/lang/ru
-@dirrmtry www/sqlitemanager/spaw/lib/lang/pt
-@dirrmtry www/sqlitemanager/spaw/lib/lang/pl
-@dirrmtry www/sqlitemanager/spaw/lib/lang/no
-@dirrmtry www/sqlitemanager/spaw/lib/lang/nl
-@dirrmtry www/sqlitemanager/spaw/lib/lang/lt
-@dirrmtry www/sqlitemanager/spaw/lib/lang/ko
-@dirrmtry www/sqlitemanager/spaw/lib/lang/ja-utf8
-@dirrmtry www/sqlitemanager/spaw/lib/lang/ja-sjis
-@dirrmtry www/sqlitemanager/spaw/lib/lang/ja-jis
-@dirrmtry www/sqlitemanager/spaw/lib/lang/ja-euc
-@dirrmtry www/sqlitemanager/spaw/lib/lang/it
-@dirrmtry www/sqlitemanager/spaw/lib/lang/hu
-@dirrmtry www/sqlitemanager/spaw/lib/lang/hr
-@dirrmtry www/sqlitemanager/spaw/lib/lang/he
-@dirrmtry www/sqlitemanager/spaw/lib/lang/gz
-@dirrmtry www/sqlitemanager/spaw/lib/lang/gr
-@dirrmtry www/sqlitemanager/spaw/lib/lang/fr
-@dirrmtry www/sqlitemanager/spaw/lib/lang/fi
-@dirrmtry www/sqlitemanager/spaw/lib/lang/et
-@dirrmtry www/sqlitemanager/spaw/lib/lang/es
-@dirrmtry www/sqlitemanager/spaw/lib/lang/en
-@dirrmtry www/sqlitemanager/spaw/lib/lang/dk
-@dirrmtry www/sqlitemanager/spaw/lib/lang/de
-@dirrmtry www/sqlitemanager/spaw/lib/lang/cz
-@dirrmtry www/sqlitemanager/spaw/lib/lang/ca
-@dirrmtry www/sqlitemanager/spaw/lib/lang/br
-@dirrmtry www/sqlitemanager/spaw/lib/lang/bg
-@dirrmtry www/sqlitemanager/spaw/lib/lang
-@dirrmtry www/sqlitemanager/spaw/lib
-@dirrmtry www/sqlitemanager/spaw/dialogs
-@dirrmtry www/sqlitemanager/spaw/config
-@dirrmtry www/sqlitemanager/spaw/class
-@dirrmtry www/sqlitemanager/spaw
-@dirrmtry www/sqlitemanager/plugins/Pear_Tools/pics
-@dirrmtry www/sqlitemanager/plugins/Pear_Tools
-@dirrmtry www/sqlitemanager/plugins/MySQL_Import/pics
-@dirrmtry www/sqlitemanager/plugins/MySQL_Import
-@dirrmtry www/sqlitemanager/plugins
-@dirrmtry www/sqlitemanager/lang
-@dirrmtry www/sqlitemanager/jscalendar/skins/aqua
-@dirrmtry www/sqlitemanager/jscalendar/skins
-@dirrmtry www/sqlitemanager/jscalendar/lang
-@dirrmtry www/sqlitemanager/jscalendar/doc/html
-@dirrmtry www/sqlitemanager/jscalendar/doc
-@dirrmtry www/sqlitemanager/jscalendar
-@dirrmtry www/sqlitemanager/include
-@dirrmtry www/sqlitemanager
+%%WWWDIR_REL%%/CHANGES
+%%WWWDIR_REL%%/INSTALL
+%%WWWDIR_REL%%/LICENCE
+%%WWWDIR_REL%%/TODO
+%%WWWDIR_REL%%/favicon.ico
+%%WWWDIR_REL%%/include/JSCookMenu.js
+%%WWWDIR_REL%%/include/ParsingQuery.class.php
+%%WWWDIR_REL%%/include/SQLite.i18n.php
+%%WWWDIR_REL%%/include/SQLiteAuth.class.php
+%%WWWDIR_REL%%/include/SQLiteAutoConnect.class.php
+%%WWWDIR_REL%%/include/SQLiteDbConnect.class.php
+%%WWWDIR_REL%%/include/SQLiteDbOperation.class.php
+%%WWWDIR_REL%%/include/SQLiteDbOption.class.php
+%%WWWDIR_REL%%/include/SQLiteExport.class.php
+%%WWWDIR_REL%%/include/SQLiteFunctionProperties.class.php
+%%WWWDIR_REL%%/include/SQLiteSelect.class.php
+%%WWWDIR_REL%%/include/SQLiteTableProperties.class.php
+%%WWWDIR_REL%%/include/SQLiteToGrid.class.php
+%%WWWDIR_REL%%/include/SQLiteTriggerProperties.class.php
+%%WWWDIR_REL%%/include/SQLiteViewProperties.class.php
+%%WWWDIR_REL%%/include/TableIndex.class.php
+%%WWWDIR_REL%%/include/add_database.php
+%%WWWDIR_REL%%/include/browse.php
+%%WWWDIR_REL%%/include/common.lib.php
+%%WWWDIR_REL%%/include/config.db
+%%WWWDIR_REL%%/include/config.inc.php
+%%WWWDIR_REL%%/include/config3.db
+%%WWWDIR_REL%%/include/dbproperties.php
+%%WWWDIR_REL%%/include/defined.inc.php
+%%WWWDIR_REL%%/include/function.js
+%%WWWDIR_REL%%/include/functproperties.php
+%%WWWDIR_REL%%/include/grab_global.php
+%%WWWDIR_REL%%/include/index.html
+%%WWWDIR_REL%%/include/sql.class.php
+%%WWWDIR_REL%%/include/sql.php
+%%WWWDIR_REL%%/include/sqlite.class.php
+%%WWWDIR_REL%%/include/sqlite2.class.php
+%%WWWDIR_REL%%/include/sqlite2.inc.php
+%%WWWDIR_REL%%/include/sqlite3.class.php
+%%WWWDIR_REL%%/include/sqlite3.inc.php
+%%WWWDIR_REL%%/include/sqlite_fulltextsearch.class.php
+%%WWWDIR_REL%%/include/sqlite_fulltextsearchex.class.php
+%%WWWDIR_REL%%/include/tableproperties.php
+%%WWWDIR_REL%%/include/triggerproperties.php
+%%WWWDIR_REL%%/include/user_defined.inc.php
+%%WWWDIR_REL%%/include/viewproperties.php
+%%WWWDIR_REL%%/index.php
+%%WWWDIR_REL%%/jscalendar/ChangeLog
+%%WWWDIR_REL%%/jscalendar/README
+%%WWWDIR_REL%%/jscalendar/bugtest-hidden-selects.html
+%%WWWDIR_REL%%/jscalendar/calendar-blue.css
+%%WWWDIR_REL%%/jscalendar/calendar-blue2.css
+%%WWWDIR_REL%%/jscalendar/calendar-brown.css
+%%WWWDIR_REL%%/jscalendar/calendar-green.css
+%%WWWDIR_REL%%/jscalendar/calendar-setup.js
+%%WWWDIR_REL%%/jscalendar/calendar-setup_stripped.js
+%%WWWDIR_REL%%/jscalendar/calendar-system.css
+%%WWWDIR_REL%%/jscalendar/calendar-tas.css
+%%WWWDIR_REL%%/jscalendar/calendar-win2k-1.css
+%%WWWDIR_REL%%/jscalendar/calendar-win2k-2.css
+%%WWWDIR_REL%%/jscalendar/calendar-win2k-cold-1.css
+%%WWWDIR_REL%%/jscalendar/calendar-win2k-cold-2.css
+%%WWWDIR_REL%%/jscalendar/calendar.js
+%%WWWDIR_REL%%/jscalendar/calendar.php
+%%WWWDIR_REL%%/jscalendar/calendar_stripped.js
+%%WWWDIR_REL%%/jscalendar/dayinfo.html
+%%WWWDIR_REL%%/jscalendar/doc/html/field-button.jpg
+%%WWWDIR_REL%%/jscalendar/doc/html/reference-Z-S.css
+%%WWWDIR_REL%%/jscalendar/doc/html/reference.css
+%%WWWDIR_REL%%/jscalendar/doc/html/reference.html
+%%WWWDIR_REL%%/jscalendar/doc/reference.pdf
+%%WWWDIR_REL%%/jscalendar/img.gif
+%%WWWDIR_REL%%/jscalendar/index.html
+%%WWWDIR_REL%%/jscalendar/lang/calendar-af.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-al.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-bg.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-big5-utf8.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-big5.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-br.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-ca.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-cs-utf8.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-cs-win.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-da.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-de.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-du.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-el.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-en.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-es.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-fi.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-fr.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-he-utf8.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-hr-utf8.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-hr.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-hu.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-it.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-jp.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-ko-utf8.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-ko.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-lt-utf8.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-lt.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-lv.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-nl.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-no.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-pl-utf8.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-pl.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-pt.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-ro.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-ru.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-ru_win_.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-si.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-sk.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-sp.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-sv.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-tr.js
+%%WWWDIR_REL%%/jscalendar/lang/calendar-zh.js
+%%WWWDIR_REL%%/jscalendar/lang/cn_utf8.js
+%%WWWDIR_REL%%/jscalendar/menuarrow.gif
+%%WWWDIR_REL%%/jscalendar/menuarrow2.gif
+%%WWWDIR_REL%%/jscalendar/multiple-dates.html
+%%WWWDIR_REL%%/jscalendar/release-notes.html
+%%WWWDIR_REL%%/jscalendar/simple-1.html
+%%WWWDIR_REL%%/jscalendar/simple-2.html
+%%WWWDIR_REL%%/jscalendar/simple-3.html
+%%WWWDIR_REL%%/jscalendar/skins/aqua/active-bg.gif
+%%WWWDIR_REL%%/jscalendar/skins/aqua/dark-bg.gif
+%%WWWDIR_REL%%/jscalendar/skins/aqua/hover-bg.gif
+%%WWWDIR_REL%%/jscalendar/skins/aqua/menuarrow.gif
+%%WWWDIR_REL%%/jscalendar/skins/aqua/normal-bg.gif
+%%WWWDIR_REL%%/jscalendar/skins/aqua/rowhover-bg.gif
+%%WWWDIR_REL%%/jscalendar/skins/aqua/status-bg.gif
+%%WWWDIR_REL%%/jscalendar/skins/aqua/theme.css
+%%WWWDIR_REL%%/jscalendar/skins/aqua/title-bg.gif
+%%WWWDIR_REL%%/jscalendar/skins/aqua/today-bg.gif
+%%WWWDIR_REL%%/jscalendar/test-position.html
+%%WWWDIR_REL%%/jscalendar/test.php
+%%WWWDIR_REL%%/lang/brazilian_portuguese.inc.php
+%%WWWDIR_REL%%/lang/croatian.inc.php
+%%WWWDIR_REL%%/lang/danish.inc.php
+%%WWWDIR_REL%%/lang/dutch.inc.php
+%%WWWDIR_REL%%/lang/english.inc.php
+%%WWWDIR_REL%%/lang/french.inc.php
+%%WWWDIR_REL%%/lang/german.inc.php
+%%WWWDIR_REL%%/lang/italian.inc.php
+%%WWWDIR_REL%%/lang/japanese.inc.php
+%%WWWDIR_REL%%/lang/polish.inc.php
+%%WWWDIR_REL%%/lang/simplified_chinese.inc.php
+%%WWWDIR_REL%%/lang/spanish.inc.php
+%%WWWDIR_REL%%/lang/traditional_chinese.inc.php
+%%WWWDIR_REL%%/left.php
+%%WWWDIR_REL%%/main.php
+%%WWWDIR_REL%%/plugins/MySQL_Import/pics/base.png
+%%WWWDIR_REL%%/plugins/MySQL_Import/pics/data.png
+%%WWWDIR_REL%%/plugins/MySQL_Import/pics/table.png
+%%WWWDIR_REL%%/plugins/MySQL_Import/pics/url.png
+%%WWWDIR_REL%%/plugins/MySQL_Import/plugin.php
+%%WWWDIR_REL%%/plugins/MySQL_Import/select.js
+%%WWWDIR_REL%%/plugins/MySQL_Import/table_import.php
+%%WWWDIR_REL%%/plugins/MySQL_Import/todo.php
+%%WWWDIR_REL%%/plugins/Pear_Tools/pics/url.png
+%%WWWDIR_REL%%/plugins/Pear_Tools/plugin.php
+%%WWWDIR_REL%%/plugins/Pear_Tools/sqlite_xml.php
+%%WWWDIR_REL%%/plugins/Pear_Tools/todo.php
+%%WWWDIR_REL%%/plugins/index.html
+%%WWWDIR_REL%%/plugins/phpinfo.php
+%%WWWDIR_REL%%/plugins/plugins.txt
+%%WWWDIR_REL%%/spaw/class/lang.class.php
+%%WWWDIR_REL%%/spaw/class/script.js.php
+%%WWWDIR_REL%%/spaw/class/script_gecko.js.php
+%%WWWDIR_REL%%/spaw/class/toolbars.class.php
+%%WWWDIR_REL%%/spaw/class/util.class.php
+%%WWWDIR_REL%%/spaw/config/spaw_control.config.php
+%%WWWDIR_REL%%/spaw/dialogs/a.php
+%%WWWDIR_REL%%/spaw/dialogs/colorpicker.php
+%%WWWDIR_REL%%/spaw/dialogs/confirm.php
+%%WWWDIR_REL%%/spaw/dialogs/img.php
+%%WWWDIR_REL%%/spaw/dialogs/img_library.php
+%%WWWDIR_REL%%/spaw/dialogs/spacer.gif
+%%WWWDIR_REL%%/spaw/dialogs/table.php
+%%WWWDIR_REL%%/spaw/dialogs/td.php
+%%WWWDIR_REL%%/spaw/dialogs/utils.gecko.js
+%%WWWDIR_REL%%/spaw/dialogs/utils.js
+%%WWWDIR_REL%%/spaw/empty.html
+%%WWWDIR_REL%%/spaw/img_popup.php
+%%WWWDIR_REL%%/spaw/lib/lang/bg/bg_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/br/br_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/ca/ca_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/cz/cz_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/de/de_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/dk/dk_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/en/en_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/es/es_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/et/et_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/fi/fi_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/fr/fr_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/gr/gr_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/gz/gz_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/he/he_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/hr/hr_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/hu/hu_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/it/it_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/ja-euc/ja-euc_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/ja-jis/ja-jis_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/ja-sjis/ja-sjis_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/ja-utf8/ja-utf8_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/ko/ko_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/lt/lt_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/nl/nl_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/no/no_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/pl/pl_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/pt/pt_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/ru/ru_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/se/se_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/si/si_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/sk/sk_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/th/th_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/tr/tr_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/uk/uk_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/vn/vn_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/zh-big5/zh-big5_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/lang/zh-gb2312/zh-gb2312_lang_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/themes/classic/css/dialog.css
+%%WWWDIR_REL%%/spaw/lib/themes/classic/css/toolbar.css
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/table.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_baseline.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_baseline_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_bg_color.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_bg_color_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_bold.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_bold_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_bottom.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_bottom_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_bulleted_list.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_bulleted_list_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_center.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_center_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_cleanup.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_cleanup_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_colorpicker.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_colorpicker_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_copy.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_copy_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_cut.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_cut_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_design_tab.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_design_tab_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_design_tab_on.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_design_tab_on_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_fore_color.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_fore_color_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_hr.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_hr_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_html_tab.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_html_tab_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_html_tab_on.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_html_tab_on_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_hyperlink.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_hyperlink_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_image_insert.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_image_insert_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_image_popup.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_image_popup_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_image_prop.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_image_prop_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_indent.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_indent_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_internal_link.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_internal_link_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_italic.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_italic_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_justify.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_justify_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_left.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_left_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_middle.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_middle_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_ordered_list.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_ordered_list_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_paste.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_paste_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_redo.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_redo_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_right.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_right_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_subscript.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_subscript_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_superscript.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_superscript_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_cell_merge_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_cell_merge_down_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_cell_merge_right.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_cell_merge_right_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_cell_prop.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_cell_prop_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_cell_split_horizontal.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_cell_split_horizontal_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_cell_split_vertical.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_cell_split_vertical_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_column_delete.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_column_delete_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_column_insert.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_column_insert_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_create.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_create_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_prop.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_prop_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_row_delete.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_row_delete_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_row_insert.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_table_row_insert_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_toggle_borders.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_toggle_borders_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_top.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_top_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_underline.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_underline_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_undo.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_undo_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_unindent.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_unindent_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_vertical_separator.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/img/tb_vertical_separator_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/classic/js/toolbar.js.php
+%%WWWDIR_REL%%/spaw/lib/themes/default/css/dialog.css
+%%WWWDIR_REL%%/spaw/lib/themes/default/css/toolbar.css
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_baseline.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_baseline_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_baseline_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_baseline_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bg_color.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bg_color_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bg_color_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bg_color_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bold.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bold_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bold_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bold_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bottom.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bottom_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bottom_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bottom_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bulleted_list.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bulleted_list_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bulleted_list_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_bulleted_list_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_center.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_center_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_center_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_center_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_cleanup.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_cleanup_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_cleanup_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_cleanup_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_colorpicker.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_colorpicker_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_colorpicker_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_colorpicker_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_copy.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_copy_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_copy_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_copy_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_cut.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_cut_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_cut_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_cut_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_delete.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_delete_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_delete_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_delete_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_design_tab.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_design_tab_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_design_tab_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_design_tab_on.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_design_tab_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_fore_color.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_fore_color_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_fore_color_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_fore_color_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_hr.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_hr_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_hr_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_hr_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_html_tab.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_html_tab_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_html_tab_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_html_tab_on.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_html_tab_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_hyperlink.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_hyperlink_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_hyperlink_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_hyperlink_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_insert.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_insert_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_insert_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_insert_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_map.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_map_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_map_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_map_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_popup.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_popup_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_popup_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_popup_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_prop.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_prop_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_prop_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_image_prop_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_indent.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_indent_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_indent_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_indent_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_internal_link.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_internal_link_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_internal_link_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_internal_link_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_italic.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_italic_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_italic_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_italic_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_justify.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_justify_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_justify_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_justify_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_left.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_left_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_left_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_left_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_middle.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_middle_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_middle_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_middle_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_new.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_new_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_new_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_new_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_ordered_list.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_ordered_list_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_ordered_list_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_ordered_list_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_page_prop.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_page_prop_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_page_prop_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_page_prop_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_paste.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_paste_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_paste_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_paste_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_preview.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_preview_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_preview_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_preview_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_redo.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_redo_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_redo_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_redo_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_right.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_right_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_right_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_right_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_save.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_save_all.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_save_all_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_save_all_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_save_all_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_save_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_save_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_save_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_special_chars.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_special_chars_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_special_chars_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_strike.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_strike_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_strike_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_strike_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_subscript.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_subscript_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_subscript_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_subscript_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_superscript.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_superscript_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_superscript_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_superscript_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_merge_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_merge_down_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_merge_down_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_merge_down_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_merge_right.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_merge_right_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_merge_right_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_merge_right_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_prop.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_prop_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_prop_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_prop_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_split_horizontal.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_split_horizontal_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_split_horizontal_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_split_horizontal_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_split_vertical.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_split_vertical_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_split_vertical_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_cell_split_vertical_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_column_delete.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_column_delete_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_column_delete_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_column_delete_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_column_insert.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_column_insert_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_column_insert_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_column_insert_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_create.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_create_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_create_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_create_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_prop.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_prop_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_prop_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_prop_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_delete.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_delete_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_delete_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_delete_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_insert.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_insert_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_insert_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_insert_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_prop.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_prop_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_prop_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_table_row_prop_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_toggle_borders.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_toggle_borders_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_toggle_borders_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_toggle_borders_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_toggle_mode.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_top.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_top_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_top_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_top_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_underline.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_underline_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_underline_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_underline_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_undo.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_undo_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_undo_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_undo_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_unindent.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_unindent_down.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_unindent_off.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_unindent_over.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/tb_vertical_separator.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/img/toolbar_background.gif
+%%WWWDIR_REL%%/spaw/lib/themes/default/js/toolbar.js.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/default/default_toolbar_data.gecko.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/default/default_toolbar_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/full/full_toolbar_data.gecko.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/full/full_toolbar_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/intlink/intlink_toolbar_data.gecko.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/intlink/intlink_toolbar_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/mini/mini_toolbar_data.gecko.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/mini/mini_toolbar_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/sidetable/sidetable_toolbar_data.gecko.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/sidetable/sidetable_toolbar_data.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/sqlitemanager/sqlitemanager_toolbar_data.gecko.inc.php
+%%WWWDIR_REL%%/spaw/lib/toolbars/sqlitemanager/sqlitemanager_toolbar_data.inc.php
+%%WWWDIR_REL%%/spaw/spacer.gif
+%%WWWDIR_REL%%/spaw/spaw_control.class.php
+%%WWWDIR_REL%%/spaw/spaw_script.js.php
+%%WWWDIR_REL%%/spaw/wysiwyg.css
+%%WWWDIR_REL%%/test.sqlite
+%%WWWDIR_REL%%/test.sqlite3
+%%WWWDIR_REL%%/theme/PMA/define.php
+%%WWWDIR_REL%%/theme/PMA/left.css
+%%WWWDIR_REL%%/theme/PMA/main.css
+%%WWWDIR_REL%%/theme/default/define.php
+%%WWWDIR_REL%%/theme/default/left.css
+%%WWWDIR_REL%%/theme/default/main.css
+%%WWWDIR_REL%%/theme/default/menu/arrow.png
+%%WWWDIR_REL%%/theme/default/menu/blank.png
+%%WWWDIR_REL%%/theme/default/menu/index.html
+%%WWWDIR_REL%%/theme/default/menu/spacer.png
+%%WWWDIR_REL%%/theme/default/menu/theme.css
+%%WWWDIR_REL%%/theme/default/menu/theme.js
+%%WWWDIR_REL%%/theme/default/pics/HTML_off.png
+%%WWWDIR_REL%%/theme/default/pics/HTML_on.png
+%%WWWDIR_REL%%/theme/default/pics/arrow_ltr.gif
+%%WWWDIR_REL%%/theme/default/pics/asc_order.png
+%%WWWDIR_REL%%/theme/default/pics/browse.png
+%%WWWDIR_REL%%/theme/default/pics/browse2.png
+%%WWWDIR_REL%%/theme/default/pics/browse_off.png
+%%WWWDIR_REL%%/theme/default/pics/database.png
+%%WWWDIR_REL%%/theme/default/pics/database2.png
+%%WWWDIR_REL%%/theme/default/pics/database3.png
+%%WWWDIR_REL%%/theme/default/pics/database_link.png
+%%WWWDIR_REL%%/theme/default/pics/delete_table.png
+%%WWWDIR_REL%%/theme/default/pics/delete_table_off.png
+%%WWWDIR_REL%%/theme/default/pics/deletecol.png
+%%WWWDIR_REL%%/theme/default/pics/deletecol_off.png
+%%WWWDIR_REL%%/theme/default/pics/deleterow.png
+%%WWWDIR_REL%%/theme/default/pics/deleterow_off.png
+%%WWWDIR_REL%%/theme/default/pics/desc_order.png
+%%WWWDIR_REL%%/theme/default/pics/down.gif
+%%WWWDIR_REL%%/theme/default/pics/edit.png
+%%WWWDIR_REL%%/theme/default/pics/edit_off.png
+%%WWWDIR_REL%%/theme/default/pics/edittrash.png
+%%WWWDIR_REL%%/theme/default/pics/edittrash_off.png
+%%WWWDIR_REL%%/theme/default/pics/encrypted.png
+%%WWWDIR_REL%%/theme/default/pics/encrypted_off.png
+%%WWWDIR_REL%%/theme/default/pics/end.gif
+%%WWWDIR_REL%%/theme/default/pics/fulltext.png
+%%WWWDIR_REL%%/theme/default/pics/functions.png
+%%WWWDIR_REL%%/theme/default/pics/index.png
+%%WWWDIR_REL%%/theme/default/pics/index_off.png
+%%WWWDIR_REL%%/theme/default/pics/insertrow.png
+%%WWWDIR_REL%%/theme/default/pics/insertrow_off.png
+%%WWWDIR_REL%%/theme/default/pics/left.gif
+%%WWWDIR_REL%%/theme/default/pics/minus.png
+%%WWWDIR_REL%%/theme/default/pics/nobrowse.png
+%%WWWDIR_REL%%/theme/default/pics/nofulltext.png
+%%WWWDIR_REL%%/theme/default/pics/plus.png
+%%WWWDIR_REL%%/theme/default/pics/primaire.png
+%%WWWDIR_REL%%/theme/default/pics/primaire_off.png
+%%WWWDIR_REL%%/theme/default/pics/properties.png
+%%WWWDIR_REL%%/theme/default/pics/properties_off.png
+%%WWWDIR_REL%%/theme/default/pics/right.gif
+%%WWWDIR_REL%%/theme/default/pics/sqlitemanager.png
+%%WWWDIR_REL%%/theme/default/pics/supprime.gif
+%%WWWDIR_REL%%/theme/default/pics/tables.png
+%%WWWDIR_REL%%/theme/default/pics/top.gif
+%%WWWDIR_REL%%/theme/default/pics/triggers.png
+%%WWWDIR_REL%%/theme/default/pics/unique.png
+%%WWWDIR_REL%%/theme/default/pics/unique_off.png
+%%WWWDIR_REL%%/theme/default/pics/up.gif
+%%WWWDIR_REL%%/theme/default/pics/views.png
+%%WWWDIR_REL%%/theme/green/define.php
+%%WWWDIR_REL%%/theme/green/left.css
+%%WWWDIR_REL%%/theme/green/main.css
+%%WWWDIR_REL%%/theme/green/menu/arrow.png
+%%WWWDIR_REL%%/theme/green/menu/blank.png
+%%WWWDIR_REL%%/theme/green/menu/index.html
+%%WWWDIR_REL%%/theme/green/menu/spacer.png
+%%WWWDIR_REL%%/theme/green/menu/theme.css
+%%WWWDIR_REL%%/theme/green/menu/theme.js
+%%WWWDIR_REL%%/theme/green/pics/bg.png
+%%WWWDIR_REL%%/theme/green/pics/bg_left.png
+%%WWWDIR_REL%%/theme/green/pics/bg_th.png
+%%WWWDIR_REL%%/theme/green/pics/bg_title.png
+%%WWWDIR_REL%%/theme/green/pics/browse.png
+%%WWWDIR_REL%%/theme/green/pics/browse2.png
+%%WWWDIR_REL%%/theme/green/pics/browse_off.png
+%%WWWDIR_REL%%/theme/green/pics/database.png
+%%WWWDIR_REL%%/theme/green/pics/database2.png
+%%WWWDIR_REL%%/theme/green/pics/database3.png
+%%WWWDIR_REL%%/theme/green/pics/database_link.png
+%%WWWDIR_REL%%/theme/green/pics/delete_table.png
+%%WWWDIR_REL%%/theme/green/pics/delete_table_off.png
+%%WWWDIR_REL%%/theme/green/pics/deletecol.png
+%%WWWDIR_REL%%/theme/green/pics/deletecol_off.png
+%%WWWDIR_REL%%/theme/green/pics/deleterow.png
+%%WWWDIR_REL%%/theme/green/pics/deleterow_off.png
+%%WWWDIR_REL%%/theme/green/pics/down.gif
+%%WWWDIR_REL%%/theme/green/pics/edit.png
+%%WWWDIR_REL%%/theme/green/pics/edit_off.png
+%%WWWDIR_REL%%/theme/green/pics/edittrash.png
+%%WWWDIR_REL%%/theme/green/pics/edittrash_off.png
+%%WWWDIR_REL%%/theme/green/pics/functions.png
+%%WWWDIR_REL%%/theme/green/pics/index.png
+%%WWWDIR_REL%%/theme/green/pics/index_off.png
+%%WWWDIR_REL%%/theme/green/pics/input.png
+%%WWWDIR_REL%%/theme/green/pics/insertrow.png
+%%WWWDIR_REL%%/theme/green/pics/insertrow_off.png
+%%WWWDIR_REL%%/theme/green/pics/primaire.png
+%%WWWDIR_REL%%/theme/green/pics/primaire_off.png
+%%WWWDIR_REL%%/theme/green/pics/properties.png
+%%WWWDIR_REL%%/theme/green/pics/properties_off.png
+%%WWWDIR_REL%%/theme/green/pics/sqlitemanager.png
+%%WWWDIR_REL%%/theme/green/pics/supprime.gif
+%%WWWDIR_REL%%/theme/green/pics/tables.png
+%%WWWDIR_REL%%/theme/green/pics/triggers.png
+%%WWWDIR_REL%%/theme/green/pics/unique.png
+%%WWWDIR_REL%%/theme/green/pics/unique_off.png
+%%WWWDIR_REL%%/theme/green/pics/up.gif
+%%WWWDIR_REL%%/theme/green/pics/views.png
+%%WWWDIR_REL%%/theme/jall/define.php
+%%WWWDIR_REL%%/theme/jall/left.css
+%%WWWDIR_REL%%/theme/jall/main.css
+@dirrmtry %%WWWDIR_REL%%/theme/jall
+@dirrmtry %%WWWDIR_REL%%/theme/green/pics
+@dirrmtry %%WWWDIR_REL%%/theme/green/menu
+@dirrmtry %%WWWDIR_REL%%/theme/green
+@dirrmtry %%WWWDIR_REL%%/theme/default/pics
+@dirrmtry %%WWWDIR_REL%%/theme/default/menu
+@dirrmtry %%WWWDIR_REL%%/theme/default
+@dirrmtry %%WWWDIR_REL%%/theme/PMA
+@dirrmtry %%WWWDIR_REL%%/theme
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/toolbars/sqlitemanager
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/toolbars/sidetable
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/toolbars/mini
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/toolbars/intlink
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/toolbars/full
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/toolbars/default
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/toolbars
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/themes/default/js
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/themes/default/img
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/themes/default/css
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/themes/default
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/themes/classic/js
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/themes/classic/img
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/themes/classic/css
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/themes/classic
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/themes
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/zh-gb2312
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/zh-big5
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/vn
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/uk
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/tr
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/th
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/sk
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/si
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/se
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/ru
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/pt
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/pl
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/no
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/nl
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/lt
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/ko
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/ja-utf8
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/ja-sjis
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/ja-jis
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/ja-euc
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/it
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/hu
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/hr
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/he
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/gz
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/gr
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/fr
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/fi
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/et
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/es
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/en
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/dk
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/de
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/cz
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/ca
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/br
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang/bg
+@dirrmtry %%WWWDIR_REL%%/spaw/lib/lang
+@dirrmtry %%WWWDIR_REL%%/spaw/lib
+@dirrmtry %%WWWDIR_REL%%/spaw/dialogs
+@dirrmtry %%WWWDIR_REL%%/spaw/config
+@dirrmtry %%WWWDIR_REL%%/spaw/class
+@dirrmtry %%WWWDIR_REL%%/spaw
+@dirrmtry %%WWWDIR_REL%%/plugins/Pear_Tools/pics
+@dirrmtry %%WWWDIR_REL%%/plugins/Pear_Tools
+@dirrmtry %%WWWDIR_REL%%/plugins/MySQL_Import/pics
+@dirrmtry %%WWWDIR_REL%%/plugins/MySQL_Import
+@dirrmtry %%WWWDIR_REL%%/plugins
+@dirrmtry %%WWWDIR_REL%%/lang
+@dirrmtry %%WWWDIR_REL%%/jscalendar/skins/aqua
+@dirrmtry %%WWWDIR_REL%%/jscalendar/skins
+@dirrmtry %%WWWDIR_REL%%/jscalendar/lang
+@dirrmtry %%WWWDIR_REL%%/jscalendar/doc/html
+@dirrmtry %%WWWDIR_REL%%/jscalendar/doc
+@dirrmtry %%WWWDIR_REL%%/jscalendar
+@dirrmtry %%WWWDIR_REL%%/include
+@dirrmtry %%WWWDIR_REL%%
