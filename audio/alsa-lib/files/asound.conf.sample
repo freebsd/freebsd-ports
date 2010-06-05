@@ -1,0 +1,51 @@
+#
+# FreeBSD/OSS
+#
+pcm.!default {
+	type oss
+	device /dev/dsp
+}
+
+ctl.!default {
+	type oss
+	device /dev/mixer
+}
+
+#
+# Remap all possible surround stuffs.
+#
+pcm.!surround40 {
+	type oss
+	device /dev/dsp
+}
+
+pcm.!surround41 {
+	type oss
+	device /dev/dsp
+}
+
+pcm.!surround50 {
+	type oss
+	device /dev/dsp
+}
+
+pcm.!surround51 {
+	type oss
+	device /dev/dsp
+}
+
+pcm.!surround71 {
+	type oss
+	device /dev/dsp
+}
+
+#
+# Pulseaudio
+#
+# pcm.!default {
+# 	type pulse
+# }
+# 
+# ctl.!default {
+# 	type pulse
+# }
