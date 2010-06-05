@@ -46,6 +46,8 @@ lib/gstreamer-%%VERSION%%/libgsthdvparse.la
 lib/gstreamer-%%VERSION%%/libgsthdvparse.so
 lib/gstreamer-%%VERSION%%/libgstid3tag.la
 lib/gstreamer-%%VERSION%%/libgstid3tag.so
+lib/gstreamer-%%VERSION%%/libgstinvtelecine.la
+lib/gstreamer-%%VERSION%%/libgstinvtelecine.so
 lib/gstreamer-%%VERSION%%/libgstjpegformat.la
 lib/gstreamer-%%VERSION%%/libgstjpegformat.so
 lib/gstreamer-%%VERSION%%/libgstlegacyresample.la
@@ -70,8 +72,6 @@ lib/gstreamer-%%VERSION%%/libgstnsf.la
 lib/gstreamer-%%VERSION%%/libgstnsf.so
 lib/gstreamer-%%VERSION%%/libgstnuvdemux.la
 lib/gstreamer-%%VERSION%%/libgstnuvdemux.so
-lib/gstreamer-%%VERSION%%/libgstoss4audio.la
-lib/gstreamer-%%VERSION%%/libgstoss4audio.so
 lib/gstreamer-%%VERSION%%/libgstpcapparse.la
 lib/gstreamer-%%VERSION%%/libgstpcapparse.so
 lib/gstreamer-%%VERSION%%/libgstpnm.a
@@ -91,6 +91,8 @@ lib/gstreamer-%%VERSION%%/libgstscaletempoplugin.la
 lib/gstreamer-%%VERSION%%/libgstscaletempoplugin.so
 lib/gstreamer-%%VERSION%%/libgstsdpelem.la
 lib/gstreamer-%%VERSION%%/libgstsdpelem.so
+lib/gstreamer-%%VERSION%%/libgstsegmentclip.la
+lib/gstreamer-%%VERSION%%/libgstsegmentclip.so
 lib/gstreamer-%%VERSION%%/libgstselector.la
 lib/gstreamer-%%VERSION%%/libgstselector.so
 lib/gstreamer-%%VERSION%%/libgstsiren.la
