@@ -20,6 +20,8 @@ lib/gstreamer-%%VERSION%%/libgstdebug.la
 lib/gstreamer-%%VERSION%%/libgstdebug.so
 lib/gstreamer-%%VERSION%%/libgstdeinterlace.la
 lib/gstreamer-%%VERSION%%/libgstdeinterlace.so
+lib/gstreamer-%%VERSION%%/libgstefence.la
+lib/gstreamer-%%VERSION%%/libgstefence.so
 lib/gstreamer-%%VERSION%%/libgsteffectv.la
 lib/gstreamer-%%VERSION%%/libgsteffectv.so
 lib/gstreamer-%%VERSION%%/libgstequalizer.la
@@ -28,8 +30,6 @@ lib/gstreamer-%%VERSION%%/libgstflv.la
 lib/gstreamer-%%VERSION%%/libgstflv.so
 lib/gstreamer-%%VERSION%%/libgstflxdec.la
 lib/gstreamer-%%VERSION%%/libgstflxdec.so
-lib/gstreamer-%%VERSION%%/libgstgamma.la
-lib/gstreamer-%%VERSION%%/libgstgamma.so
 lib/gstreamer-%%VERSION%%/libgstgoom.la
 lib/gstreamer-%%VERSION%%/libgstgoom.so
 lib/gstreamer-%%VERSION%%/libgstgoom2k1.la
@@ -38,6 +38,8 @@ lib/gstreamer-%%VERSION%%/libgsticydemux.la
 lib/gstreamer-%%VERSION%%/libgsticydemux.so
 lib/gstreamer-%%VERSION%%/libgstid3demux.la
 lib/gstreamer-%%VERSION%%/libgstid3demux.so
+lib/gstreamer-%%VERSION%%/libgstimagefreeze.la
+lib/gstreamer-%%VERSION%%/libgstimagefreeze.so
 lib/gstreamer-%%VERSION%%/libgstinterleave.la
 lib/gstreamer-%%VERSION%%/libgstinterleave.so
 lib/gstreamer-%%VERSION%%/libgstlevel.la
@@ -52,6 +54,8 @@ lib/gstreamer-%%VERSION%%/libgstmultipart.la
 lib/gstreamer-%%VERSION%%/libgstmultipart.so
 lib/gstreamer-%%VERSION%%/libgstnavigationtest.la
 lib/gstreamer-%%VERSION%%/libgstnavigationtest.so
+lib/gstreamer-%%VERSION%%/libgstoss4audio.la
+lib/gstreamer-%%VERSION%%/libgstoss4audio.so
 lib/gstreamer-%%VERSION%%/libgstossaudio.la
 lib/gstreamer-%%VERSION%%/libgstossaudio.so
 lib/gstreamer-%%VERSION%%/libgstqtdemux.la
@@ -72,14 +76,12 @@ lib/gstreamer-%%VERSION%%/libgstspectrum.la
 lib/gstreamer-%%VERSION%%/libgstspectrum.so
 lib/gstreamer-%%VERSION%%/libgstudp.la
 lib/gstreamer-%%VERSION%%/libgstudp.so
-lib/gstreamer-%%VERSION%%/libgstvideobalance.la
-lib/gstreamer-%%VERSION%%/libgstvideobalance.so
 lib/gstreamer-%%VERSION%%/libgstvideobox.la
 lib/gstreamer-%%VERSION%%/libgstvideobox.so
 lib/gstreamer-%%VERSION%%/libgstvideocrop.la
 lib/gstreamer-%%VERSION%%/libgstvideocrop.so
-lib/gstreamer-%%VERSION%%/libgstvideoflip.la
-lib/gstreamer-%%VERSION%%/libgstvideoflip.so
+lib/gstreamer-%%VERSION%%/libgstvideofilter.la
+lib/gstreamer-%%VERSION%%/libgstvideofilter.so
 lib/gstreamer-%%VERSION%%/libgstvideomixer.la
 lib/gstreamer-%%VERSION%%/libgstvideomixer.so
 lib/gstreamer-%%VERSION%%/libgstwavenc.la
