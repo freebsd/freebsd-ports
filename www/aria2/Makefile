@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aria2
-PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTVERSION=	1.9.4
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -28,7 +27,7 @@ MAKE_JOBS_SAFE=	yes
 .ifdef WITHOUT_NLS
 CONFIGURE_ARGS+=	--disable-nls
 .else
-LINGUAS=	bg ca da de el en@boldquot en@quot es fi fr he hu id it ja \
+LINGUAS=	bg ca da de el en@boldquot en@quot es fi fr he hu id it ko ja \
 		nl nn pl pt pt_BR ru sk sr sv th tr uk vi zh_CN zh_TW
 .endif
 
