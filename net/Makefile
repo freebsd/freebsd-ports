@@ -143,6 +143,7 @@
     SUBDIR += etunnel
     SUBDIR += findmtu
     SUBDIR += flowgrep
+    SUBDIR += fonulator
     SUBDIR += forg
     SUBDIR += fpc-pcap
     SUBDIR += fping
@@ -308,6 +309,7 @@
     SUBDIR += libdnet
     SUBDIR += libevnet
     SUBDIR += libexosip2
+    SUBDIR += libfb
     SUBDIR += libfixbuf
     SUBDIR += libgnetwork
     SUBDIR += libgweather
