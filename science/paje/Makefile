@@ -16,6 +16,8 @@ DISTNAME=	Paje_${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Generic visualization tool for GNUstep (Gantt chart and more)
 
+LICENSE=	LGPL21
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

@@ -17,6 +17,8 @@ DISTFILES=	Encore-${PORTVERSION}-src.tgz \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Utility classes for GNUstep
 
+LICENSE=	LGPL21
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

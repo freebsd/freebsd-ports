@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}-src
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A tool to normalize the gain of MP3 files
 
-LICENSE=	GPLv2
+LICENSE=	LGPL21
 
 PLIST_FILES=	bin/mp3gain
 USE_ZIP=	yes
