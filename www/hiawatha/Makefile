@@ -10,7 +10,7 @@ PORTVERSION=	7.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/
 
-MAINTAINER=	hugo@leisink.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An advanced and secure webserver for Unix
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL
