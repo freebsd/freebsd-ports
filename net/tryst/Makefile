@@ -19,6 +19,9 @@ COMMENT=	Implementation of Apples Bonjour for GNUstep
 
 LIB_DEPENDS=	dns_sd:${PORTSDIR}/net/mDNSResponder
 
+LICENSE_COMB=	dual
+LICENSE=	BSD LGPL21
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

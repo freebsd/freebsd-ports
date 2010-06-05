@@ -33,9 +33,12 @@ COMMENT?=	The Apache 1.3 webserver with SSL/TLS functionality
 LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm
 PATCH_DEPENDS=	${BUILD_DEPENDS}
 
+LICENSE_COMB=	multi
+LICENSE=	ASL BSD
 CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 		apache_fp-1.* caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* w3c-httpd-3.*
+
 VERSION_APACHE=	1.3.41
 VERSION_MODSSL=	2.8.31
 VERSION_MODSNMP=	1.3.14.13

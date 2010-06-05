@@ -17,7 +17,8 @@ COMMENT=	Unix-Connect - mail+news-gateway for Zconnect (tm)
 
 BUILD_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 
-LICENSE=	GPLv2
+LICENSE_COMB=	multi
+LICENSE=	GPLv2 BSD
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 #USE_GMAKE=     yes
