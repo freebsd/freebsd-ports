@@ -1,0 +1,35 @@
+bin/aconnect
+bin/alsamixer
+bin/amidi
+bin/amixer
+bin/aplay
+bin/aplaymidi
+bin/arecord
+bin/arecordmidi
+bin/aseqdump
+bin/aseqnet
+bin/iecset
+bin/speaker-test
+sbin/alsaconf
+sbin/alsactl
+share/alsa/init/00main
+share/alsa/init/default
+share/alsa/init/hda
+share/alsa/init/help
+share/alsa/init/info
+share/alsa/init/test
+share/alsa/speaker-test/sample_map.csv
+share/sounds/alsa/Front_Center.wav
+share/sounds/alsa/Front_Left.wav
+share/sounds/alsa/Front_Right.wav
+share/sounds/alsa/Noise.wav
+share/sounds/alsa/Rear_Center.wav
+share/sounds/alsa/Rear_Left.wav
+share/sounds/alsa/Rear_Right.wav
+share/sounds/alsa/Side_Left.wav
+share/sounds/alsa/Side_Right.wav
+@dirrm share/sounds/alsa
+@dirrm share/sounds
+@dirrm share/alsa/speaker-test
+@dirrm share/alsa/init
+@dirrm share/alsa
