@@ -1,2 +1,5 @@
 %%SITE_PERL%%/Math/RPN.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/RPN/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/RPN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math
