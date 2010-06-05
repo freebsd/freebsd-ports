@@ -220,6 +220,7 @@
     SUBDIR += gdtclft
     SUBDIR += geeqie
     SUBDIR += gegl
+    SUBDIR += geglmm
     SUBDIR += geist
     SUBDIR += geoapi
     SUBDIR += geomorph
