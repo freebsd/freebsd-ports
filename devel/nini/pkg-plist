@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+lib/mono/gac/Nini/%%NINI_VERSION%%.0.0__691faec150a7fa7b/Nini.dll
+lib/mono/nini-%%NINI_VERSION%%/Nini.dll
+libdata/pkgconfig/nini-%%NINI_VERSION%%.pc
+@dirrm lib/mono/nini-%%NINI_VERSION%%
+@dirrm lib/mono/gac/Nini/%%NINI_VERSION%%.0.0__691faec150a7fa7b
+@dirrm lib/mono/gac/Nini

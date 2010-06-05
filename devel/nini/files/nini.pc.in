@@ -1,0 +1,8 @@
+prefix=%%PREFIX%%
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+
+Name: Nini
+Description: Nini - Configuration library for C# and VB.NET
+Version: %%PORTVERSION%%
+Libs: -r:${libdir}/mono/nini-%%NINI_VERSION%%/Nini.dll
