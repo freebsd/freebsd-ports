@@ -9,9 +9,10 @@ PORTNAME=	himenobench
 PORTVERSION=	2004.08.16
 PORTREVISION=	3
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://accc.riken.jp/HPC/HimenoBMT/Load_module/
-DISTFILES=	himenoBMTxp_xl.lzh himenoBMTxp_l.lzh himenoBMTxp_m.lzh himenoBMTxp_s.lzh \
-		cc_himenoBMTxp_xl.lzh himenoBMTxpa.lzh f90_xp.lzh
+MASTER_SITES=	http://accc.riken.jp/assets/files/himenob_loadmodule/
+DISTFILES=	himenoBMTxp_xl.lzh himenoBMTxp_l.lzh himenoBMTxp_m.lzh \
+		himenoBMTxp_s.lzh cc_himenoBMTxp_xl.lzh cc_himenoBMTxp_l.lzh \
+		cc_himenoBMTxp_m.lzh cc_himenoBMTxp_s.lzh f90_xp.lzh himenoBMTxpa.lzh
 DIST_SUBDIR=	himeno
 
 MAINTAINER=	maho@FreeBSD.org
@@ -20,14 +21,14 @@ COMMENT=	Himeno bench benchmark, solves Poisson eq. with Jacobi's method
 .if defined(WITH_ICC)
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
-.if defined(WITH_IFC)
-USE_FORTRAN=	ifort
-.endif
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 USE_FORTRAN=	yes
+.if defined(WITH_IFC)
+USE_FORTRAN=	ifort
+.endif
 
-RESTRICTED=	unsure to redistribute
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 FFLAGS+=	-O2 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
@@ -117,4 +118,4 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_ss.icc     ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxpa.icc        ${PREFIX}/bin
 .endif
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
