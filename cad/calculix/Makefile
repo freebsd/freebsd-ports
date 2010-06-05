@@ -7,7 +7,7 @@
 
 PORTNAME=	CalculiX
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -34,7 +34,6 @@ LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack	\
 		metis.1:${PORTSDIR}/math/metis	\
 		taucs.1:${PORTSDIR}/math/taucs
 
-BROKEN=		does not compile
 
 USE_BZIP2=	yes
 
@@ -71,6 +70,7 @@ LAPACK_LIBS=		-llapack
 .endif
 
 USE_FORTRAN=	yes
+USE_GCC=	4.4
 
 .if ${ARCH} == "sparc64"
 CFLAGS+=	-fPIC
@@ -102,6 +102,8 @@ pre-build:
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g; \
 	s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' \
 		${WRKSRC}/cgx_${PORTVERSION}/src/Makefile
+	@${REINPLACE_CMD} -e 's/c++/${CXX}/g;' \
+		${WRKSRC}/libSNL/src/makefile
 	@${REINPLACE_CMD} -e 's+%%DOCSDIR%%+${DOCSDIR}+g; \
 	s+"mozilla"+"${BROWSER}"+ ; \
 	s+"ghostview"+"${PSVIEWER}"+ ;' \
