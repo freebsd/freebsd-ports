@@ -15,6 +15,8 @@ DISTNAME=	WebServer-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Framework for a GNUstep to act as HTTP or HTTPS server
 
+LICENSE=	LGPL3
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_BUILD=	yes
