@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbobcat
-PORTVERSION=	2.07.04
+PORTVERSION=	2.08.01
 CATEGORIES=	devel
 MASTER_SITES=	SF/bobcat/bobcat/${PORTVERSION}
 DISTNAME=	bobcat_${PORTVERSION}
@@ -46,8 +46,8 @@ MAN3=		a2x.3bobcat align.3bobcat arg.3bobcat argconfig.3bobcat \
 		repeat.3bobcat selector.3bobcat serversocket.3bobcat \
 		socketbase.3bobcat stat.3bobcat string.3bobcat \
 		syslogbuf.3bobcat syslogstream.3bobcat table.3bobcat \
-		tablesupport.3bobcat typetrait.3bobcat user.3bobcat \
-		x2a.3bobcat xpointer.3bobcat
+		tablebuf.3bobcat tablelines.3bobcat tablesupport.3bobcat \
+		typetrait.3bobcat user.3bobcat x2a.3bobcat xpointer.3bobcat
 MAN7=		bobcat.7
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
