@@ -13,8 +13,6 @@
 %%XPI_XPIDIR%%/chrome/content/utils.js
 %%XPI_XPIDIR%%/chrome/locale/en-US/blocked.html
 %%XPI_XPIDIR%%/chrome/locale/en-US/leechblock.dtd
-%%XPI_XPIDIR%%/chrome/locale/pt-BR/blocked.html
-%%XPI_XPIDIR%%/chrome/locale/pt-BR/leechblock.dtd
 %%XPI_XPIDIR%%/chrome/skin/leechblock32.png
 %%XPI_XPIDIR%%/chrome/skin/leechblock64.png
 %%XPI_XPIDIR%%/chrome.manifest
@@ -23,7 +21,6 @@
 %%XPI_XPIDIR%%/install.rdf
 @dirrm %%XPI_XPIDIR%%/chrome/content
 @dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
-@dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/chrome/locale
 @dirrm %%XPI_XPIDIR%%/chrome/skin
 @dirrm %%XPI_XPIDIR%%/chrome
