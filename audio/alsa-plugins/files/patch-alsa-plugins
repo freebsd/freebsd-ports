@@ -1,0 +1,670 @@
+--- jack/pcm_jack.c.orig	2009-09-16 04:33:36.000000000 +0800
++++ jack/pcm_jack.c	2009-09-16 04:33:55.000000000 +0800
+@@ -20,7 +20,9 @@
+  *
+  */
+ 
++#ifndef __FreeBSD__
+ #include <byteswap.h>
++#endif
+ #include <sys/shm.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+--- oss/ctl_oss.c.orig	2009-08-31 21:09:41.000000000 +0800
++++ oss/ctl_oss.c	2009-09-15 01:07:51.000000000 +0800
+@@ -26,7 +26,11 @@
+ #include <sys/ioctl.h>
+ #include <alsa/asoundlib.h>
+ #include <alsa/control_external.h>
++#ifdef __FreeBSD__
++#include <sys/soundcard.h>
++#else
+ #include <linux/soundcard.h>
++#endif
+ 
+ typedef struct snd_ctl_oss {
+ 	snd_ctl_ext_t ext;
+@@ -362,7 +366,9 @@
+ {
+ 	snd_config_iterator_t it, next;
+ 	const char *device = "/dev/mixer";
++#ifndef __FreeBSD__
+ 	struct mixer_info mixinfo;
++#endif
+ 	int i, err, val;
+ 	snd_ctl_oss_t *oss;
+ 	
+@@ -399,19 +405,29 @@
+ 		goto error;
+ 	}
+ 
++#ifndef __FreeBSD__
+ 	if (ioctl(oss->fd, SOUND_MIXER_INFO, &mixinfo) < 0) {
+ 		err = -errno;
+ 		SNDERR("Cannot get mixer info for device %s", device);
+ 		goto error;
+ 	}
++#endif
+ 
+ 	oss->ext.version = SND_CTL_EXT_VERSION;
+ 	oss->ext.card_idx = 0; /* FIXME */
++#ifdef __FreeBSD__
++	strncpy(oss->ext.id, "fbsd", sizeof(oss->ext.id) - 1);
++	strcpy(oss->ext.driver, "FreeBSD/OSS plugin");
++	strncpy(oss->ext.name, "FreeBSD/OSS", sizeof(oss->ext.name) - 1);
++	strncpy(oss->ext.longname, "FreeBSD/OSS", sizeof(oss->ext.longname) - 1);
++	strncpy(oss->ext.mixername, "FreeBSD/OSS", sizeof(oss->ext.mixername) - 1);
++#else
+ 	strncpy(oss->ext.id, mixinfo.id, sizeof(oss->ext.id) - 1);
+ 	strcpy(oss->ext.driver, "OSS-Emulation");
+ 	strncpy(oss->ext.name, mixinfo.name, sizeof(oss->ext.name) - 1);
+ 	strncpy(oss->ext.longname, mixinfo.name, sizeof(oss->ext.longname) - 1);
+ 	strncpy(oss->ext.mixername, mixinfo.name, sizeof(oss->ext.mixername) - 1);
++#endif
+ 	oss->ext.poll_fd = -1;
+ 	oss->ext.callback = &oss_ext_callback;
+ 	oss->ext.private_data = oss;
+--- oss/pcm_oss.c.orig	2009-08-31 21:09:41.000000000 +0800
++++ oss/pcm_oss.c	2009-09-28 14:54:12.000000000 +0800
+@@ -22,17 +22,57 @@
+ #include <sys/ioctl.h>
+ #include <alsa/asoundlib.h>
+ #include <alsa/pcm_external.h>
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#include <sys/soundcard.h>
++#else
+ #include <linux/soundcard.h>
++#endif
++
++#define ARRAY_SIZE(x)	(sizeof(x) / sizeof(*(x)))
++
++#ifdef __FreeBSD__
++/* #define FREEBSD_OSS_USE_IO_PTR	1 */
++/* #define FREEBSD_OSS_BLKCNT_P2	1 */
++/* #define FREEBSD_OSS_DEBUG_VERBOSE	1 */
++#undef FREEBSD_OSS_USE_IO_PTR	/* _IPTR is buggy ... Grr... */
++#undef FREEBSD_OSS_BLKCNT_P2
++#undef FREEBSD_OSS_DEBUG_VERBOSE
++
++#define FREEBSD_OSS_RATE_MIN	1
++#define FREEBSD_OSS_RATE_MAX	384000
++
++#define FREEBSD_OSS_CHANNELS_MIN	1
++#if __FreeBSD_version >= 800096
++#define FREEBSD_OSS_CHANNELS_MAX	8
++#else
++#define FREEBSD_OSS_CHANNELS_MAX	2
++#endif
++
++#define FREEBSD_OSS_BUFSZ_MAX	131072
++#define FREEBSD_OSS_BLKCNT_MIN	2
++#define FREEBSD_OSS_BLKSZ_MIN	16 /* (FREEBSD_OSS_CHANNEL_MAX * 4) */
++
++#define FREEBSD_OSS_BUFSZ_MIN	(FREEBSD_OSS_BLKCNT_MIN * FREEBSD_OSS_BLKSZ_MIN)
++#define FREEBSD_OSS_BLKCNT_MAX	(FREEBSD_OSS_BUFSZ_MAX / FREEBSD_OSS_BUFSZ_MIN)
++#define FREEBSD_OSS_BLKSZ_MAX	(FREEBSD_OSS_BUFSZ_MAX / FREEBSD_OSS_BLKCNT_MIN)
++#endif
+ 
+ typedef struct snd_pcm_oss {
+ 	snd_pcm_ioplug_t io;
+ 	char *device;
+ 	int fd;
++#ifdef __FreeBSD__
++	int bufsz, ptr, ptr_align, last_bytes;
++#else
+ 	int fragment_set;
+ 	int caps;
++#endif
+ 	int format;
++#ifndef __FreeBSD__
+ 	unsigned int period_shift;
+ 	unsigned int periods;
++#endif
+ 	unsigned int frame_bytes;
+ } snd_pcm_oss_t;
+ 
+@@ -49,8 +89,13 @@
+ 	buf = (char *)areas->addr + (areas->first + areas->step * offset) / 8;
+ 	size *= oss->frame_bytes;
+ 	result = write(oss->fd, buf, size);
++#ifdef __FreeBSD__
++	if (result == -1)
++		return -errno;
++#else
+ 	if (result <= 0)
+ 		return result;
++#endif
+ 	return result / oss->frame_bytes;
+ }
+ 
+@@ -67,13 +112,79 @@
+ 	buf = (char *)areas->addr + (areas->first + areas->step * offset) / 8;
+ 	size *= oss->frame_bytes;
+ 	result = read(oss->fd, buf, size);
++#ifdef __FreeBSD__
++	if (result == -1)
++		return -errno;
++#else
+ 	if (result <= 0)
+ 		return result;
++#endif
+ 	return result / oss->frame_bytes;
+ }
+ 
+ static snd_pcm_sframes_t oss_pointer(snd_pcm_ioplug_t *io)
+ {
++#ifdef __FreeBSD__
++	snd_pcm_oss_t *oss = io->private_data;
++#ifdef FREEBSD_OSS_USE_IO_PTR
++	struct count_info ci;
++#endif
++	audio_buf_info bi;
++
++	if (io->state != SND_PCM_STATE_RUNNING)
++		return 0;
++
++	if (io->state == SND_PCM_STATE_XRUN)
++		return -EPIPE;
++
++#ifdef FREEBSD_OSS_USE_IO_PTR
++	if (ioctl(oss->fd, (io->stream == SND_PCM_STREAM_PLAYBACK) ?
++	    SNDCTL_DSP_GETOPTR : SNDCTL_DSP_GETIPTR, &ci) < 0)
++		return -EINVAL;
++
++	if (ci.ptr == oss->last_bytes &&
++	    ((ioctl(oss->fd, (io->stream == SND_PCM_STREAM_PLAYBACK) ?
++	    SNDCTL_DSP_GETOSPACE : SNDCTL_DSP_GETISPACE, &bi) < 0) ||
++	    bi.bytes == oss->bufsz))
++		return -EPIPE;
++
++	if (ci.ptr < oss->last_bytes)
++		oss->ptr += oss->bufsz;
++
++	oss->ptr += ci.ptr;
++	oss->ptr -= oss->last_bytes;
++	oss->ptr %= oss->ptr_align;
++
++	oss->last_bytes = ci.ptr;
++#else	/* !FREEBSD_OSS_USE_IO_PTR */
++	if (ioctl(oss->fd, (io->stream == SND_PCM_STREAM_PLAYBACK) ?
++	    SNDCTL_DSP_GETOSPACE : SNDCTL_DSP_GETISPACE, &bi) < 0)
++		return -EINVAL;
++
++	if (bi.bytes == oss->bufsz && bi.bytes == oss->last_bytes) {
++#if 0
++#ifdef SNDCTL_DSP_GETERROR
++		audio_errinfo ei;
++		if (ioctl(oss->fd, SNDCTL_DSP_GETERROR, &ei) < 0 ||
++		    (io->stream == SND_PCM_STREAM_PLAYBACK &&
++		    ei.play_underruns != 0) ||
++		    (io->stream == SND_PCM_STREAM_CAPTURE &&
++		    ei.rec_overruns != 0))
++#endif
++#endif
++			return -EPIPE;
++	}
++
++	if (bi.bytes > oss->last_bytes) {
++		oss->ptr += bi.bytes - oss->last_bytes;
++		oss->ptr %= oss->ptr_align;
++	}
++
++	oss->last_bytes = bi.bytes;
++#endif	/* FREEBSD_OSS_USE_IO_PTR */
++
++	return snd_pcm_bytes_to_frames(io->pcm, oss->ptr);
++#else
+ 	snd_pcm_oss_t *oss = io->private_data;
+ 	struct count_info info;
+ 	int ptr;
+@@ -85,20 +196,59 @@
+ 	}
+ 	ptr = snd_pcm_bytes_to_frames(io->pcm, info.ptr);
+ 	return ptr;
++#endif
+ }
+ 
+ static int oss_start(snd_pcm_ioplug_t *io)
+ {
+ 	snd_pcm_oss_t *oss = io->private_data;
++#ifdef __FreeBSD__
++	audio_buf_info bi;
++#ifdef FREEBSD_OSS_USE_IO_PTR
++	struct count_info ci;
++#endif
++#endif
+ 	int tmp = io->stream == SND_PCM_STREAM_PLAYBACK ?
+ 		PCM_ENABLE_OUTPUT : PCM_ENABLE_INPUT;
+ 
++#if defined(__FreeBSD__) && defined(FREEBSD_OSS_DEBUG_VERBOSE)
++	fprintf(stderr, "%s()\n", __func__);
++#endif
++
+ 	if (ioctl(oss->fd, SNDCTL_DSP_SETTRIGGER, &tmp) < 0) {
+ 		fprintf(stderr, "*** OSS: trigger failed\n");
++#ifdef __FreeBSD__
++		return -EINVAL;
++#else
+ 		if (io->stream == SND_PCM_STREAM_CAPTURE)
+ 			/* fake read to trigger */
+ 			read(oss->fd, &tmp, 0);
++#endif
+ 	}
++
++#ifdef __FreeBSD__
++	if (ioctl(oss->fd, (io->stream == SND_PCM_STREAM_PLAYBACK) ?
++	    SNDCTL_DSP_GETOSPACE : SNDCTL_DSP_GETISPACE, &bi) < 0)
++		return -EINVAL;
++
++	if (oss->bufsz != (bi.fragsize * bi.fragstotal)) {
++		fprintf(stderr, "%s(): WARNING - bufsz changed! %d -> %d\n",
++		    __func__, oss->bufsz, bi.fragsize * bi.fragstotal);
++		oss->bufsz = bi.fragsize * bi.fragstotal;
++	}
++
++#ifdef FREEBSD_OSS_USE_IO_PTR
++	if (ioctl(oss->fd, (io->stream == SND_PCM_STREAM_PLAYBACK) ?
++	    SNDCTL_DSP_GETOPTR : SNDCTL_DSP_GETIPTR, &ci) < 0)
++		return -EINVAL;
++
++	oss->last_bytes = ci.ptr;
++#else
++	oss->last_bytes = bi.bytes;
++#endif
++	oss->ptr = 0;
++#endif
++
+ 	return 0;
+ }
+ 
+@@ -107,6 +257,10 @@
+ 	snd_pcm_oss_t *oss = io->private_data;
+ 	int tmp = 0;
+ 
++#if defined(__FreeBSD__) && defined(FREEBSD_OSS_DEBUG_VERBOSE)
++	fprintf(stderr, "%s()\n", __func__);
++#endif
++
+ 	ioctl(oss->fd, SNDCTL_DSP_SETTRIGGER, &tmp);
+ 	return 0;
+ }
+@@ -115,16 +269,25 @@
+ {
+ 	snd_pcm_oss_t *oss = io->private_data;
+ 
++#if defined(__FreeBSD__) && defined(FREEBSD_OSS_DEBUG_VERBOSE)
++	fprintf(stderr, "%s()\n", __func__);
++#endif
++
+ 	if (io->stream == SND_PCM_STREAM_PLAYBACK)
+ 		ioctl(oss->fd, SNDCTL_DSP_SYNC);
+ 	return 0;
+ }
+ 
++#ifndef __FreeBSD__
+ static int oss_prepare(snd_pcm_ioplug_t *io)
+ {
+ 	snd_pcm_oss_t *oss = io->private_data;
+ 	int tmp;
+ 
++#if defined(__FreeBSD__) && defined(FREEBSD_OSS_DEBUG_VERBOSE)
++	fprintf(stderr, "%s()\n", __func__);
++#endif
++
+ 	ioctl(oss->fd, SNDCTL_DSP_RESET);
+ 
+ 	tmp = io->channels;
+@@ -145,16 +308,75 @@
+ 	}
+ 	return 0;
+ }
++#endif
++
++#ifdef __FreeBSD__
++static const struct {
++	int oss_format;
++	snd_pcm_format_t alsa_format;
++} oss_formats_tab[] = {
++	{ AFMT_U8, SND_PCM_FORMAT_U8 },
++	{ AFMT_S8, SND_PCM_FORMAT_S8 },
++	{ AFMT_MU_LAW, SND_PCM_FORMAT_MU_LAW  },
++	{  AFMT_A_LAW, SND_PCM_FORMAT_A_LAW   },
++	{ AFMT_S16_LE, SND_PCM_FORMAT_S16_LE  },
++	{ AFMT_S16_BE, SND_PCM_FORMAT_S16_BE  },
++	{ AFMT_U16_LE, SND_PCM_FORMAT_U16_LE  },
++	{ AFMT_U16_BE, SND_PCM_FORMAT_U16_BE  },
++	{ AFMT_S24_LE, SND_PCM_FORMAT_S24_3LE },
++	{ AFMT_S24_BE, SND_PCM_FORMAT_S24_3BE },
++	{ AFMT_U24_LE, SND_PCM_FORMAT_U24_3LE },
++	{ AFMT_U24_BE, SND_PCM_FORMAT_U24_3BE },
++	{ AFMT_S32_LE, SND_PCM_FORMAT_S32_LE  },
++	{ AFMT_S32_BE, SND_PCM_FORMAT_S32_BE  },
++	{ AFMT_U32_LE, SND_PCM_FORMAT_U32_LE  },
++	{ AFMT_U32_BE, SND_PCM_FORMAT_U32_BE  },
++	/* Special */
++	{ AFMT_S24_LE, SND_PCM_FORMAT_S20_3LE },
++	{ AFMT_S24_BE, SND_PCM_FORMAT_S20_3BE },
++	{ AFMT_U24_LE, SND_PCM_FORMAT_U20_3LE },
++	{ AFMT_U24_BE, SND_PCM_FORMAT_U20_3BE },
++	{ AFMT_S24_LE, SND_PCM_FORMAT_S18_3LE },
++	{ AFMT_S24_BE, SND_PCM_FORMAT_S18_3BE },
++	{ AFMT_U24_LE, SND_PCM_FORMAT_U18_3LE },
++	{ AFMT_U24_BE, SND_PCM_FORMAT_U18_3BE },
++	{ AFMT_S32_LE, SND_PCM_FORMAT_S24_LE  },
++	{ AFMT_S32_BE, SND_PCM_FORMAT_S24_BE  },
++	{ AFMT_U32_LE, SND_PCM_FORMAT_U24_LE  },
++	{ AFMT_U32_BE, SND_PCM_FORMAT_U24_BE  },
++};
++#endif
+ 
+ static int oss_hw_params(snd_pcm_ioplug_t *io,
+ 			 snd_pcm_hw_params_t *params ATTRIBUTE_UNUSED)
+ {
+ 	snd_pcm_oss_t *oss = io->private_data;
+ 	int i, tmp, err;
++#ifdef __FreeBSD__
++	int blksz_shift, blkcnt;
++	audio_buf_info bi;
++#else
+ 	unsigned int period_bytes;
++#endif
+ 	long oflags, flags;
+ 
++#if defined(__FreeBSD__) && defined(FREEBSD_OSS_DEBUG_VERBOSE)
++	fprintf(stderr, "%s()\n", __func__);
++#endif
++
+ 	oss->frame_bytes = (snd_pcm_format_physical_width(io->format) * io->channels) / 8;
++#ifdef __FreeBSD__
++	oss->ptr_align = io->buffer_size * oss->frame_bytes;
++
++	oss->format = 0;
++	for (i = 0; i < ARRAY_SIZE(oss_formats_tab); i++) {
++		if (oss_formats_tab[i].alsa_format == io->format) {
++			oss->format = oss_formats_tab[i].oss_format;
++			break;
++		}
++	}
++	if (oss->format == 0) {
++#else
+ 	switch (io->format) {
+ 	case SND_PCM_FORMAT_U8:
+ 		oss->format = AFMT_U8;
+@@ -166,9 +388,87 @@
+ 		oss->format = AFMT_S16_BE;
+ 		break;
+ 	default:
++#endif
+ 		fprintf(stderr, "*** OSS: unsupported format %s\n", snd_pcm_format_name(io->format));
+ 		return -EINVAL;
+ 	}
++#ifdef __FreeBSD__
++
++	ioctl(oss->fd, SNDCTL_DSP_RESET);
++
++#define blksz_aligned()		((1 << blksz_shift) -			\
++				((1 << blksz_shift) % oss->frame_bytes))
++	blksz_shift = 16;
++	tmp = io->period_size * oss->frame_bytes;
++
++	while (blksz_shift > 4 && blksz_aligned() > tmp)
++		blksz_shift--;
++
++	blkcnt = 2;
++	tmp = io->buffer_size * oss->frame_bytes;
++
++	while (blkcnt < 4096 && (blksz_aligned() * blkcnt) < tmp &&
++	    ((1 << blksz_shift) * blkcnt) < 131072)
++		blkcnt <<= 1;
++
++	tmp = blksz_shift | (blkcnt << 16);
++	if (ioctl(oss->fd, SNDCTL_DSP_SETFRAGMENT, &tmp) < 0) {
++		perror("SNDCTL_DSP_SETFRAGMENTS");
++		return -EINVAL;
++	}
++
++	tmp = oss->format;
++	if (ioctl(oss->fd, SNDCTL_DSP_SETFMT, &tmp) < 0 ||
++	    tmp != oss->format) {
++		perror("SNDCTL_DSP_SETFMT");
++		return -EINVAL;
++	}
++
++	tmp = io->channels;
++	if (ioctl(oss->fd, SNDCTL_DSP_CHANNELS, &tmp) < 0 ||
++	    tmp != io->channels) {
++		perror("SNDCTL_DSP_CHANNELS");
++		return -EINVAL;
++	}
++
++	tmp = io->rate;
++	if (ioctl(oss->fd, SNDCTL_DSP_SPEED, &tmp) < 0 ||
++	    tmp > io->rate * 1.01 || tmp < io->rate * 0.99) {
++		perror("SNDCTL_DSP_SPEED");
++		return -EINVAL;
++	}
++
++	if (ioctl(oss->fd, (io->stream == SND_PCM_STREAM_PLAYBACK) ?
++	    SNDCTL_DSP_GETOSPACE : SNDCTL_DSP_GETISPACE, &bi) < 0) {
++		perror("SNDCTL_DSP_GET[I/O]SPACE");
++		return -EINVAL;
++	}
++
++	oss->bufsz = bi.fragsize * bi.fragstotal;
++
++#ifdef SNDCTL_DSP_LOW_WATER
++	tmp = ((io->period_size * oss->frame_bytes) * 3) / 4;
++	tmp -= tmp % oss->frame_bytes;
++	if (tmp < oss->frame_bytes)
++		tmp = oss->frame_bytes;
++	if (tmp > bi.fragsize)
++		tmp = bi.fragsize;
++	if (ioctl(oss->fd, SNDCTL_DSP_LOW_WATER, &tmp) < 0)
++		perror("SNDCTL_DSP_LOW_WATER");
++#endif
++
++#ifdef FREEBSD_OSS_DEBUG_VERBOSE
++	fprintf(stderr,
++	    "\n\n[%lu -> %d] %lu ~ %d -> %d, %lu ~ %d -> %d [d:%ld lw:%d]\n\n",
++	    io->buffer_size / io->period_size, bi.fragstotal,
++	    io->buffer_size * oss->frame_bytes,
++	    (1 << blksz_shift) * blkcnt, oss->bufsz,
++	    io->period_size * oss->frame_bytes, 1 << blksz_shift,
++	    bi.fragsize,
++	    (long)(io->buffer_size * oss->frame_bytes) -
++	    oss->bufsz, tmp);
++#endif
++#else
+ 	period_bytes = io->period_size * oss->frame_bytes;
+ 	oss->period_shift = 0;
+ 	for (i = 31; i >= 4; i--) {
+@@ -209,6 +509,7 @@
+ 		goto _retry;
+ 	}
+ 	oss->fragment_set = 1;
++#endif
+ 
+ 	if ((flags = fcntl(oss->fd, F_GETFL)) < 0) {
+ 		err = -errno;
+@@ -229,10 +530,128 @@
+ 	return 0;
+ }
+ 
+-#define ARRAY_SIZE(ary)	(sizeof(ary)/sizeof(ary[0]))
+-
+ static int oss_hw_constraint(snd_pcm_oss_t *oss)
+ {
++#ifdef __FreeBSD__
++	snd_pcm_ioplug_t *io = &oss->io; 
++	static const snd_pcm_access_t access_list[] = {
++		SND_PCM_ACCESS_RW_INTERLEAVED,
++		SND_PCM_ACCESS_MMAP_INTERLEAVED
++	};
++#ifdef FREEBSD_OSS_BLKCNT_P2
++	unsigned int period_list[30];
++#endif
++	unsigned int nformats;
++	unsigned int format[ARRAY_SIZE(oss_formats_tab)];
++#if 0
++	unsigned int nchannels;
++	unsigned int channel[FREEBSD_OSS_CHANNELS_MAX];
++#endif
++	int i, err, tmp;
++
++#ifdef FREEBSD_OSS_DEBUG_VERBOSE
++	fprintf(stderr, "%s()\n", __func__);
++#endif
++
++	/* check trigger */
++	tmp = 0;
++	if (ioctl(oss->fd, SNDCTL_DSP_GETCAPS, &tmp) >= 0) {
++		if (!(tmp & DSP_CAP_TRIGGER))
++			fprintf(stderr, "*** OSS: trigger is not supported!\n");
++	}
++
++	/* access type - interleaved only */
++	if ((err = snd_pcm_ioplug_set_param_list(io, SND_PCM_IOPLUG_HW_ACCESS,
++						 ARRAY_SIZE(access_list), access_list)) < 0)
++		return err;
++
++	/* supported formats. */
++	tmp = 0;
++	ioctl(oss->fd, SNDCTL_DSP_GETFMTS, &tmp);
++	nformats = 0;
++	for (i = 0; i < ARRAY_SIZE(oss_formats_tab); i++) {
++		if (tmp & oss_formats_tab[i].oss_format)
++			format[nformats++] = oss_formats_tab[i].alsa_format;
++	}
++	if (! nformats)
++		format[nformats++] = SND_PCM_FORMAT_S16;
++	if ((err = snd_pcm_ioplug_set_param_list(io, SND_PCM_IOPLUG_HW_FORMAT,
++						 nformats, format)) < 0)
++		return err;
++	
++#if 0
++	/* supported channels */
++	nchannels = 0;
++	for (i = 0; i < ARRAY_SIZE(channel); i++) {
++		tmp = i + 1;
++		if (ioctl(oss->fd, SNDCTL_DSP_CHANNELS, &tmp) >= 0 &&
++		    1 + i == tmp)
++			channel[nchannels++] = tmp;
++	}
++	if (! nchannels) /* assume 2ch stereo */
++		err = snd_pcm_ioplug_set_param_minmax(io,
++		    SND_PCM_IOPLUG_HW_CHANNELS, 2, 2);
++	else
++		err = snd_pcm_ioplug_set_param_list(io,
++		    SND_PCM_IOPLUG_HW_CHANNELS, nchannels, channel);
++	if (err < 0)
++		return err;
++#endif
++	err = snd_pcm_ioplug_set_param_minmax(io, SND_PCM_IOPLUG_HW_CHANNELS,
++	    FREEBSD_OSS_CHANNELS_MIN, FREEBSD_OSS_CHANNELS_MAX);
++	if (err < 0)
++		return err;
++
++	/* supported rates */
++	err = snd_pcm_ioplug_set_param_minmax(io, SND_PCM_IOPLUG_HW_RATE,
++	    FREEBSD_OSS_RATE_MIN, FREEBSD_OSS_RATE_MAX);
++	if (err < 0)
++		return err;
++
++	/*
++	 *  Maximum buffer size on FreeBSD can go up to 131072 bytes without
++	 *  strict ^2 alignment so that s24le in 3bytes packing can be fed
++	 *  directly.
++	 */
++
++#ifdef FREEBSD_OSS_BLKCNT_P2
++	tmp = 0;
++	for (i = 1; i < 31 && tmp < ARRAY_SIZE(period_list); i++) {
++		if ((1 << i) > FREEBSD_OSS_BLKCNT_MAX)
++			break;
++		if ((1 << i) < FREEBSD_OSS_BLKCNT_MIN)
++			continue;
++		period_list[tmp++] = 1 << i;
++	}
++
++	if (tmp > 0)
++		err = snd_pcm_ioplug_set_param_list(io,
++		    SND_PCM_IOPLUG_HW_PERIODS, tmp, period_list);
++	else
++#endif
++	/* periods , not strictly ^2 but later on will be refined */
++		err = snd_pcm_ioplug_set_param_minmax(io,
++		    SND_PCM_IOPLUG_HW_PERIODS, FREEBSD_OSS_BLKCNT_MIN,
++		    FREEBSD_OSS_BLKCNT_MAX);
++	if (err < 0)
++		return err;
++
++	/* period size , not strictly ^2 */
++	err = snd_pcm_ioplug_set_param_minmax(io,
++	    SND_PCM_IOPLUG_HW_PERIOD_BYTES, FREEBSD_OSS_BLKSZ_MIN,
++	    FREEBSD_OSS_BLKSZ_MAX);
++	if (err < 0)
++		return err;
++
++	/* buffer size , not strictly ^2 */
++	err = snd_pcm_ioplug_set_param_minmax(io,
++	    SND_PCM_IOPLUG_HW_BUFFER_BYTES, FREEBSD_OSS_BUFSZ_MIN,
++	    FREEBSD_OSS_BUFSZ_MAX);
++	if (err < 0)
++		return err;
++
++	return 0;
++#else
+ 	snd_pcm_ioplug_t *io = &oss->io; 
+ 	static const snd_pcm_access_t access_list[] = {
+ 		SND_PCM_ACCESS_RW_INTERLEAVED,
+@@ -317,6 +736,7 @@
+ 		return err;
+ 
+ 	return 0;
++#endif
+ }
+ 
+ 
+@@ -324,6 +744,10 @@
+ {
+ 	snd_pcm_oss_t *oss = io->private_data;
+ 
++#if defined(__FreeBSD__) && defined(FREEBSD_OSS_DEBUG_VERBOSE)
++	fprintf(stderr, "%s()\n", __func__);
++#endif
++
+ 	close(oss->fd);
+ 	free(oss->device);
+ 	free(oss);
+@@ -337,7 +761,9 @@
+ 	.pointer = oss_pointer,
+ 	.close = oss_close,
+ 	.hw_params = oss_hw_params,
++#ifndef __FreeBSD__
+ 	.prepare = oss_prepare,
++#endif
+ 	.drain = oss_drain,
+ };
+ 
+@@ -348,7 +774,9 @@
+ 	.pointer = oss_pointer,
+ 	.close = oss_close,
+ 	.hw_params = oss_hw_params,
++#ifndef __FreeBSD__
+ 	.prepare = oss_prepare,
++#endif
+ 	.drain = oss_drain,
+ };
+ 
+@@ -360,6 +788,10 @@
+ 	int err;
+ 	snd_pcm_oss_t *oss;
+ 	
++#if defined(__FreeBSD__) && defined(FREEBSD_OSS_DEBUG_VERBOSE)
++	fprintf(stderr, "%s()\n", __func__);
++#endif
++
+ 	snd_config_for_each(i, next, conf) {
+ 		snd_config_t *n = snd_config_iterator_entry(i);
+ 		const char *id;

@@ -1,0 +1,64 @@
+--- configure.orig	2010-04-16 13:18:56.000000000 +0200
++++ configure	2010-05-11 00:08:29.000000000 +0200
+@@ -21249,6 +21249,20 @@
+ 
+ 
+ 
++
++
++
++# Check whether --with-speex was given.
++if test "${with_speex+set}" = set; then
++  withval=$with_speex; PPH=$withval
++else
++  PPH="lib"
++fi
++
++
++USE_LIBSPEEX=""
++HAVE_SPEEXDSP=""
++if test "$PPH" = "lib"; then
+ pkg_failed=no
+ { echo "$as_me:$LINENO: checking for speexdsp" >&5
+ echo $ECHO_N "checking for speexdsp... $ECHO_C" >&6; }
+@@ -21319,26 +21333,6 @@
+ fi
+ 
+ 
+-if test "$HAVE_SPEEXDSP" = "yes"; then
+-  HAVE_SPEEXDSP_TRUE=
+-  HAVE_SPEEXDSP_FALSE='#'
+-else
+-  HAVE_SPEEXDSP_TRUE='#'
+-  HAVE_SPEEXDSP_FALSE=
+-fi
+-
+-
+-
+-# Check whether --with-speex was given.
+-if test "${with_speex+set}" = set; then
+-  withval=$with_speex; PPH=$withval
+-else
+-  PPH="lib"
+-fi
+-
+-
+-USE_LIBSPEEX=""
+-if test "$PPH" = "lib"; then
+ 	if test "$HAVE_SPEEXDSP" = "yes"; then
+ 		{ echo "$as_me:$LINENO: checking for speex_resampler_init in -lspeexdsp" >&5
+ echo $ECHO_N "checking for speex_resampler_init in -lspeexdsp... $ECHO_C" >&6; }
+@@ -21437,6 +21431,13 @@
+ fi
+ 
+ 
++if test "$HAVE_SPEEXDSP" = "yes"; then
++  HAVE_SPEEXDSP_TRUE=
++  HAVE_SPEEXDSP_FALSE='#'
++else
++  HAVE_SPEEXDSP_TRUE='#'
++  HAVE_SPEEXDSP_FALSE=
++fi
+ 
+ if test "$PPH" = "builtin" -o "$PPH" = "lib"; then
+   HAVE_PPH_TRUE=
