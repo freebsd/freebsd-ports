@@ -19,6 +19,8 @@ MAN3=		parsedate.3
 MAN8=		ifmail.8 iftoss.8
 IFMAIL_RUNAS?=	ifmail
 PLIST_SUB+=	IFMAIL_RUNAS="${IFMAIL_RUNAS}"
+# USERS does not work here
+#USERS=		ifmail
 
 pre-configure:
 	@${MV} ${WRKSRC}/CONFIG ${WRKSRC}/CONFIG.sed
