@@ -127,6 +127,7 @@
     SUBDIR += sirc
     SUBDIR += slirc
     SUBDIR += smartirc4net
+    SUBDIR += smuxi
     SUBDIR += solid-ircd
     SUBDIR += srvx
     SUBDIR += talksoup
