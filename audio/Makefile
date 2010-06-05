@@ -27,6 +27,9 @@
     SUBDIR += alac
     SUBDIR += albumart
     SUBDIR += alienwah
+    SUBDIR += alsa-lib
+    SUBDIR += alsa-plugins
+    SUBDIR += alsa-utils
     SUBDIR += amarok
     SUBDIR += amarok-fs
     SUBDIR += amarok-kde4
