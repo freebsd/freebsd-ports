@@ -1,5 +1,12 @@
 **************************************************************************
 *                                                                        *
+*   This version of NSD is considered EOL. Please update to              *
+*   the latest version (/usr/ports/dns/nsd).                             *
+*                                                                        *
+*   See also http://nlnetlabs.nl/projects/nsd/nsd-v2.html                *
+*                                                                        *
+**************************************************************************
+*                                                                        *
 *   To run nsd from startup, add nsd_enable="YES" to your /etc/rc.conf   *
 *                                                                        *
 **************************************************************************
