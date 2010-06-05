@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vld
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.1
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
