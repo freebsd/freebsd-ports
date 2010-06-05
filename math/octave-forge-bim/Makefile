@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	octave-forge-bim
-PORTVERSION=	0.1.1
-PORTREVISION=	4
+PORTVERSION=	1.0.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-GNU_CONFIGURE=	yes
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/fpl.tar.gz:${PORTSDIR}/math/octave-forge-fpl
 RUN_DEPENDS+=	${TARBALLS_DIR}/msh.tar.gz:${PORTSDIR}/math/octave-forge-msh
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+do-build:
+	@${DO_NADA}
+
+post-build:
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+
 .include <bsd.port.post.mk>
