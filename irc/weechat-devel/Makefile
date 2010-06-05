@@ -32,6 +32,7 @@ OPTIONS=	RUBY		"Ruby scripting support."	Off	\
 		TCL		"TCL scripting support."	Off	\
 		LUA		"Lua scripting support."	Off	\
 		CHARSET		"Charset support."		On	\
+		BACKTRACE	"Backtraces."			Off	\
 		DEBUG		"Debugging."			On	\
 		ASPELL		"Spell checking."		Off	\
 		GNUTLS		"GNU TLS."			Off	\
@@ -126,6 +127,10 @@ CMAKE_ARGS+=	-DDISABLE_DOC=yes
 PLIST_SUB+=	DOCUMENTATION="@comment "
 .endif
 
+.if defined(WITH_BACKTRACE)
+LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+.endif
+
 MAN1=	weechat-curses.1
 
 post-extract:
@@ -134,6 +139,9 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|INSTALL|#INSTALL|' ${WRKSRC}/doc/CMakeLists.txt
+.if defined(WITHOUT_BACKTRACE)
+	@${REINPLACE_CMD} -e '/IF.*FreeBSD/,/ENDIF.*FreeBSD/d' ${WRKSRC}/src/core/CMakeLists.txt
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/weechat-curses.1 ${MANPREFIX}/man/man1
