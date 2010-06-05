@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hidef
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.4
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
