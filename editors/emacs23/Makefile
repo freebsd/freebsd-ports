@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -29,7 +29,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
-USE_GETTEXT=	yes
+LICENSE=	GPLv3
 
 MAN1=		b2m.1 ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
 		grep-changelog.1 rcs-checkin.1
@@ -111,10 +111,6 @@ CONFIGURE_ARGS+=	--with-x-toolkit=gtk
 CONFIGURE_ARGS+=	--without-toolkit-scroll-bars
 .endif
 
-.if defined(WITHOUT_SOUND)
-CONFIGURE_ARGS+=	--without-sound
-.endif
-
 .if defined(WITHOUT_SYNC_INPUT)
 CONFIGURE_ARGS+=	--without-sync-input
 .endif
@@ -192,6 +188,10 @@ CONFIGURE_ARGS+=	--without-xim
 
 .endif
 
+.if defined(WITHOUT_SOUND)
+CONFIGURE_ARGS+=	--without-sound
+.endif
+
 .if defined(WITHOUT_DBUS)
 CONFIGURE_ARGS+=	--without-dbus
 .else
@@ -202,6 +202,10 @@ LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+.endif
 
 .if defined(WITHOUT_SOURCES)
 PLIST_SUB+=	SOURCES="@comment "
@@ -214,7 +218,7 @@ BROKEN=	Emacs 23.X does not currently build on ia64
 .endif
 
 .if ${OSVERSION} < 700000 && defined(WITHOUT_X11) && defined(WITH_DBUS)
-BROKEN= Does not currently build with dbus support but without X11
+BROKEN=	Does not currently build with dbus support but without X11
 .endif
 
 post-patch:
