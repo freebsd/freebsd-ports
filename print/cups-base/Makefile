@@ -60,6 +60,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CUPSGRP=	cups
 CUPSOWN=	cups
 CUPSSYSGRP=	wheel
+# GROUPS/USERS does not work here
+#GROUPS=	cups
+#USERS=		cups
 
 .include <bsd.port.pre.mk>
 
