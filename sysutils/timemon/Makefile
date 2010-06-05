@@ -15,6 +15,8 @@ DISTNAME=	TimeMon-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	CPU time usage monitor for GNUstep
 
+NO_CDROM=	distribute without fee
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
