@@ -1,0 +1,12 @@
+This module allows you to read configuration data written in a 
+human-readable and easily-editable text format and access it as
+a perl data structure. It also allows you to write configuration
+data from perl back to this format.
+
+The data format allows key/value pairs, comments, escaping of
+unprintable or problematic characters, sensible whitespace
+handling, support for Unicode data, nested sections, or blocks,
+of configuration data.
+
+Author: British Broadcasting Corporation
+WWW: http://search.cpan.org/dist/Config-Wrest/
