@@ -1,3 +1,3 @@
-MD5 (zmq-0.2.tar.gz) = e3f9876311b843de96176f8e392a1d19
-SHA256 (zmq-0.2.tar.gz) = d32f36b5e196a965999372e5cf51a53b84ff49e4e487aa82179594e6d0eb93c5
-SIZE (zmq-0.2.tar.gz) = 384601
+MD5 (zeromq-2.0.7.tar.gz) = c9cb3ee4499df1781f8ddc03c20d656b
+SHA256 (zeromq-2.0.7.tar.gz) = 34a1b74b68556b83c39c88104f3c3c415866f586e1512a95c6a2918a8156e140
+SIZE (zeromq-2.0.7.tar.gz) = 1016700
