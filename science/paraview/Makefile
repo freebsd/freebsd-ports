@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	paraview
-PORTVERSION=	3.6.2
-PORTREVISION=	1
+PORTVERSION=	3.8.0
 CATEGORIES=	science graphics
-MASTER_SITES=	http://www.paraview.org/files/v3.6/
+MASTER_SITES=	http://www.paraview.org/files/v3.8/
+DISTNAME=	ParaView-${PORTVERSION}
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	ParaView is a powerful scientific data visualization application
@@ -31,6 +31,7 @@ USE_XORG=	x11 xt
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
+CONFLICTS=	vtk-5.*
 CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
 		-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \
@@ -43,16 +44,36 @@ CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
 		-DVTK_HAVE_GETSOCKNAME_WITH_SOCKLEN_T=1 \
 		-DQT_ASSISTANT_EXECUTABLE="${LOCALBASE}/bin/assistant-qt4" \
 		-DVTK_INSTALL_QT_PLUGIN_DIR="${PREFIX}/${QT_PLUGINDIR_REL}/designer" \
-		-DCMAKE_INCLUDE_DIRECTORIES_BEFORE="ON" \
-		-DPARAVIEW_INSTALL_DEVELOPMENT="ON"
+		-DPARAVIEW_INSTALL_DEVELOPMENT="ON" \
+		-DPV_INSTALL_DOC_DIR=${DOCSDIR}
+#		-DVTK_PYTHON_INCLUDE_PATH=${PYTHON_INCLUDEDIR} \
+#		-DPYTHON_INCLUDE_PATH:FILEPATH=${PYTHON_INCLUDEDIR} \
+#		-DVTK_WRAP_PYTHON:BOOL=ON \
+#		-DPARAVIEW_ENABLE_PYTHON:BOOL=ON
+#		-DVTK_PYTHON_SETUP_ARGS:STRING='--prefix="${PREFIX}"' \
+
+OPTIONS=	MANGLEDMESA	"Use off-screen (Mangled) Mesa" Off
+#		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
+#		GL2PS           "Install support conversion OpenGL to PostScript" On
+
+.if defined(WITH_MANGLEDMESA)
+LIB_DEPENDS+=	MesaGL.14:${PORTSDIR}/graphics/mesagl
+CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=OFF	\
+		-DVTK_USE_MANGLED_MESA:BOOL=ON \
+		-DMANGLED_MESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
+		-DMANGLED_MESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libMesaGL.so \
+		-DMANGLED_OSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
+		-DMANGLED_OSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libMesaOSMesa.so
+.else
+LIB_DEPENDS+=	OSMesa.7:${PORTSDIR}/graphics/libosmesa
+CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
+		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so
+.endif
 
 MAKE_JOBS_SAFE=	yes
+CMAKE_OUTSOURCE=	yes
 
-PATCH_WRKSRC=	${WRKDIR}/ParaView3
-WRKSRC=		${WRKDIR}/ParaView3/build
-CMAKE_SOURCE_PATH=	..
-
-PLIST_SUB+=	VERMAJORMINOR=3.6
+PLIST_SUB+=	VERMAJORMINOR=3.8
 CMAKE2INST=	ParaViewConfig.cmake \
 		ParaViewLibraryDepends.cmake cmake_install.cmake
 LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
@@ -63,18 +84,15 @@ LIB_INSTDIR=	${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
 BROKEN=		does not build on 6.x
 .endif
 
-post-extract:
-	${MKDIR} ${WRKSRC}
-
 post-patch:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${PATCH_WRKSRC}/VTK/IO/vtkPNGReader.cxx
 
 post-install:
 .for c2f in ${CMAKE2INST}
-	${SED} -e 's|${WRKSRC}|${LIB_INSTDIR}|g' \
+	${SED} -e 's|${BUILD_WRKSRC}|${LIB_INSTDIR}|g' \
 		-e 's|${PATCH_WRKSRC}|${LIB_INSTDIR}|g' \
-		${WRKSRC}/${c2f} > ${LIB_INSTDIR}/`${BASENAME} ${c2f}`
+		${BUILD_WRKSRC}/${c2f} > ${LIB_INSTDIR}/`${BASENAME} ${c2f}`
 .endfor
 	${INSTALL_DATA} ${PATCH_WRKSRC}/ParaViewUse.cmake \
 		${PREFIX}/lib/${PORTNAME}-${PORTVERSION:R}
