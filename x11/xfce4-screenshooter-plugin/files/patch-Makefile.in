@@ -1,0 +1,158 @@
+--- Makefile.in.orig	2010-02-07 14:45:15.000000000 +0100
++++ Makefile.in	2010-02-09 11:06:42.000000000 +0100
+@@ -523,9 +523,9 @@
+ 
+ 
+ # Asturian documentation
+-astdocdir = $(datadir)/xfce4/doc/ast
++astdocdir = $(datadir)/doc/%%PORTNAME%%/ast
+ astdoc_DATA = docs/manual/ast/xfce4-screenshooter.html
+-astimagesdir = $(datadir)/xfce4/doc/ast/images
++astimagesdir = $(datadir)/doc/%%PORTNAME%%/ast/images
+ astimages_DATA = \
+ 	docs/manual/ast/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/ast/images/xfce4-screenshooter-dialog2.png \
+@@ -534,9 +534,9 @@
+ 
+ 
+ # C documentation
+-cdocdir = $(datadir)/xfce4/doc/C
++cdocdir = $(datadir)/doc/%%PORTNAME%%/C
+ cdoc_DATA = docs/manual/C/xfce4-screenshooter.html
+-cimagesdir = $(datadir)/xfce4/doc/C/images
++cimagesdir = $(datadir)/doc/%%PORTNAME%%/C/images
+ cimages_DATA = \
+ 	docs/manual/C/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/C/images/xfce4-screenshooter-dialog2.png \
+@@ -545,9 +545,9 @@
+ 
+ 
+ # Catalan documentation
+-cadocdir = $(datadir)/xfce4/doc/ca
++cadocdir = $(datadir)/doc/%%PORTNAME%%/ca
+ cadoc_DATA = docs/manual/ca/xfce4-screenshooter.html
+-caimagesdir = $(datadir)/xfce4/doc/ca/images
++caimagesdir = $(datadir)/doc/%%PORTNAME%%/ca/images
+ caimages_DATA = \
+ 	docs/manual/ca/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/ca/images/xfce4-screenshooter-dialog2.png \
+@@ -556,9 +556,9 @@
+ 
+ 
+ # Danish documentation
+-dadocdir = $(datadir)/xfce4/doc/da
++dadocdir = $(datadir)/doc/%%PORTNAME%%/da
+ dadoc_DATA = docs/manual/da/xfce4-screenshooter.html
+-daimagesdir = $(datadir)/xfce4/doc/da/images
++daimagesdir = $(datadir)/doc/%%PORTNAME%%/da/images
+ daimages_DATA = \
+ 	docs/manual/da/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/da/images/xfce4-screenshooter-dialog2.png \
+@@ -567,9 +567,9 @@
+ 
+ 
+ # Portuguese documentation
+-ptdocdir = $(datadir)/xfce4/doc/pt
++ptdocdir = $(datadir)/doc/%%PORTNAME%%/pt
+ ptdoc_DATA = docs/manual/pt/xfce4-screenshooter.html
+-ptimagesdir = $(datadir)/xfce4/doc/pt/images
++ptimagesdir = $(datadir)/doc/%%PORTNAME%%/pt/images
+ ptimages_DATA = \
+ 	docs/manual/pt/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/pt/images/xfce4-screenshooter-dialog2.png \
+@@ -578,9 +578,9 @@
+ 
+ 
+ # Spanish documentation
+-esdocdir = $(datadir)/xfce4/doc/es
++esdocdir = $(datadir)/doc/%%PORTNAME%%/es
+ esdoc_DATA = docs/manual/es/xfce4-screenshooter.html
+-esimagesdir = $(datadir)/xfce4/doc/es/images
++esimagesdir = $(datadir)/doc/%%PORTNAME%%/es/images
+ esimages_DATA = \
+ 	docs/manual/es/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/es/images/xfce4-screenshooter-dialog2.png \
+@@ -589,9 +589,9 @@
+ 
+ 
+ # French documentation
+-frdocdir = $(datadir)/xfce4/doc/fr
++frdocdir = $(datadir)/doc/%%PORTNAME%%/fr
+ frdoc_DATA = docs/manual/fr/xfce4-screenshooter.html
+-frimagesdir = $(datadir)/xfce4/doc/fr/images
++frimagesdir = $(datadir)/doc/%%PORTNAME%%/fr/images
+ frimages_DATA = \
+ 	docs/manual/fr/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/fr/images/xfce4-screenshooter-dialog2.png \
+@@ -600,9 +600,9 @@
+ 
+ 
+ # Galician documentation
+-gldocdir = $(datadir)/xfce4/doc/gl
++gldocdir = $(datadir)/doc/%%PORTNAME%%/gl
+ gldoc_DATA = docs/manual/gl/xfce4-screenshooter.html
+-glimagesdir = $(datadir)/xfce4/doc/gl/images
++glimagesdir = $(datadir)/doc/%%PORTNAME%%/gl/images
+ glimages_DATA = \
+ 	docs/manual/gl/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/gl/images/xfce4-screenshooter-dialog2.png \
+@@ -611,9 +611,9 @@
+ 
+ 
+ # Indonesian documentation
+-iddocdir = $(datadir)/xfce4/doc/id
++iddocdir = $(datadir)/doc/%%PORTNAME%%/id
+ iddoc_DATA = docs/manual/id/xfce4-screenshooter.html
+-idimagesdir = $(datadir)/xfce4/doc/id/images
++idimagesdir = $(datadir)/doc/%%PORTNAME%%/id/images
+ idimages_DATA = \
+ 	docs/manual/id/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/id/images/xfce4-screenshooter-dialog2.png \
+@@ -622,9 +622,9 @@
+ 
+ 
+ # Italian documentation
+-itdocdir = $(datadir)/xfce4/doc/it
++itdocdir = $(datadir)/doc/%%PORTNAME%%/it
+ itdoc_DATA = docs/manual/it/xfce4-screenshooter.html
+-itimagesdir = $(datadir)/xfce4/doc/it/images
++itimagesdir = $(datadir)/doc/%%PORTNAME%%/it/images
+ itimages_DATA = \
+ 	docs/manual/it/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/it/images/xfce4-screenshooter-dialog2.png \
+@@ -633,9 +633,9 @@
+ 
+ 
+ # Japanese documentation
+-jadocdir = $(datadir)/xfce4/doc/ja
++jadocdir = $(datadir)/doc/%%PORTNAME%%/ja
+ jadoc_DATA = docs/manual/ja/xfce4-screenshooter.html
+-jaimagesdir = $(datadir)/xfce4/doc/ja/images
++jaimagesdir = $(datadir)/doc/%%PORTNAME%%/ja/images
+ jaimages_DATA = \
+ 	docs/manual/ja/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/ja/images/xfce4-screenshooter-dialog2.png \
+@@ -644,9 +644,9 @@
+ 
+ 
+ # Turkish documentation
+-trdocdir = $(datadir)/xfce4/doc/tr
++trdocdir = $(datadir)/doc/%%PORTNAME%%/tr
+ trdoc_DATA = docs/manual/tr/xfce4-screenshooter.html
+-trimagesdir = $(datadir)/xfce4/doc/tr/images
++trimagesdir = $(datadir)/doc/%%PORTNAME%%/tr/images
+ trimages_DATA = \
+ 	docs/manual/tr/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/tr/images/xfce4-screenshooter-dialog2.png \
+@@ -655,9 +655,9 @@
+ 
+ 
+ # Siplified Chinese documentation
+-zhcndocdir = $(datadir)/xfce4/doc/zh_CN
++zhcndocdir = $(datadir)/doc/%%PORTNAME%%/zh_CN
+ zhcndoc_DATA = docs/manual/zh_CN/xfce4-screenshooter.html
+-zhcnimagesdir = $(datadir)/xfce4/doc/zh_CN/images
++zhcnimagesdir = $(datadir)/doc/%%PORTNAME%%/zh_CN/images
+ zhcnimages_DATA = \
+ 	docs/manual/zh_CN/images/xfce4-screenshooter-dialog1.png \
+ 	docs/manual/zh_CN/images/xfce4-screenshooter-dialog2.png \
