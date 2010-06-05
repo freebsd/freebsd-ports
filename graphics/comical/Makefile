@@ -16,6 +16,8 @@ COMMENT=	A sequential image viewer
 
 LIB_DEPENDS=	unrar.3:${PORTSDIR}/archivers/libunrar
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 USE_WX=		2.6+
 WX_PREMK=	yes

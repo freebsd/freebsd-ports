@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
+LICENSE=	GPLv2
+
 USE_CMAKE=	yes
 USE_PERL5_BUILD=	yes
 

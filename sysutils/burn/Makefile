@@ -17,6 +17,8 @@ COMMENT=	GNUstep based CD burning program
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
+LICENSE=	GPLv2
+
 USE_CDRTOOLS=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

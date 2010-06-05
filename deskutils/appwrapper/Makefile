@@ -15,6 +15,8 @@ DISTNAME=	AppWrapper.${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep application wrapper
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

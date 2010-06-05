@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.yassl.com/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A embedded SSL C-Library
 
+LICENSE=	GPLv2
+
 USE_ZIP=	yes
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes

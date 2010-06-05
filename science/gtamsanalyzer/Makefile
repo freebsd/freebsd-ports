@@ -15,6 +15,8 @@ DISTNAME=	GTAMSAnalyzer.src.${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Qualitative Research Software for the Free World for GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
