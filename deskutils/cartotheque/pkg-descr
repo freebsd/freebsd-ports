@@ -3,7 +3,7 @@ The application uses a directory based repository for cards with various
 contents. Currently only one contents is supported, and that is RTF
 contents (NSAttributedString) editable by a text view.
 
-LICENSE: LGPL2
+LICENSE: LGPL21
 
 Screenshot:
 WWW: http://stefan.agentfarms.net/Download/GNUstep/Shots/cartotheque-2.png
