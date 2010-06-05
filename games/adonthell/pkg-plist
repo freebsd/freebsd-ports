@@ -379,6 +379,7 @@ bin/adonthell-wastesedge
 %%DATADIR%%/games/wastesedge/scripts/modules/events.pyc
 %%DATADIR%%/games/wastesedge/scripts/modules/intro.pyc
 %%DATADIR%%/games/wastesedge/scripts/modules/main_menu.pyc
+%%DATADIR%%/games/wastesedge/scripts/modules/player_text.pyc
 %%DATADIR%%/games/wastesedge/scripts/schedules/__init__.pyc
 %%DATADIR%%/games/wastesedge/scripts/schedules/audio/__init__.pyc
 %%DATADIR%%/games/wastesedge/scripts/schedules/audio/in_game.pyc
