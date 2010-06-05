@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGP/CLI/.packlist
+%%SITE_PERL%%/CGP/CLI.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGP/CLI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGP
+@dirrmtry %%SITE_PERL%%/CGP
