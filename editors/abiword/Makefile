@@ -8,6 +8,7 @@
 
 PORTNAME=	abiword
 PORTVERSION=	2.8.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
@@ -27,6 +28,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSerif.ttf:${PORTSDIR}/x11-f
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomehack libxml2 gtk20 desktopfileutils librsvg2
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
