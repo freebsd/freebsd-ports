@@ -389,7 +389,6 @@
 %%WWWDIR%%/contenido/external/frontend/robots.txt
 %%WWWDIR%%/contenido/external/frontend/templates/index.php
 %%WWWDIR%%/contenido/external/frontend/upload/test.txt
-%%WWWDIR%%/contenido/external/frontend/version
 %%WWWDIR%%/contenido/external/index.php
 %%WWWDIR%%/contenido/external/wysiwyg/htmlarea2/editor.php
 %%WWWDIR%%/contenido/external/wysiwyg/htmlarea2/images/ed_about.gif
@@ -1958,6 +1957,7 @@
 @dirrm %%WWWDIR%%/contenido/external/wysiwyg/htmlarea2/images
 @dirrm %%WWWDIR%%/contenido/external/wysiwyg/htmlarea2
 @dirrm %%WWWDIR%%/contenido/external/wysiwyg
+@dirrmtry %%WWWDIR%%/contenido/external/frontend/version
 @dirrm %%WWWDIR%%/contenido/external/frontend/upload
 @dirrm %%WWWDIR%%/contenido/external/frontend/templates
 @dirrm %%WWWDIR%%/contenido/external/frontend/logs
