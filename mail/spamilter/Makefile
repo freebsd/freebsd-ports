@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Sendmail LibMilter filter to block spam
 
+LICENSE=	BSD
+
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	spamilter.sh
 
