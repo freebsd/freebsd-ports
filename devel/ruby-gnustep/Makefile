@@ -17,6 +17,8 @@ DISTNAME=	rigs-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Ruby interface to the GNUstep development environment
 
+LICENSE=	GPLv2
+
 USE_RUBY=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
