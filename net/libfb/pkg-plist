@@ -1,0 +1,7 @@
+include/libfb/fb_config.h
+include/libfb/fb_context.h
+include/libfb/fb_lib.h
+include/libfb/sha1.h
+lib/libfb.a
+lib/libfb.la
+@dirrm include/libfb
