@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/KCachegrind/KCachegrind%20${PORTVERSION}
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Profiling Visualization Tool
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 ONLY_FOR_ARCHS=	i386 amd64
 CONFLICTS=	kdesdk3-[0-9]*
 
@@ -24,7 +27,7 @@ INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 
 OPTIONS=	DOT "Use GraphViz/dot to render call graphs" on \
-		CALLGRIND "Install devel/callgrind" off
+		VALGRIND "Install devel/valgrind" off
 
 .include <bsd.port.pre.mk>
 
@@ -32,8 +35,8 @@ OPTIONS=	DOT "Use GraphViz/dot to render call graphs" on \
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
-.if defined (WITH_CALLGRIND)
-RUN_DEPENDS+=	callgrind:${PORTSDIR}/devel/callgrind
+.if defined (WITH_VALGRIND)
+RUN_DEPENDS+=	valgrind:${PORTSDIR}/devel/valgrind
 .endif
 
 post-patch:
