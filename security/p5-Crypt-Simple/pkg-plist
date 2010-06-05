@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Simple/.packlist
+%%SITE_PERL%%/Crypt/Simple.pm
+@dirrmtry %%SITE_PERL%%/Crypt/Simple
+@dirrmtry %%SITE_PERL%%/Crypt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
