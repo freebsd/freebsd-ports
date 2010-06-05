@@ -7,7 +7,7 @@
 
 PORTNAME=	adonthell
 PORTVERSION=	0.3.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 DISTFILES=	${PORTNAME}-src-${PORTVERSION}${EXTRACT_SUFX} \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=	mixer ttf sdl
-USE_PYTHON=	-2.5
+USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -44,9 +44,11 @@ BROKEN=		Does not build on sparc64
 post-patch:
 	@cd ${WRKSRC} && ${REINPLACE_CMD} -e \
 		's|-g -Wall|$$CFLAGS -Wall|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' configure 
+		 s|-lpthread|${PTHREAD_LIBS}|g' configure
 	@cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} && ${REINPLACE_CMD} -e \
 		's/test $$adonthell_major_ver -eq 0 .*/true ;/' configure
+	@cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} && ${REINPLACE_CMD} -e \
+		's/^[[:space:]]*_//' scripts/modules/player_text.py
 
 post-install:
 	cd ${WRKDIR}/wastesedge-${WEDGE_VERSION} \
