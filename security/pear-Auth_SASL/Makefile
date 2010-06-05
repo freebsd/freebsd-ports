@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Auth_SASL
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	security www pear
 
 MAINTAINER=	amistry@am-productions.biz
