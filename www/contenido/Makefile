@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	contenido
-PORTVERSION=	4.8.10
+PORTVERSION=	4.8.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.contenido.org/de/upload/versionen/
 DISTNAME=	Contenido_${PORTVERSION}
@@ -14,9 +14,13 @@ DISTNAME=	Contenido_${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Web Content Management System
 
+LICENSE=	GPLv2
+
 USE_ZIP=	YES
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	mysql pcre session gd xml spl
+DEFAULT_PHP_VER?=	52
+IGNORE_WITH_PHP=	5
 .endif
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}
