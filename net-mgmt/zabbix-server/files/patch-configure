@@ -1,0 +1,23 @@
+
+--- configure.orig	2010-05-17 15:38:52.189911152 +0400
++++ configure	2010-05-17 15:39:13.793087125 +0400
+@@ -12472,7 +12472,7 @@
+      fi #if test "x$_libssh2_dir" = "xno"; then
+   fi # if test "x$want_ssh2" != "xno"; then
+ 
+-  if test "x$found_ssh2" == "xyes"; then
++  if test "x$found_ssh2" = "xyes"; then
+     am_save_cflags="$CFLAGS"
+     am_save_ldflags="$LDFLAGS"
+     am_save_libs="$LIBS"
+@@ -12537,7 +12537,7 @@
+     LDFLAGS="$am_save_ldflags"
+     LIBS="$am_save_libs"
+ 
+-    if test "x$found_ssh2" == "xyes"; then
++    if test "x$found_ssh2" = "xyes"; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_SSH2 1
+
+
