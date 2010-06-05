@@ -13,7 +13,7 @@ MASTER_SITES=	http://www1.corest.com/download/audit/ \
 		ftp://ftp.stack.nl/pub/users/johans/audit/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}beta-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anderson@secover.com.br
 COMMENT=	Tools for remote and centralized audit data collection
 
 OPTIONS=	MYSQL "With MySQL support" off \
