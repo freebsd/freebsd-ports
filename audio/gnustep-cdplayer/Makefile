@@ -17,6 +17,8 @@ COMMENT=	GNUstep CD player with CDDB support
 
 LIB_DEPENDS+=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes

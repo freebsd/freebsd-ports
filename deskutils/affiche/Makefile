@@ -15,6 +15,8 @@ DISTNAME=	Affiche-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Affiche allows people to stick notes
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes

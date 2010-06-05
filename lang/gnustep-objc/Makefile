@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	libs
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A snapshot of libobjc, meant to be used with GNUstep
 
+LICENSE=	GPLv2
+
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes

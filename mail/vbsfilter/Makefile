@@ -17,6 +17,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A vbs-attachment filter for Sendmail Milter
 
+LICENSE=	GPLv2
+
 USE_RC_SUBR=	vbsfilter.sh
 PLIST_FILES=	libexec/vbsfilter
 

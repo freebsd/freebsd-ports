@@ -14,6 +14,8 @@ PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A FTP daemon that aims to be "very secure"
 
+LICENSE=	GPLv2
+
 ALL_TARGET=	vsftpd
 MAN5=		vsftpd.conf.5
 MAN8=		vsftpd.8
