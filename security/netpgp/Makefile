@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	netpgp
-PORTVERSION=	20100313
+PORTVERSION=	20100601
 CATEGORIES=	security
 MASTER_SITES=	NETBSD/LOCAL_PORTS
 
 MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	PGP signing, verification, encryption and decryption program
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/Licence
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
