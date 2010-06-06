@@ -118,8 +118,8 @@ MAKE_ENV+=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
 .if defined(USE_GCC)
 
 # USE_GCC=4.3 is deprecated...
-.if ${USE_GCC} == 4.3+
-USE_GCC:=4.4+
+.if ${USE_GCC} == "4.3+"
+USE_GCC=4.4+
 .endif
 
 # See if we can use a later version
