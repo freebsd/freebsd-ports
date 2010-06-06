@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-TraceUse
-PORTVERSION=	1.00
+PORTVERSION=	2.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	This module shows the modules your program loads, recursively
 
-PERL_DEPENDS=	p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes
-BUILD_DEPENDS=	${PERL_DEPENDS}
-RUN_DEPENDS=	${PERL_DEPENDS}
+BUILD_DEPENDS=	p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes
 
 PERL_MODBUILD=	yes
 
