@@ -7,7 +7,7 @@
 
 PORTNAME=	gcompris
 PORTVERSION=	9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games gnome
 MASTER_SITES=	SF
 DISTNAME=	gcompris-9.2-2
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \
 		gnuchess:${PORTSDIR}/games/gnuchess \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ao.3:${PORTSDIR}/audio/libao \
+		ao.4:${PORTSDIR}/audio/libao \
 		assetml.0:${PORTSDIR}/devel/libassetml \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2 \

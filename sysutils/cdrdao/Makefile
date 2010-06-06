@@ -7,7 +7,7 @@
 
 PORTNAME?=	cdrdao
 PORTVERSION=	1.2.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	cdrdao/cdrdao/${PORTVERSION}
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-MP3OGG_LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
+MP3OGG_LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao \
 			mad.2:${PORTSDIR}/audio/libmad \
 			vorbis.4:${PORTSDIR}/audio/libvorbis
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	sox
 PORTVERSION=	14.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--with-distro="${CONFIGURE_TARGET} ${PKGNAME}"
 
 .if defined(WITH_AO)
 CONFIGURE_ARGS+=	--with-ao
-LIB_DEPENDS+=		ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=		ao.4:${PORTSDIR}/audio/libao
 .else
 CONFIGURE_ARGS+=	--without-ao
 .endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	uade
 PORTVERSION=	2.13
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 		CRITICAL
@@ -14,7 +15,7 @@ MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Unix Amiga Delitracker Emulator
 
-LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes

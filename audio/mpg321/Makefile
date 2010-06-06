@@ -7,14 +7,14 @@
 
 PORTNAME=	mpg321
 PORTVERSION=	0.2.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	A free command-line mp3 player, compatible with mpg123
 
-LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
+LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao \
 		id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad
 

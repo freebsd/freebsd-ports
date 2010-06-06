@@ -7,7 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.15.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -184,7 +184,7 @@ CONFIGURE_ARGS+=--disable-ipv6
 
 .if defined(WITH_AO)
 CONFIGURE_ARGS+=--enable-ao
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 .else
 CONFIGURE_ARGS+=--disable-ao
 .endif

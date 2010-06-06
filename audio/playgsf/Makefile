@@ -7,6 +7,7 @@
 
 PORTNAME=	playgsf
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
 		CRITICAL
@@ -14,7 +15,7 @@ MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line player for gsf audio files
 
-LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

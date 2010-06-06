@@ -7,7 +7,7 @@
 
 PORTNAME=	zsnes
 PORTVERSION=	1.51
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ZSNES%20v${PORTVERSION}
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--disable-opengl
 .endif
 
 .if defined(WITH_LIBAO)
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=	--enable-libao
 .else
 CONFIGURE_ARGS+=	--disable-libao

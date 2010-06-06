@@ -7,7 +7,7 @@
 
 PORTNAME=	fuse
 PORTVERSION=	0.10.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -31,7 +31,7 @@ OPTIONS=	AO "Use libao for audio output" off \
 
 .if defined(WITH_AO)
 CONFIGURE_ARGS+=--with-libao
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 .endif
 
 .if !defined(WITHOUT_SAMPLERATE)

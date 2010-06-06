@@ -8,7 +8,7 @@
 PORTNAME=	umodplayer
 PORTVERSION=	0.${DISTVERSION:L}
 DISTVERSION=	B5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/UModPlayer%20B5
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console module player
 
 LIB_DEPENDS=	modplug.1:${PORTSDIR}/audio/libmodplug \
-		ao.3:${PORTSDIR}/audio/libao
+		ao.4:${PORTSDIR}/audio/libao
 BUILD_DEPENDS=	${LOCALBASE}/lib/libaiff.a:${PORTSDIR}/audio/libaiff
 
 HAS_CONFIGURE=	yes
