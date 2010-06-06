@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- doc/Makefile.in.orig	2009-07-06 20:04:01.000000000 +0200
-+++ doc/Makefile.in	2009-07-06 20:04:14.000000000 +0200
-@@ -168,7 +168,7 @@ build_vendor = @build_vendor@
+--- doc/Makefile.in.orig	2010-03-26 08:00:08.000000000 +0100
++++ doc/Makefile.in	2010-06-05 15:26:43.000000000 +0200
+@@ -171,7 +171,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@
@@ -12,3 +12,12 @@ $FreeBSD$
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
+@@ -275,7 +275,7 @@ SPEC_TEX = \
+ 	footer.tex
+ 
+ built_docs = Vorbis_I_spec.pdf Vorbis_I_spec.html Vorbis_I_spec.css
+-@BUILD_DOCS_FALSE@doc_DATA = $(static_docs) doxygen-build.stamp
++@BUILD_DOCS_FALSE@doc_DATA = $(static_docs)
+ 
+ # conditionally make the generated documentation
+ @BUILD_DOCS_TRUE@doc_DATA = $(static_docs) $(SPEC_PNG) $(built_docs) doxygen-build.stamp
