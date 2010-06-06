@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	Powerful web-framework wrapper for Rack
 
-RUN_DEPENDS=	rubygem-rack=1.1.0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=1.1.0:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
