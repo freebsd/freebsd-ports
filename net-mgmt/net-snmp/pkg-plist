@@ -24,7 +24,7 @@ bin/snmptrap
 bin/snmpusm
 bin/snmpvacm
 bin/snmpwalk
-bin/tkmib
+%%WITH_TKMIB%%bin/tkmib
 bin/traptoemail
 @exec mkdir %D/etc/snmp 2>/dev/null || true
 include/net-snmp/agent/agent_callbacks.h

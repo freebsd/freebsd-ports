@@ -15,13 +15,12 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
-
 OPTIONS=	IPV6 "Build with IPv6 support" on \
 		MFD_REWRITES "Build with 64-bit Interface Counters" off \
 		PERL "Install additional perl modules" on \
 		PERL_EMBEDDED "Build embedded perl" on \
 		DUMMY "Enable dummy values as placeholders" on \
+		TKMIB "Install graphical MIB browser" off \
 		DMALLOC "Enable dmalloc debug memory allocator" off
 
 MAKE_JOBS_UNSAFE=	yes
@@ -51,6 +50,14 @@ CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
 
 .if defined(WITH_DUMMY)
 CONFIGURE_ARGS+=--with-dummy-values
+.endif
+
+.if !defined(WITH_TKMIB)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-local:Makefile.in
+PLIST_SUB+=	WITH_TKMIB="@comment "
+.else
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+PLIST_SUB+=	WITH_TKMIB=""
 .endif
 
 .if defined(WITH_PERL)
@@ -207,6 +214,9 @@ SBIN_FILES=	snmpd snmptrapd
 STARTUP_DIR=	${PREFIX}/etc/rc.d
 SCRIPT_FILES=	snmpcheck.def mib2c fixproc ipf-mod.pl snmpconf \
 		traptoemail
+.if defined(WITH_TKMIB)
+SCRIPT_FILES+=	tkmib
+.endif
 DOC_FILES=	AGENT.txt COPYING FAQ NEWS README \
 		README.agentx README.krb5 README.snmpv3 README.thread \
 		agent/mibgroup/README.smux
