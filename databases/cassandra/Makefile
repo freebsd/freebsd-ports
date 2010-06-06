@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cassandra
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
@@ -18,6 +18,7 @@ COMMENT=	Open source distributed database management system
 
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 USE_JAVA=	yes
 
 post-patch:
