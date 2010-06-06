@@ -2,3 +2,6 @@ bin/ckl
 @unexec if cmp -s %D/etc/cloudkick.conf %D/etc/cloudkick.conf.sample; then rm -f %D/etc/cloudkick.conf; fi
 etc/cloudkick.conf.sample
 @exec if [ ! -f %D/etc/cloudkick.conf ]; then cp %B/%f %D/etc/cloudkick.conf; fi
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/webapp/ckl.cgi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/webapp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
