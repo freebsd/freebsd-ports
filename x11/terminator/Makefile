@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	terminator
-PORTVERSION=	0.13
-PORTREVISION=	3
+PORTVERSION=	0.93
 CATEGORIES=	x11 python
-MASTER_SITES=	https://launchpad.net/terminator/trunk/${PORTVERSION}/+download/ \
-		https://launchpadlibrarian.net/28258738/ \
+MASTER_SITES=	http://launchpadlibrarian.net/44348818/ \
 		http://hur.st/mirror/terminator/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Multiple GNOME terminals in one window
@@ -20,7 +17,6 @@ COMMENT=	Multiple GNOME terminals in one window
 OPTIONS=	NLS	"Native language support" 	on \
 		GCONF	"Use GNOME Terminal settings"	on
 
-WRKSRC=		${WRKDIR}/${PORTVERSION}
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Terminator
@@ -48,9 +44,5 @@ USE_GNOME+=	pygtk2
 
 MAN1=	terminator.1
 MAN5=	terminator_config.5
-
-post-patch:
-	# setup.py installs 32x32 icons in the wrong place.
-	@${REINPLACE_CMD} -e "s|24x24/apps', glob.glob('data/icons/32x32|32x32/apps', glob.glob('data/icons/32x32|" ${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>
