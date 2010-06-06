@@ -6,6 +6,7 @@
 
 PORTNAME=	log4cxx
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	logging/${PORTNAME}/${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	tcovert@sahuagin.net
 COMMENT=	Log4cxx is a port to C++ of the Log4j project
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/apr-1-config:${PORTSDIR}/devel/apr1
+LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
 .if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
