@@ -131,7 +131,7 @@ lib/anjuta/gbf-am.plugin
 lib/anjuta/gbf-mkfile.plugin
 lib/anjuta/git.plugin
 lib/anjuta/js_debugger.plugin
-lib/anjuta/js_support_plugin.plugin
+lib/anjuta/js-support-plugin.plugin
 lib/anjuta/language-manager.plugin
 lib/anjuta/libanjuta-build-basic-autotools.la
 lib/anjuta/libanjuta-build-basic-autotools.so
