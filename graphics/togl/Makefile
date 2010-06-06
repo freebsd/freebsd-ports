@@ -7,7 +7,7 @@
 
 PORTNAME=	togl
 PORTVERSION=	1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics tk
 MASTER_SITES=	SF/${PORTNAME}/Togl/${PORTVERSION}
 DISTNAME=	Togl-${PORTVERSION}
@@ -46,6 +46,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libTogl1.7.so ${TOGL_INSTDIR}/libTogl1.7.so
 	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${TOGL_INSTDIR}/libtogl.so.1
 	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${PREFIX}/lib/libtogl.so.1
+	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${PREFIX}/lib/libtogl.so
 	${INSTALL_DATA} ${WRKSRC}/togl.h ${WRKSRC}/togl_ws.h ${WRKSRC}/pkgIndex.tcl ${TOGL_INSTDIR}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Makefile ${EXAMPLESDIR}
