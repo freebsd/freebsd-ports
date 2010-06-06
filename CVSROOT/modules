@@ -430,6 +430,9 @@ alltraxclock                    ports/x11-clocks/alltraxclock
 alltray                         ports/x11/alltray
 alpine                          ports/mail/alpine
 alpng                           ports/graphics/alpng
+alsa-lib                        ports/audio/alsa-lib
+alsa-plugins                    ports/audio/alsa-plugins
+alsa-utils                      ports/audio/alsa-utils
 altermime                       ports/mail/altermime
 althea                          ports/mail/althea
 am-aspell                       ports/textproc/am-aspell
@@ -3613,6 +3616,7 @@ fonts-indic                     ports/x11-fonts/fonts-indic
 fonts-te                        ports/x11-fonts/fonts-te
 fontsproto                      ports/x11-fonts/fontsproto
 fonttosfnt                      ports/x11-fonts/fonttosfnt
+fonulator                       ports/net/fonulator
 foo2zjs                         ports/print/foo2zjs
 foobillard                      ports/games/foobillard
 foomatic-db                     ports/print/foomatic-db
@@ -4184,6 +4188,7 @@ geeklog                         ports/www/geeklog
 geeqie                          ports/graphics/geeqie
 geg                             ports/math/geg
 gegl                            ports/graphics/gegl
+geglmm                          ports/graphics/geglmm
 geist                           ports/graphics/geist
 geki2                           ports/games/geki2
 geki3                           ports/games/geki3
@@ -7339,6 +7344,7 @@ ksqlanalyzer                    ports/databases/ksqlanalyzer
 ksqlshell                       ports/databases/ksqlshell
 kssh                            ports/security/kssh
 kst                             ports/science/kst
+kstreamripper                   ports/audio/kstreamripper
 ksubeditor                      ports/multimedia/ksubeditor
 ksudoku                         ports/games/ksudoku
 ksynaptics                      ports/sysutils/ksynaptics
@@ -7703,6 +7709,7 @@ libexo                          ports/x11/libexo
 libexosip2                      ports/net/libexosip2
 libextractor                    ports/textproc/libextractor
 libfame                         ports/multimedia/libfame
+libfb                           ports/net/libfb
 libfec                          ports/comms/libfec
 libffi                          ports/devel/libffi
 libfirm                         ports/devel/libfirm
@@ -10003,6 +10010,7 @@ nighthawk                       ports/games/nighthawk
 nikto                           ports/security/nikto
 nil                             ports/games/nil
 nimuh                           ports/games/nimuh
+nini                            ports/devel/nini
 ninix-aya                       ports/games/ninix-aya
 ninja                           ports/irc/ninja
 ninvaders                       ports/games/nInvaders
@@ -11005,6 +11013,7 @@ p5-CGI-XMLApplication           ports/www/p5-CGI-XMLApplication
 p5-CGI-modules                  ports/www/p5-CGI-modules
 p5-CGI.pm                       ports/www/p5-CGI.pm
 p5-CGI_Lite                     ports/www/p5-CGI_Lite
+p5-CGP-CLI                      ports/mail/p5-CGP-CLI
 p5-CHI                          ports/devel/p5-CHI
 p5-CLASS                        ports/devel/p5-CLASS
 p5-CPAN-Checksums               ports/devel/p5-CPAN-Checksums
@@ -11367,6 +11376,7 @@ p5-Config-Setting               ports/devel/p5-Config-Setting
 p5-Config-Simple                ports/devel/p5-Config-Simple
 p5-Config-Std                   ports/devel/p5-Config-Std
 p5-Config-Tiny                  ports/devel/p5-Config-Tiny
+p5-Config-Wrest                 ports/devel/p5-Config-Wrest
 p5-Config-YAML                  ports/devel/p5-Config-YAML
 p5-ConfigReader                 ports/devel/p5-ConfigReader
 p5-ConfigReader-Simple          ports/devel/p5-ConfigReader-Simple
@@ -11461,6 +11471,7 @@ p5-Crypt-Salt                   ports/security/p5-Crypt-Salt
 p5-Crypt-SaltedHash             ports/security/p5-Crypt-SaltedHash
 p5-Crypt-Serpent                ports/security/p5-Crypt-Serpent
 p5-Crypt-Shark                  ports/security/p5-Crypt-Shark
+p5-Crypt-Simple                 ports/security/p5-Crypt-Simple
 p5-Crypt-SmbHash                ports/security/p5-Crypt-SmbHash
 p5-Crypt-Solitaire              ports/security/p5-Crypt-Solitaire
 p5-Crypt-TEA                    ports/security/p5-Crypt-TEA
@@ -11576,6 +11587,7 @@ p5-Danga-Socket-Callback        ports/devel/p5-Danga-Socket-Callback
 p5-Data-ACL                     ports/devel/p5-Data-ACL
 p5-Data-AMF                     ports/converters/p5-Data-AMF
 p5-Data-Alias                   ports/devel/p5-Data-Alias
+p5-Data-Average                 ports/devel/p5-Data-Average
 p5-Data-Bind                    ports/devel/p5-Data-Bind
 p5-Data-Buffer                  ports/misc/p5-Data-Buffer
 p5-Data-ClearSilver-HDF         ports/devel/p5-Data-ClearSilver-HDF
@@ -12403,6 +12415,7 @@ p5-IPC-PubSub                   ports/devel/p5-IPC-PubSub
 p5-IPC-Run                      ports/devel/p5-IPC-Run
 p5-IPC-Run-SafeHandles          ports/devel/p5-IPC-Run-SafeHandles
 p5-IPC-Run3                     ports/devel/p5-IPC-Run3
+p5-IPC-Session                  ports/net/p5-IPC-Session
 p5-IPC-ShareLite                ports/devel/p5-IPC-ShareLite
 p5-IPC-Shareable                ports/devel/p5-IPC-Shareable
 p5-IPC-SharedCache              ports/devel/p5-IPC-SharedCache
@@ -15012,6 +15025,7 @@ p5-cgi-utils                    ports/www/p5-CGI-Utils
 p5-cgi-xmlapplication           ports/www/p5-CGI-XMLApplication
 p5-cgi.pm                       ports/www/p5-CGI.pm
 p5-cgi_lite                     ports/www/p5-CGI_Lite
+p5-cgp-cli                      ports/mail/p5-CGP-CLI
 p5-chart                        ports/graphics/p5-chart
 p5-chart-clicker                ports/graphics/p5-Chart-Clicker
 p5-chart-graph                  ports/graphics/p5-Chart-Graph
@@ -15215,6 +15229,7 @@ p5-config-setting               ports/devel/p5-Config-Setting
 p5-config-simple                ports/devel/p5-Config-Simple
 p5-config-std                   ports/devel/p5-Config-Std
 p5-config-tiny                  ports/devel/p5-Config-Tiny
+p5-config-wrest                 ports/devel/p5-Config-Wrest
 p5-config-yaml                  ports/devel/p5-Config-YAML
 p5-configreader                 ports/devel/p5-ConfigReader
 p5-configreader-simple          ports/devel/p5-ConfigReader-Simple
@@ -15320,6 +15335,7 @@ p5-crypt-salt                   ports/security/p5-Crypt-Salt
 p5-crypt-saltedhash             ports/security/p5-Crypt-SaltedHash
 p5-crypt-serpent                ports/security/p5-Crypt-Serpent
 p5-crypt-shark                  ports/security/p5-Crypt-Shark
+p5-crypt-simple                 ports/security/p5-Crypt-Simple
 p5-crypt-skey                   ports/security/p5-Crypt-SKey
 p5-crypt-smbhash                ports/security/p5-Crypt-SmbHash
 p5-crypt-solitaire              ports/security/p5-Crypt-Solitaire
@@ -15357,6 +15373,7 @@ p5-danga-socket-callback        ports/devel/p5-Danga-Socket-Callback
 p5-data-acl                     ports/devel/p5-Data-ACL
 p5-data-alias                   ports/devel/p5-Data-Alias
 p5-data-amf                     ports/converters/p5-Data-AMF
+p5-data-average                 ports/devel/p5-Data-Average
 p5-data-bind                    ports/devel/p5-Data-Bind
 p5-data-buffer                  ports/misc/p5-Data-Buffer
 p5-data-clearsilver-hdf         ports/devel/p5-Data-ClearSilver-HDF
@@ -16322,6 +16339,7 @@ p5-ipc-pubsub                   ports/devel/p5-IPC-PubSub
 p5-ipc-run                      ports/devel/p5-IPC-Run
 p5-ipc-run-safehandles          ports/devel/p5-IPC-Run-SafeHandles
 p5-ipc-run3                     ports/devel/p5-IPC-Run3
+p5-ipc-session                  ports/net/p5-IPC-Session
 p5-ipc-shareable                ports/devel/p5-IPC-Shareable
 p5-ipc-sharedcache              ports/devel/p5-IPC-SharedCache
 p5-ipc-sharelite                ports/devel/p5-IPC-ShareLite
@@ -22851,6 +22869,7 @@ silc-client                     ports/net/silc-client
 silc-irssi-plugin               ports/net/silc-irssi-plugin
 silc-server                     ports/net/silc-server
 silc-toolkit                    ports/devel/silc-toolkit
+silence                         ports/deskutils/silence
 silentbob                       ports/devel/silentbob
 silgraphite                     ports/graphics/silgraphite
 silktools                       ports/security/silktools
@@ -22987,6 +23006,7 @@ smap                            ports/security/smap
 smartdoc                        ports/textproc/smartdoc
 smartdoc-devel                  ports/textproc/smartdoc-devel
 smarteiffel                     ports/lang/smarteiffel
+smartirc4net                    ports/irc/smartirc4net
 smartmontools                   ports/sysutils/smartmontools
 smarty                          ports/www/smarty
 smasher                         ports/audio/smasher
@@ -23026,6 +23046,7 @@ smtprc                          ports/mail/smtprc
 smtpscan                        ports/security/smtpscan
 smtptrapd                       ports/mail/smtptrapd
 smurflog                        ports/security/smurflog
+smuxi                           ports/irc/smuxi
 smv                             ports/devel/smv
 sn                              ports/news/sn
 snack                           ports/audio/snack
