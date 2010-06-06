@@ -1,0 +1,122 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/forms.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/forms.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/forms.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/functions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/functions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/functions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/models.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/overrides.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/overrides.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/overrides.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/signals.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/signals.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/signals.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/tests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/values.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/values.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/values.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/views.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/views.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/views.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/de/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/de/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/en/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/en/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/es/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/fr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/fr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/he/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/he/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/it/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/it/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/ko/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/ko/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/pl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/pl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/pt_BR/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/pt_BR/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/ru/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/ru/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/sv/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/sv/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/tr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/tr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templates/livesettings/_admin_site_views.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templates/livesettings/group_settings.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templates/livesettings/site_settings.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templates/livesettings/text.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templatetags/config_tags.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templatetags/config_tags.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templatetags/config_tags.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/manage.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/manage.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/manage.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/settings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/settings.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/urls.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/urls.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/urls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/localsite/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/localsite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/localsite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/localsite/models.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/localsite/models.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/localsite/models.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/localsite
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templates/livesettings
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/he
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/ko/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/ko
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings/locale
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/livesettings
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
