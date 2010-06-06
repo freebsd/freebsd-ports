@@ -2,6 +2,3 @@ SNMPTT (SNMP Trap Translator) is an SNMP trap handler written in Perl
 for use with the Net-SNMP / UCD-SNMP snmptrapd program (www.net-snmp.org).
 
 WWW: http://www.snmptt.org/
-
-Bruce
-bms@FreeBSD.org

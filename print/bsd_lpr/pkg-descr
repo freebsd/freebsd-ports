@@ -8,6 +8,3 @@ defined in /etc/make.conf.
 It may also be of use to folk who are managing embedded systems.
 Currently it is used as a testbed for the OpenPrinting API with pfSense,
 to build a very tight embedded printing appliance.
-
-Bruce
-bms@FreeBSD.org

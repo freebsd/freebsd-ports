@@ -3,6 +3,3 @@ It utilizes the UCD-SNMP-MIB dskTable and prTable support to monitor
 CPU and disk usage according to local snmpd configuration.
 
 WWW: http://henning.schmiedehausen.org/eyewiki/Wiki.jsp?page=NagiosSnmpPlugins
-
-Bruce
-bms@FreeBSD.org
