@@ -1408,6 +1408,7 @@
     SUBDIR += py-django
     SUBDIR += py-django-app-plugins
     SUBDIR += py-django-devel
+    SUBDIR += py-django-keyedcache
     SUBDIR += py-django-registration
     SUBDIR += py-django-signals-ahoy
     SUBDIR += py-django-tagging
