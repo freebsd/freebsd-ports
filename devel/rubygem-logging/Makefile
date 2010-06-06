@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	logging
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
