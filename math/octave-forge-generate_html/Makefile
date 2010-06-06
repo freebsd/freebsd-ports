@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	octave-forge-generate_html
-PORTVERSION=	0.0.9
-PORTREVISION=	3
+PORTVERSION=	0.1.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+do-build:
+	@${DO_NADA}
+
+post-build:
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
+
 .include <bsd.port.post.mk>
