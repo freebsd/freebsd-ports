@@ -1,5 +1,5 @@
 %%APACHEETCDIR%%/httpd.conf.mod_roaming
-%%APACHEMODDIR%%/mod_roaming.so
+%%APACHEMODDIR%%/%%AP_MODULE%%
 %%PORTDOCS%%share/doc/mod_roaming/CHANGES
 %%PORTDOCS%%share/doc/mod_roaming/INSTALL
 %%PORTDOCS%%share/doc/mod_roaming/LICENSE

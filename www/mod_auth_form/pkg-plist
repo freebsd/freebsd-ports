@@ -1,7 +1,7 @@
 lib/mod_auth_form.a
 lib/mod_auth_form.la
-lib/mod_auth_form.so
-lib/mod_auth_form.so.2
-%%APACHEMODDIR%%/mod_auth_form.so
+lib/%%AP_MODULE%%
+lib/%%AP_MODULE%%.2
+%%APACHEMODDIR%%/%%AP_MODULE%%
 @exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
 @unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F

@@ -8,4 +8,4 @@
 %%APACHEINCLUDEDIR%%/env_value.h
 %%APACHEINCLUDEDIR%%/mod_cplusplus.h
 %%APACHEINCLUDEDIR%%/request_env.h
-%%APACHEMODDIR%%/mod_cplusplus.so
+%%APACHEMODDIR%%/%%AP_MODULE%%
