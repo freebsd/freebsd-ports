@@ -64,6 +64,7 @@ lib/moonlight/2.0/mscorlib.dll
 lib/moonlight/2.0/mscorlib.dll.mdb
 lib/moonlight/2.0/respack.exe
 lib/moonlight/2.0/respack.exe.mdb
+lib/moonlight/2.0/smcs
 lib/moonlight/2.0/smcs.exe
 lib/moonlight/2.0/smcs.exe.mdb
 lib/moonlight/mopen.exe
