@@ -313,11 +313,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-terms.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/anatomy.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/build-maintenance.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/disk-failure.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/errors.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/expbuilds.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/interrupting.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/management.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/monitoring.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/new-arch.html
