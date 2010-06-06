@@ -24,11 +24,11 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include"
 
-MANLANG=	"" fr
 MAN1_EN=	aconnect.1 alsactl.1 alsamixer.1 amidi.1 amixer.1 aplay.1 aplaymidi.1 \
 		arecordmidi.1 aseqdump.1 aseqnet.1 iecset.1 speaker-test.1
 MAN8=		alsaconf.8
-MLINKS_EN=		aplay.1 arecord.1
+MLINKS=		aplay.1 arecord.1
+_MANPAGES+=	${PREFIX}/man/fr/man8/${MAN8}
 
 OPTIONS=	XMLTO "Generate alsactl_init(7) man page using xmlto(1)" On
 
