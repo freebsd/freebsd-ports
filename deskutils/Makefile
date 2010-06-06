@@ -281,6 +281,7 @@
     SUBDIR += wyrd
     SUBDIR += xcalendar
     SUBDIR += xchm
+    SUBDIR += xfce4-generic-slider
     SUBDIR += xfce4-notes-plugin
     SUBDIR += xfce4-notification-daemon
     SUBDIR += xfce4-notifyd
