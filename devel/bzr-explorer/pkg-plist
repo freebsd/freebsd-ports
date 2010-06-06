@@ -360,10 +360,5 @@
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Bazaar support
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer
-@dirrm share/licenses
-@dirrm share/licenses/bzr-explorer-1.0.2
 @dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
 @dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
-share/licenses/bzr-explorer-1.0.2/GPLv2
-share/licenses/bzr-explorer-1.0.2/LICENSE
-share/licenses/bzr-explorer-1.0.2/catalog.mk
