@@ -103,7 +103,7 @@ RUN_DEPENDS+=	${LOCALBASE}/www/squirrelmail/src/login.php:${PORTSDIR}/mail/squir
 RUN_DEPENDS+=	${LOCALBASE}/www/phpMyAdmin/index.html:${PORTSDIR}/databases/phpmyadmin
 .endif
 
-.if defined(WITH_APACHE2)
+.if defined(WITH_APACHE)
 USE_APACHE=	2.2+
 .endif
 
