@@ -15,6 +15,8 @@ COMMENT=	Ramaze is a simple and modular web framework
 
 RUN_DEPENDS=	rubygem-innate=2009.10:${PORTSDIR}/www/rubygem-innate
 
+BROKEN=	requires exact version of www/rubygem-innate
+
 PLIST_FILES=	bin/ramaze
 
 USE_RUBY=	yes
