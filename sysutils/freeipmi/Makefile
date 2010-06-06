@@ -21,7 +21,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/ \
 	ftp://freebsd.riss-telecom.ru/pub/mirrors/ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
 
-MAINTAINER=	frol@nov.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library and tools to support IPMI-capable hardware
 
 LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt \
