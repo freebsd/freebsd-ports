@@ -1,0 +1,10 @@
+A slider for the Xfce panel that can be used to adjust and/or monitor any
+numeric variable. You set whatever "variable" this is by setting an adjust
+command which will run when the slider is clicked or scrolled. An option is
+provided to pass the value of the slider (the fraction times an adjustable
+normalization factor) to the command. You get the value of the "variable" by
+setting a sychronize command. The command should return a numeric value and this
+value will be regarded as a fraction of a second adjustable normalization
+factor.
+
+WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-generic-slider
