@@ -16,7 +16,4 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-# we care about not passing -A
-FETCH_ARGS=	-pRr
-
 .include <bsd.port.mk>

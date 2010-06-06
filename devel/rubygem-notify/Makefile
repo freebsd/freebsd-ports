@@ -13,7 +13,6 @@ MASTER_SITES=	RG
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Provides notification functionalities on cross platforms
 
-FETCH_ARGS=		-pRr
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes

@@ -20,7 +20,4 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/anemone
 
-# we care about not passing -A
-FETCH_ARGS=	-pRr
-
 .include <bsd.port.mk>

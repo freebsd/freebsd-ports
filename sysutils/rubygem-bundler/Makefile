@@ -18,7 +18,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/bundle
 
-# we care about not passing -A to allow HTTP redirects
-FETCH_ARGS=	-pRr
-
 .include <bsd.port.mk>
