@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	feed-normalizer
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	www textproc rubygems
 MASTER_SITES=	RG
 
