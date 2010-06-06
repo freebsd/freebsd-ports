@@ -10,6 +10,3 @@ check_pm3_clients_route, check_snmp_counter, check_snmp_gauge,
 check_snmp_if, check_snmp_if_max, check_tcping, and dns_delegation.
 
 WWW: http://www.silfreed.net/download/progs/nagios/
-
-Bruce
-bms@FreeBSD.org
