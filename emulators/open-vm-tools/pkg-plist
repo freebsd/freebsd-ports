@@ -63,6 +63,8 @@ share/vmware-tools/scripts/vmware/network
 @dirrmtry share/open-vm-tools/scripts
 @dirrmtry share/open-vm-tools/tests
 @dirrmtry share/open-vm-tools
+@dirrmtry share/vmware-tools/scripts/vmware
+@dirrmtry share/vmware-tools/scripts
 @dirrmtry share/vmware-tools
 @dirrmtry lib/pkgconfig
 %%X11%%@dirrmtry share/applications
