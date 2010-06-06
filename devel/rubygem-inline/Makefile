@@ -15,9 +15,8 @@ DISTNAME=	RubyInline-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Inline::C allows you to embed C/Ruby directly in ruby scripts
 
-BUILD_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe \
+RUN_DEPENDS=	sow:${PORTSDIR}/devel/rubygem-hoe \
     		zentest:${PORTSDIR}/devel/rubygem-zentest
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GEM_NAME=	${DISTNAME}
 

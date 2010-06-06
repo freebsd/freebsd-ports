@@ -13,8 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	kick.christoph@googlemail.com
 COMMENT=	A game-development extension and library for the ruby language
 
-BUILD_DEPENDS=	rubygem-ruby-sdl-ffi>=0.2:${PORTSDIR}/devel/rubygem-ruby-sdl-ffi
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-ruby-sdl-ffi>=0.2:${PORTSDIR}/devel/rubygem-ruby-sdl-ffi
 
 USE_SDL=		gfx image mixer ttf
 USE_RUBY=		yes

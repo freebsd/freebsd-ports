@@ -12,8 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Easy email delivery and testing for Ruby
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/actionpack-${PORTVERSION}.gemspec:${PORTSDIR}/www/rubygem-actionpack
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/actionpack-${PORTVERSION}.gemspec:${PORTSDIR}/www/rubygem-actionpack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

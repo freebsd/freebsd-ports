@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR=	seattlerb
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A simple rake/rubygems helper for project Rakefiles
 
-BUILD_DEPENDS=	rubygem-rubyforge>=1.3.1:${PORTSDIR}/devel/rubygem-rubyforge
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-rubyforge>=1.3.1:${PORTSDIR}/devel/rubygem-rubyforge
 
 USE_RUBY=	yes
 USE_RAKE=	yes

@@ -12,8 +12,7 @@ MASTER_SITES=	RF
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Ruby Library that Makes HTTP Fun Again
 
-BUILD_DEPENDS=	rubygem-crack>=0.1.1:${PORTSDIR}/devel/rubygem-crack
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-crack>=0.1.1:${PORTSDIR}/devel/rubygem-crack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

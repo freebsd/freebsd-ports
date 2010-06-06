@@ -12,8 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Assist Ruby developers in working with Google Data APIs
 
-BUILD_DEPENDS=	rubygem-rails>=2.2.2:${PORTSDIR}/www/rubygem-rails
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-rails>=2.2.2:${PORTSDIR}/www/rubygem-rails
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

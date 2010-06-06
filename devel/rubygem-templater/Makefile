@@ -13,10 +13,9 @@ MASTER_SITES=	RG
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby code generation framework
 
-BUILD_DEPENDS=	rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline \
+RUN_DEPENDS=	rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-extlib>=0.9.5:${PORTSDIR}/devel/rubygem-extlib \
 		rubygem-diff-lcs>=1.1.2:${PORTSDIR}/textproc/rubygem-diff-lcs
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

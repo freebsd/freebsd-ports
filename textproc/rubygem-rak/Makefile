@@ -12,7 +12,6 @@ MASTER_SITES=	RG
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	A grep replacement in pure Ruby
 
-BUILD_DEPENDS=	rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
 RUN_DEPENDS=	rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
 
 USE_RUBY=	yes

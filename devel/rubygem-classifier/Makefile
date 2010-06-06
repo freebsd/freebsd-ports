@@ -12,8 +12,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE}/${PORTNAME}/
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A classifier module for Bayesian and other types of classifications
 
-BUILD_DEPENDS=	rubygem-stemmer>=1.0.0:${PORTSDIR}/devel/rubygem-stemmer
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-stemmer>=1.0.0:${PORTSDIR}/devel/rubygem-stemmer
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

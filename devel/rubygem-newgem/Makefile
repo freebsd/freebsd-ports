@@ -13,17 +13,15 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Bundle ruby libraries into gems
 
-BUILD_DEPENDS=	rubygem-activesupport>=2.0.2:${PORTSDIR}/devel/rubygem-activesupport \
+RUN_DEPENDS=	rubygem-activesupport>=2.0.2:${PORTSDIR}/devel/rubygem-activesupport \
   rubygem-rubigen>=1.5.1:${PORTSDIR}/devel/rubygem-rubigen \
   rubygem-hoe>=1.8.0:${PORTSDIR}/devel/rubygem-hoe \
   rubygem-redcloth>=4.0.0:${PORTSDIR}/www/rubygem-redcloth \
   rubygem-syntax>=1.0.0:${PORTSDIR}/textproc/rubygem-syntax
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-PLIST_FILES=	bin/newgem
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/newgem
 
 .include <bsd.port.mk>

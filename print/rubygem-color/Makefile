@@ -14,9 +14,8 @@ DISTNAME=	color-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Provides colour space definition and manpiulation
 
-BUILD_DEPENDS=	rubygem-archive-tar-minitar>=0.5.1:${PORTSDIR}/archivers/rubygem-archive-tar-minitar \
+RUN_DEPENDS=	rubygem-archive-tar-minitar>=0.5.1:${PORTSDIR}/archivers/rubygem-archive-tar-minitar \
 		rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

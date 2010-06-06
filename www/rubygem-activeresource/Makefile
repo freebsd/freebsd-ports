@@ -12,8 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A coherent wrapper object-relational mapping for REST web services
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

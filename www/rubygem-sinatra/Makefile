@@ -12,7 +12,6 @@ MASTER_SITES=	RG
 MAINTAINER=	daniel@roe.ch
 COMMENT=	A classy web development framework in ruby
 
-BUILD_DEPENDS=	rubygem-rack>=0.9.1:${PORTSDIR}/www/rubygem-rack
 RUN_DEPENDS=	rubygem-rack>=0.9.1:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes

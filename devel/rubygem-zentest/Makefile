@@ -14,8 +14,7 @@ DISTNAME=	ZenTest-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby Unit Testing Utility
 
-BUILD_DEPENDS=	rubygem-hoe>=1.5.0:${PORTSDIR}/devel/rubygem-hoe
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-hoe>=1.5.0:${PORTSDIR}/devel/rubygem-hoe
 
 GEM_NAME=	${DISTNAME}
 

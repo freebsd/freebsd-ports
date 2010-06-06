@@ -7,13 +7,14 @@
 
 PORTNAME=	rubytter
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A simple twitter library
 
-BUILD_DEPENDS=	rubygem-json>=1.1.3:${PORTSDIR}/devel/rubygem-json \
+RUN_DEPENDS=	rubygem-json>=1.1.3:${PORTSDIR}/devel/rubygem-json \
 		rubygem-oauth>=0.3.6:${PORTSDIR}/net/rubygem-oauth
 
 USE_RUBY=	yes

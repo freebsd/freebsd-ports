@@ -13,8 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Easy to use and customize/extend implementation of captcha
 
-BUILD_DEPENDS=	rubygem-gd2>=1.0.0:${PORTSDIR}/graphics/rubygem-gd2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-gd2>=1.0.0:${PORTSDIR}/graphics/rubygem-gd2
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

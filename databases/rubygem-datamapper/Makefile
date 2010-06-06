@@ -13,10 +13,6 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, thread-safe, object-relational mapper
 
-BUILD_DEPENDS=	rubygem-rspec>0:${PORTSDIR}/devel/rubygem-rspec \
-		rubygem-validatable>0:${PORTSDIR}/devel/rubygem-validatable \
-		rubygem-json>0:${PORTSDIR}/devel/rubygem-json \
-		rubygem-fastthread>0:${PORTSDIR}/devel/rubygem-fastthread
 RUN_DEPENDS=	rubygem-rspec>0:${PORTSDIR}/devel/rubygem-rspec \
 		rubygem-validatable>0:${PORTSDIR}/devel/rubygem-validatable \
 		rubygem-json>0:${PORTSDIR}/devel/rubygem-json \

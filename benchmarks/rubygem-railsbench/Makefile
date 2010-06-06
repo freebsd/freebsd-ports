@@ -13,8 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Scripts designed for benchmarking of Rails applications
 
-BUILD_DEPENDS=	rubygem-hoe>=1.2.0:${PORTSDIR}/devel/rubygem-hoe
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-hoe>=1.2.0:${PORTSDIR}/devel/rubygem-hoe
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

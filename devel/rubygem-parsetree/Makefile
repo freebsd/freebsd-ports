@@ -13,10 +13,9 @@ DISTNAME=	ParseTree-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Ruby parse tree tools
 
-BUILD_DEPENDS=	rubygem-inline>=3.7.0:${PORTSDIR}/devel/rubygem-inline \
+RUN_DEPENDS=	rubygem-inline>=3.7.0:${PORTSDIR}/devel/rubygem-inline \
 		rubygem-sexp_processor>=3.0.1:${PORTSDIR}/devel/rubygem-sexp_processor \
 		rubygem-hoe>=1.8.2:${PORTSDIR}/devel/rubygem-hoe
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

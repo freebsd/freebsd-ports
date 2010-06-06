@@ -7,6 +7,7 @@
 
 PORTNAME=	data_objects
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RUBYFORGE/dorb
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	A unified Ruby API for popular databases
 
-BUILD_DEPENDS=	rubygem-addressable>=2.0:${PORTSDIR}/www/rubygem-addressable \
+RUN_DEPENDS=	rubygem-addressable>=2.0:${PORTSDIR}/www/rubygem-addressable \
 		rubygem-extlib>=0.9.9:${PORTSDIR}/devel/rubygem-extlib
 
 USE_RUBY=	yes

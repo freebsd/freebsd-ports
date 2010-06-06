@@ -13,10 +13,9 @@ DISTFILES=	${PATCHNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Fast HTTP 1.1 library and server for Ruby web applications
 
-BUILD_DEPENDS=	gpgen:${PORTSDIR}/devel/rubygem-gem_plugin \
+RUN_DEPENDS=	gpgen:${PORTSDIR}/devel/rubygem-gem_plugin \
 		rubygem-daemons>=1.0.3:${PORTSDIR}/devel/rubygem-daemons \
 		rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	jruby-extras
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	An ActiveRecord driver for MySQL using JDBC running under JRuby
 
-BUILD_DEPENDS=	rubygem-jdbc-mysql>=5.0.4:${PORTSDIR}/databases/rubygem-jdbc-mysql \
-		rubygem-activerecord-jdbc-adapter>=0.8.2:${PORTSDIR}/databases/rubygem-activerecord-jdbc-adapter
 RUN_DEPENDS=	rubygem-jdbc-mysql>=5.0.4:${PORTSDIR}/databases/rubygem-jdbc-mysql \
 		rubygem-activerecord-jdbc-adapter>=0.8.2:${PORTSDIR}/databases/rubygem-activerecord-jdbc-adapter \
 		jruby:${PORTSDIR}/lang/jruby

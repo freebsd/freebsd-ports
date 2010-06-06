@@ -13,7 +13,7 @@ MASTER_SITES=	RF/termcolor
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A library for ANSII color formatting like HTML for output in terminal
 
-BUILD_DEPENDS=	rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline
+RUN_DEPENDS=	rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

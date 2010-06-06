@@ -13,9 +13,8 @@ MASTER_SITES=	RG
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A generic Amazon E-commerce REST API written in Ruby
 
-BUILD_DEPENDS=	rubygem-hpricot>=0.4:${PORTSDIR}/www/rubygem-hpricot \
+RUN_DEPENDS=	rubygem-hpricot>=0.4:${PORTSDIR}/www/rubygem-hpricot \
 		${RUBY_PKGNAMEPREFIX}hmac>=0.3.2:${PORTSDIR}/security/ruby-hmac
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

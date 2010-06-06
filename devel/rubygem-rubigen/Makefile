@@ -12,8 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Ruby generic generator framework
 
-BUILD_DEPENDS=	rubygem-activesupport>=2.2.2:${PORTSDIR}/devel/rubygem-activesupport
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-activesupport>=2.2.2:${PORTSDIR}/devel/rubygem-activesupport
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -13,13 +13,12 @@ MASTER_SITES=	RG
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	Ohai profiles your system and emits JSON
 
-BUILD_DEPENDS=	rubygem-mixlib-log>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-log \
+RUN_DEPENDS=	rubygem-mixlib-log>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-mixlib-config>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-config \
 		rubygem-mixlib-cli>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-systemu>=1.2.0:${PORTSDIR}/devel/rubygem-systemu \
 		rubygem-extlib>=0.9.14:${PORTSDIR}/devel/rubygem-extlib \
 		rubygem-json>=1.1.9:${PORTSDIR}/devel/rubygem-json
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

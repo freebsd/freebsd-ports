@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	seattlerb
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for MemCached
 
-BUILD_DEPENDS=	rubygem-zentest>=3.4.2:${PORTSDIR}/devel/rubygem-zentest \
+RUN_DEPENDS=	rubygem-zentest>=3.4.2:${PORTSDIR}/devel/rubygem-zentest \
 		rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RAKE=	yes

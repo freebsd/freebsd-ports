@@ -13,7 +13,6 @@ MASTER_SITES=	RG
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	HTML Markup as Ruby
 
-BUILD_DEPENDS=	rubygem-builder>0:${PORTSDIR}/devel/rubygem-builder
 RUN_DEPENDS=	rubygem-builder>0:${PORTSDIR}/devel/rubygem-builder
 
 USE_RUBY=	yes

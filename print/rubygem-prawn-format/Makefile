@@ -12,8 +12,7 @@ MASTER_SITES=	RF/prawn
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An extension of Prawn that allows inline formatting
 
-BUILD_DEPENDS=	rubygem-prawn-core>=0:${PORTSDIR}/print/rubygem-prawn-core
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-prawn-core>=0:${PORTSDIR}/print/rubygem-prawn-core
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

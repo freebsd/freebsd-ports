@@ -12,16 +12,15 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An HTML, XML, SAX, and Reader parser
 
-BUILD_DEPENDS=	${RUBY_PKGNAMEPREFIX}iconv>=0:${PORTSDIR}/converters/ruby-iconv \
+BUILD_DEPENDS=	${RUBY_PKGNAMEPREFIX}iconv>=0:${PORTSDIR}/converters/ruby-iconv
+RUN_DEPENDS=	${BUILD_DEPENDS} \
 				rubygem-hoe>=2.3.3:${PORTSDIR}/devel/rubygem-hoe
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GNOME=	libxml2 libxslt
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
 PLIST_FILES=	bin/nokogiri
 
 .include <bsd.port.mk>

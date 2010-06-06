@@ -12,8 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	clsung@freebsd.org
 COMMENT=	A fast, secure, and very extensible implementation of eRuby
 
-BUILD_DEPENDS=	rubygem-abstract>=1.0.0:${PORTSDIR}/devel/rubygem-abstract
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-abstract>=1.0.0:${PORTSDIR}/devel/rubygem-abstract
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

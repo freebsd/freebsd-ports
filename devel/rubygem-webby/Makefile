@@ -12,7 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	A small website management system
 
-BUILD_DEPENDS=	rubygem-redcloth>=4.2:${PORTSDIR}/www/rubygem-redcloth \
+RUN_DEPENDS=	rubygem-redcloth>=4.2:${PORTSDIR}/www/rubygem-redcloth \
 		rubygem-launchy>=0.3.3:${PORTSDIR}/devel/rubygem-launchy \
 		rubygem-logging>=1.2.2:${PORTSDIR}/devel/rubygem-logging \
 		rubygem-flexmock>=0.2.1:${PORTSDIR}/devel/ruby-flexmock \
@@ -22,8 +22,6 @@ BUILD_DEPENDS=	rubygem-redcloth>=4.2:${PORTSDIR}/www/rubygem-redcloth \
 		rubygem-loquacious>=1.3.1:${PORTSDIR}/devel/rubygem-loquacious \
 		rubygem-hpricot>=0.6.0:${PORTSDIR}/www/rubygem-hpricot \
 		rubygem-directory_watcher>=1.1.2:${PORTSDIR}/devel/rubygem-directory_watcher
-
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

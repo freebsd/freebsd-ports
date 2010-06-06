@@ -12,8 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Object-relational mapping layer for Rails MVC Framework
 
-BUILD_DEPENDS=	rubygem-activesupport>=2.3.4:${PORTSDIR}/devel/rubygem-activesupport
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-activesupport>=2.3.4:${PORTSDIR}/devel/rubygem-activesupport
 
 OPTIONS=	NATIVE_MYSQL "Use native MySQL bindings" Off\
 		NATIVE_POSTGRESQL "Use native PostgreSQL bindings" Off\

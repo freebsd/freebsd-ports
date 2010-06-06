@@ -6,14 +6,13 @@
 
 PORTNAME=	gem_plugin
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=     mongrel
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Gem Based Plugin System
-
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RAKE=	yes

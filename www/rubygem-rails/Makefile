@@ -12,12 +12,11 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MVC web application framework
 
-BUILD_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
+RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
 		${LOCALBASE}/${SPEC_DIR}/activerecord-${PORTVERSION}.gemspec:${PORTSDIR}/databases/rubygem-activerecord \
 		${LOCALBASE}/${SPEC_DIR}/actionpack-${PORTVERSION}.gemspec:${PORTSDIR}/www/rubygem-actionpack \
 		${LOCALBASE}/${SPEC_DIR}/actionmailer-${PORTVERSION}.gemspec:${PORTSDIR}/mail/rubygem-actionmailer \
 		${LOCALBASE}/${SPEC_DIR}/activeresource-${PORTVERSION}.gemspec:${PORTSDIR}/www/rubygem-activeresource
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	FCGI "FastCGI support" Off\
 		MEMCACHE_CLIENT "MemCache-Client support" Off
