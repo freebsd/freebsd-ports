@@ -12,7 +12,10 @@
 # the version.  Note that the Fortran compiler is specified with the
 # USE_FORTRAN knob.
 #
-# For example:
+# As of 2010-06-06, USE_GCC=4.3 is deprecated and USE_GCC=4.3+ is
+# transparently rewritten to USE_GCC=4.4+.
+#
+# Examples:
 #   USE_GCC=	4.2+		# port requires GCC 4.2 or later.
 #   USE_GCC=	4.5			# port requires GCC 4.5.
 #
@@ -113,6 +116,11 @@ MAKE_ENV+=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
 
 
 .if defined(USE_GCC)
+
+# USE_GCC=4.3 is deprecated...
+.if ${USE_GCC} == 4.3+
+USE_GCC:=4.4+
+.endif
 
 # See if we can use a later version
 _USE_GCC:=	${USE_GCC:S/+//}
