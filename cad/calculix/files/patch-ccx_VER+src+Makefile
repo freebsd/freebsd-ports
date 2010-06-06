@@ -1,10 +1,10 @@
---- ccx_2.0/src/Makefile.orig	2009-08-13 04:54:17.000000000 +0900
-+++ ccx_2.0/src/Makefile	2009-09-03 15:03:05.000000000 +0900
+--- ccx_2.1/src/Makefile.orig	2010-02-21 23:46:55.000000000 +0900
++++ ccx_2.1/src/Makefile	2010-06-06 08:45:41.000000000 +0900
 @@ -1,9 +1,9 @@
  
--CFLAGS = -Wall -O3  -I ../../../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE
-+CFLAGS = -Wall -O3  -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/spooles -DARCH="FreeBSD" -DSPOOLES -DARPACK -DMATRIXSTORAGE %%PTHREAD_CFLAGS%%
- FFLAGS = -Wall -O3 -fopenmp
+-CFLAGS = -Wall -O  -I ../../../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE
++CFLAGS = -Wall -O -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/spooles -DARCH="FreeBSD" -DSPOOLES -DARPACK -DMATRIXSTORAGE
+ FFLAGS = -Wall -O -fopenmp
  
 -CC=cc
 -FC=gfortran
@@ -13,22 +13,21 @@
  
  .c.o :
  	$(CC) $(CFLAGS) -c $<
-@@ -18,15 +18,12 @@
+@@ -18,15 +18,10 @@
  OCCXC = $(SCCXC:.c=.o)
  OCCXMAIN = $(SCCXMAIN:.c=.o)
  
 -DIR=../../../SPOOLES.2.2
-+DIR=%%LOCALBASE%%/lib
- 
+-
 -LIBS = \
 -       $(DIR)/spooles.a \
 -	../../../ARPACK/libarpack_INTEL.a \
 -       -lm -lc
 +LIBS = -lspooles -larpack %%BLAS_LIBS%% %%LAPACK_LIBS%% -lm
  
- ccx_2.0: $(OCCXMAIN) ccx_2.0.a  $(LIBS)
--	./date.pl; $(CC) $(CFLAGS) -c ccx_2.0.c; $(FC) -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.0.a  -lpthread  $(LIBS)
-+	./date.pl; $(CC) $(CFLAGS) -c ccx_2.0.c; $(FC) -Wall -O3 -o $@ $(OCCXMAIN) ccx_2.0.a -L$(DIR) %%PTHREAD_LIBS%% $(LIBS)
+ ccx_2.1: $(OCCXMAIN) ccx_2.1.a  $(LIBS)
+-	./date.pl; $(CC) $(CFLAGS) -c ccx_2.1.c; $(FC) -Wall -O -o $@ $(OCCXMAIN) ccx_2.1.a  -lpthread  $(LIBS)
++	./date.pl; $(CC) $(CFLAGS) -c ccx_2.1.c; $(FC) -Wall -O -o $@ $(OCCXMAIN) ccx_2.1.a %%PTHREAD_LIBS%%  -L%%LOCALBASE%%/lib $(LIBS)
  
- ccx_2.0.a: $(OCCXF) $(OCCXC)
+ ccx_2.1.a: $(OCCXF) $(OCCXC)
  	ar vr $@ $?

@@ -1,5 +1,5 @@
---- cgx_2.0/src/Makefile.orig	2009-08-11 12:01:35.000000000 +0900
-+++ cgx_2.0/src/Makefile	2009-09-03 15:05:58.000000000 +0900
+--- cgx_2.1/src/Makefile.orig	2010-02-27 06:46:21.000000000 +0900
++++ cgx_2.1/src/Makefile	2010-06-06 08:44:12.000000000 +0900
 @@ -1,14 +1,14 @@
  CFLAGS = -O3 -Wall \
    -I./ \
@@ -19,54 +19,12 @@
    -lm 
  
  # on 32bit systems change lib64 to lib
-@@ -126,49 +126,13 @@
-  writebp.c \
-  contact.c \
-  makeTriFromElems.c \
-- ../../glut-3.5/src/layerutil.c \
-- ../../glut-3.5/src/glut_dials.c \
-- ../../glut-3.5/src/glut_ext.c \
-- ../../glut-3.5/src/glut_mesa.c \
-- ../../glut-3.5/src/glut_menu.c \
-- ../../glut-3.5/src/glut_modifier.c \
-- ../../glut-3.5/src/glut_space.c \
-- ../../glut-3.5/src/glut_shapes.c \
-- ../../glut-3.5/src/glut_tablet.c \
-- ../../glut-3.5/src/glut_vidresize.c \
-- ../../glut-3.5/src/glut_warp.c \
-- ../../glut-3.5/src/glut_8x13.c \
-- ../../glut-3.5/src/glut_9x15.c \
-- ../../glut-3.5/src/glut_hel10.c \
-- ../../glut-3.5/src/glut_hel18.c \
-- ../../glut-3.5/src/glut_hel12.c \
-- ../../glut-3.5/src/glut_tr10.c \
-- ../../glut-3.5/src/glut_tr24.c \
-- ../../glut-3.5/src/glut_bitmap.c \
-- ../../glut-3.5/src/glut_cursor.c \
-- ../../glut-3.5/src/glut_event.c \
-- ../../glut-3.5/src/glut_get.c \
-- ../../glut-3.5/src/glut_overlay.c \
-- ../../glut-3.5/src/glut_input.c \
-- ../../glut-3.5/src/glut_stroke.c \
-- ../../glut-3.5/src/glut_teapot.c \
-- ../../glut-3.5/src/glut_winmisc.c \
-- ../../glut-3.5/src/glut_fullscrn.c \
-- ../../glut-3.5/src/glut_cindex.c \
-- ../../glut-3.5/src/glut_roman.c \
-- ../../glut-3.5/src/glut_mroman.c \
-- ../../glut-3.5/src/glut_swidth.c \
-- ../../glut-3.5/src/glut_bwidth.c \
-- ../../glut-3.5/src/glut_win.c \
-- ../../glut-3.5/src/glut_init.c \
-- ../../glut-3.5/src/glut_util.c \
-  uselibSNL.cpp \
-  ../../libSNL/src/*.cpp
+@@ -60,7 +60,7 @@
+ OUTIL = $(SUTIL:.c=.o)
  
- OLIB = $(SLIB:.c=.o)
- 
- cgx: $(OLIB)
--	g++   $(OLIB)  $(CFLAGS) $(LFLAGS) -o  $@
-+	${CXX}  $(OLIB)  $(CFLAGS) $(LFLAGS) -o  $@
+ cgx: $(OLIB) $(OUTIL)
+-	g++   $(OLIB) $(OUTIL)  $(CFLAGS) $(LFLAGS) -o  $@
++	${CXX} $(OLIB) $(OUTIL)  $(CFLAGS) $(LFLAGS) -o  $@
  
  
  

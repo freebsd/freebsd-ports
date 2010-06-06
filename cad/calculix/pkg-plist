@@ -88,7 +88,20 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img1074.png
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img1075.png
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img1076.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1077.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1078.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1079.png
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img108.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1080.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1081.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1082.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1083.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1084.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1085.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1086.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1087.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1088.png
+%%PORTDOCS%%%%DOCSDIR%%/ccx/img1089.png
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img109.png
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img11.png
 %%PORTDOCS%%%%DOCSDIR%%/ccx/img110.png
@@ -1527,6 +1540,18 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node500.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node501.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node502.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node503.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node504.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node505.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node506.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node507.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node508.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node509.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node510.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node511.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node512.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node513.html
+%%PORTDOCS%%%%DOCSDIR%%/ccx/node514.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node51.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node52.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node53.html
@@ -1580,7 +1605,7 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node97.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node98.html
 %%PORTDOCS%%%%DOCSDIR%%/ccx/node99.html
-%%PORTDOCS%%%%DOCSDIR%%/ccx_2.0.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/ccx_2.1.ps.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ccx
 %%PORTDOCS%%%%DOCSDIR%%/cgx/WARNINGS
 %%PORTDOCS%%%%DOCSDIR%%/cgx/cgx.css
@@ -1611,7 +1636,11 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img26.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img27.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img28.png
+%%PORTDOCS%%%%DOCSDIR%%/cgx/img29.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img3.png
+%%PORTDOCS%%%%DOCSDIR%%/cgx/img30.png
+%%PORTDOCS%%%%DOCSDIR%%/cgx/img31.png
+%%PORTDOCS%%%%DOCSDIR%%/cgx/img32.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img4.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img5.png
 %%PORTDOCS%%%%DOCSDIR%%/cgx/img6.png
@@ -1706,7 +1735,17 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node173.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node174.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node175.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node176.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node177.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node178.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node179.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node18.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node180.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node181.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node182.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node183.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node184.html
+%%PORTDOCS%%%%DOCSDIR%%/cgx/node185.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node19.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node2.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node20.html
@@ -1796,7 +1835,7 @@ bin/cgx
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node97.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node98.html
 %%PORTDOCS%%%%DOCSDIR%%/cgx/node99.html
-%%PORTDOCS%%%%DOCSDIR%%/cgx_2.0.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/cgx_2.1.ps.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cgx
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%WITH_EXAMPLES%%%%EXAMPLESDIR%%/ISAAC/RAE2822.dat

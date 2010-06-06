@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	CalculiX
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -33,7 +32,6 @@ LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack	\
 		spooles.1:${PORTSDIR}/math/spooles \
 		metis.1:${PORTSDIR}/math/metis	\
 		taucs.1:${PORTSDIR}/math/taucs
-
 
 USE_BZIP2=	yes
 
@@ -70,7 +68,7 @@ LAPACK_LIBS=		-llapack
 .endif
 
 USE_FORTRAN=	yes
-USE_GCC=	4.4
+USE_GCC=	4.4+
 
 .if ${ARCH} == "sparc64"
 CFLAGS+=	-fPIC

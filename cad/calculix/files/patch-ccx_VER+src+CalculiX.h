@@ -1,5 +1,5 @@
---- ccx_2.0/src/CalculiX.h.orig	Sun Feb 19 22:25:48 2006
-+++ ccx_2.0/src/CalculiX.h	Sun Feb 19 22:27:54 2006
+--- ccx_2.1/src/CalculiX.h.orig	Sun Feb 19 22:25:48 2006
++++ ccx_2.1/src/CalculiX.h	Sun Feb 19 22:27:54 2006
 @@ -26,6 +26,8 @@
  #define FORTRAN(A,B) A##_##B
  #elif ARCH == HP
