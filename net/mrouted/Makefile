@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.research.att.com/pub/fenner/mrouted/ \
 		http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta3+IOS12
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multicast routing daemon providing DVMRP for IPv4
 
 USE_RC_SUBR=	mrouted

@@ -10,7 +10,7 @@ PORTVERSION=	1.04
 CATEGORIES=	devel
 MASTER_SITES=	http://dev.kewl.org/k8048/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs Microchip PICs using Velleman K8048 board
 
 USE_GMAKE=	yes

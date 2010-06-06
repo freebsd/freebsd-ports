@@ -13,7 +13,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/30388120/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twisted Python library for the AMQP messaging protocol
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/thrift/__init__.py:${PORTSDIR}/devel/py-thrift

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=\
 DISTNAME=	papi-${PORTVERSION}_beta
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun's implementation of the OpenPrinting API (PAPI)
 
 BROKEN=		incomplete plist

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.xorp.org/releases/${PORTVERSION}/	\
 		http://www3.xorp.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The eXtensible Open Router Platform
 
 NOMAN=		defined

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net devel java
 MASTER_SITES=	http://netresearch.ics.uci.edu/kfujii/jpcap/
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JNI wrapper around libpcap
 
 LIB_DEPENDS=	pcap.1:${PORTSDIR}/net/libpcap

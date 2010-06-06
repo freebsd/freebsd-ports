@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://plg.uwaterloo.ca/~usystem/pub/uSystem/
 EXTRACT_SUFX=	.sh
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The uSystem uC++ Compiler, a concurrent C++ extension language
 
 EXTRACT_CMD=		${SH}
