@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR=	parsetree
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Generic sexp processing tools
 
-BUILD_DEPENDS=	rubygem-hoe>=1.8.2:${PORTSDIR}/devel/rubygem-hoe
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-hoe>=1.8.2:${PORTSDIR}/devel/rubygem-hoe
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

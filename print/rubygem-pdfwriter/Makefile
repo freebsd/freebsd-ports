@@ -14,13 +14,13 @@ DISTNAME=	pdf-writer-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A pure Ruby PDF document creation library
 
-BUILD_DEPENDS=	rubygem-color>=1.4.0:${PORTSDIR}/print/rubygem-color \
+RUN_DEPENDS=	rubygem-color>=1.4.0:${PORTSDIR}/print/rubygem-color \
 		rubygem-transactionsimple>=1.4.0:${PORTSDIR}/devel/rubygem-transactionsimple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+
+GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/techbook
 

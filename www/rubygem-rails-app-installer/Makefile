@@ -14,10 +14,9 @@ MASTER_SITE_SUBDIR=	rails-installer
 MAINTAINER=	geraud@gcu.info
 COMMENT=	An installer for Rails apps
 
-BUILD_DEPENDS=	rubygem-sqlite3>=1.1.0:${PORTSDIR}/databases/rubygem-sqlite3 \
+RUN_DEPENDS=	rubygem-sqlite3>=1.1.0:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-mongrel>=0.3.13:${PORTSDIR}/www/rubygem-mongrel \
 		rubygem-mongrel_cluster>=0.2.0:${PORTSDIR}/www/rubygem-mongrel_cluster
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RAKE=	yes

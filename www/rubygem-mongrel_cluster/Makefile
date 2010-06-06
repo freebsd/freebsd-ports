@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	mongrel
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Manages multiple Mongrel processes
 
-BUILD_DEPENDS=	rubygem-mongrel>=1.0.2:${PORTSDIR}/www/rubygem-mongrel
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-mongrel>=1.0.2:${PORTSDIR}/www/rubygem-mongrel
 
 USE_RC_SUBR=	mongrel_cluster
 USE_RUBY=	yes

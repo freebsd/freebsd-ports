@@ -13,8 +13,6 @@ MASTER_SITES=	RF/codeforpeople
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Class Factory and Dsl for Generating Command Line Programs
 
-BUILD_DEPENDS=	rubygem-fattr>=1.0.3:${PORTSDIR}/devel/rubygem-fattr \
-		rubygem-arrayfields>=4.5.0:${PORTSDIR}/devel/rubygem-arrayfields
 RUN_DEPENDS=	rubygem-fattr>=1.0.3:${PORTSDIR}/devel/rubygem-fattr \
 		rubygem-arrayfields>=4.5.0:${PORTSDIR}/devel/rubygem-arrayfields
 

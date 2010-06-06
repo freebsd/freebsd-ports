@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR=	copiousfreetime
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Replacement for the Apache htdigest and htpasswd
 
-BUILD_DEPENDS=	rubygem-highline>=1.5.0:${PORTSDIR}/devel/rubygem-highline
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-highline>=1.5.0:${PORTSDIR}/devel/rubygem-highline
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

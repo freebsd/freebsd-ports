@@ -6,13 +6,14 @@
 
 PORTNAME=	god
 PORTVERSION=	0.7.18
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Monitoring framework written in Ruby
 
-BUILD_DEPENDS=	rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
+RUN_DEPENDS=	rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -12,8 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A fast, flexible, easy to use logging service for Ruby
 
-BUILD_DEPENDS=	rubygem-eventmachine>=0.7.0:${PORTSDIR}/devel/rubygem-eventmachine
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-eventmachine>=0.7.0:${PORTSDIR}/devel/rubygem-eventmachine
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

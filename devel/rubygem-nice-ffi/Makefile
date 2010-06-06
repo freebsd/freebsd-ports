@@ -13,8 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	kick.christoph@googlemail.com
 COMMENT=	Nice-FFI is a layer on top of Ruby-FFI
 
-BUILD_DEPENDS=	rubygem-ffi>=0.5.3:${PORTSDIR}/devel/rubygem-ffi
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-ffi>=0.5.3:${PORTSDIR}/devel/rubygem-ffi
 
 USE_RUBY=		yes
 USE_RUBYGEMS=	yes

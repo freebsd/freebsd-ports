@@ -16,12 +16,12 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An OpenID library written in pure Ruby
 
-BUILD_DEPENDS=	rubygem-yadis>=0.3.4:${PORTSDIR}/net/rubygem-yadis
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-yadis>=0.3.4:${PORTSDIR}/net/rubygem-yadis
+
+GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

@@ -7,13 +7,14 @@
 
 PORTNAME=	ruby_parser
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RUBYFORGE/parsetree
 
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	A ruby parser written in pure ruby
 
-BUILD_DEPENDS=	rubygem-sexp_processor>=3.0.1:${PORTSDIR}/devel/rubygem-sexp_processor \
+RUN_DEPENDS=	rubygem-sexp_processor>=3.0.1:${PORTSDIR}/devel/rubygem-sexp_processor \
 		rubygem-parsetree>=0:${PORTSDIR}/devel/rubygem-parsetree \
 		rubygem-hoe>=1.8.2:${PORTSDIR}/devel/rubygem-hoe
 

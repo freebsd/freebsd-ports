@@ -12,10 +12,9 @@ MASTER_SITES=	RG
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A fast and very simple Ruby web server
 
-BUILD_DEPENDS=	rubygem-rack>=1.0.0:${PORTSDIR}/www/rubygem-rack \
+RUN_DEPENDS=	rubygem-rack>=1.0.0:${PORTSDIR}/www/rubygem-rack \
 		rubygem-eventmachine>=0.8.1:${PORTSDIR}/devel/rubygem-eventmachine \
 		rubygem-daemons>=1.0.9:${PORTSDIR}/devel/rubygem-daemons
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

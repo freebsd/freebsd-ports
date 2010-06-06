@@ -13,9 +13,8 @@ MASTER_SITES=	RG
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Ruby interface to the Facebook API
 
-BUILD_DEPENDS=	rubygem-hpricot>=0.6:${PORTSDIR}/www/rubygem-hpricot \
+RUN_DEPENDS=	rubygem-hpricot>=0.6:${PORTSDIR}/www/rubygem-hpricot \
 		rubygem-mocha>=0.5.3:${PORTSDIR}/devel/rubygem-mocha
-RUN_DEPENDS=	${BUILD_REQUIRES}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

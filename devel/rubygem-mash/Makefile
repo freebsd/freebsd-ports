@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	mash-hash
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Mocking Hash library for Ruby
 
-BUILD_DEPENDS=	rubygem-hoe>=1.5.1:${PORTSDIR}/devel/rubygem-hoe
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-hoe>=1.5.1:${PORTSDIR}/devel/rubygem-hoe
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

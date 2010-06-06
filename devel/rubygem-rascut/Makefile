@@ -7,6 +7,7 @@
 
 PORTNAME=	rascut
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	hotchpotch
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	hotchpotch
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Ruby ActionSCript UTility
 
-BUILD_DEPENDS=	mongrel_rails:${PORTSDIR}/www/rubygem-mongrel \
+RUN_DEPENDS=	mongrel_rails:${PORTSDIR}/www/rubygem-mongrel \
 		edit_json.rb:${PORTSDIR}/devel/rubygem-json_pure \
 		rackup:${PORTSDIR}/www/rubygem-rack \
 		fcsh:${PORTSDIR}/devel/flex-sdk

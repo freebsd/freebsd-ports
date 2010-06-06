@@ -12,8 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A Markdown and PHP Markdown extra interpreter for Ruby
 
-BUILD_DEPENDS=	rubygem-syntax>=1.0.0:${PORTSDIR}/textproc/rubygem-syntax
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-syntax>=1.0.0:${PORTSDIR}/textproc/rubygem-syntax
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

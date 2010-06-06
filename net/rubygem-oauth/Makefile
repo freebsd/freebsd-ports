@@ -13,8 +13,7 @@ MASTER_SITES=	RF/oauth
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Rubygem for Creating both OAuth Consumers and Service Providers
 
-BUILD_DEPENDS=	${RUBY_PKGNAMEPREFIX}hmac>=0.3.2:${PORTSDIR}/security/ruby-hmac
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}hmac>=0.3.2:${PORTSDIR}/security/ruby-hmac
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

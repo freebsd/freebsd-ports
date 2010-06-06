@@ -13,9 +13,8 @@ MASTER_SITES=	http://labs.ohloh.net/download/
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Ohcount is the source code line counter that powers Ohloh
 
-BUILD_DEPENDS=	rubygem-diff-lcs>=1.1.2:${PORTSDIR}/textproc/rubygem-diff-lcs \
+RUN_DEPENDS=	rubygem-diff-lcs>=1.1.2:${PORTSDIR}/textproc/rubygem-diff-lcs \
 		ragel:${PORTSDIR}/devel/ragel
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

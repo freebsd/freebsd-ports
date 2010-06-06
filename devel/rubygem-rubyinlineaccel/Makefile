@@ -14,8 +14,7 @@ DISTNAME=	RubyInlineAcceleration-${PORTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	An extension to RubyInline
 
-BUILD_DEPENDS=	rubygem-inline>=3.6.3:${PORTSDIR}/devel/rubygem-inline
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	rubygem-inline>=3.6.3:${PORTSDIR}/devel/rubygem-inline
 
 GEM_NAME=	${DISTNAME}
 

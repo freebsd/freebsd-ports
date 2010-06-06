@@ -14,13 +14,15 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to the SQLite DB engine version 3
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
+
+CONFIGURE_ARGS+=--with-sqlite3-dir=${LOCALBASE}
+
+GEM_NAME=	${DISTNAME}
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-CONFIGURE_ARGS+=--with-sqlite3-dir=${LOCALBASE}
-GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
