@@ -14,26 +14,25 @@ PKGNAMESUFFIX=	_another
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 USE_MYSQL=	YES
+USE_APACHE=	13+
 
-SHORTMODNAME=   mysql_auth
-AP_FAST_BUILD=  YES
-AP_GENPLIST=    YES
-AP_INC=		${LOCALBASE}/include/mysql
-AP_LIB=		${LOCALBASE}/lib/mysql
-.if defined(WITH_APACHE2)
+SHORTMODNAME=	mysql_auth
+AP_FAST_BUILD=	YES
+AP_GENPLIST=	YES
+AP_INC=	${LOCALBASE}/include/mysql
+AP_LIB=	${LOCALBASE}/lib/mysql
 AP_EXTRAS=	-lmysqlclient -lz -lm
-USE_APACHE=     20+
-.else
-USE_APACHE=     13+
-AP_EXTRAS=	-DAPACHE${AP_VER} -lmysqlclient -lz -lm
-.endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_APACHE2)
+.if ${APACHE_VERSION} > 20
+AP_EXTRAS+=	-DAPACHE2
+.endif
+
+.if ${APACHE_VERSION} > 20
 post-patch:
 	${REINPLACE_CMD} -e "s|APR_XtOffsetOf|APR_OFFSETOF|g" \
 		-e "s|APR_XtOffset|APR_OFFSET|g" ${WRKSRC}/mod_auth_mysql.c
