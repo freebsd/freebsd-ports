@@ -1,0 +1,15 @@
+--- libctl/Makefile.in.orig	2010-04-30 10:14:01.000000000 +0700
++++ libctl/Makefile.in	2010-04-30 10:11:18.000000000 +0700
+@@ -717,10 +717,10 @@
+ 	(echo "// AUTOMATICALLY GENERATED -- DO NOT EDIT"; grep -h friend $(LIBHDRS) | sed 's/^ *friend \+[A-Za-z_0-9:<>]\+[* ]\+\([A-Za-z_0-9:]*\) *(.*$$/%ignore \1;/' | grep "%ignore" | sort -u;) > $@
+ 
+ meep_enum_renames.i: $(LIBHDRS)
+-	(echo "// AUTOMATICALLY GENERATED -- DO NOT EDIT"; for f in $(LIBHDRS); do egrep "^enum" $$f | sed 's/enum \+\([A-Za-z_0-9:]\+\).*$$/\1/g' | while read enum; do cat $$f | tr -d '\n' | sed 's/.*enum \+'$${enum}' *{\([^}]*\)}.*/\1/g' | sed 's/= *[0-9]\+//g' |tr -d ' \t' | tr ',' '\n' | sed 's/^.*$$/'"%rename(meep_$${enum}_\0) meep::\0;/g"; echo; done; done;) > $@
++	(echo "// AUTOMATICALLY GENERATED -- DO NOT EDIT"; for f in $(LIBHDRS); do egrep "^enum" $$f | gsed 's/enum \+\([A-Za-z_0-9:]\+\).*$$/\1/g' | while read enum; do cat $$f | tr -d '\n' | gsed 's/.*enum \+'$${enum}' *{\([^}]*\)}.*/\1/g' | gsed 's/= *[0-9]\+//g' |tr -d ' \t' | tr ',' '\n' | gsed 's/^.*$$/'"%rename(meep_$${enum}_\0) meep::\0;/g"; echo; done; done;) > $@
+ 
+ meep-enums.scm: meep_enum_renames.i
+-	(sed 's/%rename(\([A-Za-z0-9_]*\)) *\([A-Za-z0-9:_]*\);$$/(define \2 (\1))/' meep_enum_renames.i | sed 's/[A-Za-z0-9:_]*:://g' | sed 's/_/-/g' | sed 's,//,;,'; echo "(define Centered Dielectric)") > $@
++	(gsed 's/%rename(\([A-Za-z0-9_]*\)) *\([A-Za-z0-9:_]*\);$$/(define \2 (\1))/' meep_enum_renames.i | gsed 's/[A-Za-z0-9:_]*:://g' | sed 's/_/-/g' | sed 's,//,;,'; echo "(define Centered Dielectric)") > $@
+ 
+ ##############################################################################
+ 
