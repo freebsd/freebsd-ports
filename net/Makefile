@@ -919,6 +919,7 @@
     SUBDIR += rubygem-rubytter
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter4r
+    SUBDIR += rubygem-whois
     SUBDIR += rubygem-yadis
     SUBDIR += rude
     SUBDIR += rwhoisd

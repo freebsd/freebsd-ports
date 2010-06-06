@@ -1,0 +1,12 @@
+Whois is an intelligent pure Ruby WHOIS client and parser.
+
+It provides a flexible and programmable API to query WHOIS
+servers and look up IP/domain WHOIS information. It also
+offers command-line interface to run WHOIS queries from
+the console.
+
+It is a OS-independent library and does not require external
+C libraries or Gems.
+
+WWW: http://www.ruby-whois.org/
+WWW: http://rubygems.org/gems/whois
