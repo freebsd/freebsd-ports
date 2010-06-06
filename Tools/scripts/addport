@@ -307,7 +307,7 @@ foreach my $thisdir (@dirs) {
 	}
 	chdir $category or err(1,"$category");
 	system("$cp -PRp $thisdir .");
-	system("$cvs $n add `find $portname -type d | grep -v CVS | grep -v '^$portname/work'`") && errx(1, "cvs add for dirs failed, aborting.");
+	system("$cvs add `find $portname -type d | grep -v CVS | grep -v '^$portname/work'`") && errx(1, "cvs add for dirs failed, aborting.");
 
 	my $gotfiles = 0;
 	if ($binfiles) {
@@ -320,10 +320,10 @@ foreach my $thisdir (@dirs) {
 	}
 
 	if ($binfiles && $gotfiles > 0) {
-		system("$cvs $n add `find $portname -type f | grep -v CVS | grep -v '^$portname/files/.*patch-.*' | grep -v '^$portname/work'`") && errx(1, "cvs add for files failed, aborting.");
-		system("$cvs $n add -ko `find $portname -type f | grep -v CVS | grep -v '^$portname/work' | grep '^$portname/files/.*patch-.*'`") && errx(1, "cvs add for files failed, aborting.");
+		system("$cvs add `find $portname -type f | grep -v CVS | grep -v '^$portname/files/.*patch-.*' | grep -v '^$portname/work'`") && errx(1, "cvs add for files failed, aborting.");
+		system("$cvs add -ko `find $portname -type f | grep -v CVS | grep -v '^$portname/work' | grep '^$portname/files/.*patch-.*'`") && errx(1, "cvs add for files failed, aborting.");
 	} else {
-		system("$cvs $n add `find $portname -type f | grep -v CVS | grep -v '^$portname/work'`") && errx(1, "cvs add for files failed, aborting.");
+		system("$cvs add `find $portname -type f | grep -v CVS | grep -v '^$portname/work'`") && errx(1, "cvs add for files failed, aborting.");
 	}
 
 	# figure out where the port name belongs in category Makefile
@@ -445,8 +445,7 @@ OPTIONS
 			of portlinting etc).
 	-n		Do not actually commit anything.
 	-s distdir	Use a different directory besides the default,
-			for downloading distfiles.  This defaults to the
-			temporary directory set up on freefall.
+			for downloading distfiles.
 	-t		Do more port testing.  Requires -a.
 	-u user		Use a different username (default: $u).
 
