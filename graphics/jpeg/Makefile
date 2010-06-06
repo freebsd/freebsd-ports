@@ -7,12 +7,13 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	8
+DISTVERSION=	8a
 PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		ftp://ftp.uu.net/graphics/jpeg/ \
 		http://sylvana.net/jpegcrop/:exif
-DISTNAME=	jpegsrc.v${PORTVERSION}a
+DISTNAME=	jpegsrc.v${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jpegexiforient.c:exif exifautotran.txt:exif
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
