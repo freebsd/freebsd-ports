@@ -10,6 +10,13 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20100606:
+AUTHOR: gerald@FreeBSD.org
+
+  * USE_GCC=4.3 is deprecated (and no port uses it anymore). USE_GCC=4.3+
+    is transparently rewritten to USE_GCC=4.4+ and lang/gcc43 will be
+    disconnected from the USE_GCC infrastructure soon.
+
 20100524:
 AUTHOR: alepulver@FreeBSD.org
 
