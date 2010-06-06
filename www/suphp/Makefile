@@ -7,7 +7,7 @@
 
 PORTNAME=	suphp
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
@@ -37,14 +37,7 @@ CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
 
 .include <bsd.port.pre.mk>
 
-# Apache 2.0 (www/apache2) has apr-config in LOCALBASE/lib/apache2, while
-# Apache 2.2 (www/apache22) has apr-1-config in LOCALBASE/bin.
-#
-.if ${APACHE_VERSION} == 20
-CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/lib/apache2
-.else
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
