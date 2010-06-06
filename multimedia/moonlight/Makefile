@@ -36,6 +36,11 @@ CONFIGURE_ARGS=	--with-cairo=system \
 		--with-mcspath=${MONODIR}/mcs/ \
 		--with-mono-basic-path=${MONOBASICDIR}/
 
+# LC_ALL is set in order to work around issues people are having when using
+# other languages.  This has shown itself in build fails and possibly other
+# strange crashes.
+MAKE_ENV+=	LC_ALL=C
+
 MONO_VERSION=	2.6.1
 MONO_BASIC_VERSION=2.6
 
