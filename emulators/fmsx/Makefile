@@ -22,6 +22,8 @@ EXTRACT_ONLY=	fMSX351.zip
 MAINTAINER=	dk@farm.org
 COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 
+BROKEN=		does not fetch
+
 USE_XORG=	xi x11
 USE_ZIP=	yes
 USE_GMAKE=	yes
