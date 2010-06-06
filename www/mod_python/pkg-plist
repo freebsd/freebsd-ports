@@ -1,4 +1,4 @@
-%%APACHEMODDIR%%/mod_python.so
+%%APACHEMODDIR%%/%%AP_MODULE%%
 %%PYTHON_SITELIBDIR%%/mod_python/__init__.py
 %%PYTHON_SITELIBDIR%%/mod_python/apache.py
 %%PYTHON_SITELIBDIR%%/mod_python/cgihandler.py

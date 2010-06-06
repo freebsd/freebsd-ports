@@ -1,4 +1,4 @@
-%%APACHEMODDIR%%/mod_put.so
+%%APACHEMODDIR%%/%%AP_MODULE%%
 %%PORTDOCS%%share/doc/mod_put/mod_put.html
 %%PORTDOCS%%@dirrm share/doc/mod_put
 @exec ${PKG_PREFIX}/sbin/apxs -e -A -n %%AP_NAME%% mod_put.so; echo "	enable the mod_put in Apache's config manually"

@@ -1,4 +1,4 @@
-%%APACHEMODDIR%%/mod_fcgid.so
+%%APACHEMODDIR%%/%%AP_MODULE%%
 %%PORTDOCS%%%%DOCSDIR%%/mod_fcgid.html
 %%PORTDOCS%%%%DOCSDIR%%/mod_fcgid.html.en
 %%PORTDOCS%%@unexec /bin/rmdir %D/%%DOCSDIR%% 2>/dev/null || true

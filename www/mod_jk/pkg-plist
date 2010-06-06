@@ -1,5 +1,5 @@
 %%APACHEETCDIR%%/mod_jk.conf.sample
 %%APACHEETCDIR%%/workers.properties.sample
-%%APACHEMODDIR%%/mod_jk.so
+%%APACHEMODDIR%%/%%AP_MODULE%%
 @exec %D/sbin/apxs -e -a -n %%AP_NAME%% %f || true
 @unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %f || true

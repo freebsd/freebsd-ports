@@ -1,3 +1,3 @@
-%%APACHEMODDIR%%/mod_ntlm.so
+%%APACHEMODDIR%%/%%AP_MODULE%%
 @exec %D/sbin/apxs -e -a -n ntlm %D/%f
 @unexec %D/sbin/apxs -e -A -n ntlm %D/%F

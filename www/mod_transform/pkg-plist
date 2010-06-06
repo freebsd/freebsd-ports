@@ -1,2 +1,2 @@
 %%APACHEINCLUDEDIR%%/mod_transform.h
-%%APACHEMODDIR%%/mod_transform.so
+%%APACHEMODDIR%%/%%AP_MODULE%%
