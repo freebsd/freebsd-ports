@@ -29,8 +29,6 @@ lib/vmware-tools/modules/drivers/vmblock.ko
 lib/vmware-tools/modules/drivers/vmhgfs.ko
 lib/vmware-tools/modules/drivers/vmmemctl.ko
 lib/vmware-tools/modules/drivers/vmxnet.ko
-share/open-vm-tools/tests/libtestDebug.so
-share/open-vm-tools/tests/libtestPlugin.so
 include/vmGuestLib/includeCheck.h
 include/vmGuestLib/vmGuestLib.h
 include/vmGuestLib/vmSessionId.h
