@@ -7,7 +7,7 @@
 
 PORTNAME=	warzone2100
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Warzone%202100%20${PORTVERSION}
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		mad.2:${PORTSDIR}/audio/libmad \
-		ogg.6:${PORTSDIR}/audio/libogg \
+		ogg.7:${PORTSDIR}/audio/libogg \
 		physfs.1:${PORTSDIR}/devel/physfs \
 		png.6:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \

@@ -7,7 +7,7 @@
 
 PORTNAME=	allacrost
 PORTVERSION=	0.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-demo/${PORTVERSION}
 DISTNAME=	allacrost_demo_source_${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	A single player 2D role-playing game
 BUILD_DEPENDS=	${LOCALBASE}/lib/libluabind.a:${PORTSDIR}/devel/luabind
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
-		ogg.6:${PORTSDIR}/audio/libogg \
+		ogg.7:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes

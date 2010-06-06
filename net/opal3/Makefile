@@ -7,7 +7,7 @@
 
 PORTNAME=	opal3
 PORTVERSION=	3.6.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	SF/opalvoip/v3.6%20Lalande/Stable%205
 DISTNAME=	opal-${PORTVERSION}
@@ -113,7 +113,7 @@ CONFIGURE_ARGS+=	--enable-localilbc
 
 .if defined(WITH_THEORA)
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora \
-		ogg.6:${PORTSDIR}/audio/libogg
+		ogg.7:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--enable-theora
 PLIST_SUB+=	THEORA=""
 WITH_VIDEO=	yes

@@ -6,7 +6,7 @@
 
 PORTNAME=	firefly
 PORTVERSION=	1696
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://nightlies.fireflymediaserver.org/nightlies/svn-${PORTVERSION}/ \
 		http://www.magnesium.net/~mdf/distfiles/

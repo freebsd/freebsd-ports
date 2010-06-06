@@ -7,7 +7,7 @@
 
 PORTNAME=	freeswitch
 PORTVERSION=	1.0.4.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/:source1 \
 		http://dl.getdropbox.com/u/152504/:source2 \

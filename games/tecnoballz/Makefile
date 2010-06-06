@@ -7,7 +7,7 @@
 
 PORTNAME=	tecnoballz
 PORTVERSION=	0.92
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,7 +18,7 @@ COMMENT=	A brick breaker (Arkanoid-like game)
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod \
 		vorbisfile.6:${PORTSDIR}/audio/libvorbis \
-		ogg.6:${PORTSDIR}/audio/libogg \
+		ogg.7:${PORTSDIR}/audio/libogg \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 USE_AUTOTOOLS=	automake:19 aclocal:19

@@ -6,7 +6,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,7 +17,7 @@ COMMENT=	KDE Multimedia applications
 
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
-		ogg.6:${PORTSDIR}/audio/libogg \
+		ogg.7:${PORTSDIR}/audio/libogg \
 		tag.1:${PORTSDIR}/audio/taglib \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \

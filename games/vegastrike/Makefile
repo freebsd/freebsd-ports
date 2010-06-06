@@ -7,7 +7,7 @@
 
 PORTNAME=	vegastrike
 PORTVERSION=	0.5.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 DISTNAME=	vegastrike-source-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	Opensource 3D space simulator
 RUN_DEPENDS=	${DATADIR}/vegastrike.ico:${PORTSDIR}/games/vegastrike-data
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.6:${PORTSDIR}/audio/libogg
+		ogg.7:${PORTSDIR}/audio/libogg
 
 USE_OPENAL=	al
 USE_BZIP2=	yes

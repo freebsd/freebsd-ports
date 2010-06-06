@@ -8,7 +8,7 @@
 
 PORTNAME=	MuSE
 PORTVERSION=	0.9.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.dyne.org/muse/releases/ \
 		http://www.ljudmila.org/~jaromil/muse/releases/
@@ -17,7 +17,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Multiple Streaming Engine
 
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.6:${PORTSDIR}/audio/libogg
+		ogg.7:${PORTSDIR}/audio/libogg
 
 BROKEN=		does not compile
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	0.6.95
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	-client
@@ -27,7 +27,7 @@ LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		totem-plparser.17:${PORTSDIR}/multimedia/totem-pl-parser \
 		raptor.3:${PORTSDIR}/textproc/raptor \
-		ogg.6:${PORTSDIR}/audio/libogg \
+		ogg.7:${PORTSDIR}/audio/libogg \
 		iptcdata.3:${PORTSDIR}/graphics/libiptcdata
 RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
 		o3totxt:${PORTSDIR}/converters/o3read \

@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://fromani.exit1.org/
@@ -124,7 +124,7 @@ CONFIGURE_ARGS+=	--disable-x264
 .endif
 
 .if defined(WITH_OGG)
-LIB_DEPENDS+=	ogg.6:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--with-ogg-prefix=${LOCALBASE} --enable-ogg
 .else
 CONFIGURE_ARGS+=	--disable-ogg

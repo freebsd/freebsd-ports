@@ -7,7 +7,7 @@
 
 PORTNAME=	warsow
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://woe.crying-wolves.net/ \
 		http://www.derchris.eu/warsow/ \

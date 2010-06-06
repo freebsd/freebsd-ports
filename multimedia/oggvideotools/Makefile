@@ -5,7 +5,7 @@
 
 PORTNAME=	oggvideotools
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	oggvideotools/oggvideotools/${DISTNAME}
@@ -14,7 +14,7 @@ MAINTAINER=	jille@quis.cx
 COMMENT=	A toolbox for manipulating Ogg video files
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
-		ogg.6:${PORTSDIR}/audio/libogg \
+		ogg.7:${PORTSDIR}/audio/libogg \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 

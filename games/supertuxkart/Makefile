@@ -7,7 +7,7 @@
 
 PORTNAME=	supertuxkart
 PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/supertuxkart/SuperTuxKart/${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.bz2
@@ -17,7 +17,7 @@ COMMENT=	Free 3D kart racing game
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	vorbisfile.6:${PORTSDIR}/audio/libvorbis \
-		ogg.6:${PORTSDIR}/audio/libogg
+		ogg.7:${PORTSDIR}/audio/libogg
 
 USE_BZIP2=	yes
 USE_GL=		gl glu glut
