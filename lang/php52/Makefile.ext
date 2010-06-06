@@ -378,7 +378,7 @@ CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} \
 		--with-openssl-dir=${OPENSSLBASE} \
 		--enable-ucd-snmp-hack
 
-LIB_DEPENDS+=   netsnmp.16:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=   netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USE_OPENSSL=	yes
 .endif
