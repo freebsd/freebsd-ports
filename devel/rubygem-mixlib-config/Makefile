@@ -17,7 +17,4 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-# we care about not passing -A to avoid HTTP redirect
-FETCH_ARGS=	-pRr
-
 .include <bsd.port.mk>
