@@ -7,7 +7,7 @@
 
 PORTNAME=	audiere
 PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -59,7 +59,7 @@ CONFIGURE_REPLACES+='/AC_CHECK_LIB/ s|cdaudio|no_&|'
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.6:${PORTSDIR}/audio/libogg
+		ogg.7:${PORTSDIR}/audio/libogg
 .else
 CONFIGURE_REPLACES+='/AC_CHECK_HEADER/ s|vorbis|no_&|'
 .endif

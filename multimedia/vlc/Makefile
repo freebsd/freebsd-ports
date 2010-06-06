@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -486,7 +486,7 @@ CONFIGURE_ARGS+=--disable-mpc
 .endif
 
 .if !defined(WITHOUT_OGG)
-LIB_DEPENDS+=	ogg.6:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=--enable-ogg
 .else
 CONFIGURE_ARGS+=--disable-ogg

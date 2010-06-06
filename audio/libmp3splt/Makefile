@@ -7,7 +7,7 @@
 
 PORTNAME=	libmp3splt
 PORTVERSION=	0.5.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -54,7 +54,7 @@ LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/libid3tag
 .if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--disable-ogg
 .else
-LIB_DEPENDS+=	ogg.6:${PORTSDIR}/audio/libogg \
+LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 PLIST_FILES+=	lib/libmp3splt/libsplt_ogg.a \
 		lib/libmp3splt/libsplt_ogg.la \

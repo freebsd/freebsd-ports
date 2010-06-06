@@ -7,7 +7,7 @@
 
 PORTNAME=	iourbanterror
 DISTVERSION=	2007_12_20
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/urbanterror/iourbanterror/source/complete/
 DISTNAME=	ioUrbanTerrorSource_${DISTVERSION}

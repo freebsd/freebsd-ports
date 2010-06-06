@@ -7,7 +7,7 @@
 
 PORTNAME=	dvda-author
 PORTVERSION=	09.05
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/dvd-audio/${PORTNAME}-core/${PORTNAME}-${PORTVERSION}-core
@@ -17,7 +17,7 @@ MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Author and playback unencrypted and uncompressed Audio-DVDs
 
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
-	ogg.6:${PORTSDIR}/audio/libogg \
+	ogg.7:${PORTSDIR}/audio/libogg \
 	sox.1:${PORTSDIR}/audio/sox \
 	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 	png.6:${PORTSDIR}/graphics/png

@@ -6,7 +6,7 @@
 
 PORTNAME=	mp3splt-gtk
 PORTVERSION=	0.5.7a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	Utility to split mp3 and ogg files (via GTK Interface)
 BUILD_DEPENDS=	audacious2:${PORTSDIR}/multimedia/audacious
 LIB_DEPENDS=	mp3splt:${PORTSDIR}/audio/libmp3splt \
 		mad.2:${PORTSDIR}/audio/libmad \
-		ogg.6:${PORTSDIR}/audio/libogg \
+		ogg.7:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
 

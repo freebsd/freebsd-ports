@@ -7,7 +7,7 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://lopster.sourceforge.net/download/
@@ -24,12 +24,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libogg.so.4)
+.if exists(${LOCALBASE}/lib/libogg.so.7)
 WITH_OGG=	yes
 .endif
 
 .if defined(WITH_OGG)
-LIB_DEPENDS+=	ogg.6:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg
 .endif
 
 .if !defined(WITHOUT_ZLIB)

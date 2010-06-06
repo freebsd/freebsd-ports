@@ -7,7 +7,7 @@
 
 PORTNAME=	ices
 PORTVERSION=	2.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://svn.xiph.org/releases/ices/

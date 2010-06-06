@@ -7,6 +7,7 @@
 
 PORTNAME=	liboggz
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/liboggz/ \
 		http://wickedmachine.net/mirror/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/liboggz/ \
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Simple Ogg API
 
-LIB_DEPENDS=	ogg.6:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig

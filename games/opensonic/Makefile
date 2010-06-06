@@ -7,6 +7,7 @@
 
 PORTNAME=	opensonic
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/opensnc/Open%20Sonic/${PORTVERSION}
 DISTNAME=	opensnc-src${PORTVERSION}
@@ -32,7 +33,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libaldmb.a:${PORTSDIR}/audio/dumb-allegro \
 RUN_DEPENDS+=	${LOCALBASE}/lib/libaldmb.a:${PORTSDIR}/audio/dumb-allegro \
 		alpng>=1.3:${PORTSDIR}/graphics/alpng
 LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro \
-		ogg.6:${PORTSDIR}/audio/libogg \
+		ogg.7:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 .include <bsd.port.pre.mk>

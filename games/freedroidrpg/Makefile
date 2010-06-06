@@ -7,6 +7,7 @@
 
 PORTNAME=	freedroidrpg
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/freedroid/freedroidRPG/freedroidRPG-${PORTVERSION}
 
@@ -41,7 +42,7 @@ CONFIGURE_ARGS+=--disable-opengl
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg.6:${PORTSDIR}/audio/libogg
+		ogg.7:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=--enable-vorbis
 .else
 CONFIGURE_ARGS+=--disable-vorbis

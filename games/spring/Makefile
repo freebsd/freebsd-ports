@@ -7,6 +7,7 @@
 
 PORTNAME=	spring
 PORTVERSION=	0.81.2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
@@ -17,7 +18,7 @@ COMMENT=	A project aiming to create a new and versatile RTS Engine
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		IL.2:${PORTSDIR}/graphics/devil \
-		ogg.6:${PORTSDIR}/audio/libogg \
+		ogg.7:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
