@@ -6,7 +6,10 @@ On FreeBSD, it currently supports:
    * AU files
    * WAV files
    * OSS (Open Sound System)
+And optionally:
    * ESD (ESounD or Enlightened Sound Daemon)
    * aRts (KDE sound server)
+   * NAS (Network Audio System)
+   * PulseAudio
 
 WWW: http://www.xiph.org/ao/

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libao
-PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 
@@ -70,7 +69,7 @@ PLIST_SUB+=	$m="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/libao.conf|${PREFIX}&|' \
-		${WRKSRC}/libao.conf.5 ${WRKSRC}/src/ao_private.h \
+		${WRKSRC}/libao.conf.5 ${WRKSRC}/include/ao/ao_private.h \
 		${WRKSRC}/doc/config.html
 
 .include <bsd.port.post.mk>

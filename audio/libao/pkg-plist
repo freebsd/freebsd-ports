@@ -5,17 +5,17 @@ include/ao/plugin.h
 lib/libao.a
 lib/libao.la
 lib/libao.so
-lib/libao.so.3
-%%ARTS%%lib/ao/plugins-2/libarts.la
-%%ARTS%%lib/ao/plugins-2/libarts.so
-lib/ao/plugins-2/liboss.la
-lib/ao/plugins-2/liboss.so
-%%ESOUND%%lib/ao/plugins-2/libesd.la
-%%ESOUND%%lib/ao/plugins-2/libesd.so
-%%NAS%%lib/ao/plugins-2/libnas.la
-%%NAS%%lib/ao/plugins-2/libnas.so
-%%PULSEAUDIO%%lib/ao/plugins-2/libpulse.la
-%%PULSEAUDIO%%lib/ao/plugins-2/libpulse.so
+lib/libao.so.4
+%%ARTS%%lib/ao/plugins-4/libarts.la
+%%ARTS%%lib/ao/plugins-4/libarts.so
+lib/ao/plugins-4/liboss.la
+lib/ao/plugins-4/liboss.so
+%%ESOUND%%lib/ao/plugins-4/libesd.la
+%%ESOUND%%lib/ao/plugins-4/libesd.so
+%%NAS%%lib/ao/plugins-4/libnas.la
+%%NAS%%lib/ao/plugins-4/libnas.so
+%%PULSEAUDIO%%lib/ao/plugins-4/libpulse.la
+%%PULSEAUDIO%%lib/ao/plugins-4/libpulse.so
 libdata/pkgconfig/ao.pc
 share/aclocal/ao.m4
 %%PORTDOCS%%%%DOCSDIR%%/ao_append_option.html
@@ -55,6 +55,6 @@ share/aclocal/ao.m4
 %%PORTDOCS%%%%DOCSDIR%%/plugin-overview.html
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 @dirrm include/ao
-@dirrm lib/ao/plugins-2
+@dirrm lib/ao/plugins-4
 @dirrm lib/ao
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

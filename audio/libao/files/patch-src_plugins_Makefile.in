@@ -1,9 +1,7 @@
-
 $FreeBSD$
-
---- src/Makefile.in.orig
-+++ src/Makefile.in
-@@ -364,7 +364,7 @@
+--- src/plugins/Makefile.in.orig	2010-06-05 15:49:54.000000000 +0200
++++ src/plugins/Makefile.in	2010-06-05 15:50:28.000000000 +0200
+@@ -295,7 +295,7 @@ $(RECURSIVE_TARGETS):
  	  else \
  	    local_target="$$target"; \
  	  fi; \
