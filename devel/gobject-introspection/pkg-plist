@@ -1,8 +1,12 @@
 bin/g-ir-compiler
 bin/g-ir-generate
 bin/g-ir-scanner
+include/gobject-introspection-1.0/gibaseinfo.h
+include/gobject-introspection-1.0/gifunctioninfo.h
 include/gobject-introspection-1.0/girepository.h
 include/gobject-introspection-1.0/girffi.h
+include/gobject-introspection-1.0/gitypelib.h
+include/gobject-introspection-1.0/gitypes.h
 lib/girepository-1.0/Everything-1.0.typelib
 lib/girepository-1.0/GIMarshallingTests-1.0.typelib
 lib/girepository-1.0/GIRepository-2.0.typelib

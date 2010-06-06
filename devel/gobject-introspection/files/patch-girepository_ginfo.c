@@ -1,16 +1,16 @@
---- girepository/ginfo.c.orig	2010-05-19 02:39:46.000000000 +0000
-+++ girepository/ginfo.c	2010-05-30 21:11:54.000000000 +0000
-@@ -69,6 +69,9 @@
-   const gchar *namespace;
- };
+--- girepository/ginfo.c.orig	2010-06-01 15:48:36.000000000 -0400
++++ girepository/ginfo.c	2010-06-06 16:02:36.000000000 -0400
+@@ -2110,6 +2110,9 @@ g_constant_info_get_type (GIConstantInfo
+   return g_type_info_new ((GIBaseInfo*)info, rinfo->typelib, rinfo->offset + 8);
+ }
  
 +#define DO_ALIGNED_COPY(dest_addr, src_addr, type) \
-+	memcpy((dest_addr), (src_addr), sizeof(type))
++       memcpy((dest_addr), (src_addr), sizeof(type))
 +
- #define INVALID_REFCOUNT 0x7FFFFFFF
- 
- static void
-@@ -2349,16 +2352,16 @@
+ gint
+ g_constant_info_get_value (GIConstantInfo *info,
+ 			   GArgument      *value)
+@@ -2148,16 +2151,16 @@ g_constant_info_get_value (GIConstantInf
  	      value->v_uint32 = *(guint32*)&rinfo->typelib->data[blob->offset];
  	      break;
  	    case GI_TYPE_TAG_INT64:
@@ -31,7 +31,7 @@
  	      break;
  	    case GI_TYPE_TAG_TIME_T:
  	      value->v_long = *(long*)&rinfo->typelib->data[blob->offset];
-@@ -2376,10 +2379,10 @@
+@@ -2175,10 +2178,10 @@ g_constant_info_get_value (GIConstantInf
  	      value->v_uint = *(guint*)&rinfo->typelib->data[blob->offset];
  	      break;
  	    case GI_TYPE_TAG_LONG:
