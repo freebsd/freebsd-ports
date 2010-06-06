@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2010-06-06 16:15:41.000000000 +0200
++++ src/Makefile.in	2010-06-06 16:15:59.000000000 +0200
+@@ -105,7 +105,7 @@ $(topdir)/bin:
+ 
+ $(topdir)/bin/dvbcut$(EXEEXT): dvbcut$(EXEEXT)
+ 	$(INSTALL_PROGRAM) dvbcut$(EXEEXT) $(topdir)/bin/dvbcut$(EXEEXT)
+-	$(STRIP) $(topdir)/bin/dvbcut$(EXEEXT)
++#	$(STRIP) $(topdir)/bin/dvbcut$(EXEEXT)
+ 
+ dvbcut$(EXEEXT): $(SRCS) $(OBJS)
+ 	$(CXX) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
