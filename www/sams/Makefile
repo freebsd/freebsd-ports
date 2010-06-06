@@ -7,7 +7,7 @@
 
 PORTNAME=	sams
 DISTVERSION=	1.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sams.perm.ru/download/ \
@@ -22,7 +22,6 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 USE_RC_SUBR=	sams.sh
 
 OPTIONS=	NTLM	"NTLM autorization/ActiveDirectory support"	off \
-		APACHE22	"Use apache version 2.2"	on \
 		INSTALLGD 	"Graphic reports"		on
 
 USE_GMAKE=	yes
@@ -47,10 +46,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/ntlm_auth:${PORTSDIR}/net/samba3
 USE_PHP+=	ldap
 .endif
 
-.if defined(WITH_APACHE22)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache22
-.else
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+.if defined(WITH_APACHE)
+USE_APACHE=	1.3+
 .endif
 
 .if defined(WITH_INSTALLGD)
