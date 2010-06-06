@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.10.0.3
+PORTVERSION=	2.10.1.1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 
