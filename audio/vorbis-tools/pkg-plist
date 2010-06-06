@@ -6,16 +6,23 @@ bin/ogginfo
 bin/vcut
 bin/vorbiscomment
 share/examples/vorbis-tools/ogg123rc
-share/locale/be/LC_MESSAGES/vorbis-tools.mo
-share/locale/cs/LC_MESSAGES/vorbis-tools.mo
-share/locale/da/LC_MESSAGES/vorbis-tools.mo
-share/locale/es/LC_MESSAGES/vorbis-tools.mo
-share/locale/fr/LC_MESSAGES/vorbis-tools.mo
-share/locale/hr/LC_MESSAGES/vorbis-tools.mo
-share/locale/hu/LC_MESSAGES/vorbis-tools.mo
-share/locale/nl/LC_MESSAGES/vorbis-tools.mo
-share/locale/ro/LC_MESSAGES/vorbis-tools.mo
-share/locale/ru/LC_MESSAGES/vorbis-tools.mo
-share/locale/sv/LC_MESSAGES/vorbis-tools.mo
-share/locale/uk/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/be/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/da/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/es/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/vorbis-tools.mo
+%%NLS%%@dirrmtry share/locale/en_GB/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_GB
 @dirrm share/examples/vorbis-tools
