@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bms
 DISTNAME=	seom-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time capture library for OpenGL applications
 
 NOMAN=		defined

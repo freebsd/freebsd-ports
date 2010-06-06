@@ -13,7 +13,7 @@ DISTNAME=	amqp0-8.xml
 EXTRACT_SUFX=
 DIST_SUBDIR=	amqp
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vendor neutral AMQP 0.8 XML specification
 
 NO_BUILD=	defined

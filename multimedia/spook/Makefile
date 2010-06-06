@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.litech.org/spook/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embedded RTP/RTSP/HTTP video streamer
 
 # TODO: FireWire IIDC support (needs libraw1394, libdc1394).

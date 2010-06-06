@@ -11,7 +11,7 @@ CATEGORIES=		devel
 MASTER_SITES=		#
 DISTFILES=
 
-MAINTAINER=		bms@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Helper scripts for generating RCS patches from Perforce
 
 RUN_DEPENDS=		p4:${PORTSDIR}/devel/p4

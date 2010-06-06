@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bms
 DISTNAME=	xorp-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source network routing platform, development branch
 
 # Uses libcurses, libcrypto, librt from base system.

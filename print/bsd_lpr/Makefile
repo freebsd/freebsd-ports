@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bms
 DISTNAME=	bsd_lpr-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD lpr suite
 
 CONFLICTS=	cups-base-[0-9]* LPRng-[0-9]*

@@ -10,7 +10,7 @@ PORTVERSION=	5.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multicast traceroute program for IPv4
 
 MAN8=		mtrace.8

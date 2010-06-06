@@ -13,7 +13,7 @@ CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 DISTFILES=
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Erlang interface to Thrift
 
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract

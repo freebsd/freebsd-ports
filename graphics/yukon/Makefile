@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bms
 DISTNAME=	yukon-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time capture tool for OpenGL applications
 
 BUILD_DEPENDS=	${LOCALBASE}/include/seom/seom.h:${PORTSDIR}/graphics/seom
