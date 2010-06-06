@@ -7,7 +7,8 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+DISTVERSION=	1.0.0a
+PORTREVISION=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -1120,12 +1121,6 @@ BROKEN=		Patches do not merge, please change options
 .endif
 # order of PATCHFILES is important
 .if defined(WITH_DTLS_BUGS) || make(makesum)
-PATCHFILES+=	dtls-replay-bug-1.0.0.patch
-PATCHFILES+=	dtls-buffer-bug-1.0.0.patch
-PATCHFILES+=	dtls-timeout-bug-1.0.0.patch
-PATCHFILES+=	dtls-badmac-bug-1.0.0.patch
-PATCHFILES+=	dtls-badmsg-alert-bug-1.0.0.patch
-PATCHFILES+=	dtls-reassembly-bug-1.0.0.patch
 .endif
 .if defined(WITH_DTLS_RENEGOTIATION) || make(makesum)
 PATCHFILES+=    abbreviated-renegotiation.patch

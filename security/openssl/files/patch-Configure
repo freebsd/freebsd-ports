@@ -1,5 +1,5 @@
---- Configure.orig	2010-05-05 10:43:11.000000000 +0200
-+++ Configure	2010-05-05 10:43:12.000000000 +0200
+--- Configure.orig	2010-06-06 10:43:52.000000000 +0200
++++ Configure	2010-06-06 10:43:52.000000000 +0200
 @@ -147,7 +147,7 @@
  # which has to be accompanied by explicit -D_THREAD_SAFE and
  # sometimes -D_REENTRANT. FreeBSD 5.x expands it as -lc_r, which
@@ -39,17 +39,3 @@
  
  "bsdi-elf-gcc",     "gcc:-DPERL5 -DL_ENDIAN -fomit-frame-pointer -O3 -march=i486 -Wall::(unknown)::-ldl:BN_LLONG ${x86_gcc_des} ${x86_gcc_opts}:${x86_elf_asm}:dlfcn:bsd-gcc-shared:-fPIC::.so.\$(SHLIB_MAJOR).\$(SHLIB_MINOR)",
  
-@@ -1816,11 +1817,11 @@
- 	(system $make_command.$make_targets) == 0 or exit $?
- 		if $make_targets ne "";
- 	if ( $perl =~ m@^/@) {
--	    &dofile("tools/c_rehash",$perl,'^#!/', '#!%s','^my \$dir;$', 'my $dir = "' . $openssldir . '";');
-+	    &dofile("tools/c_rehash",$perl,'^#!/', '#!%s','^my \$dir;$', 'my $dir = "' . $openssldir . '";', '^my \$prefix;$', 'my $prefix = "' . $prefix . '";');
- 	    &dofile("apps/CA.pl",$perl,'^#!/', '#!%s');
- 	} else {
- 	    # No path for Perl known ...
--	    &dofile("tools/c_rehash",'/usr/local/bin/perl','^#!/', '#!%s','^my \$dir;$', 'my $dir = "' . $openssldir . '";');
-+	    &dofile("tools/c_rehash",'/usr/local/bin/perl','^#!/', '#!%s','^my \$dir;$', 'my $dir = "' . $openssldir . '";',  '^my \$prefix;$', 'my $prefix = "' . $prefix . '";');
- 	    &dofile("apps/CA.pl",'/usr/local/bin/perl','^#!/', '#!%s');
- 	}
- 	if ($depflags ne $default_depflags && !$make_depend) {
