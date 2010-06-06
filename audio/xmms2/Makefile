@@ -7,7 +7,7 @@
 
 PORTNAME?=	xmms2
 PORTVERSION=	0.6
-PORTREVISION=	5
+PORTREVISION=	6
 DISTVERSIONSUFFIX=DrMattDestruction
 CATEGORIES?=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20DrMattDestruction
@@ -97,7 +97,7 @@ PLIST_SUB+=	AIRPLAY="@comment "
 .endif
 
 .if !defined(WITHOUT_AO)
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 PLIST_SUB+=	AO=""
 .else
 EXCLUDE+=	--without-plugins="ao"

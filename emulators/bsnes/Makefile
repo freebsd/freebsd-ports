@@ -6,7 +6,7 @@
 
 PORTNAME=	bsnes
 PORTVERSION=	0.58
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://byuu.org/files/ \
 		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
@@ -73,7 +73,7 @@ AUDIO_DRIVER+=	audio.pulseaudio
 .endif
 
 .if defined(WITH_SOUND_AO)
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 AUDIO_DRIVER+=	audio.ao
 .endif
 

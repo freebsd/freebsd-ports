@@ -7,7 +7,7 @@
 
 PORTNAME=	dvbcut
 PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mr511.de/dvbcut/
 
@@ -16,7 +16,7 @@ COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
 
 BUILD_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
-		ao.3:${PORTSDIR}/audio/libao \
+		ao.4:${PORTSDIR}/audio/libao \
 		mad.2:${PORTSDIR}/audio/libmad \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS:=	${BUILD_DEPENDS}

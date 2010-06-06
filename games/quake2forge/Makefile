@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2forge
 PORTVERSION=	0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	https://www.spoerlein.net/pub/
 DISTNAME=	quake2-${PORTVERSION}
@@ -40,7 +40,7 @@ USE_XORG=	xxf86dga
 .endif
 
 .if defined(WITH_AO)
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=--with-ao=${LOCALBASE}
 PLIST_SUB+=	AO=""
 .else

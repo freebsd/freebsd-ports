@@ -7,7 +7,7 @@
 
 PORTNAME=	shell-fm
 PORTVERSION=	0.7
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://nex.scrapping.cc/shell-fm/releases/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	liquidsoap
 PORTVERSION=	0.9.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 DISTVERSIONPREFIX=	full-
 CATEGORIES=	audio net
 MASTER_SITES=	SF/savonet/${PORTNAME}/${PORTVERSION}
@@ -75,14 +75,14 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} LIQUIDSOAP_USER=${LIQUIDSOAP_USER} LIQUIDS
 # alsa and portaudio disabled permanently - alsa is linux only, portaudio broken
 _ALL_PACKAGES=	alsa ao faac faad gavl ladspa lame mad ogg vorbis speex theora samplerate soundtouch portaudio pulseaudio taglib xmlplaylist lastfm
 
-LIB_DEPENDS_ao=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS_ao=	ao.4:${PORTSDIR}/audio/libao
 LIB_DEPENDS_faac=	faac.0:${PORTSDIR}/audio/faac
 LIB_DEPENDS_faad=	faad.2:${PORTSDIR}/audio/faad
 LIB_DEPENDS_gavl=	gavl.1:${PORTSDIR}/multimedia/gavl
 BUILD_DEPENDS_ladspa=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS_lame=	mp3lame.0:${PORTSDIR}/audio/lame
 LIB_DEPENDS_mad=	mad.2:${PORTSDIR}/audio/libmad
-LIB_DEPENDS_ogg=	ogg.6:${PORTSDIR}/audio/libogg
+LIB_DEPENDS_ogg=	ogg.7:${PORTSDIR}/audio/libogg
 LIB_DEPENDS_vorbis=	vorbis.4:${PORTSDIR}/audio/libvorbis
 LIB_DEPENDS_speex=	speex.1:${PORTSDIR}/audio/speex
 LIB_DEPENDS_theora=	theora.0:${PORTSDIR}/multimedia/libtheora

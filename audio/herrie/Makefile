@@ -7,7 +7,7 @@
 
 PORTNAME=	herrie
 PORTVERSION=	2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://herrie.info/distfiles/ \
 		http://www.stack.nl/~ed/projects/herrie/distfiles/
@@ -67,7 +67,7 @@ LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=no_http no_scrobbler
 .endif
 .if !defined(WITHOUT_LIBAO)
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=ao
 .endif
 .if !defined(WITHOUT_XCURSES)

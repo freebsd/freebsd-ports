@@ -7,6 +7,7 @@
 
 PORTNAME=	ao
 PORTVERSION=	0.82
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://ekyo.nerim.net/software/pyogg/ \
 		http://www.sourcefiles.org/Programming/Development/Modules/Python/
@@ -16,7 +17,7 @@ DISTNAME=	pyao-${PORTVERSION}
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A python wrapper for ao, an audio device abstraction library
 
-LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
 
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/aomodule.so
 USE_PYTHON=		yes

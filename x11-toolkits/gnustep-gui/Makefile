@@ -8,6 +8,7 @@
 PORTNAME=	gnustep-gui
 .if defined(WITH_GNUSTEP_DEVEL)
 PORTVERSION=	0.19.0
+PORTREVISION=	1
 .else
 PORTVERSION=	0.17.1
 PORTREVISION=	2
@@ -25,7 +26,7 @@ LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
 .if defined(WITH_GNUSTEP_DEVEL)
 LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:${PORTSDIR}/audio/flite
 .else
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile

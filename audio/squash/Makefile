@@ -6,7 +6,7 @@
 
 PORTNAME=		squash
 PORTVERSION=		1.0
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac \
 		id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		mad.2:${PORTSDIR}/audio/mad \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ao.3:${PORTSDIR}/audio/libao
+		ao.4:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
 USE_BZIP2=	yes
