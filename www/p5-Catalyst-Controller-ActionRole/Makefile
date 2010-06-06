@@ -5,8 +5,7 @@
 # Generated with portupload. Do not edit directly, please
 
 PORTNAME=	Catalyst-Controller-ActionRole
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
