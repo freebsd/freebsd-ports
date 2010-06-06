@@ -10,7 +10,7 @@ PORTVERSION=	1.16.0
 CATEGORIES=	devel lang
 MASTER_SITES=	SF
 
-MAINTAINER=	christoph.mallon@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graph-based SSA intermediate representation library for compilers
 
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
 		http://tron.homeunix.org/ja2/
 
-MAINTAINER=	christoph.mallon@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A port of "Jagged Alliance 2" using SDL
 
 DISTVERSIONSUFFIX=	-source

@@ -10,7 +10,7 @@ PORTVERSION=	0.9.8
 CATEGORIES=	lang devel
 MASTER_SITES=	SF
 
-MAINTAINER=	christoph.mallon@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C99 compiler using libFIRM as backend
 
 LIB_DEPENDS=	firm.0:${PORTSDIR}/devel/libfirm
