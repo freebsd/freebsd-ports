@@ -45,4 +45,8 @@ LANGUAGEKIT_PORT?=	lang/etoile-languagekit
 SMALLTALKKIT_PORT?=	lang/etoile-smalltalkkit
 SCRIPTKIT_PORT?=	lang/etoile-scriptkit
 
+post-configure:
+	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make \
+		${WRKSRC}/Services/User/Melodie/GNUmakefile
+
 .include <bsd.port.mk>
