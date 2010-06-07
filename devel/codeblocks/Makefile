@@ -6,11 +6,11 @@
 #
 
 PORTNAME=		codeblocks
-PORTVERSION=		8.02
-PORTREVISION=	5
+PORTVERSION=		10.05
 CATEGORIES=		devel
-MASTER_SITES=		SF/${PORTNAME}/Sources/${PORTVERSION}
-DISTNAME=		${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=		${MASTER_SITE_BERLIOS}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=		${PORTNAME}-${PORTVERSION}-1debian-src
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Open source, cross-platform, free C/C++ IDE
@@ -32,5 +32,8 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS+=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all
 MAN1=	cb_console_runner.1 cb_share_config.1 codeblocks.1 codesnippets.1
+
+post-extract:
+	(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} src/${PORTNAME}_${PORTVERSION}-1.tar.gz ${EXTRACT_AFTER_ARGS})
 
 .include <bsd.port.mk>
