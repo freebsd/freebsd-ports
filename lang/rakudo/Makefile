@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 
 INSTALL_TARGET=	install
 
-MAN1=		perl6.1
+MAN1=		perl6.1 rakudo.1
 MANCOMPRESSED=	no
 
 PARROTCONFIG?=	${LOCALBASE}/bin/parrot_config
