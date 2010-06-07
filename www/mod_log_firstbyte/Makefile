@@ -11,27 +11,24 @@ CATEGORIES=	www
 MASTER_SITES=	http://mod-log-firstbyte.googlecode.com/svn/trunk/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}.c readme.txt
+DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Log the time between request and the first byte of the response served
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
+
+USE_APACHE=	2.0+
 
 PROJECTHOST=	mod-log-firstbyte
-USE_APACHE=	2.0+
-MOD=		mod_log_firstbyte
 PKGMESSAGE=	${WRKSRC}/readme.txt
-DIST_SUBDIR=	${PORTNAME}
+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}
-
-do-build:
-	cd ${WRKSRC} && ${APXS} -c ${MOD}.c
-
-do-install:
-	${APXS} -i -a ${WRKSRC}/${MOD}.la
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
