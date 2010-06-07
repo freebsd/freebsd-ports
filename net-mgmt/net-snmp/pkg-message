@@ -5,14 +5,14 @@
 
 	snmpd_enable="YES"
 	snmpd_flags="-a"
-	snmpd_conffile="/usr/local/share/snmpd.conf /etc/snmpd.conf"
+	snmpd_conffile="/usr/local/share/snmp/snmpd.conf /etc/snmpd.conf"
 	snmptrapd_enable="YES"
 	snmptrapd_flags="-a -p /var/run/snmptrapd.pid"
 
 **** You may specify the following make variables:
 
-	NET_SNMP_SYS_CONTACT="pgollucci@FreeBSD.org"
-	NET_SNMP_SYS_LOCATION="Maryland, USA"
+	NET_SNMP_SYS_CONTACT="sylvio@FreeBSD.org"
+	NET_SNMP_SYS_LOCATION="Brasilia, BRA"
 	DEFAULT_SNMP_VERSION=3
 	NET_SNMP_MIB_MODULES="host smux mibII/mta_sendmail ucd-snmp/diskio"
 	NET_SNMP_LOGFILE=/var/log/snmpd.log
