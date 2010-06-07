@@ -11,6 +11,8 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libxm.html
 %%PORTDOCS%%%%DOCSDIR%%/s7.html
+%%PORTDOCS%%%%DOCSDIR%%/pix/8.png
+%%PORTDOCS%%%%DOCSDIR%%/pix/88.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/all57.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/all99.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/odd57.png
@@ -365,6 +367,7 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/bess.scm
 %%SCHEME%%%%DATADIR%%/bess1.scm
 %%SCHEME%%%%DATADIR%%/big-gens.scm
+%%SCHEME%%%%DATADIR%%/binary-io.scm
 %%SCHEME%%%%DATADIR%%/bird.scm
 %%SCHEME%%%%DATADIR%%/clean.scm
 %%SCHEME%%%%DATADIR%%/clm-ins.scm
@@ -433,7 +436,6 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/snd-gtk.scm
 %%SCHEME%%%%DATADIR%%/snd-motif.scm
 %%SCHEME%%%%DATADIR%%/snd-test.scm
-%%SCHEME%%%%DATADIR%%/snd6.scm
 %%SCHEME%%%%DATADIR%%/snd7.scm
 %%SCHEME%%%%DATADIR%%/snd8.scm
 %%SCHEME%%%%DATADIR%%/snd9.scm
