@@ -8,19 +8,15 @@
 PORTNAME=	secure_login
 PORTVERSION=	1.4
 PORTREVISION=	1
-CATEGORIES=	mail www
-MASTER_SITES=	http://www.squirrelmail.org/plugins/
-PKGNAMEPREFIX=	squirrelmail-
-PKGNAMESUFFIX=	-plugin
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.8
 DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	This plugin will automatically turn on SSL security during login
 
-USE_PERL5_RUN=	yes
+LICENSE=	GPLv2
 
-SUB_FILES=	pkg-message
+USE_PERL5_RUN=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/mail/squirrelmail/bsd.squirrelmail.mk"
