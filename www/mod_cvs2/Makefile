@@ -15,24 +15,23 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A module that makes Apache 2 CVS aware
 
-MAKE_JOBS_SAFE=  yes
-
-USE_APACHE=	2.0+
+MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	mod_cvs2
 
+USE_APACHE=	2.0+
+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
 PORTDOCS=	reference.html guide.html README
 
-do-build:
-	@(cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c)
-
-do-install:
-	@(cd ${WRKSRC} && ${APXS} -i -A -n ${PORTNAME:S/mod_//} ${PORTNAME}.la)
+post-install:
 .if !defined (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .   for f in ${PORTDOCS:NREADME}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/
 .   endfor
 .endif
 
