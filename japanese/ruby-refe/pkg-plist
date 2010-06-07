@@ -1,9 +1,8 @@
-bin/mkrefe_extrefm
-bin/mkrefe_mfrelation
-bin/mkrefe_refrd
-bin/mkrefe_rubyrefm
-bin/mkrefe_rubysrc
-bin/refe
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%RUBY_SITELIBDIR%%/refe/completiontable.rb
 %%RUBY_SITELIBDIR%%/refe/config.rb
 %%RUBY_SITELIBDIR%%/refe/database.rb
@@ -21,7 +20,12 @@ bin/refe
 %%RUBY_SITELIBDIR%%/refe/rubysrcparser.rb
 %%RUBY_SITELIBDIR%%/refe/searcher.rb
 %%RUBY_SITELIBDIR%%/refe/traceutils.rb
-@dirrm %%RUBY_SITELIBDIR%%/refe
+bin/mkrefe_extrefm
+bin/mkrefe_mfrelation
+bin/mkrefe_refrd
+bin/mkrefe_rubyrefm
+bin/mkrefe_rubysrc
+bin/refe
 share/refe/class_document/-a-r-g-f
 share/refe/class_document/-argument-error
 share/refe/class_document/-array
@@ -4556,10 +4560,6 @@ share/refe/method_document_comp
 @dirrm share/refe/function_document
 @dirrm share/refe/class_document
 @dirrm share/refe
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+@dirrm %%RUBY_SITELIBDIR%%/refe
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
