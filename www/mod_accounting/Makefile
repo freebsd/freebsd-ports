@@ -32,7 +32,7 @@ MAKE_ARGS+=	WITHOUT_MYSQL=YES
 USE_MYSQL=	YES
 .endif
 
-DOCS=		README FAQ.txt LICENSE
+PORTDOCS=		README FAQ.txt LICENSE
 
 pre-everything::
 	@${ECHO} ""
@@ -41,12 +41,12 @@ pre-everything::
 	@${ECHO} ""
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/schema.sql ${PREFIX}/share/${PORTNAME}
+	@${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/schema.sql ${DATADIR}/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
