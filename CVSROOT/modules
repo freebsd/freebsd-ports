@@ -2511,7 +2511,6 @@ dokuwiki-devel                  ports/www/dokuwiki-devel
 dolly                           ports/sysutils/dolly
 dolly+                          ports/sysutils/dolly+
 dolphin                         ports/x11-fm/dolphin
-dolphin-plugins-mplayerthumbs   ports/deskutils/dolphin-plugins-mplayerthumbs
 dom4j                           ports/textproc/dom4j
 domc                            ports/textproc/domc
 domtools                        ports/dns/domtools
@@ -11963,6 +11962,7 @@ p5-File-Format-RIFF             ports/multimedia/p5-File-Format-RIFF
 p5-File-Grep                    ports/devel/p5-File-Grep
 p5-File-HStore                  ports/devel/p5-File-HStore
 p5-File-HomeDir                 ports/devel/p5-File-HomeDir
+p5-File-Iterator                ports/devel/p5-File-Iterator
 p5-File-Lock                    ports/devel/p5-File-Lock
 p5-File-MMagic                  ports/devel/p5-File-MMagic
 p5-File-MMagic-XS               ports/devel/p5-File-MMagic-XS
@@ -13237,6 +13237,7 @@ p5-POE-Component-Generic        ports/net/p5-POE-Component-Generic
 p5-POE-Component-IKC            ports/devel/p5-POE-Component-IKC
 p5-POE-Component-IRC            ports/irc/p5-POE-Component-IRC
 p5-POE-Component-IRC-Object     ports/irc/p5-POE-Component-IRC-Object
+p5-POE-Component-IRC-Plugin-Blowfish  ports/irc/p5-POE-Component-IRC-Plugin-Blowfish
 p5-POE-Component-IRC-Plugin-Bollocks  ports/irc/p5-POE-Component-IRC-Plugin-Bollocks
 p5-POE-Component-IRC-Plugin-CoreList  ports/irc/p5-POE-Component-IRC-Plugin-CoreList
 p5-POE-Component-IRC-Plugin-POE-Knee  ports/irc/p5-POE-Component-IRC-Plugin-POE-Knee
@@ -15845,6 +15846,7 @@ p5-file-fts                     ports/devel/p5-File-FTS
 p5-file-grep                    ports/devel/p5-File-Grep
 p5-file-homedir                 ports/devel/p5-File-HomeDir
 p5-file-hstore                  ports/devel/p5-File-HStore
+p5-file-iterator                ports/devel/p5-File-Iterator
 p5-file-lock                    ports/devel/p5-File-Lock
 p5-file-map                     ports/devel/p5-File-Map
 p5-file-mimeinfo                ports/devel/p5-File-MimeInfo
@@ -17288,6 +17290,7 @@ p5-poe-component-generic        ports/net/p5-POE-Component-Generic
 p5-poe-component-ikc            ports/devel/p5-POE-Component-IKC
 p5-poe-component-irc            ports/irc/p5-POE-Component-IRC
 p5-poe-component-irc-object     ports/irc/p5-POE-Component-IRC-Object
+p5-poe-component-irc-plugin-blowfish  ports/irc/p5-POE-Component-IRC-Plugin-Blowfish
 p5-poe-component-irc-plugin-bollocks  ports/irc/p5-POE-Component-IRC-Plugin-Bollocks
 p5-poe-component-irc-plugin-corelist  ports/irc/p5-POE-Component-IRC-Plugin-CoreList
 p5-poe-component-irc-plugin-poe-knee  ports/irc/p5-POE-Component-IRC-Plugin-POE-Knee
@@ -20471,6 +20474,8 @@ py-distutils-extra              ports/devel/py-distutils-extra
 py-django                       ports/www/py-django
 py-django-app-plugins           ports/www/py-django-app-plugins
 py-django-devel                 ports/www/py-django-devel
+py-django-keyedcache            ports/www/py-django-keyedcache
+py-django-livesettings          ports/www/py-django-livesettings
 py-django-registration          ports/www/py-django-registration
 py-django-signals-ahoy          ports/www/py-django-signals-ahoy
 py-django-tagging               ports/www/py-django-tagging
@@ -20684,6 +20689,7 @@ py-ming                         ports/graphics/py-ming
 py-miniupnpc                    ports/net/py-miniupnpc
 py-mlpy                         ports/science/py-mlpy
 py-mnemosyne                    ports/games/py-mnemosyne
+py-mongoengine                  ports/devel/py-mongoengine
 py-mongokit                     ports/devel/py-mongokit
 py-mox                          ports/devel/py-mox
 py-mp-random                    ports/net/py-mp-random
@@ -21684,6 +21690,7 @@ resume                          ports/textproc/resume
 resume-extensions               ports/textproc/resume-extensions
 retail                          ports/sysutils/retail
 retawq                          ports/www/retawq
+retranslator                    ports/security/retranslator
 revelation                      ports/security/revelation
 rexima                          ports/audio/rexima
 rexx-curl                       ports/ftp/rexx-curl
@@ -25450,6 +25457,7 @@ xfce4-desktop                   ports/x11-wm/xfce4-desktop
 xfce4-dev-tools                 ports/devel/xfce4-dev-tools
 xfce4-dict-plugin               ports/textproc/xfce4-dict-plugin
 xfce4-fsguard-plugin            ports/sysutils/xfce4-fsguard-plugin
+xfce4-generic-slider            ports/deskutils/xfce4-generic-slider
 xfce4-genmon-plugin             ports/sysutils/xfce4-genmon-plugin
 xfce4-mailwatch-plugin          ports/mail/xfce4-mailwatch-plugin
 xfce4-media                     ports/multimedia/xfce4-media
