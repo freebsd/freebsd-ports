@@ -20,7 +20,6 @@ share/apps/plasma-cwp/freemeteo_com_celsius.xml
 share/apps/plasma-cwp/freemeteo_com_fahrenheit.xml
 share/apps/plasma-cwp/ilmeteo_it.xml
 share/apps/plasma-cwp/in_weather_com.xml
-share/apps/plasma-cwp/metservice_co_nz.xml
 share/apps/plasma-cwp/myforecast_com_celsius.xml
 share/apps/plasma-cwp/myforecast_com_fahrenheit.xml
 share/apps/plasma-cwp/pogodynka_pl.xml
@@ -34,6 +33,7 @@ share/apps/plasma-cwp/www_accuweather_com_world_fahrenheit.xml
 share/apps/plasma-cwp/www_gismeteo_com.xml
 share/apps/plasma-cwp/www_weather_com.cn.xml
 share/apps/plasma-cwp/www_weather_com.xml
+share/icons/oxygen/128x128/status/weather-windy.png
 share/icons/oxygen/scalable/status/weather-windy.svgz
 share/kde4/services/plasma-applet-cwp.desktop
 share/locale/br/LC_MESSAGES/plasma_applet_cwp.mo
