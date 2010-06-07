@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A simple Ruby module that provides setlocale(3)
 
 CONFLICTS=	${PKGNAMEPREFIX}locale2-[0-9]*
