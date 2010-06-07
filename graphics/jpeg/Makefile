@@ -7,8 +7,8 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	8
-DISTVERSION=	8a
-PORTREVISION=	2
+DISTVERSION=	8b
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
 		ftp://ftp.uu.net/graphics/jpeg/ \
@@ -22,7 +22,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IJG's jpeg compression utilities
 
 CONFLICTS=	libjpeg-turbo-[0-9]*
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}a
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
