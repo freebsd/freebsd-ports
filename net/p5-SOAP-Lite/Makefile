@@ -7,6 +7,7 @@
 
 PORTNAME=	SOAP-Lite
 PORTVERSION=	0.712
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +22,8 @@ RUN_DEPENDS=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-XML-Parser>=2.23:${PORTSDIR}/textproc/p5-XML-Parser \
-		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
+		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
+		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFLICTS=	p5-SOAP-Lite-0.60* p5-SOAP-[0-9]*
