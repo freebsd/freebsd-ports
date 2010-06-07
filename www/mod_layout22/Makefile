@@ -17,14 +17,15 @@ COMMENT=	Apache2.2 module to wrap served pages with a header and/or footer
 
 MAKE_JOBS_SAFE=	yes
 
+LATEST_LINK=	mod_layout22
 CONFLICTS=  mod_layout-3.* mod_layout-4.*
-
 PORTSCOUT=	limit:^5
 
 USE_APACHE=	22
-LATEST_LINK=	mod_layout22
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
-MAKE_ARGS+=	builddir=${WRKSRC}
+PORTDOCS=	README
 
 post-install:
 .if !defined(NOPORTDOCS)
