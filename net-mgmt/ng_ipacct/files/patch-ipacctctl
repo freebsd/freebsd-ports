@@ -1,0 +1,15 @@
+--- ipacctctl/ipacctctl.c.orig	2010-03-29 23:36:30.000000000 +0700
++++ ipacctctl/ipacctctl.c	2010-03-29 23:37:38.000000000 +0700
+@@ -53,6 +53,10 @@
+ 
+ #include "../ng_ipacct/ng_ipacct.h"
+ 
++#ifndef NG_PATHLEN
++#define NG_PATHLEN (NG_PATHSIZ - 1)
++#endif
++
+ #define	TIME_FMT	"%Y/%m/%d %H:%M:%S" 	/* used in strftime() */
+ #define	IN_HOOK		0
+ #define OUT_HOOK	1
+
+
