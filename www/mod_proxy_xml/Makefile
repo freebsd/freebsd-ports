@@ -16,27 +16,25 @@ DISTFILES=	xmlns.h mod_proxy_xml.c
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for rewriting URI references in XML
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
+
+WRKSRC=	${WRKDIR}
 
 USE_GNOME=	libxml2
 USE_APACHE=	2.0+
 
-XML2_INC=	${LOCALBASE}/include/libxml2
-XML2_LIB=	${LOCALBASE}/lib
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+AP_INC=	${LOCALBASE}/include/libxml2
+AP_LIB=	${LOCALBASE}/lib -lxml2
+
+pre-fetch:
+	@${MKDIR} ${WRKDIR}/
+
+post-fetch:
+	@${CP} ${DISTDIR}/xmlns.h ${DISTDIR}/mod_proxy_xml.c ${WRKDIR}/
 
 do-extract:
 	@${DO_NADA}
-
-pre-fetch:
-	@${MKDIR} ${WRKDIR}
-
-post-fetch:
-	@${CP} ${DISTDIR}/xmlns.h ${DISTDIR}/mod_proxy_xml.c ${WRKDIR}
-
-do-build:
-	@(cd ${WRKDIR} && ${APXS} -c -I ${XML2_INC} -L ${XML2_LIB} -lxml2 mod_proxy_xml.c)
-
-do-install:
-	@(cd ${WRKDIR} && ${APXS} -A -i mod_proxy_xml.la)
 
 .include <bsd.port.mk>
