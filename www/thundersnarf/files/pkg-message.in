@@ -1,0 +1,11 @@
+
+If you haven't setup your PostgreSQL server, set it up accordingly and create
+snortsnarf's database:
+
+%%PREFIX%%/bin/psql postgres -U pgsql < \
+	%%WWWDIR%%/protected/data/db/pg_thundersnarf.sql
+
+Run Thunder Snarf from /etc/crontab. Schedule it according to your machine
+load availability, for example:
+
+*/20 * * * * root %%PREFIX%%/bin/thundersnarf >/dev/null 2>&1

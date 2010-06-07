@@ -1,0 +1,8 @@
+ThunderSnarf is a web reporting and trending tool for Thunder Cache Pro which
+has the main goal to provide a strategic overview of how Thunder is caching and
+what it is caching, aggregating value and helping on decision making regarding
+the real web acceleration rates and allowing one to identify unefficient cache
+patterns, plugins, as well as domains which should have a plugin written for
+and, off course, the top efficient domains and caching patterns as well.
+
+WWW:	http://www.thundercache.com.br

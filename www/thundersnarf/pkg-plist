@@ -1,0 +1,6 @@
+bin/thundersnarf
+bin/thundersnarf-poll
+%%DOCSDIR%%/README.pt_BR
+@dirrm %%DOCSDIR%%
+@unexec echo "completely uninstalling %D/%%WWWDIR%%"
+@unexec /bin/rm -rf %D/%%WWWDIR%% 2>/dev/null || true
