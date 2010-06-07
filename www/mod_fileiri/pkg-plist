@@ -1,3 +1,0 @@
-%%APACHE_DIR%%/mod_fileiri.so
-@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
-@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
