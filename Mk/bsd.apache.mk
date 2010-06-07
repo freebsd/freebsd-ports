@@ -251,7 +251,9 @@ AP_CUR_VERSION!=	${ECHO_CMD} ${APACHE_PORT} | ${SED} -ne 's,.*/apache\([0-9]*\).
 .if defined(AP_CUR_VERSION)
 VERSION_CHECK!=		eval `${ECHO_CMD} "[ ${AP_VERSION} -eq ${AP_CUR_VERSION} ]" | ${SED} -e 's/- -eq/ -ge/ ; s/+ -eq/ -le/' ` ; ${ECHO_CMD} $${?}
 .   if ${VERSION_CHECK} == 1
+.if !defined(AP_IGNORE_VERSION_CHECK)
 IGNORE=		${_ERROR_MSG} apache${AP_CUR_VERSION} is installed (or APACHE_PORT is defined) and port requires ${USE_APACHE}
+.endif
 .   endif
 APACHE_VERSION=	${AP_CUR_VERSION}
 .else
