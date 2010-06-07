@@ -1,0 +1,10 @@
+Notes:
+
+ * See the documentation at http://mathias-kettner.de/checkmk_livestatus.html
+
+ * Requires that net-mgmt/nagios be built with WITH_EVENT_BROKER=yes or
+   livestatus.o will never be loaded...
+
+ * unixcat (for use with reading from the socket and/or inetd(8) support)
+   moved to $LOCALBASE/lib/mk-livestatus from $LOCALBASE/bin in
+   order to avoid a conflict with sysutils/ucspi-unix
