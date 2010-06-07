@@ -4,14 +4,13 @@
 #
 # $FreeBSD$
 #
+#		http://www.isc.meiji.ac.jp/~ee77038/ruby/program/
 
 PORTNAME=	libpng
 PORTVERSION=	0.3.3
 PORTREVISION=	4
 CATEGORIES=	graphics ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-#		http://www.isc.meiji.ac.jp/~ee77038/ruby/program/
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	LOCAL/knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
