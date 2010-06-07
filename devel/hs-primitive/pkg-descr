@@ -1,0 +1,4 @@
+This package provides wrappers for primitive array operations from
+GHC.Prim.
+
+WWW: http://code.haskell.org/primitive
