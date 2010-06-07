@@ -48,7 +48,7 @@ OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		DUMB "D.U.M.B. plugin for MOD, S3M and other" on\
 		NOTIFY "support for OSD notifications into GTKUI plugin" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_PULSE)
 CONFIGURE_ARGS+=	--disable-pulse
@@ -184,7 +184,7 @@ PLIST_SUB+=	CDDA="@comment "
 .else
 PLIST_SUB+=	CDDA=""
 LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio \
-		cddb.4:${PORTSDIR}:audio/libcddb
+		cddb.4:${PORTSDIR}/audio/libcddb
 .endif
 
 .if defined(WITHOUT_GME)
@@ -209,4 +209,4 @@ PLIST_SUB+=	NOTIFY=""
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
