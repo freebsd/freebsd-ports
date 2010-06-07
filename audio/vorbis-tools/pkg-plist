@@ -23,6 +23,4 @@ share/examples/vorbis-tools/ogg123rc
 %%NLS%%share/locale/sv/LC_MESSAGES/vorbis-tools.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/vorbis-tools.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/vorbis-tools.mo
-%%NLS%%@dirrmtry share/locale/en_GB/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_GB
 @dirrm share/examples/vorbis-tools
