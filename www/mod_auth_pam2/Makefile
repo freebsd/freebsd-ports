@@ -21,12 +21,13 @@ MAKE_JOBS_SAFE=	yes
 LATEST_LINK=	mod_auth_pam2
 
 USE_APACHE=	20+
-USE_GMAKE=	YES
-MAKE_ENV+=	APXS=${APXS}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	*.html
 PORTEXAMPLES=	pam-httpd.sample
+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
