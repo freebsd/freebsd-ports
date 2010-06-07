@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.1.8
+DISTVERSION=	3.2.2
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -43,6 +43,7 @@ OPTIONS=	DEBUG "Build with debugging symbols" off
 PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
 
 KMODDIR=	/boot/modules
+SRC_BASE?=	/usr/src
 
 VBOX_BIN=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/src
 
@@ -53,6 +54,10 @@ KMK_FLAGS=	HostDrivers-src vboxdrv-mod VBoxNetFlt-src VBoxNetAdp-src
 .if defined(WITH_DEBUG)
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
+.endif
+
+.if ${OSVERSION} >= 900012
+BROKEN=	Build and stability problems on recent CURRENT
 .endif
 
 .if ${OSVERSION} < 700000
@@ -87,12 +92,13 @@ pre-build:
 
 do-build:
 	cd ${WRKSRC} && ${SH} env.sh && cd ${WRKSRC}/src/VBox/HostDrivers && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
-	cd ${VBOX_BIN} && make
+	cd ${VBOX_BIN} && make SYSDIR=${SRC_BASE}/sys
 
 do-install:
 	${MKDIR} ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxdrv/vboxdrv.ko ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko ${KMODDIR}
+	@/usr/sbin/kldxref ${KMODDIR}
 
 .include <bsd.port.post.mk>

@@ -1,9 +1,0 @@
---- src/VBox/HostDrivers/VBoxNetAdp/freebsd/files_vboxnetadp.orig	2010-03-02 09:41:17.000000000 +0100
-+++ src/VBox/HostDrivers/VBoxNetAdp/freebsd/files_vboxnetadp	2010-03-02 09:41:43.000000000 +0100
-@@ -75,5 +75,6 @@
-     ${PATH_ROOT}/src/VBox/Runtime/include/internal/magics.h=>include/internal/magics.h \
-     ${PATH_ROOT}/src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h=>r0drv/freebsd/the-freebsd-kernel.h \
-     ${PATH_OUT}/version-generated.h=>version-generated.h \
-+    ${PATH_OUT}/product-generated.h=>product-generated.h \
- "
- 

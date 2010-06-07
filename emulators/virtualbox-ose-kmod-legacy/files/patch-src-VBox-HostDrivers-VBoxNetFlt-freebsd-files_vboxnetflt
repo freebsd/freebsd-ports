@@ -1,9 +1,0 @@
---- src/VBox/HostDrivers/VBoxNetFlt/freebsd/files_vboxnetflt.orig	2010-02-12 20:49:08.000000000 +0100
-+++ src/VBox/HostDrivers/VBoxNetFlt/freebsd/files_vboxnetflt	2010-03-02 09:59:00.000000000 +0100
-@@ -80,5 +80,6 @@
-     ${PATH_ROOT}/src/VBox/Runtime/include/internal/magics.h=>include/internal/magics.h \
-     ${PATH_ROOT}/src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h=>r0drv/freebsd/the-freebsd-kernel.h \
-     ${PATH_OUT}/version-generated.h=>version-generated.h \
-+    ${PATH_OUT}/product-generated.h=>product-generated.h \
- "
- 
