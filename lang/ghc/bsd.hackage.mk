@@ -87,6 +87,7 @@ pcap_port=			net/hs-pcap
 pcre-light_port=		devel/hs-pcre-light	# lib_depends
 polyparse_port=			textproc/hs-polyparse
 porte_port=			ports-mgmt/hs-porte	# executable
+primitive_port=			devel/hs-primitive
 probability_port=		math/hs-probability
 QuickCheck_port=		devel/hs-QuickCheck
 reactive_port=			devel/hs-reactive

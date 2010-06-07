@@ -1,0 +1,25 @@
+@comment $FreeBSD$
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/primitive-memops.h
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Primitive.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Primitive.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Primitive/Addr.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Primitive/Array.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Primitive/ByteArray.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Primitive/MachDeps.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Primitive/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Primitive
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
