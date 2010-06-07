@@ -125,6 +125,7 @@ uuagc_port=			devel/hs-uuagc		# executable
 uulib_port=			devel/hs-uulib
 uvector_port=			devel/hs-uvector
 uvector-algorithms_port=	devel/hs-uvector-algorithms
+vector_port=			devel/hs-vector
 vector-space_port=		math/hs-vector-space
 X11_port=			x11/hs-X11		# lib_depends
 X11-xft_port=			x11/hs-X11-xft

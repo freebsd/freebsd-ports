@@ -1,0 +1,42 @@
+@comment $FreeBSD$
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/vector.h
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Fusion/Stream.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Fusion/Stream/Monadic.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Fusion/Stream/Size.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Fusion/Util.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Generic.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Generic/Base.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Generic/Mutable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Generic/New.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Internal/Check.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Mutable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Primitive.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Primitive/Mutable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Storable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Storable/Internal.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Storable/Mutable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Unboxed.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Unboxed/Base.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Unboxed/Mutable.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
+%%LIBDIR_REL%%/register.sh
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Unboxed
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Storable
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Primitive
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Internal
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Generic
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Fusion/Stream
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector/Fusion
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Vector
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
+@dirrm %%LIBDIR_REL%%
+@exec /bin/sh %D/%%LIBDIR_REL%%/register.sh
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
+@unexec %D/bin/ghc-pkg unregister %%PORTNAME%%-%%PORTVERSION%%
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old

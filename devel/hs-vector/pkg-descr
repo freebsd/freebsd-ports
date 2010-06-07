@@ -1,0 +1,4 @@
+An efficient implementation of Int-indexed arrays (both mutable and
+immutable), with a powerful loop fusion optimization framework.
+
+WWW: http://code.haskell.org/vector
