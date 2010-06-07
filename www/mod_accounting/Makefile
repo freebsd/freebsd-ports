@@ -25,17 +25,20 @@ MAKE_ARGS+=	APXS="${APXS}"
 
 .include <bsd.port.options.mk>
 
-.if defined(WITHOUT_PGSQL)
-MAKE_ARGS+=	WITHOUT_PGSQL=YES
-.else
+.if defined(WIT_PGSQL)
 USE_PGSQL=	YES
+AP_EXTRAS+=	-DNEED_PGSQL
 .endif
 
-.if defined(WITHOUT_MYSQL)
-MAKE_ARGS+=	WITHOUT_MYSQL=YES
-.else
+.if defined(WITH_MYSQL)
 USE_MYSQL=	YES
+AP_EXTRAS+=	-DNEED_MYSQL
 .endif
+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+PLIST_FILES+=	%%DATADIR%%/schema.sql
+PLIST_DIRS+=	%%DATADIR%%
 
 PORTDOCS=		README FAQ.txt LICENSE
 
