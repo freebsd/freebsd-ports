@@ -17,8 +17,13 @@ COMMENT=	An Apache module that records traffic statistics into a database
 
 MAKE_JOBS_SAFE=  yes
 
+OPTIONS=	MYSQL	"Enable MySQL support" on \
+			PGSQL	"Enable PGSQL support" on
+
 USE_APACHE=	13
 MAKE_ARGS+=	APXS="${APXS}"
+
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_PGSQL)
 MAKE_ARGS+=	WITHOUT_PGSQL=YES
@@ -33,12 +38,6 @@ USE_MYSQL=	YES
 .endif
 
 PORTDOCS=		README FAQ.txt LICENSE
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "      WITHOUT_MYSQL        Disable MySQL support"
-	@${ECHO} "      WITHOUT_PGSQL        Disable PostgreSQL support"
-	@${ECHO} ""
 
 post-install:
 	@${MKDIR} ${DATADIR}/
