@@ -2,11 +2,14 @@ bin/cb_console_runner
 bin/cb_share_config
 bin/codeblocks
 bin/codesnippets
+include/codeblocks/CharDistribution.h
+include/codeblocks/JpCntx.h
 include/codeblocks/annoyingdialog.h
 include/codeblocks/autodetectcompilers.h
 include/codeblocks/backgroundthread.h
 include/codeblocks/base64.h
 include/codeblocks/blockallocated.h
+include/codeblocks/cbauibook.h
 include/codeblocks/cbeditor.h
 include/codeblocks/cbeditorprintout.h
 include/codeblocks/cbexception.h
@@ -69,12 +72,33 @@ include/codeblocks/menuitemsmanager.h
 include/codeblocks/misctreeitemdata.h
 include/codeblocks/multiselectdlg.h
 include/codeblocks/newfromtemplatedlg.h
+include/codeblocks/nsBig5Prober.h
+include/codeblocks/nsCharSetProber.h
+include/codeblocks/nsCodingStateMachine.h
+include/codeblocks/nsEUCJPProber.h
+include/codeblocks/nsEUCKRProber.h
+include/codeblocks/nsEUCTWProber.h
+include/codeblocks/nsError.h
+include/codeblocks/nsEscCharsetProber.h
+include/codeblocks/nsGB2312Prober.h
+include/codeblocks/nsHebrewProber.h
+include/codeblocks/nsLatin1Prober.h
+include/codeblocks/nsMBCSGroupProber.h
+include/codeblocks/nsPkgInt.h
+include/codeblocks/nsSBCSGroupProber.h
+include/codeblocks/nsSBCharSetProber.h
+include/codeblocks/nsSJISProber.h
+include/codeblocks/nsUTF8Prober.h
+include/codeblocks/nsUniversalDetector.h
+include/codeblocks/nscore.h
 include/codeblocks/personalitymanager.h
 include/codeblocks/pipedprocess.h
 include/codeblocks/pluginmanager.h
 include/codeblocks/pluginsconfigurationdlg.h
+include/codeblocks/prcpucfg.h
 include/codeblocks/prep.h
 include/codeblocks/printing_types.h
+include/codeblocks/prmem.h
 include/codeblocks/projectbuildtarget.h
 include/codeblocks/projectdepsdlg.h
 include/codeblocks/projectfile.h
@@ -86,6 +110,7 @@ include/codeblocks/projectmanager.h
 include/codeblocks/projectoptionsdlg.h
 include/codeblocks/projectsfilemasksdlg.h
 include/codeblocks/projecttemplateloader.h
+include/codeblocks/prtypes.h
 include/codeblocks/replacedlg.h
 include/codeblocks/safedelete.h
 include/codeblocks/scripting/bindings/sc_base_types.h
@@ -106,6 +131,7 @@ include/codeblocks/scripting/sqplus/SquirrelVM.h
 include/codeblocks/scripting/sqplus/sqplus.h
 include/codeblocks/scriptingmanager.h
 include/codeblocks/scriptsecuritywarningdlg.h
+include/codeblocks/scrollingdialog.h
 include/codeblocks/sdk.h
 include/codeblocks/sdk_common.h
 include/codeblocks/sdk_events.h
@@ -121,30 +147,240 @@ include/codeblocks/toolsmanager.h
 include/codeblocks/uservarmanager.h
 include/codeblocks/virtualbuildtargetsdlg.h
 include/codeblocks/workspaceloader.h
-include/codeblocks/wxFlatNotebook/fnb_customize_dlg.h
-include/codeblocks/wxFlatNotebook/fnb_resources.h
-include/codeblocks/wxFlatNotebook/fnb_singleton.h
-include/codeblocks/wxFlatNotebook/fnb_smart_ptr.h
-include/codeblocks/wxFlatNotebook/popup_dlg.h
-include/codeblocks/wxFlatNotebook/renderer.h
-include/codeblocks/wxFlatNotebook/wxFNBDropTarget.h
-include/codeblocks/wxFlatNotebook/wxFlatNotebook.h
-include/codeblocks/wxFlatNotebook/xh_fnb.h
 include/codeblocks/wxscintilla/include/wx/wxscintilla.h
 include/codeblocks/xtra_res.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/axis.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/bar3dchartpoints.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/barchartpoints.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chart.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartcolors.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartctrl.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartdef.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartpoints.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartpointstypes.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartsizes.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/charttypes.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/chartwindow.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/legend.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/legendwindow.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/pie3dchartpoints.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/piechartpoints.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/points.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/xaxis.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/xaxiswindow.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/yaxis.h
+include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx/yaxiswindow.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/fnb_singleton.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/fnb_smart_ptr.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/renderer.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/wxFNBDropTarget.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/wxFlatNotebook.h
+include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook/wxFlatNotebookSDK.h
+include/wxSmithContribItems/wxthings/wxthings/include/wx/things/thingdef.h
+include/wxSmithContribItems/wxthings/wxthings/include/wx/things/toggle.h
+include/wxsmith/contrib/include/wx/propgrid/advprops.h
+include/wxsmith/contrib/include/wx/propgrid/extras.h
+include/wxsmith/contrib/include/wx/propgrid/manager.h
+include/wxsmith/contrib/include/wx/propgrid/odcombo.h
+include/wxsmith/contrib/include/wx/propgrid/pg_dox_mainpage.h
+include/wxsmith/contrib/include/wx/propgrid/propdev.h
+include/wxsmith/contrib/include/wx/propgrid/propgrid.h
+include/wxsmith/properties/wxsarraystringeditordlg.h
+include/wxsmith/properties/wxsarraystringproperty.h
+include/wxsmith/properties/wxsboolproperty.h
+include/wxsmith/properties/wxscustomeditorproperty.h
+include/wxsmith/properties/wxsemptyproperty.h
+include/wxsmith/properties/wxsenumproperty.h
+include/wxsmith/properties/wxsflagsproperty.h
+include/wxsmith/properties/wxslongproperty.h
+include/wxsmith/properties/wxsproperties.h
+include/wxsmith/properties/wxsproperty.h
+include/wxsmith/properties/wxspropertycontainer.h
+include/wxsmith/properties/wxspropertygridmanager.h
+include/wxsmith/properties/wxspropertystream.h
+include/wxsmith/properties/wxsquickpropspanel.h
+include/wxsmith/properties/wxsstringproperty.h
+include/wxsmith/wxsadvqpp.h
+include/wxsmith/wxsadvqppchild.h
+include/wxsmith/wxsautoresourcetreeimage.h
+include/wxsmith/wxscodinglang.h
+include/wxsmith/wxseditor.h
+include/wxsmith/wxsgui.h
+include/wxsmith/wxsguifactory.h
+include/wxsmith/wxsproject.h
+include/wxsmith/wxsresource.h
+include/wxsmith/wxsresourcefactory.h
+include/wxsmith/wxsresourcetree.h
+include/wxsmith/wxsresourcetreeitemdata.h
+include/wxsmith/wxwidgets/properties/wxsarraystringcheckeditordlg.h
+include/wxsmith/wxwidgets/properties/wxsarraystringcheckproperty.h
+include/wxsmith/wxwidgets/properties/wxsbitmapiconeditordlg.h
+include/wxsmith/wxwidgets/properties/wxsbitmapiconproperty.h
+include/wxsmith/wxwidgets/properties/wxscolourproperty.h
+include/wxsmith/wxwidgets/properties/wxsdimensionproperty.h
+include/wxsmith/wxwidgets/properties/wxsfonteditordlg.h
+include/wxsmith/wxwidgets/properties/wxsfontfaceeditordlg.h
+include/wxsmith/wxwidgets/properties/wxsfontproperty.h
+include/wxsmith/wxwidgets/properties/wxspositionsizeproperty.h
+include/wxsmith/wxwidgets/properties/wxssimplefonteditordlg.h
+include/wxsmith/wxwidgets/properties/wxssizerflagsproperty.h
+include/wxsmith/wxwidgets/properties/wxsstyleproperty.h
+include/wxsmith/wxwidgets/wxsbaseproperties.h
+include/wxsmith/wxwidgets/wxscodegenerator.h
+include/wxsmith/wxwidgets/wxscodercontext.h
+include/wxsmith/wxwidgets/wxscontainer.h
+include/wxsmith/wxwidgets/wxscorrector.h
+include/wxsmith/wxwidgets/wxscustomwidgetxmlhandler.h
+include/wxsmith/wxwidgets/wxsdeleteitemres.h
+include/wxsmith/wxwidgets/wxsdialogres.h
+include/wxsmith/wxwidgets/wxsdrawingwindow.h
+include/wxsmith/wxwidgets/wxsevents.h
+include/wxsmith/wxwidgets/wxseventseditor.h
+include/wxsmith/wxwidgets/wxsexproperties.h
+include/wxsmith/wxwidgets/wxsflags.h
+include/wxsmith/wxwidgets/wxsframeres.h
+include/wxsmith/wxwidgets/wxsgridpanel.h
+include/wxsmith/wxwidgets/wxsitem.h
+include/wxsmith/wxwidgets/wxsitemeditor.h
+include/wxsmith/wxwidgets/wxsitemeditorcontent.h
+include/wxsmith/wxwidgets/wxsitemeditordragassist.h
+include/wxsmith/wxwidgets/wxsitemfactory.h
+include/wxsmith/wxwidgets/wxsiteminfo.h
+include/wxsmith/wxwidgets/wxsitemres.h
+include/wxsmith/wxwidgets/wxsitemresdata.h
+include/wxsmith/wxwidgets/wxsitemresdataobject.h
+include/wxsmith/wxwidgets/wxsitemrestreedata.h
+include/wxsmith/wxwidgets/wxsitemundobuffer.h
+include/wxsmith/wxwidgets/wxsnewwindowdlg.h
+include/wxsmith/wxwidgets/wxspanelres.h
+include/wxsmith/wxwidgets/wxsparent.h
+include/wxsmith/wxwidgets/wxspredefinedids.h
+include/wxsmith/wxwidgets/wxsscrollingdialogres.h
+include/wxsmith/wxwidgets/wxssizer.h
+include/wxsmith/wxwidgets/wxssizerparentqp.h
+include/wxsmith/wxwidgets/wxsstyle.h
+include/wxsmith/wxwidgets/wxstool.h
+include/wxsmith/wxwidgets/wxstoolspace.h
+include/wxsmith/wxwidgets/wxswidget.h
+include/wxsmith/wxwidgets/wxwidgetsgui.h
+include/wxsmith/wxwidgets/wxwidgetsguiappadoptingdlg.h
+include/wxsmith/wxwidgets/wxwidgetsguiconfigpanel.h
+include/wxsmith/wxwidgets/wxwidgetsres.h
+include/wxsmith/wxwidgets/wxwidgetsresfactory.h
+lib/codeblocks/plugins/libAutoVersioning.la
+lib/codeblocks/plugins/libAutoVersioning.so
+lib/codeblocks/plugins/libBrowseTracker.la
+lib/codeblocks/plugins/libBrowseTracker.so
+lib/codeblocks/plugins/libCccc.la
+lib/codeblocks/plugins/libCccc.so
+lib/codeblocks/plugins/libCppCheck.la
+lib/codeblocks/plugins/libCppCheck.so
+lib/codeblocks/plugins/libHexEditor.la
+lib/codeblocks/plugins/libHexEditor.so
+lib/codeblocks/plugins/libIncrementalSearch.la
+lib/codeblocks/plugins/libIncrementalSearch.so
+lib/codeblocks/plugins/libMouseSap.la
+lib/codeblocks/plugins/libMouseSap.so
+lib/codeblocks/plugins/libProfiler.la
+lib/codeblocks/plugins/libProfiler.so
+lib/codeblocks/plugins/libRegExTestbed.la
+lib/codeblocks/plugins/libRegExTestbed.so
+lib/codeblocks/plugins/libSymTab.la
+lib/codeblocks/plugins/libSymTab.so
+lib/codeblocks/plugins/libThreadSearch.la
+lib/codeblocks/plugins/libThreadSearch.so
+lib/codeblocks/plugins/libValgrind.la
+lib/codeblocks/plugins/libValgrind.so
+lib/codeblocks/plugins/libastyle.la
+lib/codeblocks/plugins/libastyle.so
+lib/codeblocks/plugins/libautosave.la
+lib/codeblocks/plugins/libautosave.so
+lib/codeblocks/plugins/libbyogames.la
+lib/codeblocks/plugins/libbyogames.so
+lib/codeblocks/plugins/libcb_koders.la
+lib/codeblocks/plugins/libcb_koders.so
+lib/codeblocks/plugins/libclasswizard.la
+lib/codeblocks/plugins/libclasswizard.so
+lib/codeblocks/plugins/libcodecompletion.la
+lib/codeblocks/plugins/libcodecompletion.so
+lib/codeblocks/plugins/libcodesnippets.la
+lib/codeblocks/plugins/libcodesnippets.so
+lib/codeblocks/plugins/libcodestat.la
+lib/codeblocks/plugins/libcodestat.so
+lib/codeblocks/plugins/libcompiler.la
+lib/codeblocks/plugins/libcompiler.so
+lib/codeblocks/plugins/libcopystrings.la
+lib/codeblocks/plugins/libcopystrings.so
+lib/codeblocks/plugins/libdebugger.la
+lib/codeblocks/plugins/libdebugger.so
+lib/codeblocks/plugins/libdefaultmimehandler.la
+lib/codeblocks/plugins/libdefaultmimehandler.so
+lib/codeblocks/plugins/libdragscroll.la
+lib/codeblocks/plugins/libdragscroll.so
+lib/codeblocks/plugins/libenvvars.la
+lib/codeblocks/plugins/libenvvars.so
+lib/codeblocks/plugins/libexporter.la
+lib/codeblocks/plugins/libexporter.so
+lib/codeblocks/plugins/libheaderfixup.la
+lib/codeblocks/plugins/libheaderfixup.so
+lib/codeblocks/plugins/libhelp_plugin.la
+lib/codeblocks/plugins/libhelp_plugin.so
+lib/codeblocks/plugins/libkeybinder.la
+lib/codeblocks/plugins/libkeybinder.so
+lib/codeblocks/plugins/liblib_finder.la
+lib/codeblocks/plugins/liblib_finder.so
+lib/codeblocks/plugins/libopenfileslist.la
+lib/codeblocks/plugins/libopenfileslist.so
+lib/codeblocks/plugins/libprojectsimporter.la
+lib/codeblocks/plugins/libprojectsimporter.so
+lib/codeblocks/plugins/libscriptedwizard.la
+lib/codeblocks/plugins/libscriptedwizard.so
+lib/codeblocks/plugins/libtodo.la
+lib/codeblocks/plugins/libtodo.so
+lib/codeblocks/plugins/libwxSmithAui.la
+lib/codeblocks/plugins/libwxSmithAui.so
+lib/codeblocks/plugins/libwxsmith.la
+lib/codeblocks/plugins/libwxsmith.so
+lib/codeblocks/plugins/libwxsmithcontribitems.la
+lib/codeblocks/plugins/libwxsmithcontribitems.so
 lib/libcodeblocks.la
 lib/libcodeblocks.so
 lib/libcodeblocks.so.0
 lib/libwxsmithlib.la
 lib/libwxsmithlib.so
 lib/libwxsmithlib.so.0
+lib/pkgconfig/wxsmith-contrib.pc
+lib/pkgconfig/wxsmith.pc
+lib/pkgconfig/wxsmithaui.pc
+lib/wxSmithContribItems/libwxchartctrl.la
+lib/wxSmithContribItems/libwxchartctrl.so
+lib/wxSmithContribItems/libwxchartctrl.so.0
+lib/wxSmithContribItems/libwxcustombutton.la
+lib/wxSmithContribItems/libwxcustombutton.so
+lib/wxSmithContribItems/libwxcustombutton.so.0
+lib/wxSmithContribItems/libwxflatnotebook.la
+lib/wxSmithContribItems/libwxflatnotebook.so
+lib/wxSmithContribItems/libwxflatnotebook.so.0
 libdata/pkgconfig/codeblocks.pc
 share/applications/codeblocks.desktop
+share/icons/hicolor/48x48/mimetypes/application-x-codeblocks-workspace.png
+share/icons/hicolor/48x48/mimetypes/application-x-codeblocks.png
+share/mime/application/x-codeblocks-workspace.xml
+share/mime/application/x-codeblocks.xml
+share/mime/packages/codeblocks.xml
+share/pixmaps/codeblocks.png
+%%DATADIR%%/AutoVersioning.zip
 %%DATADIR%%/BrowseTracker.zip
+%%DATADIR%%/Cccc.zip
+%%DATADIR%%/CppCheck.zip
+%%DATADIR%%/HexEditor.zip
+%%DATADIR%%/IncrementalSearch.zip
+%%DATADIR%%/MouseSap.zip
 %%DATADIR%%/Profiler.zip
 %%DATADIR%%/RegExTestbed.zip
 %%DATADIR%%/SymTab.zip
 %%DATADIR%%/ThreadSearch.zip
+%%DATADIR%%/Valgrind.zip
 %%DATADIR%%/astyle.zip
 %%DATADIR%%/autosave.zip
 %%DATADIR%%/byogames.zip
@@ -154,11 +390,13 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/codesnippets.zip
 %%DATADIR%%/codestat.zip
 %%DATADIR%%/compiler.zip
+%%DATADIR%%/copystrings.zip
 %%DATADIR%%/debugger.zip
 %%DATADIR%%/defaultmimehandler.zip
 %%DATADIR%%/dragscroll.zip
 %%DATADIR%%/envvars.zip
 %%DATADIR%%/exporter.zip
+%%DATADIR%%/headerfixup.zip
 %%DATADIR%%/help_plugin.zip
 %%DATADIR%%/icons/app.xpm
 %%DATADIR%%/icons/app_64.xpm
@@ -203,12 +441,23 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/16x16/folder.png
 %%DATADIR%%/images/16x16/folder_new.png
 %%DATADIR%%/images/16x16/folder_open.png
+%%DATADIR%%/images/16x16/folder_yel.png
+%%DATADIR%%/images/16x16/folder_yel_open.png
 %%DATADIR%%/images/16x16/goto.png
 %%DATADIR%%/images/16x16/history_clear.png
 %%DATADIR%%/images/16x16/idea.png
 %%DATADIR%%/images/16x16/info.png
+%%DATADIR%%/images/16x16/mark.png
+%%DATADIR%%/images/16x16/mark_clear.png
+%%DATADIR%%/images/16x16/mark_next.png
+%%DATADIR%%/images/16x16/mark_prev.png
 %%DATADIR%%/images/16x16/newproject.png
+%%DATADIR%%/images/16x16/next.png
 %%DATADIR%%/images/16x16/plug.png
+%%DATADIR%%/images/16x16/prev.png
+%%DATADIR%%/images/16x16/project-readonly.png
+%%DATADIR%%/images/16x16/project.png
+%%DATADIR%%/images/16x16/projectnew.png
 %%DATADIR%%/images/16x16/redo.png
 %%DATADIR%%/images/16x16/run.png
 %%DATADIR%%/images/16x16/searchreplace.png
@@ -218,16 +467,115 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/16x16/view_tree.png
 %%DATADIR%%/images/16x16/window.png
 %%DATADIR%%/images/16x16/window_fullscreen.png
-%%DATADIR%%/images/ThreadSearch/findf.png
-%%DATADIR%%/images/ThreadSearch/findfdisabled.png
-%%DATADIR%%/images/ThreadSearch/options.png
-%%DATADIR%%/images/ThreadSearch/optionsdisabled.png
-%%DATADIR%%/images/ThreadSearch/stop.png
-%%DATADIR%%/images/ThreadSearch/stopdisabled.png
+%%DATADIR%%/images/16x16/workspace-readonly.png
+%%DATADIR%%/images/16x16/workspace.png
+%%DATADIR%%/images/ThreadSearch/16x16/findf.png
+%%DATADIR%%/images/ThreadSearch/16x16/findfdisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/folder.png
+%%DATADIR%%/images/ThreadSearch/16x16/folderdisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/folderselected.png
+%%DATADIR%%/images/ThreadSearch/16x16/off.png
+%%DATADIR%%/images/ThreadSearch/16x16/offdisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/on.png
+%%DATADIR%%/images/ThreadSearch/16x16/ondisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/openfiles.png
+%%DATADIR%%/images/ThreadSearch/16x16/openfiles1.png
+%%DATADIR%%/images/ThreadSearch/16x16/openfiles1disabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/openfiles1selected.png
+%%DATADIR%%/images/ThreadSearch/16x16/openfilesdisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/openfilesselected.png
+%%DATADIR%%/images/ThreadSearch/16x16/options.png
+%%DATADIR%%/images/ThreadSearch/16x16/optionsdisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/project.png
+%%DATADIR%%/images/ThreadSearch/16x16/project1.png
+%%DATADIR%%/images/ThreadSearch/16x16/project1disabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/project1selected.png
+%%DATADIR%%/images/ThreadSearch/16x16/projectdisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/projectselected.png
+%%DATADIR%%/images/ThreadSearch/16x16/showdir.png
+%%DATADIR%%/images/ThreadSearch/16x16/showdirdisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/stop.png
+%%DATADIR%%/images/ThreadSearch/16x16/stopdisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/target.png
+%%DATADIR%%/images/ThreadSearch/16x16/target1.png
+%%DATADIR%%/images/ThreadSearch/16x16/target1disabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/target1selected.png
+%%DATADIR%%/images/ThreadSearch/16x16/targetdisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/targetselected.png
+%%DATADIR%%/images/ThreadSearch/16x16/workspace.png
+%%DATADIR%%/images/ThreadSearch/16x16/workspacedisabled.png
+%%DATADIR%%/images/ThreadSearch/16x16/workspaceselected.png
+%%DATADIR%%/images/ThreadSearch/22x22/file.png
+%%DATADIR%%/images/ThreadSearch/22x22/findf.png
+%%DATADIR%%/images/ThreadSearch/22x22/findfdisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/folder.png
+%%DATADIR%%/images/ThreadSearch/22x22/folderdisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/folderselected.png
+%%DATADIR%%/images/ThreadSearch/22x22/lookingglass.png
+%%DATADIR%%/images/ThreadSearch/22x22/off.png
+%%DATADIR%%/images/ThreadSearch/22x22/offdisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/on.png
+%%DATADIR%%/images/ThreadSearch/22x22/ondisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/openfiles.png
+%%DATADIR%%/images/ThreadSearch/22x22/openfilesdisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/openfilesselected.png
+%%DATADIR%%/images/ThreadSearch/22x22/options.png
+%%DATADIR%%/images/ThreadSearch/22x22/optionsdisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/project.png
+%%DATADIR%%/images/ThreadSearch/22x22/project1.png
+%%DATADIR%%/images/ThreadSearch/22x22/project1disabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/project1selected.png
+%%DATADIR%%/images/ThreadSearch/22x22/project2.png
+%%DATADIR%%/images/ThreadSearch/22x22/project2d.png
+%%DATADIR%%/images/ThreadSearch/22x22/project2s.png
+%%DATADIR%%/images/ThreadSearch/22x22/projectdisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/projectselected.png
+%%DATADIR%%/images/ThreadSearch/22x22/showdir.png
+%%DATADIR%%/images/ThreadSearch/22x22/showdirdisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/stop.png
+%%DATADIR%%/images/ThreadSearch/22x22/stopdisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/target.png
+%%DATADIR%%/images/ThreadSearch/22x22/target1.png
+%%DATADIR%%/images/ThreadSearch/22x22/target1disabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/target1selected.png
+%%DATADIR%%/images/ThreadSearch/22x22/targetdisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/targetselected.png
+%%DATADIR%%/images/ThreadSearch/22x22/workspace.png
+%%DATADIR%%/images/ThreadSearch/22x22/workspacedisabled.png
+%%DATADIR%%/images/ThreadSearch/22x22/workspaceselected.png
+%%DATADIR%%/images/ThreadSearch/folder.png
+%%DATADIR%%/images/ThreadSearch/folderdisabled.png
+%%DATADIR%%/images/ThreadSearch/folderselected.png
+%%DATADIR%%/images/ThreadSearch/off.png
+%%DATADIR%%/images/ThreadSearch/on.png
+%%DATADIR%%/images/ThreadSearch/openfiles.png
+%%DATADIR%%/images/ThreadSearch/openfilesdisabled.png
+%%DATADIR%%/images/ThreadSearch/openfilesselected.png
+%%DATADIR%%/images/ThreadSearch/project.png
+%%DATADIR%%/images/ThreadSearch/project1.png
+%%DATADIR%%/images/ThreadSearch/project1disabled.png
+%%DATADIR%%/images/ThreadSearch/project1selected.png
+%%DATADIR%%/images/ThreadSearch/projectdisabled.png
+%%DATADIR%%/images/ThreadSearch/projectselected.png
+%%DATADIR%%/images/ThreadSearch/showdir.png
+%%DATADIR%%/images/ThreadSearch/showdirdisabled.png
+%%DATADIR%%/images/ThreadSearch/target.png
+%%DATADIR%%/images/ThreadSearch/target1.png
+%%DATADIR%%/images/ThreadSearch/target1disabled.png
+%%DATADIR%%/images/ThreadSearch/target1selected.png
+%%DATADIR%%/images/ThreadSearch/targetdisabled.png
+%%DATADIR%%/images/ThreadSearch/targetselected.png
+%%DATADIR%%/images/ThreadSearch/workspace.png
+%%DATADIR%%/images/ThreadSearch/workspacedisabled.png
+%%DATADIR%%/images/ThreadSearch/workspaceselected.png
 %%DATADIR%%/images/ascii.png
+%%DATADIR%%/images/closebutton.png
 %%DATADIR%%/images/codeblocks.png
 %%DATADIR%%/images/codecompletion/class.png
 %%DATADIR%%/images/codecompletion/class_folder.png
+%%DATADIR%%/images/codecompletion/class_private.png
+%%DATADIR%%/images/codecompletion/class_protected.png
+%%DATADIR%%/images/codecompletion/class_public.png
 %%DATADIR%%/images/codecompletion/ctor_private.png
 %%DATADIR%%/images/codecompletion/ctor_protected.png
 %%DATADIR%%/images/codecompletion/ctor_public.png
@@ -235,8 +583,23 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/codecompletion/dtor_protected.png
 %%DATADIR%%/images/codecompletion/dtor_public.png
 %%DATADIR%%/images/codecompletion/enum.png
+%%DATADIR%%/images/codecompletion/enum_private.png
+%%DATADIR%%/images/codecompletion/enum_protected.png
+%%DATADIR%%/images/codecompletion/enum_public.png
 %%DATADIR%%/images/codecompletion/enumerator.png
 %%DATADIR%%/images/codecompletion/enums_folder.png
+%%DATADIR%%/images/codecompletion/folder.png
+%%DATADIR%%/images/codecompletion/folder_blue.png
+%%DATADIR%%/images/codecompletion/folder_blue_open.png
+%%DATADIR%%/images/codecompletion/folder_green.png
+%%DATADIR%%/images/codecompletion/folder_green_open.png
+%%DATADIR%%/images/codecompletion/folder_open.png
+%%DATADIR%%/images/codecompletion/funcs_folder.png
+%%DATADIR%%/images/codecompletion/macro.png
+%%DATADIR%%/images/codecompletion/macro_folder.png
+%%DATADIR%%/images/codecompletion/macro_private.png
+%%DATADIR%%/images/codecompletion/macro_protected.png
+%%DATADIR%%/images/codecompletion/macro_public.png
 %%DATADIR%%/images/codecompletion/method_private.png
 %%DATADIR%%/images/codecompletion/method_protected.png
 %%DATADIR%%/images/codecompletion/method_public.png
@@ -246,13 +609,23 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/codecompletion/preproc_folder.png
 %%DATADIR%%/images/codecompletion/symbols_folder.png
 %%DATADIR%%/images/codecompletion/typedef.png
+%%DATADIR%%/images/codecompletion/typedef_private.png
+%%DATADIR%%/images/codecompletion/typedef_protected.png
+%%DATADIR%%/images/codecompletion/typedef_public.png
 %%DATADIR%%/images/codecompletion/typedefs_folder.png
 %%DATADIR%%/images/codecompletion/var_private.png
 %%DATADIR%%/images/codecompletion/var_protected.png
 %%DATADIR%%/images/codecompletion/var_public.png
+%%DATADIR%%/images/codecompletion/vars_folder.png
 %%DATADIR%%/images/codesnippets/allsnippets.png
 %%DATADIR%%/images/codesnippets/category.png
+%%DATADIR%%/images/codesnippets/findf.png
+%%DATADIR%%/images/codesnippets/findfdisabled.png
+%%DATADIR%%/images/codesnippets/options.png
+%%DATADIR%%/images/codesnippets/optionsdisabled.png
 %%DATADIR%%/images/codesnippets/snippet.png
+%%DATADIR%%/images/codesnippets/stop.png
+%%DATADIR%%/images/codesnippets/stopdisabled.png
 %%DATADIR%%/images/compile.png
 %%DATADIR%%/images/compilerun.png
 %%DATADIR%%/images/contents_16x16.png
@@ -344,6 +717,8 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/settings/gutter-margin.png
 %%DATADIR%%/images/settings/help-plugin-off.png
 %%DATADIR%%/images/settings/help-plugin.png
+%%DATADIR%%/images/settings/incsearch-off.png
+%%DATADIR%%/images/settings/incsearch.png
 %%DATADIR%%/images/settings/net-off.png
 %%DATADIR%%/images/settings/net.png
 %%DATADIR%%/images/settings/notebook-appearance-off.png
@@ -362,7 +737,8 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/settings/wxsmith.png
 %%DATADIR%%/images/source.png
 %%DATADIR%%/images/splash.png
-%%DATADIR%%/images/splash_new.png
+%%DATADIR%%/images/splash_0802.png
+%%DATADIR%%/images/splash_1005.png
 %%DATADIR%%/images/stop.png
 %%DATADIR%%/images/undo.png
 %%DATADIR%%/images/vfolder_open.png
@@ -423,6 +799,8 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/wxsmith/wxFlexGridSizer32.png
 %%DATADIR%%/images/wxsmith/wxFrame16.png
 %%DATADIR%%/images/wxsmith/wxFrame32.png
+%%DATADIR%%/images/wxsmith/wxGLCanvas16.png
+%%DATADIR%%/images/wxsmith/wxGLCanvas32.png
 %%DATADIR%%/images/wxsmith/wxGauge16.png
 %%DATADIR%%/images/wxsmith/wxGauge32.png
 %%DATADIR%%/images/wxsmith/wxGenericDirCtrl16.png
@@ -455,12 +833,20 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/wxsmith/wxRadioBox32.png
 %%DATADIR%%/images/wxsmith/wxRadioButton16.png
 %%DATADIR%%/images/wxsmith/wxRadioButton32.png
+%%DATADIR%%/images/wxsmith/wxSashLayoutWindow16.png
+%%DATADIR%%/images/wxsmith/wxSashLayoutWindow32.png
+%%DATADIR%%/images/wxsmith/wxSashWindow16.png
+%%DATADIR%%/images/wxsmith/wxSashWindow32.png
 %%DATADIR%%/images/wxsmith/wxScrollBar16.png
 %%DATADIR%%/images/wxsmith/wxScrollBar32.png
 %%DATADIR%%/images/wxsmith/wxScrolledWindow16.png
 %%DATADIR%%/images/wxsmith/wxScrolledWindow32.png
+%%DATADIR%%/images/wxsmith/wxScrollingDialog16.png
+%%DATADIR%%/images/wxsmith/wxScrollingDialog32.png
 %%DATADIR%%/images/wxsmith/wxSingleChoiceDialog16.png
 %%DATADIR%%/images/wxsmith/wxSingleChoiceDialog32.png
+%%DATADIR%%/images/wxsmith/wxSingleInstanceChecker16.png
+%%DATADIR%%/images/wxsmith/wxSingleInstanceChecker32.png
 %%DATADIR%%/images/wxsmith/wxSlider16.png
 %%DATADIR%%/images/wxsmith/wxSlider32.png
 %%DATADIR%%/images/wxsmith/wxSmith16.png
@@ -485,6 +871,10 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/images/wxsmith/wxStatusBar32.png
 %%DATADIR%%/images/wxsmith/wxStdDialogButtonSizer16.png
 %%DATADIR%%/images/wxsmith/wxStdDialogButtonSizer32.png
+%%DATADIR%%/images/wxsmith/wxStopWatch16.png
+%%DATADIR%%/images/wxsmith/wxStopWatch32.png
+%%DATADIR%%/images/wxsmith/wxSymbolPickerDialog16.png
+%%DATADIR%%/images/wxsmith/wxSymbolPickerDialog32.png
 %%DATADIR%%/images/wxsmith/wxTextCtrl16.png
 %%DATADIR%%/images/wxsmith/wxTextCtrl32.png
 %%DATADIR%%/images/wxsmith/wxTimer16.png
@@ -502,12 +892,16 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/lexers/lexer_OgreCompositor.xml
 %%DATADIR%%/lexers/lexer_OgreMaterial.sample
 %%DATADIR%%/lexers/lexer_OgreMaterial.xml
+%%DATADIR%%/lexers/lexer_ada.sample
+%%DATADIR%%/lexers/lexer_ada.xml
 %%DATADIR%%/lexers/lexer_angelscript.sample
 %%DATADIR%%/lexers/lexer_angelscript.xml
 %%DATADIR%%/lexers/lexer_bash.sample
 %%DATADIR%%/lexers/lexer_bash.xml
 %%DATADIR%%/lexers/lexer_batch.sample
 %%DATADIR%%/lexers/lexer_batch.xml
+%%DATADIR%%/lexers/lexer_caml.sample
+%%DATADIR%%/lexers/lexer_caml.xml
 %%DATADIR%%/lexers/lexer_cg.sample
 %%DATADIR%%/lexers/lexer_cg.xml
 %%DATADIR%%/lexers/lexer_cpp.sample
@@ -526,12 +920,16 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/lexers/lexer_glsl.xml
 %%DATADIR%%/lexers/lexer_gm.sample
 %%DATADIR%%/lexers/lexer_gm.xml
+%%DATADIR%%/lexers/lexer_haskell.sample
+%%DATADIR%%/lexers/lexer_haskell.xml
 %%DATADIR%%/lexers/lexer_hitasm.sample
 %%DATADIR%%/lexers/lexer_hitasm.xml
 %%DATADIR%%/lexers/lexer_html.sample
 %%DATADIR%%/lexers/lexer_html.xml
 %%DATADIR%%/lexers/lexer_latex.sample
 %%DATADIR%%/lexers/lexer_latex.xml
+%%DATADIR%%/lexers/lexer_lisp.sample
+%%DATADIR%%/lexers/lexer_lisp.xml
 %%DATADIR%%/lexers/lexer_lua.sample
 %%DATADIR%%/lexers/lexer_lua.xml
 %%DATADIR%%/lexers/lexer_make.sample
@@ -540,10 +938,15 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/lexers/lexer_masm.xml
 %%DATADIR%%/lexers/lexer_matlab.sample
 %%DATADIR%%/lexers/lexer_matlab.xml
+%%DATADIR%%/lexers/lexer_nassi.xml
 %%DATADIR%%/lexers/lexer_nsis.sample
 %%DATADIR%%/lexers/lexer_nsis.xml
+%%DATADIR%%/lexers/lexer_pascal.sample
+%%DATADIR%%/lexers/lexer_pascal.xml
 %%DATADIR%%/lexers/lexer_perl.sample
 %%DATADIR%%/lexers/lexer_perl.xml
+%%DATADIR%%/lexers/lexer_postscript.sample
+%%DATADIR%%/lexers/lexer_postscript.xml
 %%DATADIR%%/lexers/lexer_prg.sample
 %%DATADIR%%/lexers/lexer_prg.xml
 %%DATADIR%%/lexers/lexer_properties.sample
@@ -552,6 +955,12 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/lexers/lexer_python.xml
 %%DATADIR%%/lexers/lexer_rc.sample
 %%DATADIR%%/lexers/lexer_rc.xml
+%%DATADIR%%/lexers/lexer_ruby.sample
+%%DATADIR%%/lexers/lexer_ruby.xml
+%%DATADIR%%/lexers/lexer_smalltalk.sample
+%%DATADIR%%/lexers/lexer_smalltalk.xml
+%%DATADIR%%/lexers/lexer_sql.sample
+%%DATADIR%%/lexers/lexer_sql.xml
 %%DATADIR%%/lexers/lexer_squirrel.sample
 %%DATADIR%%/lexers/lexer_squirrel.xml
 %%DATADIR%%/lexers/lexer_vbscript.sample
@@ -568,64 +977,6 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/lib_finder/wxwidgets.xml
 %%DATADIR%%/manager_resources.zip
 %%DATADIR%%/openfileslist.zip
-%%DATADIR%%/plugins/libAutoVersioning.la
-%%DATADIR%%/plugins/libAutoVersioning.so
-%%DATADIR%%/plugins/libBrowseTracker.la
-%%DATADIR%%/plugins/libBrowseTracker.so
-%%DATADIR%%/plugins/libProfiler.la
-%%DATADIR%%/plugins/libProfiler.so
-%%DATADIR%%/plugins/libRegExTestbed.la
-%%DATADIR%%/plugins/libRegExTestbed.so
-%%DATADIR%%/plugins/libSymTab.la
-%%DATADIR%%/plugins/libSymTab.so
-%%DATADIR%%/plugins/libThreadSearch.la
-%%DATADIR%%/plugins/libThreadSearch.so
-%%DATADIR%%/plugins/libastyle.la
-%%DATADIR%%/plugins/libastyle.so
-%%DATADIR%%/plugins/libautosave.la
-%%DATADIR%%/plugins/libautosave.so
-%%DATADIR%%/plugins/libbyogames.la
-%%DATADIR%%/plugins/libbyogames.so
-%%DATADIR%%/plugins/libcb_koders.la
-%%DATADIR%%/plugins/libcb_koders.so
-%%DATADIR%%/plugins/libclasswizard.la
-%%DATADIR%%/plugins/libclasswizard.so
-%%DATADIR%%/plugins/libcodecompletion.la
-%%DATADIR%%/plugins/libcodecompletion.so
-%%DATADIR%%/plugins/libcodesnippets.la
-%%DATADIR%%/plugins/libcodesnippets.so
-%%DATADIR%%/plugins/libcodestat.la
-%%DATADIR%%/plugins/libcodestat.so
-%%DATADIR%%/plugins/libcompiler.la
-%%DATADIR%%/plugins/libcompiler.so
-%%DATADIR%%/plugins/libdebugger.la
-%%DATADIR%%/plugins/libdebugger.so
-%%DATADIR%%/plugins/libdefaultmimehandler.la
-%%DATADIR%%/plugins/libdefaultmimehandler.so
-%%DATADIR%%/plugins/libdragscroll.la
-%%DATADIR%%/plugins/libdragscroll.so
-%%DATADIR%%/plugins/libenvvars.la
-%%DATADIR%%/plugins/libenvvars.so
-%%DATADIR%%/plugins/libexporter.la
-%%DATADIR%%/plugins/libexporter.so
-%%DATADIR%%/plugins/libhelp_plugin.la
-%%DATADIR%%/plugins/libhelp_plugin.so
-%%DATADIR%%/plugins/libkeybinder.la
-%%DATADIR%%/plugins/libkeybinder.so
-%%DATADIR%%/plugins/liblib_finder.la
-%%DATADIR%%/plugins/liblib_finder.so
-%%DATADIR%%/plugins/libopenfileslist.la
-%%DATADIR%%/plugins/libopenfileslist.so
-%%DATADIR%%/plugins/libprojectsimporter.la
-%%DATADIR%%/plugins/libprojectsimporter.so
-%%DATADIR%%/plugins/libscriptedwizard.la
-%%DATADIR%%/plugins/libscriptedwizard.so
-%%DATADIR%%/plugins/libtodo.la
-%%DATADIR%%/plugins/libtodo.so
-%%DATADIR%%/plugins/libwxsmith.la
-%%DATADIR%%/plugins/libwxsmith.so
-%%DATADIR%%/plugins/libwxsmithcontribitems.la
-%%DATADIR%%/plugins/libwxsmithcontribitems.so
 %%DATADIR%%/projectsimporter.zip
 %%DATADIR%%/resources.zip
 %%DATADIR%%/scriptedwizard.zip
@@ -633,6 +984,7 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/scripts/gdb_types.script
 %%DATADIR%%/scripts/make_dist.script
 %%DATADIR%%/scripts/startup.script
+%%DATADIR%%/scripts/stl-views-1.0.3.gdb
 %%DATADIR%%/scripts/wx_help.script
 %%DATADIR%%/start_here.zip
 %%DATADIR%%/templates/console-main-c.cpp
@@ -668,12 +1020,73 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/templates/sdl.png
 %%DATADIR%%/templates/sdlapp.cbp
 %%DATADIR%%/templates/sdlapp.template
+%%DATADIR%%/templates/sfml-cb.bmp
+%%DATADIR%%/templates/sfml-main.cpp
+%%DATADIR%%/templates/sfml.cbp
+%%DATADIR%%/templates/sfml.png
+%%DATADIR%%/templates/sfml.template
 %%DATADIR%%/templates/sharedlib-sample.c
 %%DATADIR%%/templates/sharedlib.cbp
 %%DATADIR%%/templates/sharedlib.template
 %%DATADIR%%/templates/staticlib-sample.c
 %%DATADIR%%/templates/staticlib.cbp
 %%DATADIR%%/templates/staticlib.template
+%%DATADIR%%/templates/wizard/arm/files/ARM-eval7t/h/evaluator7t.h
+%%DATADIR%%/templates/wizard/arm/files/ARM-eval7t/ld/target.ld
+%%DATADIR%%/templates/wizard/arm/files/ARM-eval7t/src/main.c
+%%DATADIR%%/templates/wizard/arm/files/ARM-eval7t/src/vectors.S
+%%DATADIR%%/templates/wizard/arm/files/ek-at91sam7a3/h/at91sam7a3.h
+%%DATADIR%%/templates/wizard/arm/files/ek-at91sam7a3/h/sam7a3ek.h
+%%DATADIR%%/templates/wizard/arm/files/ek-at91sam7a3/ld/target.ld
+%%DATADIR%%/templates/wizard/arm/files/ek-at91sam7a3/ld/targetRAM.ld
+%%DATADIR%%/templates/wizard/arm/files/ek-at91sam7a3/src/main.c
+%%DATADIR%%/templates/wizard/arm/files/ek-at91sam7a3/src/vectors.S
+%%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404/h/arm9_mm.h
+%%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404/h/lh7a404.h
+%%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404/h/lpd404.h
+%%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404/ld/target.ld
+%%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404/src/lh7a404_mm.c
+%%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404/src/main.c
+%%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404/src/vectors.S
+%%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/h/at91sam7sx.h
+%%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/h/sam7p64.h
+%%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/ld/target_s128.ld
+%%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/ld/target_s256.ld
+%%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/ld/target_s32.ld
+%%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/ld/target_s64.ld
+%%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/src/main.c
+%%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/src/vectors.S
+%%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/h/lpc-p2138.h
+%%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/h/lpc213x.h
+%%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/ld/target_2132.ld
+%%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/ld/target_2134.ld
+%%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/ld/target_2136.ld
+%%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/ld/target_2138.ld
+%%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/src/main.c
+%%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/src/vectors.S
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800/h/at91m55800.h
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800/ld/target.ld
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800/ld/targetRAM_1MB.ld
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800/ld/targetRAM_512kB.ld
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800/ld/targetROM.ld
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800/src/main.c
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800/src/vectors.S
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-LPC2294/h/lpc2294.h
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-LPC2294/ld/target.ld
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-LPC2294/ld/targetRAM_1MB.ld
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-LPC2294/ld/targetROM.ld
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-LPC2294/src/main.c
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-LPC2294/src/vectors.S
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255/h/pxa255regs.h
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255/h/pxa_mm.h
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255/ld/target.ld
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255/src/irq.c
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255/src/main.c
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255/src/pxa_mm.c
+%%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255/src/vectors.S
+%%DATADIR%%/templates/wizard/arm/logo.png
+%%DATADIR%%/templates/wizard/arm/wizard.png
+%%DATADIR%%/templates/wizard/arm/wizard.script
 %%DATADIR%%/templates/wizard/avr/files/main.c
 %%DATADIR%%/templates/wizard/avr/logo.png
 %%DATADIR%%/templates/wizard/avr/wizard.png
@@ -693,7 +1106,8 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/templates/wizard/d/logo.png
 %%DATADIR%%/templates/wizard/d/wizard.png
 %%DATADIR%%/templates/wizard/d/wizard.script
-%%DATADIR%%/templates/wizard/directx/files/main.cpp
+%%DATADIR%%/templates/wizard/directx/dx8/main.cpp
+%%DATADIR%%/templates/wizard/directx/dx9/main.cpp
 %%DATADIR%%/templates/wizard/directx/logo.png
 %%DATADIR%%/templates/wizard/directx/wizard.png
 %%DATADIR%%/templates/wizard/directx/wizard.script
@@ -741,6 +1155,14 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/templates/wizard/lf/logo.png
 %%DATADIR%%/templates/wizard/lf/wizard.png
 %%DATADIR%%/templates/wizard/lf/wizard.script
+%%DATADIR%%/templates/wizard/lf/wizard.xrc
+%%DATADIR%%/templates/wizard/matlab_csf/files/lccstub.c
+%%DATADIR%%/templates/wizard/matlab_csf/files/mexversion.rc
+%%DATADIR%%/templates/wizard/matlab_csf/files/sfuntmpl.c
+%%DATADIR%%/templates/wizard/matlab_csf/logo.png
+%%DATADIR%%/templates/wizard/matlab_csf/wizard.png
+%%DATADIR%%/templates/wizard/matlab_csf/wizard.script
+%%DATADIR%%/templates/wizard/matlab_csf/wizard.xrc
 %%DATADIR%%/templates/wizard/ogre/files/main.cpp
 %%DATADIR%%/templates/wizard/ogre/logo.png
 %%DATADIR%%/templates/wizard/ogre/wizard.png
@@ -763,6 +1185,18 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/templates/wizard/plugins/wizard.png
 %%DATADIR%%/templates/wizard/plugins/wizard.script
 %%DATADIR%%/templates/wizard/plugins/wizard.xrc
+%%DATADIR%%/templates/wizard/ppc/files/MPC5200/ld/target.ld
+%%DATADIR%%/templates/wizard/ppc/files/MPC5200/src/crt0.S
+%%DATADIR%%/templates/wizard/ppc/files/MPC5200/src/main.c
+%%DATADIR%%/templates/wizard/ppc/files/MPC5200/src/traptable.S
+%%DATADIR%%/templates/wizard/ppc/files/MPC565/h/mpc5200.h
+%%DATADIR%%/templates/wizard/ppc/files/MPC565/h/mpc555.h
+%%DATADIR%%/templates/wizard/ppc/files/MPC565/ld/target.ld
+%%DATADIR%%/templates/wizard/ppc/files/MPC565/src/crt0.S
+%%DATADIR%%/templates/wizard/ppc/files/MPC565/src/main.c
+%%DATADIR%%/templates/wizard/ppc/logo.png
+%%DATADIR%%/templates/wizard/ppc/wizard.png
+%%DATADIR%%/templates/wizard/ppc/wizard.script
 %%DATADIR%%/templates/wizard/qt4/files/main.cpp
 %%DATADIR%%/templates/wizard/qt4/logo.png
 %%DATADIR%%/templates/wizard/qt4/wizard.png
@@ -772,7 +1206,13 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/templates/wizard/sdl/logo.png
 %%DATADIR%%/templates/wizard/sdl/wizard.png
 %%DATADIR%%/templates/wizard/sdl/wizard.script
-%%DATADIR%%/templates/wizard/sharedlib/files/main.c
+%%DATADIR%%/templates/wizard/sfml/files/cb.bmp
+%%DATADIR%%/templates/wizard/sfml/files/main.cpp
+%%DATADIR%%/templates/wizard/sfml/logo.png
+%%DATADIR%%/templates/wizard/sfml/wizard.png
+%%DATADIR%%/templates/wizard/sfml/wizard.script
+%%DATADIR%%/templates/wizard/sharedlib/c/main.c
+%%DATADIR%%/templates/wizard/sharedlib/cpp/main.cpp
 %%DATADIR%%/templates/wizard/sharedlib/logo.png
 %%DATADIR%%/templates/wizard/sharedlib/wizard.png
 %%DATADIR%%/templates/wizard/sharedlib/wizard.script
@@ -784,10 +1224,61 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/templates/wizard/staticlib/logo.png
 %%DATADIR%%/templates/wizard/staticlib/wizard.png
 %%DATADIR%%/templates/wizard/staticlib/wizard.script
+%%DATADIR%%/templates/wizard/stlport/files/main.cpp
+%%DATADIR%%/templates/wizard/stlport/logo.png
+%%DATADIR%%/templates/wizard/stlport/wizard.png
+%%DATADIR%%/templates/wizard/stlport/wizard.script
 %%DATADIR%%/templates/wizard/sys/files/driver.c
 %%DATADIR%%/templates/wizard/sys/logo.png
 %%DATADIR%%/templates/wizard/sys/wizard.png
 %%DATADIR%%/templates/wizard/sys/wizard.script
+%%DATADIR%%/templates/wizard/tricore/logo.png
+%%DATADIR%%/templates/wizard/tricore/templates/EasyKit-TC1767/target.ld
+%%DATADIR%%/templates/wizard/tricore/templates/EasyKit-TC1767/targetIntResources.ld
+%%DATADIR%%/templates/wizard/tricore/templates/EasyRun-TC1796/h/easyrun_setup.h
+%%DATADIR%%/templates/wizard/tricore/templates/EasyRun-TC1796/memoryROM.x
+%%DATADIR%%/templates/wizard/tricore/templates/EasyRun-TC1796/src/setup.c
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1130/h/triboard_setup.h
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1130/memoryROM.x
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1130/src/setup.c
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1161/target.ld
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1161/targetIntResources.ld
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1162/target.ld
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1162/targetIntResources.ld
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1762/target.ld
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1762/targetIntResources.ld
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1765/h/triboard_setup.h
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1765/memoryROM.x
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1765/src/setup.c
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1766/target.ld
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1766/targetIntResources.ld
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1775/h/triboard_setup.h
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1775/memoryROM.x
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1775/src/setup.c
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1792/h/triboard_setup.h
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1792/memoryROM.x
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1792/src/setup.c
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1796/h/triboard_setup.h
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1796/memoryROM-intern.x
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1796/memoryROM.x
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1796/src/setup.c
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1797/h/triboard_setup.h
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1797/memoryROM-intern.x
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1797/memoryROM.x
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1797/src/setup.c
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1920/h/triboard_setup.h
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1920/memoryROM.x
+%%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1920/src/setup.c
+%%DATADIR%%/templates/wizard/tricore/templates/main.c
+%%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1130/h/phycore_setup.h
+%%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1130/memoryROM.x
+%%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1130/src/setup.c
+%%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1775/h/phycore_setup.h
+%%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1775/memoryROM.x
+%%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1775/src/setup.c
+%%DATADIR%%/templates/wizard/tricore/wizard.png
+%%DATADIR%%/templates/wizard/tricore/wizard.script
+%%DATADIR%%/templates/wizard/tricore/wizard.xrc
 %%DATADIR%%/templates/wizard/win32gui/files/dialog/main.cpp
 %%DATADIR%%/templates/wizard/win32gui/files/dialog/resource.h
 %%DATADIR%%/templates/wizard/win32gui/files/dialog/resource.rc
@@ -828,16 +1319,9 @@ share/applications/codeblocks.desktop
 %%DATADIR%%/templates/wxwidgets.template
 %%DATADIR%%/tips.txt
 %%DATADIR%%/todo.zip
+%%DATADIR%%/wxSmithAui.zip
 %%DATADIR%%/wxsmith.zip
 %%DATADIR%%/wxsmithcontribitems.zip
-share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-codeblocks-workspace.png
-share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-codeblocks.png
-share/mime/application/x-codeblocks-workspace.xml
-share/mime/application/x-codeblocks.xml
-share/mime/packages/codeblocks.xml
-share/pixmaps/codeblocks.png
-%%DATADIR%%/AutoVersioning.zip
-@dirrmtry share/icons/gnome/48x48/mimetypes
 @dirrm %%DATADIR%%/templates/wizard/wxwidgets/wxsmith
 @dirrm %%DATADIR%%/templates/wizard/wxwidgets/wxfb/frame
 @dirrm %%DATADIR%%/templates/wizard/wxwidgets/wxfb/dialog
@@ -850,18 +1334,69 @@ share/pixmaps/codeblocks.png
 @dirrm %%DATADIR%%/templates/wizard/win32gui/files/dialog
 @dirrm %%DATADIR%%/templates/wizard/win32gui/files
 @dirrm %%DATADIR%%/templates/wizard/win32gui
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1775/src
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1775/h
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1775
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1130/src
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1130/h
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/phyCORE-TC1130
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1920/src
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1920/h
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1920
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1797/src
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1797/h
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1797
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1796/src
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1796/h
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1796
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1792/src
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1792/h
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1792
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1775/src
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1775/h
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1775
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1766
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1765/src
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1765/h
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1765
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1762
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1162
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1161
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1130/src
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1130/h
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/TriBoard-TC1130
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/EasyRun-TC1796/src
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/EasyRun-TC1796/h
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/EasyRun-TC1796
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates/EasyKit-TC1767
+@dirrm %%DATADIR%%/templates/wizard/tricore/templates
+@dirrm %%DATADIR%%/templates/wizard/tricore
 @dirrm %%DATADIR%%/templates/wizard/sys/files
 @dirrm %%DATADIR%%/templates/wizard/sys
+@dirrm %%DATADIR%%/templates/wizard/stlport/files
+@dirrm %%DATADIR%%/templates/wizard/stlport
 @dirrm %%DATADIR%%/templates/wizard/staticlib/files
 @dirrm %%DATADIR%%/templates/wizard/staticlib
 @dirrm %%DATADIR%%/templates/wizard/smartwin/files
 @dirrm %%DATADIR%%/templates/wizard/smartwin
-@dirrm %%DATADIR%%/templates/wizard/sharedlib/files
+@dirrm %%DATADIR%%/templates/wizard/sharedlib/cpp
+@dirrm %%DATADIR%%/templates/wizard/sharedlib/c
 @dirrm %%DATADIR%%/templates/wizard/sharedlib
+@dirrm %%DATADIR%%/templates/wizard/sfml/files
+@dirrm %%DATADIR%%/templates/wizard/sfml
 @dirrm %%DATADIR%%/templates/wizard/sdl/files
 @dirrm %%DATADIR%%/templates/wizard/sdl
 @dirrm %%DATADIR%%/templates/wizard/qt4/files
 @dirrm %%DATADIR%%/templates/wizard/qt4
+@dirrm %%DATADIR%%/templates/wizard/ppc/files/MPC565/src
+@dirrm %%DATADIR%%/templates/wizard/ppc/files/MPC565/ld
+@dirrm %%DATADIR%%/templates/wizard/ppc/files/MPC565/h
+@dirrm %%DATADIR%%/templates/wizard/ppc/files/MPC565
+@dirrm %%DATADIR%%/templates/wizard/ppc/files/MPC5200/src
+@dirrm %%DATADIR%%/templates/wizard/ppc/files/MPC5200/ld
+@dirrm %%DATADIR%%/templates/wizard/ppc/files/MPC5200
+@dirrm %%DATADIR%%/templates/wizard/ppc/files
+@dirrm %%DATADIR%%/templates/wizard/ppc
 @dirrm %%DATADIR%%/templates/wizard/plugins/templates
 @dirrm %%DATADIR%%/templates/wizard/plugins
 @dirrm %%DATADIR%%/templates/wizard/opengl/files_win
@@ -869,6 +1404,8 @@ share/pixmaps/codeblocks.png
 @dirrm %%DATADIR%%/templates/wizard/opengl
 @dirrm %%DATADIR%%/templates/wizard/ogre/files
 @dirrm %%DATADIR%%/templates/wizard/ogre
+@dirrm %%DATADIR%%/templates/wizard/matlab_csf/files
+@dirrm %%DATADIR%%/templates/wizard/matlab_csf
 @dirrm %%DATADIR%%/templates/wizard/lf/files/structured
 @dirrm %%DATADIR%%/templates/wizard/lf/files/quick
 @dirrm %%DATADIR%%/templates/wizard/lf/files
@@ -889,7 +1426,8 @@ share/pixmaps/codeblocks.png
 @dirrm %%DATADIR%%/templates/wizard/empty
 @dirrm %%DATADIR%%/templates/wizard/dll/files
 @dirrm %%DATADIR%%/templates/wizard/dll
-@dirrm %%DATADIR%%/templates/wizard/directx/files
+@dirrm %%DATADIR%%/templates/wizard/directx/dx9
+@dirrm %%DATADIR%%/templates/wizard/directx/dx8
 @dirrm %%DATADIR%%/templates/wizard/directx
 @dirrm %%DATADIR%%/templates/wizard/d/console
 @dirrm %%DATADIR%%/templates/wizard/d
@@ -899,26 +1437,89 @@ share/pixmaps/codeblocks.png
 @dirrm %%DATADIR%%/templates/wizard/c_file
 @dirrm %%DATADIR%%/templates/wizard/avr/files
 @dirrm %%DATADIR%%/templates/wizard/avr
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255/src
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255/ld
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255/h
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-PXA255
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-LPC2294/src
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-LPC2294/ld
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-LPC2294/h
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-LPC2294
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800/src
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800/ld
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800/h
+@dirrm %%DATADIR%%/templates/wizard/arm/files/phyCORE-AT91M55800
+@dirrm %%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/src
+@dirrm %%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/ld
+@dirrm %%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x/h
+@dirrm %%DATADIR%%/templates/wizard/arm/files/olimex-lpc213x
+@dirrm %%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/src
+@dirrm %%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/ld
+@dirrm %%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx/h
+@dirrm %%DATADIR%%/templates/wizard/arm/files/olimex-at91sam7sx
+@dirrm %%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404/src
+@dirrm %%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404/ld
+@dirrm %%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404/h
+@dirrm %%DATADIR%%/templates/wizard/arm/files/lpd-lh7a404
+@dirrm %%DATADIR%%/templates/wizard/arm/files/ek-at91sam7a3/src
+@dirrm %%DATADIR%%/templates/wizard/arm/files/ek-at91sam7a3/ld
+@dirrm %%DATADIR%%/templates/wizard/arm/files/ek-at91sam7a3/h
+@dirrm %%DATADIR%%/templates/wizard/arm/files/ek-at91sam7a3
+@dirrm %%DATADIR%%/templates/wizard/arm/files/ARM-eval7t/src
+@dirrm %%DATADIR%%/templates/wizard/arm/files/ARM-eval7t/ld
+@dirrm %%DATADIR%%/templates/wizard/arm/files/ARM-eval7t/h
+@dirrm %%DATADIR%%/templates/wizard/arm/files/ARM-eval7t
+@dirrm %%DATADIR%%/templates/wizard/arm/files
+@dirrm %%DATADIR%%/templates/wizard/arm
 @dirrm %%DATADIR%%/templates/wizard
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/lib_finder
 @dirrm %%DATADIR%%/lexers
 @dirrm %%DATADIR%%/images/wxsmith
 @dirrm %%DATADIR%%/images/settings
 @dirrm %%DATADIR%%/images/codesnippets
 @dirrm %%DATADIR%%/images/codecompletion
+@dirrm %%DATADIR%%/images/ThreadSearch/22x22
+@dirrm %%DATADIR%%/images/ThreadSearch/16x16
 @dirrm %%DATADIR%%/images/ThreadSearch
 @dirrm %%DATADIR%%/images/16x16
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrmtry share/icons/gnome/48x48/mimetypes
+@dirrmtry share/icons/hicolor/48x48/mimetypes
 @dirrmtry share/applications
+@dirrm lib/wxSmithContribItems
+@dirrm lib/pkgconfig
+@dirrm lib/codeblocks/plugins
+@dirrm lib/codeblocks
+@dirrm include/wxsmith/wxwidgets/properties
+@dirrm include/wxsmith/wxwidgets
+@dirrm include/wxsmith/properties
+@dirrm include/wxsmith/contrib/include/wx/propgrid
+@dirrm include/wxsmith/contrib/include/wx
+@dirrm include/wxsmith/contrib/include
+@dirrm include/wxsmith/contrib
+@dirrm include/wxsmith
+@dirrm include/wxSmithContribItems/wxthings/wxthings/include/wx/things
+@dirrm include/wxSmithContribItems/wxthings/wxthings/include/wx
+@dirrm include/wxSmithContribItems/wxthings/wxthings/include
+@dirrm include/wxSmithContribItems/wxthings/wxthings
+@dirrm include/wxSmithContribItems/wxthings
+@dirrm include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx/wxFlatNotebook
+@dirrm include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include/wx
+@dirrm include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook/include
+@dirrm include/wxSmithContribItems/wxflatnotebook/wxFlatNotebook
+@dirrm include/wxSmithContribItems/wxflatnotebook
+@dirrm include/wxSmithContribItems/wxchart/wxchart-1.0/include/wx
+@dirrm include/wxSmithContribItems/wxchart/wxchart-1.0/include
+@dirrm include/wxSmithContribItems/wxchart/wxchart-1.0
+@dirrm include/wxSmithContribItems/wxchart
+@dirrm include/wxSmithContribItems
 @dirrm include/codeblocks/wxscintilla/include/wx
 @dirrm include/codeblocks/wxscintilla/include
 @dirrm include/codeblocks/wxscintilla
-@dirrm include/codeblocks/wxFlatNotebook
 @dirrm include/codeblocks/tinyxml
 @dirrm include/codeblocks/scripting/sqplus
 @dirrm include/codeblocks/scripting/include
