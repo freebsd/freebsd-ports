@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PAM modules for user authentication
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	mod_auth_pam2
 
@@ -25,11 +25,16 @@ USE_GMAKE=	YES
 MAKE_ENV+=	APXS=${APXS}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PORTDOCS=	*.html
+PORTEXAMPLES=	pam-httpd.sample
+
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/samples/httpd ${EXAMPLESDIR}/pam-httpd.sample
+.endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
 .endif
 
