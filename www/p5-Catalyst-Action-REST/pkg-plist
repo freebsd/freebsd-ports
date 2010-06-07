@@ -17,10 +17,14 @@
 %%SITE_PERL%%/Catalyst/Action/SerializeBase.pm
 %%SITE_PERL%%/Catalyst/Controller/REST.pm
 %%SITE_PERL%%/Catalyst/Request/REST.pm
+%%SITE_PERL%%/Catalyst/Request/REST/ForBrowsers.pm
 %%SITE_PERL%%/Catalyst/TraitFor/Request/REST.pm
+%%SITE_PERL%%/Catalyst/TraitFor/Request/REST/ForBrowsers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Action/REST/.packlist
+@dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Request/REST
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor/Request
 @dirrmtry %%SITE_PERL%%/Catalyst/TraitFor
+@dirrmtry %%SITE_PERL%%/Catalyst/Request/REST
 @dirrmtry %%SITE_PERL%%/Catalyst/Request
 @dirrmtry %%SITE_PERL%%/Catalyst/Controller
 @dirrmtry %%SITE_PERL%%/Catalyst/Action/Serialize/YAML
