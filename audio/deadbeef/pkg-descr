@@ -1,13 +1,11 @@
-DeaDBeeF (as in 0xDEADBEEF) is an audio player for GNU/Linux systems with
-X11 (though now it also runs in plain console without X, in FreeBSD,
-and in OpenSolaris).
+DeaDBeeF (as in 0xDEADBEEF) is an audio player.
 
 Main features:
 - mp3, ogg vorbis, flac, ape, wv, wav, m4a, mpc, cd audio (and many more)
 - sid, nsf and lots of other popular chiptune formats
 - ID3v1, ID3v2.2, ID3v2.3, ID3v2.4, APEv2, xing/info tags support
 - character set detection for non-unicode id3 tags - supports cp1251 and
-  iso8859-1
+iso8859-1
 - unicode tags are fully supported as well (both utf8 and ucs2)
 - cuesheet (.cue files) support, with charset detection (utf8/cp1251/iso8859-1)
 - tracker modules like mod, s3m, it, xm, etc
@@ -16,8 +14,9 @@ Main features:
 - drag and drop, both inside of playlist, and from filemanagers and such
 - control playback from command line
 - plugin support; bundled with lots of plugins, such as global hotkeys and
-  last.fm scrobbler; sdk is included
+last.fm scrobbler; sdk is included
 - duration calculation is as precise as possible for vbr mp3 files (with and
-  without xing/info tags)
+without xing/info tags)
+- and etc...
 
 WWW:	http://deadbeef.sourceforge.net/
