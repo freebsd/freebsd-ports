@@ -615,6 +615,7 @@
     SUBDIR += hs-uvector
     SUBDIR += hs-uvector-algorithms
     SUBDIR += hs-vector
+    SUBDIR += hs-vector-algorithms
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-gcc
