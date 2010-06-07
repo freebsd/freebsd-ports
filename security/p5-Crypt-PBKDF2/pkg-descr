@@ -1,0 +1,12 @@
+PBKDF2 is a secure password hashing algorithm that uses the techniques of
+"key strengthening" to make the complexity of a brute-force attack arbitrarily
+high. PBKDF2 uses any other cryptographic hash or cipher (by convention,
+usually HMAC-SHA1, but Crypt::PBKDF2 is fully pluggable), and allows for an
+arbitrary number of iterations of the hashing function, and a nearly unlimited
+output hash size (up to 2**32 - 1 times the size of the output of the backend
+hash). The hash is salted, as any password hash should be, and the salt may
+also be of arbitrary size.
+
+See also: RFC2898, PKCS#5 version 2.0: http://tools.ietf.org/html/rfc2898
+
+WWW:	http://search.cpan.org/dist/Crypt-PBKDF2/
