@@ -18,7 +18,7 @@ COMMENT=	SIMD-accelerated JPEG codec which provides both the libjpeg,TurboJPEG
 
 CONFLICTS=	jpeg-[0-9]*
 ONLY_FOR_ARCH=	amd64 i386
-USE_AUTOTOOLS=	autoconf:262 automake:19 libtool:22
+USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
