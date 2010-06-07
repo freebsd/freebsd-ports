@@ -29,7 +29,7 @@ USE_XORG=	x11
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/Corner
-PLIST_FILES=	GUNstep/System/Tools/Corner
+PLIST_FILES=	GNUstep/System/Tools/Corner
 
 SMALLTALKKIT_PORT?=	lang/etoile-smalltalkkit
 SCRIPTKIT_PORT?=	lang/etoile-scriptkit
