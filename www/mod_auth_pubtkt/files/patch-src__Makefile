@@ -1,5 +1,5 @@
---- src/Makefile.orig	2008-10-28 19:25:44.000000000 +0000
-+++ src/Makefile	2009-03-23 18:39:37.000000000 +0000
+--- ./src/Makefile.orig	2010-05-26 18:53:55.551506119 -0400
++++ ./src/Makefile	2010-05-26 18:54:21.855222621 -0400
 @@ -9,7 +9,7 @@
  	$(APXS) -c -Wc,"-Wall -ansi $(CFLAGS)" -Wl,"$(LDFLAGS)" -l crypto $(MOD).c
  

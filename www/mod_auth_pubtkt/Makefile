@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_auth_pubtkt
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	www
 MASTER_SITES=	https://neon1.net/mod_auth_pubtkt/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -18,5 +18,7 @@ COMMENT=	An Apache module to provide public key ticket based authentication
 USE_APACHE=	1.3+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--apxs=${APXS}
+
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
