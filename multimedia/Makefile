@@ -318,6 +318,7 @@
     SUBDIR += webcamd
     SUBDIR += win32-codecs
     SUBDIR += x264
+    SUBDIR += x264-devel
     SUBDIR += xanim
     SUBDIR += xawtv
     SUBDIR += xdvshow
