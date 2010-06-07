@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	istatd
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.7
 CATEGORIES=	sysutils
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://cloud.github.com/downloads/tiwilliam/${PORTNAME}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Daemon for iStat iPhone application
