@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.1.51r25618
-PORTREVISION=	3
+DISTVERSION=	3.2.2
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -47,6 +46,7 @@ OPTIONS=	DEBUG "Build with debugging symbols" off \
 PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
 
 KMODDIR=	/boot/modules
+SRC_BASE?=	/usr/src
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
 INPUTDIR=	${PREFIX}/lib/xorg/modules/input
 
@@ -63,7 +63,7 @@ KMK_BUILDTYPE=	debug
 
 .if !defined(WITHOUT_X11)
 VBOX_WITH_X11=	1
-USE_XORG=	xcursor xmu inputproto
+USE_XORG=	xcursor xmu inputproto xrandr
 PLIST_SUB+=	X11=""
 .else
 .if !defined(WITHOUT_HAL)
@@ -128,11 +128,12 @@ pre-build:
 
 do-build:
 	cd ${WRKSRC} && ${SH} env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}
-	cd ${VBOX_BIN}/src && make
+	cd ${VBOX_BIN}/src && make SYSDIR=${SRC_BASE}/sys
 
 do-install:
 	${MKDIR} ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko ${KMODDIR}
+	@/usr/sbin/kldxref ${KMODDIR}
 
 	${MKDIR} ${PREFIX}/etc/rc.d/
 
