@@ -20,6 +20,7 @@ ansi-wl-pprint_port=		devel/hs-ansi-wl-pprint
 arrows_port=			devel/hs-arrows
 binary_port=			devel/hs-binary
 bio_port=			science/hs-bio
+Boolean_port=			devel/hs-Boolean
 brainfuck_port=			lang/hs-brainfuck	# executable
 bytestring-csv_port=		textproc/hs-bytestring-csv
 c2hs_port=			devel/hs-c2hs		# exectuable

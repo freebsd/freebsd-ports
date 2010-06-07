@@ -543,6 +543,7 @@
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
     SUBDIR += hptools
+    SUBDIR += hs-Boolean
     SUBDIR += hs-DeepArrow
     SUBDIR += hs-FileManip
     SUBDIR += hs-MemoTrie
