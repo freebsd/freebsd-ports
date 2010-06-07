@@ -23,6 +23,8 @@ CONFLICTS=	x264-0.0.2009* x264-0.0.20100[1-2]*
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
 		as:${PORTSDIR}/devel/binutils
 
+LATEST_LINK=	x264-devel
+
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
 WRKSRC=		${WRKDIR}/${DISTNAME}
