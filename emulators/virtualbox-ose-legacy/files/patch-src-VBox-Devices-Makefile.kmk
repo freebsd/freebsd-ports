@@ -13,14 +13,3 @@
  ifndef VBOX_OSE
   include $(PATH_SUB_CURRENT)/Storage/VBoxHDDFormats/Makefile.kmk
  endif
-@@ -970,6 +970,10 @@
-  Drivers_SOURCES.linux+= \
- 	Audio/pulseaudio.c \
- 	Audio/pulse_stubs.c
-+ Drivers_DEFS.freebsd += VBOX_WITH_PULSE
-+ Drivers_SOURCES.freebsd+= \
-+	Audio/pulseaudio.c \
-+	Audio/pulse_stubs.c
- endif
- 
- ifdef VBOX_WITH_USB

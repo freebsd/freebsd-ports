@@ -1,5 +1,5 @@
---- configure.orig	2010-01-28 16:34:50.000000000 +0100
-+++ configure	2010-01-28 22:16:50.000000000 +0100
+--- configure.orig	2009-12-17 15:23:05.000000000 +0100
++++ configure	2009-12-21 14:25:45.000000000 +0100
 @@ -107,7 +107,7 @@
  GENISOIMAGE="genisoimage"
  MKISOFS="mkisofs"
@@ -9,24 +9,6 @@
  LIBPTHREAD="-lpthread"
  LIBCAP="-lcap"
  GSOAP=""
-@@ -125,6 +125,8 @@
- if [ "$OS" = "freebsd" ]; then
-   INCCURL="-I/usr/local/include"
-   LIBCURL="-L/usr/local/lib -lcurl"
-+  INCPULSE="-I/usr/local/include"
-+  LIBPULSE="-L/usr/local/lib"
- else
-   INCCURL=""
-   LIBCURL="-lcurl"
-@@ -1181,7 +1183,7 @@
- #endif
- }
- EOF
--  if test_compile "-lpulse" pulse pulse; then
-+  if test_compile "$INCPULSE $LIBPULSE -lpulse" pulse pulse; then
-     test_execute
-   fi
- }
 @@ -1773,7 +1775,7 @@
          cat $ODIR.tmp_src.cc >> $LOG
          echo "using the following command line:" >> $LOG
@@ -36,31 +18,3 @@
          if [ $? -eq 0 ]; then
            found=1
            break
-@@ -2318,6 +2320,15 @@
- [ $WITH_QT4    -eq 1 ] && check_qt4
- [ $WITH_PYTHON -eq 1 ] && check_python
- 
-+# PulseAudio
-+if [ "$OS" = "linux" -o "$OS" = "freebsd" ]; then
-+  if [ $WITH_PULSE -eq 1 ]; then
-+    check_pulse
-+  else
-+    cnf_append "VBOX_WITH_PULSE" ""
-+  fi
-+fi
-+
- # Linux-specific
- if [ "$OS" = "linux" ]; then
-   # don't check for the static libstdc++ in the PUEL version as we build the
-@@ -2335,11 +2346,6 @@
-   else
-     cnf_append "VBOX_WITH_ALSA" ""
-   fi
--  if [ $WITH_PULSE -eq 1 ]; then
--    check_pulse
--  elif [ $WITH_PULSE -eq 0 ]; then
--    cnf_append "VBOX_WITH_PULSE" ""
--  fi
-   if [ $WITH_DBUS -eq 0 ]; then
-     cnf_append "VBOX_WITH_DBUS" ""
-   fi

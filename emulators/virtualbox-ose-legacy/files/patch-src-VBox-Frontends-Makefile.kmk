@@ -1,0 +1,18 @@
+--- src/VBox/Frontends/Makefile.kmk.orig	2010-05-25 14:16:00.000000000 +0200
++++ src/VBox/Frontends/Makefile.kmk	2010-06-04 09:51:37.000000000 +0200
+@@ -24,6 +24,7 @@
+ endif
+ ifndef VBOX_ONLY_DOCS
+  ifdef VBOX_WITH_VBOXSDL
++  include $(PATH_SUB_CURRENT)/Common/Makefile.kmk
+   include $(PATH_SUB_CURRENT)/VBoxSDL/Makefile.kmk
+  endif
+  ifdef VBOX_WITH_VBOXBFE
+@@ -38,7 +39,6 @@
+  ifdef VBOX_WITH_QTGUI
+   include $(PATH_SUB_CURRENT)/VirtualBox/Makefile.kmk
+  endif
+- include $(PATH_SUB_CURRENT)/Common/Makefile.kmk
+ endif # !VBOX_ONLY_DOCS
+ 
+ ## @todo Include Python shell into binary delivery?

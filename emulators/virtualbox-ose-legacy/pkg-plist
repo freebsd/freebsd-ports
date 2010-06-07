@@ -8,15 +8,18 @@ bin/VBoxSVC
 %%QT4%%bin/VBoxTestOGL
 bin/VBoxXPCOMIPCD
 %%QT4%%bin/VirtualBox
+%%WEB%%bin/vboxwebsrv
+%%WEB%%bin/webtest
 %%X11%%lib/virtualbox/VBoxBFE
 %%X11%%lib/virtualbox/VBoxBFE.so
 lib/virtualbox/VBoxDD.so
 lib/virtualbox/VBoxDD2.so
 lib/virtualbox/VBoxDDU.so
+lib/virtualbox/VBoxGuestControlSvc.so
 lib/virtualbox/VBoxGuestPropSvc.so
 lib/virtualbox/VBoxHeadless
 lib/virtualbox/VBoxHeadless.so
-%%QT4%%lib/virtualbox/VBoxKeyboard.so
+%%X11%%lib/virtualbox/VBoxKeyboard.so
 lib/virtualbox/VBoxManage
 lib/virtualbox/VBoxNetAdpCtl
 lib/virtualbox/VBoxNetDHCP
@@ -51,6 +54,8 @@ lib/virtualbox/VBoxDDR0.r0
 %%GUESTADDITIONS%%lib/virtualbox/additions/VBoxGuestAdditions_%%GUEST_VER%%.iso
 lib/virtualbox/VBoxPython%%PYTHON_VERU%%.so
 lib/virtualbox/VMMR0.r0
+%%WEB%%lib/virtualbox/vboxwebsrv
+%%WEB%%lib/virtualbox/webtest
 lib/virtualbox/components/VirtualBox_XPCOM.xpt
 lib/virtualbox/components/VBoxXPCOMIPCC.so
 lib/virtualbox/components/VBoxSVCM.so
@@ -218,9 +223,12 @@ lib/virtualbox/components/VBoxXPCOMBase.xpt
 %%DATADIR%%/idl/VirtualBox_XPCOM.idl
 %%DATADIR%%/samples/tstVBoxAPILinux.cpp
 %%DATADIR%%/samples/Makefile
+%%WEB%%%%DATADIR%%/sdk/bindings/webservice/vboxweb.wsdl
+%%WEB%%%%DATADIR%%/sdk/bindings/webservice/vboxwebService.wsdl
 include/virtualbox/VBoxCAPI_v2_2.h
 include/virtualbox/VBoxCAPI_v3_0.h
 include/virtualbox/VBoxCAPI_v3_1.h
+include/virtualbox/VBoxCAPI_v3_2.h
 include/virtualbox/VirtualBox_XPCOM.h
 include/virtualbox/ipcIClientObserver.h
 include/virtualbox/ipcIDConnectService.h
@@ -590,6 +598,9 @@ include/virtualbox/xpcom/xpcom-config.h
 @dirrm include/virtualbox/ipcd
 @dirrm include/virtualbox
 %%NLS%%@dirrm %%DATADIR%%/nls
+%%WEB%%@dirrm %%DATADIR%%/sdk/bindings/webservice
+%%WEB%%@dirrm %%DATADIR%%/sdk/bindings
+%%WEB%%@dirrm %%DATADIR%%/sdk
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/idl
 @dirrm %%DATADIR%%

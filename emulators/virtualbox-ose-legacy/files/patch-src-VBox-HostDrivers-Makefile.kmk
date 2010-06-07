@@ -1,5 +1,5 @@
---- src/VBox/HostDrivers/Makefile.kmk.orig	2009-10-05 11:17:45.000000000 +0200
-+++ src/VBox/HostDrivers/Makefile.kmk	2009-10-05 11:18:08.000000000 +0200
+--- src/VBox/HostDrivers/Makefile.kmk.orig	2010-03-04 12:59:54.000000000 +0100
++++ src/VBox/HostDrivers/Makefile.kmk	2010-03-09 12:54:09.000000000 +0100
 @@ -40,7 +40,7 @@
    endif
   endif
@@ -22,6 +22,6 @@
    HostDrivers-sh_SOURCES.freebsd = freebsd/export_modules
   endif
 +endif
- endif # !VBOX_ONLY_DOCS
+ endif # !defined(VBOX_ONLY_DOCS) && !defined(VBOX_ONLY_TESTSUITE)
  
  # Let kBuild generate the rules.
