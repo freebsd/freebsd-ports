@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.39
+PORTVERSION=	0.8.40
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -16,6 +16,8 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
+
+LICENSE=	BSD
 
 OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		DEBUGLOG		"Enable debug log (--with-debug)" off \
