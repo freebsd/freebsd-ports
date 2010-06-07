@@ -98,7 +98,7 @@ post-patch:
 			${WRKSRC}/plugin/Makefile.in
 
 pre-configure:
-	@( cd ${MONODIR} && ./configure --with-profile2=no --with-moonlight=yes --with-profile4=no --with-monotouch=no --with-mcs-docs=no && ${GMAKE} )
+	@( cd ${MONODIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} --with-profile2=no --with-moonlight=yes --with-profile4=no --with-monotouch=no --with-mcs-docs=no && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET})
 
 .if defined(WITH_XPI_PLUGIN_ONLY)
 do-install:
