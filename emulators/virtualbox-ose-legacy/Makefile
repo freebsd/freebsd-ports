@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.1.8
+DISTVERSION=	3.2.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -29,6 +29,9 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
 ONLY_FOR_ARCHS=	i386 amd64
 USE_GNOME=	libidl
@@ -46,15 +49,9 @@ USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 CONFLICTS=	bcc-[0-9]* virtualbox-ose-devel-3* virtualbox-ose-additions-3* virtualbox-ose-additions-devel-3*
 
 VBOXGROUP?=	vboxusers
-VBOXGID?=	920
+GROUPS=		${VBOXGROUP}
 VBOX_FRONTENDS=	VBoxHeadless
 VBOX_GUEST_VER=	${PORTVERSION}
-
-SUB_FILES=	pkg-install
-
-SUB_LIST=	PREFIX=${PREFIX} \
-		VBOXGROUP=${VBOXGROUP} \
-		VBOXGID=${VBOXGID}
 
 OPTIONS=	QT4 "Build with QT4 Frontend" on \
 		DEBUG "Build with debugging symbols" off \
@@ -62,6 +59,9 @@ OPTIONS=	QT4 "Build with QT4 Frontend" on \
 		DBUS "Build with D-Bus and HAL support" on \
 		PULSEAUDIO "Build with PulseAudio" off \
 		X11 "Build with X11 support" on \
+		VDE "Build with VDE support" off \
+		VNC "Build with VNC support" off \
+		WEBSERVICE "Build Webservice" off \
 		NLS "Native language support" on
 
 .include <bsd.port.options.mk>
@@ -84,7 +84,7 @@ BROKEN=		QT4 frontend requires X11 support. Run 'make config' again!
 
 .if !defined(WITHOUT_X11)
 USE_SDL=	sdl
-USE_XORG=	xcursor xmu inputproto
+USE_XORG=	xcursor xmu inputproto xinerama
 VBOX_FRONTENDS+=VBoxBFE VBoxSDL
 PLIST_SUB+=	X11=""
 .else
@@ -132,10 +132,27 @@ CONFIGURE_ARGS+=--disable-pulse
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 .endif
 
+.if defined(WITH_VNC)
+LIB_DEPENDS+=	vncserver.0:${PORTSDIR}/net/libvncserver
+.endif
+
 .if !defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITH_VDE)
+RUN_DEPENDS+=	vde_switch:${PORTSDIR}/net/vde2
+CONFIGURE_ARGS+=--enable-vde
+.endif
+
+.if defined(WITH_WEBSERVICE)
+BUILD_DEPENDS+=	soapcpp2:${PORTSDIR}/devel/gsoap
+VBOX_WEB=	vboxwebsrv webtest
+PLIST_SUB+=	WEB=""
+.else
+PLIST_SUB+=	WEB="@comment "
 .endif
 
 .if ${OSVERSION} < 700000
@@ -174,8 +191,18 @@ post-patch:
 	@${ECHO} 'VBOX_WITH_TESTCASES=' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'SDK_VBOX_LIBPNG_INCS = ${PREFIX}/include/libpng' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'SDK_VBOX_LIBPNG_LIBS = png' >> ${WRKSRC}/LocalConfig.kmk
-.if defined(WITHOUT_X11)
+	@${ECHO} 'VBOX_WITH_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS=' >> ${WRKSRC}/LocalConfig.kmk
+.if defined(WITH_VNC)
+	@${ECHO} 'VBOX_WITH_VNC = 1' >> ${WRKSRC}/LocalConfig.kmk
+.endif
+.if defined(WITH_WEBSERVICE)
+	@${ECHO} 'VBOX_WITH_WEBSERVICES = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_GSOAP_INSTALLED = 1' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_PATH_GSOAP = ${PREFIX}/lib/gsoap' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_PATH_GSOAP_BIN = ${PREFIX}/bin' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_PATH_GSOAP_IMPORT = ${PREFIX}/share/gsoap/import' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $(VBOX_GCC_WARN) -Wno-long-long' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Config.kmk ${WRKSRC}/configure \
@@ -207,7 +234,7 @@ do-install:
 .endif
 
 	${MKDIR} ${PREFIX}/bin
-.for f in VBoxManage VBoxNetAdpCtl VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS}
+.for f in VBoxManage VBoxNetAdpCtl VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS} ${VBOX_WEB}
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/${f} ${PREFIX}/lib/virtualbox/
 	${LN} -sf ${PREFIX}/lib/virtualbox/${f} ${PREFIX}/bin/
 .endfor
@@ -219,6 +246,13 @@ do-install:
 .for f in VBoxManage VBoxSVC VBoxXPCOMIPCD
 	${CHMOD} 0711 ${PREFIX}/lib/virtualbox/${f}
 .endfor
+
+.if defined(WITH_WEBSERVICE)
+	${MKDIR} -p ${DATADIR}/sdk/bindings/webservice
+.for f in vboxweb.wsdl vboxwebService.wsdl
+	${INSTALL_DATA} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/webservice/${f} ${DATADIR}/sdk/bindings/webservice/
+.endfor
+.endif
 
 .if defined(WITH_GUESTADDITIONS)
 	${MKDIR} ${PREFIX}/lib/virtualbox/additions
@@ -234,8 +268,6 @@ do-install:
 	${PYTHON_CMD} -mcompileall ${PYTHON_SITELIBDIR}/xpcom/
 
 post-install:
-	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
 .for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD ${VBOX_FRONTENDS}
 	${CHOWN} root:${VBOXGROUP} ${PREFIX}/lib/virtualbox/${f}
 .endfor
