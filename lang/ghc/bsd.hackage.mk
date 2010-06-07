@@ -78,6 +78,7 @@ mmap_port=			devel/hs-mmap
 MonadCatchIO-mtl_port=		devel/hs-MonadCatchIO-mtl
 mueval_port=			devel/hs-mueval		# executable
 mwc-random_port=		math/hs-mwc-random
+network-bytestring_port=	net/hs-network-bytestring
 ObjectName_port=		devel/hs-ObjectName
 oeis_port=			www/hs-oeis
 OpenAL_port=			audio/hs-OpenAL
