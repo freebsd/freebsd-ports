@@ -3,8 +3,4 @@
 @unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%f
 @unexec echo "===>  If you do not plan on reinstalling mod_accounting, you must manually remove"; echo "===>  references to it in httpd.conf."
 %%DATADIR%%/schema.sql
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
