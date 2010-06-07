@@ -3,6 +3,8 @@ mod_accounting is now installed on your system
 You can find a SQL example schema to use mod_accounting here :
 ${PREFIX}/share/mod_accounting/schema.sql
 
+Create the database [you must have compiled support the database]
+
 To install it with MySQL use the following command: 
 	mysql <database> < schema.sql
 For PostgreSQL: 

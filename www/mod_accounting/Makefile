@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_accounting
 PORTVERSION=	0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-acct/mod-acct/${PORTVERSION}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ COMMENT=	An Apache module that records traffic statistics into a database
 MAKE_JOBS_SAFE=  yes
 
 OPTIONS=	MYSQL	"Enable MySQL support" on \
-			PGSQL	"Enable PGSQL support" on
+			PGSQL	"Enable PGSQL support" off
 
 USE_APACHE=	13
 MAKE_ARGS+=	APXS="${APXS}"
