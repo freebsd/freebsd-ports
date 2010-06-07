@@ -7,7 +7,7 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://www.bmsoftware.org/freebsd/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
@@ -30,7 +30,10 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_RC_SUBR=	thundercache
 
 NO_BUILD=	yes
-LICENSE=	shareware / commercial
+LICENSE=	commercial
+LICENSE_NAME=	commercial
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE_TEXT=	Commercial software with shareware license to 50 threads
 RESTRICTED=	Commercial software with shareware license to 50 threads
 
 MANUAL_PACKAGE_BUILD=	This port wants PGSQL 8.4, but 8.2 is default and used to build php5-pgsql dependency.
