@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.65
+PORTVERSION=	0.7.66
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -15,6 +15,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
+
+LICENSE=	BSD
 
 OPTIONS=	DEBUG			"Build with debug" off \
 		DEBUGLOG		"Enable debug log (--with-debug)" off \
@@ -454,6 +456,18 @@ post-patch:
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
 		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
 .endif
+.if defined(WITH_ECHO_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_echo_time.c
+.endif
+.if defined(WITH_HTTP_FANCYINDEX_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_fancyindex_module.c
+.endif
+.if defined(WITH_HTTP_MP4_H264_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_streaming_module.c
+.endif
 .if defined(WITH_HTTP_NOTICE_MODULE)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_notice_module.c
@@ -464,10 +478,16 @@ post-patch:
 	@${REINPLACE_CMD} '377s!-g!${CXXFLAGS}!; \
 		s!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info.rb
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-StaticContentHandler.c
 .endif
 .if defined(WITH_HTTP_UPSTREAM_HASH)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_upstream.h
+.endif
+.if defined(WITH_SLOWFS_CACHE_MODULE)
+	@${PATCH} ${PATCH_ARGS} < \
+		${PATCHDIR}/extra-patch-ngx_http_slowfs_module.c
 .endif
 .if defined(WITH_SUPERVISORD_MODULE)
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
