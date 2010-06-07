@@ -21,11 +21,10 @@ USE_DOS2UNIX=	${PORTNAME}.html
 USE_PGSQL=	yes
 USE_APACHE=	1.3
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pgsql=${PREFIX} \
-		--with-apxs=${APXS}
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+AP_INC=	${LOCALBASE}/include
+AP_LIB=	${LOCALBASE}/lib -lpq
 
 PORTDOCS=	README index.html
 
