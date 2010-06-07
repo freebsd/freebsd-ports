@@ -224,6 +224,7 @@
     SUBDIR += hping
     SUBDIR += hping-devel
     SUBDIR += hs-hostname
+    SUBDIR += hs-network-bytestring
     SUBDIR += hs-pcap
     SUBDIR += htpdate
     SUBDIR += http_ping

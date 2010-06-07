@@ -1,0 +1,4 @@
+Fast, memory-efficient, low-level socket functions that use
+'Data.ByteString's instead of 'String's.
+
+WWW: http://github.com/tibbe/network-bytestring
