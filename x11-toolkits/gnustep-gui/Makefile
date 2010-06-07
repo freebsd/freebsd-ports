@@ -58,6 +58,10 @@ MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 BREAKS_IF_PEDANTIC=	yes
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
+.if defined(WITH_GNUSTEP_DEVEL)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Tools_sound_AudioOutputSink.m
+.endif
+
 .if defined(WITHOUT_GNUSTEP_FAKEMAIN)
 .if !exists(/proc/curproc)
 IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
