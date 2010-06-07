@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}.c readme.txt
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Log the time between request and the first byte of the response served
 
 MAKE_JOBS_SAFE=	yes
