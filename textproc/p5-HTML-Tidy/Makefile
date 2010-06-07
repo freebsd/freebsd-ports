@@ -22,6 +22,10 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN3=		HTML::Tidy.3 HTML::Tidy::Message.3
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/Makefile.PL
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
