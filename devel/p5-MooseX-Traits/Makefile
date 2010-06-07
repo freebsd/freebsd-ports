@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	MooseX-Traits
-PORTVERSION=	0.07
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
-COMMENT=	Moose eXtenstion to automatically apply roles at object creation time
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Moose eXtension to automatically apply roles at object creation time
 
 BUILD_DEPENDS=	p5-Moose>=0.84:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
