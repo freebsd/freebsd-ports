@@ -104,6 +104,7 @@
     SUBDIR += libsmi
     SUBDIR += macroscope
     SUBDIR += mbrowse
+    SUBDIR += mk-livestatus
     SUBDIR += mrtg
     SUBDIR += mrtg-ping-probe
     SUBDIR += mtrace
