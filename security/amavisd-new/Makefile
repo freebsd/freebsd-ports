@@ -8,7 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.6.4
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -106,6 +106,7 @@ AMAVIS_NOMILTER="@comment "
 .endif
 
 .if defined(WITH_BDB)
+USE_BDB=	42
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 .endif
 
