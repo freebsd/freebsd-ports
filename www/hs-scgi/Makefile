@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	scgi
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for writing SCGI programs
 
-USE_HACKAGE=	cgi
+USE_HACKAGE=	cgi network-bytestring
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
