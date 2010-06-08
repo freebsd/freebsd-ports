@@ -3,11 +3,12 @@
 %%SITE_PERL%%/Finance/QuoteHist/BusinessWeek.pm
 %%SITE_PERL%%/Finance/QuoteHist/Generic.pm
 %%SITE_PERL%%/Finance/QuoteHist/Google.pm
+%%SITE_PERL%%/Finance/QuoteHist/Investopedia.pm
 %%SITE_PERL%%/Finance/QuoteHist/MSN.pm
 %%SITE_PERL%%/Finance/QuoteHist/QuoteMedia.pm
+%%SITE_PERL%%/Finance/QuoteHist/StockNod.pm
 %%SITE_PERL%%/Finance/QuoteHist/Yahoo.pm
 %%SITE_PERL%%/Finance/QuoteHist/Yahoo/Australia.pm
-%%SITE_PERL%%/Finance/QuoteHist/Yahoo_AU.pm
 @dirrmtry %%SITE_PERL%%/Finance/QuoteHist/Yahoo
 @dirrmtry %%SITE_PERL%%/Finance/QuoteHist
 @dirrmtry %%SITE_PERL%%/Finance

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Finance-QuoteHist
-PORTVERSION=	1.12
+PORTVERSION=	1.14
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,12 +24,14 @@ RUN_DEPENDS=	p5-Date-Manip>=0:${PORTSDIR}/devel/p5-Date-Manip \
 PERL_CONFIGURE=	yes
 
 MAN3=		Finance::QuoteHist.3 \
+		Finance::QuoteHist::BusinessWeek.3 \
 		Finance::QuoteHist::Generic.3 \
+		Finance::QuoteHist::Google.3 \
+		Finance::QuoteHist::Investopedia.3 \
 		Finance::QuoteHist::MSN.3 \
 		Finance::QuoteHist::QuoteMedia.3 \
+		Finance::QuoteHist::StockNod.3 \
 		Finance::QuoteHist::Yahoo.3 \
-		Finance::QuoteHist::Yahoo::Australia.3 \
-		Finance::QuoteHist::Google.3 \
-		Finance::QuoteHist::BusinessWeek.3 \
+		Finance::QuoteHist::Yahoo::Australia.3
 
 .include <bsd.port.mk>
