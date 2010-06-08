@@ -8,6 +8,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Admin/Types.pm
 %%SITE_PERL%%/DBIx/Class/Admin/Usage.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat.pm
+%%SITE_PERL%%/DBIx/Class/FilterColumn.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/AbstractSearch.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/AccessorMapping.pm
 %%SITE_PERL%%/DBIx/Class/CDBICompat/AttributeAPI.pm
@@ -90,6 +91,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/SQLAHacks.pm
 %%SITE_PERL%%/DBIx/Class/SQLAHacks/MSSQL.pm
 %%SITE_PERL%%/DBIx/Class/SQLAHacks/MySQL.pm
+%%SITE_PERL%%/DBIx/Class/SQLAHacks/Oracle.pm
 %%SITE_PERL%%/DBIx/Class/SQLAHacks/OracleJoins.pm
 %%SITE_PERL%%/DBIx/Class/SQLAHacks/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/Schema.pm
