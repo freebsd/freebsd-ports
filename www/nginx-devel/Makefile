@@ -180,7 +180,7 @@ CONFIGURE_ARGS+=--without-http-cache
 .endif
 
 .if defined(WITH_CACHE_PURGE_MODULE)
-NGINX_CACHE_PURGE_MODULE_VERSION=	1.0
+NGINX_CACHE_PURGE_MODULE_VERSION=	1.1
 MASTER_SITES+=	http://labs.frickle.com/files/:cache_purge
 DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_MODULE_VERSION}.tar.gz:cache_purge
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_MODULE_VERSION}
