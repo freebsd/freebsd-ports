@@ -64,7 +64,8 @@ PLIST_SUB+=	NOTIFY="@comment "
 USE_PYTHON=	yes
 CONFIGURE_ARGS+=--enable-python
 .include "${PORTSDIR}/Mk/bsd.python.mk"
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pygtk.py:${PORTSDIR}/x11-toolkits/py-gtk2
+BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk>=2:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk>=2:${PORTSDIR}/x11-toolkits/py-gtk2
 PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=--disable-python
