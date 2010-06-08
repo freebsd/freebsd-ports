@@ -1,6 +1,6 @@
 @comment $FreeBSD$
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Identity.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/IO/Class.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Class.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Cont.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Error.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Identity.hi
@@ -16,15 +16,22 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer/Lazy.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer/Strict.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Functor/Compose.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Functor/Constant.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Functor/Identity.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Functor/Product.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/Functor
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/Writer
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/State
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans/RWS
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/Trans
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad/IO
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control/Monad
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Control
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
