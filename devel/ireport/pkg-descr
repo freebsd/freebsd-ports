@@ -6,4 +6,4 @@ with JFreeChart, one of the most diffused OpenSource chart library for java.
 The data to print can be retrieved through several ways including multiple JDBC
 connections, TableModels, JavaBeans, XML, etc.
 
-WWW:	http://ireport.sourceforge.net/
+WWW:	http://www.jasperforge.org/projects/ireport
