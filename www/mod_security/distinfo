@@ -1,3 +1,4 @@
-MD5 (modsecurity-apache_2.5.11.tar.gz) = 66cd4e5eed674ac3a0013b7229a1c2bb
-SHA256 (modsecurity-apache_2.5.11.tar.gz) = fd81a8998327ef2010426fcc2899312eddfe4dc462c417e9e7aeb64a6d4ed2bf
-SIZE (modsecurity-apache_2.5.11.tar.gz) = 1338425
+MD5 (modsecurity-apache_2.5.12.tar.gz) = f7d14b97bbe54ecb953125b0f9b87a24
+SHA256 (modsecurity-apache_2.5.12.tar.gz) = 168bb6591a0f9665169e0ed223a00d63a1c87e11d1e56388abcf431f30efaa84
+    Include %%APACHEETCDIR%%/Includes/mod_security2/base_rules/*.conf
+SIZE (modsecurity-apache_2.5.12.tar.gz) = 1392209
