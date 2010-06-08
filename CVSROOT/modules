@@ -5405,6 +5405,7 @@ hrktorrent                      ports/net-p2p/hrktorrent
 hs-ALUT                         ports/audio/hs-ALUT
 hs-Agda                         ports/math/hs-Agda
 hs-Agda-executable              ports/math/hs-Agda-executable
+hs-Boolean                      ports/devel/hs-Boolean
 hs-DeepArrow                    ports/devel/hs-DeepArrow
 hs-Diff                         ports/textproc/hs-Diff
 hs-FileManip                    ports/devel/hs-FileManip
@@ -5437,6 +5438,7 @@ hs-ansi-wl-pprint               ports/devel/hs-ansi-wl-pprint
 hs-arrows                       ports/devel/hs-arrows
 hs-binary                       ports/devel/hs-binary
 hs-bio                          ports/science/hs-bio
+hs-boolean                      ports/devel/hs-Boolean
 hs-brainfuck                    ports/lang/hs-brainfuck
 hs-bsd-sysctl                   ports/devel/hs-bsd-sysctl
 hs-bytestring-csv               ports/textproc/hs-bytestring-csv
@@ -5504,6 +5506,7 @@ hs-mmap                         ports/devel/hs-mmap
 hs-monadcatchio-mtl             ports/devel/hs-MonadCatchIO-mtl
 hs-mueval                       ports/devel/hs-mueval
 hs-mwc-random                   ports/math/hs-mwc-random
+hs-network-bytestring           ports/net/hs-network-bytestring
 hs-objectname                   ports/devel/hs-ObjectName
 hs-oeis                         ports/www/hs-oeis
 hs-openal                       ports/audio/hs-OpenAL
@@ -5514,6 +5517,7 @@ hs-pcap                         ports/net/hs-pcap
 hs-pcre-light                   ports/devel/hs-pcre-light
 hs-polyparse                    ports/textproc/hs-polyparse
 hs-porte                        ports/ports-mgmt/hs-porte
+hs-primitive                    ports/devel/hs-primitive
 hs-probability                  ports/math/hs-probability
 hs-quickcheck                   ports/devel/hs-QuickCheck
 hs-reactive                     ports/devel/hs-reactive
@@ -5549,6 +5553,8 @@ hs-uuagc                        ports/devel/hs-uuagc
 hs-uulib                        ports/devel/hs-uulib
 hs-uvector                      ports/devel/hs-uvector
 hs-uvector-algorithms           ports/devel/hs-uvector-algorithms
+hs-vector                       ports/devel/hs-vector
+hs-vector-algorithms            ports/devel/hs-vector-algorithms
 hs-vector-space                 ports/math/hs-vector-space
 hs-x11                          ports/x11/hs-X11
 hs-x11-xft                      ports/x11/hs-X11-xft
@@ -9186,6 +9192,7 @@ mixxx                           ports/audio/mixxx
 mjpegtools                      ports/multimedia/mjpegtools
 mk-aspell                       ports/textproc/mk-aspell
 mk-configure                    ports/devel/mk-configure
+mk-livestatus                   ports/net-mgmt/mk-livestatus
 mkapachepw                      ports/www/mkapachepw
 mkbold                          ports/x11-fonts/mkbold
 mkbold-mkitalic                 ports/x11-fonts/mkbold-mkitalic
@@ -11450,6 +11457,7 @@ p5-Crypt-OpenSSL-DSA            ports/security/p5-Crypt-OpenSSL-DSA
 p5-Crypt-OpenSSL-RSA            ports/security/p5-Crypt-OpenSSL-RSA
 p5-Crypt-OpenSSL-Random         ports/security/p5-Crypt-OpenSSL-Random
 p5-Crypt-OpenSSL-X509           ports/security/p5-Crypt-OpenSSL-X509
+p5-Crypt-PBKDF2                 ports/security/p5-Crypt-PBKDF2
 p5-Crypt-PGPSimple              ports/security/p5-Crypt-PGPSimple
 p5-Crypt-PassGen                ports/security/p5-Crypt-PassGen
 p5-Crypt-PasswdMD5              ports/security/p5-Crypt-PasswdMD5
@@ -12421,7 +12429,6 @@ p5-IPC-Shareable                ports/devel/p5-IPC-Shareable
 p5-IPC-SharedCache              ports/devel/p5-IPC-SharedCache
 p5-IPC-Signal                   ports/devel/p5-IPC-Signal
 p5-IPC-System-Simple            ports/devel/p5-IPC-System-Simple
-p5-IRC                          ports/irc/p5-IRC
 p5-IRC-Bot-Hangman              ports/irc/p5-IRC-Bot-Hangman
 p5-Ima-DBI                      ports/databases/p5-Ima-DBI
 p5-Image-Caa                    ports/graphics/p5-Image-Caa
@@ -15320,6 +15327,7 @@ p5-crypt-openssl-x509           ports/security/p5-Crypt-OpenSSL-X509
 p5-crypt-otp                    ports/security/p5-Crypt-OTP
 p5-crypt-passgen                ports/security/p5-Crypt-PassGen
 p5-crypt-passwdmd5              ports/security/p5-Crypt-PasswdMD5
+p5-crypt-pbkdf2                 ports/security/p5-Crypt-PBKDF2
 p5-crypt-pgpsimple              ports/security/p5-Crypt-PGPSimple
 p5-crypt-primes                 ports/security/p5-Crypt-Primes
 p5-crypt-rabbit                 ports/security/p5-Crypt-Rabbit
@@ -16347,7 +16355,6 @@ p5-ipc-sharedcache              ports/devel/p5-IPC-SharedCache
 p5-ipc-sharelite                ports/devel/p5-IPC-ShareLite
 p5-ipc-signal                   ports/devel/p5-IPC-Signal
 p5-ipc-system-simple            ports/devel/p5-IPC-System-Simple
-p5-irc                          ports/irc/p5-IRC
 p5-irc-bot-hangman              ports/irc/p5-IRC-Bot-Hangman
 p5-iterator                     ports/devel/p5-Iterator
 p5-iterator-dbi                 ports/databases/p5-Iterator-DBI
@@ -22459,6 +22466,7 @@ rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-validatable             ports/devel/rubygem-validatable
 rubygem-warbler                 ports/devel/rubygem-warbler
 rubygem-webby                   ports/devel/rubygem-webby
+rubygem-whois                   ports/net/rubygem-whois
 rubygem-xml-simple              ports/textproc/rubygem-xml-simple
 rubygem-xmpp4r                  ports/net-im/rubygem-xmpp4r
 rubygem-yadis                   ports/net/rubygem-yadis
@@ -23867,6 +23875,7 @@ thunderbird-i18n                ports/mail/thunderbird-i18n
 thunderbird3                    ports/mail/thunderbird3
 thunderbird3-i18n               ports/mail/thunderbird3-i18n
 thundercache                    ports/www/thundercache
+thundersnarf                    ports/www/thundersnarf
 ticker.app                      ports/sysutils/ticker.app
 tide                            ports/devel/tide
 tidy                            ports/www/tidy
@@ -25193,6 +25202,7 @@ x11iraf                         ports/science/x11iraf
 x11perf                         ports/x11/x11perf
 x11vnc                          ports/net/x11vnc
 x264                            ports/multimedia/x264
+x264-devel                      ports/multimedia/x264-devel
 x2vnc                           ports/x11-servers/x2vnc
 x2x                             ports/x11-servers/x2x
 x3270                           ports/x11/x3270
