@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aws
-PORTVERSION=	0.4.4
+PORTVERSION=	0.8.1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -33,12 +33,14 @@ IGNORE=		depends on Ruby 1.8.0 or later
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
-	${MKDIR} ${RUBY_MODDOCDIR}
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_MODDOCDIR}/
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
