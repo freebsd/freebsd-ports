@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://europass.cedefop.europa.eu/TechnicalResources/XML/europass-xsl/
 DISTNAME=	${PORTNAME}-V${PORTVERSION}
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSL stylesheets to transform Europass documents to HTML
 
 USE_ZIP=	yes
