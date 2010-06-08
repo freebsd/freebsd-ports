@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	cgi
-PORTVERSION=	3001.1.7.1
+PORTVERSION=	3001.1.8.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for writing CGI programs
 
 CABAL_SETUP=	Setup.hs
+
+USE_HACKAGE=	MonadCatchIO-mtl
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
