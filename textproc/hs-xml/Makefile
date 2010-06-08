@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xml
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.7
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
