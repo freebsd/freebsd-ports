@@ -1529,6 +1529,7 @@
     SUBDIR += rubygem-bluecloth
     SUBDIR += rubygem-erubis
     SUBDIR += rubygem-feed-normalizer
+    SUBDIR += rubygem-feedzirra
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-htauth

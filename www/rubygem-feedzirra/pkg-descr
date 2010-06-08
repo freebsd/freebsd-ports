@@ -1,0 +1,8 @@
+Feedzirra is a feed library that is designed to get
+and update many feeds as quickly as possible.
+
+The fetching and parsing logic have been de-coupled
+so that either of them can be used in isolation if you'd
+prefer not to use everything that Feedzirra offers. 
+
+WWW: http://github.com/pauldix/feedzirra
