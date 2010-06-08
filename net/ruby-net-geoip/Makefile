@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	net-geoip
-PORTVERSION=	0.06
-PORTREVISION=	6
+PORTVERSION=	0.07
 CATEGORIES=	net ruby geography
-MASTER_SITES=	http://www.maxmind.com/download/geoip/api/ruby/
+MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	f3cun3c02@sneakemail.com
 COMMENT=	A Ruby extension that wraps around libGeoIP
 
+BUILD_DEPENDS=	GeoIP>=1.4.6:${PORTSDIR}/net/GeoIP
 LIB_DEPENDS=	GeoIP.5:${PORTSDIR}/net/GeoIP
 
 USE_ICONV=	yes

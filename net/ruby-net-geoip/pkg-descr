@@ -1,4 +1,6 @@
 Net::GeoIP lets you look up the country of a given IP address or
 hostname.
 
-Author: Sean Chittenden <sean@chittenden.org>
+WWW: http://www.maxmind.com/app/geolitecountry/
+
+Albert Vernon <f3cun3c02@sneakemail.com>
