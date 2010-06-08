@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wirble
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	devel ruby
 MASTER_SITES=http://pablotron.org/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ USE_RUBY=	yes
 do-build:
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/wirble.rb ${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/lib/wirble.rb ${RUBY_SITELIBDIR}/
 
 post-install:
 .if !defined(NOPORTDOCS)
