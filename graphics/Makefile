@@ -394,6 +394,7 @@
     SUBDIR += kludge3d
     SUBDIR += kooka
     SUBDIR += kphotoalbum
+    SUBDIR += kphotoalbum-kde4
     SUBDIR += kpovmodeler
     SUBDIR += kradview
     SUBDIR += kudu
