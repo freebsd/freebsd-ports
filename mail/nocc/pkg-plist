@@ -3,6 +3,7 @@ www/nocc/classes/class_local.php
 www/nocc/classes/class_send.php
 www/nocc/classes/class_smtp.php
 www/nocc/classes/exception.php
+www/nocc/classes/nocc_body.php
 www/nocc/classes/nocc_contacts.php
 www/nocc/classes/nocc_header.php
 www/nocc/classes/nocc_headerinfo.php
@@ -11,6 +12,7 @@ www/nocc/classes/nocc_mailaddress.php
 www/nocc/classes/nocc_mailreader.php
 www/nocc/classes/nocc_mailstructure.php
 www/nocc/classes/nocc_quotausage.php
+www/nocc/classes/nocc_request.php
 www/nocc/classes/nocc_rssfeed.php
 www/nocc/classes/nocc_security.php
 www/nocc/classes/nocc_session.php
@@ -542,6 +544,7 @@ www/nocc/html/submenu_prefs.php
 www/nocc/index.php
 www/nocc/js/nocc.js
 www/nocc/lang/af.php
+www/nocc/lang/an.php
 www/nocc/lang/ar.php
 www/nocc/lang/arz.php
 www/nocc/lang/be-tarask.php
@@ -573,6 +576,7 @@ www/nocc/lang/id.php
 www/nocc/lang/is.php
 www/nocc/lang/it.php
 www/nocc/lang/ja.php
+www/nocc/lang/ka.php
 www/nocc/lang/ko.php
 www/nocc/lang/ksh.php
 www/nocc/lang/lb.php
@@ -591,6 +595,7 @@ www/nocc/lang/ro.php
 www/nocc/lang/ru.php
 www/nocc/lang/sk.php
 www/nocc/lang/sl.php
+www/nocc/lang/sr-ec.php
 www/nocc/lang/sr.php
 www/nocc/lang/sv.php
 www/nocc/lang/ta.php
