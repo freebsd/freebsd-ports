@@ -15,7 +15,6 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/KernelDensity.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Math.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Quantile.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/RandomVariate.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Resampling.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Resampling/Bootstrap.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Statistics/Sample.hi
