@@ -23,6 +23,8 @@ lib/audacious/General/streambrowser.so
 lib/audacious/General/vfstrace.so
 %%AACPLUGIN%%lib/audacious/Input/aac.so
 %%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
+%%AMIDIPLUGIN%%lib/audacious/Input/amidi-plug/ap-fluidsynth.so
+%%AMIDIPLUGIN%%lib/audacious/Input/amidi-plug.so
 %%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Input/console.so
 %%FLACPLUGIN%%lib/audacious/Input/flacng.so
@@ -322,6 +324,7 @@ share/audacious/Skins/TinyPlayer/volume.png
 @dirrm lib/audacious/Effect
 @dirrm lib/audacious/Container
 @dirrm lib/audacious/General
+%%AMIDIPLUGIN%%@dirrm lib/audacious/Input/amidi-plug
 @dirrm lib/audacious/Input
 @dirrm lib/audacious/Output
 @dirrm lib/audacious/Transport

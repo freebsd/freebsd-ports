@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		CPP=${CPP}
-CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa --disable-amidiplug \
+CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa --disable-ffaudio \
 		--disable-pulse --disable-projectm --disable-projectm-1.0
 WANT_GNOME=	yes
 WANT_EFL=	yes
@@ -63,7 +63,8 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		GNOME		"Build with gnomevfs/gconf support"	off \
 		NLS		"Native Language Support"		on  \
 		SSE2		"Enable SSE2 support"			on  \
-		RESAMPLE	"Enable resample support"		off
+		RESAMPLE	"Enable resample support"		off \
+		AMIDI		"Enable amidi support"			off
 
 .include <bsd.port.pre.mk>
 
@@ -333,6 +334,15 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITH_AMIDI)
+LIB_DEPENDS+=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth
+CONFIGURE_ARGS+=--enable-amidiplug --enable-amidiplug-flsyn
+PLIST_SUB+=	AMIDIPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-amidiplug
+PLIST_SUB+=	AMIDIPLUGIN="@comment "
 .endif
 
 pre-everything::
