@@ -32,8 +32,7 @@ USE_AUTOTOOLS=	libtool:22
 USE_GSTREAMER=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/evolution/%%VERSION%%
+USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
 CONFIGURE_ARGS=	--enable-nss=yes \
 		--enable-mono=no \
 		--disable-nm \
@@ -62,8 +61,6 @@ OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 		SPAMASSASSIN "Enable SpamAssassin spam filtering" off
 
 .include <bsd.port.pre.mk>
-
-USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
 
 .if defined(WITH_PILOT)
 LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnome-pilot
