@@ -2,10 +2,8 @@
 %%RUBY_SITELIBDIR%%/sax.rb
 %%RUBY_SITELIBDIR%%/saxdriver.rb
 %%RUBY_SITELIBDIR%%/wget.rb
-%%RUBY_SITELIBDIR%%/xml/dom/builder-ja.rb
 %%RUBY_SITELIBDIR%%/xml/dom/builder.rb
 %%RUBY_SITELIBDIR%%/xml/dom/core.rb
-%%RUBY_SITELIBDIR%%/xml/dom/digest.rb
 %%RUBY_SITELIBDIR%%/xml/dom/visitor.rb
 %%RUBY_SITELIBDIR%%/xml/dom2/attr.rb
 %%RUBY_SITELIBDIR%%/xml/dom2/cdatasection.rb
@@ -32,72 +30,18 @@
 %%RUBY_SITELIBDIR%%/xml/dom2/processinginstruction.rb
 %%RUBY_SITELIBDIR%%/xml/dom2/text.rb
 %%RUBY_SITELIBDIR%%/xml/dom2/xpath.rb
-%%RUBY_SITELIBDIR%%/xml/encoding-ja.rb
 %%RUBY_SITELIBDIR%%/xml/parser.rb
 %%RUBY_SITELIBDIR%%/xml/parserns.rb
 %%RUBY_SITELIBDIR%%/xml/sax.rb
 %%RUBY_SITELIBDIR%%/xml/saxdriver.rb
 %%RUBY_SITELIBDIR%%/xml/xpath.rb
 %%RUBY_SITELIBDIR%%/xmldigest.rb
-%%RUBY_SITELIBDIR%%/xmlencoding-ja.rb
 %%RUBY_SITELIBDIR%%/xmltree.rb
-%%RUBY_SITELIBDIR%%/xmltreebuilder-ja.rb
 %%RUBY_SITELIBDIR%%/xmltreebuilder.rb
 %%RUBY_SITELIBDIR%%/xmltreevisitor.rb
 @dirrm %%RUBY_SITELIBDIR%%/xml/dom2
 @dirrm %%RUBY_SITELIBDIR%%/xml/dom
 @dirrm %%RUBY_SITELIBDIR%%/xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/buildertest.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/buildertest2.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/digesttest.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/digesttest2.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/doctype.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/doctype.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/doctypei.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/document.dtd
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dom2/dom2test1.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dom2/dom2test2.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dom2/gtkxpath.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dom2/test1.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dom2/test2.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dtd/ext1.dtd
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dtd/ext2.dtd
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dtd/extdtd.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dtd/extdtd.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtktree.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/idattrtest.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index_euc.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index_jis.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index_noenc.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index_sjis.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index_u16.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index_u8.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/my-html.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/namespaces/namespace1.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/namespaces/namespace1.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/namespaces/namespace2.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/namespaces/namespace2.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nstest.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/saxtest.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/featurelist.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/skippedentity.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/useforeigndtd.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treetest.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/visitor.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/visitortest.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/writer.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlcheck.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlcomments.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlevent.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmliter.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xmlstats.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xpointer.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xpointertest.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/test
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/namespaces
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/dtd
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/dom2
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
