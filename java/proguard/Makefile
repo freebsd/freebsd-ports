@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proguard
-PORTVERSION=	4.4
+PORTVERSION=	4.5
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -15,6 +15,8 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A Java class file shrinker, optimizer, and obfuscator
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
+LICENSE=	GPLv2
 
 USE_JAVA=	yes
 NO_BUILD=	yes
