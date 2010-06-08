@@ -381,7 +381,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
 .endif
 
 .if defined(WITH_SLOWFS_CACHE_MODULE)
-NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.4
+NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.5
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
 DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}.tar.gz:slowfs_cache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}
@@ -484,10 +484,6 @@ post-patch:
 .if defined(WITH_HTTP_UPSTREAM_HASH)
 	@${PATCH} ${PATCH_ARGS} < \
 		${PATCHDIR}/extra-patch-ngx_http_upstream.h
-.endif
-.if defined(WITH_SLOWFS_CACHE_MODULE)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_slowfs_module.c
 .endif
 .if defined(WITH_SUPERVISORD_MODULE)
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
