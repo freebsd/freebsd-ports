@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	2.5.11
-PORTREVISION=	3
+PORTVERSION=	2.5.12
 CATEGORIES=	www security
 MASTER_SITES=	SF/mod-security/modsecurity-apache/${PORTVERSION}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -48,48 +47,56 @@ SUB_FILES+=	pkg-message.rules
 .if defined(WITH_MLOGC)
 PLIST_FILES+=	bin/mlogc
 .endif
-PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules
-PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/base_rules
-PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/util
-PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/CHANGELOG
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/LICENSE
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/README
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/util/modsec-clamscan.pl
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/util/runav.pl
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/util/httpd-guardian.pl
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_10_config.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_10_global_config.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_20_protocol_violations.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_21_protocol_anomalies.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_40_generic_attacks.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_42_comment_spam.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_42_tight_security.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_55_marketing.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_xss_attacks.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_41_sql_injection_attacks.data
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_45_trojans.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_phpids_filters.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_50_outbound.data
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_46_et_web_rules.data
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_46_et_sql_injection.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_47_common_exceptions.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_phpids_converter.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_20_protocol_violations.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_49_enforcement.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_21_protocol_anomalies.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_35_bad_robots.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_30_http_policy.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_46_et_web_rules.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_40_generic_attacks.data
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_50_outbound.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_46_et_sql_injection.data
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_23_request_limits.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_sql_injection_attacks.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_40_generic_attacks.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_48_local_exceptions.conf
-PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_60_correlation.conf
+PLIST_DIRS+=	${APACHEETCDIR}/Includes/mod_security2/optional_rules \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules \
+	${APACHEETCDIR}/Includes/mod_security2/util \
+	${APACHEETCDIR}/Includes/mod_security2
+
+PLIST_FILES+=	${APACHEETCDIR}/Includes/mod_security2.conf \
+	${APACHEETCDIR}/Includes/mod_security2/CHANGELOG \
+	${APACHEETCDIR}/Includes/mod_security2/LICENSE \
+	${APACHEETCDIR}/Includes/mod_security2/README \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_35_bad_robots.data \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_35_scanners.data \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_40_generic_attacks.data \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_41_sql_injection_attacks.data \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_42_comment_spam.data \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_46_et_sql_injection.data \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_46_et_web_rules.data \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_50_outbound.data \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_50_outbound_malware.data \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_20_protocol_violations.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_21_protocol_anomalies.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_23_request_limits.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_30_http_policy.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_35_bad_robots.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_40_generic_attacks.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_phpids_converter.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_phpids_filters.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_sql_injection_attacks.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_41_xss_attacks.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_42_tight_security.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_45_trojans.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_47_common_exceptions.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_48_local_exceptions.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_49_enforcement.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_49_inbound_blocking.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_50_outbound.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_59_outbound_blocking.conf \
+	${APACHEETCDIR}/Includes/mod_security2/base_rules/modsecurity_crs_60_correlation.conf \
+	${APACHEETCDIR}/Includes/mod_security2/modsecurity_crs_10_config.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_20_protocol_violations.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_21_protocol_anomalies.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_40_experimental.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_40_generic_attacks.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_42_comment_spam.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_46_et_sql_injection.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_46_et_web_rules.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_49_header_tagging.conf \
+	${APACHEETCDIR}/Includes/mod_security2/optional_rules/modsecurity_crs_55_marketing.conf \
+	${APACHEETCDIR}/Includes/mod_security2/util/httpd-guardian.pl \
+	${APACHEETCDIR}/Includes/mod_security2/util/modsec-clamscan.pl \
+	${APACHEETCDIR}/Includes/mod_security2/util/runav.pl
 .endif
 
 .if defined(WITH_LUA)
