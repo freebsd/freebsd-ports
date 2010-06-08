@@ -15,17 +15,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An Internet Content Acceleration module for Apache
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	1.3
-MAKE_ENV+=	"APXS=${APXS}"
-ALL_TARGET=	build
+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+
+PORTDOCS=	*.htm *.png *.gif
+PORTEXAMPLES=	${PORTNAME}.conf.sample
 
 post-patch:
-	@${REINPLACE_CMD} 's|-Wc,-Wall,-O3,-fomit-frame-pointer,-pipe||' \
-		${WRKSRC}/Makefile
-
-PORTEXAMPLES=	${PORTNAME}.conf.sample
+	@${REINPLACE_CMD} 's|-Wc,-Wall,-O3,-fomit-frame-pointer,-pipe||' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
