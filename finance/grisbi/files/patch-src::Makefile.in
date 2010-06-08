@@ -1,29 +1,11 @@
---- src/Makefile.in.orig	Mon Dec 19 16:26:40 2005
-+++ src/Makefile.in	Mon Dec 19 18:39:23 2005
-@@ -101,7 +101,7 @@
- prefix = @prefix@
+--- src/Makefile.in.orig	2010-05-04 20:15:57.000000000 +0200
++++ src/Makefile.in	2010-06-07 19:00:24.000000000 +0200
+@@ -483,7 +483,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-AM_CPPFLAGS = -I$(top_srcdir) -I$(includedir) -I../intl -DLOCALEDIR=\"$(localedir)\" -DPIXMAPS_DIR="\"$(datadir)/pixmaps/@PACKAGE@\"" -DPLUGINS_DIR="\"$(libdir)/@PACKAGE@\"" -DLOGO_PATH="\"$(datadir)/pixmaps/@PACKAGE@/grisbi-logo.png\"" -DDATA_PATH="\"$(datadir)/@PACKAGE@\"" -DHELP_PATH="\"$(datadir)/doc/@PACKAGE@\"" -Wall
++AM_CPPFLAGS = -I$(top_srcdir) -I$(includedir) -I../intl -DLOCALEDIR=\"$(localedir)\" -DPIXMAPS_DIR="\"$(pkgdatadir)/pixmaps\"" -DPLUGINS_DIR="\"$(libdir)/@PACKAGE@\"" -DLOGO_PATH="\"$(pkgdatadir)/pixmaps/grisbi-logo.png\"" -DDATA_PATH="\"$(pkgdatadir)\"" -DHELP_PATH="\"$(datadir)/doc/@PACKAGE@\"" -Wall
  
- localedir = $(datadir)/locale
--INCLUDES = -I$(top_srcdir) -I$(includedir) -I../intl -DLOCALEDIR=\"$(localedir)\" -DPIXMAPS_DIR="\"$(datadir)/pixmaps/grisbi\"" -DLOGO_PATH="\"$(datadir)/pixmaps/grisbi/grisbi-logo.png\"" -DANIM_PATH="\"$(datadir)/pixmaps/grisbi/euro.gif\"" -DHELP_PATH="\"$(datadir)/doc/grisbi/help\"" -Wall 
-+INCLUDES = -I$(top_srcdir) -I$(includedir) -I../intl -DLOCALEDIR=\"$(localedir)\" -DPIXMAPS_DIR="\"$(pkgdatadir)/pixmaps\"" -DLOGO_PATH="\"$(pkgdatadir)/pixmaps/grisbi-logo.png\"" -DANIM_PATH="\"$(pkgdatadir)/pixmaps/euro.gif\"" -DHELP_PATH="\"$(datadir)/doc/grisbi/help\"" -Wall 
- bin_PROGRAMS = grisbi
- 
- sources =  	accueil.c			affichage.c			affichage_liste.c		banque.c			barre_outils.c			calendar.c			categories_onglet.c		check.c				comptes_gestion.c		comptes_onglet.c		comptes_traitements.c		csv.c				devises.c			dialog.c			echeancier_onglet.c		echeancier_formulaire.c		echeancier_liste.c		echeancier_ventilation.c 	equilibrage.c			erreur.c			etat_io.c			etats_affiche.c			etats_calculs.c			etats_config.c			etats_gtktable.c		etats_html.c			etats_latex.c			etats_csv.c			etats_onglet.c			etats_support.c			exercice.c			export.c			fenetre_principale.c		fichier_configuration.c		fichiers_gestion.c		fichiers_io.c			gnucash.c			gtk_combofix.c			gtk_list_button.c		help.c				imputation_budgetaire.c		main.c				menu.c				ofx.c                   	operations_classement.c		operations_comptes.c		operations_formulaire.c 	operations_liste.c		operations_onglet.c		parametres.c			patienter.c			print_config.c			qif.c				import.c			html.c				tiers_onglet.c			traitement_variables.c		type_operations.c		ventilation.c			utils.c				utils_files.c			utils_file_selection.c		utils_xml.c			search_glist.c
-@@ -112,7 +112,7 @@
- grisbi_INCLUDES =  	accueil.h			affichage.h			affichage_liste.h		banque.h			barre_outils.h			calendar.h			categories_onglet.h		check.h				comptes_gestion.h		comptes_onglet.h		comptes_traitements.h		constants.h			devises.h			dialog.h			echeancier_onglet.h		echeancier_formulaire.h		echeancier_liste.h		echeancier_ventilation.h 	equilibrage.h			erreur.h			etat_io.h			etats_calculs.h			etats_config.h			etats_gtktable.h		etats.h				etats_latex.h			etats_onglet.h			etats_support.h			exercice.h			fenetre_principale.h		fichier_configuration.h		fichiers_gestion.h		fichiers_io.h			gnucash.h			gtkcombofix.h			gtk_list_button.h		help.h				imputation_budgetaire.h		include.h			main.h				menu.h				operations_classement.h		operations_comptes.h		operations_formulaire.h		operations_liste.h		operations_onglet.h		parametres.h			patienter.h			print_config.h			qif.h				import.h			html.h				structures.h			tiers_onglet.h			traitement_variables.h		type_operations.h		ventilation.h			utils.h				utils_xml.h			search_glist.h
- 
- 
--EXTRA_DIST = grisbi.desktop grisbi.keys grisbi.mime $(grisbi_INCLUDES)
-+EXTRA_DIST = grisbi.desktop $(grisbi_INCLUDES)
- 
- mimedir = $(datadir)/mime-info
- mime_DATA = grisbi.keys grisbi.mime
-@@ -347,7 +347,7 @@
- install-exec-am: install-binPROGRAMS
- install-exec: install-exec-am
- 
--install-data-am: install-mimeDATA
-+install-data-am:
- install-data: install-data-am
- 
- install-am: all-am
+ # TODO: This manual setting of -Wl is a hack, I cannot get it from
+ # configure right now because of no doc.

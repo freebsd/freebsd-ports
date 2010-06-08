@@ -1,0 +1,11 @@
+--- pixmaps/flags/Makefile.in.orig	2010-05-04 20:15:57.000000000 +0200
++++ pixmaps/flags/Makefile.in	2010-06-07 23:50:38.000000000 +0200
+@@ -246,7 +246,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-grisbi_pixmaps_flagsdir = $(datadir)/pixmaps/$(PACKAGE)/flags
++grisbi_pixmaps_flagsdir = $(pkgdatadir)/pixmaps/flags
+ grisbi_pixmaps_flags_DATA = ADP.png AED.png AFN.png ALL.png AMD.png	\
+ ANG.png ARS.png ATS.png AUD.png AWG.png AZM.png BAM.png BBD.png		\
+ BDT.png BEF.png BGN.png BHD.png BHU.png BIF.png BMD.png BND.png		\
