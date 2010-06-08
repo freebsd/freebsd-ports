@@ -1,0 +1,11 @@
+--- ./criterion.cabal.orig	2010-03-30 00:56:34.000000000 +0200
++++ ./criterion.cabal	2010-06-07 11:22:44.032554295 +0200
+@@ -53,7 +53,7 @@
+     mtl,
+     mwc-random >= 0.5.0.0,
+     parallel,
+-    parsec >= 3.1.0,
++    parsec,
+     statistics >= 0.5.1.0,
+     time,
+     vector >= 0.5,
