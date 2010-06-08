@@ -7,6 +7,7 @@
 
 PORTNAME=	asmutils
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://asm.sourceforge.net/asmutils/
 
@@ -18,8 +19,6 @@ ONLY_FOR_ARCHS=	i386
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	${PREFIX}/lib/asmutils
 
 # This will play merry hell with portlint
 BINS=		bonus/asmutils basename cal cat chmod chown chroot cmp cp \
