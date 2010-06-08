@@ -6,27 +6,22 @@
 #
 
 PORTNAME=	grisbi
-PORTVERSION=	0.5.9
-PORTREVISION=	7
+PORTVERSION=	0.6.0
 CATEGORIES=	finance
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/${PORTVERSION}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A personnal accounting application
 
-LIB_DEPENDS=	ofx.4:${PORTSDIR}/finance/libofx
-.if !defined(WITHOUT_LATEX)
-RUN_DEPENDS=	${UCS_CLASSDIR}/ucs.sty:${PORTSDIR}/print/latex-ucs
-.endif
+LIB_DEPENDS=	ofx.4:${PORTSDIR}/finance/libofx	\
+		ssl.7:${PORTSDIR}/security/openssl
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 glib20 libxml2
-
-TEXMFDIR?=	share/texmf
-UCS_CLASSDIR=	${LOCALBASE}/${TEXMFDIR}/tex/latex/ucs
+INSTALLS_ICONS=	yes
 
 MAN1=		grisbi.1
 
@@ -42,8 +37,10 @@ PLIST_SUB+=	NLS=""
 .endif
 
 pre-configure:
+	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"	\
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s|pixmaps help|pixmaps|" ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e "s|pixmaps help|pixmaps|" ${WRKSRC}/Makefile.in
 .endif
 
 .include <bsd.port.mk>
