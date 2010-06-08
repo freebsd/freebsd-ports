@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transformers
-PORTVERSION=	0.1.4.0
+PORTVERSION=	0.2.1.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
