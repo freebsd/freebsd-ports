@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	uuagc
-PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTVERSION=	0.9.24
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Attribute Grammar System of Universiteit Utrecht
 
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	uulib
+USE_HACKAGE=	uulib>=0.9.12
 
 EXECUTABLE=	uuagc
 HADDOCK_EXE=
