@@ -779,6 +779,7 @@
     SUBDIR += sguil-sensor
     SUBDIR += sguil-server
     SUBDIR += sha
+    SUBDIR += shibboleth2-sp
     SUBDIR += shimmer
     SUBDIR += shishi
     SUBDIR += shttpscanner
