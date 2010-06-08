@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 CATEGORIES=	devel python
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -12,7 +13,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-q
 		${PYTHON_SITELIBDIR}/PyQt4/Qsci.so:${PORTSDIR}/devel/py-qt4-qscintilla2
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network \
-		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg
+		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
+		${PYTHON_SITELIBDIR}/PyQt4/QtWebKit.so:${PORTSDIR}/www/py-qt4-webkit \
+		${PYTHON_SITELIBDIR}/PyQt4/QtHelp.so:${PORTSDIR}/devel/py-qt4-help
 
 INSTALL_CMD=	install.py -c -f eric4config.freebsd
 PLIST_FILES=
