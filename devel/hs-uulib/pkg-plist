@@ -1,14 +1,4 @@
 @comment $FreeBSD$
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntBag.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntMap.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/IntSet.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Map.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/MultiSet.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Queue.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Scc.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Seq.hi
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData/Set.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/PPrint.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing/CharParser.hi
@@ -36,6 +26,7 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util/BinaryTrees.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util/PermTree.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Util/Utils.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
@@ -44,7 +35,6 @@
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Scanner
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Pretty
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/Parsing
-@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU/DData
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/UU
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%
 @dirrm %%LIBDIR_REL%%
