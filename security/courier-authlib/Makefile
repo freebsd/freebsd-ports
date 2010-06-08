@@ -7,6 +7,7 @@
 
 PORTNAME=	courier-authlib
 PORTVERSION=	0.63.0
+PORTREVISION=	1
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
@@ -40,8 +41,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_SUBMAKE=	yes
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 MAILOWN=	courier
 MAILGRP=	courier

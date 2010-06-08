@@ -7,7 +7,7 @@
 
 PORTNAME=		root
 PORTVERSION=		5.02.00
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=		devel science math
 MASTER_SITES=		ftp://root.cern.ch/root/
 DISTNAME=		${PORTNAME}_v${PORTVERSION}.source
@@ -83,8 +83,7 @@ CONFIGURE_ARGS=		${CONFIGURE_TARGET}		\
 			--enable-xml			\
 			--enable-xrootd
 
-USE_LDCONFIG=		yes
-LDCONFIG_DIRS=		%%PREFIX%%/lib/root %%PREFIX%%/lib/root/cint
+USE_LDCONFIG=	${PREFIX}/lib/root ${PREFIX}/lib/root/cint
 MAN1=			cint.1 g2root.1 g2rootold.1 h2root.1 hadd.1 makecint.1
 MAN1+=			memprobe.1 olbd.1 proofd.1 proofserv.1 rlibmap.1
 MAN1+=			rmkdepend.1 root-config.1 root.1 root.exe.1 rootcint.1

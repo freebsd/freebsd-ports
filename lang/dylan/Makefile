@@ -7,7 +7,7 @@
 
 PORTNAME=	dylan
 PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.gwydiondylan.org/downloads/src/tar/         \
 		http://www.gwydiondylan.org/downloads/binaries/FreeBSD/x86/ \
@@ -34,19 +34,21 @@ CONFIGURE_ARGS=	--srcdir=${WRKSRC} --with-gc-prefix=${PREFIX}
 CONFIGURE_ENV=	D2C="${WRKDIR}/d2c -p${WRKSRC}/d2c/compiler/platforms.descr"
 
 GCCVER!=	gcc -dumpversion
-PLIST_SUB=	DYLANVER="${PORTVERSION}"
+DYLANVER=	${PORTVERSION}
 .if ${GCCVER:M3.3*}!=""
-PLIST_SUB+=	DYLANARCH="x86-freebsd-elf-gcc33"
+DYLANARCH=	x86-freebsd-elf-gcc33
 .elif ${GCCVER:M3.2*}!=""
-PLIST_SUB+=	DYLANARCH="x86-freebsd-elf-gcc32"
+DYLANARCH=	x86-freebsd-elf-gcc32
 .else
-PLIST_SUB+=	DYLANARCH="x86-freebsd-elf-gcc"
+DYLANARCH=	x86-freebsd-elf-gcc
 .endif
+
+PLIST_SUB=	DYLANVER=${DYLANVER}
+PLIST_SUB+=	DYLANARCH=${DYLANARCH}
 
 ONLY_FOR_ARCHS=	i386
 
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/dylan/%%DYLANVER%%/%%DYLANARCH%%
+USE_LDCONFIG=	${PREFIX}/lib/dylan/${DYLANVER}/${DYLANARCH}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile

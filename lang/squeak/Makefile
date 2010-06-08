@@ -7,7 +7,7 @@
 
 PORTNAME=		squeak
 PORTVERSION=		3.9
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		http://www.squeakvm.org/unix/release/ \
@@ -65,9 +65,6 @@ GNU_CONFIGURE=		yes
 # Plugin image must be writable, because of it copy to user's ~/.npsqueak/ and
 # be updated.
 SHAREMODE=		644
-
-# shared Libaries are to be installed in:
-LDCONFIG_DIRS=		${PREFIX}/share/squeak/${VMVERSION}
 
 FILES_TO_GZIP=		${IMAGEDIR}/Squeak${IMAGEVERSION}-${PATCHNUMBER}.image \
 			${IMAGEDIR}/Squeak${IMAGEVERSION}-${PATCHNUMBER}.changes

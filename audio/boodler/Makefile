@@ -7,7 +7,7 @@
 
 PORTNAME=	boodler
 PORTVERSION=	1.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.eblong.com/zarf/boodler/
 DISTFILES=	boodler-153.tar.gz boodler-snd-021902.tar.gz
@@ -22,8 +22,6 @@ USE_PYTHON=	yes
 DRIVER?=	oss
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BHOME=		${PREFIX}/share/boodler
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/share/boodler/boodle
 
 pre-everything::
 	@${ECHO} ""

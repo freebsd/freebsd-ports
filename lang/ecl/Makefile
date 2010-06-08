@@ -7,7 +7,7 @@
 
 PORTNAME=	ecl
 PORTVERSION=	0.9l
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -30,9 +30,6 @@ OPTIONS=	ASDF "Enable ASDF building facility" on \
 		CLX "Enable X11 interface" off \
 		SOCKETS "Enable socket interface" on \
 		THREADS "Enable threading support" off
-
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/ecl
 
 .include <bsd.port.pre.mk>
 
