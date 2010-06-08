@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	htmltools
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	textproc ruby
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -17,6 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Tools for parsing and manipulating HTML text in Ruby
 
+USE_DOS2UNIX=	tc_stacking-parser.rb
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
