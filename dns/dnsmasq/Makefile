@@ -6,11 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.54
-# Simon mistyped the program-internal version number and will name
-# the next release 2.55. Make sure portversion matches the self-presentation.
-# http://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2010q2/004105.html
-DISTNAME=	${PORTNAME}-2.53
+PORTVERSION=	2.55
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
