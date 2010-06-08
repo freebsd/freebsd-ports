@@ -4435,3 +4435,5 @@ lang/pexts||2010-06-02|Depends on expired port lang/pike72
 databases/ptop||2010-06-04|Broken with no update from maintainer or upstream.
 deskutils/dolphin-plugins-mplayerthumbs||2010-06-05|no longer supported by upstream.
 irc/p5-IRC|irc/p5-Bot-BasicBot|2010-06-07|has been deceased for 5+ yrs
+emulators/linux_base-gentoo-stage1||2010-06-08|Expired: please use emulators/linux_base-gentoo-stage3
+emulators/linux_dist-gentoo-stage1||2010-06-08|Expired: please use emulators/linux_dist-gentoo-stage3
