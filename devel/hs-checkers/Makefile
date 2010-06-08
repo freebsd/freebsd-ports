@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	checkers
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
