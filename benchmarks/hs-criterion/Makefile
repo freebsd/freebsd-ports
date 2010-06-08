@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	criterion
-PORTVERSION=	0.4.1.0
+PORTVERSION=	0.5.0.0
 CATEGORIES=	benchmarks haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Robust, reliable performance measurement and analysis for Haskell
 
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	deepseq>=1.1.0.0 statistics>=0.3.5 uvector>=0.1.0.5 \
-		uvector-algorithms>=0.2
+USE_HACKAGE=	deepseq>=1.1.0.0 mwc-random>=0.5.0.0 statistics>=0.5.1.0 \
+		vector>=0.5 vector-algorithms>=0.3
 
 PORTEXAMPLES=		*
 INSTALL_PORTEXAMPLES=	\
