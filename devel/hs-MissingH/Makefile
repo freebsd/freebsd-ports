@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	MissingH
-PORTVERSION=	1.1.0.1
+PORTVERSION=	1.1.0.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Large Haskell utility library
 
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	hslogger testpack
+USE_HACKAGE=	hslogger
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
