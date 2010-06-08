@@ -1,5 +1,5 @@
---- Makefile.in.orig	2010-04-23 12:22:41.000000000 +0900
-+++ Makefile.in	2010-04-28 12:36:06.304504270 +0900
+--- Makefile.in.orig	2010-05-30 08:51:42.000000000 +0900
++++ Makefile.in	2010-06-08 11:05:38.570093000 +0900
 @@ -117,13 +117,13 @@
  	cp -Rf $(LIBRARYFILES) $(DESTDIR)$(LIBDIR)
  	mkdir -p $(DESTDIR)$(BINDIR)
@@ -17,15 +17,3 @@
  	@printf '\n'
  	@printf '#================================================================\n'
  	@printf '# Thanks for using Kyoto Cabinet.\n'
-@@ -140,9 +140,9 @@
- 	cd $(DESTDIR)$(LIBDIR) && rm -f $(LIBRARYFILES)
- 	cd $(DESTDIR)$(BINDIR) && rm -f $(COMMANDFILES)
- 	cd $(DESTDIR)$(MAN1DIR) && rm -f $(MAN1FILES)
--	rm -rf $(DESTDIR)$(DATADIR)
-+#	rm -rf $(DESTDIR)$(DATADIR)
- 	cd $(DESTDIR)$(PCDIR) && rm -f $(PCFILES)
--	[ "$$UID" = 0 ] && ldconfig || true
-+#	[ "$$UID" = 0 ] && ldconfig || true
- 
- 
- dist :
