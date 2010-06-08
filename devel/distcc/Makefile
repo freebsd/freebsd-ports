@@ -42,7 +42,9 @@ LIB_DEPENDS+=	avahi-glib.1:${PORTSDIR}/net/avahi-app
 .endif
 
 .if defined(WITHOUT_RFC2553)
-CONFIGURE_ARGS+=	--without-avahi
+CONFIGURE_ARGS+=	--disable-rfc2553
+.else
+CONFIGURE_ARGS+=	--enable-rfc2553
 .endif
 
 .if defined(WITH_COMPILER_LINKS)
