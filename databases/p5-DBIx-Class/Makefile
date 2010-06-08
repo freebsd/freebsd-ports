@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08121
-PORTREVISION=	1
+PORTVERSION=	0.08122
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
 BUILD_DEPENDS=	p5-Carp-Clan>=6:${PORTSDIR}/devel/p5-Carp-Clan \
-		p5-Class-Accessor-Grouped>=0.09002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+		p5-Class-Accessor-Grouped>=0.09003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
@@ -28,9 +27,11 @@ BUILD_DEPENDS=	p5-Carp-Clan>=6:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
 		p5-Context-Preserve>=0.01:${PORTSDIR}/devel/p5-Context-Preserve \
-		p5-SQL-Abstract>=1.64:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-SQL-Abstract>=1.67:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.13:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
-		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name
+		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
+		p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny \
+		p5-namespace-clean>=0.14:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SQLT "SQL::Translator (generate DDL from schema)" Off
@@ -58,6 +59,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::InflateColumn.3 \
 	DBIx::Class::InflateColumn::DateTime.3 \
 	DBIx::Class::InflateColumn::File.3 \
+	DBIx::Class::FilterColumn.3 \
 	DBIx::Class::Manual.3 \
 	DBIx::Class::Manual::Component.3 \
 	DBIx::Class::Manual::Cookbook.3 \
@@ -91,6 +93,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::ResultSourceHandle.3 \
 	DBIx::Class::ResultSourceProxy::Table.3 \
 	DBIx::Class::Row.3 \
+	DBIx::Class::SQLAHacks::Oracle.3 \
 	DBIx::Class::SQLAHacks::OracleJoins.3 \
 	DBIx::Class::Schema.3 \
 	DBIx::Class::Schema::Versioned.3 \
