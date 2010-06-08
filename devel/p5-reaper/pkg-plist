@@ -1,3 +1,4 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/reaper/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Reaper/.packlist
 %%SITE_PERL%%/reaper.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/reaper
+%%SITE_PERL%%/Reaper.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reaper
