@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	7.2
+PORTVERSION=	7.3
 CATEGORIES=	www
-MASTER_SITES=	http://www.hiawatha-webserver.org/files/
+MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
+		http://www.c-s.li/ports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	An advanced and secure webserver for Unix
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL
