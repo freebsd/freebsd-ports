@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hslogger
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.10
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
