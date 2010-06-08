@@ -1,11 +1,12 @@
 @comment $FreeBSD$
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Cursor.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Input.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Lexer.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Output.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Proc.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/XML/Light/Types.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
