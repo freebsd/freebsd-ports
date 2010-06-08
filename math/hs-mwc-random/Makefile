@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mwc-random
-PORTVERSION=	0.4.1.1
+PORTVERSION=	0.5.0.0
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Fast, high quality pseudo random number generation in Haskell
 
-USE_HACKAGE=	uvector>=0.1.0.4
+USE_HACKAGE=	primitive vector>=0.5
 
 PORTDATA=		*
 INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
