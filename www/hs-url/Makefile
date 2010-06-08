@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	url
-PORTVERSION=	2.1
+PORTVERSION=	2.1.2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for working with URLs
 
-CABAL_SETUP=	Setup.hs
 USE_HACKAGE=	utf8-string>=0.3.4
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
