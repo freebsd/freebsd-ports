@@ -49,6 +49,9 @@ lib/libexo-hal-%%VERSION%%.so.5
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-%%VERSION%%/exo/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-%%VERSION%%/exo/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-%%VERSION%%/exo/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyo
 libdata/pkgconfig/exo-%%VERSION%%.pc
 libdata/pkgconfig/exo-hal-%%VERSION%%.pc
 libexec/exo-compose-mail-%%VERSION%%
@@ -250,6 +253,8 @@ share/xfce4/helpers/xterm.desktop
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/24x24/apps
 @dirrmtry share/icons/hicolor/24x24
+@dirrmtry %%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-%%VERSION%%/exo
+@dirrmtry %%PYTHON%%%%PYTHON_SITELIBDIR%%/exo-%%VERSION%%
 @dirrm include/exo-%%VERSION%%/exo-hal
 @dirrm include/exo-%%VERSION%%/exo
 @dirrm include/exo-%%VERSION%%
