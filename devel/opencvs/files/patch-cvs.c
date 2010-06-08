@@ -1,5 +1,5 @@
---- cvs.c	21 Jun 2008 15:39:15 -0000	1.150
-+++ cvs.c	17 Oct 2008 08:51:45 -0000
+--- cvs.c.orig	2008-06-21 17:39:15.000000000 +0200
++++ cvs.c	2010-06-08 20:18:08.000000000 +0200
 @@ -70,7 +70,7 @@
  struct cvs_cmd *cmdp;			/* struct of command we are running */
  
@@ -18,4 +18,3 @@
  usage(void)
  {
  	(void)fprintf(stderr,
-

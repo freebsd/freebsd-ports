@@ -1,6 +1,6 @@
---- Makefile	2008-06-21 17:39:15.000000000 +0200
-+++ Makefile	2008-11-01 14:42:14.000000000 +0100
-@@ -12,14 +12,7 @@
+--- Makefile.orig	2008-06-21 17:39:15.000000000 +0200
++++ Makefile	2010-06-08 20:18:08.000000000 +0200
+@@ -12,14 +12,8 @@
  	server.c status.c tag.c trigger.c worklist.c util.c update.c version.c \
  	watch.c xmalloc.c
  
@@ -13,6 +13,7 @@
 -YFLAGS=
 -
 -INSTALL_STRIP=
++CFLAGS+=-DSIZE_MAX=ULONG_MAX
 +DPADD+= ${LIBZ}
 +LDADD+= -lz -lmd
  
