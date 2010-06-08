@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bio
-PORTVERSION=	1.1.0
+PORTVERSION=	1.4.0
 CATEGORIES=	biology ruby
 MASTER_SITES=	http://bioruby.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,7 +24,6 @@ OPTIONSFILE=	${PORT_DBDIR}/ruby-${PORTNAME}/options
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-RUBY_SETUP=	install.rb
 
 .include <bsd.port.pre.mk>
 
@@ -54,11 +53,13 @@ do-install:
 		${CP} -p ${PREFIX}/${f}.sample ${PREFIX}/${f}; \
 	fi
 .endfor
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/sample/ ${RUBY_MODEXAMPLESDIR}/
+.endif
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README.rdoc ${RUBY_MODDOCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.rd ${RUBY_MODDOCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.rd.ja ${RUBY_MODDOCDIR}/ja/
 .endif
