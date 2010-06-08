@@ -6,23 +6,27 @@
 #
 
 PORTNAME=	jasperreports
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.7.3
 CATEGORIES=	databases print java
-MASTER_SITES=	SF/${PORTNAME}/1.${PORTNAME}/JasperReports%20${PORTVERSION}
-DISTFILES=	${PORTNAME}-${PORTVERSION}.jar ${PORTNAME}-${PORTVERSION}-applet.jar
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/JasperReports%20${PORTVERSION}
+DISTFILES=	${PORTNAME}-${PORTVERSION}.jar ${PORTNAME}-applet-${PORTVERSION}.jar
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JasperReports is a powerful open source Java reporting tool
 
-RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext		\
-		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j	\
-		${JAVALIBDIR}/poi.jar:${PORTSDIR}/textproc/jakarta-poi	\
-		${JAVALIBDIR}/jfreechart.jar:${PORTSDIR}/java/jfreechart\
+RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext			\
+		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j		\
+		${JAVALIBDIR}/crimson.jar:${PORTSDIR}/textproc/crimson		\
+		${JAVALIBDIR}/poi.jar:${PORTSDIR}/textproc/jakarta-poi		\
+		${JAVALIBDIR}/jfreechart.jar:${PORTSDIR}/java/jfreechart	\
+		${JAVASHAREDIR}/batik/batik.jar:${PORTSDIR}/graphics/batik	\
+		${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-commons-beanutils\
 		${JAVALIBDIR}/commons-digester.jar:${PORTSDIR}/textproc/jakarta-commons-digester
 
 .if !defined(WITHOUT_MYSQL)
 RUN_DEPENDS+=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
+.else
+RUN_DEPENDS+=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 .endif
 
 .if !defined(WITHOUT_PGSQL)
@@ -30,7 +34,7 @@ RUN_DEPENDS+=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
 .endif
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
