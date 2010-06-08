@@ -33,8 +33,6 @@ USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/tunepimp-0.4 --includedir=${PREFIX}/include/tunepimp-0.4
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/tunepimp-0.4
 USE_LDCONFIG=	${PREFIX}/lib/tunepimp-0.4
 
 post-patch:

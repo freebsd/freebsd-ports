@@ -8,7 +8,7 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	1.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
 		http://jpilot.org/
@@ -25,8 +25,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-pilot-prefix=${LOCALBASE}
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/jpilot/plugins
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

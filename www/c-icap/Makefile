@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	c_icap
 USE_AUTOTOOLS=	libtool:22
-LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/c_icap
 
 SUB_FILES=	pkg-install pkg-deinstall
 
