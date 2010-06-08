@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	drizzle
-PORTVERSION=	2010.03.1412
-PORTREVISION=	1
+PORTVERSION=	2010.05.1561
 CATEGORIES=	databases
-MASTER_SITES=	http://launchpadlibrarian.net/42665881/ \
+MASTER_SITES=	http://launchpadlibrarian.net/49101349/ \
 		LOCAL/glarkin
 
 MAINTAINER=	glarkin@FreeBSD.org
@@ -45,8 +44,6 @@ BUILD_DEPENDS+=	libdrizzle>=0:${PORTSDIR}/databases/libdrizzle \
 		libmemcached>=0:${PORTSDIR}/databases/libmemcached \
 		libevent>=0:${PORTSDIR}/devel/libevent \
 		curl>=0:${PORTSDIR}/ftp/curl \
-		gtkmm>=2.18:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		libnotifymm>=0:${PORTSDIR}/devel/libnotifymm \
 		libgcrypt>=0:${PORTSDIR}/security/libgcrypt \
 		pcre>=0:${PORTSDIR}/devel/pcre
 
