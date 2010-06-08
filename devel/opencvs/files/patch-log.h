@@ -1,5 +1,5 @@
---- log.h	10 Jun 2008 01:00:34 -0000	1.23
-+++ log.h	17 Oct 2008 08:51:46 -0000
+--- log.h.orig	2008-06-10 03:00:34.000000000 +0200
++++ log.h	2010-06-08 20:18:08.000000000 +0200
 @@ -47,6 +47,6 @@
  void	cvs_vlog(u_int, const char *, va_list);
  int	cvs_printf(const char *, ...) __attribute__((format(printf, 1, 2)));
@@ -8,4 +8,3 @@
 +void	fatal(const char *, ...) __attribute__((format(printf, 1,2)));
  
  #endif	/* LOG_H */
-

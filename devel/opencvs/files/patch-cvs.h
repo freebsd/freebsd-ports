@@ -1,10 +1,10 @@
---- cvs.h	27 Jun 2008 21:14:15 -0000	1.172
-+++ cvs.h	17 Oct 2008 08:51:45 -0000
-@@ -433,5 +433,6 @@
- int	cvs_watch(int, char **);
- int	cvs_watchers(int, char **);
+--- cvs.h.orig	2009-03-25 22:19:20.000000000 +0100
++++ cvs.h	2010-06-08 20:19:07.000000000 +0200
+@@ -28,6 +28,7 @@
+ #define CVS_H
  
-+#define SIZE_MAX ULONG_MAX
+ #include <signal.h>
++#include <time.h>
  
- #endif
-
+ #include "config.h"
+ #include "file.h"
