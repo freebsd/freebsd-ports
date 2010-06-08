@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	xosd
-PORTVERSION=	2.2.12
-PORTREVISION=	8
+PORTVERSION=	2.2.14
 CATEGORIES=	misc
-MASTER_SITES=	http://www.ignavus.net/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	perky
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	libxosd/libxosd/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
 XMMS_CONFIG?=	${LOCALBASE}/bin/xmms-config
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11 xext xt sm ice
 USE_AUTOTOOLS=	libtool:22
