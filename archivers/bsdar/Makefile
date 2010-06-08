@@ -11,7 +11,7 @@ MASTER_SITES=	http://people.freebsd.org/~kaiw/distfiles/
 PKGNAMEPREFIX=	bsd-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD-licensed replacement of the ar utility
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

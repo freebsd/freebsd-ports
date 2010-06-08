@@ -9,7 +9,7 @@ PORTREVISION=	6
 CATEGORIES=		audio multimedia
 MASTER_SITES=		SF
 
-MAINTAINER=	gabor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The real-time guitar processor
 
 USE_BZIP2=	yes
