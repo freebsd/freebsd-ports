@@ -23,9 +23,9 @@ USE_PYTHON=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/INSTALLDIR && ${COPYTREE_SHARE} . ${DATADIR})
-	(cd ${WRKSRC}/INSTALLDIR && ${COPYTREE_BIN} . ${DATADIR} "-type f -a -perm 755")
-	${LN} -sf ${DATADIR}/bin/komodo ${PREFIX}/bin/komodo
+	${MKDIR} ${DESKTOPDIR}
+	cd ${WRKSRC} && ${SH} install.sh -I ${DATADIR} -s
+	${LN} -sf ${DATADIR}/bin/komodo ${PREFIX}/bin/
+	${LN} -sf ${DATADIR}/share/desktop/komodo-edit-5.desktop ${DESKTOPDIR}/
 
 .include <bsd.port.post.mk>
