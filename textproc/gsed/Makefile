@@ -7,6 +7,7 @@
 
 PORTNAME=	sed
 PORTVERSION=	4.2.1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,23 +16,31 @@ PKGNAMEPREFIX=	g
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	The GNU stream editor
 
-# Global variables
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
-#CONFIGURE_ARGS+=--disable-nls
-USE_GMAKE=	yes
-INFO=		sed
-MAN1=		gsed.1
 
-# Local variables
+OPTIONS=	NLS	"NLS support"	on
+
 PATCH_SUBDIRS=	. doc lib sed
 DATADIR=	${PREFIX}/share/${PKGBASE}
 SAMP_FILES=	binary*.sed dc.sed
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 PORTDOCS=	AUTHORS BUGS COPYING COPYING.DOC NEWS README THANKS
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
+USE_GMAKE=	yes
+INFO=		sed
+MAN1=		gsed.1
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+PLIST_SUB=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's,^\* sed:,* GNU sed:,' \
