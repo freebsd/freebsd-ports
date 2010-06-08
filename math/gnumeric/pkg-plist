@@ -225,6 +225,9 @@ lib/gnumeric/%%VERSION%%/plugins/lpsolve/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/mps/mps.la
 lib/gnumeric/%%VERSION%%/plugins/mps/mps.so
 lib/gnumeric/%%VERSION%%/plugins/mps/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/nlsolve/nlsolve.la
+lib/gnumeric/%%VERSION%%/plugins/nlsolve/nlsolve.so
+lib/gnumeric/%%VERSION%%/plugins/nlsolve/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/oleo/oleo.la
 lib/gnumeric/%%VERSION%%/plugins/oleo/oleo.so
 lib/gnumeric/%%VERSION%%/plugins/oleo/plugin.xml
@@ -385,6 +388,7 @@ share/gnumeric/%%VERSION%%/glade/solver.glade
 share/gnumeric/%%VERSION%%/glade/tabulate.glade
 share/gnumeric/%%VERSION%%/glade/variance-tests.glade
 share/gnumeric/%%VERSION%%/glade/view.glade
+share/gnumeric/%%VERSION%%/glade/wilcoxon-mann-whitney.glade
 share/gnumeric/%%VERSION%%/glade/workbook-attr.glade
 share/gnumeric/%%VERSION%%/templates/calendar.gnumeric
 share/gnumeric/%%VERSION%%/templates/invoice.gnumeric
@@ -1001,6 +1005,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 %%PERL%%@dirrm lib/gnumeric/%%VERSION%%/plugins/perl-func
 @dirrm lib/gnumeric/%%VERSION%%/plugins/openoffice
 @dirrm lib/gnumeric/%%VERSION%%/plugins/oleo
+@dirrm lib/gnumeric/%%VERSION%%/plugins/nlsolve
 @dirrm lib/gnumeric/%%VERSION%%/plugins/mps
 @dirrm lib/gnumeric/%%VERSION%%/plugins/lpsolve
 @dirrm lib/gnumeric/%%VERSION%%/plugins/lotus
