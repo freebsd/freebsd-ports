@@ -75,7 +75,7 @@ RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
 .if !defined(WITHOUT_MUSEPACK)
-RUN_DEPENDS+=	mppdec:${PORTSDIR}/audio/musepack
+RUN_DEPENDS+=	mpcdec:${PORTSDIR}/audio/musepack
 .endif
 .if !defined(WITHOUT_SHORTEN)
 RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten
