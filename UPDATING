@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100609:
+  AFFECTS: users of audio/libogg and audio/libao
+  AUTHOR: naddy@FreeBSD.org
+
+  There are new versions of libogg (1.2.0) and libao (1.0.0) and the shlib
+  versions have been bumped (ogg.6 to ogg.7, ao.3 to ao.4).
+
+  All ports that have an identifiable direct dependency on these libraries
+  have had their PORTREVISIONs bumped.  However, some ports that pull in
+  the libraries indirectly may continue to look for the old versions.  To
+  ensure that all are updated, perform this step:
+
+  If you use portupgrade:
+
+	portupgrade -rf libogg libao
+
+  If you use portmaster:
+
+	portmaster -r libogg libao
+
 20100605:
   AFFECTS: users of multimedia/gstreamer-plugins-good and
 	   multimedia/gstreamer-plugins-bad
