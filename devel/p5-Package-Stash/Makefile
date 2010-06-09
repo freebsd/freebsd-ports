@@ -16,4 +16,6 @@ COMMENT=	Routines for manipulating stashes
 
 PERL_CONFIGURE=	YES
 
+MAN3=		Package::Stash.3 
+
 .include <bsd.port.mk>
