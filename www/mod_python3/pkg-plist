@@ -1,6 +1,6 @@
 %%APACHEMODDIR%%/%%AP_MODULE%%
-@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %f
-@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %f
+@exec %D/sbin/apxs -e -a -n %%AP_NAME%% %D/%F
+@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
 %%PYTHON_SITELIBDIR%%/mod_python/Cookie.py
 %%PYTHON_SITELIBDIR%%/mod_python/Cookie.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/Cookie.pyo
