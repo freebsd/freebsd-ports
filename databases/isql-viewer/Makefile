@@ -7,7 +7,7 @@
 
 PORTNAME=	isql-viewer
 PORTVERSION=	2.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases java
 MASTER_SITES=	SF/isql/Stand%20Alone%20Jars/Version%20${PORTVERSION}:isql \
 		${MASTER_SITE_APACHE:S/$/:bsf/}
@@ -36,8 +36,7 @@ DEST_ISQL_JAR=	${ISQL}.jar
 BSF_JAR=	bsf.jar
 DEST_BSF_JAR=	ibm-${BSF_JAR}
 
-JYTHON_PORT=	${PORTSDIR}/lang/jython
-JYTHON_PREFIX=	${LOCALBASE}/lib/jython22
+JYTHON_PREFIX=	${LOCALBASE}/lib/jython
 JYTHON_JAR=	jython.jar
 
 JARFILES=	${DEST_ISQL_JAR} \
