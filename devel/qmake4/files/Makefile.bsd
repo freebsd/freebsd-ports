@@ -11,14 +11,15 @@ NO_MAN=	true	# qmake.1 anyone?
 	${.CURDIR:H}/src/corelib/global ${.CURDIR:H}/src/corelib/plugin \
 	${.CURDIR:H}/src/corelib/kernel ${.CURDIR:H}/src/corelib/codecs \
 	${.CURDIR:H}/src/corelib/xml ${.CURDIR:H}/src/3rdparty/md4 \
-	${.CURDIR:H}/src/3rdparty/md5 ${.CURDIR:H}/src/3rdparty/sha1
+	${.CURDIR:H}/src/3rdparty/md5 ${.CURDIR:H}/src/3rdparty/sha1 \
+	${.CURDIR:H}/tools/shared/symbian ${.CURDIR:H}/tools/shared/windows
 
 CXXFLAGS+=-I${.CURDIR:H}/mkspecs/freebsd-g++
 
 .for s in src/corelib/arch/generic src/corelib/global src/corelib/tools \
 		src/corelib/kernel src/corelib/codecs \
 		src/3rdparty/md5 src/3rdparty/md4 src/3rdparty/sha1 \
-		include/QtCore include
+		tools/shared include/QtCore include
 CXXFLAGS+=-I${.CURDIR:H}/$s
 .endfor
 

@@ -1,14 +1,11 @@
---- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	2009-10-20 20:13:33.000000000 +1100
-+++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	2009-10-16 16:01:06.000000000 +1100
-@@ -700,9 +700,9 @@
+--- ./src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.orig	2010-06-02 06:03:12.000000000 +0400
++++ ./src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	2010-06-09 01:21:29.281286595 +0400
+@@ -723,7 +723,7 @@
  #endif
  
  #if !defined(WTF_USE_JSVALUE64) && !defined(WTF_USE_JSVALUE32) && !defined(WTF_USE_JSVALUE32_64)
 -#if PLATFORM(X86_64) && (PLATFORM(DARWIN) || PLATFORM(LINUX) || PLATFORM(SOLARIS) || PLATFORM(HPUX))
 +#if (PLATFORM(X86_64) && (PLATFORM(DARWIN) || PLATFORM(LINUX) || PLATFORM(FREEBSD) || PLATFORM(SOLARIS) || PLATFORM(HPUX)))
  #define WTF_USE_JSVALUE64 1
--#elif (PLATFORM(IA64) && !PLATFORM(IA64_32)) || PLATFORM(SPARC64)
-+#elif (PLATFORM(IA64) && !PLATFORM(IA64_32)) || PLATFORM(SPARC64) || PLATFORM(ALPHA)
+ #elif (PLATFORM(IA64) && !PLATFORM(IA64_32)) || PLATFORM(SPARC64) || PLATFORM(ALPHA)
  #define WTF_USE_JSVALUE64 1
- #elif PLATFORM(ARM) || PLATFORM(PPC64)
- #define WTF_USE_JSVALUE32 1

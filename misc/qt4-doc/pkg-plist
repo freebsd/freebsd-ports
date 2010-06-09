@@ -4579,6 +4579,7 @@
 %%DOCSDIR%%/html/qpolygonf-members.html
 %%DOCSDIR%%/html/qpolygonf.html
 %%DOCSDIR%%/html/qprintdialog-members.html
+%%DOCSDIR%%/html/qprintdialog-qt3.html
 %%DOCSDIR%%/html/qprintdialog.html
 %%DOCSDIR%%/html/qprintengine-members.html
 %%DOCSDIR%%/html/qprintengine.html
@@ -4664,6 +4665,8 @@
 %%DOCSDIR%%/html/qs60maindocument.html
 %%DOCSDIR%%/html/qs60style-members.html
 %%DOCSDIR%%/html/qs60style.html
+%%DOCSDIR%%/html/qscopedarraypointer-members.html
+%%DOCSDIR%%/html/qscopedarraypointer.html
 %%DOCSDIR%%/html/qscopedpointer-members.html
 %%DOCSDIR%%/html/qscopedpointer.html
 %%DOCSDIR%%/html/qscreen-members.html

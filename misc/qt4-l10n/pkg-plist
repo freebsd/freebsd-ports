@@ -4,6 +4,7 @@ share/qt4/translations/assistant_adp_pl.qm
 share/qt4/translations/assistant_adp_ru.qm
 share/qt4/translations/assistant_adp_zh_CN.qm
 share/qt4/translations/assistant_adp_zh_TW.qm
+share/qt4/translations/assistant_cs.qm
 share/qt4/translations/assistant_da.qm
 share/qt4/translations/assistant_de.qm
 share/qt4/translations/assistant_fr.qm
@@ -12,6 +13,7 @@ share/qt4/translations/assistant_pl.qm
 share/qt4/translations/assistant_ru.qm
 share/qt4/translations/assistant_zh_CN.qm
 share/qt4/translations/assistant_zh_TW.qm
+share/qt4/translations/designer_cs.qm
 share/qt4/translations/designer_de.qm
 share/qt4/translations/designer_fr.qm
 share/qt4/translations/designer_ja.qm
@@ -20,6 +22,7 @@ share/qt4/translations/designer_ru.qm
 share/qt4/translations/designer_sl.qm
 share/qt4/translations/designer_zh_CN.qm
 share/qt4/translations/designer_zh_TW.qm
+share/qt4/translations/linguist_cs.qm
 share/qt4/translations/linguist_de.qm
 share/qt4/translations/linguist_fr.qm
 share/qt4/translations/linguist_ja.qm
@@ -28,10 +31,13 @@ share/qt4/translations/linguist_ru.qm
 share/qt4/translations/linguist_zh_CN.qm
 share/qt4/translations/linguist_zh_TW.qm
 share/qt4/translations/qt_ar.qm
+share/qt4/translations/qt_cs.qm
 share/qt4/translations/qt_da.qm
 share/qt4/translations/qt_de.qm
 share/qt4/translations/qt_es.qm
 share/qt4/translations/qt_fr.qm
+share/qt4/translations/qt_he.qm
+share/qt4/translations/qt_help_cs.qm
 share/qt4/translations/qt_help_da.qm
 share/qt4/translations/qt_help_de.qm
 share/qt4/translations/qt_help_fr.qm
@@ -40,7 +46,6 @@ share/qt4/translations/qt_help_pl.qm
 share/qt4/translations/qt_help_ru.qm
 share/qt4/translations/qt_help_zh_CN.qm
 share/qt4/translations/qt_help_zh_TW.qm
-share/qt4/translations/qt_iw.qm
 share/qt4/translations/qt_ja_JP.qm
 share/qt4/translations/qt_pl.qm
 share/qt4/translations/qt_pt.qm
