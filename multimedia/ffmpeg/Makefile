@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -40,7 +40,7 @@ OPTIONS=	AMR_NB	"AMR Narrow Band encoder" off \
 		SCHROEDINGER	"Dirac codec via libschroedinger" on \
 		SDL	"SDL support (build ffplay)" off \
 		SPEEX	"Speex audio decoder" off \
-		SSSE3	"Enable ssse3 support (gcc 4.4+)" off \
+		SSSE3	"Enable ssse3 support" off \
 		THEORA	"Theora encoder (implies OGG)" on \
 		VHOOK	"Video hook support" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
@@ -107,13 +107,14 @@ DOC_DOCFILES=	APIchanges avutil.txt faq.html ffmpeg-doc.html \
 		snow.txt soc.txt swscale.txt TODO
 PORTDOCS=	*
 
-.ifndef(WITHOUT_FFSERVER)
-USE_RC_SUBR=	ffserver
+.if defined(WITH_SSSE3)
+BUILD_DEPENDS+=         ${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=         COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=              COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-.if defined(WITH_SSSE3)
-USE_GCC=	4.4+
-BUILD_DEPENDS+=	as:${PORTSDIR}/devel/binutils
+.ifndef(WITHOUT_FFSERVER)
+USE_RC_SUBR=	ffserver
 .endif
 
 # sse hardware vector support
@@ -144,11 +145,8 @@ MAN1+=		ffserver.1
 .endif
 
 # optimizations
-.ifdef(WITH_OPTIMIZED_CFLAGS)
-CFLAGS:=	${CFLAGS:N-O*} -O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
-.else
-CFLAGS:=	${CFLAGS:N-O0} -O2
-DEBUG_FLAGS+=	-O2
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=	-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
 .endif
 
 # amr
