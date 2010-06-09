@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	weave
-PORTVERSION=	1.2.3
+PORTNAME=	firefox-sync
+PORTVERSION=	1.3
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://files.roorback.net/ \
 		LOCAL/glarkin
 
 MAINTAINER=	magik@roorback.net
-COMMENT=	Mozilla Weave extension
+COMMENT=	Mozilla extension to synchronize Firefox data
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
 RUN_DEPENDS=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
@@ -37,7 +37,7 @@ AMD64_ARCH=	x86_64
 BUILD_DEPENDS+=	${FF_DEPENDS}
 RUN_DEPENDS+=	${FF_DEPENDS}
 
-REVID=		ad1ede89cbb2
+REVID=		8c2ff3edbda5
 .if ${ARCH} == i386
 PLATFORM=	FreeBSD_x86-gcc3
 .elif ${ARCH} == amd64
