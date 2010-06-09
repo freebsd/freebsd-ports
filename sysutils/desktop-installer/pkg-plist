@@ -1,4 +1,7 @@
+bin/amd-setup
 bin/desktop-installer
+%%DATADIR%%/Gnome/Xsession
+%%DATADIR%%/Gnome/xinitrc
 %%DATADIR%%/KDE3/Xsession
 %%DATADIR%%/KDE3/xinitrc
 %%DATADIR%%/KDE4/Xsession
@@ -17,4 +20,5 @@ bin/desktop-installer
 @dirrm %%DATADIR%%/XFCE4
 @dirrm %%DATADIR%%/KDE4
 @dirrm %%DATADIR%%/KDE3
+@dirrm %%DATADIR%%/Gnome
 @dirrm %%DATADIR%%
