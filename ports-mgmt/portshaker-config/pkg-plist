@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+etc/portshaker.conf
+etc/portshaker.d/bsd_sharp
+etc/portshaker.d/bsd_sharp_releng_2_0
+etc/portshaker.d/bsd_sharp_releng_2_2
+etc/portshaker.d/bsd_sharp_releng_2_4
+etc/portshaker.d/freebsd_texlive_2009
+etc/portshaker.d/freebsd_texlive_ports
+etc/portshaker.d/freebsd_texlive_ports_marcuscom
+etc/portshaker.d/freebsd_texlive_releng_2009
+etc/portshaker.d/marcuscom_ports
+etc/portshaker.d/marcuscom_ports_stable
+etc/portshaker.d/ports
