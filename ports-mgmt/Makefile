@@ -57,6 +57,7 @@
    SUBDIR += portrac
    SUBDIR += portscout
    SUBDIR += portsearch
+   SUBDIR += portshaker
    SUBDIR += portsman
    SUBDIR += portsopt
    SUBDIR += porttools

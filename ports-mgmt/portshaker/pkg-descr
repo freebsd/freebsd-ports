@@ -1,0 +1,3 @@
+portshaker(8) is a tool designed for merging partial ports trees into the
+FreeBSD ports tree. In other words, it implements some kind of overlay for the
+FreeBSD ports.

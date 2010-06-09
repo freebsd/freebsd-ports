@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/portshaker
+etc/portshaker.conf.sample
+%%DATADIR%%/merge-updating.awk
+%%DATADIR%%/portshaker.subr
+@exec mkdir -p %D/etc/portshaker.d
+@dirrmtry etc/portshaker.d
+@dirrm %%DATADIR%%
