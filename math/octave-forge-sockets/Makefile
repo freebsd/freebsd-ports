@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	octave-forge-sockets
-PORTVERSION=	1.0.5
-PORTREVISION=	3
-CATEGORIES=     math
+PORTVERSION=	1.0.6
+CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
-COMMENT=        Octave-forge package ${OCTAVE_PKGNAME}
-GNU_CONFIGURE=	yes
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
+
+WRKSRC=		${WRKDIR}/${OCTAVE_PKGNAME}/src
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+post-build:
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+
 .include <bsd.port.post.mk>
