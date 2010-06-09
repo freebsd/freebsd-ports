@@ -12,7 +12,7 @@ etc/proftpd.conf.sample
 %%SFTP%%@unexec if cmp -s %D/etc/proftpd/blacklist.dat %D/etc/proftpd/blacklist.dat.sample; then rm -f %D/etc/proftpd/blacklist.dat; fi
 %%SFTP%%etc/proftpd/blacklist.dat.sample
 %%SFTP%%@exec cp -n %D/%F %B/blacklist.dat
-@exec mkdir %%LOCALSTATEDIR%%/proftpd
+@exec mkdir -p %%LOCALSTATEDIR%%/proftpd
 include/proftpd/auth.h
 include/proftpd/bindings.h
 include/proftpd/buildstamp.h
