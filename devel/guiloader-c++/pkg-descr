@@ -3,4 +3,4 @@ layer that simplifies development of GuiLoader based applications written
 in the C++ language by introducing exception safety, binding GTK+ objects
 defined in GuiXml to C++ variables and type-safe dynamic connection to signals.
 
-WWW: http://crow-designer.sourceforge.net/
+WWW: http://www.crowdesigner.org/
