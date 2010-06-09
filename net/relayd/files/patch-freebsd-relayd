@@ -1,6 +1,6 @@
 diff -Naur relayd.orig/carp.c relayd/carp.c
---- relayd.orig/carp.c	2010-05-29 10:41:49.559000800 +0200
-+++ relayd/carp.c	2010-05-29 10:41:54.579324977 +0200
+--- relayd.orig/carp.c	2010-06-09 22:44:47.709807443 +0200
++++ relayd/carp.c	2010-06-09 22:44:55.816582245 +0200
 @@ -19,6 +19,7 @@
  #include <sys/param.h>
  #include <sys/socket.h>
@@ -10,8 +10,8 @@ diff -Naur relayd.orig/carp.c relayd/carp.c
  #include <net/if.h>
  
 diff -Naur relayd.orig/check_tcp.c relayd/check_tcp.c
---- relayd.orig/check_tcp.c	2010-05-29 10:41:49.561008583 +0200
-+++ relayd/check_tcp.c	2010-05-29 10:41:54.580329287 +0200
+--- relayd.orig/check_tcp.c	2010-06-09 22:44:47.710811474 +0200
++++ relayd/check_tcp.c	2010-06-09 22:44:55.816582245 +0200
 @@ -31,7 +31,7 @@
  #include <stdlib.h>
  #include <errno.h>
@@ -70,8 +70,8 @@ diff -Naur relayd.orig/check_tcp.c relayd/check_tcp.c
  	if (strcmp(cte->table->conf.digest, digest)) {
  		log_warnx("check_http_digest: %s failed "
 diff -Naur relayd.orig/hce.c relayd/hce.c
---- relayd.orig/hce.c	2010-05-29 10:41:49.560005111 +0200
-+++ relayd/hce.c	2010-05-29 10:41:54.582336791 +0200
+--- relayd.orig/hce.c	2010-06-09 22:44:47.708803690 +0200
++++ relayd/hce.c	2010-06-09 22:44:55.817586277 +0200
 @@ -167,7 +167,7 @@
  	struct timeval	 tv;
  	struct table	*table;
@@ -93,8 +93,8 @@ diff -Naur relayd.orig/hce.c relayd/hce.c
  	host->last_up = host->up;
  
 diff -Naur relayd.orig/log.c relayd/log.c
---- relayd.orig/log.c	2010-05-29 10:41:49.560005111 +0200
-+++ relayd/log.c	2010-05-29 10:41:54.585349444 +0200
+--- relayd.orig/log.c	2010-06-09 22:44:47.708803690 +0200
++++ relayd/log.c	2010-06-09 22:44:55.817586277 +0200
 @@ -16,7 +16,11 @@
   * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
@@ -108,8 +108,8 @@ diff -Naur relayd.orig/log.c relayd/log.c
  #include <sys/socket.h>
  #include <sys/tree.h>
 diff -Naur relayd.orig/parse.y relayd/parse.y
---- relayd.orig/parse.y	2010-05-29 10:41:49.561008583 +0200
-+++ relayd/parse.y	2010-05-29 10:41:54.588360421 +0200
+--- relayd.orig/parse.y	2010-06-09 22:44:47.708803690 +0200
++++ relayd/parse.y	2010-06-09 22:44:55.818590030 +0200
 @@ -343,6 +343,7 @@
  			}
  			conf->sc_prefork_relay = $2;
@@ -171,8 +171,8 @@ diff -Naur relayd.orig/parse.y relayd/parse.y
  	if (error) {
  		log_warnx("host_dns: could not parse \"%s\": %s", s,
 diff -Naur relayd.orig/pfe.c relayd/pfe.c
---- relayd.orig/pfe.c	2010-05-29 10:41:49.559000800 +0200
-+++ relayd/pfe.c	2010-05-29 10:41:54.596392393 +0200
+--- relayd.orig/pfe.c	2010-06-09 22:44:47.710811474 +0200
++++ relayd/pfe.c	2010-06-09 22:44:55.819593782 +0200
 @@ -17,6 +17,9 @@
   */
  
@@ -210,8 +210,8 @@ diff -Naur relayd.orig/pfe.c relayd/pfe.c
  }
  
 diff -Naur relayd.orig/pfe_filter.c relayd/pfe_filter.c
---- relayd.orig/pfe_filter.c	2010-05-29 10:41:49.560005111 +0200
-+++ relayd/pfe_filter.c	2010-05-29 10:41:54.600408239 +0200
+--- relayd.orig/pfe_filter.c	2010-06-09 22:44:47.709807443 +0200
++++ relayd/pfe_filter.c	2010-06-09 22:44:55.819593782 +0200
 @@ -97,6 +97,10 @@
  		    sizeof(tables[i].pfrt_name))
  			goto toolong;
@@ -270,8 +270,8 @@ diff -Naur relayd.orig/pfe_filter.c relayd/pfe_filter.c
  		if (rio.rule.proto == IPPROTO_TCP)
  			rio.rule.timeout[PFTM_TCP_ESTABLISHED] =
 diff -Naur relayd.orig/relay.c relayd/relay.c
---- relayd.orig/relay.c	2010-05-29 10:41:49.560005111 +0200
-+++ relayd/relay.c	2010-05-29 10:41:54.603420334 +0200
+--- relayd.orig/relay.c	2010-06-09 22:44:47.710811474 +0200
++++ relayd/relay.c	2010-06-09 22:44:55.821601845 +0200
 @@ -16,7 +16,11 @@
   * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
@@ -382,8 +382,8 @@ diff -Naur relayd.orig/relay.c relayd/relay.c
  	if ((rlay->rl_ssl_key = relay_load_file(certfile,
  	    &rlay->rl_ssl_key_len)) == NULL)
 diff -Naur relayd.orig/relay_udp.c relayd/relay_udp.c
---- relayd.orig/relay_udp.c	2010-05-29 10:41:49.559000800 +0200
-+++ relayd/relay_udp.c	2010-05-29 10:41:54.613459810 +0200
+--- relayd.orig/relay_udp.c	2010-06-09 22:44:47.709807443 +0200
++++ relayd/relay_udp.c	2010-06-09 22:44:55.821601845 +0200
 @@ -16,7 +16,11 @@
   * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
@@ -397,8 +397,8 @@ diff -Naur relayd.orig/relay_udp.c relayd/relay_udp.c
  #include <sys/time.h>
  #include <sys/stat.h>
 diff -Naur relayd.orig/relayd.8 relayd/relayd.8
---- relayd.orig/relayd.8	2010-05-29 10:41:49.559000800 +0200
-+++ relayd/relayd.8	2010-05-29 10:41:54.616471625 +0200
+--- relayd.orig/relayd.8	2010-06-09 22:44:47.710811474 +0200
++++ relayd/relayd.8	2010-06-09 22:44:55.822606436 +0200
 @@ -117,7 +117,7 @@
  .It Fl f Ar file
  Specify an alternative configuration file.
@@ -418,21 +418,22 @@ diff -Naur relayd.orig/relayd.8 relayd/relayd.8
  .It /var/run/relayd.sock
  Unix-domain socket used for communication with
 diff -Naur relayd.orig/relayd.c relayd/relayd.c
---- relayd.orig/relayd.c	2010-05-29 10:41:49.561008583 +0200
-+++ relayd/relayd.c	2010-05-29 10:41:54.617476494 +0200
-@@ -17,7 +17,11 @@
+--- relayd.orig/relayd.c	2010-06-09 22:44:47.709807443 +0200
++++ relayd/relayd.c	2010-06-09 22:45:54.535579649 +0200
+@@ -17,7 +17,12 @@
   * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   */
  
 +#ifdef __FreeBSD__
 +#include <sys/param.h>
++#include <openssl/rand.h>
 +#else
  #include <sys/types.h>
 +#endif
  #include <sys/queue.h>
  #include <sys/socket.h>
  #include <sys/wait.h>
-@@ -37,7 +41,11 @@
+@@ -37,7 +42,11 @@
  #include <unistd.h>
  #include <ctype.h>
  #include <pwd.h>
@@ -444,7 +445,36 @@ diff -Naur relayd.orig/relayd.c relayd/relayd.c
  #include <md5.h>
  
  #include <openssl/ssl.h>
-@@ -292,9 +300,10 @@
+@@ -126,6 +135,11 @@
+ 	int			 c;
+ 	int			 debug;
+ 	u_int32_t		 opts;
++#ifdef __FreeBSD__
++#if __FreeBSD_version > 800040
++	u_int32_t		rnd[256];
++#endif
++#endif
+ 	struct relayd		*env;
+ 	const char		*conffile;
+ 	struct event		 ev_sigint;
+@@ -196,6 +210,16 @@
+ 
+ 	log_info("startup");
+ 
++#ifdef __FreeBSD__
++#if __FreeBSD_version > 800040
++	arc4random_stir();
++	arc4random_buf(rnd, sizeof(rnd));
++	RAND_seed(rnd, sizeof(rnd));
++#else
++	RAND_load_file("/dev/random",2048);
++#endif
++#endif
++
+ 	if (socketpair(AF_UNIX, SOCK_STREAM, PF_UNSPEC,
+ 	    pipe_parent2pfe) == -1)
+ 		fatal("socketpair");
+@@ -292,9 +316,10 @@
  	    iev_hce->handler, iev_hce);
  	event_add(&iev_hce->ev, NULL);
  
@@ -456,7 +486,7 @@ diff -Naur relayd.orig/relayd.c relayd/relayd.c
  	event_dispatch();
  
  	return (0);
-@@ -319,9 +328,11 @@
+@@ -319,9 +344,11 @@
  	} while (pid != -1 || (pid == -1 && errno == EINTR));
  
  	control_cleanup();
@@ -468,7 +498,7 @@ diff -Naur relayd.orig/relayd.c relayd/relayd.c
  	log_info("terminating");
  	exit(0);
  }
-@@ -383,8 +394,10 @@
+@@ -383,8 +410,10 @@
  	memcpy(&env->sc_proto_default, &new_env->sc_proto_default,
  	    sizeof(env->sc_proto_default));
  	env->sc_prefork_relay = new_env->sc_prefork_relay;
@@ -479,7 +509,7 @@ diff -Naur relayd.orig/relayd.c relayd/relayd.c
  
  	env->sc_tables = new_env->sc_tables;
  	env->sc_rdrs = new_env->sc_rdrs;
-@@ -610,7 +623,9 @@
+@@ -610,7 +639,9 @@
  	struct imsgbuf		*ibuf;
  	struct imsg		 imsg;
  	ssize_t			 n;
@@ -489,7 +519,7 @@ diff -Naur relayd.orig/relayd.c relayd/relayd.c
  
  	iev = ptr;
  	ibuf = &iev->ibuf;
-@@ -638,6 +653,7 @@
+@@ -638,6 +669,7 @@
  			break;
  
  		switch (imsg.hdr.type) {
@@ -497,7 +527,7 @@ diff -Naur relayd.orig/relayd.c relayd/relayd.c
  		case IMSG_DEMOTE:
  			if (imsg.hdr.len - IMSG_HEADER_SIZE !=
  			    sizeof(demote))
-@@ -646,6 +662,7 @@
+@@ -646,6 +678,7 @@
  			memcpy(&demote, imsg.data, sizeof(demote));
  			carp_demote_set(demote.group, demote.level);
  			break;
@@ -505,7 +535,7 @@ diff -Naur relayd.orig/relayd.c relayd/relayd.c
  		case IMSG_CTL_RELOAD:
  			/*
  			 * so far we only get here if no L7 (relay) is done.
-@@ -709,9 +726,11 @@
+@@ -709,9 +742,11 @@
  			imsg_compose_event(iev_hce, IMSG_SCRIPT,
  			    0, 0, -1, &scr, sizeof(scr));
  			break;
@@ -517,7 +547,7 @@ diff -Naur relayd.orig/relayd.c relayd/relayd.c
  		default:
  			log_debug("main_dispatch_hce: unexpected imsg %d",
  			    imsg.hdr.type);
-@@ -1021,7 +1040,11 @@
+@@ -1021,7 +1056,11 @@
  {
  	switch (type) {
  	case DIGEST_SHA1:
@@ -529,21 +559,27 @@ diff -Naur relayd.orig/relayd.c relayd/relayd.c
  		break;
  	case DIGEST_MD5:
  		return (MD5Data(data, len, buf));
-@@ -1258,9 +1281,11 @@
+@@ -1258,9 +1297,17 @@
  	    bnd->bnd_proto == IPPROTO_TCP ? SOCK_STREAM : SOCK_DGRAM,
  	    bnd->bnd_proto)) == -1)
  		goto fail;
-+#ifndef __FreeBSD__
++#ifdef SO_BINDANY
  	if (setsockopt(s, SOL_SOCKET, SO_BINDANY,
  	    &v, sizeof(v)) == -1)
  		goto fail;
++#else
++#ifdef IP_BINDANY
++	if (setsockopt(s, IPPROTO_IP, IP_BINDANY,
++	    &v, sizeof(v)) == -1)
++		goto fail;
++#endif
 +#endif
  	if (bind(s, (struct sockaddr *)&bnd->bnd_ss,
  	    bnd->bnd_ss.ss_len) == -1)
  		goto fail;
 diff -Naur relayd.orig/relayd.conf.5 relayd/relayd.conf.5
---- relayd.orig/relayd.conf.5	2010-05-29 10:41:49.559000800 +0200
-+++ relayd/relayd.conf.5	2010-05-29 10:41:54.622495534 +0200
+--- relayd.orig/relayd.conf.5	2010-06-09 22:44:47.708803690 +0200
++++ relayd/relayd.conf.5	2010-06-09 22:44:55.823609909 +0200
 @@ -78,7 +78,7 @@
  .Ic include
  keyword, for example:
@@ -663,8 +699,8 @@ diff -Naur relayd.orig/relayd.conf.5 relayd/relayd.conf.5
  .Sh HISTORY
  The
 diff -Naur relayd.orig/relayd.h relayd/relayd.h
---- relayd.orig/relayd.h	2010-05-29 10:41:49.559000800 +0200
-+++ relayd/relayd.h	2010-05-29 10:41:54.627515412 +0200
+--- relayd.orig/relayd.h	2010-06-09 22:44:47.710811474 +0200
++++ relayd/relayd.h	2010-06-09 22:44:55.824617851 +0200
 @@ -19,10 +19,18 @@
   */
  
@@ -736,7 +772,7 @@ diff -Naur relayd.orig/relayd.h relayd/relayd.h
  	IMSG_BINDANY
  };
  
-@@ -857,10 +881,12 @@
+@@ -857,10 +881,16 @@
  void		 pn_unref(u_int16_t);
  void		 pn_ref(u_int16_t);
  
@@ -745,6 +781,10 @@ diff -Naur relayd.orig/relayd.h relayd/relayd.h
  void	 snmp_init(struct relayd *, struct imsgev *);
  int	 snmp_sendsock(struct imsgev *);
  void	 snmp_hosttrap(struct table *, struct host *);
++#else
++#if __FreeBSD_version < 800041
++u_int32_t	arc4random_uniform(u_int32_t upper_bound);
++#endif
 +#endif
  
  /* shuffle.c */
