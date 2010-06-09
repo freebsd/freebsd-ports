@@ -861,6 +861,7 @@
     SUBDIR += queso
     SUBDIR += quoted
     SUBDIR += rabbitmq
+    SUBDIR += rabbitmq-c
     SUBDIR += raddump
     SUBDIR += radiator
     SUBDIR += radiusclient
