@@ -6,7 +6,7 @@
 
 PORTNAME=	relayd
 PORTVERSION=	4.6.20090813
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -14,15 +14,16 @@ MASTER_SITE_SUBDIR=	mm
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenBSD relay daemon
 
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 USE_BZIP2=	yes
 MANCOMPRESSED=	yes
 
-WRKSRC=		${WRKDIR}/usr.sbin
+WRKSRC=		${WRKDIR}/src/usr.sbin
 MAN5=		relayd.conf.5
 MAN8=		relayctl.8 relayd.8
 USE_RC_SUBR=	relayd
 
-CFLAGS+=	-I${PREFIX}/include
+CFLAGS+=	-I${PREFIX}/include -Wall
 
 MAKE_ARGS+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
@@ -68,6 +69,7 @@ pre-su-install:
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/relayd.conf.sample ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKSRC}/../etc/relayd.conf \
+		${PREFIX}/etc/relayd.conf.sample
 
 .include <bsd.port.post.mk>
