@@ -1,0 +1,301 @@
+%%PYTHON_SITELIBDIR%%/django_extensions/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/models.py
+%%PYTHON_SITELIBDIR%%/django_extensions/models.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/models.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/admin/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/admin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/admin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/admin/widgets.py
+%%PYTHON_SITELIBDIR%%/django_extensions/admin/widgets.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/admin/widgets.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/app_template/__init__.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/app_template/models.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/app_template/views.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/app_template/forms.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/app_template/urls.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/command_template/management/__init__.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/command_template/management/commands/__init__.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/command_template/management/commands/sample.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/__init__.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/sample.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/yearly/__init__.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/weekly/__init__.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/monthly/__init__.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/hourly/__init__.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/daily/__init__.py.tmpl
+%%PYTHON_SITELIBDIR%%/django_extensions/db/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/db/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/db/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/db/models.py
+%%PYTHON_SITELIBDIR%%/django_extensions/db/models.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/db/models.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/db/fields/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/db/fields/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/db/fields/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/db/fields/encrypted.py
+%%PYTHON_SITELIBDIR%%/django_extensions/db/fields/encrypted.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/db/fields/encrypted.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/db/fields/json.py
+%%PYTHON_SITELIBDIR%%/django_extensions/db/fields/json.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/db/fields/json.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/daily/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/daily/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/daily/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/daily/cache_cleanup.py
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/daily/cache_cleanup.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/daily/cache_cleanup.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/daily/daily_cleanup.py
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/daily/daily_cleanup.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/daily/daily_cleanup.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/hourly/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/hourly/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/hourly/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/monthly/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/monthly/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/monthly/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/weekly/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/weekly/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/weekly/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/yearly/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/yearly/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/jobs/yearly/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/zh/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/tr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/sk/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/ru/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/ro/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/ja/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/it/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/hu/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/fr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/et/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/es/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/en/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/el/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/de/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/da/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/locale/cs/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django_extensions/management/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/color.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/color.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/color.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/jobs.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/jobs.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/jobs.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/modelviz.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/modelviz.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/modelviz.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/signals.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/signals.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/signals.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/utils.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/utils.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/utils.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/clean_pyc.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/clean_pyc.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/clean_pyc.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/compile_pyc.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/compile_pyc.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/compile_pyc.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/create_app.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/create_app.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/create_app.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/create_command.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/create_command.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/create_command.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/create_jobs.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/create_jobs.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/create_jobs.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/describe_form.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/describe_form.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/describe_form.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/dumpscript.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/dumpscript.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/dumpscript.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/export_emails.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/export_emails.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/export_emails.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/generate_secret_key.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/generate_secret_key.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/generate_secret_key.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/graph_models.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/graph_models.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/graph_models.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/mail_debug.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/mail_debug.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/mail_debug.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/passwd.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/passwd.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/passwd.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/print_user_for_session.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/print_user_for_session.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/print_user_for_session.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/reset_db.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/reset_db.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/reset_db.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runjob.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runjob.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runjob.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runjobs.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runjobs.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runjobs.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runprofileserver.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runprofileserver.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runprofileserver.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runscript.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runscript.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runscript.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runserver_plus.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runserver_plus.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/runserver_plus.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/set_fake_emails.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/set_fake_emails.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/set_fake_emails.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/set_fake_passwords.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/set_fake_passwords.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/set_fake_passwords.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/shell_plus.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/shell_plus.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/shell_plus.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/show_templatetags.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/show_templatetags.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/show_templatetags.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/show_urls.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/show_urls.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/show_urls.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/sqldiff.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/sqldiff.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/sqldiff.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/sync_media_s3.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/sync_media_s3.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/sync_media_s3.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/syncdata.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/syncdata.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/syncdata.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/unreferenced_files.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/unreferenced_files.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/unreferenced_files.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/media/django_extensions/css/jquery.autocomplete.css
+%%PYTHON_SITELIBDIR%%/django_extensions/media/django_extensions/img/indicator.gif
+%%PYTHON_SITELIBDIR%%/django_extensions/media/django_extensions/js/jquery.ajaxQueue.js
+%%PYTHON_SITELIBDIR%%/django_extensions/media/django_extensions/js/jquery.autocomplete.js
+%%PYTHON_SITELIBDIR%%/django_extensions/media/django_extensions/js/jquery.bgiframe.min.js
+%%PYTHON_SITELIBDIR%%/django_extensions/media/django_extensions/js/jquery.js
+%%PYTHON_SITELIBDIR%%/django_extensions/templates/django_extensions/widgets/foreignkey_searchinput.html
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/highlighting.py
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/highlighting.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/highlighting.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/syntax_color.py
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/syntax_color.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/syntax_color.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/truncate_letters.py
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/truncate_letters.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/truncate_letters.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/widont.py
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/widont.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/templatetags/widont.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/models.py
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/models.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/models.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/encrypted_fields.py
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/encrypted_fields.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/encrypted_fields.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/utils.py
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/utils.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/tests/utils.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/dia2django.py
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/dia2django.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/dia2django.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/text.py
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/text.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/text.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/uuid.py
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/uuid.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/utils/uuid.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/utils
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/tests
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/templates/django_extensions/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/templates/django_extensions
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/templates
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/media/django_extensions/js
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/media/django_extensions/img
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/media/django_extensions/css
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/media/django_extensions
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/media
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/management/commands
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/management
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/zh/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/zh
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/sk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/sk
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ro/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ro
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/hu
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/et/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/et
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/el
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/da
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/jobs/yearly
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/jobs/weekly
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/jobs/monthly
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/jobs/hourly
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/jobs/daily
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/jobs
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/db/fields
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/db
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/yearly
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/weekly
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/monthly
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/hourly
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs/daily
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template/jobs
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/jobs_template
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/command_template/management/commands
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/command_template/management
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/command_template
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf/app_template
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/conf
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/admin
+@dirrm %%PYTHON_SITELIBDIR%%/django_extensions
