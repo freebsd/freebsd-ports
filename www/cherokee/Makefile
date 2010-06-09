@@ -74,8 +74,9 @@ OPTIONS=	WWWUSER	"Run as www:www user"	on \
 		FFMPEG	"FFMpeg Support"	off	\
 		NLS	"NLS Support"	on	\
 		INTPCRE	"Use Internal PCRE Library"	off	\
-		ADMIN	"Build the Admin Interface"	on \
-		RRDTOOL "Usage Graphs Support"  off
+		ADMIN	"Build the Admin Interface"	on 	\
+		RRDTOOL "Usage Graphs Support"  off 	\
+		UWSGI   "uWSGI Support" off
 
 .include <bsd.port.options.mk>
 
@@ -148,6 +149,10 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 
 .ifdef WITH_RRDTOOL
 RUN_DEPENDS+=	rrdtool:${PORTSDIR}/databases/rrdtool
+.endif
+
+.ifdef WITH_UWSGI
+RUN_DEPENDS+=	uwsgi:${PORTSDIR}/www/uwsgi
 .endif
 
 post-patch:
