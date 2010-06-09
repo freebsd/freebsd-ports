@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/xpad/stable/${PORTVERSION}/+download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lwindschuh@googlemail.com
 COMMENT=	A virtual note-pad system for your X11 desktop
 
 FETCH_ARGS=	"-pRr"
