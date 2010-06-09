@@ -36,8 +36,7 @@ ALL_TARGET=	package
 MAKE_ENV+=	CLASSPATH=${JYTHON_PREFIX}
 MAKE_ARGS+=	-Dlib.dir=${JAVALIBDIR}
 
-JYTHON_VER?=	22
-JYTHON_PREFIX?=	${LOCALBASE}/lib/jython${JYTHON_VER}
+JYTHON_PREFIX=	${LOCALBASE}/lib/jython
 JYTHON_JAR=	${JYTHON_PREFIX}/jython.jar
 
 DOC_FILES=	CHANGELOG.txt applet.txt filetransfers.txt readme.txt antbuild.txt\
