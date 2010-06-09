@@ -257,9 +257,6 @@
     SUBDIR += ipw-firmware-kmod
     SUBDIR += irrd
     SUBDIR += isc-dhcp3-devel
-    SUBDIR += isc-dhcp30-client
-    SUBDIR += isc-dhcp30-relay
-    SUBDIR += isc-dhcp30-server
     SUBDIR += isc-dhcp31-client
     SUBDIR += isc-dhcp31-relay
     SUBDIR += isc-dhcp31-server
