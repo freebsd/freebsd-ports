@@ -26,6 +26,8 @@ LIB_DEPENDS=	ibus.1:${PORTSDIR}/textproc/ibus \
 		gtest.0:${PORTSDIR}/devel/googletest
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
+BROKEN=		does not compile
+
 USE_GNOME=	pygtk2
 USE_GMAKE=	yes
 USE_PYTHON=	yes
