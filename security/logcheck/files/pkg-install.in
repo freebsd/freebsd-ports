@@ -6,21 +6,21 @@ group="%%LOGCHECK_GROUP%%"
 gid="%%LOGCHECK_GID%%"
 descr="Logcheck system account"
 homedir="/var/db/logcheck"
-shell="/usr/local/bin/bash"
+shell="%%LOCALBASE%%/bin/bash"
 configfiles="logcheck.conf logcheck.logfiles"
 
 case $2 in
 PRE-INSTALL)
-	if pw group show ${group} > /dev/null 2>&1; then
+	if %%PW%% group show ${group} > /dev/null 2>&1; then
 		echo "---> You already have a group \"${group}\", so I will use it."
 	else
-		pw group add "${group}" -g "${gid}"
+		%%PW%% group add "${group}" -g "${gid}"
 		echo "---> Created group \"${group}\"."
 	fi
-	if pw user show ${user} > /dev/null 2>&1; then
+	if %%PW%% user show ${user} > /dev/null 2>&1; then
 		echo "---> You already have a user \"${user}\", so I will use it."
 	else
-		pw user add -n ${user} -c "${descr}" -d "${homedir}" -s "${shell}" -g ${group} -u "${uid}"
+		%%PW%% user add -n ${user} -c "${descr}" -d "${homedir}" -s "${shell}" -g ${group} -u "${uid}"
 		echo "---> Created user \"${user}\"."
 	fi
 ;;

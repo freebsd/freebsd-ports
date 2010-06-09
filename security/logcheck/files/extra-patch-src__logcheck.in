@@ -2,7 +2,7 @@
 +++ src/logcheck	2009-12-17 19:33:34.000000000 -0500
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!/usr/local/bin/bash
++#!%%LOCALBASE%%/bin/bash
  #
  # Copyright (C) 2004-2006 Debian Logcheck Team 
  #                         <logcheck-devel@alioth.lists.debian.org>
@@ -11,7 +11,7 @@
  if [ $UID == 0 ]; then
      echo "logcheck should not be run as root. Use su to invoke logcheck:"
 -    echo "su -s /bin/bash -c \"/usr/sbin/logcheck${@:+ $@}\" logcheck"
-+    echo "su -m logcheck -c \"/usr/local/bin/bash %%PREFIX%%/sbin/logcheck${@:+ $@}\""
++    echo "su -m logcheck -c \"%%LOCALBASE%%/bin/bash %%PREFIX%%/sbin/logcheck${@:+ $@}\""
      echo "Or use sudo: sudo -u logcheck logcheck${@:+ $@}."
      # you may want to uncomment that hack to let logcheck invoke itself.
 -    # su -s /bin/bash -c "$0 $*" logcheck
@@ -22,7 +22,7 @@
 -     ! -f /usr/bin/lockfile-remove -o \
 -     ! -f /usr/bin/lockfile-touch ]; then
 -    echo "fatal: lockfile-progs is a prerequisite for logcheck, and was not found."
-+    # su -s /usr/local/bin/bash -c "$0 $*" logcheck
++    # su -s %%LOCALBASE%%/bin/bash -c "$0 $*" logcheck
      exit 1
  fi
  
