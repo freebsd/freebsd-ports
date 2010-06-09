@@ -224,6 +224,7 @@
     SUBDIR += ffproxy
     SUBDIR += fhttpd
     SUBDIR += firefox
+    SUBDIR += firefox-sync
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
     SUBDIR += firefox3
@@ -1768,7 +1769,6 @@
     SUBDIR += wadcomblog
     SUBDIR += wb0
     SUBDIR += wcol
-    SUBDIR += weave
     SUBDIR += web-traceroute
     SUBDIR += web2ldap
     SUBDIR += webalizer
