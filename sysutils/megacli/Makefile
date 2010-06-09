@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	megacli
-PORTVERSION=	5.00.15
+PORTVERSION=	8.00.16
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lsi.com/DistributionSystem/AssetDocument/
 DISTNAME=	${PORTVERSION}_FreeBSD_MegaCLI

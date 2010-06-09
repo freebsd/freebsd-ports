@@ -1,11 +1,2 @@
 Command Line Interface for the MegaRAID SAS family of RAID controllers,
 used to configure and manage connected storage devices.
-
-Supported Controllers
-==================
-
-MegaRAID SAS 9260-4i
-MegaRAID SAS 9260-8i
-MegaRAID SAS 9260DE-8i
-MegaRAID SAS 9280-8e
-MegaRAID SAS 9280DE-8e
