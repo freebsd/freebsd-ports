@@ -862,6 +862,7 @@
     SUBDIR += quoted
     SUBDIR += rabbitmq
     SUBDIR += rabbitmq-c
+    SUBDIR += rabbitmq-c-devel
     SUBDIR += raddump
     SUBDIR += radiator
     SUBDIR += radiusclient
