@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Algorithm-CurveFit
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Algorithm
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Nonlinear Least Squares Fitting
 
 RUN_DEPENDS=	${SITE_PERL}/Math/MatrixReal.pm:${PORTSDIR}/math/p5-MatrixReal \
