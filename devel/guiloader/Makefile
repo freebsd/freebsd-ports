@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	guiloader
-PORTVERSION=	2.15.0
-PORTREVISION=	4
+PORTVERSION=	2.17.1
 CATEGORIES=	devel gnome
-MASTER_SITES=	SF/crow-designer/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-performance and compact GuiXml loader library
 
+PROJECTHOST=	nothing-personal
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gtk20
 USE_GETTEXT=	yes

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	guiloader-c++
-PORTVERSION=	2.15.0
-PORTREVISION=	4
+PORTVERSION=	2.17.1
 CATEGORIES=	devel gnome
-MASTER_SITES=	SF/crow-designer/guiloader-c%2B%2B/${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ binding to the GuiLoader library
@@ -18,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-lib
 LIB_DEPENDS=	guiloader.1:${PORTSDIR}/devel/guiloader \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
+PROJECTHOST=	nothing-personal
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gtk20
 USE_GETTEXT=	yes

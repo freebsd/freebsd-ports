@@ -4,6 +4,7 @@ lib/libcrow-%%VERSION%%.so
 lib/libcrow.la
 lib/libcrow.so
 share/applications/crow.desktop
+share/locale/ru/LC_MESSAGES/crow.mo
 share/mime/packages/crow.xml
 share/pixmaps/crow.png
 @dirrmtry share/mime/packages

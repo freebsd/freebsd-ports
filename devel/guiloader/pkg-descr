@@ -5,4 +5,4 @@ written in the C language as a GObject subclass and has
 a trivial language-independent API. GuiLoader was designed to be
 easily wrapped for any language that has GTK+ bindings.
 
-WWW: http://crow-designer.sourceforge.net/
+WWW: http://www.crowdesigner.org/
