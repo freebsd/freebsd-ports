@@ -14,8 +14,8 @@
 %%SITE_PERL%%/WWW/Contact/BG/Abv.pm
 %%SITE_PERL%%/WWW/Contact/BG/Mail.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Contact/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Contact
-@dirrmtry  %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrm %%SITE_PERL%%/WWW/Contact/BG
-@dirrm %%SITE_PERL%%/WWW/Contact/CN
-@dirrm %%SITE_PERL%%/WWW/Contact
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Contact
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/Contact/BG
+@dirrmtry %%SITE_PERL%%/WWW/Contact/CN
+@dirrmtry %%SITE_PERL%%/WWW/Contact
