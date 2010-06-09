@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pg8000
-PORTVERSION=	1.07
-PORTREVISION=	1
+PORTVERSION=	1.08
 CATEGORIES=	databases python
 MASTER_SITES=	http://pybrary.net/pg8000/dist/:source1 \
 		http://peak.telecommunity.com/dist/:source2
@@ -16,7 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:source1 \
 		ez_setup.py:source2
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Pure-Python Interface to the PostgreSQL Database
 
 USE_PYTHON=	yes
