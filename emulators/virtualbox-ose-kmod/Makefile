@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.2.2
+DISTVERSION=	3.2.4
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
