@@ -6,14 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20100605:
-  AFFECTS: users of gstreamer-plugins-good and gstreamer-plugins-bad
+  AFFECTS: users of multimedia/gstreamer-plugins-good and
+	   multimedia/gstreamer-plugins-bad
   AUTHOR: kwm@FreeBSD.org
 
-  A plugin moved from the -bad port to the -good port.  Please follow the
-  instructions below before proceeding with normal update steps.
-  
+  Certain plugins were moved from the -bad port to the -good port.  Please
+  follow instructions below before proceeding with normal update steps:
+
   If you use portmaster:
-        
+
 	portmaster gstreamer-plugins-bad
 
   If you use portupgrade:
@@ -24,9 +25,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of lang/mono
   AUTHOR: romain@FreeBSD.org
 
-  Starting with mono-2.6, the Moonlight compiler and assemblies are not
-  installed by the lang/mono port anymore. They are however provided by the
-  multimedia/moonlight port.
+  Starting with Mono 2.6, the Moonlight compiler and assemblies are not
+  installed by the lang/mono port anymore.  They are however provided by
+  the multimedia/moonlight port.
 
   If you are doing some Silverlight development, install multimedia/moonlight
   after updating lang/mono.
@@ -35,8 +36,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of devel/gettext (i.e.: YOU)
   AUTHOR: ade@FreeBSD.org
 
-  Another version of gettext (0.18), and another shlib version bump
-  (from intl.8 to intl.9)
+  Another version of gettext (0.18), and another share library version bump
+  (from intl.8 to intl.9), so:
 
   All ports that have an identifiable known direct dependency on gettext
   have had their PORTREVISIONs bumped.  If after upgrading:
@@ -47,12 +48,12 @@ you update your ports collection, before attempting any port upgrades.
   The upgrade of devel/gobject-introspection may fail because it is looking
   for libintl.so.8.  In this case, do the following:
 
-        # cd /usr/ports/devel/gobject-introspection
-        # make clean
-        # make deinstall
+	# cd /usr/ports/devel/gobject-introspection
+	# make clean
+	# make deinstall
 	# make install clean
 
-  Then continue your upgrade.
+  Then continue your upgrade procedure normally.
 
   If there are still ports on your system that are looking for libintl.so.8
   (either in ${LOCALBASE}/lib/compat/pkg, or non-existent), _please_ file
@@ -312,6 +313,7 @@ you update your ports collection, before attempting any port upgrades.
   PHP5 package.  Follow the steps below to update your installation.
 
   1) Delete the following packages (if installed):
+
      - php5-dbase
      - php5-ncurses
      - php5-pcre
@@ -1613,7 +1615,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: rnoland@FreeBSD.org
 
   sysutils/hal has been updated and should now properly detect mice for
-  in X.org.  Use of AllowEmptyInput should no longer be needed for most
+  in X.Org.  Use of AllowEmptyInput should no longer be needed for most
   users and moused should now work fine.
 
 20090123:
@@ -3656,19 +3658,19 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of x11/xorg, x11/nvidia-driver
   AUTHOR: flz@FreeBSD.org
 
-  X.org ports were updated to 7.3.  Since we're now using the modular
+  X.Org ports were updated to 7.3.  Since we're now using the modular
   build, the upgrade is pretty much painless.  If you're using the
   x11/xorg meta-port, upgrade should be as easy as:
 
 	# portupgrade -R xorg
 
   Users of nvidia-driver will have to make sure Composite extension is
-  turned off and start Xorg with the following command:
+  turned off and start X with the following command:
 
 	$ startx -- -ignoreABI
 
-  The -ignoreABI option is a Xorg option. If you're using gdm, kdm or
-  xdm, you will have to modify your configuration file so that Xorg
+  The -ignoreABI option is an X option.  If you're using gdm, kdm or
+  xdm, you will have to modify your configuration file so that X.Org
   starts with this option.
 
   An updated nvidia-driver should be released soon.
@@ -4016,17 +4018,17 @@ you update your ports collection, before attempting any port upgrades.
   "map acl inherit".
 
 20070519:
-  AFFECTS: users of Xorg
+  AFFECTS: users of X.Org
   AUTHOR: kris@FreeBSD.org
 
   Welcome, fearless user!  You are about to embark upon a mystical
-  journey to the world of xorg 7.2.
+  journey to the world of X.Org 7.2.
 
   This upgrade procedure is for users of portupgrade.  Users of other
   upgrade tools should contact the author for the corresponding upgrade
   method for that tool.
 
-  It is recommended that you run the xorg 7.2 upgrade inside a script(1)
+  It is recommended that you run the X.Org 7.2 upgrade inside a script(1)
   session.  This way, if something goes wrong, you will have hopefully
   saved enough information for the developers to debug the problem.
   Make sure you choose a filesystem with lots of space for the script
@@ -4057,7 +4059,7 @@ you update your ports collection, before attempting any port upgrades.
 	# cd /usr/ports && make fetchindex
 
   It is necessary to set the XORG_UPGRADE environment variable while
-  updating from xorg 6.9 to 7.2.  Once the upgrade is complete this
+  updating from X.Org 6.9 to 7.2.  Once the upgrade is complete this
   is no longer be required.
 
   For users of csh-like shells:
@@ -4067,7 +4069,7 @@ you update your ports collection, before attempting any port upgrades.
   # export XORG_UPGRADE=yes
 
   Unfortunately portupgrade (nor portupgrade-devel) cannot yet handle
-  the rigors of the xorg upgrade without a small bit of help:
+  the rigors of the X.Org upgrade without a small bit of help:
 
 	# portupgrade -Rf libXft
 
@@ -4095,7 +4097,7 @@ you update your ports collection, before attempting any port upgrades.
 	# pkg_delete xorg-manpages\*
 
   The final step is to merge remaining files from /usr/X11R6 into
-  /usr/local (/usr/X11R6 is no longer used with xorg 7.2) and replace
+  /usr/local (/usr/X11R6 is no longer used with X.Org 7.2) and replace
   /usr/X11R6 with a symlink.
 
   A script is provided for your convenience (or you may choose to do
@@ -5597,7 +5599,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: netchild@FreeBSD.org
 
   We now use Fedora Core 4 as the Linux base port, and the corresponding
-  xorg libraries for the Linux X11 libraries port.
+  X.Org libraries for the Linux X11 libraries port.
 
   To upgrade you have to run:
 
@@ -6920,9 +6922,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of mail/postfix-current
   AUTHOR: marcus@corp.grupos.com.br
 
-  Now mail/postfix-current use OPTIONS menu instead of
-  POSTFIX_OPTIONS batch. Please run "make config" and
-  select your options in menu.
+  Now mail/postfix-current use OPTIONS menu instead of POSTFIX_OPTIONS batch.
+  Please run "make config" and select your desired options in the menu.
 
 20050828:
   AFFECTS: users of net/py-bittorrent-devel and net/py-bittorrent-core-devel
@@ -7772,7 +7773,7 @@ you update your ports collection, before attempting any port upgrades.
   Howl now installs an rcNG script for starting mDNSResponder. To enable
   mDNSResponder to start at boot time, add the following to /etc/rc.conf:
 
-  mdnsresponder_enable="YES"
+	mdnsresponder_enable="YES"
 
   You can also pass flags to mDNSResponder by setting the rc.conf variable
   mdnsresponder_flags to the appropriate value. See the mDNSResponder(8)
@@ -7783,10 +7784,11 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of x11-wm/xfce4
   AUTHOR: oliver@FreeBSD.org
 
-  If you use Xorg 6.8.1: Make sure there is an /tmp/.ICE-unix with propper
-  rights. For further informations about that, please refer to 20041229
-  Please update all your plugins as well when you update from 4.0.6 to 4.2
-  They all need recompiling to link against the new xfce libraries
+  If you use X.Org 6.8.1: Make sure there is an /tmp/.ICE-unix with propper
+  rights.  For further information about that, please refer to the entry
+  20041229 in this file.  Please update all your plugins as well when you
+  update Xfce from version 4.0.6 to 4.2.  They all need recompiling to link
+  against the new Xfce libraries.
 
 20050122:
   AFFECTS: users of PostgreSQL
@@ -7992,7 +7994,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
   As of version 4.4.0_6, XFree86-4-Server now depends on
   graphics/xfree86-dri. This is due to incompatibilities between
-  XFree86 and the new xorg 6.8.1 DRI.
+  XFree86 and the new X.Org 6.8.1 DRI.
 
   Users of XFree86-4-Server are strongly encouraged to switch to
   the xfree86-dri port as follows:
@@ -8414,19 +8416,20 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
   Upgrading from 2003.2 to 2004.2 is straightforward, it is highly
   recommended to checkpoint and backup your server as follows:
-    p4 verify //...
-    p4 verify -u //... # possibly redundant
-    p4 admin checkpoint
-    p4 admin stop
-    <backup repository>
+
+	p4 verify //...
+	p4 verify -u //... # possibly redundant
+	p4 admin checkpoint
+	p4 admin stop
+	<backup repository>
 
   If you are upgrading from a version earlier than 2003.2, you should
-  consult the Perforce documentation
-    (http://www.perforce.com/perforce/technical.html)
-  before proceeding.
+  consult the Perforce documentation before proceeding:
+
+	http://www.perforce.com/perforce/technical.html
 
   Also, it looks as though Perforce has stopped updating the man pages,
-  so they are no longer included in the port.
+  so they are no longer included with the port.
 
 20041012:
   AFFECTS: users of www/firefox
@@ -8450,7 +8453,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
 20041011:
   AFFECTS: users of www/linuxpluginwrapper who are running FreeBSD
-	   5.3-BETA7 or later (including -current)
+	   5.3-BETA7 or later (including -CURRENT)
   AUTHOR: nork@FreeBSD.org
 
   According to UPDATING(20041001), /etc/libmap.conf should be fixed
@@ -8458,7 +8461,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 
 20041001:
   AFFECTS: users of ports that require several base system libraries who
-	   are running FreeBSD 5.3-BETA7 or later (including -current)
+	   are running FreeBSD 5.3-BETA7 or later (including -CURRENT)
   AUTHOR: kensmith@FreeBSD.org
 
   As part of the FreeBSD-5.3 release the following system libraries
@@ -8471,7 +8474,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 	/usr/lib/libpcap.so.2 -> libpcap.so.3
 
   This should have no effect unless you are using FreeBSD 5.3-BETA7 or
-  higher, or if you are a -current user who upgraded after this date.
+  higher, or if you are a -CURRENT user who upgraded after this date.
   Assuming you did a from-source upgrade new versions of these libraries
   will be created but the old versions will be left behind (for example
   /lib/libm.so.2 will be the old one, /lib/libm.so.3 will be the new one).
@@ -8749,7 +8752,7 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
   . <junitreport> will very likely no longer work with Xalan-J 1.
 
 20040724:
-  AFFECTS: users for xorg and GNOME
+  AFFECTS: users of X.Org and GNOME
   AUTHOR: gnome@FreeBSD.org
 
   After migrating from XFree86 to X.Org, you must rebuild
@@ -8762,22 +8765,24 @@ have to modify your ~/.procmailrc files. Please read upgrading.html in
 Option "XkbRules" "xfree86"
 
 20040723:
-  AFFECTS: users of FreeBSD-current, users of X.Org
+  AFFECTS: users of FreeBSD-CURRENT, users of X.Org
   AUTHOR: anholt@FreeBSD.org
 
   The XFREE86_VERSION variable is deprecated and has been replaced by the
-  X_WINDOW_SYSTEM variable. X_WINDOW_SYSTEM may be set to xorg, xfree86-4, or
-  xfree86-3. X_WINDOW_SYSTEM defaults to xorg on FreeBSD-current. If you are
-  switching to xorg, you should follow this set of commands to cleanly upgrade:
+  X_WINDOW_SYSTEM variable.  X_WINDOW_SYSTEM may be set to xorg, xfree86-4,
+  or xfree86-3.  X_WINDOW_SYSTEM defaults to xorg on FreeBSD-CURRENT.  If
+  you are switching to xorg, you should follow this set of commands to
+  cleanly upgrade:
 
-  pkg_delete -f /var/db/pkg/imake-4* /var/db/pkg/XFree86-*
-  cd /usr/ports/x11/xorg && make install
-  pkgdb -F
+	pkg_delete -f /var/db/pkg/imake-4* /var/db/pkg/XFree86-*
+	cd /usr/ports/x11/xorg && make install
+	pkgdb -F
 
-  Users of -stable or older -current can switch to X.Org by setting
+  Users of -stable or older -CURRENT can switch to X.Org by setting
   X_WINDOW_SYSTEM=xorg in make.conf and following the same process.
 
   Alternately, FreeBSD 5.x and later users can use portupgrade with packages:
+
     cd /var/db/pkg
     portupgrade -o devel/imake-6 imake-4*
     portupgrade -o x11/xorg-libraries XFree86-libraries
