@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima/DBI/Contextual/.packlist
+%%SITE_PERL%%/Ima/DBI/Contextual.pm
+@dirrm %%SITE_PERL%%/Ima/DBI
+@dirrm %%SITE_PERL%%/Ima
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima/DBI/Contextual
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima/DBI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ima
