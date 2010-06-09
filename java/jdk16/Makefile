@@ -299,6 +299,8 @@ post-patch:
 			-e "s:%%JDK_VERSION%%:${JDK_VERSION}:g" \
 			${WRKSRC}/$${file}; \
 	done
+	@${REINPLACE_CMD} -e "s:%%OSVERSION%%:${OSVERSION}:g" \
+		${WRKSRC}/../../j2se/make/common/Defs-bsd.gmk
 .if defined(WITHOUT_WEB)
 	@${RM} ${WRKDIR}/deploy/make/Makefile
 .endif
