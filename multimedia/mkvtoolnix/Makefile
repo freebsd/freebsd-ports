@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	3.3.0
-PORTREVISION=	2
+PORTVERSION=	3.4.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -28,8 +27,8 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_PO4A=no
 CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
