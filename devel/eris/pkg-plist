@@ -1,11 +1,12 @@
 lib/liberis-1.3.la
 lib/liberis-1.3.so
-lib/liberis-1.3.so.15
+lib/liberis-1.3.so.16
 include/Eris-1.3/Eris/Account.h
 include/Eris-1.3/Eris/Alarm.h
 include/Eris-1.3/Eris/Avatar.h
 include/Eris-1.3/Eris/BaseConnection.h
 include/Eris-1.3/Eris/Calendar.h
+include/Eris-1.3/Eris/CharacterType.h
 include/Eris-1.3/Eris/Connection.h
 include/Eris-1.3/Eris/DeleteLater.h
 include/Eris-1.3/Eris/Entity.h
@@ -31,6 +32,7 @@ include/Eris-1.3/Eris/Response.h
 include/Eris-1.3/Eris/Room.h
 include/Eris-1.3/Eris/Router.h
 include/Eris-1.3/Eris/ServerInfo.h
+include/Eris-1.3/Eris/SpawnPoint.h
 include/Eris-1.3/Eris/Task.h
 include/Eris-1.3/Eris/TerrainMod.h
 include/Eris-1.3/Eris/TerrainMod_impl.h
@@ -42,6 +44,8 @@ include/Eris-1.3/Eris/TypeService.h
 include/Eris-1.3/Eris/Types.h
 include/Eris-1.3/Eris/UIFactory.h
 include/Eris-1.3/Eris/View.h
+include/Eris-1.3/Eris/ViewEntity.h
+include/Eris-1.3/Eris/iround.h
 @dirrm include/Eris-1.3/Eris
 @dirrm include/Eris-1.3
 libdata/pkgconfig/eris-1.3.pc
