@@ -1,8 +1,10 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/.packlist
 %%SITE_PERL%%/Data/Dump.pm
+%%SITE_PERL%%/Data/Dump/FilterContext.pm
+%%SITE_PERL%%/Data/Dump/Filtered.pm
 %%SITE_PERL%%/Data/Dump/Trace.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data/Dump
 @dirrmtry %%SITE_PERL%%/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
