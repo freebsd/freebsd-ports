@@ -128,7 +128,7 @@ lib/virtualbox/components/VBoxXPCOMBase.xpt
 %%NLS%%%%DATADIR%%/nls/qt_zh_CN.qm
 %%NLS%%%%DATADIR%%/nls/qt_zh_TW.qm
 %%QT4%%share/applications/virtualbox.desktop
-%%QT4%%share/icons/hicolor/48x48/apps/VBox.png
+%%QT4%%share/pixmaps/VBox.png
 %%DATADIR%%/idl/nsIDebug.idl
 %%DATADIR%%/idl/nsIInterfaceRequestor.idl
 %%DATADIR%%/idl/nsIMemory.idl
@@ -604,10 +604,6 @@ include/virtualbox/xpcom/xpcom-config.h
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/idl
 @dirrm %%DATADIR%%
-%%QT4%%@dirrmtry share/icons/hicolor/48x48/apps
-%%QT4%%@dirrmtry share/icons/hicolor/48x48
-%%QT4%%@dirrmtry share/icons/hicolor
-%%QT4%%@dirrmtry share/icons
 %%QT4%%@dirrmtry share/applications
 @dirrm lib/virtualbox/components
 %%GUESTADDITIONS%%@dirrm lib/virtualbox/additions

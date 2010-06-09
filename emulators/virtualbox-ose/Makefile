@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.2.2
+DISTVERSION=	3.2.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -277,10 +277,10 @@ post-install:
 	@${FIND} ${PREFIX}/lib/virtualbox -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 .if !defined(WITHOUT_QT4)
-	${MKDIR} ${PREFIX}/share/icons/hicolor/48x48/apps/
-	${INSTALL_DATA} ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png ${PREFIX}/share/icons/hicolor/48x48/apps/VBox.png
+	${MKDIR} ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/src/VBox/Frontends/VirtualBox/images/OSE/VirtualBox_48px.png ${PREFIX}/share/pixmaps/VBox.png
 	${MKDIR} ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/src/VBox/Installer/solaris/virtualbox.desktop ${PREFIX}/share/applications/virtualbox.desktop
+	${INSTALL_DATA} ${WRKSRC}/src/VBox/Installer/freebsd/virtualbox.desktop ${PREFIX}/share/applications/virtualbox.desktop
 .endif
 	@${CAT} ${PKGMESSAGE}
 
