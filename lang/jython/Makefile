@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jython
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.5.1
 CATEGORIES=	lang python java
 MASTER_SITES=	SF
 DISTNAME=	jython_installer-${PORTVERSION}
@@ -17,12 +16,15 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	An implementation of Python Interpreter in Pure Java
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 
-INST_TARGET?=	lib/jython${PORTVERSION:S/.//g}
+INST_TARGET?=	lib/jython
 JYTHON_PREFIX=	${PREFIX}/${INST_TARGET}
 PLIST_SUB+=	JYTHON_DIR=${INST_TARGET}
 
@@ -45,7 +47,6 @@ do-install:
 
 	@# Install symbolic links for convenience.
 	-${LN} -sf ${JYTHON_PREFIX}/jython ${PREFIX}/bin/jython
-	-${LN} -sf ${JYTHON_PREFIX}/jythonc ${PREFIX}/bin/jythonc
 	-${LN} -sf ${JYTHON_PREFIX}/registry ${PREFIX}/etc/jython.reg
 
 .include <bsd.port.mk>
