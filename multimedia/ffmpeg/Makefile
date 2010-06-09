@@ -40,7 +40,7 @@ OPTIONS=	AMR_NB	"AMR Narrow Band encoder" off \
 		SCHROEDINGER	"Dirac codec via libschroedinger" on \
 		SDL	"SDL support (build ffplay)" off \
 		SPEEX	"Speex audio decoder" off \
-		SSSE3	"Enable ssse3 support" off \
+		SSSE3	"Enable ssse3 support" on \
 		THEORA	"Theora encoder (implies OGG)" on \
 		VHOOK	"Video hook support" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
@@ -107,7 +107,7 @@ DOC_DOCFILES=	APIchanges avutil.txt faq.html ffmpeg-doc.html \
 		snow.txt soc.txt swscale.txt TODO
 PORTDOCS=	*
 
-.if defined(WITH_SSSE3)
+.if !defined(WITHOUT_SSSE3)
 BUILD_DEPENDS+=         ${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=         COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=              COMPILER_PATH=${LOCALBASE}/bin
