@@ -58,6 +58,7 @@
    SUBDIR += portscout
    SUBDIR += portsearch
    SUBDIR += portshaker
+   SUBDIR += portshaker-config
    SUBDIR += portsman
    SUBDIR += portsopt
    SUBDIR += porttools

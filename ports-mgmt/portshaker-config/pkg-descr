@@ -1,0 +1,5 @@
+The portshaker-config port provides a simple config-based interface to generate
+and maintain a portshaker configuration throught the ports system.
+
+It is designed to ease using portshaker for users who want to merge portshaker
+powered ports overlays in their FreeBSD ports tree.
