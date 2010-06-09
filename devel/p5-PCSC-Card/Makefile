@@ -17,6 +17,8 @@ COMMENT=	Perl bindings for the PC/SC Lite Framework
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
+BROKEN=		does not compile
+
 PERL_CONFIGURE=	yes
 MAKE_ENV=	"LOCALBASE=$(LOCALBASE)"
 
