@@ -34,6 +34,12 @@ LDFLAGS=	-L${LOCALBASE}/lib -ltcl84 -ltk84 ${PTHREAD_LIBS}
 
 WISH=		${LOCALBASE}/bin/wish8.4
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		does not build on !i386
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|/usr/bin/wish|${WISH}|g' ${WRKSRC}/display
@@ -68,4 +74,4 @@ do-install:
 	(cd ${WRKSRC}/samples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
