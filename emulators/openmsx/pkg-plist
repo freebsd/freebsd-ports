@@ -75,8 +75,6 @@ bin/openmsx
 %%DATADIR%%/icons/openMSX-logo-48.png
 %%DATADIR%%/icons/openMSX-logo-64.png
 %%DATADIR%%/init.tcl
-%%DATADIR%%/keymaps/keymap.default
-%%DATADIR%%/keymaps/keymap.rus2eng
 %%DATADIR%%/machines/Al_Alamiah_AX170/hardwareconfig.xml
 %%DATADIR%%/machines/Al_Alamiah_AX170/roms/SHA1SUMS
 %%DATADIR%%/machines/Boosted_MSX2_EN/README
@@ -190,10 +188,16 @@ bin/openmsx
 %%DATADIR%%/machines/Philips_VG_8230/roms/SHA1SUMS
 %%DATADIR%%/machines/Philips_VG_8235/hardwareconfig.xml
 %%DATADIR%%/machines/Philips_VG_8235/roms/SHA1SUMS
-%%DATADIR%%/machines/Sanyo_MPC-25FD/hardwareconfig.xml
-%%DATADIR%%/machines/Sanyo_MPC-25FD/roms/SHA1SUMS
+%%DATADIR%%/machines/Pioneer_PX-7/hardwareconfig.xml
+%%DATADIR%%/machines/Pioneer_PX-7/roms/SHA1SUMS
+%%DATADIR%%/machines/Pioneer_PX-7UK/hardwareconfig.xml
+%%DATADIR%%/machines/Pioneer_PX-7UK/roms/SHA1SUMS
+%%DATADIR%%/machines/Pioneer_PX-V60/hardwareconfig.xml
+%%DATADIR%%/machines/Pioneer_PX-V60/roms/SHA1SUMS
 %%DATADIR%%/machines/Sanyo_MPC-100/hardwareconfig.xml
 %%DATADIR%%/machines/Sanyo_MPC-100/roms/SHA1SUMS
+%%DATADIR%%/machines/Sanyo_MPC-25FD/hardwareconfig.xml
+%%DATADIR%%/machines/Sanyo_MPC-25FD/roms/SHA1SUMS
 %%DATADIR%%/machines/Sanyo_PHC-23JB/hardwareconfig.xml
 %%DATADIR%%/machines/Sanyo_PHC-23JB/roms/SHA1SUMS
 %%DATADIR%%/machines/Sanyo_PHC-28L/hardwareconfig.xml
@@ -259,6 +263,10 @@ bin/openmsx
 %%DATADIR%%/machines/Yamaha_CX5MII-128/roms/SHA1SUMS
 %%DATADIR%%/machines/Yamaha_YIS-503F/hardwareconfig.xml
 %%DATADIR%%/machines/Yamaha_YIS-503F/roms/SHA1SUMS
+%%DATADIR%%/machines/Yamaha_YIS-503IIIR/hardwareconfig.xml
+%%DATADIR%%/machines/Yamaha_YIS-503IIIR/roms/SHA1SUMS
+%%DATADIR%%/machines/Yamaha_YIS-805-128R2/hardwareconfig.xml
+%%DATADIR%%/machines/Yamaha_YIS-805-128R2/roms/SHA1SUMS
 %%DATADIR%%/machines/Yashica_YC-64/hardwareconfig.xml
 %%DATADIR%%/machines/Yashica_YC-64/roms/SHA1SUMS
 %%DATADIR%%/machines/msx1
@@ -273,6 +281,7 @@ bin/openmsx
 %%DATADIR%%/scripts/cheat.tcl
 %%DATADIR%%/scripts/cpuregs.tcl
 %%DATADIR%%/scripts/cycle.tcl
+%%DATADIR%%/scripts/cycle_machine.tcl
 %%DATADIR%%/scripts/disasm.tcl
 %%DATADIR%%/scripts/example_tools.tcl
 %%DATADIR%%/scripts/guess_title.tcl
@@ -281,36 +290,51 @@ bin/openmsx
 %%DATADIR%%/scripts/mog-overlay.tcl
 %%DATADIR%%/scripts/monitor.tcl
 %%DATADIR%%/scripts/multi_screenshot.tcl
+%%DATADIR%%/scripts/music_keyboard.tcl
 %%DATADIR%%/scripts/osd.tcl
+%%DATADIR%%/scripts/osd_keyboard.tcl
 %%DATADIR%%/scripts/osd_menu.tcl
+%%DATADIR%%/scripts/osd_nemesis.tcl
 %%DATADIR%%/scripts/osd_widgets.tcl
 %%DATADIR%%/scripts/psg_log.tcl
 %%DATADIR%%/scripts/psg_profile.tcl
 %%DATADIR%%/scripts/record_channels.tcl
+%%DATADIR%%/scripts/record_chunks.tcl
 %%DATADIR%%/scripts/reg_log.tcl
+%%DATADIR%%/scripts/reverse.tcl
+%%DATADIR%%/scripts/rom_info.tcl
 %%DATADIR%%/scripts/save_debuggable.tcl
 %%DATADIR%%/scripts/savestate.tcl
-%%DATADIR%%/scripts/scc_viewer.tcl
+%%DATADIR%%/scripts/scc_toys.tcl
+%%DATADIR%%/scripts/screencapture.tcl
+%%DATADIR%%/scripts/session_management.tcl
+%%DATADIR%%/scripts/shield.png
 %%DATADIR%%/scripts/showdebuggable.tcl
 %%DATADIR%%/scripts/slot.tcl
+%%DATADIR%%/scripts/soundchip_utils.tcl
 %%DATADIR%%/scripts/soundlog.tcl
+%%DATADIR%%/scripts/sprites.tcl
 %%DATADIR%%/scripts/stack.tcl
+%%DATADIR%%/scripts/tabbed_machine_view.tcl
+%%DATADIR%%/scripts/tas_tools.tcl
 %%DATADIR%%/scripts/text_echo.tcl
 %%DATADIR%%/scripts/toggle_freq.tcl
 %%DATADIR%%/scripts/trainer.tcl
 %%DATADIR%%/scripts/trainerdefs.tclinclude
 %%DATADIR%%/scripts/umrcallback.tcl
+%%DATADIR%%/scripts/utils.tcl
 %%DATADIR%%/scripts/vdp.tcl
 %%DATADIR%%/scripts/vdrive.tcl
 %%DATADIR%%/scripts/vu-meters.tcl
+%%DATADIR%%/scripts/widgets.tcl
 %%DATADIR%%/settings.xml
-%%DATADIR%%/shaders/HQ2xLiteOffset.dat
+%%DATADIR%%/shaders/HQ2xLiteOffsets.dat
 %%DATADIR%%/shaders/HQ2xOffsets.dat
 %%DATADIR%%/shaders/HQ2xWeights.dat
-%%DATADIR%%/shaders/HQ3xLiteOffset.dat
+%%DATADIR%%/shaders/HQ3xLiteOffsets.dat
 %%DATADIR%%/shaders/HQ3xOffsets.dat
 %%DATADIR%%/shaders/HQ3xWeights.dat
-%%DATADIR%%/shaders/HQ4xLiteOffset.dat
+%%DATADIR%%/shaders/HQ4xLiteOffsets.dat
 %%DATADIR%%/shaders/HQ4xOffsets.dat
 %%DATADIR%%/shaders/HQ4xWeights.dat
 %%DATADIR%%/shaders/hq.frag
@@ -325,6 +349,8 @@ bin/openmsx
 %%DATADIR%%/shaders/scale2x.vert
 %%DATADIR%%/shaders/simple.frag
 %%DATADIR%%/shaders/simple.vert
+%%DATADIR%%/shaders/superImpose.frag
+%%DATADIR%%/shaders/superImpose.vert
 %%DATADIR%%/shaders/tv.frag
 %%DATADIR%%/shaders/tv.vert
 %%DATADIR%%/skins/ConsoleBackground.png
@@ -343,6 +369,25 @@ bin/openmsx
 %%DATADIR%%/skins/fancy/led-off.png
 %%DATADIR%%/skins/fancy/led-on.png
 %%DATADIR%%/skins/fancy/skin.tcl
+%%DATADIR%%/skins/handheld/breaked.png
+%%DATADIR%%/skins/handheld/caps-off.png
+%%DATADIR%%/skins/handheld/caps-on.png
+%%DATADIR%%/skins/handheld/code-off.png
+%%DATADIR%%/skins/handheld/code-on.png
+%%DATADIR%%/skins/handheld/fdd-off.png
+%%DATADIR%%/skins/handheld/fdd-on.png
+%%DATADIR%%/skins/handheld/kana-off.png
+%%DATADIR%%/skins/handheld/kana-on.png
+%%DATADIR%%/skins/handheld/mute.png
+%%DATADIR%%/skins/handheld/pause-off.png
+%%DATADIR%%/skins/handheld/pause-on.png
+%%DATADIR%%/skins/handheld/pause.png
+%%DATADIR%%/skins/handheld/power-off.png
+%%DATADIR%%/skins/handheld/power-on.png
+%%DATADIR%%/skins/handheld/skin.tcl
+%%DATADIR%%/skins/handheld/throttle.png
+%%DATADIR%%/skins/handheld/turbo-off.png
+%%DATADIR%%/skins/handheld/turbo-on.png
 %%DATADIR%%/skins/led-off.png
 %%DATADIR%%/skins/led.png
 %%DATADIR%%/skins/mute.png
@@ -393,8 +438,29 @@ bin/openmsx
 %%DATADIR%%/skins/set4/skin.tcl
 %%DATADIR%%/skins/set4/turbo-off.png
 %%DATADIR%%/skins/set4/turbo-on.png
+%%DATADIR%%/skins/set5/breaked.png
+%%DATADIR%%/skins/set5/caps-off.png
+%%DATADIR%%/skins/set5/caps-on.png
+%%DATADIR%%/skins/set5/fdd-off.png
+%%DATADIR%%/skins/set5/fdd-on.png
+%%DATADIR%%/skins/set5/kana-off.png
+%%DATADIR%%/skins/set5/kana-on.png
+%%DATADIR%%/skins/set5/mute.png
+%%DATADIR%%/skins/set5/mute_off.png
+%%DATADIR%%/skins/set5/pause-off.png
+%%DATADIR%%/skins/set5/pause-on.png
+%%DATADIR%%/skins/set5/pause.png
+%%DATADIR%%/skins/set5/power-off.png
+%%DATADIR%%/skins/set5/power-on.png
+%%DATADIR%%/skins/set5/reverse.png
+%%DATADIR%%/skins/set5/skin.tcl
+%%DATADIR%%/skins/set5/throttle.png
+%%DATADIR%%/skins/set5/throttle_off.png
+%%DATADIR%%/skins/set5/turbo-off.png
+%%DATADIR%%/skins/set5/turbo-on.png
 %%DATADIR%%/skins/throttle.png
 %%DATADIR%%/softwaredb.xml
+%%DATADIR%%/softwaredb1.dtd
 %%DATADIR%%/systemroms/README
 %%DATADIR%%/unicodemaps/unicodemap.de
 %%DATADIR%%/unicodemaps/unicodemap.es
@@ -479,7 +545,6 @@ bin/openmsx
 @dirrm %%DATADIR%%/extensions/slotexpander
 @dirrm %%DATADIR%%/extensions
 @dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%/machines/Al_Alamiah_AX170/roms
 @dirrm %%DATADIR%%/machines/Al_Alamiah_AX170
 @dirrm %%DATADIR%%/machines/Boosted_MSX2_EN/roms
@@ -586,6 +651,12 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Philips_VG_8230
 @dirrm %%DATADIR%%/machines/Philips_VG_8235/roms
 @dirrm %%DATADIR%%/machines/Philips_VG_8235
+@dirrm %%DATADIR%%/machines/Pioneer_PX-7/roms
+@dirrm %%DATADIR%%/machines/Pioneer_PX-7
+@dirrm %%DATADIR%%/machines/Pioneer_PX-7UK/roms
+@dirrm %%DATADIR%%/machines/Pioneer_PX-7UK
+@dirrm %%DATADIR%%/machines/Pioneer_PX-V60/roms
+@dirrm %%DATADIR%%/machines/Pioneer_PX-V60
 @dirrm %%DATADIR%%/machines/Sanyo_MPC-25FD/roms
 @dirrm %%DATADIR%%/machines/Sanyo_MPC-25FD
 @dirrm %%DATADIR%%/machines/Sanyo_MPC-100/roms
@@ -655,6 +726,10 @@ bin/openmsx
 @dirrm %%DATADIR%%/machines/Yamaha_CX5MII-128
 @dirrm %%DATADIR%%/machines/Yamaha_YIS-503F/roms
 @dirrm %%DATADIR%%/machines/Yamaha_YIS-503F
+@dirrm %%DATADIR%%/machines/Yamaha_YIS-503IIIR/roms
+@dirrm %%DATADIR%%/machines/Yamaha_YIS-503IIIR
+@dirrm %%DATADIR%%/machines/Yamaha_YIS-805-128R2/roms
+@dirrm %%DATADIR%%/machines/Yamaha_YIS-805-128R2
 @dirrm %%DATADIR%%/machines/Yashica_YC-64/roms
 @dirrm %%DATADIR%%/machines/Yashica_YC-64
 @dirrm %%DATADIR%%/machines
@@ -663,10 +738,12 @@ bin/openmsx
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/shaders
 @dirrm %%DATADIR%%/skins/fancy
+@dirrm %%DATADIR%%/skins/handheld
 @dirrm %%DATADIR%%/skins/none
 @dirrm %%DATADIR%%/skins/set1
 @dirrm %%DATADIR%%/skins/set2
 @dirrm %%DATADIR%%/skins/set4
+@dirrm %%DATADIR%%/skins/set5
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/systemroms
 @dirrm %%DATADIR%%/unicodemaps
