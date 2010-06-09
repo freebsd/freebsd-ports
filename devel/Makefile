@@ -1941,6 +1941,7 @@
     SUBDIR += p5-PV
     SUBDIR += p5-Package-Constants
     SUBDIR += p5-Package-Generator
+    SUBDIR += p5-Package-Stash
     SUBDIR += p5-PadWalker
     SUBDIR += p5-Parallel-ForkManager
     SUBDIR += p5-Parallel-Prefork
