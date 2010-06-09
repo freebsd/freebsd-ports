@@ -17,6 +17,8 @@ COMMENT=	Allows mass virtual hosting using libhome system with Apache 2.0.x
 
 LIB_DEPENDS+=	home:${PORTSDIR}/misc/libhome
 
+MANUAL_PACKAGE_BUILD=	lang/php5 is built with www/apache13 by default which conflicts
+
 USE_APACHE=	2.0+
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
