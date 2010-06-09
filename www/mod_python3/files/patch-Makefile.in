@@ -1,0 +1,10 @@
+--- ./Makefile.in.orig	2010-06-08 21:02:59.711010209 -0400
++++ ./Makefile.in	2010-06-08 21:06:55.645681728 -0400
+@@ -61,6 +61,7 @@
+ 	@echo
+ 	$(INSTALL) -d $(DESTDIR)$(LIBEXECDIR)
+ 	$(INSTALL) src/mod_python.so $(DESTDIR)$(LIBEXECDIR)
++	${APXS} -e -a -n python $(DESTDIR)$(LIBEXECDIR)/mod_python.so
+ 	@echo
+ 	@echo "Now don't forget to edit your main config and add"
+ 	@echo "    LoadModule python_module $(LIBEXECDIR)/mod_python.so"
