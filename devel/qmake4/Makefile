@@ -36,7 +36,9 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	'${DISTNAME}/src/corelib/xml' \
 	'${DISTNAME}/src/3rdparty/md4' \
 	'${DISTNAME}/src/3rdparty/md5' \
-	'${DISTNAME}/src/3rdparty/sha1'
+	'${DISTNAME}/src/3rdparty/sha1' \
+	'${DISTNAME}/tools/shared/symbian' \
+	'${DISTNAME}/tools/shared/windows'
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CXXFLAGS}|' \

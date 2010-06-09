@@ -358,6 +358,65 @@ share/examples/qt4/demos/shared/libdemo_shared.prl
 share/examples/qt4/demos/shared/shared.pri
 share/examples/qt4/demos/shared/shared.pro
 share/examples/qt4/demos/shared/shared.qrc
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/Array.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/Array.hpp
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/DynArray.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/DynArray.hpp
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealFixLen.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealFixLen.hpp
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealFixLenParam.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealPassDirect.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealPassDirect.hpp
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealPassInverse.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealPassInverse.hpp
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealSelect.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealSelect.hpp
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealUseTrigo.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/FFTRealUseTrigo.hpp
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/OscSinCos.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/OscSinCos.hpp
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/def.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/fftreal.pro
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/fftreal_wrapper.cpp
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/fftreal_wrapper.h
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/license.txt
+share/examples/qt4/demos/spectrum/3rdparty/fftreal/readme.txt
+share/examples/qt4/demos/spectrum/README.txt
+share/examples/qt4/demos/spectrum/TODO.txt
+share/examples/qt4/demos/spectrum/app/app.pro
+share/examples/qt4/demos/spectrum/app/engine.cpp
+share/examples/qt4/demos/spectrum/app/engine.h
+share/examples/qt4/demos/spectrum/app/frequencyspectrum.cpp
+share/examples/qt4/demos/spectrum/app/frequencyspectrum.h
+share/examples/qt4/demos/spectrum/app/images/record.png
+share/examples/qt4/demos/spectrum/app/images/settings.png
+share/examples/qt4/demos/spectrum/app/levelmeter.cpp
+share/examples/qt4/demos/spectrum/app/levelmeter.h
+share/examples/qt4/demos/spectrum/app/main.cpp
+share/examples/qt4/demos/spectrum/app/mainwidget.cpp
+share/examples/qt4/demos/spectrum/app/mainwidget.h
+share/examples/qt4/demos/spectrum/app/progressbar.cpp
+share/examples/qt4/demos/spectrum/app/progressbar.h
+share/examples/qt4/demos/spectrum/app/settingsdialog.cpp
+share/examples/qt4/demos/spectrum/app/settingsdialog.h
+share/examples/qt4/demos/spectrum/app/spectrograph.cpp
+share/examples/qt4/demos/spectrum/app/spectrograph.h
+share/examples/qt4/demos/spectrum/app/spectrum.h
+share/examples/qt4/demos/spectrum/app/spectrum.qrc
+share/examples/qt4/demos/spectrum/app/spectrumanalyser.cpp
+share/examples/qt4/demos/spectrum/app/spectrumanalyser.h
+share/examples/qt4/demos/spectrum/app/tonegenerator.cpp
+share/examples/qt4/demos/spectrum/app/tonegenerator.h
+share/examples/qt4/demos/spectrum/app/tonegeneratordialog.cpp
+share/examples/qt4/demos/spectrum/app/tonegeneratordialog.h
+share/examples/qt4/demos/spectrum/app/utils.cpp
+share/examples/qt4/demos/spectrum/app/utils.h
+share/examples/qt4/demos/spectrum/app/waveform.cpp
+share/examples/qt4/demos/spectrum/app/waveform.h
+share/examples/qt4/demos/spectrum/app/wavfile.cpp
+share/examples/qt4/demos/spectrum/app/wavfile.h
+share/examples/qt4/demos/spectrum/spectrum.pri
+share/examples/qt4/demos/spectrum/spectrum.pro
 share/examples/qt4/demos/spreadsheet/images/interview.png
 share/examples/qt4/demos/spreadsheet/main.cpp
 share/examples/qt4/demos/spreadsheet/printview.cpp
@@ -3269,6 +3328,11 @@ share/examples/qt4/examples/xmlpatterns/xquery/xquery.pro
 @dirrm share/examples/qt4/demos/sqlbrowser
 @dirrm share/examples/qt4/demos/spreadsheet/images
 @dirrm share/examples/qt4/demos/spreadsheet
+@dirrm share/examples/qt4/demos/spectrum/app/images
+@dirrm share/examples/qt4/demos/spectrum/app
+@dirrm share/examples/qt4/demos/spectrum/3rdparty/fftreal
+@dirrm share/examples/qt4/demos/spectrum/3rdparty
+@dirrm share/examples/qt4/demos/spectrum
 @dirrm share/examples/qt4/demos/shared/images
 @dirrm share/examples/qt4/demos/shared
 @dirrm share/examples/qt4/demos/qtdemo/xml

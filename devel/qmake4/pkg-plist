@@ -69,6 +69,7 @@ share/qt4/mkspecs/features/silent.prf
 share/qt4/mkspecs/features/static.prf
 share/qt4/mkspecs/features/static_and_shared.prf
 share/qt4/mkspecs/features/staticlib.prf
+share/qt4/mkspecs/features/symbian/add_mmp_rules.prf
 share/qt4/mkspecs/features/symbian/application_icon.prf
 share/qt4/mkspecs/features/symbian/armcc_warnings.prf
 share/qt4/mkspecs/features/symbian/data_caging_paths.prf
@@ -274,12 +275,14 @@ share/qt4/mkspecs/solaris-g++-64/qplatformdefs.h
 share/qt4/mkspecs/solaris-g++/qmake.conf
 share/qt4/mkspecs/solaris-g++/qplatformdefs.h
 share/qt4/mkspecs/symbian-abld/qmake.conf
+share/qt4/mkspecs/symbian-abld/qplatformdefs.h
 share/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_emulator_deployment.flm
 share/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_extra_pre_targetdep.flm
 share/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_post_link.flm
 share/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_store_build.flm
 share/qt4/mkspecs/symbian-sbsv2/flm/qt/qt.xml
 share/qt4/mkspecs/symbian-sbsv2/qmake.conf
+share/qt4/mkspecs/symbian-sbsv2/qplatformdefs.h
 share/qt4/mkspecs/tru64-cxx/qmake.conf
 share/qt4/mkspecs/tru64-cxx/qplatformdefs.h
 share/qt4/mkspecs/tru64-g++/qmake.conf
