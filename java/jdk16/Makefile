@@ -24,8 +24,6 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-BROKEN=		does not compile
-
 OPTIONS=	DEBUG	"Enable debugging support"	off \
 		IPV6	"Enable IPv6 support"		off \
 		WEB	"Enable the browser plugin and Java Web Start"	on \
