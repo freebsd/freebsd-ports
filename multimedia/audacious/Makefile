@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -21,14 +21,15 @@ USE_GMAKE=	yes
 USE_XORG=	x11 sm
 USE_GNOME=	gtk20 libglade2
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --disable-xspf
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		audacious2.1 audtool2.1
 
 LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs \
-		mowgli.2:${PORTSDIR}/devel/libmowgli
+		mowgli.2:${PORTSDIR}/devel/libmowgli \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 PORTDOCS=	README AUTHORS NEWS
 
@@ -36,7 +37,6 @@ OPTIONS=	CHARSET	"Build with automatic charset detection"	off \
 		DBUS	"Build with dbus support"			on  \
 		GNOME	"Build with gconf support"			off \
 		NLS	"Native Language Support"			on  \
-		XML	"Build with xml support"			on  \
 		EXECINFO "Build with libexecinfo support"		on
 
 .include <bsd.port.pre.mk>
@@ -72,17 +72,9 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(WITHOUT_XML)
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
-.else
-CONFIGURE_ARGS+=--with-xml-prefix=/
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
-#	@${REINPLACE_CMD} 's|+= $${LIB_CPPFLAGS} -I..|= -I.. $${LIB_[8$CPPFLAGS}|' \
-#		${WRKSRC}/src/libid3tag/Makefile
 	@${REINPLACE_CMD} 's|CPPFLAGS +=|CPPFLAGS =|g' \
 		${WRKSRC}/src/libid3tag/Makefile \
 		${WRKSRC}/src/libaudgui/Makefile
