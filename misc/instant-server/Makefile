@@ -7,7 +7,7 @@
 
 PORTNAME=	instant-server
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	# Empty
 DISTFILES=	# None
@@ -17,7 +17,7 @@ COMMENT=	Instant server installs a typical set of ports for a server
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 		${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsup \
-		${LOCALBASE}/sbin/dhcpd:${PORTSDIR}/net/isc-dhcp30-server \
+		${LOCALBASE}/sbin/dhcpd:${PORTSDIR}/net/isc-dhcp41-server \
 		${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3 \
 		${LOCALBASE}/sbin/traceroute:${PORTSDIR}/net/traceroute \
 		cnewsdo:${PORTSDIR}/news/cnews \
