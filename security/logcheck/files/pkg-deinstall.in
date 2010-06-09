@@ -22,12 +22,12 @@ POST-DEINSTALL)
 		echo "---> Removed crontab for \"${user}\"."
 	fi
 
-	if pw user show ${user} > /dev/null 2>&1; then
-		pw user del ${user}
+	if %%PW%% user show ${user} > /dev/null 2>&1; then
+		%%PW%% user del ${user}
 		echo "---> Removed user \"${user}\" and group \"${group}\"."
 	fi
-	if pw group show ${group} > /dev/null 2>&1; then
-		pw group del ${group}
+	if %%PW%% group show ${group} > /dev/null 2>&1; then
+		%%PW%% group del ${group}
 	fi
 ;;
 esac

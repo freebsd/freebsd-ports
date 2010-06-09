@@ -34,7 +34,8 @@ SHAREMODE=	640
 SUB_LIST+=	LOGCHECK_USER=${LOGCHECK_USER} \
 		LOGCHECK_UID=${LOGCHECK_UID} \
 		LOGCHECK_GROUP=${LOGCHECK_GROUP} \
-		LOGCHECK_GID=${LOGCHECK_GID}
+		LOGCHECK_GID=${LOGCHECK_GID} \
+		PW=${PW}
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
 CONFIG_DIRS=	cracking.d ignore.d.paranoid ignore.d.server \
 		ignore.d.workstation violations.d violations.ignore.d
@@ -102,7 +103,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	${CHMOD} 644 ${DOCSDIR}/*
+	@${CHMOD} 644 ${DOCSDIR}/*
 .endif
 	@${CAT} ${PKGMESSAGE}
 
