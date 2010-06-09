@@ -1,0 +1,16 @@
+--- src/VBox/Installer/freebsd/virtualbox.desktop.orig	2010-06-09 13:54:18.000000000 +0200
++++ src/VBox/Installer/freebsd/virtualbox.desktop	2010-06-09 13:58:47.000000000 +0200
+@@ -2,12 +2,11 @@
+ [Desktop Entry]
+ Encoding=UTF-8
+ Version=1.0
+-Name=Sun VirtualBox
++Name=Oracle VM VirtualBox
+ GenericName=Virtual Machine
+ Type=Application
+ Exec=VirtualBox
+ TryExec=VirtualBox
+-DocPath=file://$VBOX_DOC_PATH/UserManual.pdf
+ Icon=VBox
+ Categories=Emulator;System;
+ Comment=Run several virtual systems on a single host computer
