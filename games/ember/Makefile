@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ember
-PORTVERSION=	0.5.7
-PORTREVISION=	5
+PORTVERSION=	0.5.8
 CATEGORIES=	games
 MASTER_SITES=	SF/worldforge/Ember%20%28OGRE%20client%29/${PORTVERSION} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -59,7 +58,7 @@ post-patch:
 		${WRKSRC}/ember.conf
 
 post-install:
-	(cd ${WRKDIR}/media-${PORTVERSION}/media && ${FIND} . -type f -print | \
+	(cd ${WRKDIR}/ember-media-${PORTVERSION}/media && ${FIND} . -type f -print | \
 		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${DATADIR}/media)
 	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
 	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
