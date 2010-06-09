@@ -7307,6 +7307,7 @@ kpackagekit                     ports/ports-mgmt/kpackagekit
 kpdftool                        ports/print/kpdftool
 kphone                          ports/net/kphone
 kphotoalbum                     ports/graphics/kphotoalbum
+kphotoalbum-kde4                ports/graphics/kphotoalbum-kde4
 kpicframer                      ports/games/kpicframer
 kpictorial                      ports/games/kpictorial
 kplayer                         ports/multimedia/kplayer
@@ -8610,9 +8611,7 @@ linux_base-f8                   ports/emulators/linux_base-f8
 linux_base-f9                   ports/emulators/linux_base-f9
 linux_base-fc4                  ports/emulators/linux_base-fc4
 linux_base-fc6                  ports/emulators/linux_base-fc6
-linux_base-gentoo-stage1        ports/emulators/linux_base-gentoo-stage1
 linux_base-gentoo-stage3        ports/emulators/linux_base-gentoo-stage3
-linux_dist-gentoo-stage1        ports/emulators/linux_dist-gentoo-stage1
 linux_dist-gentoo-stage3        ports/emulators/linux_dist-gentoo-stage3
 linux_dri                       ports/graphics/linux_dri
 linux_dri-devel                 ports/graphics/linux_dri-devel
@@ -22844,6 +22843,7 @@ shell-include                   ports/shells/shell-include
 shelldap                        ports/net/shelldap
 shflags                         ports/devel/shflags
 shftool                         ports/converters/shftool
+shibboleth2-sp                  ports/security/shibboleth2-sp
 shim                            ports/graphics/shim
 shimmer                         ports/security/shimmer
 shishi                          ports/security/shishi
