@@ -1,5 +1,4 @@
 bin/orcc
-include/orc-0.4/orc-float/orcfloat.h
 include/orc-0.4/orc-test/orcarray.h
 include/orc-0.4/orc-test/orcprofile.h
 include/orc-0.4/orc-test/orcrandom.h
@@ -11,6 +10,7 @@ include/orc-0.4/orc/orcarm.h
 include/orc-0.4/orc/orcdebug.h
 include/orc-0.4/orc/orcfunctions.h
 include/orc-0.4/orc/orcmmx.h
+include/orc-0.4/orc/orcneon.h
 include/orc-0.4/orc/orconce.h
 include/orc-0.4/orc/orcparse.h
 include/orc-0.4/orc/orcpowerpc.h
@@ -22,10 +22,6 @@ lib/liborc-0.4.a
 lib/liborc-0.4.la
 lib/liborc-0.4.so
 lib/liborc-0.4.so.0
-lib/liborc-float-0.4.a
-lib/liborc-float-0.4.la
-lib/liborc-float-0.4.so
-lib/liborc-float-0.4.so.0
 lib/liborc-test-0.4.a
 lib/liborc-test-0.4.la
 lib/liborc-test-0.4.so
@@ -43,23 +39,23 @@ lib/pkgconfig/orc-0.4.pc
 %%PORTDOCS%%share/gtk-doc/html/orc/index.html
 %%PORTDOCS%%share/gtk-doc/html/orc/index.sgml
 %%PORTDOCS%%share/gtk-doc/html/orc/left.png
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-ARM.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-MMX.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-Orc.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-OrcCompiler.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-OrcDebug.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-OrcExecutor.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-OrcOpcode.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-OrcProgram.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-OrcRule.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-PowerPC.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-SSE.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-Utility-functions.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-building.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-concepts.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-misc.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc-opcodes.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orc.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcarm.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orccompiler.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcdebug.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcexecutor.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcmmx.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcopcode.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcpowerpc.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcprogram.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcrule.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcsse.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcutils.html
-%%PORTDOCS%%share/gtk-doc/html/orc/orc-orcx86.html
+%%PORTDOCS%%share/gtk-doc/html/orc/orc-x86.html
 %%PORTDOCS%%share/gtk-doc/html/orc/orc.devhelp
 %%PORTDOCS%%share/gtk-doc/html/orc/orc.devhelp2
 %%PORTDOCS%%share/gtk-doc/html/orc/right.png
@@ -67,7 +63,6 @@ lib/pkgconfig/orc-0.4.pc
 %%PORTDOCS%%share/gtk-doc/html/orc/up.png
 @dirrmtry lib/pkgconfig
 @dirrm include/orc-0.4/orc
-@dirrm include/orc-0.4/orc-float
 @dirrm include/orc-0.4/orc-test
 @dirrm include/orc-0.4
 %%PORTEXAMPLES%%@dirrm lib/orc
