@@ -458,7 +458,9 @@ gst_theora_DIST=	base
 
 # gst_v4l2
 gst_gst_v4l2_LIB_DEPENDS+=	v4l2.0:${PORTSDIR}/multimedia/libv4l
+.if ${OSVERSION} >= 800000
 gst_gst_v4l2_RUN_DEPENDS+=	webcamd:${PORTSDIR}/multimedia/webcamd
+.endif
 gst_gst_v4l2_PLIST_FILES=	${GST_LIB_DIR}/libgstvideo4linux2.la \
 		${GST_LIB_DIR}/libgstvideo4linux2.so
 gst_gst_v4l2_CONFIGURE_ARGS+=	--enable-gst_v4l2
