@@ -8,7 +8,7 @@
 PORTNAME=	yadis
 PORTVERSION=	0.3.4
 CATEGORIES=	net rubygems
-MASTER_SITES=	http://www.openidenabled.com/resources/downloads/ruby-yadis/
+MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
