@@ -21,4 +21,10 @@ USE_AUTOTOOLS=	aclocal:110 autoheader:262 libtoolize automake:110 autoconf:262 l
 ACLOCAL_ARGS=	-I. -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not build on 6.X
+.endif
+
+.include <bsd.port.post.mk>
