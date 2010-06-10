@@ -28,6 +28,7 @@ MAN3+=	Imager::Font::Win32.3
 MAN3+=	Imager::Font::Wrap.3
 MAN3+=	Imager::Fountain.3
 MAN3+=	Imager::Handy.3
+MAN3+=	Imager::IO.3
 MAN3+=	Imager::ImageTypes.3
 MAN3+=	Imager::Inline.3
 MAN3+=	Imager::LargeSamples.3
