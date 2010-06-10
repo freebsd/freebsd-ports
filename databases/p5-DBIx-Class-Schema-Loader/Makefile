@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIx-Class-Schema-Loader
 PORTVERSION=	0.07000
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -36,16 +37,16 @@ OPTIONS=	SQLITE "SQLite Support" Off \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_SQLITE)
-RUN_DEPENDS+=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite
+USE_SQLITE=	yes
 .endif
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	p5-DBD-mysql>=4.004:${PORTSDIR}/databases/p5-DBD-mysql
+USE_MYSQL=	yes
 .endif
 .if defined(WITH_PGSQL)
-RUN_DEPENDS+=	p5-DBD-Pg>=1.49:${PORTSDIR}/databases/p5-DBD-Pg
+USE_PGSQL=	yes
 .endif
 .if defined(WITH_ORACLE)
-RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
+RUN_DEPENDS+=  p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
 .endif
 
 PERL_CONFIGURE=	5.8.0+
