@@ -40,14 +40,14 @@ share/applications/grisbi.desktop
 %%NLS%%share/locale/cs/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/da/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/de/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/de/LC_MESSAGES/grisbi-tips.mo
+%%PORTDOCS%%%%NLS%%share/locale/de/LC_MESSAGES/grisbi-tips.mo
 %%NLS%%share/locale/el/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/es/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/es/LC_MESSAGES/grisbi-tips.mo
+%%PORTDOCS%%%%NLS%%share/locale/es/LC_MESSAGES/grisbi-tips.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/grisbi.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/grisbi-tips.mo
+%%PORTDOCS%%%%NLS%%share/locale/fr/LC_MESSAGES/grisbi-tips.mo
 %%NLS%%share/locale/he/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/it/LC_MESSAGES/grisbi.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/grisbi.mo
@@ -316,7 +316,7 @@ share/applications/grisbi.desktop
 %%DATADIR%%/pixmaps/transdisplay.png
 %%DATADIR%%/pixmaps/transfer.png
 %%DATADIR%%/pixmaps/warnings.png
-%%DATADIR%%/tips.txt
+%%PORTDOCS%%%%DATADIR%%/tips.txt
 share/icons/hicolor/48x48/apps/grisbi.png
 share/mime-info/grisbi.keys
 share/mime-info/grisbi.mime
