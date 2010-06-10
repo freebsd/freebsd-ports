@@ -1,8 +1,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Schematron/.packlist
 %%SITE_PERL%%/XML/Schematron.pm
 %%SITE_PERL%%/XML/Schematron/LibXSLT.pm
-%%SITE_PERL%%/XML/Schematron/Sablotron.pm
 %%SITE_PERL%%/XML/Schematron/XPath.pm
+%%SITE_PERL%%/XML/Schematron/Test.pm
+%%SITE_PERL%%/XML/Schematron/Schema.pm
+%%SITE_PERL%%/XML/Schematron/SchemaReader.pm
+%%SITE_PERL%%/XML/Schematron/XSLTProcessor.pm
 @dirrmtry %%SITE_PERL%%/XML/Schematron
 @dirrmtry %%SITE_PERL%%/XML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Schematron

@@ -6,21 +6,19 @@
 #
 
 PORTNAME=	XML-Schematron
-PORTVERSION=	0.98
+PORTVERSION=	1.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of the Schematron
 
-BUILD_DEPENDS=	${SITE_PERL}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml
 
 PERL_CONFIGURE=	yes
 
-MAN3=		XML::Schematron::Sablotron.3 \
-		XML::Schematron::XPath.3 \
+MAN3=	XML::Schematron::XPath.3 \
 		XML::Schematron::LibXSLT.3 \
 		XML::Schematron.3
 
