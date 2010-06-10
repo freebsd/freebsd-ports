@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hamlib
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.11
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -35,6 +35,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
 		-e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}/hamlib|g' \
 		${WRKSRC}/bindings/Makefile.in
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/src/Makefile.in
 post-build:
 	${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' \
 		${WRKSRC}/bindings/Hamlib-pl.mk
