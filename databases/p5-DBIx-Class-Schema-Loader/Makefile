@@ -36,20 +36,16 @@ OPTIONS=	SQLITE "SQLite Support" Off \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_SQLITE)
-RUN_DEPENDS+=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite
 .endif
 .if defined(WITH_MYSQL)
-RUN_DEPENDS+=	p5-DBD-mysql>=4.004:${PORTSDIR}/databases/p5-DBD-mysql \
-		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	p5-DBD-mysql>=4.004:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
-.if defined(WITH_PG)
-RUN_DEPENDS+=	p5-DBD-Pg>=1.49:${PORTSDIR}/databases/p5-DBD-Pg \
-		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
+.if defined(WITH_PGSQL)
+RUN_DEPENDS+=	p5-DBD-Pg>=1.49:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 .if defined(WITH_ORACLE)
-RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle \
-		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
 .endif
 
 PERL_CONFIGURE=	5.8.0+
