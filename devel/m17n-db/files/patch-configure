@@ -1,0 +1,15 @@
+--- configure~	2010-04-16 11:53:12.000000000 +0000
++++ configure	2010-06-02 09:53:04.000000000 +0000
+@@ -5104,12 +5104,6 @@
+ fi
+ 
+ 
+-if test "x$HAVE_MSGFMT" != "xyes"; then
+-  echo "  Please install the program \"msgfmt\" in advance."
+-  echo "  It is usually included in the package \"gettext\"."
+-  exit 1;
+-else :
+-fi
+ 
+ # Checks for source data files.
+ 
