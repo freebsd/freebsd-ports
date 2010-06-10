@@ -7,6 +7,7 @@
 
 PORTNAME=	Forest
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -15,10 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A collection of n-ary tree related modules
 
-RUN_DEPENDS=	p5-Moose>=0.35:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-AttributeHelpers>=0.07:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
+RUN_DEPENDS= p5-MooseX-AttributeHelpers>=0.07:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
+  		p5-MooseX-Clone>=:${PORTSDIR}/devel/p5-MooseX-Clone \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
