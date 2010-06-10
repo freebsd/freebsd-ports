@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	freegrep
-PORTVERSION=	0.16
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.vocito.com/downloads/software/grep/
+MASTER_SITES=	ftp://ftp.jameshoward.us/pub/howardjp/grep/ 		\
+		http://github.com/downloads/howardjp/freegrep/
 DISTNAME=	grep-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jh@jameshoward.us
 COMMENT=	An implementation of grep(1) under a BSD-friendly license
 
-LIB_DEPENDS=	iberty.1:${PORTSDIR}/devel/freelibiberty
+USE_BZIP2=	YES
 
-CFLAGS:=	-I${LOCALBASE}/include/freelibiberty ${CFLAGS}
+PLIST_FILES=	bin/grep	\
+		bin/egrep	\
+		bin/fgrep	\
+		bin/zgrep   \
+		bin/zegrep  \
+		bin/zfgrep
 
-MAN1=		grep.1 egrep.1 fgrep.1 zgrep.1
+MAN1=		grep.1 egrep.1 fgrep.1 zgrep.1 zegrep.1 zfgrep.1
 
 post-extract:
 	@(cd ${WRKSRC}; ${RM} -f .depend)
