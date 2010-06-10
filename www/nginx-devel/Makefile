@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	0.8.40
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -141,6 +142,7 @@ CONFIGURE_ARGS+=--with-google_perftools_module
 CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
 		--http-fastcgi-temp-path=${NGINX_TMPDIR}/fastcgi_temp \
+		--http-uwsgi-temp-path=${NGINX_TMPDIR}/uwsgi_temp \
 		--http-log-path=${NGINX_ACCESSLOG}
 
 .if defined(WITH_HTTP_ACCEPT_LANGUAGE)
