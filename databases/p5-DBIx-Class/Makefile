@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIx-Class
 PORTVERSION=	0.08122
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,27 +15,34 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
-BUILD_DEPENDS=	p5-Carp-Clan>=6:${PORTSDIR}/devel/p5-Carp-Clan \
+BUILD_DEPENDS=	p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+RUN_DEPENDS=	p5-Carp-Clan>=6.0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Class-Accessor-Grouped>=0.09003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
-		p5-Data-Dumper-Concise>=1.002:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
 		p5-DBI>=1.60.9:${PORTSDIR}/databases/p5-DBI \
-		p5-JSON-Any>=1.18:${PORTSDIR}/converters/p5-JSON-Any \
 		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
-		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
-		p5-Context-Preserve>=0.01:${PORTSDIR}/devel/p5-Context-Preserve \
+		p5-Path-Class>=0.18:${PORTSDIR}/devel/p5-Path-Class \
 		p5-SQL-Abstract>=1.67:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-SQL-Abstract-Limit>=0.13:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
+		p5-Data-Dumper-Concise>=1.000:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
+		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
+		p5-Context-Preserve>=0.01:${PORTSDIR}/devel/p5-Context-Preserve \
 		p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-namespace-clean>=0.14:${PORTSDIR}/devel/p5-namespace-clean
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SQLT "SQL::Translator (generate DDL from schema)" Off
+
+.include <bsd.port.options.mk>
+
+.ifdef(WITH_SQLT)
+RUN_DEPENDS+=	p5-SQL-Translator>=0.09.004:${PORTSDIR}/databases/p5-SQL-Translator
+.endif
 
 PERL_CONFIGURE=	5.8.1+
 CONFIGURE_ENV=	DBICTEST_NO_SQLITE_CHECK=1
@@ -148,10 +156,4 @@ MAN3=	DBIx::Class.3 \
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^(requires .DBD|test_requires|auto_install|recommends|configure_requires)/' ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.ifdef(WITH_SQLT)
-RUN_DEPENDS+=	p5-SQL-Translator>=0.09.004:${PORTSDIR}/databases/p5-SQL-Translator
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
