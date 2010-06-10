@@ -179,3 +179,4 @@ lib/libcnews.a
 @exec mkdir -p %D/%%NEWSARTS%%/out.going
 @exec mkdir -p %D/%%NEWSARTS%%/out.master
 @exec mkdir -p %D/%%NEWSARTS%%/out.nntp
+@cwd
