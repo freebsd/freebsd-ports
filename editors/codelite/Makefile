@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	codelite
-DISTVERSION=	2.5.2.${SVN_REVISION}
+DISTVERSION=	2.5.3.${SVN_REVISION}
 CATEGORIES=	editors
-MASTER_SITES=	SF/${PORTNAME}/Releases/${PORTNAME}-${PORTVERSION:R:R}
+MASTER_SITES=	SF/${PORTNAME}/Releases/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An Open Source IDE for C/C++
@@ -25,7 +25,7 @@ HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-SVN_REVISION=	4031
+SVN_REVISION=	4075
 
 .if defined(WITH_CSCOPE)
 RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
