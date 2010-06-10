@@ -1,0 +1,7 @@
+libexec/ibus-engine-kmfl
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-kmfl.mo
+share/ibus/component/kmfl.xml
+share/kmfl/icons/default.png
+share/kmfl/icons/ibus-kmfl.svg
+@dirrm share/kmfl/icons
+@dirrm share/kmfl

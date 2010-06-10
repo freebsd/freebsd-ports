@@ -1,0 +1,18 @@
+This is the KMFL IMEngine for IBus (Intelligent Input Bus) framework.
+It allows you to use layouts written in KMN keyboard language through
+standard IBus interface, through KMFL compiler (textproc/kmflcomp) and
+KMFL library (textproc/libkmfl).
+
+KMFL aims to bring Tavultesoft Keyman functionality to *nix operating
+systems. KMFL is being jointly developed by SIL International
+(http://www.sil.org) and Tavultesoft (http://www.tavultesoft.com).
+
+The powerful KMN keyboard language supports contextual deadkeys, pre-
+and post-processing of keystrokes, rules grouping, 'storing' of
+character classes for use in similar rules, custom and Unicode character
+constants, SIL Ethnologue language codes, etc.
+
+Official Tavultesoft repository contains keyboards that cover more
+than 220 languages. Significant number of them are open source.
+
+WWW: http://kmfl.sourceforge.net/
