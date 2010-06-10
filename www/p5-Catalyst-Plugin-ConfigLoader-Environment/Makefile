@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-ConfigLoader-Environment
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
