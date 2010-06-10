@@ -1,11 +1,14 @@
 %%X11%%bin/xgpsspeed
-%%X11%%bin/xgps
+bin/xgps
 sbin/gpsd
 bin/cgps
+bin/gpscat
 bin/gpsctl
-bin/gpsdecode
+%%DECODE%%bin/gpsdecode
+bin/gpsfake
 bin/gpsmon
 bin/gpspipe
+bin/gpsprof
 bin/gpxlogger
 bin/lcdgps
 include/gps.h
@@ -24,3 +27,15 @@ libdata/pkgconfig/libgpsd.pc
 %%PYTHON_SITELIBDIR%%/gpscap.py
 %%PYTHON_SITELIBDIR%%/gpscap.pyc
 %%PYTHON_SITELIBDIR%%/gpscap.pyo
+%%PYTHON_SITELIBDIR%%/gps/__init__.py
+%%PYTHON_SITELIBDIR%%/gps/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gps/clienthelpers.so
+%%PYTHON_SITELIBDIR%%/gps/fake.py
+%%PYTHON_SITELIBDIR%%/gps/fake.pyc
+%%PYTHON_SITELIBDIR%%/gps/gps.py
+%%PYTHON_SITELIBDIR%%/gps/gps.pyc
+%%PYTHON_SITELIBDIR%%/gps/packet.so
+%%PYTHON_SITELIBDIR%%/gps/misc.py
+%%PYTHON_SITELIBDIR%%/gps/misc.pyc
+%%PYTHON_SITELIBDIR%%/gps-2.94-py2.6.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/gps
