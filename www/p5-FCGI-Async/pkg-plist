@@ -1,9 +1,6 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Async/.packlist
 %%SITE_PERL%%/FCGI/Async.pm
-%%SITE_PERL%%/FCGI/Async/Constants.pm
 %%SITE_PERL%%/FCGI/Async/Request.pm
-%%SITE_PERL%%/FCGI/Async/BuildParse.pm
 %%SITE_PERL%%/FCGI/Async/ClientConnection.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/Async
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI
