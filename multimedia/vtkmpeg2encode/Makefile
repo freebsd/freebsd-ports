@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vtkmpeg2encode
-PORTVERSION=	5.4.2
+PORTVERSION=	5.6.0
 CATEGORIES=	multimedia math
 MASTER_SITES=	http://www.vtk.org/files/support/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -28,25 +28,25 @@ SUB_FILES=	vtkmpeg2encode.3
 
 MPEGLIB=	libvtkMPEG2Encode
 
-PLIST_DIRS=	include/vtk-5.4
+PLIST_DIRS=	include/vtk-5.6
 PLIST_FILES=	lib/${MPEGLIB}.so.${PORTVERSION} \
-		lib/${MPEGLIB}.so.5.4 \
+		lib/${MPEGLIB}.so.5.6 \
 		lib/${MPEGLIB}.so.5 \
 		lib/${MPEGLIB}.so \
-		include/vtk-5.4/mpeg2encDllConfig.h \
-		include/vtk-5.4/mpeg2enc_global.h \
-		include/vtk-5.4/mpeg2enc.h \
-		include/vtk-5.4/mpeg2enc_config.h \
-		include/vtk-5.4/vlc.h
+		include/vtk-5.6/mpeg2encDllConfig.h \
+		include/vtk-5.6/mpeg2enc_global.h \
+		include/vtk-5.6/mpeg2enc.h \
+		include/vtk-5.6/mpeg2enc_config.h \
+		include/vtk-5.6/vlc.h
 
 post-build:
 	${MV} ${WRKSRC}/${MPEGLIB}.so ${WRKSRC}/${MPEGLIB}.so.${PORTVERSION}
 
 do-install:
-	${MKDIR} ${PREFIX}/include/vtk-5.4
+	${MKDIR} ${PREFIX}/include/vtk-5.6
 	${INSTALL_DATA} ${WRKSRC}/${MPEGLIB}.so.${PORTVERSION} ${PREFIX}/lib
 	${LN} -s ${PREFIX}/lib/${MPEGLIB}.so.${PORTVERSION} \
-			${PREFIX}/lib/${MPEGLIB}.so.5.4
+			${PREFIX}/lib/${MPEGLIB}.so.5.6
 	${LN} -s ${PREFIX}/lib/${MPEGLIB}.so.${PORTVERSION} \
 			${PREFIX}/lib/${MPEGLIB}.so.5
 	${LN} -s ${PREFIX}/lib/${MPEGLIB}.so.${PORTVERSION} \
@@ -56,7 +56,7 @@ do-install:
 			${WRKSRC}/mpeg2enc.h \
 			${WRKSRC}/mpeg2enc_config.h \
 			${WRKSRC}/vlc.h \
-			${PREFIX}/include/vtk-5.4
+			${PREFIX}/include/vtk-5.6
 	${INSTALL_MAN}	${WRKDIR}/vtkmpeg2encode.3 ${MANPREFIX}/man/man3
 
 post-install:
