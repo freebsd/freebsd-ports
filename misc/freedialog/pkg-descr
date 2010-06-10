@@ -1,3 +1,0 @@
-This is an implementation of dialog(1) intended as a replacement for
-FreeBSD's GNU dialog. GNU dialog falls under GPL, while this implementation
-is under a BSD-friendly licence.

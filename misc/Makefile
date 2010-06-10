@@ -121,7 +121,6 @@
     SUBDIR += freebsd-doc-tr
     SUBDIR += freebsd-doc-zh_cn
     SUBDIR += freebsd-doc-zh_tw
-    SUBDIR += freedialog
     SUBDIR += freeguide
     SUBDIR += freshmeat-submit
     SUBDIR += ftdi-eeprom
