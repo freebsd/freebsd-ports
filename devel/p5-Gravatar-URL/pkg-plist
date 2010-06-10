@@ -1,2 +1,4 @@
 %%SITE_PERL%%/Gravatar/URL.pm
+%%SITE_PERL%%/Unicornify/URL.pm
 @dirrmtry %%SITE_PERL%%/Gravatar
+@dirrmtry %%SITE_PERL%%/Unicornify
