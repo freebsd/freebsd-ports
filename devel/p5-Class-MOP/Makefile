@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-MOP
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,15 +14,21 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Meta Object Protocol for Perl 5
 
-RUN_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
+BUILD_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
-BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-Exception>=0.27:${PORTSDIR}/devel/p5-Test-Exception
+RUN_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
+		p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
+		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
+		p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny \
+		p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Package-Stash>=0:${PORTSDIR}/devel/p5-Package-Stash
 
 MAKE_JOBS_UNSAFE=	yes
 
