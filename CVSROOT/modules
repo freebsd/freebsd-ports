@@ -3449,6 +3449,7 @@ firefly                         ports/audio/firefly
 firefox                         ports/www/firefox
 firefox-i18n                    ports/www/firefox-i18n
 firefox-remote                  ports/www/firefox-remote
+firefox-sync                    ports/www/firefox-sync
 firefox3                        ports/www/firefox3
 firefox3-devel                  ports/www/firefox3-devel
 firefox3-i18n                   ports/www/firefox3-i18n
@@ -5962,9 +5963,6 @@ isakmpd                         ports/security/isakmpd
 isbg                            ports/mail/isbg
 isc-cron                        ports/sysutils/isc-cron
 isc-dhcp3-devel                 ports/net/isc-dhcp3-devel
-isc-dhcp30-client               ports/net/isc-dhcp30-client
-isc-dhcp30-relay                ports/net/isc-dhcp30-relay
-isc-dhcp30-server               ports/net/isc-dhcp30-server
 isc-dhcp31-client               ports/net/isc-dhcp31-client
 isc-dhcp31-relay                ports/net/isc-dhcp31-relay
 isc-dhcp31-server               ports/net/isc-dhcp31-server
@@ -12430,6 +12428,7 @@ p5-IPC-Signal                   ports/devel/p5-IPC-Signal
 p5-IPC-System-Simple            ports/devel/p5-IPC-System-Simple
 p5-IRC-Bot-Hangman              ports/irc/p5-IRC-Bot-Hangman
 p5-Ima-DBI                      ports/databases/p5-Ima-DBI
+p5-Ima-DBI-Contextual           ports/databases/p5-Ima-DBI-Contextual
 p5-Image-Caa                    ports/graphics/p5-Image-Caa
 p5-Image-Compare                ports/graphics/p5-Image-Compare
 p5-Image-Delivery               ports/www/p5-Image-Delivery
@@ -13302,6 +13301,7 @@ p5-PSGI                         ports/www/p5-PSGI
 p5-PV                           ports/devel/p5-PV
 p5-Package-Constants            ports/devel/p5-Package-Constants
 p5-Package-Generator            ports/devel/p5-Package-Generator
+p5-Package-Stash                ports/devel/p5-Package-Stash
 p5-PadWalker                    ports/devel/p5-PadWalker
 p5-Padre                        ports/editors/p5-Padre
 p5-Palm                         ports/palm/p5-Palm
@@ -16255,6 +16255,7 @@ p5-iCal-Parser                  ports/devel/p5-iCal-Parser
 p5-ical-parser                  ports/devel/p5-iCal-Parser
 p5-idna-punycode                ports/textproc/p5-IDNA-Punycode
 p5-ima-dbi                      ports/databases/p5-Ima-DBI
+p5-ima-dbi-contextual           ports/databases/p5-Ima-DBI-Contextual
 p5-image-caa                    ports/graphics/p5-Image-Caa
 p5-image-compare                ports/graphics/p5-Image-Compare
 p5-image-delivery               ports/www/p5-Image-Delivery
@@ -17112,6 +17113,7 @@ p5-p4-client                    ports/devel/p5-P4-Client
 p5-pQuery                       ports/www/p5-pQuery
 p5-package-constants            ports/devel/p5-Package-Constants
 p5-package-generator            ports/devel/p5-Package-Generator
+p5-package-stash                ports/devel/p5-Package-Stash
 p5-padre                        ports/editors/p5-Padre
 p5-padwalker                    ports/devel/p5-PadWalker
 p5-palm                         ports/palm/p5-Palm
@@ -20028,6 +20030,8 @@ portscanner                     ports/security/portscanner
 portscout                       ports/ports-mgmt/portscout
 portsearch                      ports/ports-mgmt/portsearch
 portsentry                      ports/security/portsentry
+portshaker                      ports/ports-mgmt/portshaker
+portshaker-config               ports/ports-mgmt/portshaker-config
 portsman                        ports/ports-mgmt/portsman
 portsopt                        ports/ports-mgmt/portsopt
 porttools                       ports/ports-mgmt/porttools
@@ -20480,6 +20484,7 @@ py-distutils-extra              ports/devel/py-distutils-extra
 py-django                       ports/www/py-django
 py-django-app-plugins           ports/www/py-django-app-plugins
 py-django-devel                 ports/www/py-django-devel
+py-django-extensions            ports/www/py-django-extensions
 py-django-keyedcache            ports/www/py-django-keyedcache
 py-django-livesettings          ports/www/py-django-livesettings
 py-django-registration          ports/www/py-django-registration
@@ -21533,6 +21538,7 @@ r-cran-sp                       ports/math/R-cran-sp
 r-cran-zelig                    ports/math/R-cran-Zelig
 r1q2                            ports/games/r1q2
 rabbitmq                        ports/net/rabbitmq
+rabbitmq-c                      ports/net/rabbitmq-c
 rabl_client                     ports/mail/rabl_client
 rabl_server                     ports/mail/rabl_server
 race                            ports/games/race
@@ -22281,6 +22287,7 @@ rubygem-fastercsv               ports/devel/rubygem-fastercsv
 rubygem-fastthread              ports/devel/rubygem-fastthread
 rubygem-fattr                   ports/devel/rubygem-fattr
 rubygem-feed-normalizer         ports/www/rubygem-feed-normalizer
+rubygem-feedzirra               ports/www/rubygem-feedzirra
 rubygem-ferret                  ports/textproc/rubygem-ferret
 rubygem-ffi                     ports/devel/rubygem-ffi
 rubygem-file-tail               ports/devel/rubygem-file-tail
@@ -24873,7 +24880,6 @@ weather                         ports/astro/weather
 weatherget                      ports/astro/weatherget
 weathermap                      ports/net-mgmt/weathermap
 weatherspect                    ports/astro/weatherspect
-weave                           ports/www/weave
 web-traceroute                  ports/www/web-traceroute
 web2ldap                        ports/www/web2ldap
 webalizer                       ports/www/webalizer
