@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numru_units
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	math ruby
 MASTER_SITES=	ftp://www.gfd-dennou.org/arch/ruby/products/numru-units/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
