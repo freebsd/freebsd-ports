@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	HTML-Element-Extended
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An extended interface to HTML::Tree's HTML::Element class
 
 RUN_DEPENDS=	${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree
