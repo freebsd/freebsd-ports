@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus-table
 PORTVERSION=	1.2.0.20091113
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -16,7 +16,7 @@ MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Table based input method framework for IBus
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-LIB_DEPENDS=	ibus.1:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS=	ibus.2:${PORTSDIR}/textproc/ibus
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.5+
