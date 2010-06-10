@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Gravatar-URL
-PORTVERSION=	1.01
-PORTREVISION=	1
+PORTVERSION=	1.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MS/MSCHWERN
@@ -22,6 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	5.6.0+
 PERL_MODBUILD=yes
 
-MAN3=	Gravatar::URL.3
+MAN3=	Gravatar::URL.3 Unicornify::URL.3
 
 .include <bsd.port.mk>
