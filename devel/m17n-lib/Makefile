@@ -7,6 +7,7 @@
 
 PORTNAME=	m17n-lib
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib-download/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -28,8 +29,6 @@ MAKE_JOBS_UNSAFE=	yes
 USE_XORG=	ice sm x11 xaw xft xt
 USE_GNOME=	gnometarget libxml2 pkgconfig
 USE_AUTOTOOLS=	autoconf:262 libtool:22
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 USE_LDCONFIG=	yes
 
 OPTIONS=	ANTHY	"With Anthy support" off \
@@ -37,6 +36,8 @@ OPTIONS=	ANTHY	"With Anthy support" off \
 		THAI	"With libThai support" off
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--disable-nls
 
 .if defined(WITH_ANTHY)
 LIB_DEPENDS+=	anthy.1:${PORTSDIR}/japanese/anthy
