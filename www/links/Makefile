@@ -7,7 +7,7 @@
 
 PORTNAME=	links
 DISTVERSION=	2.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -31,20 +31,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
 
-DESKTOP_ENTRIES="links" \
-		"Lynx-like text WWW browser" \
-		"${DATADIR}/links.xpm" \
-		"links -g" \
-		"Application;Network;WebBrowser;" \
-		${FALSE}
-
 OPTIONS=	SVGALIB "non-X11 graphics support" off \
 		DIRECTFB "directfb driver support" off \
 		X11 "X11 graphics support" on \
 		UTF8 "With gentoo utf-8 patch" on \
 		TRANS "Hack for background transparency" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .ifdef(WITH_SVGALIB) || defined(WITH_X11) || defined(WITH_DIRECTFB)
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
@@ -72,6 +65,13 @@ CONFIGURE_ARGS+=	--without-directfb
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11 xproto
 CONFIGURE_ARGS+=	--with-x
+DESKTOP_ENTRIES="links" \
+		"Lynx-like text WWW browser" \
+		"links" \
+		"links -g" \
+		"Application;Network;WebBrowser;" \
+		false
+PLIST_FILES+=	share/pixmaps/links.xpm
 .else
 CONFIGURE_ARGS+=	--without-x
 .endif
@@ -87,9 +87,14 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-terminal.c.diff
 .endif
 
 MAN1=		links.1
-PLIST_FILES=	bin/links
+PLIST_FILES+=	bin/links
 
 post-patch:
 	@${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/os_dep.h
 
-.include <bsd.port.post.mk>
+.if !defined(WITHOUT_X11)
+post-install:
+	@${INSTALL} ${WRKSRC}/graphics/links.xpm ${PREFIX}/share/pixmaps/links.xpm
+.endif
+
+.include <bsd.port.mk>
