@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.202
+PORTVERSION=	1.204
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,13 @@ BUILD_DEPENDS=	p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
 		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS=	p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
+		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
+		p5-Log-Log4perl>=1.11:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Parse-RecDescent>=1.90.0:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn
