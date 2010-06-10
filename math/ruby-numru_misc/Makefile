@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numru_misc
-PORTVERSION=	0.0.6
+PORTVERSION=	0.1.0
 CATEGORIES=	math ruby
 MASTER_SITES=	ftp://www.gfd-dennou.org/arch/ruby/products/numru-misc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	${MKDIR} ${RUBY_MODDOCDIR}/
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
