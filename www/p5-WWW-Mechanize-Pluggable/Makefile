@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	WWW-Mechanize-Pluggable
-PORTVERSION=	1.04
-PORTREVISION=	1
+PORTVERSION=	1.06
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Custmomize WWW::Mechanize via plugins
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Form.pm:${PORTSDIR}/www/p5-libwww \
@@ -31,7 +30,8 @@ RUN_DEPENDS=	${SITE_PERL}/HTML/Form.pm:${PORTSDIR}/www/p5-libwww \
 MAN3=	WWW::Mechanize::Pluggable.3 \
 	WWW::Mechanize::Pluggable::Design.3 \
 	WWW::Mechanize::Plugin::Cookbook.3 \
-	WWW::Mechanize::Plugin::HelloWorld.3
+	WWW::Mechanize::Plugin::HelloWorld.3 \
+	Module::Pluggable.3
 
 PERL_CONFIGURE=	yes
 

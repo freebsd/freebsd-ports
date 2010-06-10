@@ -3,9 +3,9 @@ adds support for plugins using Module::Pluggable; this means that any
 module named WWW::Mechanize::Plugin::whatever... will be found and loaded 
 when WWW::Mechanize::Pluggable is loaded.
 
-Big deal, you say. Well, it becomes a big deal in conjunction with 
-WWW::Mechanize::Pluggable's other feature: plugin hooks. When plugins are 
-loaded, their import() methods can call WWW::Mechanize::Pluggable's 
+Big deal, you say. Well, it becomes a big deal in conjunction 
+with WWW::Mechanize::Pluggable's other feature: plugin hooks. When plugins
+are loaded, their import() methods can call WWW::Mechanize::Pluggable's 
 prehook and posthook methods. These methods add callbacks to the plugin 
 code in WWW::Mechanize::Pluggable's methods. These callbacks can act 
 before a method or after it, and have to option of short-circuiting the 
