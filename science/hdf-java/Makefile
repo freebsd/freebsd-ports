@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hdf-java
-PORTVERSION=	2.6
+PORTVERSION=	2.6.1
 CATEGORIES=	science java
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/hdf-java/src/ \
 		http://www.predatorlabs.net/dl/
@@ -34,7 +34,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|$$z_lib"/libz."$$LLEXT|"/lib/libz.so.*"|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|LLEXT="a"|LLEXT="so"|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|COPT="-shared"|COPT="-fPIC"|g' ${WRKSRC}/configure
-	#${REINPLACE_CMD} -e 's|$$(JH45INSTALLDIR)/UsersGuide|${DOCSDIR}/UsersGuide|' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|$$(JH45INSTALLDIR)/lib|${JAVAJARDIR}|' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|$$(LIBDIR)/@JAVATARG@|${PREFIX}/lib|g' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|cp -R|#|' ${WRKSRC}/Makefile.in
