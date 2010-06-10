@@ -27,7 +27,30 @@ RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Lingua-EN-Inflect-Phrase>=0.02:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
-BUILD_DEPENDS=	${RUN_DEPENDS}
+
+OPTIONS=	SQLITE "SQLite Support" Off \
+		MYSQL "MySQL Support" Off \
+		PG "PostgreSQL Support" Off \
+		ORACLE "Oracle Support (experimental)" Off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SQLITE)
+RUN_DEPENDS+=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
+.endif
+.if defined(WITH_MYSQL)
+RUN_DEPENDS+=	p5-DBD-mysql>=4.004:${PORTSDIR}/databases/p5-DBD-mysql \
+		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
+.endif
+.if defined(WITH_PG)
+RUN_DEPENDS+=	p5-DBD-Pg>=1.49:${PORTSDIR}/databases/p5-DBD-Pg \
+		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
+.endif
+.if defined(WITH_ORACLE)
+RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle \
+		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
+.endif
 
 PERL_CONFIGURE=	5.8.0+
 
@@ -65,28 +88,4 @@ post-extract:
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -print0 | ${XARGS} -0 ${RM}
 
-OPTIONS=	SQLITE "SQLite Support" Off \
-		MYSQL "MySQL Support" Off \
-		PG "PostgreSQL Support" Off \
-		ORACLE "Oracle Support (experimental)" Off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_SQLITE)
-RUN_DEPENDS+=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
-.endif
-.if defined(WITH_MYSQL)
-RUN_DEPENDS+=	p5-DBD-mysql>=4.004:${PORTSDIR}/databases/p5-DBD-mysql \
-		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
-.endif
-.if defined(WITH_PG)
-RUN_DEPENDS+=	p5-DBD-Pg>=1.49:${PORTSDIR}/databases/p5-DBD-Pg \
-		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
-.endif
-.if defined(WITH_ORACLE)
-RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle \
-		p5-DBI>=1.56:${PORTSDIR}/databases/p5-DBI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
