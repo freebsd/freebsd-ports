@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	vtk
-PORTVERSION=	5.4.2
-PORTREVISION=	2
+PORTVERSION=	5.6.0
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -58,6 +57,7 @@ CMAKE_OUTSOURCE=	yes
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DBUILD_DOCUMENTATION:BOOL=ON \
 		-DBUILD_TESTING:BOOL=OFF \
+		-DKWSYS_LFS_DISABLE:BOOL=ON \
 		-DVTK_USE_PARALLEL:BOOL=ON \
 		-DVTK_USE_SYSTEM_EXPAT:BOOL=ON \
 		-DVTK_USE_SYSTEM_JPEG:BOOL=ON \
@@ -78,7 +78,7 @@ LIB_DEPENDS+=	vtkMPEG2Encode.5:${PORTSDIR}/multimedia/vtkmpeg2encode
 PLIST_SUB+=	MPEG=""
 CMAKE_ARGS+=	-DVTK_USE_PATENTED:BOOL=ON \
 		-DVTK_USE_MPEG2_ENCODER:BOOL=ON \
-		-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-5.4 \
+		-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-5.6 \
 		-DvtkMPEG2Encode_LIBRARIES=${LOCALBASE}/lib/libvtkMPEG2Encode.so
 .else
 PLIST_SUB+=	MPEG="@comment "
@@ -106,6 +106,7 @@ QT_COMPONENTS=	corelib assistant assistantclient designer \
 		qmake_build uic_build moc_build rcc_build
 CMAKE_ARGS+=	-DVTK_USE_GUISUPPORT:BOOL=ON \
    		-DVTK_USE_QVTK:BOOL=ON \
+   		-DVTK_USE_QT:BOOL=ON \
    		-DDESIRED_QT_VERSION:STRING=4 \
 		-DQT_QMAKE_EXECUTABLE:FILEPATH=${QMAKE} \
 		-DVTK_INSTALL_QT_DIR:FILEPATH=/lib/qt4/plugins/designer
@@ -128,16 +129,24 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_WRAP_TCLTK)
-USE_TCL=	84+
-USE_TK=		84+
-CMAKE_ARGS+=	-DVTK_WRAP_TCL:BOOL=ON \
-		-DTCL_INCLUDE_PATH=${TCL_INCLUDEDIR} \
-		-DTK_INCLUDE_PATH=${TK_INCLUDEDIR}
-PLIST_SUB+=	TCLTK="" \
-		TCLTK_VER="${TCL_VER}"
+CMAKE_ARGS+=	-DVTK_WRAP_TCL:BOOL=ON
+PLIST_SUB+=	TCLTK=""
 .else
 CMAKE_ARGS+=	-DVTK_WRAP_TCL:BOOL=OFF
 PLIST_SUB+=	TCLTK="@comment "
+.endif
+
+# Used by both tcl/tk and python
+.if defined(WITH_WRAP_TCLTK) || defined(WITH_WRAP_PYTHON)
+USE_TCL=	84+
+USE_TK=		84+
+CMAKE_ARGS+=	-DVTK_USE_TK:BOOL=ON \
+		-DTCL_INCLUDE_PATH=${TCL_INCLUDEDIR} \
+		-DTK_INCLUDE_PATH=${TK_INCLUDEDIR}
+PLIST_SUB+=	WRAP_PYTHON_OR_TCLTK="" \
+		TCLTK_VER="${TCL_VER}"
+.else
+PLIST_SUB+=	WRAP_PYTHON_OR_TCLTK="@comment "
 .endif
 
 .if defined(WITH_WRAP_JAVA)
@@ -168,7 +177,7 @@ post-patch:
 	${REINPLACE_CMD} -e '222s|)|) \&\& !defined(__FreeBSD__)|' \
 	    ${WRKSRC}/Utilities/kwsys/SharedForward.h.in
 	${REINPLACE_CMD} -e '25,30d' ${WRKSRC}/Wrapping/Python/setup.py.in
-	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
+	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|g' \
 	    ${WRKSRC}/IO/vtkPNGReader.cxx
 
 post-configure:
