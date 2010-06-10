@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	3.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20090825191606/bundles/:2 \
@@ -208,8 +208,16 @@ do-install:
 	  ${BUILD_WRKSRC}/eclipse.tmp
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/eclipse.tmp ${PREFIX}/bin/${PORTNAME}
-	@cd ${BUILD_WRKSRC}/bundles && \
-		${COPYTREE_SHARE} . ${PORTDESTDIR}/plugins/
+	@for f in `ls ${BUILD_WRKSRC}/bundles/*.jar`; do \
+		BASE=`basename $$f`; \
+		FILES=`find ${PORTDESTDIR}/plugins/ -name "$$BASE"`; \
+		if [ ! -z "$$FILES" ]; then \
+			for s in $$FILES; do \
+				${RM} "$$s"; \
+				${INSTALL_DATA} "$$f" "$$s"; \
+			done; \
+		fi; \
+	done
 	@${PREFIX}/bin/${PORTNAME} -initialize -consolelog
 	-@update-desktop-database
 	@(cd ${PREFIX}; ${FIND} -s lib/${PORTNAME} -not -type d) >> ${TMPPLIST}
