@@ -33,7 +33,7 @@
 # _LICENSE_LIST_GROUPS	- List of defined license groups
 #
 
-_LICENSE_LIST=			ASL BSD BSL CDDL GPLv2 GPLv3 LGPL21 LGPL3 MIT MPL
+_LICENSE_LIST=			ASL BSD BSL CDDL GFDL GPLv2 GPLv3 LGPL21 LGPL3 MIT MPL
 _LICENSE_LIST_GROUPS=	FSF GPL OSI
 
 # List of groups (only names must be present)
@@ -71,16 +71,19 @@ _LICENSE_GROUPS_BSL=	FSF OSI
 _LICENSE_NAME_CDDL=		Common Development and Distribution License
 _LICENSE_GROUPS_CDDL=	FSF OSI
 
+_LICENSE_NAME_GFDL=		GNU Free Documentation License
+_LICENSE_GROUPS_GFDL=	FSF
+
 _LICENSE_NAME_GPLv2=	GNU General Public License version 2
 _LICENSE_GROUPS_GPLv2=	FSF GPL OSI
 
 _LICENSE_NAME_GPLv3=	GNU General Public License version 3
 _LICENSE_GROUPS_GPLv3=	FSF GPL OSI
 
-_LICENSE_NAME_LGPL21=		GNU Lesser General Public License version 2.1
+_LICENSE_NAME_LGPL21=	GNU Lesser General Public License version 2.1
 _LICENSE_GROUPS_LGPL21=	FSF GPL OSI
 
-_LICENSE_NAME_LGPL3=		GNU Lesser General Public License version 3
+_LICENSE_NAME_LGPL3=	GNU Lesser General Public License version 3
 _LICENSE_GROUPS_LGPL3=	FSF GPL OSI
 
 _LICENSE_NAME_MIT=		MIT license / X11 license
