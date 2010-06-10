@@ -1,18 +1,16 @@
---- Makefile.orig	Fri Nov  5 17:28:02 1999
-+++ Makefile	Fri Jun 30 12:24:05 2000
-@@ -9,8 +9,13 @@
- 	grep.1 fgrep.1 \
- 	grep.1 zgrep.1
+--- Makefile.orig	2010-06-07 19:39:01.000000000 -0500
++++ Makefile	2010-06-08 19:14:59.000000000 -0500
+@@ -15,7 +15,12 @@
+ 	grep.1 zegrep.1 \
+ 	grep.1 zfgrep.1
  
--CFLAGS+= -I/usr/local/include -Wall -pedantic
+-CFLAGS+= -Wall
 +DESTDIR=       ${PREFIX}
 +BINDIR=                /bin
 +MANDIR=                /man/man
 +NO_MANCOMPRESS= 1
- 
--LDADD=  -lz -L/usr/local/lib/ -liberty
-+CFLAGS+= -I${LOCALBASE}/include -Wall -pedantic
 +
-+LDADD=  -lz -L${LOCALBASE}/lib -liberty
++CFLAGS+= -Wall -pedantic
  
- .include <bsd.prog.mk>
+ .if ${OPSYS} == "Minix"
+ CPPFLAGS+= -DNOZ -D_POSIX_SOURCE -D_MINIX
