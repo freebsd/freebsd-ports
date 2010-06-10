@@ -1,0 +1,6 @@
+Text::Xslate is a template engine tuned for persistent applications.
+This engine introduces the virtual machine paradigm. That is, templates
+are compiled into xslate intermediate code, and then executed by the
+xslate virtual machine.
+
+WWW: http://search.cpan.org/dist/Text-Xslate/

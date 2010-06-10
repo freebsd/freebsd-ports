@@ -1,0 +1,32 @@
+bin/xslate
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Bridge.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Compiler.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/EscapedString.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Booster.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Const.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/EscapedString.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Macro.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Method.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Opcode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/State.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/Array.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/Hash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/Pair.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Symbol.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Syntax/Kolon.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Syntax/Metakolon.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Syntax/TTerse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/Xslate.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate/Xslate.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Syntax
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Xslate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
