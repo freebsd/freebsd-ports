@@ -30,7 +30,7 @@ RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 
 OPTIONS=	SQLITE "SQLite Support" Off \
 		MYSQL "MySQL Support" Off \
-		PG "PostgreSQL Support" Off \
+		PGSQL "PostgreSQL Support" Off \
 		ORACLE "Oracle Support (experimental)" Off
 
 .include <bsd.port.options.mk>
