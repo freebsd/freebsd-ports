@@ -1,9 +1,10 @@
---- conf/Makefile.in.orig	Mon Aug 11 16:35:19 2003
-+++ conf/Makefile.in	Mon Aug 11 16:35:31 2003
-@@ -278,7 +278,7 @@
+--- conf/Makefile.in.orig	2008-05-30 08:58:57.000000000 +0900
++++ conf/Makefile.in	2010-05-14 17:36:16.000000000 +0900
+@@ -407,8 +407,7 @@
+
  install-data-hook:
  	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)
- 	test -f $(DESTDIR)$(sysconfdir)/icecast.xml || \
+-	test -f $(DESTDIR)$(sysconfdir)/icecast.xml || \
 -	$(INSTALL_DATA) icecast.xml.dist $(DESTDIR)$(sysconfdir)/icecast.xml
 +	$(INSTALL_DATA) icecast.xml.dist $(DESTDIR)$(sysconfdir)/icecast.xml.sample
  
