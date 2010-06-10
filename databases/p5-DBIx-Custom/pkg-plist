@@ -1,5 +1,4 @@
 %%SITE_PERL%%/DBIx/Custom.pm
-%%SITE_PERL%%/DBIx/Custom/Basic.pm
 %%SITE_PERL%%/DBIx/Custom/MySQL.pm
 %%SITE_PERL%%/DBIx/Custom/Query.pm
 %%SITE_PERL%%/DBIx/Custom/Result.pm
