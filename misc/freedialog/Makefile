@@ -8,15 +8,11 @@
 PORTNAME=	freedialog
 PORTVERSION=	0.3
 CATEGORIES=	misc
-MASTER_SITES=	http://www.vocito.com/downloads/software/dialog/
+MASTER_SITES=	ftp://ftp.jameshoward.us/pub/howardjp/dialog/
 DISTNAME=	dialog-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jh@jameshoward.us
 COMMENT=	An implementation of dialog(1) under a BSD-friendly license
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.so:${PORTSDIR}/devel/freelibiberty
-
-CFLAGS+=	-I${LOCALBASE}/include/freelibiberty
 
 MAN1=		dialog.1
 PLIST_FILES=	bin/dialog
