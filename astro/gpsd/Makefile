@@ -7,7 +7,7 @@
 
 PORTNAME=	gpsd
 PORTVERSION=	2.94
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 
 MAN1=	cgps.1 gps.1 gpscat.1 gpsctl.1 gpsfake.1 \
-	gpspipe.1 gpsprof.1 xgps.1 xgpsspeed.1 gpsdecode.1 gpsmon.1 \
+	gpspipe.1 gpsprof.1 xgps.1 xgpsspeed.1 gpsmon.1 \
 	lcdgps.1
 MAN3=	libgps.3 libgpsd.3 libgpsmm.3
 MAN5=	rtcm-104.5 srec.5
@@ -51,10 +51,10 @@ OPTIONS=	XGPS "Build xgps and xgpsspeed (require X)" off \
 		OCEANSERVER "Oceanserver support" off \
 		UBX "UBX protocol support" on \
 		EVERMORE "Evermore binary support" on \
-		MKT3301 "MKT-3301 support" on \
 		GPSCLOCK "GPSclock support" on \
 		RTCM104V2 "rtcm104v2 support" on \
 		RTCM104V3 "rtcm104v3 support" on \
+		AIVDM "Aivdm support" on \
 		NTRIP "NTRIP support" on \
 		PROFILING "Profiling support" off \
 		NTPSHM "TP time hinting support" on \
@@ -144,12 +144,19 @@ CONFIGURE_ARGS+=--disable-ubx
 CONFIGURE_ARGS+=--disable-evermore
 .endif
 
-.if defined(WITHOUT_MKT3301)
-CONFIGURE_ARGS+=--disable-mkt3301
-.endif
-
 .if defined(WITHOUT_GPSCLOCK)
 CONFIGURE_ARGS+=--disable-gpscloclk
+.endif
+
+.if defined(WITHOUT_AIVDM)
+CONFIGURE_ARGS+=--disable-aivdm
+.endif
+
+.if defined(WITH_RTCM104V2) && defined(WITH_RTCM104V3) && defined(WITH_AIVDM)
+PLIST_SUB+=	DECODE=""
+MAN1+=	gpsdecode.1
+.else
+PLIST_SUB+=	DECODE="@comment "
 .endif
 
 .if defined(WITHOUT_RTCM104V2)
@@ -179,9 +186,6 @@ CONFIGURE_ARGS+=--enable-pps
 .if defined(WITH_DBUS)
 CONFIGURE_ARGS+=--enable-dbus
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/XMLTO/d' ${WRKSRC}/Makefile.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
