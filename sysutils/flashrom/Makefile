@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flashrom
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://qa.coreboot.org/releases/
 
