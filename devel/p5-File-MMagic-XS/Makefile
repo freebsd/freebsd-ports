@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	File-MMagic-XS
-PORTVERSION=	0.09.003
-DISTVERSION=	${PORTVERSION:C/\.(...)$/\1/}
+PORTVERSION=	0.09006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Guess File Type With XS (a la mod_mime_magic)
+
+BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker \
+  p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+
+MAKE_JOBS_UNSAFE=	yes
 
 MAN3=	File::MMagic::XS.3
 
