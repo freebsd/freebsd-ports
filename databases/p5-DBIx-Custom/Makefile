@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.1402
+PORTVERSION=	0.1503
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 MAN3=	DBIx::Custom.3 \
-	DBIx::Custom::Basic.3 \
 	DBIx::Custom::MySQL.3 \
 	DBIx::Custom::Query.3 \
 	DBIx::Custom::Result.3 \
