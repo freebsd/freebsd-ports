@@ -10,6 +10,7 @@ PORTVERSION=	1.3
 PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openjpeg.org/ \
+		http://openjpeg.googlecode.com/files/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trasz
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}
@@ -20,6 +21,7 @@ COMMENT=	An open-source JPEG 2000 codec
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GMAKE=	yes
@@ -36,6 +38,9 @@ PLIST_FILES=	include/openjpeg.h \
 		${M2J_BINS:S|^|bin/|}
 
 SHLIB_VER=	2
+
+post-extract:
+		${LN} ${WRKSRC}/jp3d/LICENSE.txt ${WRKSRC}/COPYRIGHT
 
 post-patch:	.SILENT
 		${FIND} ${WRKSRC} -type f -name Makefile -exec ${REINPLACE_CMD} 's|gcc|$$(CC)|g' {} +
