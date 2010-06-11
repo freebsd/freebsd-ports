@@ -42,6 +42,8 @@ GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_SUBMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+#slave ports should have different UNIQUENAME, it is utilized by USE_LDCONFIG
+UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 MAILOWN=	courier
 MAILGRP=	courier
