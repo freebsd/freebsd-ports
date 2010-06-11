@@ -158,6 +158,7 @@
     SUBDIR += freeradius-mysql
     SUBDIR += freeradius2
     SUBDIR += freeswitch
+    SUBDIR += freeswitch-core
     SUBDIR += freevrrpd
     SUBDIR += freewais-sf
     SUBDIR += frickin

@@ -1,0 +1,70 @@
+#!/bin/sh
+
+# PROVIDE: freeswitch
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable freeswitch:
+#
+# freeswitch_enable="YES"
+#
+#
+#  freeswitch_user="freeswitch"
+#  freeswitch_group="freeswitch"
+
+. /etc/rc.subr
+
+freeswitch_enable=${freeswitch_enable:-"NO"}
+freeswitch_user=${freeswitch_user:-"freeswitch"}
+freeswitch_group=${freeswitch_group:-"freeswitch"}
+freeswitch_flags=${freeswitch_flags:-""}
+
+name=freeswitch
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/freeswitch
+command_args="-nc -u ${freeswitch_user} -g ${freeswitch_group} ${freeswitch_flags} -db /var/db/freeswitch -log /var/log/freeswitch/"
+
+pidfile=${freeswitch_pidfile:-"/var/run/freeswitch.pid"}
+
+start_cmd="freeswitch_start"
+stop_precmd="freeswitch_stop"
+restart_cmd="freeswitch_restart"
+
+sig_stop=KILL  
+
+load_rc_config $name
+
+freeswitch_stop () {
+        echo "Stopping FreeSWITCH."
+        %%PREFIX%%/bin/freeswitch -stop
+        sleep 1
+        return 0
+}
+
+freeswitch_start () {                                                            
+        echo "Starting FreeSWITCH."                                              
+        $command $command_args
+        sleep 1
+        return
+}
+
+freeswitch_restart () {
+        echo "Restarting FreeSwitch."
+        freeswitch_stop                                                      
+        if [ $? -eq 0 ];
+	then
+	status=$?
+	freeswitch_start
+        sleep 1
+	return 0
+	else
+	echo "Problem stoping FreeSWITCH: $status"
+	sleep 1
+	return 1
+	fi
+} 
+
+run_rc_command "$1"
+

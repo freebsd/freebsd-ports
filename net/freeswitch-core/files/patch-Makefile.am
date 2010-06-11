@@ -1,0 +1,13 @@
+--- Makefile.am.orig	2010-05-11 15:58:08.000000000 -0700
++++ Makefile.am	2010-05-12 20:01:14.000000000 -0700
+@@ -450,8 +450,8 @@
+ 	@echo Installing $(NAME)
+ 	@for x in $(modulesdir) $(runtimedir) $(dbdir) $(logfiledir) $(logfiledir)/xml_cdr $(bindir) $(scriptdir) $(recordingsdir) $(grammardir); do \
+ 		$(mkinstalldirs) $(DESTDIR)$$x ; \
+-	 done
+-	test -d $(DESTDIR)$(sysconfdir) || $(MAKE) samples-conf
++	done
++	test -d $(DESTDIR)$(sysconfdir) || $(mkinstalldirs) $(DESTDIR)$(sysconfdir)
+ 	test -d $(DESTDIR)$(htdocsdir) || $(MAKE) samples-htdocs
+ 
+ is-scm:
