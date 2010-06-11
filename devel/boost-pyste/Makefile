@@ -16,6 +16,10 @@ OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		DEBUG		"Build debugging symbols"	off \
 		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off
 
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_PKGNAME=	Pyste
+PYDISTUTILS_PKGVERSION=	0.9.10
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/boost-all/common.mk"
 .include "${PORTSDIR}/devel/boost-all/compiled.mk"
@@ -31,11 +35,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/
 RUN_DEPENDS+=	gccxml:${PORTSDIR}/devel/gccxml
 BUILD_DEPENDS+=	${BJAM}:${PORTSDIR}/devel/boost-jam
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
-
-ESCAPED_PREFIX !=	echo ${PREFIX} | sed 's/\//\\\//g'
-RELATIVE_PYTHON_SITELIBDIR != echo ${PYTHON_SITELIBDIR} | sed "s/${ESCAPED_PREFIX}\///"
-PLIST_SUB+=	PYTHON_SITELIBDIR=${RELATIVE_PYTHON_SITELIBDIR}
-PLIST_SUB+=	PYTHON_VERSION=${PYTHON_VERSION:C/python//1}
 
 post-patch: customize-boost-build
 

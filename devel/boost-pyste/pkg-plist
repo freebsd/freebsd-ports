@@ -1,5 +1,4 @@
 bin/pyste.py
-%%PYTHON_SITELIBDIR%%/Pyste-0.9.10-py%%PYTHON_VERSION%%.egg-info
 %%PYTHON_SITELIBDIR%%/Pyste/ClassExporter.py
 %%PYTHON_SITELIBDIR%%/Pyste/ClassExporter.pyc
 %%PYTHON_SITELIBDIR%%/Pyste/ClassExporter.pyo

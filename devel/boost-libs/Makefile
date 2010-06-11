@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	boost-libs
-PORTREVISION=	1
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 USE_BZIP2=	yes
 
@@ -37,6 +36,8 @@ post-patch: customize-boost-build
 	${RMDIR} ${WRKSRC}/boost/interprocess/containers/detail
 # Remove Boost.Python
 	${RM} -rf ${WRKSRC}/boost/python* ${WRKSRC}/libs/python
+# Add symlink to help build system to find random_device.cpp
+	${LN} -s ${WRKSRC}/libs/random/src/random_device.cpp ${WRKSRC}/libs/random/random_device.cpp
 
 do-build:
 # build the library

@@ -9,10 +9,3 @@ Index: boost/archive/shared_ptr_helper.hpp
 +            return & boost::serialization::singleton<
                  BOOST_DEDUCED_TYPENAME 
                  boost::serialization::type_info_implementation<T>::type
-@@ -158,5 +159,5 @@
-         result_type r =
-             get_od(
--                t, 
-+                static_cast<void *>(t), 
-                 true_type,
-                 this_type

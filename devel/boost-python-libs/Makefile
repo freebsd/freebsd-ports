@@ -34,11 +34,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/
 BUILD_DEPENDS+=	${BJAM}:${PORTSDIR}/devel/boost-jam
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
 
-ESCAPED_PREFIX !=	echo ${PREFIX} | sed 's/\//\\\//g'
-RELATIVE_PYTHON_SITELIBDIR != echo ${PYTHON_SITELIBDIR} | sed "s/${ESCAPED_PREFIX}\///"
-PLIST_SUB+=	PYTHON_SITELIBDIR=${RELATIVE_PYTHON_SITELIBDIR}
-PLIST_SUB+=	PYTHON_VERSION=${PYTHON_VERSION:C/python//1}
-
 post-patch: customize-boost-build
 
 do-build:
