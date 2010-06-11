@@ -7,5 +7,6 @@ server, so that it can be found by name or browsed for by service type and
 domain.
 
 LICENSE: BSD 2 clause / LGPL
+Copyright (c) 2002 - 2006, Chris B. Vetter
 
 WWW: http://gnustep.dyndns.org/
