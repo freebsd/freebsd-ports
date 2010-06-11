@@ -17,6 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 interface to Internet Relay Chat
 
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/doc/COPYRIGHT
 
 # zircon will start with tk84, but a lot of functions won't work
 # a lot of variable names conflicts with new functions.
