@@ -3799,7 +3799,6 @@ freecol                         ports/games/freecol
 freecolor                       ports/sysutils/freecolor
 freedbd                         ports/net/freedbd
 freedesktop-sound-theme         ports/audio/freedesktop-sound-theme
-freedialog                      ports/misc/freedialog
 freedink                        ports/games/freedink
 freedink-data                   ports/games/freedink-data
 freedink-dfarc                  ports/games/freedink-dfarc
@@ -14038,6 +14037,7 @@ p5-Text-WikiCreole              ports/textproc/p5-Text-WikiCreole
 p5-Text-WikiFormat              ports/textproc/p5-Text-WikiFormat
 p5-Text-WordDiff                ports/textproc/p5-Text-WordDiff
 p5-Text-Wrapper                 ports/textproc/p5-Text-Wrapper
+p5-Text-Xslate                  ports/textproc/p5-Text-Xslate
 p5-Text-vCard                   ports/textproc/p5-Text-vCard
 p5-Text-vFile-asData            ports/devel/p5-Text-vFile-asData
 p5-TheSchwartz                  ports/devel/p5-TheSchwartz
@@ -17980,6 +17980,7 @@ p5-text-wikicreole              ports/textproc/p5-Text-WikiCreole
 p5-text-wikiformat              ports/textproc/p5-Text-WikiFormat
 p5-text-worddiff                ports/textproc/p5-Text-WordDiff
 p5-text-wrapper                 ports/textproc/p5-Text-Wrapper
+p5-text-xslate                  ports/textproc/p5-Text-Xslate
 p5-theschwartz                  ports/devel/p5-TheSchwartz
 p5-thread-apartment             ports/devel/p5-Thread-Apartment
 p5-thread-cancel                ports/devel/p5-Thread-Cancel
@@ -21539,6 +21540,7 @@ r-cran-zelig                    ports/math/R-cran-Zelig
 r1q2                            ports/games/r1q2
 rabbitmq                        ports/net/rabbitmq
 rabbitmq-c                      ports/net/rabbitmq-c
+rabbitmq-c-devel                ports/net/rabbitmq-c-devel
 rabl_client                     ports/mail/rabl_client
 rabl_server                     ports/mail/rabl_server
 race                            ports/games/race
