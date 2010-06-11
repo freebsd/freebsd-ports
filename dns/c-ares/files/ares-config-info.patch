@@ -4,11 +4,11 @@ Description: Add the ares_get_config() routine used by Unreal IRCd.
 Origin: the Unreal IRCd distribution
 Author: Peter Pentchev <roam@FreeBSD.org>
 Forwarded: no
-Last-Update: 2010-03-25
+Last-Update: 2010-06-11
 
 --- ares.h.orig
 +++ ares.h
-@@ -261,6 +261,14 @@
+@@ -260,6 +260,14 @@
    int nsort;
  };
  
@@ -23,7 +23,7 @@ Last-Update: 2010-03-25
  struct hostent;
  struct timeval;
  struct sockaddr;
-@@ -502,6 +510,8 @@
+@@ -511,6 +519,8 @@
  CARES_EXTERN int ares_get_servers(ares_channel channel,
                                    struct ares_addr_node **servers);
  
@@ -34,7 +34,7 @@ Last-Update: 2010-03-25
  #endif
 --- ares_init.c.orig
 +++ ares_init.c
-@@ -67,6 +67,7 @@
+@@ -66,6 +66,7 @@
  #include <errno.h>
  #include "ares.h"
  #include "inet_net_pton.h"
@@ -42,7 +42,7 @@ Last-Update: 2010-03-25
  #include "ares_library_init.h"
  #include "ares_private.h"
  
-@@ -1520,6 +1521,36 @@
+@@ -1519,6 +1520,36 @@
  }
  #endif /* !WIN32 && !WATT32 */
  
