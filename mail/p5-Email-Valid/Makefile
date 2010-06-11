@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Valid
-PORTVERSION=	0.182
+PORTVERSION=	0.184
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Check validity of Internet email addresses
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+BUILD_DEPENDS=	p5-Net-DNS>=0:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Mail-Address>=0:${PORTSDIR}/mail/p5-Mail-Tools \
 		p5-Net-Domain-TLD>0:${PORTSDIR}/dns/p5-Net-Domain-TLD
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
