@@ -1,11 +1,11 @@
 Description: Build and install the documentation as usual, no special handling.
 Forwarded: https://sourceforge.net/tracker/?func=detail&aid=2897155&group_id=976&atid=100976
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2010-03-30
+Last-Update: 2010-06-11
 
 --- a/Makefile.in
 +++ b/Makefile.in
-@@ -302,9 +302,9 @@
+@@ -301,9 +301,9 @@
   libcurl.pc.in vc6curl.dsw MacOSX-Framework Android.mk $(CMAKE_DIST)
  
  bin_SCRIPTS = curl-config
