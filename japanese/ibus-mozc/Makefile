@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus-mozc
 PORTVERSION=	r28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 #MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -24,7 +24,8 @@ LIB_DEPENDS=	ibus.2:${PORTSDIR}/textproc/ibus \
 		curl.6:${PORTSDIR}/ftp/curl \
 		protobuf.6:${PORTSDIR}/devel/protobuf \
 		gtest.0:${PORTSDIR}/devel/googletest
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify
 
 BROKEN=		does not compile
 
