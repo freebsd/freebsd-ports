@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	daichi@freebsd.org
 COMMENT=	Anthy engine for IBus
 
+BUILD_DEPENDS=	anthy-agent:${PORTSDIR}/japanese/anthy
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy
 LIB_DEPENDS=	ibus.2:${PORTSDIR}/textproc/ibus
