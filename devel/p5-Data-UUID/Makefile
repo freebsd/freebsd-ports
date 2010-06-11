@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Data-UUID
-PORTVERSION=	1.203
+PORTVERSION=	1.215
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Generate Globally/Universally Unique Identifiers (GUIDs/UUIDs)
 
 PERL_CONFIGURE=	yes
