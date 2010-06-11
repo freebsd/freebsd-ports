@@ -22,6 +22,12 @@ prosody=${prosody_enable-"NO"}
 command_args="$1"
 
 status_cmd=prosody_status_cmd
+stop_cmd=prosody_stop_cmd
+
+prosody_stop_cmd()
+{
+	/usr/local/bin/prosodyctl stop
+}
 
 prosody_status_cmd()
 {
