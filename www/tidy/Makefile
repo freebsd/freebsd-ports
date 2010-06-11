@@ -19,6 +19,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fixes and tidies up HTML files
 
 LICENSE=	BSD
+LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
 MAN1=		tidy.1
 ALL_TARGET=	tidy
