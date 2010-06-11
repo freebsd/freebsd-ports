@@ -1,0 +1,519 @@
+bin/freeswitch
+bin/fs_cli
+bin/fs_ivrd
+bin/fsxs
+bin/gentls_cert
+%%WITH_MODOPENZAP%%%%ETCDIR%%/conf/autoload_configs
+include/freeswitch/libteletone.h
+include/freeswitch/libteletone_detect.h
+include/freeswitch/libteletone_generate.h
+include/freeswitch/switch.h
+include/freeswitch/switch_am_config.h
+include/freeswitch/switch_apr.h
+include/freeswitch/switch_buffer.h
+include/freeswitch/switch_caller.h
+include/freeswitch/switch_channel.h
+include/freeswitch/switch_config.h
+include/freeswitch/switch_console.h
+include/freeswitch/switch_core.h
+include/freeswitch/switch_core_db.h
+include/freeswitch/switch_core_event_hook.h
+include/freeswitch/switch_cpp.h
+include/freeswitch/switch_dso.h
+include/freeswitch/switch_event.h
+include/freeswitch/switch_frame.h
+include/freeswitch/switch_ivr.h
+include/freeswitch/switch_loadable_module.h
+include/freeswitch/switch_log.h
+include/freeswitch/switch_module_interfaces.h
+include/freeswitch/switch_mprintf.h
+include/freeswitch/switch_nat.h
+include/freeswitch/switch_odbc.h
+include/freeswitch/switch_platform.h
+include/freeswitch/switch_regex.h
+include/freeswitch/switch_resample.h
+include/freeswitch/switch_rtp.h
+include/freeswitch/switch_scheduler.h
+include/freeswitch/switch_stun.h
+include/freeswitch/switch_types.h
+include/freeswitch/switch_utils.h
+include/freeswitch/switch_xml.h
+include/freeswitch/switch_xml_config.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/fsk.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/g711.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/hashtable.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/hashtable_itr.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/hashtable_private.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/libteletone.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/libteletone_detect.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/libteletone_generate.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/openzap.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/sangoma_tdm_api.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/uart.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/zap_buffer.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/zap_config.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/zap_cpu_monitor.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/zap_dso.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/zap_threadmutex.h
+%%WITH_MODOPENZAP%%%%DATADIR%%/include/zap_types.h
+lib/freeswitch/lib/libfreeswitch.a
+lib/freeswitch/lib/libfreeswitch.la
+lib/freeswitch/lib/libfreeswitch.so
+lib/freeswitch/lib/libfreeswitch.so.1
+lib/freeswitch/lib/libjs.a
+lib/freeswitch/lib/libjs.la
+lib/freeswitch/lib/libjs.so
+lib/freeswitch/lib/libjs.so.1
+lib/freeswitch/lib/libnspr4.a
+lib/freeswitch/lib/libnspr4.so.1
+%%WITH_MODOPENZAP%%lib/freeswitch/lib/libopenzap.a
+%%WITH_MODOPENZAP%%lib/freeswitch/lib/libopenzap.la
+%%WITH_MODOPENZAP%%lib/freeswitch/lib/libopenzap.so
+%%WITH_MODOPENZAP%%lib/freeswitch/lib/libopenzap.so.1
+lib/freeswitch/lib/libplc4.a
+lib/freeswitch/lib/libplc4.so.1
+lib/freeswitch/lib/libplds4.a
+lib/freeswitch/lib/libplds4.so.1
+lib/freeswitch/mod/mod_amr.la
+lib/freeswitch/mod/mod_amr.so
+%%WITH_MODAMRWB%%lib/freeswitch/mod/mod_amrwb.la
+%%WITH_MODAMRWB%%lib/freeswitch/mod/mod_amrwb.so
+lib/freeswitch/mod/mod_bv.la
+lib/freeswitch/mod/mod_bv.so
+lib/freeswitch/mod/mod_cdr_csv.la
+lib/freeswitch/mod/mod_cdr_csv.so
+%%WITH_MODCELT%%lib/freeswitch/mod/mod_celt.la
+%%WITH_MODCELT%%lib/freeswitch/mod/mod_celt.so
+%%WITH_MODCIDLOOKUP%%lib/freeswitch/mod/mod_cidlookup.la
+%%WITH_MODCIDLOOKUP%%lib/freeswitch/mod/mod_cidlookup.so
+lib/freeswitch/mod/mod_cluechoo.la
+lib/freeswitch/mod/mod_cluechoo.so
+lib/freeswitch/mod/mod_commands.la
+lib/freeswitch/mod/mod_commands.so
+lib/freeswitch/mod/mod_conference.la
+lib/freeswitch/mod/mod_conference.so
+lib/freeswitch/mod/mod_console.la
+lib/freeswitch/mod/mod_console.so
+%%WITH_MODCURL%%lib/freeswitch/mod/mod_curl.la
+%%WITH_MODCURL%%lib/freeswitch/mod/mod_curl.so
+lib/freeswitch/mod/mod_dialplan_asterisk.la
+lib/freeswitch/mod/mod_dialplan_asterisk.so
+%%WITH_MODDPDIRECTORY%%lib/freeswitch/mod/mod_dialplan_directory.la
+%%WITH_MODDPDIRECTORY%%lib/freeswitch/mod/mod_dialplan_directory.so
+lib/freeswitch/mod/mod_dialplan_xml.la
+lib/freeswitch/mod/mod_dialplan_xml.so
+%%WITH_MODDINGALING%%lib/freeswitch/mod/mod_dingaling.la
+%%WITH_MODDINGALING%%lib/freeswitch/mod/mod_dingaling.so
+%%WITH_MODDIRECTORY%%lib/freeswitch/mod/mod_directory.la
+%%WITH_MODDIRECTORY%%lib/freeswitch/mod/mod_directory.so
+%%WITH_MODDISTRIBUTOR%%lib/freeswitch/mod/mod_distributor.la
+%%WITH_MODDISTRIBUTOR%%lib/freeswitch/mod/mod_distributor.so
+lib/freeswitch/mod/mod_dptools.la
+lib/freeswitch/mod/mod_dptools.so
+%%WITH_MODEASYROUTE%%lib/freeswitch/mod/mod_easyroute.la
+%%WITH_MODEASYROUTE%%lib/freeswitch/mod/mod_easyroute.so
+lib/freeswitch/mod/mod_enum.la
+lib/freeswitch/mod/mod_enum.so
+%%WITH_MODERLANGEVENT%%lib/freeswitch/mod/mod_erlang_event.la
+%%WITH_MODERLANGEVENT%%lib/freeswitch/mod/mod_erlang_event.so
+lib/freeswitch/mod/mod_esf.la
+lib/freeswitch/mod/mod_esf.so
+%%WITH_MODMULTICAST%%lib/freeswitch/mod/mod_event_multicast.la
+%%WITH_MODMULTICAST%%lib/freeswitch/mod/mod_event_multicast.so
+lib/freeswitch/mod/mod_event_socket.la
+lib/freeswitch/mod/mod_event_socket.so
+lib/freeswitch/mod/mod_expr.la
+lib/freeswitch/mod/mod_expr.so
+%%WITH_MODFAX%%lib/freeswitch/mod/mod_fax.la
+%%WITH_MODFAX%%lib/freeswitch/mod/mod_fax.so
+lib/freeswitch/mod/mod_fifo.la
+lib/freeswitch/mod/mod_fifo.so
+lib/freeswitch/mod/mod_file_string.la
+lib/freeswitch/mod/mod_file_string.so
+%%WITH_MODFLITE%%lib/freeswitch/mod/mod_flite.la
+%%WITH_MODFLITE%%lib/freeswitch/mod/mod_flite.so
+lib/freeswitch/mod/mod_fsv.la
+lib/freeswitch/mod/mod_fsv.so
+lib/freeswitch/mod/mod_g723_1.la
+lib/freeswitch/mod/mod_g723_1.so
+lib/freeswitch/mod/mod_g729.la
+lib/freeswitch/mod/mod_g729.so
+lib/freeswitch/mod/mod_h26x.la
+lib/freeswitch/mod/mod_h26x.so
+lib/freeswitch/mod/mod_ilbc.la
+lib/freeswitch/mod/mod_ilbc.so
+%%WITH_MODLCR%%lib/freeswitch/mod/mod_lcr.la
+%%WITH_MODLCR%%lib/freeswitch/mod/mod_lcr.so
+lib/freeswitch/mod/mod_limit.la
+lib/freeswitch/mod/mod_limit.so
+lib/freeswitch/mod/mod_local_stream.la
+lib/freeswitch/mod/mod_local_stream.so
+lib/freeswitch/mod/mod_logfile.la
+lib/freeswitch/mod/mod_logfile.so
+lib/freeswitch/mod/mod_loopback.la
+lib/freeswitch/mod/mod_loopback.so
+lib/freeswitch/mod/mod_lua.la
+lib/freeswitch/mod/mod_lua.so
+%%WITH_MODMEMCACHE%%lib/freeswitch/mod/mod_memcache.la
+%%WITH_MODMEMCACHE%%lib/freeswitch/mod/mod_memcache.so
+lib/freeswitch/mod/mod_native_file.la
+lib/freeswitch/mod/mod_native_file.so
+%%WITH_MODNIBBLEBILL%%lib/freeswitch/mod/mod_nibblebill.la
+%%WITH_MODNIBBLEBILL%%lib/freeswitch/mod/mod_nibblebill.so
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/mod_openzap.la
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/mod_openzap.so
+%%WITH_MODPERL%%lib/freeswitch/mod/mod_perl.la
+%%WITH_MODPERL%%lib/freeswitch/mod/mod_perl.so
+%%WITH_MODPOCKETSPHINX%%lib/freeswitch/mod/mod_pocketsphinx.la
+%%WITH_MODPOCKETSPHINX%%lib/freeswitch/mod/mod_pocketsphinx.so
+%%WITH_MODPORTAUDIO%%lib/freeswitch/mod/mod_portaudio.la
+%%WITH_MODPORTAUDIO%%lib/freeswitch/mod/mod_portaudio.so
+%%WITH_MODPASTREAM%%lib/freeswitch/mod/mod_portaudio_stream.la
+%%WITH_MODPASTREAM%%lib/freeswitch/mod/mod_portaudio_stream.so
+%%WITH_MODPYTHON%%lib/freeswitch/mod/mod_python.la
+%%WITH_MODPYTHON%%lib/freeswitch/mod/mod_python.so
+%%WITH_MODRSS%%lib/freeswitch/mod/mod_rss.la
+%%WITH_MODRSS%%lib/freeswitch/mod/mod_rss.so
+%%WITH_MODSAYDE%%lib/freeswitch/mod/mod_say_de.la
+%%WITH_MODSAYDE%%lib/freeswitch/mod/mod_say_de.so
+%%WITH_MODSAYEN%%lib/freeswitch/mod/mod_say_en.la
+%%WITH_MODSAYEN%%lib/freeswitch/mod/mod_say_en.so
+%%WITH_MODSAYES%%lib/freeswitch/mod/mod_say_es.la
+%%WITH_MODSAYES%%lib/freeswitch/mod/mod_say_es.so
+%%WITH_MODSAYFR%%lib/freeswitch/mod/mod_say_fr.la
+%%WITH_MODSAYFR%%lib/freeswitch/mod/mod_say_fr.so
+%%WITH_MODSAYHU%%lib/freeswitch/mod/mod_say_hu.la
+%%WITH_MODSAYHU%%lib/freeswitch/mod/mod_say_hu.so
+%%WITH_MODSAYIT%%lib/freeswitch/mod/mod_say_it.la
+%%WITH_MODSAYIT%%lib/freeswitch/mod/mod_say_it.so
+%%WITH_MODSAYNL%%lib/freeswitch/mod/mod_say_nl.la
+%%WITH_MODSAYNL%%lib/freeswitch/mod/mod_say_nl.so
+%%WITH_MODSAYRU%%lib/freeswitch/mod/mod_say_ru.la
+%%WITH_MODSAYRU%%lib/freeswitch/mod/mod_say_ru.so
+%%WITH_MODSAYTH%%lib/freeswitch/mod/mod_say_th.la
+%%WITH_MODSAYTH%%lib/freeswitch/mod/mod_say_th.so
+%%WITH_MODSAYZH%%lib/freeswitch/mod/mod_say_zh.la
+%%WITH_MODSAYZH%%lib/freeswitch/mod/mod_say_zh.so
+%%WITH_MODSHELLSTREAM%%lib/freeswitch/mod/mod_shell_stream.la
+%%WITH_MODSHELLSTREAM%%lib/freeswitch/mod/mod_shell_stream.so
+%%WITH_MODSHOUT%%lib/freeswitch/mod/mod_shout.la
+%%WITH_MODSHOUT%%lib/freeswitch/mod/mod_shout.so
+%%WITH_MODSILK%%lib/freeswitch/mod/mod_silk.la
+%%WITH_MODSILK%%lib/freeswitch/mod/mod_silk.so
+lib/freeswitch/mod/mod_siren.la
+lib/freeswitch/mod/mod_siren.so
+%%WITH_MODSKINNY%%lib/freeswitch/mod/mod_skinny.la
+%%WITH_MODSKINNY%%lib/freeswitch/mod/mod_skinny.so
+%%WITH_MODSNAPSHOT%%lib/freeswitch/mod/mod_snapshot.la
+%%WITH_MODSNAPSHOT%%lib/freeswitch/mod/mod_snapshot.so
+lib/freeswitch/mod/mod_sndfile.la
+lib/freeswitch/mod/mod_sndfile.so
+%%WITH_MODSNOM%%lib/freeswitch/mod/mod_snom.la
+%%WITH_MODSNOM%%lib/freeswitch/mod/mod_snom.so
+lib/freeswitch/mod/mod_sofia.la
+lib/freeswitch/mod/mod_sofia.so
+%%WITH_MODSOUNDTOUCH%%lib/freeswitch/mod/mod_soundtouch.la
+%%WITH_MODSOUNDTOUCH%%lib/freeswitch/mod/mod_soundtouch.so
+lib/freeswitch/mod/mod_speex.la
+lib/freeswitch/mod/mod_speex.so
+lib/freeswitch/mod/mod_spidermonkey.la
+lib/freeswitch/mod/mod_spidermonkey.so
+lib/freeswitch/mod/mod_spidermonkey_core_db.la
+lib/freeswitch/mod/mod_spidermonkey_core_db.so
+lib/freeswitch/mod/mod_spidermonkey_curl.la
+lib/freeswitch/mod/mod_spidermonkey_curl.so
+%%WITH_MODSPDRMNKYODBC%%lib/freeswitch/mod/mod_spidermonkey_odbc.la
+%%WITH_MODSPDRMNKYODBC%%lib/freeswitch/mod/mod_spidermonkey_odbc.so
+lib/freeswitch/mod/mod_spidermonkey_socket.la
+lib/freeswitch/mod/mod_spidermonkey_socket.so
+lib/freeswitch/mod/mod_spidermonkey_teletone.la
+lib/freeswitch/mod/mod_spidermonkey_teletone.so
+%%WITH_MODSPY%%lib/freeswitch/mod/mod_spy.la
+%%WITH_MODSPY%%lib/freeswitch/mod/mod_spy.so
+lib/freeswitch/mod/mod_syslog.la
+lib/freeswitch/mod/mod_syslog.so
+lib/freeswitch/mod/mod_tone_stream.la
+lib/freeswitch/mod/mod_tone_stream.so
+%%WITH_MODTTSCMDLINE%%lib/freeswitch/mod/mod_tts_commandline.la
+%%WITH_MODTTSCMDLINE%%lib/freeswitch/mod/mod_tts_commandline.so
+%%WITH_MODUNIMRCP%%lib/freeswitch/mod/mod_unimrcp.la
+%%WITH_MODUNIMRCP%%lib/freeswitch/mod/mod_unimrcp.so
+lib/freeswitch/mod/mod_valet_parking.la
+lib/freeswitch/mod/mod_valet_parking.so
+%%WITH_MODVMD%%lib/freeswitch/mod/mod_vmd.la
+%%WITH_MODVMD%%lib/freeswitch/mod/mod_vmd.so
+lib/freeswitch/mod/mod_voicemail.la
+lib/freeswitch/mod/mod_voicemail.so
+lib/freeswitch/mod/mod_voipcodecs.la
+lib/freeswitch/mod/mod_voipcodecs.so
+lib/freeswitch/mod/mod_xml_cdr.la
+lib/freeswitch/mod/mod_xml_cdr.so
+%%WITH_MODXMLCURL%%lib/freeswitch/mod/mod_xml_curl.la
+%%WITH_MODXMLCURL%%lib/freeswitch/mod/mod_xml_curl.so
+lib/freeswitch/mod/mod_xml_rpc.la
+lib/freeswitch/mod/mod_xml_rpc.so
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_analog.a
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_analog.la
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_analog.so
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_analog_em.a
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_analog_em.la
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_analog_em.so
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_isdn.a
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_isdn.la
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_isdn.so
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_libpri.a
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_libpri.la
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_libpri.so
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_sangoma_boost.a
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_sangoma_boost.la
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_sangoma_boost.so
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_skel.a
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_skel.la
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_skel.so
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_zt.a
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_zt.la
+%%WITH_MODOPENZAP%%lib/freeswitch/mod/ozmod_zt.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/acl.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/alsa.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/cdr_csv.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/cdr_pg_csv.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/cidlookup.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/conference.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/console.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/dialplan_directory.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/dingaling.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/directory.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/distributor.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/easyroute.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/enum.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/erlang_event.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/event_multicast.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/event_socket.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/fax.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/fifo.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/ivr.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/java.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/lcr.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/limit.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/local_stream.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/logfile.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/lua.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/memcache.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/modules.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/nibblebill.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/opal.conf.xml
+%%WITH_MODOPENZAP%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/openzap.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/perl.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/pocketsphinx.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/portaudio.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/post_load_modules.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/python.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/rss.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/sangoma_codec.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/shout.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/skinny.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/sofia.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/spidermonkey.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/switch.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/syslog.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/timezones.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/tts_commandline.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/unicall.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/unimrcp.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/voicemail.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/xml_cdr.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/xml_curl.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/xml_rpc.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/autoload_configs/zeroconf.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/default.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/default/00_pizza_demo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/default/01_example.com.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/default/99999_enum.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/default/ideasip.com.noload
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/default/pulver.com.noload
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/default/sipbroker.com.noload
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/default/sipphone.com.noload
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/default/tollfreegateway.com.noload
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/features.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/public.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/dialplan/public/00_inbound_did.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1000.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1001.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1002.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1003.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1004.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1005.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1006.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1007.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1008.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1009.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1010.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1011.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1012.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1013.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1014.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1015.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1016.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1017.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1018.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/1019.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/brian.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/default.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/directory/default/example.com.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/extensions.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/freeswitch.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/fur_elise.ttml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/ivr_menus/demo_ivr.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/jingle_profiles/client.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/jingle_profiles/server.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/de/de.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/de/demo/demo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/de/vm/tts.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/en/demo/demo-ivr.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/en/demo/demo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/en/dir/sounds.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/en/dir/tts.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/en/en.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/en/vm/sounds.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/en/vm/tts.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/fr/demo/demo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/fr/dir/sounds.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/fr/dir/tts.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/fr/fr.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/fr/vm/sounds.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/ru/demo/demo-ivr.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/ru/demo/demo.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/ru/dir/sounds.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/ru/dir/tts.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/ru/ru.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/ru/vm/sounds.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/lang/ru/vm/tts.xml
+%%WITH_MODOPENZAP%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/m3ua.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mime.types
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mrcp_profiles/loquendo-7-mrcp-v2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mrcp_profiles/nuance-1.0.0-mrcp-v1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mrcp_profiles/nuance-5.0-mrcp-v1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mrcp_profiles/nuance-5.0-mrcp-v2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mrcp_profiles/unimrcpserver-mrcp-v1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/mrcp_profiles/voxeo-prophecy-8.0-mrcp-v1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/notify-voicemail.tpl
+%%WITH_MODOPENZAP%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/openzap.conf
+%%WITH_MODOPENZAP%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/pika.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/sip_profiles/external.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/sip_profiles/external/example.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/sip_profiles/internal-ipv6.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/sip_profiles/internal.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/sip_profiles/internal/example.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/skinny_profiles/internal.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/tetris.ttml
+%%WITH_MODOPENZAP%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/tones.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/vars.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/voicemail.tpl
+%%WITH_MODOPENZAP%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/wanpipe.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/web-vm.tpl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/yaml/extensions.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/yaml/mod_yaml.yaml
+%%WITH_MODOPENZAP%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/conf/zt.conf
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/default.dic
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/communicator/COPYING
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/communicator/feat.params
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/communicator/mdef
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/communicator/means
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/communicator/noisedict
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/communicator/sendump
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/communicator/transition_matrices
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/communicator/variances
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/Makefile
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/Makefile.am
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/Makefile.in
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/feat.params
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/kdtrees
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/mdef
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/means
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/noisedict
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/sendump
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/transition_matrices
+%%WITH_MODPOCKETSPHINX%%%%DATADIR%%/grammar/model/wsj1/variances
+%%DATADIR%%/htdocs/license.txt
+%%DATADIR%%/htdocs/slim.swf
+%%DATADIR%%/htdocs/slimtest.htm
+%%WITH_MODPERL%%%%DATADIR%%/perl/freeswitch.la
+%%WITH_MODPERL%%%%DATADIR%%/perl/freeswitch.pm
+%%WITH_MODPERL%%%%DATADIR%%/perl/freeswitch.so
+%%WITH_MODPERL%%@dirrm %%DATADIR%%/perl
+@rmtry %%DATADIR%%/storage
+@rmtry %%DATADIR%%/scripts
+@rmtry %%DATADIR%%/recordings
+@rmtry %%DATADIR%%/log
+%%WITH_MODOPENZAP%%@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%/htdocs
+%%WITH_MODPOCKETSPHINX%%@dirrm %%DATADIR%%/grammar/model/wsj1
+%%WITH_MODPOCKETSPHINX%%@dirrm %%DATADIR%%/grammar/model/communicator
+%%WITH_MODPOCKETSPHINX%%@dirrm %%DATADIR%%/grammar/model
+@dirrm %%DATADIR%%/grammar
+@rmtry %%DATADIR%%/db
+@dirrmtry %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/yaml
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/skinny_profiles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/sip_profiles/internal
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/sip_profiles/external
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/sip_profiles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/mrcp_profiles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/ru/vm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/ru/dir
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/ru/demo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/ru
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/fr/vm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/fr/dir
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/fr/demo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/fr
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/en/vm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/en/dir
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/en/demo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/en
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/de/vm
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/de/demo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang/de
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/lang
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/jingle_profiles
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/ivr_menus
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/directory/default
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/directory
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/dialplan/public
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/dialplan/default
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/dialplan
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf/autoload_configs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm lib/freeswitch/mod
+@dirrm lib/freeswitch/lib
+@dirrm lib/freeswitch
+@dirrm include/freeswitch
+@dirrmtry %%ETCDIR%%/conf
+@dirrmtry %%ETCDIR%%
+@exec mkdir -p %D/%%DATADIR%%/grammar
+@cwd /var/
+@dirrmtry spool/voicemail
+@dirrmtry log/freeswitch/xml_cdr
+@dirrmtry log/freeswitch
+@dirrmtry freeswitch/storage
+@dirrmtry freeswitch/recordings
+@dirrmtry freeswitch
+@dirrmtry db/freeswitch
+@exec mkdir -p %D/freeswitch/storage
+@exec chmod 775 %D/freeswitch/storage
+@exec ln -Ffs %D/freeswitch/storage %%DATADIR%%/storage
+@exec chmod 775 %%DATADIR%%/storage
+@exec rm -rf %%DATADIR%%/recordings
+@exec mkdir -p %D/freeswitch/recordings
+@exec chmod 775 %D/freeswitch/recordings
+@exec ln -Ffs %D/freeswitch/recordings %%DATADIR%%/recordings
+@exec chmod 775 %%DATADIR%%/recordings
+@exec rm -rf %%DATADIR%%/log
+@exec mkdir -p %D/log/freeswitch/cdr-csv
+@exec chmod -R 775 /log/freeswitch
+@exec ln -Ffs %D/log/freeswitch %%DATADIR%%/log
+@exec mkdir -p %D/db/freeswitch
+@exec ln -Ffs %D/db/freeswitch %%DATADIR%%/db
+@exec chmod 775 %%DATADIR%%/db

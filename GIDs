@@ -133,6 +133,7 @@ polkit:*:562:
 pulse:*:563:
 pulse-access:*:564:
 _xsi:*:600:
+freeswitch:*:610:
 bnetd:*:700:
 bopm:*:717:
 openxpki:*:777:
