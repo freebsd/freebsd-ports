@@ -13,7 +13,7 @@
  RANLIB			= ranlib
  
  CPU_ARCH		= $(OS_TEST)
-@@ -50,7 +50,22 @@
+@@ -50,7 +50,26 @@
  CPU_ARCH		= x86
  endif
  ifeq ($(CPU_ARCH),amd64)
@@ -23,6 +23,10 @@
 +endif
 +ifeq ($(OS_TEST),alpha)
 +CPU_ARCH		= alpha
++endif
++ifeq ($(OS_TEST),powerpc64)
++CPU_ARCH		= powerpc
++USE_64			= 1
 +endif
 +ifeq ($(OS_TEST),powerpc)
 +CPU_ARCH		= powerpc
