@@ -289,9 +289,11 @@ post-patch:
 		${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" \
 			${WRKSRC}/$${file}; \
 	done
-	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \
+	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \
 		-e "s:%%JDK_VERSION%%:${JDK_VERSION}:g"\
 		${WRKSRC}/../../deploy/src/plugin/solaris/controlpanel/sun_java.desktop
+	@${REINPLACE_CMD} -e "s:%%OSVERSION%%:${OSVERSION}:g" \
+		${WRKSRC}/../../j2se/make/common/Defs-bsd.gmk
 
 .if defined(WITH_LINUX_BOOTSTRAP)
 pre-build:
