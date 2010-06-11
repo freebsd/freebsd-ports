@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	xvkbd
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	x11
 MASTER_SITES=	http://homepage3.nifty.com/tsato/xvkbd/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A virtual keyboard for X applications
+
+# FIXME: IMHO, there really ought to be a GPL-2+ option or some such.
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 MAN1=		xvkbd.1
 
