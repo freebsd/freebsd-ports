@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	libnids
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	net security
 MASTER_SITES=	SF
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Network monitoring library with TCP/IP reassembly
+
+LICENSE=	GPLv2
 
 OPTIONS=	LIBNET "Include code requiring libnet" ON \
 		LIBNET10 "Use the old libnet-1.0.x version" ON \
