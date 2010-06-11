@@ -18,6 +18,12 @@ NO_WRKSUBDIR=	yes
 
 MAKEFILE=	makefile
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+IGNORE=		Core dumps on execution
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pash ${PREFIX}/bin/pash
 
@@ -28,4 +34,4 @@ post-install:
 	 ${ECHO_CMD} ${PREFIX}/bin/pash) > /etc/shells
 	@${RM} /etc/shells.bak
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
