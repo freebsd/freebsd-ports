@@ -28,9 +28,8 @@ NO_WRKSUBDIR=	yes
 NEWSCTL?=	${PREFIX}/news/lib
 
 post-patch:
-	@${MV} ${WRKSRC}/pmapp ${WRKSRC}/pmapp.sed
-	${SED} -e "s=/usr/local/news=${NEWSCTL}=" \
-		${WRKSRC}/pmapp.sed >${WRKSRC}/pmapp
+	${REINPLACE_CMD} -e "s=/usr/local/news=${NEWSCTL}=" \
+		${WRKSRC}/pmapp
 
 do-install:
 .for i in ${BIN1}
