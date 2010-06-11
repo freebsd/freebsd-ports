@@ -3065,6 +3065,7 @@
     SUBDIR += rubygem-trollop
     SUBDIR += rubygem-tzinfo
     SUBDIR += rubygem-uuid
+    SUBDIR += rubygem-uuidtools
     SUBDIR += rubygem-validatable
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-webby
