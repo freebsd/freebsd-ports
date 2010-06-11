@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Math-GSL
-PORTVERSION=	0.20
-PORTREVISION=	3
+PORTVERSION=	0.22
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl interface to GNU Scientific Library
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
