@@ -17,14 +17,9 @@
 %%SITE_PERL%%/POE/Filter/Stream.pm
 %%SITE_PERL%%/POE/Kernel.pm
 %%SITE_PERL%%/POE/Loop.pm
-%%SITE_PERL%%/POE/Loop/Event.pm
-%%SITE_PERL%%/POE/Loop/Gtk.pm
 %%SITE_PERL%%/POE/Loop/IO_Poll.pm
 %%SITE_PERL%%/POE/Loop/PerlSignals.pm
 %%SITE_PERL%%/POE/Loop/Select.pm
-%%SITE_PERL%%/POE/Loop/Tk.pm
-%%SITE_PERL%%/POE/Loop/TkActiveState.pm
-%%SITE_PERL%%/POE/Loop/TkCommon.pm
 %%SITE_PERL%%/POE/NFA.pm
 %%SITE_PERL%%/POE/Pipe.pm
 %%SITE_PERL%%/POE/Pipe/OneWay.pm
