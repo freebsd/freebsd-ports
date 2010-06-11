@@ -14,6 +14,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A bsnmpd module to measure statistics about jails
 
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
