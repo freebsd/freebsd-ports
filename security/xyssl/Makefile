@@ -16,11 +16,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A liteweight SSL and TLS toolkit for C developers
 
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 # HAS_CONFIGURE=	no
 # GNU_CONFIGURE=	no
 
 PORTDOCS=	BSD.txt ChangeLog
+
+post-extract:
+	${LN} ${WRKSRC}/BSD.txt ${WRKSRC}/COPYRIGHT
 
 post-install:
 .if !defined(NOPORTDOCS)

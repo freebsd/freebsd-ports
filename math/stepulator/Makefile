@@ -18,6 +18,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Scientific calculator implementing RPN notation for GNUstep
 
 LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
@@ -25,6 +26,9 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Stepulator-gs
+
+post-extract:
+	${LN} ${WRKSRC}/LICENSE ${WRKSRC}/COPYRIGHT
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE \
