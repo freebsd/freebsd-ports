@@ -5,5 +5,6 @@ Support is also included for X.509 certificate structures,
 as well as an internal PRNG.  
 
 LICENSE: BSD
+Copyright (c) 2006-2008, Christophe Devine.
 
 WWW: http://xyssl.org/
