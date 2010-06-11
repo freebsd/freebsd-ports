@@ -400,3 +400,4 @@
 @exec chown %%BBUSER%% %%VARBASE%%/log/hobbit
 @cwd %%VARBASE%%
 @dirrmtry log/hobbit
+@cwd
