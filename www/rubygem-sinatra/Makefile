@@ -9,7 +9,7 @@ PORTVERSION=	0.9.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A classy web development framework in ruby
 
 RUN_DEPENDS=	rubygem-rack>=0.9.1:${PORTSDIR}/www/rubygem-rack

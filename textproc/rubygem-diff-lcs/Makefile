@@ -9,7 +9,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF/ruwiki
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	LCS-based diff library for ruby
 
 USE_RUBY=	yes
