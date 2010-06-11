@@ -199,6 +199,7 @@
     SUBDIR += freealut
     SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
+    SUBDIR += freeswitch-music
     SUBDIR += funktrackergold
     SUBDIR += gambas2-gb-sdl-sound
     SUBDIR += gbemol
