@@ -9,7 +9,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RF/gems
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An object-oriented ruby library to access git repositories
 
 RUN_DEPENDS=	rubygem-diff-lcs>=1.1.2:${PORTSDIR}/textproc/rubygem-diff-lcs \

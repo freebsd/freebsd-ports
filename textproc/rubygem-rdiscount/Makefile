@@ -9,7 +9,7 @@ PORTVERSION=	1.3.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF/gems
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A fast Markdown converter for ruby based on discount
 
 USE_RUBY=	yes

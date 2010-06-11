@@ -9,7 +9,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby SCM, an SCM-independent API for accessing SCMs
 
 USE_RUBY=	yes

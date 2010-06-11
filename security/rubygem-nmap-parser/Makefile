@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RF/gems
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to Nmap scan data
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
