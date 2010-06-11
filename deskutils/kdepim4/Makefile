@@ -6,6 +6,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -17,7 +18,7 @@ COMMENT=	Libraries for KDE-PIM applications
 BUILD_DEPENDS=	libassuan>=1.0.4:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
-		boost_python:${PORTSDIR}/devel/boost-python-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		qca.2:${PORTSDIR}/devel/qca
 
 LATEST_LINK=	${PORTNAME}4
