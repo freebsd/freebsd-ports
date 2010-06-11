@@ -254,6 +254,8 @@ include/wine/windows/fci.h
 include/wine/windows/fdi.h
 include/wine/windows/fusion.h
 include/wine/windows/fusion.idl
+include/wine/windows/gameux.h
+include/wine/windows/gameux.idl
 include/wine/windows/gdiplus.h
 include/wine/windows/gdipluscolor.h
 include/wine/windows/gdipluscolormatrix.h
