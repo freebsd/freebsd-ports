@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.eukleides.org/files/
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A Euclidean geometry drawing language
 
 LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline

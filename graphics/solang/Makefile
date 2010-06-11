@@ -15,7 +15,7 @@ PATCH_SITES=	http://rishi.fedorapeople.org/
 PATCHFILES=	0001-Ported-to-libgdamm-4.x.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A photo manager for GNOME
 
 LIB_DEPENDS=	gegl-0.1:${PORTSDIR}/graphics/gegl \

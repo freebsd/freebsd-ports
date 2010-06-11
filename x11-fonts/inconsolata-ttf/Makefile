@@ -13,7 +13,7 @@ DISTNAME=	Inconsolata
 EXTRACT_SUFX=	.otf
 EXTRACT_ONLY=
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A monospaced truetype font
 
 USE_XORG=	x11

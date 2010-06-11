@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://download.tuxfamily.org/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	irssiotr
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A plugin for irssi for Off-the-Record (OTR) messaging
 
 BUILD_DEPENDS=	${LOCALBASE}/include/irssi/src/common.h:${PORTSDIR}/irc/irssi \

@@ -13,7 +13,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://www.ctrlproxy.org/releases/ \
 		LOCAL/chinsan/ctrlproxy/
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Flexible IRC proxy
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls

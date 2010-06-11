@@ -10,7 +10,7 @@ PORTVERSION=	2.19.1
 DISTVERSIONSUFFIX=	-fx+sm+tb
 CATEGORIES=	www
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Advanced proxy management tool
 
 XPI_DISTNAME=	foxyproxy_standard

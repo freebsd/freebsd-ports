@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF/squashfs/squashfs/${DISTNAME}/
 DISTNAME=	squashfs${PORTVERSION}
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Set of tools to manipulate squashfs images
 
 PLIST_FILES=	bin/mksquashfs \

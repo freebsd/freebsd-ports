@@ -10,7 +10,7 @@ PORTVERSION=	0.9.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	An addon which allows posting to blogs
 
 XPI_DISTNAME=	deepest_sender

@@ -10,7 +10,7 @@ PORTVERSION=	1.2.7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Streaming multimedia files downloader
 
 GNU_CONFIGURE=	yes

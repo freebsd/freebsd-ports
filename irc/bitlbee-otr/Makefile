@@ -12,7 +12,7 @@ MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
 		http://wahjava.users.sourceforge.net/ \
 		${MASTER_SITE_FREEBSD}
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	An IRC to other chat networks gateway with support for OTR
 
 SUB_FILES=	pkg-message

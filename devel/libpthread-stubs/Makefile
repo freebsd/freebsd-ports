@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	This library provides weak aliases for pthread functions
 
 USE_GMAKE=	yes

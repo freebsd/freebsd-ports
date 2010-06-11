@@ -10,7 +10,7 @@ PORTVERSION=	1.0.6
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Firefox addon to do GUI prototyping and simple sketching
 
 XPI_DISTNAME=	pencil

@@ -12,7 +12,7 @@ CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	emacs/pretest
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNU editing macros
 
 .if !defined(WITHOUT_X11)

@@ -11,7 +11,7 @@ CATEGORIES=	irc security
 MASTER_SITES=	http://fish.secure.la/irssi/
 DISTNAME=	FiSH-irssi.v${DISTVERSION}-source
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	An encryption plugin for irssi
 
 BUILD_DEPENDS=	${LOCALBASE}/include/glib-2.0/glib.h:${PORTSDIR}/devel/glib20 \
