@@ -8,7 +8,7 @@ export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=xim
 export XMODIFIERS=@im=ibus
 export XIM_PROGRAM="ibus-daemon"
-export XIM_ARGS="--daemonize --xim"
+export XIM_ARGS="-r --daemonize --xim"
 
 If you are using tcsh, please add following lines to your $HOME/.cshrc:
 
@@ -17,7 +17,7 @@ setenv GTK_IM_MODULE ibus
 setenv QT_IM_MODULE xim
 setenv XMODIFIERS @im=ibus
 setenv XIM_PROGRAM ibus-daemon
-setenv XIM_ARGS "--daemonize --xim"
+setenv XIM_ARGS "-r --daemonize --xim"
 
 If you are using KDE4, you may create a shell script in $HOME/.kde4/env, 
 and add following lines:
@@ -28,7 +28,7 @@ export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=xim
 export XMODIFIERS=@im=ibus
 export XIM_PROGRAM="ibus-daemon"
-export XIM_ARGS="--daemonize --xim"
+export XIM_ARGS="-r --daemonize --xim"
 
 If ibus cannot start or the panel does not appear, please ensure
 that you are using up-to-date python.
