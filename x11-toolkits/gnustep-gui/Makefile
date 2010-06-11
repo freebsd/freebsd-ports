@@ -59,7 +59,7 @@ BREAKS_IF_PEDANTIC=	yes
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
 .if defined(WITH_GNUSTEP_DEVEL)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Tools_sound_AudioOutputSink.m
+EXTRA_PATCHES+=	${FILESDIR}/AudioOutputSink.m.patch
 .endif
 
 .if defined(WITHOUT_GNUSTEP_FAKEMAIN)
