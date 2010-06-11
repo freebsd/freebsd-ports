@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus-anthy
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -16,7 +16,7 @@ COMMENT=	Anthy engine for IBus
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy
-RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS=	ibus.2:${PORTSDIR}/textproc/ibus
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
