@@ -7,7 +7,7 @@
 
 PORTNAME=	genius
 PORTVERSION=	1.0.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/
@@ -16,7 +16,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Arbitrary precision calculator for Gnome Desktop Environment
 
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
-LIB_DEPENDS=	mpfr.3:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	mpfr.4:${PORTSDIR}/math/mpfr
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_BZIP2=	yes

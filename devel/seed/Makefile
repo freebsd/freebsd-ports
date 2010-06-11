@@ -11,7 +11,7 @@
 
 PORTNAME=	seed
 PORTVERSION=	2.30.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -25,7 +25,7 @@ LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi \
 		girepository-1.0.0:${PORTSDIR}/devel/gobject-introspection \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		mpfr.3:${PORTSDIR}/math/mpfr
+		mpfr.4:${PORTSDIR}/math/mpfr
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

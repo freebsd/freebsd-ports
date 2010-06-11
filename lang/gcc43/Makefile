@@ -8,6 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.3.6.20100523
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -18,7 +19,7 @@ MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.3
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.3:${PORTSDIR}/math/mpfr
+		mpfr.4:${PORTSDIR}/math/mpfr
 
 .if defined(MAINTAINER_MODE)
 DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}

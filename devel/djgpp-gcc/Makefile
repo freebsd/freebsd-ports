@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.delorie.com/pub/djgpp/current/v2gnu/:djsource \
 		ftp://ftp.mirror.ac.uk/sites/www.delorie.com/current/v2gnu/:djsource \
@@ -33,7 +33,7 @@ BUILD_DEPENDS=	${TARGET}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		aclocal-1.9:${PORTSDIR}/devel/automake19
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.3:${PORTSDIR}/math/mpfr
+		mpfr.4:${PORTSDIR}/math/mpfr
 .endif
 RUN_DEPENDS=	${TARGET}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${LOCALBASE}/${TARGET}/bin/stubify:${PORTSDIR}/devel/${PKGNAMEPREFIX}crx

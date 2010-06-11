@@ -8,7 +8,7 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=		4.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		lang
 MASTER_SITES=		GCC/releases/gcc-${PORTVERSION} \
 			http://coreland.ath.cx/data/code/gnatport/src/:boot
@@ -21,7 +21,7 @@ MAINTAINER=		freebsd-ports@coreland.ath.cx
 COMMENT=		The GNU Ada Compiler system
 
 LIB_DEPENDS=		gmp.10:${PORTSDIR}/math/gmp \
-			mpfr.3:${PORTSDIR}/math/mpfr
+			mpfr.4:${PORTSDIR}/math/mpfr
 
 BROKEN=			fails to configure
 
