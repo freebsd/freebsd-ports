@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	apr
-PORTVERSION=	${APR_VERSION}.${APU_VERSION}
+PORTVERSION=	2.0.${SNAPDATE}
 CATEGORIES=	devel
-MASTER_SITES=	http://svn.apache.org/snapshots/apr/ 
+MASTER_SITES=	http://svn.apache.org/snapshots/apr/
 DISTNAME=	${PORTNAME}_${SNAPDATE}
 
 MAINTAINER=	apache@FreeBSD.org
@@ -15,9 +15,9 @@ COMMENT=	Apache Portability Library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-NO_LATEST_LINK= yes
+NO_LATEST_LINK=	yes
 
-SNAPDATE= 20100527031346
+SNAPDATE=	20100610211336
 
 MAKE_JOBS_SAFE=	yes
 
