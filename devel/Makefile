@@ -3057,6 +3057,7 @@
     SUBDIR += rubygem-stomp
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-streetaddress
+    SUBDIR += rubygem-stringex
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-transactionsimple

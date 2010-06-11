@@ -1,0 +1,6 @@
+Some [hopefully] useful extensions to Ruby's String class. Stringex is made
+up of three libraries: ActsAsUrl [permalink solution with better character 
+translation], Unidecoder [Unicode to Ascii transliteration], and StringExtensions 
+[miscellaneous helper methods for the String class].
+
+WWW:    http://rubygems.org/gems/stringex
