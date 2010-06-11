@@ -7,17 +7,17 @@
 
 PORTNAME=	ibus-anthy
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	daichi@freebsd.org
 COMMENT=	Anthy engine for IBus
 
-BUILD_DEPENDS=	anthy-agent:${PORTSDIR}/japanese/anthy
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy
-LIB_DEPENDS=	ibus.2:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS+=	anthy.1:${PORTSDIR}/japanese/anthy \
+		ibus.2:${PORTSDIR}/textproc/ibus
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
