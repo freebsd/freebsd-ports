@@ -2,6 +2,7 @@ bin/poe-gen-tests
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Test/Loops/.packlist
 %%SITE_PERL%%/POE/Test/DondeEstan.pm
 %%SITE_PERL%%/POE/Test/Loops.pm
+%%SITE_PERL%%/POE/Test/Loops/00_info.pm
 %%SITE_PERL%%/POE/Test/Loops/all_errors.pm
 %%SITE_PERL%%/POE/Test/Loops/comp_tcp.pm
 %%SITE_PERL%%/POE/Test/Loops/comp_tcp_concurrent.pm
@@ -11,28 +12,30 @@ bin/poe-gen-tests
 %%SITE_PERL%%/POE/Test/Loops/k_detach.pm
 %%SITE_PERL%%/POE/Test/Loops/k_run_returns.pm
 %%SITE_PERL%%/POE/Test/Loops/k_selects.pm
+%%SITE_PERL%%/POE/Test/Loops/k_sig_child.pm
 %%SITE_PERL%%/POE/Test/Loops/k_signals.pm
 %%SITE_PERL%%/POE/Test/Loops/k_signals_rerun.pm
-%%SITE_PERL%%/POE/Test/Loops/k_sig_child.pm
 %%SITE_PERL%%/POE/Test/Loops/sbk_signal_init.pm
 %%SITE_PERL%%/POE/Test/Loops/ses_nfa.pm
 %%SITE_PERL%%/POE/Test/Loops/ses_session.pm
-%%SITE_PERL%%/POE/Test/Loops/wheel_readline.pm
-%%SITE_PERL%%/POE/Test/Loops/wheel_sf_udp.pm
-%%SITE_PERL%%/POE/Test/Loops/wheel_sf_tcp.pm
-%%SITE_PERL%%/POE/Test/Loops/wheel_curses.pm
-%%SITE_PERL%%/POE/Test/Loops/wheel_run.pm
 %%SITE_PERL%%/POE/Test/Loops/wheel_accept.pm
-%%SITE_PERL%%/POE/Test/Loops/wheel_sf_ipv6.pm
+%%SITE_PERL%%/POE/Test/Loops/wheel_curses.pm
+%%SITE_PERL%%/POE/Test/Loops/wheel_readline.pm
 %%SITE_PERL%%/POE/Test/Loops/wheel_readwrite.pm
-%%SITE_PERL%%/POE/Test/Loops/wheel_tail.pm
+%%SITE_PERL%%/POE/Test/Loops/wheel_run.pm
+%%SITE_PERL%%/POE/Test/Loops/wheel_sf_ipv6.pm
+%%SITE_PERL%%/POE/Test/Loops/wheel_sf_tcp.pm
+%%SITE_PERL%%/POE/Test/Loops/wheel_sf_udp.pm
 %%SITE_PERL%%/POE/Test/Loops/wheel_sf_unix.pm
+%%SITE_PERL%%/POE/Test/Loops/wheel_tail.pm
 %%SITE_PERL%%/POE/Test/Loops/z_kogman_sig_order.pm
-%%SITE_PERL%%/POE/Test/Loops/z_steinert_signal_integrity.pm
-%%SITE_PERL%%/POE/Test/Loops/z_merijn_sigchld_system.pm
-%%SITE_PERL%%/POE/Test/Loops/z_rt39872_sigchld_stop.pm
-%%SITE_PERL%%/POE/Test/Loops/z_rt39872_sigchld.pm
 %%SITE_PERL%%/POE/Test/Loops/z_leolo_wheel_run.pm
+%%SITE_PERL%%/POE/Test/Loops/z_merijn_sigchld_system.pm
+%%SITE_PERL%%/POE/Test/Loops/z_rt39872_sigchld.pm
+%%SITE_PERL%%/POE/Test/Loops/z_rt39872_sigchld_stop.pm
+%%SITE_PERL%%/POE/Test/Loops/z_rt53302_fh_watchers.pm
+%%SITE_PERL%%/POE/Test/Loops/z_rt54319_bazerka_followtail.pm
+%%SITE_PERL%%/POE/Test/Loops/z_steinert_signal_integrity.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Test/Loops
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Test
 @dirrmtry %%SITE_PERL%%/POE/Test/Loops
