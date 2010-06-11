@@ -1,11 +1,11 @@
---- libs/regex/build/Jamfile.v2.orig	Thu Oct 16 13:01:02 2008
-+++ libs/regex/build/Jamfile.v2	Sun Nov  9 10:35:40 2008
-@@ -189,7 +189,7 @@
-    
-    if $(ICU_PATH)
-    {
+--- libs/regex/build/Jamfile.v2.orig	2009-12-08 13:42:33.000000000 +0100
++++ libs/regex/build/Jamfile.v2	2010-05-10 21:22:14.000000000 +0200
+@@ -205,7 +205,7 @@
+       # libs/regex/build, explicitly root this.
+       ICU_PATH = [ path.native 
+           [ path.root [ path.make $(ICU_PATH) ] [ path.pwd ] ] ] ;
 -      if $(ICU_PATH) != "/usr" && $(ICU_PATH) != "/usr/local"
 +      if $(ICU_PATH) != "/usr"
        {
           BOOST_REGEX_ICU_OPTS += "<include>$(ICU_PATH)/include" ;
-          ICU_SEARCH_OPTS = <search>/$(ICU_PATH)/lib ;
+          ICU_SEARCH_OPTS = <search>$(ICU_PATH)/lib ;
