@@ -223,6 +223,9 @@ GNUSTEP_WITH_GCC34=	yes
 
 .if defined(GNUSTEP_WITH_GCC34)
 GCCSUFFIX=34
+.if ${ARCH} == sparc64
+BROKEN=	gcc34 does not build the required libobjc
+.endif
 .endif
 .if defined(GNUSTEP_WITH_GCC42)
 GCCSUFFIX=42
