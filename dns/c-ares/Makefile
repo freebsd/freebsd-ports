@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	c-ares
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	dns
 MASTER_SITES=	http://c-ares.haxx.se/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	An asynchronous DNS resolver library
+
+LICENSE=	MIT
 
 OPTIONS=	CONFIG_INFO	"Add the ares_config_info patch" ON \
 		DEBUG		"Build with debug information" OFF \
