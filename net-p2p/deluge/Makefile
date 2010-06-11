@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_PYTHON=	yes
-USE_GCC=	4.3+
+USE_GCC=	4.4+
 MAKE_ENV=	PYTHONPATH="${PYTHONPREFIX_SITELIBDIR}"
 
 OPTIONS=	PSYCO "Enable devel/py-psyco optimization support (i386)" off
