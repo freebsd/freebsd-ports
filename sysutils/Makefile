@@ -332,6 +332,7 @@
     SUBDIR += grok
     SUBDIR += growspd
     SUBDIR += grub
+    SUBDIR += grub2
     SUBDIR += gsmartcontrol
     SUBDIR += gstopd
     SUBDIR += gstreamer-plugins-cdio

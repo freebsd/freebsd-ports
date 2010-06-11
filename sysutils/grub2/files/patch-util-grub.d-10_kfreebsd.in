@@ -1,0 +1,14 @@
+--- util/grub.d/10_kfreebsd.in.orig	2010-06-11 14:37:42.000000000 +0400
++++ util/grub.d/10_kfreebsd.in	2010-06-11 14:37:59.000000000 +0400
+@@ -46,9 +46,9 @@
+   args="$4"	# not used yet
+   title="$(gettext "%s, with kFreeBSD %s")"
+   printf "menuentry \"${title}\" ${CLASS} {\n" "${os}" "${version}"
+-  save_default_entry | sed -e "s/^/\t/"
++  save_default_entry | sed -e "s/^/	/"
+   if [ -z "${prepare_boot_cache}" ]; then
+-    prepare_boot_cache="$(prepare_grub_to_access_device ${GRUB_DEVICE_BOOT} | sed -e "s/^/\t/")"
++    prepare_boot_cache="$(prepare_grub_to_access_device ${GRUB_DEVICE_BOOT} | sed -e "s/^/	/")"
+   fi
+   printf '%s\n' "${prepare_boot_cache}"
+   cat << EOF
