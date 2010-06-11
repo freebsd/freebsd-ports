@@ -10,7 +10,7 @@ PORTVERSION=	0.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	C++ bindings for GEGL
 
 LIB_DEPENDS=	gegl-0.1.101:${PORTSDIR}/graphics/gegl \

@@ -13,7 +13,7 @@ CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNU editing macros
 
 .if !defined(WITHOUT_X11)

@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Big Board sidebar is an experimental panel for the GNOME Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus \

@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A ncurses-based client for the Music Player Daemon
 
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs

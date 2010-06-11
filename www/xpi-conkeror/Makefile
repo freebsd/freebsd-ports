@@ -14,7 +14,7 @@ MASTER_SITES=	http://mirror.4bit.ws/ \
 		${MASTER_SITE_FREEBSD}
 MASTER_SITE_SUBDIR=	dhn
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A completely keyboard driven browser based on firefox
 
 WRKSRC=	${WRKDIR}/conkeror

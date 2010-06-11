@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics xfce
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/0.1/
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	D-Bus service for generating thumbnails
 
 BUILD_DEPENDS=	dbus-binding-tool:${PORTSDIR}/devel/dbus-glib \

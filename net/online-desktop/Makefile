@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNOME Online Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus \

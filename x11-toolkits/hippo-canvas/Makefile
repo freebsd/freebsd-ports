@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A client stacker popup widget for GTK+ toolkit
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libcroco-0.6.pc:${PORTSDIR}/textproc/libcroco \

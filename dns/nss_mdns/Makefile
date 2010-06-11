@@ -12,7 +12,7 @@ CATEGORIES=	dns ipv6
 MASTER_SITES=	http://0pointer.de/lennart/projects/nss-mdns/
 DISTNAME=	nss-mdns-${PORTVERSION}
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	NSS module implementing multicast DNS name resolution
 
 USE_AUTOTOOLS=	autoconf:262 automake:19 libtool:22

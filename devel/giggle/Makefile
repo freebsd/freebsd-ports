@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GTK+ frontend for git version control system
 
 BUILD_DEPENDS=	git:${PORTSDIR}/devel/git \

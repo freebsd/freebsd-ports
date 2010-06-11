@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/F/FE/FERREIRA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Base module for translations of Perl documentation
 
 PERL_CONFIGURE=	5.005+

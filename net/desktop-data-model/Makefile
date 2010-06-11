@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Engine providing live updates of online data to the desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpcre.pc:${PORTSDIR}/devel/pcre \
