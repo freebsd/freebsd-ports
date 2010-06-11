@@ -15,6 +15,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter plugin to sendmail for regular expression filtering
 
 LICENSE=	BSD
+LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 
 DIST_SUBDIR=	repacked
 MAILUSER?=	mailnull
