@@ -94,7 +94,7 @@ post-patch:
 
 .if !defined(WITHOUT_X11)
 post-install:
-	@${INSTALL} ${WRKSRC}/graphics/links.xpm ${PREFIX}/share/pixmaps/links.xpm
+	@${INSTALL_DATA} ${WRKSRC}/graphics/links.xpm ${PREFIX}/share/pixmaps/links.xpm
 .endif
 
 .include <bsd.port.mk>
