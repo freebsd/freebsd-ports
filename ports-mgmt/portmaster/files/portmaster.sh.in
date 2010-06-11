@@ -1648,9 +1648,16 @@ delete_all_distfiles () {
 	echo "       Try ${0##*/} --clean-distfiles[-all] for a full cleanup"
 		echo ''
 		if [ -n "$dist_list_files" ]; then
-			echo "===>>> However, the list of files in $dist_list"
-	echo -n "       should be current.  Delete the files on this list? y/n [n] "
-			local answer f ; read answer
+			local answer f
+	# Outdent
+	if [ -z "$ALWAYS_SCRUB_DISTFILES" ]; then
+		echo "===>>> However, the list of files in $dist_list"
+		echo -n "       should be current.  Delete the files on this list? y/n [n] "
+		read answer
+	else
+		answer=y
+	fi
+	# Outdent
 			case "$answer" in
 			[yY])	for f in $dist_list_files; do
 					if [ -f "${DISTDIR}${f}" ]; then
@@ -2756,7 +2763,7 @@ if [ -e "$pdb/$upg_port/+IGNOREME" ]; then
 				dep_of_deps=$(( $dep_of_deps - 1 ))
 				if [ -n "$CONFIG_ONLY" ]; then
 					num_of_deps=$(( $num_of_deps - 1 ))
-					build_l="${build_l%\t*}"
+					build_l="${build_l%\\t*}"
 				fi
 			fi
 			# Outdent
