@@ -8,6 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.6.0.20100605
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -19,7 +20,7 @@ MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.6
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.3:${PORTSDIR}/math/mpfr \
+		mpfr.4:${PORTSDIR}/math/mpfr \
 		mpc.2:${PORTSDIR}/math/mpc
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils

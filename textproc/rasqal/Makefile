@@ -7,6 +7,7 @@
 #
 PORTNAME=	rasqal
 PORTVERSION=	0.9.19
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
 		http://librdf.org/dist/source/
@@ -43,7 +44,7 @@ OPTIONS+=	GMP   "Use Gnu MP library for decimals" off
 # very verbose in explaining our options.
 .if defined(WITH_MPFR)
 CONFIGURE_ARGS+=	--with-decimal=mpfr
-LIB_DEPENDS+=	mpfr.3:${PORTSDIR}/math/mpfr
+LIB_DEPENDS+=	mpfr.4:${PORTSDIR}/math/mpfr
 .elif defined(WITH_GMP)
 CONFIGURE_ARGS+=	--with-decimal=gmp
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp

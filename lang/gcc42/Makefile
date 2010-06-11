@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.5.20090325
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -20,7 +20,7 @@ MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.2
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.3:${PORTSDIR}/math/mpfr
+		mpfr.4:${PORTSDIR}/math/mpfr
 
 VERSIONSTRING=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}

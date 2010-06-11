@@ -7,7 +7,7 @@
 
 PORTNAME?=	gcc
 PORTVERSION=	4.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC:S,$,:gcc,} \
 		${MASTER_SITE_SOURCEWARE:S,$,:newlib,}
@@ -24,7 +24,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	GNU gcc for cross-target development
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.3:${PORTSDIR}/math/mpfr
+		mpfr.4:${PORTSDIR}/math/mpfr
 
 #
 # Temporary hack to deal with dependencies during package builds for

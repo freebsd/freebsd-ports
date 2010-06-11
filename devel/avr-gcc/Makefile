@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
@@ -23,7 +23,7 @@ COMMENT=	FSF GCC 4.x for Atmel AVR 8-bit RISC cross-development
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils
-LIB_DEPENDS=	mpfr.3:${PORTSDIR}/math/mpfr \
+LIB_DEPENDS=	mpfr.4:${PORTSDIR}/math/mpfr \
 		gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils

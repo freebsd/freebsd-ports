@@ -7,7 +7,7 @@
 
 PORTNAME=	sdpa-gmp
 PORTVERSION=	7.1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${SRCFILE} ${MANUALFILE}
@@ -27,7 +27,7 @@ MANUALFILE=	sdpa.${MANUALVER}.manual.${MANDATE}.pdf
 GNU_CONFIGURE=	yes
 LIB_DEPENDS+=	spooles:${PORTSDIR}/math/spooles \
 		gmp.10:${PORTSDIR}/math/gmp \
-		mpfr.3:${PORTSDIR}/math/mpfr
+		mpfr.4:${PORTSDIR}/math/mpfr
 
 CONFIGURE_ARGS+= --with-system-spooles
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/spooles" LDFLAGS="-L${LOCALBASE}/lib"
