@@ -27,7 +27,7 @@ PORTDOCS=	CHANGES README TODO
 post-patch:
 	@${GREP} -lR "<stdint\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<stdint\.h>|<inttypes.h>|g'
-	@${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e 's|-m32||' -e \
 		's|-L. -lreplex|libreplex.a $${LIBS}|g' ${WRKSRC}/Makefile
 
 do-install:
