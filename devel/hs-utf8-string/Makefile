@@ -9,7 +9,7 @@ PORTNAME=	utf8-string
 PORTVERSION=	0.3.6
 CATEGORIES=	devel haskell
 
-MAINTAINER=	wahjava@gmail.com
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Support for reading/writing UTF8 strings for Haskell programs
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
