@@ -7,7 +7,7 @@
 
 PORTNAME=	antivirus
 PORTVERSION=	3.30
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
@@ -43,11 +43,14 @@ do-configure:
 		${CONFIGURE_WRKSRC}/antivirus.c
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/antivirus.conf \
 		> ${WRKSRC}/antivirus.conf
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav.conf \
+		> ${WRKSRC}/clamav.conf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/antivirus \
 		${PREFIX}/libexec/antivirus
 	${INSTALL_DATA} ${WRKSRC}/antivirus.conf ${PREFIX}/etc/antivirus.conf-dist
+	${INSTALL_DATA} ${WRKSRC}/clamav.conf ${PREFIX}/etc/antivirus.conf-clamav
 	${MKDIR} ${ANTIVIRUS_DIR}/spool ${ANTIVIRUS_DIR}/run ${ANTIVIRUS_DIR}/quarantine
 	${CHOWN} -R nobody:nobody ${ANTIVIRUS_DIR}/
 	@${ECHO_MSG} "Add to your *.mc configfile:"
