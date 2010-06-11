@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libssh
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.4
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh.org/files/ \
 		LOCAL/avl
