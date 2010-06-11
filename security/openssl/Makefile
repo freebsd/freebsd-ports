@@ -1120,18 +1120,18 @@ BROKEN=		Patches do not merge, please change options
 .endif
 .endif
 # order of PATCHFILES is important
-.if defined(WITH_DTLS_BUGS) || make(makesum)
+.if defined(WITH_DTLS_BUGS) || make(makesum) || defined(FETCH_ALL)
 .endif
-.if defined(WITH_DTLS_RENEGOTIATION) || make(makesum)
+.if defined(WITH_DTLS_RENEGOTIATION) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=    abbreviated-renegotiation.patch
 .endif
-.if defined(WITH_TLS_EXTRACTOR) || make(makesum)
+.if defined(WITH_TLS_EXTRACTOR) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=	tls-extractor.patch
 .endif
-.if defined(WITH_SCTP) || make(makesum)
+.if defined(WITH_SCTP) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=	dtls-sctp-17.patch
 .endif
-.if defined(WITH_DTLS_HEARTBEAT) || make(makesum)
+.if defined(WITH_DTLS_HEARTBEAT) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=    dtls-heartbeats.patch
 .endif
 
