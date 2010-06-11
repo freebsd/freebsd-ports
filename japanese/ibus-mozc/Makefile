@@ -7,7 +7,7 @@
 
 PORTNAME=	ibus-mozc
 PORTVERSION=	r28
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 #MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -20,7 +20,7 @@ MAINTAINER=	daichi@freebsd.org
 COMMENT=	Mozc engine for IBus
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS=	ibus.1:${PORTSDIR}/textproc/ibus \
+LIB_DEPENDS=	ibus.2:${PORTSDIR}/textproc/ibus \
 		curl.6:${PORTSDIR}/ftp/curl \
 		protobuf.6:${PORTSDIR}/devel/protobuf \
 		gtest.0:${PORTSDIR}/devel/googletest
