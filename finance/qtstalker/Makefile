@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	finance kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	corky1951@comcast.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commodity and stock market charting and technical analysis
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
