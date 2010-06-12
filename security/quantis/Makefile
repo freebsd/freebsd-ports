@@ -97,12 +97,12 @@ post-patch:
 		${WRKSRC}/CMake/CompilersFlags.cmake
 
 post-install:
-.if !defined(WITHOUT_PORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../*.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../User_Manual.pdf ${DOCSDIR}
 .endif
-.if !defined(WITHOUT_PORTEXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/../Samples; ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .if defined(WITH_USB) && ${OSVERSION} >= 801000
