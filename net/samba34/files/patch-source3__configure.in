@@ -1,5 +1,5 @@
---- ./source3/configure.in.orig	2010-01-18 11:38:09.000000000 +0000
-+++ ./source3/configure.in	2010-02-06 12:37:49.000000000 +0000
+--- ./source3/configure.in.orig	2010-05-10 14:58:53.000000000 +0200
++++ ./source3/configure.in	2010-06-10 17:50:46.000000000 +0200
 @@ -210,16 +210,6 @@
         fi
  fi
@@ -42,7 +42,7 @@
  			PRINT_LIBS=$ac_save_PRINT_LIBS
  		fi
  
-@@ -1747,9 +1737,6 @@
+@@ -1749,9 +1739,6 @@
  AC_MSG_CHECKING([PICFLAG])
  AC_MSG_RESULT([$PICFLAG])
  
@@ -52,7 +52,7 @@
  AC_CACHE_CHECK([whether building shared libraries actually works],
                 [ac_cv_shlib_works],[
     # try building a trivial shared library
-@@ -3959,10 +3946,10 @@
+@@ -3961,10 +3948,10 @@
  
    ################################################################
    # first test for Active Directory support being enabled
@@ -67,7 +67,7 @@
    ##################################################################
    # then test for uuid.h (necessary to generate unique DNS keynames
    # (uuid.h is required for this test)
-@@ -4179,15 +4166,51 @@
+@@ -4181,15 +4168,51 @@
  		x"$ac_cv_header_pam_pam_modules_h" = x"no" ; then
  		if test x"${try_pam}" = x"yes";then
  			AC_MSG_ERROR([--with-pam=yes but pam_modules.h not found])
@@ -123,7 +123,7 @@
  
  		if test x"$create_pam_modules" = x"yes"; then
  			AC_DEFINE(WITH_PAM_MODULES,1,[Whether to include PAM MODULES support])
-@@ -4197,7 +4220,7 @@
+@@ -4199,7 +4222,7 @@
  			AC_CHECK_HEADERS(pam/pam_ext.h pam/_pam_macros.h)
  			AC_CHECK_FUNC_EXT(pam_vsyslog,$PAM_LIBS)
  		else
@@ -132,15 +132,25 @@
  		fi
  	fi
  	AC_MSG_CHECKING(whether to use PAM support)
-@@ -5794,6 +5817,7 @@
+@@ -5254,7 +5277,8 @@
+         esac
+ fi # with_acl_support
+ 
+-
++# check for NFSv4 acl
++AC_CHECK_LIB(sunacl, acl, [ACL_LIBS="$ACL_LIBS -lsunacl"])
+ 
+ #################################################
+ # check for AIO support
+@@ -5796,6 +5820,7 @@
  		NSSSONAMEVERSIONSUFFIX=".1"
  		WINBIND_NSS_EXTRA_OBJS="../nsswitch/winbind_nss_freebsd.o \
  		    ../nsswitch/winbind_nss_linux.o"
-+		WINBIND_WINS_NSS_EXTRA_OBJS="nsswitch/wins_freebsd.o"
++		WINBIND_WINS_NSS_EXTRA_OBJS="../nsswitch/wins_freebsd.o"
  		WINBIND_NSS="../nsswitch/nss_winbind.$SHLIBEXT"
  		WINBIND_WINS_NSS="../nsswitch/nss_wins.$SHLIBEXT"
  		;;
-@@ -5886,17 +5910,10 @@
+@@ -5888,17 +5913,10 @@
  	AC_DEFINE(WITH_WINBIND,1,[Whether to link to wbclient])
  	EXTRA_BIN_PROGS="$EXTRA_BIN_PROGS bin/wbinfo\$(EXEEXT)"
  else
@@ -158,7 +168,7 @@
  		## Only worry about libwbclient if we have shared
  		# library support
  		LIBWBCLIENT_SHARED=$LIBWBCLIENT_SHARED_TARGET
-@@ -5918,26 +5935,34 @@
+@@ -5920,26 +5938,34 @@
  
  	EXTRA_BIN_PROGS="$EXTRA_BIN_PROGS bin/wbinfo\$(EXEEXT)"
  	EXTRA_SBIN_PROGS="$EXTRA_SBIN_PROGS bin/winbindd\$(EXEEXT)"
@@ -197,7 +207,7 @@
  
  AC_SUBST(WINBIND_KRB5_LOCATOR)
  
-@@ -6129,13 +6154,21 @@
+@@ -6131,13 +6157,21 @@
  # Start
  AC_CHECK_FUNC(getmntent)
  
@@ -220,10 +230,20 @@
  		int main(void)
  		{
  			struct statfs fsd;
-@@ -6447,6 +6480,16 @@
+@@ -6449,6 +6483,26 @@
  	CFLAGS="-I../lib/zlib $CFLAGS"
  ])
  
++AC_ARG_ENABLE(dmalloc, [AS_HELP_STRING([--enable-dmalloc], [Enable heap debugging [default=no]])])
++
++if test "x$enable_dmalloc" = xyes
++then
++	AC_DEFINE(ENABLE_DMALLOC, 1, [Define to turn on dmalloc debugging])
++	AC_DEFINE(DMALLOC_FUNC_CHECK, 1,
++                  [Define to check invariants around some common functions])
++	LIBS="$LIBS -ldmalloc"	
++fi
++
 +AC_ARG_ENABLE(dmalloc, [AS_HELP_STRING([--enable-dmalloc], [Enable heap debugging [default=no]])])
 +
 +if test "x$enable_dmalloc" = xyes

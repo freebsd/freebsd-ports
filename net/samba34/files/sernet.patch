@@ -1,12 +1,8 @@
 samba-3.4-check-bad-password-count.patch
-samba-3.4-dont-search-for-empty-values.patch
 samba-3.4-net-trustdom-list-tidyup.patch
-samba-3.4-search-accpolicies-in-sambaDomain.patch
 samba3-3.4-honor-all-loopback-ips.patch
-samba3-3.4-skip-useless-ldap-queries-in-is_trusted_domain.patch
-samba3-3.4.3-make-idmap-cache-persistent-ldapsam-trusted.patch
-samba3-3.4.3-shortcut-uid_to_sid-when-ldapsam-trusted-yes.patch
 samba3-3.4.4-fix-account-unlock.patch
+samba3-3.4.6-nmbd-bind-explicit.patch
 
  source3/auth/auth_sam.c      |  159 +++++++++++++++++++++++++++++++++---------
  source3/include/proto.h      |    3 +
@@ -567,25 +563,6 @@ index 61c3afb..046cc2c 100644
  	   based on policy.  jmcd */
  	if ((can_change_time != 0) && (time(NULL) < can_change_time)) {
  		DEBUG(1, ("user %s cannot change password now, must "
-commit 70063522065ab3e5a21fb11db0097b808aa11100
-Author: Björn Jacke <bj@sernet.de>
-Date:   Sat Oct 31 00:45:09 2009 +0100
-
-    s3:ldap: don't search when no values where found
-
-diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
-index 54cb03d..87df75e 100644
---- a/source3/passdb/pdb_ldap.c
-+++ b/source3/passdb/pdb_ldap.c
-@@ -2683,7 +2683,7 @@ static NTSTATUS ldapsam_enum_group_members(struct pdb_methods *methods,
- 
- 	values = ldap_get_values(conn->ldap_struct, entry, "memberUid");
- 
--	if (values) {
-+	if ((values != NULL) && (values[0] != NULL)) {
- 
- 		filter = talloc_asprintf(mem_ctx, "(&(objectClass=%s)(|", LDAP_OBJ_SAMBASAMACCOUNT);
- 		if (filter == NULL) {
 --- a/source3/utils/net_rpc.c	2009-10-28 11:37:35.336126630 +0100
 +++ b/source3/utils/net_rpc.c	2009-10-28 14:18:50.555361309 +0100
 @@ -5709,7 +5709,9 @@
@@ -616,38 +593,6 @@ index 54cb03d..87df75e 100644
  			};
  		};
  
-commit 72cec4a03145e11d299a5b679bb4a7ed6818032b
-Author: Björn Jacke <bj@sernet.de>
-Date:   Fri Oct 30 21:50:41 2009 +0100
-
-    ѕ3:ldap: search for account policies in objectclass sambaDomain, not *
-
-diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
-index c464a88..54cb03d 100644
---- a/source3/passdb/pdb_ldap.c
-+++ b/source3/passdb/pdb_ldap.c
-@@ -3864,6 +3864,7 @@ static NTSTATUS ldapsam_get_account_policy_from_ldap(struct pdb_methods *methods
- 	int count;
- 	int rc;
- 	char **vals = NULL;
-+	char *filter;
- 	const char *policy_attr = NULL;
- 
- 	struct ldapsam_privates *ldap_state =
-@@ -3887,8 +3888,12 @@ static NTSTATUS ldapsam_get_account_policy_from_ldap(struct pdb_methods *methods
- 	attrs[0] = policy_attr;
- 	attrs[1] = NULL;
- 
-+	filter = talloc_asprintf(NULL, "(objectClass=%s)", LDAP_OBJ_DOMINFO);
-+	if (filter == NULL) {
-+		return NT_STATUS_NO_MEMORY;
-+	}
- 	rc = smbldap_search(ldap_state->smbldap_state, ldap_state->domain_dn,
--			    LDAP_SCOPE_BASE, "(objectclass=*)", attrs, 0,
-+			    LDAP_SCOPE_BASE, filter, attrs, 0,
- 			    &result);
- 
- 	if (rc != LDAP_SUCCESS) {
 commit b6afe7ef236a454d8a6abf104b8846f817378f73
 Author: Björn Jacke <bj@sernet.de>
 Date:   Thu Oct 15 02:02:30 2009 +0200
@@ -680,275 +625,6 @@ index 0ce495e..0511a28 100644
  }
  
  /**
-From 144c23893ec580eed1a38b2fd577b4bd4ebf491d Mon Sep 17 00:00:00 2001
-From: Michael Adam <obnox@samba.org>
-Date: Sat, 14 Nov 2009 01:12:22 +0100
-Subject: [PATCH] s3:is_trusted_domain: shortcut if domain name is NULL or empty
-
-This saves some roundtrips to LDAP in an ldapsm setup.
-
-Michael
----
- source3/auth/auth_util.c |    4 ++++
- 1 files changed, 4 insertions(+), 0 deletions(-)
-
-diff --git a/source3/auth/auth_util.c b/source3/auth/auth_util.c
-index 1d25e22..512cae0 100644
---- a/source3/auth/auth_util.c
-+++ b/source3/auth/auth_util.c
-@@ -2181,6 +2181,10 @@ bool is_trusted_domain(const char* dom_name)
-	if ( lp_server_role() == ROLE_STANDALONE )
-		return False;
-
-+	if (dom_name == NULL || dom_name[0] == '\0') {
-+		return false;
-+	}
-+
-	/* if we are a DC, then check for a direct trust relationships */
-
-	if ( IS_DC ) {
---
-1.6.0.4
-
-
-From 2e3d9abeafebffa6ff1c7b3de80525cd5f6deb49 Mon Sep 17 00:00:00 2001
-From: Michael Adam <obnox@samba.org>
-Date: Sat, 14 Nov 2009 01:21:42 +0100
-Subject: [PATCH] s3:is_trusted_domain: shortcut if domain name == global_sam_name
-
-A domain can't have a trust with itself.
-This saves some roundtrips to the ldap server for ldapsam.
-
-Michael
----
- source3/auth/auth_util.c |    4 ++++
- 1 files changed, 4 insertions(+), 0 deletions(-)
-
-diff --git a/source3/auth/auth_util.c b/source3/auth/auth_util.c
-index 512cae0..118f41c 100644
---- a/source3/auth/auth_util.c
-+++ b/source3/auth/auth_util.c
-@@ -2185,6 +2185,10 @@ bool is_trusted_domain(const char* dom_name)
-		return false;
-	}
-
-+	if (strequal(dom_name, get_global_sam_name())) {
-+		return false;
-+	}
-+
-	/* if we are a DC, then check for a direct trust relationships */
-
-	if ( IS_DC ) {
---
-1.6.0.4
-
-From 1f88d2b729a273b0d10e3b57695037dede290baf Mon Sep 17 00:00:00 2001
-From: Michael Adam <obnox@samba.org>
-Date: Fri, 13 Nov 2009 15:51:33 +0100
-Subject: [PATCH] s3:smbd: make idmap cache persistent for "ldapsam:trusted".
-
-This stores the mappings found in the idmap cache (which lives
-inside gencache). This cache is already read in sid_to_Xid()
-and Xid_to_sid() for ldapsam:trusted, this fills the opposite
-direction, massively reducing the number of ldap roundtrips
-across smbd restarts.
-
-Michael
----
- source3/passdb/pdb_ldap.c |    4 ++++
- 1 files changed, 4 insertions(+), 0 deletions(-)
-
-diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
-index d4a2fbe..7fda72e 100644
---- a/source3/passdb/pdb_ldap.c
-+++ b/source3/passdb/pdb_ldap.c
-@@ -1038,6 +1038,7 @@ static bool init_sam_from_ldap(struct ldapsam_privates *ldap_state,
- 			/* We've got a uid, feed the cache */
- 			uid_t uid = strtoul(temp, NULL, 10);
- 			store_uid_sid_cache(pdb_get_user_sid(sampass), uid);
-+			idmap_cache_set_sid2uid(pdb_get_user_sid(sampass), uid);
- 		}
- 	}
- 
-@@ -2449,6 +2450,7 @@ for gidNumber(%lu)\n",(unsigned long)map->gid));
- 
- 	if (lp_parm_bool(-1, "ldapsam", "trusted", false)) {
- 		store_gid_sid_cache(&map->sid, map->gid);
-+		idmap_cache_set_sid2gid(&map->sid, map->gid);
- 	}
- 
- 	TALLOC_FREE(ctx);
-@@ -4967,6 +4969,7 @@ static bool ldapsam_sid_to_id(struct pdb_methods *methods,
- 
- 		id->gid = strtoul(gid_str, NULL, 10);
- 		*type = (enum lsa_SidType)strtoul(value, NULL, 10);
-+		idmap_cache_set_sid2gid(sid, id->gid);
- 		ret = True;
- 		goto done;
- 	}
-@@ -4983,6 +4986,7 @@ static bool ldapsam_sid_to_id(struct pdb_methods *methods,
- 
- 	id->uid = strtoul(value, NULL, 10);
- 	*type = SID_NAME_USER;
-+	idmap_cache_set_sid2uid(sid, id->uid);
- 
- 	ret = True;
-  done:
--- 
-1.6.0.4
-
-
-From a582d52c6180d334d42f4e3d27a455e5fce53d53 Mon Sep 17 00:00:00 2001
-From: Michael Adam <obnox@samba.org>
-Date: Fri, 13 Nov 2009 16:16:50 +0100
-Subject: [PATCH] s3:smbd: also fill the memcache with sid<->id mappings in ldapsam_sid_to_id()
-
-not only the persistent idmap cache.
-
-Michael
----
- source3/passdb/pdb_ldap.c |    2 ++
- 1 files changed, 2 insertions(+), 0 deletions(-)
-
-diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
-index 7fda72e..cce2cf1 100644
---- a/source3/passdb/pdb_ldap.c
-+++ b/source3/passdb/pdb_ldap.c
-@@ -4969,6 +4969,7 @@ static bool ldapsam_sid_to_id(struct pdb_methods *methods,
- 
- 		id->gid = strtoul(gid_str, NULL, 10);
- 		*type = (enum lsa_SidType)strtoul(value, NULL, 10);
-+		store_gid_sid_cache(sid, id->gid);
- 		idmap_cache_set_sid2gid(sid, id->gid);
- 		ret = True;
- 		goto done;
-@@ -4986,6 +4987,7 @@ static bool ldapsam_sid_to_id(struct pdb_methods *methods,
- 
- 	id->uid = strtoul(value, NULL, 10);
- 	*type = SID_NAME_USER;
-+	store_uid_sid_cache(sid, id->uid);
- 	idmap_cache_set_sid2uid(sid, id->uid);
- 
- 	ret = True;
--- 
-1.6.0.4
-
-From d90798e8fa1f56a60cf0260dd8679bc11c41603b Mon Sep 17 00:00:00 2001
-From: Michael Adam <obnox@samba.org>
-Date: Mon, 16 Nov 2009 11:37:18 +0100
-Subject: [PATCH] s3: shortcut uid_to_sid when "ldapsam:trusted = yes"
-
-The normal uid_to_sid behaviour is to call sys_getpwuid()
-to get the name for the given uid and then call the
-getsampwnam passdb method for the resulting name.
-
-In the ldapsam:trusted case we can reduce the uid_to_sid
-operation to one simple search for the uidNumber attribute
-and only get the sambaSID attribute from the correspoinding
-LDAP object. This reduces the number of ldap roundtrips
-for this operation.
-
-Michael
----
- source3/passdb/pdb_ldap.c |   75 +++++++++++++++++++++++++++++++++++++++++++++
- 1 files changed, 75 insertions(+), 0 deletions(-)
-
-diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
-index cce2cf1..401bf95 100644
---- a/source3/passdb/pdb_ldap.c
-+++ b/source3/passdb/pdb_ldap.c
-@@ -4996,6 +4996,80 @@ static bool ldapsam_sid_to_id(struct pdb_methods *methods,
-	return ret;
- }
-
-+/**
-+ * Find the SID for a uid.
-+ * This is shortcut is only used if ldapsam:trusted is set to true.
-+ */
-+static bool ldapsam_uid_to_sid(struct pdb_methods *methods, uid_t uid,
-+			       DOM_SID *sid)
-+{
-+	struct ldapsam_privates *priv =
-+		(struct ldapsam_privates *)methods->private_data;
-+	char *filter;
-+	const char *attrs[] = { "sambaSID", NULL };
-+	LDAPMessage *result = NULL;
-+	LDAPMessage *entry = NULL;
-+	bool ret = false;
-+	char *user_sid_string;
-+	DOM_SID *user_sid;
-+	int rc;
-+	TALLOC_CTX *tmp_ctx = talloc_stackframe();
-+
-+	filter = talloc_asprintf(tmp_ctx,
-+				 "(&(uidNumber=%u)"
-+				 "(objectClass=%s)"
-+				 "(objectClass=%s))",
-+				 (unsigned int)uid,
-+				 LDAP_OBJ_POSIXACCOUNT,
-+				 LDAP_OBJ_SAMBASAMACCOUNT);
-+	if (filter == NULL) {
-+		DEBUG(3, ("talloc_asprintf failed\n"));
-+		goto done;
-+	}
-+
-+	rc = smbldap_search_suffix(priv->smbldap_state, filter, attrs, &result);
-+	if (rc != LDAP_SUCCESS) {
-+		goto done;
-+	}
-+	talloc_autofree_ldapmsg(tmp_ctx, result);
-+
-+	if (ldap_count_entries(priv2ld(priv), result) != 1) {
-+		DEBUG(3, ("ERROR: Got %d entries for uid %u, expected one\n",
-+			   ldap_count_entries(priv2ld(priv), result),
-+			   (unsigned int)uid));
-+		goto done;
-+	}
-+
-+	entry = ldap_first_entry(priv2ld(priv), result);
-+
-+	user_sid_string = smbldap_talloc_single_attribute(priv2ld(priv), entry,
-+							  "sambaSID", tmp_ctx);
-+	if (user_sid_string == NULL) {
-+		DEBUG(1, ("Could not find sambaSID in object '%s'\n",
-+			  smbldap_talloc_dn(tmp_ctx, priv2ld(priv), entry)));
-+		goto done;
-+	}
-+
-+	user_sid = string_sid_talloc(tmp_ctx, user_sid_string);
-+	if (user_sid == NULL) {
-+		DEBUG(3, ("Error calling sid_string_talloc for sid '%s'\n",
-+			  user_sid_string));
-+		goto done;
-+	}
-+
-+	sid_copy(sid, user_sid);
-+
-+	store_uid_sid_cache(sid, uid);
-+	idmap_cache_set_sid2uid(sid, uid);
-+
-+	ret = true;
-+
-+ done:
-+	TALLOC_FREE(tmp_ctx);
-+	return ret;
-+}
-+
-+
- /*
-  * The following functions is called only if
-  * ldapsam:trusted and ldapsam:editposix are
-@@ -6344,6 +6418,7 @@ NTSTATUS pdb_init_ldapsam(struct pdb_methods **pdb_method, const char *location)
-			ldapsam_enum_group_memberships;
-		(*pdb_method)->lookup_rids = ldapsam_lookup_rids;
-		(*pdb_method)->sid_to_id = ldapsam_sid_to_id;
-+		(*pdb_method)->uid_to_sid = ldapsam_uid_to_sid;
-
-		if (lp_parm_bool(-1, "ldapsam", "editposix", False)) {
-			(*pdb_method)->create_user = ldapsam_create_user;
---
-1.6.0.4
-
 From 179e63ae9aa93984ea3d237c1039460c5acf01a5 Mon Sep 17 00:00:00 2001
 From: Michael Adam <obnox@samba.org>
 Date: Thu, 14 Jan 2010 14:24:35 +0100
@@ -1022,6 +698,866 @@ index 1dd8fc9..01b2517 100644
  	    (pdb_get_bad_password_count(sampass) > 0)){
  		pdb_set_bad_password_count(sampass, 0, PDB_CHANGED);
  		pdb_set_bad_password_time(sampass, 0, PDB_CHANGED);
+-- 
+1.6.3.3
+
+From 2ad43c8c290ebb070d793fc24925f7c1ceb8a438 Mon Sep 17 00:00:00 2001
+From: Stefan Metzmacher <metze@samba.org>
+Date: Thu, 28 Jan 2010 11:04:05 +0100
+Subject: [PATCH 1/4] s3:nmbd: also listen explicit on the subnet broadcast addresses
+
+And send replies always via the unicast address of the subnet.
+
+This behavior is off by default (as before)
+and can be enabled with "nmbd:bind explicit broadcast = yes".
+
+metze
+(cherry picked from commit 30a1bc365071befd07e68e24ca4fa3843159ab13)
+---
+ source3/include/nameserv.h   |    5 +-
+ source3/libsmb/namequery.c   |    6 +-
+ source3/libsmb/nmblib.c      |    9 ++-
+ source3/nmbd/nmbd.c          |    5 +-
+ source3/nmbd/nmbd_packets.c  |  189 ++++++++++++++++++++++++++++--------------
+ source3/nmbd/nmbd_subnetdb.c |  123 ++++++++++++++++++----------
+ 6 files changed, 222 insertions(+), 115 deletions(-)
+
+diff --git a/source3/include/nameserv.h b/source3/include/nameserv.h
+index 496d87e..53ffd6f 100644
+--- a/source3/include/nameserv.h
++++ b/source3/include/nameserv.h
+@@ -434,7 +434,9 @@ struct subnet_record {
+ 	struct in_addr mask_ip;
+ 	struct in_addr myip;
+ 	int nmb_sock;               /* socket to listen for unicast 137. */
++	int nmb_bcast;              /* socket to listen for broadcast 137. */
+ 	int dgram_sock;             /* socket to listen for unicast 138. */
++	int dgram_bcast;            /* socket to listen for broadcast 138. */
+ };
+ 
+ /* A resource record. */
+@@ -530,7 +532,8 @@ struct packet_struct
+ 	bool locked;
+ 	struct in_addr ip;
+ 	int port;
+-	int fd;
++	int recv_fd;
++	int send_fd;
+ 	time_t timestamp;
+ 	enum packet_type packet_type;
+ 	union {
+diff --git a/source3/libsmb/namequery.c b/source3/libsmb/namequery.c
+index 50fb9f1..8f8d891 100644
+--- a/source3/libsmb/namequery.c
++++ b/source3/libsmb/namequery.c
+@@ -301,7 +301,8 @@ NODE_STATUS_STRUCT *node_status_query(int fd,
+ 
+ 	p.ip = ((const struct sockaddr_in *)to_ss)->sin_addr;
+ 	p.port = NMB_PORT;
+-	p.fd = fd;
++	p.recv_fd = -1;
++	p.send_fd = fd;
+ 	p.timestamp = time(NULL);
+ 	p.packet_type = NMB_PACKET;
+ 
+@@ -678,7 +679,8 @@ struct sockaddr_storage *name_query(int fd,
+ 
+ 	p.ip = ((struct sockaddr_in *)to_ss)->sin_addr;
+ 	p.port = NMB_PORT;
+-	p.fd = fd;
++	p.recv_fd = -1;
++	p.send_fd = fd;
+ 	p.timestamp = time(NULL);
+ 	p.packet_type = NMB_PACKET;
+ 
+diff --git a/source3/libsmb/nmblib.c b/source3/libsmb/nmblib.c
+index 5f3eda4..1a21066 100644
+--- a/source3/libsmb/nmblib.c
++++ b/source3/libsmb/nmblib.c
+@@ -601,6 +601,8 @@ static struct packet_struct *copy_nmb_packet(struct packet_struct *packet)
+ 
+ 	/* Ensure this copy is not locked. */
+ 	pkt_copy->locked = False;
++	pkt_copy->recv_fd = -1;
++	pkt_copy->send_fd = -1;
+ 
+ 	/* Ensure this copy has no resource records. */
+ 	nmb = &packet->packet.nmb;
+@@ -666,6 +668,8 @@ static struct packet_struct *copy_dgram_packet(struct packet_struct *packet)
+ 
+ 	/* Ensure this copy is not locked. */
+ 	pkt_copy->locked = False;
++	pkt_copy->recv_fd = -1;
++	pkt_copy->send_fd = -1;
+ 
+ 	/* There are no additional pointers in a dgram packet,
+ 		we are finished. */
+@@ -791,7 +795,8 @@ struct packet_struct *read_packet(int fd,enum packet_type packet_type)
+ 	if (!packet)
+ 		return NULL;
+ 
+-	packet->fd = fd;
++	packet->recv_fd = fd;
++	packet->send_fd = -1;
+ 
+ 	DEBUG(5,("Received a packet of len %d from (%s) port %d\n",
+ 		 length, inet_ntoa(packet->ip), packet->port ) );
+@@ -1075,7 +1080,7 @@ bool send_packet(struct packet_struct *p)
+ 	if (!len)
+ 		return(False);
+ 
+-	return(send_udp(p->fd,buf,len,p->ip,p->port));
++	return(send_udp(p->send_fd,buf,len,p->ip,p->port));
+ }
+ 
+ /****************************************************************************
+diff --git a/source3/nmbd/nmbd.c b/source3/nmbd/nmbd.c
+index f31e7b1..418771a 100644
+--- a/source3/nmbd/nmbd.c
++++ b/source3/nmbd/nmbd.c
+@@ -441,13 +441,14 @@ static void msg_nmbd_send_packet(struct messaging_context *msg,
+ 	local_ip = &((const struct sockaddr_in *)pss)->sin_addr;
+ 	subrec = FIRST_SUBNET;
+ 
+-	p->fd = (p->packet_type == NMB_PACKET) ?
++	p->recv_fd = -1;
++	p->send_fd = (p->packet_type == NMB_PACKET) ?
+ 		subrec->nmb_sock : subrec->dgram_sock;
+ 
+ 	for (subrec = FIRST_SUBNET; subrec != NULL;
+ 	     subrec = NEXT_SUBNET_EXCLUDING_UNICAST(subrec)) {
+ 		if (ip_equal_v4(*local_ip, subrec->myip)) {
+-			p->fd = (p->packet_type == NMB_PACKET) ?
++			p->send_fd = (p->packet_type == NMB_PACKET) ?
+ 				subrec->nmb_sock : subrec->dgram_sock;
+ 			break;
+ 		}
+diff --git a/source3/nmbd/nmbd_packets.c b/source3/nmbd/nmbd_packets.c
+index f69845b..51f4e32 100644
+--- a/source3/nmbd/nmbd_packets.c
++++ b/source3/nmbd/nmbd_packets.c
+@@ -207,7 +207,8 @@ static struct packet_struct *create_and_init_netbios_packet(struct nmb_name *nmb
+ 
+ 	packet->ip = to_ip;
+ 	packet->port = NMB_PORT;
+-	packet->fd = ClientNMB;
++	packet->recv_fd = -1;
++	packet->send_fd = ClientNMB;
+ 	packet->timestamp = time(NULL);
+ 	packet->packet_type = NMB_PACKET;
+ 	packet->locked = False;
+@@ -258,7 +259,8 @@ static bool create_and_init_additional_record(struct packet_struct *packet,
+ 	   our standard refresh cycle for that name which copes nicely
+ 	   with disconnected networks.
+ 	*/
+-	packet->fd = find_subnet_fd_for_address(*register_ip);
++	packet->recv_fd = -1;
++	packet->send_fd = find_subnet_fd_for_address(*register_ip);
+ 
+ 	return True;
+ }
+@@ -743,7 +745,7 @@ struct response_record *queue_query_name( struct subnet_record *subrec,
+ 			}
+ 
+ 			DEBUG(10,("queue_query_name: using source IP %s\n",inet_ntoa(*ifip)));
+-				p->fd = find_subnet_fd_for_address( *ifip );
++				p->send_fd = find_subnet_fd_for_address( *ifip );
+ 				break;
+ 		}
+ 	}
+@@ -979,9 +981,14 @@ for id %hu\n", packet_type, nmb_namestr(&orig_nmb->question.question_name),
+ 	}
+ 
+ 	packet.packet_type = NMB_PACKET;
++	packet.recv_fd = -1;
+ 	/* Ensure we send out on the same fd that the original
+ 		packet came in on to give the correct source IP address. */
+-	packet.fd = orig_packet->fd;
++	if (orig_packet->send_fd != -1) {
++		packet.send_fd = orig_packet->send_fd;
++	} else {
++		packet.send_fd = orig_packet->recv_fd;
++	}
+ 	packet.timestamp = time(NULL);
+ 
+ 	debug_nmb_packet(&packet);
+@@ -1679,50 +1686,74 @@ static bool create_listen_fdset(fd_set **ppset, int **psock_array, int *listen_n
+ 		return True;
+ 	}
+ 
++	/* The Client* sockets */
++	count++;
++
+ 	/* Check that we can add all the fd's we need. */
+ 	for (subrec = FIRST_SUBNET; subrec; subrec = NEXT_SUBNET_EXCLUDING_UNICAST(subrec))
+ 		count++;
+ 
+-	if((count*2) + 2 > FD_SETSIZE) {
++	/* each interface gets 4 sockets */
++	count *= 4;
++
++	if(count > FD_SETSIZE) {
+ 		DEBUG(0,("create_listen_fdset: Too many file descriptors needed (%d). We can \
+-only use %d.\n", (count*2) + 2, FD_SETSIZE));
++only use %d.\n", count, FD_SETSIZE));
+ 		SAFE_FREE(pset);
+ 		return True;
+ 	}
+ 
+-	if((sock_array = SMB_MALLOC_ARRAY(int, (count*2) + 2)) == NULL) {
+-		DEBUG(0,("create_listen_fdset: malloc fail for socket array.\n"));
++	if((sock_array = SMB_MALLOC_ARRAY(int, count)) == NULL) {
++		DEBUG(0,("create_listen_fdset: malloc fail for socket array. size %d\n", count));
+ 		SAFE_FREE(pset);
+ 		return True;
+ 	}
+ 
+ 	FD_ZERO(pset);
+ 
+-	/* Add in the broadcast socket on 137. */
++	/* Add in the lp_socket_address() interface on 137. */
+ 	FD_SET(ClientNMB,pset);
+ 	sock_array[num++] = ClientNMB;
+ 	*maxfd = MAX( *maxfd, ClientNMB);
+ 
++	/* the lp_socket_address() interface has only one socket */
++	sock_array[num++] = -1;
++
+ 	/* Add in the 137 sockets on all the interfaces. */
+ 	for (subrec = FIRST_SUBNET; subrec; subrec = NEXT_SUBNET_EXCLUDING_UNICAST(subrec)) {
+ 		FD_SET(subrec->nmb_sock,pset);
+ 		sock_array[num++] = subrec->nmb_sock;
+ 		*maxfd = MAX( *maxfd, subrec->nmb_sock);
++
++		sock_array[num++] = subrec->nmb_bcast;
++		if (subrec->nmb_bcast != -1) {
++			FD_SET(subrec->nmb_bcast,pset);
++			*maxfd = MAX( *maxfd, subrec->nmb_bcast);
++		}
+ 	}
+ 
+-	/* Add in the broadcast socket on 138. */
++	/* Add in the lp_socket_address() interface on 138. */
+ 	FD_SET(ClientDGRAM,pset);
+ 	sock_array[num++] = ClientDGRAM;
+ 	*maxfd = MAX( *maxfd, ClientDGRAM);
+ 
++	/* the lp_socket_address() interface has only one socket */
++	sock_array[num++] = -1;
++
+ 	/* Add in the 138 sockets on all the interfaces. */
+ 	for (subrec = FIRST_SUBNET; subrec; subrec = NEXT_SUBNET_EXCLUDING_UNICAST(subrec)) {
+ 		FD_SET(subrec->dgram_sock,pset);
+ 		sock_array[num++] = subrec->dgram_sock;
+ 		*maxfd = MAX( *maxfd, subrec->dgram_sock);
++
++		sock_array[num++] = subrec->dgram_bcast;
++		if (subrec->dgram_bcast != -1) {
++			FD_SET(subrec->dgram_bcast,pset);
++			*maxfd = MAX( *maxfd, subrec->dgram_bcast);
++		}
+ 	}
+ 
+-	*listen_number = (count*2) + 2;
++	*listen_number = count;
+ 
+ 	SAFE_FREE(*ppset);
+ 	SAFE_FREE(*psock_array);
+@@ -1811,61 +1842,90 @@ bool listen_for_packets(bool run_election)
+ #endif
+ 
+ 	for(i = 0; i < listen_number; i++) {
++		enum packet_type packet_type;
++		struct packet_struct *packet;
++		const char *packet_name;
++		int client_fd;
++		int client_port;
++
++		if (sock_array[i] == -1) {
++			continue;
++		}
++
++		if (!FD_ISSET(sock_array[i],&r_fds)) {
++			continue;
++		}
++
+ 		if (i < (listen_number/2)) {
+-			/* Processing a 137 socket. */
+-			if (FD_ISSET(sock_array[i],&r_fds)) {
+-				struct packet_struct *packet = read_packet(sock_array[i], NMB_PACKET);
+-				if (packet) {
+-					/*
+-					 * If we got a packet on the broadcast socket and interfaces
+-					 * only is set then check it came from one of our local nets. 
+-					 */
+-					if(lp_bind_interfaces_only() && (sock_array[i] == ClientNMB) && 
+-								(!is_local_net_v4(packet->ip))) {
+-						DEBUG(7,("discarding nmb packet sent to broadcast socket from %s:%d\n",
+-							inet_ntoa(packet->ip),packet->port));	  
+-						free_packet(packet);
+-					} else if ((is_loopback_ip_v4(packet->ip) || 
+-								ismyip_v4(packet->ip)) && packet->port == global_nmb_port &&
+-								packet->packet.nmb.header.nm_flags.bcast) {
+-						DEBUG(7,("discarding own bcast packet from %s:%d\n",
+-							inet_ntoa(packet->ip),packet->port));	  
+-						free_packet(packet);
+-					} else {
+-						/* Save the file descriptor this packet came in on. */
+-						packet->fd = sock_array[i];
+-						queue_packet(packet);
+-					}
+-				}
+-			}
++			/* Port 137 */
++			packet_type = NMB_PACKET;
++			packet_name = "nmb";
++			client_fd = ClientNMB;
++			client_port = global_nmb_port;
+ 		} else {
+-			/* Processing a 138 socket. */
+-				if (FD_ISSET(sock_array[i],&r_fds)) {
+-				struct packet_struct *packet = read_packet(sock_array[i], DGRAM_PACKET);
+-				if (packet) {
+-					/*
+-					 * If we got a packet on the broadcast socket and interfaces
+-					 * only is set then check it came from one of our local nets. 
+-					 */
+-					if(lp_bind_interfaces_only() && (sock_array[i] == ClientDGRAM) && 
+-								(!is_local_net_v4(packet->ip))) {
+-						DEBUG(7,("discarding dgram packet sent to broadcast socket from %s:%d\n",
+-						inet_ntoa(packet->ip),packet->port));	  
+-						free_packet(packet);
+-					} else if ((is_loopback_ip_v4(packet->ip) || 
+-							ismyip_v4(packet->ip)) && packet->port == DGRAM_PORT) {
+-						DEBUG(7,("discarding own dgram packet from %s:%d\n",
+-							inet_ntoa(packet->ip),packet->port));	  
+-						free_packet(packet);
+-					} else {
+-						/* Save the file descriptor this packet came in on. */
+-						packet->fd = sock_array[i];
+-						queue_packet(packet);
+-					}
+-				}
++			/* Port 137 */
++			packet_type = DGRAM_PACKET;
++			packet_name = "dgram";
++			client_fd = ClientDGRAM;
++			client_port = DGRAM_PORT;
++		}
++
++		packet = read_packet(sock_array[i], packet_type);
++		if (!packet) {
++			continue;
++		}
++
++		/*
++		 * If we got a packet on the broadcast socket and interfaces
++		 * only is set then check it came from one of our local nets.
++		 */
++		if (lp_bind_interfaces_only() &&
++		    (sock_array[i] == client_fd) &&
++		    (!is_local_net_v4(packet->ip))) {
++			DEBUG(7,("discarding %s packet sent to broadcast socket from %s:%d\n",
++				packet_name, inet_ntoa(packet->ip), packet->port));
++			free_packet(packet);
++			continue;
++		}
++
++		if ((is_loopback_ip_v4(packet->ip) || ismyip_v4(packet->ip)) &&
++		    packet->port == client_port)
++		{
++			if (client_port == DGRAM_PORT) {
++				DEBUG(7,("discarding own dgram packet from %s:%d\n",
++					inet_ntoa(packet->ip),packet->port));
++				free_packet(packet);
++				continue;
+ 			}
+-		} /* end processing 138 socket. */
+-	} /* end for */
++
++			if (packet->packet.nmb.header.nm_flags.bcast) {
++				DEBUG(7,("discarding own nmb bcast packet from %s:%d\n",
++					inet_ntoa(packet->ip),packet->port));
++				free_packet(packet);
++				continue;
++			}
++		}
++
++		/*
++		 * 0,2,4,... are unicast sockets
++		 * 1,3,5,... are broadcast sockets
++		 *
++		 * on broadcast socket we only receive packets
++		 * and send replies via the unicast socket.
++		 *
++		 * 0,1 and 2,3 and ... belong together.
++		 */
++		if ((i % 2) != 0) {
++			/* this is a broadcast socket */
++			packet->send_fd = sock_array[i-1];
++		} else {
++			/* this is already a unicast socket */
++			packet->send_fd = sock_array[i];
++		}
++
++		queue_packet(packet);
++	}
++
+ 	return False;
+ }
+ 
+@@ -1944,7 +2004,8 @@ bool send_mailslot(bool unique, const char *mailslot,char *buf, size_t len,
+ 
+ 	p.ip = dest_ip;
+ 	p.port = dest_port;
+-	p.fd = find_subnet_mailslot_fd_for_address( src_ip );
++	p.recv_fd = -1;
++	p.send_fd = find_subnet_mailslot_fd_for_address( src_ip );
+ 	p.timestamp = time(NULL);
+ 	p.packet_type = DGRAM_PACKET;
+ 
+diff --git a/source3/nmbd/nmbd_subnetdb.c b/source3/nmbd/nmbd_subnetdb.c
+index 13bc931..96d7b32 100644
+--- a/source3/nmbd/nmbd_subnetdb.c
++++ b/source3/nmbd/nmbd_subnetdb.c
+@@ -76,18 +76,21 @@ static struct subnet_record *make_subnet(const char *name, enum subnet_type type
+ 					 struct in_addr mask_ip)
+ {
+ 	struct subnet_record *subrec = NULL;
+-	int nmb_sock, dgram_sock;
++	int nmb_sock = -1;
++	int dgram_sock = -1;
++	int nmb_bcast = -1;
++	int dgram_bcast = -1;
++	bool bind_bcast = lp_parm_bool(-1, "nmbd", "bind explicit broadcast", false);
+ 
+ 	/* Check if we are creating a non broadcast subnet - if so don't create
+ 		sockets.  */
+ 
+-	if(type != NORMAL_SUBNET) {
+-		nmb_sock = -1;
+-		dgram_sock = -1;
+-	} else {
++	if (type == NORMAL_SUBNET) {
+ 		struct sockaddr_storage ss;
++		struct sockaddr_storage ss_bcast;
+ 
+ 		in_addr_to_sockaddr_storage(&ss, myip);
++		in_addr_to_sockaddr_storage(&ss_bcast, bcast_ip);
+ 
+ 		/*
+ 		 * Attempt to open the sockets on port 137/138 for this interface
+@@ -95,60 +98,74 @@ static struct subnet_record *make_subnet(const char *name, enum subnet_type type
+ 		 * Fail the subnet creation if this fails.
+ 		 */
+ 
+-		if((nmb_sock = open_socket_in(SOCK_DGRAM, global_nmb_port,0, &ss,true)) == -1) {
+-			if( DEBUGLVL( 0 ) ) {
+-				Debug1( "nmbd_subnetdb:make_subnet()\n" );
+-				Debug1( "  Failed to open nmb socket on interface %s ", inet_ntoa(myip) );
+-				Debug1( "for port %d.  ", global_nmb_port );
+-				Debug1( "Error was %s\n", strerror(errno) );
++		nmb_sock = open_socket_in(SOCK_DGRAM, global_nmb_port,
++					  0, &ss, true);
++		if (nmb_sock == -1) {
++			DEBUG(0,   ("nmbd_subnetdb:make_subnet()\n"));
++			DEBUGADD(0,("  Failed to open nmb socket on interface %s ",
++				    inet_ntoa(myip)));
++			DEBUGADD(0,("for port %d.  ", global_nmb_port));
++			DEBUGADD(0,("Error was %s\n", strerror(errno)));
++			goto failed;
++		}
++		set_socket_options(nmb_sock,"SO_BROADCAST");
++		set_blocking(nmb_sock, false);
++
++		if (bind_bcast) {
++			nmb_bcast = open_socket_in(SOCK_DGRAM, global_nmb_port,
++						   0, &ss_bcast, true);
++			if (nmb_bcast == -1) {
++				DEBUG(0,   ("nmbd_subnetdb:make_subnet()\n"));
++				DEBUGADD(0,("  Failed to open nmb bcast socket on interface %s ",
++					    inet_ntoa(bcast_ip)));
++				DEBUGADD(0,("for port %d.  ", global_nmb_port));
++				DEBUGADD(0,("Error was %s\n", strerror(errno)));
++				goto failed;
+ 			}
+-			return NULL;
++			set_socket_options(nmb_bcast, "SO_BROADCAST");
++			set_blocking(nmb_bcast, false);
+ 		}
+ 
+-		if((dgram_sock = open_socket_in(SOCK_DGRAM,DGRAM_PORT,3, &ss, true)) == -1) {
+-			if( DEBUGLVL( 0 ) ) {
+-				Debug1( "nmbd_subnetdb:make_subnet()\n" );
+-				Debug1( "  Failed to open dgram socket on interface %s ", inet_ntoa(myip) );
+-				Debug1( "for port %d.  ", DGRAM_PORT );
+-				Debug1( "Error was %s\n", strerror(errno) );
++		dgram_sock = open_socket_in(SOCK_DGRAM, DGRAM_PORT,
++					    3, &ss, true);
++		if (dgram_sock == -1) {
++			DEBUG(0,   ("nmbd_subnetdb:make_subnet()\n"));
++			DEBUGADD(0,("  Failed to open dgram socket on interface %s ",
++				    inet_ntoa(myip)));
++			DEBUGADD(0,("for port %d.  ", DGRAM_PORT));
++			DEBUGADD(0,("Error was %s\n", strerror(errno)));
++			goto failed;
++		}
++		set_socket_options(dgram_sock, "SO_BROADCAST");
++		set_blocking(dgram_sock, false);
++
++		if (bind_bcast) {
++			dgram_bcast = open_socket_in(SOCK_DGRAM, DGRAM_PORT,
++						     3, &ss_bcast, true);
++			if (dgram_bcast == -1) {
++				DEBUG(0,   ("nmbd_subnetdb:make_subnet()\n"));
++				DEBUGADD(0,("  Failed to open dgram bcast socket on interface %s ",
++					    inet_ntoa(bcast_ip)));
++				DEBUGADD(0,("for port %d.  ", DGRAM_PORT));
++				DEBUGADD(0,("Error was %s\n", strerror(errno)));
++				goto failed;
+ 			}
+-			return NULL;
++			set_socket_options(dgram_bcast, "SO_BROADCAST");
++			set_blocking(dgram_bcast, false);
+ 		}
+-
+-		/* Make sure we can broadcast from these sockets. */
+-		set_socket_options(nmb_sock,"SO_BROADCAST");
+-		set_socket_options(dgram_sock,"SO_BROADCAST");
+-
+-		/* Set them non-blocking. */
+-		set_blocking(nmb_sock, False);
+-		set_blocking(dgram_sock, False);
+ 	}
+ 
+ 	subrec = SMB_MALLOC_P(struct subnet_record);
+ 	if (!subrec) {
+ 		DEBUG(0,("make_subnet: malloc fail !\n"));
+-		if (nmb_sock != -1) {
+-			close(nmb_sock);
+-		}
+-		if (dgram_sock != -1) {
+-			close(dgram_sock);
+-		}
+-		return(NULL);
++		goto failed;
+ 	}
+   
+ 	ZERO_STRUCTP(subrec);
+ 
+ 	if((subrec->subnet_name = SMB_STRDUP(name)) == NULL) {
+ 		DEBUG(0,("make_subnet: malloc fail for subnet name !\n"));
+-		if (nmb_sock != -1) {
+-			close(nmb_sock);
+-		}
+-		if (dgram_sock != -1) {
+-			close(dgram_sock);
+-		}
+-		ZERO_STRUCTP(subrec);
+-		SAFE_FREE(subrec);
+-		return(NULL);
++		goto failed;
+ 	}
+ 
+ 	DEBUG(2, ("making subnet name:%s ", name ));
+@@ -163,9 +180,27 @@ static struct subnet_record *make_subnet(const char *name, enum subnet_type type
+ 	subrec->myip = myip;
+ 	subrec->type = type;
+ 	subrec->nmb_sock = nmb_sock;
++	subrec->nmb_bcast = nmb_bcast;
+ 	subrec->dgram_sock = dgram_sock;
+-  
++	subrec->dgram_bcast = dgram_bcast;
++
+ 	return subrec;
++
++failed:
++	SAFE_FREE(subrec);
++	if (nmb_sock != -1) {
++		close(nmb_sock);
++	}
++	if (nmb_bcast != -1) {
++		close(nmb_bcast);
++	}
++	if (dgram_sock != -1) {
++		close(dgram_sock);
++	}
++	if (dgram_bcast != -1) {
++		close(dgram_bcast);
++	}
++	return NULL;
+ }
+ 
+ /****************************************************************************
+-- 
+1.6.3.3
+
+
+From df62c7c73e1a30a7db1257df44bbb50471d782c8 Mon Sep 17 00:00:00 2001
+From: Stefan Metzmacher <metze@samba.org>
+Date: Mon, 8 Feb 2010 12:51:29 +0100
+Subject: [PATCH 2/4] s3:nmbd: change "nmbd:bind explicit broadcast" into "nmbd bind explicit broadcast"
+
+metze
+(cherry picked from commit 0140bc389d56511c3255720856bdb64803ba8930)
+---
+ source3/include/proto.h      |    1 +
+ source3/nmbd/nmbd_subnetdb.c |    2 +-
+ source3/param/loadparm.c     |   11 +++++++++++
+ 3 files changed, 13 insertions(+), 1 deletions(-)
+
+diff --git a/source3/include/proto.h b/source3/include/proto.h
+index d2ae62c..82c55d0 100644
+--- a/source3/include/proto.h
++++ b/source3/include/proto.h
+@@ -3934,6 +3934,7 @@ const char *lp_logon_drive(void);
+ const char *lp_logon_home(void);
+ char *lp_remote_announce(void);
+ char *lp_remote_browse_sync(void);
++bool lp_nmbd_bind_explicit_broadcast(void);
+ const char **lp_wins_server_list(void);
+ const char **lp_interfaces(void);
+ const char *lp_socket_address(void);
+diff --git a/source3/nmbd/nmbd_subnetdb.c b/source3/nmbd/nmbd_subnetdb.c
+index 96d7b32..703e229 100644
+--- a/source3/nmbd/nmbd_subnetdb.c
++++ b/source3/nmbd/nmbd_subnetdb.c
+@@ -80,7 +80,7 @@ static struct subnet_record *make_subnet(const char *name, enum subnet_type type
+ 	int dgram_sock = -1;
+ 	int nmb_bcast = -1;
+ 	int dgram_bcast = -1;
+-	bool bind_bcast = lp_parm_bool(-1, "nmbd", "bind explicit broadcast", false);
++	bool bind_bcast = lp_nmbd_bind_explicit_broadcast();
+ 
+ 	/* Check if we are creating a non broadcast subnet - if so don't create
+ 		sockets.  */
+diff --git a/source3/param/loadparm.c b/source3/param/loadparm.c
+index 6e5e0b2..5e4f2f6 100644
+--- a/source3/param/loadparm.c
++++ b/source3/param/loadparm.c
+@@ -157,6 +157,7 @@ struct global {
+ 	char *szRemoteAnnounce;
+ 	char *szRemoteBrowseSync;
+ 	char *szSocketAddress;
++	bool bNmbdBindExplicitBroadcast;
+ 	char *szNISHomeMapName;
+ 	char *szAnnounceVersion;	/* This is initialised in init_globals */
+ 	char *szWorkgroup;
+@@ -3929,6 +3930,15 @@ static struct parm_struct parm_table[] = {
+ 		.flags		= FLAG_ADVANCED,
+ 	},
+ 	{
++		.label		= "nmbd bind explicit broadcast",
++		.type		= P_BOOL,
++		.p_class	= P_GLOBAL,
++		.ptr		= &Globals.bNmbdBindExplicitBroadcast,
++		.special	= NULL,
++		.enum_list	= NULL,
++		.flags		= FLAG_ADVANCED,
++	},
++	{
+ 		.label		= "homedir map",
+ 		.type		= P_STRING,
+ 		.p_class	= P_GLOBAL,
+@@ -5269,6 +5279,7 @@ FN_GLOBAL_CONST_STRING(lp_logon_drive, &Globals.szLogonDrive)
+ FN_GLOBAL_CONST_STRING(lp_logon_home, &Globals.szLogonHome)
+ FN_GLOBAL_STRING(lp_remote_announce, &Globals.szRemoteAnnounce)
+ FN_GLOBAL_STRING(lp_remote_browse_sync, &Globals.szRemoteBrowseSync)
++FN_GLOBAL_BOOL(lp_nmbd_bind_explicit_broadcast, &Globals.bNmbdBindExplicitBroadcast)
+ FN_GLOBAL_LIST(lp_wins_server_list, &Globals.szWINSservers)
+ FN_GLOBAL_LIST(lp_interfaces, &Globals.szInterfaces)
+ FN_GLOBAL_STRING(lp_nis_home_map_name, &Globals.szNISHomeMapName)
+-- 
+1.6.3.3
+
+
+From 4b52a598f0eb179183b66a05707a3d7e3eaf50a6 Mon Sep 17 00:00:00 2001
+From: Stefan Metzmacher <metze@samba.org>
+Date: Mon, 8 Feb 2010 12:59:13 +0100
+Subject: [PATCH 3/4] s3:docs-xml: document "nmbd bind explicit broadcast"
+
+metze
+(cherry picked from commit 9887751f6fa6f7e4fd5c79c637e0576405000c01)
+---
+ .../smbdotconf/misc/nmbdbindexplicitbroadcast.xml  |   16 ++++++++++++++++
+ 1 files changed, 16 insertions(+), 0 deletions(-)
+ create mode 100644 docs-xml/smbdotconf/misc/nmbdbindexplicitbroadcast.xml
+
+diff --git a/docs-xml/smbdotconf/misc/nmbdbindexplicitbroadcast.xml b/docs-xml/smbdotconf/misc/nmbdbindexplicitbroadcast.xml
+new file mode 100644
+index 0000000..f328594
+--- /dev/null
++++ b/docs-xml/smbdotconf/misc/nmbdbindexplicitbroadcast.xml
+@@ -0,0 +1,16 @@
++<samba:parameter name="nmbd bind explicit broadcast"
++	         context="G"
++		 advanced="1" developer="1"
++		 type="boolean"
++		 xmlns:samba="http://www.samba.org/samba/DTD/samba-doc">
++<description>
++	<para>
++	This option allows you to setup <citerefentry><refentrytitle>nmbd</refentrytitle>
++	<manvolnum>8</manvolnum></citerefentry> to explicit bind to the
++	broadcast address of the local subnets. This is only useful in
++	combination with the <smbconfoption name="socket address"/> option.
++	</para>
++</description>
++
++<value type="default">no</value>
++</samba:parameter>
+-- 
+1.6.3.3
+
+
+From fa11a65188c2973ebba441d7b4f528831bfe3882 Mon Sep 17 00:00:00 2001
+From: Jeremy Allison <jra@samba.org>
+Date: Wed, 10 Feb 2010 12:32:05 -0800
+Subject: [PATCH 4/4] More of the fix for bug #7118 - nmbd problems with socket address.
+
+Add a simple "processed packet queue" cache to stop nmbd responding to
+packets received on the broadcast and non-broadcast socket (which
+it has opened when "nmbd bind explicit broadcast = yes").
+
+This is a very simple packet queue - it only keeps the packets
+processed during a single call to listen_for_packets() (i.e. one
+select call). This means that if the delivery notification for a
+packet received on both broadcast and non-broadcast addresses
+is done in two different select calls, the packet will still be
+processed twice. This is a very rare occurrance and we can just
+live with it when it does as the protocol is stateless. If this
+is ever flagged as a repeatable problem then we can add a longer
+lived cache, using timeout processing to clear etc. etc. But without
+storing all packets processed we can never be *sure* we've eliminated
+the race condition so I'm going to go with this simple solution until
+someone proves a more complex one is needed :-).
+
+Jeremy.
+(cherry picked from commit 6fe7ee1d216fcf722b3efa23fd80782ce0dd0e9f)
+---
+ source3/nmbd/nmbd_packets.c |   89 +++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 89 insertions(+), 0 deletions(-)
+
+diff --git a/source3/nmbd/nmbd_packets.c b/source3/nmbd/nmbd_packets.c
+index 51f4e32..6c4b96a 100644
+--- a/source3/nmbd/nmbd_packets.c
++++ b/source3/nmbd/nmbd_packets.c
+@@ -1765,6 +1765,83 @@ only use %d.\n", count, FD_SETSIZE));
+ }
+ 
+ /****************************************************************************
++ List of packets we're processing this select.
++***************************************************************************/
++
++struct processed_packet {
++	struct processed_packet *next;
++	struct processed_packet *prev;
++	enum packet_type packet_type;
++	struct in_addr ip;
++	int packet_id;
++};
++
++/****************************************************************************
++ Have we seen this before ?
++***************************************************************************/
++
++static bool is_processed_packet(struct processed_packet *processed_packet_list,
++				struct packet_struct *packet)
++{
++	struct processed_packet *p = NULL;
++
++	for (p = processed_packet_list; p; p = p->next) {
++		if (ip_equal_v4(p->ip, packet->ip) && p->packet_type == packet->packet_type) {
++			if ((p->packet_type == NMB_PACKET) &&
++				(p->packet_id ==
++					packet->packet.nmb.header.name_trn_id)) {
++				return true;
++			} else if ((p->packet_type == DGRAM_PACKET) &&
++				(p->packet_id ==
++					packet->packet.dgram.header.dgm_id)) {
++				return true;
++			}
++		}
++	}
++	return false;
++}
++
++/****************************************************************************
++ Keep a list of what we've seen before.
++***************************************************************************/
++
++static bool store_processed_packet(struct processed_packet **pp_processed_packet_list,
++				struct packet_struct *packet)
++{
++	struct processed_packet *p = SMB_MALLOC_P(struct processed_packet);
++	if (!p) {
++		return false;
++	}
++	p->packet_type = packet->packet_type;
++	p->ip = packet->ip;
++	if (packet->packet_type == NMB_PACKET) {
++		p->packet_id = packet->packet.nmb.header.name_trn_id;
++	} else if (packet->packet_type == DGRAM_PACKET) {
++		p->packet_id = packet->packet.dgram.header.dgm_id;
++	} else {
++		return false;
++	}
++
++	DLIST_ADD(*pp_processed_packet_list, p);
++	return true;
++}
++
++/****************************************************************************
++ Throw away what we've seen before.
++***************************************************************************/
++
++static void free_processed_packet_list(struct processed_packet **pp_processed_packet_list)
++{
++	struct processed_packet *p = NULL, *next = NULL;
++
++	for (p = *pp_processed_packet_list; p; p = next) {
++		next = p->next;
++		DLIST_REMOVE(*pp_processed_packet_list, p);
++		SAFE_FREE(p);
++	}
++}
++
++/****************************************************************************
+   Listens for NMB or DGRAM packets, and queues them.
+   return True if the socket is dead
+ ***************************************************************************/
+@@ -1784,6 +1861,7 @@ bool listen_for_packets(bool run_election)
+ #ifndef SYNC_DNS
+ 	int dns_fd;
+ #endif
++	struct processed_packet *processed_packet_list = NULL;
+ 
+ 	if(listen_set == NULL || rescan_listen_set) {
+ 		if(create_listen_fdset(&listen_set, &sock_array, &listen_number, &maxfd)) {
+@@ -1906,6 +1984,16 @@ bool listen_for_packets(bool run_election)
+ 			}
+ 		}
+ 
++
++		if (is_processed_packet(processed_packet_list, packet)) {
++			DEBUG(7,("discarding duplicate packet from %s:%d\n",
++				inet_ntoa(packet->ip),packet->port));
++			free_packet(packet);
++			continue;
++		}
++
++		store_processed_packet(&processed_packet_list, packet);
++
+ 		/*
+ 		 * 0,2,4,... are unicast sockets
+ 		 * 1,3,5,... are broadcast sockets
+@@ -1926,6 +2014,7 @@ bool listen_for_packets(bool run_election)
+ 		queue_packet(packet);
+ 	}
+ 
++	free_processed_packet_list(&processed_packet_list);
+ 	return False;
+ }
+ 
 -- 
 1.6.3.3
 

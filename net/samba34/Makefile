@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		samba34
-PORTVERSION=		3.4.5
-PORTREVISION?=		1
+PORTVERSION=		3.4.8
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -16,7 +16,7 @@ DISTNAME=		${PORTNAME:S|34$||}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|al
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		ja-samba-[23].* samba-[23].* sharity-light-1.* tdb-1.*
+CONFLICTS?=		ja-samba-[235].* samba-[235].* sharity-light-1.* tdb-1.*
 # Additional patches from Sernet.de
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
