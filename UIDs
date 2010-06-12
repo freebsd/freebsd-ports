@@ -142,7 +142,7 @@ distcc:*:561:561::0:0:Distcc user:/nonexistent:/usr/sbin/nologin
 polkit:*:562:562::0:0:PolicyKit User:/nonexistent:/usr/sbin/nologin
 pulse:*:563:563::0:0:PulseAudio System User:/nonexistent:/usr/sbin/nologin
 _xsi:*:600:600::0:0:XMLSysInfo User:/nonexistent:/usr/sbin/nologin
-freeswitch:*:610:610:Freeswitch user:/nonexistant:/usr/sbin/nologin
+freeswitch:*:610:610::0:0:Freeswitch user:/nonexistant:/usr/sbin/nologin
 _pla:*:636:80::0:0:phpLDAPAdmin Owner:/nonexistent:/usr/sbin/nologin
 bnetd:*:700:700::0:0:Bnetd user:/nonexistent:/usr/sbin/nologin
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
