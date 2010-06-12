@@ -4915,6 +4915,7 @@ grpplaylist                     ports/multimedia/grpplaylist
 grsync                          ports/net/grsync
 gru                             ports/games/gru
 grub                            ports/sysutils/grub
+grub2                           ports/sysutils/grub2
 grubik                          ports/games/grubik
 grubinvaders                    ports/games/grubinvaders
 gruftistats                     ports/irc/gruftistats
@@ -5673,6 +5674,7 @@ ib-kmod                         ports/comms/ib-kmod
 ibp                             ports/comms/ibp
 ibsh                            ports/shells/ibsh
 ibus                            ports/textproc/ibus
+ibus-kmfl                       ports/textproc/ibus-kmfl
 ibus-m17n                       ports/textproc/ibus-m17n
 ibus-qt                         ports/textproc/ibus-qt
 ibus-table                      ports/textproc/ibus-table
@@ -22453,6 +22455,7 @@ rubygem-stemmer                 ports/devel/rubygem-stemmer
 rubygem-stomp                   ports/devel/rubygem-stomp
 rubygem-stream                  ports/devel/rubygem-stream
 rubygem-streetaddress           ports/devel/rubygem-streetaddress
+rubygem-stringex                ports/devel/rubygem-stringex
 rubygem-syntax                  ports/textproc/rubygem-syntax
 rubygem-sys-cpu                 ports/sysutils/rubygem-sys-cpu
 rubygem-systemu                 ports/devel/rubygem-systemu
@@ -22471,6 +22474,7 @@ rubygem-twitter                 ports/net/rubygem-twitter
 rubygem-twitter4r               ports/net/rubygem-twitter4r
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-uuid                    ports/devel/rubygem-uuid
+rubygem-uuidtools               ports/devel/rubygem-uuidtools
 rubygem-validatable             ports/devel/rubygem-validatable
 rubygem-warbler                 ports/devel/rubygem-warbler
 rubygem-webby                   ports/devel/rubygem-webby
