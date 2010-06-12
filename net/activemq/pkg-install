@@ -1,0 +1,30 @@
+#!/bin/sh
+
+case $2 in
+POST-INSTALL)
+        MQUSER=activemq
+        MQGROUP=${MQUSER}
+        MQUID=929
+        MQGID=${MQUID}
+
+        if ! pw group show "${MQGROUP}" > /dev/null; then
+                if pw groupadd ${MQGROUP} -g ${MQGID}; then
+                        echo "Added group \"${MQGROUP}\"."
+                else
+                        echo "Adding group \"${MQGROUP}\" failed..."
+                        exit 1
+                fi
+        fi
+
+        if ! pw user show "${MQUSER}" > /dev/null; then
+                if pw useradd ${MQUSER} -u ${MQUID} -g ${MQGROUP} -h - \
+                        -d /nonexistent -s /sbin/nologin -c "ActiveMQ Daemon"
+                then
+                        echo "Added user \"${MQUSER}\"."
+                else
+                        echo "Adding user \"${MQUSER}\" failed..."
+                        exit 1
+                fi
+        fi
+        ;;
+esac

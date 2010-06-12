@@ -13,6 +13,7 @@
     SUBDIR += Sockets
     SUBDIR += Sockets-devel
     SUBDIR += abills
+    SUBDIR += activemq
     SUBDIR += acx100
     SUBDIR += aget
     SUBDIR += amqp08

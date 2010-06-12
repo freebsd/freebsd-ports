@@ -1,0 +1,102 @@
+#!/bin/sh
+
+# PROVIDE: activemq
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# activemq_enable (bool):   Set to NO by default.
+#               Set it to YES to enable activemq.
+# activemq_user (username): Set to activemq by default.
+#               Set it to required username.
+# activemq_group (group):   Set to activemq by default.
+#               Set it to required group.
+# activemq_classpath (path):   Set to %%DATADIR%% by default.
+#               Set it to java classes directory.
+# activemq_home (path):     Set to %%DATADIR%% by default.
+#               Set it to java home directory.
+# activemq_javargs (args):  Set to -Xmx256M by default.
+#               See java -h for available arguments.
+
+. /etc/rc.subr
+
+name="activemq"
+rcvar=${name}_enable
+load_rc_config $name
+
+# Set defaults
+: ${activemq_enable:=NO}
+: ${activemq_user:=${name}}
+: ${activemq_group:=${name}}
+: ${activemq_classpath:=%%ETCDIR%%}
+: ${activemq_home:=%%DATADIR%%}
+: ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties'}
+
+pidfile=/var/run/${name}.pid
+
+required_files="%%ETCDIR%%/activemq.xml"
+java_options=" 	-server -jar ${activemq_javargs} \
+		-Dactivemq.classpath=${activemq_classpath} \
+		-Dactivemq.home=${activemq_home} \
+		-Dactivemq.base=${activemq_home}"
+
+java_command="%%LOCALBASE%%/bin/java ${java_options} %%DATADIR%%/bin/run.jar $@"
+
+# Subvert the check_pid_file procname check.
+if [ -f $pidfile ]; then
+	read rc_pid junk < $pidfile
+	if [ ! -z "$rc_pid" ]; then
+		procname=`ps -o command= $rc_pid | awk '{print $1 }'`
+	fi
+fi
+
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${java_command}"
+start_precmd="activemq_precmd"
+status_cmd="activemq_status"
+stop_cmd="activemq_stop"
+
+activemq_precmd() {
+        touch ${pidfile}
+        chown ${activemq_user}:${activemq_group} ${pidfile}
+}
+
+activemq_status() {
+	rc_pid=$(check_pidfile $pidfile *$procname*)
+
+        if [ -z "$rc_pid" ]; then
+                [ -n "$rc_fast" ] && return 0
+                if [ -n "$pidfile" ]; then
+                        echo "${name} not running? (check $pidfile)."
+                else
+                        echo "${name} not running?"
+                fi
+                return 1
+        fi
+	echo "$name is running as pid ${rc_pid}"
+}
+
+
+activemq_stop() {
+        rc_pid=$(check_pidfile $pidfile *$procname*)
+
+        if [ -z "$rc_pid" ]; then
+                [ -n "$rc_fast" ] && return 0
+                if [ -n "$pidfile" ]; then
+                        echo "${name} not running? (check $pidfile)."
+                else
+                        echo "${name} not running?"
+                fi
+                return 1
+        fi
+
+        echo "Stopping ${name}."
+        kill ${rc_pid} 
+	wait_for_pids ${rc_pid}
+	rm ${pidfile}
+}
+
+run_rc_command "$1"

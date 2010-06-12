@@ -1,0 +1,518 @@
+lib/activemq/data
+lib/activemq/conf
+lib/activemq/example
+lib/activemq/webapps/camel/META-INF/MANIFEST.MF
+lib/activemq/webapps/camel/META-INF/DEPENDENCIES
+lib/activemq/webapps/camel/META-INF/LICENSE
+lib/activemq/webapps/camel/META-INF/LICENSE.txt
+lib/activemq/webapps/camel/META-INF/NOTICE
+lib/activemq/webapps/camel/META-INF/NOTICE.txt
+lib/activemq/webapps/camel/META-INF/maven/org.apache.camel/camel-web/pom.xml
+lib/activemq/webapps/camel/META-INF/maven/org.apache.camel/camel-web/pom.properties
+lib/activemq/webapps/camel/com/sun/jersey/server/impl/wadl/WadlResource/index.jsp
+lib/activemq/webapps/camel/com/sun/jersey/server/impl/wadl/WadlResourceResource/index.jsp
+lib/activemq/webapps/camel/css/prettify/prettify.css
+lib/activemq/webapps/camel/css/site.css
+lib/activemq/webapps/camel/css/sorttable.css
+lib/activemq/webapps/camel/css/type-settings.css
+lib/activemq/webapps/camel/images/asf-logo.png
+lib/activemq/webapps/camel/images/big-bullet.png
+lib/activemq/webapps/camel/images/black-footer-bottom.png
+lib/activemq/webapps/camel/images/black-footer-left.png
+lib/activemq/webapps/camel/images/black-footer-right.png
+lib/activemq/webapps/camel/images/bottom-red-bar.png
+lib/activemq/webapps/camel/images/camel-logo.png
+lib/activemq/webapps/camel/images/checker-bg.png
+lib/activemq/webapps/camel/images/content-left.png
+lib/activemq/webapps/camel/images/content-right.png
+lib/activemq/webapps/camel/images/feed_atom.png
+lib/activemq/webapps/camel/images/feed_rss.png
+lib/activemq/webapps/camel/images/left-box-bottom.png
+lib/activemq/webapps/camel/images/left-box-right.png
+lib/activemq/webapps/camel/images/left-box-top.png
+lib/activemq/webapps/camel/images/oval-arrow.png
+lib/activemq/webapps/camel/images/right-box-bottom.png
+lib/activemq/webapps/camel/images/spacer.gif
+lib/activemq/webapps/camel/images/right-box-left.png
+lib/activemq/webapps/camel/images/right-box-top.png
+lib/activemq/webapps/camel/images/small-bullet-gray.png
+lib/activemq/webapps/camel/images/small-bullet-red.png
+lib/activemq/webapps/camel/images/top-red-bar.png
+lib/activemq/webapps/camel/images/white-header-left.png
+lib/activemq/webapps/camel/images/white-header-right.png
+lib/activemq/webapps/camel/images/white-header-top.png
+lib/activemq/webapps/camel/js/prettify/lang-css.js
+lib/activemq/webapps/camel/js/prettify/lang-hs.js
+lib/activemq/webapps/camel/js/prettify/lang-lisp.js
+lib/activemq/webapps/camel/js/prettify/lang-lua.js
+lib/activemq/webapps/camel/js/prettify/lang-ml.js
+lib/activemq/webapps/camel/js/prettify/lang-proto.js
+lib/activemq/webapps/camel/js/prettify/lang-sql.js
+lib/activemq/webapps/camel/js/prettify/lang-vb.js
+lib/activemq/webapps/camel/js/prettify/lang-wiki.js
+lib/activemq/webapps/camel/js/prettify/prettify.js
+lib/activemq/webapps/camel/js/th/borders.js
+lib/activemq/webapps/camel/js/th/components.js
+lib/activemq/webapps/camel/js/th/css.js
+lib/activemq/webapps/camel/js/th/docs.txt
+lib/activemq/webapps/camel/js/th/helpers.js
+lib/activemq/webapps/camel/js/th/models.js
+lib/activemq/webapps/camel/js/th/th.js
+lib/activemq/webapps/camel/js/buildProfile.js
+lib/activemq/webapps/camel/js/common.js
+lib/activemq/webapps/camel/js/css.js
+lib/activemq/webapps/camel/js/route.js
+lib/activemq/webapps/camel/js/standardista-table-sorting.js
+lib/activemq/webapps/camel/js/dojo/dojo.js
+lib/activemq/webapps/camel/org/apache/camel/web/resources/CamelContextResource/api.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/CamelContextResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/CamelContextResource/systemProperties.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/ComponentResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/ComponentsResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/ConvertersFromResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/ConvertersResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/EndpointResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/EndpointResource/send.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/EndpointsResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/ExchangeResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/LanguageResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/LanguagesResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/RouteResource/edit.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/RouteResource/index.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/RoutesResource/create.jsp
+lib/activemq/webapps/camel/org/apache/camel/web/resources/RoutesResource/index.jsp
+lib/activemq/webapps/camel/WEB-INF/classes/META-INF/DEPENDENCIES
+lib/activemq/webapps/camel/WEB-INF/classes/META-INF/LICENSE
+lib/activemq/webapps/camel/WEB-INF/classes/META-INF/LICENSE.txt
+lib/activemq/webapps/camel/WEB-INF/classes/META-INF/NOTICE
+lib/activemq/webapps/camel/WEB-INF/classes/META-INF/NOTICE.txt
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/model/Camel.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/model/EndpointLink.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/model/Endpoints.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/model/jaxb.index
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/model/package-info.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/CamelChildResourceSupport.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/CamelContextResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/ComponentResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/ComponentsResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/Constants.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/ConvertersFromResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/ConvertersResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/EndpointResource$1.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/EndpointResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/EndpointsResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/ExchangeResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/LanguageResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/LanguagesResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/RouteResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/RoutesResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources/RouteStatusResource.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/AggregateDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/CamelOSGIResourceConfig.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/CamelResourceConfig.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/CatchDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/ChoiceDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/ConvertBodyDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/ErrorHandlerRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/ExpressionNodeRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/ExpressionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/GroovyRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/JAXBContextResolver.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/JAXBContextResolverOSGI.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/JAXBMarshallerResolver$1.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/JAXBMarshallerResolver.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/LoadBalanceDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/OnCompletionDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/OnExceptionDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/OutputDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/PredicateRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/ProcessorDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/ResequenceDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/RoutingSlipDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/SendDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/TextRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/ThrottleDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/ThrowExceptionDefinitionRenderer.class
+lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util/UriCharactersEncoder.class
+lib/activemq/webapps/camel/WEB-INF/classes/application-doc.xml
+lib/activemq/webapps/camel/WEB-INF/classes/application-grammars.xml
+lib/activemq/webapps/camel/WEB-INF/classes/application.wadl
+lib/activemq/webapps/camel/WEB-INF/classes/resourcedoc.xml
+lib/activemq/webapps/camel/WEB-INF/decorators/main.jsp
+lib/activemq/webapps/camel/WEB-INF/decorators/panel.jsp
+lib/activemq/webapps/camel/WEB-INF/decorators/plain.jsp
+lib/activemq/webapps/camel/WEB-INF/decorators/printable.jsp
+lib/activemq/webapps/camel/WEB-INF/jspf/header.jspf
+lib/activemq/webapps/camel/WEB-INF/lib/asm-3.1.jar
+lib/activemq/webapps/camel/WEB-INF/lib/jersey-atom-1.1.5.jar
+lib/activemq/webapps/camel/WEB-INF/lib/jersey-core-1.1.5.jar
+lib/activemq/webapps/camel/WEB-INF/lib/jersey-json-1.1.5.jar
+lib/activemq/webapps/camel/WEB-INF/lib/jersey-server-1.1.5.jar
+lib/activemq/webapps/camel/WEB-INF/lib/jersey-spring-1.1.5.jar
+lib/activemq/webapps/camel/WEB-INF/lib/jline-0.9.94.jar
+lib/activemq/webapps/camel/WEB-INF/lib/jsr311-api-1.1.1.jar
+lib/activemq/webapps/camel/WEB-INF/tags/api/doc.tag
+lib/activemq/webapps/camel/WEB-INF/tags/api/resource.tag
+lib/activemq/webapps/camel/WEB-INF/decorators.xml
+lib/activemq/webapps/camel/WEB-INF/web.xml
+lib/activemq/webapps/camel/WEB-INF/applicationContext.xml
+lib/activemq/webapps/admin/WEB-INF/webconsole-embedded.xml
+lib/activemq/webapps/admin/WEB-INF/jspf/headertags.jspf
+lib/activemq/webapps/admin/WEB-INF/jspf/old.jspf
+lib/activemq/webapps/admin/WEB-INF/tags/form/checkbox.tag
+lib/activemq/webapps/admin/WEB-INF/tags/form/forEachMapEntry.tag
+lib/activemq/webapps/admin/WEB-INF/tags/form/option.tag
+lib/activemq/webapps/admin/WEB-INF/tags/form/short.tag
+lib/activemq/webapps/admin/WEB-INF/tags/form/text.tag
+lib/activemq/webapps/admin/WEB-INF/tags/form/tooltip.tag
+lib/activemq/webapps/admin/WEB-INF/tags/form/uri.tag
+lib/activemq/webapps/admin/WEB-INF/tags/jms/forEachConnection.tag
+lib/activemq/webapps/admin/WEB-INF/tags/jms/forEachMessage.tag
+lib/activemq/webapps/admin/WEB-INF/tags/jms/formatTimestamp.tag
+lib/activemq/webapps/admin/WEB-INF/tags/jms/persistent.tag
+lib/activemq/webapps/admin/WEB-INF/decorators.xml
+lib/activemq/webapps/admin/WEB-INF/dispatcher-servlet.xml
+lib/activemq/webapps/admin/WEB-INF/web.xml
+lib/activemq/webapps/admin/WEB-INF/webconsole-default.xml
+lib/activemq/webapps/admin/WEB-INF/webconsole-invm.xml
+lib/activemq/webapps/admin/WEB-INF/webconsole-jndi.xml
+lib/activemq/webapps/admin/WEB-INF/webconsole-properties.xml
+lib/activemq/webapps/admin/WEB-INF/webconsole-query.xml
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/CopyMessage.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/CreateDestination.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/CreateSubscriber.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/DeleteDestination.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/DeleteMessage.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/DeleteSubscriber.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/MoveMessage.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/PurgeDestination.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller/SendMessage.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter/ApplicationContextFilter$1.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter/ApplicationContextFilter$2.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter/ApplicationContextFilter.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/handler/BindingBeanNameUrlHandlerMapping.class
+lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/WebConsoleStarter.class
+lib/activemq/webapps/admin/decorators/main.jsp
+lib/activemq/webapps/admin/decorators/panel.jsp
+lib/activemq/webapps/admin/decorators/printable.jsp
+lib/activemq/webapps/admin/images/activemq-logo.png
+lib/activemq/webapps/admin/images/asf-logo.png
+lib/activemq/webapps/admin/images/big-bullet.png
+lib/activemq/webapps/admin/images/black-footer-bottom.png
+lib/activemq/webapps/admin/images/black-footer-left.png
+lib/activemq/webapps/admin/images/black-footer-right.png
+lib/activemq/webapps/admin/images/bottom-red-bar.png
+lib/activemq/webapps/admin/images/checker-bg.png
+lib/activemq/webapps/admin/images/content-left.png
+lib/activemq/webapps/admin/images/content-right.png
+lib/activemq/webapps/admin/images/feed_atom.png
+lib/activemq/webapps/admin/images/feed_rss.png
+lib/activemq/webapps/admin/images/left-box-bottom.png
+lib/activemq/webapps/admin/images/left-box-right.png
+lib/activemq/webapps/admin/images/left-box-top.png
+lib/activemq/webapps/admin/images/oval-arrow.png
+lib/activemq/webapps/admin/images/right-box-bottom.png
+lib/activemq/webapps/admin/images/spacer.gif
+lib/activemq/webapps/admin/images/right-box-left.png
+lib/activemq/webapps/admin/images/right-box-top.png
+lib/activemq/webapps/admin/images/small-bullet-gray.png
+lib/activemq/webapps/admin/images/small-bullet-red.png
+lib/activemq/webapps/admin/images/top-red-bar.png
+lib/activemq/webapps/admin/images/white-header-left.png
+lib/activemq/webapps/admin/images/white-header-right.png
+lib/activemq/webapps/admin/images/white-header-top.png
+lib/activemq/webapps/admin/js/mochi/__package__.js
+lib/activemq/webapps/admin/js/mochi/MochiKit.js
+lib/activemq/webapps/admin/js/plotkit/Base.js
+lib/activemq/webapps/admin/js/plotkit/Canvas.js
+lib/activemq/webapps/admin/js/plotkit/dummy.svg
+lib/activemq/webapps/admin/js/plotkit/iecanvas.htc
+lib/activemq/webapps/admin/js/plotkit/Layout.js
+lib/activemq/webapps/admin/js/plotkit/SVG.js
+lib/activemq/webapps/admin/js/plotkit/SweetCanvas.js
+lib/activemq/webapps/admin/js/plotkit/SweetSVG.js
+lib/activemq/webapps/admin/js/common.js
+lib/activemq/webapps/admin/js/css.js
+lib/activemq/webapps/admin/js/prettify.js
+lib/activemq/webapps/admin/js/standardista-table-sorting.js
+lib/activemq/webapps/admin/META-INF/LICENSE
+lib/activemq/webapps/admin/META-INF/NOTICE
+lib/activemq/webapps/admin/styles/prettify.css
+lib/activemq/webapps/admin/styles/site.css
+lib/activemq/webapps/admin/styles/sorttable.css
+lib/activemq/webapps/admin/styles/type-settings.css
+lib/activemq/webapps/admin/test/dummy.jsp
+lib/activemq/webapps/admin/test/index.jsp
+lib/activemq/webapps/admin/test/systemProperties.jsp
+lib/activemq/webapps/admin/xml/queues.jsp
+lib/activemq/webapps/admin/xml/topics.jsp
+lib/activemq/webapps/admin/browse.jsp
+lib/activemq/webapps/admin/connection.jsp
+lib/activemq/webapps/admin/connections.jsp
+lib/activemq/webapps/admin/graph.jsp
+lib/activemq/webapps/admin/index.jsp
+lib/activemq/webapps/admin/message.jsp
+lib/activemq/webapps/admin/queueConsumers.jsp
+lib/activemq/webapps/admin/queueGraph.jsp
+lib/activemq/webapps/admin/queues.jsp
+lib/activemq/webapps/admin/send.jsp
+lib/activemq/webapps/admin/subscribers.jsp
+lib/activemq/webapps/admin/topics.jsp
+lib/activemq/webapps/static/index.html
+lib/activemq/webapps/favicon.ico
+lib/activemq/webapps/demo/js/scriptaculous.js
+lib/activemq/webapps/demo/META-INF/LICENSE
+lib/activemq/webapps/demo/META-INF/NOTICE
+lib/activemq/webapps/demo/portfolio/portfolio.html
+lib/activemq/webapps/demo/portfolio/portfolio.js
+lib/activemq/webapps/demo/sandbox/index.html
+lib/activemq/webapps/demo/sandbox/portfolio.html
+lib/activemq/webapps/demo/sandbox/portfolio.js
+lib/activemq/webapps/demo/sandbox/util.js
+lib/activemq/webapps/demo/sandbox/webmq.js
+lib/activemq/webapps/demo/WEB-INF/web.xml
+lib/activemq/webapps/demo/chat.css
+lib/activemq/webapps/demo/chat.html
+lib/activemq/webapps/demo/chat.js
+lib/activemq/webapps/demo/index.html
+lib/activemq/webapps/demo/send.html
+lib/activemq/webapps/demo/style.css
+lib/activemq/webapps/fileserver/META-INF/LICENSE
+lib/activemq/webapps/fileserver/META-INF/NOTICE
+lib/activemq/webapps/fileserver/WEB-INF/web.xml
+lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/FilenameGuardFilter$GuardedHttpServletRequest.class
+lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/FilenameGuardFilter.class
+lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util/RestFilter.class
+lib/activemq/webapps/fileserver/index.html
+lib/activemq/lib/activemq-camel-5.3.2.jar
+lib/activemq/lib/camel-jms-2.2.0.jar
+lib/activemq/lib/camel-core-2.2.0.jar
+lib/activemq/lib/jaxb-api-2.1.jar
+lib/activemq/lib/activation-1.1.jar
+lib/activemq/lib/jaxb-impl-2.1.6.jar
+lib/activemq/lib/camel-spring-2.2.0.jar
+lib/activemq/lib/commons-logging-1.1.jar
+lib/activemq/lib/geronimo-jms_1.1_spec-1.1.1.jar
+lib/activemq/lib/activemq-core-5.3.2.jar
+lib/activemq/lib/kahadb-5.3.2.jar
+lib/activemq/lib/activemq-protobuf-1.0.jar
+lib/activemq/lib/geronimo-j2ee-management_1.0_spec-1.0.jar
+lib/activemq/lib/geronimo-jta_1.0.1B_spec-1.0.1.jar
+lib/activemq/lib/web/commons-management-1.0.jar
+lib/activemq/lib/web/jetty-6.1.9.jar
+lib/activemq/lib/web/jetty-util-6.1.9.jar
+lib/activemq/lib/web/rome-0.8.jar
+lib/activemq/lib/web/jdom-1.0.jar
+lib/activemq/lib/web/spring-webmvc-2.5.6.jar
+lib/activemq/lib/web/spring-web-2.5.6.jar
+lib/activemq/lib/web/geronimo-servlet_2.5_spec-1.2.jar
+lib/activemq/lib/web/jetty-xbean-6.1.9.jar
+lib/activemq/lib/web/slf4j-api-1.5.0.jar
+lib/activemq/lib/web/slf4j-jcl-1.5.0.jar
+lib/activemq/lib/web/sitemesh-2.2.1.jar
+lib/activemq/lib/web/jsp-2.1-6.1.9.jar
+lib/activemq/lib/web/core-3.1.1.jar
+lib/activemq/lib/web/jsp-api-2.1-6.1.9.jar
+lib/activemq/lib/activemq-console-5.3.2.jar
+lib/activemq/lib/activemq-web-5.3.2.jar
+lib/activemq/lib/activemq-jaas-5.3.2.jar
+lib/activemq/lib/camel-jetty-2.2.0.jar
+lib/activemq/lib/stax-api-1.0.1.jar
+lib/activemq/lib/stax-1.2.0.jar
+lib/activemq/lib/optional/spring-context-2.5.6.jar
+lib/activemq/lib/optional/spring-beans-2.5.6.jar
+lib/activemq/lib/optional/spring-core-2.5.6.jar
+lib/activemq/lib/optional/spring-aop-2.5.6.jar
+lib/activemq/lib/optional/spring-tx-2.5.6.jar
+lib/activemq/lib/optional/spring-jms-2.5.6.jar
+lib/activemq/lib/optional/commons-pool-1.5.4.jar
+lib/activemq/lib/optional/activeio-core-3.1.2.jar
+lib/activemq/lib/optional/org.osgi.core-4.1.0.jar
+lib/activemq/lib/optional/spring-osgi-core-1.2.1.jar
+lib/activemq/lib/optional/commons-net-2.0.jar
+lib/activemq/lib/optional/activemq-pool-5.3.2.jar
+lib/activemq/lib/optional/xbean-spring-3.6.jar
+lib/activemq/lib/optional/velocity-1.6.2.jar
+lib/activemq/lib/optional/commons-collections-3.2.1.jar
+lib/activemq/lib/optional/commons-lang-2.4.jar
+lib/activemq/lib/optional/josql-1.5.jar
+lib/activemq/lib/optional/activemq-optional-5.3.2.jar
+lib/activemq/lib/optional/xstream-1.3.1.jar
+lib/activemq/lib/optional/xmlpull-1.1.3.4d_b4_min.jar
+lib/activemq/lib/optional/commons-httpclient-3.1.jar
+lib/activemq/lib/optional/commons-codec-1.2.jar
+lib/activemq/lib/optional/log4j-1.2.14.jar
+lib/activemq/lib/optional/activemq-xmpp-5.3.2.jar
+lib/activemq/lib/optional/wstx-asl-3.0.1.jar
+lib/activemq/lib/optional/activemq-rar-5.3.2.rar
+lib/activemq/lib/optional/commons-beanutils-1.6.1.jar
+lib/activemq/lib/optional/commons-dbcp-1.2.2.jar
+lib/activemq/lib/optional/activemq-jmdns_1.0-5.3.2.jar
+lib/activemq/lib/optional/geronimo-j2ee-connector_1.5_spec-2.0.0.jar
+lib/activemq/lib/optional/spring-oxm-tiger-1.5.8.jar
+lib/activemq/lib/optional/jettison-1.1.jar
+lib/activemq/bin/run.jar
+lib/activemq/bin/activemq
+lib/activemq/bin/activemq-admin
+lib/activemq/bin/wrapper.jar
+%%EXAMPLESDIR%%/example/conf/activemq.xml
+%%EXAMPLESDIR%%/example/conf/log4j.properties
+%%EXAMPLESDIR%%/example/conf/resin-web.xml
+%%EXAMPLESDIR%%/example/conf/web.xml
+%%EXAMPLESDIR%%/example/perfharness/perfharness-activemq.sh
+%%EXAMPLESDIR%%/example/ruby/catstomp.rb
+%%EXAMPLESDIR%%/example/ruby/listener.rb
+%%EXAMPLESDIR%%/example/ruby/publisher.rb
+%%EXAMPLESDIR%%/example/ruby/README.txt
+%%EXAMPLESDIR%%/example/ruby/stompcat.rb
+%%EXAMPLESDIR%%/example/src/CommandLineSupport.java
+%%EXAMPLESDIR%%/example/src/ConsumerTool.java
+%%EXAMPLESDIR%%/example/src/EmbeddedBroker.java
+%%EXAMPLESDIR%%/example/src/jndi.properties
+%%EXAMPLESDIR%%/example/src/log4j-jms.properties
+%%EXAMPLESDIR%%/example/src/Log4jJMSAppenderExample.java
+%%EXAMPLESDIR%%/example/src/ProducerAndConsumerTool.java
+%%EXAMPLESDIR%%/example/src/ProducerTool.java
+%%EXAMPLESDIR%%/example/src/RequesterTool.java
+%%EXAMPLESDIR%%/example/src/StompExample.java
+%%EXAMPLESDIR%%/example/src/TopicListener.java
+%%EXAMPLESDIR%%/example/src/TopicPublisher.java
+%%EXAMPLESDIR%%/example/transactions/src/Retailer.java
+%%EXAMPLESDIR%%/example/transactions/src/Supplier.java
+%%EXAMPLESDIR%%/example/transactions/src/TransactionsDemo.java
+%%EXAMPLESDIR%%/example/transactions/src/Vendor.java
+%%EXAMPLESDIR%%/example/transactions/build.xml
+%%EXAMPLESDIR%%/example/transactions/README.txt
+%%EXAMPLESDIR%%/example/build.xml
+%%DOCSDIR%%/docs/index.html
+%%ETCDIR%%/activemq-command.xml
+%%ETCDIR%%/activemq-demo.xml
+%%ETCDIR%%/activemq-dynamic-network-broker1.xml
+%%ETCDIR%%/activemq-dynamic-network-broker2.xml
+%%ETCDIR%%/activemq-jdbc.xml
+%%ETCDIR%%/activemq-scalability.xml
+%%ETCDIR%%/activemq-security.xml
+%%ETCDIR%%/activemq-static-network-broker1.xml
+%%ETCDIR%%/activemq-static-network-broker2.xml
+%%ETCDIR%%/activemq-stomp.xml
+%%ETCDIR%%/activemq-throughput.xml
+%%ETCDIR%%/activemq.xml
+%%ETCDIR%%/broker-localhost.cert
+%%ETCDIR%%/broker.ks
+%%ETCDIR%%/broker.ts
+%%ETCDIR%%/camel.xml
+%%ETCDIR%%/client.ks
+%%ETCDIR%%/client.ts
+%%ETCDIR%%/credentials.properties
+%%ETCDIR%%/jetty.xml
+%%ETCDIR%%/log4j.properties
+%%ETCDIR%%/logging.properties
+@dirrm %%ETCDIR%%
+@dirrm %%DOCSDIR%%/docs
+@dirrm lib/activemq/webapps/static
+@dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util
+@dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq
+@dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache
+@dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org
+@dirrm lib/activemq/webapps/fileserver/WEB-INF/classes
+@dirrm lib/activemq/webapps/fileserver/WEB-INF
+@dirrm lib/activemq/webapps/fileserver/META-INF
+@dirrm lib/activemq/webapps/fileserver
+@dirrm lib/activemq/webapps/demo/sandbox
+@dirrm lib/activemq/webapps/demo/portfolio
+@dirrm lib/activemq/webapps/demo/js
+@dirrm lib/activemq/webapps/demo/WEB-INF
+@dirrm lib/activemq/webapps/demo/META-INF
+@dirrm lib/activemq/webapps/demo
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/RoutesResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/RouteResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/LanguagesResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/LanguageResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/ExchangeResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/EndpointsResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/EndpointResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/ConvertersResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/ConvertersFromResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/ComponentsResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/ComponentResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources/CamelContextResource
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web/resources
+@dirrm lib/activemq/webapps/camel/org/apache/camel/web
+@dirrm lib/activemq/webapps/camel/org/apache/camel
+@dirrm lib/activemq/webapps/camel/org/apache
+@dirrm lib/activemq/webapps/camel/org
+@dirrm lib/activemq/webapps/camel/js/th
+@dirrm lib/activemq/webapps/camel/js/prettify
+@dirrm lib/activemq/webapps/camel/js/dojo
+@dirrm lib/activemq/webapps/camel/js
+@dirrm lib/activemq/webapps/camel/images
+@dirrm lib/activemq/webapps/camel/css/prettify
+@dirrm lib/activemq/webapps/camel/css
+@dirrm lib/activemq/webapps/camel/com/sun/jersey/server/impl/wadl/WadlResourceResource
+@dirrm lib/activemq/webapps/camel/com/sun/jersey/server/impl/wadl/WadlResource
+@dirrm lib/activemq/webapps/camel/com/sun/jersey/server/impl/wadl
+@dirrm lib/activemq/webapps/camel/com/sun/jersey/server/impl
+@dirrm lib/activemq/webapps/camel/com/sun/jersey/server
+@dirrm lib/activemq/webapps/camel/com/sun/jersey
+@dirrm lib/activemq/webapps/camel/com/sun
+@dirrm lib/activemq/webapps/camel/com
+@dirrm lib/activemq/webapps/camel/WEB-INF/tags/api
+@dirrm lib/activemq/webapps/camel/WEB-INF/tags
+@dirrm lib/activemq/webapps/camel/WEB-INF/lib
+@dirrm lib/activemq/webapps/camel/WEB-INF/jspf
+@dirrm lib/activemq/webapps/camel/WEB-INF/decorators
+@dirrm lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/util
+@dirrm lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/resources
+@dirrm lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web/model
+@dirrm lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel/web
+@dirrm lib/activemq/webapps/camel/WEB-INF/classes/org/apache/camel
+@dirrm lib/activemq/webapps/camel/WEB-INF/classes/org/apache
+@dirrm lib/activemq/webapps/camel/WEB-INF/classes/org
+@dirrm lib/activemq/webapps/camel/WEB-INF/classes/META-INF
+@dirrm lib/activemq/webapps/camel/WEB-INF/classes
+@dirrm lib/activemq/webapps/camel/WEB-INF
+@dirrm lib/activemq/webapps/camel/META-INF/maven/org.apache.camel/camel-web
+@dirrm lib/activemq/webapps/camel/META-INF/maven/org.apache.camel
+@dirrm lib/activemq/webapps/camel/META-INF/maven
+@dirrm lib/activemq/webapps/camel/META-INF
+@dirrm lib/activemq/webapps/camel
+@dirrm lib/activemq/webapps/admin/xml
+@dirrm lib/activemq/webapps/admin/test
+@dirrm lib/activemq/webapps/admin/styles
+@dirrm lib/activemq/webapps/admin/js/plotkit
+@dirrm lib/activemq/webapps/admin/js/mochi
+@dirrm lib/activemq/webapps/admin/js
+@dirrm lib/activemq/webapps/admin/images
+@dirrm lib/activemq/webapps/admin/decorators
+@dirrm lib/activemq/webapps/admin/WEB-INF/tags/jms
+@dirrm lib/activemq/webapps/admin/WEB-INF/tags/form
+@dirrm lib/activemq/webapps/admin/WEB-INF/tags
+@dirrm lib/activemq/webapps/admin/WEB-INF/jspf
+@dirrm lib/activemq/webapps/admin/WEB-INF/jsp
+@dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/handler
+@dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/filter
+@dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web/controller
+@dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq/web
+@dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache/activemq
+@dirrm lib/activemq/webapps/admin/WEB-INF/classes/org/apache
+@dirrm lib/activemq/webapps/admin/WEB-INF/classes/org
+@dirrm lib/activemq/webapps/admin/WEB-INF/classes
+@dirrm lib/activemq/webapps/admin/WEB-INF
+@dirrm lib/activemq/webapps/admin/META-INF
+@dirrm lib/activemq/webapps/admin
+@dirrm lib/activemq/webapps
+@dirrm %%EXAMPLESDIR%%/example/transactions/src
+@dirrm %%EXAMPLESDIR%%/example/transactions
+@dirrm %%EXAMPLESDIR%%/example/src
+@dirrm %%EXAMPLESDIR%%/example/ruby
+@dirrm %%EXAMPLESDIR%%/example/perfharness
+@dirrm %%EXAMPLESDIR%%/example/conf
+@dirrm %%EXAMPLESDIR%%/example
+@dirrm %%EXAMPLESDIR%%
+@dirrm lib/activemq/lib/web
+@dirrm lib/activemq/lib/optional
+@dirrm lib/activemq/lib
+@dirrm lib/activemq/bin
+@dirrm lib/activemq
+@dirrmtry %%ETCDIR%%
+@dirrmtry activemq
