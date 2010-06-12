@@ -40,10 +40,15 @@ LD=	${CC}
 STRIP=
 
 ONLY_FOR_ARCHS=	i386 amd64
-CONFLICTS=	firebird-client-1* firebird-server-1* \
+CONFLICTS+=	firebird-client-1* firebird-server-1* \
 		firebird-client-2.1* firebird-server-2.1*
 
 INSTALL_FB=	${INSTALL} ${COPY} -g firebird
+
+IPCCHECK!=	ipcrm -q 0 2>&1 || true
+.if ${IPCCHECK:Mimplemented}
+IGNORE=		your system does not support sysvipc
+.endif
 
 .if !defined(CLIENT_ONLY)
 # Server part stuff
@@ -90,11 +95,6 @@ FB_DOCS_DIRS=	sql.extensions license upgrade
 .endif
 
 MAKE_ENV+=	FIREBIRD_TMP="${WRKDIR}" FIREBIRD_LOCK="${WRKDIR}"
-
-IPCCHECK!=	ipcrm -q 0 2>&1 || true
-.if ${IPCCHECK:Mimplemented}
-IGNORE=		your system does not support sysvipc
-.endif
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/extern/icu
