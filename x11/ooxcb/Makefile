@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ooxcb
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://samurai-x.org/downloads/
 
