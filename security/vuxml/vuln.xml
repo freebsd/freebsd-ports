@@ -45,10 +45,6 @@ Note:  Please add new entries to the beginning of this file.
         <name>linux-tiff</name>
         <range><lt>3.9.3</lt></range>
       </package>
-      <package>
-	<name></name>
-	<range><lt></lt></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
