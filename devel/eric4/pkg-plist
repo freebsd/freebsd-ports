@@ -672,6 +672,7 @@
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-4.1.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-4.2.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-4.3.dtd
+%%PYTHON_SITELIBDIR%%/eric4/DTDs/Session-4.4.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Shortcuts-3.5.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Shortcuts-3.6.dtd
 %%PYTHON_SITELIBDIR%%/eric4/DTDs/Tasks-3.7.dtd
