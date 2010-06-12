@@ -10,6 +10,7 @@ include/znc/DCCSock.h
 include/znc/FileUtils.h
 include/znc/HTTPSock.h
 include/znc/IRCSock.h
+include/znc/Listener.h
 include/znc/MD5.h
 include/znc/Modules.h
 include/znc/Nick.h
@@ -19,120 +20,142 @@ include/znc/Socket.h
 include/znc/Template.h
 include/znc/User.h
 include/znc/Utils.h
+include/znc/WebModules.h
 include/znc/ZNCString.h
 include/znc/defines.h
 include/znc/main.h
 include/znc/znc.h
 libdata/pkgconfig/znc.pc
-%%MODULES%%lib/znc/admin.so
-%%MODULES%%lib/znc/adminlog.so
-%%MODULES%%lib/znc/autoattach.so
-%%MODULES%%lib/znc/autocycle.so
-%%MODULES%%lib/znc/autoop.so
-%%MODULES%%lib/znc/autoreply.so
-%%MODULES%%lib/znc/awaynick.so
-%%MODULES%%lib/znc/buffextras.so
-%%MODULES%%lib/znc/chansaver.so
-%%MODULES%%lib/znc/clientnotify.so
-%%MODULES%%lib/znc/email.so
-%%MODULES%%lib/znc/fail2ban.so
-%%MODULES%%lib/znc/fixfreenode.so
-%%MODULES%%lib/znc/imapauth.so
-%%MODULES%%lib/znc/keepnick.so
-%%MODULES%%lib/znc/kickrejoin.so
-%%MODULES%%lib/znc/nickserv.so
-%%MODULES%%lib/znc/partyline.so
-%%MODULES%%lib/znc/perform.so
-%%MODULES%%lib/znc/q.so
-%%MODULES%%lib/znc/raw.so
-%%MODULES%%lib/znc/route_replies.so
-%%MODULES%%lib/znc/sample.so
-%%MODULES%%lib/znc/shell.so
-%%MODULES%%lib/znc/simple_away.so
-%%MODULES%%lib/znc/stickychan.so
-%%MODULES%%lib/znc/watch.so
-%%MODULES%%lib/znc/webadmin.so
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/data/favicon.ico
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/data/clouds-header.jpg
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/data/main.css
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/Footer.tmpl
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/ListUsers.tmpl
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/UserPage.tmpl
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/Error.tmpl
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/Channel.tmpl
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/Header.tmpl
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/Settings.tmpl
-%%MODULES%%share/znc/webadmin/skins/dark-clouds/Main.tmpl
-%%MODULES%%share/znc/webadmin/skins/default/data/favicon.ico
-%%MODULES%%share/znc/webadmin/skins/default/data/main.css
-%%MODULES%%share/znc/webadmin/skins/default/Footer.tmpl
-%%MODULES%%share/znc/webadmin/skins/default/ListUsers.tmpl
-%%MODULES%%share/znc/webadmin/skins/default/UserPage.tmpl
-%%MODULES%%share/znc/webadmin/skins/default/Error.tmpl
-%%MODULES%%share/znc/webadmin/skins/default/Header.tmpl
-%%MODULES%%share/znc/webadmin/skins/default/Channel.tmpl
-%%MODULES%%share/znc/webadmin/skins/default/Settings.tmpl
-%%MODULES%%share/znc/webadmin/skins/default/Main.tmpl
-%%MODULES%%share/znc/webadmin/skins/graphiX/data/favicon.ico
-%%MODULES%%share/znc/webadmin/skins/graphiX/data/main.css
-%%MODULES%%share/znc/webadmin/skins/graphiX/data/graphix_header.jpg
-%%MODULES%%share/znc/webadmin/skins/graphiX/data/graphix_bg.jpg
-%%MODULES%%share/znc/webadmin/skins/graphiX/Footer.tmpl
-%%MODULES%%share/znc/webadmin/skins/graphiX/ListUsers.tmpl
-%%MODULES%%share/znc/webadmin/skins/graphiX/UserPage.tmpl
-%%MODULES%%share/znc/webadmin/skins/graphiX/Error.tmpl
-%%MODULES%%share/znc/webadmin/skins/graphiX/Header.tmpl
-%%MODULES%%share/znc/webadmin/skins/graphiX/Channel.tmpl
-%%MODULES%%share/znc/webadmin/skins/graphiX/Settings.tmpl
-%%MODULES%%share/znc/webadmin/skins/graphiX/Main.tmpl
-%%MODULES%%share/znc/webadmin/skins/ice/data/favicon.ico
-%%MODULES%%share/znc/webadmin/skins/ice/data/main.css
-%%MODULES%%share/znc/webadmin/skins/ice/data/pagebg.gif
-%%MODULES%%share/znc/webadmin/skins/ice/data/linkbg.jpg
-%%MODULES%%share/znc/webadmin/skins/ice/Footer.tmpl
-%%MODULES%%share/znc/webadmin/skins/ice/ListUsers.tmpl
-%%MODULES%%share/znc/webadmin/skins/ice/UserPage.tmpl
-%%MODULES%%share/znc/webadmin/skins/ice/Error.tmpl
-%%MODULES%%share/znc/webadmin/skins/ice/Header.tmpl
-%%MODULES%%share/znc/webadmin/skins/ice/Channel.tmpl
-%%MODULES%%share/znc/webadmin/skins/ice/Settings.tmpl
-%%MODULES%%share/znc/webadmin/skins/ice/Main.tmpl
-%%MODULES%%%%EXTRA%%lib/znc/log.so
-%%MODULES%%%%EXTRA%%lib/znc/antiidle.so
-%%MODULES%%%%EXTRA%%lib/znc/autovoice.so
-%%MODULES%%%%EXTRA%%lib/znc/block_motd.so
-%%MODULES%%%%EXTRA%%lib/znc/blockuser.so
-%%MODULES%%%%EXTRA%%lib/znc/ctcpflood.so
-%%MODULES%%%%EXTRA%%lib/znc/discon_kick.so
-%%MODULES%%%%EXTRA%%lib/znc/droproot.so
-%%MODULES%%%%EXTRA%%lib/znc/fakeonline.so
-%%MODULES%%%%EXTRA%%lib/znc/flooddetach.so
-%%MODULES%%%%EXTRA%%lib/znc/lastseen.so
-%%MODULES%%%%EXTRA%%lib/znc/listsockets.so
-%%MODULES%%%%EXTRA%%lib/znc/motdfile.so
-%%MODULES%%%%EXTRA%%lib/znc/notify_connect.so
-%%MODULES%%%%EXTRA%%lib/znc/send_raw.so
-%%MODULES%%%%OPENSSL%%lib/znc/away.so
-%%MODULES%%%%OPENSSL%%lib/znc/crypt.so
-%%MODULES%%%%OPENSSL%%lib/znc/savebuff.so
-%%MODULES%%%%OPENSSL%%lib/znc/schat.so
-%%MODULES%%%%PERL%%lib/znc/modperl.pm
-%%MODULES%%%%PERL%%lib/znc/modperl.so
-%%MODULES%%%%SASL%%lib/znc/saslauth.so
-%%MODULES%%%%TCL%%lib/znc/modtcl.so
-%%MODULES%%%%TCL%%share/znc/modtcl/modtcl.tcl
-%%MODULES%%%%TCL%%share/znc/modtcl/binds.tcl
+lib/znc/admin.so
+lib/znc/adminlog.so
+lib/znc/autoattach.so
+lib/znc/autocycle.so
+lib/znc/autoop.so
+lib/znc/autoreply.so
+lib/znc/awaynick.so
+lib/znc/blockuser.so
+lib/znc/buffextras.so
+lib/znc/chansaver.so
+lib/znc/clientnotify.so
+lib/znc/disconkick.so
+lib/znc/fail2ban.so
+lib/znc/fixfreenode.so
+lib/znc/keepnick.so
+lib/znc/kickrejoin.so
+lib/znc/lastseen.so
+lib/znc/nickserv.so
+lib/znc/notes.so
+lib/znc/partyline.so
+lib/znc/perform.so
+lib/znc/q.so
+lib/znc/raw.so
+lib/znc/route_replies.so
+lib/znc/sample.so
+lib/znc/simple_away.so
+lib/znc/stickychan.so
+lib/znc/watch.so
+lib/znc/webadmin.so
+share/znc/webskins/dark-clouds/tmpl/LowerBanner.tmpl
+share/znc/webskins/dark-clouds/tmpl/FooterTag.tmpl
+share/znc/webskins/dark-clouds/tmpl/Header.tmpl
+share/znc/webskins/dark-clouds/tmpl/Banner.tmpl
+share/znc/webskins/dark-clouds/pub/favicon.ico
+share/znc/webskins/dark-clouds/pub/clouds-header.jpg
+share/znc/webskins/dark-clouds/pub/dark-clouds.css
+share/znc/webskins/forest/tmpl/LowerBanner.tmpl
+share/znc/webskins/forest/tmpl/FooterTag.tmpl
+share/znc/webskins/forest/tmpl/Header.tmpl
+share/znc/webskins/forest/tmpl/Banner.tmpl
+share/znc/webskins/forest/pub/favicon.ico
+share/znc/webskins/forest/pub/forest-header.png
+share/znc/webskins/forest/pub/forest.css
+share/znc/webskins/_default_/tmpl/Menu.tmpl
+share/znc/webskins/_default_/tmpl/LoginBar.tmpl
+share/znc/webskins/_default_/tmpl/ExtraHeader.tmpl
+share/znc/webskins/_default_/tmpl/Options.tmpl
+share/znc/webskins/_default_/tmpl/FooterTag.tmpl
+share/znc/webskins/_default_/tmpl/Error.tmpl
+share/znc/webskins/_default_/tmpl/BreadCrumbs.tmpl
+share/znc/webskins/_default_/tmpl/_csrf_check.tmpl
+share/znc/webskins/_default_/tmpl/Header.tmpl
+share/znc/webskins/_default_/tmpl/BaseHeader.tmpl
+share/znc/webskins/_default_/tmpl/InfoBar.tmpl
+share/znc/webskins/_default_/tmpl/LowerBanner.tmpl
+share/znc/webskins/_default_/tmpl/MessageBar.tmpl
+share/znc/webskins/_default_/tmpl/index.tmpl
+share/znc/webskins/_default_/tmpl/DocType.tmpl
+share/znc/webskins/_default_/tmpl/Banner.tmpl
+share/znc/webskins/_default_/tmpl/Footer.tmpl
+share/znc/webskins/_default_/pub/favicon.ico
+share/znc/webskins/_default_/pub/_default_.css
+share/znc/webskins/_default_/pub/global.css
+share/znc/webskins/_default_/pub/robots.txt
+share/znc/webskins/ice/tmpl/FooterTag.tmpl
+share/znc/webskins/ice/tmpl/Header.tmpl
+share/znc/webskins/ice/pub/favicon.ico
+share/znc/webskins/ice/pub/pagebg.gif
+share/znc/webskins/ice/pub/ice.css
+share/znc/webskins/ice/pub/linkbg.jpg
+share/znc/lastseen/tmpl/index.tmpl
+share/znc/notes/tmpl/index.tmpl
+share/znc/notes/files/trash.gif
+share/znc/stickychan/tmpl/index.tmpl
+share/znc/webadmin/tmpl/listusers.tmpl
+share/znc/webadmin/tmpl/settings.tmpl
+share/znc/webadmin/tmpl/traffic.tmpl
+share/znc/webadmin/tmpl/del_user.tmpl
+share/znc/webadmin/tmpl/add_edit_user.tmpl
+share/znc/webadmin/tmpl/index.tmpl
+share/znc/webadmin/tmpl/add_edit_chan.tmpl
+%%EXTRA%%lib/znc/antiidle.so
+%%EXTRA%%lib/znc/autovoice.so
+%%EXTRA%%lib/znc/block_motd.so
+%%EXTRA%%lib/znc/charset.so
+%%EXTRA%%lib/znc/ctcpflood.so
+%%EXTRA%%lib/znc/droproot.so
+%%EXTRA%%lib/znc/email.so
+%%EXTRA%%lib/znc/fakeonline.so
+%%EXTRA%%lib/znc/flooddetach.so
+%%EXTRA%%lib/znc/imapauth.so
+%%EXTRA%%lib/znc/listsockets.so
+%%EXTRA%%lib/znc/log.so
+%%EXTRA%%lib/znc/motdfile.so
+%%EXTRA%%lib/znc/notify_connect.so
+%%EXTRA%%lib/znc/send_raw.so
+%%EXTRA%%lib/znc/shell.so
+%%OPENSSL%%lib/znc/away.so
+%%OPENSSL%%lib/znc/crypt.so
+%%OPENSSL%%lib/znc/savebuff.so
+%%OPENSSL%%lib/znc/schat.so
+%%PERL%%lib/znc/modperl.pm
+%%PERL%%lib/znc/modperl.so
+%%SASL%%lib/znc/saslauth.so
+%%TCL%%lib/znc/modtcl.so
+%%TCL%%share/znc/modtcl/modtcl.tcl
+%%TCL%%share/znc/modtcl/binds.tcl
 @dirrm include/znc
 @dirrmtry lib/znc
-@dirrmtry share/znc/webadmin/skins/ice/data
-@dirrmtry share/znc/webadmin/skins/ice
-@dirrmtry share/znc/webadmin/skins/graphiX/data
-@dirrmtry share/znc/webadmin/skins/graphiX
-@dirrmtry share/znc/webadmin/skins/default/data
-@dirrmtry share/znc/webadmin/skins/default
-@dirrmtry share/znc/webadmin/skins/dark-clouds/data
-@dirrmtry share/znc/webadmin/skins/dark-clouds
-@dirrmtry share/znc/webadmin/skins
-@dirrmtry share/znc/webadmin
+@dirrmtry share/znc/lastseen/tmpl
+@dirrmtry share/znc/lastseen
 @dirrmtry share/znc/modtcl
+@dirrmtry share/znc/notes/files
+@dirrmtry share/znc/notes/tmpl
+@dirrmtry share/znc/notes
+@dirrmtry share/znc/stickychan/tmpl
+@dirrmtry share/znc/stickychan
+@dirrmtry share/znc/webadmin/tmpl
+@dirrmtry share/znc/webadmin
+@dirrmtry share/znc/webskins/_default_/pub
+@dirrmtry share/znc/webskins/_default_/tmpl
+@dirrmtry share/znc/webskins/_default_
+@dirrmtry share/znc/webskins/dark-clouds/pub
+@dirrmtry share/znc/webskins/dark-clouds/tmpl
+@dirrmtry share/znc/webskins/dark-clouds
+@dirrmtry share/znc/webskins/forest/pub
+@dirrmtry share/znc/webskins/forest/tmpl
+@dirrmtry share/znc/webskins/forest
+@dirrmtry share/znc/webskins/ice/pub
+@dirrmtry share/znc/webskins/ice/tmpl
+@dirrmtry share/znc/webskins/ice
+@dirrmtry share/znc/webskins
 @dirrmtry share/znc

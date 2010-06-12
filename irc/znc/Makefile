@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	znc
-PORTVERSION=	0.080
+PORTVERSION=	0.090
 CATEGORIES=	irc ipv6
 MASTER_SITES=	SF
 
@@ -15,14 +15,13 @@ COMMENT=	An advanced IRC bouncer
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 WANT_PERL=	yes
 
 OPTIONS=	DEBUG		"Enable debugging" off \
 		IPV6		"Enable IPv6 support" off \
 		CARES		"Use c-ares resolver library" off \
 		OPENSSL		"Enable OpenSSL support" on \
-		MODULES		"Build modules" on \
 		EXTRA		"Build extra modules" off \
 		PERL		"Enable Perl module support" on \
 		TCL		"Enable TCL module support" off \
@@ -55,9 +54,6 @@ PLIST_SUB+=		OPENSSL="@comment "
 .endif
 
 .if defined(WITH_PERL)
-.if defined(WITHOUT_MODULES)
-IGNORE=			perl support requires MODULES. Please re-run 'make config' and enable MODULES
-.endif
 USE_PERL5=		yes
 PLIST_SUB+=		PERL=""
 .else
@@ -66,9 +62,6 @@ PLIST_SUB+=		PERL="@comment "
 .endif
 
 .if defined(WITH_TCL)
-.if defined(WITHOUT_MODULES)
-IGNORE=			tcl support requires MODULES. Please re-run 'make config' and enable MODULES
-.endif
 USE_TCL=		84+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--enable-tcl --with-tcl=${TCL_LIBDIR}
@@ -86,9 +79,6 @@ CXXFLAGS+=		-DMOD_MODTCL_ALLOW_EVERYONE
 .endif
 
 .if defined(WITH_SASL)
-.if defined(WITHOUT_MODULES)
-IGNORE=			sasl support requires MODULES. Please re-run 'make config' and enable MODULES
-.endif
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-sasl
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
@@ -97,17 +87,8 @@ PLIST_SUB+=		SASL=""
 PLIST_SUB+=		SASL="@comment "
 .endif
 
-.if defined(WITHOUT_MODULES)
-CONFIGURE_ARGS+=	--disable-modules
-PLIST_SUB+=		MODULES="@comment "
-.else
-PLIST_SUB+=		MODULES=""
-.endif
-
 .if defined(WITH_EXTRA)
-.if defined(WITHOUT_MODULES)
-IGNORE=			extra modules requires MODULES. Please re-run 'make config' and enable MODULES
-.endif
+USE_ICONV=		yes
 CONFIGURE_ARGS+=	--enable-extra
 PLIST_SUB+=		EXTRA=""
 .else
