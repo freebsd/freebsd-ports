@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="313da7dc-763b-11df-bcce-0018f3e2eb82">
+    <topic>tiff -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+        <name>tiff</name>
+        <range><lt>3.9.3</lt></range>
+      </package>
+      <package>
+        <name>linux-tiff</name>
+        <range><lt>3.9.3</lt></range>
+      </package>
+      <package>
+	<name></name>
+	<range><lt></lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Kevin Finisterre reports:</p>
+        <blockquote cite="http://support.apple.com/kb/HT4196">
+          <p>Multiple integer overflows in the handling of TIFF files may
+            result in a heap buffer overflow. Opening a maliciously crafted
+            TIFF file may lead to an unexpected application termination or
+            arbitrary code execution. The issues are addressed through
+            improved bounds checking. Credit to Kevin Finisterre of
+            digitalmunition.com for reporting these issues.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1411</cvename>
+      <url>http://www.remotesensing.org/libtiff/v3.9.3.html</url>
+      <url>http://support.apple.com/kb/HT4196</url>
+    </references>
+    <dates>
+      <discovery>2010-04-15</discovery>
+      <entry>2010-06-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d42e5b66-6ea0-11df-9c8d-00e0815b8da8">
     <topic>sudo -- Secure path vulnerability</topic>
     <affects>
