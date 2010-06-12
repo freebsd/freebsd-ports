@@ -34,7 +34,7 @@ WRKSRC=		${WRKDIR}/itcl3.4
 MANCOMPRESSED=	no
 MANN=		body.n class.n code.n configbody.n delete.n ensemble.n find.n
 MANN+=		is.n itcl.n itclvars.n local.n scope.n
-MAN3=		RegisterC.3 Stack.3
+MAN3=		RegisterC.3 Stack.3 Class.3 List.3 Object.3 Preserve.3
 
 ITCL_LIB_FILE=	${ITCL_LIB}.${SHLIB_MAJOR}
 
