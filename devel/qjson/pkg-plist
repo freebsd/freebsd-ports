@@ -8,8 +8,7 @@ lib/libqjson.so
 lib/libqjson.so.0
 lib/libqjson.so.0.7.1
 libdata/pkgconfig/QJson.pc
-share/apps/cmake/modules/FindQJSON.cmake
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake
-@dirrmtry share/apps
+share/cmake/Modules/FindQJSON.cmake
+@dirrmtry share/cmake/Modules
+@dirrmtry share/cmake
 @dirrm include/qjson
