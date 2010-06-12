@@ -275,16 +275,16 @@ do-install:
 	@${CHMOD} -R 774 ${PREFIX}/etc/${PORTNAME}
 
 post-install:
-	.if !defined(NOPORTEXAMPLES)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}/conf
 	(cd ${WRKSRC}/conf/ && \
 		${COPYTREE_SHARE} \* ${EXAMPLESDIR}/conf)
-	.endif
-	.if defined(WITH_MODOPENZAP)
+.endif
+.if defined(WITH_MODOPENZAP)
 	(cd ${WRKSRC}/libs/openzap/conf/ && \
 		${CP} *.conf ${EXAMPLESDIR}/conf && \
 		${CP} openzap.conf.xml ${EXAMPLESDIR}/conf/autoload_configs)
-	.endif
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .if ${OSVERSION} < 700000
