@@ -2033,7 +2033,7 @@ uniquify_list () {
 	for item in "$@"; do
 		case "$temp_list" in
 		*" $item "*) ;;
-		*)	temp_list=" $item $temp_list" ;;
+		*)	temp_list=" $temp_list $item " ;;
 		esac
 	done
 
@@ -2314,7 +2314,7 @@ echo "       all of the above try adding '-i' to the command line."
 	dep_of_deps=0
 
 	if [ -n "$PM_BUILD_ONLY_LIST" ]; then
-		local var real_rundep deplist dep
+		local var real_rundep deplist dep temp_bodlg
 
 		for var in $rundep_list ; do
 			real_rundep=no
@@ -2331,6 +2331,13 @@ echo "       all of the above try adding '-i' to the command line."
 			eval build_only_dl_g=\"${build_only_dl_g}\$${var}_p \"
 			eval unset $var ${var}_p
 		done
+
+		for dep in $build_only_dl_g; do
+			grep -q "@comment DEPORIGIN:${dep#$pd/}$" $pdb/*/+CONTENTS ||
+				temp_bodlg="$temp_bodlg $dep"
+		done
+
+		build_only_dl_g=" `uniquify_list $temp_bodlg` "
 
 		unset run_dl_g rundep_list
 		PM_BUILD_ONLY_LIST=pm_bol
@@ -3281,6 +3288,8 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ]; then
 
 			pm_sv Copying old shared libraries for -w
 			$PM_SU_CMD cp -p $temp ${LOCALBASE_COMPAT}/
+			pm_sv Running ldconfig
+			$PM_SU_CMD /etc/rc.d/ldconfig start > /dev/null
 		fi
 
 		pm_unlink $ldconfig_out ; unset ldconfig_out temp file
