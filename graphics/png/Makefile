@@ -36,7 +36,8 @@ OPTIONS=	APNG "Animated PNG support" Off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_APNG) || make(makesum) || defined(FETCH_ALL)
-MASTER_SITES+=	http://littlesvr.ca/apng/diff/:apng
+MASTER_SITES+=	SF/vdubapngmod/lib${PORTNAME}-apng-patch/${PORTVERSION}:apng \
+		http://littlesvr.ca/apng/diff/:apng
 DISTFILES+=	${DISTNAME}-apng.patch:apng
 .endif
 .if defined(WITH_APNG)
