@@ -20,6 +20,8 @@ COMMENT=	Tools and library routines for working with TIFF images
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		jbig.1:${PORTSDIR}/graphics/jbigkit
 
+FORBIDDEN=	FAX3 decoder buffer overrun
+
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
