@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	ale
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access Quantis devices
 
-OPTIONS=	PCI "Enable Quantis PCI support (FreeBSD >= 7.0)" on \
+OPTIONS=	PCI "Enable Quantis PCI support" on \
 		USB "Enable Quantis USB support (FreeBSD >= 8.1)" on \
 		JAVA "Enable Java support" on \
 		COMPAT "Build API v1 compatibility libraries" off \
@@ -45,7 +45,11 @@ CMAKE_BUILD_TYPE=Debug
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PCI) && ${OSVERSION} >= 700000
+.if ${OSVERSION} < 700000
+IGNORE=		requires FreeBSD >= 7
+.endif
+
+.if defined(WITH_PCI)
 RUN_DEPENDS+=	${KMODDIR}/quantis.ko:${PORTSDIR}/security/quantis-kmod
 .else
 CMAKE_ARGS+=	-DDISABLE_QUANTIS_PCI=1
