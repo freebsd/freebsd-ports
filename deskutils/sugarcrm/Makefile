@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	5.2.0d
+PORTVERSION=	5.5.1
 CATEGORIES=	deskutils www
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	http://www.sugarforge.org/frs/download.php/6592/
 DISTNAME=	SugarCE-${PORTVERSION}
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	A web based customer relationship management suite
 
+FETCH_ARGS=	-pRr
 IGNORE_WITH_MYSQL=	323 40
 USE_PHP=	gd mysql session pcre xml zlib mbstring curl imap spl posix
 USE_ZIP=	yes
@@ -21,7 +22,9 @@ WRKSRC=		${WRKDIR}/SugarCE-Full-${PORTVERSION}
 
 INSTFILES=	HandleAjaxCall.php SugarSecurity.php TreeData.php \
 		WebToLeadCapture.php acceptDecline.php campaign_tracker.php \
-		campaign_trackerv2.php cron.php dictionary.php download.php \
+		campaign_trackerv2.php config.php cron.php \
+		demoData.en_us.php demoData.ja_jp.php demoData.zh_cn.php \
+		dictionary.php download.php \
 		emailmandelivery.php export.php files.md5 image.php \
 		index.php install.php json.php json_server.php \
 		leadCapture.php log_file_restricted.html \
@@ -30,10 +33,10 @@ INSTFILES=	HandleAjaxCall.php SugarSecurity.php TreeData.php \
 		robots.txt LICENSE.txt .htaccess
 
 INSTDIRS=	ModuleInstall XTemplate cache custom data examples include \
-		install jscalendar jssource log4php metadata modules soap \
-		themes
+		install jscalendar jssource log4php metadata modules service \
+		soap themes 
 
-INSTDOCS=	INSTALLATION.txt LICENSE.txt
+INSTDOCS=	LICENSE.txt
 
 # files and directories to be chown -R'ed to www user
 WWWFILES=	config.php custom data modules .htaccess cache include/javascript
