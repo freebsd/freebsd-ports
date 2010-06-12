@@ -11,6 +11,7 @@ CFLAGS+=	-I. -I./../generic \
 		-DHAVE_SYS_FILIO_H=1 \
 		-DRETSIGTYPE=void \
 		-DITCL_LIBRARY=\"${ITCL_LIBRARY}\"
+CFLAGS+=	-Werror
 LDADD+=		-L${PREFIX}/lib -ltcl${USE_TCL}
 
 .if ${USE_TCL} >= 85

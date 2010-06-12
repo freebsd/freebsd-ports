@@ -1,0 +1,153 @@
+--- generic/itcl_bicmds.c	2008-10-04 11:22:39.000000000 -0400
++++ generic/itcl_bicmds.c	2010-01-24 14:39:45.000000000 -0500
+@@ -1022,5 +1022,5 @@
+     Tcl_Obj *objPtr = NULL;
+ 
+-    static char *options[] = {
++    static const char *options[] = {
+         "-args", "-body", "-name", "-protection", "-type",
+         (char*)NULL
+@@ -1213,9 +1213,9 @@
+     Tcl_Obj *CONST objv[];   /* argument objects */
+ {
+-    char *varName = NULL;
++    const char *varName = NULL;
+     Tcl_Obj *resultPtr = NULL;
+     Tcl_Obj *objPtr = NULL;
+ 
+-    static char *options[] = {
++    static const char *options[] = {
+         "-config", "-init", "-name", "-protection", "-type",
+         "-value", (char*)NULL
+--- generic/itcl_cmds.c	2008-12-15 15:02:58.000000000 -0500
++++ generic/itcl_cmds.c	2010-01-24 14:41:33.000000000 -0500
+@@ -30,4 +30,5 @@
+  */
+ #include "itclInt.h"
++#include <stdint.h>
+ 
+ /*
+@@ -883,5 +884,5 @@
+     Tcl_Obj *CONST objv[];   /* argument objects */
+ {
+-    int pLevel = (int)clientData;
++    int pLevel = (intptr_t)clientData;
+ 
+     int result;
+--- generic/itcl_ensemble.c	2008-12-15 15:02:58.000000000 -0500
++++ generic/itcl_ensemble.c	2010-01-24 14:47:49.000000000 -0500
+@@ -103,5 +103,5 @@
+ 
+ static int CreateEnsemble _ANSI_ARGS_((Tcl_Interp *interp,
+-    Ensemble *parentEnsData, char *ensName));
++    Ensemble *parentEnsData, const char *ensName));
+ 
+ static int AddEnsemblePart _ANSI_ARGS_((Tcl_Interp *interp,
+@@ -112,5 +112,5 @@
+ static void DeleteEnsemble _ANSI_ARGS_((ClientData clientData));
+ 
+-static int FindEnsemble _ANSI_ARGS_((Tcl_Interp *interp, char **nameArgv,
++static int FindEnsemble _ANSI_ARGS_((Tcl_Interp *interp, const char **nameArgv,
+     int nameArgc, Ensemble** ensDataPtr));
+ 
+@@ -212,5 +212,5 @@
+     CONST char* ensName;           /* name of the new ensemble */
+ {
+-    char **nameArgv = NULL;
++    const char **nameArgv = NULL;
+     int nameArgc;
+     Ensemble *parentEnsData;
+@@ -319,5 +319,5 @@
+     Tcl_CmdDeleteProc *deleteProc; /* procedure used to destroy client data */
+ {
+-    char **nameArgv = NULL;
++    const char **nameArgv = NULL;
+     int nameArgc;
+     Ensemble *ensData;
+@@ -396,5 +396,5 @@
+     Tcl_CmdInfo *infoPtr;          /* returns: info associated with part */
+ {
+-    char **nameArgv = NULL;
++    const char **nameArgv = NULL;
+     int nameArgc;
+     Ensemble *ensData;
+@@ -508,5 +508,5 @@
+     Tcl_Obj *objPtr;       /* returns: summary of usage info */
+ {
+-    char **nameArgv = NULL;
++    const char **nameArgv = NULL;
+     int nameArgc;
+     Ensemble *ensData;
+@@ -752,5 +752,5 @@
+     Tcl_Interp *interp;            /* interpreter to be updated */
+     Ensemble *parentEnsData;       /* parent ensemble or NULL */
+-    char *ensName;                 /* name of the new ensemble */
++    const char *ensName;           /* name of the new ensemble */
+ {
+     Ensemble *ensData;
+@@ -957,5 +957,5 @@
+ FindEnsemble(interp, nameArgv, nameArgc, ensDataPtr)
+     Tcl_Interp *interp;            /* interpreter containing the ensemble */
+-    char **nameArgv;               /* path of names leading to ensemble */
++    const char **nameArgv;         /* path of names leading to ensemble */
+     int nameArgc;                  /* number of strings in nameArgv */
+     Ensemble** ensDataPtr;         /* returns: ensemble data */
+--- generic/itcl_methods.c	2008-12-15 15:02:58.000000000 -0500
++++ generic/itcl_methods.c	2010-01-24 14:50:55.000000000 -0500
+@@ -981,6 +981,6 @@
+     }
+     else if ((mcode->flags & ITCL_IMPLEMENT_ARGCMD) != 0) {
+-        char **argv;
+-        argv = (char**)ckalloc( (unsigned)(objc*sizeof(char*)) );
++        const char *argv[objc];
++
+         for (i=0; i < objc; i++) {
+             argv[i] = Tcl_GetStringFromObj(objv[i], (int*)NULL);
+@@ -989,6 +989,4 @@
+         result = (*mcode->cfunc.argCmd)(mcode->clientData,
+             interp, objc, argv);
+-
+-        ckfree((char*)argv);
+     }
+     else if ((mcode->flags & ITCL_IMPLEMENT_TCL) != 0) {
+@@ -1050,5 +1048,5 @@
+ 
+     int i, argc, fargc;
+-    char **argv, **fargv;
++    const char **argv, **fargv;
+     CompiledLocal *localPtr, *last;
+ 
+@@ -1825,5 +1823,5 @@
+ 
+     int defargc;
+-    char **defargv = NULL;
++    const char **defargv = NULL;
+     Tcl_Obj **defobjv = NULL;
+     int configc = 0;
+--- generic/itcl_objects.c	2007-08-07 16:05:30.000000000 -0400
++++ generic/itcl_objects.c	2010-01-24 14:52:10.000000000 -0500
+@@ -1155,5 +1155,5 @@
+ {
+     int namec;
+-    char **namev;
++    const char **namev;
+     Tcl_Interp *errs;
+     Tcl_CmdInfo cmdInfo;
+--- generic/itcl_util.c	2007-08-07 16:05:30.000000000 -0400
++++ generic/itcl_util.c	2010-01-24 14:54:01.000000000 -0500
+@@ -1274,5 +1274,5 @@
+     CONST char *pos;
+     int listc, result;
+-    char **listv;
++    const char **listv;
+ 
+     cmdName = ckalloc((unsigned)strlen(name)+1);
+--- generic/itclInt.h	2008-12-15 15:02:58.000000000 -0500
++++ generic/itclInt.h	2010-01-24 15:15:06.000000000 -0500
+@@ -207,5 +207,5 @@
+ } ItclVarInHash;
+ 
+-#define ItclOffset(type, field) ((int) ((char *) &((type *) 0)->field))
++#define ItclOffset(type, field) ((intptr_t)((char *) &((type *) 0)->field))
+ 
+ #define itclOldRuntime (itclVarFlagOffset!=0)
