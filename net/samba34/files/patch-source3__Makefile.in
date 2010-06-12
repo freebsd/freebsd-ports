@@ -1,14 +1,28 @@
---- ./source3/Makefile.in.orig	2010-01-18 12:38:09.000000000 +0100
-+++ ./source3/Makefile.in	2010-01-22 02:42:51.000000000 +0100
-@@ -851,6 +851,7 @@
- PAM_WINBIND_OBJ = ../nsswitch/pam_winbind.o localedir.o $(WBCOMMON_OBJ) \
+--- ./source3/Makefile.in.orig	2010-05-10 14:58:53.000000000 +0200
++++ ./source3/Makefile.in	2010-06-10 17:59:21.000000000 +0200
+@@ -132,7 +132,7 @@
+ # These can be overridden by command line switches (see smbd(8))
+ # or in smb.conf (see smb.conf(5))
+ LOGFILEBASE = @logfilebase@
+-CONFIGFILE = $(CONFIGDIR)/smb.conf
++CONFIGFILE = $(CONFIGDIR)/%%SAMBA_CONFIG%%
+ LMHOSTSFILE = $(CONFIGDIR)/lmhosts
+ NCALRPCDIR = @ncalrpcdir@
+ 
+@@ -848,9 +848,11 @@
+ 	     $(LIBADS_OBJ) $(POPT_LIB_OBJ) \
+ 	     $(SMBLDAP_OBJ) $(DCUTIL_OBJ) $(LDB_OBJ) 
+ 
+-PAM_WINBIND_OBJ = ../nsswitch/pam_winbind.o localedir.o $(WBCOMMON_OBJ) \
++PAM_WINBIND_OBJ = ../nsswitch/pam_winbind.o localedir.o \
++		  @LIBTALLOC_STATIC@ @LIBWBCLIENT_STATIC@ \
  		  $(LIBREPLACE_OBJ) @BUILD_INIPARSER@
  
 +
  LIBSMBCLIENT_OBJ0 = \
  		    libsmb/libsmb_cache.o \
  		    libsmb/libsmb_compat.o \
-@@ -1028,7 +1029,7 @@
+@@ -1028,7 +1030,7 @@
  		$(LIBSAMBA_OBJ) \
                  $(POPT_LIB_OBJ)
  
@@ -17,7 +31,20 @@
  		$(PARAM_OBJ) $(LIB_NONSMBD_OBJ) $(LIBSAMBA_OBJ)
  
  REPLACETORT_OBJ = @libreplacedir@/test/testsuite.o \
-@@ -1281,6 +1282,7 @@
+@@ -1044,9 +1046,9 @@
+                  $(LIB_NONSMBD_OBJ) $(KRBCLIENT_OBJ) \
+ 		 $(LIBNDR_GEN_OBJ0)
+ 
+-WINBIND_WINS_NSS_OBJ = ../nsswitch/wins.o $(PARAM_OBJ) \
+-	$(LIBSMB_OBJ) $(LIB_NONSMBD_OBJ) $(NSSWINS_OBJ) $(KRBCLIENT_OBJ) \
+-	$(LIBNDR_GEN_OBJ0) $(LDB_OBJ)
++WINBIND_WINS_NSS_OBJ = ../nsswitch/wins.o @WINBIND_WINS_NSS_EXTRA_OBJS@ \
++	$(PARAM_OBJ) $(LIBSMB_OBJ) $(LIB_NONSMBD_OBJ) $(NSSWINS_OBJ) \
++	$(KRBCLIENT_OBJ) $(LIBNDR_GEN_OBJ0) $(LDB_OBJ)
+ 
+ PAM_SMBPASS_OBJ_0 = pam_smbpass/pam_smb_auth.o pam_smbpass/pam_smb_passwd.o \
+ 		pam_smbpass/pam_smb_acct.o pam_smbpass/support.o
+@@ -1281,6 +1283,7 @@
  
  .SUFFIXES:
  .SUFFIXES: .c .o .lo
@@ -25,17 +52,47 @@
  
  .PHONY: showflags SHOWFLAGS
  
-@@ -1342,6 +1344,9 @@
+@@ -1342,6 +1345,12 @@
  		$(COMPILE_CC) >/dev/null 2>&1
  @BROKEN_CC@	-mv `echo $@ | sed 's%^.*/%%g'` $@
  
 +.h.h.gch:
 +	@echo Compiling $*.h
 +
++.h.h.gch:
++	@echo Compiling $*.h
++
  PRECOMPILED_HEADER = $(builddir)/include/includes.h.gch
  
  # this adds support for precompiled headers. To use it, install a snapshot
-@@ -2705,7 +2710,8 @@
+@@ -2388,14 +2397,15 @@
+ 		$(LDAP_LIBS) $(KRB5LIBS) $(LIBS) $(LIBTALLOC_LIBS) $(LIBTDB_LIBS) \
+ 		$(ZLIB_LIBS) @SONAMEFLAG@`basename $@`@NSSSONAMEVERSIONSUFFIX@
+ 
+-bin/winbind_krb5_locator.@SHLIBEXT@: $(BINARY_PREREQS) $(WINBIND_KRB5_LOCATOR_OBJ) @LIBWBCLIENT_TARGET@
++bin/winbind_krb5_locator.@SHLIBEXT@: $(BINARY_PREREQS) $(WINBIND_KRB5_LOCATOR_OBJ) @LIBTALLOC_TARGET@ @LIBWBCLIENT_TARGET@
+ 	@echo "Linking $@"
+-	@$(SHLD) $(LDSHFLAGS) -o $@ $(WINBIND_KRB5_LOCATOR_OBJ) $(LIBWBCLIENT_LIBS) $(KRB5LIBS) \
++	@$(SHLD) $(LDSHFLAGS) -o $@ $(WINBIND_KRB5_LOCATOR_OBJ) $(LIBTALLOC_LIBS) $(LIBWBCLIENT_LIBS) $(KRB5LIBS) \
+ 		@SONAMEFLAG@`basename $@`
+ 
+ bin/pam_winbind.@SHLIBEXT@: $(BINARY_PREREQS) $(PAM_WINBIND_OBJ) @LIBTALLOC_TARGET@ @LIBWBCLIENT_TARGET@
+ 	@echo "Linking shared library $@"
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(PAM_WINBIND_OBJ) -lpam @INIPARSERLIBS@ \
++		$(LIBS) $(LDAP_LIBS) $(KRB5LIBS) $(NSCD_LIBS) \
+ 		$(PAM_WINBIND_EXTRA_LIBS) $(LIBTALLOC_LIBS) $(LIBWBCLIENT_LIBS) @SONAMEFLAG@`basename $@`
+ 
+ bin/builtin.@SHLIBEXT@: $(BINARY_PREREQS) $(AUTH_BUILTIN_OBJ)
+@@ -2571,7 +2581,7 @@
+ 
+ bin/zfsacl.@SHLIBEXT@: $(BINARY_PREREQS) $(VFS_ZFSACL_OBJ)
+ 	@echo "Building plugin $@"
+-	@$(SHLD_MODULE) $(VFS_ZFSACL_OBJ)
++	@$(SHLD_MODULE) $(VFS_ZFSACL_OBJ) $(ACL_LIBS)
+ 
+ bin/irixacl.@SHLIBEXT@: $(BINARY_PREREQS) $(VFS_IRIXACL_OBJ)
+ 	@echo "Building plugin $@"
+@@ -2705,7 +2715,8 @@
  	@echo "Linking shared library $@"
  	@$(SHLD) $(LDSHFLAGS) -o $@ $(PAM_SMBPASS_OBJ) -lpam $(DYNEXP) \
  		$(LIBS) $(LDAP_LIBS) $(NSCD_LIBS) \
@@ -45,7 +102,7 @@
  
  bin/tdbbackup@EXEEXT@: $(BINARY_PREREQS) $(TDBBACKUP_OBJ) @LIBTALLOC_TARGET@ @LIBTDB_TARGET@
  	@echo Linking $@
-@@ -3028,7 +3034,7 @@
+@@ -3028,7 +3039,7 @@
  	@$(LIB_PATH_VAR)=./bin && \
  	export $(LIB_PATH_VAR) && \
  	for module in $(PAM_MODULES); do \
