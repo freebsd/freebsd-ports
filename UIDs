@@ -171,3 +171,4 @@ mfs:*:925:925::0:0:MooseFS User:/nonexistent:/usr/sbin/nologin
 minbif:*:926:926::0:0:Minbif Daemon User:/nonexistent:/usr/sbin/nologin
 kumofs:*:927:927::0:0:kumofs daemon:/nonexistent:/usr/sbin/nologin
 nslcd:*:928:928::0:0:nslcd daemon:/nonexistent:/usr/sbin/nologin
+activemq:*:929:929::0:0:ActiveMQ Daemon:/nonexistent:/sbin/nologin
