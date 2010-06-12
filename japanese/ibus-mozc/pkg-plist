@@ -1,3 +1,4 @@
+bin/ibus-daemon_restart
 bin/mozc_server_restart
 bin/mozc_server_start
 bin/mozc_server_stop
@@ -6,6 +7,7 @@ bin/mozc_tool_dictionary
 libexec/ibus-engine-mozc
 share/ibus/component/mozc.xml
 share/ibus-mozc/icons/product_icon.png
+share/ibus-mozc/icons/toolicon_setting.png
 share/ibus-mozc/server/mozc_tool
 share/ibus-mozc/server/mozc_server
 @dirrm share/ibus-mozc/icons
