@@ -3,7 +3,7 @@ LIB=		itk
 ITK_LIBRARY=	${PREFIX}/lib/itk${MAJOR}.${MINOR}
 CFLAGS+=	-I. -I./../generic \
 		-I${TCL_INCLUDEDIR}/generic \
-		-I${PREFIX}/include/itcl${MAJOR}.${MINOR}/ \
+		-I ${PREFIX}/include/itcl${MAJOR}.*/ \
 		-I${TK_INCLUDEDIR}/generic \
 		-I${LOCALBASE}/include \
 		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\

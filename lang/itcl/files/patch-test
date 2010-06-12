@@ -1,0 +1,26 @@
+--- tests/ensemble.test	2004-02-12 13:09:50.000000000 -0500
++++ tests/ensemble.test	2010-01-24 14:57:20.000000000 -0500
+@@ -97,12 +97,19 @@
+ "itcl::ensemble test_numbers {part foo}"}}
+ 
+-test ensemble-1.11 {part argument errors are handled gracefully} {
+-    list [catch "itcl::ensemble test_numbers {part foo {{}} {}}" msg] $msg $errorInfo
+-} {1 {procedure "foo" has argument with no name} {procedure "foo" has argument with no name
++if {$tcl_version < 8.5} {
++	set errmsg111 {procedure "foo" has argument with no name}
++} else {
++	set errmsg111 {argument with no name}
++}
++set errmsg111 [format {1 {%s} {%s
+     while executing
+ "part foo {{}} {}"
+     ("ensemble" body line 1)
+     invoked from within
+-"itcl::ensemble test_numbers {part foo {{}} {}}"}}
++"itcl::ensemble test_numbers {part foo {{}} {}}"}} $errmsg111 $errmsg111]
++
++test ensemble-1.11 {part argument errors are handled gracefully} {
++    list [catch "itcl::ensemble test_numbers {part foo {{}} {}}" msg] $msg $errorInfo
++} $errmsg111
+ 
+ test ensemble-2.0 {defining subensembles} {
