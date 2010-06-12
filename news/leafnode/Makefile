@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafnode
-DISTVERSION=	1.11.7
+DISTVERSION=	1.11.8
 CATEGORIES=	news ipv6
 MASTER_SITES=	SF \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
@@ -21,7 +21,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 MAKE_JOBS_SAFE=	yes
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
@@ -48,7 +48,7 @@ MAN8DIR_DE=	${MAN8PREFIX}/man/de.ISO8859-1/man8
 
 DOCS=		ADD-ONS ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
 		INSTALL NEWS README ChangeLog.old README-FQDN README-FQDN.html \
-		README-daemontools README.FIRST leafnode.cron.daily \
+		README-daemontools leafnode.cron.daily \
 		leafnode-SA-2002-01.txt leafnode-SA-2003-01.txt \
 		leafnode-SA-2004-01.txt \
 		leafnode-SA-2005-01.txt \
