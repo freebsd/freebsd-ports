@@ -17,6 +17,8 @@ COMMENT=	Python library for reading and writing tarballs
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
+DEPRECATED=	all development activity in this port has been merged into mainline python after 2.4
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 230
