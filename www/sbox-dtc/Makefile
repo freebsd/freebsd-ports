@@ -7,6 +7,7 @@
 
 PORTNAME=	sbox
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://files.bsdroot.lv/FreeBSD/distfiles/
 
@@ -20,8 +21,8 @@ SBOX_LOGFILE?=	/var/log/sbox.log
 
 CFLAGS+=	-DWEB_USER='\"${WWWOWN}\"' \
 		-DWEB_GROUP='\"${WWWGRP}\"' \
-		-DUID_MIN='\"${SBOX_UIDMIN}\"' \
-		-DGID_MIN='\"${SBOX_GIDMIN}\"' \
+		-DUID_MIN=${SBOX_UIDMIN} \
+		-DGID_MIN=${SBOX_GIDMIN} \
 		-DSAFE_PATH='\"${SBOX_SAFEPATH}\"' \
 		-DLOG_FILE='\"${SBOX_LOGFILE}\"'
 
