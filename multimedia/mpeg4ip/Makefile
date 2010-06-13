@@ -210,7 +210,7 @@ post-install:
 .endfor
 .endif
 
-.if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx} == "mmx")
+.if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mmmx} == "mmx") && !defined(PACKAGE_BUILDING)
 WITH_MMX=yes
 .else
 WITHOUT_MMX=yes
