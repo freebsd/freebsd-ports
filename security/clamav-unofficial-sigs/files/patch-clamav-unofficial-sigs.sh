@@ -1,5 +1,5 @@
---- clamav-unofficial-sigs.sh	2010-01-24 02:38:29.000000000 +0100
-+++ clamav-unofficial-sigs.sh.patched	2010-03-06 08:52:32.000000000 +0100
+--- clamav-unofficial-sigs.sh	2010-06-06 18:43:07.000000000 +0200
++++ clamav-unofficial-sigs.sh.patched	2010-06-07 18:42:17.000000000 +0200
 @@ -19,7 +19,7 @@
  #                                                                              #
  ################################################################################
@@ -7,7 +7,7 @@
 -default_config="/etc/clamav-unofficial-sigs.conf"
 +default_config="%%PREFIX%%/etc/clamav-unofficial-sigs.conf"
  
- version="v3.7 (updated 2010-01-23)"
+ version="v3.7.1 (updated 2010-06-06)"
  output_ver="
 @@ -407,6 +407,8 @@
            exit
