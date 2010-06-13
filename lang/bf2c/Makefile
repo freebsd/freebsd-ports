@@ -13,6 +13,9 @@ MASTER_SITES=	SF
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Optimizing BrainF*ck to C compiler
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GMAKE=yes
 
 post-patch:
