@@ -293,6 +293,7 @@ acron                           ports/misc/acron
 acroread8                       ports/print/acroread8
 acroread9                       ports/print/acroread9
 acroreadwrapper                 ports/print/acroreadwrapper
+activemq                        ports/net/activemq
 activitymail                    ports/devel/activitymail
 actx                            ports/games/actx
 acx100                          ports/net/acx100
@@ -1702,6 +1703,7 @@ clockspeed                      ports/sysutils/clockspeed
 clockspeed-conf                 ports/sysutils/clockspeed-conf
 clog                            ports/net-mgmt/clog
 clojure                         ports/lang/clojure
+clojure-contrib                 ports/lang/clojure-contrib
 clojure-mode.el                 ports/lang/clojure-mode.el
 clonehdd                        ports/sysutils/clonehdd
 cloop-utils                     ports/sysutils/cloop-utils
@@ -3835,6 +3837,9 @@ freesbie                        ports/sysutils/freesbie
 freesci                         ports/games/freesci
 freesweep                       ports/games/freesweep
 freeswitch                      ports/net/freeswitch
+freeswitch-core                 ports/net/freeswitch-core
+freeswitch-music                ports/audio/freeswitch-music
+freeswitch-sounds               ports/audio/freeswitch-sounds
 freesynd                        ports/games/freesynd
 freetalk                        ports/net-im/freetalk
 freetar                         ports/archivers/freetar
