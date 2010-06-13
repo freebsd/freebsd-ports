@@ -29,7 +29,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Fails to link on ia64"
+BROKEN=		Fails to link on ia64
 .endif
 
 .include <bsd.port.post.mk>

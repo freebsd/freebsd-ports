@@ -35,7 +35,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64 (needs -fPIC)"
+BROKEN=		Does not compile on sparc64 (needs -fPIC)
 .endif
 
 CONFIGURE_ARGS+=--without-gtk

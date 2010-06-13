@@ -37,7 +37,7 @@ USE_XORG=	x11
 .include	<bsd.port.pre.mk>
 
 .if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Does not compile on !i386 and !alpha"
+BROKEN=		Does not compile on !i386 and !alpha
 .endif
 
 pre-install:

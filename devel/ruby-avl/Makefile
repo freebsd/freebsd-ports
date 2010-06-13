@@ -32,7 +32,7 @@ DOCS=		README
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (needs to link against shared libraries)"
+BROKEN=		Does not build on amd64 (needs to link against shared libraries)
 .endif
 
 post-install:

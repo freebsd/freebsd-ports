@@ -37,7 +37,7 @@ INSTALL_TARGET=	install install-data install-man install-wrapper
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 post-extract:

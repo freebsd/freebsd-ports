@@ -35,7 +35,7 @@ PORTDOCS=	ChangeLog \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		"pvm port needs to provide shared libraries"
+BROKEN=		pvm port needs to provide shared libraries
 .endif
 
 post-install:

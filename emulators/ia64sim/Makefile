@@ -21,7 +21,7 @@ USE_ZIP=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 EXTRACT_BEFORE_ARGS=	-qLa

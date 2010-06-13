@@ -26,7 +26,7 @@ post-patch:
 	${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .if ${ARCH} == "ia64"
-BROKEN=	"Does not compile on ia64"
+BROKEN=	Does not compile on ia64
 .endif
 
 .include <bsd.port.post.mk>

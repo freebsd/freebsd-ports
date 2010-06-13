@@ -31,7 +31,7 @@ BROKEN=		Does not compile with GCC 4.2
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
 
 do-install:

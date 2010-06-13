@@ -28,7 +28,7 @@ STK_ARCH!=	${ECHO} "$$(uname)-$$(uname -r)-$$(uname -m)"
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
 
 .include <bsd.port.post.mk>
