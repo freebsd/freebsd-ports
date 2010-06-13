@@ -15,6 +15,9 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	XFce 4 clipboard module for xfce4-panel
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 OPTIONS=	UNIQUE	"Enable Unique (single instance) support" on
 
 GNU_CONFIGURE=	yes
