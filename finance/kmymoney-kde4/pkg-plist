@@ -1016,8 +1016,8 @@ share/icons/oxygen/32x32/apps/kmymoney.png
 share/icons/oxygen/32x32/mimetypes/kmy.png
 share/icons/oxygen/48x48/apps/kmymoney.png
 share/icons/oxygen/48x48/mimetypes/kmy.png
+share/icons/oxygen/64x64/apps/kmymoney.png
 share/icons/oxygen/64x64/mimetypes/kmy.png
-share/icons/oxygen/68x68/apps/kmymoney.png
 %%WITH_CALENDAR%%share/kde4/services/kcm_kmm_icalendarexport.desktop
 share/kde4/services/kcm_kmm_printcheck.desktop
 %%WITH_CALENDAR%%share/kde4/services/kmm_icalendarexport.desktop
@@ -1061,8 +1061,6 @@ share/locale/zh_CN/LC_MESSAGES/kmymoney.mo
 share/locale/zh_TW/LC_MESSAGES/kmymoney.mo
 share/mime/application/x-kmymoney.xml
 share/mime/packages/x-kmymoney.xml
-@dirrmtry share/icons/oxygen/68x68/apps
-@dirrmtry share/icons/oxygen/68x68
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/locolor/32x32
 @dirrmtry share/icons/locolor/16x16/apps

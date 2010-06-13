@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	kmymoney
-PORTVERSION=	3.97.2
-PORTREVISION=	3
+PORTVERSION=	3.98.1
 CATEGORIES=	finance
-MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/3.98
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	KDE 4.x-based personal finance manager
@@ -27,6 +26,9 @@ USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kmymoney.1
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	CALENDAR "Enable Calendar plugin" on \
 		KBANKING "Enable KBanking plugin" off \
