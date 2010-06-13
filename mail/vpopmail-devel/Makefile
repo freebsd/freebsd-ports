@@ -192,7 +192,7 @@ CONFIGURE_ARGS+=	--disable-md5-passwords
 .endif
 
 .if defined(WITH_APOP)
-BROKEN=		"The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APOP will just work"
+BROKEN=		The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APOP will just work
 .endif
 
 .if defined(WITH_VALIAS)

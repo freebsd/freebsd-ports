@@ -22,7 +22,7 @@ USE_GNOME=	gtk20
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 .include <bsd.port.post.mk>

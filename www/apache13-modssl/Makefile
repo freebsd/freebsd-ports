@@ -267,7 +267,7 @@ CONFLICTS+=	apache+*mod_deflate*-1.*
 
 .if defined(WITH_APACHE_IPV6) || defined(APACHE_WITH_IPV6)
 .if defined(WITH_APACHE_MODACCEL) || defined(APACHE_WITH_MODACCEL)
-BROKEN=		"mod_accel and ipv6 don't compile together"
+BROKEN=		mod_accel and ipv6 don't compile together
 .endif
 
 CONFLICTS+=	apache+mod_ssl-1.* \

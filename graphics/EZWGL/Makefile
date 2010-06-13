@@ -30,7 +30,7 @@ NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 .include "${FILESDIR}/manpages"
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
 
 post-extract:

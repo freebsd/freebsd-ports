@@ -39,7 +39,7 @@ SKKDIC_FILE=	SKK-JISYO.L-20060709
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64"
+BROKEN=		Does not compile on ia64
 .endif
 
 post-extract:

@@ -32,7 +32,7 @@ PKGNAMESUFFIX:=		${PKGNAMESUFFIX}+fulldebug
 MAN3=		gc.3
 
 .if ${ARCH} == "ia64"
-BROKEN=	"Does not compile on ia64"
+BROKEN=	Does not compile on ia64
 .endif
 
 post-patch:

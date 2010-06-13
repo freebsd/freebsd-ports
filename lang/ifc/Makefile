@@ -56,7 +56,7 @@ IGNORE=	go to Intel Premier Support, https://premier.intel.com, to obtain ${DIST
 .endfor
 
 .if exists(${LINUXBASE}/boot/kernel.h)
-BROKEN=	"Cannot coexist with linux_devtools"
+BROKEN=	Cannot coexist with linux_devtools
 .endif
 
 post-extract:

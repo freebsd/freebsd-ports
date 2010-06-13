@@ -26,7 +26,7 @@ PYDISTUTILS_PKGNAME=	PyProlog
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN=		"Does not build on ia64 or amd64 (can't link shared libraries to static)"
+BROKEN=		Does not build on ia64 or amd64 (can't link shared libraries to static)
 .endif
 
 .include <bsd.port.post.mk>

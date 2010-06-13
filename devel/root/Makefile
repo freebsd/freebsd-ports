@@ -224,7 +224,7 @@ BROKEN=			Does not compile
 .endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-BROKEN=			"Does not compile"
+BROKEN=			Does not compile
 .endif
 
 pre-everything::

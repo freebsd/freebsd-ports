@@ -44,7 +44,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 .include <bsd.port.post.mk>

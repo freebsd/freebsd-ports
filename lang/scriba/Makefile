@@ -33,7 +33,7 @@ OPTIONS=	BDB	"Berkeley DB extension"		off \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		"fails to compile"
+BROKEN=		fails to compile
 .endif
 
 .if ${OSVERSION} >= 700042

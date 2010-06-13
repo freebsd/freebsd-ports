@@ -33,7 +33,7 @@ INSTALL_TARGET=	install-coco install-m2ps
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 # extract patches for mule2.3 based on emacs-19.34b

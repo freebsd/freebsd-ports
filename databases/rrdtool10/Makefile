@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--with-pic
 .endif
 
 .if ${ARCH} == "ia64"
-BROKEN=		"Does not build on ia64"
+BROKEN=		Does not build on ia64
 .endif
 
 post-extract:

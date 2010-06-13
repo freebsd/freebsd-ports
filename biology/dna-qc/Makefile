@@ -24,7 +24,7 @@ PROGRAMS=	counter hybridize normalize random_clip random_line
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile"
+BROKEN=		Does not compile
 .endif
 
 post-patch:

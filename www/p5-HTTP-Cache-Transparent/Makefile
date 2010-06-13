@@ -23,7 +23,7 @@ MAN3=		HTTP::Cache::Transparent.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BROKEN=		"Does not compile with perl ${PERL_VERSION}"
+BROKEN=		Does not compile with perl ${PERL_VERSION}
 .endif
 
 .include <bsd.port.post.mk>

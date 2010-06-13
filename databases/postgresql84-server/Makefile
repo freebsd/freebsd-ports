@@ -168,7 +168,7 @@ INSTALL_TARGET=	install-strip
 
 .  if defined(WITH_MIT_KRB5)
 .    if exists(/usr/lib/libkrb5.so) || exists(/usr/bin/krb5-config)
-BROKEN=		"You must remove heimdal's /usr/bin/krb5-config and /usr/lib/libkrb5.so*, and set NO_KERBEROS=true in /etc/make.conf to build successfully with MIT-KRB"
+BROKEN=		You must remove heimdal's /usr/bin/krb5-config and /usr/lib/libkrb5.so*, and set NO_KERBEROS=true in /etc/make.conf to build successfully with MIT-KRB
 .    endif
 # Allow defining a home built MIT Kerberos by setting KRB5_HOME
 .    if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a) && exists(${KRB5_HOME}/bin/krb5-config)

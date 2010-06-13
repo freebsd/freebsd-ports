@@ -23,7 +23,7 @@ PORTDOCS=	scbayes-ja.html scbayes.html scmail-ja.html scmail.html
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+BROKEN=		Does not compile on alpha
 .endif
 
 .if exists(${LOCALBASE}/bin/gauche-config)

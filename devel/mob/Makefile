@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "powerpc"
-BROKEN=		"Configure fails on amd64, ia64, or powerpc"
+BROKEN=		Configure fails on amd64, ia64, or powerpc
 .endif
 
 do-install:

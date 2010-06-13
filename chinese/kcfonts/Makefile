@@ -21,7 +21,7 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 NO_WRKSUBDIR=	yes

@@ -59,7 +59,7 @@ BROKEN=		Does not compile on FreeBSD >= 7.0
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 post-patch:
