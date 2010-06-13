@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rp-pppoe
-PORTVERSION=	3.8
+PORTVERSION=	3.10
 CATEGORIES=	net
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/
 
@@ -17,6 +17,8 @@ GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKSRC}/src
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${WRKSRC}/src
+
+MAKE_JOBS_SAFE=	yes
 
 MAN5=	pppoe.conf.5
 MAN8=	pppoe-connect.8 pppoe-setup.8 pppoe-start.8 pppoe-status.8 \
@@ -51,36 +53,36 @@ post-patch:
 do-install:
 # Binaries
 .for f in pppoe pppoe-server pppoe-relay
-	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f} ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f} ${PREFIX}/sbin
 .endfor
 # Configurations
-	@${MKDIR} ${PREFIX}/etc/ppp
+	${MKDIR} ${PREFIX}/etc/ppp
 .for f in ${CONFIG_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/configs/${f} \
+	${INSTALL_DATA} ${WRKSRC}/configs/${f} \
 		${PREFIX}/etc/ppp/${f}.sample
 .endfor
 # Manual pages
-	@${MKDIR} ${MAN5PREFIX}/man/man5
+	${MKDIR} ${MAN5PREFIX}/man/man5
 .for f in ${MAN5}
-	@${INSTALL_MAN} ${WRKSRC}/man/${f} ${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/man/${f} ${MAN5PREFIX}/man/man5
 .endfor
-	@${MKDIR} ${MAN8PREFIX}/man/man8
+	${MKDIR} ${MAN8PREFIX}/man/man8
 .for f in ${MAN8}
-	@${INSTALL_MAN} ${WRKSRC}/man/${f} ${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/${f} ${MAN8PREFIX}/man/man8
 .endfor
 # Scripts
 .for f in ${SCRIPT_FILES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/${f} ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${f} ${PREFIX}/sbin
 .endfor
 # Startup scripts
 .for f in 04pppoe-relay.sh.sample 04pppoe-server.sh.sample
-	@${INSTALL_SCRIPT} ${FILESDIR}/${f} ${PREFIX}/etc/rc.d/
+	${INSTALL_SCRIPT} ${FILESDIR}/${f} ${PREFIX}/etc/rc.d/
 .endfor
 
 # Documentation
 .ifndef (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif # NOPORTDOCS
 
 .include <bsd.port.mk>
