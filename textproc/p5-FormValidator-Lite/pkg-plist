@@ -6,6 +6,7 @@
 %%SITE_PERL%%/FormValidator/Lite/Constraint/Email.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint/URL.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint/Date.pm
+%%SITE_PERL%%/FormValidator/Lite/Constraint/Time.pm
 %%SITE_PERL%%/FormValidator/Lite/Messages/en.pm
 %%SITE_PERL%%/FormValidator/Lite/Messages/ja.pm
 %%SITE_PERL%%/FormValidator/Lite/Upload/CGI.pm
