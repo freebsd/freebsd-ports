@@ -18,6 +18,8 @@ EXTRACT_ONLY=
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A fully compliant DynDNS.org client for UNIX (supports NIC v2.0)
 
+LICENSE=	GPLv2
+
 USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
