@@ -31,7 +31,7 @@ PATCH_DIST_STRIP=	-d ..
 # Fix a bug where cache buffer retrieval could race with a checkpoint
 # call, potentially causing database environment recovery to fail. [#14657]
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4.4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix

@@ -12,7 +12,7 @@ CATEGORIES=	security net
 # so just one MASTER_SITES entry should be OK.
 MASTER_SITES=	http://openvpn.net/release/
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
 LATEST_LINK=	openvpn20

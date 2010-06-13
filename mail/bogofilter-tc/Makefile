@@ -10,7 +10,7 @@ PORTREVISION=	0
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tc
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 # Blanket approval for changes by Zach Thompson (address above)
 
 LIB_DEPENDS=	tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet

@@ -10,7 +10,7 @@ PORTREVISION=	0
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-sqlite
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 
 USE_SQLITE=	3
 

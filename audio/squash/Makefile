@@ -11,7 +11,7 @@ CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Learning console-based MP3/OGG player
 
 LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac \

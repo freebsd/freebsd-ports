@@ -10,7 +10,7 @@ DISTVERSION=	1.02rc1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.lzop.org/download/
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Fast file compressor similar to gzip, using the LZO library
 
 # prefer lzo2 if it is already installed or if no lzo is installed.

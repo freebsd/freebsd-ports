@@ -15,7 +15,7 @@ PATCHFILES=	patch.${PORTVERSION}.1  patch.${PORTVERSION}.2 \
 		patch.${PORTVERSION}.3  patch.${PORTVERSION}.4 \
 		patch.${PORTVERSION}.5
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4.2
 
 MASTERDIR?=	${.CURDIR}

@@ -13,7 +13,7 @@ DISTNAME=	cvschk
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Quick offline checker for CVS modifications
 
 USE_PERL5_RUN=	yes

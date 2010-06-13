@@ -10,7 +10,7 @@ PORTVERSION=	3.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The popular Roaring Penguin's PPPoE software
 
 GNU_CONFIGURE=	yes

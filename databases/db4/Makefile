@@ -16,7 +16,7 @@ MASTER_SITES=	http://download-uk.oracle.com/berkeley-db/ \
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
