@@ -8,7 +8,7 @@
 PKGNAMESUFFIX=	-nocrypto
 DISTNAME=	db-${PORTVERSION}.NC
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../db42
 MD5_FILE=	${.CURDIR}/distinfo

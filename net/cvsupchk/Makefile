@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 DISTFILES=
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Check a CVSup directory hierarchy against the checkouts file
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/cvsup:extract

@@ -19,7 +19,7 @@ PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${P
 PATCHFILES=	patch.${PORTVERSION}.1
 PATCH_DIST_STRIP=	-d ..
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4.3
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix

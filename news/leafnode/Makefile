@@ -14,7 +14,7 @@ MASTER_SITES=	SF \
 #MASTER_SITES=	http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
 #		http://homepages.uni-paderborn.de/mandree/
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	NNTP package for offline news caching and reading
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

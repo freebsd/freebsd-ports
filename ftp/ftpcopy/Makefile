@@ -10,7 +10,7 @@ PORTVERSION=	0.6.7
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Command line ftp tools for listing and mirroring
 
 USE_PERL5_BUILD=	yes
