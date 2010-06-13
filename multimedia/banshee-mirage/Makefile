@@ -19,6 +19,8 @@ RUN_DEPENDS=	banshee-1:${PORTSDIR}/multimedia/banshee
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
+BROKEN=		does not build
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
