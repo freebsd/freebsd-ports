@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--enable-audio=oss --with-default-output=oss
 CONFIGURE_ARGS+=	--disable-sdl
 #.endif
 
-.if ${MACHINE_CPU:Mmmx}
+.if ${MACHINE_CPU:Mmmx} && !defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-mmx
 BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
 .else
