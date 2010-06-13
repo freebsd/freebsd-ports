@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	XML-Compile-Cache
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cache Compiled XML Translators
 
 BUILD_DEPENDS=	p5-Log-Report>=0.17:${PORTSDIR}/devel/p5-Log-Report \
