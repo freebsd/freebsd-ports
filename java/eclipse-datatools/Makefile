@@ -22,6 +22,12 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.3.2.v200802051830/feature.xml:${PORTSDIR}/java/eclipse-emf \
 		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
 
+LICENSE=	EPL
+LICENSE_NAME=	Eclipse Public License
+LICENSE_GROUPS=	FSF OSI
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_TEXT=	The license: EPL (Eclipse Public License) is standard, please read from the web. A copy of the EPL is available at http://www.eclipse.org/org/documents/epl-v10.php
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes

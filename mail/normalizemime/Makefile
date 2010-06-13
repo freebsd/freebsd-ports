@@ -16,6 +16,8 @@ EXTRACT_ONLY=
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A mime normalizer to be used as a preprocessor for email classication
 
+LICENSE=	GPLv2
+
 USE_ICONV=	yes
 NO_WRKSUBDIR=	yes
 

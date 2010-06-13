@@ -17,6 +17,9 @@ COMMENT=	QT-based comic book archive viewer
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		unrar:${PORTSDIR}/archivers/unrar
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build
 USE_GNOME=	pkgconfig
