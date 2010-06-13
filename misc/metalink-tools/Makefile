@@ -19,6 +19,9 @@ LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	AWK="${AWK}" \

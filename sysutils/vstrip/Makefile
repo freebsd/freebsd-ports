@@ -17,6 +17,9 @@ COMMENT=	A VOB de-multiplexing tool, splitter and VOB/IFO files processor
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license.txt
+
 USE_ZIP=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -14,6 +14,9 @@ DISTNAME=	pgina_pam-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Daemon for allowing a pGina plugin to authenticate against Unix PAM
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

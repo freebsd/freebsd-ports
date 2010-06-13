@@ -25,6 +25,11 @@ RUN_DEPENDS=	\
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI
 
+LICENSE=	EULA
+LICENSE_NAME=	The Clarified Artistic License
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE
+
 USE_PERL5=	yes
 USE_RC_SUBR=	${PORTNAME}
 NO_BUILD=	yes

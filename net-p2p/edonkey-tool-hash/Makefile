@@ -15,6 +15,9 @@ DISTNAME=	ed2k_hash-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Both calculates 'eDonkey/Overnet hashes' producing ed2k:// file links
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PLIST_FILES=	bin/edonkey-tool-hash
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
