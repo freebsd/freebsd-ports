@@ -1,13 +1,16 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: prosody
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
 # prosody_enable (bool):   Set to NO by default.
 #                Set it to YES to enable Prosody
-#
 
 . /etc/rc.subr
 
@@ -19,19 +22,17 @@ command="%%PREFIX%%/bin/prosodyctl"
 load_rc_config $name
 
 prosody=${prosody_enable-"NO"}
-command_args="$1"
 
-status_cmd=prosody_status_cmd
-stop_cmd=prosody_stop_cmd
+extra_commands="status"
 
-prosody_stop_cmd()
+start_cmd="prosody_cmd start"
+stop_cmd="prosody_cmd stop"
+restart_cmd="$stop_cmd; $start_cmd"
+status_cmd="prosody_cmd status"
+
+prosody_cmd()
 {
-	/usr/local/bin/prosodyctl stop
-}
-
-prosody_status_cmd()
-{
-	%%PREFIX%%/bin/prosodyctl status
+	%%PREFIX%%/bin/prosodyctl $1
 }
 
 run_rc_command "$1"
