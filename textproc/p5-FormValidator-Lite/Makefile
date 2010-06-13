@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FormValidator-Lite
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ MAN3=		FormValidator::Lite.3 \
 	FormValidator::Lite::Constraint::Email.3 \
 	FormValidator::Lite::Constraint::File.3 \
 	FormValidator::Lite::Constraint::Japanese.3 \
+	FormValidator::Lite::Constraint::Time.3 \
 	FormValidator::Lite::Constraint::URL.3 \
 	FormValidator::Lite::Messages::en.3 \
 	FormValidator::Lite::Messages::ja.3
