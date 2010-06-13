@@ -1,6 +1,6 @@
 # ports collection makefile for:	Berkeley DB v4
 # Date created:				2003-01-04
-# Whom:					Matthias Andree <matthias.andree@web.de>
+# Whom:					Matthias Andree <matthias.andree@gmx.de>
 #
 # $FreeBSD$
 #
