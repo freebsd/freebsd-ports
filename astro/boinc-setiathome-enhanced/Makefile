@@ -14,6 +14,9 @@ DISTNAME=	setiathome-svn-412
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Setiathome Enhanced for BOINC
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3 \
 		${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash

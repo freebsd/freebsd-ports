@@ -13,6 +13,9 @@ MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Utilities from the Free Unix Spectrum Emulator
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	spectrum.7:${PORTSDIR}/emulators/libspectrum
 
 OPTIONS=	AUDIOFILE "Build audio <-> tape utilities" on
