@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.7.10
-PORTREVISION=	1
+PORTVERSION=	0.7.14
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:i2p \
 		http://mirror.i2p2.de/:i2p \
-		SF/jetty/OldFiles:jetty
+		http://dist.codehaus.org/jetty/jetty-5.1.x/:jetty
 DISTFILES=	\
 		i2psource_${PORTVERSION}${EXTRACT_SUFX}:i2p \
 		${JETTY_DISTFILE}:jetty
@@ -22,6 +21,14 @@ COMMENT=	An anonymizing network
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
+LICENSE=	ASL EULA
+LICENSE_NAME_EULA=	End User License Agreement
+LICENSE_PERMS_EULA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_FILE_EULA=	${WRKSRC}/LICENSE.txt
+LICENSE_COMB=	multi
+LICENSE_DISTFILES_ASL=	${JETTY_DISTFILE}
+LICENSE_DISTFILES_EULA=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 
 USE_BZIP2=	yes
 USE_RC_SUBR=	i2p.sh
@@ -53,7 +60,7 @@ PLIST_FILES=	\
 		%%DATADIR%%/i2p.tar.bz2 \
 		%%DATADIR%%/i2pupdate.zip
 
-JETTY_DISTFILE=	jetty-5.1.12.zip
+JETTY_DISTFILE=	jetty-5.1.15.tgz
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/apps/jetty/
