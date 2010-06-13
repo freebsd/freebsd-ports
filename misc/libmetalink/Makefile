@@ -15,6 +15,9 @@ COMMENT=	Metalink library written in C language
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 FETCH_ARGS=
 USE_BZIP2=	yes
 USE_GCC=	4.4+

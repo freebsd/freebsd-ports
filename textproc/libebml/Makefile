@@ -14,6 +14,9 @@ MASTER_SITES=	http://dl.matroska.org/downloads/libebml/ \
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/make/linux

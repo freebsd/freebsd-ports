@@ -26,6 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0.5:${PORTSDIR}/databases/py-sqla
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.11:${PORTSDIR}/www/py-html5lib
 
+LICENSE=	MIT
+
 USE_ZIP=	yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes

@@ -22,6 +22,8 @@ RUN_DEPENDS=	\
 	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
 	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
+LICENSE=	GPLv2
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 

@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}editor-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GUI editor to create and edit metalinks
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKDIR}/license.txt
+
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.txt

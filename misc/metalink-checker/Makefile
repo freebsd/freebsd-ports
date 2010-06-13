@@ -15,6 +15,8 @@ DISTNAME=	checker-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Python script to check metalink files and complete a basic download
 
+LICENSE=	GPLv2
+
 USE_DOS2UNIX=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
