@@ -59,12 +59,12 @@
 +  name[3] = fgpid;
 +
 +  if (sysctl (name, 4, NULL, &len, NULL, 0) < 0)
-+    return g_strdup (priv->initial_working_directory);
++    return NULL;
 +  freep = kif = g_malloc (len);
 +  if (sysctl (name, 4, kif, &len, NULL, 0) < 0)
 +    {
 +      g_free (freep);
-+      return g_strdup (priv->initial_working_directory);
++      return NULL;
 +    }
 +#else
 +  freep = kinfo_getfile (fgpid, &cnt);
