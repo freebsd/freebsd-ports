@@ -384,7 +384,7 @@ lib/activemq/bin/wrapper.jar
 %%EXAMPLESDIR%%/example/transactions/build.xml
 %%EXAMPLESDIR%%/example/transactions/README.txt
 %%EXAMPLESDIR%%/example/build.xml
-%%DOCSDIR%%/docs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/docs/index.html
 %%ETCDIR%%/activemq-command.xml
 %%ETCDIR%%/activemq-demo.xml
 %%ETCDIR%%/activemq-dynamic-network-broker1.xml
@@ -408,7 +408,7 @@ lib/activemq/bin/wrapper.jar
 %%ETCDIR%%/log4j.properties
 %%ETCDIR%%/logging.properties
 @dirrm %%ETCDIR%%
-@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 @dirrm lib/activemq/webapps/static
 @dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq/util
 @dirrm lib/activemq/webapps/fileserver/WEB-INF/classes/org/apache/activemq
