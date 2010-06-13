@@ -237,6 +237,7 @@ share/pixmaps/pidgin/emotes/default/can.png
 share/pixmaps/pidgin/emotes/default/car.png
 share/pixmaps/pidgin/emotes/default/cat.png
 share/pixmaps/pidgin/emotes/default/chicken.png
+share/pixmaps/pidgin/emotes/default/chilli.png
 share/pixmaps/pidgin/emotes/default/cigarette.png
 share/pixmaps/pidgin/emotes/default/clap.png
 share/pixmaps/pidgin/emotes/default/clock.png
@@ -321,6 +322,7 @@ share/pixmaps/pidgin/emotes/default/mohawk.png
 share/pixmaps/pidgin/emotes/default/moneymouth.png
 share/pixmaps/pidgin/emotes/default/monkey.png
 share/pixmaps/pidgin/emotes/default/moon.png
+share/pixmaps/pidgin/emotes/default/mrgreen.png
 share/pixmaps/pidgin/emotes/default/msn-away.png
 share/pixmaps/pidgin/emotes/default/msn-busy.png
 share/pixmaps/pidgin/emotes/default/msn.png
@@ -422,11 +424,14 @@ share/pixmaps/pidgin/emotes/small/dont-know.png
 share/pixmaps/pidgin/emotes/small/embarrassed.png
 share/pixmaps/pidgin/emotes/small/excited.png
 share/pixmaps/pidgin/emotes/small/grin.png
+share/pixmaps/pidgin/emotes/small/grumpy.png
 share/pixmaps/pidgin/emotes/small/happy.png
+share/pixmaps/pidgin/emotes/small/hot.png
 share/pixmaps/pidgin/emotes/small/hug-left.png
 share/pixmaps/pidgin/emotes/small/hug-right.png
 share/pixmaps/pidgin/emotes/small/in_love.png
 share/pixmaps/pidgin/emotes/small/internet.png
+share/pixmaps/pidgin/emotes/small/invincible.png
 share/pixmaps/pidgin/emotes/small/kiss.png
 share/pixmaps/pidgin/emotes/small/meeting.png
 share/pixmaps/pidgin/emotes/small/mobile.png
@@ -660,6 +665,7 @@ share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-invisible.png
 share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-offline.png
 share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-pending.png
 share/pixmaps/pidgin/tray/hicolor/48x48/status/pidgin-tray-xa.png
+share/pixmaps/pidgin/tray/hicolor/index.theme
 @dirrm include/pidgin
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16
