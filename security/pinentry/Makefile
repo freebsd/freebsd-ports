@@ -7,7 +7,7 @@
 
 PORTNAME=	pinentry
 PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION?=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	pinentry
@@ -40,6 +40,10 @@ PKGNAMESUFFIX=	${PINENTRY_SLAVE}
 .endif
 
 .include <bsd.port.options.mk>
+
+.if !(defined(WITH_NCURSES) || defined(WITH_GTK) || defined(WITH_GTK2) || defined(WITH_QT3) || defined(WITH_QT4))
+IGNORE=	requires at least one frontend. Please rerun 'make config'
+.endif
 
 .if defined(WITH_QT3)
 USE_QT_VER=	3
