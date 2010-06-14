@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shlock
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
