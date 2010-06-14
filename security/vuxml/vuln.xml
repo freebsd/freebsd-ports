@@ -181,8 +181,7 @@ Note:  Please add new entries to the beginning of this file.
          <p>The Redmine release announcement reports that
            several cross side scripting vulnerabilities
            and a potential data disclosure vulnerability have
-           been fixed in the latest release.
-         </p>
+           been fixed in the latest release.</p>
       </body>
     </description>
     <references>
@@ -764,7 +763,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>38478</bid>
       <certvu>576029</certvu>
-      <cvename>CVE-2010-0205</cvename> 
+      <cvename>CVE-2010-0205</cvename>
       <url>http://libpng.sourceforge.net/ADVISORY-1.4.1.html</url>
       <url>http://secunia.com/advisories/38774</url>
       <url>http://xforce.iss.net/xforce/xfdb/56661</url>
@@ -1743,12 +1742,12 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Matthias Andree reports:</p>
 	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2010-01.txt">
 	  <p>In verbose mode, fetchmail prints X.509 certificate subject and
-	  issuer information to the user, and counts and allocates a malloc()
-	  buffer for that purpose.</p>
+	    issuer information to the user, and counts and allocates a malloc()
+	    buffer for that purpose.</p>
 	  <p>If the material to be displayed contains characters with high bit
-	  set and the platform treats the "char" type as signed, this can cause
-	  a heap buffer overrun because non-printing characters are escaped as
-	  \xFF..FFnn, where nn is 80..FF in hex.</p>
+	    set and the platform treats the "char" type as signed, this can cause
+	    a heap buffer overrun because non-printing characters are escaped as
+	    \xFF..FFnn, where nn is 80..FF in hex.</p>
 	</blockquote>
       </body>
     </description>
@@ -1889,7 +1888,7 @@ Note:  Please add new entries to the beginning of this file.
             proxy/proxy_util.c in mod_proxy in the Apache HTTP Server before
             1.3.42 on 64-bit platforms allows remote origin servers to cause a
             denial of service (daemon crash) or possibly execute arbitrary code
-          via a large chunk size that triggers a heap-based buffer overflow.</p>
+	    via a large chunk size that triggers a heap-based buffer overflow.</p>
 	</blockquote>
       </body>
     </description>
@@ -2252,7 +2251,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>We have discovered a remotely exploitable
 	    "improper input validation" vulnerability in the Monkey
 	    web server that allows an attacker to perform denial of
-	    service attacks by repeatedly crashing worker threads 
+	    service attacks by repeatedly crashing worker threads
 	    that process HTTP requests. </p>
 	</blockquote>
       </body>
@@ -2822,8 +2821,8 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Secunia.com</p>
 	<blockquote cite="http://secunia.com/advisories/37414/">
-	  <p>Do not attempt to load an unqualified module.la file from the 
-	    current directory (by default) since doing so is insecure and is 
+	  <p>Do not attempt to load an unqualified module.la file from the
+	    current directory (by default) since doing so is insecure and is
 	    not compliant with the documentation.</p>
 	</blockquote>
       </body>
@@ -3459,7 +3458,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Django project reports:</p>
 	<blockquote cite="http://www.djangoproject.com/weblog/2009/oct/09/security/">
-	  <p>Django's forms library includes field types which perform 
+	  <p>Django's forms library includes field types which perform
 	    regular-expression-based validation of email addresses and
 	    URLs. Certain addresses/URLs could trigger a pathological
 	    performance case in these regular expression, resulting in
@@ -3847,7 +3846,7 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-  <vuln vid="152b27f0-a158-11de-990c-e5b1d4c882e0"> 
+  <vuln vid="152b27f0-a158-11de-990c-e5b1d4c882e0">
     <topic>nginx -- remote denial of service vulnerability</topic>
     <affects>
       <package>
@@ -3863,7 +3862,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>nginx development team reports:</p>
 	<blockquote cite="http://nginx.net/CHANGES">
-	  <p>A segmentation fault might occur in worker process while 
+	  <p>A segmentation fault might occur in worker process while
 	     specially crafted request handling.</p>
 	</blockquote>
       </body>
