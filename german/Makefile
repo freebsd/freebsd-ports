@@ -18,6 +18,7 @@
     SUBDIR += dtaus
     SUBDIR += eric4
     SUBDIR += geonext
+    SUBDIR += gimp-help
     SUBDIR += ispell
     SUBDIR += ispell-alt
     SUBDIR += ispell-neu

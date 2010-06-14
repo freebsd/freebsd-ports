@@ -7,6 +7,7 @@
     SUBDIR += ekg
     SUBDIR += ekg2
     SUBDIR += fortunepl
+    SUBDIR += gimp-help
     SUBDIR += gnugadu2
     SUBDIR += ispell
     SUBDIR += kadu
