@@ -3,41 +3,66 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/gimp-help/Makefile,v 1.1 2006/07/18 13:04:28 ahze Exp $
 #
 
 PORTNAME=	gimp-help
-PORTVERSION=	2.4.2
-PORTREVISION=	3
-CATEGORIES=	graphics gnome
-MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
-		http://ftp.gwdg.de/pub/misc/grafik/gimp/%SUBDIR%/ \
-		ftp://ftp.fh-heilbronn.de/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		http://www.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
-MASTER_SITE_SUBDIR=	gimp/help/
+PORTVERSION=	2.6.0
+CATEGORIES=	graphics
+MASTER_SITES=	# empty
+PKGNAMESUFFIX=	-html
+DISTFILES=	# none
+EXTRACT_ONLY=	# empty
 
-MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GIMP user's manual
+MAINTAINER=	liangtai.s4@gmail.com
+COMMENT=	The meta port for GIMP User Manual
 
-LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app
-BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
-RUN_DEPENDS=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
+NO_BUILD=	yes
 
-USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+LANG_ALL=	de en es fr it ja ko nl nn pl ru sv zh_CN
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|mkdir_p = .*|mkdir_p = ${WRKSRC}/install-sh -c -d|g' \
-		${WRKSRC}/Makefile.in
+de_PORT=	german/gimp-help
+fr_PORT=	french/gimp-help
+ja_PORT=	japanese/gimp-help
+ko_PORT=	korean/gimp-help
+pl_PORT=	polish/gimp-help
+ru_PORT=	russian/gimp-help
+zh_CN_PORT=	chinese/gimp-help-zh_CN
 
-.include <bsd.port.pre.mk>
+# you can find more in ${PORTSDIR}/misc/kde4-l10n/files/kde4-lang-names
+de_NAME=	German
+en_NAME=	English
+es_NAME=	Spanish
+fr_NAME=	French
+it_NAME=	Italian
+ja_NAME=	Japanese
+ko_NAME=	Korean
+nl_NAME=	Dutch
+nn_NAME=	Norwegian Nynorsk
+pl_NAME=	Polish
+ru_NAME=	Russian
+sv_NAME=	Swedish
+zh_CN_NAME=	Chinese Simplified
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+.for lang in ${LANG_ALL}
+${lang}_DETECT?=	${LOCALBASE}/share/gimp/help/${lang}/index.html
+${lang}_PORT?=		misc/gimp-help-${lang}
+${lang}_NAME?=		${lang}
+.endfor
+
+OPTIONS=	ALL "All translations" on
+.for lang in ${LANG_ALL}
+OPTIONS+=	${lang:U} "${${lang}_NAME}" off
+.endfor
+
+.include <bsd.port.options.mk>
+
+.for lang in ${LANG_ALL}
+.if defined(WITH_ALL) || defined(WITH_${lang:U})
+RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 .endif
+.endfor
 
-.include <bsd.port.post.mk>
+do-install:
+	${DO_NADA}
+
+.include <bsd.port.mk>
