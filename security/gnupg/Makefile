@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
-BUILD_DEPENDS=	libassuan>=1.0.4:${PORTSDIR}/security/libassuan-1 \
+BUILD_DEPENDS=	libassuan-1>=1.0.5:${PORTSDIR}/security/libassuan-1 \
 		libksba>=1.0.2:${PORTSDIR}/security/libksba
 LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error \

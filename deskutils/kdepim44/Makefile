@@ -15,7 +15,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
 
-BUILD_DEPENDS=	libassuan>=1.0.4:${PORTSDIR}/security/libassuan-1
+BUILD_DEPENDS=	libassuan-1>=1.0.5:${PORTSDIR}/security/libassuan-1
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
