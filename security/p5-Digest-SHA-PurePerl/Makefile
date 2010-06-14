@@ -9,7 +9,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for SHA-1/224/256/384/512 in pure Perl
 
 PERL_CONFIGURE=	yes

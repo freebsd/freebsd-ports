@@ -11,7 +11,7 @@ CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.phys.uu.nl/~rombouts/pdnsd/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-par
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Caching (permanently, writes to disk on exit) DNS proxy-server
 
 GNU_CONFIGURE=	yes
