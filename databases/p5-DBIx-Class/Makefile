@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08122
-PORTREVISION=	1
+PORTVERSION=	0.08123
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +15,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
+		p5-Test-Simple>=0.90:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 RUN_DEPENDS=	p5-Carp-Clan>=6.0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Class-Accessor-Grouped>=0.09003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
