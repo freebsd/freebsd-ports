@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 PORTEPOCH=	2
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.libssh2.org/download/ \
-		http://redundancy.redundancy.org/mirror/
+MASTER_SITES=	http://www.libssh2.org/download/
 
 MAINTAINER=	sbrabez@gmail.com
 COMMENT=	A library implementing the SSH2 protocol
@@ -107,6 +106,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_knownhost_add.3 \
 	libssh2_knownhost_addc.3 \
 	libssh2_knownhost_check.3 \
+	libssh2_knownhost_checkp.3 \
 	libssh2_knownhost_del.3 \
 	libssh2_knownhost_get.3 \
 	libssh2_knownhost_free.3 \
@@ -128,6 +128,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_publickey_shutdown.3 \
 	libssh2_scp_recv.3 \
 	libssh2_scp_send.3 \
+	libssh2_scp_send64.3 \
 	libssh2_scp_send_ex.3 \
 	libssh2_session_abstract.3 \
 	libssh2_session_block_directions.3 \
@@ -152,6 +153,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_sftp_fsetstat.3 \
 	libssh2_sftp_fstat.3 \
 	libssh2_sftp_fstat_ex.3 \
+	libssh2_sftp_fstatvfs.3 \
 	libssh2_sftp_init.3 \
 	libssh2_sftp_last_error.3 \
 	libssh2_sftp_lstat.3 \
@@ -175,6 +177,7 @@ MAN3=	libssh2_agent_connect.3 \
 	libssh2_sftp_shutdown.3 \
 	libssh2_sftp_stat.3 \
 	libssh2_sftp_stat_ex.3 \
+	libssh2_sftp_statvfs.3 \
 	libssh2_sftp_symlink.3 \
 	libssh2_sftp_symlink_ex.3 \
 	libssh2_sftp_tell.3 \
