@@ -1,5 +1,7 @@
 bin/wormux
+%%SERVER%%bin/wormux-index-server
 bin/wormux-list-games
+%%SERVER%%bin/wormux-server
 share/applications/wormux.desktop
 %%NLS%%share/locale/bg/LC_MESSAGES/wormux.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/wormux.mo
