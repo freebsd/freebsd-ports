@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	clementine
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.3
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
-DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	A cross-platform music player based on Amarok 1.4
@@ -31,7 +29,6 @@ QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build network sql opengl dbus qtestlib corelib
 USE_GCC=	4.2+
 INSTALLS_ICONS=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_GSTREAMER=	gio ogg mp3 flac
 
 .include <bsd.port.mk>
