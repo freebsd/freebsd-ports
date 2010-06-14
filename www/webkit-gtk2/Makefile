@@ -88,6 +88,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-JavaScriptCore_yarr_RegexJIT.h \
 BROKEN=		does not compile on 6.X
 .endif
 
+.if ${ARCH} == powerpc64
+CFLAGS+= -mminimal-toc
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%BROWSER_PLUGINS_DIR%%|${BROWSER_PLUGINS_DIR}|' \
 		${WRKSRC}/WebCore/plugins/PluginDatabase.cpp
