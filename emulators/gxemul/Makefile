@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gxemul
-PORTVERSION=	0.4.7.2
+PORTVERSION=	0.6.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://gxemul.sourceforge.net/src/ \
 		http://gavare.se/gxemul/src/
@@ -43,7 +43,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/man/gxemul.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${MKDIR} -p ${DOCSDIR}/components
+	${MKDIR} -p ${DOCSDIR}/machines
+	${INSTALL_DATA} ${WRKSRC}/doc/components/* ${DOCSDIR}/components
+	${INSTALL_DATA} ${WRKSRC}/doc/machines/* ${DOCSDIR}/machines
+	${INSTALL_DATA} `find ${WRKSRC}/doc/ -type f -depth 1` ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
