@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.19
-PORTREVISION=	1
+PORTVERSION=	1.4.20
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -38,8 +37,9 @@ RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_r
 
 .if defined(WITH_GSASL)
 LIB_DEPENDS+=	gsasl.14:${PORTSDIR}/security/gsasl
+CONFIGURE_ARGS+=	--with-libgsasl
 .else
-CONFIGURE_ARGS+=	--without-gsasl
+CONFIGURE_ARGS+=	--without-libgsasl
 .endif
 
 .if !defined(WITHOUT_IDN)
