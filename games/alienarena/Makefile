@@ -7,7 +7,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2009.733
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \

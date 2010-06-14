@@ -1,5 +1,6 @@
 %%CLIENT%%bin/alienarena
 %%DEDICATED%%bin/alienarena-ded
+%%LIBDIR%%/arena/default.cfg
 %%LIBDIR%%/arena/game.so
 %%LIBDIR%%/arena/maps.lst
 %%LIBDIR%%/arena/motd.txt
