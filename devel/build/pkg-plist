@@ -1,0 +1,113 @@
+include/build-%%BUILD_VER%%/abspath.make
+include/build-%%BUILD_VER%%/bootstrap.make
+include/build-%%BUILD_VER%%/c/c-d.make
+include/build-%%BUILD_VER%%/c/c-o.make
+include/build-%%BUILD_VER%%/c/configuration-rules.make
+include/build-%%BUILD_VER%%/c/configuration-static.make
+include/build-%%BUILD_VER%%/c/configuration.make
+include/build-%%BUILD_VER%%/c/configure
+include/build-%%BUILD_VER%%/c/cpp-options.make
+include/build-%%BUILD_VER%%/c/generic/c-d.make
+include/build-%%BUILD_VER%%/c/generic/c-o.make
+include/build-%%BUILD_VER%%/c/generic/configuration-rules.make
+include/build-%%BUILD_VER%%/c/generic/configuration-sl-rules.make
+include/build-%%BUILD_VER%%/c/generic/configuration-sl.make
+include/build-%%BUILD_VER%%/c/generic/configuration.make
+include/build-%%BUILD_VER%%/c/generic/configure
+include/build-%%BUILD_VER%%/c/generic/configure-sl
+include/build-%%BUILD_VER%%/c/generic/o-e.make
+include/build-%%BUILD_VER%%/c/generic/o-l.make
+include/build-%%BUILD_VER%%/c/gnu/c-d.make
+include/build-%%BUILD_VER%%/c/gnu/c-o.make
+include/build-%%BUILD_VER%%/c/gnu/configuration-rules.make
+include/build-%%BUILD_VER%%/c/gnu/configuration-static.make
+include/build-%%BUILD_VER%%/c/gnu/configuration.make
+include/build-%%BUILD_VER%%/c/gnu/configure
+include/build-%%BUILD_VER%%/c/gnu/dep
+include/build-%%BUILD_VER%%/c/gnu/o-e.make
+include/build-%%BUILD_VER%%/c/gnu/o-l.make
+include/build-%%BUILD_VER%%/c/intel/c-d.make
+include/build-%%BUILD_VER%%/c/intel/c-o.make
+include/build-%%BUILD_VER%%/c/intel/configuration-rules.make
+include/build-%%BUILD_VER%%/c/intel/configuration-static.make
+include/build-%%BUILD_VER%%/c/intel/configuration.make
+include/build-%%BUILD_VER%%/c/intel/configure
+include/build-%%BUILD_VER%%/c/intel/dep
+include/build-%%BUILD_VER%%/c/intel/o-e.make
+include/build-%%BUILD_VER%%/c/intel/o-l.make
+include/build-%%BUILD_VER%%/c/o-e.make
+include/build-%%BUILD_VER%%/c/o-l.make
+include/build-%%BUILD_VER%%/clean.make
+include/build-%%BUILD_VER%%/configuration-static.make
+include/build-%%BUILD_VER%%/cxx/configuration-rules.make
+include/build-%%BUILD_VER%%/cxx/configuration-static.make
+include/build-%%BUILD_VER%%/cxx/configuration.make
+include/build-%%BUILD_VER%%/cxx/configure
+include/build-%%BUILD_VER%%/cxx/cxx-d.make
+include/build-%%BUILD_VER%%/cxx/cxx-o.make
+include/build-%%BUILD_VER%%/cxx/generic/configuration-rules.make
+include/build-%%BUILD_VER%%/cxx/generic/configuration-sl-rules.make
+include/build-%%BUILD_VER%%/cxx/generic/configuration-sl.make
+include/build-%%BUILD_VER%%/cxx/generic/configuration.make
+include/build-%%BUILD_VER%%/cxx/generic/configure
+include/build-%%BUILD_VER%%/cxx/generic/configure-sl
+include/build-%%BUILD_VER%%/cxx/generic/cxx-d.make
+include/build-%%BUILD_VER%%/cxx/generic/cxx-o.make
+include/build-%%BUILD_VER%%/cxx/generic/o-e.make
+include/build-%%BUILD_VER%%/cxx/generic/o-l.make
+include/build-%%BUILD_VER%%/cxx/gnu/configuration-rules.make
+include/build-%%BUILD_VER%%/cxx/gnu/configuration-static.make
+include/build-%%BUILD_VER%%/cxx/gnu/configuration.make
+include/build-%%BUILD_VER%%/cxx/gnu/configure
+include/build-%%BUILD_VER%%/cxx/gnu/cxx-d.make
+include/build-%%BUILD_VER%%/cxx/gnu/cxx-o.make
+include/build-%%BUILD_VER%%/cxx/gnu/o-e.make
+include/build-%%BUILD_VER%%/cxx/gnu/o-l.make
+include/build-%%BUILD_VER%%/cxx/intel/configuration-rules.make
+include/build-%%BUILD_VER%%/cxx/intel/configuration-static.make
+include/build-%%BUILD_VER%%/cxx/intel/configuration.make
+include/build-%%BUILD_VER%%/cxx/intel/configure
+include/build-%%BUILD_VER%%/cxx/intel/cxx-d.make
+include/build-%%BUILD_VER%%/cxx/intel/cxx-o.make
+include/build-%%BUILD_VER%%/cxx/intel/o-e.make
+include/build-%%BUILD_VER%%/cxx/intel/o-l.make
+include/build-%%BUILD_VER%%/cxx/o-e.make
+include/build-%%BUILD_VER%%/cxx/o-l.make
+include/build-%%BUILD_VER%%/dialog.bash
+include/build-%%BUILD_VER%%/dir.make
+include/build-%%BUILD_VER%%/frame.make
+include/build-%%BUILD_VER%%/git/gitignore
+include/build-%%BUILD_VER%%/git/gitignore.make
+include/build-%%BUILD_VER%%/import.make
+include/build-%%BUILD_VER%%/install.make
+include/build-%%BUILD_VER%%/install/configuration.make
+include/build-%%BUILD_VER%%/install/install
+include/build-%%BUILD_VER%%/install/install-functions.make
+include/build-%%BUILD_VER%%/install/install-sh
+include/build-%%BUILD_VER%%/ld/configuration-lib-rules.make
+include/build-%%BUILD_VER%%/ld/configuration-lib-static.make
+include/build-%%BUILD_VER%%/ld/configuration-lib.make
+include/build-%%BUILD_VER%%/ld/configure-lib
+include/build-%%BUILD_VER%%/literals.make
+include/build-%%BUILD_VER%%/m4/m4.make
+include/build-%%BUILD_VER%%/message.make
+include/build-%%BUILD_VER%%/run-if-arg
+include/build-%%BUILD_VER%%/system.make
+include/build-%%BUILD_VER%%/system/config.guess
+include/build-%%BUILD_VER%%/system/config.sub
+include/build-%%BUILD_VER%%/system/configuration-rules.make
+include/build-%%BUILD_VER%%/system/configure
+@dirrm include/build-%%BUILD_VER%%/cxx/intel
+@dirrm include/build-%%BUILD_VER%%/cxx/gnu
+@dirrm include/build-%%BUILD_VER%%/cxx/generic
+@dirrm include/build-%%BUILD_VER%%/cxx
+@dirrm include/build-%%BUILD_VER%%/c/intel
+@dirrm include/build-%%BUILD_VER%%/c/gnu
+@dirrm include/build-%%BUILD_VER%%/c/generic
+@dirrm include/build-%%BUILD_VER%%/c
+@dirrm include/build-%%BUILD_VER%%/git
+@dirrm include/build-%%BUILD_VER%%/install
+@dirrm include/build-%%BUILD_VER%%/ld
+@dirrm include/build-%%BUILD_VER%%/m4
+@dirrm include/build-%%BUILD_VER%%/system
+@dirrm include/build-%%BUILD_VER%%

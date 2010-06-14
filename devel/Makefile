@@ -128,6 +128,7 @@
     SUBDIR += bug-buddy
     SUBDIR += bugzilla
     SUBDIR += bugzilla2
+    SUBDIR += build
     SUBDIR += buildbot
     SUBDIR += buildtool
     SUBDIR += buildtool-doc

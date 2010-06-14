@@ -1,0 +1,17 @@
+build is a massively-parallel software build system implemented on
+top of GNU make. Build is designed with the following tasks in mind:
+* configuration
+* building
+* testing
+* installation
+
+Some of its features include:
+
+* position-independent makefiles.
+* non-recursive multi-makefile include-based structure.
+* leaf makefiles are full-fledged GNU makefiles, not just variable definitions.
+* complete dependency graph.
+* inter-project dependency tracking.
+* extensible language/compiler framework.
+
+WWW: http://www.codesynthesis.com/projects/build/
