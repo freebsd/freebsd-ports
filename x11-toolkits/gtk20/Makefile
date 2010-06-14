@@ -63,6 +63,10 @@ CONFIGURE_ARGS+=	--enable-debug=yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == powerpc64
+EXTRA_PATCHES=  ${.CURDIR}/files/extra-arch-powerpc64
+.endif
+
 .if (defined(WITH_CUPS) || exists(${LOCALBASE}/lib/libcups.so)) && \
 	!defined(WITHOUT_CUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
