@@ -27,10 +27,6 @@ OPTIONS=	IPV6 "Compile with IPv6 support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
@@ -50,5 +46,12 @@ MAN7=	hostname.7
 
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
+
+post-patch:
+.if ${OSVERSION} > 900007
+	${CP} ${WRKSRC}/irs/irpmarshall.c ${WRKSRC}/irs/irpmarshall.c.dist
+	${SED} -e 's/\#include \<utmp.h\>//' \
+		${WRKSRC}/irs/irpmarshall.c.dist > ${WRKSRC}/irs/irpmarshall.c
+.endif
 
 .include <bsd.port.post.mk>
