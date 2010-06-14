@@ -7,11 +7,9 @@
 
 PORTNAME=	ibus-mozc
 PORTVERSION=	0.11.365.102
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
-#MASTER_SITES=	${MASTER_SITE_LOCAL}
-#MASTER_SITE_SUBDIR=	daichi
 DISTNAME=	mozc-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mozc_build_tools-r827${EXTRACT_SUFX} \
@@ -37,6 +35,7 @@ USE_GNOME=	pygtk2
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_QT_VER=	4
+QT_COMPONENTS=	gui dbus qmake_build moc_build uic_build rcc_build
 
 .include <bsd.port.pre.mk>
 
