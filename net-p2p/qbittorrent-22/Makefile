@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.9
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Bittorrent client using Qt4 and libtorrent-rasterbar
+
+LICENSE:	GPLv2
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		GeoIP.5:${PORTSDIR}/net/GeoIP
