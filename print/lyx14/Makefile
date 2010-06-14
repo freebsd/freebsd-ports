@@ -43,6 +43,9 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 MAN1=		lyx.1 tex2lyx.1 lyxclient.1
 
+LATEST_LINK=	lyx14
+CONFLICTS=	lyx-1.6*
+
 post-patch:
 	# Removing mention of the bundled boost
 	${REINPLACE_CMD} -e 's, boost/[^ ]*Makefile,,g' ${WRKSRC}/configure
