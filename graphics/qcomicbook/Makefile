@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	qcomicbook
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://linux.bydg.org/~yogin/qcomicbook/
+MASTER_SITES=	http://qcomicbook.linux-projects.net/releases/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	QT-based comic book archive viewer
@@ -21,21 +20,30 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build
-USE_GNOME=	pkgconfig
-USE_GMAKE=	yes
-# USE_EFL=	imlib2 #disabled in this release
-GNU_CONFIGURE=	yes
+QT_COMPONENTS=	gui moc_build uic
+USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAN1=		qcomicbook.1
+PLIST_FILES=	\
+		${DESKTOPDIR:S,^${PREFIX}/,,}/${PORTNAME}.desktop \
+		bin/qcomicbook \
+		share/pixmaps/qcomicbook.png
 
-DESKTOP_ENTRIES="QComicBook" "Comic Book Viewer" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
-		"qcomicbook" "" false
+MAN1=		qcomicbook.1
+NO_MANCOMPRESS=	yes
 
 OPTIONS=	7ZIP "Enable support for 7-Zip (.cb7) comic book archives" on \
 		ACE "Enable support for ACE (.cba) comic book archives" on
+
+post-patch:
+# fix man install directory
+	@${REINPLACE_CMD} -E \
+		-e 's|share/man|man|' \
+		${WRKSRC}/help/CMakeLists.txt
+# fix pixmap location
+	@${REINPLACE_CMD} -E \
+		-e 's|(qcomicbook.png)|${PREFIX}/share/pixmaps/\1|' \
+		${WRKSRC}/data/qcomicbook.desktop
 
 .include <bsd.port.pre.mk>
 
