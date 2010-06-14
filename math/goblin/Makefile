@@ -16,28 +16,25 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Graph Object Library for Network Programming Problems
 
-USE_TK=		84
-USE_TCL=	84
-USE_XORG=	x11
+USE_TK=		84+
+USE_TCL=	84+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		LD="${CXX}" LIBS="-lm ${LDFLAGS}" LISShared="-lm ${LDFLAGS}" \
-		libtcl=84 libtk=84 prefix=${PREFIX}
+		LD="${CXX}" LIBS="-lm ${LDFLAGS}" \
+		libtcl=${USE_TCL} libtk=${USE_TK} prefix=${PREFIX}
 ALL_TARGET=	all shared
 PLIST_SUB+=	VERSION=${PORTVERSION:R}
 
-CFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/ \
-		-I${LOCALBASE}/include/tk8.4 ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -ltcl84 -ltk84 ${PTHREAD_LIBS}
-
-WISH=		${LOCALBASE}/bin/wish8.4
+CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} -I${LOCALBASE}/include/ \
+		-I${LOCALBASE}/include/tk${TK_VER} ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -ltcl${USE_TCL} -ltk${USE_TK} ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		does not build on !i386
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
 .endif
 
 post-patch:
