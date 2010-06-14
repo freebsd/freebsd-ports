@@ -1,0 +1,6 @@
+For lyx to work you need to install some kind of TeX software.
+
+The easiest way is porbably to install print/teTeX port which is quite old.
+
+A newer alternative could be TeXLive:
+	http://code.google.com/p/freebsd-texlive/
