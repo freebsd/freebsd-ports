@@ -16,6 +16,8 @@ DISTFILES=	# none
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Manage your ports without external databases or languages
 
+LICENSE=	BSD
+
 OPTIONS=	BASH "Install programmable completions for Bash" off \
 		ZSH "Install programmable completions for zsh" off
 

@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Small (150k), fast, perl-based IRC client
 
+LICENSE=	GPLv2
+
 USE_PERL5=	yes
 
 OPTIONS=	IPV6 "Support for IPv6 transport" on \

@@ -7,5 +7,7 @@ some useful sample scripts that will get you started on IRC quickly.  No
 knowledge of perl is necessary to run the client although it is helpful
 if you plan to do any scripting.
 
+LICENSE: GPL2 or later
+
 Author: Roger Espel Llima (aka orabidoo)
 WWW: http://www.iagora.com/~espel/sirc.html
