@@ -4439,3 +4439,4 @@ emulators/linux_base-gentoo-stage1||2010-06-08|Expired: please use emulators/lin
 emulators/linux_dist-gentoo-stage1||2010-06-08|Expired: please use emulators/linux_dist-gentoo-stage3
 www/weave|www/firefox-sync|2010-06-09|Project was renamed
 misc/freedialog||2010-06-10|Removed, has been in base for a decade
+print/lyx15||2010-06-14|Removed, print/lyx has been updated to the latest version
