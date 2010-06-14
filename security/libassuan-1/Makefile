@@ -1,32 +1,33 @@
 # New ports collection makefile for:	libassuan
-# Date created:		2004-04-19
-# Whom:			Michael Nottebrock <lofi@freebsd.org>
+# Date created:				2004-04-19
+# Whom:					Michael Nottebrock <lofi@freebsd.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libassuan
-PORTVERSION=	2.0.0
+PORTVERSION=	1.0.5
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=${PORTNAME}
+PKGNAMESUFFIX=	-1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	IPC library used by GnuPG and gpgme
 
-LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth \
-		gpg-error:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS+=	pth.20:${PORTSDIR}/devel/pth
 
-CONFLICTS=	libassuan-1-1*
+CONFLICTS=	libassuan-2*
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 INFO=		assuan
-PLIST_FILES=	bin/libassuan-config include/assuan.h lib/libassuan.la \
-		lib/libassuan.so.0 lib/libassuan.so share/aclocal/libassuan.m4
+PLIST_FILES=	bin/libassuan-config include/assuan.h lib/libassuan-pth.a \
+		lib/libassuan.a share/aclocal/libassuan.m4
+
+CFLAGS+=	-I${LOCALBASE}/include/pth
 
 .include <bsd.port.pre.mk>
 

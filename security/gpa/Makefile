@@ -7,7 +7,7 @@
 
 PORTNAME=	gpa
 PORTVERSION=	0.9.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/603/
 
@@ -16,7 +16,7 @@ COMMENT=	A graphical frontend for the GNU Privacy Guard
 
 LIB_DEPENDS=	gpgme.18:${PORTSDIR}/security/gpgme
 BUILD_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg \
-		libassuan>=1.0.4:${PORTSDIR}/security/libassuan
+		libassuan>=1.0.4:${PORTSDIR}/security/libassuan-1
 RUN_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 
 USE_BZIP2=	yes

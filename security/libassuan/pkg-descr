@@ -1,2 +1,1 @@
-This is the IPC library used by GnuPG 1.9, gpgme and the old newpg
-package.
+This is the IPC library used by GnuPG 2 and gpgme
