@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	dirmngr
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A client for managing and downloading certificate revocation lists
 
-BUILD_DEPENDS=	libassuan>=1.0.4:${PORTSDIR}/security/libassuan-1
+BUILD_DEPENDS=	libassuan-1>=1.0.5:${PORTSDIR}/security/libassuan-1
 LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		ksba.17:${PORTSDIR}/security/libksba \

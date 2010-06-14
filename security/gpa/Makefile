@@ -16,7 +16,7 @@ COMMENT=	A graphical frontend for the GNU Privacy Guard
 
 LIB_DEPENDS=	gpgme.18:${PORTSDIR}/security/gpgme
 BUILD_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg \
-		libassuan>=1.0.4:${PORTSDIR}/security/libassuan-1
+		libassuan-1>=1.0.5:${PORTSDIR}/security/libassuan-1
 RUN_DEPENDS=	gpgv2:${PORTSDIR}/security/gnupg
 
 USE_BZIP2=	yes
