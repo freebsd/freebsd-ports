@@ -20,7 +20,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build uic
+QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build uic_build
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
