@@ -20,7 +20,7 @@ MAKE_JOBS_UNSAFE=yes
 PLIST_FILES=	bin/${PORTNAME}
 INFO=		${PORTNAME}
 
-OPTIONS=	SBCL "Build with lang/sbcl (otherwise with lang/clisp)" off
+OPTIONS=	SBCL "Build with lang/sbcl (otherwise with lang/clisp)" on
 
 .include <bsd.port.options.mk>
 
