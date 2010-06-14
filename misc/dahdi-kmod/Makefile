@@ -43,6 +43,10 @@ OPTIONS=	EXPERIMENTAL "Enable experimental drivers" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 703000 || (${OSVERSION} >= 800000 && ${OSVERSION} < 800108)
+IGNORE=		requires firmware(9) support for kernel modules with hyphens
+.endif
+
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 PLIST_SUB+=	X86=""
 .else
