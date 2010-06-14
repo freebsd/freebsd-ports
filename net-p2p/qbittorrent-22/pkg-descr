@@ -19,4 +19,6 @@ Features:
 	Advanced RSS support with download filters (inc. regex)
 	IP Filtering (eMule and PeerGuardian compatible)
 
+LICENSE: GPL2 or later
+
 WWW: http://www.qbittorrent.org/
