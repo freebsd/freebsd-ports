@@ -1,3 +1,1 @@
-
-Sample config file can be found at %%PREFIX%%/etc/ppccfg.example
-
+Sample configuration file is installed as %%PREFIX%%/etc/ppccfg.example
