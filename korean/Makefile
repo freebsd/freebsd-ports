@@ -16,6 +16,7 @@
     SUBDIR += engdic
     SUBDIR += eterm
     SUBDIR += gdick
+    SUBDIR += gimp-help
     SUBDIR += gtkcomm
     SUBDIR += h2ps
     SUBDIR += hanIM

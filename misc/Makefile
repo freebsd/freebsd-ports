@@ -130,6 +130,12 @@
     SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += getopt
+    SUBDIR += gimp-help-en
+    SUBDIR += gimp-help-es
+    SUBDIR += gimp-help-it
+    SUBDIR += gimp-help-nl
+    SUBDIR += gimp-help-nn
+    SUBDIR += gimp-help-sv
     SUBDIR += gkrellm-gamma
     SUBDIR += gkrellm-helium
     SUBDIR += gkrellm-xkb

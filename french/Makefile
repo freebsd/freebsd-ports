@@ -17,6 +17,7 @@
     SUBDIR += geonext
     SUBDIR += gfaim
     SUBDIR += gibi
+    SUBDIR += gimp-help
     SUBDIR += homard
     SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun
