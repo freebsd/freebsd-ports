@@ -28,6 +28,12 @@ USE_DOS2UNIX=	fixed_class.h
 MANCOMPRESSED=	no
 MAN6=	wormux.6
 
+OPTIONS+=	NLS "Native Language Support via gettext utilities" on \
+		FRIBIDI "Enable bi-directional unicode support" off \
+		SERVER "Enable dedicated server" off
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/Makefile.in \
 	${WRKSRC}/src/Makefile.in
@@ -41,6 +47,20 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITH_SERVER)
+PLIST_SUB+=	SERVER=""
+CONFIGURE_ARGS+=	--enable-servers
+.else
+PLIST_SUB+=	SERVER="@comment "
+.endif
+
+.if defined(WITH_FRIBIDI)
+LIB_DEPENDS+=	fribidi:${PORTSDIR}/converters/fribidi
+CONFIGURE_ARGS+=	--enable-fribidi
+.else
+CONFIGURE_ARGS+=	--disable-fribidi
 .endif
 
 .include <bsd.port.mk>
