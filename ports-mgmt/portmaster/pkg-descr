@@ -21,4 +21,6 @@ Portmaster has the following features:
 
     *** Package installation support requires FreeBSD 6.4 or newer ***
 
+LICENSE: BSD
+
 WWW: http://dougbarton.us/portmaster.html

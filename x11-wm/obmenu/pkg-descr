@@ -6,4 +6,6 @@ It can install dynamic menus (pipe menus), such as Gnome menus or a
 quick-navigator.  You can also use the obxml module to easily write pipe
 menus of your own in Python.
 
+LICENSE: GPL2 or later
+
 WWW: http://obmenu.sourceforge.net/

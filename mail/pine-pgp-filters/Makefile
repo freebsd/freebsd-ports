@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Simple /bin/sh-based filters to use GnuPG with Alpine
 
+LICENSE=	BSD
+
 PLIST_FILES=	bin/ppf_mime bin/ppf_mime_decrypt \
 		libexec/ppf_decrypt libexec/ppf_encrypt libexec/ppf_mime \
 		libexec/ppf_mime_decrypt libexec/ppf_sign libexec/ppf_verify

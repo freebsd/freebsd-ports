@@ -11,6 +11,8 @@ commands operate on text files only.  The "Edit" command invokes "pico."
 The "Launch" command provides a convenient way to either execute the selected
 file or to run an application on it.
 
+LICENSE: ASL
+
 WWW: http://www.washington.edu/alpine/
 
 - Doug Barton

@@ -13,6 +13,8 @@ MASTER_SITES=		SF/wmweatherplus/wmweather%2B/wmweather%2B-${PORTVERSION}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Displays current conditions and forecasts with icons and text
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		pcre:${PORTSDIR}/devel/pcre \
 		tiff:${PORTSDIR}/graphics/tiff \

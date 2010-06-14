@@ -12,6 +12,8 @@ DISTNAME=	alpine-${PORTVERSION}
 
 COMMENT=	[Al]PIne's message COmposition editor and Pilot file manager
 
+LICENSE=	ASL
+
 MASTERDIR=	${.CURDIR}/../../mail/alpine
 
 DESCR=		${.CURDIR}/pkg-descr

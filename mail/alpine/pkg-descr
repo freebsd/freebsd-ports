@@ -18,6 +18,8 @@ Alpine's basic feature set includes:
 Alpine supports MIME (Multipurpose Internet Mail Extensions), an Internet
 Standard for representing multipart and multimedia data in email.
 
+LICENSE: ASL
+
 WWW: http://www.washington.edu/alpine/
 
 - Doug Barton

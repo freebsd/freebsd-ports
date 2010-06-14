@@ -16,6 +16,8 @@ DIST_SUBDIR=	alpine-${PORTVERSION}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT?=	Mail and news client descended from Pine
 
+LICENSE=	ASL
+
 OPTIONS+=	THREADS "Compile with thread support" on \
 		MOUSE "Enable mouse support for xterm" on \
 		NLS "National Language Support" off \

@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Lightweight freedesktop-compliant panel/taskbar/systray/clock
 
+LICENSE=	GPLv2
+
 MAKE_JOBS_SAFE=	yes
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
