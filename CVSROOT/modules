@@ -1290,6 +1290,7 @@ bugsx                           ports/games/bugsx
 bugzilla                        ports/devel/bugzilla
 bugzilla2                       ports/devel/bugzilla2
 buici-clock                     ports/x11-clocks/buici-clock
+build                           ports/devel/build
 buildbot                        ports/devel/buildbot
 buildtool                       ports/devel/buildtool
 buildtool-doc                   ports/devel/buildtool-doc
@@ -7603,6 +7604,7 @@ libart_lgpl                     ports/graphics/libart_lgpl
 libassa                         ports/devel/libassa
 libassetml                      ports/devel/libassetml
 libassuan                       ports/security/libassuan
+libassuan-1                     ports/security/libassuan-1
 libast                          ports/devel/libast
 libaudiofile                    ports/audio/libaudiofile
 libaura                         ports/devel/libaura
