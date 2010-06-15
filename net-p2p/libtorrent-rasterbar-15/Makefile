@@ -7,6 +7,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	libtorrent
@@ -32,7 +33,7 @@ CONFIGURE_ARGS=	--disable-debug \
 		--enable-dht \
 		--enable-encryption \
 		--enable-pool-allocators \
-		--enable-deprecated-functions \
+		--disable-deprecated-functions \
 		--with-boost-system=boost_system \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-thread=boost_thread \
