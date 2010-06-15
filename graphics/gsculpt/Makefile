@@ -20,6 +20,8 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gtkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
+BROKEN=		does not compile
+
 WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}-alpha
 USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
