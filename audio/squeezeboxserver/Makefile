@@ -18,6 +18,8 @@ COMMENT=	Slim Devices audio streaming server
 
 CONFLICTS=	squeezecenter-*
 
+BROKEN=         Incompatiable with recent DBIx-Class updates
+
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
 OPTIONS=	APE "Support Monkey's Audio Codec input" on \
