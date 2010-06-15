@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
