@@ -13,7 +13,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	m.seaman@infracaninphile.co.uk
+MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	Just depend on a configurable, arbitrary set of other ports
 
 LICENSE=	BSD
@@ -40,8 +40,6 @@ CFGFILE?=	/var/db/${PORTNAME}.conf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
-.endif
 
 .include <bsd.port.mk>
