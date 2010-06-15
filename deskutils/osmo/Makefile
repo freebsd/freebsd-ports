@@ -33,7 +33,7 @@ USE_GMAKE=	yes
 
 MAN1=		osmo.1
 
-POFILES=	ca cs de el es fi fr hu it ja lt nl pl pt \
+POFILES=	bg ca cs da de el en_GB es fi fr hu it ja lt nl pl pt \
 		ru sv tr uk zh_CN
 
 MSGFMT=		${LOCALBASE}/bin/msgfmt
