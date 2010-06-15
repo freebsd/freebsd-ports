@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-data-${PORTVERSION}.tar.gz
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3d penguin racing game using OpenGL
 
 LIB_DEPENDS=	tcl85:${PORTSDIR}/lang/tcl85
