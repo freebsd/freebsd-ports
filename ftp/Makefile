@@ -87,6 +87,7 @@
     SUBDIR += php52-curl
     SUBDIR += php52-ftp
     SUBDIR += phpwebftp
+    SUBDIR += plasma-applet-ftpmonitor
     SUBDIR += proftpd
     SUBDIR += proftpd-devel
     SUBDIR += proftpd-mysql
