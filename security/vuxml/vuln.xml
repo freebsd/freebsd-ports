@@ -34,6 +34,72 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="144e524a-77eb-11df-ae06-001b2134ef46">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><lt>9.0r277</lt></range>
+      </package>
+      <package>
+	<name>linux-f8-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.1r53</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb10-14.html">
+	  <p>Critical vulnerabilities have been identified in Adobe
+	    Flash Player version 10.0.45.2 and earlier. These
+	    vulnerabilities could cause the application to crash and
+	    could potentially allow an attacker to take control of the
+	    affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-4546</cvename>
+      <cvename>CVE-2009-3793</cvename>
+      <cvename>CVE-2010-1297</cvename>
+      <cvename>CVE-2010-2160</cvename>
+      <cvename>CVE-2010-2161</cvename>
+      <cvename>CVE-2010-2162</cvename>
+      <cvename>CVE-2010-2163</cvename>
+      <cvename>CVE-2010-2164</cvename>
+      <cvename>CVE-2010-2165</cvename>
+      <cvename>CVE-2010-2166</cvename>
+      <cvename>CVE-2010-2167</cvename>
+      <cvename>CVE-2010-2169</cvename>
+      <cvename>CVE-2010-2170</cvename>
+      <cvename>CVE-2010-2171</cvename>
+      <cvename>CVE-2010-2172</cvename>
+      <cvename>CVE-2010-2173</cvename>
+      <cvename>CVE-2010-2174</cvename>
+      <cvename>CVE-2010-2175</cvename>
+      <cvename>CVE-2010-2176</cvename>
+      <cvename>CVE-2010-2177</cvename>
+      <cvename>CVE-2010-2178</cvename>
+      <cvename>CVE-2010-2179</cvename>
+      <cvename>CVE-2010-2180</cvename>
+      <cvename>CVE-2010-2181</cvename>
+      <cvename>CVE-2010-2182</cvename>
+      <cvename>CVE-2010-2183</cvename>
+      <cvename>CVE-2010-2184</cvename>
+      <cvename>CVE-2010-2185</cvename>
+      <cvename>CVE-2010-2186</cvename>
+      <cvename>CVE-2010-2187</cvename>
+      <cvename>CVE-2010-2188</cvename>
+      <cvename>CVE-2010-2189</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb10-14.html</url>
+    </references>
+    <dates>
+      <discovery>2008-10-02</discovery>
+      <entry>2010-06-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="313da7dc-763b-11df-bcce-0018f3e2eb82">
     <topic>tiff -- buffer overflow vulnerability</topic>
     <affects>
