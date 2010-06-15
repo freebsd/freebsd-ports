@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Getopt
-PORTVERSION=	0.27
+PORTVERSION=	0.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Moose role for processing command line options
 
-BUILD_DEPENDS=	p5-Getopt-Long-Descriptive>=0.077:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
+BUILD_DEPENDS=	p5-Getopt-Long-Descriptive>=0.081:${PORTSDIR}/devel/p5-Getopt-Long-Descriptive \
 		p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose
 RUN_DEPENDS=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Exception>=0.21:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	5.8.0+
 
