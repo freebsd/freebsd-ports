@@ -6,10 +6,13 @@ share/icons/hicolor/24x24/apps/osmo.png
 share/icons/hicolor/32x32/apps/osmo.png
 share/icons/hicolor/48x48/apps/osmo.png
 share/icons/hicolor/scalable/apps/osmo.svg
+share/locale/bg/LC_MESSAGES/osmo.mo
 share/locale/ca/LC_MESSAGES/osmo.mo
 share/locale/cs/LC_MESSAGES/osmo.mo
+share/locale/da/LC_MESSAGES/osmo.mo
 share/locale/de/LC_MESSAGES/osmo.mo
 share/locale/el/LC_MESSAGES/osmo.mo
+share/locale/en_GB/LC_MESSAGES/osmo.mo
 share/locale/es/LC_MESSAGES/osmo.mo
 share/locale/fi/LC_MESSAGES/osmo.mo
 share/locale/fr/LC_MESSAGES/osmo.mo
@@ -28,19 +31,4 @@ share/locale/zh_CN/LC_MESSAGES/osmo.mo
 share/pixmaps/osmo.png
 share/sounds/osmo/alarm.wav
 @dirrm share/sounds/osmo
-@dirrmtry share/sounds
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrmtry share/applications
