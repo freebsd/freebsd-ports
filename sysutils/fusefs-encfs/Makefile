@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 
 WRKSRC=		${WRKDIR}/encfs-${PORTVERSION}
 
+BROKEN=		incompatible with newer boost.
+
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization
