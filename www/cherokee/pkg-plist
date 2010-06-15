@@ -180,6 +180,7 @@ sbin/cherokee
 sbin/cherokee-admin
 sbin/cherokee-worker
 share/aclocal/cherokee.m4
+%%NLS%%share/locale/ca/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/de/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/en/LC_MESSAGES/cherokee.mo
 %%NLS%%share/locale/es/LC_MESSAGES/cherokee.mo
