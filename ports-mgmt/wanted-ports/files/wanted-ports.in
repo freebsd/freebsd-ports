@@ -1,0 +1,370 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+# Copyright 2010 Matthew Seaman. All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 
+#    1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+#    2. Redistributions in binary form must reproduce the above
+#    copyright notice, this list of conditions and the following
+#    disclaimer in the documentation and/or other materials provided
+#    with the distribution.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+# LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# Programatically edit the dependencies of %%PKGNAME%% to mark
+# depended on ports as wanted and help prevent accidental
+# removal. Wanted dependencies are read from a makefile snippet
+# containing PORTREVISION and RUN_DEPENDS variable settings:
+# PORTREVISION is incremented when any changes are made via this
+# script, which will cause this port to be reinstalled the next time
+# the ports are updated, hence forcing installation of the required
+# dependencies.  Removing a depended-on port from the list does not
+# cause it to be removed automatically.
+
+umask 022
+IFS=' 	
+'
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%PREFIX%%/bin:%%PREFIX%%/sbin
+export IFS PATH
+
+
+# Dissect the PKGVERSION string, extracting the revision number.
+# Increment it or set it to 1 if unset and return the incremented
+# number.
+increment_revision () {
+    local revision
+
+    revision=$( echo $1 | sed -ne 's:^[^_]*_\([^,]*\).*$:\1:p' )
+    if [ ! -z $revision ]; then
+	revision=$(( $revision + 1 ))
+    else
+	revision=1
+    fi
+    echo $revision
+}
+
+# Update the $wanted_ports_conf file carefully. 
+update_wanted_ports_conf() {
+    local conf_file revision run_deps tmp_conf
+
+    conf_file=$1
+    revision=$2
+    run_deps=$3
+    
+
+    tmp_conf=$(mktemp "${conf_file%/*}/.${conf_file##*/}.XXXXXX")
+    if [ $? -ne 0 ]; then
+	echo "${ME}: FATAL -- Can't create temporary file in ${conf_file%/*}."
+	exit 1
+    fi
+
+    generate_conf $revision "$run_deps" > $tmp_conf
+
+    cp ${conf_file} ${conf_file}.old && \
+	cp $tmp_conf ${conf_file}    && \
+	rm -f $tmp_conf
+}
+
+# Generate a new config file
+generate_conf() {
+    local revision run_deps firstline
+
+    revision=$1
+    run_deps=$2
+
+    cat <<EOF
+# -*- makefile -*-
+#
+# Last updated by ${USER} using ${ME} on ${DATE}
+#
+# Config file for %%PKGNAME%%.  Maintain it using %%PORTNAME%%
+
+PORTREVISION=	${revision}
+
+EOF
+
+    printf 'RUN_DEPENDS=\t'
+
+    firstline=
+    for rd in $run_deps ; do
+	[ -z $firstline ] || printf ' \\\n\t\t'
+	echo -n $rd
+	firstline=no
+    done
+    echo
+    echo
+}
+
+# Given a pkgname or port directory, construct a RUN_DEPENDS entry for
+# it.  Since we have no way of knowing what files are significant from
+# among whatever the port installs (and the port may not even be
+# installed yet) use the form
+# "pkgname>=n.nn:${PORTSDIR}/category/portname" where n.nn is the
+# currently available version of the port.  Requires the INDEX to have
+# been installed.  This can return any number of dependency lines,
+# including none.
+#
+# Note: Don't allow %%PORTNAME%% to add a dependency on itself...
+run_dep_from_index() {
+    local pkgpat
+
+    pkgpat=$1
+
+    # pkgpat should be a single word -- but it could be empty
+    for pp in $pkgpat ; do
+        # Has your head exploded yet?
+	awk -F '|' -v x=$pp                                     \
+	    '$1 ~ x || $2 ~ x { printf "%s:%s\n", $1, $2 }'     \
+	    < ${PORTSDIR}/${INDEXFILE} | grep -v %%PORTNAME%% | \
+            sed -e 's/-\([^-]*\):/>=\1:/' -e "s,${PORTSDIR},\${PORTSDIR},"
+    done
+}
+
+# Get the existing value of RUN_DEPENDS from the config file, and update it
+# against the current INDEX file.
+update_run_deps() {
+    local conf_file run_deps
+
+    conf_file=$1
+    run_deps=$( PORTSDIR=${PORTSDIR} make -f $conf_file -V RUN_DEPENDS )
+
+    for rd in $run_deps ; do
+	rd=$( echo $rd | sed -e "s,^.*${PORTSDIR},," -e 's, *$,$,' )
+	run_dep_from_index $rd
+    done | sort -u
+}
+
+# Return 0 or 1 according to user input "Y|y|yes" or "N|n|no"
+check_yesno() {
+    local answer junk rc
+
+    rc=
+    while [ -z $rc ]; do 
+	read answer junk
+	case $answer in
+	    [Yy]|[Yy][Ee][Ss])
+		rc=0
+		;;
+	    [Nn]|[Nn][Oo])
+		rc=1
+		;;
+	    *)
+		echo -n "${ME}: Errr... what?" 
+		;;
+	esac
+    done
+
+    return $rc
+}
+
+
+# Usage message
+usage() {
+    echo >&2 <<EOF
+${ME}: Usage
+	${ME} [-n] [-f cfgfile] [-a portname|-d portname]...
+
+    Options:
+
+        -n           dry-run: don't commit changes to $CONF_FILE
+        -f cfgfile   alternative config file (default: $CONF_FILE)
+        -a portname  add portname to the list of wanted files
+        -d portname  remove portname from the list of wanted files
+
+        -a and -d options are processed in the order given on the command
+        line: later items may undo the effect of earlier ones.
+
+        portnames are matched against both the pkgname and the path within
+        the ports tree.  One portname can result in adding or removing
+        dependencies on a number of different ports.
+
+        Trying to add %%PORTNAME%% as a dependency of itself is an error.
+
+        Without arguments, ${ME} will update the config file to reference
+        the current versions of any run-depends listed in the ports INDEX.
+
+EOF
+}
+
+add_dependency() {
+    local portname run_deps to_add
+
+    portname=$1
+    run_deps=$2
+
+    to_add=$( run_dep_from_index "$portname" )
+
+    # Check on exiting dependencies
+    {
+	for ta in $to_add ; do
+	    if echo "$run_deps" | grep -q -F $ta ; then
+		echo "${ME}: Dependency \"$ta\" already registered" >&2
+	    else
+		echo -n "${ME}: Register new dependency \"$ta\"?  " >&2
+		if check_yesno >&2 ; then
+		    echo $ta
+		fi
+	    fi
+	done
+	echo "$run_deps" 
+    } | sort -u
+}
+
+delete_dependency() {
+    local portname run_deps to_delete
+
+    portname=$1
+    run_deps=$2
+
+    to_delete=$( run_dep_from_index "$portname" )
+
+    for rd in $run_deps ; do
+	if echo "$to_delete" | grep -q -F $rd ; then
+	    echo -n "${ME}: Delete dependency \"$rd\"?  " >&2
+	    if ! check_yesno >&2 ; then
+		echo $rd
+	    fi
+	else
+	    echo $rd
+	fi
+    done | sort -u
+}
+
+# Program name
+ME=${0##*/}
+
+# User running this scipt
+USER=${USER:-${LOGNAME:-"an unknown user"}}
+
+# Date now
+DATE=$( date )
+
+# Where the ports tree is installed
+PORTSDIR=${PORTSDIR:-/usr/ports}
+
+# We need the ports tree to be installed
+if ! [ -d ${PORTSDIR} -a -f ${PORTSDIR}/Makefile ] ; then
+    echo "${ME}: FATAL -- do you have the ports tree installed?" >&2
+    exit 1
+fi
+
+# The ports INDEX file
+INDEXFILE=${INDEXFILE:-$( make -f ${PORTSDIR}/Makefile -V INDEXFILE )}
+
+if ! [ -f ${PORTSDIR}/${INDEXFILE} ] ; then
+    echo "${ME}: FATAL -- can\'t access ${PORTSDIR}/${INDEXFILE}" >&2
+    exit 1
+fi
+
+# Makefile snippet containing PORTREVISION and RUN_DEPENDS data
+# Set WANTEDPORTSCFG in the environment to override, or use the -f
+# command line option
+CONF_FILE=${WANTEDPORTSCFG:-/var/db/%%PORTNAME%%.conf}
+
+# The currently installed version of %%PKGNAME%% -- accounting for any
+# dynamic updates to PORTREVISION
+INSTALLED_PKG=$( pkg_info -Ex %%PKGNAME%% )
+
+if [ -z $INSTALLED_PKG ] ; then
+    echo "${ME}: FATAL -- the package providing this script seems " \
+	"not to be installed" >&2
+    exit 1
+fi
+
+#
+# Handle Options -- Main Code Loop
+#
+
+dry_run=
+action=
+while getopts nf:a:d: opt ; do
+    case $opt in
+	n)
+	    dry_run=yes
+	    ;;
+	f)
+	    CONF_FILE="$OPTARG"
+	    ;;
+	a)
+	    action="${action} A:${OPTARG}"
+	    ;;
+	d)
+	    action="${action} D:${OPTARG}"
+	    ;;
+	*)
+	    usage
+	    exit 1
+    esac
+done
+
+#
+# Create the config file if it doesn't exist
+#
+
+if ! [ -f ${CONF_FILE} ] ; then
+    if [ -z $dry_run ] ; then
+	echo "${ME}: WARNING -- no config file found, " \
+	    "creating initial ${CONF_FILE}" >&2
+	generate_conf 1 '' > ${CONF_FILE}
+    else
+	echo "${ME}: WARNING -- no config file found, " \
+	    "dry run: this is what would have been generated" >&2
+	generate_conf 1 '' >&2
+	exit 0
+    fi
+fi
+
+#
+# Update and modify the list of run-depends
+#
+
+RUN_DEPS=$( update_run_deps ${CONF_FILE} )
+
+for a in $action ; do
+    case ${a%%:*} in
+	A)
+	    # Add a port or ports
+	    RUN_DEPS=$( add_dependency "${a#*:}" "$RUN_DEPS" ) >&1
+	    ;;
+	D)
+	    # Remove a port or ports
+	    RUN_DEPS=$( delete_dependency "${a#*:}" "$RUN_DEPS" ) >&1
+	    ;;
+    esac
+done
+
+#
+# Maybe write out the result to the config file, bumping the
+# PORTREVISION from the installed version of %%PORTNAME%%
+#
+
+revision=$( increment_revision $INSTALLED_PKG )
+
+if [ -z $dry_run ] ; then
+    # Do it 
+    update_wanted_ports_conf $CONF_FILE $revision "$RUN_DEPS"
+else
+    echo "Dry run -- this is what would have been generated:"
+    generate_conf $revision "$RUN_DEPS"
+fi
+
+#
+# That's All Folks!
+#
