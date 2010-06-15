@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pidgin-facebookchat
-PORTVERSION=	1.65
-PORTREVISION=	1
+PORTVERSION=	1.67
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	${PROJECTHOST}-source-${PORTVERSION}
+DISTNAME=	${PROJECTHOST}-source-${PORTVERSION}-1
 
 MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	Facebook Chat for Pidgin
@@ -18,6 +17,8 @@ COMMENT=	Facebook Chat for Pidgin
 LIB_DEPENDS=	json-glib-1.0.0:${PORTSDIR}/devel/json-glib
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
+
+LICENSE=	GPLv3
 
 PROJECTHOST=	${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
