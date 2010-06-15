@@ -7,12 +7,17 @@
 
 PORTNAME=	Params-Validate
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Validate method/function parameters
+
+BUILD_DEPENDS=	p5-Attribute-Handlers>=0.79:${PORTSDIR}/devel/p5-Attribute-Handlers \
+		p5-ExtUtils-CBuilder>=0.2703:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
+RUN_DEPENDS=	p5-Attribute-Handlers>=0.79:${PORTSDIR}/devel/p5-Attribute-Handlers
 
 PERL_MODBUILD=	yes
 
