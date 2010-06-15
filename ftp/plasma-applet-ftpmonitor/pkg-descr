@@ -1,0 +1,6 @@
+Ftpmonitor is a simple plasmoid for KDE 4, which monitors incoming
+connections to ftp daemons. It acts as a frontend to pure-ftpwho,
+ncftpd_spy and ftpwho for pure-ftpd, ncftpd and proftpd ftp daemons.
+For vsftpd it looks for output of ps ax.
+
+WWW:	http://code.google.com/p/ftpmonitor/
