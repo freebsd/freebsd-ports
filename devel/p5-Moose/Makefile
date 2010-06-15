@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/F/FL/FLORA
+MASTER_SITES=	CPAN/../../authors/id/D/DO/DOY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -24,6 +23,8 @@ BUILD_DEPENDS=	\
 	p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
 	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	5.8.1+
 
