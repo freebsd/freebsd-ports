@@ -1,0 +1,10 @@
+lib/kde4/plasma_applet_ftpmonitor.so
+share/apps/ftpmonitor/ftpmonitor.notifyrc
+share/apps/plasma/plasmoids/ftpmonitor/ftpmonitor-connected.png
+share/apps/plasma/plasmoids/ftpmonitor/ftpmonitor-disconnected.png
+share/apps/plasma/plasmoids/ftpmonitor/ftpmonitor-error.png
+share/icons/hicolor/48x48/apps/ftpmonitor.png
+share/kde4/services/plasma-applet-ftpmonitor.desktop
+@dirrm share/apps/plasma/plasmoids/ftpmonitor
+@dirrm share/apps/plasma/plasmoids
+@dirrm share/apps/ftpmonitor
