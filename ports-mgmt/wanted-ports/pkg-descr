@@ -1,0 +1,5 @@
+A special meta-port to do nothing but register dependencies on those
+ports you specifically want to have installed.  The normal dependency
+checking in programs like pkg_delete(1) will prevent easy deletion of
+ports that other ports depend on.  Keeps egg off face.  Protects feet
+from being shot.

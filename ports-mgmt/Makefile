@@ -72,6 +72,7 @@
    SUBDIR += tinderbox
    SUBDIR += tinderbox-devel
    SUBDIR += vulnerability-test-port
+   SUBDIR += wanted-ports
    SUBDIR += xps
 
 .include <bsd.port.subdir.mk>
