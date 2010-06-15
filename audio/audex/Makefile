@@ -10,7 +10,7 @@ DISTVERSION=	0.72b1
 PORTREVISION=	4
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
-		http://opensource.maniatek.de/${PORTNAME}/files/
+		http://kde.maniatek.de/${PORTNAME}/files/
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	bsdkaffee@gmail.com
@@ -18,8 +18,6 @@ COMMENT=	Audio CD ripping utility for KDE4
 
 LIB_DEPENDS=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
 		kcddb.5:${PORTSDIR}/multimedia/kdemultimedia4
-
-BROKEN=		does not compile
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
