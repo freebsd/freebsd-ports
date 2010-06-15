@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/extremetuxracer/extreme-tuxracer/${PORTVERSION}/
 DISTNAME=	extremetuxracer-${PORTVERSION}
 
-MAINTAINER=	chris@officialunix.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3d penguin racing game using OpenGL
 
 LIB_DEPENDS=	tcl85:${PORTSDIR}/lang/tcl85 \
@@ -33,4 +33,5 @@ CONFIGURE_ARGS=	--with-tcl="${LOCALBASE}/lib/tcl8.5"\
 		--with-gl-inc="${LOCALBASE}/include" \
 		--with-data-dir=${PREFIX}/share/extremetuxracer
 WRKSRC=	${WRKDIR}/extremetuxracer-${PORTVERSION}
+
 .include <bsd.port.mk>
