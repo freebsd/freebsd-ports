@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmii
-DISTVERSION=	3.9
+DISTVERSION=	3.9.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/wmii/
 DISTNAME=	wmii+ixp-${DISTVERSION}
@@ -21,12 +21,11 @@ CONFLICTS=	wmii-3.6*
 LATEST_LINK=	${PORTNAME}-devel
 
 USE_BZIP2=	yes
-USE_ICONV=	yes
 USE_XORG=	x11 xext xrandr xrender xinerama xft
 
 MAKE_ARGS=	PREFIX="${PREFIX}" INCLUDE="${LOCALBASE}/include" \
 		CC="${CC} -c" LD="${CC}" LIBIXP="-lixp" STATIC="" \
-		LIBICONV="-liconv" MAN="${MANPREFIX}/man" DOC="${DOCSDIR}"
+		MAN="${MANPREFIX}/man" DOC="${DOCSDIR}"
 MAKE_ENV=	noisycc=1	# unmute build commands, useful for logs
 
 MAN1=		wimenu.1 wmii9menu.1 wmii.1 wmiir.1
@@ -36,9 +35,6 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/libixp/d' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,/usr/lib,${LOCALBASE}/lib, ; /^CFLAGS +=/d' \
 		${WRKSRC}/config.mk
-# Reinstate lost $(LIBICONV) reference
-	${REINPLACE_CMD} -e 's,-lm,& $$(LIBICONV),' \
-		${WRKSRC}/cmd/wmii/Makefile
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e '/doc/d' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e '/DOCDIR/s,$$(INSTALL),:,' ${WRKSRC}/mk/common.mk
