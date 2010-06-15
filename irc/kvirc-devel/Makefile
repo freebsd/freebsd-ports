@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/snapshots/source/ \
 		http://distfiles.officialunix.com/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	IRC client for QT4 and KDE4
 
 USE_BZIP2=	yes
