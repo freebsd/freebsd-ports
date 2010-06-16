@@ -2226,6 +2226,7 @@ de-ding                         ports/german/ding
 de-dtaus                        ports/german/dtaus
 de-eric4                        ports/german/eric4
 de-geonext                      ports/german/geonext
+de-gimp-help                    ports/german/gimp-help
 de-ispell                       ports/german/ispell
 de-ispell-alt                   ports/german/ispell-alt
 de-ispell-neu                   ports/german/ispell-neu
@@ -3746,6 +3747,7 @@ fr-facturier                    ports/french/facturier
 fr-geonext                      ports/french/geonext
 fr-gfaim                        ports/french/gfaim
 fr-gibi                         ports/french/gibi
+fr-gimp-help                    ports/french/gimp-help
 fr-homard                       ports/french/homard
 fr-ispell                       ports/french/ispell
 fr-jdictionary-fre-hun          ports/french/jdictionary-fre-hun
@@ -4321,6 +4323,12 @@ gimp-gap                        ports/graphics/gimp-gap
 gimp-greycstoration             ports/graphics/gimp-greycstoration
 gimp-gutenprint                 ports/print/gimp-gutenprint
 gimp-help                       ports/graphics/gimp-help
+gimp-help-en                    ports/misc/gimp-help-en
+gimp-help-es                    ports/misc/gimp-help-es
+gimp-help-it                    ports/misc/gimp-help-it
+gimp-help-nl                    ports/misc/gimp-help-nl
+gimp-help-nn                    ports/misc/gimp-help-nn
+gimp-help-sv                    ports/misc/gimp-help-sv
 gimp-lqr-plugin                 ports/graphics/gimp-lqr-plugin
 gimp-manual-html                ports/graphics/gimp-manual-html
 gimp-manual-pdf                 ports/graphics/gimp-manual-pdf
@@ -6126,6 +6134,7 @@ ja-gawk                         ports/japanese/gawk
 ja-gd                           ports/japanese/gd
 ja-gedy                         ports/japanese/gedy
 ja-gicq                         ports/japanese/gicq
+ja-gimp-help                    ports/japanese/gimp-help
 ja-gorua                        ports/japanese/gorua
 ja-gqmpeg                       ports/japanese/gqmpeg
 ja-grep                         ports/japanese/grep
@@ -7162,6 +7171,7 @@ ko-eterm                        ports/korean/eterm
 ko-freewnn-lib                  ports/korean/FreeWnn-lib
 ko-freewnn-server               ports/korean/FreeWnn-server
 ko-gdick                        ports/korean/gdick
+ko-gimp-help                    ports/korean/gimp-help
 ko-gtkcomm                      ports/korean/gtkcomm
 ko-h2ps                         ports/korean/h2ps
 ko-hanIM                        ports/korean/hanIM
@@ -8811,7 +8821,7 @@ lyntin                          ports/net/lyntin
 lynx                            ports/www/lynx
 lynx-current                    ports/www/lynx-current
 lyx                             ports/print/lyx
-lyx15                           ports/print/lyx15
+lyx14                           ports/print/lyx14
 lzip                            ports/archivers/lzip
 lzlib                           ports/archivers/lzlib
 lzma                            ports/archivers/lzma
@@ -19801,6 +19811,7 @@ pl-aspell                       ports/polish/aspell
 pl-ekg                          ports/polish/ekg
 pl-ekg2                         ports/polish/ekg2
 pl-fortunepl                    ports/polish/fortunepl
+pl-gimp-help                    ports/polish/gimp-help
 pl-gnugadu2                     ports/polish/gnugadu2
 pl-ispell                       ports/polish/ispell
 pl-kadu                         ports/polish/kadu
@@ -21927,6 +21938,7 @@ ru-eric4                        ports/russian/eric4
 ru-fortune-bashorgru            ports/russian/fortune-bashorgru
 ru-fortuneru                    ports/russian/fortuneru
 ru-gd                           ports/russian/gd
+ru-gimp-help                    ports/russian/gimp-help
 ru-kde3-i18n                    ports/russian/kde3-i18n
 ru-kde4-l10n                    ports/russian/kde4-l10n
 ru-koffice-i18n                 ports/russian/koffice-i18n
@@ -24858,6 +24870,7 @@ wanderlust-emacs21              ports/mail/wanderlust-emacs21
 wanderlust-emacs22              ports/mail/wanderlust-emacs22
 wanderlust-xemacs21-mule        ports/mail/wanderlust-xemacs21-mule
 wanpipe                         ports/misc/wanpipe
+wanted-ports                    ports/ports-mgmt/wanted-ports
 waon                            ports/audio/waon
 wapiti                          ports/security/wapiti
 wapsh                           ports/shells/wapsh
@@ -26350,6 +26363,8 @@ zh-gb2ps                        ports/chinese/gb2ps
 zh-gbscript                     ports/chinese/gbscript
 zh-gcin                         ports/chinese/gcin
 zh-gcin-devel                   ports/chinese/gcin-devel
+zh-gimp-help-zh_CN              ports/chinese/gimp-help-zh_CN
+zh-gimp-help-zh_cn              ports/chinese/gimp-help-zh_CN
 zh-gugod-clean                  ports/chinese/gugod-clean
 zh-hanzim                       ports/chinese/hanzim
 zh-hc                           ports/chinese/hc
