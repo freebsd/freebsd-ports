@@ -50,7 +50,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Tielei Wang:</p>
         <blockquote cite="http://www.ocert.org/advisories/ocert-2009-012.html">
-          <p>Multiple integer overflows in inter-color spaces conversion 
+          <p>Multiple integer overflows in inter-color spaces conversion
             tools in libtiff 3.8 through 3.8.2, 3.9, and 4.0 allow
             context-dependent attackers to execute arbitrary code via a
             TIFF image with large (1) width and (2) height values, which
@@ -665,10 +665,10 @@ Note:  Please add new entries to the beginning of this file.
 	    to another user's mailbox if it was stored under a
 	    group-writable group-"mail" directory. </p>
 	</blockquote>
-	<p>The movemail program, which provides this functionality
-	  to Emacs, can also be installed on FreeBSD via the movemail
-	  port. This port is therefore, in addition to Emacs, also
-	  vulnerable to this attack.</p>
+	  <p>The movemail program, which provides this functionality
+	    to Emacs, can also be installed on FreeBSD via the movemail
+	    port. This port is therefore, in addition to Emacs, also
+	    vulnerable to this attack.</p>
       </body>
     </description>
     <references>
@@ -806,12 +806,12 @@ Note:  Please add new entries to the beginning of this file.
 	  pidgin and allow remote attackers to crash the application.
 	  The developers summarized these problems as follows:</p>
 	<blockquote cite="http://pidgin.im/news/security/?id=45">
-	  <p>Pidgin can become unresponsive when displaying large
-	    numbers of smileys</p>
+	<p>Pidgin can become unresponsive when displaying large
+	  numbers of smileys</p>
 	</blockquote>
 	<blockquote cite="http://pidgin.im/news/security/?id=44">
-	  <p>Certain nicknames in group chat rooms can trigger a
-	    crash in Finch</p>
+	<p>Certain nicknames in group chat rooms can trigger a
+	  crash in Finch</p>
 	</blockquote>
 	<blockquote cite="http://pidgin.im/news/security/?id=43">
 	  <p>Failure to validate all fields of an incoming message
@@ -1024,8 +1024,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>krb5</name>
 	<range>
-	  <ge>1.7</ge>
-	  <le>1.7_2</le>
+	  <ge>1.7</ge><le>1.7_2</le>
 	</range>
       </package>
     </affects>
@@ -1119,9 +1118,9 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVS-2010-1163</cvename>
       <url>http://www.sudo.ws/pipermail/sudo-announce/2010-April/000093.html</url>
       <url>http://www.sudo.ws/sudo/alerts/sudoedit_escalate2.html</url>
-      <cvename>CVE-2010-1163</cvename>
     </references>
     <dates>
       <discovery>2010-04-09</discovery>
