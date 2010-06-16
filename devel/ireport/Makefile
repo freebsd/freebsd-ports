@@ -7,6 +7,7 @@
 
 PORTNAME=	ireport
 PORTVERSION=	3.7.3
+PORTREVISION=	1
 CATEGORIES=	devel databases java
 MASTER_SITES=	SF/${PORTNAME}/iReport/iReport-${PORTVERSION}
 DISTNAME=	iReport-${PORTVERSION}
@@ -28,7 +29,6 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper					\
 		${JAVALIBDIR}/tinylaf.jar:${PORTSDIR}/devel/tinylaf			\
 		${JAVALIBDIR}/slf4j-api.jar:${PORTSDIR}/devel/slf4j			\
 		${JAVALIBDIR}/bcel.jar:${PORTSDIR}/java/jakarta-bcel			\
-		${JAVALIBDIR}/jcmdline.jar:${PORTSDIR}/devel/jcmdline			\
 		${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino			\
 		${JAVALIBDIR}/barbecue.jar:${PORTSDIR}/graphics/barbecue		\
 		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j		\
@@ -45,6 +45,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_DOS2UNIX=	*.txt
 NO_BUILD=	yes
+
+#LICENSE=	GNU AFFERO GPL
+LICENSE_FILE=	${WRKSRC}/LICENSE_ireport.txt
 
 PLIST_SUB=	VER=${PORTVERSION} VERMAN=0.2.0
 
