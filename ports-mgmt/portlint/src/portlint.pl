@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.196 2010/04/04 18:11:09 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.197 2010/05/30 17:12:48 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 0;
+my $micro = 1;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -2028,18 +2028,17 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	# whole file: check for USE_APACHE=yes
 	#
 	if ($whole =~ /^USE_APACHE[?:]?=\s*(yes)$/m) {
-		&perror("WARN", $file, -1, "Use USE_APACHE=VERSION ".
+		&perror("FATAL", $file, -1, "Use USE_APACHE=VERSION ".
 			"(where version can be found in \${PORTSDIR}/Mk/bsd.apache.mk) ".
 			"instead of yes");
 	}
 
 	#
-	# whole file: check for WITH_APACHE2
+	# whole file: check for WITH_APACHE\d+
 	#
-	if ($whole =~ /^WITH_APACHE2[?:]?=/m) {
-		&perror("WARN", $file, -1, "Use WITH_APACHE=VERSION (where VERSION ".
-			"can be found in \${PORTSDIR}/Mk/bsd.apache.mk) instead to pull ".
-			"in APACHE_PORT");
+	if ($whole =~ /WITH_APACHE\d+/) {
+		&perror("FATAL", $file, -1, "Use WITH_APACHE=yes and .if ".
+			"\${APACHE_VERSION} [==|<|>] 13|20|22|24");
 	}
 
 	#
