@@ -1,4 +1,4 @@
-# Ports collection makefile for: freeswitch-sounds
+# Ports collection makefile for: freeswitch-music
 # Date created: May 11, 2009
 # Whom: Eric F Crist <ecrist@secure-computing.net>
 #
