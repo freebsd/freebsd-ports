@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	201022
+DISTVERSION=	201024
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/ \
 		ftp://ftp2.secure-computing.net/pub/FreeBSD/ports/openvpn-devel/
@@ -22,7 +22,8 @@ CONFLICTS=	openvpn-[0-9]*
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
-		--with-lzo-headers=${LOCALBASE}/include
+		--with-lzo-headers=${LOCALBASE}/include \
+		--disable-depr-random-resolv
 INSTALL_TARGET=	install mandir=${MANPREFIX}/man
 
 MAN8=		openvpn.8
