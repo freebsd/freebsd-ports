@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	App-Nopaste
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -42,7 +42,7 @@ MAN3=		App::Nopaste.3 \
 		App::Nopaste::Service::Codepeek.3 \
 		App::Nopaste::Service::Shadowcat.3 \
 		App::Nopaste::Service::Snitch.3 \
-		App::Nopaste::Service::SSH.3
+		App::Nopaste::Service::ssh.3
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_PASTEBIN)
