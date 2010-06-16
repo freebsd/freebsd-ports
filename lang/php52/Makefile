@@ -7,7 +7,7 @@
 
 PORTNAME=	php52
 PORTVERSION=	5.2.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -45,6 +45,7 @@ OPTIONS=	CLI "Build CLI version" on \
 		REDIRECT "Enable force-cgi-redirect support (CGI only)" off \
 		DISCARD "Enable discard-path support (CGI only)" off \
 		FASTCGI "Enable fastcgi support (CGI only)" on \
+		FPM "Enable fastcgi process manager (CGI only)" off \
 		PATHINFO "Enable path-info-check support (CGI only)" on
 
 CONFLICTS=	php4-4* php5-5.3*
@@ -54,6 +55,37 @@ MAN1=		php-config.1 phpize.1
 .include <bsd.port.pre.mk>
 
 PATCH_DIST_STRIP=	-p1
+
+.if defined(WITH_FPM) && defined(WITH_CGI)
+. if defined(WITHOUT_FASTCGI)
+IGNORE=		FPM requires FastCGI support
+. endif
+PATCHFILES+=	php-5.2.13-fpm-0.5.14-freebsd.patch.gz
+PATCH_SITES+=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR+=	mm
+LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent
+PHP_FPM_UID?=	www
+PHP_FPM_GID?=	www
+PHP_FPM_PID?=	/var/run/php-fpm/php-fpm.pid
+PHP_FPM_LOG?=	/var/log/php-fpm/php-fpm.log
+SUB_FILES+=	php-fpm.conf.sample
+SUB_LIST+=	PHP_FPM_UID=${PHP_FPM_UID} \
+		PHP_FPM_GID=${PHP_FPM_GID} \
+		PHP_FPM_PID=${PHP_FPM_PID} \
+		PHP_FPM_LOG=${PHP_FPM_LOG}
+USE_RC_SUBR+=	php-fpm
+PLIST_SUB+=	FPM="" \
+		PHP_FPM_PID=${PHP_FPM_PID} \
+		PHP_FPM_LOG=${PHP_FPM_LOG}
+
+CONFIGURE_ARGS+=	--enable-fpm \
+			--with-fpm-conf=${PREFIX}/etc/php-fpm.conf \
+			--with-fpm-pid=${PHP_FPM_PID} \
+			--with-fpm-log=${PHP_FPM_LOG} \
+			--with-libevent=${LOCALBASE}
+.else
+PLIST_SUB+=	FPM="@comment "
+.endif
 
 .if !defined(WITHOUT_SUHOSIN)
 PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.7.patch.gz:suhosin
@@ -153,6 +185,10 @@ CONFIGURE_ARGS+=--disable-ipv6
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
+.if defined(WITH_FPM) && defined(WITH_CGI)
+	@${REINPLACE_CMD} -e 's,BUILD_CGI=\"\\$$\(.*\)\\$$(EXTRA_LIBS),BUILD_CGI=\"\\$$\1\\$$(EXTRA_LIBS) \\$$(SAPI_EXTRA_LIBS),g' \
+		${WRKSRC}/sapi/cgi/config9.m4
+.endif
 
 pre-configure:
 	@${CAT} ${WRKSRC}/acinclude.m4 ${WRKSRC}/build/libtool.m4 > ${WRKSRC}/aclocal.m4
@@ -167,6 +203,12 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-recommended ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
+.if defined(WITH_FPM) && defined(WITH_CGI)
+	@${INSTALL_DATA} ${WRKDIR}/php-fpm.conf.sample ${PREFIX}/etc
+	@${MKDIR} `dirname ${PHP_FPM_PID}`
+	@${MKDIR} `dirname ${PHP_FPM_LOG}`
+	@cd ${PREFIX}/etc && ${CP} -n php-fpm.conf.sample php-fpm.conf
+.endif
 .if defined(WITH_APACHE)
 	@${CAT} ${PKGMESSAGE}
 .endif

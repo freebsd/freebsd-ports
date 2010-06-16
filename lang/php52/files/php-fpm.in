@@ -1,0 +1,55 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: php-fpm
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable php-fpm:
+#
+# php_fpm_enable="YES"
+# php_fpm_config=""
+#
+
+. /etc/rc.subr
+
+name="php_fpm"
+rcvar=`set_rcvar`
+
+extra_commands="reload logrotate"
+
+command="%%PREFIX%%/bin/php-cgi"
+pidfile="%%PHP_FPM_PID%%"
+reload_cmd="php_fpm_reload_cmd"
+logrotate_cmd="php_fpm_logrotate_cmd"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${php_fpm_enable="NO"}
+: ${php_fpm_config="%%PREFIX%%/etc/php-fpm.conf"}
+
+required_files="${php_fpm_config}"
+command_args="--fpm --fpm-config ${php_fpm_config}"
+
+php_fpm_reload_cmd () {
+	if [ -z "$rc_pid" ]; then
+		_run_rc_notrunning
+		return 1
+	fi
+	echo "Reloading $name."
+	kill -USR2 $rc_pid
+}
+
+php_fpm_logrotate_cmd () {
+	if [ -z "$rc_pid" ]; then
+		_run_rc_notrunning
+		return 1
+	fi
+	echo "Rotating logs $name."
+	kill -USR1 $rc_pid
+}
+
+run_rc_command "$1"
