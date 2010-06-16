@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-tls
 
@@ -17,7 +17,7 @@ CONFLICTS=	ucspi-ssl-[0-9]*
 PATCH_SITES+=		http://www.fehcom.de/qmail/spamcontrol/:tls \
 			${MASTER_SITE_LOCAL:S/$/:tls/}
 PATCH_SITE_SUBDIR+=	garga/ucspi-ssl/:tls
-PATCHFILES+=		ucspi-ssl-0.70_ucspitls-0.5.patch_:tls
+PATCHFILES+=		ucspi-ssl-0.70_ucspitls-0.6.patch_:tls
 PATCH_WRKSRC=		${WRKSRC}/src
 
 MASTERDIR=	${.CURDIR}/../ucspi-ssl
