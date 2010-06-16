@@ -106,6 +106,11 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODSAYZH	"Enable mod_say_zh (Chinese support)" off
 
 .include <bsd.port.options.mk>
+
+.if defined(PACKAGE_BUILDING)
+BROKEN=		Fails to compile on pointyhat
+.endif
+
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS+=	--enable-64
