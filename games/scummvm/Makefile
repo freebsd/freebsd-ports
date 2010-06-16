@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	scummvm
-DISTVERSION=	1.0.0
-PORTREVISION=	3
+DISTVERSION=	1.1.1
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
-COMMENT=	Graphical Adventure Game Virtual Machine
+COMMENT=	Interpreter for several adventure games
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -22,27 +21,49 @@ USE_SDL=	sdl
 
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ARGS=--with-sdl-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--with-sdl-prefix=${LOCALBASE} \
 		--disable-alsa \
 		--with-zlib-prefix=/usr \
 		--disable-debug \
 		--disable-tremor
 CONFIGURE_ENV=	CXX="${CXX}"
+ 		LDFLAGS="${PTHREAD_LIBS}"
 
 OPTIONS=	VORBIS "Enable Ogg Vorbis support" off \
-		MAD "Enable mad (MP3) support" on \
+		MP3 "Enable MP3 support" on \
 		MPEG2 "Enable MPEG2 support (implies VORBIS)" on \
 		FLAC "Enable FLAC support" off \
 		FLUIDSYNTH "Enable FluidSynth MIDI synthesizer" off \
-		DPLUGINS "Enable support for dynamic plugins" off
+ 		MT32EMU "Enable MT-32 emulator" on \
+ 		X86_ASM "Enable assembly code (i386 only)" on
 
 MAN6=		scummvm.6
 
-PORTDOCS=	NEWS README TODO
-PLIST_FILES=	bin/scummvm %%DATADIR%%/scummmodern.zip
+PORTDOCS=	AUTHORS NEWS README TODO COPYRIGHT
+ENGINEDATA=	drascula.dat \
+		kyra.dat \
+		lure.dat \
+		queen.tbl \
+		sky.cpt \
+		teenagent.dat
+
+PLIST_FILES=	bin/scummvm %%DATADIR%%/scummmodern.zip \
+		%%DATADIR%%/scummvm.svg \
+		%%DATADIR%%/scummmodern.zip \
+		$(ENGINEDATA:S/^/%%DATADIR%%\/$$/)
 PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+.if defined(WITH_X86_ASM)
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+CONFIGURE_ARGS+=--with-nasm-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--disable-nasm
+.endif
+.endif
 
 .if defined(WITH_MPEG2)
 WITH_VORBIS=	yes
@@ -57,17 +78,11 @@ CONFIGURE_ARGS+=--with-ogg-prefix=${LOCALBASE} \
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
-.if !defined(WITHOUT_MAD)
+.if defined(WITH_MP3)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=--with-mad-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-mad
-.endif
-
-.if defined(WITH_MPEG2)
-WITH_VORBIS=	yes
-LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
-CONFIGURE_ARGS+=--with-mpeg2-prefix=${LOCALBASE} --enable-mpeg2
 .endif
 
 .if defined(WITH_FLAC)
@@ -84,24 +99,23 @@ CONFIGURE_ARGS+=--with-fluidsynth-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=--disable-fluidsynth
 .endif
 
-.if defined(WITH_DPLUGINS)
-CONFIGURE_ARGS+=	--enable-plugins
+.if defined(WITHOUT_MT32EMU)
+CONFIGURE_ARGS+=--disable-mt32emu
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/-O//' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's/-lfluidsynth/& ${PTHREAD_LIBS}/' ${WRKSRC}/configure
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${PREFIX}/man/man6
 	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/icons/scummvm.svg ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/gui/themes/scummmodern.zip ${DATADIR}
-
+.for i in ${ENGINEDATA}
+	@${INSTALL_DATA} ${WRKSRC}/dists/engine-data/${i} ${DATADIR}
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
