@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	jcmdline
-PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTVERSION=	2.0.0
 CATEGORIES=	devel java
 MASTER_SITES=	SF
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java command line processor
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
+
+LICENSE=	MPL
 
 JARFILE=	${PORTNAME}.jar
 
