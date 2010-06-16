@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	rafan
 DISTNAME=	openvanilla-${PORTVERSION}
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development header files for OpenVanilla
 
 NO_BUILD=	yes
