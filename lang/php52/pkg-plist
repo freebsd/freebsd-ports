@@ -3,6 +3,9 @@
 bin/php-config
 bin/phpize
 etc/php.conf
+%%FPM%%@unexec if cmp -s %D/etc/php-fpm.conf %D/etc/php-fpm.conf.sample; then rm -f %D/etc/php-fpm.conf; fi
+%%FPM%%etc/php-fpm.conf.sample
+%%FPM%%@exec cp -n %D/%F %B/php-fpm.conf
 etc/php.ini-dist
 etc/php.ini-recommended
 include/php/TSRM/TSRM.h
@@ -206,3 +209,8 @@ lib/php/build/shtool
 @dirrmtry include/php
 @dirrm lib/php/build
 @dirrmtry lib/php
+%%FPM%%@cwd /
+%%FPM%%@exec mkdir -p `dirname %%PHP_FPM_PID%%`
+%%FPM%%@exec mkdir -p `dirname %%PHP_FPM_LOG%%`
+%%FPM%%@dirrmtry `dirname %%PHP_FPM_PID%%`
+%%FPM%%@dirrmtry `dirname %%PHP_FPM_LOG%%`
