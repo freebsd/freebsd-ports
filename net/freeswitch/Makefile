@@ -1,6 +1,6 @@
-# Ports collection makefile for: freeswitch-sounds
-# Date created: May 11, 2009
-# Whom: Eric F Crist <ecrist@secure-computing.net>
+# Ports collection makefile for: freeswitch
+# Date created: Augets 9, 2009
+# Whom: Richard Neese <r.neese@gmail.com>
 #
 # $FreeBSD$
 #
