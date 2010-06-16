@@ -1118,7 +1118,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CVS-2010-1163</cvename>
+      <cvename>CVE-2010-1163</cvename>
       <url>http://www.sudo.ws/pipermail/sudo-announce/2010-April/000093.html</url>
       <url>http://www.sudo.ws/sudo/alerts/sudoedit_escalate2.html</url>
     </references>
