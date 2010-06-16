@@ -7,9 +7,9 @@
 #
 
 PORTNAME=		bash
-PATCHLEVEL=		5
+PATCHLEVEL=		7
 PORTVERSION=		4.1.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		2
+PORTREVISION?=		0
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
