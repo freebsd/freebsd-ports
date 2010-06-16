@@ -7,6 +7,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.14.10
+PORTREVISION=	1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	libtorrent
@@ -19,7 +20,7 @@ LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=	libtorrent-rasterbar*-0.15.*
+CONFLICTS=	libtorrent-rasterbar-0.15.*
 
 USE_GNOME=	gnomehack
 USE_OPENSSL=	yes
@@ -28,13 +29,14 @@ ACLOCAL_ARGS=	-I m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug \
 		--disable-python-binding \
+		--disable-examples \
+		--with-boost-regex=no \
+		--with-boost-program-options=no \
 		--with-boost=${LOCALBASE} \
 		--with-boost-asio=boost_system \
 		--with-boost-system=boost_system \
 		--with-boost-filesystem=boost_filesystem \
 		--with-boost-thread=boost_thread \
-		--with-boost-regex=boost_regex \
-		--with-boost-program-options=boost_program_options \
 		--with-dht=on \
 		--with-encryption=on \
 		--with-libgeoip \
