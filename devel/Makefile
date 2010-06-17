@@ -3151,6 +3151,7 @@
     SUBDIR += svndelta
     SUBDIR += svnkit
     SUBDIR += svntrac
+    SUBDIR += swank-clojure
     SUBDIR += swig13
     SUBDIR += synfig
     SUBDIR += sysconftool
