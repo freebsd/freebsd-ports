@@ -1,3 +1,4 @@
+bin/try_decoding
 bin/randfile
 bin/lines
 bin/randcookie
@@ -36,6 +37,9 @@ bin/verinfo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/cache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/cache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/decimalutil.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/decimalutil.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/decimalutil.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/dictutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/dictutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/dictutil.pyo
@@ -108,6 +112,9 @@ bin/verinfo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/tailx.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/tailx.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/tailx.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/try_decoding.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/try_decoding.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/try_decoding.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/unsort.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/unsort.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/scripts/unsort.pyo
@@ -171,6 +178,9 @@ bin/verinfo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_cache.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_cache.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_cache.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_decimalutil.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_decimalutil.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_decimalutil.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_dictutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_dictutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_dictutil.pyo
