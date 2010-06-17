@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	dirmngr
-PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	dirmngr
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A client for managing and downloading certificate revocation lists
 
-BUILD_DEPENDS=	libassuan-1>=1.0.5:${PORTSDIR}/security/libassuan-1
-LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
+		gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		ksba.17:${PORTSDIR}/security/libksba \
 		pth:${PORTSDIR}/devel/pth
@@ -32,6 +33,10 @@ MAN1=		dirmngr-client.1 dirmngr.1
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
+OPTIONS=	NLS "National Language Support" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
@@ -40,4 +45,7 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.include <bsd.port.mk>
+verify: checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
+
+.include <bsd.port.post.mk>
