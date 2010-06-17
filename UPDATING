@@ -5,8 +5,36 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100617:
+  AFFECTS: users of security/{dirmngr|gnupg}
+  AUTHOR: dougb@FreeBSD.org
+
+  The security/libassuan port has been updated to version 2.0.0, and
+  the applications listed above have been updated to use it as of versions
+  1.1.0 and 2.0.15 respectively.  If you HAVE NOT updated your libassuan
+  port as described in the 20100613 entry, you can simply update all 3
+  ports together (libassuan, dirmngr if installed, and gnupg) using your
+  normal upgrade path.  If you HAVE updated to libassuan-1, then you need
+  to do the following before upgrading dirmngr and gnupg.
+
+  If you use portupgrade:
+
+	portupgrade -f -o security/libassuan security/libassuan-1
+
+  If you use portmaster:
+
+	portmaster -o security/libassuan libassuan-1
+
+  If you use neither:
+
+	pkg_delete -f libassuan*
+
+  Please note, libassuan version 2.0.0 is now a shared library, so unlike
+  the previous version it is now a runtime dependency and cannot be deleted
+  after you are done building dirmngr and/or gnupg.
+
 20100613:
-  AFFECTS: users of deskutils/kdepim4, and  security/{dirmngr|gnupg|gpa|opensc}
+  AFFECTS: users of deskutils/kdepim4, and  security/{gpa|opensc}
   AUTHOR: dougb@FreeBSD.org
 
   The security/libassuan port has been updated to version 2.0.0, however
