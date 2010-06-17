@@ -1,5 +1,13 @@
---- ./liquidsoap-0.9.2/Makefile.defs.in.orig	2009-10-30 16:07:44.000000000 +0200
-+++ ./liquidsoap-0.9.2/Makefile.defs.in	2009-12-11 21:42:24.000000000 +0200
+--- ./liquidsoap-0.9.2/Makefile.defs.in.orig
++++ ./liquidsoap-0.9.2/Makefile.defs.in
+@@ -1,6 +1,6 @@
+ # @configure_input@
+ 
+-DISTDIR=liquidsoap-@version@
++DISTDIR=liquidsoap
+ 
+ user=@install_user@
+ group=@install_group@
 @@ -17,6 +17,7 @@
  datadir = @datadir@
  INSTALL = @INSTALL@

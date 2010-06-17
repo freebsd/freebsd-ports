@@ -1,10 +1,10 @@
---- ./liquidsoap-0.9.2/examples/Makefile.orig	2009-10-30 16:07:44.000000000 +0200
-+++ ./liquidsoap-0.9.2/examples/Makefile	2009-12-11 21:42:24.000000000 +0200
+--- ./liquidsoap-0.9.2/examples/Makefile.orig
++++ ./liquidsoap-0.9.2/examples/Makefile
 @@ -6,5 +6,5 @@
  
  .PHONY: doc-install
  doc-install:
 -	$(INSTALL) -d $(datadir)/doc/$(DISTDIR)/examples
 -	$(INSTALL_DATA) $(wildcard *.liq) README $(datadir)/doc/$(DISTDIR)/examples
-+	$(INSTALL) -d $(datadir)/examples/$(DISTDIR)
-+	$(INSTALL_DATA) $(wildcard *.liq) README $(datadir)/examples/$(DISTDIR)
++	$(PORTEXAMPLES)$(INSTALL) -d $(datadir)/examples/$(DISTDIR)
++	$(PORTEXAMPLES)$(INSTALL_DATA) $(wildcard *.liq) README $(datadir)/examples/$(DISTDIR)

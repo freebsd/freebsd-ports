@@ -1,0 +1,25 @@
+--- ./liquidsoap-0.9.2/doc/Makefile.orig
++++ ./liquidsoap-0.9.2/doc/Makefile
+@@ -1,4 +1,4 @@
+-.PHONY: doc upload reference all-subdirs
++.PHONY: doc upload reference all-subdirs html-install man-install
+ 
+ SUBDIRS = content liqi
+ DISTFILES = liquidsoap.1 Makefile reference_to_liqi.pl settings_to_liqi.pl no-ref.txt
+@@ -89,9 +89,13 @@
+ 	@echo ""
+ 	@find html/scripts | grep '\.pl' | sort | ./scripts/test_snipets "perl -c"
+ 
+-doc-install: $(HTML)
+-	$(INSTALL)  -d $(datadir)/doc/$(DISTDIR)/html
+-	cp -rf html/* $(datadir)/doc/$(DISTDIR)/html
++doc-install: html-install man-install
++
++html-install: $(HTML)
++	$(PORTDOCS)$(INSTALL)  -d $(datadir)/doc/$(DISTDIR)/html
++	$(PORTDOCS)cp -rf html/* $(datadir)/doc/$(DISTDIR)/html
++
++man-install:
+ 	$(INSTALL) -d $(mandir)/man1
+ 	$(INSTALL_DATA) liquidsoap.1 $(mandir)/man1
+ 
