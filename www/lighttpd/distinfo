@@ -1,3 +1,6 @@
 MD5 (lighttpd-1.4.26.tar.bz2) = a682c8efce47a2f4263a247ba0813c9b
 SHA256 (lighttpd-1.4.26.tar.bz2) = d7c25a5bb08c8dbc3e8d86f9e564c90ebf0c365d7fcf5ee801e912fb3c2357fd
 SIZE (lighttpd-1.4.26.tar.bz2) = 627971
+MD5 (lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz) = 633af734ed50d42b743ab70724058951
+SHA256 (lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz) = d7c3704d5253c4f3c18459f89059063b311e50096cd2c38fc982cec683c32e61
+SIZE (lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz) = 44695
