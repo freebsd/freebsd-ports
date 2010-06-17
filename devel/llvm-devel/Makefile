@@ -7,7 +7,6 @@
 
 PORTNAME=	llvm
 DISTVERSION=	2.8.r${SVN_REV}
-PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -85,7 +84,7 @@ CONFIGURE_ARGS+=	--disable-assertions
 CONFIGURE_ARGS+=	--enable-assertions
 .endif
 
-.if defined(BOOTSTRAP)
+.if defined(BOOTSTRAP) || defined(SVN_FETCH)
 FETCH_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 
 do-fetch:
@@ -141,6 +140,7 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/opt \
 			bin/scan-build \
 			bin/tblgen \
+			lib/LLVMHello.so \
 			lib/libCompilerDriver.a \
 			lib/libEnhancedDisassembly.so \
 			lib/libEnhancedDisassembly.a \
@@ -149,7 +149,7 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			lib/libUnitTestMain.a \
 			lib/libclang* \
 			lib/libplugin_llvmc* \
-			lib/libprofile_rt.so
+			lib/profile_rt.so
 PLIST_DIR_LIST=		include/clang \
 			include/clang-c \
 			include/llvm-c \
@@ -158,7 +158,7 @@ PLIST_DIR_LIST=		include/clang \
 build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
-	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
+	    (ls ${PLIST_FILE_LIST} && ${FIND} ${PLIST_DIR_LIST} -type f) | \
 	    ${SORT} >> ${PLIST}
 	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
