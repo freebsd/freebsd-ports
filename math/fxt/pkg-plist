@@ -57,6 +57,7 @@ include/fxt/bits/bit-dragon-r13.h
 include/fxt/bits/bit-isolate.h
 include/fxt/bits/bit-necklace.h
 include/fxt/bits/bit-paper-fold.h
+include/fxt/bits/bitldeq.h
 include/fxt/bits/bit2adic.h
 include/fxt/bits/bit2pow.h
 include/fxt/bits/bitasm-amd64.h
