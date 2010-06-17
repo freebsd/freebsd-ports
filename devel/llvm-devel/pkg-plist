@@ -55,6 +55,7 @@ include/clang/AST/NestedNameSpecifier.h
 include/clang/AST/ParentMap.h
 include/clang/AST/PrettyPrinter.h
 include/clang/AST/RecordLayout.h
+include/clang/AST/RecursiveASTVisitor.h
 include/clang/AST/Redeclarable.h
 include/clang/AST/Release/StmtNodes.inc.tmp
 include/clang/AST/Stmt.h
@@ -177,6 +178,8 @@ include/clang/CodeGen/ModuleBuilder.h
 include/clang/Driver/Action.h
 include/clang/Driver/Arg.h
 include/clang/Driver/ArgList.h
+include/clang/Driver/CC1AsOptions.h
+include/clang/Driver/CC1AsOptions.inc
 include/clang/Driver/CC1Options.h
 include/clang/Driver/CC1Options.inc
 include/clang/Driver/Compilation.h
@@ -190,6 +193,7 @@ include/clang/Driver/Option.h
 include/clang/Driver/Options.h
 include/clang/Driver/Options.inc
 include/clang/Driver/Phases.h
+include/clang/Driver/Release/CC1AsOptions.inc.tmp
 include/clang/Driver/Release/CC1Options.inc.tmp
 include/clang/Driver/Release/Options.inc.tmp
 include/clang/Driver/Tool.h
@@ -413,7 +417,6 @@ include/llvm/CodeGen/AsmPrinter.h
 include/llvm/CodeGen/BinaryObject.h
 include/llvm/CodeGen/CalcSpillWeights.h
 include/llvm/CodeGen/CallingConvLower.h
-include/llvm/CodeGen/ELFRelocation.h
 include/llvm/CodeGen/FastISel.h
 include/llvm/CodeGen/GCMetadata.h
 include/llvm/CodeGen/GCMetadataPrinter.h
@@ -533,6 +536,8 @@ include/llvm/MC/MCExpr.h
 include/llvm/MC/MCFixup.h
 include/llvm/MC/MCInst.h
 include/llvm/MC/MCInstPrinter.h
+include/llvm/MC/MCLabel.h
+include/llvm/MC/MCMachOSymbolFlags.h
 include/llvm/MC/MCObjectWriter.h
 include/llvm/MC/MCParser/AsmCond.h
 include/llvm/MC/MCParser/AsmLexer.h
@@ -541,6 +546,7 @@ include/llvm/MC/MCParser/MCAsmLexer.h
 include/llvm/MC/MCParser/MCAsmParser.h
 include/llvm/MC/MCParser/MCParsedAsmOperand.h
 include/llvm/MC/MCSection.h
+include/llvm/MC/MCSectionCOFF.h
 include/llvm/MC/MCSectionELF.h
 include/llvm/MC/MCSectionMachO.h
 include/llvm/MC/MCStreamer.h
@@ -693,6 +699,7 @@ include/llvm/Use.h
 include/llvm/User.h
 include/llvm/Value.h
 include/llvm/ValueSymbolTable.h
+lib/LLVMHello.so
 lib/clang/2.0/include/emmintrin.h
 lib/clang/2.0/include/mm_malloc.h
 lib/clang/2.0/include/mmintrin.h
@@ -732,7 +739,6 @@ lib/libLLVMCore.a
 lib/libLLVMCppBackend.a
 lib/libLLVMCppBackendInfo.a
 lib/libLLVMExecutionEngine.a
-lib/libLLVMHello.so
 lib/libLLVMInstCombine.a
 lib/libLLVMInstrumentation.a
 lib/libLLVMInterpreter.a
@@ -799,7 +805,7 @@ lib/libclangRewrite.a
 lib/libclangSema.a
 lib/libplugin_llvmc_Base.a
 lib/libplugin_llvmc_Clang.a
-lib/libprofile_rt.so
+lib/profile_rt.so
 %%DATADIR%%/scanview.css
 %%DATADIR%%/sorttable.js
 %%DOCSDIR%%/html.tar.gz
