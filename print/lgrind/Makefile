@@ -12,26 +12,40 @@ CATEGORIES=	print
 MASTER_SITES=	LOCAL/pav
 
 DISTNAME=	${PORTNAME}
-DISTFILES=	${PORTNAME}/source/Makefile \
-		${PORTNAME}/source/README \
-		${PORTNAME}/FAQ \
-		${PORTNAME}/README \
-		${PORTNAME}/Makefile \
-		${PORTNAME}/lgrind.dtx \
-		${PORTNAME}/lgrind.gls \
-		${PORTNAME}/lgrind.ind \
-		${PORTNAME}/lgrind.ins \
-		${PORTNAME}/lgrindef \
-		${PORTNAME}/source/lgrind.1 \
-		${PORTNAME}/source/lgrind.c \
-		${PORTNAME}/source/lgrindef.5 \
-		${PORTNAME}/source/lgrindef.c \
-		${PORTNAME}/source/lgrindef.h \
-		${PORTNAME}/source/lgutil.c \
-		${PORTNAME}/source/regexp.c \
-		${PORTNAME}/source/regexp.h \
-		${PORTNAME}/source/retest.c \
-		${PORTNAME}/source/v2lg.c
+DISTFILES=	source/Makefile \
+		source/README \
+		FAQ \
+		README \
+		Makefile \
+		example/asm2tex.bat \
+		example/asm2tex \
+		example/c2tex.bat \
+		example/c2tex \
+		example/lgrindeg.tex \
+		example/egcprog.c \
+		example/egmasm.asm \
+		example/subst \
+		lgrind.dtx \
+		lgrind.gls \
+		lgrind.ind \
+		lgrind.ins \
+		lgrind.pdf \
+		lgrindef \
+		source/.cvsignore \
+		source/lgrind.1 \
+		source/lgrind.c \
+		source/lgrindef.5 \
+		source/lgrindef.c \
+		source/lgrindef.h \
+		source/lgutil.c \
+		source/makefile.dos \
+		source/makefile.emx \
+		source/regexp.c \
+		source/regexp.h \
+		source/retest.c \
+		source/v2lg.c \
+		${PORTNAME}.tar.gz
+
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}.tar.gz
 
@@ -83,7 +97,7 @@ fetchsrctarball:
 	exit 1
 
 extractsrctarball:
-	${GUNZIP_CMD} -qc ${DISTDIR}/${DIST_SUBDIR}/${IGNOREFILES} | tar -C ${DISTDIR}/${DIST_SUBDIR} -xf -; \
+	${GUNZIP_CMD} -qc ${DISTDIR}/${DIST_SUBDIR}/${EXTRACT_ONLY} | tar -C ${DISTDIR} -xf -; \
 	exit
 
 post-patch:
