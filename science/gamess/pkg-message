@@ -1,0 +1,13 @@
+WARNING!!WARNING!!WARNING!!WARNING!!
+
+If you got the following error
+'Error ENOMEM: Not enough memory to allocate ** bytes of shared memory.',
+then add ipc memory by:
+sudo sysctl -w kern.ipc.shmmax=67108864
+sudo sysctl -w kern.ipc.shmall=32768
+or if you want to enable at boot time
+add following lines to
+kern.ipc.shmmax=67108864
+kern.ipc.shmall=32768
+/boot/loader.conf
+.
