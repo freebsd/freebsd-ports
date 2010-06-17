@@ -2,6 +2,7 @@
 %%ETCDIR%%/fastcgi_params
 %%ETCDIR%%/koi-utf
 %%ETCDIR%%/koi-win
+%%ETCDIR%%/uwsgi_params
 %%ETCDIR%%/win-utf
 @unexec if cmp -s %D/%%ETCDIR%%/mime.types-dist %D/%%ETCDIR%%/mime.types; then rm -f %D/%%ETCDIR%%/mime.types; fi
 %%ETCDIR%%/mime.types-dist
