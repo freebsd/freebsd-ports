@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	p4d
-PORTVERSION=	2009.2.241896
+PORTVERSION=	2009.2.249896
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/ \
-		http://filehost.perforce.com/perforce/r${P4VERSION}/bin.${PLATFORM}/
+		http://filehost.perforce.com/perforce/${P4VERSION}/bin.${PLATFORM}/
 DISTNAME=	p4d
 EXTRACT_SUFX=
 EXTRACT_ONLY=	# none
