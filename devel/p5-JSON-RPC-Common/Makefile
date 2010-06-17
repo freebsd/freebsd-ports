@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	JSON-RPC-Common
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Transport agnostic JSON RPC helper objects
 
 RUN_DEPENDS=	p5-libwww>=5:${PORTSDIR}/www/p5-libwww \
