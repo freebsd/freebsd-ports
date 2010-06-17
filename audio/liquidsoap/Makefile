@@ -7,7 +7,7 @@
 
 PORTNAME=	liquidsoap
 PORTVERSION=	0.9.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 DISTVERSIONPREFIX=	full-
 CATEGORIES=	audio net
 MASTER_SITES=	SF/savonet/${PORTNAME}/${PORTVERSION}
@@ -56,6 +56,13 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--disable-gui --localstatedir=/var
+
+.if defined(NOPORTDOCS)
+MAKE_ENV+=	PORTDOCS="@: "
+.endif
+.if defined(NOPORTEXAMPLES)
+MAKE_ENV+=	PORTEXAMPLES="@: "
+.endif
 
 MAN1=	liquidsoap.1
 
