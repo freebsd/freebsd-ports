@@ -7,7 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -21,7 +21,7 @@ USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack pkgconfig
 USE_RC_SUBR=	lighttpd.sh
-CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd --enable-static
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -32,6 +32,7 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		CML		"Enable Cache Meta Language support" off \
 		FAM		"Enable fam/gamin support" off \
 		GDBM		"Enable gdbm storage support" off \
+		H264		"Enable H.264 streaming" off \
 		IPV6		"Enable IPV6 support" on \
 		MAGNET		"Enable magnet support" off \
 		MEMCACHE	"Enable memory caching support" off \
@@ -43,10 +44,27 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		VALGRIND	"Enable valgrind support" off \
 		WEBDAV		"Enable WebDAV support"	off
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS COPYING INSTALL NEWS README
+.endif
+
 .include <bsd.port.pre.mk>
 
 # Default REQUIRE to rc.d script
 _REQUIRE=	DAEMON
+
+.if defined(WITH_H264)
+PATCH_SITES+=		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR+=	mm
+PATCHFILES+=		lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz
+USE_AUTOTOOLS+=		autoconf:262 autoheader:262 aclocal:110 automake:110
+ACLOCAL_ARGS+=		-I m4
+PORTDOCS+=		COPYING_H264
+MANUAL_PACKAGE_BUILD=	free for non-commercial use only
+PLIST_SUB+=		H264=""
+.else
+PLIST_SUB+=		H264="@comment "
+.endif
 
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
@@ -143,6 +161,10 @@ post-patch:
 	@${ECHO} "server.use-ipv6 = \"enable\"" >> ${WRKSRC}/doc/lighttpd.conf
 	@${ECHO} "\$$SERVER[\"socket\"] == \"0.0.0.0:80\" { }" >> ${WRKSRC}/doc/lighttpd.conf
 .endif
+.if defined(WITH_H264)
+	@${CAT} ${WRKSRC}/COPYING_H264
+	@sleep 10
+.endif
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/lighttpd.conf ${PREFIX}/etc/lighttpd.conf.sample
@@ -150,5 +172,11 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/lighttpd.conf ${PREFIX}/etc/lighttpd.conf
 .endif
 	@${LIBTOOL} --finish ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+. for FILE in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
+. endfor
+.endif
 
 .include <bsd.port.post.mk>
