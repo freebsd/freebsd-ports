@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	Math-Symbolic
-PORTVERSION=	0.603
-PORTREVISION=	1
+PORTVERSION=	0.604
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Symbolic calculations
 
 BUILD_DEPENDS=	${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
