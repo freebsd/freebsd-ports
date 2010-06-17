@@ -1,0 +1,17 @@
+Swank Clojure is a server that allows SLIME (the Superior Lisp
+Interaction Mode for Emacs) to connect to Clojure projects.
+
+To use it you must launch a swank server, then connect to it from
+within Emacs using M-x slime-connect.
+
+For example:
+
+  (ns user (:use [swank.swank :as swank]))
+
+  (clojure.main/with-bindings
+    (swank/ignore-protocol-version "2010-06-04")
+    (swank/start-server "/dev/null" :port 4005))
+
+Just replace "user" with your preferred namespace.
+
+WWW: http://github.com/technomancy/swank-clojure
