@@ -7,6 +7,7 @@
 
 PORTNAME=	xf86-input-egalax
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	LOCAL/glebius
 
@@ -15,7 +16,13 @@ COMMENT=	eGalax touch screen input driver for X.Org
 
 LICENSE=	BSD
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800505
+IGNORE=         is useless without uep(4) kernel driver
+.endif
+
 XORG_CAT=	driver
 MAN4=		egalax.4x
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
