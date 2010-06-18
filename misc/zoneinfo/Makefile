@@ -5,6 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
+PORTREVISION=	1
 DISTVERSION=	2010j
 CATEGORIES=	misc
 MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
