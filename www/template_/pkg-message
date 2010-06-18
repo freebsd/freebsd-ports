@@ -6,4 +6,3 @@ your ${LOCALBASE}/etc/php.ini configuration file, like:
 include_path = ".:${PREFIX}/share/template_"
 
 ****************************************************************
-

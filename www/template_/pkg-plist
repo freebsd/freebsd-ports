@@ -9,4 +9,3 @@
 %%DATADIR%%/Template_.compiler.php
 @dirrm %%DATADIR%%/tpl_plugin
 @dirrm %%DATADIR%%
-
