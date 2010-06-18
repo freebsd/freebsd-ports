@@ -8,7 +8,7 @@
 PORTNAME=	woadaptor
 PKGNAMESUFFIX=	-cgi
 
-MAINTAINER?=	q@onthenet.com.au
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	WebObjects WebServer CGI/FastCGI Adaptor
 
 MASTERDIR=	${.CURDIR}/../woadaptor

@@ -12,7 +12,7 @@ MASTER_SITES=	#
 DISTNAME=	WebObjects5.3.3Update
 EXTRACT_SUFX=	.pax.gz
 
-MAINTAINER?=	q@onthenet.com.au
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	WebObjects Application Server Runtime ${PORTVERSION}
 
 IS_INTERACTIVE=	yes
