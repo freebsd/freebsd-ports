@@ -10,7 +10,7 @@ PORTVERSION=	0.9.93
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
-MAINTAINER=	david@trucs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to manage GPS data (tracks, waypoints, etc)
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \

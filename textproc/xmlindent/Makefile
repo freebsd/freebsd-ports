@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	david@trucs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML stream reformatter
 
 MANCOMPRESSED=	no
