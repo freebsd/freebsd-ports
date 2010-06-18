@@ -60,6 +60,8 @@ share/icons/hicolor/48x48/apps/xine.png
 %%NLS%%share/locale/sk/LC_MESSAGES/xitk.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xine-ui.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xitk.mo
+share/mime/packages/xine-ui.xml
+share/mime/text/x-xine.xml
 share/pixmaps/xine.xpm
 %%DATADIR%%/desktop/xine.desktop
 %%DATADIR%%/oxine/mainmenu
@@ -145,7 +147,7 @@ share/pixmaps/xine.xpm
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm share/doc/xitk
+@dirrmtry share/doc/xitk
 @dirrm %%DOCSDIR%%
 @dirrmtry man/pl/man1
 @dirrmtry man/pl
@@ -155,3 +157,5 @@ share/pixmaps/xine.xpm
 @dirrmtry man/es
 @dirrmtry man/de/man1
 @dirrmtry man/de
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true

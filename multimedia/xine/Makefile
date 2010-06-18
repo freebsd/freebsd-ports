@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.99.5
-PORTREVISION=	9
+PORTVERSION=	0.99.6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	An X11 multimedia player
 
+BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
 		png.6:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
+USE_XZ=		yes
 USE_XORG=	x11 xt xv xinerama xxf86vm
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -27,9 +29,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}"
+MAKE_JOBS_SAFE=	yes
 
 MANLANG=	"" de es fr pl
-MAN1=		aaxine.1 xine-bugreport.1 xine-check.1 xine-remote.1 xine.1
+MAN1_EN=	aaxine.1 xine-bugreport.1 xine-check.1 xine-remote.1 xine.1
+MAN1_DE=	${MAN1_EN}
+MAN1_ES=	${MAN1_EN}
+MAN1_FR=	xine.1
+MAN1_PL=	aaxine.1 xine-remote.1 xine.1
 
 OPTIONS=	CACA "Enable libcaca output" off \
 		AALIB "Enable aalib output" off \
@@ -84,7 +91,7 @@ LIBXINE_VER=	1.26
 .if !exists(${LOCALBASE}/lib/xine/plugins/${LIBXINE_VER}/xineplug_vo_out_caca.so)
 IGNORE=libxine should be compiled with caca support
 .endif
-LIB_DEPENDS+=   caca.0:${PORTSDIR}/graphics/libcaca
+LIB_DEPENDS+=	caca.0:${PORTSDIR}/graphics/libcaca
 PLIST_SUB+=	WITH_CACA=""
 .else
 PLIST_SUB+=	WITH_CACA="@comment "
@@ -107,18 +114,6 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-.for l in es fr
-	@${CP} ${PREFIX}/man/man1/aaxine.1 ${PREFIX}/man/${l}/man1/aaxine.1
-.endfor
-.for l in es fr pl
-	@${CP} ${PREFIX}/man/man1/xine-bugreport.1 ${PREFIX}/man/${l}/man1/xine-bugreport.1
-.endfor
-.for l in es fr pl
-	@${CP} ${PREFIX}/man/man1/xine-check.1 ${PREFIX}/man/${l}/man1/xine-check.1
-.endfor
-.for l in es fr
-	@${CP} ${PREFIX}/man/man1/xine-remote.1 ${PREFIX}/man/${l}/man1/xine-remote.1
-.endfor
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
