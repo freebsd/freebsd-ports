@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	geraud@gcu.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to easily removes files and directories
 
 PERL_CONFIGURE=	YES
