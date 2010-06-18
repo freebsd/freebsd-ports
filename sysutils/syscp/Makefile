@@ -27,7 +27,7 @@ USE_PHP=	gettext mysql session xml bcmath posix filter spl
 
 USE_APACHE=	22
 
-RUN_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql50-server \
+RUN_DEPENDS+=	\
 		dovecot:${PORTSDIR}/mail/dovecot \
 		postfix:${PORTSDIR}/mail/postfix \
 		proftpd:${PORTSDIR}/ftp/proftpd-mysql \
