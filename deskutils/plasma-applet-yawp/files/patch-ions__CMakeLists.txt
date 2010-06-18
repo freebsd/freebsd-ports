@@ -1,20 +1,19 @@
---- ./ions/CMakeLists.txt.orig	2010-02-05 03:23:46.000000000 -0500
-+++ ./ions/CMakeLists.txt	2010-02-05 03:24:02.000000000 -0500
-@@ -38,17 +38,3 @@
- install(  TARGETS       ion_google            DESTINATION    ${PLUGIN_INSTALL_DIR})
- install(  FILES         ${GOOGLE_DESKTOP}     DESTINATION    ${SERVICES_INSTALL_DIR})
+--- ./ions/CMakeLists.txt.orig	2010-06-13 04:55:41.000000000 -0400
++++ ./ions/CMakeLists.txt	2010-06-13 04:56:31.000000000 -0400
+@@ -56,16 +56,4 @@
+ install(  FILES        ${WUNDERGROUND_DESKTOP}     DESTINATION    ${SERVICES_INSTALL_DIR})
  
--
+ 
 -## This is needed for the CPack package generator.
 -#
--INSTALL(TARGETS       ion_accuweather ion_google
+-INSTALL(TARGETS       ion_accuweather ion_google ion_wunderground
 -	LIBRARY       DESTINATION "${YAWP_PACK_INSTALL_LIB_DIR}"
 -	ARCHIVE       DESTINATION "${YAWP_PACK_INSTALL_LIB_DIR}"
 -	RUNTIME       DESTINATION "${YAWP_PACK_INSTALL_LIB_DIR}"
 -	COMPONENT     Libraries
 -	)
--
--INSTALL(FILES         ${ACCUWEATHER_DESKTOP} ${GOOGLE_DESKTOP}
+ 
+-INSTALL(FILES     ${ACCUWEATHER_DESKTOP} ${GOOGLE_DESKTOP} ${WUNDERGROUND_DESKTOP}
 -	DESTINATION   "${YAWP_PACK_SERVICES_DIR}"
--	COMPONENT     ApplicationData
+-	COMPONENT     Libraries
 -	)

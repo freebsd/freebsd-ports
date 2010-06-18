@@ -1,10 +1,12 @@
 lib/kde4/ion_accuweather.so
 lib/kde4/ion_google.so
-lib/kde4/plasma_yawp.so
+lib/kde4/ion_wunderground.so
+lib/kde4/plasma_applet_yawp.so
 share/apps/desktoptheme/default/widgets/yawp_theme15.svg
 share/kde4/services/ion-accuweather.desktop
 share/kde4/services/ion-google.desktop
-share/kde4/services/plasma_yawp.desktop
+share/kde4/services/ion-wunderground.desktop
+share/kde4/services/plasma-applet-yawp.desktop
 share/locale/af/LC_MESSAGES/plasma_applet_yawp.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_yawp.mo
 share/locale/de/LC_MESSAGES/plasma_applet_yawp.mo
@@ -16,3 +18,4 @@ share/locale/pl/LC_MESSAGES/plasma_applet_yawp.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_yawp.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_yawp.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_yawp.mo
+share/locale/uk/LC_MESSAGES/plasma_applet_yawp.mo

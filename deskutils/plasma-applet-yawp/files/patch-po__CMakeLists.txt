@@ -1,12 +1,12 @@
---- ./po/CMakeLists.txt.orig	2010-02-05 03:24:20.000000000 -0500
-+++ ./po/CMakeLists.txt	2010-02-05 03:24:41.000000000 -0500
+--- ./po/CMakeLists.txt.orig	2010-06-13 04:58:01.000000000 -0400
++++ ./po/CMakeLists.txt	2010-06-13 04:58:29.000000000 -0400
 @@ -27,12 +27,6 @@
  	        RENAME        plasma_applet_yawp.mo
  	        )
  
 -	INSTALL(FILES         ${CMAKE_CURRENT_BINARY_DIR}/${_lang}.gmo
--		DESTINATION   "${YAWP_PACK_LOCALE_DIR}/${_lang}/LC_MESSAGES/"
--		RENAME        plasma_applet_${CMAKE_PROJECT_NAME}.mo
+-		DESTINATION   ${YAWP_PACK_LOCALE_DIR}/${_lang}/LC_MESSAGES/
+-		RENAME        plasma_applet_yawp.mo
 -		COMPONENT     ApplicationData
 -		)
 -
