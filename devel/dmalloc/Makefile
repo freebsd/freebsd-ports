@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://dmalloc.com/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	pesho.petrov@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable debug memory allocation library
 
 GNU_CONFIGURE=	yes
