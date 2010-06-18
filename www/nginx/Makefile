@@ -208,7 +208,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_eval_module-${NGINX_EVAL_MODULE_VER
 
 .if defined(WITH_HTTP_FANCYINDEX_MODULE)
 NGINX_FANCYINDEX_MODULE_VERSION=	0.2.5
-MASTER_SITES+=	http://furi-ku.org/+/cgit/aperez/ngx-fancyindex/snapshot/:fancyindex
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:fancyindex/}
+MASTER_SITE_SUBDIR+=	osa/:fancyindex
 DISTFILES+=	ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION}.tar.gz:fancyindex
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx-fancyindex-${NGINX_FANCYINDEX_MODULE_VERSION}
 .endif
