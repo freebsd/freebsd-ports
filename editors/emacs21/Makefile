@@ -18,7 +18,7 @@ PATCHFILES=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
 PATCH_DIST_STRIP=	-p1
 .endif
 
-MAINTAINER=	nobutaka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU editing macros
 
 CONFLICTS=	emacs-19.* emacs-22.* \
