@@ -271,8 +271,8 @@ sbin/indexer
 %%DATADIR%%/virtuoso/create.single.sql
 %%DATADIR%%/virtuoso/drop.multi.sql
 %%DATADIR%%/virtuoso/drop.single.sql
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/body-after.html
 %%DOCSDIR%%/body-before.html
 %%DOCSDIR%%/index.html
