@@ -1,0 +1,53 @@
+--- bin/named/Makefile.in.orig	2009-12-05 15:31:40.000000000 -0800
++++ bin/named/Makefile.in	2010-06-17 19:08:13.000000000 -0700
+@@ -118,10 +118,7 @@
+ 		-DNS_LOCALSTATEDIR=\"${localstatedir}\" \
+ 		-DNS_SYSCONFDIR=\"${sysconfdir}\" -c ${srcdir}/main.c
+ 
+-bind.keys.h: ${top_srcdir}/bind.keys
+-	${PERL} ${srcdir}/bindkeys.pl < ${top_srcdir}/bind.keys > $@
+-
+-config.@O@: config.c bind.keys.h
++config.@O@: config.c
+ 	${LIBTOOL_MODE_COMPILE} ${CC} ${ALL_CFLAGS} \
+ 		-DVERSION=\"${VERSION}\" \
+ 		-DNS_LOCALSTATEDIR=\"${localstatedir}\" \
+@@ -143,7 +140,7 @@
+ 	rm -f ${MANOBJS}
+ 
+ clean distclean maintainer-clean::
+-	rm -f ${TARGETS} ${OBJS} bind.keys.h
++	rm -f ${TARGETS} ${OBJS}
+ 
+ bind9.xsl.h: bind9.xsl ${srcdir}/convertxsl.pl
+ 	${PERL} ${srcdir}/convertxsl.pl < ${srcdir}/bind9.xsl > bind9.xsl.h
+--- bin/named/config.c.orig	2010-05-14 16:49:18.000000000 -0700
++++ bin/named/config.c	2010-06-17 19:10:31.000000000 -0700
+@@ -47,8 +47,6 @@
+ #include <named/config.h>
+ #include <named/globals.h>
+ 
+-#include "bind.keys.h"
+-
+ /*% default configuration */
+ static char defaultconf[] = "\
+ options {\n\
+@@ -237,18 +235,6 @@
+ 		database \"_builtin id\";\n\
+ 	};\n\
+ };\n\
+-"
+-"#\n\
+-#  Default trusted key(s) for builtin DLV support\n\
+-#  (used if \"dnssec-lookaside auto;\" is set and\n\
+-#  sysconfdir/bind.keys doesn't exist).\n\
+-#\n\
+-# BEGIN MANAGED KEYS\n"
+-
+-/* Imported from bind.keys.h: */
+-MANAGED_KEYS
+-
+-"# END MANAGED KEYS\n\
+ ";
+ 
+ isc_result_t
