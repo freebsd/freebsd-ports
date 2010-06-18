@@ -13,7 +13,7 @@ MASTER_SITES+=	http://www.frontbase.com/download/WO5Plugin/UnixLinux/:plugin
 DISTNAME=	FrontBase-${PORTVERSION}
 DISTFILES=	FrontBase-${PORTVERSION}.tar:db
 
-MAINTAINER?=	q@onthenet.com.au
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Frontbase SQL Database Server
 
 IS_INTERACTIVE=	yes

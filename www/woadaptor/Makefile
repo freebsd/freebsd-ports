@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	#
 DISTNAME=	woadaptor-${PORTVERSION}
 
-MAINTAINER?=	q@onthenet.com.au
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	WebObjects WebServer Adaptor (Apache Module and CGI)
 
 BROKEN= source code is now in SVN and no-longer in CVS

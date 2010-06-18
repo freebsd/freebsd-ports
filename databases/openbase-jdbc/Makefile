@@ -12,7 +12,7 @@ MASTER_SITES+=	http://web.mac.com/openbase/download/interfaces/
 PKGNAMESUFFIX=	-jdbc
 DISTNAME=	OpenBaseJDBC_${OBVERSION}
 
-MAINTAINER?=	q@onthenet.com.au
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	The Java JDBC implementation for OpenBase
 
 USE_JAVA=	yes

@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-jdbc
 DISTNAME=	FrontBaseJDBC-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER?=	q@onthenet.com.au
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	The Java JDBC implementation for FrontBase
 
 USE_JAVA=	yes

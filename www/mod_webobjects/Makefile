@@ -8,7 +8,7 @@
 PORTNAME=	webobjects
 PKGNAMEPREFIX=	mod_
 
-MAINTAINER?=	q@onthenet.com.au
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	WebObjects WebServer Adaptor for Apache
 
 MASTERDIR=	${.CURDIR}/../woadaptor
