@@ -601,7 +601,10 @@ unset var newopts
 
 iport_from_origin () {
 	local dir
-	dir=`grep -l "@comment ORIGIN:${1}$" $pdb/*/+CONTENTS` || return 1
+
+	if ! dir=`grep -l "@comment ORIGIN:${1}$" $pdb/*/+CONTENTS 2>/dev/null`; then
+		dir=`pkg_info -q -O $1` || return 1
+	fi
 
 	# It should not happen that more than one port meets this
 	# requirement, but it can if the pkg data is corrupted.
@@ -1942,6 +1945,8 @@ term_printf () {
 }
 
 update_build_l () {
+	[ -n "$PM_NO_CONFIRM" ] && return
+
 	local origin iport new_port
 
 	case "$1" in
