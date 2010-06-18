@@ -367,7 +367,7 @@ pm_cd     () { builtin cd $1 2>/dev/null || return 1; }
 pm_cd_pd  () { builtin cd $pd/$1 2>/dev/null ||
 		fail "Cannot cd to port directory: $pd/$1"; }
 pm_kill   () { /bin/kill $* >/dev/null 2>/dev/null; }
-pm_make   () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH;
+pm_make   () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH build_l;
 		 unset -v MASTER_RB_LIST CONFIG_SEEN_LIST;
 		 /usr/bin/make $PM_MAKE_ARGS $*; ); }
 pm_make_b () { /usr/bin/make $PM_MAKE_ARGS BEFOREPORTMK=bpm $*; }
