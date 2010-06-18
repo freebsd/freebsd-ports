@@ -20,10 +20,10 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				  If no version is given (by the maintainer via the port or
 #				  by the user via defined variable), try to find the
 #				  currently installed version.  Fall back to default if
-#				  necessary (MySQL-5.0 = 50).
+#				  necessary (MySQL-5.1 = 51).
 # DEFAULT_MYSQL_VER
 #				- MySQL default version.  Can be overridden within a port.
-#				  Default: 50.
+#				  Default: 51.
 # WANT_MYSQL_VER
 #				- Maintainer can set an arbitrary version of MySQL to always
 #				  build this port with (overrides WITH_MYSQL_VER).
@@ -104,7 +104,7 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 #				- Detected Firebird version.
 
 .if defined(USE_MYSQL)
-DEFAULT_MYSQL_VER?=	50
+DEFAULT_MYSQL_VER?=	51
 # MySQL client version currently supported.
 MYSQL323_LIBVER=	10
 MYSQL40_LIBVER=		12
