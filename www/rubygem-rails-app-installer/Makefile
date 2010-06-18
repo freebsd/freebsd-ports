@@ -11,7 +11,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	rails-installer
 
-MAINTAINER=	geraud@gcu.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An installer for Rails apps
 
 RUN_DEPENDS=	rubygem-sqlite3>=1.1.0:${PORTSDIR}/databases/rubygem-sqlite3 \

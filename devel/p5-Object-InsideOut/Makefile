@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	geraud@gcu.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object::InsideOut - Comprehensive inside-out object support module
 
 RUN_DEPENDS=	p5-Exception-Class>=1.29:${PORTSDIR}/devel/p5-Exception-Class \
