@@ -8,14 +8,14 @@
 PORTNAME=	template_
 PORTVERSION=	2.2.3
 CATEGORIES=	www
-MASTER_SITES=	http://pmy.lv/mirror/Template_/ \
-		http://www.xtac.net/download/?file=
+MASTER_SITES=	http://www.xtac.net/download/?file=
 DISTNAME=	Template_.2.2.3
 
 MAINTAINER=	munggo@pmy.lv
 COMMENT=	High performance PHP compiling template engine
 
 WRKSRC=		${WRKDIR}
+FETCH_ARGS+=	-o ${DISTNAME}.tar.gz
 
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
