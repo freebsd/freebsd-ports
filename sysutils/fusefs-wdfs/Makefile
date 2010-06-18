@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://noedler.de/projekte/wdfs/
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	tgyurci@freemail.hu
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Mount remote WedDAV directories with Fuse
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
