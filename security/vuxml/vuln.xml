@@ -3120,7 +3120,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>php4-gd</name>
-	<range><gt>0</gt></range>
+	<range><lt>4.4.9_4</lt></range>
       </package>
     </affects>
     <description>
@@ -3145,7 +3145,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2009-10-15</discovery>
       <entry>2009-11-05</entry>
-      <modified>2009-11-09</modified>
+      <modified>2010-06-17</modified>
     </dates>
   </vuln>
 
