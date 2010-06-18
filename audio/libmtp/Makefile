@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	pesho.petrov@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Media Transfer Protocol (MTP) library
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv

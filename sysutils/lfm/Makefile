@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.terra.es/personal7/inigoserna/lfm/ \
 	http://www.predatorlabs.net/dl/
 
-MAINTAINER=	pesho.petrov@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Last File Manager, a simple 'commander'-type file manager
 
 USE_PYTHON=	2.3+
