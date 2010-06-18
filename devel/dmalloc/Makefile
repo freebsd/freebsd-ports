@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-threads --enable-shlib
 CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	all heavy
 INSTALL_TARGET=	install
