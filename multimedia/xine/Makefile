@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 
-MAINTAINER=	nobutaka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 multimedia player
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
