@@ -204,6 +204,10 @@ post-patch:
 	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.Dist
 	@${SED} -e 's#.*bind\.keys.*##' ${WRKSRC}/Makefile.in.Dist > \
 		${WRKSRC}/Makefile.in
+	@${MV} ${WRKSRC}/bin/named/Makefile.in ${WRKSRC}/bin/named/Makefile.in.Dist
+	@${SED} -e 's/$${PERL}/#/' -e 's/bind.keys.h/#/g' -e 's/bind9.xsl.h/#/g' \
+		${WRKSRC}/bin/named/Makefile.in.Dist > \
+		${WRKSRC}/bin/named/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
