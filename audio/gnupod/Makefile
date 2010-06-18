@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 MASTER_SITE_SUBDIR=	gnupod
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	david@trucs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of Perl scripts for using an Apple iPod
 
 BUILD_DEPENDS=	${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \

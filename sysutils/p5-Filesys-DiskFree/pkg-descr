@@ -1,5 +1,2 @@
 Filesys::DiskFree does about what the unix command df(1) does, listing 
 the mounted disks, and the amount of free space used & available.
-
-- David Le Brun
-david@dyn-ns.net

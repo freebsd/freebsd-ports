@@ -15,7 +15,7 @@ PATCH_SITES=	http://mikmod.raphnet.net/files/
 PATCHFILES=	libmikmod-3.1.11-a.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	david@trucs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MikMod Sound Library
 
 USE_AUTOTOOLS=	libtool:22

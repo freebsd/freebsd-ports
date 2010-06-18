@@ -12,7 +12,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	david@trucs.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl equivalent of df(2)
 
 PERL_CONFIGURE=	yes
