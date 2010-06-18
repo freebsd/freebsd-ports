@@ -383,7 +383,7 @@ pm_unlink () { /bin/test -e $1 && /bin/unlink $1; }
 pm_find_s         () { $PM_SU_CMD /usr/bin/find $*; }
 pm_install_s      () { $PM_SU_CMD /usr/bin/install -o root \
 			-g wheel -m 644 $1 $2; }
-pm_make_s         () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH;
+pm_make_s         () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH build_l;
 			 unset -v MASTER_RB_LIST CONFIG_SEEN_LIST;
 			 $PM_SU_CMD /usr/bin/make $PM_MAKE_ARGS $*; ); }
 pm_mkdir_s        () { $PM_SU_CMD /bin/mkdir -p $1; }
