@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://custom.lab.unb.br/pub/compression/bzip/ \
 		http://www.freebsdbrasil.com.br/~jmelo/
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A block-sorting file compressor
 
 DEPRECATED=	see full description

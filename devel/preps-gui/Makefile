@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-gui
 DISTNAME=	preps-${PORTVERSION}
 DIST_SUBDIR=	prep
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Problem reporting system
 
 RUN_DEPENDS=	prepsdb_tool:${PORTSDIR}/devel/prepstools

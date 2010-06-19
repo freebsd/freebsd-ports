@@ -10,7 +10,7 @@ PORTVERSION=	2.3.2
 CATEGORIES=	www
 MASTER_SITES=	http://sarg.sourceforge.net/
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Handle your Squid or Web users and passwords using your browser
 
 HAS_CONFIGURE=	yes

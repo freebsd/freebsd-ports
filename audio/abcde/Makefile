@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.hispalinux.es/~data/files/
 DISTNAME=	abcde_${PORTVERSION}.orig
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end shell script to encode CDs in flac/mp3/ogg/speex format
 
 RUN_DEPENDS=	cd-discid:${PORTSDIR}/audio/cd-discid \

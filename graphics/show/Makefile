@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.ibiblio.org/propaganda/ \
 		http://www.freebsdbrasil.com.br/~jmelo/
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast, flexible, extensible and bloat-free image viewer for X11
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg	\

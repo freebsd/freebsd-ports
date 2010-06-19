@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.openantivirus.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta5
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-access virus scanning with Samba
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${VSCAN_SAMBA_PORT}:configure
