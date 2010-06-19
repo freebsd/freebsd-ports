@@ -65,8 +65,12 @@ OPTIONS=	SVN "Build subversion plugin" off \
 
 .if defined(WITH_SVN)
 BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-LIB_DEPENDS+=	apr-1.4:${PORTSDIR}/devel/apr1 \
-		neon.28:${PORTSDIR}/www/neon28
+LIB_DEPENDS+=	apr-1.4:${PORTSDIR}/devel/apr1
+.if exists(${LOCALBASE}/lib/libneon.so.29)
+LIB_DEPENDS+=	neon.29:${PORTSDIR}/www/neon29
+.else
+LIB_DEPENDS+=	neon.28:${PORTSDIR}/www/neon28
+.endif
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 PLIST_SUB+=	SVN=""
 .else
