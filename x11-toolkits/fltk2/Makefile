@@ -7,7 +7,6 @@
 
 PORTNAME=	fltk
 PORTVERSION=	2.0.${SNAPSHOT}
-PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	fltk/snapshots
@@ -29,7 +28,7 @@ BUILD_DEPENDS=	xprop:${PORTSDIR}/x11/xprop
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-SNAPSHOT=	r6834
+SNAPSHOT=	r7513
 
 OPTIONS=	FLTK_THREADS "Install with threads support" on \
 		FLTK_CAIRO "Use cairo as graphics backend" off \
@@ -44,6 +43,12 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_XORG=	xcursor xft xi
 GNU_CONFIGURE=	yes
+
+LICENSE=	FLTK
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_GROUPS=	GPL
+LICENSE_NAME=	FLTK License
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
