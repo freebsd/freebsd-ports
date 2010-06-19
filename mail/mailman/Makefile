@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	wxs@FreeBSD.org
 COMMENT?=	A mailing list manager (MLM) with a user-friendly web front-end
 
 OPTIONS=	SENDMAIL "for use with sendmail" off \
