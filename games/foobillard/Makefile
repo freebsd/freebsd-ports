@@ -32,6 +32,13 @@ CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib"
 
+DESKTOP_ENTRIES=	"Foobillard" \
+			"A free OpenGL-billard game" \
+			"${DATADIR}/foobillard.png" \
+			"foobillard" \
+			"Game;Simulation;" \
+			false
+
 .if defined(WITH_SDL)
 USE_SDL=	yes
 CONFIGURE_ARGS+=	--enable-SDL
