@@ -40,9 +40,9 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 # because it uses static pcre lib, which is compiled without -fPIC. pcre problem likely.
-BROKEN=		Does not build on amd64 or ia64
+BROKEN=		Does not build on amd64, ia64, or sparc64
 .endif
 
 .include <bsd.port.post.mk>
