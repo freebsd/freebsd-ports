@@ -275,6 +275,7 @@
     SUBDIR += smpeg-xmms
     SUBDIR += smplayer
     SUBDIR += smplayer-themes
+    SUBDIR += sms1xxx-kmod
     SUBDIR += spigot
     SUBDIR += spook
     SUBDIR += streamanalyze
