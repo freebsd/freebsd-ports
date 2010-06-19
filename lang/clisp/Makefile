@@ -62,6 +62,10 @@ SUB_FILES=	pkg-message
 CONFIGURE_ARGS+=--disable-mmap
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 MODULES=	BDB CLX_MIT CLX_NEW DBUS FASTCGI GDBM GTK2 ORACLE PARI PCRE \
 		PGSQL RAWSOCK SVM WILDCARD ZLIB
 
