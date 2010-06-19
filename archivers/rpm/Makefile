@@ -10,14 +10,15 @@ PORTVERSION=	3.0.6
 PORTREVISION=	15
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-3.0/ \
-		http://ftp.tpnet.pl/vol/d4/ftp.rpm.org/rpm/dist/rpm-3.0.x/
+		http://rpm.org/releases/historical/rpm-3.0.x/ \
+		http://www.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	The Red Hat Package Manager
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
-CONFLICTS=	rpm-4.* rpm-5.*
+CONFLICTS=	rpm-[45].*
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
