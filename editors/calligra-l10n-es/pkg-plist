@@ -1,3 +1,4 @@
+share/apps/koffice/autocorrect/es.xml
 share/doc/HTML/es/karbon/common
 share/doc/HTML/es/karbon/index.cache.bz2
 share/doc/HTML/es/karbon/index.docbook
@@ -73,17 +74,16 @@ share/doc/HTML/es/kformula/shortcut1.png
 share/doc/HTML/es/kformula/sin.png
 share/doc/HTML/es/kformula/toolbars.png
 share/doc/HTML/es/kformula/upper-index.png
+share/doc/HTML/es/kivio/common
+share/doc/HTML/es/kivio/credits.docbook
+share/doc/HTML/es/kivio/index.cache.bz2
+share/doc/HTML/es/kivio/index.docbook
+share/doc/HTML/es/kivio/introduction.docbook
+share/doc/HTML/es/kivio/usage.docbook
+share/doc/HTML/es/kivio/working.docbook
 share/doc/HTML/es/koffice/common
 share/doc/HTML/es/koffice/index.cache.bz2
 share/doc/HTML/es/koffice/index.docbook
-share/doc/HTML/es/kplato/commands.docbook
-share/doc/HTML/es/kplato/common
-share/doc/HTML/es/kplato/definitions.docbook
-share/doc/HTML/es/kplato/index.cache.bz2
-share/doc/HTML/es/kplato/index.docbook
-share/doc/HTML/es/kplato/mainwindow.docbook
-share/doc/HTML/es/kplato/options.docbook
-share/doc/HTML/es/kplato/wbs.docbook
 share/doc/HTML/es/kpresenter/a11y.docbook
 share/doc/HTML/es/kpresenter/common
 share/doc/HTML/es/kpresenter/faq.docbook
@@ -150,8 +150,9 @@ share/locale/es/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/es/LC_MESSAGES/ChartShape.mo
 share/locale/es/LC_MESSAGES/DivineProportion.mo
 share/locale/es/LC_MESSAGES/FormulaShape.mo
-share/locale/es/LC_MESSAGES/KarbonDockersPlugin.mo
+share/locale/es/LC_MESSAGES/FreOffice.mo
 share/locale/es/LC_MESSAGES/KarbonTools.mo
+share/locale/es/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/es/LC_MESSAGES/MusicShape.mo
 share/locale/es/LC_MESSAGES/ParagraphTool.mo
 share/locale/es/LC_MESSAGES/PathShapes.mo
@@ -160,9 +161,11 @@ share/locale/es/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/es/LC_MESSAGES/TableShape.mo
 share/locale/es/LC_MESSAGES/TextShape.mo
 share/locale/es/LC_MESSAGES/VariablesPlugin.mo
+share/locale/es/LC_MESSAGES/VideoShape.mo
 share/locale/es/LC_MESSAGES/desktop_koffice.mo
 share/locale/es/LC_MESSAGES/karbon.mo
 share/locale/es/LC_MESSAGES/kchart.mo
+share/locale/es/LC_MESSAGES/kexi.mo
 share/locale/es/LC_MESSAGES/kformula.mo
 share/locale/es/LC_MESSAGES/kocolorspaces.mo
 share/locale/es/LC_MESSAGES/koconverter.mo
@@ -171,9 +174,11 @@ share/locale/es/LC_MESSAGES/koffice-dockers.mo
 share/locale/es/LC_MESSAGES/koffice-simpletextedit.mo
 share/locale/es/LC_MESSAGES/koffice.mo
 share/locale/es/LC_MESSAGES/kofficefilters.mo
+share/locale/es/LC_MESSAGES/koproperty.mo
 share/locale/es/LC_MESSAGES/kounavail.mo
 share/locale/es/LC_MESSAGES/kplato.mo
 share/locale/es/LC_MESSAGES/kplatolibs.mo
+share/locale/es/LC_MESSAGES/kplatorcpsplugin.mo
 share/locale/es/LC_MESSAGES/kplatowork.mo
 share/locale/es/LC_MESSAGES/kpresenter.mo
 share/locale/es/LC_MESSAGES/krita.mo
@@ -189,8 +194,10 @@ share/locale/es/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/es/thesaurus
 @dirrm share/doc/HTML/es/kspread
 @dirrm share/doc/HTML/es/kpresenter
-@dirrm share/doc/HTML/es/kplato
 @dirrm share/doc/HTML/es/koffice
+@dirrm share/doc/HTML/es/kivio
 @dirrm share/doc/HTML/es/kformula
 @dirrm share/doc/HTML/es/kchart
 @dirrm share/doc/HTML/es/karbon
+@dirrmtry share/apps/koffice/autocorrect
+@dirrmtry share/apps/koffice

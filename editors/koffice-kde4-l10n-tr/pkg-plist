@@ -5,8 +5,10 @@ share/locale/tr/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/tr/LC_MESSAGES/ChartShape.mo
 share/locale/tr/LC_MESSAGES/DivineProportion.mo
 share/locale/tr/LC_MESSAGES/FormulaShape.mo
+share/locale/tr/LC_MESSAGES/FreOffice.mo
 share/locale/tr/LC_MESSAGES/KarbonDockersPlugin.mo
 share/locale/tr/LC_MESSAGES/KarbonTools.mo
+share/locale/tr/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/tr/LC_MESSAGES/MusicShape.mo
 share/locale/tr/LC_MESSAGES/ParagraphTool.mo
 share/locale/tr/LC_MESSAGES/PathShapes.mo
@@ -15,9 +17,11 @@ share/locale/tr/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/tr/LC_MESSAGES/TableShape.mo
 share/locale/tr/LC_MESSAGES/TextShape.mo
 share/locale/tr/LC_MESSAGES/VariablesPlugin.mo
+share/locale/tr/LC_MESSAGES/VideoShape.mo
 share/locale/tr/LC_MESSAGES/desktop_koffice.mo
 share/locale/tr/LC_MESSAGES/karbon.mo
 share/locale/tr/LC_MESSAGES/kchart.mo
+share/locale/tr/LC_MESSAGES/kexi.mo
 share/locale/tr/LC_MESSAGES/kformula.mo
 share/locale/tr/LC_MESSAGES/kocolorspaces.mo
 share/locale/tr/LC_MESSAGES/koconverter.mo
@@ -26,9 +30,11 @@ share/locale/tr/LC_MESSAGES/koffice-dockers.mo
 share/locale/tr/LC_MESSAGES/koffice-simpletextedit.mo
 share/locale/tr/LC_MESSAGES/koffice.mo
 share/locale/tr/LC_MESSAGES/kofficefilters.mo
+share/locale/tr/LC_MESSAGES/koproperty.mo
 share/locale/tr/LC_MESSAGES/kounavail.mo
 share/locale/tr/LC_MESSAGES/kplato.mo
 share/locale/tr/LC_MESSAGES/kplatolibs.mo
+share/locale/tr/LC_MESSAGES/kplatorcpsplugin.mo
 share/locale/tr/LC_MESSAGES/kplatowork.mo
 share/locale/tr/LC_MESSAGES/kpresenter.mo
 share/locale/tr/LC_MESSAGES/krita.mo

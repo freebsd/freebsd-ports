@@ -11,20 +11,34 @@ share/doc/HTML/pt_BR/kchart/kchart-kspread-bar.png
 share/doc/HTML/pt_BR/kchart/kchart-kspread.png
 share/doc/HTML/pt_BR/kchart/shortcut.png
 share/doc/HTML/pt_BR/kchart/toolbars.png
+share/doc/HTML/pt_BR/kexi/basics.docbook
+share/doc/HTML/pt_BR/kexi/building.docbook
+share/doc/HTML/pt_BR/kexi/common
+share/doc/HTML/pt_BR/kexi/comparing.docbook
+share/doc/HTML/pt_BR/kexi/configuration.docbook
+share/doc/HTML/pt_BR/kexi/credits.docbook
+share/doc/HTML/pt_BR/kexi/database.docbook
+share/doc/HTML/pt_BR/kexi/designingforms.docbook
+share/doc/HTML/pt_BR/kexi/enteringdataintotables.docbook
+share/doc/HTML/pt_BR/kexi/enteringdatausingforms.docbook
+share/doc/HTML/pt_BR/kexi/index.cache.bz2
+share/doc/HTML/pt_BR/kexi/index.docbook
+share/doc/HTML/pt_BR/kexi/intro.docbook
+share/doc/HTML/pt_BR/kexi/menus.docbook
+share/doc/HTML/pt_BR/kexi/querydesigning.docbook
 share/doc/HTML/pt_BR/kformula/common
 share/doc/HTML/pt_BR/kformula/index.cache.bz2
 share/doc/HTML/pt_BR/kformula/index.docbook
+share/doc/HTML/pt_BR/kivio/common
+share/doc/HTML/pt_BR/kivio/credits.docbook
+share/doc/HTML/pt_BR/kivio/index.cache.bz2
+share/doc/HTML/pt_BR/kivio/index.docbook
+share/doc/HTML/pt_BR/kivio/introduction.docbook
+share/doc/HTML/pt_BR/kivio/usage.docbook
+share/doc/HTML/pt_BR/kivio/working.docbook
 share/doc/HTML/pt_BR/koffice/common
 share/doc/HTML/pt_BR/koffice/index.cache.bz2
 share/doc/HTML/pt_BR/koffice/index.docbook
-share/doc/HTML/pt_BR/kplato/commands.docbook
-share/doc/HTML/pt_BR/kplato/common
-share/doc/HTML/pt_BR/kplato/definitions.docbook
-share/doc/HTML/pt_BR/kplato/index.cache.bz2
-share/doc/HTML/pt_BR/kplato/index.docbook
-share/doc/HTML/pt_BR/kplato/mainwindow.docbook
-share/doc/HTML/pt_BR/kplato/options.docbook
-share/doc/HTML/pt_BR/kplato/wbs.docbook
 share/doc/HTML/pt_BR/kpresenter/a11y.docbook
 share/doc/HTML/pt_BR/kpresenter/common
 share/doc/HTML/pt_BR/kpresenter/faq.docbook
@@ -64,8 +78,9 @@ share/locale/pt_BR/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/pt_BR/LC_MESSAGES/ChartShape.mo
 share/locale/pt_BR/LC_MESSAGES/DivineProportion.mo
 share/locale/pt_BR/LC_MESSAGES/FormulaShape.mo
-share/locale/pt_BR/LC_MESSAGES/KarbonDockersPlugin.mo
+share/locale/pt_BR/LC_MESSAGES/FreOffice.mo
 share/locale/pt_BR/LC_MESSAGES/KarbonTools.mo
+share/locale/pt_BR/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/pt_BR/LC_MESSAGES/MusicShape.mo
 share/locale/pt_BR/LC_MESSAGES/ParagraphTool.mo
 share/locale/pt_BR/LC_MESSAGES/PathShapes.mo
@@ -74,9 +89,11 @@ share/locale/pt_BR/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/pt_BR/LC_MESSAGES/TableShape.mo
 share/locale/pt_BR/LC_MESSAGES/TextShape.mo
 share/locale/pt_BR/LC_MESSAGES/VariablesPlugin.mo
+share/locale/pt_BR/LC_MESSAGES/VideoShape.mo
 share/locale/pt_BR/LC_MESSAGES/desktop_koffice.mo
 share/locale/pt_BR/LC_MESSAGES/karbon.mo
 share/locale/pt_BR/LC_MESSAGES/kchart.mo
+share/locale/pt_BR/LC_MESSAGES/kexi.mo
 share/locale/pt_BR/LC_MESSAGES/kformula.mo
 share/locale/pt_BR/LC_MESSAGES/kocolorspaces.mo
 share/locale/pt_BR/LC_MESSAGES/koconverter.mo
@@ -85,9 +102,11 @@ share/locale/pt_BR/LC_MESSAGES/koffice-dockers.mo
 share/locale/pt_BR/LC_MESSAGES/koffice-simpletextedit.mo
 share/locale/pt_BR/LC_MESSAGES/koffice.mo
 share/locale/pt_BR/LC_MESSAGES/kofficefilters.mo
+share/locale/pt_BR/LC_MESSAGES/koproperty.mo
 share/locale/pt_BR/LC_MESSAGES/kounavail.mo
 share/locale/pt_BR/LC_MESSAGES/kplato.mo
 share/locale/pt_BR/LC_MESSAGES/kplatolibs.mo
+share/locale/pt_BR/LC_MESSAGES/kplatorcpsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/kplatowork.mo
 share/locale/pt_BR/LC_MESSAGES/kpresenter.mo
 share/locale/pt_BR/LC_MESSAGES/krita.mo
@@ -103,8 +122,9 @@ share/locale/pt_BR/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/pt_BR/thesaurus
 @dirrm share/doc/HTML/pt_BR/kspread
 @dirrm share/doc/HTML/pt_BR/kpresenter
-@dirrm share/doc/HTML/pt_BR/kplato
 @dirrm share/doc/HTML/pt_BR/koffice
+@dirrm share/doc/HTML/pt_BR/kivio
 @dirrm share/doc/HTML/pt_BR/kformula
+@dirrm share/doc/HTML/pt_BR/kexi
 @dirrm share/doc/HTML/pt_BR/kchart
 @dirrm share/doc/HTML/pt_BR/karbon

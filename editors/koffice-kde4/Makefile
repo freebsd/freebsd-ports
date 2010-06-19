@@ -18,7 +18,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Office suite for KDE
 
 BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
-		gmm++>=3.0.4:${PORTSDIR}/math/gmm++
+		gmm++>=3.0.4:${PORTSDIR}/math/gmm++ \
+		${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		qca.2:${PORTSDIR}/devel/qca \
 		GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \
@@ -31,16 +32,19 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		png.6:${PORTSDIR}/graphics/png \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		gsl:${PORTSDIR}/math/gsl \
+		gsl.15:${PORTSDIR}/math/gsl \
 		wv2.4:${PORTSDIR}/textproc/wv2 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		fftw3.5:${PORTSDIR}/math/fftw3
+RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-MAKE_JOBS_UNSAFE=	yes
-KDE4_BUILDENV=	yes
+USE_ICONV=	yes
+USE_PGSQL=	yes
+MAKE_JOBS_SAFE=	yes
 USE_KDE4=	kdelibs pimlibs kdehier kdeprefix sharedmime automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib phonon qmake_build moc_build porting_build rcc_build uic_build \
@@ -48,10 +52,15 @@ QT_COMPONENTS=	corelib phonon qmake_build moc_build porting_build rcc_build uic_
 USE_GL=		glut glew
 USE_LDCONFIG=	yes
 
-CMAKE_VERBOSE=	yes
+CMAKE_OUTSOURCE=	yes
+
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include"
 
-OPTIONS=	GTL	"Color transformations in Krita (broken with llvm-2.7)" off
+LDFLAGS+=	"-L${LOCALBASE}/lib"
+
+OPTIONS+=	GTL	"Color transformations in Krita (broken with llvm-2.7)" off
+OPTIONS+=	SYBASE	"SyBase support in Kexi" off
+OPTIONS+=	XBASE	"XBase support in Kexi" off
 
 .include <bsd.port.options.mk>
 
@@ -74,6 +83,20 @@ PLIST_SUB+=	EPS=""
 PLIST_SUB+=	EPS="@comment "
 .endif
 
+.if defined(WITH_SYBASE) || exists (${LOCALBASE}/lib/libsybdb.so)
+LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds
+PLIST_SUB+=	SYBASE=""
+.else
+PLIST_SUB+=	SYBASE="@comment "
+.endif
+
+.if defined(WITH_XBASE) || exists (${LOCALBASE}/lib/libxbase-2.0.so)
+LIB_DEPENDS+=	xbase-2.0.0:${PORTSDIR}/databases/xbase
+PLIST_SUB+=	XBASE=""
+.else
+PLIST_SUB+=	XBASE="@comment "
+.endif
+
 post-patch:
 # prevent updating mime during build/install
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
@@ -84,8 +107,10 @@ post-patch:
 		${PATCH_WRKSRC}/cmake/modules/FindImageMagick.cmake
 	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
 		${PATCH_WRKSRC}/cmake/modules/FindWPD.cmake
-	${REINPLACE_CMD} -e 's|/libwpg-0.1||' \
-		${PATCH_WRKSRC}/filters/karbon/wpg/import/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|-DHAVE_ICONV_H|-DHAVE_ICONV_H -L${LOCALBASE}/lib -liconv -Wl,-rpath -Wl,${LOCALBASE}/lib -liconv|' \
+		${PATCH_WRKSRC}/filters/kword/CMakeLists.txt
+	${REINPLACE_CMD} -e '/add_subdirectory(wv2)/d' \
+		${PATCH_WRKSRC}/filters/kword/msword-odf/CMakeLists.txt
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime

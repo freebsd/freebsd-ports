@@ -12,6 +12,9 @@ CATEGORIES?=	editors kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Walloon Bokmaal messages and documentation for KOffice2
 
+IGNORE=		unfetchable and unmaintained upstream
+EXPIRATION_DATE=	2010-08-07
+
 KOFFICE2_L10N=	wa
 
 .include "${.CURDIR}/../../editors/koffice-kde4-l10n/files/bsd.l10n.mk"

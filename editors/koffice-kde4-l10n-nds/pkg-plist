@@ -1,3 +1,4 @@
+share/apps/koffice/autocorrect/nds.xml
 share/locale/nds/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/nds/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/nds/LC_MESSAGES/CalendarTool.mo
@@ -5,8 +6,9 @@ share/locale/nds/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/nds/LC_MESSAGES/ChartShape.mo
 share/locale/nds/LC_MESSAGES/DivineProportion.mo
 share/locale/nds/LC_MESSAGES/FormulaShape.mo
-share/locale/nds/LC_MESSAGES/KarbonDockersPlugin.mo
+share/locale/nds/LC_MESSAGES/FreOffice.mo
 share/locale/nds/LC_MESSAGES/KarbonTools.mo
+share/locale/nds/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/nds/LC_MESSAGES/MusicShape.mo
 share/locale/nds/LC_MESSAGES/ParagraphTool.mo
 share/locale/nds/LC_MESSAGES/PathShapes.mo
@@ -15,9 +17,11 @@ share/locale/nds/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/nds/LC_MESSAGES/TableShape.mo
 share/locale/nds/LC_MESSAGES/TextShape.mo
 share/locale/nds/LC_MESSAGES/VariablesPlugin.mo
+share/locale/nds/LC_MESSAGES/VideoShape.mo
 share/locale/nds/LC_MESSAGES/desktop_koffice.mo
 share/locale/nds/LC_MESSAGES/karbon.mo
 share/locale/nds/LC_MESSAGES/kchart.mo
+share/locale/nds/LC_MESSAGES/kexi.mo
 share/locale/nds/LC_MESSAGES/kformula.mo
 share/locale/nds/LC_MESSAGES/kocolorspaces.mo
 share/locale/nds/LC_MESSAGES/koconverter.mo
@@ -26,9 +30,11 @@ share/locale/nds/LC_MESSAGES/koffice-dockers.mo
 share/locale/nds/LC_MESSAGES/koffice-simpletextedit.mo
 share/locale/nds/LC_MESSAGES/koffice.mo
 share/locale/nds/LC_MESSAGES/kofficefilters.mo
+share/locale/nds/LC_MESSAGES/koproperty.mo
 share/locale/nds/LC_MESSAGES/kounavail.mo
 share/locale/nds/LC_MESSAGES/kplato.mo
 share/locale/nds/LC_MESSAGES/kplatolibs.mo
+share/locale/nds/LC_MESSAGES/kplatorcpsplugin.mo
 share/locale/nds/LC_MESSAGES/kplatowork.mo
 share/locale/nds/LC_MESSAGES/kpresenter.mo
 share/locale/nds/LC_MESSAGES/krita.mo
@@ -41,3 +47,5 @@ share/locale/nds/LC_MESSAGES/kspreadsolver.mo
 share/locale/nds/LC_MESSAGES/kthesaurus.mo
 share/locale/nds/LC_MESSAGES/kword.mo
 share/locale/nds/LC_MESSAGES/thesaurus_tool.mo
+@dirrmtry share/apps/koffice/autocorrect
+@dirrmtry share/apps/koffice

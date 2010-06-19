@@ -1,0 +1,11 @@
+--- ./kspread/CMakeLists.txt	2010-05-23 08:20:50.000000000 +0200
++++ ./kspread/CMakeLists.txt	2010-05-25 10:49:29.225750479 +0200
+@@ -221,7 +221,7 @@
+     komain
+     ${QT_QTSQL_LIBRARY}
+     ${KDE4_KNOTIFYCONFIG_LIBS}
+-    kutils
++    ${KDE4_KUTILS_LIBS}
+ #    ${KDE4_KDE3SUPPORT_LIBS}
+ )
+ 

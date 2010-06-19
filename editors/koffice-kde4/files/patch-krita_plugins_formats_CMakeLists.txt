@@ -1,18 +1,17 @@
 --- ./krita/plugins/formats/CMakeLists.txt.orig	2009-08-24 01:58:24.000000000 +1100
 +++ ./krita/plugins/formats/CMakeLists.txt	2009-09-04 23:56:05.000000000 +1100
-@@ -15,9 +15,6 @@
+@@ -15,15 +15,23 @@
  macro_optional_find_package(Poppler)
  macro_log_feature( POPPLER_FOUND "poppler-qt4" "The Poppler Qt4 interface library" "http://poppler.freedesktop.org" FALSE "" "Required by the Krita PDF filter (version 0.6.x is currently required)")
  
 -macro_optional_find_package(Kdcraw)
 -macro_log_feature( KDCRAW_FOUND "kdcraw" "The KDCraw library" "http://www.digikam.org/" FALSE "" "Required by the Krita RAW filter")
 -
- macro_optional_find_package(GraphicsMagick)
- set(BAD_GRAPHICS_MAGICK_VERSION 1.2.5)
- set(BUILD_GRAPHICSMAGICK FALSE)
-@@ -30,6 +27,17 @@
+ macro_optional_find_package(OpenJPEG)
+ macro_log_feature(OPENJPEG_FOUND "openjpeg" "Free library for JPEG 2000 image compression" "http://www.openjpeg.org" FALSE "" "Required by the Krita JPEG 2000 filter")
  
- macro_log_feature(HAVE_REQUIRED_GM_VERSION "GraphicsMagick" "GraphicsMagick Image Processing System" "http://www.graphicsmagick.org" FALSE "1.1" "Required by the Krita GraphicsMagick filter for various file formats (including PSD, XCF). Version 1.2 is broken!")
+ macro_optional_find_package(GIF2)
+ macro_log_feature(GIF_FOUND "libungif/giflib" "Free library for reading and writing GIF images" "htt://XXX!!!" FALSE "" "Required by the Krita GIF filter")
  
 +# Check for Kdcraw
 +PKG_CHECK_MODULES(LIBKDCRAW libkdcraw-kde4>=0.4.0)
