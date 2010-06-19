@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	prepstools
-PORTVERSION=	2.0.2
-PORTREVISION=	7
+PORTVERSION=	2.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://webpages.charter.net/stuffle/preps/download/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Problem reporting system
 
 RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${DEFAULT_PGSQL_VER}-server
