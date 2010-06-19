@@ -7,6 +7,7 @@
 
 PORTNAME=	murmur
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	SF/mumble/Mumble/${PORTVERSION}
 DISTNAME=	mumble-${PORTVERSION}
@@ -15,11 +16,10 @@ MAINTAINER=	ayu@commun.jp
 COMMENT=	Murmur is the server component of Mumble
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite.so:${PORTSDIR}/databases/qt4-sqlite3-plugin
 LIB_DEPENDS=	protobuf.6:${PORTSDIR}/devel/protobuf
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build corelib network xml sql
+QT_COMPONENTS=	qmake_build moc_build corelib network xml sql sql-sqlite3_run
 
 CONFIG=		no-client
 
@@ -73,7 +73,10 @@ pre-install:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/release/murmurd ${PREFIX}/sbin
-	@${INSTALL_DATA} ${WRKSRC}/scripts/murmur.ini ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKSRC}/scripts/murmur.ini ${PREFIX}/etc/murmur.ini.sample
+	@if [ ! -f ${PREFIX}/etc/murmur.ini ]; then \
+		${CP} -p ${PREFIX}/etc/murmur.ini.sample ${PREFIX}/etc/murmur.ini; \
+	fi
 	${INSTALL_MAN} ${WRKSRC}/man/murmurd.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

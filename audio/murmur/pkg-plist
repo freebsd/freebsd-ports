@@ -1,8 +1,10 @@
+@unexec if cmp -s %D/etc/murmur.ini.sample %D/etc/murmur.ini; then rm -f %D/etc/murmur.ini; fi
+etc/murmur.ini.sample
+@exec if [ ! -f %D/etc/murmur.ini ] ; then cp -p %D/%F %B/murmur.ini; fi
+sbin/murmurd
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.Linux
-sbin/murmurd
-etc/murmur.ini
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
