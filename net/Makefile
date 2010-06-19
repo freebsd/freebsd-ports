@@ -194,6 +194,7 @@
     SUBDIR += gnosamba
     SUBDIR += gnu-radius
     SUBDIR += gofish
+    SUBDIR += googlecl
     SUBDIR += googolplex
     SUBDIR += gopher
     SUBDIR += gotthard

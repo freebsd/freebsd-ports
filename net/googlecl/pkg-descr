@@ -1,0 +1,6 @@
+The Google Data APIs allow programmatic access to various Google services.
+This package wraps a subset of those APIs into a command-line tool that makes
+it easy to do things like posting to a Blogger blog, uploading files to Picasa,
+or editing a Google Docs file.
+
+WWW:	http://code.google.com/p/googlecl/
