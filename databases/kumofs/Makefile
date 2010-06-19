@@ -60,4 +60,8 @@ post-install:
 CONFIGURE_ARGS+=CFLAGS="${CFLAGS} -march=i686" CXXFLAGS="${CXXFLAGS} -march=i686"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .include <bsd.port.post.mk>
