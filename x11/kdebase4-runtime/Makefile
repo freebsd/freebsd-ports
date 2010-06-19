@@ -37,7 +37,7 @@ MAN1=		kdesu.1
 SUB_FILES=	nepomuk-env.sh
 
 OPTIONS=	PULSEAUDIO "Enable playback via PulseAudio soundserver" off \
-		VIRTUOSO "Install Virtuoso SQL server (required for Nepomuk)" off
+		VIRTUOSO "Install Virtuoso server (required for Nepomuk)" off
 
 # Explicitly disable alsa, see for details:
 # http://mail.kde.org/pipermail/kde-freebsd/2010-March/008015.html
