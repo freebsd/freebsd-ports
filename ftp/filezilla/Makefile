@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	filezilla
-PORTVERSION=	3.3.2.1
-PORTREVISION=	2
+PORTVERSION=	3.3.3
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -19,6 +18,8 @@ RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \
 		idn.16:${PORTSDIR}/dns/libidn
+
+LICENSE=	GPLv2
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
