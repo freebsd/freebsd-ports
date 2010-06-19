@@ -20,14 +20,6 @@ share/doc/HTML/pt/koffice/index.docbook
 share/doc/HTML/pt/koshell/common
 share/doc/HTML/pt/koshell/index.cache.bz2
 share/doc/HTML/pt/koshell/index.docbook
-share/doc/HTML/pt/kplato/commands.docbook
-share/doc/HTML/pt/kplato/common
-share/doc/HTML/pt/kplato/definitions.docbook
-share/doc/HTML/pt/kplato/index.cache.bz2
-share/doc/HTML/pt/kplato/index.docbook
-share/doc/HTML/pt/kplato/mainwindow.docbook
-share/doc/HTML/pt/kplato/options.docbook
-share/doc/HTML/pt/kplato/wbs.docbook
 share/doc/HTML/pt/kpresenter/a11y.docbook
 share/doc/HTML/pt/kpresenter/common
 share/doc/HTML/pt/kpresenter/faq.docbook
@@ -141,8 +133,9 @@ share/locale/pt/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/pt/LC_MESSAGES/ChartShape.mo
 share/locale/pt/LC_MESSAGES/DivineProportion.mo
 share/locale/pt/LC_MESSAGES/FormulaShape.mo
-share/locale/pt/LC_MESSAGES/KarbonDockersPlugin.mo
+share/locale/pt/LC_MESSAGES/FreOffice.mo
 share/locale/pt/LC_MESSAGES/KarbonTools.mo
+share/locale/pt/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/pt/LC_MESSAGES/MusicShape.mo
 share/locale/pt/LC_MESSAGES/ParagraphTool.mo
 share/locale/pt/LC_MESSAGES/PathShapes.mo
@@ -151,9 +144,11 @@ share/locale/pt/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/pt/LC_MESSAGES/TableShape.mo
 share/locale/pt/LC_MESSAGES/TextShape.mo
 share/locale/pt/LC_MESSAGES/VariablesPlugin.mo
+share/locale/pt/LC_MESSAGES/VideoShape.mo
 share/locale/pt/LC_MESSAGES/desktop_koffice.mo
 share/locale/pt/LC_MESSAGES/karbon.mo
 share/locale/pt/LC_MESSAGES/kchart.mo
+share/locale/pt/LC_MESSAGES/kexi.mo
 share/locale/pt/LC_MESSAGES/kformula.mo
 share/locale/pt/LC_MESSAGES/kocolorspaces.mo
 share/locale/pt/LC_MESSAGES/koconverter.mo
@@ -162,9 +157,11 @@ share/locale/pt/LC_MESSAGES/koffice-dockers.mo
 share/locale/pt/LC_MESSAGES/koffice-simpletextedit.mo
 share/locale/pt/LC_MESSAGES/koffice.mo
 share/locale/pt/LC_MESSAGES/kofficefilters.mo
+share/locale/pt/LC_MESSAGES/koproperty.mo
 share/locale/pt/LC_MESSAGES/kounavail.mo
 share/locale/pt/LC_MESSAGES/kplato.mo
 share/locale/pt/LC_MESSAGES/kplatolibs.mo
+share/locale/pt/LC_MESSAGES/kplatorcpsplugin.mo
 share/locale/pt/LC_MESSAGES/kplatowork.mo
 share/locale/pt/LC_MESSAGES/kpresenter.mo
 share/locale/pt/LC_MESSAGES/krita.mo
@@ -183,7 +180,6 @@ share/locale/pt/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/pt/kspread
 @dirrm share/doc/HTML/pt/krita
 @dirrm share/doc/HTML/pt/kpresenter
-@dirrm share/doc/HTML/pt/kplato
 @dirrm share/doc/HTML/pt/koshell
 @dirrm share/doc/HTML/pt/koffice
 @dirrm share/doc/HTML/pt/kivio

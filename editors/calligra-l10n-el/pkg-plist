@@ -5,7 +5,6 @@ share/locale/el/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/el/LC_MESSAGES/ChartShape.mo
 share/locale/el/LC_MESSAGES/DivineProportion.mo
 share/locale/el/LC_MESSAGES/FormulaShape.mo
-share/locale/el/LC_MESSAGES/KarbonDockersPlugin.mo
 share/locale/el/LC_MESSAGES/KarbonTools.mo
 share/locale/el/LC_MESSAGES/MusicShape.mo
 share/locale/el/LC_MESSAGES/ParagraphTool.mo
@@ -17,6 +16,7 @@ share/locale/el/LC_MESSAGES/VariablesPlugin.mo
 share/locale/el/LC_MESSAGES/desktop_koffice.mo
 share/locale/el/LC_MESSAGES/karbon.mo
 share/locale/el/LC_MESSAGES/kchart.mo
+share/locale/el/LC_MESSAGES/kexi.mo
 share/locale/el/LC_MESSAGES/kformula.mo
 share/locale/el/LC_MESSAGES/kocolorspaces.mo
 share/locale/el/LC_MESSAGES/koconverter.mo
@@ -25,6 +25,7 @@ share/locale/el/LC_MESSAGES/koffice-dockers.mo
 share/locale/el/LC_MESSAGES/koffice-simpletextedit.mo
 share/locale/el/LC_MESSAGES/koffice.mo
 share/locale/el/LC_MESSAGES/kofficefilters.mo
+share/locale/el/LC_MESSAGES/koproperty.mo
 share/locale/el/LC_MESSAGES/kounavail.mo
 share/locale/el/LC_MESSAGES/kplato.mo
 share/locale/el/LC_MESSAGES/kplatolibs.mo

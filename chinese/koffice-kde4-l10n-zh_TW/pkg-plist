@@ -5,8 +5,9 @@ share/locale/zh_TW/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/zh_TW/LC_MESSAGES/ChartShape.mo
 share/locale/zh_TW/LC_MESSAGES/DivineProportion.mo
 share/locale/zh_TW/LC_MESSAGES/FormulaShape.mo
-share/locale/zh_TW/LC_MESSAGES/KarbonDockersPlugin.mo
+share/locale/zh_TW/LC_MESSAGES/FreOffice.mo
 share/locale/zh_TW/LC_MESSAGES/KarbonTools.mo
+share/locale/zh_TW/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
 share/locale/zh_TW/LC_MESSAGES/MusicShape.mo
 share/locale/zh_TW/LC_MESSAGES/ParagraphTool.mo
 share/locale/zh_TW/LC_MESSAGES/PathShapes.mo
@@ -15,9 +16,11 @@ share/locale/zh_TW/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/zh_TW/LC_MESSAGES/TableShape.mo
 share/locale/zh_TW/LC_MESSAGES/TextShape.mo
 share/locale/zh_TW/LC_MESSAGES/VariablesPlugin.mo
+share/locale/zh_TW/LC_MESSAGES/VideoShape.mo
 share/locale/zh_TW/LC_MESSAGES/desktop_koffice.mo
 share/locale/zh_TW/LC_MESSAGES/karbon.mo
 share/locale/zh_TW/LC_MESSAGES/kchart.mo
+share/locale/zh_TW/LC_MESSAGES/kexi.mo
 share/locale/zh_TW/LC_MESSAGES/kformula.mo
 share/locale/zh_TW/LC_MESSAGES/kocolorspaces.mo
 share/locale/zh_TW/LC_MESSAGES/koconverter.mo
@@ -26,9 +29,11 @@ share/locale/zh_TW/LC_MESSAGES/koffice-dockers.mo
 share/locale/zh_TW/LC_MESSAGES/koffice-simpletextedit.mo
 share/locale/zh_TW/LC_MESSAGES/koffice.mo
 share/locale/zh_TW/LC_MESSAGES/kofficefilters.mo
+share/locale/zh_TW/LC_MESSAGES/koproperty.mo
 share/locale/zh_TW/LC_MESSAGES/kounavail.mo
 share/locale/zh_TW/LC_MESSAGES/kplato.mo
 share/locale/zh_TW/LC_MESSAGES/kplatolibs.mo
+share/locale/zh_TW/LC_MESSAGES/kplatorcpsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kplatowork.mo
 share/locale/zh_TW/LC_MESSAGES/kpresenter.mo
 share/locale/zh_TW/LC_MESSAGES/krita.mo
