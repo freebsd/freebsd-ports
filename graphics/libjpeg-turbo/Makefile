@@ -17,7 +17,7 @@ MAINTAINER=	bytestore@yandex.ru
 COMMENT=	SIMD-accelerated JPEG codec which provides both the libjpeg,TurboJPEG
 
 CONFLICTS=	jpeg-[0-9]*
-ONLY_FOR_ARCH=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386
 USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
