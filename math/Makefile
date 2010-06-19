@@ -207,6 +207,7 @@
     SUBDIR += octave
     SUBDIR += octave-devel
     SUBDIR += octave-forge
+    SUBDIR += octave-forge-actuarial
     SUBDIR += octave-forge-ad
     SUBDIR += octave-forge-audio
     SUBDIR += octave-forge-base
