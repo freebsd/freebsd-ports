@@ -10,7 +10,7 @@ PORTVERSION=	2.69
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://sid.joedog.org/pub/siege/
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A http regression testing and benchmarking utility
 
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://weather.ou.edu/~apw/projects/stress/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to impose load on and stress test Unix-like systems
 
 GNU_CONFIGURE=	yes

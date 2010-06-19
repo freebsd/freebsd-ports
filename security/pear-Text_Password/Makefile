@@ -9,7 +9,7 @@ PORTNAME=	Text_password
 PORTVERSION=	1.1.1
 CATEGORIES=	security www pear
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR random password creator
 
 USE_PHP=	yes

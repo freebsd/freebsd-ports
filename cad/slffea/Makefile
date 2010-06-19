@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/SLFFEA/${PORTVERSION}
 DISTNAME=	${PORTNAME}13
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	San Le's Free Finite Element Analysis
 
 CONFLICTS=	swi-pl-[0-9]* TenDRA-[0-9]*

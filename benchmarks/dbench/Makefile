@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://samba.org/ftp/tridge/dbench/
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
 GNU_CONFIGURE=	yes

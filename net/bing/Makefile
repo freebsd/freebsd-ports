@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/ \
 		ftp://ftp.ens.fr/pub/unix/syst/
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A point-to-point bandwith measurement tool
 
 MAN8=		bing.8

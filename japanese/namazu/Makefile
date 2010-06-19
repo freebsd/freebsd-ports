@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.namazu.org/stable/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flathill
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search engine software intended for easy use
 
 BUILD_DEPENDS=	kakasi:${PORTSDIR}/japanese/kakasi \

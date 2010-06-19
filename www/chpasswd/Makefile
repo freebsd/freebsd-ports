@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	SF/orso${PORTNAME}/orso${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	jmelo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow users to change their Squid or Web password using the browser
 
 HAS_CONFIGURE=	yes
