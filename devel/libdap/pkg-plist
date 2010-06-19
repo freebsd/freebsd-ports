@@ -1,18 +1,7 @@
+@comment $FreeBSD$
 bin/dap-config
 bin/dap-config-pkgconfig
 bin/getdap
-lib/libdap.a
-lib/libdap.la
-lib/libdap.so
-lib/libdap.so.11
-lib/libdapclient.a
-lib/libdapclient.la
-lib/libdapclient.so
-lib/libdapclient.so.4
-lib/libdapserver.a
-lib/libdapserver.la
-lib/libdapserver.so
-lib/libdapserver.so.8
 include/libdap/AlarmHandler.h
 include/libdap/Ancillary.h
 include/libdap/Array.h
@@ -85,7 +74,6 @@ include/libdap/debug.h
 include/libdap/dods-datatypes.h
 include/libdap/dods-limits.h
 include/libdap/escaping.h
-include/libdap/fdiostream.h
 include/libdap/expr.h
 include/libdap/gse_parser.h
 include/libdap/mime_util.h
@@ -93,10 +81,20 @@ include/libdap/parser.h
 include/libdap/util.h
 include/libdap/util_mit.h
 include/libdap/xdr-datatypes.h
-lib/libdata/pkgconfig/libdap.pc
-lib/libdata/pkgconfig/libdapclient.pc
-lib/libdata/pkgconfig/libdapserver.pc
+lib/libdap.a
+lib/libdap.la
+lib/libdap.so
+lib/libdap.so.12
+lib/libdapclient.a
+lib/libdapclient.la
+lib/libdapclient.so
+lib/libdapclient.so.4
+lib/libdapserver.a
+lib/libdapserver.la
+lib/libdapserver.so
+lib/libdapserver.so.8
+libdata/pkgconfig/libdap.pc
+libdata/pkgconfig/libdapclient.pc
+libdata/pkgconfig/libdapserver.pc
 share/aclocal/libdap.m4
 @dirrm include/libdap
-@dirrm lib/libdata/pkgconfig
-@dirrm lib/libdata
