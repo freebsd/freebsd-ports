@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.16.3
-PORTREVISION=	10
+PORTVERSION=	1.1.18.1
 CATEGORIES=	multimedia ipv6
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib%20%28${PORTNAME}%20core%29/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
 DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 
@@ -32,10 +31,10 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		dca.0:${PORTSDIR}/multimedia/libdca
 
 .if !defined(PACKAGE_BUILDING)
-LIB_DEPENDS+= dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
+LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
@@ -56,6 +55,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCA
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6 \
 		--with-external-libmad \
 		--with-external-libdts --with-libflac --disable-v4l
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	ARTS "Enable aRts support" off \
 		CACA "Enable libcaca support" off \
@@ -63,7 +63,7 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		JACK "Enable JACK support" off \
 		GNOMEVFS2 "Enable GnomeVFS2 support" off \
 		PULSEAUDIO "Enable PulseAudio support" off \
-		FFMPEG "Enable external FFMpeg" off \
+		FFMPEG "Enable external FFMpeg" on \
 		XVMC "Enable XvMC support" off \
 		SMB "Enable SMB protocol support" off \
 		AALIB "Enable aalib support" off \
@@ -76,11 +76,11 @@ MAN1=	xine-config.1 xine-list-1.1.1
 MAN5=	xine.5
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.26"
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.28"
 
 # DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
 # and src/input/libdvdnav/dvd_input.c (dlopen'ed)
-DVDCSS_LIBVERSION= 3
+DVDCSS_LIBVERSION=	3
 
 .include <bsd.port.pre.mk>
 

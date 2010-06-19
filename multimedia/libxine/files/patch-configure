@@ -1,85 +1,16 @@
---- configure.orig	2009-05-06 22:57:51.000000000 +0900
-+++ configure	2009-05-06 23:03:23.000000000 +0900
-@@ -10918,6 +10918,12 @@
-       fi
-       ;;
- 
-+     freebsd* | kfreebsd*-gnu | dragonfly*)
-+	archive_cmds='$CC -shared -o $lib $libobjs $deplibs $compiler_flags'
-+	hardcode_direct=no
-+	hardcode_minus_L=yes
-+	;;
-+
-     netbsd* | netbsdelf*-gnu)
-       if echo __ELF__ | $CC -E - | $GREP __ELF__ >/dev/null; then
- 	archive_cmds='$LD -Bshareable $libobjs $deplibs $linker_flags -o $lib'
-@@ -14450,7 +14456,7 @@
-                     if test -z "$haveit"; then
-                       LIBICONV="${LIBICONV}${LIBICONV:+ }-L$found_dir"
-                     fi
--                    if test "$hardcode_minus_L" != no; then
-+                    if test "$hardcode_minus_L" = no; then
-                                                                                         LIBICONV="${LIBICONV}${LIBICONV:+ }$found_so"
-                     else
-                                                                                                                                                                                 LIBICONV="${LIBICONV}${LIBICONV:+ }-l$name"
-@@ -19693,12 +19693,6 @@
+--- ./configure.orig	2010-03-06 22:36:24.000000000 +0300
++++ ./configure	2010-06-19 02:21:36.862142625 +0400
+@@ -17061,9 +17061,6 @@
  
  done
  
 -   if test "$ac_cv_header_ffmpeg_avutil_h" = "yes" && test "$ac_cv_header_libavutil_avutil_h" = "yes"; then
--     { { $as_echo "$as_me:$LINENO: error: old & new ffmpeg headers found - you need to clean up!" >&5
--$as_echo "$as_me: error: old & new ffmpeg headers found - you need to clean up!" >&2;}
--   { (exit 1); exit 1; }; }
+-     as_fn_error "old & new ffmpeg headers found - you need to clean up!" "$LINENO" 5
 -   fi
--
-    { $as_echo "$as_me:$LINENO: result: using external ffmpeg" >&5
+ 
+    { $as_echo "$as_me:${as_lineno-$LINENO}: result: using external ffmpeg" >&5
  $as_echo "using external ffmpeg" >&6; }
- else
-@@ -27953,12 +27959,12 @@
-         pkg_cv_CACA_CFLAGS="$CACA_CFLAGS"
-     else
-         if test -n "$PKG_CONFIG" && \
--    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta14 cucul >= 0.99beta14 \"") >&5
--  ($PKG_CONFIG --exists --print-errors "caca >= 0.99beta14 cucul >= 0.99beta14 ") 2>&5
-+    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta13 cucul >= 0.99beta13 \"") >&5
-+  ($PKG_CONFIG --exists --print-errors "caca >= 0.99beta13 cucul >= 0.99beta13 ") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; then
--  pkg_cv_CACA_CFLAGS=`$PKG_CONFIG --cflags "caca >= 0.99beta14 cucul >= 0.99beta14 " 2>/dev/null`
-+  pkg_cv_CACA_CFLAGS=`$PKG_CONFIG --cflags "caca >= 0.99beta13 cucul >= 0.99beta13 " 2>/dev/null`
- else
-   pkg_failed=yes
- fi
-@@ -27971,12 +27977,12 @@
-         pkg_cv_CACA_LIBS="$CACA_LIBS"
-     else
-         if test -n "$PKG_CONFIG" && \
--    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta14 cucul >= 0.99beta14 \"") >&5
--  ($PKG_CONFIG --exists --print-errors "caca >= 0.99beta14 cucul >= 0.99beta14 ") 2>&5
-+    { ($as_echo "$as_me:$LINENO: \$PKG_CONFIG --exists --print-errors \"caca >= 0.99beta13 cucul >= 0.99beta13 \"") >&5
-+  ($PKG_CONFIG --exists --print-errors "caca >= 0.99beta13 cucul >= 0.99beta13 ") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
-   (exit $ac_status); }; then
--  pkg_cv_CACA_LIBS=`$PKG_CONFIG --libs "caca >= 0.99beta14 cucul >= 0.99beta14 " 2>/dev/null`
-+  pkg_cv_CACA_LIBS=`$PKG_CONFIG --libs "caca >= 0.99beta13 cucul >= 0.99beta13 " 2>/dev/null`
- else
-   pkg_failed=yes
- fi
-@@ -27995,9 +28001,9 @@
-         _pkg_short_errors_supported=no
- fi
-         if test $_pkg_short_errors_supported = yes; then
--	        CACA_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "caca >= 0.99beta14 cucul >= 0.99beta14 "`
-+	        CACA_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "caca >= 0.99beta13 cucul >= 0.99beta13 "`
-         else
--	        CACA_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "caca >= 0.99beta14 cucul >= 0.99beta14 "`
-+	        CACA_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "caca >= 0.99beta13 cucul >= 0.99beta13 "`
-         fi
- 	# Put the nasty error message in config.log where it belongs
- 	echo "$CACA_PKG_ERRORS" >&5
-@@ -30662,6 +30668,8 @@
+@@ -23234,6 +23231,8 @@
        fi
         CFLAGS="$ac_save_CFLAGS"
         LIBS="$ac_save_LIBS"
@@ -88,7 +19,7 @@
    fi
  
    if test "x$no_libFLAC" = "x" ; then
-@@ -43882,7 +43890,7 @@
+@@ -29752,7 +29751,7 @@
  
  xinelibdir='${libdir}/xine'
  xinedatadir='${datadir}/xine'

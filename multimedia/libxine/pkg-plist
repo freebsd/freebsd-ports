@@ -92,6 +92,7 @@ lib/libxine.so.1
 %%PLUGINSDIR%%/xineplug_decode_spucc.so
 %%PLUGINSDIR%%/xineplug_decode_spucmml.so
 %%PLUGINSDIR%%/xineplug_decode_spudvb.so
+%%PLUGINSDIR%%/xineplug_decode_spuhdmv.so
 %%PLUGINSDIR%%/xineplug_decode_sputext.so
 %%PLUGINSDIR%%/xineplug_decode_theora.so
 %%PLUGINSDIR%%/xineplug_decode_vorbis.so
