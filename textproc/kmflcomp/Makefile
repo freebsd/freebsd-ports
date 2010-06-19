@@ -7,11 +7,10 @@
 
 PORTNAME=	kmflcomp
 PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
-
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		KMFL-Compiler.sxw
 DIST_SUBDIR=	kmfl
@@ -24,9 +23,10 @@ BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 DOCSDIR=	${PREFIX}/share/doc/kmfl/${PORTNAME}
 DOCS=		${DISTDIR}/${DIST_SUBDIR}/KMFL-Compiler.sxw \

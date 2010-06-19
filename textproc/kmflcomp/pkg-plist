@@ -12,4 +12,4 @@ lib/libkmflcomp.so.0
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrmtry share/doc/kmfl
-@dirrm include/kmfl
+@dirrmtry include/kmfl
