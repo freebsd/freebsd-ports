@@ -16,8 +16,6 @@ COMMENT=	Cross Platform Password Manager
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-BROKEN=		bad plist
-
 DATADIR=	${PREFIX}/share/${PORTNAME:L}
 WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
