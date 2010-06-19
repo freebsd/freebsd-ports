@@ -103,7 +103,6 @@ share/pixmaps/keepassx.xpm
 @dirrmtry share/mimelnk
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/pixmaps
-@dirrmtry share/application
-@comment @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@comment @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
