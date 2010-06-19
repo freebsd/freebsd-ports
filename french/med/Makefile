@@ -55,8 +55,8 @@ pre-configure:
 . if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e '/SUBDIRS/ s|doc||' ${WRKSRC}/Makefile.${ext}
 . endif
-. if !defined(NOPORTEXAMPLES)
-	${REINPLACE_CMD} -e '/SUBDIRS/ s|tools|tools tests|' ${WRKSRC}/Makefile.${ext}
+. if defined(NOPORTEXAMPLES)
+	${REINPLACE_CMD} -e '/SUBDIRS/ s|tests||' ${WRKSRC}/Makefile.${ext}
 . endif
 . for dd in ${DOC2FIX}
 	${REINPLACE_CMD} -e 's|docdir = $$(datadir)/doc|docdir = @docdir@|'	\
