@@ -7,7 +7,7 @@
 
 PORTNAME=	libkmfl
 PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -19,7 +19,6 @@ COMMENT=	An engine to interpret compiled KMFL keyboard tables
 LIB_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -32,6 +31,7 @@ PLIST_FILES=	include/kmfl/libkmfl.h \
 		lib/libkmfl.la \
 		lib/libkmfl.so \
 		lib/libkmfl.so.0
+PLIST_DIRS=	include/kmfl
 
 post-patch:
 	@${REINPLACE_CMD} \
