@@ -1,0 +1,50 @@
+bin/google
+%%PYTHON_SITELIBDIR%%/googlecl/__init__.py
+%%PYTHON_SITELIBDIR%%/googlecl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/blogger/__init__.py
+%%PYTHON_SITELIBDIR%%/googlecl/blogger/__init__.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/blogger/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/blogger/service.py
+%%PYTHON_SITELIBDIR%%/googlecl/blogger/service.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/blogger/service.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/__init__.py
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/__init__.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/service.py
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/service.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/calendar/service.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/contacts/__init__.py
+%%PYTHON_SITELIBDIR%%/googlecl/contacts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/contacts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/contacts/service.py
+%%PYTHON_SITELIBDIR%%/googlecl/contacts/service.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/contacts/service.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/docs/__init__.py
+%%PYTHON_SITELIBDIR%%/googlecl/docs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/docs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/docs/service.py
+%%PYTHON_SITELIBDIR%%/googlecl/docs/service.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/docs/service.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/picasa/__init__.py
+%%PYTHON_SITELIBDIR%%/googlecl/picasa/__init__.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/picasa/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/picasa/service.py
+%%PYTHON_SITELIBDIR%%/googlecl/picasa/service.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/picasa/service.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/service.py
+%%PYTHON_SITELIBDIR%%/googlecl/service.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/service.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/youtube/__init__.py
+%%PYTHON_SITELIBDIR%%/googlecl/youtube/__init__.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/youtube/__init__.pyo
+%%PYTHON_SITELIBDIR%%/googlecl/youtube/service.py
+%%PYTHON_SITELIBDIR%%/googlecl/youtube/service.pyc
+%%PYTHON_SITELIBDIR%%/googlecl/youtube/service.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/googlecl/youtube
+@dirrm %%PYTHON_SITELIBDIR%%/googlecl/picasa
+@dirrm %%PYTHON_SITELIBDIR%%/googlecl/docs
+@dirrm %%PYTHON_SITELIBDIR%%/googlecl/contacts
+@dirrm %%PYTHON_SITELIBDIR%%/googlecl/calendar
+@dirrm %%PYTHON_SITELIBDIR%%/googlecl/blogger
+@dirrm %%PYTHON_SITELIBDIR%%/googlecl
