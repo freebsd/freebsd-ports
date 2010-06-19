@@ -1,0 +1,11 @@
+FreeBSD driver for Siano-based USB DVB devices.
+
+This driver have been tested with the following devices :
+
+  * Terratec Cinergy Piranha
+  * Hauppauge WinTV MiniStick (HD)
+
+However, other Siano-based USB devices should work, just give a try
+(you may want to add new VIDs/PIDs to make your device detected) !
+
+WWW: http://contribs.martymac.org

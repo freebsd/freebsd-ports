@@ -1,0 +1,21 @@
+
+===============================================================================
+
+This port has installed the sms1xxx kernel module.
+
+1) To load the kernel module at boot time, add the following line
+   to /boot/loader.conf :
+
+sms1xxx_load="YES"
+
+2) If you have built additional firmware modules, also add them
+   to /boot/loader.conf, e.g. for nova firmware :
+
+novab0_dvbbda_load="YES"
+
+3) See %%DOCSDIR%%/README for more details
+
+4) Plug your device in, use your favourite DVB application and enjoy !
+
+===============================================================================
+
