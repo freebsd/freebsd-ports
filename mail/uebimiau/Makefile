@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	uebimiau
-PORTVERSION=	2.7.10
+PORTVERSION=	2.7.11
 CATEGORIES=	mail www
-MASTER_SITES=	http://www.uebimiau.org/downloads/ \
-		http://www.freebsdbrasil.com.br/~jmelo/
+MASTER_SITES=	http://www.uebimiau.org/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-any
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	UebiMiau is a simple yet efficient WebMail written in PHP
 
 WRKSRC=		${WRKDIR}/webmail
