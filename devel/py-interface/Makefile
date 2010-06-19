@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	interface
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lysator.liu.se/~tab/erlang/py_interface/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
