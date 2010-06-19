@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	libdap
-PORTVERSION=	3.10.0
+PORTVERSION=	3.10.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.opendap.org/pub/source/
+MASTER_SITES=	http://www.opendap.org/pub/source/ \
+		http://sunpoet.net/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	SDK which contains an implementation of DAP 2.0 and 3.1
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
-CFLAGS=		-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CONFIGURE_ARGS+=--with-zlib=/usr
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-	's#$(libdir)/pkgconfig#$(libdir)/libdata/pkgconfig#g' \
-	${WRKSRC}/Makefile.in
+	# do not alter ${PREFIX}/lib/charset.alias
+	@${REINPLACE_CMD} -e '/^install-exec-am: / s|install-exec-local||' ${WRKSRC}/gl/Makefile.in
 
 .include <bsd.port.mk>
