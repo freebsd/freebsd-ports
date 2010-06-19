@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -20,11 +21,12 @@ LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_XZ=		yes
-USE_XORG=	x11 xt xv xinerama xxf86vm
+USE_XORG=	x11 xt xtst xv xinerama xxf86vm
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--enable-vdr-keys
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
