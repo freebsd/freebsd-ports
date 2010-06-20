@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/oai-dump
 bin/oai-listrecords
 bin/oai-listsets
