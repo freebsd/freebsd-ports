@@ -108,6 +108,7 @@ share/icons/hicolor/scalable/apps/applets-screenshooter.svg
 %%DOCSDIR%%/zh_CN/xfce4-screenshooter.html
 share/xfce4/panel-plugins/screenshooter.desktop
 @dirrmtry share/xfce4/panel-plugins
+@dirrmtry libexec/xfce4/panel-plugins
 @dirrm %%DOCSDIR%%/zh_CN/images
 @dirrm %%DOCSDIR%%/zh_CN
 @dirrm %%DOCSDIR%%/tr/images
