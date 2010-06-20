@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	2.9.2
+PORTVERSION=	3.0
 CATEGORIES=	chinese www
-MASTER_SITES=	http://cn.wordpress.org/
+MASTER_SITES=	http://tw.wordpress.org/
 PKGNAMESUFFIX=	-zh_TW
 DISTNAME=	wordpress-${PORTVERSION}-zh_TW
 
@@ -21,11 +21,8 @@ USE_PHP=	mysql pcre xml gd tokenizer
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
-WORDPRESS=	www/wordpress-zh_TW
-WWWDIR=		${PREFIX}/${WORDPRESS}
-
-PLIST_SUB+=	WORDPRESS=${WORDPRESS}
 PLIST=		${WRKDIR}/pkg-plist
+WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 
 PORTDOCS=	license.txt readme.html
 
@@ -39,10 +36,10 @@ pre-everything::
 
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s * -type f | \
-		${SED} -e 's|^|${WORDPRESS}/|' > ${PLIST} \
+		${SED} -e 's|^|${WWWDIR:S|${PREFIX}/||}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${WORDPRESS}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST}
+		${SED} -e 's|^|@dirrm ${WWWDIR:S|${PREFIX}/||}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${WWWDIR:S|${PREFIX}/||} >> ${PLIST}
 	if [ ! -f ${WRKSRC}/wp-config-sample.php ]; then ${CP} \
 		${WRKSRC}/wp-config.php.sample ${WRKSRC}/wp-config.php; fi
 
