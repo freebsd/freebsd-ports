@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eiskaltdcpp
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 
@@ -35,11 +35,11 @@ OPTIONS=	ASPELL "Spell checking support" off
 
 .include <bsd.port.options.mk>
 
-.if definede(WITH_ASPELL)
+.if defined(WITH_ASPELL)
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=on
 .else
-CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=off
+CMAKE_ARGS+=	-DUSE_ASPELL:BOOL=0
 .endif
 
 .if ${OSVERSION} < 700024
