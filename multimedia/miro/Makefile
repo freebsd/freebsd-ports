@@ -30,7 +30,7 @@ INSTALL_WRKSRC=	${WRKSRC}/platform/gtk-x11
 
 CONFLICTS=	Miro-[0-9]*
 
-USE_GCC=	4.3+
+USE_GCC=	4.4+
 USE_GNOME=	gtk20 pygnomeextras
 USE_GECKO=	libxul seamonkey
 USE_OPENSSL=	yes
