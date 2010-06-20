@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	AnyEvent-Twitter
-PORTVERSION=	0.27
+PORTVERSION=	0.51
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Implementation of the Twitter API for AnyEvent
 
 BUILD_DEPENDS=	p5-AnyEvent>=3.5:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-AnyEvent-HTTP>=0:${PORTSDIR}/www/p5-AnyEvent-HTTP \
+		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
-		p5-Object-Event>=1.2:${PORTSDIR}/devel/p5-Object-Event \
-		p5-URI>=0:${PORTSDIR}/net/p5-URI
+		p5-Net-OAuth>=0:${PORTSDIR}/net/p5-Net-OAuth \
+		p5-Net-Twitter-Lite>=0:${PORTSDIR}/net/p5-Net-Twitter-Lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
