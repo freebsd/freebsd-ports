@@ -4797,6 +4797,7 @@ google-gdata                    ports/devel/google-gdata
 google-perftools                ports/devel/google-perftools
 google-sitemapgen               ports/www/google-sitemapgen
 google-sparsehash               ports/devel/google-sparsehash
+googlecl                        ports/net/googlecl
 googlemock                      ports/devel/googlemock
 googletest                      ports/devel/googletest
 googlog                         ports/sysutils/googlog
@@ -10264,6 +10265,7 @@ ocsinventory-ng                 ports/net-mgmt/ocsinventory-ng
 octave                          ports/math/octave
 octave-devel                    ports/math/octave-devel
 octave-forge                    ports/math/octave-forge
+octave-forge-actuarial          ports/math/octave-forge-actuarial
 octave-forge-ad                 ports/math/octave-forge-ad
 octave-forge-audio              ports/math/octave-forge-audio
 octave-forge-base               ports/math/octave-forge-base
@@ -23079,6 +23081,7 @@ smpeg-xmms                      ports/multimedia/smpeg-xmms
 smplayer                        ports/multimedia/smplayer
 smplayer-themes                 ports/multimedia/smplayer-themes
 smproxy                         ports/x11/smproxy
+sms1xxx-kmod                    ports/multimedia/sms1xxx-kmod
 sms_client                      ports/comms/sms_client
 smssend                         ports/misc/smssend
 smstools                        ports/comms/smstools
@@ -23956,7 +23959,6 @@ tint                            ports/x11/tint
 tintfu                          ports/graphics/tintfu
 tintin++                        ports/net/tintin++
 tintin++-devel                  ports/net/tintin++-devel
-tinybsd                         ports/sysutils/tinybsd
 tinyca                          ports/security/tinyca
 tinycdb                         ports/databases/tinycdb
 tinyerp-server                  ports/finance/tinyerp-server
