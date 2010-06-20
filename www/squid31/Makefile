@@ -53,6 +53,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.1.${SQUID_STABLE_VER}
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -74,7 +75,8 @@ MASTER_SITE_SUBDIR=	squid
 DISTNAME=	squid-3.1.${SQUID_STABLE_VER}
 DIST_SUBDIR=	squid3.1
 
-PATCHFILES=
+PATCHFILES=	squid-3.1-9996.patch squid-3.1-9998.patch \
+		squid-3.1-10001.patch squid-3.1-10003.patch
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
 		http://www1.at.squid-cache.org/%SUBDIR%/ \
@@ -97,6 +99,9 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	squid
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 SQUID_UID?=	squid
 SQUID_GID?=	squid
