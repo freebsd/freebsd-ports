@@ -1,16 +1,17 @@
-# This is the /etc/scamp/default file.
-# Created April 18, 2009 @ 07:16:40
+# This is the /usr/local/etc/scamp/default file.
+# Created June 10, 2010 @ 15:37:48
 
-SIG_DB=/var/db/clamav
+SCAMP_VERSION=5.2i
+CLAMAV_DB=/var/db/clamav
 T_DIR=/var/db/clamav/tmp
 C_GROUP=clamav
 C_PID=/var/run/clamav/clamd.pid
 C_USER=clamav
 GET_LDB=1
 GET_MALWARE=1
-GET_MSRBL=1
+GET_MSRBL=0
 GET_SANE=1
-GET_SECURITE=1
+GET_SECURITE=4
 GET_WINNOW=1
 gpg_key_url=http://www.sanesecurity.net/publickey.gpg
 L_TYPE=1
@@ -22,17 +23,12 @@ msrbl_SPAM_CR=MSRBL-SPAM-CR.ndb
 MSR_DIR=/var/db/clamav/tmp/msr
 MW_DIR=/var/db/clamav/tmp/malware
 MW_FILE=mbl.ndb
-MW_URL=http://www.malware.com.br/cgi/submit?action=list_clamav_ext
+MW_URL=http://www.malwarepatrol.com.br/cgi/submit?action=list_clamav_ext
 RELOAD=1
-REST=0
+REST=1
 SANE=rsync://rsync.sanesecurity.net/sanesecurity
 SANE_DB=/var/db/clamav/tmp/sane
 SI_DIR=/var/db/clamav/tmp/securite
-SI_URL1=http://clamav.securiteinfo.com/vx.hdb.gz
-SI_URL2=http://clamav.securiteinfo.com/honeynet.hdb.gz
-SI_URL3=http://clamav.securiteinfo.com/securiteinfo.hdb.gz
-SI_URL4=http://clamav.securiteinfo.com/antispam.ndb.gz
-SI_URL=$SI_URL1" "$SI_URL2" "$SI_URL3" "$SI_URL4
 SYS_LOG=1
 WPC=1
 W_SUM=1

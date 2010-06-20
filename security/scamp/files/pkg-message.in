@@ -1,19 +1,15 @@
 
-
-          ***************************************************
-          *               ** WARNING **                     *
-          *                                                 *
-          *  Please read before running "scamp.sh"          *
-          *  To configure this script prior to running it   *
-          *  the first time, or if updating from an earlier *
-          *  release, please use the [-c] command line      *
-          *  option; i.e.: "scamp.sh -c" to create a new    *
-          *  default config file.                           *
-          *                                                 *
-          *  Use the [-e] command line option to update any *
-          *  other existing config files.                   *
-          *                                                 *
-          *  Example: "scamp.sh -e <name>" with <name>      *
-          *  being a pre-existing config file.              *
-          *                                                 *
-          ***************************************************
+***********************************************************************
+                            ** WARNING **                             *
+                                                                      *
+* Please read the README file before running "scamp.sh"               *
+* If updating from an earlier version, it is suggested                *
+* that you first run:                                                 *
+*                                                                     *
+* "scamp.sh -D" to delete all old configuration. Then, running        *
+* "scamp.sh" will cause the script to create a new configuration      *
+*                                                                     *
+* You will need to manually create any additional configuration files.*
+* Read the README or type "man scamp" for further assistance.         *
+*                                                                     *
+***********************************************************************
