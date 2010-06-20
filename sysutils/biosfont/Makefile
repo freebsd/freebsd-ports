@@ -22,7 +22,7 @@ MAN4=		biosfont.4
 
 KMODDIR?=	/boot/modules
 
-PLIST_SUB=	KMODDIR=${KMODDIR}
+PLIST_SUB=	KMODDIR=${KMODDIR} PREFIX=${PREFIX}
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 
 .include <bsd.port.pre.mk>
