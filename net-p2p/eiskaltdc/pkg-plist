@@ -2,8 +2,10 @@ bin/eiskaltdcpp
 share/applications/eiskaltdcpp.desktop
 %%DATADIR%%/examples/amr.en_US.sh
 %%DATADIR%%/examples/audacious.en_US.sh
+%%DATADIR%%/examples/commands.ru_RU.UTF-8.php
 %%DATADIR%%/examples/mpc.en_US.sh
 %%DATADIR%%/examples/mpris_now_playing.en_US.sh
+%%DATADIR%%/examples/qmmp.ru_RU.UTF-8.sh
 %%DATADIR%%/examples/rhythmbox.en_US.sh
 %%DATADIR%%/examples/xmms2_audacious2.ru_RU.UTF-8.php
 %%DATADIR%%/icons/appl/default/application-exit.png
@@ -14,6 +16,7 @@ share/applications/eiskaltdcpp.desktop
 %%DATADIR%%/icons/appl/default/bookmark-new.png
 %%DATADIR%%/icons/appl/default/chat.png
 %%DATADIR%%/icons/appl/default/configure.png
+%%DATADIR%%/icons/appl/default/console.png
 %%DATADIR%%/icons/appl/default/default.qrc
 %%DATADIR%%/icons/appl/default/dialog-close.png
 %%DATADIR%%/icons/appl/default/document-edit.png
@@ -51,6 +54,7 @@ share/applications/eiskaltdcpp.desktop
 %%DATADIR%%/icons/appl/default/network-disconnect.png
 %%DATADIR%%/icons/appl/default/openlist.png
 %%DATADIR%%/icons/appl/default/own_filelist.png
+%%DATADIR%%/icons/appl/default/plugin.png
 %%DATADIR%%/icons/appl/default/pmmsg.png
 %%DATADIR%%/icons/appl/default/qt-logo.png
 %%DATADIR%%/icons/appl/default/reconnect.png
@@ -58,7 +62,6 @@ share/applications/eiskaltdcpp.desktop
 %%DATADIR%%/icons/appl/default/reload.png
 %%DATADIR%%/icons/appl/default/server.png
 %%DATADIR%%/icons/appl/default/spam.png
-%%DATADIR%%/icons/appl/default/splash.png
 %%DATADIR%%/icons/appl/default/spy.png
 %%DATADIR%%/icons/appl/default/status.png
 %%DATADIR%%/icons/appl/default/text-x-generic.png
@@ -83,6 +86,8 @@ share/applications/eiskaltdcpp.desktop
 %%DATADIR%%/ts/eiskaltdcpp.hu.qm
 %%DATADIR%%/ts/eiskaltdcpp.pl.qm
 %%DATADIR%%/ts/eiskaltdcpp.ru.qm
+%%DATADIR%%/ts/eiskaltdcpp.sr.qm
+%%DATADIR%%/ts/eiskaltdcpp.uk.qm
 share/icons/hicolor/128x128/apps/eiskaltdcpp.png
 share/icons/hicolor/16x16/apps/eiskaltdcpp.png
 share/icons/hicolor/22x22/apps/eiskaltdcpp.png
