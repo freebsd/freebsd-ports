@@ -14,6 +14,7 @@
 %%SITE_PERL%%/Net/OAuth/UserAuthRequest.pm
 %%SITE_PERL%%/Net/OAuth/UserAuthResponse.pm
 %%SITE_PERL%%/Net/OAuth/XauthAccessTokenRequest.pm
+%%SITE_PERL%%/Net/OAuth/YahooAccessTokenRefreshRequest.pm
 %%SITE_PERL%%/Net/OAuth/V1_0A/RequestTokenRequest.pm
 %%SITE_PERL%%/Net/OAuth/V1_0A/RequestTokenResponse.pm
 %%SITE_PERL%%/Net/OAuth/V1_0A/UserAuthResponse.pm
