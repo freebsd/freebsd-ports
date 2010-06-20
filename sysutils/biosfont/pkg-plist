@@ -2,3 +2,4 @@ include/biosfont.h
 @cwd %%KMODDIR%%
 biosfont.ko
 @unexec kldxref %%KMODDIR%%
+@cwd %%PREFIX%%
