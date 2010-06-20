@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apngasm
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 DISTVERSIONSUFFIX=-src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
@@ -14,19 +14,32 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	swell.k@gmail.com
 COMMENT=	Create Animated PNG from a sequence of files
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
-
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 NO_WRKSUBDIR=	yes
 
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
+
 ALL_TARGET=	${PORTNAME}
 MAKEFILE=	/dev/null
-CFLAGS+=	-I${LOCALBASE}/include -lpng -lz -L${LOCALBASE}/lib
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}" LDLIBS="${LDLIBS}"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+LDLIBS+=	-lpng -lm -lz
 
 PLIST_FILES=	bin/${PORTNAME}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if !defined(NO_SHARED)
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+.else
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
+LDFLAGS+=	-static
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+
+.include <bsd.port.post.mk>
