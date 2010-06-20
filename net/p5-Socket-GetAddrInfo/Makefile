@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	RFC 2553's getaddrinfo and getnameinfo functions
 
 BUILD_DEPENDS=	p5-ExtUtils-CChecker>=0:${PORTSDIR}/devel/p5-ExtUtils-CChecker
@@ -23,7 +23,7 @@ PERL_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501000
-BUILD_DEPENDS=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build
+BUILD_DEPENDS+=	p5-Module-Build>=0:${PORTSDIR}/devel/p5-Module-Build
 .endif
 
 .include <bsd.port.post.mk>
