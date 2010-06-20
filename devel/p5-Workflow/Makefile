@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Workflow
-PORTVERSION=	1.32
-PORTREVISION=	2
+PORTVERSION=	1.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,25 +14,36 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Simple, flexible system to implement workflows
 
-BUILD_DEPENDS=	\
-	${SITE_PERL}/Class/Observable.pm:${PORTSDIR}/devel/p5-Class-Observable \
-	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-	${SITE_PERL}/DBD/Mock.pm:${PORTSDIR}/databases/p5-DBD-Mock \
-	${SITE_PERL}/Class/Factory.pm:${PORTSDIR}/devel/p5-Class-Factory \
-	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
-	${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-	${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
-	${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
-	${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
-	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-	${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
-	${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
+RUN_DEPENDS=	${SITE_PERL}/Class/Observable.pm:${PORTSDIR}/devel/p5-Class-Observable \
+		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/DBD/Mock.pm:${PORTSDIR}/databases/p5-DBD-Mock \
+		${SITE_PERL}/Class/Factory.pm:${PORTSDIR}/devel/p5-Class-Factory \
+		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
+		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
+		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
+		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
+		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
+		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
+BUILD_DEPENDS=	${SITE_PERL}/Class/Observable.pm:${PORTSDIR}/devel/p5-Class-Observable \
+		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/DBD/Mock.pm:${PORTSDIR}/databases/p5-DBD-Mock \
+		${SITE_PERL}/Class/Factory.pm:${PORTSDIR}/devel/p5-Class-Factory \
+		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
+		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
+		${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
+		${SITE_PERL}/Log/Log4perl.pm:${PORTSDIR}/devel/p5-Log-Log4perl \
+		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
+		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-PERL_CONFIGURE=	5.8.6+
+PERL_CONFIGURE=	5.8.9+
 
 MAN3=	Workflow.3 \
 	Workflow::Action.3 \
@@ -66,7 +76,6 @@ MAN3=	Workflow.3 \
 	Workflow::Validator::InEnumeratedType.3 \
 	Workflow::Validator::MatchesDateFormat.3
 
-
 .if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
 .endif
@@ -76,9 +85,6 @@ PORTDATA=	*
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
-
-post-patch:
-	${RM} ${WRKSRC}/lib/${PORTNAME}/Factory.pm.orig
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
