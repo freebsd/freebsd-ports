@@ -76,7 +76,8 @@ SUB_LIST=	SETI_BINARY=${SETI_BINARY} \
 		SETI_VERSION=${PORTVERSION:S/.//}
 PLIST_SUB+=	SETI_BINARY=${SETI_BINARY} \
 		SETI_SITE=${SETI_SITE} \
-		BOINC_HOME=${BOINC_HOME}
+		BOINC_HOME=${BOINC_HOME} \
+		PREFIX=${PREFIX}
 
 pre-configure:
 	(cd ${WRKSRC}; ./_autosetup ; ${REINPLACE_CMD} -E -e "s|/bin/sh|${LOCALBASE}/bin/bash|" ./configure)

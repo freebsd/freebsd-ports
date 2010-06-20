@@ -3,3 +3,4 @@
 %%SETI_SITE%%/%%SETI_BINARY%%
 %%X11%%%%SETI_SITE%%/seti_graphics
 @dirrmtry %%SETI_SITE%%
+@cwd %%PREFIX%%
