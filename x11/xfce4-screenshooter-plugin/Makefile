@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-screenshooter-plugin
 PORTVERSION=	1.7.9
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://mocha.xfce.org/archive/src/apps/${PORTNAME:S/-plugin//}/${PORTVERSION:R}/
 DISTNAME=	xfce4-screenshooter-${PORTVERSION}
