@@ -9,7 +9,8 @@ PORTNAME=	ipe
 DISTVERSION=	6.0pre32patch1
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://luaforge.net/frs/download.php/4052/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	ipe7/zzz_archived_files
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	tkjacobsen@gmail.com
