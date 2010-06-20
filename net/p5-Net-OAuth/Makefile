@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	Net-OAuth
-PORTVERSION=	0.25
+PORTVERSION=	0.27
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	An implementation of the OAuth protocol
 
 BUILD_DEPENDS=	p5-Encode>=2.35:${PORTSDIR}/converters/p5-Encode \
@@ -43,6 +43,7 @@ MAN3=	Net::OAuth.3 \
 	Net::OAuth::V1_0A::RequestTokenRequest.3 \
 	Net::OAuth::V1_0A::RequestTokenResponse.3 \
 	Net::OAuth::V1_0A::UserAuthResponse.3 \
-	Net::OAuth::XauthAccessTokenRequest.3
+	Net::OAuth::XauthAccessTokenRequest.3 \
+	Net::OAuth::YahooAccessTokenRefreshRequest.3
 
 .include <bsd.port.mk>
