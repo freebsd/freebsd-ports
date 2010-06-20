@@ -9,10 +9,11 @@ PORTNAME=	e16utils
 PORTVERSION=	0.16
 PORTREVISION=	9
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF/enlightenment/e16menuedit/e16menuedit \
-		http://public.planetmirror.com/pub/enlightenment/e16utils/
+MASTER_SITES=	SF/enlightenment/e16menuedit/e16menuedit:src1 \
+		SF/enlightenment/e16keyedit/0.2:src2
 
-DISTFILES=	e16menuedit-0.1.tar.gz e16keyedit-0.2.tar.gz
+DISTFILES=	e16menuedit-0.1.tar.gz:src1 \
+		e16keyedit-0.2.tar.gz:src2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone menu and keybinding editors for enlightment 0.16
