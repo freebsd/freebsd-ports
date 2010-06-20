@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	4.0.8
+PORTVERSION=	4.0.9
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \
@@ -71,6 +71,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 MAN1=		lftp.1 lftpget.1
+MAN5=		lftp.conf.5
 
 pre-configure:
 .if !defined(WITHOUT_OPENSSL) && defined(WITH_GNUTLS)
