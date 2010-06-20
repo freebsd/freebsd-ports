@@ -6,19 +6,18 @@
 #
 
 PORTNAME=		glob2
-PORTVERSION=		0.9.4.1
-PORTREVISION=		6
+PORTVERSION=		0.9.4.4
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION:R}
 
-MAINTAINER=		thierry@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Globulation 2 - a free and innovative strategy game
 
-BUILD_DEPENDS=		${LOCALBASE}/include/boost/rational.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=		vorbis.4:${PORTSDIR}/audio/libvorbis	\
-			speex.1:${PORTSDIR}/audio/speex		\
-			fribidi.3:${PORTSDIR}/converters/fribidi\
+LIB_DEPENDS=		vorbis.4:${PORTSDIR}/audio/libvorbis		\
+			speex.1:${PORTSDIR}/audio/speex			\
+			fribidi.3:${PORTSDIR}/converters/fribidi	\
+			boost_thread.4:${PORTSDIR}/devel/boost-libs	\
 			freetype.9:${PORTSDIR}/print/freetype2
 # Should work with portaudio v19_20071207
 # Can be built with portaudio2 but does not run cleanly
@@ -36,11 +35,7 @@ CFLAGS+=		${PTHREAD_CFLAGS} -I. -I${LOCALBASE}/include
 #LINKFLAGS=		${PTHREAD_LIBS} `pkg-config --libs portaudio-2.0` -L${LOCALBASE}/lib
 LINKFLAGS=		${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=			Does not build on ${ARCH}
-.endif
+LICENSE=		GPLv3
 
 post-install:
 	@${ECHO_MSG}
@@ -55,4 +50,4 @@ manual-regression-test:
 	(cd ${WRKSRC}/src && ./glob2 -test-games-nox)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
