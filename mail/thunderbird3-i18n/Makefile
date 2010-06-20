@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird3-i18n
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
