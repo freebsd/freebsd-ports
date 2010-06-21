@@ -580,7 +580,7 @@
     SUBDIR += myghty
     SUBDIR += mysar
     SUBDIR += mysqlphp2postgres
-    SUBDIR += mythweb
+    SUBDIR += mythplugin-mythweb
     SUBDIR += nanoblogger
     SUBDIR += nanoblogger-extra
     SUBDIR += nd
