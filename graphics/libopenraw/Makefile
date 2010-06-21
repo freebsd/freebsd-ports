@@ -36,6 +36,10 @@ CONFIGURE_ARGS+=--disable-gnome
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|testsuite ||' ${WRKSRC}/Makefile.in
