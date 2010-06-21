@@ -19,7 +19,7 @@ LIB_DEPENDS=	babl-0.1:${PORTSDIR}/x11/babl \
 
 OPTIONS=	CAIRO		"Enable Cairo" on \
 		ENSCRIPT	"Enable Enscript" on \
-		FFMPEG		"Enable videos through ffmpeg" on \
+		FFMPEG		"Enable videos through ffmpeg (BROKEN)" off \
 		GRAPHVIZ	"Enable Graphviz" on \
 		JPEG		"Enable JPEG format support" on \
 		LUA		"Enable LUA" on \
@@ -67,6 +67,7 @@ BUILD_DEPENDS+=	enscript:${PORTSDIR}/print/enscript-a4
 .endif
 
 .if !defined(WITHOUT_FFMPEG)
+BROKEN=	ffmpeg support is currently broken
 LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	FFMPEG=""
 .else
