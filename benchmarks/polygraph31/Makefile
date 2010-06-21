@@ -28,7 +28,7 @@ OPTIONS=	GNUPLOT "gnuplot if you want full report functionality" ON \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900009
+.if ${OSVERSION} >= 900009 || (${OSVERSION} < 900000 && ${OSVERSION} >= 800503)
 BROKEN=		does not build
 .endif
 
