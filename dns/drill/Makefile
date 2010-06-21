@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drill
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 DISTNAME=	ldns-${PORTVERSION}
