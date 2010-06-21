@@ -9,6 +9,6 @@ administrators to evaluate how well their systems will scale,
 by kernel programmers to evaluate perceived performance
 characteristics, and by systems programmers to expose the
 classes of bugs which only or more frequently manifest
-themselves when the system is under heavy load. 
+themselves when the system is under heavy load.
 
 WWW: http://weather.ou.edu/~apw/projects/stress/
