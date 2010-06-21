@@ -1,4 +1,4 @@
-FreeBSD driver for Siano-based USB DVB devices.
+Native FreeBSD driver for Siano-based USB DVB devices.
 
 This driver have been tested with the following devices :
 
