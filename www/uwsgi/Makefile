@@ -27,6 +27,7 @@ do-install:
 
 .if ${OSVERSION} < 700000
 USE_GCC=	4.2+
+BROKEN=		does not build on 6.X
 .endif
 
 .include <bsd.port.post.mk>
