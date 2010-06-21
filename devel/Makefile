@@ -1519,6 +1519,7 @@
     SUBDIR += p5-Digest-TransformPath
     SUBDIR += p5-Dir-Project
     SUBDIR += p5-Dir-Watch
+    SUBDIR += p5-Directory-Queue
     SUBDIR += p5-Directory-Scratch
     SUBDIR += p5-Directory-Scratch-Structured
     SUBDIR += p5-EV
