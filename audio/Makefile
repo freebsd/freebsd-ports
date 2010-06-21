@@ -512,6 +512,7 @@
     SUBDIR += musiccontrol
     SUBDIR += musicpd
     SUBDIR += mutemix
+    SUBDIR += mythplugin-mythmusic
     SUBDIR += napster
     SUBDIR += nas
     SUBDIR += ncmpc
