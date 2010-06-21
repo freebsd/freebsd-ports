@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sms1xxx
-PORTVERSION=	20100203
+PORTVERSION=	20100227
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-siano/
 PKGNAMESUFFIX=	-kmod
@@ -15,15 +15,16 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ganael.laplanche@martymac.com
-COMMENT=	FreeBSD driver for Siano-based USB DVB devices
+COMMENT=	Native FreeBSD driver for Siano-based USB DVB devices
 
 WRKSRC=	${WRKDIR}/siano-${PORTVERSION}
 
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
-OPTIONS=	STELLAR "Build Stellar firmware" off \
-			NOVA "Build Nova firmware" off \
-			DEBUG "Build with debug symbols" off
+OPTIONS=	RC5WATCH "Build rc5watch utility" on \
+		STELLAR "Build Stellar firmware" off \
+		NOVA "Build Nova firmware" off \
+		DEBUG "Build with debug symbols" off
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -33,6 +34,9 @@ PLIST_SUB+=	KMODDIR=${KMODDIR}
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 
 PORTDOCS=	CHANGELOG README COPYING
+
+MAN4=	sms1xxx.4
+MANCOMPRESSED=	yes
 
 # Supported firmwares / firmwares to build
 STELLAR_FW=	stellar_dvbt
@@ -49,6 +53,12 @@ IGNORE=		requires FreeBSD 8.0 or superior
 
 .if defined(WITH_DEBUG)
 ALL_TARGET=	debug
+.endif
+
+.if defined(WITH_RC5WATCH)
+PLIST_SUB+=	PL_RC5WATCH=""
+.else
+PLIST_SUB+=	PL_RC5WATCH="@comment "
 .endif
 
 .if defined(WITH_STELLAR)
@@ -112,7 +122,15 @@ pre-build:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${NOVA_FW}.fw ${WRKSRC}/firmwares/${NOVA_FW}/
 .endif
 
+post-build:
+.if defined(WITH_RC5WATCH)
+	 @cd ${WRKSRC}/apps/rc5watch/ && ${MAKE} all
+.endif
+
 post-install:
+.if defined(WITH_RC5WATCH)
+	${INSTALL_PROGRAM} ${WRKSRC}/apps/rc5watch/rc5watch ${PREFIX}/bin/rc5watch
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
