@@ -14,12 +14,11 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Optimizing BrainF*ck to C compiler
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GMAKE=yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,^CC=.*$$,CC=${CXX} ${CXXFLAGS:C/-Werror//g},' \
+	@${REINPLACE_CMD} -e 's,-Werror,,' \
 	                  ${WRKSRC}/Makefile
 
 do-install:
@@ -28,7 +27,6 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
