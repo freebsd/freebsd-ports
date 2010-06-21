@@ -1,0 +1,10 @@
+--- configure.orig	2009-10-30 16:45:12.000000000 +0100
++++ configure	2010-03-07 10:51:57.000000000 +0100
+@@ -724,6 +724,7 @@
+         echo "LIBS += `sdl-config --libs`" >> ./mythmusic/mythmusic/config.pro
+         echo "QMAKE_CXXFLAGS_RELEASE += `sdl-config --cflags`" >> ./mythmusic/mythmusic/config.pro
+         echo "QMAKE_CXXFLAGS_DEBUG += `sdl-config --cflags`" >> ./mythmusic/mythmusic/config.pro
++	echo "QMAKE_CXXFLAGS_RELEASE -= -I/usr/local/include" >> ./mythmusic/mythmusic/config.pro
+     fi
+     if test "$sdl" = "no" ; then
+         echo "        SDL            support will not be included in MythMusic"
