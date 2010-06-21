@@ -6,8 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv-frontend
-PORTVERSION=	0.22
-PORTREVISION=	2
+PORTVERSION=	0.23
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.oregonstate.edu/pub/mythtv/
@@ -30,7 +29,7 @@ QT_COMPONENTS=	gui sql network script linguist_build l10n \
 QT_NONSTANDARD=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/mythtv/filters
 REINPLACE_ARGS=	-i ""
 
 DATADIR=	${PREFIX}/share/mythtv
@@ -38,31 +37,26 @@ DATADIR=	${PREFIX}/share/mythtv
 MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC="${QMAKESPEC}"
 
-CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" CPPFLAGS="${CPPFLAGS}  ${QTCPPFLAGS}" \
-		QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" \
+		QTDIR="${QT_PREFIX}" LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-v4l --disable-ivtv --disable-firewire \
-		--disable-dvb --disable-dbox2 --disable-hdhomerun --disable-iptv \
-		--disable-hdpvr --without-bindings=perl,python \
-		--enable-xvmc --enable-xvmc-pro --disable-xvmcw --enable-glx-procaddrarb
+CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-firewire --disable-iptv --disable-hdhomerun \
+		--disable-v4l --disable-ivtv --disable-hdpvr --disable-dvb --enable-xvmc \
+		--disable-xvmcw --enable-xvmc-pro --enable-opengl-video \
+		--disable-directfb --without-bindings=perl,python \
+		--enable-glx-procaddrarb
 
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 
 DESKTOP_ENTRIES="MythTV Frontend" "MythTV is a homebrew PVR project" "" \
 		"mythfrontend" "AudioVideo;Video;" false
 
-OPTIONS=	ARTS "arts sound driver" off \
-		JACK "JACK sound driver" off \
-		OPENGL "OpenGL support" on
+OPTIONS=	JACK		"JACK sound driver" off \
+		OPENGL		"OpenGL support" on \
+		PULSEAUDIO	"PulseAudio audio output support" off \
+		VDPAU		"VDPAU support (nvidia only)" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_ARTS)
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-CONFIGURE_ARGS+=	--enable-audio-arts
-.else
-CONFIGURE_ARGS+=	--disable-audio-arts
-.endif
 
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
@@ -72,17 +66,39 @@ CONFIGURE_ARGS+=	--disable-audio-jack
 .endif
 
 .if defined(WITH_OPENGL)
-CONFIGURE_ARGS+=	--enable-opengl-video
+QT_COMPONENTS+=	opengl
+CONFIGURE_ARGS+=	--enable-opengl-video --enable-opengl-vsync
 .else
-CONFIGURE_ARGS+=	--disable-opengl-video
+CONFIGURE_ARGS+=	--disable-opengl-video --disable-opengl-vsync
+.endif
+
+.if defined(WITH_PULSEAUDIO)
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=	--enable-audio-pulseoutput
+.else
+CONFIGURE_ARGS+=	--disable-audio-pulseoutput
+.endif
+
+.if defined(WITH_VDPAU)
+LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/x11/nvidia-driver
+CONFIGURE_ARGS+=	--enable-vdpau
+.else
+CONFIGURE_ARGS+=	--disable-vdpau
 .endif
 
 post-patch:
 		@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+			${WRKSRC}/configure \
 			${WRKSRC}/libs/libmythtv/libmythtv.pro \
 			${WRKSRC}/libs/libavformat/libavformat.pro \
 			${WRKSRC}/bindings/perl/MythTV/Recording.pm \
 			${WRKSRC}/programs/mythtranscode/replex/Makefile.standalone \
-			${WRKSRC}/programs/scripts/database/mythconverg_backup.pl
+			${WRKSRC}/programs/scripts/database/mythconverg_backup.pl \
+			${WRKSRC}/programs/scripts/database/mythconverg_restore.pl \
+			${WRKSRC}/contrib/encoding_converting/mythencode/mythencode.pl \
+			${WRKSRC}/contrib/user_jobs/firewire_primer.pl \
+			${WRKSRC}/contrib/user_jobs/mythvidexport.py \
+			${WRKSRC}/contrib/info/mythname/mythname.pl \
+			${WRKSRC}/programs/mythcommflag/mythcommflag-analyze
 
 .include <bsd.port.post.mk>
