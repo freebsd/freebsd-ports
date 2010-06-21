@@ -1,0 +1,60 @@
+@comment $FreeBSD$
+bin/mtd
+lib/mythtv/plugins/libmythvideo.so
+%%MYTHSHARE%%/i18n/mythvideo_ca.qm
+%%MYTHSHARE%%/i18n/mythvideo_cs.qm
+%%MYTHSHARE%%/i18n/mythvideo_da.qm
+%%MYTHSHARE%%/i18n/mythvideo_de.qm
+%%MYTHSHARE%%/i18n/mythvideo_el.qm
+%%MYTHSHARE%%/i18n/mythvideo_es.qm
+%%MYTHSHARE%%/i18n/mythvideo_et.qm
+%%MYTHSHARE%%/i18n/mythvideo_fi.qm
+%%MYTHSHARE%%/i18n/mythvideo_fr.qm
+%%MYTHSHARE%%/i18n/mythvideo_hu.qm
+%%MYTHSHARE%%/i18n/mythvideo_it.qm
+%%MYTHSHARE%%/i18n/mythvideo_ja.qm
+%%MYTHSHARE%%/i18n/mythvideo_nb.qm
+%%MYTHSHARE%%/i18n/mythvideo_nl.qm
+%%MYTHSHARE%%/i18n/mythvideo_pt.qm
+%%MYTHSHARE%%/i18n/mythvideo_ru.qm
+%%MYTHSHARE%%/i18n/mythvideo_sl.qm
+%%MYTHSHARE%%/i18n/mythvideo_sv.qm
+%%MYTHSHARE%%/mythvideo/scripts/Movie/MythTV/MythVideoCommon.pm
+%%MYTHSHARE%%/mythvideo/scripts/Movie/allocine.pl
+%%MYTHSHARE%%/mythvideo/scripts/Movie/alpacine.pl
+%%MYTHSHARE%%/mythvideo/scripts/Movie/kinox.pl
+%%MYTHSHARE%%/mythvideo/scripts/Movie/tmdb.py
+%%MYTHSHARE%%/mythvideo/scripts/README
+%%MYTHSHARE%%/mythvideo/scripts/Television/ttvdb.py
+%%MYTHSHARE%%/mythvideo/scripts/jamu-example.conf
+%%MYTHSHARE%%/mythvideo/scripts/jamu.README
+%%MYTHSHARE%%/mythvideo/scripts/jamu.py
+%%MYTHSHARE%%/themes/default-wide/dvd-ui.xml
+%%MYTHSHARE%%/themes/default-wide/mv_browse_background.png
+%%MYTHSHARE%%/themes/default-wide/mv_browse_nocover_large.png
+%%MYTHSHARE%%/themes/default-wide/mv_browse_selector.png
+%%MYTHSHARE%%/themes/default-wide/mv_itemdetail_popup.png
+%%MYTHSHARE%%/themes/default-wide/mv_results_popup.png
+%%MYTHSHARE%%/themes/default-wide/video-ui.xml
+%%MYTHSHARE%%/themes/default/dvd-ui.xml
+%%MYTHSHARE%%/themes/default/md_progress_background.png
+%%MYTHSHARE%%/themes/default/md_rip_banner.png
+%%MYTHSHARE%%/themes/default/mv_browse_background.png
+%%MYTHSHARE%%/themes/default/mv_browse_selector.png
+%%MYTHSHARE%%/themes/default/mv_filerequest.png
+%%MYTHSHARE%%/themes/default/mv_itemdetail_popup.png
+%%MYTHSHARE%%/themes/default/mv_level_high.png
+%%MYTHSHARE%%/themes/default/mv_level_low.png
+%%MYTHSHARE%%/themes/default/mv_level_lowest.png
+%%MYTHSHARE%%/themes/default/mv_level_medium.png
+%%MYTHSHARE%%/themes/default/mv_level_none.png
+%%MYTHSHARE%%/themes/default/mv_results_popup.png
+%%MYTHSHARE%%/themes/default/video-ui.xml
+%%MYTHSHARE%%/video_settings.xml
+%%MYTHSHARE%%/videomenu.xml
+@dirrm %%MYTHSHARE%%/mythvideo/scripts/Television
+@dirrm %%MYTHSHARE%%/mythvideo/scripts/Movie/MythTV
+@dirrm %%MYTHSHARE%%/mythvideo/scripts/Movie
+@dirrm %%MYTHSHARE%%/mythvideo/scripts
+@dirrm %%MYTHSHARE%%/mythvideo
+@dirrmtry lib/mythtv/plugins
