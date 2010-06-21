@@ -22,6 +22,10 @@ USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		fails to install on 6.X
+.endif
+
 do-install:
 	${MKDIR} ${DESKTOPDIR}
 	cd ${WRKSRC} && ${SH} install.sh -I ${DATADIR} -s
