@@ -206,6 +206,7 @@
     SUBDIR += mplayerxp
     SUBDIR += mplex
     SUBDIR += msdl
+    SUBDIR += mythplugin-mythvideo
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
     SUBDIR += mythtv-themes
