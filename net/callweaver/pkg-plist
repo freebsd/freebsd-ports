@@ -4,133 +4,133 @@ bin/smsq
 bin/streamplayer
 @unexec if cmp -s %D/%%ETCDIR%%/adsi.conf.sample %D/%%ETCDIR%%/adsi.conf; then rm -f %D/%%ETCDIR%%/adsi.conf; fi
 %%ETCDIR%%/adsi.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/adsi.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/adsi.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/adsi.conf ] ; then cp -p %D/%F %B/adsi.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/adtranvofr.conf.sample %D/%%ETCDIR%%/adtranvofr.conf; then rm -f %D/%%ETCDIR%%/adtranvofr.conf; fi
 %%ETCDIR%%/adtranvofr.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/adtranvofr.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/adtranvofr.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/adtranvofr.conf ] ; then cp -p %D/%F %B/adtranvofr.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/agents.conf.sample %D/%%ETCDIR%%/agents.conf; then rm -f %D/%%ETCDIR%%/agents.conf; fi
 %%ETCDIR%%/agents.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/agents.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/agents.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/agents.conf ] ; then cp -p %D/%F %B/agents.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/amd.conf.sample %D/%%ETCDIR%%/amd.conf; then rm -f %D/%%ETCDIR%%/amd.conf; fi
 %%ETCDIR%%/amd.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/amd.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/amd.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/amd.conf ] ; then cp -p %D/%F %B/amd.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/callweaver.adsi.sample %D/%%ETCDIR%%/callweaver.adsi; then rm -f %D/%%ETCDIR%%/callweaver.adsi; fi
 %%ETCDIR%%/callweaver.adsi.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/callweaver.adsi ] ; then cp -p %D/%F %B/%%ETCDIR%%/callweaver.adsi; fi
+@exec if [ ! -f %D/%%ETCDIR%%/callweaver.adsi ] ; then cp -p %D/%F %B/callweaver.adsi; fi
 @unexec if cmp -s %D/%%ETCDIR%%/callweaver.conf.sample %D/%%ETCDIR%%/callweaver.conf; then rm -f %D/%%ETCDIR%%/callweaver.conf; fi
 %%ETCDIR%%/callweaver.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/callweaver.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/callweaver.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/callweaver.conf ] ; then cp -p %D/%F %B/callweaver.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/cdr.conf.sample %D/%%ETCDIR%%/cdr.conf; then rm -f %D/%%ETCDIR%%/cdr.conf; fi
 %%ETCDIR%%/cdr.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/cdr.conf ] ; then cp -p %D/%F %B/cdr.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/cdr_custom.conf.sample %D/%%ETCDIR%%/cdr_custom.conf; then rm -f %D/%%ETCDIR%%/cdr_custom.conf; fi
 %%ETCDIR%%/cdr_custom.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr_custom.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr_custom.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/cdr_custom.conf ] ; then cp -p %D/%F %B/cdr_custom.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/cdr_manager.conf.sample %D/%%ETCDIR%%/cdr_manager.conf; then rm -f %D/%%ETCDIR%%/cdr_manager.conf; fi
 %%ETCDIR%%/cdr_manager.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr_manager.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr_manager.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/cdr_manager.conf ] ; then cp -p %D/%F %B/cdr_manager.conf; fi
 %%MYSQL%%@unexec if cmp -s %D/%%ETCDIR%%/cdr_mysql.conf.sample %D/%%ETCDIR%%/cdr_mysql.conf; then rm -f %D/%%ETCDIR%%/cdr_mysql.conf; fi
 %%MYSQL%%%%ETCDIR%%/cdr_mysql.conf.sample
-%%MYSQL%%@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr_mysql.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr_mysql.conf; fi
+%%MYSQL%%@exec if [ ! -f %D/%%ETCDIR%%/cdr_mysql.conf ] ; then cp -p %D/%F %B/cdr_mysql.conf; fi
 %%PGSQL%%@unexec if cmp -s %D/%%ETCDIR%%/cdr_pgsql.conf.sample %D/%%ETCDIR%%/cdr_pgsql.conf; then rm -f %D/%%ETCDIR%%/cdr_pgsql.conf; fi
 %%PGSQL%%%%ETCDIR%%/cdr_pgsql.conf.sample
-%%PGSQL%%@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr_pgsql.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr_pgsql.conf; fi
+%%PGSQL%%@exec if [ ! -f %D/%%ETCDIR%%/cdr_pgsql.conf ] ; then cp -p %D/%F %B/cdr_pgsql.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/cdr_tds.conf.sample %D/%%ETCDIR%%/cdr_tds.conf; then rm -f %D/%%ETCDIR%%/cdr_tds.conf; fi
 %%ETCDIR%%/cdr_tds.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/cdr_tds.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/cdr_tds.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/cdr_tds.conf ] ; then cp -p %D/%F %B/cdr_tds.conf; fi
 %%ZAPTEL%%@unexec if cmp -s %D/%%ETCDIR%%/chan_dahdi.conf.sample %D/%%ETCDIR%%/chan_dahdi.conf; then rm -f %D/%%ETCDIR%%/chan_dahdi.conf; fi
 %%ZAPTEL%%%%ETCDIR%%/chan_dahdi.conf.sample
-%%ZAPTEL%%@exec if [ ! -f %D/etc/%%ETCDIR%%/chan_dahdi.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/chan_dahdi.conf; fi
+%%ZAPTEL%%@exec if [ ! -f %D/%%ETCDIR%%/chan_dahdi.conf ] ; then cp -p %D/%F %B/chan_dahdi.conf; fi
 %%FAX%%@unexec if cmp -s %D/%%ETCDIR%%/chan_fax.conf.sample %D/%%ETCDIR%%/chan_fax.conf; then rm -f %D/%%ETCDIR%%/chan_fax.conf; fi
 %%FAX%%%%ETCDIR%%/chan_fax.conf.sample
-%%FAX%%@exec if [ ! -f %D/etc/%%ETCDIR%%/chan_fax.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/chan_fax.conf; fi
+%%FAX%%@exec if [ ! -f %D/%%ETCDIR%%/chan_fax.conf ] ; then cp -p %D/%F %B/chan_fax.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/codecs.conf.sample %D/%%ETCDIR%%/codecs.conf; then rm -f %D/%%ETCDIR%%/codecs.conf; fi
 %%ETCDIR%%/codecs.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/codecs.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/codecs.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/codecs.conf ] ; then cp -p %D/%F %B/codecs.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/db-memcached.conf.sample %D/%%ETCDIR%%/db-memcached.conf; then rm -f %D/%%ETCDIR%%/db-memcached.conf; fi
 %%ETCDIR%%/db-memcached.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/db-memcached.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/db-memcached.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/db-memcached.conf ] ; then cp -p %D/%F %B/db-memcached.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/dnsmgr.conf.sample %D/%%ETCDIR%%/dnsmgr.conf; then rm -f %D/%%ETCDIR%%/dnsmgr.conf; fi
 %%ETCDIR%%/dnsmgr.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/dnsmgr.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/dnsmgr.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/dnsmgr.conf ] ; then cp -p %D/%F %B/dnsmgr.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/dundi.conf.sample %D/%%ETCDIR%%/dundi.conf; then rm -f %D/%%ETCDIR%%/dundi.conf; fi
 %%ETCDIR%%/dundi.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/dundi.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/dundi.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/dundi.conf ] ; then cp -p %D/%F %B/dundi.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/enum.conf.sample %D/%%ETCDIR%%/enum.conf; then rm -f %D/%%ETCDIR%%/enum.conf; fi
 %%ETCDIR%%/enum.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/enum.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/enum.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/enum.conf ] ; then cp -p %D/%F %B/enum.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/extconfig.conf.sample %D/%%ETCDIR%%/extconfig.conf; then rm -f %D/%%ETCDIR%%/extconfig.conf; fi
 %%ETCDIR%%/extconfig.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/extconfig.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/extconfig.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/extconfig.conf ] ; then cp -p %D/%F %B/extconfig.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/extensions.ael.sample %D/%%ETCDIR%%/extensions.ael; then rm -f %D/%%ETCDIR%%/extensions.ael; fi
 %%ETCDIR%%/extensions.ael.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/extensions.ael ] ; then cp -p %D/%F %B/%%ETCDIR%%/extensions.ael; fi
+@exec if [ ! -f %D/%%ETCDIR%%/extensions.ael ] ; then cp -p %D/%F %B/extensions.ael; fi
 @unexec if cmp -s %D/%%ETCDIR%%/extensions.conf.sample %D/%%ETCDIR%%/extensions.conf; then rm -f %D/%%ETCDIR%%/extensions.conf; fi
 %%ETCDIR%%/extensions.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/extensions.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/extensions.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/extensions.conf ] ; then cp -p %D/%F %B/extensions.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/features.conf.sample %D/%%ETCDIR%%/features.conf; then rm -f %D/%%ETCDIR%%/features.conf; fi
 %%ETCDIR%%/features.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/features.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/features.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/features.conf ] ; then cp -p %D/%F %B/features.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/iax.conf.sample %D/%%ETCDIR%%/iax.conf; then rm -f %D/%%ETCDIR%%/iax.conf; fi
 %%ETCDIR%%/iax.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/iax.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/iax.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/iax.conf ] ; then cp -p %D/%F %B/iax.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/indications.conf.sample %D/%%ETCDIR%%/indications.conf; then rm -f %D/%%ETCDIR%%/indications.conf; fi
 %%ETCDIR%%/indications.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/indications.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/indications.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/indications.conf ] ; then cp -p %D/%F %B/indications.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/logger.conf.sample %D/%%ETCDIR%%/logger.conf; then rm -f %D/%%ETCDIR%%/logger.conf; fi
 %%ETCDIR%%/logger.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/logger.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/logger.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/logger.conf ] ; then cp -p %D/%F %B/logger.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/manager.conf.sample %D/%%ETCDIR%%/manager.conf; then rm -f %D/%%ETCDIR%%/manager.conf; fi
 %%ETCDIR%%/manager.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/manager.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/manager.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/manager.conf ] ; then cp -p %D/%F %B/manager.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/meetme.conf.sample %D/%%ETCDIR%%/meetme.conf; then rm -f %D/%%ETCDIR%%/meetme.conf; fi
 %%ETCDIR%%/meetme.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/meetme.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/meetme.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/meetme.conf ] ; then cp -p %D/%F %B/meetme.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/mgcp.conf.sample %D/%%ETCDIR%%/mgcp.conf; then rm -f %D/%%ETCDIR%%/mgcp.conf; fi
 %%ETCDIR%%/mgcp.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/mgcp.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/mgcp.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/mgcp.conf ] ; then cp -p %D/%F %B/mgcp.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/modem.conf.sample %D/%%ETCDIR%%/modem.conf; then rm -f %D/%%ETCDIR%%/modem.conf; fi
 %%ETCDIR%%/modem.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/modem.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/modem.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/modem.conf ] ; then cp -p %D/%F %B/modem.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/modules.conf.sample %D/%%ETCDIR%%/modules.conf; then rm -f %D/%%ETCDIR%%/modules.conf; fi
 %%ETCDIR%%/modules.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/modules.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/modules.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/modules.conf ] ; then cp -p %D/%F %B/modules.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/musiconhold.conf.sample %D/%%ETCDIR%%/musiconhold.conf; then rm -f %D/%%ETCDIR%%/musiconhold.conf; fi
 %%ETCDIR%%/musiconhold.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/musiconhold.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/musiconhold.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/musiconhold.conf ] ; then cp -p %D/%F %B/musiconhold.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/muted.conf.sample %D/%%ETCDIR%%/muted.conf; then rm -f %D/%%ETCDIR%%/muted.conf; fi
 %%ETCDIR%%/muted.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/muted.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/muted.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/muted.conf ] ; then cp -p %D/%F %B/muted.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/osp.conf.sample %D/%%ETCDIR%%/osp.conf; then rm -f %D/%%ETCDIR%%/osp.conf; fi
 %%ETCDIR%%/osp.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/osp.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/osp.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/osp.conf ] ; then cp -p %D/%F %B/osp.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/privacy.conf.sample %D/%%ETCDIR%%/privacy.conf; then rm -f %D/%%ETCDIR%%/privacy.conf; fi
 %%ETCDIR%%/privacy.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/privacy.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/privacy.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/privacy.conf ] ; then cp -p %D/%F %B/privacy.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/queues.conf.sample %D/%%ETCDIR%%/queues.conf; then rm -f %D/%%ETCDIR%%/queues.conf; fi
 %%ETCDIR%%/queues.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/queues.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/queues.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/queues.conf ] ; then cp -p %D/%F %B/queues.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/res_snmp.conf.sample %D/%%ETCDIR%%/res_snmp.conf; then rm -f %D/%%ETCDIR%%/res_snmp.conf; fi
 %%ETCDIR%%/res_snmp.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/res_snmp.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/res_snmp.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/res_snmp.conf ] ; then cp -p %D/%F %B/res_snmp.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/rtp.conf.sample %D/%%ETCDIR%%/rtp.conf; then rm -f %D/%%ETCDIR%%/rtp.conf; fi
 %%ETCDIR%%/rtp.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/rtp.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/rtp.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/rtp.conf ] ; then cp -p %D/%F %B/rtp.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/sip.conf.sample %D/%%ETCDIR%%/sip.conf; then rm -f %D/%%ETCDIR%%/sip.conf; fi
 %%ETCDIR%%/sip.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/sip.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/sip.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/sip.conf ] ; then cp -p %D/%F %B/sip.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/sip_notify.conf.sample %D/%%ETCDIR%%/sip_notify.conf; then rm -f %D/%%ETCDIR%%/sip_notify.conf; fi
 %%ETCDIR%%/sip_notify.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/sip_notify.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/sip_notify.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/sip_notify.conf ] ; then cp -p %D/%F %B/sip_notify.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/udptl.conf.sample %D/%%ETCDIR%%/udptl.conf; then rm -f %D/%%ETCDIR%%/udptl.conf; fi
 %%ETCDIR%%/udptl.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/udptl.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/udptl.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/udptl.conf ] ; then cp -p %D/%F %B/udptl.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/voicemail.conf.sample %D/%%ETCDIR%%/voicemail.conf; then rm -f %D/%%ETCDIR%%/voicemail.conf; fi
 %%ETCDIR%%/voicemail.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/voicemail.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/voicemail.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/voicemail.conf ] ; then cp -p %D/%F %B/voicemail.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/woomera.conf.sample %D/%%ETCDIR%%/woomera.conf; then rm -f %D/%%ETCDIR%%/woomera.conf; fi
 %%ETCDIR%%/woomera.conf.sample
-@exec if [ ! -f %D/etc/%%ETCDIR%%/woomera.conf ] ; then cp -p %D/%F %B/%%ETCDIR%%/woomera.conf; fi
+@exec if [ ! -f %D/%%ETCDIR%%/woomera.conf ] ; then cp -p %D/%F %B/woomera.conf; fi
 include/callweaver/acl.h
 include/callweaver/adsi.h
 include/callweaver/aes.h
@@ -508,13 +508,20 @@ sbin/callweaver
 @dirrm lib/callweaver
 @dirrm include/callweaver
 @dirrmtry %%ETCDIR%%
-@exec mkdir -p %D/var/lib/callweaver/core
 @exec mkdir -p %D/%%DATADIR%%/moh
 @exec mkdir -p %D/%%DATADIR%%/keys
 @exec mkdir -p %D/%%DATADIR%%/images
 @exec mkdir -p %D/lib/callweaver/modules/icd
 @cwd /
+@exec mkdir -p -m750 %D/var/lib/callweaver && chown %%CWUSER%%:%%CWGROUP%% %D/var/lib/callweaver
+@exec mkdir -p -m750 %D/var/lib/callweaver/core && chown %%CWUSER%%:%%CWGROUP%% %D/var/lib/callweaver/core
+@exec mkdir -p -m750 %D/var/log/callweaver && chown %%CWUSER%%:%%CWGROUP%% %D/var/log/callweaver
+@exec mkdir -p -m750 %D/var/log/callweaver/cdr-csv && chown %%CWUSER%%:%%CWGROUP%% %D/var/log/callweaver/cdr-csv
+@exec mkdir -p -m750 %D/var/log/callweaver/cdr-custom && chown %%CWUSER%%:%%CWGROUP%% %D/var/log/callweaver/cdr-custom
+%%FAX%%@exec mkdir -p -m750 %D/var/run/fax && chown %%CWUSER%%:%%CWGROUP%% %D/var/run/fax
 %%FAX%%@dirrm var/run/fax
-%%FAX%%@dirrm var/log/callweaver
+@dirrm var/log/callweaver/cdr-custom
+@dirrm var/log/callweaver/cdr-csv
+@dirrm var/log/callweaver
 @dirrm var/lib/callweaver/core
 @dirrm var/lib/callweaver

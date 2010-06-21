@@ -1,0 +1,11 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -386,7 +386,7 @@
+ # images
+ INSTALL_DIRS = $(cwvardir) $(cwvardir)/core $(cwdbdir) $(cwsqlitedir) \
+ 	$(cwmoddir) $(cwicdmoddir) $(cwlogdir) $(cwlogdir)/cdr-custom \
+-	$(cwlogdir)/cdr-csv $(cwrundir) $(cwspooldir) \
++	$(cwlogdir)/cdr-csv $(cwspooldir) \
+ 	$(cwspooldir)/outgoing $(cwspooldir)/voicemail $(cwmohdir) \
+ 	$(cwkeydir) $(cwimagesdir)
+ all: all-recursive
