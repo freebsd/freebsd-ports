@@ -6,7 +6,7 @@
 
 PORTNAME=	callweaver
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://devs.callweaver.org/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -25,8 +25,12 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-pic
 USE_RC_SUBR=	callweaver
 
-USERS=		callweaver
-GROUPS=		callweaver
+CWUSER=		callweaver
+CWGROUP=	callweaver
+
+USERS=		${CWUSER}
+GROUPS=		${CWGROUP}
+PLIST_SUB+=	CWUSER=${CWUSER} CWGROUP=${CWGROUP}
 
 MAN8=		callweaver.8 safe_callweaver.8
 
@@ -46,9 +50,9 @@ OPTIONS=	SIPTCP		"Enable SIP TCP/TLS support" on \
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--with-man-pages
+CONFIGURE_ARGS+=	--with-readme --with-license --with-credits
 .else
-CONFIGURE_ARGS+=	--without-man-pages
+CONFIGURE_ARGS+=	--without-readme --without-license --without-credits
 .endif
 
 .if defined(WITH_SIPTCP)
