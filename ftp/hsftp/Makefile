@@ -7,6 +7,7 @@
 
 PORTNAME=	hsftp
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://la-samhna.de/hsftp/ \
 		http://www.alaskaparadise.com/freebsd/
@@ -28,6 +29,9 @@ OPTIONS=	OPENSSH "Build with OpenSSH support" off
 RUN_DEPENDS+=	ssh:${PORTSDIR}/security/openssh
 CONFIGURE_ARGS+=	--with-openssh
 .endif
+
+pre-patch:
+	${REINPLACE_CMD} -e '2343d' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hsftp ${PREFIX}/bin
