@@ -1,4 +1,4 @@
-# New ports collection makefile for:	mythweb
+# New ports collection makefile for:	mythplugin-mythweb
 # Date created:		2009-12-27
 # Whom:			Bernhard Froehlich <decke@bluelife.at>
 #
@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mythweb
-PORTVERSION=	0.22
-PORTREVISION=	3
+PORTVERSION=	0.23
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.oregonstate.edu/pub/mythtv/
+PKGNAMEPREFIX=	mythplugin-
 DISTNAME=	mythplugins-${PORTVERSION}
 
 MAINTAINER=	decke@FreeBSD.org

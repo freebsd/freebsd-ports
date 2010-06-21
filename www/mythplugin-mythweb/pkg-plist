@@ -135,6 +135,8 @@
 %%WWWDIR%%/modules/backend_log/tmpl/default/welcome.php
 %%WWWDIR%%/modules/backend_log/tmpl/lite/backend_log.php
 %%WWWDIR%%/modules/backend_log/tmpl/lite/welcome.php
+%%WWWDIR%%/modules/coverart/handler.pl
+%%WWWDIR%%/modules/coverart/init.php
 %%WWWDIR%%/modules/database/init.php
 %%WWWDIR%%/modules/database/set_settings.php
 %%WWWDIR%%/modules/database/tmpl/default/set_settings.php
@@ -734,6 +736,7 @@
 @dirrm %%WWWDIR%%/modules/settings/tmpl/lite
 @dirrm %%WWWDIR%%/modules/settings/tmpl
 @dirrm %%WWWDIR%%/modules/settings
+@dirrm %%WWWDIR%%/modules/coverart
 @dirrm %%WWWDIR%%/modules/database/tmpl/default
 @dirrm %%WWWDIR%%/modules/database/tmpl
 @dirrm %%WWWDIR%%/modules/database
