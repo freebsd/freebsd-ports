@@ -1,0 +1,6 @@
+The goal of this module is to offer a simple queue system using the
+underlying filesystem for storage, security and to prevent race
+conditions via atomic operations. It focuses on simplicity, robustness
+and scalability.
+
+WWW: http://search.cpan.org/dist/Directory-Queue/
