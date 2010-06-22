@@ -6,7 +6,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,7 +15,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
 
-BUILD_DEPENDS=	libassuan-1>=1.0.5:${PORTSDIR}/security/libassuan-1
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
 		boost_thread:${PORTSDIR}/devel/boost-libs \
@@ -35,6 +34,7 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		kabcclient.1
 
+#OPTIONS=	ASSUAN "Kleopatra support for libassuan-1" off
 #OPTIONS=	KITCHENSYNC "PIM synchronization utility" off
 
 .include <bsd.port.options.mk>
@@ -47,6 +47,15 @@ MAN1=		kabcclient.1
 # CMAKE_ARGS+=	-DWITH_Opensync:BOOL=off
 # PLIST_SUB+=	KITCHENSYNC="@comment "
 # .endif
+
+.if defined(WITH_ASSUAN)
+IGNORE=		Conflicts with libassuan2
+BUILD_DEPENDS=	libassuan-1>=1.0.5:${PORTSDIR}/security/libassuan-1
+PLIST_SUB+=	WITH_ASSUAN=""
+.else
+CMAKE_ARGS+=	-DWITH_Assuan:BOOL=off
+PLIST_SUB+=	WITH_ASSUAN="@comment "
+.endif
 
 pre-configure:
 # respect prefix

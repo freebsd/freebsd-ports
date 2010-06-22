@@ -167,12 +167,12 @@ lib/libkgroupwaredav.so.5.0.1
 lib/libkleo.so
 lib/libkleo.so.5
 lib/libkleo.so.5.0.1
-lib/libkleopatraclientcore.so
-lib/libkleopatraclientcore.so.0
-lib/libkleopatraclientcore.so.0.2.1
-lib/libkleopatraclientgui.so
-lib/libkleopatraclientgui.so.0
-lib/libkleopatraclientgui.so.0.2.1
+%%WITH_ASSUAN%%lib/libkleopatraclientcore.so
+%%WITH_ASSUAN%%lib/libkleopatraclientcore.so.0
+%%WITH_ASSUAN%%lib/libkleopatraclientcore.so.0.2.1
+%%WITH_ASSUAN%%lib/libkleopatraclientgui.so
+%%WITH_ASSUAN%%lib/libkleopatraclientgui.so.0
+%%WITH_ASSUAN%%lib/libkleopatraclientgui.so.0.2.1
 lib/libkmailprivate.so.5
 lib/libkmailprivate.so.5.0.1
 lib/libknodecommon.so
@@ -873,7 +873,7 @@ share/kde4/services/kleopatra_config_appear.desktop
 share/kde4/services/kleopatra_config_dirserv.desktop
 share/kde4/services/kleopatra_config_dnorder.desktop
 share/kde4/services/kleopatra_config_gnupgsystem.desktop
-share/kde4/services/kleopatra_config_smimevalidation.desktop
+%%WITH_ASSUAN%%share/kde4/services/kleopatra_config_smimevalidation.desktop
 share/kde4/services/kleopatra_decryptverifyfiles.desktop
 share/kde4/services/kleopatra_decryptverifyfolders.desktop
 share/kde4/services/kleopatra_signencryptfiles.desktop
