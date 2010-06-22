@@ -10,8 +10,11 @@ etc/john.conf.default
 %%DATADIR%%/digits.chr
 %%DATADIR%%/genincstats.rb
 %%DATADIR%%/lanman.chr
+%%DATADIR%%/ldif2pw.pl
 %%DATADIR%%/netntlm.pl
 %%DATADIR%%/netscreen.py
 %%DATADIR%%/password.lst
 %%DATADIR%%/sap_prepare.pl
+%%DATADIR%%/sha-dump.pl
+%%DATADIR%%/sha-test.pl
 @dirrm %%DATADIR%%

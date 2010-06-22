@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://mirrors.kernel.org/openwall/projects/john/${PORTVERSION}/ \
@@ -61,9 +61,9 @@ post-patch:
 		${WRKSRC}/run/*.rb
 
 pre-build:
-	@${ECHO}
-	@${ECHO} "Building for ${ALL_TARGET}"
-	@${ECHO}
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Building for ${ALL_TARGET}"
+	@${ECHO_CMD}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/run/john ${PREFIX}/bin
