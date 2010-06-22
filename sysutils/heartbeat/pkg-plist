@@ -2,16 +2,16 @@ bin/cl_respawn
 bin/cl_status
 %%MGMT%%bin/hb_gui
 etc/ha.d/README.config
-@unexec if cmp -s %D/etc/ha.d/authkeys.sample %D/etc/ha.d/authkeys; then rm -f %D/etc/ha.d/authkeys; fi
-etc/ha.d/authkeys.sample
-@exec if [ ! -f %D/etc/ha.d/authkeys ]; then cp -p %D/%F %B/authkeys; fi
-@unexec if cmp -s %D/etc/ha.d/ha.cf.sample %D/etc/ha.d/ha.cf; then rm -f %D/etc/ha.d/ha.cf; fi
-etc/ha.d/ha.cf.sample
-@exec if [ ! -f %D/etc/ha.d/ha.cf ]; then cp -p %D/%F %B/ha.cf; fi
+%%NOPORTDOCS%%@unexec if cmp -s %D/etc/ha.d/authkeys.sample %D/etc/ha.d/authkeys; then rm -f %D/etc/ha.d/authkeys; fi
+%%NOPORTDOCS%%etc/ha.d/authkeys.sample
+%%NOPORTDOCS%%@exec if [ ! -f %D/etc/ha.d/authkeys ]; then cp -p %D/%F %B/authkeys; fi
+%%NOPORTDOCS%%@unexec if cmp -s %D/etc/ha.d/ha.cf.sample %D/etc/ha.d/ha.cf; then rm -f %D/etc/ha.d/ha.cf; fi
+%%NOPORTDOCS%%etc/ha.d/ha.cf.sample
+%%NOPORTDOCS%%@exec if [ ! -f %D/etc/ha.d/ha.cf ]; then cp -p %D/%F %B/ha.cf; fi
 etc/ha.d/harc
-@unexec if cmp -s %D/etc/ha.d/logd.cf.sample %D/etc/ha.d/logd.cf; then rm -f %D/etc/ha.d/logd.cf; fi
-etc/ha.d/logd.cf.sample
-@exec if [ ! -f %D/etc/ha.d/logd.cf ]; then cp -p %D/%F %B/logd.cf; fi
+%%NOPORTDOCS%%@unexec if cmp -s %D/etc/ha.d/logd.cf.sample %D/etc/ha.d/logd.cf; then rm -f %D/etc/ha.d/logd.cf; fi
+%%NOPORTDOCS%%etc/ha.d/logd.cf.sample
+%%NOPORTDOCS%%@exec if [ ! -f %D/etc/ha.d/logd.cf ]; then cp -p %D/%F %B/logd.cf; fi
 %%LDIRECTORD%%@unexec if cmp -s %D/etc/ha.d/ldirectord.cf.sample %D/etc/ha.d/ldirectord.cf; then rm -f %D/etc/ha.d/ldirectord.cf; fi
 %%LDIRECTORD%%etc/ha.d/ldirectord.cf.sample
 %%LDIRECTORD%%@exec if [ ! -f %D/etc/ha.d/ldirectord.cf ]; then cp -p %D/%F %B/ldirectord.cf; fi

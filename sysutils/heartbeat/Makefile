@@ -167,6 +167,7 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+.if !defined(NOPORTDOCS)
 	# Install sample configuration
 	@if [ ! -f ${PREFIX}/etc/ha.d/authkeys ]; then \
 		${CP} -p ${DOCSDIR}/authkeys ${PREFIX}/etc/ha.d/authkeys ; \
@@ -183,6 +184,7 @@ post-install:
 		${CP} -p ${DOCSDIR}/logd.cf ${PREFIX}/etc/ha.d/logd.cf ; \
 	fi
 	${CP} -p ${DOCSDIR}/logd.cf ${PREFIX}/etc/ha.d/logd.cf.sample
+.endif
 
 .if defined(WITH_LDIRECTORD)
 	@if [ ! -f ${PREFIX}/etc/ha.d/ldirectord.cf ]; then \
