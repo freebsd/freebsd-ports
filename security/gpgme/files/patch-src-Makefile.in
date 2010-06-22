@@ -1,22 +1,26 @@
---- ./src/Makefile.in.orig	2009-06-20 02:58:28.000000000 -0400
-+++ ./src/Makefile.in	2009-06-20 02:58:43.000000000 -0400
-@@ -131,13 +129,45 @@
- 	sema.h priv-io.h ath.h posix-util.c posix-sema.c posix-io.c \
- 	w32-util.c w32-sema.c dirinfo.c debug.c debug.h gpgme.c \
- 	version.c error.c ath-pth.c w32-io.c
--@HAVE_DOSISH_SYSTEM_TRUE@am__objects_5 = w32-io.lo
--am_libgpgme_pth_la_OBJECTS = $(am__objects_4) ath-pth.lo \
--	$(am__objects_5)
-+@HAVE_GPGSM_TRUE@am__objects_5 = libgpgme_pth_la-engine-gpgsm.lo \
-+@HAVE_GPGSM_TRUE@	libgpgme_pth_la-engine-assuan.lo
-+@HAVE_GPGCONF_TRUE@am__objects_6 = libgpgme_pth_la-engine-gpgconf.lo
-+@HAVE_DOSISH_SYSTEM_FALSE@am__objects_7 =  \
+--- ./src/Makefile.in.orig	2010-01-11 06:06:54.000000000 -0500
++++ ./src/Makefile.in	2010-06-21 15:31:11.000000000 -0400
+@@ -158,13 +158,52 @@
+ 	vfs-create.c gpgconf.c sema.h priv-io.h ath.h posix-util.c \
+ 	posix-sema.c posix-io.c w32-util.c w32-sema.c dirinfo.c \
+ 	debug.c debug.h gpgme.c version.c error.c ath-pth.c w32-io.c
+-@HAVE_DOSISH_SYSTEM_TRUE@am__objects_8 = w32-io.lo
+-am_libgpgme_pth_la_OBJECTS = $(am__objects_7) ath-pth.lo \
+-	$(am__objects_8)
++@HAVE_GPGSM_TRUE@am__objects_8 = libgpgme_pth_la-engine-gpgsm.lo
++@HAVE_ASSUAN_TRUE@am__objects_9 = libgpgme_pth_la-assuan-support.lo \
++@HAVE_ASSUAN_TRUE@	libgpgme_pth_la-engine-assuan.lo
++@HAVE_GPGCONF_TRUE@am__objects_10 = libgpgme_pth_la-engine-gpgconf.lo
++@HAVE_UISERVER_TRUE@am__objects_11 =  \
++@HAVE_UISERVER_TRUE@	libgpgme_pth_la-engine-uiserver.lo
++@HAVE_G13_TRUE@am__objects_12 = libgpgme_pth_la-engine-g13.lo
++@HAVE_DOSISH_SYSTEM_FALSE@am__objects_13 =  \
 +@HAVE_DOSISH_SYSTEM_FALSE@	libgpgme_pth_la-posix-util.lo \
 +@HAVE_DOSISH_SYSTEM_FALSE@	libgpgme_pth_la-posix-sema.lo \
 +@HAVE_DOSISH_SYSTEM_FALSE@	libgpgme_pth_la-posix-io.lo
-+@HAVE_DOSISH_SYSTEM_TRUE@am__objects_7 = libgpgme_pth_la-w32-util.lo \
++@HAVE_DOSISH_SYSTEM_TRUE@am__objects_13 = libgpgme_pth_la-w32-util.lo \
 +@HAVE_DOSISH_SYSTEM_TRUE@	libgpgme_pth_la-w32-sema.lo
-+am__objects_8 = libgpgme_pth_la-conversion.lo \
++am__objects_14 = libgpgme_pth_la-conversion.lo \
 +	libgpgme_pth_la-get-env.lo libgpgme_pth_la-data.lo \
 +	libgpgme_pth_la-data-fd.lo libgpgme_pth_la-data-stream.lo \
 +	libgpgme_pth_la-data-mem.lo libgpgme_pth_la-data-user.lo \
@@ -33,15 +37,18 @@
 +	libgpgme_pth_la-import.lo libgpgme_pth_la-export.lo \
 +	libgpgme_pth_la-genkey.lo libgpgme_pth_la-delete.lo \
 +	libgpgme_pth_la-edit.lo libgpgme_pth_la-getauditlog.lo \
-+	libgpgme_pth_la-opassuan.lo libgpgme_pth_la-engine.lo \
-+	libgpgme_pth_la-engine-gpg.lo $(am__objects_5) \
-+	$(am__objects_6) libgpgme_pth_la-gpgconf.lo $(am__objects_7) \
++	libgpgme_pth_la-opassuan.lo libgpgme_pth_la-passwd.lo \
++	libgpgme_pth_la-engine.lo libgpgme_pth_la-engine-gpg.lo \
++	$(am__objects_8) $(am__objects_9) $(am__objects_10) \
++	$(am__objects_11) $(am__objects_12) \
++	libgpgme_pth_la-vfs-mount.lo libgpgme_pth_la-vfs-create.lo \
++	libgpgme_pth_la-gpgconf.lo $(am__objects_13) \
 +	libgpgme_pth_la-dirinfo.lo libgpgme_pth_la-debug.lo \
 +	libgpgme_pth_la-gpgme.lo libgpgme_pth_la-version.lo \
 +	libgpgme_pth_la-error.lo
-+@HAVE_DOSISH_SYSTEM_TRUE@am__objects_9 = libgpgme_pth_la-w32-io.lo
-+am_libgpgme_pth_la_OBJECTS = $(am__objects_8) \
-+	libgpgme_pth_la-ath-pth.lo $(am__objects_9)
++@HAVE_DOSISH_SYSTEM_TRUE@am__objects_15 = libgpgme_pth_la-w32-io.lo
++am_libgpgme_pth_la_OBJECTS = $(am__objects_14) \
++	libgpgme_pth_la-ath-pth.lo $(am__objects_15)
  libgpgme_pth_la_OBJECTS = $(am_libgpgme_pth_la_OBJECTS)
  libgpgme_pth_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 -	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -51,59 +58,60 @@
  @HAVE_PTH_TRUE@am_libgpgme_pth_la_rpath = -rpath $(libdir)
  am__libgpgme_pthread_la_SOURCES_DIST = util.h conversion.c get-env.c \
  	context.h ops.h data.h data.c data-fd.c data-stream.c \
-@@ -152,8 +182,9 @@
- 	sema.h priv-io.h ath.h posix-util.c posix-sema.c posix-io.c \
- 	w32-util.c w32-sema.c dirinfo.c debug.c debug.h gpgme.c \
- 	version.c error.c ath-pthread.c w32-io.c
-+@HAVE_DOSISH_SYSTEM_TRUE@am__objects_10 = w32-io.lo
- am_libgpgme_pthread_la_OBJECTS = $(am__objects_4) ath-pthread.lo \
--	$(am__objects_5)
-+	$(am__objects_10)
+@@ -181,8 +220,9 @@
+ 	posix-sema.c posix-io.c w32-util.c w32-sema.c dirinfo.c \
+ 	debug.c debug.h gpgme.c version.c error.c ath-pthread.c \
+ 	w32-io.c
++@HAVE_DOSISH_SYSTEM_TRUE@am__objects_16 = w32-io.lo
+ am_libgpgme_pthread_la_OBJECTS = $(am__objects_7) ath-pthread.lo \
+-	$(am__objects_8)
++	$(am__objects_16)
  libgpgme_pthread_la_OBJECTS = $(am_libgpgme_pthread_la_OBJECTS)
  libgpgme_pthread_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-@@ -192,7 +223,7 @@
- 	engine-gpgconf.c gpgconf.c sema.h priv-io.h ath.h posix-util.c \
- 	posix-sema.c posix-io.c w32-util.c w32-sema.c dirinfo.c \
- 	debug.c debug.h gpgme.c version.c error.c ath.c w32-io.c
--am_libgpgme_la_OBJECTS = $(am__objects_4) ath.lo $(am__objects_5)
-+am_libgpgme_la_OBJECTS = $(am__objects_4) ath.lo $(am__objects_10)
+@@ -224,7 +264,7 @@
+ 	gpgconf.c sema.h priv-io.h ath.h posix-util.c posix-sema.c \
+ 	posix-io.c w32-util.c w32-sema.c dirinfo.c debug.c debug.h \
+ 	gpgme.c version.c error.c ath.c w32-io.c
+-am_libgpgme_la_OBJECTS = $(am__objects_7) ath.lo $(am__objects_8)
++am_libgpgme_la_OBJECTS = $(am__objects_7) ath.lo $(am__objects_16)
  libgpgme_la_OBJECTS = $(am_libgpgme_la_OBJECTS)
  libgpgme_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-@@ -465,10 +498,10 @@
+@@ -515,10 +555,10 @@
  
  # We use a global CFLAGS and CPPFLAGS setting for all library
  # versions, because then every object file is only compiled once.
--AM_CPPFLAGS = $(assuan_cppflags) @GPG_ERROR_CFLAGS@ @PTH_CPPFLAGS@ \
-+AM_CPPFLAGS = $(assuan_cppflags) @GPG_ERROR_CFLAGS@ \
+-AM_CPPFLAGS = @GPG_ERROR_CFLAGS@ @PTH_CPPFLAGS@ \
++AM_CPPFLAGS = @GPG_ERROR_CFLAGS@ \
  	@QT4_CORE_CFLAGS@
  
--AM_CFLAGS = @PTH_CFLAGS@ @GLIB_CFLAGS@ @QT4_CORE_CFLAGS@
-+AM_CFLAGS = @GLIB_CFLAGS@ @QT4_CORE_CFLAGS@
- @HAVE_W32_SYSTEM_TRUE@LTRCCOMPILE = $(LIBTOOL) --mode=compile $(RC) \
- @HAVE_W32_SYSTEM_TRUE@     `echo $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) | \
- @HAVE_W32_SYSTEM_TRUE@     sed -e 's/-I/--include-dir /g;s/-D/--define /g'`
-@@ -502,6 +535,7 @@
- libgpgme_pthread_la_LIBADD = $(assuan_libobjs) @LTLIBOBJS@ \
- 	-lpthread @GPG_ERROR_LIBS@ @NETLIBS@
+-AM_CFLAGS = @LIBASSUAN_CFLAGS@ @PTH_CFLAGS@ @GLIB_CFLAGS@ @QT4_CORE_CFLAGS@
++AM_CFLAGS = @LIBASSUAN_CFLAGS@ @GLIB_CFLAGS@ @QT4_CORE_CFLAGS@
+ @HAVE_W32_SYSTEM_TRUE@RCCOMPILE = $(RC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ @HAVE_W32_SYSTEM_TRUE@	$(AM_CPPFLAGS) $(CPPFLAGS)
+ 
+@@ -546,6 +586,7 @@
+ libgpgme_pthread_la_LIBADD = $(gpgme_res) @LIBASSUAN_LIBS@ @LTLIBOBJS@ \
+ 	-lpthread @GPG_ERROR_LIBS@
  
 +libgpgme_pth_la_CFLAGS = ${CFLAGS} @PTH_CFLAGS@
- libgpgme_pth_la_LDFLAGS = @PTH_LDFLAGS@ \
+ libgpgme_pth_la_LDFLAGS = @PTH_LDFLAGS@ $(no_undefined) $(export_symbols) \
  	$(libgpgme_version_script_cmd) -version-info \
  	@LIBGPGME_LT_CURRENT@:@LIBGPGME_LT_REVISION@:@LIBGPGME_LT_AGE@
-@@ -674,7 +708,6 @@
- @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/stpcpy.Plo@am__quote@
+@@ -760,7 +801,6 @@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ttyname_r.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/vasprintf.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/assuan-support.Plo@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ath-pth.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ath-pthread.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ath.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/conversion.Plo@am__quote@
-@@ -709,6 +742,58 @@
+@@ -798,6 +838,64 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/kdpipeiodevice.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/key.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/keylist.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-assuan-support.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-ath-pth.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-conversion.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-data-compat.Plo@am__quote@
@@ -121,9 +129,11 @@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-encrypt-sign.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-encrypt.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-engine-assuan.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-engine-g13.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-engine-gpg.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-engine-gpgconf.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-engine-gpgsm.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-engine-uiserver.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-engine.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-error.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-export.Plo@am__quote@
@@ -138,6 +148,7 @@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-op-support.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-opassuan.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-passphrase.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-passwd.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-posix-io.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-posix-sema.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-posix-util.Plo@am__quote@
@@ -149,6 +160,8 @@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-trustlist.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-verify.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-version.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-vfs-create.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-vfs-mount.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-w32-io.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-w32-sema.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgpgme_pth_la-w32-util.Plo@am__quote@
@@ -159,7 +172,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/op-support.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/opassuan.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/passphrase.Plo@am__quote@
-@@ -754,6 +839,370 @@
+@@ -846,6 +944,412 @@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
  
@@ -401,6 +414,13 @@
 +@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 +@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -c -o libgpgme_pth_la-opassuan.lo `test -f 'opassuan.c' || echo '$(srcdir)/'`opassuan.c
 +
++libgpgme_pth_la-passwd.lo: passwd.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -MT libgpgme_pth_la-passwd.lo -MD -MP -MF $(DEPDIR)/libgpgme_pth_la-passwd.Tpo -c -o libgpgme_pth_la-passwd.lo `test -f 'passwd.c' || echo '$(srcdir)/'`passwd.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libgpgme_pth_la-passwd.Tpo $(DEPDIR)/libgpgme_pth_la-passwd.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='passwd.c' object='libgpgme_pth_la-passwd.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -c -o libgpgme_pth_la-passwd.lo `test -f 'passwd.c' || echo '$(srcdir)/'`passwd.c
++
 +libgpgme_pth_la-engine.lo: engine.c
 +@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -MT libgpgme_pth_la-engine.lo -MD -MP -MF $(DEPDIR)/libgpgme_pth_la-engine.Tpo -c -o libgpgme_pth_la-engine.lo `test -f 'engine.c' || echo '$(srcdir)/'`engine.c
 +@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libgpgme_pth_la-engine.Tpo $(DEPDIR)/libgpgme_pth_la-engine.Plo
@@ -422,6 +442,13 @@
 +@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 +@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -c -o libgpgme_pth_la-engine-gpgsm.lo `test -f 'engine-gpgsm.c' || echo '$(srcdir)/'`engine-gpgsm.c
 +
++libgpgme_pth_la-assuan-support.lo: assuan-support.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -MT libgpgme_pth_la-assuan-support.lo -MD -MP -MF $(DEPDIR)/libgpgme_pth_la-assuan-support.Tpo -c -o libgpgme_pth_la-assuan-support.lo `test -f 'assuan-support.c' || echo '$(srcdir)/'`assuan-support.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libgpgme_pth_la-assuan-support.Tpo $(DEPDIR)/libgpgme_pth_la-assuan-support.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='assuan-support.c' object='libgpgme_pth_la-assuan-support.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -c -o libgpgme_pth_la-assuan-support.lo `test -f 'assuan-support.c' || echo '$(srcdir)/'`assuan-support.c
++
 +libgpgme_pth_la-engine-assuan.lo: engine-assuan.c
 +@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -MT libgpgme_pth_la-engine-assuan.lo -MD -MP -MF $(DEPDIR)/libgpgme_pth_la-engine-assuan.Tpo -c -o libgpgme_pth_la-engine-assuan.lo `test -f 'engine-assuan.c' || echo '$(srcdir)/'`engine-assuan.c
 +@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libgpgme_pth_la-engine-assuan.Tpo $(DEPDIR)/libgpgme_pth_la-engine-assuan.Plo
@@ -435,6 +462,34 @@
 +@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='engine-gpgconf.c' object='libgpgme_pth_la-engine-gpgconf.lo' libtool=yes @AMDEPBACKSLASH@
 +@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 +@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -c -o libgpgme_pth_la-engine-gpgconf.lo `test -f 'engine-gpgconf.c' || echo '$(srcdir)/'`engine-gpgconf.c
++
++libgpgme_pth_la-engine-uiserver.lo: engine-uiserver.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -MT libgpgme_pth_la-engine-uiserver.lo -MD -MP -MF $(DEPDIR)/libgpgme_pth_la-engine-uiserver.Tpo -c -o libgpgme_pth_la-engine-uiserver.lo `test -f 'engine-uiserver.c' || echo '$(srcdir)/'`engine-uiserver.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libgpgme_pth_la-engine-uiserver.Tpo $(DEPDIR)/libgpgme_pth_la-engine-uiserver.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='engine-uiserver.c' object='libgpgme_pth_la-engine-uiserver.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -c -o libgpgme_pth_la-engine-uiserver.lo `test -f 'engine-uiserver.c' || echo '$(srcdir)/'`engine-uiserver.c
++
++libgpgme_pth_la-engine-g13.lo: engine-g13.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -MT libgpgme_pth_la-engine-g13.lo -MD -MP -MF $(DEPDIR)/libgpgme_pth_la-engine-g13.Tpo -c -o libgpgme_pth_la-engine-g13.lo `test -f 'engine-g13.c' || echo '$(srcdir)/'`engine-g13.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libgpgme_pth_la-engine-g13.Tpo $(DEPDIR)/libgpgme_pth_la-engine-g13.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='engine-g13.c' object='libgpgme_pth_la-engine-g13.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -c -o libgpgme_pth_la-engine-g13.lo `test -f 'engine-g13.c' || echo '$(srcdir)/'`engine-g13.c
++
++libgpgme_pth_la-vfs-mount.lo: vfs-mount.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -MT libgpgme_pth_la-vfs-mount.lo -MD -MP -MF $(DEPDIR)/libgpgme_pth_la-vfs-mount.Tpo -c -o libgpgme_pth_la-vfs-mount.lo `test -f 'vfs-mount.c' || echo '$(srcdir)/'`vfs-mount.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libgpgme_pth_la-vfs-mount.Tpo $(DEPDIR)/libgpgme_pth_la-vfs-mount.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='vfs-mount.c' object='libgpgme_pth_la-vfs-mount.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -c -o libgpgme_pth_la-vfs-mount.lo `test -f 'vfs-mount.c' || echo '$(srcdir)/'`vfs-mount.c
++
++libgpgme_pth_la-vfs-create.lo: vfs-create.c
++@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -MT libgpgme_pth_la-vfs-create.lo -MD -MP -MF $(DEPDIR)/libgpgme_pth_la-vfs-create.Tpo -c -o libgpgme_pth_la-vfs-create.lo `test -f 'vfs-create.c' || echo '$(srcdir)/'`vfs-create.c
++@am__fastdepCC_TRUE@	mv -f $(DEPDIR)/libgpgme_pth_la-vfs-create.Tpo $(DEPDIR)/libgpgme_pth_la-vfs-create.Plo
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='vfs-create.c' object='libgpgme_pth_la-vfs-create.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -c -o libgpgme_pth_la-vfs-create.lo `test -f 'vfs-create.c' || echo '$(srcdir)/'`vfs-create.c
 +
 +libgpgme_pth_la-gpgconf.lo: gpgconf.c
 +@am__fastdepCC_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgpgme_pth_la_CFLAGS) $(CFLAGS) -MT libgpgme_pth_la-gpgconf.lo -MD -MP -MF $(DEPDIR)/libgpgme_pth_la-gpgconf.Tpo -c -o libgpgme_pth_la-gpgconf.lo `test -f 'gpgconf.c' || echo '$(srcdir)/'`gpgconf.c
@@ -529,4 +584,4 @@
 +
  .cpp.o:
  @am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
- @am__fastdepCXX_TRUE@	mv -f $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+ @am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
