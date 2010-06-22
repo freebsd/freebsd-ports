@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -48,6 +48,7 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Filter::LevelMatch.3 \
 		Log::Log4perl::Filter::LevelRange.3 \
 		Log::Log4perl::Filter::StringMatch.3 \
+		Log::Log4perl::InternalDebug.3 \
 		Log::Log4perl::JavaMap.3 \
 		Log::Log4perl::JavaMap::ConsoleAppender.3 \
 		Log::Log4perl::JavaMap::FileAppender.3 \
