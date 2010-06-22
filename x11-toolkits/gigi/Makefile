@@ -20,6 +20,8 @@ LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		boost_python.4:${PORTSDIR}/devel/boost-python-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+BROKEN=		does not compile
+
 USE_GCC=	4.4+
 USE_SCONS=	yes
 SCONS_ARGS=	prefix="" pkgconfigdir=""
