@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	flock
-PORTVERSION=	2.5.6
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 DISTVERSIONSUFFIX=	.en-US.linux-i686
 CATEGORIES=	www
-MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/%SUBDIR%/ \
-		http://ftp.osuosl.org/pub/%SUBDIR%/ \
-		http://saimei.acc.umu.se/mirror/%SUBDIR%/ \
-		http://www.gtlib.gatech.edu/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}
+MASTER_SITES=	http://dl01.flock.com/releases/${PORTVERSION}/
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The social web browser
 
+DEPRECATED=	Flock 3 moves from Firefox to Chromium
 BIN_NAME=	flock-browser
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
