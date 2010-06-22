@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.snt.utwente.nl/pub/games/urbanterror/ \
 PKGNAMESUFFIX=	-data
 DISTNAME=	UrbanTerror_${PORTVERSION:S/.//}_FULL
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Standalone realism based mod originally for Quake III Arena
 
 USE_ZIP=	yes
