@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-WITHOUT_X11=    yes
+_OPTIONS_OK=	yes
+WITHOUT_DBUS=	yes
+WITHOUT_X11=	yes
 PKGNAMESUFFIX=	-nox11
 
-MASTERDIR=      ${.CURDIR}/../emacs
+MASTERDIR=	${.CURDIR}/../emacs
 LATEST_LINK=	emacs-nox11
 
 .include "${MASTERDIR}/Makefile"
