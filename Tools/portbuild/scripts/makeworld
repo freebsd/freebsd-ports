@@ -28,13 +28,13 @@ export NO_FSCHG=1
 
 case "$branch" in
     6*)
-	export SRCBRANCH="-r RELENG_6"
+	export SRCBRANCH="-r RELENG_6_4"
 	;;
     7*)
-	export SRCBRANCH="-r RELENG_7"
+	export SRCBRANCH="-r RELENG_7_1"
 	;;
     8*)
-	export SRCBRANCH="-r RELENG_8"
+	export SRCBRANCH="-r RELENG_8_0"
 	;;
     9*)
     	export SRCBRANCH=

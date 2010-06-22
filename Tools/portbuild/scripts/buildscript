@@ -170,7 +170,6 @@ if [ $phase = 1 ]; then
 ./compat/linux/proc
 ./usr/share/man/cat*/*
 ./usr/local/etc/apache
-./usr/local/etc/apache2
 ./usr/local/news
 ./usr/local/share/xml
 ./usr/local/etc/gconf
@@ -236,7 +235,6 @@ else
 ./var/tmp/*
 ./usr/share/man/cat*/*
 ./usr/local/etc/apache
-./usr/local/etc/apache2
 ./usr/local/news
 ./usr/local/share/xml
 ./usr/local/etc/gconf
