@@ -230,10 +230,6 @@ CONFIGURE_ARGS=	--with-default-user=${SQUID_UID} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on 6.X
-.endif
-
 # Authentication methods and modules:
 
 basic_auth=	DB NCSA PAM MSNT SMB squid_radius_auth
