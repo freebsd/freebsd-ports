@@ -53,9 +53,15 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_limit_new.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_limit_new.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_limit_new.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_quality.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_quality.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_quality.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_regexp.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_regexp.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_regexp.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_require_field.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_require_field.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_require_field.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_seen.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_seen.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_seen.pyo
@@ -68,6 +74,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb_favorites.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb_favorites.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb_favorites.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_backlog.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_backlog.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_backlog.pyo
