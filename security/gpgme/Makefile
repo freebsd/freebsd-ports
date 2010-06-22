@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -25,14 +24,19 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gpgme
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gpgme \
+		--with-g13=no
 
 INFO=		gpgme
 PORTDOCS=	AUTHORS ChangeLog COPYING COPYING.LESSER INSTALL \
 		NEWS README THANKS TODO
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 OPTIONS=	GNUPG1 "Use GNUPG 1.x instead of GNUPG 2.x" off \
-		PTH "Build alternate lib with GNU portable threads" off
+		PTH "Build alternate lib with GNU portable threads" off \
+		UISERVER "Enable the GNUPG UI Server support" off
 
 .include <bsd.port.pre.mk>
 
@@ -48,6 +52,7 @@ RUN_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--with-gpg=${LOCALBASE}/bin/gpg2 \
 		--with-gpgconf=${LOCALBASE}/bin/gpgconf
 .if exists(${LOCALBASE}/bin/gpgsm)
+LIB_DEPENDS+=	assuan.0:${PORTSDIR}/security/libassuan
 CONFIGURE_ARGS+=--with-gpgsm=${LOCALBASE}/bin/gpgsm
 .else
 CONFIGURE_ARGS+=--with-gpgsm=no
@@ -62,11 +67,15 @@ CONFIGURE_ARGS+=--without-pth --without-pth-test
 PLIST_SUB+=	WITH_PTH='@comment '
 .endif
 
+.if defined(WITH_UISERVER)
+CONFIGURE_ARGS+=--enable-fd-passing
+LIB_DEPENDS+=	assuan.0:${PORTSDIR}/security/libassuan
+.endif
+
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|EOF||g' ${WRKSRC}/assuan/assuan-errors.c
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 					${WRKSRC}/${CONFIGURE_SCRIPT} \
 					${WRKSRC}/src/Makefile.in \
