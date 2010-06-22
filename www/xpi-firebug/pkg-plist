@@ -104,6 +104,8 @@
 %%XPI_XPIDIR%%/locale/ca-AD/firebug.dtd
 %%XPI_XPIDIR%%/locale/ca-AD/firebug.properties
 %%XPI_XPIDIR%%/locale/cs-CZ/editors.dtd
+%%XPI_XPIDIR%%/locale/cs-CZ/firebug-amo.properties
+%%XPI_XPIDIR%%/locale/cs-CZ/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/cs-CZ/firebug.dtd
 %%XPI_XPIDIR%%/locale/cs-CZ/firebug.properties
 %%XPI_XPIDIR%%/locale/da-DK/editors.dtd
@@ -146,9 +148,13 @@
 %%XPI_XPIDIR%%/locale/hr-HR/firebug.dtd
 %%XPI_XPIDIR%%/locale/hr-HR/firebug.properties
 %%XPI_XPIDIR%%/locale/hu-HU/editors.dtd
+%%XPI_XPIDIR%%/locale/hu-HU/firebug-amo.properties
+%%XPI_XPIDIR%%/locale/hu-HU/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/hu-HU/firebug.dtd
 %%XPI_XPIDIR%%/locale/hu-HU/firebug.properties
 %%XPI_XPIDIR%%/locale/hy-AM/editors.dtd
+%%XPI_XPIDIR%%/locale/hy-AM/firebug-amo.properties
+%%XPI_XPIDIR%%/locale/hy-AM/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/hy-AM/firebug.dtd
 %%XPI_XPIDIR%%/locale/hy-AM/firebug.properties
 %%XPI_XPIDIR%%/locale/is-IS/editors.dtd
@@ -157,6 +163,8 @@
 %%XPI_XPIDIR%%/locale/is-IS/firebug.dtd
 %%XPI_XPIDIR%%/locale/is-IS/firebug.properties
 %%XPI_XPIDIR%%/locale/it-IT/editors.dtd
+%%XPI_XPIDIR%%/locale/it-IT/firebug-amo.properties
+%%XPI_XPIDIR%%/locale/it-IT/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/it-IT/firebug.dtd
 %%XPI_XPIDIR%%/locale/it-IT/firebug.properties
 %%XPI_XPIDIR%%/locale/ja-JP/editors.dtd
@@ -179,6 +187,8 @@
 %%XPI_XPIDIR%%/locale/pl-PL/firebug.dtd
 %%XPI_XPIDIR%%/locale/pl-PL/firebug.properties
 %%XPI_XPIDIR%%/locale/pt-BR/editors.dtd
+%%XPI_XPIDIR%%/locale/pt-BR/firebug-amo.properties
+%%XPI_XPIDIR%%/locale/pt-BR/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/pt-BR/firebug.dtd
 %%XPI_XPIDIR%%/locale/pt-BR/firebug.properties
 %%XPI_XPIDIR%%/locale/pt-PT/editors.dtd
@@ -213,6 +223,8 @@
 %%XPI_XPIDIR%%/locale/tr-TR/firebug.dtd
 %%XPI_XPIDIR%%/locale/tr-TR/firebug.properties
 %%XPI_XPIDIR%%/locale/uk-UA/editors.dtd
+%%XPI_XPIDIR%%/locale/uk-UA/firebug-amo.properties
+%%XPI_XPIDIR%%/locale/uk-UA/firebug-tracing.properties
 %%XPI_XPIDIR%%/locale/uk-UA/firebug.dtd
 %%XPI_XPIDIR%%/locale/uk-UA/firebug.properties
 %%XPI_XPIDIR%%/locale/vi-VN/editors.dtd
@@ -242,6 +254,10 @@
 %%XPI_XPIDIR%%/skin/classic/breakNextArmed.gif
 %%XPI_XPIDIR%%/skin/classic/breakNextArmed.png
 %%XPI_XPIDIR%%/skin/classic/breakNextDisabled.png
+%%XPI_XPIDIR%%/skin/classic/breakOn/breakOnErrorSingle.png
+%%XPI_XPIDIR%%/skin/classic/breakOn/breakOnMutateSingle.png
+%%XPI_XPIDIR%%/skin/classic/breakOn/breakOnNextSingle.png
+%%XPI_XPIDIR%%/skin/classic/breakOn/breakOnXHRSingle.png
 %%XPI_XPIDIR%%/skin/classic/breakpoint.png
 %%XPI_XPIDIR%%/skin/classic/breakpointCondition.png
 %%XPI_XPIDIR%%/skin/classic/breakpointDisabled.png
@@ -352,6 +368,7 @@
 %%XPI_XPIDIR%%/skin/classic/textEditorBorders.png
 %%XPI_XPIDIR%%/skin/classic/textEditorCorners.png
 %%XPI_XPIDIR%%/skin/classic/trace/clear.png
+%%XPI_XPIDIR%%/skin/classic/trace/up.png
 %%XPI_XPIDIR%%/skin/classic/traceConsole.css
 %%XPI_XPIDIR%%/skin/classic/warningIcon.png
 %%XPI_XPIDIR%%/skin/classic/win/close.png
@@ -367,6 +384,9 @@
 %%XPI_XPIDIR%%/skin/classic/win/min.png
 %%XPI_XPIDIR%%/skin/classic/win/minActive.png
 %%XPI_XPIDIR%%/skin/classic/win/minHover.png
+%%XPI_XPIDIR%%/skin/classic/win/off.png
+%%XPI_XPIDIR%%/skin/classic/win/offActive.png
+%%XPI_XPIDIR%%/skin/classic/win/offHover.png
 %%XPI_XPIDIR%%/skin/classic/win/panel.css
 %%XPI_XPIDIR%%/skin/classic/win/pause.png
 %%XPI_XPIDIR%%/skin/classic/win/pauseActive.png
@@ -437,6 +457,7 @@
 @dirrm %%XPI_XPIDIR%%/locale
 @dirrm %%XPI_XPIDIR%%/platform/Darwin
 @dirrm %%XPI_XPIDIR%%/platform
+@dirrm %%XPI_XPIDIR%%/skin/classic/breakOn
 @dirrm %%XPI_XPIDIR%%/skin/classic/mac
 @dirrm %%XPI_XPIDIR%%/skin/classic/trace
 @dirrm %%XPI_XPIDIR%%/skin/classic/win

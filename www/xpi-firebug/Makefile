@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	firebug
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.4
 DISTVERSIONSUFFIX=	-fx
 PORTEPOCH=	3
 CATEGORIES=	www
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Lets you edit, debug, and monitor CSS, HTML, and JS
+
+LICENSE=	BSD
 
 XPI_NUM=	1843
 XPI_ID=		firebug@software.joehewitt.com
