@@ -1,0 +1,32 @@
+Various package build nodes require us to set up TCP tunnels to talk
+to them.  (Some systems don't pass certain ports; some systems have
+firewalls; some systems have multiple nodes on one IP address.)
+
+These have always been hardcoded in crontab lines of the form "while true;
+do <hardcoded-tunnel-stuff>; done".  Other than the magic hardcoding,
+there's a problem with this.  When the tunnel command exits, such as if
+the host suddenly becoming unreachable, it doesn't send mail -- instead
+it just accumulates a huge file in /var/spool/clientmqueue which never
+gets sent.  To add insult to injury, /var is on the root partition on
+pointyhat.
+
+To cure these problems, we now have
+
+   /var/portbuild/conf/<arch>/dotunnel.XXX
+
+where XXX corresponds to one line in the old crontab.  Each script sets
+up one tunnel, sends mail to the user(s) in
+
+  /var/portbuild/<arch>/portbuild.conf
+
+once the command exits, and then sleeps.
+
+Why not put it in /var/portbuild/<arch> you ask?  That directory is
+propogated to all nodes for that arch.  This would be a security leak.
+The intention is that none of the dotunnel files will be checked into
+CVS.
+
+Final note: each script figures out which arch it is for by fiddling
+with its $0, so invoke it with its full pathname.
+
+mcl
