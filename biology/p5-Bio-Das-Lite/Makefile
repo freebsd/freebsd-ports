@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Bio-Das-Lite
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the DAS (HTTP+XML) Protocol
 
 BUILDS_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
@@ -19,7 +19,7 @@ BUILDS_DEPENDS=	p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-WWW-Curl>=4.07:${PORTSDIR}/www/p5-WWW-Curl
 RUN_DEPENDS=	${BUILDS_DEPENDS}
 
-PERL_CONFIGURE=	YES
+PERL_MODBUILD=	YES
 
 MAN3=	Bio::Das::Lite.3
 

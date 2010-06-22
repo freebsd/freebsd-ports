@@ -1,4 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Das/Lite/.packlist
 %%SITE_PERL%%/Bio/Das/Lite.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Das/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Das
