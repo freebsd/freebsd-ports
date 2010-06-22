@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-NYTProf
-PORTVERSION=	3.11
+PORTVERSION=	4.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,8 +29,8 @@ MAN3=	Devel::NYTProf.3 \
 	Devel::NYTProf::Apache.3 \
 	Devel::NYTProf::Core.3 \
 	Devel::NYTProf::Data.3 \
+	Devel::NYTProf::FileInfo.3 \
 	Devel::NYTProf::ReadStream.3 \
-	Devel::NYTProf::Reader.3 \
 	Devel::NYTProf::Run.3 \
 	Devel::NYTProf::Util.3
 
