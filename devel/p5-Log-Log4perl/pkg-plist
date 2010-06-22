@@ -27,6 +27,7 @@ bin/l4p-tmpl
 %%SITE_PERL%%/Log/Log4perl/Filter/LevelMatch.pm
 %%SITE_PERL%%/Log/Log4perl/Filter/LevelRange.pm
 %%SITE_PERL%%/Log/Log4perl/Filter/StringMatch.pm
+%%SITE_PERL%%/Log/Log4perl/InternalDebug.pm
 %%SITE_PERL%%/Log/Log4perl/JavaMap.pm
 %%SITE_PERL%%/Log/Log4perl/JavaMap/ConsoleAppender.pm
 %%SITE_PERL%%/Log/Log4perl/JavaMap/FileAppender.pm
