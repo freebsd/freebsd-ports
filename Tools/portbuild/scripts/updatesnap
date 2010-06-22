@@ -5,7 +5,7 @@
 
 # head is handled specially
 HEAD_BRANCH="9"
-NON_HEAD_BRANCHES="6 7 8"
+NON_HEAD_BRANCHES=""
 
 base=/a/snap
 zbase=a/snap
@@ -42,13 +42,41 @@ echo ${fulldate} > cvsdone
 snapdate=$(stamp ${fulldate})
 zfs snapshot ${zbase}/src-${HEAD_BRANCH}@${snapdate}
 
-for branch in $NON_HEAD_BRANCHES; do
-  cd $base/src-${branch}
-  fulldate=$(date)
-  cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_${branch}
-  echo ${fulldate} > cvsdone
-  snapdate=$(stamp ${fulldate})
-  zfs snapshot ${zbase}/src-${branch}@${snapdate}
-done
+# XXX
+# Special casing for 6 and 8 to test building against .0 src ABI
+# This requires some remodelling after we're done with all branches
+# XXX
+
+cd $base/src-6
+fulldate=$(date)
+cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_6_4
+echo ${fulldate} > cvsdone
+snapdate=$(stamp ${fulldate})
+zfs snapshot ${zbase}/src-6@${snapdate}
+
+cd $base/src-7
+fulldate=$(date)
+cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_7_1
+echo ${fulldate} > cvsdone
+snapdate=$(stamp ${fulldate})
+zfs snapshot ${zbase}/src-7@${snapdate}
+
+cd $base/src-8
+fulldate=$(date)
+cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_8_0
+echo ${fulldate} > cvsdone
+snapdate=$(stamp ${fulldate})
+zfs snapshot ${zbase}/src-8@${snapdate}
+
+# EO XXX
+
+#for branch in $NON_HEAD_BRANCHES; do
+#  cd $base/src-${branch}
+#  fulldate=$(date)
+#  cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_${branch}
+#  echo ${fulldate} > cvsdone
+#  snapdate=$(stamp ${fulldate})
+#  zfs snapshot ${zbase}/src-${branch}@${snapdate}
+#done
 
 finish 0
