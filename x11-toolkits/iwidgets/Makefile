@@ -19,10 +19,12 @@ LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
 
 NO_BUILD=	yes
 HAS_CONFIGURE=	yes
+USE_TCL=	84+
+USE_TK=		84+
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-tcl=${LOCALBASE}/lib/tcl8.4 \
-		--with-tk=${LOCALBASE}/lib/tk8.4 \
-		--with-itcl=${LOCALBASE}/lib/itcl3.3
+		--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--with-itcl=${LOCALBASE}
 SUB_LIST=	IWIDGETS=${DISTNAME}
 SUB_FILES=	pkg-message
 PLIST_SUB=	IWIDGETS=${DISTNAME}
