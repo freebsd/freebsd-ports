@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	gnocky
-PORTVERSION=	0.0.6
-PORTREVISION=	7
+PORTVERSION=	0.0.7
 CATEGORIES=	comms
 MASTER_SITES=	http://www.gnokii.org/download/gnocky/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical (GTK+2) frontend for gnokii
 
 LIB_DEPENDS=	gnokii.6:${PORTSDIR}/comms/gnokii
 
+USE_BZIP2=	yes
 USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
