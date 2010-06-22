@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	flock
-DISTVERSION=	2.5
-PORTREVISION=	3
+DISTVERSION=	2.6.0
 CATEGORIES=	www
-MASTER_SITES=	http://ftp.osuosl.org/pub/${PORTNAME}/releases/${PORTVERSION}/ \
-		http://flock.vo.llnwd.net/o23/archive/${PORTNAME}/releases/${PORTVERSION}/
+MASTER_SITES=	http://mirror4.flock.com/source/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -19,6 +17,7 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
+DEPRECATED=	Flock 3 moves from Firefox to Chromium
 USE_GECKO=	gecko
 MOZILLA_NAME=	Flock
 USE_MOZILLA=	-png -nss -dbm -jpeg
