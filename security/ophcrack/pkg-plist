@@ -1,8 +1,0 @@
-bin/bkhive
-bin/ophcrack
-bin/samdump2
-%%DATADIR%%/pixmaps/logo_os.xpm
-%%DATADIR%%/pixmaps/os.ico
-%%DATADIR%%/pixmaps/os.xpm
-@dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%
