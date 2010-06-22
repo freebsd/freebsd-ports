@@ -1,12 +1,8 @@
-@unexec if cmp -s %D/etc/tinyproxy.conf-dist %D/etc/tinyproxy.conf; then rm -f %D/etc/tinyproxy.conf; fi
-etc/tinyproxy.conf-dist
+@unexec if cmp -s %D/etc/tinyproxy.conf.sample %D/etc/tinyproxy.conf; then rm -f %D/etc/tinyproxy.conf; fi
+etc/tinyproxy.conf.sample
 @exec if [ ! -f %D/etc/tinyproxy.conf ] ; then cp -p %D/%F %B/tinyproxy.conf; fi
 sbin/tinyproxy
-%%DATADIR%%/HTML_VARIABLES
 %%DATADIR%%/debug.html
-%%DATADIR%%/debug.html.dist
 %%DATADIR%%/default.html
-%%DATADIR%%/default.html.dist
 %%DATADIR%%/stats.html
-%%DATADIR%%/stats.html.dist
 @dirrm %%DATADIR%%

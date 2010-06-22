@@ -1,0 +1,15 @@
+--- ./etc/Makefile.in.orig	2010-06-21 10:10:59.000000000 -0400
++++ ./etc/Makefile.in	2010-06-21 10:11:42.000000000 -0400
+@@ -248,8 +248,10 @@
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
++	  nfile="$$files.sample"; \
++	  cp $$files $$nfile; \
++	  echo " $(INSTALL_DATA) $$nfile '$(DESTDIR)$(sysconfdir)'"; \
++	  $(INSTALL_DATA) $$nfile "$(DESTDIR)$(sysconfdir)" || exit $$?; \
+ 	done
+ 
+ uninstall-sysconfDATA:

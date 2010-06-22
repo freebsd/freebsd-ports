@@ -6,25 +6,32 @@
 #
 
 PORTNAME=	tinyproxy
-PORTVERSION=	1.6.5
+PORTVERSION=	1.8.2
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	https://www.banu.com/pub/tinyproxy/1.6/
+MASTER_SITES=	https://www.banu.com/pub/tinyproxy/1.8/
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A small, efficient HTTP proxy server
 
+BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc\
+		xsltproc:${PORTSDIR}/textproc/libxslt\
+		xmllint:${PORTSDIR}/textproc/libxml2 \
+		${LOCALBASE}/share/xsl/docbook/lib/lib.xsl:${PORTSDIR}/textproc/docbook-xsl
+
 USE_RC_SUBR=	tinyproxy.sh
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
-		--with-config=${PREFIX}/etc/tinyproxy.conf \
-		--program-transform-name=""
 MAKE_JOBS_SAFE=	yes
+CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
+		--program-transform-name="" \
+		--disable-silent-rules
 
 MAN8=		tinyproxy.8
+MAN5=		tinyproxy.conf.5
 
-OPTIONS=	REVERSE "Enable reverse proxy support" Off
+OPTIONS=	REVERSE "Enable reverse proxy support" Off \
+		TRANSPARENT "Enable transparent proxy support" Off
 
 .include <bsd.port.pre.mk>
 
@@ -32,16 +39,30 @@ OPTIONS=	REVERSE "Enable reverse proxy support" Off
 CONFIGURE_ARGS+=	--enable-reverse
 .endif
 
+.if defined(WITH_TRANSPARENT)
+CONFIGURE_ARGS+=	--enable-transparent
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/tinyproxy/tinyproxy.conf|${PREFIX}/etc/tinyproxy.conf|' \
-	  ${WRKSRC}/doc/tinyproxy.8
+	  ${WRKSRC}/docs/man8/tinyproxy.txt.in
+	@${REINPLACE_CMD} -e 's|/var/run/tinyproxy/tinyproxy.pid|/var/run/tinyproxy.pid|' \
+	  ${WRKSRC}/docs/man8/tinyproxy.txt.in
+	@${REINPLACE_CMD} -e 's|/var/log/tinyproxy/tinyproxy.log|/var/log/tinyproxy.log|' \
+	  ${WRKSRC}/docs/man8/tinyproxy.txt.in
+	@${REINPLACE_CMD} -e 's|/etc/tinyproxy/tinyproxy.conf|${PREFIX}/etc/tinyproxy.conf|' \
+	  ${WRKSRC}/docs/man5/tinyproxy.conf.txt.in
 	@${REINPLACE_CMD} -e 's|/usr/share/tinyproxy|${DATADIR}|' \
-	  ${WRKSRC}/doc/tinyproxy.conf
+	  ${WRKSRC}/etc/tinyproxy.conf.in
+	@${REINPLACE_CMD} -e 's|/run/tinyproxy/|/run/|' \
+	  ${WRKSRC}/etc/tinyproxy.conf.in
+	@${REINPLACE_CMD} -e 's|/log/tinyproxy/|/log/|' \
+	  ${WRKSRC}/etc/tinyproxy.conf.in
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/tinyproxy.conf ]; then \
-		${CP} -p ${PREFIX}/etc/tinyproxy.conf-dist \
+		${CP} -p ${PREFIX}/etc/tinyproxy.conf.sample \
 		${PREFIX}/etc/tinyproxy.conf ; \
 	fi
 

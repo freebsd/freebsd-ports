@@ -1,0 +1,11 @@
+--- ./configure.orig	2010-06-21 10:54:53.000000000 -0400
++++ ./configure	2010-06-21 10:55:11.000000000 -0400
+@@ -764,7 +764,7 @@
+ datadir='${datarootdir}'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+-localstatedir='${prefix}/var'
++localstatedir='/var'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+ docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
