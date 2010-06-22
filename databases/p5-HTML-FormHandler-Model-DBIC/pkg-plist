@@ -2,6 +2,8 @@
 bin/form_generator.pl
 %%SITE_PERL%%/HTML/FormHandler/Generator/DBIC.pm
 %%SITE_PERL%%/HTML/FormHandler/Model/DBIC.pm
+%%SITE_PERL%%/HTML/FormHandler/Model/DBIC/TypeMap.pm
+%%SITE_PERL%%/HTML/FormHandler/TraitFor/DBICFields.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/Model/DBIC/.packlist
 @dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/Model/DBIC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/Generator
@@ -9,6 +11,8 @@ bin/form_generator.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Generator
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/Model/DBIC
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Model
+@dirrmtry %%SITE_PERL%%/HTML/FormHandler/TraitFor
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler
 @dirrmtry %%SITE_PERL%%/HTML
