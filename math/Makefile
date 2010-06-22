@@ -156,6 +156,7 @@
     SUBDIR += lensnns
     SUBDIR += libRmath
     SUBDIR += libjbigi
+    SUBDIR += liblbfgs
     SUBDIR += libmath++
     SUBDIR += libneural
     SUBDIR += liborigin
