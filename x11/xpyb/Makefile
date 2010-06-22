@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpyb
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	dist
@@ -22,15 +22,17 @@ LIB_DEPENDS=	xcb.2:${PORTSDIR}/x11/libxcb
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+
 USE_GNOME=	gnomehack
-PORTDOCS=	README
+PORTDOCS=	README COPYING INSTALL NEWS XcbPythonBinding.txt
 
 GNU_CONFIGURE=yes
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-I${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-I${LOCALBASE}/lib"
 
-.if !defined(NOPORTDOCS)
-post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL} ${WRKSRC}/README ${DOCSDIR}
+.include <bsd.port.pre.mk>
+
+.if defined(NOPORTDOCS)
+post-patch:
+	@${REINPLACE_CMD} -e 's/^\(install-data-am:.*\)install-dist_docDATA\(.*\)$$/\1\2/' \
+		-e 's/^\(SUBDIRS =.*\)doc\(.*\)$$/\1\2/' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
