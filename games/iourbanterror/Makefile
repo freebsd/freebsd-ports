@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://ftp.snt.utwente.nl/pub/games/urbanterror/iourbanterror/source/complete/
 DISTNAME=	ioUrbanTerrorSource_${DISTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Quake 3 engine modified for Urban Terror (based on ioquake3)
 
 RUN_DEPENDS=	${Q3DIR}/q3ut4:${PORTSDIR}/games/urbanterror-data
