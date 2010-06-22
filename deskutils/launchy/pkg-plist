@@ -1,84 +1,98 @@
 bin/launchy
-lib/launchy/libplatform_unix.so
 lib/launchy/plugins/icons/calcy.png
+lib/launchy/plugins/icons/copy.png
+lib/launchy/plugins/icons/opencontainer.png
+lib/launchy/plugins/icons/properties.png
+lib/launchy/plugins/icons/run.png
 lib/launchy/plugins/icons/runner.png
+lib/launchy/plugins/icons/verby.png
 lib/launchy/plugins/icons/weby.png
 lib/launchy/plugins/libcalcy.so
 lib/launchy/plugins/libgcalc.so
 lib/launchy/plugins/librunner.so
+lib/launchy/plugins/libverby.so
 lib/launchy/plugins/libweby.so
 share/applications/launchy.desktop
-share/launchy/skins/Black Glass/alpha.png
-share/launchy/skins/Black Glass/author.txt
-share/launchy/skins/Black Glass/background.png
-share/launchy/skins/Black Glass/background_nc.png
-share/launchy/skins/Black Glass/mask.png
-share/launchy/skins/Black Glass/mask_nc.png
-share/launchy/skins/Black Glass/misc.txt
-share/launchy/skins/Black Glass/style.qss
-share/launchy/skins/Default/alpha.png
+share/launchy/skins/Black_Glass/author.txt
+share/launchy/skins/Black_Glass/frame.png
+share/launchy/skins/Black_Glass/scrollBack.png
+share/launchy/skins/Black_Glass/scrollDown.png
+share/launchy/skins/Black_Glass/scrollUp.png
+share/launchy/skins/Black_Glass/spinner.mng
+share/launchy/skins/Black_Glass/style.qss
+share/launchy/skins/Black_Glass_Wide/author.txt
+share/launchy/skins/Black_Glass_Wide/frame.png
+share/launchy/skins/Black_Glass_Wide/opsButton.png
+share/launchy/skins/Black_Glass_Wide/opsButtonPressed.png
+share/launchy/skins/Black_Glass_Wide/scrollBack.png
+share/launchy/skins/Black_Glass_Wide/scrollDown.png
+share/launchy/skins/Black_Glass_Wide/scrollUp.png
+share/launchy/skins/Black_Glass_Wide/spinner.mng
+share/launchy/skins/Black_Glass_Wide/style.qss
 share/launchy/skins/Default/author.txt
-share/launchy/skins/Default/background.png
 share/launchy/skins/Default/background_nc.png
 share/launchy/skins/Default/closeButton.png
 share/launchy/skins/Default/closeButtonPressed.png
-share/launchy/skins/Default/mask.png
+share/launchy/skins/Default/frame.png
 share/launchy/skins/Default/mask_nc.png
-share/launchy/skins/Default/misc.txt
 share/launchy/skins/Default/opsButton.png
 share/launchy/skins/Default/opsButtonPressed.png
 share/launchy/skins/Default/scrollBack.png
 share/launchy/skins/Default/scrollDown.png
 share/launchy/skins/Default/scrollUp.png
-share/launchy/skins/Default/scroller.png
+share/launchy/skins/Default/spinner.mng
 share/launchy/skins/Default/style.qss
-share/launchy/skins/Mercury/alpha.png
 share/launchy/skins/Mercury/author.txt
-share/launchy/skins/Mercury/background.png
-share/launchy/skins/Mercury/down_arrow.png
-share/launchy/skins/Mercury/mask.png
-share/launchy/skins/Mercury/misc.txt
-share/launchy/skins/Mercury/pos.txt
+share/launchy/skins/Mercury/frame.png
+share/launchy/skins/Mercury/scrollBack.png
+share/launchy/skins/Mercury/scrollDown.png
+share/launchy/skins/Mercury/scrollUp.png
+share/launchy/skins/Mercury/spinner.mng
 share/launchy/skins/Mercury/style.qss
-share/launchy/skins/Note/alpha.png
+share/launchy/skins/Mercury_Wide/author.txt
+share/launchy/skins/Mercury_Wide/frame.png
+share/launchy/skins/Mercury_Wide/opsButton.png
+share/launchy/skins/Mercury_Wide/opsButtonPressed.png
+share/launchy/skins/Mercury_Wide/scrollBack.png
+share/launchy/skins/Mercury_Wide/scrollDown.png
+share/launchy/skins/Mercury_Wide/scrollUp.png
+share/launchy/skins/Mercury_Wide/spinner.mng
+share/launchy/skins/Mercury_Wide/style.qss
 share/launchy/skins/Note/author.txt
-share/launchy/skins/Note/background.png
-share/launchy/skins/Note/mask.png
-share/launchy/skins/Note/misc.txt
+share/launchy/skins/Note/frame.png
 share/launchy/skins/Note/scrollBack.png
 share/launchy/skins/Note/scrollDown.png
 share/launchy/skins/Note/scrollUp.png
 share/launchy/skins/Note/style.qss
-share/launchy/skins/QuickSilver2/alpha.png
 share/launchy/skins/QuickSilver2/author.txt
-share/launchy/skins/QuickSilver2/background.png
 share/launchy/skins/QuickSilver2/background_nc.png
-share/launchy/skins/QuickSilver2/mask.png
+share/launchy/skins/QuickSilver2/frame.png
 share/launchy/skins/QuickSilver2/mask_nc.png
-share/launchy/skins/QuickSilver2/misc.txt
 share/launchy/skins/QuickSilver2/style.qss
-share/launchy/skins/Spotlight Wide/alpha.png
-share/launchy/skins/Spotlight Wide/author.txt
-share/launchy/skins/Spotlight Wide/background.png
-share/launchy/skins/Spotlight Wide/background_nc.png
-share/launchy/skins/Spotlight Wide/closeButton.png
-share/launchy/skins/Spotlight Wide/closeButtonPressed.png
-share/launchy/skins/Spotlight Wide/mask.png
-share/launchy/skins/Spotlight Wide/mask_nc.png
-share/launchy/skins/Spotlight Wide/misc.txt
-share/launchy/skins/Spotlight Wide/opsButton.png
-share/launchy/skins/Spotlight Wide/opsButtonPressed.png
-share/launchy/skins/Spotlight Wide/scrollBack.png
-share/launchy/skins/Spotlight Wide/scrollDown.png
-share/launchy/skins/Spotlight Wide/scrollUp.png
-share/launchy/skins/Spotlight Wide/style.qss
-share/pixmaps/launchy.png
-@dirrm share/launchy/skins/Spotlight Wide
+share/launchy/skins/Simple/style.qss
+share/launchy/skins/Spotlight_Wide/author.txt
+share/launchy/skins/Spotlight_Wide/background_nc.png
+share/launchy/skins/Spotlight_Wide/closeButton.png
+share/launchy/skins/Spotlight_Wide/closeButtonPressed.png
+share/launchy/skins/Spotlight_Wide/frame.png
+share/launchy/skins/Spotlight_Wide/mask_nc.png
+share/launchy/skins/Spotlight_Wide/opsButton.png
+share/launchy/skins/Spotlight_Wide/opsButtonPressed.png
+share/launchy/skins/Spotlight_Wide/scrollBack.png
+share/launchy/skins/Spotlight_Wide/scrollDown.png
+share/launchy/skins/Spotlight_Wide/scrollUp.png
+share/launchy/skins/Spotlight_Wide/spinner.mng
+share/launchy/skins/Spotlight_Wide/style.qss
+share/pixmaps/launchy_icon.png
+@dirrm share/launchy/skins/Spotlight_Wide
+@dirrm share/launchy/skins/Simple
 @dirrm share/launchy/skins/QuickSilver2
 @dirrm share/launchy/skins/Note
+@dirrm share/launchy/skins/Mercury_Wide
 @dirrm share/launchy/skins/Mercury
 @dirrm share/launchy/skins/Default
-@dirrm share/launchy/skins/Black Glass
+@dirrm share/launchy/skins/Black_Glass_Wide
+@dirrm share/launchy/skins/Black_Glass
 @dirrm share/launchy/skins
 @dirrm share/launchy
 @dirrmtry share/applications
