@@ -4,7 +4,6 @@ bin/nytprofhtml
 bin/nytprofmerge
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel/NYTProf/NYTProf.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/benchmark.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/perftest.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Apache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Constants.pm
