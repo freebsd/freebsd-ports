@@ -9757,10 +9757,12 @@ mysqlsla                        ports/databases/mysqlsla
 mysqlsniffer                    ports/databases/mysqlsniffer
 mysqltcl                        ports/databases/mysqltcl
 mysqltuner                      ports/databases/mysqltuner
+mythplugin-mythmusic            ports/audio/mythplugin-mythmusic
+mythplugin-mythvideo            ports/multimedia/mythplugin-mythvideo
+mythplugin-mythweb              ports/www/mythplugin-mythweb
 mythtv                          ports/multimedia/mythtv
 mythtv-frontend                 ports/multimedia/mythtv-frontend
 mythtv-themes                   ports/multimedia/mythtv-themes
-mythweb                         ports/www/mythweb
 mytop                           ports/databases/mytop
 mywiki                          ports/deskutils/mywiki
 mywwwatcher                     ports/databases/mywwwatcher
@@ -11859,6 +11861,7 @@ p5-Digest-Whirlpool             ports/security/p5-Digest-Whirlpool
 p5-Dir-Project                  ports/devel/p5-Dir-Project
 p5-Dir-Purge                    ports/sysutils/p5-Dir-Purge
 p5-Dir-Watch                    ports/devel/p5-Dir-Watch
+p5-Directory-Queue              ports/devel/p5-Directory-Queue
 p5-Directory-Scratch            ports/devel/p5-Directory-Scratch
 p5-Directory-Scratch-Structured  ports/devel/p5-Directory-Scratch-Structured
 p5-DocSet                       ports/textproc/p5-DocSet
@@ -15733,6 +15736,7 @@ p5-digest-whirlpool             ports/security/p5-Digest-Whirlpool
 p5-dir-project                  ports/devel/p5-Dir-Project
 p5-dir-purge                    ports/sysutils/p5-Dir-Purge
 p5-dir-watch                    ports/devel/p5-Dir-Watch
+p5-directory-queue              ports/devel/p5-Directory-Queue
 p5-directory-scratch            ports/devel/p5-Directory-Scratch
 p5-directory-scratch-structured  ports/devel/p5-Directory-Scratch-Structured
 p5-djabberd                     ports/net-im/p5-DJabberd
