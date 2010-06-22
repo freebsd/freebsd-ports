@@ -16,7 +16,7 @@ PORTREVISION=	7
 CATEGORIES=	lang
 MASTER_SITES=	http://mlton.org/pages/Download/attachments/ \
 		http://mlton.org/pages/Experimental/attachments/ \
-		http://www.cse.unsw.edu.au/~tbourke/distfiles/
+		http://www.tbrk.org/distfiles/
 DISTFILES=	${BOOT_DIST} ${SRC_DIST}
 EXTRACT_ONLY=	${SRC_DIST}
 
@@ -28,10 +28,6 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-BROKEN=		does not build
-DEPRECATED=	has been broken for 5 months
-EXPIRATION_DATE=2010-01-08
-
 OPTIONS=	SMLNJ	"Bootstrap with SML/NJ (can take >15 hours)"	off \
 		MINGW32	"Add the mingw32 target (requires wine)"	off
 
@@ -41,6 +37,9 @@ OPTIONS=	SMLNJ	"Bootstrap with SML/NJ (can take >15 hours)"	off \
 BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed \
 		htmldoc:${PORTSDIR}/textproc/htmldoc \
 		latex:${PORTSDIR}/print/teTeX
+.else
+INSTALL_TARGET=	install-no-docs
+ALL_TARGET=	all-no-docs
 .endif
 
 SRC_DIST=	${DISTNAME}-1.src.tgz
@@ -49,17 +48,22 @@ SRC_DIST=	${DISTNAME}-1.src.tgz
 BUILD_DEPENDS+=	smlnj-devel>=110.65:${PORTSDIR}/lang/sml-nj-devel
 BOOT_DIST=
 MAKE_ENV+=	SMLNJ_DEVEL=yes
+.if defined(NOPORTDOCS)
+ALL_TARGET=	nj-mlton all-no-docs
+.else
 ALL_TARGET=	bootstrap-nj
+.endif
 .else
 BOOT_DIST=	${PORTNAME}-${BOOT_VER}-1.${MACHINE_ARCH}-freebsd${OSRELMAJ}.${BOOT_SUF}
+MAKE_ENV+=	LD_LIBMAP=libgmp.so.7=libgmp.so.10
 .endif
 
 .if defined(WITH_MINGW32)
 BUILD_DEPENDS+=	wine:${PORTSDIR}/emulators/wine \
 		mingw32-gcc:${PORTSDIR}/devel/mingw32-gcc \
-		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/devel/mingw32-libgmp4
+		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/math/mingw32-libgmp4
 RUN_DEPENDS+=	mingw32-gcc:${PORTSDIR}/devel/mingw32-gcc \
-		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/devel/mingw32-libgmp4
+		${LOCALBASE}/mingw32/lib/libgmp.a:${PORTSDIR}/math/mingw32-libgmp4
 
 PLIST_SUB+=	MINGW32CROSS=""
 .else
@@ -77,10 +81,6 @@ USE_GMAKE=	yes
 MAKE_ARGS=	DESTDIR='' \
 		PATH=${WRKSRC}/build/bin:${BOOT_WRKSRC}/bin:${PATH} \
 		PREFIX=${PREFIX}
-
-.if defined(NOPORTDOCS)
-INSTALL_TARGET=	install-no-docs
-.endif
 
 .if ${ARCH} == "i386"
 MLTON_ARCH=	"x86"
@@ -109,18 +109,30 @@ post-extract:
 .else
 	@${MKDIR} ${BOOT_WRKSRC}
 	@${TAR} xf ${DISTDIR}/${BOOT_DIST} ${BOOT_EXTRACT} -C ${BOOT_WRKSRC}
-	@${REINPLACE_CMD} -e \
-		"s|lib=\'${LOCALBASE}/|lib=\'${BOOT_WRKSRC}/|" \
-		${BOOT_WRKSRC}/bin/mlton
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		"s|FLAGS += -I/usr/local/include|FLAGS += -I${LOCALBASE}/include|" \
-		${WRKSRC}/runtime/Makefile
+		"s|/usr/local/lib/mlton|${BOOT_WRKSRC}/lib/mlton|;s|/usr/local|${LOCALBASE}|" \
+		${BOOT_WRKSRC}/bin/mlton
 	@${REINPLACE_CMD} -e \
-		"s|CFLAGS += -I/usr/local/include|CFLAGS += -I${LOCALBASE}/include|" \
-		${WRKSRC}/runtime/bytecode/Makefile
+		"s|/usr/local|${LOCALBASE}|" \
+		${WRKSRC}/runtime/Makefile \
+		${WRKSRC}/runtime/bytecode/Makefile \
+		${WRKSRC}/runtime/cenv.h \
+		${WRKSRC}/bin/add-cross \
+		${WRKSRC}/bin/add-local-cross \
+		${WRKSRC}/bin/regression \
+		${WRKSRC}/bin/mlton-script \
+		${WRKSRC}/doc/guide/PortingMLton \
+		${WRKSRC}/doc/guide/SelfCompiling \
+		${WRKSRC}/doc/guide/Installation \
+		${WRKSRC}/regression/parse.sml \
+		${BOOT_WRKSRC}/lib/mlton/include/cenv.h
+	@${RM} \
+		${WRKSRC}/doc/guide/PortingMLton.bak \
+		${WRKSRC}/doc/guide/SelfCompiling.bak \
+		${WRKSRC}/doc/guide/Installation.bak
 
 post-build:
 .if defined(WITH_MINGW32)
