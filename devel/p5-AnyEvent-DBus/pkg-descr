@@ -1,0 +1,6 @@
+Loading this module will install the necessary magic to seamlessly
+integrate Net::DBus into AnyEvent. It does this by quite brutally
+hacking Net::DBus::Reactor so that all dbus connections created after
+loading this module will automatically be managed by this module.
+
+WWW: http://search.cpan.org/dist/AnyEvent-DBus/
