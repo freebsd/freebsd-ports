@@ -23,12 +23,6 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 PLIST_SUB=	HEVEAVERSION=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-IGNORE=		infinite loop during build on amd64
-.endif
-
 pre-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 	    ${WRKSRC}/Makefile
@@ -46,4 +40,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
