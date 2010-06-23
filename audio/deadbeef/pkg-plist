@@ -36,6 +36,10 @@ lib/deadbeef/oss.a
 lib/deadbeef/oss.la
 lib/deadbeef/oss.so
 lib/deadbeef/oss.so.0
+%%PULSE%%lib/deadbeef/pulse.a
+%%PULSE%%lib/deadbeef/pulse.la
+%%PULSE%%lib/deadbeef/pulse.so
+%%PULSE%%lib/deadbeef/pulse.so.0
 %%SNDFILE%%lib/deadbeef/sndfile.a
 %%SNDFILE%%lib/deadbeef/sndfile.la
 %%SNDFILE%%lib/deadbeef/sndfile.so
@@ -103,6 +107,14 @@ share/applications/deadbeef.desktop
 share/icons/hicolor/16x16/apps/deadbeef.png
 share/icons/hicolor/32x32/apps/deadbeef.png
 share/icons/hicolor/48x48/apps/deadbeef.png
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 %%DATADIR%%/pixmaps/noartwork.jpg
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps

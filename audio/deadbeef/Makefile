@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	deadbeef
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
-#DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	DeaDBeeF is an audio player
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		mad.2:${PORTSDIR}/audio/libmad
+		mad.2:${PORTSDIR}/audio/libmad \
+		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I../dumb/dumb-kode54/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lexecinfo"
 CONFIGURE_ARGS=	--disable-alsa --disable-nullout
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
-MAKE_JOBS_SAGE=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	PULSE "PulseAudio output plugin (unsupported)" off\
 		GUI "standard GTK2 user interface plugin" on\
@@ -90,7 +90,7 @@ PLIST_SUB+=	ART="@comment "
 PLIST_SUB+=	ART=""
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .else
-BROKEN=		Please enable VFS plugin
+BROKEN=		VFS plugin required for album art loader, please rerun 'make config' and either disable ART or enable VFS
 .endif
 .endif
 
@@ -150,7 +150,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 .else
 PLIST_SUB+=	FFMPEG=""
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		avformat:${PORTSDIR}/multimedia/ffmpeg \
+		avformat.1:${PORTSDIR}/multimedia/ffmpeg \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 .endif
 
