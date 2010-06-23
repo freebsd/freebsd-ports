@@ -8,9 +8,11 @@ bin/mk-error-log
 bin/mk-fifo-split
 bin/mk-find
 bin/mk-heartbeat
+bin/mk-index-usage
 bin/mk-kill
 bin/mk-loadavg
 bin/mk-log-player
+bin/mk-merge-mqd-results
 bin/mk-parallel-dump
 bin/mk-parallel-restore
 bin/mk-profile-compact
