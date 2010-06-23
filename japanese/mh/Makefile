@@ -48,10 +48,6 @@ CONFLICTS=	nmh-[0-9]*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 .if !defined(NOPORTDOCS)
 pre-install:
 	${MKDIR} ${PREFIX}/share/doc/ja-mh
