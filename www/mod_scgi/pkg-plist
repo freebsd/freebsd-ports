@@ -1,3 +1,0 @@
-%%APACHE_DIR%%/mod_scgi.so
-@exec %D/sbin/apxs -e -a -n scgi %f
-@unexec %D/sbin/apxs -e -A -n scgi %f
