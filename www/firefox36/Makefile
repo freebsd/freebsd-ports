@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.6.3
+DISTVERSION=	3.6.4
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -48,7 +48,8 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-svg --enable-svg-renderer=cairo \
 		--enable-application=browser \
 		--enable-official-branding --disable-updater \
-		--enable-canvas --enable-libxul --disable-necko-wifi
+		--enable-canvas --enable-libxul --disable-necko-wifi \
+		--disable-ipc
 
 SYSTEM_PREFS=		${FAKEDIR}/lib/${MOZILLA}/defaults/pref/firefox.js
 
