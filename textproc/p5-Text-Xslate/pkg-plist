@@ -2,7 +2,6 @@ bin/xslate
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Bridge.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Compiler.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/EscapedString.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Booster.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Const.pm
@@ -10,9 +9,6 @@ bin/xslate
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Method.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Opcode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/State.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/Array.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/EscapedString.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/Hash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/Pair.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/Raw.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Parser.pm
