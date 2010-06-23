@@ -34,6 +34,72 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="99858b7c-7ece-11df-a007-000f20797ede">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>firefox</name>
+        <range><gt>3.6.*,1</gt><lt>3.6.4,1</lt></range>
+        <range><gt>3.5.*,1</gt><lt>3.5.10,1</lt></range>
+      </package>
+      <package>
+        <name>linux-firefox-devel</name>
+        <range><lt>3.5.10</lt></range>
+      </package>
+      <package>
+        <name>seamonkey</name>
+        <range><gt>2.0.*</gt><lt>2.0.5</lt></range>
+      </package>
+      <package>
+        <name>thunderbird</name>
+        <range><ge>3.0</ge><lt>3.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2010-33 User tracking across sites using Math.random()</p>
+	  <p>MFSA 2010-32 Content-Disposition: attachment ignored if Content-Type: multipart also present</p>
+	  <p>MFSA 2010-31 focus() behavior can be used to inject or steal keystrokes</p>
+	  <p>MFSA 2010-30 Integer Overflow in XSLT Node Sorting</p>
+	  <p>MFSA 2010-29 Heap buffer overflow in nsGenericDOMDataNode::SetTextInternal</p>
+	  <p>MFSA 2010-28 Freed object reuse across plugin instances</p>
+	  <p>MFSA 2010-27 Use-after-free error in nsCycleCollector::MarkRoots()</p>
+	  <p>MFSA 2010-26 Crashes with evidence of memory corruption (rv:1.9.2.4/ 1.9.1.10)</p>
+	  <p>MFSA 2010-25 Re-use of freed object due to scope confusion</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-5913</cvename>
+      <cvename>CVE-2010-0183</cvename>
+      <cvename>CVE-2010-1121</cvename>
+      <cvename>CVE-2010-1125</cvename>
+      <cvename>CVE-2010-1197</cvename>
+      <cvename>CVE-2010-1199</cvename>
+      <cvename>CVE-2010-1196</cvename>
+      <cvename>CVE-2010-1198</cvename>
+      <cvename>CVE-2010-1200</cvename>
+      <cvename>CVE-2010-1201</cvename>
+      <cvename>CVE-2010-1202</cvename>
+      <cvename>CVE-2010-1203</cvename>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-33.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-32.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-31.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-30.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-29.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-28.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-27.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-26.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-25.html</url>
+    </references>
+    <dates>
+      <discovery>2010-06-22</discovery>
+      <entry>2010-06-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8816bf3a-7929-11df-bcce-0018f3e2eb82">
     <topic>tiff -- Multiple integer overflows</topic>
     <affects>
