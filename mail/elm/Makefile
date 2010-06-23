@@ -9,8 +9,7 @@ PORTNAME=	elm
 PORTVERSION=	2.5.8
 PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.virginia.edu/pub/elm/ \
-		http://www.dragondata.com/software/
+MASTER_SITES=	http://instinct.org/elm/files/tarballs/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	toasty@dragondata.com
@@ -18,7 +17,9 @@ COMMENT=	A once-popular mail user agent, version 2.5.x
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
-CFLAGS+= -D_SIZE_T
+MAKE_JOBS_UNSAFE=	yes
+
+CFLAGS+=	-D_SIZE_T
 
 WRKSRC=			${WRKDIR}/elm${PORTVERSION}
 NO_LATEST_LINK=		yes
