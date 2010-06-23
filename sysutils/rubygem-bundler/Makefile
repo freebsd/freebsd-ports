@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bundler
-PORTVERSION=	0.9.25
+PORTVERSION=	0.9.26
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
