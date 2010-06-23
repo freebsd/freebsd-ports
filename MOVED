@@ -4443,3 +4443,4 @@ print/lyx15||2010-06-14|Removed, print/lyx has been updated to the latest versio
 sysutils/tinybsd||2010-06-18|Incorporated into base system long ago
 www/mythweb|www/mythplugin-mythweb|2010-06-21|Renamed: Common prefix for all MythTV plugins
 www/firefox3|www/firefox35|2010-06-23|Upstream support dropped
+www/firefox3-i18n|www/firefox35-i18n|2010-06-23|Upstream support dropped
