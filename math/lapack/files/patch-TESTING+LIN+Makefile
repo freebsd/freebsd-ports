@@ -1,4 +1,4 @@
---- TESTING/LIN/Makefile.orig	2009-02-11 02:23:05.000000000 +0900
+--- TESTING/LIN/Makefile	2009-02-11 02:23:05.000000000 +0900
 +++ TESTING/LIN/Makefile	2009-05-20 06:11:11.000000000 +0900
 @@ -71,13 +71,13 @@
     strt02.o strt03.o strt05.o strt06.o \
@@ -68,3 +68,10 @@
  
  DSLINTST = dchkab.o \
  	ddrvab.o ddrvac.o derrab.o derrac.o dget08.o          \
+@@ -246,5 +246,5 @@
+  
+ ../xlintstd : $(ALINTST) $(DLINTST) $(DZLNTST)
+-	$(LOADER) $(LOADOPTS) $^ \
++	$(LOADER) $(LOADOPTS) ${.ALLSRC} \
+         ../../$(TMGLIB) ../../$(LAPACKLIB) $(XBLASLIB) $(BLASLIB) -o xlintstd && mv xlintstd $@
+  
