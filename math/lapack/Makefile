@@ -26,12 +26,13 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
+.if ${ARCH} == "sparc64"
 FPIC=	-fPIC
 .else
 FPIC=	-fpic
 .endif
 
+MAKE_JOBS_SAFE=	yes
 MANSRC=${WRKDIR}/lapack-3.2.0
 WRKSRC_SHARED=${WRKSRC}_shared
 FFLAGS_SHARED=${FPIC}
@@ -47,32 +48,33 @@ pre-fetch:
 .include "${FILESDIR}/manpages"
 
 post-patch:
-	@${CP} ${WRKSRC}/INSTALL/make.inc.gfortran ${WRKSRC}/make.inc
-	@${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
-	@${CP} -r ${WRKSRC} ${WRKSRC_PROFILE}
+	@${MV} ${WRKSRC}/INSTALL/make.inc.gfortran ${WRKSRC}/make.inc
+	${REINPLACE_CMD} -Ee \
+		's,\( *cd ([^ ;]+) *; *\$$\(MAKE\) *([[:alnum:]]*) *\),${MAKE} -C \1 ${_MAKE_JOBS} \2,' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -Ee \
+		's,cd ([^ ;]+) *; *\$$\(MAKE\) *([[:alnum:]]*) *,${MAKE} -C \1 ${_MAKE_JOBS} \2,' \
+		${WRKSRC}/TESTING/Makefile
 	@${REINPLACE_CMD} -e 's,%%F77%%,${F77},g' \
 			  -e 's,%%FFLAGS%%,${FFLAGS},g' \
-			  -e 's,%%EXTRAFLAGS%%,,g' \
 			  -e 's,%%BLAS%%,${BLAS},g' \
 				${WRKSRC}/make.inc
-	@${REINPLACE_CMD} -e 's,%%F77%%,${F77},g' \
-			  -e 's,%%FFLAGS%%,${FFLAGS},g' \
-			  -e 's,%%EXTRAFLAGS%%,${FFLAGS_SHARED},g' \
-			  -e 's,%%BLAS%%,${BLAS},g' \
+	@${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
+	@${CP} -r ${WRKSRC} ${WRKSRC_PROFILE}
+	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,,g' \
+				${WRKSRC}/make.inc
+	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,${FFLAGS_SHARED},g' \
 				${WRKSRC_SHARED}/make.inc
-	@${REINPLACE_CMD} -e 's,%%F77%%,${F77},g' \
-			  -e 's,%%FFLAGS%%,${FFLAGS},g' \
-			  -e 's,%%EXTRAFLAGS%%,${FFLAGS_PROFILE},g' \
-			  -e 's,%%BLAS%%,${BLAS},g' \
+	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,${FFLAGS_PROFILE},g' \
 				${WRKSRC_PROFILE}/make.inc
 
 do-build:
 	@${ECHO_CMD} "Building static lapack library"
-	cd ${WRKSRC} ; ${MAKE} ${.MAKEFLAGS} ARCH=ar
+	${MAKE} -C ${WRKSRC} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH=ar
 	@${ECHO_CMD} "Building shared lapack library"
-	cd ${WRKSRC_SHARED} ; ${MAKE} ${.MAKEFLAGS} ARCH=ar
+	${MAKE} -C ${WRKSRC_SHARED} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH=ar
 	@${ECHO_CMD} "Building profile lapack library"
-	cd ${WRKSRC_PROFILE} ; ${MAKE} ${.MAKEFLAGS} ARCH=ar
+	${MAKE} -C ${WRKSRC_PROFILE} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH=ar
 
 post-build:
 	${CP} ${WRKSRC}/lapack_FREEBSD.a ${WRKSRC}/liblapack.a
@@ -98,8 +100,8 @@ do-install:
 	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[m-s]*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[t-z]*.l ${PREFIX}/man/manl
 
-regression-test: build
+regression-test check test: build
 	@${ECHO_CMD} "Testing static lapack library"
-	cd ${WRKSRC}/TESTING ; ${MAKE} ${.MAKEFLAGS} ARCH=ar
+	${MAKE} -C ${WRKSRC}/TESTING ${.MAKEFLAGS} ARCH=ar
 
 .include <bsd.port.post.mk>
