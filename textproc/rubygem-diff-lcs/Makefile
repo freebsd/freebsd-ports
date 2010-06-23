@@ -7,7 +7,7 @@
 PORTNAME=	diff-lcs
 PORTVERSION=	1.1.2
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF/ruwiki
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	LCS-based diff library for ruby

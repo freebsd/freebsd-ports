@@ -8,7 +8,7 @@
 PORTNAME=	trollop
 PORTVERSION=	1.15
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/trollop
+MASTER_SITES=	RG
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A commandline option parser for Ruby that gets out of your way

@@ -7,7 +7,7 @@
 PORTNAME=	prawn-core
 PORTVERSION=	0.6.3
 CATEGORIES=	print rubygems
-MASTER_SITES=	RF/prawn
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Core of Rubygem-prawn

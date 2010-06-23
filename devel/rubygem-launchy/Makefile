@@ -7,7 +7,7 @@
 PORTNAME=	launchy
 PORTVERSION=	0.3.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/copiousfreetime
+MASTER_SITES=	RG
 
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	A helper class for launching cross-platform applications

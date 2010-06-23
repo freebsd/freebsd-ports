@@ -7,7 +7,7 @@
 PORTNAME=	prawn
 PORTVERSION=	0.6.3
 CATEGORIES=	print rubygems
-MASTER_SITES=	RF/prawn
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Fast pure Ruby PDF generator

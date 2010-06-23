@@ -8,7 +8,7 @@
 PORTNAME=	htmlentities
 PORTVERSION=	4.2.0
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	HTML entity encoding and decoding for Ruby

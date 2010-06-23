@@ -8,7 +8,7 @@
 PORTNAME=	sys-cpu
 PORTVERSION=	0.6.1
 CATEGORIES=	sysutils rubygems
-MASTER_SITES=	RF/sysutils
+MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Provides an interface for getting information about the CPU

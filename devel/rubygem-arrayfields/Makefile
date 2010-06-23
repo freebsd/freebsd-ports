@@ -8,7 +8,7 @@
 PORTNAME=	arrayfields
 PORTVERSION=	4.7.4
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/codeforpeople
+MASTER_SITES=	RG
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	Allow Keyword Access to Array Instances

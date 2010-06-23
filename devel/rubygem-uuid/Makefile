@@ -8,7 +8,7 @@
 PORTNAME=	uuid
 PORTVERSION=	2.0.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/reliable-msg
+MASTER_SITES=	RG
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	UUID Generator for Ruby

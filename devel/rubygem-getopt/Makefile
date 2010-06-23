@@ -7,7 +7,7 @@
 PORTNAME=	getopt
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/shards
+MASTER_SITES=	RG
 
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Command line parsing with Ruby

@@ -8,7 +8,7 @@ PORTNAME=	warbler
 PORTVERSION=	0.9.14
 PORTREVISION=	1
 CATEGORIES=	devel rubygems java
-MASTER_SITES=	RF/caldersphere
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A constructor of .war files of Rails applications

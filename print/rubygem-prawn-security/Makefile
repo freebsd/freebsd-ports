@@ -7,7 +7,7 @@
 PORTNAME=	prawn-security
 PORTVERSION=	0.1.1
 CATEGORIES=	print rubygems
-MASTER_SITES=	RF/prawn
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An extension of Prawn
