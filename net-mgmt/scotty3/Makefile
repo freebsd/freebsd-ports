@@ -42,7 +42,7 @@ MANN=		Tnm.n TnmDialog.n TnmDisman.n TnmEther.n TnmIetf.n\
 		ntp.n snmp.n sunrpc.n syslog.n udp.n
 PLIST_SUB=	SCOTTY_VERSION=3.0.0 TKINED_VERSION=1.5.0
 
-MAKE_ARGS+=	-j2	# better than -j1 on all machines...
+MAKE_JOBS_SAFE=	yes
 INSTALL_TARGET=	tnm-install sinstall
 
 .if !defined(WITHOUT_X11)
