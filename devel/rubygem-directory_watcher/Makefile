@@ -7,7 +7,7 @@
 PORTNAME=	directory_watcher
 PORTVERSION=	1.3.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/codeforpeople
+MASTER_SITES=	RG
 
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Scans a directory at a set interval and lists files

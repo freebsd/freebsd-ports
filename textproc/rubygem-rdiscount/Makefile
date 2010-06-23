@@ -7,7 +7,7 @@
 PORTNAME=	rdiscount
 PORTVERSION=	1.3.5
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF/gems
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A fast Markdown converter for ruby based on discount

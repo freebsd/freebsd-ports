@@ -7,7 +7,7 @@
 PORTNAME=	prawn-layout
 PORTVERSION=	0.3.2
 CATEGORIES=	print rubygems
-MASTER_SITES=	RF/prawn
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Prawn Extension to Provides Table Support and Other Layout

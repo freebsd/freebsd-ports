@@ -7,7 +7,7 @@
 PORTNAME=	grit
 PORTVERSION=	1.1.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/gems
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An object-oriented ruby library to access git repositories

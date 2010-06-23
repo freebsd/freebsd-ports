@@ -7,7 +7,7 @@
 PORTNAME=	jruby-jars
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems java
-MASTER_SITES=	RF/jruby-extras
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	JAR files from the JRuby distribution

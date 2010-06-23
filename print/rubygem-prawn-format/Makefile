@@ -7,7 +7,7 @@
 PORTNAME=	prawn-format
 PORTVERSION=	0.2.3
 CATEGORIES=	print rubygems
-MASTER_SITES=	RF/prawn
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An extension of Prawn that allows inline formatting

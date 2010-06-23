@@ -7,7 +7,7 @@
 PORTNAME=	loquacious
 PORTVERSION=	1.4.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/codeforpeople
+MASTER_SITES=	RG
 
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Mechanism to parse ruby loquacious files

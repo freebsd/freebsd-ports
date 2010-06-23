@@ -9,7 +9,7 @@ PORTNAME=	ditz
 PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/ditz
+MASTER_SITES=	RG
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Simple, light-weight distributed issue tracker

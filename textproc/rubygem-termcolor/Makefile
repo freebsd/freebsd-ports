@@ -8,7 +8,7 @@
 PORTNAME=	termcolor
 PORTVERSION=	1.1.0
 CATEGORIES=	textproc rubygems
-MASTER_SITES=	RF/termcolor
+MASTER_SITES=	RG
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A library for ANSII color formatting like HTML for output in terminal

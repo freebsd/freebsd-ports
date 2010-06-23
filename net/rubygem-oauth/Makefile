@@ -8,7 +8,7 @@
 PORTNAME=	oauth
 PORTVERSION=	0.3.6
 CATEGORIES=	net rubygems
-MASTER_SITES=	RF/oauth
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Rubygem for Creating both OAuth Consumers and Service Providers

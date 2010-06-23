@@ -8,7 +8,7 @@
 PORTNAME=	fattr
 PORTVERSION=	2.1.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/codeforpeople
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Fatter Attr for Ruby

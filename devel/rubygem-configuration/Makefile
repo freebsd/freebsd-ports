@@ -7,7 +7,7 @@
 PORTNAME=	configuration
 PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/codeforpeople
+MASTER_SITES=	RG
 
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Mechanism to parse ruby configuration files

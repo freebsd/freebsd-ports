@@ -8,7 +8,7 @@
 PORTNAME=	lockfile
 PORTVERSION=	1.4.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/codeforpeople
+MASTER_SITES=	RG
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A ruby library for creating NFS safe lockfiles

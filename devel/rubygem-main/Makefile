@@ -8,7 +8,7 @@
 PORTNAME=	main
 PORTVERSION=	4.2.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/codeforpeople
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Class Factory and Dsl for Generating Command Line Programs

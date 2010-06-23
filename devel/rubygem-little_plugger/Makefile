@@ -7,7 +7,7 @@
 PORTNAME=	little_plugger
 PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF/codeforpeople
+MASTER_SITES=	RG
 DISTNAME=	little-plugger-${PORTVERSION}
 
 MAINTAINER=	rpsfa@rit.edu

@@ -7,7 +7,7 @@
 PORTNAME=	httparty
 PORTVERSION=	0.4.5
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Ruby Library that Makes HTTP Fun Again
