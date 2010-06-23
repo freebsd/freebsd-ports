@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	scgi
+PORTNAME=	mod_scgi
 PORTVERSION=	1.12
 CATEGORIES=	www
 MASTER_SITES=	http://quixote.python.ca/releases/ \
@@ -16,10 +16,14 @@ DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 MAINTAINER=	dryice@dryice.name
 COMMENT=	Apache module that implements the client side of the SCGI protocol
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/${SCGI_DIR}
 
 USE_APACHE=	1.3+
-WRKSRC=		${WRKDIR}/${DISTNAME}/${SCGI_DIR}
+
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -28,12 +32,6 @@ SCGI_DIR=	apache2
 .else
 SCGI_DIR=	apache1
 .endif
-PLIST_SUB=	APACHE_DIR=${APACHEMODDIR}
-
-do-build:
-	cd ${WRKSRC} && ${APXS} -c mod_scgi.c
-do-install:
-	cd ${WRKSRC} && ${APXS} -i -c mod_scgi.c
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
