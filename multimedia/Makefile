@@ -157,6 +157,7 @@
     SUBDIR += libtheora
     SUBDIR += libtuner
     SUBDIR += libv4l
+    SUBDIR += libvpx
     SUBDIR += libxine
     SUBDIR += libxspf
     SUBDIR += linux-divx4linux
