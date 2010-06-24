@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ddate
-PORTVERSION=	2.12r
+PORTVERSION=	2.12q
 CATEGORIES=	misc
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/util-linux/ \
 		CRITICAL
