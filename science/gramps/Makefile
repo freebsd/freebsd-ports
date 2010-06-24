@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gramps
-PORTVERSION=	3.1.3
-PORTREVISION=	3
+PORTVERSION=	3.2.3
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
@@ -16,6 +15,8 @@ COMMENT=	A GTK/GNOME-based genealogy program
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
+LICENSE=	GPLv2
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 USE_BDB=	43
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
@@ -29,7 +30,21 @@ CONFIGURE_ENV+=	GMSGFMT="${LOCALBASE}/bin/msgfmt"
 MAN1=		gramps.1
 MANLANG=	"" fr nl pl sv
 
+OPTIONS=	ENCHANT "Spellchecking support" off \
+		PYWEBKITGTK "Use webkit backend for Geographic view" on \
+		GRAPHVIZ "Use graphviz for graphs creating" on
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_ENCHANT)
+RUN_DEPENDS+=${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
+.endif
+.if defined(WITH_PYWEBKITGTK)
+RUN_DEPENDS+=${PYTHON_PKGNAMEPREFIX}webkitgtk>=0:${PORTSDIR}/www/py-webkitgtk
+.endif
+.if defined(WITH_GRAPHVIZ)
+RUN_DEPENDS+=${PYTHON_PKGNAMEPREFIX}graphviz>-0:${PORTSDIR}/graphics/py-graphviz
+.endif
 
 pre-everything::
 	@${ECHO_MSG} "WARNING: The on-disk structure of the databases has"
