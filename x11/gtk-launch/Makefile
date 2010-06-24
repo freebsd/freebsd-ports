@@ -21,6 +21,8 @@ MAKE_JOBS_SAFE=	yes
 PLIST_FILES=	bin/gtk-launch
 PORTDOCS=	INSTALL
 
+PORTSCOUT=	skipv:1.1
+
 post-patch:
 	${ECHO_CMD} >> ${WRKSRC}/launch.c
 
