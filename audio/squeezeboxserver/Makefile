@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	squeezeboxserver
-PORTVERSION=	7.5.0
-PORTREVISION=	1
+PORTVERSION=	7.5.1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -16,9 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Slim Devices audio streaming server
 
-CONFLICTS=	squeezecenter-*
-
-BROKEN=         Incompatiable with recent DBIx-Class updates
+CONFLICTS=	squeezecenter-[67]*
 
 # Defaults support playback of relativly unrestricted formats on SB2 or
 # SB3 devices and wired SB1 devices.
@@ -26,13 +23,12 @@ OPTIONS=	APE "Support Monkey's Audio Codec input" on \
 		FAAD "Support AAC input via FAAD" on \
 		FLAC "Support FLAC output (and input on SliMP3 and SB1)" on \
 		LAME "Support MP3 output via LAME" off \
-		MUSEPACK "Support musepack input" on \
 		SHORTEN "Support Shorten input" off \
 		SOX "Support OGG Vorbis input via SoX (SliMP3 and SB1)" on
 
 RESTRICTED=	Contains non-redistributable firmware, documentation, and images
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-30464-noCPAN
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-30836-noCPAN
 
 RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
@@ -75,9 +71,6 @@ RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 .endif
 .if !defined(WITHOUT_LAME)
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-.if !defined(WITHOUT_MUSEPACK)
-RUN_DEPENDS+=	mpcdec:${PORTSDIR}/audio/musepack
 .endif
 .if !defined(WITHOUT_SHORTEN)
 RUN_DEPENDS+=	shorten:${PORTSDIR}/audio/shorten

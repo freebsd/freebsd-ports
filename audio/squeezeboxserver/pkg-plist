@@ -1859,9 +1859,9 @@ bin/softsqueeze
 %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/install.xml
 %%SLIMDIR%%/Slim/Plugin/RhapsodyDirect/strings.txt
-%%SLIMDIR%%/Slim/Plugin/SN/install.xml
 %%SLIMDIR%%/Slim/Plugin/SN/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/SN/ProtocolHandler.pm
+%%SLIMDIR%%/Slim/Plugin/SN/install.xml
 %%SLIMDIR%%/Slim/Plugin/SN/strings.txt
 %%SLIMDIR%%/Slim/Plugin/SavePlaylist/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/SavePlaylist/install.xml
@@ -2071,7 +2071,6 @@ bin/softsqueeze
 %%SLIMDIR%%/lib/Net/UPnP/Service.pm
 %%SLIMDIR%%/lib/README
 %%SLIMDIR%%/lib/Template/Provider.pm
-%%SLIMDIR%%/custom-convert.conf
 %%SLIMDIR%%/modules.conf
 %%SLIMDIR%%/revision.txt
 %%SLIMDIR%%/scanner.pl
