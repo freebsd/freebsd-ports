@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		distutils-extra
-PORTVERSION=		2.18
+PORTVERSION=		2.19
 CATEGORIES=		devel python
-MASTER_SITES=		http://launchpadlibrarian.net/41816434/
+MASTER_SITES=		http://launchpadlibrarian.net/48109785/
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		dist-python-${PORTNAME}-${PORTVERSION}
 
