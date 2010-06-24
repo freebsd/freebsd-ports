@@ -125,8 +125,9 @@ bin/sqliteman
 %%DATADIR%%/sqliteman_pl.qm
 %%DATADIR%%/sqliteman_ru.qm
 share/applications/sqliteman.desktop
-share/icons/sqliteman.png
+share/icons/hicolor/sqliteman.png
 @dirrmtry share/applications
+@dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrm %%DATADIR%%/doc/en
 @dirrm %%DATADIR%%/doc
