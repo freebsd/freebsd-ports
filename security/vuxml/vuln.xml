@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e02e6a4e-6b26-11df-96b2-0015587e2cc1">
+    <topic>cacti -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>cacti</name>
+        <range><lt>0.8.7f</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Multiple vulnerabilities have been reported to exist in older version of
+	  Cacti. The release notes of Cacti 0.8.7f summarizes the problems as
+	  follows:</p>
+	<blockquote cite="http://www.cacti.net/release_notes_0_8_7f.php">
+        <ul>
+          <li>SQL injection and shell escaping issues</li>
+          <li>Cross-site scripting issues</li>
+          <li>Cacti Graph Viewer SQL injection vulnerability</li>
+        </ul>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://php-security.org/2010/05/13/mops-2010-023-cacti-graph-viewer-sql-injection-vulnerability/index.html</url>
+      <url>http://www.cacti.net/release_notes_0_8_7f.php</url>
+      <url>http://www.bonsai-sec.com/en/research/vulnerabilities/cacti-os-command-injection-0105.php</url>
+      <url>http://www.vupen.com/english/advisories/2010/1204</url>
+    </references>
+    <dates>
+      <discovery>2010-05-24</discovery>
+      <entry>2010-06-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="99858b7c-7ece-11df-a007-000f20797ede">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
@@ -286,7 +320,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Ziproxy 3.0.1 release fixes a security vulnerability related
-	  to atypical huge picture files (>4GB of size once expanded).</p>
+	  to atypical huge picture files (&gt;4GB of size once expanded).</p>
       </body>
     </description>
     <references>
@@ -689,66 +723,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="f6b6beaa-4e0e-11df-83fb-0015587e2cc1">
-    <topic>emacs -- movemail symlink race condition</topic>
-    <affects>
-      <package>
-	<name>movemail</name>
-	<range><le>1.0</le></range>
-      </package>
-      <package>
-	<name>emacs</name>
-	<range><le>21.3_14</le></range>
-	<range><ge>22.3_1,1</ge><le>22.3_4,1</le></range>
-	<range><ge>23.1</ge><le>23.1_5,1</le></range>
-      </package>
-      <package>
-	<name>xemacs</name>
-	<range><le>21.4.22_4</le></range>
-      </package>
-      <package>
-	<name>xemacs-devel</name>
-	<range><le>21.5.b28_8,1</le></range>
-      </package>
-      <package>
-	<name>xemacs-mule</name>
-	<name>zh-xemacs-mule</name>
-	<name>ja-xemacs-mule-canna</name>
-	<range><le>21.4.21_6</le></range>
-      </package>
-      <package>
-	<name>xemacs-devel-mule</name>
-	<name>xemacs-devel-mule-xft</name>
-	<range><le>21.5.b28_10</le></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Ubuntu Security Notice USN-919-1 reports:</p>
-	<blockquote cite="http://www.ubuntu.com/usn/USN-919-1">
-	  <p>Dan Rosenberg discovered that the email helper in Emacs
-	    did not correctly check file permissions. A local
-	    attacker could perform a symlink race to read or append
-	    to another user's mailbox if it was stored under a
-	    group-writable group-"mail" directory. </p>
-	</blockquote>
-	  <p>The movemail program, which provides this functionality
-	    to Emacs, can also be installed on FreeBSD via the movemail
-	    port. This port is therefore, in addition to Emacs, also
-	    vulnerable to this attack.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CVE-2010-0825</cvename>
-      <url>http://secunia.com/advisories/39155</url>
-      <url>http://www.ubuntu.com/usn/USN-919-1</url>
-      <url>http://www.vupen.com/english/advisories/2010/0734</url>
-      <url>http://xforce.iss.net/xforce/xfdb/57457</url>
-      <url>https://bugs.launchpad.net/ubuntu/+bug/531569</url>
-    </references>
-    <dates>
-      <discovery>2010-03-03</discovery>
-      <entry>2010-04-22</entry>
-    </dates>
+    <cancelled/> 
   </vuln>
 
   <vuln vid="86b8b655-4d1a-11df-83fb-0015587e2cc1">
