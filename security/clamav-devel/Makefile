@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20100504
+PORTVERSION=	20100624
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -69,7 +69,8 @@ MAN1=		clamconf.1 \
 		sigtool.1 \
 		clamdscan.1 \
 		clamdtop.1
-MAN5=		clamd.conf.5 \
+MAN5=		clamav-milter.conf.5 \
+		clamd.conf.5 \
 		freshclam.conf.5
 MAN8=		clamd.8 \
 		clamav-milter.8
