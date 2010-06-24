@@ -1,0 +1,20 @@
+bin/ivfdec
+bin/ivfenc
+include/vpx/vp8.h
+include/vpx/vp8cx.h
+include/vpx/vp8dx.h
+include/vpx/vp8e.h
+include/vpx/vpx_codec.h
+include/vpx/vpx_codec_impl_bottom.h
+include/vpx/vpx_codec_impl_top.h
+include/vpx/vpx_decoder.h
+include/vpx/vpx_decoder_compat.h
+include/vpx/vpx_encoder.h
+include/vpx/vpx_image.h
+include/vpx/vpx_integer.h
+lib/libvpx.a
+lib/libvpx.so
+lib/libvpx.so.0
+lib/libvpx.so.0.9
+lib/libvpx.so.0.9.1
+@dirrm include/vpx
