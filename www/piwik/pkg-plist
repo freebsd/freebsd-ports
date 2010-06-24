@@ -70,8 +70,11 @@
 %%WWWDIR%%/core/Date.php
 %%WWWDIR%%/core/Db/Adapter/Mysqli.php
 %%WWWDIR%%/core/Db/Adapter/Pdo/Mysql.php
+%%WWWDIR%%/core/Db/Adapter/Pdo/Mssql.php
 %%WWWDIR%%/core/Db/Adapter/Pdo/Pgsql.php
 %%WWWDIR%%/core/Db/Adapter.php
+%%WWWDIR%%/core/Db/Schema/Myisam.php
+%%WWWDIR%%/core/Db/Schema.php
 %%WWWDIR%%/core/ErrorHandler.php
 %%WWWDIR%%/core/ExceptionHandler.php
 %%WWWDIR%%/core/Form.php
@@ -131,9 +134,6 @@
 %%WWWDIR%%/core/Tracker/Db/Pdo/Mysql.php
 %%WWWDIR%%/core/Tracker/Db/Pdo/Pgsql.php
 %%WWWDIR%%/core/Tracker/Db.php
-%%WWWDIR%%/core/Tracker/Generator/Tracker.php
-%%WWWDIR%%/core/Tracker/Generator/Visit.php
-%%WWWDIR%%/core/Tracker/Generator.php
 %%WWWDIR%%/core/Tracker/GoalManager.php
 %%WWWDIR%%/core/Tracker/Visit.php
 %%WWWDIR%%/core/Tracker/javascriptTag.tpl
@@ -160,6 +160,7 @@
 %%WWWDIR%%/core/Updates/0.5.php
 %%WWWDIR%%/core/Updates/0.6-rc1.php
 %%WWWDIR%%/core/Updates/0.6.2.php
+%%WWWDIR%%/core/Updates/0.6.3.php
 %%WWWDIR%%/core/Updates.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
@@ -839,14 +840,11 @@
 %%WWWDIR%%/misc/api_internal_call.php
 %%WWWDIR%%/misc/api_rest_call.php
 %%WWWDIR%%/misc/cron/archive.sh
+%%WWWDIR%%/misc/cron/archive.windows.ps1
 %%WWWDIR%%/misc/crossdomain.xml
 %%WWWDIR%%/misc/download-count.txt
 %%WWWDIR%%/misc/generateDoc.bat
 %%WWWDIR%%/misc/generateDoc.sh
-%%WWWDIR%%/misc/generateVisits.php
-%%WWWDIR%%/misc/generateVisitsData/AcceptLanguage.php
-%%WWWDIR%%/misc/generateVisitsData/Referers.php
-%%WWWDIR%%/misc/generateVisitsData/UserAgent.php
 %%WWWDIR%%/misc/iframeWidget.htm
 %%WWWDIR%%/misc/iframeWidget_localhost.htm
 %%WWWDIR%%/misc/license.txt
@@ -976,11 +974,12 @@
 %%WWWDIR%%/plugins/Goals/templates/add_edit_goal.tpl
 %%WWWDIR%%/plugins/Goals/templates/add_new_goal.tpl
 %%WWWDIR%%/plugins/Goals/templates/form_add_goal.tpl
+%%WWWDIR%%/plugins/Goals/templates/goals.css
 %%WWWDIR%%/plugins/Goals/templates/list_goal_edit.tpl
 %%WWWDIR%%/plugins/Goals/templates/list_top_segment.tpl
 %%WWWDIR%%/plugins/Goals/templates/overview.tpl
-%%WWWDIR%%/plugins/Goals/templates/release_notes.tpl
 %%WWWDIR%%/plugins/Goals/templates/single_goal.tpl
+%%WWWDIR%%/plugins/Goals/templates/table_by_segment.tpl
 %%WWWDIR%%/plugins/Goals/templates/title_and_evolution_graph.tpl
 %%WWWDIR%%/plugins/Installation/Controller.php
 %%WWWDIR%%/plugins/Installation/FormDatabaseSetup.php
@@ -1076,7 +1075,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/bg.setooz.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogs.gigablast.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogs.icerocket.com.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/blogs.seekport.at.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/blogsearch.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/cf.dir.yahoo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/cgi.search.biglobe.ne.jp.png
@@ -1088,6 +1086,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/dir.gigablast.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/dir.web.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/dmoz.org.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/duckduckgo.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ecosia.org.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/eo.st.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/fr.dir.com.png
@@ -1116,7 +1115,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/metaresults.copernic.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/news.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/news.openfind.com.tw.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/news.seekport.at.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/nl.altavista.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/nova.rambler.ru.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/otsing.delfi.ee.png
@@ -1270,7 +1268,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.searchalot.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.searchscout.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.searchy.co.uk.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.seekport.at.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.sharelook.fr.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.sogou.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.soso.com.png
@@ -1641,6 +1638,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/FF.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/FL.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/GA.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/GE.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/HA.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/HJ.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/IB.gif
@@ -1739,6 +1737,16 @@
 %%WWWDIR%%/plugins/VisitTime/Controller.php
 %%WWWDIR%%/plugins/VisitTime/VisitTime.php
 %%WWWDIR%%/plugins/VisitTime/templates/index.tpl
+%%WWWDIR%%/plugins/VisitorGenerator/data/AcceptLanguage.php
+%%WWWDIR%%/plugins/VisitorGenerator/data/UserAgent.php
+%%WWWDIR%%/plugins/VisitorGenerator/data/Referers.php
+%%WWWDIR%%/plugins/VisitorGenerator/Controller.php
+%%WWWDIR%%/plugins/VisitorGenerator/Tracker.php
+%%WWWDIR%%/plugins/VisitorGenerator/Visit.php
+%%WWWDIR%%/plugins/VisitorGenerator/templates/generate.tpl
+%%WWWDIR%%/plugins/VisitorGenerator/templates/index.tpl
+%%WWWDIR%%/plugins/VisitorGenerator/Generator.php
+%%WWWDIR%%/plugins/VisitorGenerator/VisitorGenerator.php
 %%WWWDIR%%/plugins/VisitorInterest/API.php
 %%WWWDIR%%/plugins/VisitorInterest/Controller.php
 %%WWWDIR%%/plugins/VisitorInterest/VisitorInterest.php
@@ -1796,7 +1804,6 @@
 %%WWWDIR%%/themes/default/simple_structure_footer.tpl
 %%WWWDIR%%/themes/default/simple_structure_header.tpl
 %%WWWDIR%%/themes/default/styles.css
-%%WWWDIR%%/web.config
 @dirrm %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/core/API
 @dirrm %%WWWDIR%%/core/Archive/Array
@@ -1810,6 +1817,7 @@
 @dirrm %%WWWDIR%%/core/DataTable
 @dirrm %%WWWDIR%%/core/Db/Adapter/Pdo
 @dirrm %%WWWDIR%%/core/Db/Adapter
+@dirrm %%WWWDIR%%/core/Db/Schema
 @dirrm %%WWWDIR%%/core/Db
 @dirrm %%WWWDIR%%/core/Log
 @dirrm %%WWWDIR%%/core/Period
@@ -1817,7 +1825,6 @@
 @dirrm %%WWWDIR%%/core/SmartyPlugins
 @dirrm %%WWWDIR%%/core/Tracker/Db/Pdo
 @dirrm %%WWWDIR%%/core/Tracker/Db
-@dirrm %%WWWDIR%%/core/Tracker/Generator
 @dirrm %%WWWDIR%%/core/Tracker
 @dirrm %%WWWDIR%%/core/Updates
 @dirrm %%WWWDIR%%/core/ViewDataTable/GenerateGraphData
@@ -1967,7 +1974,6 @@
 @dirrm %%WWWDIR%%/misc/UI
 @dirrm %%WWWDIR%%/misc/WebAppGallery
 @dirrm %%WWWDIR%%/misc/cron
-@dirrm %%WWWDIR%%/misc/generateVisitsData
 @dirrm %%WWWDIR%%/misc
 @dirrm %%WWWDIR%%/plugins/API/templates
 @dirrm %%WWWDIR%%/plugins/API
@@ -2046,6 +2052,9 @@
 @dirrm %%WWWDIR%%/plugins/UsersManager
 @dirrm %%WWWDIR%%/plugins/VisitFrequency/templates
 @dirrm %%WWWDIR%%/plugins/VisitFrequency
+@dirrm %%WWWDIR%%/plugins/VisitorGenerator/templates
+@dirrm %%WWWDIR%%/plugins/VisitorGenerator/data
+@dirrm %%WWWDIR%%/plugins/VisitorGenerator
 @dirrm %%WWWDIR%%/plugins/VisitTime/templates
 @dirrm %%WWWDIR%%/plugins/VisitTime
 @dirrm %%WWWDIR%%/plugins/VisitorInterest/templates

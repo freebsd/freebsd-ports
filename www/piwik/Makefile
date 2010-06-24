@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	piwik
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
@@ -15,6 +15,9 @@ COMMENT=	A Open Source Web Analytics Software Program
 
 USE_PHP=	mysql gd pdo pdo_mysql zlib iconv dom json session xml
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/misc/license.txt
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
