@@ -1,31 +1,66 @@
 #!/bin/sh
-jail_name="build.local"
-jail_short="build"
-jail_ip="127.0.0.1"
-jail_dir="/usr/jail/mybuild"
-jail_rule="127"
 #
-init_jail()
+#	$FreeBSD$
+#
+. /etc/rc.subr
+#
+case "$0" in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	pkg_jail_script="$_file"
+	;;
+*)
+	pkg_jail_script="$0"
+	;;
+esac
+pkg_jail_prefix="${pkg_jail_script%/*}"
+pkg_jail_config="${pkg_jail_prefix%/*}/etc/pkg_jail.conf"
+echo "${pkg_jail_config}"
+if test -s "${pkg_jail_config}"
+then
+	. "${pkg_jail_config}"
+fi
+#
+name="pkg_jail"
+rcvar=`set_rcvar`
+init_cmd="pkg_jail_init"
+start_cmd="pkg_jail_start"
+shell_cmd="pkg_jail_shell"
+list_cmd="pkg_jail_list"
+stop_cmd="pkg_jail_stop"
+status_cmd="pkg_jail_status"
+extra_commands="status shell list init"
+# defaults
+: ${pkg_jail_enable="YES"}
+: ${pkg_jail_hostname="build.local"}
+: ${pkg_jail_short="${pkg_jail_hostname%%.*}"}
+: ${pkg_jail_ip="127.0.0.1"}
+: ${pkg_jail_dir="/usr/jail/mybuild"}
+: ${pkg_jail_rule="127"}
+#
+pkg_jail_init()
 {
-	local jail_dir="${1}"
-	if test ! -d "${jail_dir}"
+	if test ! -d "${pkg_jail_dir}"
 	then
-		mkdir -p "${jail_dir}"
+		mkdir -p "${pkg_jail_dir}"
 	fi
-	if test ! -f "${jail_dir}/etc/rc.conf"
+	cd /usr/src
+#	make buildworld
+	make "DESTDIR=${pkg_jail_dir}" installworld
+	make "DESTDIR=${D}" delete-old RM_I="-f -v"
+	make "DESTDIR=${D}" delete-old-libs RM_I="-f -v"
+	if test ! -f "${pkg_jail_dir}/etc/rc.conf"
 	then
-		cd /usr/src
-#		make buildworld
-		make DESTDIR="${jail_dir}" installworld
 		cd /usr/src/etc
-		make DESTDIR="${jail_dir}" distribution
-		ln -sf dev/null "${jail_dir}/kernel"
-		touch "${jail_dir}/etc/fstab"
-		cp -pi /etc/localtime "${jail_dir}/etc/localtime"
-		cp -pi /etc/resolv.conf "${jail_dir}/etc/resolv.conf"
-		cp -pi /etc/make.conf "${jail_dir}/etc/make.conf"
-		echo "hostname=\"${jail_name}\"" > "${jail_dir}/etc/rc.conf"
-		cat >> "${jail_dir}/etc/rc.conf" << 'EOF'
+		make "DESTDIR=${pkg_jail_dir}" distribution
+		ln -sf dev/null "${pkg_jail_dir}/kernel"
+		touch "${pkg_jail_dir}/etc/fstab"
+		cp -pi /etc/localtime "${pkg_jail_dir}/etc/localtime"
+		cp -pi /etc/resolv.conf "${pkg_jail_dir}/etc/resolv.conf"
+		cp -pi /etc/make.conf "${pkg_jail_dir}/etc/make.conf"
+		echo "hostname=\"${pkg_jail_hostname}\"" > "${pkg_jail_dir}/etc/rc.conf"
+		cat >> "${pkg_jail_dir}/etc/rc.conf" << 'EOF'
 portmap_enable="NO"
 inetd_enable="NO"
 blanktime="NO"
@@ -38,122 +73,180 @@ background_fsck="NO"
 EOF
 	fi
 }
-create_dev_rules()
+pkg_jail_create_dev_rules()
 {
-	local jail_rule="${1}"
 	# Standard Jail ruleset
-	/sbin/devfs rule -s ${jail_rule} delset
-	/sbin/devfs rule -s ${jail_rule} add 100 hide
-	/sbin/devfs rule -s ${jail_rule} add 200 path ptyp* unhide
-	/sbin/devfs rule -s ${jail_rule} add 300 path ttyp* unhide
-	/sbin/devfs rule -s ${jail_rule} add 400 path null unhide
-	/sbin/devfs rule -s ${jail_rule} add 500 path zero unhide
-	/sbin/devfs rule -s ${jail_rule} add 510 path crypto unhide
-	/sbin/devfs rule -s ${jail_rule} add 600 path random unhide
-	/sbin/devfs rule -s ${jail_rule} add 610 path urandom unhide
-	/sbin/devfs rule -s ${jail_rule} add 700 path fd unhide
-	/sbin/devfs rule -s ${jail_rule} add 800 path fd/* unhide
-	/sbin/devfs rule -s ${jail_rule} add 810 path mdctl unhide
-	/sbin/devfs rule -s ${jail_rule} add 900 path stdin unhide
-	/sbin/devfs rule -s ${jail_rule} add 910 path stdout unhide
-	/sbin/devfs rule -s ${jail_rule} add 920 path stderr unhide
-	/sbin/devfs rule -s ${jail_rule} add 1000 path ptmx unhide
-	/sbin/devfs rule -s ${jail_rule} add 1010 path pts unhide
-	/sbin/devfs rule -s ${jail_rule} add 1020 path pts/* unhide
-	/sbin/devfs rule -s ${jail_rule} add 1030 path pty unhide
-	/sbin/devfs rule -s ${jail_rule} add 1040 path pty/* unhide
-	/sbin/devfs rule -s ${jail_rule} add 1050 path tty* unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} delset
+	/sbin/devfs rule -s ${pkg_jail_rule} add 100 hide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 200 path ptyp* unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 300 path ttyp* unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 400 path null unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 500 path zero unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 510 path crypto unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 600 path random unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 610 path urandom unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 700 path fd unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 800 path fd/* unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 810 path mdctl unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 900 path stdin unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 910 path stdout unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 920 path stderr unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 1000 path ptmx unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 1010 path pts unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 1020 path pts/* unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 1030 path pty unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 1040 path pty/* unhide
+	/sbin/devfs rule -s ${pkg_jail_rule} add 1050 path tty* unhide
 }
-create_dev_links()
+pkg_jail_create_dev_links()
 {
 	local devdir="${1}"
 	local source="${2}"
 	local target="${3}"
 	(cd ${devdir} && ln -sf ${source} ${target})
 }
-create_jail_devfs()
+pkg_jail_create_devfs()
 {
-	local jail_dir="${1}"
-	local jail_rule="${2}"
-	local jail_devdir="${jail_dir}/dev"
+	local jail_devdir="${pkg_jail_dir}/dev"
 	if test ! -e "${jail_devdir}/null"
 	then
 		# create and mount devfs
-		create_dev_rules "${jail_rule}"
+		pkg_jail_create_dev_rules
 		mount -t devfs dev ${jail_devdir}
-		devfs -m ${jail_devdir} ruleset ${jail_rule}
+		devfs -m ${jail_devdir} ruleset ${pkg_jail_rule}
 	fi
 	if test ! -L "${jail_devdir}/console"
 	then
-		create_dev_links ${jail_devdir} null console
+		pkg_jail_create_dev_links ${jail_devdir} null console
 	fi
 	if test ! -L "${jail_devdir}/mem"
 	then
 		# for libkvm (ab)users
-		create_dev_links ${jail_devdir} null mem
-		create_dev_links ${jail_devdir} null kmem
+		pkg_jail_create_dev_links ${jail_devdir} null mem
+		pkg_jail_create_dev_links ${jail_devdir} null kmem
 	fi
 	if test ! -L ${jail_devdir}/log
 	then
 		# Transitional symlink for old binaries
-		create_dev_links ${jail_devdir} ../var/run/log log
+		pkg_jail_create_dev_links ${jail_devdir} ../var/run/log log
 	fi
-	if test ! -L "${jail_dir}/var/log/console"
+	if test ! -L "${pkg_jail_dir}/var/log/console"
 	then
 		# Jail console output
-		create_dev_links ${jail_devdir} ../var/log/console console
+		pkg_jail_create_dev_links ${jail_devdir} ../var/log/console console
 	fi
 }
-create_jail_mount()
+pkg_jail_create_jail_mount()
 {
-	local jail_dir="${1}"
-	if test ! -d "${jail_dir}/procfs/1"
+	if test ! -d "${pkg_jail_dir}/procfs/1"
 	then
-		if test ! -d "${jail_dir}/procfs"
+		if test ! -d "${pkg_jail_dir}/procfs"
 		then
-			mkdir "${jail_dir}/procfs"
+			mkdir "${pkg_jail_dir}/procfs"
 		fi
-		mount -t procfs -o ro procfs "${jail_dir}/procfs"
+		mount -t procfs -o ro procfs "${pkg_jail_dir}/procfs"
 	fi
-	if test ! -f "${jail_dir}/usr/src/Makefile"
+	if test ! -f "${pkg_jail_dir}/usr/src/Makefile"
 	then
-		mount -t nullfs -o ro /usr/src "${jail_dir}/usr/src"
+		mount -t nullfs -o ro /usr/src "${pkg_jail_dir}/usr/src"
+	fi
+	if test ! -f "${pkg_jail_dir}/usr/ports/Makefile"
+	then
+		mount -t nullfs -o rw /usr/ports "${pkg_jail_dir}/usr/ports"
 	fi
 }
-case "$1" in
-init)
-	init_jail "${jail_dir}"
-	;;
-start)
-	echo "Starting jail-${jail_name}-${jail_ip}"
-	create_jail_devfs "${jail_dir}" "${jail_rule}"
-	create_jail_mount "${jail_dir}"
+pkg_jail_start()
+{
+	echo "Starting jail-${pkg_jail_hostname}-${pkg_jail_ip}"
+	pkg_jail_create_devfs
+	pkg_jail_create_jail_mount "${pkg_jail_dir}"
 	sysctl security.jail.sysvipc_allowed=1
-	/usr/sbin/jail -n "${jail_short}" "${jail_dir}" "${jail_name}" "${jail_ip}" /bin/sh /etc/rc
-	;;
-shell)
-	echo "Shell in jail-${jail_name}-${jail_ip}"
-	create_jail_devfs "${jail_dir}" "${jail_rule}"
-	create_jail_mount "${jail_dir}"
-	/usr/sbin/jail -n "${jail_short}" "${jail_dir}" "${jail_name}" "${jail_ip}" /bin/csh
-	;;
-list)
-	pids=`grep -l " ${jail_name}\$" /proc/*/status | awk -F/ '{print $3}'`
-	echo "processes for ${jail_ip} ${jail_name}:" ${pids}
-	;;
-stop)
-	echo "Stopping jail-${jail_name}-${jail_ip}"
-	pids=`grep -l " ${jail_name}\$" /proc/*/status | awk -F/ '{print $3}'`
-	/bin/kill -TERM $pids
-	;;
-restart)
-	/bin/sh $0 stop
-	sleep 1
-	/bin/sh $0 start
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop|restart|shell|list|init}" >&2
-	;;
-esac
-exit 0
+	/usr/sbin/jail -n "${pkg_jail_short}" "${pkg_jail_dir}" "${pkg_jail_hostname}" "${pkg_jail_ip}" /bin/sh /etc/rc
+}
+pkg_jail_status()
+{
+	/usr/sbin/jls | grep "${pkg_jail_hostname}"
+}
+pkg_jail_free()
+{
+	pkg_jail_status |
+	while read jid dummy
+	do
+		if test "${jid}" -lt 1
+		then
+			continue
+		fi
+		echo "jail is already running" >&2
+		pkg_jail_status >&2
+		exit 69
+	done
+}
+pkg_jail_umount()
+{
+	for dir in \
+		"${pkg_jail_dir}/usr/ports" \
+		"${pkg_jail_dir}/usr/src" \
+		"${pkg_jail_dir}/procfs" \
+		"${pkg_jail_dir}/dev" \
+
+	do
+		fstab=`fgrep "${dir}" /etc/fstab` 
+		if test -n "${fstab}"
+		then
+			continue
+		fi
+		mount=`mount | fgrep "${dir}"` 
+		if test -n "${mount}"
+		then
+			umount "${dir}"
+		fi
+	done
+}
+pkg_jail_shell()
+{
+	if pkg_jail_free
+	then
+		echo "Shell in jail-${pkg_jail_hostname}-${pkg_jail_ip}"
+		pkg_jail_create_devfs
+		pkg_jail_create_jail_mount "${pkg_jail_dir}"
+		/usr/sbin/jail -n "${pkg_jail_short}" "${pkg_jail_dir}" "${pkg_jail_hostname}" "${pkg_jail_ip}" /bin/csh
+		pkg_jail_umount
+	fi
+}
+pkg_jail_list()
+{
+	/usr/sbin/jls | grep "${pkg_jail_hostname}" |
+	while read jid dummy
+	do
+		if test "${jid}" -lt 1
+		then
+			continue
+		fi
+		ps -ax -o pid= -o jid= -o command= |
+		while read pid pjid command
+		do
+			if test "${pjid}" != "${jid}"
+			then
+				continue
+			fi
+			echo "${pid}	${pjid}	${command}"
+		done
+	done
+}
+pkg_jail_stop()
+{
+	/usr/sbin/jls | grep "${pkg_jail_hostname}" |
+	while read jid dummy
+	do
+		if test "${jid}" -lt 1
+		then
+			continue
+		fi
+		killall -j "${jid}"
+	done
+	pkg_jail_umount
+}
+
+load_rc_config $name
+run_rc_command "$1"
 # eof

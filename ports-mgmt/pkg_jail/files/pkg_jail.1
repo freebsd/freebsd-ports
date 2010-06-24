@@ -15,7 +15,7 @@ Creates or updates a clean jail with "installworld" and populate /etc inside the
 .TP
 .B start
 Start the jail as a guest server.
-You should have setup sshd to login and maintain it with this option.
+You should have setup sshd inside the jail to login and maintain it with this option.
 .TP
 .B shell
 Start the jail and give a shell back.
@@ -39,27 +39,24 @@ Same as "stop" and "start"
 if /usr/src/Makefile does not exists inside the jail,
 /usr/src will be mounted readonly via nullfs from the the host into the jail.
 .TP
-.B jail_name
+.B pkg_jail_hostname
 The hostname of the jail.
 .TP
-.B jail_short
-A short id fopr the jail.
+.B pkg_jail_short
+A short name for the jail.
 .TP
-.B jail_ip
+.B pkg_jail_ip
 The ip-address for the jail.
 .TP
-.B jail_dir
+.B pkg_jail_dir
 The new root for the jail.
 .TP
-.B jail_short
-A short id fopr the jail.
-.TP
-.B jail_rule
+.B pkg_jail_rule
 The rulset number the script uses for the devfs isnide the jail.
 .SH RETURN VALUES
 undefined.
 .SH "FILES"
-Configuration is inside the script.
+The variables can be set in /etc/rc.conf or in $PREFIX /etc/pkg_jail.conf.
 .SH "EXAMPLES"
 .B pkg_jail
 shell
