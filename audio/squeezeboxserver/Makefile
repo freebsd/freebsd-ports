@@ -7,6 +7,7 @@
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.5.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -230,6 +231,7 @@ build-plist:
 	@${FIND} ${TMP_SLIMDIR}/* -type f | \
 	    ${SED} -e 's|${TMP_SLIMDIR}|%%SLIMDIR%%|' | \
 	    ${SORT} >> ${PLIST}
+	@${ECHO} "%%SLIMDIR%%/custom-convert.conf" >> ${PLIST}
 	@${ECHO} "%%SLIMDIR%%/Cache" >> ${PLIST}
 	@${ECHO} "%%SLIMDIR%%/MySQL/errmsg.txt" >> ${PLIST}
 	@${ECHO} "%%SLIMDIR%%/MySQL/errmsg.sys" >> ${PLIST}

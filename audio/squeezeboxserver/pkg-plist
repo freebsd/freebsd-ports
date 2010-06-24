@@ -2080,6 +2080,7 @@ bin/softsqueeze
 %%SLIMDIR%%/slimservice.pl
 %%SLIMDIR%%/strings.txt
 %%SLIMDIR%%/types.conf.sample
+%%SLIMDIR%%/custom-convert.conf
 %%SLIMDIR%%/Cache
 %%SLIMDIR%%/MySQL/errmsg.txt
 %%SLIMDIR%%/MySQL/errmsg.sys
