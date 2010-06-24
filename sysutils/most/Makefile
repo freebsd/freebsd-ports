@@ -28,6 +28,8 @@ PLIST_FILES=	bin/most
 PORTDOCS=	README changes.txt lesskeys.rc most-fun.txt most.doc most.rc
 MAN1=		most.1
 
+PORTSCOUT=	skipv:5.0.0a
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
 		${WRKSRC}/src/jdmacros.h
