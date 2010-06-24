@@ -10697,6 +10697,7 @@ p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-AIO                 ports/devel/p5-AnyEvent-AIO
 p5-AnyEvent-DBI                 ports/devel/p5-AnyEvent-DBI
 p5-AnyEvent-DBI-Abstract        ports/devel/p5-AnyEvent-DBI-Abstract
+p5-AnyEvent-DBus                ports/devel/p5-AnyEvent-DBus
 p5-AnyEvent-Filesys-Notify      ports/devel/p5-AnyEvent-Filesys-Notify
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
@@ -14558,6 +14559,7 @@ p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-aio                 ports/devel/p5-AnyEvent-AIO
 p5-anyevent-dbi                 ports/devel/p5-AnyEvent-DBI
 p5-anyevent-dbi-abstract        ports/devel/p5-AnyEvent-DBI-Abstract
+p5-anyevent-dbus                ports/devel/p5-AnyEvent-DBus
 p5-anyevent-filesys-notify      ports/devel/p5-AnyEvent-Filesys-Notify
 p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
