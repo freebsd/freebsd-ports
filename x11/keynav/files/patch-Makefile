@@ -1,0 +1,16 @@
+--- ./Makefile.orig	2010-06-23 21:15:42.699032618 -0400
++++ ./Makefile	2010-06-23 21:15:55.756990939 -0400
+@@ -31,12 +31,7 @@
+ # We'll try to detect 'libxdo' and use it if we find it.
+ # otherwise, build monolithic.
+ keynav: keynav.o
+-	@set -x; \
+-	if $(LD) -o /dev/null -lxdo > /dev/null 2>&1 ; then \
+-		$(CC) keynav.o -o $@ $(LDFLAGS) -lxdo; \
+-	else \
+-		$(MAKE) keynav.static; \
+-	fi
++	$(CC) keynav.o -o $@ $(LDFLAGS) -lxdo; \
+ 
+ .PHONY: keynav.static
+ keynav.static: keynav.o xdo.o
