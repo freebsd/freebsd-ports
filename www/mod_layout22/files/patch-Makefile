@@ -1,0 +1,15 @@
+--- Makefile.orig	2007-02-21 22:29:07.000000000 +0100
++++ Makefile	2008-08-31 21:53:05.000000000 +0200
+@@ -1,10 +1,10 @@
+ ##
+ ##  Makefile -- Build procedure for mod_layout Apache module
+ ##
+-builddir=$(shell pwd)
++#builddir=$(shell pwd)
+ 
+ #   the used tools
+-APXS=apxs
++APXS=${LOCALBASE}/sbin/apxs
+ APACHECTL=apachectl
+ CC=`$(APXS) -q CC`
+ INC=-I`$(APXS) -q INCLUDEDIR` `$(APXS) -q CFLAGS`  #-DLAYOUT_FILEOWNER_NAME
