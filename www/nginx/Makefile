@@ -27,6 +27,7 @@ OPTIONS=	DEBUG			"Build with debug" off \
 		HTTP_CACHE_MODULE	"Enable http_cache module" on \
 		HTTP_DAV_MODULE		"Enable http_webdav module" off \
 		HTTP_FLV_MODULE		"Enable http_flv module" off \
+		HTTP_GEOIP_MODULE	"Enable http_geoip module" off \
 		HTTP_GZIP_STATIC_MODULE "Enable http_gzip_static module" off \
 		HTTP_IMAGE_FILTER_MODULE "Enable http_image_filter module" off \
 		HTTP_PERL_MODULE	"Enable http_perl module" off \
@@ -70,7 +71,7 @@ OPTIONS=	DEBUG			"Build with debug" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
-		UDPLOG_MODULE		"3rd party updlog (syslog) module" off
+		UDPLOG_MODULE		"3rd party udplog (syslog) module" off
 
 WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
@@ -223,6 +224,11 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_gunzip_filter_module-${NGINX_GUN
 
 .if defined(WITH_HTTP_FLV_MODULE)
 CONFIGURE_ARGS+=--with-http_flv_module
+.endif
+
+.if defined(WITH_HTTP_GEOIP_MODULE)
+CONFIGURE_ARGS+=--with-http_geoip_module
+LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
 .endif
 
 .if defined(WITH_HTTP_GZIP_STATIC_MODULE)
