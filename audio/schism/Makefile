@@ -31,6 +31,8 @@ PLIST_FILES=	bin/${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+PORTSCOUT=	skipv:20100202
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/schismtracker ${PREFIX}/bin/${PORTNAME}
 
