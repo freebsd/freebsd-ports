@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	irssi-xmpp
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	irc
 MASTER_SITES=	http://cybione.org/~irssi-xmpp/files/
 
@@ -15,9 +15,7 @@ BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 LIB_DEPENDS=	loudmouth:${PORTSDIR}/net-im/loudmouth
 
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-MAKE_ENV=	IRSSI_INCLUDE="${LOCALBASE}/include/irssi/"
 
 PLIST_FILES=	lib/irssi/modules/libfe_xmpp.so \
 		lib/irssi/modules/libtext_xmpp.so \
@@ -29,6 +27,12 @@ PORTDOCS=	README \
 		MUC \
 		STARTUP \
 		XEP
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+post-configure:
+	@${REINPLACE_CMD} "/ggdb/d" ${WRKSRC}/config.mk
 
 do-install:
 .for data in core fe-common fe-text
