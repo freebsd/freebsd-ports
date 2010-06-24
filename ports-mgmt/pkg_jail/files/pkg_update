@@ -1,5 +1,6 @@
 #!/bin/sh
-#       $Id: pkg_update,v 1.68 2010/04/05 04:39:43 cvs Exp $
+#       $Id: pkg_update,v 1.69 2010/06/24 15:56:40 cvs Exp $
+#       $FreeBSD$
 #
 # Copyright (c) 2001-2006
 #       by Dirk Meyer, All rights reserved.
@@ -1816,7 +1817,7 @@ then
 fi
 #
 hostnames=`hostname -s`
-localdir="/usr/ports/local/update"
+localdir="${PKG_UPDATE_DIR:-/usr/ports/local/update}"
 logdir="${PKG_UPDATE_LOGDIR:-${localdir}/log-${hostnames}}"
 hostname=`hostname`
 depends="${localdir}/data/depends.${hostname}"
@@ -1841,7 +1842,7 @@ quiet_mkdir "${pkginfo_cache}"
 target="${1}"
 case "${target}" in
 make-packages)
-	defaultdata="data/make-packages.${hostname}"
+	defaultdata="${localdir}/data/make-packages.${hostname}"
 	if test ! -f "${defaultdata}"
 	then
 		echo "${defaultdata}: no such file, make-packages aborted."  >&2
@@ -1868,7 +1869,7 @@ make-packages)
 	;;
 add-packages)
 	shift
-	defaultdata="data/install-packages.${hostname}"
+	defaultdata="${localdir}/data/install-packages.${hostname}"
 	parse_default "${#}"
 	quiet_mkdir "${localdir}/data" "${logdir}"
 	for i in "${@}"
@@ -1886,7 +1887,7 @@ add-packages)
 	;;
 install-packages)
 	shift
-	defaultdata="data/install-packages.${hostname}"
+	defaultdata="${localdir}/data/install-packages.${hostname}"
 	parse_default "${#}"
 	for i in "${@}"
 	do
@@ -1903,7 +1904,7 @@ install-packages)
 	;;
 show-packages)
 	shift
-	defaultdata="data/install-packages.${hostname}"
+	defaultdata="${localdir}/data/install-packages.${hostname}"
 	parse_default "${#}"
 	for i in "${@}"
 	do
@@ -1920,7 +1921,7 @@ show-packages)
 	;;
 deinstall-packages)
 	shift
-	defaultdata="data/install-packages.${hostname}"
+	defaultdata="${localdir}/data/install-packages.${hostname}"
 	parse_default "${#}"
 	for i in "${@}"
 	do
@@ -1937,7 +1938,7 @@ deinstall-packages)
 	;;
 show-missing-packages)
 	shift
-	defaultdata="data/install-packages.${hostname}"
+	defaultdata="${localdir}/data/install-packages.${hostname}"
 	parse_default "${#}"
 	for i in "${@}"
 	do
@@ -1954,7 +1955,7 @@ show-missing-packages)
 	;;
 fetch-distfiles)
 	shift
-	defaultdata="data/make-packages.${hostname}"
+	defaultdata="${localdir}/data/make-packages.${hostname}"
 	parse_default "${#}"
 	for i in "${@}"
 	do
@@ -1971,7 +1972,7 @@ fetch-distfiles)
 	;;
 fetch-recursive-distfiles)
 	shift
-	defaultdata="data/make-packages.${hostname}"
+	defaultdata="${localdir}/data/make-packages.${hostname}"
 	parse_default "${#}"
 	for i in "${@}"
 	do
@@ -2176,7 +2177,7 @@ check-installed-ports)
 	tmp1="/tmp/check-listed.$$"
 	tmp2="/tmp/check-installed.$$"
 	quiet_mkdir "${localdir}/data"
-	defaultdata="data/install-packages.${hostname}"
+	defaultdata="${localdir}/data/install-packages.${hostname}"
 	if test ! -f "${defaultdata}"
 	then
 		/bin/sh "${0}" "list-installed-ports" | sort > "${defaultdata}"
@@ -2272,8 +2273,8 @@ cvsup)
 	;;
 full-update-jail)
 	cd ${localdir} || exit 69
-	defaultdata="data/make-packages.${hostname}"
-	cvsupscript="data/cvsup-${hostname}.sh"
+	defaultdata="${localdir}/data/make-packages.${hostname}"
+	cvsupscript="${localdir}/data/cvsup-${hostname}.sh"
 	#
 	shift
 	case "${1}" in
