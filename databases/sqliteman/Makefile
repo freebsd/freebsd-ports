@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	sqliteman
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Admin's GUI tool for Sqlite3
 
 LIB_DEPENDS=	qscintilla2.5:${PORTSDIR}/devel/qscintilla2
