@@ -17,9 +17,9 @@
 %%SITE_PERL%%/IO/Uncompress/Adapter/Inflate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Zlib/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Compress/Zlib
-@dirrm %%SITE_PERL%%/IO/Uncompress/Adapter
+@dirrmtry %%SITE_PERL%%/IO/Uncompress/Adapter
 @dirrmtry %%SITE_PERL%%/IO/Uncompress
-@dirrm %%SITE_PERL%%/IO/Compress/Adapter
+@dirrmtry %%SITE_PERL%%/IO/Compress/Adapter
 @dirrm %%SITE_PERL%%/IO/Compress/Gzip
 @dirrm %%SITE_PERL%%/IO/Compress/Zip
 @dirrm %%SITE_PERL%%/IO/Compress/Zlib
