@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 # WITHOUT_SCHEMA disable XML schema support
+# WITHOUT_THREADS disable threads support
 # WITH_MEM_DEBUG enable memory debugging (DEVELOPERS ONLY!)
 # WITH_XMLLINT_HIST enable history for xmllint
 # WITH_THREAD_ALLOC enable per-thread memory (DEVELOPERS ONLY!)
@@ -44,6 +45,10 @@ MAN3=		libxml.3
 
 .if defined(WITHOUT_SCHEMA)
 CONFIGURE_ARGS+=	--without-schemas
+.endif
+
+.if defined(WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--without-threads
 .endif
 
 .if defined(WITH_MEM_DEBUG)
