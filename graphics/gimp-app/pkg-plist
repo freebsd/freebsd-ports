@@ -649,12 +649,12 @@ share/doc/gimp/libgimpmath/libgimpmath.html
 share/doc/gimp/libgimpmath/right.png
 share/doc/gimp/libgimpmath/style.css
 share/doc/gimp/libgimpmath/up.png
-share/doc/gimp/libgimpmodule/GimpModule.html
-share/doc/gimp/libgimpmodule/GimpModuleDB.html
 share/doc/gimp/libgimpmodule/home.png
 share/doc/gimp/libgimpmodule/index.html
 share/doc/gimp/libgimpmodule/index.sgml
 share/doc/gimp/libgimpmodule/left.png
+share/doc/gimp/libgimpmodule/libgimpmodule-gimpmodule.html
+share/doc/gimp/libgimpmodule/libgimpmodule-gimpmoduledb.html
 share/doc/gimp/libgimpmodule/libgimpmodule-index-deprecated.html
 share/doc/gimp/libgimpmodule/libgimpmodule-index-new-in-2-2.html
 share/doc/gimp/libgimpmodule/libgimpmodule-index-new-in-2-4.html
@@ -1682,6 +1682,10 @@ share/locale/ar/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ar/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ar/LC_MESSAGES/gimp20-tips.mo
 share/locale/ar/LC_MESSAGES/gimp20.mo
+share/locale/ast/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/ast/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/ast/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/ast/LC_MESSAGES/gimp20.mo
 share/locale/az/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/az/LC_MESSAGES/gimp20-python.mo
 share/locale/az/LC_MESSAGES/gimp20-script-fu.mo
@@ -1891,12 +1895,19 @@ share/locale/ms/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ms/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ms/LC_MESSAGES/gimp20-tips.mo
 share/locale/ms/LC_MESSAGES/gimp20.mo
+share/locale/my/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/my/LC_MESSAGES/gimp20-python.mo
+share/locale/my/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/my/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/my/LC_MESSAGES/gimp20-tips.mo
+share/locale/my/LC_MESSAGES/gimp20.mo
 share/locale/nb/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/nb/LC_MESSAGES/gimp20-python.mo
 share/locale/nb/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/nb/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/nb/LC_MESSAGES/gimp20-tips.mo
 share/locale/nb/LC_MESSAGES/gimp20.mo
+share/locale/nds/LC_MESSAGES/gimp20.mo
 share/locale/ne/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ne/LC_MESSAGES/gimp20-python.mo
 share/locale/ne/LC_MESSAGES/gimp20-script-fu.mo
@@ -2031,6 +2042,9 @@ share/locale/zh_CN/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20-tips.mo
 share/locale/zh_CN/LC_MESSAGES/gimp20.mo
+share/locale/zh_HK/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/zh_HK/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/zh_HK/LC_MESSAGES/gimp20-tips.mo
 share/locale/zh_HK/LC_MESSAGES/gimp20.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-python.mo
@@ -2038,6 +2052,36 @@ share/locale/zh_TW/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20-tips.mo
 share/locale/zh_TW/LC_MESSAGES/gimp20.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/yi/LC_MESSAGES
+@dirrmtry share/locale/yi
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/tt/LC_MESSAGES
+@dirrmtry share/locale/tt
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/my/LC_MESSAGES
+@dirrmtry share/locale/my
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrm share/gimp/tips
 @dirrm share/gimp/themes/Small
 @dirrm share/gimp/themes/Default/images/preferences
@@ -2090,27 +2134,3 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm etc/gimp
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/yi/LC_MESSAGES
-@dirrmtry share/locale/yi
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/tt/LC_MESSAGES
-@dirrmtry share/locale/tt
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/mr/LC_MESSAGES
-@dirrmtry share/locale/mr
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
