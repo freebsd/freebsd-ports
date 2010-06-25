@@ -1,0 +1,22 @@
+code		meaning					sent by
+----	----------------------------------------	-----------
+1	error: invalid build id, etc.			pdispatch
+201	success: qmanager command executed		qmanager
+202	success: machine selected			qmanager
+203	success: job blocked				qmanagerobj
+253	success: setting up buildid on machine		pdispatch
+254	error: failed to claim chroot on host/
+		chroot is empty/
+		build failed uncleanly			pdispatch
+255	error: copy failed				portbuild
+401	error: could not connect			qmanagerhandler
+402	error: machine modified but unknown		qmanager
+202	error: job would block				qmanagerobj
+404	error: no such job to release/reconnect		qmanager
+406	error: machine modified but input error		qmanager
+407	error: bogus connection/release request		qmanager
+408	error: machine modified but not by root		qmanager
+409	error: machine modified but current jobs	qmanager
+410	error: job to reconnect is still connected	qmanager
+411	error: machine modified but already exists	qmanager
+412	error: job to release is still connected	qmanager
