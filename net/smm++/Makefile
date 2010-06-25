@@ -18,15 +18,14 @@ COMMENT=	Graphical mudclient with mapper
 
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets4.0.1/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwidgets
 BUILD_DEPENDS=	${LOCALBASE}/lib/libitk.so:${PORTSDIR}/x11-toolkits/itk \
-		${LOCALBASE}/lib/libitcl.so.3:${PORTSDIR}/lang/itcl
+		${LOCALBASE}/lib/libitcl.so:${PORTSDIR}/lang/itcl
 
 WRKSRC=		${WRKDIR}/smm/Install.unix
-USE_GMAKE=	yes
+#USE_GMAKE=	yes
+USE_TK=		84+
+EXTRACT_AFTER_ARGS+=|${TAR} -xpf - --exclude CVS
 
-post-extract:
-	${FIND} ${WRKDIR} -type d -name CVS | ${XARGS} ${RM} -rf
-
-do-configure:
-	@echo "No configure needed"
+post-patch:
+	${REINPLACE_CMD} -e 's,itkarray=.*,itkarray=${WISH},' ${WRKSRC}/itk.sh
 
 .include <bsd.port.mk>
