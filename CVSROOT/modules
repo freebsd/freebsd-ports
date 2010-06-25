@@ -3454,9 +3454,7 @@ firefox                         ports/www/firefox
 firefox-i18n                    ports/www/firefox-i18n
 firefox-remote                  ports/www/firefox-remote
 firefox-sync                    ports/www/firefox-sync
-firefox3                        ports/www/firefox3
 firefox3-devel                  ports/www/firefox3-devel
-firefox3-i18n                   ports/www/firefox3-i18n
 firefox35                       ports/www/firefox35
 firefox35-i18n                  ports/www/firefox35-i18n
 firemime                        ports/mail/firemime
@@ -8193,6 +8191,7 @@ libvmime                        ports/mail/libvmime
 libvncserver                    ports/net/libvncserver
 libvolume_id                    ports/devel/libvolume_id
 libvorbis                       ports/audio/libvorbis
+libvpx                          ports/multimedia/libvpx
 libwfut                         ports/devel/libwfut
 libwhisker                      ports/security/libwhisker
 libwmf                          ports/graphics/libwmf
