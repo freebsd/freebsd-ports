@@ -1,6 +1,12 @@
 #!/bin/sh
+# $FreeBSD$
+
+# client-side script to do all the work surrounding an individual package
+#     build, and then the package build itself
 
 # usage: $0 ARCH BRANCH BUILDID CHROOT [-noclean] [-norestr] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
+
+pb=/var/portbuild
 
 mount_fs()
 {
@@ -47,9 +53,6 @@ bailout()
   exit $error
 }
 
-# configurable variables
-pb=/var/portbuild
-
 arch=$1
 branch=$2
 buildid=$3
@@ -59,6 +62,8 @@ shift 4
 # Default niceness value
 nice=0
 
+. ${pb}/${arch}/client.conf
+# note: should NOT need anything from server.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/${arch}/portbuild.$(hostname)
 . ${pb}/scripts/buildenv
@@ -74,26 +79,31 @@ fi
 norestr=0
 if [ "x$1" = "x-norestr" ]; then
   norestr=1
+  # consumed by bsd.port.mk
   export NO_RESTRICTED=1
   shift
 fi
 noplistcheck=0
 if [ "x$1" = "x-noplistcheck" ]; then
   noplistcheck=1
+  # consumed by buildscript directly
   export NOPLISTCHECK=1
   shift
 fi
 nodistfiles=1
 if [ "x$1" = "x-distfiles" ]; then
+  # consumed by buildscript via make(1)
   export ALWAYS_KEEP_DISTFILES=1
   nodistfiles=0
   shift
 fi
 if [ "x$1" = "x-fetch-original" ]; then
+  # consumed by buildscript via make(1)
   export FETCH_ORIGINAL=1
   shift
 fi
 if [ "x$1" = "x-trybroken" ]; then
+  # consumed by bsd.port.mk
   export TRYBROKEN=1
   shift
 fi
@@ -105,21 +115,23 @@ BD=$4
 RD=$5
 
 builddir=${pb}/${arch}/${branch}/builds/${buildid}
-buildenv ${pb} ${arch} ${branch} ${builddir}
+buildenv.client ${pb} ${arch}
 
 # Want to use the /etc/make.conf in the chroot
 unset __MAKE_CONF
 
-pkgname=$(basename $6 ${PKGSUFFIX})
+pkgname=$(basename $6 ${CLIENT_PKGSUFFIX})
 dirname=$7
 shift 2
 
 echo $pkgname
 echo $dirname
 
-export WRKDIRPREFIX=/work
-export DISTDIR=/tmp/distfiles
-export PACKAGES=/tmp/packages
+# set overrides for bsd.port.mk variables
+export WRKDIRPREFIX=${CLIENT_WRKDIRPREFIX}
+export DISTDIR=${CLIENT_DISTDIR}
+export LOCALBASE=${CLIENT_LOCALBASE}
+export PACKAGES=${CLIENT_PACKAGES_LOCATION}
 
 # to catch missing dependencies
 #export DEPENDS_TARGET=/usr/bin/true
@@ -127,25 +139,24 @@ export PACKAGES=/tmp/packages
 # don't pass -j, -k etc. to sub-makes
 unset MAKEFLAGS
 unset PORTSDIR
-export SRCBASE=/usr/src
+export SRCBASE=${CLIENT_SRCBASE}
 
 # wait 2 hours before killing build with no output
-export TIMEOUT=7200
+export BUILD_TIMEOUT=${CLIENT_BUILD_TIMEOUT}
 
-# to prevent runaway processes -- 400 meg file size limit, 2 hours CPU limit
-ulimit -f 819200
-ulimit -t 7200
+# prevent runaway processes
+ulimit -f ${CLIENT_ULIMIT_F}
+ulimit -t ${CLIENT_ULIMIT_T}
 
 # directories to clean
 cleandirs="${LOCALBASE} /compat /var/db/pkg"
 
-# 15 minutes
-export FTP_TIMEOUT=900
-export HTTP_TIMEOUT=900
+export FTP_TIMEOUT=${CLIENT_FTP_TIMEOUT}
+export HTTP_TIMEOUT=${CLIENT_HTTP_TIMEOUT}
 
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin
 
-echo "building $pkgname in $chroot"
+echo "building ${pkgname} in ${chroot}"
 
 bindist=${buildroot}/${branch}/${buildid}/tarballs/bindist.tar
 bindistlocal=${buildroot}/${branch}/${buildid}/tarballs/bindist-$(hostname).tar
@@ -175,7 +186,6 @@ if [ "${use_jail}" = "1" ]; then
 fi
 
 # Set up desired uname version
-echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_VERSION
 
 trap "bailout ${chroot} ${clean} ${error} ${pkgname}" 1 2 3 9 10 11 15
 
@@ -196,6 +206,7 @@ rm -rf ${chroot}/usr/ports
 rm -rf ${chroot}/${WRKDIRPREFIX}
 mkdir -p ${chroot}/${WRKDIRPREFIX}
 
+# pick up value from <arch>/portbuild.conf
 if [ ! -z "${ccache_dir}" ]; then
   mkdir -p ${chroot}/root/.ccache/
   if [ "${ccache_dir_nfs}" = "1" ]; then
@@ -205,12 +216,12 @@ if [ ! -z "${ccache_dir}" ]; then
   fi
 fi
 
-mount_fs ${builddir}/ports ${chroot}/a/ports ${master}
+mount_fs ${builddir}/ports ${chroot}/a/ports ${CLIENT_NFS_MASTER}
 ln -sf ../a/ports ${chroot}/usr/ports
 
 mkdir -p ${chroot}/usr/src 
 
-mount_fs ${builddir}/src ${chroot}/usr/src ${master}
+mount_fs ${builddir}/src ${chroot}/usr/src ${CLIENT_NFS_MASTER}
 
 mount -t devfs foo ${chroot}/dev
 umount -f ${chroot}/compat/linux/proc > /dev/null 2>&1
@@ -235,11 +246,14 @@ mkdir -p ${chroot}${LOCALBASE}
 mtree -deU -f ${chroot}/a/ports/Templates/BSD.local.dist -p ${chroot}${LOCALBASE} \
   >/dev/null 2>&1
 
-if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
-  # JDK ports need linprocfs :(
-  mkdir -p ${chroot}/compat/linux/proc
-  mount -t linprocfs linprocfs ${chroot}/compat/linux/proc
-fi
+for i in ${ARCHS_REQUIRING_LINPROCFS}; do
+  if [ ${i} = ${arch} ]; then
+    # JDK ports need linprocfs :(
+    mkdir -p ${chroot}/compat/linux/proc
+    mount -t linprocfs linprocfs ${chroot}/compat/linux/proc
+    break
+  fi
+done
 
 _ldconfig_dirs="/lib /usr/lib /usr/lib/compat"
 ldconfig_dirs=""
@@ -249,16 +263,19 @@ for i in ${_ldconfig_dirs}; do
   fi
 done
 chroot ${chroot} /sbin/ldconfig ${ldconfig_dirs}
-if [ ${arch} = "i386" ]; then
+for i in ${ARCHS_REQUIRING_AOUT_COMPAT}; do
+  if [ ${i} = ${arch} ]; then
 	chroot ${chroot} /sbin/ldconfig -aout /usr/lib/aout /usr/lib/compat/aout
-fi
+	break
+  fi
+done
 
 set x $ED $FD $PD $BD $RD
 shift 1
 while [ $# -gt 0 ]; do
   if [ ! -f ${chroot}/tmp/depends/$1 ]; then
     echo "copying package $1 for ${pkgname}"
-    copypkg ${pb} ${master} $1 ${chroot}/tmp/depends "${http_proxy}"
+    copypkg ${pb} ${CLIENT_UPLOAD_HOST} $1 ${chroot}/tmp/depends "${http_proxy}"
 
     # Test for copy failure and bail
     if [ ! -f ${chroot}/tmp/depends/$1 ]; then
@@ -291,7 +308,7 @@ if [ "${error}" = 0 ]; then
     jail -J ${chroot}/tmp/jail.id ${chroot} jail-${chrootpid} 127.${ip1}.${ip2}.${ip3} /usr/bin/env JAIL_ADDR=127.${ip1}.${ip2}.${ip3} HTTP_PROXY=${http_proxy} /usr/bin/nice -n $nice /buildscript ${dirname} 2 "$ED" "$PD" "$FD" "$BD" "$RD" > ${chroot}/tmp/${pkgname}.log2 2>&1
     ifconfig lo0 delete 127.${ip1}.${ip2}.${ip3}
   else
-    chroot ${chroot} /usr/bin/nice -n $nice /buildscript ${dirname} 2 "$ED" "$PD" "$FD" "$BD" "$RD" > ${chroot}/tmp/${pkgname}.log2 2>&1
+    chroot ${chroot} /usr/bin/nice -n ${nice} /buildscript ${dirname} 2 "$ED" "$PD" "$FD" "$BD" "$RD" > ${chroot}/tmp/${pkgname}.log2 2>&1
   fi
 
   grep pnohang ${chroot}/tmp/${pkgname}.log2
