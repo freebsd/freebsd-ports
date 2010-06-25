@@ -1,36 +1,44 @@
 #!/bin/sh
+# $FreeBSD$
 #
-# Set up the build variables which are used by a given build
-#
-# Code fragment used by other scripts for commonality
+# Set up the build variables which are used by a given build.  Some
+#    of the code here is common to both clients and server; some is
+#    particular to each.
 
+# get the major branch number.  only used on server side.
+get_branch_base() {
+    strippedbranch=${1%%[-\.]*}
+    branchbase=`echo $strippedbranch | grep ${SRC_BRANCHES_PATTERN}`
+    echo ${branchbase}
+}
+
+# only used on server side
 validate_env() {
     arch=$1
     branch=$2
 
-    case ${arch} in
-	amd64|i386|ia64|powerpc|sparc64)
-	    continue
-	    ;;
-	*)
-	    echo "Invalid arch: ${arch}"
-	    return 1
-	    ;;
-    esac
+    valid_arch=0
+    for i in ${SUPPORTED_ARCHS}; do
+	if [ ${i} = ${arch} ]; then
+	    valid_arch=1
+	    break
+	fi
+    done
+    if [ $valid_arch = 0 ]; then
+	echo "Invalid arch: ${arch}"
+	return 1
+    fi
 
-    case ${branch} in
-	6|6-exp|7|7-exp|8|8-exp|9|9-exp)
-	    continue
-	    ;;
-	*)
-	    echo "Invalid branch: ${branch}"
-	    return 1
-	    ;;
-    esac
+    branchbase=$(get_branch_base ${branch})
+    if [ -z "${branchbase}" ]; then
+	echo "Invalid branch: ${branch}"
+	return 1
+    fi
 
     return 0
 }
 
+# only used on server side
 resolve() {
     pb=$1
     arch=$2
@@ -38,7 +46,7 @@ resolve() {
     buildid=$4
 
     # Resolve a possibly symlinked buildid (e.g. "latest") to the
-    # underlying directory
+    # underlying physical directory
 
     pbab=${pb}/${arch}/${branch}
     builddir=${pbab}/builds/${buildid}/
@@ -54,11 +62,16 @@ resolve() {
     echo ${buildid}
 }
 
+#
+# establish commonly-used environment variables (server-side)
+#
 buildenv () {
     pb=$1
     arch=$2
     branch=$3
     builddir=$4
+
+    buildenv.common ${pb} ${arch}
 
     # Have to use realpath because 'make index' doesn't deal with
     # symlinks in PORTSDIR - kk 020311
@@ -73,6 +86,55 @@ buildenv () {
 	export SRCBASE=/nonexistent
     fi
 
+    # override things destined for bsd.port.mk
+    export LOCALBASE=/usr/local
+    export DISTDIR=${builddir}/distfiles
+    export PACKAGES=${builddir}/packages
+    export PKGSUFFIX=.tbz
+
+    # now unused:
+    # export PKGZIPCMD=bzip2
+
+    branchbase=$(get_branch_base ${branch})
+    if [ -z "${branchbase}" ]; then
+	echo "buildenv: invalid branch ${branch}"
+	exit 1
+    else
+	export INDEXFILE=INDEX-${branchbase}
+    fi
+
+    # probably only used in mkbindist
+    export __MAKE_CONF=${pb}/${arch}/make.conf
+}
+
+#
+# establish commonly-used environment variables (client-side)
+#
+buildenv.client() {
+    pb=$1
+    arch=$2
+
+    buildenv.common ${pb} ${arch}
+
+    # Don't pick up host OPTIONS
+    export PORT_DBDIR=/nonexistent
+
+    # manually override results of uname(1)
+    export UNAME_m=${ARCH}
+    export UNAME_n=freebsd.org
+    export UNAME_p=${ARCH}
+    export UNAME_r=${OSREL}-${BRANCH}
+    export UNAME_s=FreeBSD
+    export UNAME_v="FreeBSD ${OSREL}-${BRANCH} #0: $(date)     portmgr@freebsd.org:/usr/src/sys/magic/kernel/path"
+}
+
+#
+# establish commonly-used environment variables (common to clients and server)
+#
+buildenv.common() {
+    pb=$1
+    arch=$2
+
     if [ -f ${SRCBASE}/sys/sys/param.h ]; then
 	export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCBASE}/sys/sys/param.h)
     fi
@@ -81,66 +143,8 @@ buildenv () {
 	export BRANCH=$(awk 'BEGIN {FS="\""}; /^BRANCH/ {print $2}' < ${SRCBASE}/sys/conf/newvers.sh)
     fi
 
-    case "x$branch" in
-	x6)
-	export INDEXFILE=INDEX-6
-	    ;;
-	x6-exp)
-	export INDEXFILE=INDEX-6
-	    ;;
-	x7)
-	export INDEXFILE=INDEX-7
-	    ;;
-	x7-exp)
-	export INDEXFILE=INDEX-7
-	    ;;
-	x8)
-	export INDEXFILE=INDEX-8
-	    ;;
-	x8-exp)
-	export INDEXFILE=INDEX-8
-	    ;;
-	x9)
-	export INDEXFILE=INDEX-9
-	    ;;
-	x9-exp)
-	export INDEXFILE=INDEX-9
-	    ;;
-	*)
-	    echo "buildenv: invalid branch"
-	    exit 1
-	    ;;
-    esac
-
     export ARCH=${arch}
     export MACHINE_ARCH=${arch}
 
-    export LOCALBASE=/usr/local
-    export PKGSUFFIX=.tbz
-    export PKGZIPCMD=bzip2
-    export X_WINDOW_SYSTEM=xorg
-    #export USA_RESIDENT=yes
-
-    export SRCPREFIX=${SRCBASE} #XXX Which one is canonical?
-
-    export __MAKE_CONF=${pb}/${arch}/make.conf
-
-    export DISTDIR=${builddir}/distfiles
-    export PACKAGES=${builddir}/packages
-
-    # Don't pick up host OPTIONS
-    export PORT_DBDIR=/nonexistent
-
-    export UNAME_m=${ARCH}
-    export UNAME_n=freebsd.org
-    export UNAME_p=${ARCH}
-    export UNAME_r=${OSREL}-${BRANCH}
-    export UNAME_s=FreeBSD
-    export UNAME_v="FreeBSD ${OSREL}-${BRANCH} #0: $(date)     kris@freebsd.org:/usr/src/sys/magic/kernel/path"
-
     export BATCH=1
-    export PACKAGE_BUILDING=1
-
-    export FTP_PASSIVE_MODE=yes
-    #export FETCH_BEFORE_ARGS=-vvv
 }
