@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	coq
-PORTVERSION=	8.2.1
-PORTREVISION=	3
+DISTVERSION=	8.2pl1
+PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	http://coq.inria.fr/V${PORTVERSION:R}/files/ \
+MASTER_SITES=	http://coq.inria.fr/distrib/V${DISTVERSION}/files/ \
 		ftp://ftp.stack.nl/pub/users/johans/coq/
-DISTNAME=	${PORTNAME}-${COQVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
@@ -25,12 +24,16 @@ WITH_IDE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
-CONFIGURE_ARGS+=	--emacslib ${PREFIX}/share/emacs/site-lisp
-CONFIGURE_ARGS+=	--reals all
-CONFIGURE_ARGS+=	--opt
+CONFIGURE_ARGS+=--emacslib ${PREFIX}/share/emacs/site-lisp
+CONFIGURE_ARGS+=--reals all
+CONFIGURE_ARGS+=--opt
 
-COQVERSION=	${PORTVERSION:R}-${PORTVERSION:E}
-PORTDOCS=	CHANGES COPYRIGHT CREDITS INSTALL LICENSE README
+.ifdef	NOPORTDOCS
+CONFIGURE_ARGS+=--with-doc none
+.else
+BUILD_DEPENDS+=	hevea:${PORTSDIR}/textproc/hevea
+PORTDOCS=	*
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -53,14 +56,10 @@ PLIST_SUB+=	IDE="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e '/FreeBSD.*\.byte/s/^/#/' \
+		-e '1s:/bin/bash:/bin/sh:' \
 		-e '/^MAKE=/d' ${WRKSRC}/configure
-
-post-install:
-.if !defined(NOPORTDOCS)
-	-@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+	@${REINPLACE_CMD} -e 's:/bin/bash:/bin/sh:' \
+		${WRKSRC}/Makefile* ${WRKSRC}/install.sh
+	@${REINPLACE_CMD} -e '/show_latex_mes/s/)$$/; true)/' ${WRKSRC}/Makefile.doc
 
 .include <bsd.port.post.mk>
