@@ -26,6 +26,7 @@ buildid=$3
 shift 3
 
 pb=/var/portbuild
+. ${pb}/conf/server.conf
 . ${pb}/${arch}/portbuild.conf
 
 . ${pb}/scripts/buildenv
@@ -48,7 +49,7 @@ cleandir ${tmpdir}
 mkdir -p ${tmpdir}
 
 # Copy the files into the tmpdir from an existing built world
-destdir=${worlddir}/${arch}/${branch}
+destdir=${WORLDDIR}/${arch}/${branch}
 cd ${destdir}; find -dx . | \
     grep -v -E '^./usr/(local|obj|opt|ports|src)' | \
     grep -v '^./home' | \

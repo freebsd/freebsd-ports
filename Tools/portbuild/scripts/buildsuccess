@@ -22,6 +22,7 @@ shift 4
 
 builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
+. ${pb}/conf/server.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 

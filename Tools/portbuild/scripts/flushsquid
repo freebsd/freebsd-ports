@@ -1,7 +1,12 @@
 #!/bin/sh
+# $FreeBSD$
 
+# client script to be manually run to flush squid cache, whenever needed
+
+# note: uname is not being overridden
 arch=$(uname -m)
 pb=/var/portbuild
+. ${pb}/${arch}/client.conf
 . ${pb}/${arch}/portbuild.conf
 
 host=$(hostname)

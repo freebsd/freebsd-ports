@@ -1,10 +1,13 @@
 #!/bin/sh
-#
+# $FreeBSD$
+
 # To be run on the client, this script looks for chroot directories
 # that have not been used in 60 minutes, as well as directories listed
 # as 'in use' that have not been touched in 5 days (corresponding to
 # port builds that have timed out or shut down uncleanly) and prunes
 # them to reclaim space.
+
+pb=/var/portbuild
 
 kill_procs()
 {
@@ -38,9 +41,10 @@ cleanup_mount() {
     fi
 }
 
-pb=/var/portbuild
+# note: uname is not being overridden (should not need client.conf here)
 arch=$(uname -m)
 
+. ${pb}/${arch}/client.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/${arch}/portbuild.$(hostname)
 

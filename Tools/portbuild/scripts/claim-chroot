@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# client-side script to claim a chroot
+
 # usage: claim-chroot ${arch} ${branch} ${pkgname} ${buildid}
 
 # Care needs to be taken with the output of this script, it cannot
@@ -62,11 +64,9 @@ if [ ! -f ${builddir}/.ready ]; then
     exit 1
 fi
 
+. ${pb}/${arch}/client.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/${arch}/portbuild.$(hostname)
-. ${pb}/scripts/buildenv
-
-buildenv ${pb} ${arch} ${branch} ${builddir}
 
 buildroot=${scratchdir}
 pkgname=${pkgname%.${PKGSUFFIX}}

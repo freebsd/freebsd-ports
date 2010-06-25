@@ -28,9 +28,9 @@ branch=$2
 buildid=$3
 shift 3
 
+. ${pb}/conf/server.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
-
 
 builddir=${pb}/${arch}/${branch}/builds/${buildid}
 

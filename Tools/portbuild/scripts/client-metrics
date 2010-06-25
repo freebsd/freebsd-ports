@@ -1,6 +1,7 @@
 #!/bin/sh
+# $FreeBSD$
 
-# Collect metrics for ganglia:
+# Client script to collect metrics for ganglia:
 #       - current vnodes
 #       - max vnodes
 #       - number of packages built in the past hour
@@ -16,6 +17,7 @@ gmetric --name="maxvnodes" --value=`sysctl -n kern.maxvnodes` --tmax=120 --dmax=
 gmetric --name="vnodes" --value=`sysctl -n vfs.numvnodes` --tmax=120 --dmax=0 --type=uint32 --units="# vnodes"
 
 if [ -f ${pb}/${arch}/portbuild.conf -a -f ${pb}/${arch}/portbuild.${me} ]; then
+    . ${pb}/${arch}/client.conf
     . ${pb}/${arch}/portbuild.conf 
     . ${pb}/${arch}/portbuild.${me}
 else
