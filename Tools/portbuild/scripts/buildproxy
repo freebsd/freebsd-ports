@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# $FreeBSD$
 #
 # Allow access to privileged build commands to ports-* users for
 # managing their own build spaces.
@@ -6,8 +7,11 @@
 import sys, socket, os, commands
 
 from freebsd import *
+from freebsd_config import *
 
-SOCKET='/tmp/.build'
+CONFIG_DIR="/var/portbuild"
+CONFIG_SUBDIR="conf"
+CONFIG_FILENAME="server.conf"
 
 valid_cmds = ['create', 'clone', 'portsupdate', 'srcupdate', 'destroy']
 
@@ -46,12 +50,15 @@ def process(cmd, sockfile):
 
     return (status, out)
 
-if os.path.exists(SOCKET):
-    os.unlink(SOCKET)
+config = getConfig( CONFIG_DIR, CONFIG_SUBDIR, CONFIG_FILENAME )
+BUILDPROXY_SOCKET_FILE = config.get( 'BUILDPROXY_SOCKET_FILE' )
+
+if os.path.exists(BUILDPROXY_SOCKET_FILE):
+    os.unlink(BUILDPROXY_SOCKET_FILE)
 s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-s.bind(SOCKET)
-os.chmod(SOCKET, 0660)
-os.chown(SOCKET, -1, getgidbyname('portmgr'))
+s.bind(BUILDPROXY_SOCKET_FILE)
+os.chmod(BUILDPROXY_SOCKET_FILE, 0660)
+os.chown(BUILDPROXY_SOCKET_FILE, -1, getgidbyname('portmgr'))
 
 s.listen(10)
 
