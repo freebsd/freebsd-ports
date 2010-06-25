@@ -15,6 +15,7 @@ branch=$2
 buildid=$3
 shift
 
+. ${pb}/conf/server.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
@@ -33,6 +34,6 @@ export PORT_DBDIR=/nonexistentport
 
 cd ${PORTSDIR}
 make -j4 ECHO_MSG=true clean-restricted-list \
-  | sed -e "s./usr/ports/packages/.${builddir}/packages/.g" \
-  -e "s./usr/ports/.${builddir}/ports/.g" \
+  | sed -e "s!/usr/ports/packages/!${builddir}/packages/!g" \
+  -e "s!/usr/ports/!${builddir}/ports/!g" \
   > ${builddir}/restricted.sh
