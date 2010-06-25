@@ -1,0 +1,11 @@
+--- swapd.conf.5.in.orig	2010-06-24 16:22:44.000000000 -0700
++++ swapd.conf.5.in	2010-06-24 16:22:57.000000000 -0700
+@@ -14,7 +14,7 @@
+ 	maxfree 0
+ 	swapsize 32m
+ 	swapdir /var/tmp
+-	maxunusedswap 5
++	maxunusedswaps 5
+ 	delay 30
+ 	include_cache yes
+ .fi
