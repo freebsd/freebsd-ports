@@ -6,8 +6,10 @@ arch=$1
 branch=$2
 
 pb=/var/portbuild
+. ${pb}/conf/server.conf
 
-of=/usr/local/www/data/errorlogs/.${arch}-${branch}-failure.html
+ERRORLOGS_DIRECTORY="${WWW_DIRECTORY}/errorlogs"
+of=${ERRORLOGS_DIRECTORY}/.${arch}-${branch}-failure.html
 
 cd ${pb}/${arch}/${branch}
 
@@ -16,7 +18,10 @@ if [ -e .newfailure.stamp -a $(echo $(find . -maxdepth 1 -newer .newfailure.stam
 touch .newfailure.stamp
 
 newfailure=${pb}/${arch}/${branch}/newfailure
-num=$(wc -l ${newfailure} | awk '{print $1}')
+num=0
+if [ -e ${newfailure} ]; then
+  num=$(wc -l ${newfailure} | awk '{print $1}')
+fi
 
 header() {
   echo "<html><head><title>New package building errors</title>" >$of
@@ -75,4 +80,4 @@ while read dir name ver date last count; do
     echo "</tr>" >> $of
 done < newfailure
 footer ""
-mv -f $of /usr/local/www/data/errorlogs/${arch}-${branch}-failure.html
+mv -f $of ${ERRORLOGS_DIRECTORY}/${arch}-${branch}-failure.html
