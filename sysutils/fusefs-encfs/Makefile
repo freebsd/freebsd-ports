@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	encfs
-PORTVERSION=	1.4.2
-PORTREVISION=	3
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	fusefs-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An encrypted pass-through FUSE filesystem
 
 LIB_DEPENDS=	rlog:${PORTSDIR}/devel/rlog \
@@ -23,11 +23,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 
 WRKSRC=		${WRKDIR}/encfs-${PORTVERSION}
 
-BROKEN=		incompatible with newer boost.
-
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization
+CONFIGURE_ARGS=	--with-boost-serialization=boost_serialization \
+		--with-boost-filesystem=boost_filesystem
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

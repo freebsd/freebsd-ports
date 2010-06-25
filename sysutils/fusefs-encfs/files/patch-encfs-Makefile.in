@@ -1,11 +1,11 @@
---- encfs/Makefile.in.orig	2008-04-14 04:10:40.000000000 +0400
-+++ encfs/Makefile.in	2009-03-21 04:37:08.000000000 +0300
-@@ -279,7 +279,7 @@
- KDE_OPTIONS = qtonly
+--- encfs/Makefile.in.orig
++++ encfs/Makefile.in
+@@ -328,7 +328,7 @@
  ALL_INCLUDES = @RLOG_CFLAGS@ @OPENSSL_CFLAGS@ @BOOST_CPPFLAGS@
- ALL_LDFLAGS = @RLOG_LIBS@ @OPENSSL_LIBS@ @FUSE_LIBS@ \
--	@BOOST_SERIALIZATION_LIB@ $(am__append_2)
-+	@BOOST_SERIALIZATION_LIB@ $(am__append_2) -lboost_system
+ ALL_LDFLAGS = @RLOG_LIBS@ @OPENSSL_LIBS@ @FUSE_LIBS@ @BOOST_LDFLAGS@ \
+ 	@BOOST_SERIALIZATION_LIB@ @BOOST_FILESYSTEM_LIB@ \
+-	@BOOST_SYSTEM_LIB@ $(am__append_3)
++	@BOOST_SYSTEM_LIB@ $(am__append_3) -lboost_system
  INCLUDES = $(all_includes) -I../intl
- AM_CXXFLAGS = -DRLOG_COMPONENT="encfs" $(ALL_INCLUDES) $(am__append_1)
- lib_LTLIBRARIES = libencfs.la
+ AM_CXXFLAGS = -DRLOG_COMPONENT="encfs" $(ALL_INCLUDES) $(am__append_1) \
+ 	$(am__append_2)

@@ -1,10 +1,10 @@
 bin/encfs
 bin/encfsctl
 bin/encfssh
-lib/libencfs.a
-lib/libencfs.la
-lib/libencfs.so
-lib/libencfs.so.4
+%%LIB32DIR%%/libencfs.a
+%%LIB32DIR%%/libencfs.la
+%%LIB32DIR%%/libencfs.so
+%%LIB32DIR%%/libencfs.so.5
 %%NLS%%share/locale/ar/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/be/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/encfs.mo
@@ -13,9 +13,13 @@ lib/libencfs.so.4
 %%NLS%%share/locale/cs/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/da/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/de/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/de_AT/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/de_CH/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/el/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/en_CA/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/es/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/encfs.mo
@@ -25,11 +29,11 @@ lib/libencfs.so.4
 %%NLS%%share/locale/fr/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/encfs.mo
-%%NLS%%share/locale/gu/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/he/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/hu_HU/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/id/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/it/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/encfs.mo
@@ -37,11 +41,11 @@ lib/libencfs.so.4
 %%NLS%%share/locale/ko/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/encfs.mo
-%%NLS%%share/locale/ms/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/nds/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/encfs.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/encfs.mo
@@ -59,14 +63,16 @@ lib/libencfs.so.4
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/encfs.mo
-%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_HK
 %%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
 %%NLS%%@dirrmtry share/locale/nds/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/nds
 %%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/hu_HU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hu_HU
 %%NLS%%@dirrmtry share/locale/es_PE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es_PE
 %%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
