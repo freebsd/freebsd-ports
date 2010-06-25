@@ -40,7 +40,7 @@ errorscript=$scriptdir/processonelog
 
 # Figure out which arch we're building for
 pb=/var/portbuild
-
+. ${pb}/conf/server.conf
 . ${pb}/${arch}/portbuild.conf
 
 # get the list of buildlogs.
@@ -105,7 +105,10 @@ while [ $# -ge 1 ]; do
 done
 
 touch .stamp
-n_logs=$(cat .logs/.all | wc -l)
+n_logs=0
+if [ -e .logs/.all ]; then
+  n_logs=$(cat .logs/.all | wc -l)
+fi
 
 echo "processlogs: at "`date`", end   processing log files for ${arch} in ${baselogdir}"
 
@@ -128,8 +131,8 @@ header() {
   if [ ${n_logs} = "0" ]; then
     echo "No errors (yet)" >>$of
   else
-    if [ -s cvsdone ]; then
-      echo "CVS update finished at: $(cat cvsdone)<br>" >> $of
+    if [ -s .updated ]; then
+      echo "ports update finished at: $(cat .updated)<br>" >> $of
     fi
     latest=$(ls -rtTl *.log *.log.bz2 2> /dev/null | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}')
     echo "Timestamp of newest log: $latest<br><br>" >> $of
@@ -167,7 +170,7 @@ sort .logs/.all | while read line; do
 
     echo "<tr>" >> $of
 
-    echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
     affby="$3"
     test "${affby}" = "0" -o "${affby}" = "-1" && affby="&nbsp;"
@@ -178,10 +181,10 @@ sort .logs/.all | while read line; do
 
     test "$9" = "yes" && echo "<font color=\"red\">[B]</font>" >> $of
     reason="$7"
-    echo "<a href=\"http://$master/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://${MASTER_URL}/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
-    date="${10}"
+    date=`echo ${10} | sed -e "s/_/ /g"`
     echo "<td>$date</td>" >> $of
 
     echo "</tr>" >> $of
@@ -213,16 +216,16 @@ sort -t \| +4 .logs/.all | while read line; do
     affby="$3"
     test "${affby}" = "0" -o "${affby}" = "-1" && affby="&nbsp;"
     echo "<td align=\"right\">${affby}</td><td align=\"right\">$4 Kb</td>" >> $of
-    echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
     echo "<td>$mailto</td>" >> $of
 
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason="$7"
-    echo "<a href=\"http://$master/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://${MASTER_URL}/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
-    date="${10}"
+    date=`echo ${10} | sed -e "s/_/ /g"`
     echo "<td>$date</td>" >> $of
 
     echo "</tr>" >> $of
@@ -250,7 +253,7 @@ sort -t \| +5 .logs/.all | while read line; do
     echo "<tr>" >> $of
 
     echo "<td>$mailto</td>" >> $of
-    echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
     affby="$3"
     test "${affby}" = "0" -o "${affby}" = "-1" && affby="&nbsp;"
@@ -260,10 +263,10 @@ sort -t \| +5 .logs/.all | while read line; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason="$7"
-    echo "<a href=\"http://$master/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://${MASTER_URL}/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
-    date="${10}"
+    date=`echo ${10} | sed -e "s/_/ /g"`
     echo "<td>$date</td>" >> $of
 
     echo "</tr>" >> $of
@@ -293,10 +296,10 @@ sort -t \| +7 .logs/.all | while read line; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason="$7"
-    echo "<a href=\"http://$master/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://${MASTER_URL}/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
-    echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
     affby="$3"
     test "${affby}" = "0" -o "${affby}" = "-1" && affby="&nbsp;"
@@ -304,7 +307,7 @@ sort -t \| +7 .logs/.all | while read line; do
     echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
     echo "<td>$mailto</td>" >> $of
 
-    date="${10}"
+    date=`echo ${10} | sed -e "s/_/ /g"`
     echo "<td>$date</td>" >> $of
 
     echo "</tr>" >> $of
@@ -332,10 +335,10 @@ sort -t \| +9 .logs/.all | while read line; do
 
     echo "<tr>" >> $of
 
-    date="${10}"
+    date=`echo ${10} | sed -e "s/_/ /g"`
     echo "<td>$date</td>" >> $of
 
-    echo "<td><a href=\"http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
+    echo "<td><a href=\"http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$1\">$2</a></td>" >> $of
 
     affby="$3"
     test "${affby}" = "0" -o "${affby}" = "-1" && affby="&nbsp;"
@@ -346,7 +349,7 @@ sort -t \| +9 .logs/.all | while read line; do
     echo "<td>" >> $of
     test "$9" = "broken" && echo "<font color=\"red\">[B]</font>" >> $of
     reason="$7"
-    echo "<a href=\"http://$master/#$8\">$reason</a>" >> $of
+    echo "<a href=\"http://${MASTER_URL}/#$8\">$reason</a>" >> $of
     echo "</td>" >> $of
 
     echo "</tr>" >> $of
