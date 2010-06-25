@@ -1,12 +1,14 @@
 #!/bin/sh
-#
-# This is run on the clients to report their loads to the server.
+# $FreeBSD$
 
-# configurable variables
+# client script to report load to the server.
+
 pb=/var/portbuild
+# note: uname is not being overridden
 arch=$(uname -m)
 osver=$(sysctl -n kern.osreldate)
 
+. ${pb}/${arch}/client.conf
 . ${pb}/${arch}/portbuild.conf
 if [ -f ${pb}/${arch}/portbuild.$(hostname) ]; then
     . ${pb}/${arch}/portbuild.$(hostname)
