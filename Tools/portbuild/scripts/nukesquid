@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# attempted manual workaround for the "bad dependency" problem
+#
+/usr/local/etc/rc.d/squid stop
+rm -rf ~squid/cache/*
+/usr/local/etc/rc.d/squid start
+/usr/local/sbin/squid -z
+sleep 5
+/usr/local/sbin/squid -k rotate
