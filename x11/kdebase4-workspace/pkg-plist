@@ -340,6 +340,7 @@ lib/kde4/plugins/designer/ksysguardlsofwidgets.so
 lib/kde4/plugins/designer/ksysguardwidgets.so
 lib/kde4/plugins/gui_platform/libkde.so
 lib/kde4/solid_fakenet.so
+lib/kde4/solid_hal_power.so
 lib/kde4/solid_lirc.so
 lib/kde4/solid_wicd.so
 lib/libkdecorations.so
@@ -1996,6 +1997,7 @@ share/kde4/services/settings-system.desktop
 share/kde4/services/settings-window-behaviour.desktop
 share/kde4/services/solid-actions.desktop
 share/kde4/services/solidbackends/solid_fakenet.desktop
+share/kde4/services/solidbackends/solid_hal_power.desktop
 share/kde4/services/solidbackends/solid_lirc.desktop
 share/kde4/services/solidbackends/solid_wicd.desktop
 share/kde4/services/standard_actions.desktop

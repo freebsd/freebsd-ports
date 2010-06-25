@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -88,6 +89,7 @@ post-patch:
 		${PATCH_WRKSRC}/kcontrol/kfontinst/lib/KfiConstants.h \
 		${PATCH_WRKSRC}/kcontrol/kfontinst/kio/KioFonts.cpp \
 		${PATCH_WRKSRC}/kcontrol/kxkb/x11helper.cpp \
+		${PATCH_WRKSRC}/kdm/backend/client.c \
 		${PATCH_WRKSRC}/kdm/kfrontend/genkdmconf.c
 	${CP} ${FILESDIR}/uptime.* ${WRKSRC}/ksysguard/ksysguardd/FreeBSD/
 
