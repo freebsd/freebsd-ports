@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	scamp
-PORTVERSION=	5.2i
+PORTVERSION=	5.2j
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +20,7 @@ RUN_DEPENDS+=	bash>=4.1.5_2:${PORTSDIR}/shells/bash \
 .if exists (${LOCALBASE}/bin/wget) && ! exists (${LOCALBASE}/bin/curl)
 RUN_DEPENDS+=	wget>=1.12:${PORTSDIR}/ftp/wget
 .else
-RUN_DEPENDS+=	curl>=7.20.0:${PORTSDIR}/ftp/curl
+RUN_DEPENDS+=	curl>=7.20.1:${PORTSDIR}/ftp/curl
 .endif
 
 NO_BUILD=	yes
