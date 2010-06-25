@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libitk.so:${PORTSDIR}/x11-toolkits/itk \
 		${LOCALBASE}/lib/libitcl.so:${PORTSDIR}/lang/itcl
 
 WRKSRC=		${WRKDIR}/smm/Install.unix
-#USE_GMAKE=	yes
+USE_GMAKE=	yes
 USE_TK=		84+
 EXTRACT_AFTER_ARGS+=|${TAR} -xpf - --exclude CVS
 
