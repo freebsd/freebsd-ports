@@ -29,10 +29,11 @@ doarch() {
     done
 }
 
+parm=$1
+shift
 id=$(whoami)
 if [ "${id}" = "root" ]; then
-	arch=$1
-	shift
+	arch=${parm}
 	root=1
 else
 	arch=$(echo $id | sed s,ports-,,)
@@ -47,7 +48,9 @@ else
 fi
 
 pb=/var/portbuild
-if [ "${arch}" = "all" ]; then
+. ${pb}/conf/server.conf
+
+if [ "${parm}" = "all" ]; then
     arches=$(find ${pb}/*/portbuild.conf)
     for i in ${arches}; do
 	arch=$(basename $(dirname $i))
