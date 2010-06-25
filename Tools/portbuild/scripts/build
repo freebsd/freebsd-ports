@@ -1,4 +1,7 @@
 #!/bin/sh
+# $FreeBSD$
+
+# server-side script to handle various commands common to builds
 
 # configurable variables
 pb=/var/portbuild
@@ -44,6 +47,14 @@ do_create() {
     buildid=$3
     shift 3
 
+    archivedir=${pb}/${arch}/archive
+    buildlogsdir=${archivedir}/buildlogs
+    if [ ! -d ${buildlogsdir} ]; then
+	mkdir -p ${buildlogsdir} || exit 1
+	chown -R ports-${arch}:portmgr ${archivedir}
+	chmod -R g+w ${archivedir}
+    fi
+
     archdir=${pbab}/builds
     if [ ! -d ${archdir} ]; then
 	mkdir -p ${archdir} || exit 1
@@ -56,14 +67,12 @@ do_create() {
 	echo "Can't create ${builddir}, it already exists"
 	exit 1
     fi
-    # XXX needed?
-    buildenv ${pb} ${arch} ${branch} ${builddir}
 
     mountpoint=${builddir}
-    newfs=a/portbuild/${arch}/${buildid}
+    newfs=${ZFS_VOLUME}/portbuild/${arch}/${buildid}
     zfs create -o mountpoint=${mountpoint} ${newfs} || exit 1
     chown -R ports-${arch}:portmgr ${mountpoint}
-    chmod g+w ${mountpoint}
+    chmod -R g+w ${mountpoint}
 
     do_portsupdate_inner ${arch} ${branch} ${buildid} ${builddir} $@
 
@@ -92,8 +101,8 @@ do_clone() {
     tmp=${tmp%/}
     newbuilddir="${tmp%/*}/${newid}"
 
-    oldfs=a/portbuild/${arch}/${buildid}
-    newfs=a/portbuild/${arch}/${newid}
+    oldfs=${ZFS_VOLUME}/portbuild/${arch}/${buildid}
+    newfs=${ZFS_VOLUME}/portbuild/${arch}/${newid}
 
     zfs snapshot ${oldfs}@${newid}
     zfs clone ${oldfs}@${newid} ${newfs}
@@ -138,7 +147,7 @@ do_portsupdate() {
 	shift
     fi
 
-    destroy_fs a/portbuild/${arch} ${buildid} /ports || exit 1
+    destroy_fs ${ZFS_VOLUME}/portbuild/${arch} ${buildid} /ports || exit 1
 
     if [ "${arg}" = "-umount" ]; then
 	return
@@ -158,13 +167,12 @@ do_portsupdate_inner() {
     echo "Reimaging ZFS ports tree on ${builddir}/ports"
     echo "================================================"
 
-    portsfs=a/portbuild/${arch}/${buildid}/ports
-
+    portsfs=${ZFS_VOLUME}/portbuild/${arch}/${buildid}/ports
     now=$(now)
-    zfs snapshot a/snap/ports@${now}
-    zfs clone a/snap/ports@${now} ${portsfs}
+
+    zfs snapshot ${ZFS_VOLUME}/${SNAP_PORTS_DIRECTORY}/ports@${now}
+    zfs clone ${ZFS_VOLUME}/${SNAP_PORTS_DIRECTORY}/ports@${now} ${portsfs}
     zfs set mountpoint=${builddir}/ports ${portsfs}
-    cp ${builddir}/ports/cvsdone ${builddir}	
 }
 
 do_srcupdate() {
@@ -178,7 +186,7 @@ do_srcupdate() {
 	shift
     fi
 
-    destroy_fs a/portbuild/${arch} ${buildid} /src || exit 1
+    destroy_fs ${ZFS_VOLUME}/portbuild/${arch} ${buildid} /src || exit 1
 
     if [ "${arg}" = "-umount" ]; then
 	return
@@ -198,13 +206,12 @@ do_srcupdate_inner() {
     echo "Reimaging ZFS src tree on ${builddir}/src"
     echo "================================================"
 
-    strippedbranch=${branch%%-exp}
+    strippedbranch=${branch%%[-\.]*}
+    srcfs=${ZFS_VOLUME}/portbuild/${arch}/${buildid}/src
     now=$(now)
 
-    srcfs=a/portbuild/${arch}/${buildid}/src
-
-    zfs snapshot a/snap/src-${strippedbranch}@${now}
-    zfs clone a/snap/src-${strippedbranch}@${now} ${srcfs}
+    zfs snapshot ${ZFS_VOLUME}/${SNAP_SRC_DIRECTORY_PREFIX}${strippedbranch}/src@${now}
+    zfs clone ${ZFS_VOLUME}/${SNAP_SRC_DIRECTORY_PREFIX}${strippedbranch}/src@${now} ${srcfs}
     zfs set mountpoint=${builddir}/src ${srcfs}
 }
 
@@ -285,7 +292,7 @@ get_parent() {
     zfs get -H -o value origin ${fs} | \
 	(read snap;
 	case "${snap}" in
-	    -|a/snap/*)
+	    -|${ZFS_VOLUME}/${SNAP_DIRECTORY}/*)
 		;;
 	    *)
 		parent=${snap}
@@ -370,9 +377,9 @@ do_destroy() {
 	exit 1
     fi
 
-    destroy_fs a/portbuild/${arch} ${buildid} /ports || exit 1
-    destroy_fs a/portbuild/${arch} ${buildid} /src || exit 1
-    destroy_fs a/portbuild/${arch} ${buildid} || exit 1
+    destroy_fs ${ZFS_VOLUME}/portbuild/${arch} ${buildid} /ports || exit 1
+    destroy_fs ${ZFS_VOLUME}/portbuild/${arch} ${buildid} /src || exit 1
+    destroy_fs ${ZFS_VOLUME}/portbuild/${arch} ${buildid} || exit 1
 
     rmdir ${builddir}
 
@@ -442,6 +449,7 @@ arch=$2
 branch=$3
 shift 3
 
+. ${pb}/conf/server.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
@@ -471,11 +479,13 @@ if [ $# -ge 1 ]; then
 	    ;;
 	create)
 	    # XXX some way to avoid the latest/previous dance?
-	    if [ "${buildid}" = "latest" ]; then
-		buildid=$(now)
+	    if [ -z "${buildid}" -o "${buildid}" = "latest" ]; then
+		buildid=$(now)"."`hostname -s`
 	    elif [ "${buildid}" = "previous" ]; then
 		echo "Use build clone latest instead"
 		exit 1
+	    else
+	        buildid=${buildid%/}
 	    fi
 	    # We can't rely on buildenv for this code path
 	    ;;
@@ -503,13 +513,6 @@ case "$cmd" in
 	do_list ${arch} ${branch} $@ || exit 1
 	;;
     create)
-	# XXX some way to avoid the latest/previous dance?
-	if [ -z "${buildid}" ]; then
-	    buildid=$(now)
-	else
-	    buildid=${buildid%/}
-	fi
-
 	proxy_root create ${arch} ${branch} ${buildid} $@ || exit 1
 	;;
     clone)
