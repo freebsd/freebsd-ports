@@ -1,4 +1,7 @@
 #!/bin/sh
+# $FreeBSD$
+
+# client-side script to clean up a chroot
 
 kill_procs()
 {
@@ -40,13 +43,10 @@ chroot=$4
 clean=$5
 
 pb=/var/portbuild
+
+. ${pb}/${arch}/client.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/${arch}/portbuild.$(hostname)
-. ${pb}/scripts/buildenv
-
-builddir=${pb}/${arch}/${branch}/builds/${buildid}
-
-buildenv ${pb} ${arch} ${branch} ${builddir}
 
 # directories to clean
 cleandirs="${LOCALBASE} /compat /var/db/pkg"
@@ -67,9 +67,12 @@ fi
 
 #umount ${chroot}/proc
 
-if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
-    cleanup_mount ${chroot} /compat/linux/proc
-fi
+for i in ${ARCHS_REQUIRING_LINPROCFS}; do
+    if [ ${i} = ${arch} ]; then
+	cleanup_mount ${chroot} /compat/linux/proc
+	break
+    fi
+done
 
 for i in /a/ports /usr/src /dev /root/.ccache; do
     cleanup_mount ${chroot} ${i}
@@ -103,9 +106,12 @@ else
 	    fi
 	done
 	test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -R
-	if [ ${arch} = "i386" ]; then
-            test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -aout -R
-	fi
+	for i in ${ARCHS_REQUIRING_AOUT_COMPAT}; do
+	    if [ ${i} = ${arch} ]; then
+	        test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -aout -R
+		break
+	    fi
+	done
 	rm -rf ${chroot}/var/db/pkg/*
 	rm -rf ${chroot}/used
     elif [ "${clean}" = 2 ]; then
