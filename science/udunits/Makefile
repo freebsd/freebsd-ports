@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	udunits
-PORTVERSION=	2.1.14
+PORTVERSION=	2.1.16
 CATEGORIES=	science math
-MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/
+MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/ \
+		http://sunpoet.net/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A library for manipulating units of physical quantities
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
