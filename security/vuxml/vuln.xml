@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="77b9f9bc-7fdf-11df-8a8d-0008743bf21a">
+    <topic>opera -- Data URIs can be used to allow cross-site scripting</topic>
+    <affects>
+      <package>
+        <name>opera</name>
+        <range><lt>10.11</lt></range>
+      </package>
+      <package>
+        <name>opera-devel</name>
+        <range><le>10.20_2,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Opera Desktop Team reports:</p>
+        <blockquote cite="http://www.opera.com/support/kb/view/955/">
+          <p>Data URIs are allowed to run scripts that manipulate
+            pages from the site that directly opened them. In some cases, the opening site
+            is not correctly detected. In these cases, Data URIs may erroneously be able to
+            run scripts so that they interact with sites that did not directly cause them to
+            be opened.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/kb/view/955/</url>
+    </references>
+    <dates>
+      <discovery>2010-06-21</discovery>
+      <entry>2010-06-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e02e6a4e-6b26-11df-96b2-0015587e2cc1">
     <topic>cacti -- multiple vulnerabilities</topic>
     <affects>
