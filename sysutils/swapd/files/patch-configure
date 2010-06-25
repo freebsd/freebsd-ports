@@ -1,0 +1,36 @@
+--- configure.orig	2005-02-18 20:34:16.000000000 -0800
++++ configure	2010-06-25 00:26:06.000000000 -0700
+@@ -11435,6 +11435,7 @@
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
+ fi
++eval "$as_ac_var=no"
+ echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_var'}'`" >&5
+ echo "${ECHO_T}`eval echo '${'$as_ac_var'}'`" >&6
+ if test `eval echo '${'$as_ac_var'}'` = yes; then
+@@ -11535,6 +11536,7 @@
+ rm -f conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
+ fi
++ac_cv_func_swapon=no
+ echo "$as_me:$LINENO: result: $ac_cv_func_swapon" >&5
+ echo "${ECHO_T}$ac_cv_func_swapon" >&6
+ if test $ac_cv_func_swapon = yes; then
+@@ -12170,6 +12172,17 @@
+ _ACEOF
+ 
+ 			;;
++		freebsd*)
++
++cat >>confdefs.h <<\_ACEOF
++#define SWAPD_SWAPON_CMDLINE "/usr/local/sbin/swapd_swapon \"%s\""
++_ACEOF
++
++cat >>confdefs.h <<\_ACEOF
++#define SWAPD_SWAPOFF_CMDLINE "/usr/local/sbin/swapd_swapoff \"%s\""
++_ACEOF
++
++			;;
+ 	esac
+ 
+ 
