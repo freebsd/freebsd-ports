@@ -28,6 +28,7 @@ shift 3
 
 builddir=${pb}/${arch}/${branch}/builds/${buildid}
 
+. ${pb}/conf/server.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
@@ -41,6 +42,10 @@ export LOCALBASE=/nonexistentlocal
 
 cd ${PORTSDIR}
 make index
+if [ ! -e ${INDEXFILE} ]; then
+  echo "makeindex: failed to make ${INDEXFILE}"
+  exit 1
+fi
 
 # remove extra spaces in dependency list -- this causes problems
 # Also transform the dummy paths to their canonical locations
