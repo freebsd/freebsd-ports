@@ -6235,6 +6235,7 @@ www/data-dist/phpgroupware/phpgwapi/templates/probusiness/head.inc.php
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/head.tpl
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/about.png
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/document.png
+www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/favicon.ico
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/first-grey.gif
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/first-grey.png
 www/data-dist/phpgroupware/phpgwapi/templates/probusiness/images/first.gif
