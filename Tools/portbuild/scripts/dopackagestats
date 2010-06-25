@@ -5,17 +5,14 @@
 # accessible to the web server.
 #
 
-# alpha is obsolete
-SUPPORTED_ARCHS="amd64 i386 ia64 powerpc sparc64"
-# 4 and 5 are obsolete
-SUPPORTED_BUILDS_PATTERN="^[67891]"
-ROOT_DIRECTORY=/var/portbuild
+pb=/var/portbuild
+. ${pb}/conf/server.conf
 
 OUTFILE=`basename $0 | sed -e "s/^do//"`".html"
 TMPFILE=.${OUTFILE}
 
-# TODO change this to 'journal'
-journalname="make"
+#journalname="make"
+journalname="journal"
 
 # stylesheet seems like overkill for something this simple
 TABLEBGCOLOR="#F0F0F0"
@@ -40,7 +37,7 @@ write_table_begin () {
   echo "<table border='1' cellpadding='4' cellspacing='1' bgcolor='$TABLEBGCOLOR'>" >> ${TMPFILE}
   echo "<tr>" >> ${TMPFILE}
   echo "<td align='left' width='120' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
-  echo "<th width='60' bgcolor='$THCOLOR'>cvs date</th>" >> ${TMPFILE}
+  echo "<th width='60' bgcolor='$THCOLOR'>updated</th>" >> ${TMPFILE}
   # MCL removed 20090808 -- this takes way too long
   # echo "<th width='60' bgcolor='$THCOLOR'>latest log</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>INDEX</th>" >> ${TMPFILE}
@@ -60,7 +57,7 @@ write_row () {
 
     arch=$1
     build=$2
-    directory=${ROOT_DIRECTORY}/${arch}/${build}/builds/latest
+    directory=${pb}/${arch}/${build}/builds/latest
     journal=${directory}/${journalname}
 
     branch=`echo $build | awk -F '-' '{print $1}'`
@@ -79,13 +76,13 @@ write_row () {
         fi
     fi
 
-    # column: date of CVS checkout
-    have_cvsdone=""
-    cvsdone=""
-    if [ -f $directory/cvsdone ]; then
-      cvsdone="$(cat $directory/cvsdone | awk '{printf("%s %s\n",$2,$3)}')"
-      if [ ! -z "$cvsdone" ]; then
-        have_cvsdone="yes"
+    # column: date of ports update
+    have_updated=""
+    updated=""
+    if [ -f $directory/ports/.updated ]; then
+      updated="$(cat $directory/ports/.updated | awk '{printf("%s %s\n",$2,$3)}')"
+      if [ ! -z "$updated" ]; then
+        have_updated="yes"
       fi
     fi
 
@@ -96,7 +93,7 @@ write_row () {
 #    if [ -d $directory/logs ]; then
 #      latest_suffix="$(cd $directory/logs 2> /dev/null && ls -rtTl | grep '\.log' | tail -1 | awk '{printf("%s\">%s %s</a>\n",$10,$6,$7)}')"
 #      if [ -z "$latest_suffix" ]; then
-#        latest="<a href=\"http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs/$latest_suffix"
+#        latest="<a href=\"${MASTER_URL}/errorlogs/$arch-$build-latest-logs/$latest_suffix"
 #        have_latest="yes"
 #      fi
 #    fi
@@ -144,7 +141,7 @@ write_row () {
     fi
 
     # if do not have any files, skip the row
-    if [ -z "$have_cvsdone" -a \
+    if [ -z "$have_updated" -a \
          -z "$have_latest" -a \
          -z "$have_index" -a \
          -z "$have_logs" -a \
@@ -212,9 +209,9 @@ write_row () {
     echo "<th align='left' bgcolor='$THCOLOR'>$arch-$build</th>" >> ${TMPFILE}
 
     echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
-    if [ ! -z "$have_cvsdone" ]; then
-      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/cvsdone'>" >> ${TMPFILE}
-      echo "$cvsdone</a>" >> ${TMPFILE}
+    if [ ! -z "$have_updated" ]; then
+      echo "<a href='${MASTER_URL}/errorlogs/$arch-$build-latest/.updated'>" >> ${TMPFILE}
+      echo "$updated</a>" >> ${TMPFILE}
     else
       echo "&nbsp;" >> ${TMPFILE}
     fi
@@ -232,7 +229,7 @@ write_row () {
     # note: ports/INDEX-n is copied to a file called errorlogs/INDEX
     echo "<td align='left' bgcolor='$cellcolor'>" >> ${TMPFILE}
     if [ ! -z "$have_index" ]; then
-      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/INDEX'>" >> ${TMPFILE}
+      echo "<a href='${MASTER_URL}/errorlogs/$arch-$build-latest/INDEX'>" >> ${TMPFILE}
       echo "$n_index</a>" >> ${TMPFILE}
     else
       echo "&nbsp;" >> ${TMPFILE}
@@ -241,7 +238,7 @@ write_row () {
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
     if [ ! -z "$have_logs" ]; then
-      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs'>" >> ${TMPFILE}
+      echo "<a href='${MASTER_URL}/errorlogs/$arch-$build-latest-logs'>" >> ${TMPFILE}
       echo "$n_logs</a>" >> ${TMPFILE}
     else
       echo "&nbsp;" >> ${TMPFILE}
@@ -250,7 +247,7 @@ write_row () {
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
     if [ ! -z "$have_packages" ]; then
-      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-packages-latest/All'>" >> ${TMPFILE}
+      echo "<a href='${MASTER_URL}/errorlogs/$arch-$build-packages-latest/All'>" >> ${TMPFILE}
       echo "$n_packages</a>" >> ${TMPFILE}
     else
       echo "&nbsp;" >> ${TMPFILE}
@@ -259,7 +256,7 @@ write_row () {
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
     if [ ! -z "$have_errors" ]; then
-      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest'>" >> ${TMPFILE}
+      echo "<a href='${MASTER_URL}/errorlogs/$arch-$build-latest'>" >> ${TMPFILE}
       echo "$n_errors</a>" >> ${TMPFILE}
     else
       echo "&nbsp;" >> ${TMPFILE}
@@ -268,7 +265,7 @@ write_row () {
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
     if [ ! -z "$have_duds" ]; then
-      echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest/duds.verbose'>" >> ${TMPFILE}
+      echo "<a href='${MASTER_URL}/errorlogs/$arch-$build-latest/duds.verbose'>" >> ${TMPFILE}
       echo "$n_duds</a>" >> ${TMPFILE}
     else
       echo "&nbsp;" >> ${TMPFILE}
@@ -307,8 +304,8 @@ write_footer () {
   echo "<ul>" >> ${TMPFILE}
   # MCL removed 20090808 -- this takes way too long
   #echo "<li><b>latest log</b> is the date of the latest logfile.</li>" >> ${TMPFILE}
-  echo "<li><b>cvs date</b> is the date of the latest CVS checkout done by the script.  It may be inaccurate if a manual checkout was done later.</li>" >> ${TMPFILE}
-  echo "<li><b>INDEX</b> is number of ports in the INDEX file built from the latest cvs checkout.</li>" >> ${TMPFILE}
+  echo "<li><b>updated</b> is the date of the latest tree update done by the script.  It may be inaccurate if a manual checkout was done later.</li>" >> ${TMPFILE}
+  echo "<li><b>INDEX</b> is number of ports in the INDEX file built from the latest tree update.</li>" >> ${TMPFILE}
   echo "<li><b>build logs</b> is number of packages attempted.  Note: if a run was restarted, you may see duplicates here.</li>" >> ${TMPFILE}
   echo "<li><b>packages</b> is number of packages successfully built.  Note: if a run was restarted, you may see duplicates here.</li>" >> ${TMPFILE}
   echo "<li><b>errors</b> is number of packages that failed.  Note: if a run was restarted, you may see duplicates here.</li>" >> ${TMPFILE}
@@ -333,17 +330,18 @@ write_footer () {
 write_header
 
 # display all the mainstream builds first
+#     (i.e. where build = branch, e.g. "7", "10")
 for arch in ${SUPPORTED_ARCHS}; do
 
-  builds=`ls ${ROOT_DIRECTORY}/${arch} | \
-    grep "${SUPPORTED_BUILDS_PATTERN}$" | \
-    sort`
+  builds=`ls ${pb}/${arch} | \
+    grep "${SRC_BRANCHES_PATTERN}$" | \
+    sort -n`
   if [ ! -z "$builds" ]; then
     write_table_begin
 
-      for build in ${builds}; do
-        write_row ${arch} ${build}
-      done
+    for build in ${builds}; do
+      write_row ${arch} ${build}
+    done
 
     write_table_end
   fi
@@ -351,19 +349,27 @@ done
 
 # then display all the non-mainstream builds (probably only of interest
 #   to portmgr; would break up the logical flow of the above)
+#   examples: 8.1; 8-exp; 8-exp-gettext; 8.1R
 for arch in ${SUPPORTED_ARCHS}; do
 
-  builds=`ls ${ROOT_DIRECTORY}/${arch} | \
-    grep "${SUPPORTED_BUILDS_PATTERN}[-\.]" | \
-    sort`
-  if [ ! -z "$builds" ]; then
-    write_table_begin
+  branches=`ls ${pb}/${arch} | \
+    grep "${SRC_BRANCHES_PATTERN}[-\.]" | \
+    sort -n`
+  if [ ! -z "$branches" ]; then
+    for branch in branches; do
+      builds=`ls ${pb}/${arch}/$branch* | \
+        grep "${SRC_BRANCHES_PATTERN}[-\.]" | \
+        sort`
+      if [ ! -z "$builds" ]; then
+        write_table_begin
 
-      for build in ${builds}; do
-        write_row ${arch} ${build}
-      done
+        for build in ${builds}; do
+          write_row ${arch} ${build}
+        done
 
-    write_table_end
+        write_table_end
+      fi
+    done
   fi
 done
 
