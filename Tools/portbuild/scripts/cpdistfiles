@@ -7,6 +7,7 @@ fi
 
 # configurable variables
 pb=/var/portbuild
+. ${pb}/conf/server.conf
 
 arch=$1
 branch=$2
@@ -38,7 +39,11 @@ if [ -e ${distdir}/.pbtmp ]; then
   exit 1
 fi
 
-rsync ${dryrun} -r -v -l -t --exclude RESTRICTED/ ${builddir}/distfiles/ portmgr@ftp-master:w/ports/distfiles/ | tee ${log}
+rsync ${dryrun} -r -v -l -t \
+  --exclude RESTRICTED/ \
+  ${builddir}/distfiles/ \
+  ${UPLOAD_USER}@${UPLOAD_TARGET}:${UPLOAD_DIRECTORY} | \
+  tee ${log}
 
 num=$(wc -l ${log} | awk '{print $1}')
 if [ "$yesreally" = "0" ]; then
