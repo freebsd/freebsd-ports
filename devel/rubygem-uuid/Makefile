@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	uuid
-PORTVERSION=	2.0.2
+PORTVERSION=	2.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	UUID Generator for Ruby
 
 RUN_DEPENDS=	rubygem-macaddr>=1.0.0:${PORTSDIR}/net/rubygem-macaddr
+
+PLIST_FILES+=	bin/uuid
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
