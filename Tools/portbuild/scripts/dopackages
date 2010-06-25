@@ -1,4 +1,7 @@
 #!/bin/sh
+# $FreeBSD$
+
+# main server-side script to run a package build
 
 # configurable variables
 pb=/var/portbuild
@@ -8,17 +11,22 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:${pb}/scripts
 # writable by portmgr
 umask 002
 
+journalname="journal"
+
 usage () {
-    echo "usage: arch branch buildid date [-continue] [-incremental] [-restart] [-nofinish] [-finish] [-nocleanup] [-cdrom] [-nobuild] [-noindex] [-noduds] [-norestr] [-nosrc] [-srccvs] [-noports] [-portscvs] [-noplistcheck] [-nodistfiles] [-fetch-original] [-trybroken]"
+    echo "usage: arch branch buildid datestamp [-incremental] [-continue] [-restart] [-nofinish] [-finish] [-nocleanup] [-keep] [-nobuild] [-noindex] [-noduds] [-norestr] [-nochecksubdirs] [-nosrc] [-srccvs] [-noports] [-portscvs] [-noplistcheck] [-nodistfiles] [-fetch-original] [-cdrom] [-trybroken]"
+# XXX MCL I think it's going to be too hard to move the create in here, now.
     echo "       -incremental     : Start a new incremental build"
     echo "       -continue        : Restart an interrupted build, skipping failed ports"
     echo "       -restart         : Restart an interrupted build, rebuilding failed ports"
     echo "       -nofinish        : Do not post-process upon build completion"
     echo "       -finish          : Post-process a completed build"
     echo "       -nocleanup       : Do not clean up and deactivate the build once it finishes"
+    echo "       -keep            : Do not automatically recycle this build"
     echo "       -nobuild         : Only do the build preparation steps, do not build packages"
     echo "       -noindex         : Do not build the INDEX"
     echo "       -noduds          : Do not build the duds file"
+    echo "       -nochecksubdirs  : Do not check the SUBDIRS"
     echo "       -norestr         : Do not build the restricted.sh file"
     echo "       -nosrc           : Do not update the src tree"
     echo "       -srccvs          : Update the src tree via CVS, don't use a pre-existing snapshot"
@@ -27,9 +35,8 @@ usage () {
     echo "       -noplistcheck    : Don't check the plist during the build"
     echo "       -nodistfiles     : Don't collect distfiles"
     echo "       -fetch-original  : Fetch from original MASTER_SITE"
-    echo "       -trybroken       : Try to build BROKEN ports"
-    echo "       -keep            : Do not automatically recycle this build"
     echo "       -cdrom           : Prepare a build for distribution on CDROM "
+    echo "       -trybroken       : Try to build BROKEN ports"
 
     exit 1
 }
@@ -41,12 +48,14 @@ fi
 arch=$1
 branch=$2
 buildid=$3
-date=$4
+datestamp=$4
 shift 4
 
+. ${pb}/conf/server.conf
 . ${pb}/scripts/buildenv
 validate_env ${arch} ${branch} || usage
 
+# XXX MCL too early to do this here.
 buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
 if [ -z "${buildid}" ]; then
     echo "Invalid build ID ${buildid}"
@@ -54,6 +63,7 @@ if [ -z "${buildid}" ]; then
 fi
 
 if [ -f ${pb}/${arch}/portbuild.conf ]; then
+    . ${pb}/conf/server.conf
     . ${pb}/${arch}/portbuild.conf
 else
     usage
@@ -83,6 +93,7 @@ portstar() {
 }
 
 # usage: makeindex pb arch branch builddir
+# note: can take ~24 minutes!
 makeindex () {
     pb=$1
     arch=$2
@@ -95,7 +106,7 @@ makeindex () {
     echo "generating index"
     echo "================================================"
     echo "index generation started at $(date)"
-    ${pb}/scripts/makeindex ${arch} ${branch} ${buildid} || mailexit 1
+    ${pb}/scripts/makeindex ${arch} ${branch} ${buildid} || return 1
     echo "index generation ended at $(date)"
     echo $(wc -l ${INDEXFILE} | awk '{print $1}') "lines in INDEX"
 
@@ -110,18 +121,23 @@ checkindex () {
     builddir=$1
 
     cd ${builddir}/ports
+    if [ ! -f ${INDEXFILE} ]; then
+	echo "misssing INDEXFILE ${INDEXFILE} in ${builddir}/ports"
+	return 1
+    fi
     if grep -q non-existent ${INDEXFILE}; then
 	echo "errors in INDEX:"
 	grep -n non-existent ${INDEXFILE}
-	mailexit 1
+	return 1
     fi
     if ! awk -F '|' '{if (NF != 13) { error=1; printf("line %d: %s\n", NR, $0)}} END {if (error == 1) exit(1)}' ${INDEXFILE}; then
 	echo "error in INDEX"
-	mailexit 1
+	return 1
     fi
 }
 
 # usage: makeduds pb arch branch builddir
+# note: can take ~21 minutes!
 makeduds () {
     pb=$1
     arch=$2
@@ -154,6 +170,7 @@ makeduds () {
 }
 
 # usage: restrictedlist pb arch branch builddir
+# note: can take ~25 minutes!
 restrictedlist () {
     pb=$1
     arch=$2
@@ -166,12 +183,13 @@ restrictedlist () {
     echo "creating restricted list"
     echo "================================================"
     echo "restricted list generation started at $(date)"
-    ${pb}/scripts/makerestr ${arch} ${branch} ${buildid} || mailexit 1
+    ${pb}/scripts/makerestr ${arch} ${branch} ${buildid} || return 1
     echo "restricted list generation ended at $(date)"
     echo $(grep -c '^#' ${builddir}/restricted.sh) "ports in ${builddir}/restricted.sh"
 }
 
 # usage: cdromlist pb arch branch builddir
+# note: can take ~48 minutes!
 cdromlist () {
     pb=$1
     arch=$2
@@ -218,11 +236,11 @@ dobuild() {
     echo "================================================"
     echo "started at $(date)"
     start=$(date +%s)
-    /var/portbuild/evil/qmanager/packagebuild ${arch} ${branch} ${buildid} > ${builddir}/make 2>&1 < /dev/null
+    ${QMANAGER_PATH}/packagebuild ${arch} ${branch} ${buildid} > ${builddir}/${journalname} 2>&1 < /dev/null
     echo "ended at $(date)"
     end=$(date +%s)
     echo "Build took $(date -u -j -r $((end - start)) | awk '{print $4}')"
-    echo $(echo $(ls -1 ${builddir}/packages/All | wc -l) - 2 | bc) "packages built"
+    echo $(ls -1 ${builddir}/packages/All | grep tbz | wc -l) "packages built"
     
     echo $(wc -l ${PORTSDIR}/${INDEXFILE} | awk '{print $1}') "lines in INDEX"
     
@@ -230,9 +248,9 @@ dobuild() {
     echo $(echo $(du -sk ${builddir}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
     
     cd ${builddir}
-    if grep -qE '(ptimeout|pnohang): killing' make; then
+    if grep -qE '(ptimeout|pnohang): killing' ${journalname}; then
 	echo "The following port(s) timed out:"
-	grep -E '(ptimeout|pnohang): killing' make | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
+	grep -E '(ptimeout|pnohang): killing' ${journalname} | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
     fi
     
 }
@@ -253,6 +271,7 @@ srccvs=0
 noports=0
 portscvs=0
 norestr=0
+nochecksubdirs=0
 noplistcheck=0
 cdrom=0
 restart=0
@@ -295,6 +314,9 @@ while [ $# -gt 0 ]; do
 	    ;;
 	x-norestr)
 	    norestr=1
+	    ;;
+	x-nochecksubdirs)
+	    nochecksubdirs=1
 	    ;;
 	x-noplistcheck)
 	    noplistcheck=1
@@ -347,8 +369,6 @@ fi
 
 # We have valid options, start the build
 
-echo | mail -s "$(basename $0) started for ${arch}-${branch} ${buildid} at $(date)" ${mailto}
-
 if [ "$nodistfiles" = 1 ]; then
     export NO_DISTFILES=1
 fi
@@ -372,25 +392,27 @@ fi
 # Start setting up build environment
 
 if [ "${skipstart}" -eq 0 ]; then
+    newbuildid=${datestamp}
+    # this is where the latest/previous dance is performed
     # MCL note 20091109: buildid must exist.  For now, use the following
     # MCL manual command to start new buildenvs, before the first use of
     # MCL dopackages: "build create arch branch"
-    oldbuildid=${buildid}
-    buildid=$(date +%Y%m%d%H%M%S)
-    build clone ${arch} ${branch} ${oldbuildid} ${buildid}
+    build clone ${arch} ${branch} ${buildid} ${newbuildid}
+    buildid=${newbuildid}
 fi
 
 builddir=${pbab}/builds/${buildid}
-
-# XXX MCL what does this line do???
-df -k | grep ${buildid}
-# Set up our environment variables
-buildenv ${pb} ${arch} ${branch} ${builddir}
 
 # bomb out if build clone failed
 if [ ! -d ${builddir} ]; then
     mailexit 1
 fi
+
+# Set up our environment variables
+buildenv ${pb} ${arch} ${branch} ${builddir}
+
+# XXX MCL might not return 'latest' ???
+echo | mail -s "$(basename $0) started for ${arch}-${branch} ${buildid} at $(date)" ${mailto}
 
 # make necessary subdirectories if they don't exist
 mkdir -p ${builddir}/bak/restricted || mailexit 1
@@ -404,7 +426,7 @@ fi
 touch ${builddir}/.active
 
 # Update link to current logfile created by dopackages.wrapper
-ln -sf ${pb}/${arch}/archive/buildlogs/log.${branch}.${date} \
+ln -sf ${pb}/${arch}/archive/buildlogs/log.${branch}.${datestamp} \
     ${builddir}/build.log
 
 if [ "$skipstart" = 0 ]; then
@@ -425,15 +447,18 @@ if [ "$skipstart" = 0 ]; then
 	    echo "running cvs update -PAd on ${PORTSDIR}"
 	    echo "================================================"
 	    cd ${PORTSDIR}
-	    cvsdone=$(date)
-	    echo ${cvsdone} > ${builddir}/cvsdone
-	    cvs -Rq update -PdA -D "${cvsdone}"
+	    updated=$(date)
+	    echo ${updated} > ${builddir}/.updated
+	    cvs -Rq update -PdA -D "${updated}"
 	    # XXX Check for conflicts
 	else
+	    # echo "XXX at build portsupdate portsupdate ${arch} ${branch} ${buildid} $@ "
 	    build portsupdate ${arch} ${branch} ${buildid} $@ 
+	    # echo "XXX past build portsupdate portsupdate ${arch} ${branch} ${buildid} $@ "
 	fi
     else
-	rm -f ${builddir}/cvsdone
+	# XXX MCL why???
+	# XXX rm -f ${builddir}/.updated
     fi
 
     if [ "$incremental" = 1 ]; then
@@ -453,12 +478,12 @@ if [ "$skipstart" = 0 ]; then
 	    echo "running cvs update -PAd on ${SRCBASE}"
 	    echo "================================================"
 	    cd ${SRCBASE}
-	    if [ -z "${cvsdone}" ]; then
-		# Don't overwrite/create cvsdone if we didnt set it
+	    if [ -z "${updated}" ]; then
+		# Don't overwrite/create .updated if we didn't set it
 		# with the ports update
-		cvsdone=$(date)
+		updated=$(date)
 	    fi
-	    cvs -Rq update -PdA -D "${cvsdone}"
+	    cvs -Rq update -PdA -D "${updated}"
 	    # XXX Check for conflicts
 	else
 	    build srcupdate ${arch} ${branch} ${buildid} $@ 
@@ -468,17 +493,21 @@ if [ "$skipstart" = 0 ]; then
 
     # Begin build preprocess
     
-    echo "================================================"
-    echo "running make checksubdirs"
-    echo "================================================"
     cd ${PORTSDIR}
-    make checksubdirs
 
+    if [ "$nochecksubdirs" = 0 ]; then
+	echo "================================================"
+	echo "running make checksubdirs"
+	echo "================================================"
+	make checksubdirs
+    fi
+
+    # XXX MCL could background these?
     # not run in background to check return status
     if [ "$noindex" = 0 ]; then
 	makeindex ${pb} ${arch} ${branch} ${buildid} ${builddir} || mailexit 1
     fi
-    checkindex ${builddir}
+    checkindex ${builddir} || mailexit 1
     if [ "$noduds" = 0 ]; then
 	makeduds ${pb} ${arch} ${branch} ${buildid} ${builddir} || mailexit 1
     fi
@@ -502,16 +531,16 @@ if [ "$skipstart" = 0 ]; then
 	fi
 	lockf -k ${pbab}/failure.lock ${pb}/scripts/prunefailure ${arch} ${branch} ${builddir}
     fi
-fi
 
-if [ "$skipstart" = 0 ]; then
     # XXX These can happen after build start
     if [ "$norestr" = 0 ]; then
 	restrictedlist ${pb} ${arch} ${branch} ${buildid} ${builddir} &
+	job_restrictedlist=$!
     fi
     
     if [ "$cdrom" = 1 ]; then
 	cdromlist ${pb} ${arch} ${branch} ${builddir} &
+	job_cdromlist=$!
     fi
     
     cd ${builddir}
@@ -546,11 +575,11 @@ if [ "$skipstart" = 0 ]; then
     ln -sf ${newlogs} ${builddir}/logs
     
     echo "error logs in ${newerrors}"
-    if [ -f "${builddir}/cvsdone" ]; then
-	cp -p ${builddir}/cvsdone ${newerrors}/cvsdone
-	cp -p ${builddir}/cvsdone ${newlogs}/cvsdone
+    if [ -f "${builddir}/.updated" ]; then
+	cp -p ${builddir}/.updated ${newerrors}/.updated
+	cp -p ${builddir}/.updated ${newlogs}/.updated
     else
-	rm -f ${newerrors}/cvsdone ${newlogs}/cvsdone
+	rm -f ${newerrors}/.updated ${newlogs}/.updated
     fi
     cp -p ${builddir}/duds ${newerrors}/duds
     cp -p ${builddir}/duds ${newlogs}/duds
@@ -592,6 +621,8 @@ if [ "$skipstart" = 0 ]; then
 	
 	cd ${PACKAGES}/All
 	sed "s,$,${PKGSUFFIX}," ${builddir}/.oldports | xargs rm -f
+	# XXX MCL takes an unknown period of time.
+	# XXX MCL return value not checked.
 	${pb}/scripts/prunepkgs ${PORTSDIR}/${INDEXFILE} ${PACKAGES}
 	
 	cd ${builddir}/errors/
@@ -606,14 +637,19 @@ if [ "$skipstart" = 0 ]; then
 	cd ${builddir}
 	
 	if [ -d packages ]; then
+	    # echo "XXX at mv packages .packages~"
 	    mv packages .packages~
 	    rm -rf .packages~ &
+	    # echo "XXX past mv packages .packages~"
 	fi
 	mkdir -p packages/All
     fi
-fi
 
-# XXX only need to wait for some tasks
+    wait $job_restrictedlist || mailexit 1
+    wait $job_cdromlist || mailexit 1
+fi   # if [ "$skipstart" = 0 ]
+
+# only need to wait for some tasks, so this is probably redundant.
 wait
 
 if [ "$nobuild" = 0 ]; then
@@ -691,7 +727,7 @@ if [ "$nofinish" = 0 ]; then
     done
 
     ls -asFlrt ${builddir}/packages/All > ${builddir}/logs/ls-lrt
-    cp -p ${builddir}/make ${builddir}/logs
+    cp -p ${builddir}/${journalname} ${builddir}/logs
 
     echo "================================================"
     echo "copying distfiles"
@@ -725,4 +761,4 @@ echo "all done at $(date)"
 echo "entire process took $(date -u -j -r $(($endtime - $starttime)) | awk '{print $4}')"
 echo "================================================"
 
-mailexit 0
+exit 0
