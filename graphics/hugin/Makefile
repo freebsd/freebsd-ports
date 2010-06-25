@@ -7,7 +7,7 @@
 
 PORTNAME=	hugin
 PORTVERSION=	2009.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		exiv2:${PORTSDIR}/graphics/exiv2 \
 		pano13:${PORTSDIR}/graphics/libpano13 \
-		boost_python:${PORTSDIR}/devel/boost-python-libs \
+		boost_thread:${PORTSDIR}/devel/boost-libs \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		Imath:${PORTSDIR}/graphics/ilmbase
 # gmake is really needed at _runtime_, do not remove it from below
