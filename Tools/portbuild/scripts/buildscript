@@ -1,4 +1,5 @@
 #!/bin/sh
+# $FreeBSD$
 
 # client-side script to actually build a package
 
@@ -118,6 +119,7 @@ RD=$7
 #export CCACHE_PATH=/usr/bin:/usr/local/bin
 export MALLOC_OPTIONS=AJ
 
+# pick up value from environment set up in portbuild script
 L=`echo ${LOCALBASE} | sed 's,^/,,'`
 Z=`ident ${dir}/Makefile | grep 'FreeBSD:' | sed 's/^[ \t]*//'`
 
@@ -127,6 +129,7 @@ restr=$(make -V RESTRICTED)
 # Keep restricted distfiles in a subdirectory for extra protection
 # against leakage
 if [ ! -z "$restr" ]; then
+  # pick up value from environment set up in portbuild script
   echo "DISTDIR=${DISTDIR}"
   export DISTDIR=${DISTDIR}/RESTRICTED
   echo "DISTDIR=${DISTDIR}"
@@ -151,11 +154,10 @@ if [ $phase = 1 ]; then
 
   echo "prefixes: LOCALBASE=${L}"
 
-  #Allow ports to notice they're being run on bento
+  # Inform ports they are being run on the cluster
   export PACKAGE_BUILDING=1
 
   # Stash a copy of /etc/master.passwd and /etc/group to detect whether someone modifies it
-
   cp /etc/master.passwd /etc/master.passwd-save
   cp /etc/group /etc/group-save
 
@@ -185,7 +187,8 @@ EOF
   echo "================================================================"
   echo "====================<phase 1: make checksum>===================="
 
-  if /pnohang $TIMEOUT /tmp/make.log1 ${pkgname} make checksum; then
+  # pick up value from environment set up in portbuild script
+  if /pnohang ${BUILD_TIMEOUT} /tmp/make.log1 ${pkgname} make checksum; then
     cat /tmp/make.log1
     echo "0" > /tmp/status
   else
@@ -202,7 +205,7 @@ else
 
   add_pkg ${ED}
   cd $dir
-  /pnohang $TIMEOUT /tmp/make.log2 ${pkgname} make extract || cleanup 2
+  /pnohang ${BUILD_TIMEOUT} /tmp/make.log2 ${pkgname} make extract || cleanup 2
   cat /tmp/make.log2
   del_pkg ${ED}
 
@@ -215,7 +218,7 @@ else
   echo "====================<phase 3: make patch>===================="
   add_pkg ${PD}
   cd $dir
-  /pnohang $TIMEOUT /tmp/make.log3 ${pkgname} make patch || cleanup 3
+  /pnohang ${BUILD_TIMEOUT} /tmp/make.log3 ${pkgname} make patch || cleanup 3
   cat /tmp/make.log3
   del_pkg ${PD}
 
@@ -247,20 +250,22 @@ EOF
   if which -s Xvfb; then
     xvfb=1
     pid=$(echo $$ % 32768 | bc)
+    # XXX MCL HUH?
     X11BASE=$(which Xvfb | sed -e 's./bin/Xvfb..')
     Xvfb :${pid} -fp ${X11BASE}/lib/X11/fonts/misc &
+    # pick up value from environment set up in portbuild script
     DISPLAY=${JAIL_ADDR}:${pid}
     export DISPLAY
   fi
 
   cd $dir
-  /pnohang $TIMEOUT /tmp/make.log4 ${pkgname} make build || cleanup 4
+  /pnohang ${BUILD_TIMEOUT} /tmp/make.log4 ${pkgname} make build || cleanup 4
   cat /tmp/make.log4
 
   echo "================================================================"
   echo "====================<phase 5: make test>===================="
   cd $dir
-  /pnohang $TIMEOUT /tmp/make.log5 ${pkgname} make -k regression-test
+  /pnohang ${BUILD_TIMEOUT} /tmp/make.log5 ${pkgname} make -k regression-test
   cat /tmp/make.log5
   mtree -X /tmp/mtree.buildexclude -x -f /tmp/mtree.prebuild -p / | egrep -v "^(${L}/var|${L}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |usr/X11R6 |etc/manpath.config|etc/.*.bak|${L}/info/dir|${L}/lib/X11/fonts/.*/fonts\.|usr/local/man/..( |/man. )|${L}/lib/X11/fonts/TrueType|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|var/db/fontconfig/* )" > /tmp/list.preinstall
 
@@ -289,7 +294,7 @@ EOF
   mtree -X /tmp/mtree.exclude -xcn -k uid,gid,mode -p / > /tmp/mtree
 
   cd $dir
-  if /pnohang $TIMEOUT /tmp/make.log6 ${pkgname} make install; then
+  if /pnohang ${BUILD_TIMEOUT} /tmp/make.log6 ${pkgname} make install; then
     cat /tmp/make.log6
     echo "0" > /tmp/status
   else
@@ -299,7 +304,7 @@ EOF
   echo "================================================================"
   echo "====================<phase 7: make package>===================="
   cd $dir
-  if /pnohang $TIMEOUT /tmp/make.log7 ${pkgname} make package; then
+  if /pnohang ${BUILD_TIMEOUT} /tmp/make.log7 ${pkgname} make package; then
     cat /tmp/make.log7
     echo "0" > /tmp/status
     prefix=$(make -V PREFIX)
@@ -317,6 +322,7 @@ EOF
     grep ' extra$' /tmp/list3 | awk '{print $1}' | xargs -J % find % -ls > /tmp/list4
     grep ' missing$' /tmp/list3 > /tmp/list5
     grep -vE ' (extra|missing)$' /tmp/list3 > /tmp/list6
+    # pick up value from environment set up in portbuild script
     if [ "x${NOPLISTCHECK}" = "x" ]; then
       if grep -vq "$L/etc/" /tmp/list4; then
         echo "1" > /tmp/status
