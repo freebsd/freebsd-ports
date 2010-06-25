@@ -1,5 +1,8 @@
 #!/bin/sh
-#
+# $FreeBSD$
+
+# server-side script to set up an individual client
+
 # XXX Use a worker pool that only runs N setups at once to avoid
 # raping the server.  Hard to do in shell?
 
@@ -19,6 +22,7 @@ buildid=$3
 nodelist=$4
 shift 4
 
+. ${pb}/conf/server.conf
 if [ -f ${pb}/${arch}/portbuild.conf ]; then
     . ${pb}/${arch}/portbuild.conf
 else
@@ -66,6 +70,11 @@ setup() {
 	rsync ${rsync_gzip} -e "${ssh_cmd}" -r -l -p --delete ${pb}/scripts \
 	    ${client_user}@${node}:${pb}/
 	checkerror $? || (echo "Copying scripts to ${node} failed"; return 1)
+
+	# client.conf can be a symlink; copy the actual file
+	rsync ${rsync_gzip} -e "${ssh_cmd}" -r -L -p --delete ${pb}/${arch}/client.conf \
+	    ${client_user}@${node}:${pb}/${arch}
+	checkerror $? || (echo "copying client.conf to ${node} failed"; return 1)
 
 	rsync ${rsync_gzip} -e "${ssh_cmd}" -r -l -p --delete ${pb}/${arch}/portbuild* \
 	    ${client_user}@${node}:${pb}/${arch}
