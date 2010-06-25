@@ -7,7 +7,7 @@ download the shareware version (e.g.) here :
 
 http://www.dosgamesarchive.com/download/game/111
 
-and copy every file of the game *lowercase* to
+and copy every file of the game *uppercase* to
 %%DATADIR%%
 
 Once this is done, run 'openjazz'. Enjoy !
