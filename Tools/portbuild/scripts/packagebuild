@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-# Improved build scheduler.  We try to build leaf packages (those
+# Improved build dispatcher.  Invoked on server-side from dopackages.
+
+# We try to build leaf packages (those
 # which can be built immediately without requiring additional
 # dependencies to be built) in the order such that the ones required
 # by the longest dependency chains are built first.
@@ -32,7 +34,9 @@
 
 from qmanagerclient import *
 
-import os, sys, threading, time, subprocess
+from freebsd_config import *
+
+import os, string, sys, threading, time, subprocess
 #import random
 from itertools import chain
 #import gc
@@ -40,6 +44,14 @@ from stat import *
 
 from Queue import Queue
 from heapq import *
+
+CONFIG_DIR="/var/portbuild"
+CONFIG_SUBDIR="conf"
+CONFIG_FILENAME="server.conf"
+
+config = getConfig( CONFIG_DIR, CONFIG_SUBDIR, CONFIG_FILENAME )
+QMANAGER_PRIORITY_PACKAGES = string.split( \
+    config.get( 'QMANAGER_PRIORITY_PACKAGES' ) )
 
 categories = {}
 ports = {}
@@ -263,7 +275,7 @@ they still need to know about us as dependencies etc """
                 self.depth = max + 1
             else:
                 self.depth = 1
-                for port in ["openoffice", "kde-3"]:
+                for port in QMANAGER_PRIORITY_PACKAGES:
                     if self.name.startswith(port):
                         # Artificial boost to try and get it building earlier
                         self.depth = 100
@@ -482,7 +494,7 @@ def main(arch, branch, buildid, args):
     basedir="/var/portbuild/"+arch+"/"+branch+"/builds/"+buildid
     portsdir=basedir+"/ports"
 
-    indexfile=portsdir+"/INDEX-"+branch[0]
+    indexfile=portsdir+"/INDEX-"+branch
 
     print "[MASTER] parseindex..."
     index = Index(indexfile)
