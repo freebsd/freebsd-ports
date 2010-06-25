@@ -930,6 +930,7 @@
     SUBDIR += lua50-posix
     SUBDIR += lua50-pty
     SUBDIR += luabind
+    SUBDIR += luafilesystem
     SUBDIR += luajava
     SUBDIR += lwp
     SUBDIR += lxr
