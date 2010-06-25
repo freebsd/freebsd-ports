@@ -1,4 +1,8 @@
 bin/lightspark
+bin/tightspark
+lib/liblightspark.so
+lib/liblightspark.so.0.5
+lib/liblightspark.so.0.5.0
 %%DATADIR%%/lightspark.frag
 %%DATADIR%%/lightspark.vert
 %%PLUGIN%%%%WEBPLUGINS_DIR%%/liblightsparkplugin.so

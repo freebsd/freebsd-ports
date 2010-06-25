@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lightspark
-DISTVERSION=	r20100528
+DISTVERSION=	r20100625
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -21,7 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/llvm/Support/DataFlow.h:${PORTSDIR}/devel/llvm
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		pcrecpp.0:${PORTSDIR}/devel/pcre \
 		ftgl.2:${PORTSDIR}/graphics/ftgl \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Uses assembly code
@@ -34,6 +35,7 @@ USE_SDL=	sdl
 USE_GL=		gl glew
 MAKE_JOBS_SAFE=	yes
 USE_PERL5_BUILD=yes # for llvm-config; see ports/146711
+USE_LDCONFIG=	yes
 
 CXXFLAGS+=	-fpermissive
 
@@ -41,7 +43,8 @@ PORTDOCS=	*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-OPTIONS=	PLUGIN     "Enable browser plugin" off
+OPTIONS=	PLUGIN	"Enable browser plugin" off \
+		SOUND	"Enable sound (requires libpulse)" on
 
 .include <bsd.port.options.mk>
 
@@ -68,6 +71,12 @@ PLIST_SUB+=	PLUGIN="@comment "
 CMAKE_ARGS+=	-DCOMPILE_PLUGIN:BOOL=OFF
 .endif
 
+.if defined(WITH_SOUND)
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+.else
+CMAKE_ARGS+=	-DENABLE_SOUND:BOOL=OFF
+.endif
+
 .if defined(WITH_PLUGIN)
 pre-everything::
 	@${ECHO_CMD} "Lightspark is currently in pre-alpha state, so only use its plugin"
@@ -76,10 +85,6 @@ pre-everything::
 	@${ECHO_CMD} "to something much higher (1024 or so) to make the plugin work..."
 	@sleep 3
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr.*/LiberationSerif-Regular.ttf|${LOCALBASE}/lib/X11/fonts/Liberation/LiberationSerif-Regular.ttf|' \
-		${WRKSRC}/swf.cpp
 
 post-install:
 .if !defined(NOPORTDOCS)
