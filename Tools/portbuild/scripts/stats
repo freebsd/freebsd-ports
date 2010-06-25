@@ -1,6 +1,7 @@
 #!/bin/sh
 
-SUPPORTED_ARCHS="amd64 i386 ia64 sparc64"
+pb=/var/portbuild
+. ${pb}/conf/server.conf
 
 if [ $# -ne 1 ]; then
 	echo "usage: <branch>"
@@ -10,8 +11,9 @@ fi
 branch=$1
 
 for i in ${SUPPORTED_ARCHS}; do
-	if [ -d /var/portbuild/$i/${branch}/builds/latest/packages/All ]; then
-		count=$(find /var/portbuild/$i/${branch}/builds/latest/packages/All -name \*.tbz -o -name \*.tgz |wc -l)
+	all=${pb}/$i/${branch}/builds/latest/packages/All
+	if [ -d ${all} ]; then
+		count=$(find ${all} -name \*.tbz -o -name \*.tgz |wc -l)
 		echo -n "$i: ${count}  "
 	fi
 done
