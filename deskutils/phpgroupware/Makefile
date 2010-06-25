@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	phpgroupware
-PORTVERSION=	0.9.16.012
+PORTVERSION=	0.9.16.016
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	phpgroupware/phpgroupware/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -18,13 +19,9 @@ USE_PHP=	yes
 WANT_PHP_MOD=	yes
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/phpgroupware
-
-post-extract:
-		@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -rf
 
 do-install:
-		@${MKDIR} ${PREFIX}/www/data-dist
-		@${CP} -r ${WRKSRC} ${PREFIX}/www/data-dist/
+		@${MKDIR} -p ${PREFIX}/www/data-dist/phpgroupware
+		@${CP} -r ${WRKSRC}/* ${PREFIX}/www/data-dist/phpgroupware
 
 .include <bsd.port.mk>
