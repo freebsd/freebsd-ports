@@ -17,8 +17,8 @@ if [ $(echo $(cat .tmp | wc -l)) = 0 ]; then
 else
   set $(cat .tmp)
   num=$#
-  if [ -s cvsdone ]; then
-    echo "(cvs update finished at: $(cat cvsdone))<br>" >> $of
+  if [ -s .updated ]; then
+    echo "(ports update finished at: $(cat .updated))<br>" >> $of
   fi
   echo "(timestamp of newest log: $(ls -rtTl | grep '\.log$' | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}'))<br><br>" >> $of
   echo "<table border=1>" >>$of
