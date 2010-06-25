@@ -1,0 +1,58 @@
+#!/bin/sh
+
+doarch() {
+    arch=$1
+    shift
+
+    if [ -f "${pb}/${arch}/portbuild.conf" ]; then
+	. ${pb}/${arch}/portbuild.conf
+    else
+	echo "Invalid arch"
+	exit 1
+    fi
+
+    machines=$(awk '{print $1}' ${pb}/${arch}/mlist)
+ 
+    for i in ${machines}; do
+	. ${pb}/${arch}/portbuild.conf
+	if [ -f "${pb}/${arch}/portbuild.${i}" ]; then
+	    . ${pb}/${arch}/portbuild.${i}
+	fi
+	if [ ${quiet} -eq 0 ]; then
+	    echo "[$i]"
+	fi
+	lockf -t 60 ${pb}/${arch}/lockfiles/lock.$i su ports-${arch} -c "ssh ${client_user}@$i ${sudo_cmd} $@"
+	result=$?
+	if [ $result -ne 0 ]; then
+	    echo "could not execute command $@ on $i: $result"
+	fi
+    done
+}
+
+id=$(whoami)
+if [ "${id}" = "root" ]; then
+	arch=$1
+	shift
+	root=1
+else
+	arch=$(echo $id | sed s,ports-,,)
+	root=0
+fi
+
+if [ "$1" = "-q" ]; then
+	quiet=1
+	shift
+else
+	quiet=0
+fi
+
+pb=/var/portbuild
+if [ "${arch}" = "all" ]; then
+    arches=$(find ${pb}/*/portbuild.conf)
+    for i in ${arches}; do
+	arch=$(basename $(dirname $i))
+	doarch $arch "$@"
+    done
+else
+    doarch $arch "$@"
+fi
