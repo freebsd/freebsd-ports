@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py_otp_interface
-PORTVERSION=	0.97
+PORTVERSION=	1.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lysator.liu.se/~tab/erlang/py_interface/
 DISTNAME=	py_interface-${PORTVERSION}
