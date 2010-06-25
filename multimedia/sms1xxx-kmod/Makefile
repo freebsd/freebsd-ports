@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sms1xxx
-PORTVERSION=	20100227
+PORTVERSION=	20100624
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-siano/
 PKGNAMESUFFIX=	-kmod
@@ -94,8 +94,8 @@ DISTFILE_INSTRUCTIONS+=	\
 	\n- Please, get the appropriate firmware for your Nova device\n\
 	and copy the file to '${DISTDIR}/${DIST_SUBDIR}/${NOVA_FW}.fw'\n\
 	e.g. :\n\
-	wget 'http://www.wintvcd.co.uk/drivers/WinTV-MiniStick_4_2_10_27180_WHQL.zip'\n\
-	unzip -j 'WinTV-MiniStick_4_2_10_27180_WHQL.zip' \\\\\n\
+	wget 'http://www.wintvcd.co.uk/drivers/WinTV-MiniStick_4_2_26_28027_WHQL.zip'\n\
+	unzip -j 'WinTV-MiniStick_4_2_26_28027_WHQL.zip' \\\\\n\
 	\t'driver17/hcw17dvb.1b0'\n\
 	mv 'hcw17dvb.1b0' '${DISTDIR}/${DIST_SUBDIR}/${NOVA_FW}.fw'\n
 .endif
