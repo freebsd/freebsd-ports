@@ -1,0 +1,12 @@
+--- solid/CMakeLists.txt.orig	2010-06-16 09:49:31.723645684 +0200
++++ solid/CMakeLists.txt	2010-06-16 09:49:41.468153690 +0200
+@@ -7,8 +7,8 @@
+ add_subdirectory(kcm)
+ add_subdirectory(solid-actions-kcm)
+ 
++add_subdirectory(hal)
+ IF("${CMAKE_SYSTEM}" MATCHES "Linux")
+-  add_subdirectory(hal)
+   add_subdirectory(networking)
+   add_subdirectory(solidshell)
+ ENDIF("${CMAKE_SYSTEM}" MATCHES "Linux")
