@@ -64,6 +64,7 @@
     SUBDIR += kmerlin
     SUBDIR += kmess
     SUBDIR += kmess-kde4
+    SUBDIR += komclean
     SUBDIR += konverse
     SUBDIR += kopete
     SUBDIR += kpopup

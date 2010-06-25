@@ -1,0 +1,28 @@
+bin/komclean
+%%DATADIR%%/html/favicon.ico
+%%DATADIR%%/html/favicon_unread.ico
+%%DATADIR%%/html/favicon_unread_msg.ico
+%%DATADIR%%/html/help.html
+%%DATADIR%%/html/img/bg_content.png
+%%DATADIR%%/html/img/bg_content_bottom.png
+%%DATADIR%%/html/img/bg_topbar.png
+%%DATADIR%%/html/img/bg_toplist.png
+%%DATADIR%%/html/img/fake_indent.png
+%%DATADIR%%/html/img/icon_new.png
+%%DATADIR%%/html/img/icon_unread.png
+%%DATADIR%%/html/img/progress.png
+%%DATADIR%%/html/img/star_gold.png
+%%DATADIR%%/html/img/star_gray.png
+%%DATADIR%%/html/index.html
+%%DATADIR%%/html/kom.js
+%%DATADIR%%/html/komadmin.js
+%%DATADIR%%/html/komclean.css
+%%DATADIR%%/html/komcleanlogin.css
+%%DATADIR%%/html/komcsel.js
+%%DATADIR%%/html/komimsg.js
+%%DATADIR%%/html/kommsg.js
+%%DATADIR%%/html/login.html
+share/pixmaps/komclean.xpm
+@dirrm %%DATADIR%%/html/img
+@dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%
