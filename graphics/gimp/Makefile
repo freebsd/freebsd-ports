@@ -29,7 +29,7 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_HELP)
-RUN_DEPENDS+=	gimp-help>0:${PORTSDIR}/graphics/gimp-help
+RUN_DEPENDS+=	gimp-help*>0:${PORTSDIR}/graphics/gimp-help
 .endif
 
 .if defined(WITH_PYTHON)
