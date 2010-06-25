@@ -72,6 +72,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Asuncion.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Atikokan.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Bahia.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Bahia_Banderas.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Barbados.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Belem.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Belize.pm
