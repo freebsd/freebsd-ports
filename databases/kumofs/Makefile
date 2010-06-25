@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kumofs
-PORTVERSION=	0.4.7
+PORTVERSION=	0.4.8
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://cloud.github.com/downloads/etolabo/kumofs/
@@ -19,6 +19,7 @@ LIB_DEPENDS=	msgpack:${PORTSDIR}/devel/msgpack \
 		tokyocabinet:${PORTSDIR}/databases/tokyocabinet
 RUN_DEPENDS=	rubygem-msgpack>0:${PORTSDIR}/devel/rubygem-msgpack
 
+LICENSE=	ASL
 USE_AUTOTOOLS=	libtool:22 autoheader:262 autoconf:262 automake:110 aclocal:110
 ACLOCAL_ARGS=	# empty
 AUTOMAKE_ARGS=	--add-missing --copy
