@@ -43,7 +43,8 @@ OPTIONS=	CLI "Build CLI version" on \
 		SUHOSIN "Enable Suhosin protection system" on \
 		MULTIBYTE "Enable zend multibyte support" off \
 		IPV6 "Enable ipv6 support" on \
-		MAILHEAD "Enable mail header patch" off
+		MAILHEAD "Enable mail header patch" off \
+		LINKTHR "Link thread lib (for threaded extensions)" off
 
 CONFLICTS=	php4-4* php5-pcre-* php5-spl-*
 
@@ -119,7 +120,9 @@ CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		pthreads_working="yes" \
 		lt_cv_path_SED="sed"
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+.if defined(WITH_LINKTHR)
+CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}"
+.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
