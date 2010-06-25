@@ -1,16 +1,23 @@
 #!/usr/bin/env python
+# $FreeBSD$
 #
 # Client for communicating proxy requests to the buildproxy
 
 import sys, socket, os, commands
 
 from freebsd import *
+from freebsd_config import *
 
-SOCKET='/tmp/.build'
+CONFIG_DIR="/var/portbuild"
+CONFIG_SUBDIR="conf"
+CONFIG_FILENAME="server.conf"
+
+config = getConfig( CONFIG_DIR, CONFIG_SUBDIR, CONFIG_FILENAME )
+BUILDPROXY_SOCKET_FILE = config.get( 'BUILDPROXY_SOCKET_FILE' )
 
 try:
     s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-    s.connect(SOCKET)
+    s.connect(BUILDPROXY_SOCKET_FILE)
 
     sockfile = s.makefile()
     sockfile.write("%s\n" % " ".join(sys.argv[1:]))
@@ -38,5 +45,3 @@ except Exception, e:
         print e2
     raise e  # XXX debug
     sys.exit(254)
-
-
