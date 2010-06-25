@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/iterpipes/__init__.py
+%%PYTHON_SITELIBDIR%%/iterpipes/__init__.pyc
+%%PYTHON_SITELIBDIR%%/iterpipes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/iterpipes/testing.py
+%%PYTHON_SITELIBDIR%%/iterpipes/testing.pyc
+%%PYTHON_SITELIBDIR%%/iterpipes/testing.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/iterpipes
