@@ -1,39 +1,54 @@
 #!/bin/sh
+# $FreeBSD$
+
+# server-side script which wraps the dopackages script
+
+# NOTE: rearranged 20100615 to not have to be linked to dopackages.N
 
 # configurable variables
 pb=/var/portbuild
 
-if [ $# -lt 2 ]; then
-    echo "usage: $0 <arch> <buildid> [<args> ...]"
+if [ $# -lt 3 ]; then
+    echo "usage: $0 <arch> <branch> <buildid> [<args> ...]"
     exit 1
 fi
 
 arch=$1
-buildid=$2
-branch=$(echo $(basename $0) | cut -d'.' -f2)
-shift 2
+branch=$2
+buildid=$3
+shift 3
 
+. ${pb}/conf/server.conf
 . ${pb}/scripts/buildenv
 if ! validate_env ${arch} ${branch} ; then
-    echo "Invalid environment: ${arch}/${branch}"
+    echo "dopackages.wrapper: invalid build environment: \"${arch}/${branch}\""
     exit 1
 fi
 
-buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
-if [ -z "${buildid}" ]; then
-    echo "Invalid build ID ${buildid}"
+buildid2=$(resolve ${pb} ${arch} ${branch} ${buildid})
+if [ -z "${buildid2}" ]; then
+    echo "dopackages.wrapper: build ID \"${buildid}\" does not exist for \"${arch}/${branch}\""
     exit 1
 fi
 
-# XXX move to per-build
-lock=${pb}/${arch}/${branch}/lock
+lock=${pb}/${arch}/${branch}/${buildid2}.lock
 
-date=$(date '+%Y%m%d%H%M%S')
+# datestamp will be used as buildid iff the latest/previous dance
+# is needed, but in any case, it distinguishes all logfile names
+# (e.g. for restarted and continued builds, there will be unique
+# lognames for each attempt.)
+datestamp=$(date '+%Y%m%d%H%M%S')"."`hostname -s`
+logdir=${pb}/${arch}/archive/buildlogs
+if [ ! -d ${logdir} ]; then
+    echo "use 'build create' to create the ${logdir} directory before trying dopackages"
+    exit 1
+fi
+logname=${logdir}/log.${branch}.${datestamp}
 
 dorun() {
 
-    lockf -k -t 0 ${lock} ${pb}/scripts/dopackages ${arch} ${branch} ${buildid} ${date} $@ 2>&1 \
-	| tee ${pb}/${arch}/archive/buildlogs/log.${branch}.${date}
+    lockf -k -t 0 ${lock} ${pb}/scripts/dopackages ${arch} ${branch} ${buildid2} ${datestamp} $@ 2>&1 \
+	| tee ${logname}
 }
 
-dorun $@ || (echo "Build failed."; exit 1)
+dorun $@ || (echo "dopackages.wrapper: build failed."; exit 1)
