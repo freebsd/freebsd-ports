@@ -3,14 +3,16 @@
 # Update the master source trees that are used by package builds
 # and other consumers
 
-# head is handled specially
-HEAD_BRANCH="9"
-NON_HEAD_BRANCHES=""
+pb=/var/portbuild
+. ${pb}/conf/server.conf
 
-base=/a/snap
-zbase=a/snap
+base=${ZFS_MOUNTPOINT}/${SNAP_SRC_DIRECTORY_PREFIX}
+zbase=${ZFS_VOLUME}/${SNAP_SRC_DIRECTORY_PREFIX}
 
-srepo=/r/ncvs
+supstamp() {
+	fulldate=$1
+        date -j -f %+ "${fulldate}" +%Y.%m.%d.%H.%M.%S
+}
 
 stamp() {
 	fulldate=$1
@@ -33,50 +35,22 @@ echo "Started at $(date)"
 # We need to preserve group writability so portmgr group can write
 umask 002
 
-#cvsup -g /root/cvs-supfile || finish 1
-
-cd $base/src-${HEAD_BRANCH}
-fulldate=$(date)
-cvs -Rq -d ${srepo} update -PdA -D "${fulldate}"
-echo ${fulldate} > cvsdone
-snapdate=$(stamp ${fulldate})
-zfs snapshot ${zbase}/src-${HEAD_BRANCH}@${snapdate}
-
-# XXX
-# Special casing for 6 and 8 to test building against .0 src ABI
-# This requires some remodelling after we're done with all branches
-# XXX
-
-cd $base/src-6
-fulldate=$(date)
-cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_6_4
-echo ${fulldate} > cvsdone
-snapdate=$(stamp ${fulldate})
-zfs snapshot ${zbase}/src-6@${snapdate}
-
-cd $base/src-7
-fulldate=$(date)
-cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_7_1
-echo ${fulldate} > cvsdone
-snapdate=$(stamp ${fulldate})
-zfs snapshot ${zbase}/src-7@${snapdate}
-
-cd $base/src-8
-fulldate=$(date)
-cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_8_0
-echo ${fulldate} > cvsdone
-snapdate=$(stamp ${fulldate})
-zfs snapshot ${zbase}/src-8@${snapdate}
-
-# EO XXX
-
-#for branch in $NON_HEAD_BRANCHES; do
-#  cd $base/src-${branch}
-#  fulldate=$(date)
-#  cvs -Rq -d ${srepo} update -PdA -D "${fulldate}" -r RELENG_${branch}
-#  echo ${fulldate} > cvsdone
-#  snapdate=$(stamp ${fulldate})
-#  zfs snapshot ${zbase}/src-${branch}@${snapdate}
-#done
+# for branch in 8; do
+for branch in $SRC_BRANCHES; do
+  cd ${base}${branch}
+  fulldate=$(date)
+  supdate=$(supstamp ${fulldate})
+  eval tag=\$SRC_BRANCH_${branch}_TAG
+  cat ${SRC_MASTER_SUPFILE} | \
+    sed "s|%%DATE%%|${supdate}|;s|%%PREFIX%%|${base}${branch}|;s|%%TAG%%|${tag}|" \
+    > ${SRC_SUPFILE}.${branch}.now
+  # example destination directory: /a/snap/src-6/src/ (tricky!)
+  csup -L 2 ${SRC_SUPFILE}.${branch}.now > src-csup.${branch}.log
+  echo ${fulldate} > src/.updated
+  # hack for zfs breakiness
+  find . -group wheel|xargs chgrp portmgr
+  snapdate=$(stamp ${fulldate})
+  zfs snapshot ${zbase}${branch}/src@${snapdate}
+done
 
 finish 0
