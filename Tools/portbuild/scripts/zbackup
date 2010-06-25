@@ -8,15 +8,18 @@ import zfs, commands, datetime, sys, os, bz2
 from signal import *
 
 # List of filesystems to backup
+# XXX MCL
 backuplist=["a", "a/nfs", "a/local", "a/portbuild",
             "a/portbuild/amd64", "a/portbuild/i386",
             "a/portbuild/ia64", "a/portbuild/powerprc",
             "a/portbuild/sparc64"]
 
 # Directory to store backups
+# XXX MCL
 backupdir="/dumpster/pointyhat/backup"
 
 # How many days between full backups
+# XXX MCL
 fullinterval=9
 
 def validate():

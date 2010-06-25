@@ -5,6 +5,7 @@
 import zfs, commands, datetime, os
 
 # List of filesystems to expire
+# XXX MCL
 expirelist=(("a", 14), 
             ("a/nfs", 14),
             ("a/local", 14),
@@ -16,10 +17,10 @@ expirelist=(("a", 14),
             ("a/portbuild/sparc64", 14),
             ("a/snap", 7),
             ("a/snap/ports", 7),
-            ("a/snap/src-6", 7),
-            ("a/snap/src-7", 7),
-            ("a/snap/src-8", 7),
-            ("a/snap/src-9", 7),
+            ("a/snap/src-6/src", 7),
+            ("a/snap/src-7/src", 7),
+            ("a/snap/src-8/src", 7),
+            ("a/snap/src-9/src", 7),
             ("a/snap/world-amd64-HEAD", 7),
             ("a/snap/world-i386-HEAD", 7))
 
