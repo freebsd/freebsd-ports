@@ -1,10 +1,13 @@
 #!/bin/sh
+# $FreeBSD$
+
 #
 # pdispatch <arch> <branch> <buildid> <host> <command> <package.tbz> [<args> ...]
 #
-# Dispatch the job to a host via the ptimeout script.
+# server-side script to dispatch the job to a host via the ptimeout script.
 
 pb=/var/portbuild
+
 arch=$1
 branch=$2
 buildid=$3
@@ -14,14 +17,13 @@ shift 5
 
 pbab=${pb}/${arch}/${branch}
 
+. ${pb}/conf/server.conf
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
-# wait 100 hours maximum
-timeout=360000
-# number of lines of log to send
-loglength=1000
-hdrlength=6
+timeout=${PDISPATCH_TIMEOUT}
+loglength=${PDISPATCH_LOGLENGTH}
+hdrlength=${PDISPATCH_HDRLENGTH}
 
 buildid=$(resolve ${pb} ${arch} ${branch} ${buildid})
 if [ -z "${buildid}" ]; then
@@ -167,7 +169,7 @@ if [ "${error}" = 0 ]; then
     if grep -q "^list of .*file" ${log}; then
 	buildlogdir=$(realpath ${builddir}/logs/)
 	baselogdir=$(basename ${buildlogdir})
-	(sed -e '/^build started/,$d' $log;echo;echo "For the full build log, see"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '1,/^=== Checking filesystem state/d' $log) | mail -s "${pkgname} pkg-plist errors on ${arch} ${branch}" ${mailto}
+	(sed -e '/^build started/,$d' $log;echo;echo "For the full build log, see"; echo; echo "  http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '1,/^=== Checking filesystem state/d' $log) | mail -s "${pkgname} pkg-plist errors on ${arch} ${branch}" ${mailto}
     fi
 else
     log=${builddir}/errors/${pkgname}.log
@@ -176,9 +178,9 @@ else
 	buildlogdir=$(realpath ${builddir}/logs/)
 	baselogdir=$(basename ${buildlogdir})
 	if [ $(wc -l ${log} | awk '{print $1}') -le $((loglength + hdrlength)) ]; then
-	    (echo "You can also find this build log at"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;cat ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
+	    (echo "You can also find this build log at"; echo; echo "  http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;cat ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
 	else
-	    (echo "Excerpt from the build log at"; echo; echo "  http://${master}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '/^build started/,$d' $log;echo;echo "  [... lines trimmed ...]";echo;tail -${loglength} ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
+	    (echo "Excerpt from the build log at"; echo; echo "  http://${MASTER_URL}/errorlogs/${arch}-errorlogs/${baselogdir}/$(basename $log)";echo;sed -e '/^build started/,$d' $log;echo;echo "  [... lines trimmed ...]";echo;tail -${loglength} ${log}) | mail -s "${pkgname} failed on ${arch} ${branch}" ${mailto}
 	fi
     fi
     lockf -k ${pbab}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${buildid} ${pkgname}
