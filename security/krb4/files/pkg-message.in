@@ -1,9 +1,0 @@
-************************************************************
-If you want to use the Kerberos 4 r-commands or su, you will
-need to run the following command as root:
-
-  # chmod u+s %%PREFIX%%/bin/rsh
-  # chmod u+s %%PREFIX%%/bin/rcp
-  # chmod u+s %%PREFIX%%/bin/rlogin
-  # chmod u+s %%PREFIX%%/bin/su
-************************************************************
