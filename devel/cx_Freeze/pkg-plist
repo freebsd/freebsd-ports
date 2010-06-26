@@ -17,7 +17,9 @@ bin/cxfreeze
 %%PYTHON_SITELIBDIR%%/cx_Freeze/hooks.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/hooks.pyo
 %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/Console.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/Console3.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleKeepPath.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleKeepPath3.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/ConsoleSetLibPath.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/SharedLib.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/initscripts/SharedLibSource.py
@@ -31,6 +33,8 @@ bin/cxfreeze
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/setup.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/setup.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib/test_matplotlib.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4/PyQt4app.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4/setup.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/__init__.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/pkg2/__init__.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/pkg2/sub3.py
@@ -41,6 +45,9 @@ bin/cxfreeze
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/sub6.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/relimport.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/setup.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/Config.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/ServiceHandler.py
+%%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service/setup.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/hello.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple/setup.py
 %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx/setup.py
@@ -50,11 +57,13 @@ bin/cxfreeze
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.pyc
 %%PYTHON_SITELIBDIR%%/cx_Freeze/windist.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/wx
+@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/service
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/simple
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1/pkg2
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport/pkg1
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/relimport
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/matplotlib
+@dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/PyQt4
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced/modules
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples/advanced
 @dirrm %%PYTHON_SITELIBDIR%%/cx_Freeze/samples
