@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	9.04
+PORTVERSION=	9.13
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	File archiver with high compression ratio
-OPTIONS=	MINIMAL	"Support only .7z file format" off
+
+OPTIONS=	MINIMAL	"Support only .7z file format" off \
+		MODULES	"Build modules" on
 
 USE_BZIP2=	yes
 MAKEFILE=	makefile
