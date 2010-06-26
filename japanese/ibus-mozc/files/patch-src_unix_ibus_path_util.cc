@@ -1,5 +1,5 @@
---- unix/ibus/path_util.cc.org	2010-06-11 18:00:39.000000000 +0900
-+++ unix/ibus/path_util.cc	2010-06-12 10:23:37.582580151 +0900
+--- unix/ibus/path_util.cc.org	2010-06-17 15:59:08.044438083 +0900
++++ unix/ibus/path_util.cc	2010-06-26 16:38:18.218403536 +0900
 @@ -30,14 +30,14 @@
  #include "unix/ibus/path_util.h"
  
@@ -13,7 +13,7 @@
  
  string GetIconPath(const string &icon_file) {
 -  return kInstalledDirectory + string("/") + icon_file;
-+  return kInstalledDirectory + string("/icons/") + icon_file;
++  return string("@@LOCALBASE@@/share/mozc-additions/icons/") + icon_file;
  }
  
  }  // namespace ibus

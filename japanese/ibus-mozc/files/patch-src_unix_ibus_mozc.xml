@@ -1,16 +1,17 @@
---- unix/ibus/mozc.xml.org	2010-06-11 18:00:39.000000000 +0900
-+++ unix/ibus/mozc.xml	2010-06-12 10:22:30.668862555 +0900
-@@ -3,6 +3,7 @@
+--- unix/ibus/mozc.xml.org	2010-06-17 15:59:08.044438083 +0900
++++ unix/ibus/mozc.xml	2010-06-26 16:28:56.093569793 +0900
+@@ -2,12 +2,12 @@
+ <component>
    <name>com.google.IBus.Mozc</name>
    <description>Mozc Component</description>
-   <exec>/usr/libexec/ibus-engine-mozc --ibus</exec>
+-  <exec>/usr/libexec/ibus-engine-mozc --ibus</exec>
 +  <exec>@@LOCALBASE@@/libexec/ibus-engine-mozc --ibus</exec>
    <!-- TODO(mazda): Generate the version number -->
    <version>0.0.0.0</version>
    <author>Google Inc.</author>
-@@ -10,4 +11,5 @@
+   <license>New BSD</license>
    <homepage>http://code.google.com/p/mozc/</homepage>
    <textdomain>ibus-mozc</textdomain>
-   <engines exec="/usr/libexec/ibus-engine-mozc --xml" />
+-  <engines exec="/usr/libexec/ibus-engine-mozc --xml" />
 +  <engines exec="@@LOCALBASE@@/libexec/ibus-engine-mozc --xml" />
  </component>

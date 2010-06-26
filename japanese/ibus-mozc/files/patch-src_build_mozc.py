@@ -1,6 +1,6 @@
---- build_mozc.py.org	2010-06-11 18:01:03.000000000 +0900
-+++ build_mozc.py	2010-06-12 10:05:39.176190512 +0900
-@@ -67,7 +67,7 @@
+--- build_mozc.py.org	2010-06-17 15:59:08.104932923 +0900
++++ build_mozc.py	2010-06-26 14:43:42.504687128 +0900
+@@ -68,7 +68,7 @@
  
  def IsLinux():
    """Returns true if the platform is Linux."""
@@ -9,16 +9,7 @@
  
  
  def GetGeneratorName():
-@@ -356,7 +356,7 @@
-                       default='Win32',
-                       help='specify the target plaform: [Win32|x64]')
-   # default Qt dir to support the current build procedure for Debian.
--  default_qtdir = '/usr/local/Trolltech/Qt-4.5.2'
-+  default_qtdir = '@@LOCALBASE@@/lib/qt4/'
-   if IsWindows():
-     default_qtdir = None
-   parser.add_option('--qtdir', dest='qtdir',
-@@ -387,7 +387,7 @@
+@@ -403,7 +403,7 @@
      (unused_gyp_file_name, target_name) = ParseTarget(target)
      target_names.append(target_name)
  

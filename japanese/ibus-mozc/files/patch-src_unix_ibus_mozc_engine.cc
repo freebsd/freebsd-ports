@@ -1,6 +1,6 @@
---- unix/ibus/mozc_engine.cc.org	2010-06-11 18:00:39.000000000 +0900
-+++ unix/ibus/mozc_engine.cc	2010-06-12 13:19:26.188760964 +0900
-@@ -59,7 +59,7 @@
+--- unix/ibus/mozc_engine.cc.org	2010-06-17 15:59:08.047320852 +0900
++++ unix/ibus/mozc_engine.cc	2010-06-26 16:32:23.046397317 +0900
+@@ -66,7 +66,7 @@
  
  // Icon path for MozcTool
  // TODO(taku): currently, unknown icon is displayed.
