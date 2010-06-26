@@ -231,7 +231,6 @@
     SUBDIR += knocker
     SUBDIR += kopete-otr
     SUBDIR += kovpn
-    SUBDIR += krb4
     SUBDIR += krb5
     SUBDIR += krb5-appl
     SUBDIR += kripp
