@@ -2671,6 +2671,7 @@
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
+    SUBDIR += py-gyp-devel
     SUBDIR += py-hashring
     SUBDIR += py-icalendar
     SUBDIR += py-ice
