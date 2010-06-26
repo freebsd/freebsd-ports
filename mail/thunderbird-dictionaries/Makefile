@@ -8,7 +8,7 @@
 
 PORTNAME=	thunderbird-dictionaries
 PORTVERSION=	20060220
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	dictionaries
@@ -18,7 +18,7 @@ DIST_SUBDIR=	thunderbird
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Dictionaries for Mozilla Thunderbird
 
-RUN_DEPENDS=	thunderbird>=2.0.0.0:${PORTSDIR}/mail/thunderbird
+RUN_DEPENDS=	thunderbird>=3.0.0:${PORTSDIR}/mail/thunderbird3
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/dictionaries
