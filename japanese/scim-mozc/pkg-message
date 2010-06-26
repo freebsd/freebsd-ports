@@ -1,0 +1,25 @@
+scim-mozc installation finished. To use scim-mozc, please do the following:
+
+If you are using bash or zsh, please add following lines to your $HOME/.bashrc or
+$HOME/.zshrc:
+
+mozc_server_start
+export GTK_IM_MODULE=scim
+export XMODIFIERS=@im=SCIM
+scim -d
+
+If you are using tcsh, please add following lines to your $HOME/.cshrc:
+
+mozc_server_start
+setenv GTK_IM_MODULE scim
+setenv XMODIFIERS @im=SCIM
+scim -d
+
+If you are using KDE4, you may create a shell script in $HOME/.kde4/env, 
+and add following lines:
+
+#!/bin/sh
+mozc_server_start
+export GTK_IM_MODULE=scim
+export XMODIFIERS=@im=SCIM
+scim -d
