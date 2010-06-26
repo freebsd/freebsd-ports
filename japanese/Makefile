@@ -194,6 +194,7 @@
     SUBDIR += mobileimap
     SUBDIR += monafonts
     SUBDIR += monafonts-ttf
+    SUBDIR += mozc-additions
     SUBDIR += mozilla-jlp
     SUBDIR += mtools
     SUBDIR += multiskkserv
