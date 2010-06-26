@@ -5,6 +5,31 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100626:
+  AFFECTS: users of japanese/ibus-mozc
+  AUTHOR: daichi@FreeBSD.org
+
+  The japanese/ibus-mozc port has been updated to version 0.11.383.102, 
+  and separated into 5 ports to cope with upcoming new port 
+  japanese/scim-mozc.
+
+    o japanese/mozc-server
+    o japanese/mozc-tool
+    o japanese/mozc-additions
+    o japanese/ibus-mozc
+    o devel/py-gyp-devel
+
+  You can not upgrade with portupgrade or portmaster. To upgrade, you 
+  must deinstall japanese/ibus-mozc first and then install new 
+  japanese/ibus-mozc.
+
+  for example:
+
+    # pkg_delete ja-ibus-mozc-0.11.365.102_1
+    # portsnap fetch update
+    # cd /usr/ports/japanese/ibus-mozc/
+    # make install clean
+
 20100617:
   AFFECTS: users of security/{dirmngr|gnupg}
   AUTHOR: dougb@FreeBSD.org
