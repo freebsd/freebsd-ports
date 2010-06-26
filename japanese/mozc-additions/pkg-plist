@@ -8,3 +8,5 @@ bin/mozc_tool_config
 bin/mozc_tool_dictionary
 share/mozc-additions/icons/product_icon.png
 share/mozc-additions/icons/toolicon_setting.png
+@dirrm share/mozc-additions/icons
+@dirrm share/mozc-additions
