@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	x3270
-PORTVERSION=	3.3.7
-PORTREVISION=	2
+PORTVERSION=	3.3.10
 CATEGORIES=	x11 net
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://x3270.bgp.nu/download/
+EXTRACT_SUFX=	ga5-src.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	3270 Terminal emulator
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
@@ -20,9 +19,13 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 USE_IMAKE=	yes
+USE_ICONV=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-pr3287 --with-fontdir=local --disable-dbcs
+CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
+		LDFLAGS="-L${PREFIX}/lib" \
+		LIBS="-L${PREFIX}/lib"
 .if defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=	--disable-ssl
 .else
