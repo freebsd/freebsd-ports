@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://vfom.narod.ru/download/
 
-MAINTAINER=	vfom@narod.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI tool for NetFlow data visualisation
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \

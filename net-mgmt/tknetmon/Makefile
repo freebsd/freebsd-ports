@@ -13,7 +13,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://vfom.narod.ru/download/
 DISTNAME=	TkNetmon-${PORTVERSION}
 
-MAINTAINER=	vfom@narod.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for network monitoring tool "netmond" ( net-mgmt/netmond )
 
 BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84

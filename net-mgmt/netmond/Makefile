@@ -19,7 +19,7 @@ PATCH_SITES=	http://freebsd.unixfreunde.de/sources/ \
 PATCH_VERSION=	1
 PATCHFILES=	${DISTNAME}.patch${PATCH_VERSION}${EXTRACT_SUFX}  ${DISTNAME}.docs${EXTRACT_SUFX}
 
-MAINTAINER=	vfom@narod.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netmond - IP network monitoring daemon
 
 #MK_IFGRAPH=	yes
