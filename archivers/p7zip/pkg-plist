@@ -21,6 +21,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/exclude.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/include.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/large_pages.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/list_tech.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/method.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/output_dir.htm
