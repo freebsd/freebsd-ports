@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2010.04.04
+PORTVERSION=	2010.06.06
 CATEGORIES=	www
 MASTER_SITES=	http://bitbucket.org/rg3/youtube-dl/raw/${PORTVERSION}/
 DISTNAME=	youtube-dl
@@ -17,10 +17,9 @@ EXTRACT_ONLY=
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A program for downloading videos from YouTube.com
 
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-
-USE_PYTHON=	2.5+
+NO_WRKSUBDIR=	yes
+USE_PYTHON=	2.5-2.6
 
 PLIST_FILES=	bin/youtube-dl
 
