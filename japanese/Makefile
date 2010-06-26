@@ -195,6 +195,7 @@
     SUBDIR += monafonts
     SUBDIR += monafonts-ttf
     SUBDIR += mozc-additions
+    SUBDIR += mozc-server
     SUBDIR += mozilla-jlp
     SUBDIR += mtools
     SUBDIR += multiskkserv
