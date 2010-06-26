@@ -7297,6 +7297,7 @@ koffice-kde4-l10n-sv            ports/editors/koffice-kde4-l10n-sv
 koffice-kde4-l10n-tr            ports/editors/koffice-kde4-l10n-tr
 koffice-kde4-l10n-wa            ports/editors/koffice-kde4-l10n-wa
 kojoney                         ports/net/kojoney
+komclean                        ports/net-im/komclean
 komodo-edit                     ports/editors/komodo-edit
 komparator                      ports/sysutils/komparator
 kompmgr                         ports/x11-wm/kompmgr
@@ -8780,6 +8781,7 @@ lua50-posix                     ports/devel/lua50-posix
 lua50-pty                       ports/devel/lua50-pty
 luabind                         ports/devel/luabind
 luaexpat                        ports/textproc/luaexpat
+luafilesystem                   ports/devel/luafilesystem
 luajava                         ports/devel/luajava
 luasec                          ports/security/luasec
 luasocket                       ports/net/luasocket
@@ -20660,6 +20662,7 @@ py-iplib                        ports/net/py-iplib
 py-ipy                          ports/net-mgmt/py-ipy
 py-irclib                       ports/irc/py-irclib
 py-istring                      ports/devel/py-istring
+py-iterpipes                    ports/devel/py-iterpipes
 py-itools                       ports/devel/py-itools
 py-jabber                       ports/net-im/py-jabber
 py-jabberbot                    ports/net-im/py-jabberbot
