@@ -7,6 +7,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source/
@@ -33,8 +34,6 @@ HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-MOZILLA=	${PORTNAME}-${PORTVERSION}
-MOZILLA_EXEC_NAME=	${PORTNAME}
 MOZ_PROTOCOLS=	http,ftp,file,viewsource,res,data
 MOZ_GRAPHICS=	default,-xbm
 MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
@@ -48,7 +47,7 @@ MOZ_PKGCONFIG_FILES=
 PORTNAME_ICON=	${PORTNAME}.png
 PORTNAME_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 
-SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults/pref/${PORTNAME}.js
+SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 
 OPTIONS=
@@ -107,7 +106,7 @@ port-pre-install:
 	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 	${FAKEDIR}/bin/thunderbird
 	${RM} -f ${FAKEDIR}/bin/*.bak
-	${MKDIR} ${FAKEDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults
+	${MKDIR} ${FAKEDIR}/lib/${PORTNAME}/defaults
 
 pre-install:
 	@${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}

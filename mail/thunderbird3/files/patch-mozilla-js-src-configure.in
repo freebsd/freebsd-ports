@@ -1,6 +1,15 @@
---- mozilla/js/src/configure.in.orig	2009-09-17 11:09:10.000000000 +0200
-+++ mozilla/js/src/configure.in	2009-09-17 11:09:33.000000000 +0200
-@@ -2467,10 +2467,6 @@
+--- mozilla/js/src/configure.in.orig	2010-05-12 21:05:58.000000000 +0200
++++ mozilla/js/src/configure.in	2010-06-22 16:17:20.000000000 +0200
+@@ -1218,7 +1218,7 @@
+     CPU_ARCH=sparc
+     ;;
+ 
+-x86_64 | ia64)
++amd64 | x86_64 | ia64)
+     CPU_ARCH="$OS_TEST"
+     ;;
+ esac
+@@ -2466,10 +2466,6 @@
      ENABLE_JIT=1
      NANOJIT_ARCH=ARM
      ;;
