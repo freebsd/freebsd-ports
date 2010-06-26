@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	c3270
-PORTVERSION=	3.3.4p8
+PORTVERSION=	3.3.10ga5
 CATEGORIES=	net
 MASTER_SITES=	http://x3270.bgp.nu/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Full-screen curses-based remote login to IBM mainframes
@@ -20,12 +19,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([0-9]\.[0-9])(\..*)/\1/}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+USE_ICONV=	yes
 USE_OPENSSL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I/usr/local/include" \
+		LDFLAGS="-L/usr/local/lib" \
+		LIBS="-L/usr/local/lib"
 
 MAN1=		c3270.1 \
 		x3270if.1 \
-		x3270-script.1 \
-		pr3287.1
+		x3270-script.1
 MAN5=		ibm_hosts.5
 MANCOMPRESSED=	no
 
@@ -58,10 +60,6 @@ CONFIGURE_ARGS+=	--disable-ssl
 
 .if defined(WITHOUT_READLINE) && !defined(WITH_READLINE)
 CONFIGURE_ARGS+=	--without-readline
-.endif
-
-.if defined(WITHOUT_PR3287) && !defined(WITH_PR3287)
-CONFIGURE_ARGS+=	--without-pr3287
 .endif
 
 .if defined(WITHOUT_ANSI) && !defined(WITH_ANSI)
