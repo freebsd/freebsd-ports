@@ -27,6 +27,9 @@ NO_CDROM=	yes
 .if ${OSVERSION} >= 700000
 DIST_TYPE=	7
 EXTRACT_SUFX=	.pkg.tbz
+.if ${OSVERSION} >= 800000
+LIB_DEPENDS+=	ncurses.7:${PORTSDIR}/misc/compat7x
+.endif
 .else
 DIST_TYPE=	6
 EXTRACT_SUFX=	.pkg.tgz
