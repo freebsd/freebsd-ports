@@ -1,13 +1,13 @@
---- Makefile.orig	Mon Mar 29 19:47:03 2004
-+++ Makefile	Mon Mar 29 19:48:31 2004
+--- Makefile.orig	2010-06-21 11:35:08.000000000 +0200
++++ Makefile	2010-06-21 19:10:33.000000000 +0200
 @@ -23,8 +23,8 @@
  ### compiler
  
  ### gcc
 -CC=gcc
--CFLAGS= -O -Wall -Wcast-qual -Wstrict-prototypes \
+-CFLAGS= -O -Werror -Wall -Wcast-qual -Wstrict-prototypes \
 +CC?=cc
-+CFLAGS+= -O -Wall -Wcast-qual -Wstrict-prototypes \
++CFLAGS+= -O -Werror -Wall -Wcast-qual -Wstrict-prototypes \
  	-Wmissing-prototypes -Wmissing-declarations -Winline -Wcast-align 
  ### cc
  #CC=cc
