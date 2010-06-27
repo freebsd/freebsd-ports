@@ -1,5 +1,5 @@
 --- src/args.c.orig	2008-03-11 19:50:42.000000000 +0100
-+++ src/args.c	2009-03-08 13:04:43.000000000 +0100
++++ src/args.c	2010-06-27 16:29:54.000000000 +0200
 @@ -163,6 +163,7 @@
  static int exp_i    = 0;
  static int exp_il   = 0;
@@ -72,8 +72,9 @@
 +    {"npcs",    PRO_BOOL,                            true,      OFF, &settings.proc_calls_space,                 &exp_pcs},
      {"nlps",    PRO_BOOL,                           false,      OFF, &settings.leave_preproc_space,              &exp_lps},
      {"nlp",     PRO_BOOL,                            true,      OFF, &settings.lineup_to_parens,                 &exp_lp},
-     {"nip",     PRO_SETTINGS,                           0, ONOFF_NA, (int *) "-ip0",                             &exp_nip},
+-    {"nip",     PRO_SETTINGS,                           0, ONOFF_NA, (int *) "-ip0",                             &exp_nip},
 -    {"nhnl",    PRO_BOOL,                            true,      OFF, &settings.honour_newlines,                  &exp_hnl},
++    {"nip",     PRO_SETTINGS,                           0, ONOFF_NA, (int *) "-ip0\0",                             &exp_nip},
 +    {"nhnl",    PRO_BOOL,                           false,      OFF, &settings.honour_newlines,                  &exp_hnl},
      {"nfca",    PRO_BOOL,                            true,      OFF, &settings.format_comments,                  &exp_fca},
      {"nfc1",    PRO_BOOL,                            true,      OFF, &settings.format_col1_comments,             &exp_fc1},
@@ -186,3 +187,12 @@
      {"berkeley-style",                              "orig"},
      {"berkeley",                                    "orig"},
      {"Bill-Shannon",                                "bs"},
+@@ -798,7 +830,7 @@
+ 
+     if (!found)
+     {
+-        DieError(invocation_error, _("%s: unknown option \"%s\"\n"), option_source, option - 1);
++        DieError(invocation_error, _("%s: unknown option \"%s\"\n"), option_source, option - option_length);
+     }
+     else
+     {
