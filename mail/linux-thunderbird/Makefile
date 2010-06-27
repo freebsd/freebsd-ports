@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	2.0.0.24
-PORTREVISION=	1
+PORTVERSION=	3.1
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR?=	${PORTNAME}/releases/${PORTVERSION}/linux-i686/en-US
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
+
+USE_BZIP2=	yes
+
+USE_LINUX_APPS=	dbusglib dbuslibs alsalib
 
 .include "${.CURDIR}/../../www/linux-seamonkey/Makefile.common"
 .include <bsd.port.mk>
