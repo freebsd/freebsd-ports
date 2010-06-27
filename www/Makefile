@@ -380,7 +380,6 @@
     SUBDIR += linux-flashplugin7
     SUBDIR += linux-flashplugin9
     SUBDIR += linux-flock
-    SUBDIR += linux-mozilla
     SUBDIR += linux-mplayer-plugin
     SUBDIR += linux-nvu
     SUBDIR += linux-opera

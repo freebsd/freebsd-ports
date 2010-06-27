@@ -4445,3 +4445,4 @@ www/mythweb|www/mythplugin-mythweb|2010-06-21|Renamed: Common prefix for all Myt
 www/firefox3|www/firefox35|2010-06-23|Upstream support dropped
 www/firefox3-i18n|www/firefox35-i18n|2010-06-23|Upstream support dropped
 security/krb4||2010-06-26|security vulnerability and isn't more developed
+www/linux-mozilla|www/linux-seamonkey|2010-06-27|Security vulnerabilities and abandoned upstream since 2006
