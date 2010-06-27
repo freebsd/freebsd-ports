@@ -6236,6 +6236,9 @@ ja-ming                         ports/japanese/ming
 ja-mobileimap                   ports/japanese/mobileimap
 ja-monafonts                    ports/japanese/monafonts
 ja-monafonts-ttf                ports/japanese/monafonts-ttf
+ja-mozc-additions               ports/japanese/mozc-additions
+ja-mozc-server                  ports/japanese/mozc-server
+ja-mozc-tool                    ports/japanese/mozc-tool
 ja-mozilla-jlp                  ports/japanese/mozilla-jlp
 ja-mt                           ports/japanese/MT
 ja-mtools                       ports/japanese/mtools
@@ -6378,6 +6381,7 @@ ja-scim-canna                   ports/japanese/scim-canna
 ja-scim-honoka                  ports/japanese/scim-honoka
 ja-scim-honoka-plugin-romkan    ports/japanese/scim-honoka-plugin-romkan
 ja-scim-honoka-plugin-wnn       ports/japanese/scim-honoka-plugin-wnn
+ja-scim-mozc                    ports/japanese/scim-mozc
 ja-scim-prime                   ports/japanese/scim-prime
 ja-scim-skk                     ports/japanese/scim-skk
 ja-scim-tables                  ports/japanese/scim-tables
@@ -20632,6 +20636,7 @@ py-gtkglext                     ports/x11-toolkits/py-gtkglext
 py-gtksourceview                ports/x11-toolkits/py-gtksourceview
 py-gui                          ports/x11-toolkits/py-gui
 py-gvgen                        ports/graphics/py-gvgen
+py-gyp-devel                    ports/devel/py-gyp-devel
 py-h5py                         ports/science/py-h5py
 py-hashlib                      ports/security/py-hashlib
 py-hashring                     ports/devel/py-hashring
