@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	setedit
-PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTVERSION=	0.5.5
 CATEGORIES=	editors
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix-devel/${PORTVERSION}%20r1244%20Tarball%20%28Source%29/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-4
 
 MAINTAINER=	exile@chamber.ee
 COMMENT=	Programmer's editor with a nice Text User Interface (TUI)
@@ -20,6 +19,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
+
+CFLAGS+=	-Wno-write-strings -I${LOCALBASE}/include
 
 MAN1=		setedit.1 infview.1
 INFO=		setedit sdg infview
@@ -36,10 +37,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-mp3
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile
-.endif
 
 .if defined(WITHOUT_BZIP2)
 CONFIGURE_ARGS+=	--no-bzip2
@@ -91,8 +88,10 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/eterm
 	@${MKDIR} ${DATADIR}/eterm/Setedit
+	@${MKDIR} ${PREFIX}/lib/setedit
 	${INSTALL_PROGRAM} ${WRKSRC}/makes/editor.exe ${PREFIX}/bin/setedit
 	${INSTALL_PROGRAM} ${WRKSRC}/makes/infview.exe ${PREFIX}/bin/infview
+	${INSTALL_DATA} ${WRKSRC}/holidays/holidays.conf ${PREFIX}/lib/setedit
 	${INSTALL_DATA} ${WRKSRC}/cfgfiles/eterm/Setedit/MAIN ${DATADIR}/eterm/Setedit
 	${INSTALL_DATA} ${WRKSRC}/cfgfiles/eterm/Setedit/Setedit.menu ${DATADIR}/eterm/Setedit
 	${INSTALL_DATA} ${WRKSRC}/cfgfiles/eterm/readme.txt ${DATADIR}/eterm
@@ -103,6 +102,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cfgfiles/htmlmac.pmc ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/cfgfiles/perlmac.pmc ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/cfgfiles/pmacros.pmc ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/cfgfiles/vhdl.pmc ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/cfgfiles/wmlmac.pmc ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/cfgfiles/syntaxhl.shl ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/cfgfiles/editor.tip ${DATADIR}
@@ -143,21 +143,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/distrib/examples/examp1.dst ${DOCSDIR}/examples
 	${INSTALL_DATA} ${WRKSRC}/distrib/examples/examp1.epr ${DOCSDIR}/examples
 	${INSTALL_DATA} ${WRKSRC}/distrib/examples/test1.cc ${DOCSDIR}/examples
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/a_project.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/advice_tags.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/class_child1.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/class_list.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/generate_tags.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/jump_symbol.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/project_name.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/project_open.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/sorted.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/symbols_example.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/tag_options.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/tag_options_d.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/this_and_parents.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/this_class.png ${DOCSDIR}/tag_imgs
-	${INSTALL_DATA} ${WRKSRC}/www-site/tag_imgs/w_completion.png ${DOCSDIR}/tag_imgs
+	(cd ${WRKSRC}/www-site/tag_imgs/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/tag_imgs/)
 	${INSTALL_DATA} ${WRKSRC}/copyrigh ${DOCSDIR}/copyright
 	${INSTALL_DATA} ${WRKSRC}/copying.dj ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/copying.gpl ${DOCSDIR}

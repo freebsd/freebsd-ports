@@ -1,5 +1,6 @@
 bin/setedit
 bin/infview
+lib/setedit/holidays.conf
 %%DATADIR%%/eterm/Setedit/MAIN
 %%DATADIR%%/eterm/Setedit/Setedit.menu
 %%DATADIR%%/eterm/readme.txt
@@ -10,6 +11,7 @@ bin/infview
 %%DATADIR%%/htmlmac.pmc
 %%DATADIR%%/perlmac.pmc
 %%DATADIR%%/pmacros.pmc
+%%DATADIR%%/vhdl.pmc
 %%DATADIR%%/wmlmac.pmc
 %%DATADIR%%/syntaxhl.shl
 %%DATADIR%%/editor.tip
@@ -37,6 +39,7 @@ bin/infview
 %%DATADIR%%/macros.slp
 %%DATADIR%%/errors.cle
 %%DATADIR%%/readme.1st
+@dirrm lib/setedit
 @dirrm %%DATADIR%%/eterm/Setedit
 @dirrm %%DATADIR%%/eterm
 @dirrm %%DATADIR%%
@@ -48,14 +51,14 @@ bin/infview
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/advice_tags.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/class_child1.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/class_list.png
+%%PORTDOCS%%%%DOCSDIR%%/tag_imgs/d_tag_options.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/generate_tags.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/jump_symbol.png
-%%PORTDOCS%%%%DOCSDIR%%/tag_imgs/project_name.png
+%%PORTDOCS%%%%DOCSDIR%%/tag_imgs/name_project.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/project_open.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/sorted.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/symbols_example.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/tag_options.png
-%%PORTDOCS%%%%DOCSDIR%%/tag_imgs/tag_options_d.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/this_and_parents.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/this_class.png
 %%PORTDOCS%%%%DOCSDIR%%/tag_imgs/w_completion.png
