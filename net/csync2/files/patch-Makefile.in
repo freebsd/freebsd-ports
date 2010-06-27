@@ -1,5 +1,14 @@
---- ./Makefile.in.orig	2007-07-24 14:04:25.000000000 -0700
-+++ ./Makefile.in	2008-01-17 02:39:42.822708243 -0800
+--- Makefile.in.orig	2007-07-24 21:04:25.000000000 +0000
++++ Makefile.in	2010-05-20 10:51:32.000000000 +0000
+@@ -150,7 +150,7 @@
+ target_alias = @target_alias@
+ 
+ sbin_PROGRAMS = csync2
+-sbin_SCRIPTS = csync2-compare
++sbin_SCRIPTS = %%CSYNC2_COMPARE%%
+ man_MANS = csync2.1
+ 
+ csync2_SOURCES = action.c cfgfile_parser.y cfgfile_scanner.l check.c	\
 @@ -168,7 +168,7 @@
  AM_CFLAGS = $(am__append_2) $(am__append_6)
  AM_LDFLAGS = $(am__append_3) $(am__append_7)

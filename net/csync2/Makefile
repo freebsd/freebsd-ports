@@ -7,12 +7,12 @@
 
 PORTNAME=	csync2
 PORTVERSION=	1.34
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://oss.linbit.com/csync2/ \
 		http://people.freebsd.org/~aaron/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alexey@renatasystems.org
 COMMENT=	A cluster synchronization tool
 
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
@@ -22,21 +22,37 @@ LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
 		gcrypt.16:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
-MAN1=	csync2.1
+OPTIONS=	CSYNC2_COMPARE "Install csync2-compare script" off
+
+.include <bsd.port.pre.mk>
+
+MAN1=		csync2.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ENV+=	LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config gnutls"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBGNUTLS_CONFIG="${LOCALBASE}/bin/pkg-config gnutls"
 
 USE_RC_SUBR=	csync2
 
 PLIST_FILES=	etc/csync2.cfg-dist \
-		sbin/csync2 \
-		sbin/csync2-compare
+		sbin/csync2
+
+.if defined(WITH_CSYNC2_COMPARE)
+RUN_DEPENDS+=	bash>=0:${PORTSDIR}/shells/bash
+PLIST_FILES+=	sbin/csync2-compare
+CSYNC2_COMPARE=	csync2-compare
+.else
+CSYNC2_COMPARE=
+.endif
+
+SUB_FILES=	pkg-install
+
+post-patch:
+	${REINPLACE_CMD} -E "s#%%CSYNC2_COMPARE%%#${CSYNC2_COMPARE}#" ${WRKSRC}/Makefile.in
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
