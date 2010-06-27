@@ -6,33 +6,31 @@
 #
 
 PORTNAME=	rosegarden
-PORTVERSION=	2.1.2
-PORTREVISION=	3
+PORTVERSION=	10.04.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.cannam.demon.co.uk/rosegarden/distribution/
-DISTNAME=	${PORTNAME}-2.1pl2
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/10.04/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Rosegarden Editor and Sequencer suite
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
-RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
+BUILD_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi \
+		dssi_osc_update:${PORTSDIR}/audio/dssi \
+		makedepend:${PORTSDIR}/devel/makedepend
+RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi \
+		dssi_osc_update:${PORTSDIR}/audio/dssi
+LIB_DEPENDS+=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
+		fftw3.5:${PORTSDIR}/math/fftw3 \
+		fftw3f.5:${PORTSDIR}/math/fftw3-float \
+		asound.2:${PORTSDIR}/audio/alsa-lib
 
-USE_XORG=	xaw
-USE_AUTOTOOLS=	autoconf:213
-CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.2
-MAKE_JOBS_UNSAFE=	yes
-
-post-patch:
-	@${CP} ${FILESDIR}/rosegarden ${WRKSRC}/rosegarden.sh
-.for file in Rosegarden rosegarden.sh
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
-.endfor
-
-do-install:
-	@( \
-	 cd ${WRKSRC} ; ${SETENV} PREFIX="${PREFIX}" ./do-install \
-	)
-	${INSTALL_SCRIPT} ${WRKSRC}/rosegarden.sh ${PREFIX}/bin/rosegarden
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	gui xml network corelib sql qt3support \
+		rcc_build moc_build uic_build linguist_build
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR} LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

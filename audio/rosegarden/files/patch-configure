@@ -1,0 +1,13 @@
+--- configure.orig	2010-06-09 12:33:23.000000000 +0700
++++ configure	2010-06-09 12:34:06.000000000 +0700
+@@ -4971,9 +4971,7 @@
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_dl_dlopen" >&5
+ $as_echo "$ac_cv_lib_dl_dlopen" >&6; }
+ if test "x$ac_cv_lib_dl_dlopen" = x""yes; then :
+-  LIBS="$LIBS -ldl"
+-else
+-  as_fn_error "Failed to find required dl library" "$LINENO" 5
++  LIBS="$LIBS"
+ fi
+ 
+ 

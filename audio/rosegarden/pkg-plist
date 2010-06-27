@@ -1,24 +1,28 @@
 bin/rosegarden
-bin/rosegarden-bin
-lib/rosegarden/bin/editor
-lib/rosegarden/bin/sequencer
-lib/rosegarden/example/glazunov.rose
-lib/rosegarden/synth-patches/std.sb
-lib/rosegarden/synth-patches/drums.sb
-lib/rosegarden/help/rosehelp.hnx
-lib/rosegarden/help/rosehelp.info
-lib/rosegarden/petal/Petal.so
-lib/rosegarden/petal/Petal.tcl
-lib/rosegarden/petal/PetalEditor.tcl
-lib/rosegarden/petal/PetalMidi.tcl
-lib/rosegarden/petal/pkgIndex.tcl
-lib/rosegarden/rosepetal-filters/harmonizer.tcl
-lib/rosegarden/rosepetal-filters/pattern.tcl
-lib/X11/app-defaults/Rosegarden
-@dirrm lib/rosegarden/example
-@dirrm lib/rosegarden/help
-@dirrm lib/rosegarden/bin
-@dirrm lib/rosegarden/petal
-@dirrm lib/rosegarden/rosepetal-filters
-@dirrm lib/rosegarden/synth-patches
-@dirrm lib/rosegarden
+share/applications/rosegarden.desktop
+share/icons/hicolor/16x16/mimetypes/audio-x-rosegarden-composition.png
+share/icons/hicolor/16x16/mimetypes/audio-x-rosegarden-device.png
+share/icons/hicolor/16x16/mimetypes/audio-x-rosegarden-project.png
+share/icons/hicolor/16x16/mimetypes/audio-x-rosegarden-template.png
+share/icons/hicolor/32x32/apps/rosegarden.png
+share/icons/hicolor/32x32/mimetypes/audio-x-rosegarden-composition.png
+share/icons/hicolor/32x32/mimetypes/audio-x-rosegarden-device.png
+share/icons/hicolor/32x32/mimetypes/audio-x-rosegarden-project.png
+share/icons/hicolor/32x32/mimetypes/audio-x-rosegarden-template.png
+share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-composition.png
+share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-device.png
+share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-project.png
+share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-template.png
+share/mime/packages/rosegarden.xml
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrm share/icons/hicolor/64x64/mimetypes
+@dirrm share/icons/hicolor/64x64
+@dirrm share/icons/hicolor/32x32/mimetypes
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/mimetypes
+@dirrm share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
