@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	2.1.11
-PORTREVISION=	3
+PORTVERSION=	2.2.1
 CATEGORIES=	games
-MASTER_SITES=	SF/freeciv/Freeciv%202.1/${PORTVERSION}
+MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy
 
 RUN_DEPENDS=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme
@@ -21,15 +20,14 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-libiconv-prefix=${PREFIX} --program-transform-name=
 INSTALLS_ICONS=	yes
-PORT_VERBS=	civ
 
-MAN6=		civserver.6 civclient.6
+MAN6=		freeciv-server.6 freeciv-client.6 \
+		freeciv-xaw.6 freeciv-win32.6 freeciv-sdl.6 freeciv-gtk2.6 \
+		freeciv-ftwl.6
 
 .ifndef WITHOUT_X11
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
@@ -42,26 +40,34 @@ USE_XORG=	xpm
 USE_SDL=	mixer
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=--enable-client=gtk
-.ifndef WITHOUT_ESOUND
 USE_GNOME+=	esound
-.else
-CONFIGURE_ARGS+=--disable-esd
-.endif
 CONFLICTS=	freeciv-nox11-[0-9]*
+PLIST_SUB+=	X11="" GTK=""
 .else
-PLIST=	${PKGDIR}/pkg-plist.nox11
 PKGNAMESUFFIX?=	-nox11
 CONFIGURE_ARGS+=--enable-client=no
 CONFLICTS=	freeciv-[0-9]*
+PLIST_SUB+=	X11="@comment " GTK="@comment "
 .endif
 
-.ifndef WITHOUT_AUTH
+.ifdef WITH_SDL
+CONFIGURE_ARGS+=--enable-client=gtk,sdl
+USE_SDL=	sdl image ttf
+PLIST_SUB+=	SDL=""
+.else
+PLIST_SUB+=	SDL="@comment "
+.endif
+
 .ifndef WITHOUT_MYSQL
-CONFIGURE_ARGS+=	--enable-auth --with-mysql-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-auth --with-mysql-prefix=${LOCALBASE}
 USE_MYSQL=	yes
 .endif
+
+.ifdef WITHOUT_NLS
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .else
-CONFIGURE_ARGS+=	--disable-auth
+PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
@@ -73,6 +79,7 @@ post-patch:
 .ifndef WITHOUT_X11
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/data/civclient.dsc ${DATADIR}/
+	@cd ${PREFIX}/bin && ${LN} -s freeciv-gtk2 freeciv-client
 .endif
 
 .include <bsd.port.mk>
