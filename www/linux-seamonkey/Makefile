@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	seamonkey
-PORTVERSION=	1.1.19
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	.en-US.linux-i686
+PORTVERSION=	2.0.5
 CATEGORIES=	www
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}/linux-i686/en-US
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
+
+USE_BZIP2=	yes
+
+USE_LINUX_APPS=	dbusglib dbuslibs alsalib
 
 .include "${.CURDIR}/Makefile.common"
 .include <bsd.port.mk>
