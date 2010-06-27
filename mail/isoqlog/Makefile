@@ -20,6 +20,12 @@ USE_GMAKE=	yes
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Segmentation faults on amd64 (see ports/139867 for details)
+.endif
+
 .ifdef NOPORTDOCS
 post-patch:
 	@${REINPLACE_CMD} -e '/install-data-am:/s/install-${PORTNAME}_docDATA//' \
@@ -30,4 +36,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
