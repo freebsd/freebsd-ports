@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.3.6.20100606
+PORTVERSION=	4.3.6.20100620
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -93,7 +93,7 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 full-regression-test: build
-	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
+	cd ${WRKSRC}; ${GMAKE} -sk check
 
 post-install:
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
