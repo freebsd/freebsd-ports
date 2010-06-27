@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-sync
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://files.roorback.net/ \
@@ -37,7 +37,7 @@ AMD64_ARCH=	x86_64
 BUILD_DEPENDS+=	${FF_DEPENDS}
 RUN_DEPENDS+=	${FF_DEPENDS}
 
-REVID=		8c2ff3edbda5
+REVID=		e0cf60bf32c1
 .if ${ARCH} == i386
 PLATFORM=	FreeBSD_x86-gcc3
 .elif ${ARCH} == amd64
