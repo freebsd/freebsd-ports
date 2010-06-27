@@ -24,10 +24,6 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/eclipse/features/org.eclipse.wst.common_core.feature_2.0.2.v200802150100-7C78EKOE_EkMNlO6f7cjpz0/feature.xml:${PORTSDIR}/java/eclipse-webtools
 
 LICENSE=	EPL LGPL3
-LICENSE_NAME_EPL=	Eclipse Public License
-LICENSE_GROUPS_EPL=	FSF OSI
-LICENSE_PERMS_EPL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_TEXT_EPL=	The license: EPL (Eclipse Public License) is standard, please read from the web. A copy of the EPL is available at http://www.eclipse.org/org/documents/epl-v10.php
 LICENSE_COMB=	multi
 
 NO_BUILD=	yes
