@@ -4,7 +4,7 @@
  void P7zipArchiverStrategy::configure()
  {
      addExtension(".7z");
-+    addExtension(".cbz");
++    addExtension(".cb7");
      setExecutables("7z", "7zr");
  
      if (which("7z") != QString::null)
