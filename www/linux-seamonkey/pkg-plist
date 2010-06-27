@@ -1,338 +1,159 @@
 bin/%%APP_NAME%%
 share/applications/%%APP_NAME%%.desktop
-lib/%%APP_NAME%%/LICENSE
+lib/%%APP_NAME%%/.autoreg
 lib/%%APP_NAME%%/README
-lib/%%APP_NAME%%/chrome/US.jar
-lib/%%APP_NAME%%/chrome/chatzilla.jar
-lib/%%APP_NAME%%/chrome/chromelist.txt
+lib/%%APP_NAME%%/Throbber-small.gif
+lib/%%APP_NAME%%/application.ini
+lib/%%APP_NAME%%/blocklist.xml
 lib/%%APP_NAME%%/chrome/classic.jar
+lib/%%APP_NAME%%/chrome/classic.manifest
 lib/%%APP_NAME%%/chrome/comm.jar
-lib/%%APP_NAME%%/chrome/content-packs.jar
-lib/%%APP_NAME%%/chrome/embed-sample.jar
+lib/%%APP_NAME%%/chrome/comm.manifest
 lib/%%APP_NAME%%/chrome/en-US.jar
-lib/%%APP_NAME%%/chrome/en-mac.jar
-lib/%%APP_NAME%%/chrome/en-unix.jar
-lib/%%APP_NAME%%/chrome/en-win.jar
-lib/%%APP_NAME%%/chrome/help.jar
-lib/%%APP_NAME%%/chrome/icons/default/abcardWindow.xpm
-lib/%%APP_NAME%%/chrome/icons/default/abcardWindow16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/addressbookWindow.xpm
-lib/%%APP_NAME%%/chrome/icons/default/addressbookWindow16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow.xpm
-lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/bookmark-window.xpm
-lib/%%APP_NAME%%/chrome/icons/default/bookmark-window16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/chatzilla-window.xpm
-lib/%%APP_NAME%%/chrome/icons/default/chatzilla-window16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/default.xpm
-lib/%%APP_NAME%%/chrome/icons/default/default16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/downloadManager.xpm
-lib/%%APP_NAME%%/chrome/icons/default/downloadManager16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/editorWindow.xpm
-lib/%%APP_NAME%%/chrome/icons/default/editorWindow16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/findBookmarkWindow.xpm
-lib/%%APP_NAME%%/chrome/icons/default/findBookmarkWindow16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/findHistoryWindow.xpm
-lib/%%APP_NAME%%/chrome/icons/default/findHistoryWindow16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/history-window.xpm
-lib/%%APP_NAME%%/chrome/icons/default/history-window16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/jsconsoleWindow.xpm
-lib/%%APP_NAME%%/chrome/icons/default/jsconsoleWindow16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/main-window.xpm
-lib/%%APP_NAME%%/chrome/icons/default/main-window16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/messengerWindow.xpm
-lib/%%APP_NAME%%/chrome/icons/default/messengerWindow16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/msgcomposeWindow.xpm
-lib/%%APP_NAME%%/chrome/icons/default/msgcomposeWindow16.xpm
+lib/%%APP_NAME%%/chrome/en-US.manifest
+lib/%%APP_NAME%%/chrome/gloda.jar
+lib/%%APP_NAME%%/chrome/gloda.manifest
+lib/%%APP_NAME%%/chrome/icons/default/JSConsoleWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/JSConsoleWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/JSConsoleWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/abcardWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/abcardWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/abcardWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/ablistWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/ablistWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/ablistWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/addressbookWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/addressbookWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/addressbookWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/bmPropsWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/bookmark-window.png
+lib/%%APP_NAME%%/chrome/icons/default/bookmark-window16.png
+lib/%%APP_NAME%%/chrome/icons/default/bookmark-window48.png
+lib/%%APP_NAME%%/chrome/icons/default/default.png
+lib/%%APP_NAME%%/chrome/icons/default/default16.png
+lib/%%APP_NAME%%/chrome/icons/default/default48.png
+lib/%%APP_NAME%%/chrome/icons/default/downloadManager.png
+lib/%%APP_NAME%%/chrome/icons/default/downloadManager16.png
+lib/%%APP_NAME%%/chrome/icons/default/downloadManager48.png
+lib/%%APP_NAME%%/chrome/icons/default/editorWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/editorWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/editorWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/findBookmarkWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/findBookmarkWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/findBookmarkWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/findHistoryWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/findHistoryWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/findHistoryWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/history-window.png
+lib/%%APP_NAME%%/chrome/icons/default/history-window16.png
+lib/%%APP_NAME%%/chrome/icons/default/history-window48.png
+lib/%%APP_NAME%%/chrome/icons/default/main-window.png
+lib/%%APP_NAME%%/chrome/icons/default/main-window16.png
+lib/%%APP_NAME%%/chrome/icons/default/main-window48.png
+lib/%%APP_NAME%%/chrome/icons/default/messengerWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/messengerWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/messengerWindow48.png
+lib/%%APP_NAME%%/chrome/icons/default/msgcomposeWindow.png
+lib/%%APP_NAME%%/chrome/icons/default/msgcomposeWindow16.png
+lib/%%APP_NAME%%/chrome/icons/default/msgcomposeWindow48.png
 lib/%%APP_NAME%%/chrome/icons/default/seamonkey.png
-lib/%%APP_NAME%%/chrome/icons/default/venkman-window.xpm
-lib/%%APP_NAME%%/chrome/icons/default/venkman-window16.xpm
-lib/%%APP_NAME%%/chrome/icons/default/winInspectorMain.xpm
-lib/%%APP_NAME%%/chrome/icons/default/winInspectorMain16.xpm
-lib/%%APP_NAME%%/chrome/inspector.jar
-lib/%%APP_NAME%%/chrome/inspector.manifest
-lib/%%APP_NAME%%/chrome/installed-chrome.txt
+lib/%%APP_NAME%%/chrome/icons/default/venkman-window.png
+lib/%%APP_NAME%%/chrome/icons/default/venkman-window16.png
+lib/%%APP_NAME%%/chrome/icons/default/venkman-window48.png
 lib/%%APP_NAME%%/chrome/messenger.jar
-lib/%%APP_NAME%%/chrome/modern.jar
-lib/%%APP_NAME%%/chrome/overlays.rdf
-lib/%%APP_NAME%%/chrome/pipnss.jar
+lib/%%APP_NAME%%/chrome/messenger.manifest
+lib/%%APP_NAME%%/chrome/newsblog.jar
+lib/%%APP_NAME%%/chrome/newsblog.manifest
 lib/%%APP_NAME%%/chrome/pippki.jar
+lib/%%APP_NAME%%/chrome/pippki.manifest
 lib/%%APP_NAME%%/chrome/reporter.jar
 lib/%%APP_NAME%%/chrome/reporter.manifest
-lib/%%APP_NAME%%/chrome/sroaming.jar
-lib/%%APP_NAME%%/chrome/stylesheets.rdf
 lib/%%APP_NAME%%/chrome/toolkit.jar
-lib/%%APP_NAME%%/chrome/venkman.jar
-lib/%%APP_NAME%%/components/accessibility-atk.xpt
-lib/%%APP_NAME%%/components/accessibility.xpt
-lib/%%APP_NAME%%/components/addrbook.xpt
-lib/%%APP_NAME%%/components/alerts.xpt
-lib/%%APP_NAME%%/components/appshell.xpt
-lib/%%APP_NAME%%/components/appstartup.xpt
-lib/%%APP_NAME%%/components/autocomplete.xpt
-lib/%%APP_NAME%%/components/autoconfig.xpt
-lib/%%APP_NAME%%/components/bookmarks.xpt
-lib/%%APP_NAME%%/components/caps.xpt
-lib/%%APP_NAME%%/components/chardet.xpt
-lib/%%APP_NAME%%/components/chatzilla-service.js
-lib/%%APP_NAME%%/components/chrome.xpt
-lib/%%APP_NAME%%/components/commandhandler.xpt
-lib/%%APP_NAME%%/components/composer.xpt
-lib/%%APP_NAME%%/components/content_base.xpt
-lib/%%APP_NAME%%/components/content_html.xpt
-lib/%%APP_NAME%%/components/content_htmldoc.xpt
-lib/%%APP_NAME%%/components/content_xmldoc.xpt
-lib/%%APP_NAME%%/components/content_xslt.xpt
-lib/%%APP_NAME%%/components/content_xtf.xpt
-lib/%%APP_NAME%%/components/cookie.xpt
-lib/%%APP_NAME%%/components/directory.xpt
-lib/%%APP_NAME%%/components/docshell.xpt
-lib/%%APP_NAME%%/components/dom.xpt
-lib/%%APP_NAME%%/components/dom_base.xpt
-lib/%%APP_NAME%%/components/dom_canvas.xpt
-lib/%%APP_NAME%%/components/dom_core.xpt
-lib/%%APP_NAME%%/components/dom_css.xpt
-lib/%%APP_NAME%%/components/dom_events.xpt
-lib/%%APP_NAME%%/components/dom_html.xpt
-lib/%%APP_NAME%%/components/dom_loadsave.xpt
-lib/%%APP_NAME%%/components/dom_range.xpt
-lib/%%APP_NAME%%/components/dom_sidebar.xpt
-lib/%%APP_NAME%%/components/dom_storage.xpt
-lib/%%APP_NAME%%/components/dom_stylesheets.xpt
-lib/%%APP_NAME%%/components/dom_svg.xpt
-lib/%%APP_NAME%%/components/dom_traversal.xpt
-lib/%%APP_NAME%%/components/dom_views.xpt
-lib/%%APP_NAME%%/components/dom_xbl.xpt
-lib/%%APP_NAME%%/components/dom_xpath.xpt
-lib/%%APP_NAME%%/components/dom_xul.xpt
-lib/%%APP_NAME%%/components/downloadmanager.xpt
-lib/%%APP_NAME%%/components/editor.xpt
-lib/%%APP_NAME%%/components/embed_base.xpt
-lib/%%APP_NAME%%/components/extensions.xpt
-lib/%%APP_NAME%%/components/exthandler.xpt
-lib/%%APP_NAME%%/components/filepicker.xpt
-lib/%%APP_NAME%%/components/find.xpt
-lib/%%APP_NAME%%/components/gfx.xpt
-lib/%%APP_NAME%%/components/gksvgrenderer.xpt
-lib/%%APP_NAME%%/components/history.xpt
-lib/%%APP_NAME%%/components/htmlparser.xpt
-lib/%%APP_NAME%%/components/imgicon.xpt
-lib/%%APP_NAME%%/components/imglib2.xpt
-lib/%%APP_NAME%%/components/impComm4xMail.xpt
-lib/%%APP_NAME%%/components/import.xpt
-lib/%%APP_NAME%%/components/inspector-cmdline.js
-lib/%%APP_NAME%%/components/inspector.xpt
-lib/%%APP_NAME%%/components/intl.xpt
-lib/%%APP_NAME%%/components/jar.xpt
+lib/%%APP_NAME%%/chrome/toolkit.manifest
+lib/%%APP_NAME%%/components/FeedConverter.js
+lib/%%APP_NAME%%/components/FeedProcessor.js
+lib/%%APP_NAME%%/components/FeedWriter.js
+lib/%%APP_NAME%%/components/NetworkGeolocationProvider.js
+lib/%%APP_NAME%%/components/WebContentConverter.js
+lib/%%APP_NAME%%/components/browser.xpt
+lib/%%APP_NAME%%/components/glautocomp.js
 lib/%%APP_NAME%%/components/jsconsole-clhandler.js
-lib/%%APP_NAME%%/components/jsconsole.xpt
-lib/%%APP_NAME%%/components/jsdservice.xpt
-lib/%%APP_NAME%%/components/layout_base.xpt
-lib/%%APP_NAME%%/components/layout_printing.xpt
-lib/%%APP_NAME%%/components/layout_xul.xpt
-lib/%%APP_NAME%%/components/layout_xul_tree.xpt
-lib/%%APP_NAME%%/components/libaccessibility.so
-lib/%%APP_NAME%%/components/libaddrbook.so
-lib/%%APP_NAME%%/components/libappcomps.so
-lib/%%APP_NAME%%/components/libauth.so
-lib/%%APP_NAME%%/components/libautoconfig.so
-lib/%%APP_NAME%%/components/libbayesflt.so
-lib/%%APP_NAME%%/components/libcaps.so
-lib/%%APP_NAME%%/components/libchrome.so
-lib/%%APP_NAME%%/components/libcomposer.so
-lib/%%APP_NAME%%/components/libcookie.so
-lib/%%APP_NAME%%/components/libdocshell.so
-lib/%%APP_NAME%%/components/libeditor.so
-lib/%%APP_NAME%%/components/libembedcomponents.so
-lib/%%APP_NAME%%/components/libfileview.so
-lib/%%APP_NAME%%/components/libgfx_gtk.so
-lib/%%APP_NAME%%/components/libgfxps.so
-lib/%%APP_NAME%%/components/libgklayout.so
-lib/%%APP_NAME%%/components/libgkplugin.so
-lib/%%APP_NAME%%/components/libhtmlpars.so
-lib/%%APP_NAME%%/components/libi18n.so
+lib/%%APP_NAME%%/components/jsmimeemitter.js
+lib/%%APP_NAME%%/components/libdbusservice.so
 lib/%%APP_NAME%%/components/libimgicon.so
-lib/%%APP_NAME%%/components/libimglib2.so
-lib/%%APP_NAME%%/components/libimpComm4xMail.so
-lib/%%APP_NAME%%/components/libimpText.so
-lib/%%APP_NAME%%/components/libimport.so
 lib/%%APP_NAME%%/components/libjar50.so
 lib/%%APP_NAME%%/components/libjsd.so
-lib/%%APP_NAME%%/components/liblocalmail.so
-lib/%%APP_NAME%%/components/libmailnews.so
-lib/%%APP_NAME%%/components/libmailview.so
-lib/%%APP_NAME%%/components/libmime.so
-lib/%%APP_NAME%%/components/libmimeemitter.so
-lib/%%APP_NAME%%/components/libmork.so
-lib/%%APP_NAME%%/components/libmozfind.so
-lib/%%APP_NAME%%/components/libmozldap.so
-lib/%%APP_NAME%%/components/libmsgcompose.so
-lib/%%APP_NAME%%/components/libmsgdb.so
-lib/%%APP_NAME%%/components/libmsgimap.so
-lib/%%APP_NAME%%/components/libmsgmdn.so
-lib/%%APP_NAME%%/components/libmsgnews.so
-lib/%%APP_NAME%%/components/libmsgsmime.so
-lib/%%APP_NAME%%/components/libmyspell.so
-lib/%%APP_NAME%%/components/libnecko.so
-lib/%%APP_NAME%%/components/libnecko2.so
+lib/%%APP_NAME%%/components/libmozgnome.so
 lib/%%APP_NAME%%/components/libnkgnomevfs.so
-lib/%%APP_NAME%%/components/libnsappshell.so
-lib/%%APP_NAME%%/components/libnsprefm.so
-lib/%%APP_NAME%%/components/liboji.so
-lib/%%APP_NAME%%/components/libp3p.so
-lib/%%APP_NAME%%/components/libpermissions.so
-lib/%%APP_NAME%%/components/libpipboot.so
-lib/%%APP_NAME%%/components/libpipnss.so
-lib/%%APP_NAME%%/components/libpippki.so
-lib/%%APP_NAME%%/components/libpref.so
-lib/%%APP_NAME%%/components/libprofile.so
-lib/%%APP_NAME%%/components/librdf.so
-lib/%%APP_NAME%%/components/libremoteservice.so
-lib/%%APP_NAME%%/components/libsearchservice.so
-lib/%%APP_NAME%%/components/libspellchecker.so
-lib/%%APP_NAME%%/components/libsroaming.so
-lib/%%APP_NAME%%/components/libstoragecomps.so
-lib/%%APP_NAME%%/components/libsystem-pref.so
-lib/%%APP_NAME%%/components/libtransformiix.so
-lib/%%APP_NAME%%/components/libtxmgr.so
-lib/%%APP_NAME%%/components/libtypeaheadfind.so
-lib/%%APP_NAME%%/components/libuconv.so
-lib/%%APP_NAME%%/components/libucvmath.so
-lib/%%APP_NAME%%/components/libuniversalchardet.so
-lib/%%APP_NAME%%/components/libvcard.so
-lib/%%APP_NAME%%/components/libwallet.so
-lib/%%APP_NAME%%/components/libwalletviewers.so
-lib/%%APP_NAME%%/components/libwebbrwsr.so
-lib/%%APP_NAME%%/components/libwebsrvcs.so
-lib/%%APP_NAME%%/components/libwidget_gtk2.so
-lib/%%APP_NAME%%/components/libxmlextras.so
-lib/%%APP_NAME%%/components/libxpcom_compat_c.so
-lib/%%APP_NAME%%/components/libxpconnect.so
+lib/%%APP_NAME%%/components/libsuite.so
 lib/%%APP_NAME%%/components/libxpinstall.so
-lib/%%APP_NAME%%/components/libxremoteservice.so
-lib/%%APP_NAME%%/components/locale.xpt
-lib/%%APP_NAME%%/components/lwbrk.xpt
-lib/%%APP_NAME%%/components/mailnews.xpt
-lib/%%APP_NAME%%/components/mailview.xpt
+lib/%%APP_NAME%%/components/mail.xpt
 lib/%%APP_NAME%%/components/mdn-service.js
-lib/%%APP_NAME%%/components/mime.xpt
-lib/%%APP_NAME%%/components/mimetype.xpt
-lib/%%APP_NAME%%/components/mozbrwsr.xpt
-lib/%%APP_NAME%%/components/mozfind.xpt
-lib/%%APP_NAME%%/components/mozldap.xpt
-lib/%%APP_NAME%%/components/msgbase.xpt
-lib/%%APP_NAME%%/components/msgcompose.xpt
-lib/%%APP_NAME%%/components/msgdb.xpt
-lib/%%APP_NAME%%/components/msgimap.xpt
-lib/%%APP_NAME%%/components/msglocal.xpt
-lib/%%APP_NAME%%/components/msgnews.xpt
-lib/%%APP_NAME%%/components/msgsearch.xpt
-lib/%%APP_NAME%%/components/msgsmime.xpt
-lib/%%APP_NAME%%/components/necko.xpt
-lib/%%APP_NAME%%/components/necko_about.xpt
-lib/%%APP_NAME%%/components/necko_cache.xpt
-lib/%%APP_NAME%%/components/necko_cookie.xpt
-lib/%%APP_NAME%%/components/necko_data.xpt
-lib/%%APP_NAME%%/components/necko_dns.xpt
-lib/%%APP_NAME%%/components/necko_file.xpt
-lib/%%APP_NAME%%/components/necko_ftp.xpt
-lib/%%APP_NAME%%/components/necko_http.xpt
-lib/%%APP_NAME%%/components/necko_res.xpt
-lib/%%APP_NAME%%/components/necko_socket.xpt
-lib/%%APP_NAME%%/components/necko_strconv.xpt
-lib/%%APP_NAME%%/components/necko_viewsource.xpt
+lib/%%APP_NAME%%/components/newsblog.js
+lib/%%APP_NAME%%/components/nsAbAutoCompleteMyDomain.js
+lib/%%APP_NAME%%/components/nsAbAutoCompleteSearch.js
 lib/%%APP_NAME%%/components/nsAbLDAPAttributeMap.js
-lib/%%APP_NAME%%/components/nsCloseAllWindows.js
+lib/%%APP_NAME%%/components/nsAboutAbout.js
+lib/%%APP_NAME%%/components/nsAboutCertError.js
+lib/%%APP_NAME%%/components/nsAboutFeeds.js
+lib/%%APP_NAME%%/components/nsAboutRights.js
+lib/%%APP_NAME%%/components/nsAboutSessionRestore.js
+lib/%%APP_NAME%%/components/nsAddonRepository.js
+lib/%%APP_NAME%%/components/nsBadCertHandler.js
+lib/%%APP_NAME%%/components/nsBlocklistService.js
+lib/%%APP_NAME%%/components/nsBrowserContentHandler.js
 lib/%%APP_NAME%%/components/nsComposerCmdLineHandler.js
-lib/%%APP_NAME%%/components/nsDictionary.js
-lib/%%APP_NAME%%/components/nsDownloadProgressListener.js
+lib/%%APP_NAME%%/components/nsContentDispatchChooser.js
+lib/%%APP_NAME%%/components/nsContentPrefService.js
+lib/%%APP_NAME%%/components/nsDefaultCLH.js
+lib/%%APP_NAME%%/components/nsExtensionManager.js
 lib/%%APP_NAME%%/components/nsFilePicker.js
+lib/%%APP_NAME%%/components/nsHandlerService.js
 lib/%%APP_NAME%%/components/nsHelperAppDlg.js
-lib/%%APP_NAME%%/components/nsInterfaceInfoToIDL.js
-lib/%%APP_NAME%%/components/nsKillAll.js
-lib/%%APP_NAME%%/components/nsLDAPPrefsService.js
+lib/%%APP_NAME%%/components/nsLDAPProtocolHandler.js
+lib/%%APP_NAME%%/components/nsLivemarkService.js
+lib/%%APP_NAME%%/components/nsLoginInfo.js
+lib/%%APP_NAME%%/components/nsLoginManager.js
+lib/%%APP_NAME%%/components/nsLoginManagerPrompter.js
+lib/%%APP_NAME%%/components/nsMailNewsCommandLineHandler.js
+lib/%%APP_NAME%%/components/nsMsgTraitService.js
+lib/%%APP_NAME%%/components/nsPlacesDBFlush.js
 lib/%%APP_NAME%%/components/nsProgressDialog.js
 lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
-lib/%%APP_NAME%%/components/nsResetPref.js
+lib/%%APP_NAME%%/components/nsSMTPProtocolHandler.js
+lib/%%APP_NAME%%/components/nsSessionStartup.js
+lib/%%APP_NAME%%/components/nsSessionStore.js
 lib/%%APP_NAME%%/components/nsSidebar.js
+lib/%%APP_NAME%%/components/nsSuiteDownloadManagerUI.js
+lib/%%APP_NAME%%/components/nsSuiteGlue.js
+lib/%%APP_NAME%%/components/nsTaggingService.js
+lib/%%APP_NAME%%/components/nsTryToClose.js
+lib/%%APP_NAME%%/components/nsTypeAheadFind.js
 lib/%%APP_NAME%%/components/nsURLFormatter.js
-lib/%%APP_NAME%%/components/nsUpdateNotifier.js
-lib/%%APP_NAME%%/components/nsXmlRpcClient.js
+lib/%%APP_NAME%%/components/nsUpdateService.js
+lib/%%APP_NAME%%/components/nsWebHandlerApp.js
 lib/%%APP_NAME%%/components/offlineStartup.js
-lib/%%APP_NAME%%/components/oji.xpt
-lib/%%APP_NAME%%/components/p3p.xpt
-lib/%%APP_NAME%%/components/pipboot.xpt
-lib/%%APP_NAME%%/components/pipnss.xpt
-lib/%%APP_NAME%%/components/pippki.xpt
-lib/%%APP_NAME%%/components/plugin.xpt
-lib/%%APP_NAME%%/components/pref.xpt
-lib/%%APP_NAME%%/components/prefetch.xpt
-lib/%%APP_NAME%%/components/prefmigr.xpt
-lib/%%APP_NAME%%/components/profile.xpt
-lib/%%APP_NAME%%/components/progressDlg.xpt
-lib/%%APP_NAME%%/components/proxyObjInst.xpt
-lib/%%APP_NAME%%/components/rdf.xpt
-lib/%%APP_NAME%%/components/related.xpt
-lib/%%APP_NAME%%/components/saxparser.xpt
-lib/%%APP_NAME%%/components/search.xpt
-lib/%%APP_NAME%%/components/shistory.xpt
-lib/%%APP_NAME%%/components/signonviewer.xpt
+lib/%%APP_NAME%%/components/pluginGlue.js
+lib/%%APP_NAME%%/components/smileApplication.js
 lib/%%APP_NAME%%/components/smime-service.js
-lib/%%APP_NAME%%/components/spellchecker.xpt
-lib/%%APP_NAME%%/components/storage.xpt
-lib/%%APP_NAME%%/components/toolkitremote.xpt
-lib/%%APP_NAME%%/components/txmgr.xpt
-lib/%%APP_NAME%%/components/txtsvc.xpt
-lib/%%APP_NAME%%/components/typeaheadfind.xpt
-lib/%%APP_NAME%%/components/uconv.xpt
-lib/%%APP_NAME%%/components/unicharutil.xpt
-lib/%%APP_NAME%%/components/uriloader.xpt
-lib/%%APP_NAME%%/components/urlformatter.xpt
-lib/%%APP_NAME%%/components/venkman-service.js
-lib/%%APP_NAME%%/components/wallet.xpt
-lib/%%APP_NAME%%/components/walleteditor.xpt
-lib/%%APP_NAME%%/components/walletpreview.xpt
-lib/%%APP_NAME%%/components/webBrowser_core.xpt
-lib/%%APP_NAME%%/components/webbrowserpersist.xpt
-lib/%%APP_NAME%%/components/webshell_idls.xpt
-lib/%%APP_NAME%%/components/websrvcs.xpt
-lib/%%APP_NAME%%/components/widget.xpt
-lib/%%APP_NAME%%/components/windowds.xpt
-lib/%%APP_NAME%%/components/windowwatcher.xpt
-lib/%%APP_NAME%%/components/xml-rpc.xpt
-lib/%%APP_NAME%%/components/xpautocomplete.xpt
-lib/%%APP_NAME%%/components/xpcom_base.xpt
-lib/%%APP_NAME%%/components/xpcom_components.xpt
-lib/%%APP_NAME%%/components/xpcom_ds.xpt
-lib/%%APP_NAME%%/components/xpcom_io.xpt
-lib/%%APP_NAME%%/components/xpcom_obsolete.xpt
-lib/%%APP_NAME%%/components/xpcom_threads.xpt
-lib/%%APP_NAME%%/components/xpcom_xpti.xpt
-lib/%%APP_NAME%%/components/xpconnect.xpt
-lib/%%APP_NAME%%/components/xpinstall.xpt
-lib/%%APP_NAME%%/components/xremoteservice.xpt
-lib/%%APP_NAME%%/components/xulappinfo.js
-lib/%%APP_NAME%%/components/xulappinfo.xpt
-lib/%%APP_NAME%%/components/xuldoc.xpt
-lib/%%APP_NAME%%/components/xultmpl.xpt
+lib/%%APP_NAME%%/components/storage-Legacy.js
+lib/%%APP_NAME%%/components/storage-mozStorage.js
+lib/%%APP_NAME%%/components/txEXSLTRegExFunctions.js
+lib/%%APP_NAME%%/crashreporter
+lib/%%APP_NAME%%/crashreporter.ini
 lib/%%APP_NAME%%/defaults/autoconfig/platform.js
 lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
-lib/%%APP_NAME%%/defaults/messenger/US/mailViews.dat
 lib/%%APP_NAME%%/defaults/messenger/mailViews.dat
 lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
+lib/%%APP_NAME%%/defaults/pref/channel-prefs.js
 lib/%%APP_NAME%%/defaults/pref/composer.js
-lib/%%APP_NAME%%/defaults/pref/inspector.js
 lib/%%APP_NAME%%/defaults/pref/mailnews.js
 lib/%%APP_NAME%%/defaults/pref/mdn.js
 lib/%%APP_NAME%%/defaults/pref/reporter.js
 lib/%%APP_NAME%%/defaults/pref/smime.js
-lib/%%APP_NAME%%/defaults/profile/US/bookmarks.html
-lib/%%APP_NAME%%/defaults/profile/US/chrome/userChrome-example.css
-lib/%%APP_NAME%%/defaults/profile/US/chrome/userContent-example.css
-lib/%%APP_NAME%%/defaults/profile/US/localstore.rdf
-lib/%%APP_NAME%%/defaults/profile/US/mimeTypes.rdf
-lib/%%APP_NAME%%/defaults/profile/US/panels.rdf
-lib/%%APP_NAME%%/defaults/profile/US/search.rdf
+lib/%%APP_NAME%%/defaults/pref/suite-l10n.js
 lib/%%APP_NAME%%/defaults/profile/bookmarks.html
 lib/%%APP_NAME%%/defaults/profile/chrome/userChrome-example.css
 lib/%%APP_NAME%%/defaults/profile/chrome/userContent-example.css
@@ -340,65 +161,122 @@ lib/%%APP_NAME%%/defaults/profile/localstore.rdf
 lib/%%APP_NAME%%/defaults/profile/mimeTypes.rdf
 lib/%%APP_NAME%%/defaults/profile/panels.rdf
 lib/%%APP_NAME%%/defaults/profile/search.rdf
-lib/%%APP_NAME%%/defaults/wallet/DistinguishedSchema.tbl
-lib/%%APP_NAME%%/defaults/wallet/FieldSchema.tbl
-lib/%%APP_NAME%%/defaults/wallet/PositionalSchema.tbl
-lib/%%APP_NAME%%/defaults/wallet/SchemaConcat.tbl
-lib/%%APP_NAME%%/defaults/wallet/SchemaStrings.tbl
-lib/%%APP_NAME%%/defaults/wallet/StateSchema.tbl
-lib/%%APP_NAME%%/defaults/wallet/VcardSchema.tbl
-lib/%%APP_NAME%%/dependentlibs.list
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
-lib/%%APP_NAME%%/dirver
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome.manifest
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome/inspector.jar
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.js
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/install.rdf
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain.xpm
+lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default/winInspectorMain16.xpm
+lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/chrome.manifest
+lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/chrome/modern.jar
+lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/icon.png
+lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/install.rdf
+lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/preview.png
+lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome.manifest
+lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/chatzilla.jar
+lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window.xpm
+lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default/chatzilla-window16.xpm
+lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/components/chatzilla-service.js
+lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/install.rdf
+lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
+lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
+lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome.manifest
+lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome/venkman.jar
+lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components/venkman-service.js
+lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/install.rdf
 lib/%%APP_NAME%%/greprefs/all.js
 lib/%%APP_NAME%%/greprefs/security-prefs.js
 lib/%%APP_NAME%%/greprefs/xpinstall.js
-lib/%%APP_NAME%%/init.d/README
-lib/%%APP_NAME%%/install.rdf
+lib/%%APP_NAME%%/icons/updater.png
 lib/%%APP_NAME%%/isp/SpamAssassin.sfd
 lib/%%APP_NAME%%/isp/SpamPal.sfd
 lib/%%APP_NAME%%/isp/movemail.rdf
+lib/%%APP_NAME%%/isp/rss.rdf
 lib/%%APP_NAME%%/libfreebl3.chk
 lib/%%APP_NAME%%/libfreebl3.so
-lib/%%APP_NAME%%/libgfxpsshar.so
-lib/%%APP_NAME%%/libgkgfx.so
-lib/%%APP_NAME%%/libgtkembedmoz.so
-lib/%%APP_NAME%%/libgtkxtbin.so
-lib/%%APP_NAME%%/libjsj.so
-lib/%%APP_NAME%%/libldap50.so
+lib/%%APP_NAME%%/libldap60.so
+lib/%%APP_NAME%%/libldif60.so
 lib/%%APP_NAME%%/libmozjs.so
-lib/%%APP_NAME%%/libmozz.so
-lib/%%APP_NAME%%/libmsgbaseutil.so
 lib/%%APP_NAME%%/libnspr4.so
 lib/%%APP_NAME%%/libnss3.so
 lib/%%APP_NAME%%/libnssckbi.so
+lib/%%APP_NAME%%/libnssdbm3.chk
+lib/%%APP_NAME%%/libnssdbm3.so
+lib/%%APP_NAME%%/libnssutil3.so
 lib/%%APP_NAME%%/libplc4.so
 lib/%%APP_NAME%%/libplds4.so
-lib/%%APP_NAME%%/libprldap50.so
+lib/%%APP_NAME%%/libprldap60.so
 lib/%%APP_NAME%%/libsmime3.so
 lib/%%APP_NAME%%/libsoftokn3.chk
 lib/%%APP_NAME%%/libsoftokn3.so
+lib/%%APP_NAME%%/libsqlite3.so
 lib/%%APP_NAME%%/libssl3.so
 lib/%%APP_NAME%%/libxpcom.so
-lib/%%APP_NAME%%/libxpcom_compat.so
 lib/%%APP_NAME%%/libxpcom_core.so
-lib/%%APP_NAME%%/libxpistub.so
-lib/%%APP_NAME%%/mozilla-installer-bin
+lib/%%APP_NAME%%/license.txt
+lib/%%APP_NAME%%/modules/DownloadLastDir.jsm
+lib/%%APP_NAME%%/modules/DownloadUtils.jsm
+lib/%%APP_NAME%%/modules/ISO8601DateUtils.jsm
+lib/%%APP_NAME%%/modules/MailUtils.js
+lib/%%APP_NAME%%/modules/Microformats.js
+lib/%%APP_NAME%%/modules/PlacesDBUtils.jsm
+lib/%%APP_NAME%%/modules/PluralForm.jsm
+lib/%%APP_NAME%%/modules/Sanitizer.jsm
+lib/%%APP_NAME%%/modules/SpatialNavigation.js
+lib/%%APP_NAME%%/modules/StringBundle.js
+lib/%%APP_NAME%%/modules/WindowDraggingUtils.jsm
+lib/%%APP_NAME%%/modules/XPCOMUtils.jsm
+lib/%%APP_NAME%%/modules/autoconfigUtils.jsm
+lib/%%APP_NAME%%/modules/debug.js
+lib/%%APP_NAME%%/modules/errUtils.js
+lib/%%APP_NAME%%/modules/folderUtils.jsm
+lib/%%APP_NAME%%/modules/gloda/collection.js
+lib/%%APP_NAME%%/modules/gloda/connotent.js
+lib/%%APP_NAME%%/modules/gloda/databind.js
+lib/%%APP_NAME%%/modules/gloda/datamodel.js
+lib/%%APP_NAME%%/modules/gloda/datastore.js
+lib/%%APP_NAME%%/modules/gloda/dbview.js
+lib/%%APP_NAME%%/modules/gloda/everybody.js
+lib/%%APP_NAME%%/modules/gloda/explattr.js
+lib/%%APP_NAME%%/modules/gloda/facet.js
+lib/%%APP_NAME%%/modules/gloda/fundattr.js
+lib/%%APP_NAME%%/modules/gloda/gloda.js
+lib/%%APP_NAME%%/modules/gloda/index_ab.js
+lib/%%APP_NAME%%/modules/gloda/index_msg.js
+lib/%%APP_NAME%%/modules/gloda/indexer.js
+lib/%%APP_NAME%%/modules/gloda/log4moz.js
+lib/%%APP_NAME%%/modules/gloda/mimeTypeCategories.js
+lib/%%APP_NAME%%/modules/gloda/mimemsg.js
+lib/%%APP_NAME%%/modules/gloda/msg_search.js
+lib/%%APP_NAME%%/modules/gloda/noun_freetag.js
+lib/%%APP_NAME%%/modules/gloda/noun_mimetype.js
+lib/%%APP_NAME%%/modules/gloda/noun_tag.js
+lib/%%APP_NAME%%/modules/gloda/public.js
+lib/%%APP_NAME%%/modules/gloda/query.js
+lib/%%APP_NAME%%/modules/gloda/suffixtree.js
+lib/%%APP_NAME%%/modules/gloda/utils.js
+lib/%%APP_NAME%%/modules/iteratorUtils.jsm
+lib/%%APP_NAME%%/modules/jsTreeSelection.js
+lib/%%APP_NAME%%/modules/templateUtils.js
+lib/%%APP_NAME%%/modules/traceHelper.js
+lib/%%APP_NAME%%/modules/utils.js
+lib/%%APP_NAME%%/modules/virtualFolderWrapper.js
 lib/%%APP_NAME%%/mozilla-xremote-client
+lib/%%APP_NAME%%/platform.ini
 lib/%%APP_NAME%%/plugins/libnullplugin.so
-lib/%%APP_NAME%%/plugins/libunixprintplugin.so
-lib/%%APP_NAME%%/regchrome
-lib/%%APP_NAME%%/regxpcom
-lib/%%APP_NAME%%/regxpcom.log
+lib/%%APP_NAME%%/removed-files
 lib/%%APP_NAME%%/res/EditorOverride.css
 lib/%%APP_NAME%%/res/arrow.gif
 lib/%%APP_NAME%%/res/arrowd.gif
-lib/%%APP_NAME%%/res/bloatcycle.html
 lib/%%APP_NAME%%/res/broken-image.gif
 lib/%%APP_NAME%%/res/charsetData.properties
 lib/%%APP_NAME%%/res/charsetalias.properties
-lib/%%APP_NAME%%/res/cmessage.txt
+lib/%%APP_NAME%%/res/contenteditable.css
+lib/%%APP_NAME%%/res/designmode.css
 lib/%%APP_NAME%%/res/dtd/mathml.dtd
 lib/%%APP_NAME%%/res/dtd/xhtml11.dtd
 lib/%%APP_NAME%%/res/entityTables/html40Latin1.properties
@@ -407,37 +285,21 @@ lib/%%APP_NAME%%/res/entityTables/html40Symbols.properties
 lib/%%APP_NAME%%/res/entityTables/htmlEntityVersions.properties
 lib/%%APP_NAME%%/res/entityTables/mathml20.properties
 lib/%%APP_NAME%%/res/entityTables/transliterate.properties
-lib/%%APP_NAME%%/res/fonts/fontEncoding.properties
 lib/%%APP_NAME%%/res/fonts/mathfont.properties
-lib/%%APP_NAME%%/res/fonts/mathfontCMEX10.properties
-lib/%%APP_NAME%%/res/fonts/mathfontCMSY10.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMTExtra.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMath1.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMath2.properties
-lib/%%APP_NAME%%/res/fonts/mathfontMath4.properties
-lib/%%APP_NAME%%/res/fonts/mathfontPUA.properties
-lib/%%APP_NAME%%/res/fonts/mathfontSymbol.properties
-lib/%%APP_NAME%%/res/fonts/pangoFontEncoding.properties
+lib/%%APP_NAME%%/res/fonts/mathfontSTIXNonUnicode.properties
+lib/%%APP_NAME%%/res/fonts/mathfontSTIXSize1.properties
+lib/%%APP_NAME%%/res/fonts/mathfontStandardSymbolsL.properties
+lib/%%APP_NAME%%/res/fonts/mathfontUnicode.properties
 lib/%%APP_NAME%%/res/forms.css
 lib/%%APP_NAME%%/res/grabber.gif
 lib/%%APP_NAME%%/res/hiddenWindow.html
 lib/%%APP_NAME%%/res/html.css
-lib/%%APP_NAME%%/res/html/gopher-audio.gif
-lib/%%APP_NAME%%/res/html/gopher-binary.gif
-lib/%%APP_NAME%%/res/html/gopher-find.gif
-lib/%%APP_NAME%%/res/html/gopher-image.gif
-lib/%%APP_NAME%%/res/html/gopher-menu.gif
-lib/%%APP_NAME%%/res/html/gopher-movie.gif
-lib/%%APP_NAME%%/res/html/gopher-sound.gif
-lib/%%APP_NAME%%/res/html/gopher-telnet.gif
-lib/%%APP_NAME%%/res/html/gopher-text.gif
-lib/%%APP_NAME%%/res/html/gopher-unknown.gif
+lib/%%APP_NAME%%/res/html/folder.png
 lib/%%APP_NAME%%/res/langGroups.properties
 lib/%%APP_NAME%%/res/language.properties
 lib/%%APP_NAME%%/res/loading-image.gif
 lib/%%APP_NAME%%/res/mathml.css
 lib/%%APP_NAME%%/res/quirk.css
-lib/%%APP_NAME%%/res/sample.unixpsfonts.properties
 lib/%%APP_NAME%%/res/svg.css
 lib/%%APP_NAME%%/res/table-add-column-after-active.gif
 lib/%%APP_NAME%%/res/table-add-column-after-hover.gif
@@ -459,53 +321,67 @@ lib/%%APP_NAME%%/res/table-remove-row-hover.gif
 lib/%%APP_NAME%%/res/table-remove-row.gif
 lib/%%APP_NAME%%/res/ua.css
 lib/%%APP_NAME%%/res/unixcharset.properties
-lib/%%APP_NAME%%/res/viewer.properties
 lib/%%APP_NAME%%/res/viewsource.css
 lib/%%APP_NAME%%/run-mozilla.sh
 lib/%%APP_NAME%%/seamonkey
 lib/%%APP_NAME%%/seamonkey-bin
-lib/%%APP_NAME%%/searchplugins/dmoz.gif
+lib/%%APP_NAME%%/searchplugins/dmoz.png
 lib/%%APP_NAME%%/searchplugins/dmoz.src
-lib/%%APP_NAME%%/searchplugins/google.gif
+lib/%%APP_NAME%%/searchplugins/google.png
 lib/%%APP_NAME%%/searchplugins/google.src
-lib/%%APP_NAME%%/searchplugins/jeeves.gif
+lib/%%APP_NAME%%/searchplugins/jeeves.png
 lib/%%APP_NAME%%/searchplugins/jeeves.src
-lib/%%APP_NAME%%/xpcshell
-lib/%%APP_NAME%%/xpicleanup
-lib/%%APP_NAME%%/xpidl
-lib/%%APP_NAME%%/xpt_dump
-lib/%%APP_NAME%%/xpt_link
-lib/%%APP_NAME%%/libsqlite3.so
-lib/%%APP_NAME%%/libnssdbm3.so
-lib/%%APP_NAME%%/libnssutil3.so
+lib/%%APP_NAME%%/update.locale
+lib/%%APP_NAME%%/updater
+lib/%%APP_NAME%%/updater.ini
 @exec /bin/cp -R %%LOCALBASE%%/lib/npapi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/plugins/ 2>/dev/null || true
 @exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
+@dirrm lib/%%APP_NAME%%/searchplugins
+@dirrm lib/%%APP_NAME%%/res/html
+@dirrm lib/%%APP_NAME%%/res/fonts
+@dirrm lib/%%APP_NAME%%/res/entityTables
+@dirrm lib/%%APP_NAME%%/res/dtd
+@dirrm lib/%%APP_NAME%%/res
+@dirrm lib/%%APP_NAME%%/plugins
+@dirrm lib/%%APP_NAME%%/modules/gloda
+@dirrm lib/%%APP_NAME%%/modules
+@dirrm lib/%%APP_NAME%%/isp
+@dirrm lib/%%APP_NAME%%/icons
+@dirrm lib/%%APP_NAME%%/greprefs
+@dirrm lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/components
+@dirrm lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}/chrome
+@dirrm lib/%%APP_NAME%%/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}
+@dirrm lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}
+@dirrm lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/components
+@dirrm lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons/default
+@dirrm lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome/icons
+@dirrm lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}/chrome
+@dirrm lib/%%APP_NAME%%/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}
+@dirrm lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org/chrome
+@dirrm lib/%%APP_NAME%%/extensions/modern@themes.mozilla.org
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons/default
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome/icons
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux/chrome
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform/Linux
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/platform
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome
+@dirrm lib/%%APP_NAME%%/extensions/inspector@mozilla.org
+@dirrm lib/%%APP_NAME%%/extensions
+@dirrm lib/%%APP_NAME%%/dictionaries
+@dirrm lib/%%APP_NAME%%/defaults/profile/chrome
+@dirrm lib/%%APP_NAME%%/defaults/profile
+@dirrm lib/%%APP_NAME%%/defaults/pref
+@dirrm lib/%%APP_NAME%%/defaults/messenger
+@dirrm lib/%%APP_NAME%%/defaults/autoconfig
+@dirrm lib/%%APP_NAME%%/defaults
+@dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
 @dirrm lib/%%APP_NAME%%/chrome
-@dirrm lib/%%APP_NAME%%/components
-@dirrm lib/%%APP_NAME%%/defaults/autoconfig
-@dirrm lib/%%APP_NAME%%/defaults/messenger/US
-@dirrm lib/%%APP_NAME%%/defaults/messenger
-@dirrm lib/%%APP_NAME%%/defaults/pref
-@dirrm lib/%%APP_NAME%%/defaults/profile/US/chrome
-@dirrm lib/%%APP_NAME%%/defaults/profile/US
-@dirrm lib/%%APP_NAME%%/defaults/profile/chrome
-@dirrm lib/%%APP_NAME%%/defaults/profile
-@dirrm lib/%%APP_NAME%%/defaults/wallet
-@dirrm lib/%%APP_NAME%%/defaults
-@dirrm lib/%%APP_NAME%%/dictionaries
-@dirrm lib/%%APP_NAME%%/greprefs
-@dirrm lib/%%APP_NAME%%/init.d
-@dirrm lib/%%APP_NAME%%/isp
-@dirrm lib/%%APP_NAME%%/plugins
-@dirrm lib/%%APP_NAME%%/res/dtd
-@dirrm lib/%%APP_NAME%%/res/entityTables
-@dirrm lib/%%APP_NAME%%/res/fonts
-@dirrm lib/%%APP_NAME%%/res/html
-@dirrm lib/%%APP_NAME%%/res
-@dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications
