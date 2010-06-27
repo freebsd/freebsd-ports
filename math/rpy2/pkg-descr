@@ -5,4 +5,8 @@ R language are converted to Python exceptions. Any module that later were
 installed on the R system, can easily be used from within Python, without
 introducing any changes.
 
-WWW: http://rpy.sourceforge.net/
+rpy2 is a redesign and rewrite of rpy. It is providing a low-level interface
+to R, a proposed high-level interface, including wrappers to graphical
+libraries, as well as R-like structures and functions. 
+
+WWW: http://rpy.sourceforge.net/rpy2.html
