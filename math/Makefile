@@ -475,6 +475,7 @@
     SUBDIR += rpc
     SUBDIR += rpcalc
     SUBDIR += rpy
+    SUBDIR += rpy2
     SUBDIR += ruby-algebra
     SUBDIR += ruby-bitset
     SUBDIR += ruby-bitvector
