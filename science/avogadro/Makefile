@@ -26,7 +26,7 @@ USE_CMAKE=	yes
 CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DLIB_INSTALL_DIR="${LOCALBASE}/lib" \
 		-DENABLE_GLSL=OFF
-USE_GCC=	4.3+
+USE_GCC=	4.4+
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	PYTHON "Enable python support (broken with sip-4.10)" off
