@@ -1,5 +1,5 @@
 --- doc/Makefile.in.orig	2008-03-11 19:54:15.000000000 +0100
-+++ doc/Makefile.in	2009-03-08 13:35:49.000000000 +0100
++++ doc/Makefile.in	2010-06-27 16:29:17.000000000 +0200
 @@ -602,10 +602,10 @@
  	uninstall-pdf-am uninstall-ps-am
  

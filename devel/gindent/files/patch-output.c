@@ -1,8 +1,8 @@
---- src/output.c.orig	Mon May 21 23:45:36 2007
-+++ src/output.c	Mon May 21 23:47:36 2007
-@@ -23,7 +23,7 @@
+--- src/output.c.orig	2008-03-11 19:50:42.000000000 +0100
++++ src/output.c	2010-06-27 16:29:17.000000000 +0200
+@@ -71,7 +71,7 @@
  
- RCSTAG_CC ("$Id: output.c,v 1.5 2002/12/12 17:36:49 david Exp $");
+ RCSTAG_CC ("$Id$");
  
 -static FILE            * output       = NULL;
 +FILE                   * output       = NULL;
