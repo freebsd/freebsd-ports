@@ -1,0 +1,68 @@
+#!/bin/sh
+
+: ${PREFIX:="%%PREFIX%%"}
+: ${CSYNC2_DBDIR:="/var/db/csync2"}
+: ${CSYNC2_BACKUPDIR:="/var/backups/csync2"}
+
+create_cert() {
+
+	_errlog=`mktemp /tmp/.${0##*/}.XXXXX`
+	code=0
+
+	exec 3>&2 2>${_errlog}
+
+	openssl genrsa -out ${PREFIX}/etc/csync2_ssl_key.pem 1024 || code=1
+	yes '' | openssl req -new -key ${PREFIX}/etc/csync2_ssl_key.pem \
+		-out /tmp/csync2_ssl_cert.csr || code=1
+	openssl x509 -req -days 600 -in /tmp/csync2_ssl_cert.csr \
+		-signkey ${PREFIX}/etc/csync2_ssl_key.pem \
+		-out ${PREFIX}/etc/csync2_ssl_cert.pem || code=1
+
+	rm -f /tmp/csync2_ssl_cert.csr
+
+	if [ ${code} -ne 0 ]; then
+		echo "csync2: OpenSSL error occured:"
+		echo
+		cat ${_errlog}
+		echo
+		rm -f ${_errlog}
+		return 1
+	fi
+
+	exec 2>&3
+
+	rm -f ${_errlog}
+
+	chmod 600 ${PREFIX}/etc/csync2_ssl_key.pem \
+		${PREFIX}/etc/csync2_ssl_cert.pem
+
+	echo "csync2: RSA certificate-key pair installed."
+
+	return 0
+}
+
+pre_install() {
+	return 0
+}
+
+post_install() {
+
+	[ -n "${PACKAGE_BUILDING}" ] && return 0
+
+	for _dir in ${CSYNC2_DBDIR} ${CSYNC2_BACKUPDIR}; do
+		[ ! -d ${_dir} ] && mkdir -p -m 700 ${_dir}
+	done
+
+	if [ ! -f ${PREFIX}/etc/csync2_ssl_cert.pem ]; then
+		create_cert || return $?
+	fi
+
+	return 0
+}
+
+[ $# -eq 2 ] || exit 0
+
+case $2 in
+	"PRE-INSTALL") pre_install ;;
+	"POST-INSTALL") post_install ;;
+esac

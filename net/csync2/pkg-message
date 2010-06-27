@@ -1,9 +1,0 @@
-***********************************************************************
-
-There is a fair amount of post installation configuration that must be 
-done before csync2 will work properly.  Please refer to section 3.3 Post 
-Installation in the official documentation found at:
-
-http://www.clifford.at/papers/2005/csync2/paper.pdf
-
-***********************************************************************

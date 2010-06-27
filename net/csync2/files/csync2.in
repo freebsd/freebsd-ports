@@ -6,6 +6,14 @@
 
 # Add the following line to /etc/rc.conf to enable csync2:
 # csync2_enable="YES"
+#
+# Optional configuration of csync2:
+# csync2_cfg (str):		Path to csync2 main configuration.
+#				Default is %%PREFIX%%/etc/csync2.cfg.
+# csync2_flags (str):		Extra flags passed to csync2 program.
+#				Default to "-ii -v".
+# csync2_logfile (str):		Path to logfile where daemon' output logged to.
+#				Default to "/var/log/csync2.log".
 
 . /etc/rc.subr
 
@@ -13,26 +21,48 @@ name="csync2"
 rcvar=${name}_enable
 
 pidfile=/var/run/${name}.pid
-start_cmd="${name}_start"
-stop_cmd="${name}_stop"
+command=%%PREFIX%%/sbin/csync2
+
+start_cmd="csync2_start"
 
 load_rc_config $name
 : ${csync2_enable="NO"}
+: ${csync2_flags="-ii -v"}
+: ${csync2_cfg="%%PREFIX%%/etc/csync2.cfg"}
+: ${csync2_logfile="/var/log/csync2.log"}
 
-csync2_start()
+required_files="${csync2_cfg}"
+
+csync2_check_keys()
 {
-  %%PREFIX%%/sbin/csync2 -ii & echo $! > ${pidfile}
+	[ -f "${csync2_cfg}" ] || return 1
+
+	_key=`grep '^[[:blank:]]*key[[:space:]]\+.\+;\?$' ${csync2_cfg} |\
+		awk '{print($2)}'`
+	[ -n "${_key}" ] || return 1
+	
+	for _file in ${_key}; do
+		_file=${_file%;}
+		[ ! -f "${_file}" ] && \
+		warn "PSK specified but not found, use csync2 -k ${_file} to create it."
+	done
+
+	return 0
 }
-csync2_stop()
-{   
-  if [ -f "${pidfile}" ]; then
-        kill `cat ${pidfile}`
-        wait_for_pid `cat ${pidfile}`
-        rm -f ${pidfile}
-  else 
-        echo "PIDFILE not found: ${pidfile}, ${name} may already be stopped"
-  fi
+
+csync2_start() {
+
+	if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+		echo 1>&2 "${name} already running? (pid=$rc_pid)."
+		return 1
+	fi
+
+	csync2_check_keys
+
+	check_startmsgs && echo "Starting ${name}."
+
+	/usr/sbin/daemon -p ${pidfile} \
+		${command} ${csync2_flags} >> ${csync2_logfile} 2>&1
 }
 
 run_rc_command "$1"
-
