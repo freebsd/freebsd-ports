@@ -1,9 +1,0 @@
---- /tmp/rosegarden-2.1/petal/petalmidi/Makefile	Sun Mar  2 20:03:37 1997
-+++ ./petal/petalmidi/Makefile	Fri May 14 17:24:26 1999
-@@ -2,5 +2,5 @@
- 
- pkgIndex.tcl : PetalMidi.tcl
- 	@echo "The error message for PetalMidi.tcl is normal"
--	echo "pkg_mkIndex . PetalMidi.tcl" | tclsh
-+	echo "pkg_mkIndex . PetalMidi.tcl" | tclsh8.2
- 

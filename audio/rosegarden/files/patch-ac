@@ -1,9 +1,0 @@
---- /tmp/rosegarden-2.1/petal/petaleditor/Makefile	Sun Mar  2 20:03:35 1997
-+++ ./petal/petaleditor/Makefile	Fri May 14 17:20:35 1999
-@@ -2,5 +2,5 @@
- 
- pkgIndex.tcl : PetalEditor.tcl
- 	@echo "The error message for PetalEditor.tcl is normal"
--	echo "pkg_mkIndex . PetalEditor.tcl" | tclsh
-+	echo "pkg_mkIndex . PetalEditor.tcl" | tclsh8.2
- 
