@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblzma
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.3
 CATEGORIES=	archivers python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}source/p/pyliblzma/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +25,10 @@ PYDISTUTILS_PKGNAME=	py${PORTNAME}
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
 LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
+.else
+post-patch:
+	@${REINPLACE_CMD} -e 's/pc_cflags = .*/pc_cflags = ""/' \
+		-e 's/pc_libs = .*/pc_libs = "-llzma"/' ${WRKSRC}/setup.py
 .endif
 
 .include <bsd.port.post.mk>
