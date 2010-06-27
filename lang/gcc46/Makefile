@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.0.20100619
+PORTVERSION=	4.6.0.20100626
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -42,6 +42,8 @@ MAKE_JOBS_SAFE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
+
+OPTIONS=	JAVA	"Enable the Java frontend (i386 and amd64 only)"	on
 
 .include <bsd.port.pre.mk>
 
