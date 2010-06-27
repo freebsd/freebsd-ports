@@ -9,9 +9,11 @@ bin/nytprofmerge
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Core.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Data.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/FileHandle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/FileInfo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/ReadStream.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Reader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Run.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/SubInfo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Util.pm
@@ -27,14 +29,12 @@ bin/nytprofmerge
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/gradient20.png
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/gradient30.png
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jit/Treemap.css
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jquery-tablesorter-min.js
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jquery-min.js
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/jquery-tablesorter-min.js
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/js/style-tablesorter.css
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf/NYTProf.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf/NYTProf.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/Run.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Devel/NYTProf/FileHandle.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel/NYTProf
