@@ -143,7 +143,7 @@ pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 full-regression-test: build
-	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
+	cd ${WRKSRC}; ${GMAKE} -sk check
 
 post-install:
 	${RM} -f ${PREFIX}/man/man7/fsf-funding.7 \
