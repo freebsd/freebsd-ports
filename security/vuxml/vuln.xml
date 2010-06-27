@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1cd87e2a-81e3-11df-81d8-00262d5ed8ee">
+    <topic>mDNSResponder -- corrupted stack crash when parsing bad resolv.conf</topic>
+    <affects>
+      <package>
+	<name>mDNSResponder</name>
+	<range><le>214</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Juli Mallett reports:</p>
+	<blockquote
+	  cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/147007">
+	  <p>mdnsd will crash on some systems with a corrupt stack and once
+	    that's fixed it will still leak a file descriptor when parsing
+	    resolv.conf. The crash is because scanf is used with %10s for a
+	    buffer that is only 10 chars long. The buffer size needs increased
+	    to 11 chars to hold the trailing NUL. To fix the leak, an fclose
+	    needs added.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/147007</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2010-05-26</discovery>
+      <entry>2010-06-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="77b9f9bc-7fdf-11df-8a8d-0008743bf21a">
     <topic>opera -- Data URIs can be used to allow cross-site scripting</topic>
     <affects>
