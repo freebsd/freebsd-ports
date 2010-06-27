@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}.2009-07-29
 MAINTAINER=	tut@nhamon.com.ua
 COMMENT=	SIP testing tool
 
+LICENSE=	GPLv2
+
 PLIST_FILES=	bin/sipp
 MAN1=		sipp.1
 
