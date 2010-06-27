@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Net/DNS/TestNS.pm
+%%SITE_PERL%%/Net/DNS/TestNS/DTD.pm
+%%SITE_PERL%%/Net/DNS/TestNS/Nameserver.pm
+%%SITE_PERL%%/Net/DNS/TestNS/Packet.pm
+%%SITE_PERL%%/mach/auto/Net/DNS/TestNS/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/Net/DNS/TestNS
+@dirrm %%SITE_PERL%%/Net/DNS/TestNS
+@dirrmtry %%SITE_PERL%%/Net/DNS

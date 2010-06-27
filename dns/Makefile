@@ -99,6 +99,7 @@
     SUBDIR += p5-Net-DNS-RR-SRV-Helper
     SUBDIR += p5-Net-DNS-Resolver-Programmable
     SUBDIR += p5-Net-DNS-SEC
+    SUBDIR += p5-Net-DNS-TestNS
     SUBDIR += p5-Net-DNS-ToolKit
     SUBDIR += p5-Net-DNS-ZoneCheck
     SUBDIR += p5-Net-DNS-ZoneFile

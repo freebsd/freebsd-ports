@@ -1,0 +1,10 @@
+Class to setup a number of nameservers that respond to specific DNS queries
+(QNAME,QTYPE) by prespecified answers. This class is to be used in test suites
+where you want to have servers to show predefined behavior.
+
+If the server will do a lookup based on QNAME,QTYPE and return the specified
+data. If there is no QNAME, QTYPE match the server will return a SERVFAIL.
+
+A log will be written to STDERR it contains time, IP/PORT, QNAME, QTYPE, RCODE.
+
+WWW:	http://search.cpan.org/dist/Net-DNS-TestNS/
