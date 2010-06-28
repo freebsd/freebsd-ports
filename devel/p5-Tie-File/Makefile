@@ -7,16 +7,19 @@
 
 PORTNAME=	Tie-File
 PORTVERSION=	0.96
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access the lines of a disk file via a Perl array
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Tie::File.3
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
 .include <bsd.port.mk>

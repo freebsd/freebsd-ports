@@ -1,0 +1,11 @@
+--- lib/Tie/File.pm.orig	2008-11-14 21:42:37.000000000 +0100
++++ lib/Tie/File.pm	2008-11-14 21:42:46.000000000 +0100
+@@ -89,7 +89,7 @@
+     unless (seek $file, 1, SEEK_SET) {
+       croak "$pack: your filehandle does not appear to be seekable";
+     }
+-    seek $file, 0, SEEK_SET     # put it back
++    seek $file, 0, SEEK_SET;    # put it back
+     $fh = $file;                # setting binmode is the user's problem
+   } elsif (ref $file) {
+     croak "usage: tie \@array, $pack, filename, [option => value]...";
