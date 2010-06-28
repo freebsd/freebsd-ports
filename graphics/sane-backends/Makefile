@@ -42,7 +42,10 @@ MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	saned
-SUB_FILES+=	pkg-install pkg-message
+SUB_FILES+=	pkg-message
+
+USERS=	saned
+GROUPS=	saned
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
@@ -94,10 +97,6 @@ post-patch:
 		 s|} -D_REENT|} ${PTHREAD_CFLAGS} -D_REENT|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@(cd ${WRKSRC}/po; ${BASENAME} -s .po `${LS} *.po` > LINGUAS)
-
-# Pass BATCH to pkg-install for Evil Things(tm)
-pre-install:
-	@BATCH="${BATCH}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

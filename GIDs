@@ -82,6 +82,7 @@ nagios:*:181:
 noc:*:182:
 moinmoin:*:192:
 cups:*:193:
+saned:*:194:
 sympa:*:200:
 dspam:*:202:
 git:*:211:
