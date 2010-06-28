@@ -1,0 +1,15 @@
+This project provides the Java-based implementation of the
+Simple API for Binary REpresentations (SABRE). The library
+defines observer-pattern interfaces for processing hierarchically
+structured, binary-oriented documents, comparable to the Simple
+API for XML (SAX). Processing can be modularized into a streaming
+pipeline composed of separate stages, enabling the parsing,
+transformation and serialization of large binary documents.
+
+UDFLib is a Java-based implementation for creating UDF filesystem
+images for DVDs according to ISO 13346, also known as ECMA-167.
+
+WWW: http://sabre-library.sourceforge.net/
+
+- Alex Dupre
+ale@FreeBSD.org
