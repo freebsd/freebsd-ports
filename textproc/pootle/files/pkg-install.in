@@ -1,0 +1,31 @@
+#! /bin/sh
+# $FreeBSD#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+MKDIR="%%MKDIR%%"
+CHOWN="%%CHOWN%%"
+CHMOD="%%CHMOD%%"
+
+DBDIR="%%POOTLEDBDIR%%"
+LOGDIR="%%POOTLELOGDIR%%"
+RUNDIR="%%POOTLERUNDIR%%"
+
+UID="%%POOTLEUSER%%"
+GID="%%POOTLEGROUP%%"
+
+case $2 in
+
+POST-INSTALL)
+	for DIR in ${LOGDIR} ${DBDIR} ${RUNDIR}; do
+	  if [ ! -d ${DIR} ]; then
+	    echo "===> Creating directory ${DIR}"
+	    ${MKDIR} ${DIR}
+	  fi
+	  echo "===> Changing ownership of ${DIR}"
+	  ${CHOWN} -R ${UID}:${GID} ${DIR}
+	  echo "===> Changing permissions of ${DIR}"
+	  ${CHMOD} -R 770 ${DIR}
+	done
+	;;
+esac
