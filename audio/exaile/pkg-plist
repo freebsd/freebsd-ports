@@ -6,10 +6,10 @@
 %%DATADIR%%/data/images/16x16/media-playlist-shuffle.png
 %%DATADIR%%/data/images/22x22/exaile-pause.png
 %%DATADIR%%/data/images/22x22/exaile-play.png
-%%DATADIR%%/data/images/22x22/exaile.png
 %%DATADIR%%/data/images/22x22/media-playlist-dynamic.png
 %%DATADIR%%/data/images/22x22/media-playlist-repeat.png
 %%DATADIR%%/data/images/22x22/media-playlist-shuffle.png
+%%DATADIR%%/data/images/22x22/exaile.png
 %%DATADIR%%/data/images/24x24/exaile-pause.png
 %%DATADIR%%/data/images/24x24/exaile-play.png
 %%DATADIR%%/data/images/24x24/exaile.png
@@ -26,7 +26,7 @@
 %%DATADIR%%/data/images/48x48/exaile-play.png
 %%DATADIR%%/data/images/48x48/exaile.png
 %%DATADIR%%/data/images/artist.png
-%%DATADIR%%/data/images/brightstar.png
+%%DATADIR%%/data/images/emptystar.png
 %%DATADIR%%/data/images/exailelogo.png
 %%DATADIR%%/data/images/genre.png
 %%DATADIR%%/data/images/nocover.png
@@ -45,11 +45,8 @@
 %%DATADIR%%/data/migrations/migration_200907100931/oldtrack.py
 %%DATADIR%%/data/migrations/migration_200907100931/xlmisc.py
 %%DATADIR%%/data/ui/about_dialog.ui
-%%DATADIR%%/data/ui/appearance_prefs_pane.ui
 %%DATADIR%%/data/ui/collection_manager.ui
 %%DATADIR%%/data/ui/collection_panel.ui
-%%DATADIR%%/data/ui/collection_prefs_pane.ui
-%%DATADIR%%/data/ui/cover_prefs_pane.ui
 %%DATADIR%%/data/ui/coverchooser.ui
 %%DATADIR%%/data/ui/covermanager.ui
 %%DATADIR%%/data/ui/coverwindow.ui
@@ -57,19 +54,25 @@
 %%DATADIR%%/data/ui/device_panel.ui
 %%DATADIR%%/data/ui/files_panel.ui
 %%DATADIR%%/data/ui/flatplaylist_panel.ui
-%%DATADIR%%/data/ui/general_prefs_pane.ui
 %%DATADIR%%/data/ui/main.ui
-%%DATADIR%%/data/ui/osd_prefs_pane.ui
 %%DATADIR%%/data/ui/osd_window.ui
-%%DATADIR%%/data/ui/playback_prefs_pane.ui
 %%DATADIR%%/data/ui/playlists_panel.ui
-%%DATADIR%%/data/ui/playlists_prefs_pane.ui
-%%DATADIR%%/data/ui/plugin_prefs_pane.ui
-%%DATADIR%%/data/ui/preferences_dialog.ui
+%%DATADIR%%/data/ui/preferences/appearance.ui
+%%DATADIR%%/data/ui/preferences/collection.ui
+%%DATADIR%%/data/ui/preferences/cover.ui
+%%DATADIR%%/data/ui/preferences/general.ui
+%%DATADIR%%/data/ui/preferences/osd.ui
+%%DATADIR%%/data/ui/preferences/playback.ui
+%%DATADIR%%/data/ui/preferences/playlists.ui
+%%DATADIR%%/data/ui/preferences/plugin.ui
+%%DATADIR%%/data/ui/preferences/preferences_dialog.ui
 %%DATADIR%%/data/ui/queue_dialog.ui
 %%DATADIR%%/data/ui/radio_panel.ui
 %%DATADIR%%/data/ui/splash.ui
 %%DATADIR%%/data/ui/trackproperties_dialog.ui
+%%DATADIR%%/data/ui/widgets/track_info.ui
+%%DATADIR%%/data/ui/widgets/tracklist_info.ui
+%%DATADIR%%/data/ui/widgets/volume_control.ui
 %%DATADIR%%/plugins/alarmclock/PLUGININFO
 %%DATADIR%%/plugins/alarmclock/__init__.py
 %%DATADIR%%/plugins/alarmclock/__init__.pyc
@@ -259,10 +262,10 @@
 %%DATADIR%%/plugins/desktopcover/__init__.py
 %%DATADIR%%/plugins/desktopcover/__init__.pyc
 %%DATADIR%%/plugins/desktopcover/__init__.pyo
-%%DATADIR%%/plugins/desktopcover/prefs.py
-%%DATADIR%%/plugins/desktopcover/prefs.pyc
-%%DATADIR%%/plugins/desktopcover/prefs.pyo
-%%DATADIR%%/plugins/desktopcover/prefs.ui
+%%DATADIR%%/plugins/desktopcover/desktopcover_preferences.py
+%%DATADIR%%/plugins/desktopcover/desktopcover_preferences.pyc
+%%DATADIR%%/plugins/desktopcover/desktopcover_preferences.pyo
+%%DATADIR%%/plugins/desktopcover/desktopcover_preferences.ui
 %%DATADIR%%/plugins/droptrayicon/PLUGININFO
 %%DATADIR%%/plugins/droptrayicon/__init__.py
 %%DATADIR%%/plugins/droptrayicon/__init__.pyc
@@ -319,7 +322,6 @@
 %%DATADIR%%/plugins/jamendo/simplejson/__init__.py
 %%DATADIR%%/plugins/jamendo/simplejson/__init__.pyc
 %%DATADIR%%/plugins/jamendo/simplejson/__init__.pyo
-%%DATADIR%%/plugins/jamendo/simplejson/_speedups.c
 %%DATADIR%%/plugins/jamendo/simplejson/decoder.py
 %%DATADIR%%/plugins/jamendo/simplejson/decoder.pyc
 %%DATADIR%%/plugins/jamendo/simplejson/decoder.pyo
@@ -414,6 +416,8 @@
 %%DATADIR%%/plugins/lyricsviewer/__init__.py
 %%DATADIR%%/plugins/lyricsviewer/__init__.pyc
 %%DATADIR%%/plugins/lyricsviewer/__init__.pyo
+%%DATADIR%%/plugins/lyricsviewer/images/loading.gif
+%%DATADIR%%/plugins/lyricsviewer/lyricsviewer.ui
 %%DATADIR%%/plugins/lyricwiki/PLUGININFO
 %%DATADIR%%/plugins/lyricwiki/__init__.py
 %%DATADIR%%/plugins/lyricwiki/__init__.pyc
@@ -430,10 +434,10 @@
 %%DATADIR%%/plugins/minimode/icons/exaile-minimode22.png
 %%DATADIR%%/plugins/minimode/icons/exaile-minimode24.png
 %%DATADIR%%/plugins/minimode/icons/exaile-minimode32.png
-%%DATADIR%%/plugins/minimode/minimodeprefs.py
-%%DATADIR%%/plugins/minimode/minimodeprefs.pyc
-%%DATADIR%%/plugins/minimode/minimodeprefs.pyo
-%%DATADIR%%/plugins/minimode/minimodeprefs_pane.ui
+%%DATADIR%%/plugins/minimode/minimode_preferences.py
+%%DATADIR%%/plugins/minimode/minimode_preferences.pyc
+%%DATADIR%%/plugins/minimode/minimode_preferences.pyo
+%%DATADIR%%/plugins/minimode/minimode_preferences.ui
 %%DATADIR%%/plugins/minimode/mmwidgets.py
 %%DATADIR%%/plugins/minimode/mmwidgets.pyc
 %%DATADIR%%/plugins/minimode/mmwidgets.pyo
@@ -516,6 +520,10 @@
 %%DATADIR%%/plugins/shoutcast/__init__.py
 %%DATADIR%%/plugins/shoutcast/__init__.pyc
 %%DATADIR%%/plugins/shoutcast/__init__.pyo
+%%DATADIR%%/plugins/shutdown/PLUGININFO
+%%DATADIR%%/plugins/shutdown/__init__.py
+%%DATADIR%%/plugins/shutdown/__init__.pyc
+%%DATADIR%%/plugins/shutdown/__init__.pyo
 %%DATADIR%%/plugins/streamripper/PLUGININFO
 %%DATADIR%%/plugins/streamripper/__init__.py
 %%DATADIR%%/plugins/streamripper/__init__.pyc
@@ -603,9 +611,9 @@ lib/exaile/xl/collection.pyo
 lib/exaile/xl/common.py
 lib/exaile/xl/common.pyc
 lib/exaile/xl/common.pyo
-lib/exaile/xl/cover.py
-lib/exaile/xl/cover.pyc
-lib/exaile/xl/cover.pyo
+lib/exaile/xl/covers.py
+lib/exaile/xl/covers.pyc
+lib/exaile/xl/covers.pyo
 lib/exaile/xl/devices.py
 lib/exaile/xl/devices.pyc
 lib/exaile/xl/devices.pyo
@@ -615,6 +623,9 @@ lib/exaile/xl/dynamic.pyo
 lib/exaile/xl/event.py
 lib/exaile/xl/event.pyc
 lib/exaile/xl/event.pyo
+lib/exaile/xl/formatter.py
+lib/exaile/xl/formatter.pyc
+lib/exaile/xl/formatter.pyo
 lib/exaile/xl/hal.py
 lib/exaile/xl/hal.pyc
 lib/exaile/xl/hal.pyo
@@ -636,6 +647,9 @@ lib/exaile/xl/metadata/_base.pyo
 lib/exaile/xl/metadata/_id3.py
 lib/exaile/xl/metadata/_id3.pyc
 lib/exaile/xl/metadata/_id3.pyo
+lib/exaile/xl/metadata/_matroska.py
+lib/exaile/xl/metadata/_matroska.pyc
+lib/exaile/xl/metadata/_matroska.pyo
 lib/exaile/xl/metadata/ape.py
 lib/exaile/xl/metadata/ape.pyc
 lib/exaile/xl/metadata/ape.pyo
@@ -645,6 +659,9 @@ lib/exaile/xl/metadata/asf.pyo
 lib/exaile/xl/metadata/flac.py
 lib/exaile/xl/metadata/flac.pyc
 lib/exaile/xl/metadata/flac.pyo
+lib/exaile/xl/metadata/mka.py
+lib/exaile/xl/metadata/mka.pyc
+lib/exaile/xl/metadata/mka.pyo
 lib/exaile/xl/metadata/mod.py
 lib/exaile/xl/metadata/mod.pyc
 lib/exaile/xl/metadata/mod.pyo
@@ -684,6 +701,12 @@ lib/exaile/xl/migrations/database/__init__.pyo
 lib/exaile/xl/migrations/database/from1to2.py
 lib/exaile/xl/migrations/database/from1to2.pyc
 lib/exaile/xl/migrations/database/from1to2.pyo
+lib/exaile/xl/migrations/settings/__init__.py
+lib/exaile/xl/migrations/settings/__init__.pyc
+lib/exaile/xl/migrations/settings/__init__.pyo
+lib/exaile/xl/migrations/settings/rating.py
+lib/exaile/xl/migrations/settings/rating.pyc
+lib/exaile/xl/migrations/settings/rating.pyo
 lib/exaile/xl/nls.py
 lib/exaile/xl/nls.pyc
 lib/exaile/xl/nls.pyo
@@ -753,18 +776,12 @@ lib/exaile/xlgui/__init__.pyo
 lib/exaile/xlgui/collection.py
 lib/exaile/xlgui/collection.pyc
 lib/exaile/xlgui/collection.pyo
-lib/exaile/xlgui/commondialogs.py
-lib/exaile/xlgui/commondialogs.pyc
-lib/exaile/xlgui/commondialogs.pyo
 lib/exaile/xlgui/cover.py
 lib/exaile/xlgui/cover.pyc
 lib/exaile/xlgui/cover.pyo
 lib/exaile/xlgui/devices.py
 lib/exaile/xlgui/devices.pyc
 lib/exaile/xlgui/devices.pyo
-lib/exaile/xlgui/filtergui.py
-lib/exaile/xlgui/filtergui.pyc
-lib/exaile/xlgui/filtergui.pyo
 lib/exaile/xlgui/guiutil.py
 lib/exaile/xlgui/guiutil.pyc
 lib/exaile/xlgui/guiutil.pyo
@@ -807,33 +824,33 @@ lib/exaile/xlgui/playlist.pyo
 lib/exaile/xlgui/plcolumns.py
 lib/exaile/xlgui/plcolumns.pyc
 lib/exaile/xlgui/plcolumns.pyo
-lib/exaile/xlgui/prefs/__init__.py
-lib/exaile/xlgui/prefs/__init__.pyc
-lib/exaile/xlgui/prefs/__init__.pyo
-lib/exaile/xlgui/prefs/appearance_prefs.py
-lib/exaile/xlgui/prefs/appearance_prefs.pyc
-lib/exaile/xlgui/prefs/appearance_prefs.pyo
-lib/exaile/xlgui/prefs/collection_prefs.py
-lib/exaile/xlgui/prefs/collection_prefs.pyc
-lib/exaile/xlgui/prefs/collection_prefs.pyo
-lib/exaile/xlgui/prefs/cover_prefs.py
-lib/exaile/xlgui/prefs/cover_prefs.pyc
-lib/exaile/xlgui/prefs/cover_prefs.pyo
-lib/exaile/xlgui/prefs/osd_prefs.py
-lib/exaile/xlgui/prefs/osd_prefs.pyc
-lib/exaile/xlgui/prefs/osd_prefs.pyo
-lib/exaile/xlgui/prefs/playback_prefs.py
-lib/exaile/xlgui/prefs/playback_prefs.pyc
-lib/exaile/xlgui/prefs/playback_prefs.pyo
-lib/exaile/xlgui/prefs/playlists_prefs.py
-lib/exaile/xlgui/prefs/playlists_prefs.pyc
-lib/exaile/xlgui/prefs/playlists_prefs.pyo
-lib/exaile/xlgui/prefs/plugin_prefs.py
-lib/exaile/xlgui/prefs/plugin_prefs.pyc
-lib/exaile/xlgui/prefs/plugin_prefs.pyo
-lib/exaile/xlgui/prefs/widgets.py
-lib/exaile/xlgui/prefs/widgets.pyc
-lib/exaile/xlgui/prefs/widgets.pyo
+lib/exaile/xlgui/preferences/__init__.py
+lib/exaile/xlgui/preferences/__init__.pyc
+lib/exaile/xlgui/preferences/__init__.pyo
+lib/exaile/xlgui/preferences/appearance.py
+lib/exaile/xlgui/preferences/appearance.pyc
+lib/exaile/xlgui/preferences/appearance.pyo
+lib/exaile/xlgui/preferences/collection.py
+lib/exaile/xlgui/preferences/collection.pyc
+lib/exaile/xlgui/preferences/collection.pyo
+lib/exaile/xlgui/preferences/cover.py
+lib/exaile/xlgui/preferences/cover.pyc
+lib/exaile/xlgui/preferences/cover.pyo
+lib/exaile/xlgui/preferences/osd.py
+lib/exaile/xlgui/preferences/osd.pyc
+lib/exaile/xlgui/preferences/osd.pyo
+lib/exaile/xlgui/preferences/playback.py
+lib/exaile/xlgui/preferences/playback.pyc
+lib/exaile/xlgui/preferences/playback.pyo
+lib/exaile/xlgui/preferences/playlists.py
+lib/exaile/xlgui/preferences/playlists.pyc
+lib/exaile/xlgui/preferences/playlists.pyo
+lib/exaile/xlgui/preferences/plugin.py
+lib/exaile/xlgui/preferences/plugin.pyc
+lib/exaile/xlgui/preferences/plugin.pyo
+lib/exaile/xlgui/preferences/widgets.py
+lib/exaile/xlgui/preferences/widgets.pyc
+lib/exaile/xlgui/preferences/widgets.pyo
 lib/exaile/xlgui/progress.py
 lib/exaile/xlgui/progress.pyc
 lib/exaile/xlgui/progress.pyo
@@ -843,22 +860,36 @@ lib/exaile/xlgui/properties.pyo
 lib/exaile/xlgui/queue.py
 lib/exaile/xlgui/queue.pyc
 lib/exaile/xlgui/queue.pyo
-lib/exaile/xlgui/rating.py
-lib/exaile/xlgui/rating.pyc
-lib/exaile/xlgui/rating.pyo
 lib/exaile/xlgui/tray.py
 lib/exaile/xlgui/tray.pyc
 lib/exaile/xlgui/tray.pyo
+lib/exaile/xlgui/widgets/__init__.py
+lib/exaile/xlgui/widgets/__init__.pyc
+lib/exaile/xlgui/widgets/__init__.pyo
+lib/exaile/xlgui/widgets/dialogs.py
+lib/exaile/xlgui/widgets/dialogs.pyc
+lib/exaile/xlgui/widgets/dialogs.pyo
+lib/exaile/xlgui/widgets/filter.py
+lib/exaile/xlgui/widgets/filter.pyc
+lib/exaile/xlgui/widgets/filter.pyo
+lib/exaile/xlgui/widgets/info.py
+lib/exaile/xlgui/widgets/info.pyc
+lib/exaile/xlgui/widgets/info.pyo
+lib/exaile/xlgui/widgets/rating.py
+lib/exaile/xlgui/widgets/rating.pyc
+lib/exaile/xlgui/widgets/rating.pyo
 share/applications/exaile.desktop
 share/pixmaps/exaile.png
 @dirrmtry share/applications
 @dirrm etc/xdg/exaile
 @dirrmtry etc/xdg
-@dirrm lib/exaile/xlgui/prefs
+@dirrm lib/exaile/xlgui/widgets
+@dirrm lib/exaile/xlgui/preferences
 @dirrm lib/exaile/xlgui/panel
 @dirrm lib/exaile/xlgui
 @dirrm lib/exaile/xl/trax
 @dirrm lib/exaile/xl/player
+@dirrm lib/exaile/xl/migrations/settings
 @dirrm lib/exaile/xl/migrations/database
 @dirrm lib/exaile/xl/migrations
 @dirrm lib/exaile/xl/metadata
@@ -884,6 +915,7 @@ share/pixmaps/exaile.png
 %%NLS%%@dirrmtry share/locale/an
 @dirrm %%DATADIR%%/plugins/xkeys
 @dirrm %%DATADIR%%/plugins/streamripper
+@dirrm %%DATADIR%%/plugins/shutdown
 @dirrm %%DATADIR%%/plugins/shoutcast
 @dirrm %%DATADIR%%/plugins/screensaverpause
 @dirrm %%DATADIR%%/plugins/replaygain
@@ -897,6 +929,7 @@ share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/plugins/minimode
 @dirrm %%DATADIR%%/plugins/massstorage
 @dirrm %%DATADIR%%/plugins/lyricwiki
+@dirrm %%DATADIR%%/plugins/lyricsviewer/images
 @dirrm %%DATADIR%%/plugins/lyricsviewer
 @dirrm %%DATADIR%%/plugins/lyricsfly
 @dirrm %%DATADIR%%/plugins/librivox
@@ -934,6 +967,8 @@ share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/plugins/amazoncovers
 @dirrm %%DATADIR%%/plugins/alarmclock
 @dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/data/ui/widgets
+@dirrm %%DATADIR%%/data/ui/preferences
 @dirrm %%DATADIR%%/data/ui
 @dirrm %%DATADIR%%/data/migrations/migration_200907100931
 @dirrm %%DATADIR%%/data/migrations

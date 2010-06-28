@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	exaile
-PORTVERSION=	${PORTVERSION_MAJOR}.${PORTVERSION_MINOR}
-PORTREVISION=	1
+PORTVERSION=	${PORTVERSION_MAJOR}.${PORTVERSION_MINOR} # See below
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpad.net/${LP_DIR}/ \
 		http://wickedmachine.net/mirror/
@@ -16,6 +15,9 @@ MAINTAINER=	jsa@wickedmachine.net
 COMMENT=	A full featured python-based music player for GTK+
 
 RUN_DEPENDS=	py*-mutagen>=1.11:${PORTSDIR}/audio/py-mutagen
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 FETCH_ARGS=	-pRr
 USE_GNOME=	pygtk2 librsvg2
@@ -35,9 +37,12 @@ OPTIONS=	BAD "Install bad GStreamer plugins" On \
 		NLS "Native Language Support" On \
 		SEXY "UI enhancements"  On
 
-PORTVERSION_MAJOR=	0.3.1
-PORTVERSION_MINOR=	1
+PORTVERSION_MAJOR=	0.3.2
+PORTVERSION_MINOR=	0
 LP_DIR=		${PORTNAME}/${PORTVERSION_MAJOR}/${PORTVERSION}/+download
+
+MANCOMPRESSED=	yes
+MAN1=		exaile.1
 
 .include <bsd.port.pre.mk>
 
@@ -79,6 +84,6 @@ RUN_DEPENDS+=	py*-sexy>=0.1.9:${PORTSDIR}/x11-toolkits/py-sexy
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(XDG|$$(PREFIX)$$(XDG|g' \
-		${WRKSRC}/Makefile
+		-e 's|share\/man|man|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.post.mk>
