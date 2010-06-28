@@ -19,6 +19,9 @@ OPTIONS=	OPENCT "Enable direct OpenCT backend support" on \
 		PCSC "Enable PC/SC backend support" off \
 		SIGNER "Enable signer browser plugin" off
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_AUTOTOOLS=	libltdl:22
 USE_ICONV=	yes
 USE_OPENSSL=	yes
@@ -76,11 +79,11 @@ CONFIGURE_ARGS+=--enable-pcsc
 .endif
 
 .if defined(WITH_SIGNER)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan-1
+LIB_DEPENDS+=	assuan.0:${PORTSDIR}/security/libassuan
 PINENTRY?=	${LOCALBASE}/bin/pinentry
 PINENTRY_PORT?=	security/pinentry
 RUN_DEPENDS+=	pinentry:${PORTSDIR}/${PINENTRY_PORT}
-USE_XORG=	x11
+USE_XORG=	x11 xt
 CONFIGURE_ARGS+=--enable-nsplugin \
 		--with-libassuan-prefix=${LOCALBASE} \
 		--with-plugindir=${WEBPLUGINS_DIR} \
@@ -100,6 +103,8 @@ CONFIGURE_ARGS+=--enable-doc
 
 post-patch:
 	@${REINPLACE_CMD} 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|tmp=1:0\.9\.2|tmp=2:2.0.0|' \
 		${WRKSRC}/configure
 .if !defined(WITH_SIGNER)
 	@${REINPLACE_CMD} 's|install-data-am: install-pluginDATA|install-data-am:|' \
