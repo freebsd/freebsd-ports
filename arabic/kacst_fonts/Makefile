@@ -5,19 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		kacst_fonts
-PORTVERSION=		1.6.2
-CATEGORIES=		arabic
-MASTER_SITES=		SF/arabeyes/Fonts/${PORTNAME}
-DISTNAME=		kacst_fonts_${PORTVERSION}
+PORTNAME=	kacst_fonts
+PORTVERSION=	2.01
+CATEGORIES=	arabic
+MASTER_SITES=	SF/arabeyes/${PORTNAME} \
+		http://www.c-s.li/ports/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Truetype Arabic fonts created by KACST
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
 USE_BZIP2=	yes
-WRKSRC=	${WRKDIR}/KacstArabicFonts-${PORTVERSION}
+WRKSRC=		${WRKDIR}/KacstArabicFonts-${PORTVERSION}
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME="${PORTNAME}"
