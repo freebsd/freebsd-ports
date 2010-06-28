@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	marcel
 
 MAINTAINER=	freebsd-emulation@FreeBSD.org
-COMMENT=	Linux-compatability ktrace.out processor
+COMMENT=	Linux-compatibility ktrace.out processor
 
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/emulators/linux_base-gentoo-stage3
 
