@@ -62,12 +62,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>41174</bid>
       <cvename>CVE-2010-1205</cvename>
       <url>http://www.libpng.org/pub/png/libpng.html</url>
     </references>
     <dates>
       <discovery>2010-03-30</discovery>
       <entry>2010-06-28</entry>
+      <modified>2010-06-28</modified>
     </dates>
   </vuln>
 
