@@ -11,28 +11,44 @@
 #				Default is "NO".
 # pootle_flags (flags):		Set extra flags here. More options in pootle(1)
 #				Default is empty "".
+# pootle_logdir (path):		Path to pootle log directory.
+#				Default is "%%POOTLELOGDIR%%".
+#				Empty is log to /dev/null.
 # pootle_user (user):		Set user to run pootle.
-#				Default is "nobody".
+#				Default is "%%POOTLEUSER%%".
 #
 
 . /etc/rc.subr
 
 name=pootle
 rcvar=${name}_enable
-pidfile="/var/run/pootle.pid"
+pidfile="%%POOTLERUNDIR%%/pootle.pid"
 command_interpreter="%%PYTHON_CMD%%"
 
 required_files="%%PREFIX%%/etc/pootle/localsettings.py"
 
 command="%%PREFIX%%/bin/PootleServer"
-pootle_flags=" >>/var/log/pootle/access.log 2>>/var/log/pootle/error.log"
 
 load_rc_config $name
 : ${pootle_enable="NO"}
-: ${pootle_user="nobody"}
+: ${pootle_user="%%POOTLEUSER%%"}
+: ${pootle_logdir="%%POOTLELOGDIR%%"}
+: ${pootle_flags=""}
 
-start_cmd="/usr/sbin/daemon -p ${pidfile} -u ${pootle_user} ${command} ${pootle_flags}"
+if [ -n "${pootle_logdir}" ]; then
+	pootle_stdout="${pootle_logdir}/access.log"
+	pootle_stderr="${pootle_logdir}/error.log"
+else
+	pootle_stdout="/dev/null"
+	pootle_stderr="/dev/null"
+fi
 
-start_precmd="touch ${pidfile}; chown ${pootle_user} ${pidfile}"
+start_cmd="pootle_start_cmd"
+
+pootle_start_cmd () {
+	[ -z "${rc_quiet}" ] && echo "Starting ${name}."
+	/usr/sbin/daemon -p ${pidfile} -u ${pootle_user} ${command} \
+		>>${pootle_stdout} 2>>${pootle_stderr}
+}
 
 run_rc_command "$1"

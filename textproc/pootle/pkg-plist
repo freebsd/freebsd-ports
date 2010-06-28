@@ -61,6 +61,7 @@ bin/updatetm
 %%DATADIR%%/mo/cs/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/da/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/de/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/dz/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/el/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/en/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/en_GB/LC_MESSAGES/django.mo
@@ -71,6 +72,7 @@ bin/updatetm
 %%DATADIR%%/mo/eu/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/fa/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/fi/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/fo/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/fr/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/fur/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ga/LC_MESSAGES/django.mo
@@ -113,7 +115,6 @@ bin/updatetm
 %%DATADIR%%/mo/pl/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/pt/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/pt_BR/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ro/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ru/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/sk/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/sl/LC_MESSAGES/django.mo
@@ -837,8 +838,6 @@ etc/pootle/localsettings.py.sample
 @dirrm %%DATADIR%%/mo/sk
 @dirrm %%DATADIR%%/mo/ru/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/ru
-@dirrm %%DATADIR%%/mo/ro/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ro
 @dirrm %%DATADIR%%/mo/pt_BR/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/pt_BR
 @dirrm %%DATADIR%%/mo/pt/LC_MESSAGES
@@ -923,6 +922,8 @@ etc/pootle/localsettings.py.sample
 @dirrm %%DATADIR%%/mo/fur
 @dirrm %%DATADIR%%/mo/fr/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/fr
+@dirrm %%DATADIR%%/mo/fo/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/fo
 @dirrm %%DATADIR%%/mo/fi/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/fi
 @dirrm %%DATADIR%%/mo/fa/LC_MESSAGES
@@ -943,6 +944,8 @@ etc/pootle/localsettings.py.sample
 @dirrm %%DATADIR%%/mo/en
 @dirrm %%DATADIR%%/mo/el/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/el
+@dirrm %%DATADIR%%/mo/dz/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/dz
 @dirrm %%DATADIR%%/mo/de/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/de
 @dirrm %%DATADIR%%/mo/da/LC_MESSAGES
@@ -979,322 +982,322 @@ etc/pootle/localsettings.py.sample
 @dirrm %%DATADIR%%/mo/af
 @dirrm %%DATADIR%%/mo
 @dirrm %%DATADIR%%
-@cwd /var/db
-pootle/po/pootle/af/pootle.po
-pootle/po/pootle/ak/pootle.po
-pootle/po/pootle/am/pootle.po
-pootle/po/pootle/ar/pootle.po
-pootle/po/pootle/az/pootle.po
-pootle/po/pootle/be/pootle.po
-pootle/po/pootle/bg/pootle.po
-pootle/po/pootle/bn/pootle.po
-pootle/po/pootle/bn_IN/pootle.po
-pootle/po/pootle/bo/pootle.po
-pootle/po/pootle/br/pootle.po
-pootle/po/pootle/ca/pootle.po
-pootle/po/pootle/ca@valencia/pootle.po
-pootle/po/pootle/cs/pootle.po
-pootle/po/pootle/da/pootle.po
-pootle/po/pootle/de/pootle.po
-pootle/po/pootle/dz/pootle.po
-pootle/po/pootle/el/pootle.po
-pootle/po/pootle/en/pootle.po
-pootle/po/pootle/en_GB/pootle.po
-pootle/po/pootle/en_ZA/pootle.po
-pootle/po/pootle/eo/pootle.po
-pootle/po/pootle/es/pootle.po
-pootle/po/pootle/et/pootle.po
-pootle/po/pootle/eu/pootle.po
-pootle/po/pootle/fa/pootle.po
-pootle/po/pootle/fi/pootle.po
-pootle/po/pootle/fo/pootle.po
-pootle/po/pootle/fr/pootle.po
-pootle/po/pootle/fur/pootle.po
-pootle/po/pootle/ga/pootle.po
-pootle/po/pootle/gl/pootle.po
-pootle/po/pootle/ha/pootle.po
-pootle/po/pootle/he/pootle.po
-pootle/po/pootle/hi/pootle.po
-pootle/po/pootle/hr/pootle.po
-pootle/po/pootle/ht/pootle.po
-pootle/po/pootle/hu/pootle.po
-pootle/po/pootle/hy/pootle.po
-pootle/po/pootle/id/pootle.po
-pootle/po/pootle/is/pootle.po
-pootle/po/pootle/it/pootle.po
-pootle/po/pootle/ja/pootle.po
-pootle/po/pootle/ka/pootle.po
-pootle/po/pootle/kg/pootle.po
-pootle/po/pootle/km/pootle.po
-pootle/po/pootle/kn/pootle.po
-pootle/po/pootle/ko/pootle.po
-pootle/po/pootle/ku/pootle.po
-pootle/po/pootle/ky/pootle.po
-pootle/po/pootle/ln/pootle.po
-pootle/po/pootle/lt/pootle.po
-pootle/po/pootle/lv/pootle.po
-pootle/po/pootle/mg/pootle.po
-pootle/po/pootle/ml/pootle.po
-pootle/po/pootle/mn/pootle.po
-pootle/po/pootle/mr/pootle.po
-pootle/po/pootle/ms/pootle.po
-pootle/po/pootle/mt/pootle.po
-pootle/po/pootle/nap/pootle.po
-pootle/po/pootle/nb/pootle.po
-pootle/po/pootle/ne/pootle.po
-pootle/po/pootle/nl/pootle.po
-pootle/po/pootle/nn/pootle.po
-pootle/po/pootle/nso/pootle.po
-pootle/po/pootle/pa/pootle.po
-pootle/po/pootle/pap/pootle.po
-pootle/po/pootle/pl/pootle.po
-pootle/po/pootle/ps/pootle.po
-pootle/po/pootle/pt/pootle.po
-pootle/po/pootle/pt_BR/pootle.po
-pootle/po/pootle/ro/pootle.po
-pootle/po/pootle/ru/pootle.po
-pootle/po/pootle/sk/pootle.po
-pootle/po/pootle/sl/pootle.po
-pootle/po/pootle/son/pootle.po
-pootle/po/pootle/sq/pootle.po
-pootle/po/pootle/sr/pootle.po
-pootle/po/pootle/st/pootle.po
-pootle/po/pootle/sv/pootle.po
-pootle/po/pootle/ta/pootle.po
-pootle/po/pootle/te/pootle.po
-pootle/po/pootle/templates/pootle.pot
-pootle/po/pootle/th/pootle.po
-pootle/po/pootle/tl/pootle.po
-pootle/po/pootle/tr/pootle.po
-pootle/po/pootle/uk/pootle.po
-pootle/po/pootle/ur/pootle.po
-pootle/po/pootle/uz/pootle.po
-pootle/po/pootle/ve/pootle.po
-pootle/po/pootle/vi/pootle.po
-pootle/po/pootle/wo/pootle.po
-pootle/po/pootle/xh/pootle.po
-pootle/po/pootle/zh_CN/pootle.po
-pootle/po/pootle/zh_HK/pootle.po
-pootle/po/pootle/zh_TW/pootle.po
-pootle/po/pootle/zu/pootle.po
-pootle/po/terminology/am/gnome/am.po
-pootle/po/terminology/ar/gnome/ar.po
-pootle/po/terminology/az/gnome/az.po
-pootle/po/terminology/ca/gnome/ca.po
-pootle/po/terminology/cs/gnome/cs.po
-pootle/po/terminology/da/gnome/da.po
-pootle/po/terminology/eo/gnome/eo.po
-pootle/po/terminology/es/gnome/es.po
-pootle/po/terminology/eu/gnome/eu.po
-pootle/po/terminology/fa/gnome/fa.po
-pootle/po/terminology/fr/gnome/fr.po
-pootle/po/terminology/hi/gnome/hi.po
-pootle/po/terminology/hu/gnome/hu.po
-pootle/po/terminology/it/gnome/it.po
-pootle/po/terminology/ja/gnome/ja.po
-pootle/po/terminology/kn/gnome/kn.po
-pootle/po/terminology/ku/gnome/ku.po
-pootle/po/terminology/mk/gnome/mk.po
-pootle/po/terminology/mr/gnome/mr.po
-pootle/po/terminology/ms/gnome/ms.po
-pootle/po/terminology/nb/gnome/nb.po
-pootle/po/terminology/nl/gnome/nl.po
-pootle/po/terminology/nn/gnome/nn.po
-pootle/po/terminology/pa/gnome/pa.po
-pootle/po/terminology/pl/gnome/pl.po
-pootle/po/terminology/pt/gnome/pt.po
-pootle/po/terminology/pt_BR/gnome/pt_BR.po
-pootle/po/terminology/rw/gnome/rw.po
-pootle/po/terminology/sk/gnome/sk.po
-pootle/po/terminology/sq/gnome/sq.po
-pootle/po/terminology/sv/gnome/sv.po
-pootle/po/terminology/th/gnome/th.po
-pootle/po/terminology/uk/gnome/uk.po
-pootle/po/terminology/vi/gnome/vi.po
-pootle/po/terminology/wa/gnome/wa.po
-pootle/po/terminology/zh_CN/gnome/zh_CN.po
-pootle/po/terminology/zh_HK/gnome/zh_HK.po
-pootle/po/terminology/zh_TW/gnome/zh_TW.po
-pootle/po/tutorial/templates/tutorial.pot
-@dirrmtry pootle/po/tutorial/templates
-@dirrmtry pootle/po/tutorial
-@dirrmtry pootle/po/terminology/zh_TW/gnome
-@dirrmtry pootle/po/terminology/zh_TW
-@dirrmtry pootle/po/terminology/zh_HK/gnome
-@dirrmtry pootle/po/terminology/zh_HK
-@dirrmtry pootle/po/terminology/zh_CN/gnome
-@dirrmtry pootle/po/terminology/zh_CN
-@dirrmtry pootle/po/terminology/wa/gnome
-@dirrmtry pootle/po/terminology/wa
-@dirrmtry pootle/po/terminology/vi/gnome
-@dirrmtry pootle/po/terminology/vi
-@dirrmtry pootle/po/terminology/uk/gnome
-@dirrmtry pootle/po/terminology/uk
-@dirrmtry pootle/po/terminology/th/gnome
-@dirrmtry pootle/po/terminology/th
-@dirrmtry pootle/po/terminology/sv/gnome
-@dirrmtry pootle/po/terminology/sv
-@dirrmtry pootle/po/terminology/sq/gnome
-@dirrmtry pootle/po/terminology/sq
-@dirrmtry pootle/po/terminology/sk/gnome
-@dirrmtry pootle/po/terminology/sk
-@dirrmtry pootle/po/terminology/rw/gnome
-@dirrmtry pootle/po/terminology/rw
-@dirrmtry pootle/po/terminology/pt_BR/gnome
-@dirrmtry pootle/po/terminology/pt_BR
-@dirrmtry pootle/po/terminology/pt/gnome
-@dirrmtry pootle/po/terminology/pt
-@dirrmtry pootle/po/terminology/pl/gnome
-@dirrmtry pootle/po/terminology/pl
-@dirrmtry pootle/po/terminology/pa/gnome
-@dirrmtry pootle/po/terminology/pa
-@dirrmtry pootle/po/terminology/nn/gnome
-@dirrmtry pootle/po/terminology/nn
-@dirrmtry pootle/po/terminology/nl/gnome
-@dirrmtry pootle/po/terminology/nl
-@dirrmtry pootle/po/terminology/nb/gnome
-@dirrmtry pootle/po/terminology/nb
-@dirrmtry pootle/po/terminology/ms/gnome
-@dirrmtry pootle/po/terminology/ms
-@dirrmtry pootle/po/terminology/mr/gnome
-@dirrmtry pootle/po/terminology/mr
-@dirrmtry pootle/po/terminology/mk/gnome
-@dirrmtry pootle/po/terminology/mk
-@dirrmtry pootle/po/terminology/ku/gnome
-@dirrmtry pootle/po/terminology/ku
-@dirrmtry pootle/po/terminology/kn/gnome
-@dirrmtry pootle/po/terminology/kn
-@dirrmtry pootle/po/terminology/ja/gnome
-@dirrmtry pootle/po/terminology/ja
-@dirrmtry pootle/po/terminology/it/gnome
-@dirrmtry pootle/po/terminology/it
-@dirrmtry pootle/po/terminology/hu/gnome
-@dirrmtry pootle/po/terminology/hu
-@dirrmtry pootle/po/terminology/hi/gnome
-@dirrmtry pootle/po/terminology/hi
-@dirrmtry pootle/po/terminology/fr/gnome
-@dirrmtry pootle/po/terminology/fr
-@dirrmtry pootle/po/terminology/fa/gnome
-@dirrmtry pootle/po/terminology/fa
-@dirrmtry pootle/po/terminology/eu/gnome
-@dirrmtry pootle/po/terminology/eu
-@dirrmtry pootle/po/terminology/es/gnome
-@dirrmtry pootle/po/terminology/es
-@dirrmtry pootle/po/terminology/eo/gnome
-@dirrmtry pootle/po/terminology/eo
-@dirrmtry pootle/po/terminology/da/gnome
-@dirrmtry pootle/po/terminology/da
-@dirrmtry pootle/po/terminology/cs/gnome
-@dirrmtry pootle/po/terminology/cs
-@dirrmtry pootle/po/terminology/ca/gnome
-@dirrmtry pootle/po/terminology/ca
-@dirrmtry pootle/po/terminology/az/gnome
-@dirrmtry pootle/po/terminology/az
-@dirrmtry pootle/po/terminology/ar/gnome
-@dirrmtry pootle/po/terminology/ar
-@dirrmtry pootle/po/terminology/am/gnome
-@dirrmtry pootle/po/terminology/am
-@dirrmtry pootle/po/terminology
-@dirrmtry pootle/po/pootle/zu
-@dirrmtry pootle/po/pootle/zh_TW
-@dirrmtry pootle/po/pootle/zh_HK
-@dirrmtry pootle/po/pootle/zh_CN
-@dirrmtry pootle/po/pootle/xh
-@dirrmtry pootle/po/pootle/wo
-@dirrmtry pootle/po/pootle/vi
-@dirrmtry pootle/po/pootle/ve
-@dirrmtry pootle/po/pootle/uz
-@dirrmtry pootle/po/pootle/ur
-@dirrmtry pootle/po/pootle/uk
-@dirrmtry pootle/po/pootle/tr
-@dirrmtry pootle/po/pootle/tl
-@dirrmtry pootle/po/pootle/th
-@dirrmtry pootle/po/pootle/templates
-@dirrmtry pootle/po/pootle/te
-@dirrmtry pootle/po/pootle/ta
-@dirrmtry pootle/po/pootle/sv
-@dirrmtry pootle/po/pootle/st
-@dirrmtry pootle/po/pootle/sr
-@dirrmtry pootle/po/pootle/sq
-@dirrmtry pootle/po/pootle/son
-@dirrmtry pootle/po/pootle/sl
-@dirrmtry pootle/po/pootle/sk
-@dirrmtry pootle/po/pootle/ru
-@dirrmtry pootle/po/pootle/ro
-@dirrmtry pootle/po/pootle/pt_BR
-@dirrmtry pootle/po/pootle/pt
-@dirrmtry pootle/po/pootle/ps
-@dirrmtry pootle/po/pootle/pl
-@dirrmtry pootle/po/pootle/pap
-@dirrmtry pootle/po/pootle/pa
-@dirrmtry pootle/po/pootle/nso
-@dirrmtry pootle/po/pootle/nn
-@dirrmtry pootle/po/pootle/nl
-@dirrmtry pootle/po/pootle/ne
-@dirrmtry pootle/po/pootle/nb
-@dirrmtry pootle/po/pootle/nap
-@dirrmtry pootle/po/pootle/mt
-@dirrmtry pootle/po/pootle/ms
-@dirrmtry pootle/po/pootle/mr
-@dirrmtry pootle/po/pootle/mn
-@dirrmtry pootle/po/pootle/ml
-@dirrmtry pootle/po/pootle/mg
-@dirrmtry pootle/po/pootle/lv
-@dirrmtry pootle/po/pootle/lt
-@dirrmtry pootle/po/pootle/ln
-@dirrmtry pootle/po/pootle/ky
-@dirrmtry pootle/po/pootle/ku
-@dirrmtry pootle/po/pootle/ko
-@dirrmtry pootle/po/pootle/kn
-@dirrmtry pootle/po/pootle/km
-@dirrmtry pootle/po/pootle/kg
-@dirrmtry pootle/po/pootle/ka
-@dirrmtry pootle/po/pootle/ja
-@dirrmtry pootle/po/pootle/it
-@dirrmtry pootle/po/pootle/is
-@dirrmtry pootle/po/pootle/id
-@dirrmtry pootle/po/pootle/hy
-@dirrmtry pootle/po/pootle/hu
-@dirrmtry pootle/po/pootle/ht
-@dirrmtry pootle/po/pootle/hr
-@dirrmtry pootle/po/pootle/hi
-@dirrmtry pootle/po/pootle/he
-@dirrmtry pootle/po/pootle/ha
-@dirrmtry pootle/po/pootle/gl
-@dirrmtry pootle/po/pootle/ga
-@dirrmtry pootle/po/pootle/fur
-@dirrmtry pootle/po/pootle/fr
-@dirrmtry pootle/po/pootle/fo
-@dirrmtry pootle/po/pootle/fi
-@dirrmtry pootle/po/pootle/fa
-@dirrmtry pootle/po/pootle/eu
-@dirrmtry pootle/po/pootle/et
-@dirrmtry pootle/po/pootle/es
-@dirrmtry pootle/po/pootle/eo
-@dirrmtry pootle/po/pootle/en_ZA
-@dirrmtry pootle/po/pootle/en_GB
-@dirrmtry pootle/po/pootle/en
-@dirrmtry pootle/po/pootle/el
-@dirrmtry pootle/po/pootle/dz
-@dirrmtry pootle/po/pootle/de
-@dirrmtry pootle/po/pootle/da
-@dirrmtry pootle/po/pootle/cs
-@dirrmtry pootle/po/pootle/ca@valencia
-@dirrmtry pootle/po/pootle/ca
-@dirrmtry pootle/po/pootle/br
-@dirrmtry pootle/po/pootle/bo
-@dirrmtry pootle/po/pootle/bn_IN
-@dirrmtry pootle/po/pootle/bn
-@dirrmtry pootle/po/pootle/bg
-@dirrmtry pootle/po/pootle/be
-@dirrmtry pootle/po/pootle/az
-@dirrmtry pootle/po/pootle/ar
-@dirrmtry pootle/po/pootle/am
-@dirrmtry pootle/po/pootle/ak
-@dirrmtry pootle/po/pootle/af
-@dirrmtry pootle/po/pootle
-@dirrmtry pootle/po
-@dirrmtry pootle/dbs
-@dirrmtry pootle
-@cwd /var
-@dirrmtry log/pootle
+@cwd %%POOTLEDBDIR%%
+po/pootle/af/pootle.po
+po/pootle/ak/pootle.po
+po/pootle/am/pootle.po
+po/pootle/ar/pootle.po
+po/pootle/az/pootle.po
+po/pootle/be/pootle.po
+po/pootle/bg/pootle.po
+po/pootle/bn/pootle.po
+po/pootle/bn_IN/pootle.po
+po/pootle/bo/pootle.po
+po/pootle/br/pootle.po
+po/pootle/ca/pootle.po
+po/pootle/ca@valencia/pootle.po
+po/pootle/cs/pootle.po
+po/pootle/da/pootle.po
+po/pootle/de/pootle.po
+po/pootle/dz/pootle.po
+po/pootle/el/pootle.po
+po/pootle/en/pootle.po
+po/pootle/en_GB/pootle.po
+po/pootle/en_ZA/pootle.po
+po/pootle/eo/pootle.po
+po/pootle/es/pootle.po
+po/pootle/et/pootle.po
+po/pootle/eu/pootle.po
+po/pootle/fa/pootle.po
+po/pootle/fi/pootle.po
+po/pootle/fo/pootle.po
+po/pootle/fr/pootle.po
+po/pootle/fur/pootle.po
+po/pootle/ga/pootle.po
+po/pootle/gl/pootle.po
+po/pootle/ha/pootle.po
+po/pootle/he/pootle.po
+po/pootle/hi/pootle.po
+po/pootle/hr/pootle.po
+po/pootle/ht/pootle.po
+po/pootle/hu/pootle.po
+po/pootle/hy/pootle.po
+po/pootle/id/pootle.po
+po/pootle/is/pootle.po
+po/pootle/it/pootle.po
+po/pootle/ja/pootle.po
+po/pootle/ka/pootle.po
+po/pootle/kg/pootle.po
+po/pootle/km/pootle.po
+po/pootle/kn/pootle.po
+po/pootle/ko/pootle.po
+po/pootle/ku/pootle.po
+po/pootle/ky/pootle.po
+po/pootle/ln/pootle.po
+po/pootle/lt/pootle.po
+po/pootle/lv/pootle.po
+po/pootle/mg/pootle.po
+po/pootle/ml/pootle.po
+po/pootle/mn/pootle.po
+po/pootle/mr/pootle.po
+po/pootle/ms/pootle.po
+po/pootle/mt/pootle.po
+po/pootle/nap/pootle.po
+po/pootle/nb/pootle.po
+po/pootle/ne/pootle.po
+po/pootle/nl/pootle.po
+po/pootle/nn/pootle.po
+po/pootle/nso/pootle.po
+po/pootle/pa/pootle.po
+po/pootle/pap/pootle.po
+po/pootle/pl/pootle.po
+po/pootle/ps/pootle.po
+po/pootle/pt/pootle.po
+po/pootle/pt_BR/pootle.po
+po/pootle/ro/pootle.po
+po/pootle/ru/pootle.po
+po/pootle/sk/pootle.po
+po/pootle/sl/pootle.po
+po/pootle/son/pootle.po
+po/pootle/sq/pootle.po
+po/pootle/sr/pootle.po
+po/pootle/st/pootle.po
+po/pootle/sv/pootle.po
+po/pootle/ta/pootle.po
+po/pootle/te/pootle.po
+po/pootle/templates/pootle.pot
+po/pootle/th/pootle.po
+po/pootle/tl/pootle.po
+po/pootle/tr/pootle.po
+po/pootle/uk/pootle.po
+po/pootle/ur/pootle.po
+po/pootle/uz/pootle.po
+po/pootle/ve/pootle.po
+po/pootle/vi/pootle.po
+po/pootle/wo/pootle.po
+po/pootle/xh/pootle.po
+po/pootle/zh_CN/pootle.po
+po/pootle/zh_HK/pootle.po
+po/pootle/zh_TW/pootle.po
+po/pootle/zu/pootle.po
+po/terminology/am/gnome/am.po
+po/terminology/ar/gnome/ar.po
+po/terminology/az/gnome/az.po
+po/terminology/ca/gnome/ca.po
+po/terminology/cs/gnome/cs.po
+po/terminology/da/gnome/da.po
+po/terminology/eo/gnome/eo.po
+po/terminology/es/gnome/es.po
+po/terminology/eu/gnome/eu.po
+po/terminology/fa/gnome/fa.po
+po/terminology/fr/gnome/fr.po
+po/terminology/hi/gnome/hi.po
+po/terminology/hu/gnome/hu.po
+po/terminology/it/gnome/it.po
+po/terminology/ja/gnome/ja.po
+po/terminology/kn/gnome/kn.po
+po/terminology/ku/gnome/ku.po
+po/terminology/mk/gnome/mk.po
+po/terminology/mr/gnome/mr.po
+po/terminology/ms/gnome/ms.po
+po/terminology/nb/gnome/nb.po
+po/terminology/nl/gnome/nl.po
+po/terminology/nn/gnome/nn.po
+po/terminology/pa/gnome/pa.po
+po/terminology/pl/gnome/pl.po
+po/terminology/pt/gnome/pt.po
+po/terminology/pt_BR/gnome/pt_BR.po
+po/terminology/rw/gnome/rw.po
+po/terminology/sk/gnome/sk.po
+po/terminology/sq/gnome/sq.po
+po/terminology/sv/gnome/sv.po
+po/terminology/th/gnome/th.po
+po/terminology/uk/gnome/uk.po
+po/terminology/vi/gnome/vi.po
+po/terminology/wa/gnome/wa.po
+po/terminology/zh_CN/gnome/zh_CN.po
+po/terminology/zh_HK/gnome/zh_HK.po
+po/terminology/zh_TW/gnome/zh_TW.po
+po/tutorial/templates/tutorial.pot
+@dirrmtry po/tutorial/templates
+@dirrmtry po/tutorial
+@dirrmtry po/terminology/zh_TW/gnome
+@dirrmtry po/terminology/zh_TW
+@dirrmtry po/terminology/zh_HK/gnome
+@dirrmtry po/terminology/zh_HK
+@dirrmtry po/terminology/zh_CN/gnome
+@dirrmtry po/terminology/zh_CN
+@dirrmtry po/terminology/wa/gnome
+@dirrmtry po/terminology/wa
+@dirrmtry po/terminology/vi/gnome
+@dirrmtry po/terminology/vi
+@dirrmtry po/terminology/uk/gnome
+@dirrmtry po/terminology/uk
+@dirrmtry po/terminology/th/gnome
+@dirrmtry po/terminology/th
+@dirrmtry po/terminology/sv/gnome
+@dirrmtry po/terminology/sv
+@dirrmtry po/terminology/sq/gnome
+@dirrmtry po/terminology/sq
+@dirrmtry po/terminology/sk/gnome
+@dirrmtry po/terminology/sk
+@dirrmtry po/terminology/rw/gnome
+@dirrmtry po/terminology/rw
+@dirrmtry po/terminology/pt_BR/gnome
+@dirrmtry po/terminology/pt_BR
+@dirrmtry po/terminology/pt/gnome
+@dirrmtry po/terminology/pt
+@dirrmtry po/terminology/pl/gnome
+@dirrmtry po/terminology/pl
+@dirrmtry po/terminology/pa/gnome
+@dirrmtry po/terminology/pa
+@dirrmtry po/terminology/nn/gnome
+@dirrmtry po/terminology/nn
+@dirrmtry po/terminology/nl/gnome
+@dirrmtry po/terminology/nl
+@dirrmtry po/terminology/nb/gnome
+@dirrmtry po/terminology/nb
+@dirrmtry po/terminology/ms/gnome
+@dirrmtry po/terminology/ms
+@dirrmtry po/terminology/mr/gnome
+@dirrmtry po/terminology/mr
+@dirrmtry po/terminology/mk/gnome
+@dirrmtry po/terminology/mk
+@dirrmtry po/terminology/ku/gnome
+@dirrmtry po/terminology/ku
+@dirrmtry po/terminology/kn/gnome
+@dirrmtry po/terminology/kn
+@dirrmtry po/terminology/ja/gnome
+@dirrmtry po/terminology/ja
+@dirrmtry po/terminology/it/gnome
+@dirrmtry po/terminology/it
+@dirrmtry po/terminology/hu/gnome
+@dirrmtry po/terminology/hu
+@dirrmtry po/terminology/hi/gnome
+@dirrmtry po/terminology/hi
+@dirrmtry po/terminology/fr/gnome
+@dirrmtry po/terminology/fr
+@dirrmtry po/terminology/fa/gnome
+@dirrmtry po/terminology/fa
+@dirrmtry po/terminology/eu/gnome
+@dirrmtry po/terminology/eu
+@dirrmtry po/terminology/es/gnome
+@dirrmtry po/terminology/es
+@dirrmtry po/terminology/eo/gnome
+@dirrmtry po/terminology/eo
+@dirrmtry po/terminology/da/gnome
+@dirrmtry po/terminology/da
+@dirrmtry po/terminology/cs/gnome
+@dirrmtry po/terminology/cs
+@dirrmtry po/terminology/ca/gnome
+@dirrmtry po/terminology/ca
+@dirrmtry po/terminology/az/gnome
+@dirrmtry po/terminology/az
+@dirrmtry po/terminology/ar/gnome
+@dirrmtry po/terminology/ar
+@dirrmtry po/terminology/am/gnome
+@dirrmtry po/terminology/am
+@dirrmtry po/terminology
+@dirrmtry po/pootle/zu
+@dirrmtry po/pootle/zh_TW
+@dirrmtry po/pootle/zh_HK
+@dirrmtry po/pootle/zh_CN
+@dirrmtry po/pootle/xh
+@dirrmtry po/pootle/wo
+@dirrmtry po/pootle/vi
+@dirrmtry po/pootle/ve
+@dirrmtry po/pootle/uz
+@dirrmtry po/pootle/ur
+@dirrmtry po/pootle/uk
+@dirrmtry po/pootle/tr
+@dirrmtry po/pootle/tl
+@dirrmtry po/pootle/th
+@dirrmtry po/pootle/templates
+@dirrmtry po/pootle/te
+@dirrmtry po/pootle/ta
+@dirrmtry po/pootle/sv
+@dirrmtry po/pootle/st
+@dirrmtry po/pootle/sr
+@dirrmtry po/pootle/sq
+@dirrmtry po/pootle/son
+@dirrmtry po/pootle/sl
+@dirrmtry po/pootle/sk
+@dirrmtry po/pootle/ru
+@dirrmtry po/pootle/ro
+@dirrmtry po/pootle/pt_BR
+@dirrmtry po/pootle/pt
+@dirrmtry po/pootle/ps
+@dirrmtry po/pootle/pl
+@dirrmtry po/pootle/pap
+@dirrmtry po/pootle/pa
+@dirrmtry po/pootle/nso
+@dirrmtry po/pootle/nn
+@dirrmtry po/pootle/nl
+@dirrmtry po/pootle/ne
+@dirrmtry po/pootle/nb
+@dirrmtry po/pootle/nap
+@dirrmtry po/pootle/mt
+@dirrmtry po/pootle/ms
+@dirrmtry po/pootle/mr
+@dirrmtry po/pootle/mn
+@dirrmtry po/pootle/ml
+@dirrmtry po/pootle/mg
+@dirrmtry po/pootle/lv
+@dirrmtry po/pootle/lt
+@dirrmtry po/pootle/ln
+@dirrmtry po/pootle/ky
+@dirrmtry po/pootle/ku
+@dirrmtry po/pootle/ko
+@dirrmtry po/pootle/kn
+@dirrmtry po/pootle/km
+@dirrmtry po/pootle/kg
+@dirrmtry po/pootle/ka
+@dirrmtry po/pootle/ja
+@dirrmtry po/pootle/it
+@dirrmtry po/pootle/is
+@dirrmtry po/pootle/id
+@dirrmtry po/pootle/hy
+@dirrmtry po/pootle/hu
+@dirrmtry po/pootle/ht
+@dirrmtry po/pootle/hr
+@dirrmtry po/pootle/hi
+@dirrmtry po/pootle/he
+@dirrmtry po/pootle/ha
+@dirrmtry po/pootle/gl
+@dirrmtry po/pootle/ga
+@dirrmtry po/pootle/fur
+@dirrmtry po/pootle/fr
+@dirrmtry po/pootle/fo
+@dirrmtry po/pootle/fi
+@dirrmtry po/pootle/fa
+@dirrmtry po/pootle/eu
+@dirrmtry po/pootle/et
+@dirrmtry po/pootle/es
+@dirrmtry po/pootle/eo
+@dirrmtry po/pootle/en_ZA
+@dirrmtry po/pootle/en_GB
+@dirrmtry po/pootle/en
+@dirrmtry po/pootle/el
+@dirrmtry po/pootle/dz
+@dirrmtry po/pootle/de
+@dirrmtry po/pootle/da
+@dirrmtry po/pootle/cs
+@dirrmtry po/pootle/ca@valencia
+@dirrmtry po/pootle/ca
+@dirrmtry po/pootle/br
+@dirrmtry po/pootle/bo
+@dirrmtry po/pootle/bn_IN
+@dirrmtry po/pootle/bn
+@dirrmtry po/pootle/bg
+@dirrmtry po/pootle/be
+@dirrmtry po/pootle/az
+@dirrmtry po/pootle/ar
+@dirrmtry po/pootle/am
+@dirrmtry po/pootle/ak
+@dirrmtry po/pootle/af
+@dirrmtry po/pootle
+@dirrmtry po
+@dirrmtry dbs
+@cwd /
+@dirrmtry %%POOTLEDBDIR%%
+@dirrmtry %%POOTLELOGDIR%%
