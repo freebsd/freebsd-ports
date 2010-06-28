@@ -178,8 +178,10 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/setup_chroot.sh ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/config.h ${EXAMPLESDIR}
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "To setup chroot cage, run following command:"
-	@${ECHO_MSG} "  cd ${EXAMPLESDIR}/ && ${SH} setup_chroot.sh"
+	@${ECHO_MSG} "To setup chroot cage, run the following commands:"
+	@${ECHO_MSG} "  1) cd ${EXAMPLESDIR}/ && ${SH} setup_chroot.sh"
+	@${ECHO_MSG} "  2) Set scponlyc_enable=\"YES\" in /etc/rc.conf"
+	@${ECHO_MSG} "  3) Run ${LOCALBASE}/etc/rc.d/scponly start"
 	@${ECHO_MSG} ""
 .endif
 .if !defined(NOPORTDOCS)
