@@ -34,6 +34,43 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="edef3f2f-82cf-11df-bcce-0018f3e2eb82">
+    <topic>png -- libpng decompression buffer overflow</topic>
+    <affects>
+      <package>
+	<name>png</name>
+	<range>
+	  <lt>1.4.3</lt>
+	</range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PNG project describes the problem in an advisory:</p>
+	<blockquote cite="http://www.libpng.org/pub/png/libpng.html">
+	  <p>Several versions of libpng through 1.4.2 (and through 1.2.43
+          in the older series) contain a bug whereby progressive
+          applications such as web browsers (or the rpng2 demo app included
+          in libpng) could receive an extra row of image data beyond the
+          height reported in the header, potentially leading to an
+          out-of-bounds write to memory (depending on how the application
+          is written) and the possibility of execution of an attacker's
+          code with the privileges of the libpng user (including remote
+          compromise in the case of a libpng-based browser visiting a
+          hostile web site).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-1205</cvename>
+      <url>http://www.libpng.org/pub/png/libpng.html</url>
+    </references>
+    <dates>
+      <discovery>2010-03-30</discovery>
+      <entry>2010-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="66759ce6-7530-11df-9c33-000c29ba66d2">
     <topic>moodle -- multiple vulnerabilities</topic>
     <affects>
