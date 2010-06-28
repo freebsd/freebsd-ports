@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: bird6
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bird6_enable (bool):   Set to NO by default.
+#               Set it to YES to enable bird6.
+# bird6_config (path):   Set to %%PREFIX%%/etc/bird6.conf
+#               by default.
+#
+
+. /etc/rc.subr
+
+name="bird6"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/${name}
+
+load_rc_config $name
+
+: ${bird6_enable="NO"}
+: ${bird6_config="%%PREFIX%%/etc/bird6.conf"}
+
+command_args="-c $bird6_config"
+
+run_rc_command "$1"
