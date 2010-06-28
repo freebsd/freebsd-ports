@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: bird
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bird_enable (bool):   Set to NO by default.
+#               Set it to YES to enable bird.
+# bird_config (path):   Set to %%PREFIX%%/etc/bird.conf
+#               by default.
+#
+
+. /etc/rc.subr
+
+name="bird"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/sbin/${name}
+
+load_rc_config $name
+
+: ${bird_enable="NO"}
+: ${bird_config="%%PREFIX%%/etc/bird.conf"}
+
+command_args="-c $bird_config"
+
+run_rc_command "$1"
