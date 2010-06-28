@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.2-build2002
-PORTREVISION=	4
+DISTVERSION=	4.2-build2003
 CATEGORIES=	audio kld
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
