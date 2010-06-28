@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	stumbleupon
-PORTVERSION=	3.52
+PORTVERSION=	3.64
 DISTVERSIONSUFFIX=	-fx+sm+mz
 CATEGORIES=	www
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A collaborative surfing tool extension
+
+LICENSE=	MPL
 
 XPI_NUM=	138
 XPI_ID=		{AE93811A-5C9A-4d34-8462-F7B864FC4696}
