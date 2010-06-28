@@ -1,0 +1,6 @@
+Fossil is an easy-to-use Distributed Source Control Management system (DSCM)
+which supports access and administration over HTTP CGI or via a built-in HTTP
+server, has a built-in wiki, built-in file browsing, a built-in tickets system,
+etc
+
+WWW:	http://fossil-scm.org/
