@@ -16,6 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
+FORBIDDEN=	vulnerable to remote buffer overflow
+
 MAKEFILE=	${WRKSRC}/scripts/makefile.freebsd
 ALL_TARGET=	all libpng-config test
 MAKE_FLAGS=	ccopts="${CFLAGS}" ldopts="${LDFLAGS}" -f
