@@ -210,6 +210,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/DatePicker.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Dialog.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Dialog.pyc
+%%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Downloader.py
+%%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Downloader.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Druid.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Druid.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/HTTP.py
@@ -238,10 +240,14 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Plugin.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Post.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Post.pyc
+%%ADMIN%%%%DATADIR%%/admin/CTK/CTK/ProgressBar.py
+%%ADMIN%%%%DATADIR%%/admin/CTK/CTK/ProgressBar.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/PropsTable.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/PropsTable.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Proxy.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Proxy.pyc
+%%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Radio.py
+%%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Radio.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/RawHTML.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/RawHTML.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Refreshable.py
