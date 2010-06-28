@@ -34,6 +34,30 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="66759ce6-7530-11df-9c33-000c29ba66d2">
+    <topic>moodle -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moodle</name>
+	<range><lt>1.9.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Moodle release notes report multiple vulnerabilities
+	  which could allow cross site scripting, XSS attacks,
+	  unauthorised deletion of attempts in some instances.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://docs.moodle.org/en/Moodle_1.9.9_release_notes</url>
+    </references>
+    <dates>
+      <discovery>2010-06-08</discovery>
+      <entry>2010-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1cd87e2a-81e3-11df-81d8-00262d5ed8ee">
     <topic>mDNSResponder -- corrupted stack crash when parsing bad resolv.conf</topic>
     <affects>
