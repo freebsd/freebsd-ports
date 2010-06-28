@@ -8,8 +8,7 @@
 PORTNAME=	nstreams
 PORTVERSION=	1.0.4
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.nessus.org/pub/nstreams/ \
-		http://www.hsc.fr/ressources/outils/nstreams/download/ \
+MASTER_SITES=	http://www.hsc.fr/ressources/outils/nstreams/download/ \
 		http://falafel.200ok.org/distfiles/nstreams/
 
 MAINTAINER=	ecu@ipv42.net
