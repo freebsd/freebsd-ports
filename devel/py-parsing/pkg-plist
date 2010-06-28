@@ -1,9 +1,6 @@
 %%PYTHON_SITELIBDIR%%/pyparsing.py
 %%PYTHON_SITELIBDIR%%/pyparsing.pyc
 %%PYTHON_SITELIBDIR%%/pyparsing.pyo
-%%PYTHON_SITELIBDIR%%/pyparsing_py3.py
-%%PYTHON_SITELIBDIR%%/pyparsing_py3.pyc
-%%PYTHON_SITELIBDIR%%/pyparsing_py3.pyo
 %%PORTDOCS%%%%DOCSDIR%%/api-objects.txt
 %%PORTDOCS%%%%DOCSDIR%%/class-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/crarr.png
@@ -15,7 +12,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/module-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing-module.html
-%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.And-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.CaselessKeyword-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.CaselessLiteral-class.html
@@ -83,6 +79,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dictExample2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebnf.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebnftest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eval_arith.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/excelExpr.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fourFn.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/getNTPservers.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/getNTPserversNew.py
@@ -101,12 +99,17 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/listAllMatches.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/macroExpander.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/makeHTMLTagExample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/matchPreviousDemo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mozilla.ics
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mozillaCalendarParser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nested.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/oc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parseListString.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parsePythonValue.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parseResultsSumExample.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partial_gene_match.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgn.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pymicko.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pythonGrammarParser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/readJson.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/removeLineBreaks.py
@@ -115,6 +118,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scanYahoo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchParserAppDemo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchparser.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/select_parser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sexpParser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simpleArith.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/simpleBool.py
@@ -123,6 +127,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sparser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sql2dot.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stackish.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stateMachine2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tagCapture.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlExtractor.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlExtractorNew.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/withAttribute.py
