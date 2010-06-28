@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jicmp
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.11
 CATEGORIES=	net java
 MASTER_SITES=	SF/opennms/OldFiles
 
