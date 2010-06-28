@@ -8,7 +8,7 @@
 PORTNAME=	jicmp
 PORTVERSION=	1.0.11
 CATEGORIES=	net java
-MASTER_SITES=	SF/opennms/OldFiles
+MASTER_SITES=	SF/opennms/JICMP/stable-1.0/
 
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	A Java native interface (JNI) to ICMP (ping)
