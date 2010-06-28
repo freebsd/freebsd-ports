@@ -16,9 +16,6 @@ bin/intersect.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/ctypes_declarations.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/ctypes_declarations.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/ctypes_declarations.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geoms.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geoms.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geoms.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geos.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geos.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geos.pyo
@@ -49,6 +46,9 @@ bin/intersect.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/wkt.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/wkt.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/wkt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/validation.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/validation.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/validation.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geometry/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geometry/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geometry/__init__.pyo
