@@ -3082,6 +3082,7 @@
     SUBDIR += rudiments
     SUBDIR += rvi
     SUBDIR += rvm
+    SUBDIR += sabre
     SUBDIR += safestr
     SUBDIR += scandoc
     SUBDIR += scons
