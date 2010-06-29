@@ -22,6 +22,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LBNL Internet path characterization tool
 
 IGNORE=		coredumps immediately, see PR ports/124404
+DEPRECATED=	has been broken for 2+ years, no sources available
+EXPIRATION_DATE=2010-09-01
 
 ONLY_FOR_ARCHS=	i386
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
