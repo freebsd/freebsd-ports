@@ -1,5 +1,5 @@
---- src/ftpd.c.orig	2010-05-27 01:19:29.000000000 +0400
-+++ src/ftpd.c	2010-05-27 01:19:56.000000000 +0400
+--- ftpd.c.orig	2010-06-29 15:52:01.000000000 +0400
++++ ftpd.c	2010-06-29 16:11:19.000000000 +0400
 @@ -447,7 +447,6 @@
  #ifdef OPIE
  #include <opie.h>
@@ -19,7 +19,17 @@
  #ifdef HAVE_LIBRESOLV
      /* check permitted access based on remote host DNS information */
      if (!check_reverse_dns()) {
-@@ -1662,9 +1657,9 @@
+@@ -1387,8 +1382,7 @@
+     chdir("/");
+     signal(SIGIOT, SIG_DFL);
+     signal(SIGILL, SIG_DFL);
+-    exit(1);
+-    /* dologout(-1); *//* NOTREACHED */
++    dologout(-1); /* NOTREACHED */
+ }
+ 
+ SIGNAL_TYPE lostconn(int sig)
+@@ -1662,9 +1656,9 @@
      /* Display s/key challenge where appropriate. */
  
      if (pwd == NULL || skeychallenge(&skey, pwd->pw_name, sbuf))
@@ -31,7 +41,7 @@
  		pwok ? "allowed" : "required", name);
      return (buf);
  }
-@@ -2105,16 +2100,17 @@
+@@ -2105,16 +2099,17 @@
  #ifdef OPIE
  	{
  	    char prompt[OPIE_CHALLENGE_MAX + 1];
@@ -57,7 +67,7 @@
  	}
  #else
  	reply(331, "Password required for %s.", name);
-@@ -2593,8 +2589,8 @@
+@@ -2593,8 +2588,8 @@
  	    if (pw == NULL)
  		salt = "xx";
  	    else
@@ -67,7 +77,7 @@
  #ifdef SECUREOSF
  	    if ((pr = getprpwnam(pw->pw_name)) != NULL) {
  		if (pr->uflg.fg_newcrypt)
-@@ -2627,9 +2623,15 @@
+@@ -2627,9 +2622,15 @@
  	    xpasswd = crypt(passwd, salt);
  #endif /* SKEY */
  #else /* OPIE */
@@ -86,7 +96,7 @@
  #endif /* OPIE */
  #ifdef ULTRIX_AUTH
  	    if ((numfails = ultrix_check_pass(passwd, xpasswd)) >= 0) {
-@@ -3189,7 +3191,7 @@
+@@ -3189,7 +3190,7 @@
  		  pw->pw_name, pw->pw_dir);
  	    goto bad;
  #else
@@ -95,7 +105,7 @@
  #ifdef VERBOSE_ERROR_LOGING
  		syslog(LOG_NOTICE, "FTP LOGIN FAILED (cannot chdir) for %s, %s",
  		       remoteident, pw->pw_name);
-@@ -3508,7 +3510,7 @@
+@@ -3508,7 +3509,7 @@
  {
      char *a;
      a = (char *) malloc(len + 1);
@@ -104,7 +114,7 @@
      a[len] = 0;
      if (strlen(s) <= len)
  	memcpy(a, s, strlen(s));
-@@ -7469,6 +7471,8 @@
+@@ -7469,6 +7470,8 @@
  	    in++;
  	    if (*in == '/')
  		in++;
@@ -113,7 +123,7 @@
  	}
  	else if ((in[0] == '.') && (in[1] == '.') && ((in[2] == '/') || (in[2] == '\0'))) {
  	    if (out == path) {
-@@ -7497,6 +7501,9 @@
+@@ -7497,6 +7500,9 @@
  	}
  	else {
  	    do
