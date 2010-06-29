@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<project name="JIIC" default="dist">
+	<property name="src" location="." />
+	<property name="build"	location="build" />
+	<property name="dist"	location="dist" />
+
+	<target name="clean">
+		<delete dir="${dist}" />
+		<delete dir="${build}" />
+	</target>
+
+	<target name="prepare" depends="clean">
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${build}/classes"/>
+	</target>
+	
+	<target name="compile" depends="prepare">
+		<javac destdir="${build}/classes" debug="on">
+		    <src path="${src}"/>
+		</javac>
+	</target>
+	
+	<target name="jar" depends="compile">
+		<jar destfile="${dist}/iso9660.jar" basedir="${build}/classes">
+			<include name="de/tu_darmstadt/informatik/rbg/**/*.class"/>
+		</jar>
+	</target>
+</project>
