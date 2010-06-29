@@ -7,7 +7,7 @@
 
 PORTNAME=	fvwm-crystal
 PORTVERSION=	3.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.gna.org/fvwm-crystal/${PORTVERSION}/
 
