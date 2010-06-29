@@ -170,6 +170,7 @@
     SUBDIR += drupal6-cck
     SUBDIR += drupal6-chaos
     SUBDIR += drupal6-ckeditor
+    SUBDIR += drupal6-content_access
     SUBDIR += drupal6-geshifilter
     SUBDIR += drupal6-google_analytics
     SUBDIR += drupal6-image
