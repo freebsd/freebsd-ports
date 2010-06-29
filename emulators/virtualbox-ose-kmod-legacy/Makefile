@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.2.4
+DISTVERSION=	3.2.6
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -54,10 +54,6 @@ KMK_FLAGS=	HostDrivers-src vboxdrv-mod VBoxNetFlt-src VBoxNetAdp-src
 .if defined(WITH_DEBUG)
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
-.endif
-
-.if ${OSVERSION} >= 900012
-BROKEN=	Build and stability problems on recent CURRENT
 .endif
 
 .if ${OSVERSION} < 700000
