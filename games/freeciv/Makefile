@@ -7,6 +7,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -40,7 +41,6 @@ USE_XORG=	xpm
 USE_SDL=	mixer
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=--enable-client=gtk
-USE_GNOME+=	esound
 CONFLICTS=	freeciv-nox11-[0-9]*
 PLIST_SUB+=	X11="" GTK=""
 .else
