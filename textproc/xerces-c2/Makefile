@@ -142,6 +142,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/src/xercesc/Makefile.incl \
 		${WRKSRC}/src/xercesc/runConfigure
+.if ${OSVERSION} < 700000
+	@${REINPLACE_CMD} -e 's,-lgcc,-lgcc_pic,' \
+		${WRKSRC}/src/xercesc/Makefile.incl
+.endif
 
 pre-configure:
 	@${CHMOD} 700 ${CONFIGURE_WRKSRC}/runConfigure
