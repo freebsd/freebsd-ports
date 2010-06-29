@@ -6,48 +6,40 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	17.6.0
-PORTREVISION=	7
+DISTVERSION=	28.0.0
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION}
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A simple and powerful GTK+ text editor
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple and powerful text editor
+
+LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	gtk20
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui script svg xml
 
-OPTIONS=	TEA_ONLY	"Build original GTK-only version"	on \
-		ASPELL		"Build with GNU aspell support"		on \
-		CURL		"Build with libCURL support"		off
+PLIST_FILES=	bin/${PORTNAME}
+
+OPTIONS=	ASPELL	"Build with GNU Aspell support"	on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TEA_ONLY)
-CONFIGURE_ARGS+=	--enable-legacy
+.if defined(WITH_ASPELL)
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
+QMAKEFLAGS+=	USE_ASPELL=true
 .else
-USE_GNOME+=	gtksourceview
+QMAKEFLAGS+=	USE_ASPELL=false
 .endif
 
-.if defined(WITH_ASPELL) || exists(${LOCALBASE}/lib/libaspell.so)
-LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' ${WRKSRC}/src.pro
 
-.if defined(WITH_CURL) || exists(${LOCALBASE}/lib/libcurl.so)
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-.endif
+do-configure:
+	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${QMAKE} ${QMAKEFLAGS} PREFIX=$PREFIX})
 
-post-patch: .SILENT
-# Correct documentation location in FreeBSD world
-	${REINPLACE_CMD} -e 's|/tea/doc/|/doc/tea/|' \
-		${WRKSRC}/src/tea_defs.h
-# Fix FINK-related defines (pretend we're Darwin)
-	${REINPLACE_CMD} -e '5711d; 5714,5717d' ${WRKSRC}/configure
-# Do not install yet another copy of GPL
-	${REINPLACE_CMD} -e '641d' ${WRKSRC}/Makefile.in
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
