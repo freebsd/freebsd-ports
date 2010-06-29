@@ -1,0 +1,13 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is fenv.
+
+On supported architectures, change the rounding mode of the floating point
+arithmetics (to nearest, up, down, to zero) or change the precision of the
+arithmetical operations (single, double, double extended). Experimentally
+test the properties of the floating point arithmetics.
+
+WWW: http://octave.sourceforge.net/
