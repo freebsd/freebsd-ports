@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	thundercache
-PORTVERSION=	4.0
-PORTREVISION=	6
+PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.bmsoftware.org/freebsd/ \
+		http://www8.freebsdbrasil.com.br/~eksffa/thunder/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
 		${MASTER_SITE_LOCAL}/jmelo
-DISTNAME=	thunder32bits_15042010
+DISTNAME=	thundercache-4.1.201006231050-32bits-fbsd
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	High-performance and high-eficiency caching proxy system
@@ -45,7 +46,7 @@ BROKEN=		Won't run on systems version < FreeBSD 8.0-RELEASE
 .endif
 
 .if ${ARCH} == "amd64"
-DISTNAME=	thunder64bits_15042010
+DISTNAME=	thundercache-4.1.201006231050-64bits-fbsd
 .endif
 
 WRKSRC=		${WRKDIR}/thunder
