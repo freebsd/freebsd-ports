@@ -1,0 +1,32 @@
+--- Makefile.orig	2010-02-15 02:08:22.000000000 -0600
++++ Makefile	2010-06-05 19:27:12.000000000 -0500
+@@ -1,16 +1,23 @@
+-.PHONY: all
+-all: compile clean
++all: _op_transform.oct _op_fwd.oct _op_inv.oct _op_geod2geoc.oct _op_geoc2geod.oct
+ 
+-.PHONY: compile
+-compile:
+-	cc -c -O3 -Wall -Wextra projwrap.c -o projwrap.o
++projwrap.o:
++	${CC} ${CFLAGS} -fPIC -c -O3 -Wall -Wextra projwrap.c -o projwrap.o
++
++_op_transform.oct: _op_transform.cc projwrap.o
+ 	mkoctfile -s -Wall -Wextra _op_transform.cc projwrap.o -lproj
++
++_op_fwd.oct: _op_fwd.cc projwrap.o
+ 	mkoctfile -s -Wall -Wextra _op_fwd.cc projwrap.o -lproj
++
++_op_inv.oct: _op_inv.cc projwrap.o
+ 	mkoctfile -s -Wall -Wextra _op_inv.cc projwrap.o -lproj
++
++_op_geod2geoc.oct: _op_geod2geoc.cc
+ 	mkoctfile -s -Wall -Wextra _op_geod2geoc.cc -lproj
++
++_op_geoc2geod.oct: _op_geoc2geod.cc
+ 	mkoctfile -s -Wall -Wextra _op_geoc2geod.cc -lproj
+ 
+-.PHONY: clean
+ clean:
+ 	rm _op_transform.o _op_fwd.o _op_inv.o _op_geod2geoc.o _op_geoc2geod.o
+ 	rm projwrap.o
