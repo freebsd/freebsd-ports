@@ -228,6 +228,7 @@
     SUBDIR += octave-forge-ga
     SUBDIR += octave-forge-general
     SUBDIR += octave-forge-generate_html
+    SUBDIR += octave-forge-gnuplot
     SUBDIR += octave-forge-gsl
     SUBDIR += octave-forge-ident
     SUBDIR += octave-forge-image
