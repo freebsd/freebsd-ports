@@ -36,6 +36,7 @@ chinese/ibus-chewing		Chewing engine for IBus
 chinese/ibus-pinyin		The PinYin input method
 japanese/ibus-anthy		Anthy engine for IBus
 japanese/ibus-skk		SKK engine for IBus
+textproc/ibus-kmfl		KMFL IMEngine for IBus framework
 textproc/ibus-m17n		The m17n IMEngine for IBus framework
 textproc/ibus-table		Table based IM framework for IBus
 
