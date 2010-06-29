@@ -795,6 +795,14 @@
 %%WWWDIR%%/inc/PMF_Perm/PermBasic.php
 %%WWWDIR%%/inc/PMF_Perm/PermLarge.php
 %%WWWDIR%%/inc/PMF_Perm/PermMedium.php
+%%WWWDIR%%/inc/PMF_Search/Abstract.php
+%%WWWDIR%%/inc/PMF_Search/Database.php
+%%WWWDIR%%/inc/PMF_Search/Database/Mysql.php
+%%WWWDIR%%/inc/PMF_Search/Database/Mysqli.php
+%%WWWDIR%%/inc/PMF_Search/Database/Pgsql.php
+%%WWWDIR%%/inc/PMF_Search/Exception.php
+%%WWWDIR%%/inc/PMF_Search/Interface.php
+%%WWWDIR%%/inc/PMF_Search/Resultset.php
 %%WWWDIR%%/inc/PMF_String/Abstract.php
 %%WWWDIR%%/inc/PMF_String/Basic.php
 %%WWWDIR%%/inc/PMF_String/Mbstring.php
@@ -1044,6 +1052,8 @@
 @dirrm %%WWWDIR%%/inc/js/plugins
 @dirrm %%WWWDIR%%/inc/js
 @dirrm %%WWWDIR%%/inc/PMF_User
+@dirrm %%WWWDIR%%/inc/PMF_Search/Database
+@dirrm %%WWWDIR%%/inc/PMF_Search
 @dirrm %%WWWDIR%%/inc/PMF_String
 @dirrm %%WWWDIR%%/inc/PMF_Perm
 @dirrm %%WWWDIR%%/inc/PMF_Mail
