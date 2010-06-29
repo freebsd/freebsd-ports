@@ -7,14 +7,17 @@
 #
 
 PORTNAME=	jgraph
-PORTVERSION=	5.12.3.2
+PORTVERSION=	5.13.0.4
 CATEGORIES=	java graphics
-MASTER_SITES=	http://www.jgraph.com/pub/
-DISTNAME=	${PORTNAME}-latest-lgpl-src
+MASTER_SITES=	http://www.jgraph.com/downloads/jgraph/archive/ \
+		http://www.bayofrum.net/dist/jgraph/
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	The Java Graph Diagram Component
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
