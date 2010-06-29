@@ -31,12 +31,18 @@ share/locale/fi/LC_MESSAGES/akonadi_kolabproxy_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_kresourceassistant.mo
 share/locale/fi/LC_MESSAGES/akonadi_localbookmarks_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_maildir_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_maildispatcher_agent.mo
+share/locale/fi/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_mbox_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_microblog_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_next.mo
 share/locale/fi/LC_MESSAGES/akonadi_nntp_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_openchange_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_vcard_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/fi/LC_MESSAGES/akonadicontact.mo
 share/locale/fi/LC_MESSAGES/akonaditray.mo
 share/locale/fi/LC_MESSAGES/akregator.mo
@@ -53,6 +59,7 @@ share/locale/fi/LC_MESSAGES/cervisia.mo
 share/locale/fi/LC_MESSAGES/cvsservice.mo
 share/locale/fi/LC_MESSAGES/display.mo
 share/locale/fi/LC_MESSAGES/dolphin.mo
+share/locale/fi/LC_MESSAGES/dragonplayer.mo
 share/locale/fi/LC_MESSAGES/drkonqi.mo
 share/locale/fi/LC_MESSAGES/filetypes.mo
 share/locale/fi/LC_MESSAGES/granatier.mo
@@ -63,6 +70,7 @@ share/locale/fi/LC_MESSAGES/irkick.mo
 share/locale/fi/LC_MESSAGES/joystick.mo
 share/locale/fi/LC_MESSAGES/juk.mo
 share/locale/fi/LC_MESSAGES/kabc.mo
+share/locale/fi/LC_MESSAGES/kabc_akonadi.mo
 share/locale/fi/LC_MESSAGES/kabc_dir.mo
 share/locale/fi/LC_MESSAGES/kabc_file.mo
 share/locale/fi/LC_MESSAGES/kabc_ldapkio.mo
@@ -110,9 +118,11 @@ share/locale/fi/LC_MESSAGES/kbreakout.mo
 share/locale/fi/LC_MESSAGES/kbruch.mo
 share/locale/fi/LC_MESSAGES/kbugbuster.mo
 share/locale/fi/LC_MESSAGES/kcachegrind.mo
+share/locale/fi/LC_MESSAGES/kcal_akonadi.mo
 share/locale/fi/LC_MESSAGES/kcalc.mo
 share/locale/fi/LC_MESSAGES/kcertpart.mo
 share/locale/fi/LC_MESSAGES/kcharselect.mo
+share/locale/fi/LC_MESSAGES/kcm_akonadi.mo
 share/locale/fi/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/fi/LC_MESSAGES/kcm_attica.mo
 share/locale/fi/LC_MESSAGES/kcm_autostart.mo
@@ -251,6 +261,7 @@ share/locale/fi/LC_MESSAGES/kimagemapeditor.mo
 share/locale/fi/LC_MESSAGES/kinetd.mo
 share/locale/fi/LC_MESSAGES/kinfocenter.mo
 share/locale/fi/LC_MESSAGES/kio4.mo
+share/locale/fi/LC_MESSAGES/kio_akonadi.mo
 share/locale/fi/LC_MESSAGES/kio_applications.mo
 share/locale/fi/LC_MESSAGES/kio_archive.mo
 share/locale/fi/LC_MESSAGES/kio_audiocd.mo
@@ -406,6 +417,7 @@ share/locale/fi/LC_MESSAGES/kxkb.mo
 share/locale/fi/LC_MESSAGES/kxsconfig.mo
 share/locale/fi/LC_MESSAGES/lancelot.mo
 share/locale/fi/LC_MESSAGES/libakonadi.mo
+share/locale/fi/LC_MESSAGES/libkblog.mo
 share/locale/fi/LC_MESSAGES/libkcal.mo
 share/locale/fi/LC_MESSAGES/libkcddb.mo
 share/locale/fi/LC_MESSAGES/libkcompactdisc.mo
@@ -553,6 +565,7 @@ share/locale/fi/LC_MESSAGES/plasma_engine_nowplaying.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_pastebin.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/fi/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/fi/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_kget.mo

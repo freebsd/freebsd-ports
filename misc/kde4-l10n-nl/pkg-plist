@@ -465,6 +465,10 @@ share/doc/HTML/nl/kgeography/index.docbook
 share/doc/HTML/nl/kgpg/common
 share/doc/HTML/nl/kgpg/index.cache.bz2
 share/doc/HTML/nl/kgpg/index.docbook
+share/doc/HTML/nl/khangman/common
+share/doc/HTML/nl/khangman/index.cache.bz2
+share/doc/HTML/nl/khangman/index.docbook
+share/doc/HTML/nl/khangman/man-khangman.6.docbook
 share/doc/HTML/nl/khelpcenter/common
 share/doc/HTML/nl/khelpcenter/contact.docbook
 share/doc/HTML/nl/khelpcenter/faq/about.docbook
@@ -772,6 +776,12 @@ share/doc/HTML/nl/kmail/using-kmail.docbook
 share/doc/HTML/nl/kmenuedit/common
 share/doc/HTML/nl/kmenuedit/index.cache.bz2
 share/doc/HTML/nl/kmenuedit/index.docbook
+share/doc/HTML/nl/kmines/common
+share/doc/HTML/nl/kmines/index.cache.bz2
+share/doc/HTML/nl/kmines/index.docbook
+share/doc/HTML/nl/kmix/common
+share/doc/HTML/nl/kmix/index.cache.bz2
+share/doc/HTML/nl/kmix/index.docbook
 share/doc/HTML/nl/kmousetool/common
 share/doc/HTML/nl/kmousetool/index.cache.bz2
 share/doc/HTML/nl/kmousetool/index.docbook
@@ -896,6 +906,12 @@ share/doc/HTML/nl/kpat/man-kpat.6.docbook
 share/doc/HTML/nl/kruler/common
 share/doc/HTML/nl/kruler/index.cache.bz2
 share/doc/HTML/nl/kruler/index.docbook
+share/doc/HTML/nl/ksame/common
+share/doc/HTML/nl/ksame/index.cache.bz2
+share/doc/HTML/nl/ksame/index.docbook
+share/doc/HTML/nl/kshisen/common
+share/doc/HTML/nl/kshisen/index.cache.bz2
+share/doc/HTML/nl/kshisen/index.docbook
 share/doc/HTML/nl/ksnapshot/common
 share/doc/HTML/nl/ksnapshot/index.cache.bz2
 share/doc/HTML/nl/ksnapshot/index.docbook
@@ -1029,6 +1045,10 @@ share/doc/HTML/nl/kttsd/stringreplacer.png
 share/doc/HTML/nl/kttsd/talkerchooser.png
 share/doc/HTML/nl/kttsd/talkers.png
 share/doc/HTML/nl/kttsd/xmltransformer.png
+share/doc/HTML/nl/ktuberling/common
+share/doc/HTML/nl/ktuberling/index.cache.bz2
+share/doc/HTML/nl/ktuberling/index.docbook
+share/doc/HTML/nl/ktuberling/technical-reference.docbook
 share/doc/HTML/nl/kturtle/common
 share/doc/HTML/nl/kturtle/getting-started.docbook
 share/doc/HTML/nl/kturtle/glossary.docbook
@@ -1053,6 +1073,9 @@ share/doc/HTML/nl/kwatchgnupg/index.docbook
 share/doc/HTML/nl/kweather/common
 share/doc/HTML/nl/kweather/index.cache.bz2
 share/doc/HTML/nl/kweather/index.docbook
+share/doc/HTML/nl/kwordquiz/common
+share/doc/HTML/nl/kwordquiz/index.cache.bz2
+share/doc/HTML/nl/kwordquiz/index.docbook
 share/doc/HTML/nl/kwrite/common
 share/doc/HTML/nl/kwrite/index.cache.bz2
 share/doc/HTML/nl/kwrite/index.docbook
@@ -1774,11 +1797,13 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/lskat
 @dirrm share/doc/HTML/nl/lokalize
 @dirrm share/doc/HTML/nl/kwrite
+@dirrm share/doc/HTML/nl/kwordquiz
 @dirrm share/doc/HTML/nl/kweather
 @dirrm share/doc/HTML/nl/kwatchgnupg
 @dirrm share/doc/HTML/nl/kwallet
 @dirrm share/doc/HTML/nl/kuser
 @dirrm share/doc/HTML/nl/kturtle
+@dirrm share/doc/HTML/nl/ktuberling
 @dirrm share/doc/HTML/nl/kttsd
 @dirrm share/doc/HTML/nl/ktimetracker
 @dirrm share/doc/HTML/nl/ktimer
@@ -1787,6 +1812,8 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kstars
 @dirrm share/doc/HTML/nl/kspaceduel
 @dirrm share/doc/HTML/nl/ksnapshot
+@dirrm share/doc/HTML/nl/kshisen
+@dirrm share/doc/HTML/nl/ksame
 @dirrm share/doc/HTML/nl/kruler
 @dirrm share/doc/HTML/nl/kpat
 @dirrm share/doc/HTML/nl/korganizer
@@ -1802,6 +1829,8 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kmplot
 @dirrm share/doc/HTML/nl/kmouth
 @dirrm share/doc/HTML/nl/kmousetool
+@dirrm share/doc/HTML/nl/kmix
+@dirrm share/doc/HTML/nl/kmines
 @dirrm share/doc/HTML/nl/kmenuedit
 @dirrm share/doc/HTML/nl/kmail
 @dirrm share/doc/HTML/nl/kmahjongg
@@ -1873,6 +1902,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/khelpcenter/glossary
 @dirrm share/doc/HTML/nl/khelpcenter/faq
 @dirrm share/doc/HTML/nl/khelpcenter
+@dirrm share/doc/HTML/nl/khangman
 @dirrm share/doc/HTML/nl/kgpg
 @dirrm share/doc/HTML/nl/kgeography
 @dirrm share/doc/HTML/nl/kfind
@@ -1981,6 +2011,7 @@ share/locale/nl/entry.desktop
 @dirrm share/apps/klettres/nl
 @dirrm share/apps/klettres
 @dirrmtry man/nl/man8
+@dirrmtry man/nl/man7
 @dirrmtry man/nl/man6
 @dirrmtry man/nl/man1
 @dirrmtry man/nl

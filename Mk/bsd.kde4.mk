@@ -52,7 +52,7 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 #		but this could be changed in a future.
 #
 
-KDE4_VERSION=		4.4.4
+KDE4_VERSION=		4.4.5
 KDE4_BRANCH?=		stable
 KOFFICE2_VERSION=	2.2.0
 KOFFICE2_BRANCH?=	stable
