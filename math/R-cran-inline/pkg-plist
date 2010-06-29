@@ -7,6 +7,7 @@
 %%R_MOD_DIR%%/Meta/nsInfo.rds
 %%R_MOD_DIR%%/Meta/package.rds
 %%R_MOD_DIR%%/NAMESPACE
+%%R_MOD_DIR%%/NEWS
 %%R_MOD_DIR%%/R/inline
 %%R_MOD_DIR%%/R/inline.rdb
 %%R_MOD_DIR%%/R/inline.rdx

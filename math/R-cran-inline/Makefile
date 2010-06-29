@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	inline
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	math
 PKGNAMEPREFIX=	R-cran-
-DISTNAME=	${PORTNAME}_0.3.4
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Inline C, C++, Fortran function calls from R
