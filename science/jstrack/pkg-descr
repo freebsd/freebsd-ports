@@ -1,0 +1,8 @@
+JStrack is written by and for people who are in areas that are
+prone to hits from tropical systems (currently only in the Tropical
+Atlantic). It's intended to display the NHC/TPC data and give you
+what you need to make decisions, etc.. It does NOT, nor will it ever,
+attempt to do any forecasting on its own---I leave that to the gurus
+at the NHC/TPC. 
+
+WWW: http://www.jstrack.org/jstrack/

@@ -69,6 +69,7 @@
     SUBDIR += ics
     SUBDIR += isaac-cfd
     SUBDIR += jmol
+    SUBDIR += jstrack
     SUBDIR += kmovisto
     SUBDIR += kst
     SUBDIR += lamprop
