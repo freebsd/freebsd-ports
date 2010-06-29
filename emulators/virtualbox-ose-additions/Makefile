@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.2.4
+DISTVERSION=	3.2.6
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -27,6 +27,7 @@ WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
 USE_RC_SUBR=	vboxguest
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
@@ -101,6 +102,10 @@ IGNORE=		requires kernel sources
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900012
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-include-iprt-string.h
+.endif
 
 pre-everything::
 .if ${ARCH} == "amd64"
