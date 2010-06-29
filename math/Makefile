@@ -247,6 +247,7 @@
     SUBDIR += octave-forge-oct2mat
     SUBDIR += octave-forge-octcdf
     SUBDIR += octave-forge-octgpr
+    SUBDIR += octave-forge-octproj
     SUBDIR += octave-forge-odebvp
     SUBDIR += octave-forge-odepkg
     SUBDIR += octave-forge-optim
