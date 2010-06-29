@@ -30,6 +30,7 @@ APP_TITLE=	Apache Tomcat
 APP_SHORTNAME=	tomcat${MAJOR_VER:S/.//}
 TOMCAT_USER?=	www
 TOMCAT_GROUP?=	www
+TOMCAT_UID?=	80
 HTTP_PORT?=	8180
 SHUTDOWN_PORT?=	8005
 AJP_1_3_PORT?=	8009
@@ -59,7 +60,8 @@ SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		STDOUT_LOG=${STDOUT_LOG} \
 		TOMCAT_HOME=${APP_HOME} \
 		TOMCAT_VERSION=${MAJOR_VER:S/.//} \
-		USER=${TOMCAT_USER}
+		USER=${TOMCAT_USER} \
+		UID=${TOMCAT_UID}
 
 .include <bsd.port.pre.mk>
 
@@ -75,7 +77,7 @@ pre-patch:
 	@${ECHO_MSG} "   Destination directory:    ${APP_HOME}"
 	@${ECHO_MSG} "   Location of JDK:          ${JAVA_HOME}"
 	@${ECHO_MSG} "   Location of Java port:    ${JAVA_PORT}"
-	@${ECHO_MSG} "   Running as (user/group):  ${TOMCAT_USER}/${TOMCAT_GROUP}"
+	@${ECHO_MSG} "   Running as (user/group/uid):  ${TOMCAT_USER}/${TOMCAT_GROUP}/${TOMCAT_UID}"
 	@${ECHO_MSG} "   HTTP port:                ${HTTP_PORT}"
 	@${ECHO_MSG} "   Shutdown listener port:   ${SHUTDOWN_PORT}"
 	@${ECHO_MSG} "   AJP 1.3 connector port:   ${AJP_1_3_PORT}"

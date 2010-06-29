@@ -12,7 +12,7 @@ if [ "$2" != "PRE-INSTALL" ]; then
 fi
 
 # Set some constants
-UID=80
+UID=%%UID%%
 GID=${UID}
 USER=%%USER%%
 GROUP=%%GROUP%%
