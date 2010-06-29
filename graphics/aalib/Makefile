@@ -7,7 +7,7 @@
 
 PORTNAME=	aalib
 PORTVERSION=	1.4.r5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/aa-project/aa-lib/1.4rc5
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
@@ -59,6 +59,9 @@ post-patch:
 		s|MAKEINFO=makeinfo|MAKEINFO="makeinfo --no-split"|g ; \
 		s|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} \
+		-e 's|AC_DEFUN(AM_PATH_AALIB|AC_DEFUN([AM_PATH_AALIB]|g' \
+		${WRKSRC}/aalib.m4
 	@${FIND} ${WRKSRC} \( -name '*.[ch]' \! -name acconfig.h \) \
 		| ${XARGS} ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g'
 
