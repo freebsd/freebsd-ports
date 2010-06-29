@@ -139,6 +139,10 @@ pre-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's#CP = -cp -p#CP = -cp#'	\
 		${WRKSRC}/src/xercesc/Makefile.incl
+.if ${OSVERSION} < 700000
+	@${REINPLACE_CMD} -e 's,-lgcc,-lgcc_pic,' \
+		${WRKSRC}/src/xercesc/Makefile.incl
+.endif
 
 pre-configure:
 	@${CHMOD} 700 ${CONFIGURE_WRKSRC}/runConfigure
