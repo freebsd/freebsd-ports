@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/01-lib${PORTNAME}-master/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -15,8 +14,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
-
-FORBIDDEN=	vulnerable to remote buffer overflow
 
 MAKEFILE=	${WRKSRC}/scripts/makefile.freebsd
 ALL_TARGET=	all libpng-config test
