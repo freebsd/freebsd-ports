@@ -1,0 +1,8 @@
+JIIC is a Java-based implementation for creating CD-ROM filesystem
+images according to ISO 9660, also known as ECMA-119. It provides
+support for the El Torito, Joliet and Rock Ridge extensions.
+
+WWW: http://jiic.berlios.de/
+
+- Alex Dupre
+ale@FreeBSD.org
