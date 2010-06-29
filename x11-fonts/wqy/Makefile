@@ -7,6 +7,7 @@
 
 PORTNAME=	wqy-fonts
 PORTVERSION=	20081102
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/wqy/wqy-bitmapfont/0.9.9:bitmapfont \
@@ -24,7 +25,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_XORG=	x11
-USE_PERL5=	yes
+USE_PERL5_BUILD=	yes
 
 FONTSDIR=	lib/X11/fonts/wqy
 CONFDDIR=	etc/fonts/conf.d
