@@ -26,7 +26,9 @@ share/doc/HTML/ja/okular/index.docbook
 share/locale/ja/LC_MESSAGES/akonadi-kcal.mo
 share/locale/ja/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_contacts_resource.mo
+share/locale/ja/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_localbookmarks_resource.mo
+share/locale/ja/LC_MESSAGES/akonadi_maildir_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_pop3_resource.mo
@@ -129,6 +131,7 @@ share/locale/ja/LC_MESSAGES/kcm_partition.mo
 share/locale/ja/LC_MESSAGES/kcm_pci.mo
 share/locale/ja/LC_MESSAGES/kcm_phonon.mo
 share/locale/ja/LC_MESSAGES/kcm_phononxine.mo
+share/locale/ja/LC_MESSAGES/kcm_platform.mo
 share/locale/ja/LC_MESSAGES/kcm_solid.mo
 share/locale/ja/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ja/LC_MESSAGES/kcm_standard_actions.mo
@@ -331,6 +334,7 @@ share/locale/ja/LC_MESSAGES/kpasswdserver.mo
 share/locale/ja/LC_MESSAGES/kpat.mo
 share/locale/ja/LC_MESSAGES/kppp.mo
 share/locale/ja/LC_MESSAGES/kppplogview.mo
+share/locale/ja/LC_MESSAGES/kquitapp.mo
 share/locale/ja/LC_MESSAGES/krandr.mo
 share/locale/ja/LC_MESSAGES/krdb.mo
 share/locale/ja/LC_MESSAGES/krdc.mo
@@ -474,6 +478,7 @@ share/locale/ja/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/ja/LC_MESSAGES/phonon_kde.mo
 share/locale/ja/LC_MESSAGES/phononserver.mo
 share/locale/ja/LC_MESSAGES/plasma-desktop.mo
+share/locale/ja/LC_MESSAGES/plasma-netbook.mo
 share/locale/ja/LC_MESSAGES/plasma-overlay.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
@@ -546,9 +551,11 @@ share/locale/ja/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_metadata.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_network.mo
+share/locale/ja/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_nowplaying.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/ja/LC_MESSAGES/plasma_engine_soliddevice.mo
+share/locale/ja/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_calculatorrunner.mo
@@ -561,6 +568,7 @@ share/locale/ja/LC_MESSAGES/plasma_runner_konsolesessions.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_nepomuksearchrunner.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_placesrunner.mo
+share/locale/ja/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_services.mo
@@ -569,6 +577,7 @@ share/locale/ja/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/ja/LC_MESSAGES/plasma_runner_windows.mo
 share/locale/ja/LC_MESSAGES/plasma_wallpaper_color.mo
 share/locale/ja/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/ja/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
@@ -579,12 +588,15 @@ share/locale/ja/LC_MESSAGES/plasma_wallpaper_weather.mo
 share/locale/ja/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/ja/LC_MESSAGES/plasmagenericshell.mo
 share/locale/ja/LC_MESSAGES/plasmapkg.mo
+share/locale/ja/LC_MESSAGES/plasmawallpaperviewer.mo
+share/locale/ja/LC_MESSAGES/plasmoidviewer.mo
 share/locale/ja/LC_MESSAGES/policykit-kde.mo
 share/locale/ja/LC_MESSAGES/polkit-kde-authorization.mo
 share/locale/ja/LC_MESSAGES/powerdevil.mo
 share/locale/ja/LC_MESSAGES/printer-applet.mo
 share/locale/ja/LC_MESSAGES/processcore.mo
 share/locale/ja/LC_MESSAGES/processui.mo
+share/locale/ja/LC_MESSAGES/randrmonitor.mo
 share/locale/ja/LC_MESSAGES/solid-bluetooth.mo
 share/locale/ja/LC_MESSAGES/solid-hardware.mo
 share/locale/ja/LC_MESSAGES/solid-network.mo
@@ -604,6 +616,7 @@ share/locale/ja/LC_MESSAGES/systemsettings.mo
 share/locale/ja/LC_MESSAGES/timezones4.mo
 share/locale/ja/LC_MESSAGES/umbrello.mo
 share/locale/ja/LC_MESSAGES/useraccount.mo
+share/locale/ja/LC_MESSAGES/xml_mimetypes.mo
 share/locale/ja/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/ja/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/ja/entry.desktop

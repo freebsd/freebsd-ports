@@ -4478,11 +4478,6 @@ share/wallpapers/Green_Concentration/contents/images/1600x1200.jpg
 share/wallpapers/Green_Concentration/contents/images/1920x1200.jpg
 share/wallpapers/Green_Concentration/contents/screenshot.png
 share/wallpapers/Green_Concentration/metadata.desktop
-share/wallpapers/Hail/contents/images/1280x1024.jpg
-share/wallpapers/Hail/contents/images/1600x1200.jpg
-share/wallpapers/Hail/contents/images/1920x1200.jpg
-share/wallpapers/Hail/contents/screenshot.png
-share/wallpapers/Hail/metadata.desktop
 share/wallpapers/HighTide/contents/images/1024x768.jpg
 share/wallpapers/HighTide/contents/images/1280x1024.jpg
 share/wallpapers/HighTide/contents/images/1280x800.jpg
@@ -4597,9 +4592,6 @@ share/wallpapers/Winter_Track/metadata.desktop
 @dirrm share/wallpapers/HighTide/contents/images
 @dirrm share/wallpapers/HighTide/contents
 @dirrm share/wallpapers/HighTide
-@dirrm share/wallpapers/Hail/contents/images
-@dirrm share/wallpapers/Hail/contents
-@dirrm share/wallpapers/Hail
 @dirrm share/wallpapers/Green_Concentration/contents/images
 @dirrm share/wallpapers/Green_Concentration/contents
 @dirrm share/wallpapers/Green_Concentration
